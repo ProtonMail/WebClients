@@ -18,6 +18,10 @@ module.exports = (...env) => {
             })
         );
 
+        config.resolve.alias = {
+            'proton-mail': path.resolve(__dirname, 'src/app/'),
+        };
+
         // if (config.mode !== 'development') {
         config.plugins.push(
             new InjectManifest({

@@ -32,6 +32,7 @@
         "^react-router-dom(.*)$",
         "<THIRD_PARTY_MODULES>",
         "^@proton/(.*)$",
+        "^proton-mail(.*)$",
         "^[./].*(?<!\\.(c|sc)ss)$",
         "(c|sc)ss$"
     ],

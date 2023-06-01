@@ -6,7 +6,7 @@ import { EllipsisLoader } from '@proton/components/components';
 import { useMailSettings } from '@proton/components/hooks';
 import { altKey, metaKey, shiftKey } from '@proton/shared/lib/helpers/browser';
 
-import { formatSimpleDate } from '../../../../helpers/date';
+import { formatSimpleDate } from 'proton-mail/helpers/date';
 
 interface Props {
     opening: boolean;

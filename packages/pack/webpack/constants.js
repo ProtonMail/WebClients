@@ -1,6 +1,7 @@
 const BABEL_INCLUDE_NODE_MODULES = [
     'asmcrypto.js',
     'pmcrypto',
+    'proton-mail',
     '@proton/pack',
     '@proton/shared',
     '@proton/srp',
