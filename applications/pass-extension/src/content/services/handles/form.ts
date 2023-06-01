@@ -4,7 +4,7 @@ import { logger } from '@proton/pass/utils/logger';
 import { uniqueId } from '@proton/pass/utils/string';
 
 import type { DetectedField, DetectedForm, FormHandle } from '../../types';
-import { setFieldProcessable } from '../../utils/nodes';
+import { setFieldProcessable, setFormProcessable } from '../../utils/nodes';
 import { createFormTracker } from '../form/tracker';
 import { createFieldHandles } from './field';
 
@@ -76,14 +76,13 @@ export const createFormHandles = (options: DetectedForm): FormHandle => {
          * up the submission handlers and the input
          * changes handler */
         attach() {
-            logger.debug(`[FormHandles]: Attaching tracker for form [${formType}:${formHandle.id}]`);
             formHandle.tracker = formHandle.tracker ?? createFormTracker(formHandle);
             formHandle.tracker.reconciliate();
         },
 
         detach() {
             logger.debug(`[FormHandles]: Detaching tracker for form [${formType}:${formHandle.id}]`);
-            setFieldProcessable(form);
+            setFormProcessable(form);
             Array.from(form.querySelectorAll('input')).forEach(setFieldProcessable);
             formHandle.tracker?.detach();
         },
