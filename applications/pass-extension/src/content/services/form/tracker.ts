@@ -6,8 +6,9 @@ import { parseFormAction } from '@proton/pass/utils/dom';
 import { createListenerStore } from '@proton/pass/utils/listener';
 import { logger } from '@proton/pass/utils/logger';
 import { isEmptyString } from '@proton/pass/utils/string';
+import debounce from '@proton/utils/debounce';
 
-import { DETECTED_FORM_ID_ATTR, FORM_TRACKER_CONFIG } from '../../constants';
+import { FORM_TRACKER_CONFIG } from '../../constants';
 import { withContext } from '../../context/context';
 import type { FieldHandle, FormHandle, FormTracker } from '../../types';
 import { DropdownAction, FieldInjectionRule } from '../../types';
@@ -44,8 +45,6 @@ export const createFormTracker = (form: FormHandle): FormTracker => {
 
     const listeners = createListenerStore();
     const state: FormTrackerState = { isSubmitting: false };
-
-    form.element.setAttribute(DETECTED_FORM_ID_ATTR, form.id);
 
     /* when the type attribute of a field changes : detach it from
      * the tracked form and re-trigger the detection */
@@ -171,6 +170,11 @@ export const createFormTracker = (form: FormHandle): FormTracker => {
             ?.focus();
     });
 
+    const onFormResize = () => {
+        const fields = form.getFields();
+        fields.forEach((field) => field.icon?.reposition());
+    };
+
     /* when detaching the form tracker : remove every listener
      * for both the current tracker and all fields*/
     const detach = () => {
@@ -185,6 +189,7 @@ export const createFormTracker = (form: FormHandle): FormTracker => {
     });
 
     listeners.addListener(form.element, 'submit', onSubmitHandler);
+    listeners.addResizeObserver(form.element, debounce(onFormResize, 50, { leading: true }));
 
     return { detach, reconciliate };
 };
