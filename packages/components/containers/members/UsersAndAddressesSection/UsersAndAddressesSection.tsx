@@ -130,8 +130,8 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
     const handleDeleteUser = (member: Member) => {
         setTmpMember(member);
 
-        // We can remove members if the user is a Proton member (excluding logged user and subscriber)
-        if (canInviteProtonUsers && member.Type === MEMBER_TYPE.PROTON && !member.Self && !member.Subscriber) {
+        // We can remove members if the user is a Proton member (excluding logged user)
+        if (canInviteProtonUsers && member.Type === MEMBER_TYPE.PROTON && !member.Self) {
             setUserRemoveModalOpen(true);
         } else {
             setSubUserDeleteModalOpen(true);
@@ -155,8 +155,8 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
     const handleEditUser = (member: Member) => {
         setTmpMember(member);
 
-        // We can open the invite modal if the user is a Proton member (excluding logged user and subscriber)
-        if (canInviteProtonUsers && member.Type === MEMBER_TYPE.PROTON && !member.Self && !member.Subscriber) {
+        // We can open the invite modal if the user is a Proton member (excluding logged user)
+        if (canInviteProtonUsers && member.Type === MEMBER_TYPE.PROTON && !member.Self) {
             setUserInviteOrEditModalOpen(true);
         } else {
             setSubUserEditModalOpen(true);
