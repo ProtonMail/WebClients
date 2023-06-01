@@ -136,10 +136,10 @@ const TrustPublicKeyModal = ({ contact, ...rest }: Props) => {
     const handleSubmit = isCreateContact ? handleCreateContact : handleUpdateContact;
 
     const alertMessage = isCreateContact
-        ? c('Key pinning').t`Clicking "Trust Key" will create a new contact and associate this public key with
-        this sender. Emails from this address will be automatically cryptographically verified.`
-        : c('Key pinning').t`Clicking "Trust Key" will associate this public key with this sender
-        and emails from this address will be automatically cryptographically verified.`;
+        ? c('Key pinning')
+              .t`Clicking "Trust Key" will create a new contact and associate this public key with this sender. Emails from this address will be automatically cryptographically verified.`
+        : c('Key pinning')
+              .t`Clicking "Trust Key" will associate this public key with this sender and emails from this address will be automatically cryptographically verified.`;
 
     return (
         <ModalTwo as={Form} onSubmit={() => withLoading(handleSubmit())} size="xlarge" {...rest}>
