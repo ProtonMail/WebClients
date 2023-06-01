@@ -107,7 +107,7 @@ const CalendarEventDefaultsSection = ({ calendar, bootstrap, canEdit }: Props) =
             <div className="h2 mb-1 text-bold">{c('Default calendar event settings section title')
                 .t`Default event settings`}</div>
             {showDuration && (
-                <SettingsLayout className="mt-8">
+                <SettingsLayout stackEarlier className="mt-8">
                     <SettingsLayoutLeft>
                         <label htmlFor="event-duration" className="text-semibold">
                             {c('Label for default event settings').t`Duration`}
@@ -135,7 +135,7 @@ const CalendarEventDefaultsSection = ({ calendar, bootstrap, canEdit }: Props) =
                     </SettingsLayoutRight>
                 </SettingsLayout>
             )}
-            <SettingsLayout>
+            <SettingsLayout stackEarlier>
                 {!isHolidaysCalendar && (
                     <>
                         <SettingsLayoutLeft>
@@ -176,7 +176,7 @@ const CalendarEventDefaultsSection = ({ calendar, bootstrap, canEdit }: Props) =
                     </>
                 )}
             </SettingsLayout>
-            <SettingsLayout>
+            <SettingsLayout stackEarlier>
                 <SettingsLayoutLeft>
                     <label htmlFor="default-full-day-notifications" className="text-semibold">
                         {isHolidaysCalendar
