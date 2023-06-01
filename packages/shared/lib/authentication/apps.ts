@@ -56,9 +56,15 @@ export const getToApp = (toApp: APP_NAMES | undefined, user: User) => {
     }
     if (getIsExternalAccount(user)) {
         const { Subscribed } = user;
+
         if (Subscribed === PRODUCT_BIT.VPN) {
             return APPS.PROTONVPN_SETTINGS;
         }
+
+        if (Subscribed === PRODUCT_BIT.PASS) {
+            return APPS.PROTONPASS;
+        }
+
         return APPS.PROTONDRIVE;
     }
     return DEFAULT_APP;
