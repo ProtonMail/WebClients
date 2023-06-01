@@ -80,12 +80,11 @@
   --optional-navigation-item-count-background-color: #8838ff;
   --optional-email-item-unread-background-color: #1a1926;
   --optional-email-item-read-background-color: var(--background-norm);
-  --optional-email-item-read-text-color: var(--text-weak);
   --optional-logo-text-proton-color: white;
   --optional-logo-text-product-color: white;
   --optional-promotion-text-color: white;
-	--optional-promotion-text-weak: #C1B2FF;
-	--optional-promotion-interaction-hover: rgb(138 110 255 / 0.2);
+  --optional-promotion-text-weak: #c1b2ff;
+  --optional-promotion-interaction-hover: rgb(138 110 255 / 0.2);
   --optional-promotion-background-start: rgb(138 110 255 / 0.3);
   --optional-promotion-background-end: rgb(99 61 255 / 0.1);
 }
