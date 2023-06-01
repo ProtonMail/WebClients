@@ -23,6 +23,7 @@ export const getAccountAppRoutes = ({
     isGmailSyncEnabled,
     organization,
     isProtonSentinelEligible,
+    isProtonSentinelFeatureEnabled,
 }: {
     user: UserModel;
     isDataRecoveryAvailable: boolean;
@@ -31,6 +32,7 @@ export const getAccountAppRoutes = ({
     recoveryNotification?: ThemeColor;
     organization?: Organization;
     isProtonSentinelEligible: boolean;
+    isProtonSentinelFeatureEnabled: boolean;
 }) => {
     const { isFree, canPay, isPaid, isPrivate, isMember, isAdmin, Currency, Type } = user;
     const credits = humanPriceWithCurrency(REFERRAL_PROGRAM_MAX_AMOUNT, Currency || DEFAULT_CURRENCY);
@@ -192,7 +194,7 @@ export const getAccountAppRoutes = ({
                     {
                         text: PROTON_SENTINEL_NAME,
                         id: 'sentinel',
-                        available: isProtonSentinelEligible,
+                        available: isProtonSentinelEligible && isProtonSentinelFeatureEnabled,
                     },
                     {
                         text: c('Title').t`Session management`,
