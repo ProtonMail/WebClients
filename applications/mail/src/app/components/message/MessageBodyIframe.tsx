@@ -6,7 +6,7 @@ import { c } from 'ttag';
 import { Icon, Tooltip } from '@proton/components';
 import { useLinkHandler } from '@proton/components/hooks/useLinkHandler';
 import { MailSettings } from '@proton/shared/lib/interfaces';
-import { hasAttachments, isAutoFlaggedPhishing } from '@proton/shared/lib/mail/messages';
+import { hasAttachments, isAutoFlaggedPhishing, isSuspicious } from '@proton/shared/lib/mail/messages';
 import clsx from '@proton/utils/clsx';
 
 import { useMailboxContainerContext } from '../../containers/mailbox/MailboxContainerProvider';
@@ -90,7 +90,7 @@ const MessageBodyIframe = ({
         onMailTo,
         startListening: initStatus === 'done' && iframeRootDivRef.current !== undefined,
         isOutside,
-        isPhishingAttempt: isAutoFlaggedPhishing(message.data),
+        isPhishingAttempt: isAutoFlaggedPhishing(message.data) || isSuspicious(message.data),
     });
 
     useIframeDispatchEvents(initStatus === 'done', iframeRef, onFocus);
