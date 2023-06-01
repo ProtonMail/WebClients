@@ -187,6 +187,7 @@ export enum PRODUCT_BIT {
     Mail = 1,
     Drive = 2,
     VPN = 4,
+    PASS = 8,
 }
 
 export type APP_KEYS = keyof typeof APPS;
