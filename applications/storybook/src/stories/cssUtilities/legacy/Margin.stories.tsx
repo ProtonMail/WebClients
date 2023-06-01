@@ -120,7 +120,7 @@ export const MarginY = () => {
 
 export const MarginLeft = () => {
     return (
-        <div className="border rounded overflow-hidden w100 relative flex flex-column flex-nowrap flex-align-items-start flex-gap-0-5 text-2xs">
+        <div className="border rounded overflow-hidden w100 relative flex flex-column flex-nowrap flex-align-items-start gap-2 text-2xs">
             {marginSize.map((size) => (
                 <div key={size} className="bg-strong flex-item-noshrink" style={{ display: 'flow-root' }}>
                     <div className={`${demoItemClasses} ml${size}`} style={{ width: '5rem', height: '1.5rem' }}>
@@ -134,7 +134,7 @@ export const MarginLeft = () => {
 
 export const MarginRight = () => {
     return (
-        <div className="border rounded overflow-hidden w100 relative flex flex-column flex-nowrap flex-align-items-end flex-gap-0-5 text-2xs">
+        <div className="border rounded overflow-hidden w100 relative flex flex-column flex-nowrap flex-align-items-end gap-2 text-2xs">
             {marginSize.map((size) => (
                 <div key={size} className="bg-strong flex-item-noshrink" style={{ display: 'flow-root' }}>
                     <div className={`${demoItemClasses} mr${size}`} style={{ width: '5rem', height: '1.5rem' }}>
@@ -148,7 +148,7 @@ export const MarginRight = () => {
 
 export const MarginX = () => {
     return (
-        <div className="border rounded overflow-hidden w100 relative flex flex-column flex-nowrap flex-align-items-center flex-gap-0-5 text-2xs">
+        <div className="border rounded overflow-hidden w100 relative flex flex-column flex-nowrap flex-align-items-center gap-2 text-2xs">
             {marginSize.map((size) => (
                 <div key={size} className="bg-strong rounded-sm flex-item-noshrink" style={{ display: 'flow-root' }}>
                     <div className={`${demoItemClasses} mx${size}`} style={{ width: '5rem', height: '1.5rem' }}>
@@ -414,7 +414,7 @@ export const Sandbox = () => {
                         <Label
                             htmlFor={id}
                             key={id}
-                            className="flex flex-nowrap flex-align-items-center flex-gap-1 mb-4"
+                            className="flex flex-nowrap flex-align-items-center gap-4 mb-4"
                         >
                             <Checkbox
                                 id={id}

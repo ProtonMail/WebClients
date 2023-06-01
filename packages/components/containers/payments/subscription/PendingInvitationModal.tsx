@@ -67,7 +67,7 @@ const PendingInvitationModal = ({ invite, ...modalProps }: Props) => {
                 title={c('familyOffer_2023:Family plan').t`You are invited to join ${invite.OrganizationName}`}
             />
             <ModalTwoContent>
-                <div className="bg-weak p-3 rounded flex flex-gap-0-5 mb-4">
+                <div className="bg-weak p-3 rounded flex gap-2 mb-4">
                     <div>{c('familyOffer_2023:Family plan').jt`Invited by: ${inviteEmail}`}</div>
                     <div>{c('familyOffer_2023:Family plan').jt`Storage assigned to you: ${assignedStorage}`}</div>
                 </div>

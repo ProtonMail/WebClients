@@ -14,7 +14,7 @@ export default {
 
 export const ColumnMobile = () => {
     return (
-        <div className="flex flex-gap-0-5 flex-justify-space-between on-mobile-flex-column on-mobile-flex-column-no-stretch rounded overflow-hidden border">
+        <div className="flex gap-2 flex-justify-space-between on-mobile-flex-column on-mobile-flex-column-no-stretch rounded overflow-hidden border">
             <div className="bg-primary p-4">div</div>
             <span className="bg-primary p-4">span</span>
             <em className="bg-primary p-4">em</em>
@@ -30,7 +30,7 @@ ColumnMobile.parameters = {
 
 export const ColumnTablet = () => {
     return (
-        <div className="flex flex-gap-0-5 flex-justify-space-between on-tablet-flex-column rounded overflow-hidden border">
+        <div className="flex gap-2 flex-justify-space-between on-tablet-flex-column rounded overflow-hidden border">
             <div className="bg-primary p-4">div</div>
             <span className="bg-primary p-4">span</span>
             <em className="bg-primary p-4">em</em>
@@ -46,7 +46,7 @@ ColumnTablet.parameters = {
 
 export const FlexGap0 = () => {
     return (
-        <div className="flex flex-gap-1 on-mobile-flex-gap-0 rounded overflow-hidden border">
+        <div className="flex gap-0 md:gap-4 rounded overflow-hidden border">
             <div className="bg-primary p-4">div</div>
             <span className="bg-primary p-4">span</span>
             <em className="bg-primary p-4">em</em>
