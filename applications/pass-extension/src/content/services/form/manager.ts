@@ -6,10 +6,11 @@ import { logger } from '@proton/pass/utils/logger';
 import debounce from '@proton/utils/debounce';
 
 import { isSubmissionCommitted } from '../../../shared/form';
+import { EXTENSION_PREFIX, PROCESSED_FIELD_ATTR } from '../../constants';
 import { withContext } from '../../context/context';
 import type { FormHandle } from '../../types';
 import { NotificationAction } from '../../types';
-import { setFormProcessed } from '../../utils/nodes';
+import { hasUnprocessedForms, setFormProcessed } from '../../utils/nodes';
 import { createFormHandles } from '../handles/form';
 
 type FormManagerOptions = { onDetection: (forms: FormHandle[]) => void };
@@ -108,9 +109,7 @@ export const createFormManager = (options: FormManagerOptions) => {
      * removed : form visibility changes have no effect on detachment
      * for performance reasons (costly `isVisible` check) */
     const garbagecollect = () => {
-        ctx.trackedForms.forEach((form) => {
-            return form.shouldRemove() && detachTrackedForm(form.element);
-        });
+        ctx.trackedForms.forEach((form) => form.shouldRemove() && detachTrackedForm(form.element));
     };
 
     /* Detection :
@@ -163,22 +162,26 @@ export const createFormManager = (options: FormManagerOptions) => {
             const target = mutation.target as HTMLElement;
 
             return (
-                newNodes.some((node) => node instanceof HTMLInputElement) ||
-                deletedNodes.some((node) => node instanceof HTMLInputElement) ||
-                target.querySelector('input') !== null
+                newNodes.some((node) => node instanceof HTMLInputElement || node instanceof HTMLFormElement) ||
+                deletedNodes.some((node) => node instanceof HTMLInputElement || node instanceof HTMLFormElement) ||
+                target.querySelector(`input:not([${PROCESSED_FIELD_ATTR}])`) !== null
             );
         });
 
         if (triggerFormChange) void detect('DomMutation');
     };
 
-    /* When watching transitions on the `document.body` we are only interested
-     * in untracked form elements being transitioned. If a form is tracked, we
-     * rely on its internal form tracker to watch for changes */
+    /* we want to avoid swarming detection requests on every transition end
+     * as we are listening for them on the document.body and we'll catch all
+     * bubbling `transitionend` events. We are only interested in transition
+     * events which happen when we have n  */
     const onTransition = (event: Event) => {
-        if (event.target instanceof HTMLFormElement && !ctx.trackedForms.has(event.target)) {
-            requestAnimationFrame(() => setTimeout(() => detect('FormTransition'), 1000));
-        }
+        const target = event.target as HTMLElement;
+
+        if (target.matches(`[class^=${EXTENSION_PREFIX}]`)) return;
+        if ([...ctx.trackedForms.values()].some((form) => form.element.contains(target))) return;
+
+        return hasUnprocessedForms() && detect('TransitionEnd');
     };
 
     /* the mutation observer in this call will only watch for changes
@@ -190,8 +193,8 @@ export const createFormManager = (options: FormManagerOptions) => {
         if (!ctx.active) {
             ctx.active = true;
             listeners.addObserver(document.body, onMutation, { childList: true, subtree: true });
-            listeners.addListener(document, 'animationend', onTransition);
-            listeners.addListener(document, 'transitionend', onTransition);
+            listeners.addListener(document.body, 'transitionend', onTransition);
+            listeners.addListener(document.body, 'animationend', onTransition);
         }
     };
 
