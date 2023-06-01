@@ -1,8 +1,9 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
-import { EmptyViewContainer, FeatureCode, Loader, useFeature } from '@proton/components';
+import { Button, Href } from '@proton/atoms';
+import { EmptyViewContainer, FeatureCode, Loader, useFeature, useModalState } from '@proton/components';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import noResultInboxSvg from '@proton/styles/assets/img/illustrations/empty-mailbox.svg';
 import noResultSearchSvg from '@proton/styles/assets/img/illustrations/empty-search.svg';
 import noSpamSvg from '@proton/styles/assets/img/illustrations/no-messages-in-spam.svg';
@@ -10,8 +11,10 @@ import noUnreadSvg from '@proton/styles/assets/img/illustrations/no-unread-messa
 
 import { MESSAGE_ACTIONS } from '../../constants';
 import { useOnCompose } from '../../containers/ComposeProvider';
+import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { ComposeTypes } from '../../hooks/composer/useCompose';
 import { useSimpleLoginExtension } from '../../hooks/simpleLogin/useSimpleLoginExtension';
+import EnableEncryptedSearchModal from '../header/search/AdvancedSearchFields/EnableEncryptedSearchModal';
 import SimpleLoginPlaceholder from './SimpleLoginPlaceholder';
 
 interface Props {
@@ -26,10 +29,19 @@ const EmptyView = ({ labelID, isSearch, isUnread }: Props) => {
     );
     const { hasSimpleLogin, isFetchingAccountLinked } = useSimpleLoginExtension();
 
+    const { getESDBStatus } = useEncryptedSearchContext();
+    const { isEnablingContentSearch, isPaused, contentIndexingDone, isMigrating, isEnablingEncryptedSearch } =
+        getESDBStatus();
+    const [enableESModalProps, setEnableESModalOpen, renderEnableESModal] = useModalState();
+
     const isInbox = labelID === MAILBOX_LABEL_IDS.INBOX && !isSearch;
     const isScheduled = labelID === MAILBOX_LABEL_IDS.SCHEDULED && !isSearch;
     const isSpam = labelID === MAILBOX_LABEL_IDS.SPAM && !isSearch;
     const isFolder = !isInbox && !isScheduled && !isSearch && !isSpam;
+
+    // We want to hide the "enable ES" part from the point when the user enables it. We do not want to see the downloading part from here
+    const esActivationLoading = isMigrating || isEnablingEncryptedSearch;
+    const encryptedSearchEnabled = isEnablingContentSearch || isPaused || contentIndexingDone || esActivationLoading;
 
     const onCompose = useOnCompose();
 
@@ -89,15 +101,33 @@ const EmptyView = ({ labelID, isSearch, isUnread }: Props) => {
                     : c('Search - no results').t`No messages found`}
             </h3>
             <p>
-                {isSearch
-                    ? // TODO: Add a link on clear it when search will work
-                      c('Info').t`You can either update your search query or clear it`
-                    : isFolder
-                    ? c('Info').t`You do not have any messages here`
-                    : isScheduled
-                    ? scheduleCTAButton
-                    : c('Info').t`Seems like you are all caught up for now`}
+                {isSearch ? (
+                    // TODO: Add a link on clear it when search will work
+                    <>
+                        {c('Info').t`For more search results, try searching in the content of your email messages`}
+                        {!encryptedSearchEnabled && (
+                            <>
+                                <br />
+                                <Href href={getKnowledgeBaseUrl('/search-message-content')}>
+                                    {c('Info').t`Learn more`}
+                                </Href>
+                            </>
+                        )}
+                    </>
+                ) : isFolder ? (
+                    c('Info').t`You do not have any messages here`
+                ) : isScheduled ? (
+                    scheduleCTAButton
+                ) : (
+                    c('Info').t`Seems like you are all caught up for now`
+                )}
             </p>
+            {isSearch && !encryptedSearchEnabled && (
+                <Button onClick={() => setEnableESModalOpen(true)} data-testid="encrypted-search:activate">
+                    {c('Action').t`Enable`}
+                </Button>
+            )}
+            {renderEnableESModal && <EnableEncryptedSearchModal {...enableESModalProps} />}
         </EmptyViewContainer>
     );
 };
