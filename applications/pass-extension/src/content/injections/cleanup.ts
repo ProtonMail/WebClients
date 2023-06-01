@@ -1,4 +1,4 @@
-import { DETECTED_FORM_ID_ATTR, EXTENSION_PREFIX, INPUT_STYLES_ATTR, PROCESSED_ATTR } from '../constants';
+import { EXTENSION_PREFIX, INPUT_STYLES_ATTR, PROCESSED_FIELD_ATTR, PROCESSED_FORM_ATTR } from '../constants';
 import { cleanupInputInjectedStyles } from './icon';
 import { getIFrameRoot } from './iframe/create-iframe-root';
 
@@ -17,7 +17,7 @@ export const DOMCleanUp = () =>
         inputs.forEach((input) => cleanupInputInjectedStyles(input));
 
         /* remove extension attributes */
-        [DETECTED_FORM_ID_ATTR, PROCESSED_ATTR].forEach((attr) => {
+        [PROCESSED_FIELD_ATTR, PROCESSED_FORM_ATTR].forEach((attr) => {
             document.querySelectorAll(`[${attr}]`).forEach((node) => node.removeAttribute(attr));
         });
     });
