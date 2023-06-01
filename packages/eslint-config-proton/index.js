@@ -1,3 +1,5 @@
+const path = require('path');
+
 module.exports = {
     env: {
         browser: true,
@@ -207,7 +209,7 @@ module.exports = {
                 extensions: ['.js', '.ts', '.tsx'],
             },
             alias: {
-                map: [['proton-mail', './src/app/']],
+                map: [['proton-mail', path.resolve(__dirname, '../../applications/mail/src/app')]],
                 extensions: ['.ts', '.tsx'],
             },
         },
