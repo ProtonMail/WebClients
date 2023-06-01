@@ -2503,6 +2503,12 @@
       "Unknown error": [
         "Невядомая памылка"
       ],
+      "Username must begin with a letter or digit": [
+        "Імя карыстальніка павінна пачынацца з літары або лічбы"
+      ],
+      "Username must end with a letter or digit": [
+        "Імя карыстальніка павінна заканчвацца літарай або лічбай"
+      ],
       "Validation error": [
         "Памылка праверкі"
       ],
@@ -3547,6 +3553,9 @@
       ],
       "Attention required": [
         "Патрабуецца ўвага"
+      ],
+      "Based on your time zone": [
+        "На падставе вашага часавага пояса"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Перад запытам новага праверачнага кода праверце папку са спамам, а таксама ці правільна азначаны адрас ${ strong }."
@@ -4968,6 +4977,9 @@
       ]
     },
     "Notification in holidays calendar modal": {
+      "Adding holidays calendar failed": [
+        "Не ўдалося дадаць каляндар свят"
+      ],
       "Calendar added": [
         "Каляндар дададзены"
       ]

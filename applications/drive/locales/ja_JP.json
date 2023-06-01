@@ -331,6 +331,12 @@
       "I have a question": [
         "サポートに質問"
       ],
+      "Image could not be loaded with tracker protection.": [
+        "トラッキング防止が画像の読み込みをブロックしました。"
+      ],
+      "Image will be loaded without a proxy": [
+        "画像はプロキシーを経由せずに読み込まれます"
+      ],
       "Import": [
         "インポート"
       ],
@@ -2169,6 +2175,12 @@
       "Unknown error": [
         "原因不明なエラーが発生しました"
       ],
+      "Username must begin with a letter or digit": [
+        "ユーザー名は英字か数字で始めなければいけません"
+      ],
+      "Username must end with a letter or digit": [
+        "ユーザー名の最後は英字か数字でなければいけません"
+      ],
       "You can't send a mail to more than 100 recipients": [
         "100 人以上の受信者にメールを送信することはできません"
       ],
@@ -3181,6 +3193,12 @@
       "Conflict": [
         "競合"
       ],
+      "Contact assigned to group ${ contactGroupName }": [
+        "グループ ${ contactGroupName } に連絡先を追加しました"
+      ],
+      "Contact unassigned to group ${ contactGroupName }": [
+        "グループ ${ contactGroupName } から連絡先を削除しました"
+      ],
       "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
         "${ DRIVE_APP_NAME } の使用を継続し、ドライブは後で開く"
       ],
@@ -3315,9 +3333,6 @@
       ],
       "Failed": [
         "失敗"
-      ],
-      "Failed to generate a secure link. Try again later.": [
-        "リンクの生成に失敗しました。後ほどもう一度お試しください。"
       ],
       "Failed to open a secure link. The reason is: ${ error }": [
         "リンクを開くことができませんでした。エラー内容：${ error }"
@@ -3970,6 +3985,12 @@
       "You will lose all unsaved changes.": [
         "保存されていない変更はすべて失なわれます。"
       ],
+      "You've reached the maximum number of addresses in the contact group(s):": [
+        "連絡先グループのアドレス数の上限に達しました。"
+      ],
+      "You've reached the maximum number of addresses in the contact group.": [
+        "連絡先グループのアドレス数の上限に達しました。"
+      ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "あなたの ${ BRAND_NAME } アカウントは、現在停止されています。28 日が経過すると、メールが受信トレイに届かなくなり、Drive の共有リンクがブロックされ、新しいファイルをアップロードできなくなります。通常のサービスを再開するには、未払いの請求をお支払いください。"
       ],
@@ -4084,7 +4105,7 @@
         "${ nbYear } 年"
       ],
       "(Expired)": [
-        "（有効期限切れ）"
+        "(有効期限切れ)"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(一時的に利用できません。あとでお試しください。)"

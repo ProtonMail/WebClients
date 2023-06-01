@@ -2187,6 +2187,12 @@
       "Unknown error": [
         "Erro desconhecido"
       ],
+      "Username must begin with a letter or digit": [
+        "O nome de usuário deve começar com uma letra ou dígito"
+      ],
+      "Username must end with a letter or digit": [
+        "O nome de usuário deve terminar com uma letra ou dígito"
+      ],
       "You can't send a mail to more than 100 recipients": [
         "Você não pode enviar um e-mail para mais de 100 destinatários"
       ],
@@ -3386,8 +3392,11 @@
       "Failed": [
         "Falhou"
       ],
-      "Failed to generate a secure link. Try again later.": [
-        "Falha ao gerar um link seguro. Tente novamente mais tarde."
+      "Failed to generate a secure link. The reason is: ${ error }": [
+        "Falha ao gerar um link seguro. O motivo é: ${ error }"
+      ],
+      "Failed to generate a secure link. Try again later": [
+        "Falha ao gerar um link seguro. Tente novamente mais tarde"
       ],
       "Failed to open a secure link. The reason is: ${ error }": [
         "Falha ao abrir um link seguro. O motivo é: ${ error }"

@@ -52,6 +52,9 @@
       "Apply": [
         "Aplicar"
       ],
+      "At most 100 contacts are allowed per contact group": [
+        "Se permiten como máximo 100 contactos por grupo de contactos."
+      ],
       "Attach screenshot(s)": [
         "Adjuntar captura(s) de pantalla"
       ],
@@ -1818,6 +1821,9 @@
       "ProtonMail logo and a plus sign": [
         "Logo de Proton Mail y un signo más"
       ],
+      "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
+        "Ahorra tiempo enviando correos electrónicos o invitaciones a todos a la vez, una función premium entre muchas otras. Actualiza hoy mismo."
+      ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "El archivo debe tener un tamaño máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } y tener\nhasta ${ MAX_IMPORT_CONTACTS_STRING } contacto. Si tu archivo es más grande, divídelo en archivos más pequeños.",
         "El archivo debe tener un tamaño máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } y tener\nhasta ${ MAX_IMPORT_CONTACTS_STRING } contactos. Si tu archivo es más grande, divídelo en archivos más pequeños."
@@ -1934,6 +1940,9 @@
       ],
       "Calendar limit reached": [
         "Se ha alcanzado el límite de calendarios."
+      ],
+      "Cannot export this contact": [
+        "No se puede exportar este contacto."
       ],
       "Contact could not be saved": [
         "No se ha podido guardar el contacto."
@@ -2177,6 +2186,12 @@
       ],
       "Unknown error": [
         "Error desconocido"
+      ],
+      "Username must begin with a letter or digit": [
+        "El nombre de usuario debe comenzar con una letra o un dígito."
+      ],
+      "Username must end with a letter or digit": [
+        "El nombre de usuario debe terminar con una letra o un dígito."
       ],
       "You can't send a mail to more than 100 recipients": [
         "No puedes enviar un correo a más de 100 destinatarios."
@@ -3233,6 +3248,12 @@
       "Conflict": [
         "Conflicto"
       ],
+      "Contact assigned to group ${ contactGroupName }": [
+        "El contacto ha sido asignado al grupo ${ contactGroupName }."
+      ],
+      "Contact unassigned to group ${ contactGroupName }": [
+        "El contacto no ha sido asignado al grupo ${ contactGroupName }."
+      ],
       "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
         "Continuar usando ${ DRIVE_APP_NAME } y desbloquear la unidad después"
       ],
@@ -3370,9 +3391,6 @@
       ],
       "Failed": [
         "Error"
-      ],
-      "Failed to generate a secure link. Try again later.": [
-        "Error al generar un enlace seguro. Inténtalo de nuevo más tarde."
       ],
       "Failed to open a secure link. The reason is: ${ error }": [
         "Error al abrir un enlace seguro. Motivo: ${ error }"
@@ -4028,6 +4046,12 @@
       ],
       "You will lose all unsaved changes.": [
         "Perderás todos los cambios no guardados."
+      ],
+      "You've reached the maximum number of addresses in the contact group(s):": [
+        "Has alcanzado el número máximo de direcciones en el grupo o grupos de contactos:"
+      ],
+      "You've reached the maximum number of addresses in the contact group.": [
+        "Has alcanzado el número máximo de direcciones en el grupo de contactos."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Tu cuenta ${ BRAND_NAME } está actualmente suspendida. Transcurridos 28 días, los correos ya no serán entregados en tu bandeja de entrada, tus enlaces compartidos en tu almacenamiento serán bloqueados y no podrás cargar nuevos archivos. Para restablecer el servicio normal, tienes que pagar las facturas pendientes."
@@ -4774,14 +4798,23 @@
       ],
       "Up to 15 email addresses": [
         "Hasta 15 direcciones de correo electrónico"
+      ],
+      "Up to 3 TB of storage": [
+        "Hasta 3 TB de almacenamiento"
       ]
     },
     "new_plans: feature info": {
+      "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
+        "Crea múltiples direcciones de correo para tus identidades en línea, p. ej., JuanCompras@${ domain } para cuentas de compras, JuanNoticias@${ domain2 } para suscripciones de noticias"
+      ],
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "Obtén alias ilimitados con el servicio SimpleLogin de ${ BRAND_NAME }."
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "El espacio de almacenamiento es compartido entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } y ${ DRIVE_APP_NAME }."
+      ],
+      "Use your own custom email domain address, e.g., you@yourname.com": [
+        "Utiliza tu propia dirección de correo personalizada, por ejemplo, tú@tunombre.com"
       ]
     },
     "new_plans: label": {
@@ -5677,6 +5710,10 @@
       "# of downloads": [
         "# de descargas"
       ],
+      "${ emailsCount } email address": [
+        "${ emailsCount } dirección de correo electrónico",
+        "${ emailsCount } direcciones de correo electrónico"
+      ],
       "${ numberOfFailedTransfer.total } failed download": [
         "${ numberOfFailedTransfer.total } error de descarga",
         "${ numberOfFailedTransfer.total } errores de descarga"
@@ -5722,6 +5759,9 @@
       ],
       "Browser might run out of memory": [
         "El navegador podría quedarse sin memoria."
+      ],
+      "Cannot add more addresses": [
+        "No se pueden añadir más direcciones."
       ],
       "Cannot load link": [
         "Error al cargar el enlace"
@@ -6095,6 +6135,9 @@
       ],
       "Type": [
         "Tipo"
+      ],
+      "Unlock contacts groups": [
+        "Desbloquear los grupos de contactos"
       ],
       "Uploaded": [
         "Cargado"

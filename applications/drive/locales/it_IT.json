@@ -52,6 +52,9 @@
       "Apply": [
         "Applica"
       ],
+      "At most 100 contacts are allowed per contact group": [
+        "Sono ammessi al massimo 100 contatti per ogni gruppo di contatti."
+      ],
       "Attach screenshot(s)": [
         "Allega screenshot"
       ],
@@ -329,6 +332,12 @@
       ],
       "I have a question": [
         "Ho una domanda"
+      ],
+      "Image could not be loaded with tracker protection.": [
+        "Non è possibile caricare l'immagine con la protezione da tracciamento attiva."
+      ],
+      "Image will be loaded without a proxy": [
+        "L'immagine verrà caricata senza proxy."
       ],
       "Import": [
         "Importa"
@@ -1812,6 +1821,9 @@
       "ProtonMail logo and a plus sign": [
         "Logo Proton Mail e un segno più"
       ],
+      "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
+        "Risparmia tempo inviando email o inviti a tutti contemporaneamente, una funzione premium tra molte altre. Passa al piano superiore oggi."
+      ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "Il file dovrebbe avere una dimensione massima di ${ MAX_IMPORT_FILE_SIZE_STRING } e avere ${ MAX_IMPORT_CONTACTS_STRING } contatto. Se il tuo file è più grande dividilo in file più piccoli.",
         "Il file dovrebbe avere una dimensione massima di ${ MAX_IMPORT_FILE_SIZE_STRING } e avere fino a ${ MAX_IMPORT_CONTACTS_STRING } contatti. Se il tuo file è più grande dividilo in file più piccoli."
@@ -1928,6 +1940,9 @@
       ],
       "Calendar limit reached": [
         "Limite calendario raggiunto"
+      ],
+      "Cannot export this contact": [
+        "Impossibile esportare questo contatto"
       ],
       "Contact could not be saved": [
         "Il contatto non può essere salvato"
@@ -2171,6 +2186,12 @@
       ],
       "Unknown error": [
         "Errore sconosciuto"
+      ],
+      "Username must begin with a letter or digit": [
+        "Il nome utente deve iniziare con una lettera o un numero."
+      ],
+      "Username must end with a letter or digit": [
+        "Il nome utente deve terminare con una lettera o un numero/"
       ],
       "You can't send a mail to more than 100 recipients": [
         "Non puoi inviare una mail a più di 100 destinatari"
@@ -3227,6 +3248,12 @@
       "Conflict": [
         "Conflitto"
       ],
+      "Contact assigned to group ${ contactGroupName }": [
+        "Il contatto è assegnato al gruppo ${ contactGroupName }."
+      ],
+      "Contact unassigned to group ${ contactGroupName }": [
+        "Il contatto non è assegnato al gruppo ${ contactGroupName }."
+      ],
       "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
         "Continua a utilizzare ${ DRIVE_APP_NAME } e sblocca l'unità in un secondo momento"
       ],
@@ -3364,9 +3391,6 @@
       ],
       "Failed": [
         "Errore"
-      ],
-      "Failed to generate a secure link. Try again later.": [
-        "Impossibile generare un collegamento sicuro. Riprova più tardi."
       ],
       "Failed to open a secure link. The reason is: ${ error }": [
         "Impossibile aprire un collegamento sicuro. Il motivo è: ${ error }"
@@ -4022,6 +4046,12 @@
       ],
       "You will lose all unsaved changes.": [
         "Perderai tutte le modifiche non salvate."
+      ],
+      "You've reached the maximum number of addresses in the contact group(s):": [
+        "Hai raggiunto il numero massimo d'indirizzi nel gruppo o gruppi di contatti:"
+      ],
+      "You've reached the maximum number of addresses in the contact group.": [
+        "Hai raggiunto il numero massimo d'indirizzi nel gruppo di contatti."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Il tuo account ${ BRAND_NAME } è attualmente sospeso. Trascorsi 28 giorni, le email non verranno più recapitate nella tua casella di posta, i link di condivisione di Drive verranno bloccati e non potrai caricare nuovi file. Per ripristinare il normale servizio, si prega di pagare le fatture scadute."
@@ -4768,14 +4798,23 @@
       ],
       "Up to 15 email addresses": [
         "Fino a 15 indirizzi email"
+      ],
+      "Up to 3 TB of storage": [
+        "Fino a 3 TB di spazio di archiviazione"
       ]
     },
     "new_plans: feature info": {
+      "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
+        "Crea più indirizzi email per le tue identità online, ad esempio GiovanniShopping@${ domain } per i profili di shopping, GiovanniNotizie@${ domain2 } per gli abbonamenti alle notizie."
+      ],
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "Ottieni un numero illimitato di alias con SimpleLogin di ${ BRAND_NAME }"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Lo spazio di archiviazione è condiviso tra ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, e ${ DRIVE_APP_NAME }"
+      ],
+      "Use your own custom email domain address, e.g., you@yourname.com": [
+        "Usa l'indirizzo del tuo dominio email personalizzato, per esempio tu@tuonome.com"
       ]
     },
     "new_plans: label": {
@@ -5671,6 +5710,10 @@
       "# of downloads": [
         "# di download"
       ],
+      "${ emailsCount } email address": [
+        "${ emailsCount } indirizzo email",
+        "${ emailsCount } indirizzi email"
+      ],
       "${ numberOfFailedTransfer.total } failed download": [
         "${ numberOfFailedTransfer.total } scaricamento fallito",
         "${ numberOfFailedTransfer.total } scaricamenti falliti"
@@ -5716,6 +5759,9 @@
       ],
       "Browser might run out of memory": [
         "Il browser potrebbe esaurire la memoria"
+      ],
+      "Cannot add more addresses": [
+        "Impossibile aggiungere più indirizzi"
       ],
       "Cannot load link": [
         "Impossibile caricare il collegamento"
@@ -6090,6 +6136,9 @@
       "Type": [
         "Tipo"
       ],
+      "Unlock contacts groups": [
+        "Sblocca gruppi di contatti"
+      ],
       "Uploaded": [
         "Caricato"
       ],
@@ -6198,6 +6247,9 @@
       ],
       "The image could not be loaded": [
         "Impossibile caricare l’immagine."
+      ],
+      "The image could not be loaded using proxy": [
+        "Impossibile caricare l’immagine usando il proxy."
       ],
       "The import will start with the most recent messages.": [
         "L'importazione inizierà con i messaggi più recenti."

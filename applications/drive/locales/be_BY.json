@@ -2205,6 +2205,12 @@
       "Unknown error": [
         "Невядомая памылка"
       ],
+      "Username must begin with a letter or digit": [
+        "Імя карыстальніка павінна пачынацца з літары або лічбы"
+      ],
+      "Username must end with a letter or digit": [
+        "Імя карыстальніка павінна заканчвацца літарай або лічбай"
+      ],
       "You can't send a mail to more than 100 recipients": [
         "Вы не можаце адправіць ліст больш чым 100 атрымальнікам"
       ],
@@ -3495,9 +3501,6 @@
       ],
       "Failed": [
         "Збой"
-      ],
-      "Failed to generate a secure link. Try again later.": [
-        "Не ўдалося згенерыраваць бяспечную спасылку. Паспрабуйце яшчэ раз пазней."
       ],
       "Failed to open a secure link. The reason is: ${ error }": [
         "Не ўдалося адкрыць бяспечную спасылку. Прычына: ${ error }"
