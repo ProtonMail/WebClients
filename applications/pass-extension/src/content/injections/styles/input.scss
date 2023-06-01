@@ -15,6 +15,7 @@
 		opacity: 1;
 		@include reset;
 
+		order: 9999 !important;
 		block-size: 0 !important;
 		inline-size: 0 !important;
 		display: block !important;
