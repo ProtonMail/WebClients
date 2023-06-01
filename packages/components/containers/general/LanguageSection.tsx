@@ -4,12 +4,10 @@ import { updateLocale } from '@proton/shared/lib/api/settings';
 import { getBrowserLocale, getClosestLocaleCode } from '@proton/shared/lib/i18n/helper';
 import { loadDateLocale, loadLocale } from '@proton/shared/lib/i18n/loadLocale';
 import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
-import { HolidaysCalendarsModel } from '@proton/shared/lib/models';
 
 import { Option, SelectTwo } from '../../components';
 import {
     useApi,
-    useCache,
     useConfig,
     useEventManager,
     useForceRefresh,
@@ -32,22 +30,12 @@ const LanguageSection = ({ locales = {} }: Props) => {
     const [userSettings] = useUserSettings();
     const { createNotification } = useNotifications();
     const [loading, withLoading] = useLoading();
-    const cache = useCache();
     const forceRefresh = useForceRefresh();
 
     const options = Object.keys(LOCALES).map((value) => ({
         title: LOCALES[value],
         value,
     }));
-
-    const refresh = () => {
-        // holidays calendars are fetched translated from back-end, so when language is changed
-        // we need to delete the cache key so that on next holidays calendar modal opening,
-        // cache will be missed and calendars will be fetched in the new language
-        cache.delete(HolidaysCalendarsModel.key);
-
-        forceRefresh();
-    };
 
     const handleChange = async (locale: string) => {
         await api(updateLocale(locale));
@@ -58,7 +46,7 @@ const LanguageSection = ({ locales = {} }: Props) => {
         ]);
         await call();
         createNotification({ text: c('Success').t`Locale updated` });
-        refresh();
+        forceRefresh();
     };
 
     const displayedValue = getClosestLocaleCode(userSettings?.Locale, locales);
@@ -76,7 +64,7 @@ const LanguageSection = ({ locales = {} }: Props) => {
                     value={displayedValue}
                     disabled={loading}
                     onChange={({ value }) => {
-                        void withLoading(handleChange(value));
+                        withLoading(handleChange(value));
                     }}
                     aria-describedby="label-languageSelect"
                 >
