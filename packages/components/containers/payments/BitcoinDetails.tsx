@@ -1,4 +1,8 @@
+import { HTMLAttributes } from 'react';
+
 import { c } from 'ttag';
+
+import clsx from '@proton/utils/clsx';
 
 import { Copy } from '../../components';
 
@@ -7,27 +11,39 @@ export interface Props {
     address: string;
 }
 
+const BitcoinDetailsLine = ({
+    label,
+    value,
+    fieldClassName: className,
+    ...rest
+}: {
+    label: string;
+    value: string;
+    fieldClassName?: string;
+} & HTMLAttributes<HTMLElement>) => {
+    return (
+        <>
+            <div className="text-rg text-semibold mb-1">{label}</div>
+            <div
+                className={clsx(
+                    'rounded bg-weak py-1 px-3 flex flex-justify-space-between flex-align-items-center',
+                    className
+                )}
+            >
+                <span {...rest}>{value}</span>
+                <Copy value={`${value}`} shape="ghost" size="small" />
+            </div>
+        </>
+    );
+};
+
 const BitcoinDetails = ({ amount, address }: Props) => {
     return (
         <div>
             {amount ? (
-                <>
-                    <div className="flex flex-nowrap flex-align-items-center p-4 border-bottom">
-                        <span className="flex-item-noshrink">{c('Label').t`BTC amount:`}</span>
-                        <strong className="ml-1 mr-4 text-ellipsis" title={`${amount}`}>
-                            {amount}
-                        </strong>
-                        <Copy value={`${amount}`} />
-                    </div>
-                </>
+                <BitcoinDetailsLine label={c('Label').t`BTC amount`} value={`${amount}`} fieldClassName="mb-4" />
             ) : null}
-            <div className="flex max-w100 flex-nowrap flex-align-items-center p-4 border-bottom">
-                <span className="flex-item-noshrink">{c('Label').t`BTC address:`}</span>
-                <strong className="ml-1 mr-4 text-ellipsis" title={address} data-testid="btc-address">
-                    {address}
-                </strong>
-                <Copy value={address} />
-            </div>
+            <BitcoinDetailsLine label={c('Label').t`BTC address`} value={address} data-testid="btc-address" />
         </div>
     );
 };

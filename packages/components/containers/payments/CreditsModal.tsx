@@ -6,7 +6,15 @@ import { Button, Href } from '@proton/atoms';
 import usePaymentToken from '@proton/components/containers/payments/usePaymentToken';
 import { PAYMENT_METHOD_TYPES } from '@proton/components/payments/core';
 import { buyCredit } from '@proton/shared/lib/api/payments';
-import { APPS, DEFAULT_CREDITS_AMOUNT, DEFAULT_CURRENCY, MIN_CREDIT_AMOUNT } from '@proton/shared/lib/constants';
+import {
+    APPS,
+    DEFAULT_CREDITS_AMOUNT,
+    DEFAULT_CURRENCY,
+    MAX_BITCOIN_AMOUNT,
+    MIN_BITCOIN_AMOUNT,
+    MIN_CREDIT_AMOUNT,
+} from '@proton/shared/lib/constants';
+import { wait } from '@proton/shared/lib/helpers/promise';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { Currency } from '@proton/shared/lib/interfaces';
 
@@ -52,13 +60,24 @@ const CreditsModal = (props: ModalProps) => {
     const i18n = getCurrenciesI18N();
     const i18nCurrency = i18n[currency];
 
+    const [bitcoinValidated, setBitcoinValidated] = useState(false);
+
+    const exitSuccess = async () => {
+        props.onClose?.();
+        createNotification({ text: c('Success').t`Credits added` });
+    };
+
+    const handleChargableToken = async (tokenPaymentMethod: TokenPaymentMethod) => {
+        const amountAndCurrency: AmountAndCurrency = { Amount: debouncedAmount, Currency: currency };
+        await api(buyCredit({ ...tokenPaymentMethod, ...amountAndCurrency }));
+        await call();
+    };
+
     const handleSubmit = async (params: TokenPaymentMethod | WrappedCardPayment | ExistingPayment) => {
         const amountAndCurrency: AmountAndCurrency = { Amount: debouncedAmount, Currency: currency };
         const tokenPaymentMethod = await createPaymentToken(params, { amountAndCurrency });
-        await api(buyCredit({ ...tokenPaymentMethod, ...amountAndCurrency }));
-        await call();
-        props.onClose?.();
-        createNotification({ text: c('Success').t`Credits added` });
+        await handleChargableToken(tokenPaymentMethod);
+        exitSuccess();
     };
 
     const { card, setCard, cardErrors, handleCardSubmit, method, setMethod, parameters, canPay, paypal, paypalCredit } =
@@ -68,10 +87,17 @@ const CreditsModal = (props: ModalProps) => {
             onPaypalPay: handleSubmit,
         });
 
+    const bitcoinAmountInRange =
+        (debouncedAmount >= MIN_BITCOIN_AMOUNT && debouncedAmount <= MAX_BITCOIN_AMOUNT) ||
+        method !== PAYMENT_METHOD_TYPES.BITCOIN;
+
     const submit =
-        debouncedAmount >= MIN_CREDIT_AMOUNT ? (
+        debouncedAmount >= MIN_CREDIT_AMOUNT && bitcoinAmountInRange ? (
             method === PAYMENT_METHOD_TYPES.PAYPAL ? (
                 <StyledPayPalButton paypal={paypal} amount={debouncedAmount} data-testid="paypal-button" />
+            ) : method === PAYMENT_METHOD_TYPES.BITCOIN ? (
+                <PrimaryButton loading={!bitcoinValidated} disabled={true} data-testid="top-up-button">{c('Info')
+                    .t`Awaiting transaction`}</PrimaryButton>
             ) : (
                 <PrimaryButton loading={loading} disabled={!canPay} type="submit" data-testid="top-up-button">{c(
                     'Action'
@@ -130,6 +156,11 @@ const CreditsModal = (props: ModalProps) => {
                     paypal={paypal}
                     paypalCredit={paypalCredit}
                     noMaxWidth
+                    onBitcoinTokenValidated={async (data) => {
+                        setBitcoinValidated(true);
+                        await handleChargableToken(data);
+                        wait(2000).then(() => exitSuccess());
+                    }}
                 />
             </ModalTwoContent>
 
