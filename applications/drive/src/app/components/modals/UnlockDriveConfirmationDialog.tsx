@@ -26,9 +26,8 @@ const UnlockDriveConfirmationDialog = ({ onClose = noop, onSubmit = noop, ...mod
             <ModalTwoHeader title={c('Label').t`Unlock drive`} />
             <ModalTwoContent onSubmit={() => onSubmit()}>
                 <p>
-                    {c('Info').t`Because ${DRIVE_APP_NAME} is end-to-end encrypted, we cannot access
-                        or decrypt your files for you. To unlock your drive after a password reset,
-                        you must have one of the following:`}
+                    {c('Info')
+                        .t`Because ${DRIVE_APP_NAME} is end-to-end encrypted, we cannot access or decrypt your files for you. To unlock your drive after a password reset, you must have one of the following:`}
                 </p>
                 <ul>
                     <li>{c('Info').t`Your previous password`}</li>
@@ -36,8 +35,8 @@ const UnlockDriveConfirmationDialog = ({ onClose = noop, onSubmit = noop, ...mod
                     <li>{c('Info').t`Your previous recovery phrase`}</li>
                 </ul>
                 <p>
-                    {c('Info').t`If you have one of these, continue to ${BRAND_NAME} Account setting to
-                            start the unblock process.`}
+                    {c('Info')
+                        .t`If you have one of these, continue to ${BRAND_NAME} Account setting to start the unblock process.`}
                 </p>
             </ModalTwoContent>
             <ModalTwoFooter>

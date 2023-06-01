@@ -23,8 +23,7 @@ export const getDriveAppRoutes = () => {
                 to: '/version-history',
                 icon: 'clock-rotate-left',
                 description: c('Info')
-                    .t`To ensure you don’t lose important data, ${DRIVE_APP_NAME} saves older versions of your files as you
-                        and your collaborators make changes. Select how long ${BRAND_NAME} should keep previous versions.`,
+                    .t`To ensure you don’t lose important data, ${DRIVE_APP_NAME} saves older versions of your files as you and your collaborators make changes. Select how long ${BRAND_NAME} should keep previous versions.`,
                 subsections: [
                     {
                         id: 'history',
