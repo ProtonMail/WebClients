@@ -250,6 +250,13 @@ const countriesByAbbr = COUNTRIES.reduce<{ [key: string]: string }>(
 
 export const getCountryByAbbr = (abbr: string) => countriesByAbbr[abbr];
 export const correctAbbr = (abbr: string) => (abbr === 'UK' ? 'GB' : abbr);
-export const getFullList = () => TOP_COUNTRIES.concat([DEFAULT_SEPARATOR], COUNTRIES);
+export const getFullList = () =>
+    TOP_COUNTRIES.concat([DEFAULT_SEPARATOR], COUNTRIES) as [
+        {
+            value: string;
+            label: string;
+            disabled?: boolean;
+        }
+    ];
 export const getList = () => COUNTRIES;
 export const getFirstTop = () => TOP_COUNTRIES[0];
