@@ -10,6 +10,37 @@ interface Props extends Omit<InputProps, 'onChange' | 'onValue'> {
     onChange: (value: { month: string; year: string }) => void;
 }
 
+export const handleExpOnChange = (newValue: string, prevMonth: string, prevYear: string) => {
+    const [newMonth = '', newYear = ''] = newValue.split('/');
+
+    if (newValue.includes('/')) {
+        return {
+            month: isValidMonth(newMonth) ? newMonth : prevMonth,
+            year: isValidYear(newYear) ? newYear : prevYear,
+        };
+    }
+
+    if (newMonth.length > 2) {
+        // User removes the '/'
+        return;
+    }
+
+    if (prevMonth.length === 2) {
+        // User removes the '/' and year is empty
+        const [first = ''] = newMonth;
+        return {
+            year: '',
+            month: isValidMonth(first) ? first : prevMonth,
+        };
+    }
+
+    const [first = '', second = ''] = newMonth;
+    return {
+        year: '',
+        month: isValidMonth(`${first}${second}`) ? `${first}${second}` : prevMonth,
+    };
+};
+
 const ExpInput = ({ month, year, onChange, ...rest }: Props) => {
     return (
         <Input
@@ -17,36 +48,10 @@ const ExpInput = ({ month, year, onChange, ...rest }: Props) => {
             autoComplete="cc-exp"
             maxLength={5}
             onChange={({ target }) => {
-                const [newMonth = '', newYear = ''] = target.value.split('/');
-
-                if (target.value.includes('/')) {
-                    onChange({
-                        month: isValidMonth(newMonth) ? newMonth : month,
-                        year: isValidYear(newYear) ? newYear : year,
-                    });
-                    return;
+                const change = handleExpOnChange(target.value, month, year);
+                if (change) {
+                    onChange(change);
                 }
-
-                if (newMonth.length > 2) {
-                    // User removes the '/'
-                    return;
-                }
-
-                if (month.length === 2) {
-                    // User removes the '/' and year is empty
-                    const [first = ''] = newMonth;
-                    onChange({
-                        year: '',
-                        month: isValidMonth(first) ? first : month,
-                    });
-                    return;
-                }
-
-                const [first = '', second = ''] = newMonth;
-                onChange({
-                    year: '',
-                    month: isValidMonth(`${first}${second}`) ? `${first}${second}` : month,
-                });
             }}
             {...rest}
         />
