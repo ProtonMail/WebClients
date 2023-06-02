@@ -27,8 +27,8 @@ import {
     FREE_PASS_ALIASES,
     FREE_VAULTS,
     PASS_PLUS_VAULTS,
+    getCustomFields,
     getDevices,
-    getForwardingMailboxes,
     getHideMyEmailAliases,
     getLoginsAndNotes,
     getVaults,
@@ -244,7 +244,7 @@ const SubscriptionPanel = ({
         const items: Item[] = [
             getHideMyEmailAliases('unlimited'),
             getVaults(PASS_PLUS_VAULTS),
-            getForwardingMailboxes('up to 5'),
+            getCustomFields(),
             getLoginsAndNotes(),
             getDevices(),
         ];
