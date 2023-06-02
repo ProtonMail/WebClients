@@ -18,3 +18,18 @@
 	color: white;
 	font-family: 'ABC Arizona', system-ui, sans-serif;
 }
+
+.video-responsive-wrapper {
+	position: relative;
+	padding-block-end: 40%;
+	block-size: 0;
+	inline-size: 100%;
+}
+
+.video-responsive-wrapper iframe {
+	position: absolute;
+	inset-block-start: 0;
+	inset-inline-start: 0;
+	inline-size: 100%;
+	block-size: 100%;
+}
