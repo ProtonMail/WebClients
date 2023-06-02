@@ -13,6 +13,7 @@ export interface InputProps extends Omit<ComponentPropsWithRef<'input'>, 'prefix
     containerRef?: Ref<HTMLDivElement>;
     containerProps?: ComponentPropsWithRef<'div'>;
     inputClassName?: string;
+    prefixClassName?: string;
 }
 
 const InputBase = (props: InputProps, ref: Ref<HTMLInputElement>) => {
@@ -27,6 +28,7 @@ const InputBase = (props: InputProps, ref: Ref<HTMLInputElement>) => {
         containerProps,
         containerRef,
         inputClassName,
+        prefixClassName,
         className: classNameProp,
         ...rest
     } = props;
@@ -46,7 +48,10 @@ const InputBase = (props: InputProps, ref: Ref<HTMLInputElement>) => {
         >
             {prefix && (
                 <div
-                    className="input-adornment ml-2 flex flex-align-items-center flex-item-noshrink flex-nowrap gap-2"
+                    className={clsx(
+                        'input-adornment ml-2 flex flex-align-items-center flex-item-noshrink flex-nowrap gap-2',
+                        prefixClassName
+                    )}
                     data-testid="input-prefix"
                 >
                     {prefix}
