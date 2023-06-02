@@ -14,7 +14,7 @@ import { OnboardingSuggestionContainer } from '../component/OnboardingSuggestion
 
 import './LoginSuccess.scss';
 
-const steps = [
+const getSteps = () => [
     {
         key: 'open',
         icon: '/assets/extension-menu.svg',
@@ -36,6 +36,7 @@ export const LoginSuccess: VFC = () => {
     const brandNameJSX = (
         <img src={passBrandText} className="ml-2 h-custom" style={{ '--height-custom': '28px' }} key="brand" alt="" />
     );
+    const steps = getSteps();
 
     return (
         <>
