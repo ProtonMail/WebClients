@@ -1,6 +1,8 @@
 import '@testing-library/jest-dom';
 import fetch from 'cross-fetch';
 
+import '@proton/testing/lib/mockMatchMedia';
+
 import './jest.mock';
 
 // Silence warnings on expect to throw https://github.com/testing-library/react-testing-library/issues/157
@@ -39,7 +41,6 @@ jest.mock('@proton/shared/lib/i18n/dateFnLocales', () => ({
 jest.mock('@proton/shared/lib/pow/wasmWorkerWrapper.ts', () => ({
     __esModule: true,
 }));
-
 
 /**
  * Due to a JSDom issue `dialog` tag is not understood correctly
