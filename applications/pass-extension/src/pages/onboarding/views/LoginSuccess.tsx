@@ -18,51 +18,51 @@ import { OnboardingSuggestionContainer } from '../component/OnboardingSuggestion
 
 import './LoginSuccess.scss';
 
+const steps = [
+    {
+        key: 'open',
+        icon: '/assets/extension-menu.svg',
+        description: c('Info').t`Open the Extensions menu`,
+    },
+    {
+        key: 'pin',
+        icon: '/assets/extension-pin.svg',
+        description: c('Info').t`Pin ${PASS_APP_NAME} to your toolbar`,
+    },
+    {
+        key: 'access',
+        icon: '/assets/protonpass-icon.svg',
+        description: c('Info').t`Access ${PASS_APP_NAME} via this icon`,
+    },
+];
+
+const features: {
+    key: string;
+    icon: IconName;
+    description: string;
+    colorClass?: 'ui-note' | 'ui-alias' | 'ui-login';
+}[] = [
+    {
+        key: 'vaults',
+        icon: 'pass-circles',
+        description: c('Info').t`Multiple vaults`,
+        colorClass: 'ui-note',
+    },
+    {
+        key: '2fa',
+        icon: 'lock',
+        description: c('Info').t`Integrated 2FA authenticator`,
+        colorClass: 'ui-login',
+    },
+    {
+        key: 'customFields',
+        icon: 'list-bullets',
+        description: c('Info').t`Custom fields`,
+        colorClass: 'ui-alias',
+    },
+];
+
 export const LoginSuccess: VFC = () => {
-    const steps = [
-        {
-            key: 'open',
-            icon: '/assets/extension-menu.svg',
-            description: c('Info').t`Open the Extensions menu`,
-        },
-        {
-            key: 'pin',
-            icon: '/assets/extension-pin.svg',
-            description: c('Info').t`Pin ${PASS_APP_NAME} to your toolbar`,
-        },
-        {
-            key: 'access',
-            icon: '/assets/protonpass-icon.svg',
-            description: c('Info').t`Access ${PASS_APP_NAME} via this icon`,
-        },
-    ];
-
-    const features: {
-        key: string;
-        icon: IconName;
-        description: string;
-        colorClass?: 'ui-note' | 'ui-alias' | 'ui-login';
-    }[] = [
-        {
-            key: 'vaults',
-            icon: 'pass-circles',
-            description: c('Info').t`Multiple vaults`,
-            colorClass: 'ui-note',
-        },
-        {
-            key: '2fa',
-            icon: 'lock',
-            description: c('Info').t`Integrated 2FA authenticator`,
-            colorClass: 'ui-login',
-        },
-        {
-            key: 'customFields',
-            icon: 'list-bullets',
-            description: c('Info').t`Custom fields`,
-            colorClass: 'ui-alias',
-        },
-    ];
-
     const brandNameJSX = (
         <img src={passBrandText} className="ml-2 h-custom" style={{ '--height-custom': '28px' }} key="brand" alt="" />
     );
@@ -72,40 +72,40 @@ export const LoginSuccess: VFC = () => {
             <ExtensionHead title={c('Title').t`Thank you for installing ${PASS_APP_NAME}`} />
             <div className="pass-lobby ui-standard w100 min-h-custom mw" style={{ '--min-height-custom': '100vh' }}>
                 <div className="m-auto w100 p-14 color-norm pass-gradient-background">
-                    <div className=" text-bold flex flex-column flex-align-items-center">
-                        <div className="flex flex-align-items-center gap-2 mb-12">
+                    <div className="onboarding-header-text text-bold flex flex-column flex-align-items-center">
+                        <div className="flex flex-align-items-center gap-2 mb-10">
                             {
                                 <img
                                     src="/assets/protonpass-icon.svg"
                                     className="h-custom"
                                     style={{ '--height-custom': '24px' }}
-                                    alt=""
+                                    alt={PASS_APP_NAME}
                                 />
                             }
                             <h3 className="">{brandNameJSX}</h3>
                         </div>
-                        <h1 className="pass-onboarding--heading mb-12">
+                        <h1 className="pass-onboarding--heading mb-8">
                             {c('Title').jt`The extension is now ready to use.`}
                         </h1>
-                        <h2 className="h3 mb-12">
+                        <h2 className="h3 mb-8">
                             {c('Info').t`Below, you will find all the necessary information to get you started.`}
                         </h2>
                     </div>
 
-                    <div className="flex flex-justify-center flex-nowrap on-tablet-flex-column gap-4">
+                    <div className="flex flex-justify-center flex-nowrap on-tablet-flex-column gap-6">
                         {/* left section */}
-                        <div className="flex flex-column">
+                        <div className="flex flex-column gap-6">
                             {/* left section upper subsection */}
-                            <div className="flex flex-nowrap on-mobile-flex-column gap-4">
+                            <div className="flex flex-nowrap on-mobile-flex-column gap-6">
                                 <OnboardingSuggestionContainer
                                     title={c('Title').t`Discover ${PASS_APP_NAME}`}
                                     icon="star"
-                                    className="mb-6 flex-item-fluid"
+                                    className="flex-item-fluid"
                                 >
-                                    <div className="w100">
+                                    <div className="w100" style={{ height: '75%' }}>
                                         <iframe
                                             className="w100 h100"
-                                            src="https://www.youtube.com/embed/Nbf8CgwvFr8"
+                                            src="https://www.youtube.com/embed/Nm4DCAjePOM"
                                             title={c('Info').t`Discover ${PASS_APP_NAME} Youtube Video`}
                                             allowFullScreen
                                         ></iframe>
@@ -114,9 +114,9 @@ export const LoginSuccess: VFC = () => {
                                 <OnboardingSuggestionContainer
                                     title={c('Title').t`Get the most out of Pass`}
                                     icon="star"
-                                    className="mb-6 flex-item-fluid"
+                                    className="flex-item-fluid"
                                 >
-                                    <Card className="w100">
+                                    <Card className="w100" rounded>
                                         <ol className="unstyled m-0">
                                             {features.map(({ key, icon, description, colorClass }, idx) => (
                                                 <Fragment key={key}>
@@ -126,7 +126,7 @@ export const LoginSuccess: VFC = () => {
                                                             'flex flex-align-items-center'
                                                         )}
                                                     >
-                                                        <div className="w40p mr-2" aria-hidden="true">
+                                                        <div className="w40p" aria-hidden="true">
                                                             <Icon
                                                                 name={icon}
                                                                 className={clsx('h-custom', colorClass)}
@@ -151,7 +151,7 @@ export const LoginSuccess: VFC = () => {
                                 </OnboardingSuggestionContainer>
                             </div>
                             {/* left section lower subsection */}
-                            <div className="flex flex-nowrap on-mobile-flex-column gap-4">
+                            <div className="flex flex-nowrap on-mobile-flex-column gap-6">
                                 <OnboardingSuggestionContainer
                                     title={c('Title').t`Switching to Pass?`}
                                     icon="arrow-up-line"
@@ -180,7 +180,7 @@ export const LoginSuccess: VFC = () => {
                                 >
                                     <img src="/assets/onboarding-mobile.png" alt="" />
                                     <div>{c('Info').t`Access your passwords on the go with our mobile apps.`}</div>
-                                    <div className="flex gap-4">
+                                    <div className="flex gap-6">
                                         <Href href="https://play.google.com/store/apps/details?id=proton.android.pass">
                                             <img
                                                 width="140"
@@ -222,7 +222,7 @@ export const LoginSuccess: VFC = () => {
                                                     >
                                                         <span className="absolute absolute-center">{idx + 1}</span>
                                                     </div>
-                                                    <div className="w40p mr-2" aria-hidden="true">
+                                                    <div className="w40p mr-1" aria-hidden="true">
                                                         <img
                                                             src={icon}
                                                             className="h-custom"
