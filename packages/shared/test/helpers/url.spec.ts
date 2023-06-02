@@ -11,6 +11,7 @@ import {
     getStaticURL,
     isAppFromURL,
     isValidHttpUrl,
+    stringifySearchParams,
 } from '../../lib/helpers/url';
 
 const mailUrl = 'https://mail.proton.me';
@@ -123,5 +124,26 @@ describe('formatURLForAjaxRequest', () => {
         mockWindowLocation({ href: `${mailUrl}${randomParam}` });
 
         expect(formatURLForAjaxRequest().search).toEqual(`${randomParam}&${ajaxParam}`);
+    });
+});
+
+describe('stringifySearchParams()', () => {
+    it('should not stringify empty values', () => {
+        expect(
+            stringifySearchParams({
+                plan: '',
+                currency: undefined,
+            })
+        ).toBe('');
+    });
+
+    it('should not stringify empty values with value', () => {
+        expect(
+            stringifySearchParams({
+                plan: '',
+                currency: undefined,
+                coupon: 'test',
+            })
+        ).toBe('coupon=test');
     });
 });

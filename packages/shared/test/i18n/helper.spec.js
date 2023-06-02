@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { DEFAULT_LOCALE } from '../../lib/constants';
 import { getDateFnLocaleWithTimeFormat } from '../../lib/i18n/dateFnLocale';
-import { getClosestLocaleMatch, getLanguageCode } from '../../lib/i18n/helper';
+import { getClosestLocaleMatch, getLanguageCode, getNaiveCountryCode } from '../../lib/i18n/helper';
 import { loadDateLocale, loadLocale } from '../../lib/i18n/loadLocale';
 import { SETTINGS_TIME_FORMAT } from '../../lib/interfaces';
 
@@ -143,5 +143,21 @@ describe('Load date locales', () => {
                 locale: getDateFnLocaleWithTimeFormat(cnLocale, true),
             })
         ).toBe('上午 12:00');
+    });
+});
+
+describe('getNaiveCountryCode()', () => {
+    it('should return undefined when passed the empty string', () => {
+        expect(getNaiveCountryCode('')).toBeUndefined();
+    });
+
+    it('should return undefined when the country part is not present', () => {
+        expect(getNaiveCountryCode('en')).toBeUndefined();
+    });
+
+    it('should return the correct country code (in lowercase) for various locale spellings', () => {
+        expect(getNaiveCountryCode('en-US')).toEqual('us');
+        expect(getNaiveCountryCode('es-ar')).toEqual('ar');
+        expect(getNaiveCountryCode('fr_BE')).toEqual('be');
     });
 });
