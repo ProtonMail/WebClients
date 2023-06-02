@@ -27,20 +27,22 @@ export const findBoundingInputElement = (el: HTMLElement): HTMLElement => {
         if (labelChildrenOverlap && border > 0) return label;
     }
 
+    const mb = pixelParser(getComputedStyle(el).marginBottom);
+    const mt = pixelParser(getComputedStyle(el).marginTop);
+
+    if (mb !== 0 || mt !== 0) return el;
+
     const parent = el.parentElement!;
 
     const hasTextNode = containsTextNode(parent);
     const hasOneChild = parent.childElementCount === 1;
     const childrenOverlap = allChildrenOverlap(parent, BOUNDING_ELEMENT_MAX_OFFSET);
-    const mb = pixelParser(getComputedStyle(parent).marginBottom);
-    const mt = pixelParser(getComputedStyle(parent).marginTop);
-    const parentHasMargin = mb !== 0 || mt !== 0;
 
     if (!hasTextNode && (hasOneChild || childrenOverlap)) {
         /* if parent has margin break from recursion to avoid
          * resolving a bounding box that would not contain the
          * necessary styles information to account for the offsets */
-        return parentHasMargin ? parent : findBoundingInputElement(parent);
+        return findBoundingInputElement(parent);
     }
 
     return el;
