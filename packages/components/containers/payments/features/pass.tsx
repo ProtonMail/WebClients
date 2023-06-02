@@ -69,14 +69,11 @@ export const getVaults = (n: number): PlanCardFeatureDefinition => {
     };
 };
 
-export const getForwardingMailboxes = (n: number | 'up to 5'): PlanCardFeatureDefinition => {
+export const getCustomFields = (): PlanCardFeatureDefinition => {
     return {
-        text:
-            n === 'up to 5'
-                ? c('new_plans: feature').t`Up to 5 forwarding mailboxes`
-                : c('new_plans: feature').ngettext(msgid`${n} forwarding mailbox`, `${n} forwarding mailboxes`, n),
+        text: c('new_plans: feature').t`Custom fields`,
         included: true,
-        icon: 'envelope-arrow-up-and-right',
+        icon: 'pen-square',
     };
 };
 
@@ -104,7 +101,6 @@ export const getDataBreachMonitoring = (included: boolean = false): PlanCardFeat
 
 export const FREE_PASS_ALIASES = 10;
 export const FREE_VAULTS = 1;
-export const FREE_FORWARDING_MAILBOXES = 1;
 
 export const PASS_PLUS_VAULTS = 20;
 
@@ -183,15 +179,15 @@ export const getPassFeatures = (): PlanCardFeature[] => {
         {
             name: 'forwarding-mailboxes',
             plans: {
-                [PLANS.FREE]: getForwardingMailboxes(FREE_FORWARDING_MAILBOXES),
-                [PLANS.BUNDLE]: getForwardingMailboxes('up to 5'),
-                [PLANS.MAIL]: getForwardingMailboxes(FREE_FORWARDING_MAILBOXES),
-                [PLANS.VPN]: getForwardingMailboxes(FREE_FORWARDING_MAILBOXES),
-                [PLANS.DRIVE]: getForwardingMailboxes(FREE_FORWARDING_MAILBOXES),
-                [PLANS.PASS_PLUS]: getForwardingMailboxes('up to 5'),
-                [PLANS.FAMILY]: getForwardingMailboxes(FREE_FORWARDING_MAILBOXES),
-                [PLANS.MAIL_PRO]: getForwardingMailboxes(FREE_FORWARDING_MAILBOXES),
-                [PLANS.BUNDLE_PRO]: getForwardingMailboxes('up to 5'),
+                [PLANS.FREE]: getCustomFields(),
+                [PLANS.BUNDLE]: getCustomFields(),
+                [PLANS.MAIL]: getCustomFields(),
+                [PLANS.VPN]: getCustomFields(),
+                [PLANS.DRIVE]: getCustomFields(),
+                [PLANS.PASS_PLUS]: getCustomFields(),
+                [PLANS.FAMILY]: getCustomFields(),
+                [PLANS.MAIL_PRO]: getCustomFields(),
+                [PLANS.BUNDLE_PRO]: getCustomFields(),
             },
         },
         {
