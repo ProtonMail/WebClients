@@ -37,8 +37,7 @@ const DeleteLockedVolumesConfirmModal = ({
     const warningTitle = c('Label').t`This will permanently delete all files in your locked drive.`;
     const warningInfo = c('Info')
         .t`Note: data may still be available locally on devices where you have installed ${DRIVE_APP_NAME}.`;
-    const confirmationText = c('Label').t`Yes, I want to permanently delete
-        my old files`;
+    const confirmationText = c('Label').t`Yes, I want to permanently delete my old files`;
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setIsChecked(e.target.checked);
