@@ -100,6 +100,7 @@ export enum FeatureCode {
     ProtonSentinel = 'ProtonSentinel',
     AccessibilitySettings = 'AccessibilitySettings',
     OrgTwoFactor = 'OrgTwoFactor',
+    UnreadFavicon = 'UnreadFavicon',
 }
 
 export interface FeaturesContextValue {

@@ -217,6 +217,12 @@ export const updateHideSenderImages = (HideSenderImages: number) => ({
     data: { HideSenderImages },
 });
 
+export const updateDisplayUnreadFavicon = (UnreadFavicon: number) => ({
+    url: 'mail/v4/settings/unread-favicon',
+    method: 'put',
+    data: { UnreadFavicon },
+});
+
 export const updateAutoDelete = (AutoDeleteSpamAndTrashDays: AutoDeleteSpamAndTrashDaysSetting) => ({
     url: 'mail/v4/settings/auto-delete-spam-and-trash-days',
     method: 'put',
