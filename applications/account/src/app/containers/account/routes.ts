@@ -10,7 +10,7 @@ import {
     REFERRAL_PROGRAM_MAX_AMOUNT,
 } from '@proton/shared/lib/constants';
 import { humanPriceWithCurrency } from '@proton/shared/lib/helpers/humanPrice';
-import { Organization, UserModel, UserType } from '@proton/shared/lib/interfaces';
+import { Member, Organization, UserModel, UserType } from '@proton/shared/lib/interfaces';
 import { isOrganizationFamily, isOrganizationVisionary } from '@proton/shared/lib/organization/helper';
 
 import { recoveryIds } from './recoveryIds';
@@ -23,6 +23,7 @@ export const getAccountAppRoutes = ({
     isGmailSyncEnabled,
     organization,
     isProtonSentinelEligible,
+    members,
 }: {
     user: UserModel;
     isDataRecoveryAvailable: boolean;
@@ -31,8 +32,10 @@ export const getAccountAppRoutes = ({
     recoveryNotification?: ThemeColor;
     organization?: Organization;
     isProtonSentinelEligible: boolean;
+    members: Member[];
 }) => {
-    const { isFree, canPay, isPaid, isPrivate, isMember, Currency, Type, isAdmin } = user;
+    const { isFree, canPay, isPaid, isPrivate, isMember, Currency, Type } = user;
+    const isSuperAdmin = members.some(({ Self, Subscriber }) => Self && Subscriber);
 
     const credits = humanPriceWithCurrency(REFERRAL_PROGRAM_MAX_AMOUNT, Currency || DEFAULT_CURRENCY);
     const isExternal = Type === UserType.EXTERNAL;
@@ -148,7 +151,7 @@ export const getAccountAppRoutes = ({
                             : c('familyOffer_2023: Title').t`Your account's benefits`,
                         id: 'family-plan',
                         // We don't want admin to leave the organization, they need first to be demoted
-                        available: (isFamilyPlan && !isAdmin) || (isVisionaryPlan && isMemberProton && !isAdmin),
+                        available: !isSuperAdmin && (isFamilyPlan || (isVisionaryPlan && isMemberProton)),
                     },
                     //Family members or Proton account that are part of Visionary don't have access to the dashboard, display the payment methods for them here
                     {
