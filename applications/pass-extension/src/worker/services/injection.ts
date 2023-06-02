@@ -12,9 +12,15 @@ import WorkerMessageBroker from '../channel';
 const withTabEffect =
     (fn: (tabId: TabId, frameId: Maybe<number>) => Promise<void>) =>
     async (_: any, { tab, frameId }: Runtime.MessageSender) => {
-        if (!tab?.id) return false;
-        await fn(tab.id, frameId);
-        return true;
+        try {
+            await (tab?.id && fn(tab.id, frameId));
+            return true;
+        } catch (_) {
+            /* in case the tab/frameId was discarded we may get an
+             * `Receiving end does not exist` error at this point -
+             * ignore it as the orchestrator will be re-injected */
+            return true;
+        }
     };
 
 export const createInjectionService = () => {
