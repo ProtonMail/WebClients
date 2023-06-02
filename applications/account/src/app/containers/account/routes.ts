@@ -147,7 +147,8 @@ export const getAccountAppRoutes = ({
                             ? c('familyOffer_2023:Title').t`Family plan`
                             : c('familyOffer_2023: Title').t`Your account's benefits`,
                         id: 'family-plan',
-                        available: (isFamilyPlan && !isAdmin) || (isVisionaryPlan && isMemberProton),
+                        // We don't want admin to leave the organization, they need first to be demoted
+                        available: (isFamilyPlan && !isAdmin) || (isVisionaryPlan && isMemberProton && !isAdmin),
                     },
                     //Family members or Proton account that are part of Visionary don't have access to the dashboard, display the payment methods for them here
                     {
