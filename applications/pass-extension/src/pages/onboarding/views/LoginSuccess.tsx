@@ -1,16 +1,12 @@
 import type { VFC } from 'react';
-import { Fragment } from 'react';
 
 import { c } from 'ttag';
 
-import { Card, Href } from '@proton/atoms';
+import { Href } from '@proton/atoms';
 import { Button } from '@proton/atoms/Button';
-import type { IconName } from '@proton/components';
-import { Icon } from '@proton/components';
-import { BRAND_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
+import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import appStoreSvg from '@proton/styles/assets/img/illustrations/app-store.svg';
 import playStoreSvg from '@proton/styles/assets/img/illustrations/play-store.svg';
-import clsx from '@proton/utils/clsx';
 
 import passBrandText from '../../../../public/assets/protonpass-brand.svg';
 import { ExtensionHead } from '../../../shared/components/page/ExtensionHead';
@@ -33,32 +29,6 @@ const steps = [
         key: 'access',
         icon: '/assets/protonpass-icon.svg',
         description: c('Info').t`Access ${PASS_APP_NAME} via this icon`,
-    },
-];
-
-const features: {
-    key: string;
-    icon: IconName;
-    description: string;
-    colorClass?: 'ui-note' | 'ui-alias' | 'ui-login';
-}[] = [
-    {
-        key: 'vaults',
-        icon: 'pass-circles',
-        description: c('Info').t`Multiple vaults`,
-        colorClass: 'ui-note',
-    },
-    {
-        key: '2fa',
-        icon: 'lock',
-        description: c('Info').t`Integrated 2FA authenticator`,
-        colorClass: 'ui-login',
-    },
-    {
-        key: 'customFields',
-        icon: 'list-bullets',
-        description: c('Info').t`Custom fields`,
-        colorClass: 'ui-alias',
     },
 ];
 
@@ -94,60 +64,21 @@ export const LoginSuccess: VFC = () => {
 
                     <div className="flex flex-justify-center flex-nowrap on-tablet-flex-column gap-6">
                         {/* left section */}
-                        <div className="flex flex-column gap-6">
+                        <div className="flex flex-nowrap flex-column gap-6">
                             {/* left section upper subsection */}
-                            <div className="flex flex-nowrap on-mobile-flex-column gap-6">
+                            <div className="flex flex-nowrap on-mobile-flex-column gap-6 flex-item-fluid-auto">
                                 <OnboardingSuggestionContainer
                                     title={c('Title').t`Discover ${PASS_APP_NAME}`}
                                     icon="star"
-                                    className="flex-item-fluid"
+                                    className="flex-item-fluid-auto"
                                 >
-                                    <div className="w100" style={{ height: '75%' }}>
+                                    <div className="video-responsive-wrapper">
                                         <iframe
-                                            className="w100 h100"
                                             src="https://www.youtube.com/embed/Nm4DCAjePOM"
                                             title={c('Info').t`Discover ${PASS_APP_NAME} Youtube Video`}
                                             allowFullScreen
                                         ></iframe>
                                     </div>
-                                </OnboardingSuggestionContainer>
-                                <OnboardingSuggestionContainer
-                                    title={c('Title').t`Get the most out of Pass`}
-                                    icon="star"
-                                    className="flex-item-fluid"
-                                >
-                                    <Card className="w100" rounded>
-                                        <ol className="unstyled m-0">
-                                            {features.map(({ key, icon, description, colorClass }, idx) => (
-                                                <Fragment key={key}>
-                                                    <li
-                                                        className={clsx(
-                                                            idx !== features.length - 1 && 'mb-4',
-                                                            'flex flex-align-items-center'
-                                                        )}
-                                                    >
-                                                        <div className="w40p" aria-hidden="true">
-                                                            <Icon
-                                                                name={icon}
-                                                                className={clsx('h-custom', colorClass)}
-                                                                style={{
-                                                                    '--height-custom': '24px',
-                                                                    color: 'var(--interaction-norm)',
-                                                                }}
-                                                            />
-                                                        </div>
-                                                        <div className="flex-item-fluid text-left">{description}</div>
-                                                    </li>
-                                                    {idx !== features.length - 1 && <hr className="my-2 border-weak" />}
-                                                </Fragment>
-                                            ))}
-                                        </ol>
-                                    </Card>
-                                    <div>{c('Info')
-                                        .t`Unlock all of these great features and more by upgrading to ${BRAND_NAME} Unlimited.`}</div>
-                                    <Button className="w100" pill shape="solid" color="norm">
-                                        {c('Action').t`Upgrade to Unlimited`}
-                                    </Button>
                                 </OnboardingSuggestionContainer>
                             </div>
                             {/* left section lower subsection */}
