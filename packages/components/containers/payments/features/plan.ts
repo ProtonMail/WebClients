@@ -22,8 +22,8 @@ import {
     FREE_VAULTS,
     PASS_PLUS_VAULTS,
     get2FAAuthenticator,
+    getCustomFields,
     getDevices,
-    getForwardingMailboxes,
     getHideMyEmailAliases,
     getLoginsAndNotes,
     getVaults,
@@ -119,7 +119,7 @@ export const getPassPlan = (plan: Plan): ShortPlan => {
             getVaults(PASS_PLUS_VAULTS),
             getHideMyEmailAliases('unlimited'),
             get2FAAuthenticator(true),
-            getForwardingMailboxes('up to 5'),
+            getCustomFields(),
             getSupport('priority'),
         ],
     };
