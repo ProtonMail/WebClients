@@ -1,5 +1,3 @@
-import type { Runtime } from 'webextension-polyfill';
-
 import type { MaybeNull } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
 
@@ -13,12 +11,10 @@ type IFrameServiceContext = {
         dropdown: MaybeNull<InjectedDropdown>;
         notification: MaybeNull<InjectedNotification>;
     };
-    port: MaybeNull<Runtime.Port>;
 };
 
 export const createIFrameService = () => {
     const ctx: IFrameServiceContext = {
-        port: null,
         apps: { dropdown: null, notification: null },
     };
 
@@ -27,10 +23,7 @@ export const createIFrameService = () => {
     const onAttached: <T extends IFrameAppService<any>>(app: T) => void = withContext(
         ({ getExtensionContext, getState }, app) => {
             const port = getExtensionContext().port;
-            if (port !== ctx.port) {
-                ctx.port = port;
-                app.init(port);
-            }
+            if (app.getState().port !== port) app.init(port);
             app.reset(getState());
         }
     );
@@ -77,7 +70,6 @@ export const createIFrameService = () => {
     const destroy = () => {
         detachDropdown();
         detachNotification();
-        ctx.port = null;
     };
 
     return {
