@@ -1,6 +1,8 @@
 import '@testing-library/jest-dom';
 import 'whatwg-fetch';
 
+import '@proton/testing/lib/mockMatchMedia';
+
 import ResizeObserver from './src/tests/mock/ResizeObserver';
 
 // Silence warnings on expect to throw https://github.com/testing-library/react-testing-library/issues/157
