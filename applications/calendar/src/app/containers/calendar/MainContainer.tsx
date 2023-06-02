@@ -18,7 +18,7 @@ import { CALENDAR_FLAGS } from '@proton/shared/lib/calendar/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 
 import { getIsCalendarAppInDrawer } from '../../helpers/views';
-import useFavicon from '../../hooks/useFavicon';
+import useCalendarFavicon from '../../hooks/useCalendarFavicon';
 import CalendarOnboardingContainer from '../setup/CalendarOnboardingContainer';
 import CalendarSetupContainer from '../setup/CalendarSetupContainer';
 import UnlockCalendarsContainer from '../setup/UnlockCalendarsContainer';
@@ -27,7 +27,7 @@ import { fromUrlParams } from './getUrlHelper';
 
 const MainContainer = () => {
     useTelemetryScreenSize();
-    useFavicon();
+    useCalendarFavicon();
 
     const [addresses] = useAddresses();
     const [calendars] = useCalendars();

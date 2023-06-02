@@ -2,7 +2,7 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { LabelCount } from '@proton/shared/lib/interfaces/Label';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
-import { updateCounters, updateCountersForMarkAs } from './counter';
+import { getCountersByLabelId, updateCounters, updateCountersForMarkAs } from './counter';
 
 describe('counters', () => {
     describe('updateCounters', () => {
@@ -139,6 +139,24 @@ describe('counters', () => {
             expect(inboxCounter?.Unread).toEqual(1);
             expect(archiveCounter?.Total).toEqual(1);
             expect(archiveCounter?.Unread).toEqual(1);
+        });
+    });
+
+    describe('getCountersByLabelId', () => {
+        it('should return a map of counters by labelId', () => {
+            const counters: LabelCount[] = [
+                { LabelID: MAILBOX_LABEL_IDS.INBOX, Total: 1, Unread: 1 },
+                { LabelID: MAILBOX_LABEL_IDS.OUTBOX, Total: 3, Unread: 0 },
+                { LabelID: MAILBOX_LABEL_IDS.SPAM, Total: 12, Unread: 0 },
+                { LabelID: MAILBOX_LABEL_IDS.ARCHIVE, Total: 0, Unread: 0 },
+            ];
+
+            expect(getCountersByLabelId(counters)).toEqual({
+                [MAILBOX_LABEL_IDS.INBOX]: { LabelID: MAILBOX_LABEL_IDS.INBOX, Total: 1, Unread: 1 },
+                [MAILBOX_LABEL_IDS.OUTBOX]: { LabelID: MAILBOX_LABEL_IDS.OUTBOX, Total: 3, Unread: 0 },
+                [MAILBOX_LABEL_IDS.SPAM]: { LabelID: MAILBOX_LABEL_IDS.SPAM, Total: 12, Unread: 0 },
+                [MAILBOX_LABEL_IDS.ARCHIVE]: { LabelID: MAILBOX_LABEL_IDS.ARCHIVE, Total: 0, Unread: 0 },
+            });
         });
     });
 });

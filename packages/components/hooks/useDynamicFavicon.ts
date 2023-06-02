@@ -1,24 +1,17 @@
 import { useEffect } from 'react';
 
-import useDynamicMonthDay from '@proton/components/hooks/useDynamicMonthDay';
-
-import favicons from '../../assets/favicons';
-
-const useFavicon = () => {
-    const onChangeMonthDay = () => {
+const useDynamicFavicon = (faviconSrc: string) => {
+    useEffect(() => {
         // Ensure all favicons are removed, otherwise chrome has trouble updating to the dynamic icon
         const links = document.querySelectorAll('link[rel="icon"]:not([data-dynamic-favicon]');
         links.forEach((link) => {
             link.remove();
         });
-    };
-    const monthDay = useDynamicMonthDay({ onChangeMonthDay });
 
-    useEffect(() => {
         const favicon = document.querySelector('link[rel="icon"][type="image/svg+xml"][data-dynamic-favicon]');
         // Add random param to force refresh
         const randomParameter = Math.random().toString(36).substring(2);
-        const href = `${favicons[monthDay]}?v=${randomParameter}`;
+        const href = `${faviconSrc}?v=${randomParameter}`;
 
         if (favicon) {
             favicon.setAttribute('href', href);
@@ -30,7 +23,7 @@ const useFavicon = () => {
             link.setAttribute('href', href);
             document.head.appendChild(link);
         }
-    }, [monthDay]);
+    }, [faviconSrc]);
 };
 
-export default useFavicon;
+export default useDynamicFavicon;

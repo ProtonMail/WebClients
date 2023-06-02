@@ -123,3 +123,4 @@ export * from './useWelcomeFlags';
 export { default as useWindowSize } from './useWindowSize';
 export { default as useSearchParamsEffect } from './useSearchParamsEffect';
 export * from './drawer';
+export { default as useDynamicFavicon } from './useDynamicFavicon';
