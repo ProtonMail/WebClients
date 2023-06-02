@@ -115,17 +115,17 @@ export const createFormManager = (options: FormManagerOptions) => {
     /* Detection :
      * - runs in `requestAnimationFrame` to defer costly DOM operations
      * - if a stale form has been detected: unsubscribe
-     * - on each detected form: recycle/create form handle and reconciliate
-     *   its fields */
+     * - on each detected form: recycle/create form handle and reconciliate its fields
+     * Returns a boolean flag indicating wether or not the detection was ran */
     const detect = debounce(
-        withContext<(reason: string) => Promise<any>>(async ({ service: { detector } }, reason: string) => {
-            if (ctx.busy || !ctx.active) return;
+        withContext<(reason: string) => Promise<boolean>>(async ({ service: { detector } }, reason: string) => {
+            if (ctx.busy || !ctx.active) return false;
             ctx.busy = true;
             garbagecollect();
 
             if (await detector.shouldRunDetection()) {
                 cancelAnimationFrame(ctx.detectionRequest);
-                return (ctx.detectionRequest = requestAnimationFrame(() => {
+                ctx.detectionRequest = requestAnimationFrame(() => {
                     if (ctx.active) {
                         logger.info(`[FormTracker::Detector]: Running detection for "${reason}"`);
                         const forms = detector.runDetection();
@@ -142,10 +142,12 @@ export const createFormManager = (options: FormManagerOptions) => {
                         void reconciliate();
                         ctx.busy = false;
                     }
-                }));
+                });
+                return true;
             }
 
-            return (ctx.busy = false);
+            ctx.busy = false;
+            return false;
         }),
         250,
         { leading: true }

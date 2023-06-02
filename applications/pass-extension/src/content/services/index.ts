@@ -100,10 +100,11 @@ export const createContentScriptClient = (scriptId: string, mainFrame: boolean) 
              * be triggered : destroy this content-script service */
             if (!mainFrame) return destroy({ reason: 'subframe discarded', recycle: false });
 
-            context.service.formManager.observe();
-            await context.service.formManager.detect('VisibilityChange');
-
             port.onMessage.addListener(onPortMessage);
+
+            context.service.formManager.observe();
+            const didDetect = await context.service.formManager.detect('InitialLoad');
+            if (!didDetect) await context.service.formManager.reconciliate();
         }
     };
 
