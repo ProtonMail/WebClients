@@ -78,4 +78,5 @@ export interface MailSettings {
     BlockSenderConfirmation: BLOCK_SENDER_CONFIRMATION | null;
     HideSenderImages: number;
     AutoDeleteSpamAndTrashDays: AutoDeleteSpamAndTrashDaysSetting;
+    UnreadFavicon: number;
 }

@@ -50,6 +50,7 @@ import { usePermanentDelete } from '../../hooks/actions/usePermanentDelete';
 import { ComposeTypes } from '../../hooks/composer/useCompose';
 import { useApplyEncryptedSearch } from '../../hooks/mailbox/useApplyEncryptedSearch';
 import { useElements, useGetElementsFromIDs } from '../../hooks/mailbox/useElements';
+import { useMailboxFavicon } from '../../hooks/mailbox/useMailboxFavicon';
 import { useMailboxFocus } from '../../hooks/mailbox/useMailboxFocus';
 import { useMailboxHotkeys } from '../../hooks/mailbox/useMailboxHotkeys';
 import { useMailboxPageTitle } from '../../hooks/mailbox/useMailboxPageTitle';
@@ -170,6 +171,7 @@ const MailboxContainer = ({
     const onCompose = useOnCompose();
 
     useMailboxPageTitle(labelID, location);
+    useMailboxFavicon(labelID, location);
     useScrollToTop(listRef as RefObject<HTMLElement>, [page, labelID, sort, filter, searchParameters]);
 
     const {
