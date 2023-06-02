@@ -49,7 +49,7 @@ export const createFieldIconHandle = ({ field }: CreateIconOptions): FieldIconHa
                 applyInjectionStyles({ input, wrapper, inputBox: field.getBoxElement(), icon });
             });
         },
-        250,
+        50,
         { leading: true }
     );
 
