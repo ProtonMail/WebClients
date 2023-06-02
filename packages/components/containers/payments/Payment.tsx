@@ -128,7 +128,12 @@ const Payment = ({
                     {method === PAYMENT_METHOD_TYPES.CARD && (
                         <>
                             <div ref={creditCardTopRef} />
-                            <CreditCard card={card} errors={cardErrors} onChange={onCard} />
+                            <CreditCard
+                                card={card}
+                                errors={cardErrors}
+                                onChange={onCard}
+                                newDesign={type === 'signup-pass'}
+                            />
                             {type !== 'signup' && <Alert3DS />}
                         </>
                     )}
