@@ -13,7 +13,7 @@ export const getLanguageCode = (locale = '') => {
 
 /**
  * Takes the second portion, e.g. nl_NL => nl, fr_CA => ca
- * ** Use only for the locale user setting (you are guaranteed to get an ISO_3166-1_alpha-2 country code for those) **
+ * ** Only for the locale user setting you are guaranteed to get an ISO_3166-1_alpha-2 country code. You may get undefined for other locale instances **
  */
 export const getNaiveCountryCode = (locale = '') => {
     return getNormalizedLocale(locale).split('_')[1];
