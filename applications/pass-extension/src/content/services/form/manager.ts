@@ -64,7 +64,7 @@ export const createFormManager = (options: FormManagerOptions) => {
         if (submission !== undefined) {
             const { status, partial, domain, type } = submission;
             const currentDomain = getExtensionContext().url.domain;
-            const formRemoved = !ctx.trackedForms.some(({ formType }) => formType === type);
+            const formRemoved = !getTrackedForms().some(({ formType }) => formType === type);
 
             const domainmatch = currentDomain === domain;
             const canCommit = domainmatch && formRemoved;

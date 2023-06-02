@@ -57,7 +57,7 @@ export const createFormHandles = (options: DetectedForm): FormHandle => {
 
             /* attach incoming new fields */
             fields.forEach(({ field, fieldType }) => {
-                if (formHandle.fields.get(field) === undefined) {
+                if (formHandle.fields.get(field) === undefined && fieldType !== FormField.NOOP) {
                     formHandle.fields.set(
                         field,
                         createFieldHandles({
