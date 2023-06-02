@@ -19,6 +19,7 @@ import {
     MessagesGeneralSection,
     MessagesOtherSection,
     MessagesSection,
+    OtherMailPreferencesSection,
     PmMeSection,
     PrivateMainAreaLoading,
     PrivateMainSettingsArea,
@@ -59,6 +60,7 @@ const MailSettingsRouter = ({
                         <LayoutsSection />
                         <MessagesSection />
                         <MessagesOtherSection />
+                        <OtherMailPreferencesSection />
                     </PrivateMainSettingsArea>
                 )}
             </Route>
