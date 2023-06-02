@@ -29,7 +29,7 @@ export const OnboardingSuggestionContainer: VFC<OnboardingSuggestionContainerPro
         <Card
             className={clsx('flex flex-column flex-align-items-start p-6 gap-3 border-none rounded-xl', classNameProp)}
         >
-            <div className="flex flex-align-items-center flex-nowrap gap-2">
+            <div className="flex flex-align-items-center flex-nowrap">
                 <div
                     className="pass-onboarding-icon h-custom w-custom rounded-50 text-center mr-3 relative"
                     aria-hidden="true"
