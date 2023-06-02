@@ -1,5 +1,5 @@
 import type { VFC } from 'react';
-import React from 'react';
+import { type ReactNode } from 'react';
 
 import { c } from 'ttag';
 
@@ -15,7 +15,7 @@ export type OnboardingSuggestionContainerProps = {
     icon?: IconName;
     iconPath?: string;
     className?: string;
-    children?: React.ReactNode;
+    children?: ReactNode;
 };
 
 export const OnboardingSuggestionContainer: VFC<OnboardingSuggestionContainerProps> = ({
@@ -27,10 +27,7 @@ export const OnboardingSuggestionContainer: VFC<OnboardingSuggestionContainerPro
 }) => {
     return (
         <Card
-            className={clsx(
-                'flex no-wrap flex-column flex-align-items-start p-6 gap-3 border-none rounded-xl',
-                classNameProp
-            )}
+            className={clsx('flex flex-column flex-align-items-start p-6 gap-3 border-none rounded-xl', classNameProp)}
         >
             <div className="flex flex-align-items-center flex-nowrap gap-2">
                 <div
