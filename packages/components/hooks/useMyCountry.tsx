@@ -5,6 +5,7 @@ import { findTimeZone } from '@protontech/timezone-support';
 import { getLocation } from '@proton/shared/lib/api/vpn';
 import { singleCountryTimezoneDatabase } from '@proton/shared/lib/date/singleCountryTimezoneDatabase';
 import { manualFindTimeZone } from '@proton/shared/lib/date/timezoneDatabase';
+import { getNaiveCountryCode } from '@proton/shared/lib/i18n/helper';
 import { Api, MyLocationResponse } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
@@ -29,8 +30,8 @@ const getCountryFromTimezone = () => {
     }
 };
 
-const getCountryFromLanguage = () => {
-    return navigator.languages.find((language) => language.indexOf('-') !== -1)?.split(/-/g)?.[1];
+export const getCountryFromLanguage = () => {
+    return getNaiveCountryCode(navigator.languages.find((language) => /[_-]/.test(language)));
 };
 
 const getMyCountry = async (api: Api) => {
