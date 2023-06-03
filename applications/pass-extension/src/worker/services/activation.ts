@@ -170,11 +170,10 @@ export const createActivationService = () => {
                 try {
                     if (message.sender === 'popup') {
                         const tab = await browser.tabs.get(tabId);
-                        const { domain } = parseUrl(tab.url ?? '');
-                        const items = ctx.service.autofill.getAutofillCandidates({
-                            domain: domain ?? '',
-                            subdomain: null,
-                        });
+                        const parsedUrl = parseUrl(tab.url ?? '');
+                        const { domain } = parsedUrl;
+
+                        const items = ctx.service.autofill.getAutofillCandidates(parsedUrl);
                         const hasAutofillCandidates = items.length > 0;
 
                         return {

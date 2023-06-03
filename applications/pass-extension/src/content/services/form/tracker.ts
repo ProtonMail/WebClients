@@ -1,5 +1,3 @@
-import { parse } from 'tldts';
-
 import { contentScriptMessage, sendMessage } from '@proton/pass/extension/message';
 import { fathom } from '@proton/pass/fathom';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
@@ -8,6 +6,7 @@ import { first } from '@proton/pass/utils/array';
 import { parseFormAction } from '@proton/pass/utils/dom';
 import { createListenerStore } from '@proton/pass/utils/listener';
 import { logger } from '@proton/pass/utils/logger';
+import { parseUrl } from '@proton/pass/utils/url';
 
 import { DETECTED_FORM_ID_ATTR, EMAIL_PROVIDERS } from '../../constants';
 import { withContext } from '../../context/context';
@@ -119,7 +118,7 @@ export const createFormTracker = (form: FormHandle): FormTracker => {
             }
 
             case FormType.REGISTER: {
-                const exclude = EMAIL_PROVIDERS.includes(parse(window.location.hostname)?.domain ?? '');
+                const exclude = EMAIL_PROVIDERS.includes(parseUrl(window.location.hostname)?.domain ?? '');
 
                 if (!exclude && username) {
                     results.set(username, {

@@ -1,7 +1,7 @@
 import { parse } from 'tldts';
 import type { Runtime } from 'webextension-polyfill';
 
-import type { MaybeNull } from '@proton/pass/types';
+import type { MaybeNull, TabId } from '@proton/pass/types';
 
 import { isValidURL } from './is-valid-url';
 
@@ -50,17 +50,12 @@ export const parseUrl = (url?: string): ParsedUrl => {
     };
 };
 
-export const parseSender = (sender: Runtime.MessageSender) => {
+export const parseSender = (sender: Runtime.MessageSender): { tabId: TabId; url: ParsedUrl } => {
     const { url, tab } = sender;
-    const { domain, subdomain } = parseUrl(url ?? '');
+    const parsedUrl = parseUrl(url ?? '');
     const tabId = tab?.id;
 
-    if (!domain || !tabId) throw new Error('unsupported sender');
+    if (!parsedUrl.domain || !tabId) throw new Error('unsupported sender');
 
-    return {
-        tabId,
-        domain,
-        subdomain,
-        url: url as string,
-    };
+    return { tabId, url: parsedUrl };
 };
