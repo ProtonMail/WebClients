@@ -19,6 +19,7 @@ import ViewModeToggle from '../layouts/ViewModeToggle';
 import AutoDeleteSetting from './AutoDeleteSetting';
 import EmbeddedToggle from './EmbeddedToggle';
 import RequestLinkConfirmationToggle from './RequestLinkConfirmationToggle';
+import SenderImagesToggle from './SenderImagesToggle';
 import ShowMovedToggle from './ShowMovedToggle';
 import SpamActionSelect from './SpamActionSelect';
 
@@ -164,6 +165,21 @@ const MessagesSection = () => {
                 </SettingsLayoutRight>
             </SettingsLayout>
 
+            <SettingsLayout>
+                <SettingsLayoutLeft>
+                    <label htmlFor="senderImagesToggle" className="text-semibold">
+                        <span className="mr-2">{c('Label').t`Show sender images`}</span>
+                        <Info
+                            title={c('Tooltip')
+                                .t`Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.`}
+                        />
+                    </label>
+                </SettingsLayoutLeft>
+                <SettingsLayoutRight className="pt0-5">
+                    <SenderImagesToggle className="mr-4" id="senderImagesToggle" />
+                </SettingsLayoutRight>
+            </SettingsLayout>
+
             <AutoDeleteSetting settingValue={AutoDeleteSpamAndTrashDays} onSaved={notifyPreferenceSaved} />
 
             <SettingsLayout>
@@ -198,7 +214,7 @@ const MessagesSection = () => {
                         />
                     </label>
                 </SettingsLayoutLeft>
-                <SettingsLayoutRight className="pt-2">
+                <SettingsLayoutRight>
                     <SpamActionSelect
                         id="spamActionLabelSelect"
                         value={SpamAction}
