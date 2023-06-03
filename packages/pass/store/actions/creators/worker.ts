@@ -1,8 +1,7 @@
 import { createAction } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
-import type { ExtensionEndpoint, Maybe, RequiredNonNull, TabId } from '@proton/pass/types';
-import type { WorkerStatus } from '@proton/pass/types';
+import type { ExtensionEndpoint, Maybe, RequiredNonNull, TabId, WorkerStatus } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp';
 import identity from '@proton/utils/identity';
 
@@ -27,6 +26,7 @@ export const stateSync = createAction('state sync', (state: any, options?: Endpo
     )({ payload: { state } })
 );
 
+export const stateCache = createAction('state cache');
 export const stateLock = createAction('state lock', () => withCacheBlock({ payload: {} }));
 export const stateDestroy = createAction('state destroy', () => withCacheBlock({ payload: {} }));
 

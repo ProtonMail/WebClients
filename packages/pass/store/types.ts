@@ -10,6 +10,7 @@ export type Action = ReturnType<(typeof actions)[keyof typeof actions]>;
 
 export interface WorkerRootSagaOptions {
     onBoot?: (result: { ok: true } | { ok: false; clearCache: boolean }) => void;
+    onCacheRequest: () => boolean;
     onItemsChange?: () => void;
     onImportProgress?: (progress: number, endpoint?: ExtensionEndpoint) => void;
     onNotification?: (notification: Notification) => void;
