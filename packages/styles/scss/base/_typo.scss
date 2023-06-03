@@ -1,3 +1,12 @@
+@use 'sass:math';
+
+html {
+	/* Introduce `--setting-font-size` to make the font size setting possible. */
+
+	/* chosen size * browser default size / app default size * 100% / browser default size */
+	font-size: calc(var(--setting-font-size) * #{math.div(16, 14) * math.div(100%, 16)});
+}
+
 body {
 	color: var(--text-norm);
 	line-height: $base-line-height;

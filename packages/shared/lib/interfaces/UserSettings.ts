@@ -1,3 +1,5 @@
+import type { ThemeSetting } from '@proton/shared/lib/themes/themes';
+
 import { DENSITY } from '../constants';
 import { RegisteredKey } from '../webauthn/interface';
 import { ChecklistId } from './Checklist';
@@ -126,7 +128,7 @@ export interface UserSettings {
         Link: string;
     };
     Telemetry: 1 | 0;
-    Theme: string;
+    Theme: ThemeSetting | null;
     ThemeType: number;
     TimeFormat: SETTINGS_TIME_FORMAT;
     WeekStart: SETTINGS_WEEK_START;
