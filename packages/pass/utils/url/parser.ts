@@ -1,28 +1,52 @@
 import { parse } from 'tldts';
 import type { Runtime } from 'webextension-polyfill';
 
+import type { MaybeNull } from '@proton/pass/types';
+
 import { isValidURL } from './is-valid-url';
 
-export const parseUrl = (url?: string) => {
+export type ParsedUrl = {
+    /* domain without suffix */
+    displayName: MaybeNull<string>;
+    /* widest top-level domain */
+    domain: MaybeNull<string>;
+    /* subdomain if any */
+    subdomain: MaybeNull<string>;
+    /* url matches top-level domain */
+    isTopLevelDomain: boolean;
+    /* private domain from public suffix list */
+    isPrivate: boolean;
+    /* matches `https:` protocol */
+    isSecure: boolean;
+};
+
+export const parseUrl = (url?: string): ParsedUrl => {
     const check = isValidURL(url ?? '');
 
     if (!check.valid) {
         return {
+            displayName: null,
             domain: null,
-            domainName: null,
             subdomain: null,
             isTopLevelDomain: false,
+            isPrivate: false,
+            isSecure: false,
         };
     }
 
-    const { domain, subdomain, domainWithoutSuffix, hostname } = parse(url ?? '');
+    const { domain, subdomain, domainWithoutSuffix, hostname, isPrivate } = parse(url ?? '', {
+        allowIcannDomains: true,
+        allowPrivateDomains: true,
+        detectIp: true,
+    });
 
     return {
+        displayName: domainWithoutSuffix ?? hostname,
         domain: domain ?? hostname /* fallback on hostname for localhost support */,
-        domainName: domainWithoutSuffix,
         subdomain: subdomain && subdomain !== 'www' ? hostname : null,
-
         isTopLevelDomain: !subdomain || subdomain === 'www',
+        isPrivate: isPrivate ?? subdomain !== null,
+        isSecure: check.url.startsWith('https://'),
     };
 };
 
@@ -31,9 +55,7 @@ export const parseSender = (sender: Runtime.MessageSender) => {
     const { domain: realm, subdomain } = parseUrl(url ?? '');
     const tabId = tab?.id;
 
-    if (!realm || !tabId) {
-        throw new Error('unsupported sender');
-    }
+    if (!realm || !tabId) throw new Error('unsupported sender');
 
     return {
         tabId,
