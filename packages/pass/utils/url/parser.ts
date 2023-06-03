@@ -12,6 +12,8 @@ export type ParsedUrl = {
     domain: MaybeNull<string>;
     /* subdomain if any */
     subdomain: MaybeNull<string>;
+    /* hostname of the url */
+    hostname: MaybeNull<string>;
     /* url matches top-level domain */
     isTopLevelDomain: boolean;
     /* private domain from public suffix list */
@@ -28,6 +30,7 @@ export const parseUrl = (url?: string): ParsedUrl => {
             displayName: null,
             domain: null,
             subdomain: null,
+            hostname: null,
             isTopLevelDomain: false,
             isPrivate: false,
             isSecure: false,
@@ -44,6 +47,7 @@ export const parseUrl = (url?: string): ParsedUrl => {
         displayName: domainWithoutSuffix ?? hostname,
         domain: domain ?? hostname /* fallback on hostname for localhost support */,
         subdomain: subdomain && subdomain !== 'www' ? hostname : null,
+        hostname,
         isTopLevelDomain: !subdomain || subdomain === 'www',
         isPrivate: isPrivate ?? subdomain !== null,
         isSecure: check.url.startsWith('https://'),
