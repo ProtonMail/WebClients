@@ -1,3 +1,4 @@
+import type { MaybeNull } from '../utils';
 import type { WithAutoSavePromptOptions } from './autosave';
 import type { TabId } from './runtime';
 
@@ -10,8 +11,7 @@ export enum FormEntryStatus {
 
 export type FormEntryBase = {
     domain: string;
-    subdomain: string | null;
-    url: string;
+    subdomain: MaybeNull<string>;
     type: 'login' | 'register';
     action?: string /* form action attribute */;
 };

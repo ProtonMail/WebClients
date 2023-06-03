@@ -13,6 +13,7 @@ import type {
 import { invert } from '@proton/pass/utils/fp';
 import { isTrashed } from '@proton/pass/utils/pass/trash';
 import { matchAny, matchLoginItemsByUrl } from '@proton/pass/utils/search';
+import type { ParsedUrl } from '@proton/pass/utils/url';
 import { parseUrl } from '@proton/pass/utils/url';
 
 import { unwrapOptimisticState } from '../optimistic/utils/transformers';
@@ -162,32 +163,29 @@ export const selectItemsByURL = (url?: MaybeNull<string>) =>
  * top-level domain matches first
  */
 
-export type SelectAutofillCandidatesOptions = {
-    domain?: MaybeNull<string>;
-    subdomain?: MaybeNull<string>;
-    isSecure?: boolean;
-    shareId?: string;
-};
+export type SelectAutofillCandidatesOptions = ParsedUrl & { shareId?: string };
 
 export const selectAutofillCandidates = ({ shareId, domain, subdomain }: SelectAutofillCandidatesOptions) =>
-    createSelector([selectItemsByURL(domain), selectItemsByURL(subdomain)], (domainMatches, subdomainMatches) => [
-        ...subdomainMatches,
-        ...domainMatches
-            .filter((item) => !shareId || shareId === item.shareId)
-            .map((item) => {
-                const urls = item.data.content.urls
-                    .map((url) => {
-                        const { isTopLevelDomain, domain } = parseUrl(url);
-                        return isTopLevelDomain && domain ? domain : '';
-                    })
-                    .filter(Boolean);
+    createSelector([selectItemsByURL(domain), selectItemsByURL(subdomain)], (domainMatches, subdomainMatches) => {
+        return [
+            ...subdomainMatches,
+            ...domainMatches
+                .filter((item) => !shareId || shareId === item.shareId)
+                .map((item) => {
+                    const urls = item.data.content.urls
+                        .map((url) => {
+                            const { isTopLevelDomain, domain } = parseUrl(url);
+                            return isTopLevelDomain && domain ? domain : '';
+                        })
+                        .filter(Boolean);
 
-                return { item, priority: matchAny(urls)(domain!) ? 0 : 1 };
-            })
-            .sort((a, b) => a.priority - b.priority)
-            .map(({ item }) => item)
-            .filter(({ itemId }) => !subdomainMatches.some((item) => item.itemId === itemId)),
-    ]);
+                    return { item, priority: matchAny(urls)(domain!) ? 0 : 1 };
+                })
+                .sort((a, b) => a.priority - b.priority)
+                .map(({ item }) => item)
+                .filter(({ itemId }) => !subdomainMatches.some((item) => item.itemId === itemId)),
+        ];
+    });
 
 export const selectAutosaveCandidate = (username: string, domain: string, subdomain?: MaybeNull<string>) =>
     createSelector([selectItemsByURL(subdomain ?? domain), () => username], (items, username) =>
