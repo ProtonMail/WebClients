@@ -1,13 +1,11 @@
 import type { Reducer } from 'redux';
 
 import type { AutoFillSettings, AutoSaveSettings, AutoSuggestSettings } from '@proton/pass/types/worker/settings';
-import { or } from '@proton/pass/utils/fp';
 import { partialMerge } from '@proton/pass/utils/object';
 
 import {
     sessionLockDisableSuccess,
     sessionLockEnableSuccess,
-    sessionLockSync,
     sessionUnlockSuccess,
     settingEditSuccess,
 } from '../actions';
@@ -34,13 +32,7 @@ const INITIAL_STATE: SettingsState = {
 };
 
 const reducer: Reducer<SettingsState> = (state = INITIAL_STATE, action) => {
-    if (or(sessionLockEnableSuccess.match, sessionLockSync.match)(action)) {
-        /* on sessionLockSync we might not have a storageToken
-         * available - this will most likely happen if a user
-         * has registered a session lock but cannot boot from
-         * cache - we fallback to an empty string for the user
-         * settings to be in sync. In that case, the storage
-         * token will be hydrated during the next unlock */
+    if (sessionLockEnableSuccess.match(action)) {
         return partialMerge(state, {
             sessionLockToken: action.payload.storageToken ?? '',
             sessionLockTTL: action.payload.ttl,
