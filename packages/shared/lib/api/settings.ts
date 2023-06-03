@@ -6,7 +6,7 @@ import {
     SETTINGS_TIME_FORMAT,
     SETTINGS_WEEK_START,
 } from '@proton/shared/lib/interfaces';
-import { ThemeTypes } from '@proton/shared/lib/themes/themes';
+import { ThemeSetting, ThemeTypes } from '@proton/shared/lib/themes/themes';
 
 import { RegistrationOptions } from '../../lib/webauthn/interface';
 
@@ -184,10 +184,10 @@ export const updateHideDrawer = (HideSidePanel: DRAWER_VISIBILITY) => ({
     data: { HideSidePanel },
 });
 
-export const updateTheme = (Theme: number) => ({
+export const updateTheme = (data: ThemeSetting) => ({
     url: 'core/v4/settings/theme',
     method: 'put',
-    data: { Theme },
+    data,
 });
 
 export const updateThemeType = (ThemeType: ThemeTypes) => ({

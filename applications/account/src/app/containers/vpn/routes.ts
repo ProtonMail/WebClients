@@ -7,17 +7,6 @@ export const getVpnAppRoutes = () => {
     return <const>{
         header: VPN_APP_NAME,
         routes: {
-            general: <SectionConfig>{
-                text: c('Title').t`General`,
-                to: '/general',
-                icon: 'grid-2',
-                subsections: [
-                    {
-                        text: c('Title').t`Theme`,
-                        id: 'theme',
-                    },
-                ],
-            },
             downloads: <SectionConfig>{
                 text: c('Title').t`VPN apps`,
                 to: '/vpn-apps',
