@@ -10,7 +10,7 @@ import type {
     MaybeNull,
     UniqueItem,
 } from '@proton/pass/types';
-import { invert } from '@proton/pass/utils/fp';
+import { invert, truthy } from '@proton/pass/utils/fp';
 import { isTrashed } from '@proton/pass/utils/pass/trash';
 import { matchAny, matchLoginItemsByUrl } from '@proton/pass/utils/search';
 import type { ParsedUrl } from '@proton/pass/utils/url';
@@ -178,7 +178,7 @@ export const selectAutofillCandidates = ({ shareId, domain, subdomain, isSecure 
                             const { isTopLevelDomain, domain } = parseUrl(url);
                             return isTopLevelDomain && domain ? domain : '';
                         })
-                        .filter(Boolean);
+                        .filter(truthy);
 
                     return { item, priority: matchAny(urls)(domain!) ? 0 : 1 };
                 })
