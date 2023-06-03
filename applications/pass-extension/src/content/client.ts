@@ -23,7 +23,7 @@ import { uniqueId } from '@proton/pass/utils/string';
 import type { ContentScriptClientService } from './services';
 import { createContentScriptClient } from './services';
 
-const CLIENT_ID = uniqueId();
+const CLIENT_ID = uniqueId(16);
 const MAIN_FRAME = isMainFrame();
 
 let script: MaybeNull<ContentScriptClientService> =
