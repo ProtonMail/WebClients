@@ -1,4 +1,4 @@
-import type { Maybe, Realm, SafeLoginItem } from '@proton/pass/types';
+import type { Maybe, SafeLoginItem } from '@proton/pass/types';
 
 import type { FieldHandle } from './form';
 import type { IFrameAppService } from './iframe';
@@ -12,7 +12,7 @@ export enum DropdownAction {
 export type DropdownSetActionPayload =
     | { action: DropdownAction.AUTOFILL; items: SafeLoginItem[]; needsUpgrade: boolean }
     | { action: DropdownAction.AUTOSUGGEST_PASSWORD }
-    | { action: DropdownAction.AUTOSUGGEST_ALIAS; realm: Realm; prefix: string };
+    | { action: DropdownAction.AUTOSUGGEST_ALIAS; domain: string; prefix: string };
 
 export type OpenDropdownOptions = {
     field: FieldHandle;

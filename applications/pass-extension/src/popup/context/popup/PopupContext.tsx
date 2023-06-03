@@ -9,31 +9,28 @@ import { useNotifications } from '@proton/components/hooks';
 import { popupMessage } from '@proton/pass/extension/message';
 import { selectWorkerSyncing } from '@proton/pass/store';
 import * as requests from '@proton/pass/store/actions/requests';
-import type { MaybeNull, RequiredProps } from '@proton/pass/types';
+import type { RequiredProps } from '@proton/pass/types';
 import { WorkerMessageType, type WorkerMessageWithSender, WorkerStatus } from '@proton/pass/types';
+import type { ParsedUrl } from '@proton/pass/utils/url';
+import { parseUrl } from '@proton/pass/utils/url';
 import noop from '@proton/utils/noop';
 
 import type { ExtensionAppContextValue, ExtensionContextState } from '../../../shared/components/extension';
 import { ExtensionContextProvider } from '../../../shared/components/extension';
 import { INITIAL_POPUP_STATE, INITIAL_WORKER_STATE } from '../../../shared/constants';
-import { ExtensionContext } from '../../../shared/extension';
 import { useExtensionContext } from '../../../shared/hooks';
 import { useRequestStatusEffect } from '../../../shared/hooks/useRequestStatusEffect';
 import { enhanceNotification } from '../../../shared/notification';
 
 export interface PopupContextValue extends Omit<ExtensionAppContextValue, 'context'> {
     state: RequiredProps<ExtensionContextState, 'popup'>;
-    realm: MaybeNull<string>;
-    subdomain: MaybeNull<string>;
-    domainName: MaybeNull<string>;
+    url: ParsedUrl;
     sync: () => void;
 }
 
 export const PopupContext = createContext<PopupContextValue>({
     state: { ...INITIAL_WORKER_STATE, popup: INITIAL_POPUP_STATE },
-    realm: null,
-    subdomain: null,
-    domainName: null,
+    url: parseUrl(),
     ready: false,
     logout: noop,
     lock: noop,
@@ -52,8 +49,7 @@ const ExtendedExtensionContext: FC = ({ children }) => {
     useEffect(() => notificationsManager.setOffset({ y: 10 }), []);
 
     const syncing = useSelector(selectWorkerSyncing) || extensionContext.state.status === WorkerStatus.BOOTING;
-
-    const { realm, subdomain, domainName } = ExtensionContext.get();
+    const { url } = extensionContext.context!;
 
     useRequestStatusEffect(requests.syncing(), {
         onStart: () =>
@@ -75,9 +71,7 @@ const ExtendedExtensionContext: FC = ({ children }) => {
             ...extensionContext,
             state: { ...state, popup: state.popup ?? INITIAL_POPUP_STATE },
             ready: ready && !syncing,
-            realm,
-            subdomain,
-            domainName,
+            url,
         };
     }, [extensionContext, syncing]);
 

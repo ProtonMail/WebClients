@@ -118,7 +118,7 @@ export const DropdownContent: VFC = () => {
                         return (
                             <AliasAutoSuggest
                                 prefix={dropdownState.prefix}
-                                realm={dropdownState.realm}
+                                domain={dropdownState.domain}
                                 onOptions={triggerResize}
                                 onSubmit={withStateReset((aliasEmail) => {
                                     postMessage({

@@ -1,7 +1,7 @@
 import type { WebRequest } from 'webextension-polyfill';
 
 import browser from '@proton/pass/globals/browser';
-import type { Realm, TabId } from '@proton/pass/types';
+import type { MaybeNull, TabId } from '@proton/pass/types';
 import { isFailedRequest } from '@proton/pass/utils/requests';
 import { parseUrl } from '@proton/pass/utils/url';
 
@@ -16,7 +16,7 @@ import { parseUrl } from '@proton/pass/utils/url';
  * of the active's tabs statuses.
  */
 type MainFrameRequestTrackerOptions = {
-    onTabError: (tabId: TabId, realm: Realm | null) => void;
+    onTabError: (tabId: TabId, domain: MaybeNull<string>) => void;
     onTabDelete: (tabId: TabId) => void;
 };
 

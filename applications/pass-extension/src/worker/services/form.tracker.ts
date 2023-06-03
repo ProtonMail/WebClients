@@ -1,4 +1,4 @@
-import type { FormEntry, FormIdentifier, Maybe, Realm, TabId, WithAutoSavePromptOptions } from '@proton/pass/types';
+import type { FormEntry, FormIdentifier, Maybe, TabId, WithAutoSavePromptOptions } from '@proton/pass/types';
 import { FormEntryStatus, WorkerMessageType } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
 import { merge } from '@proton/pass/utils/object';
@@ -11,38 +11,35 @@ import { createMainFrameRequestTracker } from './main-frame.tracker';
 import { createXMLHTTPRequestTracker } from './xmlhttp-request.tracker';
 
 const isPartialFormData = ({ type, data }: Pick<FormEntry, 'data' | 'type'>): boolean => {
-    if (type === 'login') {
-        return data.password === undefined || data.password.trim() === '';
-    }
-
+    if (type === 'login') return data.password === undefined || data.password.trim() === '';
     return false;
 };
 
-const getFormId = (tabId: TabId, realm: Realm): FormIdentifier => `${tabId}:${realm}`;
+const getFormId = (tabId: TabId, domain: string): FormIdentifier => `${tabId}:${domain}`;
 
 export const createFormTrackerService = () => {
     const submissions: Map<FormIdentifier, FormEntry> = new Map();
 
-    const get = (tabId: TabId, realm: string): Maybe<FormEntry> => {
-        const submission = submissions.get(getFormId(tabId, realm));
-        if (submission && submission.realm === realm) {
+    const get = (tabId: TabId, domain: string): Maybe<FormEntry> => {
+        const submission = submissions.get(getFormId(tabId, domain));
+        if (submission && submission.domain === domain) {
             return submission;
         }
     };
 
-    const stash = (tabId: TabId, realm: string, reason: string): void => {
-        const formId = getFormId(tabId, realm);
+    const stash = (tabId: TabId, domain: string, reason: string): void => {
+        const formId = getFormId(tabId, domain);
 
         if (submissions.has(formId)) {
-            logger.info(`[FormTracker::Stash]: on tab ${tabId} for realm "${realm}" {${reason}}`);
+            logger.info(`[FormTracker::Stash]: on tab ${tabId} for domain "${domain}" {${reason}}`);
             submissions.delete(formId);
         }
     };
 
     const stage = (tabId: TabId, submission: Omit<FormEntry, 'status' | 'partial'>, reason: string): FormEntry => {
-        logger.info(`[FormTracker::Stage]: on tab ${tabId} for realm "${submission.realm}" {${reason}}`);
+        logger.info(`[FormTracker::Stage]: on tab ${tabId} for domain "${submission.domain}" {${reason}}`);
 
-        const formId = getFormId(tabId, submission.realm);
+        const formId = getFormId(tabId, submission.domain);
         const pending = submissions.get(formId);
 
         if (pending !== undefined && pending.status === FormEntryStatus.STAGING) {
@@ -62,12 +59,12 @@ export const createFormTrackerService = () => {
         return staging;
     };
 
-    const commit = (tabId: TabId, realm: string, reason: string): Maybe<FormEntry<FormEntryStatus.COMMITTED>> => {
-        const formId = getFormId(tabId, realm);
+    const commit = (tabId: TabId, domain: string, reason: string): Maybe<FormEntry<FormEntryStatus.COMMITTED>> => {
+        const formId = getFormId(tabId, domain);
         const pending = submissions.get(formId);
 
         if (pending !== undefined && pending.status === FormEntryStatus.STAGING) {
-            logger.info(`[FormTracker::Commit] on tab ${tabId} for realm "${realm}" {${reason}}`);
+            logger.info(`[FormTracker::Commit] on tab ${tabId} for domain "${domain}" {${reason}}`);
             const commit = merge(pending, { status: FormEntryStatus.COMMITTED });
 
             if (canCommitSubmission(commit)) {
@@ -81,12 +78,12 @@ export const createFormTrackerService = () => {
         onTabDelete: (tabId) => {
             submissions.forEach((_, key) => {
                 if (key.startsWith(tabId.toString())) {
-                    const [tabId, realm] = key.split(':');
-                    stash(parseInt(tabId, 10), realm, 'TAB_DELETED');
+                    const [tabId, domain] = key.split(':');
+                    stash(parseInt(tabId, 10), domain, 'TAB_DELETED');
                 }
             });
         },
-        onTabError: (tabId, realm) => realm && stash(tabId, realm, 'TAB_ERRORED'),
+        onTabError: (tabId, domain) => domain && stash(tabId, domain, 'TAB_ERRORED'),
     });
 
     /**
@@ -96,11 +93,11 @@ export const createFormTrackerService = () => {
      * we directly stash we might get false positives
      */
     createXMLHTTPRequestTracker({
-        shouldTakeRequest: (tabId, realm) => submissions.has(getFormId(tabId, realm)),
-        onFailedRequest: (tabId, realm) => {
-            const submission = get(tabId, realm);
+        shouldTakeRequest: (tabId, domain) => submissions.has(getFormId(tabId, domain)),
+        onFailedRequest: (tabId, domain) => {
+            const submission = get(tabId, domain);
             if (submission && submission.status === FormEntryStatus.STAGING) {
-                stash(tabId, realm, 'XMLHTTP_ERROR_DETECTED');
+                stash(tabId, domain, 'XMLHTTP_ERROR_DETECTED');
             }
         },
     });
@@ -111,8 +108,8 @@ export const createFormTrackerService = () => {
             const { type, data } = payload;
 
             if (ctx.getState().loggedIn) {
-                const { tabId, realm, subdomain, url } = parseSender(sender);
-                return { staged: stage(tabId, { realm, subdomain, url, type, data }, payload.reason) };
+                const { tabId, domain, subdomain, url } = parseSender(sender);
+                return { staged: stage(tabId, { domain, subdomain, url, type, data }, payload.reason) };
             }
 
             throw new Error('Cannot stage submission while logged out');
@@ -123,8 +120,8 @@ export const createFormTrackerService = () => {
         WorkerMessageType.FORM_ENTRY_STASH,
         withContext((ctx, { payload: { reason } }, sender) => {
             if (ctx.getState().loggedIn) {
-                const { tabId, realm } = parseSender(sender);
-                stash(tabId, realm, reason);
+                const { tabId, domain } = parseSender(sender);
+                stash(tabId, domain, reason);
                 return true;
             }
 
@@ -136,8 +133,8 @@ export const createFormTrackerService = () => {
         WorkerMessageType.FORM_ENTRY_COMMIT,
         withContext((ctx, { payload: { reason } }, sender) => {
             if (ctx.getState().loggedIn) {
-                const { tabId, realm } = parseSender(sender);
-                const committed = commit(tabId, realm, reason);
+                const { tabId, domain } = parseSender(sender);
+                const committed = commit(tabId, domain, reason);
 
                 if (committed !== undefined) {
                     const promptOptions = ctx.service.autosave.resolvePromptOptions(committed);
@@ -147,7 +144,7 @@ export const createFormTrackerService = () => {
                         : { committed: undefined };
                 }
 
-                throw new Error(`Cannot commit form submission for tab#${tabId} on realm "${realm}"`);
+                throw new Error(`Cannot commit form submission for tab#${tabId} on domain "${domain}"`);
             }
 
             throw new Error('Cannot commit submission while logged out');
@@ -158,8 +155,8 @@ export const createFormTrackerService = () => {
         WorkerMessageType.FORM_ENTRY_REQUEST,
         withContext((ctx, _, sender) => {
             if (ctx.getState().loggedIn) {
-                const { tabId, realm } = parseSender(sender);
-                const submission = get(tabId, realm);
+                const { tabId, domain } = parseSender(sender);
+                const submission = get(tabId, domain);
                 const isCommitted = submission !== undefined && isSubmissionCommitted(submission);
 
                 return {

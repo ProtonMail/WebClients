@@ -18,7 +18,7 @@ import { DropdownItem } from '../components/DropdownItem';
 
 type Props = {
     prefix: string;
-    realm: string;
+    domain: string;
     onSubmit: (aliasEmail: string) => void;
     onOptions?: () => void;
 };
@@ -31,7 +31,7 @@ const isValidAliasOptions = (
 
 const getInitialLoadingText = (): string => c('Info').t`Generating alias...`;
 
-export const AliasAutoSuggest: VFC<Props> = ({ prefix, realm, onOptions, onSubmit }) => {
+export const AliasAutoSuggest: VFC<Props> = ({ prefix, domain, onOptions, onSubmit }) => {
     const ensureMounted = useEnsureMounted();
     const [aliasOptions, setAliasOptions] = useState<MaybeNull<AliasState['aliasOptions']>>(null);
     const [needsUpgrade, setNeedsUpgrade] = useState<boolean>(false);
@@ -69,7 +69,7 @@ export const AliasAutoSuggest: VFC<Props> = ({ prefix, realm, onOptions, onSubmi
                     pageMessage({
                         type: WorkerMessageType.ALIAS_CREATE,
                         payload: {
-                            realm,
+                            url: domain,
                             alias: {
                                 prefix,
                                 mailboxes: [mailboxes[0]],
@@ -102,7 +102,7 @@ export const AliasAutoSuggest: VFC<Props> = ({ prefix, realm, onOptions, onSubmi
                 ensureMounted(setError)(true);
             }
         },
-        [realm]
+        [domain]
     );
 
     useEffect(() => {

@@ -39,7 +39,7 @@ export const createAliasService = () => {
 
     WorkerMessageBroker.registerMessage(WorkerMessageType.ALIAS_CREATE, async (message) => {
         const defaultVault = selectPrimaryVault(store.getState());
-        const { realm, alias } = message.payload;
+        const { url, alias } = message.payload;
         const { mailboxes, prefix, signedSuffix, aliasEmail } = alias;
         const optimisticId = uniqueId();
 
@@ -49,8 +49,8 @@ export const createAliasService = () => {
             shareId: defaultVault.shareId,
             createTime: getEpoch(),
             metadata: {
-                name: realm,
-                note: c('Placeholder').t`Used on ${realm}`,
+                name: url,
+                note: c('Placeholder').t`Used on ${url}`,
                 itemUuid: optimisticId,
             },
             content: {},

@@ -8,7 +8,6 @@ import type {
     ItemsSortOption,
     Maybe,
     MaybeNull,
-    Realm,
     UniqueItem,
 } from '@proton/pass/types';
 import { invert } from '@proton/pass/utils/fp';
@@ -164,15 +163,16 @@ export const selectItemsByURL = (url?: MaybeNull<string>) =>
  */
 
 export type SelectAutofillCandidatesOptions = {
-    realm?: Realm;
-    shareId?: string;
+    domain?: MaybeNull<string>;
     subdomain?: MaybeNull<string>;
+    isSecure?: boolean;
+    shareId?: string;
 };
 
-export const selectAutofillCandidates = ({ realm, shareId, subdomain }: SelectAutofillCandidatesOptions) =>
-    createSelector([selectItemsByURL(realm), selectItemsByURL(subdomain)], (realmMatches, subdomainMatches) => [
+export const selectAutofillCandidates = ({ shareId, domain, subdomain }: SelectAutofillCandidatesOptions) =>
+    createSelector([selectItemsByURL(domain), selectItemsByURL(subdomain)], (domainMatches, subdomainMatches) => [
         ...subdomainMatches,
-        ...realmMatches
+        ...domainMatches
             .filter((item) => !shareId || shareId === item.shareId)
             .map((item) => {
                 const urls = item.data.content.urls
@@ -182,14 +182,14 @@ export const selectAutofillCandidates = ({ realm, shareId, subdomain }: SelectAu
                     })
                     .filter(Boolean);
 
-                return { item, priority: matchAny(urls)(realm!) ? 0 : 1 };
+                return { item, priority: matchAny(urls)(domain!) ? 0 : 1 };
             })
             .sort((a, b) => a.priority - b.priority)
             .map(({ item }) => item)
             .filter(({ itemId }) => !subdomainMatches.some((item) => item.itemId === itemId)),
     ]);
 
-export const selectAutosaveCandidate = (username: string, realm: Realm, subdomain?: MaybeNull<string>) =>
-    createSelector([selectItemsByURL(subdomain ?? realm), () => username], (items, username) =>
+export const selectAutosaveCandidate = (username: string, domain: string, subdomain?: MaybeNull<string>) =>
+    createSelector([selectItemsByURL(subdomain ?? domain), () => username], (items, username) =>
         items.filter(({ data }) => data.content.username === username)
     );
