@@ -10,7 +10,7 @@ import {
     resumeSession,
 } from '@proton/pass/auth';
 import { browserLocalStorage, browserSessionStorage } from '@proton/pass/extension/storage';
-import { notification, sessionLockSync, setUserPlan, stateDestroy, stateLock } from '@proton/pass/store';
+import { notification, selectSessionLockToken, setUserPlan, stateDestroy, stateLock } from '@proton/pass/store';
 import type { Api, MaybeNull, WorkerForkMessage, WorkerMessageResponse } from '@proton/pass/types';
 import { SessionLockStatus, WorkerMessageType, WorkerStatus } from '@proton/pass/types';
 import { withPayload } from '@proton/pass/utils/fp';
@@ -216,9 +216,10 @@ export const createAuthService = ({
                     return false;
                 }
 
-                if (lock.status === SessionLockStatus.REGISTERED && lock.ttl) {
+                if (lock.status === SessionLockStatus.REGISTERED && !selectSessionLockToken(store.getState())) {
                     logger.info(`[Worker::Auth] Detected a registered session lock`);
-                    store.dispatch(sessionLockSync({ ttl: lock.ttl }));
+                    authService.lock();
+                    return false;
                 }
             } catch (error: any) {
                 /* if there is an API error on `checkSessionLock` we want to logout
