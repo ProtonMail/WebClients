@@ -186,6 +186,21 @@ export const getAccountAppRoutes = ({
                     },
                 ],
             },
+            appearance: <SectionConfig>{
+                text: c('Title').t`Appearance`,
+                to: '/appearance',
+                icon: 'paint-roller',
+                subsections: [
+                    {
+                        text: c('Title').t`Theme`,
+                        id: 'theme',
+                    },
+                    {
+                        text: c('Title').t`Accessibility`,
+                        id: 'accessibility',
+                    },
+                ],
+            },
             security: <SectionConfig>{
                 text: c('Title').t`Security and privacy`,
                 to: '/security',
