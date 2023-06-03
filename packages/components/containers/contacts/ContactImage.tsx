@@ -36,6 +36,7 @@ const ContactImage = ({ email, name, className, bimiSelector, displaySenderImage
                 onError={() => setTryToLoad(false)}
                 loading="lazy" // Lazy load the image only when it's in the viewport
                 data-testid="contact-image"
+                style={{ inlineSize: '2rem' }} // 32px, but following main font size
             />
         );
     }

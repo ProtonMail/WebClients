@@ -24,9 +24,7 @@ import {
     PrivateMainSettingsArea,
     ProtonMailBridgeSection,
     SMTPSubmissionSection,
-    SenderImagesSection,
     SpamFiltersSection,
-    ThemesSection,
     UserKeysSection,
     useAddresses,
 } from '@proton/components';
@@ -45,7 +43,7 @@ const MailSettingsRouter = ({
     const [addresses, loadingAddresses] = useAddresses();
 
     const {
-        routes: { general, identity, appearance, folder, filter, autoReply, domainNames, keys, imap, backup, privacy },
+        routes: { general, identity, folder, filter, autoReply, domainNames, keys, imap, backup, privacy },
     } = mailAppRoutes;
 
     return (
@@ -57,6 +55,7 @@ const MailSettingsRouter = ({
                     <PrivateMainSettingsArea config={general}>
                         <PmMeSection isPMAddressActive={getHasPmMeAddress(addresses)} />
                         <MessagesGeneralSection />
+                        <LayoutsSection />
                         <MessagesSection />
                         <MessagesOtherSection />
                     </PrivateMainSettingsArea>
@@ -66,13 +65,6 @@ const MailSettingsRouter = ({
                 <PrivateMainSettingsArea config={identity}>
                     <IdentitySection />
                     <AddressesSection isOnlySelf />
-                </PrivateMainSettingsArea>
-            </Route>
-            <Route path={getSectionPath(path, appearance)}>
-                <PrivateMainSettingsArea config={appearance}>
-                    <ThemesSection />
-                    <LayoutsSection />
-                    <SenderImagesSection />
                 </PrivateMainSettingsArea>
             </Route>
             <Route path={getSectionPath(path, folder)}>
