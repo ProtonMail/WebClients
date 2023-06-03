@@ -11,14 +11,14 @@ mkdir -p "./release/ProtonPass-chrome-${VERSION}-black"
 mkdir -p "./release/ProtonPass-firefox-${VERSION}"
 mkdir -p "./release/ProtonPass-firefox-${VERSION}-black"
 
-BUILD_TARGET=chrome yarn run build
+NODE_ENV=production BUILD_TARGET=chrome yarn run build
 mv ./dist/* "./release/ProtonPass-chrome-${VERSION}"
 
-BUILD_TARGET=chrome yarn run build:dev
+NODE_ENV=development BUILD_TARGET=chrome yarn run build
 mv ./dist/* "./release/ProtonPass-chrome-${VERSION}-black"
 
-BUILD_TARGET=firefox yarn run build
+NODE_ENV=production BUILD_TARGET=firefox yarn run build
 mv ./dist/* "./release/ProtonPass-firefox-${VERSION}"
 
-BUILD_TARGET=firefox yarn run build:dev
+NODE_ENV=development BUILD_TARGET=firefox yarn run build
 mv ./dist/* "./release/ProtonPass-firefox-${VERSION}-black"
