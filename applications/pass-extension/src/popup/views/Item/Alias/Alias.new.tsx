@@ -29,18 +29,18 @@ import { type NewAliasFormValues, validateNewAliasForm } from './Alias.validatio
 const FORM_ID = 'new-alias';
 
 export const AliasNew: VFC<ItemNewProps<'alias'>> = ({ shareId, onSubmit, onCancel }) => {
-    const { realm, subdomain, domainName } = usePopupContext();
+    const { domain, subdomain, displayName } = usePopupContext().url;
     const { needsUpgrade } = useSelector(selectAliasLimits);
     const { vaultTotalCount } = useSelector(selectVaultLimits);
 
     const { aliasPrefix: defaultAliasPrefix, ...defaults } = useMemo(() => {
-        const url = subdomain ?? realm;
+        const url = subdomain ?? domain;
         const validURL = url !== null;
 
         return {
             name: validURL ? url : '',
             note: validURL ? c('Placeholder').t`Used on ${url}` : '',
-            aliasPrefix: domainName ? deriveAliasPrefix(domainName) : '',
+            aliasPrefix: displayName ? deriveAliasPrefix(displayName) : '',
         };
     }, []);
 

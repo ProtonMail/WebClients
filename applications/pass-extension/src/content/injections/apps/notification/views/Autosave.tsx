@@ -30,7 +30,7 @@ export const Autosave: VFC<{ submission: PromptedFormEntry; onAutoSaved: () => v
     const { closeIFrame } = useIFrameContext();
     const { createNotification } = useNotifications();
     const [busy, setBusy] = useState(false);
-    const submissionURL = submission.subdomain ?? submission.realm;
+    const submissionURL = submission.subdomain ?? submission.domain;
 
     const form = useFormik<AutosaveFormValues>({
         initialValues: {

@@ -19,7 +19,7 @@ export const createAutoSaveService = () => {
     const resolvePromptOptions = (submission: FormEntry<FormEntryStatus.COMMITTED>): AutoSavePromptOptions => {
         const candidates = selectAutosaveCandidate(
             submission.data.username,
-            submission.realm,
+            submission.domain,
             submission.subdomain
         )(store.getState());
 

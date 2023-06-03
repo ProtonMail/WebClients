@@ -97,11 +97,11 @@ export const createDropdown = (): InjectedDropdown => {
                         };
                     }
                     case DropdownAction.AUTOSUGGEST_ALIAS: {
-                        const { realm, subdomain, domainName } = getExtensionContext();
+                        const { domain, subdomain, displayName } = getExtensionContext().url;
                         return {
                             action,
-                            realm: subdomain ?? realm!,
-                            prefix: domainName!,
+                            domain: subdomain ?? domain!,
+                            prefix: displayName!,
                         };
                     }
                     case DropdownAction.AUTOSUGGEST_PASSWORD: {
