@@ -10,6 +10,17 @@ export const getImageSize = () => {
         return 64;
     }
 
+    /*
+    If the user has changed the default font size
+    (via browser settings or accessibility settings)
+    then increase the image definition
+    */
+    const html = document.querySelector('html') as Element;
+    const fontSize = window.getComputedStyle(html).getPropertyValue('font-size');
+    if (parseFloat(fontSize) > 16) {
+        return 64;
+    }
+
     return 32;
 };
 
