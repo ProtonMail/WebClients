@@ -13,7 +13,7 @@ import type {
     WorkerResponse,
 } from '@proton/pass/types';
 import { WorkerMessageType } from '@proton/pass/types';
-import { pipe, tap } from '@proton/pass/utils/fp';
+import { notIn, pipe, tap } from '@proton/pass/utils/fp';
 import { logger } from '@proton/pass/utils/logger';
 
 export const successMessage = <T extends {}>(message?: T) =>
@@ -24,6 +24,10 @@ export const errorMessage = (error?: string): MessageFailure => ({
     error: error ?? 'unknown error',
     payload: error /* needed for Proton Account auth-ext page */,
 });
+
+/* For security reasons : limit the type of messages that can
+ * be processed via externally connectable resources */
+const ALLOWED_EXTERNAL_MESSAGES = [WorkerMessageType.FORK];
 
 export type MessageHandlerCallback<
     T extends WorkerMessageType = WorkerMessageType,
@@ -81,6 +85,13 @@ export const createMessageBroker = () => {
 
         if (handler) {
             try {
+                const isExternal = sender.id !== browser.runtime.id;
+
+                if (isExternal && notIn(ALLOWED_EXTERNAL_MESSAGES)(message.type)) {
+                    logger.warn('[MessageBroker::Message] unauthorized external message');
+                    return errorMessage('unauthorized');
+                }
+
                 const res = await handler(message, sender);
 
                 if (typeof res === 'boolean' || res === undefined) {
