@@ -1,7 +1,5 @@
 import { useEffect, useState } from 'react';
 
-
-
 import { c } from 'ttag';
 
 import { ThemeColorUnion } from '@proton/colors';
@@ -167,7 +165,7 @@ function FloatingSpotlight({
 }) {
     const drawerWidth = useDrawerWidth();
     // 1.6 is the default right offset on the floating button. Adding to that space that the drawer is taking
-    const rightOffset = drawerWidth / rootFontSize + 1.6;
+    const rightOffset = drawerWidth / rootFontSize() + 1.6;
 
     return (
         <Spotlight
