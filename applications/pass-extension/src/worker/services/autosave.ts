@@ -25,7 +25,7 @@ export const createAutoSaveService = () => {
 
         /**
          * If no login items found for the current
-         * realm & the current username - prompt for
+         * domain & the current username - prompt for
          * autosaving a new entry
          */
         if (candidates.length === 0) {
