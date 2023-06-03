@@ -1,8 +1,10 @@
 import createApi, { exposeApi } from '@proton/pass/api';
 import { getPersistedSession, setPersistedSession } from '@proton/pass/auth';
+import { generateKey } from '@proton/pass/crypto/utils';
 import { browserSessionStorage } from '@proton/pass/extension/storage';
 import browser from '@proton/pass/globals/browser';
-import { WorkerStatus } from '@proton/pass/types';
+import { WorkerMessageType, WorkerStatus } from '@proton/pass/types';
+import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 import sentry from '@proton/shared/lib/helpers/sentry';
 
 import * as config from '../app/config';
@@ -14,6 +16,13 @@ if (BUILD_TARGET === 'chrome') {
     const globalScope = self as any as ServiceWorkerGlobalScope;
     globalScope.oninstall = () => globalScope.skipWaiting();
 }
+
+/* The `EXTENSION_KEY` is a random & unique identifier for the current
+ * extension runtime. It is currently used for verifiying the origin of
+ * messages sent through unsecure channels (ie: iframe postmessaging).
+ * see: `IFrameContextProvider.tsx` */
+const EXTENSION_KEY = uint8ArrayToBase64String(generateKey());
+WorkerMessageBroker.registerMessage(WorkerMessageType.RESOLVE_EXTENSION_KEY, () => ({ key: EXTENSION_KEY }));
 
 sentry({
     config,
