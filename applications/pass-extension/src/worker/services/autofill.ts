@@ -53,7 +53,7 @@ export const createAutoFillService = () => {
             Promise.all(
                 tabs.map(({ id: tabId, url }) => {
                     if (tabId) {
-                        const items = getAutofillCandidates(parseUrl(url ?? ''));
+                        const items = getAutofillCandidates(parseUrl(url));
                         const primaryVaultId = selectPrimaryVault(store.getState()).shareId;
                         const { didDowngrade } = selectVaultLimits(store.getState());
 
