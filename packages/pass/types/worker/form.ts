@@ -1,7 +1,7 @@
 import type { WithAutoSavePromptOptions } from './autosave';
-import type { Realm, TabId } from './runtime';
+import type { TabId } from './runtime';
 
-export type FormIdentifier = `${TabId}:${Realm}`;
+export type FormIdentifier = `${TabId}:${string}`;
 
 export enum FormEntryStatus {
     STAGING,
@@ -9,7 +9,7 @@ export enum FormEntryStatus {
 }
 
 export type FormEntryBase = {
-    realm: Realm;
+    domain: string;
     subdomain: string | null;
     url: string;
     type: 'login' | 'register';

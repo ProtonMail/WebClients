@@ -45,7 +45,7 @@ import {
 const FORM_ID = 'new-login';
 
 export const LoginNew: VFC<ItemNewProps<'login'>> = ({ shareId, onSubmit, onCancel }) => {
-    const { realm, subdomain } = usePopupContext();
+    const { domain, subdomain } = usePopupContext().url;
     const { search } = useLocation();
 
     const { vaultTotalCount } = useSelector(selectVaultLimits);
@@ -55,7 +55,7 @@ export const LoginNew: VFC<ItemNewProps<'login'>> = ({ shareId, onSubmit, onCanc
 
     const initialValues: LoginItemFormValues = useMemo(() => {
         const params = new URLSearchParams(search);
-        const maybeUrl = subdomain ?? realm ?? '';
+        const maybeUrl = domain ?? subdomain ?? '';
         const { valid, url } = isValidURL(maybeUrl);
 
         return {

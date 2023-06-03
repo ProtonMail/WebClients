@@ -67,12 +67,12 @@ export const createFormManager = () => {
             );
 
             if (submission !== undefined) {
-                const { status, partial, realm, type } = submission;
-                const currentRealm = getExtensionContext().realm;
+                const { status, partial, domain, type } = submission;
+                const currentDomain = getExtensionContext().url.domain;
                 const formRemoved = !ctx.trackedForms.some(({ formType }) => formType === type);
 
-                const realmMatch = currentRealm === realm;
-                const canCommit = realmMatch && formRemoved;
+                const domainmatch = currentDomain === domain;
+                const canCommit = domainmatch && formRemoved;
 
                 /* if we have a non-partial staging form submission at
                  * this stage either commit it if no forms of the same
