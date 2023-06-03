@@ -172,7 +172,7 @@ export const createActivationService = () => {
                         const tab = await browser.tabs.get(tabId);
                         const { domain } = parseUrl(tab.url ?? '');
                         const items = ctx.service.autofill.getAutofillCandidates({
-                            realm: domain ?? '',
+                            domain: domain ?? '',
                             subdomain: null,
                         });
                         const hasAutofillCandidates = items.length > 0;

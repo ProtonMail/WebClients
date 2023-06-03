@@ -52,9 +52,9 @@ export const createAutoFillService = () => {
         void browser.tabs.query({ active: true }).then((tabs) =>
             Promise.all(
                 tabs.map(({ id: tabId, url }) => {
-                    const { domain: realm, subdomain } = parseUrl(url ?? '');
-                    if (tabId && realm) {
-                        const items = getAutofillCandidates({ realm, subdomain });
+                    const { domain, subdomain } = parseUrl(url ?? '');
+                    if (tabId && domain) {
+                        const items = getAutofillCandidates({ domain, subdomain });
                         const primaryVaultId = selectPrimaryVault(store.getState()).shareId;
                         const { didDowngrade } = selectVaultLimits(store.getState());
 
@@ -93,7 +93,7 @@ export const createAutoFillService = () => {
     WorkerMessageBroker.registerMessage(
         WorkerMessageType.AUTOFILL_QUERY,
         onContextReady((_, sender) => {
-            const { realm, tabId, subdomain } = parseSender(sender);
+            const { domain, tabId, subdomain } = parseSender(sender);
             const primaryVaultId = selectPrimaryVault(store.getState()).shareId;
             const { didDowngrade } = selectVaultLimits(store.getState());
 
@@ -101,7 +101,7 @@ export const createAutoFillService = () => {
              * has downgraded to a free plan : only allow him to autofill from
              * his primary vault */
             const items = getAutofillCandidates({
-                realm,
+                domain,
                 subdomain,
                 ...(didDowngrade ? { shareId: primaryVaultId } : {}),
             });
@@ -131,10 +131,10 @@ export const createAutoFillService = () => {
      * badge count accordingly */
     browser.tabs.onUpdated.addListener(
         onContextReady(async (tabId, _, tab) => {
-            const { domain: realm, subdomain } = parseUrl(tab.url ?? '');
+            const { domain, subdomain } = parseUrl(tab.url ?? '');
 
-            if (tabId && realm) {
-                const items = getAutofillCandidates({ realm, subdomain });
+            if (tabId) {
+                const items = getAutofillCandidates({ domain, subdomain });
                 return setPopupIconBadge(tabId, items.length);
             }
         })

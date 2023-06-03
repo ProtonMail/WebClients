@@ -18,7 +18,7 @@ import type { SafeLoginItem } from './data';
 import type { FormEntry, NewFormEntry, PromptedFormEntry } from './form';
 import type { OnboardingMessage } from './onboarding';
 import type { OtpCode, OtpRequest } from './otp';
-import type { Realm, TabId } from './runtime';
+import type { TabId } from './runtime';
 import type { PopupState, WorkerState } from './state';
 
 type WithPayload<T extends WorkerMessageType, P extends {}> = { type: T; payload: P };
@@ -91,7 +91,7 @@ export type FormEntryStashMessage = WithPayload<WorkerMessageType.FORM_ENTRY_STA
 export type FormEntryCommitMessage = WithPayload<WorkerMessageType.FORM_ENTRY_COMMIT, { reason: string }>;
 export type FormEntryRequestMessage = { type: WorkerMessageType.FORM_ENTRY_REQUEST };
 export type AliasOptionsMessage = { type: WorkerMessageType.ALIAS_OPTIONS };
-export type AliasCreateMessage = WithPayload<WorkerMessageType.ALIAS_CREATE, { realm: Realm; alias: AliasCreationDTO }>;
+export type AliasCreateMessage = WithPayload<WorkerMessageType.ALIAS_CREATE, { url: string; alias: AliasCreationDTO }>;
 export type OTPCodeGenerateMessage = WithPayload<WorkerMessageType.OTP_CODE_GENERATE, OtpRequest>;
 export type ResolveTabIdMessage = { type: WorkerMessageType.RESOLVE_TAB };
 export type ResolveExtensionKeyMessage = { type: WorkerMessageType.RESOLVE_EXTENSION_KEY };

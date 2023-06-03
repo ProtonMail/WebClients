@@ -52,14 +52,14 @@ export const parseUrl = (url?: string): ParsedUrl => {
 
 export const parseSender = (sender: Runtime.MessageSender) => {
     const { url, tab } = sender;
-    const { domain: realm, subdomain } = parseUrl(url ?? '');
+    const { domain, subdomain } = parseUrl(url ?? '');
     const tabId = tab?.id;
 
-    if (!realm || !tabId) throw new Error('unsupported sender');
+    if (!domain || !tabId) throw new Error('unsupported sender');
 
     return {
         tabId,
-        realm,
+        domain,
         subdomain,
         url: url as string,
     };

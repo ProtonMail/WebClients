@@ -38,7 +38,7 @@ import { type EditLoginItemFormValues, useLoginItemAliasModal, validateLoginForm
 const FORM_ID = 'edit-login';
 
 export const LoginEdit: VFC<ItemEditProps<'login'>> = ({ vault, revision, onSubmit, onCancel }) => {
-    const { realm, subdomain } = usePopupContext();
+    const { domain, subdomain } = usePopupContext().url;
     const { shareId } = vault;
     const { data: item, itemId, revision: lastRevision } = revision;
     const {
@@ -142,11 +142,11 @@ export const LoginEdit: VFC<ItemEditProps<'login'>> = ({ vault, revision, onSubm
     });
 
     const showQuickAddUrl =
-        (subdomain || realm) &&
+        (subdomain || domain) &&
         !form.values.urls
             .map(prop('url'))
             .concat(form.values.url)
-            .some((url) => url.includes(subdomain ?? realm!));
+            .some((url) => url.includes(subdomain ?? domain!));
 
     const { relatedAlias, usernameIsAlias, willCreateAlias, canCreateAlias, aliasModalOpen, setAliasModalOpen } =
         useLoginItemAliasModal(form);
@@ -283,7 +283,7 @@ export const LoginEdit: VFC<ItemEditProps<'login'>> = ({ vault, revision, onSubm
                                                       key="add-current-url"
                                                       title={c('Action').t`Add current url`}
                                                       className="flex flex-align-items-center gap-1"
-                                                      onClick={() => handleAdd(subdomain ?? realm!)}
+                                                      onClick={() => handleAdd(subdomain ?? domain!)}
                                                   >
                                                       <Icon name="plus" /> {c('Action').t`Add current url`}
                                                   </Button>

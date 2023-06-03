@@ -1,7 +1,7 @@
 import type { WebRequest } from 'webextension-polyfill';
 
 import browser from '@proton/pass/globals/browser';
-import type { Realm, TabId } from '@proton/pass/types';
+import type { TabId } from '@proton/pass/types';
 import { merge } from '@proton/pass/utils/object';
 import { isFailedRequest, requestHasBodyFormData } from '@proton/pass/utils/requests';
 import { parseUrl } from '@proton/pass/utils/url';
@@ -12,12 +12,12 @@ const filter: WebRequest.RequestFilter = {
 };
 
 type XMLHTTPRequestTrackerOptions = {
-    shouldTakeRequest: (tabId: TabId, realm: Realm) => boolean;
-    onFailedRequest: (tabId: TabId, realm: Realm) => void;
+    shouldTakeRequest: (tabId: TabId, domain: string) => boolean;
+    onFailedRequest: (tabId: TabId, domain: string) => void;
 };
 
 export const createXMLHTTPRequestTracker = ({ shouldTakeRequest, onFailedRequest }: XMLHTTPRequestTrackerOptions) => {
-    const pendingRequests: Map<string, WebRequest.OnBeforeRequestDetailsType & { realm: Realm }> = new Map();
+    const pendingRequests: Map<string, WebRequest.OnBeforeRequestDetailsType & { domain: string }> = new Map();
 
     const onBeforeRequest = async (request: WebRequest.OnBeforeRequestDetailsType) => {
         const { tabId, requestId } = request;
@@ -26,10 +26,8 @@ export const createXMLHTTPRequestTracker = ({ shouldTakeRequest, onFailedRequest
             try {
                 const tab = await browser.tabs.get(tabId);
                 if (tab.url !== undefined) {
-                    const realm = parseUrl(tab.url).domain;
-                    if (realm) {
-                        pendingRequests.set(requestId, merge(request, { realm }));
-                    }
+                    const { domain } = parseUrl(tab.url);
+                    if (domain) pendingRequests.set(requestId, merge(request, { domain }));
                 }
             } catch (_) {}
         }
@@ -42,8 +40,8 @@ export const createXMLHTTPRequestTracker = ({ shouldTakeRequest, onFailedRequest
         const pending = pendingRequests.get(requestId);
 
         if (pending !== undefined) {
-            if (isFailedRequest(request) && shouldTakeRequest(tabId, pending.realm)) {
-                onFailedRequest(tabId, pending.realm);
+            if (isFailedRequest(request) && shouldTakeRequest(tabId, pending.domain)) {
+                onFailedRequest(tabId, pending.domain);
             }
 
             pendingRequests.delete(requestId);
@@ -55,7 +53,7 @@ export const createXMLHTTPRequestTracker = ({ shouldTakeRequest, onFailedRequest
         const pending = pendingRequests.get(requestId);
 
         if (pending !== undefined) {
-            onFailedRequest(tabId, pending.realm);
+            onFailedRequest(tabId, pending.domain);
             pendingRequests.delete(requestId);
         }
     };
