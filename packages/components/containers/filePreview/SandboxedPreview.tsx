@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { traceError } from '@proton/shared/lib/helpers/sentry';
 import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';
 
+import useSyncIframeStyles from '../../containers/themes/useSyncIframeStyles';
 import UnsupportedPreview from './UnsupportedPreview';
 
 interface Props {
@@ -16,6 +17,8 @@ interface Props {
 export const SandboxedPreview: FC<Props> = ({ contents, mimeType, onDownload }) => {
     const [isError, setError] = useState(false);
     const ref = useRef<HTMLIFrameElement>(null);
+
+    useSyncIframeStyles(ref.current?.contentWindow?.document.documentElement, document.documentElement);
 
     useEffect(() => {
         const sandbox = ref.current;
@@ -55,7 +58,7 @@ export const SandboxedPreview: FC<Props> = ({ contents, mimeType, onDownload }) 
             const html = `<!doctype html><html>
             <head>
             <style>html, body { border: 0; margin: 0; padding: 0; width: 100%; height: 100%; }</style>
-            <script type="text/javascript" src="${origin}/assets/sandbox.js"></script>
+            <script type='text/javascript' src='${origin}/assets/sandbox.js'></script>
             </head>
             <body></body>
             </html>`;
