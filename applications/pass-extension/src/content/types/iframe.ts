@@ -24,7 +24,6 @@ export type IFramePortMessageHandler<T extends IFrameMessageType = IFrameMessage
 export interface IFrameApp {
     element: HTMLIFrameElement;
     state: IFrameState;
-    sendPostMessage: (message: IFrameMessage) => void;
     sendPortMessage: (message: IFrameMessage) => void;
     registerMessageHandler: <M extends IFrameMessage['type']>(type: M, handler: IFramePortMessageHandler<M>) => void;
     getPosition: () => IFramePosition;
@@ -64,11 +63,6 @@ export enum IFrameMessageType {
 
 export type IFrameEndpoint = 'content-script' | 'notification' | 'dropdown';
 
-export type IFrameMessageWithSender<T extends IFrameMessageType = IFrameMessageType> = {
-    sender: IFrameEndpoint;
-    frameId?: number;
-} & IFrameMessage<T>;
-
 export type IFrameMessage<T extends IFrameMessageType = IFrameMessageType> = Extract<
     | { type: IFrameMessageType.IFRAME_INJECT_PORT; payload: { port: string } }
     | { type: IFrameMessageType.IFRAME_CONNECTED; payload: { framePort: string; id: IFrameEndpoint } }
@@ -83,3 +77,12 @@ export type IFrameMessage<T extends IFrameMessageType = IFrameMessageType> = Ext
     | { type: IFrameMessageType.NOTIFICATION_ACTION; payload: NotificationSetActionPayload },
     { type: T }
 >;
+
+export type IFrameMessageWithSender<T extends IFrameMessageType = IFrameMessageType> = {
+    sender: IFrameEndpoint;
+    frameId?: number;
+} & IFrameMessage<T>;
+
+export type IFrameSecureMessage<T extends IFrameMessageType = IFrameMessageType> = IFrameMessageWithSender<T> & {
+    key: string;
+};
