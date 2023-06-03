@@ -1,7 +1,5 @@
 import { c } from 'ttag';
 
-
-
 import { FileIcon, Icon, TableCell, useActiveBreakpoint } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
@@ -62,7 +60,7 @@ export const DeviceNameCell = ({ item }: { item: DeviceItem }) => {
 
 export const ModifiedCell = ({ item }: { item: DriveItem }) => {
     return (
-        <TableCell className="m-0 w15" data-testid="column-modified">
+        <TableCell className="flex flex-align-items-center m-0 w15" data-testid="column-modified">
             <TimeCell time={item.fileModifyTime} />
         </TableCell>
     );
@@ -70,7 +68,7 @@ export const ModifiedCell = ({ item }: { item: DriveItem }) => {
 
 export const ModifiedCellDevice = ({ item }: { item: DeviceItem }) => {
     return (
-        <TableCell className="m-0 w15" data-testid="column-modified">
+        <TableCell className="flex flex-align-items-center m-0 w15" data-testid="column-modified">
             <TimeCell time={item.modificationTime} />
         </TableCell>
     );
@@ -79,7 +77,10 @@ export const ModifiedCellDevice = ({ item }: { item: DeviceItem }) => {
 export function SizeCell({ item }: { item: DriveItem | TrashItem }) {
     const { isDesktop } = useActiveBreakpoint();
     return (
-        <TableCell className={clsx(['m-0', isDesktop ? 'w10' : 'w15'])} data-testid="column-size">
+        <TableCell
+            className={clsx(['flex flex-align-items-center m-0', isDesktop ? 'w10' : 'w15'])}
+            data-testid="column-size"
+        >
             {item.isFile ? <SizeCellBase size={item.size} /> : '-'}
         </TableCell>
     );
