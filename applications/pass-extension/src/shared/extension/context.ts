@@ -35,7 +35,7 @@ export const setupExtensionContext = async (options: ExtensionContextOptions): P
         const tab = await getCurrentTab();
         if (tab !== undefined && tab.id !== undefined) {
             const { domain, subdomain, domainName } = parseUrl(tab.url ?? '');
-            const name = `${endpoint}-${tab.id}-${uniqueId()}`;
+            const name = `${endpoint}-${tab.id}-${uniqueId(16)}`;
             const port = browser.runtime.connect(browser.runtime.id, { name });
 
             const ctx = ExtensionContext.set({
