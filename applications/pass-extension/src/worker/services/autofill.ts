@@ -52,9 +52,8 @@ export const createAutoFillService = () => {
         void browser.tabs.query({ active: true }).then((tabs) =>
             Promise.all(
                 tabs.map(({ id: tabId, url }) => {
-                    const { domain, subdomain } = parseUrl(url ?? '');
-                    if (tabId && domain) {
-                        const items = getAutofillCandidates({ domain, subdomain });
+                    if (tabId) {
+                        const items = getAutofillCandidates(parseUrl(url ?? ''));
                         const primaryVaultId = selectPrimaryVault(store.getState()).shareId;
                         const { didDowngrade } = selectVaultLimits(store.getState());
 
@@ -93,7 +92,7 @@ export const createAutoFillService = () => {
     WorkerMessageBroker.registerMessage(
         WorkerMessageType.AUTOFILL_QUERY,
         onContextReady((_, sender) => {
-            const { domain, tabId, subdomain } = parseSender(sender);
+            const { url, tabId } = parseSender(sender);
             const primaryVaultId = selectPrimaryVault(store.getState()).shareId;
             const { didDowngrade } = selectVaultLimits(store.getState());
 
@@ -101,12 +100,11 @@ export const createAutoFillService = () => {
              * has downgraded to a free plan : only allow him to autofill from
              * his primary vault */
             const items = getAutofillCandidates({
-                domain,
-                subdomain,
+                ...url,
                 ...(didDowngrade ? { shareId: primaryVaultId } : {}),
             });
 
-            void setPopupIconBadge(tabId, items.length);
+            if (tabId) void setPopupIconBadge(tabId, items.length);
 
             return { items: tabId !== undefined && items.length > 0 ? items : [], needsUpgrade: didDowngrade };
         })
@@ -131,10 +129,8 @@ export const createAutoFillService = () => {
      * badge count accordingly */
     browser.tabs.onUpdated.addListener(
         onContextReady(async (tabId, _, tab) => {
-            const { domain, subdomain } = parseUrl(tab.url ?? '');
-
             if (tabId) {
-                const items = getAutofillCandidates({ domain, subdomain });
+                const items = getAutofillCandidates(parseUrl(tab.url));
                 return setPopupIconBadge(tabId, items.length);
             }
         })
