@@ -108,8 +108,21 @@ export const createFormTrackerService = () => {
             const { type, data } = payload;
 
             if (ctx.getState().loggedIn) {
-                const { tabId, domain, subdomain, url } = parseSender(sender);
-                return { staged: stage(tabId, { domain, subdomain, url, type, data }, payload.reason) };
+                const { tabId, url } = parseSender(sender);
+                if (url.domain) {
+                    return {
+                        staged: stage(
+                            tabId,
+                            {
+                                domain: url.domain,
+                                subdomain: url.subdomain,
+                                type,
+                                data,
+                            },
+                            payload.reason
+                        ),
+                    };
+                }
             }
 
             throw new Error('Cannot stage submission while logged out');
@@ -120,9 +133,11 @@ export const createFormTrackerService = () => {
         WorkerMessageType.FORM_ENTRY_STASH,
         withContext((ctx, { payload: { reason } }, sender) => {
             if (ctx.getState().loggedIn) {
-                const { tabId, domain } = parseSender(sender);
-                stash(tabId, domain, reason);
-                return true;
+                const { tabId, url } = parseSender(sender);
+                if (url.domain) {
+                    stash(tabId, url.domain, reason);
+                    return true;
+                }
             }
 
             return false;
@@ -133,18 +148,20 @@ export const createFormTrackerService = () => {
         WorkerMessageType.FORM_ENTRY_COMMIT,
         withContext((ctx, { payload: { reason } }, sender) => {
             if (ctx.getState().loggedIn) {
-                const { tabId, domain } = parseSender(sender);
-                const committed = commit(tabId, domain, reason);
+                const { tabId, url } = parseSender(sender);
+                if (url.domain) {
+                    const committed = commit(tabId, url.domain, reason);
 
-                if (committed !== undefined) {
-                    const promptOptions = ctx.service.autosave.resolvePromptOptions(committed);
+                    if (committed !== undefined) {
+                        const promptOptions = ctx.service.autosave.resolvePromptOptions(committed);
 
-                    return promptOptions.shouldPrompt
-                        ? { committed: merge(committed, { autosave: promptOptions }) }
-                        : { committed: undefined };
+                        return promptOptions.shouldPrompt
+                            ? { committed: merge(committed, { autosave: promptOptions }) }
+                            : { committed: undefined };
+                    }
+
+                    throw new Error(`Cannot commit form submission for tab#${tabId} on domain "${url.domain}"`);
                 }
-
-                throw new Error(`Cannot commit form submission for tab#${tabId} on domain "${domain}"`);
             }
 
             throw new Error('Cannot commit submission while logged out');
@@ -155,20 +172,23 @@ export const createFormTrackerService = () => {
         WorkerMessageType.FORM_ENTRY_REQUEST,
         withContext((ctx, _, sender) => {
             if (ctx.getState().loggedIn) {
-                const { tabId, domain } = parseSender(sender);
-                const submission = get(tabId, domain);
-                const isCommitted = submission !== undefined && isSubmissionCommitted(submission);
+                const { tabId, url } = parseSender(sender);
 
-                return {
-                    submission:
-                        submission !== undefined
-                            ? (merge(submission, {
-                                  autosave: isCommitted
-                                      ? ctx.service.autosave.resolvePromptOptions(submission)
-                                      : { shouldPrompt: false },
-                              }) as WithAutoSavePromptOptions<FormEntry>)
-                            : submission,
-                };
+                if (url.domain) {
+                    const submission = get(tabId, url.domain);
+                    const isCommitted = submission !== undefined && isSubmissionCommitted(submission);
+
+                    return {
+                        submission:
+                            submission !== undefined
+                                ? (merge(submission, {
+                                      autosave: isCommitted
+                                          ? ctx.service.autosave.resolvePromptOptions(submission)
+                                          : { shouldPrompt: false },
+                                  }) as WithAutoSavePromptOptions<FormEntry>)
+                                : submission,
+                    };
+                }
             }
 
             return { submission: undefined };
