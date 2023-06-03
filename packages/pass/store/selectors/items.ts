@@ -138,19 +138,21 @@ export const selectMatchItems = createSelector(
     }
 );
 
-export const selectItemsByURL = (url?: MaybeNull<string>) =>
+export const selectItemsByURL = (url: MaybeNull<string>, isSecure: boolean, shareId?: string) =>
     createSelector(
-        [selectItemsWithOptimistic, () => url],
-        (items, url) =>
+        [selectItemsWithOptimistic, () => url, () => isSecure, () => shareId],
+        (items, url, isSecure, shareId) =>
             (typeof url === 'string'
                 ? items
-                      .filter((item) => !isTrashed(item) && !item.optimistic && matchLoginItemsByUrl(item.data)(url))
+                      .filter((item) => {
+                          if (shareId && shareId !== item.shareId) return false;
+                          return !isTrashed(item) && !item.optimistic && matchLoginItemsByUrl(item.data)(url, isSecure);
+                      })
                       .sort((a, b) => (b.lastUseTime ?? b.revisionTime) - (a.lastUseTime ?? a.revisionTime))
                 : []) as ItemRevision<'login'>[]
     );
 
-/**
- * Autofill candidates resolution strategy :
+/* Autofill candidates resolution strategy :
  *
  * If we have a match on the subdomain : return
  * the subdomain matches first, then the top-level
@@ -160,17 +162,16 @@ export const selectItemsByURL = (url?: MaybeNull<string>) =>
  *
  * If we have no subdomain : return all matches (top
  * level and other possible subdomain matches) with
- * top-level domain matches first
- */
+ * top-level domain matches first */
 
 export type SelectAutofillCandidatesOptions = ParsedUrl & { shareId?: string };
 
-export const selectAutofillCandidates = ({ shareId, domain, subdomain }: SelectAutofillCandidatesOptions) =>
-    createSelector([selectItemsByURL(domain), selectItemsByURL(subdomain)], (domainMatches, subdomainMatches) => {
-        return [
+export const selectAutofillCandidates = ({ shareId, domain, subdomain, isSecure }: SelectAutofillCandidatesOptions) =>
+    createSelector(
+        [selectItemsByURL(domain, isSecure, shareId), selectItemsByURL(subdomain, isSecure, shareId)],
+        (domainMatches, subdomainMatches) => [
             ...subdomainMatches,
             ...domainMatches
-                .filter((item) => !shareId || shareId === item.shareId)
                 .map((item) => {
                     const urls = item.data.content.urls
                         .map((url) => {
@@ -184,10 +185,11 @@ export const selectAutofillCandidates = ({ shareId, domain, subdomain }: SelectA
                 .sort((a, b) => a.priority - b.priority)
                 .map(({ item }) => item)
                 .filter(({ itemId }) => !subdomainMatches.some((item) => item.itemId === itemId)),
-        ];
-    });
+        ]
+    );
 
+/* FIXME: account for unsecure hosts when autosaving */
 export const selectAutosaveCandidate = (username: string, domain: string, subdomain?: MaybeNull<string>) =>
-    createSelector([selectItemsByURL(subdomain ?? domain), () => username], (items, username) =>
+    createSelector([selectItemsByURL(subdomain ?? domain, true), () => username], (items, username) =>
         items.filter(({ data }) => data.content.username === username)
     );
