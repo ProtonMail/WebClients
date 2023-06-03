@@ -23,7 +23,6 @@ function* bootWorker(options: WorkerRootSagaOptions) {
         const state = cache?.state ? merge(currentState, cache.state, { excludeEmpty: true }) : currentState;
 
         logger.info(`[Saga::Boot] ${cache !== undefined ? 'Booting from cache' : 'Cache not found during boot'}`);
-
         const { user, plan, addresses, eventId, features }: RequiredNonNull<UserState> = yield getUserData(state);
 
         yield call(PassCrypto.hydrate, {

@@ -18,12 +18,12 @@ import { isCacheTriggeringAction } from '../actions/with-cache-block';
 import { asIfNotOptimistic } from '../optimistic/selectors/select-is-optimistic';
 import { reducerMap } from '../reducers';
 import { selectSessionLockToken } from '../selectors';
-import type { State } from '../types';
+import type { State, WorkerRootSagaOptions } from '../types';
 
-function* cacheWorker(action: AnyAction) {
+function* cacheWorker(action: AnyAction, { onCacheRequest }: WorkerRootSagaOptions) {
     yield wait(500);
 
-    if (authentication?.hasSession()) {
+    if (authentication?.hasSession() && onCacheRequest()) {
         try {
             const sessionLockToken: Maybe<string> = yield select(selectSessionLockToken);
             const cacheSalt = crypto.getRandomValues(new Uint8Array(CACHE_SALT_LENGTH));
@@ -58,12 +58,11 @@ function* cacheWorker(action: AnyAction) {
     }
 }
 
-export default function* watcher() {
+export default function* watcher(options: WorkerRootSagaOptions) {
     yield takeLatest(isCacheTriggeringAction, function* (action: AnyAction) {
-        const cacheTask: Task = yield fork(cacheWorker, action);
+        const cacheTask: Task = yield fork(cacheWorker, action, options);
 
         yield take(or(stateLock.match, signout.match));
-
         logger.info(`[Saga::Cache] Invalidating all caching tasks`);
         yield cancel(cacheTask);
     });

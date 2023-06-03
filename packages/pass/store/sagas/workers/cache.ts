@@ -25,9 +25,7 @@ const decrypt = async <T extends object>(options: {
         return JSON.parse(
             options.useTextDecoder ? decoder.decode(decryptedData) : uint8ArrayToString(decryptedData)
         ) as T;
-    } catch (e) {
-        return;
-    }
+    } catch (_) {}
 };
 
 const getCachedState = async (sessionLockToken?: string): Promise<Maybe<ExtensionCache>> => {

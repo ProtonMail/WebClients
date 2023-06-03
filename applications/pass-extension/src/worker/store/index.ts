@@ -10,6 +10,7 @@ import { workerRootSaga } from '@proton/pass/store/sagas';
 import { type RequiredNonNull, ShareEventType, WorkerMessageType, WorkerStatus } from '@proton/pass/types';
 import type { TelemetryEvent } from '@proton/pass/types/data/telemetry';
 import { logger } from '@proton/pass/utils/logger';
+import { workerReady } from '@proton/pass/utils/worker';
 
 import WorkerMessageBroker from '../channel';
 import { withContext } from '../context';
@@ -50,6 +51,9 @@ const options: RequiredNonNull<WorkerRootSagaOptions> = {
             }
         }
     }),
+
+    /* only trigger cache flow if worker is ready */
+    onCacheRequest: withContext((ctx) => workerReady(ctx.getState().status)),
 
     onSignout: withContext((ctx) => ctx.service.auth.logout()),
 
