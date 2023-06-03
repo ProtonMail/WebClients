@@ -1,7 +1,8 @@
 import type { Runtime } from 'webextension-polyfill';
 
-import { portForwardingMessage } from '@proton/pass/extension/message';
+import { contentScriptMessage, portForwardingMessage, sendMessage } from '@proton/pass/extension/message';
 import type { Maybe, MaybeNull, WorkerState } from '@proton/pass/types';
+import { WorkerMessageType } from '@proton/pass/types';
 import { createElement, pixelEncoder } from '@proton/pass/utils/dom';
 import { safeCall, waitUntil } from '@proton/pass/utils/fp';
 import { createListenerStore } from '@proton/pass/utils/listener';
@@ -15,6 +16,7 @@ import type {
     IFrameMessageWithSender,
     IFramePortMessageHandler,
     IFramePosition,
+    IFrameSecureMessage,
     IFrameState,
 } from '../../types/iframe';
 import { type IFrameMessage, IFrameMessageType } from '../../types/iframe';
@@ -74,9 +76,15 @@ export const createIFrameApp = ({
      * Ensure the iframe has been correctly loaded before sending
      * out any message: the iframe.contentWindow::origin may be
      * incorrect otherwise */
-    const sendPostMessage = (rawMessage: IFrameMessage) => {
-        const message: IFrameMessageWithSender = { ...rawMessage, sender: 'content-script' };
-        void waitUntil(() => state.loaded, 100).then(() => iframe.contentWindow?.postMessage(message, iframe.src));
+    const sendSecurePostMessage = async (message: IFrameMessage) => {
+        await sendMessage.onSuccess(
+            contentScriptMessage({ type: WorkerMessageType.RESOLVE_EXTENSION_KEY }),
+            async ({ key }) =>
+                waitUntil(() => state.loaded, 100).then(() => {
+                    const secureMessage: IFrameSecureMessage = { ...message, key, sender: 'content-script' };
+                    iframe.contentWindow?.postMessage(secureMessage, iframe.src);
+                })
+        );
     };
 
     /* In order to communicate with the iframe, we're leveraging
@@ -160,7 +168,7 @@ export const createIFrameApp = ({
     };
 
     const init = (port: Runtime.Port) => {
-        sendPostMessage({
+        void sendSecurePostMessage({
             type: IFrameMessageType.IFRAME_INJECT_PORT,
             payload: { port: port.name },
         });
@@ -199,7 +207,6 @@ export const createIFrameApp = ({
     return {
         element: iframe,
         state,
-        sendPostMessage,
         sendPortMessage,
         registerMessageHandler,
         getPosition,

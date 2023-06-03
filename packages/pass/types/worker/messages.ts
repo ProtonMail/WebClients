@@ -41,6 +41,7 @@ export enum WorkerMessageType {
     LOAD_CONTENT_SCRIPT = 'LOAD_CONTENT_SCRIPT',
     UNLOAD_CONTENT_SCRIPT = 'UNLOAD_CONTENT_SCRIPT',
     START_CONTENT_SCRIPT = 'START_CONTENT_SCRIPT',
+    RESOLVE_EXTENSION_KEY = 'RESOLVE_EXTENSION_KEY',
     RESOLVE_TAB = 'RESOLVE_TAB',
     PORT_FORWARDING_MESSAGE = 'PORT_FORWARDING',
     PORT_UNAUTHORIZED = 'PORT_UNAUTHORIZED',
@@ -93,6 +94,7 @@ export type AliasOptionsMessage = { type: WorkerMessageType.ALIAS_OPTIONS };
 export type AliasCreateMessage = WithPayload<WorkerMessageType.ALIAS_CREATE, { realm: Realm; alias: AliasCreationDTO }>;
 export type OTPCodeGenerateMessage = WithPayload<WorkerMessageType.OTP_CODE_GENERATE, OtpRequest>;
 export type ResolveTabIdMessage = { type: WorkerMessageType.RESOLVE_TAB };
+export type ResolveExtensionKeyMessage = { type: WorkerMessageType.RESOLVE_EXTENSION_KEY };
 export type PortUnauthorizedMessage = { type: WorkerMessageType.PORT_UNAUTHORIZED };
 export type ExportRequestMessage = WithPayload<WorkerMessageType.EXPORT_REQUEST, ExportRequestPayload>;
 export type ImportDecryptMessage = WithPayload<WorkerMessageType.EXPORT_DECRYPT, { data: string; passphrase: string }>;
@@ -130,6 +132,7 @@ export type WorkerMessage =
     | AliasOptionsMessage
     | AliasCreateMessage
     | ResolveTabIdMessage
+    | ResolveExtensionKeyMessage
     | ExportRequestMessage
     | ImportDecryptMessage
     | ShareServerEventMessage
@@ -159,6 +162,7 @@ type WorkerMessageResponseMap = {
     [WorkerMessageType.WORKER_WAKEUP]: WakeupResponse;
     [WorkerMessageType.WORKER_INIT]: WorkerState;
     [WorkerMessageType.RESOLVE_TAB]: { tab: Maybe<Tabs.Tab> };
+    [WorkerMessageType.RESOLVE_EXTENSION_KEY]: { key: string };
     [WorkerMessageType.FORK]: { payload: ExtensionForkResultPayload };
     [WorkerMessageType.FORM_ENTRY_REQUEST]: { submission: Maybe<WithAutoSavePromptOptions<FormEntry>> };
     [WorkerMessageType.FORM_ENTRY_COMMIT]: { committed: Maybe<PromptedFormEntry> };
