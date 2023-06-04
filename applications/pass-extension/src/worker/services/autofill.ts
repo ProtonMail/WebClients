@@ -12,6 +12,7 @@ import type { Maybe, SafeLoginItem } from '@proton/pass/types';
 import { WorkerMessageType } from '@proton/pass/types';
 import { parseSender, parseUrl } from '@proton/pass/utils/url';
 import { workerReady } from '@proton/pass/utils/worker';
+import noop from '@proton/utils/noop';
 
 import { setPopupIconBadge } from '../../shared/extension';
 import WorkerMessageBroker from '../channel';
@@ -49,44 +50,48 @@ export const createAutoFillService = () => {
     const updateTabsBadgeCount = withContext(({ status }) => {
         if (!workerReady(status)) return;
 
-        void browser.tabs.query({ active: true }).then((tabs) =>
-            Promise.all(
-                tabs.map(({ id: tabId, url }) => {
-                    if (tabId) {
-                        const items = getAutofillCandidates(parseUrl(url));
-                        const primaryVaultId = selectPrimaryVault(store.getState()).shareId;
-                        const { didDowngrade } = selectVaultLimits(store.getState());
+        browser.tabs
+            .query({ active: true })
+            .then((tabs) =>
+                Promise.all(
+                    tabs.map(({ id: tabId, url }) => {
+                        if (tabId) {
+                            const items = getAutofillCandidates(parseUrl(url));
+                            const primaryVaultId = selectPrimaryVault(store.getState()).shareId;
+                            const { didDowngrade } = selectVaultLimits(store.getState());
 
-                        /* if the user has downgraded : we want to keep the tab badge count
-                         * with the total items matched, but sync the autofillable candidates
-                         * in the content-scripts to be only the ones from the primary vault */
-                        const count = items.length;
-                        const safeCount = items.filter(
-                            (item) => !didDowngrade || primaryVaultId === item.shareId
-                        ).length;
+                            /* if the user has downgraded : we want to keep the tab badge count
+                             * with the total items matched, but sync the autofillable candidates
+                             * in the content-scripts to be only the ones from the primary vault */
+                            const count = items.length;
+                            const safeCount = items.filter(
+                                (item) => !didDowngrade || primaryVaultId === item.shareId
+                            ).length;
 
-                        WorkerMessageBroker.ports.broadcast(
-                            {
-                                type: WorkerMessageType.AUTOFILL_SYNC,
-                                payload: { count: safeCount },
-                            },
-                            (name) => name.startsWith(`content-script-${tabId}`)
-                        );
+                            WorkerMessageBroker.ports.broadcast(
+                                {
+                                    type: WorkerMessageType.AUTOFILL_SYNC,
+                                    payload: { count: safeCount },
+                                },
+                                (name) => name.startsWith(`content-script-${tabId}`)
+                            );
 
-                        return setPopupIconBadge(tabId, count);
-                    }
-                })
+                            return setPopupIconBadge(tabId, count);
+                        }
+                    })
+                )
             )
-        );
+            .catch(noop);
     });
 
     /* Clears badge count for each valid tab
      * Triggered on logout detection to avoid
      * showing stale counts */
     const clearTabsBadgeCount = () => {
-        void browser.tabs
+        browser.tabs
             .query({})
-            .then((tabs) => Promise.all(tabs.map(({ id: tabId }) => tabId && setPopupIconBadge(tabId, 0))));
+            .then((tabs) => Promise.all(tabs.map(({ id: tabId }) => tabId && setPopupIconBadge(tabId, 0))))
+            .catch(noop);
     };
 
     WorkerMessageBroker.registerMessage(
