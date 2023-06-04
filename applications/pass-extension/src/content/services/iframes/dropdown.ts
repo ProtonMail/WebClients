@@ -8,6 +8,7 @@ import { pipe, truthy, waitUntil } from '@proton/pass/utils/fp';
 import { createListenerStore } from '@proton/pass/utils/listener';
 import { getScrollParent } from '@proton/shared/lib/helpers/dom';
 
+import { deriveAliasPrefix } from '../../../shared/items/alias';
 import { DROPDOWN_IFRAME_SRC, DROPDOWN_WIDTH, MIN_DROPDOWN_HEIGHT } from '../../constants';
 import { withContext } from '../../context/context';
 import { createIFrameApp } from '../../injections/iframe/create-iframe-app';
@@ -101,7 +102,7 @@ export const createDropdown = (): InjectedDropdown => {
                         return {
                             action,
                             domain: subdomain ?? domain!,
-                            prefix: displayName!,
+                            prefix: deriveAliasPrefix(displayName!),
                         };
                     }
                     case DropdownAction.AUTOSUGGEST_PASSWORD: {
