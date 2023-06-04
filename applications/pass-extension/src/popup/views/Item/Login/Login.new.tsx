@@ -9,6 +9,7 @@ import { Button } from '@proton/atoms';
 import { DropdownMenuButton, Icon } from '@proton/components';
 import { selectTOTPLimits, selectVaultLimits } from '@proton/pass/store';
 import { type LoginWithAliasCreationDTO } from '@proton/pass/types';
+import { PassFeature } from '@proton/pass/types/api/features';
 import { merge } from '@proton/pass/utils/object';
 import { parseOTPValue } from '@proton/pass/utils/otp/otp';
 import { isEmptyString, uniqueId } from '@proton/pass/utils/string';
@@ -16,6 +17,7 @@ import { getEpoch } from '@proton/pass/utils/time/get-epoch';
 import { isValidURL } from '@proton/pass/utils/url';
 
 import { UpgradeButton } from '../../../../shared/components/upgrade/UpgradeButton';
+import { useFeatureFlag } from '../../../../shared/hooks/useFeatureFlag';
 import type { ItemNewProps } from '../../../../shared/items';
 import { deriveAliasPrefix } from '../../../../shared/items/alias';
 import { QuickActionsDropdown } from '../../../components/Dropdown/QuickActionsDropdown';
@@ -48,6 +50,8 @@ export const LoginNew: VFC<ItemNewProps<'login'>> = ({ shareId, onSubmit, onCanc
 
     const { vaultTotalCount } = useSelector(selectVaultLimits);
     const { needsUpgrade } = useSelector(selectTOTPLimits);
+
+    const showCustomFields = useFeatureFlag<boolean>(PassFeature.PassCustomFields);
 
     const initialValues: LoginItemFormValues = useMemo(() => {
         const params = new URLSearchParams(search);
@@ -287,7 +291,7 @@ export const LoginNew: VFC<ItemNewProps<'login'>> = ({ shareId, onSubmit, onCanc
                                 />
                             </FieldsetCluster>
 
-                            <ExtraFieldGroup form={form} />
+                            {Boolean(showCustomFields) && <ExtraFieldGroup form={form} />}
                         </Form>
                     </FormikProvider>
                 )}

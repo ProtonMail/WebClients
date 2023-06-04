@@ -7,6 +7,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { Icon } from '@proton/components';
 import { itemCreationIntent, selectTOTPLimits } from '@proton/pass/store';
+import { PassFeature } from '@proton/pass/types/api/features';
 import { prop } from '@proton/pass/utils/fp';
 import { merge } from '@proton/pass/utils/object';
 import { parseOTPValue } from '@proton/pass/utils/otp/otp';
@@ -14,6 +15,7 @@ import { isEmptyString, uniqueId } from '@proton/pass/utils/string';
 import { getEpoch } from '@proton/pass/utils/time';
 
 import { UpgradeButton } from '../../../../shared/components/upgrade/UpgradeButton';
+import { useFeatureFlag } from '../../../../shared/hooks/useFeatureFlag';
 import type { ItemEditProps } from '../../../../shared/items';
 import { deriveAliasPrefix } from '../../../../shared/items/alias';
 import { DropdownMenuButton } from '../../../components/Dropdown/DropdownMenuButton';
@@ -47,6 +49,8 @@ export const LoginEdit: VFC<ItemEditProps<'login'>> = ({ vault, revision, onSubm
 
     const dispatch = useDispatch();
     const { needsUpgrade } = useSelector(selectTOTPLimits);
+
+    const showCustomFields = useFeatureFlag<boolean>(PassFeature.PassCustomFields);
 
     const initialValues: EditLoginItemFormValues = {
         name,
@@ -300,7 +304,7 @@ export const LoginEdit: VFC<ItemEditProps<'login'>> = ({ vault, revision, onSubm
                                 />
                             </FieldsetCluster>
 
-                            <ExtraFieldGroup form={form} />
+                            {Boolean(showCustomFields) && <ExtraFieldGroup form={form} />}
                         </Form>
                     </FormikProvider>
                 )}
