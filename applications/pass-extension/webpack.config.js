@@ -34,6 +34,7 @@ console.log(config);
 const production = ENV === 'production';
 
 const nonAccessibleWebResource = (entry) => [entry, './src/shared/extension/web-accessible-resource.ts'];
+const noBrowserTrap = (entry) => [entry, './src/shared/extension/disable-browser-trap.ts'];
 
 module.exports = {
     ...(production
@@ -49,10 +50,10 @@ module.exports = {
         dropdown: nonAccessibleWebResource('./src/content/injections/apps/dropdown/index.tsx'),
         notification: nonAccessibleWebResource('./src/content/injections/apps/notification/index.tsx'),
         onboarding: './src/pages/onboarding/index.tsx',
-        orchestrator: './src/content/orchestrator.ts',
+        orchestrator: noBrowserTrap('./src/content/orchestrator.ts'),
         popup: nonAccessibleWebResource('./src/popup/index.tsx'),
         settings: './src/pages/settings/index.tsx',
-        ...(BUILD_TARGET === 'firefox' ? { authFallback: './src/content/firefox/index.ts' } : {}),
+        ...(BUILD_TARGET === 'firefox' ? { authFallback: noBrowserTrap('./src/content/firefox/index.ts') } : {}),
     },
     module: {
         strictExportPresence: true,
