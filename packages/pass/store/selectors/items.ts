@@ -12,7 +12,8 @@ import type {
 } from '@proton/pass/types';
 import { invert, truthy } from '@proton/pass/utils/fp';
 import { isTrashed } from '@proton/pass/utils/pass/trash';
-import { matchAny, matchLoginItemsByUrl } from '@proton/pass/utils/search';
+import { matchAny, matchLoginItemByUrl } from '@proton/pass/utils/search';
+import { isEmptyString } from '@proton/pass/utils/string';
 import type { ParsedUrl } from '@proton/pass/utils/url';
 import { parseUrl } from '@proton/pass/utils/url';
 
@@ -138,15 +139,32 @@ export const selectMatchItems = createSelector(
     }
 );
 
-export const selectItemsByURL = (url: MaybeNull<string>, isSecure: boolean, shareId?: string) =>
+export const selectItemsByDomain = (
+    domain: MaybeNull<string>,
+    options: {
+        protocolFilter: string[];
+        isPrivate: boolean;
+        shareId?: string;
+    }
+) =>
     createSelector(
-        [selectItemsWithOptimistic, () => url, () => isSecure, () => shareId],
-        (items, url, isSecure, shareId) =>
-            (typeof url === 'string'
+        [
+            selectItemsWithOptimistic,
+            () => domain,
+            () => options.protocolFilter,
+            () => options.isPrivate,
+            () => options.shareId,
+        ],
+        (items, domain, protocolFilter, isPrivate, shareId) =>
+            (typeof domain === 'string' && !isEmptyString(domain)
                 ? items
                       .filter((item) => {
                           if (shareId && shareId !== item.shareId) return false;
-                          return !isTrashed(item) && !item.optimistic && matchLoginItemsByUrl(item.data)(url, isSecure);
+                          return (
+                              !isTrashed(item) &&
+                              !item.optimistic &&
+                              matchLoginItemByUrl(item.data)(domain, { protocolFilter, isPrivate })
+                          );
                       })
                       .sort((a, b) => (b.lastUseTime ?? b.revisionTime) - (a.lastUseTime ?? a.revisionTime))
                 : []) as ItemRevision<'login'>[]
@@ -163,13 +181,28 @@ export const selectItemsByURL = (url: MaybeNull<string>, isSecure: boolean, shar
  * If we have no subdomain : return all matches (top
  * level and other possible subdomain matches) with
  * top-level domain matches first */
-
 export type SelectAutofillCandidatesOptions = ParsedUrl & { shareId?: string };
 
-export const selectAutofillCandidates = ({ shareId, domain, subdomain, isSecure }: SelectAutofillCandidatesOptions) =>
-    createSelector(
-        [selectItemsByURL(domain, isSecure, shareId), selectItemsByURL(subdomain, isSecure, shareId)],
+export const selectAutofillCandidates = ({
+    shareId,
+    domain,
+    subdomain,
+    isSecure,
+    isPrivate,
+    protocol,
+}: SelectAutofillCandidatesOptions) => {
+    /* if the protocol is null : it likely means the
+     * url validation failed - do not return any candidates */
+    if (protocol === null || domain === null) return () => [];
+    const protocolFilter = !isSecure ? [protocol] : [];
+
+    return createSelector(
+        [
+            selectItemsByDomain(domain, { protocolFilter, isPrivate, shareId }),
+            selectItemsByDomain(subdomain, { protocolFilter, isPrivate, shareId }),
+        ],
         (domainMatches, subdomainMatches) => [
+            /* push direct subdomain matches on top */
             ...subdomainMatches,
             ...domainMatches
                 .map((item) => {
@@ -179,7 +212,6 @@ export const selectAutofillCandidates = ({ shareId, domain, subdomain, isSecure 
                             return isTopLevelDomain && domain ? domain : '';
                         })
                         .filter(truthy);
-
                     return { item, priority: matchAny(urls)(domain!) ? 0 : 1 };
                 })
                 .sort((a, b) => a.priority - b.priority)
@@ -187,9 +219,11 @@ export const selectAutofillCandidates = ({ shareId, domain, subdomain, isSecure 
                 .filter(({ itemId }) => !subdomainMatches.some((item) => item.itemId === itemId)),
         ]
     );
+};
 
 /* FIXME: account for unsecure hosts when autosaving */
 export const selectAutosaveCandidate = (username: string, domain: string, subdomain?: MaybeNull<string>) =>
-    createSelector([selectItemsByURL(subdomain ?? domain, true), () => username], (items, username) =>
-        items.filter(({ data }) => data.content.username === username)
+    createSelector(
+        [selectItemsByDomain(subdomain ?? domain, { protocolFilter: [], isPrivate: false }), () => username],
+        (items, username) => items.filter(({ data }) => data.content.username === username)
     );

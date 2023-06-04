@@ -10,6 +10,18 @@ describe('URL parsers', () => {
             expect(result.isTopLevelDomain).toEqual(true);
             expect(result.isPrivate).toEqual(false);
             expect(result.isSecure).toEqual(true);
+            expect(result.protocol).toEqual('https:');
+        });
+
+        test('should handle standard nested subdomain url', () => {
+            const result = parseUrl('https://www.account.secure.github.com');
+            expect(result.displayName).toEqual('github');
+            expect(result.domain).toEqual('github.com');
+            expect(result.subdomain).toEqual('www.account.secure.github.com');
+            expect(result.isTopLevelDomain).toEqual(false);
+            expect(result.isPrivate).toEqual(false);
+            expect(result.isSecure).toEqual(true);
+            expect(result.protocol).toEqual('https:');
         });
 
         test('should consider `www` as top-level url', () => {
@@ -20,6 +32,7 @@ describe('URL parsers', () => {
             expect(result.isTopLevelDomain).toEqual(true);
             expect(result.isPrivate).toEqual(false);
             expect(result.isSecure).toEqual(true);
+            expect(result.protocol).toEqual('https:');
         });
 
         test('should handle private sub-domains', () => {
@@ -30,6 +43,7 @@ describe('URL parsers', () => {
             expect(result.isTopLevelDomain).toEqual(true);
             expect(result.isPrivate).toEqual(true);
             expect(result.isSecure).toEqual(true);
+            expect(result.protocol).toEqual('https:');
         });
 
         test('should handle private nested sub-domains', () => {
@@ -40,6 +54,7 @@ describe('URL parsers', () => {
             expect(result.isTopLevelDomain).toEqual(false);
             expect(result.isPrivate).toEqual(true);
             expect(result.isSecure).toEqual(true);
+            expect(result.protocol).toEqual('https:');
         });
 
         test('should handle non-private sub-domains', () => {
@@ -50,6 +65,7 @@ describe('URL parsers', () => {
             expect(result.isTopLevelDomain).toEqual(false);
             expect(result.isPrivate).toEqual(false);
             expect(result.isSecure).toEqual(true);
+            expect(result.protocol).toEqual('https:');
         });
 
         test('should handle localhost', () => {
@@ -60,6 +76,7 @@ describe('URL parsers', () => {
             expect(result.isTopLevelDomain).toEqual(true);
             expect(result.isPrivate).toEqual(false);
             expect(result.isSecure).toEqual(false);
+            expect(result.protocol).toEqual('http:');
         });
 
         test('should handle IP addresses', () => {
@@ -70,6 +87,7 @@ describe('URL parsers', () => {
             expect(result.isTopLevelDomain).toEqual(true);
             expect(result.isPrivate).toEqual(false);
             expect(result.isSecure).toEqual(false);
+            expect(result.protocol).toEqual('http:');
         });
 
         test('should handle non-standard http protocols', () => {
@@ -80,6 +98,18 @@ describe('URL parsers', () => {
             expect(result.isTopLevelDomain).toEqual(true);
             expect(result.isPrivate).toEqual(false);
             expect(result.isSecure).toEqual(false);
+            expect(result.protocol).toEqual('ftp:');
+        });
+
+        test('should return defaults if non valid url', () => {
+            const result = parseUrl('invalid:://url');
+            expect(result.displayName).toEqual(null);
+            expect(result.domain).toEqual(null);
+            expect(result.subdomain).toEqual(null);
+            expect(result.isTopLevelDomain).toEqual(false);
+            expect(result.isPrivate).toEqual(false);
+            expect(result.isSecure).toEqual(false);
+            expect(result.protocol).toEqual(null);
         });
     });
 });
