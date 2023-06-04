@@ -4,6 +4,7 @@ import { backgroundMessage } from '@proton/pass/extension/message';
 import browser from '@proton/pass/globals/browser';
 import { type TabId, WorkerMessageType } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
+import noop from '@proton/utils/noop';
 
 import { createDevReloader } from '../../shared/extension/dev-reload';
 import WorkerMessageBroker from '../channel';
@@ -35,7 +36,7 @@ export const createInjectionService = () => {
             tabs.map((tab) => {
                 logger.info(`[InjectionService::update] Re-injecting script on tab ${tab.id}`);
                 if (tab.id !== undefined) {
-                    void inject({ tabId: tab.id, js: ['orchestrator.js'] });
+                    inject({ tabId: tab.id, js: ['orchestrator.js'] }).catch(noop);
                 }
             })
         );
