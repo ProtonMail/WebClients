@@ -80,7 +80,7 @@ export const Welcome: VFC = () => {
                                 >
                                     <div className="pass-welcome--onboarding-video rounded-xl">
                                         <iframe
-                                            src="https://www.youtube.com/embed/Nm4DCAjePOM"
+                                            src="https://www.youtube.com/embed/Nm4DCAjePOM?cc_load_policy=1"
                                             title={c('Info').t`Discover ${PASS_APP_NAME} Youtube Video`}
                                             allowFullScreen
                                         />
@@ -149,7 +149,11 @@ export const Welcome: VFC = () => {
                                     className="flex-item-fluid-auto"
                                 >
                                     <img
-                                        src="/assets/onboarding-pin.gif"
+                                        src={
+                                            BUILD_TARGET === 'firefox'
+                                                ? '/assets/onboarding-pin-firefox.gif'
+                                                : '/assets/onboarding-pin.gif'
+                                        }
                                         alt=""
                                         className="pass-welcome--onboarding-pin rounded-xl"
                                     />
