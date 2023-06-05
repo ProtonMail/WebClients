@@ -16,7 +16,7 @@ interface Folder {
 export default function useUploadFolder() {
     const queuedFunction = useQueuedFunction();
     const { createFolder } = useLinkActions();
-    const { trashLinks, deleteChildrenLinks } = useLinksActions();
+    const { deleteChildrenLinks } = useLinksActions();
     const { findAvailableName, getLinkByName } = useUploadHelper();
 
     const createEmptyFolder = async (
@@ -53,22 +53,6 @@ export default function useUploadFolder() {
             isNewFolder: false,
             folderName,
         };
-    };
-
-    const replaceFolder = async (
-        abortSignal: AbortSignal,
-        shareId: string,
-        parentId: string,
-        folderName: string,
-        modificationTime: Date | undefined
-    ): Promise<Folder> => {
-        const link = await getLinkByName(abortSignal, shareId, parentId, folderName);
-        if (!link) {
-            throw Error(c('Error').t`The original folder or file not found`);
-        }
-        checkSignal(abortSignal, folderName);
-        await trashLinks(abortSignal, [{ shareId, parentLinkId: parentId, linkId: link.linkId }]);
-        return createEmptyFolder(abortSignal, shareId, parentId, folderName, modificationTime);
     };
 
     const replaceDraft = async (
@@ -117,12 +101,6 @@ export default function useUploadFolder() {
                 return createEmptyFolder(abortSignal, shareId, parentId, newName, modificationTime);
             }
             if (conflictStrategy === TransferConflictStrategy.Replace) {
-                if (draftLinkId) {
-                    return replaceDraft(abortSignal, shareId, parentId, draftLinkId, folderName, modificationTime);
-                }
-                return replaceFolder(abortSignal, shareId, parentId, folderName, modificationTime);
-            }
-            if (conflictStrategy === TransferConflictStrategy.Merge) {
                 if (draftLinkId) {
                     return replaceDraft(abortSignal, shareId, parentId, draftLinkId, folderName, modificationTime);
                 }
