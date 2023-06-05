@@ -274,6 +274,10 @@ const HolidaysCalendarModalWithDirectory = ({
                         });
                         await call();
                     }
+                    createNotification({
+                        type: 'success',
+                        text: c('Notification in holidays calendar modal').t`Calendar updated`,
+                    });
                 } else {
                     // 3 - Joining a holidays calendar
                     await setupHolidaysCalendarHelper({
