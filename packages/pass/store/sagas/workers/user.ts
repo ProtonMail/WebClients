@@ -17,9 +17,12 @@ import type { AddressState, UserFeatureState, UserPlanState, UserState } from '.
 import { selectUserState } from '../../selectors';
 import type { State } from '../../types';
 
-export const getUserFeatures = async ({ features }: UserState): Promise<UserFeatureState> => {
+export const getUserFeatures = async (
+    { features }: UserState,
+    options?: { force: boolean }
+): Promise<UserFeatureState> => {
     try {
-        if (features && getEpoch() - (features?.requestedAt ?? 0) < UNIX_DAY) return features;
+        if (!options?.force && features && getEpoch() - (features?.requestedAt ?? 0) < UNIX_DAY) return features;
 
         logger.info(`[Saga::UserFeatures] syncing user feature flags`);
         const { Features } = await api<{ Features: Feature[] }>(getFeatures(PassFeaturesValues));
@@ -36,11 +39,11 @@ export const getUserFeatures = async ({ features }: UserState): Promise<UserFeat
     }
 };
 
-export const getUserPlan = async ({ plan }: UserState, force: boolean = false): Promise<UserPlanState> => {
+export const getUserPlan = async ({ plan }: UserState, options?: { force: boolean }): Promise<UserPlanState> => {
     try {
         const epoch = getEpoch();
-        if (!force && plan?.TrialEnd && epoch < plan.TrialEnd) return plan;
-        if (!force && plan && epoch - (plan?.requestedAt ?? 0) < UNIX_DAY) return plan;
+        if (!options?.force && plan?.TrialEnd && epoch < plan.TrialEnd) return plan;
+        if (!options?.force && plan && epoch - (plan?.requestedAt ?? 0) < UNIX_DAY) return plan;
 
         logger.info(`[Saga::UserPlan] syncing user access plan`);
         const { Plan } = (await api({ url: 'pass/v1/user/access', method: 'post' })).Access!;
