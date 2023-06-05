@@ -107,13 +107,6 @@ export default function useUploadConflict(
             isConflictStrategyModalOpen.current = false;
             conflictStrategyRef.current[all ? CONFLICT_STRATEGY_ALL_ID : uploadId] = strategy;
 
-            // If it's folder conflict, and we choose replace,
-            // we want to apply the same to all files/folder under this folder
-            if (params.isFolder && strategy === TransferConflictStrategy.Replace) {
-                fileConflictStrategy.current[CONFLICT_STRATEGY_ALL_ID] = TransferConflictStrategy.Replace;
-                folderConflictStrategy.current[CONFLICT_STRATEGY_ALL_ID] = TransferConflictStrategy.Replace;
-            }
-
             if (all) {
                 updateState(({ state, file }) => {
                     // Update only folders for folder conflict strategy.
