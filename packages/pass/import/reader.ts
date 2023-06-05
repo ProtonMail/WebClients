@@ -59,11 +59,16 @@ export const fileReader = async (payload: ImportReaderPayload): Promise<ImportPa
         case ImportProvider.PROTONPASS: {
             switch (fileExtension) {
                 case 'zip':
-                    return readProtonPassData({ data: await payload.file.arrayBuffer(), encrypted: false });
+                    return readProtonPassData({
+                        data: await payload.file.arrayBuffer(),
+                        encrypted: false,
+                        userId: payload.userId,
+                    });
                 case 'pgp':
                     return readProtonPassData({
                         data: await payload.file.text(),
                         encrypted: true,
+                        userId: payload.userId,
                         passphrase: payload.passphrase ?? '',
                     });
                 default:
