@@ -45,6 +45,15 @@ function main {
   ls -lSha
   pwd;
 
+  appName="$(jq -r .name package.json)"
+
+  # Custom flow for proton pass as we build many versions
+  if [[ "$appName" == "proton-pass-extension" ]]; then
+    versionRelease="$(jq -r .version manifest-chrome.json)"
+    echo "rename proton pass extension $versionRelease as dist"
+    cp -r "release/ProtonPass-chrome-${versionRelease}" dist
+  fi;
+
   if [ ! -d "/tmp/sourcemapper" ]; then
     git clone \
       --quiet \
