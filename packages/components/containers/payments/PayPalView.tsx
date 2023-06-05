@@ -51,10 +51,16 @@ const PayPalView = ({ type, amount, currency, paypal, paypalCredit, disabled }: 
         </PayPalButton>
     );
 
+    const allowedPaymentTypes: PaymentMethodFlows[] = ['signup', 'signup-pass', 'subscription', 'invoice', 'credit'];
+    const isAllowedPaymentType = type && allowedPaymentTypes.includes(type);
+
+    const allowedOtherTypes: PaymentMethodFlows[] = ['donation', 'human-verification'];
+    const isAllowedOtherType = type && allowedOtherTypes.includes(type);
+
     return (
         <div className="p-4 border rounded bg-weak mb-4" data-testid="paypal-view">
             {paypal.loadingVerification ? <Loader /> : null}
-            {!paypal.loadingVerification && type && ['signup', 'subscription', 'invoice', 'credit'].includes(type) ? (
+            {!paypal.loadingVerification && isAllowedPaymentType ? (
                 <>
                     <div className="mb-4">
                         {c('Info')
@@ -68,7 +74,7 @@ const PayPalView = ({ type, amount, currency, paypal, paypalCredit, disabled }: 
                     </div>
                 </>
             ) : null}
-            {type && !paypal.loadingVerification && ['donation', 'human-verification'].includes(type) ? (
+            {!paypal.loadingVerification && isAllowedOtherType ? (
                 <>
                     <div className="mb-4">
                         {c('Info')
