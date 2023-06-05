@@ -11,7 +11,7 @@ import { bootSuccess, serverEvent, setUserFeatures, setUserPlan } from '../actio
 
 export type AddressState = { [addressId: string]: Address };
 export type UserFeatureState = Partial<Record<PassFeature, Feature>> & { requestedAt?: number };
-export type UserPlanState = PassPlanResponse;
+export type UserPlanState = PassPlanResponse & { requestedAt?: number };
 
 export type UserState = {
     eventId: MaybeNull<string>;
