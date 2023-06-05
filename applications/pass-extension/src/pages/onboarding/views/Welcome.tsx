@@ -126,11 +126,7 @@ export const Welcome: VFC = () => {
                                                 alt="Play Store"
                                             />
                                         </Href>
-
-                                        <Href
-                                            onClick={(e) => e.preventDefault()}
-                                            href="#" /* https://apps.apple.com/app/proton-mail-encrypted-email/id979659905 */
-                                        >
+                                        <Href href="https://apps.apple.com/us/app/proton-pass-password-manager/id6443490629">
                                             <img
                                                 className="h-custom"
                                                 style={{ '--height-custom': '40px ' }}
