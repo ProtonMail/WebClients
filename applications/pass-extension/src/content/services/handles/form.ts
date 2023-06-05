@@ -45,6 +45,7 @@ export const createFormHandles = (options: DetectedForm): FormHandle => {
         detachField: (field: HTMLInputElement) => {
             formHandle.fields.get(field)?.detach();
             formHandle.fields.delete(field);
+            setFieldProcessable(field);
         },
 
         shouldRemove: () => !document.body.contains(form),
