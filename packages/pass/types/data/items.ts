@@ -44,7 +44,10 @@ export type ItemRevision<T extends ItemType = ItemType> = Omit<OpenedItem, 'cont
  * Adds an optimistic & failed property to
  * the ItemRevision type
  */
-export type ItemRevisionWithOptimistic = ItemRevision & { optimistic: boolean; failed: boolean };
+export type ItemRevisionWithOptimistic<T extends ItemType = ItemType> = ItemRevision<T> & {
+    optimistic: boolean;
+    failed: boolean;
+};
 
 /**
  * Generic utility type to construct
