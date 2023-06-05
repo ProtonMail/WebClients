@@ -19,6 +19,7 @@ export const ImportProviderValues = Object.values(ImportProvider).sort((a, b) =>
 export type ImportReaderPayload = {
     file: File;
     provider: ImportProvider;
+    userId?: string;
     passphrase?: string;
 };
 

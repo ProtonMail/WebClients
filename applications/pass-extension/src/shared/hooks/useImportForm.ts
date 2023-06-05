@@ -12,7 +12,7 @@ import { useNotifications } from '@proton/components/hooks';
 import type { ImportPayload, ImportReaderPayload } from '@proton/pass/import';
 import { ImportProvider, ImportProviderValues, extractFileExtension, fileReader } from '@proton/pass/import';
 import type { ImportState } from '@proton/pass/store';
-import { importItemsIntent, selectLatestImport } from '@proton/pass/store';
+import { importItemsIntent, selectLatestImport, selectUser } from '@proton/pass/store';
 import { importItems } from '@proton/pass/store/actions/requests';
 import type { Maybe } from '@proton/pass/types';
 import { first } from '@proton/pass/utils/array';
@@ -100,6 +100,7 @@ export const useImportForm = ({
     const [dropzoneHovered, setDropzoneHovered] = useState(false);
     const { createNotification } = useNotifications();
     const result = useSelector(selectLatestImport);
+    const user = useSelector(selectUser);
 
     const form: FormikContextType<ImportFormValues> = useFormik<ImportFormValues>({
         initialValues: getInitialFormValues(),
@@ -114,6 +115,7 @@ export const useImportForm = ({
                     file: values.file!,
                     provider: values.provider,
                     passphrase: values.passphrase,
+                    userId: user?.ID,
                 };
 
                 const importPayload = await fileReader(payload);

@@ -8,6 +8,7 @@ export type ExportedItem<T extends ItemType = ItemType> = Omit<
 export type ExportPayload = {
     version: string;
     encrypted: boolean;
+    userId?: string;
     vaults: {
         [shareId: string]: VaultShareContent & {
             items: ExportedItem[];
