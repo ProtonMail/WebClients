@@ -3,6 +3,7 @@ import { all, fork, put, select } from 'redux-saga/effects';
 
 import { authentication } from '@proton/pass/auth';
 import { PassCrypto } from '@proton/pass/crypto';
+import type { UserAccessGetResponse } from '@proton/pass/types';
 import { type Api, ChannelType, type ServerEvent } from '@proton/pass/types';
 import { notIn, prop } from '@proton/pass/utils/fp';
 import { logId, logger } from '@proton/pass/utils/logger';
@@ -10,17 +11,31 @@ import { getLatestID } from '@proton/shared/lib/api/events';
 import { INTERVAL_EVENT_TIMER } from '@proton/shared/lib/constants';
 import type { Address } from '@proton/shared/lib/interfaces';
 
-import { syncIntent } from '../../actions';
+import { setUserPlan, syncIntent } from '../../actions';
 import { selectAllAddresses, selectLatestEventId } from '../../selectors/user';
 import type { WorkerRootSagaOptions } from '../../types';
 import { eventChannelFactory } from './channel.factory';
 import { channelEventsWorker, channelWakeupWorker } from './channel.worker';
+import type { EventChannel } from './types';
 
-function* onUserEvent(event: ServerEvent<ChannelType.USER>) {
+function* onUserEvent(event: ServerEvent<ChannelType.USER>, { api }: EventChannel<ChannelType.USER>) {
     if (event.error) throw event.error;
 
     logger.info(`[ServerEvents::User] event ${logId(event.EventID!)}`);
     const { User: user } = event;
+
+    /* if the subscription/invoice changes, refetch the user Plan */
+    if (event.Subscription || event.Invoices) {
+        yield fork(function* () {
+            const accessResponse = (yield api({ url: `pass/v1/user/access`, method: 'post' })) as {
+                Access?: UserAccessGetResponse | undefined;
+            };
+
+            if (accessResponse?.Access) {
+                yield put(setUserPlan(accessResponse.Access.Plan));
+            }
+        });
+    }
 
     /* if we get the user model from the event, check if
      * any new active user keys are available. We might be
