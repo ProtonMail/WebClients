@@ -8,9 +8,9 @@ import type { IconName } from '@proton/components';
 import { Icon } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
-import './OnboardingSuggestionContainer.scss';
+import './OnboardingPanel.scss';
 
-export type OnboardingSuggestionContainerProps = {
+export type OnboardingPanelProps = {
     title?: string;
     icon?: IconName;
     iconPath?: string;
@@ -18,32 +18,28 @@ export type OnboardingSuggestionContainerProps = {
     children?: ReactNode;
 };
 
-export const OnboardingSuggestionContainer: VFC<OnboardingSuggestionContainerProps> = ({
-    title,
-    icon,
-    iconPath,
-    className: classNameProp,
-    children,
-}) => {
+export const OnboardingPanel: VFC<OnboardingPanelProps> = ({ title, icon, iconPath, className, children }) => {
     return (
         <Card
-            className={clsx('flex flex-column flex-align-items-start p-6 gap-3 border-none rounded-xl', classNameProp)}
+            background={false}
+            bordered={false}
+            className={clsx(
+                'ui-login pass-onboarding-panel flex flex-column flex-align-items-start p-6 gap-3 border-none',
+                className
+            )}
         >
             <div className="flex flex-align-items-center flex-nowrap">
-                <div
-                    className="pass-onboarding-icon h-custom w-custom rounded-50 text-center mr-3 relative"
-                    aria-hidden="true"
-                >
+                <div className="pass-onboarding-icon h-custom w-custom rounded-50 text-center mr-3 relative">
                     {icon && <Icon name={icon} className="absolute absolute-center" color="var(--interaction-norm)" />}
                     {iconPath && (
                         <img
                             src={iconPath}
-                            className="h-custom pass-onboarding-icon__img absolute absolute-center"
+                            className="h-custom pass-onboarding-icon--img absolute absolute-center"
                             alt=""
                         />
                     )}
                 </div>
-                <h3 className="text-bold">{c('Info').t`${title}`}</h3>
+                <h4 className="text-bold">{c('Info').t`${title}`}</h4>
             </div>
             {children}
         </Card>

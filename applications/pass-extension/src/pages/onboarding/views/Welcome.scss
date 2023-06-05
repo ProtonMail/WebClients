@@ -1,4 +1,9 @@
-.pass-gradient-background {
+.pass-welcome {
+	background: transparent !important;
+}
+
+.pass-welcome--gradient {
+	position: fixed;
 	background: radial-gradient(
 		108.62% 108.7% at 103.07% 103.41%,
 		rgb(255 213 128 / 0.5) 0%,
@@ -12,24 +17,33 @@
 		rgb(49 34 85 / 0.5) 89.58%,
 		rgb(27 19 64 / 0.25) 100%
 	);
+	block-size: 100%;
+	inline-size: 100%;
+	inset-block-start: 0;
+	inset-inline-start: 0;
+	z-index: -1;
 }
 
-.onboarding-header-text {
+.pass-welcome--header-text {
 	color: white;
-	font-family: 'ABC Arizona', system-ui, sans-serif;
 }
 
-.video-responsive-wrapper {
+.pass-welcome--onboarding-video {
 	position: relative;
 	padding-block-end: 40%;
 	block-size: 0;
 	inline-size: 100%;
+	overflow: hidden;
+
+	iframe {
+		position: absolute;
+		inset-block-start: 0;
+		inset-inline-start: 0;
+		inline-size: 100%;
+		block-size: 100%;
+	}
 }
 
-.video-responsive-wrapper iframe {
-	position: absolute;
-	inset-block-start: 0;
-	inset-inline-start: 0;
-	inline-size: 100%;
-	block-size: 100%;
+.pass-welcome--onboarding-pin {
+	border: 2px solid white;
 }
