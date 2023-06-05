@@ -1,6 +1,6 @@
 import { createExportZip, decryptZip, encryptZip } from '@proton/pass/export';
 import type { ExportPayload } from '@proton/pass/export/types';
-import { selectShareOrThrow } from '@proton/pass/store';
+import { selectShareOrThrow, selectUser } from '@proton/pass/store';
 import { unwrapOptimisticState } from '@proton/pass/store/optimistic/utils/transformers';
 import { type VaultShareContent, WorkerMessageType } from '@proton/pass/types';
 import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
@@ -14,6 +14,7 @@ export const createExportService = () => {
     const getExportData = async (encrypted: boolean): Promise<ExportPayload> => {
         const state = store.getState();
         const itemsByShareId = unwrapOptimisticState(state.items.byShareId);
+        const user = selectUser(state);
 
         const vaults = Object.fromEntries(
             Object.entries(itemsByShareId).map(([shareId, itemsById]) => {
@@ -40,6 +41,7 @@ export const createExportService = () => {
 
         return {
             version: config.APP_VERSION,
+            userId: user?.ID,
             encrypted,
             vaults,
         };
