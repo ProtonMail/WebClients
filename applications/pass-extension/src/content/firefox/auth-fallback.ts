@@ -1,4 +1,4 @@
-import { contentScriptMessage, sendMessage } from '@proton/pass/extension/message';
+import { contentScriptMessage, sendMessage, successMessage } from '@proton/pass/extension/message';
 import { WorkerMessageType } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
 import { APPS, EXTENSIONS } from '@proton/shared/lib/constants';
@@ -35,6 +35,10 @@ export const authFallback = () => {
                                 type: WorkerMessageType.AUTH_EXT,
                             })
                         );
+                    }
+
+                    case WorkerMessageType.PASS_INSTALLED: {
+                        return window.postMessage(successMessage({}));
                     }
                 }
             }
