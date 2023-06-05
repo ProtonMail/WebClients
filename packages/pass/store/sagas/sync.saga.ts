@@ -1,22 +1,28 @@
-import { call, put, race, select, take } from 'redux-saga/effects';
+import { call, fork, put, race, select, take } from 'redux-saga/effects';
 
 import { wait } from '@proton/shared/lib/helpers/promise';
 
-import { setUserPlan, syncFailure, syncIntent, syncSuccess } from '../actions';
+import { setUserFeatures, setUserPlan, syncFailure, syncIntent, syncSuccess } from '../actions';
 import { isStateResetAction } from '../actions/utils';
 import { asIfNotOptimistic } from '../optimistic/selectors/select-is-optimistic';
+import type { UserFeatureState } from '../reducers';
 import { type UserPlanState, reducerMap } from '../reducers';
 import type { State, WorkerRootSagaOptions } from '../types';
 import { SyncType, type SynchronizationResult, synchronize } from './workers/sync';
-import { getUserPlan } from './workers/user';
+import { getUserFeatures, getUserPlan } from './workers/user';
 
 function* syncWorker(options: WorkerRootSagaOptions) {
     const state = (yield select()) as State;
     try {
         yield wait(1500);
 
-        const plan: UserPlanState = yield getUserPlan(state.user, true);
-        yield put(setUserPlan(plan));
+        yield fork(function* () {
+            const plan: UserPlanState = yield getUserPlan(state.user, { force: true });
+            yield put(setUserPlan(plan));
+
+            const feature: UserFeatureState = yield getUserFeatures(state.user, { force: true });
+            yield put(setUserFeatures(feature));
+        });
 
         const sync: SynchronizationResult = yield call(
             synchronize,
