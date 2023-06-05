@@ -19,7 +19,8 @@
 		block-size: 0 !important;
 		inline-size: 0 !important;
 		display: block !important;
-		float: inline-start !important;
+		/* stylelint-disable-next-line */
+		float: left !important;
 
 		> input {
 			pointer-events: all;
