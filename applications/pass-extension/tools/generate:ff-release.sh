@@ -20,17 +20,18 @@ BRANCH="$2"
 COMMIT="$3"
 
 ORIGIN=$(git remote get-url origin)
-CLONE_DEPTH=50
 REPO_DIR=$(realpath "../..")
-OUT_DIR=$(realpath $OUT)
 SOURCE_DIR=$(realpath .)
 
 # fallback to current commit if none specified
 # fallback to pass-extension branch if none specified
 if [ -z "$OUT" ]; then
-    echo "${ERROR}${USAGE}${NOCOLOR}"
-    exit 0
+    echo -e "${WARNING}No output directory specified: using \"../../..\"${NOCOLOR}"
+    echo -e "${WARNING}${USAGE}${NOCOLOR}"
+    OUT="../../.."
 fi
+
+OUT_DIR=$(realpath $OUT)
 
 # check $OUT_DIR validity
 if [[ "$OUT_DIR" == "$REPO_DIR"* ]]; then
@@ -98,7 +99,7 @@ echo -e "${SUCCESS} ↳ Compressed release : \"$OUT_DIR/$BUILD_ID.zip\"${NOCOLOR
 echo -e "${INFO}🧬 Cloning monorepo on branch $BRANCH...${NOCOLOR}"
 cd $TARGET_DIR
 
-git clone -b $BRANCH --depth $CLONE_DEPTH --single-branch $REPO_DIR $TARGET_DIR --quiet || exit 1
+git clone -b $BRANCH --single-branch $REPO_DIR $TARGET_DIR --quiet || exit 1
 echo -e "${SUCCESS} ↳ Cloned to \"${TARGET_DIR}\"${NOCOLOR}"
 
 # Checkout the to commit hash
