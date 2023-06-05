@@ -27,7 +27,11 @@ export const errorMessage = (error?: string): MessageFailure => ({
 
 /* For security reasons : limit the type of messages that can
  * be processed via externally connectable resources */
-const ALLOWED_EXTERNAL_MESSAGES = [WorkerMessageType.FORK, WorkerMessageType.AUTH_EXT];
+const ALLOWED_EXTERNAL_MESSAGES = [
+    WorkerMessageType.FORK,
+    WorkerMessageType.AUTH_EXT,
+    WorkerMessageType.PASS_INSTALLED,
+];
 
 export type MessageHandlerCallback<
     T extends WorkerMessageType = WorkerMessageType,
