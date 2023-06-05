@@ -5,8 +5,8 @@ import { CircleLoader } from '@proton/atoms/CircleLoader';
 
 import { ExtensionWindow } from '../../shared/components/extension';
 import { InstallationSuccess } from './views/InstallationSuccess';
-import { LoginSuccess } from './views/LoginSuccess';
 import { ResumeSession } from './views/ResumeSession';
+import { Welcome } from './views/Welcome';
 
 import './Onboarding.scss';
 
@@ -23,7 +23,7 @@ export const Onboarding: VFC = () => (
                             <InstallationSuccess />
                         </Route>
                         <Route path="/welcome">
-                            <LoginSuccess />
+                            <Welcome />
                         </Route>
                     </Switch>
                 </HashRouter>

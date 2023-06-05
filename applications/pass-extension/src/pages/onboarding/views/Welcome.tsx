@@ -10,9 +10,9 @@ import playStoreSvg from '@proton/styles/assets/img/illustrations/play-store.svg
 
 import passBrandText from '../../../../public/assets/protonpass-brand.svg';
 import { ExtensionHead } from '../../../shared/components/page/ExtensionHead';
-import { OnboardingSuggestionContainer } from '../component/OnboardingSuggestionContainer';
+import { OnboardingPanel } from '../component/OnboardingPanel';
 
-import './LoginSuccess.scss';
+import './Welcome.scss';
 
 const getSteps = () => [
     {
@@ -32,7 +32,7 @@ const getSteps = () => [
     },
 ];
 
-export const LoginSuccess: VFC = () => {
+export const Welcome: VFC = () => {
     const brandNameJSX = (
         <img src={passBrandText} className="ml-2 h-custom" style={{ '--height-custom': '28px' }} key="brand" alt="" />
     );
@@ -41,9 +41,10 @@ export const LoginSuccess: VFC = () => {
     return (
         <>
             <ExtensionHead title={c('Title').t`Thank you for installing ${PASS_APP_NAME}`} />
-            <div className="pass-lobby ui-standard w100 min-h-custom mw" style={{ '--min-height-custom': '100vh' }}>
-                <div className="m-auto w100 p-14 color-norm pass-gradient-background">
-                    <div className="onboarding-header-text text-bold flex flex-column flex-align-items-center">
+            <div className="pass-welcome ui-standard w100 min-h-custom" style={{ '--min-height-custom': '100vh' }}>
+                <div className="m-auto p-14 color-norm min-h-custom">
+                    <div className="pass-welcome--gradient">{/* ADD IMAGE OVERLAY HERE */}</div>
+                    <div className="pass-welcome--header-text text-bold flex flex-column flex-align-items-center">
                         <div className="flex flex-align-items-center gap-2 mb-10">
                             {
                                 <img
@@ -53,38 +54,42 @@ export const LoginSuccess: VFC = () => {
                                     alt={PASS_APP_NAME}
                                 />
                             }
-                            <h3 className="">{brandNameJSX}</h3>
+                            <span>{brandNameJSX}</span>
                         </div>
-                        <h1 className="pass-onboarding--heading mb-8">
-                            {c('Title').jt`The extension is now ready to use.`}
+
+                        <h1 className="pass-onboarding--heading mb-4 text-no-bold">
+                            <span className="text-rg">{c('Title').jt`The extension is now ready to use.`}</span>
                         </h1>
-                        <h2 className="h3 mb-8">
+                        <h3 className="mb-8 text-lg">
                             {c('Info').t`Below, you will find all the necessary information to get you started.`}
-                        </h2>
+                        </h3>
                     </div>
 
-                    <div className="flex flex-justify-center flex-nowrap on-tablet-flex-column gap-6">
+                    <div
+                        className="mx-auto max-w-custom flex flex-justify-center flex-nowrap on-tablet-flex-column gap-6"
+                        style={{ '--max-width-custom': '1024px' }}
+                    >
                         {/* left section */}
-                        <div className="flex flex-nowrap flex-column gap-6">
+                        <div className="flex flex-nowrap flex-column gap-6" style={{ flex: 2 }}>
                             {/* left section upper subsection */}
                             <div className="flex flex-nowrap on-mobile-flex-column gap-6 flex-item-fluid-auto">
-                                <OnboardingSuggestionContainer
+                                <OnboardingPanel
                                     title={c('Title').t`Discover ${PASS_APP_NAME}`}
                                     icon="star"
                                     className="flex-item-fluid-auto"
                                 >
-                                    <div className="video-responsive-wrapper">
+                                    <div className="pass-welcome--onboarding-video rounded-xl">
                                         <iframe
                                             src="https://www.youtube.com/embed/Nm4DCAjePOM"
                                             title={c('Info').t`Discover ${PASS_APP_NAME} Youtube Video`}
                                             allowFullScreen
-                                        ></iframe>
+                                        />
                                     </div>
-                                </OnboardingSuggestionContainer>
+                                </OnboardingPanel>
                             </div>
                             {/* left section lower subsection */}
                             <div className="flex flex-nowrap on-mobile-flex-column gap-6">
-                                <OnboardingSuggestionContainer
+                                <OnboardingPanel
                                     title={c('Title').t`Switching to Pass?`}
                                     icon="arrow-up-line"
                                     className="flex-item-fluid-auto"
@@ -104,49 +109,54 @@ export const LoginSuccess: VFC = () => {
                                     >
                                         {c('Action').t`Import your passwords`}
                                     </Button>
-                                </OnboardingSuggestionContainer>
-                                <OnboardingSuggestionContainer
+                                </OnboardingPanel>
+                                <OnboardingPanel
                                     title={c('Title').t`Get the mobile app`}
                                     icon="mobile"
                                     className="flex-item-fluid-auto"
                                 >
                                     <img src="/assets/onboarding-mobile.png" alt="" />
                                     <div>{c('Info').t`Access your passwords on the go with our mobile apps.`}</div>
-                                    <div className="flex gap-6">
+                                    <div className="flex gap-3 flex-nowrap">
                                         <Href href="https://play.google.com/store/apps/details?id=proton.android.pass">
                                             <img
-                                                width="140"
-                                                className="mr-3 mb-2"
+                                                className="h-custom"
+                                                style={{ '--height-custom': '40px' }}
                                                 src={playStoreSvg}
                                                 alt="Play Store"
                                             />
                                         </Href>
-                                        {/* TODO when released on App store:
-                                        remove line below, uncomment <Href> and replace dummy ProtonMail link with ProtonPass link */}
-                                        <img
-                                            width="140"
-                                            className="flex-align-self-start"
-                                            src={appStoreSvg}
-                                            alt="App Store"
-                                        />
-                                        {/* <Href href="https://apps.apple.com/app/proton-mail-encrypted-email/id979659905">
-                                            <img width="140" src={appStoreSvg} alt="App Store" />
-                                        </Href> */}
+
+                                        <Href
+                                            onClick={(e) => e.preventDefault()}
+                                            href="#" /* https://apps.apple.com/app/proton-mail-encrypted-email/id979659905 */
+                                        >
+                                            <img
+                                                className="h-custom"
+                                                style={{ '--height-custom': '40px ' }}
+                                                src={appStoreSvg}
+                                                alt="App Store"
+                                            />
+                                        </Href>
                                     </div>
-                                </OnboardingSuggestionContainer>
+                                </OnboardingPanel>
                             </div>
                         </div>
 
                         {/* right section */}
-                        <div className="flex">
+                        <div className="flex" style={{ flex: 1 }}>
                             <div className="flex flex-item-fluid-auto" style={{ height: 'fit-content' }}>
                                 {/* TODO replace iconPath with icon=pin-filled and delete assets/pin-filled.svg when the icon is released on core */}
-                                <OnboardingSuggestionContainer
+                                <OnboardingPanel
                                     title={c('Title').t`Pin the extension`}
                                     iconPath="/assets/pin-filled.svg"
                                     className="flex-item-fluid-auto"
                                 >
-                                    <img src="/assets/onboarding-pin.gif" alt="" />
+                                    <img
+                                        src="/assets/onboarding-pin.gif"
+                                        alt=""
+                                        className="pass-welcome--onboarding-pin rounded-xl"
+                                    />
                                     <div>
                                         <div className="mb-5">
                                             {c('Info')
@@ -156,16 +166,16 @@ export const LoginSuccess: VFC = () => {
                                             {steps.map(({ key, icon, description }, idx) => (
                                                 <li key={key} className="flex mb-4 flex-align-items-center">
                                                     <div
-                                                        className="pass-onboarding--dot bg-primary rounded-50 text-center mr-4 relative"
+                                                        className="pass-onboarding--dot bg-primary rounded-50 text-center relative mr-1"
                                                         aria-hidden="true"
                                                     >
                                                         <span className="absolute absolute-center">{idx + 1}</span>
                                                     </div>
-                                                    <div className="w40p mr-1" aria-hidden="true">
+                                                    <div className="w40p text-center" aria-hidden="true">
                                                         <img
                                                             src={icon}
                                                             className="h-custom"
-                                                            style={{ '--height-custom': '24px' }}
+                                                            style={{ '--height-custom': '22px' }}
                                                             alt=""
                                                         />
                                                     </div>
@@ -175,7 +185,7 @@ export const LoginSuccess: VFC = () => {
                                             ))}
                                         </ol>
                                     </div>
-                                </OnboardingSuggestionContainer>
+                                </OnboardingPanel>
                             </div>
                         </div>
                     </div>
