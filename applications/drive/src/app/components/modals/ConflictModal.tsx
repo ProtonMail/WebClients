@@ -50,9 +50,7 @@ export default function ConflictModal({
     onClose,
     ...modalProps
 }: ConflictModalProps & ModalStateProps) {
-    const [strategy, setStrategy] = useState(
-        isFolder ? TransferConflictStrategy.Merge : TransferConflictStrategy.Rename
-    );
+    const [strategy, setStrategy] = useState(TransferConflictStrategy.Replace);
     const [applyAll, setApplyAll] = useState(false);
 
     const isSameType = originalIsFolder === isFolder;
@@ -97,24 +95,6 @@ export default function ConflictModal({
                     <br />
                     {c('Info').t`What do you want to do?`}
                 </p>
-                {originalIsFolder && isFolder && (
-                    <Row>
-                        <Radio
-                            id={TransferConflictStrategy.Merge}
-                            checked={strategy === TransferConflictStrategy.Merge}
-                            onChange={() => setStrategy(TransferConflictStrategy.Merge)}
-                            name="strategy"
-                            className="inline-flex flex-nowrap"
-                        >
-                            <div>
-                                <strong>{c('Label').t`Merge a folder`}</strong>
-                                <br />
-                                <span className="color-weak">{c('Info')
-                                    .t`Folder contents will merge into a single folder`}</span>
-                            </div>
-                        </Radio>
-                    </Row>
-                )}
                 <Row>
                     <Radio
                         id={TransferConflictStrategy.Replace}
@@ -134,7 +114,7 @@ export default function ConflictModal({
                                 {isSameType ? (
                                     <>
                                         {originalIsFolder
-                                            ? c('Info').t`This will overwrite the existing folder`
+                                            ? c('Info').t`This will upload a new version of the folder`
                                             : c('Info').t`This will upload a new version of the file`}
                                     </>
                                 ) : (
