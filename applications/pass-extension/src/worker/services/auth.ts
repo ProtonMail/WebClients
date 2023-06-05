@@ -15,6 +15,7 @@ import type { Api, MaybeNull, WorkerForkMessage, WorkerMessageResponse } from '@
 import { SessionLockStatus, WorkerMessageType, WorkerStatus } from '@proton/pass/types';
 import { withPayload } from '@proton/pass/utils/fp';
 import { logger } from '@proton/pass/utils/logger';
+import { getEpoch } from '@proton/pass/utils/time';
 import { workerReady } from '@proton/pass/utils/worker';
 import { getApiError, getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import type { AuthenticationStore } from '@proton/shared/lib/authentication/createAuthenticationStore';
@@ -162,9 +163,8 @@ export const createAuthService = ({
                     }
                 });
 
-                if (accessResponse?.Access) {
-                    store.dispatch(setUserPlan(accessResponse.Access.Plan));
-                }
+                if (accessResponse?.Access)
+                    {store.dispatch(setUserPlan({ ...accessResponse.Access.Plan, requestedAt: getEpoch() }));}
 
                 return {
                     payload: {
