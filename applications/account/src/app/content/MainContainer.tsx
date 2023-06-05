@@ -19,7 +19,6 @@ import {
     useDeviceRecovery,
     useFeatures,
     useIsDataRecoveryAvailable,
-    useMembers,
     useOrganization,
     useRecoveryNotification,
     useSubscription,
@@ -87,7 +86,6 @@ const MainContainer = () => {
     const [addresses] = useAddresses();
     const [organization, loadingOrganization] = useOrganization();
     const [subscription, loadingSubscription] = useSubscription();
-    const [members, loadingMembers] = useMembers();
     const location = useLocation();
     const { state: expanded, toggle: onToggleExpand, set: setExpand } = useToggle();
     const { isNarrow } = useActiveBreakpoint();
@@ -121,7 +119,6 @@ const MainContainer = () => {
     const routes = getRoutes({
         user,
         addresses,
-        members,
         organization,
         subscription,
         isSpyTrackerEnabled,
@@ -205,7 +202,7 @@ const MainContainer = () => {
     );
 
     const redirect = (() => {
-        if (loadingOrganization || loadingFeatures || loadingSubscription || loadingMembers) {
+        if (loadingOrganization || loadingFeatures || loadingSubscription) {
             return <PrivateMainAreaLoading />;
         }
 
