@@ -208,7 +208,8 @@ const useCalendarsEventsReader = (
     calendarEvents: CalendarViewEvent[],
     cacheRef: MutableRefObject<CalendarsEventsCache>,
     rerender: () => void,
-    getOpenedMailEvents: () => OpenedMailEvent[]
+    getOpenedMailEvents: () => OpenedMailEvent[],
+    metadataOnly: boolean
 ) => {
     const getCalendarEventRaw = useGetCalendarEventRaw();
     const api = useApi();
@@ -233,7 +234,7 @@ const useCalendarsEventsReader = (
         const seen = new Set();
 
         const calendarEventPromises = calendarEvents.reduce<Promise<void>[]>((acc, calendarViewEvent) => {
-            if (acc.length === EVENTS_PER_BATCH) {
+            if (acc.length === EVENTS_PER_BATCH && !metadataOnly) {
                 return acc;
             }
 
