@@ -1,5 +1,5 @@
 import { ThemeColor } from '@proton/colors';
-import { Address, Member, Organization, Subscription, UserModel } from '@proton/shared/lib/interfaces';
+import { Address, Organization, Subscription, UserModel } from '@proton/shared/lib/interfaces';
 
 import { getAccountAppRoutes } from '../containers/account/routes';
 import { getCalendarAppRoutes } from '../containers/calendar/routes';
@@ -11,7 +11,6 @@ import { getVpnAppRoutes } from '../containers/vpn/routes';
 
 interface Arguments {
     user: UserModel;
-    members: Member[];
     addresses: Address[];
     subscription: Subscription;
     organization: Organization;
@@ -27,7 +26,6 @@ interface Arguments {
 
 export const getRoutes = ({
     user,
-    members,
     organization,
     addresses,
     subscription,
@@ -49,7 +47,6 @@ export const getRoutes = ({
             isGmailSyncEnabled,
             organization,
             isProtonSentinelEligible,
-            members,
         }),
         mail: getMailAppRoutes({
             user,
