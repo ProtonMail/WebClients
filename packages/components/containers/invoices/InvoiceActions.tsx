@@ -26,6 +26,7 @@ const InvoiceActions = ({ invoice, fetchInvoices, onPreview, onDownload }: Props
     const list = [
         invoice.State === INVOICE_STATE.UNPAID && {
             text: c('Action').t`Pay`,
+            'data-testid': 'payInvoice',
             async onClick() {
                 const { Card, Paypal } = await api(queryPaymentMethodStatus());
                 const canPay = Card || Paypal;
@@ -43,6 +44,7 @@ const InvoiceActions = ({ invoice, fetchInvoices, onPreview, onDownload }: Props
         },
         {
             text: c('Action').t`View`,
+            'data-testid': 'viewInvoice',
             onClick: async () => {
                 const handler = async () => {
                     onPreview?.(invoice);
@@ -53,6 +55,7 @@ const InvoiceActions = ({ invoice, fetchInvoices, onPreview, onDownload }: Props
         },
         {
             text: c('Action').t`Download`,
+            'data-testid': 'downloadInvoice',
             onClick: async () => {
                 const handler = async () => {
                     onDownload(invoice);
