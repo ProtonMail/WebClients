@@ -34,6 +34,7 @@ export type ExtensionEndpoint = 'popup' | 'content-script' | 'background' | 'pag
 export enum WorkerMessageType {
     FORK = 'fork',
     AUTH_EXT = 'auth-ext',
+    PASS_INSTALLED = 'pass-installed',
     SESSION_RESUMED = 'SESSION_RESUMED',
     WORKER_WAKEUP = 'WORKER_WAKEUP',
     WORKER_INIT = 'WORKER_INIT',
@@ -74,6 +75,7 @@ export enum WorkerMessageType {
 
 export type WorkerForkMessage = WithPayload<WorkerMessageType.FORK, ForkPayload>;
 export type WorkerAuthExtMessage = { type: WorkerMessageType.AUTH_EXT };
+export type WorkerPassInstalledMessage = { type: WorkerMessageType.PASS_INSTALLED };
 export type WorkerWakeUpMessage = WithPayload<WorkerMessageType.WORKER_WAKEUP, { tabId: TabId }>;
 export type WorkerInitMessage = WithPayload<WorkerMessageType.WORKER_INIT, { sync: boolean }>;
 export type WorkerStatusMessage = WithPayload<WorkerMessageType.WORKER_STATUS, { state: WorkerState }>;
@@ -115,6 +117,7 @@ export type WorkerMessage =
     | NotificationMessage
     | WorkerForkMessage
     | WorkerAuthExtMessage
+    | WorkerPassInstalledMessage
     | WorkerWakeUpMessage
     | WorkerInitMessage
     | WorkerStatusMessage
