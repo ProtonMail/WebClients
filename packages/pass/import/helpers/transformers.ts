@@ -8,8 +8,14 @@ import { getEpoch } from '@proton/pass/utils/time';
 import { getFormattedDayFromTimestamp } from '@proton/pass/utils/time/format';
 import { isValidURL } from '@proton/pass/utils/url';
 
-export const getImportedVaultName = (vaultName?: string) =>
-    vaultName || c('Title').t`Import - ${getFormattedDayFromTimestamp(getEpoch())}`;
+export const getImportedVaultName = (vaultName?: string) => {
+    if (!vaultName) {
+        const date = getFormattedDayFromTimestamp(getEpoch());
+        // translator: Import - 16/05/2014
+        return c('Title').t`Import - ${date}`;
+    }
+    return vaultName;
+};
 
 export const importLoginItem = (options: {
     name?: MaybeNull<string>;

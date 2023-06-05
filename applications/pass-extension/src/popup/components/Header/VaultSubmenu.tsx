@@ -194,7 +194,7 @@ export const VaultSubmenu: VFC<{
                 <hr className="dropdown-item-hr my-2 mx-4" aria-hidden="true" />
 
                 <VaultItem
-                    label={c('Label').t`${getVaultOptionInfo('all').label}`}
+                    label={getVaultOptionInfo('all').label}
                     count={totalCount}
                     selected={!inTrash && selectedShareId === null}
                     onSelect={() => handleSelect('all')}
