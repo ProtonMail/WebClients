@@ -37,11 +37,9 @@ export const PopupContext = createContext<PopupContextValue>({
     sync: noop,
 });
 
-/**
- * PopupContext is an extension of the base
+/* PopupContext is an extension of the base
  * ExtensionContext adding specifics for handling
- * syncing behaviours & active tab data.
- */
+ * syncing behaviours & active tab data*/
 const ExtendedExtensionContext: FC = ({ children }) => {
     const extensionContext = useExtensionContext();
     const notificationsManager = useContext(NotificationsContext);
