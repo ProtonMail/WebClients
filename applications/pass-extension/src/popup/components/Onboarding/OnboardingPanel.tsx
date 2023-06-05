@@ -14,6 +14,7 @@ import noop from '@proton/utils/noop';
 import { promptForPermissions } from '../../../shared/extension/permissions';
 import { useExtensionContext } from '../../../shared/hooks';
 import { useOpenSettingsTab } from '../../hooks/useOpenSettingsTab';
+import { FreeTrialModal } from './FreeTrialModal';
 import { OnboardingContent, type OnboardingMessageDefinition } from './OnboardingContent';
 import { OnboardingShieldIcon } from './OnboardingIcon';
 
@@ -24,6 +25,8 @@ export const OnboardingPanel: VFC = () => {
 
     const [open, setOpen] = useState(false);
     const [message, setMessage] = useState<Maybe<OnboardingMessage>>();
+
+    const [freeTrialModalOpen, setFreeTrialModalOpen] = useState<boolean>(false);
 
     useEffect(() => {
         void sendMessage.onSuccess(
@@ -66,6 +69,17 @@ export const OnboardingPanel: VFC = () => {
                     label: c('Label').t`Learn more`,
                     type: 'link',
                     onClick: () => browser.tabs.create({ url: 'https://proton.me/pass' }),
+                },
+            },
+            [OnboardingMessage.TRIAL]: {
+                title: c('Title').t`Enjoy your free trial`,
+                message: c('Info')
+                    .t`Check out all the exclusive features that are available to you for a limited time.`,
+                className: 'ui-note',
+                action: {
+                    label: c('Label').t`Learn more`,
+                    type: 'link',
+                    onClick: () => setFreeTrialModalOpen(true),
                 },
             },
             [OnboardingMessage.SECURE_EXTENSION]: {
@@ -126,25 +140,29 @@ export const OnboardingPanel: VFC = () => {
     const currentMessage = message !== undefined ? definitions[message] : null;
 
     return (
-        <div className={clsx('pass-onboarding-panel', !open && 'pass-onboarding-panel--hidden')}>
-            {currentMessage && (
-                <OnboardingContent
-                    className={currentMessage.className}
-                    title={currentMessage.title}
-                    message={currentMessage.message}
-                    icon={currentMessage.icon}
-                    onClose={withAcknowledge(message!)}
-                    action={
-                        currentMessage.action
-                            ? {
-                                  label: currentMessage.action.label,
-                                  type: currentMessage.action.type,
-                                  onClick: withAcknowledge(message!, currentMessage.action.onClick),
-                              }
-                            : undefined
-                    }
-                />
-            )}
-        </div>
+        <>
+            <div className={clsx('pass-onboarding-panel', !open && 'pass-onboarding-panel--hidden')}>
+                {currentMessage && (
+                    <OnboardingContent
+                        className={currentMessage.className}
+                        title={currentMessage.title}
+                        message={currentMessage.message}
+                        icon={currentMessage.icon}
+                        onClose={withAcknowledge(message!)}
+                        action={
+                            currentMessage.action
+                                ? {
+                                      label: currentMessage.action.label,
+                                      type: currentMessage.action.type,
+                                      onClick: withAcknowledge(message!, currentMessage.action.onClick),
+                                  }
+                                : undefined
+                        }
+                    />
+                )}
+            </div>
+
+            <FreeTrialModal open={freeTrialModalOpen} onClose={() => setFreeTrialModalOpen(false)} />
+        </>
     );
 };

@@ -19,7 +19,7 @@ export const selectUserPlan = ({ user: { plan } }: State) => plan;
 export const selectPassPlan = ({ user: { plan } }: State): UserPassPlan => {
     switch (plan?.Type) {
         case PlanType.plus:
-            return plan?.TrialEnd !== null ? UserPassPlan.TRIAL : UserPassPlan.PLUS;
+            return plan.TrialEnd && getEpoch() < plan.TrialEnd ? UserPassPlan.TRIAL : UserPassPlan.PLUS;
         default: {
             return UserPassPlan.FREE;
         }
