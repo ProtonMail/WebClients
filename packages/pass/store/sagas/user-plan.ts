@@ -5,10 +5,7 @@ import type { UserPlanState } from '../reducers';
 import type { State } from '../types';
 import { getUserPlan } from './workers/user';
 
-/* Try to sync the user plan on each wakeup success :
-/* `getUserPlan` will only request `user/access` from the api
- * if the `requestedAt` timestamp is more than a day old for
- * a trial plan */
+/* Try to sync the user plan on each wakeup success */
 function* syncPlan() {
     try {
         const { user }: State = yield select();
