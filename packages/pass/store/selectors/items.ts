@@ -10,12 +10,12 @@ import type {
     MaybeNull,
     UniqueItem,
 } from '@proton/pass/types';
-import { invert, truthy } from '@proton/pass/utils/fp';
+import { invert, prop } from '@proton/pass/utils/fp';
+import { isLoginItem } from '@proton/pass/utils/pass/items';
 import { isTrashed } from '@proton/pass/utils/pass/trash';
-import { matchAny, matchLoginItemByUrl } from '@proton/pass/utils/search';
+import { ItemUrlMatch, getItemPriorityForUrl, matchAny } from '@proton/pass/utils/search';
 import { isEmptyString } from '@proton/pass/utils/string';
 import type { ParsedUrl } from '@proton/pass/utils/url';
-import { parseUrl } from '@proton/pass/utils/url';
 
 import { unwrapOptimisticState } from '../optimistic/utils/transformers';
 import { withOptimisticItemsByShareId } from '../reducers/items';
@@ -145,6 +145,7 @@ export const selectItemsByDomain = (
         protocolFilter: string[];
         isPrivate: boolean;
         shareId?: string;
+        sortOn?: 'priority' | 'lastUseTime';
     }
 ) =>
     createSelector(
@@ -154,20 +155,49 @@ export const selectItemsByDomain = (
             () => options.protocolFilter,
             () => options.isPrivate,
             () => options.shareId,
+            () => options.sortOn ?? 'lastUseTime',
         ],
-        (items, domain, protocolFilter, isPrivate, shareId) =>
+        (items, domain, protocolFilter, isPrivate, shareId, sortOn) =>
             (typeof domain === 'string' && !isEmptyString(domain)
                 ? items
-                      .filter((item) => {
-                          if (shareId && shareId !== item.shareId) return false;
-                          return (
-                              !isTrashed(item) &&
-                              !item.optimistic &&
-                              matchLoginItemByUrl(item.data)(domain, { protocolFilter, isPrivate })
-                          );
+                      .reduce<{ item: ItemRevisionWithOptimistic; priority: ItemUrlMatch }[]>((matches, item) => {
+                          const validShareId = !shareId || shareId === item.shareId;
+                          const validItem = !item.optimistic && !isTrashed(item);
+                          const validUrls = isLoginItem(item.data) && matchAny(item.data.content.urls)(domain);
+
+                          /* If the item does not pass this initial "fuzzy" test, then we
+                           * should not even consider it as an autofill candidate.
+                           * This avoids unnecessarily parsing items' URLs with 'tldts' */
+                          if (!(validShareId && validItem && validUrls)) return matches;
+
+                          /* `getItemPriorityForUrl` will apply strict domain matching */
+                          const { data } = item as ItemRevisionWithOptimistic<'login'>;
+                          const priority = getItemPriorityForUrl(data)(domain, { protocolFilter, isPrivate });
+
+                          /* if negative priority : this item does not match the criteria */
+                          if (priority === ItemUrlMatch.NO_MATCH) return matches;
+
+                          matches.push({ item, priority });
+                          return matches;
+                      }, [])
+                      .sort((a, b) => {
+                          const aPrio = a.priority;
+                          const bPrio = b.priority;
+
+                          const aTime = a.item.lastUseTime ?? a.item.revisionTime;
+                          const bTime = b.item.lastUseTime ?? b.item.revisionTime;
+
+                          /* if we have a priority tie
+                           * fallback to time comparison */
+                          switch (sortOn) {
+                              case 'priority':
+                                  return aPrio > 0 && aPrio === bPrio ? bTime - aTime : bPrio - aPrio;
+                              case 'lastUseTime':
+                                  return bTime - aTime;
+                          }
                       })
-                      .sort((a, b) => (b.lastUseTime ?? b.revisionTime) - (a.lastUseTime ?? a.revisionTime))
-                : []) as ItemRevision<'login'>[]
+                      .map(prop('item'))
+                : []) as ItemRevisionWithOptimistic<'login'>[]
     );
 
 /* Autofill candidates resolution strategy :
@@ -198,25 +228,22 @@ export const selectAutofillCandidates = ({
 
     return createSelector(
         [
-            selectItemsByDomain(domain, { protocolFilter, isPrivate, shareId }),
-            selectItemsByDomain(subdomain, { protocolFilter, isPrivate, shareId }),
+            selectItemsByDomain(domain, {
+                protocolFilter,
+                isPrivate,
+                shareId,
+                sortOn: 'priority',
+            }),
+            selectItemsByDomain(subdomain, {
+                protocolFilter,
+                isPrivate,
+                shareId,
+                sortOn: 'lastUseTime',
+            }),
         ],
         (domainMatches, subdomainMatches) => [
-            /* push direct subdomain matches on top */
-            ...subdomainMatches,
-            ...domainMatches
-                .map((item) => {
-                    const urls = item.data.content.urls
-                        .map((url) => {
-                            const { isTopLevelDomain, domain } = parseUrl(url);
-                            return isTopLevelDomain && domain ? domain : '';
-                        })
-                        .filter(truthy);
-                    return { item, priority: matchAny(urls)(domain!) ? 0 : 1 };
-                })
-                .sort((a, b) => a.priority - b.priority)
-                .map(({ item }) => item)
-                .filter(({ itemId }) => !subdomainMatches.some((item) => item.itemId === itemId)),
+            ...subdomainMatches /* push subdomain matches on top */,
+            ...domainMatches.filter(({ itemId }) => !subdomainMatches.some((item) => item.itemId === itemId)),
         ]
     );
 };
