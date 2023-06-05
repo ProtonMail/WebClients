@@ -38,13 +38,15 @@ export const getUserFeatures = async ({ features }: UserState): Promise<UserFeat
 
 export const getUserPlan = async ({ plan }: UserState, force: boolean = false): Promise<UserPlanState> => {
     try {
-        if (!force && plan?.TrialEnd && getEpoch() < plan.TrialEnd) return plan;
+        const epoch = getEpoch();
+        if (!force && plan?.TrialEnd && epoch < plan.TrialEnd) return plan;
+        if (!force && plan && epoch - (plan?.requestedAt ?? 0) < UNIX_DAY) return plan;
 
         logger.info(`[Saga::UserPlan] syncing user access plan`);
         const { Plan } = (await api({ url: 'pass/v1/user/access', method: 'post' })).Access!;
-        return Plan;
+        return { ...Plan, requestedAt: getEpoch() };
     } catch (_) {
-        return plan ?? { Type: PlanType.free, InternalName: '', DisplayName: '' };
+        return plan ?? { requestedAt: -1, Type: PlanType.free, InternalName: '', DisplayName: '' };
     }
 };
 
