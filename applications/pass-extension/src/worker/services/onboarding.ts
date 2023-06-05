@@ -1,6 +1,6 @@
 import { browserLocalStorage } from '@proton/pass/extension/storage';
 import browser from '@proton/pass/globals/browser';
-import { selectCanLockSession } from '@proton/pass/store';
+import { selectCanLockSession, selectPassPlan } from '@proton/pass/store';
 import type { MaybeNull } from '@proton/pass/types';
 import {
     type Maybe,
@@ -9,6 +9,7 @@ import {
     type OnboardingState,
     WorkerMessageType,
 } from '@proton/pass/types';
+import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { withPayloadLens } from '@proton/pass/utils/fp';
 import { logger } from '@proton/pass/utils/logger';
 import { merge } from '@proton/pass/utils/object';
@@ -62,6 +63,13 @@ const ONBOARDING_RULES: OnboardingRule[] = [
         }),
     }),
     createOnboardingRule({ message: OnboardingMessage.WELCOME, when: () => false }),
+    createOnboardingRule({
+        message: OnboardingMessage.TRIAL,
+        when: (previous) => {
+            const passPlan = selectPassPlan(store.getState());
+            return !previous && passPlan === UserPassPlan.TRIAL;
+        },
+    }),
     createOnboardingRule({
         message: OnboardingMessage.SECURE_EXTENSION,
         when: (previous, { installedOn }) => {

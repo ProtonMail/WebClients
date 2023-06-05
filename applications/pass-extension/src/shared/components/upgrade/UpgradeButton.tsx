@@ -12,11 +12,11 @@ import { SSO_URL } from '../../../app/config';
 
 const UPGRADE_PLAN_PATH = `${SSO_URL}/pass/upgrade`;
 
-type UpgradeButtonProps = { className?: string; inline?: boolean };
+type UpgradeButtonProps = { className?: string; inline?: boolean; label?: string };
 
 export const navigateToUpgrade = () => browser.tabs.create({ url: UPGRADE_PLAN_PATH });
 
-export const UpgradeButton: VFC<UpgradeButtonProps> = ({ className, inline = false }) => {
+export const UpgradeButton: VFC<UpgradeButtonProps> = ({ className, inline = false, label }) => {
     const ButtonComponent = inline ? InlineLinkButton : Button;
 
     const buttonProps = {
@@ -31,8 +31,8 @@ export const UpgradeButton: VFC<UpgradeButtonProps> = ({ className, inline = fal
             onClick={navigateToUpgrade}
             {...(!inline && buttonProps)}
         >
-            {c('Action').t`Upgrade`}
-            <Icon name="arrow-out-square" className="ml-2" />
+            {label || c('Action').t`Upgrade`}
+            <Icon className="ml-2" name="arrow-out-square" />
         </ButtonComponent>
     );
 };

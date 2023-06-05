@@ -36,14 +36,8 @@ export const getUserFeatures = async ({ features }: UserState): Promise<UserFeat
     }
 };
 
-/* `getUserPlan` will request the API only if we do not have a current plan
- * in the store and if we do, only if we have a `TrialEnd` defined - this
- * property update of the user plan cannot be triggered via an event loop
- * update as it is computed BE side dynamically on each request */
 export const getUserPlan = async ({ plan }: UserState): Promise<UserPlanState> => {
     try {
-        if (plan && plan.TrialEnd !== null && getEpoch() - (plan?.requestedAt ?? 0) < UNIX_DAY) return plan;
-
         logger.info(`[Saga::UserPlan] syncing user access plan`);
         const { Plan } = (await api({ url: 'pass/v1/user/access', method: 'post' })).Access!;
         return { ...Plan, requestedAt: getEpoch() };

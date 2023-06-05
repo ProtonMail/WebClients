@@ -22,7 +22,7 @@ export const OnboardingContent: VFC<Props> = ({ title, message, className, icon,
             case 'link':
                 return (
                     <button onClick={action.onClick} className="unstyled text-sm color-invert">
-                        <Icon name="arrow-out-square" /> <span className="text-underline">{action.label}</span>
+                        <span className="text-underline">{action.label}</span>
                     </button>
                 );
             case 'button':
