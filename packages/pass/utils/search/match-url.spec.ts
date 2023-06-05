@@ -1,83 +1,142 @@
 import type { Item } from '@proton/pass/types';
 
-import { matchLoginItemByUrl } from './match-url';
+import { ItemUrlMatch, getItemPriorityForUrl } from './match-url';
 
 const createMockItem = (urls: string[]) => {
     return { type: 'login', content: { urls } } as unknown as Item<'login'>;
 };
 
 describe('match url', () => {
-    describe('matchLoginItemByUrl', () => {
-        test('should return matches if no protocol given ', () => {
-            expect(matchLoginItemByUrl(createMockItem(['https://proton.ch', 'https://pm.me']))('pm.me')).toBe(true);
-            expect(matchLoginItemByUrl(createMockItem(['https://proton.ch']))('pm.me')).toBe(false);
-            expect(matchLoginItemByUrl(createMockItem([]))('pm.me')).toBe(false);
+    describe('getItemPriorityForUrl', () => {
+        test('should return `NO_MATCH` if no match', () => {
+            expect(
+                getItemPriorityForUrl(createMockItem(['https://proton.ch']))('pm.me', {
+                    protocolFilter: [],
+                    isPrivate: false,
+                })
+            ).toBe(ItemUrlMatch.NO_MATCH);
 
-            expect(matchLoginItemByUrl(createMockItem(['https://proton.ch', 'https://pm.me']))('proton.ch')).toBe(true);
-            expect(matchLoginItemByUrl(createMockItem(['https://proton.ch']))('proton.ch')).toBe(true);
-            expect(matchLoginItemByUrl(createMockItem([]))('proton.ch')).toBe(false);
+            expect(
+                getItemPriorityForUrl(createMockItem([]))('pm.me', {
+                    protocolFilter: [],
+                    isPrivate: false,
+                })
+            ).toBe(ItemUrlMatch.NO_MATCH);
+
+            expect(
+                getItemPriorityForUrl(createMockItem([]))('', {
+                    protocolFilter: [],
+                    isPrivate: false,
+                })
+            ).toBe(ItemUrlMatch.NO_MATCH);
         });
 
-        test('should match given protocol filter', () => {
+        test('should return `SUB_MATCH` if non top-level domain match', () => {
             expect(
-                matchLoginItemByUrl(createMockItem(['https://proton.ch']))('proton.ch', {
+                getItemPriorityForUrl(createMockItem(['https://subdomain.pm.me']))('pm.me', {
+                    protocolFilter: [],
+                    isPrivate: false,
+                })
+            ).toBe(ItemUrlMatch.SUB_MATCH);
+
+            expect(
+                getItemPriorityForUrl(createMockItem(['https://nested.subdomain.pm.me']))('subdomain.pm.me', {
+                    protocolFilter: [],
+                    isPrivate: false,
+                })
+            ).toBe(ItemUrlMatch.SUB_MATCH);
+        });
+
+        test('should return `TOP_MATCH` on top-level domain match', () => {
+            expect(
+                getItemPriorityForUrl(createMockItem(['https://pm.me']))('pm.me', {
+                    protocolFilter: [],
+                    isPrivate: false,
+                })
+            ).toBe(ItemUrlMatch.TOP_MATCH);
+
+            expect(
+                getItemPriorityForUrl(createMockItem(['nomatch', 'https://proton.ch']))('proton.ch', {
+                    protocolFilter: [],
+                    isPrivate: false,
+                })
+            ).toBe(ItemUrlMatch.TOP_MATCH);
+        });
+
+        test('should use protocol filter', () => {
+            expect(
+                getItemPriorityForUrl(createMockItem(['https://proton.ch']))('proton.ch', {
                     protocolFilter: ['http:'],
                     isPrivate: false,
                 })
-            ).toBe(false);
+            ).toBe(ItemUrlMatch.NO_MATCH);
 
             expect(
-                matchLoginItemByUrl(createMockItem(['http://proton.ch']))('proton.ch', {
+                getItemPriorityForUrl(createMockItem(['http://proton.ch']))('proton.ch', {
                     protocolFilter: ['http:'],
                     isPrivate: false,
                 })
-            ).toBe(true);
+            ).toBe(ItemUrlMatch.TOP_MATCH);
 
             expect(
-                matchLoginItemByUrl(createMockItem(['ftp://proton.ch']))('proton.ch', {
+                getItemPriorityForUrl(createMockItem(['ftp://proton.ch']))('proton.ch', {
                     protocolFilter: ['http:'],
                     isPrivate: false,
                 })
-            ).toBe(false);
+            ).toBe(ItemUrlMatch.NO_MATCH);
 
             expect(
-                matchLoginItemByUrl(createMockItem(['ftp://proton.ch']))('proton.ch', {
+                getItemPriorityForUrl(createMockItem(['ftp://proton.ch']))('proton.ch', {
                     protocolFilter: ['http:', 'ftp:'],
                     isPrivate: false,
                 })
-            ).toBe(true);
+            ).toBe(ItemUrlMatch.TOP_MATCH);
+
+            expect(
+                getItemPriorityForUrl(createMockItem(['http://sub.proton.ch']))('proton.ch', {
+                    protocolFilter: ['http:', 'ftp:'],
+                    isPrivate: false,
+                })
+            ).toBe(ItemUrlMatch.SUB_MATCH);
+
+            expect(
+                getItemPriorityForUrl(createMockItem(['https://sub.proton.ch']))('proton.ch', {
+                    protocolFilter: ['http:', 'ftp:'],
+                    isPrivate: false,
+                })
+            ).toBe(ItemUrlMatch.NO_MATCH);
         });
 
         test('should match deeper subdomains if non-private', () => {
             expect(
-                matchLoginItemByUrl(createMockItem(['https://a.b.c.me']))('a.b.c.me', {
+                getItemPriorityForUrl(createMockItem(['https://a.b.c.me']))('a.b.c.me', {
                     protocolFilter: ['https:'],
                     isPrivate: false,
                 })
-            ).toBe(true);
+            ).toBe(ItemUrlMatch.SUB_MATCH);
 
             expect(
-                matchLoginItemByUrl(createMockItem(['https://a.b.c.me']))('b.c.me', {
+                getItemPriorityForUrl(createMockItem(['https://a.b.c.me']))('b.c.me', {
                     protocolFilter: ['https:'],
                     isPrivate: false,
                 })
-            ).toBe(true);
+            ).toBe(ItemUrlMatch.SUB_MATCH);
         });
 
         test('should not match deeper subdomains if private', () => {
             expect(
-                matchLoginItemByUrl(createMockItem(['https://a.b.c.me']))('a.b.c.me', {
+                getItemPriorityForUrl(createMockItem(['https://a.b.c.me']))('a.b.c.me', {
                     protocolFilter: ['https:'],
                     isPrivate: true,
                 })
-            ).toBe(true);
+            ).toBe(ItemUrlMatch.SUB_MATCH);
 
             expect(
-                matchLoginItemByUrl(createMockItem(['https://a.b.c.me']))('b.c.me', {
+                getItemPriorityForUrl(createMockItem(['https://a.b.c.me']))('b.c.me', {
                     protocolFilter: ['https:'],
                     isPrivate: true,
                 })
-            ).toBe(false);
+            ).toBe(ItemUrlMatch.NO_MATCH);
         });
 
         test('should not match invalid urls', () => {
@@ -85,9 +144,17 @@ describe('match url', () => {
             const item2 = createMockItem([',,,,/proton.ch', ' ']);
             const item3 = createMockItem(['', 'https://proton.me']);
 
-            expect(matchLoginItemByUrl(item1)('proton.ch')).toBe(false);
-            expect(matchLoginItemByUrl(item2)('proton.ch')).toBe(false);
-            expect(matchLoginItemByUrl(item3)('proton.ch')).toBe(false);
+            expect(getItemPriorityForUrl(item1)('proton.ch', { protocolFilter: [], isPrivate: false })).toBe(
+                ItemUrlMatch.NO_MATCH
+            );
+
+            expect(getItemPriorityForUrl(item2)('proton.ch', { protocolFilter: [], isPrivate: false })).toBe(
+                ItemUrlMatch.NO_MATCH
+            );
+
+            expect(getItemPriorityForUrl(item3)('proton.ch', { protocolFilter: [], isPrivate: false })).toBe(
+                ItemUrlMatch.NO_MATCH
+            );
         });
     });
 });

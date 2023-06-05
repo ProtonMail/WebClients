@@ -342,7 +342,7 @@ describe('item selectors', () => {
             expect(candidates[2]).toEqual(withOptimistics(stateMock.items.byShareId.share3.item5));
         });
 
-        test('if public subdomain match, should push subdomain matches on top', () => {
+        test('if public subdomain match, should push subdomain matches on top, then top-level domain, then other subdomains', () => {
             const candidates = selectAutofillCandidates(parseUrl('https://my.sub.domain.google.com'))(stateMock);
             expect(candidates.length).toEqual(3);
             expect(candidates[0]).toEqual(withOptimistics(stateMock.items.byShareId.share3.item5));
