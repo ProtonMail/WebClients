@@ -121,10 +121,17 @@ export const LoginSuccess: VFC = () => {
                                                 alt="Play Store"
                                             />
                                         </Href>
-                                        {/* TODO App Store replace dummy ProtonMail link with ProtonPass link when it's released */}
-                                        <Href href="https://apps.apple.com/app/proton-mail-encrypted-email/id979659905">
+                                        {/* TODO when released on App store:
+                                        remove line below, uncomment <Href> and replace dummy ProtonMail link with ProtonPass link */}
+                                        <img
+                                            width="140"
+                                            className="flex-align-self-start"
+                                            src={appStoreSvg}
+                                            alt="App Store"
+                                        />
+                                        {/* <Href href="https://apps.apple.com/app/proton-mail-encrypted-email/id979659905">
                                             <img width="140" src={appStoreSvg} alt="App Store" />
-                                        </Href>
+                                        </Href> */}
                                     </div>
                                 </OnboardingSuggestionContainer>
                             </div>
