@@ -17,7 +17,7 @@ interface Props {
 }
 
 const ItemExpiration = ({ className, expirationTime, element, labelID }: Props) => {
-    const { tooltipMessage, shortMessage, expiresInLessThan24Hours } = useItemExpiration(expirationTime);
+    const { tooltipMessage, shortMessage, expiresInLessThan24Hours } = useItemExpiration(element, expirationTime);
     const [mailSettings] = useMailSettings();
 
     if (!expirationTime) {
