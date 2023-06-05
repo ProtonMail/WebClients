@@ -53,10 +53,9 @@ export const createFormTracker = (form: FormHandle): FormTracker => {
             mutations.forEach((mutation) => {
                 if (mutation.type === 'attributes' && (mutation.target as HTMLElement).tagName === 'INPUT') {
                     form.detachField(mutation.target as HTMLInputElement);
+                    void formManager.detect('FieldTypeChange');
                 }
             });
-
-            void formManager.detect('FieldTypeChange');
         }
     );
 
