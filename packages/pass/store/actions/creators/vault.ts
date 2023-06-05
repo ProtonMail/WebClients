@@ -93,7 +93,7 @@ export const vaultEditFailure = createOptimisticAction(
             }),
             withNotification({
                 type: 'error',
-                text: c('Error').t`Updating vault "${payload.content?.name}" failed`,
+                text: c('Error').t`Updating vault "${payload.content.name}" failed`,
                 error,
             })
         )({ payload, error }),
@@ -140,7 +140,7 @@ export const vaultDeleteFailure = createOptimisticAction(
             }),
             withNotification({
                 type: 'error',
-                text: c('Error').t`Deleting vault "${payload.content?.name}" failed`,
+                text: c('Error').t`Deleting vault "${payload.content.name}" failed`,
                 error,
             })
         )({ payload, error }),
