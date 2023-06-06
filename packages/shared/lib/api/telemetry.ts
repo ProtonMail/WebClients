@@ -4,6 +4,7 @@ export enum TelemetryMeasurementGroups {
     mailSimpleLogin = 'mail.web.simplelogin_popups',
     screenSize = 'any.web.screen_size',
     calendarTimeZoneSelector = 'calendar.web.timezone_selector',
+    accountSignupBasic = 'account.any.signup_basic ',
 }
 
 export enum TelemetrySimpleLoginEvents {
@@ -22,7 +23,16 @@ export enum TelemetryCalendarEvents {
     change_temporary_time_zone = 'change_temporary_time_zone',
 }
 
-export type TelemetryEvents = TelemetrySimpleLoginEvents | TelemetryScreenSizeEvents | TelemetryCalendarEvents;
+export enum TelemetryAccountSignupBasicEvents {
+    flow_started = 'flow_started',
+    account_created = 'account_created',
+}
+
+export type TelemetryEvents =
+    | TelemetrySimpleLoginEvents
+    | TelemetryScreenSizeEvents
+    | TelemetryCalendarEvents
+    | TelemetryAccountSignupBasicEvents;
 
 export const sendTelemetryData = (data: {
     MeasurementGroup: TelemetryMeasurementGroups;
