@@ -28,7 +28,8 @@ import {
 } from './interface';
 
 const SLOW_EVENT_BYPASS = {};
-const EVENTS_PER_BATCH = 5;
+const EVENTS_PER_BATCH_OLD = 5;
+const EVENTS_PER_BATCH = 200;
 const EVENTS_RACE_MS = 300;
 
 const GET_EVENT_ERROR_MESSAGE = 'Failed to get event';
@@ -234,7 +235,21 @@ const useCalendarsEventsReader = (
         const seen = new Set();
 
         const calendarEventPromises = calendarEvents.reduce<Promise<void>[]>((acc, calendarViewEvent) => {
-            if (acc.length === EVENTS_PER_BATCH && !metadataOnly) {
+            /**
+             * We're forced to proceed by batches below because, in the case metadataOnly = true, the first iteration
+             * through this reduce loop at app load will have to load event blob data for all events in view.
+             * Without batching that would imply launching N simultaneous requests if you have N events in view.
+             *
+             * It turns out that there's a bug in Chromium (see https://github.com/GoogleChrome/workbox/issues/2528 for
+             * multiple references to it) that causes an exhaustion of the browser resources when launching many simultaneous
+             * HTTP2 requests (not an issue for HTTP1 since in that case simultaneous requests are capped at 6), making
+             * requests over the quota fail with a net:ERR_INSUFFICIENT_RESOURCES error. Only Chromium-based browser have this bug.
+             * The number of max simultaneous requests allowed seems to be variable. There's probably not a hard cap on it,
+             * but rather a cap on the memory that the browser can use. In our tests we saw the error at around ~1000 requests.
+             */
+            const eventsPerBatch = metadataOnly ? EVENTS_PER_BATCH : EVENTS_PER_BATCH_OLD;
+
+            if (acc.length === eventsPerBatch) {
                 return acc;
             }
 
