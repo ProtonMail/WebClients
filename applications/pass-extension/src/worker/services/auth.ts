@@ -163,16 +163,15 @@ export const createAuthService = ({
                     }
                 });
 
-                if (accessResponse?.Access)
-                    {store.dispatch(setUserPlan({ ...accessResponse.Access.Plan, requestedAt: getEpoch() }));}
+                if (accessResponse?.Access) {
+                    store.dispatch(setUserPlan({ ...accessResponse.Access.Plan, requestedAt: getEpoch() }));
+                }
 
                 return {
                     payload: {
                         title: c('Title').t`Welcome to ${PASS_APP_NAME}`,
-                        message: c('Info').t`More than a password manager, ${PASS_APP_NAME} protects your
-                            password and your personal email address via email aliases. Powered
-                            by the same technology behind ${MAIL_APP_NAME}, your data is end to
-                            end encrypted and is only accessible by you.`,
+                        message: c('Info')
+                            .t`More than a password manager, ${PASS_APP_NAME} protects your password and your personal email address via email aliases. Powered by the same technology behind ${MAIL_APP_NAME}, your data is end to end encrypted and is only accessible by you.`,
                     },
                 };
             } catch (error: any) {
