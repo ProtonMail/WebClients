@@ -15,6 +15,7 @@ export type OfferId =
     | 'black-friday-vpn-2-deal-2022'
     | 'black-friday-vpn-3-deal-2022'
     | 'mail-trial-2023'
+    | 'summer-2023'
     | 'family-3-deal-2023'
     | 'family-1-deal-2023';
 
