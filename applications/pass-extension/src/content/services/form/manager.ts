@@ -6,11 +6,11 @@ import { logger } from '@proton/pass/utils/logger';
 import debounce from '@proton/utils/debounce';
 
 import { isSubmissionCommitted } from '../../../shared/form';
-import { EXTENSION_PREFIX, PROCESSED_FIELD_ATTR } from '../../constants';
+import { PROCESSED_FIELD_ATTR } from '../../constants';
 import { withContext } from '../../context/context';
 import type { FormHandle } from '../../types';
 import { NotificationAction } from '../../types';
-import { hasUnprocessedForms, setFormProcessed } from '../../utils/nodes';
+import { hasUnprocessedForms } from '../../utils/nodes';
 import { createFormHandles } from '../handles/form';
 
 type FormManagerOptions = { onDetection: (forms: FormHandle[]) => void };
@@ -131,7 +131,6 @@ export const createFormManager = (options: FormManagerOptions) => {
                         const forms = detector.runDetection();
 
                         forms.forEach((options) => {
-                            setFormProcessed(options.form, options.formType);
                             const formHandle = ctx.trackedForms.get(options.form) ?? createFormHandles(options);
                             ctx.trackedForms.set(options.form, formHandle);
                             formHandle.reconciliate(options.formType, options.fields);
@@ -175,16 +174,13 @@ export const createFormManager = (options: FormManagerOptions) => {
 
     /* we want to avoid swarming detection requests on every transition end
      * as we are listening for them on the document.body and we'll catch all
-     * bubbling `transitionend` events. We are only interested in transition
-     * events which happen when we have n  */
-    const onTransition = (event: Event) => {
-        const target = event.target as HTMLElement;
-
-        if (target.matches(`[class^=${EXTENSION_PREFIX}]`)) return;
-        if ([...ctx.trackedForms.values()].some((form) => form.element.contains(target))) return;
-
-        return hasUnprocessedForms() && detect('TransitionEnd');
-    };
+     * bubbling `transitionend` events: debounce the function and only run the
+     * detectors if we have unprocessed forms in the DOM */
+    const onTransition = debounce(
+        () => requestAnimationFrame(() => hasUnprocessedForms() && detect('TransitionEnd')),
+        150,
+        { leading: true }
+    );
 
     /* the mutation observer in this call will only watch for changes
      * on the body subtree - this will not catch attribute changes on
