@@ -10,6 +10,7 @@ import {
     formProcessed,
     selectAllForms,
     selectDanglingFields,
+    selectUnprocessedForms,
     setFieldProcessed,
     setFormProcessed,
 } from '../../utils/nodes';
@@ -126,8 +127,7 @@ const selectBestForm = <T extends string>(scores: PredictionScoreResult<T>[]) =>
     return loginResult.score > 0.5 ? loginResult : scores[0];
 };
 
-/* Runs the fathom detection and returns a form handle for each
- * detected form. FIXME: handle "dangling" fields. */
+/* Runs the fathom detection and returns a form handle for each detected form.. */
 const createDetectionRunner = (ruleset: ReturnType<typeof rulesetMaker>, doc: Document) => (): DetectedForm[] => {
     const boundRuleset = ruleset.against(doc.body);
 
@@ -152,8 +152,15 @@ const createDetectionRunner = (ruleset: ReturnType<typeof rulesetMaker>, doc: Do
         fields: fieldMap.get(formFNode.element) ?? [],
     }));
 
+    /* Form / fields flagging :
+     * each detected form should be flagged via the `data-protonpass-form` attribute so as to
+     * avoid triggering unnecessary detections if nothing of interest has changed in the DOM.
+     * - `formPredictions` will include only visible forms : flag them with prediction class
+     * - all form fields should be flagged as processed with the `data-protonpass-field` attr
+     * - query all unprocessed forms (including invisible ones) and flag them as `NOOP` */
     formPredictions.forEach(({ fnode: { element }, type }) => setFormProcessed(element, type));
     forms.forEach(({ fields }) => fields.forEach(({ field, fieldType }) => setFieldProcessed(field, fieldType)));
+    selectUnprocessedForms().forEach((form) => setFormProcessed(form, FormType.NOOP));
 
     return forms;
 };
