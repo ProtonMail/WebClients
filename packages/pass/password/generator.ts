@@ -1,3 +1,5 @@
+import capitalize from '@proton/utils/capitalize';
+
 import WORD_LIST from './wordlist.json';
 
 export const alphabeticChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
@@ -18,6 +20,8 @@ export enum SeperatorOptions {
 export type WordListOptions = {
     wordCount: number;
     seperator: SeperatorOptions;
+    capitalize: boolean;
+    extraNumbers?: boolean;
 };
 
 const getRandomCharacter = (characters: string) => {
@@ -56,7 +60,12 @@ export const generateFromWordList = (options: WordListOptions): string => {
         return WORD_LIST[wordId];
     };
 
-    return Array.from({ length: options.wordCount }, () => getRandomWord()).reduce<string>(
+    return Array.from({ length: options.wordCount }, () => {
+        let word = getRandomWord();
+        if (options.capitalize) word = capitalize(word)!;
+        if (options.extraNumbers) word = `${word}${getRandomCharacter(digits)}`;
+        return word;
+    }).reduce<string>(
         (password, word, idx) => (idx === 0 ? word : `${password}${getSeperator(options.seperator)}${word}`),
         ''
     );
