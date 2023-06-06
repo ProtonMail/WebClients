@@ -17,10 +17,13 @@ import {
 } from '@proton/components';
 import ForceRefreshContext from '@proton/components/containers/forceRefresh/context';
 import { APPS, CLIENT_TYPES } from '@proton/shared/lib/constants';
+import { setMetricsEnabled } from '@proton/shared/lib/helpers/metrics';
 import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 
 import AccountLoaderPage from './AccountLoaderPage';
 import LoginContainer from './containers/LoginContainer';
+
+setMetricsEnabled(true);
 
 interface Props {
     onLogin: ProtonLoginCallback;
