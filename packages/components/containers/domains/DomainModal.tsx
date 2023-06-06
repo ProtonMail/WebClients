@@ -193,7 +193,7 @@ const DomainModal = ({ domain, domainAddresses = [], ...rest }: Props) => {
                         title={c('Tooltip')
                             .t`We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.`}
                     >
-                        <RoundedIcon className="mr-2" key="dkim-icon" type="error" name="cross" />
+                        <RoundedIcon className="mr-1 md:mr-2 p-1 md:p-0" key="dkim-icon" type="error" name="cross" />
                     </Tooltip>
                 );
             }
@@ -201,7 +201,12 @@ const DomainModal = ({ domain, domainAddresses = [], ...rest }: Props) => {
             case DKIM_STATE_GOOD: {
                 return (
                     <Tooltip title={c('Tooltip').t`Your DKIM signing is working.`}>
-                        <RoundedIcon className="mr-2" key="dkim-icon" type="success" name="checkmark" />
+                        <RoundedIcon
+                            className="mr-1 md:mr-2 p-1 md:p-0"
+                            key="dkim-icon"
+                            type="success"
+                            name="checkmark"
+                        />
                     </Tooltip>
                 );
             }
@@ -212,7 +217,7 @@ const DomainModal = ({ domain, domainAddresses = [], ...rest }: Props) => {
                         title={c('Tooltip')
                             .t`We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.`}
                     >
-                        <Icon size={24} className="mr-2" name="exclamation-circle-filled" />
+                        <Icon size={24} className="mr-1 md:mr-2 p-1 md:p-0" name="exclamation-circle-filled" />
                     </Tooltip>
                 );
             }
