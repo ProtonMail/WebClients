@@ -38,9 +38,9 @@ const SimpleLoginModal = ({ ...rest }: Props) => {
         ? // translator: Full sentence "Your Proton Account includes SimpleLogin. Install the browser extension with one click to get started.""
           c('Info')
               .t`Your ${BRAND_NAME} Account includes SimpleLogin. Install the browser extension with one click to get started.`
-        : // translator: Full sentence "SimpleLogin is a Proton service, and your Proton Account includes Hide My Email aliases. To start masking your email address, go to SimpleLogin and create your first alias."
+        : // translator: Full sentence "SimpleLogin is a Proton service, and your Proton Account includes hide-my-email aliases. To start masking your email address, go to SimpleLogin and create your first alias."
           c('Info')
-              .t`SimpleLogin is a ${BRAND_NAME} service, and your ${BRAND_NAME_TWO} Account includes Hide My Email aliases. To start masking your email address, go to SimpleLogin and create your first alias.`;
+              .t`SimpleLogin is a ${BRAND_NAME} service, and your ${BRAND_NAME_TWO} Account includes hide-my-email aliases. To start masking your email address, go to SimpleLogin and create your first alias.`;
 
     const handlePluginAction = async () => {
         setLoading(true);
@@ -82,11 +82,11 @@ const SimpleLoginModal = ({ ...rest }: Props) => {
                     .t`SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.`}</div>
                 <br />
                 <div className="mb-2">
-                    <strong>{c('Info').t`How Hide My Email works`}</strong>
+                    <strong>{c('Info').t`How hide-my-email aliases works`}</strong>
                 </div>
                 <ul className="my-0">
                     <li className="mb-4">{c('Info')
-                        .t`When giving out your email, use a unique, disposable Hide My Email alias instead of your real email address.`}</li>
+                        .t`When giving out your email, use a unique, disposable hide-my-email alias instead of your real email address.`}</li>
                     <li className="mb-4">{c('Info')
                         .t`Email is forwarded to your mailbox; your email address stays hidden.`}</li>
                     <li>{c('Info')
