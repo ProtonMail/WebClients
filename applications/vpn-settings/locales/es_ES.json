@@ -1573,7 +1573,7 @@
         "El navegador que estás utilizando no permite autorizar el pago. Utiliza un navegador diferente o inicia sesión desde un ordenador."
       ],
       "The email addresses do not match": [
-        "Las direcciones de correo electrónico no coinciden."
+        "Las direcciones de correo electrónico no coinciden"
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "La cantidad mínima de crédito que puede añadirse es de ${ price }"
@@ -1603,10 +1603,10 @@
         "Estado del token de pago desconocido"
       ],
       "Username must begin with a letter or digit": [
-        "El nombre de usuario debe comenzar con una letra o un dígito."
+        "El nombre de usuario debe comenzar con una letra o un número"
       ],
       "Username must end with a letter or digit": [
-        "El nombre de usuario debe terminar con una letra o un dígito."
+        "El nombre de usuario debe terminar con una letra o un número"
       ],
       "Wrong recovery phrase. Try again or use another recovery method.": [
         "Frase de recuperación incorrecta. Inténtalo de nuevo o utiliza otro método de recuperación."
@@ -1626,13 +1626,13 @@
         "Se ha producido un error."
       ],
       "Please refresh the page or try again later.": [
-        "Actualiza la página o inténtalo de nuevo más tarde."
+        "Vuelve a cargar la página o inténtalo de nuevo más tarde."
       ],
       "Something went wrong": [
-        "Se ha producido un error."
+        "Algo salió mal"
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
-        "No hemos podido cargar esta página. Actualiza la página o verifica tu conexión a internet."
+        "No hemos podido cargar esta página. Vuelve a cargar la página o verifica tu conexión a internet."
       ]
     },
     "Error notification": {
@@ -2107,7 +2107,7 @@
         "Un nombre que te ayude a identificar dónde lo utilizas para poder revocarlo o ampliarlo fácilmente más adelante."
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
-        "Un número telefónico solo puede usarse para verificar una cuenta de ${ BRAND_NAME }"
+        "Un número telefónico solo puede usarse para verificar una cuenta de ${ BRAND_NAME }."
       ],
       "A user is an account associated with a single username, mailbox, and person": [
         "Un usuario es una cuenta asociada a un único nombre de usuario, bandeja de entrada y persona"
@@ -3534,10 +3534,6 @@
         "${ n } carpeta y etiqueta",
         "${ n } carpetas y etiquetas"
       ],
-      "${ n } forwarding mailbox": [
-        "${ n } buzón de reenvío",
-        "${ n } buzones de reenvío"
-      ],
       "${ n } Hide My Email alias": [
         "${ n } alias de \"Hide My Email\"",
         "${ n } alias de \"Hide My Email\""
@@ -3612,6 +3608,9 @@
       ],
       "Custom email domains": [
         "Dominios de correo personalizados"
+      ],
+      "Custom fields": [
+        "Campos personalizados"
       ],
       "Data breach monitoring": [
         "Monitoreo de vulneración de datos"
@@ -3776,9 +3775,6 @@
       ],
       "Up to ${ totalStorageSize } storage": [
         "Hasta ${ totalStorageSize } de almacenamiento"
-      ],
-      "Up to 5 forwarding mailboxes": [
-        "Hasta 5 buzones de reenvío"
       ],
       "User credential management": [
         "Administración de credenciales de usuario"

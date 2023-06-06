@@ -66,6 +66,9 @@
       "Apply": [
         "Toepassen"
       ],
+      "At most 100 contacts are allowed per contact group": [
+        "Ten hoogste 100 contacten zijn toegelaten per contactgroep"
+      ],
       "Attach screenshot(s)": [
         "Schermafdruk(ken) toevoegen"
       ],
@@ -262,6 +265,12 @@
       ],
       "I have a question": [
         "Ik heb een vraag"
+      ],
+      "Image could not be loaded with tracker protection.": [
+        "Afbeelding kan niet worden geladen met trackerbeveiliging."
+      ],
+      "Image will be loaded without a proxy": [
+        "Afbeelding wordt geladen zonder een proxy"
       ],
       "Import": [
         "Importeren"
@@ -1988,6 +1997,9 @@
       "ProtonMail logo and a plus sign": [
         "Proton Mail-logo en een plus-teken"
       ],
+      "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
+        "Bespaar tijd door e-mails of uitnodigingen naar iedereen tegelijkertijd te sturen, een premium functie zoals vele anderen. Upgrade vandaag."
+      ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "Het bestand mag een maximale grootte hebben van ${ MAX_IMPORT_FILE_SIZE_STRING } en ${ MAX_IMPORT_CONTACTS_STRING } contact hebben. Als uw bestand groter is, splits het dan op in kleinere bestanden.",
         "Het bestand mag een maximale grootte hebben van ${ MAX_IMPORT_FILE_SIZE_STRING } en tot ${ MAX_IMPORT_CONTACTS_STRING } contacten hebben. Als uw bestand groter is, splits het dan op in kleinere bestanden."
@@ -2175,6 +2187,9 @@
       ],
       "Cancellation failed to be sent": [
         "Annulering kon niet worden verzonden"
+      ],
+      "Cannot export this contact": [
+        "Kan dit contact niet exporteren"
       ],
       "Contact could not be saved": [
         "Contact kan niet opgeslagen worden"
@@ -2443,6 +2458,12 @@
       ],
       "Unknown error": [
         "Onbekende fout"
+      ],
+      "Username must begin with a letter or digit": [
+        "Gebruikersnaam moet met een letter of cijfer beginnen"
+      ],
+      "Username must end with a letter or digit": [
+        "Gebruikersnaam moet met een letter of cijfer eindigen"
       ],
       "Validation error": [
         "Validatiefout"
@@ -3443,6 +3464,12 @@
       "Close this screen to exit.": [
         "Sluit dit scherm om af te sluiten."
       ],
+      "Contact assigned to group ${ contactGroupName }": [
+        "Contact toegekend aan groep ${ contactGroupName }"
+      ],
+      "Contact unassigned to group ${ contactGroupName }": [
+        "Contact verwijderd uit groep ${ contactGroupName }"
+      ],
       "Country code": [
         "Landcode"
       ],
@@ -3916,6 +3943,12 @@
       ],
       "You will update all the events in this series. Removed participants will be notified.": [
         "U zult alle afspraken in deze serie bijwerken. Verwijderde deelnemers zullen hiervan op de hoogte worden gebracht."
+      ],
+      "You've reached the maximum number of addresses in the contact group(s):": [
+        "U heeft het maximaal aantal adressen bereikt in de contactgroep(en):"
+      ],
+      "You've reached the maximum number of addresses in the contact group.": [
+        "U heeft het maximaal aantal adressen bereikt in de contactgroep."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Uw ${ BRAND_NAME } account is momenteel opgeschort. Na 28 dagen zullen e-mails niet meer afgeleverd worden in uw postvak-in, de deelkoppelingen van uw Drive zullen worden geblokkeerd, en u zal geen nieuwe bestanden meer kunnen opladen. Om normale diensten te hervatten dient u alle achterstallige facturen te betalen."
@@ -4559,7 +4592,7 @@
         "Agenda bewerken"
       ],
       "Get a country's official public holidays calendar.": [
-        "Ontvang de officiële feestdagenagenda van een land."
+        "Ontvang de officiële feestdagenkalender van een land."
       ],
       "How to import calendars from another service": [
         "Hoe u agenda's importeert uit een andere dienst"
@@ -4766,14 +4799,23 @@
       ],
       "Up to 15 email addresses": [
         "Tot wel 15 e-mailadressen"
+      ],
+      "Up to 3 TB of storage": [
+        "Tot wel 3 TB opslag"
       ]
     },
     "new_plans: feature info": {
+      "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
+        "Maak meerdere e-mailadressen aan voor uw online-identiteiten, zoals JohnShopper@${ domain } voor shoppingaccounts, JohnNieuws@${ domain2 } voor nieuwsabonnementen"
+      ],
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "Gebruik onbeperkt aliassen met SimpleLogin van ${ BRAND_NAME }"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Opslagruimte wordt gedeeld door ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } en ${ DRIVE_APP_NAME }"
+      ],
+      "Use your own custom email domain address, e.g., you@yourname.com": [
+        "Gebruik uw eigen e-mailadressen met een aangepast domein, zoals u@uwnaam.com"
       ]
     },
     "new_plans: label": {
@@ -4795,6 +4837,9 @@
       ]
     },
     "Notification in holidays calendar modal": {
+      "Adding holidays calendar failed": [
+        "Wettelijke feestdagenkalender toevoegen mislukt"
+      ],
       "Calendar added": [
         "Agenda toegevoegd"
       ]
@@ -5836,6 +5881,10 @@
       ]
     },
     "Title": {
+      "${ emailsCount } email address": [
+        "${ emailsCount } e-mailadres",
+        "${ emailsCount } e-mailadressen"
+      ],
       "Account suspended": [
         "Account opgeschort"
       ],
@@ -5878,6 +5927,9 @@
       ],
       "Calendar alarm": [
         "Agendamelding"
+      ],
+      "Cannot add more addresses": [
+        "Kan geen extra adressen toevoegen"
       ],
       "Change my answer": [
         "Mijn antwoord wijzigen"
@@ -6158,6 +6210,9 @@
       "Start import process": [
         "Importproces starten"
       ],
+      "Unlock contacts groups": [
+        "Ontgrendel contactgroepen"
+      ],
       "Update event": [
         "Afspraak bijwerken"
       ],
@@ -6265,6 +6320,12 @@
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Systeemsubmappen worden weergegeven als aparte mappen in ${ MAIL_APP_NAME }"
+      ],
+      "The image could not be loaded": [
+        "De afbeelding kan niet worden geladen"
+      ],
+      "The image could not be loaded using proxy": [
+        "De afbeelding kan niet worden geladen via een proxy"
       ],
       "The import will start with the most recent messages.": [
         "Het importeren begint met de meest recente berichten."

@@ -53,6 +53,9 @@
       "activate": [
         "activeer"
       ],
+      "Activate ${ Name }@pm.me": [
+        "Activeer ${ Name }@pm.me"
+      ],
       "Activate ${ user.Name }@pm.me": [
         "Activeer ${ user.Name }@pm.me"
       ],
@@ -763,6 +766,9 @@
       ],
       "Send code": [
         "Code versturen"
+      ],
+      "Send messages with @pm.me": [
+        "Stuur berichten met @pm.be"
       ],
       "Send my username": [
         "Stuur mijn gebruikersnaam"
@@ -2717,8 +2723,14 @@
         "Het bestand mag een maximale grootte hebben van ${ MAX_IMPORT_FILE_SIZE_STRING } en ${ MAX_IMPORT_CONTACTS_STRING } contact hebben. Als uw bestand groter is, splits het dan op in kleinere bestanden.",
         "Het bestand mag een maximale grootte hebben van ${ MAX_IMPORT_FILE_SIZE_STRING } en tot ${ MAX_IMPORT_CONTACTS_STRING } contacten hebben. Als uw bestand groter is, splits het dan op in kleinere bestanden."
       ],
+      "To remove the ${ MAIL_APP_NAME } footer, upgrade and unlock even more premium features.": [
+        "Upgrade om de ${ MAIL_APP_NAME }-voet te verwijderen en ontgrendel nog meer premium functies."
+      ],
       "Track the status and activity of your referrals.": [
         "Volg de status en activiteiten van uw doorverwijzingen."
+      ],
+      "Unlock shorter email addresses and other premium features by upgrading.": [
+        "Ontgrendel kortere e-mailadressen en andere premiumfuncties door te upgraden."
       ],
       "Unlock unlimited filters that sort your inbox for you and more premium features when you upgrade.": [
         "Krijg onbeperkt filters die uw postvak voor u sorteren en andere premiumfuncties als u upgrade."
@@ -3336,6 +3348,12 @@
       ],
       "Uploaded files are not valid private keys. Please verify and try again.": [
         "Geüploadde files zijn geen geldige geheime sleutels. Controleer en probeer opnieuw."
+      ],
+      "Username must begin with a letter or digit": [
+        "Gebruikersnaam moet met een letter of cijfer beginnen"
+      ],
+      "Username must end with a letter or digit": [
+        "Gebruikersnaam moet met een letter of cijfer eindigen"
       ],
       "Validation error": [
         "Validatiefout"
@@ -4272,6 +4290,9 @@
       "Add a custom filter to automatically perform certain actions, like labeling or archiving messages.": [
         "Voeg een aangepaste filter toe om bepaalde acties, zoals berichten labelen of archiveren, automatisch uit te voeren."
       ],
+      "Emails from addresses marked as spam by you or ${ BRAND_NAME } will go to the spam folder of your organization members. If you want to allow emails from one of these addresses, mark it as \"not spam\".": [
+        "E-mails van adressen die door u of ${ BRAND_NAME } als spam zijn gemarkeerd, komen in de spamfolder terecht van uw organisatieleden. Als u e-mails van een van deze adressen wilt toestaan, markeer het dan als \"geen spam\"."
+      ],
       "Emails from addresses marked as spam by you or ${ BRAND_NAME } will go to your spam folder. If you want to allow emails from one of these addresses, mark it as \"not spam\".": [
         "E-mails van adressen die door u of ${ BRAND_NAME } als spam zijn gemarkeerd, komen in uw spamfolder terecht. Als u e-mails van een van deze adressen wilt toestaan, markeer het dan als \"geen spam\"."
       ],
@@ -4360,6 +4381,9 @@
       "Best deal": [
         "Beste deal"
       ],
+      "Device": [
+        "Apparaat"
+      ],
       "Enter your email address": [
         "Voer uw e-mailadres in"
       ],
@@ -4389,6 +4413,9 @@
       ],
       "Permissions": [
         "Rechten"
+      ],
+      "Protection": [
+        "Bescherming"
       ],
       "Select your preferred method of payment": [
         "Selecteer uw gewenste betaalmethode"
@@ -4455,6 +4482,17 @@
       ],
       "Token name": [
         "Tokennaam"
+      ]
+    },
+    "Header; Table with list of calendars arranged by type": {
+      "Holidays": [
+        "Feestdagen"
+      ],
+      "Other": [
+        "Overige"
+      ],
+      "Subscribed": [
+        "Geabonneerd"
       ]
     },
     "Heading in trial plan": {
@@ -4893,6 +4931,12 @@
       "${ numGroups } contact group": [
         "${ numGroups } contactgroep",
         "${ numGroups } contactgroepen"
+      ],
+      "${ PROTON_SENTINEL_NAME } is an account protection program developed at ${ BRAND_NAME } for users who need maximum security.": [
+        "${ PROTON_SENTINEL_NAME } is een accountbeschermingsprogramma ontwikkeld bij ${ BRAND_NAME } voor gebruikers die maximale beveiliging nodig hebben."
+      ],
+      "${ PROTON_SENTINEL_NAME } is powered by sophisticated AI systems and teams of specialists working 24/7 to mitigate bad actors and security threats.": [
+        "${ PROTON_SENTINEL_NAME } wordt mogelijk gemaakt door geavanceerde AI-systemen en teams van specialisten die 24/7 werken om slechte actoren en beveiligingsbedreigingen te beperken."
       ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } map gevonden",
@@ -5395,6 +5439,9 @@
       "Email address": [
         "E-mailadres"
       ],
+      "Email address already used": [
+        "E-mailadres al in gebruik"
+      ],
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
         "E-mailhosting is gratis inbegrepen voor 10 eigen domeinnamen. Extra domeinen kunnen toegevoegd worden voor ${ price }."
       ],
@@ -5817,6 +5864,9 @@
       "old password": [
         "oud wachtwoord"
       ],
+      "Once you enable ${ PROTON_SENTINEL_NAME }:": [
+        "Wanneer u ${ PROTON_SENTINEL_NAME } inschakelt:"
+      ],
       "Once you reset your password:": [
         "Zodra u uw wachtwoord herstelt:"
       ],
@@ -6121,6 +6171,9 @@
       "support team": [
         "ondersteuningsteam"
       ],
+      "Suspicious events will be challenged by multiple layers of defense that help prevent attackers from hijacking your account.": [
+        "Verdachte gebeurtenissen zullen uitgedaagd worden door meerdere lagen van verdediging die aanvallers voorkomen om uw account te hijacken."
+      ],
       "Swiss based": [
         "Gevestigd in Zwitserland"
       ],
@@ -6289,8 +6342,8 @@
       "To ensure continuous access to your account, set an account recovery method": [
         "Stel een herstelmethode in om ervoor te zorgen dat u blijvende toegang tot uw account heeft"
       ],
-      "To ensure you don’t lose important data, ${ DRIVE_APP_NAME } saves older versions of your files as you\nand your collaborators make changes. Select how long ${ BRAND_NAME } should keep previous versions.": [
-        "Om te garanderen dat u geen belangrijke data verliest, bewaart ${ DRIVE_APP_NAME } oude versies van uw bestanden als u en de mensen met wie u samenwerkt veranderingen maken. Selecteer hoe lang ${ BRAND_NAME } vorige versies moet bewaren."
+      "To ensure you don’t lose important data, ${ DRIVE_APP_NAME } saves older versions of your files as you and your collaborators make changes. Select how long ${ BRAND_NAME } should keep previous versions.": [
+        "Om te garanderen dat u geen belangrijke gegevens verliest, bewaart ${ DRIVE_APP_NAME } oude versies van uw bestanden als u en de mensen met wie u samenwerkt veranderingen maken. Selecteer hoe lang ${ BRAND_NAME } vorige versies moet bewaren."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Bevestig dat u een natuurlijk persoon bent, om spam en misbruik tegen te gaan."
@@ -6385,6 +6438,12 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Upgrade nu om alle premium functionaliteiten, producten en opslag te krijgen voor een speciale prijs"
       ],
+      "Upgrade to a paid account to enable ${ PROTON_SENTINEL_NAME }.": [
+        "Upgrade naar een betalend account om ${ PROTON_SENTINEL_NAME } in te schakelen."
+      ],
+      "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
+        "Upgrade om een korter @pm.me-adres aan uw account toe te voegen dat gemakkelijker te delen is. Het staat voor \"${ MAIL_APP_NAME } me\" of \"Private Message me\"."
+      ],
       "Upgrade to unlock": [
         "Upgrade om te ontgrendelen"
       ],
@@ -6408,6 +6467,9 @@
       ],
       "Use the selected email address as the SMTP username in the external service, and the generated token as the SMTP password.": [
         "Gebruik het geselecteerde e-mailadres als de SMTP-gebruikersnaam bij de externe dienst, en het gegenereerde token als het SMTP-wachtwoord."
+      ],
+      "Users with sensitive data and communications, such as journalists or executives, are highly encouraged to enable ${ PROTON_SENTINEL_NAME }.": [
+        "Gebruikers met gevoelige gegevens en communicatie, zoals journalisten of leidinggevenden, raden we sterk aan om ${ PROTON_SENTINEL_NAME } in te schakelen."
       ],
       "Verification can take a few minutes.": [
         "Verificatie kan een paar minuten duren."
@@ -6513,6 +6575,9 @@
       ],
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME_TWO } services": [
         "Met een versleuteld ${ BRAND_NAME }-adres, kunt u gebruik maken van alle ${ BRAND_NAME_TWO }-diensten"
+      ],
+      "With your current plan, you can only receive messages with your @pm.me address. Upgrade to send messages and create additional addresses using @pm.me.": [
+        "Met je huidige abonnement kun je alleen berichten ontvangen met je @pm.me-adres. Upgrade om berichten te verzenden en extra adressen aan te maken met @pm.me."
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Zonder activatie kun u nog geen nieuwe gebruikers maken, adressen aan bestaande gebruikers toewijzen of toegang krijgen tot niet-privé gebruikersaccounts."
@@ -6647,6 +6712,12 @@
       ],
       "You will NOT be able to decrypt any messages, files, and other data encrypted with this key.": [
         "U zal berichten, bestanden en andere gegevens versleuteld met deze sleutel, niet langer kunnen ontsleutelen."
+      ],
+      "You will receive priority support from specialists trained in account protection. For any account security concerns, please contact us ${ hereLink }.": [
+        "U zult prioriteitsondersteuning krijgen van specialisten getraind in accountbeveiliging. Voor alle bezorgdheden m.b.t. accountbeveiliging, neemt u contact met ons op ${ hereLink }."
+      ],
+      "You will see more details in the Security logs below for important events such as sign in attempts.": [
+        "U zult meer details zien in de beveiligingslogboeken hieronder voor belangrijke gebeurtenissen zoals aanmeldpogingen."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Binnenkort wordt u doorverwezen naar PayPal om uw betaling te verifiëren."
@@ -8166,6 +8237,9 @@
       "General": [
         "Algemeen"
       ],
+      "here": [
+        "hier"
+      ],
       "How to unlock data": [
         "Hoe gegevens ontgrendelen"
       ],
@@ -8252,6 +8326,9 @@
       ]
     },
     "Log preference": {
+      "Enable ${ PROTON_SENTINEL_NAME }": [
+        "${ PROTON_SENTINEL_NAME } inschakelen"
+      ],
       "Enable advanced logs": [
         "Geavanceerde logs inschakelen"
       ],
@@ -8330,7 +8407,7 @@
         "Agenda bewerken"
       ],
       "Get a country's official public holidays calendar.": [
-        "Ontvang de officiële feestdagenagenda van een land."
+        "Ontvang de officiële feestdagenkalender van een land."
       ],
       "How to import calendars from another service": [
         "Hoe u agenda's importeert uit een andere dienst"
@@ -8661,10 +8738,6 @@
         "${ n } map en label",
         "${ n } mappen en labels"
       ],
-      "${ n } forwarding mailbox": [
-        "${ n } doorstuurpostvak",
-        "${ n } doorstuurpostvakken"
-      ],
       "${ n } Hide My Email alias": [
         "${ n } Hide My Email-alias",
         "${ n } Hide My Email-aliassen"
@@ -8742,6 +8815,9 @@
       ],
       "Custom email domains": [
         "Aangepaste e-maildomeinen"
+      ],
+      "Custom fields": [
+        "Aangepaste velden"
       ],
       "Data breach monitoring": [
         "Monitoring van datalekken"
@@ -8898,6 +8974,9 @@
       "Unlimited labels": [
         "Onbeperkt aantal labels"
       ],
+      "Unlimited logins and notes": [
+        "Onbeperkt aantal wachtwoorden en notities"
+      ],
       "Unlimited messages per day": [
         "Onbeperkt aantal berichten per dag"
       ],
@@ -8916,6 +8995,9 @@
       "Up to 15 email addresses": [
         "Tot wel 15 e-mailadressen"
       ],
+      "Up to 3 TB of storage": [
+        "Tot wel 3 TB opslag"
+      ],
       "User credential management": [
         "Beheer van inloggegevens van gebruikers"
       ],
@@ -8930,11 +9012,17 @@
       ]
     },
     "new_plans: feature info": {
+      "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
+        "Maak meerdere e-mailadressen aan voor uw online-identiteiten, zoals JohnShopper@${ domain } voor shoppingaccounts, JohnNieuws@${ domain2 } voor nieuwsabonnementen"
+      ],
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "Gebruik onbeperkt aliassen met SimpleLogin van ${ BRAND_NAME }"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Opslagruimte wordt gedeeld door ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } en ${ DRIVE_APP_NAME }"
+      ],
+      "Use your own custom email domain address, e.g., you@yourname.com": [
+        "Gebruik uw eigen e-mailadressen met een aangepast domein, zoals u@uwnaam.com"
       ]
     },
     "new_plans: heading": {
@@ -9372,6 +9460,9 @@
       ]
     },
     "Notification in holidays calendar modal": {
+      "Adding holidays calendar failed": [
+        "Wettelijke feestdagenkalender toevoegen mislukt"
+      ],
       "Calendar added": [
         "Agenda toegevoegd"
       ]
@@ -11044,6 +11135,9 @@
       "Action": [
         "Actie"
       ],
+      "Activate @pm.me": [
+        "Activeer @pm.me"
+      ],
       "Activate account and generate keys": [
         "Account activeren en sleutels genereren"
       ],
@@ -11547,6 +11641,9 @@
       ],
       "OpenVPN configuration files": [
         "OpenVPN-configuratiebestanden"
+      ],
+      "Organization filters": [
+        "Organisatiefilters"
       ],
       "Organization name": [
         "Organisatienaam"

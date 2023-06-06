@@ -2907,6 +2907,9 @@
       "Contact assigned to group ${ contactGroupName }": [
         "Contacto atribuído ao grupo ${ contactGroupName }"
       ],
+      "Contact unassigned to group ${ contactGroupName }": [
+        "Contacto não atribuído ao grupo ${ contactGroupName }"
+      ],
       "Country code": [
         "Código de país"
       ],
@@ -3371,6 +3374,12 @@
       ],
       "You will update all the events in this series. Removed participants will be notified.": [
         "Vai atualizar todos os eventos desta série. Os participantes removidos serão notificados."
+      ],
+      "You've reached the maximum number of addresses in the contact group(s):": [
+        "Atingiu o número máximo de endereços no(s) grupo(s) de contactos:"
+      ],
+      "You've reached the maximum number of addresses in the contact group.": [
+        "Atingiu o número máximo de endereços no grupo de contactos."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "A sua conta ${ BRAND_NAME } de momento está suspensa. Após 28 dias, os correios electrónicos deixarão de ser entregues na sua caixa de entrada, as suas ligações de partilha de disco serão bloqueadas, e não poderá carregar novos ficheiros. Para retomar o serviço normal, pague quaisquer faturas em atraso."

@@ -3301,8 +3301,8 @@
       "Attention required": [
         "Патрабуецца ўвага"
       ],
-      "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
-        "Паколькі праграма ${ DRIVE_APP_NAME } зашыфравана скразным метадам, мы не можам атрымаць доступ або расшыфраваць вашы файлы. Для разблакіравання вашага дыска пасля скідання пароля вы павінны мець адну з наступных прылад:"
+      "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access or decrypt your files for you. To unlock your drive after a password reset, you must have one of the following:": [
+        "Паколькі праграма ${ DRIVE_APP_NAME } зашыфравана скразным метадам, мы не можам атрымаць доступ або расшыфраваць вашы файлы. Для разблакіроўкі вашага дыска пасля скідання пароля вы павінны мець адну з наступных прылад:"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Перад запытам новага праверачнага кода праверце папку са спамам, а таксама ці правільна азначаны адрас ${ strong }."
@@ -3502,6 +3502,12 @@
       "Failed": [
         "Збой"
       ],
+      "Failed to generate a secure link. The reason is: ${ error }": [
+        "Не ўдалося згенерыраваць бяспечную спасылку. Прычына: ${ error }"
+      ],
+      "Failed to generate a secure link. Try again later": [
+        "Не ўдалося згенерыраваць бяспечную спасылку. Паспрабуйце яшчэ раз пазней"
+      ],
       "Failed to open a secure link. The reason is: ${ error }": [
         "Не ўдалося адкрыць бяспечную спасылку. Прычына: ${ error }"
       ],
@@ -3580,7 +3586,7 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Калі паведамлення няма ў папцы з уваходнымі лістамі, то магчыма, што яно трапіла ў папку са спамам."
       ],
-      "If you have one of these, continue to ${ BRAND_NAME } Account setting to\nstart the unblock process.": [
+      "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process.": [
         "Калі ў вас ёсць што-небудзь з гэтага, перайдзіце ў налады ўліковага запісу ${ BRAND_NAME }, каб працягнуць працэс разблакіроўкі."
       ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
@@ -3991,7 +3997,7 @@
       "This will overwrite the existing folder": [
         "Гэта перазапіша існуючую папку"
       ],
-      "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on\nthe device won’t be affected.": [
+      "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on the device won’t be affected.": [
         "Гэта выдаліць з ${ DRIVE_APP_NAME } сінхранізаваную прыладу з назвай ${ deviceName }. Лакальныя файлы застануцца не змененымі."
       ],
       "This will replace the existing file with the folder": [
@@ -4722,8 +4728,8 @@
       "Wonderful": [
         "Цудоўна"
       ],
-      "Yes, I want to permanently delete\nmy old files": [
-        "Так, я хачу незваротна выдаліць\nмае старыя файлы"
+      "Yes, I want to permanently delete my old files": [
+        "Так, я хачу незваротна выдаліць мае старыя файлы"
       ],
       "Your password (admin)": [
         "Ваш пароль (admin)"

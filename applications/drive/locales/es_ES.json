@@ -53,7 +53,7 @@
         "Aplicar"
       ],
       "At most 100 contacts are allowed per contact group": [
-        "Se permiten como máximo 100 contactos por grupo de contactos."
+        "Hasta 100 contactos permitidos en cada grupo de contactos"
       ],
       "Attach screenshot(s)": [
         "Adjuntar captura(s) de pantalla"
@@ -334,7 +334,7 @@
         "Tengo una pregunta."
       ],
       "Image could not be loaded with tracker protection.": [
-        "No se ha podido carga la imagen con la protección contra el rastreo."
+        "No se ha podido cargar la imagen con la protección contra el rastreo."
       ],
       "Image will be loaded without a proxy": [
         "La imagen se cargará sin proxy."
@@ -1942,7 +1942,7 @@
         "Se ha alcanzado el límite de calendarios."
       ],
       "Cannot export this contact": [
-        "No se puede exportar este contacto."
+        "No se puede exportar este contacto"
       ],
       "Contact could not be saved": [
         "No se ha podido guardar el contacto."
@@ -1957,8 +1957,8 @@
         "No puedes habilitar la búsqueda de contenido en este navegador. Sal del modo de navegación privada o utiliza otro navegador."
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
-        "Anula la selección de al menos ${ calendarsToFixCount } calendario.",
-        "Anula la selección de al menos ${ calendarsToFixCount } calendarios."
+        "Anula la selección de al menos ${ calendarsToFixCount } calendario",
+        "Anula la selección de al menos ${ calendarsToFixCount } calendarios"
       ],
       "Deselect at least ${ calendarsToFixCount } calendar or": [
         "Anula la selección de al menos ${ calendarsToFixCount } calendario o",
@@ -2122,7 +2122,7 @@
         "Se ha producido un error: ${ refresh } para continuar. Si aún ves este mensaje de error, póngate en contacto con nuestro ${ supportTeam }."
       ],
       "The email addresses do not match": [
-        "Las direcciones de correo electrónico no coinciden."
+        "Las direcciones de correo electrónico no coinciden"
       ],
       "The folder name is invalid. Please choose a different name.": [
         "El nombre de la carpeta es inválido. Elige un nombre diferente."
@@ -2188,10 +2188,10 @@
         "Error desconocido"
       ],
       "Username must begin with a letter or digit": [
-        "El nombre de usuario debe comenzar con una letra o un dígito."
+        "El nombre de usuario debe comenzar con una letra o un número"
       ],
       "Username must end with a letter or digit": [
-        "El nombre de usuario debe terminar con una letra o un dígito."
+        "El nombre de usuario debe terminar con una letra o un número"
       ],
       "You can't send a mail to more than 100 recipients": [
         "No puedes enviar un correo a más de 100 destinatarios."
@@ -2250,7 +2250,7 @@
         "Error con el cifrado"
       ],
       "vCard versions < 3.0 not supported": [
-        "Versiones vCard menores a 3.0 no soportadas"
+        "Versiones de vCard anteriores a 3.0 no soportadas"
       ]
     },
     "Error importing contacts": {
@@ -2264,7 +2264,7 @@
         "Se ha producido un error al cargar el archivo ${ formattedFilename }. No se ha seleccionado un archivo .csv o .vcf."
       ],
       "An error occurred uploading your file. No file has been selected.": [
-        "Se ha producido un error al cargar el archivo. No se ha seleccionado ningún archivo."
+        "Se ha producido un error al subir el archivo. No se ha seleccionado ningún archivo."
       ],
       "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
         "El archivo ${ formattedFilename } contiene más de ${ MAX_IMPORT_CONTACTS_STRING } contactos."
@@ -2394,13 +2394,13 @@
         "Se ha producido un error."
       ],
       "Please refresh the page or try again later.": [
-        "Actualiza la página o inténtalo de nuevo más tarde."
+        "Vuelve a cargar la página o inténtalo de nuevo más tarde."
       ],
       "Something went wrong": [
-        "Se ha producido un error."
+        "Algo salió mal"
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
-        "No hemos podido cargar esta página. Actualiza la página o verifica tu conexión a internet."
+        "No hemos podido cargar esta página. Vuelve a cargar la página o verifica tu conexión a internet."
       ],
       "You may also refresh the page or try again later.": [
         "También puedes refrescar la página o intentarlo más tarde."
@@ -2768,7 +2768,7 @@
         "${ CALENDAR_APP_NAME } no admite actualmente algunos tipos de eventos, detalles y formatos."
       ],
       "vCard versions < 3.0": [
-        "Versiones vCard menores a 3.0"
+        "Versiones vCard anteriores a 3.0"
       ]
     },
     "Import calendar; import invitation": {
@@ -3142,7 +3142,7 @@
         "Se añadirá un número al nombre de la carpeta."
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
-        "Un número telefónico solo puede usarse para verificar una cuenta de ${ BRAND_NAME }"
+        "Un número telefónico solo puede usarse para verificar una cuenta de ${ BRAND_NAME }."
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "El acceso a la cuenta ha sido restringido debido a facturas impagadas. Contacta con tu administrador."
@@ -3197,8 +3197,8 @@
       "Attention required": [
         "Atención requerida"
       ],
-      "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
-        "Debido a que ${ DRIVE_APP_NAME } está cifrado de extremo a extremo, no podemos acceder\no descifrar tus archivos. Para desbloquear tu unidad después de restablecer la contraseña,\ndebes tener uno de los siguientes:"
+      "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access or decrypt your files for you. To unlock your drive after a password reset, you must have one of the following:": [
+        "Debido a que ${ DRIVE_APP_NAME } está cifrado de extremo a extremo, no podemos acceder o descifrar tus archivos. Para desbloquear tu unidad después de restablecer la contraseña,\ndebes tener una de las siguientes opciones:"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Antes de solicitar un nuevo código de verificación, verifica tu carpeta de spam y verifica que ${ strong } la dirección es correcta."
@@ -3249,10 +3249,10 @@
         "Conflicto"
       ],
       "Contact assigned to group ${ contactGroupName }": [
-        "El contacto ha sido asignado al grupo ${ contactGroupName }."
+        "Contacto asignado al grupo ${ contactGroupName }"
       ],
       "Contact unassigned to group ${ contactGroupName }": [
-        "El contacto no ha sido asignado al grupo ${ contactGroupName }."
+        "Contacto eliminado del grupo ${ contactGroupName }."
       ],
       "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
         "Continuar usando ${ DRIVE_APP_NAME } y desbloquear la unidad después"
@@ -3392,6 +3392,12 @@
       "Failed": [
         "Error"
       ],
+      "Failed to generate a secure link. The reason is: ${ error }": [
+        "Error al generar un enlace seguro. Motivo: ${ error }"
+      ],
+      "Failed to generate a secure link. Try again later": [
+        "Error al generar un enlace seguro. Inténtalo de nuevo más tarde."
+      ],
       "Failed to open a secure link. The reason is: ${ error }": [
         "Error al abrir un enlace seguro. Motivo: ${ error }"
       ],
@@ -3470,8 +3476,8 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Si no encuentras el correo electrónico en tu bandeja de entrada, verifica tu carpeta de spam."
       ],
-      "If you have one of these, continue to ${ BRAND_NAME } Account setting to\nstart the unblock process.": [
-        "Si tienes uno de estos, continúa con la configuración de la cuenta de ${ BRAND_NAME } para\ncomenzar con el proceso de desbloqueo."
+      "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process.": [
+        "Si tienes una de las siguientes opcione, continúa con la configuración de la cuenta de ${ BRAND_NAME } para\ncomenzar con el proceso de desbloqueo."
       ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Importar ${ calendarCount } de ${ totalCalendarsCount } calendario",
@@ -3490,7 +3496,7 @@
         "Importar buzón"
       ],
       "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "Importa tus correos, calendarios y contactos desde otro servicio a ${ BRAND_NAME }."
+        "Importa tus correos, calendarios y contactos desde otro proveedor a ${ BRAND_NAME }."
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Importando tus datos desde ${ fromEmail } a ${ toEmail }."
@@ -3873,7 +3879,7 @@
       "This will overwrite the existing folder": [
         "Esta acción sobreescribirá la carpeta existente."
       ],
-      "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on\nthe device won’t be affected.": [
+      "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on the device won’t be affected.": [
         "Esto elimina de ${ DRIVE_APP_NAME } el dispositivo sincronizado ${ deviceName }. Los archivos locales en el dispositivo no se verán afectados."
       ],
       "This will replace the existing file with the folder": [
@@ -4598,8 +4604,8 @@
       "Wonderful": [
         "Maravilloso"
       ],
-      "Yes, I want to permanently delete\nmy old files": [
-        "Sí, quiero borrar permanentemente\nmis archivos antiguos."
+      "Yes, I want to permanently delete my old files": [
+        "Sí, quiero borrar permanentemente mis archivos antiguos."
       ],
       "Your password (admin)": [
         "Tu contraseña (admin)"
@@ -4644,7 +4650,7 @@
         "Para añadir un calendario, elimina uno existente."
       ],
       "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
-        "Para añadir un calenario, elimina otro calendario o actualiza tu plan ${ BRAND_NAME } a un plan de pago ${ MAIL_SHORT_APP_NAME }."
+        "Para añadir un calendario, elimina otro calendario o actualiza tu plan ${ BRAND_NAME } a un plan de pago ${ MAIL_SHORT_APP_NAME }."
       ],
       "You've reached the maximum number of calendars available in your plan.": [
         "Has alcanzado el número máximo de calendarios disponibles en tu plan."
@@ -4805,7 +4811,7 @@
     },
     "new_plans: feature info": {
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
-        "Crea múltiples direcciones de correo para tus identidades en línea, p. ej., JuanCompras@${ domain } para cuentas de compras, JuanNoticias@${ domain2 } para suscripciones de noticias"
+        "Crea diferentes direcciones de correo para tus identidades en línea, p. ej. JuanCompras@${ domain } para cuentas de compras, JuanNoticias@${ domain2 } para suscripciones de noticias"
       ],
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "Obtén alias ilimitados con el servicio SimpleLogin de ${ BRAND_NAME }."
@@ -4814,7 +4820,7 @@
         "El espacio de almacenamiento es compartido entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } y ${ DRIVE_APP_NAME }."
       ],
       "Use your own custom email domain address, e.g., you@yourname.com": [
-        "Utiliza tu propia dirección de correo personalizada, por ejemplo, tú@tunombre.com"
+        "Utiliza tu propia dirección de correo personalizada, p. ej. tú@tunombre.com"
       ]
     },
     "new_plans: label": {
@@ -6246,7 +6252,7 @@
         "Las carpetas secundarias del sistema se mostrarán como carpetas separadas en ${ MAIL_APP_NAME }."
       ],
       "The image could not be loaded": [
-        "No se ha podido cargar la imagen."
+        "No se ha podido cargar la imagen"
       ],
       "The image could not be loaded using proxy": [
         "No se ha podido cargar la imagen con un proxy."

@@ -19,9 +19,6 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } mağazası"
       ],
-      "Activate": [
-        "Etkinleştir"
-      ],
       "Activate recovery": [
         "Kurtarmayı etkinleştir"
       ],
@@ -332,6 +329,9 @@
       ],
       "Download ${ attachmentName }": [
         "${ attachmentName } dosyasını indir"
+      ],
+      "Downloading": [
+        "İndiriliyor"
       ],
       "Edit": [
         "Düzenle"
@@ -1014,6 +1014,9 @@
       ],
       "This message contains remote content.": [
         "Bu iletide uzak içerik var."
+      ],
+      "To search your emails securely, we need to download a copy of your messages to your browser. The initial download may take a moment.": [
+        "E-postalarınızı güvenli olarak aramak için, iletilerinizin bir kopyasının tarayıcınıza indirilmesi gerekir. İlk indirme biraz zaman alabilir."
       ],
       "Toggle Calendar app": [
         "Takvim uygulamasına geç"
@@ -3418,6 +3421,12 @@
       "Unknown error.": [
         "Bilinmeyen sorun."
       ],
+      "Username must begin with a letter or digit": [
+        "Kullanıcı adı bir harf ya da rakam ile başlamalı"
+      ],
+      "Username must end with a letter or digit": [
+        "Kullanıcı adı bir harf ya da rakam ile bitmeli"
+      ],
       "Wrong mailbox password": [
         "Posta kutusu parolası yanlış"
       ],
@@ -4872,8 +4881,8 @@
       "Don't forget to share the password with the recipient": [
         "Parolayı alıcı ile paylaşmayı unutmayın"
       ],
-      "Downloading message ${ currentProgress } out of ${ totalProgress }": [
-        "${ currentProgress } / ${ totalProgress } ileti indiriliyor"
+      "Downloading paused": [
+        "İndirme duraklatıldı"
       ],
       "Draft": [
         "Taslak"
@@ -5066,9 +5075,6 @@
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "${ importedEmailAddress } verileriniz ${ toEmail } içine aktarılıyor."
       ],
-      "Indexing paused": [
-        "Dizine ekleme duraklatıldı"
-      ],
       "Inherited from parent folder": [
         "Üst klasörden devralındı"
       ],
@@ -5140,6 +5146,10 @@
       ],
       "Merged": [
         "Birleştirilmiş"
+      ],
+      "Message downloaded: ${ currentProgress } out of ${ totalProgress }": [
+        "${ currentProgress } / ${ totalProgress } ileti indirildi",
+        "${ currentProgress } / ${ totalProgress } ileti indirildi"
       ],
       "Message expiration works out-of-the-box when sending emails to other ${ MAIL_APP_NAME } users. To send expiring emails to non-${ BRAND_NAME } users, please cancel and add password protection to your email.": [
         "Süreli iletiler diğer ${ MAIL_APP_NAME } kullanıcılarına e-posta gönderirken sorunsuz kullanılabilir. ${ BRAND_NAME } kullanmayan kişilere geçerlilik süresi olan e-postalar göndermek için lütfen işlemi iptal edip e-postanıza parola koruması ekleyin."
@@ -5352,6 +5362,9 @@
       "Scheduling message...": [
         "İleti zamanlanıyor..."
       ],
+      "Search option that lets you securely search for keywords in the body of email messages.": [
+        "E-posta iletilerinin içeriğinde anahtar sözcükleri güvenli olarak aramanızı sağlayan seçenek."
+      ],
       "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
         "Arama çok uzun mu sürüyor? Bu arama oturumunu ${ dropdownButton } ya da ${ toggleOffButton }."
       ],
@@ -5482,12 +5495,6 @@
       "This account has been suspended due to a potential policy violation.": [
         "Bu hesap, ilkeye aykırı kullanım olasılığı nedeniyle askıya alınmış."
       ],
-      "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        "Bu işlem tüm iletileri indirir. Böylece iletiler yerel olarak aranabilir. Tarayıcınızın verilerini silerseniz bu seçenek devre dışı kalır."
-      ],
-      "This action will download the most recent messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        "Bu işlem son iletileri indirir. Böylece iletiler yerel olarak aranabilir. Tarayıcınızın verilerini silerseniz bu seçenek devre dışı kalır."
-      ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Bu adres devre dışı. Bu adrese e-posta gönderebilmek için önce sahibi adresi etkinleştirmelidir."
       ],
@@ -5607,8 +5614,8 @@
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "Gönderilecek çok fazla ileti var. Lütfen, bunun zamanlanması için başka bir ileti gönderilene kadar bekleyin."
       ],
-      "Turn off content search. Activation progress won't be lost.": [
-        "İçerik aramasını kapat. Etkinleştirme işlemi kaybolmaz."
+      "Turn off to only search by date, name, or email address. To disable search message content and delete downloaded messages, go to settings.": [
+        "Yalnızca tarihe, ada veya e-posta adresine göre arama yapmak için bu seçeneği kapatın. İleti içeriği aramayı devre dışı bırakmak ve indirilen iletileri silmek için ayarlara gidin."
       ],
       "Turn on to search the content of your messages": [
         "İletilerinizin içeriklerini arayabilmek için açın"
@@ -5912,11 +5919,11 @@
       ]
     },
     "Key pinning": {
-      "Clicking \"Trust Key\" will associate this public key with this sender\nand emails from this address will be automatically cryptographically verified.": [
-        "\"Anahtara güven\" üzerine tıklamak bu herkese açık anahtarı bu göndericiyle ilişkilendirir. Bu adresten gelen e-postalar otomatik olarak şifreyle doğrulanır."
+      "Clicking \"Trust Key\" will associate this public key with this sender and emails from this address will be automatically cryptographically verified.": [
+        "\"Anahtara güven\" üzerine tıklamak bu herkese açık anahtarı bu göndericiyle ilişkilendirir ve bu adresten gelen e-postalar otomatik olarak şifreylemeyle doğrulanır."
       ],
-      "Clicking \"Trust Key\" will create a new contact and associate this public key with\nthis sender. Emails from this address will be automatically cryptographically verified.": [
-        "\"Anahtara güven\" üzerine tıklamak yeni bir kişi ekler ve bu herkese açık anahtarı bu göndericiyle ilişkilendirir. Bu adresten gelen e-postalar otomatik olarak şifreyle doğrulanır."
+      "Clicking \"Trust Key\" will create a new contact and associate this public key with this sender. Emails from this address will be automatically cryptographically verified.": [
+        "\"Anahtara güven\" üzerine tıklamak yeni bir kişi ekler ve bu herkese açık anahtarı bu göndericiyle ilişkilendirir. Bu adresten gelen e-postalar otomatik olarak şifrelemeyle doğrulanır."
       ],
       "Do you want to trust the primary public key with the following fingerprint?": [
         "Aşağıdaki parmak izine sahip birincil ortak anahtara güvenmek istiyor musunuz?",
@@ -7397,6 +7404,9 @@
       "Please insert link first": [
         "Lütfen önce bağlantıyı ekleyin"
       ],
+      "Search date, name, email address, or subject line": [
+        "Tarihe, ada, e-posta adresine veya konu satırına göre arama yapın"
+      ],
       "Search for group name": [
         "Grup adı ile arayın"
       ],
@@ -7962,20 +7972,20 @@
       "Invite friends to ${ BRAND_NAME }": [
         "Arkadaşlarınızı ${ BRAND_NAME } üzerine çağırın"
       ],
-      "Message Content Search": [
-        "İleti içeriği arama"
-      ],
       "Schedule send": [
         "Gönderimi zamanla"
+      ],
+      "Search just got smarter and faster": [
+        "Arama artık daha akıllı ve daha hızlı"
+      ],
+      "Try it today.": [
+        "Bugün deneyin."
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "Artık varsayılan olarak görseller yüklenecek ve göndericilerin sizi izlemesi engellenecek. Bu davranışları daha sonra ${ settingsLink } bölümünden değiştirebilirsiniz."
       ],
       "You can now schedule your messages to be sent later": [
         "Artık iletileri daha sonra gönderilmek üzere zamanlayabilirsiniz"
-      ],
-      "You can now search the content of your encrypted emails.": [
-        "Artık şifrelenmiş e-postalarınızın içeriğinde arama yapabilirsiniz."
       ]
     },
     "Status": {
@@ -8181,7 +8191,7 @@
       "Message added to ${ labelName }.": [
         "İletiye ${ labelName } etiketi eklendi."
       ],
-      "Message content search activated": [
+      "Message content search enabled": [
         "İleti içeriği arama etkinleştirildi"
       ],
       "Message deleted": [
