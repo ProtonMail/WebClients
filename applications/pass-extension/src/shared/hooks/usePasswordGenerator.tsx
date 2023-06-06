@@ -1,8 +1,15 @@
 import { useEffect, useState } from 'react';
 
-export const alphabeticChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
-export const digits = '0123456789';
-export const specialChars = '!#$%&()*+.:;<=>?@[]^';
+import type { GeneratePasswordOptions } from '@proton/pass/password';
+import {
+    DEFAULT_PASSWORD_LENGTH,
+    digitChars,
+    generatePassword,
+    lowercaseChars,
+    uppercaseChars,
+} from '@proton/pass/password';
+import { SeperatorOptions } from '@proton/pass/password/memorable';
+import { merge } from '@proton/pass/utils/object';
 
 export enum CharType {
     Alphabetic,
@@ -10,10 +17,8 @@ export enum CharType {
     Special,
 }
 
-/**
- * Designers mixed the colors of different ui-${type}
- * sub-themes for the character colors..
- */
+/* Designers mixed the colors of different ui-${type}
+ * sub-themes for the character colors.. */
 export const charTypeToClassName = {
     [CharType.Alphabetic]: '',
     [CharType.Digit]: 'ui-login pass-password-generator--char-digit',
@@ -21,21 +26,15 @@ export const charTypeToClassName = {
 };
 
 export const getTypeFromChar = (char: string) => {
-    if (alphabeticChars.includes(char)) {
-        return CharType.Alphabetic;
-    }
-
-    if (digits.includes(char)) {
-        return CharType.Digit;
-    }
+    if (lowercaseChars.includes(char)) return CharType.Alphabetic;
+    if (uppercaseChars.includes(char)) return CharType.Alphabetic;
+    if (digitChars.includes(char)) return CharType.Digit;
 
     return CharType.Special;
 };
 
 export const getCharsGroupedByColor = (password: string) => {
-    if (password.length === 0) {
-        return [];
-    }
+    if (password.length === 0) return [];
 
     const [head, ...chars] = Array.from(password);
     const startType = getTypeFromChar(head);
@@ -60,38 +59,51 @@ export const getCharsGroupedByColor = (password: string) => {
         ));
 };
 
-export const generatePassword = (options: { useSpecialChars: boolean; length: number }) => {
-    const chars = Array.from(alphabeticChars + digits + (options.useSpecialChars ? specialChars : ''));
-    const randomValues = window.crypto.getRandomValues(new Uint8Array(options.length));
-
-    const passwordChars = Array.from(randomValues).map((n) => {
-        const rangeBoundMaxIndex = n % chars.length;
-        return chars[rangeBoundMaxIndex];
-    });
-
-    return passwordChars.join('');
+export const DEFAULT_MEMORABLE_PW_OPTIONS: GeneratePasswordOptions = {
+    type: 'memorable',
+    options: {
+        wordCount: 4,
+        seperator: SeperatorOptions.HYPHEN,
+        capitalize: false,
+        extraNumbers: false,
+    },
 };
 
-const DEFAULT_PASSWORD_LENGTH = 16;
+export const DEFAULT_RANDOM_PW_OPTIONS: GeneratePasswordOptions = {
+    type: 'random',
+    options: {
+        length: DEFAULT_PASSWORD_LENGTH,
+        useDigits: true,
+        useSpecialChars: true,
+        useUppercase: true,
+    },
+};
 
 export const usePasswordGenerator = () => {
-    const [useSpecialChars, setUseSpecialChars] = useState(true);
-    const [numberOfChars, setNumberOfChars] = useState(DEFAULT_PASSWORD_LENGTH);
-    const [password, setPassword] = useState(() => generatePassword({ useSpecialChars, length: numberOfChars }));
+    const [passwordOptions, setOptions] = useState<GeneratePasswordOptions>(DEFAULT_MEMORABLE_PW_OPTIONS);
+    const [password, setPassword] = useState(() => generatePassword(passwordOptions));
 
-    const regeneratePassword = () => {
-        setPassword(generatePassword({ useSpecialChars, length: numberOfChars }));
-    };
+    const regeneratePassword = () => setPassword(generatePassword(passwordOptions));
 
-    useEffect(regeneratePassword, [useSpecialChars, numberOfChars]);
+    const setPasswordOptions = <T extends GeneratePasswordOptions['type']>(
+        type: T,
+        update?: Partial<Extract<GeneratePasswordOptions, { type: T }>['options']>
+    ) =>
+        setOptions((options) => {
+            if (update) return merge(options, { options: update });
+            if (type === 'memorable') return DEFAULT_MEMORABLE_PW_OPTIONS;
+            if (type === 'random') return DEFAULT_RANDOM_PW_OPTIONS;
+            return options;
+        });
+
+    const options = Object.values(passwordOptions.options);
+    useEffect(regeneratePassword, [...options]);
 
     return {
-        useSpecialChars,
         password,
-        numberOfChars,
-        setUseSpecialChars,
-        setNumberOfChars,
+        passwordOptions,
         setPassword,
+        setPasswordOptions,
         regeneratePassword,
     };
 };
