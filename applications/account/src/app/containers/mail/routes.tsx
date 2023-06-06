@@ -44,7 +44,7 @@ export const getMailAppRoutes = ({
             general: {
                 text: c('Title').t`Messages and composing`,
                 to: '/general',
-                icon: 'grid-2',
+                icon: 'envelope',
                 subsections: [
                     {
                         text: c('Title').t`Short domain (@pm.me)`,
