@@ -3,14 +3,16 @@ import type { Maybe, MaybeArray } from '@proton/pass/types';
 export type KeyPassEntryValue = { __text: string } | string;
 
 export type KeePassEntry = {
-    String: [
-        { Key: 'Title'; Value: KeyPassEntryValue },
-        { Key: 'UserName'; Value: KeyPassEntryValue },
-        { Key: 'Password'; Value: KeyPassEntryValue },
-        { Key: 'URL'; Value: KeyPassEntryValue },
-        { Key: 'Notes'; Value: KeyPassEntryValue },
-        { Key: 'otp'; Value: KeyPassEntryValue }
-    ];
+    String:
+        | [
+              { Key: 'Title'; Value: KeyPassEntryValue },
+              { Key: 'UserName'; Value: KeyPassEntryValue },
+              { Key: 'Password'; Value: KeyPassEntryValue },
+              { Key: 'URL'; Value: KeyPassEntryValue },
+              { Key: 'Notes'; Value: KeyPassEntryValue },
+              { Key: 'otp'; Value: KeyPassEntryValue }
+          ]
+        | { Key: string; Value: KeyPassEntryValue };
 };
 
 export type KeePassGroup = {
