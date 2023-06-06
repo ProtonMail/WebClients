@@ -52,7 +52,7 @@ export const getAccountAppRoutes = ({
             dashboard: <SectionConfig>{
                 text: c('Title').t`Dashboard`,
                 to: '/dashboard',
-                icon: 'grid-2',
+                icon: 'squares-in-square',
                 available: isFree || canPay || !isMember || (isPaid && canPay),
                 subsections: [
                     {
