@@ -62,24 +62,30 @@ const SubUserEditModal = ({ member, ...rest }: Props) => {
     };
 
     const handleSubmit = async () => {
+        let hasChanges = false;
         if (initialModel.name !== model.name) {
             await api(updateName(member.ID, model.name));
+            hasChanges = true;
         }
 
         if (initialModel.storage !== model.storage) {
             await api(updateQuota(member.ID, model.storage));
+            hasChanges = true;
         }
 
         if (hasVPN && initialModel.vpn !== model.vpn) {
             await api(updateVPN(member.ID, model.vpn ? VPN_CONNECTIONS : 0));
+            hasChanges = true;
         }
 
         if (canMakePrivate && model.private && model.private !== initialModel.private) {
             await api(privatizeMember(member.ID));
+            hasChanges = true;
         }
 
         if (canMakeAdmin && model.admin && model.admin !== initialModel.admin) {
             await api(updateRole(member.ID, MEMBER_ROLE.ORGANIZATION_ADMIN));
+            hasChanges = true;
         }
 
         if (canRevokeAdmin && !model.admin && model.admin !== initialModel.admin) {
@@ -103,6 +109,7 @@ const SubUserEditModal = ({ member, ...rest }: Props) => {
                 });
 
                 await api(updateRole(member.ID, MEMBER_ROLE.ORGANIZATION_MEMBER));
+                hasChanges = true;
             } catch (e) {
                 /* do nothing, user declined confirm-modal to revoke admin rights from member */
             }
@@ -110,7 +117,9 @@ const SubUserEditModal = ({ member, ...rest }: Props) => {
 
         await call();
         rest.onClose?.();
-        createNotification({ text: c('Success').t`User updated` });
+        if (hasChanges) {
+            createNotification({ text: c('Success').t`User updated` });
+        }
     };
 
     const handleClose = submitting ? undefined : rest.onClose;
