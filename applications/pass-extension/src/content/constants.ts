@@ -106,11 +106,26 @@ export const FORM_TRACKER_CONFIG: Record<FormType, FormTrackerFieldConfig[]> = {
         },
     ],
     [FormType.MFA]: [] /* TODO */,
+    /* NOOP forms are forms that were not classified into
+     * on of our form types. This can either be a detection
+     * error - in that case, if we match any fields of interest
+     * we should still add some actions - OR due to exotic
+     * forms (newsletters etc..) */
     [FormType.NOOP]: [
         {
             type: FormField.EMAIL,
-            action: DropdownAction.AUTOSUGGEST_ALIAS,
             injection: FieldInjectionRule.ALWAYS,
+            action: DropdownAction.AUTOSUGGEST_ALIAS,
+        },
+        {
+            type: FormField.PASSWORD_CURRENT,
+            injection: FieldInjectionRule.FIRST_OF_TYPE,
+            action: DropdownAction.AUTOFILL,
+        },
+        {
+            type: FormField.PASSWORD_NEW,
+            injection: FieldInjectionRule.FIRST_OF_TYPE,
+            action: DropdownAction.AUTOSUGGEST_PASSWORD,
         },
     ],
 };
