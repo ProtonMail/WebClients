@@ -257,11 +257,7 @@ const SingleSignupContainer = ({ loader, onLogin, productParam }: Props) => {
                         onUpdate={update}
                         productParam={productParam}
                         onComplete={async (result) => {
-                            try {
-                                await handleResult(result, Steps.Two);
-                            } catch (error) {
-                                handleError(error);
-                            }
+                            await handleResult(result, Steps.Two);
                         }}
                         hideFreePlan={signupParameters.hideFreePlan}
                         upsellImg={<img src={vpnUpsellIllustration} alt={upsellShortPlan?.description || ''} />}
