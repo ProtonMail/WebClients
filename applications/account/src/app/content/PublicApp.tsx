@@ -109,12 +109,12 @@ const UNAUTHENTICATED_ROUTES = {
     REMOVE_EMAIL: '/remove-email',
 };
 
+setMetricsEnabled(true);
+
 interface Props {
     onLogin: ProtonLoginCallback;
     locales: TtagLocaleMap;
 }
-
-setMetricsEnabled(true);
 
 const PublicApp = ({ onLogin, locales }: Props) => {
     const history = useHistory();
