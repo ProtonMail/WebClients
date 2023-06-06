@@ -1,8 +1,6 @@
 import type { VFC } from 'react';
 import { type ReactNode } from 'react';
 
-import { c } from 'ttag';
-
 import { Card } from '@proton/atoms';
 import type { IconName } from '@proton/components';
 import { Icon } from '@proton/components';
@@ -39,7 +37,7 @@ export const OnboardingPanel: VFC<OnboardingPanelProps> = ({ title, icon, iconPa
                         />
                     )}
                 </div>
-                <h4 className="text-bold">{c('Info').t`${title}`}</h4>
+                <h4 className="text-bold">{title}</h4>
             </div>
             {children}
         </Card>
