@@ -1,0 +1,48 @@
+:root {
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+button {
+    display: inline-block;
+    padding: 8px 16px;
+    border: 1px solid var(--button-default-border-color, transparent);
+    border-radius: 8px;
+    outline: none;
+    background-color: #6d4aff;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.15s cubic-bezier(0.22, 1, 0.36, 1), background-position 0s;
+}
+
+button:hover {
+    background-color: #6243e6;
+}
+button:active {
+    background-color: #573bcc;
+}
+
+.app-bar {
+    background-color: #1b1340;
+    color: white;
+    padding: 0px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
