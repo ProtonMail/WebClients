@@ -2,6 +2,8 @@ import { ReactNode, createContext, useContext, useLayoutEffect, useState } from 
 
 import useInstance from '@proton/hooks/useInstance';
 import { updateTheme } from '@proton/shared/lib/api/settings';
+import { postMessageToIframe } from '@proton/shared/lib/drawer/helpers';
+import { DRAWER_APPS, DRAWER_EVENTS } from '@proton/shared/lib/drawer/interfaces';
 import { clearBit, hasBit, setBit } from '@proton/shared/lib/helpers/bitset';
 import {
     DARK_THEMES,
@@ -21,7 +23,7 @@ import {
 import debounce from '@proton/utils/debounce';
 import noop from '@proton/utils/noop';
 
-import { useApi, useUserSettings } from '../../hooks';
+import { useApi, useDrawer, useUserSettings } from '../../hooks';
 import { useTheme } from './ThemeProvider';
 import { classNames, styles } from './properties';
 
@@ -119,6 +121,8 @@ const ThemeSettingProvider = ({ children }: Props) => {
             ? userSettings.Theme
             : getDefaultThemeSetting(userSettings.ThemeType);
     });
+    const { iframeSrcMap } = useDrawer();
+
     const [colorScheme, setColorScheme] = useState<ColorScheme>(() => {
         return getColorScheme(matchMediaScheme.matches);
     });
@@ -217,6 +221,16 @@ const ThemeSettingProvider = ({ children }: Props) => {
 
     useLayoutEffect(() => {
         setActiveTheme(settings.currentTheme);
+
+        // If apps are opened in drawer, update their theme too
+        if (iframeSrcMap) {
+            Object.keys(iframeSrcMap).map((app) => {
+                postMessageToIframe(
+                    { type: DRAWER_EVENTS.UPDATE_THEME, payload: { theme: settings.currentTheme } },
+                    app as DRAWER_APPS
+                );
+            });
+        }
     }, [settings.currentTheme]);
 
     useLayoutEffect(() => {
