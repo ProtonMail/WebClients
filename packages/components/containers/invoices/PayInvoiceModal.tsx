@@ -100,6 +100,7 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, ...rest }: Props) => {
             close={c('Action').t`Close`}
             submit={submit}
             title={c('Title').t`Pay invoice`}
+            data-testid="pay-invoice-modal"
             {...rest}
         >
             {!isLoading && (
