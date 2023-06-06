@@ -60,7 +60,7 @@ export const upsellFeatures: Record<UpsellFeatureName, UpsellFeature> = {
     },
     'email-aliases': {
         icon: 'eye-slash',
-        getText: () => c('new_plans: feature').t`Hide My Email aliases`,
+        getText: () => c('new_plans: feature').t`Hide-my-email aliases`,
         getTooltip: () => c('new_plans: feature info').t`Get unlimited aliases with SimpleLogin by ${BRAND_NAME}`,
     },
 };
