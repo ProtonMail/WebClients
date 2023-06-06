@@ -228,7 +228,7 @@ const ExtraUnsubscribe = ({ message }: Props) => {
     /*
      * translator:
      * ${maskMyEmailButton} link to open the Hide My Email modal
-     * Full sentence for reference: "Protect your email from being leaked to mailing lists or spammers with Hide My Email."
+     * Full sentence for reference: "Protect your email from being leaked to mailing lists or spammers with hide-my-email aliases."
      */
     const maskMyEmailButton = (
         <ButtonLike
@@ -238,7 +238,7 @@ const ExtraUnsubscribe = ({ message }: Props) => {
             color="norm"
             shape="underline"
             onClick={handleSimpleLoginModalOpen}
-        >{c('Action').t`Hide My Email`}</ButtonLike>
+        >{c('Action').t`hide-my-email aliases`}</ButtonLike>
     );
 
     /*
