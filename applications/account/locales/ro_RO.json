@@ -6405,7 +6405,7 @@
       "To ensure continuous access to your account, set an account recovery method": [
         "Pentru a vă asigura accesul continuu la cont, setați o metodă de recuperare a contului."
       ],
-      "To ensure you don’t lose important data, ${ DRIVE_APP_NAME } saves older versions of your files as you\nand your collaborators make changes. Select how long ${ BRAND_NAME } should keep previous versions.": [
+      "To ensure you don’t lose important data, ${ DRIVE_APP_NAME } saves older versions of your files as you and your collaborators make changes. Select how long ${ BRAND_NAME } should keep previous versions.": [
         "Pentru a vă asigura că nu pierdeți date importante, ${ DRIVE_APP_NAME } salvează versiuni mai vechi ale fișierelor pe măsură ce acestea sunt modificate. Selectați cât timp ${ BRAND_NAME } ar trebui să păstreze versiunile anterioare."
       ],
       "To fight spam and abuse, please verify you are human.": [
@@ -8831,11 +8831,6 @@
         "${ n } foldere și etichete",
         "${ n } de foldere și etichete"
       ],
-      "${ n } forwarding mailbox": [
-        "${ n } adresă pentru redirecționare",
-        "${ n } adrese pentru redirecționare",
-        "${ n } de adrese pentru redirecționare"
-      ],
       "${ n } Hide My Email alias": [
         "${ n } alias „Hide My Email”",
         "${ n } aliasuri „Hide My Email”",
@@ -8919,6 +8914,9 @@
       ],
       "Custom email domains": [
         "Domenii personale de e-mail"
+      ],
+      "Custom fields": [
+        "Câmpuri personalizate"
       ],
       "Data breach monitoring": [
         "Monitorizarea divulgării datelor"
@@ -9100,9 +9098,6 @@
       ],
       "Up to 3 TB of storage": [
         "Până la 3 TB spațiu de stocare"
-      ],
-      "Up to 5 forwarding mailboxes": [
-        "Până la 5 adrese pentru redirecționare"
       ],
       "User credential management": [
         "Gestionare acreditări utilizatori"

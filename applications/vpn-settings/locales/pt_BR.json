@@ -3534,10 +3534,6 @@
         "${ n } pasta e marcador",
         "${ n } pastas e marcadores"
       ],
-      "${ n } forwarding mailbox": [
-        "${ n } endereço de encaminhamento",
-        "${ n } endereços de encaminhamento"
-      ],
       "${ n } Hide My Email alias": [
         "${ n } alias de Hide My Email",
         "${ n } Oculte minhas Aliases de e-mail"
@@ -3612,6 +3608,9 @@
       ],
       "Custom email domains": [
         "Domínios de e-mail personalizados"
+      ],
+      "Custom fields": [
+        "Campos personalizados"
       ],
       "Data breach monitoring": [
         "Monitoramento de violação de dados"
@@ -3776,9 +3775,6 @@
       ],
       "Up to ${ totalStorageSize } storage": [
         "Até ${ totalStorageSize } de armazenamento"
-      ],
-      "Up to 5 forwarding mailboxes": [
-        "Até 5 endereços de encaminhamento"
       ],
       "User credential management": [
         "Gerenciamento de credenciais de usuário"

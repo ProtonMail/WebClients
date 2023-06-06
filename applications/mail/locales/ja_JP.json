@@ -19,9 +19,6 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } ショップ"
       ],
-      "Activate": [
-        "有効化"
-      ],
       "Activate recovery": [
         "回復を有効にする"
       ],
@@ -4785,9 +4782,6 @@
       "Don't forget to share the password with the recipient": [
         "宛先にパスワードを伝えることを忘れないでください"
       ],
-      "Downloading message ${ currentProgress } out of ${ totalProgress }": [
-        "${ totalProgress }件中${ currentProgress }件目のメールをダウンロード中"
-      ],
       "Draft": [
         "下書き"
       ],
@@ -4970,9 +4964,6 @@
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "データを ${ importedEmailAddress } から ${ toEmail } にインポートしています。"
-      ],
-      "Indexing paused": [
-        "処理が一時停止されました"
       ],
       "Inherited from parent folder": [
         "親フォルダーから継承"
@@ -5391,12 +5382,6 @@
       "This account has been suspended due to a potential policy violation.": [
         "このアカウントは、ポリシー違反の可能性があるため停止されています。"
       ],
-      "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        "すべてのメッセージをダウンロードし、ローカルで検索可能にします。ブラウザのデータを削除するとこの機能は無効になります。"
-      ],
-      "This action will download the most recent messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        "直近のメッセージをダウンロードし、ローカルで検索可能にします。ブラウザのデータを削除するとこの機能は無効になります。"
-      ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "このアドレスは無効になっています。このアドレス宛に送信するには、まず所有者がアドレスを有効にする必要があります。"
       ],
@@ -5507,9 +5492,6 @@
       ],
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "送信予約メッセージが多すぎます。他のメッセージが送信されれば、このメッセージを送信予約できます。"
-      ],
-      "Turn off content search. Activation progress won't be lost.": [
-        "メッセージ内容の検索をオフにします。アクティベーションの進行状況は失われません。"
       ],
       "Turn on to search the content of your messages": [
         "メッセージ内容の検索をオンにします"
@@ -5804,12 +5786,6 @@
       ]
     },
     "Key pinning": {
-      "Clicking \"Trust Key\" will associate this public key with this sender\nand emails from this address will be automatically cryptographically verified.": [
-        "「鍵を信頼する」をクリックするとこの公開鍵をこの送信者に関連付け、このアドレスからのメールに対して暗号検証が自動的に行なわれます。"
-      ],
-      "Clicking \"Trust Key\" will create a new contact and associate this public key with\nthis sender. Emails from this address will be automatically cryptographically verified.": [
-        "「キーを信頼」をクリックすることにより、連絡先が作成され、この送信者の公開鍵に関連付けられます。このアドレスから送信されるメールは自動的に暗号の検証が行われます。"
-      ],
       "Do you want to trust the primary public keys with the following fingerprints?": [
         "次のフィンガープリントのプライマリー鍵を信頼しますか？"
       ],
@@ -7822,9 +7798,6 @@
       "Invite friends to ${ BRAND_NAME }": [
         "友達を ${ BRAND_NAME } に招待"
       ],
-      "Message Content Search": [
-        "メッセージの内容を検索"
-      ],
       "Schedule send": [
         "送信予約"
       ],
@@ -7833,9 +7806,6 @@
       ],
       "You can now schedule your messages to be sent later": [
         "メッセージの送信を予約できます"
-      ],
-      "You can now search the content of your encrypted emails.": [
-        "暗号化されたメールの内容の検索ができるようになりました。"
       ]
     },
     "Status": {
@@ -8015,9 +7985,6 @@
       ],
       "Message added to ${ labelName }.": [
         "メッセージを ${ labelName } に追加しました。"
-      ],
-      "Message content search activated": [
-        "メッセージ内容の検索が有効になりました"
       ],
       "Message deleted": [
         "メッセージが削除されました"

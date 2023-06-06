@@ -19,9 +19,6 @@
       "${ BRAND_NAME } shop": [
         "Sklep ${ BRAND_NAME }"
       ],
-      "Activate": [
-        "Aktywuj"
-      ],
       "Activate recovery": [
         "Aktywuj odzyskiwanie"
       ],
@@ -5040,9 +5037,6 @@
       "Don't forget to share the password with the recipient": [
         "Nie zapomnij o udostępnieniu hasła odbiorcy"
       ],
-      "Downloading message ${ currentProgress } out of ${ totalProgress }": [
-        "Pobieranie wiadomości (${ currentProgress }/${ totalProgress })"
-      ],
       "Draft": [
         "Szkic"
       ],
@@ -5249,9 +5243,6 @@
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Trwa importowanie danych z konta ${ importedEmailAddress } do ${ toEmail }."
-      ],
-      "Indexing paused": [
-        "Indeksowanie zostało wstrzymane"
       ],
       "Inherited from parent folder": [
         "Zastosowano z folderu nadrzędnego"
@@ -5670,12 +5661,6 @@
       "This account has been suspended due to a potential policy violation.": [
         "Konto zostało zawieszone z powodu potencjalnego naruszenia regulaminu."
       ],
-      "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        "Ta akcja spowoduje pobranie wszystkich wiadomości do wyszukiwania lokalnego. Wyczyszczenie pamięci podręcznej przeglądarki wyłączy tę opcję."
-      ],
-      "This action will download the most recent messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        "Ta akcja spowoduje pobranie ostatnich wiadomości do wyszukiwania lokalnego. Wyczyszczenie pamięci podręcznej przeglądarki wyłączy tę opcję."
-      ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Ten adres jest wyłączony. Aby móc wysyłać wiadomości na ten adres, musi on zostać najpierw włączony przez właściciela."
       ],
@@ -5798,9 +5783,6 @@
       ],
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "Zbyt wiele wiadomości czeka na wysłanie. Poczekaj na wysłanie innej zaplanowanej lub zaplanuj tę wiadomość."
-      ],
-      "Turn off content search. Activation progress won't be lost.": [
-        "Wyłącz wyszukiwanie zawartości. Postęp aktywacji nie zostanie utracony."
       ],
       "Turn on to search the content of your messages": [
         "Włącz, aby wyszukiwać zawartość wiadomości"
@@ -6122,12 +6104,6 @@
       ]
     },
     "Key pinning": {
-      "Clicking \"Trust Key\" will associate this public key with this sender\nand emails from this address will be automatically cryptographically verified.": [
-        "Kliknięcie \"Zaufaj kluczowi\" spowoduje powiązanie klucza publicznego z nadawcą. Wiadomości przychodzące z tego adresu będą automatycznie weryfikowane kryptograficznie."
-      ],
-      "Clicking \"Trust Key\" will create a new contact and associate this public key with\nthis sender. Emails from this address will be automatically cryptographically verified.": [
-        "Kliknięcie \"Zaufaj kluczowi\" utworzy nowy kontakt i skojarzy klucz publiczny z tym nadawcą. Wiadomości z tego adresu będą automatycznie weryfikowane kryptograficznie."
-      ],
       "Do you want to trust the primary public key with the following fingerprint?": [
         "Czy chcesz zaufać temu kluczowi głównemu z tym odciskiem?",
         "Czy chcesz zaufać tym kluczom głównym z tymi odciskami?",
@@ -8227,9 +8203,6 @@
       "Invite friends to ${ BRAND_NAME }": [
         "Zaproś znajomych do usługi ${ BRAND_NAME }"
       ],
-      "Message Content Search": [
-        "Wyszukiwanie zawartości wiadomości"
-      ],
       "Schedule send": [
         "Zaplanuj wysyłanie"
       ],
@@ -8238,9 +8211,6 @@
       ],
       "You can now schedule your messages to be sent later": [
         "Możesz zaplanować wysyłanie wiadomości w późniejszym czasie"
-      ],
-      "You can now search the content of your encrypted emails.": [
-        "Możesz teraz wyszukiwać zawartość zaszyfrowanych wiadomości."
       ]
     },
     "Status": {
@@ -8489,9 +8459,6 @@
       ],
       "Message added to ${ labelName }.": [
         "Wiadomość została dodana do etykiety ${ labelName }."
-      ],
-      "Message content search activated": [
-        "Wyszukiwanie zawartości wiadomości zostało włączone"
       ],
       "Message deleted": [
         "Wiadomość została usunięta"
