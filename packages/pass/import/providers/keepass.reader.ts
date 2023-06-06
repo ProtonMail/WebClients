@@ -15,7 +15,11 @@ import type { KeePassEntry, KeePassFile, KeePassGroup, KeePassItem, KeyPassEntry
 const getKeyPassEntryValue = (Value: KeyPassEntryValue): string => (typeof Value === 'string' ? Value : Value.__text);
 
 const entryToItem = (entry: KeePassEntry): ItemImportIntent<'login'> => {
-    const item = entry.String.reduce<KeePassItem>((acc, { Key, Value }) => {
+    const entryString = Array.isArray(entry.String) ? entry.String : [entry.String];
+    const item = entryString.reduce<KeePassItem>((acc, { Key, Value }) => {
+        if (Key === undefined || Value === undefined) {
+            return acc;
+        }
         switch (Key) {
             case 'Title':
                 acc.name = getKeyPassEntryValue(Value);
