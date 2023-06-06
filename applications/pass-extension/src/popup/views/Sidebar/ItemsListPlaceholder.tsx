@@ -12,7 +12,6 @@ import { selectPrimaryVault, selectVaultLimits } from '@proton/pass/store';
 import { UpgradeButton } from '../../../shared/components/upgrade/UpgradeButton';
 import { itemTypeToIconName } from '../../../shared/items/icons';
 import { ItemCard } from '../../components/Item/ItemCard';
-import { usePasswordGeneratorContext } from '../../components/PasswordGenerator/PasswordGeneratorContext';
 import { useItems } from '../../hooks/useItems';
 import { useNavigationContext } from '../../hooks/useNavigationContext';
 import { useOpenSettingsTab } from '../../hooks/useOpenSettingsTab';
@@ -22,7 +21,6 @@ export const ItemsListPlaceholder: VFC = () => {
     const openSettings = useOpenSettingsTab();
 
     const { isCreating } = useNavigationContext();
-    const { generatePassword } = usePasswordGeneratorContext();
 
     const { filtering, items } = useItems();
     const { search } = filtering;
@@ -60,7 +58,7 @@ export const ItemsListPlaceholder: VFC = () => {
                 onClick: () => openSettings('import'),
             },
         ],
-        [generatePassword]
+        []
     );
 
     if (inNonPrimaryVault && items.totalCount === 0 && didDowngrade) {
