@@ -252,6 +252,7 @@ export type IconName =
     | 'shield-half-filled'
     | 'speech-bubble'
     | 'squares'
+    | 'squares-in-square'
     | 'star'
     | 'star-filled'
     | 'star-slash'
