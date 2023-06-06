@@ -19,12 +19,12 @@ import {
     restoreTrashIntent,
     selectCanLockSession,
     selectPassPlan,
+    selectPlanDisplayName,
     vaultDeleteIntent,
 } from '@proton/pass/store';
 import type { MaybeNull, VaultShare } from '@proton/pass/types';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { pipe, tap } from '@proton/pass/utils/fp';
-import { tUserPassPlan } from '@proton/pass/utils/translation-map';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
@@ -49,7 +49,9 @@ const MenuDropdownRaw: VFC<{ className?: string }> = ({ className }) => {
     const { sync, lock, logout, ready } = usePopupContext();
     const { inTrash, unselectItem } = useNavigationContext();
     const { shareId, setSearch, setShareId, setShareBeingDeleted } = useItemsFilteringContext();
+
     const passPlan = useSelector(selectPassPlan);
+    const planDisplayName = useSelector(selectPlanDisplayName);
 
     const openSettings = useOpenSettingsTab();
     const webStoreURL = getWebStoreUrl(detectBrowser());
@@ -120,7 +122,7 @@ const MenuDropdownRaw: VFC<{ className?: string }> = ({ className }) => {
                                 <span className="text-left">
                                     <div className="text-sm">{c('Label').t`Current plan`}</div>
                                     <div className="text-sm" style={{ color: 'var(--interaction-norm)' }}>
-                                        {tUserPassPlan(passPlan)}
+                                        {planDisplayName}
                                     </div>
                                 </span>
                             </span>

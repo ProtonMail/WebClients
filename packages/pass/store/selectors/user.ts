@@ -1,3 +1,6 @@
+import { createSelector } from '@reduxjs/toolkit';
+import { c } from 'ttag';
+
 import type { Maybe, MaybeNull } from '@proton/pass/types';
 import { PlanType } from '@proton/pass/types';
 import type { PassFeature } from '@proton/pass/types/api/features';
@@ -8,7 +11,6 @@ import { type Address, UserType } from '@proton/shared/lib/interfaces';
 import type { State } from '../types';
 
 export const selectUserState = ({ user }: State) => user;
-
 export const selectUser = ({ user: { user } }: State) => user;
 export const selectUserPlan = ({ user: { plan } }: State) => plan;
 
@@ -26,10 +28,19 @@ export const selectPassPlan = ({ user: { plan } }: State): UserPassPlan => {
     }
 };
 
-export const selectTrialDaysLeft = ({ user: { plan } }: State): MaybeNull<number> => {
+export const selectPlanDisplayName = createSelector([selectUserPlan, selectPassPlan], (userPlan, passPlan) => {
+    switch (passPlan) {
+        case UserPassPlan.TRIAL:
+            return c('Info').t`Free Trial`;
+        case UserPassPlan.FREE:
+        case UserPassPlan.PLUS:
+            return userPlan?.DisplayName;
+    }
+});
+
+export const selectTrialDaysRemaining = ({ user: { plan } }: State): MaybeNull<number> => {
     if (!plan?.TrialEnd) return null;
-    const remaining = plan.TrialEnd - getEpoch();
-    return Math.ceil(remaining / UNIX_DAY);
+    return Math.ceil(Math.max((plan.TrialEnd - getEpoch()) / UNIX_DAY, 0));
 };
 /* user tier is only used for telemetry */
 export const selectUserTier = ({ user: { user, plan } }: State) =>
