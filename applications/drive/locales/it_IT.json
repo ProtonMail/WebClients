@@ -3197,8 +3197,8 @@
       "Attention required": [
         "Attenzione"
       ],
-      "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
-        "Poiché ${ DRIVE_APP_NAME } è crittografato end-to-end, non possiamo accedere\no decrittografa i tuoi file per te. Per sbloccare l'unità dopo la reimpostazione della password,\ndevi avere uno dei seguenti:"
+      "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access or decrypt your files for you. To unlock your drive after a password reset, you must have one of the following:": [
+        "Poiché ${ DRIVE_APP_NAME } è crittografato end-to-end, non possiamo accedere o decifrare i tuoi file per te. Per sbloccare l'unità dopo la reimpostazione della password,\ndevi avere una delle seguenti opzioni:"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Prima di richiedere un nuovo codice di verifica, controlla la tua cartella spam e verifica che ${ strong } sia l'indirizzo corretto."
@@ -3392,6 +3392,12 @@
       "Failed": [
         "Errore"
       ],
+      "Failed to generate a secure link. The reason is: ${ error }": [
+        "Impossibile generare un collegamento sicuro. Il motivo è: ${ error }"
+      ],
+      "Failed to generate a secure link. Try again later": [
+        "Impossibile generare un collegamento sicuro. Riprova più tardi."
+      ],
       "Failed to open a secure link. The reason is: ${ error }": [
         "Impossibile aprire un collegamento sicuro. Il motivo è: ${ error }"
       ],
@@ -3470,8 +3476,8 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Se non trovi l'email nella tua casella di posta, controlla la cartella spam."
       ],
-      "If you have one of these, continue to ${ BRAND_NAME } Account setting to\nstart the unblock process.": [
-        "Se disponi di uno di questi, passa alle impostazioni dell'Account ${ BRAND_NAME } per\niniziare il processo di sblocco."
+      "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process.": [
+        "Se disponi di uno di questi, passa alle impostazioni dell'account ${ BRAND_NAME } per iniziare il processo di sblocco."
       ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Importa ${ calendarCount } di ${ totalCalendarsCount } calendario",
@@ -3873,7 +3879,7 @@
       "This will overwrite the existing folder": [
         "Questo sovrascriverà la cartella esistente"
       ],
-      "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on\nthe device won’t be affected.": [
+      "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on the device won’t be affected.": [
         "Questo rimuoverà da ${ DRIVE_APP_NAME } il dispositivo sincronizzato ${ deviceName }. I file locali sul dispositivo non saranno interessati."
       ],
       "This will replace the existing file with the folder": [
@@ -4598,8 +4604,8 @@
       "Wonderful": [
         "Fantastica"
       ],
-      "Yes, I want to permanently delete\nmy old files": [
-        "Sì, voglio eliminare definitivamente\ni miei vecchi file"
+      "Yes, I want to permanently delete my old files": [
+        "Sì, voglio eliminare definitivamente i miei vecchi file."
       ],
       "Your password (admin)": [
         "La tua password (admin)"

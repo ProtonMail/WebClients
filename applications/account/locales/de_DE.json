@@ -6342,7 +6342,7 @@
       "To ensure continuous access to your account, set an account recovery method": [
         "Lege eine Methode zur Wiederherstellung des Kontos fest, um einen kontinuierlichen Zugriff auf dein Konto zu gewährleisten."
       ],
-      "To ensure you don’t lose important data, ${ DRIVE_APP_NAME } saves older versions of your files as you\nand your collaborators make changes. Select how long ${ BRAND_NAME } should keep previous versions.": [
+      "To ensure you don’t lose important data, ${ DRIVE_APP_NAME } saves older versions of your files as you and your collaborators make changes. Select how long ${ BRAND_NAME } should keep previous versions.": [
         "Um sicherzustellen, dass du keine wichtigen Daten verlierst, speichert ${ DRIVE_APP_NAME } ältere Versionen deiner Dateien, wenn du \nund deine Mitbearbeiter Änderungen vornehmen. Wähle, wie lange ${ BRAND_NAME } frühere Versionen speichern soll."
       ],
       "To fight spam and abuse, please verify you are human.": [
@@ -6439,7 +6439,7 @@
         "Jetzt upgraden um Premium-Funktionen, Produkte und Speicherplatz zu einem Sonderpreis zu erhalten."
       ],
       "Upgrade to a paid account to enable ${ PROTON_SENTINEL_NAME }.": [
-        "Erwirb ein kostenpflichtiges Konto, um ${ PROTON_SENTINEL_NAME } zu aktivieren."
+        "Upgrade auf ein kostenpflichtiges Konto, um ${ PROTON_SENTINEL_NAME } zu aktivieren."
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Führe ein Upgrade durch, um deinem Konto kürzere @pm.me-Adressen hinzuzufügen, die einfacher zu teilen sind. Das steht für \"${ MAIL_APP_NAME } me\" oder \"Private Message me\"."
@@ -8738,10 +8738,6 @@
         "${ n } Ordner und Kategorie",
         "${ n } Ordner und Kategorien"
       ],
-      "${ n } forwarding mailbox": [
-        "${ n } Weiterleitungs-Postfach",
-        "${ n } Weiterleitungs-Postfächer"
-      ],
       "${ n } Hide My Email alias": [
         "${ n } Hide My Email-Alias",
         "${ n } Hide My Email-Aliasse"
@@ -8819,6 +8815,9 @@
       ],
       "Custom email domains": [
         "Eigene E-Mail-Domains"
+      ],
+      "Custom fields": [
+        "Benutzerdefinierte Felder"
       ],
       "Data breach monitoring": [
         "Überwachung von Datenlecks"
@@ -8998,9 +8997,6 @@
       ],
       "Up to 3 TB of storage": [
         "Bis zu 3 TB Speicherplatz"
-      ],
-      "Up to 5 forwarding mailboxes": [
-        "Bis zu 5 Weiterleitungs-Postfächer"
       ],
       "User credential management": [
         "Verwaltung von Benutzeranmeldedaten"

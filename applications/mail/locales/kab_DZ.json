@@ -11,9 +11,6 @@
       "${ BRAND_NAME } shop": [
         "Taḥanut ${ BRAND_NAME }"
       ],
-      "Activate": [
-        "Rmed"
-      ],
       "Activate recovery": [
         "Sermed tiririt"
       ],
@@ -4104,9 +4101,6 @@
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Taktert n yisefka-inek•inem seg ${ importedEmailAddress } ɣer ${ toEmail }."
       ],
-      "Indexing paused": [
-        "Teḥbes tmerna ɣer umatar"
-      ],
       "Inherited from parent folder": [
         "Yettwaɣellet seg ukaram agejdan"
       ],
@@ -4405,9 +4399,6 @@
       "This account has been suspended due to a potential policy violation.": [
         "Amiḍan yettwaseḥbes ssebba n wugur n truẓi n tsertit."
       ],
-      "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        "Tigawt-a ad d-tsader meṛṛa iznan i wakken ad tzemreḍ ad ten-tnadiḍ s wudem adigan. Asfaḍ n yisefka n yiminig-ik·im neɣ tuffɣa ad tsens taxtiṛt-a."
-      ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Tansa-agi tettusens. Iwakken ad tizmireḍ ad tazneḍ ɣer tansa-agi, bab-is isefk ad tt-isermed."
       ],
@@ -4479,9 +4470,6 @@
       ],
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "Aṭas n yimaylen i yettraǧun ad ttwaznen. Ttxil raǧu almi yettwazen yimayl-nniḍen akken ad tesɣiwseḍ wa."
-      ],
-      "Turn off content search. Activation progress won't be lost.": [
-        "Sens anadi n ugbur. Akala n usermed ur yettṛuḥu ara."
       ],
       "Turn on to search the content of your messages": [
         "Sermed akked ad tnadiḍ deg ugbur n yiznan-inek•inem"
@@ -4681,12 +4669,6 @@
       ]
     },
     "Key pinning": {
-      "Clicking \"Trust Key\" will associate this public key with this sender\nand emails from this address will be automatically cryptographically verified.": [
-        "S utekki ɣef \"Tasarut yettwamanen\" tasarut tazayezt at teddukel ɣer umazan-agi\n yerna imaylen i d-ittekken si tansa-agi ad ttuselken s wudem awurman."
-      ],
-      "Clicking \"Trust Key\" will create a new contact and associate this public key with\nthis sender. Emails from this address will be automatically cryptographically verified.": [
-        "S utekki ɣef \"Tasarut yettwamanen\" tasarut tazayezt at teddukel ɣer\n umazan-agi. Imaylen i d-ittekken si tansa-agi ad ttuselken s wudem awurman."
-      ],
       "Do you want to trust the primary public key with the following fingerprint?": [
         "Tebɣiḍ ad tḍemneḍ tasarut-a tazayazt tagejdant akked wudsil-a umḍin?",
         "Tebɣiḍ ad tḍemneḍ tisura-a tazayazt tagejdant akked wudsilen-a umḍin?"
@@ -6426,9 +6408,6 @@
       ],
       "Message added to ${ labelName }.": [
         "Izen yettwarna ɣer ${ labelName }."
-      ],
-      "Message content search activated": [
-        "Anadi n ugbur n yizen yettwarmad"
       ],
       "Message deleted": [
         "Izen yettwakkes"

@@ -52,6 +52,9 @@
       "Apply": [
         "Toepassen"
       ],
+      "At most 100 contacts are allowed per contact group": [
+        "Ten hoogste 100 contacten zijn toegelaten per contactgroep"
+      ],
       "Attach screenshot(s)": [
         "Schermafdruk(ken) toevoegen"
       ],
@@ -329,6 +332,12 @@
       ],
       "I have a question": [
         "Ik heb een vraag"
+      ],
+      "Image could not be loaded with tracker protection.": [
+        "Afbeelding kan niet worden geladen met trackerbeveiliging."
+      ],
+      "Image will be loaded without a proxy": [
+        "Afbeelding wordt geladen zonder een proxy"
       ],
       "Import": [
         "Importeren"
@@ -1812,6 +1821,9 @@
       "ProtonMail logo and a plus sign": [
         "Proton Mail-logo en een plus-teken"
       ],
+      "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
+        "Bespaar tijd door e-mails of uitnodigingen naar iedereen tegelijkertijd te sturen, een premium functie zoals vele anderen. Upgrade vandaag."
+      ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "Het bestand mag een maximale grootte hebben van ${ MAX_IMPORT_FILE_SIZE_STRING } en ${ MAX_IMPORT_CONTACTS_STRING } contact hebben. Als uw bestand groter is, splits het dan op in kleinere bestanden.",
         "Het bestand mag een maximale grootte hebben van ${ MAX_IMPORT_FILE_SIZE_STRING } en tot ${ MAX_IMPORT_CONTACTS_STRING } contacten hebben. Als uw bestand groter is, splits het dan op in kleinere bestanden."
@@ -1928,6 +1940,9 @@
       ],
       "Calendar limit reached": [
         "Agendalimiet bereikt"
+      ],
+      "Cannot export this contact": [
+        "Kan dit contact niet exporteren"
       ],
       "Contact could not be saved": [
         "Contact kan niet opgeslagen worden"
@@ -2171,6 +2186,12 @@
       ],
       "Unknown error": [
         "Onbekende fout"
+      ],
+      "Username must begin with a letter or digit": [
+        "Gebruikersnaam moet met een letter of cijfer beginnen"
+      ],
+      "Username must end with a letter or digit": [
+        "Gebruikersnaam moet met een letter of cijfer eindigen"
       ],
       "You can't send a mail to more than 100 recipients": [
         "U kunt geen e-mail verzenden naar meer dan 100 ontvangers"
@@ -3176,8 +3197,8 @@
       "Attention required": [
         "Aandacht vereist"
       ],
-      "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
-        "Omdat ${ DRIVE_APP_NAME } end-to-end versleuteld is, kunnen we geen toegang krijgen\nof uw bestanden voor u decoderen. Om uw schijf te ontgrendelen na een wachtwoord reset,\nmoet u een van de volgende dingen hebben:"
+      "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access or decrypt your files for you. To unlock your drive after a password reset, you must have one of the following:": [
+        "Omdat ${ DRIVE_APP_NAME } end-to-end versleuteld is, kunnen we geen toegang krijgen of uw bestanden voor u decoderen. Om uw schijf te ontgrendelen na een wachtwoord reset, moet u een van de volgende dingen hebben:"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Controleer uw spammap en of ${ strong } het correcte e-mailadres is voordat u een nieuwe verificatiecode aanvraagt."
@@ -3226,6 +3247,12 @@
       ],
       "Conflict": [
         "Probleem"
+      ],
+      "Contact assigned to group ${ contactGroupName }": [
+        "Contact toegekend aan groep ${ contactGroupName }"
+      ],
+      "Contact unassigned to group ${ contactGroupName }": [
+        "Contact verwijderd uit groep ${ contactGroupName }"
       ],
       "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
         "Blijf ${ DRIVE_APP_NAME } gebruiken en ontgrendel de schijf later"
@@ -3365,6 +3392,12 @@
       "Failed": [
         "Mislukt"
       ],
+      "Failed to generate a secure link. The reason is: ${ error }": [
+        "Genereren van beveiligde koppeling mislukt. De reden is: ${ error }"
+      ],
+      "Failed to generate a secure link. Try again later": [
+        "Genereren van beveiligde koppeling mislukt. Probeer het later opnieuw"
+      ],
       "Failed to open a secure link. The reason is: ${ error }": [
         "Het is niet gelukt om een beveiligde link te openen. De reden is: ${ error }"
       ],
@@ -3443,8 +3476,8 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Als u de e-mail niet in de inbox kan vinden, check dan uw map met spam."
       ],
-      "If you have one of these, continue to ${ BRAND_NAME } Account setting to\nstart the unblock process.": [
-        "Als u een van deze heeft, ga dan verder naar ${ BRAND_NAME }-account instelling om\nhet deblokkeerproces voort te zetten."
+      "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process.": [
+        "Als u een van deze heeft, ga dan verder naar ${ BRAND_NAME }-account instelling om het deblokkeer proces voort te zetten."
       ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Importeer ${ calendarCount } van ${ totalCalendarsCount } agenda",
@@ -3846,7 +3879,7 @@
       "This will overwrite the existing folder": [
         "Dit zal de bestaande map overschrijven"
       ],
-      "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on\nthe device won’t be affected.": [
+      "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on the device won’t be affected.": [
         "Dit verwijdert het gesynchroniseerde apparaat ${ deviceName } van ${ DRIVE_APP_NAME }. Lokale bestanden op het apparaat blijven onaangeroerd."
       ],
       "This will replace the existing file with the folder": [
@@ -4019,6 +4052,12 @@
       ],
       "You will lose all unsaved changes.": [
         "U zal alle wijzigingen kwijtraken."
+      ],
+      "You've reached the maximum number of addresses in the contact group(s):": [
+        "U heeft het maximaal aantal adressen bereikt in de contactgroep(en):"
+      ],
+      "You've reached the maximum number of addresses in the contact group.": [
+        "U heeft het maximaal aantal adressen bereikt in de contactgroep."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Uw ${ BRAND_NAME } account is momenteel opgeschort. Na 28 dagen zullen e-mails niet meer afgeleverd worden in uw postvak-in, de deelkoppelingen van uw Drive zullen worden geblokkeerd, en u zal geen nieuwe bestanden meer kunnen opladen. Om normale diensten te hervatten dient u alle achterstallige facturen te betalen."
@@ -4565,8 +4604,8 @@
       "Wonderful": [
         "Uitstekend"
       ],
-      "Yes, I want to permanently delete\nmy old files": [
-        "Ja, ik wil permanent\nmijn oude bestanden verwijderen"
+      "Yes, I want to permanently delete my old files": [
+        "Ja, ik wil mijn oude bestanden permanent verwijderen"
       ],
       "Your password (admin)": [
         "Uw wachtwoord (admin)"
@@ -4765,14 +4804,23 @@
       ],
       "Up to 15 email addresses": [
         "Tot wel 15 e-mailadressen"
+      ],
+      "Up to 3 TB of storage": [
+        "Tot wel 3 TB opslag"
       ]
     },
     "new_plans: feature info": {
+      "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
+        "Maak meerdere e-mailadressen aan voor uw online-identiteiten, zoals JohnShopper@${ domain } voor shoppingaccounts, JohnNieuws@${ domain2 } voor nieuwsabonnementen"
+      ],
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "Gebruik onbeperkt aliassen met SimpleLogin van ${ BRAND_NAME }"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Opslagruimte wordt gedeeld door ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } en ${ DRIVE_APP_NAME }"
+      ],
+      "Use your own custom email domain address, e.g., you@yourname.com": [
+        "Gebruik uw eigen e-mailadressen met een aangepast domein, zoals u@uwnaam.com"
       ]
     },
     "new_plans: label": {
@@ -4787,7 +4835,7 @@
     },
     "Notification": {
       "\"${ name }\" created successfully": [
-        "\"${ name }\" aangemaakt"
+        "\"${ name }\" succesvol aangemaakt"
       ],
       "\"${ name }\" deleted permanently from trash": [
         "\"${ name }\" permanent verwijderd uit de prullenbak"
@@ -4817,16 +4865,16 @@
         "\"${ name }\" uit de prullenbak hersteld"
       ],
       "\"${ name }\" saved successfully": [
-        "\"${ name }\" aangemaakt"
+        "\"${ name }\" succesvol aangemaakt"
       ],
       "\"${ name }\" successfully moved": [
-        "\"${ name }\" verplaatst"
+        "\"${ name }\" succesvol verplaatst"
       ],
       "\"${ newName }\" failed to be renamed": [
         "\"${ newName }\" kon niet worden hernoemd"
       ],
       "\"${ newName }\" renamed successfully": [
-        "\"${ newName }\" hernoemd"
+        "\"${ newName }\" succesvol hernoemd"
       ],
       "${ count } item failed to be decrypted": [
         "${ count } item kon niet worden ontsleuteld",
@@ -5668,6 +5716,10 @@
       "# of downloads": [
         "# downloads"
       ],
+      "${ emailsCount } email address": [
+        "${ emailsCount } e-mailadres",
+        "${ emailsCount } e-mailadressen"
+      ],
       "${ numberOfFailedTransfer.total } failed download": [
         "${ numberOfFailedTransfer.total } download mislukt",
         "${ numberOfFailedTransfer.total } downloads mislukt"
@@ -5713,6 +5765,9 @@
       ],
       "Browser might run out of memory": [
         "Browser valt mogelijk zonder geheugen"
+      ],
+      "Cannot add more addresses": [
+        "Kan geen extra adressen toevoegen"
       ],
       "Cannot load link": [
         "Kan koppeling niet laden"
@@ -6087,6 +6142,9 @@
       "Type": [
         "Soort"
       ],
+      "Unlock contacts groups": [
+        "Ontgrendel contactgroepen"
+      ],
       "Uploaded": [
         "Geüpload"
       ],
@@ -6192,6 +6250,12 @@
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Systeemsubmappen worden weergegeven als aparte mappen in ${ MAIL_APP_NAME }"
+      ],
+      "The image could not be loaded": [
+        "De afbeelding kan niet worden geladen"
+      ],
+      "The image could not be loaded using proxy": [
+        "De afbeelding kan niet worden geladen via een proxy"
       ],
       "The import will start with the most recent messages.": [
         "Het importeren begint met de meest recente berichten."

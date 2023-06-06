@@ -2733,10 +2733,10 @@
         "Desbloquea direcciones de correo cortas y otras funciones premium al actualizar."
       ],
       "Unlock unlimited filters that sort your inbox for you and more premium features when you upgrade.": [
-        "Disfruta de un número ilimitado de filtros que ordenan la bandeja de entrada para ti y más funciones premium cuando actualizas tu plan."
+        "Desbloquea un número ilimitado de filtros que ordenan la bandeja de entrada para ti y más funciones premium al actualizar tu plan."
       ],
       "Unlock unlimited folders, labels and more premium features when you upgrade.": [
-        "Disfruta de un número ilimitado de carpetas y etiquetas y más funciones premium cuando actualizas tu plan."
+        "Desbloquea un número ilimitado de carpetas y etiquetas y más funciones premium al actualizar tu plan."
       ],
       "Upsell icon containing ${ BRAND_NAME } logo followed by a plus sign": [
         "Ícono de venta adicional que contiene el logotipo de ${ BRAND_NAME } seguido de un signo más"
@@ -3006,8 +3006,8 @@
         "Firma del contacto no verificada"
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
-        "Anula la selección de al menos ${ calendarsToFixCount } calendario.",
-        "Anula la selección de al menos ${ calendarsToFixCount } calendarios."
+        "Anula la selección de al menos ${ calendarsToFixCount } calendario",
+        "Anula la selección de al menos ${ calendarsToFixCount } calendarios"
       ],
       "Deselect at least ${ calendarsToFixCount } calendar or": [
         "Anula la selección de al menos ${ calendarsToFixCount } calendario o",
@@ -3269,7 +3269,7 @@
         "El navegador que estás utilizando no permite autorizar el pago. Utiliza un navegador diferente o inicia sesión desde un ordenador."
       ],
       "The email addresses do not match": [
-        "Las direcciones de correo electrónico no coinciden."
+        "Las direcciones de correo electrónico no coinciden"
       ],
       "The folder name is invalid. Please choose a different name.": [
         "El nombre de la carpeta es inválido. Elige un nombre diferente."
@@ -3350,10 +3350,10 @@
         "Los archivo cargados no son claves privadas válidas. Verifícalo e inténtalo de nuevo."
       ],
       "Username must begin with a letter or digit": [
-        "El nombre de usuario debe comenzar con una letra o un dígito."
+        "El nombre de usuario debe comenzar con una letra o un número"
       ],
       "Username must end with a letter or digit": [
-        "El nombre de usuario debe terminar con una letra o un dígito."
+        "El nombre de usuario debe terminar con una letra o un número"
       ],
       "Validation error": [
         "Error de validación"
@@ -3451,7 +3451,7 @@
         "Error con el cifrado"
       ],
       "vCard versions < 3.0 not supported": [
-        "Versiones vCard menores a 3.0 no soportadas"
+        "Versiones de vCard anteriores a 3.0 no soportadas"
       ]
     },
     "Error importing contacts": {
@@ -3465,7 +3465,7 @@
         "Se ha producido un error al cargar el archivo ${ formattedFilename }. No se ha seleccionado un archivo .csv o .vcf."
       ],
       "An error occurred uploading your file. No file has been selected.": [
-        "Se ha producido un error al cargar el archivo. No se ha seleccionado ningún archivo."
+        "Se ha producido un error al subir el archivo. No se ha seleccionado ningún archivo."
       ],
       "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
         "El archivo ${ formattedFilename } contiene más de ${ MAX_IMPORT_CONTACTS_STRING } contactos."
@@ -3603,16 +3603,16 @@
         "Se ha producido un error."
       ],
       "Please refresh the page or try again later.": [
-        "Actualiza la página o inténtalo de nuevo más tarde."
+        "Vuelve a cargar la página o inténtalo de nuevo más tarde."
       ],
       "Something went wrong": [
-        "Se ha producido un error."
+        "Algo salió mal"
       ],
       "Too many child sessions, please clear your cookies and sign back in.": [
         "Hay demasiadas sesiones secundarias. Borra tus cookies y vuelve a iniciar sesión."
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
-        "No hemos podido cargar esta página. Actualiza la página o verifica tu conexión a internet."
+        "No hemos podido cargar esta página. Vuelve a cargar la página o verifica tu conexión a internet."
       ]
     },
     "Error message, recovery": {
@@ -4556,7 +4556,7 @@
         "${ CALENDAR_APP_NAME } no admite actualmente algunos tipos de eventos, detalles y formatos."
       ],
       "vCard versions < 3.0": [
-        "Versiones vCard menores a 3.0"
+        "Versiones vCard anteriores a 3.0"
       ]
     },
     "Import calendar; import invitation": {
@@ -5024,7 +5024,7 @@
         "Un nombre que te ayude a identificar dónde lo utilizas para poder revocarlo o ampliarlo fácilmente más adelante."
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
-        "Un número telefónico solo puede usarse para verificar una cuenta de ${ BRAND_NAME }"
+        "Un número telefónico solo puede usarse para verificar una cuenta de ${ BRAND_NAME }."
       ],
       "A recovery file lets you unlock and view your data after an account reset": [
         "Un archivo de recuperación te permite desbloquear y ver tus datos después de un restablecimiento de la cuenta."
@@ -5657,7 +5657,7 @@
         "Importar buzón"
       ],
       "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "Importa tus correos, calendarios y contactos desde otro servicio a ${ BRAND_NAME }."
+        "Importa tus correos, calendarios y contactos desde otro proveedor a ${ BRAND_NAME }."
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Importante: asegúrate de que has guardado los códigos de recuperación. En caso contrario, puedes perder permanentemente el acceso a tu cuenta si pierdes tu dispositivo de autenticación de dos factores."
@@ -6342,8 +6342,8 @@
       "To ensure continuous access to your account, set an account recovery method": [
         "Para garantizar el acceso continuo a tu cuenta, establece un método de recuperación de cuenta."
       ],
-      "To ensure you don’t lose important data, ${ DRIVE_APP_NAME } saves older versions of your files as you\nand your collaborators make changes. Select how long ${ BRAND_NAME } should keep previous versions.": [
-        "Para asegurarte de no perder datos importantes, ${ DRIVE_APP_NAME } guarda versiones anteriores de tus archivos a medida que tù\ny tus colaboradores realizan cambios. Selecciona cuánto tiempo ${ BRAND_NAME } debería de conservar las versiones."
+      "To ensure you don’t lose important data, ${ DRIVE_APP_NAME } saves older versions of your files as you and your collaborators make changes. Select how long ${ BRAND_NAME } should keep previous versions.": [
+        "Para asegurarte de no perder datos importantes, ${ DRIVE_APP_NAME } guarda versiones anteriores de tus archivos a medida que tù y tus colaboradores realizan cambios. Selecciona cuánto tiempo ${ BRAND_NAME } debería de conservar las versiones."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Para luchar contra el spam y el abuso, necesitamos verificar que eres humano."
@@ -8197,7 +8197,7 @@
         "Para añadir un calendario, elimina uno existente."
       ],
       "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
-        "Para añadir un calenario, elimina otro calendario o actualiza tu plan ${ BRAND_NAME } a un plan de pago ${ MAIL_SHORT_APP_NAME }."
+        "Para añadir un calendario, elimina otro calendario o actualiza tu plan ${ BRAND_NAME } a un plan de pago ${ MAIL_SHORT_APP_NAME }."
       ],
       "You've reached the maximum number of calendars available in your plan.": [
         "Has alcanzado el número máximo de calendarios disponibles en tu plan."
@@ -8738,10 +8738,6 @@
         "${ n } carpeta y etiqueta",
         "${ n } carpetas y etiquetas"
       ],
-      "${ n } forwarding mailbox": [
-        "${ n } buzón de reenvío",
-        "${ n } buzones de reenvío"
-      ],
       "${ n } Hide My Email alias": [
         "${ n } alias de \"Hide My Email\"",
         "${ n } alias de \"Hide My Email\""
@@ -8819,6 +8815,9 @@
       ],
       "Custom email domains": [
         "Dominios de correo personalizados"
+      ],
+      "Custom fields": [
+        "Campos personalizados"
       ],
       "Data breach monitoring": [
         "Monitoreo de vulneración de datos"
@@ -8999,9 +8998,6 @@
       "Up to 3 TB of storage": [
         "Hasta 3 TB de almacenamiento"
       ],
-      "Up to 5 forwarding mailboxes": [
-        "Hasta 5 buzones de reenvío"
-      ],
       "User credential management": [
         "Administración de credenciales de usuario"
       ],
@@ -9017,7 +9013,7 @@
     },
     "new_plans: feature info": {
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
-        "Crea múltiples direcciones de correo para tus identidades en línea, p. ej., JuanCompras@${ domain } para cuentas de compras, JuanNoticias@${ domain2 } para suscripciones de noticias"
+        "Crea diferentes direcciones de correo para tus identidades en línea, p. ej. JuanCompras@${ domain } para cuentas de compras, JuanNoticias@${ domain2 } para suscripciones de noticias"
       ],
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "Obtén alias ilimitados con el servicio SimpleLogin de ${ BRAND_NAME }."
@@ -9026,7 +9022,7 @@
         "El espacio de almacenamiento es compartido entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } y ${ DRIVE_APP_NAME }."
       ],
       "Use your own custom email domain address, e.g., you@yourname.com": [
-        "Utiliza tu propia dirección de correo personalizada, por ejemplo, tú@tunombre.com"
+        "Utiliza tu propia dirección de correo personalizada, p. ej. tú@tunombre.com"
       ]
     },
     "new_plans: heading": {
@@ -11278,7 +11274,7 @@
         "Borrar"
       ],
       "Clear out the junk": [
-        "¡Deshazte de los mensajes innecesarios!"
+        "Deshazte de los mensajes no deseados"
       ],
       "Composing": [
         "Redacción"

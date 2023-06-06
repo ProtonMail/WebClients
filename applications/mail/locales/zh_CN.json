@@ -4,15 +4,20 @@
     "language": "zh_CN"
   },
   "contexts": {
+    "account": {
+      "Forwarding will start soon. New emails will appear in your inbox.": [
+        "转发将很快开始。 新邮件将出现在您的收件箱中。"
+      ],
+      "Mail forward stopped": [
+        "邮件转发已停止"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } introduction": [
         "${ BRAND_NAME } 简介"
       ],
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } 商店"
-      ],
-      "Activate": [
-        "激活"
       ],
       "Activate recovery": [
         "激活恢复"
@@ -1237,6 +1242,9 @@
       ]
     },
     "Animation": {
+      "${ nameToDisplay }'s inbox": [
+        "${ nameToDisplay } 的收件箱"
+      ],
       "5 trackers removed": [
         "已移除 5 个跟踪器"
       ],
@@ -1333,6 +1341,9 @@
       ],
       "Other": [
         "其他"
+      ],
+      "Pass problem": [
+        "Pass 问题"
       ],
       "Payments problem": [
         "支付问题"
@@ -1628,6 +1639,14 @@
       ],
       "Event in progress": [
         "活动正在进行中"
+      ]
+    },
+    "Cancel expiration of the message": {
+      "Cancel": [
+        "取消"
+      ],
+      "Cancel expiration": [
+        "取消过期"
       ]
     },
     "Collapsible tooltip": {
@@ -2847,8 +2866,17 @@
       "No labels": [
         "无标签"
       ],
+      "ProtonMail logo and a plus sign": [
+        "ProtonMail 的 logo 和 a plus sign"
+      ],
+      "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
+        "一次性向所有人发送电子邮件或邀请函来节省时间，这是许多其他功能中的一个高级功能。现在就升级吧。"
+      ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files.": [
         "文件大小上限为 ${ MAX_IMPORT_FILE_SIZE_STRING }，且联系人总数上限为 ${ MAX_IMPORT_CONTACTS_STRING }。若您的文件超出限制，请先拆分成较小的文件。"
+      ],
+      "Unlock custom message scheduling and other benefits when you upgrade your plan.": [
+        "升级计划时解锁自定义消息调度和其他好处。"
       ],
       "Unlock unlimited filters that sort your inbox for you and more premium features when you upgrade.": [
         "升级账户即可使用无限量的筛选规则为您自动整理邮箱，还有更多功能等您体验。"
@@ -3601,6 +3629,15 @@
       "Oops, something went wrong": [
         "糟糕，出错了"
       ],
+      "Please refresh the page or try again later.": [
+        "请刷新页面或稍后重试。"
+      ],
+      "Something went wrong": [
+        "出错了"
+      ],
+      "We couldn't load this page. Please refresh the page or check your internet connection.": [
+        "我们无法加载此页面。 请刷新页面或检查您的互联网连接。"
+      ],
       "You do not have any contact yet. Start by creating a new contact": [
         "您还没有任何联系人。首先创建一个新的联系人。"
       ]
@@ -3684,6 +3721,85 @@
         "所有家人共用 ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME }、${ DRIVE_APP_NAME } 的存储空间。"
       ]
     },
+    "familyOffer_2023:Action": {
+      "Got it": [
+        "了解了"
+      ],
+      "Keep current plan": [
+        "保持当前计划"
+      ],
+      "Switch plans": [
+        "切换计划"
+      ],
+      "View the invitation": [
+        "查看TA的邀请"
+      ],
+      "View the invitations": [
+        "查看TA的所有邀请"
+      ]
+    },
+    "familyOffer_2023:Family plan": {
+      "${ BRAND_NAME } groups": [
+        "${ BRAND_NAME } 个组"
+      ],
+      "Accounts with custom domains cannot join a Visionary or family plan.": [
+        "具有自定义域的账户无法加入 Visionary 计划或家庭计划。"
+      ],
+      "customer support": [
+        "客户支持"
+      ],
+      "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
+        "如果您接受邀请，我们会将您从当前计划中转出，并将所有剩余余额存入您的账户。"
+      ],
+      "Invited by: ${ inviteEmail }": [
+        "邀请人： ${ inviteEmail }"
+      ],
+      "Manage addresses.": [
+        "管理地址"
+      ],
+      "Owners of a plan with members cannot join another group plan.": [
+        "拥有成员的计划的所有者不能加入另一个团体计划。"
+      ],
+      "Sorry, you can't switch plans at this time.": [
+        "抱歉，您目前无法切换计划。"
+      ],
+      "Storage assigned to you: ${ assignedStorage }": [
+        "分配给您的存储空间： ${ assignedStorage }"
+      ],
+      "The subscription is billed to the Visionary or family plan's primary admin.": [
+        "订阅费用由 Visionary 计划或家庭计划的主要管理员支付。"
+      ],
+      "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
+        "Visionary 计划和家庭计划目前不支持外部账户。请在加入之前创建一个 ${ BRAND_NAME } 地址。 ${ addressSettingsLink }"
+      ],
+      "Visionary and family plans do not currently support lifetime accounts.": [
+        "Visionary 计划和家庭计划目前不支持终身账户。"
+      ],
+      "You are invited to join ${ invite.OrganizationName }": [
+        "您已受邀加入 ${ invite.OrganizationName }"
+      ],
+      "You can only accept 3 invitations in a 6-month period. Please contact ${ supportLink } if you require an exception.": [
+        "您在 6 个月内只能接受 3 次邀请。 如果您需要例外，请联系 ${ supportLink } 。"
+      ],
+      "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
+        "您已受邀加入  ${ bannerOrganization }. ${ viewInviteButton }"
+      ],
+      "You have successfully joined the Family plan": [
+        "您已成功加入家庭计划"
+      ],
+      "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
+        "我们邀请您将您的 ${ BRAND_NAME } 账户链接到此团体计划，并一起享受所有 ${ BRAND_NAME_TWO } 高级功能。"
+      ],
+      "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
+        "您账户中的电子邮件地址多于此计划中可用的电子邮件地址。 ${ addressSettingsLink }"
+      ],
+      "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
+        "您的账户正在使用 ${ usedSpace } 的存储空间，这超出了为您分配的 ${ inviteSpace } 。删除一些数据或要求该计划的管理员增加您的存储空间。"
+      ],
+      "Your current plan cannot join a Visionary or family plan.": [
+        "您当前的计划无法加入 Visionary 计划或家庭计划。"
+      ]
+    },
     "familyOffer_2023:Get Proton Family": {
       "Get ${ planName }": [
         "开通 ${ planName }"
@@ -3692,6 +3808,17 @@
     "familyOffer_2023:Info": {
       "Online privacy, for your whole family": [
         "与全家人共同守护网络隐私"
+      ]
+    },
+    "familyOffer_2023:Onboarding Proton": {
+      "Configure your family account and invite users ": [
+        "配置您的家庭账户并邀请用户 "
+      ],
+      "Set up your family": [
+        "设置你的家庭"
+      ],
+      "Set up your family account": [
+        "设置您的家庭账户"
       ]
     },
     "familyOffer_2023:Title": {
@@ -3946,6 +4073,17 @@
         "入门步骤"
       ]
     },
+    "Gmail forwarding": {
+      "Automatically forward": [
+        "自动转发"
+      ],
+      "Gmail messages to your inbox": [
+        "Gmail 邮件到您的收件箱"
+      ],
+      "Sign in with Google": [
+        "使用 Google 登录"
+      ]
+    },
     "Group": {
       "Account": [
         "账户"
@@ -4045,6 +4183,9 @@
     "Import calendar warning": {
       "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
         "${ CALENDAR_APP_NAME } 当前不支持某些日程类型、详情和格式。"
+      ],
+      "vCard versions < 3.0": [
+        "vCard 版本低于 3.0"
       ]
     },
     "Import calendar; import invitation": {
@@ -4257,6 +4398,9 @@
       ]
     },
     "Import provider": {
+      "Import from ${ provider }": [
+        "从 ${ provider } 导入"
+      ],
       "Other": [
         "其它"
       ]
@@ -4609,9 +4753,6 @@
       "Don't forget to share the password with the recipient": [
         "别忘了把您设定的密码告诉收件人"
       ],
-      "Downloading message ${ currentProgress } out of ${ totalProgress }": [
-        "正在下载第 ${ currentProgress }/${ totalProgress } 封邮件"
-      ],
       "Draft": [
         "草稿"
       ],
@@ -4794,9 +4935,6 @@
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "将您的数据从${ importedEmailAddress } 导入到${ toEmail }"
-      ],
-      "Indexing paused": [
-        "索引暂停"
       ],
       "Inherited from parent folder": [
         "与上层文件夹一致"
@@ -5215,12 +5353,6 @@
       "This account has been suspended due to a potential policy violation.": [
         "此账户因可能违反用户协议而被封禁。"
       ],
-      "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        "此操作将从服务器下载所有邮件并在本地进行搜索，清除浏览器数据将禁用此选项。"
-      ],
-      "This action will download the most recent messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        "此操作将下载最新消息，以便可以在本地搜索它们。 清除浏览器数据将禁用此选项。"
-      ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "此地址已被停用，待其所有者予以启用后才能向该地址发送邮件。"
       ],
@@ -5331,9 +5463,6 @@
       ],
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "待发送的邮件过多，请静待另一封邮件发送后陆续发送此邮件。"
-      ],
-      "Turn off content search. Activation progress won't be lost.": [
-        "关闭全文搜索，现有进度不会丢失。"
       ],
       "Turn on to search the content of your messages": [
         "开启以搜索您的邮件全文"
@@ -5628,12 +5757,6 @@
       ]
     },
     "Key pinning": {
-      "Clicking \"Trust Key\" will associate this public key with this sender\nand emails from this address will be automatically cryptographically verified.": [
-        "点击 \"信任密钥 \"将把这个公钥与这个发件人关联起来。\n从这个地址发出的电子邮件将自动进行加密验证。"
-      ],
-      "Clicking \"Trust Key\" will create a new contact and associate this public key with\nthis sender. Emails from this address will be automatically cryptographically verified.": [
-        "点击 \"信任密钥 \"将创建一个新的联系人，并将此公钥与\n这个发件人。从这个地址发出的电子邮件将自动进行加密验证。"
-      ],
       "Do you want to trust the primary public keys with the following fingerprints?": [
         "你想用以下指纹信任主公钥吗？"
       ],
@@ -6654,6 +6777,9 @@
       "Scheduled sending undone": [
         "定时发送已撤销"
       ],
+      "Scheduling canceled. Message has been moved to Drafts.": [
+        "计划已取消。 邮件已移至草稿。"
+      ],
       "Sending undone": [
         "邮件发送已撤销"
       ],
@@ -6870,6 +6996,9 @@
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "为您的在线身份创建多个电子邮件地址，例如JohnShopper@${ domain } 账户用于购物，JohnNews@${ domain2 } 账户用于订阅新闻"
       ],
+      "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
+        "通过 ${ BRAND_NAME } 使用 SimpleLogin 获得无限别名"
+      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "储存空间由 ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME } 和 ${ DRIVE_APP_NAME } 共享"
       ],
@@ -6918,6 +7047,11 @@
     "Oauth instructions video": {
       "For the import to work, you must select all requested items as shown in the GIF.": [
         "为顺利完成导入，您需要如下图所示勾选所有权限。"
+      ]
+    },
+    "Oauth instructions video alternative": {
+      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
+        "选择 ${ BRAND_NAME } 可以访问的内容：查看您的电子邮件和设置、查看和下载您的联系人、查看和下载您从 Google 议程访问的所有议程。"
       ]
     },
     "Onboarding": {
@@ -7231,6 +7365,9 @@
     "Remaining days before the message expire": {
       "${ remainingDays } d": [
         "${ remainingDays } 天"
+      ],
+      "<1 d": [
+        "小于1天"
       ]
     },
     "Reply to calendar invitation": {
@@ -7397,8 +7534,19 @@
       ]
     },
     "specialoffer: Action": {
+      "Close": [
+        "关闭"
+      ],
       "Don't show this offer again": [
         "不再显示此活动"
+      ],
+      "Special offer": [
+        "特价"
+      ]
+    },
+    "specialoffer: Action, Unlimited is a plan name": {
+      "Go Unlimited": [
+        "去到 无限制"
       ]
     },
     "specialoffer: Countdown unit": {
@@ -7420,9 +7568,89 @@
         "免费 ${ n } 个月"
       ]
     },
+    "specialoffer: Deal details": {
+      "${ storageSize } total storage": [
+        "${ storageSize } 总存储空间"
+      ],
+      "3 TB": [
+        "3 TB"
+      ],
+      "6 users": [
+        "6 名使用者"
+      ],
+      "64 countries": [
+        "64 个国家"
+      ],
+      "All paid Mail and Calendar features": [
+        "所有付费邮件和日历功能"
+      ],
+      "High speed VPN": [
+        "高速VPN"
+      ],
+      "Highest VPN speed": [
+        "拥有最快的速度的VPN"
+      ],
+      "Premium Drive": [
+        "高级云盘"
+      ],
+      "Premium early access": [
+        "高级抢先体验"
+      ],
+      "Premium Mail and Calendar": [
+        "高级邮件和日历"
+      ],
+      "Premium Mail, Calendar and Drive": [
+        "高级邮件、日历和云盘"
+      ],
+      "Premium VPN": [
+        "高级VPN"
+      ],
+      "Secure cloud storage": [
+        "安全的云存储"
+      ],
+      "Secure streaming": [
+        "安全流媒体"
+      ],
+      "Support online privacy": [
+        "支持在线隐私"
+      ]
+    },
+    "specialoffer: Label": {
+      "Lifetime deal": [
+        "终身优惠"
+      ],
+      "Limited time only": [
+        "时间不多了"
+      ],
+      "Most popular": [
+        "最受欢迎"
+      ],
+      "Offer ends soon": [
+        "优惠即将结束"
+      ],
+      "The discount will continue to apply upon renewal until the subscription is canceled or modified": [
+        "折扣将在续订后继续适用，直到订阅被取消或修改"
+      ]
+    },
+    "specialoffer: Link": {
+      "Go to subscription plans": [
+        "转至订阅计划"
+      ],
+      "Upgrade": [
+        "升级"
+      ]
+    },
     "specialoffer: Offers": {
       "for ${ n } months": [
         "${ n } 个月"
+      ]
+    },
+    "specialoffer: Tooltip": {
+      "Includes support for 1 custom email domain, 10 email addresses, 10 Hide My Email aliases, calendar sharing, and more.": [
+        "包括对 1 个自定义电子邮件域、10 个电子邮件地址、10 个隐藏我的电子邮件别名、日历共享等的支持。"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "存储空间由 ${ MAIL_APP_NAME } 、${ CALENDAR_APP_NAME } 和 ${ DRIVE_APP_NAME } 共享。"
       ]
     },
     "Spotlight": {
@@ -7435,9 +7663,6 @@
       "Invite friends to ${ BRAND_NAME }": [
         "邀请好友注册 ${ BRAND_NAME }"
       ],
-      "Message Content Search": [
-        "邮件全文搜索"
-      ],
       "Schedule send": [
         "定时发送"
       ],
@@ -7446,9 +7671,6 @@
       ],
       "You can now schedule your messages to be sent later": [
         "现已支持定时发送邮件"
-      ],
-      "You can now search the content of your encrypted emails.": [
-        "您现在可以搜索加密电子邮件的内容了。"
       ]
     },
     "Status": {
@@ -7628,9 +7850,6 @@
       ],
       "Message added to ${ labelName }.": [
         "邮件已添加 ${ labelName } 标签。"
-      ],
-      "Message content search activated": [
-        "邮件全文搜索已开启"
       ],
       "Message deleted": [
         "邮件已删除"

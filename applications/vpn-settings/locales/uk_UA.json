@@ -1640,7 +1640,7 @@
         "Виникла проблема"
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
-        "Нам не вдалось завантажити цю сторінку. Будь ласка, перезавантажте сторінку або перевірте інтернет з'єднання."
+        "Не вдалося завантажити цю сторінку. Перезавантажте сторінку або перевірте з'єднання з інтернетом."
       ]
     },
     "Error notification": {
@@ -1715,13 +1715,13 @@
         "Групи ${ BRAND_NAME }"
       ],
       "Accounts with custom domains cannot join a Visionary or family plan.": [
-        "Облікові записи з власними доменами не можуть приєднатися до Visionary або сімейного плану."
+        "Облікові записи з власними доменами не можна приєднати до Visionary або сімейного плану."
       ],
       "customer support": [
         "клієнтська підтримка"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
-        "Якщо ви приймете запрошення, ми перемкнемо вас з поточного плану та зарахуємо залишок на ваш рахунок."
+        "Якщо ви приймете запрошення, ми змінимо ваш поточний тарифний план і зарахуємо невикористану частину коштів на ваш обліковий запис."
       ],
       "Invitation from ${ invitation.OrganizationName }": [
         "Запрошення від ${ invitation.OrganizationName }"
@@ -1736,7 +1736,7 @@
         "Керувати обліковими записами користувачів"
       ],
       "Owners of a plan with members cannot join another group plan.": [
-        "Власники групових тарифних планів з учасниками не можуть приєднатися до інших групових тарифних планів."
+        "Власники тарифних планів з учасниками не можуть приєднуватися до інших групових тарифних планів."
       ],
       "Pending invitation": [
         "Очікування запрошення"
@@ -1745,13 +1745,13 @@
         "Черга запрошень"
       ],
       "Sorry, you can't switch plans at this time.": [
-        "Перепрошую, наразі неможливо змінити план."
+        "На жаль, зараз вам не дозволено змінити план."
       ],
       "Storage assigned to you: ${ assignedStorage }": [
-        "Виділене вам сховище: ${ assignedStorage }"
+        "Призначений вам обсяг сховища: ${ assignedStorage }"
       ],
       "The subscription is billed to the Visionary or family plan's primary admin.": [
-        "Рахунок за підписку виставляється основному адміністратору Visionary або сімейного плану."
+        "Рахунок за передплату виставляється основному адміністратору Visionary або сімейного плану."
       ],
       "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
         "Visionary і сімейні плани наразі не підтримують зовнішні облікові записи. Перш ніж приєднатися, створіть адресу ${ BRAND_NAME }. ${ addressSettingsLink }"
@@ -1763,22 +1763,22 @@
         "Вас запрошено приєднатися до ${ invite.OrganizationName }"
       ],
       "You can only accept 3 invitations in a 6-month period. Please contact ${ supportLink } if you require an exception.": [
-        "Ви можете прийняти лише 3 запрошення протягом 6 місяців. Якщо вам потрібен виняток, зв'яжіться з ${ supportLink }."
+        "Ви можете прийняти лише 3 запрошення протягом 6 місяців. Якщо вам потрібно більше, зверніться до ${ supportLink }."
       ],
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
-        "Вас запросили приєднатися до Організації \"${ bannerOrganization }\". ${ viewInviteButton }."
+        "Вас запросили приєднатися до ${ bannerOrganization }. ${ viewInviteButton }"
       ],
       "You have successfully joined the Family plan": [
         "Ви успішно приєдналися до Сімейного плану"
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
-        "Вас запрошують пов’язати обліковий запис ${ BRAND_NAME } із цим груповим планом і разом користуватися всіма функціями преміуму ${ BRAND_NAME_TWO }"
+        "Вас запрошено пов'язати обліковий запис ${ BRAND_NAME } із цим груповим планом і разом користуватися всіма преміумфункціями ${ BRAND_NAME_TWO }"
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Ваш обліковий запис має більше адрес електронної пошти, ніж доступно в цьому плані. ${ addressSettingsLink }"
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
-        "Ваш обліковий запис використовує ${ usedSpace } пам'яті, що перевищує ${ inviteSpace }, який вам виділили. Видаліть деякі дані або попросіть адміністратора плану збільшити обсяг пам'яті."
+        "Ваш обліковий запис використовує ${ usedSpace } обсягу сховища, що перевищує призначений вам обсяг ${ inviteSpace }. Видаліть деякі дані або попросіть адміністратора плану збільшити обсяг вашого сховища."
       ],
       "Your current plan cannot join a Visionary or family plan.": [
         "Ваш поточний план не може приєднатися до Visionary або сімейного плану."
@@ -1786,7 +1786,7 @@
     },
     "familyOffer_2023:Footer": {
       "*Your subscription will automatically renew at the same rate at the end of your billing cycle.": [
-        "*Ваша підписка буде автоматично продовжена за тією ж ціною в кінці платіжного циклу."
+        "*Ваша передплата автоматично поновиться за тією ж ціною в кінці платіжного періоду."
       ],
       "Discounts are based on the standard monthly pricing.": [
         "Знижки відносно стандартної місячної ціни."
@@ -1799,7 +1799,7 @@
     },
     "familyOffer_2023:Info": {
       "Online privacy, for your whole family": [
-        "Онлайн конфіденційність для всієї родини"
+        "Приватність в інтернеті для всієї родини"
       ]
     },
     "familyOffer_2023:Label": {
@@ -1831,13 +1831,13 @@
     },
     "familyOffer_2023:Tooltip": {
       "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
-        "Включає 2700 серверів у 65+ країнах, підключення до 10 пристроїв, доступ до світових стримінгових сервісів, захист від шкідливих програм і реклами та багато іншого."
+        "Включає 2700 серверів у понад 65 країнах, підключення до 10 пристроїв, доступ до світових сервісів трансляції, захист від зловмисних програм і реклами, а також інші можливості."
       ],
       "Includes support for 3 custom email domains, 90 email addresses, unlimited Hide My Email aliases, calendar sharing and more.": [
-        "Включає підтримку 3 власних доменів, 90 адрес пошти, необмежену кількість псевдонімів для Hide My Email, спільний доступ до календаря та багато іншого."
+        "Включає підтримку 3 власних доменів, 90 адрес електронної пошти, необмежену кількість псевдонімів Hide My Email, спільний доступ до календаря та інші можливості."
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
-        "Захистіть свої файли в зашифрованому хмарному сховищі. Включає автоматичну синхронізацію, спільний доступ до зашифрованих файлів тощо."
+        "Безпечно зберігайте свої файли у зашифрованому хмарному сховищі з автоматичною синхронізацією, зашифрованим спільним доступом та іншими можливостями."
       ]
     },
     "Feature": {
@@ -2043,7 +2043,7 @@
         "Отримати допомогу"
       ],
       "Select your preferred method of payment": [
-        "Виберіть бажаний вами метод оплати."
+        "Оберіть бажаний спосіб оплати."
       ],
       "Select your pricing plan": [
         "Виберіть свій тариф"
@@ -2172,7 +2172,7 @@
         "Сума нижче найменшої (${ amount })."
       ],
       "Any ${ twoFa } method on your account will be disabled.": [
-        "Будь-який метод ${ twoFa } на вашому обліковому записі буде вимкнено."
+        "Будь-який метод ${ twoFa } вашого облікового запису буде вимкнено."
       ],
       "Are you sure you want to disable two-factor authentication?": [
         "Ви впевнені, що хочете вимкнути двоетапну перевірку?"
@@ -2340,7 +2340,7 @@
         "Отримати ${ upsellPlanName }"
       ],
       "Get a ${ BRAND_NAME } address to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
-        "Отримайте адресу ${ BRAND_NAME }, щоб використовувати всі сервіси ${ BRAND_NAME_TWO }, включаючи ${ MAIL_SHORT_APP_NAME } та ${ CALENDAR_SHORT_APP_NAME }."
+        "Отримайте адресу ${ BRAND_NAME }, щоб користуватися всіма службами ${ BRAND_NAME_TWO }, включно з ${ MAIL_SHORT_APP_NAME } та ${ CALENDAR_SHORT_APP_NAME }."
       ],
       "Get my ${ BRAND_NAME } address": [
         "Отримати свою адресу ${ BRAND_NAME }"
@@ -2349,7 +2349,7 @@
         "тут"
       ],
       "If it’s not right for you, we’ll refund you.": [
-        "Якщо вам не підійде, ми повернемо гроші."
+        "Якщо вам не сподобається, ми повернемо гроші."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Якщо у вас виникли труднощі під час створення облікового запису, подайте запит на запрошення і ми відповімо протягом одного робочого дня."
@@ -2637,7 +2637,7 @@
         "При цьому виконається вихід з системи в будь-яких активних сеансах та вимкнеться двоетапна перевірка."
       ],
       "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
-        "Цей майстер ввімкне двоетапну автентифікацію (2FA) для вашого облікового запису ${ BRAND_NAME }. Двоетапна автентифікація зробить ваш обліковий запис ${ BRAND_NAME_TWO } більш безпечним, тому ми рекомендуємо ввімкнути її."
+        "Цей помічник увімкне двоетапну перевірку (2FA) для вашого облікового запису ${ BRAND_NAME }. Двоетапна перевірка забезпечує додатковий рівень захисту вашого облікового запису ${ BRAND_NAME_TWO }, тому рекомендуємо ввімкнути її."
       ],
       "To ${ planName }": [
         "Для ${ planName }"
@@ -2793,7 +2793,7 @@
         "Навіщо?"
       ],
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME_TWO } services": [
-        "З зашифрованою адресою ${ BRAND_NAME } ви можете використовувати всі сервіси ${ BRAND_NAME_TWO }"
+        "Із зашифрованою адресою ${ BRAND_NAME } ви можете користуватися всіма службами ${ BRAND_NAME_TWO }"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Бажаєте отримати новий код перевірки чи скористатися іншим способом перевірки?"
@@ -3592,12 +3592,6 @@
         "${ n } тек і міток",
         "${ n } тек і міток"
       ],
-      "${ n } forwarding mailbox": [
-        "${ n } поштова скринька для пересилання",
-        "${ n } поштові скриньки для пересилання",
-        "${ n } поштових скриньок для пересилання",
-        "${ n } поштові скриньки для пересилання"
-      ],
       "${ n } Hide My Email alias": [
         "${ n } псевдонім Hide My Email",
         "${ n } псевдоніми Hide My Email",
@@ -3685,6 +3679,9 @@
       "Custom email domains": [
         "Власні домени електронної пошти"
       ],
+      "Custom fields": [
+        "Власні поля"
+      ],
       "Data breach monitoring": [
         "Відстеження витоків даних"
       ],
@@ -3734,7 +3731,7 @@
         "Угода про обробку даних GDPR"
       ],
       "High-speed streaming": [
-        "Високошвидкісний стримінг"
+        "Високошвидкісна трансляція"
       ],
       "High-speed Swiss VPN that protects your privacy": [
         "Високошвидкісна швейцарська VPN, що захищає вашу приватність"
@@ -3776,13 +3773,13 @@
         "Пріоритетна підтримка"
       ],
       "Priority support & live chat": [
-        "Пріоритетна підтримка та миттєвий чат"
+        "Пріоритетна підтримка і чат"
       ],
       "Protect ${ n } device at a time": [
-        "Одночасний захист ${ n } пристрою",
-        "Одночасний захист ${ n } пристроїв",
-        "Одночасний захист ${ n } пристроїв",
-        "Одночасний захист ${ n } пристроїв"
+        "Захист ${ n } пристрою",
+        "Захист ${ n } пристроїв",
+        "Захист ${ n } пристроїв",
+        "Захист ${ n } пристроїв"
       ],
       "Router support": [
         "Підтримка маршрутизатора"
@@ -3836,7 +3833,7 @@
         "Необмежена кількість міток"
       ],
       "Unlimited logins and notes": [
-        "Необмежена кількість входів та нотаток"
+        "Необмежена кількість паролів і нотаток"
       ],
       "Unlimited messages per day": [
         "Необмежена кількість повідомлень на день"
@@ -3853,9 +3850,6 @@
       "Up to ${ totalStorageSize } storage": [
         "До ${ totalStorageSize } сховища"
       ],
-      "Up to 5 forwarding mailboxes": [
-        "До 5 поштових скриньок для пересилання"
-      ],
       "User credential management": [
         "Керування обліковими даними користувача"
       ],
@@ -3863,10 +3857,10 @@
         "Керування сеансами користувачів"
       ],
       "Vault and Item sharing": [
-        "Спільне використання сховища та елементів"
+        "Спільний доступ до сховища та елементів"
       ],
       "Vault and Item sharing (coming soon)": [
-        "Спільне використання сховища та елементів (незабаром)"
+        "Спільний доступ до сховища та елементів (незабаром)"
       ]
     },
     "new_plans: heading": {
@@ -4087,7 +4081,7 @@
         "Захист від загроз приватності VPN завдяки спрямуванню інтернет-трафіку через кілька серверів"
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers.": [
-        "Захищає від загрози конфіденційності VPN, передаючи ваш інтернет-трафік через кілька серверів."
+        "Захищає від загроз приватності VPN, спрямовуючи ваш інтернет-трафік через різні сервери."
       ],
       "Easily share your calendars with your colleagues, family, and friends via a link": [
         "Легко діліться календарями за посиланням зі своїми колегами, сім'єю та друзями"
@@ -4120,7 +4114,7 @@
         "Мітки – це прості позначки, які можна застосовувати до повідомлень для спрощення пошуку чи створення фільтрів"
       ],
       "Like a folder, a vault is a convenient way to organize your items. Sharing vaults with friends and family is in the works.": [
-        "Як і теки, сховище - це зручний спосіб впорядкувати ваші речі. Ми працюємо над тим, щоб ви могли ділитися сховищами з друзями та родиною."
+        "Як і теки, сховище – це зручний спосіб впорядковувати ваші дані. Ми працюємо над тим, щоб невдовзі ви могли ділитися сховищами з друзями та родиною."
       ],
       "Manage your subscription, including customization of your plan. Payment methods accepted are credit card, PayPal, cryptocurrency, and wire transfer.": [
         "Керуйте своєю передплатою, включно з налаштуванням тарифного плану. Підтримувані способи оплати – кредитні картки, PayPal, криптовалюта і банківські перекази."
@@ -4129,7 +4123,7 @@
         "Отримуйте допомогу від команди підтримки клієнтів ${ BRAND_NAME } упродовж 24 годин після запиту в робочі дні"
       ],
       "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME_TWO } VPN at the same time, you need two VPN connections.": [
-        "Одне VPN-з'єднання дозволяє одному пристрою підключатися до ${ BRAND_NAME } VPN в будь-який момент часу. Наприклад, щоб під'єднати телефон і ноутбук до ${ BRAND_NAME_TWO } VPN одночасно, вам потрібно два VPN-з'єднання."
+        "Одне VPN-з'єднання дає можливість одному пристрою під'єднуватися до ${ BRAND_NAME } VPN коли завгодно. Наприклад, щоб одночасно під'єднати телефон і ноутбук до ${ BRAND_NAME_TWO } VPN, потрібно два VPN-з'єднання."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Можливість перегляду не приватних вхідних скриньок користувача, включно з усіма повідомленнями та подробицями контактів"
@@ -4207,7 +4201,7 @@
         "Підтримка протоколів обміну даними, як-от BitTorrent"
       ],
       "Unique, on-the-fly email addresses that protect your online identity and let you control what lands in your inbox. From SimpleLogin by ${ BRAND_NAME }.": [
-        "Унікальні адреси електронної пошти, які захищають ваші особисті дані та дозволяють контролювати, що потрапляє у вашу поштову скриньку. Від SimpleLogin від ${ BRAND_NAME }."
+        "Унікальні, миттєві адреси електронної пошти, які захищають ваші особисті дані та дозволяють контролювати, що потрапляє до вашої поштової скриньки. Завдяки SimpleLogin від ${ BRAND_NAME }."
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Використовуйте власні домени адрес електронної пошти, наприклад, you@yourname.com"
@@ -4520,7 +4514,7 @@
       ],
       "${ seconds } second": [
         "${ seconds } секунда",
-        "${ seconds } секунд",
+        "${ seconds } секунди",
         "${ seconds } секунд",
         "${ seconds } секунд"
       ]
@@ -4529,8 +4523,8 @@
       "${ n } month FREE": [
         "${ n } місяць БЕЗПЛАТНО",
         "${ n } місяці БЕЗПЛАТНО",
-        "${ n } місяці БЕЗПЛАТНО",
-        "${ n } місяці БЕЗПЛАТНО"
+        "${ n } місяців БЕЗПЛАТНО",
+        "${ n } місяців БЕЗПЛАТНО"
       ]
     },
     "specialoffer: Deal details": {
@@ -4686,39 +4680,39 @@
         "Передноворічний розпродаж"
       ],
       "Get our premium bundle and save more": [
-        "Заощаджуй більше, придбавши наш Premium Bundle"
+        "Заощадьте ще більше, отримавши наш набір преміум"
       ],
       "Our discontinued Visionary plan is back for a limited time only": [
-        "Наш припинений план Visionary повертається лише на обмежений час"
+        "Наш припинений тарифний план Visionary знову доступний протягом обмеженого часу"
       ],
       "Save more with 2 years of ${ planName }": [
-        "Заощаджуйте більше з 2 річним планом ${ planName }"
+        "Заощадьте ще більше, передплативши ${ planName } на 2 роки"
       ],
       "Upgrade and save more with 2 years of ${ planName }": [
-        "Оновіть та заощаджуйте більше з 2 річним планом ${ planName }"
+        "Заощадьте ще більше, передплативши тарифний план ${ planName } на 2 роки"
       ]
     },
     "specialoffer: Tooltip": {
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.": [
-        "Доступ до заблокованого контенту та приватний перегляд. Включає 1700 серверів у 60+ країнах, найвищу швидкість VPN, 10 VPN-з'єднань на користувача, всесвітні стримінгові сервіси, захист від шкідливих програм і реклами та багато іншого."
+        "Доступ до заблокованого вмісту та приватний перегляд. Включає 1700 серверів у понад 60 країнах, найвищу швидкість VPN, 10 VPN-з'єднань на користувача, всесвітні сервіси трансляції, захист від зловмисних програм і реклами, а також інші можливості."
       ],
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
-        "Доступ до заблокованого контенту та приватний перегляд. Включає 1700 серверів у 60+ країнах, найвищу швидкість VPN, 10 VPN-з'єднань, всесвітні стримінгові сервіси, захист від шкідливих програм, реклами та багато іншого."
+        "Доступ до заблокованого вмісту та приватний перегляд. Включає 1700 серверів у понад 60 країнах, найвищу швидкість VPN, 10 VPN-з'єднань, всесвітні сервіси трансляції, захист від зловмисних програм і реклами, а також інші можливості."
       ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
         "Доступ звідусіль до матеріалів сервісів трансляції, включно з Netflix, Disney+ і Prime Video."
       ],
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited Hide My Email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
-        "Всі наші преміум сервіси з найвищими лімітами: 100 адрес, підтримка 10 власних доменів, необмежена кількість псевдонімів Hide My Email, спільний доступ до календаря, зашифроване хмарне сховище, спільний доступ до файлів і багато іншого."
+        "Усі найкращі можливості наших преміумфункцій: 100 адрес е-пошти, підтримка 10 власних доменів, необмежена кількість псевдонімів Hide My Email, спільний доступ до календаря, зашифроване хмарне сховище, спільний доступ до файлів і багато іншого."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 Hide My Email aliases, calendar sharing, and more.": [
-        "Включає підтримку 1 власного домену, 10 адрес пошти, 10 псевдонімів Hide My Email, спільний доступ до календаря тощо."
+        "Включає підтримку 1 власного домену, 10 адрес електронної пошти, 10 псевдонімів Hide My Email, спільний доступ до календаря та інші можливості."
       ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited Hide My Email aliases, calendar sharing, and more.": [
-        "Включає підтримку 3 власних доменів, 15 адрес пошти, необмежену кількість псевдонімів Hide My Email, спільний доступ до календаря тощо."
+        "Включає підтримку 3 власних доменів, 15 адрес електронної пошти, необмежену кількість псевдонімів Hide My Email, спільний доступ до календаря та інші можливості."
       ],
       "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
-        "Ідеально підходить для сімей або невеликих команд, кожен може мати власну пошту та псевдоніми. Потрібен власний домен."
+        "Ідеально підходить для сім'ї або невеликої команди. Кожен учасник може мати власну поштову скриньку та псевдоніми. Потрібен власний домен."
       ],
       "Receive at no extra cost the paid versions of all new privacy services we release in the future, along with early access to all future features and products.": [
         "Отримуйте без додаткових витрат платні версії всіх нових служб приватності, які ми випускатимемо в майбутньому, а також ранній доступ до всіх майбутніх функцій і продуктів."

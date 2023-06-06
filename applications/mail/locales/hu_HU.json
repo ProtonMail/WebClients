@@ -19,9 +19,6 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } bolt"
       ],
-      "Activate": [
-        "Aktiválás"
-      ],
       "Activate recovery": [
         "Helyreállítás aktiválása"
       ],
@@ -4721,9 +4718,6 @@
       "Don't forget to share the password with the recipient": [
         "Ne felejtse el megosztani a jelszót a címzettel"
       ],
-      "Downloading message ${ currentProgress } out of ${ totalProgress }": [
-        "Letöltés: ${ currentProgress } üzenet. Összesen: ${ totalProgress }"
-      ],
       "Draft": [
         "Piszkozat"
       ],
@@ -4914,9 +4908,6 @@
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Adatok importálása a(z) ${ importedEmailAddress } címről a(z) ${ toEmail } címre."
-      ],
-      "Indexing paused": [
-        "Feldolgozás szüneteltetve"
       ],
       "Inherited from parent folder": [
         "Örökölve a tartalmazó mappáról"
@@ -5328,12 +5319,6 @@
       "This account has been suspended due to a potential policy violation.": [
         "Ez a fiók felfüggesztésre került a szabályzat valószínűsíthető megsértése miatt."
       ],
-      "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        "Ez a művelet letölti az összes üzenetet, hogy helyben kereshetők legyenek. A böngésző adatainak törlése kikapcsolja ezt a lehetőséget."
-      ],
-      "This action will download the most recent messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        "Ez a művelet letölti a legfrissebb üzeneteteket, hogy helyben kereshetők legyenek. A böngésző adatainak törlése kikapcsolja ezt a lehetőséget."
-      ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Ez a cím le van tiltva. Ahhoz, hogy küldhessen erre a címre, a tulajdonosnak engedélyeznie kell."
       ],
@@ -5452,9 +5437,6 @@
       ],
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "Túl sok üzenet vár elküldésre. Várjon amíg elküldődik egy üzenet, mielőtt ezt ütemezné."
-      ],
-      "Turn off content search. Activation progress won't be lost.": [
-        "Üzenetekben való keresés kikapcsolása. Az eddigi aktiválási folyamat nem veszik el."
       ],
       "Turn on to search the content of your messages": [
         "Kapcsolja be, hogy az üzenetek szövegében is kereshessen"
@@ -5752,12 +5734,6 @@
       ]
     },
     "Key pinning": {
-      "Clicking \"Trust Key\" will associate this public key with this sender\nand emails from this address will be automatically cryptographically verified.": [
-        "A \"Megbízható Kulcsra\" kattintás társítani fogja ezt a nyilvános kulcsot ezzel a küldővel, és minden levél erről a címről automatikusan ellenőrizve lesz kriptográfiailag."
-      ],
-      "Clicking \"Trust Key\" will create a new contact and associate this public key with\nthis sender. Emails from this address will be automatically cryptographically verified.": [
-        "A \"Megbízható Kulcsra\" kattintás létre fog hozni egy új névjegyet és hozzá fogja társítani ezt a nyilvános kulcsot ehhez a küldőhöz. Az erről a címről küldött levelek automatikusan ellenőrizve lesznek kriptográfiailag."
-      ],
       "Do you want to trust the primary public key with the following fingerprint?": [
         "Megjelöli megbízhatóként a következő ujjlenyomatú elsődleges nyilvános kulcsot?",
         "Megjelöli megbízhatóként a következő ujjlenyomatú elsődleges nyilvános kulcsokat?"
@@ -7598,9 +7574,6 @@
       "Invite friends to ${ BRAND_NAME }": [
         "Hívjon meg barátokat a ${ BRAND_NAME }ba"
       ],
-      "Message Content Search": [
-        "Keresés üzenetek tartalmában"
-      ],
       "Schedule send": [
         "Küldés ütemezése"
       ],
@@ -7609,9 +7582,6 @@
       ],
       "You can now schedule your messages to be sent later": [
         "Most már ütemezheti is a leveleit későbbi elküldésre"
-      ],
-      "You can now search the content of your encrypted emails.": [
-        "Most már kereshet a titkosított üzenetek tartalmában is."
       ]
     },
     "Status": {
@@ -7816,9 +7786,6 @@
       ],
       "Message added to ${ labelName }.": [
         "Az üzenet ${ labelName } címkével megjelölve."
-      ],
-      "Message content search activated": [
-        "Keresés az üzenetek tartalmában aktiválva"
       ],
       "Message deleted": [
         "Üzenet törölve"

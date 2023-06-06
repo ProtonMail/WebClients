@@ -3142,9 +3142,6 @@
       "Attention required": [
         "注意が必要です"
       ],
-      "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
-        "${ DRIVE_APP_NAME } はエンドツーエンド暗号化を利用しているため、パスワードなしにファイルにアクセスしたり、復号したりはできません。パスワードを変更したあとにドライブを開くには、以下の手順に従う必要があります。"
-      ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "新しい検証コードを要求する前に、迷惑メールフォルダーを確認し、${ strong } が正しいアドレスなことを確認してください。"
       ],
@@ -3411,9 +3408,6 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "受信トレイに関連するメッセージを見つけなかった場合、迷惑メールフォルダーを確認してください。"
-      ],
-      "If you have one of these, continue to ${ BRAND_NAME } Account setting to\nstart the unblock process.": [
-        "以上の中からできることがあれば、${ BRAND_NAME } アカウントの設定から必要な手順を実行してください。"
       ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendars": [
         "${ totalCalendarsCount } 件中 ${ calendarCount } 件のカレンダーをインポート"
@@ -3810,9 +3804,6 @@
       ],
       "This will overwrite the existing folder": [
         "既存のフォルダーに上書きします"
-      ],
-      "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on\nthe device won’t be affected.": [
-        "この操作により、同期デバイス ${ deviceName } が ${ DRIVE_APP_NAME } から削除されます。デバイス上のローカルファイルは影響を受けません。"
       ],
       "This will replace the existing file with the folder": [
         "既存のファイルをフォルダーで置き換えます"
@@ -4532,9 +4523,6 @@
       ],
       "Wonderful": [
         "すばらしい"
-      ],
-      "Yes, I want to permanently delete\nmy old files": [
-        "古いファイルを完全に削除する"
       ],
       "Your password (admin)": [
         "あなたのパスワード (管理者)"

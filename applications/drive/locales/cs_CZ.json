@@ -104,7 +104,7 @@
         "Vyberte soubor nebo jej sem přetáhněte"
       ],
       "Clear": [
-        "Vyčistit"
+        "Smazat"
       ],
       "Clear browser data": [
         "Vymazat data prohlížeče"
@@ -3301,8 +3301,8 @@
       "Attention required": [
         "Vyžadována pozornost"
       ],
-      "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
-        "Vzhledem k tomu, že ${ DRIVE_APP_NAME } používá koncové šifrování, nemáme přístup\nani nemůžeme dešifrovat vaše soubory. Pro odemčení disku po resetu hesla,\nmusíte mít jedno z následujících:"
+      "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access or decrypt your files for you. To unlock your drive after a password reset, you must have one of the following:": [
+        "Vzhledem k tomu, že ${ DRIVE_APP_NAME } používá koncové šifrování, nemůžeme k vašim souborům přistupovat a ani je dešifrovat. Pro odemčení disku po resetu hesla,\nmusíte mít jedno z následujících:"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Před vyžádáním nového ověřovacího kódu zkontrolujte složku spamu a zkontrolujte, zda je adresa ${ strong } správná."
@@ -3503,7 +3503,7 @@
         "Selhalo"
       ],
       "Failed to generate a secure link. The reason is: ${ error }": [
-        "Nepovedlo se vygenerovat zabezpečený odkaz. Důvod: ${ error }"
+        "Nepovedlo se vygenerovat bezpečený odkaz. Důvod: ${ error }"
       ],
       "Failed to generate a secure link. Try again later": [
         "Nepovedlo se vygenerovat zabezpečený odkaz. Zkuste to později"
@@ -3586,8 +3586,8 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Pokud jste nenašli e-mail ve vaší schránce, zkontrolujte prosím složku se spamem."
       ],
-      "If you have one of these, continue to ${ BRAND_NAME } Account setting to\nstart the unblock process.": [
-        "Pokud máte některý z nich, pokračujte do nastavení účtu ${ BRAND_NAME }, pro\nzahájení procesu odblokování."
+      "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process.": [
+        "Pokud máte některý z nich, pokračujte do nastavení účtu ${ BRAND_NAME } a spusťte proces odblokování."
       ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Importovat ${ calendarCount } z ${ totalCalendarsCount } kalendáře",
@@ -3997,7 +3997,7 @@
       "This will overwrite the existing folder": [
         "Tím se přepíše existující složka"
       ],
-      "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on\nthe device won’t be affected.": [
+      "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on the device won’t be affected.": [
         "Tím odstraníte z ${ DRIVE_APP_NAME } synchronizované zařízení ${ deviceName }. Místní soubory v zařízení nebudou ovlivněny."
       ],
       "This will replace the existing file with the folder": [
@@ -4728,8 +4728,8 @@
       "Wonderful": [
         "Úžasné"
       ],
-      "Yes, I want to permanently delete\nmy old files": [
-        "Ano, chci trvale odstranit\nsvé staré soubory"
+      "Yes, I want to permanently delete my old files": [
+        "Ano, chci trvale smazat své staré soubory"
       ],
       "Your password (admin)": [
         "Vaše heslo (admin)"
