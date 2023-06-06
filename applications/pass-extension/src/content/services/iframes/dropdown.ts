@@ -1,7 +1,7 @@
 import { contentScriptMessage, sendMessage } from '@proton/pass/extension/message';
 import { createTelemetryEvent } from '@proton/pass/telemetry/events';
 import type { MaybeNull } from '@proton/pass/types';
-import { FormField, FormType, WorkerMessageType } from '@proton/pass/types';
+import { FormField, WorkerMessageType } from '@proton/pass/types';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import { first } from '@proton/pass/utils/array';
 import { createStyleCompute, getComputedHeight } from '@proton/pass/utils/dom';
@@ -158,24 +158,23 @@ export const createDropdown = (): InjectedDropdown => {
             }),
             ({ username, password }) => {
                 const form = fieldRef.current?.getFormHandle();
-                if (form && form.formType === FormType.LOGIN) {
-                    void sendMessage(
-                        contentScriptMessage({
-                            type: WorkerMessageType.TELEMETRY_EVENT,
-                            payload: {
-                                event: createTelemetryEvent(
-                                    TelemetryEventName.AutofillTriggered,
-                                    {},
-                                    { location: 'source' }
-                                ),
-                            },
-                        })
-                    );
 
-                    first(form.getFieldsFor(FormField.USERNAME))?.autofill(username);
-                    first(form.getFieldsFor(FormField.EMAIL))?.autofill(username);
-                    form.getFieldsFor(FormField.PASSWORD_CURRENT).forEach((field) => field.autofill(password));
-                }
+                void sendMessage(
+                    contentScriptMessage({
+                        type: WorkerMessageType.TELEMETRY_EVENT,
+                        payload: {
+                            event: createTelemetryEvent(
+                                TelemetryEventName.AutofillTriggered,
+                                {},
+                                { location: 'source' }
+                            ),
+                        },
+                    })
+                );
+
+                first(form?.getFieldsFor(FormField.USERNAME) ?? [])?.autofill(username);
+                first(form?.getFieldsFor(FormField.EMAIL) ?? [])?.autofill(username);
+                form?.getFieldsFor(FormField.PASSWORD_CURRENT).forEach((field) => field.autofill(password));
 
                 iframe.close();
                 fieldRef.current?.focus({ preventDefault: true });
@@ -185,15 +184,12 @@ export const createDropdown = (): InjectedDropdown => {
 
     /* For a password auto-suggestion - the password will have
      * been generated in the injected iframe and passed in clear
-     * text through the secure extension port channel.
-     * FIXME: Handle forms other than REGISTER for autofilling */
+     * text through the secure extension port channel */
     iframe.registerMessageHandler(IFrameMessageType.DROPDOWN_AUTOSUGGEST_PASSWORD, (message) => {
+        const { password } = message.payload;
         const form = fieldRef.current?.getFormHandle();
 
-        if (form && form.formType === FormType.REGISTER) {
-            const { password } = message.payload;
-            form.getFieldsFor(FormField.PASSWORD_NEW).forEach((field) => field.autofill(password));
-        }
+        form?.getFieldsFor(FormField.PASSWORD_NEW).forEach((field) => field.autofill(password));
 
         iframe.close();
         fieldRef.current?.focus({ preventDefault: true });
