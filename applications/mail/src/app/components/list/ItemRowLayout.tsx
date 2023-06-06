@@ -91,7 +91,7 @@ const ItemRowLayout = ({
 
             <div className="item-subject flex-item-fluid flex flex-align-items-center flex-nowrap m-auto">
                 <div className="flex flex-column inline-block">
-                    <span
+                    <button
                         role="heading"
                         aria-level={2}
                         className={clsx(['max-w100 text-ellipsis mr-4', unread && 'text-bold'])}
@@ -110,7 +110,7 @@ const ItemRowLayout = ({
                             />
                         )}
                         {subjectContent}
-                    </span>
+                    </button>
 
                     {!!resultJSX && highlightData && (
                         <>
