@@ -31,7 +31,7 @@ export const getDevices = (): PlanCardFeatureDefinition => {
 };
 
 export const getUnlimitedHideMyEmailAliasesText = () => {
-    return c('new_plans: feature').t`Unlimited Hide My Email aliases`;
+    return c('new_plans: feature').t`Unlimited hide-my-email aliases`;
 };
 
 export const getHideMyEmailAliases = (n: number | 'unlimited'): PlanCardFeatureDefinition => {
@@ -39,7 +39,7 @@ export const getHideMyEmailAliases = (n: number | 'unlimited'): PlanCardFeatureD
         text:
             n === 'unlimited'
                 ? getUnlimitedHideMyEmailAliasesText()
-                : c('new_plans: feature').ngettext(msgid`${n} Hide My Email alias`, `${n} Hide My Email aliases`, n),
+                : c('new_plans: feature').ngettext(msgid`${n} Hide-my-email alias`, `${n} Hide-my-email aliases`, n),
         tooltip: c('new_plans: tooltip')
             .t`Unique, on-the-fly email addresses that protect your online identity and let you control what lands in your inbox. From SimpleLogin by ${BRAND_NAME}.`,
         included: true,

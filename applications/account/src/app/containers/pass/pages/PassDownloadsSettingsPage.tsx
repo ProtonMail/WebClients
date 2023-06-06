@@ -28,7 +28,7 @@ const UpgradeBanner = ({ className }: { className?: string }) => {
             <span className="flex-item-fluid">
                 {
                     // translator: Variable here is a plan name
-                    c('Upgrade').t`Upgrade to ${passPlusPlanName} to get unlimited Hide My Email aliases`
+                    c('Upgrade').t`Upgrade to ${passPlusPlanName} to get unlimited hide-my-email aliases`
                 }
             </span>
 
