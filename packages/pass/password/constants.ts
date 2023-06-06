@@ -2,8 +2,8 @@
  * the chance of confusion. For symbols we'd like to avoid those
  * that prevent selecting the password when double clicking on
  * top of the password. */
-export const uppercaseChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-export const lowercaseChars = 'abcdefghijklmnopqrstuvwxyz';
+export const uppercaseChars = 'ABCDEFGHJKMNPQRSTUVWXYZ';
+export const lowercaseChars = 'abcdefghjkmnpqrstuvwxyz';
 export const digitChars = '0123456789';
 export const specialChars = '!#$%&()*+.:;<=>?@[]^';
 
