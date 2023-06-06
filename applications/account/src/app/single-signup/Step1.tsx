@@ -46,6 +46,7 @@ import metrics, { observeApiError } from '@proton/metrics';
 import { WebCoreVpnSingleSignupStep1InteractionTotal } from '@proton/metrics/types/web_core_vpn_single_signup_step1_interaction_total_v1.schema';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
+import { TelemetryAccountSignupBasicEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { queryCheckEmailAvailability } from '@proton/shared/lib/api/user';
 import { ProductParam } from '@proton/shared/lib/apps/product';
 import { getIsVPNApp } from '@proton/shared/lib/authentication/apps';
@@ -53,6 +54,7 @@ import { APPS, CLIENT_TYPES, CYCLE, PLANS, VPN_CONNECTIONS, VPN_SHORT_APP_NAME }
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { getOwnershipVerificationHeaders, mergeHeaders } from '@proton/shared/lib/fetch/headers';
 import { confirmEmailValidator, emailValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
+import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { getPricingFromPlanIDs } from '@proton/shared/lib/helpers/subscription';
 import { getTermsURL, stringifySearchParams } from '@proton/shared/lib/helpers/url';
@@ -200,6 +202,11 @@ const Step1 = ({
     });
 
     useEffect(() => {
+        void sendTelemetryReport({
+            api: normalApi,
+            measurementGroup: TelemetryMeasurementGroups.accountSignupBasic,
+            event: TelemetryAccountSignupBasicEvents.flow_started,
+        });
         metrics.core_vpn_single_signup_pageLoad_total.increment({ step: 'plan_username_payment' });
     }, []);
 
@@ -372,6 +379,15 @@ const Step1 = ({
             }
 
             const newCache = await handleCreateUser({ cache, api: silentApi, mode: 'cro', paymentToken });
+            void sendTelemetryReport({
+                api: normalApi,
+                measurementGroup: TelemetryMeasurementGroups.accountSignupBasic,
+                event: TelemetryAccountSignupBasicEvents.account_created,
+                dimensions: {
+                    account_type: 'external',
+                },
+            });
+
             await onComplete(newCache);
             metrics.core_vpn_single_signup_step1_payment_total.increment({ status: 'success' });
         } catch (error) {
