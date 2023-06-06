@@ -8,10 +8,10 @@ import { Avatar } from '@proton/atoms/Avatar';
 import { CircleLoader } from '@proton/atoms/CircleLoader';
 import { Icon, Tabs, useNotifications } from '@proton/components';
 import { pageMessage } from '@proton/pass/extension/message';
-import { selectPassPlan, selectTrialDaysRemaining, selectUser, selectUserPlan } from '@proton/pass/store';
+import { selectPassPlan, selectPlanDisplayName, selectTrialDaysRemaining, selectUser } from '@proton/pass/store';
 import { type Unpack, WorkerMessageType, type WorkerMessageWithSender, WorkerStatus } from '@proton/pass/types';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
-import { PASS_APP_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
+import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 import { APP_VERSION } from '../../app/config';
 import { ExtensionContextProvider, ExtensionWindow } from '../../shared/components/extension';
@@ -71,8 +71,8 @@ if (ENV === 'development') {
 const SettingsTabs: FC<{ pathname: string }> = ({ pathname }) => {
     const context = useExtensionContext();
     const user = useSelector(selectUser);
-    const plan = useSelector(selectUserPlan);
     const passPlan = useSelector(selectPassPlan);
+    const planDisplayName = useSelector(selectPlanDisplayName);
     const trialDaysLeft = useSelector(selectTrialDaysRemaining);
 
     const pathnameToIndex = (pathname: string) => {
@@ -99,15 +99,14 @@ const SettingsTabs: FC<{ pathname: string }> = ({ pathname }) => {
                             <span>
                                 <span className="block text-semibold text-ellipsis">{user?.DisplayName}</span>
                                 <span className="block text-sm text-ellipsis">{user?.Email}</span>
-                                <span className="block color-weak text-sm text-italic">{plan?.DisplayName}</span>
+                                <span className="block color-weak text-sm text-italic">{planDisplayName}</span>
                             </span>
                         </div>
                         <div className="flex flex-align-items-end flex-column">
                             {passPlan !== UserPassPlan.PLUS && (
                                 <>
                                     <span className="block mb-1">
-                                        {passPlan === UserPassPlan.TRIAL && c('Label').t`Trial`}
-                                        {passPlan === UserPassPlan.FREE && c('Label').t`${PASS_SHORT_APP_NAME} Free`}
+                                        {planDisplayName}
                                         <span className="color-weak text-italic text-sm">
                                             {' '}
                                             {trialDaysLeft &&
