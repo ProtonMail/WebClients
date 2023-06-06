@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { Input } from '@proton/atoms';
 import { SelectChangeEvent } from '@proton/components/components/selectTwo/select';
+import { requestAnimationFrameRateLimiter } from '@proton/components/hooks/useElementRect';
 
 import { Icon, Info, InputFieldTwo, Label, Option, Select, SelectTwo } from '../../components';
 import { DEFAULT_SEPARATOR, getFullList } from '../../helpers/countries';
@@ -24,7 +25,7 @@ interface Props {
 
 const CreditCard = ({ card, errors, onChange, loading = false, newDesign = false }: Props) => {
     const newFormContainer = useRef<HTMLDivElement>(null);
-    const newFormRect = useElementRect(newFormContainer);
+    const newFormRect = useElementRect(newFormContainer, requestAnimationFrameRateLimiter);
 
     const countries = useMemo(
         () => getFullList().map(({ value, label: text, disabled }) => ({ value, text, disabled })),
