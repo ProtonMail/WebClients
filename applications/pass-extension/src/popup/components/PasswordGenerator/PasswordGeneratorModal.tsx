@@ -20,10 +20,8 @@ export const PasswordGeneratorModal: VFC<Props> = ({ onSubmit, actionLabel, ...p
     const handleActionClick = useCallback(() => onSubmit?.(passwordGenerator.password), [passwordGenerator, onSubmit]);
 
     useEffect(() => {
-        if (props.open) {
-            /* regenerate on each modal opening */
-            passwordGenerator.regeneratePassword();
-        }
+        /* regenerate on each modal opening */
+        if (props.open) passwordGenerator.regeneratePassword();
     }, [props.open]);
 
     return (
