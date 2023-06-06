@@ -19,9 +19,6 @@
       "${ BRAND_NAME } shop": [
         "Magazin ${ BRAND_NAME }"
       ],
-      "Activate": [
-        "Activare"
-      ],
       "Activate recovery": [
         "Activare recuperare"
       ],
@@ -334,6 +331,9 @@
       ],
       "Download ${ attachmentName }": [
         "Descărcare atașament ${ attachmentName }"
+      ],
+      "Downloading": [
+        "Se descarcă"
       ],
       "Edit": [
         "Editare"
@@ -1017,6 +1017,9 @@
       ],
       "This message contains remote content.": [
         "Acest mesaj conține conținut de la distanță."
+      ],
+      "To search your emails securely, we need to download a copy of your messages to your browser. The initial download may take a moment.": [
+        "Pentru a căuta în siguranță în mesaje, trebuie să se descarce o copie a acestora în navigator. Descărcarea inițială poate dura un ceva timp."
       ],
       "Toggle Calendar app": [
         "Comutare la aplicație Calendar"
@@ -4959,8 +4962,8 @@
       "Don't forget to share the password with the recipient": [
         "Nu uitați să partajați parola cu destinatarul."
       ],
-      "Downloading message ${ currentProgress } out of ${ totalProgress }": [
-        "Se descarcă mesajul ${ currentProgress } din ${ totalProgress }."
+      "Downloading paused": [
+        "Descărcare suspendată"
       ],
       "Draft": [
         "Ciornă"
@@ -5161,9 +5164,6 @@
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Se importă datele de la ${ importedEmailAddress } la ${ toEmail }."
       ],
-      "Indexing paused": [
-        "Indexare întreruptă"
-      ],
       "Inherited from parent folder": [
         "Moştenit de la folderul părinte"
       ],
@@ -5235,6 +5235,11 @@
       ],
       "Merged": [
         "Îmbinat"
+      ],
+      "Message downloaded: ${ currentProgress } out of ${ totalProgress }": [
+        "Mesaje descărcate: ${ currentProgress } din ${ totalProgress }",
+        "Mesaje descărcate: ${ currentProgress } din ${ totalProgress }",
+        "Mesaje descărcate: ${ currentProgress } din ${ totalProgress }"
       ],
       "Message expiration works out-of-the-box when sending emails to other ${ MAIL_APP_NAME } users. To send expiring emails to non-${ BRAND_NAME } users, please cancel and add password protection to your email.": [
         "Expirarea mesajelor funcționează implicit atunci când trimiteți e-mailuri către alți utilizatori ${ MAIL_APP_NAME }. Pentru a trimite e-mailuri care expiră către alți utilizatori decât ai ${ BRAND_NAME }, anulați și adăugați protecția cu parolă la e-mail."
@@ -5448,6 +5453,9 @@
       "Scheduling message...": [
         "Se programează mesajul..."
       ],
+      "Search option that lets you securely search for keywords in the body of email messages.": [
+        "Opțiune de căutare care vă permite căutarea în siguranță pentru cuvinte cheie în conținutul mesajelor."
+      ],
       "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
         "Căutarea durează prea mult? ${ dropdownButton } sau ${ toggleOffButton } din această sesiune de căutare."
       ],
@@ -5579,12 +5587,6 @@
       "This account has been suspended due to a potential policy violation.": [
         "Acest cont a fost suspendat din cauza unei posibile încălcări a politicii."
       ],
-      "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        "Această acțiune va descărca toate mesajele pentru a putea fi interogate local. Ștergerea datelor din navigator va dezactiva această opțiune."
-      ],
-      "This action will download the most recent messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        "Această acțiune va descărca toate mesajele pentru a putea fi interogate local. Ștergerea datelor din navigator va dezactiva această opțiune."
-      ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Această adresă este dezactivată. Pentru a putea trimite la această adresă, proprietarul trebuie s-o activeze mai întâi."
       ],
@@ -5706,8 +5708,8 @@
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "Prea multe mesaje așteaptă să fie trimise. Așteptați până când un alt mesaj va fi trimis pentru a-l programa pe acesta."
       ],
-      "Turn off content search. Activation progress won't be lost.": [
-        "Dezactivați căutarea conținutului. Progresul de activare nu va fi pierdut."
+      "Turn off to only search by date, name, or email address. To disable search message content and delete downloaded messages, go to settings.": [
+        "Dezactivați pentru a căuta numai după dată, nume sau adresă de e-mail. Pentru a dezactiva căutarea în conținutul mesajelor și a șterge mesajele descărcate, accesați setările."
       ],
       "Turn on to search the content of your messages": [
         "Activare căutarea în conținutul mesajelor."
@@ -6020,10 +6022,10 @@
       ]
     },
     "Key pinning": {
-      "Clicking \"Trust Key\" will associate this public key with this sender\nand emails from this address will be automatically cryptographically verified.": [
+      "Clicking \"Trust Key\" will associate this public key with this sender and emails from this address will be automatically cryptographically verified.": [
         "Apăsând pe «Cheie de încredere» această cheie publică va fi asociată acestui expeditor, iar mesajele de la această adresă vor fi verificate criptografic automat."
       ],
-      "Clicking \"Trust Key\" will create a new contact and associate this public key with\nthis sender. Emails from this address will be automatically cryptographically verified.": [
+      "Clicking \"Trust Key\" will create a new contact and associate this public key with this sender. Emails from this address will be automatically cryptographically verified.": [
         "Apăsând pe «Cheie de încredere» se va crea un contact nou și se va asocia această cheie publică acestui expeditor. Mesajele de la această adresă vor fi verificate criptografic automat."
       ],
       "Do you want to trust the primary public key with the following fingerprint?": [
@@ -7515,6 +7517,9 @@
       "Please insert link first": [
         "Introduceți mai întâi legătura"
       ],
+      "Search date, name, email address, or subject line": [
+        "Căutare dată, nume, adresă de e-mail sau subiect"
+      ],
       "Search for group name": [
         "Căutare nume grup"
       ],
@@ -8096,20 +8101,20 @@
       "Invite friends to ${ BRAND_NAME }": [
         "Invitați persoane la ${ BRAND_NAME }"
       ],
-      "Message Content Search": [
-        "Căutare în conținut mesaj"
-      ],
       "Schedule send": [
         "Trimitere programată"
+      ],
+      "Search just got smarter and faster": [
+        "Căutarea a devenit mai rapidă și mai inteligentă"
+      ],
+      "Try it today.": [
+        "Încercați acum."
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "Imaginile sunt încărcate implicit și expeditorii sunt blocați să vă urmărească. Aceasta se poate modifica în ${ settingsLink }."
       ],
       "You can now schedule your messages to be sent later": [
         "Acum puteți să vă programați mesajele pentru a fi trimise mai târziu."
-      ],
-      "You can now search the content of your encrypted emails.": [
-        "Acum puteți căuta în conținutul e-mailurilor criptate."
       ]
     },
     "Status": {
@@ -8337,8 +8342,8 @@
       "Message added to ${ labelName }.": [
         "Mesaj adăugat la ${ labelName }."
       ],
-      "Message content search activated": [
-        "Căutarea în conținutul mesajelor este activată"
+      "Message content search enabled": [
+        "Căutare conținut mesaje activat"
       ],
       "Message deleted": [
         "Mesaj șters"

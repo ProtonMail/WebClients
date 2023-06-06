@@ -3249,8 +3249,8 @@
       "Attention required": [
         "Necesită atenție"
       ],
-      "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
-        "Deoarece ${ DRIVE_APP_NAME } este criptat de la un capăt la altul, nu vă putem accesa\nsau decripta fișierele. Pentru a vă debloca unitatea după o resetare a parolei,\ntrebuie să aveți una dintre următoarele:"
+      "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access or decrypt your files for you. To unlock your drive after a password reset, you must have one of the following:": [
+        "Deoarece ${ DRIVE_APP_NAME } este criptat de la un capăt la altul, nu se pot accesa sau decripta fișierele. Pentru a vă debloca unitatea după o resetare a parolei, trebuie să aveți una dintre următoarele:"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Înainte de a solicita un cod nou de verificare, verificați-vă folderul de mesaje nedorite și verificați dacă ${ strong } este adresa corectă."
@@ -3447,6 +3447,12 @@
       "Failed": [
         "Eșuat"
       ],
+      "Failed to generate a secure link. The reason is: ${ error }": [
+        "Generarea unei legături securizate a eșuat. Motivul este: ${ error }"
+      ],
+      "Failed to generate a secure link. Try again later": [
+        "Generarea legăturii securizate a eșuat. Reîncercați mai târziu"
+      ],
       "Failed to open a secure link. The reason is: ${ error }": [
         "A eșuat deschiderea unei legături securizate. Motivul este: ${ error }"
       ],
@@ -3525,8 +3531,8 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Dacă nu vedeți mesajul verificați în folderul de mesaje nedorite."
       ],
-      "If you have one of these, continue to ${ BRAND_NAME } Account setting to\nstart the unblock process.": [
-        "Dacă aveți una dintre acestea, accesați setările contului ${ BRAND_NAME } pentru a\nîncepe procesul de deblocare."
+      "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process.": [
+        "Dacă aveți una dintre acestea, accesați setările contului ${ BRAND_NAME } pentru a începe procesul de deblocare."
       ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Importare ${ calendarCount } din ${ totalCalendarsCount } calendar",
@@ -3932,7 +3938,7 @@
       "This will overwrite the existing folder": [
         "Aceasta va suprascrie folderul existent."
       ],
-      "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on\nthe device won’t be affected.": [
+      "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on the device won’t be affected.": [
         "Acest lucru va elimina din ${ DRIVE_APP_NAME } dispozitivul sincronizat ${ deviceName }. Fișierele locale de pe dispozitiv nu vor fi afectate."
       ],
       "This will replace the existing file with the folder": [
@@ -4660,8 +4666,8 @@
       "Wonderful": [
         "Minunată"
       ],
-      "Yes, I want to permanently delete\nmy old files": [
-        "Da, vreau să șterg definitiv\nfișierele mele vechi."
+      "Yes, I want to permanently delete my old files": [
+        "Da, vreau să șterg definitiv fișierele mele vechi."
       ],
       "Your password (admin)": [
         "Parola dvs. (administrator)"

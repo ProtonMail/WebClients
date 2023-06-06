@@ -11,9 +11,6 @@
       "${ BRAND_NAME } shop": [
         "Loja ${ BRAND_NAME }"
       ],
-      "Activate": [
-        "Ativar"
-      ],
       "Activate recovery": [
         "Ativar recuperação"
       ],
@@ -3009,6 +3006,9 @@
       "Please repeat the password": [
         "Por favor repita a password"
       ],
+      "Please set a password": [
+        "Por favor, defina uma palavra-passe"
+      ],
       "Primary address key is not decrypted": [
         "A chave de endereço principal não está desencriptada."
       ],
@@ -3067,6 +3067,9 @@
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Ocorreu um problema. ${ refresh } para continuar. Se ainda vir esta mensagem de erro, contacte a nossa ${ supportTeam }."
       ],
+      "Sorry, ${ BRAND_NAME } can't decrypt your message. Please check that all your keys are active.": [
+        "Lamentamos, mas ${ BRAND_NAME } não consegue desencriptar a sua mensagem. Verifique se todas as suas chaves estão ativas."
+      ],
       "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
         "O anexo não pôde ser desencriptado.\nSe tiver a chave privada correspondente, ainda será capaz de o desencriptar com um programa como o GnuPG.",
         "Alguns dos anexos não puderam ser desencriptados.\nSe tiver a chave privada correspondente, ainda será capaz de os desencriptar com um programa como o GnuPG."
@@ -3097,6 +3100,9 @@
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Há pastas demais na sua conta externa. Personalize a importação para excluir algumas pastas."
+      ],
+      "There was a problem updating your local messages, they will be downloaded again to re-enable content search": [
+        "Ocorreu um problema ao atualizar as suas mensagens locais, que serão novamente descarregadas para voltar a permitir a pesquisa de conteúdos"
       ],
       "There was an error when exporting the contacts vCards": [
         "Ocorreu um erro ao exportar os vCards dos contactos"
@@ -4175,6 +4181,9 @@
       "Contact assigned to group ${ contactGroupName }": [
         "Contacto atribuído ao grupo ${ contactGroupName }"
       ],
+      "Contact unassigned to group ${ contactGroupName }": [
+        "Contacto não atribuído ao grupo ${ contactGroupName }"
+      ],
       "Copied to clipboard": [
         "Copiado para a área de transferencia"
       ],
@@ -4237,8 +4246,8 @@
       "Don't forget to share the password with the recipient": [
         "Não se esqueçe de partilhar a palavra-passe com o destinatário."
       ],
-      "Downloading message ${ currentProgress } out of ${ totalProgress }": [
-        "A descarregar a mensagem ${ currentProgress } de ${ totalProgress }"
+      "Downloading paused": [
+        "Descarregamento em pausa"
       ],
       "Draft": [
         "Rascunho"
@@ -4427,9 +4436,6 @@
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Importando os seus dados de ${ importedEmailAddress } para ${ toEmail }."
-      ],
-      "Indexing paused": [
-        "Indexação em pausa"
       ],
       "Inherited from parent folder": [
         "Herança da pasta principal"
@@ -4711,6 +4717,9 @@
       "Scheduling message...": [
         "Agendando mensagem..."
       ],
+      "Search option that lets you securely search for keywords in the body of email messages.": [
+        "Opção de pesquisa que lhe permite procurar com segurança palavras-chave no corpo das mensagens de email."
+      ],
       "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
         "A pesquisa está a demorar muito? ${ dropdownButton } ou ${ toggleOffButton } desta sessão de pesquisa."
       ],
@@ -4835,12 +4844,6 @@
       "This account has been suspended due to a potential policy violation.": [
         "Esta conta foi suspensa devido a uma potencial violação da política."
       ],
-      "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        "Esta acção transfere todas as mensagens para que possam ser procuradas localmente. Limpar os dados do navegador desativa esta opção."
-      ],
-      "This action will download the most recent messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        "Esta ação fará o download das mensagens mais recentes para que possam ser pesquisadas localmente. Limpar os dados do navegador desativará esta opção."
-      ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Este endereço está desativado. Para poder enviar para este endereço, o proprietário tem de ativar primeiro o endereço."
       ],
@@ -4960,8 +4963,8 @@
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "Há muitas mensagens em espera para serem enviadas. Aguarde que seja enviada outra mensagem para agendar uma nova."
       ],
-      "Turn off content search. Activation progress won't be lost.": [
-        "Desativar a pesquisa de conteúdo. O progresso de ativação não será perdido."
+      "Turn off to only search by date, name, or email address. To disable search message content and delete downloaded messages, go to settings.": [
+        "Desligue para pesquisar apenas por data, nome ou endereço de email. Para desativar o conteúdo das mensagens de pesquisa e eliminar as mensagens descarregadas, vá às definições."
       ],
       "Turn on to search the content of your messages": [
         "Ative para pesquisar o conteúdo das suas mensagens"
@@ -5175,6 +5178,12 @@
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "Escreveu \"${ attachmentsFoundKeyword }\", mas não adicionou nenhum anexo. Ainda quer enviar esta mensagem?"
       ],
+      "You've reached the maximum number of addresses in the contact group(s):": [
+        "Atingiu o número máximo de endereços no(s) grupo(s) de contactos:"
+      ],
+      "You've reached the maximum number of addresses in the contact group.": [
+        "Atingiu o número máximo de endereços no grupo de contactos."
+      ],
       "Your ${ BRAND_NAME } Account includes SimpleLogin. Install the browser extension with one click to get started.": [
         "A sua conta ${ BRAND_NAME } inclui SimpleLogin. Instale a extensão do navegador com um clique para começar."
       ],
@@ -5256,12 +5265,6 @@
       ]
     },
     "Key pinning": {
-      "Clicking \"Trust Key\" will associate this public key with this sender\nand emails from this address will be automatically cryptographically verified.": [
-        "Clicar em \"Confiar na chave\" associará essa chave pública a este remetente e os correios electrónicos deste endereço serão automaticamente verificados com encriptação."
-      ],
-      "Clicking \"Trust Key\" will create a new contact and associate this public key with\nthis sender. Emails from this address will be automatically cryptographically verified.": [
-        "Clicar em \"Confiar na chave\" associará essa chave pública a este remetente e os correios electrónicos deste endereço serão automaticamente verificados com encriptação."
-      ],
       "Do you want to trust the primary public key with the following fingerprint?": [
         "Deseja confiar na chave pública primária com a seguinte impressão digital?",
         "Deseja confiar nas chaves públicas primárias com as seguintes impressões digitais?"
@@ -7159,9 +7162,6 @@
       ],
       "Message added to ${ labelName }.": [
         "Mensagem adicionada a ${ labelName }."
-      ],
-      "Message content search activated": [
-        "Procura de conteúdo da mensagem ativada"
       ],
       "Message deleted": [
         "Mensagem eliminada"

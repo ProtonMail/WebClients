@@ -1068,6 +1068,9 @@
       "No E2EE": [
         "Žádné E2EE"
       ],
+      "No signing": [
+        "Žádné podepisování"
+      ],
       "Orphan": [
         "Sirotek"
       ]
@@ -5004,6 +5007,9 @@
       "${ PROTON_SENTINEL_NAME } is an account protection program developed at ${ BRAND_NAME } for users who need maximum security.": [
         "${ PROTON_SENTINEL_NAME } je program na ochranu účtu vyvinutý v ${ BRAND_NAME } pro uživatele, kteří vyžadují maximální zabezpečení."
       ],
+      "${ PROTON_SENTINEL_NAME } is powered by sophisticated AI systems and teams of specialists working 24/7 to mitigate bad actors and security threats.": [
+        "${ PROTON_SENTINEL_NAME } je podporován pokročilými systémy umělé inteligence a týmy specialistů, které nepřetržitě pracují na zmírnění útoků a bezpečnostních hrozeb."
+      ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } složka nalezena",
         "${ providerFoldersNumLocalized } složky nalezeny",
@@ -6435,6 +6441,9 @@
       "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
         "Tento průvodce zapne dvoufázové ověřování (2FA) na vašem ${ BRAND_NAME } účtu. Doporučujeme 2FA zapnout, zajistí vám bezpečnější ${ BRAND_NAME_TWO } účet."
       ],
+      "To ${ planName }": [
+        "Na ${ planName }"
+      ],
       "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
         "Abyste předešli ztrátě dat, klíč smažte pouze v případě, že víte, co děláte, nebo pokud máte klíč zálohovaný."
       ],
@@ -6453,8 +6462,8 @@
       "To ensure continuous access to your account, set an account recovery method": [
         "Chcete-li zajistit nepřetržitý přístup ke svému účtu, nastavte metodu obnovení účtu"
       ],
-      "To ensure you don’t lose important data, ${ DRIVE_APP_NAME } saves older versions of your files as you\nand your collaborators make changes. Select how long ${ BRAND_NAME } should keep previous versions.": [
-        "Abyste nepřišli o důležitá data, ${ DRIVE_APP_NAME } ukládá starší verze vašich souborů, v době kdy je vy \na vaši spolupracovníci měníte.Vyberte, jak dlouho má ${ BRAND_NAME } uchovávat předchozí verze. "
+      "To ensure you don’t lose important data, ${ DRIVE_APP_NAME } saves older versions of your files as you and your collaborators make changes. Select how long ${ BRAND_NAME } should keep previous versions.": [
+        "Abyste nepřišli o důležitá data, ${ DRIVE_APP_NAME } ukládá starší verze vašich souborů v době, kdy je vy a vaši spolupracovníci měníte.Vyberte, jak dlouho má ${ BRAND_NAME } uchovávat předchozí verze."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Abyste zamezili spamu a obtěžování, potvrďte, že jste člověk."
@@ -6550,7 +6559,7 @@
         "Navyšte tarif nyní a získejte tím prémiové funkce, produkty a úložiště za speciální cenu"
       ],
       "Upgrade to a paid account to enable ${ PROTON_SENTINEL_NAME }.": [
-        "Přejděte na placený účet a povolte ${ PROTON_SENTINEL_NAME }."
+        "Přejděte na placený účet pro povolení ${ PROTON_SENTINEL_NAME }."
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Navyšte tarif pro získání kratší adresy @pm.me, kterou lze snáze sdílet. To znamená \"${ MAIL_APP_NAME } me\" nebo \"Private Message me\"."
@@ -6838,7 +6847,7 @@
         "Přednostní podporu vám poskytnou specialisté vyškolení v oblasti ochrany účtů. V případě jakýchkoli obav o zabezpečení účtu nás prosím kontaktujte zde ${ hereLink }."
       ],
       "You will see more details in the Security logs below for important events such as sign in attempts.": [
-        "Podrobnější informace o důležitých událostech, např. o pokusech o přihlášení, najdete v níže uvedených záznamech zabezpečení."
+        "Podrobnější informace o důležitých událostech, např. o pokusech o přihlášení, najdete v níže uvedených bezpečnostních protokolech."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Za účelem ověření platby budete přesměrováni na PayPal."
@@ -8909,12 +8918,6 @@
         "${ n } složek a štítků",
         "${ n } složek a štítků"
       ],
-      "${ n } forwarding mailbox": [
-        "${ n } přeposílání poštovní schránky",
-        "${ n } přeposílání poštovních schránek",
-        "${ n } přeposílání poštovních schránek",
-        "${ n } přeposílání poštovních schránek"
-      ],
       "${ n } Hide My Email alias": [
         "Skrýt ${ n } alias mého e-mailu",
         "Skrýt ${ n } aliasy mého e-mailu",
@@ -9004,6 +9007,9 @@
       ],
       "Custom email domains": [
         "Vlastní e-mailové domény"
+      ],
+      "Custom fields": [
+        "Vlastní pole"
       ],
       "Data breach monitoring": [
         "Monitorování narušení bezpečnosti dat"
@@ -9187,9 +9193,6 @@
       ],
       "Up to 3 TB of storage": [
         "Až 3 TB úložného prostoru"
-      ],
-      "Up to 5 forwarding mailboxes": [
-        "Až 5 přeposílání e-mailových schránek"
       ],
       "User credential management": [
         "Správa uživatelů"
@@ -9660,7 +9663,7 @@
     },
     "Notification in holidays calendar modal": {
       "Adding holidays calendar failed": [
-        "Přidání kalendáře svátků se nezdařilo"
+        "Přidání kalendáře svátků selhalo"
       ],
       "Calendar added": [
         "Kalendář přidán"

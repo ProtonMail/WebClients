@@ -53,7 +53,7 @@
         "Застосувати"
       ],
       "At most 100 contacts are allowed per contact group": [
-        "В групу контактів може ввійти до 100 контактів"
+        "До групи контактів можна додати не більш ніж 100 контактів"
       ],
       "Attach screenshot(s)": [
         "Додати знімки екрана"
@@ -1826,7 +1826,7 @@
         "Логотип ProtonMail та знак плюс"
       ],
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
-        "Заощаджуй час розсилаючи листи або запрошення одразу всім відправникам - одна з численних преміум функцій. Оновлюй до версії з передплатою."
+        "Заощаджуйте час, надсилаючи листи або запрошення одразу всім адресатам – одна з багатьох преміумфункцій, доступних у передплачених тарифних планах."
       ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "Файл повинен мати максимальний розмір ${ MAX_IMPORT_FILE_SIZE_STRING } та містити ${ MAX_IMPORT_CONTACTS_STRING } контакт. Якщо ваш файл більший, розділіть його на менші файли.",
@@ -1948,7 +1948,7 @@
         "Досягнуто ліміту календарів"
       ],
       "Cannot export this contact": [
-        "Експортування цього контакту неможливе"
+        "Неможливо експортувати цей контакт"
       ],
       "Contact could not be saved": [
         "Не вдалося зберегти контакт"
@@ -2420,7 +2420,7 @@
         "Виникла проблема"
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
-        "Нам не вдалось завантажити цю сторінку. Будь ласка, перезавантажте сторінку або перевірте інтернет з'єднання."
+        "Не вдалося завантажити цю сторінку. Перезавантажте сторінку або перевірте з'єднання з інтернетом."
       ],
       "You may also refresh the page or try again later.": [
         "Ви також можете оновити сторінку або спробувати знову пізніше."
@@ -2541,13 +2541,13 @@
         "Групи ${ BRAND_NAME }"
       ],
       "Accounts with custom domains cannot join a Visionary or family plan.": [
-        "Облікові записи з власними доменами не можуть приєднатися до Visionary або сімейного плану."
+        "Облікові записи з власними доменами не можна приєднати до Visionary або сімейного плану."
       ],
       "customer support": [
         "клієнтська підтримка"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
-        "Якщо ви приймете запрошення, ми перемкнемо вас з поточного плану та зарахуємо залишок на ваш рахунок."
+        "Якщо ви приймете запрошення, ми змінимо ваш поточний тарифний план і зарахуємо невикористану частину коштів на ваш обліковий запис."
       ],
       "Invited by: ${ inviteEmail }": [
         "Запрошення від: ${ inviteEmail }"
@@ -2556,16 +2556,16 @@
         "Керувати адресами."
       ],
       "Owners of a plan with members cannot join another group plan.": [
-        "Власники групових тарифних планів з учасниками не можуть приєднатися до інших групових тарифних планів."
+        "Власники тарифних планів з учасниками не можуть приєднуватися до інших групових тарифних планів."
       ],
       "Sorry, you can't switch plans at this time.": [
-        "Перепрошую, наразі неможливо змінити план."
+        "На жаль, зараз вам не дозволено змінити план."
       ],
       "Storage assigned to you: ${ assignedStorage }": [
-        "Виділене вам сховище: ${ assignedStorage }"
+        "Призначений вам обсяг сховища: ${ assignedStorage }"
       ],
       "The subscription is billed to the Visionary or family plan's primary admin.": [
-        "Рахунок за підписку виставляється основному адміністратору Visionary або сімейного плану."
+        "Рахунок за передплату виставляється основному адміністратору Visionary або сімейного плану."
       ],
       "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
         "Visionary і сімейні плани наразі не підтримують зовнішні облікові записи. Перш ніж приєднатися, створіть адресу ${ BRAND_NAME }. ${ addressSettingsLink }"
@@ -2577,22 +2577,22 @@
         "Вас запрошено приєднатися до ${ invite.OrganizationName }"
       ],
       "You can only accept 3 invitations in a 6-month period. Please contact ${ supportLink } if you require an exception.": [
-        "Ви можете прийняти лише 3 запрошення протягом 6 місяців. Якщо вам потрібен виняток, зв'яжіться з ${ supportLink }."
+        "Ви можете прийняти лише 3 запрошення протягом 6 місяців. Якщо вам потрібно більше, зверніться до ${ supportLink }."
       ],
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
-        "Вас запросили приєднатися до Організації \"${ bannerOrganization }\". ${ viewInviteButton }."
+        "Вас запросили приєднатися до ${ bannerOrganization }. ${ viewInviteButton }"
       ],
       "You have successfully joined the Family plan": [
         "Ви успішно приєдналися до Сімейного плану"
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
-        "Вас запрошують пов’язати обліковий запис ${ BRAND_NAME } із цим груповим планом і разом користуватися всіма функціями преміуму ${ BRAND_NAME_TWO }"
+        "Вас запрошено пов'язати обліковий запис ${ BRAND_NAME } із цим груповим планом і разом користуватися всіма преміумфункціями ${ BRAND_NAME_TWO }"
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Ваш обліковий запис має більше адрес електронної пошти, ніж доступно в цьому плані. ${ addressSettingsLink }"
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
-        "Ваш обліковий запис використовує ${ usedSpace } пам'яті, що перевищує ${ inviteSpace }, який вам виділили. Видаліть деякі дані або попросіть адміністратора плану збільшити обсяг пам'яті."
+        "Ваш обліковий запис використовує ${ usedSpace } обсягу сховища, що перевищує призначений вам обсяг ${ inviteSpace }. Видаліть деякі дані або попросіть адміністратора плану збільшити обсяг вашого сховища."
       ],
       "Your current plan cannot join a Visionary or family plan.": [
         "Ваш поточний план не може приєднатися до Visionary або сімейного плану."
@@ -2600,7 +2600,7 @@
     },
     "familyOffer_2023:Footer": {
       "*Your subscription will automatically renew at the same rate at the end of your billing cycle.": [
-        "*Ваша підписка буде автоматично продовжена за тією ж ціною в кінці платіжного циклу."
+        "*Ваша передплата автоматично поновиться за тією ж ціною в кінці платіжного періоду."
       ],
       "Discounts are based on the standard monthly pricing.": [
         "Знижки відносно стандартної місячної ціни."
@@ -2613,15 +2613,15 @@
     },
     "familyOffer_2023:Info": {
       "Online privacy, for your whole family": [
-        "Онлайн конфіденційність для всієї родини"
+        "Приватність в інтернеті для всієї родини"
       ]
     },
     "familyOffer_2023:Onboarding Proton": {
       "Configure your family account and invite users ": [
-        "Налаштуйте сімейний обліковий запис та запросіть користувачів "
+        "Налаштуйте сімейний обліковий запис і запросіть користувачів "
       ],
       "Set up your family": [
-        "Налаштувати сімейний обліковий запис"
+        "Налаштуйте сімейний обліковий запис"
       ],
       "Set up your family account": [
         "Налаштувати родинний обліковий запис"
@@ -2634,13 +2634,13 @@
     },
     "familyOffer_2023:Tooltip": {
       "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
-        "Включає 2700 серверів у 65+ країнах, підключення до 10 пристроїв, доступ до світових стримінгових сервісів, захист від шкідливих програм і реклами та багато іншого."
+        "Включає 2700 серверів у понад 65 країнах, підключення до 10 пристроїв, доступ до світових сервісів трансляції, захист від зловмисних програм і реклами, а також інші можливості."
       ],
       "Includes support for 3 custom email domains, 90 email addresses, unlimited Hide My Email aliases, calendar sharing and more.": [
-        "Включає підтримку 3 власних доменів, 90 адрес пошти, необмежену кількість псевдонімів для Hide My Email, спільний доступ до календаря та багато іншого."
+        "Включає підтримку 3 власних доменів, 90 адрес електронної пошти, необмежену кількість псевдонімів Hide My Email, спільний доступ до календаря та інші можливості."
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
-        "Захистіть свої файли в зашифрованому хмарному сховищі. Включає автоматичну синхронізацію, спільний доступ до зашифрованих файлів тощо."
+        "Безпечно зберігайте свої файли у зашифрованому хмарному сховищі з автоматичною синхронізацією, зашифрованим спільним доступом та іншими можливостями."
       ]
     },
     "Feedback Modal Title": {
@@ -3301,8 +3301,8 @@
       "Attention required": [
         "Потребує уваги"
       ],
-      "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
-        "Оскільки ${ DRIVE_APP_NAME } наскрізно зашифровано, ми не можемо отримати доступ\nчи розшифрувати ваші файли. Щоб розблокувати сховище після скидання пароля,\nвам необхідно мати будь-що з вказаного:"
+      "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access or decrypt your files for you. To unlock your drive after a password reset, you must have one of the following:": [
+        "Оскільки ${ DRIVE_APP_NAME } наскрізь зашифровано, ми не можемо отримати доступ до ваших файлів або розшифрувати їх для вас. Щоб розблокувати ваш накопичувач після зміни пароля, вам потрібно мати одну з наведених нижче речей:"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Перш ніж запитувати новий код підтвердження, перевірте теку зі спамом та перевірте, чи правильно вказано адресу ${ strong }."
@@ -3356,7 +3356,7 @@
         "Контакт призначено групі ${ contactGroupName }"
       ],
       "Contact unassigned to group ${ contactGroupName }": [
-        "Контакт видалено з групи ${ contactGroupName }"
+        "Контакт вилучено з групи ${ contactGroupName }"
       ],
       "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
         "Продовжити користуватися ${ DRIVE_APP_NAME } та розблокувати сховище згодом"
@@ -3502,6 +3502,12 @@
       "Failed": [
         "Не вдалося"
       ],
+      "Failed to generate a secure link. The reason is: ${ error }": [
+        "Не вдалося згенерувати безпечне посилання. Причина: ${ error }"
+      ],
+      "Failed to generate a secure link. Try again later": [
+        "Не вдалося згенерувати безпечне посилання. Спробуйте пізніше"
+      ],
       "Failed to open a secure link. The reason is: ${ error }": [
         "Не вдалося відкрити захищене посилання. Причина: ${ error }"
       ],
@@ -3580,8 +3586,8 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Якщо ви не можете знайти лист у вхідних повідомленнях, перевірте свою теку спаму."
       ],
-      "If you have one of these, continue to ${ BRAND_NAME } Account setting to\nstart the unblock process.": [
-        "Якщо у вас є будь-що з вказаного, перейдіть до налаштувань облікового запису ${ BRAND_NAME },\nщоб розпочати процес розблокування."
+      "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process.": [
+        "Якщо у вас є одна з цих помилок, продовжуйте налаштування облікового запису ${ BRAND_NAME }, щоб почати процес розблокування."
       ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Імпорт ${ calendarCount } з ${ totalCalendarsCount } календаря",
@@ -3991,8 +3997,8 @@
       "This will overwrite the existing folder": [
         "Це перезапише наявну теку"
       ],
-      "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on\nthe device won’t be affected.": [
-        "Ця дія вилучить з ${ DRIVE_APP_NAME } синхронізований пристрій ${ deviceName }. Ці зміни не вплинуть на локальні файли пристрою."
+      "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on the device won’t be affected.": [
+        "Це призведе до видалення з ${ DRIVE_APP_NAME } синхронізованого пристрою ${ deviceName }. Локальні файли на пристрої не буде змінено."
       ],
       "This will replace the existing file with the folder": [
         "Це призведе до заміни наявного файлу текою"
@@ -4166,7 +4172,7 @@
         "Ви втратите всі незбережені зміни."
       ],
       "You've reached the maximum number of addresses in the contact group(s):": [
-        "Ви досягли максимальної кількості адрес у групі(ах) контактів:"
+        "Ви досягли максимальної кількості адрес у групах контактів:"
       ],
       "You've reached the maximum number of addresses in the contact group.": [
         "Ви досягли максимальної кількості адрес у групі контактів."
@@ -4722,8 +4728,8 @@
       "Wonderful": [
         "Дивовижно"
       ],
-      "Yes, I want to permanently delete\nmy old files": [
-        "Так, я хочу остаточно видалити\nмої старі файли"
+      "Yes, I want to permanently delete my old files": [
+        "Так, я хочу назавжди видалити свої старі файли"
       ],
       "Your password (admin)": [
         "Новий пароль (адмін)"
@@ -4939,7 +4945,7 @@
     },
     "new_plans: feature info": {
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
-        "Створіть кілька адрес електронної пошти для ваших онлайн-профілів, наприклад, ArtemShopper@ ${ domain } для торгових облікових записів, ArtemNews@ ${ domain2 } для підписки на новини"
+        "Створіть різні адреси електронної пошти для ваших онлайн-профілів, наприклад, ArtemShopper@${ domain } для інтернет-магазинів, ArtemNews@${ domain2 } для підписки на новини"
       ],
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "Отримайте необмежену кількість псевдонімів із SimpleLogin від ${ BRAND_NAME }"
@@ -5509,7 +5515,7 @@
       ],
       "${ seconds } second": [
         "${ seconds } секунда",
-        "${ seconds } секунд",
+        "${ seconds } секунди",
         "${ seconds } секунд",
         "${ seconds } секунд"
       ]
@@ -5518,8 +5524,8 @@
       "${ n } month FREE": [
         "${ n } місяць БЕЗПЛАТНО",
         "${ n } місяці БЕЗПЛАТНО",
-        "${ n } місяці БЕЗПЛАТНО",
-        "${ n } місяці БЕЗПЛАТНО"
+        "${ n } місяців БЕЗПЛАТНО",
+        "${ n } місяців БЕЗПЛАТНО"
       ]
     },
     "specialoffer: Deal details": {
@@ -5675,39 +5681,39 @@
         "Передноворічний розпродаж"
       ],
       "Get our premium bundle and save more": [
-        "Заощаджуй більше, придбавши наш Premium Bundle"
+        "Заощадьте ще більше, отримавши наш набір преміум"
       ],
       "Our discontinued Visionary plan is back for a limited time only": [
-        "Наш припинений план Visionary повертається лише на обмежений час"
+        "Наш припинений тарифний план Visionary знову доступний протягом обмеженого часу"
       ],
       "Save more with 2 years of ${ planName }": [
-        "Заощаджуйте більше з 2 річним планом ${ planName }"
+        "Заощадьте ще більше, передплативши ${ planName } на 2 роки"
       ],
       "Upgrade and save more with 2 years of ${ planName }": [
-        "Оновіть та заощаджуйте більше з 2 річним планом ${ planName }"
+        "Заощадьте ще більше, передплативши тарифний план ${ planName } на 2 роки"
       ]
     },
     "specialoffer: Tooltip": {
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.": [
-        "Доступ до заблокованого контенту та приватний перегляд. Включає 1700 серверів у 60+ країнах, найвищу швидкість VPN, 10 VPN-з'єднань на користувача, всесвітні стримінгові сервіси, захист від шкідливих програм і реклами та багато іншого."
+        "Доступ до заблокованого вмісту та приватний перегляд. Включає 1700 серверів у понад 60 країнах, найвищу швидкість VPN, 10 VPN-з'єднань на користувача, всесвітні сервіси трансляції, захист від зловмисних програм і реклами, а також інші можливості."
       ],
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
-        "Доступ до заблокованого контенту та приватний перегляд. Включає 1700 серверів у 60+ країнах, найвищу швидкість VPN, 10 VPN-з'єднань, всесвітні стримінгові сервіси, захист від шкідливих програм, реклами та багато іншого."
+        "Доступ до заблокованого вмісту та приватний перегляд. Включає 1700 серверів у понад 60 країнах, найвищу швидкість VPN, 10 VPN-з'єднань, всесвітні сервіси трансляції, захист від зловмисних програм і реклами, а також інші можливості."
       ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
         "Доступ звідусіль до матеріалів сервісів трансляції, включно з Netflix, Disney+ і Prime Video."
       ],
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited Hide My Email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
-        "Всі наші преміум сервіси з найвищими лімітами: 100 адрес, підтримка 10 власних доменів, необмежена кількість псевдонімів Hide My Email, спільний доступ до календаря, зашифроване хмарне сховище, спільний доступ до файлів і багато іншого."
+        "Усі найкращі можливості наших преміумфункцій: 100 адрес е-пошти, підтримка 10 власних доменів, необмежена кількість псевдонімів Hide My Email, спільний доступ до календаря, зашифроване хмарне сховище, спільний доступ до файлів і багато іншого."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 Hide My Email aliases, calendar sharing, and more.": [
-        "Включає підтримку 1 власного домену, 10 адрес пошти, 10 псевдонімів Hide My Email, спільний доступ до календаря тощо."
+        "Включає підтримку 1 власного домену, 10 адрес електронної пошти, 10 псевдонімів Hide My Email, спільний доступ до календаря та інші можливості."
       ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited Hide My Email aliases, calendar sharing, and more.": [
-        "Включає підтримку 3 власних доменів, 15 адрес пошти, необмежену кількість псевдонімів Hide My Email, спільний доступ до календаря тощо."
+        "Включає підтримку 3 власних доменів, 15 адрес електронної пошти, необмежену кількість псевдонімів Hide My Email, спільний доступ до календаря та інші можливості."
       ],
       "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
-        "Ідеально підходить для сімей або невеликих команд, кожен може мати власну пошту та псевдоніми. Потрібен власний домен."
+        "Ідеально підходить для сім'ї або невеликої команди. Кожен учасник може мати власну поштову скриньку та псевдоніми. Потрібен власний домен."
       ],
       "Receive at no extra cost the paid versions of all new privacy services we release in the future, along with early access to all future features and products.": [
         "Отримуйте без додаткових витрат платні версії всіх нових служб приватності, які ми випускатимемо в майбутньому, а також ранній доступ до всіх майбутніх функцій і продуктів."
@@ -5919,9 +5925,9 @@
         "# завантажень"
       ],
       "${ emailsCount } email address": [
-        "${ emailsCount } адреса електронної пошти",
-        "${ emailsCount } адрес е-пошти",
+        "${ emailsCount } адреса е-пошти",
         "${ emailsCount } адреси е-пошти",
+        "${ emailsCount } адрес е-пошти",
         "${ emailsCount } адрес е-пошти"
       ],
       "${ numberOfFailedTransfer.total } failed download": [

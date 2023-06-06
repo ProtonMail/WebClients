@@ -1623,7 +1623,7 @@
         "Erreur : ${ errorMessage }"
       ],
       "Oops, something went wrong": [
-        "Désolé, quelque chose s'est mal passé."
+        "Une erreur s'est produite."
       ],
       "Please refresh the page or try again later.": [
         "Nous vous invitons à actualiser la page ou à réessayer plus tard."
@@ -2085,7 +2085,7 @@
         "${ vpnPlus } est nécessaire pour la fonctionnalité Secure Core."
       ],
       "* No credit card required.": [
-        "*Aucune carte de crédit n'est nécessaire"
+        "*Aucune carte bancaire n'est nécessaire"
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } d'espace de stockage supplémentaire"
@@ -2413,7 +2413,7 @@
         "MM/AA"
       ],
       "No credit card required": [
-        "Aucune carte de crédit nécessaire"
+        "Aucune carte bancaire nécessaire"
       ],
       "No payment is required at this time.": [
         "Aucun paiement n'est nécessaire pour le moment."
@@ -3534,10 +3534,6 @@
         "${ n } dossier et label",
         "${ n } dossiers et labels"
       ],
-      "${ n } forwarding mailbox": [
-        "${ n } messagerie de transfert",
-        "${ n } messageries de transfert"
-      ],
       "${ n } Hide My Email alias": [
         "${ n } alias « Hide My Email »",
         "${ n } alias « Hide My Email »"
@@ -3612,6 +3608,9 @@
       ],
       "Custom email domains": [
         "Domaines de messagerie personnalisés"
+      ],
+      "Custom fields": [
+        "Champs personnalisés"
       ],
       "Data breach monitoring": [
         "Surveillance des fuites de données"
@@ -3776,9 +3775,6 @@
       ],
       "Up to ${ totalStorageSize } storage": [
         "Jusqu'à ${ totalStorageSize } d'espace de stockage"
-      ],
-      "Up to 5 forwarding mailboxes": [
-        "Jusqu'à 5 messageries de transfert"
       ],
       "User credential management": [
         "Gestion des identifiants des utilisateurs"
