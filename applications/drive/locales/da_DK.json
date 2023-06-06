@@ -330,6 +330,9 @@
       "I have a question": [
         "Jeg har et spørgsmål"
       ],
+      "Image could not be loaded with tracker protection.": [
+        "Billede kunne ikke indlæses med tracker beskyttelse."
+      ],
       "Import": [
         "Importér"
       ],
@@ -3124,9 +3127,6 @@
       "Attention required": [
         "Opmærksomhed påkrævet"
       ],
-      "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
-        "Fordi ${ DRIVE_APP_NAME } er end-to-end krypteret, kan vi ikke få adgang til eller dekryptere dine filer for dig. For at låse dit drev op efter en nulstilling af adgangskode, skal du have en af følgende:"
-      ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Før du anmoder om en ny bekræftelseskode, bør du tjekke din spam-mappe samt kontrollere, at ${ strong } er den korrekte adresse."
       ],
@@ -3390,9 +3390,6 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Hvis du ikke kan se mailen i din indbakke, bedes du tjekke din spammappe."
-      ],
-      "If you have one of these, continue to ${ BRAND_NAME } Account setting to\nstart the unblock process.": [
-        "Hvis du har en af disse, skal du fortsætte til ${ BRAND_NAME }-kontoindstillingerne for at\nfortsætte processen med at fjerne spærringen."
       ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Importer ${ calendarCount } af ${ totalCalendarsCount } kalender",
@@ -3793,9 +3790,6 @@
       ],
       "This will overwrite the existing folder": [
         "Dette vil overskrive den eksisterende mappe"
-      ],
-      "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on\nthe device won’t be affected.": [
-        "Dette vil fjerne den synkroniserede enhed ${ deviceName } fra ${ DRIVE_APP_NAME }. Lokale filer på enheden vil ikke blive påvirket."
       ],
       "This will replace the existing file with the folder": [
         "Dette vil erstatte eksisterende fil med mappen"
@@ -4509,9 +4503,6 @@
       ],
       "Wonderful": [
         "Vidunderlig"
-      ],
-      "Yes, I want to permanently delete\nmy old files": [
-        "Ja, jeg ønsker at slette\nmine gamle filer permanent"
       ],
       "Your password (admin)": [
         "Din adgangskode (admin)"
@@ -6078,6 +6069,9 @@
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Systemundermapper vises som separate mapper i ${ MAIL_APP_NAME }"
+      ],
+      "The image could not be loaded": [
+        "Billedet kunne ikke indlæses"
       ],
       "The import will start with the most recent messages.": [
         "Importen vil starte med de seneste beskeder."

@@ -11,9 +11,6 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } κατάστημα"
       ],
-      "Activate": [
-        "Ενεργοποίηση"
-      ],
       "Activate recovery": [
         "Ενεργοποίηση ανάκτησης"
       ],
@@ -4503,9 +4500,6 @@
       "Don't forget to share the password with the recipient": [
         "Μην ξεχάσετε να κοινοποιήσετε τον κωδικό πρόσβασης στον παραλήπτη"
       ],
-      "Downloading message ${ currentProgress } out of ${ totalProgress }": [
-        "Λήψη μηνύματος ${ currentProgress } από ${ totalProgress }"
-      ],
       "Draft": [
         "Πρόχειρο"
       ],
@@ -4690,9 +4684,6 @@
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Γίνεται εισαγωγή δεδομένων από ${ importedEmailAddress } προς ${ toEmail }."
-      ],
-      "Indexing paused": [
-        "Η δημιουργία ευρετηρίου διακόπηκε προσωρινά"
       ],
       "Inherited from parent folder": [
         "Κληρονoμήθηκαν από το γονικό φάκελο"
@@ -5080,9 +5071,6 @@
       "This account has been suspended due to a potential policy violation.": [
         "Αυτός ο λογαριασμός έχει ανασταλεί λόγω ενδεχόμενης παραβίασης πολιτικής."
       ],
-      "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        "Αυτή η ενέργεια θα κάνει λήψη όλων των μηνυμάτων, ώστε να μπορείτε να κάνετε αναζήτηση τοπικά. Η εκκαθάριση των δεδομένων του προγράμματος περιήγησης θα απενεργοποιήσει αυτήν την επιλογή."
-      ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Αυτή η διεύθυνση είναι απενεργοποιημένη. Για να είναι δυνατή η αποστολή σε αυτήν τη διεύθυνση, ο κάτοχος πρέπει πρώτα να ενεργοποιήσει τη διεύθυνση."
       ],
@@ -5189,9 +5177,6 @@
       ],
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "Υπερβολικός αριθμός μηνυμάτων σε αναμονή αποστολής. Για προγραμματισμό αυτού του μηνύματος, παρακαλούμε περιμένετε μέχρι την αποστολή ενός άλλου."
-      ],
-      "Turn off content search. Activation progress won't be lost.": [
-        "Απενεργοποιήστε την αναζήτηση περιεχομένου. Η πρόοδος ενεργοποίησης δεν θα χαθεί."
       ],
       "Turn on to search the content of your messages": [
         "Ενεργοποιήστε για αναζήτηση στο περιεχόμενο των μηνυμάτων σας"
@@ -5477,12 +5462,6 @@
       ]
     },
     "Key pinning": {
-      "Clicking \"Trust Key\" will associate this public key with this sender\nand emails from this address will be automatically cryptographically verified.": [
-        "Κάνοντας κλικ στο \"Κλειδί Εμπιστοσύνης\" θα συσχετίσετε αυτό το δημόσιο κλειδί με αυτόν τον αποστολέα\nκαι τα μηνύματα από αυτή τη διεύθυνση θα επαληθευτούν αυτόματα κρυπτογραφικά."
-      ],
-      "Clicking \"Trust Key\" will create a new contact and associate this public key with\nthis sender. Emails from this address will be automatically cryptographically verified.": [
-        "Κάνοντας κλικ στο \"Κλειδί Εμπιστοσύνης\" θα δημιουργήσετε μια νέα επαφή και θα συσχετίσετε αυτό το δημόσιο κλειδί με\nαυτόν τον αποστολέα. Τα email από αυτή τη διεύθυνση θα επαληθευτούν αυτόματα κρυπτογραφικά."
-      ],
       "Do you want to trust the primary public key with the following fingerprint?": [
         "Θέλετε να εμπιστευθείτε το κύριο δημόσιο κλειδί με το ακόλουθο αποτύπωμα;",
         "Θέλετε να εμπιστευθείτε τα κύρια δημόσια κλειδιά με τα ακόλουθα αποτυπώματα;"
@@ -7254,17 +7233,11 @@
       "Get up to ${ credits } in credits.": [
         "Λάβετε έως και ${ credits } σε πιστώσεις."
       ],
-      "Message Content Search": [
-        "Αναζήτηση εντός Περιεχομένου Μηνυμάτων"
-      ],
       "Schedule send": [
         "Προγραμματισμός αποστολής"
       ],
       "You can now schedule your messages to be sent later": [
         "Τώρα μπορείτε να χρονοδιαγραφήσετε την αποστολή των μηνυμάτων σας αργότερα"
-      ],
-      "You can now search the content of your encrypted emails.": [
-        "Η αναζήτηση είναι τώρα εφικτή εντός του περιεχομένου των κρυπτογραφημένων μηνυμάτων σας."
       ]
     },
     "Status": {
@@ -7460,9 +7433,6 @@
       ],
       "Message added to ${ labelName }.": [
         "Το μήνυμα προστέθηκε σε ${ labelName }."
-      ],
-      "Message content search activated": [
-        "Αναζήτηση εντός περιεχομένου μηνυμάτων ενεργή"
       ],
       "Message deleted": [
         "Το μήνυμα διαγράφηκε"

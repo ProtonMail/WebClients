@@ -861,7 +861,7 @@
         "Tiempo de espera agotado"
       ],
       "The email addresses do not match": [
-        "Las direcciones de correo electrónico no coinciden."
+        "Las direcciones de correo electrónico no coinciden"
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Este campo excede el máximo de ${ maximumLength } caracteres."
@@ -879,10 +879,10 @@
         "Error desconocido"
       ],
       "Username must begin with a letter or digit": [
-        "El nombre de usuario debe comenzar con una letra o un dígito."
+        "El nombre de usuario debe comenzar con una letra o un número"
       ],
       "Username must end with a letter or digit": [
-        "El nombre de usuario debe terminar con una letra o un dígito."
+        "El nombre de usuario debe terminar con una letra o un número"
       ]
     },
     "Error message": {
@@ -890,13 +890,13 @@
         "Error: ${ errorMessage }"
       ],
       "Please refresh the page or try again later.": [
-        "Actualiza la página o inténtalo de nuevo más tarde."
+        "Vuelve a cargar la página o inténtalo de nuevo más tarde."
       ],
       "Something went wrong": [
-        "Se ha producido un error."
+        "Algo salió mal"
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
-        "No hemos podido cargar esta página. Actualiza la página o verifica tu conexión a internet."
+        "No hemos podido cargar esta página. Vuelve a cargar la página o verifica tu conexión a internet."
       ]
     },
     "fido2: Error": {
@@ -930,7 +930,7 @@
     },
     "Info": {
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
-        "Un número telefónico solo puede usarse para verificar una cuenta de ${ BRAND_NAME }"
+        "Un número telefónico solo puede usarse para verificar una cuenta de ${ BRAND_NAME }."
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Antes de solicitar un nuevo código de verificación, verifica tu carpeta de spam y verifica que ${ strong } la dirección es correcta."

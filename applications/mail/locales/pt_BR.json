@@ -19,9 +19,6 @@
       "${ BRAND_NAME } shop": [
         "Loja ${ BRAND_NAME }"
       ],
-      "Activate": [
-        "Ativar"
-      ],
       "Activate recovery": [
         "Ativar a recuperação"
       ],
@@ -332,6 +329,9 @@
       ],
       "Download ${ attachmentName }": [
         "Baixar ${ attachmentName }"
+      ],
+      "Downloading": [
+        "Baixando"
       ],
       "Edit": [
         "Editar"
@@ -1015,6 +1015,9 @@
       "This message contains remote content.": [
         "Esta mensagem contém conteúdo remoto."
       ],
+      "To search your emails securely, we need to download a copy of your messages to your browser. The initial download may take a moment.": [
+        "Para pesquisar seus e-mails com segurança, precisamos baixar uma cópia de suas mensagens para o navegador. O download inicial pode demorar um pouco."
+      ],
       "Toggle Calendar app": [
         "Ative o aplicativo de Calendário"
       ],
@@ -1266,7 +1269,7 @@
         "Criptografado"
       ],
       "New email": [
-        "Novo E-mail"
+        "Novo e-mail"
       ]
     },
     "Apps dropdown": {
@@ -4045,7 +4048,7 @@
     },
     "Filter preview": {
       "read": [
-        "ler"
+        "lido"
       ],
       "starred": [
         "com estrela"
@@ -4153,7 +4156,7 @@
         "Mensagens do Gmail na sua caixa de entrada"
       ],
       "Sign in with Google": [
-        "Entre com Google"
+        "Iniciar sessão com Google"
       ]
     },
     "Group": {
@@ -4878,8 +4881,8 @@
       "Don't forget to share the password with the recipient": [
         "Não se esqueça de compartilhar a senha com o destinatário"
       ],
-      "Downloading message ${ currentProgress } out of ${ totalProgress }": [
-        "Baixando mensagem ${ currentProgress } de ${ totalProgress }"
+      "Downloading paused": [
+        "Download pausado"
       ],
       "Draft": [
         "Rascunho"
@@ -5072,9 +5075,6 @@
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Importando seus dados de ${ importedEmailAddress } para ${ toEmail }."
       ],
-      "Indexing paused": [
-        "Indexação pausada"
-      ],
       "Inherited from parent folder": [
         "Herdado da pasta acima"
       ],
@@ -5146,6 +5146,10 @@
       ],
       "Merged": [
         "Mesclado"
+      ],
+      "Message downloaded: ${ currentProgress } out of ${ totalProgress }": [
+        "Baixando mensagem: ${ currentProgress } de ${ totalProgress }",
+        "Baixando mensagens: ${ currentProgress } de ${ totalProgress }"
       ],
       "Message expiration works out-of-the-box when sending emails to other ${ MAIL_APP_NAME } users. To send expiring emails to non-${ BRAND_NAME } users, please cancel and add password protection to your email.": [
         "A expiração da mensagem funciona fora da caixa ao enviar e-mails para outros usuários do ${ MAIL_APP_NAME }. Para enviar e-mails que expiram para usuários que não são usuários da ${ BRAND_NAME } , cancele e adicione a proteção por senha a seu e-mail."
@@ -5358,6 +5362,9 @@
       "Scheduling message...": [
         "Agendando mensagem..."
       ],
+      "Search option that lets you securely search for keywords in the body of email messages.": [
+        "Opção de pesquisa que permite pesquisar palavras-chave com segurança no corpo das mensagens de e-mail."
+      ],
       "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
         "A pesquisa está demorando demais? ${ dropdownButton } ou ${ toggleOffButton } nesta pesquisa."
       ],
@@ -5488,12 +5495,6 @@
       "This account has been suspended due to a potential policy violation.": [
         "Essa conta foi suspensa devido a uma potencial violação da política."
       ],
-      "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        "Esta ação baixará todas as mensagens para poderem ser pesquisadas localmente. Limpar os dados do navegador irá desativar esta opção."
-      ],
-      "This action will download the most recent messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        "Esta ação baixará as mensagens mais recentes para poderem ser pesquisadas localmente. Limpar os dados do navegador irá desativar esta opção."
-      ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Este endereço está desativado. Para poder enviar para este endereço, o proprietário deve primeiro ativar o endereço."
       ],
@@ -5613,8 +5614,8 @@
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "Muitas mensagens esperando para serem enviadas. Aguarde até que outra mensagem seja enviada para agendar esta."
       ],
-      "Turn off content search. Activation progress won't be lost.": [
-        "Desativar a pesquisa de conteúdo. O progresso registrado não será perdido."
+      "Turn off to only search by date, name, or email address. To disable search message content and delete downloaded messages, go to settings.": [
+        "Desative para pesquisar apenas por data, nome ou endereço de e-mail. Para desativar a pesquisa por conteúdo da mensagem e excluir as mensagens baixadas, vá para as configurações."
       ],
       "Turn on to search the content of your messages": [
         "Ative para pesquisar o conteúdo de suas mensagens"
@@ -5918,11 +5919,11 @@
       ]
     },
     "Key pinning": {
-      "Clicking \"Trust Key\" will associate this public key with this sender\nand emails from this address will be automatically cryptographically verified.": [
-        "Ao clicar em \"Confiar na chave\", será associada esta chave pública a este remetente.\ne os e-mails deste endereço serão automaticamente verificados criptograficamente."
+      "Clicking \"Trust Key\" will associate this public key with this sender and emails from this address will be automatically cryptographically verified.": [
+        "Clicar em \"Chave confiável\" associará esta chave pública a este remetente e os e-mails deste endereço serão automaticamente verificados criptograficamente."
       ],
-      "Clicking \"Trust Key\" will create a new contact and associate this public key with\nthis sender. Emails from this address will be automatically cryptographically verified.": [
-        "Ao clicar em \"Confiar na chave\" será criado um novo contato e esta chave pública será associada a este remetente. Os e-mails deste endereço serão automaticamente verificados de forma criptográfica."
+      "Clicking \"Trust Key\" will create a new contact and associate this public key with this sender. Emails from this address will be automatically cryptographically verified.": [
+        "Ao clicar em \"Chave confiável\" será criado um contato e esta chave pública será associada a este remetente. Os e-mails deste endereço serão automaticamente verificados de forma criptográfica."
       ],
       "Do you want to trust the primary public key with the following fingerprint?": [
         "Você deseja confiar na chave pública primária com a seguinte impressão digital?",
@@ -7403,6 +7404,9 @@
       "Please insert link first": [
         "Insira o link primeiro"
       ],
+      "Search date, name, email address, or subject line": [
+        "Pesquise data, nome, endereço de e-mail ou assunto"
+      ],
       "Search for group name": [
         "Pesquisar nome do grupo"
       ],
@@ -7971,20 +7975,20 @@
       "Invite friends to ${ BRAND_NAME }": [
         "Convide amigos para ${ BRAND_NAME }"
       ],
-      "Message Content Search": [
-        "Busca no conteúdo das mensagens"
-      ],
       "Schedule send": [
         "Envio agendado"
+      ],
+      "Search just got smarter and faster": [
+        "A pesquisa ficou mais inteligente e rápida"
+      ],
+      "Try it today.": [
+        "Experimente hoje mesmo."
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "Agora carregamos imagens por padrão e impedimos que os remetentes rastreiem você. Isso pode ser alterado no ${ settingsLink }."
       ],
       "You can now schedule your messages to be sent later": [
         "Agora você pode agendar suas mensagens para serem enviadas depois"
-      ],
-      "You can now search the content of your encrypted emails.": [
-        "Agora você pode pesquisar o conteúdo dos seus e-mails criptografados."
       ]
     },
     "Status": {
@@ -8190,7 +8194,7 @@
       "Message added to ${ labelName }.": [
         "Mensagem adicionada a ${ labelName }."
       ],
-      "Message content search activated": [
+      "Message content search enabled": [
         "Pesquisa de conteúdo de mensagens ativada"
       ],
       "Message deleted": [

@@ -19,9 +19,6 @@
       "${ BRAND_NAME } shop": [
         "Крама ${ BRAND_NAME }"
       ],
-      "Activate": [
-        "Актываваць"
-      ],
       "Activate recovery": [
         "Актываваць аднаўленне"
       ],
@@ -336,6 +333,9 @@
       ],
       "Download ${ attachmentName }": [
         "Спампаваць ${ attachmentName }"
+      ],
+      "Downloading": [
+        "Спампоўванне"
       ],
       "Edit": [
         "Рэдагаваць"
@@ -1020,6 +1020,9 @@
       ],
       "This message contains remote content.": [
         "Гэта паведамленне змяшчае аддаленае змесціва."
+      ],
+      "To search your emails securely, we need to download a copy of your messages to your browser. The initial download may take a moment.": [
+        "Каб шукаць вашы лісты бяспечна, неабходна спампаваць копіі вашых паведамленняў для прагляду. Першапачатковае спампоўванне можа заняць некаторы час."
       ],
       "Toggle Calendar app": [
         "Пераключыць на праграму Каляндар"
@@ -5040,8 +5043,8 @@
       "Don't forget to share the password with the recipient": [
         "Не забудзьце абагуліць ваш пароль з атрымальнікам"
       ],
-      "Downloading message ${ currentProgress } out of ${ totalProgress }": [
-        "Спампоўванне паведамлення ${ currentProgress } з ${ totalProgress }"
+      "Downloading paused": [
+        "Спампоўванне прыпынена"
       ],
       "Draft": [
         "Чарнавік"
@@ -5250,9 +5253,6 @@
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Імпартаванне вашых даных з ${ importedEmailAddress } у ${ toEmail }."
       ],
-      "Indexing paused": [
-        "Індэксаванне прыпынена"
-      ],
       "Inherited from parent folder": [
         "Унаследавана ад бацькоўскай папкі"
       ],
@@ -5324,6 +5324,12 @@
       ],
       "Merged": [
         "Аб'яднана"
+      ],
+      "Message downloaded: ${ currentProgress } out of ${ totalProgress }": [
+        "Спампавана паведамленне: ${ currentProgress } з ${ totalProgress }",
+        "Спампавана паведамленняў: ${ currentProgress } з ${ totalProgress }",
+        "Спампавана паведамленняў: ${ currentProgress } з ${ totalProgress }",
+        "Спампавана паведамленняў: ${ currentProgress } з ${ totalProgress }"
       ],
       "Message expiration works out-of-the-box when sending emails to other ${ MAIL_APP_NAME } users. To send expiring emails to non-${ BRAND_NAME } users, please cancel and add password protection to your email.": [
         "Тэрмін дзеяння для паведамленняў працуе без дадатковых патрабаванняў пры адпраўцы лістоў іншым карыстальнікам ${ MAIL_APP_NAME }. Для адпраўкі паведамленняў з тэрмінам дзеяння карыстальнікам, якія не карыстаюцца ${ BRAND_NAME }, скасуйце адпраўку і абараніце свой ліст паролем."
@@ -5538,6 +5544,9 @@
       "Scheduling message...": [
         "Планаванне паведамлення..."
       ],
+      "Search option that lets you securely search for keywords in the body of email messages.": [
+        "Параметры пошуку, якія дазваляюць вам бяспечна шукаць па ключавых слова ў целе паведамленняў электронных лістоў."
+      ],
       "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
         "Пошук займае занадта шмат часу? ${ dropdownButton } або ${ toggleOffButton } з гэтага пошукавага сеанса."
       ],
@@ -5670,12 +5679,6 @@
       "This account has been suspended due to a potential policy violation.": [
         "Дзеянне гэтага ўліковага запісу было прыпынена па прычыне патэнцыйнага парушэння ўмоў выкарыстання."
       ],
-      "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        "Гэта дзеянне спампуе ўсе паведамленні для лакальнага пошуку. Ачыстка даных вашага браўзера адключыць гэты параметр."
-      ],
-      "This action will download the most recent messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        "Гэта дзеянне спампуе ўсе апошнія паведамленні, каб іх можна было шукаць лакальна. Ачыстка даных вашага браўзера адключыць гэты параметр."
-      ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Гэты адрас адключаны. Каб мець магчымасць адпраўляць лісты на гэты адрас, спачатку ён павінен быць уключаны ўладальнікам."
       ],
@@ -5799,8 +5802,8 @@
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "Занадта шмат паведамленняў чакаюць адпраўкі. Пачакайце, пакуль адправіцца іншае паведамленне, каб запланаваць гэта."
       ],
-      "Turn off content search. Activation progress won't be lost.": [
-        "Адключыць пошук змесціва. Ход выканання актывацыі не будзе страчаны."
+      "Turn off to only search by date, name, or email address. To disable search message content and delete downloaded messages, go to settings.": [
+        "Выключыце, каб шукаць толькі па даце, імі або адрасе электроннай пошты. Каб выключыць пошук па змесціву паведамлення, і выдаліць запампаваныя паведамленні, перайдзіце ў налады."
       ],
       "Turn on to search the content of your messages": [
         "Уключыце, каб шукаць змесціва вашых паведамленняў"
@@ -6122,11 +6125,11 @@
       ]
     },
     "Key pinning": {
-      "Clicking \"Trust Key\" will associate this public key with this sender\nand emails from this address will be automatically cryptographically verified.": [
-        "Націснуўшы кнопку “Давяраць ключу”, вы звяжаце дадзены публічны ключ з гэтым адпраўніком і лісты з гэтага адраса будуць праходзіць аўтаматычную крыптаграфічную праверку."
+      "Clicking \"Trust Key\" will associate this public key with this sender and emails from this address will be automatically cryptographically verified.": [
+        "Націскаючы кнопку “Давяраць ключу”, вы звяжаце дадзены публічны ключ з гэтым адпраўніком, і лісты з гэтага адраса будуць прахадзіць аўтаматычную крыптаграфічную праверку."
       ],
-      "Clicking \"Trust Key\" will create a new contact and associate this public key with\nthis sender. Emails from this address will be automatically cryptographically verified.": [
-        "Націснуўшы кнопку “Давяраць ключу”, вы створыце новы кантакт і звяжыце гэты публічны ключ з дадзеным адпраўніком. Лісты з гэтага адраса будуць праходзіць аўтаматычную крыптаграфічную праверку."
+      "Clicking \"Trust Key\" will create a new contact and associate this public key with this sender. Emails from this address will be automatically cryptographically verified.": [
+        "Націскаючы кнопку “Давяраць ключу”, вы створыце новы кантакт, і дадзены адкрыты ключ будзе звязаны з гэтым адпраўніком. Лісты з гэтага адраса будуць аўтаматычна лічыцца крыптаграфічна праверанымі."
       ],
       "Do you want to trust the primary public key with the following fingerprint?": [
         "Вы сапраўды хочаце давяраць асноўнаму публічнаму ключу з наступным адбіткам?",
@@ -7627,6 +7630,9 @@
       "Please insert link first": [
         "Спачатку ўстаўце спасылку"
       ],
+      "Search date, name, email address, or subject line": [
+        "Пошук па даце, імі, адрасе электроннай пошце, або радку тэмы"
+      ],
       "Search for group name": [
         "Шукаць па назве групы"
       ],
@@ -8224,20 +8230,20 @@
       "Invite friends to ${ BRAND_NAME }": [
         "Запрасіць сяброў у ${ BRAND_NAME }"
       ],
-      "Message Content Search": [
-        "Пошук па змесціву паведамлення"
-      ],
       "Schedule send": [
         "Запланаваць адпраўку"
+      ],
+      "Search just got smarter and faster": [
+        "Пошук стаў больш разумным і хуткім"
+      ],
+      "Try it today.": [
+        "Паспрабуйце сёння."
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "Цяпер мы прадвызначана загрузілі відарысы і заблакіравалі адпраўнікоў ад сачэння за вамі. Гэта можна змяніць у ${ settingsLink }."
       ],
       "You can now schedule your messages to be sent later": [
         "Цяпер вы можаце запланаваць адпраўку паведамленняў на больш позні час"
-      ],
-      "You can now search the content of your encrypted emails.": [
-        "Цяпер вы можаце шукаць па змесціву паведамлення вашых зашыфраваных лістоў."
       ]
     },
     "Status": {
@@ -8487,8 +8493,8 @@
       "Message added to ${ labelName }.": [
         "Паведамленне дададзена ў ${ labelName }."
       ],
-      "Message content search activated": [
-        "Пошук па змесціву паведамлення актываваны"
+      "Message content search enabled": [
+        "Пошук па змесціву паведамлення ўключаны"
       ],
       "Message deleted": [
         "Паведамленне выдалена"

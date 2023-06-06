@@ -19,9 +19,6 @@
       "${ BRAND_NAME } shop": [
         "Tienda ${ BRAND_NAME }"
       ],
-      "Activate": [
-        "Activar"
-      ],
       "Activate recovery": [
         "Activar recuperación"
       ],
@@ -101,7 +98,7 @@
         "Como programado"
       ],
       "At most 100 contacts are allowed per contact group": [
-        "Se permiten como máximo 100 contactos por grupo de contactos."
+        "Hasta 100 contactos permitidos en cada grupo de contactos"
       ],
       "Attach screenshot(s)": [
         "Adjuntar captura(s) de pantalla"
@@ -333,6 +330,9 @@
       "Download ${ attachmentName }": [
         "Descargar ${ attachmentName }"
       ],
+      "Downloading": [
+        "Descargando"
+      ],
       "Edit": [
         "Editar"
       ],
@@ -481,7 +481,7 @@
         "Tengo una pregunta."
       ],
       "Image could not be loaded with tracker protection.": [
-        "No se ha podido carga la imagen con la protección contra el rastreo."
+        "No se ha podido cargar la imagen con la protección contra el rastreo."
       ],
       "Image will be loaded without a proxy": [
         "La imagen se cargará sin proxy."
@@ -806,7 +806,7 @@
         "Eliminar tiempo de expiración"
       ],
       "Remove self-destruction": [
-        "Eliminar la destrucción automatica"
+        "Anular la destrucción automática"
       ],
       "Remove this label": [
         "Eliminar esta etiqueta"
@@ -890,13 +890,13 @@
         "Seleccionar todos los mensajes"
       ],
       "Self-destruct in 7 days": [
-        "Destrucción automatica en 7 dias"
+        "Destrucción automática en 7 días"
       ],
       "Self-destruct message": [
         "Destruir automaticamente el mensaje"
       ],
       "Self-destruct on ...": [
-        "Destrucción automatica el..."
+        "Destrucción automática el ..."
       ],
       "Send": [
         "Enviar"
@@ -989,7 +989,7 @@
         "Omitir verificación"
       ],
       "Some images could not be loaded with tracker protection.": [
-        "No se han podido cargar algunas de las imágenes con la protección contra el rastreo."
+        "No se han podido cargar algunas imágenes con la protección contra el rastreo."
       ],
       "Star": [
         "Destacar"
@@ -1014,6 +1014,9 @@
       ],
       "This message contains remote content.": [
         "Este mensaje contiene contenido remoto."
+      ],
+      "To search your emails securely, we need to download a copy of your messages to your browser. The initial download may take a moment.": [
+        "Para buscar tus correos electrónicos de manera segura, necesitamos descargar una copia de tus mensajes en tu navegador. La descarga inicial puede tardar un momento."
       ],
       "Toggle Calendar app": [
         "Cambiar a la aplicación Calendar"
@@ -2893,10 +2896,10 @@
         "Desbloquea la programación personalizada de mensajes y otros beneficios al pasar a un plan superior."
       ],
       "Unlock unlimited filters that sort your inbox for you and more premium features when you upgrade.": [
-        "Disfruta de un número ilimitado de filtros que ordenan la bandeja de entrada para ti y más funciones premium cuando actualizas tu plan."
+        "Desbloquea un número ilimitado de filtros que ordenan la bandeja de entrada para ti y más funciones premium al actualizar tu plan."
       ],
       "Unlock unlimited folders, labels and more premium features when you upgrade.": [
-        "Disfruta de un número ilimitado de carpetas y etiquetas y más funciones premium cuando actualizas tu plan."
+        "Desbloquea un número ilimitado de carpetas y etiquetas y más funciones premium al actualizar tu plan."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Arrastra y suelta los contactos para clasificarlos por prioridad. Desmarca los contactos que no quieres combinar."
@@ -3082,14 +3085,14 @@
         "Se ha alcanzado el límite de calendarios."
       ],
       "Cannot export this contact": [
-        "No se puede exportar este contacto."
+        "No se puede exportar este contacto"
       ],
       "Choose a date in the future.": [
         "Elige una fecha en el futuro."
       ],
       "Choose a date within the next ${ EXPIRATION_TIME_MAX_DAYS } day.": [
         "Elige una fecha dentro de ${ EXPIRATION_TIME_MAX_DAYS } día.",
-        "Elige una fecha dentro de los siguientes ${ EXPIRATION_TIME_MAX_DAYS } días."
+        "Elige una fecha dentro de los próximos ${ EXPIRATION_TIME_MAX_DAYS } días."
       ],
       "Choose a date within the next ${ SCHEDULED_MAX_DATE_DAYS } day.": [
         "Elige una fecha dentro del siguiente ${ SCHEDULED_MAX_DATE_DAYS } día.",
@@ -3120,8 +3123,8 @@
         "Error al descifrar: no se ha podido descifrar el contenido de este mensaje."
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
-        "Anula la selección de al menos ${ calendarsToFixCount } calendario.",
-        "Anula la selección de al menos ${ calendarsToFixCount } calendarios."
+        "Anula la selección de al menos ${ calendarsToFixCount } calendario",
+        "Anula la selección de al menos ${ calendarsToFixCount } calendarios"
       ],
       "Deselect at least ${ calendarsToFixCount } calendar or": [
         "Anula la selección de al menos ${ calendarsToFixCount } calendario o",
@@ -3347,7 +3350,7 @@
         "Algunos archivos adjuntos no se han podido descifrar.\nSi tienes la clave privada correspondiente, aún podrás descifrar\nlos archivos con un programa como GnuPG."
       ],
       "The email addresses do not match": [
-        "Las direcciones de correo electrónico no coinciden."
+        "Las direcciones de correo electrónico no coinciden"
       ],
       "The folder name is invalid. Please choose a different name.": [
         "El nombre de la carpeta es inválido. Elige un nombre diferente."
@@ -3377,7 +3380,7 @@
         "Ha sido un problema con la búsqueda de contenido. En su lugar se ha utilizado la búsqueda por defecto."
       ],
       "There was a problem updating your local messages, they will be downloaded again to re-enable content search": [
-        "Ha ocurrido un problema al actualizar tus mensajes locales. Se descargarán otra vez para rehabilitar la búsqueda de contenido."
+        "Se ha producido un error al actualizar tus mensajes locales. Se descargarán otra vez para rehabilitar la búsqueda de contenido"
       ],
       "There was an error when exporting the contacts vCards": [
         "Se ha producido un error al exportar los archivos vCards de los contactos."
@@ -3419,10 +3422,10 @@
         "Error desconocido."
       ],
       "Username must begin with a letter or digit": [
-        "El nombre de usuario debe comenzar con una letra o un dígito."
+        "El nombre de usuario debe comenzar con una letra o un número"
       ],
       "Username must end with a letter or digit": [
-        "El nombre de usuario debe terminar con una letra o un dígito."
+        "El nombre de usuario debe terminar con una letra o un número"
       ],
       "Wrong mailbox password": [
         "Contraseña del buzón incorrecta"
@@ -3520,7 +3523,7 @@
         "Error con el cifrado"
       ],
       "vCard versions < 3.0 not supported": [
-        "Versiones vCard menores a 3.0 no soportadas"
+        "Versiones de vCard anteriores a 3.0 no soportadas"
       ]
     },
     "Error importing contacts": {
@@ -3534,7 +3537,7 @@
         "Se ha producido un error al cargar el archivo ${ formattedFilename }. No se ha seleccionado un archivo .csv o .vcf."
       ],
       "An error occurred uploading your file. No file has been selected.": [
-        "Se ha producido un error al cargar el archivo. No se ha seleccionado ningún archivo."
+        "Se ha producido un error al subir el archivo. No se ha seleccionado ningún archivo."
       ],
       "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
         "El archivo ${ formattedFilename } contiene más de ${ MAX_IMPORT_CONTACTS_STRING } contactos."
@@ -3658,13 +3661,13 @@
         "Se ha producido un error."
       ],
       "Please refresh the page or try again later.": [
-        "Actualiza la página o inténtalo de nuevo más tarde."
+        "Vuelve a cargar la página o inténtalo de nuevo más tarde."
       ],
       "Something went wrong": [
-        "Se ha producido un error."
+        "Algo salió mal"
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
-        "No hemos podido cargar esta página. Actualiza la página o verifica tu conexión a internet."
+        "No hemos podido cargar esta página. Vuelve a cargar la página o verifica tu conexión a internet."
       ],
       "You do not have any contact yet. Start by creating a new contact": [
         "Aún no tienes ningún contacto. Empieza creando un contacto."
@@ -4261,7 +4264,7 @@
         "${ CALENDAR_APP_NAME } no admite actualmente algunos tipos de eventos, detalles y formatos."
       ],
       "vCard versions < 3.0": [
-        "Versiones vCard menores a 3.0"
+        "Versiones vCard anteriores a 3.0"
       ]
     },
     "Import calendar; import invitation": {
@@ -4665,7 +4668,7 @@
         "(Sin destinatario)"
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
-        "Un número telefónico solo puede usarse para verificar una cuenta de ${ BRAND_NAME }"
+        "Un número telefónico solo puede usarse para verificar una cuenta de ${ BRAND_NAME }."
       ],
       "A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.": [
         "Una frase de recuperación es una de las formas más seguras de proteger el acceso a tu cuenta. Puedes usarla para acceder a tu cuenta y recuperar tus datos cifrados si alguna vez olvidas tu contraseña."
@@ -4763,7 +4766,7 @@
         "Atención requerida"
       ],
       "Automatically delete messages that have been in trash and spam for more than 30 days.": [
-        "Elimina mensajes automáticamente que han estado en la carpeta Papelera y Spam por más de 30 días."
+        "Elimina automáticamente mensajes que han estado en la Papelera y en Spam por más de 30 días."
       ],
       "Background color": [
         "Color de fondo"
@@ -4811,10 +4814,10 @@
         "Confirmar denuncia de suplantación de identidad"
       ],
       "Contact assigned to group ${ contactGroupName }": [
-        "El contacto ha sido asignado al grupo ${ contactGroupName }."
+        "Contacto asignado al grupo ${ contactGroupName }"
       ],
       "Contact unassigned to group ${ contactGroupName }": [
-        "El contacto no ha sido asignado al grupo ${ contactGroupName }."
+        "Contacto eliminado del grupo ${ contactGroupName }."
       ],
       "Copied to clipboard": [
         "Copiado al portapapeles"
@@ -4878,8 +4881,8 @@
       "Don't forget to share the password with the recipient": [
         "No olvides compartir la contraseña con el destinatario."
       ],
-      "Downloading message ${ currentProgress } out of ${ totalProgress }": [
-        "Descargando mensaje ${ currentProgress } de ${ totalProgress }"
+      "Downloading paused": [
+        "Descarga en pausa"
       ],
       "Draft": [
         "Borrador"
@@ -5064,16 +5067,13 @@
         "Importar buzón"
       ],
       "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "Importa tus correos, calendarios y contactos desde otro servicio a ${ BRAND_NAME }."
+        "Importa tus correos, calendarios y contactos desde otro proveedor a ${ BRAND_NAME }."
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Importando tus datos desde ${ fromEmail } a ${ toEmail }."
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Importando tus datos desde ${ importedEmailAddress } a ${ toEmail }."
-      ],
-      "Indexing paused": [
-        "Indexación pausada"
       ],
       "Inherited from parent folder": [
         "Heredado de la carpeta principal"
@@ -5133,7 +5133,7 @@
         "Cargando..."
       ],
       "Manage your folders": [
-        "Administrar tus carpetas"
+        "Administra tus carpetas"
       ],
       "Manage your labels": [
         "Administra tus etiquetas"
@@ -5146,6 +5146,10 @@
       ],
       "Merged": [
         "Combinado"
+      ],
+      "Message downloaded: ${ currentProgress } out of ${ totalProgress }": [
+        "Mensaje descargado: ${ currentProgress } de ${ totalProgress }",
+        "Mensajes descargados: ${ currentProgress } de ${ totalProgress }"
       ],
       "Message expiration works out-of-the-box when sending emails to other ${ MAIL_APP_NAME } users. To send expiring emails to non-${ BRAND_NAME } users, please cancel and add password protection to your email.": [
         "La expiración del mensaje funciona de forma inmediata cuando se envían correos electrónicos a otros usuarios de ${ MAIL_APP_NAME }. Para enviar correos electrónicos que expiren a usuarios que no sean de ${ BRAND_NAME }, cancela y añade la protección con contraseña a tu correo electrónico."
@@ -5358,11 +5362,14 @@
       "Scheduling message...": [
         "Programando mensaje..."
       ],
+      "Search option that lets you securely search for keywords in the body of email messages.": [
+        "La opción de búsqueda que te permite buscar de forma segura palabras clave en el cuerpo de los mensajes de correo electrónico."
+      ],
       "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
         "La búsqueda está tardando demasiado? ${ dropdownButton } o ${ toggleOffButton } de esta sesión de búsqueda."
       ],
       "Secure your files with encrypted cloud storage for free, today.": [
-        "Protege tus archivos con almacenamiento cifrado en la nube gratuito, hoy."
+        "Protege tus archivos con almacenamiento cifrado gratuito en la nube, hoy."
       ],
       "Seems like you are all caught up for now": [
         "Parece que ya estás al día por ahora."
@@ -5455,7 +5462,7 @@
         "Es posible que los datos que has introducido en el borrador no se guarden si abandonas la página."
       ],
       "The local database is being prepared": [
-        "Se prepara la base de datos local."
+        "Preparando la base de datos local"
       ],
       "The message has expired": [
         "El mensaje ha expirado"
@@ -5488,12 +5495,6 @@
       "This account has been suspended due to a potential policy violation.": [
         "Esta cuenta ha sido suspendida debido a una posible violación de los términos y condiciones."
       ],
-      "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        "Esta acción descargará todos los mensajes para que se puedan buscar localmente. Borrar los datos de tu navegador desactivará esta opción."
-      ],
-      "This action will download the most recent messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        "Esta acción descargará los mensajes más recientes para que se puedan buscar localmente. Borrar los datos de tu navegador desactivará esta opción."
-      ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Esta dirección está deshabilitada. Para enviar correos esta dirección, el propietario debe en primer lugar habilitar la dirección."
       ],
@@ -5501,7 +5502,7 @@
         "Este navegador no admite la previsualización de documentos PDF. Descarga el archivo."
       ],
       "This conversation contains a scheduled message. Sending of this message will be canceled.": [
-        "Esta conversación contiene un mensaje programado. Se ha cancelado el envío de este mensaje."
+        "Esta conversación contiene un mensaje programado. Se cancelará el envío de este mensaje."
       ],
       "This conversation contains non-trashed messages.": [
         "Esta conversación contiene mensajes no borrados."
@@ -5514,7 +5515,7 @@
         "Estas conversaciones serán marcadas como spam. ¿Te gustaría también cancelar la suscripción para no recibir más correos?"
       ],
       "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded.": [
-        "Se ha producido un error con los requisitos de autenticación del dominio de este correo electrónico. Puede estar falsificado o reenviado incorrectamente."
+        "Este correo electrónico ha fallado los requisitos de autenticación del dominio. Puede estar falsificado o reenviado incorrectamente."
       ],
       "This invitation is saved in a disabled calendar.": [
         "Esta invitación está guardada en un calendario deshabilitado."
@@ -5547,7 +5548,7 @@
         "Este mensaje se borrará automáticamente el ${ longDateMEssage }"
       ],
       "This message will be automatically deleted on ${ shortDateMessage }": [
-        "Este mensaje se borrará automáticamente a las ${ shortDateMessage }"
+        "Este mensaje se borrará automáticamente a las ${ shortDateMessage }."
       ],
       "This message will be marked as spam. Would you also like to unsubscribe from future emails?": [
         "Este mensaje será marcado como spam. ¿Te gustaría a su vez cancelar la suscripción para no recibir más correos?",
@@ -5575,7 +5576,7 @@
         "Este mensaje expirará el ${ formattedDate }."
       ],
       "This message will expire on ${ longDateMEssage }": [
-        "Este mensaje expirará el ${ longDateMEssage }"
+        "Este mensaje expirará el ${ longDateMEssage }."
       ],
       "This message will expire today at ${ shortDateMessage }": [
         "Este mensaje expirará hoy a las ${ shortDateMessage }"
@@ -5613,8 +5614,8 @@
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "Demasiados mensajes esperando a ser enviados. Espera hasta que otro mensaje se envíe para programar este."
       ],
-      "Turn off content search. Activation progress won't be lost.": [
-        "Desactiva la búsqueda de contenidos. El progreso de la activación no se perderá."
+      "Turn off to only search by date, name, or email address. To disable search message content and delete downloaded messages, go to settings.": [
+        "Desactiva la opción de búsqueda para filtrar los resultados solo por fecha, nombre o dirección de correo electrónico. Para deshabilitar la búsqueda en el contenido del mensaje y eliminar los mensajes descargados, ve a los ajustes."
       ],
       "Turn on to search the content of your messages": [
         "Actívala para buscar en el contenido de sus mensajes."
@@ -5641,7 +5642,7 @@
         "Pasa a un plan superior para añadir más direcciones a tu cuenta."
       ],
       "Upgrade to automatically delete messages that have been in trash and spam for more than 30 days.": [
-        "Actualiza tu plan para eliminar automáticamente los mensajes que hayan estado en la papelera y en spam por más de 30 días."
+        "Actualiza tu plan para eliminar automáticamente los mensajes que hayan estado en la carpeta Papelera y Spam por más de 30 días."
       ],
       "Upgrade to create more folders, filters, and addresses.": [
         "Pasa a un plan superior para crear más carpetas, filtros y direcciones."
@@ -5674,7 +5675,7 @@
         "Actualiza tu plan para utilizar ${ MAIL_APP_NAME } con Apple Mail, Outlook o Thunderbird."
       ],
       "Upgrade to use auto-reply when you're away.": [
-        "Actualiza tu plan para utilizar la respuesta automática cuando estás ausente."
+        "Actualiza tu plan para utilizar la respuesta automática cuando estés ausente."
       ],
       "Upload picture": [
         "Cargar imagen"
@@ -5719,7 +5720,7 @@
         "¿Cuándo quieres que se envíe tu mensaje?"
       ],
       "When do you want your message to self-destruct?": [
-        "¿Cuándo quieres que se destruye automaticamente tu mensaje?"
+        "¿Cuándo quieres que se destruya automaticamente tu mensaje?"
       ],
       "When giving out your email, use a unique, disposable Hide My Email alias instead of your real email address.": [
         "Cuando des tu correo electrónico, usa un alias Hide My Email único y desechable en vez de tu dirección de correo real."
@@ -5918,10 +5919,10 @@
       ]
     },
     "Key pinning": {
-      "Clicking \"Trust Key\" will associate this public key with this sender\nand emails from this address will be automatically cryptographically verified.": [
-        "Al hacer clic en \"Confiar clave\" asocias esta clave pública con este remitente\ny los correos de esta dirección se verificarán cifradamente de forma automática."
+      "Clicking \"Trust Key\" will associate this public key with this sender and emails from this address will be automatically cryptographically verified.": [
+        "Al hacer clic en \"Confiar clave\" asocias esta clave pública con este remitente y los correos de esta dirección se verificarán cifradamente de forma automática."
       ],
-      "Clicking \"Trust Key\" will create a new contact and associate this public key with\nthis sender. Emails from this address will be automatically cryptographically verified.": [
+      "Clicking \"Trust Key\" will create a new contact and associate this public key with this sender. Emails from this address will be automatically cryptographically verified.": [
         "Al hacer clic en \"Confiar clave\" creas un contacto nuevo y asocias esta clave pública con este remitente. Los correos de esta dirección se verificarán cifradamente de forma automática."
       ],
       "Do you want to trust the primary public key with the following fingerprint?": [
@@ -6685,7 +6686,7 @@
         "Para añadir un calendario, elimina uno existente."
       ],
       "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
-        "Para añadir un calenario, elimina otro calendario o actualiza tu plan ${ BRAND_NAME } a un plan de pago ${ MAIL_SHORT_APP_NAME }."
+        "Para añadir un calendario, elimina otro calendario o actualiza tu plan ${ BRAND_NAME } a un plan de pago ${ MAIL_SHORT_APP_NAME }."
       ],
       "You've reached the maximum number of calendars available in your plan.": [
         "Has alcanzado el número máximo de calendarios disponibles en tu plan."
@@ -7171,7 +7172,7 @@
     },
     "new_plans: feature info": {
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
-        "Crea múltiples direcciones de correo para tus identidades en línea, p. ej., JuanCompras@${ domain } para cuentas de compras, JuanNoticias@${ domain2 } para suscripciones de noticias"
+        "Crea diferentes direcciones de correo para tus identidades en línea, p. ej. JuanCompras@${ domain } para cuentas de compras, JuanNoticias@${ domain2 } para suscripciones de noticias"
       ],
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "Obtén alias ilimitados con el servicio SimpleLogin de ${ BRAND_NAME }."
@@ -7180,7 +7181,7 @@
         "El espacio de almacenamiento es compartido entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } y ${ DRIVE_APP_NAME }."
       ],
       "Use your own custom email domain address, e.g., you@yourname.com": [
-        "Utiliza tu propia dirección de correo personalizada, por ejemplo, tú@tunombre.com"
+        "Utiliza tu propia dirección de correo personalizada, p. ej. tú@tunombre.com"
       ]
     },
     "new_plans: label": {
@@ -7402,6 +7403,9 @@
       ],
       "Please insert link first": [
         "Introduzca el enlace primero."
+      ],
+      "Search date, name, email address, or subject line": [
+        "Búsqueda por fecha, nombre, dirección de correo electrónico o asunto"
       ],
       "Search for group name": [
         "Buscar por nombre de grupo"
@@ -7968,20 +7972,20 @@
       "Invite friends to ${ BRAND_NAME }": [
         "Invita amigos a ${ BRAND_NAME }"
       ],
-      "Message Content Search": [
-        "Búsqueda en el contenido de los mensajes"
-      ],
       "Schedule send": [
         "Programar envío"
+      ],
+      "Search just got smarter and faster": [
+        "La búsqueda acaba de volverse más inteligente y rápida."
+      ],
+      "Try it today.": [
+        "Prueba hoy mismo."
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "Ahora cargamos las imágenes por defecto y bloqueamos el rastreo por parte de los remitentes. Esto se puede cambiar en ${ settingsLink }."
       ],
       "You can now schedule your messages to be sent later": [
         "Ahora puedes programar tus mensajes para que sean enviados más tarde."
-      ],
-      "You can now search the content of your encrypted emails.": [
-        "Ahora puedes buscar el contenido de tus correos electrónicos cifrados."
       ]
     },
     "Status": {
@@ -8187,8 +8191,8 @@
       "Message added to ${ labelName }.": [
         "Mensaje añadido a ${ labelName }."
       ],
-      "Message content search activated": [
-        "Búsqueda de contenido de mensajes activada"
+      "Message content search enabled": [
+        "Búsqueda de contenido de mensajes habilitada"
       ],
       "Message deleted": [
         "Mensaje eliminado"
@@ -8439,7 +8443,7 @@
         "Cambiar mi respuesta"
       ],
       "Clear out the junk": [
-        "¡Deshazte de los mensajes innecesarios!"
+        "Deshazte de los mensajes no deseados"
       ],
       "Clearing data": [
         "Limpiando datos"
@@ -8989,7 +8993,7 @@
         "Las carpetas secundarias del sistema se mostrarán como carpetas separadas en ${ MAIL_APP_NAME }."
       ],
       "The image could not be loaded": [
-        "No se ha podido cargar la imagen."
+        "No se ha podido cargar la imagen"
       ],
       "The image could not be loaded using proxy": [
         "No se ha podido cargar la imagen con un proxy."

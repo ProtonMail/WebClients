@@ -2991,7 +2991,7 @@
         "Le calendrier n'a pas pu être trouvé."
       ],
       "Calendar limit reached": [
-        "La limite du nombre de calendriers est atteinte."
+        "Le nombre maximum de calendriers a été atteint."
       ],
       "Checkout expired, please try again": [
         "La commande a expiré, nous vous invitons à réessayer."
@@ -3600,7 +3600,7 @@
         "L'URL n'est pas valide."
       ],
       "Oops, something went wrong": [
-        "Désolé, quelque chose s'est mal passé."
+        "Une erreur s'est produite."
       ],
       "Please refresh the page or try again later.": [
         "Nous vous invitons à actualiser la page ou à réessayer plus tard."
@@ -4993,7 +4993,7 @@
         "(filtrer si UNE des conditions suivantes est remplie)"
       ],
       "* No credit card required.": [
-        "*Aucune carte de crédit n'est nécessaire"
+        "*Aucune carte bancaire n'est nécessaire"
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } d'espace de stockage supplémentaire"
@@ -5826,7 +5826,7 @@
         "Aucune adresse n'existe."
       ],
       "No credit card required": [
-        "Aucune carte de crédit nécessaire"
+        "Aucune carte bancaire nécessaire"
       ],
       "No data recovery method set; you are at risk of losing access to your data": [
         "Aucune méthode de récupération des données n'est définie : le risque est de perdre l'accès à vos données."
@@ -6342,7 +6342,7 @@
       "To ensure continuous access to your account, set an account recovery method": [
         "Pour vous assurer d'avoir toujours accès à votre compte, définissez une méthode de récupération du compte."
       ],
-      "To ensure you don’t lose important data, ${ DRIVE_APP_NAME } saves older versions of your files as you\nand your collaborators make changes. Select how long ${ BRAND_NAME } should keep previous versions.": [
+      "To ensure you don’t lose important data, ${ DRIVE_APP_NAME } saves older versions of your files as you and your collaborators make changes. Select how long ${ BRAND_NAME } should keep previous versions.": [
         "Pour vous éviter de perdre des données importantes, ${ DRIVE_APP_NAME } enregistre les versions précédentes de vos fichiers au fur et à mesure que vous et vos collaborateurs les modifiez. Sélectionnez la durée pendant laquelle ${ BRAND_NAME } doit conserver les versions précédentes."
       ],
       "To fight spam and abuse, please verify you are human.": [
@@ -8738,10 +8738,6 @@
         "${ n } dossier et label",
         "${ n } dossiers et labels"
       ],
-      "${ n } forwarding mailbox": [
-        "${ n } messagerie de transfert",
-        "${ n } messageries de transfert"
-      ],
       "${ n } Hide My Email alias": [
         "${ n } alias « Hide My Email »",
         "${ n } alias « Hide My Email »"
@@ -8819,6 +8815,9 @@
       ],
       "Custom email domains": [
         "Domaines de messagerie personnalisés"
+      ],
+      "Custom fields": [
+        "Champs personnalisés"
       ],
       "Data breach monitoring": [
         "Surveillance des fuites de données"
@@ -8998,9 +8997,6 @@
       ],
       "Up to 3 TB of storage": [
         "Jusqu'à 3 To d'espace de stockage"
-      ],
-      "Up to 5 forwarding mailboxes": [
-        "Jusqu'à 5 messageries de transfert"
       ],
       "User credential management": [
         "Gestion des identifiants des utilisateurs"
