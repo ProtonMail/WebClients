@@ -14,10 +14,14 @@ export const selectAllForms = () => {
     return Array.from(candidates);
 };
 
-export const hasUnprocessedForms = () => {
+/* Unprocessed are forms that have never been seen by our detectors:
+ * if that is the case they will lack a `data-protonpass-form` attr */
+export const selectUnprocessedForms = () => {
     const selector = `${formOfInterestSelector}:not([${PROCESSED_FORM_ATTR}])`;
-    return document.querySelectorAll<HTMLFormElement>(selector).length > 0;
+    return Array.from(document.querySelectorAll<HTMLElement>(selector));
 };
+
+export const hasUnprocessedForms = () => selectUnprocessedForms().length > 0;
 
 /* dangling fields are fields that match our `fieldOfInterestSelector`
  * but have either not been processed or do not belong to a currently
