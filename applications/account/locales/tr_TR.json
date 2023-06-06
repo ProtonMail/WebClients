@@ -3349,6 +3349,12 @@
       "Uploaded files are not valid private keys. Please verify and try again.": [
         "Yüklenen dosyalar geçerli kişisel anahtarlar değil. Lütfen doğrulayıp yeniden deneyin."
       ],
+      "Username must begin with a letter or digit": [
+        "Kullanıcı adı bir harf ya da rakam ile başlamalı"
+      ],
+      "Username must end with a letter or digit": [
+        "Kullanıcı adı bir harf ya da rakam ile bitmeli"
+      ],
       "Validation error": [
         "Doğrulama sorunu"
       ],
@@ -6336,8 +6342,8 @@
       "To ensure continuous access to your account, set an account recovery method": [
         "Hesabınıza erişimi kaybetmemek için, bir hesap kurtarma yöntemi belirleyin"
       ],
-      "To ensure you don’t lose important data, ${ DRIVE_APP_NAME } saves older versions of your files as you\nand your collaborators make changes. Select how long ${ BRAND_NAME } should keep previous versions.": [
-        "${ DRIVE_APP_NAME }, önemli verilerinizi korumak için, siz ve iş birliği yaptığınız kişiler dosyalarınızı\ndeğiştirdikçe \nöncekli sürümlerini kaydeder. ${ BRAND_NAME } tarafından önceki sürümlerin ne kadar süreyle tutulacağını seçin."
+      "To ensure you don’t lose important data, ${ DRIVE_APP_NAME } saves older versions of your files as you and your collaborators make changes. Select how long ${ BRAND_NAME } should keep previous versions.": [
+        "${ DRIVE_APP_NAME }, önemli verilerinizi korumak için, siz ve iş birliği yaptığınız kişiler dosyalarınızı\ndeğiştirdikçe öncekli sürümlerini kaydeder. ${ BRAND_NAME } tarafından önceki sürümlerin ne kadar süreyle tutulacağını seçin."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "İstenmeyen iletilere ve kötüye kullanıma karşı lütfen insan olduğunuzu doğrulayın."
@@ -8732,10 +8738,6 @@
         "${ n } klasör ve etiket",
         "${ n } klasör ve etiket"
       ],
-      "${ n } forwarding mailbox": [
-        "${ n } iletme e-posta kutusu",
-        "${ n } iletme e-posta kutusu"
-      ],
       "${ n } Hide My Email alias": [
         "${ n } e-posta takma adımı gizle",
         "${ n } e-posta takma adımı gizle"
@@ -8813,6 +8815,9 @@
       ],
       "Custom email domains": [
         "Özel e-posta etki alanları"
+      ],
+      "Custom fields": [
+        "Özel alanlar"
       ],
       "Data breach monitoring": [
         "Verilerin ele geçirilmesini izleme"
@@ -8992,9 +8997,6 @@
       ],
       "Up to 3 TB of storage": [
         "3 TB depolama alanına kadar"
-      ],
-      "Up to 5 forwarding mailboxes": [
-        "5 taneye kadar iletme e-posta kutusu"
       ],
       "User credential management": [
         "Kullanıcı kimlik doğrulama bilgileri yönetimi"

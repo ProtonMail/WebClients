@@ -1602,6 +1602,12 @@
       "Unknown payment token status": [
         "Onbekende betalingstoken status"
       ],
+      "Username must begin with a letter or digit": [
+        "Gebruikersnaam moet met een letter of cijfer beginnen"
+      ],
+      "Username must end with a letter or digit": [
+        "Gebruikersnaam moet met een letter of cijfer eindigen"
+      ],
       "Wrong recovery phrase. Try again or use another recovery method.": [
         "Verkeerde herstelzijn. Probeer opnieuw of probeer een andere herstelmethode."
       ],
@@ -2237,6 +2243,9 @@
       ],
       "Each code can only be used once": [
         "Elke code kan maar één keer gebruikt worden"
+      ],
+      "Email address already used": [
+        "E-mailadres al in gebruik"
       ],
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
         "E-mailhosting is gratis inbegrepen voor 10 eigen domeinnamen. Extra domeinen kunnen toegevoegd worden voor ${ price }."
@@ -3525,10 +3534,6 @@
         "${ n } map en label",
         "${ n } mappen en labels"
       ],
-      "${ n } forwarding mailbox": [
-        "${ n } doorstuurpostvak",
-        "${ n } doorstuurpostvakken"
-      ],
       "${ n } Hide My Email alias": [
         "${ n } Hide My Email-alias",
         "${ n } Hide My Email-aliassen"
@@ -3603,6 +3608,9 @@
       ],
       "Custom email domains": [
         "Aangepaste e-maildomeinen"
+      ],
+      "Custom fields": [
+        "Aangepaste velden"
       ],
       "Data breach monitoring": [
         "Monitoring van datalekken"
@@ -3749,6 +3757,9 @@
       ],
       "Unlimited labels": [
         "Onbeperkt aantal labels"
+      ],
+      "Unlimited logins and notes": [
+        "Onbeperkt aantal wachtwoorden en notities"
       ],
       "Unlimited messages per day": [
         "Onbeperkt aantal berichten per dag"

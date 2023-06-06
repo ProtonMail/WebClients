@@ -6342,8 +6342,8 @@
       "To ensure continuous access to your account, set an account recovery method": [
         "Per garantir l'accés continu al vostre compte, configureu un mètode de recuperació del compte"
       ],
-      "To ensure you don’t lose important data, ${ DRIVE_APP_NAME } saves older versions of your files as you\nand your collaborators make changes. Select how long ${ BRAND_NAME } should keep previous versions.": [
-        "Per assegurar-vos que no perdeu dades importants, ${ DRIVE_APP_NAME } desa versions anteriors dels vostres fitxers a mesura que vós\ni els vostres col·laboradors hi feu canvis. Seleccioneu quant de temps ${ BRAND_NAME } hauria de mantenir les versions anteriors."
+      "To ensure you don’t lose important data, ${ DRIVE_APP_NAME } saves older versions of your files as you and your collaborators make changes. Select how long ${ BRAND_NAME } should keep previous versions.": [
+        "Per assegurar-vos que no perdeu dades importants, ${ DRIVE_APP_NAME } desa versions anteriors dels vostres fitxers a mesura que vós i els vostres col·laboradors hi feu canvis. Seleccioneu quant de temps ${ BRAND_NAME } hauria de mantenir les versions anteriors."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Per combatre el correu brossa, verifiqueu que sou humà."
@@ -6986,16 +6986,16 @@
         "Afegeix un temps d'expiració"
       ],
       "Apply / open": [
-        "Aplicar / obrir"
+        "Aplica / obre"
       ],
       "Attach file": [
-        "Adjuntar arxiu"
+        "Adjunta un arxiu"
       ],
       "Cancel / close": [
-        "Cancel·lar / tancar"
+        "Cancel·la / tanca"
       ],
       "Close draft": [
-        "Tancar esborrany"
+        "Tanca esborrany"
       ],
       "Delete permanently": [
         "Suprimeix permanentment"
@@ -7004,7 +7004,7 @@
         "Descarta l'esborrany"
       ],
       "Expand / contract composer": [
-        "Ampliar / contractar compositor"
+        "Amplia / contracta editor"
       ],
       "Forward": [
         "Reenvia"
@@ -7040,7 +7040,7 @@
         "Moure a primera posició"
       ],
       "Jump to last": [
-        "Moure a última posició"
+        "Mou a última posició"
       ],
       "Label as...": [
         "Etiqueta com a..."
@@ -7058,7 +7058,7 @@
         "Marca com a no llegit"
       ],
       "Minimize / maximize composer": [
-        "Minimitzar / maximitzar el compositor"
+        "Minimitza / maximitza el compositor"
       ],
       "Move down": [
         "Mou cap avall"
@@ -7091,10 +7091,10 @@
         "Nou missatge"
       ],
       "Open next message": [
-        "Obrir següent missatge"
+        "Obre el següent missatge"
       ],
       "Open previous message": [
-        "Obrir el missatge anterior"
+        "Obre el missatge anterior"
       ],
       "Open this modal": [
         "Obre aquesta finestra"
@@ -7112,13 +7112,13 @@
         "Cerca"
       ],
       "Select / unselect": [
-        "Seleccioneu / Anul·leu selecció"
+        "Selecciona / Anul·la selecció"
       ],
       "Select / unselect all": [
         "Selecciona-ho tot / No seleccionis res"
       ],
       "Send email": [
-        "Enviar correu"
+        "Envia el correu"
       ],
       "Show all emails": [
         "Mostra tots els correus electrònics"
@@ -8738,10 +8738,6 @@
         "${ n } carpeta i etiqueta",
         "${ n } carpetes i etiquetes"
       ],
-      "${ n } forwarding mailbox": [
-        "${ n } bústia de reenviament",
-        "${ n } bústies de reenviament"
-      ],
       "${ n } Hide My Email alias": [
         "${ n } àlies de Hide My Email",
         "${ n } àlies de Hide My Email"
@@ -8819,6 +8815,9 @@
       ],
       "Custom email domains": [
         "Dominis de correu personalitzats"
+      ],
+      "Custom fields": [
+        "Camps personalitzats"
       ],
       "Data breach monitoring": [
         "Monitoratge de vulneració de dades"
@@ -8998,9 +8997,6 @@
       ],
       "Up to 3 TB of storage": [
         "Fins a 3 TB d'emmagatzematge"
-      ],
-      "Up to 5 forwarding mailboxes": [
-        "Fins a 5 bústies de reenviament"
       ],
       "User credential management": [
         "Gestió de credencials d'usuari"
@@ -12106,7 +12102,7 @@
         "Estableix com es veu per defecte la vostra llista de missatges."
       ],
       "Set the default Composer popup size as small or full screen.": [
-        "Establiu la mida per defecte de la finestra emergent de l'Editor a mida petita o a pantalla completa."
+        "Establiu la mida per defecte de la finestra emergent de l'editor a mida petita o a pantalla completa."
       ],
       "Set the default layout for your Inbox.": [
         "Establiu el disseny per defecte de la vostra safata d'entrada."

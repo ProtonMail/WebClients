@@ -19,9 +19,6 @@
       "${ BRAND_NAME } shop": [
         "Boutique ${ BRAND_NAME }"
       ],
-      "Activate": [
-        "Activer"
-      ],
       "Activate recovery": [
         "Activer la récupération"
       ],
@@ -332,6 +329,9 @@
       ],
       "Download ${ attachmentName }": [
         "Télécharger ${ attachmentName }"
+      ],
+      "Downloading": [
+        "Téléchargement en cours"
       ],
       "Edit": [
         "Modifier"
@@ -1014,6 +1014,9 @@
       ],
       "This message contains remote content.": [
         "Ce message comporte du contenu distant."
+      ],
+      "To search your emails securely, we need to download a copy of your messages to your browser. The initial download may take a moment.": [
+        "Pour faire des recherches sécurisées dans vos messages, nous devons télécharger une copie de vos messages dans votre navigateur. Le téléchargement initial peut prendre un certain temps."
       ],
       "Toggle Calendar app": [
         "Basculer vers l'application Calendar"
@@ -3079,7 +3082,7 @@
         "Erreur d'authentification"
       ],
       "Calendar limit reached": [
-        "La limite du nombre de calendriers est atteinte."
+        "Le nombre maximum de calendriers a été atteint."
       ],
       "Cannot export this contact": [
         "Ce contact ne peut pas être exporté."
@@ -3655,7 +3658,7 @@
         "Aucun résultat n'a été trouvé pour « ${ query } »."
       ],
       "Oops, something went wrong": [
-        "Désolé, quelque chose s'est mal passé."
+        "Une erreur s'est produite."
       ],
       "Please refresh the page or try again later.": [
         "Nous vous invitons à actualiser la page ou à réessayer plus tard."
@@ -4085,17 +4088,17 @@
     },
     "Get started checklist incentive": {
       "Complete all steps and get a total of ${ rewardInGb } GB on your account": [
-        "Complétez toutes les étapes et obtenez un total de ${ rewardInGb } Go sur votre compte."
+        "Obtenez ${ rewardInGb } Go d'espace de stockage total sur votre compte en terminant votre checklist de démarrage."
       ],
       "Expires soon": [
-        "Expire bientôt"
+        "Se termine bientôt"
       ],
       "Expires today": [
-        "Expire aujourd'hui"
+        "Se termine aujourd'hui"
       ],
       "Only ${ days } day left": [
-        "Plus que ${ days } jour restant.",
-        "Plus que ${ days } jours restants."
+        "Encore ${ days } seulement.",
+        "Il ne reste plus que ${ days } jours."
       ]
     },
     "Get started checklist instructions": {
@@ -4123,16 +4126,16 @@
     },
     "Get started checklist item": {
       "Get mobile app": [
-        "Obtenir l'application mobile"
+        "Téléchargez l'application mobile"
       ],
       "Import contacts or emails": [
-        "Importer des contacts ou des messages"
+        "Importez des contacts ou des messages"
       ],
       "Send a message": [
-        "Envoyer un message"
+        "Envoyez un message"
       ],
       "Set up a recovery method": [
-        "Définir une méthode de récupération"
+        "Définissez une méthode de récupération"
       ]
     },
     "Get started checklist spotlight": {
@@ -4142,7 +4145,7 @@
     },
     "Get started checklist title": {
       "Get started": [
-        "Commencer"
+        "Lancez-vous"
       ]
     },
     "Gmail forwarding": {
@@ -4878,8 +4881,8 @@
       "Don't forget to share the password with the recipient": [
         "N'oubliez pas de communiquer le mot de passe au destinataire."
       ],
-      "Downloading message ${ currentProgress } out of ${ totalProgress }": [
-        "Téléchargement du message ${ currentProgress } sur ${ totalProgress }"
+      "Downloading paused": [
+        "Le téléchargement a été mis en pause."
       ],
       "Draft": [
         "Brouillon"
@@ -5072,9 +5075,6 @@
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Vos données sont en cours d'importation depuis ${ importedEmailAddress } vers ${ toEmail }."
       ],
-      "Indexing paused": [
-        "Indexation en pause"
-      ],
       "Inherited from parent folder": [
         "Hérité du dossier dans lequel il est placé."
       ],
@@ -5146,6 +5146,10 @@
       ],
       "Merged": [
         "Fusionné"
+      ],
+      "Message downloaded: ${ currentProgress } out of ${ totalProgress }": [
+        "Message téléchargé : ${ currentProgress } sur ${ totalProgress }",
+        "Messages téléchargés : ${ currentProgress } sur ${ totalProgress }"
       ],
       "Message expiration works out-of-the-box when sending emails to other ${ MAIL_APP_NAME } users. To send expiring emails to non-${ BRAND_NAME } users, please cancel and add password protection to your email.": [
         "Les messages avec une date d'expiration fonctionnent pour l'envoi de messages à des personnes qui utilisent ${ MAIL_APP_NAME }. Pour des destinataires qui n'utilisent pas ${ BRAND_NAME }, nous vous invitons à annuler l’envoi et à ajouter une protection par mot de passe à votre message."
@@ -5358,6 +5362,9 @@
       "Scheduling message...": [
         "Programmation du message en cours"
       ],
+      "Search option that lets you securely search for keywords in the body of email messages.": [
+        "Option de recherche qui vous permet de rechercher de façon sécurisée des mots-clés dans le corps des messages."
+      ],
       "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
         "La recherche prend trop de temps ? ${ dropdownButton } ou ${ toggleOffButton } de cette recherche."
       ],
@@ -5488,12 +5495,6 @@
       "This account has been suspended due to a potential policy violation.": [
         "Ce compte a été suspendu en raison d’une violation potentielle des règles d’utilisation."
       ],
-      "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        "Cette action téléchargera tous les messages pour qu'ils puissent être recherchés localement. Effacer les données de votre navigateur désactivera cette option."
-      ],
-      "This action will download the most recent messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        "Cette action permet de télécharger les messages les plus récents pour pouvoir les consulter localement. L'effacement des données de votre navigateur désactivera cette option."
-      ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Cette adresse est désactivée. Pour pouvoir envoyer des messages à cette adresse, son propriétaire doit d’abord l’activer."
       ],
@@ -5613,8 +5614,8 @@
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "Trop de messages sont en attente d'être envoyés. Vous devez attendre qu'un autre message ait été envoyé pour programmer celui-ci."
       ],
-      "Turn off content search. Activation progress won't be lost.": [
-        "Désactiver la recherche dans le contenu. La progression d'activation ne sera pas perdue."
+      "Turn off to only search by date, name, or email address. To disable search message content and delete downloaded messages, go to settings.": [
+        "Désactivez cette option pour rechercher uniquement par date, nom ou adresse e-mail. Pour désactiver la recherche dans le contenu des messages et supprimer les messages téléchargés, rendez-vous dans les paramètres."
       ],
       "Turn on to search the content of your messages": [
         "Activer pour rechercher dans le contenu de vos messages"
@@ -5918,11 +5919,11 @@
       ]
     },
     "Key pinning": {
-      "Clicking \"Trust Key\" will associate this public key with this sender\nand emails from this address will be automatically cryptographically verified.": [
-        "Cliquer sur Approuver la clé associera cette clé publique à cet expéditeur et les messages provenant de cette adresse seront alors automatiquement vérifiés par cryptographie."
+      "Clicking \"Trust Key\" will associate this public key with this sender and emails from this address will be automatically cryptographically verified.": [
+        "Cliquer sur « Approuver la clé » associera cette clé publique à cet expéditeur et les messages de cette adresse seront automatiquement vérifiés par cryptographie."
       ],
-      "Clicking \"Trust Key\" will create a new contact and associate this public key with\nthis sender. Emails from this address will be automatically cryptographically verified.": [
-        "Cliquer sur Approuver la clé créera un nouveau contact et associera cette clé publique à cet expéditeur. Les messages provenant de cette adresse seront alors automatiquement vérifiés par cryptographie."
+      "Clicking \"Trust Key\" will create a new contact and associate this public key with this sender. Emails from this address will be automatically cryptographically verified.": [
+        "Cliquer sur « Approuver la clé » créera un nouveau contact et associera cette clé publique à cet expéditeur. Les messages provenant de cette adresse seront alors automatiquement vérifiés par cryptographie."
       ],
       "Do you want to trust the primary public key with the following fingerprint?": [
         "Voulez-vous faire confiance à la clé publique principale avec l'empreinte suivante ?",
@@ -7313,16 +7314,16 @@
     },
     "Paid user checklist item": {
       "Get mobile app": [
-        "Obtenir l'application mobile"
+        "Téléchargez l'application mobile"
       ],
       "Import contacts or emails": [
-        "Importer des contacts ou des messages"
+        "Importez des contacts ou des messages"
       ],
       "Send a message": [
-        "Envoyer un message"
+        "Envoyez un message"
       ],
       "Set up a recovery method": [
-        "Définir une méthode de récupération"
+        "Définissez une méthode de récupération"
       ]
     },
     "Participant name": {
@@ -7402,6 +7403,9 @@
       ],
       "Please insert link first": [
         "Insérez d'abord le lien"
+      ],
+      "Search date, name, email address, or subject line": [
+        "Rechercher par date, nom, adresse e-mail ou objet du message"
       ],
       "Search for group name": [
         "Rechercher un nom de groupe"
@@ -7968,20 +7972,20 @@
       "Invite friends to ${ BRAND_NAME }": [
         "Inviter des amis à rejoindre ${ BRAND_NAME }"
       ],
-      "Message Content Search": [
-        "Recherche dans le contenu des messages"
-      ],
       "Schedule send": [
         "Programmer l'envoi"
+      ],
+      "Search just got smarter and faster": [
+        "La recherche est devenue plus intelligente et plus rapide."
+      ],
+      "Try it today.": [
+        "Essayez dès maintenant."
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "Nous chargeons désormais les images par défaut et empêchons les expéditeurs de vous suivre.\nVous pouvez changer cela dans les ${ settingsLink }."
       ],
       "You can now schedule your messages to be sent later": [
         "Vous pouvez désormais programmer vos messages pour les envoyer plus tard."
-      ],
-      "You can now search the content of your encrypted emails.": [
-        "Vous pouvez désormais faire des recherches dans le contenu de vos messages chiffrés."
       ]
     },
     "Status": {
@@ -8187,7 +8191,7 @@
       "Message added to ${ labelName }.": [
         "Le message a été ajouté à ${ labelName }."
       ],
-      "Message content search activated": [
+      "Message content search enabled": [
         "La recherche dans le contenu des messages a été activée."
       ],
       "Message deleted": [

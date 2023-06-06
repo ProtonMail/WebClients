@@ -11,9 +11,6 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } dućan"
       ],
-      "Activate": [
-        "Aktiviraj"
-      ],
       "Activate recovery": [
         "Aktivirajte oporavak"
       ],
@@ -3332,9 +3329,6 @@
       "Import mailbox": [
         "Uvezi poštanski sandučić"
       ],
-      "Indexing paused": [
-        "Pauzirano je indeksiranje"
-      ],
       "Inherited from parent folder": [
         "Nasljedno iz roditeljske mape"
       ],
@@ -3592,9 +3586,6 @@
       "This account has been suspended due to a potential policy violation.": [
         "Vaš račun je suspendiran zbog mogućih kršenja pravila."
       ],
-      "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        "Ovom će se radnjom preuzeti sve poruke kako bi se mogle pretraživati lokalno. Brisanje podataka preglednika onemogućiti će ovu opciju."
-      ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Ova adresa je onemogućena. Da biste mogli slati na ovu adresu, vlasnik najprije mora omogućiti adresu."
       ],
@@ -3657,9 +3648,6 @@
       ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Da biste koristili Potvrdu adresa, morate se pouzdati u jedan ili više dostupnih javnih ključeva, uključujući ključ koji koristite za slanje. Time se sprječava lažiranje ključeva za šifriranje."
-      ],
-      "Turn off content search. Activation progress won't be lost.": [
-        "Isključite pretraživanje sadržaja. Napredak aktivacije neće se izgubiti."
       ],
       "Unsupported file": [
         "Nepodržana datoteka"
@@ -3777,12 +3765,6 @@
       ]
     },
     "Key pinning": {
-      "Clicking \"Trust Key\" will associate this public key with this sender\nand emails from this address will be automatically cryptographically verified.": [
-        "Pritiskom na \"Ključ povjerenja\" taj će se javni ključ pridružiti ovom pošiljatelju,\na e-poruke s te adrese automatski će biti kriptografski potvrđene."
-      ],
-      "Clicking \"Trust Key\" will create a new contact and associate this public key with\nthis sender. Emails from this address will be automatically cryptographically verified.": [
-        "Pritiskom na \"Ključ povjerenja\" stvoriti će se novi kontakt i javni ključ će se pridružiti \novom pošiljatelju. E-poruke s te adrese automatski će biti kriptografski potvrđene."
-      ],
       "Do you want to trust the primary public key with the following fingerprint?": [
         "Želite li vjerovati primarnom javnom ključu s sljedećim otiskom prsta?",
         "Želite li vjerovati primarnim javnim ključevima s sljedećim otiscima prsta?",
@@ -5321,9 +5303,6 @@
       ],
       "Message added to ${ labelName }.": [
         "Poruka dodana u ${ labelName }."
-      ],
-      "Message content search activated": [
-        "Aktivirano je pretraživanje sadržaja poruka"
       ],
       "Message deleted": [
         "Poruka izbrisana"

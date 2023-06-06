@@ -19,9 +19,6 @@
       "${ BRAND_NAME } shop": [
         "Botiga de ${ BRAND_NAME }"
       ],
-      "Activate": [
-        "Activar"
-      ],
       "Activate recovery": [
         "Activa la recuperació"
       ],
@@ -332,6 +329,9 @@
       ],
       "Download ${ attachmentName }": [
         "Descarregar ${ attachmentName }"
+      ],
+      "Downloading": [
+        "Descarregant"
       ],
       "Edit": [
         "Edita"
@@ -1014,6 +1014,9 @@
       ],
       "This message contains remote content.": [
         "Aquest missatge conté contingut remot."
+      ],
+      "To search your emails securely, we need to download a copy of your messages to your browser. The initial download may take a moment.": [
+        "Per cercar els vostres correus electrònics de forma segura, hem de descarregar una còpia dels vostres missatges al navegador. La descàrrega inicial pot trigar una estona."
       ],
       "Toggle Calendar app": [
         "Canvia a l'aplicació Calendar"
@@ -4123,16 +4126,16 @@
     },
     "Get started checklist item": {
       "Get mobile app": [
-        "Obtenir l'aplicació mòbil"
+        "Obteniu l'aplicació mòbil"
       ],
       "Import contacts or emails": [
         "Importeu contactes o correus electrònics"
       ],
       "Send a message": [
-        "Enviar un missatge"
+        "Envieu un missatge"
       ],
       "Set up a recovery method": [
-        "Configurar un mètode de recuperació"
+        "Configureu un mètode de recuperació"
       ]
     },
     "Get started checklist spotlight": {
@@ -4878,8 +4881,8 @@
       "Don't forget to share the password with the recipient": [
         "No oblidi compartir la contrassenya amb el destinatari"
       ],
-      "Downloading message ${ currentProgress } out of ${ totalProgress }": [
-        "Baixant missatge ${ currentProgress } de ${ totalProgress }"
+      "Downloading paused": [
+        "S'ha pausat la descàrrega"
       ],
       "Draft": [
         "Esborrany"
@@ -5072,9 +5075,6 @@
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Important les vostres dades des de ${ importedEmailAddress } a ${ toEmail }."
       ],
-      "Indexing paused": [
-        "Indexació pausada"
-      ],
       "Inherited from parent folder": [
         "Heretat d'una carpeta principal"
       ],
@@ -5146,6 +5146,10 @@
       ],
       "Merged": [
         "Combinats"
+      ],
+      "Message downloaded: ${ currentProgress } out of ${ totalProgress }": [
+        "S'ha descarregat el missatge: ${ currentProgress } de ${ totalProgress }",
+        "S'han descarregat els missatges: ${ currentProgress } de ${ totalProgress }"
       ],
       "Message expiration works out-of-the-box when sending emails to other ${ MAIL_APP_NAME } users. To send expiring emails to non-${ BRAND_NAME } users, please cancel and add password protection to your email.": [
         "La caducitat del missatge funciona automàticament quan s'envien correus electrònics a altres usuaris de ${ MAIL_APP_NAME }. Per enviar correus electrònics que caduquin a usuaris que no siguin de ${ BRAND_NAME }, torneu enrere i afegiu la protecció de contrasenya al correu electrònic."
@@ -5358,6 +5362,9 @@
       "Scheduling message...": [
         "Programant missatge..."
       ],
+      "Search option that lets you securely search for keywords in the body of email messages.": [
+        "Opció de cerca que permet cercar de forma segura paraules clau en el cos dels missatges de correu electrònic."
+      ],
       "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
         "La cerca està trigant massa? ${ dropdownButton } o ${ toggleOffButton } d'aquesta sessió de cerca."
       ],
@@ -5488,12 +5495,6 @@
       "This account has been suspended due to a potential policy violation.": [
         "Aquest compte ha estat suspès a causa d'una possible infracció de les polítiques."
       ],
-      "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        "Es descarregaran tots els missatges perquè es puguin cercar localment. Netejar les dades del vostre navegador deshabitarà aquesta opció."
-      ],
-      "This action will download the most recent messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        "Es descarregaran els missatges més recents perquè es puguin cercar localment. Netejar les dades del vostre navegador deshabitarà aquesta opció."
-      ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Aquesta adreça està inhabilitada. Per tal de poder enviar-hi, el propietari l'ha d'habilitar en primer lloc."
       ],
@@ -5613,8 +5614,8 @@
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "Hi ha massa missatges esperant per ser enviats. Espereu que s'enviï un altre missatge per programar aquest."
       ],
-      "Turn off content search. Activation progress won't be lost.": [
-        "Desactivar la cerca de contingut. No es perdrà el procés d'activació."
+      "Turn off to only search by date, name, or email address. To disable search message content and delete downloaded messages, go to settings.": [
+        "Desactiveu-ho per a cercar només per data, nom o adreça de correu electrònic. Per desactivar la cerca del contingut dels missatges i eliminar els missatges descarregats, aneu a les preferències."
       ],
       "Turn on to search the content of your messages": [
         "Activeu-ho per cercar el contingut dels missatges"
@@ -5918,11 +5919,11 @@
       ]
     },
     "Key pinning": {
-      "Clicking \"Trust Key\" will associate this public key with this sender\nand emails from this address will be automatically cryptographically verified.": [
-        "Al fer clic a \"Clau de confiança\" s'associarà aquesta clau pública amb aquest remitent\ni els correus electrònics d’aquesta adreça es verificaran de forma criptogràfica automàticament."
+      "Clicking \"Trust Key\" will associate this public key with this sender and emails from this address will be automatically cryptographically verified.": [
+        "En fer clic a \"Clau de confiança\" s'associarà aquesta clau pública amb aquest remitent i els correus electrònics d’aquesta adreça es verificaran de forma criptogràfica automàticament."
       ],
-      "Clicking \"Trust Key\" will create a new contact and associate this public key with\nthis sender. Emails from this address will be automatically cryptographically verified.": [
-        "En fer clic a «Clau de confiança» es crearà un contacte nou i s'associarà aquesta clau pública amb el remitent. Els correus electrònics d’aquesta adreça es verificaran de forma criptogràfica automàticament."
+      "Clicking \"Trust Key\" will create a new contact and associate this public key with this sender. Emails from this address will be automatically cryptographically verified.": [
+        "En fer clic a «Clau de confiança» es crearà un contacte nou i s'associarà aquesta clau pública amb aquest remitent. Els correus electrònics d’aquesta adreça es verificaran de forma criptogràfica automàticament."
       ],
       "Do you want to trust the primary public key with the following fingerprint?": [
         "Vols confiar la clau pública primaria amb la següent emprenta dactilar?",
@@ -5946,16 +5947,16 @@
         "Afegeix un temps d'expiració"
       ],
       "Apply / open": [
-        "Aplicar / obrir"
+        "Aplica / obre"
       ],
       "Attach file": [
-        "Adjuntar arxiu"
+        "Adjunta un arxiu"
       ],
       "Cancel / close": [
-        "Cancel·lar / tancar"
+        "Cancel·la / tanca"
       ],
       "Close draft": [
-        "Tancar esborrany"
+        "Tanca esborrany"
       ],
       "Delete permanently": [
         "Suprimeix permanentment"
@@ -5964,7 +5965,7 @@
         "Descarta l'esborrany"
       ],
       "Expand / contract composer": [
-        "Ampliar / contractar compositor"
+        "Amplia / contracta editor"
       ],
       "Forward": [
         "Reenvia"
@@ -6000,7 +6001,7 @@
         "Moure a primera posició"
       ],
       "Jump to last": [
-        "Moure a última posició"
+        "Mou a última posició"
       ],
       "Label as...": [
         "Etiqueta com a..."
@@ -6018,7 +6019,7 @@
         "Marca com a no llegit"
       ],
       "Minimize / maximize composer": [
-        "Minimitzar / maximitzar el compositor"
+        "Minimitza / maximitza el compositor"
       ],
       "Move down": [
         "Mou cap avall"
@@ -6051,10 +6052,10 @@
         "Nou missatge"
       ],
       "Open next message": [
-        "Obrir següent missatge"
+        "Obre el següent missatge"
       ],
       "Open previous message": [
-        "Obrir el missatge anterior"
+        "Obre el missatge anterior"
       ],
       "Open this modal": [
         "Obre aquesta finestra"
@@ -6072,13 +6073,13 @@
         "Cerca"
       ],
       "Select / unselect": [
-        "Seleccioneu / Anul·leu selecció"
+        "Selecciona / Anul·la selecció"
       ],
       "Select / unselect all": [
         "Selecciona-ho tot / No seleccionis res"
       ],
       "Send email": [
-        "Enviar correu"
+        "Envia el correu"
       ],
       "Show all emails": [
         "Mostra tots els correus electrònics"
@@ -7403,6 +7404,9 @@
       "Please insert link first": [
         "Inseriu l'enllaç primer"
       ],
+      "Search date, name, email address, or subject line": [
+        "Cerca data, nom, adreça de correu electrònic o línia de l'assumpte"
+      ],
       "Search for group name": [
         "Buscar per nom de grup"
       ],
@@ -7675,10 +7679,10 @@
     },
     "Side panel spotlight": {
       "Manage your contacts and view your calendar without leaving your app.": [
-        "Gestioni els seus contactes i vegi el seu calendari sense sortir de la seva aplicació."
+        "Gestioneu els vostres contactes i vegeu el vostre calendari sense sortir de la vostra aplicació."
       ],
       "Try the new side panel": [
-        "Provar la nova subfinestra lateral"
+        "Proveu el nou panell lateral."
       ]
     },
     "Signature verification warning": {
@@ -7968,20 +7972,20 @@
       "Invite friends to ${ BRAND_NAME }": [
         "Convida amistats a ${ BRAND_NAME }"
       ],
-      "Message Content Search": [
-        "Cerca de contingut del missatge"
-      ],
       "Schedule send": [
         "Programar l'enviament"
+      ],
+      "Search just got smarter and faster": [
+        "La cerca s'ha fet més intel·ligent i ràpida"
+      ],
+      "Try it today.": [
+        "Prova-ho avui."
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "Per defecte, es carreguen les imatges i es bloca el seguiment per part de l'emissor. Això es pot canviar a ${ settingsLink }."
       ],
       "You can now schedule your messages to be sent later": [
         "Ara podeu programar els vostres missatges per tal que s'enviïn més tard"
-      ],
-      "You can now search the content of your encrypted emails.": [
-        "Ara podeu cercar el contingut dels vostres correus electrònics xifrats."
       ]
     },
     "Status": {
@@ -8187,8 +8191,8 @@
       "Message added to ${ labelName }.": [
         "Missatge afegit a ${ labelName }."
       ],
-      "Message content search activated": [
-        "Cerca de contingut del missatge activada"
+      "Message content search enabled": [
+        "S'ha habilitat la cerca del contingut dels missatges"
       ],
       "Message deleted": [
         "Missatge esborrat"
