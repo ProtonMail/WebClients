@@ -134,7 +134,7 @@ export const createFormManager = (options: FormManagerOptions) => {
                             setFormProcessed(options.form, options.formType);
                             const formHandle = ctx.trackedForms.get(options.form) ?? createFormHandles(options);
                             ctx.trackedForms.set(options.form, formHandle);
-                            formHandle.reconciliate(options.fields);
+                            formHandle.reconciliate(options.formType, options.fields);
                             formHandle.attach();
                         });
 

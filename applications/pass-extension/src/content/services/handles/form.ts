@@ -1,3 +1,4 @@
+import type { FormType } from '@proton/pass/types';
 import { FormField } from '@proton/pass/types';
 import { getMaxZIndex } from '@proton/pass/utils/dom';
 import { logger } from '@proton/pass/utils/logger';
@@ -50,7 +51,8 @@ export const createFormHandles = (options: DetectedForm): FormHandle => {
 
         shouldRemove: () => !document.body.contains(form),
 
-        reconciliate: (fields: DetectedField[]) => {
+        reconciliate: (formType: FormType, fields: DetectedField[]) => {
+            formHandle.formType = formType;
             /* detach removed fields */
             formHandle.getFields().forEach((field) => {
                 if (!form.contains(field.element)) formHandle.detachField(field.element);
