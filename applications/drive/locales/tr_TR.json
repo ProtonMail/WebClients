@@ -2187,6 +2187,12 @@
       "Unknown error": [
         "Bilinmeyen sorun"
       ],
+      "Username must begin with a letter or digit": [
+        "Kullanıcı adı bir harf ya da rakam ile başlamalı"
+      ],
+      "Username must end with a letter or digit": [
+        "Kullanıcı adı bir harf ya da rakam ile bitmeli"
+      ],
       "You can't send a mail to more than 100 recipients": [
         "Bir iletiyi 100 üzerinde alıcıya gönderemezsiniz"
       ],
@@ -3191,8 +3197,8 @@
       "Attention required": [
         "İlgilenmeniz gerekiyor"
       ],
-      "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
-        "${ DRIVE_APP_NAME } uçtan uca şifrelenmiş olduğundan, dosyalarınıza erişemeyiz ve şifrelerini çözemeyiz. Şifreyi yeniledikten sonra Drive kilidini açmak için şunlardan birine sahip olmanız gerekir:"
+      "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access or decrypt your files for you. To unlock your drive after a password reset, you must have one of the following:": [
+        "${ DRIVE_APP_NAME } uçtan uca şifrelenmiş olduğundan, dosyalarınıza erişemeyiz veya şifrelerini çözemeyiz. Şifreyi yeniledikten sonra Drive kilidini açmak için şunlardan birine sahip olmanız gerekir:"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Yeni bir doğrulama kodu istemeden önce İstenmeyen kutunuza bakın ve ${ strong } adresinin doğru olduğundan emin olun."
@@ -3386,6 +3392,12 @@
       "Failed": [
         "Başarısız oldu"
       ],
+      "Failed to generate a secure link. The reason is: ${ error }": [
+        "Güvenli bir bağlantı oluşturulamadı. Nedeni: ${ error }"
+      ],
+      "Failed to generate a secure link. Try again later": [
+        "Güvenli bir bağlantı oluşturulamadı. Bir süre sonra yeniden deneyin"
+      ],
       "Failed to open a secure link. The reason is: ${ error }": [
         "Güvenli bağlantı açılamadı. Nedeni: ${ error }"
       ],
@@ -3464,8 +3476,8 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "E-postayı Gelen kutunuzda göremezseniz, İstenmeyen kutusuna bakmayı unutmayın."
       ],
-      "If you have one of these, continue to ${ BRAND_NAME } Account setting to\nstart the unblock process.": [
-        "Bunlardan birine sahipseniz, engellemeyi kaldırmak için ${ BRAND_NAME } hesabı ayarıyla ilerleyin."
+      "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process.": [
+        "Bunlardan birine sahipseniz, engellemeyi kaldırmak için ${ BRAND_NAME } hesap ayarına gidin."
       ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "${ calendarCount } / ${ totalCalendarsCount } takvimi içe aktar",
@@ -3867,8 +3879,8 @@
       "This will overwrite the existing folder": [
         "Bu işlem var olan klasörün üzerine yazacak"
       ],
-      "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on\nthe device won’t be affected.": [
-        "Bu işlem ${ DRIVE_APP_NAME } ile eşitlenmiş ${ deviceName } aygıtının eşitlemesini kaldıracak. Aygıt üzerindeki yerel dosyalar bu işlemden etkilenmeyecek."
+      "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on the device won’t be affected.": [
+        "Bu işlem ${ DRIVE_APP_NAME } üzerinden ${ deviceName } aygıtının eşitlemesini kaldıracak. Aygıt üzerindeki yerel dosyalar etkilenmeyecek."
       ],
       "This will replace the existing file with the folder": [
         "Bu işlem var olan dosyayı klasör ile değiştirir"
@@ -4592,8 +4604,8 @@
       "Wonderful": [
         "Çok iyi"
       ],
-      "Yes, I want to permanently delete\nmy old files": [
-        "Evet, eski dosyalarımı kalıcı olarak \nsilmek istiyorum"
+      "Yes, I want to permanently delete my old files": [
+        "Evet, eski dosyalarımı kalıcı olarak silmek istiyorum"
       ],
       "Your password (admin)": [
         "Parolanız (yönetici)"

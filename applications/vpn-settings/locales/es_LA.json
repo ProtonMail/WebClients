@@ -3534,10 +3534,6 @@
         "${ n } carpeta y etiqueta",
         "${ n } carpetas y etiquetas"
       ],
-      "${ n } forwarding mailbox": [
-        "${ n } buzón de reenvío",
-        "${ n } buzones de reenvío"
-      ],
       "${ n } Hide My Email alias": [
         "${ n } alias de Hide My Email",
         "${ n } alias de Hide My Email"
@@ -3612,6 +3608,9 @@
       ],
       "Custom email domains": [
         "Dominios de correo electrónico personalizados"
+      ],
+      "Custom fields": [
+        "Campos personalizados"
       ],
       "Data breach monitoring": [
         "Monitoreo de vulneración de datos"
@@ -3776,9 +3775,6 @@
       ],
       "Up to ${ totalStorageSize } storage": [
         "Hasta ${ totalStorageSize } de almacenamiento"
-      ],
-      "Up to 5 forwarding mailboxes": [
-        "Hasta 5 buzones de reenvío"
       ],
       "User credential management": [
         "Gestión de credenciales de usuario"

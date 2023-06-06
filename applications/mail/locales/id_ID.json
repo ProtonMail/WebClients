@@ -19,9 +19,6 @@
       "${ BRAND_NAME } shop": [
         "Toko ${ BRAND_NAME }"
       ],
-      "Activate": [
-        "Aktifkan"
-      ],
       "Activate recovery": [
         "Aktifkan metode pemulihan"
       ],
@@ -4797,9 +4794,6 @@
       "Don't forget to share the password with the recipient": [
         "Jangan lupa untuk membagikan kata sandi Anda dengan penerima pesan"
       ],
-      "Downloading message ${ currentProgress } out of ${ totalProgress }": [
-        "Mengunduh pesan ${ currentProgress } dari ${ totalProgress }"
-      ],
       "Draft": [
         "Draf"
       ],
@@ -4982,9 +4976,6 @@
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Mengimpor data Anda dari ${ importedEmailAddress } menuju ${ toEmail }."
-      ],
-      "Indexing paused": [
-        "Pengindeksan dijeda"
       ],
       "Inherited from parent folder": [
         "Diwariskan dari folder induk"
@@ -5403,12 +5394,6 @@
       "This account has been suspended due to a potential policy violation.": [
         "Akun ini telah ditangguhkan karena ditenggarai telah melanggar ketentuan penggunaan yang berlaku."
       ],
-      "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        "Tindakan ini akan mengunduh semua pesan agar pesan tersebut dapat dicari secara lokal. Membersihkan data peramban web atau keluar dari mail Anda akan menonaktifkan opsi ini."
-      ],
-      "This action will download the most recent messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        "Tindakan ini akan mengunduh seluruh pesan terbaru yang ada untuk dapat dicari secara lokal. Membersihkan data browser Anda akan menonaktifkan pilihan ini."
-      ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Alamat ini nonaktif. Agar dapat mengirim ke alamat ini, pemiliknya harus mengaktifkan dulu alamat tersebut."
       ],
@@ -5519,9 +5504,6 @@
       ],
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "Pesan yang akan dikirim sudah terlalu banyak. Mohon tunggu sejenak sebelum Anda menjadwalkan pengiriman pesan ini."
-      ],
-      "Turn off content search. Activation progress won't be lost.": [
-        "Nonaktifkan pencarian konten. Kemajuan aktivasi tidak akan hilang."
       ],
       "Turn on to search the content of your messages": [
         "Aktifkan untuk dapat mencari isi konten pesan Anda"
@@ -5816,12 +5798,6 @@
       ]
     },
     "Key pinning": {
-      "Clicking \"Trust Key\" will associate this public key with this sender\nand emails from this address will be automatically cryptographically verified.": [
-        "Mengklik \"Percayai Kunci\" akan menghubungkan kunci publik ini dengan pengirim dan surel dari alamat ini akan diverifikasi kriptografi secara otomatis."
-      ],
-      "Clicking \"Trust Key\" will create a new contact and associate this public key with\nthis sender. Emails from this address will be automatically cryptographically verified.": [
-        "Mengklik \"Percayai Kunci\" akan membuat kontak baru dan menghubungkannya kunci publik ini dengan pengirim. Surel dari alamat ini akan diverifikasi kriptografi secara otomatis."
-      ],
       "Do you want to trust the primary public keys with the following fingerprints?": [
         "Apakah Anda ingin memercayai kunci publik utama dengan sidik jari berikut?"
       ],
@@ -7840,9 +7816,6 @@
       "Invite friends to ${ BRAND_NAME }": [
         "Undang teman ke ${ BRAND_NAME }"
       ],
-      "Message Content Search": [
-        "Pencarian Konten Pesan"
-      ],
       "Schedule send": [
         "Jadwalkan pengiriman"
       ],
@@ -7851,9 +7824,6 @@
       ],
       "You can now schedule your messages to be sent later": [
         "Kini Anda dapat menjadwalkan pengiriman pesan"
-      ],
-      "You can now search the content of your encrypted emails.": [
-        "Anda kini dapat mencari isi konten email Anda yang terenkripsi."
       ]
     },
     "Status": {
@@ -8033,9 +8003,6 @@
       ],
       "Message added to ${ labelName }.": [
         "Pesan ditambahkan ke ${ labelName }."
-      ],
-      "Message content search activated": [
-        "Pencarian konten pesan diaktifkan"
       ],
       "Message deleted": [
         "Pesan dihapus"

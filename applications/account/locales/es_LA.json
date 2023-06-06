@@ -6342,7 +6342,7 @@
       "To ensure continuous access to your account, set an account recovery method": [
         "Para asegurar el acceso a su cuenta, establezca un método de recuperación de cuenta"
       ],
-      "To ensure you don’t lose important data, ${ DRIVE_APP_NAME } saves older versions of your files as you\nand your collaborators make changes. Select how long ${ BRAND_NAME } should keep previous versions.": [
+      "To ensure you don’t lose important data, ${ DRIVE_APP_NAME } saves older versions of your files as you and your collaborators make changes. Select how long ${ BRAND_NAME } should keep previous versions.": [
         "Para asegurarse de no perder datos importantes, ${ DRIVE_APP_NAME } guarda versiones anteriores de sus archivos a medida que usted\ny sus colaboradores realizan cambios. Seleccione cuánto tiempo ${ BRAND_NAME } debería de conservar las versiones."
       ],
       "To fight spam and abuse, please verify you are human.": [
@@ -8738,10 +8738,6 @@
         "${ n } carpeta y etiqueta",
         "${ n } carpetas y etiquetas"
       ],
-      "${ n } forwarding mailbox": [
-        "${ n } buzón de reenvío",
-        "${ n } buzones de reenvío"
-      ],
       "${ n } Hide My Email alias": [
         "${ n } alias de Hide My Email",
         "${ n } alias de Hide My Email"
@@ -8819,6 +8815,9 @@
       ],
       "Custom email domains": [
         "Dominios de correo electrónico personalizados"
+      ],
+      "Custom fields": [
+        "Campos personalizados"
       ],
       "Data breach monitoring": [
         "Monitoreo de vulneración de datos"
@@ -8998,9 +8997,6 @@
       ],
       "Up to 3 TB of storage": [
         "Hasta 3 TB de almacenamiento"
-      ],
-      "Up to 5 forwarding mailboxes": [
-        "Hasta 5 buzones de reenvío"
       ],
       "User credential management": [
         "Gestión de credenciales de usuario"

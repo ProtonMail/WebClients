@@ -19,9 +19,6 @@
       "${ BRAND_NAME } shop": [
         "Obchod ${ BRAND_NAME }"
       ],
-      "Activate": [
-        "Aktivovat"
-      ],
       "Activate recovery": [
         "Aktivovat obnovení"
       ],
@@ -158,7 +155,7 @@
         "Vyberte soubor nebo jej sem přetáhněte"
       ],
       "Clear": [
-        "Vyčistit"
+        "Smazat"
       ],
       "Clear all formatting": [
         "Vymazat veškeré formátování"
@@ -336,6 +333,9 @@
       ],
       "Download ${ attachmentName }": [
         "Stáhnout ${ attachmentName }"
+      ],
+      "Downloading": [
+        "Stahování"
       ],
       "Edit": [
         "Upravit"
@@ -1021,6 +1021,9 @@
       "This message contains remote content.": [
         "Tato zpráva obsahuje vzdálený obsah."
       ],
+      "To search your emails securely, we need to download a copy of your messages to your browser. The initial download may take a moment.": [
+        "Abychom mohli bezpečně prohledávat vaše e-maily, musíme do prohlížeče stáhnout kopie vašich zpráv. Počáteční stahování může chvíli trvat."
+      ],
       "Toggle Calendar app": [
         "Zobrazení aplikace kalendáře"
       ],
@@ -1261,7 +1264,7 @@
     },
     "Animation": {
       "${ nameToDisplay }'s inbox": [
-        "Zprávy uživatele ${ nameToDisplay }"
+        "${ nameToDisplay } doručená pošta"
       ],
       "5 trackers removed": [
         "5 sledovacích prvků odstraněno"
@@ -5040,8 +5043,8 @@
       "Don't forget to share the password with the recipient": [
         "Nezapomeňte příjemci sdělit heslo"
       ],
-      "Downloading message ${ currentProgress } out of ${ totalProgress }": [
-        "Stahování zprávy ${ currentProgress } z ${ totalProgress }"
+      "Downloading paused": [
+        "Stahování pozastaveno"
       ],
       "Draft": [
         "Koncept"
@@ -5250,9 +5253,6 @@
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Importujeme Vaše data z ${ importedEmailAddress } do ${ toEmail }."
       ],
-      "Indexing paused": [
-        "Indexování pozastaveno"
-      ],
       "Inherited from parent folder": [
         "Převzato z nadřazené složky"
       ],
@@ -5324,6 +5324,12 @@
       ],
       "Merged": [
         "Sloučený"
+      ],
+      "Message downloaded: ${ currentProgress } out of ${ totalProgress }": [
+        "Stahování zprávy: ${ currentProgress } z ${ totalProgress }",
+        "Stahování zpráv: ${ currentProgress } ze ${ totalProgress }",
+        "Stahování zpráv: ${ currentProgress } z ${ totalProgress }",
+        "Stahování zpráv: ${ currentProgress } z ${ totalProgress }"
       ],
       "Message expiration works out-of-the-box when sending emails to other ${ MAIL_APP_NAME } users. To send expiring emails to non-${ BRAND_NAME } users, please cancel and add password protection to your email.": [
         "Vypršení platnosti zprávy funguje mezi uživateli služby ${ MAIL_APP_NAME }. Pro zaslání e-mailů s omezenou platností uživatelům, kteří nepoužívají službu ${ BRAND_NAME }, prosím nepokračujte a přidejte k e-mailu ochranu heslem."
@@ -5538,6 +5544,9 @@
       "Scheduling message...": [
         "Plánování zprávy..."
       ],
+      "Search option that lets you securely search for keywords in the body of email messages.": [
+        "Možnost vyhledávání, která vám umožní bezpečně vyhledávat klíčová slova v těle e-mailových zpráv."
+      ],
       "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
         "Trvá hledání příliš dlouho? ${ dropdownButton } nebo ${ toggleOffButton } z této relace hledání."
       ],
@@ -5670,12 +5679,6 @@
       "This account has been suspended due to a potential policy violation.": [
         "Tento účet byl zablokován kvůli možnému porušení pravidel."
       ],
-      "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        "Tato akce stáhne všechny zprávy, aby mohly být lokálně prohledávány. Vymazání dat prohlížeče deaktivuje tuto volbu."
-      ],
-      "This action will download the most recent messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        "Tato akce stáhne nejnovější zprávy, aby mohly být lokálně prohledávány. Vymazání dat prohlížeče deaktivuje tuto volbu."
-      ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Tato adresa není povolena. Pokud chcete odesílat zprávy na tuto adresu, musí ji majitel nejdříve povolit."
       ],
@@ -5799,8 +5802,8 @@
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "Příliš mnoho zpráv čeká na odeslání. Prosím počkejte až bude další zpráva odeslána k naplánování této zprávy."
       ],
-      "Turn off content search. Activation progress won't be lost.": [
-        "Vypnutí vyhledávání v obsahu zpráv. Průběh aktivace nebude narušen."
+      "Turn off to only search by date, name, or email address. To disable search message content and delete downloaded messages, go to settings.": [
+        "Vypněte vyhledávání pouze podle data, jména nebo e-mailové adresy. Chcete-li zakázat vyhledávání obsahu zpráv a odstranit stažené zprávy, přejděte do Nastavení."
       ],
       "Turn on to search the content of your messages": [
         "Zapněte pro možnost vyhledávat v obsahu vašich zpráv"
@@ -6122,10 +6125,10 @@
       ]
     },
     "Key pinning": {
-      "Clicking \"Trust Key\" will associate this public key with this sender\nand emails from this address will be automatically cryptographically verified.": [
-        "Kliknutím na \"Důvěřovat klíči\" bude přiřazen tento veřejný klíč k tomuto odesílateli a e-maily z této adresy budou automaticky kryptograficky ověřovány."
+      "Clicking \"Trust Key\" will associate this public key with this sender and emails from this address will be automatically cryptographically verified.": [
+        "Kliknutím na \"Důvěřovat klíči\" přiřadíte tento veřejný klíč k tomuto odesílateli a e-maily z této adresy budou automaticky kryptograficky ověřovány."
       ],
-      "Clicking \"Trust Key\" will create a new contact and associate this public key with\nthis sender. Emails from this address will be automatically cryptographically verified.": [
+      "Clicking \"Trust Key\" will create a new contact and associate this public key with this sender. Emails from this address will be automatically cryptographically verified.": [
         "Kliknutím na \"Důvěřovat klíči\" vytvoříte nový kontakt a přiřadí tento veřejný klíč k tomuto odesílateli. E-maily z této adresy budou automaticky kryptograficky ověřovány."
       ],
       "Do you want to trust the primary public key with the following fingerprint?": [
@@ -7627,6 +7630,9 @@
       "Please insert link first": [
         "Nejdříve prosím vložte odkaz"
       ],
+      "Search date, name, email address, or subject line": [
+        "Vyhledávání podle data, jména, e-mailové adresy nebo předmětu zprávy"
+      ],
       "Search for group name": [
         "Vyhledat název skupiny"
       ],
@@ -8224,20 +8230,20 @@
       "Invite friends to ${ BRAND_NAME }": [
         "Pozvěte přátele do ${ BRAND_NAME }"
       ],
-      "Message Content Search": [
-        "Vyhledávání obsahu zpráv"
-      ],
       "Schedule send": [
         "Naplánovat odeslání"
+      ],
+      "Search just got smarter and faster": [
+        "Vyhledávání se právě stalo chytřejším a rychlejším"
+      ],
+      "Try it today.": [
+        "Vyzkoušejte to ještě dnes."
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "Nyní ve výchozím nastavení načítáme obrázky a znemožňujeme odesílatelům, aby vás sledovali. Toto můžete změnit v ${ settingsLink }."
       ],
       "You can now schedule your messages to be sent later": [
         "Nyní můžete naplánovat odesílání zpráv na později"
-      ],
-      "You can now search the content of your encrypted emails.": [
-        "Nyní můžete prohledávat obsah svých šifrovaných e-mailů."
       ]
     },
     "Status": {
@@ -8487,8 +8493,8 @@
       "Message added to ${ labelName }.": [
         "Zpráva přidána k ${ labelName }."
       ],
-      "Message content search activated": [
-        "Vyhledání v obsahu zprávy aktivováno"
+      "Message content search enabled": [
+        "Vyhledávání v obsahu zpráv povoleno"
       ],
       "Message deleted": [
         "Zpráva byla smazána"

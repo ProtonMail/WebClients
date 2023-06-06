@@ -1107,7 +1107,7 @@
         "Criptografado"
       ],
       "New email": [
-        "Novo E-mail"
+        "Novo e-mail"
       ]
     },
     "Apps dropdown": {
@@ -4280,7 +4280,7 @@
     },
     "Filter preview": {
       "read": [
-        "ler"
+        "lido"
       ],
       "starred": [
         "com estrela"
@@ -4335,7 +4335,7 @@
         "Mensagens do Gmail para sua caixa de entrada"
       ],
       "Sign in with Google": [
-        "Entre com Google"
+        "Iniciar sessão com Google"
       ]
     },
     "Go to sign in": {
@@ -6342,8 +6342,8 @@
       "To ensure continuous access to your account, set an account recovery method": [
         "Para garantir acesso permanente à sua conta, defina um método de recuperação de conta"
       ],
-      "To ensure you don’t lose important data, ${ DRIVE_APP_NAME } saves older versions of your files as you\nand your collaborators make changes. Select how long ${ BRAND_NAME } should keep previous versions.": [
-        "Para assegurar que você não perca dados importantes, ${ DRIVE_APP_NAME } salva as versões antigas dos seus arquivos assim que você e seus colaboradores façam mudanças. Selecione por quanto tempo o ${ BRAND_NAME } deve guardar as versões anteriores."
+      "To ensure you don’t lose important data, ${ DRIVE_APP_NAME } saves older versions of your files as you and your collaborators make changes. Select how long ${ BRAND_NAME } should keep previous versions.": [
+        "Para garantir que você não perca dados importantes, ${ DRIVE_APP_NAME } salva as versões antigas dos seus arquivos à medida que você e seus colaboradores fazem alterações. Selecione por quanto tempo o ${ BRAND_NAME } deve manter as versões anteriores."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Para combater o spam e/ou abuso, verifique se você é humano."
@@ -8407,7 +8407,7 @@
         "Editar calendário"
       ],
       "Get a country's official public holidays calendar.": [
-        "Obtenha o calendário oficial de feriados públicos do seu país."
+        "Obtenha o calendário oficial de feriados do seu país."
       ],
       "How to import calendars from another service": [
         "Como importar calendários de outro serviço"
@@ -8738,10 +8738,6 @@
         "${ n } pasta e marcador",
         "${ n } pastas e marcadores"
       ],
-      "${ n } forwarding mailbox": [
-        "${ n } endereço de encaminhamento",
-        "${ n } endereços de encaminhamento"
-      ],
       "${ n } Hide My Email alias": [
         "${ n } alias de Hide My Email",
         "${ n } Oculte minhas Aliases de e-mail"
@@ -8819,6 +8815,9 @@
       ],
       "Custom email domains": [
         "Domínios de e-mail personalizados"
+      ],
+      "Custom fields": [
+        "Campos personalizados"
       ],
       "Data breach monitoring": [
         "Monitoramento de violação de dados"
@@ -8998,9 +8997,6 @@
       ],
       "Up to 3 TB of storage": [
         "Até 3TB de armazenamento"
-      ],
-      "Up to 5 forwarding mailboxes": [
-        "Até 5 endereços de encaminhamento"
       ],
       "User credential management": [
         "Gerenciamento de credenciais de usuário"

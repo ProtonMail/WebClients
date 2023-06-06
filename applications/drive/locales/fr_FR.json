@@ -83,7 +83,7 @@
         "Annuler tous les téléchargements"
       ],
       "Cancel all uploads": [
-        "Annuler tous les chargements"
+        "Annuler toutes les importations"
       ],
       "Cancel download": [
         "Annuler le téléchargement"
@@ -673,7 +673,7 @@
         "Changer d'abonnement"
       ],
       "Upload anyway": [
-        "Charger quand même"
+        "Importer quand même"
       ],
       "Upload file": [
         "Importer un fichier"
@@ -1939,7 +1939,7 @@
         "Erreur d'authentification"
       ],
       "Calendar limit reached": [
-        "La limite du nombre de calendriers est atteinte."
+        "Le nombre maximum de calendriers a été atteint."
       ],
       "Cannot export this contact": [
         "Ce contact ne peut pas être exporté."
@@ -2391,7 +2391,7 @@
         "Non trouvé"
       ],
       "Oops, something went wrong": [
-        "Désolé, quelque chose s'est mal passé."
+        "Une erreur s'est produite."
       ],
       "Please refresh the page or try again later.": [
         "Nous vous invitons à actualiser la page ou à réessayer plus tard."
@@ -3129,7 +3129,7 @@
         "${ updated } contacts ont été mis à jour."
       ],
       "${ uploadName } already exists in this location.": [
-        "${ uploadName } existe déjà dans cet emplacement."
+        "${ uploadName } est déjà présent à cet emplacement."
       ],
       "(${ memberCount } member)": [
         "(${ memberCount } membre)",
@@ -3197,7 +3197,7 @@
       "Attention required": [
         "Attention requise"
       ],
-      "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
+      "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access or decrypt your files for you. To unlock your drive after a password reset, you must have one of the following:": [
         "${ DRIVE_APP_NAME } étant chiffré de bout en bout, nous ne pouvons pas accéder à vos fichiers, ni les déchiffrer pour vous. Pour déverrouiller votre drive après une réinitialisation de mot de passe, vous devez avoir l'un des éléments suivants :"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
@@ -3420,7 +3420,7 @@
         "Le dossier « ${ link.name } » a été supprimé pendant le téléchargement."
       ],
       "Folder contents will merge into a single folder": [
-        "Le contenu du dossier sera fusionné dans un dossier unique."
+        "Les contenus des dossiers seront fusionnés dans un seul dossier."
       ],
       "Folder is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "Il manque la signature du dossier. Nous n'avons pas pu vérifier que ${ emailAddress } a chargé le fichier ${ fileName }."
@@ -3429,7 +3429,7 @@
         "Il manque la signature du dossier. Nous n'avons pas pu vérifier qui a chargé le fichier ${ fileName }."
       ],
       "Folder will not be uploaded": [
-        "Le dossier ne sera pas chargé."
+        "Le dossier ne sera pas importé."
       ],
       "Folders you sync from your computer will appear here.": [
         "Les dossiers que vous synchronisez depuis votre ordinateur apparaissent ici."
@@ -3476,8 +3476,8 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Si vous ne trouvez pas le message dans votre boite de réception, vérifiez votre dossier Indésirables/spam."
       ],
-      "If you have one of these, continue to ${ BRAND_NAME } Account setting to\nstart the unblock process.": [
-        "Si vous avez un de ces éléments, passez à la configuration du compte ${ BRAND_NAME } pour commencer le processus de déblocage."
+      "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process.": [
+        "Si vous avez un de ces éléments, passez à la configuration du compte ${ BRAND_NAME } pour commencer le déverrouillage."
       ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Importer ${ calendarCount } calendrier sur ${ totalCalendarsCount }",
@@ -3873,20 +3873,20 @@
         "Ce lien sera définitivement désactivé. Aucune personne ayant ce lien ne pourra accéder à votre dossier. Pour partager à nouveau le dossier, vous aurez besoin d'un nouveau lien."
       ],
       "This will delete the link and remove access to your file or folder for anyone with the link.": [
-        "Ceci supprimera le lien et l'accès à votre fichier ou dossier pour toute personne ayant le lien.",
-        "Ceci supprimera les liens et l'accès à vos fichiers ou dossiers pour toute personne ayant les liens."
+        "Cela supprimera le lien et l'accès à votre fichier ou dossier pour toute personne ayant le lien.",
+        "Cela supprimera les liens et l'accès à vos fichiers ou dossiers pour toute personne ayant les liens."
       ],
       "This will overwrite the existing folder": [
-        "Ceci écrasera et remplacera le dossier existant."
+        "Cela écrasera et remplacera le dossier existant."
       ],
-      "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on\nthe device won’t be affected.": [
-        "Cela supprimera l'appareil synchronisé ${ deviceName } de ${ DRIVE_APP_NAME }. Les fichiers locaux\nsur l'appareil ne seront pas affectés."
+      "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on the device won’t be affected.": [
+        "Cela supprimera l'appareil synchronisé ${ deviceName } de ${ DRIVE_APP_NAME }. Les fichiers locaux sur l'appareil ne seront pas affectés."
       ],
       "This will replace the existing file with the folder": [
         "Cela remplacera le fichier existant par le dossier."
       ],
       "This will replace the existing folder with the file": [
-        "Cela remplacera le dossier existant par le fichier"
+        "Cela remplacera le dossier existant par le fichier."
       ],
       "This will upload a new version of the file": [
         "Cela importera une nouvelle version du fichier."
@@ -4196,7 +4196,7 @@
         "Appliquer à tous les fichiers dupliqués"
       ],
       "Apply to all duplicated folders": [
-        "Appliquer à tous les dossiers dupliqués"
+        "Appliquer à tous les dossiers trouvés en double"
       ],
       "Apply to all unverified items": [
         "Appliquer à tous les éléments non vérifiés"
@@ -4443,7 +4443,7 @@
         "Gérer les catégories"
       ],
       "Merge a folder": [
-        "Fusionner un dossier"
+        "Fusionner dans un dossier"
       ],
       "Modified": [
         "Modifié"
@@ -4560,7 +4560,7 @@
         "Texte"
       ],
       "This will permanently delete all files in your locked drive.": [
-        "Supprimez définitivement tous les fichiers dans votre disque verrouillé."
+        "Cela supprimera définitivement tous les fichiers dans votre disque verrouillé."
       ],
       "To: ${ to }": [
         "À : ${ to }"
@@ -4604,7 +4604,7 @@
       "Wonderful": [
         "Merveilleux"
       ],
-      "Yes, I want to permanently delete\nmy old files": [
+      "Yes, I want to permanently delete my old files": [
         "Oui, je veux supprimer définitivement mes anciens fichiers."
       ],
       "Your password (admin)": [
@@ -5859,7 +5859,7 @@
         "Un fichier en double a été trouvé."
       ],
       "Duplicate folder found": [
-        "Un dossier en double a été trouvé."
+        "Un dossier portant le même nom a été trouvé."
       ],
       "Edit contact": [
         "Modifier le contact"

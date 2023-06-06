@@ -4525,7 +4525,7 @@
         "${ BRAND_NAME } は他のメールプロバイダーとの接続が失われたためインポートを一時停止しました。再接続してください。"
       ],
       "${ BRAND_NAME } paused an import because your account is running low on space. You can:": [
-        "$アカウントの空き容量が少なくなっているため、${ BRAND_NAME } はインポートを一時停止しました。以下のことが可能です:"
+        "アカウントの空き容量が少なくなっているため、${ BRAND_NAME } はインポートを一時停止しました。以下のことが可能です:"
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME } の暗号化技術は私たちでさえもパスワードにアクセスできないことを意味しています。"
@@ -4882,7 +4882,7 @@
         "支払いサイクル: ${ text }"
       ],
       "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
-        "ビットコイン取引は確認に最大で24時間かかります。確認完了後、お客様のアカウントにクレジットを追加しますので、そのクレジットでお支払いください。"
+        "ビットコイン取引は確認に時間がかかります (最大で24時間)。確認完了後、お客様のアカウントにクレジットを追加しますので、そのクレジットでお支払いください。"
       ],
       "Blocks senders from seeing if and when you opened a message.": [
         "あなたがメッセージを閲覧したかどうか、いつ閲覧したかを送信者が確認できないようにします。"
@@ -6064,7 +6064,7 @@
         "毎年"
       ],
       "You already have a free account": [
-        "すでに FREE アカウントをお持ちですか？"
+        "すでに無料アカウントをお持ちですか？"
       ],
       "You are about to open another browser tab and visit:": [
         "別のタブで下記リンクを開こうとしています:"
@@ -8140,9 +8140,6 @@
       ],
       "${ n } folders and labels": [
         "${ n } 件のフォルダーおよびラベル"
-      ],
-      "${ n } forwarding mailboxes": [
-        "${ n } 個の転送メールボックス"
       ],
       "${ n } Hide My Email aliases": [
         "${ n } 件の Hide My Email エイリアス"

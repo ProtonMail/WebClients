@@ -19,9 +19,6 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-butik"
       ],
-      "Activate": [
-        "Aktivér"
-      ],
       "Activate recovery": [
         "Aktiver gendannelse"
       ],
@@ -476,6 +473,9 @@
       ],
       "I have a question": [
         "Jeg har et spørgsmål"
+      ],
+      "Image could not be loaded with tracker protection.": [
+        "Billede kunne ikke indlæses med tracker beskyttelse."
       ],
       "Images will be loaded without a proxy": [
         "Billeder vil blive indlæst uden en proxy"
@@ -4790,9 +4790,6 @@
       "Don't forget to share the password with the recipient": [
         "Glem ikke at dele adgangskoden med modtageren"
       ],
-      "Downloading message ${ currentProgress } out of ${ totalProgress }": [
-        "Henter besked ${ currentProgress } ud af ${ totalProgress }"
-      ],
       "Draft": [
         "Kladde"
       ],
@@ -4983,9 +4980,6 @@
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Importerer dine data fra ${ importedEmailAddress } til ${ toEmail }."
-      ],
-      "Indexing paused": [
-        "Indeksering sat på pause"
       ],
       "Inherited from parent folder": [
         "Nedarvet fra overordnet mappe"
@@ -5397,12 +5391,6 @@
       "This account has been suspended due to a potential policy violation.": [
         "Denne konto er blevet suspenderet på grund af en potentiel overtrædelse af politik."
       ],
-      "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        "Denne handling vil downloade alle beskeder, så de kan gennemsøges lokalt. Rydder du dine browserdata, deaktiveres denne indstilling."
-      ],
-      "This action will download the most recent messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        "Denne handling vil downloade de seneste beskeder, så de kan gennemsøges lokalt. Rydder du dine browserdata, deaktiveres denne indstilling."
-      ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Denne adresse er deaktiveret. Vil du kunne sende til denne adreses, skal ejeren først aktivere den."
       ],
@@ -5521,9 +5509,6 @@
       ],
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "Der er for mange meddelelser, der venter på at blive afsendt. Vent med at planlægge denne meddelelse, indtil en anden er blevet sendt."
-      ],
-      "Turn off content search. Activation progress won't be lost.": [
-        "Slå indholdssøgning fra. Aktiveringsfremskridt vil ikke gå tabt."
       ],
       "Turn on to search the content of your messages": [
         "Slå til for at søge i indholdet af dine beskeder"
@@ -5821,12 +5806,6 @@
       ]
     },
     "Key pinning": {
-      "Clicking \"Trust Key\" will associate this public key with this sender\nand emails from this address will be automatically cryptographically verified.": [
-        "Ved at trykke på \"Stol på nøgle\" knyttes denne offentlige nøgle til denne afsender, og e-mails fra denne adresse vil automatisk blive kryptografisk bekræftet."
-      ],
-      "Clicking \"Trust Key\" will create a new contact and associate this public key with\nthis sender. Emails from this address will be automatically cryptographically verified.": [
-        "Ved at trykke på \"Stol på nøgle\" knyttes denne offentlige nøgle til denne afsender, og e-mails fra denne adresse vil automatisk blive kryptografisk bekræftet."
-      ],
       "Do you want to trust the primary public key with the following fingerprint?": [
         "Ønsker du at stole på den primære offentlige nøgle med følgende fingeraftryk?",
         "Ønsker du at stole på de primære offentlige nøgler med følgende fingeraftryk?"
@@ -7796,9 +7775,6 @@
       "Invite friends to ${ BRAND_NAME }": [
         "Inviter venner til ${ BRAND_NAME }"
       ],
-      "Message Content Search": [
-        "Søgning efter beskedindhold"
-      ],
       "Schedule send": [
         "Planlæg afsendelse"
       ],
@@ -7807,9 +7783,6 @@
       ],
       "You can now schedule your messages to be sent later": [
         "Du kan nu planlægge dine beskeder til senere afsendelse"
-      ],
-      "You can now search the content of your encrypted emails.": [
-        "Du kan nu søge i indholdet af dine krypterede e-mails."
       ]
     },
     "Status": {
@@ -8014,9 +7987,6 @@
       ],
       "Message added to ${ labelName }.": [
         "Besked føjet til ${ labelName }."
-      ],
-      "Message content search activated": [
-        "Beskedindholdssøgning aktiveret"
       ],
       "Message deleted": [
         "Besked slettet"
@@ -8812,6 +8782,9 @@
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Systemundermapper vises som separate mapper i ${ MAIL_APP_NAME }"
+      ],
+      "The image could not be loaded": [
+        "Billedet kunne ikke indlæses"
       ],
       "The import will start with the most recent messages.": [
         "Importen vil starte med de seneste beskeder."

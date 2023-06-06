@@ -1602,6 +1602,12 @@
       "Unknown payment token status": [
         "Ödeme kodu durumu bilinmiyor"
       ],
+      "Username must begin with a letter or digit": [
+        "Kullanıcı adı bir harf ya da rakam ile başlamalı"
+      ],
+      "Username must end with a letter or digit": [
+        "Kullanıcı adı bir harf ya da rakam ile bitmeli"
+      ],
       "Wrong recovery phrase. Try again or use another recovery method.": [
         "Kurtarma ifadesi yanlış. Yeniden deneyin ya da başka bir kurtarma yöntemi kullanın."
       ],
@@ -3528,10 +3534,6 @@
         "${ n } klasör ve etiket",
         "${ n } klasör ve etiket"
       ],
-      "${ n } forwarding mailbox": [
-        "${ n } iletme e-posta kutusu",
-        "${ n } iletme e-posta kutusu"
-      ],
       "${ n } Hide My Email alias": [
         "${ n } e-posta takma adımı gizle",
         "${ n } e-posta takma adımı gizle"
@@ -3606,6 +3608,9 @@
       ],
       "Custom email domains": [
         "Özel e-posta etki alanları"
+      ],
+      "Custom fields": [
+        "Özel alanlar"
       ],
       "Data breach monitoring": [
         "Verilerin ele geçirilmesini izleme"
@@ -3770,9 +3775,6 @@
       ],
       "Up to ${ totalStorageSize } storage": [
         "${ totalStorageSize } boyutuna kadar depolama alanı"
-      ],
-      "Up to 5 forwarding mailboxes": [
-        "5 taneye kadar iletme e-posta kutusu"
       ],
       "User credential management": [
         "Kullanıcı kimlik doğrulama bilgileri yönetimi"
