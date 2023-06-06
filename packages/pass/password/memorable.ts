@@ -1,11 +1,9 @@
+import { c } from 'ttag';
+
 import capitalize from '@proton/utils/capitalize';
 
+import { digitChars, specialChars } from './constants';
 import WORD_LIST from './wordlist.json';
-
-export const alphabeticChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
-export const digits = '0123456789';
-export const specialChars = '!#$%&()*+.:;<=>?@[]^';
-export const digitsAndSymbols = digits.concat(specialChars);
 
 export enum SeperatorOptions {
     HYPHEN = '-',
@@ -17,11 +15,22 @@ export enum SeperatorOptions {
     NUMBER_OR_SYMBOL = 'NUMBER_OR_SYMBOL',
 }
 
-export type WordListOptions = {
+export const getSeperatorTranslation = (seperator: SeperatorOptions) =>
+    ({
+        [SeperatorOptions.HYPHEN]: c('Option').t`Hyphens`,
+        [SeperatorOptions.SPACE]: c('Option').t`Spaces`,
+        [SeperatorOptions.PERIOD]: c('Option').t`Periods`,
+        [SeperatorOptions.COMMA]: c('Option').t`Commas`,
+        [SeperatorOptions.UNDERSCORE]: c('Option').t`Underscores`,
+        [SeperatorOptions.NUMBER]: c('Option').t`Numbers`,
+        [SeperatorOptions.NUMBER_OR_SYMBOL]: c('Option').t`Numbers and Symbols`,
+    }[seperator]);
+
+export type MemorablePasswordOptions = {
     wordCount: number;
     seperator: SeperatorOptions;
     capitalize: boolean;
-    extraNumbers?: boolean;
+    extraNumbers: boolean;
 };
 
 const getRandomCharacter = (characters: string) => {
@@ -43,13 +52,13 @@ const getSeperator = (seperator: SeperatorOptions): string => {
         case SeperatorOptions.UNDERSCORE:
             return '_';
         case SeperatorOptions.NUMBER:
-            return getRandomCharacter(digits);
+            return getRandomCharacter(digitChars);
         case SeperatorOptions.NUMBER_OR_SYMBOL:
-            return getRandomCharacter(digitsAndSymbols);
+            return getRandomCharacter(digitChars.concat(specialChars));
     }
 };
 
-export const generateFromWordList = (options: WordListOptions): string => {
+export const generateMemorablePassword = (options: MemorablePasswordOptions): string => {
     if (options.wordCount <= 0) throw new Error('invalid options');
 
     const getRandomWord = () => {
@@ -63,7 +72,7 @@ export const generateFromWordList = (options: WordListOptions): string => {
     return Array.from({ length: options.wordCount }, () => {
         let word = getRandomWord();
         if (options.capitalize) word = capitalize(word)!;
-        if (options.extraNumbers) word = `${word}${getRandomCharacter(digits)}`;
+        if (options.extraNumbers) word = `${word}${getRandomCharacter(digitChars)}`;
         return word;
     }).reduce<string>(
         (password, word, idx) => (idx === 0 ? word : `${password}${getSeperator(options.seperator)}${word}`),
