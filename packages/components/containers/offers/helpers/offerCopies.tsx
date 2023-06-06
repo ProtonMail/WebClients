@@ -36,7 +36,7 @@ export const getMailPlusFeatures = () => {
         {
             name: c('specialoffer: Deal details').t`All paid Mail and Calendar features`,
             tooltip: c('specialoffer: Tooltip')
-                .t`Includes support for 1 custom email domain, 10 email addresses, 10 Hide My Email aliases, calendar sharing, and more.`,
+                .t`Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.`,
         },
     ];
 };
@@ -47,7 +47,7 @@ export const getUnlimitedFeatures = () => {
         {
             name: c('specialoffer: Deal details').t`All paid Mail and Calendar features`,
             tooltip: c('specialoffer: Tooltip')
-                .t`Includes support for 3 custom email domains, 15 email addresses, unlimited Hide My Email aliases, calendar sharing, and more.`,
+                .t`Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.`,
         },
         {
             name: c('specialoffer: Deal details').t`High speed VPN`,
@@ -68,7 +68,7 @@ export const getUnlimitedDealFeatures = () => {
         {
             name: c('specialoffer: Deal details').t`Premium Mail and Calendar`,
             tooltip: c('specialoffer: Tooltip')
-                .t`Includes support for 3 custom email domains, 15 email addresses, unlimited Hide My Email aliases, calendar sharing, and more.`,
+                .t`Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.`,
         },
         {
             name: c('specialoffer: Deal details').t`Premium VPN`,
@@ -94,7 +94,7 @@ export const getVisionaryFeatures = () => [
     {
         name: c('specialoffer: Deal details').t`Premium Mail, Calendar and Drive`,
         tooltip: c('specialoffer: Tooltip')
-            .t`All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited Hide My Email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.`,
+            .t`All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.`,
     },
     {
         name: c('specialoffer: Deal details').t`Premium VPN`,
@@ -123,7 +123,7 @@ export const getFamilyFeatures = () => [
     {
         name: c('familyOffer_2023:Deal details').t`Premium Mail and Calendar`,
         tooltip: c('familyOffer_2023:Tooltip')
-            .t`Includes support for 3 custom email domains, 90 email addresses, unlimited Hide My Email aliases, calendar sharing and more.`,
+            .t`Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.`,
     },
     {
         name: c('familyOffer_2023:Deal details').t`Premium Drive`,
