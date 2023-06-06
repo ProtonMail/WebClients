@@ -41,6 +41,7 @@ import {
 } from '@proton/shared/lib/constants';
 import { withUIDHeaders } from '@proton/shared/lib/fetch/headers';
 import { replaceUrl } from '@proton/shared/lib/helpers/browser';
+import { setMetricsEnabled } from '@proton/shared/lib/helpers/metrics';
 import { stripLeadingAndTrailingSlash } from '@proton/shared/lib/helpers/string';
 import { stringifySearchParams } from '@proton/shared/lib/helpers/url';
 import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
@@ -112,6 +113,8 @@ interface Props {
     onLogin: ProtonLoginCallback;
     locales: TtagLocaleMap;
 }
+
+setMetricsEnabled(true);
 
 const PublicApp = ({ onLogin, locales }: Props) => {
     const history = useHistory();
