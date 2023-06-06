@@ -372,7 +372,7 @@ const Step1 = ({
             }
 
             const newCache = await handleCreateUser({ cache, api: silentApi, mode: 'cro', paymentToken });
-            onComplete(newCache);
+            await onComplete(newCache);
             metrics.core_vpn_single_signup_step1_payment_total.increment({ status: 'success' });
         } catch (error) {
             handleError(error);
