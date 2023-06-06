@@ -1,36 +1,16 @@
-import { useEffect } from 'react';
-
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
-import { postMessageToIframe } from '@proton/shared/lib/drawer/helpers';
-import { DRAWER_APPS, DRAWER_EVENTS } from '@proton/shared/lib/drawer/interfaces';
 import { PROTON_THEMES, ThemeModeSetting } from '@proton/shared/lib/themes/themes';
 
 import { Info, ModalProps, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, Toggle } from '../../components';
-import { useDrawer } from '../../hooks';
 import ThemeCards from './ThemeCards';
 import { useThemeSetting } from './ThemeSettingProvider';
 import ThemeSyncModeCard from './ThemeSyncModeCard';
 
 const ThemesModal = (props: ModalProps) => {
     const { settings, setTheme, setAutoTheme } = useThemeSetting();
-    const { iframeSrcMap } = useDrawer();
-
-    useEffect(() => {
-        // TODO: Improve / Check this
-        // If the drawer is open, we need to make the app inside the iframe to call the event manager
-        // Otherwise, the theme is not updated before the next event manager call
-        if (iframeSrcMap) {
-            Object.keys(iframeSrcMap).map((app) => {
-                postMessageToIframe(
-                    { type: DRAWER_EVENTS.UPDATE_THEME, payload: { theme: settings.currentTheme } },
-                    app as DRAWER_APPS
-                );
-            });
-        }
-    }, [settings.currentTheme]);
 
     return (
         <ModalTwo size="large" {...props}>
