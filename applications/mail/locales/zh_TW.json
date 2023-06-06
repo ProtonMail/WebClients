@@ -19,9 +19,6 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } 商店"
       ],
-      "Activate": [
-        "啟用"
-      ],
       "Activate recovery": [
         "啟動還原"
       ],
@@ -330,6 +327,9 @@
       ],
       "Download ${ attachmentName }": [
         "下載 ${ attachmentName }"
+      ],
+      "Downloading": [
+        "正在下載"
       ],
       "Edit": [
         "編輯"
@@ -1011,6 +1011,9 @@
       ],
       "This message contains remote content.": [
         "此郵件包含遠端內容。"
+      ],
+      "To search your emails securely, we need to download a copy of your messages to your browser. The initial download may take a moment.": [
+        "要安全搜尋電子郵件，我們必須再瀏覽器下載訊息。下載需要一些時間。"
       ],
       "Toggle Calendar app": [
         "切換行事曆應用程式"
@@ -4797,8 +4800,8 @@
       "Don't forget to share the password with the recipient": [
         "別忘記與您的收件者共享金鑰密碼"
       ],
-      "Downloading message ${ currentProgress } out of ${ totalProgress }": [
-        "正在下載 ${ totalProgress } 封郵件中的 ${ currentProgress } 封"
+      "Downloading paused": [
+        "下載已暫停"
       ],
       "Draft": [
         "草稿"
@@ -4983,9 +4986,6 @@
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "匯入您的資料自 ${ importedEmailAddress } 至 ${ toEmail }。"
       ],
-      "Indexing paused": [
-        "暫停編製索引"
-      ],
       "Inherited from parent folder": [
         "繼承自上層資料夾"
       ],
@@ -5081,6 +5081,9 @@
       ],
       "Message will be sent tomorrow at ${ formattedTime }": [
         "郵件將在名天 ${ formattedTime } 寄出"
+      ],
+      "Messages downloaded: ${ currentProgress } out of ${ totalProgress }": [
+        "正在下載 ${ totalProgress } 郵件中的 ${ currentProgress }"
       ],
       "Messages that have been in trash and spam more than 30 days will be automatically deleted.": [
         "垃圾桶與垃圾郵件中超過30天的訊息將會被自動刪除。"
@@ -5268,6 +5271,9 @@
       "Scheduling message...": [
         "排程傳送郵件中…"
       ],
+      "Search option that lets you securely search for keywords in the body of email messages.": [
+        "搜尋選項讓您安全的搜尋電子郵件訊息的關鍵字"
+      ],
       "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
         "搜索耗時過長? 請嘗試 ${ dropdownButton } 或 ${ toggleOffButton } 搜索結果。"
       ],
@@ -5403,12 +5409,6 @@
       "This account has been suspended due to a potential policy violation.": [
         "此帳號可能因違反政策而遭停用。"
       ],
-      "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        "此動作將下載所有郵件，以供本機搜尋。清除您的瀏覽器資料將停用此選項。"
-      ],
-      "This action will download the most recent messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        "此動作將下載所有郵件以供本機搜尋。清除您的瀏覽器資料將停用此選項。"
-      ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "此電郵位址已停用。若要傳送到此電郵位址，請其擁有者首先啟用此電郵位址。"
       ],
@@ -5520,8 +5520,8 @@
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "等待傳送的訊息太多了。請等其它訊息傳送後再安排此訊息。"
       ],
-      "Turn off content search. Activation progress won't be lost.": [
-        "關閉內容搜尋。啟用流程不會遺失。"
+      "Turn off to only search by date, name, or email address. To disable search message content and delete downloaded messages, go to settings.": [
+        "關閉搜尋日期、名稱、電子郵件地址。於設定中停用搜尋訊息並刪除下載的訊息。"
       ],
       "Turn on to search the content of your messages": [
         "啟用以搜尋您的郵件內容"
@@ -5816,10 +5816,10 @@
       ]
     },
     "Key pinning": {
-      "Clicking \"Trust Key\" will associate this public key with this sender\nand emails from this address will be automatically cryptographically verified.": [
-        "按一下「信任金鑰」會將此公開金鑰與此寄件人關聯，\n來自此電郵位址的郵件將自動進行密碼編譯驗證。"
+      "Clicking \"Trust Key\" will associate this public key with this sender and emails from this address will be automatically cryptographically verified.": [
+        "點擊 \"相信此金曜\" 後，將會將此寄件人與其郵件和來自此郵件地址的公鑰，自動進行加密驗證。"
       ],
-      "Clicking \"Trust Key\" will create a new contact and associate this public key with\nthis sender. Emails from this address will be automatically cryptographically verified.": [
+      "Clicking \"Trust Key\" will create a new contact and associate this public key with this sender. Emails from this address will be automatically cryptographically verified.": [
         "按一下「信任金鑰」將建立一個新的連絡人，並將此公開金鑰與此寄件人關聯。來自此電郵位址的郵件將自動以密碼學進行驗證。"
       ],
       "Do you want to trust the primary public keys with the following fingerprints?": [
@@ -7291,6 +7291,9 @@
       "Please insert link first": [
         "請先插入連結"
       ],
+      "Search date, name, email address, or subject line": [
+        "搜尋日期、名稱、電子郵件地址或主旨"
+      ],
       "Search for group name": [
         "搜尋群組名稱"
       ],
@@ -7840,20 +7843,20 @@
       "Invite friends to ${ BRAND_NAME }": [
         "揪親朋好友一起用 ${ BRAND_NAME }"
       ],
-      "Message Content Search": [
-        "郵件內文搜尋"
-      ],
       "Schedule send": [
         "排程傳送"
+      ],
+      "Search just got smarter and faster": [
+        "搜尋更聰明及快速"
+      ],
+      "Try it today.": [
+        "今日嘗試"
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "我們將預設載入所有圖像，並且攔截寄件者進行追蹤。此功能可在 ${ settingsLink } 進行變更。"
       ],
       "You can now schedule your messages to be sent later": [
         "您現在可以安排稍後傳送訊息"
-      ],
-      "You can now search the content of your encrypted emails.": [
-        "您現在可以在加密郵件的內容執行搜尋。"
       ]
     },
     "Status": {
@@ -8034,8 +8037,8 @@
       "Message added to ${ labelName }.": [
         "${ labelName } 標籤已被貼在郵件上。"
       ],
-      "Message content search activated": [
-        "郵件內容搜尋已啟用"
+      "Message content search enabled": [
+        "訊息內容搜尋已啟用"
       ],
       "Message deleted": [
         "郵件已刪除"

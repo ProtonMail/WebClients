@@ -19,9 +19,6 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } winkel"
       ],
-      "Activate": [
-        "Activeren"
-      ],
       "Activate recovery": [
         "Herstel activeren"
       ],
@@ -99,6 +96,9 @@
       ],
       "As Scheduled": [
         "Zoals gepland"
+      ],
+      "At most 100 contacts are allowed per contact group": [
+        "Ten hoogste 100 contacten zijn toegelaten per contactgroep"
       ],
       "Attach screenshot(s)": [
         "Schermafdruk(ken) toevoegen"
@@ -330,6 +330,9 @@
       "Download ${ attachmentName }": [
         "${ attachmentName } downloaden"
       ],
+      "Downloading": [
+        "Downloaden"
+      ],
       "Edit": [
         "Bewerken"
       ],
@@ -476,6 +479,12 @@
       ],
       "I have a question": [
         "Ik heb een vraag"
+      ],
+      "Image could not be loaded with tracker protection.": [
+        "Afbeelding kan niet worden geladen met trackerbeveiliging."
+      ],
+      "Image will be loaded without a proxy": [
+        "Afbeelding wordt geladen zonder een proxy"
       ],
       "Images will be loaded without a proxy": [
         "Afbeeldingen zullen worden ingeladen zonder proxy"
@@ -1006,6 +1015,9 @@
       "This message contains remote content.": [
         "Dit bericht bevat externe inhoud."
       ],
+      "To search your emails securely, we need to download a copy of your messages to your browser. The initial download may take a moment.": [
+        "Om uw e-mails veilig te zoeken, moeten we een kopie van uw berichten downloaden naar uw browser. De aanvankelijke download kan even duren."
+      ],
       "Toggle Calendar app": [
         "Agenda app kiezen"
       ],
@@ -1241,6 +1253,9 @@
       ]
     },
     "Animation": {
+      "${ nameToDisplay }'s inbox": [
+        "Inbox van ${ nameToDisplay }"
+      ],
       "5 trackers removed": [
         "5 trackers verwijderd"
       ],
@@ -2870,6 +2885,9 @@
       "ProtonMail logo and a plus sign": [
         "Proton Mail-logo en een plus-teken"
       ],
+      "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
+        "Bespaar tijd door e-mails of uitnodigingen naar iedereen tegelijkertijd te sturen, een premium functie zoals vele anderen. Upgrade vandaag."
+      ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "Het bestand mag een maximale grootte hebben van ${ MAX_IMPORT_FILE_SIZE_STRING } en ${ MAX_IMPORT_CONTACTS_STRING } contact hebben. Als uw bestand groter is, splits het dan op in kleinere bestanden.",
         "Het bestand mag een maximale grootte hebben van ${ MAX_IMPORT_FILE_SIZE_STRING } en tot ${ MAX_IMPORT_CONTACTS_STRING } contacten hebben. Als uw bestand groter is, splits het dan op in kleinere bestanden."
@@ -3065,6 +3083,9 @@
       ],
       "Calendar limit reached": [
         "Agendalimiet bereikt"
+      ],
+      "Cannot export this contact": [
+        "Kan dit contact niet exporteren"
       ],
       "Choose a date in the future.": [
         "Kies een datum in de toekomst."
@@ -3399,6 +3420,12 @@
       ],
       "Unknown error.": [
         "Onbekende fout."
+      ],
+      "Username must begin with a letter or digit": [
+        "Gebruikersnaam moet met een letter of cijfer beginnen"
+      ],
+      "Username must end with a letter or digit": [
+        "Gebruikersnaam moet met een letter of cijfer eindigen"
       ],
       "Wrong mailbox password": [
         "Verkeerd mailbox-wachtwoord"
@@ -4122,6 +4149,12 @@
       ]
     },
     "Gmail forwarding": {
+      "Automatically forward": [
+        "Stuur automatisch"
+      ],
+      "Gmail messages to your inbox": [
+        "Gmail-berichten door naar je postvak"
+      ],
       "Sign in with Google": [
         "Inloggen met Google"
       ]
@@ -4780,6 +4813,12 @@
       "Confirm phishing report": [
         "Phishingrapport bevestigen"
       ],
+      "Contact assigned to group ${ contactGroupName }": [
+        "Contact toegekend aan groep ${ contactGroupName }"
+      ],
+      "Contact unassigned to group ${ contactGroupName }": [
+        "Contact verwijderd uit groep ${ contactGroupName }"
+      ],
       "Copied to clipboard": [
         "Gekopieerd naar het klembord"
       ],
@@ -4842,8 +4881,8 @@
       "Don't forget to share the password with the recipient": [
         "Vergeet het wachtwoord niet te delen met de ontvanger"
       ],
-      "Downloading message ${ currentProgress } out of ${ totalProgress }": [
-        "Bericht ${ currentProgress } van de ${ totalProgress } downloaden"
+      "Downloading paused": [
+        "Downloaden gepauzeerd"
       ],
       "Draft": [
         "Concept"
@@ -5036,9 +5075,6 @@
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Het importeren van uw gegevens van ${ importedEmailAddress } naar ${ toEmail }."
       ],
-      "Indexing paused": [
-        "Indexeren gepauzeerd"
-      ],
       "Inherited from parent folder": [
         "Overgenomen van bovenliggende map"
       ],
@@ -5110,6 +5146,10 @@
       ],
       "Merged": [
         "Samengevoegd"
+      ],
+      "Message downloaded: ${ currentProgress } out of ${ totalProgress }": [
+        "Bericht gedownload: ${ currentProgress } van de ${ totalProgress }",
+        "Berichten gedownload: ${ currentProgress } van de ${ totalProgress }"
       ],
       "Message expiration works out-of-the-box when sending emails to other ${ MAIL_APP_NAME } users. To send expiring emails to non-${ BRAND_NAME } users, please cancel and add password protection to your email.": [
         "Berichten met een verlooptijd werken feilloos met andere ${ MAIL_APP_NAME }-gebruikers. Om deze berichten te versturen aan niet-${ BRAND_NAME }-gebruikers, annuleer dan en voeg een wachtwoord toe aan uw e-mail."
@@ -5322,6 +5362,9 @@
       "Scheduling message...": [
         "Bericht plannen..."
       ],
+      "Search option that lets you securely search for keywords in the body of email messages.": [
+        "Zoekoptie die u toelaat veilig te zoeken op kernwoorden binnen de hoofdtekst van mailberichten."
+      ],
       "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
         "Duurt de zoekopdracht te lang? ${ dropdownButton } of ${ toggleOffButton } van deze zoeksessie."
       ],
@@ -5452,12 +5495,6 @@
       "This account has been suspended due to a potential policy violation.": [
         "Dit account is opgeschort vanwege een potentiële schending van het beleid."
       ],
-      "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        "Deze actie zal alle berichten downloaden zodat ze lokaal kunnen worden gezocht. Het wissen van uw browsergegevens zal deze optie uitschakelen."
-      ],
-      "This action will download the most recent messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        "Deze actie zal de meest recente berichten downloaden zodat ze lokaal kunnen worden doorzocht. Het wissen van uw browsergegevens zal deze optie uitschakelen."
-      ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Dit adres is uitgeschakeld. Om berichten naar dit adres te versturen moet de eigenaar het adres eerst activeren."
       ],
@@ -5577,8 +5614,8 @@
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "Te veel berichten die wachten om te worden verzonden. Wacht tot een ander bericht is verzonden om dit bericht te plannen."
       ],
-      "Turn off content search. Activation progress won't be lost.": [
-        "Content zoeken uitschakelen. Activatie voortgang zal niet verloren gaan."
+      "Turn off to only search by date, name, or email address. To disable search message content and delete downloaded messages, go to settings.": [
+        "Schakel uit om enkel te zoeken op datum, naam, of e-mailadres. Ga naar instellingen om het doorzoeken van berichtinhoud en verwijderde berichten uit te schakelen."
       ],
       "Turn on to search the content of your messages": [
         "Zet aan om de inhoud van uw berichten te doorzoeken"
@@ -5795,6 +5832,12 @@
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "U schreef \"${ attachmentsFoundKeyword }\", maar er is geen bijlage toegevoegd. Wilt u uw bericht toch verzenden?"
       ],
+      "You've reached the maximum number of addresses in the contact group(s):": [
+        "U heeft het maximaal aantal adressen bereikt in de contactgroep(en):"
+      ],
+      "You've reached the maximum number of addresses in the contact group.": [
+        "U heeft het maximaal aantal adressen bereikt in de contactgroep."
+      ],
       "Your ${ BRAND_NAME } Account includes SimpleLogin. Install the browser extension with one click to get started.": [
         "Uw ${ BRAND_NAME }-account bevat SimpleLogin. Installeer de browserextensie met één klik om te beginnen."
       ],
@@ -5876,10 +5919,10 @@
       ]
     },
     "Key pinning": {
-      "Clicking \"Trust Key\" will associate this public key with this sender\nand emails from this address will be automatically cryptographically verified.": [
-        "Door op \"Vertrouw sleutel\" te klikken zal deze openbare sleutel gekoppeld worden aan deze afzender en e-mails van dit adres zullen automatisch worden geverifieerd."
+      "Clicking \"Trust Key\" will associate this public key with this sender and emails from this address will be automatically cryptographically verified.": [
+        "Door op \"Vertrouw sleutel\" te klikken zal deze publieke sleutel gekoppeld worden aan deze afzender en e-mails van dit adres zullen automatisch worden geverifieerd."
       ],
-      "Clicking \"Trust Key\" will create a new contact and associate this public key with\nthis sender. Emails from this address will be automatically cryptographically verified.": [
+      "Clicking \"Trust Key\" will create a new contact and associate this public key with this sender. Emails from this address will be automatically cryptographically verified.": [
         "Door op \"Vertrouw sleutel\" te klikken zal er een nieuwe contactpersoon aangemaakt worden en wordt deze openbare sleutel gekoppeld worden. E-mails van dit adres zullen automatisch worden geverifieerd."
       ],
       "Do you want to trust the primary public key with the following fingerprint?": [
@@ -7122,14 +7165,23 @@
       ],
       "Up to 15 email addresses": [
         "Tot wel 15 e-mailadressen"
+      ],
+      "Up to 3 TB of storage": [
+        "Tot wel 3 TB opslag"
       ]
     },
     "new_plans: feature info": {
+      "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
+        "Maak meerdere e-mailadressen aan voor uw online-identiteiten, zoals JohnShopper@${ domain } voor shoppingaccounts, JohnNieuws@${ domain2 } voor nieuwsabonnementen"
+      ],
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "Gebruik onbeperkt aliassen met SimpleLogin van ${ BRAND_NAME }"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Opslagruimte wordt gedeeld door ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } en ${ DRIVE_APP_NAME }"
+      ],
+      "Use your own custom email domain address, e.g., you@yourname.com": [
+        "Gebruik uw eigen e-mailadressen met een aangepast domein, zoals u@uwnaam.com"
       ]
     },
     "new_plans: label": {
@@ -7351,6 +7403,9 @@
       ],
       "Please insert link first": [
         "Voeg eerst koppeling in"
+      ],
+      "Search date, name, email address, or subject line": [
+        "Zoek datum, naam, e-mailadres, of onderwerp"
       ],
       "Search for group name": [
         "Zoeken naar groepsnaam"
@@ -7917,20 +7972,20 @@
       "Invite friends to ${ BRAND_NAME }": [
         "Nodig vrienden uit voor ${ BRAND_NAME }"
       ],
-      "Message Content Search": [
-        "Zoeken naar berichtinhoud"
-      ],
       "Schedule send": [
         "Gepland versturen"
+      ],
+      "Search just got smarter and faster": [
+        "Zoeken werd zonet slimmer en sneller"
+      ],
+      "Try it today.": [
+        "Probeer het nu."
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "We laden afbeelding nu standaard en blokkeren trackers van afzenders. Dit kan gewijzigd worden via de ${ settingsLink }."
       ],
       "You can now schedule your messages to be sent later": [
         "U kunt nu uw berichten plannen om ze later te versturen"
-      ],
-      "You can now search the content of your encrypted emails.": [
-        "U kunt nu de inhoud van uw versleutelde e-mails doorzoeken."
       ]
     },
     "Status": {
@@ -8136,8 +8191,8 @@
       "Message added to ${ labelName }.": [
         "Bericht toegevoegd aan ${ labelName }."
       ],
-      "Message content search activated": [
-        "Zoeken naar berichtinhoud geactiveerd"
+      "Message content search enabled": [
+        "Berichtinhoud doorzoeken ingeschakeld"
       ],
       "Message deleted": [
         "Bericht verwijderd"
@@ -8318,6 +8373,10 @@
       ]
     },
     "Title": {
+      "${ emailsCount } email address": [
+        "${ emailsCount } e-mailadres",
+        "${ emailsCount } e-mailadressen"
+      ],
       "${ MAIL_APP_NAME } Keyboard Shortcuts": [
         "${ MAIL_APP_NAME } Sneltoetsen"
       ],
@@ -8370,6 +8429,9 @@
       ],
       "Block sender": [
         "Blokkeer afzender"
+      ],
+      "Cannot add more addresses": [
+        "Kan geen extra adressen toevoegen"
       ],
       "Carbon Copy": [
         "CC"
@@ -8822,6 +8884,9 @@
       "Trust public key?": [
         "Publieke sleutel vertrouwen?"
       ],
+      "Unlock contacts groups": [
+        "Ontgrendel contactgroepen"
+      ],
       "Unsubscribe": [
         "Afmelden"
       ],
@@ -8926,6 +8991,12 @@
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Systeemsubmappen worden weergegeven als aparte mappen in ${ MAIL_APP_NAME }"
+      ],
+      "The image could not be loaded": [
+        "De afbeelding kan niet worden geladen"
+      ],
+      "The image could not be loaded using proxy": [
+        "De afbeelding kan niet worden geladen via een proxy"
       ],
       "The import will start with the most recent messages.": [
         "Het importeren begint met de meest recente berichten."
