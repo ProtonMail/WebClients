@@ -32,8 +32,7 @@ export const getAccountAppRoutes = ({
     organization?: Organization;
     isProtonSentinelEligible: boolean;
 }) => {
-    const { isFree, canPay, isPaid, isPrivate, isMember, Currency, Type, isAdmin } = user;
-
+    const { isFree, canPay, isPaid, isPrivate, isMember, isAdmin, Currency, Type } = user;
     const credits = humanPriceWithCurrency(REFERRAL_PROGRAM_MAX_AMOUNT, Currency || DEFAULT_CURRENCY);
     const isExternal = Type === UserType.EXTERNAL;
 
@@ -147,7 +146,8 @@ export const getAccountAppRoutes = ({
                             ? c('familyOffer_2023:Title').t`Family plan`
                             : c('familyOffer_2023: Title').t`Your account's benefits`,
                         id: 'family-plan',
-                        available: (isFamilyPlan && !isAdmin) || (isVisionaryPlan && isMemberProton),
+                        // We don't want admin to leave the organization, they need first to be demoted
+                        available: !isAdmin && (isFamilyPlan || (isVisionaryPlan && isMemberProton)),
                     },
                     //Family members or Proton account that are part of Visionary don't have access to the dashboard, display the payment methods for them here
                     {

@@ -1,5 +1,8 @@
-import { MEMBER_ROLE, PLANS } from '../constants';
+import { MEMBER_ROLE, MEMBER_SUBSCRIBER, PLANS } from '../constants';
 import { CachedOrganizationKey, Member, Organization } from '../interfaces';
+
+export const isSuperAdmin = (members: Member[]) =>
+    (members || []).some(({ Subscriber, Self }) => Self === 1 && Subscriber === MEMBER_SUBSCRIBER.PAYER);
 
 export const getHasOtherAdmins = (members: Member[]) =>
     members.some(({ Role, Self }) => Self !== 1 && Role === MEMBER_ROLE.ORGANIZATION_ADMIN);
