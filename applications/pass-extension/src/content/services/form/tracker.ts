@@ -7,6 +7,7 @@ import { createListenerStore } from '@proton/pass/utils/listener';
 import { logger } from '@proton/pass/utils/logger';
 import { isEmptyString } from '@proton/pass/utils/string';
 import debounce from '@proton/utils/debounce';
+import lastItem from '@proton/utils/lastItem';
 
 import { FORM_TRACKER_CONFIG } from '../../constants';
 import { withContext } from '../../context/context';
@@ -64,11 +65,17 @@ export const createFormTracker = (form: FormHandle): FormTracker => {
     const getFormData = (): { username?: string; password?: string } => {
         const nonEmptyField = (field: FieldHandle) => !isEmptyString(field.value);
 
+        /* in the case of username or email fields : we always consider the
+         * first non-empty field as the final `username` candidate */
         const username = first(form.getFieldsFor(FormField.USERNAME, nonEmptyField));
         const usernameHidden = first(form.getFieldsFor(FormField.USERNAME_HIDDEN, nonEmptyField));
         const email = first(form.getFieldsFor(FormField.EMAIL, nonEmptyField));
-        const passwordNew = first(form.getFieldsFor(FormField.PASSWORD_NEW, nonEmptyField));
-        const passwordCurrent = first(form.getFieldsFor(FormField.PASSWORD_CURRENT, nonEmptyField));
+
+        /* in the case of passwords : we may be dealing with confirmation
+         * cases and/or  temporary passwords being detected - as a heuristic :
+         * always choose the last one.*/
+        const passwordNew = lastItem(form.getFieldsFor(FormField.PASSWORD_NEW, nonEmptyField));
+        const passwordCurrent = lastItem(form.getFieldsFor(FormField.PASSWORD_CURRENT, nonEmptyField));
 
         return {
             username: (username ?? email ?? usernameHidden)?.value,
