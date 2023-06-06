@@ -14,7 +14,7 @@ export interface FormHandle {
     detachField: (field: HTMLInputElement) => void;
     getFieldsFor: (type: FormField, predicate?: (handle: FieldHandle) => boolean) => FieldHandle[];
     getFields: (predicate?: (handle: FieldHandle) => boolean) => FieldHandle[];
-    reconciliate: (fields: DetectedField[]) => void;
+    reconciliate: (type: FormType, fields: DetectedField[]) => void;
     shouldRemove: () => boolean;
     attach: () => void;
     detach: () => void;
