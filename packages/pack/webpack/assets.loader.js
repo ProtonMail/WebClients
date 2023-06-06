@@ -35,7 +35,7 @@ module.exports = () => [
                 },
             },
             {
-                test: /\.(woff|woff2|eot|ttf|otf|mp4|webm)$/,
+                test: /\.(woff|woff2|eot|ttf|otf|mp4|webm|pdf)$/,
                 type: 'asset/resource',
             },
             {

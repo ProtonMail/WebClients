@@ -39,7 +39,8 @@
             "@proton/stylelint-config-proton/*": ["./packages/stylelint-config-proton/*"],
             "@proton/styles/*": ["./packages/styles/*"],
             "@proton/testing/*": ["./packages/testing/*"],
-            "@proton/utils/*": ["./packages/utils/*"]
+            "@proton/utils/*": ["./packages/utils/*"],
+            "@proton/recovery-kit/*": ["./packages/recovery-kit/*"]
         }
     },
     "exclude": ["**/node_modules", "**/.*/"]
