@@ -16,6 +16,13 @@ export type MaxKeys = 'MaxDomains' | 'MaxAddresses' | 'MaxSpace' | 'MaxMembers' 
 
 export type Quantity = number;
 
+export interface Offer {
+    Name: string;
+    StartTime: number;
+    EndTime: number;
+    Pricing: Partial<Pricing>;
+}
+
 export interface Plan {
     ID: string;
     Type: PLAN_TYPES;
@@ -36,6 +43,7 @@ export interface Plan {
     Quantity: Quantity;
     Pricing: Pricing;
     State: number;
+    Offers: Offer[];
 }
 
 export enum External {
