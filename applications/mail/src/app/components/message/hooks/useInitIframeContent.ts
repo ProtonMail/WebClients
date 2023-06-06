@@ -2,7 +2,7 @@ import { RefObject, useEffect, useRef, useState } from 'react';
 
 import { useTheme } from '@proton/components';
 import useIsMounted from '@proton/hooks/useIsMounted';
-import { PROTON_THEMES_MAP } from '@proton/shared/lib/themes/themes';
+import { PROTON_THEMES_MAP, ThemeTypes } from '@proton/shared/lib/themes/themes';
 
 import { MessageState } from '../../../logic/messages/messagesTypes';
 import { MESSAGE_IFRAME_BLOCKQUOTE_ID, MESSAGE_IFRAME_ROOT_ID, MESSAGE_IFRAME_TOGGLE_ID } from '../constants';
@@ -36,6 +36,7 @@ const useInitIframeContent = ({
     const [themeIndex] = useTheme();
     const themeCSSVariables: string = PROTON_THEMES_MAP[themeIndex].theme;
     const isMounted = useIsMounted();
+    const themeRef = useRef<ThemeTypes>(themeIndex);
 
     useEffect(() => {
         if (initStatus === 'start') {
@@ -76,6 +77,14 @@ const useInitIframeContent = ({
             }
         }
     }, [initStatus]);
+
+    // When theme is updated, need to compute again the styles so that plaintext messages use the correct bg color
+    useEffect(() => {
+        if (themeIndex !== themeRef.current) {
+            setInitStatus('start');
+            themeRef.current = themeIndex;
+        }
+    }, [themeIndex]);
 
     /**
      * On content change, rerun the process to set content inside the iframe
