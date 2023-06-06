@@ -7,8 +7,7 @@ import { Button, Card } from '@proton/atoms';
 import type { IconName } from '@proton/components';
 import { Icon, InlineLinkButton } from '@proton/components';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
-import { selectUserPlan } from '@proton/pass/store';
-import { getEpoch } from '@proton/pass/utils/time';
+import { selectTrialDaysRemaining } from '@proton/pass/store';
 import clsx from '@proton/utils/clsx';
 
 import { SidebarModal } from '../../../shared/components/sidebarmodal/SidebarModal';
@@ -40,8 +39,7 @@ const TRIAL_BLOG_URL = 'https://proton.me/support/pass-trial';
 
 export const FreeTrialModal: VFC<Props> = ({ ...props }) => {
     const features = getFeatures();
-    const plan = useSelector(selectUserPlan);
-    const daysRemaining = plan?.TrialEnd ? Math.ceil(Math.max((plan.TrialEnd - getEpoch()) / 86400, 0)) : 0;
+    const daysRemaining = useSelector(selectTrialDaysRemaining);
 
     return (
         <SidebarModal {...props}>
@@ -90,13 +88,15 @@ export const FreeTrialModal: VFC<Props> = ({ ...props }) => {
                         </div>
                     ))}
                 </Card>
-                <div className="text-sm">
-                    {c('Info').ngettext(
-                        msgid`You have ${daysRemaining} day left in your trial period.`,
-                        `You have ${daysRemaining} days left in your trial period.`,
-                        daysRemaining
-                    )}
-                </div>
+                {daysRemaining !== null && (
+                    <div className="text-sm">
+                        {c('Info').ngettext(
+                            msgid`You have ${daysRemaining} day left in your trial period.`,
+                            `You have ${daysRemaining} days left in your trial period.`,
+                            daysRemaining
+                        )}
+                    </div>
+                )}
                 <InlineLinkButton className="text-sm" onClick={() => window.open(TRIAL_BLOG_URL, '_blank')}>
                     {c('Action').t`Learn more`}
                 </InlineLinkButton>

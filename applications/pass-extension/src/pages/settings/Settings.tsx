@@ -8,7 +8,7 @@ import { Avatar } from '@proton/atoms/Avatar';
 import { CircleLoader } from '@proton/atoms/CircleLoader';
 import { Icon, Tabs, useNotifications } from '@proton/components';
 import { pageMessage } from '@proton/pass/extension/message';
-import { selectPassPlan, selectTrialDaysLeft, selectUser, selectUserPlan } from '@proton/pass/store';
+import { selectPassPlan, selectTrialDaysRemaining, selectUser, selectUserPlan } from '@proton/pass/store';
 import { type Unpack, WorkerMessageType, type WorkerMessageWithSender, WorkerStatus } from '@proton/pass/types';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { PASS_APP_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
@@ -73,7 +73,7 @@ const SettingsTabs: FC<{ pathname: string }> = ({ pathname }) => {
     const user = useSelector(selectUser);
     const plan = useSelector(selectUserPlan);
     const passPlan = useSelector(selectPassPlan);
-    const trialDaysLeft = useSelector(selectTrialDaysLeft);
+    const trialDaysLeft = useSelector(selectTrialDaysRemaining);
 
     const pathnameToIndex = (pathname: string) => {
         const idx = SETTINGS_TABS.findIndex((tab) => tab.pathname === pathname);
