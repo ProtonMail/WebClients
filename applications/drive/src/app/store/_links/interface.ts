@@ -10,6 +10,7 @@ interface Link {
     isFile: boolean;
     name: string;
     mimeType: string;
+    hash: string;
     size: number;
     createTime: number;
     // metaDataModifyTime represents time when the meta data of the link were

@@ -367,9 +367,14 @@ export default function useActions() {
             });
     };
 
-    const renameDevice = (params: { deviceId: string; newName: string }, abortSignal?: AbortSignal) => {
-        return devicesActions
-            .rename(params, abortSignal)
+    const renameDevice = async (
+        params: { shareId: string; linkId: string; deviceId: string; newName: string; haveLegacyName: boolean },
+        abortSignal?: AbortSignal
+    ) => {
+        await Promise.all([
+            await link.renameLink(new AbortController().signal, params.shareId, params.linkId, params.newName),
+            await devicesActions.rename(params, abortSignal),
+        ])
             .then(() => {
                 const notificationText = c('Notification').t`Device renamed`;
                 createNotification({ text: notificationText });
