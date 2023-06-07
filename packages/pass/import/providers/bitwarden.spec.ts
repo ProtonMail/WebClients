@@ -1,6 +1,6 @@
 import fs from 'fs';
 
-import type { ItemImportIntent } from '@proton/pass/types';
+import type { ItemExtraField, ItemImportIntent } from '@proton/pass/types';
 
 import type { ImportPayload } from '../types';
 import { readBitwardenData } from './bitwarden.reader';
@@ -46,6 +46,12 @@ describe('Import bitwarden json', () => {
         expect(loginItem1.content.totpUri).toBe(
             'otpauth://totp/proton:test?issuer=proton&secret=PROTON33&algorithm=SHA1&digits=6&period=30'
         );
+        const loginItem1ExtraField1 = loginItem1.extraFields[0] as ItemExtraField<'text'>;
+        expect(loginItem1ExtraField1.fieldName).toBe('Text 1');
+        expect(loginItem1ExtraField1.data.content).toBe('Text 1 content');
+        const loginItem1ExtraField2 = loginItem1.extraFields[1] as ItemExtraField<'hidden'>;
+        expect(loginItem1ExtraField2.fieldName).toBe('Hidden 1');
+        expect(loginItem1ExtraField2.data.content).toBe('Hidden 1 content');
         expect(allowedApp?.packageName).toEqual('ch.protonmail.android');
         expect(allowedApp?.hashes).toContain('ch.protonmail.android');
 

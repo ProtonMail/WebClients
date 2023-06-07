@@ -43,7 +43,7 @@ const entryToItem = (entry: KeePassEntry): ItemImportIntent<'login'> => {
         username: item.username,
         password: item.password,
         urls: [item.url],
-        totps: [item.totp],
+        totp: item.totp,
     });
 };
 
