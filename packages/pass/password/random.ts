@@ -27,8 +27,9 @@ const validatePassword = (password: string, options: RandomPasswordOptions) => {
     return true;
 };
 
-export const generateRandomPassword = (options: RandomPasswordOptions): string => {
+export const generateRandomPassword = (options: RandomPasswordOptions, counter?: () => void): string => {
     if (options.length < 4) throw new Error('invalid password length');
+    counter?.(); /* used in tests for recursion monitoring */
 
     const charList = resolveCharList(options);
     const randomValues = crypto.getRandomValues(new Uint8Array(options.length));
@@ -37,5 +38,5 @@ export const generateRandomPassword = (options: RandomPasswordOptions): string =
         .map((val) => charList[val % charList.length])
         .join('');
 
-    return validatePassword(password, options) ? password : generateRandomPassword(options);
+    return validatePassword(password, options) ? password : generateRandomPassword(options, counter);
 };
