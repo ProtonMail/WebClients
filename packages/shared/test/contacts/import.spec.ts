@@ -6,6 +6,7 @@ import {
     getContactId,
     getImportCategories,
     getSupportedContact,
+    naiveExtractPropertyValue,
 } from '../../lib/contacts/helpers/import';
 import { fromVCardProperties, getVCardProperties } from '../../lib/contacts/properties';
 import { extractVcards } from '../../lib/contacts/vcard';
@@ -58,6 +59,41 @@ END:VCARD
                 'BEGIN:VCARD\nVERSION:4.0\nFN:One\nEND:VCARD',
                 'BEGIN:VCARD\nVERSION:4.0\nFN:Two\nEND:VCARD',
             ]);
+        });
+    });
+
+    describe('naiveExtractPropertyValue', () => {
+        const vcard = `BEGIN:VCARD
+VERSION:4.0
+UID:urn:uuid:4fbe8971-0bc3-424c-9c26-36c3e1eff6b1
+FN;PID=1.1:J. Doe
+N:Doe;J.;;;
+BDAY:
+EMAIL;PID=1.1:jdoe@example.com
+CLIENTPIDMAP:1;urn:uuid:53e374d9-337e-4727-8803-a1e9c14e0556
+NOTE:This is a long descrip
+ tion that exists o
+ n a long line.
+END:VCARD`;
+
+        it('should return undefined when the property is not present', () => {
+            expect(naiveExtractPropertyValue(vcard, 'CATEGORIES')).toBeUndefined();
+        });
+
+        it('should return the empty string when the property has no value', () => {
+            expect(naiveExtractPropertyValue(vcard, 'BDAY')).toEqual('');
+        });
+
+        it('should extract values as expected with and without parameters', () => {
+            expect(naiveExtractPropertyValue(vcard, 'UID')).toEqual('urn:uuid:4fbe8971-0bc3-424c-9c26-36c3e1eff6b1');
+            expect(naiveExtractPropertyValue(vcard, 'email')).toEqual('jdoe@example.com');
+            expect(naiveExtractPropertyValue(vcard, 'version')).toEqual('4.0');
+        });
+
+        it('should extract folded values', () => {
+            expect(naiveExtractPropertyValue(vcard, 'NOTE')).toEqual(
+                'This is a long description that exists on a long line.'
+            );
         });
     });
 
@@ -409,5 +445,27 @@ BDAY:20000505
 END:VCARD`;
 
         expect(() => getSupportedContact(vCard)).toThrowError('Missing FN property');
+    });
+
+    it(`should not import a contact with version 2.1`, () => {
+        const vCard = `BEGIN:VCARD
+VERSION:2.1
+N:Gump;Forrest;;Mr.
+FN:Forrest Gump
+ORG:Bubba Gump Shrimp Co.
+TITLE:Shrimp Man
+TEL;WORK;VOICE:(111) 555-1212
+TEL;HOME;VOICE:(404) 555-1212
+ADR;WORK;PREF:;;100 Waters Edge;Baytown;LA;30314;United States of America
+LABEL;WORK;PREF;ENCODING=QUOTED-PRINTABLE;CHARSET=UTF-8:100 Waters Edge=0D=
+ =0ABaytown\\, LA 30314=0D=0AUnited States of America
+ADR;HOME:;;42 Plantation St.;Baytown;LA;30314;United States of America
+LABEL;HOME;ENCODING=QUOTED-PRINTABLE;CHARSET=UTF-8:42 Plantation St.=0D=0A=
+ Baytown, LA 30314=0D=0AUnited States of America
+PHOTO;GIF:http://www.example.com/dir_photos/my_photo.gif
+EMAIL:forrestgump@example.com
+REV:20080424T195243Z
+END:VCARD`;
+        expect(() => getSupportedContact(vCard)).toThrowError('vCard versions < 3.0 not supported');
     });
 });
