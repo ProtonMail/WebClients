@@ -6,21 +6,17 @@ import { c } from 'ttag';
 import {
     AuthenticatedBugModal,
     DropdownMenuButton,
-    FeatureCode,
     Icon,
     StandardLoadErrorPage,
     createPreAuthKTVerifier,
     useApi,
     useAuthentication,
-    useConfig,
     useErrorHandler,
-    useFeature,
     useGetUser,
     useModalState,
     useTheme,
 } from '@proton/components';
-import { KT_FF } from '@proton/components/containers/keyTransparency/ktStatus';
-import { createGetKTActivation } from '@proton/components/containers/keyTransparency/useGetKTActivation';
+import useKTActivation from '@proton/components/containers/keyTransparency/useKTActivation';
 import { AddressGeneration } from '@proton/components/containers/login/interface';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
@@ -124,7 +120,6 @@ const SetupSupportDropdown = () => {
 };
 
 const SetupAddressContainer = () => {
-    const { APP_NAME } = useConfig();
     const history = useHistory();
     const location = useLocation();
     const [loading, setLoading] = useState(true);
@@ -137,7 +132,7 @@ const SetupAddressContainer = () => {
     const authentication = useAuthentication();
     const getUser = useGetUser();
     const { setThemeSetting } = useTheme();
-    const ktFeature = useFeature<KT_FF>(FeatureCode.KeyTransparencyWEB);
+    const ktActivation = useKTActivation();
 
     const generateAddressRef = useRef<AddressGeneration | undefined>(undefined);
 
@@ -265,10 +260,7 @@ const SetupAddressContainer = () => {
                     onSubmit={async (payload) => {
                         try {
                             const { preAuthKTVerify, preAuthKTCommit } = createPreAuthKTVerifier(
-                                createGetKTActivation(
-                                    ktFeature.get().then((result) => result?.Value),
-                                    APP_NAME
-                                ),
+                                ktActivation,
                                 normalApi
                             );
 

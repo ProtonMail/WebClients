@@ -11,7 +11,6 @@ import {
     useApi,
     useConfig,
     useErrorHandler,
-    useFeature,
     useForceRefresh,
     useLoading,
     useModalState,
@@ -19,7 +18,7 @@ import {
 } from '@proton/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import { startUnAuthFlow } from '@proton/components/containers/api/unAuthenticatedApi';
-import { KT_FF } from '@proton/components/containers/keyTransparency/ktStatus';
+import useKTActivation from '@proton/components/containers/keyTransparency/useKTActivation';
 import { AuthSession } from '@proton/components/containers/login/interface';
 import { PAYMENT_METHOD_TYPES, PaymentMethodStatus } from '@proton/components/payments/core';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
@@ -150,7 +149,7 @@ interface Props {
 let ranPreload = false;
 
 const SingleSignupContainerV2 = ({ fork, activeSessions, loader, onLogin, productParam, clientType }: Props) => {
-    const ktFeature = useFeature<KT_FF>(FeatureCode.KeyTransparencyWEB);
+    const ktActivation = useKTActivation();
     const { APP_NAME } = useConfig();
     const forceRefresh = useForceRefresh();
 
@@ -812,7 +811,7 @@ const SingleSignupContainerV2 = ({ fork, activeSessions, loader, onLogin, produc
                                     persistent: false,
                                     trusted: false,
                                     clientType,
-                                    ktFeature: (await ktFeature.get())?.Value,
+                                    ktActivation,
                                 };
 
                                 if (data.type === 'signup-token') {

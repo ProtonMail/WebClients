@@ -11,6 +11,17 @@ export const getPublicKeys = (params: GetPublicKeysParams) => ({
     params,
 });
 
+interface GetAllPublicKeysParams {
+    Email: string;
+    InternalOnly?: 0 | 1;
+}
+
+export const getAllPublicKeys = (params: GetAllPublicKeysParams) => ({
+    url: 'core/v4/keys/all',
+    method: 'get',
+    params,
+});
+
 export const getKeySalts = () => ({
     url: 'core/v4/keys/salts',
     method: 'get',
@@ -263,7 +274,7 @@ export const migrateAddressKeysRoute = (data: MigrateAddressKeysPayload) => ({
 });
 
 export interface GetSignedKeyListsParams {
-    AfterEpochID?: number;
+    AfterRevision?: number;
     Email: string;
 }
 
@@ -274,7 +285,7 @@ export const getSignedKeyListsRoute = (params: GetSignedKeyListsParams) => ({
 });
 
 export interface GetSignedKeyListParams {
-    EpochID: number;
+    Revision: number;
     Email: string;
 }
 
