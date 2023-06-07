@@ -6,9 +6,9 @@ import { Button } from '@proton/atoms';
 import { useContactEmailsCache } from '@proton/components/containers/contacts/ContactEmailsProvider';
 import { useLoading } from '@proton/hooks';
 import { dedupeNotifications, sortNotificationsByAscendingTrigger } from '@proton/shared/lib/calendar/alarms';
-import { getIsSubscribedCalendar, getShowDuration } from '@proton/shared/lib/calendar/calendar';
+import { getIsCalendarWritable, getIsSubscribedCalendar, getShowDuration } from '@proton/shared/lib/calendar/calendar';
 import { MAX_CHARS_API, MAX_DEFAULT_NOTIFICATIONS } from '@proton/shared/lib/calendar/constants';
-import { getCalendarCreatedByText } from '@proton/shared/lib/calendar/sharing/shareProton/shareProton';
+import { getSharedCalendarSubHeaderText } from '@proton/shared/lib/calendar/sharing/shareProton/shareProton';
 import { Nullable } from '@proton/shared/lib/interfaces';
 import { NotificationModel, SubscribedCalendar, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
@@ -141,12 +141,28 @@ export const CalendarModal = ({
 
         return initialCalendar ? editCalendarText : c('Title; create calendar modal').t`Create calendar`;
     };
+
     const getSubline = () => {
         if (type !== CALENDAR_MODAL_TYPE.SHARED || !calendar || !contactEmailsMap) {
             return;
         }
-        return getCalendarCreatedByText(calendar, contactEmailsMap);
+
+        const subHeaderText = getSharedCalendarSubHeaderText(calendar, contactEmailsMap);
+
+        return (
+            subHeaderText && (
+                <>
+                    <div className="text-rg text-break mb-1 color-norm">{subHeaderText}</div>
+                    {!getIsCalendarWritable(calendar) && (
+                        <div className="text-rg text-ellipsis color-weak">
+                            {c('Info; access rights for shared calendar').t`View only`}
+                        </div>
+                    )}
+                </>
+            )
+        );
     };
+
     const getSize = (type: CALENDAR_MODAL_TYPE) => {
         if (type === VISUAL) {
             return 'small';
