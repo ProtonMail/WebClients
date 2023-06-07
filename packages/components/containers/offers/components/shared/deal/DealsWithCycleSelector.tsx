@@ -25,15 +25,17 @@ const DealsWithCycleSelector = (props: OfferProps) => {
 
     return (
         <>
-            <CycleSelector
-                mode="buttons"
-                cycle={cycle}
-                onSelect={setCycle}
-                options={[
-                    { text: c('Billing cycle option').t`12 months`, value: CYCLE.YEARLY },
-                    { text: c('Billing cycle option').t`24 months`, value: CYCLE.TWO_YEARS },
-                ]}
-            />
+            <div className="">
+                <CycleSelector
+                    mode="buttons"
+                    cycle={cycle}
+                    onSelect={setCycle}
+                    options={[
+                        { text: c('Billing cycle option').t`12 months`, value: CYCLE.YEARLY },
+                        { text: c('Billing cycle option').t`24 months`, value: CYCLE.TWO_YEARS },
+                    ]}
+                />
+            </div>
             <div className="offer-wrapper flex flex-nowrap flex-justify-space-around on-mobile-flex-column mt-11">
                 {filteredDeals.map((deal) => (
                     <Deal key={deal.ref} {...props} deal={deal}>

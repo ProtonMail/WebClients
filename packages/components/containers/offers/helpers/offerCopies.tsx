@@ -38,6 +38,12 @@ export const getMailPlusFeatures = () => {
             tooltip: c('specialoffer: Tooltip')
                 .t`Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.`,
         },
+        {
+            badge: c('summer2023: Badge feature to say Proton Pass is new').t`New`,
+            name: c('summer2023: Short tool name to present Proton Pass').t`Password manager`,
+            tooltip: c('summer2023: Describe Proton Pass')
+                .t`Securely store your passwords and autofill them on websites. Includes unlimited passwords, autofill, password generator, and more.`,
+        },
     ];
 };
 

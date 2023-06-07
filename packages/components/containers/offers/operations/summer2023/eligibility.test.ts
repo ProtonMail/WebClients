@@ -113,7 +113,7 @@ describe('summer-2023 offer', () => {
         ).toBe(false);
     });
 
-    it('should not be available for users who have a subscription since less than one month', () => {
+    it('should not be available for users with previous subscription', () => {
         const user = {
             isFree: true,
             canPay: true,
