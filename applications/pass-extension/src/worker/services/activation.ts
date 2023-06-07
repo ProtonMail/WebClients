@@ -223,7 +223,7 @@ export const createActivationService = () => {
     WorkerMessageBroker.registerMessage(WorkerMessageType.WORKER_WAKEUP, handleWakeup);
     WorkerMessageBroker.registerMessage(WorkerMessageType.WORKER_INIT, handleInit);
     WorkerMessageBroker.registerMessage(WorkerMessageType.RESOLVE_TAB, (_, { tab }) => ({ tab }));
-    WorkerMessageBroker.registerMessage(WorkerMessageType.PASS_INSTALLED, () => true);
+    WorkerMessageBroker.registerMessage(WorkerMessageType.ACCOUNT_PROBE, () => true);
 
     if (ENV === 'development') {
         /* there is no way to test the update sequence locally without

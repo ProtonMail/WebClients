@@ -12,11 +12,11 @@ export const authFallback = () => {
                 message.data?.extension === EXTENSIONS[APPS.PROTONPASSBROWSEREXTENSION].ID
             ) {
                 switch (message.data.type) {
-                    case WorkerMessageType.FORK: {
+                    case WorkerMessageType.ACCOUNT_FORK:
                         const { keyPassword, selector, state, persistent, trusted } = message.data.payload;
                         return await sendMessage.on(
                             contentScriptMessage({
-                                type: WorkerMessageType.FORK,
+                                type: WorkerMessageType.ACCOUNT_FORK,
                                 payload: {
                                     selector,
                                     state,
@@ -27,19 +27,15 @@ export const authFallback = () => {
                             }),
                             (response) => window.postMessage({ token: message.data?.token, ...response })
                         );
-                    }
 
-                    case WorkerMessageType.AUTH_EXT: {
-                        return await sendMessage(
-                            contentScriptMessage({
-                                type: WorkerMessageType.AUTH_EXT,
-                            })
-                        );
-                    }
+                    case WorkerMessageType.ACCOUNT_EXTENSION:
+                        return await sendMessage(contentScriptMessage({ type: WorkerMessageType.ACCOUNT_EXTENSION }));
 
-                    case WorkerMessageType.PASS_INSTALLED: {
+                    case WorkerMessageType.ACCOUNT_ONBOARDING:
+                        return await sendMessage(contentScriptMessage({ type: WorkerMessageType.ACCOUNT_ONBOARDING }));
+
+                    case WorkerMessageType.ACCOUNT_PROBE:
                         return window.postMessage(successMessage({}));
-                    }
                 }
             }
         } catch (e) {
