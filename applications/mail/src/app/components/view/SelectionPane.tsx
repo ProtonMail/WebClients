@@ -1,5 +1,4 @@
 import { useEffect, useMemo, useState } from 'react';
-import { useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 
 import { Location } from 'history';
@@ -24,6 +23,7 @@ import { useSimpleLoginExtension } from '../../hooks/simpleLogin/useSimpleLoginE
 import { useSimpleLoginTelemetry } from '../../hooks/simpleLogin/useSimpleLoginTelemetry';
 import { useDeepMemo } from '../../hooks/useDeepMemo';
 import { total as totalSelector } from '../../logic/elements/elementsSelectors';
+import { useAppSelector } from '../../logic/store';
 import { SearchParameters } from '../../models/tools';
 import EnableEncryptedSearchModal from '../header/search/AdvancedSearchFields/EnableEncryptedSearchModal';
 import SimpleLoginPlaceholder from './SimpleLoginPlaceholder';
@@ -50,14 +50,13 @@ const SelectionPane = ({ labelID, mailSettings, location, labelCount, checkedIDs
     const conversationMode = isConversationMode(labelID, mailSettings, location);
 
     // We display 50 elements maximum in the list. To know how much results are matching a search, we store it in Redux, in elements.total
-    const elementsFoundCount = useSelector(totalSelector) || 0;
+    const elementsFoundCount = useAppSelector(totalSelector) || 0;
 
     const [labels] = useLabels();
     const [folders] = useFolders();
 
     const { getESDBStatus } = useEncryptedSearchContext();
-    const { isEnablingContentSearch, isPaused, contentIndexingDone, isMigrating, isEnablingEncryptedSearch } =
-        getESDBStatus();
+    const { isEnablingContentSearch, isPaused, contentIndexingDone, isEnablingEncryptedSearch } = getESDBStatus();
     const [enableESModalProps, setEnableESModalOpen, renderEnableESModal] = useModalState();
 
     const isCustomLabel = testIsCustomLabel(labelID, labels);
@@ -72,8 +71,8 @@ const SelectionPane = ({ labelID, mailSettings, location, labelCount, checkedIDs
     const isSearch = testIsSearch(searchParameters);
 
     // We want to hide the "enable ES" part from the point when the user enables it. We do not want to see the downloading part from here
-    const esActivationLoading = isMigrating || isEnablingEncryptedSearch;
-    const encryptedSearchEnabled = isEnablingContentSearch || isPaused || contentIndexingDone || esActivationLoading;
+    const encryptedSearchEnabled =
+        isEnablingContentSearch || isPaused || contentIndexingDone || isEnablingEncryptedSearch;
 
     /*
      * With ttag we cannot have JSX in plural forms
@@ -232,7 +231,7 @@ const SelectionPane = ({ labelID, mailSettings, location, labelCount, checkedIDs
                     {checkeds > 0 && <Button onClick={() => onCheckAll(false)}>{c('Action').t`Deselect`}</Button>}
                 </>
             )}
-            {renderEnableESModal && <EnableEncryptedSearchModal {...enableESModalProps} />}
+            {renderEnableESModal && <EnableEncryptedSearchModal openSearchAfterEnabling {...enableESModalProps} />}
         </div>
     );
 };

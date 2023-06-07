@@ -7,12 +7,18 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import { useEncryptedSearchContext } from '../../../../containers/EncryptedSearchProvider';
 
-interface Props extends ModalProps {}
-const EnableEncryptedSearchModal = ({ ...rest }: Props) => {
-    const { enableEncryptedSearch, enableContentSearch } = useEncryptedSearchContext();
+interface Props extends ModalProps {
+    openSearchAfterEnabling?: boolean;
+}
+const EnableEncryptedSearchModal = ({ openSearchAfterEnabling, ...rest }: Props) => {
+    const { enableEncryptedSearch, enableContentSearch, openDropdown } = useEncryptedSearchContext();
     const handleEnableES = async () => {
-        rest.onClose?.();
+        if (openSearchAfterEnabling) {
+            openDropdown();
+        }
+
         void enableEncryptedSearch().then((success) => (success ? enableContentSearch() : undefined));
+        rest.onClose?.();
     };
 
     return (

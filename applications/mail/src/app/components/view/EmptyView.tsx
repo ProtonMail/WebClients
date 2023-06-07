@@ -30,8 +30,7 @@ const EmptyView = ({ labelID, isSearch, isUnread }: Props) => {
     const { hasSimpleLogin, isFetchingAccountLinked } = useSimpleLoginExtension();
 
     const { getESDBStatus } = useEncryptedSearchContext();
-    const { isEnablingContentSearch, isPaused, contentIndexingDone, isMigrating, isEnablingEncryptedSearch } =
-        getESDBStatus();
+    const { isEnablingContentSearch, isPaused, contentIndexingDone, isEnablingEncryptedSearch } = getESDBStatus();
     const [enableESModalProps, setEnableESModalOpen, renderEnableESModal] = useModalState();
 
     const isInbox = labelID === MAILBOX_LABEL_IDS.INBOX && !isSearch;
@@ -40,8 +39,8 @@ const EmptyView = ({ labelID, isSearch, isUnread }: Props) => {
     const isFolder = !isInbox && !isScheduled && !isSearch && !isSpam;
 
     // We want to hide the "enable ES" part from the point when the user enables it. We do not want to see the downloading part from here
-    const esActivationLoading = isMigrating || isEnablingEncryptedSearch;
-    const encryptedSearchEnabled = isEnablingContentSearch || isPaused || contentIndexingDone || esActivationLoading;
+    const encryptedSearchEnabled =
+        isEnablingContentSearch || isPaused || contentIndexingDone || isEnablingEncryptedSearch;
 
     const onCompose = useOnCompose();
 
@@ -127,7 +126,7 @@ const EmptyView = ({ labelID, isSearch, isUnread }: Props) => {
                     {c('Action').t`Enable`}
                 </Button>
             )}
-            {renderEnableESModal && <EnableEncryptedSearchModal {...enableESModalProps} />}
+            {renderEnableESModal && <EnableEncryptedSearchModal openSearchAfterEnabling {...enableESModalProps} />}
         </EmptyViewContainer>
     );
 };
