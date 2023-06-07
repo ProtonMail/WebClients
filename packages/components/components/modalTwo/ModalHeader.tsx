@@ -21,7 +21,7 @@ interface ModalHeaderProps extends Omit<ComponentPropsWithRef<'div'>, 'children'
      * A subline to render below the Title.
      * Will not render unless "title" is passed as well.
      */
-    subline?: string;
+    subline?: string | JSX.Element;
     /**
      * Intended for use with icon buttons.
      * Slot for Element(s) to be rendered next to the close button.
