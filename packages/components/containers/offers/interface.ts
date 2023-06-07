@@ -69,6 +69,7 @@ export interface OfferConfig {
 }
 
 interface Feature {
+    badge?: string;
     disabled?: boolean;
     icon?: IconName;
     name: string;
