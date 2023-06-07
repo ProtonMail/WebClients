@@ -11,7 +11,7 @@
 
 			// the font of InputTwo is larger on mobiles, so we need to make the input field wider
 			@include media('<=small') {
-				max-inline-size: rem(58);
+				max-inline-size: rem(82);
 			}
 		}
 	}
