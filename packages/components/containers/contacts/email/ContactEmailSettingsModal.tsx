@@ -70,7 +70,7 @@ const ContactEmailSettingsModal = ({ contactID, vCardContact, emailProperty, ...
     const [loadingSave, withLoadingSave] = useLoading(false);
     const { createNotification } = useNotifications();
     const [mailSettings] = useMailSettings();
-    const { verifyOutboundPublicKeys } = useKeyTransparencyContext();
+    const { verifyOutboundPublicKeys, ktActivation } = useKeyTransparencyContext();
 
     const saveVCardContact = useSaveVCardContact();
 
@@ -88,7 +88,13 @@ const ContactEmailSettingsModal = ({ contactID, vCardContact, emailProperty, ...
      * Initialize the key model for the modal
      */
     const prepare = async () => {
-        const apiKeysConfig = await getPublicKeysEmailHelper(api, emailAddress, verifyOutboundPublicKeys, true);
+        const apiKeysConfig = await getPublicKeysEmailHelper(
+            api,
+            ktActivation,
+            emailAddress,
+            verifyOutboundPublicKeys,
+            true
+        );
         const pinnedKeysConfig = await getKeyInfoFromProperties(vCardContact, emailGroup || '');
         const publicKeyModel = await getContactPublicKeyModel({
             emailAddress,

@@ -101,6 +101,17 @@ const MessageDetailsModal = ({
         ? pureAttachmentsCount > 0
         : attachmentsText;
 
+    let senderVerificationDetails;
+    if (icon?.senderVerificationDetails) {
+        if (icon.senderVerificationDetails.success) {
+            senderVerificationDetails = c('Sender verification details')
+                .t`Sender verified: ${icon.senderVerificationDetails.description}`;
+        } else {
+            senderVerificationDetails = c('Sender verification details')
+                .t`Sender verification failed: ${icon.senderVerificationDetails.description}`;
+        }
+    }
+
     const sender = message.data?.Sender;
 
     return (
@@ -114,11 +125,23 @@ const MessageDetailsModal = ({
                     {icon && (
                         <div className="mb-2 flex flex-nowrap flex-align-items-center">
                             <span className="mr-2 flex">
-                                <EncryptionStatusIcon useTooltip={false} isDetailsModal {...icon} />
+                                <EncryptionStatusIcon useTooltip={true} isDetailsModal {...icon} />
                             </span>
-                            <span className="pl-1 flex-item-fluid text-ellipsis" title={icon.text}>
-                                {icon.text}
-                            </span>
+                            <div className="pl-1 flex-item-fluid">
+                                <div className="flex flex-column">
+                                    <span className="text-ellipsis w100" title={icon.text}>
+                                        {icon.messageEncryptionDetails ?? icon.text}
+                                    </span>
+                                    {senderVerificationDetails && (
+                                        <span
+                                            className="w100"
+                                            title={c('Sender verification details').t`Sender verification`}
+                                        >
+                                            {senderVerificationDetails}
+                                        </span>
+                                    )}
+                                </div>
+                            </div>
                         </div>
                     )}
                     {displayTrackerIcon && (

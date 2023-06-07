@@ -1,20 +1,29 @@
-import { ktSentryReport, verifyLatestProofOfAbsence } from '@proton/key-transparency/lib';
-import { Api, GetKTActivation, KeyMigrationKTVerifier, KeyTransparencyActivation } from '@proton/shared/lib/interfaces';
+import {
+    KeyTransparencyError,
+    fetchAndVerifyLatestEpoch,
+    fetchProof,
+    ktSentryReport,
+    verifyProofOfAbscenceForAllRevision,
+} from '@proton/key-transparency/lib';
+import { Api, KeyMigrationKTVerifier, KeyTransparencyActivation } from '@proton/shared/lib/interfaces';
 
-const createKeyMigrationKTVerifier = (getKTActivation: GetKTActivation, api: Api): KeyMigrationKTVerifier => {
+const createKeyMigrationKTVerifier = (ktActivation: KeyTransparencyActivation, api: Api): KeyMigrationKTVerifier => {
     return async (email: string) => {
-        if ((await getKTActivation()) === KeyTransparencyActivation.DISABLED) {
+        if (ktActivation === KeyTransparencyActivation.DISABLED) {
             return;
         }
         try {
-            await verifyLatestProofOfAbsence(api, email);
+            const epoch = await fetchAndVerifyLatestEpoch(api);
+            const proof = await fetchProof(epoch.EpochID, email, 1, api);
+            await verifyProofOfAbscenceForAllRevision(proof, email, epoch.TreeHash);
         } catch (error: any) {
-            ktSentryReport('Key migration checks failed', {
-                context: 'KeyMigrationKTVerifier',
-                email,
-                error: error.message,
-            });
-            return;
+            if (error instanceof KeyTransparencyError) {
+                ktSentryReport('KT error during key migration', { error: error.message });
+            } else {
+                const errorMessage = error instanceof Error ? error.message : 'unknown error';
+                const stack = error instanceof Error ? error.stack : undefined;
+                ktSentryReport(errorMessage, { context: 'KeyMigrationKTVerifier', stack });
+            }
         }
     };
 };

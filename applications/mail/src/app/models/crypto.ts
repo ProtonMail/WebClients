@@ -29,6 +29,13 @@ export interface StatusIcon {
     isEncrypted: boolean;
     fill: STATUS_ICONS_FILLS;
     text: string;
+    messageEncryptionDetails?: string;
+    senderVerificationDetails?: SenderVerificationDetails;
+}
+
+export interface SenderVerificationDetails {
+    success: boolean;
+    description: string;
 }
 
 export interface MapStatusIcons {

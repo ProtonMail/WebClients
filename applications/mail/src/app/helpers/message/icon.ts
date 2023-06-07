@@ -2,15 +2,17 @@ import { c, msgid } from 'ttag';
 
 import { MAIL_APP_NAME, PACKAGE_TYPE } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import { KT_VERIFICATION_STATUS, KeyTransparencyActivation } from '@proton/shared/lib/interfaces';
 import { SendPreferences } from '@proton/shared/lib/interfaces/mail/crypto';
-import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
+import { SIGNATURE_START, VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import { getParsedHeadersFirstValue, inSigningPeriod } from '@proton/shared/lib/mail/messages';
 
 import { MessageState, MessageVerification, MessageWithOptionalBody } from '../../logic/messages/messagesTypes';
 import { MapStatusIcons, STATUS_ICONS_FILLS, StatusIcon, X_PM_HEADERS } from '../../models/crypto';
+import { formatSimpleDate } from '../date';
 
-// The logic for determining the status icons can be found here:
-// https://confluence.protontech.ch/display/MAILFE/Encryption+status+for+outgoing+and+incoming+email
+// The logic for determining the status icons can be found in Confluence under the title
+// Encryption status for outgoing and incoming email
 
 const { SEND_PM, SEND_EO, SEND_PGP_INLINE, SEND_PGP_MIME } = PACKAGE_TYPE;
 const { NOT_VERIFIED, NOT_SIGNED, SIGNED_AND_INVALID, SIGNED_AND_VALID } = VERIFICATION_STATUS;
@@ -52,8 +54,26 @@ const getMapEmailHeaders = (headers?: string): { [key: string]: X_PM_HEADERS } =
     }, {});
 };
 
-export const getSendStatusIcon = (sendPreferences: SendPreferences): StatusIcon | undefined => {
-    const { encrypt, pgpScheme, hasApiKeys, isPublicKeyPinned, warnings, error } = sendPreferences;
+const getLockColor = (pgpScheme: PACKAGE_TYPE) => {
+    switch (pgpScheme) {
+        case SEND_PM:
+        case SEND_EO:
+            return 'color-info';
+        case SEND_PGP_MIME:
+        case SEND_PGP_INLINE:
+            return 'color-success';
+        default:
+            return 'color-norm';
+    }
+};
+
+export const getSendStatusIcon = (
+    sendPreferences: SendPreferences,
+    ktActivation: KeyTransparencyActivation
+): StatusIcon | undefined => {
+    const { encrypt, pgpScheme, hasApiKeys, isPublicKeyPinned, warnings, error, ktVerificationStatus } =
+        sendPreferences;
+    const ktActivated = ktActivation === KeyTransparencyActivation.SHOW_UI;
     const validationErrorsMessage = warnings?.join('; ');
     const warningsText = validationErrorsMessage
         ? c('Key validation warning').t`Recipient's key validation failed: ${validationErrorsMessage}`
@@ -61,8 +81,24 @@ export const getSendStatusIcon = (sendPreferences: SendPreferences): StatusIcon 
     if (error) {
         return { colorClassName: 'color-danger', isEncrypted: false, fill: FAIL, text: error.message };
     }
+    if (ktActivated && ktVerificationStatus === KT_VERIFICATION_STATUS.VERIFICATION_FAILED) {
+        return {
+            colorClassName: getLockColor(pgpScheme),
+            isEncrypted: encrypt,
+            fill: WARNING,
+            text: c('loc_nightly: Composer email icon').t`Failed to verify keys with Key Transparency`,
+        };
+    }
     if (pgpScheme === SEND_PM) {
         const result = { colorClassName: 'color-info', isEncrypted: true };
+        if (ktActivated && ktVerificationStatus === KT_VERIFICATION_STATUS.UNVERIFIED_KEYS) {
+            return {
+                ...result,
+                fill: WARNING,
+                text: c('loc_nightly: Composer email icon')
+                    .t`End-to-end encrypted to recipient without Key Transparency`,
+            };
+        }
         if (isPublicKeyPinned) {
             return {
                 ...result,
@@ -70,7 +106,18 @@ export const getSendStatusIcon = (sendPreferences: SendPreferences): StatusIcon 
                 text: c('Composer email icon').t`End-to-end encrypted to verified recipient`,
             };
         }
-        return { ...result, fill: PLAIN, text: c('Composer email icon').t`End-to-end encrypted` };
+        if (ktActivated && ktVerificationStatus === KT_VERIFICATION_STATUS.VERIFIED_KEYS) {
+            return {
+                ...result,
+                fill: PLAIN,
+                text: c('loc_nightly: Composer email icon').t`End-to-end encrypted to recipient with Key Transparency`,
+            };
+        }
+        return {
+            ...result,
+            fill: PLAIN,
+            text: c('Composer email icon').t`End-to-end encrypted`,
+        };
     }
     if (pgpScheme === SEND_EO) {
         return {
@@ -283,19 +330,225 @@ export const getSentStatusIconInfo = (message: MessageState): MessageViewIcons =
     return { globalIcon, mapStatusIcon };
 };
 
+const getInternalMessageText = (verificationStatus: VERIFICATION_STATUS | undefined): string => {
+    switch (verificationStatus) {
+        case NOT_SIGNED:
+            return c('loc_nightly: Received email icon').t`End-to-end encrypted message with no signature`;
+        case SIGNED_AND_VALID:
+        case SIGNED_AND_INVALID:
+            return c('loc_nightly: Received email icon').t`End-to-end encrypted signed message`;
+        default:
+            return c('loc_nightly: Received email icon').t`End-to-end encrypted message`;
+    }
+};
+
+const getReceivedStatusIconInternalWithKT = (
+    message: MessageWithOptionalBody,
+    verification: MessageVerification,
+    endToEndEncrypted: boolean
+): StatusIcon | undefined => {
+    if (!endToEndEncrypted) {
+        return {
+            colorClassName: 'color-norm',
+            isEncrypted: false,
+            fill: PLAIN,
+            text: c('loc_nightly: Received email icon').t`Stored with zero-access encryption`,
+        };
+    }
+    const {
+        verificationStatus,
+        senderPinnedKeys,
+        pinnedKeysVerified,
+        signingPublicKey,
+        signingPublicKeyIsPinned,
+        signingPublicKeyIsCompromised,
+        ktVerificationStatus,
+    } = verification;
+
+    const hasPinnedKeys = !!senderPinnedKeys?.length;
+    const messageEncryptionDetails = getInternalMessageText(verificationStatus);
+    const result = { colorClassName: 'color-info', isEncrypted: true, messageEncryptionDetails };
+    const verificationErrorsMessage = verification.verificationErrors
+        ?.map(({ message }) => message)
+        .filter(Boolean)
+        .join('; ');
+
+    const warningResult = {
+        ...result,
+        text: c('loc_nightly: Signature verification warning').t`Sender verification failed`,
+        fill: WARNING,
+    };
+
+    const supressedWarningResult = {
+        // Only show the warning in the details
+        ...warningResult,
+        fill: PLAIN,
+    };
+
+    const warningOnPinnedKeysResult = hasPinnedKeys ? warningResult : supressedWarningResult;
+
+    if (verificationErrorsMessage) {
+        return {
+            ...warningOnPinnedKeysResult,
+            senderVerificationDetails: {
+                success: false,
+                description: verificationErrorsMessage,
+            },
+        };
+    }
+
+    if (ktVerificationStatus === KT_VERIFICATION_STATUS.VERIFICATION_FAILED) {
+        return {
+            ...warningResult,
+            senderVerificationDetails: {
+                success: false,
+                description: c('loc_nightly: Sender verification error').t`Key Transparency detected an error`,
+            },
+        };
+    }
+
+    if (verificationStatus === NOT_SIGNED) {
+        if (!message.Sender.IsProton && message.Time < SIGNATURE_START.USER) {
+            const formattedDate = formatSimpleDate(new Date(SIGNATURE_START.USER * 1000));
+            return {
+                ...warningOnPinnedKeysResult,
+                senderVerificationDetails: {
+                    success: false,
+                    description: c('loc_nightly: Sender verification error')
+                        .t`Messages is not signed, ${MAIL_APP_NAME} started signing messages after ${formattedDate}`,
+                },
+            };
+        }
+        if (message.Sender.IsProton && message.Time < SIGNATURE_START.BULK) {
+            // Don't show a warning on official emails
+            return {
+                ...result,
+                text: messageEncryptionDetails,
+                fill: PLAIN,
+            };
+        }
+        return {
+            ...warningOnPinnedKeysResult,
+            senderVerificationDetails: {
+                success: false,
+                description: c('loc_nightly: Sender verification error').t`Message is not signed`,
+            },
+        };
+    }
+
+    if (!signingPublicKey) {
+        return {
+            ...warningOnPinnedKeysResult,
+            senderVerificationDetails: {
+                success: false,
+                description: c('loc_nightly: Sender verification error')
+                    .t`Cannot find the verification key, contact the sender to get their their public key.`,
+            },
+        };
+    }
+
+    if (hasPinnedKeys && !signingPublicKeyIsPinned) {
+        return {
+            ...warningResult,
+            senderVerificationDetails: {
+                success: false,
+                description: c('Sender verification error').t`Verification key is not in the list of trusted keys.`,
+            },
+        };
+    }
+
+    if (!hasPinnedKeys && ktVerificationStatus === KT_VERIFICATION_STATUS.UNVERIFIED_KEYS) {
+        return {
+            ...warningResult,
+            senderVerificationDetails: {
+                success: false,
+                description: c('loc_nightly: Sender verification error')
+                    .t`Verification key is not protected with key transparency.`,
+            },
+        };
+    }
+
+    if (signingPublicKeyIsCompromised) {
+        return {
+            ...warningOnPinnedKeysResult,
+            senderVerificationDetails: {
+                success: false,
+                description: c('loc_nightly: Sender verification error')
+                    .t`Verification key is marked as compromised by the sender.`,
+            },
+        };
+    }
+
+    if (verificationStatus === SIGNED_AND_INVALID) {
+        return {
+            ...warningResult,
+            senderVerificationDetails: {
+                success: false,
+                description: c('loc_nightly: Sender verification error').t`Message signature is invalid.`,
+            },
+        };
+    }
+
+    if (hasPinnedKeys && !pinnedKeysVerified) {
+        return {
+            ...warningResult,
+            senderVerificationDetails: {
+                success: false,
+                description: c('loc_nightly: Signature verification warning')
+                    .t`Sender's trusted keys verification failed`,
+            },
+        };
+    }
+
+    if (verificationStatus === SIGNED_AND_VALID) {
+        if (hasPinnedKeys) {
+            return {
+                ...result,
+                text: c('loc_nightly: Received email icon').t`End-to-end encrypted message from verified sender`,
+                fill: CHECKMARK,
+                senderVerificationDetails: {
+                    success: false,
+                    description: c('loc_nightly: Signature verification success').t`Sender verified with a trusted key`,
+                },
+            };
+        }
+        if (ktVerificationStatus === KT_VERIFICATION_STATUS.VERIFIED_KEYS) {
+            return {
+                ...result,
+                text: messageEncryptionDetails,
+                fill: PLAIN,
+                senderVerificationDetails: {
+                    success: false,
+                    description: c('loc_nightly: Signature verification success')
+                        .t`Sender verified with Key Transparency`,
+                },
+            };
+        }
+    }
+    return {
+        ...result,
+        text: messageEncryptionDetails,
+        fill: PLAIN,
+    };
+};
+
 export const getReceivedStatusIcon = (
     message: MessageWithOptionalBody | undefined,
-    verification: MessageVerification | undefined
+    verification: MessageVerification | undefined,
+    ktActivation: KeyTransparencyActivation
 ): StatusIcon | undefined => {
     if (!message?.ParsedHeaders || verification?.verificationStatus === undefined) {
         return;
     }
     const origin = message.ParsedHeaders['X-Pm-Origin'];
     const encryption = message.ParsedHeaders['X-Pm-Content-Encryption'];
-    const { verificationStatus, senderVerified, senderPinnedKeys } = verification;
+    const { verificationStatus, pinnedKeysVerified, senderPinnedKeys } = verification;
     const hasPinnedKeys = !!senderPinnedKeys?.length;
 
     if (origin === INTERNAL) {
+        if (ktActivation === KeyTransparencyActivation.SHOW_UI) {
+            return getReceivedStatusIconInternalWithKT(message, verification, encryption === END_TO_END);
+        }
         const result = { colorClassName: 'color-info', isEncrypted: true };
         if (encryption === END_TO_END) {
             const verificationErrorsMessage = verification.verificationErrors
@@ -339,7 +592,7 @@ export const getReceivedStatusIcon = (
                 };
             }
             if (verificationStatus === SIGNED_AND_VALID) {
-                if (!senderVerified) {
+                if (!pinnedKeysVerified) {
                     return {
                         ...result,
                         fill: WARNING,
@@ -400,7 +653,7 @@ export const getReceivedStatusIcon = (
                 };
             }
             if (verificationStatus === SIGNED_AND_VALID) {
-                if (!senderVerified) {
+                if (!pinnedKeysVerified) {
                     return {
                         ...result,
                         fill: WARNING,
@@ -446,7 +699,7 @@ export const getReceivedStatusIcon = (
                 };
             }
             if (verificationStatus === SIGNED_AND_VALID) {
-                if (!senderVerified) {
+                if (!pinnedKeysVerified) {
                     return {
                         ...result,
                         fill: WARNING,

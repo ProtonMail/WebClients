@@ -1,30 +1,23 @@
 import { ReactNode, useEffect, useRef, useState } from 'react';
 
-
-
 import { c } from 'ttag';
 
-
-
 import { Button, CircleLoader } from '@proton/atoms';
-import { FeatureCode, TotpInputs } from '@proton/components/containers';
+import { TotpInputs } from '@proton/components/containers';
 import { startUnAuthFlow } from '@proton/components/containers/api/unAuthenticatedApi';
-import { KT_FF } from '@proton/components/containers/keyTransparency/ktStatus';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import noop from '@proton/utils/noop';
 
-
-
 import { InputFieldTwo, PasswordInputTwo, useFormErrors } from '../../components';
-import { useApi, useConfig, useErrorHandler, useFeature, useLoading, useNotifications } from '../../hooks';
+import { useApi, useConfig, useErrorHandler, useLoading, useNotifications } from '../../hooks';
 import { OnLoginCallback } from '../app/interface';
 import { Challenge, ChallengeError, ChallengeRef, ChallengeResult } from '../challenge';
+import useKTActivation from '../keyTransparency/useKTActivation';
 import AbuseModal from './AbuseModal';
 import { AuthActionResponse, AuthCacheResult, AuthStep } from './interface';
 import { handleLogin, handleTotp, handleUnlock } from './loginActions';
-
 
 const UnlockForm = ({
     onSubmit,
@@ -272,7 +265,7 @@ const MinimalLoginContainer = ({ onLogin, hasChallenge = false, ignoreUnlock = f
     const { APP_NAME } = useConfig();
     const { createNotification } = useNotifications();
     const [abuseModal, setAbuseModal] = useState<{ apiErrorMessage?: string } | undefined>(undefined);
-    const ktFeature = useFeature<KT_FF>(FeatureCode.KeyTransparencyWEB);
+    const ktActivation = useKTActivation();
 
     const normalApi = useApi();
     const silentApi = <T,>(config: any) => normalApi<T>({ ...config, silence: true });
@@ -347,7 +340,7 @@ const MinimalLoginContainer = ({ onLogin, hasChallenge = false, ignoreUnlock = f
                                 hasTrustedDeviceRecovery: false,
                                 persistent: false,
                                 setupVPN: false,
-                                ktFeature: (await ktFeature.get())?.Value,
+                                ktActivation,
                             });
                             return await handleResult(result);
                         } catch (e) {

@@ -1,4 +1,5 @@
 import { PublicKeyReference } from '@proton/crypto';
+import { Epoch, KTPublicKeyStatus, SelfAuditResult } from '@proton/key-transparency/lib';
 
 import { Address } from './Address';
 import { DecryptedKey } from './Key';
@@ -24,8 +25,7 @@ export interface KTLocalStorageAPI {
 }
 
 export interface KeyTransparencyState {
-    selfAuditPromise: Promise<void>;
-    ktLSAPI: KTLocalStorageAPI;
+    selfAuditResult?: SelfAuditResult;
 }
 
 export type KeyTransparencyVerify = (
@@ -42,15 +42,31 @@ export interface PreAuthKTVerifier {
 }
 
 export type VerifyOutboundPublicKeys = (
-    keyList: ArmoredKeyWithFlags[],
     email: string,
-    SignedKeyList: FetchedSignedKeyList | null,
-    IgnoreKT?: IGNORE_KT
+    keysIntendedForEmail: boolean,
+    address: {
+        keyList: ArmoredKeyWithFlags[];
+        signedKeyList: FetchedSignedKeyList | null;
+    },
+    catchAll?: {
+        keyList: ArmoredKeyWithFlags[];
+        signedKeyList: FetchedSignedKeyList | null;
+    }
+) => Promise<{
+    addressKTStatus?: KTPublicKeyStatus;
+    catchAllKTStatus?: KTPublicKeyStatus;
+}>;
+
+export type SaveSKLToLS = (
+    email: string,
+    data: string,
+    revision: number,
+    expectedMinEpochID: number,
+    addressID?: string,
+    isCatchall?: boolean
 ) => Promise<void>;
 
 export type KeyMigrationKTVerifier = (email: string) => Promise<void>;
-
-export type FixMultiplePrimaryKeys = (address: Address) => Promise<void>;
 
 export enum KeyTransparencyActivation {
     DISABLED,
@@ -58,4 +74,4 @@ export enum KeyTransparencyActivation {
     SHOW_UI,
 }
 
-export type GetKTActivation = () => Promise<KeyTransparencyActivation>;
+export type GetLatestEpoch = (forceRefresh?: boolean) => Epoch;
