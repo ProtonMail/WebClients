@@ -9,10 +9,11 @@ interface Props {
     method?: PaymentMethodType;
     onChange: (value: PaymentMethodType) => void;
     lastUsedMethod?: PaymentMethodData;
+    forceDropdown?: boolean;
 }
 
-const PaymentMethodSelector = ({ method, lastUsedMethod, options, onChange }: Props) => {
-    if (options.length <= 2) {
+const PaymentMethodSelector = ({ method, lastUsedMethod, options, onChange, forceDropdown }: Props) => {
+    if (options.length <= 2 && !forceDropdown) {
         return (
             <>
                 {options.map(({ text, value, disabled, icon }) => {
