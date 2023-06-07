@@ -17,7 +17,9 @@ import Alert3DS from './Alert3ds';
 import Bitcoin from './Bitcoin';
 import Cash from './Cash';
 import CreditCard from './CreditCard';
+import CreditCardNewDesign from './CreditCardNewDesign';
 import PayPalView from './PayPalView';
+import { CardFieldStatus } from './useCard';
 
 interface Props {
     children?: ReactNode;
@@ -36,6 +38,7 @@ interface Props {
     paymentMethodStatus?: PaymentMethodStatus;
     creditCardTopRef?: Ref<HTMLDivElement>;
     disabled?: boolean;
+    cardFieldStatus?: CardFieldStatus;
 }
 
 const Payment = ({
@@ -52,6 +55,7 @@ const Payment = ({
     card,
     onCard,
     cardErrors,
+    cardFieldStatus,
     noMaxWidth = false,
     creditCardTopRef,
     disabled,
@@ -128,12 +132,17 @@ const Payment = ({
                     {method === PAYMENT_METHOD_TYPES.CARD && (
                         <>
                             <div ref={creditCardTopRef} />
-                            <CreditCard
-                                card={card}
-                                errors={cardErrors}
-                                onChange={onCard}
-                                newDesign={type === 'signup-pass'}
-                            />
+                            {type === 'signup-pass' ? (
+                                <CreditCardNewDesign card={card} errors={cardErrors} onChange={onCard} />
+                            ) : (
+                                <CreditCard
+                                    card={card}
+                                    errors={cardErrors}
+                                    onChange={onCard}
+                                    fieldStatus={cardFieldStatus}
+                                />
+                            )}
+
                             {type !== 'signup' && <Alert3DS />}
                         </>
                     )}
