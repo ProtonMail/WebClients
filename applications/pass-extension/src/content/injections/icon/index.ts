@@ -229,6 +229,7 @@ export const createIcon = (field: FieldHandle): InjectionElements => {
         classNames: [ICON_ROOT_CLASSNAME, ICON_CLASSNAME],
     });
 
+    icon.tabIndex = -1;
     icon.style.zIndex = field.zIndex.toString();
     icon.setAttribute('type', 'button');
 
