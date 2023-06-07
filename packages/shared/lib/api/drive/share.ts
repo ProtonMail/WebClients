@@ -23,7 +23,7 @@ export const queryShareMeta = (shareID: string) => ({
 export const queryRenameLink = (
     shareID: string,
     linkID: string,
-    data: { Name: string; MIMEType?: string; Hash: string; SignatureAddress: string }
+    data: { Name: string; MIMEType?: string; Hash: string; SignatureAddress: string; OriginalHash: string }
 ) => ({
     method: `put`,
     url: `drive/shares/${shareID}/links/${linkID}/rename`,
