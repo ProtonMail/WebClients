@@ -7,14 +7,12 @@ import { DEFAULT_SEPARATOR, getFullList } from '../../helpers/countries';
 import { CardModel } from '../../payments/core/interface';
 import CardNumberInput from './CardNumberInput';
 import ExpInput from './ExpInput';
-import { CardFieldStatus } from './useCard';
 
 interface Props {
     onChange: (key: keyof CardModel, value: string) => void;
     loading?: boolean;
     card: CardModel;
     errors: Partial<CardModel>;
-    fieldStatus?: CardFieldStatus;
 }
 
 const CreditCard = ({ card, errors, onChange, loading = false }: Props) => {
