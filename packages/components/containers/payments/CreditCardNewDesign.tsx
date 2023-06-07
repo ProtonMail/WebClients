@@ -1,4 +1,4 @@
-import { ChangeEvent, useMemo, useRef } from 'react';
+import { ChangeEvent, useEffect, useMemo, useRef } from 'react';
 
 import { c } from 'ttag';
 
@@ -24,7 +24,43 @@ interface Props {
     fieldStatus?: CardFieldStatus;
 }
 
-const CreditCardNewDesign = ({ card, errors, onChange, loading = false }: Props) => {
+/**
+ * The hook will focus the next field if the current field is filled and the condition is true.
+ * The codition typically should be true when the current field is valid.
+ */
+const useAdvancer = (
+    currentElementRef: React.RefObject<HTMLInputElement>,
+    nextElementRef: React.RefObject<HTMLInputElement>,
+    currentFieldState: string,
+    condition: boolean
+) => {
+    useEffect(() => {
+        const currentElementFocused = document.activeElement === currentElementRef.current;
+        if (condition && currentElementFocused && nextElementRef.current) {
+            nextElementRef.current.focus();
+        }
+    }, [currentFieldState, condition]);
+};
+
+const CreditCardNewDesign = ({ card, errors, onChange, loading = false, fieldStatus }: Props) => {
+    const narrowNumberRef = useRef<HTMLInputElement>(null);
+    const narrowExpRef = useRef<HTMLInputElement>(null);
+    const narrowCvcRef = useRef<HTMLInputElement>(null);
+
+    const wideNumberRef = useRef<HTMLInputElement>(null);
+    const wideExpRef = useRef<HTMLInputElement>(null);
+    const wideCvcRef = useRef<HTMLInputElement>(null);
+
+    const zipRef = useRef<HTMLInputElement>(null);
+
+    useAdvancer(narrowNumberRef, narrowExpRef, card.number, fieldStatus?.number ?? false);
+    useAdvancer(narrowExpRef, narrowCvcRef, card.month, fieldStatus?.month ?? false);
+    useAdvancer(narrowCvcRef, zipRef, card.cvc, fieldStatus?.cvc ?? false);
+
+    useAdvancer(wideNumberRef, wideExpRef, card.number, fieldStatus?.number ?? false);
+    useAdvancer(wideExpRef, wideCvcRef, card.month, fieldStatus?.month ?? false);
+    useAdvancer(wideCvcRef, zipRef, card.cvc, fieldStatus?.cvc ?? false);
+
     const formContainer = useRef<HTMLDivElement>(null);
     const formRect = useElementRect(formContainer, requestAnimationFrameRateLimiter);
 
@@ -103,6 +139,7 @@ const CreditCardNewDesign = ({ card, errors, onChange, loading = false }: Props)
                             <Icon name="credit-card" size={16} className="mr-1" />
                         )
                     }
+                    ref={narrowNumberRef}
                     {...commonNumberProps}
                 />
                 <div className="flex">
@@ -117,12 +154,14 @@ const CreditCardNewDesign = ({ card, errors, onChange, loading = false }: Props)
                                 onChange('year', change.year);
                             }
                         }}
+                        ref={narrowExpRef}
                         {...commonExpProps}
                     />
                     <Input
                         placeholder={codeName}
                         inputClassName="px-3"
                         className="cvv cvv--small"
+                        ref={narrowCvcRef}
                         {...commonCvcProps}
                     />
                 </div>
@@ -146,6 +185,7 @@ const CreditCardNewDesign = ({ card, errors, onChange, loading = false }: Props)
                             onChange('number', val);
                         }
                     }}
+                    ref={wideNumberRef}
                     prefix={
                         <div className="ml-3 mr-1">
                             {card.number && bankIcon ? (
@@ -169,6 +209,7 @@ const CreditCardNewDesign = ({ card, errors, onChange, loading = false }: Props)
                                         onChange('year', change.year);
                                     }
                                 }}
+                                ref={wideExpRef}
                                 {...commonExpProps}
                             />
                             <Input
@@ -176,6 +217,7 @@ const CreditCardNewDesign = ({ card, errors, onChange, loading = false }: Props)
                                 placeholder={codeName}
                                 inputClassName="p-0"
                                 className="cvv"
+                                ref={wideCvcRef}
                                 {...commonCvcProps}
                             />
                         </div>
@@ -217,6 +259,7 @@ const CreditCardNewDesign = ({ card, errors, onChange, loading = false }: Props)
                 className="country-select flex-justify-space-between divide-x"
                 inputClassName="ml-1"
                 prefixClassName="flex-item-fluid"
+                ref={zipRef}
                 prefix={
                     <SelectTwo
                         className="mx-3"
