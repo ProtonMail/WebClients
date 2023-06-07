@@ -4,7 +4,7 @@ export enum TelemetryMeasurementGroups {
     mailSimpleLogin = 'mail.web.simplelogin_popups',
     screenSize = 'any.web.screen_size',
     calendarTimeZoneSelector = 'calendar.web.timezone_selector',
-    accountSignupBasic = 'account.any.signup_basic ',
+    accountSignupBasic = 'account.any.signup_basic',
 }
 
 export enum TelemetrySimpleLoginEvents {
