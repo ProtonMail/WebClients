@@ -37,6 +37,28 @@ export const getHasPreVcardsContacts = (
     return !!model.preVcardsContacts;
 };
 
+export const naiveExtractPropertyValue = (vcard: string, property: string) => {
+    const contentLineSeparator = vcard.includes('\r\n') ? '\r\n' : '\n';
+    const contentLineSeparatorLength = contentLineSeparator.length;
+    // Vcard properties typically have parameters and value, e.g.: FN;PID=1.1:J. Doe
+    const indexOfPropertyName = vcard.toLowerCase().indexOf(`${contentLineSeparator}${property.toLowerCase()}`);
+    const indexOfPropertyValue = vcard.indexOf(':', indexOfPropertyName);
+    if (indexOfPropertyName === -1 || indexOfPropertyValue === -1) {
+        return;
+    }
+    // take into account possible folding
+    let indexOfNextField = vcard.indexOf(contentLineSeparator, indexOfPropertyValue);
+    let value = vcard.substring(indexOfPropertyValue + 1, indexOfNextField);
+
+    while (vcard[indexOfNextField + contentLineSeparatorLength] === ' ') {
+        const oldIndex = indexOfNextField;
+        indexOfNextField = vcard.indexOf(contentLineSeparator, oldIndex + contentLineSeparatorLength);
+        value += vcard.substring(oldIndex + contentLineSeparatorLength + 1, indexOfNextField);
+    }
+
+    return value;
+};
+
 /**
  * Try to get a string that identifies a contact. This will be used in case of errors
  */
@@ -54,26 +76,9 @@ export const getContactId = (vcardOrVCardContact: string | VCardContact) => {
         }
         return unknownString;
     }
-    // try to get the name of the contact from FN, which is a required field in a vcard
-    const contentLineSeparator = vcardOrVCardContact.includes('\r\n') ? '\r\n' : '\n';
-    const contentLineSeparatorLength = contentLineSeparator.length;
-    const indexOfFNProperty = vcardOrVCardContact.toLowerCase().indexOf(`${contentLineSeparator}fn`);
-    const indexOfFNValue = vcardOrVCardContact.indexOf(':', indexOfFNProperty);
-    if (indexOfFNValue === -1 || indexOfFNProperty === -1) {
-        return unknownString;
-    }
-    let indexOfNextField = vcardOrVCardContact.indexOf(contentLineSeparator, indexOfFNValue);
-    let FNvalue = vcardOrVCardContact.substring(indexOfFNValue + 1, indexOfNextField);
-    while (
-        vcardOrVCardContact[indexOfNextField + contentLineSeparatorLength] === ' ' &&
-        FNvalue.length < MAX_CONTACT_ID_CHARS_DISPLAY
-    ) {
-        const oldIndex = indexOfNextField;
-        indexOfNextField = vcardOrVCardContact.indexOf(contentLineSeparator, oldIndex + contentLineSeparatorLength);
-        FNvalue += vcardOrVCardContact.substring(oldIndex + contentLineSeparatorLength + 1, indexOfNextField);
-    }
+    const FNvalue = naiveExtractPropertyValue(vcardOrVCardContact, 'FN');
 
-    return truncate(FNvalue, MAX_CONTACT_ID_CHARS_DISPLAY);
+    return FNvalue ? truncate(FNvalue, MAX_CONTACT_ID_CHARS_DISPLAY) : unknownString;
 };
 
 export const getSupportedContactProperties = (contact: VCardContact) => {
@@ -102,7 +107,7 @@ export const getSupportedContact = (vcard: string) => {
     try {
         const contactId = getContactId(vcard);
 
-        if (vcard.includes('VERSION:2.1')) {
+        if (naiveExtractPropertyValue(vcard, 'VERSION') === '2.1') {
             throw new ImportContactError(IMPORT_CONTACT_ERROR_TYPE.UNSUPPORTED_VCARD_VERSION, contactId);
         }
 
