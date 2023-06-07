@@ -10,7 +10,6 @@ import {
 } from '../constants';
 import { Address } from './Address';
 import { MailSettings } from './MailSettings';
-import { FetchedSignedKeyList } from './SignedKeyList';
 
 export interface PublicKeyWithPref {
     publicKey: PublicKeyReference;
@@ -36,9 +35,9 @@ export interface ApiKeysConfig {
     Code?: number;
     RecipientType?: RECIPIENT_TYPES;
     MIMEType?: MIME_TYPES;
-    SignedKeyList: FetchedSignedKeyList | null;
     Warnings?: string[];
     Errors?: string[];
+    ktVerificationStatus?: KT_VERIFICATION_STATUS;
 }
 
 export interface PinnedKeysConfig {
@@ -86,6 +85,7 @@ export interface ContactPublicKeyModel {
     contactSignatureTimestamp?: Date;
     emailAddressWarnings?: string[];
     emailAddressErrors?: string[];
+    ktVerificationStatus?: KT_VERIFICATION_STATUS;
 }
 
 export interface PublicKeyModel {
@@ -113,4 +113,11 @@ export interface PublicKeyModel {
     contactSignatureTimestamp?: Date;
     emailAddressWarnings?: string[];
     emailAddressErrors?: string[];
+    ktVerificationStatus?: KT_VERIFICATION_STATUS;
+}
+
+export enum KT_VERIFICATION_STATUS {
+    VERIFIED_KEYS,
+    UNVERIFIED_KEYS,
+    VERIFICATION_FAILED,
 }

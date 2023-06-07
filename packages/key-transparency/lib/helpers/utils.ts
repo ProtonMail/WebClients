@@ -57,8 +57,15 @@ export const isTimestampOlderThanThreshold = (time: number) => time < +sub(serve
 /**
  * Helper to send KT-related sentry reports
  */
-export const ktSentryReport = (errorMessage: string, extra: { [key: string]: any }) =>
+export const ktSentryReport = (errorMessage: string, extra?: { [key: string]: any }) =>
     captureMessage(`[KeyTransparency] ${errorMessage}`, { extra });
+
+export class KeyTransparencyError extends Error {}
+
+export const throwKTError = (errorMessage: string, extra?: { [key: string]: any }): never => {
+    ktSentryReport(errorMessage, extra);
+    throw new KeyTransparencyError(errorMessage);
+};
 
 /**
  * Derive which base domain is being used, whether production or test
@@ -89,13 +96,11 @@ export const getBaseDomain = (sendReport: boolean = true) => {
     // Since this function is also used to test whether to use KT at all, we don't want to spam sentry with
     // attempts to figure this out, in which case sendReport should be false
     if (sendReport) {
-        ktSentryReport('Domain not recognised', {
-            context: 'getBaseDomain',
+        return throwKTError('Domain not recognised', {
             hostname,
             currentDomain,
             domainParts: JSON.stringify(domainParts),
         });
-        throw new Error('Domain not recognised');
     }
 
     return KT_DOMAINS.UNKNOWN;

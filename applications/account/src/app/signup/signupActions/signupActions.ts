@@ -2,7 +2,6 @@ import { format } from 'date-fns';
 
 import { createPreAuthKTVerifier } from '@proton/components/containers';
 import { VerificationModel } from '@proton/components/containers/api/humanVerification/interface';
-import { createGetKTActivation } from '@proton/components/containers/keyTransparency/useGetKTActivation';
 import { AppIntent } from '@proton/components/containers/login/interface';
 import type { generatePDFKit } from '@proton/recovery-kit';
 import { getAllAddresses, updateAddress } from '@proton/shared/lib/api/addresses';
@@ -342,8 +341,7 @@ export const handleSetupUser = async ({
         subscriptionData,
         persistent,
         clientType,
-        ktFeature,
-        appName,
+        ktActivation,
     } = cache;
 
     const userEmail = (() => {
@@ -374,9 +372,7 @@ export const handleSetupUser = async ({
             // array, and keys won't be setup.
             const addresses = await getAllAddresses(api);
 
-            const getKTActivation = createGetKTActivation(Promise.resolve(ktFeature), appName);
-
-            const { preAuthKTVerify, preAuthKTCommit } = createPreAuthKTVerifier(getKTActivation, api);
+            const { preAuthKTVerify, preAuthKTCommit } = createPreAuthKTVerifier(ktActivation, api);
 
             const keyPassword = addresses.length
                 ? await handleSetupKeys({

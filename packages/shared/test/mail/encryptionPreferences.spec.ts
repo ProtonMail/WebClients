@@ -9,7 +9,7 @@ import {
     PGP_SCHEMES_MORE,
     PGP_SIGN,
 } from '../../lib/constants';
-import { MailSettings, SelfSend } from '../../lib/interfaces';
+import { KT_VERIFICATION_STATUS, MailSettings, SelfSend } from '../../lib/interfaces';
 import extractEncryptionPreferences, { ENCRYPTION_PREFERENCES_ERROR_TYPES } from '../../lib/mail/encryptionPreferences';
 
 const fakeKey1: PublicKeyReference = {
@@ -65,6 +65,7 @@ describe('extractEncryptionPreferences for an internal user', () => {
         isContact: true,
         isContactSignatureVerified: true,
         contactSignatureTimestamp: new Date(0),
+        ktVerificationStatus: KT_VERIFICATION_STATUS.VERIFIED_KEYS,
     };
     const mailSettings = {
         Sign: PGP_SIGN,
@@ -105,6 +106,7 @@ describe('extractEncryptionPreferences for an internal user', () => {
             isContactSignatureVerified: undefined,
             contactSignatureTimestamp: undefined,
             emailAddressWarnings: undefined,
+            ktVerificationStatus: KT_VERIFICATION_STATUS.VERIFIED_KEYS,
         });
     });
 
@@ -138,6 +140,7 @@ describe('extractEncryptionPreferences for an internal user', () => {
             isContactSignatureVerified: true,
             contactSignatureTimestamp: new Date(0),
             emailAddressWarnings: undefined,
+            ktVerificationStatus: KT_VERIFICATION_STATUS.VERIFIED_KEYS,
         });
     });
 
@@ -172,6 +175,7 @@ describe('extractEncryptionPreferences for an internal user', () => {
             isContactSignatureVerified: true,
             contactSignatureTimestamp: new Date(0),
             emailAddressWarnings: undefined,
+            ktVerificationStatus: KT_VERIFICATION_STATUS.VERIFIED_KEYS,
         });
     });
 
@@ -316,6 +320,7 @@ const testExtractEncryptionPreferencesWithWKD = (encrypt: boolean) =>
             isContact: true,
             isContactSignatureVerified: true,
             contactSignatureTimestamp: new Date(0),
+            ktVerificationStatus: KT_VERIFICATION_STATUS.UNVERIFIED_KEYS,
         };
         const mailSettings = {
             Sign: 0,
@@ -356,6 +361,7 @@ const testExtractEncryptionPreferencesWithWKD = (encrypt: boolean) =>
                 isContactSignatureVerified: undefined,
                 emailAddressWarnings: undefined,
                 contactSignatureTimestamp: undefined,
+                ktVerificationStatus: KT_VERIFICATION_STATUS.UNVERIFIED_KEYS,
             });
         });
 
@@ -389,6 +395,7 @@ const testExtractEncryptionPreferencesWithWKD = (encrypt: boolean) =>
                 isContactSignatureVerified: true,
                 contactSignatureTimestamp: new Date(0),
                 emailAddressWarnings: undefined,
+                ktVerificationStatus: KT_VERIFICATION_STATUS.UNVERIFIED_KEYS,
             });
         });
 
@@ -423,6 +430,7 @@ const testExtractEncryptionPreferencesWithWKD = (encrypt: boolean) =>
                 isContactSignatureVerified: true,
                 contactSignatureTimestamp: new Date(0),
                 emailAddressWarnings: undefined,
+                ktVerificationStatus: KT_VERIFICATION_STATUS.UNVERIFIED_KEYS,
             });
         });
 
@@ -546,6 +554,7 @@ describe('extractEncryptionPreferences for an external user without WKD keys', (
         isContact: true,
         isContactSignatureVerified: true,
         contactSignatureTimestamp: new Date(0),
+        ktVerificationStatus: KT_VERIFICATION_STATUS.UNVERIFIED_KEYS,
     };
     const mailSettings = {
         Sign: PGP_SIGN,
@@ -572,6 +581,7 @@ describe('extractEncryptionPreferences for an external user without WKD keys', (
             isContactSignatureVerified: true,
             contactSignatureTimestamp: new Date(0),
             emailAddressWarnings: undefined,
+            ktVerificationStatus: KT_VERIFICATION_STATUS.UNVERIFIED_KEYS,
         });
     });
 
@@ -601,6 +611,7 @@ describe('extractEncryptionPreferences for an external user without WKD keys', (
             isContactSignatureVerified: undefined,
             contactSignatureTimestamp: undefined,
             emailAddressWarnings: undefined,
+            ktVerificationStatus: KT_VERIFICATION_STATUS.UNVERIFIED_KEYS,
         });
     });
 
@@ -622,6 +633,7 @@ describe('extractEncryptionPreferences for an external user without WKD keys', (
             isContactSignatureVerified: true,
             contactSignatureTimestamp: new Date(0),
             emailAddressWarnings: undefined,
+            ktVerificationStatus: KT_VERIFICATION_STATUS.UNVERIFIED_KEYS,
         });
     });
 
@@ -657,6 +669,7 @@ describe('extractEncryptionPreferences for an external user without WKD keys', (
             isContactSignatureVerified: true,
             contactSignatureTimestamp: new Date(0),
             emailAddressWarnings: undefined,
+            ktVerificationStatus: KT_VERIFICATION_STATUS.UNVERIFIED_KEYS,
         });
     });
 
@@ -728,6 +741,7 @@ describe('extractEncryptionPreferences for an own address', () => {
         pgpAddressDisabled: false,
         isContact: false,
         emailAddressWarnings: undefined,
+        ktVerificationStatus: KT_VERIFICATION_STATUS.VERIFIED_KEYS,
     };
     const mailSettings = {
         Sign: PGP_SIGN,
@@ -764,6 +778,7 @@ describe('extractEncryptionPreferences for an own address', () => {
             isContactSignatureVerified: undefined,
             contactSignatureTimestamp: undefined,
             emailAddressWarnings: undefined,
+            ktVerificationStatus: KT_VERIFICATION_STATUS.VERIFIED_KEYS,
         });
     });
 

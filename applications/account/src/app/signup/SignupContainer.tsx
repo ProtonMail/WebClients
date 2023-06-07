@@ -4,16 +4,15 @@ import { useHistory, useLocation } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { Step, Stepper } from '@proton/atoms/Stepper';
-import { ExperimentCode, FeatureCode, HumanVerificationSteps, OnLoginCallback } from '@proton/components/containers';
+import { ExperimentCode, HumanVerificationSteps, OnLoginCallback } from '@proton/components/containers';
 import { startUnAuthFlow } from '@proton/components/containers/api/unAuthenticatedApi';
-import { KT_FF } from '@proton/components/containers/keyTransparency/ktStatus';
+import useKTActivation from '@proton/components/containers/keyTransparency/useKTActivation';
 import {
     useActiveBreakpoint,
     useApi,
     useConfig,
     useErrorHandler,
     useExperiment,
-    useFeature,
     useLoading,
     useLocalState,
     useMyCountry,
@@ -130,7 +129,7 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
     const normalApi = useApi();
     const history = useHistory();
 
-    const ktFeature = useFeature<KT_FF>(FeatureCode.KeyTransparencyWEB);
+    const ktActivation = useKTActivation();
     // Override the app to always be mail in trial or refer-a-friend signup
     if (isMailTrial || isMailRefer) {
         toApp = APPS.PROTONMAIL;
@@ -619,7 +618,7 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
                             persistent,
                             trusted: false,
                             clientType,
-                            ktFeature: (await ktFeature.get())?.Value,
+                            ktActivation,
                         };
 
                         const accountType = signupType === SignupType.Email ? 'external_account' : 'proton_account';

@@ -1,8 +1,8 @@
 import type { PrivateKeyReference, PublicKeyReference, WorkerDecryptionResult } from '@proton/crypto';
-import { Api, RequireSome, SimpleMap } from '@proton/shared/lib/interfaces';
+import { Api, KT_VERIFICATION_STATUS, RequireSome, SimpleMap } from '@proton/shared/lib/interfaces';
+import { VerificationPreferences } from '@proton/shared/lib/interfaces/VerificationPreferences';
 import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
-import { EncryptionPreferences } from '@proton/shared/lib/mail/encryptionPreferences';
 
 import { MESSAGE_ACTIONS } from '../../constants';
 import { DecryptMessageResult } from '../../helpers/message/messageDecrypt';
@@ -62,7 +62,7 @@ export interface MessageVerification {
     /**
      * If the sender is in the list of contacts, whether its contact signature has been verified
      */
-    senderVerified: boolean | undefined;
+    pinnedKeysVerified: boolean | undefined;
 
     /**
      * If the message is signed, the public key that verifies the signature
@@ -73,6 +73,21 @@ export interface MessageVerification {
      * Attached public key, if the message contains any
      */
     attachedPublicKeys: PublicKeyReference[] | undefined;
+
+    /**
+     * Whether the signingPublicKey is part of the pinned key keys list
+     */
+    signingPublicKeyIsPinned: boolean | undefined;
+
+    /**
+     * Whether the signingPublicKey is marked as compromised by the sender
+     */
+    signingPublicKeyIsCompromised: boolean | undefined;
+
+    /**
+     * Key transparency verification status
+     */
+    ktVerificationStatus: KT_VERIFICATION_STATUS | undefined;
 }
 
 export interface AbstractMessageImage {
@@ -320,7 +335,7 @@ export interface DocumentInitializeParams {
 
 export interface VerificationParams {
     ID: string;
-    encryptionPreferences?: EncryptionPreferences;
+    verificationPreferences?: VerificationPreferences;
     verification?: {
         verified: VERIFICATION_STATUS;
         signature?: Uint8Array;

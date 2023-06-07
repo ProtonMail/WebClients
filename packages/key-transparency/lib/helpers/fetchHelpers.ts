@@ -1,124 +1,71 @@
-import { CryptoProxy, PrivateKeyReference } from '@proton/crypto';
+import { CryptoProxy, PrivateKeyReference, PublicKeyReference, VERIFICATION_STATUS } from '@proton/crypto';
 import { getSignedKeyListRoute, getSignedKeyListsRoute } from '@proton/shared/lib/api/keys';
 import { HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
-import { Api, FetchedSignedKeyList } from '@proton/shared/lib/interfaces';
+import { Address, Api, FetchedSignedKeyList } from '@proton/shared/lib/interfaces';
 
-import { KT_VE_SIGNING_CONTEXT } from '../constants';
+import { KT_VE_SIGNING_CONTEXT, KT_VE_VERIFICATION_CONTEXT } from '../constants';
 import { Epoch, Proof, VerifiedEpoch } from '../interfaces';
 import { verifyEpoch } from '../verification';
-import {
-    getCertificateRoute,
-    getEpochsRoute,
-    getLatestVerifiedEpochRoute,
-    getProofRoute,
-    uploadVerifiedEpochRoute,
-} from './api';
-import { isTimestampTooOld, ktSentryReport } from './utils';
+import { getEpochsRoute, getLatestVerifiedEpochRoute, getProofRoute, uploadVerifiedEpochRoute } from './api';
+import { isTimestampTooOld, ktSentryReport, throwKTError } from './utils';
 
 /**
  * Fetch the latest issued epoch. Note that there is no guarantee that the
  * server will return the actual latest epoch. We can only check that what
  * is returned is no older than MAX_EPOCH_INTERVAL
  */
-export const fetchRecentEpoch = async (api: Api) => {
+export const fetchAndVerifyLatestEpoch = async (api: Api): Promise<Epoch> => {
     const { Epochs } = await api<{ Epochs: Epoch[] }>(getEpochsRoute({}));
     const [lastEpoch] = Epochs;
-    try {
-        const certificateTimestamp = await verifyEpoch(lastEpoch);
-        if (isTimestampTooOld(certificateTimestamp)) {
-            ktSentryReport('Certificate timestamp of alleged latest epoch is older than MAX_EPOCH_INTERVAL', {
-                context: 'fetchRecentEpoch',
-                lastEpoch: JSON.stringify(lastEpoch),
-                certificateTimestamp,
-            });
-            return;
-        }
-    } catch (error: any) {
-        ktSentryReport('Latest epoch failed to verify', {
-            context: 'fetchRecentEpoch',
-            error: error.message,
+    const certificateTimestamp = await verifyEpoch(lastEpoch);
+    if (isTimestampTooOld(certificateTimestamp)) {
+        return throwKTError('Certificate timestamp of alleged latest epoch is older than MAX_EPOCH_INTERVAL', {
+            lastEpoch: JSON.stringify(lastEpoch),
+            certificateTimestamp,
         });
-        return;
     }
     return lastEpoch;
 };
 
 /**
- * Fetch a specific epoch, determined by an epoch ID
- */
-export const fetchEpoch = async (inputEpochID: number, api: Api): Promise<Epoch> => {
-    const {
-        PrevChainHash,
-        Certificate,
-        CertificateIssuer,
-        EpochID,
-        TreeHash,
-        ChainHash,
-        ClaimedTime,
-        Domain,
-        CertificateTime,
-    } = await api<Epoch>(getCertificateRoute({ EpochID: inputEpochID }));
-    return {
-        PrevChainHash,
-        Certificate,
-        CertificateIssuer,
-        EpochID,
-        TreeHash,
-        ChainHash,
-        ClaimedTime,
-        Domain,
-        CertificateTime,
-    };
-};
-
-/**
  * Fetch the KT proof of a given email address in a given epoch
  */
-export const fetchProof = async (EpochID: number, Email: string, api: Api) => {
-    const { Proof, CatchAllProof } = await api<{ Proof: Proof; CatchAllProof: Proof | undefined }>(
-        getProofRoute({ EpochID, Email })
-    );
-    return {
-        Proof,
-        CatchAllProof,
-    };
+export const fetchProof = async (EpochID: number, Email: string, Revision: number, api: Api) => {
+    const { Proof } = await api<{ Proof: Proof }>(getProofRoute({ EpochID, Email, Revision }));
+    return Proof;
 };
 
 /**
- * Fetch all Signed Key Lists, optionally including the previous expired one, for given email and epoch
+ * Fetch all Signed Key Lists that have a revision > AfterRevision, for given email
  */
 export const fetchSignedKeyLists = async (
     api: Api,
-    AfterEpochID: number,
+    AfterRevision: number,
     Email: string
 ): Promise<FetchedSignedKeyList[]> => {
     const { SignedKeyLists } = await api<{ SignedKeyLists: FetchedSignedKeyList[] }>(
-        getSignedKeyListsRoute({ AfterEpochID, Email })
+        getSignedKeyListsRoute({ AfterRevision, Email })
     );
     return SignedKeyLists;
 };
 
 /**
- * Fetch the very last SKL for the given email address
+ * Fetch the Signed key list, for given email and revision
  */
-export const fetchLastSKL = async (api: Api, Email: string) => {
-    const { SignedKeyLists } = await api<{ SignedKeyLists: FetchedSignedKeyList[] }>(getSignedKeyListsRoute({ Email }));
-    return SignedKeyLists.pop();
-};
-
-/**
- * Fetch the SKL that was committed to in a given epoch for the given email address
- */
-export const fetchSKLFromEpoch = async (api: Api, EpochID: number, Email: string) => {
+export const fetchSignedKeyList = async (
+    api: Api,
+    Revision: number,
+    Email: string
+): Promise<FetchedSignedKeyList | null> => {
     try {
         const { SignedKeyList } = await api<{ SignedKeyList: FetchedSignedKeyList }>(
-            getSignedKeyListRoute({ Email, EpochID })
+            getSignedKeyListRoute({ Revision, Email })
         );
         return SignedKeyList;
     } catch (error: any) {
-        // If the returned error is 422, it means that EpochID is expired
+        // If the returned error is 422, it means that the revision doesn't exist
         if (error?.status === HTTP_STATUS_CODE.UNPROCESSABLE_ENTITY) {
-            return;
+            return null;
         }
         throw error;
     }
@@ -127,22 +74,35 @@ export const fetchSKLFromEpoch = async (api: Api, EpochID: number, Email: string
 /**
  * Fetch the latest verified epoch
  */
-export const fetchVerifiedEpoch = async (api: Api, addressID: string) => {
+export const fetchVerifiedEpoch = async (
+    address: Address,
+    userVerificationKeys: PublicKeyReference[],
+    api: Api
+): Promise<VerifiedEpoch | null> => {
     try {
         const { Data, Signature } = await api<{ Data: string; Signature: string }>(
-            getLatestVerifiedEpochRoute({ AddressID: addressID })
+            getLatestVerifiedEpochRoute({ AddressID: address.ID })
         );
-        const verifiedEpoch: VerifiedEpoch = JSON.parse(Data);
-        return {
-            ...verifiedEpoch,
-            Data,
-            Signature,
-        };
+        const { verified, errors } = await CryptoProxy.verifyMessage({
+            armoredSignature: Signature,
+            verificationKeys: userVerificationKeys,
+            textData: Data,
+            context: KT_VE_VERIFICATION_CONTEXT,
+        });
+        if (verified !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
+            ktSentryReport('Verified epoch signature verification failed', {
+                errors: JSON.stringify(errors),
+                email: address.Email,
+            });
+            return null;
+        }
+        const verifiedEpochData: VerifiedEpoch = JSON.parse(Data);
+        return verifiedEpochData;
     } catch (error: any) {
         // If the returned error is 422, it means that the verified
         // epoch was never uploaded, e.g. because the address has just been created
         if (error?.status === HTTP_STATUS_CODE.UNPROCESSABLE_ENTITY) {
-            return;
+            return null;
         }
         throw error;
     }

@@ -5,18 +5,23 @@ import {
     Api,
     ArmoredKeyWithFlags,
     FetchedSignedKeyList,
-    IGNORE_KT,
+    GetLatestEpoch,
+    SaveSKLToLS,
     SignedKeyListItem,
 } from '@proton/shared/lib/interfaces';
 import { getParsedSignedKeyList } from '@proton/shared/lib/keys';
 
 import { KT_SKL_VERIFICATION_CONTEXT } from '../constants';
 import { NO_KT_DOMAINS } from '../constants/domains';
-import { fetchEpoch } from '../helpers/fetchHelpers';
-import { getEmailDomain, isTimestampTooOld, ktSentryReport } from '../helpers/utils';
-import { Epoch, KT_STATUS, KeyWithFlags } from '../interfaces';
-import { verifySKLInsideEpoch } from './verifyEpochs';
-import { verifySKLAbsenceOrObsolescence } from './verifyProofs';
+import { fetchProof } from '../helpers/fetchHelpers';
+import { KeyTransparencyError, getEmailDomain, throwKTError } from '../helpers/utils';
+import { KeyWithFlags } from '../interfaces';
+import {
+    verifyProofOfAbscenceForAllRevision,
+    verifyProofOfAbscenceForRevision,
+    verifyProofOfExistence,
+    verifyProofOfObsolescence,
+} from './verifyProofs';
 
 /**
  * Check that two SKLs are identical
@@ -52,43 +57,47 @@ export const parseKeyList = async (keyList: KeyWithFlags[]): Promise<SignedKeyLi
 /**
  * Check whether the metadata of a key matches what is stored in the Signed Key List
  */
-const compareKeyInfo = (keyInfo: SignedKeyListItem, sklKeyInfo: SignedKeyListItem) => {
+const compareKeyInfo = (email: string, keyInfo: SignedKeyListItem, sklKeyInfo: SignedKeyListItem) => {
     // Check fingerprints
     if (keyInfo.Fingerprint !== sklKeyInfo.Fingerprint) {
-        throw new Error('Fingerprints');
+        return throwKTError('Fingerprints differ', { email });
     }
 
     // Check SHA256Fingerprints
     if (keyInfo.SHA256Fingerprints.length !== sklKeyInfo.SHA256Fingerprints.length) {
-        throw new Error('SHA256Fingerprints length');
+        return throwKTError('SHA256Fingerprints length differ', { email });
     }
     keyInfo.SHA256Fingerprints.forEach((sha256Fingerprint, i) => {
         if (sha256Fingerprint !== sklKeyInfo.SHA256Fingerprints[i]) {
-            throw new Error('SHA256Fingerprints');
+            return throwKTError('SHA256Fingerprints differ', { email });
         }
     });
 
     // Check Flags
     if (keyInfo.Flags !== sklKeyInfo.Flags) {
-        throw new Error('Flags');
+        return throwKTError('Flags differ', { email });
     }
 
     // Check primariness
     if (keyInfo.Primary !== sklKeyInfo.Primary) {
-        throw new Error('Primariness');
+        return throwKTError('Primariness differs', { email });
     }
 };
 
 /**
  * Check that a list of keys is correctly represented by a Signed Key List
  */
-export const verifyKeyList = async (keyListInfo: SignedKeyListItem[], signedKeyListInfo: SignedKeyListItem[]) => {
+export const verifyKeyList = async (
+    email: string,
+    keyListInfo: SignedKeyListItem[],
+    signedKeyListInfo: SignedKeyListItem[]
+) => {
     // Check arrays validity
     if (keyListInfo.length === 0) {
-        throw new Error('No keys detected');
+        return throwKTError('No keys detected', { email });
     }
     if (keyListInfo.length !== signedKeyListInfo.length) {
-        throw new Error('Key list and signed key list have different lengths');
+        return throwKTError('Key list and signed key list have different lengths', { email });
     }
 
     // Sorting both lists just to make sure key infos appear in the same order
@@ -100,133 +109,217 @@ export const verifyKeyList = async (keyListInfo: SignedKeyListItem[], signedKeyL
     });
 
     // Check keys
-    keyListInfo.forEach((key, i) => compareKeyInfo(key, signedKeyListInfo[i]));
+    keyListInfo.forEach((key, i) => compareKeyInfo(email, key, signedKeyListInfo[i]));
 };
 
 /**
  * Check that the given keys mirror what's inside the given SKL Data
  */
-export const checkKeysInSKL = async (importedKeysWithFlags: KeyWithFlags[], sklData: string) => {
+export const checkKeysInSKL = async (email: string, importedKeysWithFlags: KeyWithFlags[], sklData: string) => {
     const parsedSKL = getParsedSignedKeyList(sklData);
     if (!parsedSKL) {
-        throw new Error('SignedKeyList data parsing failed');
+        return throwKTError('SignedKeyList data parsing failed', { sklData });
     }
 
     const keyListInfo = await parseKeyList(importedKeysWithFlags);
-    return verifyKeyList(keyListInfo, parsedSKL);
+    return verifyKeyList(email, keyListInfo, parsedSKL);
 };
 
 export const verifySKLSignature = async (
     verificationKeys: PublicKeyReference[],
     signedKeyListData: string,
-    signedKeyListSignature: string,
-    sentryReportContext: string,
-    email: string
+    signedKeyListSignature: string
 ): Promise<Date | null> => {
-    const { verified, signatureTimestamp, errors } = await CryptoProxy.verifyMessage({
+    const { verified, signatureTimestamp } = await CryptoProxy.verifyMessage({
         armoredSignature: signedKeyListSignature,
         verificationKeys,
         textData: signedKeyListData,
         context: KT_SKL_VERIFICATION_CONTEXT,
     });
     if (verified !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
-        ktSentryReport('SKL signature verification failed', {
-            context: sentryReportContext,
-            errors: JSON.stringify(errors),
-            email,
-        });
         return null;
     }
     return signatureTimestamp;
 };
 
+export enum KTPublicKeyStatus {
+    VERIFICATION_SKIPPED,
+    VERIFIED_ABSENT,
+    VERIFIED_PRESENT,
+    VERIFICATION_FAILED,
+}
+
 /**
  * Verify that public keys associated to an email address are correctly stored in KT
  */
-export const verifyPublicKeys = async (
+const verifyPublicKeys = async (
     armoredKeysWithFlags: ArmoredKeyWithFlags[],
     email: string,
     signedKeyList: FetchedSignedKeyList | null,
     api: Api,
-    IgnoreKT?: IGNORE_KT
-): Promise<KT_STATUS> => {
-    // Temporary kill switch for cases that cannot be truly verified
-    // using the current v4 GET /keys route
-    if (IgnoreKT !== IGNORE_KT.NORMAL) {
-        return KT_STATUS.KT_PASSED;
-    }
-
-    if (!signedKeyList) {
-        try {
-            if (!NO_KT_DOMAINS.includes(getEmailDomain(email))) {
-                await verifySKLAbsenceOrObsolescence(api, email);
+    saveSKLToLS: SaveSKLToLS,
+    getLatestEpoch: GetLatestEpoch,
+    keysIntendedForEmail: boolean,
+    isCatchall?: boolean
+): Promise<KTPublicKeyStatus> => {
+    try {
+        if (!signedKeyList || !signedKeyList.Signature) {
+            // Absent or obsolete address
+            if (keysIntendedForEmail && NO_KT_DOMAINS.includes(getEmailDomain(email))) {
+                return KTPublicKeyStatus.VERIFICATION_SKIPPED;
             }
-            return KT_STATUS.KT_PASSED;
-        } catch (error: any) {
-            return KT_STATUS.KT_FAILED;
-        }
-    }
-
-    const { Data, Signature, MaxEpochID } = signedKeyList;
-    // The following checks can only be executed if the SKL is non-obsolescent
-    if (Data && Signature) {
-        const importedKeysWithFlags = await importKeys(armoredKeysWithFlags);
-
-        const verificationKeys = importedKeysWithFlags
-            .filter(({ Flags }) => hasBit(Flags, KEY_FLAG.FLAG_NOT_COMPROMISED))
-            .map(({ PublicKey }) => PublicKey);
-
-        // Verify signature
-        const verified = await verifySKLSignature(verificationKeys, Data, Signature, 'verifyPublicKeys', email);
-
-        if (!verified) {
-            return KT_STATUS.KT_FAILED;
         }
 
-        // Verify key list and signed key list
-        try {
-            await checkKeysInSKL(importedKeysWithFlags, Data);
-        } catch (error: any) {
-            ktSentryReport('Keys and SKL do not match', {
-                context: 'verifyPublicKeys',
-                error,
-            });
-            return KT_STATUS.KT_FAILED;
+        if (signedKeyList?.Revision === 0) {
+            return throwKTError('Signed key list with revision 0', { email });
         }
-    }
 
-    // If signedKeyList is (allegedly) too young, users is warned and verification cannot continue.
-    // If MinEpochID is null, so is MaxEpochID. The latter is checked only to rule out its nullness
-    // for typing in the rest of the function
-    if (MaxEpochID === null) {
-        return KT_STATUS.KT_MINEPOCHID_NULL;
-    }
+        // The following checks can only be executed if the SKL is non-obsolescent
+        const verifySKL = async () => {
+            if (signedKeyList?.Data) {
+                const importedKeysWithFlags = await importKeys(armoredKeysWithFlags);
 
-    // Verify latest epoch
-    let maxEpoch: Epoch;
-    try {
-        maxEpoch = await fetchEpoch(MaxEpochID, api);
+                const verificationKeys = importedKeysWithFlags
+                    .filter(({ Flags }) => hasBit(Flags, KEY_FLAG.FLAG_NOT_COMPROMISED))
+                    .map(({ PublicKey }) => PublicKey);
+
+                if (!signedKeyList?.Signature) {
+                    return throwKTError('Signed key list has no signature', { email, signedKeyList });
+                }
+
+                // Verify signature
+                const verified = await verifySKLSignature(
+                    verificationKeys,
+                    signedKeyList.Data!,
+                    signedKeyList.Signature
+                );
+
+                if (!verified) {
+                    return throwKTError('Signed key list signature could not be verified', { email });
+                }
+
+                // Verify key list and signed key list
+                await checkKeysInSKL(email, importedKeysWithFlags, signedKeyList.Data!);
+            }
+        };
+
+        const sklVerificationPromise = verifySKL();
+
+        const identifier = isCatchall ? getEmailDomain(email) : email;
+
+        if (signedKeyList && signedKeyList.MinEpochID == null) {
+            if (!signedKeyList.ExpectedMinEpochID) {
+                return throwKTError("SKL doesn't have a MinEpochID or ExpectedMinEpochID set", {
+                    email,
+                    signedKeyList,
+                });
+            }
+            const data = signedKeyList.Data ?? signedKeyList.ObsolescenceToken;
+            if (!data) {
+                return throwKTError("SKL doesn't have data or obsolescence token", { email, signedKeyList });
+            }
+            await sklVerificationPromise;
+            await saveSKLToLS(
+                email,
+                data,
+                signedKeyList.Revision,
+                signedKeyList.ExpectedMinEpochID,
+                undefined,
+                isCatchall
+            );
+            if (signedKeyList.Data && signedKeyList.Signature) {
+                return KTPublicKeyStatus.VERIFIED_PRESENT;
+            } else {
+                return KTPublicKeyStatus.VERIFIED_ABSENT;
+            }
+        }
+
+        const epoch = await getLatestEpoch();
+
+        if (!signedKeyList) {
+            const proof = await fetchProof(epoch.EpochID, identifier, 1, api);
+            await verifyProofOfAbscenceForAllRevision(proof, identifier, epoch.TreeHash);
+            return KTPublicKeyStatus.VERIFIED_ABSENT;
+        }
+
+        const [proof, nextRevisionProof] = await Promise.all([
+            fetchProof(epoch.EpochID, identifier, signedKeyList.Revision, api),
+            fetchProof(epoch.EpochID, identifier, signedKeyList.Revision + 1, api),
+        ]);
+
+        const nextProofVerification = verifyProofOfAbscenceForRevision(
+            nextRevisionProof,
+            identifier,
+            epoch.TreeHash,
+            signedKeyList.Revision + 1
+        );
+
+        if (signedKeyList.Signature) {
+            await Promise.all([
+                sklVerificationPromise,
+                nextProofVerification,
+                verifyProofOfExistence(proof, identifier, epoch.TreeHash, signedKeyList),
+            ]);
+            return KTPublicKeyStatus.VERIFIED_PRESENT;
+        } else {
+            await Promise.all([
+                sklVerificationPromise,
+                nextProofVerification,
+                verifyProofOfObsolescence(proof, identifier, epoch.TreeHash, signedKeyList),
+            ]);
+            return KTPublicKeyStatus.VERIFIED_ABSENT;
+        }
     } catch (error: any) {
-        ktSentryReport(error.message, {
-            context: 'verifyPublicKeys',
-        });
-        return KT_STATUS.KT_FAILED;
+        if (error instanceof KeyTransparencyError) {
+            return KTPublicKeyStatus.VERIFICATION_FAILED;
+        }
+        throw error;
     }
+};
 
-    let certificateTimestamp: number;
-    try {
-        ({ certificateTimestamp } = await verifySKLInsideEpoch(maxEpoch, email, signedKeyList, api));
-    } catch (error: any) {
-        return KT_STATUS.KT_FAILED;
+export const verifyPublicKeysAddressAndCatchall = async (
+    api: Api,
+    saveSKLToLS: SaveSKLToLS,
+    getLatestEpoch: GetLatestEpoch,
+    email: string,
+    keysIntendendedForEmail: boolean,
+    address: {
+        keyList: ArmoredKeyWithFlags[];
+        signedKeyList: FetchedSignedKeyList | null;
+    },
+    catchAll?: {
+        keyList: ArmoredKeyWithFlags[];
+        signedKeyList: FetchedSignedKeyList | null;
     }
-
-    if (isTimestampTooOld(certificateTimestamp)) {
-        ktSentryReport('Returned date is older than MAX_EPOCH_INTERVAL', {
-            context: 'verifyPublicKeys',
-            certificateTimestamp,
-        });
-        return KT_STATUS.KT_FAILED;
+): Promise<{
+    addressKTStatus?: KTPublicKeyStatus;
+    catchAllKTStatus?: KTPublicKeyStatus;
+}> => {
+    const addressKTStatusPromise = verifyPublicKeys(
+        address.keyList,
+        email,
+        address.signedKeyList,
+        api,
+        saveSKLToLS,
+        getLatestEpoch,
+        keysIntendendedForEmail
+    );
+    let catchAllKTStatusPromise: Promise<KTPublicKeyStatus> | undefined;
+    if (address.keyList.length == 0 || catchAll) {
+        catchAllKTStatusPromise = verifyPublicKeys(
+            catchAll?.keyList ?? [],
+            email,
+            catchAll?.signedKeyList ?? null,
+            api,
+            saveSKLToLS,
+            getLatestEpoch,
+            keysIntendendedForEmail,
+            true
+        );
     }
-
-    return KT_STATUS.KT_PASSED;
+    const [addressKTStatus, catchAllKTStatus] = await Promise.all([addressKTStatusPromise, catchAllKTStatusPromise]);
+    return {
+        addressKTStatus,
+        catchAllKTStatus,
+    };
 };
