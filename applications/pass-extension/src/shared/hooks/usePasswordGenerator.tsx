@@ -64,8 +64,8 @@ export const DEFAULT_MEMORABLE_PW_OPTIONS: GeneratePasswordOptions = {
     options: {
         wordCount: 4,
         seperator: SeperatorOptions.HYPHEN,
-        capitalize: false,
-        extraNumbers: false,
+        capitalize: true,
+        extraNumbers: true,
     },
 };
 
