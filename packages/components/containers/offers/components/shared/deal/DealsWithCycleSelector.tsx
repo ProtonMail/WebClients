@@ -19,6 +19,10 @@ const DealsWithCycleSelector = (props: OfferProps) => {
     const [cycle, setCycle] = useState(CYCLE.TWO_YEARS);
     const filteredDeals = props.offer.deals.filter((deal) => deal.cycle === cycle);
 
+    if (!filteredDeals.length) {
+        return null;
+    }
+
     return (
         <>
             <CycleSelector

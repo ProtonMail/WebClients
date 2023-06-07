@@ -13,6 +13,7 @@ const config: OfferConfig = {
     ID: 'summer-2023',
     featureCode: FeatureCode.OfferSummer2023,
     autoPopUp: 'one-time',
+    canBeDisabled: true,
     deals: [
         {
             ref: 'TODO',
