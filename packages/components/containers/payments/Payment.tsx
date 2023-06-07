@@ -133,14 +133,14 @@ const Payment = ({
                         <>
                             <div ref={creditCardTopRef} />
                             {type === 'signup-pass' ? (
-                                <CreditCardNewDesign card={card} errors={cardErrors} onChange={onCard} />
-                            ) : (
-                                <CreditCard
+                                <CreditCardNewDesign
                                     card={card}
                                     errors={cardErrors}
                                     onChange={onCard}
                                     fieldStatus={cardFieldStatus}
                                 />
+                            ) : (
+                                <CreditCard card={card} errors={cardErrors} onChange={onCard} />
                             )}
 
                             {type !== 'signup' && <Alert3DS />}
