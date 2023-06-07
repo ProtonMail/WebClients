@@ -98,4 +98,19 @@ describe('random password generator', () => {
 
         options.forEach((option) => expect(passwordMatchesOptions(generateRandomPassword(option), option)).toBe(true));
     });
+
+    test('password validation recursion sanity check', () => {
+        const options: RandomPasswordOptions[] = Array.from({ length: 1000 }, () => ({
+            length: 4,
+            useDigits: true,
+            useSpecialChars: true,
+            useUppercase: true,
+        }));
+
+        options.forEach((option) => {
+            let counter = 0;
+            generateRandomPassword(option, () => counter++);
+            expect(counter).toBeLessThan(100);
+        });
+    });
 });
