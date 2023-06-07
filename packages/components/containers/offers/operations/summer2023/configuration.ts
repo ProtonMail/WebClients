@@ -16,7 +16,7 @@ const config: OfferConfig = {
     canBeDisabled: true,
     deals: [
         {
-            ref: 'TODO',
+            ref: 'anniversary_offer-plus-12',
             planName: PLANS.MAIL,
             planIDs: {
                 [PLANS.MAIL]: 1,
@@ -28,7 +28,7 @@ const config: OfferConfig = {
             couponCode: COUPON_CODES.SUMMER2023,
         },
         {
-            ref: 'TODO',
+            ref: 'anniversary_offer-plus-24',
             planName: PLANS.MAIL,
             planIDs: {
                 [PLANS.MAIL]: 1,
@@ -40,7 +40,7 @@ const config: OfferConfig = {
             couponCode: COUPON_CODES.SUMMER2023,
         },
         {
-            ref: 'TODO',
+            ref: 'anniversary_offer-un-12',
             planName: PLANS.BUNDLE,
             planIDs: {
                 [PLANS.BUNDLE]: 1,
@@ -52,7 +52,7 @@ const config: OfferConfig = {
             couponCode: COUPON_CODES.SUMMER2023,
         },
         {
-            ref: 'TODO',
+            ref: 'anniversary_offer-un-24',
             planName: PLANS.BUNDLE,
             planIDs: {
                 [PLANS.BUNDLE]: 1,
