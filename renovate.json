@@ -5,11 +5,5 @@
     "rangeStrategy": "bump",
     "rebaseWhen": "conflicted",
     "ignoreDeps": ["roosterjs", "emoji-mart", "@emoji-mart/data", "client-zip", "pmcrypto", "nwsapi"],
-    "ignorePaths": ["**/node_modules/**"],
-    "packageRules": [
-        {
-            "groupName": "typescript",
-            "matchPackagePatterns": ["typescript"]
-        }
-    ]
+    "ignorePaths": ["**/node_modules/**"]
 }
