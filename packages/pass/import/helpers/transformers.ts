@@ -23,7 +23,8 @@ export const importLoginItem = (options: {
     username?: MaybeNull<string>;
     password?: MaybeNull<string>;
     urls?: Maybe<string>[];
-    totps?: MaybeNull<Maybe<string>>[];
+    totp?: MaybeNull<string>;
+    extraFields?: ItemExtraField[];
     trashed?: boolean;
     createTime?: number;
     modifyTime?: number;
@@ -38,9 +39,9 @@ export const importLoginItem = (options: {
 
     const name = options.name || urls[0]?.hostname || c('Label').t`Unnamed item`;
 
-    const [totp, ...extraTotps] = (options.totps ?? [])
-        .filter(truthy)
-        .map((value) => parseOTPValue(value, { label: options.name || urls[0]?.hostname }));
+    const getTOTPvalue = (totp?: MaybeNull<string>) => {
+        return totp ? parseOTPValue(totp, { label: options.name || urls[0]?.hostname }) : '';
+    };
 
     return {
         type: 'login',
@@ -53,13 +54,18 @@ export const importLoginItem = (options: {
             username: options.username || '',
             password: options.password || '',
             urls: urls.map(prop('origin')).filter((origin) => origin !== 'null'),
-            totpUri: totp || '',
+            totpUri: getTOTPvalue(options.totp),
         },
-        extraFields: extraTotps.map<ItemExtraField<'totp'>>((totpUri) => ({
-            fieldName: 'totp',
-            type: 'totp',
-            data: { totpUri },
-        })),
+        extraFields:
+            options.extraFields?.map((field) => {
+                if (field.type === 'totp') {
+                    return {
+                        ...field,
+                        data: { totpUri: getTOTPvalue(field.data.totpUri) },
+                    };
+                }
+                return field;
+            }) ?? [],
         trashed: options.trashed ?? false,
         createTime: options.createTime,
         modifyTime: options.modifyTime,
