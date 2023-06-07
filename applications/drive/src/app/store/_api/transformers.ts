@@ -33,6 +33,7 @@ export function linkMetaToEncryptedLink(link: LinkMetaWithShareURL, shareId: str
         nameSignatureAddress: link.NameSignatureEmail,
         mimeType: link.MIMEType,
         size: link.Size,
+        hash: link.Hash,
         activeRevision: link.FileProperties?.ActiveRevision
             ? {
                   id: link.FileProperties.ActiveRevision.ID,
@@ -130,6 +131,7 @@ export const deviceInfoToDevices = (info: DevicePayload): Device => {
         name: info.Share.Name,
         modificationTime: info.Device.ModifyTime,
         linkId: info.Share.LinkID,
+        haveLegacyName: !!info.Share.Name,
     };
 };
 
