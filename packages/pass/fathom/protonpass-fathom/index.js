@@ -59,7 +59,7 @@ const MAX_FORM_HEADING_WALK_UP = 5;
 
 const MAX_CLUSTER_SPLIT_DISTANCE = 400;
 
-const MAX_VISIBILITY_WALK_UP = 3;
+const MAX_VISIBILITY_WALK_UP = 1;
 
 const MIN_AREA_SUBMIT_BTN = 3500;
 
@@ -90,9 +90,12 @@ const PASSWORD_RE =
 const PASSWORD_OUTLIER_RE = /socialsecurity|nationalid/i;
 
 const USERNAME_RE =
-    /identi(?:fiant|ty)|u(?:tilisateur|s(?:ername|uario))|(?:identifi|benutz)er|(?:screen|nick)name|nutzername|(?:apeli|pseu)do|(?:anmeld|handl)e/i;
+    /identi(?:fiant|ty)|u(?:tilisateur|s(?:ername|uario))|(?:identifi|benutz)er|(?:screen|nick)name|nutzername|(?:anmeld|handl)e|pseudo/i;
 
 const USERNAME_ATTR_RE = /identifyemail|(?:custom|us)erid|loginname|a(?:cc(?:ountid|t)|ppleid)|loginid/i;
+
+const USERNAME_OUTLIER_RE =
+    /nom(?:defamill|br)e|(?:primeiro|sobre)nome|(?:middle|nach|vor)name|firstname|apellido|lastname|prenom/i;
 
 const EMAIL_RE = /co(?:urriel|rrei?o)|email/i;
 
@@ -115,6 +118,8 @@ const STEP_ACTION_RE =
 
 const REMEMBER_ACTION_RE =
     /angemeldetbleiben|lembrardemim|micherinnern|sesouvenirde|re(?:cordarme|member|ster)|manterme|mantener|stay|keep/i;
+
+const SEARCH_ACTION_RE = /recherche|buscar|s(?:earch|uche)|query/i;
 
 const CURRENT_VALUE_RE =
     /(?:be(?:stehend|for)|vorherig|aktuell)e|exist(?:ente|ing)|pre(?:cedent|vious)|a(?:n(?:t(?:erior|igo)|cien)|ctu[ae]l|tual)|existant|dernier|current|(?:ultim|viej)o|(?:letz|al)te|last|old/i;
@@ -139,7 +144,7 @@ const OTP_ATTR_RE = /totp(?:pin)?|o(?:netime|t[cp])|1time/i;
 const OTP_OUTLIER_RE =
     /n(?:(?:ue|o)vocodigo|ouveaucode|e(?:usenden|(?:uer|w)code))|re(?:enviar|send)|envoyer|senden|enviar|send/i;
 
-const OTP_OUTLIER_ATTR_RE = /(?:phone|email|tel)pin|email|sms/i;
+const OTP_OUTLIER_ATTR_RE = /(?:inputphoneverification|phone|email|tel)pin|email|sms/i;
 
 const NEWSLETTER_RE = /newsletter|b(?:ul|o)letin|mailing/i;
 
@@ -175,6 +180,8 @@ const matchUsernameAttr = orRe([USERNAME_ATTR_RE, USERNAME_RE]);
 
 const matchUsernameValue = test(USERNAME_VALUE_RE);
 
+const matchUsernameOutlier = test(USERNAME_OUTLIER_RE);
+
 const matchEmail = orRe([EMAIL_RE, EMAIL_VALUE_RE]);
 
 const matchEmailAttr = orRe([EMAIL_ATTR_RE, EMAIL_RE]);
@@ -189,13 +196,15 @@ const matchTOS = test(TOS_RE);
 
 const matchTrouble = test(TROUBLE_RE);
 
-const matchRecovery = test(RECOVERY_RE);
+const matchRecovery = or([test(RECOVERY_RE), andRe([TROUBLE_RE, PASSWORD_RE])]);
 
 const matchMultiStep = test(MULTI_STEP_RE);
 
 const matchStepAction = orRe([STEP_ACTION_RE, MULTI_STEP_RE]);
 
 const matchOAuth = test(OAUTH_ATTR_RE);
+
+const matchSearchAction = test(SEARCH_ACTION_RE);
 
 const matchPasswordReset = and([andRe([PASSWORD_RE, RESET_ACTION_RE]), notRe(CONFIRM_ACTION_RE)]);
 
@@ -246,6 +255,7 @@ const fastIsVisible = (el, options, recurseMax = MAX_VISIBILITY_WALK_UP) => {
     if (any(matchHidden)(classList)) return false;
     const { visibility, display, maxHeight } = getComputedStyle(el);
     if (visibility === 'hidden' || display === 'none' || maxHeight === '0px') return false;
+    if (el.offsetHeight === 0 || el.offsetHeight === 0) return false;
     if (el.offsetHeight < options.minHeight || el.offsetWidth < options.minWidth) return false;
     const parent = el.parentElement;
     return recurseMax === 0 || parent === null ? true : fastIsVisible(parent, options, recurseMax - 1);
@@ -256,6 +266,16 @@ const isVisibleField = (field) =>
         minHeight: MIN_FIELD_HEIGHT,
         minWidth: MIN_FIELD_WIDTH,
     });
+
+const isVisibleEl = (el) =>
+    fastIsVisible(
+        el,
+        {
+            minHeight: 0,
+            minWidth: 0,
+        },
+        0
+    );
 
 const getNthParent = (el) => (n) => {
     const parent = el.parentElement;
@@ -306,7 +326,7 @@ const fieldSelector = 'input, select, textarea';
 
 const editableFieldSelector = [
     'input[type="email"]',
-    'input[type="text"]',
+    'input[type="text"]:not([aria-autocomplete="list"])',
     'input[type="number"]',
     'input[type="tel"]',
     'input[type="password"]',
@@ -431,6 +451,7 @@ const getParentFnodeOfType = (fnode, type) => {
 const getFieldFeature = (fnode) => {
     var _a, _b, _c, _d, _e, _f, _g, _h;
     const field = fnode.element;
+    const fieldHaystacks = getFieldHaystacks(field);
     const value = field.value;
     const type = field.getAttribute('type');
     const readonly = field.readOnly;
@@ -441,7 +462,7 @@ const getFieldFeature = (fnode) => {
     const autocomplete = field.autocomplete;
     const disabled = field.disabled;
     const typeValid = type !== 'hidden';
-    const visible = typeValid ? utils.isVisible(field) : false;
+    const visible = typeValid ? utils.isVisible(field) && isVisibleField(field) : false;
     const tabIndex = field.tabIndex;
     const formFnode = getParentFnodeOfType(fnode, 'form');
     const form = (_a = fnode.element) !== null && _a !== void 0 ? _a : field.closest('form');
@@ -514,7 +535,7 @@ const getFieldFeature = (fnode) => {
             prevField,
             nextField,
         },
-        getFieldHaystacks(field)
+        fieldHaystacks
     );
 };
 
@@ -580,7 +601,7 @@ const maybeEmail = (fnode) => ['email', 'text', '', null].includes(fnode.element
 
 const maybePassword = (fnode) => fnode.element.getAttribute('type') === 'password' && isUserEditableFNode(fnode);
 
-const maybeOTP = (fnode) => fnode.element.matches(otpSelector) && isUserEditableFNode(fnode);
+const maybeOTP = (fnode) => fnode.element.matches(otpSelector);
 
 const maybeUsername = (fnode) => fnode.element.matches(usernameSelector) && isUserEditableFNode(fnode);
 
@@ -598,7 +619,7 @@ const isSubmitBtnCandidate = (btn) => {
     return height * width > MIN_AREA_SUBMIT_BTN;
 };
 
-const { linearScale } = utils;
+const { linearScale: linearScale$1 } = utils;
 
 const getFormFeatures = (fnode) => {
     const form = fnode.element;
@@ -621,7 +642,6 @@ const getFormFeatures = (fnode) => {
     const [visibleIdentifiers, hiddenIdentifiers] = splitFieldsByVisibility(identifiers);
     const passwords = inputs.filter((el) => el.matches('[type="password"]'));
     const [visiblePasswords, hiddenPasswords] = splitFieldsByVisibility(passwords);
-    const search = visibleInputs.filter((el) => el.matches('[type="search"]'));
     const radios = visibleInputs.filter((el) => el.matches('[type="radio"]'));
     const checkboxes = visibleInputs.filter((el) => el.matches('[type="checkbox"]'));
     const numbers = visibleInputs.filter((el) => el.matches('[type="number"]'));
@@ -636,7 +656,7 @@ const getFormFeatures = (fnode) => {
     const btns = Array.from(parent.querySelectorAll(buttonSubmitSelector));
     const submitBtns = btns.filter(isSubmitBtnCandidate);
     const btnCandidates = submits.concat(submitBtns);
-    const anchors = Array.from(parent.querySelectorAll(anchorLinkSelector));
+    const anchors = Array.from(form.querySelectorAll(anchorLinkSelector)).filter(isVisibleEl);
     const socialEls = Array.from(parent.querySelectorAll(socialSelector));
     const oauths = socialEls.concat(submitBtns).filter(isOAuthCandidate);
     const layouts = Array.from(form.querySelectorAll(layoutSelector));
@@ -659,7 +679,7 @@ const getFormFeatures = (fnode) => {
     const layoutLogin = any(matchLogin)(layoutHaystack);
     const rememberMeCheckbox = any(matchRememberMe)(checkboxesHaystack);
     const submitLogin = any(matchLogin)(submitBtnHaystack);
-    const forgotPasswordLink = any(matchTrouble)(anchorsHaystack);
+    const troubleLink = any(matchTrouble)(anchorsHaystack);
     const pageRegister = matchRegister(pageDescriptionText);
     const formTextRegister = matchRegister(formTextAttrText);
     const formAttrsRegister = any(matchRegister)(formAttributes);
@@ -677,6 +697,7 @@ const getFormFeatures = (fnode) => {
     const formAttrsRecovery = any(matchRecovery)(formAttributes);
     const headingsRecovery = matchRecovery(nearestHeadingsText);
     const layoutRecovery = any(matchRecovery)(layoutHaystack);
+    const submitRecovery = any(matchRecovery)(submitBtnHaystack);
     const identifierRecovery = any(matchRecovery)(identifierAttributes);
     const formTextMFA = matchMfa(formTextAttrText);
     const formAttrsMFA = any(matchMfaAttr)(formAttributes);
@@ -685,31 +706,30 @@ const getFormFeatures = (fnode) => {
     const buttonVerify = any(matchMfaAction)(submitBtnHaystack);
     const inputsMFA = any(matchMfaAttr)(mfaInputsHaystack);
     const inputsOTP = any(matchOtpAttr)(mfaInputsHaystack);
-    const resendCodeLink = any(matchTrouble)(anchorsHaystack.concat(submitBtnHaystack));
+    const linkOTPOutlier = any(matchOtpOutlier)(anchorsHaystack.concat(submitBtnHaystack));
     const headingsNewsletter = matchNewsletter(nearestHeadingsText);
     const buttonMultiStep = any(matchStepAction)(submitBtnHaystack);
     const headingsMultiStep = matchMultiStep(nearestHeadingsText);
     return {
-        fieldsCount: linearScale(visibleFields.length, 1, 5),
-        inputCount: linearScale(visibleInputs.length, 1, 5),
-        fieldsetCount: linearScale(fieldsets.length, 1, 5),
-        textCount: linearScale(texts.length, 0, 3),
-        textareaCount: linearScale(textareas.length, 0, 2),
-        selectCount: linearScale(selects.length, 0, 3),
-        checkboxCount: linearScale(checkboxes.length, 0, 2),
-        radioCount: linearScale(radios.length, 0, 5),
-        numberCount: linearScale(numbers.length, 0, 2),
-        dateCount: linearScale(dates.length, 0, 2),
-        identifierCount: linearScale(visibleIdentifiers.length, 0, 2),
-        passwordCount: linearScale(visiblePasswords.length, 0, 2),
-        usernameCount: linearScale(usernames.length, 0, 2),
-        emailCount: linearScale(emails.length, 0, 2),
-        submitCount: linearScale(submits.length, 0, 2),
+        fieldsCount: linearScale$1(visibleFields.length, 1, 5),
+        inputCount: linearScale$1(visibleInputs.length, 1, 5),
+        fieldsetCount: linearScale$1(fieldsets.length, 1, 5),
+        textCount: linearScale$1(texts.length, 0, 3),
+        textareaCount: linearScale$1(textareas.length, 0, 2),
+        selectCount: linearScale$1(selects.length, 0, 3),
+        checkboxCount: linearScale$1(checkboxes.length, 0, 2),
+        radioCount: linearScale$1(radios.length, 0, 5),
+        identifierCount: linearScale$1(visibleIdentifiers.length, 0, 2),
+        passwordCount: linearScale$1(visiblePasswords.length, 0, 2),
+        usernameCount: linearScale$1(usernames.length, 0, 2),
+        emailCount: linearScale$1(emails.length, 0, 2),
+        submitCount: linearScale$1(submits.length, 0, 2),
         hasTels: boolInt(tels.length > 0),
         hasOAuth: boolInt(oauths.length > 0),
         hasCaptchas: boolInt(captchas.length > 0),
         hasFiles: boolInt(files.length > 0),
-        hasSearch: boolInt(search.length > 0),
+        hasDate: boolInt(dates.length > 0),
+        hasNumber: boolInt(numbers.length > 0),
         noPasswordFields: boolInt(visiblePasswords.length === 0),
         onePasswordField: boolInt(visiblePasswords.length === 1),
         twoPasswordFields: boolInt(visiblePasswords.length === 2),
@@ -727,7 +747,7 @@ const getFormFeatures = (fnode) => {
         identifierRatio: safeInt(identifiers.length / inputs.length),
         emailRatio: safeInt(emails.length / inputs.length),
         usernameRatio: safeInt(usernames.length / inputs.length),
-        passwordRatio: safeInt(passwords.length / visibleInputs.length),
+        passwordRatio: safeInt(passwords.length / inputs.length),
         requiredRatio: safeInt(required.length / visibleInputs.length),
         patternRatio: safeInt(patterns.length / visibleInputs.length),
         minMaxLengthRatio: safeInt(minMaxLengths.length / visibleInputs.length),
@@ -737,7 +757,7 @@ const getFormFeatures = (fnode) => {
         headingsLogin: boolInt(headingsLogin),
         layoutLogin: boolInt(layoutLogin),
         rememberMeCheckbox: boolInt(rememberMeCheckbox),
-        forgotPasswordLink: boolInt(forgotPasswordLink),
+        troubleLink: boolInt(troubleLink),
         submitLogin: boolInt(submitLogin),
         pageRegister: boolInt(pageRegister),
         formTextRegister: boolInt(formTextRegister),
@@ -757,6 +777,7 @@ const getFormFeatures = (fnode) => {
         headingsRecovery: boolInt(headingsRecovery),
         layoutRecovery: boolInt(layoutRecovery),
         identifierRecovery: boolInt(identifierRecovery),
+        submitRecovery: boolInt(submitRecovery),
         formTextMFA: boolInt(formTextMFA),
         formAttrsMFA: boolInt(formAttrsMFA),
         headingsMFA: boolInt(headingsMFA),
@@ -764,7 +785,7 @@ const getFormFeatures = (fnode) => {
         buttonVerify: boolInt(buttonVerify),
         inputsMFA: boolInt(inputsMFA),
         inputsOTP: boolInt(inputsOTP),
-        resendCodeLink: boolInt(resendCodeLink),
+        linkOTPOutlier: boolInt(linkOTPOutlier),
         headingsNewsletter: boolInt(headingsNewsletter),
         oneVisibleField: boolInt(visibleInputs.length === 1),
         buttonMultiStep: boolInt(buttonMultiStep),
@@ -783,8 +804,6 @@ const FORM_FEATURES = [
     'selectCount',
     'checkboxCount',
     'radioCount',
-    'numberCount',
-    'dateCount',
     'identifierCount',
     'usernameCount',
     'emailCount',
@@ -793,6 +812,8 @@ const FORM_FEATURES = [
     'hasOAuth',
     'hasCaptchas',
     'hasFiles',
+    'hasDate',
+    'hasNumber',
     'noPasswordFields',
     'onePasswordField',
     'twoPasswordFields',
@@ -819,7 +840,7 @@ const FORM_FEATURES = [
     'headingsLogin',
     'layoutLogin',
     'rememberMeCheckbox',
-    'forgotPasswordLink',
+    'troubleLink',
     'submitLogin',
     'pageRegister',
     'formTextRegister',
@@ -839,6 +860,7 @@ const FORM_FEATURES = [
     'headingsRecovery',
     'layoutRecovery',
     'identifierRecovery',
+    'submitRecovery',
     'formTextMFA',
     'formAttrsMFA',
     'headingsMFA',
@@ -846,7 +868,7 @@ const FORM_FEATURES = [
     'buttonVerify',
     'inputsMFA',
     'inputsOTP',
-    'resendCodeLink',
+    'linkOTPOutlier',
     'headingsNewsletter',
     'oneVisibleField',
     'buttonMultiStep',
@@ -962,6 +984,8 @@ const getEmailFieldFeatures = (fnode) => {
     const textEmail = matchEmail(fieldText);
     const labelEmail = matchEmail(labelText);
     const placeholderEmail = any(or([matchEmailValue, matchEmail]))(field.placeholder.split(' '));
+    const attrSearch = any(matchSearchAction)(fieldAttrs);
+    const textSearch = matchSearchAction(fieldText);
     return {
         autocompleteUsername: boolInt(fieldFeatures.autocomplete === 'username'),
         autocompleteNickname: boolInt(fieldFeatures.autocomplete === 'nickname'),
@@ -973,6 +997,8 @@ const getEmailFieldFeatures = (fnode) => {
         textEmail: boolInt(textEmail),
         labelEmail: boolInt(labelEmail),
         placeholderEmail: boolInt(placeholderEmail),
+        attrSearch: boolInt(attrSearch),
+        textSearch: boolInt(textSearch),
     };
 };
 
@@ -986,6 +1012,8 @@ const EMAIL_FIELD_FEATURES = [
     'textEmail',
     'labelEmail',
     'placeholderEmail',
+    'attrSearch',
+    'textSearch',
 ];
 
 const getUsernameFieldFeatures = (fnode) => {
@@ -994,6 +1022,7 @@ const getUsernameFieldFeatures = (fnode) => {
     const attrUsername = any(matchUsernameAttr)(fieldAttrs);
     const textUsername = matchUsername(fieldText);
     const labelUsername = matchUsername(labelText);
+    const outlierUsername = any(matchUsernameOutlier)(fieldAttrs.concat(fieldText, labelText));
     const haystack = fieldAttrs.concat(fieldText).concat(labelText);
     const matchEmail = any(matchEmailAttr)(haystack);
     const loginForm = loginScore > 0.5;
@@ -1007,6 +1036,7 @@ const getUsernameFieldFeatures = (fnode) => {
         attrUsername: boolInt(attrUsername),
         textUsername: boolInt(textUsername),
         labelUsername: boolInt(labelUsername),
+        outlierUsername: boolInt(outlierUsername),
         loginUsername: boolInt(loginUsername),
     };
 };
@@ -1019,6 +1049,7 @@ const USERNAME_FIELD_FEATURES = [
     'attrUsername',
     'textUsername',
     'labelUsername',
+    'outlierUsername',
     'loginUsername',
 ];
 
@@ -1062,18 +1093,30 @@ const HIDDEN_USER_FIELD_FEATURES = [
     'hiddenUsernameValue',
 ];
 
+const { linearScale } = utils;
+
 const getOTPFieldFeatures = (fnode) => {
-    var _a;
+    var _a, _b, _c, _d;
     const field = fnode.element;
     const fieldFeatures = fnode.noteFor('field');
     const { fieldAttrs, fieldText, labelText, prevField, nextField, type, minLength, maxLength } = fieldFeatures;
+    const form = (_a = fieldFeatures.formFnode) === null || _a === void 0 ? void 0 : _a.element;
     const formMfa = fieldFeatures.mfaScore > 0.5;
-    const resendCodeLink = Boolean(
-        (_a = fieldFeatures === null || fieldFeatures === void 0 ? void 0 : fieldFeatures.formFeatures) === null ||
-            _a === void 0
+    const linkOTPOutlier = Boolean(
+        (_b = fieldFeatures === null || fieldFeatures === void 0 ? void 0 : fieldFeatures.formFeatures) === null ||
+            _b === void 0
             ? void 0
-            : _a.resendCodeLink
+            : _b.linkOTPOutlier
     );
+    const formCheckboxCount =
+        (_d =
+            (_c = fieldFeatures === null || fieldFeatures === void 0 ? void 0 : fieldFeatures.formFeatures) === null ||
+            _c === void 0
+                ? void 0
+                : _c.checkboxCount) !== null && _d !== void 0
+            ? _d
+            : 0;
+    const formInnerText = form && formMfa ? form.innerText : '';
     const patternOTP = OTP_PATTERNS.includes(field.pattern);
     const exactAttr = ['code', 'token', 'otp', 'otc', 'totp'];
     const nameMatch = exactAttr.some((match) => field.name === match);
@@ -1105,20 +1148,20 @@ const getOTPFieldFeatures = (fnode) => {
     const attrOutlier = any(matchOtpOutlier)(fieldAttrs);
     const textOTP = matchOtpAttr(fieldText);
     const textMFA = matchMfa(fieldText);
-    const textOutlier = matchOtpOutlier(fieldText);
     const labelOTP = matchOtpAttr(labelText);
     const labelMFA = matchMfa(labelText);
     const labelOutlier = matchOtpOutlier(labelText);
     const parents = [getNthParent(field)(1), getNthParent(field)(2)];
     const wrapperAttrs = parents.flatMap(getBaseAttributes);
     const wrapperOTP = any(matchOtpAttr)(wrapperAttrs);
-    const wrapperMFA = any(matchMfaAttr)(wrapperAttrs);
     const wrapperOutlier = any(matchOtpOutlier)(wrapperAttrs);
+    const emailOutlierCount = (formInnerText.match(/@/g) || []).length;
     return {
-        mfaScore: fieldFeatures.mfaScore,
+        mfaScore: boolInt(formMfa),
         exotic: boolInt(fieldFeatures.exotic),
         dangling: boolInt(fieldFeatures.dangling),
-        resendCodeLink: boolInt(formMfa && resendCodeLink),
+        linkOTPOutlier: boolInt(formMfa && linkOTPOutlier),
+        hasCheckboxes: boolInt(formMfa && formCheckboxCount > 0),
         hidden: boolInt(!fieldFeatures.visible),
         required: boolInt(fieldFeatures.required),
         nameMatch: boolInt(nameMatch),
@@ -1143,13 +1186,12 @@ const getOTPFieldFeatures = (fnode) => {
         attrOutlier: boolInt(attrOutlier),
         textMFA: boolInt(textMFA),
         textOTP: boolInt(textOTP),
-        textOutlier: boolInt(textOutlier),
         labelMFA: boolInt(labelMFA),
         labelOTP: boolInt(labelOTP),
         labelOutlier: boolInt(labelOutlier),
-        wrapperMFA: boolInt(wrapperMFA),
         wrapperOTP: boolInt(wrapperOTP),
         wrapperOutlier: boolInt(wrapperOutlier),
+        emailOutlierCount: linearScale(emailOutlierCount, 0, 2),
     };
 };
 
@@ -1157,7 +1199,8 @@ const OTP_FIELD_FEATURES = [
     'mfaScore',
     'exotic',
     'dangling',
-    'resendCodeLink',
+    'linkOTPOutlier',
+    'hasCheckboxes',
     'hidden',
     'required',
     'nameMatch',
@@ -1182,96 +1225,96 @@ const OTP_FIELD_FEATURES = [
     'attrOutlier',
     'textMFA',
     'textOTP',
-    'textOutlier',
     'labelMFA',
     'labelOTP',
     'labelOutlier',
-    'wrapperMFA',
     'wrapperOTP',
     'wrapperOutlier',
+    'emailOutlierCount',
 ];
 
 const results$a = {
     coeffs: [
-        ['login-fieldsCount', -0.6493964195251465],
-        ['login-inputCount', 0.2346607744693756],
-        ['login-fieldsetCount', -7.835761070251465],
-        ['login-textCount', -14.286291122436523],
-        ['login-textareaCount', -6.459255695343018],
-        ['login-selectCount', -10.568930625915527],
-        ['login-checkboxCount', 9.109601974487305],
-        ['login-radioCount', -0.05536641180515289],
-        ['login-numberCount', -6.005008697509766],
-        ['login-dateCount', -48.91677474975586],
-        ['login-identifierCount', 0.29414865374565125],
-        ['login-usernameCount', 13.907902717590332],
-        ['login-emailCount', -13.060998916625977],
-        ['login-submitCount', -1.6964386701583862],
-        ['login-hasTels', -1.3122929334640503],
-        ['login-hasOAuth', 1.1997807025909424],
-        ['login-hasCaptchas', 3.235926389694214],
-        ['login-hasFiles', 0.07879766821861267],
-        ['login-noPasswordFields', -11.767131805419922],
-        ['login-onePasswordField', 4.9432268142700195],
-        ['login-twoPasswordFields', -13.829379081726074],
-        ['login-threePasswordFields', -7.338815212249756],
-        ['login-oneIdentifierField', 8.345372200012207],
-        ['login-twoIdentifierFields', -19.17803955078125],
-        ['login-threeIdentifierFields', -6.24638032913208],
-        ['login-hasHiddenIdentifier', -5.499378681182861],
-        ['login-hasHiddenPassword', 9.732535362243652],
-        ['login-autofocusedIsPassword', 16.15523910522461],
-        ['login-visibleRatio', 4.30911922454834],
-        ['login-inputRatio', -2.89835262298584],
-        ['login-hiddenRatio', 9.468207359313965],
-        ['login-identifierRatio', 9.377740859985352],
-        ['login-emailRatio', 5.227573394775391],
-        ['login-usernameRatio', -15.511019706726074],
-        ['login-passwordRatio', 8.416176795959473],
-        ['login-requiredRatio', -0.32782915234565735],
-        ['login-patternRatio', -1.8943276405334473],
-        ['login-minMaxLengthRatio', 0.39132556319236755],
-        ['login-pageLogin', 11.854527473449707],
-        ['login-formTextLogin', 8.466073989868164],
-        ['login-formAttrsLogin', 6.483010292053223],
-        ['login-headingsLogin', 25.22968101501465],
-        ['login-layoutLogin', 2.8067145347595215],
-        ['login-rememberMeCheckbox', 8.919171333312988],
-        ['login-forgotPasswordLink', 1.1890506744384766],
-        ['login-submitLogin', 3.548248291015625],
-        ['login-pageRegister', -7.5833964347839355],
-        ['login-formTextRegister', 0.009983785450458527],
-        ['login-formAttrsRegister', -13.851052284240723],
-        ['login-headingsRegister', -7.940681457519531],
-        ['login-layoutRegister', -6.296387672424316],
-        ['login-checkboxTOS', 0.01344175636768341],
-        ['login-submitRegister', -21.090221405029297],
-        ['login-pagePwReset', -6.619822025299072],
-        ['login-formTextPwReset', -5.935317516326904],
-        ['login-formAttrsPwReset', -12.780617713928223],
-        ['login-headingsPwReset', -10.454262733459473],
-        ['login-layoutPwReset', -7.093411922454834],
-        ['login-pageRecovery', -3.895611524581909],
-        ['login-formTextRecovery', -0.047151073813438416],
-        ['login-formAttrsRecovery', -9.867965698242188],
-        ['login-headingsRecovery', -0.26326096057891846],
-        ['login-layoutRecovery', 3.654162883758545],
-        ['login-identifierRecovery', -8.819255828857422],
-        ['login-formTextMFA', 0.08034148812294006],
-        ['login-formAttrsMFA', -1.416170597076416],
-        ['login-headingsMFA', -8.099723815917969],
-        ['login-layoutMFA', -4.1500630378723145],
-        ['login-buttonVerify', -5.3941850662231445],
-        ['login-inputsMFA', -21.93303871154785],
-        ['login-inputsOTP', -8.08713150024414],
-        ['login-resendCodeLink', 0.7404647469520569],
-        ['login-headingsNewsletter', -7.527066707611084],
-        ['login-oneVisibleField', -7.592361927032471],
-        ['login-buttonMultiStep', 1.3843250274658203],
-        ['login-buttonMultiAction', 31.98302459716797],
-        ['login-headingsMultiStep', -7.637948513031006],
+        ['login-fieldsCount', -1.8919605016708374],
+        ['login-inputCount', -3.5054497718811035],
+        ['login-fieldsetCount', -28.662872314453125],
+        ['login-textCount', -7.5917067527771],
+        ['login-textareaCount', -5.97534704208374],
+        ['login-selectCount', -3.8708856105804443],
+        ['login-checkboxCount', 8.882104873657227],
+        ['login-radioCount', 0.10172616690397263],
+        ['login-identifierCount', -8.886507034301758],
+        ['login-usernameCount', 13.539475440979004],
+        ['login-emailCount', -9.865325927734375],
+        ['login-submitCount', 4.389279842376709],
+        ['login-hasTels', 2.0527536869049072],
+        ['login-hasOAuth', -3.380772352218628],
+        ['login-hasCaptchas', -3.1294350624084473],
+        ['login-hasFiles', 0.01156662404537201],
+        ['login-hasDate', -39.51958465576172],
+        ['login-hasNumber', -6.1237945556640625],
+        ['login-noPasswordFields', -13.805755615234375],
+        ['login-onePasswordField', 5.716916561126709],
+        ['login-twoPasswordFields', -17.99162483215332],
+        ['login-threePasswordFields', -6.784121036529541],
+        ['login-oneIdentifierField', -0.7715885043144226],
+        ['login-twoIdentifierFields', -32.192420959472656],
+        ['login-threeIdentifierFields', -10.333745002746582],
+        ['login-hasHiddenIdentifier', 1.6726170778274536],
+        ['login-hasHiddenPassword', 24.474552154541016],
+        ['login-autofocusedIsPassword', 7.653244495391846],
+        ['login-visibleRatio', 6.637325286865234],
+        ['login-inputRatio', 5.673848628997803],
+        ['login-hiddenRatio', 1.4525307416915894],
+        ['login-identifierRatio', 8.557058334350586],
+        ['login-emailRatio', 12.209859848022461],
+        ['login-usernameRatio', -15.29971694946289],
+        ['login-passwordRatio', 3.358605146408081],
+        ['login-requiredRatio', 2.0071756839752197],
+        ['login-patternRatio', -3.6711301803588867],
+        ['login-minMaxLengthRatio', 1.3809870481491089],
+        ['login-pageLogin', 13.581026077270508],
+        ['login-formTextLogin', 8.367966651916504],
+        ['login-formAttrsLogin', 3.676656484603882],
+        ['login-headingsLogin', 24.88509750366211],
+        ['login-layoutLogin', -1.4089149236679077],
+        ['login-rememberMeCheckbox', 8.918549537658691],
+        ['login-troubleLink', 15.213412284851074],
+        ['login-submitLogin', 5.856357097625732],
+        ['login-pageRegister', -14.335491180419922],
+        ['login-formTextRegister', -0.03412998467683792],
+        ['login-formAttrsRegister', -2.9343292713165283],
+        ['login-headingsRegister', -5.230618476867676],
+        ['login-layoutRegister', -2.151590347290039],
+        ['login-checkboxTOS', 0.024698249995708466],
+        ['login-submitRegister', -13.540681838989258],
+        ['login-pagePwReset', -6.168937683105469],
+        ['login-formTextPwReset', -6.050944805145264],
+        ['login-formAttrsPwReset', -13.347935676574707],
+        ['login-headingsPwReset', -10.729796409606934],
+        ['login-layoutPwReset', -4.192920207977295],
+        ['login-pageRecovery', -18.938385009765625],
+        ['login-formTextRecovery', -0.07038377225399017],
+        ['login-formAttrsRecovery', -5.900047779083252],
+        ['login-headingsRecovery', 1.0182888507843018],
+        ['login-layoutRecovery', 1.339206576347351],
+        ['login-identifierRecovery', -6.130547523498535],
+        ['login-submitRecovery', 2.067948341369629],
+        ['login-formTextMFA', 0.08098701387643814],
+        ['login-formAttrsMFA', 1.5083503723144531],
+        ['login-headingsMFA', -15.972138404846191],
+        ['login-layoutMFA', -4.137455463409424],
+        ['login-buttonVerify', -8.18034839630127],
+        ['login-inputsMFA', -21.4920654296875],
+        ['login-inputsOTP', -9.299450874328613],
+        ['login-linkOTPOutlier', 0.01219164952635765],
+        ['login-headingsNewsletter', -13.040102005004883],
+        ['login-oneVisibleField', -10.24544906616211],
+        ['login-buttonMultiStep', -1.8122045993804932],
+        ['login-buttonMultiAction', 21.486799240112305],
+        ['login-headingsMultiStep', 2.3390679359436035],
     ],
-    bias: -7.201187610626221,
+    bias: -7.199836254119873,
     cutoff: 0.5,
 };
 
@@ -1304,86 +1347,87 @@ const login = {
 
 const results$9 = {
     coeffs: [
-        ['pw-change-fieldsCount', -1.4643932580947876],
-        ['pw-change-inputCount', -1.3177967071533203],
-        ['pw-change-fieldsetCount', -6.059832572937012],
-        ['pw-change-textCount', -5.924131393432617],
-        ['pw-change-textareaCount', -5.970595836639404],
-        ['pw-change-selectCount', -5.906905651092529],
-        ['pw-change-checkboxCount', -5.96058464050293],
-        ['pw-change-radioCount', -0.025777816772460938],
-        ['pw-change-numberCount', -14.7088041305542],
-        ['pw-change-dateCount', -6.058548450469971],
-        ['pw-change-identifierCount', -5.469001770019531],
-        ['pw-change-usernameCount', -6.059078693389893],
-        ['pw-change-emailCount', -4.128825664520264],
-        ['pw-change-submitCount', -2.132659912109375],
-        ['pw-change-hasTels', -5.929481029510498],
-        ['pw-change-hasOAuth', -6.064667701721191],
-        ['pw-change-hasCaptchas', -6.107112884521484],
-        ['pw-change-hasFiles', -0.00814143568277359],
-        ['pw-change-noPasswordFields', -6.041752815246582],
-        ['pw-change-onePasswordField', -5.927353382110596],
-        ['pw-change-twoPasswordFields', 11.784319877624512],
-        ['pw-change-threePasswordFields', 20.45472526550293],
-        ['pw-change-oneIdentifierField', -6.103196620941162],
-        ['pw-change-twoIdentifierFields', -5.9348554611206055],
-        ['pw-change-threeIdentifierFields', 14.083194732666016],
-        ['pw-change-hasHiddenIdentifier', -1.3976808786392212],
-        ['pw-change-hasHiddenPassword', -5.994223594665527],
-        ['pw-change-autofocusedIsPassword', 17.083709716796875],
-        ['pw-change-visibleRatio', -3.1283581256866455],
-        ['pw-change-inputRatio', -3.5249903202056885],
-        ['pw-change-hiddenRatio', -4.349560260772705],
-        ['pw-change-identifierRatio', -5.318943977355957],
-        ['pw-change-emailRatio', -5.084843635559082],
-        ['pw-change-usernameRatio', -5.9908647537231445],
-        ['pw-change-passwordRatio', 1.9834644794464111],
-        ['pw-change-requiredRatio', -4.600498676300049],
-        ['pw-change-patternRatio', 0.06952620297670364],
-        ['pw-change-minMaxLengthRatio', -2.6405839920043945],
-        ['pw-change-pageLogin', -5.912275791168213],
-        ['pw-change-formTextLogin', -6.071186065673828],
-        ['pw-change-formAttrsLogin', -6.0022101402282715],
-        ['pw-change-headingsLogin', -6.120266437530518],
-        ['pw-change-layoutLogin', -6.088892459869385],
-        ['pw-change-rememberMeCheckbox', -5.914804458618164],
-        ['pw-change-forgotPasswordLink', -3.9038891792297363],
-        ['pw-change-submitLogin', -5.9559760093688965],
-        ['pw-change-pageRegister', -5.973505973815918],
-        ['pw-change-formTextRegister', 0.060309067368507385],
-        ['pw-change-formAttrsRegister', -5.930293083190918],
-        ['pw-change-headingsRegister', -7.07861852645874],
-        ['pw-change-layoutRegister', -5.984366416931152],
-        ['pw-change-checkboxTOS', 0.11000505089759827],
-        ['pw-change-submitRegister', -7.164007663726807],
-        ['pw-change-pagePwReset', 16.61794090270996],
-        ['pw-change-formTextPwReset', 18.231796264648438],
-        ['pw-change-formAttrsPwReset', 5.1233978271484375],
-        ['pw-change-headingsPwReset', 16.767744064331055],
-        ['pw-change-layoutPwReset', 15.318222045898438],
-        ['pw-change-pageRecovery', -5.903716564178467],
-        ['pw-change-formTextRecovery', -0.03211015462875366],
-        ['pw-change-formAttrsRecovery', -5.94551420211792],
-        ['pw-change-headingsRecovery', -5.98456335067749],
-        ['pw-change-layoutRecovery', -5.906296253204346],
-        ['pw-change-identifierRecovery', -6.014403820037842],
-        ['pw-change-formTextMFA', -0.07683782279491425],
-        ['pw-change-formAttrsMFA', -6.020475387573242],
-        ['pw-change-headingsMFA', -5.909541130065918],
-        ['pw-change-layoutMFA', -6.073214530944824],
-        ['pw-change-buttonVerify', -6.02650260925293],
-        ['pw-change-inputsMFA', -6.0385918617248535],
-        ['pw-change-inputsOTP', -5.902577877044678],
-        ['pw-change-resendCodeLink', -3.926971435546875],
-        ['pw-change-headingsNewsletter', -6.046924114227295],
-        ['pw-change-oneVisibleField', -6.060455322265625],
-        ['pw-change-buttonMultiStep', -5.9051127433776855],
-        ['pw-change-buttonMultiAction', -5.922022819519043],
-        ['pw-change-headingsMultiStep', -5.972068786621094],
+        ['pw-change-fieldsCount', -1.4727699756622314],
+        ['pw-change-inputCount', -1.2312742471694946],
+        ['pw-change-fieldsetCount', -6.083852767944336],
+        ['pw-change-textCount', -5.9417619705200195],
+        ['pw-change-textareaCount', -6.112417697906494],
+        ['pw-change-selectCount', -6.091488838195801],
+        ['pw-change-checkboxCount', -5.967806816101074],
+        ['pw-change-radioCount', 0.05078115314245224],
+        ['pw-change-identifierCount', -5.549598693847656],
+        ['pw-change-usernameCount', -6.110995769500732],
+        ['pw-change-emailCount', -4.100076675415039],
+        ['pw-change-submitCount', -2.6122190952301025],
+        ['pw-change-hasTels', -6.078024864196777],
+        ['pw-change-hasOAuth', -6.01131534576416],
+        ['pw-change-hasCaptchas', -5.942317008972168],
+        ['pw-change-hasFiles', 0.0556536540389061],
+        ['pw-change-hasDate', -5.969387054443359],
+        ['pw-change-hasNumber', -9.4130220413208],
+        ['pw-change-noPasswordFields', -6.117624282836914],
+        ['pw-change-onePasswordField', -6.048462390899658],
+        ['pw-change-twoPasswordFields', 13.653754234313965],
+        ['pw-change-threePasswordFields', 19.067752838134766],
+        ['pw-change-oneIdentifierField', -6.066280364990234],
+        ['pw-change-twoIdentifierFields', -6.019142150878906],
+        ['pw-change-threeIdentifierFields', 13.205737113952637],
+        ['pw-change-hasHiddenIdentifier', -0.5959111452102661],
+        ['pw-change-hasHiddenPassword', -6.075613021850586],
+        ['pw-change-autofocusedIsPassword', 18.995986938476562],
+        ['pw-change-visibleRatio', -3.0828590393066406],
+        ['pw-change-inputRatio', -3.3137712478637695],
+        ['pw-change-hiddenRatio', -4.432037353515625],
+        ['pw-change-identifierRatio', -5.369654655456543],
+        ['pw-change-emailRatio', -5.133890151977539],
+        ['pw-change-usernameRatio', -5.988152027130127],
+        ['pw-change-passwordRatio', 5.193130970001221],
+        ['pw-change-requiredRatio', -4.179853439331055],
+        ['pw-change-patternRatio', 2.1021015644073486],
+        ['pw-change-minMaxLengthRatio', -2.9738025665283203],
+        ['pw-change-pageLogin', -5.980341911315918],
+        ['pw-change-formTextLogin', -5.945621013641357],
+        ['pw-change-formAttrsLogin', -5.958653450012207],
+        ['pw-change-headingsLogin', -6.000542163848877],
+        ['pw-change-layoutLogin', -6.11632776260376],
+        ['pw-change-rememberMeCheckbox', -6.065566062927246],
+        ['pw-change-troubleLink', -3.4676527976989746],
+        ['pw-change-submitLogin', -6.03278112411499],
+        ['pw-change-pageRegister', -6.085590362548828],
+        ['pw-change-formTextRegister', -0.1027039960026741],
+        ['pw-change-formAttrsRegister', -6.002166748046875],
+        ['pw-change-headingsRegister', -6.475811958312988],
+        ['pw-change-layoutRegister', -5.948812961578369],
+        ['pw-change-checkboxTOS', -0.003410808742046356],
+        ['pw-change-submitRegister', -6.350243091583252],
+        ['pw-change-pagePwReset', 14.926521301269531],
+        ['pw-change-formTextPwReset', 17.565319061279297],
+        ['pw-change-formAttrsPwReset', 3.5985429286956787],
+        ['pw-change-headingsPwReset', 16.212724685668945],
+        ['pw-change-layoutPwReset', 14.76191234588623],
+        ['pw-change-pageRecovery', -5.955225467681885],
+        ['pw-change-formTextRecovery', 0.05540119856595993],
+        ['pw-change-formAttrsRecovery', -6.080115795135498],
+        ['pw-change-headingsRecovery', -5.92818546295166],
+        ['pw-change-layoutRecovery', -4.114366054534912],
+        ['pw-change-identifierRecovery', -6.065794944763184],
+        ['pw-change-submitRecovery', -0.1478923261165619],
+        ['pw-change-formTextMFA', 0.026846863329410553],
+        ['pw-change-formAttrsMFA', -6.016178607940674],
+        ['pw-change-headingsMFA', -5.922895908355713],
+        ['pw-change-layoutMFA', -6.106553077697754],
+        ['pw-change-buttonVerify', -6.08502197265625],
+        ['pw-change-inputsMFA', -6.0908074378967285],
+        ['pw-change-inputsOTP', -5.918413162231445],
+        ['pw-change-linkOTPOutlier', -6.38299036026001],
+        ['pw-change-headingsNewsletter', -6.018196105957031],
+        ['pw-change-oneVisibleField', -5.975433349609375],
+        ['pw-change-buttonMultiStep', -6.016145706176758],
+        ['pw-change-buttonMultiAction', -6.022793769836426],
+        ['pw-change-headingsMultiStep', -6.070734024047852],
     ],
-    bias: -3.6722447872161865,
-    cutoff: 0.5,
+    bias: -3.5969865322113037,
+    cutoff: 1,
 };
 
 const passwordChange = {
@@ -1415,86 +1459,87 @@ const passwordChange = {
 
 const results$8 = {
     coeffs: [
-        ['register-fieldsCount', 13.343152046203613],
-        ['register-inputCount', 17.337535858154297],
-        ['register-fieldsetCount', 2.3487448692321777],
-        ['register-textCount', 12.24324893951416],
-        ['register-textareaCount', -25.92624282836914],
-        ['register-selectCount', -18.68935203552246],
-        ['register-checkboxCount', -6.4066033363342285],
-        ['register-radioCount', 0.10076580941677094],
-        ['register-numberCount', 85.44282531738281],
-        ['register-dateCount', 10.934198379516602],
-        ['register-identifierCount', 0.8385058045387268],
-        ['register-usernameCount', -28.782880783081055],
-        ['register-emailCount', 8.892221450805664],
-        ['register-submitCount', -11.243561744689941],
-        ['register-hasTels', -2.2388267517089844],
-        ['register-hasOAuth', 1.0798277854919434],
-        ['register-hasCaptchas', 0.42539912462234497],
-        ['register-hasFiles', -0.0891764685511589],
-        ['register-noPasswordFields', -6.003978729248047],
-        ['register-onePasswordField', -5.519132137298584],
-        ['register-twoPasswordFields', 11.8091402053833],
-        ['register-threePasswordFields', -6.294560432434082],
-        ['register-oneIdentifierField', 1.8404064178466797],
-        ['register-twoIdentifierFields', -3.048348903656006],
-        ['register-threeIdentifierFields', 10.589446067810059],
-        ['register-hasHiddenIdentifier', 2.2997641563415527],
-        ['register-hasHiddenPassword', 12.59987735748291],
-        ['register-autofocusedIsPassword', -7.375558853149414],
-        ['register-visibleRatio', 4.291874408721924],
-        ['register-inputRatio', -13.18767261505127],
-        ['register-hiddenRatio', -9.25424575805664],
-        ['register-identifierRatio', 23.75698471069336],
-        ['register-emailRatio', -10.341506958007812],
-        ['register-usernameRatio', -9.370831489562988],
-        ['register-passwordRatio', -5.358809947967529],
-        ['register-requiredRatio', -1.842968463897705],
-        ['register-patternRatio', -25.037324905395508],
-        ['register-minMaxLengthRatio', -11.127362251281738],
-        ['register-pageLogin', -12.830307006835938],
-        ['register-formTextLogin', -5.936242580413818],
-        ['register-formAttrsLogin', -4.9096903800964355],
-        ['register-headingsLogin', -12.199213981628418],
-        ['register-layoutLogin', -6.739439010620117],
-        ['register-rememberMeCheckbox', -6.317927837371826],
-        ['register-forgotPasswordLink', -3.2441277503967285],
-        ['register-submitLogin', 9.667183876037598],
-        ['register-pageRegister', -1.286247968673706],
-        ['register-formTextRegister', 0.00042350590229034424],
-        ['register-formAttrsRegister', 28.046281814575195],
-        ['register-headingsRegister', 1.7117606401443481],
-        ['register-layoutRegister', -2.3950321674346924],
-        ['register-checkboxTOS', -0.025266483426094055],
-        ['register-submitRegister', 22.36745262145996],
-        ['register-pagePwReset', -5.958786487579346],
-        ['register-formTextPwReset', -6.079314231872559],
-        ['register-formAttrsPwReset', -5.975668430328369],
-        ['register-headingsPwReset', -12.923192024230957],
-        ['register-layoutPwReset', -12.77873420715332],
-        ['register-pageRecovery', -18.22269058227539],
-        ['register-formTextRecovery', -0.05451924353837967],
-        ['register-formAttrsRecovery', -6.573225498199463],
-        ['register-headingsRecovery', 0.9492164254188538],
-        ['register-layoutRecovery', -7.209317207336426],
-        ['register-identifierRecovery', -21.369665145874023],
-        ['register-formTextMFA', 0.024462416768074036],
-        ['register-formAttrsMFA', 22.963871002197266],
-        ['register-headingsMFA', -21.953969955444336],
-        ['register-layoutMFA', -0.8874240517616272],
-        ['register-buttonVerify', -7.8735737800598145],
-        ['register-inputsMFA', -6.8583292961120605],
-        ['register-inputsOTP', -6.784276485443115],
-        ['register-resendCodeLink', -4.27416467666626],
-        ['register-headingsNewsletter', -7.064871788024902],
-        ['register-oneVisibleField', -5.808911323547363],
-        ['register-buttonMultiStep', 15.737870216369629],
-        ['register-buttonMultiAction', -14.943026542663574],
-        ['register-headingsMultiStep', 27.116470336914062],
+        ['register-fieldsCount', 11.282084465026855],
+        ['register-inputCount', 14.687705993652344],
+        ['register-fieldsetCount', 22.987438201904297],
+        ['register-textCount', -0.2162366360425949],
+        ['register-textareaCount', -16.63336753845215],
+        ['register-selectCount', -1.790864109992981],
+        ['register-checkboxCount', -6.169393539428711],
+        ['register-radioCount', 0.09554582089185715],
+        ['register-identifierCount', 6.563490390777588],
+        ['register-usernameCount', -25.375288009643555],
+        ['register-emailCount', 7.97906494140625],
+        ['register-submitCount', -13.030497550964355],
+        ['register-hasTels', 0.24407655000686646],
+        ['register-hasOAuth', 8.554906845092773],
+        ['register-hasCaptchas', 5.511801242828369],
+        ['register-hasFiles', 0.10989253968000412],
+        ['register-hasDate', 10.169535636901855],
+        ['register-hasNumber', 37.567630767822266],
+        ['register-noPasswordFields', -2.5255889892578125],
+        ['register-onePasswordField', -7.509350299835205],
+        ['register-twoPasswordFields', 15.804830551147461],
+        ['register-threePasswordFields', -6.176948070526123],
+        ['register-oneIdentifierField', 4.6386590003967285],
+        ['register-twoIdentifierFields', 7.633841037750244],
+        ['register-threeIdentifierFields', 10.622429847717285],
+        ['register-hasHiddenIdentifier', -3.459974527359009],
+        ['register-hasHiddenPassword', -12.574467658996582],
+        ['register-autofocusedIsPassword', -9.095739364624023],
+        ['register-visibleRatio', -3.230525016784668],
+        ['register-inputRatio', -14.234410285949707],
+        ['register-hiddenRatio', -4.789608478546143],
+        ['register-identifierRatio', 20.24660873413086],
+        ['register-emailRatio', 1.4622834920883179],
+        ['register-usernameRatio', -3.8162922859191895],
+        ['register-passwordRatio', 4.650871276855469],
+        ['register-requiredRatio', -10.991134643554688],
+        ['register-patternRatio', -11.352458000183105],
+        ['register-minMaxLengthRatio', -27.37080192565918],
+        ['register-pageLogin', -5.873645305633545],
+        ['register-formTextLogin', -6.123487949371338],
+        ['register-formAttrsLogin', -0.6479317545890808],
+        ['register-headingsLogin', -2.7781901359558105],
+        ['register-layoutLogin', 18.101913452148438],
+        ['register-rememberMeCheckbox', -6.258871555328369],
+        ['register-troubleLink', -22.40290641784668],
+        ['register-submitLogin', -12.873130798339844],
+        ['register-pageRegister', 7.645688056945801],
+        ['register-formTextRegister', -0.07909320294857025],
+        ['register-formAttrsRegister', 22.850252151489258],
+        ['register-headingsRegister', 3.918300151824951],
+        ['register-layoutRegister', -4.848937511444092],
+        ['register-checkboxTOS', -0.029715299606323242],
+        ['register-submitRegister', 23.650035858154297],
+        ['register-pagePwReset', -6.097225666046143],
+        ['register-formTextPwReset', -6.073191165924072],
+        ['register-formAttrsPwReset', -5.9074931144714355],
+        ['register-headingsPwReset', -14.573904991149902],
+        ['register-layoutPwReset', -12.843574523925781],
+        ['register-pageRecovery', -21.720232009887695],
+        ['register-formTextRecovery', -0.08847023546695709],
+        ['register-formAttrsRecovery', -6.500263214111328],
+        ['register-headingsRecovery', -1.242445468902588],
+        ['register-layoutRecovery', -7.768985271453857],
+        ['register-identifierRecovery', -28.476869583129883],
+        ['register-submitRecovery', -19.013381958007812],
+        ['register-formTextMFA', -0.0761568620800972],
+        ['register-formAttrsMFA', 3.9903011322021484],
+        ['register-headingsMFA', -18.553770065307617],
+        ['register-layoutMFA', -11.643977165222168],
+        ['register-buttonVerify', 12.93883991241455],
+        ['register-inputsMFA', -4.111865043640137],
+        ['register-inputsOTP', -11.286638259887695],
+        ['register-linkOTPOutlier', -7.409657955169678],
+        ['register-headingsNewsletter', -7.630524635314941],
+        ['register-oneVisibleField', -14.362093925476074],
+        ['register-buttonMultiStep', 14.839699745178223],
+        ['register-buttonMultiAction', -0.13765791058540344],
+        ['register-headingsMultiStep', 23.707460403442383],
     ],
-    bias: -4.374362468719482,
-    cutoff: 0.46,
+    bias: -2.837146043777466,
+    cutoff: 0.47,
 };
 
 const register = {
@@ -1526,86 +1571,87 @@ const register = {
 
 const results$7 = {
     coeffs: [
-        ['recovery-fieldsCount', -5.639328479766846],
-        ['recovery-inputCount', -10.57240104675293],
-        ['recovery-fieldsetCount', -5.0621657371521],
-        ['recovery-textCount', -2.013031244277954],
-        ['recovery-textareaCount', -34.53464889526367],
-        ['recovery-selectCount', -36.36069869995117],
-        ['recovery-checkboxCount', -6.02766752243042],
-        ['recovery-radioCount', 0.09997037053108215],
-        ['recovery-numberCount', -24.936372756958008],
-        ['recovery-dateCount', -6.074063301086426],
-        ['recovery-identifierCount', 5.024713516235352],
-        ['recovery-usernameCount', 4.2908759117126465],
-        ['recovery-emailCount', 6.993361949920654],
-        ['recovery-submitCount', 7.665010929107666],
-        ['recovery-hasTels', -29.99506378173828],
-        ['recovery-hasOAuth', -1.0394682884216309],
-        ['recovery-hasCaptchas', -1.847947120666504],
-        ['recovery-hasFiles', 0.04075264930725098],
-        ['recovery-noPasswordFields', 6.936614990234375],
-        ['recovery-onePasswordField', -28.374069213867188],
-        ['recovery-twoPasswordFields', -10.962580680847168],
-        ['recovery-threePasswordFields', -16.255123138427734],
-        ['recovery-oneIdentifierField', -1.7360219955444336],
-        ['recovery-twoIdentifierFields', 50.90019607543945],
-        ['recovery-threeIdentifierFields', -6.815282821655273],
-        ['recovery-hasHiddenIdentifier', 7.480515480041504],
-        ['recovery-hasHiddenPassword', -8.985162734985352],
-        ['recovery-autofocusedIsPassword', -6.007089614868164],
-        ['recovery-visibleRatio', 9.552793502807617],
-        ['recovery-inputRatio', -9.433279037475586],
-        ['recovery-hiddenRatio', 0.03318682685494423],
-        ['recovery-identifierRatio', 5.804194927215576],
-        ['recovery-emailRatio', -7.713128566741943],
-        ['recovery-usernameRatio', 27.810827255249023],
-        ['recovery-passwordRatio', -18.12267303466797],
-        ['recovery-requiredRatio', 1.0224742889404297],
-        ['recovery-patternRatio', -2.088003396987915],
-        ['recovery-minMaxLengthRatio', 3.8292768001556396],
-        ['recovery-pageLogin', -9.97810173034668],
-        ['recovery-formTextLogin', -6.792702674865723],
-        ['recovery-formAttrsLogin', 9.907411575317383],
-        ['recovery-headingsLogin', -31.066606521606445],
-        ['recovery-layoutLogin', -21.13511085510254],
-        ['recovery-rememberMeCheckbox', -5.926933765411377],
-        ['recovery-forgotPasswordLink', -0.3469432294368744],
-        ['recovery-submitLogin', -5.03236722946167],
-        ['recovery-pageRegister', -1.295222282409668],
-        ['recovery-formTextRegister', -0.03668537735939026],
-        ['recovery-formAttrsRegister', -47.606529235839844],
-        ['recovery-headingsRegister', -14.888420104980469],
-        ['recovery-layoutRegister', 5.302098751068115],
-        ['recovery-checkboxTOS', -0.05860123038291931],
-        ['recovery-submitRegister', -22.402799606323242],
-        ['recovery-pagePwReset', 7.009827136993408],
-        ['recovery-formTextPwReset', -8.366693496704102],
-        ['recovery-formAttrsPwReset', 10.38100814819336],
-        ['recovery-headingsPwReset', 15.35112190246582],
-        ['recovery-layoutPwReset', 1.7471604347229004],
-        ['recovery-pageRecovery', 12.615732192993164],
-        ['recovery-formTextRecovery', -0.10729535669088364],
-        ['recovery-formAttrsRecovery', 20.29033660888672],
-        ['recovery-headingsRecovery', -7.207647323608398],
-        ['recovery-layoutRecovery', 4.747048854827881],
-        ['recovery-identifierRecovery', 14.230246543884277],
-        ['recovery-formTextMFA', 0.11121855676174164],
-        ['recovery-formAttrsMFA', -10.48967170715332],
-        ['recovery-headingsMFA', -7.577956676483154],
-        ['recovery-layoutMFA', -6.007455348968506],
-        ['recovery-buttonVerify', -10.197675704956055],
-        ['recovery-inputsMFA', 6.201574325561523],
-        ['recovery-inputsOTP', 7.16232442855835],
-        ['recovery-resendCodeLink', 10.837098121643066],
-        ['recovery-headingsNewsletter', -15.638296127319336],
-        ['recovery-oneVisibleField', -6.879374980926514],
-        ['recovery-buttonMultiStep', 0.2514033317565918],
-        ['recovery-buttonMultiAction', -7.138760089874268],
-        ['recovery-headingsMultiStep', -6.097156047821045],
+        ['recovery-fieldsCount', -3.0747318267822266],
+        ['recovery-inputCount', -2.0332083702087402],
+        ['recovery-fieldsetCount', -2.6311562061309814],
+        ['recovery-textCount', 10.0709810256958],
+        ['recovery-textareaCount', -24.997394561767578],
+        ['recovery-selectCount', -9.072358131408691],
+        ['recovery-checkboxCount', -6.015049457550049],
+        ['recovery-radioCount', -0.0751713216304779],
+        ['recovery-identifierCount', 2.834695339202881],
+        ['recovery-usernameCount', 10.871198654174805],
+        ['recovery-emailCount', -0.15945588052272797],
+        ['recovery-submitCount', -5.6814117431640625],
+        ['recovery-hasTels', -10.160755157470703],
+        ['recovery-hasOAuth', -3.7920773029327393],
+        ['recovery-hasCaptchas', -3.4150607585906982],
+        ['recovery-hasFiles', -0.08692006766796112],
+        ['recovery-hasDate', -6.112490653991699],
+        ['recovery-hasNumber', -6.11478853225708],
+        ['recovery-noPasswordFields', -0.06368303298950195],
+        ['recovery-onePasswordField', -14.883543014526367],
+        ['recovery-twoPasswordFields', -10.345672607421875],
+        ['recovery-threePasswordFields', -14.311798095703125],
+        ['recovery-oneIdentifierField', 3.698190689086914],
+        ['recovery-twoIdentifierFields', -0.11286413669586182],
+        ['recovery-threeIdentifierFields', -6.06866455078125],
+        ['recovery-hasHiddenIdentifier', -3.393249988555908],
+        ['recovery-hasHiddenPassword', -18.371566772460938],
+        ['recovery-autofocusedIsPassword', -6.05092191696167],
+        ['recovery-visibleRatio', 1.9616905450820923],
+        ['recovery-inputRatio', -5.219287872314453],
+        ['recovery-hiddenRatio', 0.46513479948043823],
+        ['recovery-identifierRatio', 2.255013942718506],
+        ['recovery-emailRatio', 1.6035417318344116],
+        ['recovery-usernameRatio', 9.266218185424805],
+        ['recovery-passwordRatio', -13.520108222961426],
+        ['recovery-requiredRatio', 1.4953640699386597],
+        ['recovery-patternRatio', -1.062328577041626],
+        ['recovery-minMaxLengthRatio', 5.467397689819336],
+        ['recovery-pageLogin', -8.192980766296387],
+        ['recovery-formTextLogin', -5.963195323944092],
+        ['recovery-formAttrsLogin', 6.0328216552734375],
+        ['recovery-headingsLogin', -20.2265625],
+        ['recovery-layoutLogin', -2.974942445755005],
+        ['recovery-rememberMeCheckbox', -5.969943046569824],
+        ['recovery-troubleLink', 1.849001407623291],
+        ['recovery-submitLogin', -7.318366527557373],
+        ['recovery-pageRegister', -1.8901734352111816],
+        ['recovery-formTextRegister', 0.07175172120332718],
+        ['recovery-formAttrsRegister', -8.671180725097656],
+        ['recovery-headingsRegister', -6.971611022949219],
+        ['recovery-layoutRegister', -6.807265758514404],
+        ['recovery-checkboxTOS', 0.021614961326122284],
+        ['recovery-submitRegister', -6.391221523284912],
+        ['recovery-pagePwReset', 6.416824817657471],
+        ['recovery-formTextPwReset', -6.398834705352783],
+        ['recovery-formAttrsPwReset', 10.405288696289062],
+        ['recovery-headingsPwReset', 15.125134468078613],
+        ['recovery-layoutPwReset', 4.144068241119385],
+        ['recovery-pageRecovery', 13.441568374633789],
+        ['recovery-formTextRecovery', -0.10577098280191422],
+        ['recovery-formAttrsRecovery', 20.93470001220703],
+        ['recovery-headingsRecovery', -1.4069744348526],
+        ['recovery-layoutRecovery', -6.869775295257568],
+        ['recovery-identifierRecovery', 17.873777389526367],
+        ['recovery-submitRecovery', 11.995598793029785],
+        ['recovery-formTextMFA', 0.053437553346157074],
+        ['recovery-formAttrsMFA', 4.769952297210693],
+        ['recovery-headingsMFA', -1.2890722751617432],
+        ['recovery-layoutMFA', -7.758359909057617],
+        ['recovery-buttonVerify', -4.111840724945068],
+        ['recovery-inputsMFA', 0.8737132549285889],
+        ['recovery-inputsOTP', -5.519907474517822],
+        ['recovery-linkOTPOutlier', -1.5414221286773682],
+        ['recovery-headingsNewsletter', -15.33027172088623],
+        ['recovery-oneVisibleField', -5.196345806121826],
+        ['recovery-buttonMultiStep', 3.3741836547851562],
+        ['recovery-buttonMultiAction', -6.073152542114258],
+        ['recovery-headingsMultiStep', -6.0252885818481445],
     ],
-    bias: -5.394819736480713,
-    cutoff: 0.43,
+    bias: -6.887614727020264,
+    cutoff: 0.49,
 };
 
 const recovery = {
@@ -1637,85 +1683,86 @@ const recovery = {
 
 const results$6 = {
     coeffs: [
-        ['mfa-fieldsCount', -5.3963446617126465],
-        ['mfa-inputCount', -5.773000717163086],
-        ['mfa-fieldsetCount', 3.111668825149536],
-        ['mfa-textCount', -1.5857208967208862],
-        ['mfa-textareaCount', -5.931211948394775],
-        ['mfa-selectCount', -6.129189491271973],
-        ['mfa-checkboxCount', -6.101649284362793],
-        ['mfa-radioCount', 0.07461796700954437],
-        ['mfa-numberCount', 11.478711128234863],
-        ['mfa-dateCount', -5.991722106933594],
-        ['mfa-identifierCount', -4.763998031616211],
-        ['mfa-usernameCount', -4.416464805603027],
-        ['mfa-emailCount', -6.673878192901611],
-        ['mfa-submitCount', -3.7627336978912354],
-        ['mfa-hasTels', 11.317543983459473],
-        ['mfa-hasOAuth', -8.040121078491211],
-        ['mfa-hasCaptchas', -2.405900478363037],
-        ['mfa-hasFiles', -0.031049251556396484],
-        ['mfa-noPasswordFields', -1.767043113708496],
-        ['mfa-onePasswordField', -5.673418998718262],
-        ['mfa-twoPasswordFields', -10.347412109375],
-        ['mfa-threePasswordFields', -6.063809394836426],
-        ['mfa-oneIdentifierField', -4.32252311706543],
-        ['mfa-twoIdentifierFields', -5.9618449211120605],
-        ['mfa-threeIdentifierFields', -6.016897201538086],
-        ['mfa-hasHiddenIdentifier', -4.230257511138916],
-        ['mfa-hasHiddenPassword', -2.1172916889190674],
-        ['mfa-autofocusedIsPassword', 10.103333473205566],
-        ['mfa-visibleRatio', -1.962661862373352],
-        ['mfa-inputRatio', -3.4439780712127686],
-        ['mfa-hiddenRatio', 1.6247432231903076],
-        ['mfa-identifierRatio', -4.943841934204102],
-        ['mfa-emailRatio', -6.751940727233887],
-        ['mfa-usernameRatio', -5.461555004119873],
-        ['mfa-passwordRatio', -6.33045768737793],
-        ['mfa-requiredRatio', 9.790099143981934],
-        ['mfa-patternRatio', 9.927971839904785],
-        ['mfa-minMaxLengthRatio', 3.325836658477783],
-        ['mfa-pageLogin', 3.1094565391540527],
-        ['mfa-formTextLogin', -6.000452518463135],
-        ['mfa-formAttrsLogin', -2.805757761001587],
-        ['mfa-headingsLogin', -5.100520610809326],
-        ['mfa-layoutLogin', 0.03477193042635918],
-        ['mfa-rememberMeCheckbox', -6.020193099975586],
-        ['mfa-forgotPasswordLink', -3.8386728763580322],
-        ['mfa-submitLogin', -0.8485673069953918],
-        ['mfa-pageRegister', -3.3758037090301514],
-        ['mfa-formTextRegister', 0.10111488401889801],
-        ['mfa-formAttrsRegister', -4.03633975982666],
-        ['mfa-headingsRegister', -7.200264930725098],
-        ['mfa-layoutRegister', -5.531296730041504],
-        ['mfa-checkboxTOS', 0.06319887936115265],
-        ['mfa-submitRegister', -5.915077209472656],
-        ['mfa-pagePwReset', -5.995474338531494],
-        ['mfa-formTextPwReset', -6.055372714996338],
-        ['mfa-formAttrsPwReset', -5.979822635650635],
-        ['mfa-headingsPwReset', -5.9380598068237305],
-        ['mfa-layoutPwReset', -5.904242038726807],
-        ['mfa-pageRecovery', 5.045206069946289],
-        ['mfa-formTextRecovery', -0.0998808816075325],
-        ['mfa-formAttrsRecovery', -8.92457389831543],
-        ['mfa-headingsRecovery', -8.167948722839355],
-        ['mfa-layoutRecovery', 2.867659568786621],
-        ['mfa-identifierRecovery', -6.0129170417785645],
-        ['mfa-formTextMFA', -0.08621951937675476],
-        ['mfa-formAttrsMFA', 12.906257629394531],
-        ['mfa-headingsMFA', 15.908140182495117],
-        ['mfa-layoutMFA', 11.50881576538086],
-        ['mfa-buttonVerify', 13.524858474731445],
-        ['mfa-inputsMFA', 15.911322593688965],
-        ['mfa-inputsOTP', 16.972309112548828],
-        ['mfa-resendCodeLink', -4.783702850341797],
-        ['mfa-headingsNewsletter', -6.070125579833984],
-        ['mfa-oneVisibleField', 2.1248886585235596],
-        ['mfa-buttonMultiStep', 0.861239492893219],
-        ['mfa-buttonMultiAction', -6.1097893714904785],
-        ['mfa-headingsMultiStep', 8.071209907531738],
+        ['mfa-fieldsCount', -4.662794589996338],
+        ['mfa-inputCount', -5.114567756652832],
+        ['mfa-fieldsetCount', -0.10050619393587112],
+        ['mfa-textCount', -1.8859272003173828],
+        ['mfa-textareaCount', -7.181272029876709],
+        ['mfa-selectCount', -6.203393936157227],
+        ['mfa-checkboxCount', -5.945295810699463],
+        ['mfa-radioCount', -0.10152518004179001],
+        ['mfa-identifierCount', -4.488280773162842],
+        ['mfa-usernameCount', -4.919476509094238],
+        ['mfa-emailCount', -6.681553363800049],
+        ['mfa-submitCount', -0.9014309048652649],
+        ['mfa-hasTels', 10.599649429321289],
+        ['mfa-hasOAuth', -8.149758338928223],
+        ['mfa-hasCaptchas', -0.9372420310974121],
+        ['mfa-hasFiles', -0.06334962695837021],
+        ['mfa-hasDate', -6.07049560546875],
+        ['mfa-hasNumber', 7.405060768127441],
+        ['mfa-noPasswordFields', 0.24385643005371094],
+        ['mfa-onePasswordField', -5.958454132080078],
+        ['mfa-twoPasswordFields', -8.247978210449219],
+        ['mfa-threePasswordFields', -6.1115570068359375],
+        ['mfa-oneIdentifierField', -4.377863883972168],
+        ['mfa-twoIdentifierFields', -5.937980651855469],
+        ['mfa-threeIdentifierFields', -6.0749640464782715],
+        ['mfa-hasHiddenIdentifier', -5.513402462005615],
+        ['mfa-hasHiddenPassword', -2.2600159645080566],
+        ['mfa-autofocusedIsPassword', 7.849817752838135],
+        ['mfa-visibleRatio', -4.526566505432129],
+        ['mfa-inputRatio', -2.638864517211914],
+        ['mfa-hiddenRatio', 1.7874165773391724],
+        ['mfa-identifierRatio', -4.420638561248779],
+        ['mfa-emailRatio', -6.414320468902588],
+        ['mfa-usernameRatio', -5.786078453063965],
+        ['mfa-passwordRatio', -5.270896911621094],
+        ['mfa-requiredRatio', 8.411846160888672],
+        ['mfa-patternRatio', 9.386419296264648],
+        ['mfa-minMaxLengthRatio', 3.478586435317993],
+        ['mfa-pageLogin', 4.617283821105957],
+        ['mfa-formTextLogin', -5.988003253936768],
+        ['mfa-formAttrsLogin', -3.331435203552246],
+        ['mfa-headingsLogin', -4.51909875869751],
+        ['mfa-layoutLogin', -0.8999682664871216],
+        ['mfa-rememberMeCheckbox', -6.112429618835449],
+        ['mfa-troubleLink', -6.170429229736328],
+        ['mfa-submitLogin', 0.007656761910766363],
+        ['mfa-pageRegister', -4.634424686431885],
+        ['mfa-formTextRegister', -0.04245511442422867],
+        ['mfa-formAttrsRegister', -4.166624546051025],
+        ['mfa-headingsRegister', -7.772249698638916],
+        ['mfa-layoutRegister', -6.101711750030518],
+        ['mfa-checkboxTOS', -0.06375816464424133],
+        ['mfa-submitRegister', -5.975091457366943],
+        ['mfa-pagePwReset', -6.094069004058838],
+        ['mfa-formTextPwReset', -5.942159652709961],
+        ['mfa-formAttrsPwReset', -6.113146781921387],
+        ['mfa-headingsPwReset', -6.083134651184082],
+        ['mfa-layoutPwReset', -5.9941253662109375],
+        ['mfa-pageRecovery', 0.5845456719398499],
+        ['mfa-formTextRecovery', 0.09717219322919846],
+        ['mfa-formAttrsRecovery', -6.3966827392578125],
+        ['mfa-headingsRecovery', -7.837586879730225],
+        ['mfa-layoutRecovery', 2.1530213356018066],
+        ['mfa-identifierRecovery', -5.906558036804199],
+        ['mfa-submitRecovery', -2.7973034381866455],
+        ['mfa-formTextMFA', 0.02702450007200241],
+        ['mfa-formAttrsMFA', 13.792418479919434],
+        ['mfa-headingsMFA', 16.47391700744629],
+        ['mfa-layoutMFA', 11.801834106445312],
+        ['mfa-buttonVerify', 15.340712547302246],
+        ['mfa-inputsMFA', 15.785122871398926],
+        ['mfa-inputsOTP', 17.240211486816406],
+        ['mfa-linkOTPOutlier', -3.30935001373291],
+        ['mfa-headingsNewsletter', -5.897129058837891],
+        ['mfa-oneVisibleField', -1.102340579032898],
+        ['mfa-buttonMultiStep', 2.1994547843933105],
+        ['mfa-buttonMultiAction', -6.084924697875977],
+        ['mfa-headingsMultiStep', 7.877044200897217],
     ],
-    bias: -4.188539505004883,
+    bias: -3.140923261642456,
     cutoff: 0.5,
 };
 
@@ -1748,38 +1795,38 @@ const mfa = {
 
 const results$5 = {
     coeffs: [
-        ['pw-loginScore', 10.14507007598877],
-        ['pw-registerScore', -12.711796760559082],
-        ['pw-pwChangeScore', -5.596028804779053],
-        ['pw-exotic', -13.280001640319824],
-        ['pw-dangling', -0.1193644106388092],
-        ['pw-autocompleteNew', -2.2377357482910156],
-        ['pw-autocompleteCurrent', 6.314162731170654],
-        ['pw-autocompleteOff', -1.0629616975784302],
-        ['pw-isOnlyPassword', 3.3061108589172363],
-        ['pw-prevPwField', -0.09304677695035934],
-        ['pw-nextPwField', -2.4872100353240967],
-        ['pw-attrCreate', -0.13387499749660492],
-        ['pw-attrCurrent', 0.6545353531837463],
-        ['pw-attrConfirm', -6.905930519104004],
-        ['pw-attrReset', 0.0647793561220169],
-        ['pw-textCreate', -2.084848642349243],
-        ['pw-textCurrent', 6.1332526206970215],
-        ['pw-textConfirm', -6.6669158935546875],
-        ['pw-textReset', 0.10793188214302063],
-        ['pw-labelCreate', -7.713014125823975],
-        ['pw-labelCurrent', 12.030521392822266],
-        ['pw-labelConfirm', -7.098013401031494],
-        ['pw-labelReset', 0.11254638433456421],
-        ['pw-prevPwCreate', -7.246194839477539],
-        ['pw-prevPwCurrent', -9.093914031982422],
-        ['pw-prevPwConfirm', -0.09367222338914871],
-        ['pw-passwordOutlier', -7.139437675476074],
-        ['pw-nextPwCreate', 6.854938983917236],
-        ['pw-nextPwCurrent', 0.1441967785358429],
-        ['pw-nextPwConfirm', -7.5345778465271],
+        ['pw-loginScore', 12.178109169006348],
+        ['pw-registerScore', -14.095705032348633],
+        ['pw-pwChangeScore', -6.132966995239258],
+        ['pw-exotic', -14.301056861877441],
+        ['pw-dangling', -0.14651234447956085],
+        ['pw-autocompleteNew', -11.587163925170898],
+        ['pw-autocompleteCurrent', 6.1515793800354],
+        ['pw-autocompleteOff', -2.7686562538146973],
+        ['pw-isOnlyPassword', 4.763198375701904],
+        ['pw-prevPwField', 1.1434913873672485],
+        ['pw-nextPwField', -3.160039186477661],
+        ['pw-attrCreate', -11.656277656555176],
+        ['pw-attrCurrent', 2.0990264415740967],
+        ['pw-attrConfirm', -6.049380779266357],
+        ['pw-attrReset', 0.05293630063533783],
+        ['pw-textCreate', 0.5916808843612671],
+        ['pw-textCurrent', 6.4163737297058105],
+        ['pw-textConfirm', -6.401777744293213],
+        ['pw-textReset', 0.14726197719573975],
+        ['pw-labelCreate', -6.4071736335754395],
+        ['pw-labelCurrent', 8.018753051757812],
+        ['pw-labelConfirm', -6.372302055358887],
+        ['pw-labelReset', -0.09430480748414993],
+        ['pw-prevPwCreate', -6.256430149078369],
+        ['pw-prevPwCurrent', -6.377983093261719],
+        ['pw-prevPwConfirm', 0.10989898443222046],
+        ['pw-passwordOutlier', -6.25407075881958],
+        ['pw-nextPwCreate', 12.501424789428711],
+        ['pw-nextPwCurrent', 0.06942015886306763],
+        ['pw-nextPwConfirm', -6.3712544441223145],
     ],
-    bias: 0.43143919110298157,
+    bias: -0.009191801771521568,
     cutoff: 0.5,
 };
 
@@ -1812,38 +1859,38 @@ const password = {
 
 const results$4 = {
     coeffs: [
-        ['pw[new]-loginScore', -10.218412399291992],
-        ['pw[new]-registerScore', 11.943436622619629],
-        ['pw[new]-pwChangeScore', 6.565498352050781],
-        ['pw[new]-exotic', 12.633193969726562],
-        ['pw[new]-dangling', 0.14877551794052124],
-        ['pw[new]-autocompleteNew', 0.8915178775787354],
-        ['pw[new]-autocompleteCurrent', -6.123122215270996],
-        ['pw[new]-autocompleteOff', 1.0024467706680298],
-        ['pw[new]-isOnlyPassword', -3.0612099170684814],
-        ['pw[new]-prevPwField', 0.361336350440979],
-        ['pw[new]-nextPwField', 1.3231925964355469],
-        ['pw[new]-attrCreate', 0.6708462834358215],
-        ['pw[new]-attrCurrent', -0.0334225594997406],
-        ['pw[new]-attrConfirm', 6.742785453796387],
-        ['pw[new]-attrReset', -0.06295125186443329],
-        ['pw[new]-textCreate', 1.353245735168457],
-        ['pw[new]-textCurrent', -6.192720413208008],
-        ['pw[new]-textConfirm', 6.87710428237915],
-        ['pw[new]-textReset', -0.122658371925354],
-        ['pw[new]-labelCreate', 7.587530136108398],
-        ['pw[new]-labelCurrent', -11.40334415435791],
-        ['pw[new]-labelConfirm', 7.295851230621338],
-        ['pw[new]-labelReset', 0.1287577748298645],
-        ['pw[new]-prevPwCreate', 7.2578325271606445],
-        ['pw[new]-prevPwCurrent', 9.196670532226562],
-        ['pw[new]-prevPwConfirm', 0.011655017733573914],
-        ['pw[new]-passwordOutlier', -21.861961364746094],
-        ['pw[new]-nextPwCreate', -7.66196870803833],
-        ['pw[new]-nextPwCurrent', -0.029070287942886353],
-        ['pw[new]-nextPwConfirm', 7.534054279327393],
+        ['pw[new]-loginScore', -13.321765899658203],
+        ['pw[new]-registerScore', 13.806652069091797],
+        ['pw[new]-pwChangeScore', 5.898824691772461],
+        ['pw[new]-exotic', 14.392525672912598],
+        ['pw[new]-dangling', 0.008950293064117432],
+        ['pw[new]-autocompleteNew', 11.933807373046875],
+        ['pw[new]-autocompleteCurrent', -6.093362331390381],
+        ['pw[new]-autocompleteOff', 0.18198005855083466],
+        ['pw[new]-isOnlyPassword', -2.4956023693084717],
+        ['pw[new]-prevPwField', -1.3099901676177979],
+        ['pw[new]-nextPwField', 10.230724334716797],
+        ['pw[new]-attrCreate', 12.553438186645508],
+        ['pw[new]-attrCurrent', -4.011382102966309],
+        ['pw[new]-attrConfirm', 7.036166191101074],
+        ['pw[new]-attrReset', -0.13715289533138275],
+        ['pw[new]-textCreate', -0.41179969906806946],
+        ['pw[new]-textCurrent', -6.273018836975098],
+        ['pw[new]-textConfirm', -15.34473705291748],
+        ['pw[new]-textReset', 0.04498608410358429],
+        ['pw[new]-labelCreate', 7.321496486663818],
+        ['pw[new]-labelCurrent', -10.205763816833496],
+        ['pw[new]-labelConfirm', 7.329835891723633],
+        ['pw[new]-labelReset', -0.06805771589279175],
+        ['pw[new]-prevPwCreate', 7.48891544342041],
+        ['pw[new]-prevPwCurrent', 7.066701412200928],
+        ['pw[new]-prevPwConfirm', -0.11096484959125519],
+        ['pw[new]-passwordOutlier', -37.003944396972656],
+        ['pw[new]-nextPwCreate', -13.286042213439941],
+        ['pw[new]-nextPwCurrent', 0.135016530752182],
+        ['pw[new]-nextPwConfirm', 7.2611775398254395],
     ],
-    bias: 0.1220318078994751,
+    bias: -2.2122888565063477,
     cutoff: 0.5,
 };
 
@@ -1876,16 +1923,17 @@ const newPassword = {
 
 const results$3 = {
     coeffs: [
-        ['username-autocompleteUsername', 8.181819915771484],
-        ['username-autocompleteNickname', 0.10874947905540466],
-        ['username-autocompleteEmail', -7.459709167480469],
-        ['username-autocompleteOff', -0.4489579200744629],
-        ['username-attrUsername', 18.483386993408203],
-        ['username-textUsername', 16.186132431030273],
-        ['username-labelUsername', 18.06991195678711],
-        ['username-loginUsername', 18.77256202697754],
+        ['username-autocompleteUsername', 9.536059379577637],
+        ['username-autocompleteNickname', 0.16075658798217773],
+        ['username-autocompleteEmail', -7.597077369689941],
+        ['username-autocompleteOff', -0.06411032378673553],
+        ['username-attrUsername', 18.593822479248047],
+        ['username-textUsername', 9.375120162963867],
+        ['username-labelUsername', 18.183473587036133],
+        ['username-outlierUsername', -13.987862586975098],
+        ['username-loginUsername', 17.73921012878418],
     ],
-    bias: -9.841402053833008,
+    bias: -9.912384986877441,
     cutoff: 0.5,
 };
 
@@ -1918,20 +1966,20 @@ const username = {
 
 const results$2 = {
     coeffs: [
-        ['username[hidden]-loginScore', 10.868368148803711],
-        ['username[hidden]-registerScore', 10.535981178283691],
-        ['username[hidden]-exotic', -8.105413436889648],
-        ['username[hidden]-dangling', -0.06688551604747772],
-        ['username[hidden]-attrUsername', 6.612347602844238],
-        ['username[hidden]-attrEmail', 5.918229103088379],
-        ['username[hidden]-usernameName', 6.316352367401123],
-        ['username[hidden]-autocompleteUsername', -0.5038196444511414],
-        ['username[hidden]-hiddenEmailValue', 7.631900787353516],
-        ['username[hidden]-hiddenTelValue', 2.812868356704712],
-        ['username[hidden]-hiddenUsernameValue', 0.9087152481079102],
+        ['username[hidden]-loginScore', 11.047222137451172],
+        ['username[hidden]-registerScore', 10.807485580444336],
+        ['username[hidden]-exotic', -8.083232879638672],
+        ['username[hidden]-dangling', -0.00613674521446228],
+        ['username[hidden]-attrUsername', 6.542288780212402],
+        ['username[hidden]-attrEmail', 5.85617208480835],
+        ['username[hidden]-usernameName', 6.071572780609131],
+        ['username[hidden]-autocompleteUsername', -0.08764085918664932],
+        ['username[hidden]-hiddenEmailValue', 7.754116058349609],
+        ['username[hidden]-hiddenTelValue', 2.8544352054595947],
+        ['username[hidden]-hiddenUsernameValue', 0.7577137351036072],
     ],
-    bias: -21.257564544677734,
-    cutoff: 0.54,
+    bias: -21.466867446899414,
+    cutoff: 0.55,
 };
 
 const usernameHidden = {
@@ -1964,17 +2012,19 @@ const usernameHidden = {
 
 const results$1 = {
     coeffs: [
-        ['email-autocompleteUsername', 1.4315110445022583],
-        ['email-autocompleteNickname', 0.25205889344215393],
-        ['email-autocompleteEmail', 5.862986087799072],
-        ['email-typeEmail', 14.91819953918457],
-        ['email-exactAttrEmail', 13.038369178771973],
-        ['email-attrEmail', 2.4801347255706787],
-        ['email-textEmail', 14.73228931427002],
-        ['email-labelEmail', 16.833234786987305],
-        ['email-placeholderEmail', 15.638352394104004],
+        ['email-autocompleteUsername', 1.2121766805648804],
+        ['email-autocompleteNickname', 0.04257044196128845],
+        ['email-autocompleteEmail', 6.312808990478516],
+        ['email-typeEmail', 14.496212005615234],
+        ['email-exactAttrEmail', 12.917569160461426],
+        ['email-attrEmail', 2.142514705657959],
+        ['email-textEmail', 14.224098205566406],
+        ['email-labelEmail', 16.374858856201172],
+        ['email-placeholderEmail', 15.077966690063477],
+        ['email-attrSearch', -13.625563621520996],
+        ['email-textSearch', -13.511505126953125],
     ],
-    bias: -9.438616752624512,
+    bias: -8.996057510375977,
     cutoff: 0.5,
 };
 
@@ -2007,43 +2057,43 @@ const email = {
 
 const results = {
     coeffs: [
-        ['otp-mfaScore', 16.28673553466797],
-        ['otp-exotic', -6.943380355834961],
-        ['otp-dangling', 0.07477757334709167],
-        ['otp-resendCodeLink', 1.1692255735397339],
-        ['otp-hidden', -0.07370482385158539],
-        ['otp-required', -0.9294764995574951],
-        ['otp-nameMatch', -0.35079461336135864],
-        ['otp-idMatch', 9.75482177734375],
-        ['otp-numericMode', 6.849776268005371],
-        ['otp-autofocused', 1.806933045387268],
-        ['otp-tabIndex1', 0.08625902980566025],
-        ['otp-patternOTP', 1.6669871807098389],
-        ['otp-maxLength1', 8.129728317260742],
-        ['otp-maxLength5', -10.74342155456543],
-        ['otp-minLength6', 12.81314754486084],
-        ['otp-maxLength6', 11.431878089904785],
-        ['otp-maxLength20', -5.533042907714844],
-        ['otp-autocompleteOTC', -0.11502237617969513],
-        ['otp-autocompleteOff', -6.802911758422852],
-        ['otp-prevAligned', 0.37140440940856934],
-        ['otp-prevArea', 5.309630870819092],
-        ['otp-nextAligned', 0.12309494614601135],
-        ['otp-nextArea', 3.7737324237823486],
-        ['otp-attrMFA', 7.918093204498291],
-        ['otp-attrOTP', 8.869974136352539],
-        ['otp-attrOutlier', -6.947255611419678],
-        ['otp-textMFA', 8.410258293151855],
-        ['otp-textOTP', -4.918187618255615],
-        ['otp-textOutlier', -7.734053611755371],
-        ['otp-labelMFA', 13.8911771774292],
-        ['otp-labelOTP', 0.12830251455307007],
-        ['otp-labelOutlier', -6.476819038391113],
-        ['otp-wrapperMFA', -12.718299865722656],
-        ['otp-wrapperOTP', -4.203332901000977],
-        ['otp-wrapperOutlier', -6.11140775680542],
+        ['otp-mfaScore', 17.42131233215332],
+        ['otp-exotic', -7.255556106567383],
+        ['otp-dangling', -0.013268426060676575],
+        ['otp-linkOTPOutlier', -12.831746101379395],
+        ['otp-hasCheckboxes', -0.035425469279289246],
+        ['otp-hidden', -9.941300392150879],
+        ['otp-required', 0.7347698211669922],
+        ['otp-nameMatch', -8.328723907470703],
+        ['otp-idMatch', 6.1679463386535645],
+        ['otp-numericMode', 11.20386791229248],
+        ['otp-autofocused', 6.813513278961182],
+        ['otp-tabIndex1', -0.6160632967948914],
+        ['otp-patternOTP', 2.628904342651367],
+        ['otp-maxLength1', 6.948922157287598],
+        ['otp-maxLength5', -6.796201705932617],
+        ['otp-minLength6', 16.08449363708496],
+        ['otp-maxLength6', 6.503772735595703],
+        ['otp-maxLength20', -5.617790222167969],
+        ['otp-autocompleteOTC', 0.0050736963748931885],
+        ['otp-autocompleteOff', -5.842536449432373],
+        ['otp-prevAligned', 0.2123163640499115],
+        ['otp-prevArea', 3.1000075340270996],
+        ['otp-nextAligned', -0.06178431212902069],
+        ['otp-nextArea', 3.473310708999634],
+        ['otp-attrMFA', 6.85906457901001],
+        ['otp-attrOTP', 10.389937400817871],
+        ['otp-attrOutlier', -7.948760032653809],
+        ['otp-textMFA', 6.867547512054443],
+        ['otp-textOTP', 9.015040397644043],
+        ['otp-labelMFA', 13.32413387298584],
+        ['otp-labelOTP', -6.824984073638916],
+        ['otp-labelOutlier', -6.5276360511779785],
+        ['otp-wrapperOTP', 5.492493629455566],
+        ['otp-wrapperOutlier', -6.292667865753174],
+        ['otp-emailOutlierCount', -20.55013656616211],
     ],
-    bias: -10.04808235168457,
+    bias: -12.832666397094727,
     cutoff: 0.5,
 };
 
@@ -2088,7 +2138,7 @@ const getCommonAncestor = (elementA, elementB) => {
 const getFormLikeClusters = (doc) => {
     const forms = Array.from(doc.querySelectorAll('form'));
     const groups = Array.from(doc.querySelectorAll(clusterSelector)).filter(
-        (el) => el.querySelectorAll(editableFieldSelector).length > 0
+        (el) => el !== document.body && el.querySelectorAll(editableFieldSelector).length > 0
     );
     const filterFormEls = (els) => els.filter((el) => !forms.some((form) => form.contains(el)) && isVisibleField(el));
     const fields = filterFormEls(Array.from(doc.querySelectorAll(fieldSelector)));
