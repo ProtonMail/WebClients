@@ -59,21 +59,21 @@ describe('multi user upload csv.ts', () => {
                 );
             });
 
-            it('throws error if there are > 500 rows', async () => {
-                const rows = Array.from({ length: 501 }, () => defaultUser);
+            it('throws error if there are > 750 rows', async () => {
+                const rows = Array.from({ length: 751 }, () => defaultUser);
                 const file = getFile(getSampleCSV(rows));
 
                 await expect(parseMultiUserCsv([file])).rejects.toThrowError(
-                    'Upload a CSV file with 500 user accounts or less.'
+                    'Upload a CSV file with 750 user accounts or less.'
                 );
             });
 
-            it('does not throw error if there are <= 500 rows', async () => {
-                const rows = Array.from({ length: 500 }, () => defaultUser);
+            it('does not throw error if there are <= 750 rows', async () => {
+                const rows = Array.from({ length: 750 }, () => defaultUser);
                 const file = getFile(getSampleCSV(rows));
 
                 await expect(parseMultiUserCsv([file])).resolves.not.toThrowError(
-                    'Upload a CSV file with 500 user accounts or less.'
+                    'Upload a CSV file with 750 user accounts or less.'
                 );
             });
 
