@@ -124,7 +124,7 @@ const DataRecoverySection = () => {
 
                         <SettingsLayout>
                             <SettingsLayoutLeft>
-                                <label className="pt-0 mb-2 md:mb-0 text-semibold" htmlFor="mnemonic-phrase-toggle">
+                                <label className="pt-0 mb-2 md:mb-0 text-semibold" htmlFor="mnemonicToggle">
                                     <span className="mr-2">{c('label').t`Recovery phrase`}</span>
                                     <Info
                                         title={c('Info')
@@ -186,7 +186,7 @@ const DataRecoverySection = () => {
                         {trustedDeviceRecoveryFeature.feature?.Value && (
                             <SettingsLayout>
                                 <SettingsLayoutLeft>
-                                    <label className="pt-0 mb-2 md:mb-0 text-semibold" htmlFor="device-recovery-toggle">
+                                    <label className="pt-0 mb-2 md:mb-0 text-semibold" htmlFor="deviceRecoveryToggle">
                                         <span className="mr-2">{c('label').t`Trusted device recovery`}</span>
                                         <Info
                                             title={c('Info')
@@ -218,13 +218,13 @@ const DataRecoverySection = () => {
                         )}
                         <SettingsLayout>
                             <SettingsLayoutLeft>
-                                <label className="pt-0 mb-2 md:mb-0 text-semibold" htmlFor="recoveryFile">
+                                <span className="pt-0 mb-2 md:mb-0 text-semibold">
                                     <span className="mr-2">{c('Title').t`Recovery file`}</span>
                                     <Info
                                         title={c('Info')
                                             .t`A recovery file lets you unlock and view your data after an account reset`}
                                     />
-                                </label>
+                                </span>
                             </SettingsLayoutLeft>
                             <SettingsLayoutRight>
                                 <ExportRecoveryFileButton className="block" color="norm">
