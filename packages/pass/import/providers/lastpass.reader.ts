@@ -31,7 +31,7 @@ const processLoginItem = (item: LastPassItem): ItemImportIntent<'login'> =>
         username: item.username,
         password: item.password,
         urls: [item.url],
-        totps: [item.totp],
+        totp: item.totp,
     });
 
 const processNoteItem = (item: LastPassItem): ItemImportIntent<'note'> =>

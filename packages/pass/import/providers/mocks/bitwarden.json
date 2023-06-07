@@ -11,6 +11,20 @@
             "name": "LoginItemMultipleWebsites",
             "notes": "login note",
             "favorite": false,
+            "fields": [
+                {
+                    "name": "Text 1",
+                    "value": "Text 1 content",
+                    "type": 0,
+                    "linkedId": null
+                },
+                {
+                    "name": "Hidden 1",
+                    "value": "Hidden 1 content",
+                    "type": 1,
+                    "linkedId": null
+                }
+            ],
             "login": {
                 "uris": [
                     {

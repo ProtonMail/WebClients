@@ -40,7 +40,7 @@ export const readSafariData = async (data: string): Promise<ImportPayload> => {
                                 username: item.Username,
                                 password: item.Password,
                                 urls: [item.URL],
-                                totps: [item.OTPAuth],
+                                totp: item.OTPAuth,
                             })
                     ),
                 },
