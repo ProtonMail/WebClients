@@ -12,6 +12,7 @@ import bannerImage2x from './upsell_mail-plus-free-trial@2x.png';
 const config: OfferConfig = {
     ID: 'summer-2023',
     featureCode: FeatureCode.OfferSummer2023,
+    autoPopUp: 'one-time',
     deals: [
         {
             ref: 'TODO',
@@ -63,8 +64,6 @@ const config: OfferConfig = {
         },
     ],
     layout: Layout,
-    getCTAContent: () => c('Action').t`Upgrade`,
-    shapeButton: 'outline',
     images: {
         bannerImage,
         bannerImage2x,
