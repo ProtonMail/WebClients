@@ -38,7 +38,7 @@ const processLoginItem = (item: DashlaneLoginItem): ItemImportIntent<'login'> =>
         username: item.username,
         password: item.password,
         urls: [item.url],
-        totps: [item.otpSecret],
+        totp: item.otpSecret,
     });
 
 const processNoteItem = (item: DashlaneNoteItem): ItemImportIntent<'note'> =>

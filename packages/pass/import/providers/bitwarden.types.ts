@@ -7,7 +7,18 @@ export enum BitwardenType {
     IDENTITY = 4,
 }
 
-type BitwardenBaseItem = { name: string; notes: MaybeNull<string> };
+export enum BitwardenCustomFieldType {
+    TEXT = 0,
+    HIDDEN = 1,
+}
+
+type BitwardenCustomField = {
+    name: MaybeNull<string>;
+    type: BitwardenCustomFieldType;
+    value: MaybeNull<string>;
+};
+
+type BitwardenBaseItem = { name: string; notes: MaybeNull<string>; fields?: BitwardenCustomField[] };
 
 export type BitwardenLoginItem = BitwardenBaseItem & {
     type: BitwardenType.LOGIN;
