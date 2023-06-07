@@ -114,6 +114,7 @@ const Payment = ({
     }
 
     const customPaymentMethod = paymentMethods.find(({ ID }) => method === ID);
+    const isSignupPass = type === 'signup-pass';
 
     return (
         <>
@@ -126,13 +127,14 @@ const Payment = ({
                         method={method}
                         onChange={(value) => onMethod(value)}
                         lastUsedMethod={lastUsedMethod}
+                        forceDropdown={isSignupPass}
                     />
                 </div>
                 <div className="mt-4">
                     {method === PAYMENT_METHOD_TYPES.CARD && (
                         <>
                             <div ref={creditCardTopRef} />
-                            {type === 'signup-pass' ? (
+                            {isSignupPass ? (
                                 <CreditCardNewDesign
                                     card={card}
                                     errors={cardErrors}
