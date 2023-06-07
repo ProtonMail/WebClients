@@ -11,7 +11,7 @@ import {
 } from '@proton/pass/auth';
 import { browserLocalStorage, browserSessionStorage } from '@proton/pass/extension/storage';
 import { notification, selectSessionLockToken, setUserPlan, stateDestroy, stateLock } from '@proton/pass/store';
-import type { Api, MaybeNull, WorkerForkMessage, WorkerMessageResponse } from '@proton/pass/types';
+import type { AccountForkMessage, Api, MaybeNull, WorkerMessageResponse } from '@proton/pass/types';
 import { SessionLockStatus, WorkerMessageType, WorkerStatus } from '@proton/pass/types';
 import { withPayload } from '@proton/pass/utils/fp';
 import { logger } from '@proton/pass/utils/logger';
@@ -36,7 +36,9 @@ type LoginOptions = {
 export interface AuthService {
     authStore: AuthenticationStore;
     resumeSession: () => Promise<boolean>;
-    consumeFork: (data: WorkerForkMessage['payload']) => Promise<WorkerMessageResponse<WorkerMessageType.FORK>>;
+    consumeFork: (
+        data: AccountForkMessage['payload']
+    ) => Promise<WorkerMessageResponse<WorkerMessageType.ACCOUNT_FORK>>;
     login: (options: LoginOptions) => Promise<boolean>;
     logout: () => Promise<boolean>;
     init: () => Promise<boolean>;
@@ -343,7 +345,7 @@ export const createAuthService = ({
         }),
     };
 
-    WorkerMessageBroker.registerMessage(WorkerMessageType.FORK, withPayload(authService.consumeFork));
+    WorkerMessageBroker.registerMessage(WorkerMessageType.ACCOUNT_FORK, withPayload(authService.consumeFork));
     WorkerMessageBroker.registerMessage(WorkerMessageType.SESSION_RESUMED, withPayload(authService.login));
 
     return authService;

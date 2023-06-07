@@ -32,9 +32,10 @@ export type PortFrameForwardingMessage<T = any> = {
 export type ExtensionEndpoint = 'popup' | 'content-script' | 'background' | 'page';
 
 export enum WorkerMessageType {
-    FORK = 'fork',
-    AUTH_EXT = 'auth-ext',
-    PASS_INSTALLED = 'pass-installed',
+    ACCOUNT_FORK = 'fork',
+    ACCOUNT_EXTENSION = 'auth-ext',
+    ACCOUNT_PROBE = 'pass-installed',
+    ACCOUNT_ONBOARDING = 'pass-onboarding',
     SESSION_RESUMED = 'SESSION_RESUMED',
     WORKER_WAKEUP = 'WORKER_WAKEUP',
     WORKER_INIT = 'WORKER_INIT',
@@ -73,9 +74,12 @@ export enum WorkerMessageType {
     IMPORT_PROGRESS = 'IMPORT_PROGRESS',
 }
 
-export type WorkerForkMessage = WithPayload<WorkerMessageType.FORK, ForkPayload>;
-export type WorkerAuthExtMessage = { type: WorkerMessageType.AUTH_EXT };
-export type WorkerPassInstalledMessage = { type: WorkerMessageType.PASS_INSTALLED };
+/* messages for communication with account */
+export type AccountForkMessage = WithPayload<WorkerMessageType.ACCOUNT_FORK, ForkPayload>;
+export type AccountAuthExtMessage = { type: WorkerMessageType.ACCOUNT_EXTENSION };
+export type AccountProbeMessage = { type: WorkerMessageType.ACCOUNT_PROBE };
+export type AccountPassOnboardingMessage = { type: WorkerMessageType.ACCOUNT_ONBOARDING };
+
 export type WorkerWakeUpMessage = WithPayload<WorkerMessageType.WORKER_WAKEUP, { tabId: TabId }>;
 export type WorkerInitMessage = WithPayload<WorkerMessageType.WORKER_INIT, { sync: boolean }>;
 export type WorkerStatusMessage = WithPayload<WorkerMessageType.WORKER_STATUS, { state: WorkerState }>;
@@ -84,8 +88,8 @@ export type UnloadContentScriptMessage = { type: WorkerMessageType.UNLOAD_CONTEN
 export type LoadContentScriptMessage = { type: WorkerMessageType.LOAD_CONTENT_SCRIPT };
 export type StartContentScriptMessage = { type: WorkerMessageType.START_CONTENT_SCRIPT };
 export type StoreActionMessage = WithPayload<WorkerMessageType.STORE_ACTION, { action: AnyAction }>;
-export type NotificationMessage = WithPayload<WorkerMessageType.NOTIFICATION, { notification: Notification }>;
 export type ResumeSessionSuccessMessage = WithPayload<WorkerMessageType.SESSION_RESUMED, ResumedSessionResult>;
+export type NotificationMessage = WithPayload<WorkerMessageType.NOTIFICATION, { notification: Notification }>;
 export type AutofillQueryMessage = { type: WorkerMessageType.AUTOFILL_QUERY };
 export type AutofillSyncMessage = WithPayload<WorkerMessageType.AUTOFILL_SYNC, { count: number }>;
 export type AutofillSelectMessage = WithPayload<WorkerMessageType.AUTOFILL_SELECT, SelectedItem>;
@@ -115,9 +119,10 @@ export type ImportProgressMessage = WithPayload<WorkerMessageType.IMPORT_PROGRES
 export type WorkerMessage =
     | StoreActionMessage
     | NotificationMessage
-    | WorkerForkMessage
-    | WorkerAuthExtMessage
-    | WorkerPassInstalledMessage
+    | AccountForkMessage
+    | AccountAuthExtMessage
+    | AccountProbeMessage
+    | AccountPassOnboardingMessage
     | WorkerWakeUpMessage
     | WorkerInitMessage
     | WorkerStatusMessage
@@ -169,7 +174,7 @@ type WorkerMessageResponseMap = {
     [WorkerMessageType.WORKER_INIT]: WorkerState;
     [WorkerMessageType.RESOLVE_TAB]: { tab: Maybe<Tabs.Tab> };
     [WorkerMessageType.RESOLVE_EXTENSION_KEY]: { key: string };
-    [WorkerMessageType.FORK]: { payload: ExtensionForkResultPayload };
+    [WorkerMessageType.ACCOUNT_FORK]: { payload: ExtensionForkResultPayload };
     [WorkerMessageType.FORM_ENTRY_REQUEST]: { submission: Maybe<WithAutoSavePromptOptions<FormEntry>> };
     [WorkerMessageType.FORM_ENTRY_COMMIT]: { committed: Maybe<PromptedFormEntry> };
     [WorkerMessageType.FORM_ENTRY_STAGE]: { staged: FormEntry };
