@@ -6,9 +6,9 @@ import { serverTime } from '@proton/crypto';
 import { hexStringToArray } from '@proton/crypto/lib/utils';
 import { base64StringToUint8Array, uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 
-import { KT_CERTIFICATE_ISSUER, SCT_THRESHOLD } from '../constants';
+import { KT_CERTIFICATE_ISSUER, SCT_THRESHOLD, epochChainVersion } from '../constants';
 import { ctLogs, rootCertificates } from '../constants/certificates';
-import { getBaseDomain, ktSentryReport } from '../helpers/utils';
+import { getBaseDomain, throwKTError } from '../helpers/utils';
 
 /**
  * Extract the content of a string Certificate
@@ -71,20 +71,16 @@ export const verifyAltName = (
     CertificateTime: number
 ) => {
     if (!certificate.extensions) {
-        ktSentryReport('Epoch certificate does not have extensions', {
-            context: 'verifyAltName',
+        return throwKTError('Epoch certificate does not have extensions', {
             extensions: JSON.stringify(certificate.extensions),
         });
-        throw new Error('Epoch certificate does not have extensions');
     }
 
     const altNamesExt = certificate.extensions.find((ext) => ext.extnID === '2.5.29.17');
     if (!altNamesExt) {
-        ktSentryReport('Epoch certificate does not have AltName extension', {
-            context: 'verifyAltName',
+        return throwKTError('Epoch certificate does not have AltName extension', {
             altNamesExt: JSON.stringify(altNamesExt),
         });
-        throw new Error('Epoch certificate does not have AltName extension');
     }
 
     altNamesExt.parsedValue.altNames.sort((firstEl: GeneralName, secondEl: GeneralName) => {
@@ -100,18 +96,17 @@ export const verifyAltName = (
     const baseDomain = getBaseDomain();
 
     if (
-        `${ChainHash.slice(0, 32)}.${ChainHash.slice(32)}.${CertificateTime}.${EpochID}.0.${baseDomain}` !==
-        alternativeName
+        `${ChainHash.slice(0, 32)}.${ChainHash.slice(
+            32
+        )}.${CertificateTime}.${EpochID}.${epochChainVersion}.${baseDomain}` !== alternativeName
     ) {
-        ktSentryReport('Epoch certificate alternative name does not match', {
-            context: 'verifyAltName',
+        return throwKTError('Epoch certificate alternative name does not match', {
             ChainHash,
             EpochID,
             alternativeName,
             baseDomain,
             CertificateTime,
         });
-        throw new Error('Epoch certificate alternative name does not match');
     }
 };
 
@@ -152,12 +147,10 @@ export const verifyTopCert = async (topCert: Certificate, CertificateIssuer: KT_
         }
     }
 
-    ktSentryReport('Epoch certificate did not pass verification of top certificate', {
-        context: 'verifyTopCert',
+    return throwKTError('Epoch certificate did not pass verification of top certificate', {
         topCertString: printCertificate(topCert),
         CertificateIssuer,
     });
-    throw new Error('Epoch certificate did not pass verification of top certificate');
 };
 
 /**
@@ -166,11 +159,9 @@ export const verifyTopCert = async (topCert: Certificate, CertificateIssuer: KT_
 const verifyCertExpiry = (cert: Certificate) => {
     const now = +serverTime();
     if (+cert.notAfter.value < now) {
-        ktSentryReport('Certificate is expired', {
-            context: 'verifyCertChain',
+        return throwKTError('Certificate is expired', {
             stringCert: printCertificate(cert),
         });
-        throw new Error('Certificate is expired');
     }
 };
 
@@ -190,11 +181,9 @@ export const verifyCertChain = async (certChain: Certificate[], CertificateIssue
     }
 
     if (!verified) {
-        ktSentryReport("Epoch certificate did not pass verification against issuer's certificate chain", {
-            context: 'verifyCertChain',
+        return throwKTError("Epoch certificate did not pass verification against issuer's certificate chain", {
             certChain: JSON.stringify(certChain.map((cert) => printCertificate(cert))),
         });
-        throw new Error("Epoch certificate did not pass verification against issuer's certificate chain");
     }
 };
 
@@ -236,24 +225,20 @@ export const verifySCT = async (certificate: Certificate, issuerCert: Certificat
     try {
         verified.push(...(await verifySCTsForCertificate(certificate, issuerCert, logs)));
     } catch (error: any) {
-        ktSentryReport('SCT verification failed', {
-            context: 'verifySCT',
+        return throwKTError('SCT verification failed', {
             errorMessage: error.message,
             certificate: printCertificate(certificate),
             issuerCert: printCertificate(issuerCert),
         });
-        throw new Error('SCT verification failed');
     }
 
     if (verified.length !== scts.length) {
-        ktSentryReport('The number of verified SCTs does not match with the number of SCTs', {
-            context: 'verifySCT',
+        return throwKTError('The number of verified SCTs does not match with the number of SCTs', {
             scts: JSON.stringify(scts),
             verified: JSON.stringify(verified),
             certificate: printCertificate(certificate),
             issuerCert: printCertificate(issuerCert),
         });
-        throw new Error('The number of verified SCTs does not match with the number of SCTs');
     }
 
     const sctsFromOperators = new Map<string, number>();
@@ -273,15 +258,13 @@ export const verifySCT = async (certificate: Certificate, issuerCert: Certificat
     }
 
     if (sctsFromOperators.size < SCT_THRESHOLD) {
-        ktSentryReport('The number of verified SCTs does not reach the number of operator threshold', {
-            context: 'verifySCT',
+        return throwKTError('The number of verified SCTs does not reach the number of operator threshold', {
             scts: JSON.stringify(scts),
             verified: JSON.stringify(verified),
             certificate: printCertificate(certificate),
             issuerCert: printCertificate(issuerCert),
             sctsFromOperators: JSON.stringify([...sctsFromOperators.entries()]),
         });
-        throw new Error('The number of verified SCTs does not reach the number of operator threshold');
     }
 };
 
@@ -293,11 +276,9 @@ export const parseCertTime = (cert: Certificate) => {
             returnedDate = cert.notBefore.value.getTime();
             break;
         default:
-            ktSentryReport("Certificate's notBefore date is invalid", {
-                context: 'parseCertTime',
+            return throwKTError("Certificate's notBefore date is invalid", {
                 certType: cert.notBefore.type,
             });
-            throw new Error(`Certificate's notBefore date is invalid (type = ${cert.notBefore.type})`);
     }
     return returnedDate;
 };

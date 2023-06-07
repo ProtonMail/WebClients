@@ -30,7 +30,7 @@ export const formatDownload = async (
     getAttachment?: (ID: string) => WorkerDecryptionResult<Uint8Array> | undefined
 ): Promise<Download> => {
     try {
-        const reverify = !!(verification?.senderVerified && verification.senderPinnedKeys?.length);
+        const reverify = !!(verification?.pinnedKeysVerified && verification.senderPinnedKeys?.length);
         const { data, verified } = await getAndVerify(
             attachment,
             verification,
