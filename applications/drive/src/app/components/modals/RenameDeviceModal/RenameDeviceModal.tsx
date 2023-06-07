@@ -42,9 +42,15 @@ const RenameDeviceModal = ({ device, onClose, ...modalProps }: Props & ModalStat
             return;
         }
 
-        return renameDevice({ deviceId: device.id, newName: model.name }).then(() => {
-            onClose?.();
+        await renameDevice({
+            shareId: device.shareId,
+            linkId: device.linkId,
+            deviceId: device.id,
+            newName: model.name,
+            haveLegacyName: device.haveLegacyName,
         });
+
+        onClose?.();
     };
 
     const deviceNameValidation = validator([requiredValidator(model.name)]);
