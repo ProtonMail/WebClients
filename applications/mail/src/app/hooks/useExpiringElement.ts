@@ -1,7 +1,10 @@
 import { useMemo } from 'react';
 
+import { Conversation } from '../models/conversation';
 import { Element } from '../models/element';
 import { useGetAllMessages, useGetMessage } from './message/useMessage';
+
+const isConversationMode = (element: Element, conversationMode: boolean): element is Conversation => conversationMode;
 
 export const useExpiringElement = (element: Element, conversationMode = false) => {
     const getAllMessages = useGetAllMessages();
@@ -14,7 +17,7 @@ export const useExpiringElement = (element: Element, conversationMode = false) =
      */
     const expirationTime = useMemo(() => {
         if (element) {
-            if (conversationMode) {
+            if (isConversationMode(element, conversationMode)) {
                 // If the element is a conversation we check all messages to find a message having draft flags and being in the conversation
                 const allMessages = getAllMessages();
                 const expiringMessageFromConversation = allMessages.find(
@@ -26,7 +29,7 @@ export const useExpiringElement = (element: Element, conversationMode = false) =
                 const expirationTime =
                     expiringMessageFromConversation?.data?.ExpirationTime || draftExpirationTime || 0;
 
-                return element.ExpirationTime || expirationTime;
+                return element.ContextExpirationTime || expirationTime;
             } else {
                 // If the element is a message we check if we have an expiration time in draftFlags
                 const message = getMessage(element.ID);
