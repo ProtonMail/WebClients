@@ -1473,6 +1473,9 @@
       "The minimum payment we accept is ${ price }": [
         "O pagamento mínimo que aceitamos é ${ price }"
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Este campo excede o máximo de ${ maximumLength } caracteres."
+      ],
       "This field is required": [
         "Este campo é requerido"
       ],
@@ -1487,6 +1490,12 @@
       ],
       "Unknown payment token status": [
         "Estado do símbolo de pagamento desconhecido"
+      ],
+      "Username must begin with a letter or digit": [
+        "O nome de utilizador deve começar com uma letra ou um algarismo"
+      ],
+      "Username must end with a letter or digit": [
+        "O nome de utilizador deve acabar com uma letra ou algarismo"
       ],
       "You have no invoices.": [
         "Não tem facturas."
@@ -2258,6 +2267,9 @@
       "Code": [
         "Código"
       ],
+      "Code is 6 digits without spaces": [
+        "O código tem 6 dígitos sem espaços"
+      ],
       "Confirm login password": [
         "Confirme a nova palavra-passe"
       ],
@@ -2290,6 +2302,9 @@
       ],
       "Delete": [
         "Eliminar"
+      ],
+      "Delete recovery-related information.": [
+        "Eliminar informações relacionadas com a recuperação."
       ],
       "Digits": [
         "Algarismos"
@@ -2984,6 +2999,12 @@
         "${ seconds } segundos"
       ]
     },
+    "specialoffer: Deal": {
+      "${ n } month FREE": [
+        "${ n } mês GRÁTIS.",
+        "${ n } meses GRÁTIS."
+      ]
+    },
     "specialoffer: Deal details": {
       "3 TB": [
         "3 TB"
@@ -3026,6 +3047,10 @@
       ],
       "2 years": [
         "2 anos"
+      ],
+      "for ${ n } month": [
+        "por ${ n } mês.",
+        "por ${ n } meses."
       ]
     },
     "State": {
