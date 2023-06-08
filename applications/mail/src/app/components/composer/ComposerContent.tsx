@@ -1,8 +1,6 @@
-import { DragEvent, useState } from 'react';
-
 import { c } from 'ttag';
 
-import { EditorMetadata, EllipsisLoader, onlyDragFiles } from '@proton/components';
+import { Dropzone, EditorMetadata, EllipsisLoader } from '@proton/components';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { getAttachments } from '@proton/shared/lib/mail/messages';
@@ -47,17 +45,8 @@ const ComposerContent = ({
     mailSettings,
     editorMetadata,
 }: Props) => {
-    const [fileHover, setFileHover] = useState(false);
-
     const attachments = getAttachments(message.data);
-    const showAttachements = attachments.length + (pendingUploads?.length || 0) > 0;
-
-    const handleDrop = onlyDragFiles((event: DragEvent) => {
-        event.preventDefault();
-        event.stopPropagation();
-        setFileHover(false);
-        onAddAttachments?.([...event.dataTransfer.files]);
-    });
+    const showAttachments = attachments.length + (pendingUploads?.length || 0) > 0;
 
     return (
         <section
@@ -94,30 +83,25 @@ const ComposerContent = ({
                     onRemoveAttachment={onRemoveAttachment}
                     mailSettings={mailSettings}
                     editorMetadata={editorMetadata}
-                    fileHover={fileHover}
-                    setFileHover={setFileHover}
                 />
             </div>
-            {showAttachements && (
-                <div
-                    onDragOver={(e) => {
-                        e.stopPropagation();
-                        e.preventDefault();
-                    }}
-                    onDrop={handleDrop}
-                >
-                    <AttachmentList
-                        attachments={attachments}
-                        pendingUploads={pendingUploads}
-                        message={message as MessageStateWithData}
-                        primaryAction={AttachmentAction.Preview}
-                        secondaryAction={AttachmentAction.Remove}
-                        collapsable
-                        onRemoveAttachment={onRemoveAttachment}
-                        onRemoveUpload={onRemoveUpload}
-                        className={clsx(['composer-attachments-list', isOutside && 'eo-composer-attachments-list'])}
-                        outsideKey={outsideKey}
-                    />
+            {showAttachments && (
+                // Add a wrapping div so that Dropzone does not break the UI
+                <div>
+                    <Dropzone onDrop={onAddAttachments} shape="invisible">
+                        <AttachmentList
+                            attachments={attachments}
+                            pendingUploads={pendingUploads}
+                            message={message as MessageStateWithData}
+                            primaryAction={AttachmentAction.Preview}
+                            secondaryAction={AttachmentAction.Remove}
+                            collapsable
+                            onRemoveAttachment={onRemoveAttachment}
+                            onRemoveUpload={onRemoveUpload}
+                            className={clsx(['composer-attachments-list', isOutside && 'eo-composer-attachments-list'])}
+                            outsideKey={outsideKey}
+                        />
+                    </Dropzone>
                 </div>
             )}
         </section>

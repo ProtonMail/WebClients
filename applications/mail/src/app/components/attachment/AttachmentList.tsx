@@ -51,6 +51,7 @@ const AttachmentList = ({
     onRemoveUpload,
     className,
     outsideKey,
+    ...rest
 }: Props) => {
     const { handleDownload: download, confirmDownloadModal } = useDownload();
     const { handleDownloadAll: downloadAll, confirmDownloadModal: confirmDownloadAllModal } = useDownloadAll();
@@ -171,6 +172,7 @@ const AttachmentList = ({
                 className,
                 expanded && 'border-top border-weak',
             ])}
+            {...rest}
         >
             <AttachmentPreview
                 ref={previewRef}
