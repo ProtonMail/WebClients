@@ -1,4 +1,4 @@
-import { Ref, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
+import { ComponentPropsWithoutRef, ReactNode, Ref, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 
 import { getISOWeek } from 'date-fns';
 
@@ -13,7 +13,7 @@ import { DAY_EVENT_HEIGHT } from './constants';
 import createDayGridMouseHandler from './interactions/dayGridMouseHandler';
 import useDayGridEventLayout from './useDayGridEventLayout';
 
-interface Props {
+interface Props extends ComponentPropsWithoutRef<'div'> {
     tzid: string;
     now: Date;
     date: Date;
@@ -30,6 +30,7 @@ interface Props {
     formatDate: (date: Date) => string;
     onClickDate: (date: Date) => void;
     weekdaysLong: string[];
+    children?: ReactNode; // Needed for the dropzone
 }
 
 const DayGrid = ({
@@ -50,6 +51,8 @@ const DayGrid = ({
     formatDate,
     onClickDate,
     weekdaysLong = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+    children,
+    ...rest
 }: Props) => {
     const rowsWrapperRef = useRef<HTMLDivElement>(null);
     const firstRowRef = useRef<HTMLDivElement>(null);
@@ -110,7 +113,8 @@ const DayGrid = ({
     }, [rows, formatDate]);
 
     return (
-        <div className="flex-item-fluid scroll-if-needed h100 is-month-view">
+        <div className="flex-item-fluid scroll-if-needed h100 is-month-view" {...rest}>
+            {children}
             <div className="calendar-daygrid flex flex-column relative h100">
                 <div data-testid="calendar-month-view:week-header" className="flex calendar-daygrid-days">
                     {displayWeekNumbers ? <div className="calendar-daygrid-weeknumber-width" /> : null}
