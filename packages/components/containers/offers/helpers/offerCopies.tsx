@@ -65,6 +65,12 @@ export const getUnlimitedFeatures = () => {
             tooltip: c('specialoffer: Tooltip')
                 .t`Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.`,
         },
+        {
+            badge: c('summer2023: Badge feature to say Proton Pass is new').t`New`,
+            name: c('summer2023: Short tool name to present Proton Pass').t`Password manager`,
+            tooltip: c('summer2023: Describe Proton Pass')
+                .t`Securely store your passwords and autofill them on websites. Includes unlimited passwords, autofill, password generator, and more.`,
+        },
     ];
 };
 
