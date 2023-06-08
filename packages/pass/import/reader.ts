@@ -9,6 +9,7 @@ import { readChromiumData } from './providers/chromium.reader';
 import { readDashlaneData } from './providers/dashlane.reader';
 import { readFirefoxData } from './providers/firefox.reader';
 import { readKeePassData } from './providers/keepass.reader';
+import { readKeeperData } from './providers/keeper.reader';
 import { readLastPassData } from './providers/lastpass.reader';
 import { readProtonPassData } from './providers/protonpass.reader';
 import { readSafariData } from './providers/safari.reader';
@@ -82,6 +83,10 @@ export const fileReader = async (payload: ImportReaderPayload): Promise<ImportPa
 
         case ImportProvider.SAFARI: {
             return readSafariData(await payload.file.text());
+        }
+
+        case ImportProvider.KEEPER: {
+            return readKeeperData(await payload.file.text());
         }
 
         default:
