@@ -8,14 +8,14 @@
         "test:dev": "jest --watch"
     },
     "dependencies": {
-        "@pdfme/generator": "^1.1.10",
+        "@pdfme/generator": "^1.2.2",
         "@proton/utils": "workspace:packages/utils"
     },
     "devDependencies": {
         "@proton/eslint-config-proton": "workspace:^",
-        "eslint": "^8.41.0",
+        "eslint": "^8.42.0",
         "jest": "^29.5.0",
         "ts-jest": "^29.1.0",
-        "typescript": "^5.0.4"
+        "typescript": "^5.1.3"
     }
 }
