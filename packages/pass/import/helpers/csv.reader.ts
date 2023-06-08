@@ -9,7 +9,7 @@ export type CSVReaderResult<T extends Record<string, any>> = { items: T[]; ignor
 
 export const readCSV = async <T extends Record<string, any>>(options: {
     data: string;
-    headers: (keyof T)[];
+    headers?: (keyof T)[];
     onError?: (error: string) => void;
     throwOnEmpty?: boolean;
 }): Promise<CSVReaderResult<T>> => {
@@ -18,7 +18,7 @@ export const readCSV = async <T extends Record<string, any>>(options: {
     try {
         return await new Promise<CSVReaderResult<T>>((resolve, reject) => {
             Papa.parse<T>(options.data, {
-                header: true,
+                header: !!options.headers,
                 transformHeader: (h) => h.trim(),
                 skipEmptyLines: true,
                 delimiter: ',',
@@ -43,7 +43,7 @@ export const readCSV = async <T extends Record<string, any>>(options: {
                         missed: Set<string>;
                     }>(
                         (acc, entry) => {
-                            const missedHeaders = (options.headers as string[]).filter(
+                            const missedHeaders = ((options.headers as string[]) ?? []).filter(
                                 (header) => !Object.keys(entry).includes(header)
                             );
                             missedHeaders.forEach((header) => acc.missed.add(header));
