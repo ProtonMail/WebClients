@@ -11956,7 +11956,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"client-zip@npm:2.4.4":
+"client-zip@npm:^2.4.4":
   version: 2.4.4
   resolution: "client-zip@npm:2.4.4"
   checksum: d10442a49a9466e362292d3274d1a63f41c4ff44d684c57ceaec891a002dbae5ab402de36e0d395dc7ecf129bfe7292e1af1daed3666b032b7bb510f4ae9f4c0
@@ -25783,7 +25783,7 @@ fsevents@^1.2.7:
     "@types/react-window": ^1.8.5
     babel-plugin-transform-class-properties: ^6.24.1
     babel-plugin-transform-require-context: ^0.1.1
-    client-zip: 2.4.4
+    client-zip: ^2.4.4
     cross-env: ^7.0.3
     cross-var: ^1.1.0
     ejs-webpack-loader: ^2.2.2
