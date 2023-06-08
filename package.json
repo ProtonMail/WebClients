@@ -19,11 +19,11 @@
     "resolutions": {
         "@noble/ed25519@1.7.3": "patch:@noble/ed25519@npm%3A1.7.3#./.yarn/patches/@noble-ed25519-npm-1.7.3-033c70acb7.patch",
         "@storybook/react-docgen-typescript-plugin": "1.0.6--canary.9.f9c48c0.0",
-        "@types/jest": "^29.5.1",
+        "@types/jest": "^29.5.2",
         "@types/react": "^17.0.60",
         "@types/react-dom": "^17.0.20",
         "client-zip@2.3.0": "patch:client-zip@npm:2.3.0#.yarn/patches/client-zip-npm-2.3.0-366ca56ce9.patch",
-        "memfs": "^3.5.1",
+        "memfs": "^3.5.3",
         "nwsapi": "2.2.2",
         "rfc2047@^2.0.1": "patch:rfc2047@npm%3A2.0.1#./.yarn/patches/rfc2047-npm-2.0.1-60a2a07c99.patch",
         "safe-buffer": "^5.2.1"
@@ -33,7 +33,7 @@
         "@proton/stylelint-config-proton": "workspace:packages/stylelint-config-proton",
         "is-ci": "^3.0.1",
         "stylelint-use-logical-spec": "^5.0.0",
-        "typescript": "^5.0.4"
+        "typescript": "^5.1.3"
     },
     "devDependencies": {
         "@trivago/prettier-plugin-sort-imports": "^4.1.1",
@@ -43,7 +43,7 @@
         "prettier": "^2.8.8",
         "sort-package-json": "^2.4.1"
     },
-    "packageManager": "yarn@3.5.1",
+    "packageManager": "yarn@3.6.0",
     "engines": {
         "node": ">= v18.16.0"
     }
