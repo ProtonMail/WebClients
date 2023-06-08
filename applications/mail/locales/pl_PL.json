@@ -334,6 +334,9 @@
       "Download ${ attachmentName }": [
         "Pobierz ${ attachmentName }"
       ],
+      "Downloading": [
+        "Pobieranie"
+      ],
       "Edit": [
         "Edytuj"
       ],
@@ -3932,9 +3935,6 @@
       "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
         "Zawiera 2700 serwerów w ponad 65 krajach z możliwością połączenia do 10 urządzeń, dostępem do globalnych usług streamingu oraz funkcję blokowania reklam, złośliwego oprogramowania i wiele więcej."
       ],
-      "Includes support for 3 custom email domains, 90 email addresses, unlimited Hide My Email aliases, calendar sharing and more.": [
-        "Obejmuje obsługę 3 niestandardowych domen e-mail, 90 adresów e-mail, nieograniczone aliasy Hide My Email, udostępnianie kalendarza i wiele więcej."
-      ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Zabezpiecz pliki dzięki zaszyfrowanej przestrzeni dyskowej w chmurze. Obejmuje automatyczną synchronizację, szyfrowane udostępnianie plików i nie tylko."
       ]
@@ -5037,6 +5037,9 @@
       "Don't forget to share the password with the recipient": [
         "Nie zapomnij o udostępnieniu hasła odbiorcy"
       ],
+      "Downloading paused": [
+        "Pobieranie zostało wstrzymane"
+      ],
       "Draft": [
         "Szkic"
       ],
@@ -5189,9 +5192,6 @@
       ],
       "Hide original message": [
         "Ukryj oryginalną wiadomość"
-      ],
-      "How Hide My Email works": [
-        "Jak działa funkcja Hide My Email"
       ],
       "I'm sending this message to a non-${ MAIL_APP_NAME } user.": [
         "Wysyłam wiadomość do użytkownika spoza ${ MAIL_APP_NAME }."
@@ -5583,9 +5583,6 @@
       "Show original message": [
         "Pokaż oryginalną wiadomość"
       ],
-      "SimpleLogin is a ${ BRAND_NAME } service, and your ${ BRAND_NAME_TWO } Account includes Hide My Email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
-        "SimpleLogin to usługa ${ BRAND_NAME }. Twoje konto ${ BRAND_NAME_TWO } zawiera aliasy Hide My Email. Utwórz w usłudze SimpleLogin pierwszy alias, aby ukryć swój adres."
-      ],
       "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
         "Usługa SimpleLogin zapewnia łatwy sposób tworzenia adresów e-mail dla niezaufanych stron trzecich, gdzie nie chcesz ujawniać swojego prawdziwego adresu."
       ],
@@ -5654,9 +5651,6 @@
       ],
       "There has been an error with the signature used to verify the contact details, which may be the result of a password reset.": [
         "Wystąpił błąd z podpisem używanym do weryfikowania szczegółów kontaktu, którego powodem może być zresetowane hasło."
-      ],
-      "They can't spam you if they don't know your email address. Protect your inbox with Hide My Email.": [
-        "Nie otrzymasz spamu, jeśli ktoś nie zna Twojego adresu e-mail. Chroń swoją pocztę za pomocą funkcji Hide My Email."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Konto zostało zawieszone z powodu potencjalnego naruszenia regulaminu."
@@ -5889,9 +5883,6 @@
       "When do you want your message to self-destruct?": [
         "Kiedy chcesz, aby wiadomość uległa samozniszczeniu?"
       ],
-      "When giving out your email, use a unique, disposable Hide My Email alias instead of your real email address.": [
-        "Użyj unikalnego, jednorazowego aliasu Hide My Email, zamiast swojego prawdziwego adresu e-mail."
-      ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "Jeśli włączysz zaufane klucze dla adresu ${ senderName }, klucz publiczny zostanie dodany do szczegółów kontaktu."
       ],
@@ -6104,6 +6095,12 @@
       ]
     },
     "Key pinning": {
+      "Clicking \"Trust Key\" will associate this public key with this sender and emails from this address will be automatically cryptographically verified.": [
+        "Kliknięcie \"Zaufaj kluczowi\" spowoduje powiązanie klucza publicznego z nadawcą. Wiadomości przychodzące z tego adresu będą automatycznie weryfikowane kryptograficznie."
+      ],
+      "Clicking \"Trust Key\" will create a new contact and associate this public key with this sender. Emails from this address will be automatically cryptographically verified.": [
+        "Kliknięcie \"Zaufaj kluczowi\" utworzy nowy kontakt i spowoduje powiązanie klucza publicznego z tym nadawcą. Wiadomości z tego adresu będą automatycznie weryfikowane kryptograficznie."
+      ],
       "Do you want to trust the primary public key with the following fingerprint?": [
         "Czy chcesz zaufać temu kluczowi głównemu z tym odciskiem?",
         "Czy chcesz zaufać tym kluczom głównym z tymi odciskami?",
@@ -7350,9 +7347,6 @@
       "Custom email domains": [
         "Niestandardowe domeny"
       ],
-      "Hide My Email aliases": [
-        "Aliasy Hide My Email"
-      ],
       "Schedule messages at any time": [
         "Zaplanuj wiadomości w dowolnym momencie"
       ],
@@ -7602,6 +7596,9 @@
       ],
       "Please insert link first": [
         "Najpierw wstaw link"
+      ],
+      "Search date, name, email address, or subject line": [
+        "Szukaj daty, nazwy, adresu e-mail lub tematu"
       ],
       "Search for group name": [
         "Szukaj nazwy grupy"
@@ -8171,15 +8168,6 @@
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
         "Uzyskaj dostęp z dowolnego miejsca do treści w usługach streamingowych, takich jak Netflix, Disney+ i Prime Video."
       ],
-      "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited Hide My Email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
-        "Wszystkie nasze usługi premium z najwyższymi limitami: 100 adresów e-mail, obsługa 10 niestandardowych domen, nieograniczone aliasy Hide My Email, udostępnianie kalendarza, zaszyfrowane przechowywanie w chmurze i udostępnianie plików i nie tylko."
-      ],
-      "Includes support for 1 custom email domain, 10 email addresses, 10 Hide My Email aliases, calendar sharing, and more.": [
-        "Zawiera obsługę 1 niestandardowej domeny e-mail, 10 adresów e-mail, 10 aliasów Hide My Email, udostępnianie kalendarza i nie tylko."
-      ],
-      "Includes support for 3 custom email domains, 15 email addresses, unlimited Hide My Email aliases, calendar sharing, and more.": [
-        "Obejmuje obsługę 3 niestandardowych domen e-mail, 15 adresów e-mail, nielimitowane aliasy Hide My Email, udostępnianie kalendarza i nie tylko."
-      ],
       "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
         "Idealne rozwiązanie dla rodzin lub małych zespołów, każda osoba może mieć własną skrzynkę odbiorczą i aliasy. Wymaga niestandardowej domeny."
       ],
@@ -8459,6 +8447,9 @@
       ],
       "Message added to ${ labelName }.": [
         "Wiadomość została dodana do etykiety ${ labelName }."
+      ],
+      "Message content search enabled": [
+        "Wyszukiwanie zawartości wiadomości zostało włączone"
       ],
       "Message deleted": [
         "Wiadomość została usunięta"
