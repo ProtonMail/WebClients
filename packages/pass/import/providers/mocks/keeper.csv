@@ -1,0 +1,17 @@
+"","address item","","","","",""
+"","contact item","","","","","","Name","jonny doe"
+"","file attachment item","","","","",""
+"","general item","","","","",""
+"folder1","login of folder1","john","","","",""
+"folder1\subfolder1","login of subfolder1","john","","","",""
+"","login with 2fa","2fa@example.com","pass","https://example.com","","","TFC:Keeper","otpauth://totp/account.proton.me:2fa-manually-entered-string@example.com?secret=RL3FRZ5V3EBM7T4ZMGJWGO43MQSTTMIT&issuer=account.proton.me&algorithm=SHA1&digits=6&period=30"
+"","login with broken url","john","pass","https://ex:ample.com/","",""
+"","login with comma, quotes ""","username with comma, quotes ""","password with comma, quotes ""","https://example.com/","notes with commas, quotes """,""
+"","login with custom fields","john","pass","https://example.com","","","Hidden Field","this is custom field: hidden","Security Question & Answer","this is custom field: security question? this is custom field: security answer","Website Address","https://this-is-custom-field-url.example.com","Phone","Mobile US (+1) (555) 555-5555 Ex","Hidden Field with edited label","this is custom field: hidden with edited label"
+"","login with multiple lines","john","pass","https://example.com","notes with
+multiple
+lines",""
+"","login with multiple urls","","","https://example.com","","","Website Address","https://second.example.com","Website Address with edited label","https://edited-label.example.com"
+"","paymentcard","","b5pIs[ISaru7@)44rn,xT","https://example.com","foo","","Bank Account","Checking | 980","Hidden Field","this is custom field: hidden"
+"","secure note item","","","","foo",""
+"","ssh key item","john","pass","","foo","","Key Pair","privatekey | publickey"

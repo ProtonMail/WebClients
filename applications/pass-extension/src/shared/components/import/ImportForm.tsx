@@ -23,6 +23,7 @@ export const PROVIDER_TITLE_MAP = {
     [ImportProvider.DASHLANE]: 'Dashlane (zip)',
     [ImportProvider.PROTONPASS]: `${PASS_APP_NAME} (zip, pgp)`,
     [ImportProvider.SAFARI]: 'Safari (csv)',
+    [ImportProvider.KEEPER]: 'Keeper (csv)',
 };
 
 export const ImportForm: VFC<Omit<ImportFormContext, 'reset' | 'result'>> = ({ form, dropzone, busy }) => {
