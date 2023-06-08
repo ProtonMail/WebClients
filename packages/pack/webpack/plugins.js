@@ -76,21 +76,23 @@ module.exports = ({
          * url: defined in SENTRY_URL (gitlab env)
          * authToken: defined in SENTRY_AUTH_TOKEN (gitlab env)
          * */
-        sentryWebpackPlugin({
-            disabled: !isRelease,
-            // This prevents build to fail if any issue happened
-            errorHandler: (err) => {
-                console.warn('Sentry plugin: ', err);
-            },
-            release: {
-                name: buildData.version,
-                // new sourcemaps workflow is only support on sass for now
-                uploadLegacySourcemaps: {
-                    paths: ['dist'],
-                    ignore: ['node_modules'],
+        isRelease &&
+            sentryWebpackPlugin({
+                disabled: !isRelease,
+                // This prevents build to fail if any issue happened
+                errorHandler: (err) => {
+                    console.warn('Sentry plugin: ', err);
                 },
-            },
-        }),
+                telemetry: false,
+                release: {
+                    name: buildData.version,
+                    // new sourcemaps workflow is only support on sass for now
+                    uploadLegacySourcemaps: {
+                        paths: ['dist'],
+                        ignore: ['node_modules'],
+                    },
+                },
+            }),
 
         new CopyWebpackPlugin({
             patterns: [
