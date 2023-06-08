@@ -4929,9 +4929,6 @@
       "Hide original message": [
         "Skjul oprindelig besked"
       ],
-      "How Hide My Email works": [
-        "Sådan fungerer Skjul min e-mail"
-      ],
       "I'm sending this message to a non-${ MAIL_APP_NAME } user.": [
         "Jeg sender denne besked til en, som ikke bruger ${ MAIL_APP_NAME }."
       ],
@@ -5315,9 +5312,6 @@
       "Show original message": [
         "Vis oprindelig besked"
       ],
-      "SimpleLogin is a ${ BRAND_NAME } service, and your ${ BRAND_NAME_TWO } Account includes Hide My Email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
-        "SimpleLogin er en ${ BRAND_NAME }-service, og din ${ BRAND_NAME_TWO }-konto inkluderer Hide My Email-aliasser. For at begynde at skjule din e-mailadresse, skal du gå til SimpleLogin og oprette dit første alias."
-      ],
       "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
         "SimpleLogin tilbyder en let måde at oprette konti hos upålidelige tredjepartssider hvor du ikke ønsker at vise din rigtige e-mailadresse."
       ],
@@ -5384,9 +5378,6 @@
       ],
       "There has been an error with the signature used to verify the contact details, which may be the result of a password reset.": [
         "Der er opstået en fejl med den underskrift, der bruges til at verificere kontaktoplysningerne, hvilket kan være resultatet af en nulstilling af adgangskoden."
-      ],
-      "They can't spam you if they don't know your email address. Protect your inbox with Hide My Email.": [
-        "De kan ikke spamme dig, hvis de ikke kender din e-mailadresse. Beskyt din indbakke med Skjul min e-mail."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Denne konto er blevet suspenderet på grund af en potentiel overtrædelse af politik."
@@ -5614,9 +5605,6 @@
       ],
       "When do you want your message to self-destruct?": [
         "Hvornår ønsker du, at din besked skal selvdestruere?"
-      ],
-      "When giving out your email, use a unique, disposable Hide My Email alias instead of your real email address.": [
-        "Når du udleverer din e-mail, kan du bruge et unikt Skjul min e-mail-alias i stedet for din rigtige e-mailadresse."
       ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "Da du aktiverede betroede nøgler for ${ senderName }, blev de offentlige nøgler tilføjet til kontaktoplysningerne."
@@ -7032,9 +7020,6 @@
       "Custom email domains": [
         "Brugerdefinerede e-maildomæner"
       ],
-      "Hide My Email aliases": [
-        "Skjul mine e-mail-aliasser"
-      ],
       "Schedule messages at any time": [
         "Planlæg beskeder til ethvert tidspunkt"
       ],
@@ -7755,12 +7740,6 @@
       ]
     },
     "specialoffer: Tooltip": {
-      "Includes support for 1 custom email domain, 10 email addresses, 10 Hide My Email aliases, calendar sharing, and more.": [
-        "Inkluderer support til 1 tilpasset e-maildomæne, 10 e-mailadresser, 10 Hide My Email-aliasser, kalenderdeling med mere."
-      ],
-      "Includes support for 3 custom email domains, 15 email addresses, unlimited Hide My Email aliases, calendar sharing, and more.": [
-        "Inkluderer support til 3 tilpassede e-maildomæner, 15 e-mailadresser, ubegrænsede Hide My Email-aliasser, kalenderdeling med mere."
-      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
         "Lagerplads er delt mellem ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, og ${ DRIVE_APP_NAME }."
       ]

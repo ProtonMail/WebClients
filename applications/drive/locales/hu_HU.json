@@ -64,6 +64,9 @@
       "Back": [
         "Vissza"
       ],
+      "Back to Homepage": [
+        "Vissza a honlapra"
+      ],
       "Beta Access": [
         "Béta hozzáférés"
       ],
@@ -84,6 +87,9 @@
       ],
       "Cancel upload": [
         "Feltöltés megszakítása"
+      ],
+      "Change": [
+        "Módosítás"
       ],
       "Chat with us": [
         "Beszélgetés indítása"
@@ -198,6 +204,12 @@
       "Delete permanently": [
         "Végleges törlés"
       ],
+      "Delete this version": [
+        "Ezen változat törlése"
+      ],
+      "Delete version": [
+        "Változat törlése"
+      ],
       "Deselect all": [
         "Kijelölés megszüntetése"
       ],
@@ -221,6 +233,9 @@
       ],
       "Download anyway": [
         "Letöltés mindenképpen"
+      ],
+      "Download the Windows application": [
+        "A Windows alkalmazás letöltése"
       ],
       "Drive Locked": [
         "Tárhely zárolva"
@@ -249,6 +264,9 @@
       "enable desktop notifications": [
         "asztali értesítéset küldhessen"
       ],
+      "Enable drive search": [
+        "A felhőtárhelyen való keresés engedélyezése"
+      ],
       "Expand": [
         "Kibontás"
       ],
@@ -270,6 +288,9 @@
       "Forward as attachment": [
         "Továbbítás mellékletként"
       ],
+      "Get ${ DRIVE_APP_NAME }": [
+        "${ DRIVE_APP_NAME } beszerzése"
+      ],
       "Get link": [
         "Hivatkozás készítése"
       ],
@@ -278,6 +299,9 @@
       ],
       "Get verification code": [
         "Ellenőrző kód küldése"
+      ],
+      "Go to Drive": [
+        "Drive megnyitása"
       ],
       "Go to label": [
         "Címkéhez ugrás"
@@ -371,6 +395,9 @@
       ],
       "Move to trash": [
         "Áthelyezés a lomtárba"
+      ],
+      "New": [
+        "Új"
       ],
       "New message": [
         "Új üzenet"
@@ -477,6 +504,12 @@
       "Restore from trash": [
         "Visszaállítás a Lomtárból"
       ],
+      "Restore this version": [
+        "Visszatérés ehhez a változathoz"
+      ],
+      "Restore version": [
+        "Változat visszaállítása"
+      ],
       "Resume all": [
         "Összes folytatása"
       ],
@@ -492,6 +525,9 @@
       "Save": [
         "Mentés"
       ],
+      "Save version as copy": [
+        "Változat mentése másolatként"
+      ],
       "Search": [
         "Keresés"
       ],
@@ -503,6 +539,9 @@
       ],
       "See plan features": [
         "Csomag részleteinek megtekintése"
+      ],
+      "See version history": [
+        "Változatelőzmények megjelenítése"
       ],
       "Select all": [
         "Összes kijelölése"
@@ -594,6 +633,9 @@
       "Try another method": [
         "Másik módszer"
       ],
+      "Try for free": [
+        "Próbálja ki díjmentesen"
+      ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Próbálja újra. Sikertelen mentés oka: ${ saveError }"
       ],
@@ -626,6 +668,9 @@
       ],
       "Upload file": [
         "Fájl feltöltése"
+      ],
+      "Upload files": [
+        "Fájlok feltöltése"
       ],
       "Upload folder": [
         "Mappa feltöltése"
@@ -2870,6 +2915,9 @@
         "${ contactsCount } névjegy található",
         "${ contactsCount } névjegy található"
       ],
+      "${ deviceName } (restored)": [
+        "${ deviceName } (helyreállított)"
+      ],
       "${ doneCount } finished": [
         "${ doneCount } kész",
         "${ doneCount } kész"
@@ -2919,6 +2967,9 @@
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } a(z) ${ providerCalendars.length } naptárból",
         "${ selectedCalendarsTotal } a(z) ${ providerCalendars.length } naptárból"
+      ],
+      "${ selectedCount } selected": [
+        "${ selectedCount } kijelöltve"
       ],
       "${ selectedFoldersCount } folder selected": [
         "${ selectedFoldersCount } mappa kiválasztva",
@@ -2976,6 +3027,9 @@
       "All your changes will be lost.": [
         "A változtatások el fognak veszni."
       ],
+      "Also try looking in Trash.": [
+        "Próbálja megnézni a lomtárban."
+      ],
       "An active recovery file": [
         "Egy aktív helyreállító fájl"
       ],
@@ -2997,6 +3051,9 @@
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "Biztos benne, hogy kiüríti a lomtárat és véglegesen törli az összes benne lévő elemet?"
       ],
+      "Are you sure you want to permanently delete": [
+        "Biztos, hogy véglegesen törli a következőt:"
+      ],
       "Are you sure you want to permanently delete \"${ itemName }\" from trash?": [
         "Biztos, hogy véglegesen törli az alábbit: ${ itemName } a lomtárból?"
       ],
@@ -3006,6 +3063,9 @@
       "Attention required": [
         "Figyelem szükséges"
       ],
+      "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access or decrypt your files for you. To unlock your drive after a password reset, you must have one of the following:": [
+        "Mivel a ${ DRIVE_APP_NAME } végpontok közt titkosított, mi sem tudjuk visszafejteni vagy elérni a fájljait. A jelszó visszaállítása után, a fájlok feloldásához, a következők egyike szükséges:"
+      ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Mielőtt új megerősítő kódot igényelne, kérjük tekintse meg a spam mappát illetve bizonyosodjon meg arról, hogy ${ strong } a megfelelő cím."
       ],
@@ -3014,6 +3074,15 @@
       ],
       "Canceled": [
         "Megszakítva"
+      ],
+      "Cannot load link": [
+        "A hivatkozást nem sikerült betölteni"
+      ],
+      "Cannot load links": [
+        "A hivatkozások betöltése nem sikerült"
+      ],
+      "Cannot load shared link": [
+        "Megosztási hivatkozás betöltése nem sikerült"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Nem emlékszik a jelszóra? Lehetőség van arra, hogy az összes olyan névjegyadatot törölje, amelyet ezzel a kulccsal titkosított, így megszüntetheti ezt a figyelmeztetést."
@@ -3085,6 +3154,12 @@
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "Támogatottak az Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora és más alkalmazások CSV fájljai, illetve a vCard 3.1 és 4.0 formátum (UTF-8 kódolással)."
       ],
+      "Current version": [
+        "Jelenlegi változat"
+      ],
+      "Decrypting files": [
+        "Fájlok visszafejtése"
+      ],
       "Delete locked drive": [
         "Zárolt tárhely törlése",
         "Zárolt tárhelyek törlése"
@@ -3134,11 +3209,20 @@
       "Emails are automatically signed": [
         "Az e-mailek automatikusan aláírásra kerülnek"
       ],
+      "Enable drive search": [
+        "A felhőtárhelyen való keresés engedélyezése"
+      ],
       "Enabling drive search": [
         "Felhőtárban keresés engedélyezése"
       ],
       "Encrypted search is here": [
         "A titkosított keresés megérkezett"
+      ],
+      "End-to-end encrypted": [
+        "Végpontok közt titkosított"
+      ],
+      "Enter password": [
+        "Jelszó megadása"
       ],
       "Enter the code from your authenticator app": [
         "Adja meg a hitelesítő alkalmazása által generált kódot"
@@ -3168,6 +3252,12 @@
       "Failed": [
         "Sikertelen"
       ],
+      "Failed to generate a secure link. The reason is: ${ error }": [
+        "Biztonságos hivatkozás készítése sikertelen. Az oka: ${ error }"
+      ],
+      "Failed to generate a secure link. Try again later": [
+        "Nem sikerült a biztonságos hivatkozás létrehozása. Próbálja meg később"
+      ],
       "Failed to open a secure link. The reason is: ${ error }": [
         "Biztonságos hivatkozás megnyitása sikertelen. Az oka: ${ error }"
       ],
@@ -3179,6 +3269,9 @@
       ],
       "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
         "A fájl aláírása hiányzik. Nem tudtuk megerősíteni, hogy ki töltötte fel ezt: ${ fileName }."
+      ],
+      "File will not be updated": [
+        "A fájl nem kerül frissítésre"
       ],
       "Finalizing": [
         "Befejezés"
@@ -3201,14 +3294,29 @@
       "Folders you sync from your computer will appear here.": [
         "Itt jelennek meg a számítógépéről szinkronizált mappák."
       ],
+      "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
+        "A legjobb eredményért addig ne videózzon vagy végezzem memóriaigényes műveletet, vagy darabolja a feltöltését kisebb részekre."
+      ],
       "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
         "Irányítsa át a bejövő leveleit másik címről, a biztonságos ${ MAIL_APP_NAME } fiókjába."
+      ],
+      "Free forever": [
+        "Örökre ingyenes"
       ],
       "Free up some space or add more storage space.": [
         "Szabadítson fel helyet vagy vásároljon több területet."
       ],
       "Free up some space or contact your administrator.": [
         "Szabadítson fel területet vagy írjon az adminisztrátornak."
+      ],
+      "from the version history?": [
+        "az előző változatok közül?"
+      ],
+      "Get to know ${ DRIVE_APP_NAME } and earn your 500 MB storage bonus! Take action today.": [
+        "Ismerje meg a ${ DRIVE_APP_NAME } alkalmazást és szerezzen 500 MB bónusz tárhelyet! Kezdje már ma."
+      ],
+      "Go ahead, upload a file": [
+        "Töltsön fel egy fájl"
       ],
       "Go to \"My files\" and upload some files first.": [
         "Nyissa meg a Saját fájlokat és töltsön fel néhány fájlt."
@@ -3227,6 +3335,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Ha nem találja az e-mailt a beérkező leveleknél, ellenőrizze a Levélszemét közt."
+      ],
+      "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process.": [
+        "Ha megvan valamelyik, nyissa meg a ${ BRAND_NAME } fiók beállításait a feloldási folyamat elindításához."
       ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "${ calendarCount } naptár importálása a ${ totalCalendarsCount } naptárból",
@@ -3277,6 +3388,12 @@
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "Úgy tűnik, hogy nemrég megpróbálta feltölteni ezt a fájlt: ${ uploadName }. Ha feltöltés nem sikerült, ${ replaceFile }. Ha a feltöltés még folyamatban van, lecserélése törölni fogja a folyamatban lévő feltöltést."
       ],
+      "Items in the trash will stay here until you delete them permanently": [
+        "A lomtárban addig maradnak az elemek, amíg véglegesen nem törli azokat."
+      ],
+      "It’s as easy as drag and drop or selecting files": [
+        "Egyszerűen ejtsen ide fájlokat, vagy válassza ki feltöltésre"
+      ],
       "It’s easy and secure": [
         "Egyszerű és biztonságos"
       ],
@@ -3295,11 +3412,17 @@
       "Large imports can take several days.": [
         "Egy nagyobb importálás akár napokig is eltarthat."
       ],
+      "Last week": [
+        "Múlt hét"
+      ],
       "Learn more": [
         "További információk"
       ],
       "Link copied to clipboard": [
         "Hivatkozás a vágólapra másolva"
+      ],
+      "Link owner has the password": [
+        "A hivatkozás tulajdonosa ismeri a jelszót"
       ],
       "Loading": [
         "Betöltés"
@@ -3319,6 +3442,9 @@
       "Loading...": [
         "Betöltés..."
       ],
+      "Makes your account safer": [
+        "Biztonságosabbá teszi a fiókját"
+      ],
       "Merged": [
         "Egyesítve"
       ],
@@ -3333,6 +3459,9 @@
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Adjon nevet a mappának és válassza ki a szülő mappát amelyben elhelyezi. Ha nem választ szülő mappát, akkor egy új felső szintű mappát hoz létre."
+      ],
+      "Need to share a file? Then get ${ DRIVE_APP_NAME },\nthe safest way to share, store, and sync your files.": [
+        "Meg kellene osztania egy fájlt? Használja a ${ DRIVE_APP_NAME }\nalkalmazást, a fájlok megosztására, tárolására és szinkronizálásra."
       ],
       "Network issue": [
         "Hálózati probléma"
@@ -3358,6 +3487,9 @@
       "No results found": [
         "Nincs találat"
       ],
+      "No synced computers": [
+        "Nincs szinkronizált számítógép"
+      ],
       "No synced folders": [
         "Nincsenek szinkronizált mappák"
       ],
@@ -3367,8 +3499,14 @@
       "Not a valid URL": [
         "Érvénytelen URL-cím"
       ],
+      "Not all files were transferred. Try uploading or downloading the files again.": [
+        "Nem minden fájl került átvitelre. Próbálja meg újra fel- vagy letölteni a fájlokat."
+      ],
       "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
         "Megjegyzés: az adatok még mindig elérhetők lehetnek helyileg olyan eszközökön, ahol telepítette a ${ DRIVE_APP_NAME } alkalmazást."
+      ],
+      "Nothing here yet": [
+        "Egyelőre itt nincs semmi"
       ],
       "of": [
         "/"
@@ -3391,6 +3529,9 @@
       ],
       "Paused": [
         "Felfüggesztve"
+      ],
+      "Permanently delete all files in your locked drive": [
+        "A zárolt tárhelyen található összes fájl végleges törlése"
       ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "A PGP/Inline csak Egyszerű Szöveg formátummal támogatott."
@@ -3438,6 +3579,12 @@
       "Preview for this file type is not supported": [
         "Ehhez a fájltípushoz nem jeleníthető meg előnézet"
       ],
+      "Previous versions are kept for ${ retentionLabel }": [
+        "A korábbi változatok tárolásának ideje ${ retentionLabel }"
+      ],
+      "Previous versions are not saved": [
+        "A korábbi változatok nincsenek tárolva"
+      ],
       "Primary": [
         "Elsődleges"
       ],
@@ -3464,6 +3611,12 @@
       ],
       "Restore": [
         "Helyreállítás"
+      ],
+      "Restore is in progress. This can take a few seconds.": [
+        "Visszaállítás folyamatban. Ez pár másodpercet vesz igénybe."
+      ],
+      "Restored files ${ formattedDate }": [
+        "Helyreálíltott fájlok ${ formattedDate }"
       ],
       "Search cannot be enabled in this browser": [
         "A keresés nem engedélyezhető ebben a böngészőben"
@@ -3498,11 +3651,23 @@
       "Shareable link for ${ boldNameText }": [
         "Megosztható hivatkozás ehhez: ${ boldNameText }"
       ],
+      "Shared link not found": [
+        "A megosztott hivatkozás nem található"
+      ],
+      "Signature cannot be validated due to network error, please try again later.": [
+        "Az aláírás hálózati hiba miatt nem ellenőrizhető. Próbája újra később."
+      ],
       "Signature check will be ignored": [
         "Az aláírás-ellenőrzés figyelmen kívül lesz hagyva"
       ],
       "Signature issue": [
         "Probléma az aláírással"
+      ],
+      "Some files failed to download. Try downloading the files again.": [
+        "Néhány fájl letöltése nem sikerült. Próbálja meg újra."
+      ],
+      "Some files failed to upload. Try uploading the files again.": [
+        "Néhány fájl feltöltése nem sikerült. Próbálja meg újra."
       ],
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "Néhány fájlja már nem érhető el. Állítsa vissza a fájlok elérését. ${ StartRecoveryButton }"
@@ -3513,6 +3678,9 @@
       "support team": [
         "ügyfélszolgálat"
       ],
+      "Swiss encrypted file storage": [
+        "Svájci titkosított tárhely"
+      ],
       "Temporarily unavailable. Please check back later.": [
         "Átmenetileg nem elérhető. Próbálja meg később."
       ],
@@ -3521,6 +3689,9 @@
       ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "Az alkalmazásnak helyben kell visszafejtenie a névjegyeket az exportáláshoz. A folyamat végén egy VCF fájl fog létrejönni, amelyet letölthet."
+      ],
+      "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
+        "A titkosított adatok egy kicsit több helyet foglalnak a titkosítás és az aláírások miatt, amelyek az adatai biztonságát szolgálják."
       ],
       "The following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Az alábbiakkal, lehet, hogy babráltak: ${ items }. Csak akkor nyissa meg, ha megbízik benne."
@@ -3539,6 +3710,9 @@
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Ez a böngésző nem támogatja a PDF fájlok megjelenítését. Töltse le a fájlt."
+      ],
+      "This file may have been deleted, moved or made unavailable. Try reaching out to the file owner.": [
+        "A fájlt törölték, áthelyezték vagy elérhetetlenné vált. Lépjen kapcsolatba a fájl tulajdonosával."
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Ez a hivatkozás egy olyan weboldalhoz vezet, amely ellophatja személyes információit, mint például a jelszavait vagy a bankkártyája adatait."
@@ -3565,6 +3739,21 @@
       "This will overwrite the existing folder": [
         "Felülírja a meglévő mappát"
       ],
+      "This will replace the existing file with the folder": [
+        "Ez lecseréli a meglévő fájl a mappával"
+      ],
+      "This will replace the existing folder with the file": [
+        "Ez lecseréli a meglévő mappát a fájllal"
+      ],
+      "This will upload a new version of the file": [
+        "Ez a fájl egy új változatát fogja feltölteni"
+      ],
+      "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
+        "Az igazán privát kereséshez az szükséges, hogy a ${ DRIVE_APP_NAME } helyileg indexelje a fájlokat."
+      ],
+      "To enable truly private search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
+        "Az igazán privát kereséshez a fájlok helyi indexelése szükséges. Használhatja tovább a ${ DRIVE_APP_NAME } alkalmazást - értesítést fog kapni az indexelés elkészültekor."
+      ],
       "To fight spam and abuse, please verify you are human.": [
         "A visszaélések és a levélszemét megakadályozására kérjük bizonyítsa, hogy nem robot."
       ],
@@ -3580,6 +3769,9 @@
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "A cím hitelesítés használatához egy vagy több nyilvános kulcsot megbízhatóként kell megjelölnie, beleértve azt is amelyiket a küldéshez szeretné használni. Ez megakadályozza hamisított titkosítási kulcsok használatát."
       ],
+      "Today": [
+        "Ma"
+      ],
       "Transfer canceled for file \"${ name }\"": [
         "\"${ name }\" fájl átvitele megszakítva"
       ],
@@ -3594,6 +3786,9 @@
       ],
       "Trash": [
         "Lomtár"
+      ],
+      "Try searching by file name, date, or type.": [
+        "Keressen fájlnév, dátum vagy típus alapján."
       ],
       "Unknown error": [
         "Ismeretlen hiba"
@@ -3628,6 +3823,12 @@
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Használja ezt az adatlapot, hogy tájékoztasson minket nem megfelelő, illegális vagy egyéb módon kártékony megosztott fájlokról. A következőt készül megosztani:"
       ],
+      "Version is deleted": [
+        "A változat törölve"
+      ],
+      "Version is restored": [
+        "Változat visszaállítva"
+      ],
       "Way to go, you’ve just doubled your free storage!": [
         "Csak így tovább, megduplázta ingyenes tárhelyét!"
       ],
@@ -3655,6 +3856,12 @@
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Amikor engedélyezi a kétlépcsős azonosítást, biztosítunk helyreállítási kódokat is, amelyekkel akkor is bejelentkezhet, ha nem fér hozzá a hitelesítő alkalmazásához."
       ],
+      "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
+        "visszaállításra kerül, a(z) ${ formattedRevisionDate } dátumú változatból. Minden további változat továbbra is elérhető marad."
+      ],
+      "With ${ DRIVE_APP_NAME }, your data is protected with end-to-end encryption. Only you can decrypt it.": [
+        "A ${ DRIVE_APP_NAME } alkalmazásban az adatai végpontok közti titkosítással védettek. Csak ön tudja visszafejteni."
+      ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Új ellenőrző kódot kér, vagy megpróbál egy másik ellenőrzési módszert?"
       ],
@@ -3666,6 +3873,9 @@
       ],
       "Yes": [
         "Igen"
+      ],
+      "Yesterday": [
+        "Tegnap"
       ],
       "You are about to open another browser tab and visit:": [
         "Egy új böngésző fülön a következő címet fogja megnyitni:"
@@ -3739,6 +3949,9 @@
       "Your phone number will only be used for this one-time verification.": [
         "A telefonszám csak erre az egyszeri ellenőrzésre lesz felhasználva."
       ],
+      "Your plan is limited to 10 versions for up to 7 days": [
+        "A csomagja maximum 10 változatot tesz lehetővé, maximum 7 napig"
+      ],
       "Your previous password": [
         "A korábbi jelszava"
       ],
@@ -3760,6 +3973,12 @@
       ],
       "file data key": [
         "fájl adatkulcs"
+      ],
+      "file data order": [
+        "fájl adatsorrend"
+      ],
+      "hash key": [
+        "kivonatkulcs"
       ],
       "keys": [
         "kulcsok"
@@ -3792,8 +4011,19 @@
       ]
     },
     "Label": {
+      "# of downloads": [
+        "Letöltések száma"
+      ],
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } felhasználónév"
+      ],
+      "${ nbDay } day": [
+        "${ nbDay } nap",
+        "${ nbDay } nap"
+      ],
+      "${ nbYear } year": [
+        "${ nbYear } év",
+        "${ nbYear } év"
       ],
       "(Expired)": [
         "(Lejárt)"
@@ -3885,6 +4115,9 @@
       "Country": [
         "Ország"
       ],
+      "Create ${ BRAND_NAME } account": [
+        "${ BRAND_NAME } fiók létrehozása"
+      ],
       "Create a share link": [
         "Megosztási hivatkozás készítése"
       ],
@@ -3915,6 +4148,12 @@
       ],
       "Download anyway": [
         "Letöltés mindenképpen"
+      ],
+      "Downloading ${ percentageValue }%": [
+        "${ percentageValue }% letöltése"
+      ],
+      "Duplicate found": [
+        "Duplikált elem található"
       ],
       "Email": [
         "E-mail"
@@ -4015,6 +4254,15 @@
       "Import to:": [
         "Importálás ide:"
       ],
+      "Keep both": [
+        "Mindkettő megtartása"
+      ],
+      "Keep both files": [
+        "Tartsa meg mindkét fájlt"
+      ],
+      "Keep both folders": [
+        "Tartsa meg mindkét mappát"
+      ],
       "Label messages as": [
         "Üzenetek megjelölése címkével"
       ],
@@ -4111,6 +4359,15 @@
       "Region": [
         "Régió"
       ],
+      "Replace existing file": [
+        "Cserélje le a meglévő fájlt"
+      ],
+      "Replace existing folder": [
+        "Cserélje le a meglévő mappát"
+      ],
+      "Report": [
+        "Jelentés"
+      ],
       "Reveal password": [
         "Jelszó felfedése"
       ],
@@ -4122,6 +4379,9 @@
       ],
       "Set recovery method": [
         "Helyreállítási módszer beállítása"
+      ],
+      "Show indexing progress of Encrypted Search": [
+        "A Titkosított Kereső indexelési folyamatának megtekintése"
       ],
       "Sign emails": [
         "Üzenetek aláírása"
@@ -4180,6 +4440,9 @@
       "Upload picture": [
         "Kép feltöltése"
       ],
+      "Upload your first file": [
+        "Töltsön fel fájlokat"
+      ],
       "Verification code": [
         "Ellenőrző kód"
       ],
@@ -4191,6 +4454,9 @@
       ],
       "Wonderful": [
         "Csodás"
+      ],
+      "Yes, I want to permanently delete my old files": [
+        "Igen, véglegesen törölni szeretném a korábbi fájljaimat"
       ],
       "Your password (admin)": [
         "Jelszó (adminisztrátor)"
@@ -4375,9 +4641,6 @@
       "Custom email domains": [
         "Saját domain nevek"
       ],
-      "Hide My Email aliases": [
-        "Az e-mail álnevek elrejtése"
-      ],
       "Schedule messages at any time": [
         "Üzenetek ütemezése bármikor"
       ],
@@ -4498,6 +4761,12 @@
       ],
       "All items will soon be permanently deleted from trash": [
         "Minden elem hamarosan törlésre fog kerülni a Lomtárban"
+      ],
+      "Cannot load link": [
+        "A hivatkozást betöltése nem sikerült"
+      ],
+      "Cannot load next page": [
+        "A következő oldal betöltése nem sikerült"
       ],
       "Contact group created": [
         "Névjegy csoport létrehozva"
@@ -4624,9 +4893,18 @@
       "Create a share link": [
         "Megosztási hivatkozás készítése"
       ],
+      "Get started using ${ DRIVE_APP_NAME } and we'll double your free storage to 1GB!": [
+        "Kezdje el használni a ${ DRIVE_APP_NAME } alkalmazást és megduplázzuk az ingyenes tárhelyét, 1 GB-ra!"
+      ],
+      "Set a recovery method": [
+        "Helyreállítási módszer beállítása"
+      ],
       "Simply complete the following in the next ${ expiresInDays } day:": [
         "Teljesítse az alábbit a következő ${ expiresInDays } napon belül:",
         "Teljesítse az alábbiakat a következő ${ expiresInDays } napon belül:"
+      ],
+      "Upload a file": [
+        "Fájl feltöltése"
       ],
       "Your trusty online vault for vital documents and precious memories.": [
         "A megbízható széfje a fontos dokumentumai és értékes emlékei számára."
@@ -4645,6 +4923,9 @@
       "Set up your organization": [
         "Állítsa be a szervezet adatait"
       ],
+      "Set up your organization testing": [
+        "A szervezetének beállítása"
+      ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
         "Használja az alkalmazás választót a bal felső sarokban, hogy hozzáférjen az összes ${ BRAND_NAME } szolgáltatáshoz: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } és ${ DRIVE_SHORT_APP_NAME }."
       ],
@@ -4655,6 +4936,9 @@
     "Onboarding Title": {
       "Welcome to ${ DRIVE_APP_NAME }": [
         "Üdvözli a ${ DRIVE_APP_NAME }"
+      ],
+      "Your welcome bonus": [
+        "Indulási bónusz"
       ]
     },
     "Option": {
@@ -5125,6 +5409,9 @@
       "Browser might run out of memory": [
         "A böngésző kifuthat memóriából"
       ],
+      "Cannot load link": [
+        "A hivatkozást nem sikerült betölteni"
+      ],
       "Change layout": [
         "Elrendezés módosítása"
       ],
@@ -5235,6 +5522,9 @@
       "Empty trash": [
         "Lomtár kiürítése"
       ],
+      "Enable drive search": [
+        "A felhőtárhelyen való keresés engedélyezése"
+      ],
       "Enter your password": [
         "Adja meg a jelszavát"
       ],
@@ -5268,6 +5558,9 @@
       ],
       "Groups": [
         "Csoportok"
+      ],
+      "Hm, we couldn't find that one": [
+        "Sajnos, ez nem található"
       ],
       "Human verification": [
         "Robot ellenőrzés"
@@ -5323,6 +5616,9 @@
       ],
       "Name": [
         "Név"
+      ],
+      "No results found": [
+        "Nincs találat"
       ],
       "Number of files": [
         "Fájlok száma"
@@ -5465,6 +5761,9 @@
       "The link either does not exist or has expired": [
         "A hivatkozás nem létezik vagy leját"
       ],
+      "The link expired": [
+        "A hivatkozás lejárt"
+      ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "A fájl aláírása hiányzik vagy hibás. Nyissa meg a Menü (⋮) → Részletek pontot a további információért."
       ],
@@ -5491,6 +5790,12 @@
       ],
       "Uploading a large file or folder": [
         "Nagy fájl vagy mappa feltöltése"
+      ],
+      "Version details": [
+        "Változat adatai"
+      ],
+      "Version history": [
+        "Változatelőzmények"
       ],
       "View contacts": [
         "Névjegyek megtekintése"
@@ -5524,6 +5829,9 @@
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "A Mail Plus csomagjának próbaidőszaka lejár: ${ textDate }"
+      ],
+      "Your welcome actions": [
+        "Indulási műveletek"
       ],
       "You’ve got 1 GB of storage": [
         "Kapott 1 GB tárhelyet"

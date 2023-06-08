@@ -89,6 +89,9 @@
       "As Scheduled": [
         "Como Agendado"
       ],
+      "At most 100 contacts are allowed per contact group": [
+        "São permitidos, no máximo, 100 contactos por grupo de contactos"
+      ],
       "Attach screenshot(s)": [
         "Anexar captura(s) de ecrã"
       ],
@@ -319,6 +322,9 @@
       "Download ${ attachmentName }": [
         "Transferir ${ attachmentName }"
       ],
+      "Downloading": [
+        "A transferir"
+      ],
       "Edit": [
         "Editar"
       ],
@@ -465,6 +471,12 @@
       ],
       "I have a question": [
         "Tenho uma dúvida"
+      ],
+      "Image could not be loaded with tracker protection.": [
+        "A imagem não pôde ser carregada devido à proteção contra rastreadores."
+      ],
+      "Image will be loaded without a proxy": [
+        "A imagem será carregada sem um proxy."
       ],
       "Images will be loaded without a proxy": [
         "Imagens serão carregadas sem uma proxy"
@@ -994,6 +1006,9 @@
       ],
       "This message contains remote content.": [
         "Esta mensagem contém conteúdo remoto."
+      ],
+      "To search your emails securely, we need to download a copy of your messages to your browser. The initial download may take a moment.": [
+        "Para pesquisar os seus e-mails em segurança, precisamos de descarregar uma cópia das suas mensagens para o seu navegador. O descarregamento inicial pode demorar um momento."
       ],
       "Toggle Calendar app": [
         "Alternar aplicação de calendário"
@@ -2843,6 +2858,9 @@
       "Calendar limit reached": [
         "Chegou ao número limite de calendários"
       ],
+      "Cannot export this contact": [
+        "Não é possível exportar este contacto"
+      ],
       "Choose a date in the future.": [
         "Escolha uma data no futuro."
       ],
@@ -2928,6 +2946,9 @@
       "Image upload failed": [
         "Falha ao enviar a imagem"
       ],
+      "IMAP server is required": [
+        "Servidor IMAP é necessário."
+      ],
       "Incorrect login credentials. Please try again.": [
         "Credenciais de início de sessão incorrectas. Tente novamente."
       ],
@@ -2961,6 +2982,9 @@
       "Message processing error.": [
         "Erro ao processar mensagem."
       ],
+      "Missing key packet": [
+        "Pacote chave em falta."
+      ],
       "Missing signature": [
         "Assinatura em falta"
       ],
@@ -2972,6 +2996,9 @@
       ],
       "No contacts found to import": [
         "Não foi encontrado nenhum contacto para importação."
+      ],
+      "No emails found to import - the account does not have an inbox": [
+        "Não foram encontrados e-mails para importar - a conta não tem uma caixa de entrada"
       ],
       "No valid address found": [
         "Nenhum endereço válido encontrado"
@@ -3008,6 +3035,9 @@
       ],
       "Please set a password": [
         "Por favor, defina uma palavra-passe"
+      ],
+      "Port is required": [
+        "A porta é obrigatória."
       ],
       "Primary address key is not decrypted": [
         "A chave de endereço principal não está desencriptada."
@@ -3058,6 +3088,9 @@
       "Some of your folder names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Alguns dos nomes das suas pastas excedem o limite máximo de caracteres do ${ MAIL_APP_NAME }. Personalize a importação para editar esses nomes."
       ],
+      "Some of your label names are reserved. Please customize the import to edit these names.": [
+        "Alguns dos seus nomes de etiquetas estão reservados. Personalize a importação para editar estes nomes."
+      ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         "Alguns dos nomes das suas etiqueta estão indisponíveis. Personalize a importação para editar esses nomes."
       ],
@@ -3107,6 +3140,9 @@
       "There was an error when exporting the contacts vCards": [
         "Ocorreu um erro ao exportar os vCards dos contactos"
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Este campo excede o máximo de ${ maximumLength } caracteres."
+      ],
       "This field is required": [
         "Este campo é requerido"
       ],
@@ -3122,6 +3158,9 @@
       "This message has already been sent": [
         "Esta mensagem já foi enviada"
       ],
+      "This message may contain some links URL that cannot be properly opened by your current browser.": [
+        "Esta mensagem pode conter alguns links URL que não podem ser abertos corretamente pelo seu navegador atual."
+      ],
       "Trusted keys are not valid for sending": [
         "Chaves confiáveis não são válidas para enviar"
       ],
@@ -3133,6 +3172,12 @@
       ],
       "Unknown error.": [
         "Erro desconhecido."
+      ],
+      "Username must begin with a letter or digit": [
+        "O nome de utilizador deve começar com uma letra ou um algarismo"
+      ],
+      "Username must end with a letter or digit": [
+        "O nome de utilizador deve acabar com uma letra ou algarismo"
       ],
       "You can't send a mail to more than 100 recipients": [
         "Não pode enviar um correio electrónico para mais de 100 destinatários."
@@ -3146,6 +3191,9 @@
       ],
       "You did not provide a file.": [
         "Não forneceu um ficheiro."
+      ],
+      "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
+        "Atingiu o número máximo de calendários. Não foi possível importar alguns calendários."
       ],
       "You must set a name": [
         "Tem de definir um nome"
@@ -4133,6 +4181,9 @@
       "Attention required": [
         "Atenção Requerida"
       ],
+      "Automatically delete messages that have been in trash and spam for more than 30 days.": [
+        "Elimine automaticamente as mensagens que se encontram no lixo e no spam há mais de 30 dias."
+      ],
       "Background color": [
         "Cor de fundo"
       ],
@@ -4388,9 +4439,6 @@
       "Hide original message": [
         "Ocultar mensagem original"
       ],
-      "How Hide My Email works": [
-        "Como funciona o Hide My Email"
-      ],
       "I'm sending this message to a non-${ MAIL_APP_NAME } user.": [
         "Estou a enviar esta mensagem para um utilizador que não é ${ MAIL_APP_NAME }."
       ],
@@ -4402,6 +4450,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Se não encontrar o correio electrónico na sua caixa de entrada, verifique a pasta de spam."
+      ],
+      "If your alias is sold, leaked, or abused, simply disable it to stop receiving spam.": [
+        "Se o seu alias for vendido, divulgado ou utilizado de forma abusiva, basta desativá-lo para deixar de receber spam."
       ],
       "Image description": [
         "Descrição da imagem"
@@ -4509,6 +4560,10 @@
       "Merged": [
         "Unido"
       ],
+      "Message downloaded: ${ currentProgress } out of ${ totalProgress }": [
+        "Mensagem descarregada: ${ currentProgress } de ${ totalProgress } do progresso total.",
+        "Mensagens descarregadas: ${ currentProgress } de ${ totalProgress } do progresso total."
+      ],
       "Message expiration works out-of-the-box when sending emails to other ${ MAIL_APP_NAME } users. To send expiring emails to non-${ BRAND_NAME } users, please cancel and add password protection to your email.": [
         "A expiração da mensagem funciona por defeito em e-mails enviados para outros utilizadores ${ MAIL_APP_NAME }. Para enviar e-mails com validade para utilizadores não-${ BRAND_NAME }, por favor cancele e defina uma senha de proteção para o seu email."
       ],
@@ -4532,6 +4587,9 @@
       ],
       "Message will be sent tomorrow at ${ formattedTime }": [
         "A mensagem será enviada amanhã às${ formattedTime }"
+      ],
+      "Messages that have been in trash and spam more than 30 days will be automatically deleted.": [
+        "As mensagens que estiverem no lixo e no spam há mais de 30 dias serão automaticamente eliminadas."
       ],
       "Monthly ${ onDayString }": [
         "Mensalmente ${ onDayString }"
@@ -4990,6 +5048,9 @@
       "Upgrade to add more addresses to your account.": [
         "Faça o upgrade para poder adicionar mais endereços à sua conta."
       ],
+      "Upgrade to automatically delete messages that have been in trash and spam for more than 30 days.": [
+        "Atualize para eliminar automaticamente as mensagens que se encontram no lixo e no spam há mais de 30 dias."
+      ],
       "Upgrade to create more folders, filters, and addresses.": [
         "Faça o upgrade para poder criar mais pastas, filtros e endereços."
       ],
@@ -5067,9 +5128,6 @@
       ],
       "When do you want your message to self-destruct?": [
         "Quando pretende que a sua mensagem se autodestrua?"
-      ],
-      "When giving out your email, use a unique, disposable Hide My Email alias instead of your real email address.": [
-        "Ao fornecer o seu e-mail, use um alias Hide My Email exclusivo e descartável, em vez do seu endereço de e-mail real."
       ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "Quando ativou as chaves confiadas para ${ senderName }, as chaves públicas foram adicionadas aos detalhes do contacto."
@@ -5504,6 +5562,12 @@
       "Also archive": [
         "Arquivar também"
       ],
+      "Always label sender's emails": [
+        "Etiquetar sempre as mensagens de e-mail do remetente"
+      ],
+      "Always move sender's emails": [
+        "Mover sempre os e-mails do remetente"
+      ],
       "AND": [
         "E"
       ],
@@ -5518,6 +5582,9 @@
       ],
       "App password": [
         "Palavra-passe da aplicação"
+      ],
+      "Apply filter to existing emails": [
+        "Aplicar filtro a e-mails existentes"
       ],
       "Attach screenshot(s)": [
         "Anexar capturas de ecrã"
@@ -5564,6 +5631,9 @@
       "City": [
         "Cidade"
       ],
+      "Code is 6 digits without spaces": [
+        "O código tem 6 dígitos sem espaços"
+      ],
       "Colors": [
         "Cores"
       ],
@@ -5587,6 +5657,9 @@
       ],
       "Delete": [
         "Eliminar"
+      ],
+      "Delete recovery-related information.": [
+        "Eliminar informações relacionadas com a recuperação."
       ],
       "Don't ask again": [
         "Não perguntar novamente"
@@ -5677,6 +5750,9 @@
       ],
       "Import contacts": [
         "Importar contactos"
+      ],
+      "Import interval": [
+        "Intervalo de importação"
       ],
       "Import to email address": [
         "Importar para o endereço de correio electrónico"
@@ -6601,6 +6677,12 @@
       "Please describe the problem and include any error messages": [
         "Descreva o problema e inclua quaisquer mensagens de erro."
       ],
+      "Please insert link first": [
+        "Por favor, insira primeiro a hiperligação"
+      ],
+      "Search date, name, email address, or subject line": [
+        "Data de pesquisa, nome, endereço de e-mail ou linha de assunto"
+      ],
       "Search for group name": [
         "Procurar grupo pelo nome"
       ],
@@ -6923,6 +7005,12 @@
         "${ seconds } segundos"
       ]
     },
+    "specialoffer: Deal": {
+      "${ n } month FREE": [
+        "${ n } mês GRÁTIS.",
+        "${ n } meses GRÁTIS."
+      ]
+    },
     "specialoffer: Deal details": {
       "3 TB": [
         "3 TB"
@@ -6965,6 +7053,10 @@
       ],
       "2 years": [
         "2 anos"
+      ],
+      "for ${ n } month": [
+        "por ${ n } mês.",
+        "por ${ n } meses."
       ]
     },
     "Spotlight": {
@@ -7139,6 +7231,12 @@
       "Conversation removed from ${ labelName }.": [
         "Conversa removida de ${ labelName }."
       ],
+      "Conversations from ${ sendersList } will be labelled as ${ labelsList }": [
+        "As conversas de ${ sendersList } serão etiquetadas como ${ labelsList }"
+      ],
+      "Conversations from ${ sendersList } will be moved to ${ folder }": [
+        "As conversas de ${ sendersList } serão movidas para ${ folder }."
+      ],
       "Draft deleted": [
         "Rascunho eliminado"
       ],
@@ -7163,8 +7261,14 @@
       "Message added to ${ labelName }.": [
         "Mensagem adicionada a ${ labelName }."
       ],
+      "Message content search enabled": [
+        "Pesquisa de conteúdo de mensagens ativada"
+      ],
       "Message deleted": [
         "Mensagem eliminada"
+      ],
+      "Message expiration cancelled": [
+        "Anulação da expiração da mensagem"
       ],
       "Message marked as legitimate": [
         "Mensagem marcada como legítima"
@@ -7178,6 +7282,9 @@
       "Message marked as unread.": [
         "Mensagem marcada como não lida."
       ],
+      "Message moved to ${ folderName } and sender added to your not spam list.": [
+        "A mensagem foi movida para ${ folderName } e remetente adicionado à sua lista de não spam."
+      ],
       "Message moved to ${ folderName }.": [
         "Mensagem movida para ${ folderName }."
       ],
@@ -7186,6 +7293,12 @@
       ],
       "Message removed from ${ labelName }.": [
         "Mensagem removida de ${ labelName }."
+      ],
+      "Messages from ${ sendersList } will be labelled as ${ labelsList }": [
+        "As mensagens de ${ sendersList } serão etiquetadas como ${ labelsList }"
+      ],
+      "Messages from ${ sendersList } will be moved to ${ folder }": [
+        "As mensagens de ${ sendersList } serão movidas para ${ folder }."
       ],
       "Move ${ selectionCount } conversation": [
         "Mover ${ selectionCount } conversa",
@@ -7215,6 +7328,15 @@
       ],
       "Read receipt sent": [
         "Recibo de leitura enviado"
+      ],
+      "Self-destruction removed": [
+        "Autodestruição removida"
+      ],
+      "Self-destruction set": [
+        "Autodestruição definida"
+      ],
+      "Undo in progress": [
+        "Desfazer em curso"
       ],
       "Verification successful": [
         "A verificação é terminada."
@@ -7306,12 +7428,20 @@
         "${ hours } hora",
         "${ hours } horas"
       ],
+      "${ hoursInt }.5 hour": [
+        "${ hoursInt }.5 hora.",
+        "${ hoursInt }.5 horas."
+      ],
       "${ minutes } minute": [
         "${ minutes } minuto",
         "${ minutes } minutos"
       ]
     },
     "Title": {
+      "${ emailsCount } email address": [
+        "${ emailsCount } endereço de correio eletrónico",
+        "${ emailsCount } endereços de correio eletrónico"
+      ],
       "${ MAIL_APP_NAME } Keyboard Shortcuts": [
         "${ MAIL_APP_NAME } Atalhos de teclado"
       ],
@@ -7364,6 +7494,9 @@
       ],
       "Block sender": [
         "Bloquear remetente"
+      ],
+      "Cannot add more addresses": [
+        "Não é possível adicionar mais endereços"
       ],
       "Carbon Copy": [
         "Cópias de mensagem (CC)"
@@ -7816,6 +7949,9 @@
       "Trust public key?": [
         "Confiar na chave pública?"
       ],
+      "Unlock contacts groups": [
+        "Desbloquear grupos de contactos."
+      ],
       "Unsubscribe": [
         "Cancelar subscrição"
       ],
@@ -7923,6 +8059,17 @@
       ],
       "You do not have any contacts to export": [
         "Não tem contactos para exportar"
+      ]
+    },
+    "Update font modal": {
+      "Today is a good day to write an email": [
+        "Hoje é um bom dia para escrever um e-mail"
+      ],
+      "Update default font and size": [
+        "Atualizar o tipo e o tamanho de letra predefinidos"
+      ],
+      "Your default font will look like following:": [
+        "O tipo de letra predefinido terá o seguinte aspeto:"
       ]
     },
     "Validation": {
