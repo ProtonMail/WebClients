@@ -251,7 +251,7 @@ const MoreDropdown = ({
                                     onClick={handleMoveAllToArchive}
                                     data-testid="toolbar:moveAllToArchive"
                                 >
-                                    <Icon name="archive-box" className="mr0-5" />
+                                    <Icon name="archive-box" className="mr-2" />
                                     {c('Action').t`Move all to archive`}
                                 </DropdownMenuButton>
                             ) : null}

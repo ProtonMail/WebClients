@@ -1,6 +1,7 @@
 import { createAction, createAsyncThunk } from '@reduxjs/toolkit';
 
 import { moveAll as moveAllRequest, queryMessageMetadata } from '@proton/shared/lib/api/messages';
+import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import diff from '@proton/utils/diff';
 import unique from '@proton/utils/unique';
@@ -146,7 +147,10 @@ export const moveAll = createAsyncThunk<
     { SourceLabelID: string; DestinationLabelID: string },
     AppThunkExtra
 >('elements/moveAll', async ({ SourceLabelID, DestinationLabelID }, { dispatch, getState, extra }) => {
-    await extra.api(moveAllRequest({ SourceLabelID, DestinationLabelID }));
+    // If we move all to trash, we don't want to keep labels attached to the elements
+    const isMoveToTrash = SourceLabelID === MAILBOX_LABEL_IDS.TRASH;
+
+    await extra.api(moveAllRequest({ SourceLabelID, DestinationLabelID, KeepSourceLabel: isMoveToTrash ? 0 : 1 }));
 
     const timeoutID = refreshTaskRunningTimeout([SourceLabelID], {
         getState,

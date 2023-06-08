@@ -246,13 +246,15 @@ export const emptyLabel = ({ LabelID, AddressID }: { LabelID: string; AddressID:
 export const moveAll = ({
     SourceLabelID,
     DestinationLabelID,
+    KeepSourceLabel = 1,
 }: {
     SourceLabelID: string;
     DestinationLabelID: string;
+    KeepSourceLabel?: number;
 }) => ({
     method: 'put',
     url: 'mail/v4/messages/move',
-    data: { SourceLabelID, DestinationLabelID },
+    data: { SourceLabelID, DestinationLabelID, KeepSourceLabel },
 });
 
 export const cancelSend = (messageID: string) => ({
