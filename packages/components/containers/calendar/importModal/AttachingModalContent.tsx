@@ -1,6 +1,4 @@
-import { ChangeEvent, DragEvent } from 'react';
-
-
+import { ChangeEvent } from 'react';
 
 import { c } from 'ttag';
 
@@ -13,9 +11,8 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import { ImportCalendarModel } from '@proton/shared/lib/interfaces/calendar/Import';
 
-import { Alert, AttachedFile, Bordered, Dropzone, Field, FileInput, Label, LearnMore, Row } from '../../../components';
+import { Alert, AttachedFile, Dropzone, Field, FileInput, Label, LearnMore, Row } from '../../../components';
 import CalendarSelect from '../../../components/calendarSelect/CalendarSelect';
-import { classnames } from '../../../helpers';
 
 interface Props {
     model: ImportCalendarModel;
@@ -23,23 +20,10 @@ interface Props {
     onSelectCalendar: (calendar: VisualCalendar) => void;
     onAttach: (event: ChangeEvent<HTMLInputElement>) => void;
     onClear: () => void;
-    isDropzoneHovered: boolean;
-    onDrop: (event: DragEvent) => void;
-    onDragEnter: (event: DragEvent) => void;
-    onDragLeave: (event: DragEvent) => void;
+    onDrop: (Files: File[]) => void;
 }
 
-const AttachingModalContent = ({
-    model,
-    calendars,
-    onSelectCalendar,
-    onAttach,
-    onClear,
-    isDropzoneHovered,
-    onDrop,
-    onDragEnter,
-    onDragLeave,
-}: Props) => {
+const AttachingModalContent = ({ model, calendars, onSelectCalendar, onAttach, onClear, onDrop }: Props) => {
     const options = calendars.map(({ Name, ID, Color }) => ({ name: Name, id: ID, color: Color }));
     const handleChange = ({ value }: { value: string }) => {
         const calendar = calendars.find(({ ID }) => ID === value);
@@ -66,28 +50,22 @@ const AttachingModalContent = ({
     return (
         <>
             {alert}
-            <Bordered className={classnames(['flex relative', !!model.failure && 'border-container--error'])}>
-                {model.fileAttached ? (
-                    <AttachedFile
-                        file={model.fileAttached}
-                        iconName="calendar-grid"
-                        clear={c('Action').t`Delete`}
-                        onClear={onClear}
-                    />
-                ) : (
-                    <Dropzone
-                        isHovered={isDropzoneHovered}
-                        onDrop={onDrop}
-                        onDragEnter={onDragEnter}
-                        onDragLeave={onDragLeave}
-                        className="w100"
-                    >
+            <Dropzone onDrop={onDrop} size="small" shape="flashy">
+                <div className="flex flex-align-items-center flex-justify-center border p-4 rounded-xl mb-4">
+                    {model.fileAttached ? (
+                        <AttachedFile
+                            file={model.fileAttached}
+                            iconName="calendar-grid"
+                            clear={c('Action').t`Delete`}
+                            onClear={onClear}
+                        />
+                    ) : (
                         <FileInput className="mx-auto" accept=".ics" id="import-calendar" onChange={onAttach}>
                             {c('Action').t`Choose a file or drag it here`}
                         </FileInput>
-                    </Dropzone>
-                )}
-            </Bordered>
+                    )}
+                </div>
+            </Dropzone>
             {calendars.length > 1 && (
                 <Row>
                     <Label style={{ '--label-width': 'auto' }} htmlFor="import-calendar-select">

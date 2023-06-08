@@ -1,4 +1,6 @@
 import {
+    ComponentPropsWithoutRef,
+    ReactNode,
     Ref,
     RefObject,
     useCallback,
@@ -48,7 +50,7 @@ export interface TimeGridActionRef {
     scrollToNow: () => void;
 }
 
-interface Props {
+interface Props extends Omit<ComponentPropsWithoutRef<'div'>, 'onMouseDown'> {
     isNarrow?: boolean;
     displaySecondaryTimezone?: boolean;
     primaryTimezone: string;
@@ -74,6 +76,7 @@ interface Props {
     weekdaysSingle?: string[];
     actionRef: RefObject<TimeGridActionRef>;
     isDrawerApp?: boolean;
+    children?: ReactNode; // Needed for the dropzone
 }
 
 const TimeGrid = ({
@@ -102,6 +105,8 @@ const TimeGrid = ({
     targetMoreData,
     actionRef,
     isDrawerApp,
+    children,
+    ...rest
 }: Props) => {
     const timeGridRef = useRef<HTMLDivElement>(null);
     const dayGridRef = useRef<HTMLDivElement>(null);
@@ -315,7 +320,9 @@ const TimeGrid = ({
             className={clsx(['flex-item-fluid scroll-if-needed h100', displayViewClass])}
             onScroll={handleScroll}
             ref={scrollRef}
+            {...rest}
         >
+            {children}
             <div className="relative main-area-content">
                 <div
                     ref={titleRef}

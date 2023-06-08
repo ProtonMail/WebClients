@@ -334,15 +334,6 @@
 		max-inline-size: em(640);
 	}
 
-	&-editor-dropzone {
-		// Force dropzone background color to white in the composer
-		inset-block-start: 5px;
-		inset-block-end: 5px;
-		background-color: white;
-		border: 1px dashed var(--border-norm);
-		opacity: 1;
-	}
-
 	&-body-container {
 		overflow-y: auto;
 		overflow-x: hidden;
