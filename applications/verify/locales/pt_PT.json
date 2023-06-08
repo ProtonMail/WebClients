@@ -863,6 +863,9 @@
       "The email addresses do not match": [
         "Os endereços de correio electrónico não coincidem."
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Este campo excede o máximo de ${ maximumLength } caracteres."
+      ],
       "This field is required": [
         "Este campo é requerido"
       ],
@@ -874,6 +877,12 @@
       ],
       "Unknown error": [
         "Erro desconhecido"
+      ],
+      "Username must begin with a letter or digit": [
+        "O nome de utilizador deve começar com uma letra ou um algarismo"
+      ],
+      "Username must end with a letter or digit": [
+        "O nome de utilizador deve acabar com uma letra ou algarismo"
       ]
     },
     "Error message": {
@@ -988,6 +997,9 @@
     "Label": {
       "Authenticator app": [
         "Aplicação de autenticação"
+      ],
+      "Code is 6 digits without spaces": [
+        "O código tem 6 dígitos sem espaços"
       ],
       "Email address": [
         "Endereço de correio electrónico"
