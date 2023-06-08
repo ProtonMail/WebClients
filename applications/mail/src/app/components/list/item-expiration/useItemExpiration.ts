@@ -6,6 +6,9 @@ import { c, msgid } from 'ttag';
 import useInterval from '@proton/hooks/useInterval';
 
 import { formatFullDate } from '../../../helpers/date';
+import { isConversation } from '../../../helpers/elements';
+import { Conversation } from '../../../models/conversation';
+import { Element } from '../../../models/element';
 
 const EVERY_MINUTE = 60 * 1000;
 
@@ -30,16 +33,21 @@ const getShortMessage = (date: Date, now: Date, expiresInLessThan24Hours: boolea
     );
 };
 
-const useItemExpiration = (expirationTime?: number) => {
+const useItemExpiration = (element: Element, expirationTime?: number) => {
     const [now, setNow] = useState(new Date());
     const expirationDate = fromUnixTime(expirationTime || 0);
     const formattedDate = formatFullDate(expirationDate);
     const expiresInLessThan24Hours = differenceInHours(expirationDate, now) < 24;
 
+    const isConversationWithSeveralMessages =
+        isConversation(element) && ((element as Conversation)?.NumMessages || 0) > 1;
+
     useInterval(() => setNow(new Date()), EVERY_MINUTE);
 
     return {
-        tooltipMessage: c('Info').t`This message will expire ${formattedDate}`,
+        tooltipMessage: isConversationWithSeveralMessages
+            ? c('Info').t`This conversation contains one or more expiring messages`
+            : c('Info').t`This message will expire ${formattedDate}`,
         shortMessage: getShortMessage(expirationDate, now, expiresInLessThan24Hours),
         expiresInLessThan24Hours,
     };
