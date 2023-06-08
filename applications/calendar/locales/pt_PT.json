@@ -47,6 +47,9 @@
       "Apply": [
         "Aplicar"
       ],
+      "At most 100 contacts are allowed per contact group": [
+        "São permitidos, no máximo, 100 contactos por grupo de contactos"
+      ],
       "Attach screenshot(s)": [
         "Anexar captura(s) de ecrã"
       ],
@@ -234,6 +237,12 @@
       ],
       "I have a question": [
         "Tenho uma dúvida"
+      ],
+      "Image could not be loaded with tracker protection.": [
+        "A imagem não pôde ser carregada devido à proteção contra rastreadores."
+      ],
+      "Image will be loaded without a proxy": [
+        "A imagem será carregada sem um proxy."
       ],
       "Import": [
         "Importar"
@@ -1979,6 +1988,9 @@
       "Cancellation failed to be sent": [
         "Falha ao enviar o cancelamento"
       ],
+      "Cannot export this contact": [
+        "Não é possível exportar este contacto"
+      ],
       "Contact could not be saved": [
         "Impossível gravar o contacto"
       ],
@@ -2038,6 +2050,9 @@
       "Image upload failed": [
         "Falha ao enviar a imagem"
       ],
+      "IMAP server is required": [
+        "Servidor IMAP é necessário."
+      ],
       "Incorrect login credentials. Please try again.": [
         "Credenciais de início de sessão incorrectas. Tente novamente."
       ],
@@ -2074,6 +2089,9 @@
       "Label name cannot be empty.": [
         "O nome da etiqueta não pode estar vazio."
       ],
+      "Missing key packet": [
+        "Pacote chave em falta."
+      ],
       "Missing signature": [
         "Assinatura em falta"
       ],
@@ -2085,6 +2103,9 @@
       ],
       "No contacts found to import": [
         "Não foi encontrado nenhum contacto para importação."
+      ],
+      "No emails found to import - the account does not have an inbox": [
+        "Não foram encontrados e-mails para importar - a conta não tem uma caixa de entrada"
       ],
       "No valid address found": [
         "Nenhum endereço válido encontrado"
@@ -2118,6 +2139,9 @@
       "Please fix the highlighted conflict to proceed.": [
         "Por favor corrija o conflito selecionado para proceder.",
         "Por favor corrija os conflitos selecionados para proceder."
+      ],
+      "Port is required": [
+        "A porta é obrigatória."
       ],
       "Primary address key is not decrypted": [
         "A chave de endereço principal não está desencriptada."
@@ -2159,6 +2183,9 @@
       "Some of your folder names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Alguns dos nomes das suas pastas excedem o limite máximo de caracteres do ${ MAIL_APP_NAME }. Personalize a importação para editar esses nomes."
       ],
+      "Some of your label names are reserved. Please customize the import to edit these names.": [
+        "Alguns dos seus nomes de etiquetas estão reservados. Personalize a importação para editar estes nomes."
+      ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         "Alguns dos nomes das suas etiqueta estão indisponíveis. Personalize a importação para editar esses nomes."
       ],
@@ -2198,6 +2225,9 @@
       "There was an error when exporting the contacts vCards": [
         "Ocorreu um erro ao exportar os vCards dos contactos"
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Este campo excede o máximo de ${ maximumLength } caracteres."
+      ],
       "This field is required": [
         "Este campo é requerido"
       ],
@@ -2210,6 +2240,9 @@
       "This label name is not available. Please choose a different name.": [
         "Este nome de etiqueta não está disponível. Escolha um nome diferente."
       ],
+      "This message may contain some links URL that cannot be properly opened by your current browser.": [
+        "Esta mensagem pode conter alguns links URL que não podem ser abertos corretamente pelo seu navegador atual."
+      ],
       "Trusted keys are not valid for sending": [
         "Chaves confiáveis não são válidas para enviar"
       ],
@@ -2219,6 +2252,12 @@
       "Unknown error": [
         "Erro desconhecido"
       ],
+      "Username must begin with a letter or digit": [
+        "O nome de utilizador deve começar com uma letra ou um algarismo"
+      ],
+      "Username must end with a letter or digit": [
+        "O nome de utilizador deve acabar com uma letra ou algarismo"
+      ],
       "Validation error": [
         "Erro de validação"
       ],
@@ -2227,6 +2266,9 @@
       ],
       "You can't send vCard files of more than 10 contacts": [
         "Não pode enviar ficheiros vCard de mais de 10 contactos."
+      ],
+      "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
+        "Atingiu o número máximo de calendários. Não foi possível importar alguns calendários."
       ],
       "You must set a name": [
         "Tem de definir um nome"
@@ -3520,6 +3562,9 @@
       "City": [
         "Cidade"
       ],
+      "Code is 6 digits without spaces": [
+        "O código tem 6 dígitos sem espaços"
+      ],
       "Color": [
         "Cor"
       ],
@@ -3540,6 +3585,9 @@
       ],
       "Delete": [
         "Eliminar"
+      ],
+      "Delete recovery-related information.": [
+        "Eliminar informações relacionadas com a recuperação."
       ],
       "Description": [
         "Descrição"
@@ -3627,6 +3675,9 @@
       ],
       "Import contacts": [
         "Importar contactos"
+      ],
+      "Import interval": [
+        "Intervalo de importação"
       ],
       "Import to email address": [
         "Importar para o endereço de correio electrónico"
@@ -4788,6 +4839,9 @@
       "Preferences saved": [
         "Preferências gravadas"
       ],
+      "Undo in progress": [
+        "Desfazer em curso"
+      ],
       "Verification successful": [
         "A verificação é terminada."
       ]
@@ -4868,12 +4922,20 @@
         "${ hours } hora",
         "${ hours } horas"
       ],
+      "${ hoursInt }.5 hour": [
+        "${ hoursInt }.5 hora.",
+        "${ hoursInt }.5 horas."
+      ],
       "${ minutes } minute": [
         "${ minutes } minuto",
         "${ minutes } minutos"
       ]
     },
     "Title": {
+      "${ emailsCount } email address": [
+        "${ emailsCount } endereço de correio eletrónico",
+        "${ emailsCount } endereços de correio eletrónico"
+      ],
       "Account suspended": [
         "Conta suspensa"
       ],
@@ -4916,6 +4978,9 @@
       ],
       "Calendar alarm": [
         "Alarme do calendário"
+      ],
+      "Cannot add more addresses": [
+        "Não é possível adicionar mais endereços"
       ],
       "Change my answer": [
         "Alterar a minha resposta"
@@ -5192,6 +5257,9 @@
       ],
       "Start import process": [
         "Iniciar o processo de importação"
+      ],
+      "Unlock contacts groups": [
+        "Desbloquear grupos de contactos."
       ],
       "Update event": [
         "Atualizar o evento"
