@@ -31,6 +31,7 @@ const {
     FLAG_PHISHING_AUTO,
     FLAG_HAM_MANUAL,
     FLAG_FROZEN_EXPIRATION,
+    FLAG_SUSPICIOUS,
 } = MESSAGE_FLAGS;
 const AUTOREPLY_HEADERS = ['X-Autoreply', 'X-Autorespond', 'X-Autoreply-From', 'X-Mail-Autoreply'];
 const LIST_HEADERS = [
@@ -93,6 +94,8 @@ export const isUnsubscribable = (message?: Partial<Message>) => {
 };
 export const isDMARCValidationFailure = hasFlag(FLAG_DMARC_FAIL);
 export const isAutoFlaggedPhishing = hasFlag(FLAG_PHISHING_AUTO);
+export const isSuspicious = hasBigFlag(FLAG_SUSPICIOUS);
+
 export const isManualFlaggedHam = hasFlag(FLAG_HAM_MANUAL);
 
 export const isExternalEncrypted = (message: Message) => isE2E(message) && !isInternal(message);
