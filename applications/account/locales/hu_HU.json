@@ -5884,6 +5884,9 @@
       "Your phone number will only be used for this one-time verification.": [
         "A telefonszám csak erre az egyszeri ellenőrzésre lesz felhasználva."
       ],
+      "Your plan is limited to 10 versions for up to 7 days": [
+        "A csomagja maximum 10 változatot tesz lehetővé, maximum 7 napig"
+      ],
       "Your recovery phrase": [
         "Az ön helyreállító jelmondata"
       ],
@@ -6307,6 +6310,14 @@
       "${ n } month": [
         "${ n } hónap",
         "${ n } hónap"
+      ],
+      "${ nbDay } day": [
+        "${ nbDay } nap",
+        "${ nbDay } nap"
+      ],
+      "${ nbYear } year": [
+        "${ nbYear } év",
+        "${ nbYear } év"
       ],
       "${ UsedAddresses } of ${ MaxAddresses } email address": [
         "${ UsedAddresses }, a(z) ${ MaxAddresses } e-mail címből",
@@ -7815,9 +7826,6 @@
       ],
       "GDPR data processing agreement": [
         "GDPR adatfeldolgozói megállapodás"
-      ],
-      "Hide My Email aliases": [
-        "Az e-mail álnevek elrejtése"
       ],
       "High-speed VPN on ${ n } device": [
         "Nagysebességű VPN ${ n } eszközön",
@@ -10338,6 +10346,9 @@
       ],
       "Verify email address": [
         "E-mail cím megerősítése"
+      ],
+      "Version history": [
+        "Változatelőzmények"
       ],
       "VPN apps": [
         "VPN alkalmazások"
