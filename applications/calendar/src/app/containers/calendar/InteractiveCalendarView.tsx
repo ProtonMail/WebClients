@@ -1,5 +1,4 @@
 import {
-    DragEvent,
     MutableRefObject,
     RefObject,
     useCallback,
@@ -15,7 +14,6 @@ import { c } from 'ttag';
 
 import {
     Dropzone,
-    onlyDragFiles,
     useApi,
     useBeforeUnload,
     useCalendarModelEventManager,
@@ -88,7 +86,6 @@ import { SendPreferences } from '@proton/shared/lib/interfaces/mail/crypto';
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import getSendPreferences from '@proton/shared/lib/mail/send/getSendPreferences';
 import eventImport from '@proton/styles/assets/img/illustrations/event-import.svg';
-import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 import unique from '@proton/utils/unique';
@@ -1444,14 +1441,6 @@ const InteractiveCalendarView = ({
         return [...eventsSet.keys()].map((eventId) => latestEvents[eventId]).filter(isTruthy);
     }, [targetMoreData?.events, events]);
 
-    const [isDropzoneHovered, setIsDropzoneHovered] = useState(false);
-
-    const handleHover = (hover: boolean) =>
-        onlyDragFiles((event: DragEvent) => {
-            setIsDropzoneHovered(hover);
-            event.stopPropagation();
-        });
-
     const onAddFiles = (files: File[]) => {
         if (!files) {
             return;
@@ -1472,12 +1461,6 @@ const InteractiveCalendarView = ({
             },
         });
     };
-
-    const handleDrop = onlyDragFiles((event: DragEvent) => {
-        event.preventDefault();
-        setIsDropzoneHovered(false);
-        onAddFiles([...event.dataTransfer.files]);
-    });
 
     const getEditedTemporaryEvent = (isDuplication: boolean = false) => {
         if (!targetEvent) {
@@ -1505,21 +1488,7 @@ const InteractiveCalendarView = ({
     };
 
     return (
-        <Dropzone
-            isDisabled={Object.values(modalsMap).some((modal) => modal.isOpen) || !!targetEvent}
-            isHovered={isDropzoneHovered}
-            onDrop={handleDrop}
-            onDragEnter={handleHover(true)}
-            onDragLeave={handleHover(false)}
-            className={clsx(['relative h100', isDropzoneHovered && 'no-scroll'])}
-            content={
-                <section className="main-dropzone p4 text-center">
-                    <img className="main-dropzone-image" src={eventImport} alt="" aria-hidden="true" />
-                    <h2 className="main-dropzone-heading h3 text-bold m-0">{c('Title').t`Drop to upload`}</h2>
-                    <p className="m-0 color-weak">{c('Info').t`Your events will be encrypted and then saved.`}</p>
-                </section>
-            }
-        >
+        <>
             {!!importModal.props && (
                 <ImportModal
                     {...importModal.props}
@@ -1626,36 +1595,50 @@ const InteractiveCalendarView = ({
                     }}
                 />
             )}
-            <CalendarView
-                view={view}
-                isNarrow={isNarrow}
-                isInteractionEnabled={!isLoading}
-                onMouseDown={handleMouseDown}
-                tzid={tzid}
-                primaryTimezone={primaryTimezone}
-                secondaryTimezone={secondaryTimezone}
-                secondaryTimezoneOffset={secondaryTimezoneOffset}
-                targetEventData={targetEventData}
-                targetEventRef={setTargetEventRef}
-                targetMoreRef={setTargetMoreRef}
-                targetMoreData={targetMoreData}
-                displayWeekNumbers={displayWeekNumbers}
-                displaySecondaryTimezone={displaySecondaryTimezone}
-                now={now}
-                date={date}
-                dateRange={dateRange}
-                events={sortedEventsWithTemporary}
-                onClickDate={onClickDate}
-                onChangeDate={onChangeDate}
-                onClickToday={onClickToday}
-                formatTime={formatTime}
-                formatDate={formatDate}
-                weekdays={weekdays}
-                weekdaysSingle={weekdaysSingle}
-                timeGridViewRef={timeGridViewRef}
-                isScrollDisabled={isScrollDisabled}
-                isDrawerApp={isDrawerApp}
-            />
+            <Dropzone
+                onDrop={onAddFiles}
+                disabled={Object.values(modalsMap).some((modal) => modal.isOpen) || !!targetEvent}
+                shape="transparent"
+                customContent={
+                    <section className="main-dropzone p4 text-center">
+                        <img className="main-dropzone-image" src={eventImport} alt="" aria-hidden="true" />
+                        <h2 className="main-dropzone-heading h3 text-bold m-0">{c('Title').t`Drop to upload`}</h2>
+                        <p className="m-0 color-weak">{c('Info').t`Your events will be encrypted and then saved.`}</p>
+                    </section>
+                }
+                isStatic={true}
+            >
+                <CalendarView
+                    view={view}
+                    isNarrow={isNarrow}
+                    isInteractionEnabled={!isLoading}
+                    onMouseDown={handleMouseDown}
+                    tzid={tzid}
+                    primaryTimezone={primaryTimezone}
+                    secondaryTimezone={secondaryTimezone}
+                    secondaryTimezoneOffset={secondaryTimezoneOffset}
+                    targetEventData={targetEventData}
+                    targetEventRef={setTargetEventRef}
+                    targetMoreRef={setTargetMoreRef}
+                    targetMoreData={targetMoreData}
+                    displayWeekNumbers={displayWeekNumbers}
+                    displaySecondaryTimezone={displaySecondaryTimezone}
+                    now={now}
+                    date={date}
+                    dateRange={dateRange}
+                    events={sortedEventsWithTemporary}
+                    onClickDate={onClickDate}
+                    onChangeDate={onChangeDate}
+                    onClickToday={onClickToday}
+                    formatTime={formatTime}
+                    formatDate={formatDate}
+                    weekdays={weekdays}
+                    weekdaysSingle={weekdaysSingle}
+                    timeGridViewRef={timeGridViewRef}
+                    isScrollDisabled={isScrollDisabled}
+                    isDrawerApp={isDrawerApp}
+                />
+            </Dropzone>
             <Popover
                 containerEl={document.body}
                 targetEl={targetEventRef}
@@ -1904,7 +1887,7 @@ const InteractiveCalendarView = ({
                     isDrawerApp={isDrawerApp}
                 />
             )}
-        </Dropzone>
+        </>
     );
 };
 

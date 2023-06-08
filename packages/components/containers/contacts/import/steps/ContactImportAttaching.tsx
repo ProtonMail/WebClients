@@ -1,4 +1,4 @@
-import { ChangeEvent, Dispatch, DragEvent, FormEvent, SetStateAction, useState } from 'react';
+import { ChangeEvent, Dispatch, FormEvent, SetStateAction } from 'react';
 
 import { c, msgid } from 'ttag';
 
@@ -21,15 +21,12 @@ import { EXTENSION, IMPORT_STEPS, ImportContactsModel } from '@proton/shared/lib
 import {
     Alert,
     AttachedFile,
-    Bordered,
     Dropzone,
     FileInput,
     ModalTwoContent,
     ModalTwoFooter,
     ModalTwoHeader,
-    onlyDragFiles,
 } from '../../../../components';
-import { classnames } from '../../../../helpers';
 import { useFeature } from '../../../../hooks';
 import { FeatureCode } from '../../../features';
 import { getInitialState } from '../ContactImportModal';
@@ -42,8 +39,6 @@ interface Props {
     onClose?: () => void;
 }
 const ContactImportAttaching = ({ model, setModel, onClose }: Props) => {
-    const [isDropzoneHovered, setIsDropzoneHovered] = useState(false);
-
     const { feature: featureUsedContactsImport, update: updateUsedContactsImport } = useFeature(
         FeatureCode.UsedContactsImport
     );
@@ -51,12 +46,6 @@ const ContactImportAttaching = ({ model, setModel, onClose }: Props) => {
     const handleClear = () => {
         setModel(getInitialState());
     };
-
-    const handleHover = (hover: boolean) =>
-        onlyDragFiles((event: DragEvent) => {
-            setIsDropzoneHovered(hover);
-            event.stopPropagation();
-        });
 
     const handleFiles = (files: File[]) => {
         const [fileAttached] = files;
@@ -87,12 +76,6 @@ const ContactImportAttaching = ({ model, setModel, onClose }: Props) => {
             setModel({ ...model, failure: e });
         }
     };
-
-    const handleDrop = onlyDragFiles((event: DragEvent) => {
-        event.preventDefault();
-        setIsDropzoneHovered(false);
-        onAddFiles([...event.dataTransfer.files]);
-    });
 
     const handleAttach = ({ target }: ChangeEvent<HTMLInputElement>) => {
         try {
@@ -184,28 +167,22 @@ const ContactImportAttaching = ({ model, setModel, onClose }: Props) => {
             <ModalTwoHeader title={c('Title').t`Import contacts`} />
             <ModalTwoContent>
                 {alert}
-                <Bordered className={classnames(['flex relative', !!model.failure && 'border-danger'])}>
-                    {model.fileAttached ? (
-                        <AttachedFile
-                            file={model.fileAttached}
-                            iconName="users"
-                            clear={c('Action').t`Delete`}
-                            onClear={handleClear}
-                        />
-                    ) : (
-                        <Dropzone
-                            isHovered={isDropzoneHovered}
-                            onDrop={handleDrop}
-                            onDragEnter={handleHover(true)}
-                            onDragLeave={handleHover(false)}
-                            className="w100"
-                        >
+                <Dropzone onDrop={onAddFiles} size="small" shape="flashy">
+                    <div className="flex flex-align-items-center flex-justify-center border p-4 rounded-xl">
+                        {model.fileAttached ? (
+                            <AttachedFile
+                                file={model.fileAttached}
+                                iconName="users"
+                                clear={c('Action').t`Delete`}
+                                onClear={handleClear}
+                            />
+                        ) : (
                             <FileInput accept=".csv, .vcf" id="import-contacts" onChange={handleAttach}>
                                 {c('Action').t`Choose a file or drag it here`}
                             </FileInput>
-                        </Dropzone>
-                    )}
-                </Bordered>
+                        )}
+                    </div>
+                </Dropzone>
             </ModalTwoContent>
             <ModalTwoFooter>
                 <Button onClick={onClose}>{c('Action').t`Cancel`}</Button>

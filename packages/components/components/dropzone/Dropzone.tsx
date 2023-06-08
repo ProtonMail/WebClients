@@ -1,94 +1,144 @@
-import { HTMLAttributes, ReactNode, useEffect, useState } from 'react';
+import { ComponentPropsWithoutRef, DragEvent as ReactDragEvent, ReactNode, cloneElement } from 'react';
 
-import { c } from 'ttag';
+import { isDragFile } from '@proton/components/components';
+import { useDragOver } from '@proton/components/hooks';
 
-import noop from '@proton/utils/noop';
-
-import { classnames } from '../../helpers';
+import DropzoneContent from './DropzoneContent';
 
 import './Dropzone.scss';
 
-type Props = (Omit<HTMLAttributes<HTMLDivElement>, 'content'> &
-    Required<Pick<HTMLAttributes<HTMLDivElement>, 'onDrop' | 'onDragEnter' | 'onDragLeave'>>) & {
+export type DropzoneSize = 'small' | 'medium' | 'large';
+export type DropzoneShape = 'norm' | 'transparent' | 'flashy' | 'white' | 'invisible';
+
+export interface DropzoneProps extends Omit<ComponentPropsWithoutRef<'div'>, 'onDrop'> {
     /**
-     * When true, reveals the overlay and content
+     * Action to trigger when dropping files on top of the dropzone
      */
-    isHovered: boolean;
+    onDrop: (files: File[]) => void;
     /**
-     * The content to show when dragging over the dropzone
+     * Content to display when no hover
      */
-    content?: ReactNode;
-    isDisabled?: boolean;
-};
+    children: JSX.Element;
+    /**
+     * Custom content to show when dragging over the Dropzone
+     */
+    customContent?: ReactNode;
+    /**
+     * Dropzone's size : small | medium | large
+     */
+    size?: DropzoneSize;
+    /**
+     * Dropzone has a border
+     */
+    border?: boolean;
+    /**
+     * Dropzone's border is rounded
+     */
+    rounded?: boolean;
+    /**
+     * Dropzone's shade : norm | transparent | flashy | white | invisible
+     */
+    shape?: DropzoneShape;
+    /**
+     * Dropzone is always on dragOver state, content is always displayed
+     */
+    showDragOverState?: boolean;
+    /**
+     * Dropzone has no dragOver state, and onDrop cannot be triggered
+     */
+    disabled?: boolean;
+    /**
+     * Prevents setting the Dropzone's children div to position "relative"
+     */
+    isStatic?: boolean;
+    /**
+     * Title displayed under the illustration in "large" Dropzones (without custom content). Default text is "Drop to import"
+     */
+    contentTitle?: string;
+    /**
+     * Sub text displayed under the illustration in Dropzones (without custom content).
+     * Default text is "Drop file here to upload" for "small" and "medium" Dropzones,
+     * and "Your files will be encrypted and then saved" for "large" Dropzones
+     */
+    contentSubText?: string;
+}
 
 const Dropzone = ({
-    children,
-    isHovered,
-    onDrop,
-    onDragEnter,
-    onDragLeave,
     className,
-    content,
-    isDisabled = false,
+    children,
+    customContent,
+    onDrop,
+    disabled = false,
+    showDragOverState = false,
+    size = 'medium',
+    rounded = true,
+    border = true,
+    shape = 'norm',
+    isStatic = false,
+    contentTitle,
+    contentSubText,
     ...rest
-}: Props) => {
-    const [allowHover, setAllowHover] = useState(true);
-
-    useEffect(() => {
-        // When dragging over quickly and accidentally dropping the file in the browser window,
-        // the browser prompts to handle it and you remain in the hovered state
-        const onBlur = () => {
-            setAllowHover(false);
-        };
-        // In case the UI bugs out
-        const timeout = setTimeout(() => {
-            if (isHovered) {
-                setAllowHover(false);
-            }
-        }, 5000);
-
-        window.addEventListener('blur', onBlur);
-
-        return () => {
-            window.removeEventListener('blur', onBlur);
-            clearTimeout(timeout);
-        };
-    }, [isHovered]);
-
-    const getContent = () => {
-        if (!content) {
-            return <span className="dropzone-text">{c('Info').t`Drop the file here to upload`}</span>;
+}: DropzoneProps) => {
+    const handleDrop = (event: ReactDragEvent) => {
+        if (!disabled) {
+            onDrop([...event.dataTransfer.files]);
         }
-
-        return content;
     };
 
-    return (
-        <div
-            className={className}
-            onDrop={!isDisabled ? onDrop : noop}
-            onDragEnter={(event) => {
-                setAllowHover(true);
-                onDragEnter(event);
-            }}
-            onDragOver={(event) => event.preventDefault()}
-            {...rest}
-        >
-            <div
-                className={classnames([
-                    'dropzone absolute-cover flex flex-justify-center flex-align-items-center',
-                    !isDisabled && allowHover && isHovered && 'is-hovered',
-                ])}
-                onDragLeave={onDragLeave}
-            >
-                <div className="no-pointer-events">{getContent()}</div>
-            </div>
+    const [hovering, dragProps] = useDragOver(isDragFile, 'move', { onDrop: handleDrop });
 
-            <div className="dropzone-content flex flex-align-items-center flex-justify-center w100 h100">
-                {children}
-            </div>
-        </div>
-    );
+    const isInvisible = shape === 'invisible';
+
+    // We need to display the dropzone content when:
+    // - We are on dragOver state
+    // - We force to always display the dragOver state
+    // BUT, we don't want to show it when:
+    // - Dropzone is completely disabled
+    // - The dropzone is invisible (we always show the children)
+    const shouldDisplayDropzoneContent = (hovering || showDragOverState) && !disabled && !isInvisible;
+
+    const dropzoneContent = shouldDisplayDropzoneContent ? (
+        <DropzoneContent
+            border={border}
+            className={className}
+            customContent={customContent}
+            rounded={rounded}
+            shape={shape}
+            size={size}
+            contentTitle={contentTitle}
+            contentSubText={contentSubText}
+        />
+    ) : null;
+
+    /**
+     * Warning:
+     * To display this dropzone we had two solutions
+     * 1. Add a container, wrapping the child and the content
+     * 2. Clone the element and update some props
+     *
+     * The first solution is easier to implement and to use, however in some cases (mostly CSS), adding this container could break the UI
+     * The developer would then need to do tricky CSS manipulation in order to get a working dropzone.
+     *
+     * To avoid having a container div which would contain the children and the content, we clone the children element.
+     * However, the Dropzone children might need some configuration to work properly:
+     * Because we're adding the dropzone content as a new children, and we're adding some props to the children element,
+     * you'll need to spread the rest operator in the wrapping div AND render the children.
+     */
+    return cloneElement(children, {
+        ...children.props,
+        ...dragProps,
+        ...rest,
+        style:
+            shouldDisplayDropzoneContent && !isStatic
+                ? { position: 'relative', ...children.props.style }
+                : { ...children.props.style },
+        children: (
+            <>
+                {children.props.children}
+                {dropzoneContent}
+            </>
+        ),
+    });
 };
 
 export default Dropzone;

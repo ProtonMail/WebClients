@@ -1,4 +1,4 @@
-import { ChangeEvent, DragEvent, useEffect, useState } from 'react';
+import { ChangeEvent, useEffect, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
@@ -26,7 +26,7 @@ import {
 } from '@proton/shared/lib/interfaces/calendar';
 import noop from '@proton/utils/noop';
 
-import { BasicModal, onlyDragFiles } from '../../../components';
+import { BasicModal } from '../../../components';
 import { useAddresses, useApi, useConfig, useEventManager, useGetCalendarUserSettings } from '../../../hooks';
 import { useCalendarModelEventManager } from '../../eventManager/calendar';
 import AttachingModalContent from './AttachingModalContent';
@@ -63,7 +63,6 @@ const ImportModal = ({ calendars, initialCalendar, files, isOpen = false, onClos
     const getCalendarUserSettings = useGetCalendarUserSettings();
     const { call: calendarCall } = useCalendarModelEventManager();
     const [model, setModel] = useState<ImportCalendarModel>(getInitialState(initialCalendar));
-    const [isDropzoneHovered, setIsDropzoneHovered] = useState(false);
 
     const isCalendar = APP_NAME === APPS.PROTONCALENDAR;
     const activeWritableCalendars = getWritableCalendars(getProbablyActiveCalendars(calendars));
@@ -105,18 +104,6 @@ const ImportModal = ({ calendars, initialCalendar, files, isOpen = false, onClos
             const handleClear = () => {
                 setModel(getInitialState(model.calendar));
             };
-
-            const handleHover = (hover: boolean) =>
-                onlyDragFiles((event: DragEvent) => {
-                    setIsDropzoneHovered(hover);
-                    event.stopPropagation();
-                });
-
-            const handleDrop = onlyDragFiles((event: DragEvent) => {
-                event.preventDefault();
-                setIsDropzoneHovered(false);
-                onAddFiles([...event.dataTransfer.files]);
-            });
 
             const handleAttach = ({ target }: ChangeEvent<HTMLInputElement>) => {
                 try {
@@ -205,10 +192,7 @@ const ImportModal = ({ calendars, initialCalendar, files, isOpen = false, onClos
                         onSelectCalendar={handleSelectCalendar}
                         onAttach={handleAttach}
                         onClear={handleClear}
-                        isDropzoneHovered={isDropzoneHovered}
-                        onDrop={handleDrop}
-                        onDragEnter={handleHover(true)}
-                        onDragLeave={handleHover(false)}
+                        onDrop={onAddFiles}
                     />
                 ),
                 submit,
