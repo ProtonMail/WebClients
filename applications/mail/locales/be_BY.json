@@ -3938,9 +3938,6 @@
       "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
         "Уключае 2700 сервераў у больш чым 65 краінах, магчымасць падключаць да 10 прылад, сэрвісы з трансляцыямі па ўсім свеце, блакіроўку шкодных праграм і рэкламы, а таксама іншыя функцыі."
       ],
-      "Includes support for 3 custom email domains, 90 email addresses, unlimited Hide My Email aliases, calendar sharing and more.": [
-        "Уключае падтрымку для 3 карыстальніцкіх даменаў электроннай пошты, 90 адрасоў электроннай пошты, неабмежаваную колькасць псеўданімаў Hide My Email, абагульванне календара і іншыя функцыі."
-      ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Абараніце свае файлы з дапамогай зашыфраванага воблачнага сховішча. Уключае аўтаматычную сінхранізацыю, шыфраванае абагульванне файлаў і іншыя функцыі."
       ]
@@ -5199,9 +5196,6 @@
       "Hide original message": [
         "Схаваць арыгінальнае паведамленне"
       ],
-      "How Hide My Email works": [
-        "Як працуе функцыя \"Hide My Email\""
-      ],
       "I'm sending this message to a non-${ MAIL_APP_NAME } user.": [
         "Я адпраўляю гэта паведамленне карыстальніку па-за сэрвісам ${ MAIL_APP_NAME }."
       ],
@@ -5545,7 +5539,7 @@
         "Планаванне паведамлення..."
       ],
       "Search option that lets you securely search for keywords in the body of email messages.": [
-        "Параметры пошуку, якія дазваляюць вам бяспечна шукаць па ключавых слова ў целе паведамленняў электронных лістоў."
+        "Параметры пошуку, якія дазваляюць вам бяспечна шукаць па ключавых словах у целе паведамленняў электронных лістоў."
       ],
       "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
         "Пошук займае занадта шмат часу? ${ dropdownButton } або ${ toggleOffButton } з гэтага пошукавага сеанса."
@@ -5600,9 +5594,6 @@
       ],
       "Show original message": [
         "Паказаць арыгінальнае паведамленне"
-      ],
-      "SimpleLogin is a ${ BRAND_NAME } service, and your ${ BRAND_NAME_TWO } Account includes Hide My Email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
-        "SimpleLogin - гэта сэрвіс ${ BRAND_NAME } і ваш уліковы запіс ${ BRAND_NAME_TWO } уключае псеўданімы для функцыі \"Hide My Email\". Для таго, каб пачаць маскіраваць ваш адрас электроннай пошты, перайдзіце ў SimpleLogin і стварыце свой першы псеўданім."
       ],
       "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
         "SimpleLogin забяспечвае просты спосаб для стварэння лагінаў на старонніх сайтах, якім вы не надта давяраеце і не хочаце раскрываць свой сапраўдны адрас электроннай пошты."
@@ -5672,9 +5663,6 @@
       ],
       "There has been an error with the signature used to verify the contact details, which may be the result of a password reset.": [
         "Адбылася памылка подпісу, якая выкарыстоўваецца для праверкі кантактных звестак, што можа быць выклікана скіданнем пароля."
-      ],
-      "They can't spam you if they don't know your email address. Protect your inbox with Hide My Email.": [
-        "Яны больш не змогуць адпраўляць вам лісты са спамам, калі не будуць ведаць ваш адрас электроннай пошты. Абараніце свае ўваходныя з функцыяй \"Hide My Email\"."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Дзеянне гэтага ўліковага запісу было прыпынена па прычыне патэнцыйнага парушэння ўмоў выкарыстання."
@@ -5803,7 +5791,7 @@
         "Занадта шмат паведамленняў чакаюць адпраўкі. Пачакайце, пакуль адправіцца іншае паведамленне, каб запланаваць гэта."
       ],
       "Turn off to only search by date, name, or email address. To disable search message content and delete downloaded messages, go to settings.": [
-        "Выключыце, каб шукаць толькі па даце, імі або адрасе электроннай пошты. Каб выключыць пошук па змесціву паведамлення, і выдаліць запампаваныя паведамленні, перайдзіце ў налады."
+        "Выключыце, каб шукаць толькі па даце, імі або адрасе электроннай пошты. Каб выключыць пошук па змесціве паведамлення, і выдаліць спампаваныя паведамленні, перайдзіце ў налады."
       ],
       "Turn on to search the content of your messages": [
         "Уключыце, каб шукаць змесціва вашых паведамленняў"
@@ -5909,9 +5897,6 @@
       ],
       "When do you want your message to self-destruct?": [
         "Калі вы хочаце, каб ваша паведамленне было самазнішчана?"
-      ],
-      "When giving out your email, use a unique, disposable Hide My Email alias instead of your real email address.": [
-        "Пры перадачы сваёй электроннай пошты, выкарыстоўвайце ўнікальны, аднаразовы псеўданім функцыі \"Hide My Email\", замест вашага рэальнага адраса электроннай пошты."
       ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "Калі вы ўключылі давераныя ключы для ${ senderName }, то гэтыя публічныя ключы былі дабаўлены да кантактных звестак."
@@ -6126,10 +6111,10 @@
     },
     "Key pinning": {
       "Clicking \"Trust Key\" will associate this public key with this sender and emails from this address will be automatically cryptographically verified.": [
-        "Націскаючы кнопку “Давяраць ключу”, вы звяжаце дадзены публічны ключ з гэтым адпраўніком, і лісты з гэтага адраса будуць прахадзіць аўтаматычную крыптаграфічную праверку."
+        "Націснуўшы кнопку “Давяраць ключу”, вы звяжаце дадзены публічны ключ з гэтым адпраўніком, і лісты з гэтага адраса будуць прахадзіць аўтаматычную крыптаграфічную праверку."
       ],
       "Clicking \"Trust Key\" will create a new contact and associate this public key with this sender. Emails from this address will be automatically cryptographically verified.": [
-        "Націскаючы кнопку “Давяраць ключу”, вы створыце новы кантакт, і дадзены адкрыты ключ будзе звязаны з гэтым адпраўніком. Лісты з гэтага адраса будуць аўтаматычна лічыцца крыптаграфічна праверанымі."
+        "Націснуўшы кнопку “Давяраць ключу”, вы створыце новы кантакт, і дадзены адкрыты ключ будзе звязаны з гэтым адпраўніком. Лісты з гэтага адраса будуць аўтаматычна лічыцца крыптаграфічна праверанымі."
       ],
       "Do you want to trust the primary public key with the following fingerprint?": [
         "Вы сапраўды хочаце давяраць асноўнаму публічнаму ключу з наступным адбіткам?",
@@ -7377,9 +7362,6 @@
       "Custom email domains": [
         "Карыстальніцкія дамены электроннай пошты"
       ],
-      "Hide My Email aliases": [
-        "Псеўданімы Hide My Email"
-      ],
       "Schedule messages at any time": [
         "Заплануйце адпраўку паведамленняў у любы час"
       ],
@@ -7631,7 +7613,7 @@
         "Спачатку ўстаўце спасылку"
       ],
       "Search date, name, email address, or subject line": [
-        "Пошук па даце, імі, адрасе электроннай пошце, або радку тэмы"
+        "Пошук па даце, імі, адрасе электроннай пошце або радку тэмы"
       ],
       "Search for group name": [
         "Шукаць па назве групы"
@@ -8198,15 +8180,6 @@
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
         "Атрымлівайце доступ да змесціва сэрвісаў з трансляцыямі, такіх як Netflix, Disney+ і Prime Video з любой краіны ў свеце."
       ],
-      "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited Hide My Email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
-        "Усе нашы прэміяльныя сэрвісы з іх найвышэйшымі квотамі: 100 адрасоў электроннай пошты, падтрымка для 10 карыстальніцкіх даменаў, неабмежаваная колькасць псеўданімаў Hide My Email, абагульванне календара, зашыфраванае воблачнае сховішча і абагульванне файлаў, а таксама іншыя функцыі."
-      ],
-      "Includes support for 1 custom email domain, 10 email addresses, 10 Hide My Email aliases, calendar sharing, and more.": [
-        "Уключае падтрымку для 1 карыстальніцкага дамена электроннай пошты, 10 адрасоў электроннай пошты, 10 псеўданімаў Hide My Email, абагульванне календара і іншыя функцыі."
-      ],
-      "Includes support for 3 custom email domains, 15 email addresses, unlimited Hide My Email aliases, calendar sharing, and more.": [
-        "Уключае падтрымку для 3 карыстальніцкіх даменаў электроннай пошты, 15 адрасоў электроннай пошты, неабмежаваную колькасць псеўданімаў Hide My Email, абагульванне календара і іншыя функцыі."
-      ],
       "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
         "Ідэальна пасуе для сем'яў або невялікіх каманд. У кожнага карыстальніка будзе свая ўласная паштовая скрыня і псеўданімы. Патрабуецца карыстальніцкі дамен."
       ],
@@ -8494,7 +8467,7 @@
         "Паведамленне дададзена ў ${ labelName }."
       ],
       "Message content search enabled": [
-        "Пошук па змесціву паведамлення ўключаны"
+        "Пошук па змесціве паведамлення ўключаны"
       ],
       "Message deleted": [
         "Паведамленне выдалена"
