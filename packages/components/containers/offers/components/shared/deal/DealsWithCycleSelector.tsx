@@ -25,7 +25,7 @@ const DealsWithCycleSelector = (props: OfferProps) => {
 
     return (
         <>
-            <div className="">
+            <div className="text-center">
                 <CycleSelector
                     mode="buttons"
                     cycle={cycle}
