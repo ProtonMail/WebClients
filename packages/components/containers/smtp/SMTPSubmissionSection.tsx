@@ -60,7 +60,6 @@ const SMTPSubmissionSection = () => {
     const submissionTokenAvailable = hasSMTPSubmission(organization);
     const tokenNameToRemove = tokens.find(({ SmtpTokenID }) => SmtpTokenID === tokenIDToRemove)?.Name || '';
     const hasTokens = tokens.length > 0;
-
     const headers = [
         c('Header for table').t`Token name`,
         c('Header for table').t`Email address`,
