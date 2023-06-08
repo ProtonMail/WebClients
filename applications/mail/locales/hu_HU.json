@@ -4857,9 +4857,6 @@
       "Hide original message": [
         "Eredeti üzenet elrejtése"
       ],
-      "How Hide My Email works": [
-        "Így működik a Hide My Email"
-      ],
       "I'm sending this message to a non-${ MAIL_APP_NAME } user.": [
         "Egy nem-${ MAIL_APP_NAME } címzettnek küldöm ezt az üzenetet."
       ],
@@ -5243,9 +5240,6 @@
       "Show original message": [
         "Eredeti üzenet megjelenítése"
       ],
-      "SimpleLogin is a ${ BRAND_NAME } service, and your ${ BRAND_NAME_TWO } Account includes Hide My Email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
-        "A SimpleLogin egy ${ BRAND_NAME } szolgáltatás és a ${ BRAND_NAME_TWO } fiókja tartalmazza a Hide My Email címeit. E-mail címének elrejtéséhez, nyissa meg a SimpleLogin oldalt és hozza létre első alternatív e-mail címeit."
-      ],
       "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
         "A SimpleLogin egy egyszerű lehetőséget biztosít arra, hogy nem teljesen megbízhatónak ítélt oldalakon, a saját e-mail címének felfedése nélkül regisztráljon."
       ],
@@ -5312,9 +5306,6 @@
       ],
       "There has been an error with the signature used to verify the contact details, which may be the result of a password reset.": [
         "Hiba történt a névjegy aláírásnak ellenőrzésekor. Ezt jelszó visszaállítás is okozhatja."
-      ],
-      "They can't spam you if they don't know your email address. Protect your inbox with Hide My Email.": [
-        "Senki sem tud önnek levélszemetet küldeni, ha nem ismerik a valós e-mail címét. Védje meg az e-mail címét a Hide My Email szolgáltatással."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Ez a fiók felfüggesztésre került a szabályzat valószínűsíthető megsértése miatt."
@@ -5542,9 +5533,6 @@
       ],
       "When do you want your message to self-destruct?": [
         "Mikor szeretné, hogy az üzenet megsemmisítse önmagát?"
-      ],
-      "When giving out your email, use a unique, disposable Hide My Email alias instead of your real email address.": [
-        "Amikor megadja valahol az e-mail címét, adjon meg egy egyedi, eldobható, Hide My Email alternatív címet a valós e-mail címe helyett."
       ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "Amikor engedélyezte a megbízható kulcsok kezelését \"${ senderName }\" címzetthez, a nyilvános kulcsok bekerültek a névjegyébe."
@@ -6960,9 +6948,6 @@
       "Custom email domains": [
         "Saját domain nevek"
       ],
-      "Hide My Email aliases": [
-        "Az e-mail álnevek elrejtése"
-      ],
       "Schedule messages at any time": [
         "Üzenetek ütemezése bármikor"
       ],
@@ -7060,6 +7045,9 @@
       ],
       "Set up your organization": [
         "Állítsa be a szervezet adatait"
+      ],
+      "Set up your organization testing": [
+        "A szervezetének beállítása"
       ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
         "Használja az alkalmazás választót a bal felső sarokban, hogy hozzáférjen az összes ${ BRAND_NAME } szolgáltatáshoz: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } és ${ DRIVE_SHORT_APP_NAME }."
