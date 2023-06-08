@@ -477,6 +477,9 @@
       "Hide messages": [
         "Masquer les messages"
       ],
+      "hide-my-email aliases": [
+        "les alias « Hide My Email »"
+      ],
       "I have a question": [
         "J’ai une question"
       ],
@@ -860,7 +863,7 @@
         "Enregistrement${ ellipsis }"
       ],
       "Schedule message": [
-        "Programmer le message"
+        "Programmer l'envoi"
       ],
       "Search": [
         "Rechercher"
@@ -3888,8 +3891,8 @@
       "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
         "Cela comprend 2 700 serveurs répartis dans plus de 65 pays, la possibilité de connecter jusqu'à 10 appareils, l'accès aux services de streaming du monde entier, un bloqueur de logiciels malveillants et de publicités et bien d'autres fonctionnalités."
       ],
-      "Includes support for 3 custom email domains, 90 email addresses, unlimited Hide My Email aliases, calendar sharing and more.": [
-        "Cela comprend la prise en charge de 3 domaines de messagerie personnalisés, de 90 adresses e-mail, d'un nombre illimité d'alias « Hide My Email », du partage de calendriers et bien d'autres fonctionnalités."
+      "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
+        "Comprend la prise en charge de 3 domaines de messagerie personnalisés, de 90 adresses e-mail, d'un nombre illimité d'alias « Hide My Email », du partage de calendrier…"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Sécurisez vos fichiers grâce au stockage cloud chiffré. Cela comprend la synchronisation automatique, le partage de fichiers chiffrés et d'autres fonctionnalités."
@@ -5023,8 +5026,8 @@
       "Hide original message": [
         "Masquer le message d'origine"
       ],
-      "How Hide My Email works": [
-        "Comment fonctionne Hide My Email ?"
+      "How hide-my-email aliases works": [
+        "Fonctionnement des alias « Hide My Email »"
       ],
       "I'm sending this message to a non-${ MAIL_APP_NAME } user.": [
         "J'envoie ce message à une personne qui n'utilise pas ${ MAIL_APP_NAME }."
@@ -5419,7 +5422,7 @@
       "Show original message": [
         "Afficher le message d'origine"
       ],
-      "SimpleLogin is a ${ BRAND_NAME } service, and your ${ BRAND_NAME_TWO } Account includes Hide My Email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
+      "SimpleLogin is a ${ BRAND_NAME } service, and your ${ BRAND_NAME_TWO } Account includes hide-my-email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
         "SimpleLogin est un service proposé par ${ BRAND_NAME } et votre compte ${ BRAND_NAME_TWO } comprend des alias « Hide My Email ». Pour masquer votre adresse e-mail, rendez-vous sur SimpleLogin et créez votre premier alias."
       ],
       "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
@@ -5489,8 +5492,8 @@
       "There has been an error with the signature used to verify the contact details, which may be the result of a password reset.": [
         "Il y a eu une erreur dans la signature utilisée pour vérifier les coordonnées. Cette erreur peut être due à une réinitialisation du mot de passe.\n"
       ],
-      "They can't spam you if they don't know your email address. Protect your inbox with Hide My Email.": [
-        "On ne peut pas vous spammer si l'on ne connaît pas votre adresse e-mail. Protégez votre messagerie avec Hide My Email."
+      "They can't spam you if they don't know your email address. Protect your inbox with hide-my-email aliases.": [
+        "On ne peut pas vous spammer si l'on ne connaît pas votre adresse e-mail. Protégez votre messagerie avec les alias « Hide My Email »."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Ce compte a été suspendu en raison d’une violation potentielle des règles d’utilisation."
@@ -5717,13 +5720,13 @@
         "Quand voulez-vous que votre message soit automatiquement supprimé de la boite de réception du destinataire et de votre dossier des messages envoyés ?"
       ],
       "When do you want your message to be sent?": [
-        "Quand voulez-vous que votre message soit envoyé ?"
+        "Quand voulez-vous envoyer votre message ?"
       ],
       "When do you want your message to self-destruct?": [
         "Quand voulez-vous que votre message s'autodétruise ?"
       ],
-      "When giving out your email, use a unique, disposable Hide My Email alias instead of your real email address.": [
-        "Lorsque vous communiquez votre adresse e-mail, utilisez un alias unique Hide My Email au lieu de votre véritable adresse e-mail."
+      "When giving out your email, use a unique, disposable hide-my-email alias instead of your real email address.": [
+        "Quand vous communiquez votre adresse e-mail, utilisez un alias unique « Hide My Email » au lieu de votre véritable adresse e-mail."
       ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "Quand vous avez activé les clés de confiance pour ${ senderName }, les clés publiques ont été ajoutées aux informations de contact."
@@ -6546,7 +6549,7 @@
         "Alors"
       ],
       "Time": [
-        "Date"
+        "Heure"
       ],
       "To": [
         "À"
@@ -7151,8 +7154,8 @@
       "Custom email domains": [
         "Domaines de messagerie personnalisés"
       ],
-      "Hide My Email aliases": [
-        "Alias Hide My Email"
+      "Hide-my-email aliases": [
+        "Alias « Hide My Email »"
       ],
       "Schedule messages at any time": [
         "Planifiez l'envoi de messages quand vous le voulez"
@@ -7940,13 +7943,13 @@
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
         "Accédez au contenu des services de streaming, dont Netflix, Amazon Prime Video, Canal+, Disney+, France.tv, TF1… où que vous soyez."
       ],
-      "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited Hide My Email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
+      "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
         "Tous nos services premium au plus haut niveau : 100 adresses e-mail, la prise en charge de 10 domaines personnalisés, un nombre illimité d'alias « Hide My Email », le partage de calendriers, le stockage cloud et le partage de fichiers chiffrés…"
       ],
-      "Includes support for 1 custom email domain, 10 email addresses, 10 Hide My Email aliases, calendar sharing, and more.": [
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Comprend la prise en charge d'un domaine de messagerie personnalisé, de 10 adresses e-mail, de 10 alias « Hide My Email », du partage de calendrier…"
       ],
-      "Includes support for 3 custom email domains, 15 email addresses, unlimited Hide My Email aliases, calendar sharing, and more.": [
+      "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
         "Comprend la prise en charge de 3 domaines de messagerie personnalisés, de 15 adresses e-mail, d'un nombre illimité d'alias « Hide My Email », du partage de calendrier…"
       ],
       "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [

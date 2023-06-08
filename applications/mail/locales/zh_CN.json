@@ -4885,9 +4885,6 @@
       "Hide original message": [
         "隐藏原始邮件"
       ],
-      "How Hide My Email works": [
-        "Hide My Email 的原理"
-      ],
       "I'm sending this message to a non-${ MAIL_APP_NAME } user.": [
         "我确定要将此邮件发给非 ${ MAIL_APP_NAME } 邮箱。"
       ],
@@ -5272,9 +5269,6 @@
       "Show original message": [
         "显示原始邮件"
       ],
-      "SimpleLogin is a ${ BRAND_NAME } service, and your ${ BRAND_NAME_TWO } Account includes Hide My Email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
-        "您可以使用 ${ BRAND_NAME } 提供的 SimpleLogin 服务隐藏您的 ${ BRAND_NAME_TWO } 邮箱地址，只需前往 SimpleLogin 创建邮箱别名即可。"
-      ],
       "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
         "如果您不愿将真实邮箱透露给其他网站，SimpleLogin 能够方便快捷地生成临时邮箱供您使用。"
       ],
@@ -5346,9 +5340,6 @@
       ],
       "These messages will be marked as spam. Would you also like to unsubscribe from future emails?": [
         "标为垃圾邮件后，是否要退订此类邮件？"
-      ],
-      "They can't spam you if they don't know your email address. Protect your inbox with Hide My Email.": [
-        "只要不知道您的邮箱地址就无法发送垃圾邮件。使用 Hide My Email 功能将垃圾邮件拒之门外。"
       ],
       "This account has been suspended due to a potential policy violation.": [
         "此账户因可能违反用户协议而被封禁。"
@@ -5568,9 +5559,6 @@
       ],
       "When do you want your message to self-destruct?": [
         "您想何时自动销毁此邮件？"
-      ],
-      "When giving out your email, use a unique, disposable Hide My Email alias instead of your real email address.": [
-        "在网上填写邮箱时，不必使用真实的邮箱地址，只需填写一个可销毁的 Hide My Email 临时邮箱。"
       ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "当您为 ${ senderName } 启用可信密钥时，公钥被添加到联系人详细信息中。"
@@ -6973,9 +6961,6 @@
       "Custom email domains": [
         "自有域名"
       ],
-      "Hide My Email aliases": [
-        "Hide My Email 邮箱别名"
-      ],
       "Schedule messages at any time": [
         "随时安排邮件"
       ],
@@ -7646,9 +7631,6 @@
       ]
     },
     "specialoffer: Tooltip": {
-      "Includes support for 1 custom email domain, 10 email addresses, 10 Hide My Email aliases, calendar sharing, and more.": [
-        "包括对 1 个自定义电子邮件域、10 个电子邮件地址、10 个隐藏我的电子邮件别名、日历共享等的支持。"
-      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
         "存储空间由 ${ MAIL_APP_NAME } 、${ CALENDAR_APP_NAME } 和 ${ DRIVE_APP_NAME } 共享。"
       ]
