@@ -31,8 +31,8 @@ const DealsWithCycleSelector = (props: OfferProps) => {
                     cycle={cycle}
                     onSelect={setCycle}
                     options={[
-                        { text: c('Billing cycle option').t`12 months`, value: CYCLE.YEARLY },
-                        { text: c('Billing cycle option').t`24 months`, value: CYCLE.TWO_YEARS },
+                        { text: c('Billing cycle option').t`1 year`, value: CYCLE.YEARLY },
+                        { text: c('Billing cycle option').t`2 years`, value: CYCLE.TWO_YEARS },
                     ]}
                 />
             </div>
