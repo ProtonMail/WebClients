@@ -1,6 +1,8 @@
 import { DetailedHTMLProps, OptionHTMLAttributes, Ref, SelectHTMLAttributes, forwardRef, useState } from 'react';
 
-import { classnames, generateUID } from '../../helpers';
+import clsx from '@proton/utils/clsx';
+
+import { generateUID } from '../../helpers';
 import Icon from '../icon/Icon';
 import useInput from '../input/useInput';
 import ErrorZone from '../text/ErrorZone';
@@ -83,10 +85,10 @@ const Select = forwardRef<HTMLSelectElement, Props>(
 
         return (
             <>
-                <span className={classnames(['w100 flex flex-column', classNameContainer])}>
+                <span className={clsx(['w100 flex flex-column', classNameContainer])}>
                     <span className="flex relative w100">
                         <select
-                            className={classnames(['field w100', className, statusClasses])}
+                            className={clsx(['field w100', className, statusClasses])}
                             size={size}
                             multiple={multiple}
                             disabled={loading || rest.disabled}

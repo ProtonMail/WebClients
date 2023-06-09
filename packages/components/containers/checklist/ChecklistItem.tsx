@@ -1,6 +1,5 @@
-import { Icon, IconName, classnames } from '@proton/components';
-
-
+import { Icon, IconName } from '@proton/components';
+import clsx from '@proton/utils/clsx';
 
 import './ChecklistItem.scss';
 
@@ -12,13 +11,13 @@ interface ChecklistItemProps {
 }
 
 const ChecklistItem = ({ icon, text, complete, onClick }: ChecklistItemProps) => {
-    const liClassName = classnames([
+    const liClassName = clsx([
         'checklist-item_root',
         'mb-4',
         complete ? 'text-strike color-weak' : 'checklist-item_root--incomplete',
     ]);
 
-    const mainIconClassName = classnames(['mr-6 flex-item-noshrink', complete ? 'color-success' : 'color-primary']);
+    const mainIconClassName = clsx(['mr-6 flex-item-noshrink', complete ? 'color-success' : 'color-primary']);
 
     const listItemContent = (
         <>

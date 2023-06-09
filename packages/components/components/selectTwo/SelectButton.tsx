@@ -1,8 +1,8 @@
 import { ComponentPropsWithRef, KeyboardEvent, forwardRef } from 'react';
 
 import { CircleLoader } from '@proton/atoms';
+import clsx from '@proton/utils/clsx';
 
-import { classnames } from '../../helpers';
 import { DropdownCaret } from '../dropdown';
 import type { IconName } from '../icon/Icon';
 import { NodeOrBoolean } from '../v2/field/InputField';
@@ -40,7 +40,7 @@ const SelectButton = forwardRef<HTMLButtonElement, SelectButtonProps>(
                 aria-live="assertive"
                 aria-atomic="true"
                 aria-invalid={Boolean(error)}
-                className={classnames([
+                className={clsx([
                     !unstyled && 'select field',
                     'outline-none w100 flex flex-justify-space-between flex-align-items-center flex-nowrap no-pointer-events-children',
                     className,

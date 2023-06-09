@@ -1,7 +1,8 @@
 import { ComponentPropsWithoutRef } from 'react';
 
+import clsx from '@proton/utils/clsx';
+
 import { LearnMore, LearnMoreProps } from '../../components';
-import { classnames } from '../../helpers';
 
 interface SettingsParagraphProps extends ComponentPropsWithoutRef<'p'> {
     learnMoreUrl?: string;
@@ -25,7 +26,7 @@ const SettingsParagraph = ({
     ) : null;
 
     return (
-        <p className={classnames(['color-weak mt-0', large ? 'max-w57e' : 'max-w43e', className])} {...rest}>
+        <p className={clsx(['color-weak mt-0', large ? 'max-w57e' : 'max-w43e', className])} {...rest}>
             {children}
             {learnMoreElement}
         </p>

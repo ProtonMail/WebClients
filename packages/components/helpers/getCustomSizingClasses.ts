@@ -1,10 +1,10 @@
-import { classnames } from './component';
+import clsx from '@proton/utils/clsx';
 
 export const getCustomSizingClasses = (style?: any): string => {
     if (!style) {
         return '';
     }
-    return classnames([
+    return clsx([
         style['--height-custom'] !== undefined && 'h-custom',
         style['--width-custom'] !== undefined && 'w-custom',
         style['--top-custom'] !== undefined && 'top-custom',

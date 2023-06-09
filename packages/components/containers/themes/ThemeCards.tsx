@@ -1,6 +1,6 @@
 import { ThemeTypes } from '@proton/shared/lib/themes/themes';
+import clsx from '@proton/utils/clsx';
 
-import { classnames } from '../../helpers';
 import ThemeCard from './ThemeCard';
 
 export interface Theme {
@@ -21,7 +21,7 @@ interface Props {
 
 const ThemeCards = ({ themeIdentifier, onChange, disabled, className, liClassName, list, size = 'medium' }: Props) => {
     return (
-        <ul className={classnames(['unstyled m-0', className])}>
+        <ul className={clsx(['unstyled m-0', className])}>
             {list.map(({ identifier, label, src }) => {
                 const id = `id_${identifier}`;
                 return (

@@ -1,10 +1,10 @@
 import { ReactNode, useEffect, useRef, useState } from 'react';
 
 import { equivalentReducer } from '@proton/components/hooks/useElementRect';
+import clsx from '@proton/utils/clsx';
 import debounce from '@proton/utils/debounce';
 
 import useRightToLeft from '../../containers/rightToLeft/useRightToLeft';
-import { classnames } from '../../helpers';
 import { Tab } from './index.d';
 
 const toKey = (index: number, prefix = '') => `${prefix}${index}`;
@@ -87,11 +87,11 @@ export const Tabs = ({
     }
 
     return (
-        <div className={classnames(['tabs', className])}>
-            <div className={classnames([navContainerClassName, stickyTabs && 'sticky-top bg-norm'])}>
-                <nav className={classnames(['tabs-container border-bottom border-weak', containerClassName])}>
+        <div className={clsx(['tabs', className])}>
+            <div className={clsx([navContainerClassName, stickyTabs && 'sticky-top bg-norm'])}>
+                <nav className={clsx(['tabs-container border-bottom border-weak', containerClassName])}>
                     <ul
-                        className={classnames([
+                        className={clsx([
                             'tabs-list unstyled flex relative m-0 p0',
                             fullWidth && 'tabs-list--fullWidth',
                             'flex-align-items-end',
@@ -138,7 +138,7 @@ export const Tabs = ({
             {gap}
             <div
                 id={key}
-                className={classnames(['tabs-tabcontent pt-4', contentClassName])}
+                className={clsx(['tabs-tabcontent pt-4', contentClassName])}
                 role="tabpanel"
                 aria-labelledby={label}
             >

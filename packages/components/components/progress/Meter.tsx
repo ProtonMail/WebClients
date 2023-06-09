@@ -1,13 +1,7 @@
 import { ComponentPropsWithoutRef } from 'react';
 
-
-
+import clsx from '@proton/utils/clsx';
 import isBetween from '@proton/utils/isBetween';
-
-
-
-import { classnames } from '../../helpers';
-
 
 interface Props extends ComponentPropsWithoutRef<'div'> {
     /** whether or not the meter should be thin */
@@ -102,7 +96,7 @@ const Meter = ({
 }: Props) => (
     <div
         id={id}
-        className={classnames(['meter-bar', thin && 'is-thin', squared && 'is-squared', className])}
+        className={clsx(['meter-bar', thin && 'is-thin', squared && 'is-squared', className])}
         role="meter"
         aria-valuemin={min}
         aria-valuemax={max}
@@ -110,7 +104,7 @@ const Meter = ({
         {...rest}
     >
         <div
-            className={classnames(['meter-bar-thumb w-custom', `meter-bar-thumb--${getMeterColor(value)}`, 'mr-auto'])}
+            className={clsx(['meter-bar-thumb w-custom', `meter-bar-thumb--${getMeterColor(value)}`, 'mr-auto'])}
             style={{ '--width-custom': `${Math.ceil((value / max) * 100)}%` }}
         >
             {!rest['aria-labelledby'] && <span className="sr-only">{label || `${value} / ${max}`}</span>}

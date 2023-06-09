@@ -1,15 +1,14 @@
 import { ComponentPropsWithoutRef } from 'react';
 
 import { CircleLoader } from '@proton/atoms';
-
-import { classnames } from '../../helpers';
+import clsx from '@proton/utils/clsx';
 
 interface Props extends ComponentPropsWithoutRef<'td'> {
     colSpan?: number;
 }
 
 const TableCellBusy = ({ colSpan, className }: Props) => (
-    <td colSpan={colSpan} className={classnames([className, 'text-center'])} aria-busy="true">
+    <td colSpan={colSpan} className={clsx([className, 'text-center'])} aria-busy="true">
         <CircleLoader />
     </td>
 );

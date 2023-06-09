@@ -2,8 +2,10 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
+import clsx from '@proton/utils/clsx';
+
 import { Radio, UnderlineButton } from '../../../components';
-import { classnames, generateUID } from '../../../helpers';
+import { generateUID } from '../../../helpers';
 import { Condition, ConditionComparator, ConditionType, FilterStatement, SimpleFilterModalModel } from '../interfaces';
 import FilterConditionsFormRow from './FilterConditionsFormRow';
 
@@ -53,8 +55,8 @@ const FilterConditionsForm = ({ isEdit, isNarrow, model, onChange }: Props) => {
     return (
         <>
             <div className="flex flex-nowrap mb-0 on-mobile-flex-column border-bottom">
-                <div className={classnames(['w20', isNarrow && 'mb-4'])}>{c('Label').t`Statement`}</div>
-                <div className={classnames([!isNarrow && 'ml-4'])}>
+                <div className={clsx(['w20', isNarrow && 'mb-4'])}>{c('Label').t`Statement`}</div>
+                <div className={clsx([!isNarrow && 'ml-4'])}>
                     <Radio
                         id="statement-all"
                         name="filterConditionStatement"

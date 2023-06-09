@@ -7,8 +7,8 @@ import emojiBad from '@proton/styles/assets/img/emojis/emoji-bad.svg';
 import emojiGood from '@proton/styles/assets/img/emojis/emoji-good.svg';
 import emojiOk from '@proton/styles/assets/img/emojis/emoji-ok.svg';
 import emojiWonderful from '@proton/styles/assets/img/emojis/emoji-wonderful.svg';
+import clsx from '@proton/utils/clsx';
 
-import { classnames } from '../../helpers';
 import { Tooltip } from '../tooltip';
 import InputButton, { InputButtonProps } from './InputButton';
 import ScaleLabel from './ScaleLabel';
@@ -37,7 +37,7 @@ const EmojiScale = ({ fromLabel, toLabel, value, InputButtonProps, onChange, cla
     };
 
     return (
-        <div className={classnames([className, 'flex flex-column gap-4'])} {...rest}>
+        <div className={clsx([className, 'flex flex-column gap-4'])} {...rest}>
             <div className="flex flex-justify-space-between flex-align-items-center">
                 {scale.map((option) => (
                     <Tooltip title={option.label()} key={option.value}>

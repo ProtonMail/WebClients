@@ -1,6 +1,6 @@
 import { Children, ComponentPropsWithoutRef, isValidElement } from 'react';
 
-import { classnames } from '../../helpers';
+import clsx from '@proton/utils/clsx';
 
 interface Props extends ComponentPropsWithoutRef<'ul'> {}
 
@@ -9,7 +9,7 @@ const TopNavbarList = ({ children }: Props) => {
     const navIconsLength = validElements.length;
     return (
         <ul
-            className={classnames([
+            className={clsx([
                 'topnav-list unstyled my-0 ml-4 flex flex-nowrap flex-align-items-center',
                 navIconsLength >= 4 && 'topnav-list--four-elements',
             ])}

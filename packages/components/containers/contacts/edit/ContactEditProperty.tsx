@@ -4,9 +4,9 @@ import { c } from 'ttag';
 
 import { ContactEmail, ContactEmailModel } from '@proton/shared/lib/interfaces/contacts';
 import { VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
+import clsx from '@proton/utils/clsx';
 
 import { DropdownActions, Icon, OrderableHandle } from '../../../components';
-import { classnames } from '../../../helpers';
 import ContactGroupDropdown from '../ContactGroupDropdown';
 import { ContactGroupEditProps } from '../group/ContactGroupEditModal';
 import { ContactGroupLimitReachedProps } from '../modals/ContactGroupLimitReachedModal';
@@ -102,7 +102,7 @@ const ContactEditProperty = (
             )}
             <div className="contact-modal-field relative flex flex-nowrap on-mobile-flex-column w100 flex-align-items-start">
                 <span
-                    className={classnames([
+                    className={clsx([
                         'contact-modal-select flex flex-nowrap mb-2 md:mb-4 flex-align-items-start on-mobile-flex-align-self-start',
                         mainItem && 'text-semibold',
                         labelWidthClassName || 'w30',
@@ -130,7 +130,7 @@ const ContactEditProperty = (
                         <span className="mb-4 ml-2 flex">
                             {list.length > 0 && (
                                 <div
-                                    className={classnames([
+                                    className={clsx([
                                         'flex flex-item-noshrink',
                                         field,
                                         (field === 'photo' ||

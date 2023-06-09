@@ -1,6 +1,7 @@
 import { HTMLProps, useEffect, useMemo, useRef, useState } from 'react';
 
-import { classnames } from '../../helpers';
+import clsx from '@proton/utils/clsx';
+
 import { Tooltip } from '../tooltip';
 
 interface Props extends HTMLProps<HTMLSpanElement> {
@@ -63,7 +64,7 @@ const MiddleEllipsis = ({
             <span
                 aria-label={text}
                 title={displayTitle ? text : undefined}
-                className={classnames(['inline-flex flex-nowrap max-w100', className])}
+                className={clsx(['inline-flex flex-nowrap max-w100', className])}
                 dir={direction}
                 {...rest}
             >

@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
+import clsx from '@proton/utils/clsx';
 
 import { Icon } from '../../components';
-import { classnames } from '../../helpers';
 import { useNotifications } from '../../hooks';
 import { SettingsSectionTitle } from '../account';
 
@@ -55,7 +55,7 @@ const SubSettingsSection = ({ id, observer, title, children, className, ...rest 
                 id={id}
                 ref={ref}
                 data-target-id={id}
-                className={classnames([className, 'sub-settings-section'])}
+                className={clsx([className, 'sub-settings-section'])}
             >
                 {title && (
                     <SettingsSectionTitle className="opacity-on-hover-container relative">
