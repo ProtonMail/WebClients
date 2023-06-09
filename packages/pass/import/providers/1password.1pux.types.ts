@@ -34,6 +34,13 @@ export enum OnePassVaultType {
     USER_CREATED = 'U',
 }
 
+export enum OnePassFieldValueKey {
+    CONCEALED = 'concealed',
+    STRING = 'string',
+    TOTP = 'totp',
+    URL = 'url',
+}
+
 export type ItemSection = {
     title: string;
     name: string;
@@ -41,9 +48,7 @@ export type ItemSection = {
         title: string;
         id: string;
         value: {
-            url: Maybe<string>;
-            string: Maybe<string>;
-            totp: Maybe<string>;
+            [key in OnePassFieldValueKey]?: Maybe<string>;
         };
     }[];
 };

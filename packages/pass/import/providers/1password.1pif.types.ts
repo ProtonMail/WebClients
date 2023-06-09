@@ -6,8 +6,8 @@ export enum OnePassLegacyItemType {
     PASSWORD = 'passwords.Password',
 }
 export enum OnePassLegacySectionFieldKey {
-    STRING = 'string',
     CONCEALED = 'concealed',
+    STRING = 'string',
     URL = 'URL',
 }
 
@@ -18,7 +18,7 @@ export type OnePassLegacyField = {
 };
 
 export type OnePassLegacySectionField = {
-    k: OnePassLegacySectionFieldKey | string;
+    k: OnePassLegacySectionFieldKey;
     n: string;
     v?: string;
     t: string;
