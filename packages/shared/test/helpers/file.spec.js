@@ -25,7 +25,7 @@ describe('toBase64', () => {
 
     it('should be an empty base64 on undefined file', async () => {
         const base64str = await toBase64(await toFile(null, filename));
-        expect(base64str).toBe('data:');
+        expect(base64str).toBe('data:application/octet-stream;base64,');
     });
 
     it('should be a 64 string encoded', async () => {
