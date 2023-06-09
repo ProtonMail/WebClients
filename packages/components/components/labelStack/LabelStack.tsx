@@ -2,7 +2,8 @@ import { MouseEvent } from 'react';
 
 import { c } from 'ttag';
 
-import { classnames } from '../../helpers';
+import clsx from '@proton/utils/clsx';
+
 import Tooltip from '../tooltip/Tooltip';
 import LabelStackItem from './LabelStackItem';
 
@@ -45,7 +46,7 @@ const LabelStack = ({
 
     return (
         <ul
-            className={classnames([
+            className={clsx([
                 'label-stack unstyled m-0 inline-flex flex-align-items-center stop-propagation rounded-full',
                 isStacked ? `is-stacked ${leftToRight ? 'flex-row-reverse' : 'flex-row'}` : 'flex-row',
                 className,

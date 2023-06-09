@@ -2,7 +2,7 @@ import { HTMLAttributes, ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import { classnames } from '../../helpers';
+import clsx from '@proton/utils/clsx';
 
 interface Props extends HTMLAttributes<HTMLDivElement> {
     children?: ReactNode;
@@ -11,7 +11,7 @@ interface Props extends HTMLAttributes<HTMLDivElement> {
 
 const Toolbar = ({ children, className, ...rest }: Props) => (
     <nav
-        className={classnames(['toolbar flex flex-nowrap no-scroll flex-item-noshrink no-print', className])}
+        className={clsx(['toolbar flex flex-nowrap no-scroll flex-item-noshrink no-print', className])}
         aria-label={c('Label').t`Toolbar`}
         {...rest}
     >

@@ -1,10 +1,8 @@
 import { c } from 'ttag';
 
-
-
-import { Icon, classnames } from '@proton/components';
+import { Icon } from '@proton/components';
 import { Referral } from '@proton/shared/lib/interfaces';
-
+import clsx from '@proton/utils/clsx';
 
 interface Props {
     referral: Referral;
@@ -16,7 +14,7 @@ const UserCell = ({ referral }: Props) => (
             <Icon name={referral.Email ? 'envelope' : 'link'} />
         </span>
 
-        <span className={classnames([referral.Email && 'text-ellipsis'])} title={referral.Email || undefined}>
+        <span className={clsx([referral.Email && 'text-ellipsis'])} title={referral.Email || undefined}>
             {referral.Email ? referral.Email : c('Info').t`Public link invite`}
         </span>
     </div>

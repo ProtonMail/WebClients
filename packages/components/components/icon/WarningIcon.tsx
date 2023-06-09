@@ -1,4 +1,5 @@
-import { classnames } from '../../helpers';
+import clsx from '@proton/utils/clsx';
+
 import { Tooltip } from '../tooltip';
 import Icon from './Icon';
 
@@ -12,7 +13,7 @@ const WarningIcon = ({ warning, className }: Props) => {
         return null;
     }
 
-    const icon = <Icon name="exclamation-circle" className={classnames([className, 'color-warning'])} />;
+    const icon = <Icon name="exclamation-circle" className={clsx([className, 'color-warning'])} />;
     return <Tooltip title={warning}>{icon}</Tooltip>;
 };
 

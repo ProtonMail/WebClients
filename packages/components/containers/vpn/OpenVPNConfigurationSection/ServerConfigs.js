@@ -3,11 +3,11 @@ import { useCallback, useEffect, useMemo } from 'react';
 import PropTypes from 'prop-types';
 
 import { PLANS } from '@proton/shared/lib/constants';
+import clsx from '@proton/utils/clsx';
 import compare from '@proton/utils/compare';
 import groupWith from '@proton/utils/groupWith';
 
 import { Details, Summary } from '../../../components';
-import { classnames } from '../../../helpers';
 import { useUser, useUserVPN } from '../../../hooks';
 import CityNumber from './CityNumber';
 import ConfigsTable, { CATEGORY, P2PIcon, TorIcon } from './ConfigsTable';
@@ -64,7 +64,7 @@ const ServerConfigs = ({ servers, category, select, selecting, ...rest }) => {
                     <Details key={server.Country || 'XX'} open={server.open}>
                         <Summary>
                             <div className="ml-2 flex flex-nowrap flex-align-items-center">
-                                <div className={classnames([category === CATEGORY.SERVER ? 'w33' : ''])}>
+                                <div className={clsx([category === CATEGORY.SERVER ? 'w33' : ''])}>
                                     <Country server={server} />
                                 </div>
                                 {category === CATEGORY.SERVER && (
@@ -74,7 +74,7 @@ const ServerConfigs = ({ servers, category, select, selecting, ...rest }) => {
                                         </div>
                                         <div className="w33 flex flex-justify-space-between">
                                             <CityNumber group={group} />
-                                            <div className={classnames(['flex'])}>
+                                            <div className={clsx(['flex'])}>
                                                 {group.some(({ Features }) => isP2PEnabled(Features)) ? (
                                                     <P2PIcon />
                                                 ) : null}

@@ -2,7 +2,8 @@ import { useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { classnames } from '../../helpers';
+import clsx from '@proton/utils/clsx';
+
 import { Icon } from '../icon';
 
 import './VideoInstructions.scss';
@@ -42,7 +43,7 @@ const VideoInstructions = ({ children, ...rest }: React.ComponentPropsWithoutRef
             <button
                 title={c('Video control').t`Click to replay the video`}
                 type="button"
-                className={classnames([
+                className={clsx([
                     'absolute-cover rounded w100 flex flex-align-items-center flex-justify-center',
                     'video-player-replay-button',
                     videoEnded && 'video-ended',

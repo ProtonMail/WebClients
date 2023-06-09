@@ -2,7 +2,8 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { FeatureCode, InlineLinkButton, classnames, useFeature } from '@proton/components';
+import { FeatureCode, InlineLinkButton, useFeature } from '@proton/components';
+import clsx from '@proton/utils/clsx';
 
 import InviteHowItWorks from './InviteHowItWorks';
 import ReferralSignatureToggle from './ReferralSignatureToggle';
@@ -30,7 +31,7 @@ const InviteActions = () => {
     return (
         <>
             <div
-                className={classnames([
+                className={clsx([
                     'flex flex-justify-space-between flex-align-items-center',
                     showHowItWorksSection && 'mb-8',
                 ])}

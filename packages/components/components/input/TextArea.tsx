@@ -1,6 +1,8 @@
 import { ChangeEvent, DetailedHTMLProps, Ref, TextareaHTMLAttributes, useEffect, useRef, useState } from 'react';
 
-import { classnames, generateUID } from '../../helpers';
+import clsx from '@proton/utils/clsx';
+
+import { generateUID } from '../../helpers';
 import useAutoGrow from '../../hooks/useAutoGrow';
 import ErrorZone from '../text/ErrorZone';
 import useInput from './useInput';
@@ -57,7 +59,7 @@ const TextArea = ({
             <textarea
                 ref={textAreaRef}
                 rows={rows}
-                className={classnames(['field w100', className, statusClasses])}
+                className={clsx(['field w100', className, statusClasses])}
                 aria-invalid={hasError}
                 aria-describedby={uid}
                 {...rest}

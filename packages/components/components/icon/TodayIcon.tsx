@@ -1,4 +1,4 @@
-import { classnames } from '../../helpers';
+import clsx from '@proton/utils/clsx';
 
 import './_today-icon.scss';
 
@@ -7,7 +7,7 @@ interface Props {
     className?: string;
 }
 const TodayIcon = ({ todayDate, className }: Props) => {
-    return <span className={classnames(['today-icon', className])}>{todayDate}</span>;
+    return <span className={clsx(['today-icon', className])}>{todayDate}</span>;
 };
 
 export default TodayIcon;

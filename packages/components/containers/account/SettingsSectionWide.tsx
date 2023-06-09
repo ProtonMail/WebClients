@@ -1,9 +1,9 @@
 import { ComponentPropsWithoutRef } from 'react';
 
-import { classnames } from '../../helpers';
+import clsx from '@proton/utils/clsx';
 
 const SettingsSectionWide = ({ className, ...rest }: ComponentPropsWithoutRef<'div'>) => {
-    return <div className={classnames(['max-w69e', className])} {...rest} />;
+    return <div className={clsx(['max-w69e', className])} {...rest} />;
 };
 
 export default SettingsSectionWide;

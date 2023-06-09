@@ -11,8 +11,7 @@ import {
 
 import { ButtonLike } from '@proton/atoms';
 import { useCombinedRefs } from '@proton/hooks';
-
-import { classnames } from '../../helpers';
+import clsx from '@proton/utils/clsx';
 
 import './FileButton.scss';
 
@@ -46,7 +45,7 @@ const FileButton = ({ onAddFiles, disabled, className, children, ...rest }: Prop
                 as="label"
                 role="button"
                 tabIndex={0}
-                className={classnames([disabled && 'is-disabled', className])}
+                className={clsx([disabled && 'is-disabled', className])}
                 onKeyDown={handleKey}
             >
                 {children}

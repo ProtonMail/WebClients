@@ -1,7 +1,8 @@
 import { AnimationEvent, MouseEvent, ReactNode, Ref, cloneElement, forwardRef, isValidElement } from 'react';
 
+import clsx from '@proton/utils/clsx';
+
 import { Icon, IconName } from '../../components/icon';
-import { classnames } from '../../helpers';
 import { NotificationCloseButton } from './NotificationButton';
 import { CustomNotificationProps, NotificationType } from './interfaces';
 import NotificationContext from './notificationContext';
@@ -57,7 +58,7 @@ const NotificationBase = (
             ref={ref}
             aria-atomic="true"
             role="alert"
-            className={classnames([
+            className={clsx([
                 CLASSES.NOTIFICATION,
                 CLASSES.NOTIFICATION_IN,
                 TYPES_CLASS[type] || TYPES_CLASS.success,
