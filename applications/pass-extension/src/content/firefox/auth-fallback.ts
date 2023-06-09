@@ -9,7 +9,8 @@ export const authFallback = () => {
             if (
                 message.data &&
                 message.data?.type !== undefined &&
-                message.data?.extension === EXTENSIONS[APPS.PROTONPASSBROWSEREXTENSION].ID
+                (message.data?.extension === EXTENSIONS[APPS.PROTONEXTENSION].ID ||
+                    message.data?.extension === EXTENSIONS[APPS.PROTONPASSBROWSEREXTENSION].ID)
             ) {
                 switch (message.data.type) {
                     case WorkerMessageType.ACCOUNT_FORK:
