@@ -1,0 +1,48 @@
+.pass-modal-two--sidebar,
+.pass-modal-two--sidebar-content {
+	&.modal-two {
+		inline-size: var(--popup-width);
+		block-size: var(--popup-height);
+		padding: 0;
+		align-content: flex-end;
+		flex-wrap: wrap;
+	}
+
+	.modal-two-dialog {
+		animation-name: anime-modal-two-sidebar-dialog-in;
+		border-radius: 0;
+		block-size: var(--popup-height);
+	}
+
+	&.modal-two--out .modal-two-dialog {
+		animation-name: anime-modal-two-sidebar-dialog-out;
+	}
+}
+
+.pass-modal-two--sidebar .modal-two-dialog {
+	--size: 55%;
+}
+
+.pass-modal-two--sidebar-content .modal-two-dialog {
+	--size: 59.67%;
+}
+
+@keyframes anime-modal-two-sidebar-dialog-in {
+	0% {
+		transform: translateX(100%);
+	}
+
+	100% {
+		transform: translateX(0);
+	}
+}
+
+@keyframes anime-modal-two-sidebar-dialog-out {
+	0% {
+		transform: translateX(0);
+	}
+
+	100% {
+		transform: translateX(100%);
+	}
+}

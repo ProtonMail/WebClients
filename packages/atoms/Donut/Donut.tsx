@@ -26,9 +26,14 @@ export interface DonutProps {
      * arc segments of the donut chart.
      */
     gap?: number;
+
+    /**
+     * color code of background segment
+     */
+    backgroundSegmentColor?: string;
 }
 
-const Donut = ({ segments, gap = 4 }: DonutProps) => {
+const Donut = ({ segments, gap = 4, backgroundSegmentColor = 'var(--background-strong)' }: DonutProps) => {
     const uid = useUid('straight-gaps');
 
     const box = 200;
@@ -48,7 +53,7 @@ const Donut = ({ segments, gap = 4 }: DonutProps) => {
         [] as number[]
     );
 
-    const remaining = [100 - sumOfAllChunks, 'var(--background-strong)'] as const;
+    const remaining = [100 - sumOfAllChunks, backgroundSegmentColor] as const;
 
     const allChunks = [...segments, remaining].map((chunk) => {
         const [percentage, color] = chunk;

@@ -1,4 +1,8 @@
+import { useCallback } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
+
+import { useGlobals } from '@storybook/api';
+import { FORCE_RE_RENDER } from '@storybook/core-events';
 
 import {
     CacheProvider,
@@ -17,7 +21,7 @@ import { PROTON_DEFAULT_THEME, PROTON_THEMES, PROTON_THEMES_MAP } from '@proton/
 
 import * as config from '../src/app/config';
 import './prismjs.js';
-import theme from './theme';
+import storybookTheme from './theme';
 
 import '../src/app/index.scss';
 
@@ -28,6 +32,8 @@ const tempConfig = {
     APP_NAME: 'proton-mail',
 };
 
+const colorSchemes = ['default', 'ui-alias', 'ui-note', 'ui-password', 'ui-login'];
+
 export const globalTypes = {
     theme: {
         name: 'Theme',
@@ -37,6 +43,19 @@ export const globalTypes = {
             icon: 'paintbrush',
             items: PROTON_THEMES.map(({ label }) => label),
             showName: true,
+            title: 'Theme',
+            dynamicTitle: true,
+        },
+    },
+    scheme: {
+        name: 'Color Scheme',
+        description: 'Pass specific color schemes',
+        defaultValue: 'default',
+        toolbar: {
+            icon: 'paintbrush',
+            items: colorSchemes.map((label) => label),
+            showName: true,
+            title: 'Scheme',
             dynamicTitle: true,
         },
     },
@@ -71,6 +90,13 @@ export const decorators = [
             </Router>
         );
     },
+    (Story, context) => {
+        return (
+            <div className={context.globals.scheme}>
+                <Story />
+            </div>
+        );
+    },
 ];
 
 const order = [
@@ -88,7 +114,7 @@ export const parameters = {
     viewMode: 'docs',
     actions: { argTypesRegex: '^on[A-Z].*' },
     controls: { expanded: true },
-    docs: { theme: theme },
+    docs: { theme: storybookTheme },
     previewTabs: {
         canvas: { hidden: true },
     },

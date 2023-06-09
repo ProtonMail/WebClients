@@ -1,0 +1,16 @@
+.pass-pin--input {
+	.input {
+		border: 1px solid var(--interaction-default-active);
+		background: var(--field-norm);
+	}
+
+	.input.focus,
+	.input:not(.disabled):focus-within {
+		background: var(--field-norm);
+	}
+
+	.input:hover,
+	.input.hover {
+		background: var(--field-weak);
+	}
+}

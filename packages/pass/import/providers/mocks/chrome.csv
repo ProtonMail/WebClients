@@ -1,0 +1,5 @@
+name,url,username,password
+proton.me,https://account.proton.me/switch,nobody@proton.me,proton123
+missing url,,missingurl@proton.me,proton123
+missing password,https://account.proton.me/switch,missingpw@proton.me,
+broken url,htt:/proton.me/switch,brokenurl@proton.me,

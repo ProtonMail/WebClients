@@ -1,6 +1,7 @@
 enum UnitSuffix {
     px = 'px',
     em = 'em',
+    rem = 'rem',
 }
 
 export enum DropdownSizeUnit {

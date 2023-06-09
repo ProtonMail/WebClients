@@ -1,0 +1,48 @@
+@import '~@proton/styles/scss/lib';
+
+.pass-radio-group--button {
+	--focus-ring: var(--text-hint);
+
+	.input-button-input {
+		+ span {
+			transition: opacity 0.12s, outline 0.12s, outline-offset 0.12s;
+			background: var(--radio-button-background);
+			inline-size: rem(36);
+			block-size: rem(36);
+			border: none;
+
+			&:hover {
+				background: var(--radio-button-background);
+				opacity: 0.8;
+			}
+		}
+
+		&:checked {
+			+ span {
+				outline: 2px solid var(--focus-ring);
+				outline-offset: 3px;
+				color: var(--text-norm);
+			}
+		}
+	}
+}
+
+.pass-radio-group--labelled-button {
+	input[type='radio'] {
+		+ div {
+			border-block-end: 1px solid var(--border-norm);
+		}
+
+		&:focus-visible {
+			+ div {
+				outline: 2px solid var(--focus-ring);
+			}
+		}
+	}
+
+	&:last-of-type {
+		input[type='radio'] + div {
+			border-block-end: none;
+		}
+	}
+}

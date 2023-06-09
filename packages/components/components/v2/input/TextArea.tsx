@@ -1,8 +1,8 @@
 import { ComponentPropsWithRef, ReactNode, Ref, forwardRef, useEffect, useRef } from 'react';
 
 import { useCombinedRefs } from '@proton/hooks';
+import clsx from '@proton/utils/clsx';
 
-import { classnames } from '../../../helpers';
 import useAutoGrow from '../../../hooks/useAutoGrow';
 
 export interface TextAreaTwoProps extends Omit<ComponentPropsWithRef<'textarea'>, 'prefix'> {
@@ -11,6 +11,7 @@ export interface TextAreaTwoProps extends Omit<ComponentPropsWithRef<'textarea'>
     rows?: number;
     minRows?: number;
     autoGrow?: boolean;
+    unstyled?: boolean;
     onValue?: (value: string) => void;
 }
 
@@ -24,10 +25,16 @@ const TextAreaTwo = (props: TextAreaTwoProps, ref: Ref<HTMLTextAreaElement>) => 
         rows: maxRows = 5,
         minRows = 1,
         autoGrow = false,
+        unstyled,
         ...rest
     } = props;
 
-    const className = classnames([classNameProp, 'w100 textarea', Boolean(error) && 'error']);
+    const className = clsx([
+        classNameProp,
+        'w100 textarea',
+        Boolean(unstyled) && 'unstyled',
+        Boolean(error) && 'error',
+    ]);
     const { rows, updateTextArea } = useAutoGrow({ maxRows, minRows, autoGrow });
 
     useEffect(() => {
