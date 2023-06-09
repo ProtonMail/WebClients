@@ -11,13 +11,15 @@ interface Props {
     children: ReactNode;
     className?: string;
     onClose?: () => void;
+    'data-testid'?: string;
 }
 
-const TopBanner = ({ children, className, onClose }: Props) => {
+const TopBanner = ({ children, className, onClose, 'data-testid': dataTestId }: Props) => {
     return (
         <div
             role="alert"
             className={clsx(['flex flex-item-noshrink flex-nowrap text-center relative text-bold no-print', className])}
+            data-testid={dataTestId}
         >
             <div className="flex-item-fluid p-2">{children}</div>
             {onClose ? (
