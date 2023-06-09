@@ -2,9 +2,9 @@ import { c } from 'ttag';
 
 import { Button, Card, Href } from '@proton/atoms';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import clsx from '@proton/utils/clsx';
 
 import { Icon } from '../../components';
-import { classnames } from '../../helpers/component';
 import { SettingsSectionTitle } from '../account';
 
 interface Props {
@@ -15,7 +15,7 @@ interface Props {
 
 const RecoverDataCard = ({ onDismiss, onReactivate, className }: Props) => {
     return (
-        <Card rounded background={false} className={classnames(['max-w46e p-7', className])}>
+        <Card rounded background={false} className={clsx(['max-w46e p-7', className])}>
             <SettingsSectionTitle className="h3 flex flex-align-items-center flex-nowrap">
                 <Icon className="flex-item-noshrink color-danger" name="exclamation-circle-filled" size={18} />
                 <span className="ml-2">{c('Title').t`Data locked`}</span>

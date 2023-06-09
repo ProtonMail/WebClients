@@ -1,6 +1,6 @@
 import { ComponentPropsWithoutRef, useState } from 'react';
 
-import { LogoProps, classnames, generateUID } from '@proton/components';
+import { LogoProps, generateUID } from '@proton/components';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
@@ -68,7 +68,7 @@ const ProtonLogo = ({ variant = 'full', size, color = 'brand', className, ...res
             width="36"
             height="36"
             fill="none"
-            className={classnames(['logo', size && `icon-${size}p`, variant, className])}
+            className={clsx(['logo', size && `icon-${size}p`, variant, className])}
             aria-labelledby={`${uid}-title`}
             {...rest}
         >

@@ -11,8 +11,7 @@ import {
 
 import { Vr } from '@proton/atoms';
 import { ThemeColor } from '@proton/colors';
-
-import { classnames } from '../../helpers';
+import clsx from '@proton/utils/clsx';
 
 export type Color = `${ThemeColor.Norm | ThemeColor.Weak}`;
 
@@ -46,12 +45,7 @@ const ButtonGroup = forwardRef<HTMLDivElement, Props>(
             });
         return (
             <div
-                className={classnames([
-                    'button-group',
-                    `button-group-${shape}-${color}`,
-                    `button-group-${size}`,
-                    className,
-                ])}
+                className={clsx(['button-group', `button-group-${shape}-${color}`, `button-group-${size}`, className])}
                 ref={ref}
                 {...rest}
             >

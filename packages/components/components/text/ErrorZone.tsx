@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 
-import { classnames } from '../../helpers';
+import clsx from '@proton/utils/clsx';
 
 interface Props {
     children: ReactNode;
@@ -9,7 +9,7 @@ interface Props {
 }
 const ErrorZone = ({ children, id, className }: Props) => {
     return (
-        <div className={classnames(['color-danger error-zone', className])} id={id}>
+        <div className={clsx(['color-danger error-zone', className])} id={id}>
             {children}
         </div>
     );

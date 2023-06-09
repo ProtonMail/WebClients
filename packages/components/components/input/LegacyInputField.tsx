@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 
-import { classnames } from '../../helpers';
+import clsx from '@proton/utils/clsx';
 
 interface Props {
     label: ReactNode;
@@ -9,7 +9,7 @@ interface Props {
 }
 const LegacyInputField = ({ label, input, className }: Props) => {
     return (
-        <div className={classnames(['flex on-mobile-flex-column signup-label-field-container mb-4', className])}>
+        <div className={clsx(['flex on-mobile-flex-column signup-label-field-container mb-4', className])}>
             {label}
             <div className="flex-item-fluid">{input}</div>
         </div>

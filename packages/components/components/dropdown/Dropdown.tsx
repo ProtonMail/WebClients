@@ -14,9 +14,9 @@ import { c } from 'ttag';
 
 import { useCombinedRefs } from '@proton/hooks';
 import { dropdownRootClassName } from '@proton/shared/lib/busy';
+import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
-import { classnames } from '../../helpers';
 import { HotkeyTuple, useDropdownArrowNavigation, useElementRect, useHotkeys, useIsClosing } from '../../hooks';
 import { useFocusTrap } from '../focus';
 import { PopperPlacement, PopperPosition, allPopperPlacements, usePopper } from '../popper';
@@ -200,7 +200,7 @@ const Dropdown = ({
     }, [isOpen, autoCloseOutside, onClose, anchorRef.current, popperEl]);
 
     const [isClosing, isClosed, setIsClosed] = useIsClosing(isOpen);
-    const popperClassName = classnames([
+    const popperClassName = clsx([
         dropdownRootClassName,
         `dropdown--${placement}`,
         isClosing && `is-dropdown-out`,
@@ -276,7 +276,7 @@ const Dropdown = ({
                 <div
                     {...contentProps}
                     ref={combinedContentRef}
-                    className={classnames(['dropdown-content', contentProps?.className])}
+                    className={clsx(['dropdown-content', contentProps?.className])}
                 >
                     {children}
                 </div>

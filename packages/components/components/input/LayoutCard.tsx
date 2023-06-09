@@ -1,8 +1,7 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-
-import { classnames } from '../../helpers';
+import clsx from '@proton/utils/clsx';
 
 import './LayoutCard.scss';
 
@@ -23,7 +22,7 @@ const LayoutCard = ({ label, src, selected, onChange, disabled, describedByID }:
             name="layoutCard"
             shape="outline"
             color={selected ? 'norm' : 'weak'}
-            className={classnames(['mr-4 mb-4 layout-card-button', selected && 'is-active no-pointer-events text-bold'])}
+            className={clsx(['mr-4 mb-4 layout-card-button', selected && 'is-active no-pointer-events text-bold'])}
             aria-pressed={selected}
             onClick={onChange}
             disabled={disabled}

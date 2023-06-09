@@ -1,4 +1,5 @@
-import { Icon, IconProps, classnames } from '@proton/components';
+import { Icon, IconProps } from '@proton/components';
+import clsx from '@proton/utils/clsx';
 
 import './ReloadSpinner.scss';
 
@@ -19,7 +20,7 @@ const ReloadSpinner = ({ className, refreshing = false, onRefresh, ...rest }: Pr
         <Icon
             onClick={handleClick}
             name="arrow-rotate-right"
-            className={classnames([className, refreshing && 'location-refresh-rotate'])}
+            className={clsx([className, refreshing && 'location-refresh-rotate'])}
             {...rest}
         />
     );
