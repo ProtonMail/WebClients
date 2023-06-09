@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import type { ItemImportIntent } from '@proton/pass/types';
+import type { ItemExtraField, ItemImportIntent } from '@proton/pass/types';
 import { truthy } from '@proton/pass/utils/fp';
 import { logger } from '@proton/pass/utils/logger';
 import { uniqueId } from '@proton/pass/utils/string';
@@ -48,21 +48,49 @@ const extractURLs = (item: OnePassLegacyItem): string[] => {
     return item.secureContents.URLs.map(({ url }: OnePassLegacyURL) => url);
 };
 
-const extractTOTPs = (item: OnePassLegacyItem): string[] =>
-    (item.secureContents.sections ?? []).flatMap(({ fields }) =>
-        (fields ?? []).flatMap((field) => (field.n.startsWith('TOTP') ? field.v ?? [] : []))
-    );
+const extractExtraFields = (item: OnePassLegacyItem) => {
+    return item.secureContents.sections
+        ?.filter(({ fields }) => Boolean(fields))
+        .flatMap(({ fields }) =>
+            (fields as OnePassLegacySectionField[])
+                .filter(({ k }) => Object.values(OnePassLegacySectionFieldKey).includes(k))
+                .map<ItemExtraField>(({ k, t, v, n }) => {
+                    switch (k) {
+                        case OnePassLegacySectionFieldKey.STRING:
+                        case OnePassLegacySectionFieldKey.URL:
+                            return {
+                                fieldName: t || c('Label').t`Text`,
+                                type: 'text',
+                                data: { content: v ?? '' },
+                            };
+                        case OnePassLegacySectionFieldKey.CONCEALED:
+                            if (n.startsWith('TOTP')) {
+                                return {
+                                    fieldName: t || c('Label').t`TOTP`,
+                                    type: 'totp',
+                                    data: { totpUri: v ?? '' },
+                                };
+                            }
+                            return {
+                                fieldName: t || c('Label').t`Hidden`,
+                                type: 'hidden',
+                                data: { content: v ?? '' },
+                            };
+                    }
+                })
+        );
+};
 
 const processLoginItem = (item: OnePassLegacyItem): ItemImportIntent<'login'> => {
     const fields = item.secureContents.fields;
 
     return importLoginItem({
         name: item.title,
-        note: extractFullNote(item),
+        note: item.secureContents?.notesPlain,
         username: fields?.find(({ designation }) => designation === OnePassLoginDesignation.USERNAME)?.value,
         password: fields?.find(({ designation }) => designation === OnePassLoginDesignation.PASSWORD)?.value,
         urls: extractURLs(item),
-        totps: extractTOTPs(item),
+        extraFields: extractExtraFields(item),
         createTime: item.createdAt,
         modifyTime: item.updatedAt,
     });
@@ -79,10 +107,10 @@ const processNoteItem = (item: OnePassLegacyItem): ItemImportIntent<'note'> =>
 const processPasswordItem = (item: OnePassLegacyItem): ItemImportIntent<'login'> =>
     importLoginItem({
         name: item.title,
-        note: extractFullNote(item),
+        note: item.secureContents?.notesPlain,
         password: item.secureContents?.password,
         urls: extractURLs(item),
-        totps: extractTOTPs(item),
+        extraFields: extractExtraFields(item),
         createTime: item.createdAt,
         modifyTime: item.updatedAt,
     });
