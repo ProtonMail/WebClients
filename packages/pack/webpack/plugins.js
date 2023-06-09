@@ -10,7 +10,7 @@ const ESLintPlugin = require('eslint-webpack-plugin');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const { SubresourceIntegrityPlugin } = require('webpack-subresource-integrity');
 const { RetryChunkLoadPlugin } = require('webpack-retry-chunk-load-plugin');
-const { sentryWebpackPlugin } = require('@sentry/webpack-plugin');
+const SentryCliPlugin = require('@sentry/webpack-plugin');
 const PostCssLogicalWebpackPlugin = require('./postcss-logical-webpack-plugin');
 
 const WriteWebpackPlugin = require('./write-webpack-plugin');
@@ -69,29 +69,23 @@ module.exports = ({
               ]),
 
         /*
-         * Sentry webpack plugin is only run on tag creation
+         * Sentry webpack plugin is only run on tag creation (IS_RELEASE_BUNDLE)
          * Needed values for source-maps upload
-         * project: defined in SENTRY_PROJECT of each app (build command)
+         * project: defined in sentry.properties of each app
          * org: defined in SENTRY_ORG (gitlab env)
          * url: defined in SENTRY_URL (gitlab env)
          * authToken: defined in SENTRY_AUTH_TOKEN (gitlab env)
          * */
         isRelease &&
-            sentryWebpackPlugin({
-                disabled: !isRelease,
+            new SentryCliPlugin({
+                include: './dist',
+                ignore: ['node_modules', 'webpack.config.js'],
+                configFile: 'sentry.properties',
                 // This prevents build to fail if any issue happened
-                errorHandler: (err) => {
-                    console.warn('Sentry plugin: ', err);
+                errorHandler: (err, invokeErr, compilation) => {
+                    compilation.warnings.push('Sentry CLI Plugin: ' + err.message);
                 },
-                telemetry: false,
-                release: {
-                    name: buildData.version,
-                    // new sourcemaps workflow is only support on sass for now
-                    uploadLegacySourcemaps: {
-                        paths: ['dist'],
-                        ignore: ['node_modules'],
-                    },
-                },
+                release: buildData.version,
             }),
 
         new CopyWebpackPlugin({
