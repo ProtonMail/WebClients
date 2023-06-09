@@ -21,7 +21,7 @@
         "test:dev": "jest --watch --coverage=false"
     },
     "dependencies": {
-        "@babel/plugin-transform-runtime": "^7.22.4",
+        "@babel/plugin-transform-runtime": "^7.22.5",
         "@proton/components": "workspace:packages/components",
         "@proton/cross-storage": "workspace:packages/cross-storage",
         "@proton/crypto": "workspace:packages/crypto",
