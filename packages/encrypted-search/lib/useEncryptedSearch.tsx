@@ -229,7 +229,7 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
             isPaused,
             contentIndexingDone,
         } = esStatus;
-        const { isCacheLimited } = esCacheRef.current;
+        const { isCacheLimited, isCacheReady } = esCacheRef.current;
         const esDBStatus: ESDBStatus<ESItemMetadata, ESItemContent, ESSearchParameters> = {
             dbExists,
             isEnablingContentSearch,
@@ -237,6 +237,7 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
             esEnabled,
             esSupported,
             isCacheLimited,
+            isCacheReady,
             isRefreshing,
             isSearchPartial,
             isSearching,
