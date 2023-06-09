@@ -224,16 +224,23 @@ export const processInBatches = async ({
             wait(DELAY),
         ]);
 
-        // ignore auto-added invites in shared calendars (they can't be decrypted and we don't display them in the UI)
         const exportableEvents = getIsOwnedCalendar(calendar)
             ? Events
-            : Events.filter(({ AddressKeyPacket }) => !AddressKeyPacket);
+            : Events.filter((event) => {
+                  // ignore auto-added invites in shared calendars (they can't be decrypted and we don't display them in the UI)
+                  return !getIsAutoAddedInvite(event);
+              });
+
+        const eventsLength = exportableEvents.length;
+        if (!eventsLength) {
+            continue;
+        }
+
         if (signal.aborted) {
             return [[], [], totalToProcess];
         }
-        onProgress(exportableEvents, [], []);
 
-        const eventsLength = exportableEvents.length;
+        onProgress(exportableEvents, [], []);
 
         lastId = exportableEvents[eventsLength - 1].ID;
 
