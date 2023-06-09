@@ -7,7 +7,6 @@ import { useFormik } from 'formik';
 import { c } from 'ttag';
 
 import type { Dropzone, FileInput } from '@proton/components/components';
-import { onlyDragFiles } from '@proton/components/components';
 import { useNotifications } from '@proton/components/hooks';
 import type { ImportPayload, ImportReaderPayload } from '@proton/pass/import';
 import { ImportProvider, ImportProviderValues, extractFileExtension, fileReader } from '@proton/pass/import';
@@ -35,8 +34,6 @@ export type ImportFormContext = {
     result: ImportState;
     dropzone: {
         hovered: boolean;
-        onDragEnter: DropzoneProps['onDragEnter'];
-        onDragLeave: DropzoneProps['onDragLeave'];
         onDrop: DropzoneProps['onDrop'];
         onAttach: FileInputProps['onChange'];
     };
@@ -155,17 +152,10 @@ export const useImportForm = ({
         }
     };
 
-    const createDragEventHandler: (hover: boolean) => DropzoneProps['onDragEnter' | 'onDragLeave'] = (hover: boolean) =>
-        onlyDragFiles((event) => {
-            setDropzoneHovered(hover);
-            event.stopPropagation();
-        });
-
-    const onDrop = onlyDragFiles((event) => {
-        event.preventDefault();
+    const onDrop = (files: File[]) => {
         setDropzoneHovered(false);
-        onAddFiles([...event.dataTransfer.files]);
-    });
+        onAddFiles([...files]);
+    };
 
     const onAttach: FileInputProps['onChange'] = (event) => onAddFiles((event.target.files as File[] | null) ?? []);
 
@@ -181,8 +171,6 @@ export const useImportForm = ({
         result,
         dropzone: {
             hovered: dropzoneHovered,
-            onDragEnter: createDragEventHandler(true),
-            onDragLeave: createDragEventHandler(false),
             onAttach,
             onDrop,
         },
