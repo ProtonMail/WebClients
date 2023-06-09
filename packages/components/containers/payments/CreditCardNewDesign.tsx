@@ -196,31 +196,40 @@ const CreditCardNewDesign = ({ card, errors, onChange, loading = false, fieldSta
                         </div>
                     }
                     suffix={
-                        <div className="flex mx-0">
-                            <Input
-                                unstyled
-                                inputClassName="mr-3 py-0.5 px-3 border-left border-right"
-                                className="exp"
-                                value={`${month}${month.length === 2 || year.length ? '/' : ''}${year}`}
-                                onChange={({ target }) => {
-                                    const change = handleExpOnChange(target.value, month, year);
-                                    if (change) {
-                                        onChange('month', change.month);
-                                        onChange('year', change.year);
-                                    }
-                                }}
-                                ref={wideExpRef}
-                                {...commonExpProps}
-                            />
-                            <Input
-                                unstyled
-                                placeholder={codeName}
-                                inputClassName="p-0"
-                                className="cvv"
-                                ref={wideCvcRef}
-                                {...commonCvcProps}
-                            />
-                        </div>
+                        <>
+                            {errors.number && (
+                                <Icon
+                                    name="exclamation-circle-filled"
+                                    className="error-container flex-item-noshrink mr-1"
+                                    size={18}
+                                />
+                            )}
+                            <div className="flex mx-0">
+                                <Input
+                                    unstyled
+                                    inputClassName="mr-3 py-0.5 px-3 border-left border-right"
+                                    className="exp"
+                                    value={`${month}${month.length === 2 || year.length ? '/' : ''}${year}`}
+                                    onChange={({ target }) => {
+                                        const change = handleExpOnChange(target.value, month, year);
+                                        if (change) {
+                                            onChange('month', change.month);
+                                            onChange('year', change.year);
+                                        }
+                                    }}
+                                    ref={wideExpRef}
+                                    {...commonExpProps}
+                                />
+                                <Input
+                                    unstyled
+                                    placeholder={codeName}
+                                    inputClassName="p-0"
+                                    className="cvv"
+                                    ref={wideCvcRef}
+                                    {...commonCvcProps}
+                                />
+                            </div>
+                        </>
                     }
                     {...commonNumberProps}
                 />
@@ -228,26 +237,23 @@ const CreditCardNewDesign = ({ card, errors, onChange, loading = false, fieldSta
         );
     }
 
+    let error = null;
+    if (errors.number) {
+        error = <span data-testid="error-ccnumber">{errors.number}</span>;
+    } else if (errors.month) {
+        error = <span data-testid="error-exp">{errors.month}</span>;
+    } else if (errors.cvc) {
+        error = <span data-testid="error-cvc">{errors.cvc}</span>;
+    }
+
     return (
         <div ref={formContainer}>
             {creditCardForm}
             <div className="error-container mt-1 text-semibold text-sm flex gap-2">
-                {errors.number && (
+                {error && (
                     <div className="flex">
-                        <Icon name="exclamation-circle-filled" className="flex-item-noshrink mr-1" />
-                        <span data-testid="error-ccnumber">{errors.number}</span>
-                    </div>
-                )}
-                {errors.month && (
-                    <div className="flex">
-                        <Icon name="exclamation-circle-filled" className="flex-item-noshrink mr-1" />
-                        <span data-testid="error-exp">{errors.month}</span>
-                    </div>
-                )}
-                {errors.cvc && (
-                    <div className="flex">
-                        <Icon name="exclamation-circle-filled" className="flex-item-noshrink mr-1" />
-                        <span data-testid="error-cvc">{errors.cvc}</span>
+                        <Icon name="exclamation-circle-filled" className="flex-item-noshrink mr-1" size={18} />
+                        {error}
                     </div>
                 )}
             </div>
@@ -300,7 +306,7 @@ const CreditCardNewDesign = ({ card, errors, onChange, loading = false, fieldSta
             <div className="error-container mt-1 text-semibold text-sm flex">
                 {errors.zip && (
                     <>
-                        <Icon name="exclamation-circle-filled" className="flex-item-noshrink mr-1" />
+                        <Icon name="exclamation-circle-filled" className="flex-item-noshrink mr-1" size={18} />
                         <span data-testid="error-ccnumber">{errors.zip}</span>
                     </>
                 )}
