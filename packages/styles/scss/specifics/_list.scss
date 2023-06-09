@@ -209,6 +209,19 @@ $item-container-row-padding-block: em(5) !default; // design wants 48px
 			inline-size: rem(128);
 		}
 	}
+
+	// override for row mode
+	.item-checkbox-label {
+		&::before {
+			inset-block: -#{$item-container-row-padding-block};
+		}
+
+		.item-checkbox {
+			&::after {
+				inset-block: -#{$item-container-row-padding-block};
+			}
+		}
+	}
 }
 
 .item-checkbox-label {
@@ -219,7 +232,25 @@ $item-container-row-padding-block: em(5) !default; // design wants 48px
 		/* autoprefixer: ignore next */
 		/* stylelint-disable-next-line */
 		-moz-appearance: initial;
+
+		&::after {
+			content: '';
+			inset-inline: -#{$item-container-padding-inline-start} 0;
+			inset-block: -#{$item-container-padding-block};
+			z-index: 1;
+			position: absolute;
+		}
 	}
+
+	/* attempt of increase click surface on label, but does not work in Firefox when shift clicking
+	&::before {
+		content: '';
+		position: absolute;
+		inset-inline: -#{$item-container-padding-inline-start} 0;
+		inset-block: -#{$item-container-padding-block};
+		z-index: 1;
+		background: #f00A;
+	} */
 
 	// fix for Firefox multi-selection issue
 	& > .item-checkbox {
@@ -333,6 +364,14 @@ $item-container-row-padding-block: em(5) !default; // design wants 48px
 		inset-inline: rem(-6);
 	}
 
+	&::before {
+		content: '';
+		position: absolute;
+		inset-block: em(-6);
+		inset-inline: em(-6) em(-12);
+		z-index: 1;
+	}
+
 	.checkbox-fakecheck {
 		margin: auto;
 		background: var(--background-norm);
@@ -367,6 +406,18 @@ $item-container-row-padding-block: em(5) !default; // design wants 48px
 		.item-icon-compact {
 			// margin-block-start: 0;
 			margin-block: auto;
+
+			/* attempt of increase click surface on label, but does not work in Firefox when shift clicking
+			&::before {
+				inset-block: em(-2);
+				inset-inline: em(-6) em(-12);
+			}
+			*/
+		}
+
+		.item-checkbox::after {
+			inset-block: em(-2) !important;
+			inset-inline: em(-6) em(-12) !important;
 		}
 	}
 
