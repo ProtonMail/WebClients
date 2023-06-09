@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { FeatureCode } from '@proton/components/containers/features';
 import { COUPON_CODES, CYCLE, PLANS } from '@proton/shared/lib/constants';
 
-import { getMailPlusFeatures, getUnlimitedFeatures } from '../../helpers/offerCopies';
+import { getMailDealFeatures, getUnlimitedDealFeatures } from '../../helpers/offerCopies';
 import { OfferConfig } from '../../interface';
 import Layout from './Layout';
 import bannerImage from './upsell_mail-plus-free-trial.png';
@@ -23,7 +23,7 @@ const config: OfferConfig = {
             },
             cycle: CYCLE.YEARLY,
             popular: false,
-            features: getMailPlusFeatures,
+            features: getMailDealFeatures,
             getCTAContent: () => c('Action').t`Get the deal`,
             couponCode: COUPON_CODES.ANNIVERSARY23,
         },
@@ -35,7 +35,7 @@ const config: OfferConfig = {
             },
             cycle: CYCLE.TWO_YEARS,
             popular: false,
-            features: getMailPlusFeatures,
+            features: getMailDealFeatures,
             getCTAContent: () => c('Action').t`Get the deal`,
             couponCode: COUPON_CODES.ANNIVERSARY23,
         },
@@ -47,7 +47,7 @@ const config: OfferConfig = {
             },
             cycle: CYCLE.YEARLY,
             popular: true,
-            features: getUnlimitedFeatures,
+            features: getUnlimitedDealFeatures,
             getCTAContent: () => c('Action').t`Get the deal`,
             couponCode: COUPON_CODES.ANNIVERSARY23,
         },
@@ -59,7 +59,7 @@ const config: OfferConfig = {
             },
             cycle: CYCLE.TWO_YEARS,
             popular: true,
-            features: getUnlimitedFeatures,
+            features: getUnlimitedDealFeatures,
             getCTAContent: () => c('Action').t`Get the deal`,
             couponCode: COUPON_CODES.ANNIVERSARY23,
         },
