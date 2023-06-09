@@ -14,19 +14,18 @@ import type { ImportPayload, ImportVault } from '../types';
 import type { KeeperItem } from './keeper.types';
 
 const extractTOTP = (item: KeeperItem): string => {
-    // the totp is the element which follows the element 'TFC:Keeper', and Keeper doesn't allow more than 1 totp per item
+    /* the totp is the element which follows the element
+     * 'TFC:Keeper', and Keeper doesn't allow more than 1
+     * totp per item */
     const indexBeforeTOTP = item.findIndex((element) => element === 'TFC:Keeper');
-    if (indexBeforeTOTP > 0) {
-        return item[indexBeforeTOTP + 1];
-    }
-    return '';
+    return indexBeforeTOTP > 0 ? item[indexBeforeTOTP + 1] : '';
 };
 
-// item type is not defined in the CSV, so we import as a login item if username or password or url or note is not empty
-// e.g. if an SSH key item has an username it will be imported as a login item
-const isLoginItem = (item: KeeperItem): boolean => {
-    return item[2] !== '' || item[3] !== '' || item[4] !== '' || item[5] !== '';
-};
+/* item type is not defined in the CSV, so we import
+ * as a login item if username or password or url or note
+ * is not empty. ie: if an SSH key item has an username it
+ * will be imported as a login item */
+const isLoginItem = (item: KeeperItem): boolean => item[2] !== '' || item[3] !== '' || item[4] !== '' || item[5] !== '';
 
 export const readKeeperData = async (data: string): Promise<ImportPayload> => {
     const ignored: string[] = [];
@@ -63,7 +62,7 @@ export const readKeeperData = async (data: string): Promise<ImportPayload> => {
                                 username: item[2],
                                 password: item[3],
                                 urls: [item[4]],
-                                totps: [extractTOTP(item)],
+                                totp: extractTOTP(item),
                             });
                         })
                         .filter(truthy),
