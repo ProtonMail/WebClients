@@ -36,6 +36,7 @@ const DelinquentModal = (props: ModalProps) => {
                     {c('Action').t`View invoice`}
                 </ButtonLike>,
             ]}
+            data-testid="invoice-view"
             {...props}
         >
             <div>{message}</div>
