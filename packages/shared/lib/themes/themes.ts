@@ -120,5 +120,4 @@ export const PROTON_THEMES = [
     ThemeTypes.Snow,
     ThemeTypes.Contrast,
     ThemeTypes.Legacy,
-    ThemeTypes.Pass,
 ].map((id) => PROTON_THEMES_MAP[id]);
