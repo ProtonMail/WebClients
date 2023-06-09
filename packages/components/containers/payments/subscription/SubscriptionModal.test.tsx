@@ -56,6 +56,7 @@ describe('useProration', () => {
             Quantity: 1,
             Cycle: 1,
             Amount: 499,
+            Offers: [],
         },
         mailpro2022: {
             ID: 'rIJcBetavQi7h5qqN9nxrRnlojgl6HF6bAVG989deNJVVVx1nn2Ic3eyCVV2Adq11ddseZuWba9H5tmvLC727Q==',
@@ -81,6 +82,7 @@ describe('useProration', () => {
             Quantity: 1,
             Cycle: 1,
             Amount: 799,
+            Offers: [],
         },
         bundle2022: {
             ID: 'vl-JevUsz3GJc18CC1VOs-qDKqoIWlLiUePdrzFc72-BtxBPHBDZM7ayn8CNQ59Sk4XjDbwwBVpdYrPIFtOvIw==',
@@ -106,6 +108,7 @@ describe('useProration', () => {
             Quantity: 1,
             Cycle: 1,
             Amount: 1199,
+            Offers: [],
         },
     };
 
@@ -154,6 +157,7 @@ describe('useProration', () => {
                     Title: 'Mail Plus',
                     Type: 1,
                     Pricing: null as any,
+                    Offers: [],
                 },
             ],
         };
