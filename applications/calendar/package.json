@@ -6,7 +6,7 @@
     "author": "",
     "main": "index.js",
     "scripts": {
-        "build": "cross-env NODE_ENV=production SENTRY_PROJECT=web-calendar proton-pack build --appMode=sso",
+        "build": "cross-env NODE_ENV=production proton-pack build --appMode=sso",
         "check-types": "tsc",
         "i18n:upgrade": "proton-i18n extract --verbose && proton-i18n crowdin --verbose",
         "i18n:validate": "proton-i18n validate lint-functions",
