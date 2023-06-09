@@ -54,19 +54,17 @@ export const ImportForm: VFC<Omit<ImportFormContext, 'reset' | 'result'>> = ({ f
 
             <label className="block mb-2 text-bold">{c('Label').t`File`}</label>
 
-            <Bordered
-                className={clsx([
-                    'relative border-dashed mb-4 rounded border-norm',
-                    (form.values.file || (dropzone.hovered && !busy)) && 'border-weak',
-                    form.errors.file && 'border-danger',
-                ])}
-            >
-                <Dropzone
-                    isHovered={dropzone.hovered}
-                    onDragEnter={dropzone.onDragEnter}
-                    onDragLeave={dropzone.onDragLeave}
-                    onDrop={dropzone.onDrop}
-                    isDisabled={busy}
+            <Dropzone onDrop={dropzone.onDrop} disabled={busy} border={false}>
+                <Bordered
+                    className={clsx([
+                        'flex flex-columns flex-justify-center flex-align-items-center relative p-4 mb-4 rounded border-weak min-h-custom',
+                        !form.values.file && 'border-dashed',
+                        form.errors.file && 'border-danger',
+                    ])}
+                    style={{
+                        '--min-height-custom': !form.values.file ? '250px' : '1px',
+                        transition: 'min-height .25s ease-in-out .05s',
+                    }}
                 >
                     {form.values.file ? (
                         <AttachedFile
@@ -87,8 +85,8 @@ export const ImportForm: VFC<Omit<ImportFormContext, 'reset' | 'result'>> = ({ f
                             {c('Action').t`Choose a file or drag it here`}
                         </FileInput>
                     )}
-                </Dropzone>
-            </Bordered>
+                </Bordered>
+            </Dropzone>
 
             {needsPassphrase && <Field name="passphrase" label={c('Label').t`Passphrase`} component={PasswordField} />}
         </>
