@@ -1,4 +1,5 @@
 import { ProductParam, getProductHeaders } from '../apps/product';
+import { CLIENT_TYPES } from '../constants';
 import { HumanVerificationMethodType } from '../interfaces';
 
 export const getUser = () => ({
@@ -12,7 +13,7 @@ export const queryCreateUser = (
         Domain?: string;
         Email?: string;
         Phone?: string;
-        Type: 1 | 2; // 1 = mail, 2 = VPN
+        Type: CLIENT_TYPES; // 1 = mail, 2 = VPN
         Referrer?: string;
         ReferralIdentifier?: string;
         ReferralID?: string; // Invite
@@ -44,7 +45,7 @@ export const queryCreateUserExternal = (
         Email: string;
         Token?: string;
         TokenType?: HumanVerificationMethodType;
-        Type: 1 | 2; // 1 = mail, 2 = VPN
+        Type: CLIENT_TYPES; // 1 = mail, 2 = VPN
         Referrer?: string;
         TokenPayment?: string;
         Payload?: {
@@ -124,7 +125,7 @@ export const queryCheckEmailAvailability = (Name: string) => ({
 });
 
 export const queryDirectSignupStatus = (
-    Type: 1 | 2 // 1 = mail, 2 = VPN
+    Type: CLIENT_TYPES // 1 = mail, 2 = VPN
 ) => ({
     url: 'core/v4/users/direct',
     method: 'get',
@@ -134,7 +135,7 @@ export const queryDirectSignupStatus = (
 export const queryCheckVerificationCode = (
     Token: string,
     TokenType: 'email' | 'sms' | 'invite' | 'coupon' | 'payment',
-    Type: 1 | 2 // 1 = mail, 2 = VPN
+    Type: CLIENT_TYPES // 1 = mail, 2 = VPN
 ) => ({
     url: 'core/v4/users/check',
     method: 'put',
