@@ -32,7 +32,7 @@ describe('Import 1password 1pif', () => {
         const loginItem1 = items[1] as ItemImportIntent<'login'>;
         expect(loginItem1.type).toEqual('login');
 
-        expect(loginItem1.metadata.note).toEqual('Item notes\n\ntext section\nvalue of the text section');
+        expect(loginItem1.metadata.note).toEqual('Item notes');
         expect(loginItem1.content.username).toEqual('somewhere');
         expect(loginItem1.content.password).toEqual('somepassword with " in it');
         expect(loginItem1.content.urls[0]).toEqual('https://slashdot.org');
@@ -70,7 +70,7 @@ describe('Import 1password 1pif', () => {
         expect(passwordItem.trashed).toEqual(false);
         expect(passwordItem.extraFields).toEqual([]);
 
-        /* Login item with single TOTP */
+        /* Login item with TOTP extra field */
         const loginItemSingleTOTP = items[6] as ItemImportIntent<'login'>;
         expect(loginItemSingleTOTP.type).toEqual('login');
         expect(loginItemSingleTOTP.createTime).toEqual(1675849436);
@@ -79,12 +79,17 @@ describe('Import 1password 1pif', () => {
         expect(loginItemSingleTOTP.metadata.name).toEqual('login with 2fa');
         expect(loginItemSingleTOTP.metadata.note).toEqual('');
         expect(loginItemSingleTOTP.trashed).toEqual(false);
-        expect(loginItemSingleTOTP.extraFields).toEqual([]);
-        expect(loginItemSingleTOTP.content.totpUri).toEqual(
-            'otpauth://totp/az?secret=QQ&algorithm=SHA1&digits=6&period=30'
-        );
+        expect(loginItemSingleTOTP.extraFields).toEqual([
+            {
+                fieldName: 'one-time password',
+                type: 'totp',
+                data: {
+                    totpUri: 'otpauth://totp/az?secret=QQ&algorithm=SHA1&digits=6&period=30',
+                },
+            },
+        ]);
 
-        /* Login item with multiple TOTPs */
+        /* Login item with multiple TOTP extra fields */
         const loginItemMultiTOTP = items[5] as ItemImportIntent<'login'>;
         expect(loginItemMultiTOTP.type).toEqual('login');
         expect(loginItemMultiTOTP.createTime).toEqual(1671029303);
@@ -96,12 +101,20 @@ describe('Import 1password 1pif', () => {
             username: 'john@wick.com',
             password: 'password',
             urls: ['http://localhost:7777'],
-            totpUri: 'otpauth://totp/Login%20with%20TOTP?secret=BASE32SECRET3232&algorithm=SHA1&digits=6&period=30',
+            totpUri: '',
         });
         expect(loginItemMultiTOTP.trashed).toEqual(false);
         expect(loginItemMultiTOTP.extraFields).toEqual([
             {
-                fieldName: 'totp',
+                fieldName: 'one-time password',
+                type: 'totp',
+                data: {
+                    totpUri:
+                        'otpauth://totp/Login%20with%20TOTP?secret=BASE32SECRET3232&algorithm=SHA1&digits=6&period=30',
+                },
+            },
+            {
+                fieldName: 'one-time password',
                 type: 'totp',
                 data: {
                     totpUri: 'otpauth://totp/generator?secret=BASE32SECRET3232&algorithm=SHA1&digits=6&period=30',
@@ -109,16 +122,24 @@ describe('Import 1password 1pif', () => {
             },
         ]);
 
-        /* Login item with special chars */
+        /* Login item with special chars and text extra field */
         const specialCharItem = items[1] as ItemImportIntent<'login'>;
         expect(specialCharItem.type).toEqual('login');
         expect(specialCharItem.createTime).toEqual(1619085696);
         expect(specialCharItem.modifyTime).toEqual(1671040547);
         expect(specialCharItem.metadata.itemUuid).not.toBeUndefined();
         expect(specialCharItem.metadata.name).toEqual('Credential with " in the name');
-        expect(specialCharItem.metadata.note).toEqual('Item notes\n\ntext section\nvalue of the text section');
+        expect(specialCharItem.metadata.note).toEqual('Item notes');
         expect(specialCharItem.trashed).toEqual(false);
-        expect(specialCharItem.extraFields).toEqual([]);
+        expect(specialCharItem.extraFields).toEqual([
+            {
+                fieldName: 'text section',
+                type: 'text',
+                data: {
+                    content: 'value of the text section',
+                },
+            },
+        ]);
         expect(specialCharItem.content).toEqual({
             username: 'somewhere',
             password: 'somepassword with " in it',
