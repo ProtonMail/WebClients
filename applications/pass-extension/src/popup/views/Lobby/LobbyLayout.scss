@@ -1,0 +1,16 @@
+@import '~@proton/styles/scss/lib';
+@import '../../../shared/styles/lobby';
+
+.pass-lobby--heading {
+	font-size: rem(24);
+}
+
+.pass-lobby--brand-text {
+	opacity: 0.8;
+}
+
+.pass-lobby--content::before {
+	content: '';
+	display: block;
+	block-size: 100px;
+}

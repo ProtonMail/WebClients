@@ -1,0 +1,44 @@
+.pass-fieldset-cluster {
+	--fieldset-cluster-icon-color: var(--interaction-norm);
+
+	&--write {
+		--fieldset-cluster-icon-color: var(--field-placeholder-color);
+	}
+
+	// Set min-width: 0 on the parent of the flexbox to enable text-ellipsis
+	// and prevent content overflow. This allows the flex item to shrink to its
+	// content size, which is especially helpful when the item has a fixed or
+	// percentage-based width that causes issues with the Flexbox layout.
+	min-inline-size: 0;
+}
+
+.pass-fieldset-cluster > * {
+	border: 1px solid var(--border-norm);
+	margin-block-start: -1px;
+	position: relative;
+
+	&:first-child,
+	&:first-child::before {
+		border-start-start-radius: var(--border-radius-xl) !important;
+		border-start-end-radius: var(--border-radius-xl) !important;
+		border-end-start-radius: 0 !important;
+		border-end-end-radius: 0 !important;
+	}
+
+	&:last-child,
+	&:last-child::before {
+		border-start-start-radius: 0 !important;
+		border-start-end-radius: 0 !important;
+		border-end-start-radius: var(--border-radius-xl) !important;
+		border-end-end-radius: var(--border-radius-xl) !important;
+	}
+
+	&:only-child,
+	&:only-child::before {
+		border-radius: var(--border-radius-xl) !important;
+	}
+}
+
+.pass-fieldset-cluster textarea {
+	min-block-size: 1.25rem;
+}

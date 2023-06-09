@@ -8,11 +8,11 @@
 	}
 
 	&-label-container {
+		font-weight: var(--font-weight-semibold);
 		margin-block-end: rem(4);
 	}
 
 	&-label {
-		font-weight: var(--font-weight-semibold);
 		cursor: pointer;
 	}
 
@@ -21,6 +21,7 @@
 		text-align: end;
 		font-size: rem(12);
 		color: var(--text-weak);
+		font-weight: var(--font-weight-normal);
 	}
 
 	&-assist {

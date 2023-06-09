@@ -8,6 +8,8 @@ const PREFIX_TO_TYPE: { [prefix: string]: LINK_TYPES | undefined } = {
     'https://': LINK_TYPES.WEB,
 };
 
+const EXTENSION_PROTOCOLS = ['chrome-extension:', 'moz-extension:'];
+
 const TYPE_TO_PREFIX = {
     [LINK_TYPES.PHONE]: { regex: /^tel:/, defaultPrefix: 'tel:' },
     [LINK_TYPES.EMAIL]: { regex: /^mailto:/, defaultPrefix: 'mailto:' },
@@ -225,7 +227,11 @@ export const getAppUrlRelativeToOrigin = (origin: string, appName: APP_NAMES) =>
 
 let cache = '';
 export const getStaticURL = (path: string) => {
-    if (window.location.hostname === 'localhost' || getIsDohDomain(window.location.origin)) {
+    if (
+        window.location.hostname === 'localhost' ||
+        getIsDohDomain(window.location.origin) ||
+        EXTENSION_PROTOCOLS.includes(window.location.protocol)
+    ) {
         return `https://proton.me${path}`;
     }
 

@@ -1,0 +1,26 @@
+@import '~@proton/styles/scss/lib';
+
+.pass-vault-icon {
+	background-color: rgb(var(--vault-icon-color) / 0.16);
+	color: rgb(var(--vault-icon-color));
+
+	&.large {
+		inline-size: rem(40);
+		block-size: rem(40);
+	}
+
+	&.small,
+	&.medium {
+		background-color: transparent;
+	}
+
+	&.medium {
+		inline-size: rem(16);
+		block-size: rem(16);
+	}
+
+	&.small {
+		inline-size: rem(12);
+		block-size: rem(12);
+	}
+}

@@ -1,0 +1,53 @@
+url,username,password,totp,extra,name,grouping,fav
+https://account.proton.me,nobody@proton.me,proton123,,Secure note,nobody,,0
+https://proton.me,admin,proton123,,,Admin,company services,0
+https://twitter.com/login,@nobody,proton123,base32secret,This is a twitter note,Twitter,company services,0
+https://fb.com/login,@nobody,proton123,base32secret,,,company services,0
+http://sn,,,,This is a secure note,Secure note,,0
+htts:/broken.url,,,,,,company services,0
+http://sn,,,,"NoteType:Bank Account
+Language:en-GB
+Bank Name:test
+Account Type:test
+Routing Number:
+Account Number:333333
+SWIFT Code:
+IBAN Number:
+Pin:
+Branch Address:
+Branch Phone:
+Notes:",test,,0
+http://sn,,,,"NoteType:Credit Card
+Language:en-GB
+Name on Card:Mr Test
+Type:Test
+Number:42424242
+Security Code:
+Start Date:,
+Expiration Date:,
+Notes:",TestCC,,0
+http://sn,,,,"NoteType:Address
+Language:en-GB
+Title:mrs
+First Name:Test
+Middle Name:Joe
+Last Name:Test
+Username:
+Gender:
+Birthday:,,
+Company:
+Address 1:
+Address 2:
+Address 3:
+City / Town:
+County:
+State:
+Zip / Postal Code:
+Country:
+Timezone:
+Email Address:
+Phone:
+Evening Phone:
+Mobile Phone:
+Fax:
+Notes:",TestID,,0

@@ -1,0 +1,59 @@
+{
+    "name": "Proton Pass: Free Password Manager",
+    "description": "Free and fully encrypted password manager to keep your logins and passwords safe.",
+    "version": "1.1.2",
+    "manifest_version": 3,
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": ["https://*/*", "http://*/*"],
+            "js": ["orchestrator.js"],
+            "all_frames": false,
+            "run_at": "document_end"
+        }
+    ],
+    "externally_connectable": {
+        "matches": [
+            "https://*.proton.me/*",
+            "https://*.proton.local/*",
+            "https://*.proton.black/*",
+            "https://*.proton.pink/*"
+        ]
+    },
+    "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAiZt8pKnvrDkvOuKzjfj1TtrPc0lwlUc/pvAOAoLmtQ9i5IdVisA7m4zqLKFONapyI3FWPsThpGRteYpLSgIf0LY8E2TGCHRDobYMLagS7OAbVySapvYCqj4LBQ7EOSYNVOEOUgyTAWqDB4udB6vgQXkRV6f2n2hAsAvrkutW1U4Unovg1zksp24bOTwyOxM5rJ6vbqGVzuhiblqaOpinmN+TQ53+8xCmVduWrQCMO3I+/hOPmw6S9nPMFj1Wsc+qIsNMCLT8kEGRGa51gw7ZK7TaYQ1MGB/O+lbUjcL5bjYYvcYXA7bL3Ol8vhSLN5yhhxox9w19O/+bwoyib4OAHQIDAQAB",
+    "permissions": ["activeTab", "alarms", "privacy", "scripting", "storage", "unlimitedStorage", "webRequest"],
+    "host_permissions": ["https://*/*", "http://*/*"],
+    "options_ui": {
+        "page": "settings.html"
+    },
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+            "16": "/assets/protonpass-icon-16.png",
+            "32": "/assets/protonpass-icon-32.png",
+            "48": "/assets/protonpass-icon-48.png",
+            "128": "/assets/protonpass-icon-128.png"
+        }
+    },
+    "icons": {
+        "16": "/assets/protonpass-icon-16.png",
+        "32": "/assets/protonpass-icon-32.png",
+        "48": "/assets/protonpass-icon-48.png",
+        "128": "/assets/protonpass-icon-128.png"
+    },
+    "web_accessible_resources": [
+        {
+            "resources": [
+                "dropdown.html",
+                "notification.html",
+                "assets/*.png",
+                "assets/*.svg",
+                "assets/*.woff",
+                "assets/*.woff2"
+            ],
+            "matches": ["https://*/*", "http://*/*"]
+        }
+    ]
+}

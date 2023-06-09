@@ -1,0 +1,153 @@
+{
+    "encrypted": false,
+    "folders": [],
+    "items": [
+        {
+            "id": "aa6874e0-c259-41fa-8a18-afa200cf3f3a",
+            "organizationId": null,
+            "folderId": null,
+            "type": 1,
+            "reprompt": 0,
+            "name": "LoginItemMultipleWebsites",
+            "notes": "login note",
+            "favorite": false,
+            "fields": [
+                {
+                    "name": "Text 1",
+                    "value": "Text 1 content",
+                    "type": 0,
+                    "linkedId": null
+                },
+                {
+                    "name": "Hidden 1",
+                    "value": "Hidden 1 content",
+                    "type": 1,
+                    "linkedId": null
+                }
+            ],
+            "login": {
+                "uris": [
+                    {
+                        "match": null,
+                        "uri": "https://test.url1/"
+                    },
+                    {
+                        "match": null,
+                        "uri": "https://test.url2"
+                    },
+                    {
+                        "match": null,
+                        "uri": "androidapp://ch.protonmail.android"
+                    }
+                ],
+                "username": "username",
+                "password": "password",
+                "totp": "otpauth://totp/test?secret=proton333&issuer=proton"
+            },
+            "collectionIds": null
+        },
+        {
+            "id": "a8fcc18c-613f-4586-b1fc-afa200d06f5f",
+            "organizationId": null,
+            "folderId": null,
+            "type": 3,
+            "reprompt": 0,
+            "name": "CreditCardItem",
+            "notes": null,
+            "favorite": false,
+            "card": {
+                "cardholderName": "Mr John DOE",
+                "brand": "Visa",
+                "number": "42424242424242424242",
+                "expMonth": "4",
+                "expYear": "2042",
+                "code": "007"
+            },
+            "collectionIds": null
+        },
+        {
+            "id": "122b4201-6b60-495e-ae2d-afa200d0b79b",
+            "organizationId": null,
+            "folderId": null,
+            "type": 4,
+            "reprompt": 0,
+            "name": "IdentityItem",
+            "notes": null,
+            "favorite": false,
+            "identity": {
+                "title": null,
+                "firstName": "John",
+                "middleName": "F",
+                "lastName": "Kennedy",
+                "address1": null,
+                "address2": null,
+                "address3": null,
+                "city": null,
+                "state": null,
+                "postalCode": null,
+                "country": null,
+                "company": null,
+                "email": null,
+                "phone": null,
+                "ssn": null,
+                "username": null,
+                "passportNumber": null,
+                "licenseNumber": null
+            },
+            "collectionIds": null
+        },
+        {
+            "id": "fcecd2a9-35c6-4499-8a0f-afa200d082f6",
+            "organizationId": null,
+            "folderId": null,
+            "type": 2,
+            "reprompt": 0,
+            "name": "NoteItem",
+            "notes": "note content",
+            "favorite": false,
+            "secureNote": {
+                "type": 0
+            },
+            "collectionIds": null
+        },
+        {
+            "id": "aa6874e0-c259-41fa-8a18-afa200cf3f3a",
+            "organizationId": null,
+            "folderId": null,
+            "type": 1,
+            "reprompt": 0,
+            "name": "LoginItemEmptyFields",
+            "notes": "login note",
+            "favorite": false,
+            "login": {
+                "uris": [],
+                "username": null,
+                "password": null,
+                "totp": null
+            },
+            "collectionIds": null
+        },
+        {
+            "id": "aa6874e0-c259-41fa-8a18-afa200cf3f3b",
+            "organizationId": null,
+            "folderId": null,
+            "type": 1,
+            "reprompt": 0,
+            "name": "LoginItemBrokenUrl",
+            "notes": "",
+            "favorite": false,
+            "login": {
+                "uris": [
+                    {
+                        "match": null,
+                        "uri": "htt:/test.url1/"
+                    }
+                ],
+                "username": null,
+                "password": null,
+                "totp": null
+            },
+            "collectionIds": null
+        }
+    ]
+}

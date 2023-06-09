@@ -1,0 +1,49 @@
+.pass-welcome {
+	background: transparent !important;
+}
+
+.pass-welcome--gradient {
+	position: fixed;
+	background: radial-gradient(
+		108.62% 108.7% at 103.07% 103.41%,
+		rgb(255 213 128 / 0.5) 0%,
+		rgb(246 204 136 / 0.5) 6.25%,
+		rgb(228 187 152 / 0.5) 18.23%,
+		rgb(210 170 168 / 0.5) 29.17%,
+		rgb(201 162 171 / 0.5) 34.37%,
+		rgb(187 149 177 / 0.5) 45.31%,
+		rgb(154 117 163 / 0.5) 58.33%,
+		rgb(114 76 145 / 0.5) 72.4%,
+		rgb(49 34 85 / 0.5) 89.58%,
+		rgb(27 19 64 / 0.25) 100%
+	);
+	block-size: 100%;
+	inline-size: 100%;
+	inset-block-start: 0;
+	inset-inline-start: 0;
+	z-index: -1;
+}
+
+.pass-welcome--header-text {
+	color: white;
+}
+
+.pass-welcome--onboarding-video {
+	position: relative;
+	padding-block-end: 48%;
+	block-size: 0;
+	inline-size: 100%;
+	overflow: hidden;
+
+	iframe {
+		position: absolute;
+		inset-block-start: 0;
+		inset-inline-start: 0;
+		inline-size: 100%;
+		block-size: 100%;
+	}
+}
+
+.pass-welcome--onboarding-pin {
+	border: 2px solid white;
+}

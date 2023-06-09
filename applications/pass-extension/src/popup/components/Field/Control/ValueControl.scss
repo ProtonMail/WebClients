@@ -1,0 +1,33 @@
+@import '~@proton/styles/scss/lib';
+
+.pass-value-control {
+	&--value {
+		min-block-size: rem(20);
+
+		& > *:last-child {
+			margin-block-end: 0;
+		}
+	}
+
+	&--interactive {
+		transition: background-color 250ms;
+
+		&:hover {
+			background-color: var(--background-weak);
+		}
+
+		/*
+		* remove hard coded color value -> consider 'interactive background` colors in theme
+		*/
+		&:active {
+			background-color: #27273d;
+		}
+	}
+
+	&--interactive-focus {
+		&:focus-visible {
+			z-index: 1;
+			outline: 1px solid var(--interaction-norm);
+		}
+	}
+}
