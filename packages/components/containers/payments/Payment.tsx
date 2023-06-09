@@ -114,7 +114,9 @@ const Payment = ({
     }
 
     const customPaymentMethod = paymentMethods.find(({ ID }) => method === ID);
+
     const isSignupPass = type === 'signup-pass';
+    const isSignup = type === 'signup' || type === 'signup-pass';
 
     return (
         <>
@@ -145,7 +147,7 @@ const Payment = ({
                                 <CreditCard card={card} errors={cardErrors} onChange={onCard} />
                             )}
 
-                            {type !== 'signup' && <Alert3DS />}
+                            {!isSignup && <Alert3DS />}
                         </>
                     )}
                     {method === PAYMENT_METHOD_TYPES.CASH && <Cash />}
