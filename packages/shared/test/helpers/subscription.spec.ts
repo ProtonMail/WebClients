@@ -1,10 +1,11 @@
 import { addWeeks } from 'date-fns';
 
-import { External, Plan, Subscription } from '@proton/shared/lib/interfaces';
+import { External, Plan, PlanIDs, PlansMap, Subscription } from '@proton/shared/lib/interfaces';
 
 import { ADDON_NAMES, COUPON_CODES, CYCLE, PLANS } from '../../lib/constants';
 import {
     getPlanIDs,
+    getPricingFromPlanIDs,
     hasLifetime,
     isManagedExternally,
     isTrial,
@@ -56,6 +57,7 @@ beforeEach(() => {
             [CYCLE.TWO_YEARS]: 123,
         },
         State: 123,
+        Offers: [],
     };
 });
 
@@ -191,5 +193,68 @@ describe('isManagedExternally', () => {
         });
 
         expect(result).toEqual(false);
+    });
+});
+
+describe('getPricingFromPlanIDs', () => {
+    it('returns the correct pricing for a single plan ID', () => {
+        const planIDs: PlanIDs = { pass2023: 1 };
+        const plansMap: PlansMap = {
+            pass2023: {
+                ID: 'id123',
+                Type: 1,
+                Name: PLANS.PASS_PLUS,
+                Title: 'Pass Plus',
+                MaxDomains: 0,
+                MaxAddresses: 0,
+                MaxCalendars: 0,
+                MaxSpace: 0,
+                MaxMembers: 0,
+                MaxVPN: 0,
+                MaxTier: 0,
+                Services: 8,
+                Features: 0,
+                State: 1,
+                Pricing: {
+                    '1': 499,
+                    '12': 1200,
+                    '24': 7176,
+                },
+                Currency: 'CHF',
+                Quantity: 1,
+                Offers: [
+                    {
+                        Name: 'passlaunch',
+                        StartTime: 1684758588,
+                        EndTime: 1688110913,
+                        Pricing: {
+                            '12': 1200,
+                        },
+                    },
+                ],
+                Cycle: 1,
+                Amount: 499,
+            },
+        };
+
+        const expected = {
+            all: {
+                '1': 499,
+                '12': 1200,
+                '15': 0,
+                '24': 7176,
+                '30': 0,
+            },
+            plans: {
+                '1': 499,
+                '12': 1200,
+                '15': 0,
+                '24': 7176,
+                '30': 0,
+            },
+        };
+
+        const result = getPricingFromPlanIDs(planIDs, plansMap);
+        expect(result).toEqual(expected);
     });
 });

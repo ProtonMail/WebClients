@@ -78,6 +78,7 @@ beforeEach(() => {
                 [CYCLE.TWO_YEARS]: 1099 * 24,
             },
             State: 1,
+            Offers: [],
         },
     ];
 
