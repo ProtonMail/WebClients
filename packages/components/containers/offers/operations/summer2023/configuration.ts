@@ -1,5 +1,3 @@
-import { c } from 'ttag';
-
 import { FeatureCode } from '@proton/components/containers/features';
 import { COUPON_CODES, CYCLE, PLANS } from '@proton/shared/lib/constants';
 
@@ -22,9 +20,7 @@ const config: OfferConfig = {
                 [PLANS.MAIL]: 1,
             },
             cycle: CYCLE.YEARLY,
-            popular: false,
             features: getMailDealFeatures,
-            getCTAContent: () => c('Action').t`Get the deal`,
             couponCode: COUPON_CODES.ANNIVERSARY23,
         },
         {
@@ -34,9 +30,7 @@ const config: OfferConfig = {
                 [PLANS.MAIL]: 1,
             },
             cycle: CYCLE.TWO_YEARS,
-            popular: false,
             features: getMailDealFeatures,
-            getCTAContent: () => c('Action').t`Get the deal`,
             couponCode: COUPON_CODES.ANNIVERSARY23,
         },
         {
@@ -48,7 +42,6 @@ const config: OfferConfig = {
             cycle: CYCLE.YEARLY,
             popular: true,
             features: getUnlimitedDealFeatures,
-            getCTAContent: () => c('Action').t`Get the deal`,
             couponCode: COUPON_CODES.ANNIVERSARY23,
         },
         {
@@ -60,7 +53,6 @@ const config: OfferConfig = {
             cycle: CYCLE.TWO_YEARS,
             popular: true,
             features: getUnlimitedDealFeatures,
-            getCTAContent: () => c('Action').t`Get the deal`,
             couponCode: COUPON_CODES.ANNIVERSARY23,
         },
     ],
