@@ -12,6 +12,7 @@ import { browserSessionStorage } from '../extension/storage';
 import type { StorageData } from '../extension/storage/types';
 import type { Api } from '../types';
 
+/* FIXME: update to `APPS.PROTONPASSBROWSEREXTENSION` */
 export const requestFork = async (host: string, type: FORK_TYPE) => {
     const state = encodeBase64URL(uint8ArrayToString(crypto.getRandomValues(new Uint8Array(32))));
 
