@@ -25,7 +25,7 @@ const config: OfferConfig = {
             popular: false,
             features: getMailPlusFeatures,
             getCTAContent: () => c('Action').t`Upgrade now`,
-            couponCode: COUPON_CODES.SUMMER2023,
+            couponCode: COUPON_CODES.ANNIVERSARY23,
         },
         {
             ref: 'anniversary_offer-plus-24',
@@ -37,7 +37,7 @@ const config: OfferConfig = {
             popular: false,
             features: getMailPlusFeatures,
             getCTAContent: () => c('Action').t`Upgrade now`,
-            couponCode: COUPON_CODES.SUMMER2023,
+            couponCode: COUPON_CODES.ANNIVERSARY23,
         },
         {
             ref: 'anniversary_offer-un-12',
@@ -49,7 +49,7 @@ const config: OfferConfig = {
             popular: true,
             features: getUnlimitedFeatures,
             getCTAContent: () => c('Action').t`Upgrade now`,
-            couponCode: COUPON_CODES.SUMMER2023,
+            couponCode: COUPON_CODES.ANNIVERSARY23,
         },
         {
             ref: 'anniversary_offer-un-24',
@@ -61,7 +61,7 @@ const config: OfferConfig = {
             popular: true,
             features: getUnlimitedFeatures,
             getCTAContent: () => c('Action').t`Upgrade now`,
-            couponCode: COUPON_CODES.SUMMER2023,
+            couponCode: COUPON_CODES.ANNIVERSARY23,
         },
     ],
     layout: Layout,
