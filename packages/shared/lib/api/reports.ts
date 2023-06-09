@@ -1,6 +1,6 @@
 import { CLIENT_TYPES } from '@proton/shared/lib/constants';
 
-interface BugPayload {
+export interface BugPayload {
     ClientType: CLIENT_TYPES;
     Client: string;
     ClientVersion: string;

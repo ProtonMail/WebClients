@@ -1,0 +1,12 @@
+@mixin reset {
+	margin-inline-start: unset;
+	padding: 0 !important;
+	outline: none !important;
+	outline-color: none !important;
+	background-color: transparent !important;
+	border: none !important;
+	box-shadow: none !important;
+	min-inline-size: unset !important;
+	min-block-size: unset !important;
+	overflow: unset !important;
+}

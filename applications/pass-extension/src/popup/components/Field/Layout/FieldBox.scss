@@ -1,0 +1,40 @@
+.pass-field-box {
+	&:not(.pass-input-group--no-focus) {
+		&::before {
+			content: '';
+			border: 1px solid transparent;
+			position: absolute;
+			inset: -1px;
+			z-index: 1;
+			pointer-events: none;
+			transition: 0.15s ease;
+		}
+
+		&:has(
+				input:focus-visible,
+				textarea:focus-visible,
+				button[aria-expanded='false']:focus,
+				button[aria-expanded='true']
+			) {
+			&::before {
+				border-color: var(--interaction-norm);
+			}
+		}
+
+		&:has(input:placeholder-shown, textarea:placeholder-shown) {
+			label,
+			label > span {
+				color: var(--text-norm);
+			}
+		}
+	}
+
+	&:has(button[aria-expanded='false']:focus) button {
+		outline: none;
+	}
+
+	.field-two-container button svg {
+		position: relative;
+		inset-block-end: var(--space-2);
+	}
+}

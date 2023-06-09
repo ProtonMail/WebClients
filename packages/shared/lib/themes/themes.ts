@@ -5,6 +5,7 @@ import contrastTheme from '@proton/colors/themes/dist/contrast.theme.css';
 import duotoneTheme from '@proton/colors/themes/dist/duotone.theme.css';
 import legacyTheme from '@proton/colors/themes/dist/legacy.theme.css';
 import monokaiTheme from '@proton/colors/themes/dist/monokai.theme.css';
+import passTheme from '@proton/colors/themes/dist/pass.theme.css';
 import snowTheme from '@proton/colors/themes/dist/snow.theme.css';
 import themeCarbonSvgSmall from '@proton/styles/assets/img/themes/theme-thumb-carbon-small.svg';
 import themeCarbonSvg from '@proton/styles/assets/img/themes/theme-thumb-carbon.svg';
@@ -29,6 +30,7 @@ export enum ThemeTypes {
     Contrast = 4,
     Legacy = 5,
     Classic = 6,
+    Pass = 7,
 }
 
 export const PROTON_DEFAULT_THEME = ThemeTypes.Duotone;
@@ -97,9 +99,18 @@ export const PROTON_THEMES_MAP = {
         },
         theme: classicTheme.toString(),
     },
+    [ThemeTypes.Pass]: {
+        label: 'Pass',
+        identifier: ThemeTypes.Pass,
+        src: {
+            medium: themeClassicSvg,
+            small: themeClassicSvgSmall,
+        },
+        theme: passTheme.toString(),
+    },
 } as const;
 
-export const DARK_THEMES = [ThemeTypes.Carbon, ThemeTypes.Monokai];
+export const DARK_THEMES = [ThemeTypes.Carbon, ThemeTypes.Monokai, ThemeTypes.Pass];
 
 export const PROTON_THEMES = [
     ThemeTypes.Duotone,

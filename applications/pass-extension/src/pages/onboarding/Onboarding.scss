@@ -1,0 +1,15 @@
+@import '~@proton/styles/scss/lib';
+
+body {
+	overflow: auto !important;
+}
+
+.pass-onboarding--dot {
+	inline-size: rem(24);
+	block-size: rem(24);
+	font-size: rem(11);
+}
+
+.pass-onboarding--heading {
+	line-height: rem(42);
+}

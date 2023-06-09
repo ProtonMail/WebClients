@@ -1,0 +1,12 @@
+@import '~@proton/styles/scss/lib';
+
+.pass-onboarding-panel {
+	transition: max-block-size 0.25s ease-in-out;
+	max-block-size: rem(180);
+	min-block-size: 0;
+	overflow: hidden;
+
+	&--hidden {
+		max-block-size: 0;
+	}
+}
