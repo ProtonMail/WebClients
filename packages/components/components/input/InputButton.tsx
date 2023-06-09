@@ -1,8 +1,7 @@
 import { ComponentPropsWithoutRef } from 'react';
 
 import { ButtonLike, ButtonLikeProps as TButtonLikeProps } from '@proton/atoms';
-
-import { classnames } from '../../helpers';
+import clsx from '@proton/utils/clsx';
 
 export interface InputButtonProps extends ComponentPropsWithoutRef<'input'> {
     id?: string;
@@ -25,7 +24,7 @@ const InputButton = ({
 }: InputButtonProps) => {
     const { className: labelClassNameProp, ...labelPropsRest } = labelProps;
 
-    const labelClassName = classnames(['inline-flex relative', labelClassNameProp]);
+    const labelClassName = clsx(['inline-flex relative', labelClassNameProp]);
 
     return (
         <label htmlFor={id} title={title} className={labelClassName} {...labelPropsRest}>
@@ -34,7 +33,7 @@ const InputButton = ({
             <ButtonLike
                 as="span"
                 {...ButtonLikeProps}
-                className={classnames([
+                className={clsx([
                     'input-button flex flex-justify-center flex-item-noshrink rounded-50',
                     ButtonLikeProps.className,
                 ])}

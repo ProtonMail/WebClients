@@ -1,6 +1,7 @@
 import { KeyboardEvent, MutableRefObject, useEffect, useMemo, useRef, useState } from 'react';
 
-import { classnames } from '../../helpers';
+import clsx from '@proton/utils/clsx';
+
 import Dropdown, { DropdownProps } from '../dropdown/Dropdown';
 import { DropdownSizeUnit } from '../dropdown/utils';
 import type { IconName } from '../icon/Icon';
@@ -206,7 +207,7 @@ const SelectTwo = <V extends any>({
                 size={size}
                 originalPlacement={originalPlacement}
                 disableDefaultArrowNavigation
-                className={classnames(['select-dropdown', allowOptionToggling && 'select-dropdown--togglable'])}
+                className={clsx(['select-dropdown', allowOptionToggling && 'select-dropdown--togglable'])}
             >
                 <SelectOptions selected={selectedIndexes} onKeyDown={handleKeydown} onChange={handleChange}>
                     {children}

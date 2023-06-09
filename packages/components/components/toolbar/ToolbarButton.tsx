@@ -1,14 +1,9 @@
 import { ButtonHTMLAttributes, ReactElement, ReactNode, Ref, cloneElement, forwardRef } from 'react';
 
-
-
+import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
-
-
-import { classnames } from '../../helpers';
 import { Tooltip } from '../tooltip';
-
 
 interface Props extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'title'> {
     icon?: ReactElement;
@@ -23,7 +18,7 @@ const ToolbarButton = (
     const content = (
         <button
             type="button"
-            className={classnames([className, 'flex flex-item-noshrink toolbar-button'])}
+            className={clsx([className, 'flex flex-item-noshrink toolbar-button'])}
             onClick={disabled ? noop : onClick}
             tabIndex={disabled ? -1 : tabIndex}
             disabled={disabled}
@@ -32,7 +27,7 @@ const ToolbarButton = (
         >
             {icon &&
                 cloneElement(icon, {
-                    className: classnames([icon.props.className, 'toolbar-icon m-auto']),
+                    className: clsx([icon.props.className, 'toolbar-icon m-auto']),
                 })}
             {children}
         </button>

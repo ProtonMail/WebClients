@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 
-import { classnames } from '../../helpers';
+import clsx from '@proton/utils/clsx';
 
 interface Props {
     children?: ReactNode;
@@ -15,7 +15,7 @@ const CircularProgress = ({ children, className, progress, rootRef, size = 32, .
         <svg
             ref={rootRef}
             viewBox="0 0 35.83098862 35.83098862"
-            className={classnames(['circle-chart', className])}
+            className={clsx(['circle-chart', className])}
             width={size}
             height={size}
             xmlns="http://www.w3.org/2000/svg"

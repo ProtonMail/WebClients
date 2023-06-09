@@ -1,7 +1,8 @@
 import { ReactNode } from 'react';
 import { SortableContainerProps } from 'react-sortable-hoc';
 
-import { classnames } from '../../helpers';
+import clsx from '@proton/utils/clsx';
+
 import OrderableContainer from '../orderable/OrderableContainer';
 import { Table } from '../table';
 
@@ -15,12 +16,8 @@ interface Props extends SortableContainerProps {
 }
 
 const OrderableTable = ({ children = [], className = '', helperClassname, caption, ...props }: Props) => (
-    <OrderableContainer
-        helperClass={classnames(['orderableHelper simple-table', helperClassname])}
-        useDragHandle
-        {...props}
-    >
-        <Table caption={caption} className={classnames(['orderableTable', className])}>
+    <OrderableContainer helperClass={clsx(['orderableHelper simple-table', helperClassname])} useDragHandle {...props}>
+        <Table caption={caption} className={clsx(['orderableTable', className])}>
             {children}
         </Table>
     </OrderableContainer>

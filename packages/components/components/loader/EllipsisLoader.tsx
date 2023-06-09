@@ -2,7 +2,7 @@ import { HTMLAttributes } from 'react';
 
 import { c } from 'ttag';
 
-import { classnames } from '../../helpers';
+import clsx from '@proton/utils/clsx';
 
 export interface Props extends HTMLAttributes<HTMLSpanElement> {
     className?: string;
@@ -10,7 +10,7 @@ export interface Props extends HTMLAttributes<HTMLSpanElement> {
 
 const EllipsisLoader = ({ className, ...rest }: Props) => {
     return (
-        <span className={classnames(['ellipsis-loader', className])} {...rest}>
+        <span className={clsx(['ellipsis-loader', className])} {...rest}>
             <span className="sr-only">{c('Info').t`Loading`}</span>
         </span>
     );

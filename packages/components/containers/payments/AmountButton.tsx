@@ -1,8 +1,8 @@
 import { Button, ButtonProps } from '@proton/atoms';
 import { Currency } from '@proton/shared/lib/interfaces';
+import clsx from '@proton/utils/clsx';
 
 import { Price } from '../../components';
-import { classnames } from '../../helpers';
 
 interface Props extends Omit<ButtonProps, 'onSelect' | 'onClick'> {
     value?: number;
@@ -15,7 +15,7 @@ const AmountButton = ({ value = 0, amount = 0, currency, onSelect, className = '
     return (
         <Button
             aria-pressed={value === amount}
-            className={classnames(['field', className, value === amount && 'is-active'])}
+            className={clsx(['field', className, value === amount && 'is-active'])}
             onClick={() => onSelect(value)}
             {...rest}
         >

@@ -2,7 +2,7 @@ import { HTMLAttributes, ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import { classnames } from '../../helpers';
+import clsx from '@proton/utils/clsx';
 
 interface Props extends HTMLAttributes<HTMLDivElement> {
     children: ReactNode;
@@ -12,7 +12,7 @@ interface Props extends HTMLAttributes<HTMLDivElement> {
 const SidebarNav = ({ children, className, ...rest }: Props) => {
     return (
         <nav
-            className={classnames(['navigation max-w100 flex-item-fluid-auto', className])}
+            className={clsx(['navigation max-w100 flex-item-fluid-auto', className])}
             {...rest}
             // translator: Label for the primary navigation for screen readers. Omit the word "navigation" as it's announced in the landmarks menu as "Main navigation" automatically.
             aria-label={c('Label').t`Main`}

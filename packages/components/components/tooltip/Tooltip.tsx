@@ -15,9 +15,10 @@ import {
 import { useCombinedRefs } from '@proton/hooks';
 import useInstance from '@proton/hooks/useInstance';
 import useIsMounted from '@proton/hooks/useIsMounted';
+import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { classnames, generateUID } from '../../helpers';
+import { generateUID } from '../../helpers';
 import { Popper, PopperPlacement, usePopper } from '../popper';
 import { TooltipExclusiveContext } from './TooltipExclusive';
 import useTooltipHandlers from './useTooltipHandlers';
@@ -226,7 +227,7 @@ const TooltipBase = (
                         });
                     }
                 }}
-                className={classnames([
+                className={clsx([
                     'tooltip',
                     animateInMiddle && 'tooltip-in',
                     animateOutMiddle && 'tooltip-out',

@@ -1,7 +1,9 @@
 import { ReactNode, Ref, forwardRef, useImperativeHandle, useState } from 'react';
 
+import clsx from '@proton/utils/clsx';
+
 import { PopperPlacement } from '../../../components/popper';
-import { classnames, generateUID } from '../../../helpers';
+import { generateUID } from '../../../helpers';
 import Dropdown, { DropdownProps } from '../../dropdown/Dropdown';
 import DropdownButton, { DropdownButtonProps } from '../../dropdown/DropdownButton';
 import { usePopperAnchor } from '../../popper';
@@ -68,7 +70,7 @@ const ToolbarDropdown = (
                     hasCaret={hasCaret}
                     disabled={disabled}
                     caretClassName="editor-toolbar-icon"
-                    className={classnames([
+                    className={clsx([
                         'editor-toolbar-button interactive-pseudo-inset composer-toolbar-fontDropDown max-w100 flex flex-align-items-center flex-nowrap',
                         className,
                     ])}

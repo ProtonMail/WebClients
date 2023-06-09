@@ -6,9 +6,9 @@ import { ButtonLike, Card } from '@proton/atoms';
 import { PLANS } from '@proton/shared/lib/constants';
 import { addUpsellPath } from '@proton/shared/lib/helpers/upsell';
 import { Audience } from '@proton/shared/lib/interfaces';
+import clsx from '@proton/utils/clsx';
 
 import { SettingsLink } from '../../components';
-import { classnames } from '../../helpers';
 
 interface Props {
     children: ReactNode;
@@ -20,7 +20,7 @@ interface Props {
 
 const UpgradeBanner = ({ free, className, children, audience, upsellPath }: Props) => {
     return (
-        <Card className={classnames(['flex flex-align-items-center', className])} rounded>
+        <Card className={clsx(['flex flex-align-items-center', className])} rounded>
             <p className="m-0 mr-8 flex-item-fluid">{children}</p>
             <ButtonLike
                 as={SettingsLink}

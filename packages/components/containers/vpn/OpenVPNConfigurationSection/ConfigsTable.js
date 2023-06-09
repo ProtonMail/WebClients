@@ -9,6 +9,7 @@ import { getVPNServerConfig } from '@proton/shared/lib/api/vpn';
 import { PLANS } from '@proton/shared/lib/constants';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
+import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 
 import {
@@ -21,7 +22,6 @@ import {
     TableRow,
     Tooltip,
 } from '../../../components';
-import { classnames } from '../../../helpers';
 import { useApi, useNotifications, useUser } from '../../../hooks';
 import Country from './Country';
 import LoadIndicator from './LoadIndicator';
@@ -96,7 +96,7 @@ const ConfigsTable = ({ loading, servers = [], platform, protocol, category, onS
             <thead>
                 <tr>
                     <TableCell
-                        className={classnames(['on-mobile-wauto', category === CATEGORY.SERVER ? 'w25' : 'w33'])}
+                        className={clsx(['on-mobile-wauto', category === CATEGORY.SERVER ? 'w25' : 'w33'])}
                         type="header"
                     >
                         {[CATEGORY.SERVER, CATEGORY.FREE].includes(category)
@@ -107,11 +107,11 @@ const ConfigsTable = ({ loading, servers = [], platform, protocol, category, onS
                         <TableCell className="on-mobile-wauto w25" type="header">{c('TableHeader').t`City`}</TableCell>
                     ) : null}
                     <TableCell
-                        className={classnames(['on-mobile-wauto', category === CATEGORY.SERVER ? 'w25' : 'w33'])}
+                        className={clsx(['on-mobile-wauto', category === CATEGORY.SERVER ? 'w25' : 'w33'])}
                         type="header"
                     >{c('TableHeader').t`Status`}</TableCell>
                     <TableCell
-                        className={classnames(['on-mobile-wauto', category === CATEGORY.SERVER ? 'w25' : 'w33'])}
+                        className={clsx(['on-mobile-wauto', category === CATEGORY.SERVER ? 'w25' : 'w33'])}
                         type="header"
                     >{c('TableHeader').t`Action`}</TableCell>
                 </tr>
