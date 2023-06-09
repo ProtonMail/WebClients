@@ -868,6 +868,7 @@ export enum SERVER_FEATURES {
 export enum CLIENT_TYPES {
     MAIL = 1,
     VPN = 2,
+    PASS = 5,
 }
 
 export enum TOKEN_TYPES {
