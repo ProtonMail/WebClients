@@ -1,0 +1,9 @@
+{
+    "extends": "../../tsconfig.base.json",
+    "exclude": ["**/node_modules", "**/dist", "**/release", "**/public", "**/.*/"],
+    "compilerOptions": {
+        "target": "ESNext",
+        "lib": ["dom", "dom.iterable", "esnext", "WebWorker"],
+        "types": ["webpack-env", "jest", "chrome", "webextension-polyfill", "./globals.d.ts"]
+    }
+}

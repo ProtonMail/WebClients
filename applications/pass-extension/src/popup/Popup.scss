@@ -1,0 +1,177 @@
+@import '../shared/styles/common';
+@import '~@proton/styles/scss/lib/config';
+@import '~@proton/styles/scss/specifics/placeholder-loading';
+
+body {
+	// Extensions seem to have injected style sheets
+	// by default which override the font-family to
+	// "system-ui" and "font-size: 75%"
+	font-family: var(--optional-font-family, 'Inter', #{$fallback-fonts});
+}
+
+a {
+	text-decoration: none;
+
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
+pre {
+	// override default monospaced font applied to pre tag
+	font-family: var(--optional-font-family, 'Inter', #{$fallback-fonts});
+	margin: 0;
+}
+
+textarea {
+	margin: 0;
+	outline: none;
+	padding: 0;
+	resize: none;
+}
+
+.button {
+	padding-block: 0.5rem;
+	padding-inline: 0.75rem;
+
+	&.button-small {
+		padding-block: 0.375rem;
+		padding-inline: 0.5rem;
+	}
+}
+
+.button-solid-norm,
+.button-solid-weak {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	block-size: 2.25rem;
+
+	&.button-for-icon {
+		inline-size: 2.25rem;
+	}
+
+	&.button-small {
+		block-size: 2rem;
+
+		&.button-for-icon {
+			inline-size: 2rem;
+		}
+	}
+}
+
+.button-for-icon {
+	padding: 0.5rem;
+
+	&.button-small {
+		padding: 0.375rem;
+	}
+}
+
+.dropdown {
+	background-color: var(--background-weak);
+	border: 1px solid var(--border-norm);
+
+	.dropdown-content {
+		background-color: var(--background-weak);
+	}
+
+	.dropdown-content::before,
+	.dropdown-content::after {
+		background-color: var(--background-weak);
+		block-size: 0.5rem;
+	}
+
+	.dropdown-item--is-selected,
+	.dropdown-item--is-selected:active,
+	.dropdown-item--is-selected:focus,
+	.dropdown-item--is-selected:hover {
+		background-color: var(--field-norm);
+		color: var(--text-norm);
+	}
+}
+
+.fadein {
+	animation: fadein 0.2s ease-in-out forwards;
+}
+
+@keyframes fadein {
+	from {
+		opacity: 0.01;
+	}
+
+	to {
+		opacity: 1;
+	}
+}
+
+.line-height-1 {
+	line-height: 1;
+}
+
+.pass {
+	&-skeleton {
+		&::before {
+			@extend %item-loading-pseudo;
+			@extend %placeholder-loading;
+		}
+
+		&--select {
+			&::before {
+				inline-size: 80%;
+			}
+		}
+
+		&--item-heading {
+			&::before {
+				inline-size: 90%;
+			}
+		}
+
+		&--item-subheading {
+			&::before {
+				inline-size: 65%;
+			}
+		}
+
+		&--item-icon {
+			&::before {
+				inline-size: em(16);
+				block-size: em(16);
+			}
+		}
+
+		&--alias-preview,
+		&--value {
+			&::before {
+				inline-size: 80%;
+			}
+		}
+
+		&--alias-mailbox {
+			&::before {
+				inline-size: 50%;
+			}
+		}
+	}
+}
+
+.placeholder-danger::placeholder {
+	color: var(--signal-danger);
+}
+
+/*
+* FIXME
+* handle line-height within core spacing-two?
+*/
+.text-sm {
+	line-height: 1rem;
+}
+
+.text-lg {
+	line-height: 1.25rem;
+}
+
+.text-2xl {
+	line-height: 1.5rem;
+}

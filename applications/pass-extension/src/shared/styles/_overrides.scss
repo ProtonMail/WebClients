@@ -1,0 +1,124 @@
+@import '~@proton/styles/scss/lib/config';
+
+:root {
+	--border-radius-xl: 0.88rem;
+}
+
+.overflow-overlay {
+	overflow: overlay;
+}
+
+//  Slider.scss override
+//  Something fishy happening here with the order of the css loading into the dom.
+//  It's only in pass (or maybe only in the extension) for some reason, maybe something
+//  to do with the webpack config. In any case, this gets overwritten by the word-break
+//  defined in the tooltip.
+.slider-thumb-tooltip {
+	word-break: initial !important;
+}
+
+// Scroll.scss override
+// Allow overlay scrollbar in scrollable
+// containers in extension : this css feature
+// has limited support but we're targetting modern
+// browsers. TODO: double check when supporting Firefox
+.scroll-outer-vertical .scroll-inner {
+	overflow-y: overlay;
+}
+
+.scroll-outer-vertical .scroll-start-shadow,
+.scroll-outer-vertical .scroll-end-shadow {
+	block-size: 1.5rem;
+	background: linear-gradient(180deg, rgb(14 14 14 / 0.35), transparent);
+}
+
+.scroll-outer-vertical .scroll-end-shadow {
+	background: linear-gradient(0deg, rgb(14 14 14 / 0.35), transparent);
+}
+
+// Slider component
+.slider {
+	&.slider-small {
+		block-size: rem(4);
+	}
+
+	.slider-rail {
+		background-color: var(--interaction-norm-minor-1);
+	}
+
+	span.slider-thumb {
+		block-size: rem(24);
+		inline-size: rem(24);
+		border-radius: rem(12);
+		background-color: white;
+		color: white;
+	}
+}
+
+// _input.scss override
+.input {
+	border-color: var(--border-weak);
+}
+
+.field,
+.field-icon-container {
+	border-color: var(--border-weak);
+}
+
+.field-two-container:has(input:placeholder-shown, textarea:placeholder-shown) {
+	label,
+	label > span {
+		color: var(--text-norm);
+	}
+}
+
+// _checkbox.scss override
+.checkbox-fakecheck,
+.radio-fakeradio {
+	border-color: var(--border-weak);
+
+	&:hover {
+		background-color: var(--background-weak);
+	}
+}
+
+.checkbox-input[disabled] + .checkbox-fakecheck,
+.checkbox-input[disabled] + .radio-fakeradio {
+	background-color: var(--background-weak);
+}
+
+// Toggle component
+.toggle-label {
+	.toggle-container {
+		background-color: var(--interaction-norm-minor-1);
+		transition: background-color 0.2s;
+
+		&::before {
+			background-color: var(--interaction-weak-major-3);
+		}
+
+		&:hover::before {
+			background-color: white;
+		}
+
+		&.toggle-container--checked {
+			background-color: var(--interaction-norm);
+
+			&::before {
+				background-color: var(--interaction-weak-contrast);
+			}
+
+			&:hover {
+				&::before {
+					background-color: white;
+				}
+			}
+		}
+	}
+
+	.toggle-container-text {
+		svg {
+			display: none;
+		}
+	}
+}
