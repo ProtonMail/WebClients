@@ -97,7 +97,7 @@ export const getUnlimitedDealFeatures = () => {
                 .t`Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.`,
         },
         {
-            name: c('summer2023: Deal details').t`Premium Password Manager `,
+            name: c('summer2023: Deal details').t`Premium Password Manager`,
             tooltip: c('summer2023: Tooltip')
                 .t`Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.`,
         },
