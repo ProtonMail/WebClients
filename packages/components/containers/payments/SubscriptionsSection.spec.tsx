@@ -577,6 +577,7 @@ describe('SubscriptionsSection', () => {
                     Amount: 499,
                     Quantity: 1,
                     Pricing: null as any,
+                    Offers: [],
                 },
             ],
             isManagedByMozilla: false,
