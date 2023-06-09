@@ -15,9 +15,11 @@ const Layout = (props: OfferLayoutProps) => {
     return hasOffer(props) ? (
         <OfferLayout {...props}>
             <OfferHeader {...props}>
-                <OfferTitle>{c('summer2023:Offer title').t`${BRAND_NAME} anniversary sale`}</OfferTitle>
+                <OfferTitle>{c('summer2023:Offer title').t`${BRAND_NAME} Anniversary Sale`}</OfferTitle>
                 <p className="text-center">{c('summer2023:Info')
-                    .t`Enjoy special discounts to celebrate the one-year anniversary of our new plans`}</p>
+                    .t`We’re celebrating the nine-year anniversary of our crowdfunding!`}</p>
+                <p className="text-center">{c('summer2023:Info')
+                    .t`For a limited time, get the best ${BRAND_NAME} has to offer at an exclusive discount.`}</p>
             </OfferHeader>
 
             <DealsWithCycleSelector {...props} />
@@ -25,10 +27,11 @@ const Layout = (props: OfferLayoutProps) => {
             <OfferFooter {...props}>
                 <div className="mb-4">
                     <p className="text-sm text-center color-weak">
-                        {c('summer2023:Footer').t`Discounts are based on the standard monthly pricing.`}
+                        {c('summer2023:Footer')
+                            .t`Discounts are based on the standard monthly pricing. This offer is only available to first-time subscribers.`}
                         <br />
                         {c('summer2023:Footer')
-                            .t`*Your subscription will automatically renew at the same rate at the end of your billing cycle.`}
+                            .t`*Your subscription will automatically renew at the standard discounted rate at the end of your billing cycle.`}
                     </p>
                 </div>
             </OfferFooter>

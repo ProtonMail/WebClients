@@ -24,7 +24,7 @@ const config: OfferConfig = {
             cycle: CYCLE.YEARLY,
             popular: false,
             features: getMailPlusFeatures,
-            getCTAContent: () => c('Action').t`Upgrade now`,
+            getCTAContent: () => c('Action').t`Get the deal`,
             couponCode: COUPON_CODES.ANNIVERSARY23,
         },
         {
@@ -36,7 +36,7 @@ const config: OfferConfig = {
             cycle: CYCLE.TWO_YEARS,
             popular: false,
             features: getMailPlusFeatures,
-            getCTAContent: () => c('Action').t`Upgrade now`,
+            getCTAContent: () => c('Action').t`Get the deal`,
             couponCode: COUPON_CODES.ANNIVERSARY23,
         },
         {
@@ -48,7 +48,7 @@ const config: OfferConfig = {
             cycle: CYCLE.YEARLY,
             popular: true,
             features: getUnlimitedFeatures,
-            getCTAContent: () => c('Action').t`Upgrade now`,
+            getCTAContent: () => c('Action').t`Get the deal`,
             couponCode: COUPON_CODES.ANNIVERSARY23,
         },
         {
@@ -60,7 +60,7 @@ const config: OfferConfig = {
             cycle: CYCLE.TWO_YEARS,
             popular: true,
             features: getUnlimitedFeatures,
-            getCTAContent: () => c('Action').t`Upgrade now`,
+            getCTAContent: () => c('Action').t`Get the deal`,
             couponCode: COUPON_CODES.ANNIVERSARY23,
         },
     ],
