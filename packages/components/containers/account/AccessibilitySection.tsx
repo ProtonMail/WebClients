@@ -12,16 +12,16 @@ import {
 import clsx from '@proton/utils/clsx';
 
 import { Info, Option, SelectTwo, Toggle, Tooltip, useNotifications } from '../..';
-import { useThemeSetting } from '../themes/ThemeSettingProvider';
+import { useTheme } from '../themes/ThemeProvider';
 import { SettingsLayout, SettingsLayoutLeft, SettingsLayoutRight, SettingsParagraph, SettingsSection } from './index';
 
 const AccessibilitySection = () => {
-    const { settings, setFeature, setFontSize, setFontFace } = useThemeSetting();
+    const { information, settings, setFeature, setFontSize, setFontFace } = useTheme();
 
     const { createNotification } = useNotifications();
     const notifyPreferenceSaved = () => createNotification({ text: c('Success').t`Preference saved` });
 
-    const reduceMotion = settings.motionMode === MotionModeSetting.Reduce;
+    const reduceMotion = information.motionMode === MotionModeSetting.Reduce;
 
     return (
         <SettingsSection>
@@ -36,7 +36,7 @@ const AccessibilitySection = () => {
                 <SettingsLayoutRight>
                     <SelectTwo
                         id="fontFaceSelect"
-                        value={`${settings.fontFace}`}
+                        value={`${settings.FontFace}`}
                         onValue={(value) => {
                             setFontFace(Number(value));
                             notifyPreferenceSaved();
@@ -81,7 +81,7 @@ const AccessibilitySection = () => {
                 <SettingsLayoutRight>
                     <SelectTwo
                         id="fontSizeSelect"
-                        value={`${settings.fontSize}`}
+                        value={`${settings.FontSize}`}
                         onValue={(value) => {
                             setFontSize(Number(value));
                             notifyPreferenceSaved();
@@ -136,7 +136,7 @@ const AccessibilitySection = () => {
                 <SettingsLayoutRight className="pt-1">
                     <Toggle
                         id="scrollbarsToggle"
-                        checked={settings.features.scrollbars}
+                        checked={information.features.scrollbars}
                         onChange={(e) => {
                             setFeature(ThemeFeatureSetting.SCROLLBARS_OFF, e.target.checked);
                             notifyPreferenceSaved();
@@ -168,7 +168,7 @@ const AccessibilitySection = () => {
                         <span className="inline-flex">
                             <Toggle
                                 id="animationsToggle"
-                                checked={reduceMotion ? true : settings.features.animations}
+                                checked={reduceMotion ? true : information.features.animations}
                                 disabled={reduceMotion}
                                 onChange={(e) => {
                                     setFeature(ThemeFeatureSetting.ANIMATIONS_OFF, e.target.checked);

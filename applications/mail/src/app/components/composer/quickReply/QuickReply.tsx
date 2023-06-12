@@ -18,7 +18,6 @@ import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo'
 import { ErrorBoundary, useTheme } from '@proton/components/containers';
 import { useAddresses, useHandler, useMailSettings, useUserSettings } from '@proton/components/hooks';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
-import { DARK_THEMES } from '@proton/shared/lib/themes/themes';
 import clsx from '@proton/utils/clsx';
 
 import { MESSAGE_ACTIONS } from '../../../constants';
@@ -68,8 +67,7 @@ const QuickReply = ({
 
     const onClose = useHandler(onCloseQuickReply);
 
-    const [theme] = useTheme();
-    const isDarkTheme = DARK_THEMES.includes(theme);
+    const theme = useTheme();
 
     const [deleteDraftModalProps, setDeleteDraftModalOpen, renderDeleteDraftModal] = useModalState();
 
@@ -128,7 +126,7 @@ const QuickReply = ({
     });
 
     // Editor (Rooster) needs a white bg on dark themes, but not plaintext
-    const needsDarkStyle = modelMessage.data?.MIMEType === MIME_TYPES.DEFAULT && isDarkTheme;
+    const needsDarkStyle = modelMessage.data?.MIMEType === MIME_TYPES.DEFAULT && theme.information.dark;
 
     /**
      * Initialize Rooster (or textarea) content at (and only) startup

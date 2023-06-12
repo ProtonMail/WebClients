@@ -2,10 +2,9 @@ import { RefObject, useCallback, useEffect, useRef } from 'react';
 
 import { IEditor } from 'roosterjs-editor-types';
 
-import { useTheme, useSyncIframeStyles } from '@proton/components/containers';
+import { useSyncIframeStyles, useTheme } from '@proton/components/containers';
 import useIsMounted from '@proton/hooks/useIsMounted';
 import { MailSettings } from '@proton/shared/lib/interfaces';
-import { PROTON_THEMES_MAP } from '@proton/shared/lib/themes/themes';
 
 import {
     EDITOR_BLOCKQUOTE_TOGGLE_CONTAINER_ID,
@@ -50,8 +49,8 @@ const useInitRooster = ({
 }: Props) => {
     const editorRef = useRef<IEditor>();
     const isMounted = useIsMounted();
-    const [themeIndex] = useTheme();
-    const themeCSSVariables: string = PROTON_THEMES_MAP[themeIndex].theme;
+    const theme = useTheme();
+    const themeCSSVariables = theme.information.style;
 
     useSyncIframeStyles(iframeRef.current?.contentWindow?.document.documentElement, document.documentElement);
 
@@ -89,13 +88,13 @@ const useInitRooster = ({
               <path d='M14 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z'/>
             </g>
         </svg>
-        <div id="proton-editor-container">
-            <div id=${ROOSTER_EDITOR_WRAPPER_ID}>
-                <div id="${ROOSTER_EDITOR_ID}" ></div>
-                <div id="${EDITOR_BLOCKQUOTE_TOGGLE_CONTAINER_ID}" ></div>
+        <div id='proton-editor-container'>
+            <div id='${ROOSTER_EDITOR_WRAPPER_ID}'>
+                <div id='${ROOSTER_EDITOR_ID}' ></div>
+                <div id='${EDITOR_BLOCKQUOTE_TOGGLE_CONTAINER_ID}' ></div>
             </div>
         </div>
-        <div id="${EDITOR_DROPZONE}" />
+        <div id='${EDITOR_DROPZONE}' />
         </body>
         `);
         iframeDocument.close();

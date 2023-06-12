@@ -1,7 +1,5 @@
 import { ReactNode, useLayoutEffect } from 'react';
 
-import { PROTON_DEFAULT_THEME } from '@proton/shared/lib/themes/themes';
-
 import { useTheme } from '../themes';
 
 /*
@@ -9,10 +7,10 @@ import { useTheme } from '../themes';
  * rendered if a user visits the app(s) while unauthenticated.
  */
 const UnAuthenticated = ({ children }: { children: ReactNode }) => {
-    const [, setTheme] = useTheme();
+    const theme = useTheme();
 
     useLayoutEffect(() => {
-        setTheme(PROTON_DEFAULT_THEME);
+        theme.setThemeSetting();
     }, []);
 
     return <>{children}</>;

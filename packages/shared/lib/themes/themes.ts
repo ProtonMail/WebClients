@@ -1,15 +1,24 @@
-// @ts-nocheck Disable import errors from ds
 import { c } from 'ttag';
 
+// @ts-ignore
 import carbonTheme from '@proton/colors/themes/dist/carbon.theme.css';
+// @ts-ignore
 import classicTheme from '@proton/colors/themes/dist/classic.theme.css';
+// @ts-ignore
 import contrastDarkTheme from '@proton/colors/themes/dist/contrast-dark.theme.css';
+// @ts-ignore
 import contrastLightTheme from '@proton/colors/themes/dist/contrast-light.theme.css';
+// @ts-ignore
 import duotoneTheme from '@proton/colors/themes/dist/duotone.theme.css';
+// @ts-ignore
 import legacyTheme from '@proton/colors/themes/dist/legacy.theme.css';
+// @ts-ignore
 import monokaiTheme from '@proton/colors/themes/dist/monokai.theme.css';
+// @ts-ignore
 import passTheme from '@proton/colors/themes/dist/pass.theme.css';
+// @ts-ignore
 import snowTheme from '@proton/colors/themes/dist/snow.theme.css';
+import { decodeBase64URL, encodeBase64URL } from '@proton/shared/lib/helpers/encoding';
 
 export enum ThemeTypes {
     Duotone = 0,
@@ -117,9 +126,11 @@ export const PROTON_THEMES_MAP = {
     [ThemeTypes.Pass]: {
         label: 'Pass',
         identifier: ThemeTypes.Pass,
-        src: {
-            medium: themeClassicSvg,
-            small: themeClassicSvgSmall,
+        thumbColors: {
+            prominent: '#16141C',
+            standard: '#2A2833',
+            primary: '#6D4AFF',
+            weak: '#6c6b70',
         },
         theme: passTheme.toString(),
     },
@@ -140,6 +151,11 @@ export const PROTON_THEMES = [
 
 export enum ThemeModeSetting {
     Auto,
+    Dark,
+    Light,
+}
+
+export enum ColorScheme {
     Dark,
     Light,
 }
@@ -243,10 +259,10 @@ export interface ThemeSetting {
     Features: ThemeFeatureSetting;
 }
 
-export const getDefaultThemeSetting = (themeType: ThemeTypes): ThemeSetting => {
+export const getDefaultThemeSetting = (themeType?: ThemeTypes): ThemeSetting => {
     return {
         Mode: ThemeModeSetting.Light,
-        LightTheme: themeType,
+        LightTheme: themeType || PROTON_DEFAULT_THEME,
         DarkTheme: ThemeTypes.Carbon,
         FontSize: ThemeFontSizeSetting.DEFAULT,
         FontFace: ThemeFontFaceSetting.DEFAULT,
@@ -254,18 +270,85 @@ export const getDefaultThemeSetting = (themeType: ThemeTypes): ThemeSetting => {
     };
 };
 
-export const getThemeType = (theme: ThemeSetting | null, mode: ThemeSetting['Mode'], defaultThemeType: number) => {
-    if (theme === null) {
-        return defaultThemeType;
+const getValidatedThemeType = (themeType: number): ThemeTypes | undefined => {
+    if (themeType >= ThemeTypes.Duotone && themeType <= ThemeTypes.ContrastDark) {
+        return themeType;
     }
+};
+
+const getParsedThemeType = (maybeThemeType: any): ThemeTypes | undefined => {
+    return getValidatedThemeType(Number(maybeThemeType));
+};
+
+const getValidatedThemeMode = (maybeThemeMode: number): ThemeModeSetting | undefined => {
+    if (maybeThemeMode >= ThemeModeSetting.Auto && maybeThemeMode <= ThemeModeSetting.Light) {
+        return maybeThemeMode;
+    }
+};
+
+const getValidatedFontSize = (maybeFontSize: number) => {
+    if (maybeFontSize >= ThemeFontSizeSetting.DEFAULT && maybeFontSize <= ThemeFontSizeSetting.X_LARGE) {
+        return maybeFontSize;
+    }
+};
+
+const getValidatedFontFace = (maybeFontFace: number) => {
+    if (maybeFontFace >= ThemeFontFaceSetting.DEFAULT && maybeFontFace <= ThemeFontFaceSetting.DYSLEXIC) {
+        return maybeFontFace;
+    }
+};
+
+const getValidatedFeatures = (maybeFeatures: number) => {
+    if (maybeFeatures >= 0 && maybeFeatures <= 32) {
+        return maybeFeatures;
+    }
+};
+
+export const getParsedThemeSetting = (storedThemeSetting: string | undefined): ThemeSetting => {
+    // The theme cookie used to contain just the theme number type.
+    if (storedThemeSetting && storedThemeSetting?.length === 1) {
+        const maybeParsedThemeType = getParsedThemeType(storedThemeSetting);
+        if (maybeParsedThemeType !== undefined) {
+            return getDefaultThemeSetting(maybeParsedThemeType);
+        }
+    }
+    const defaultThemeSetting = getDefaultThemeSetting(PROTON_DEFAULT_THEME);
+    // Now it contains JSON
+    if (storedThemeSetting && storedThemeSetting?.length >= 10) {
+        try {
+            const parsedTheme: any = JSON.parse(decodeBase64URL(storedThemeSetting));
+            return {
+                Mode: getValidatedThemeMode(parsedTheme.Mode) ?? defaultThemeSetting.Mode,
+                LightTheme: getValidatedThemeType(parsedTheme.LightTheme) ?? defaultThemeSetting.LightTheme,
+                DarkTheme: getValidatedThemeType(parsedTheme.DarkTheme) ?? defaultThemeSetting.DarkTheme,
+                FontFace: getValidatedFontSize(parsedTheme.FontFace) ?? defaultThemeSetting.FontFace,
+                FontSize: getValidatedFontFace(parsedTheme.FontSize) ?? defaultThemeSetting.FontSize,
+                Features: getValidatedFeatures(parsedTheme.Features) ?? defaultThemeSetting.Features,
+            };
+        } catch (e: any) {}
+    }
+    return defaultThemeSetting;
+};
+
+export const serializeThemeSetting = (themeSetting: ThemeSetting) => {
+    return encodeBase64URL(JSON.stringify(themeSetting));
+};
+
+export const getThemeType = (theme: ThemeSetting, colorScheme: ColorScheme): ThemeTypes => {
+    let value: ThemeTypes;
 
     switch (theme.Mode) {
         case ThemeModeSetting.Auto:
-            return mode === ThemeModeSetting.Dark ? theme.DarkTheme : theme.LightTheme;
-        case ThemeModeSetting.Light:
-            return theme.LightTheme;
-        default:
+            value = colorScheme === ColorScheme.Dark ? theme.DarkTheme : theme.LightTheme;
+            break;
         case ThemeModeSetting.Dark:
-            return theme.DarkTheme;
+            value = theme.DarkTheme;
+            break;
+        default:
+        case ThemeModeSetting.Light:
+            value = theme.LightTheme;
+            break;
     }
+
+    return getValidatedThemeType(value) ?? PROTON_DEFAULT_THEME;
 };

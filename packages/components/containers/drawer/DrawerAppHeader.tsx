@@ -30,7 +30,7 @@ export interface PrivateIframeHeaderProps {
 
 const DrawerAppHeader = ({ title, onCloseDropdown, customDropdown }: PrivateIframeHeaderProps) => {
     const { call } = useEventManager();
-    const [theme, setTheme] = useTheme();
+    const theme = useTheme();
     const { appInView, setAppInView, parentApp } = useDrawer();
     const { APP_NAME: currentApp } = useConfig();
 
@@ -114,10 +114,8 @@ const DrawerAppHeader = ({ title, onCloseDropdown, customDropdown }: PrivateIfra
                     void call();
                     break;
                 case DRAWER_EVENTS.UPDATE_THEME:
-                    const { theme: receivedTheme } = event.data.payload;
-                    if (theme !== receivedTheme) {
-                        setTheme(receivedTheme);
-                    }
+                    const { themeSetting } = event.data.payload;
+                    theme.setThemeSetting(themeSetting);
                     break;
                 default:
                     break;
