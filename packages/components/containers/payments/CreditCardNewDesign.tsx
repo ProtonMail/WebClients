@@ -113,6 +113,15 @@ const CreditCardNewDesign = ({ card, errors, onChange, loading = false, fieldSta
 
     const isNarrow = formRect ? formRect.width < 350 : false;
 
+    let error = null;
+    if (errors.number) {
+        error = <span data-testid="error-ccnumber">{errors.number}</span>;
+    } else if (errors.month) {
+        error = <span data-testid="error-exp">{errors.month}</span>;
+    } else if (errors.cvc) {
+        error = <span data-testid="error-cvc">{errors.cvc}</span>;
+    }
+
     let creditCardForm;
     if (isNarrow) {
         creditCardForm = (
@@ -126,6 +135,7 @@ const CreditCardNewDesign = ({ card, errors, onChange, loading = false, fieldSta
                     inputClassName="px-3"
                     placeholder={c('Label').t`Card number`}
                     value={valueWithGaps}
+                    error={errors.number}
                     onChange={({ target }) => {
                         const val = target.value.replace(/\s/g, '');
                         if (isValidNumber(val)) {
@@ -147,6 +157,7 @@ const CreditCardNewDesign = ({ card, errors, onChange, loading = false, fieldSta
                         inputClassName="px-3"
                         className="exp exp--small"
                         value={`${month}${month.length === 2 || year.length ? '/' : ''}${year}`}
+                        error={errors.month}
                         onChange={({ target }) => {
                             const change = handleExpOnChange(target.value, month, year);
                             if (change) {
@@ -162,6 +173,7 @@ const CreditCardNewDesign = ({ card, errors, onChange, loading = false, fieldSta
                         inputClassName="px-3"
                         className="cvv cvv--small"
                         ref={narrowCvcRef}
+                        error={errors.cvc}
                         {...commonCvcProps}
                     />
                 </div>
@@ -179,6 +191,7 @@ const CreditCardNewDesign = ({ card, errors, onChange, loading = false, fieldSta
                     inputClassName="card-number"
                     placeholder={c('Label').t`Card number`}
                     value={valueWithGaps}
+                    error={error}
                     onChange={({ target }) => {
                         const val = target.value.replace(/\s/g, '');
                         if (isValidNumber(val)) {
@@ -226,15 +239,6 @@ const CreditCardNewDesign = ({ card, errors, onChange, loading = false, fieldSta
                 />
             </>
         );
-    }
-
-    let error = null;
-    if (errors.number) {
-        error = <span data-testid="error-ccnumber">{errors.number}</span>;
-    } else if (errors.month) {
-        error = <span data-testid="error-exp">{errors.month}</span>;
-    } else if (errors.cvc) {
-        error = <span data-testid="error-cvc">{errors.cvc}</span>;
     }
 
     return (
@@ -293,6 +297,7 @@ const CreditCardNewDesign = ({ card, errors, onChange, loading = false, fieldSta
                 onChange={handleChange('zip')}
                 disableChange={loading}
                 title={title}
+                error={errors.zip}
             />
             <div className="error-container mt-1 mb-3 text-semibold text-sm flex">
                 {errors.zip && (
