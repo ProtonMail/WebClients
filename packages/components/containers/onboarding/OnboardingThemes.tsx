@@ -3,7 +3,6 @@ import { c } from 'ttag';
 import { ThemeTypes } from '@proton/shared/lib/themes/themes';
 
 import ThemeCards, { Theme } from '../themes/ThemeCards';
-import { useThemeSetting } from '../themes/ThemeSettingProvider';
 import OnboardingContent, { Props as OnboardingContentProps } from './OnboardingContent';
 
 interface Props extends Omit<OnboardingContentProps, 'decription' | 'onChange'> {
@@ -13,8 +12,6 @@ interface Props extends Omit<OnboardingContentProps, 'decription' | 'onChange'> 
 }
 
 const OnboardingThemes = ({ themes, themeIdentifier, onChange, ...rest }: Props) => {
-    const { setTheme } = useThemeSetting();
-
     return (
         <OnboardingContent
             title={c('Onboarding Proton').t`Select a theme`}
@@ -22,14 +19,7 @@ const OnboardingThemes = ({ themes, themeIdentifier, onChange, ...rest }: Props)
                 .t`More theming options are available in your account Settings > Appearance.`}
             {...rest}
         >
-            <ThemeCards
-                list={themes}
-                themeIdentifier={themeIdentifier}
-                onChange={(themeType) => {
-                    setTheme(themeType);
-                }}
-                size="large"
-            />
+            <ThemeCards list={themes} themeIdentifier={themeIdentifier} onChange={onChange} size="large" />
         </OnboardingContent>
     );
 };

@@ -2,15 +2,15 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
-import { PROTON_THEMES, ThemeModeSetting } from '@proton/shared/lib/themes/themes';
+import { ColorScheme, PROTON_THEMES, ThemeModeSetting } from '@proton/shared/lib/themes/themes';
 
 import { Info, ModalProps, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, Toggle } from '../../components';
 import ThemeCards from './ThemeCards';
-import { useThemeSetting } from './ThemeSettingProvider';
+import { useTheme } from './ThemeProvider';
 import ThemeSyncModeCard from './ThemeSyncModeCard';
 
 const ThemesModal = (props: ModalProps) => {
-    const { settings, setTheme, setAutoTheme } = useThemeSetting();
+    const { information, settings, setTheme, setAutoTheme } = useTheme();
 
     return (
         <ModalTwo size="large" {...props}>
@@ -28,37 +28,37 @@ const ThemesModal = (props: ModalProps) => {
                     <Toggle
                         id="themeSyncToggle"
                         className="ml-6"
-                        checked={settings.mode === ThemeModeSetting.Auto}
+                        checked={settings.Mode === ThemeModeSetting.Auto}
                         onChange={(e) => setAutoTheme(e.target.checked)}
                     />
                 </div>
-                {settings.mode === ThemeModeSetting.Auto ? (
+                {settings.Mode === ThemeModeSetting.Auto ? (
                     <div className="flex flex-nowrap gap-4 on-mobile-flex-column">
                         <ThemeSyncModeCard
                             mode="light"
                             size="small"
                             list={PROTON_THEMES}
-                            themeIdentifier={settings.lightTheme}
+                            themeIdentifier={settings.LightTheme}
                             onChange={(themeType) => {
                                 setTheme(themeType, ThemeModeSetting.Light);
                             }}
-                            active={settings.colorScheme === ThemeModeSetting.Light}
+                            active={information.colorScheme === ColorScheme.Light}
                         />
                         <ThemeSyncModeCard
                             mode="dark"
                             size="small"
                             list={PROTON_THEMES}
-                            themeIdentifier={settings.darkTheme}
+                            themeIdentifier={settings.DarkTheme}
                             onChange={(themeType) => {
                                 setTheme(themeType, ThemeModeSetting.Dark);
                             }}
-                            active={settings.colorScheme === ThemeModeSetting.Dark}
+                            active={information.colorScheme === ColorScheme.Dark}
                         />
                     </div>
                 ) : (
                     <ThemeCards
                         list={PROTON_THEMES}
-                        themeIdentifier={settings.currentTheme}
+                        themeIdentifier={information.theme}
                         onChange={(themeType) => {
                             setTheme(themeType);
                         }}

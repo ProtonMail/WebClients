@@ -2,7 +2,6 @@ import { RefObject, useEffect, useMemo } from 'react';
 
 import { FeatureCode, useFeature, useTheme } from '@proton/components';
 import { isNewsLetter, isPlainText } from '@proton/shared/lib/mail/messages';
-import { DARK_THEMES } from '@proton/shared/lib/themes/themes';
 
 import { canSupportDarkStyle } from '../../../helpers/message/messageContent';
 import { MessageState } from '../../../logic/messages/messagesTypes';
@@ -15,14 +14,13 @@ const useMessageDarkStyles = (
     iframeRef: RefObject<HTMLIFrameElement>
 ) => {
     const darkStylesFeature = useFeature(FeatureCode.DarkStylesInBody);
-    const [theme] = useTheme();
+    const theme = useTheme();
     const dispatch = useAppDispatch();
-    const isDarkTheme = DARK_THEMES.includes(theme);
 
     const needCompute =
         darkStylesFeature.feature?.Value &&
         !message.messageDocument?.noDarkStyle &&
-        isDarkTheme &&
+        theme.information.dark &&
         !isPlainText(message.data) &&
         !isNewsLetter(message.data);
 

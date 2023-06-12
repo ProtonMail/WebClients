@@ -2,7 +2,7 @@ import { APPS } from '@proton/shared/lib/constants';
 import { Environment } from '@proton/shared/lib/interfaces';
 
 import { User as tsUser } from '../interfaces';
-import { ThemeTypes } from '../themes/themes';
+import { ThemeSetting } from '../themes/themes';
 
 export type DRAWER_APPS = typeof APPS.PROTONCALENDAR | typeof APPS.PROTONCONTACTS;
 export type IframeSrcMap = Partial<Record<DRAWER_APPS, string | undefined>>;
@@ -129,7 +129,7 @@ interface CALL_EVENT_MANAGER_OUTSIDE {
 interface DRAWER_UPDATE_THEME {
     type: DRAWER_EVENTS.UPDATE_THEME;
     payload: {
-        theme: ThemeTypes;
+        themeSetting: ThemeSetting;
     };
 }
 

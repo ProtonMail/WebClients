@@ -3,7 +3,7 @@ import { isValidElement, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { updateFlags, updateThemeType, updateWelcomeFlags } from '@proton/shared/lib/api/settings';
+import { updateFlags, updateWelcomeFlags } from '@proton/shared/lib/api/settings';
 import { hasNewVisionary, hasVisionary } from '@proton/shared/lib/helpers/subscription';
 import { PROTON_THEMES_MAP, ThemeTypes } from '@proton/shared/lib/themes/themes';
 import isTruthy from '@proton/utils/isTruthy';
@@ -35,7 +35,7 @@ const OnboardingModal = ({ children, showGenericSteps, onDone, ...rest }: Props)
     const goToSettings = useSettingsLink();
     const [organization, loadingOrganization] = useOrganization();
     const [subscription, loadingSubscription] = useSubscription();
-    const [theme, setTheme] = useTheme();
+    const theme = useTheme();
     const onboardingThemesSelection = [ThemeTypes.Duotone, ThemeTypes.Snow, ThemeTypes.Carbon, ThemeTypes.Monokai].map(
         (id) => PROTON_THEMES_MAP[id]
     );
@@ -75,9 +75,8 @@ const OnboardingModal = ({ children, showGenericSteps, onDone, ...rest }: Props)
         setStep((step) => step - 1);
     };
 
-    const handleThemeChange = async (newThemeType: ThemeTypes) => {
-        setTheme(newThemeType);
-        await api(updateThemeType(newThemeType));
+    const handleThemeChange = (newThemeType: ThemeTypes) => {
+        theme.setTheme(newThemeType);
     };
 
     const setupOrganizationStep = (
@@ -108,7 +107,11 @@ const OnboardingModal = ({ children, showGenericSteps, onDone, ...rest }: Props)
 
     const themesStep = (
         <OnboardingStep>
-            <OnboardingThemes themeIdentifier={theme} themes={onboardingThemesSelection} onChange={handleThemeChange} />
+            <OnboardingThemes
+                themeIdentifier={theme.information.theme}
+                themes={onboardingThemesSelection}
+                onChange={handleThemeChange}
+            />
             <footer className="flex flex-nowrap">
                 <Button size="large" color="weak" className="mr-4" fullWidth onClick={handleBack}>{c('Action')
                     .t`Back`}</Button>
