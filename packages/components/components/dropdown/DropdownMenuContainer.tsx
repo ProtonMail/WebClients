@@ -1,6 +1,7 @@
 import { ReactNode, Ref, forwardRef } from 'react';
 
-import { classnames } from '../../helpers';
+import clsx from '@proton/utils/clsx';
+
 import DropdownMenuButton, { Props as DropdownMenuButtonProps } from './DropdownMenuButton';
 
 export interface Props extends DropdownMenuButtonProps {
@@ -18,16 +19,12 @@ const DropdownMenuContainer = (
     return (
         <div
             ref={ref}
-            className={classnames([
+            className={clsx([
                 'dropdown-item-container flex flex-justify-space-between flex-nowrap relative',
                 className,
             ])}
         >
-            <DropdownMenuButton
-                ref={buttonRef}
-                className={classnames(['increase-click-surface', buttonClassName])}
-                {...rest}
-            >
+            <DropdownMenuButton ref={buttonRef} className={clsx(['increase-click-surface', buttonClassName])} {...rest}>
                 {buttonContent}
             </DropdownMenuButton>
             {extraContent || null}

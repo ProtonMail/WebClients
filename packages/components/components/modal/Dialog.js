@@ -3,8 +3,8 @@ import { useEffect, useLayoutEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 
 import { dialogRootClassName } from '@proton/shared/lib/busy';
+import clsx from '@proton/utils/clsx';
 
-import { classnames } from '../../helpers';
 import { useHotkeys } from '../../hooks';
 import { useFocusTrap } from '../focus';
 import { useModalPosition } from '../modalTwo/modalPositions';
@@ -79,12 +79,12 @@ const Dialog = ({
 
     return (
         <Portal>
-            <div className={classnames([dialogRootClassName, !last && 'is-behind-backdrop'])}>
+            <div className={clsx([dialogRootClassName, !last && 'is-behind-backdrop'])}>
                 <dialog
                     aria-labelledby={modalTitleID}
                     aria-modal="true"
                     open
-                    className={classnames([
+                    className={clsx([
                         CLASSES.MODAL,
                         isSmall && CLASSES.MODAL_SMALL,
                         isTiny && CLASSES.MODAL_TINY,

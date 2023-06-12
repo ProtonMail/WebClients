@@ -1,6 +1,7 @@
 import { DetailedHTMLProps, HTMLAttributes, ReactNode } from 'react';
 
-import { classnames } from '../../helpers';
+import clsx from '@proton/utils/clsx';
+
 import ModalCloseButton from './ModalCloseButton';
 import Title from './Title';
 
@@ -29,10 +30,7 @@ const Header = ({
     ...rest
 }: Props) => {
     return (
-        <header
-            className={classnames(['modal-header', !displayTitle && 'modal-header--no-title', className])}
-            {...rest}
-        >
+        <header className={clsx(['modal-header', !displayTitle && 'modal-header--no-title', className])} {...rest}>
             {hasClose ? <ModalCloseButton closeTextModal={closeTextModal} onClose={onClose} /> : null}
             {typeof children === 'string' ? (
                 <Title

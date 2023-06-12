@@ -3,10 +3,10 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { CYCLE, DEFAULT_CYCLE } from '@proton/shared/lib/constants';
 import { Cycle } from '@proton/shared/lib/interfaces';
+import clsx from '@proton/utils/clsx';
 
 import { ButtonGroup, Option, SelectTwo } from '../../components';
 import Select, { Props as SelectProps } from '../../components/select/Select';
-import { classnames } from '../../helpers';
 
 const { MONTHLY, YEARLY, TWO_YEARS } = CYCLE;
 
@@ -40,7 +40,7 @@ const CycleSelector = ({
 
                     return (
                         <Button
-                            className={classnames([isSelected && 'is-selected'])}
+                            className={clsx([isSelected && 'is-selected'])}
                             key={value}
                             onClick={() => onSelect(value as Cycle)}
                             disabled={disabled}

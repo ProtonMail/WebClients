@@ -2,8 +2,7 @@ import { ElementType, ForwardedRef, ReactElement, cloneElement, forwardRef } fro
 import { PolymorphicPropsWithRef } from 'react-polymorphic-types';
 
 import { ButtonLike, ButtonLikeProps } from '@proton/atoms';
-
-import { classnames } from '../../helpers';
+import clsx from '@proton/utils/clsx';
 
 type ButtonButtonLikeProps = ButtonLikeProps<'button'>;
 
@@ -43,7 +42,7 @@ const TopNavbarListItemButtonBase = <E extends ElementType = typeof defaultEleme
             as={Element}
             color={color}
             shape={shape}
-            className={classnames([
+            className={clsx([
                 'topnav-link inline-flex flex-nowrap flex-align-items-center',
                 hasRedDot && 'relative topnav-link--blackfriday',
                 className,
@@ -54,7 +53,7 @@ const TopNavbarListItemButtonBase = <E extends ElementType = typeof defaultEleme
             {...rest}
         >
             {cloneElement(icon, {
-                className: classnames([icon.props.className, 'topnav-icon mr-2']),
+                className: clsx([icon.props.className, 'topnav-icon mr-2']),
             })}
             <span className="navigation-title">{text}</span>
             {children}

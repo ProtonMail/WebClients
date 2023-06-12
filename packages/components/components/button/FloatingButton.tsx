@@ -1,8 +1,7 @@
 import { Ref, forwardRef } from 'react';
 
 import { Button, ButtonProps } from '@proton/atoms';
-
-import { classnames } from '../../helpers';
+import clsx from '@proton/utils/clsx';
 
 interface Props extends ButtonProps {
     title?: string;
@@ -11,7 +10,7 @@ interface Props extends ButtonProps {
 
 const FloatingButton = ({ children, title, className, ...rest }: Props, ref: Ref<HTMLButtonElement>) => {
     return (
-        <Button color="norm" className={classnames(['fab flex', className])} ref={ref} {...rest}>
+        <Button color="norm" className={clsx(['fab flex', className])} ref={ref} {...rest}>
             {children}
         </Button>
     );

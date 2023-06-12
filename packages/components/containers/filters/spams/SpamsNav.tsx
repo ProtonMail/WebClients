@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { classnames } from '@proton/components/helpers';
+import clsx from '@proton/utils/clsx';
 
 import { SpamNavItem } from './Spams.interfaces';
 
@@ -24,7 +24,7 @@ const SpamFiltersNav = ({ selected, onChange }: Props) => (
             <li
                 key={type}
                 onClick={() => onChange(type)}
-                className={classnames([
+                className={clsx([
                     'cursor-pointer inline-block border-bottom padding p-4 text-center',
                     selected !== type && 'color-weak',
                     selected === type && 'border-primary text-bold color-norm',

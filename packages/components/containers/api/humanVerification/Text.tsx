@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 
-import { classnames } from '../../../helpers';
+import clsx from '@proton/utils/clsx';
 
 interface Props {
     className?: string;
@@ -8,7 +8,7 @@ interface Props {
 }
 
 const Text = ({ children, className }: Props) => {
-    return <div className={classnames(['mb-6 color-weak text-break', className])}>{children}</div>;
+    return <div className={clsx(['mb-6 color-weak text-break', className])}>{children}</div>;
 };
 
 export default Text;

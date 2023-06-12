@@ -3,7 +3,8 @@ import { MouseEvent, useMemo, useRef, useState } from 'react';
 import { getISOWeek } from 'date-fns';
 import { c } from 'ttag';
 
-import { classnames } from '../../helpers';
+import clsx from '@proton/utils/clsx';
+
 import { Tooltip } from '../tooltip';
 
 /*
@@ -113,7 +114,7 @@ const WeekNumbers = ({ days, numberOfWeeks, onClickWeekNumber, onSelectWeekRange
 
     return (
         <ul
-            className={classnames([
+            className={clsx([
                 'minicalendar-weeknumbers unstyled m-0 text-center',
                 !onSelectWeekRange && 'no-pointer-events-children',
             ])}
@@ -136,10 +137,7 @@ const WeekNumbers = ({ days, numberOfWeeks, onClickWeekNumber, onSelectWeekRange
                                 data-i={weekNumber}
                                 aria-pressed={isPressed}
                                 type="button"
-                                className={classnames([
-                                    'minicalendar-weeknumber',
-                                    !onClickWeekNumber && 'no-pointer-events',
-                                ])}
+                                className={clsx(['minicalendar-weeknumber', !onClickWeekNumber && 'no-pointer-events'])}
                                 onClick={() => onClickWeekNumber?.(monday)}
                             >
                                 <span className="no-pointer-events">{weekNumber}</span>

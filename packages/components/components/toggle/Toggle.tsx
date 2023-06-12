@@ -1,8 +1,8 @@
 import { ChangeEvent, DetailedHTMLProps, InputHTMLAttributes, Ref, forwardRef } from 'react';
 
 import { CircleLoader } from '@proton/atoms';
+import clsx from '@proton/utils/clsx';
 
-import { classnames } from '../../helpers';
 import Icon, { IconName } from '../icon/Icon';
 
 export interface ToggleProps extends DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement> {
@@ -42,7 +42,7 @@ const Toggle = (
     };
     return (
         <label
-            className={classnames([
+            className={clsx([
                 children ? 'flex flex-align-items-center flex-nowrap gap-2' : '',
                 'toggle-label',
                 className,
@@ -51,7 +51,7 @@ const Toggle = (
             title={title}
         >
             <div
-                className={classnames([
+                className={clsx([
                     'toggle-container',
                     disabled && 'toggle-container--disabled',
                     checked && 'toggle-container--checked',
@@ -63,7 +63,7 @@ const Toggle = (
                     id={id}
                     onChange={handleChange}
                     type="checkbox"
-                    className={classnames(['toggle-checkbox sr-only', className])}
+                    className={clsx(['toggle-checkbox sr-only', className])}
                     checked={checked}
                     aria-busy={loading}
                     ref={ref}

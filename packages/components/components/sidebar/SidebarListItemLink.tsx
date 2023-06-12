@@ -1,7 +1,7 @@
 import { ReactNode, Ref, forwardRef } from 'react';
 import { NavLink, NavLinkProps } from 'react-router-dom';
 
-import { classnames } from '../../helpers';
+import clsx from '@proton/utils/clsx';
 
 export interface Props extends Omit<NavLinkProps, 'className'> {
     children: ReactNode;
@@ -12,7 +12,7 @@ export interface Props extends Omit<NavLinkProps, 'className'> {
 const SidebarListItemLink = forwardRef<HTMLAnchorElement, Props>(
     ({ children, itemClassName = 'navigation-link', className, ...rest }: Props, ref: Ref<HTMLAnchorElement>) => {
         return (
-            <NavLink ref={ref} className={classnames([itemClassName, className])} {...rest}>
+            <NavLink ref={ref} className={clsx([itemClassName, className])} {...rest}>
                 {children}
             </NavLink>
         );

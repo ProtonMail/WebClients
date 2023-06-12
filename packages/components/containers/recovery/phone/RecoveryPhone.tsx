@@ -5,9 +5,9 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { updatePhone } from '@proton/shared/lib/api/settings';
 import { SETTINGS_STATUS, UserSettings } from '@proton/shared/lib/interfaces';
+import clsx from '@proton/utils/clsx';
 
 import { Icon, InputFieldTwo, PhoneInput, useFormErrors, useModalState } from '../../../components';
-import { classnames } from '../../../helpers';
 import { useEventManager, useNotifications } from '../../../hooks';
 import AuthModal from '../../password/AuthModal';
 import ConfirmRemovePhoneModal from './ConfirmRemovePhoneModal';
@@ -55,7 +55,7 @@ const RecoveryPhone = ({ phone, hasReset, defaultCountry, className }: Props) =>
             )}
             {renderVerifyRecoveryPhoneModal && <VerifyRecoveryPhoneModal phone={phone} {...verifyRecoveryPhoneModal} />}
             <form
-                className={classnames(['flex flex-wrap on-mobile-flex-column', className])}
+                className={clsx(['flex flex-wrap on-mobile-flex-column', className])}
                 onSubmit={(e) => {
                     e.preventDefault();
                     if (!onFormSubmit()) {

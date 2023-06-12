@@ -5,8 +5,8 @@ import { Picker } from 'emoji-mart';
 import { c } from 'ttag';
 
 import { DropdownSizeUnit, Icon } from '@proton/components/components';
-import { classnames } from '@proton/components/helpers';
 import { DARK_THEMES } from '@proton/shared/lib/themes/themes';
+import clsx from '@proton/utils/clsx';
 
 import { useTheme } from '../../../containers/themes';
 import ToolbarDropdown, { ToolbarDropdownAction } from './ToolbarDropdown';
@@ -68,7 +68,7 @@ const ToolbarEmojiDropdown = ({ onInsert, openRef, className }: Props) => {
             ref={dropdownRef}
             dropdownSize={{ maxWidth: DropdownSizeUnit.Viewport, maxHeight: DropdownSizeUnit.Viewport }}
             content={<Icon name="emoji" alt={c('Action').t`Emoji`} />}
-            className={classnames(['flex-item-noshrink', className])}
+            className={clsx(['flex-item-noshrink', className])}
             title={c('Action').t`Emoji`}
             autoClose={false}
             autoCloseOutside={true}

@@ -1,4 +1,4 @@
-import { classnames } from '../../../../helpers';
+import clsx from '@proton/utils/clsx';
 
 interface Props {
     emails: string[];
@@ -10,7 +10,7 @@ interface Props {
 const EmailsTableCell = ({ contactID, emails = [], highlightedID, greyedOut }: Props) => {
     return (
         <div
-            className={classnames([
+            className={clsx([
                 'flex',
                 'flex-align-items-center',
                 'max-w100',
