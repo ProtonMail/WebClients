@@ -30,7 +30,8 @@ import {
 } from '@proton/components';
 import { getIsSectionAvailable, getSectionPath } from '@proton/components/containers/layout/helper';
 
-import { getHasPmMeAddress, getMailAppRoutes } from './routes';
+import type { getMailAppRoutes } from './routes';
+import { getHasPmMeAddress } from './routes';
 
 const MailSettingsRouter = ({
     mailAppRoutes,
