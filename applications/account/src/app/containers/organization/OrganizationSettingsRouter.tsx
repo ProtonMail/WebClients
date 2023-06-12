@@ -15,7 +15,7 @@ import {
 import { getIsSectionAvailable, getSectionPath } from '@proton/components/containers/layout/helper';
 import { APP_NAMES } from '@proton/shared/lib/constants';
 
-import { getOrganizationAppRoutes } from './routes';
+import type { getOrganizationAppRoutes } from './routes';
 
 const OrganizationSettingsRouter = ({
     app,

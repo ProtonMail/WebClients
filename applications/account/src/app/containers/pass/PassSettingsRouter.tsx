@@ -5,7 +5,7 @@ import { PrivateMainSettingsArea } from '@proton/components';
 import { getSectionPath } from '@proton/components/containers/layout/helper';
 
 import PassDownloadsSettingsPage from './pages/PassDownloadsSettingsPage';
-import { getPassAppRoutes } from './routes';
+import type { getPassAppRoutes } from './routes';
 
 const PassSettingsRouter = ({
     passAppRoutes,

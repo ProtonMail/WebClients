@@ -11,7 +11,7 @@ import {
 import { getSectionPath } from '@proton/components/containers/layout/helper';
 
 import VpnUpgradeSection from './VpnUpgradeSection';
-import { getVpnAppRoutes } from './routes';
+import type { getVpnAppRoutes } from './routes';
 
 const VpnSettingsRouter = ({
     vpnAppRoutes,
