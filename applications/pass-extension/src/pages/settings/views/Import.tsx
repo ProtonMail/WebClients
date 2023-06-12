@@ -16,7 +16,7 @@ import {
     ImportForm,
     ImportVaultsPicker,
     type ImportVaultsPickerHandle,
-    PROVIDER_TITLE_MAP,
+    PROVIDER_INFO_MAP,
 } from '../../../shared/components/import';
 import { ImportProgress } from '../../../shared/components/import/ImportProgress';
 import {
@@ -73,7 +73,7 @@ export const Import: VFC = () => {
                 <strong className="color-norm block mb-1">{c('Label').t`Import`}</strong>
                 <em className="block text-sm color-weak mb-2">
                     {c('Info')
-                        .t`In order to migrate your data to ${PASS_APP_NAME} from another password manager, export your passwords from your current provider and import them using the form below. Once all your items have been imported, delete the previously exported file.`}
+                        .t`In order to migrate your data to ${PASS_APP_NAME} from another password manager, export your passwords and import them using the form below. Once all your items have been imported, delete the previously exported file.`}
                 </em>
                 <em className="block text-sm color-weak mb-2">
                     {c('Info')
@@ -85,15 +85,17 @@ export const Import: VFC = () => {
                 <FormikProvider value={form}>
                     <Form className="modal-two-dialog-container">
                         <ImportForm form={form} dropzone={dropzone} busy={busy} />
-                        <Button
-                            className="mt-3"
-                            type="submit"
-                            disabled={busy || !form.isValid}
-                            loading={busy}
-                            color="norm"
-                        >
-                            {busy ? c('Action').t`Importing` : c('Action').t`Import`}
-                        </Button>
+                        {form.values.provider && (
+                            <Button
+                                className="mt-2"
+                                type="submit"
+                                disabled={busy || !form.isValid}
+                                loading={busy}
+                                color="norm"
+                            >
+                                {busy ? c('Action').t`Importing` : c('Action').t`Import`}
+                            </Button>
+                        )}
                     </Form>
                 </FormikProvider>
 
@@ -131,7 +133,7 @@ export const Import: VFC = () => {
                         <div>
                             <span className="color-weak">{c('Label').t`Imported from : `}</span>
                             <span className="rounded bg-primary px-1 user-select-none">
-                                {PROVIDER_TITLE_MAP[result.provider]}
+                                {PROVIDER_INFO_MAP[result.provider].title}
                             </span>
                         </div>
 
