@@ -73,7 +73,7 @@ export const getMailDealFeatures = () => {
         {
             name: c('summer2023: Deal details').t`Premium Mail and Calendar`,
             tooltip: c('summer2023: Tooltip')
-                .t`Includes support for 1 custom email domain, 10 email addresses, 10 Hide My Email aliases, calendar sharing, and more.`,
+                .t`Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.`,
         },
     ];
 };
