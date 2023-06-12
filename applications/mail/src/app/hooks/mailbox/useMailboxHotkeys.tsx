@@ -48,6 +48,7 @@ export interface MailboxHotkeysHandlers {
     handleCheckOnlyOne: (ID: string) => void;
     handleCheckRange: (ID: string) => void;
     handleFilter: (filter: Filter) => void;
+    showCommander: (status: boolean) => void;
 }
 
 export const useMailboxHotkeys = (
@@ -74,6 +75,7 @@ export const useMailboxHotkeys = (
         handleCheckOnlyOne,
         handleCheckRange,
         handleFilter,
+        showCommander,
     }: MailboxHotkeysHandlers
 ) => {
     const [mailSettings] = useMailSettings();
@@ -144,6 +146,13 @@ export const useMailboxHotkeys = (
                     sidebarLink.focus();
                     setFocusIndex(undefined);
                 }
+            },
+        ],
+        [
+            ['Meta', 'K'],
+            (e) => {
+                e.preventDefault();
+                showCommander(true);
             },
         ],
         [

@@ -24,6 +24,7 @@ import { Label } from '@proton/shared/lib/interfaces/Label';
 import isTruthy from '@proton/utils/isTruthy';
 
 import PrivateLayout from '../components/layout/PrivateLayout';
+import { LabelActionsContextProvider } from '../components/sidebar/EditLabelContext';
 import { HUMAN_TO_LABEL_IDS } from '../constants';
 import { MailUrlParams } from '../helpers/mailboxUrl';
 import { useContactsListener } from '../hooks/contact/useContactsListener';
@@ -128,15 +129,17 @@ const PageContainer = ({ params: { elementID, labelID, messageID }, breakpoints 
                 </>
             </EasySwitchProvider>
             {runLegacyMessageMigration && <LegacyMessagesMigrationContainer />}
-            <MailboxContainer
-                labelID={labelID}
-                mailSettings={mailSettings as MailSettings}
-                userSettings={userSettings as UserSettings}
-                breakpoints={breakpoints}
-                elementID={elementID}
-                messageID={messageID}
-                toolbarBordered={canShowDrawer && showDrawerSidebar}
-            />
+            <LabelActionsContextProvider>
+                <MailboxContainer
+                    labelID={labelID}
+                    mailSettings={mailSettings as MailSettings}
+                    userSettings={userSettings as UserSettings}
+                    breakpoints={breakpoints}
+                    elementID={elementID}
+                    messageID={messageID}
+                    toolbarBordered={canShowDrawer && showDrawerSidebar}
+                />
+            </LabelActionsContextProvider>
             <MailShortcutsModal {...mailShortcutsProps} />
         </PrivateLayout>
     );
