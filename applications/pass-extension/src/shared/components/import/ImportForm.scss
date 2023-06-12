@@ -1,16 +1,14 @@
-.providers-grid-container {
+.pass-import-providers--grid {
 	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+	grid-template-columns: repeat(auto-fill, minmax(85px, 1fr));
 }
 
-.provider-upload-container {
-	transition: min-block-size 0.25s ease-in-out 0.05s;
-}
-
-.provider-upload-container--min-height-none {
-	--min-height-custom: 1px;
-}
-
-.provider-upload-container--min-height {
+.pass-import-upload {
 	--min-height-custom: 250px;
+
+	transition: min-block-size 0.25s ease-in-out 0.05s;
+
+	&--has-file {
+		--min-height-custom: 1px;
+	}
 }
