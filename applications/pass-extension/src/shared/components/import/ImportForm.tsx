@@ -24,9 +24,7 @@ export const ImportForm: VFC<Omit<ImportFormContext, 'reset' | 'result'>> = ({ f
         [form.values]
     );
 
-    const onSelectProvider = (provider: MaybeNull<ImportProvider>) => () => {
-        form.setFieldValue('provider', provider);
-    };
+    const onSelectProvider = (provider: MaybeNull<ImportProvider>) => () => form.setFieldValue('provider', provider);
 
     return (
         <>

@@ -24,11 +24,6 @@ export const PROVIDER_INFO_MAP: Record<ImportProvider, { title: string; fileExte
             fileExtension: 'json',
             tutorialUrl: 'https://proton.me/support/pass-import-bitwarden',
         },
-        [ImportProvider.KEEPER]: {
-            title: 'Keeper',
-            fileExtension: 'csv',
-            tutorialUrl: '',
-        },
         [ImportProvider.BRAVE]: {
             title: 'Brave',
             fileExtension: 'csv',
