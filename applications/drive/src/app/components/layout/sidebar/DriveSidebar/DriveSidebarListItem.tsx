@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { MouseEventHandler } from 'react';
 
 import {
     IconName,
@@ -22,9 +23,20 @@ interface Props {
     rightIcon?: React.ReactNode;
     onDoubleClick?: () => void;
     style?: React.CSSProperties;
+    onClick?: MouseEventHandler<HTMLLIElement>;
 }
 
-const DriveSidebarListItem = ({ to, children, icon, shareId, isActive, rightIcon, onDoubleClick, style }: Props) => {
+const DriveSidebarListItem = ({
+    to,
+    children,
+    icon,
+    shareId,
+    isActive,
+    rightIcon,
+    onDoubleClick,
+    style,
+    onClick,
+}: Props) => {
     const driveEventManager = useDriveEventManager();
     const volumeState = useVolumesState();
     const [refreshing, withRefreshing] = useLoading(false);
@@ -46,7 +58,7 @@ const DriveSidebarListItem = ({ to, children, icon, shareId, isActive, rightIcon
     };
 
     return (
-        <SidebarListItem>
+        <SidebarListItem onClick={onClick}>
             <SidebarListItemLink to={to} isActive={() => isActive}>
                 <div className="flex flex-nowrap" style={style}>
                     <SidebarListItemContent
