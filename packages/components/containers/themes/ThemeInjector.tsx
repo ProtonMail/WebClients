@@ -4,6 +4,7 @@ import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { updateTheme, updateThemeType } from '@proton/shared/lib/api/settings';
 import { postMessageToIframe } from '@proton/shared/lib/drawer/helpers';
 import { DRAWER_APPS, DRAWER_EVENTS } from '@proton/shared/lib/drawer/interfaces';
+import { rootFontSize } from '@proton/shared/lib/helpers/dom';
 import { ThemeSetting, getDefaultThemeSetting } from '@proton/shared/lib/themes/themes';
 import debounce from '@proton/utils/debounce';
 import noop from '@proton/utils/noop';
@@ -44,6 +45,10 @@ const ThemeInjector = () => {
             });
         }
     }, [settings]);
+
+    useEffect(() => {
+        rootFontSize(true);
+    }, [settings.FontSize]);
 
     useEffect(() => {
         const cb = debounce((settings: ThemeSetting) => {
