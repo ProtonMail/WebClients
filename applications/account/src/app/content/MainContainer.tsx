@@ -102,6 +102,7 @@ const MainContainer = () => {
         FeatureCode.PassPlusPlan,
         FeatureCode.OrgSpamBlockList,
         FeatureCode.ProtonSentinel,
+        FeatureCode.AccessibilitySettings,
     ]);
 
     const referralProgramFeature = getFeature(FeatureCode.ReferralProgram);
@@ -113,6 +114,7 @@ const MainContainer = () => {
     const isPassPlusEnabled = getFeature(FeatureCode.PassPlusPlan).feature?.Value === true;
     const isOrgSpamBlockListEnabled = getFeature(FeatureCode.OrgSpamBlockList).feature?.Value === true;
     const isProtonSentinelFeatureEnabled = getFeature(FeatureCode.ProtonSentinel).feature?.Value === true;
+    const isAccessibilitySettingsEnabled = getFeature(FeatureCode.AccessibilitySettings).feature?.Value === true;
 
     const [isDataRecoveryAvailable, loadingDataRecovery] = useIsDataRecoveryAvailable();
     const loadingFeatures = featuresFlags.some(({ loading }) => loading) || loadingDataRecovery;
@@ -132,6 +134,7 @@ const MainContainer = () => {
         isOrgSpamBlockListEnabled,
         isProtonSentinelEligible: !!userSettings.HighSecurity.Eligible,
         isProtonSentinelFeatureEnabled,
+        isAccessibilitySettingsEnabled,
     });
 
     useEffect(() => {

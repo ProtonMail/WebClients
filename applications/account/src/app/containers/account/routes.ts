@@ -24,6 +24,7 @@ export const getAccountAppRoutes = ({
     organization,
     isProtonSentinelEligible,
     isProtonSentinelFeatureEnabled,
+    isAccessibilitySettingsEnabled,
 }: {
     user: UserModel;
     isDataRecoveryAvailable: boolean;
@@ -33,6 +34,7 @@ export const getAccountAppRoutes = ({
     organization?: Organization;
     isProtonSentinelEligible: boolean;
     isProtonSentinelFeatureEnabled: boolean;
+    isAccessibilitySettingsEnabled: boolean;
 }) => {
     const { isFree, canPay, isPaid, isPrivate, isMember, isAdmin, Currency, Type } = user;
     const credits = humanPriceWithCurrency(REFERRAL_PROGRAM_MAX_AMOUNT, Currency || DEFAULT_CURRENCY);
@@ -198,6 +200,7 @@ export const getAccountAppRoutes = ({
                     {
                         text: c('Title').t`Accessibility`,
                         id: 'accessibility',
+                        available: isAccessibilitySettingsEnabled,
                     },
                 ],
             },
