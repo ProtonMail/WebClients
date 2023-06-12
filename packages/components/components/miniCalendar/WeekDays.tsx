@@ -1,6 +1,7 @@
 import { Ref, memo } from 'react';
 
-import { classnames } from '../../helpers';
+import clsx from '@proton/utils/clsx';
+
 import Tooltip from '../tooltip/Tooltip';
 import { WeekStartsOn } from './index.d';
 
@@ -30,7 +31,7 @@ const WeekDays = ({ cellRef, weekdaysShort, weekdaysLong, weekStartsOn = 1, numb
                         <span
                             ref={i === 0 ? cellRef : undefined}
                             aria-hidden="true"
-                            className={classnames(['text-strong', isCurrentDay && 'current-weekday'])}
+                            className={clsx(['text-strong', isCurrentDay && 'current-weekday'])}
                         >
                             {label}
                             <span className="sr-only">{tooltip}</span>

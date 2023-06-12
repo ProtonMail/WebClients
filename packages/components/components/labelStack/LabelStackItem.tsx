@@ -4,8 +4,8 @@ import tinycolor from 'tinycolor2';
 import { c } from 'ttag';
 
 import { genAccentShades } from '@proton/colors';
+import clsx from '@proton/utils/clsx';
 
-import { classnames } from '../../helpers';
 import { Dropdown, DropdownMenu, DropdownMenuButton } from '../dropdown';
 import { Icon } from '../icon';
 import { usePopperAnchor } from '../popper';
@@ -63,7 +63,7 @@ const LabelStackItem = ({ label, showDelete = false, showDropdown = false }: Pro
             {label.onClick ? (
                 <button
                     type="button"
-                    className={classnames([
+                    className={clsx([
                         'label-stack-item-inner label-stack-item-button text-ellipsis',
                         showDelete && 'with-delete',
                     ])}

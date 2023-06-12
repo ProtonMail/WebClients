@@ -1,9 +1,9 @@
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 
 import { Input, InputProps } from '@proton/atoms';
+import clsx from '@proton/utils/clsx';
 
 import useRightToLeft from '../../../containers/rightToLeft/useRightToLeft';
-import { classnames } from '../../../helpers';
 import PhoneCountrySelect from './PhoneCountrySelect';
 import {
     getCountries,
@@ -133,7 +133,7 @@ const PhoneInput = ({
             placeholder={placeholder}
             dir="ltr"
             containerProps={{ dir: 'ltr' }}
-            className={classnames([isRTL ? 'text-right' : null])}
+            className={clsx([isRTL ? 'text-right' : null])}
             prefix={
                 <PhoneCountrySelect
                     embedded={embedded}

@@ -1,8 +1,9 @@
 import { ChangeEvent, ComponentPropsWithoutRef } from 'react';
 
+import clsx from '@proton/utils/clsx';
 import range from '@proton/utils/range';
 
-import { classnames, concatStringProp } from '../../helpers';
+import { concatStringProp } from '../../helpers';
 import useUid from '../../hooks/useUid';
 import InputButton, { InputButtonProps } from './InputButton';
 import ScaleLabel from './ScaleLabel';
@@ -32,7 +33,7 @@ const Scale = ({ from, to, fromLabel, toLabel, value, InputButtonProps, onChange
     const ariaDescribedBy = concatStringProp([InputButtonProps?.['aria-describedby'], scaleFromToId]);
 
     return (
-        <div className={classnames([className, 'inline-flex flex-column gap-4'])} {...rest}>
+        <div className={clsx([className, 'inline-flex flex-column gap-4'])} {...rest}>
             <div className="flex flex-justify-start flex-align-items-center gap-4">
                 {scale.map((n) => (
                     <InputButton

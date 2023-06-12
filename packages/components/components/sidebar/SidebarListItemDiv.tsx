@@ -1,6 +1,6 @@
 import { HTMLAttributes, ReactNode } from 'react';
 
-import { classnames } from '../../helpers';
+import clsx from '@proton/utils/clsx';
 
 export interface Props extends HTMLAttributes<HTMLDivElement> {
     children: ReactNode;
@@ -8,7 +8,7 @@ export interface Props extends HTMLAttributes<HTMLDivElement> {
 
 const SidebarListItemDiv = ({ children, className = '', ...rest }: Props) => {
     return (
-        <div className={classnames(['navigation-link', className])} {...rest}>
+        <div className={clsx(['navigation-link', className])} {...rest}>
             {children}
         </div>
     );

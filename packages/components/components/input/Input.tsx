@@ -12,7 +12,9 @@ import {
 
 import { c } from 'ttag';
 
-import { classnames, generateUID } from '../../helpers';
+import clsx from '@proton/utils/clsx';
+
+import { generateUID } from '../../helpers';
 import Icon from '../icon/Icon';
 import ErrorZone from '../text/ErrorZone';
 import useInput from './useInput';
@@ -67,7 +69,7 @@ const Input = forwardRef<HTMLInputElement, Props>(
                 return (
                     <div
                         ref={containerRef}
-                        className={classnames(['relative flex', hasError && 'field-icon-container--invalid'])}
+                        className={clsx(['relative flex', hasError && 'field-icon-container--invalid'])}
                     >
                         <Icon name="magnifier" className="absolute no-pointer-events left-icon" />
                         {child}
@@ -82,14 +84,14 @@ const Input = forwardRef<HTMLInputElement, Props>(
             return (
                 <div
                     ref={containerRef}
-                    className={classnames([
+                    className={clsx([
                         'relative field-icon-container w100',
                         hasError && 'field-icon-container--invalid',
                     ])}
                 >
                     {child}
                     {cloneElement(icon, {
-                        className: classnames([icon.props.className, 'right-icon absolute flex']),
+                        className: clsx([icon.props.className, 'right-icon absolute flex']),
                     })}
                 </div>
             );
@@ -104,7 +106,7 @@ const Input = forwardRef<HTMLInputElement, Props>(
                 ) : null}
                 {addIconWrapper(
                     <input
-                        className={classnames(['field w100', className, statusClasses])}
+                        className={clsx(['field w100', className, statusClasses])}
                         aria-invalid={hasError}
                         aria-describedby={uid}
                         id={id}

@@ -1,6 +1,7 @@
 import { ReactNode } from 'react';
 
-import { classnames } from '../../helpers';
+import clsx from '@proton/utils/clsx';
+
 import { TableHeader } from '../table';
 
 import './OrderableTableHeader.scss';
@@ -17,7 +18,7 @@ const OrderableTableHeader = ({ cells = [], className = '', children = null, ...
             null, // column for icon
             ...cells,
         ]}
-        className={classnames(['orderableTableHeader', className])}
+        className={clsx(['orderableTableHeader', className])}
         {...rest}
     >
         {children}

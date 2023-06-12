@@ -1,9 +1,9 @@
 import { ChangeEvent, MouseEvent } from 'react';
 
 import { DENSITY } from '@proton/shared/lib/constants';
+import clsx from '@proton/utils/clsx';
 
 import { Checkbox, Icon } from '../../components';
-import { classnames } from '../../helpers';
 import { useUserSettings } from '../../hooks';
 import { ContactImage } from '../contacts';
 
@@ -39,7 +39,7 @@ const ItemCheckbox = ({
 
     return isCompactView ? (
         <Checkbox
-            className={classnames(['item-icon-compact', compactClassName])}
+            className={clsx(['item-icon-compact', compactClassName])}
             checked={checked}
             onChange={onChange}
             labelOnClick={handleClick}
@@ -48,7 +48,7 @@ const ItemCheckbox = ({
             data-testid="item-checkbox"
         />
     ) : (
-        <label className={classnames(['item-checkbox-label relative', normalClassName])} onClick={handleClick}>
+        <label className={clsx(['item-checkbox-label relative', normalClassName])} onClick={handleClick}>
             <input
                 type="checkbox"
                 className="item-checkbox inner-ratio-container cursor-pointer m-0"

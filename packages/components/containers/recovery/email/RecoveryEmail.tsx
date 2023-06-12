@@ -6,10 +6,10 @@ import { Button } from '@proton/atoms';
 import { updateEmail } from '@proton/shared/lib/api/settings';
 import { emailValidator } from '@proton/shared/lib/helpers/formValidators';
 import { SETTINGS_STATUS, UserSettings } from '@proton/shared/lib/interfaces';
+import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { Icon, InputFieldTwo, useFormErrors, useModalState } from '../../../components';
-import { classnames } from '../../../helpers';
 import { useEventManager, useNotifications } from '../../../hooks';
 import AuthModal from '../../password/AuthModal';
 import ConfirmRemoveEmailModal from './ConfirmRemoveEmailModal';
@@ -59,7 +59,7 @@ const RecoveryEmail = ({ email, hasReset, hasNotify, className }: Props) => {
             )}
             {renderVerifyRecoveryEmailModal && <VerifyRecoveryEmailModal email={email} {...verifyRecoveryEmailModal} />}
             <form
-                className={classnames(['flex flex-wrap on-mobile-flex-column', className])}
+                className={clsx(['flex flex-wrap on-mobile-flex-column', className])}
                 onSubmit={(e) => {
                     e.preventDefault();
                     if (!onFormSubmit()) {

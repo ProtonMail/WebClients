@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 
-import { classnames } from '../../helpers';
+import clsx from '@proton/utils/clsx';
+
 import Radio from './Radio';
 
 const RadioGroup = ({ name, options, onChange, value, className }) => {
@@ -12,7 +13,7 @@ const RadioGroup = ({ name, options, onChange, value, className }) => {
             onChange={handleChangePlatform(option.value)}
             checked={value === option.value}
             name={name}
-            className={classnames(['mr-8', 'mb-2', 'flex', 'inline-flex-vcenter', className])}
+            className={clsx(['mr-8', 'mb-2', 'flex', 'inline-flex-vcenter', className])}
             disabled={option.disabled}
         >
             {option.label}

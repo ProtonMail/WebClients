@@ -1,5 +1,6 @@
+import clsx from '@proton/utils/clsx';
+
 import Icon, { IconName, IconProps } from '../../components/icon/Icon';
-import { classnames } from '../../helpers';
 
 interface Props extends Omit<IconProps, 'name' | 'size'> {
     type: 'info' | 'success' | 'warning' | 'danger';
@@ -32,7 +33,7 @@ const RecoveryStatusIcon = ({ type, className, ...rest }: Props) => {
         };
     }
 
-    return <Icon className={classnames([config.className, className])} name={config.name} size={18} {...rest} />;
+    return <Icon className={clsx([config.className, className])} name={config.name} size={18} {...rest} />;
 };
 
 export default RecoveryStatusIcon;
