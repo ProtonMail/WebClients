@@ -31,15 +31,11 @@ import useSpamState from './hooks/useSpamState';
 import SpamModal, { SpamMode } from './modals/SpamModal';
 
 const getActions = (): { type: SpamLocation; getName: () => string }[] => {
-    const actions = [
+    return [
         { type: 'SPAM', getName: () => c('Action').t`Spam` },
-        { type: 'NON_SPAM', getName: () => c('Action').t`Not spam` },
+        { type: 'BLOCKED', getName: () => c('Action').t`Block` },
+        { type: 'NON_SPAM', getName: () => c('Action').t`Allow` },
     ] as { type: SpamLocation; getName: () => string }[];
-
-    // Put block as first element of the list
-    actions.unshift({ type: 'BLOCKED', getName: () => c('Action').t`Block` });
-
-    return actions;
 };
 
 const ELEMENTS_PER_PAGE = 10;
@@ -140,7 +136,7 @@ const Spams = ({ isOrganization }: Props) => {
         <>
             <div className="mb-8">
                 <SpamsButtonDropdown
-                    title={c('Action').t`Add address`}
+                    title={c('Action').t`Add address or domain`}
                     actions={getActions().map(({ getName, type }) => ({
                         name: getName(),
                         onClick: () => {
@@ -182,8 +178,8 @@ const Spams = ({ isOrganization }: Props) => {
                     <Table hasActions responsive="cards">
                         <TableHeader>
                             <tr>
-                                <TableCell type="header">{c('TableHeader').t`Email address`}</TableCell>
-                                <TableCell type="header">{c('TableHeader').t`Marked as`}</TableCell>
+                                <TableCell type="header">{c('TableHeader').t`Email address or domain`}</TableCell>
+                                <TableCell type="header">{c('TableHeader').t`List`}</TableCell>
                                 <TableCell type="header">{c('TableHeader').t`Edit`}</TableCell>
                             </tr>
                         </TableHeader>
