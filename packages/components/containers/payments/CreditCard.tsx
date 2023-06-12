@@ -16,7 +16,10 @@ interface Props {
 }
 
 const CreditCard = ({ card, errors, onChange, loading = false }: Props) => {
-    const countries = useMemo(() => getFullList().map(({ value, label: text }) => ({ value, text })), []);
+    const countries = useMemo(
+        () => getFullList().map(({ value, label: text, disabled }) => ({ value, text, disabled })),
+        []
+    );
     const handleChange =
         (key: keyof CardModel) =>
         ({ target }: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLSelectElement>) =>
@@ -28,6 +31,53 @@ const CreditCard = ({ card, errors, onChange, loading = false }: Props) => {
     // translator: this is a ZIP code used for american credit cards
     const zipCode = c('Label, credit card').t`ZIP code`;
     const title = card.country === 'US' ? zipCode : c('Label').t`Postal code`;
+
+    const commonNumberProps = {
+        id: 'ccnumber',
+        'data-testid': 'ccnumber',
+        disableChange: loading,
+        autoComplete: 'cc-number',
+        name: 'cardnumber',
+        maxLength: 23,
+    };
+
+    const commonExpProps = {
+        id: 'exp',
+        disableChange: loading,
+        placeholder: patternExpiration,
+        'data-testid': 'exp',
+        autoComplete: 'cc-exp',
+        maxLength: 5,
+    };
+
+    const commonCvcProps = {
+        autoComplete: 'cc-csc',
+        id: 'cvc',
+        name: 'cvc',
+        'data-testid': 'cvc',
+        value: card.cvc,
+        onChange: handleChange('cvc'),
+        disableChange: loading,
+    };
+
+    const commonCountryProps = {
+        autoComplete: 'country',
+        'data-testid': 'country',
+        id: 'country',
+        value: card.country,
+    };
+
+    const commonZipProps = {
+        'data-testid': 'postalCode',
+        minLength: 3,
+        maxLength: 9,
+        autoComplete: 'postal-code',
+        id: 'postalcode',
+        value: card.zip,
+        onChange: handleChange('zip'),
+        disableChange: loading,
+        title: title,
+    };
 
     return (
         <>
@@ -45,31 +95,26 @@ const CreditCard = ({ card, errors, onChange, loading = false }: Props) => {
             />
             <InputFieldTwo
                 label={c('Label').t`Card number`}
-                id="ccnumber"
                 as={CardNumberInput}
                 value={card.number}
                 onChange={(value: string) => onChange('number', value)}
                 error={errors.number}
-                disableChange={loading}
-                data-testid="ccnumber"
+                {...commonNumberProps}
             />
             <div className="flex flex-justify-space-between on-tiny-mobile-flex-column">
                 <div className="flex-item-fluid mr-0 sm:mr-2">
                     <InputFieldTwo
                         label={c('Label').t`Expiration date`}
-                        id="exp"
                         as={ExpInput}
                         month={card.month}
                         year={card.year}
                         error={errors.month}
-                        disableChange={loading}
                         hint={patternExpiration}
-                        placeholder={patternExpiration}
-                        data-testid="exp"
                         onChange={({ month, year }: { month: string; year: string }) => {
                             onChange('month', month);
                             onChange('year', year);
                         }}
+                        {...commonExpProps}
                     />
                 </div>
                 <div className="flex-item-fluid ml-0 sm:ml-2">
@@ -83,15 +128,9 @@ const CreditCard = ({ card, errors, onChange, loading = false }: Props) => {
                                 />
                             </>
                         }
-                        autoComplete="cc-csc"
-                        id="cvc"
-                        name="cvc"
-                        value={card.cvc}
-                        onChange={handleChange('cvc')}
                         placeholder="000"
                         error={errors.cvc}
-                        disableChange={loading}
-                        data-testid="cvc"
+                        {...commonCvcProps}
                     />
                 </div>
             </div>
@@ -100,8 +139,6 @@ const CreditCard = ({ card, errors, onChange, loading = false }: Props) => {
                     <InputFieldTwo
                         label={c('Label').t`Country`}
                         as={Select}
-                        id="country"
-                        value={card.country}
                         onChange={
                             loading
                                 ? undefined
@@ -114,26 +151,12 @@ const CreditCard = ({ card, errors, onChange, loading = false }: Props) => {
                                   }
                         }
                         options={countries}
-                        autoComplete="country"
                         title={c('Label').t`Select your country`}
-                        data-testid="country"
+                        {...commonCountryProps}
                     />
                 </div>
                 <div className="flex-item-fluid ml-0 sm:ml-2">
-                    <InputFieldTwo
-                        label={title}
-                        id="postalcode"
-                        autoComplete="postal-code"
-                        value={card.zip}
-                        onChange={handleChange('zip')}
-                        placeholder={title}
-                        title={title}
-                        error={errors.zip}
-                        disableChange={loading}
-                        minLength={3}
-                        maxLength={9}
-                        data-testid="postalCode"
-                    />
+                    <InputFieldTwo label={title} placeholder={title} error={errors.zip} {...commonZipProps} />
                 </div>
             </div>
         </>

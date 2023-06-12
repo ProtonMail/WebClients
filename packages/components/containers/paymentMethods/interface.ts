@@ -9,4 +9,11 @@ export interface PaymentMethodData {
     disabled?: boolean;
 }
 
-export type PaymentMethodFlows = 'invoice' | 'signup' | 'human-verification' | 'credit' | 'donation' | 'subscription';
+export type PaymentMethodFlows =
+    | 'invoice'
+    | 'signup'
+    | 'signup-pass'
+    | 'human-verification'
+    | 'credit'
+    | 'donation'
+    | 'subscription';

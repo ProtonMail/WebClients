@@ -1,0 +1,87 @@
+@import '~@proton/styles/scss/lib';
+
+.card-information {
+	block-size: rem(44);
+
+	.exp {
+		flex: initial;
+
+		.input-element {
+			max-inline-size: rem(74);
+
+			// the font of InputTwo is larger on mobiles, so we need to make the input field wider
+			@include media('<=small') {
+				max-inline-size: rem(82);
+			}
+		}
+	}
+
+	.cvv {
+		flex: initial;
+
+		.input-element {
+			max-inline-size: rem(40);
+
+			// the font of InputTwo is larger on mobiles, so we need to make the input field wider
+			@include media('<=small') {
+				max-inline-size: rem(46);
+			}
+		}
+	}
+
+	.input-adornment {
+		margin-inline-start: 0;
+		margin-inline-end: 0;
+
+		.input-element {
+			border-radius: 0;
+		}
+	}
+}
+
+.country-select {
+	block-size: rem(44);
+
+	.input-adornment {
+		color: var(--text-norm);
+		margin-inline-start: 0;
+		margin-inline-end: 0;
+
+		.input-element {
+			border-radius: 0;
+			padding-inline-start: rem(12) !important;
+		}
+	}
+}
+
+.error-container {
+	color: var(--signal-danger);
+	min-block-size: rem(20);
+}
+
+.card-number--small,
+.exp--small,
+.cvv--small {
+	&.error {
+		z-index: $layer-upper;
+	}
+
+	&:focus-within {
+		// we want the focus frame to be displayed over error frame
+		z-index: $layer-upper + 1;
+	}
+}
+
+.card-number--small {
+	border-radius: var(--border-radius-md) var(--border-radius-md) 0 0 !important;
+	margin-block-end: -1px;
+}
+
+.exp--small {
+	border-radius: 0 0 0 var(--border-radius-md) !important;
+}
+
+.cvv--small {
+	border-radius: 0 0 var(--border-radius-md) 0 !important;
+	margin-inline-start: -1px;
+}

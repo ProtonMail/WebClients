@@ -17,7 +17,9 @@ import Alert3DS from './Alert3ds';
 import Bitcoin from './Bitcoin';
 import Cash from './Cash';
 import CreditCard from './CreditCard';
+import CreditCardNewDesign from './CreditCardNewDesign';
 import PayPalView from './PayPalView';
+import { CardFieldStatus } from './useCard';
 
 interface Props {
     children?: ReactNode;
@@ -36,6 +38,7 @@ interface Props {
     paymentMethodStatus?: PaymentMethodStatus;
     creditCardTopRef?: Ref<HTMLDivElement>;
     disabled?: boolean;
+    cardFieldStatus?: CardFieldStatus;
 }
 
 const Payment = ({
@@ -52,6 +55,7 @@ const Payment = ({
     card,
     onCard,
     cardErrors,
+    cardFieldStatus,
     noMaxWidth = false,
     creditCardTopRef,
     disabled,
@@ -111,6 +115,9 @@ const Payment = ({
 
     const customPaymentMethod = paymentMethods.find(({ ID }) => method === ID);
 
+    const isSignupPass = type === 'signup-pass';
+    const isSignup = type === 'signup' || type === 'signup-pass';
+
     return (
         <>
             <div className={clsx(['payment-container center', noMaxWidth === false && 'max-w37e on-mobile-max-w100 '])}>
@@ -122,14 +129,25 @@ const Payment = ({
                         method={method}
                         onChange={(value) => onMethod(value)}
                         lastUsedMethod={lastUsedMethod}
+                        forceDropdown={isSignupPass}
                     />
                 </div>
                 <div className="mt-4">
                     {method === PAYMENT_METHOD_TYPES.CARD && (
                         <>
                             <div ref={creditCardTopRef} />
-                            <CreditCard card={card} errors={cardErrors} onChange={onCard} />
-                            {type !== 'signup' && <Alert3DS />}
+                            {isSignupPass ? (
+                                <CreditCardNewDesign
+                                    card={card}
+                                    errors={cardErrors}
+                                    onChange={onCard}
+                                    fieldStatus={cardFieldStatus}
+                                />
+                            ) : (
+                                <CreditCard card={card} errors={cardErrors} onChange={onCard} />
+                            )}
+
+                            {!isSignup && <Alert3DS />}
                         </>
                     )}
                     {method === PAYMENT_METHOD_TYPES.CASH && <Cash />}
