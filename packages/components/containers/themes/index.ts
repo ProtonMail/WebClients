@@ -4,6 +4,5 @@ export { default as ThemeSvg } from './ThemeSvg';
 export { default as ThemeCard } from './ThemeCard';
 export { default as ThemeCards } from './ThemeCards';
 export { default as useThemeQueryParameter } from './useThemeQueryParameter';
-export { default as useIsDarkTheme } from './useIsDarkTheme';
 export { default as useSyncIframeStyles } from './useSyncIframeStyles';
 export { useTheme } from './ThemeProvider';

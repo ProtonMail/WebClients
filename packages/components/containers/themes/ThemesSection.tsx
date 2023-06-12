@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { BRAND_NAME } from '@proton/shared/lib/constants';
-import { PROTON_THEMES, ThemeModeSetting } from '@proton/shared/lib/themes/themes';
+import { ColorScheme, PROTON_THEMES, ThemeModeSetting } from '@proton/shared/lib/themes/themes';
 
 import { Info, Toggle, useNotifications } from '../..';
 import {
@@ -12,11 +12,11 @@ import {
     SettingsSectionWide,
 } from '../account';
 import ThemeCards from './ThemeCards';
-import { useThemeSetting } from './ThemeSettingProvider';
+import { useTheme } from './ThemeProvider';
 import ThemeSyncModeCard from './ThemeSyncModeCard';
 
 const ThemesSection = () => {
-    const { settings, setTheme, setAutoTheme } = useThemeSetting();
+    const { information, settings, setTheme, setAutoTheme } = useTheme();
 
     const { createNotification } = useNotifications();
     const notifyPreferenceSaved = () => createNotification({ text: c('Success').t`Preference saved` });
@@ -41,7 +41,7 @@ const ThemesSection = () => {
                 <SettingsLayoutRight className="flex pt-1">
                     <Toggle
                         id="themeSyncToggle"
-                        checked={settings.mode === ThemeModeSetting.Auto}
+                        checked={settings.Mode === ThemeModeSetting.Auto}
                         onChange={(e) => {
                             setAutoTheme(e.target.checked);
                             notifyPreferenceSaved();
@@ -50,27 +50,27 @@ const ThemesSection = () => {
                 </SettingsLayoutRight>
             </SettingsLayout>
 
-            {settings.mode === ThemeModeSetting.Auto ? (
+            {settings.Mode === ThemeModeSetting.Auto ? (
                 <SettingsSectionWide className="flex mt-6 flex-nowrap gap-4 on-mobile-flex-column">
                     <ThemeSyncModeCard
                         mode="light"
                         list={PROTON_THEMES}
-                        themeIdentifier={settings.lightTheme}
+                        themeIdentifier={settings.LightTheme}
                         onChange={(themeType) => {
                             setTheme(themeType, ThemeModeSetting.Light);
                             notifyPreferenceSaved();
                         }}
-                        active={settings.colorScheme === ThemeModeSetting.Light}
+                        active={information.colorScheme === ColorScheme.Light}
                     />
                     <ThemeSyncModeCard
                         mode="dark"
                         list={PROTON_THEMES}
-                        themeIdentifier={settings.darkTheme}
+                        themeIdentifier={settings.DarkTheme}
                         onChange={(themeType) => {
                             setTheme(themeType, ThemeModeSetting.Dark);
                             notifyPreferenceSaved();
                         }}
-                        active={settings.colorScheme === ThemeModeSetting.Dark}
+                        active={information.colorScheme === ColorScheme.Dark}
                     />
                 </SettingsSectionWide>
             ) : (
@@ -78,7 +78,7 @@ const ThemesSection = () => {
                     <ThemeCards
                         size="large"
                         list={PROTON_THEMES}
-                        themeIdentifier={settings.currentTheme}
+                        themeIdentifier={information.theme}
                         onChange={(themeType) => {
                             setTheme(themeType);
                             notifyPreferenceSaved();

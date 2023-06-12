@@ -37,7 +37,6 @@ import {
     getRequiresAddressSetup,
     handleAddressGeneration,
 } from '@proton/shared/lib/keys';
-import { PROTON_DEFAULT_THEME } from '@proton/shared/lib/themes/themes';
 import noop from '@proton/utils/noop';
 
 import AccountLoaderPage from '../content/AccountLoaderPage';
@@ -137,7 +136,7 @@ const SetupAddressContainer = () => {
     const fromRef = useRef<From>(defaultFromResult);
     const authentication = useAuthentication();
     const getUser = useGetUser();
-    const [, setTheme] = useTheme();
+    const { setThemeSetting } = useTheme();
     const ktFeature = useFeature<KT_FF>(FeatureCode.KeyTransparencyWEB);
 
     const generateAddressRef = useRef<AddressGeneration | undefined>(undefined);
@@ -213,7 +212,7 @@ const SetupAddressContainer = () => {
             history.replace({ ...location, hash: '' });
 
             // Special case to reset the user's theme since it's logged in at this point. Does not care about resetting it back since it always redirects back to the application.
-            setTheme(PROTON_DEFAULT_THEME);
+            setThemeSetting();
 
             // Stop the event manager since we're setting a new password (and it'd automatically log out) and we refresh once we're done
             stop();
