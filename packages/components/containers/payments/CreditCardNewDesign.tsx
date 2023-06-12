@@ -196,40 +196,31 @@ const CreditCardNewDesign = ({ card, errors, onChange, loading = false, fieldSta
                         </div>
                     }
                     suffix={
-                        <>
-                            {errors.number && (
-                                <Icon
-                                    name="exclamation-circle-filled"
-                                    className="error-container flex-item-noshrink mr-1"
-                                    size={18}
-                                />
-                            )}
-                            <div className="flex mx-0">
-                                <Input
-                                    unstyled
-                                    inputClassName="mr-3 py-0.5 px-3 border-left border-right"
-                                    className="exp"
-                                    value={`${month}${month.length === 2 || year.length ? '/' : ''}${year}`}
-                                    onChange={({ target }) => {
-                                        const change = handleExpOnChange(target.value, month, year);
-                                        if (change) {
-                                            onChange('month', change.month);
-                                            onChange('year', change.year);
-                                        }
-                                    }}
-                                    ref={wideExpRef}
-                                    {...commonExpProps}
-                                />
-                                <Input
-                                    unstyled
-                                    placeholder={codeName}
-                                    inputClassName="p-0"
-                                    className="cvv"
-                                    ref={wideCvcRef}
-                                    {...commonCvcProps}
-                                />
-                            </div>
-                        </>
+                        <div className="flex mx-0">
+                            <Input
+                                unstyled
+                                inputClassName="mr-3 py-0.5 px-3 border-left border-right"
+                                className="exp"
+                                value={`${month}${month.length === 2 || year.length ? '/' : ''}${year}`}
+                                onChange={({ target }) => {
+                                    const change = handleExpOnChange(target.value, month, year);
+                                    if (change) {
+                                        onChange('month', change.month);
+                                        onChange('year', change.year);
+                                    }
+                                }}
+                                ref={wideExpRef}
+                                {...commonExpProps}
+                            />
+                            <Input
+                                unstyled
+                                placeholder={codeName}
+                                inputClassName="p-0"
+                                className="cvv"
+                                ref={wideCvcRef}
+                                {...commonCvcProps}
+                            />
+                        </div>
                     }
                     {...commonNumberProps}
                 />
