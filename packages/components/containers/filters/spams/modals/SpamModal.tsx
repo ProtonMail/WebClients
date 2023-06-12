@@ -88,7 +88,7 @@ const SpamModal = ({ type, onAdd, modalProps }: Props) => {
             <ModalTwoHeader title={I18N[type]} />
             <ModalTwoContent>
                 <Row>
-                    <Label>{c('Label').t`Address type`}</Label>
+                    <Label id="descAddressType">{c('Label').t`Address type`}</Label>
                     <Field>
                         <Radio
                             id="email-mode"
@@ -96,6 +96,7 @@ const SpamModal = ({ type, onAdd, modalProps }: Props) => {
                             onChange={() => setMode('email')}
                             className="mr-4"
                             name="filterMode"
+                            aria-describedby="descAddressType"
                         >
                             {c('Label').t`Email`}
                         </Radio>
@@ -104,6 +105,7 @@ const SpamModal = ({ type, onAdd, modalProps }: Props) => {
                             checked={mode === 'domain'}
                             onChange={() => setMode('domain')}
                             name="filterMode"
+                            aria-describedby="descAddressType"
                         >
                             {c('Label').t`Domain`}
                         </Radio>
