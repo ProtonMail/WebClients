@@ -236,6 +236,17 @@ export const getPricingFromPlanIDs = (planIDs: PlanIDs, plansMap: PlansMap) => {
                 }
             };
 
+            const addDefaultPricing = (target: any, cycle: CYCLE) => {
+                if (!plan.DefaultPricing || !plan.DefaultPricing[cycle]) {
+                    return;
+                }
+
+                const price = plan.DefaultPricing[cycle];
+                if (price) {
+                    target[cycle] += quantity * price;
+                }
+            };
+
             allCycles.forEach((cycle) => {
                 add(acc.all, cycle);
             });
@@ -244,6 +255,10 @@ export const getPricingFromPlanIDs = (planIDs: PlanIDs, plansMap: PlansMap) => {
                 allCycles.forEach((cycle) => {
                     add(acc.plans, cycle);
                 });
+
+                allCycles.forEach((cycle) => {
+                    addDefaultPricing(acc.plansWithoutDiscount, cycle);
+                });
             }
 
             return acc;
@@ -251,6 +266,13 @@ export const getPricingFromPlanIDs = (planIDs: PlanIDs, plansMap: PlansMap) => {
         {
             all: { [CYCLE.MONTHLY]: 0, [CYCLE.YEARLY]: 0, [CYCLE.TWO_YEARS]: 0, [CYCLE.THIRTY]: 0, [CYCLE.FIFTEEN]: 0 },
             plans: {
+                [CYCLE.MONTHLY]: 0,
+                [CYCLE.YEARLY]: 0,
+                [CYCLE.TWO_YEARS]: 0,
+                [CYCLE.THIRTY]: 0,
+                [CYCLE.FIFTEEN]: 0,
+            },
+            plansWithoutDiscount: {
                 [CYCLE.MONTHLY]: 0,
                 [CYCLE.YEARLY]: 0,
                 [CYCLE.TWO_YEARS]: 0,
@@ -271,7 +293,18 @@ export interface TotalPricing {
 export const getTotalFromPricing = (pricing: ReturnType<typeof getPricingFromPlanIDs>, cycle: CYCLE): TotalPricing => {
     const total = pricing.all[cycle];
     const totalPerMonth = pricing.plans[cycle] / cycle;
-    const totalNoDiscount = pricing.all[CYCLE.MONTHLY] * cycle;
+
+    // If the current cycle pricing is different from the default cycle pricing,
+    // then it means that the current cycle is already discounted.
+    // Which in turn means that we will compare the plan cycle against itself undiscounted
+    // rather than on the multiplication of monthly.
+    let totalNoDiscount: number;
+    if (pricing.plans[cycle] !== pricing.plansWithoutDiscount[cycle]) {
+        totalNoDiscount = pricing.plansWithoutDiscount[cycle];
+    } else {
+        totalNoDiscount = pricing.all[CYCLE.MONTHLY] * cycle;
+    }
+
     const discount = cycle === CYCLE.MONTHLY ? 0 : totalNoDiscount - total;
     return {
         discount,
