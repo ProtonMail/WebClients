@@ -188,7 +188,7 @@ const CreateUserAccountsModal = ({ usersToImport, app, onClose, ...rest }: Props
         setStep(STEPS.IMPORT_USERS);
     };
 
-    const importUsers = async () => {
+    const importUsers = async ({ skipCapacityValidation = false }: { skipCapacityValidation?: boolean } = {}) => {
         const error = validateAddUser(organization, organizationKey, verifiedDomains);
         if (error) {
             return createNotification({ type: 'error', text: error });
@@ -200,13 +200,15 @@ const CreateUserAccountsModal = ({ usersToImport, app, onClose, ...rest }: Props
 
         const selectedUsers = usersToImport.filter((user) => selectedUserIds.includes(user.id));
 
-        try {
-            validateOrganizationCapacity(selectedUsers, organization);
-        } catch (error: any) {
-            if (error instanceof OrganizationCapacityError) {
-                setOrganizationCapacityError(error);
-                setStep(STEPS.ORGANIZATION_VALIDATION_ERROR);
-                return;
+        if (!skipCapacityValidation) {
+            try {
+                validateOrganizationCapacity(selectedUsers, organization);
+            } catch (error: any) {
+                if (error instanceof OrganizationCapacityError) {
+                    setOrganizationCapacityError(error);
+                    setStep(STEPS.ORGANIZATION_VALIDATION_ERROR);
+                    return;
+                }
             }
         }
 
@@ -299,7 +301,8 @@ const CreateUserAccountsModal = ({ usersToImport, app, onClose, ...rest }: Props
         return (
             <OrganizationCapacityErrorModal
                 error={organizationCapacityError}
-                onOk={() => setStep(STEPS.SELECT_USERS)}
+                onCancel={() => setStep(STEPS.SELECT_USERS)}
+                onContinue={() => importUsers({ skipCapacityValidation: true })}
                 app={app}
                 {...rest}
             />
