@@ -25,26 +25,15 @@ describe('clsx()', () => {
         expect(result).toBe('a b');
     });
 
-    it('should be trim empty space', () => {
-        const result = clsx('a', ' ', 'b ');
+    it('trims empty space', () => {
+        const result = clsx('foo bar', ' ', 'foobar');
 
-        expect(result).toBe('a b');
+        expect(result).toBe('foo bar foobar');
     });
 
-    it('handles all types of truthy and falsy property values as expected', () => {
-        const result = clsx(
-            // falsy:
-            null,
-            '',
-            false,
-            undefined,
+    it('keeps only non-blank strings', () => {
+        const result = clsx(null, '', false, undefined, 'foobar', ' ', true);
 
-            // truthy:
-            'foobar',
-            ' ',
-            true
-        );
-
-        expect(result).toBe('foobar true');
+        expect(result).toBe('foobar');
     });
 });
