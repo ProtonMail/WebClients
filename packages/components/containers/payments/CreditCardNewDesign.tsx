@@ -294,7 +294,7 @@ const CreditCardNewDesign = ({ card, errors, onChange, loading = false, fieldSta
                 disableChange={loading}
                 title={title}
             />
-            <div className="error-container mt-1 text-semibold text-sm flex">
+            <div className="error-container mt-1 mb-3 text-semibold text-sm flex">
                 {errors.zip && (
                     <>
                         <Icon name="exclamation-circle-filled" className="flex-item-noshrink mr-1" size={18} />
