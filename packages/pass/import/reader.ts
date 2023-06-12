@@ -90,6 +90,6 @@ export const fileReader = async (payload: ImportReaderPayload): Promise<ImportPa
         }
 
         default:
-            throw new Error(c('Error').t`Invalid provider`);
+            throw new Error(c('Error').t`Invalid password manager`);
     }
 };
