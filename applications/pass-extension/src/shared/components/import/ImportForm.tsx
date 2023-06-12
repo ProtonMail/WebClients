@@ -5,9 +5,8 @@ import { c } from 'ttag';
 
 import { Href } from '@proton/atoms/Href';
 import { AttachedFile, Bordered, Dropzone, FileInput, Icon, InlineLinkButton } from '@proton/components/components';
-import { ImportProvider, ImportProviderValues, extractFileExtension } from '@proton/pass/import';
-import type { Maybe } from '@proton/pass/types';
-import { PASS_APP_NAME } from '@proton/shared/lib/constants';
+import { ImportProvider, ImportProviderValues, PROVIDER_INFO_MAP, extractFileExtension } from '@proton/pass/import';
+import type { MaybeNull } from '@proton/pass/types';
 import clsx from '@proton/utils/clsx';
 
 import { type ImportFormContext, SUPPORTED_IMPORT_FILE_TYPES } from '../../hooks/useImportForm';
@@ -15,74 +14,6 @@ import { PasswordField } from '../fields';
 import { ImportProviderItem } from './ImportProviderItem';
 
 import './ImportForm.scss';
-
-export const PROVIDER_INFO_MAP: Record<string, { title: string; format: string; tutorialUrl: string }> = {
-    [ImportProvider.BITWARDEN]: {
-        title: 'Bitwarden',
-        format: 'json',
-        tutorialUrl: 'https://proton.me/support/pass-import-bitwarden',
-    },
-    [ImportProvider.KEEPER]: {
-        title: 'Keeper',
-        format: 'csv',
-        tutorialUrl: '',
-    },
-    [ImportProvider.BRAVE]: {
-        title: 'Brave',
-        format: 'csv',
-        tutorialUrl: 'https://proton.me/support/pass-import-brave',
-    },
-    [ImportProvider.CHROME]: {
-        title: 'Chrome',
-        format: 'csv',
-        tutorialUrl: 'https://proton.me/support/pass-import-chrome',
-    },
-    [ImportProvider.EDGE]: {
-        title: 'Edge',
-        format: 'csv',
-        tutorialUrl: 'https://proton.me/support/pass-import-edge',
-    },
-    [ImportProvider.FIREFOX]: {
-        title: 'Firefox',
-        format: 'csv',
-        tutorialUrl: 'https://proton.me/support/pass-import-firefox',
-    },
-    [ImportProvider.KEEPASS]: {
-        title: 'KeePass',
-        format: 'xml',
-        tutorialUrl: 'https://proton.me/support/pass-import-keepass',
-    },
-    [ImportProvider.LASTPASS]: {
-        title: 'LastPass',
-        format: 'csv',
-        tutorialUrl: 'https://proton.me/support/pass-import-lastpass',
-    },
-    [ImportProvider.ONEPASSWORD]: {
-        title: '1Password',
-        format: '1pux, 1pif',
-        tutorialUrl: 'https://proton.me/support/pass-import-1password',
-    },
-    [ImportProvider.DASHLANE]: {
-        title: 'Dashlane',
-        format: 'zip',
-        tutorialUrl: 'https://proton.me/support/pass-import-dashlane',
-    },
-    [ImportProvider.PROTONPASS]: {
-        title: PASS_APP_NAME,
-        format: 'zip, pgp',
-        tutorialUrl: '',
-    },
-    [ImportProvider.SAFARI]: {
-        title: 'Safari',
-        format: 'csv',
-        tutorialUrl: 'https://proton.me/support/pass-import-safari',
-    },
-    [ImportProvider.KEEPER]: {
-        title: 'Keeper',
-        format: 'csv',
-        tutorialUrl: '',
-    },
-};
 
 export const ImportForm: VFC<Omit<ImportFormContext, 'reset' | 'result'>> = ({ form, dropzone, busy }) => {
     const needsPassphrase = useMemo(
@@ -93,7 +24,7 @@ export const ImportForm: VFC<Omit<ImportFormContext, 'reset' | 'result'>> = ({ f
         [form.values]
     );
 
-    const onSelectProvider = (provider: Maybe<ImportProvider>) => () => {
+    const onSelectProvider = (provider: MaybeNull<ImportProvider>) => () => {
         form.setFieldValue('provider', provider);
     };
 
@@ -102,7 +33,7 @@ export const ImportForm: VFC<Omit<ImportFormContext, 'reset' | 'result'>> = ({ f
             <div className="mb-2">
                 <strong>{c('Label').t`Select your password manager`}</strong>
                 {form.values.provider && (
-                    <InlineLinkButton onClick={onSelectProvider(undefined)} className="ml-2">
+                    <InlineLinkButton onClick={onSelectProvider(null)} className="ml-2">
                         {c('Action').t`Change`}
                     </InlineLinkButton>
                 )}
@@ -117,7 +48,7 @@ export const ImportForm: VFC<Omit<ImportFormContext, 'reset' | 'result'>> = ({ f
                                 key={provider}
                                 value={provider}
                                 title={PROVIDER_INFO_MAP[provider].title}
-                                format={PROVIDER_INFO_MAP[provider].format}
+                                fileExtension={PROVIDER_INFO_MAP[provider].fileExtension}
                             />
                         ))}
                     </div>
@@ -133,7 +64,7 @@ export const ImportForm: VFC<Omit<ImportFormContext, 'reset' | 'result'>> = ({ f
                             <div className="mr-2">
                                 <img
                                     src={
-                                        form.values.provider === 'protonpass'
+                                        form.values.provider === ImportProvider.PROTONPASS
                                             ? '/assets/protonpass-icon-24.svg'
                                             : `/assets/${form.values.provider}-icon-24.png`
                                     }
@@ -142,7 +73,9 @@ export const ImportForm: VFC<Omit<ImportFormContext, 'reset' | 'result'>> = ({ f
                             </div>
                             <div className="flex flex-column ml-3">
                                 <span>{PROVIDER_INFO_MAP[form.values.provider].title}</span>
-                                <span className="color-weak">{PROVIDER_INFO_MAP[form.values.provider].format}</span>
+                                <span className="color-weak">
+                                    {PROVIDER_INFO_MAP[form.values.provider].fileExtension}
+                                </span>
                             </div>
                         </div>
                         {PROVIDER_INFO_MAP[form.values.provider].tutorialUrl && (
@@ -160,14 +93,12 @@ export const ImportForm: VFC<Omit<ImportFormContext, 'reset' | 'result'>> = ({ f
                     <Dropzone onDrop={dropzone.onDrop} disabled={busy} border={false}>
                         <Bordered
                             className={clsx([
-                                'flex flex-columns flex-justify-center flex-align-items-center relative p-4 mb-4 rounded border-weak min-h-custom',
-                                !form.values.file && 'border-dashed',
+                                'flex flex-columns flex-justify-center flex-align-items-center relative p-4 mb-4 rounded border-weak min-h-custom provider-upload-container',
+                                form.values.file
+                                    ? 'provider-upload-container--min-height-none'
+                                    : 'border-dashed provider-upload-container--min-height',
                                 form.errors.file && 'border-danger',
                             ])}
-                            style={{
-                                '--min-height-custom': !form.values.file ? '160px' : '1px',
-                                transition: 'min-height .25s ease-in-out .05s',
-                            }}
                         >
                             {form.values.file ? (
                                 <AttachedFile

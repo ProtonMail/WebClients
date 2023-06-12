@@ -13,7 +13,7 @@ import { ImportProvider, extractFileExtension, fileReader } from '@proton/pass/i
 import type { ImportState } from '@proton/pass/store';
 import { importItemsIntent, selectLatestImport, selectUser } from '@proton/pass/store';
 import { importItems } from '@proton/pass/store/actions/requests';
-import type { Maybe } from '@proton/pass/types';
+import type { Maybe, MaybeNull } from '@proton/pass/types';
 import { first } from '@proton/pass/utils/array';
 import { orThrow, pipe } from '@proton/pass/utils/fp/pipe';
 import { splitExtension } from '@proton/shared/lib/helpers/file';
@@ -25,7 +25,7 @@ import { useRequestStatusEffect } from './useRequestStatusEffect';
 type DropzoneProps = ComponentProps<typeof Dropzone>;
 type FileInputProps = ComponentProps<typeof FileInput>;
 
-export type ImportFormValues = { file: Maybe<File>; provider: Maybe<ImportProvider>; passphrase?: string };
+export type ImportFormValues = { file: Maybe<File>; provider: MaybeNull<ImportProvider>; passphrase?: string };
 
 export type ImportFormContext = {
     form: FormikContextType<ImportFormValues>;
@@ -58,14 +58,14 @@ const createFileValidator = (allow: string[]) =>
 
 const getInitialFormValues = (): ImportFormValues => ({
     file: undefined,
-    provider: undefined,
+    provider: null,
     passphrase: '',
 });
 
 const validateImportForm = ({ provider, file, passphrase }: ImportFormValues): FormikErrors<ImportFormValues> => {
     const errors: FormikErrors<ImportFormValues> = {};
 
-    if (provider === undefined) {
+    if (provider === undefined || provider === null) {
         errors.provider = c('Warning').t`No password manager selected`;
     }
 
