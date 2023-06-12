@@ -1,8 +1,8 @@
 import { ComponentPropsWithRef, forwardRef } from 'react';
 
 import { isFirefoxLessThan55 } from '@proton/shared/lib/helpers/browser';
+import clsx from '@proton/utils/clsx';
 
-import { classnames } from '../../helpers';
 import { IconSize } from './Icon';
 
 export type MimeName =
@@ -72,7 +72,7 @@ const MimeIcon = forwardRef<SVGSVGElement, MimeIconProps>(
                     role="img"
                     viewBox={viewBox}
                     focusable="false"
-                    className={classnames([`icon-${size}p`, className])}
+                    className={clsx([`icon-${size}p`, className])}
                     ref={ref}
                     {...rest}
                 >

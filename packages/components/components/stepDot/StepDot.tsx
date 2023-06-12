@@ -2,7 +2,7 @@ import { HTMLProps } from 'react';
 
 import { c } from 'ttag';
 
-import { classnames } from '../../helpers';
+import clsx from '@proton/utils/clsx';
 
 /*
  * 'type' is string in HTMLButtonElement but the button React elements wants a union between
@@ -27,7 +27,7 @@ const StepDot = ({ index, className, onChange, active, role = 'presentation', ..
                 type="button"
                 role="tab"
                 aria-selected={active}
-                className={classnames([className, 'step-dots-dot', 'rounded-50', !onChange && 'no-pointer-events'])}
+                className={clsx([className, 'step-dots-dot', 'rounded-50', !onChange && 'no-pointer-events'])}
                 title={onChange ? c('Action').t`Go to panel ${index}` : undefined}
                 onClick={handleClick}
                 {...rest}

@@ -1,6 +1,6 @@
 import { DetailedHTMLProps, HTMLAttributes, ReactNode, RefObject, useEffect, useState } from 'react';
 
-import { classnames } from '../../helpers';
+import clsx from '@proton/utils/clsx';
 
 interface Props<T> extends DetailedHTMLProps<HTMLAttributes<HTMLTableRowElement>, HTMLTableRowElement> {
     scrollAreaRef: RefObject<T>;
@@ -36,7 +36,7 @@ function TableRowSticky<T extends HTMLElement>({ children, scrollAreaRef, classN
     return (
         <tr
             {...rest}
-            className={classnames([
+            className={clsx([
                 'simple-table-sticky-row',
                 isScrollTop && 'simple-table-sticky-row--is-on-top',
                 className,

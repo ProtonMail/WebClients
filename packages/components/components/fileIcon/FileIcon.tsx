@@ -8,8 +8,8 @@ import {
     isSupportedText,
     isVideo,
 } from '@proton/shared/lib/helpers/mimetype';
+import clsx from '@proton/utils/clsx';
 
-import { classnames } from '../../helpers/component';
 import MimeIcon, { MimeIconProps, MimeName } from '../icon/MimeIcon';
 
 const iconsMap: { [mimeType: string]: MimeName } = {
@@ -103,7 +103,7 @@ interface Props extends Omit<MimeIconProps, 'name'> {
 const FileIcon = ({ mimeType, className, ...rest }: Props) => {
     const name = getIconName(mimeType);
 
-    return <MimeIcon name={name} className={classnames(['flex-item-noshrink', className])} {...rest} />;
+    return <MimeIcon name={name} className={clsx(['flex-item-noshrink', className])} {...rest} />;
 };
 
 export default FileIcon;

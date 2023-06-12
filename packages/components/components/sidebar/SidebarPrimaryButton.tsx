@@ -1,12 +1,11 @@
 import { Ref, forwardRef } from 'react';
 
 import { Button, ButtonProps } from '@proton/atoms';
-
-import { classnames } from '../../helpers';
+import clsx from '@proton/utils/clsx';
 
 const SidebarPrimaryButton = ({ children, className = '', ...rest }: ButtonProps, ref: Ref<HTMLButtonElement>) => {
     return (
-        <Button color="norm" size="large" className={classnames(['w100', className])} ref={ref} {...rest}>
+        <Button color="norm" size="large" className={clsx(['w100', className])} ref={ref} {...rest}>
             {children}
         </Button>
     );

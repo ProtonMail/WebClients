@@ -1,4 +1,5 @@
-import { SettingsSectionWide, classnames } from '@proton/components';
+import { SettingsSectionWide } from '@proton/components';
+import clsx from '@proton/utils/clsx';
 
 import InviteSendEmail from './InviteSendEmail';
 import InviteShareLink from './InviteShareLink';
@@ -7,7 +8,7 @@ import InviteActions from './inviteActions/InviteActions';
 import './InviteSection.scss';
 
 const BorderedBox = ({ children, className }: { children: React.ReactNode; className?: string }) => (
-    <div className={classnames([className, 'border rounded p-5'])}>{children}</div>
+    <div className={clsx([className, 'border rounded p-5'])}>{children}</div>
 );
 
 const InviteSection = () => {

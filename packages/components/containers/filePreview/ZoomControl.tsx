@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { classnames } from '@proton/components';
+import clsx from '@proton/utils/clsx';
 
 import Icon from '../../components/icon/Icon';
 
@@ -20,7 +20,7 @@ const ZoomControl = ({ className, scale, onZoomIn, onZoomOut, onReset }: Props) 
     const displayedZoomValueInPercent = `${Math.round(scale * 100)}%`;
 
     return (
-        <div className={classnames(['w100 p-7 flex', className])}>
+        <div className={clsx(['w100 p-7 flex', className])}>
             <div className="mx-auto flex flex-align-items-center">
                 <Button
                     icon

@@ -1,13 +1,6 @@
 import { InputHTMLAttributes } from 'react';
 
-
-
 import clsx from '@proton/utils/clsx';
-
-
-
-import { classnames } from '../../helpers';
-
 
 export interface Props extends InputHTMLAttributes<HTMLInputElement> {
     id: string;
@@ -19,7 +12,7 @@ export interface Props extends InputHTMLAttributes<HTMLInputElement> {
 const Radio = ({ id, children, className = 'inline-flex', name, disabled = false, ...rest }: Props) => (
     <label
         htmlFor={id}
-        className={classnames([
+        className={clsx([
             !className?.includes('increase-click-surface') && 'relative',
             disabled && 'opacity-50 no-pointer-events',
             className,

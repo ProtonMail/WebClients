@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
 
-import { classnames } from '../../helpers';
+import clsx from '@proton/utils/clsx';
 
 const Block = ({ children, className = '' }) => {
-    return <div className={classnames(['mb-4', className])}>{children}</div>;
+    return <div className={clsx(['mb-4', className])}>{children}</div>;
 };
 
 Block.propTypes = {

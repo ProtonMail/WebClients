@@ -1,6 +1,6 @@
 import { ComponentPropsWithoutRef, isValidElement } from 'react';
 
-import { classnames } from '../../helpers';
+import clsx from '@proton/utils/clsx';
 
 interface Props extends ComponentPropsWithoutRef<'li'> {
     noShrink?: boolean;
@@ -13,7 +13,7 @@ const TopNavbarListItem = ({ children, noShrink, collapsedOnDesktop = true, clas
     }
     return (
         <li
-            className={classnames([
+            className={clsx([
                 'topnav-listItem',
                 noShrink && 'flex-item-noshrink',
                 !collapsedOnDesktop && 'topnav-listItem--noCollapse',

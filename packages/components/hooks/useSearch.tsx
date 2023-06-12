@@ -11,9 +11,9 @@ import {
 } from 'react';
 
 import { sanitizeString } from '@proton/shared/lib/sanitize';
+import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
-import { classnames } from '../helpers';
 import { getMatch } from './helpers/search';
 import useClickOutside from './useClickOutside';
 
@@ -230,13 +230,13 @@ function useSearch<T extends object, K = keyof SearchableObject<T>>({
         inputProps: { onKeyDown, onFocus },
         searchSuggestions,
         datalistProps: {
-            className: classnames([
+            className: clsx([
                 'autocomplete-suggestions',
                 isFocused && searchSuggestions.length > 0 ? 'autocomplete-suggestions--open' : 'no-pointer-events',
             ]),
         },
         parentProps: {
-            className: classnames(['autocomplete-input relative']),
+            className: clsx(['autocomplete-input relative']),
             ref: parentRef,
         },
         itemProps,

@@ -1,10 +1,8 @@
 import { ButtonHTMLAttributes, DetailedHTMLProps } from 'react';
 
+import clsx from '@proton/utils/clsx';
 
-
-import { classnames } from '../../../helpers';
 import Tooltip from '../../tooltip/Tooltip';
-
 
 const ToolbarButton = ({
     children,
@@ -18,7 +16,7 @@ const ToolbarButton = ({
         <button
             type="button"
             disabled={disabled}
-            className={classnames(['editor-toolbar-button interactive-pseudo-inset m-0 flex', className])}
+            className={clsx(['editor-toolbar-button interactive-pseudo-inset m-0 flex', className])}
             onClick={onClick}
             {...rest}
         >
