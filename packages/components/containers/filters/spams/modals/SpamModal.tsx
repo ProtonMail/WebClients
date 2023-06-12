@@ -30,8 +30,8 @@ interface Props {
 
 const SpamModal = ({ type, onAdd, modalProps }: Props) => {
     const I18N: Record<SpamLocation, string> = {
-        BLOCKED: c('Title').t`Add to your block list`,
-        NON_SPAM: c('Title').t`Add to Not spam list`,
+        BLOCKED: c('Title').t`Add to block list`,
+        NON_SPAM: c('Title').t`Add to allow list`,
         SPAM: c('Title').t`Add to spam list`,
     };
 
@@ -87,30 +87,30 @@ const SpamModal = ({ type, onAdd, modalProps }: Props) => {
         <ModalTwo size="large" as={Form} onSubmit={handleSubmit} {...modalProps} data-testid="spam-modal">
             <ModalTwoHeader title={I18N[type]} />
             <ModalTwoContent>
-                {type === 'BLOCKED' ? null : (
-                    <Row>
-                        <Label>{c('Label').t`Address type`}</Label>
-                        <Field>
-                            <Radio
-                                id="email-mode"
-                                checked={mode === 'email'}
-                                onChange={() => setMode('email')}
-                                className="mr-4"
-                                name="filterMode"
-                            >
-                                {c('Label').t`Email`}
-                            </Radio>
-                            <Radio
-                                id="domain-mode"
-                                checked={mode === 'domain'}
-                                onChange={() => setMode('domain')}
-                                name="filterMode"
-                            >
-                                {c('Label').t`Domain`}
-                            </Radio>
-                        </Field>
-                    </Row>
-                )}
+                <Row>
+                    <Label id="descAddressType">{c('Label').t`Address type`}</Label>
+                    <Field>
+                        <Radio
+                            id="email-mode"
+                            checked={mode === 'email'}
+                            onChange={() => setMode('email')}
+                            className="mr-4"
+                            name="filterMode"
+                            aria-describedby="descAddressType"
+                        >
+                            {c('Label').t`Email`}
+                        </Radio>
+                        <Radio
+                            id="domain-mode"
+                            checked={mode === 'domain'}
+                            onChange={() => setMode('domain')}
+                            name="filterMode"
+                            aria-describedby="descAddressType"
+                        >
+                            {c('Label').t`Domain`}
+                        </Radio>
+                    </Field>
+                </Row>
                 <Row>
                     <Label htmlFor={`${mode}Input`}>
                         {mode === 'email' ? c('Label').t`Email` : c('Label').t`Domain`}
