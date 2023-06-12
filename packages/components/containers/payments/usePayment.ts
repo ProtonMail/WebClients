@@ -24,7 +24,7 @@ interface Props {
 }
 
 const usePayment = ({ amount, currency, onValidatePaypal, onPaypalPay, defaultMethod }: Props) => {
-    const { card, setCard, errors: cardErrors, isValid } = useCard();
+    const { card, setCard, errors: cardErrors, fieldsStatus: cardFieldStatus, isValid } = useCard();
     const [method, setMethod] = useState<PaymentMethodType | undefined>(defaultMethod);
     const [cardSubmitted, setCardSubmitted] = useState(false);
     const isPayPalActive = method === PAYPAL;
@@ -106,6 +106,7 @@ const usePayment = ({ amount, currency, onValidatePaypal, onPaypalPay, defaultMe
         setCard,
         handleCardSubmit,
         cardErrors: cardSubmitted ? cardErrors : {},
+        cardFieldStatus,
         method,
         setMethod,
         parameters: paymentParameters,
