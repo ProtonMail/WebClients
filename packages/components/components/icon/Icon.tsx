@@ -129,6 +129,7 @@ export type IconName =
     | 'code'
     | 'cog-wheel'
     | 'credit-card'
+    | 'credit-card-detailed'
     | 'cross'
     | 'cross-big'
     | 'cross-circle'

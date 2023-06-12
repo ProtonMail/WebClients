@@ -30,6 +30,24 @@ function getElementRect(target?: HTMLElement | null) {
 
 type RateLimiter = <A extends any[]>(func: (...args: A) => void) => ((...args: A) => void) & { cancel: () => void };
 
+/**
+ * It might be helpful if you have `ResizeObserver loop limit exceeded` error.
+ * The error can also manifest itself as `ResizeObserver loop completed with undelivered notifications.`
+ *
+ * Simply toss it as the second argument:
+ *
+ * ```typescript
+ *
+ * const elementRect = useElementRect(ref, requestAnimationFrameRateLimiter);
+ *
+ * ```
+ */
+export const requestAnimationFrameRateLimiter: RateLimiter = <A extends any[]>(func: (...args: A) => void) => {
+    const cb = (...args: A) => requestAnimationFrame(() => func(...args));
+    cb.cancel = noop;
+    return cb;
+};
+
 export const equivalentReducer = (oldRect?: DOMRect, newRect?: DOMRect) => {
     return isEquivalent(oldRect, newRect) ? oldRect : newRect;
 };
