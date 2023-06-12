@@ -22,7 +22,7 @@ const getBankSvg = (type = '') => {
     return banksMap[key]();
 };
 
-const isValidNumber = (v: string) => !v || isNumber(v);
+export const isValidNumber = (v: string) => !v || isNumber(v);
 
 const withGaps = (value = '', gaps: number[] = []) => {
     return [...value].reduce((acc, digit, index) => {
@@ -33,16 +33,27 @@ const withGaps = (value = '', gaps: number[] = []) => {
     }, '');
 };
 
+export const formatCreditCardNumber = (value: string) => {
+    const [firstCreditCardType] = creditCardType(value);
+    const { type = '', niceType = '', gaps = [], code } = firstCreditCardType || {};
+    const bankIcon = getBankSvg(type);
+    const valueWithGaps = gaps.length ? withGaps(value, gaps) : value;
+
+    return {
+        valueWithGaps,
+        bankIcon,
+        niceType,
+        codeName: code?.name ?? 'CVV',
+    };
+};
+
 interface Props extends Omit<InputProps, 'value' | 'onChange' | 'onValue'> {
     value: string;
     onChange: (value: string) => void;
 }
 
 const CardNumberInput = ({ value, onChange, ...rest }: Props) => {
-    const [firstCreditCardType] = creditCardType(value);
-    const { type = '', niceType = '', gaps = [] } = firstCreditCardType || {};
-    const bankIcon = getBankSvg(type);
-    const valueWithGaps = gaps.length ? withGaps(value, gaps) : value;
+    const { valueWithGaps, bankIcon, niceType } = formatCreditCardNumber(value);
 
     return (
         <Input

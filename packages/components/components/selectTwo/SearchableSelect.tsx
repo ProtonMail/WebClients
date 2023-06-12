@@ -18,6 +18,7 @@ export interface Props<V> extends SelectProps<V> {
     search?: boolean | ((option: OptionProps<V>, keyword?: string) => void);
     searchPlaceholder?: string;
     noSearchResults?: ReactNode;
+    unstyled?: boolean;
 }
 
 const SearchableSelect = <V extends any>({
