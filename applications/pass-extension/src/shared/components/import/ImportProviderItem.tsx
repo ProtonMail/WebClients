@@ -14,7 +14,7 @@ export const ImportProviderItem: VFC<{
         <ButtonLike
             onClick={onClick}
             shape="ghost"
-            className="flex flex-column flex-align-items-center rounded provider-item"
+            className="flex flex-column flex-align-items-center rounded pass-import-providers--item px-0 py-2"
         >
             <img
                 className="m-2"

@@ -39,7 +39,7 @@ export const ImportForm: VFC<Omit<ImportFormContext, 'reset' | 'result'>> = ({ f
 
             {!form.values.provider && (
                 <>
-                    <div className="providers-grid-container gap-3 mb-4">
+                    <div className="pass-import-providers--grid gap-3 mb-4">
                         {ImportProviderValues.map((provider) => (
                             <ImportProviderItem
                                 onClick={onSelectProvider(provider)}
@@ -91,10 +91,8 @@ export const ImportForm: VFC<Omit<ImportFormContext, 'reset' | 'result'>> = ({ f
                     <Dropzone onDrop={dropzone.onDrop} disabled={busy} border={false}>
                         <Bordered
                             className={clsx([
-                                'flex flex-columns flex-justify-center flex-align-items-center relative p-4 mb-4 rounded border-weak min-h-custom provider-upload-container',
-                                form.values.file
-                                    ? 'provider-upload-container--min-height-none'
-                                    : 'border-dashed provider-upload-container--min-height',
+                                'flex flex-columns flex-justify-center flex-align-items-center relative p-4 mb-4 rounded border-weak min-h-custom pass-import-upload',
+                                form.values.file ? 'pass-import-upload--has-file' : 'border-dashed',
                                 form.errors.file && 'border-danger',
                             ])}
                         >
