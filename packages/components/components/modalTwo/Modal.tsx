@@ -70,6 +70,10 @@ export interface ModalOwnProps {
      * Fires when the user clicks on the backdrop outside of the Dialog
      */
     onBackdropClick?: () => void;
+    /**
+     * Whether the modal should close when clicking outside of it.
+     */
+    enableCloseWhenClickOutside?: boolean;
 }
 
 enum ExitState {
@@ -93,6 +97,7 @@ const Modal = <E extends ElementType = typeof defaultElement>({
     onBackdropClick,
     onAnimationEnd,
     disableCloseOnEscape,
+    enableCloseWhenClickOutside,
     className,
     rootClassName,
     behind,
@@ -200,6 +205,11 @@ const Modal = <E extends ElementType = typeof defaultElement>({
                     if (exiting && animationName === 'anime-modal-two-out') {
                         setExit(ExitState.exited);
                         onExit?.();
+                    }
+                }}
+                onClick={(e) => {
+                    if (enableCloseWhenClickOutside && e.target === e.currentTarget) {
+                        onClose?.();
                     }
                 }}
             >

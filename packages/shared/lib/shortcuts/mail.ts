@@ -73,6 +73,10 @@ export const getShortcuts = () => {
                     name: c('Keyboard shortcut name').t`Select / unselect`,
                     keys: 'Space',
                 },
+                {
+                    name: c('Keyboard shortcut name').t`Open command panel`,
+                    keys: `${metaKey} + K`,
+                },
             ],
         },
         {
