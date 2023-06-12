@@ -1,14 +1,15 @@
-import { useEffect, useLayoutEffect } from 'react';
+import { useEffect, useLayoutEffect, useMemo } from 'react';
 
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
-import { updateTheme } from '@proton/shared/lib/api/settings';
+import { updateTheme, updateThemeType } from '@proton/shared/lib/api/settings';
 import { postMessageToIframe } from '@proton/shared/lib/drawer/helpers';
 import { DRAWER_APPS, DRAWER_EVENTS } from '@proton/shared/lib/drawer/interfaces';
 import { ThemeSetting, getDefaultThemeSetting } from '@proton/shared/lib/themes/themes';
 import debounce from '@proton/utils/debounce';
 import noop from '@proton/utils/noop';
 
-import { useApi, useDrawer, useUserSettings } from '../../hooks';
+import { FeatureCode } from '../../containers/features/FeaturesContext';
+import { useApi, useDrawer, useFeature, useUserSettings } from '../../hooks';
 import { useTheme } from './ThemeProvider';
 
 const ThemeInjector = () => {
@@ -16,14 +17,17 @@ const ThemeInjector = () => {
     const { addListener, settings, setThemeSetting } = useTheme();
     const api = useApi();
     const silentApi = getSilentApi(api);
+    const isAccessibilitySettingsEnabled =
+        useFeature<boolean>(FeatureCode.AccessibilitySettings)?.feature?.Value === true;
 
     const { iframeSrcMap } = useDrawer();
 
     const legacyThemeType = userSettings.ThemeType;
+    const legacyThemeSettings = useMemo(() => getDefaultThemeSetting(legacyThemeType), [legacyThemeType]);
     const themeSetting =
-        userSettings.Theme && 'Mode' in userSettings.Theme
+        isAccessibilitySettingsEnabled && userSettings.Theme && 'Mode' in userSettings.Theme
             ? userSettings.Theme
-            : getDefaultThemeSetting(legacyThemeType);
+            : legacyThemeSettings;
 
     useLayoutEffect(() => {
         setThemeSetting(themeSetting);
@@ -43,7 +47,11 @@ const ThemeInjector = () => {
 
     useEffect(() => {
         const cb = debounce((settings: ThemeSetting) => {
-            silentApi(updateTheme(settings)).catch(noop);
+            if (isAccessibilitySettingsEnabled) {
+                silentApi(updateTheme(settings)).catch(noop);
+            } else {
+                silentApi(updateThemeType(settings.LightTheme)).catch(noop);
+            }
         }, 500);
 
         const removeListener = addListener(cb);
