@@ -4,7 +4,7 @@ import { Route, Switch, useRouteMatch } from 'react-router-dom';
 import { PrivateMainSettingsArea, RetentionDaysSection } from '@proton/components';
 import { getSectionPath } from '@proton/components/containers/layout/helper';
 
-import { getDriveAppRoutes } from './routes';
+import type { getDriveAppRoutes } from './routes';
 
 const DriveSettingsRouter = ({
     driveAppRoutes,

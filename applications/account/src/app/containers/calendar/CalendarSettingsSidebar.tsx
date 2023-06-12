@@ -2,7 +2,7 @@ import { SettingsListItem, SidebarList, SidebarListItem } from '@proton/componen
 import { getIsSectionAvailable, getSectionPath } from '@proton/components/containers/layout/helper';
 
 import CalendarsSettingsSidebarList from './CalendarsSettingsSidebarList';
-import { getCalendarAppRoutes } from './routes';
+import type { getCalendarAppRoutes } from './routes';
 
 interface Props extends ReturnType<typeof getCalendarAppRoutes> {
     prefix: string;

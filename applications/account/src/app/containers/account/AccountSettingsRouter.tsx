@@ -41,7 +41,7 @@ import { InviteSection, ReferralInvitesContextProvider, RewardSection } from '@p
 import { APP_NAMES } from '@proton/shared/lib/constants';
 
 import { recoveryIds } from './recoveryIds';
-import { getAccountAppRoutes } from './routes';
+import type { getAccountAppRoutes } from './routes';
 
 const AccountSettingsRouter = ({
     redirect,
@@ -127,7 +127,7 @@ const AccountSettingsRouter = ({
             </Route>
             <Route path={getSectionPath(path, appearance)}>
                 <PrivateMainSettingsArea config={appearance}>
-                    <ThemesSection />
+                    <ThemesSection accessibilitySettingsAvailable={!!appearance.subsections[1]?.available} />
                     <AccessibilitySection />
                 </PrivateMainSettingsArea>
             </Route>
