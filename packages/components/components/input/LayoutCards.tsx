@@ -1,4 +1,5 @@
-import { classnames } from '../../helpers';
+import clsx from '@proton/utils/clsx';
+
 import LayoutCard, { LayoutCardProps } from './LayoutCard';
 
 interface Props {
@@ -10,7 +11,7 @@ interface Props {
 
 const LayoutCards = ({ list = [], className, liClassName, describedByID }: Props) => {
     return (
-        <ul className={classnames(['unstyled m-0 flex', className])}>
+        <ul className={clsx(['unstyled m-0 flex', className])}>
             {list.map(({ selected, label, src, onChange, disabled }, index) => {
                 return (
                     <li className={liClassName} key={label}>

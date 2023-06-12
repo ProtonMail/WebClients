@@ -1,11 +1,7 @@
 import { Dispatch, Fragment, SetStateAction, useEffect, useState } from 'react';
 
-
-
 import { format, isValid } from 'date-fns';
 import { c } from 'ttag';
-
-
 
 import { CryptoProxy, PublicKeyReference } from '@proton/crypto';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
@@ -14,15 +10,12 @@ import { dateLocale } from '@proton/shared/lib/i18n';
 import { ContactPublicKeyModel } from '@proton/shared/lib/interfaces';
 import { getFormattedAlgorithmNames } from '@proton/shared/lib/keys';
 import { getVerifyingKeys } from '@proton/shared/lib/keys/publicKeys';
+import clsx from '@proton/utils/clsx';
 import move from '@proton/utils/move';
 import uniqueBy from '@proton/utils/uniqueBy';
 
-
-
 import { Badge, ContactKeyWarningIcon, DropdownActions, Table, TableBody, TableRow } from '../../../components';
-import { classnames } from '../../../helpers';
 import useActiveBreakpoint from '../../../hooks/useActiveBreakpoint';
-
 
 interface Props {
     model: ContactPublicKeyModel;
@@ -170,7 +163,7 @@ const ContactKeysTable = ({ model, setModel }: Props) => {
                         .t`Status`}</th>
                     <th
                         scope="col"
-                        className={classnames(['text-ellipsis', isNarrow && 'w40'])}
+                        className={clsx(['text-ellipsis', isNarrow && 'w40'])}
                         title={c('Table header').t`Actions`}
                     >{c('Table header').t`Actions`}</th>
                 </tr>

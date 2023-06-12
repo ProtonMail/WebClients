@@ -5,8 +5,8 @@ import { c } from 'ttag';
 import { Vr } from '@proton/atoms';
 import { ErrorBoundary } from '@proton/components/containers';
 import { MailSettings } from '@proton/shared/lib/interfaces';
+import clsx from '@proton/utils/clsx';
 
-import { classnames } from '../../../helpers';
 import { useActiveBreakpoint } from '../../../hooks';
 import { ButtonGroup } from '../../button';
 import Icon from '../../icon/Icon';
@@ -47,7 +47,7 @@ const Toolbar = ({ config, metadata, mailSettings, openEmojiPickerRef, className
     }
 
     return (
-        <ButtonGroup className={classnames(['editor-toolbar overflow-hidden mb-2', className])}>
+        <ButtonGroup className={clsx(['editor-toolbar overflow-hidden mb-2', className])}>
             <ToolbarFontFaceDropdown
                 value={config.fontFace.value}
                 setValue={config.fontFace.setValue}
@@ -72,7 +72,7 @@ const Toolbar = ({ config, metadata, mailSettings, openEmojiPickerRef, className
                 <ToolbarButton
                     onClick={config.bold.toggle}
                     aria-pressed={config.bold.isActive}
-                    className={classnames(['flex-item-noshrink', config.bold.isActive && 'is-active'])}
+                    className={clsx(['flex-item-noshrink', config.bold.isActive && 'is-active'])}
                     title={c('Action').t`Bold`}
                     data-testid="editor-bold"
                 >
@@ -81,7 +81,7 @@ const Toolbar = ({ config, metadata, mailSettings, openEmojiPickerRef, className
                 <ToolbarButton
                     onClick={config.italic.toggle}
                     aria-pressed={config.italic.isActive}
-                    className={classnames(['flex-item-noshrink', config.italic.isActive && 'is-active'])}
+                    className={clsx(['flex-item-noshrink', config.italic.isActive && 'is-active'])}
                     title={c('Action').t`Italic`}
                     data-testid="editor-italic"
                 >
@@ -90,7 +90,7 @@ const Toolbar = ({ config, metadata, mailSettings, openEmojiPickerRef, className
                 <ToolbarButton
                     onClick={config.underline.toggle}
                     aria-pressed={config.underline.isActive}
-                    className={classnames(['flex-item-noshrink', config.underline.isActive && 'is-active'])}
+                    className={clsx(['flex-item-noshrink', config.underline.isActive && 'is-active'])}
                     title={c('Action').t`Underline`}
                     data-testid="editor-underline"
                 >
@@ -102,16 +102,20 @@ const Toolbar = ({ config, metadata, mailSettings, openEmojiPickerRef, className
                     <ToolbarButton
                         onClick={config.unorderedList.toggle}
                         aria-pressed={config.unorderedList.isActive}
-                        className={classnames(['flex-item-noshrink', config.unorderedList.isActive && 'is-active'])}
+                        className={clsx(['flex-item-noshrink', config.unorderedList.isActive && 'is-active'])}
                         title={c('Action').t`Unordered list`}
                         data-testid="editor-unordered-list"
                     >
-                        <Icon name="list-bullets" className="m-auto on-rtl-mirror" alt={c('Action').t`Unordered list`} />
+                        <Icon
+                            name="list-bullets"
+                            className="m-auto on-rtl-mirror"
+                            alt={c('Action').t`Unordered list`}
+                        />
                     </ToolbarButton>
                     <ToolbarButton
                         onClick={config.orderedList.toggle}
                         aria-pressed={config.orderedList.isActive}
-                        className={classnames(['flex-item-noshrink', config.orderedList.isActive && 'is-active'])}
+                        className={clsx(['flex-item-noshrink', config.orderedList.isActive && 'is-active'])}
                         title={c('Action').t`Ordered list`}
                         data-testid="editor-ordered-list"
                     >
@@ -132,7 +136,7 @@ const Toolbar = ({ config, metadata, mailSettings, openEmojiPickerRef, className
                     <ToolbarButton
                         onClick={config.blockquote.toggle}
                         aria-pressed={config.blockquote.isActive}
-                        className={classnames(['flex-item-noshrink', config.blockquote.isActive && 'is-active'])}
+                        className={clsx(['flex-item-noshrink', config.blockquote.isActive && 'is-active'])}
                         title={c('Action').t`Quote`}
                         data-testid="editor-quote"
                     >

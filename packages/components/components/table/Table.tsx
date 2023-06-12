@@ -1,6 +1,6 @@
 import { DetailedHTMLProps, ReactNode, TableHTMLAttributes } from 'react';
 
-import { classnames } from '../../helpers';
+import clsx from '@proton/utils/clsx';
 
 interface Props extends DetailedHTMLProps<TableHTMLAttributes<HTMLTableElement>, HTMLTableElement> {
     children: ReactNode;
@@ -13,7 +13,7 @@ interface Props extends DetailedHTMLProps<TableHTMLAttributes<HTMLTableElement>,
 const Table = ({ children, responsive, className, hasActions, caption, ...props }: Props) => {
     return (
         <table
-            className={classnames([
+            className={clsx([
                 'simple-table',
                 responsive === 'cards' && 'simple-table--responsive simple-table--responsive-cards',
                 responsive === 'stacked' && 'simple-table--responsive simple-table--responsive-stacked',

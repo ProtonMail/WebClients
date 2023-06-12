@@ -5,9 +5,9 @@ import { c } from 'ttag';
 import { PAYMENT_METHOD_TYPES, PaymentMethodStatus, PaymentMethodType } from '@proton/components/payments/core';
 import { DEFAULT_CURRENCY, MIN_CREDIT_AMOUNT, MIN_DONATION_AMOUNT } from '@proton/shared/lib/constants';
 import { Currency } from '@proton/shared/lib/interfaces';
+import clsx from '@proton/utils/clsx';
 
 import { Alert, Loader, Price } from '../../components';
-import { classnames } from '../../helpers';
 import { CardModel } from '../../payments/core/interface';
 import { useMethods } from '../paymentMethods';
 import PaymentMethodDetails from '../paymentMethods/PaymentMethodDetails';
@@ -113,12 +113,7 @@ const Payment = ({
 
     return (
         <>
-            <div
-                className={classnames([
-                    'payment-container center',
-                    noMaxWidth === false && 'max-w37e on-mobile-max-w100 ',
-                ])}
-            >
+            <div className={clsx(['payment-container center', noMaxWidth === false && 'max-w37e on-mobile-max-w100 '])}>
                 <div>
                     <h2 className="text-rg text-bold mb-1" data-testid="payment-label">{c('Label')
                         .t`Payment method`}</h2>

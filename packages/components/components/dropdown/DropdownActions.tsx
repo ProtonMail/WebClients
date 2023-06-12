@@ -3,8 +3,8 @@ import { MouseEvent, ReactNode } from 'react';
 import { c } from 'ttag';
 
 import { Button, ButtonProps } from '@proton/atoms';
+import clsx from '@proton/utils/clsx';
 
-import { classnames } from '../../helpers';
 import ButtonGroup from '../button/ButtonGroup';
 import { Info } from '../link';
 import DropdownMenu from './DropdownMenu';
@@ -83,7 +83,7 @@ const DropdownActions = ({
                 originalPlacement="bottom-end"
                 disabled={disabled}
                 loading={loading}
-                className={classnames(['flex-item-noshrink', className])}
+                className={clsx(['flex-item-noshrink', className])}
                 title={c('Title').t`Open actions dropdown`}
                 data-testid="dropdownActions:dropdown"
             >

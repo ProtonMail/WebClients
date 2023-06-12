@@ -1,11 +1,11 @@
 import { ComponentPropsWithoutRef } from 'react';
 
-import { classnames } from '../../helpers';
+import clsx from '@proton/utils/clsx';
 
 import './SettingsLayoutRight.scss';
 
 const SettingsLayoutRight = ({ className, ...rest }: ComponentPropsWithoutRef<'div'>) => {
-    return <div className={classnames(['settings-layout-right', className])} {...rest} />;
+    return <div className={clsx(['settings-layout-right', className])} {...rest} />;
 };
 
 export default SettingsLayoutRight;

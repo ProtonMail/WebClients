@@ -1,8 +1,7 @@
 import { FormEvent, ReactNode } from 'react';
 
+import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
-
-import { classnames } from '../../helpers';
 
 interface Props {
     children: ReactNode;
@@ -35,7 +34,7 @@ const Content = ({
             onSubmit={handleSubmit}
             onReset={onReset}
             autoComplete={autoComplete}
-            className={classnames(['modal-content', className])}
+            className={clsx(['modal-content', className])}
             noValidate={noValidate}
             method="post"
             {...rest}

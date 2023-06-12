@@ -2,7 +2,8 @@ import { MouseEvent, Ref, memo, useRef, useState } from 'react';
 
 import { isAfter, isBefore, isSameDay, isSameMonth, isWithinInterval } from 'date-fns';
 
-import { classnames } from '../../helpers';
+import clsx from '@proton/utils/clsx';
+
 import { DateTuple } from './index.d';
 
 const getTargetDate = (target: any, days: Date[]) => {
@@ -134,7 +135,7 @@ const MonthDays = ({
                     (isInterval && rangeEnd && isSameDay(rangeEnd, dayDate)) ||
                     (!rangeEnd && isIntervalBoundStart);
 
-                const className = classnames([
+                const className = clsx([
                     'minicalendar-day no-pointer-events-children',
                     !isActiveMonth && 'minicalendar-day--out-of-month',
                     isInterval && 'minicalendar-day--range',

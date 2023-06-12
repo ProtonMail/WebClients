@@ -6,7 +6,7 @@ import {
     usePopperAnchor,
 } from '@proton/components/components';
 import { SelectedDrawerOption } from '@proton/components/components/drawer/views/DrawerView';
-import { classnames } from '@proton/components/helpers';
+import clsx from '@proton/utils/clsx';
 
 interface Props {
     title: string;
@@ -27,7 +27,7 @@ const DrawerHeaderTitleDropdown = ({ title, options, onClickOption }: Props) => 
                 hasCaret
                 shape="ghost"
                 size="small"
-                className={classnames(['drawer-header-button'])}
+                className={clsx(['drawer-header-button'])}
                 data-testid="drawer-app-header-actions:dropdown"
             >
                 {title}

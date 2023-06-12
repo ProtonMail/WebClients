@@ -15,9 +15,10 @@ import { isFocusable } from 'tabbable';
 
 import { Input } from '@proton/atoms';
 import useInstance from '@proton/hooks/useInstance';
+import clsx from '@proton/utils/clsx';
 
 import { FormContext } from '../../../components';
-import { classnames, generateUID } from '../../../helpers';
+import { generateUID } from '../../../helpers';
 import Icon from '../../icon/Icon';
 import { Tooltip } from '../../tooltip';
 
@@ -86,7 +87,7 @@ const InputFieldBase = <E extends ElementType = typeof defaultElement>(
     const labelRef = useRef<HTMLLabelElement>(null);
     const isDense = denseProp || dense;
     const classes = {
-        root: classnames([
+        root: clsx([
             'field-two-container',
             isDense && 'field-two--dense',
             disabled && 'field-two--disabled',
@@ -95,12 +96,12 @@ const InputFieldBase = <E extends ElementType = typeof defaultElement>(
             bigger && 'field-two--bigger',
             rootClassName,
         ]),
-        labelContainer: classnames([
+        labelContainer: clsx([
             'field-two-label-container flex flex-justify-space-between flex-nowrap flex-align-items-end gap-2',
             labelContainerClassName,
         ]),
-        inputContainer: classnames(['field-two-input-container relative', inputContainerClassName]),
-        assistContainer: classnames([
+        inputContainer: clsx(['field-two-input-container relative', inputContainerClassName]),
+        assistContainer: clsx([
             'field-two-assist flex flex-nowrap flex-align-items-start',
             isDense && 'sr-only',
             assistContainerClassName,

@@ -3,9 +3,9 @@ import { memo } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import clsx from '@proton/utils/clsx';
 import range from '@proton/utils/range';
 
-import { classnames } from '../../helpers';
 import { ButtonGroup } from '../button';
 import { Icon } from '../icon';
 import { Tooltip } from '../tooltip';
@@ -71,7 +71,7 @@ const PaginationRow = ({
                     <Tooltip key={pageNumber} title={goToPageTitle(pageNumber)}>
                         <Button
                             aria-current={isActive}
-                            className={classnames([isActive && 'text-bold', isActive && 'no-pointer-events'])}
+                            className={clsx([isActive && 'text-bold', isActive && 'no-pointer-events'])}
                             disabled={disabled}
                             onClick={() => onPage(pageNumber)}
                             data-testid={`pagination-row:go-to-page-${pageNumber}`}

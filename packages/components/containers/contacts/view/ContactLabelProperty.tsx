@@ -1,8 +1,7 @@
 import { HTMLAttributes } from 'react';
 
 import { getAllFieldLabels } from '@proton/shared/lib/helpers/contacts';
-
-import { classnames } from '../../../helpers';
+import clsx from '@proton/utils/clsx';
 
 interface Props extends HTMLAttributes<HTMLDivElement> {
     field: string;
@@ -14,7 +13,7 @@ const ContactLabelProperty = ({ field, type, className, ...rest }: Props) => {
     const label: string = labels[type || ''] || type || labels[field];
 
     return (
-        <div className={classnames(['text-capitalize text-semibold text-ellipsis', className])} {...rest} title={label}>
+        <div className={clsx(['text-capitalize text-semibold text-ellipsis', className])} {...rest} title={label}>
             {label}
         </div>
     );

@@ -2,8 +2,8 @@ import { ElementType, ReactElement, forwardRef } from 'react';
 import { PolymorphicPropsWithRef } from 'react-polymorphic-types';
 
 import { Button, CircleLoader } from '@proton/atoms';
+import clsx from '@proton/utils/clsx';
 
-import { classnames } from '../../helpers';
 import DropdownCaret from './DropdownCaret';
 
 interface OwnProps {
@@ -39,7 +39,7 @@ const DropdownButtonBase = <E extends ElementType = typeof defaultElement>(
             aria-busy={loading}
             disabled={loading ? true : disabled}
             data-testid="dropdown-button"
-            className={classnames([children && hasCaret && 'flex flex-align-items-center flex-nowrap', className])}
+            className={clsx([children && hasCaret && 'flex flex-align-items-center flex-nowrap', className])}
             {...rest}
         >
             {children}
@@ -50,7 +50,7 @@ const DropdownButtonBase = <E extends ElementType = typeof defaultElement>(
             )}
             {hasCaret && (
                 <DropdownCaret
-                    className={classnames(['flex-item-noshrink', children ? 'ml-2' : '', caretClassName])}
+                    className={clsx(['flex-item-noshrink', children ? 'ml-2' : '', caretClassName])}
                     isOpen={isOpen}
                 />
             )}

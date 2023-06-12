@@ -2,9 +2,9 @@ import { ElementType, ForwardedRef, ReactElement, forwardRef, useContext } from 
 
 import { ButtonLike, ButtonLikeProps } from '@proton/atoms';
 import NotificationContext from '@proton/components/containers/notifications/notificationContext';
+import clsx from '@proton/utils/clsx';
 
 import Icon from '../../components/icon/Icon';
-import { classnames } from '../../helpers';
 
 interface NotificationOwnProps {
     close?: boolean;
@@ -30,7 +30,7 @@ const NotificationButtonBase = <E extends ElementType = typeof defaultElement>(
             shape={positive ? 'ghost' : 'solid'}
             color={positive ? 'weak' : 'danger'}
             size="small"
-            className={classnames(['notification__button text-bold', close && 'notification__close-button', className])}
+            className={clsx(['notification__button text-bold', close && 'notification__close-button', className])}
             data-testid="notification:undo-button"
         />
     );

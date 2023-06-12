@@ -1,6 +1,6 @@
 import { HTMLAttributes, ReactNode, Ref, forwardRef } from 'react';
 
-import { classnames } from '../../helpers';
+import clsx from '@proton/utils/clsx';
 
 interface Props extends HTMLAttributes<HTMLDivElement> {
     className?: string;
@@ -15,7 +15,7 @@ const PrivateMainAreaBase = (
 ) => {
     return (
         <main
-            className={classnames([
+            className={clsx([
                 hasToolbar ? 'main-area--with-toolbar' : 'main-area',
                 hasRowMode ? 'main-area--row-mode' : '',
                 'flex-item-fluid-auto relative',
