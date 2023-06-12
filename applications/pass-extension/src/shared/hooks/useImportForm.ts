@@ -9,7 +9,7 @@ import { c } from 'ttag';
 import type { Dropzone, FileInput } from '@proton/components/components';
 import { useNotifications } from '@proton/components/hooks';
 import type { ImportPayload, ImportReaderPayload } from '@proton/pass/import';
-import { ImportProvider, ImportProviderValues, extractFileExtension, fileReader } from '@proton/pass/import';
+import { ImportProvider, extractFileExtension, fileReader } from '@proton/pass/import';
 import type { ImportState } from '@proton/pass/store';
 import { importItemsIntent, selectLatestImport, selectUser } from '@proton/pass/store';
 import { importItems } from '@proton/pass/store/actions/requests';
@@ -25,7 +25,7 @@ import { useRequestStatusEffect } from './useRequestStatusEffect';
 type DropzoneProps = ComponentProps<typeof Dropzone>;
 type FileInputProps = ComponentProps<typeof FileInput>;
 
-export type ImportFormValues = { file: Maybe<File>; provider: ImportProvider; passphrase?: string };
+export type ImportFormValues = { file: Maybe<File>; provider: Maybe<ImportProvider>; passphrase?: string };
 
 export type ImportFormContext = {
     form: FormikContextType<ImportFormValues>;
@@ -58,7 +58,7 @@ const createFileValidator = (allow: string[]) =>
 
 const getInitialFormValues = (): ImportFormValues => ({
     file: undefined,
-    provider: ImportProviderValues[0],
+    provider: undefined,
     passphrase: '',
 });
 
@@ -66,7 +66,7 @@ const validateImportForm = ({ provider, file, passphrase }: ImportFormValues): F
     const errors: FormikErrors<ImportFormValues> = {};
 
     if (provider === undefined) {
-        errors.provider = c('Warning').t`No provider selected`;
+        errors.provider = c('Warning').t`No password manager selected`;
     }
 
     if (file === undefined) {
@@ -108,6 +108,9 @@ export const useImportForm = ({
         onSubmit: async (values) => {
             try {
                 setBusy(true);
+
+                if (!values.provider) return setBusy(false);
+
                 const payload: ImportReaderPayload = {
                     file: values.file!,
                     provider: values.provider,
