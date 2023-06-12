@@ -576,7 +576,16 @@ describe('SubscriptionsSection', () => {
                     Currency: 'CHF',
                     Amount: 499,
                     Quantity: 1,
-                    Pricing: null as any,
+                    Pricing: {
+                        '1': 499,
+                        '12': 4788,
+                        '24': 7188,
+                    },
+                    DefaultPricing: {
+                        '1': 499,
+                        '12': 4788,
+                        '24': 7188,
+                    },
                     Offers: [],
                 },
             ],

@@ -56,6 +56,11 @@ beforeEach(() => {
             [CYCLE.YEARLY]: 123,
             [CYCLE.TWO_YEARS]: 123,
         },
+        DefaultPricing: {
+            [CYCLE.MONTHLY]: 123,
+            [CYCLE.YEARLY]: 123,
+            [CYCLE.TWO_YEARS]: 123,
+        },
         State: 123,
         Offers: [],
     };
@@ -200,7 +205,7 @@ describe('getPricingFromPlanIDs', () => {
     it('returns the correct pricing for a single plan ID', () => {
         const planIDs: PlanIDs = { pass2023: 1 };
         const plansMap: PlansMap = {
-            pass2023: {
+            [PLANS.PASS_PLUS]: {
                 ID: 'id123',
                 Type: 1,
                 Name: PLANS.PASS_PLUS,
@@ -218,6 +223,11 @@ describe('getPricingFromPlanIDs', () => {
                 Pricing: {
                     '1': 499,
                     '12': 1200,
+                    '24': 7176,
+                },
+                DefaultPricing: {
+                    '1': 499,
+                    '12': 4788,
                     '24': 7176,
                 },
                 Currency: 'CHF',
@@ -248,6 +258,13 @@ describe('getPricingFromPlanIDs', () => {
             plans: {
                 '1': 499,
                 '12': 1200,
+                '15': 0,
+                '24': 7176,
+                '30': 0,
+            },
+            plansWithoutDiscount: {
+                '1': 499,
+                '12': 4788,
                 '15': 0,
                 '24': 7176,
                 '30': 0,
