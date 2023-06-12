@@ -62,8 +62,13 @@
 .card-number--small,
 .exp--small,
 .cvv--small {
-	&:focus-within {
+	&.error {
 		z-index: $layer-upper;
+	}
+
+	&:focus-within {
+		// we want the focus frame to be displayed over error frame
+		z-index: $layer-upper + 1;
 	}
 }
 
