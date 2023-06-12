@@ -2,8 +2,6 @@ import { ComponentPropsWithoutRef, ReactNode, forwardRef } from 'react';
 
 import { c } from 'ttag';
 
-import { PROTON_THEMES_MAP } from '@proton/shared/lib/themes/themes';
-
 import { AppLink, DropdownMenu, DropdownMenuButton, DropdownMenuLink, Icon } from '../../components';
 import SimpleDropdown from '../../components/dropdown/SimpleDropdown';
 import TopNavbarListItemButton, {
@@ -41,7 +39,7 @@ interface Props extends ComponentPropsWithoutRef<typeof AppLink> {
 const TopNavbarListItemSettingsDropdown = (props: Props) => {
     const { createModal } = useModals();
     const earlyAccess = useEarlyAccess();
-    const [theme] = useTheme();
+    const theme = useTheme();
 
     const handleEarlyAccessClick = () => {
         createModal(<EarlyAccessModal />);
@@ -82,7 +80,7 @@ const TopNavbarListItemSettingsDropdown = (props: Props) => {
                     className="flex flex-nowrap flex-justify-space-between flex-align-items-center"
                 >
                     <span className="flex-item-fluid text-left">{c('Action').t`Theme`}</span>
-                    <span className="color-primary ml-2">{PROTON_THEMES_MAP[theme].label}</span>
+                    <span className="color-primary ml-2">{theme.information.label}</span>
                 </DropdownMenuButton>
                 {children}
             </DropdownMenu>

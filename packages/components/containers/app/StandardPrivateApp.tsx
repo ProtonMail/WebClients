@@ -41,7 +41,7 @@ import ForceRefreshProvider from '../forceRefresh/Provider';
 import { KeyTransparencyManager } from '../keyTransparency';
 import { DensityInjector } from '../layouts';
 import { ModalsChildren } from '../modals';
-import ThemeSettingProvider from '../themes/ThemeSettingProvider';
+import ThemeInjector from '../themes/ThemeInjector';
 import DelinquentContainer from './DelinquentContainer';
 import KeyBackgroundManager from './KeyBackgroundManager';
 import StandardLoadErrorPage from './StandardLoadErrorPage';
@@ -222,23 +222,22 @@ const StandardPrivateApp = <T, M extends Model<T>, E, EvtM extends Model<E>>({
         <EventManagerProvider eventManager={eventManagerRef.current}>
             <CalendarModelEventManagerProvider>
                 <ContactProvider>
-                    <ThemeSettingProvider>
-                        <KeyTransparencyManager APP_NAME={APP_NAME}>
-                            <EventModelListener models={eventModels} />
-                            <EventNotices />
-                            <DensityInjector />
-                            {!noModals && <ModalsChildren />}
-                            <KeyBackgroundManager
-                                hasPrivateMemberKeyGeneration={hasPrivateMemberKeyGeneration}
-                                hasReadableMemberKeyActivation={hasReadableMemberKeyActivation}
-                                hasMemberKeyMigration={hasMemberKeyMigration}
-                            />
-                            <StorageListener />
-                            <ForceRefreshProvider>
-                                <LoadedApp />
-                            </ForceRefreshProvider>
-                        </KeyTransparencyManager>
-                    </ThemeSettingProvider>
+                    <KeyTransparencyManager APP_NAME={APP_NAME}>
+                        <EventModelListener models={eventModels} />
+                        <EventNotices />
+                        <ThemeInjector />
+                        <DensityInjector />
+                        {!noModals && <ModalsChildren />}
+                        <KeyBackgroundManager
+                            hasPrivateMemberKeyGeneration={hasPrivateMemberKeyGeneration}
+                            hasReadableMemberKeyActivation={hasReadableMemberKeyActivation}
+                            hasMemberKeyMigration={hasMemberKeyMigration}
+                        />
+                        <StorageListener />
+                        <ForceRefreshProvider>
+                            <LoadedApp />
+                        </ForceRefreshProvider>
+                    </KeyTransparencyManager>
                 </ContactProvider>
             </CalendarModelEventManagerProvider>
         </EventManagerProvider>
