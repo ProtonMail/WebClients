@@ -1,5 +1,6 @@
 import { SenderImageMode, getLogo } from '@proton/shared/lib/api/images';
 import { createUrl } from '@proton/shared/lib/fetch/helpers';
+import { rootFontSize } from '@proton/shared/lib/helpers/dom';
 
 export const getImageSize = () => {
     if (window.devicePixelRatio >= 4) {
@@ -15,9 +16,8 @@ export const getImageSize = () => {
     (via browser settings or accessibility settings)
     then increase the image definition
     */
-    const html = document.querySelector('html') as Element;
-    const fontSize = window.getComputedStyle(html).getPropertyValue('font-size');
-    if (parseFloat(fontSize) > 16) {
+    const fontSize = rootFontSize();
+    if (fontSize > 16) {
         return 64;
     }
 

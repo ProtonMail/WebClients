@@ -96,6 +96,7 @@ export enum FeatureCode {
     PassPlusPlan = 'PassPlusPlan',
     OrgSpamBlockList = 'OrgSpamBlockList',
     ProtonSentinel = 'ProtonSentinel',
+    AccessibilitySettings = 'AccessibilitySettings',
 }
 
 export interface FeaturesContextValue {
