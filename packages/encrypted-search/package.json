@@ -15,7 +15,8 @@
         "@proton/crypto": "workspace:packages/crypto",
         "@proton/shared": "workspace:packages/shared",
         "@proton/utils": "workspace:packages/utils",
-        "idb": "^7.1.1"
+        "idb": "^7.1.1",
+        "react": "^17.0.2"
     },
     "devDependencies": {
         "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton",
