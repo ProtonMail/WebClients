@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { Input } from '@proton/atoms';
 import { SelectChangeEvent } from '@proton/components/components/selectTwo/select';
 import { requestAnimationFrameRateLimiter } from '@proton/components/hooks/useElementRect';
+import clsx from '@proton/utils/clsx';
 
 import { Icon, Label, Option, SelectTwo } from '../../components';
 import { DEFAULT_SEPARATOR, getFullList } from '../../helpers/countries';
@@ -22,6 +23,7 @@ interface Props {
     card: CardModel;
     errors: Partial<CardModel>;
     fieldStatus?: CardFieldStatus;
+    bigger?: boolean;
 }
 
 /**
@@ -42,7 +44,7 @@ const useAdvancer = (
     }, [currentFieldState, condition]);
 };
 
-const CreditCardNewDesign = ({ card, errors, onChange, loading = false, fieldStatus }: Props) => {
+const CreditCardNewDesign = ({ card, errors, onChange, loading = false, fieldStatus, bigger = false }: Props) => {
     const narrowNumberRef = useRef<HTMLInputElement>(null);
     const narrowExpRef = useRef<HTMLInputElement>(null);
     const narrowCvcRef = useRef<HTMLInputElement>(null);
@@ -115,11 +117,23 @@ const CreditCardNewDesign = ({ card, errors, onChange, loading = false, fieldSta
 
     let error = null;
     if (errors.number) {
-        error = <span data-testid="error-ccnumber">{errors.number}</span>;
+        error = (
+            <span data-testid="error-ccnumber" id="error-ccnumber">
+                {errors.number}
+            </span>
+        );
     } else if (errors.month) {
-        error = <span data-testid="error-exp">{errors.month}</span>;
+        error = (
+            <span data-testid="error-exp" id="error-exp">
+                {errors.month}
+            </span>
+        );
     } else if (errors.cvc) {
-        error = <span data-testid="error-cvc">{errors.cvc}</span>;
+        error = (
+            <span data-testid="error-cvc" id="error-cvc">
+                {errors.cvc}
+            </span>
+        );
     }
 
     let creditCardForm;
@@ -130,10 +144,12 @@ const CreditCardNewDesign = ({ card, errors, onChange, loading = false, fieldSta
                     htmlFor={commonNumberProps.id}
                     className="field-two-label field-two-label-container flex pt-3"
                 >{c('Label').t`Card information`}</Label>
+                <span id="id_desc_card_number" className="sr-only">{c('Label').t`Card number`}</span>
                 <Input
                     className="card-number--small"
                     inputClassName="px-3"
                     placeholder={c('Label').t`Card number`}
+                    aria-describedby="id_desc_card_number error-ccnumber"
                     value={valueWithGaps}
                     error={errors.number}
                     onChange={({ target }) => {
@@ -153,9 +169,12 @@ const CreditCardNewDesign = ({ card, errors, onChange, loading = false, fieldSta
                     {...commonNumberProps}
                 />
                 <div className="flex">
+                    <Label htmlFor={commonExpProps.id} className="sr-only">{c('Label')
+                        .t`Expiration (${patternExpiration})`}</Label>
                     <Input
                         inputClassName="px-3"
                         className="exp exp--small"
+                        aria-describedby="error-exp"
                         value={`${month}${month.length === 2 || year.length ? '/' : ''}${year}`}
                         error={errors.month}
                         onChange={({ target }) => {
@@ -168,10 +187,13 @@ const CreditCardNewDesign = ({ card, errors, onChange, loading = false, fieldSta
                         ref={narrowExpRef}
                         {...commonExpProps}
                     />
+                    <Label htmlFor={commonCvcProps.id} className="sr-only">{c('Label')
+                        .t`Security code (${codeName})`}</Label>
                     <Input
                         placeholder={codeName}
                         inputClassName="px-3"
                         className="cvv cvv--small"
+                        aria-describedby="error-cvc"
                         ref={narrowCvcRef}
                         error={errors.cvc}
                         {...commonCvcProps}
@@ -186,12 +208,14 @@ const CreditCardNewDesign = ({ card, errors, onChange, loading = false, fieldSta
                     htmlFor={commonNumberProps.id}
                     className="field-two-label field-two-label-container flex pt-3"
                 >{c('Label').t`Card information`}</Label>
+                <span id="id_desc_card_number" className="sr-only">{c('Label').t`Card number`}</span>
                 <Input
                     className="card-information"
                     inputClassName="card-number"
                     placeholder={c('Label').t`Card number`}
                     value={valueWithGaps}
                     error={error}
+                    aria-describedby="id_desc_card_number error-ccnumber"
                     onChange={({ target }) => {
                         const val = target.value.replace(/\s/g, '');
                         if (isValidNumber(val)) {
@@ -210,10 +234,13 @@ const CreditCardNewDesign = ({ card, errors, onChange, loading = false, fieldSta
                     }
                     suffix={
                         <div className="flex mx-0">
+                            <Label htmlFor={commonExpProps.id} className="sr-only">{c('Label')
+                                .t`Expiration (${patternExpiration})`}</Label>
                             <Input
                                 unstyled
                                 inputClassName="mr-3 py-0.5 px-3 border-left border-right"
                                 className="exp"
+                                aria-describedby="error-exp"
                                 value={`${month}${month.length === 2 || year.length ? '/' : ''}${year}`}
                                 onChange={({ target }) => {
                                     const change = handleExpOnChange(target.value, month, year);
@@ -225,9 +252,13 @@ const CreditCardNewDesign = ({ card, errors, onChange, loading = false, fieldSta
                                 ref={wideExpRef}
                                 {...commonExpProps}
                             />
+
+                            <Label htmlFor={commonCvcProps.id} className="sr-only">{c('Label')
+                                .t`Security code (${codeName})`}</Label>
                             <Input
                                 unstyled
                                 placeholder={codeName}
+                                aria-describedby="error-cvc"
                                 inputClassName="p-0"
                                 className="cvv"
                                 ref={wideCvcRef}
@@ -242,7 +273,7 @@ const CreditCardNewDesign = ({ card, errors, onChange, loading = false, fieldSta
     }
 
     return (
-        <div ref={formContainer}>
+        <div ref={formContainer} className={clsx(['field-two-container', bigger && 'field-two--bigger'])}>
             {creditCardForm}
             <div className="error-container mt-1 text-semibold text-sm flex gap-2">
                 {error && (
@@ -252,9 +283,8 @@ const CreditCardNewDesign = ({ card, errors, onChange, loading = false, fieldSta
                     </div>
                 )}
             </div>
-            <Label htmlFor={commonNumberProps.id} className="field-two-label field-two-label-container flex pt-1">{c(
-                'Label'
-            ).t`Country`}</Label>
+            <Label htmlFor="postalcode" className="field-two-label field-two-label-container flex pt-1">{c('Label')
+                .t`Country`}</Label>
             <Input
                 placeholder={title}
                 className="country-select flex-justify-space-between divide-x"
@@ -293,12 +323,16 @@ const CreditCardNewDesign = ({ card, errors, onChange, loading = false, fieldSta
                 maxLength={9}
                 autoComplete="postal-code"
                 id="postalcode"
+                aria-describedby="id_desc_postal"
                 value={card.zip}
                 onChange={handleChange('zip')}
                 disableChange={loading}
                 title={title}
                 error={errors.zip}
             />
+            <span className="sr-only" id="id_desc_postal">
+                {title}
+            </span>
             <div className="error-container mt-1 mb-3 text-semibold text-sm flex">
                 {errors.zip && (
                     <>
