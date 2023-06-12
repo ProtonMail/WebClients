@@ -7,17 +7,13 @@ import { Button } from '@proton/atoms/Button';
 import { Card } from '@proton/atoms/Card';
 import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, useNotifications } from '@proton/components';
 import type { ImportPayload } from '@proton/pass/import';
+import { PROVIDER_INFO_MAP } from '@proton/pass/import';
 import * as requests from '@proton/pass/store/actions/requests';
 import type { MaybeNull } from '@proton/pass/types';
 import { pipe, tap } from '@proton/pass/utils/fp';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
-import {
-    ImportForm,
-    ImportVaultsPicker,
-    type ImportVaultsPickerHandle,
-    PROVIDER_INFO_MAP,
-} from '../../../shared/components/import';
+import { ImportForm, ImportVaultsPicker, type ImportVaultsPickerHandle } from '../../../shared/components/import';
 import { ImportProgress } from '../../../shared/components/import/ImportProgress';
 import {
     type UseImportFormBeforeSubmit,
