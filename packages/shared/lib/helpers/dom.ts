@@ -81,11 +81,14 @@ export const getScrollParent = (element: HTMLElement | null | undefined, include
  * value is dynamic
  */
 let rootFontSizeCache: number | undefined = undefined;
-export const rootFontSize = () => {
-    if (!rootFontSizeCache) {
-        rootFontSizeCache = parseFloat(
-            window.getComputedStyle(document.querySelector('html') as Element).getPropertyValue('font-size')
-        );
+
+const getRootFontSize = () => {
+    return parseFloat(window.getComputedStyle(document.querySelector('html') as Element).getPropertyValue('font-size'));
+};
+
+export const rootFontSize = (reset?: boolean) => {
+    if (rootFontSizeCache === undefined || reset === true) {
+        rootFontSizeCache = getRootFontSize();
     }
     return rootFontSizeCache;
 };
