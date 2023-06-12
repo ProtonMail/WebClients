@@ -2,6 +2,8 @@ import {
     AnimationEvent,
     CSSProperties,
     Children,
+    MouseEventHandler,
+    PropsWithChildren,
     ReactElement,
     ReactNode,
     RefObject,
@@ -29,12 +31,11 @@ import Portal from '../portal/Portal';
 type SpotlightType = 'discover' | 'new';
 
 export interface SpotlightProps {
-    children: ReactElement;
     show: boolean;
     content: ReactNode;
     type?: SpotlightType;
     onDisplayed?: () => void;
-    onClose?: () => void;
+    onClose?: MouseEventHandler;
     originalPlacement?: PopperPlacement;
     hasClose?: boolean;
     /**
@@ -59,7 +60,7 @@ const Spotlight = ({
     style = {},
     className,
     size,
-}: SpotlightProps) => {
+}: PropsWithChildren<SpotlightProps>) => {
     const [uid] = useState(generateUID('spotlight'));
 
     const popperAnchorRef = useRef<HTMLDivElement>(null);
@@ -80,7 +81,7 @@ const Spotlight = ({
 
     const [isClosing, isClosed, setIsClosed] = useIsClosing(isOpen);
 
-    const child = Children.only(children);
+    const child = Children.only(children) as ReactElement;
     // Types are wrong? Not sure why ref doesn't exist on a ReactElement
     // @ts-ignore
     const mergedRef = useCombinedRefs(popperAnchorRef, child?.ref);
@@ -102,8 +103,8 @@ const Spotlight = ({
         }
     };
 
-    const handleClose = () => {
-        onClose?.();
+    const handleClose: MouseEventHandler = (event) => {
+        onClose?.(event);
         close();
     };
 
