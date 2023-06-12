@@ -30,7 +30,7 @@ import {
 import { locales } from '@proton/shared/lib/i18n/locales';
 import { UserModel } from '@proton/shared/lib/interfaces';
 
-import { getCalendarAppRoutes } from './routes';
+import type { getCalendarAppRoutes } from './routes';
 
 interface Props {
     user: UserModel;
