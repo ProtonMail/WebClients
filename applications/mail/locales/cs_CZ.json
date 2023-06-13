@@ -5058,11 +5058,11 @@
       "Draft saved.": [
         "Koncept uložen."
       ],
-      "Drop a file here to upload": [
-        "Přetažením sem, nahrajte soubor"
+      "Drop file here to upload": [
+        "Soubor nahrajete přetažením sem"
       ],
-      "Drop the file here to upload": [
-        "Přetažením sem, nahrajte soubor"
+      "Drop to import": [
+        "Přetažením importovat"
       ],
       "Duplicate key updated": [
         "Duplicitní klíč byl aktualizován"
@@ -5433,6 +5433,9 @@
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Náš systém označil tuto zprávu jako pokus o phishing. Zkontrolujte, že se jedná o legitimní zprávu."
       ],
+      "Our system flagged this message as a suspicious email. Please check that it is legitimate before clicking any links or attachments.": [
+        "Náš systém označil tuto zprávu jako podezřelý e-mail. Než kliknete na jakýkoli odkaz nebo přílohu, zkontrolujte prosím, zda je zpráva legitimní."
+      ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/Inline je kompatibilní pouze s formátem prostého textu."
       ],
@@ -5693,6 +5696,9 @@
       ],
       "This conversation contains non-trashed messages.": [
         "Tato konverzace obsahuje zprávy, které nejsou v koši."
+      ],
+      "This conversation contains one or more expiring messages": [
+        "Tato konverzace obsahuje jednu nebo více zpráv, jejichž platnost vyprší"
       ],
       "This conversation contains trashed messages.": [
         "Tato konverzace obsahuje zprávy vyhozené do koše."
@@ -6068,6 +6074,9 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "Váš e-mail bude použit pouze pro toto jednorázové ověření."
+      ],
+      "Your files will be encrypted and then saved": [
+        "Vaše soubory budou zašifrovány a uloženy"
       ],
       "Your import will not be processed.": [
         "Váš import nebude zpracován."
