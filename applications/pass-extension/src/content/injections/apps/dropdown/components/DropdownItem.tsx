@@ -29,7 +29,7 @@ export const DropdownItem: VFC<{
             ) : (
                 <div className="mr-4 w-custom text-align-center" style={{ '--w-custom': '24px' }}>
                     <img
-                        src={'/assets/protonpass-icon-32.png'}
+                        src={'/assets/protonpass-icon.svg'}
                         width={18}
                         height={18}
                         className="ml-1"

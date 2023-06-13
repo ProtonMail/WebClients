@@ -116,50 +116,57 @@ export const AliasAutoSuggest: VFC<Props> = ({ prefix, domain, onOptions, onSubm
     const validAliasOptions = isValidAliasOptions(aliasOptions);
 
     return (
-        <DropdownItem
-            title={needsUpgrade ? c('Info').t`Upgrade ${PASS_APP_NAME}` : c('Title').t`Create email alias`}
-            autogrow={needsUpgrade}
-            subTitle={(() => {
-                if (loadingText) {
-                    return (
-                        <span>
-                            <CircleLoader className="mr-2" />
-                            {loadingText}
-                        </span>
-                    );
-                }
+        <>
+            <DropdownItem
+                title={c('Title').t`Use my email`}
+                subTitle={c('Info').t`my-real-email@pr0t0n.me`}
+                icon="envelope"
+            />
+            <DropdownItem
+                title={needsUpgrade ? c('Info').t`Upgrade ${PASS_APP_NAME}` : c('Title').t`Create email alias`}
+                autogrow={needsUpgrade}
+                subTitle={(() => {
+                    if (loadingText) {
+                        return (
+                            <span>
+                                <CircleLoader className="mr-2" />
+                                {loadingText}
+                            </span>
+                        );
+                    }
 
-                if (needsUpgrade) {
-                    return <span>{c('Warning').t`Your plan does not allow you to create more aliases`}</span>;
-                }
+                    if (needsUpgrade) {
+                        return <span>{c('Warning').t`Your plan does not allow you to create more aliases`}</span>;
+                    }
 
-                if (error) {
-                    return (
-                        <span className="color-danger">
-                            {c('Error').t`Cannot create alias.`}{' '}
-                            <span className="text-semibold text-underline">{c('Action').t`Try again`}</span>
-                        </span>
-                    );
-                }
+                    if (error) {
+                        return (
+                            <span className="color-danger">
+                                {c('Error').t`Cannot create alias.`}{' '}
+                                <span className="text-semibold text-underline">{c('Action').t`Try again`}</span>
+                            </span>
+                        );
+                    }
 
-                if (validAliasOptions) {
-                    return (
-                        <AliasPreview
-                            prefix={prefix}
-                            suffix={aliasOptions.suffixes[0].suffix}
-                            standalone
-                            key="alias-preview"
-                        />
-                    );
-                }
-            })()}
-            icon={needsUpgrade ? 'arrow-out-square' : 'alias'}
-            disabled={loadingText !== null}
-            onClick={(() => {
-                if (needsUpgrade) return navigateToUpgrade;
-                if (error) return requestAliasOptions;
-                if (validAliasOptions) return () => createAlias(aliasOptions);
-            })()}
-        />
+                    if (validAliasOptions) {
+                        return (
+                            <AliasPreview
+                                prefix={prefix}
+                                suffix={aliasOptions.suffixes[0].suffix}
+                                standalone
+                                key="alias-preview"
+                            />
+                        );
+                    }
+                })()}
+                icon={needsUpgrade ? 'arrow-out-square' : 'alias'}
+                disabled={loadingText !== null}
+                onClick={(() => {
+                    if (needsUpgrade) return navigateToUpgrade;
+                    if (error) return requestAliasOptions;
+                    if (validAliasOptions) return () => createAlias(aliasOptions);
+                })()}
+            />
+        </>
     );
 };
