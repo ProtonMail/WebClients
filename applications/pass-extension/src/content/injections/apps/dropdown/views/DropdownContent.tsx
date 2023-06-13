@@ -3,6 +3,7 @@ import { type VFC, useCallback, useLayoutEffect, useRef, useState } from 'react'
 import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader';
+import { Icon } from '@proton/components/components';
 import { type Callback, type MaybeNull, WorkerStatus } from '@proton/pass/types';
 import { pixelEncoder } from '@proton/pass/utils/dom';
 import { pipe, tap } from '@proton/pass/utils/fp';
@@ -43,12 +44,12 @@ export const DropdownContent: VFC = () => {
         status: WorkerStatus.READY,
     };
 
-    // PASSWORD
+    // PASSWORD - DONE
     // const [dropdownState, setDropdownState] = useState<MaybeNull<DropdownSetActionPayload>>({
     //     action: DropdownAction.AUTOSUGGEST_PASSWORD,
     // });
 
-    // NO LOGIN FOUND
+    // NO LOGIN FOUND - DONE
     // const [dropdownState, setDropdownState] = useState<MaybeNull<DropdownSetActionPayload>>({
     //     action: DropdownAction.AUTOFILL,
     //     needsUpgrade: false,
@@ -56,7 +57,7 @@ export const DropdownContent: VFC = () => {
     //     ],
     // });
 
-    // ITEMS
+    // ITEMS - TODO: FAVICONS
     const [dropdownState, setDropdownState] = useState<MaybeNull<DropdownSetActionPayload>>({
         action: DropdownAction.AUTOFILL,
         needsUpgrade: false,
@@ -76,7 +77,7 @@ export const DropdownContent: VFC = () => {
         ],
     });
 
-    // ALIAS
+    // ALIAS - TODO: display user email
     // const [dropdownState, setDropdownState] = useState<MaybeNull<DropdownSetActionPayload>>({
     //     action: DropdownAction.AUTOSUGGEST_ALIAS,
     //     domain: 'localhost',
@@ -122,7 +123,7 @@ export const DropdownContent: VFC = () => {
                             onClick={closeIFrame}
                             title={c('Title').t`${PASS_APP_NAME} locked`}
                             subTitle={c('Info').t`Unlock with your pin`}
-                            icon="lock-filled"
+                            icon="proton-pass-locked"
                         />
                     );
                 }
@@ -134,8 +135,14 @@ export const DropdownContent: VFC = () => {
                                 closeIFrame();
                                 await accountFork(FORK_TYPE.SWITCH);
                             }}
-                            title={PASS_APP_NAME}
-                            subTitle={c('Info').t`Login with your ${BRAND_NAME} account`}
+                            subTitle={
+                                <>
+                                    {c('Info').t`Enable ${PASS_APP_NAME} by connecting your ${BRAND_NAME} account`}
+                                    <Icon className="ml-1" name="arrow-out-square" />
+                                </>
+                            }
+                            icon="proton-pass-inactive"
+                            autogrow
                         />
                     );
                 }
@@ -158,7 +165,7 @@ export const DropdownContent: VFC = () => {
                                 onClick={withStateReset(closeIFrame)}
                                 title={PASS_APP_NAME}
                                 subTitle={c('Info').t`No login found`}
-                                disabled
+                                removePointer
                             />
                         );
 
