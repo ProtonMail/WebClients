@@ -23,6 +23,7 @@ const config: OfferConfig = {
             cycle: CYCLE.YEARLY,
             features: getMailDealFeatures,
             couponCode: COUPON_CODES.ANNIVERSARY23,
+            star: '*',
         },
         {
             ref: 'anniversary_offer-plus-24',
@@ -33,6 +34,7 @@ const config: OfferConfig = {
             cycle: CYCLE.TWO_YEARS,
             features: getMailDealFeatures,
             couponCode: COUPON_CODES.ANNIVERSARY23,
+            star: '*',
         },
         {
             ref: 'anniversary_offer-un-12',
@@ -44,6 +46,7 @@ const config: OfferConfig = {
             popular: true,
             features: getUnlimitedDealFeatures,
             couponCode: COUPON_CODES.ANNIVERSARY23,
+            star: '*',
         },
         {
             ref: 'anniversary_offer-un-24',
@@ -55,6 +58,7 @@ const config: OfferConfig = {
             popular: true,
             features: getUnlimitedDealFeatures,
             couponCode: COUPON_CODES.ANNIVERSARY23,
+            star: '*',
         },
     ],
     layout: Layout,
