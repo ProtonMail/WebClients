@@ -19,7 +19,7 @@ import { workerReady } from '@proton/pass/utils/worker';
 import { DEFAULT_LOCALE } from '@proton/shared/lib/constants';
 import { setUID as setSentryUID } from '@proton/shared/lib/helpers/sentry';
 import { loadLocale } from '@proton/shared/lib/i18n/loadLocale';
-import { setLocales } from '@proton/shared/lib/i18n/locales';
+import { setTtagLocales } from '@proton/shared/lib/i18n/locales';
 import noop from '@proton/utils/noop';
 
 import locales from '../../../app/locales';
@@ -57,7 +57,7 @@ const setup = async (options: {
 }): Promise<ExtensionContextState & { buffered?: WorkerMessageWithSender[] }> => {
     /* FIXME: localisation not initialised in
      * content-script, worker or injected frames */
-    setLocales(locales);
+    setTtagLocales(locales);
     await loadLocale(DEFAULT_LOCALE, locales);
 
     return sendMessage.on(
