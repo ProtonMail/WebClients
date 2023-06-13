@@ -4,7 +4,7 @@
 
 @if $use-other-typo-helpers==true {
 	@each $name, $size in (2xs: 9, xs: 10, sm: 12, rg: $base-font-size, lg: 16, xl: 18, 2xl: 20, 3xl: 22, 4xl: 24) {
-		.text-#{$name} {
+		@include responsive-classes(text-#{$name}) {
 			font-size: em($size);
 		}
 	}
@@ -84,15 +84,15 @@
 	@include vendor-prefix(hyphens, auto, webkit);
 }
 
-.text-left {
+@include responsive-classes(text-left) {
 	text-align: start;
 }
 
-.text-center {
+@include responsive-classes(text-center) {
 	text-align: center;
 }
 
-.text-right {
+@include responsive-classes(text-right) {
 	text-align: end;
 }
 
