@@ -44,10 +44,8 @@ export const consumeFork = async ({
 }) => {
     const stateKey = `f${state}`;
     const maybeStoredState = await browserSessionStorage.getItem<StorageData>(stateKey);
+    if (!maybeStoredState) throw new Error('Invalid state');
 
-    if (!maybeStoredState) {
-        throw new Error('Invalid state');
-    }
     const { UID, RefreshToken, LocalID } = await api<PullForkResponse>(pullForkSession(selector));
 
     const { AccessToken: newAccessToken, RefreshToken: newRefreshToken } = await api<RefreshSessionResponse>({
