@@ -95,32 +95,29 @@
 	display: table-cell;
 }
 
-.block {
+@include responsive-classes(block) {
 	display: block;
 }
 
-.inline {
+@include responsive-classes(inline) {
 	display: inline;
 }
 
-.inline-block {
+@include responsive-classes(inline-block) {
 	display: inline-block;
 }
 
-/* grid = element of inline-grid */
-.grid {
-	@extend .inline-block;
-	@extend .align-top;
+@include responsive-classes(hidden) {
+	display: none;
+}
+
+[hidden],
+.hidden-empty:empty {
+	display: none;
 }
 
 .inline-grid-container {
 	display: inline-grid;
-}
-
-.hidden,
-[hidden],
-.hidden-empty:empty {
-	display: none;
 }
 
 .list-2columns {
