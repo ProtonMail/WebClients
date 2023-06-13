@@ -477,6 +477,9 @@
       "Hide messages": [
         "Amagar missatges"
       ],
+      "hide-my-email aliases": [
+        "àlies Hide My Email"
+      ],
       "I have a question": [
         "Tinc una pregunta"
       ],
@@ -1833,6 +1836,41 @@
       ],
       "white": [
         "blanc"
+      ]
+    },
+    "Commander action": {
+      "Create a new folder": [
+        "Crea una carpeta"
+      ],
+      "Create a new label": [
+        "Crea una etiqueta"
+      ],
+      "Go to Archive": [
+        "Aneu a Arxiu"
+      ],
+      "Go to Drafts": [
+        "Aneu a Esborranys"
+      ],
+      "Go to Inbox": [
+        "Aneu a la Safata d'entrada"
+      ],
+      "Go to Sent": [
+        "Aneu a Enviats"
+      ],
+      "Go to Spam": [
+        "Aneu a Correu brossa"
+      ],
+      "Go to Starred": [
+        "Aneu a Destacats"
+      ],
+      "Go to Trash": [
+        "Aneu a la Paperera"
+      ],
+      "New message": [
+        "Nou missatge"
+      ],
+      "Search": [
+        "Cerca"
       ]
     },
     "Composer email icon": {
@@ -3888,6 +3926,9 @@
       "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
         "Inclou 2700 servidors en més de 65 països, connecteu fins a 10 dispositius, accediu a serveis de transmissió en tot el món, bloquejador de programari maliciós i d'anuncis i més."
       ],
+      "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
+        "Inclou suport per a 3 dominis de correu electrònic personalitzats, 90 adreces de correu electrònic, àlies il·limitats de Hide My Email, compartició de calendari i més."
+      ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Protegiu els vostres fitxers amb emmagatzematge al núvol xifrat. Inclou sincronització automàtica, compartició de fitxers xifrats i més."
       ]
@@ -4890,11 +4931,11 @@
       "Draft saved.": [
         "Esborrany desat."
       ],
-      "Drop a file here to upload": [
-        "Arrossegueu un fitxer aquí per carregar-lo"
+      "Drop file here to upload": [
+        "Arrossegueu el fitxer aquí per carregar-lo."
       ],
-      "Drop the file here to upload": [
-        "Arrossegueu el fitxer aquí per carregar-lo"
+      "Drop to import": [
+        "Arrossega aquí per importar"
       ],
       "Duplicate key updated": [
         "Clau duplicada actualitzada"
@@ -5019,6 +5060,9 @@
       ],
       "Hide original message": [
         "Amaga el missatge original"
+      ],
+      "How hide-my-email aliases works": [
+        "Funcionament dels àlies Hide-My-Email."
       ],
       "I'm sending this message to a non-${ MAIL_APP_NAME } user.": [
         "Envio aquest missatge a un usuari que no és de ${ MAIL_APP_NAME }."
@@ -5244,6 +5288,9 @@
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "El nostre sistema ha marcat aquest missatge com un intent de suplantació d'identitat. Comproveu que sigui legítim."
       ],
+      "Our system flagged this message as a suspicious email. Please check that it is legitimate before clicking any links or attachments.": [
+        "El nostre sistema ha marcat aquest missatge com a correu electrònic sospitós. Comproveu que és legítim abans de clicar qualsevol enllaç o arxiu adjunt."
+      ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/Inline només és compatible amb format de Text Pla."
       ],
@@ -5413,6 +5460,9 @@
       "Show original message": [
         "Mostra el missatge original"
       ],
+      "SimpleLogin is a ${ BRAND_NAME } service, and your ${ BRAND_NAME_TWO } Account includes hide-my-email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
+        "SimpleLogin és un servei de ${ BRAND_NAME } i el vostre compte de ${ BRAND_NAME_TWO } inclou àlies Hide My Email. Per començar a emmascarar la vostra adreça de correu electrònic aneu a SimpleLogin i creeu el vostre primer àlies."
+      ],
       "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
         "SimpleLogin proporciona una forma fàcil de crear inicis de sessió a llocs de tercers que no són de confiança on no voleu revelar la vostra adreça de correu electrònic actual."
       ],
@@ -5480,6 +5530,9 @@
       "There has been an error with the signature used to verify the contact details, which may be the result of a password reset.": [
         "S'ha produït un error amb la firma utilitzada per verificar les dades de contacte, que poden ser el resultat d'un restabliment de contrasenya."
       ],
+      "They can't spam you if they don't know your email address. Protect your inbox with hide-my-email aliases.": [
+        "No us poden enviar correu brossa si no saben la vostra adreça de correu electrònic. Protegiu la vostra safata d'entrada amb Hide My Email."
+      ],
       "This account has been suspended due to a potential policy violation.": [
         "Aquest compte ha estat suspès a causa d'una possible infracció de les polítiques."
       ],
@@ -5494,6 +5547,9 @@
       ],
       "This conversation contains non-trashed messages.": [
         "Aquesta conversa conté missatges no esborrats."
+      ],
+      "This conversation contains one or more expiring messages": [
+        "Aquesta conversa conté un o més missatges caducats."
       ],
       "This conversation contains trashed messages.": [
         "Aquesta conversa conté missatges esborrats."
@@ -5710,6 +5766,9 @@
       "When do you want your message to self-destruct?": [
         "Quan voleu que el vostre missatge es destrueix automàticament?"
       ],
+      "When giving out your email, use a unique, disposable hide-my-email alias instead of your real email address.": [
+        "Quan doneu el vostre correu electrònic, utilitzeu un àlies Hide My Email únic, d'un sol ús en compte de la vostra adreça de correu electrònic real."
+      ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "Quan actives les claus de confiança per ${ senderName }, les claus públiques s'afegeixen a les dades de contacte."
       ],
@@ -5847,6 +5906,9 @@
       "Your email will only be used for this one-time verification.": [
         "El vostre correu electrònic només s’utilitzarà per a aquesta única verificació."
       ],
+      "Your files will be encrypted and then saved": [
+        "Es xifraran els fitxers i després es desaran."
+      ],
       "Your import will not be processed.": [
         "La vostra importació no es processarà."
       ],
@@ -5874,6 +5936,10 @@
       ]
     },
     "info": {
+      "${ filteredList.length } command found.": [
+        "${ filteredList.length } comanda trobada.",
+        "${ filteredList.length } comandas trobadas."
+      ],
       "Optional": [
         "Opcional"
       ]
@@ -6035,6 +6101,9 @@
       ],
       "New message": [
         "Nou missatge"
+      ],
+      "Open command panel": [
+        "Obre el panell de comandes"
       ],
       "Open next message": [
         "Obre el següent missatge"
@@ -6547,6 +6616,9 @@
       ],
       "Toolbar": [
         "Barra d'eines"
+      ],
+      "Type a command...": [
+        "Escriu una comanda..."
       ],
       "Undisclosed Recipients": [
         "Destinataris ocults"
@@ -7136,6 +7208,9 @@
       "Custom email domains": [
         "Dominis de correu personalitzats"
       ],
+      "Hide-my-email aliases": [
+        "Àlies Hide My Email"
+      ],
       "Schedule messages at any time": [
         "Programeu missatges en qualsevol moment."
       ],
@@ -7415,6 +7490,9 @@
       ],
       "Text": [
         "Text"
+      ],
+      "Type a command…": [
+        "Escriu una comanda…"
       ],
       "Type text or keyword": [
         "Escrigui text o paraula clau"
@@ -7921,6 +7999,15 @@
       ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
         "Accediu al contingut dels serveis de transmissió, com ara Netflix, Disney+ i Prime Video, des de qualsevol lloc."
+      ],
+      "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
+        "Tots els nostres serveis prèmium al seu límit màxim: 100 adreces de correu electrònic, suport per 10 dominis personalitzats, àlies Hide My Email il·limitats, compartició de calendaris, emmagatzematge al núvol encriptat, compartició de fitxers, i més."
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Inclou suport per a 1 domini de correu electrònic personalitzat, 10 adreces de correu electrònic, 10 àlies Hide My Email, compartició de calendari i més."
+      ],
+      "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Inclou suport per a 3 dominis de correu electrònic personalitzats, 15 adreces de correu electrònic, àlies il·limitats de Hide My Email, compartició de calendari i més."
       ],
       "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
         "Perfecte per famílies o equips petits, cadascú pot tenir la seva pròpia safata d'entrada i àlies. Requereix un domini personalitzat."

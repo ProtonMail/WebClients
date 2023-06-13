@@ -1022,7 +1022,7 @@
         "Це повідомлення містить зовнішній вміст."
       ],
       "To search your emails securely, we need to download a copy of your messages to your browser. The initial download may take a moment.": [
-        "Для безпечного пошуку ваших листів нам потрібно завантажити копію ваших повідомлень у ваш браузер. Первинне завантаження може зайняти деякий час."
+        "Для безпечного пошуку листів потрібно завантажити копію повідомлень у ваш браузер. Початкове завантаження може тривати певний час."
       ],
       "Toggle Calendar app": [
         "Відкрити календар"
@@ -5052,12 +5052,6 @@
       "Draft saved.": [
         "Чернетку збережено."
       ],
-      "Drop a file here to upload": [
-        "Для завантаження файлу перетягніть його сюди"
-      ],
-      "Drop the file here to upload": [
-        "Для завантаження файлу перетягніть його сюди"
-      ],
       "Duplicate key updated": [
         "Дублікат ключа оновлено"
       ],
@@ -5319,6 +5313,12 @@
       "Merged": [
         "Об'єднано"
       ],
+      "Message downloaded: ${ currentProgress } out of ${ totalProgress }": [
+        "Завантажено повідомлення: ${ currentProgress } з ${ totalProgress }",
+        "Завантажено повідомлень: ${ currentProgress } з ${ totalProgress }",
+        "Завантажено повідомлень: ${ currentProgress } з ${ totalProgress }",
+        "Завантажено повідомлень: ${ currentProgress } з ${ totalProgress }"
+      ],
       "Message expiration works out-of-the-box when sending emails to other ${ MAIL_APP_NAME } users. To send expiring emails to non-${ BRAND_NAME } users, please cancel and add password protection to your email.": [
         "Термін дії повідомлень працює типово при надсиланні пошти не користувачам ${ MAIL_APP_NAME }. Щоб надсилати повідомлення з терміном дії не користувачам ${ BRAND_NAME }, скасуйте це і додайте парольний захист до свого повідомлення."
       ],
@@ -5533,7 +5533,7 @@
         "Планування повідомлення..."
       ],
       "Search option that lets you securely search for keywords in the body of email messages.": [
-        "Опція пошуку, яка дозволяє безпечно шукати ключові слова в тексті повідомлень електронної пошти."
+        "Опція пошуку, що дає змогу користуватися безпечним пошуком у вмісті повідомлень електронної пошти."
       ],
       "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
         "Пошук триває надто довго? ${ dropdownButton } або ${ toggleOffButton } з цього пошукового сеансу."
@@ -5785,7 +5785,7 @@
         "Забагато повідомлень очікують надсилання. Зачекайте, доки буде відправлено інше повідомлення, щоб запланувати це."
       ],
       "Turn off to only search by date, name, or email address. To disable search message content and delete downloaded messages, go to settings.": [
-        "Вимкніть, щоб шукати лише за датою, іменем або адресою електронної пошти. Щоб вимкнути пошук вмісту повідомлень і видалення завантажених повідомлень, перейдіть до налаштувань."
+        "Вимкніть, щоб шукати лише за датою, іменем або адресою електронної пошти. Щоб вимкнути пошук вмісту повідомлень і видалити завантажені повідомлення, перейдіть до налаштувань."
       ],
       "Turn on to search the content of your messages": [
         "Увімкніть, щоб шукати вміст своїх повідомлень"
@@ -8461,7 +8461,7 @@
         "Повідомлення додано до ${ labelName }."
       ],
       "Message content search enabled": [
-        "Ввімкнено пошук вмісту повідомлення"
+        "Пошук вмісту повідомлень увімкнено"
       ],
       "Message deleted": [
         "Повідомлення видалено"
