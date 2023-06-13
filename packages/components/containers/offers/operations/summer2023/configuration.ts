@@ -4,8 +4,8 @@ import { COUPON_CODES, CYCLE, PLANS } from '@proton/shared/lib/constants';
 import { getMailDealFeatures, getUnlimitedDealFeatures } from '../../helpers/offerCopies';
 import { OfferConfig } from '../../interface';
 import Layout from './Layout';
-import bannerImage from './upsell_mail-plus-free-trial.png';
-import bannerImage2x from './upsell_mail-plus-free-trial@2x.png';
+import bannerImage from './upsell_anniversary.png';
+import bannerImage2x from './upsell_anniversary@2x.png';
 
 const config: OfferConfig = {
     ID: 'summer-2023',
