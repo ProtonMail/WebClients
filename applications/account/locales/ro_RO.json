@@ -533,12 +533,6 @@
       "Mark as default": [
         "Setare ca implicită"
       ],
-      "Mark as not spam": [
-        "Marcare ca acceptat"
-      ],
-      "Mark as spam": [
-        "Marcare ca nedorit"
-      ],
       "mark emails as": [
         "marcare mesaje ca"
       ],
@@ -568,9 +562,6 @@
       ],
       "No": [
         "Nu"
-      ],
-      "Not spam": [
-        "Acceptată"
       ],
       "OK": [
         "OK"
@@ -634,9 +625,6 @@
       ],
       "Remove": [
         "Eliminare"
-      ],
-      "Remove Block": [
-        "Eliminare blocare"
       ],
       "Remove bonuses": [
         "Anulare bonusuri"
@@ -2785,20 +2773,8 @@
       "${ name } failed to move to spam list": [
         "${ name } nu s-a putut muta în lista de nedorite."
       ],
-      "${ name } failed to move to the not-spam list": [
-        "${ name } nu s-a putut muta în lista de adrese acceptate."
-      ],
-      "${ name } failed to move to your block list": [
-        "${ name } nu s-a putut muta în lista de blocare."
-      ],
-      "${ name } moved to not spam list": [
-        "${ name } s-a mutat în lista de adrese acceptate."
-      ],
       "${ name } moved to spam list": [
         "${ name } s-a mutat în lista de nedorite."
-      ],
-      "${ name } moved to your block list": [
-        "${ name } s-a mutat în lista de blocare."
       ],
       "${ name } successfully deleted": [
         "S-a reușit ștergerea ${ name }."
@@ -2902,20 +2878,8 @@
       "${ name } failed to move to spam list": [
         "${ name } nu s-a putut muta în lista de nedorite."
       ],
-      "${ name } failed to move to the not-spam list": [
-        "${ name } nu s-a putut muta în lista de adrese acceptate."
-      ],
-      "${ name } failed to move to your block list": [
-        "${ name } nu s-a putut muta în lista de blocare."
-      ],
-      "${ name } moved to not spam list": [
-        "${ name } s-a mutat în lista de adrese acceptate."
-      ],
       "${ name } moved to spam list": [
         "${ name } s-a mutat în lista de nedorite."
-      ],
-      "${ name } moved to your block list": [
-        "${ name } s-a mutat în lista de blocare."
       ],
       "${ name } successfully deleted": [
         "S-a reușit ștergerea ${ name }."
@@ -4310,15 +4274,6 @@
       "Add a custom filter to automatically perform certain actions, like labeling or archiving messages.": [
         "Adăugați un filtru personal pentru a efectua în mod automat anumite acțiuni, cum ar fi etichetarea sau arhivarea mesajelor."
       ],
-      "Emails from addresses marked as spam by you or ${ BRAND_NAME } will go to the spam folder of your organization members. If you want to allow emails from one of these addresses, mark it as \"not spam\".": [
-        "Mesajele de la adresele marcate ca nedorite de către dvs. sau de către ${ BRAND_NAME } vor ajunge în folderul «Nedorite» al membrilor organizației. Dacă doriți să permiteți mesajele de la una dintre aceste adrese, marcați-o ca „acceptată”."
-      ],
-      "Emails from addresses marked as spam by you or ${ BRAND_NAME } will go to your spam folder. If you want to allow emails from one of these addresses, mark it as \"not spam\".": [
-        "Mesajele de la adresele marcate ca nedorite de către dvs. sau de către ${ BRAND_NAME } vor ajunge în folderul «Nedorite». Dacă doriți să permiteți mesajele de la una dintre aceste adrese, marcați-o ca „acceptată”."
-      ],
-      "Emails from blocked addresses won't be delivered.": [
-        "Mesajele de la adresele blocate nu vor fi livrate."
-      ],
       "Search list": [
         "Căutare în listă"
       ]
@@ -5471,12 +5426,6 @@
       ],
       "Download your PGP keys for use with other PGP-compatible services.": [
         "Descărcați cheile PGP pentru a le folosi cu alte servicii compatibile cu PGP."
-      ],
-      "Drop a file here to upload": [
-        "Plasați aici un fișier pentru a fi încărcat"
-      ],
-      "Drop the file here to upload": [
-        "Plasați fișierul aici pentru a fi încărcat"
       ],
       "Each code can only be used once": [
         "Fiecare cod poate fi folosit doar odată."
@@ -7418,9 +7367,6 @@
       "Block malware, ads and trackers": [
         "Blocare malware, reclame și monitorizare"
       ],
-      "Blocked": [
-        "Blocat"
-      ],
       "Browser": [
         "Navigator"
       ],
@@ -7822,9 +7768,6 @@
       ],
       "Non-standard ports": [
         "Porturi nonstandard"
-      ],
-      "Not spam": [
-        "Acceptată"
       ],
       "Notification": [
         "Notificare"
@@ -8673,17 +8616,11 @@
       "Back to inbox": [
         "Înapoi la primite"
       ],
-      "Blocked": [
-        "Blocat"
-      ],
       "Calendar": [
         "Calendar"
       ],
       "Inbox": [
         "Primite"
-      ],
-      "Not spam": [
-        "Acceptată"
       ],
       "Spam": [
         "Nedorite"
@@ -8827,6 +8764,11 @@
         "Un folder și o etichetă",
         "${ n } foldere și etichete",
         "${ n } de foldere și etichete"
+      ],
+      "${ n } Hide-my-email alias": [
+        "${ n } alias „Hide-my-email”",
+        "${ n } aliasuri „Hide-my-email”",
+        "${ n } de aliasuri „Hide-my-email”"
       ],
       "${ n } label": [
         "O etichetă",
@@ -9057,6 +8999,9 @@
       ],
       "Unlimited folders, labels, and filters": [
         "Foldere, etichete și filtre nelimitate"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Aliasuri nelimitate „Hide-my-email”"
       ],
       "Unlimited labels": [
         "Etichete nelimitate"
@@ -11139,9 +11084,6 @@
       "Edit": [
         "Editare"
       ],
-      "Email address": [
-        "Adresă e-mail"
-      ],
       "Email addresses": [
         "Adrese de e-mail"
       ],
@@ -11290,14 +11232,8 @@
       "Add Sieve filter": [
         "Adăugare filtru Sieve"
       ],
-      "Add to Not spam list": [
-        "Adăugare la lista de acceptate"
-      ],
       "Add to spam list": [
         "Adăugare la lista de nedorite"
-      ],
-      "Add to your block list": [
-        "Adăugare la lista de blocare"
       ],
       "Add user": [
         "Adăugare utilizator"
@@ -11953,9 +11889,6 @@
       "Sort labels alphabetically": [
         "Sortare alfabetică etichete"
       ],
-      "Spam and block list": [
-        "Listă de nedorite și de blocare"
-      ],
       "Start a new import": [
         "Începere importare nouă"
       ],
@@ -12340,6 +12273,9 @@
       ]
     },
     "Upgrade": {
+      "Upgrade to ${ passPlusPlanName } to get unlimited hide-my-email aliases": [
+        "Treceți la ${ passPlusPlanName } pentru a obține aliasuri nelimitate „Hide-my-email”"
+      ],
       "Upgrade to ${ planName } to connect up to ${ n } device to the VPN at once": [
         "Treceți la ${ planName } pentru a conecta un dispozitiv la VPN.",
         "Treceți la ${ planName } pentru a conecta simultan până la ${ n } dispozitive la VPN.",

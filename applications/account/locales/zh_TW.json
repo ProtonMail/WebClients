@@ -533,12 +533,6 @@
       "Mark as default": [
         "標記為預設值"
       ],
-      "Mark as not spam": [
-        "標示為非垃圾郵件"
-      ],
-      "Mark as spam": [
-        "標示為垃圾郵件"
-      ],
       "mark emails as": [
         "將電郵標記為"
       ],
@@ -568,9 +562,6 @@
       ],
       "No": [
         "否"
-      ],
-      "Not spam": [
-        "非垃圾郵件"
       ],
       "OK": [
         "好"
@@ -634,9 +625,6 @@
       ],
       "Remove": [
         "移除"
-      ],
-      "Remove Block": [
-        "解除封鎖"
       ],
       "Remove bonuses": [
         "移除贈品"
@@ -2767,20 +2755,8 @@
       "${ name } failed to move to spam list": [
         "${ name } 無法移至垃圾郵件黑名單"
       ],
-      "${ name } failed to move to the not-spam list": [
-        "${ name } 移動到非垃圾郵件清單失敗"
-      ],
-      "${ name } failed to move to your block list": [
-        "${ name } 無法移至您的封鎖清單"
-      ],
-      "${ name } moved to not spam list": [
-        "${ name } 已移動到非垃圾郵件清單"
-      ],
       "${ name } moved to spam list": [
         "${ name } 已移至垃圾郵件黑名單"
-      ],
-      "${ name } moved to your block list": [
-        "${ name } 已移至您的封鎖清單"
       ],
       "${ name } successfully deleted": [
         "${ name } 刪除成功"
@@ -2884,20 +2860,8 @@
       "${ name } failed to move to spam list": [
         "${ name } 無法移至垃圾郵件黑名單"
       ],
-      "${ name } failed to move to the not-spam list": [
-        "${ name } 移動到非垃圾郵件清單失敗"
-      ],
-      "${ name } failed to move to your block list": [
-        "${ name } 無法移至您的封鎖清單"
-      ],
-      "${ name } moved to not spam list": [
-        "${ name } 已移動到非垃圾郵件清單"
-      ],
       "${ name } moved to spam list": [
         "${ name } 已移至垃圾郵件黑名單"
-      ],
-      "${ name } moved to your block list": [
-        "${ name } 已移至您的封鎖清單"
       ],
       "${ name } successfully deleted": [
         "${ name } 刪除成功"
@@ -4264,15 +4228,6 @@
       "Add a custom filter to automatically perform certain actions, like labeling or archiving messages.": [
         "新增自訂篩選規則以自動執行特定動作，例如加上標籤或封存郵件。"
       ],
-      "Emails from addresses marked as spam by you or ${ BRAND_NAME } will go to the spam folder of your organization members. If you want to allow emails from one of these addresses, mark it as \"not spam\".": [
-        "傳送自您已標記或 ${ BRAND_NAME } 判定為垃圾郵件位址的郵件，這些電郵會進入垃圾郵件匣。倘若您想要允許部分郵件從中排除，則可在郵件上標記為「非垃圾郵件」。"
-      ],
-      "Emails from addresses marked as spam by you or ${ BRAND_NAME } will go to your spam folder. If you want to allow emails from one of these addresses, mark it as \"not spam\".": [
-        "傳送自您已標記或 ${ BRAND_NAME } 判定為垃圾郵件位址的郵件，這些電郵會進入垃圾郵件匣。倘若您想要允許部分郵件從中排除，則可在郵件上標記為「非垃圾郵件」。"
-      ],
-      "Emails from blocked addresses won't be delivered.": [
-        "發送自封鎖位址的電郵不會遞送至信箱。"
-      ],
       "Search list": [
         "搜索列表"
       ]
@@ -4885,7 +4840,7 @@
         "${ numberOfNonPrivateKeys } 個上載的檔案不是有效的私鑰。請驗證並再試一次。"
       ],
       "${ numContact } contacts": [
-        "${ numContact } 個聯絡人"
+        "${ numContact } 位聯絡人"
       ],
       "${ numGroups } contact groups": [
         "${ numGroups } 個聯絡人群組"
@@ -4900,7 +4855,7 @@
         "找到 ${ providerFoldersNumLocalized } 個資料夾"
       ],
       "${ providerFoldersNumLocalized } labels found in Gmail": [
-        "在 Gmail 中找到 ${ providerFoldersNumLocalized } 個標籤"
+        "在 Gmail 中找到 ${ providerFoldersNumLocalized } 種標籤"
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendars": [
         "${ selectedCalendarsTotal } 個，共 ${ providerCalendars.length } 個行事曆"
@@ -4915,7 +4870,7 @@
         "已選取 ${ selectedFoldersCountLocalized } 個資料夾"
       ],
       "${ selectedFoldersCountLocalized } labels selected": [
-        "已選取 ${ selectedFoldersCountLocalized } 個標籤"
+        "已選取 ${ selectedFoldersCountLocalized } 種標籤"
       ],
       "${ storage } storage": [
         "${ storage } 儲存空間"
@@ -5364,11 +5319,8 @@
       "Download your PGP keys for use with other PGP-compatible services.": [
         "下載您的 PGP 金鑰以用於其它與 PGP 相容的服務。"
       ],
-      "Drop a file here to upload": [
-        "拖曳檔案到此處來上載"
-      ],
-      "Drop the file here to upload": [
-        "拖放檔案到此處以上載"
+      "Drop file here to upload": [
+        "拖曳檔案到此處來上傳"
       ],
       "Each code can only be used once": [
         "每組驗證代碼只能使用一次"
@@ -6705,6 +6657,9 @@
       "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your recovery phrase or your ${ oldPassword }.": [
         "您現有的郵件、行事曆或聯絡人將會鎖定。若要還原此資料，您將需要您的還原短語或您的${ oldPassword }。"
       ],
+      "Your files will be encrypted and then saved": [
+        "你的檔案將加密後再儲存"
+      ],
       "Your import will not be processed.": [
         "將不會處理您的匯入。"
       ],
@@ -7272,9 +7227,6 @@
       "Block malware, ads and trackers": [
         "封鎖惡意軟體、廣告與追蹤程式"
       ],
-      "Blocked": [
-        "已封鎖"
-      ],
       "Browser": [
         "瀏覽器"
       ],
@@ -7676,9 +7628,6 @@
       ],
       "Non-standard ports": [
         "非標準的連接埠"
-      ],
-      "Not spam": [
-        "非垃圾郵件"
       ],
       "Notification": [
         "通知"
@@ -8507,17 +8456,11 @@
       "Back to inbox": [
         "返回收件匣"
       ],
-      "Blocked": [
-        "已封鎖"
-      ],
       "Calendar": [
         "行事曆"
       ],
       "Inbox": [
         "收件匣"
-      ],
-      "Not spam": [
-        "非垃圾郵件"
       ],
       "Spam": [
         "垃圾郵件"
@@ -8764,6 +8707,9 @@
       ],
       "GDPR data processing agreement": [
         "GDRP資料處理協議"
+      ],
+      "Hide-my-email aliases": [
+        "隱藏我的郵件別名"
       ],
       "High-speed streaming": [
         "高速串流"
@@ -10881,9 +10827,6 @@
       "Edit": [
         "編輯"
       ],
-      "Email address": [
-        "電郵位址"
-      ],
       "Email addresses": [
         "電郵位址"
       ],
@@ -11020,14 +10963,8 @@
       "Add Sieve filter": [
         "加入 Sieve 篩選器"
       ],
-      "Add to Not spam list": [
-        "新增到非垃圾郵件清單"
-      ],
       "Add to spam list": [
         "新增到垃圾郵件清單"
-      ],
-      "Add to your block list": [
-        "加入至封鎖清單"
       ],
       "Add user": [
         "加入使用者"
@@ -11676,9 +11613,6 @@
       ],
       "Sort labels alphabetically": [
         "依照字母排序標籤"
-      ],
-      "Spam and block list": [
-        "垃圾郵件與封鎖清單"
       ],
       "Start a new import": [
         "開始新匯入"

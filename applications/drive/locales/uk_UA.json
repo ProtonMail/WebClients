@@ -3299,7 +3299,7 @@
         "Потребує уваги"
       ],
       "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access or decrypt your files for you. To unlock your drive after a password reset, you must have one of the following:": [
-        "Оскільки ${ DRIVE_APP_NAME } наскрізь зашифровано, ми не можемо отримати доступ до ваших файлів або розшифрувати їх для вас. Щоб розблокувати ваш накопичувач після зміни пароля, вам потрібно мати одну з наведених нижче речей:"
+        "Оскільки ${ DRIVE_APP_NAME } наскрізно зашифровано, ми не можемо отримати доступ до ваших файлів або розшифрувати їх для вас. Щоб розблокувати своє сховище після скидання пароля, вам потрібно мати щось із наведеного нижче:"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Перш ніж запитувати новий код підтвердження, перевірте теку зі спамом та перевірте, чи правильно вказано адресу ${ strong }."
@@ -3442,9 +3442,6 @@
       "Downloading": [
         "Завантаження"
       ],
-      "Drop the file here to upload": [
-        "Для завантаження файлу перетягніть його сюди"
-      ],
       "Duplicate key updated": [
         "Дублікат ключа оновлено"
       ],
@@ -3584,7 +3581,7 @@
         "Якщо ви не можете знайти лист у вхідних повідомленнях, перевірте свою теку спаму."
       ],
       "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process.": [
-        "Якщо у вас є одна з цих помилок, продовжуйте налаштування облікового запису ${ BRAND_NAME }, щоб почати процес розблокування."
+        "Якщо у вас є щось із вказаного, перейдіть до налаштувань облікового запису ${ BRAND_NAME }, щоб почати процес розблокування."
       ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Імпорт ${ calendarCount } з ${ totalCalendarsCount } календаря",
@@ -3995,7 +3992,7 @@
         "Це перезапише наявну теку"
       ],
       "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on the device won’t be affected.": [
-        "Це призведе до видалення з ${ DRIVE_APP_NAME } синхронізованого пристрою ${ deviceName }. Локальні файли на пристрої не буде змінено."
+        "Це призведе до вилучення з ${ DRIVE_APP_NAME } синхронізованого пристрою ${ deviceName }. Це не вплине на локальні файли на пристрої."
       ],
       "This will replace the existing file with the folder": [
         "Це призведе до заміни наявного файлу текою"
@@ -4726,7 +4723,7 @@
         "Дивовижно"
       ],
       "Yes, I want to permanently delete my old files": [
-        "Так, я хочу назавжди видалити свої старі файли"
+        "Так, я хочу остаточно видалити свої старі файли"
       ],
       "Your password (admin)": [
         "Новий пароль (адмін)"

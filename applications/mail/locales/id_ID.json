@@ -328,6 +328,9 @@
       "Download ${ attachmentName }": [
         "Unduh ${ attachmentName }"
       ],
+      "Downloading": [
+        "Mengunduh"
+      ],
       "Edit": [
         "Sunting"
       ],
@@ -471,6 +474,9 @@
       ],
       "Hide messages": [
         "Sembunyikan pesan"
+      ],
+      "hide-my-email aliases": [
+        "alias Hide My Email"
       ],
       "I have a question": [
         "Saya memiliki pertanyaan"
@@ -1008,6 +1014,9 @@
       ],
       "This message contains remote content.": [
         "Pesan ini mengandung remote content."
+      ],
+      "To search your emails securely, we need to download a copy of your messages to your browser. The initial download may take a moment.": [
+        "Untuk mencari surel Anda dengan aman, kami perlu mengunduh salinan pesan Anda ke peramban Anda. Unduhan awal mungkin membutuhkan beberapa waktu."
       ],
       "Toggle Calendar app": [
         "Tampilkan/sembunyikan aplikasi Calendar"
@@ -3857,6 +3866,9 @@
       "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
         "Beserta 2700 server di 65+ negara, hubungan sampai 10 perangkat, akses layanan streaming seluruh dunia, pemblokiran malware dan iklan, dan lebih banyak lagi."
       ],
+      "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
+        "Beserta dukungan untuk 3 domain surel kustom, 90 alamat surel, alias Hide My Email tidak terbatas, pembagian kalender, dan lebih banyak lagi."
+      ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Amankan berkas Anda dengan penyimpanan awan terenkripsi. Beserta sinkronisasi otomatis, pembagian berkas terenkripsi, dan lebih banyak lagi."
       ]
@@ -4791,6 +4803,9 @@
       "Don't forget to share the password with the recipient": [
         "Jangan lupa untuk membagikan kata sandi Anda dengan penerima pesan"
       ],
+      "Downloading paused": [
+        "Pengunduhan dijeda"
+      ],
       "Draft": [
         "Draf"
       ],
@@ -4800,11 +4815,11 @@
       "Draft saved.": [
         "Draf tersimpan."
       ],
-      "Drop a file here to upload": [
-        "Letakkan berkas yang hendak Anda unggah di sini"
+      "Drop file here to upload": [
+        "Lepaskan berkas di sini untuk mengunggah"
       ],
-      "Drop the file here to upload": [
-        "Letakkan berkas yang hendak Anda unggah di sini"
+      "Drop to import": [
+        "Lepaskan untuk mengimpor"
       ],
       "Duplicate key updated": [
         "Kunci ganda diperbarui"
@@ -5067,6 +5082,9 @@
       "Message will be sent tomorrow at ${ formattedTime }": [
         "Pesan akan terkirim besok pada pukul ${ formattedTime }"
       ],
+      "Messages downloaded: ${ currentProgress } out of ${ totalProgress }": [
+        "Pesan diunduh: ${ currentProgress } dari ${ totalProgress }"
+      ],
       "Messages that have been in trash and spam more than 30 days will be automatically deleted.": [
         "Pesan yang telah terbuang ke sampah dan spam selama lebih dari 30 hari akan dihapus secara otomatis."
       ],
@@ -5141,6 +5159,9 @@
       ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Sistem kami menandai pesan ini sebagai phishing. Mohon periksa keabsahan pesan."
+      ],
+      "Our system flagged this message as a suspicious email. Please check that it is legitimate before clicking any links or attachments.": [
+        "Sistem kami telah menandai pesan ini sebagai surel mencurigakan. Silakan diperiksa jika surelnya asli sebelum mengeklik tautan atau lampiran apa pun."
       ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "Enkripsi PGP/Inline hanya kompatibel dengan format Plain Text."
@@ -5253,6 +5274,9 @@
       "Scheduling message...": [
         "Menjadwalkan pesan..."
       ],
+      "Search option that lets you securely search for keywords in the body of email messages.": [
+        "Opsi pencarian yang memungkinkan Anda untuk mencari berdasarkan kata kunci pada badan email secara aman."
+      ],
       "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
         "Apakah pencarian Anda memakan waktu yang terlalu lama? ${ dropdownButton } atau ${ toggleOffButton } dari sesi pencarian ini."
       ],
@@ -5306,6 +5330,9 @@
       ],
       "Show original message": [
         "Tampilkan pesan asli"
+      ],
+      "SimpleLogin is a ${ BRAND_NAME } service, and your ${ BRAND_NAME_TWO } Account includes hide-my-email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
+        "SimpleLogin adalah layanan ${ BRAND_NAME }, dan akun ${ BRAND_NAME_TWO } Anda beserta alias Hide My Email. Untuk mulai menyamarkan alamat surel Anda, buka SimpleLogin dan buat alias pertama Anda."
       ],
       "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
         "SimpleLogin memudahkan Anda untuk dapat membuat akun pada situs pihak ketiga yang tidak terpercaya di kala Anda tidak ingin menggunakan alamat email asli Anda."
@@ -5393,6 +5420,9 @@
       ],
       "This conversation contains non-trashed messages.": [
         "Percakapan ini berisi pesan yang tidak dibuang."
+      ],
+      "This conversation contains one or more expiring messages": [
+        "Percakapan ini berisi satu pesan kedaluwarsa atau lebih"
       ],
       "This conversation contains trashed messages.": [
         "Percakapan ini berisi pesan yang telah dibuang."
@@ -5492,6 +5522,9 @@
       ],
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "Pesan yang akan dikirim sudah terlalu banyak. Mohon tunggu sejenak sebelum Anda menjadwalkan pengiriman pesan ini."
+      ],
+      "Turn off to only search by date, name, or email address. To disable search message content and delete downloaded messages, go to settings.": [
+        "Matikan untuk hanya mencari berdasarkan tanggal, nama, atau alamat surel. Untuk menonaktifkan pencarian konten pesan dan penghapusan pesan terunduh, pergi ke pengaturan."
       ],
       "Turn on to search the content of your messages": [
         "Aktifkan untuk dapat mencari isi konten pesan Anda"
@@ -5727,6 +5760,9 @@
       "Your email will only be used for this one-time verification.": [
         "Email Anda hanya akan dipakai satu kali ini untuk keperluan verifikasi."
       ],
+      "Your files will be encrypted and then saved": [
+        "Berkas Anda akan dienkripsi lalu disimpan"
+      ],
       "Your import will not be processed.": [
         "Impor Anda tidak akan diproses."
       ],
@@ -5783,6 +5819,12 @@
       ]
     },
     "Key pinning": {
+      "Clicking \"Trust Key\" will associate this public key with this sender and emails from this address will be automatically cryptographically verified.": [
+        "Dengan mengeklik \"Percayai Kunci\", kunci publik ini akan dihubungkan dengan pengirim dan surel dari alamat ini akan diverifikasi kriptografi secara otomatis."
+      ],
+      "Clicking \"Trust Key\" will create a new contact and associate this public key with this sender. Emails from this address will be automatically cryptographically verified.": [
+        "Dengan mengeklik \"Percayai Kunci\", ini akan membuat kontak baru dan menghubungkannya kunci publik ini dengan pengirim. Surel dari alamat ini akan diverifikasi kriptografi secara otomatis."
+      ],
       "Do you want to trust the primary public keys with the following fingerprints?": [
         "Apakah Anda ingin memercayai kunci publik utama dengan sidik jari berikut?"
       ],
@@ -6999,6 +7041,9 @@
       "Custom email domains": [
         "Domain email khusus"
       ],
+      "Hide-my-email aliases": [
+        "Alias Hide My Email"
+      ],
       "Schedule messages at any time": [
         "Jadwalkan pesan sesuai keinginan Anda"
       ],
@@ -7248,6 +7293,9 @@
       ],
       "Please insert link first": [
         "Silakan sisipkan tautan terlebih dulu"
+      ],
+      "Search date, name, email address, or subject line": [
+        "Cari tanggal, nama, alamat email, atau baris subjek"
       ],
       "Search for group name": [
         "Cari nama grup"
@@ -7766,6 +7814,15 @@
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
         "Akses konten di layanan streaming, termasuk Netflix, Disney+, dan Prime Video, dari mana pun."
       ],
+      "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
+        "Semua layanan premium kami dengan batas tertinggi: 100 alamat surel, dukungan 10 domain kustom, alias Hide My Email tidak terbatas, pembagian kalender, penyimpanan awan dan pembagian berkas terenkripsi, dan lebih banyak lagi."
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Termasuk dukungan untuk 1 domain surel kustom, 10 alamat surel, 10 alias Hide My Email, berbagi kalender, dan lainnya."
+      ],
+      "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Beserta dukungan untuk 3 domain surel kustom, 15 alamat surel, alias Hide My Email tidak terbatas, pembagian kalender, dan lebih banyak lagi."
+      ],
       "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
         "Cocok untuk keluarga atau tim kecil, setiap orang dapat memiliki kotak masuk dan alias mereka sendiri. Membutuhkan domain kustom."
       ],
@@ -7791,6 +7848,12 @@
       ],
       "Schedule send": [
         "Jadwalkan pengiriman"
+      ],
+      "Search just got smarter and faster": [
+        "Pencarian kini hadir lebih cerdas dan lebih cepat"
+      ],
+      "Try it today.": [
+        "Coba hari ini."
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "Kami kini memuat gambar secara default dan memblokir pengirim untuk dapat melacak Anda. Hal ini dapat diubah di ${ settingsLink }."
@@ -7976,6 +8039,9 @@
       ],
       "Message added to ${ labelName }.": [
         "Pesan ditambahkan ke ${ labelName }."
+      ],
+      "Message content search enabled": [
+        "Pencarian konten pesan diaktifkan"
       ],
       "Message deleted": [
         "Pesan dihapus"
