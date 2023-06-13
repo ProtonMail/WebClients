@@ -38,7 +38,7 @@ export type ExtensionLocalData = {
     settings?: string;
 };
 
-export type PopupState = {
+export type PopupInitialState = {
     hasAutofillCandidates: boolean;
     initialSearch: string;
     draft: MaybeNull<ItemDraft>;

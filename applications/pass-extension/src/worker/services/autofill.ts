@@ -15,6 +15,7 @@ import { workerReady } from '@proton/pass/utils/worker';
 import noop from '@proton/utils/noop';
 
 import { setPopupIconBadge } from '../../shared/extension';
+import { isContentScriptPort } from '../../shared/extension/port';
 import WorkerMessageBroker from '../channel';
 import { onContextReady, withContext } from '../context';
 import store from '../store';
@@ -73,7 +74,7 @@ export const createAutoFillService = () => {
                                     type: WorkerMessageType.AUTOFILL_SYNC,
                                     payload: { count: safeCount },
                                 },
-                                (name) => name.startsWith(`content-script-${tabId}`)
+                                isContentScriptPort(tabId)
                             );
 
                             return setPopupIconBadge(tabId, count);

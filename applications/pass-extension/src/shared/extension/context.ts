@@ -7,9 +7,10 @@ import { type ExtensionEndpoint, type TabId, WorkerMessageType } from '@proton/p
 import { createSharedContext } from '@proton/pass/utils/context';
 import { safeCall } from '@proton/pass/utils/fp';
 import { logger } from '@proton/pass/utils/logger';
-import { uniqueId } from '@proton/pass/utils/string';
 import type { ParsedUrl } from '@proton/pass/utils/url';
 import { parseUrl } from '@proton/pass/utils/url';
+
+import { generatePortName } from './port';
 
 export type ExtensionContextType = {
     endpoint: ExtensionEndpoint;
@@ -32,7 +33,7 @@ export const setupExtensionContext = async (options: ExtensionContextOptions): P
     try {
         const tab = await getCurrentTab();
         if (tab !== undefined && tab.id !== undefined) {
-            const name = `${endpoint}-${tab.id}-${uniqueId(16)}`;
+            const name = generatePortName(endpoint, tab.id);
             const port = browser.runtime.connect(browser.runtime.id, { name });
 
             const ctx = ExtensionContext.set({
