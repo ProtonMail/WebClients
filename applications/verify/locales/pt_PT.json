@@ -21,7 +21,7 @@
         "Continuar"
       ],
       "Edit email address": [
-        "Editar o endereço de email"
+        "Editar o endereço de e-mail "
       ],
       "Edit phone number": [
         "Editar o número de telefone"
@@ -36,7 +36,7 @@
         "Mais informações: ${ safeTitle }"
       ],
       "Refresh the page": [
-        "Atualizar a página"
+        "Actualizar a página"
       ],
       "Request new code": [
         "Pedir novo código"
@@ -45,7 +45,7 @@
         "Reenviar código"
       ],
       "Search countries": [
-        "Procurar países"
+        "Pesquisar países"
       ],
       "Submit": [
         "Submeter"
@@ -843,7 +843,7 @@
     },
     "Error": {
       "Email is not valid": [
-        "O correio electrónico não é válido."
+        "O e-mail não é válido."
       ],
       "Enter 6 digits": [
         "Insira 6 algarismos"
@@ -861,7 +861,7 @@
         "O pedido expirou"
       ],
       "The email addresses do not match": [
-        "Os endereços de correio electrónico não coincidem."
+        "Os endereços de e-mail não coincidem."
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Este campo excede o máximo de ${ maximumLength } caracteres."
@@ -889,11 +889,25 @@
       "Error: ${ errorMessage }": [
         "Erro: ${ errorMessage }"
       ],
+      "Please refresh the page or try again later.": [
+        "Por favor, atualize a página ou tente novamente mais tarde."
+      ],
       "Something went wrong": [
         "Ocorreu um erro"
+      ],
+      "We couldn't load this page. Please refresh the page or check your internet connection.": [
+        "Não foi possível carregar esta página. Por favor, atualize a página ou verifique a sua ligação à Internet."
+      ]
+    },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Algo correu mal ao autenticar com a sua chave de segurança. Por favor, tente novamente."
       ]
     },
     "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Insira uma chave de segurança associada à sua conta ${ BRAND_NAME }."
+      ],
       "Security key": [
         "Chave de segurança"
       ]
@@ -946,7 +960,7 @@
         "Se tiver problemas ao criar a conta, solicite um convite e responderemos dentro de um dia útil."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
-        "Se não encontrar o correio electrónico na sua caixa de entrada, verifique a pasta de spam."
+        "Se não encontrar o e-mail na sua caixa de entrada, verifique a pasta de spam."
       ],
       "Internet connection lost": [
         "Ligação à Internet perdida"
@@ -982,13 +996,13 @@
         "Gostaria de receber um novo código de verificação?"
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
-        "A sua conta ${ BRAND_NAME } de momento está suspensa. Após 28 dias, os correios electrónicos deixarão de ser entregues na sua caixa de entrada, as suas ligações de partilha de disco serão bloqueadas, e não poderá carregar novos ficheiros. Para retomar o serviço normal, pague quaisquer faturas em atraso."
+        "A sua conta ${ BRAND_NAME } de momento está suspensa. Após 28 dias, os e-mails deixarão de ser entregues na sua caixa de entrada, as suas ligações de partilha de disco serão bloqueadas, e não poderá carregar novos ficheiros. Para retomar o serviço normal, pague quaisquer faturas em atraso."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "A sua conta ${ BRAND_NAME } está suspensa de momento. Não receberá e-mails na sua caixa de entrada. Os seus links de partilha do Drive estão inativos e não pode fazer upload de novos arquivos. Para continuar a usar sua conta, efetue o pagamento das faturas vencidas."
       ],
       "Your email will only be used for this one-time verification.": [
-        "O seu correio electrónico só será usado para esta verificação única."
+        "O seu e-mail só será usado para esta verificação única."
       ],
       "Your phone number will only be used for this one-time verification.": [
         "O seu telefone só será usado para esta verificação única."
@@ -1002,7 +1016,7 @@
         "O código tem 6 dígitos sem espaços"
       ],
       "Email address": [
-        "Endereço de correio electrónico"
+        "Endereço de e-mail"
       ],
       "Hide password": [
         "Ocultar a palavra-passe"
