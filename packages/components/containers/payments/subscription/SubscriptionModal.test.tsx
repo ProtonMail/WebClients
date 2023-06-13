@@ -32,7 +32,7 @@ describe('useProration', () => {
     let subscriptionModel: SubscriptionModel;
     let checkResult: SubscriptionCheckResponse;
     const plansMap: PlansMap = {
-        mail2022: {
+        [PLANS.MAIL]: {
             ID: 'Wb4NAqmiuqoA7kCHE28y92bBFfN8jaYQCLxHRAB96yGj-bh9SxguXC48_WSU-fRUjdAr-lx95c6rFLplgXyXYA==',
             Type: 1,
             Name: PLANS.MAIL,
@@ -52,13 +52,18 @@ describe('useProration', () => {
                 '12': 4788,
                 '24': 8376,
             },
+            DefaultPricing: {
+                '1': 499,
+                '12': 4788,
+                '24': 8376,
+            },
             Currency: 'CHF',
             Quantity: 1,
             Cycle: 1,
             Amount: 499,
             Offers: [],
         },
-        mailpro2022: {
+        [PLANS.MAIL_PRO]: {
             ID: 'rIJcBetavQi7h5qqN9nxrRnlojgl6HF6bAVG989deNJVVVx1nn2Ic3eyCVV2Adq11ddseZuWba9H5tmvLC727Q==',
             Type: 1,
             Name: PLANS.MAIL_PRO,
@@ -78,13 +83,18 @@ describe('useProration', () => {
                 '12': 8388,
                 '24': 15576,
             },
+            DefaultPricing: {
+                '1': 799,
+                '12': 8388,
+                '24': 15576,
+            },
             Currency: 'CHF',
             Quantity: 1,
             Cycle: 1,
             Amount: 799,
             Offers: [],
         },
-        bundle2022: {
+        [PLANS.BUNDLE]: {
             ID: 'vl-JevUsz3GJc18CC1VOs-qDKqoIWlLiUePdrzFc72-BtxBPHBDZM7ayn8CNQ59Sk4XjDbwwBVpdYrPIFtOvIw==',
             Type: 1,
             Name: PLANS.BUNDLE,
@@ -100,6 +110,11 @@ describe('useProration', () => {
             Features: 1,
             State: 1,
             Pricing: {
+                '1': 1199,
+                '12': 11988,
+                '24': 19176,
+            },
+            DefaultPricing: {
                 '1': 1199,
                 '12': 11988,
                 '24': 19176,
@@ -156,7 +171,16 @@ describe('useProration', () => {
                     State: 1,
                     Title: 'Mail Plus',
                     Type: 1,
-                    Pricing: null as any,
+                    Pricing: {
+                        1: 499,
+                        12: 4788,
+                        24: 8376,
+                    },
+                    DefaultPricing: {
+                        1: 499,
+                        12: 4788,
+                        24: 8376,
+                    },
                     Offers: [],
                 },
             ],
