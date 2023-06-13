@@ -85,7 +85,7 @@ export const createContentScriptClient = (scriptId: string, mainFrame: boolean) 
         const res = await sendMessage(
             contentScriptMessage({
                 type: WorkerMessageType.WORKER_WAKEUP,
-                payload: { endpoint: 'content-script', tabId },
+                payload: { endpoint: 'contentscript', tabId },
             })
         );
 
@@ -111,7 +111,7 @@ export const createContentScriptClient = (scriptId: string, mainFrame: boolean) 
     const start = async () => {
         try {
             const extensionContext = await setupExtensionContext({
-                endpoint: 'content-script',
+                endpoint: 'contentscript',
                 onDisconnect: () => destroy({ recycle: true, reason: 'port disconnected' }),
                 onContextChange: (nextCtx) => context.getState().active && handleStart(nextCtx),
             });

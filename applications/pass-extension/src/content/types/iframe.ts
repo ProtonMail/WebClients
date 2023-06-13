@@ -61,7 +61,7 @@ export enum IFrameMessageType {
     NOTIFICATION_AUTOSAVE_FAILURE = 'NOTIFICATION_AUTOSAVE_FAILURE',
 }
 
-export type IFrameEndpoint = 'content-script' | 'notification' | 'dropdown';
+export type IFrameEndpoint = 'contentscript' | 'notification' | 'dropdown';
 
 export type IFrameMessage<T extends IFrameMessageType = IFrameMessageType> = Extract<
     | { type: IFrameMessageType.IFRAME_INJECT_PORT; payload: { port: string } }
