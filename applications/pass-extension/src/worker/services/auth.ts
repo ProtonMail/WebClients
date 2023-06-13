@@ -160,9 +160,7 @@ export const createAuthService = ({
                  * make sure to catch 403 in this catch block. It is handled by
                  * the session lock check in the AuthService::login call right now */
                 const accessResponse = await api({ url: `pass/v1/user/access`, method: 'post' }).catch((e) => {
-                    if (!api.getStatus().sessionLocked) {
-                        throw e;
-                    }
+                    if (!api.getStatus().sessionLocked) throw e;
                 });
 
                 if (accessResponse?.Access) {

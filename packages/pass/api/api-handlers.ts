@@ -1,4 +1,5 @@
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { retryHandler } from '@proton/shared/lib/api/helpers/retryHandler';
 import { AppVersionBadError, InactiveSessionError } from '@proton/shared/lib/api/helpers/withApiHandlers';
 import { OFFLINE_RETRY_ATTEMPTS_MAX, OFFLINE_RETRY_DELAY, RETRY_ATTEMPTS_MAX } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES, HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
@@ -15,13 +16,11 @@ type ApiHandlersOptions = {
     apiContext: ApiContext;
 };
 
-/**
- * Simplified version of withApiHandlers.js :
+/* Simplified version of withApiHandlers.js :
  * - handles recursive session refresh
  * - handles appBadVersion
  * - handles basic offline error detection
- * - TODO: handle 429 TOO_MANY_REQUESTS errors
- */
+ * - FIXME: handle code 9001 errors with human verification  */
 export const withApiHandlers = ({ apiContext, refreshHandler }: ApiHandlersOptions): ApiCallFn => {
     return (options: ApiOptions) => {
         const {
@@ -55,9 +54,10 @@ export const withApiHandlers = ({ apiContext, refreshHandler }: ApiHandlersOptio
 
                 if (maxAttempts && attempts >= maxAttempts) throw error;
 
-                if (code === API_CUSTOM_ERROR_CODES.APP_VERSION_BAD) {
-                    throw AppVersionBadError();
-                }
+                /* Inactive extension session */
+                if (code === 300008) throw LockedSessionError();
+
+                if (code === API_CUSTOM_ERROR_CODES.APP_VERSION_BAD) throw AppVersionBadError();
 
                 if (name === 'OfflineError') {
                     if (attempts > retriesOnOffline) throw error;
@@ -70,14 +70,12 @@ export const withApiHandlers = ({ apiContext, refreshHandler }: ApiHandlersOptio
                     return next(attempts + 1, retriesOnTimeout);
                 }
 
-                if (code === 300008 /* Inactive extension session */) {
-                    throw LockedSessionError();
+                if (status === HTTP_ERROR_CODES.TOO_MANY_REQUESTS && !ignoreHandler.includes(status)) {
+                    await retryHandler(error);
+                    return next(attempts + 1, RETRY_ATTEMPTS_MAX);
                 }
 
-                if (
-                    !ignoreHandler.includes(HTTP_ERROR_CODES.UNAUTHORIZED) &&
-                    status === HTTP_ERROR_CODES.UNAUTHORIZED
-                ) {
+                if (status === HTTP_ERROR_CODES.UNAUTHORIZED && !ignoreHandler.includes(status)) {
                     try {
                         await refreshHandler(getDateHeader(response && response.headers));
                         return next(attempts + 1, RETRY_ATTEMPTS_MAX);
