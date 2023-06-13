@@ -39,6 +39,9 @@
       "activate": [
         "有効にする"
       ],
+      "Activate ${ Name }@pm.me": [
+        "${ Name }@pm.me を有効にする"
+      ],
       "Activate ${ user.Name }@pm.me": [
         "${ user.Name }@pm.me を有効にする"
       ],
@@ -501,12 +504,6 @@
       "Mark as default": [
         "既定として設定"
       ],
-      "Mark as not spam": [
-        "迷惑メールでないと指定"
-      ],
-      "Mark as spam": [
-        "迷惑メールと指定"
-      ],
       "mark emails as": [
         "メールをマーク"
       ],
@@ -536,9 +533,6 @@
       ],
       "No": [
         "いいえ"
-      ],
-      "Not spam": [
-        "迷惑メールでない"
       ],
       "OK": [
         "OK"
@@ -602,9 +596,6 @@
       ],
       "Remove": [
         "削除"
-      ],
-      "Remove Block": [
-        "ブロック解除"
       ],
       "Remove bonuses": [
         "ボーナスを削除"
@@ -734,6 +725,9 @@
       ],
       "Send code": [
         "コードを送信"
+      ],
+      "Send messages with @pm.me": [
+        "@pm.me でメッセージを送信"
       ],
       "Send my username": [
         "ユーザー名を送信"
@@ -2668,17 +2662,8 @@
       "${ name } failed to move to spam list": [
         "${ name } の迷惑メールリストへの移動に失敗しました"
       ],
-      "${ name } failed to move to your block list": [
-        "${ name } のブロックリストへの移動に失敗しました"
-      ],
-      "${ name } moved to not spam list": [
-        "${ name } が迷惑メールでないリストに移動されました"
-      ],
       "${ name } moved to spam list": [
         "${ name } が迷惑メールリストに移動されました"
-      ],
-      "${ name } moved to your block list": [
-        "${ name } がブロックリストに移動されました"
       ],
       "${ name } successfully deleted": [
         "${ name } が正常に削除されました"
@@ -2782,17 +2767,8 @@
       "${ name } failed to move to spam list": [
         "${ name } の迷惑メールリストへの移動に失敗しました"
       ],
-      "${ name } failed to move to your block list": [
-        "${ name } のブロックリストへの移動に失敗しました"
-      ],
-      "${ name } moved to not spam list": [
-        "${ name } が迷惑メールでないリストに移動されました"
-      ],
       "${ name } moved to spam list": [
         "${ name } が迷惑メールリストに移動されました"
-      ],
-      "${ name } moved to your block list": [
-        "${ name } がブロックリストに移動されました"
       ],
       "${ name } successfully deleted": [
         "${ name } が正常に削除されました"
@@ -3774,6 +3750,9 @@
       "Introducing ${ planName }": [
         "${ planName } のご紹介"
       ],
+      "Manage family group": [
+        "家族グループを管理"
+      ],
       "Set family name": [
         "家族名の設定"
       ]
@@ -3989,12 +3968,6 @@
     "FilterSettings": {
       "Add a custom filter to automatically perform certain actions, like labeling or archiving messages.": [
         "仕分けフィルターを追加すると、メッセージのラベル付けやアーカイブなどの操作を自動で実行できます。"
-      ],
-      "Emails from addresses marked as spam by you or ${ BRAND_NAME } will go to your spam folder. If you want to allow emails from one of these addresses, mark it as \"not spam\".": [
-        "あなたまたは ${ BRAND_NAME } によって迷惑メールと指定されたアドレスからのメールは、迷惑メールフォルダーに送られます。これらのアドレスのいずれかからのメールを許可したい場合は、「迷惑メールでない」と指定してください。"
-      ],
-      "Emails from blocked addresses won't be delivered.": [
-        "ブロックされたアドレスからのメールは受信しなくなります。"
       ],
       "Search list": [
         "リストを検索"
@@ -5012,12 +4985,6 @@
       ],
       "Download your PGP keys for use with other PGP-compatible services.": [
         "ほかの PGP 互換サービスで使用するためには PGP 鍵をダウンロードしてください。"
-      ],
-      "Drop a file here to upload": [
-        "アップロードするファイルをここにドロップしてください"
-      ],
-      "Drop the file here to upload": [
-        "アップロードするファイルをここにドロップしてください"
       ],
       "Each code can only be used once": [
         "各コードは 1 回のみ使用可能です"
@@ -6777,9 +6744,6 @@
       "Block malware, ads and trackers": [
         "マルウェア、広告、トラッカーをブロック"
       ],
-      "Blocked": [
-        "ブロック中"
-      ],
       "Browser": [
         "ブラウザ"
       ],
@@ -7181,9 +7145,6 @@
       ],
       "Non-standard ports": [
         "標準的ではないポート"
-      ],
-      "Not spam": [
-        "迷惑メールでない"
       ],
       "Notification": [
         "通知"
@@ -8006,17 +7967,11 @@
       "Back to inbox": [
         "受信箱に戻る"
       ],
-      "Blocked": [
-        "ブロック中"
-      ],
       "Calendar": [
         "カレンダー"
       ],
       "Inbox": [
         "受信トレイ"
-      ],
-      "Not spam": [
-        "迷惑メールでない"
       ],
       "Spam": [
         "迷惑メール"
@@ -8138,6 +8093,9 @@
       "${ n } folders and labels": [
         "${ n } 件のフォルダーおよびラベル"
       ],
+      "${ n } Hide-my-email aliases": [
+        "${ n } 件の Hide My Email エイリアス"
+      ],
       "${ n } labels": [
         "${ n } 件のラベル"
       ],
@@ -8179,6 +8137,9 @@
       ],
       "Auto-reply": [
         "自動返信"
+      ],
+      "Calendar sharing": [
+        "カレンダー共有"
       ],
       "Catch-all": [
         "Catch-All"
@@ -8403,6 +8364,9 @@
       ],
       "If you switch to a different plan, you lose all ${ visionary } plan benefits and won’t be able to switch back to ${ visionary }.": [
         "ほかのプランに変更するとすべての ${ visionary } プランの特典は失われ、${ visionary } プランに戻ることはできなくなります。"
+      ],
+      "Most popular": [
+        "最も人気"
       ],
       "Popular": [
         "最も人気"
@@ -10090,9 +10054,6 @@
       "Edit": [
         "編集"
       ],
-      "Email address": [
-        "メールアドレス"
-      ],
       "Email addresses": [
         "メールアドレス"
       ],
@@ -10229,14 +10190,8 @@
       "Add Sieve filter": [
         "Sieve フィルターの追加"
       ],
-      "Add to Not spam list": [
-        "迷惑メールでないリストに追加"
-      ],
       "Add to spam list": [
         "迷惑メールリストに追加"
-      ],
-      "Add to your block list": [
-        "ブロックリストに追加"
       ],
       "Add user": [
         "ユーザーを追加"
@@ -10879,9 +10834,6 @@
       ],
       "Sort labels alphabetically": [
         "ラベルをアルファベット順に並べ替え"
-      ],
-      "Spam and block list": [
-        "迷惑メールとブロックリスト"
       ],
       "Start a new import": [
         "新しいインポートを開始"
