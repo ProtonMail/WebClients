@@ -12,6 +12,7 @@ const config: OfferConfig = {
     featureCode: FeatureCode.OfferSummer2023,
     autoPopUp: 'one-time',
     canBeDisabled: true,
+    darkBackground: true,
     deals: [
         {
             ref: 'anniversary_offer-plus-12',
