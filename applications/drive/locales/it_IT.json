@@ -3231,7 +3231,7 @@
         "Cancella dati"
       ],
       "Clear encrypted search data": [
-        "Cancella i dati di ricerca crittografati"
+        "Cancella i dati di ricerca crittografata"
       ],
       "Clearing browser data will clear the search index on this device. All files would need to be re-indexed again while using the search functionality.": [
         "La cancellazione dei dati del browser cancellerà l'indice di ricerca su questo dispositivo. Tutti i file dovrebbero essere reindicizzati di nuovo durante l'utilizzo della funzionalità di ricerca."
@@ -3337,8 +3337,11 @@
       "Downloading": [
         "Scaricamento"
       ],
-      "Drop the file here to upload": [
-        "Trascina qui il file per caricare"
+      "Drop file here to upload": [
+        "Trascina qui i file da caricare."
+      ],
+      "Drop to import": [
+        "Trascinare per importare"
       ],
       "Duplicate key updated": [
         "Chiave duplicata aggiornata"
@@ -4085,6 +4088,9 @@
       ],
       "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ KeyReactivationButton }": [
         "I tuoi file non sono più accessibili a causa di un reset della password. Ricarica la vecchia chiave di crittografia per recuperare l'accesso. ${ KeyReactivationButton }"
+      ],
+      "Your files will be encrypted and then saved": [
+        "I tuoi file verranno crittografati e poi salvati."
       ],
       "Your files will be encrypted and then saved.": [
         "I tuoi file verranno crittografati e poi salvati."
