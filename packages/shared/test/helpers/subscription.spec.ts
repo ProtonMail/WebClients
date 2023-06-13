@@ -6,6 +6,7 @@ import { ADDON_NAMES, COUPON_CODES, CYCLE, PLANS } from '../../lib/constants';
 import {
     getPlanIDs,
     getPricingFromPlanIDs,
+    getTotalFromPricing,
     hasLifetime,
     isManagedExternally,
     isTrial,
@@ -52,6 +53,11 @@ beforeEach(() => {
         Features: 123,
         Quantity: 123,
         Pricing: {
+            [CYCLE.MONTHLY]: 123,
+            [CYCLE.YEARLY]: 123,
+            [CYCLE.TWO_YEARS]: 123,
+        },
+        DefaultPricing: {
             [CYCLE.MONTHLY]: 123,
             [CYCLE.YEARLY]: 123,
             [CYCLE.TWO_YEARS]: 123,
@@ -200,7 +206,7 @@ describe('getPricingFromPlanIDs', () => {
     it('returns the correct pricing for a single plan ID', () => {
         const planIDs: PlanIDs = { pass2023: 1 };
         const plansMap: PlansMap = {
-            pass2023: {
+            [PLANS.PASS_PLUS]: {
                 ID: 'id123',
                 Type: 1,
                 Name: PLANS.PASS_PLUS,
@@ -218,6 +224,11 @@ describe('getPricingFromPlanIDs', () => {
                 Pricing: {
                     '1': 499,
                     '12': 1200,
+                    '24': 7176,
+                },
+                DefaultPricing: {
+                    '1': 499,
+                    '12': 4788,
                     '24': 7176,
                 },
                 Currency: 'CHF',
@@ -252,9 +263,227 @@ describe('getPricingFromPlanIDs', () => {
                 '24': 7176,
                 '30': 0,
             },
+            plansWithoutDiscount: {
+                '1': 499,
+                '12': 4788,
+                '15': null,
+                '24': 7176,
+                '30': null,
+            },
         };
 
         const result = getPricingFromPlanIDs(planIDs, plansMap);
+        expect(result).toEqual(expected);
+    });
+
+    it('should work without DefaultPricing from API', () => {
+        const planIDs: PlanIDs = { pass2023: 1 };
+        const plansMap: PlansMap = {
+            [PLANS.PASS_PLUS]: {
+                ID: 'id123',
+                Type: 1,
+                Name: PLANS.PASS_PLUS,
+                Title: 'Pass Plus',
+                MaxDomains: 0,
+                MaxAddresses: 0,
+                MaxCalendars: 0,
+                MaxSpace: 0,
+                MaxMembers: 0,
+                MaxVPN: 0,
+                MaxTier: 0,
+                Services: 8,
+                Features: 0,
+                State: 1,
+                Pricing: {
+                    '1': 499,
+                    '12': 1200,
+                    '24': 7176,
+                },
+                DefaultPricing: undefined as any,
+                Currency: 'CHF',
+                Quantity: 1,
+                Offers: [
+                    {
+                        Name: 'passlaunch',
+                        StartTime: 1684758588,
+                        EndTime: 1688110913,
+                        Pricing: {
+                            '12': 1200,
+                        },
+                    },
+                ],
+                Cycle: 1,
+                Amount: 499,
+            },
+        };
+
+        const expected = {
+            all: {
+                '1': 499,
+                '12': 1200,
+                '15': 0,
+                '24': 7176,
+                '30': 0,
+            },
+            plans: {
+                '1': 499,
+                '12': 1200,
+                '15': 0,
+                '24': 7176,
+                '30': 0,
+            },
+            plansWithoutDiscount: {
+                '1': null,
+                '12': null,
+                '15': null,
+                '24': null,
+                '30': null,
+            },
+        };
+
+        const result = getPricingFromPlanIDs(planIDs, plansMap);
+        expect(result).toEqual(expected);
+    });
+});
+
+describe('getTotalFromPricing', () => {
+    it('returns the correct pricing for a single plan ID', () => {
+        const planIDs: PlanIDs = { pass2023: 1 };
+        const plansMap: PlansMap = {
+            [PLANS.PASS_PLUS]: {
+                ID: 'id123',
+                Type: 1,
+                Name: PLANS.PASS_PLUS,
+                Title: 'Pass Plus',
+                MaxDomains: 0,
+                MaxAddresses: 0,
+                MaxCalendars: 0,
+                MaxSpace: 0,
+                MaxMembers: 0,
+                MaxVPN: 0,
+                MaxTier: 0,
+                Services: 8,
+                Features: 0,
+                State: 1,
+                Pricing: {
+                    '1': 499,
+                    '12': 4788,
+                    '24': 7176,
+                },
+                DefaultPricing: {
+                    '1': 499,
+                    '12': 4788,
+                    '24': 7176,
+                },
+                Currency: 'CHF',
+                Quantity: 1,
+                Offers: [],
+                Cycle: 1,
+                Amount: 499,
+            },
+        };
+
+        const expected = {
+            discount: 1200,
+            discountPercentage: 20,
+            total: 4788,
+            totalPerMonth: 399,
+        };
+
+        const pricing = getPricingFromPlanIDs(planIDs, plansMap);
+        const result = getTotalFromPricing(pricing, CYCLE.YEARLY);
+        expect(result).toEqual(expected);
+    });
+
+    it('should work without DefaultPricing from API', () => {
+        const planIDs: PlanIDs = { pass2023: 1 };
+        const plansMap: PlansMap = {
+            [PLANS.PASS_PLUS]: {
+                ID: 'id123',
+                Type: 1,
+                Name: PLANS.PASS_PLUS,
+                Title: 'Pass Plus',
+                MaxDomains: 0,
+                MaxAddresses: 0,
+                MaxCalendars: 0,
+                MaxSpace: 0,
+                MaxMembers: 0,
+                MaxVPN: 0,
+                MaxTier: 0,
+                Services: 8,
+                Features: 0,
+                State: 1,
+                Pricing: {
+                    '1': 499,
+                    '12': 4788,
+                    '24': 7176,
+                },
+                DefaultPricing: undefined as any,
+                Currency: 'CHF',
+                Quantity: 1,
+                Offers: [],
+                Cycle: 1,
+                Amount: 499,
+            },
+        };
+
+        const expected = {
+            discount: 1200,
+            discountPercentage: 20,
+            total: 4788,
+            totalPerMonth: 399,
+        };
+
+        const pricing = getPricingFromPlanIDs(planIDs, plansMap);
+        const result = getTotalFromPricing(pricing, CYCLE.YEARLY);
+        expect(result).toEqual(expected);
+    });
+
+    it('should provide discounted price against the same cycle', () => {
+        const planIDs: PlanIDs = { pass2023: 1 };
+        const plansMap: PlansMap = {
+            [PLANS.PASS_PLUS]: {
+                ID: 'id123',
+                Type: 1,
+                Name: PLANS.PASS_PLUS,
+                Title: 'Pass Plus',
+                MaxDomains: 0,
+                MaxAddresses: 0,
+                MaxCalendars: 0,
+                MaxSpace: 0,
+                MaxMembers: 0,
+                MaxVPN: 0,
+                MaxTier: 0,
+                Services: 8,
+                Features: 0,
+                State: 1,
+                Pricing: {
+                    '1': 499,
+                    '12': 1200,
+                    '24': 7176,
+                },
+                DefaultPricing: {
+                    '1': 499,
+                    '12': 4788,
+                    '24': 7176,
+                },
+                Currency: 'CHF',
+                Quantity: 1,
+                Offers: [],
+                Cycle: 1,
+                Amount: 499,
+            },
+        };
+
+        const expected = {
+            discount: 3588,
+            discountPercentage: 75,
+            total: 1200,
+            totalPerMonth: 100,
+        };
+
+        const pricing = getPricingFromPlanIDs(planIDs, plansMap);
+        const result = getTotalFromPricing(pricing, CYCLE.YEARLY);
         expect(result).toEqual(expected);
     });
 });
