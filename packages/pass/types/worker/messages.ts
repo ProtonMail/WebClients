@@ -19,7 +19,7 @@ import type { FormEntry, NewFormEntry, PromptedFormEntry } from './form';
 import type { OnboardingMessage } from './onboarding';
 import type { OtpCode, OtpRequest } from './otp';
 import type { TabId } from './runtime';
-import type { PopupState, WorkerState } from './state';
+import type { PopupInitialState, WorkerState } from './state';
 
 type WithPayload<T extends WorkerMessageType, P extends {}> = { type: T; payload: P };
 
@@ -40,6 +40,7 @@ export enum WorkerMessageType {
     WORKER_WAKEUP = 'WORKER_WAKEUP',
     WORKER_INIT = 'WORKER_INIT',
     WORKER_STATUS = 'WORKER_STATUS',
+    POPUP_INIT = 'POPUP_INIT',
     UPDATE_AVAILABLE = 'UPDATE_AVAILABLE',
     LOAD_CONTENT_SCRIPT = 'LOAD_CONTENT_SCRIPT',
     UNLOAD_CONTENT_SCRIPT = 'UNLOAD_CONTENT_SCRIPT',
@@ -80,6 +81,7 @@ export type AccountAuthExtMessage = { type: WorkerMessageType.ACCOUNT_EXTENSION 
 export type AccountProbeMessage = { type: WorkerMessageType.ACCOUNT_PROBE };
 export type AccountPassOnboardingMessage = { type: WorkerMessageType.ACCOUNT_ONBOARDING };
 
+export type PopupInitMessage = WithPayload<WorkerMessageType.POPUP_INIT, { tabId: TabId }>;
 export type WorkerWakeUpMessage = WithPayload<WorkerMessageType.WORKER_WAKEUP, { tabId: TabId }>;
 export type WorkerInitMessage = WithPayload<WorkerMessageType.WORKER_INIT, { sync: boolean }>;
 export type WorkerStatusMessage = WithPayload<WorkerMessageType.WORKER_STATUS, { state: WorkerState }>;
@@ -126,6 +128,7 @@ export type WorkerMessage =
     | WorkerWakeUpMessage
     | WorkerInitMessage
     | WorkerStatusMessage
+    | PopupInitMessage
     | UpdateAvailableMessage
     | UnloadContentScriptMessage
     | StartContentScriptMessage
@@ -163,15 +166,10 @@ export type MessageFailure = { type: 'error'; error: string; payload?: string };
 export type MessageSuccess<T> = T extends { [key: string]: any } ? T & { type: 'success' } : { type: 'success' };
 export type MaybeMessage<T> = MessageSuccess<T> | MessageFailure;
 
-export type WakeupResponse = WorkerState & {
-    buffered?: WorkerMessageWithSender[];
-    popup?: PopupState;
-    settings?: ProxiedSettings;
-};
-
 type WorkerMessageResponseMap = {
-    [WorkerMessageType.WORKER_WAKEUP]: WakeupResponse;
+    [WorkerMessageType.WORKER_WAKEUP]: WorkerState & { settings: ProxiedSettings };
     [WorkerMessageType.WORKER_INIT]: WorkerState;
+    [WorkerMessageType.POPUP_INIT]: PopupInitialState;
     [WorkerMessageType.RESOLVE_TAB]: { tab: Maybe<Tabs.Tab> };
     [WorkerMessageType.RESOLVE_EXTENSION_KEY]: { key: string };
     [WorkerMessageType.ACCOUNT_FORK]: { payload: ExtensionForkResultPayload };

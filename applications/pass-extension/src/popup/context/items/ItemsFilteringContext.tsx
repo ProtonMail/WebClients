@@ -41,9 +41,9 @@ export const ItemsFilteringContext = createContext<ItemsFilteringContextType>({
  * This could be in a redux state slice instead, but for now using the redux store mainly for vault contents is preferred.
  */
 export const ItemsFilteringContextProvider: FC = ({ children }) => {
-    const { state } = usePopupContext();
+    const popup = usePopupContext();
 
-    const [search, setSearch] = useState<string>(state.popup?.initialSearch ?? '');
+    const [search, setSearch] = useState<string>(popup.state.initialSearch);
     const [sort, setSort] = useState<ItemsSortOption>(INITIAL_SORT);
     const [filter, setFilter] = useState<ItemsFilterOption>('*');
     const [shareId, setShareId] = useState<MaybeNull<string>>(null);

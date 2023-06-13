@@ -91,10 +91,10 @@ export const createContentScriptClient = (scriptId: string, mainFrame: boolean) 
 
         if (res.type === 'success' && context.getState().active) {
             const workerState = { loggedIn: res.loggedIn, status: res.status, UID: res.UID };
-            logger.debug(`[ContentScript::${scriptId}] Worker status resolved "${workerState.status}"`);
-
             onWorkerStateChange(workerState);
-            onSettingsChange(res.settings!);
+            onSettingsChange(res.settings);
+
+            logger.debug(`[ContentScript::${scriptId}] Worker status resolved "${workerState.status}"`);
 
             /* if we're in an iframe and the initial detection should not
              * be triggered : destroy this content-script service */
