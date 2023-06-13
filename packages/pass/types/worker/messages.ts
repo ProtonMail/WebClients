@@ -29,7 +29,7 @@ export type PortFrameForwardingMessage<T = any> = {
     payload: T;
 };
 
-export type ExtensionEndpoint = 'popup' | 'content-script' | 'background' | 'page';
+export type ExtensionEndpoint = 'popup' | 'contentscript' | 'background' | 'page';
 
 export enum WorkerMessageType {
     ACCOUNT_FORK = 'fork',
