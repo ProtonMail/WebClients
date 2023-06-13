@@ -533,12 +533,6 @@
       "Mark as default": [
         "Пазначыць як прадвызначаны"
       ],
-      "Mark as not spam": [
-        "Пазначыць як не спам"
-      ],
-      "Mark as spam": [
-        "Пазначыць як спам"
-      ],
       "mark emails as": [
         "пазначыць лісты як"
       ],
@@ -568,9 +562,6 @@
       ],
       "No": [
         "Не"
-      ],
-      "Not spam": [
-        "Не спам"
       ],
       "OK": [
         "Добра"
@@ -634,9 +625,6 @@
       ],
       "Remove": [
         "Выдаліць"
-      ],
-      "Remove Block": [
-        "Разблакіраваць"
       ],
       "Remove bonuses": [
         "Выдаліць бонусы"
@@ -816,7 +804,7 @@
         "Увайсці"
       ],
       "Sign out": [
-        "Выйсці"
+        "Выхад з уліковага запісу"
       ],
       "Sign out from ${ nameToDisplay } ${ maybeEmailInBrackets }": [
         "Выйсці з ${ nameToDisplay } ${ maybeEmailInBrackets }"
@@ -2794,20 +2782,8 @@
       "${ name } failed to move to spam list": [
         "Не ўдалося перамясціць ${ name } у спіс са спамам"
       ],
-      "${ name } failed to move to the not-spam list": [
-        "Не ўдалося перамясціць ${ name } у спіс не спам"
-      ],
-      "${ name } failed to move to your block list": [
-        "Не ўдалося перамясціць ${ name } у ваш спіс заблакіраваных"
-      ],
-      "${ name } moved to not spam list": [
-        "${ name } перамешчана ў спіс не спам"
-      ],
       "${ name } moved to spam list": [
         "${ name } перамешчаны ў спіс са спамам"
-      ],
-      "${ name } moved to your block list": [
-        "${ name } перамешчаны ў ваш спіс заблакіраваных"
       ],
       "${ name } successfully deleted": [
         "${ name } паспяхова выдалены"
@@ -2911,20 +2887,8 @@
       "${ name } failed to move to spam list": [
         "Не ўдалося перамясціць ${ name } у спіс са спамам"
       ],
-      "${ name } failed to move to the not-spam list": [
-        "Не ўдалося перамясціць ${ name } у спіс не спам"
-      ],
-      "${ name } failed to move to your block list": [
-        "Не ўдалося перамясціць ${ name } у ваш спіс заблакіраваных"
-      ],
-      "${ name } moved to not spam list": [
-        "${ name } перамешчана ў спіс не спам"
-      ],
       "${ name } moved to spam list": [
         "${ name } перамешчаны ў спіс са спамам"
-      ],
-      "${ name } moved to your block list": [
-        "${ name } перамешчаны ў ваш спіс заблакіраваных"
       ],
       "${ name } successfully deleted": [
         "${ name } паспяхова выдалены"
@@ -4333,15 +4297,6 @@
       "Add a custom filter to automatically perform certain actions, like labeling or archiving messages.": [
         "Дадайце ўласны фільтр для выканання такіх аўтаматычных дзеянняў, як пазначэнне меткай або архіваванне паведамленняў."
       ],
-      "Emails from addresses marked as spam by you or ${ BRAND_NAME } will go to the spam folder of your organization members. If you want to allow emails from one of these addresses, mark it as \"not spam\".": [
-        "Лісты ад адрасоў, якія пазначаны як спам вамі або ${ BRAND_NAME } будуць трапляць у папку са спамам удзельнікаў вашай арганізацыі. Калі вы хочаце дазволіць лісты ад аднаго з гэтых адрасоў, то вам неабходна пазначаць іх як \"не спам\"."
-      ],
-      "Emails from addresses marked as spam by you or ${ BRAND_NAME } will go to your spam folder. If you want to allow emails from one of these addresses, mark it as \"not spam\".": [
-        "Лісты ад адрасоў, якія пазначаны як спам вамі або ${ BRAND_NAME } будуць трапляць у папку са спамам. Калі вы хочаце дазволіць лісты ад аднаго з гэтых адрасоў, то вам неабходна пазначаць яго як \"не спам\"."
-      ],
-      "Emails from blocked addresses won't be delivered.": [
-        "Лісты ад заблакіраваных адрасоў не будуць дастаўлены."
-      ],
       "Search list": [
         "Спіс пошуку"
       ]
@@ -5098,7 +5053,7 @@
         "+${ organization.BonusVPN } падключэнні па VPN для ${ VPN_APP_NAME } (дазваляе падключыць больш прылад па VPN)"
       ],
       "1. Invite friends to ${ BRAND_NAME }": [
-        "1. Запрасіць сяброў у ${ BRAND_NAME }"
+        "1. Запрасіце сяброў у ${ BRAND_NAME }"
       ],
       "10 email addresses": [
         "10 адрасоў электроннай пошты"
@@ -5107,7 +5062,7 @@
         "2. Яны спрабуюць ${ planName }"
       ],
       "3. You earn credits": [
-        "3. Вы заробіце крэдыты"
+        "3. Вы зарабляеце крэдыты"
       ],
       "30-day money-back guarantee": [
         "Гарантыя вяртання грашовых сродкаў на працягу 30 дзён"
@@ -5525,12 +5480,6 @@
       ],
       "Download your PGP keys for use with other PGP-compatible services.": [
         "Спампуйце вашы ключы PGP, каб выкарыстоўваць іх з іншымі сумяшчальнымі сэрвісамі PGP."
-      ],
-      "Drop a file here to upload": [
-        "Перацягніце файл сюды, каб запампаваць"
-      ],
-      "Drop the file here to upload": [
-        "Перацягніце файл сюды, каб запампаваць"
       ],
       "Each code can only be used once": [
         "Кожны код можа выкарыстоўвацца толькі адзін раз"
@@ -6364,7 +6313,7 @@
         "Гэтыя канфігурацыі разлічаны на маршрутызатары, якія працуюць з WireGuard і афіцыйнымі кліентамі."
       ],
       "They'll receive a free month of ${ planName }.": [
-        "Яны атрымаюць бясплатныя месяцы тарыфнага плана ${ planName }."
+        "У іх будзе адзін бясплатны месяц на тарыфным плане ${ planName }."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Дзеянне гэтага ўліковага запісу было прыпынена па прычыне патэнцыйнага парушэння ўмоў выкарыстання."
@@ -7491,9 +7440,6 @@
       "Block malware, ads and trackers": [
         "Блакіраваць шкодныя праграмы, рэкламу і праграмы сачэння"
       ],
-      "Blocked": [
-        "Заблакіравана"
-      ],
       "Browser": [
         "Браўзер"
       ],
@@ -7895,9 +7841,6 @@
       ],
       "Non-standard ports": [
         "Нестандартныя парты"
-      ],
-      "Not spam": [
-        "Не спам"
       ],
       "Notification": [
         "Апавяшчэнне"
@@ -8756,17 +8699,11 @@
       "Back to inbox": [
         "Вярнуцца ва ўваходныя"
       ],
-      "Blocked": [
-        "Заблакіравана"
-      ],
       "Calendar": [
         "Каляндар"
       ],
       "Inbox": [
         "Уваходныя"
-      ],
-      "Not spam": [
-        "Не спам"
       ],
       "Spam": [
         "Спам"
@@ -9093,7 +9030,7 @@
         "Палітыка адсутнасці журналаў актыўнасці"
       ],
       "Password-protected Emails": [
-        "Лісты абаронены паролем"
+        "Лісты абароненыя паролем"
       ],
       "Phone support (6+ users)": [
         "Падтрымка па тэлефоне (ад 6 карыстальнікаў)"
@@ -9126,7 +9063,7 @@
         "Серверы Secure Core"
       ],
       "Send & receive invitations": [
-        "Адпраўленне і атрымліванне запрашэнняў"
+        "Адпраўка і атрыманне запрашэнняў"
       ],
       "Share calendar via link": [
         "Абагуліць каляндар праз спасылку"
@@ -9141,7 +9078,7 @@
         "Split Tunneling (Android і Windows)"
       ],
       "Strict no-logs policy": [
-        "Строгая палітыка адсутнасці журналаў актыўнасці"
+        "Палітыка строгай адсутнасці журналаў актыўнасці"
       ],
       "Team management": [
         "Кіраванне камандамі"
@@ -11280,9 +11217,6 @@
       "Edit": [
         "Рэдагаваць"
       ],
-      "Email address": [
-        "Адрас электроннай пошты"
-      ],
       "Email addresses": [
         "Адрасы электроннай пошты"
       ],
@@ -11437,14 +11371,8 @@
       "Add Sieve filter": [
         "Дадаць фільтр Sieve"
       ],
-      "Add to Not spam list": [
-        "Дадаць у спіс не спам"
-      ],
       "Add to spam list": [
         "Дадаць у спіс са спамам"
-      ],
-      "Add to your block list": [
-        "Дадаць у ваш спіс заблакіраваных"
       ],
       "Add user": [
         "Дадаць карыстальніка"
@@ -11795,7 +11723,7 @@
         "Як гэта працуе?"
       ],
       "How to refer a friend and get credits": [
-        "Як запрасіць сябра і атрымаць за гэта крэдыты"
+        "Як запрасіць сяброў і атрымаць за гэта крэдыты"
       ],
       "Human verification": [
         "Антыспамавая праверка"
@@ -12102,9 +12030,6 @@
       ],
       "Sort labels alphabetically": [
         "Сартаваць меткі па алфавіце"
-      ],
-      "Spam and block list": [
-        "Спам і спіс заблакіраваных"
       ],
       "Start a new import": [
         "Пачаць новае імпартаванне"

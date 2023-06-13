@@ -18,6 +18,11 @@
         "Περιορισμένη προβολή (δείτε μόνο ελεύθερος/απασχολημένος)"
       ]
     },
+    "account": {
+      "Forwarding will start soon. New emails will appear in your inbox.": [
+        "Η προώθηση θα ξεκινήσει σύντομα. Νέα μηνύματα ηλεκτρονικού ταχυδρομείου θα εμφανιστούν στα εισερχόμενά σας."
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } introduction": [
         "${ BRAND_NAME } εισαγωγή"
@@ -451,12 +456,6 @@
       "Mark as default": [
         "Ορισμός ως προεπιλογή"
       ],
-      "Mark as not spam": [
-        "Σήμανση ως μη ενοχλητικό"
-      ],
-      "Mark as spam": [
-        "Σήμανση ως ενοχλητικό"
-      ],
       "mark emails as": [
         "σήμανση μηνυμάτων ως"
       ],
@@ -486,9 +485,6 @@
       ],
       "No": [
         "Όχι"
-      ],
-      "Not spam": [
-        "Μη ενοχλητικό"
       ],
       "OK": [
         "ΟΚ"
@@ -943,11 +939,19 @@
       ]
     },
     "Animation": {
+      "Email received": [
+        "Ελήφθη email"
+      ],
       "Encrypted": [
         "Κρυπτογραφημένα"
       ],
       "New email": [
         "Νέα διεύθυνση ηλεκτρονικού ταχυδρομείου"
+      ]
+    },
+    "Apps dropdown": {
+      "${ BRAND_NAME } applications": [
+        "${ BRAND_NAME } εφαρμογές"
       ]
     },
     "Attached ics file error": {
@@ -1310,6 +1314,9 @@
       ],
       "dim gray": [
         "αχνό γκρι"
+      ],
+      "enzian": [
+        "ενζιάν"
       ],
       "fern": [
         "φτέρη"
@@ -2411,6 +2418,9 @@
       ]
     },
     "Description": {
+      "Automatically clear out messages older than 30 days from trash and spam. Enjoy this and other benefits when you upgrade.": [
+        "Αυτόματη εκκαθάριση μηνυμάτων παλαιότερων των 30 ημερών από τον κάδο απορριμμάτων και τα ανεπιθύμητα μηνύματα. Απολαύστε αυτό και άλλα πλεονεκτήματα κατά την αναβάθμιση."
+      ],
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "Συγχαρητήρια! Κερδίσατε το μέγιστο των ${ rewardsLimit } δωρεάν μηνών ${ plusPlanName }."
       ],
@@ -2423,6 +2433,12 @@
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "Το αρχείο πρέπει να έχει μέγιστο μέγεθος ${ MAX_IMPORT_FILE_SIZE_STRING } και να έχει μέχρι και ${ MAX_IMPORT_CONTACTS_STRING } επαφή. Εάν το αρχείο σας είναι μεγαλύτερο, διαχωρίστε το σε μικρότερα αρχεία.",
         "Το αρχείο πρέπει να έχει μέγιστο μέγεθος ${ MAX_IMPORT_FILE_SIZE_STRING } και να έχει\nμέχρι και ${ MAX_IMPORT_CONTACTS_STRING } επαφές. Εάν το αρχείο σας είναι μεγαλύτερο, διαχωρίστε το σε μικρότερα αρχεία."
+      ],
+      "Unlock unlimited filters that sort your inbox for you and more premium features when you upgrade.": [
+        "Ξεκλειδώστε απεριόριστα φίλτρα που ταξινομούν τα εισερχόμενά σας για εσάς και περισσότερες premium λειτουργίες κατά την αναβάθμιση."
+      ],
+      "Unlock unlimited folders, labels and more premium features when you upgrade.": [
+        "Ξεκλειδώστε απεριόριστους φακέλους, ετικέτες και περισσότερες premium λειτουργίες κατά την αναβάθμιση."
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Μπορείτε να εισάγετε γεγονότα σε μορφή iCal (ICS αρχείο).\nΤο αρχείο θα πρέπει να έχει μέγιστο μέγεθος ${ MAX_IMPORT_FILE_SIZE_STRING } και να έχει μέχρι ${ MAX_IMPORT_EVENTS_STRING } γεγονότα.\nΑν το αρχείο σας είναι μεγαλύτερο, παρακαλούμε να το χωρίσετε σε μικρότερα αρχεία."
@@ -2735,6 +2751,15 @@
       "No active sessions": [
         "Δεν υπάρχουν ενεργές συνεδρίες"
       ],
+      "No calendars found to import": [
+        "Δε βρέθηκαν ημερολόγια για εισαγωγή."
+      ],
+      "No contacts found to import": [
+        "Δε βρέθηκαν επαφές για εισαγωγή"
+      ],
+      "No emails found to import - the account does not have an inbox": [
+        "Δεν βρέθηκαν μηνύματα ηλεκτρονικού ταχυδρομείου για εισαγωγή - ο λογαριασμός δεν διαθέτει εισερχόμενα"
+      ],
       "No valid address found": [
         "Δεν βρέθηκε έγκυρη διεύθυνση"
       ],
@@ -2845,6 +2870,9 @@
       "Some of your folder names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Κάποια από τα ονόματα φακέλων σας υπερβαίνουν το μέγιστο όριο χαρακτήρων του ${ MAIL_APP_NAME }. Παρακαλούμε προσαρμόστε την εισαγωγή για να διορθώσετε αυτά τα ονόματα."
       ],
+      "Some of your label names are reserved. Please customize the import to edit these names.": [
+        "Ορισμένα από τα ονόματα των ετικετών σας είναι δεσμευμένα. Προσαρμόστε την εισαγωγή για να επεξεργαστείτε αυτά τα ονόματα."
+      ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         "Ορισμένα από τα ονόματα ετικετών σας δεν είναι διαθέσιμα. Προσαρμόστε την εισαγωγή για να επεξεργαστείτε αυτά τα ονόματα."
       ],
@@ -2859,6 +2887,9 @@
       ],
       "The address might be misspelled": [
         "Η διεύθυνση μπορεί να είναι κακογραμμένη"
+      ],
+      "The email addresses do not match": [
+        "Οι διευθύνσεις email δεν ταιριάζουν."
       ],
       "The folder name is invalid. Please choose a different name.": [
         "Μη έγκυρο όνομα φακέλου. Παρακαλούμε δοκιμάστε ένα διαφορετικό."
@@ -2902,6 +2933,9 @@
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Υπερβολικός αριθμός φακέλων στον εξωτερικό λογαριασμό σας. Παρακαλούμε προσαρμόστε την εισαγωγή, προς διαγραφή μερικών φακέλων."
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Αυτό το πεδίο υπερβαίνει το μέγιστο των χαρακτήρων ${ maximumLength }."
+      ],
       "This field is required": [
         "Αυτό το πεδίο είναι υποχρεωτικό"
       ],
@@ -2919,6 +2953,9 @@
       ],
       "Trusted keys are not valid for sending": [
         "Τα αξιόπιστα κλειδιά δεν είναι έγκυρα για την αποστολή"
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "Δοκιμάστε να χρησιμοποιήσετε μόνο γράμματα, αριθμούς και _.-"
       ],
       "Unknown error": [
         "Άγνωστο σφάλμα"
@@ -2959,6 +2996,9 @@
       "You have no invoices.": [
         "Δεν έχετε τιμολόγια."
       ],
+      "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
+        "Έχετε συμπληρώσει τον μέγιστο αριθμό ημερολογίων. Δεν ήταν δυνατή η εισαγωγή ορισμένων ημερολογίων."
+      ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "Έχετε χρησιμοποιήσει όλες τις διευθύνσεις στο πρόγραμμά σας. Για προσθήκη νέας διεύθυνσης, παρακαλούμε αναβαθμίστε το πρόγραμμά σας."
       ],
@@ -2985,6 +3025,9 @@
       ]
     },
     "Error importing calendar": {
+      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
+        "Παρουσιάστηκε σφάλμα κατά την ανάγνωση του αρχείου σας ${ formattedFilename }. Εσφαλμένη μορφή αρχείου."
+      ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Παρουσιάστηκε σφάλμα κατά την μεταφόρτωση του αρχείου ${ formattedFilename }. Το μέγιστο μέγεθος αρχείου είναι ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
@@ -3017,9 +3060,15 @@
     "Error importing contact": {
       "Encryption failed": [
         "Η κρυπτογράφηση απέτυχε"
+      ],
+      "vCard versions < 3.0 not supported": [
+        "οι εκδόσεις vCard < 3.0 δεν υποστηρίζονται"
       ]
     },
     "Error importing contacts": {
+      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
+        "Παρουσιάστηκε σφάλμα κατά την ανάγνωση του αρχείου σας ${ formattedFilename }. Εσφαλμένη μορφή αρχείου."
+      ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Παρουσιάστηκε σφάλμα κατά την αποστολή του αρχείου ${ formattedFilename }. Το μέγιστο μέγεθος αρχείου είναι ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
@@ -3227,6 +3276,12 @@
       "Invalid response": [
         "Μη έγκυρη απάντηση"
       ],
+      "The event could not be added to your calendar. No answer was sent": [
+        "Δεν ήταν δυνατή η προσθήκη του συμβάντος στο ημερολόγιό σας. Δεν εστάλη απάντηση"
+      ],
+      "The event could not be updated in your calendar. No answer was sent": [
+        "Δεν ήταν δυνατή η ενημέρωση του συμβάντος στο ημερολόγιό σας. Δεν εστάλη απάντηση"
+      ],
       "Unexpected error": [
         "Απροσδόκητο σφάλμα"
       ],
@@ -3278,6 +3333,11 @@
     "familyOffer_2023: Deal details": {
       "3 TB total storage": [
         "Συνολικός αποθηκευτικός χώρος 3 TB"
+      ]
+    },
+    "familyOffer_2023: Get Proton Family": {
+      "Get ${ planName }": [
+        "Απόκτηση ${ planName }"
       ]
     },
     "familyOffer_2023: Tooltip": {
@@ -3378,6 +3438,11 @@
         "Το τρέχον σχέδιό σας δεν μπορεί να συμμετάσχει σε ένα Οραματικό ή οικογενειακό σχέδιο."
       ]
     },
+    "familyOffer_2023:Get Proton Family": {
+      "Get ${ planName }": [
+        "Απόκτηση ${ planName }"
+      ]
+    },
     "familyOffer_2023:Tooltip": {
       "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
         "Περιλαμβάνει 2700 διακομιστές σε 65+ χώρες, συνδέει έως και 10 συσκευές, έχει πρόσβαση σε παγκόσμιες υπηρεσίες ροής, προστασια κακόβουλο λογισμικό και αποκλεισμό διαφημίσεων και πολλά άλλα."
@@ -3463,6 +3528,9 @@
       "Archive": [
         "Αρχειοθετημένα"
       ],
+      "Do not move": [
+        "Μην μετακινείστε"
+      ],
       "Inbox": [
         "Εισερχόμενα"
       ],
@@ -3542,6 +3610,9 @@
       ]
     },
     "Gmail forwarding": {
+      "Gmail messages to your inbox": [
+        "Μηνύματα Gmail στα εισερχόμενά σας"
+      ],
       "Sign in with Google": [
         "Σύνδεση μέσω Google"
       ]
@@ -3880,6 +3951,9 @@
       "app password or enable IMAP": [
         "κωδικός εφαρμογής ή ενεργοποίηση IMAP"
       ],
+      "CSV or a VCF (vCard) file": [
+        "CSV ή ένα αρχείο VCF (vCard)"
+      ],
       "full calendar view": [
         "πλήρης προβολή ημερολογίου"
       ],
@@ -3904,6 +3978,9 @@
       ]
     },
     "Import provider": {
+      "Import from ${ provider }": [
+        "Εισαγωγή από ${ provider }"
+      ],
       "Other": [
         "Άλλο"
       ]
@@ -3994,6 +4071,12 @@
       ],
       "${ emailAddress } is invalid": [
         "Η ${ emailAddress } είναι μη έγκυρη"
+      ],
+      "${ fileName }: full-size image": [
+        "${ fileName }: εικόνα πλήρους μεγέθους"
+      ],
+      "${ fileName }: low-resolution preview": [
+        "${ fileName }: προεπισκόπηση χαμηλής ανάλυσης"
       ],
       "${ firstRemainingCalendarName } will be set as default calendar.": [
         "Το ${ firstRemainingCalendarName } θα οριστεί ως προεπιλεγμένο ημερολόγιο."
@@ -4096,6 +4179,9 @@
       ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Ένα όνομα που σας βοηθά να αναγνωρίζετε πού το χρησιμοποιείτε, ώστε αργότερα να μπορείτε εύκολα να το ανακαλέσετε ή επεκτείνετε."
+      ],
+      "A phone number can only be used to verify one ${ BRAND_NAME } account": [
+        "Ένας αριθμός τηλεφώνου μπορεί να χρησιμοποιηθεί μόνο για την επαλήθευση ενός λογαριασμού ${ BRAND_NAME }"
       ],
       "A recovery file lets you unlock and view your data after an account reset": [
         "Ένα αρχείο ανάκτησης επιτρέπει το ξεκλείδωμα και άνοιγμα των δεδομένων σας μετά από επαναφορά λογαριασμού."
@@ -4219,6 +4305,9 @@
       ],
       "Are you sure you want to delete this filter?": [
         "Θέλετε σίγουρα να διαγράψετε αυτό το φίλτρο;"
+      ],
+      "Are you sure you want to delete this folder? All subfolders will also be deleted.": [
+        "Θέλετε σίγουρα να διαγράψετε αυτόν τον φάκελο; Θα διαγραφούν επίσης όλοι οι υποφάκελοι."
       ],
       "Are you sure you want to delete this label?": [
         "Θέλετε σίγουρα να διαγράψετε αυτήν την ετικέτα;"
@@ -4411,12 +4500,6 @@
       "Download your PGP keys for use with other PGP-compatible services.": [
         "Κατεβάστε τα κλειδιά PGP σας για χρήση με άλλες υπηρεσίες συμβατές με PGP."
       ],
-      "Drop a file here to upload": [
-        "Σύρτε ένα αρχείο εδώ για ανέβασμα"
-      ],
-      "Drop the file here to upload": [
-        "Σύρτε το αρχείο εδώ για ανέβασμα"
-      ],
       "Each code can only be used once": [
         "Κάθε κωδικός μπορεί να χρησιμοποιηθεί μόνο μια φορά"
       ],
@@ -4512,6 +4595,9 @@
       ],
       "For Visa, MasterCard and Discover, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
         "Για visa, MasterCard και Discover, τα 3 ψηφία στο πίσω μέρος της κάρτας σας. Για την American Express, τα 4 ψηφία στο μπροστινό μέρος της κάρτας σας."
+      ],
+      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
+        "Προωθήστε την εισερχόμενη αλληλογραφία από άλλο λογαριασμό στα ασφαλή εισερχόμενά σας ${ MAIL_APP_NAME }."
       ],
       "Free up some space or add more storage space.": [
         "Ελευθερώστε χώρο ή προσθέστε περισσότερο χώρο αποθήκευσης."
@@ -4609,6 +4695,9 @@
       ],
       "Import mailbox": [
         "Εισαγωγή γραμματοκιβωτίου"
+      ],
+      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
+        "Εισαγάγετε τα μηνύματα ηλεκτρονικού ταχυδρομείου, τα ημερολόγια και τις επαφές σας από άλλη υπηρεσία στο ${ BRAND_NAME }."
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Σημαντικό: Βεβαιωθείτε ότι έχετε αποθηκεύσει τους κωδικούς ανάκτησης. Διαφορετικά, μπορείτε να χάσετε μόνιμα την πρόσβαση στο λογαριασμό σας αν χάσετε τη συσκευή ελέγχου ταυτότητας δύο παραγόντων."
@@ -4964,6 +5053,12 @@
       ],
       "Select what you want to import.": [
         "Επιλέξτε τι θέλετε να εισάγετε."
+      ],
+      "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
+        "Επιλέξτε ποια ημερολόγια θέλετε να εισαγάγετε. Θα δημιουργηθεί ένα νέο ημερολόγιο για κάθε εισαγόμενο ημερολόγιο σύμφωνα με τον αριθμό των ημερολογίων που είναι διαθέσιμα στο σχέδιό σας."
+      ],
+      "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
+        "Στάλθηκε με <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> διασφαλισμένο ταχυδρομείο."
       ],
       "Server is currently down": [
         "Ο διακομιστής είναι προσωρινά εκτός"
@@ -5894,6 +5989,9 @@
       "App password": [
         "Κωδικός πρόσβασης εφαρμογής"
       ],
+      "Apply filter to existing emails": [
+        "Εφαρμογή φίλτρου στα υπάρχοντα μηνύματα"
+      ],
       "Attach public key": [
         "Επισυνάψτε το δημόσιο κλειδί"
       ],
@@ -5920,9 +6018,6 @@
       ],
       "Block malware, ads and trackers": [
         "Αποκλεισμός κακόβουλου λογισμικού, διαφημίσεων και ιχνηλατών"
-      ],
-      "Blocked": [
-        "Αποκλεισμένο"
       ],
       "Browser": [
         "Πρόγραμμα περιήγησης"
@@ -6064,6 +6159,9 @@
       ],
       "Delete": [
         "Διαγραφή"
+      ],
+      "Delete recovery-related information.": [
+        "Διαγράψτε πληροφορίες που σχετίζονται με την ανάκτηση."
       ],
       "Density": [
         "Πυκνότητα"
@@ -6218,6 +6316,9 @@
       "Key strength": [
         "Ισχύς Κλειδιού"
       ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "Συντόμευση πληκτρολογίου: ${ shortcut }"
+      ],
       "Keyboard shortcuts": [
         "Συντομεύσεις πληκτρολογίου"
       ],
@@ -6301,9 +6402,6 @@
       ],
       "Non-standard ports": [
         "Μη τυποποιημένες θύρες"
-      ],
-      "Not spam": [
-        "Μη ενοχλητικό"
       ],
       "Notification": [
         "Ειδοποίηση"
@@ -6709,6 +6807,17 @@
         "Η προτίμηση αποθηκεύτηκε"
       ]
     },
+    "Limit of calendars reached": {
+      "To add a new calendar, remove an existing one.": [
+        "Για να προσθέσετε ένα νέο ημερολόγιο, καταργήστε ένα υπάρχον."
+      ],
+      "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
+        "Για να προσθέσετε ένα νέο ημερολόγιο, καταργήστε ένα άλλο ημερολόγιο ή αναβαθμίστε το πρόγραμμα ${ BRAND_NAME } σε πρόγραμμα επί πληρωμή ${ MAIL_SHORT_APP_NAME }."
+      ],
+      "You've reached the maximum number of calendars available in your plan.": [
+        "Έχετε συμπληρώσει τον μέγιστο αριθμό ημερολογίων που είναι διαθέσιμα στο σχέδιό σας."
+      ]
+    },
     "Link": {
       "Add a gift code": [
         "Προσθήκη κωδικού δώρου"
@@ -6869,6 +6978,11 @@
       ],
       "Sign in": [
         "Είσοδος"
+      ]
+    },
+    "Message": {
+      "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
+        "Η δωρεάν δοκιμή σας έληξε. Η πρόσβαση στον λογαριασμό σας θα απενεργοποιηθεί σύντομα. ${ action }"
       ]
     },
     "Message display when a new app version is available": {
@@ -7058,17 +7172,11 @@
       "Back to inbox": [
         "Πίσω στα Εισερχόμενα"
       ],
-      "Blocked": [
-        "Αποκλεισμένο"
-      ],
       "Calendar": [
         "Ημερολόγιο"
       ],
       "Inbox": [
         "Εισερχόμενα"
-      ],
-      "Not spam": [
-        "Μη ενοχλητικό"
       ],
       "Spam": [
         "Ενοχλητικά"
@@ -7217,6 +7325,9 @@
       "Advanced sharing security": [
         "Προχωρημένη διασφάλιση κοινοποίησης"
       ],
+      "Auto-delete spam and trashed messages": [
+        "Αυτόματη διαγραφή ανεπιθύμητων και απορριφθέντων μηνυμάτων"
+      ],
       "Auto-reply": [
         "Αυτόματη απάντηση"
       ],
@@ -7305,6 +7416,9 @@
       "Unlimited folders": [
         "Απεριόριστοι φάκελοι"
       ],
+      "Unlimited folders, labels, and filters": [
+        "Απεριόριστοι φάκελοι, ετικέτες και φίλτρα"
+      ],
       "Unlimited labels": [
         "Απεριόριστες ετικέτες"
       ],
@@ -7317,11 +7431,28 @@
       "Up to 15 email addresses": [
         "Έως 15 ηλ. διευθύνσεις"
       ],
+      "Up to 3 TB of storage": [
+        "Έως 3 TB αποθηκευτικού χώρου"
+      ],
       "User credential management": [
         "Διαχείριση διαπιστευτηρίων χρηστών"
       ],
       "User session management": [
         "Διαχείριση συνεδριών χρηστών"
+      ]
+    },
+    "new_plans: feature info": {
+      "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
+        "Δημιουργήστε πολλαπλές διευθύνσεις ηλεκτρονικού ταχυδρομείου για τις διαδικτυακές ταυτότητες σας, π.χ. JohnShopper@${ domain } για λογαριασμούς αγορών, JohnNews@${ domain2 } για συνδρομή ειδήσεων"
+      ],
+      "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
+        "Αποκτήστε απεριόριστα ψευδώνυμα με το SimpleLogin από ${ BRAND_NAME }"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
+        "Ο αποθηκευτικός χώρος μοιράζεται μεταξύ των ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } και ${ DRIVE_APP_NAME }"
+      ],
+      "Use your own custom email domain address, e.g., you@yourname.com": [
+        "Χρησιμοποιήστε τη δική σας προσαρμοσμένη διεύθυνση τομέα ηλεκτρονικού ταχυδρομείου, π.χ. you@yourname.com"
       ]
     },
     "new_plans: heading": {
@@ -8187,6 +8318,17 @@
     "specialoffer: Action": {
       "Close": [
         "Κλείσιμο"
+      ],
+      "Don't show this offer again": [
+        "Να μην εμφανιστεί ξανά αυτή η προσφορά"
+      ],
+      "Special offer": [
+        "Ειδική προσφορά"
+      ]
+    },
+    "specialoffer: Action, Unlimited is a plan name": {
+      "Go Unlimited": [
+        "Αναβαθμήστε σε Απεριόριστο"
       ]
     },
     "specialoffer: Countdown unit": {
@@ -8217,11 +8359,23 @@
       "${ storageSize } total storage": [
         "${ storageSize } συνολικός αποθηκευτικός χώρος"
       ],
+      "3 TB": [
+        "3 TB"
+      ],
       "6 users": [
         "6 χρήστες"
       ],
+      "64 countries": [
+        "64 χώρες"
+      ],
       "High speed VPN": [
         "VPN υψηλής ταχύτητας"
+      ],
+      "Highest VPN speed": [
+        "Ύψιστη ταχύτητα VPN"
+      ],
+      "Secure streaming": [
+        "Ασφαλής μετάδοση"
       ]
     },
     "specialoffer: Footer": {
@@ -8233,6 +8387,9 @@
       ]
     },
     "specialoffer: Label": {
+      "Lifetime deal": [
+        "Συμφωνία εφ' όρου ζωής"
+      ],
       "Limited time only": [
         "Για περιορισμένο διάστημα"
       ],
@@ -8241,6 +8398,9 @@
       ]
     },
     "specialoffer: Link": {
+      "Go to subscription plans": [
+        "Μεταβείτε στα προγράμματα συνδρομής"
+      ],
       "Upgrade": [
         "Αναβάθμιση"
       ]
@@ -8254,6 +8414,12 @@
       ],
       "2 years": [
         "2 χρόνια"
+      ],
+      "Billed at ${ amount } for 1 month": [
+        "Χρεωμένο στα ${ amount } για 1 μήνα"
+      ],
+      "Billed at ${ amount } for 12 months": [
+        "Χρεωμένο στα ${ amount } για 12 μήνες"
       ],
       "Billed at ${ amount } for 15 months": [
         "Χρεωμένο στα ${ amount } για 15 μήνες"
@@ -8273,11 +8439,34 @@
       ],
       "Save ${ discount }%": [
         "Εξοικονομήστε ${ discount }%"
+      ],
+      "Standard price ${ amount } for 1 month": [
+        "Τυπική τιμή ${ amount } για 1 μήνα"
+      ],
+      "Standard price ${ amount } for 12 months": [
+        "Τυπική τιμή ${ amount } για 12 μήνες"
+      ],
+      "Standard price ${ amount } for 15 months": [
+        "Τυπική τιμή ${ amount } για 15 μήνες"
+      ],
+      "Standard price ${ amount } for 24 months": [
+        "Τυπική τιμή ${ amount } για 24 μήνες"
+      ],
+      "Standard price ${ amount } for 30 months": [
+        "Τυπική τιμή ${ amount } για 30 μήνες"
       ]
     },
     "specialoffer: Title": {
       "Black Friday Sale": [
         "Προσφορά Black Friday"
+      ]
+    },
+    "specialoffer: Tooltip": {
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "Ασφαλίστε τα αρχεία σας με κρυπτογραφημένο χώρο αποθήκευσης cloud. Περιλαμβάνει αυτόματο συγχρονισμό, κρυπτογραφημένη κοινή χρήση αρχείων και πολλά άλλα."
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "Ο αποθηκευτικός χώρος μοιράζεται μεταξύ των ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } και ${ DRIVE_APP_NAME }."
       ]
     },
     "Spotlight": {
@@ -8690,9 +8879,6 @@
       "Edit": [
         "Επεξεργασία"
       ],
-      "Email address": [
-        "Διεύθυνση email"
-      ],
       "Email addresses": [
         "Διευθύνσεις Email"
       ],
@@ -8749,6 +8935,9 @@
       ]
     },
     "Title": {
+      "${ MAIL_APP_NAME } Keyboard Shortcuts": [
+        "${ MAIL_APP_NAME } Συντομεύσεις Πληκτρολογίου"
+      ],
       "1. Give a name to the config to be generated": [
         "1. Δώστε όνομα στην παραγόμενη διαμόρφωση"
       ],
@@ -8817,9 +9006,6 @@
       ],
       "Add Sieve filter": [
         "Προσθήκη φίλτρου Sieve"
-      ],
-      "Add to your block list": [
-        "Προσθήκη στη λίστα φραγμένων σας"
       ],
       "Add user": [
         "Προσθήκη χρήστη"
@@ -8907,6 +9093,9 @@
       ],
       "Clear": [
         "Καθαρισμός"
+      ],
+      "Clear out the junk": [
+        "Καθαρίστε τα ανεπιθύμητα"
       ],
       "Composing": [
         "Σύνταξη"
@@ -9180,6 +9369,9 @@
       "Invoices": [
         "Τιμολόγια"
       ],
+      "Keep your inbox organized": [
+        "Διατηρήστε τα εισερχόμενά σας οργανωμένα"
+      ],
       "Keyboard shortcuts": [
         "Συντομεύσεις πληκτρολογίου"
       ],
@@ -9203,6 +9395,9 @@
       ],
       "Messages and composing": [
         "Μηνύματα και σύνταξη"
+      ],
+      "Minicalendar": [
+        "Μίνι ημερολόγιο"
       ],
       "Multi-user support": [
         "Υποστήριξη Πολλαπλών Χρηστών"
@@ -9317,6 +9512,9 @@
       ],
       "Save contact details": [
         "Αποθήκευση στοιχείων επαφής"
+      ],
+      "Save time with email filters": [
+        "Εξοικονομήστε χρόνο με φίλτρα email"
       ],
       "Secure email based in Switzerland": [
         "Ασφαλές email με έδρα την Ελεβετία"
@@ -9479,6 +9677,9 @@
       "Your calendar link": [
         "Ο σύνδεσμος του ημερολογίου σας"
       ],
+      "Your changes are not synced yet": [
+        "Οι αλλαγές σας δεν έχουν συγχρονιστεί ακόμα"
+      ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Η δωρεάν δοκιμή του Mail Plus λήγει στις ${ textDate }"
       ],
@@ -9611,6 +9812,9 @@
       ],
       "Enabling advanced logs records the IP address for each event in the security log.": [
         "Η ενεργοποίηση προηγμένων αρχείων καταγραφής, καταγράφουν τη διεύθυνση IP για κάθε συμβάν στο αρχείο καταγραφής ασφαλείας."
+      ],
+      "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
+        "Το Gmail κατηγοριοποιεί αυτόματα ορισμένα μηνύματα ηλεκτρονικού ταχυδρομείου, όπως Κοινωνικά δίκτυα ή Προσφορές. Μπορείτε να επιλέξετε πού θα εισαγάγετε αυτά τα μηνύματα ηλεκτρονικού ταχυδρομείου."
       ],
       "Group emails in the same conversation together in your Inbox or display them separately.": [
         "Ομαδοποιήστε τα μηνύματα της ίδιας συνομιλίας στα Εισερχόμενά σας ή εμφανίστε τα ξεχωριστά."

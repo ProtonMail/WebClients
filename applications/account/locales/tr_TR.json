@@ -533,12 +533,6 @@
       "Mark as default": [
         "Varsayılan olarak işaretle"
       ],
-      "Mark as not spam": [
-        "İstenmeyen değil olarak işaretle"
-      ],
-      "Mark as spam": [
-        "İstenmeyen olarak işaretle"
-      ],
       "mark emails as": [
         "e-postalar şöyle işaretlensin"
       ],
@@ -568,9 +562,6 @@
       ],
       "No": [
         "Hayır"
-      ],
-      "Not spam": [
-        "İstenmeyen değil"
       ],
       "OK": [
         "Tamam"
@@ -634,9 +625,6 @@
       ],
       "Remove": [
         "Kaldır"
-      ],
-      "Remove Block": [
-        "Engellemeyi kaldır"
       ],
       "Remove bonuses": [
         "Hediyeleri kaldır"
@@ -2776,20 +2764,8 @@
       "${ name } failed to move to spam list": [
         "${ name } istenmeyenler listenize eklenemedi"
       ],
-      "${ name } failed to move to the not-spam list": [
-        "${ name } istenmeyen değil listesine eklenemedi"
-      ],
-      "${ name } failed to move to your block list": [
-        "${ name } engellenenler listenize eklenemedi"
-      ],
-      "${ name } moved to not spam list": [
-        "${ name } istenmeyen değil listesine eklendi"
-      ],
       "${ name } moved to spam list": [
         "${ name } istenmeyenler listesine eklendi"
-      ],
-      "${ name } moved to your block list": [
-        "${ name } engellenenler listenize eklendi"
       ],
       "${ name } successfully deleted": [
         "${ name } silindi"
@@ -2893,20 +2869,8 @@
       "${ name } failed to move to spam list": [
         "${ name } istenmeyenler listenize eklenemedi"
       ],
-      "${ name } failed to move to the not-spam list": [
-        "${ name } istenmeyen değil listesine eklenemedi"
-      ],
-      "${ name } failed to move to your block list": [
-        "${ name } engellenenler listenize eklenemedi"
-      ],
-      "${ name } moved to not spam list": [
-        "${ name } istenmeyen değil listesine eklendi"
-      ],
       "${ name } moved to spam list": [
         "${ name } istenmeyenler listesine eklendi"
-      ],
-      "${ name } moved to your block list": [
-        "${ name } engellenenler listenize eklendi"
       ],
       "${ name } successfully deleted": [
         "${ name } silindi"
@@ -4287,15 +4251,6 @@
       "Add a custom filter to automatically perform certain actions, like labeling or archiving messages.": [
         "İletileri etiketlemek ya da arşivlemek gibi belirli işlemleri otomatik olarak yapmak için özel bir süzgeç ekleyin."
       ],
-      "Emails from addresses marked as spam by you or ${ BRAND_NAME } will go to the spam folder of your organization members. If you want to allow emails from one of these addresses, mark it as \"not spam\".": [
-        "Siz ya da ${ BRAND_NAME } tarafından istenmeyen olarak işaretlenmiş adreslerden gelen e-postalar, kuruluş üyelerinizin istenmeyen kutusuna taşınır. Bu adreslerden birinden gelen e-postalara izin vermek istiyorsanız, \"İstenmeyen değil\" olarak işaretleyebilirsiniz."
-      ],
-      "Emails from addresses marked as spam by you or ${ BRAND_NAME } will go to your spam folder. If you want to allow emails from one of these addresses, mark it as \"not spam\".": [
-        "Siz ya da ${ BRAND_NAME } tarafından istenmeyen olarak işaretlenmiş e-postalar İstenmeyen kutunuza taşınır. Bu adreslerden gelen e-postalara izin vermek için e-postayı \"İstenmeyen değil\" olarak işaretleyebilirsiniz."
-      ],
-      "Emails from blocked addresses won't be delivered.": [
-        "Engellenmiş adreslerden gelen e-postalar alınmaz."
-      ],
       "Search list": [
         "Arama listesi"
       ]
@@ -5417,12 +5372,6 @@
       ],
       "Download your PGP keys for use with other PGP-compatible services.": [
         "PGP anahtarlarınızı diğer PGP uyumlu hizmetlerle kullanmak için indirin."
-      ],
-      "Drop a file here to upload": [
-        "Dosyayı sürükleyip buraya bırakın"
-      ],
-      "Drop the file here to upload": [
-        "Yüklemek için bir dosyayı sürükleyip buraya bırakın"
       ],
       "Each code can only be used once": [
         "Her kod yalnızca bir kez kullanılabilir"
@@ -7345,9 +7294,6 @@
       "Block malware, ads and trackers": [
         "Kötü amaçlı yazılımlar, reklamlar ve etkinlik izleyiciler engellensin"
       ],
-      "Blocked": [
-        "Engellenmiş"
-      ],
       "Browser": [
         "Tarayıcı"
       ],
@@ -7749,9 +7695,6 @@
       ],
       "Non-standard ports": [
         "Standart olmayan bağlantı noktaları"
-      ],
-      "Not spam": [
-        "İstenmeyen değil"
       ],
       "Notification": [
         "Bildirim"
@@ -8590,17 +8533,11 @@
       "Back to inbox": [
         "Gelen kutusuna dön"
       ],
-      "Blocked": [
-        "Engellenmiş"
-      ],
       "Calendar": [
         "Takvim"
       ],
       "Inbox": [
         "Gelen kutusu"
-      ],
-      "Not spam": [
-        "İstenmeyen değil"
       ],
       "Spam": [
         "İstenmeyen"
@@ -8734,6 +8671,10 @@
       "${ n } folder and label": [
         "${ n } klasör ve etiket",
         "${ n } klasör ve etiket"
+      ],
+      "${ n } Hide-my-email alias": [
+        "${ n } e-postamı gizle takma adı",
+        "${ n } e-postamı gizle takma adı"
       ],
       "${ n } label": [
         "${ n } etiket",
@@ -8957,6 +8898,9 @@
       ],
       "Unlimited folders, labels, and filters": [
         "Sınırsız klasör, etiket ve süzgeç"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Sınırsız e-postamı gizle takma adı"
       ],
       "Unlimited labels": [
         "Sınırsız etiket"
@@ -11007,9 +10951,6 @@
       "Edit": [
         "Düzenle"
       ],
-      "Email address": [
-        "E-posta adresi"
-      ],
       "Email addresses": [
         "E-posta adresleri"
       ],
@@ -11152,14 +11093,8 @@
       "Add Sieve filter": [
         "Sieve süzgeci ekle"
       ],
-      "Add to Not spam list": [
-        "İstenmeyen değil listesine ekle"
-      ],
       "Add to spam list": [
         "İstenmeyenler listesine ekle"
-      ],
-      "Add to your block list": [
-        "Engellenenler listenize ekleyin"
       ],
       "Add user": [
         "Kullanıcı ekle"
@@ -11812,9 +11747,6 @@
       "Sort labels alphabetically": [
         "Etiketler alfabetik olarak sıralansın"
       ],
-      "Spam and block list": [
-        "İstenmeyenler ve engellenenler listesi"
-      ],
       "Start a new import": [
         "Yeni bir içe aktarma başlatın"
       ],
@@ -12197,6 +12129,9 @@
       ]
     },
     "Upgrade": {
+      "Upgrade to ${ passPlusPlanName } to get unlimited hide-my-email aliases": [
+        "Sınırsız sayıda e-postamı gizle takma adı kullanmak için ${ passPlusPlanName } tarifesine yükseltin"
+      ],
       "Upgrade to ${ planName } to connect up to ${ n } device to the VPN at once": [
         "Aynı anda ${ n } aygıt ile VPN bağlantısı kurmak için ${ planName }ne yükseltin",
         "Aynı anda ${ n } aygıt ile VPN bağlantısı kurmak için ${ planName }ne yükseltin"
