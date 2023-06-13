@@ -3300,7 +3300,7 @@
         "找到 ${ groupCounts } 個群組"
       ],
       "${ numContact } contacts": [
-        "${ numContact } 個聯絡人"
+        "${ numContact } 位聯絡人"
       ],
       "${ numGroups } contact groups": [
         "${ numGroups } 個聯絡人群組"
@@ -3309,7 +3309,7 @@
         "找到 ${ providerFoldersNumLocalized } 個資料夾"
       ],
       "${ providerFoldersNumLocalized } labels found in Gmail": [
-        "在 Gmail 中找到 ${ providerFoldersNumLocalized } 個標籤"
+        "在 Gmail 中找到 ${ providerFoldersNumLocalized } 種標籤"
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendars": [
         "${ selectedCalendarsTotal } 個，共 ${ providerCalendars.length } 個行事曆"
@@ -3324,7 +3324,7 @@
         "已選取 ${ selectedFoldersCountLocalized } 個資料夾"
       ],
       "${ selectedFoldersCountLocalized } labels selected": [
-        "已選取 ${ selectedFoldersCountLocalized } 個標籤"
+        "已選取 ${ selectedFoldersCountLocalized } 種標籤"
       ],
       "${ updated } contacts updated successfully.": [
         "已成功更新 ${ updated } 位聯絡人。"
@@ -3452,8 +3452,8 @@
       "Discard changes?": [
         "放棄變更？"
       ],
-      "Drop the file here to upload": [
-        "拖放檔案到此處以上載"
+      "Drop file here to upload": [
+        "拖曳檔案到此處來上傳"
       ],
       "Duplicate key updated": [
         "重複金鑰已更新"
@@ -3648,7 +3648,7 @@
         "請選擇您想匯入的資料夾："
       ],
       "Please select which email address or addresses to add to ${ groupCount } groups.": [
-        "請選取一或多組電郵位址以加入至 ${ groupCount }。"
+        "請選取一或多組電郵位址以加入至 ${ groupCount } 個群組。"
       ],
       "Please select which email address or addresses to add to ${ groupName }.": [
         "請選取一或多組電郵位址以加入至 ${ groupName }。"
@@ -3916,6 +3916,9 @@
       ],
       "Your events will be encrypted and then saved.": [
         "您的事件將經加密後儲存。"
+      ],
+      "Your files will be encrypted and then saved": [
+        "你的檔案將加密後再儲存"
       ],
       "Your import will not be processed.": [
         "將不會處理您的匯入。"
@@ -4711,6 +4714,9 @@
       ],
       "Custom email domains": [
         "自訂電郵網域"
+      ],
+      "Hide-my-email aliases": [
+        "隱藏我的郵件別名"
       ],
       "Schedule messages at any time": [
         "在任意時間排程訊息"

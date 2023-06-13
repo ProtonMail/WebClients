@@ -1,6 +1,6 @@
 {
   "headers": {
-    "plural-forms": "nplurals=2; plural=(n != 1);",
+    "plural-forms": "nplurals=2; plural=(n > 1);",
     "language": "pt_BR"
   },
   "contexts": {
@@ -74,6 +74,9 @@
       "Add address": [
         "Adicionar endereço"
       ],
+      "Add address or domain": [
+        "Adicionar endereço ou domínio"
+      ],
       "Add calendar from URL": [
         "Adicionar calendário de uma URL"
       ],
@@ -124,6 +127,9 @@
       ],
       "Alignment": [
         "Alinhamento"
+      ],
+      "Allow": [
+        "Permitir"
       ],
       "Apply": [
         "Aplicar"
@@ -533,12 +539,6 @@
       "Mark as default": [
         "Definir como padrão"
       ],
-      "Mark as not spam": [
-        "Marcar como não é spam"
-      ],
-      "Mark as spam": [
-        "Marcar como spam"
-      ],
       "mark emails as": [
         "marcar e-mails como"
       ],
@@ -568,9 +568,6 @@
       ],
       "No": [
         "Não"
-      ],
-      "Not spam": [
-        "Não é spam"
       ],
       "OK": [
         "OK"
@@ -634,9 +631,6 @@
       ],
       "Remove": [
         "Remover"
-      ],
-      "Remove Block": [
-        "Remover bloqueio"
       ],
       "Remove bonuses": [
         "Remover bônus"
@@ -2773,23 +2767,23 @@
       "${ name } deletion failed": [
         "Falha na exclusão de ${ name }"
       ],
+      "${ name } failed to move to allow list": [
+        "${ name } falhou ao mover para a lista de permitidos"
+      ],
+      "${ name } failed to move to block list": [
+        "${ name } falhou ao mover para a lista de bloqueio"
+      ],
       "${ name } failed to move to spam list": [
         "${ name } falhou ao mover para a lista de spam"
       ],
-      "${ name } failed to move to the not-spam list": [
-        "${ name } falhou ao mover para a lista de não spam"
+      "${ name } moved to allow list": [
+        "${ name } movido para a lista de permitidos"
       ],
-      "${ name } failed to move to your block list": [
-        "${ name } falhou ao mover para a sua lista de bloqueio"
-      ],
-      "${ name } moved to not spam list": [
-        "${ name } movido para a lista de não spam"
+      "${ name } moved to block list": [
+        "${ name } movido para a lista de bloqueio"
       ],
       "${ name } moved to spam list": [
         "${ name } movido para a lista de Spam"
-      ],
-      "${ name } moved to your block list": [
-        "${ name } movido para a sua lista de bloqueados"
       ],
       "${ name } successfully deleted": [
         "${ name } excluído com sucesso"
@@ -2890,23 +2884,23 @@
       "${ name } deletion failed": [
         "Falha na exclusão de ${ name }"
       ],
+      "${ name } failed to move to allow list": [
+        "${ name } falhou ao mover para a lista de permitidos"
+      ],
+      "${ name } failed to move to block list": [
+        "${ name } falhou ao mover para a lista de bloqueio"
+      ],
       "${ name } failed to move to spam list": [
         "${ name } falhou ao mover para a lista de spam"
       ],
-      "${ name } failed to move to the not-spam list": [
-        "${ name } falhou ao mover para a lista de não spam"
+      "${ name } moved to allow list": [
+        "${ name } movido para a lista de permitidos"
       ],
-      "${ name } failed to move to your block list": [
-        "${ name } falhou ao mover para a sua lista de bloqueio"
-      ],
-      "${ name } moved to not spam list": [
-        "${ name } movido para a lista de não spam"
+      "${ name } moved to block list": [
+        "${ name } movido para a lista de bloqueio"
       ],
       "${ name } moved to spam list": [
         "${ name } movido para a lista de Spam"
-      ],
-      "${ name } moved to your block list": [
-        "${ name } movido para a sua lista de bloqueados"
       ],
       "${ name } successfully deleted": [
         "${ name } excluído com sucesso"
@@ -4290,17 +4284,17 @@
       "Add a custom filter to automatically perform certain actions, like labeling or archiving messages.": [
         "Adicione um filtro personalizado para executar automaticamente determinadas ações, como marcar ou arquivar mensagens."
       ],
-      "Emails from addresses marked as spam by you or ${ BRAND_NAME } will go to the spam folder of your organization members. If you want to allow emails from one of these addresses, mark it as \"not spam\".": [
-        "E-mails de endereços marcados como spam por você ou ${ BRAND_NAME } irão para a pasta de spam dos membros de sua organização. Se você deseja permitir e-mails de um desses endereços, marque-o como \"não é spam\"."
+      "Allow:": [
+        "Permitir:"
       ],
-      "Emails from addresses marked as spam by you or ${ BRAND_NAME } will go to your spam folder. If you want to allow emails from one of these addresses, mark it as \"not spam\".": [
-        "E-mails de endereços marcados como spam por você ou ${ BRAND_NAME } irão para sua pasta de spam. Se você deseja permitir e-mails de um desses endereços, marque-o como \"não é spam\"."
-      ],
-      "Emails from blocked addresses won't be delivered.": [
-        "E-mails de endereços bloqueados não serão entregues."
+      "Block:": [
+        "Bloquear:"
       ],
       "Search list": [
         "Procurar lista"
+      ],
+      "Spam:": [
+        "Spam:"
       ]
     },
     "Font Face Default": {
@@ -5421,11 +5415,11 @@
       "Download your PGP keys for use with other PGP-compatible services.": [
         "Baixe suas chaves PGP para usar com outros serviços compatíveis com PGP."
       ],
-      "Drop a file here to upload": [
-        "Solte o arquivo aqui para para enviá-lo"
+      "Drop file here to upload": [
+        "Solte o arquivo aqui para enviar"
       ],
-      "Drop the file here to upload": [
-        "Solte o arquivo aqui para fazer o upload"
+      "Drop to import": [
+        "Solte para importar"
       ],
       "Each code can only be used once": [
         "Cada código só pode ser usado uma única vez"
@@ -5865,7 +5859,7 @@
         "senha antiga"
       ],
       "Once you enable ${ PROTON_SENTINEL_NAME }:": [
-        "Após você habilitar ${ PROTON_SENTINEL_NAME }:"
+        "Após você ativar ${ PROTON_SENTINEL_NAME }:"
       ],
       "Once you reset your password:": [
         "Depois de redefinir sua senha:"
@@ -6439,7 +6433,7 @@
         "Faça upgrade agora para obter recursos premium, produtos e armazenamento por um preço especial"
       ],
       "Upgrade to a paid account to enable ${ PROTON_SENTINEL_NAME }.": [
-        "Atualize para uma conta paga para habilitar ${ PROTON_SENTINEL_NAME }."
+        "Faça upgrade para uma conta paga para ativar ${ PROTON_SENTINEL_NAME }."
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Faça o upgrade do seu plano para adicionar um endereço curto @pm.me para a sua conta, mais fácil de ser compartilhado. Ele significa \"${ MAIL_APP_NAME } me\" ou \"Private Message me\"."
@@ -6717,7 +6711,7 @@
         "Você receberá suporte prioritário de especialistas treinados em proteção de contas. Para qualquer questão de segurança da conta, por favor entre em contato conosco ${ hereLink }."
       ],
       "You will see more details in the Security logs below for important events such as sign in attempts.": [
-        "Você verá mais detalhes nos Logs de Segurança abaixo para eventos importantes, como tentativas de login."
+        "Você verá mais detalhes nos Registros de Segurança abaixo para eventos importantes, como tentativas de início de sessão."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Em breve você será redirecionado para o PayPal para verificar seu pagamento."
@@ -6741,7 +6735,7 @@
         "Sua conta ${ BRAND_NAME } está suspensa no momento. Os e-mails não estão mais sendo entregues em sua caixa de entrada. Seus links de compartilhamento do Drive não estão mais ativos e você não pode fazer upload de novos arquivos. Para continuar usando sua conta, pague as faturas vencidas."
       ],
       "Your ${ BRAND_NAME } password": [
-        "Sua senha ${ BRAND_NAME }"
+        "Sua senha da ${ BRAND_NAME }"
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there.": [
         "Suas contas ${ VPN_APP_NAME } e ${ MAIL_APP_NAME } estão conectadas. Para excluir ambas, por favor inicia sessão em ${ loginLink } e exclua sua conta lá."
@@ -6775,6 +6769,9 @@
       ],
       "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your recovery phrase or your ${ oldPassword }.": [
         "Suas mensagens, calendários ou contatos existentes serão bloqueados. Para recuperar esses dados, você precisará de sua frase de recuperação ou sua ${ oldPassword }"
+      ],
+      "Your files will be encrypted and then saved": [
+        "Seus arquivos serão criptografados e depois salvos"
       ],
       "Your import from ${ accounts } is temporarily delayed.": [
         "Sua importação de ${ accounts } está temporariamente atrasada.",
@@ -6883,7 +6880,7 @@
         "Faturado"
       ],
       "Gifted": [
-        "Dotado"
+        "Oferecido"
       ],
       "Paid": [
         "Pago"
@@ -7267,6 +7264,9 @@
       "All-day event notifications": [
         "Notificações para eventos de dia inteiro"
       ],
+      "Allow": [
+        "Permitir"
+      ],
       "Allow notifications by email": [
         "Permitir notificações por e-mail"
       ],
@@ -7339,6 +7339,9 @@
       "Billing cycle": [
         "Ciclo de faturamento"
       ],
+      "Block": [
+        "Bloquear"
+      ],
       "Block email tracking": [
         "Bloquear rastreamento de e-mail"
       ],
@@ -7347,9 +7350,6 @@
       ],
       "Block malware, ads and trackers": [
         "Bloqueio de malware, anúncios e rastreadores"
-      ],
-      "Blocked": [
-        "Bloqueado"
       ],
       "Browser": [
         "Navegador"
@@ -7752,9 +7752,6 @@
       ],
       "Non-standard ports": [
         "Portas não padrão"
-      ],
-      "Not spam": [
-        "Não é spam"
       ],
       "Notification": [
         "Notificação"
@@ -8581,6 +8578,9 @@
       "All": [
         "Todos"
       ],
+      "Allow": [
+        "Permitir"
+      ],
       "Back": [
         "Voltar"
       ],
@@ -8593,17 +8593,14 @@
       "Back to inbox": [
         "Voltar à caixa de entrada"
       ],
-      "Blocked": [
-        "Bloqueado"
+      "Block": [
+        "Bloquear"
       ],
       "Calendar": [
         "Calendário"
       ],
       "Inbox": [
         "Caixa de entrada"
-      ],
-      "Not spam": [
-        "Não é spam"
       ],
       "Spam": [
         "Spam"
@@ -8856,7 +8853,7 @@
         "Downloads rápidos de P2P/BitTorrent"
       ],
       "Free features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and ${ DRIVE_SHORT_APP_NAME }": [
-        "Recursos gratuitos de ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, e ${ DRIVE_SHORT_APP_NAME }"
+        "Recursos gratuitos da ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, e ${ DRIVE_SHORT_APP_NAME }"
       ],
       "Free VPN on a single device": [
         "VPN gratuita em um único dispositivo"
@@ -8914,7 +8911,7 @@
         "Suporte prioritário e chat ao-vivo"
       ],
       "Protect ${ n } device at a time": [
-        "Protege ${ n } dispositivo por vez",
+        "Proteja ${ n } dispositivo por vez",
         "Proteja ${ n } dispositivos por vez"
       ],
       "Router support": [
@@ -11032,14 +11029,17 @@
       "Edit": [
         "Editar"
       ],
-      "Email address": [
-        "Endereço de e-mail"
+      "Email address or domain": [
+        "Endereço de e-mail ou domínio"
       ],
       "Email addresses": [
         "Endereços de e-mail"
       ],
       "Import": [
         "Importar"
+      ],
+      "List": [
+        "Lista"
       ],
       "Marked as": [
         "Marcado como"
@@ -11127,7 +11127,7 @@
         "Conta e senha"
       ],
       "Account keys": [
-        "Chave da conta"
+        "Chaves da conta"
       ],
       "Account recovery": [
         "Recuperação de conta"
@@ -11177,14 +11177,14 @@
       "Add Sieve filter": [
         "Adicionar filtro Sieve"
       ],
-      "Add to Not spam list": [
-        "Adicionar à lista de não spam"
+      "Add to allow list": [
+        "Adicionar para a lista de permitidos"
+      ],
+      "Add to block list": [
+        "Adicionar para a lista de bloqueio"
       ],
       "Add to spam list": [
         "Adicionar à lista de spam"
-      ],
-      "Add to your block list": [
-        "Adicionar na sua lista de bloqueio"
       ],
       "Add user": [
         "Adicionar usuário"
@@ -11837,9 +11837,6 @@
       "Sort labels alphabetically": [
         "Ordenar marcadores alfabeticamente"
       ],
-      "Spam and block list": [
-        "Lista de spam e de bloqueados"
-      ],
       "Start a new import": [
         "Iniciar uma nova importação"
       ],
@@ -12223,7 +12220,7 @@
     },
     "Upgrade": {
       "Upgrade to ${ passPlusPlanName } to get unlimited hide-my-email aliases": [
-        "Atualize para o plano ${ passPlusPlanName } e tenha acesso a aliases do \"Hide My Email\" ilimitados."
+        "Faça upgrade para o plano ${ passPlusPlanName } e tenha acesso a aliases do \"Hide My Email\" ilimitados."
       ],
       "Upgrade to ${ planName } to connect up to ${ n } device to the VPN at once": [
         "Atualize para ${ planName } para conectar até ${ n } dispositivo à VPN de uma só vez",

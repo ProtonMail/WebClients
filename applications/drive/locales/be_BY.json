@@ -596,7 +596,7 @@
         "Увайсці"
       ],
       "Sign out": [
-        "Выйсці"
+        "Выхад з уліковага запісу"
       ],
       "Signing out": [
         "Адбываецца выхад"
@@ -3299,7 +3299,7 @@
         "Патрабуецца ўвага"
       ],
       "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access or decrypt your files for you. To unlock your drive after a password reset, you must have one of the following:": [
-        "Паколькі праграма ${ DRIVE_APP_NAME } зашыфравана скразным метадам, мы не можам атрымаць доступ або расшыфраваць вашы файлы. Для разблакіроўкі вашага дыска пасля скідання пароля вы вы павінны мець адно з наступнага:"
+        "Паколькі праграма ${ DRIVE_APP_NAME } зашыфравана скразным метадам, мы не можам атрымаць доступ або расшыфраваць вашы файлы. Для разблакіроўкі вашага дыска пасля скідання пароля вы павінны мець адну з наступных прылад:"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Перад запытам новага праверачнага кода праверце папку са спамам, а таксама ці правільна азначаны адрас ${ strong }."
@@ -3441,9 +3441,6 @@
       ],
       "Downloading": [
         "Спампоўваецца"
-      ],
-      "Drop the file here to upload": [
-        "Перацягніце файл сюды, каб запампаваць"
       ],
       "Duplicate key updated": [
         "Дублікат ключа абноўлены"
