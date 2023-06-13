@@ -64,7 +64,7 @@ export const popupMessage: MessageWithSenderFactory = (message) => ({
 
 export const contentScriptMessage: MessageWithSenderFactory = (message) => ({
     ...message,
-    sender: 'content-script',
+    sender: 'contentscript',
 });
 
 export const pageMessage: MessageWithSenderFactory = (message) => ({
@@ -84,7 +84,7 @@ export const resolveMessageFactory = (endpoint: ExtensionEndpoint) => {
             return backgroundMessage;
         case 'popup':
             return popupMessage;
-        case 'content-script':
+        case 'contentscript':
             return contentScriptMessage;
         case 'page':
             return pageMessage;
