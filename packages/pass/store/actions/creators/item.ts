@@ -6,6 +6,7 @@ import { pipe } from '@proton/pass/utils/fp';
 import { getItemActionId } from '@proton/pass/utils/pass/items';
 
 import { createOptimisticAction } from '../../optimistic/action/create-optimistic-action';
+import type { ItemDraft } from '../../reducers/popup';
 import * as requests from '../requests';
 import withCacheBlock from '../with-cache-block';
 import type { ActionCallback } from '../with-callback';
@@ -13,6 +14,9 @@ import withCallback from '../with-callback';
 import withNotification from '../with-notification';
 import withRequest from '../with-request';
 import withSynchronousClientAction from '../with-synchronous-client-action';
+
+export const itemDraftSave = createAction('item draft save', (payload: ItemDraft) => withCacheBlock({ payload }));
+export const itemDraftDiscard = createAction('item draft discard', () => withCacheBlock({ payload: {} }));
 
 export const itemCreationIntent = createOptimisticAction(
     'item creation intent',
