@@ -1021,6 +1021,9 @@
       "This message contains remote content.": [
         "Ta wiadomość zawiera zawartość zdalną."
       ],
+      "To search your emails securely, we need to download a copy of your messages to your browser. The initial download may take a moment.": [
+        "Aby bezpiecznie wyszukiwać wiadomości, musimy pobrać ich kopię do przeglądarki. Pierwsze pobieranie może potrwać chwilę."
+      ],
       "Toggle Calendar app": [
         "Przełącz aplikację kalendarza"
       ],
@@ -5049,12 +5052,6 @@
       "Draft saved.": [
         "Szkic został zapisany."
       ],
-      "Drop a file here to upload": [
-        "Upuść plik tutaj, aby przesłać"
-      ],
-      "Drop the file here to upload": [
-        "Upuść plik tutaj, aby przesłać"
-      ],
       "Duplicate key updated": [
         "Zduplikowany klucz został zaktualizowany"
       ],
@@ -5193,6 +5190,9 @@
       "Hide original message": [
         "Ukryj oryginalną wiadomość"
       ],
+      "How hide-my-email aliases works": [
+        "Jak działają aliasy Hide My Email"
+      ],
       "I'm sending this message to a non-${ MAIL_APP_NAME } user.": [
         "Wysyłam wiadomość do użytkownika spoza ${ MAIL_APP_NAME }."
       ],
@@ -5315,6 +5315,12 @@
       ],
       "Merged": [
         "Scalony"
+      ],
+      "Message downloaded: ${ currentProgress } out of ${ totalProgress }": [
+        "Pobieranie wiadomości: ${ currentProgress } / ${ totalProgress }",
+        "Pobieranie wiadomości: ${ currentProgress } / ${ totalProgress }",
+        "Pobieranie wiadomości: ${ currentProgress } / ${ totalProgress }",
+        "Pobieranie wiadomości: ${ currentProgress } / ${ totalProgress }"
       ],
       "Message expiration works out-of-the-box when sending emails to other ${ MAIL_APP_NAME } users. To send expiring emails to non-${ BRAND_NAME } users, please cancel and add password protection to your email.": [
         "Wygasająca wiadomość działa podczas wysyłania wiadomości do innych użytkowników ${ MAIL_APP_NAME }. Aby wysłać wygasającą wiadomość do użytkowników spoza ${ BRAND_NAME }, anuluj wysyłanie i dodaj hasło wiadomości."
@@ -5528,6 +5534,9 @@
       ],
       "Scheduling message...": [
         "Planowanie wiadomości..."
+      ],
+      "Search option that lets you securely search for keywords in the body of email messages.": [
+        "Ta opcja wyszukiwania pozwala bezpiecznie wyszukiwać słowa kluczowe w treści wiadomości."
       ],
       "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
         "Wyszukiwanie trwa zbyt długo? ${ dropdownButton } lub ${ toggleOffButton }."
@@ -5777,6 +5786,9 @@
       ],
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "Zbyt wiele wiadomości czeka na wysłanie. Poczekaj na wysłanie innej zaplanowanej lub zaplanuj tę wiadomość."
+      ],
+      "Turn off to only search by date, name, or email address. To disable search message content and delete downloaded messages, go to settings.": [
+        "Wyłącz, aby wyszukiwać tylko według daty, nazwy lub adresu e-mail. Aby wyłączyć wyszukiwanie zawartości wiadomości i usunąć pobrane wiadomości, przejdź do ustawień."
       ],
       "Turn on to search the content of your messages": [
         "Włącz, aby wyszukiwać zawartość wiadomości"
@@ -7347,6 +7359,9 @@
       "Custom email domains": [
         "Niestandardowe domeny"
       ],
+      "Hide-my-email aliases": [
+        "Aliasy Hide My Email"
+      ],
       "Schedule messages at any time": [
         "Zaplanuj wiadomości w dowolnym momencie"
       ],
@@ -8193,6 +8208,12 @@
       ],
       "Schedule send": [
         "Zaplanuj wysyłanie"
+      ],
+      "Search just got smarter and faster": [
+        "Wyszukiwanie stało się inteligentniejsze i szybsze"
+      ],
+      "Try it today.": [
+        "Wypróbuj to."
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "Od teraz domyślnie ładujemy obrazy i blokujemy śledzenie w wiadomościach. Możesz to zmienić w ${ settingsLink }."
