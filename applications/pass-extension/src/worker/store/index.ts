@@ -12,6 +12,7 @@ import type { TelemetryEvent } from '@proton/pass/types/data/telemetry';
 import { logger } from '@proton/pass/utils/logger';
 import { workerReady } from '@proton/pass/utils/worker';
 
+import { isPopupPort } from '../../shared/extension/port';
 import WorkerMessageBroker from '../channel';
 import { withContext } from '../context';
 import { workerMiddleware } from './worker.middleware';
@@ -89,7 +90,7 @@ const options: RequiredNonNull<WorkerRootSagaOptions> = {
                     shareId,
                 },
             }),
-            (name) => name.startsWith('popup')
+            isPopupPort()
         );
     },
 
@@ -103,15 +104,13 @@ const options: RequiredNonNull<WorkerRootSagaOptions> = {
                     itemIds,
                 },
             }),
-            (name) => name.startsWith('popup')
+            isPopupPort()
         );
     },
 
-    /**
-     * Either broadcast notification or buffer it
+    /* Either broadcast notification or buffer it
      * if no target ports are opened. Assume that if no
-     * target is specified then notification is for popup
-     */
+     * target is specified then notification is for popup */
     onNotification: (notification) => {
         const { receiver } = notification;
         const reg = new RegExp(`^${receiver ?? 'popup'}`);
