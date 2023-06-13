@@ -3298,6 +3298,9 @@
       "Attention required": [
         "Требуется внимание"
       ],
+      "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access or decrypt your files for you. To unlock your drive after a password reset, you must have one of the following:": [
+        "Поскольку ${ DRIVE_APP_NAME } зашифрован сквозным методом, мы не можем получить доступ к вашим файлам или расшифровать их для вас. Чтобы разблокировать диск после сброса пароля, вы должны иметь одно из следующего:"
+      ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Прежде чем запросить новый код подтверждения, проверьте свою папку спама и убедитесь, что ${ strong } - это корректный адрес."
       ],
@@ -3439,9 +3442,6 @@
       "Downloading": [
         "Скачивание"
       ],
-      "Drop the file here to upload": [
-        "Для загрузки файла перетащите его сюда"
-      ],
       "Duplicate key updated": [
         "Дубликат ключа обновлён"
       ],
@@ -3495,6 +3495,12 @@
       ],
       "Failed": [
         "Завершено с ошибкой"
+      ],
+      "Failed to generate a secure link. The reason is: ${ error }": [
+        "Не удалось сгенерировать защищенную ссылку. Причина: ${ error }"
+      ],
+      "Failed to generate a secure link. Try again later": [
+        "Не удалось сгенерировать защищенную ссылку. Повторите попытку позже"
       ],
       "Failed to open a secure link. The reason is: ${ error }": [
         "Не удалось открыть защищенную ссылку. Причина: ${ error }"
@@ -3573,6 +3579,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Если сообщения нет в папке Входящие, проверьте, не попало ли оно в папку Спам."
+      ],
+      "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process.": [
+        "Если у вас есть одно из этого, перейдите к настройкам аккаунта ${ BRAND_NAME }, чтобы начать процесс разблокировки."
       ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Импортировать ${ calendarCount } из ${ totalCalendarsCount } календаря",
@@ -3981,6 +3990,9 @@
       ],
       "This will overwrite the existing folder": [
         "Это перезапишет существующую папку"
+      ],
+      "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on the device won’t be affected.": [
+        "Это приведет к удалению из ${ DRIVE_APP_NAME } синхронизированного устройства ${ deviceName }. Локальные файлы на устройстве не будут затронуты."
       ],
       "This will replace the existing file with the folder": [
         "Это заменит существующий файл на папку"
@@ -4709,6 +4721,9 @@
       ],
       "Wonderful": [
         "Прекрасно"
+      ],
+      "Yes, I want to permanently delete my old files": [
+        "Да, я хочу навсегда удалить свои старые файлы"
       ],
       "Your password (admin)": [
         "Ваш пароль (admin)"

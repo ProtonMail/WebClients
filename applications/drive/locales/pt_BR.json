@@ -1,6 +1,6 @@
 {
   "headers": {
-    "plural-forms": "nplurals=2; plural=(n != 1);",
+    "plural-forms": "nplurals=2; plural=(n > 1);",
     "language": "pt_BR"
   },
   "contexts": {
@@ -3231,7 +3231,7 @@
         "Limpar dados"
       ],
       "Clear encrypted search data": [
-        "Limpar dados de pesquisa criptografado"
+        "Limpar dados de pesquisa criptografada"
       ],
       "Clearing browser data will clear the search index on this device. All files would need to be re-indexed again while using the search functionality.": [
         "Limpar os dados do navegador limpará o índice de pesquisa neste dispositivo. Todos os arquivos precisariam ser reindexados novamente ao usar a funcionalidade de pesquisa."
@@ -3337,8 +3337,11 @@
       "Downloading": [
         "Baixando"
       ],
-      "Drop the file here to upload": [
-        "Solte o arquivo aqui para fazer o upload"
+      "Drop file here to upload": [
+        "Solte o arquivo aqui para enviar"
+      ],
+      "Drop to import": [
+        "Solte para importar"
       ],
       "Duplicate key updated": [
         "Chave duplicada atualizada"
@@ -4085,6 +4088,9 @@
       ],
       "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ KeyReactivationButton }": [
         "Seus arquivos não estão mais acessíveis devido a uma redefinição de senha. Envie a chave de criptografia antiga para recuperar o acesso. ${ KeyReactivationButton }"
+      ],
+      "Your files will be encrypted and then saved": [
+        "Seus arquivos serão criptografados e depois salvos"
       ],
       "Your files will be encrypted and then saved.": [
         "Seus arquivos serão criptografados e depois salvos."

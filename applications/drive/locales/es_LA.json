@@ -3337,8 +3337,11 @@
       "Downloading": [
         "Descargando"
       ],
-      "Drop the file here to upload": [
-        "Arrastre el archivo aquí para subir"
+      "Drop file here to upload": [
+        "Suelte sus archivos aquí para cargarlos"
+      ],
+      "Drop to import": [
+        "Suelte aquí para importar"
       ],
       "Duplicate key updated": [
         "Clave duplicada actualizada"
@@ -4085,6 +4088,9 @@
       ],
       "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ KeyReactivationButton }": [
         "Sus archivos ya no son accesibles debido a un restablecimiento de contraseña. Vuelva a cargar la clave de cifrado antigua para recuperar el acceso. ${ KeyReactivationButton }"
+      ],
+      "Your files will be encrypted and then saved": [
+        "Sus archivos serán cifrados y de ahí guardados"
       ],
       "Your files will be encrypted and then saved.": [
         "Sus archivos serán cifrados y luego guardados."
