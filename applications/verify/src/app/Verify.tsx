@@ -18,7 +18,7 @@ import { getGenericErrorPayload } from '@proton/shared/lib/broadcast';
 import { createOfflineError } from '@proton/shared/lib/fetch/ApiError';
 import { getBrowserLocale, getClosestLocaleCode, getClosestLocaleMatch } from '@proton/shared/lib/i18n/helper';
 import { loadDateLocale, loadLocale } from '@proton/shared/lib/i18n/loadLocale';
-import { setLocales } from '@proton/shared/lib/i18n/locales';
+import { setTtagLocales } from '@proton/shared/lib/i18n/locales';
 import { HumanVerificationMethodType } from '@proton/shared/lib/interfaces';
 import { DARK_THEMES } from '@proton/shared/lib/themes/themes';
 
@@ -28,7 +28,7 @@ import { VerificationSearchParameters } from './types';
 
 import './Verify.scss';
 
-setLocales(locales);
+setTtagLocales(locales);
 
 const windowIsEmbedded = window.location !== window.parent.location;
 
