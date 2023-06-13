@@ -6,6 +6,7 @@ import isTruthy from '@proton/utils/isTruthy';
 import { Device } from '../../../../store';
 import { useSelection } from '../../../FileBrowser';
 import { LayoutButton } from '../../ToolbarButtons';
+import DesktopDownloadDropdown from '../../ToolbarButtons/DesktopDownloadDropdown';
 import { RemoveButton, RenameButton } from './buttons';
 
 interface Props {
@@ -44,6 +45,7 @@ const DevicesToolbar = ({ items }: Props) => {
         <Toolbar>
             {renderSelectionActions()}
             <span className="ml-auto flex flex-nowrap">
+                <DesktopDownloadDropdown className="flex-align-self-center mr-2" />
                 <LayoutButton />
             </span>
         </Toolbar>
