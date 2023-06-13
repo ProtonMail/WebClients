@@ -89,7 +89,7 @@ export const getUnlimitedDealFeatures = () => {
         {
             name: c('summer2023: Deal details').t`Premium Drive`,
             tooltip: c('summer2023: Tooltip')
-                .t`Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.`,
+                .t`Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.`,
         },
         {
             name: c('specialoffer: Deal details').t`Premium VPN`,
