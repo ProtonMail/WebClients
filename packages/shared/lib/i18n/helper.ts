@@ -1,7 +1,7 @@
 import { DEFAULT_LOCALE } from '../constants';
 
 export const getNormalizedLocale = (locale = '') => {
-    return locale.toLowerCase().replace('-', '_');
+    return locale.toLowerCase().replaceAll('-', '_');
 };
 
 /**
@@ -17,6 +17,14 @@ export const getLanguageCode = (locale = '') => {
  */
 export const getNaiveCountryCode = (locale = '') => {
     return getNormalizedLocale(locale).split('_')[1];
+};
+
+/**
+ * Transforms a locale string into one that can be passed to Javascript Intl methods.
+ * Basically transforms zh_ZH => zh-ZH, es-es => es-es (Intl cares about the dash, but not about capitalization)
+ */
+export const getIntlLocale = (locale = '') => {
+    return getNormalizedLocale(locale).replaceAll('_', '-');
 };
 
 export const getBrowserLanguageTags = (): string[] => {

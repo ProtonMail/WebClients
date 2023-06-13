@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { DEFAULT_LOCALE } from '../../lib/constants';
 import { getDateFnLocaleWithTimeFormat } from '../../lib/i18n/dateFnLocale';
-import { getClosestLocaleMatch, getLanguageCode, getNaiveCountryCode } from '../../lib/i18n/helper';
+import { getClosestLocaleMatch, getIntlLocale, getLanguageCode, getNaiveCountryCode } from '../../lib/i18n/helper';
 import { loadDateLocale, loadLocale } from '../../lib/i18n/loadLocale';
 import { SETTINGS_TIME_FORMAT } from '../../lib/interfaces';
 
@@ -159,5 +159,20 @@ describe('getNaiveCountryCode()', () => {
         expect(getNaiveCountryCode('en-US')).toEqual('us');
         expect(getNaiveCountryCode('es-ar')).toEqual('ar');
         expect(getNaiveCountryCode('fr_BE')).toEqual('be');
+    });
+});
+
+describe('getIntlLocale()', () => {
+    it('handles the case with no country code', () => {
+        // Kiga language
+        expect(getIntlLocale('cgg')).toEqual('cgg');
+    });
+
+    it('handle the case with country code', () => {
+        expect(getIntlLocale('zh_ZH')).toEqual('zh-zh');
+    });
+
+    it('should handle the case with alphabet plus country code', () => {
+        expect(getIntlLocale('bs_Cyrl_BA')).toEqual('bs-cyrl-ba');
     });
 });
