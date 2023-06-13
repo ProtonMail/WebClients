@@ -29,7 +29,7 @@ const DownloadButton = ({ selectedLinks, disabledFolders }: Props) => {
     return (
         <ToolbarButton
             title={c('Action').t`Download`}
-            icon={<Icon name="arrow-down-line" />}
+            icon={<Icon name="arrow-down-line" alt={c('Action').t`Download`} />}
             onClick={onClick}
             data-testid="toolbar-download"
         />

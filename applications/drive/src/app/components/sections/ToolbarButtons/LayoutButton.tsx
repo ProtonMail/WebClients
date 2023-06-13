@@ -24,7 +24,12 @@ const LayoutButton = () => {
     return (
         <ToolbarButton
             onClick={handleClick}
-            icon={<Icon name={layout === LayoutSetting.Grid ? 'list-bullets' : 'grid-2'} />}
+            icon={
+                <Icon
+                    name={layout === LayoutSetting.Grid ? 'list-bullets' : 'grid-2'}
+                    alt={layout === LayoutSetting.Grid ? c('Action').t`Grid layout` : 'List layout'}
+                />
+            }
             data-testid="toolbar-layout"
             title={c('Title').t`Change layout`}
         />

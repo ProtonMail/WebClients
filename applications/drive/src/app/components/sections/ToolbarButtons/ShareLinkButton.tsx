@@ -24,7 +24,12 @@ const ShareLinkButton = ({ selectedLinks }: Props) => {
             <ToolbarButton
                 disabled={noSelection(selectedLinks) || isMultiSelect(selectedLinks)}
                 title={hasSharedLink ? c('Action').t`Manage link` : c('Action').t`Get link`}
-                icon={<Icon name={hasSharedLink ? 'link-pen' : 'link'} />}
+                icon={
+                    <Icon
+                        name={hasSharedLink ? 'link-pen' : 'link'}
+                        alt={hasSharedLink ? c('Action').t`Manage link` : c('Action').t`Get link`}
+                    />
+                }
                 onClick={() =>
                     showLinkSharingModal({ shareId: selectedLinks[0].rootShareId, linkId: selectedLinks[0].linkId })
                 }

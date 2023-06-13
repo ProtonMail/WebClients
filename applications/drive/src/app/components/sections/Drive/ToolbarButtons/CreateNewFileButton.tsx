@@ -10,7 +10,7 @@ const CreateNewFileButton = () => {
     return (
         <>
             <ToolbarButton
-                icon={<Icon name="file" />}
+                icon={<Icon name="file" alt={c('Action').t`Create new text file`} />}
                 title={c('Action').t`Create new text file`}
                 onClick={() => showCreateFileModal()}
                 data-testid="toolbar-create-file"
