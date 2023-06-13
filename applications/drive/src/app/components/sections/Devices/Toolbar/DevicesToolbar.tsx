@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 
-import { Toolbar } from '@proton/components';
+import { FeatureCode, Toolbar, useFeature } from '@proton/components';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { Device } from '../../../../store';
@@ -23,6 +23,7 @@ export const getSelectedItems = (items: Device[], selectedItemIds: string[]): De
 
 const DevicesToolbar = ({ items }: Props) => {
     const selectionControls = useSelection()!;
+    const isWindowsGA = useFeature(FeatureCode.DriveWindowsGA)?.feature?.Value;
 
     const selectedItems = useMemo(
         () => getSelectedItems(items, selectionControls!.selectedItemIds),
@@ -45,7 +46,7 @@ const DevicesToolbar = ({ items }: Props) => {
         <Toolbar>
             {renderSelectionActions()}
             <span className="ml-auto flex flex-nowrap">
-                <DesktopDownloadDropdown className="flex-align-self-center mr-2" />
+                {isWindowsGA ? <DesktopDownloadDropdown className="flex-align-self-center mr-2" /> : null}
                 <LayoutButton />
             </span>
         </Toolbar>
