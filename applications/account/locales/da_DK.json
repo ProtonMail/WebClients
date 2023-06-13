@@ -497,12 +497,6 @@
       "Mark as default": [
         "Markér som standard"
       ],
-      "Mark as not spam": [
-        "Markér som ikke spam"
-      ],
-      "Mark as spam": [
-        "Markér som spam"
-      ],
       "mark emails as": [
         "markér e-mails som"
       ],
@@ -532,9 +526,6 @@
       ],
       "No": [
         "Nej"
-      ],
-      "Not spam": [
-        "Ikke spam"
       ],
       "OK": [
         "Ok"
@@ -598,9 +589,6 @@
       ],
       "Remove": [
         "Fjern"
-      ],
-      "Remove Block": [
-        "Fjern blokering"
       ],
       "Remove bonuses": [
         "Fjern bonusser"
@@ -2681,20 +2669,8 @@
       "${ name } failed to move to spam list": [
         "${ name } kunne ikke flyttes til spamliste"
       ],
-      "${ name } failed to move to the not-spam list": [
-        "${ name } kunne ikke flyttes til ikke-spamlisten"
-      ],
-      "${ name } failed to move to your block list": [
-        "${ name } kunne ikke flyttes til din blokeringsliste"
-      ],
-      "${ name } moved to not spam list": [
-        "${ name } flyttet til ikke-spam-liste"
-      ],
       "${ name } moved to spam list": [
         "${ name } flyttet til spam-liste"
-      ],
-      "${ name } moved to your block list": [
-        "${ name } flyttet til din blokeringsliste"
       ],
       "${ name } successfully deleted": [
         "${ name } slettet"
@@ -2798,20 +2774,8 @@
       "${ name } failed to move to spam list": [
         "${ name } kunne ikke flyttes til spamliste"
       ],
-      "${ name } failed to move to the not-spam list": [
-        "${ name } kunne ikke flyttes til ikke-spamlisten"
-      ],
-      "${ name } failed to move to your block list": [
-        "${ name } kunne ikke flyttes til din blokeringsliste"
-      ],
-      "${ name } moved to not spam list": [
-        "${ name } flyttet til ikke-spam-liste"
-      ],
       "${ name } moved to spam list": [
         "${ name } flyttet til spam-liste"
-      ],
-      "${ name } moved to your block list": [
-        "${ name } flyttet til din blokeringsliste"
       ],
       "${ name } successfully deleted": [
         "${ name } slettet"
@@ -3932,12 +3896,6 @@
       "Add a custom filter to automatically perform certain actions, like labeling or archiving messages.": [
         "Brug et tilpasset filter til at udføre visse handlinger automatisk, så som at tilføje etiketter eller arkivere beskeder."
       ],
-      "Emails from addresses marked as spam by you or ${ BRAND_NAME } will go to your spam folder. If you want to allow emails from one of these addresses, mark it as \"not spam\".": [
-        "E-mails fra adresser, der er markeret som spam af dig eller ${ BRAND_NAME }, vil blive sendt til din spam-mappe. Hvis du ønsker at tillade e-mails fra en af disse adresser, skal du markere den som \"ikke spam\"."
-      ],
-      "Emails from blocked addresses won't be delivered.": [
-        "E-mails fra blokerede adresser vil ikke blive leveret."
-      ],
       "Search list": [
         "Søgeliste"
       ]
@@ -4960,12 +4918,6 @@
       ],
       "Download your PGP keys for use with other PGP-compatible services.": [
         "Download dine PGP-nøgler til brug sammen med andre PGP-kompatible tjenester."
-      ],
-      "Drop a file here to upload": [
-        "Træk en fil hertil for at uploade"
-      ],
-      "Drop the file here to upload": [
-        "Slip filen her for at uploade"
       ],
       "Each code can only be used once": [
         "Hver kode kan kun bruges én gang"
@@ -6666,9 +6618,6 @@
       "Block malware, ads and trackers": [
         "Blokér malware, reklamer og trackere"
       ],
-      "Blocked": [
-        "Blokeret"
-      ],
       "Browser": [
         "Browser"
       ],
@@ -7067,9 +7016,6 @@
       ],
       "Non-standard ports": [
         "Ikke-standard porte"
-      ],
-      "Not spam": [
-        "Ikke spam"
       ],
       "Notification": [
         "Notifikation"
@@ -7893,17 +7839,11 @@
       "Back to inbox": [
         "Tilbage til indbakke"
       ],
-      "Blocked": [
-        "Blokeret"
-      ],
       "Calendar": [
         "Kalender"
       ],
       "Inbox": [
         "Indbakke"
-      ],
-      "Not spam": [
-        "Ikke spam"
       ],
       "Spam": [
         "Spam"
@@ -9919,9 +9859,6 @@
       "Edit": [
         "Redigér"
       ],
-      "Email address": [
-        "E-mail"
-      ],
       "Email addresses": [
         "E-mailadresser"
       ],
@@ -10058,14 +9995,8 @@
       "Add Sieve filter": [
         "Tilføj Sieve-filter"
       ],
-      "Add to Not spam list": [
-        "Føj til ikke-spam-liste"
-      ],
       "Add to spam list": [
         "Føj til spam-liste"
-      ],
-      "Add to your block list": [
-        "Føj til din blokeringsliste"
       ],
       "Add user": [
         "Tilføj bruger"
@@ -10696,9 +10627,6 @@
       ],
       "Sort labels alphabetically": [
         "Sortér etiketter alfabetisk"
-      ],
-      "Spam and block list": [
-        "Spam og blokeringsliste"
       ],
       "Start a new import": [
         "Start en ny import"

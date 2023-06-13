@@ -1242,6 +1242,9 @@
       ]
     },
     "Animation": {
+      "${ nameToDisplay }'s inbox": [
+        "${ nameToDisplay } の受信トレイ"
+      ],
       "5 trackers removed": [
         "5 件のトラッカーを削除"
       ],
@@ -4787,12 +4790,6 @@
       ],
       "Draft saved.": [
         "下書きが保存されました。"
-      ],
-      "Drop a file here to upload": [
-        "アップロードするファイルをここにドロップしてください"
-      ],
-      "Drop the file here to upload": [
-        "アップロードするファイルをここにドロップしてください"
       ],
       "Duplicate key updated": [
         "重複した鍵がアップデートされました"

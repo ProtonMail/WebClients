@@ -3445,8 +3445,11 @@
       "Downloading": [
         "Stahování"
       ],
-      "Drop the file here to upload": [
-        "Přetažením sem, nahrajte soubor"
+      "Drop file here to upload": [
+        "Soubor nahrajete přetažením sem"
+      ],
+      "Drop to import": [
+        "Přetažením importovat"
       ],
       "Duplicate key updated": [
         "Duplicitní klíč byl aktualizován"
@@ -4203,6 +4206,9 @@
       ],
       "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ KeyReactivationButton }": [
         "Vaše soubory již nejsou přístupné z důvodu resetování hesla. Pro obnovení přístupu znovu nahrajte starý šifrovací klíč. ${ KeyReactivationButton }"
+      ],
+      "Your files will be encrypted and then saved": [
+        "Vaše soubory budou zašifrovány a uloženy"
       ],
       "Your files will be encrypted and then saved.": [
         "Vaše soubory budou zašifrovány a uloženy."
