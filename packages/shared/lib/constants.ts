@@ -1046,3 +1046,18 @@ export enum SIMPLE_LOGIN_EXTENSION_LINKS {
 export const OPEN_OFFER_MODAL_EVENT = 'openoffermodal';
 
 export const FAMILY_MAX_USERS = 6;
+
+export enum DESKTOP_APP_NAMES {
+    DRIVE = 'drive',
+}
+
+export enum DESKTOP_PLATFORMS {
+    LINUX = 'linux',
+    MACOS = 'macos',
+    WINDOWS = 'windows',
+}
+
+export enum RELEASE_CATEGORIES {
+    STABLE = 'Stable',
+    EARLY_ACCESS = 'EarlyAccess',
+}
