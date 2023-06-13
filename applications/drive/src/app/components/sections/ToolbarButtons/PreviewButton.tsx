@@ -26,7 +26,7 @@ const PreviewButton = ({ selectedLinks }: Props) => {
     return (
         <ToolbarButton
             title={c('Action').t`Preview`}
-            icon={<Icon name="eye" />}
+            icon={<Icon name="eye" alt={c('Action').t`Preview`} />}
             onClick={() => {
                 if (selectedLinks.length) {
                     openPreview(selectedLinks[0].rootShareId, selectedLinks[0].linkId);
