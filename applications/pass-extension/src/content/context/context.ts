@@ -2,6 +2,6 @@ import { createSharedContext, createSharedContextInjector } from '@proton/pass/u
 
 import type { ContentScriptContext } from './types';
 
-export const CSContext = createSharedContext<ContentScriptContext>('content-script');
+export const CSContext = createSharedContext<ContentScriptContext>('contentscript');
 
 export const withContext = createSharedContextInjector(CSContext);

@@ -85,7 +85,7 @@ export const IFrameContextProvider: FC<{ endpoint: IFrameEndpoint }> = ({ endpoi
             if (
                 event.data &&
                 event.data?.type === IFrameMessageType.IFRAME_INJECT_PORT &&
-                event.data.sender === 'content-script'
+                event.data.sender === 'contentscript'
             ) {
                 window.removeEventListener('message', onPostMessageHandler);
                 handlePortInjection(event.data).catch(noop);
@@ -168,7 +168,7 @@ export const IFrameContextProvider: FC<{ endpoint: IFrameEndpoint }> = ({ endpoi
         <M extends IFrameMessage['type']>(type: M, handler: IFramePortMessageHandler<M>) => {
             const onMessageHandler = (message: Maybe<IFrameMessageWithSender>) =>
                 message?.type === type &&
-                message.sender === 'content-script' &&
+                message.sender === 'contentscript' &&
                 handler(message as IFrameMessageWithSender<M>);
 
             port?.onMessage.addListener(onMessageHandler);
