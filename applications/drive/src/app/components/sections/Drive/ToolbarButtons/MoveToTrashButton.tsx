@@ -16,7 +16,7 @@ const MoveToTrashButton = ({ selectedLinks }: Props) => {
         <ToolbarButton
             disabled={isLoading}
             title={c('Action').t`Move to trash`}
-            icon={<Icon name="trash" />}
+            icon={<Icon name="trash" alt={c('Action').t`Move to trash`} />}
             onClick={() => withLoading(trashLinks(new AbortController().signal, selectedLinks))}
             data-testid="toolbar-trash"
         />
