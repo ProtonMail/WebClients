@@ -280,26 +280,38 @@ const getParsedThemeType = (maybeThemeType: any): ThemeTypes | undefined => {
     return getValidatedThemeType(Number(maybeThemeType));
 };
 
-const getValidatedThemeMode = (maybeThemeMode: number): ThemeModeSetting | undefined => {
-    if (maybeThemeMode >= ThemeModeSetting.Auto && maybeThemeMode <= ThemeModeSetting.Light) {
+const getValidatedThemeMode = (maybeThemeMode: number | undefined): ThemeModeSetting | undefined => {
+    if (
+        maybeThemeMode !== undefined &&
+        maybeThemeMode >= ThemeModeSetting.Auto &&
+        maybeThemeMode <= ThemeModeSetting.Light
+    ) {
         return maybeThemeMode;
     }
 };
 
-const getValidatedFontSize = (maybeFontSize: number) => {
-    if (maybeFontSize >= ThemeFontSizeSetting.DEFAULT && maybeFontSize <= ThemeFontSizeSetting.X_LARGE) {
+const getValidatedFontSize = (maybeFontSize: number | undefined) => {
+    if (
+        maybeFontSize !== undefined &&
+        maybeFontSize >= ThemeFontSizeSetting.DEFAULT &&
+        maybeFontSize <= ThemeFontSizeSetting.X_LARGE
+    ) {
         return maybeFontSize;
     }
 };
 
-const getValidatedFontFace = (maybeFontFace: number) => {
-    if (maybeFontFace >= ThemeFontFaceSetting.DEFAULT && maybeFontFace <= ThemeFontFaceSetting.DYSLEXIC) {
+const getValidatedFontFace = (maybeFontFace: number | undefined) => {
+    if (
+        maybeFontFace !== undefined &&
+        maybeFontFace >= ThemeFontFaceSetting.DEFAULT &&
+        maybeFontFace <= ThemeFontFaceSetting.DYSLEXIC
+    ) {
         return maybeFontFace;
     }
 };
 
-const getValidatedFeatures = (maybeFeatures: number) => {
-    if (maybeFeatures >= 0 && maybeFeatures <= 32) {
+const getValidatedFeatures = (maybeFeatures: number | undefined) => {
+    if (maybeFeatures !== undefined && maybeFeatures >= 0 && maybeFeatures <= 32) {
         return maybeFeatures;
     }
 };
@@ -330,8 +342,27 @@ export const getParsedThemeSetting = (storedThemeSetting: string | undefined): T
     return defaultThemeSetting;
 };
 
+const getDiff = (a: ThemeSetting, b: ThemeSetting): Partial<ThemeSetting> => {
+    return Object.entries(a).reduce<Partial<ThemeSetting>>((acc, [_key, value]) => {
+        const key = _key as keyof ThemeSetting;
+        const otherValue = b[key] as any;
+        if (value !== otherValue) {
+            acc[key] = otherValue;
+        }
+        return acc;
+    }, {});
+};
+
 export const serializeThemeSetting = (themeSetting: ThemeSetting) => {
-    return encodeBase64URL(JSON.stringify(themeSetting));
+    const diff = getDiff(getDefaultThemeSetting(), themeSetting);
+    const keys = Object.keys(diff) as (keyof ThemeSetting)[];
+    if (!keys.length) {
+        return;
+    }
+    if (keys.length === 1 && keys[0] === 'LightTheme') {
+        return `${diff.LightTheme}`;
+    }
+    return encodeBase64URL(JSON.stringify(diff));
 };
 
 export const getThemeType = (theme: ThemeSetting, colorScheme: ColorScheme): ThemeTypes => {
