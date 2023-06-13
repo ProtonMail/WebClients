@@ -74,6 +74,9 @@
       "Add address": [
         "Añadir dirección"
       ],
+      "Add address or domain": [
+        "Añadir un dominio o una dirección"
+      ],
       "Add calendar from URL": [
         "Añadir el calendario desde una URL"
       ],
@@ -124,6 +127,9 @@
       ],
       "Alignment": [
         "Alineación"
+      ],
+      "Allow": [
+        "Permitir"
       ],
       "Apply": [
         "Aplicar"
@@ -533,12 +539,6 @@
       "Mark as default": [
         "Marcar como por defecto"
       ],
-      "Mark as not spam": [
-        "Marcar como no es spam"
-      ],
-      "Mark as spam": [
-        "Marcar como spam"
-      ],
       "mark emails as": [
         "marcar los correos electrónicos como"
       ],
@@ -568,9 +568,6 @@
       ],
       "No": [
         "No"
-      ],
-      "Not spam": [
-        "No es spam"
       ],
       "OK": [
         "Aceptar"
@@ -634,9 +631,6 @@
       ],
       "Remove": [
         "Eliminar"
-      ],
-      "Remove Block": [
-        "Eliminar bloqueo"
       ],
       "Remove bonuses": [
         "Eliminar beneficios"
@@ -2773,23 +2767,23 @@
       "${ name } deletion failed": [
         "Error al eliminar ${ name }"
       ],
+      "${ name } failed to move to allow list": [
+        "Error al mover ${ name } a la lista \"No es spam\""
+      ],
+      "${ name } failed to move to block list": [
+        "Error al mover ${ name } a la lista \"Bloqueado\""
+      ],
       "${ name } failed to move to spam list": [
         "Error al mover ${ name } a la lista Spam"
       ],
-      "${ name } failed to move to the not-spam list": [
-        "Error al mover ${ name } a la lista \"No es spam\""
+      "${ name } moved to allow list": [
+        "${ name } se ha movido a la lista \"No es spam\"."
       ],
-      "${ name } failed to move to your block list": [
-        "Error al mover ${ name } a tu lista \"Bloqueado\""
-      ],
-      "${ name } moved to not spam list": [
-        "${ name } movido a la lista \"No es spam\""
+      "${ name } moved to block list": [
+        "${ name } se ha movido a la lista \"Bloqueado\"."
       ],
       "${ name } moved to spam list": [
         "${ name } movido a la lista Spam"
-      ],
-      "${ name } moved to your block list": [
-        "${ name } movido a tu lista \"Bloqueado\""
       ],
       "${ name } successfully deleted": [
         "${ name } eliminado"
@@ -2890,23 +2884,23 @@
       "${ name } deletion failed": [
         "Error al eliminar ${ name }"
       ],
+      "${ name } failed to move to allow list": [
+        "Error al mover ${ name } a la lista \"No es spam\""
+      ],
+      "${ name } failed to move to block list": [
+        "Error al mover ${ name } a la lista \"Bloqueado\""
+      ],
       "${ name } failed to move to spam list": [
         "Error al mover ${ name } a la lista Spam"
       ],
-      "${ name } failed to move to the not-spam list": [
-        "Error al mover ${ name } a la lista \"No es spam\""
+      "${ name } moved to allow list": [
+        "${ name } se ha movido a la lista \"No es spam\"."
       ],
-      "${ name } failed to move to your block list": [
-        "Error al mover ${ name } a tu lista \"Bloqueado\""
-      ],
-      "${ name } moved to not spam list": [
-        "${ name } movido a la lista \"No es spam\""
+      "${ name } moved to block list": [
+        "${ name } se ha movido a la lista \"Bloqueado\"."
       ],
       "${ name } moved to spam list": [
         "${ name } movido a la lista Spam"
-      ],
-      "${ name } moved to your block list": [
-        "${ name } movido a tu lista \"Bloqueado\""
       ],
       "${ name } successfully deleted": [
         "${ name } eliminado"
@@ -4290,17 +4284,17 @@
       "Add a custom filter to automatically perform certain actions, like labeling or archiving messages.": [
         "Añade un filtro personalizado para realizar automáticamente ciertas acciones, como etiquetar o archivar mensajes."
       ],
-      "Emails from addresses marked as spam by you or ${ BRAND_NAME } will go to the spam folder of your organization members. If you want to allow emails from one of these addresses, mark it as \"not spam\".": [
-        "Los correos desde direcciones marcadas como spam por ti o por ${ BRAND_NAME } irán a la carpeta de spam de los miembros de tu organización. Si deseas permitir correos de una de estas direcciones, márquala como \"no es spam\"."
+      "Allow:": [
+        "Permitir:"
       ],
-      "Emails from addresses marked as spam by you or ${ BRAND_NAME } will go to your spam folder. If you want to allow emails from one of these addresses, mark it as \"not spam\".": [
-        "Los correos desde direcciones marcadas como spam por ti o por ${ BRAND_NAME } irán a tu carpeta de spam. Si quieres permitir correos de una de estas direcciones, márcala como \"no es spam\"."
-      ],
-      "Emails from blocked addresses won't be delivered.": [
-        "Los correos de direcciones bloqueadas no serán entregados."
+      "Block:": [
+        "Bloquear:"
       ],
       "Search list": [
         "Buscar en lista"
+      ],
+      "Spam:": [
+        "Spam:"
       ]
     },
     "Font Face Default": {
@@ -5421,11 +5415,11 @@
       "Download your PGP keys for use with other PGP-compatible services.": [
         "Descarga tus claves PGP para utilizarlas con otros servicios compatibles con PGP."
       ],
-      "Drop a file here to upload": [
-        "Suelta aquí el archivo para cargarlo."
+      "Drop file here to upload": [
+        "Suelta tus archivos aquí para cargarlos"
       ],
-      "Drop the file here to upload": [
-        "Arrastra el archivo aquí para cargarlo."
+      "Drop to import": [
+        "Suelta aquí para importar"
       ],
       "Each code can only be used once": [
         "Cada código puede usarse solo una vez."
@@ -6776,6 +6770,9 @@
       "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your recovery phrase or your ${ oldPassword }.": [
         "Tus mensajes, calendarios o contactos existentes serán bloqueados. Para recuperar estos datos, necesitarás tu frase de recuperación o tu ${ oldPassword }."
       ],
+      "Your files will be encrypted and then saved": [
+        "Tus archivos serán cifrados y después guardados."
+      ],
       "Your import from ${ accounts } is temporarily delayed.": [
         "Tu importación desde ${ accounts } se ha retrasado temporalmente.",
         "Tus importaciones desde ${ accounts } se han retrasado temporalmente."
@@ -7090,6 +7087,9 @@
       "New message": [
         "Nuevo mensaje"
       ],
+      "Open command panel": [
+        "Abrir el panel de comandos"
+      ],
       "Open next message": [
         "Abrir mensaje siguiente"
       ],
@@ -7267,6 +7267,9 @@
       "All-day event notifications": [
         "Notificaciones de eventos que ocupan todo el día"
       ],
+      "Allow": [
+        "Permitir"
+      ],
       "Allow notifications by email": [
         "Permitir notificaciones por correo electrónico"
       ],
@@ -7339,6 +7342,9 @@
       "Billing cycle": [
         "Ciclo de facturación"
       ],
+      "Block": [
+        "Bloquear"
+      ],
       "Block email tracking": [
         "Bloquear el rastreo de correo electrónico"
       ],
@@ -7347,9 +7353,6 @@
       ],
       "Block malware, ads and trackers": [
         "Bloquear malware, anuncios y rastreadores"
-      ],
-      "Blocked": [
-        "Bloqueado"
       ],
       "Browser": [
         "Navegador"
@@ -7752,9 +7755,6 @@
       ],
       "Non-standard ports": [
         "Puertos no estándares"
-      ],
-      "Not spam": [
-        "No es spam"
       ],
       "Notification": [
         "Notificación"
@@ -8581,6 +8581,9 @@
       "All": [
         "Todos"
       ],
+      "Allow": [
+        "Permitir"
+      ],
       "Back": [
         "Atrás"
       ],
@@ -8593,17 +8596,14 @@
       "Back to inbox": [
         "Volver a la bandeja de entrada"
       ],
-      "Blocked": [
-        "Bloqueado"
+      "Block": [
+        "Bloquear"
       ],
       "Calendar": [
         "Calendario"
       ],
       "Inbox": [
         "Bandeja de entrada"
-      ],
-      "Not spam": [
-        "No es spam"
       ],
       "Spam": [
         "Spam"
@@ -11029,14 +11029,17 @@
       "Edit": [
         "Editar"
       ],
-      "Email address": [
-        "Dirección de correo electrónico"
+      "Email address or domain": [
+        "Dirección de correo o nombre de dominio"
       ],
       "Email addresses": [
         "Direcciones de correo electrónico"
       ],
       "Import": [
         "Importar"
+      ],
+      "List": [
+        "Lista"
       ],
       "Marked as": [
         "Marcado como"
@@ -11174,14 +11177,14 @@
       "Add Sieve filter": [
         "Añadir filtro Sieve"
       ],
-      "Add to Not spam list": [
+      "Add to allow list": [
         "Añadir a la lista \"No es spam\""
+      ],
+      "Add to block list": [
+        "Añadir a la lista \"Bloqueado\""
       ],
       "Add to spam list": [
         "Añadir a la lista de spam"
-      ],
-      "Add to your block list": [
-        "Añadir a tu lista \"Bloqueado\""
       ],
       "Add user": [
         "Añadir usuario"
@@ -11834,8 +11837,8 @@
       "Sort labels alphabetically": [
         "Ordenar etiquetas alfabéticamente"
       ],
-      "Spam and block list": [
-        "Lista \"Spam\" y \"Bloqueado\""
+      "Spam, block, and allow lists": [
+        "Listas de \"No es spam\", \"Bloqueo\" y \"Spam\""
       ],
       "Start a new import": [
         "Iniciar una nueva importación"

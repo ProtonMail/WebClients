@@ -533,12 +533,6 @@
       "Mark as default": [
         "Tandai sebagai standar"
       ],
-      "Mark as not spam": [
-        "Tandai sebagai bukan spam"
-      ],
-      "Mark as spam": [
-        "Tandai sebagai spam"
-      ],
       "mark emails as": [
         "tandai email sebagai"
       ],
@@ -568,9 +562,6 @@
       ],
       "No": [
         "Tidak"
-      ],
-      "Not spam": [
-        "Bukan spam"
       ],
       "OK": [
         "OK"
@@ -634,9 +625,6 @@
       ],
       "Remove": [
         "Hapus"
-      ],
-      "Remove Block": [
-        "Buka Blokir"
       ],
       "Remove bonuses": [
         "Hapus bonus"
@@ -2767,20 +2755,8 @@
       "${ name } failed to move to spam list": [
         "${ name } gagal dipindahkan ke daftar spam"
       ],
-      "${ name } failed to move to the not-spam list": [
-        "${ name } gagal dipindahkan ke daftar bukan spam"
-      ],
-      "${ name } failed to move to your block list": [
-        "${ name } gagal dipindahkan ke daftar blokir"
-      ],
-      "${ name } moved to not spam list": [
-        "${ name } dipindahkan ke daftar bukan spam"
-      ],
       "${ name } moved to spam list": [
         "${ name } dipindahkan ke daftar spam"
-      ],
-      "${ name } moved to your block list": [
-        "${ name } dipindahkan ke daftar blokir"
       ],
       "${ name } successfully deleted": [
         "${ name } berhasil dihapus"
@@ -2884,20 +2860,8 @@
       "${ name } failed to move to spam list": [
         "${ name } gagal dipindahkan ke daftar spam"
       ],
-      "${ name } failed to move to the not-spam list": [
-        "${ name } gagal dipindahkan ke daftar bukan spam"
-      ],
-      "${ name } failed to move to your block list": [
-        "${ name } gagal dipindahkan ke daftar blokir"
-      ],
-      "${ name } moved to not spam list": [
-        "${ name } dipindahkan ke daftar bukan spam"
-      ],
       "${ name } moved to spam list": [
         "${ name } dipindahkan ke daftar spam"
-      ],
-      "${ name } moved to your block list": [
-        "${ name } dipindahkan ke daftar blokir"
       ],
       "${ name } successfully deleted": [
         "${ name } berhasil dihapus"
@@ -4056,6 +4020,9 @@
       "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
         "Beserta 2700 server di 65+ negara, hubungan sampai 10 perangkat, akses layanan streaming seluruh dunia, pemblokiran malware dan iklan, dan lebih banyak lagi."
       ],
+      "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
+        "Beserta dukungan untuk 3 domain surel kustom, 90 alamat surel, alias Hide My Email tidak terbatas, pembagian kalender, dan lebih banyak lagi."
+      ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Amankan berkas Anda dengan penyimpanan awan terenkripsi. Beserta sinkronisasi otomatis, pembagian berkas terenkripsi, dan lebih banyak lagi."
       ]
@@ -4263,15 +4230,6 @@
     "FilterSettings": {
       "Add a custom filter to automatically perform certain actions, like labeling or archiving messages.": [
         "Tambahkan saringan kustom untuk melakukan tindakan khusus secara otomatis, seperti memberi label atau mengarsip pesan."
-      ],
-      "Emails from addresses marked as spam by you or ${ BRAND_NAME } will go to the spam folder of your organization members. If you want to allow emails from one of these addresses, mark it as \"not spam\".": [
-        "Email yang berasal dari alamat yang Anda atau ${ BRAND_NAME } tandai sebagai spam akan masuk ke folder spam milik anggota organisasi Anda. Apabila Anda ingin menerima email dari alamat yang telah ditandai spam, tandai alamat tersebut sebagai \"bukan spam\"."
-      ],
-      "Emails from addresses marked as spam by you or ${ BRAND_NAME } will go to your spam folder. If you want to allow emails from one of these addresses, mark it as \"not spam\".": [
-        "Email yang berasal dari alamat yang Anda atau ${ BRAND_NAME } tandai sebagai spam akan masuk ke folder spam Anda. Apabila Anda ingin menerima email dari satu atau lebih alamat yang telah ditandai spam, tandai alamat yang bersangkutan sebagai \"bukan spam\"."
-      ],
-      "Emails from blocked addresses won't be delivered.": [
-        "Email yang berasal dari alamat yang diblokir tidak akan disampaikan."
       ],
       "Search list": [
         "Daftar pencarian"
@@ -5364,11 +5322,11 @@
       "Download your PGP keys for use with other PGP-compatible services.": [
         "Anda dapat mengunduh kunci PGP Anda untuk digunakan dengan layanan lain yang kompatibel dengan PGP."
       ],
-      "Drop a file here to upload": [
-        "Letakkan berkas yang hendak Anda unggah di sini"
+      "Drop file here to upload": [
+        "Lepaskan berkas di sini untuk mengunggah"
       ],
-      "Drop the file here to upload": [
-        "Letakkan berkas yang hendak Anda unggah di sini"
+      "Drop to import": [
+        "Lepaskan untuk mengimpor"
       ],
       "Each code can only be used once": [
         "Masing-masing kode hanya dapat digunakan sekali"
@@ -6276,6 +6234,9 @@
       "To ensure continuous access to your account, set an account recovery method": [
         "Agar akun Anda dapat selalu diakses sepanjang waktu, tentukan metode pemulihan akun"
       ],
+      "To ensure you don’t lose important data, ${ DRIVE_APP_NAME } saves older versions of your files as you and your collaborators make changes. Select how long ${ BRAND_NAME } should keep previous versions.": [
+        "Untuk memastikan Anda tidak kehilangan data penting, ${ DRIVE_APP_NAME } menyimpan versi lawas berkas Anda seiring dengan perubahan yang dibuat oleh Anda dan rekan kerja Anda. Tentukan berapa lama ${ BRAND_NAME } harus menyimpan versi lawas yang lalu."
+      ],
       "To fight spam and abuse, please verify you are human.": [
         "Untuk melawan spam dan penyalahgunaan, mohon verifikasi bahwa Anda memang manusia."
       ],
@@ -6701,6 +6662,9 @@
       ],
       "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your recovery phrase or your ${ oldPassword }.": [
         "Pesan, kalender, atau kontak Anda yang masih ada akan dikunci. Untuk memulihkan data ini, Anda memerlukan frasa pemulihan atau ${ oldPassword }."
+      ],
+      "Your files will be encrypted and then saved": [
+        "Berkas Anda akan dienkripsi lalu disimpan"
       ],
       "Your import will not be processed.": [
         "Impor Anda tidak akan diproses."
@@ -7269,9 +7233,6 @@
       "Block malware, ads and trackers": [
         "Blokir malware, iklan dan pelacak"
       ],
-      "Blocked": [
-        "Diblokir"
-      ],
       "Browser": [
         "Peramban"
       ],
@@ -7673,9 +7634,6 @@
       ],
       "Non-standard ports": [
         "Port non-standar"
-      ],
-      "Not spam": [
-        "Bukan spam"
       ],
       "Notification": [
         "Pemberitahuan"
@@ -8504,17 +8462,11 @@
       "Back to inbox": [
         "Kembali ke kotak masuk"
       ],
-      "Blocked": [
-        "Diblokir"
-      ],
       "Calendar": [
         "Kalender"
       ],
       "Inbox": [
         "Kotak masuk"
-      ],
-      "Not spam": [
-        "Bukan spam"
       ],
       "Spam": [
         "Spam"
@@ -8639,6 +8591,9 @@
       "${ n } folders and labels": [
         "${ n } folder and label"
       ],
+      "${ n } Hide-my-email aliases": [
+        "${ n } alias Hide My Email"
+      ],
       "${ n } labels": [
         "${ n } label"
       ],
@@ -8708,6 +8663,9 @@
       "Custom email domains": [
         "Domain email khusus"
       ],
+      "Custom fields": [
+        "Kolom khusus"
+      ],
       "Data breach monitoring": [
         "Pemantauan kebocoran data"
       ],
@@ -8755,6 +8713,9 @@
       ],
       "GDPR data processing agreement": [
         "Persetujuan pemrosesan data GDPR"
+      ],
+      "Hide-my-email aliases": [
+        "Alias Hide My Email"
       ],
       "High-speed streaming": [
         "Streaming berkecepatan tinggi"
@@ -10374,6 +10335,15 @@
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
         "Akses konten di layanan streaming, termasuk Netflix, Disney+, dan Prime Video, dari mana pun."
       ],
+      "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
+        "Semua layanan premium kami dengan batas tertinggi: 100 alamat surel, dukungan 10 domain kustom, alias Hide My Email tidak terbatas, pembagian kalender, penyimpanan awan dan pembagian berkas terenkripsi, dan lebih banyak lagi."
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Termasuk dukungan untuk 1 domain surel kustom, 10 alamat surel, 10 alias Hide My Email, berbagi kalender, dan lainnya."
+      ],
+      "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Beserta dukungan untuk 3 domain surel kustom, 15 alamat surel, alias Hide My Email tidak terbatas, pembagian kalender, dan lebih banyak lagi."
+      ],
       "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
         "Cocok untuk keluarga atau tim kecil, setiap orang dapat memiliki kotak masuk dan alias mereka sendiri. Membutuhkan domain kustom."
       ],
@@ -10869,9 +10839,6 @@
       "Edit": [
         "Sunting"
       ],
-      "Email address": [
-        "Alamat email"
-      ],
       "Email addresses": [
         "Alamat email"
       ],
@@ -11008,14 +10975,8 @@
       "Add Sieve filter": [
         "Tambah filter Sieve"
       ],
-      "Add to Not spam list": [
-        "Tambahkan ke daftar Bukan Spam"
-      ],
       "Add to spam list": [
         "Tambahkan ke daftar spam"
-      ],
-      "Add to your block list": [
-        "Tambah ke daftar blokir"
       ],
       "Add user": [
         "Tambah pengguna"
@@ -11664,9 +11625,6 @@
       ],
       "Sort labels alphabetically": [
         "Urutkan sesuai abjad"
-      ],
-      "Spam and block list": [
-        "Daftar spam dan blokir"
       ],
       "Start a new import": [
         "Mulai impor baru"

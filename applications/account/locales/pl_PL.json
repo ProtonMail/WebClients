@@ -533,12 +533,6 @@
       "Mark as default": [
         "Oznacz jako domyślną"
       ],
-      "Mark as not spam": [
-        "To nie jest spam"
-      ],
-      "Mark as spam": [
-        "Oznacz jako spam"
-      ],
       "mark emails as": [
         "oznacz wiadomości jako"
       ],
@@ -568,9 +562,6 @@
       ],
       "No": [
         "Nie"
-      ],
-      "Not spam": [
-        "To nie jest spam"
       ],
       "OK": [
         "OK"
@@ -634,9 +625,6 @@
       ],
       "Remove": [
         "Usuń"
-      ],
-      "Remove Block": [
-        "Odblokuj"
       ],
       "Remove bonuses": [
         "Zrezygnuj z bonusów"
@@ -2788,20 +2776,8 @@
       "${ name } failed to move to spam list": [
         "Przenoszenie domeny ${ name } do listy spamu nie powiodło się"
       ],
-      "${ name } failed to move to the not-spam list": [
-        "Usunięcie domeny ${ name } z listy spamu nie powiodło się"
-      ],
-      "${ name } failed to move to your block list": [
-        "Przenoszenie domeny ${ name } do listy odrzuconych nie powiodło się"
-      ],
-      "${ name } moved to not spam list": [
-        "Domena ${ name } została usunięta z listy spamu"
-      ],
       "${ name } moved to spam list": [
         "Domena ${ name } została przeniesiona do listy spamu"
-      ],
-      "${ name } moved to your block list": [
-        "Domena ${ name } została przeniesiona do listy odrzuconych"
       ],
       "${ name } successfully deleted": [
         "Domena ${ name } została usunięta"
@@ -2905,20 +2881,8 @@
       "${ name } failed to move to spam list": [
         "Przenoszenie adresu ${ name } do listy spamu nie powiodło się"
       ],
-      "${ name } failed to move to the not-spam list": [
-        "Usunięcie adresu ${ name } z listy spamu nie powiodło się"
-      ],
-      "${ name } failed to move to your block list": [
-        "Przenoszenie adresu ${ name } do listy odrzuconych nie powiodło się"
-      ],
-      "${ name } moved to not spam list": [
-        "Adres ${ name } został usunięty z listy spamu"
-      ],
       "${ name } moved to spam list": [
         "Adres ${ name } został przeniesiony do listy spamu"
-      ],
-      "${ name } moved to your block list": [
-        "Adres ${ name } został przeniesiony do listy odrzuconych"
       ],
       "${ name } successfully deleted": [
         "Adres ${ name } został usunięty"
@@ -4327,15 +4291,6 @@
       "Add a custom filter to automatically perform certain actions, like labeling or archiving messages.": [
         "Dodaj filtr niestandardowy do wykonywania automatycznych czynności, takich jak etykietowanie lub archiwizacja wiadomości."
       ],
-      "Emails from addresses marked as spam by you or ${ BRAND_NAME } will go to the spam folder of your organization members. If you want to allow emails from one of these addresses, mark it as \"not spam\".": [
-        "Wiadomości z adresów oznaczonych jako spam przez Ciebie lub ${ BRAND_NAME } zostaną przeniesione do folderu Spam Twojej organizacji. Jeśli chcesz zezwolić na wiadomości z jednego z tych adresów, oznacz adres jako \"To nie jest spam\"."
-      ],
-      "Emails from addresses marked as spam by you or ${ BRAND_NAME } will go to your spam folder. If you want to allow emails from one of these addresses, mark it as \"not spam\".": [
-        "Wiadomości z adresów oznaczonych jako spam przez Ciebie lub ${ BRAND_NAME } zostaną przeniesione do folderu Spam. Jeśli chcesz zezwolić na wiadomości z jednego z tych adresów, oznacz adres jako \"To nie jest spam\"."
-      ],
-      "Emails from blocked addresses won't be delivered.": [
-        "Wiadomości od zablokowanych adresów nie zostaną dostarczone."
-      ],
       "Search list": [
         "Przeszukaj"
       ]
@@ -5519,12 +5474,6 @@
       ],
       "Download your PGP keys for use with other PGP-compatible services.": [
         "Pobierz swoje klucze PGP, aby korzystać z nich w innych aplikacjach."
-      ],
-      "Drop a file here to upload": [
-        "Upuść plik tutaj, aby przesłać"
-      ],
-      "Drop the file here to upload": [
-        "Upuść plik tutaj, aby przesłać"
       ],
       "Each code can only be used once": [
         "Każdy kod może zostać użyty tylko jeden raz"
@@ -7485,9 +7434,6 @@
       "Block malware, ads and trackers": [
         "Zablokuj złośliwe oprogramowanie, reklamy i skrypty śledzące"
       ],
-      "Blocked": [
-        "Zablokowany"
-      ],
       "Browser": [
         "Przeglądarka"
       ],
@@ -7889,9 +7835,6 @@
       ],
       "Non-standard ports": [
         "Niestandardowe porty"
-      ],
-      "Not spam": [
-        "To nie jest spam"
       ],
       "Notification": [
         "Powiadomienie"
@@ -8750,17 +8693,11 @@
       "Back to inbox": [
         "Powrót do poczty"
       ],
-      "Blocked": [
-        "Zablokowane"
-      ],
       "Calendar": [
         "Kalendarz"
       ],
       "Inbox": [
         "Poczta"
-      ],
-      "Not spam": [
-        "To nie jest spam"
       ],
       "Spam": [
         "Spam"
@@ -9055,6 +8992,9 @@
       ],
       "GDPR data processing agreement": [
         "Umowa przetwarzania danych zgodnie z RODO"
+      ],
+      "Hide-my-email aliases": [
+        "Aliasy Hide My Email"
       ],
       "High-speed streaming": [
         "Szybki streaming"
@@ -11277,9 +11217,6 @@
       "Edit": [
         "Edytuj"
       ],
-      "Email address": [
-        "Adres e-mail"
-      ],
       "Email addresses": [
         "Adresy e-mail"
       ],
@@ -11434,14 +11371,8 @@
       "Add Sieve filter": [
         "Dodaj filtr Sieve"
       ],
-      "Add to Not spam list": [
-        "Usuń z listy spamu"
-      ],
       "Add to spam list": [
         "Dodaj do listy spamu"
-      ],
-      "Add to your block list": [
-        "Dodaj do listy odrzuconych"
       ],
       "Add user": [
         "Dodaj użytkownika"
@@ -12099,9 +12030,6 @@
       ],
       "Sort labels alphabetically": [
         "Sortuj etykiety alfabetycznie"
-      ],
-      "Spam and block list": [
-        "Spam i lista odrzuconych"
       ],
       "Start a new import": [
         "Rozpocznij nowy import"

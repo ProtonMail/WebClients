@@ -74,6 +74,9 @@
       "Add address": [
         "Afegeix una adreça"
       ],
+      "Add address or domain": [
+        "Afegiu una adreça o domini"
+      ],
       "Add calendar from URL": [
         "Afegeix un calendari des d'una URL"
       ],
@@ -124,6 +127,9 @@
       ],
       "Alignment": [
         "Alineació"
+      ],
+      "Allow": [
+        "Permet"
       ],
       "Apply": [
         "Aplica"
@@ -533,12 +539,6 @@
       "Mark as default": [
         "Marca per defecte"
       ],
-      "Mark as not spam": [
-        "Marca com a no correu brossa"
-      ],
-      "Mark as spam": [
-        "Marcar com a correu brossa"
-      ],
       "mark emails as": [
         "marcar correus electrònics com"
       ],
@@ -568,9 +568,6 @@
       ],
       "No": [
         "No"
-      ],
-      "Not spam": [
-        "No és correu brossa"
       ],
       "OK": [
         "OK"
@@ -634,9 +631,6 @@
       ],
       "Remove": [
         "Suprimeix"
-      ],
-      "Remove Block": [
-        "Suprimeix el bloc"
       ],
       "Remove bonuses": [
         "Suprimeix bonus"
@@ -2773,23 +2767,23 @@
       "${ name } deletion failed": [
         "No s'ha pogut eliminar ${ name }."
       ],
+      "${ name } failed to move to allow list": [
+        "No s'ha pogut moure ${ name } a la llista \"No és correu brossa\"."
+      ],
+      "${ name } failed to move to block list": [
+        "No s'ha pogut moure ${ name } a la llista \"Bloquejat\"."
+      ],
       "${ name } failed to move to spam list": [
         "No s'ha pogut moure ${ name } a la llista de correu brossa"
       ],
-      "${ name } failed to move to the not-spam list": [
-        "No s'ha pogut moure ${ name } a la llista de no brossa"
+      "${ name } moved to allow list": [
+        "S'ha mogut ${ name } a la llista \"No és correu brossa\"."
       ],
-      "${ name } failed to move to your block list": [
-        "No s'ha pogut moure ${ name } a la vostra llista de bloquejats"
-      ],
-      "${ name } moved to not spam list": [
-        "S'ha mogut ${ name } a la llista de correu brossa"
+      "${ name } moved to block list": [
+        "S'ha mogut ${ name } a la llista \"Bloquejat\"."
       ],
       "${ name } moved to spam list": [
         "S'ha mogut ${ name } a la llista de correu brossa"
-      ],
-      "${ name } moved to your block list": [
-        "S'ha mogut ${ name } a la vostra llista de bloquejats"
       ],
       "${ name } successfully deleted": [
         "${ name }\" eliminat"
@@ -2890,23 +2884,23 @@
       "${ name } deletion failed": [
         "No s'ha pogut eliminar ${ name }."
       ],
+      "${ name } failed to move to allow list": [
+        "No s'ha pogut moure ${ name } a la llista \"No és correu brossa\"."
+      ],
+      "${ name } failed to move to block list": [
+        "No s'ha pogut moure ${ name } a la llista \"Bloquejat\"."
+      ],
       "${ name } failed to move to spam list": [
         "No s'ha pogut moure ${ name } a la llista de correu brossa"
       ],
-      "${ name } failed to move to the not-spam list": [
-        "No s'ha pogut moure ${ name } a la llista de no brossa"
+      "${ name } moved to allow list": [
+        "S'ha mogut ${ name } a la llista \"No és correu brossa\"."
       ],
-      "${ name } failed to move to your block list": [
-        "No s'ha pogut moure ${ name } a la vostra llista de bloquejats"
-      ],
-      "${ name } moved to not spam list": [
-        "S'ha mogut ${ name } a la llista de no brossa"
+      "${ name } moved to block list": [
+        "S'ha mogut ${ name } a la llista \"Bloquejat\"."
       ],
       "${ name } moved to spam list": [
         "S'ha mogut ${ name } a la llista de correu brossa"
-      ],
-      "${ name } moved to your block list": [
-        "S'ha mogut ${ name } a la vostra llista de bloquejats"
       ],
       "${ name } successfully deleted": [
         "${ name } eliminat"
@@ -4072,6 +4066,9 @@
       "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
         "Inclou 2700 servidors en més de 65 països, connecteu fins a 10 dispositius, accediu a serveis de transmissió en tot el món, bloquejador de programari maliciós i d'anuncis i més."
       ],
+      "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
+        "Inclou suport per a 3 dominis de correu electrònic personalitzats, 90 adreces de correu electrònic, àlies il·limitats de Hide My Email, compartició de calendari i més."
+      ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Protegiu els vostres fitxers amb emmagatzematge al núvol xifrat. Inclou sincronització automàtica, compartició de fitxers xifrats i més."
       ]
@@ -4287,17 +4284,17 @@
       "Add a custom filter to automatically perform certain actions, like labeling or archiving messages.": [
         "Afegiu un filtre personalitzat per realitzar automàticament certes accions, com ara etiquetar o arxivar missatges."
       ],
-      "Emails from addresses marked as spam by you or ${ BRAND_NAME } will go to the spam folder of your organization members. If you want to allow emails from one of these addresses, mark it as \"not spam\".": [
-        "Els correus electrònics de les adreces marcades com a brossa per vós o ${ BRAND_NAME } aniran a la carpeta de correu brossa dels membres de la vostra organització. Si voleu permetre correus electrònics d'una d'aquestes adreces, marqueu-la com a \"no brossa\"."
+      "Allow:": [
+        "Permet:"
       ],
-      "Emails from addresses marked as spam by you or ${ BRAND_NAME } will go to your spam folder. If you want to allow emails from one of these addresses, mark it as \"not spam\".": [
-        "Els correus electrònics de les adreces que vós o ${ BRAND_NAME } hàgiu marcat com a correu brossa aniran a la vostra carpeta de correu brossa. Si voleu permetre correus electrònics d'una d'aquestes adreces, marqueu-la com a \"no brossa\"."
-      ],
-      "Emails from blocked addresses won't be delivered.": [
-        "No es lliuraran els correus electrònics de les adreces bloquejades."
+      "Block:": [
+        "Bloqueja:"
       ],
       "Search list": [
         "Llista de cerca"
+      ],
+      "Spam:": [
+        "Correu brossa:"
       ]
     },
     "Font Face Default": {
@@ -5418,11 +5415,11 @@
       "Download your PGP keys for use with other PGP-compatible services.": [
         "Descarregueu les vostres claus PGP per utilitzar amb altres serveis compatibles amb PGP."
       ],
-      "Drop a file here to upload": [
-        "Arrossegueu un fitxer aquí per carregar-lo"
+      "Drop file here to upload": [
+        "Arrossegueu el fitxer aquí per carregar-lo."
       ],
-      "Drop the file here to upload": [
-        "Arrossegueu el fitxer aquí per carregar-lo"
+      "Drop to import": [
+        "Arrossega aquí per importar"
       ],
       "Each code can only be used once": [
         "Cada codi només es pot utilitzar una vegada."
@@ -6773,6 +6770,9 @@
       "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your recovery phrase or your ${ oldPassword }.": [
         "Els vostres missatges, calendaris o contactes existents es bloquejaran. Per recuperar aquestes dades, necessitareu la vostra frase de recuperació o la vostra ${ oldPassword }."
       ],
+      "Your files will be encrypted and then saved": [
+        "Es xifraran els fitxers i després es desaran."
+      ],
       "Your import from ${ accounts } is temporarily delayed.": [
         "La seva importació des de ${ accounts } està temporalment retrasat.",
         "La seva importació des de ${ accounts } estàn temporalment retrasats."
@@ -7087,6 +7087,9 @@
       "New message": [
         "Nou missatge"
       ],
+      "Open command panel": [
+        "Obre el panell de comandes"
+      ],
       "Open next message": [
         "Obre el següent missatge"
       ],
@@ -7264,6 +7267,9 @@
       "All-day event notifications": [
         "Notificacions d'esdeveniments de tot el dia"
       ],
+      "Allow": [
+        "Permet"
+      ],
       "Allow notifications by email": [
         "Permet notificacions per correu"
       ],
@@ -7336,6 +7342,9 @@
       "Billing cycle": [
         "Cicle de facturació"
       ],
+      "Block": [
+        "Bloqueja"
+      ],
       "Block email tracking": [
         "Bloquegi el seguiment del correu electrònic"
       ],
@@ -7344,9 +7353,6 @@
       ],
       "Block malware, ads and trackers": [
         "Bloquejar programari maliciós, anuncis i rastrejadors"
-      ],
-      "Blocked": [
-        "Bloquejat"
       ],
       "Browser": [
         "Navegador"
@@ -7749,9 +7755,6 @@
       ],
       "Non-standard ports": [
         "Ports no estàndard"
-      ],
-      "Not spam": [
-        "No és correu brossa"
       ],
       "Notification": [
         "Notificació"
@@ -8578,6 +8581,9 @@
       "All": [
         "Tot"
       ],
+      "Allow": [
+        "Permet"
+      ],
       "Back": [
         "Torna"
       ],
@@ -8590,17 +8596,14 @@
       "Back to inbox": [
         "Torna a la safata d'entrada"
       ],
-      "Blocked": [
-        "Bloquejat"
+      "Block": [
+        "Bloqueja"
       ],
       "Calendar": [
         "Calendari"
       ],
       "Inbox": [
         "Safata d'entrada"
-      ],
-      "Not spam": [
-        "No és correu brossa"
       ],
       "Spam": [
         "Correu brossa"
@@ -8735,6 +8738,10 @@
         "${ n } carpeta i etiqueta",
         "${ n } carpetes i etiquetes"
       ],
+      "${ n } Hide-my-email alias": [
+        "${ n } àlies Hide My Email",
+        "${ n } àlies Hide My Email"
+      ],
       "${ n } label": [
         "${ n } etiqueta",
         "${ n } etiquetes"
@@ -8860,6 +8867,9 @@
       "GDPR data processing agreement": [
         "Acord de processament de dades RGPD"
       ],
+      "Hide-my-email aliases": [
+        "Àlies Hide My Email"
+      ],
       "High-speed streaming": [
         "Transmissió d'alta velocitat"
       ],
@@ -8957,6 +8967,9 @@
       ],
       "Unlimited folders, labels, and filters": [
         "Carpetes, etiquetes i filtres sense límit"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Nombre il·limitat d'àlies Hide My Email"
       ],
       "Unlimited labels": [
         "Etiquetes il·limitades"
@@ -10499,6 +10512,15 @@
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
         "Accediu al contingut dels serveis de transmissió, com ara Netflix, Disney+ i Prime Video, des de qualsevol lloc."
       ],
+      "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
+        "Tots els nostres serveis prèmium al seu límit màxim: 100 adreces de correu electrònic, suport per 10 dominis personalitzats, àlies Hide My Email il·limitats, compartició de calendaris, emmagatzematge al núvol encriptat, compartició de fitxers, i més."
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Inclou suport per a 1 domini de correu electrònic personalitzat, 10 adreces de correu electrònic, 10 àlies Hide My Email, compartició de calendari i més."
+      ],
+      "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Inclou suport per a 3 dominis de correu electrònic personalitzats, 15 adreces de correu electrònic, àlies il·limitats de Hide My Email, compartició de calendari i més."
+      ],
       "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
         "Perfecte per famílies o equips petits, cadascú pot tenir la seva pròpia safata d'entrada i àlies. Requereix un domini personalitzat."
       ],
@@ -11007,14 +11029,17 @@
       "Edit": [
         "Edita"
       ],
-      "Email address": [
-        "Adreça de correu electrònic"
+      "Email address or domain": [
+        "Adreça de correu electrònic o domini"
       ],
       "Email addresses": [
         "Adreces de correu electrònic"
       ],
       "Import": [
         "Importar"
+      ],
+      "List": [
+        "Llista"
       ],
       "Marked as": [
         "Marcat com"
@@ -11152,14 +11177,14 @@
       "Add Sieve filter": [
         "Afegeix un filtre Sieve"
       ],
-      "Add to Not spam list": [
-        "Afegeix a la llista de correu no brossa"
+      "Add to allow list": [
+        "Afegeix a la llista \"No és correu brossa\""
+      ],
+      "Add to block list": [
+        "Afegeix a la llista \"Bloquejat\""
       ],
       "Add to spam list": [
         "Afegeix a la llista de correu brossa"
-      ],
-      "Add to your block list": [
-        "Afegeix a la llista de bloqueig"
       ],
       "Add user": [
         "Afegir usuari"
@@ -11812,8 +11837,8 @@
       "Sort labels alphabetically": [
         "Ordena les etiquetes alfabèticament"
       ],
-      "Spam and block list": [
-        "Correu Brossa i llista de bloqueig"
+      "Spam, block, and allow lists": [
+        "Llistes \"No és correu brossa\", \"Bloquejat\" i \"Correu brossa\""
       ],
       "Start a new import": [
         "Inicia una nova importació"
@@ -12197,6 +12222,9 @@
       ]
     },
     "Upgrade": {
+      "Upgrade to ${ passPlusPlanName } to get unlimited hide-my-email aliases": [
+        "Millora a ${ passPlusPlanName } per obtenir àlies il·limitats Hide My Email."
+      ],
       "Upgrade to ${ planName } to connect up to ${ n } device to the VPN at once": [
         "Actualitzeu a ${ planName } per a connectar fins a ${ n } dispositiu a la vegada a la VPN",
         "Actualitzeu a ${ planName } per a connectar fins a ${ n } dispositius a la vegada a la VPN"
