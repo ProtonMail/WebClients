@@ -1,6 +1,6 @@
 {
   "headers": {
-    "plural-forms": "nplurals=2; plural=(n != 1);",
+    "plural-forms": "nplurals=2; plural=(n > 1);",
     "language": "pt_BR"
   },
   "contexts": {
@@ -2850,7 +2850,7 @@
         "Sua conta ${ BRAND_NAME } está suspensa no momento. Os e-mails não estão mais sendo entregues em sua caixa de entrada. Seus links de compartilhamento do Drive não estão mais ativos e você não pode fazer upload de novos arquivos. Para continuar usando sua conta, pague as faturas vencidas."
       ],
       "Your ${ BRAND_NAME } password": [
-        "Sua senha ${ BRAND_NAME }"
+        "Sua senha da ${ BRAND_NAME }"
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there.": [
         "Suas contas ${ VPN_APP_NAME } e ${ MAIL_APP_NAME } estão conectadas. Para excluir ambas, por favor inicia sessão em ${ loginLink } e exclua sua conta lá."
@@ -2916,7 +2916,7 @@
         "Faturado"
       ],
       "Gifted": [
-        "Dotado"
+        "Oferecido"
       ],
       "Paid": [
         "Pago"
@@ -3649,7 +3649,7 @@
         "Downloads rápidos de P2P/BitTorrent"
       ],
       "Free features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and ${ DRIVE_SHORT_APP_NAME }": [
-        "Recursos gratuitos de ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, e ${ DRIVE_SHORT_APP_NAME }"
+        "Recursos gratuitos da ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, e ${ DRIVE_SHORT_APP_NAME }"
       ],
       "Free VPN on a single device": [
         "VPN gratuita em um único dispositivo"
@@ -3704,7 +3704,7 @@
         "Suporte prioritário e chat ao-vivo"
       ],
       "Protect ${ n } device at a time": [
-        "Protege ${ n } dispositivo por vez",
+        "Proteja ${ n } dispositivo por vez",
         "Proteja ${ n } dispositivos por vez"
       ],
       "Router support": [
