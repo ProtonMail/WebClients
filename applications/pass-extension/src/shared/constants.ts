@@ -1,5 +1,5 @@
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
-import type { OnboardingState, PopupState, WorkerState } from '@proton/pass/types';
+import type { OnboardingState, PopupInitialState, WorkerState } from '@proton/pass/types';
 import { WorkerStatus } from '@proton/pass/types';
 
 export const INITIAL_ONBOARDING_STATE: OnboardingState = {
@@ -14,7 +14,7 @@ export const INITIAL_WORKER_STATE: WorkerState = {
     UID: undefined,
 };
 
-export const INITIAL_POPUP_STATE: PopupState = {
+export const INITIAL_POPUP_STATE: PopupInitialState = {
     hasAutofillCandidates: false,
     initialSearch: '',
     draft: null,

@@ -1,35 +1,38 @@
-import { type FC, createContext, useContext, useEffect, useMemo } from 'react';
+import { type FC, createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react';
 import { useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader';
 import { NotificationsContext } from '@proton/components';
 import { useNotifications } from '@proton/components/hooks';
-import { popupMessage } from '@proton/pass/extension/message';
+import { popupMessage, sendMessage } from '@proton/pass/extension/message';
 import { selectWorkerSyncing } from '@proton/pass/store';
 import * as requests from '@proton/pass/store/actions/requests';
-import type { RequiredProps } from '@proton/pass/types';
+import type { PopupInitialState, WorkerState } from '@proton/pass/types';
 import { WorkerMessageType, type WorkerMessageWithSender, WorkerStatus } from '@proton/pass/types';
 import type { ParsedUrl } from '@proton/pass/utils/url';
 import { parseUrl } from '@proton/pass/utils/url';
+import { workerReady } from '@proton/pass/utils/worker';
 import noop from '@proton/utils/noop';
 
-import type { ExtensionAppContextValue, ExtensionContextState } from '../../../shared/components/extension';
+import type { ExtensionAppContextValue } from '../../../shared/components/extension';
 import { ExtensionContextProvider } from '../../../shared/components/extension';
 import { INITIAL_POPUP_STATE, INITIAL_WORKER_STATE } from '../../../shared/constants';
 import { useExtensionContext } from '../../../shared/hooks';
 import { useRequestStatusEffect } from '../../../shared/hooks/useRequestStatusEffect';
 import { enhanceNotification } from '../../../shared/notification';
+import type { ItemDraftState } from '../../hooks/useItemDraft';
 
 export interface PopupContextValue extends Omit<ExtensionAppContextValue, 'context'> {
-    state: RequiredProps<ExtensionContextState, 'popup'>;
+    state: WorkerState & PopupInitialState;
     url: ParsedUrl;
     sync: () => void;
 }
 
 export const PopupContext = createContext<PopupContextValue>({
-    state: { ...INITIAL_WORKER_STATE, popup: INITIAL_POPUP_STATE },
+    state: { ...INITIAL_WORKER_STATE, ...INITIAL_POPUP_STATE },
     url: parseUrl(),
     ready: false,
     logout: noop,
@@ -37,17 +40,22 @@ export const PopupContext = createContext<PopupContextValue>({
     sync: noop,
 });
 
-/* PopupContext is an extension of the base
- * ExtensionContext adding specifics for handling
- * syncing behaviours & active tab data*/
-const ExtendedExtensionContext: FC = ({ children }) => {
+/* this cannot be included directly in `PopupContextProvider` because
+ * of the `useExtensionContext` call which requires this component to
+ * be a descendant of `ExtensionContextProvider`  */
+const PopupContextContainer: FC = ({ children }) => {
+    const history = useHistory<ItemDraftState>();
+
     const extensionContext = useExtensionContext();
-    const notificationsManager = useContext(NotificationsContext);
+    const { status } = extensionContext.state;
+    const { url, tabId } = extensionContext.context!;
+
     const { createNotification } = useNotifications();
+    const notificationsManager = useContext(NotificationsContext);
     useEffect(() => notificationsManager.setOffset({ y: 10 }), []);
 
+    const [initial, setInitial] = useState<PopupInitialState>(INITIAL_POPUP_STATE);
     const syncing = useSelector(selectWorkerSyncing) || extensionContext.state.status === WorkerStatus.BOOTING;
-    const { url } = extensionContext.context!;
 
     useRequestStatusEffect(requests.syncing(), {
         onStart: () =>
@@ -62,16 +70,41 @@ const ExtendedExtensionContext: FC = ({ children }) => {
             }),
     });
 
+    const onPopupInit = useCallback((state: PopupInitialState) => {
+        setInitial(state);
+
+        if (state.draft !== null) {
+            const { draft } = state;
+            const { itemId, shareId, type, mode } = draft;
+
+            switch (mode) {
+                case 'new':
+                    return history.push(`/item/new/${type}`, { draft });
+                case 'edit':
+                    return history.push(`/share/${shareId}/item/${itemId}/edit`, { draft });
+            }
+        }
+    }, []);
+
+    useEffect(() => {
+        if (workerReady(status)) {
+            void sendMessage.onSuccess(
+                popupMessage({ type: WorkerMessageType.POPUP_INIT, payload: { tabId } }),
+                onPopupInit
+            );
+        }
+    }, [status]);
+
     const popupContext = useMemo<PopupContextValue>(() => {
         const { state, ready } = extensionContext;
 
         return {
             ...extensionContext,
-            state: { ...state, popup: state.popup ?? INITIAL_POPUP_STATE },
+            state: { ...state, ...initial },
             ready: ready && !syncing,
             url,
         };
-    }, [extensionContext, syncing]);
+    }, [extensionContext, syncing, initial]);
 
     return <PopupContext.Provider value={popupContext}>{children}</PopupContext.Provider>;
 };
@@ -87,7 +120,7 @@ export const PopupContextProvider: FC = ({ children }) => {
 
     return (
         <ExtensionContextProvider endpoint="popup" messageFactory={popupMessage} onWorkerMessage={onWorkerMessage}>
-            <ExtendedExtensionContext>{children}</ExtendedExtensionContext>
+            <PopupContextContainer>{children}</PopupContextContainer>
         </ExtensionContextProvider>
     );
 };
