@@ -4,7 +4,7 @@ import { LocaleData, c, useLocale as ttagUseLocale } from 'ttag';
 import { DEFAULT_LOCALE } from '../../lib/constants';
 import { dateLocale } from '../../lib/i18n';
 import { loadDateLocale, loadLocale } from '../../lib/i18n/loadLocale';
-import { setLocales } from '../../lib/i18n/locales';
+import { setTtagLocales } from '../../lib/i18n/locales';
 import { relocalizeText } from '../../lib/i18n/relocalize';
 import { UserSettings } from '../../lib/interfaces';
 
@@ -47,7 +47,7 @@ const getLocalizedTextWithDate = () => {
 
 describe('relocalizeText', () => {
     afterEach(() => {
-        setLocales({});
+        setTtagLocales({});
         ttagUseLocale(DEFAULT_LOCALE);
         void loadDateLocale(DEFAULT_LOCALE);
     });
@@ -57,7 +57,7 @@ describe('relocalizeText', () => {
             fr_FR: async () => getTranslation("Ceci n'est pas une pipe"),
             it_IT: async () => getTranslation('Questa non è una pipa'),
         };
-        setLocales(locales);
+        setTtagLocales(locales);
         await loadLocale('fr_FR', locales);
         expect(
             await relocalizeText({
@@ -74,7 +74,7 @@ describe('relocalizeText', () => {
             fr_FR: async () => getTranslation("Ceci n'est pas une pipe"),
             it_IT: async () => getTranslation('Questa non è una pipa'),
         };
-        setLocales(locales);
+        setTtagLocales(locales);
         await loadLocale('fr_FR', locales);
         expect(
             await relocalizeText({
@@ -93,7 +93,7 @@ describe('relocalizeText', () => {
             it_IT: async () => getTranslation('Questa non è una pipa'),
             gl_ES: undefined,
         };
-        setLocales(locales);
+        setTtagLocales(locales);
         await loadLocale('fr_FR', locales);
         expect(
             await relocalizeText({
@@ -115,7 +115,7 @@ describe('relocalizeText', () => {
     });
 
     it('should relocalize without date format', async () => {
-        setLocales({
+        setTtagLocales({
             // eslint-disable-next-line no-template-curly-in-string
             es_ES: async () => getTranslationWithDate('El 16 de diciembre de 2021 fue un ${ formattedDate }'),
         });
@@ -129,7 +129,7 @@ describe('relocalizeText', () => {
     });
 
     it('should relocalize with date format', async () => {
-        setLocales({
+        setTtagLocales({
             // eslint-disable-next-line no-template-curly-in-string
             es_ES: async () => getTranslationWithDate('El 16 de diciembre de 2021 fue un ${ formattedDate }'),
         });
@@ -145,7 +145,7 @@ describe('relocalizeText', () => {
     });
 
     it('should fallback to current date locale if no date locale data is found', async () => {
-        setLocales({
+        setTtagLocales({
             // eslint-disable-next-line no-template-curly-in-string
             xx_XX: async () => getTranslationWithDate('blah blah blah ${ formattedDate }'),
         });

@@ -27,7 +27,7 @@ import authentication from '@proton/shared/lib/authentication/authentication';
 import { APPS } from '@proton/shared/lib/constants';
 import createCache from '@proton/shared/lib/helpers/cache';
 import sentry from '@proton/shared/lib/helpers/sentry';
-import { setLocales } from '@proton/shared/lib/i18n/locales';
+import { setTtagLocales } from '@proton/shared/lib/i18n/locales';
 import { getRedirect } from '@proton/shared/lib/subscription/redirect';
 import noop from '@proton/utils/noop';
 
@@ -38,7 +38,7 @@ import Setup from './Setup';
 import broadcast, { MessageType } from './broadcast';
 import { FullscreenOption, SupportedActions, getApp, getFullscreenOption } from './helper';
 
-setLocales(locales);
+setTtagLocales(locales);
 
 const enhancedConfig = {
     ...config,
