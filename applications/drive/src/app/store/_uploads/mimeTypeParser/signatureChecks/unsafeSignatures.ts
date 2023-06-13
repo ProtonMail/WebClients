@@ -2,6 +2,9 @@ import { SupportedMimeTypes } from '@proton/shared/lib/drive/constants';
 
 import { SignatureChecker } from '../helpers';
 
+// https://en.wikipedia.org/wiki/MPEG_transport_stream
+const MP2T_CHUNK_SIZE = 188;
+
 export default function unsafeSignatures({ check, sourceBuffer }: ReturnType<typeof SignatureChecker>) {
     if (check([0x00, 0x00, 0x01, 0x00]) || check([0x00, 0x00, 0x02, 0x00])) {
         return SupportedMimeTypes.ico;
@@ -12,12 +15,12 @@ export default function unsafeSignatures({ check, sourceBuffer }: ReturnType<typ
     }
 
     // Every 188th byte is sync byte, which is a reasonable guess
-    let isMp2t = true;
-    for (let offset = 0; offset < sourceBuffer.length; offset += 188) {
-        if (!check([0x47], { offset })) {
-            isMp2t = false;
-            break;
-        }
+    // Since 0x47 is ASCII char 'G', any text file starting with a 'G' and being smaller than 188 bytes would fulfill
+    // simply checking every 188th character. I assume any mp2t file will be at least 4 blocks long. Still not perfect,
+    // but seems like a reasonable solution.
+    let isMp2t = sourceBuffer.byteLength >= MP2T_CHUNK_SIZE * 4;
+    for (let offset = 0; isMp2t && offset < sourceBuffer.byteLength; offset += MP2T_CHUNK_SIZE) {
+        isMp2t = check([0x47], { offset });
     }
     if (isMp2t) {
         return SupportedMimeTypes.mp2t;
