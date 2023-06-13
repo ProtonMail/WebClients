@@ -16,7 +16,7 @@ const Layout = (props: OfferLayoutProps) => {
         <OfferLayout {...props}>
             <OfferHeader {...props}>
                 <OfferTitle>{c('summer2023:Offer title').t`${BRAND_NAME} Anniversary Sale`}</OfferTitle>
-                <p className="text-center">{c('summer2023:Info')
+                <p className="text-center mb-0">{c('summer2023:Info')
                     .t`We’re celebrating the nine-year anniversary of our crowdfunding!`}</p>
                 <p className="text-center">{c('summer2023:Info')
                     .t`For a limited time, get the best ${BRAND_NAME} has to offer at an exclusive discount.`}</p>
