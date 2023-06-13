@@ -299,9 +299,11 @@ const ThemeProvider = ({ children }: Props) => {
 
     useEffect(() => {
         const syncToCookie = () => {
+            const cookieValue = serializeThemeSetting(themeSetting);
+            // Note: We might set `undefined` which will clear the cookie
             setCookie({
                 cookieName: THEME_COOKIE_NAME,
-                cookieValue: serializeThemeSetting(themeSetting),
+                cookieValue,
                 cookieDomain: getSecondLevelDomain(window.location.hostname),
                 path: '/',
                 expirationDate: 'max',
