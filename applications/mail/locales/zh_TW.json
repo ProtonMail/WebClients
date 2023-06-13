@@ -475,6 +475,9 @@
       "Hide messages": [
         "隱藏郵件"
       ],
+      "hide-my-email aliases": [
+        "隱藏我的郵件別名"
+      ],
       "I have a question": [
         "我要發問"
       ],
@@ -4483,7 +4486,7 @@
         "${ contactEmailsLength } 位成員"
       ],
       "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } members)": [
-        "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } 成員)"
+        "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } 位成員)"
       ],
       "${ contactName } contains multiple email addresses.": [
         "${ contactName } 聯絡人包含數組電郵位址。"
@@ -4510,13 +4513,13 @@
         "${ MAIL_APP_NAME } 亦可防護您的企業商號。"
       ],
       "${ messagesNotAuthorizedToMove } messages could not be moved.": [
-        "${ messagesNotAuthorizedToMove } 封郵件無法移動。"
+        "${ messagesNotAuthorizedToMove } 封郵件無法進行移動。"
       ],
       "${ numberOfTrackers } email trackers blocked": [
-        "已封鎖 ${ numberOfTrackers } 個電郵追蹤程式"
+        "已攔截 ${ numberOfTrackers } 個電郵追蹤程式"
       ],
       "${ numContact } contacts": [
-        "${ numContact } 個聯絡人"
+        "${ numContact } 位聯絡人"
       ],
       "${ numGroups } contact groups": [
         "${ numGroups } 個聯絡人群組"
@@ -4534,7 +4537,7 @@
         "找到 ${ providerFoldersNumLocalized } 個資料夾"
       ],
       "${ providerFoldersNumLocalized } labels found in Gmail": [
-        "在 Gmail 中找到 ${ providerFoldersNumLocalized } 個標籤"
+        "在 Gmail 中找到 ${ providerFoldersNumLocalized } 種標籤"
       ],
       "${ pureAttachmentsCount } files attached": [
         "${ pureAttachmentsCount } 個附件"
@@ -4552,7 +4555,7 @@
         "已選取 ${ selectedFoldersCountLocalized } 個資料夾"
       ],
       "${ selectedFoldersCountLocalized } labels selected": [
-        "已選取 ${ selectedFoldersCountLocalized } 個標籤"
+        "已選取 ${ selectedFoldersCountLocalized } 種標籤"
       ],
       "${ total } conversations": [
         "${ total } 個交談"
@@ -4809,11 +4812,8 @@
       "Draft saved.": [
         "草稿已儲存。"
       ],
-      "Drop a file here to upload": [
-        "拖曳檔案到此處來上載"
-      ],
-      "Drop the file here to upload": [
-        "拖放檔案到此處以上載"
+      "Drop file here to upload": [
+        "拖曳檔案到此處來上傳"
       ],
       "Duplicate key updated": [
         "重複金鑰已更新"
@@ -4843,7 +4843,7 @@
         "電郵追蹤程式會侵犯您的隱私。 ${ BRAND_NAME } 在此訊息中並未發現任何電郵追蹤程式。"
       ],
       "Email trackers can violate your privacy. ${ BRAND_NAME } found and blocked ${ numberOfTrackers } trackers.": [
-        "電郵追蹤程式會侵犯您的私隱。 ${ BRAND_NAME } 找到並阻止了 ${ numberOfTrackers } 個追踪器。"
+        "電郵追蹤程式會侵犯您的私隱。 已發現 ${ BRAND_NAME } 並且攔截 ${ numberOfTrackers } 個追踪程式。"
       ],
       "Email trackers can violate your privacy. Turn on tracker protection to prevent senders from knowing whether and when you have opened a message.": [
         "電郵追蹤器會侵犯您的隱私。開啟電郵追蹤保護防止寄件者得知您是否開啟過此訊息。"
@@ -5188,7 +5188,7 @@
         "請選擇您想插入的連結類型，並填寫所有欄位。"
       ],
       "Please select which email address or addresses to add to ${ groupCount } groups.": [
-        "請選取一或多組電郵位址以加入至 ${ groupCount }。"
+        "請選取一或多組電郵位址以加入至 ${ groupCount } 個群組。"
       ],
       "Please select which email address or addresses to add to ${ groupName }.": [
         "請選取一或多組電郵位址以加入至 ${ groupName }。"
@@ -5380,7 +5380,7 @@
         "驗證 ${ contactName } 失敗：聯絡人簽章不正確。\n可能是重設密碼所導致。\n您必須重新簽署聯絡人才能發送郵件給 ${ contactAddress }，又或者編輯聯絡人。"
       ],
       "The verification of ${ contactNames } has failed: the contacts are not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contacts in order to send a message to ${ contactAddresses } or edit the contacts.": [
-        "驗證 ${ contactNames } 失敗：聯絡人簽章不正確。\n可能是重設密碼所導致。\n您必須重新簽署聯絡人才能發送郵件給 ${ contactAddresses }，又或者編輯聯絡人。"
+        "無法驗證 ${ contactNames } ：聯絡人名片並未正確地簽署。\n這很可能是因為重設密碼所導致。\n您必須重新簽署聯絡人名片後，才能發送郵件給 ${ contactAddresses }，或是編輯聯絡人名片。"
       ],
       "Themes can give your inbox a new look.": [
         "主題視覺讓您的收件匣煥然一新。"
@@ -5744,6 +5744,9 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "您的電郵只會用於此一次性驗證。"
+      ],
+      "Your files will be encrypted and then saved": [
+        "你的檔案將加密後再儲存"
       ],
       "Your import will not be processed.": [
         "將不會處理您的匯入。"
@@ -7022,6 +7025,9 @@
       ],
       "Custom email domains": [
         "自訂電郵網域"
+      ],
+      "Hide-my-email aliases": [
+        "隱藏我的郵件別名"
       ],
       "Schedule messages at any time": [
         "在任意時間排程訊息"

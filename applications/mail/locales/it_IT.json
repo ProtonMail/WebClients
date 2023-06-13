@@ -1838,6 +1838,41 @@
         "bianco"
       ]
     },
+    "Commander action": {
+      "Create a new folder": [
+        "Crea una cartella"
+      ],
+      "Create a new label": [
+        "Crea una etichetta"
+      ],
+      "Go to Archive": [
+        "Vai all'archivio"
+      ],
+      "Go to Drafts": [
+        "Vai alle bozze"
+      ],
+      "Go to Inbox": [
+        "Vai alla posta in entrata"
+      ],
+      "Go to Sent": [
+        "Vai alla posta inviata"
+      ],
+      "Go to Spam": [
+        "Vai a spam"
+      ],
+      "Go to Starred": [
+        "Vai ai preferiti"
+      ],
+      "Go to Trash": [
+        "Vai al cestino"
+      ],
+      "New message": [
+        "Nuovo messaggio"
+      ],
+      "Search": [
+        "Cerca"
+      ]
+    },
     "Composer email icon": {
       "End-to-end encrypted": [
         "Crittografato end-to-end"
@@ -4896,11 +4931,11 @@
       "Draft saved.": [
         "Bozza salvata."
       ],
-      "Drop a file here to upload": [
-        "Trascini un file qui per caricarlo"
+      "Drop file here to upload": [
+        "Trascina qui i file da caricare."
       ],
-      "Drop the file here to upload": [
-        "Trascina qui il file per caricare"
+      "Drop to import": [
+        "Trascinare per importare"
       ],
       "Duplicate key updated": [
         "Chiave duplicata aggiornata"
@@ -5253,6 +5288,9 @@
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Il nostro sistema ha contrassegnato questo messaggio come un tentativo di phishing. Sei pregato di verificare che sia legittimo."
       ],
+      "Our system flagged this message as a suspicious email. Please check that it is legitimate before clicking any links or attachments.": [
+        "Il nostro sistema ha contrassegnato questo messaggio come email sospetta. Si prega di verificare che sia legittimo prima di cliccare su qualsiasi link o allegato."
+      ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/Inline è compatibile solo con il formato Testo."
       ],
@@ -5509,6 +5547,9 @@
       ],
       "This conversation contains non-trashed messages.": [
         "Questa conversazione contiene messaggi non cestinati."
+      ],
+      "This conversation contains one or more expiring messages": [
+        "Questa conversazione contiene uno o più messaggi in scadenza."
       ],
       "This conversation contains trashed messages.": [
         "Questa conversazione contiene messaggi cestinati."
@@ -5865,6 +5906,9 @@
       "Your email will only be used for this one-time verification.": [
         "La tua email sarà utilizzata solo per questa verifica una tantum."
       ],
+      "Your files will be encrypted and then saved": [
+        "I tuoi file verranno crittografati e poi salvati."
+      ],
       "Your import will not be processed.": [
         "La tua importazione non verrà elaborata."
       ],
@@ -5892,6 +5936,10 @@
       ]
     },
     "info": {
+      "${ filteredList.length } command found.": [
+        "${ filteredList.length } comando trovato.",
+        "${ filteredList.length } comandi trovati."
+      ],
       "Optional": [
         "Facoltativo"
       ]
@@ -6053,6 +6101,9 @@
       ],
       "New message": [
         "Nuovo messaggio"
+      ],
+      "Open command panel": [
+        "Apri il pannello comandi"
       ],
       "Open next message": [
         "Apri il prossimo messaggio"
@@ -6565,6 +6616,9 @@
       ],
       "Toolbar": [
         "Barra degli strumenti"
+      ],
+      "Type a command...": [
+        "Inserisci un comando..."
       ],
       "Undisclosed Recipients": [
         "Destinatari nascosti"
@@ -7436,6 +7490,9 @@
       ],
       "Text": [
         "Testo"
+      ],
+      "Type a command…": [
+        "Inserisci un comando…"
       ],
       "Type text or keyword": [
         "Digita testo o parola chiave"

@@ -1838,6 +1838,41 @@
         "Weiß"
       ]
     },
+    "Commander action": {
+      "Create a new folder": [
+        "Neuen Ordner erstellen"
+      ],
+      "Create a new label": [
+        "Neue Kategorie erstellen"
+      ],
+      "Go to Archive": [
+        "Zum Archiv"
+      ],
+      "Go to Drafts": [
+        "Zu den Entwürfen"
+      ],
+      "Go to Inbox": [
+        "Zum Posteingang"
+      ],
+      "Go to Sent": [
+        "Zu den gesendeten E-Mails"
+      ],
+      "Go to Spam": [
+        "Zum Spam-Ordner"
+      ],
+      "Go to Starred": [
+        "Zu den markierten E-Mails"
+      ],
+      "Go to Trash": [
+        "Zum Papierkorb"
+      ],
+      "New message": [
+        "Neue Nachricht"
+      ],
+      "Search": [
+        "Suchen"
+      ]
+    },
     "Composer email icon": {
       "End-to-end encrypted": [
         "Ende-zu-Ende verschlüsselt"
@@ -4896,11 +4931,11 @@
       "Draft saved.": [
         "Entwurf gespeichert."
       ],
-      "Drop a file here to upload": [
-        "Datei zum Hochladen hierhin ziehen"
+      "Drop file here to upload": [
+        "Ziehe Dateien hierher, um sie hochzuladen"
       ],
-      "Drop the file here to upload": [
-        "Datei zum Hochladen hierhinein ziehen"
+      "Drop to import": [
+        "Loslassen zum Importieren"
       ],
       "Duplicate key updated": [
         "Zweitschlüssel aktualisiert"
@@ -5253,6 +5288,9 @@
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Unser System hat diese Nachricht als Phishing-Versuch gekennzeichnet. Bitte überprüfe, ob sie seriös ist."
       ],
+      "Our system flagged this message as a suspicious email. Please check that it is legitimate before clicking any links or attachments.": [
+        "Unser System hat diese Nachricht als verdächtige E-Mail gekennzeichnet. Bitte prüfe, ob die E-Mail legitim ist, bevor du auf Links oder Anhänge klickst."
+      ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/Inline ist nur mit dem Plain Text-Format kompatibel."
       ],
@@ -5509,6 +5547,9 @@
       ],
       "This conversation contains non-trashed messages.": [
         "Diese Unterhaltung enthält nicht-gelöschte Nachrichten."
+      ],
+      "This conversation contains one or more expiring messages": [
+        "Diese Unterhaltung enthält eine oder mehrere ablaufende Nachrichten."
       ],
       "This conversation contains trashed messages.": [
         "Diese Unterhaltung enthält gelöschte Nachrichten."
@@ -5864,6 +5905,9 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "Deine E-Mail-Adresse wird nur für diese einmalige Überprüfung verwendet."
+      ],
+      "Your files will be encrypted and then saved": [
+        "Deine Dateien werden verschlüsselt und anschließend gespeichert"
       ],
       "Your import will not be processed.": [
         "Dein Import wird nicht verarbeitet."

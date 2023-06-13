@@ -533,12 +533,6 @@
       "Mark as default": [
         "Установить по умолчанию"
       ],
-      "Mark as not spam": [
-        "Отметить как не спам"
-      ],
-      "Mark as spam": [
-        "Отметить как спам"
-      ],
       "mark emails as": [
         "отметить письма как"
       ],
@@ -568,9 +562,6 @@
       ],
       "No": [
         "Нет"
-      ],
-      "Not spam": [
-        "Не спам"
       ],
       "OK": [
         "OK"
@@ -634,9 +625,6 @@
       ],
       "Remove": [
         "Удалить"
-      ],
-      "Remove Block": [
-        "Удалить блокировку"
       ],
       "Remove bonuses": [
         "Удалить бонусы"
@@ -2794,20 +2782,8 @@
       "${ name } failed to move to spam list": [
         "Не удалось переместить ${ name } в список спама"
       ],
-      "${ name } failed to move to the not-spam list": [
-        "Не удалось переместить ${ name } в список \"Не спам\""
-      ],
-      "${ name } failed to move to your block list": [
-        "не удалось переместить ${ name } в список блокируемых"
-      ],
-      "${ name } moved to not spam list": [
-        "${ name } перемещён в список не спама"
-      ],
       "${ name } moved to spam list": [
         "${ name } перемещён в список спама"
-      ],
-      "${ name } moved to your block list": [
-        "${ name } перемещён в список блокируемых"
       ],
       "${ name } successfully deleted": [
         "${ name } успешно удалено"
@@ -2911,20 +2887,8 @@
       "${ name } failed to move to spam list": [
         "Не удалось переместить ${ name } в список спама"
       ],
-      "${ name } failed to move to the not-spam list": [
-        "Не удалось переместить ${ name } в список \"Не спам\""
-      ],
-      "${ name } failed to move to your block list": [
-        "Не удалось переместить ${ name } в список блокируемых"
-      ],
-      "${ name } moved to not spam list": [
-        "${ name } перемещён в список не спама"
-      ],
       "${ name } moved to spam list": [
         "${ name } перемещён в список спама"
-      ],
-      "${ name } moved to your block list": [
-        "${ name } перемещён в список блокируемых"
       ],
       "${ name } successfully deleted": [
         "${ name } успешно удалено"
@@ -4333,15 +4297,6 @@
       "Add a custom filter to automatically perform certain actions, like labeling or archiving messages.": [
         "Добавьте собственный фильтр для автоматического выполнения определенных действий, таких как пометка или архивирование сообщений."
       ],
-      "Emails from addresses marked as spam by you or ${ BRAND_NAME } will go to the spam folder of your organization members. If you want to allow emails from one of these addresses, mark it as \"not spam\".": [
-        "Письма с адресов, помеченных Вами или ${ BRAND_NAME } как спам, будут попадать в папку \"Спам\". Если Вы хотите разрешить письма с одного из этих адресов, отметьте его как \"не спам\"."
-      ],
-      "Emails from addresses marked as spam by you or ${ BRAND_NAME } will go to your spam folder. If you want to allow emails from one of these addresses, mark it as \"not spam\".": [
-        "Письма с адресов, помеченных вами или ${ BRAND_NAME } как спам, будут попадать в папку \"Спам\". Если вы хотите разрешить письма с одного из этих адресов, отметьте его как \"не спам\"."
-      ],
-      "Emails from blocked addresses won't be delivered.": [
-        "Эл. почта, поступающая с заблокированных адресов, не будет доставлена."
-      ],
       "Search list": [
         "Искать в списке"
       ]
@@ -5526,12 +5481,6 @@
       "Download your PGP keys for use with other PGP-compatible services.": [
         "Скачайте свои ключи PGP для использования с другими PGP-совместимыми сервисами."
       ],
-      "Drop a file here to upload": [
-        "Перетащите сюда файл для загрузки"
-      ],
-      "Drop the file here to upload": [
-        "Для загрузки файла перетащите его сюда"
-      ],
       "Each code can only be used once": [
         "Каждый код может быть использован только один раз"
       ],
@@ -6464,6 +6413,9 @@
       ],
       "To ensure continuous access to your account, set an account recovery method": [
         "Чтобы обеспечить постоянный доступ к своему аккаунту, установите метод восстановления аккаунта"
+      ],
+      "To ensure you don’t lose important data, ${ DRIVE_APP_NAME } saves older versions of your files as you and your collaborators make changes. Select how long ${ BRAND_NAME } should keep previous versions.": [
+        "Чтобы исключить потерю важных данных, ${ DRIVE_APP_NAME } сохраняет старые версии файлов по мере внесения изменений вами и вашими сотрудниками. Выберите, как долго ${ BRAND_NAME } должен сохранять предыдущие версии."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Для предотвращения распространения спама и иных злоупотреблений нашим сервисом, нам нужно убедиться, что вы человек."
@@ -7488,9 +7440,6 @@
       "Block malware, ads and trackers": [
         "Блокировать вредоносные программы, рекламу и трекеры"
       ],
-      "Blocked": [
-        "Заблокировано"
-      ],
       "Browser": [
         "Браузер"
       ],
@@ -7892,9 +7841,6 @@
       ],
       "Non-standard ports": [
         "Нестандартные порты"
-      ],
-      "Not spam": [
-        "Не спам"
       ],
       "Notification": [
         "Уведомление"
@@ -8753,17 +8699,11 @@
       "Back to inbox": [
         "Вернуться во Входящие"
       ],
-      "Blocked": [
-        "Заблокировано"
-      ],
       "Calendar": [
         "Календарь"
       ],
       "Inbox": [
         "Входящие"
-      ],
-      "Not spam": [
-        "Не спам"
       ],
       "Spam": [
         "Спам"
@@ -8918,6 +8858,12 @@
         "${ n } папок и ярлыков",
         "Папок и ярлыков: ${ n }"
       ],
+      "${ n } Hide-my-email alias": [
+        "${ n } псевдоним для скрытия своей электронной почты",
+        "${ n } псевдонима для скрытия своей электронной почты",
+        "${ n } псевдонимов для скрытия своей электронной почты",
+        "${ n } псевдонимов для скрытия своей электронной почты"
+      ],
       "${ n } label": [
         "${ n } ярлык",
         "${ n } ярлыка",
@@ -9001,6 +8947,9 @@
       ],
       "Custom email domains": [
         "Пользовательские домены электронной почты"
+      ],
+      "Custom fields": [
+        "Настраиваемые поля"
       ],
       "Data breach monitoring": [
         "Отслеживание утечек данных"
@@ -9151,6 +9100,9 @@
       ],
       "Unlimited folders, labels, and filters": [
         "Неограниченное количество папок, ярлыков и фильтров"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Неограниченное количество скрытых псевдонимов для скрытия своей электронной почты"
       ],
       "Unlimited labels": [
         "Неограниченное количество ярлыков"
@@ -11265,9 +11217,6 @@
       "Edit": [
         "Изменить"
       ],
-      "Email address": [
-        "Адрес эл. почты"
-      ],
       "Email addresses": [
         "Адреса электронной почты"
       ],
@@ -11422,14 +11371,8 @@
       "Add Sieve filter": [
         "Добавить фильтр Sieve"
       ],
-      "Add to Not spam list": [
-        "Добавить в список \"не спам\""
-      ],
       "Add to spam list": [
         "Добавить в список спама"
-      ],
-      "Add to your block list": [
-        "Добавить в ваш список блокируемых"
       ],
       "Add user": [
         "Добавить пользователя"
@@ -12088,9 +12031,6 @@
       "Sort labels alphabetically": [
         "Сортировать ярлыки по алфавиту"
       ],
-      "Spam and block list": [
-        "Список спама и блокировки"
-      ],
       "Start a new import": [
         "Начать новый импорт"
       ],
@@ -12477,6 +12417,9 @@
       ]
     },
     "Upgrade": {
+      "Upgrade to ${ passPlusPlanName } to get unlimited hide-my-email aliases": [
+        "Улучшите до ${ passPlusPlanName } для получения неограниченного количества псевдонимов для скрытия своей электронной почты"
+      ],
       "Upgrade to ${ planName } to connect up to ${ n } device to the VPN at once": [
         "Улучшите до ${ planName } для одновременного подключения к VPN до ${ n } устройства",
         "Улучшите до ${ planName } для одновременного подключения к VPN до ${ n } устройств",

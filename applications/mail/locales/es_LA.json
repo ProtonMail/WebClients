@@ -1838,6 +1838,41 @@
         "blanco"
       ]
     },
+    "Commander action": {
+      "Create a new folder": [
+        "Crear una carpeta"
+      ],
+      "Create a new label": [
+        "Crear una etiqueta"
+      ],
+      "Go to Archive": [
+        "Ir a Archivo"
+      ],
+      "Go to Drafts": [
+        "Ir a Borradores"
+      ],
+      "Go to Inbox": [
+        "Ir a la Bandeja de entrada"
+      ],
+      "Go to Sent": [
+        "Ir a Enviados"
+      ],
+      "Go to Spam": [
+        "Ir a Spam"
+      ],
+      "Go to Starred": [
+        "Ir a Destacados"
+      ],
+      "Go to Trash": [
+        "Ir a la Papelera"
+      ],
+      "New message": [
+        "Nuevo mensaje"
+      ],
+      "Search": [
+        "Buscar"
+      ]
+    },
     "Composer email icon": {
       "End-to-end encrypted": [
         "Cifrado de extremo a extremo"
@@ -4896,11 +4931,11 @@
       "Draft saved.": [
         "Borrador guardado."
       ],
-      "Drop a file here to upload": [
-        "Suelte el archivo aquí para cargarlo"
+      "Drop file here to upload": [
+        "Suelte sus archivos aquí para cargarlos"
       ],
-      "Drop the file here to upload": [
-        "Arrastre el archivo aquí para subir"
+      "Drop to import": [
+        "Suelte aquí para importar"
       ],
       "Duplicate key updated": [
         "Clave duplicada actualizada"
@@ -5253,6 +5288,9 @@
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Nuestro sistema marcó este mensaje como un intento de suplantación. Compruebe que es legítimo."
       ],
+      "Our system flagged this message as a suspicious email. Please check that it is legitimate before clicking any links or attachments.": [
+        "Nuestro sistema identificó este mensaje como correo electrónico sospechoso. Por favor revise que es legítimo antes de abrir cualquier enlace o archivo adjunto"
+      ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/Inline solo es compatible con el formato de Texto Plano."
       ],
@@ -5509,6 +5547,9 @@
       ],
       "This conversation contains non-trashed messages.": [
         "Esta conversación contiene mensajes no borrados."
+      ],
+      "This conversation contains one or more expiring messages": [
+        "Esta conversación contiene uno o más mensajes que van a expirar"
       ],
       "This conversation contains trashed messages.": [
         "Esta conversación contiene mensajes de la papelera."
@@ -5865,6 +5906,9 @@
       "Your email will only be used for this one-time verification.": [
         "Su correo electrónico sólo se usará para esta verificación única."
       ],
+      "Your files will be encrypted and then saved": [
+        "Sus archivos serán cifrados y de ahí guardados"
+      ],
       "Your import will not be processed.": [
         "Su importación no será procesada."
       ],
@@ -5892,6 +5936,10 @@
       ]
     },
     "info": {
+      "${ filteredList.length } command found.": [
+        "${ filteredList.length } comando encontrado.",
+        "${ filteredList.length } comandos encontrados."
+      ],
       "Optional": [
         "Opcional"
       ]
@@ -6053,6 +6101,9 @@
       ],
       "New message": [
         "Mensaje nuevo"
+      ],
+      "Open command panel": [
+        "Abrir el panel de comandos"
       ],
       "Open next message": [
         "Abrir mensaje siguiente"
@@ -6565,6 +6616,9 @@
       ],
       "Toolbar": [
         "Barra de herramientas"
+      ],
+      "Type a command...": [
+        "Escriba un comando..."
       ],
       "Undisclosed Recipients": [
         "Destinatarios ocultos"
@@ -7436,6 +7490,9 @@
       ],
       "Text": [
         "Texto"
+      ],
+      "Type a command…": [
+        "Escriba un comando…"
       ],
       "Type text or keyword": [
         "Escriba el texto o palabra clave"

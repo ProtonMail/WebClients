@@ -1,6 +1,6 @@
 {
   "headers": {
-    "plural-forms": "nplurals=2; plural=(n != 1);",
+    "plural-forms": "nplurals=2; plural=(n > 1);",
     "language": "pt_BR"
   },
   "contexts": {
@@ -3513,8 +3513,11 @@
       "Discard changes?": [
         "Descartar alterações?"
       ],
-      "Drop the file here to upload": [
-        "Solte o arquivo aqui para fazer o upload"
+      "Drop file here to upload": [
+        "Solte o arquivo aqui para enviar"
+      ],
+      "Drop to import": [
+        "Solte para importar"
       ],
       "Duplicate key updated": [
         "Chave duplicada atualizada"
@@ -3979,6 +3982,9 @@
       ],
       "Your events will be encrypted and then saved.": [
         "Seus eventos serão criptografados e depois salvos."
+      ],
+      "Your files will be encrypted and then saved": [
+        "Seus arquivos serão criptografados e depois salvos"
       ],
       "Your import will not be processed.": [
         "Sua importação não será processada."

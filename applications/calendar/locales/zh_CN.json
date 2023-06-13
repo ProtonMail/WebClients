@@ -64,7 +64,7 @@
         "应用"
       ],
       "At most 100 contacts are allowed per contact group": [
-        "每个联系人组最多允许有100个联系人"
+        "每个群组最多只能有 100 位联系人"
       ],
       "Attach screenshot(s)": [
         "添加截图"
@@ -262,7 +262,7 @@
         "我有疑问"
       ],
       "Image could not be loaded with tracker protection.": [
-        "图片无法在跟踪防护模式下加载"
+        "跟踪防护模式下无法加载此图像。"
       ],
       "Image will be loaded without a proxy": [
         "图像载入时不会借助代理服务器"
@@ -2240,7 +2240,7 @@
         "标签名称不能为空。"
       ],
       "Merge at least ${ calendarsToFixCount } calendars with existing ${ BRAND_NAME } calendars": [
-        "将至少 ${ calendarsToFixCount } 个日历与现有的 ${ BRAND_NAME } 个日历合并"
+        "将至少 ${ calendarsToFixCount } 个日历与现有的 ${ BRAND_NAME } 日历合并"
       ],
       "Missing key packet": [
         "缺少密钥数据包"
@@ -2366,7 +2366,7 @@
         "地址可能拼写不正确"
       ],
       "The email addresses do not match": [
-        "电子邮件地址不匹配"
+        "邮箱地址不一致"
       ],
       "The folder name is invalid. Please choose a different name.": [
         "文件夹名称无效，请更改。"
@@ -2432,7 +2432,7 @@
         "您不能发送超过 10 个联系人的 vCard 文件"
       ],
       "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
-        "您已达到日历的最大数量。 某些日历无法导入。"
+        "您的日历数量已达上限，因此部分日历无法导入。"
       ],
       "You must set a name": [
         "请输入名称（必填）"
@@ -2483,7 +2483,7 @@
         "加密失败"
       ],
       "vCard versions < 3.0 not supported": [
-        "不支持vCard 3.0以下的版本"
+        "不支持 vCard 3.0 以下版本"
       ]
     },
     "Error importing contacts": {
@@ -2728,6 +2728,11 @@
         "(无标题)"
       ]
     },
+    "familyOffer_2023: Deal details": {
+      "3 TB total storage": [
+        "3 TB 总存储空间"
+      ]
+    },
     "familyOffer_2023: Get Proton Family": {
       "Get ${ planName }": [
         "开通 ${ planName }"
@@ -2753,6 +2758,20 @@
       ],
       "View the invitations": [
         "查看TA的所有邀请"
+      ]
+    },
+    "familyOffer_2023:Deal details": {
+      "Premium Drive": [
+        "高级云盘"
+      ],
+      "Premium Mail and Calendar": [
+        "高级邮件和日历"
+      ],
+      "Premium VPN": [
+        "高级VPN"
+      ],
+      "Up to 6 users": [
+        "多达 6 位用户"
       ]
     },
     "familyOffer_2023:Family plan": {
@@ -2817,6 +2836,14 @@
         "您当前的计划无法加入 Visionary 计划或家庭计划。"
       ]
     },
+    "familyOffer_2023:Footer": {
+      "*Your subscription will automatically renew at the same rate at the end of your billing cycle.": [
+        "*您的订阅将在您的结算周期结束时以相同的费率自动续订。"
+      ],
+      "Discounts are based on the standard monthly pricing.": [
+        "折扣基于标准的每月定价。"
+      ]
+    },
     "familyOffer_2023:Get Proton Family": {
       "Get ${ planName }": [
         "开通 ${ planName }"
@@ -2841,6 +2868,14 @@
     "familyOffer_2023:Title": {
       "Introducing ${ planName }": [
         "${ planName } 现已推出"
+      ]
+    },
+    "familyOffer_2023:Tooltip": {
+      "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "包括 65 个以上国家/地区的 2700 台服务器，连接多达 10 台设备，访问全球流媒体服务、恶意软件和广告拦截器等。"
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "使用加密的云存储保护您的文件。 包括自动同步、加密文件共享等。"
       ]
     },
     "Feedback Modal Title": {
@@ -3241,7 +3276,7 @@
         "找到 ${ groupCounts } 个群组"
       ],
       "${ numContact } contacts": [
-        "${ numContact } 个联系人"
+        "${ numContact } 位联系人"
       ],
       "${ numGroups } contact groups": [
         "${ numGroups } 个联系人群组"
@@ -3343,13 +3378,13 @@
         "关闭这个窗口以退出"
       ],
       "Contact assigned to group ${ contactGroupName }": [
-        "已分配给群组 ${ contactGroupName } 的联系人"
+        "联系人已加入 ${ contactGroupName } 群组"
       ],
       "Contact unassigned to group ${ contactGroupName }": [
-        "未分配给群组 ${ contactGroupName } 的联系人"
+        "联系人已从 ${ contactGroupName } 群组中移除"
       ],
       "Create ${ calendarsToBeCreatedCount } new calendars": [
-        "创建 ${ calendarsToBeCreatedCount } 个新日历"
+        "创建 ${ calendarsToBeCreatedCount } 份新日历"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "给导入的邮件加标签，指定导入的时间范围，并选择要导入的文件夹。"
@@ -3386,9 +3421,6 @@
       ],
       "Discard changes?": [
         "舍弃更改？"
-      ],
-      "Drop the file here to upload": [
-        "请将文件拖拽至此处进行上传"
       ],
       "Duplicate key updated": [
         "重复的密钥已更新"
@@ -3448,7 +3480,7 @@
         "若邮件没有出现在收件箱中，请检查其是否被归为垃圾邮件。"
       ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendars": [
-        "导入 ${ calendarCount } / ${ totalCalendarsCount } 个日历"
+        "导入 ${ calendarCount } / ${ totalCalendarsCount } 份日历"
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "导入 ${ contactsFragment }和 ${ contactsGroupsFragment }"
@@ -3817,10 +3849,10 @@
         "您将更新该系列活动中的所有活动，移除的参与者将收到通知"
       ],
       "You've reached the maximum number of addresses in the contact group(s):": [
-        "您已达到联系人组中地址的最大数量："
+        "以下群组中的邮箱地址数量已达上限："
       ],
       "You've reached the maximum number of addresses in the contact group.": [
-        "您已经达到了联系人组中地址的最大数量。"
+        "此群组中的邮箱地址数量已达上限。"
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "您的 ${ BRAND_NAME } 账户已被停用，28 天后将无法收取新邮件，并且网盘分享链接将失效，新文件将无法上传。如需恢复账户正常功能，请付清逾期账单。"
@@ -4305,13 +4337,13 @@
     },
     "Limit of calendars reached": {
       "To add a new calendar, remove an existing one.": [
-        "要添加新日历，请删除现有日历。"
+        "需要先删除一份现有日历才能添加新日历。"
       ],
       "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
-        "若要添加新日历，请删除另一个日历或将您的 ${ BRAND_NAME } 计划升级到 ${ MAIL_SHORT_APP_NAME } 付费计划。"
+        "如需继续添加日历，请先删除一份现有日历，或开通付费 ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } 账户。"
       ],
       "You've reached the maximum number of calendars available in your plan.": [
-        "您已达到计划中可用日历的最大数量。"
+        "您的日历数量已达到当前账户等级的上限。"
       ]
     },
     "Link": {
@@ -4378,16 +4410,16 @@
     },
     "Mail import summary": {
       "Import all messages from ${ itemsToImportCount } folders and label them as": [
-        "从 ${ itemsToImportCount } 文件夹中导入所有邮件并将它们标记为"
+        "导入 ${ itemsToImportCount } 个文件夹中的所有邮件并加标签"
       ],
       "Import all messages from ${ itemsToImportCount } labels and label them as": [
-        "从 ${ itemsToImportCount } 标签中导入所有消息并将它们标记为"
+        "导入带有 ${ itemsToImportCount } 类标签的邮件并加标签"
       ],
       "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folders and label them as": [
-        "从 ${ selectedItemsToImportCount } 文件夹导入所有来自 ${ itemsToImportCount } 的所有邮件并将它们标记为"
+        "导入 ${ selectedItemsToImportCount }/${ itemsToImportCount } 个文件夹中的所有邮件并加标签"
       ],
       "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } labels and label them as": [
-        "从 ${ selectedItemsToImportCount } 标签中导入所有来自 ${ itemsToImportCount } 标签的消息并将它们标记为"
+        "导入带有 ${ selectedItemsToImportCount }/${ itemsToImportCount } 类标签的邮件并加标签"
       ]
     },
     "Message": {
@@ -4625,13 +4657,13 @@
     },
     "new_plans: feature": {
       "Auto-delete spam and trashed messages": [
-        "自动删除垃圾邮件和垃圾信息"
+        "自动删除垃圾邮件和废件箱中邮件"
       ],
       "Custom email domains": [
         "自有域名"
       ],
       "Schedule messages at any time": [
-        "随时安排邮件"
+        "自由选择发送时间"
       ],
       "Search message content": [
         "搜索邮件全文"
@@ -4654,7 +4686,7 @@
         "通过 ${ BRAND_NAME } 使用 SimpleLogin 获得无限别名"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
-        "储存空间由 ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME } 和 ${ DRIVE_APP_NAME } 共享"
+        "${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME }、${ DRIVE_APP_NAME } 均共用同一存储空间"
       ],
       "Use your own custom email domain address, e.g., you@yourname.com": [
         "使用您自己的自定义电子邮件域地址，例如 you@yourname.com"
@@ -5191,7 +5223,7 @@
         "高速VPN"
       ],
       "Highest VPN speed": [
-        "拥有最快的速度的VPN"
+        "VPN 速度最快"
       ],
       "Premium Drive": [
         "高级云盘"
@@ -5212,10 +5244,18 @@
         "安全的云存储"
       ],
       "Secure streaming": [
-        "安全流媒体"
+        "安全看视频"
       ],
       "Support online privacy": [
         "支持在线隐私"
+      ]
+    },
+    "specialoffer: Footer": {
+      "Discounts are based on the standard monthly pricing.": [
+        "折扣基于标准的每月定价。"
+      ],
+      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
+        "此订阅将以相同的费率每 2 年自动续订一次，直至取消。"
       ]
     },
     "specialoffer: Label": {
@@ -5244,13 +5284,108 @@
       ]
     },
     "specialoffer: Offers": {
+      "/ month": [
+        "/ 月"
+      ],
+      "1 year": [
+        "一年"
+      ],
+      "2 years": [
+        "两年"
+      ],
+      "Billed at ${ amount } for 1 month": [
+        "一个月的费用为${ amount }"
+      ],
+      "Billed at ${ amount } for 12 months": [
+        "一年的费用为${ amount }"
+      ],
+      "Billed at ${ amount } for 15 months": [
+        "15个月的费用为${ amount }"
+      ],
+      "Billed at ${ amount } for 24 months": [
+        "两年的费用为${ amount }"
+      ],
+      "Billed at ${ amount } for 30 months": [
+        "30个月的费用为${ amount }"
+      ],
       "for ${ n } months": [
         "${ n } 个月"
+      ],
+      "Get the deal": [
+        "达成交易"
+      ],
+      "Renews after 1 year at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
+        "一年后以折扣价或 ${ discountedAmount } ，而不是 ${ regularAmount } (${ discount }% discount) 续订"
+      ],
+      "Renews after 2 years at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
+        "两年后以折扣价或 ${ discountedAmount } 而不是 ${ regularAmount } (${ discount }% discount) 续订"
+      ],
+      "Save ${ discount }%": [
+        "立省 ${ discount }%"
+      ],
+      "Standard price ${ amount } for 1 month": [
+        "一个月的标准价格为${ amount }"
+      ],
+      "Standard price ${ amount } for 12 months": [
+        "一年的标准价格为${ amount }"
+      ],
+      "Standard price ${ amount } for 15 months": [
+        "15个月的标准价格为${ amount }"
+      ],
+      "Standard price ${ amount } for 24 months": [
+        "两年的的标准价格为${ amount }"
+      ],
+      "Standard price ${ amount } for 30 months": [
+        "30个月的标准价格为${ amount }"
+      ]
+    },
+    "specialoffer: Title": {
+      "Black Friday Sale": [
+        "黑色星期五促销"
+      ],
+      "Cyber Week Sale": [
+        "Cyber Week热卖"
+      ],
+      "End of year offer": [
+        "年底优惠"
+      ],
+      "End of Year Sale": [
+        "年底热卖"
+      ],
+      "Get our premium bundle and save more": [
+        "获取我们的高级套餐并节省更多"
+      ],
+      "Our discontinued Visionary plan is back for a limited time only": [
+        "我们已停产的 Visionary 计划限时回归"
+      ],
+      "Save more with 2 years of ${ planName }": [
+        "使用两年的${ planName }可节省更多费用"
+      ],
+      "Upgrade and save more with 2 years of ${ planName }": [
+        "升级两年的${ planName }并节省更多的费用"
       ]
     },
     "specialoffer: Tooltip": {
+      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.": [
+        "访问被阻止的内容并私下浏览。 包括 60 多个国家/地区的 1700 台服务器、最高的 VPN 速度、每位用户 10 个 VPN 连接、全球流媒体服务、恶意软件和广告拦截器等。"
+      ],
+      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
+        "访问被阻止的内容并私下浏览。 包括 60 多个国家/地区的 1700 台服务器、最高的 VPN 速度、10 个 VPN 连接、全球流媒体服务、恶意软件和广告拦截器等。"
+      ],
+      "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
+        "从任何地方访问流媒体服务上的内容，包括 Netflix、Disney+ 和 Prime Video。"
+      ],
+      "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
+        "非常适合家庭或小型团队，每个人都可以拥有自己的收件箱和别名。 需要一个自定义域名。"
+      ],
+      "Receive at no extra cost the paid versions of all new privacy services we release in the future, along with early access to all future features and products.": [
+        "免费获得我们未来发布的所有新隐私服务的付费版本，以及对所有未来功能和产品的抢先体验。"
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "使用加密的云存储保护您的文件。 包括自动同步、加密文件共享等。"
+      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "存储空间由 ${ MAIL_APP_NAME } 、${ CALENDAR_APP_NAME } 和 ${ DRIVE_APP_NAME } 共享。"
+        "${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME }、${ DRIVE_APP_NAME } 均共用同一存储空间。"
       ]
     },
     "Spotlight": {
@@ -5833,7 +5968,7 @@
         "登录并授予权限"
       ],
       "Sign in with 2FA": [
-        "使用 2FA 登录"
+        "通过双重验证登录"
       ],
       "Sign out": [
         "退出"
@@ -5845,7 +5980,7 @@
         "开始导入过程"
       ],
       "Unlock contacts groups": [
-        "解锁联系人组"
+        "解锁群组功能"
       ],
       "Update event": [
         "更新日程"
@@ -5954,7 +6089,7 @@
         "无法加载图像"
       ],
       "The image could not be loaded using proxy": [
-        "无法使用代理加载图像"
+        "通过代理服务器无法加载图像"
       ],
       "The import will start with the most recent messages.": [
         "导入将从最近的信息开始。"

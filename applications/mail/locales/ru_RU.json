@@ -5052,12 +5052,6 @@
       "Draft saved.": [
         "Черновик сохранен."
       ],
-      "Drop a file here to upload": [
-        "Перетащите сюда файл для загрузки"
-      ],
-      "Drop the file here to upload": [
-        "Для загрузки файла перетащите его сюда"
-      ],
       "Duplicate key updated": [
         "Дубликат ключа обновлён"
       ],
@@ -5318,6 +5312,12 @@
       ],
       "Merged": [
         "Объединённые"
+      ],
+      "Message downloaded: ${ currentProgress } out of ${ totalProgress }": [
+        "Сообщение загружено: ${ currentProgress } из ${ totalProgress }",
+        "Сообщения загружены: ${ currentProgress } из ${ totalProgress }",
+        "Сообщения загружены: ${ currentProgress } из ${ totalProgress }",
+        "Сообщения загружены: ${ currentProgress } из ${ totalProgress }"
       ],
       "Message expiration works out-of-the-box when sending emails to other ${ MAIL_APP_NAME } users. To send expiring emails to non-${ BRAND_NAME } users, please cancel and add password protection to your email.": [
         "Истечение срока действия сообщения работает по умолчанию при отправке писем другим пользователям ${ MAIL_APP_NAME }. Чтобы отправлять письма с истекающим сроком действия пользователям, вне ${ BRAND_NAME }, пожалуйста, отмените и добавьте защиту паролем к своей электронной почте."
@@ -6104,6 +6104,12 @@
       ]
     },
     "Key pinning": {
+      "Clicking \"Trust Key\" will associate this public key with this sender and emails from this address will be automatically cryptographically verified.": [
+        "Нажатие на\" Доверительный ключ\" свяжет этот открытый ключ с данным отправителем, и электронные письма с этого адреса будут автоматически криптографически проверяться."
+      ],
+      "Clicking \"Trust Key\" will create a new contact and associate this public key with this sender. Emails from this address will be automatically cryptographically verified.": [
+        "Нажатие на \"Доверенный ключ\", создаст новый контакт и свяжет этот открытый ключ с данным отправителем. Письма с этого адреса будут автоматически криптографически проверяться."
+      ],
       "Do you want to trust the primary public key with the following fingerprint?": [
         "Хотите ли вы доверять основному открытому ключу со следующим цифровым отпечатком?",
         "Хотите ли вы доверять основным открытым ключам со следующим цифровым отпечатком?",
@@ -7600,6 +7606,9 @@
       "Please insert link first": [
         "Пожалуйста, сначала вставьте ссылку"
       ],
+      "Search date, name, email address, or subject line": [
+        "Поиск по дате, имени, адресу электронной почты или теме письма"
+      ],
       "Search for group name": [
         "Поиск по названию группы"
       ],
@@ -8191,6 +8200,12 @@
       "Schedule send": [
         "Отправка по расписанию"
       ],
+      "Search just got smarter and faster": [
+        "Поиск стал умнее и быстрее"
+      ],
+      "Try it today.": [
+        "Попробуйте это сегодня."
+      ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "Теперь мы загружаем изображения по умолчанию и не даем отправителю отслеживать вас. Это можно изменить в ${ settingsLink }."
       ],
@@ -8444,6 +8459,9 @@
       ],
       "Message added to ${ labelName }.": [
         "Сообщение добавлено в ${ labelName }."
+      ],
+      "Message content search enabled": [
+        "Поиск по содержимому сообщений включен"
       ],
       "Message deleted": [
         "Сообщение удалено"

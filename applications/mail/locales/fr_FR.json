@@ -1838,6 +1838,38 @@
         "blanc"
       ]
     },
+    "Commander action": {
+      "Create a new folder": [
+        "Créer un nouveau dossier"
+      ],
+      "Create a new label": [
+        "Créer un nouveau label"
+      ],
+      "Go to Archive": [
+        "Aller dans le dossier Archives"
+      ],
+      "Go to Drafts": [
+        "Aller dans le dossier Brouillons"
+      ],
+      "Go to Inbox": [
+        "Aller dans le dossier Boite de réception"
+      ],
+      "Go to Sent": [
+        "Aller dans le dossier Envoyés"
+      ],
+      "Go to Spam": [
+        "Aller dans le dossier Indésirable/spam"
+      ],
+      "Go to Starred": [
+        "Aller dans le dossier Favoris"
+      ],
+      "Go to Trash": [
+        "Aller dans le dossier Corbeille"
+      ],
+      "New message": [
+        "Nouveau message"
+      ]
+    },
     "Composer email icon": {
       "End-to-end encrypted": [
         "Chiffré de bout en bout"
@@ -4156,7 +4188,7 @@
         "Transférez automatiquement"
       ],
       "Gmail messages to your inbox": [
-        "les messages Gmail vers votre boîte de réception"
+        "les messages Gmail vers votre boite de réception"
       ],
       "Sign in with Google": [
         "Se connecter avec Google"
@@ -4896,11 +4928,11 @@
       "Draft saved.": [
         "Le brouillon a été sauvegardé."
       ],
-      "Drop a file here to upload": [
-        "Déposer ici un fichier à charger"
+      "Drop file here to upload": [
+        "Déposez les fichiers ici pour les importer."
       ],
-      "Drop the file here to upload": [
-        "Déposez un fichier ici pour le charger."
+      "Drop to import": [
+        "Déposez ici pour importer"
       ],
       "Duplicate key updated": [
         "La clé dupliquée a été mise à jour."
@@ -5253,6 +5285,9 @@
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Notre système a signalé ce message comme tentative de phishing/hameçonnage. Nous vous invitons à vérifier qu'il est légitime."
       ],
+      "Our system flagged this message as a suspicious email. Please check that it is legitimate before clicking any links or attachments.": [
+        "Notre système a signalé ce message comme étant un e-mail suspect. Assurez-vous qu'il est légitime avant de cliquer sur un lien ou une pièce jointe."
+      ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/Inline est uniquement compatible avec le format texte brut."
       ],
@@ -5510,6 +5545,9 @@
       "This conversation contains non-trashed messages.": [
         "Cette conversation a des messages qui ne sont pas dans le dossier Corbeille."
       ],
+      "This conversation contains one or more expiring messages": [
+        "Cette conversation contient un ou plusieurs messages qui ont une date d'expiration."
+      ],
       "This conversation contains trashed messages.": [
         "Cette conversation a des messages qui sont dans le dossier Corbeille."
       ],
@@ -5518,7 +5556,7 @@
         "Ces conversations seront marquées comme indésirables/spam. Voulez-vous aussi vous désinscrire pour les futurs messages ?"
       ],
       "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded.": [
-        "Cette adresse e-mail a échoué aux exigences d'authentification de son domaine. Elle a peut-être été falsifiée ou transférée de manière incorrecte."
+        "Cette adresse e-mail ne répond pas aux exigences d'authentification de son domaine. Elle a peut-être été falsifiée ou transférée de manière incorrecte."
       ],
       "This invitation is saved in a disabled calendar.": [
         "Cette invitation est enregistrée dans un calendrier désactivé."
@@ -5865,6 +5903,9 @@
       "Your email will only be used for this one-time verification.": [
         "Votre adresse e-mail ne sera utilisée que pour cette vérification unique."
       ],
+      "Your files will be encrypted and then saved": [
+        "Vos fichiers seront chiffrés puis sauvegardés."
+      ],
       "Your import will not be processed.": [
         "Votre importation ne sera pas traitée."
       ],
@@ -5892,6 +5933,10 @@
       ]
     },
     "info": {
+      "${ filteredList.length } command found.": [
+        "${ filteredList.length } commande trouvée.",
+        "${ filteredList.length } commandes trouvées."
+      ],
       "Optional": [
         "Facultatif"
       ]
@@ -6565,6 +6610,9 @@
       ],
       "Toolbar": [
         "Barre d'outils"
+      ],
+      "Type a command...": [
+        "Saisissez une commande…"
       ],
       "Undisclosed Recipients": [
         "Destinataires non divulgués"
@@ -7436,6 +7484,9 @@
       ],
       "Text": [
         "Texte"
+      ],
+      "Type a command…": [
+        "Saisissez une commande…"
       ],
       "Type text or keyword": [
         "Tapez le texte ou le mot clé."

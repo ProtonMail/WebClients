@@ -533,12 +533,6 @@
       "Mark as default": [
         "Позначити типовим"
       ],
-      "Mark as not spam": [
-        "Позначити не спамом"
-      ],
-      "Mark as spam": [
-        "Позначити спамом"
-      ],
       "mark emails as": [
         "позначити листи"
       ],
@@ -568,9 +562,6 @@
       ],
       "No": [
         "Ні"
-      ],
-      "Not spam": [
-        "Не спам"
       ],
       "OK": [
         "Застосувати"
@@ -634,9 +625,6 @@
       ],
       "Remove": [
         "Вилучити"
-      ],
-      "Remove Block": [
-        "Вилучити блокування"
       ],
       "Remove bonuses": [
         "Вилучити бонуси"
@@ -2794,20 +2782,8 @@
       "${ name } failed to move to spam list": [
         "Не вдалося перемістити ${ name } до вашого списку спаму"
       ],
-      "${ name } failed to move to the not-spam list": [
-        "${ name } не вдалося перемістити до списку надійних адресатів"
-      ],
-      "${ name } failed to move to your block list": [
-        "Не вдалося перемістити ${ name } до вашого списку блокування"
-      ],
-      "${ name } moved to not spam list": [
-        "${ name } переміщено до списку надійних адресатів"
-      ],
       "${ name } moved to spam list": [
         "${ name } переміщено до списку спаму"
-      ],
-      "${ name } moved to your block list": [
-        "${ name } переміщено до вашого списку блокування"
       ],
       "${ name } successfully deleted": [
         "${ name } успішно видалено"
@@ -2911,20 +2887,8 @@
       "${ name } failed to move to spam list": [
         "Не вдалося перемістити ${ name } до вашого списку спаму"
       ],
-      "${ name } failed to move to the not-spam list": [
-        "${ name } не вдалося перемістити до списку надійних адресатів"
-      ],
-      "${ name } failed to move to your block list": [
-        "Не вдалося перемістити ${ name } до вашого списку блокування"
-      ],
-      "${ name } moved to not spam list": [
-        "${ name } переміщено до списку надійних адресатів"
-      ],
       "${ name } moved to spam list": [
         "${ name } переміщено до списку спаму"
-      ],
-      "${ name } moved to your block list": [
-        "${ name } переміщено до вашого списку блокування"
       ],
       "${ name } successfully deleted": [
         "${ name } успішно видалено"
@@ -4333,15 +4297,6 @@
       "Add a custom filter to automatically perform certain actions, like labeling or archiving messages.": [
         "Додайте власний фільтр для автоматичного виконання певних дій, наприклад, позначення міткою чи архівування повідомлень."
       ],
-      "Emails from addresses marked as spam by you or ${ BRAND_NAME } will go to the spam folder of your organization members. If you want to allow emails from one of these addresses, mark it as \"not spam\".": [
-        "Листи з адрес, позначених вами або ${ BRAND_NAME } як спам, потраплятимуть до теки \"Спам\" учасників вашої організації. Якщо ви хочете дозволити отримувати листи з однієї з цих адрес, позначте її як \"не спам\"."
-      ],
-      "Emails from addresses marked as spam by you or ${ BRAND_NAME } will go to your spam folder. If you want to allow emails from one of these addresses, mark it as \"not spam\".": [
-        "Електронні листи з адрес, які ви або ${ BRAND_NAME } позначили спамом, потраплятимуть у вашу теку спаму. Якщо хочете дозволити електронні листи з однієї з цих адрес, позначте її «не спам»."
-      ],
-      "Emails from blocked addresses won't be delivered.": [
-        "Електронні листи із заблокованих адрес не доставлятимуться."
-      ],
       "Search list": [
         "Шукати у списку"
       ]
@@ -5525,12 +5480,6 @@
       ],
       "Download your PGP keys for use with other PGP-compatible services.": [
         "Завантажте свої ключі PGP для використання з іншими службами, сумісними з PGP."
-      ],
-      "Drop a file here to upload": [
-        "Для завантаження файлу перетягніть його сюди"
-      ],
-      "Drop the file here to upload": [
-        "Для завантаження файлу перетягніть його сюди"
       ],
       "Each code can only be used once": [
         "Кожен код можна використати лише один раз"
@@ -7491,9 +7440,6 @@
       "Block malware, ads and trackers": [
         "Блокувати зловмисні програми, рекламу і стеження"
       ],
-      "Blocked": [
-        "Заблоковано"
-      ],
       "Browser": [
         "Браузер"
       ],
@@ -7895,9 +7841,6 @@
       ],
       "Non-standard ports": [
         "Нестандартні порти"
-      ],
-      "Not spam": [
-        "Не спам"
       ],
       "Notification": [
         "Сповіщення"
@@ -8756,17 +8699,11 @@
       "Back to inbox": [
         "Назад до вхідних"
       ],
-      "Blocked": [
-        "Заблоковано"
-      ],
       "Calendar": [
         "Календар"
       ],
       "Inbox": [
         "Вхідні"
-      ],
-      "Not spam": [
-        "Не спам"
       ],
       "Spam": [
         "Спам"
@@ -11280,9 +11217,6 @@
       "Edit": [
         "Змінити"
       ],
-      "Email address": [
-        "Адреса е-пошти"
-      ],
       "Email addresses": [
         "Адреси е-пошти"
       ],
@@ -11437,14 +11371,8 @@
       "Add Sieve filter": [
         "Додати фільтр Sieve"
       ],
-      "Add to Not spam list": [
-        "Додати до списку Не спам"
-      ],
       "Add to spam list": [
         "Додати до списку спаму"
-      ],
-      "Add to your block list": [
-        "Додати до вашого списку блокування"
       ],
       "Add user": [
         "Додати користувача"
@@ -12103,9 +12031,6 @@
       "Sort labels alphabetically": [
         "Сортувати мітки за алфавітом"
       ],
-      "Spam and block list": [
-        "Спам і список блокування"
-      ],
       "Start a new import": [
         "Почати новий імпорт"
       ],
@@ -12493,7 +12418,7 @@
     },
     "Upgrade": {
       "Upgrade to ${ passPlusPlanName } to get unlimited hide-my-email aliases": [
-        "Оновіться до ${ passPlusPlanName }, щоб отримати необмежену кількість псевдонімів Hide My Email"
+        "Передплатіть ${ passPlusPlanName }, щоб отримати необмежену кількість псевдонімів Hide My Email"
       ],
       "Upgrade to ${ planName } to connect up to ${ n } device to the VPN at once": [
         "Передплатіть ${ planName }, щоб під'єднати ${ n } пристрій до VPN за раз",
