@@ -21,7 +21,7 @@ const RenameButton = ({ selectedLinks }: Props) => {
         <>
             <ToolbarButton
                 title={c('Action').t`Rename`}
-                icon={<Icon name="pen-square" />}
+                icon={<Icon name="pen-square" alt={c('Action').t`Rename`} />}
                 onClick={() => showRenameModal({ item: selectedLinks[0] })}
                 data-testid="toolbar-rename"
             />
