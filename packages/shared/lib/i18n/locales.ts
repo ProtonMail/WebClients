@@ -13,6 +13,6 @@ export const getLocalesFromRequireContext = (locales: LocaleRequireContext) => {
     }, {});
 };
 
-export const setLocales = (newLocales: TtagLocaleMap) => {
+export const setTtagLocales = (newLocales: TtagLocaleMap) => {
     locales = newLocales;
 };
