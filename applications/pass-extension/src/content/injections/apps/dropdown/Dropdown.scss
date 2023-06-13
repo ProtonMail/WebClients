@@ -5,7 +5,7 @@ body {
 }
 
 .item-icon {
-	background-color: rgba(#6d4aff, 0.16);
+	background-color: var(--field-norm);
 	padding: em(4);
 	border-radius: var(--border-radius-md);
 }

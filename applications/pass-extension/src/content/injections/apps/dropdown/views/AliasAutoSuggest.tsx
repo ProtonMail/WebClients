@@ -119,11 +119,11 @@ export const AliasAutoSuggest: VFC<Props> = ({ prefix, domain, onOptions, onSubm
         <>
             <DropdownItem
                 title={c('Title').t`Use my email`}
-                subTitle={c('Info').t`my-real-email@pr0t0n.me`}
+                subTitle={<span className="color-primary">{c('Info').t`my-real-email@pr0t0n.me`}</span>}
                 icon="envelope"
             />
             <DropdownItem
-                title={needsUpgrade ? c('Info').t`Upgrade ${PASS_APP_NAME}` : c('Title').t`Create email alias`}
+                title={needsUpgrade ? c('Info').t`Upgrade ${PASS_APP_NAME}` : c('Title').t`Hide my email`}
                 autogrow={needsUpgrade}
                 subTitle={(() => {
                     if (loadingText) {
@@ -160,6 +160,7 @@ export const AliasAutoSuggest: VFC<Props> = ({ prefix, domain, onOptions, onSubm
                     }
                 })()}
                 icon={needsUpgrade ? 'arrow-out-square' : 'alias'}
+                className="ui-alias"
                 disabled={loadingText !== null}
                 onClick={(() => {
                     if (needsUpgrade) return navigateToUpgrade;
