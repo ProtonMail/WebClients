@@ -86,6 +86,7 @@ export enum FeatureCode {
     MailForwarding = 'MailForwarding',
     TrustedDeviceRecovery = 'TrustedDeviceRecovery',
     DriveMyDevices = 'DriveWebMyDevices',
+    DriveWindowsGA = 'DriveWindowsGA',
     LegacyMessageMigrationEnabled = 'LegacyMessageMigrationEnabled',
     ProtonBadge = 'ProtonBadge',
     QuickReply = 'QuickReply',
