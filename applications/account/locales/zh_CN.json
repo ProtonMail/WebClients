@@ -476,12 +476,6 @@
       "Mark as default": [
         "标记为默认"
       ],
-      "Mark as not spam": [
-        "标记为非垃圾邮件"
-      ],
-      "Mark as spam": [
-        "标记为垃圾邮件"
-      ],
       "mark emails as": [
         "将邮件标为"
       ],
@@ -511,9 +505,6 @@
       ],
       "No": [
         "否"
-      ],
-      "Not spam": [
-        "非垃圾邮件"
       ],
       "OK": [
         "确定"
@@ -577,9 +568,6 @@
       ],
       "Remove": [
         "移除"
-      ],
-      "Remove Block": [
-        "移除屏蔽"
       ],
       "Remove bonuses": [
         "放弃特权"
@@ -2628,20 +2616,8 @@
       "${ name } failed to move to spam list": [
         "将 ${ name } 移入垃圾邮件名单失败"
       ],
-      "${ name } failed to move to the not-spam list": [
-        "${ name } 标为非垃圾邮件失败"
-      ],
-      "${ name } failed to move to your block list": [
-        "将 ${ name } 移入黑名单失败"
-      ],
-      "${ name } moved to not spam list": [
-        "已将 ${ name } 移入非垃圾邮件名单"
-      ],
       "${ name } moved to spam list": [
         "已将 ${ name } 移入垃圾邮件名单"
-      ],
-      "${ name } moved to your block list": [
-        "${ name } 已移至黑名单"
       ],
       "${ name } successfully deleted": [
         "${ name } 删除成功"
@@ -2745,20 +2721,8 @@
       "${ name } failed to move to spam list": [
         "将 ${ name } 移入垃圾邮件名单失败"
       ],
-      "${ name } failed to move to the not-spam list": [
-        "${ name } 标为非垃圾邮件失败"
-      ],
-      "${ name } failed to move to your block list": [
-        "将 ${ name } 移入黑名单失败"
-      ],
-      "${ name } moved to not spam list": [
-        "已将 ${ name } 移入非垃圾邮件名单"
-      ],
       "${ name } moved to spam list": [
         "已将 ${ name } 移入垃圾邮件名单"
-      ],
-      "${ name } moved to your block list": [
-        "${ name } 已移至黑名单"
       ],
       "${ name } successfully deleted": [
         "${ name } 删除成功"
@@ -2943,7 +2907,7 @@
         "标签名称不能为空。"
       ],
       "Merge at least ${ calendarsToFixCount } calendars with existing ${ BRAND_NAME } calendars": [
-        "将至少 ${ calendarsToFixCount } 个日历与现有的 ${ BRAND_NAME } 个日历合并"
+        "将至少 ${ calendarsToFixCount } 个日历与现有的 ${ BRAND_NAME } 日历合并"
       ],
       "Missing key packet": [
         "缺少密钥数据包"
@@ -3099,7 +3063,7 @@
         "地址可能拼写不正确"
       ],
       "The email addresses do not match": [
-        "电子邮件地址不匹配"
+        "邮箱地址不一致"
       ],
       "The folder name is invalid. Please choose a different name.": [
         "文件夹名称无效，请更改。"
@@ -3207,7 +3171,7 @@
         "您目前没有账单。"
       ],
       "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
-        "您已达到日历的最大数量。 某些日历无法导入。"
+        "您的日历数量已达上限，因此部分日历无法导入。"
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "您的地址数已达上限，升级账户后方可再添加地址。"
@@ -3274,7 +3238,7 @@
         "加密失败"
       ],
       "vCard versions < 3.0 not supported": [
-        "不支持vCard 3.0以下的版本"
+        "不支持 vCard 3.0 以下版本"
       ]
     },
     "Error importing contacts": {
@@ -3577,6 +3541,11 @@
         "您可以保存成功导出事件的 ICS 文件。"
       ]
     },
+    "familyOffer_2023: Deal details": {
+      "3 TB total storage": [
+        "3 TB 总存储空间"
+      ]
+    },
     "familyOffer_2023: Get Proton Family": {
       "Get ${ planName }": [
         "开通 ${ planName }"
@@ -3602,6 +3571,20 @@
       ],
       "View the invitations": [
         "查看TA的所有邀请"
+      ]
+    },
+    "familyOffer_2023:Deal details": {
+      "Premium Drive": [
+        "高级云盘"
+      ],
+      "Premium Mail and Calendar": [
+        "高级邮件和日历"
+      ],
+      "Premium VPN": [
+        "高级VPN"
+      ],
+      "Up to 6 users": [
+        "多达 6 位用户"
       ]
     },
     "familyOffer_2023:Family plan": {
@@ -3666,6 +3649,14 @@
         "您当前的计划无法加入 Visionary 计划或家庭计划。"
       ]
     },
+    "familyOffer_2023:Footer": {
+      "*Your subscription will automatically renew at the same rate at the end of your billing cycle.": [
+        "*您的订阅将在您的结算周期结束时以相同的费率自动续订。"
+      ],
+      "Discounts are based on the standard monthly pricing.": [
+        "折扣基于标准的每月定价。"
+      ]
+    },
     "familyOffer_2023:Get Proton Family": {
       "Get ${ planName }": [
         "开通 ${ planName }"
@@ -3679,6 +3670,14 @@
     "familyOffer_2023:Title": {
       "Introducing ${ planName }": [
         "${ planName } 现已推出"
+      ]
+    },
+    "familyOffer_2023:Tooltip": {
+      "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "包括 65 个以上国家/地区的 2700 台服务器，连接多达 10 台设备，访问全球流媒体服务、恶意软件和广告拦截器等。"
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "使用加密的云存储保护您的文件。 包括自动同步、加密文件共享等。"
       ]
     },
     "Feature": {
@@ -3884,12 +3883,6 @@
     "FilterSettings": {
       "Add a custom filter to automatically perform certain actions, like labeling or archiving messages.": [
         "定制筛选规则能自动帮您完成某些操作，例如给邮件加标签或将邮件存档。"
-      ],
-      "Emails from addresses marked as spam by you or ${ BRAND_NAME } will go to your spam folder. If you want to allow emails from one of these addresses, mark it as \"not spam\".": [
-        "邮件被 ${ BRAND_NAME } 识别或被您手动标记为垃圾邮件后，来自其发件人的后续邮件都将被归为垃圾邮件。如需正常接收其邮件，请将对应发件人地址标为非垃圾邮件。"
-      ],
-      "Emails from blocked addresses won't be delivered.": [
-        "已屏蔽的邮箱发来的邮件将被直接删除，不会投递。"
       ],
       "Search list": [
         "搜索名单"
@@ -4460,7 +4453,7 @@
         "上传的 ${ numberOfNonPrivateKeys } 个文件不是有效的私钥，请验证并重试。"
       ],
       "${ numContact } contacts": [
-        "${ numContact } 个联系人"
+        "${ numContact } 位联系人"
       ],
       "${ numGroups } contact groups": [
         "${ numGroups } 个联系人群组"
@@ -4766,7 +4759,7 @@
         "继续操作将把您的 ${ BRAND_NAME } 账户与 ${ name } 连接。"
       ],
       "Create ${ calendarsToBeCreatedCount } new calendars": [
-        "创建 ${ calendarsToBeCreatedCount } 个新日历"
+        "创建 ${ calendarsToBeCreatedCount } 份新日历"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "给导入的邮件加标签，指定导入的时间范围，并选择要导入的文件夹。"
@@ -4863,12 +4856,6 @@
       ],
       "Download your PGP keys for use with other PGP-compatible services.": [
         "下载您的 PGP 密钥以用于其他 PGP 兼容服务。"
-      ],
-      "Drop a file here to upload": [
-        "将文件拖至此处上传"
-      ],
-      "Drop the file here to upload": [
-        "请将文件拖拽至此处进行上传"
       ],
       "Each code can only be used once": [
         "每条恢复码只能使用一次"
@@ -5063,7 +5050,7 @@
         "自动回复内容不能包含图片，故图片已移除"
       ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendars": [
-        "导入 ${ calendarCount } / ${ totalCalendarsCount } 个日历"
+        "导入 ${ calendarCount } / ${ totalCalendarsCount } 份日历"
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "导入 ${ contactsFragment }和 ${ contactsGroupsFragment }"
@@ -6556,9 +6543,6 @@
       "Block malware, ads and trackers": [
         "屏蔽恶意软件、广告和追踪脚本"
       ],
-      "Blocked": [
-        "已屏蔽"
-      ],
       "Browser": [
         "浏览器"
       ],
@@ -6954,9 +6938,6 @@
       ],
       "Non-standard ports": [
         "非标准端口"
-      ],
-      "Not spam": [
-        "不是垃圾邮件"
       ],
       "Notification": [
         "通知"
@@ -7388,13 +7369,13 @@
     },
     "Limit of calendars reached": {
       "To add a new calendar, remove an existing one.": [
-        "要添加新日历，请删除现有日历。"
+        "需要先删除一份现有日历才能添加新日历。"
       ],
       "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
-        "若要添加新日历，请删除另一个日历或将您的 ${ BRAND_NAME } 计划升级到 ${ MAIL_SHORT_APP_NAME } 付费计划。"
+        "如需继续添加日历，请先删除一份现有日历，或开通付费 ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } 账户。"
       ],
       "You've reached the maximum number of calendars available in your plan.": [
-        "您已达到计划中可用日历的最大数量。"
+        "您的日历数量已达到当前账户等级的上限。"
       ]
     },
     "Link": {
@@ -7522,16 +7503,16 @@
     },
     "Mail import summary": {
       "Import all messages from ${ itemsToImportCount } folders and label them as": [
-        "从 ${ itemsToImportCount } 文件夹中导入所有邮件并将它们标记为"
+        "导入 ${ itemsToImportCount } 个文件夹中的所有邮件并加标签"
       ],
       "Import all messages from ${ itemsToImportCount } labels and label them as": [
-        "从 ${ itemsToImportCount } 标签中导入所有消息并将它们标记为"
+        "导入带有 ${ itemsToImportCount } 类标签的邮件并加标签"
       ],
       "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folders and label them as": [
-        "从 ${ selectedItemsToImportCount } 文件夹导入所有来自 ${ itemsToImportCount } 的所有邮件并将它们标记为"
+        "导入 ${ selectedItemsToImportCount }/${ itemsToImportCount } 个文件夹中的所有邮件并加标签"
       ],
       "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } labels and label them as": [
-        "从 ${ selectedItemsToImportCount } 标签中导入所有来自 ${ itemsToImportCount } 标签的消息并将它们标记为"
+        "导入带有 ${ selectedItemsToImportCount }/${ itemsToImportCount } 类标签的邮件并加标签"
       ]
     },
     "Maximum calendar links reached warning": {
@@ -7756,17 +7737,11 @@
       "Back to inbox": [
         "回到收件箱"
       ],
-      "Blocked": [
-        "已屏蔽"
-      ],
       "Calendar": [
         "日历"
       ],
       "Inbox": [
         "收件箱"
-      ],
-      "Not spam": [
-        "非垃圾邮件"
       ],
       "Spam": [
         "垃圾邮件"
@@ -7916,7 +7891,7 @@
         "保障文件分享安全"
       ],
       "Auto-delete spam and trashed messages": [
-        "自动删除垃圾邮件和垃圾信息"
+        "自动删除垃圾邮件和废件箱中邮件"
       ],
       "Auto-reply": [
         "自动回复"
@@ -7997,7 +7972,7 @@
         "支持路由器部署"
       ],
       "Schedule messages at any time": [
-        "随时安排邮件"
+        "自由选择发送时间"
       ],
       "Search message content": [
         "搜索邮件全文"
@@ -8071,7 +8046,7 @@
         "通过 ${ BRAND_NAME } 使用 SimpleLogin 获得无限别名"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
-        "储存空间由 ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME } 和 ${ DRIVE_APP_NAME } 共享"
+        "${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME }、${ DRIVE_APP_NAME } 均共用同一存储空间"
       ],
       "Use your own custom email domain address, e.g., you@yourname.com": [
         "使用您自己的自定义电子邮件域地址，例如 you@yourname.com"
@@ -9301,7 +9276,7 @@
         "高速VPN"
       ],
       "Highest VPN speed": [
-        "拥有最快的速度的VPN"
+        "VPN 速度最快"
       ],
       "Premium Drive": [
         "高级云盘"
@@ -9322,10 +9297,18 @@
         "安全的云存储"
       ],
       "Secure streaming": [
-        "安全流媒体"
+        "安全看视频"
       ],
       "Support online privacy": [
         "支持在线隐私"
+      ]
+    },
+    "specialoffer: Footer": {
+      "Discounts are based on the standard monthly pricing.": [
+        "折扣基于标准的每月定价。"
+      ],
+      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
+        "此订阅将以相同的费率每 2 年自动续订一次，直至取消。"
       ]
     },
     "specialoffer: Label": {
@@ -9354,13 +9337,108 @@
       ]
     },
     "specialoffer: Offers": {
+      "/ month": [
+        "/ 月"
+      ],
+      "1 year": [
+        "一年"
+      ],
+      "2 years": [
+        "两年"
+      ],
+      "Billed at ${ amount } for 1 month": [
+        "一个月的费用为${ amount }"
+      ],
+      "Billed at ${ amount } for 12 months": [
+        "一年的费用为${ amount }"
+      ],
+      "Billed at ${ amount } for 15 months": [
+        "15个月的费用为${ amount }"
+      ],
+      "Billed at ${ amount } for 24 months": [
+        "两年的费用为${ amount }"
+      ],
+      "Billed at ${ amount } for 30 months": [
+        "30个月的费用为${ amount }"
+      ],
       "for ${ n } months": [
         "${ n } 个月"
+      ],
+      "Get the deal": [
+        "达成交易"
+      ],
+      "Renews after 1 year at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
+        "一年后以折扣价或 ${ discountedAmount } ，而不是 ${ regularAmount } (${ discount }% discount) 续订"
+      ],
+      "Renews after 2 years at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
+        "两年后以折扣价或 ${ discountedAmount } 而不是 ${ regularAmount } (${ discount }% discount) 续订"
+      ],
+      "Save ${ discount }%": [
+        "立省 ${ discount }%"
+      ],
+      "Standard price ${ amount } for 1 month": [
+        "一个月的标准价格为${ amount }"
+      ],
+      "Standard price ${ amount } for 12 months": [
+        "一年的标准价格为${ amount }"
+      ],
+      "Standard price ${ amount } for 15 months": [
+        "15个月的标准价格为${ amount }"
+      ],
+      "Standard price ${ amount } for 24 months": [
+        "两年的的标准价格为${ amount }"
+      ],
+      "Standard price ${ amount } for 30 months": [
+        "30个月的标准价格为${ amount }"
+      ]
+    },
+    "specialoffer: Title": {
+      "Black Friday Sale": [
+        "黑色星期五促销"
+      ],
+      "Cyber Week Sale": [
+        "Cyber Week热卖"
+      ],
+      "End of year offer": [
+        "年底优惠"
+      ],
+      "End of Year Sale": [
+        "年底热卖"
+      ],
+      "Get our premium bundle and save more": [
+        "获取我们的高级套餐并节省更多"
+      ],
+      "Our discontinued Visionary plan is back for a limited time only": [
+        "我们已停产的 Visionary 计划限时回归"
+      ],
+      "Save more with 2 years of ${ planName }": [
+        "使用两年的${ planName }可节省更多费用"
+      ],
+      "Upgrade and save more with 2 years of ${ planName }": [
+        "升级两年的${ planName }并节省更多的费用"
       ]
     },
     "specialoffer: Tooltip": {
+      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.": [
+        "访问被阻止的内容并私下浏览。 包括 60 多个国家/地区的 1700 台服务器、最高的 VPN 速度、每位用户 10 个 VPN 连接、全球流媒体服务、恶意软件和广告拦截器等。"
+      ],
+      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
+        "访问被阻止的内容并私下浏览。 包括 60 多个国家/地区的 1700 台服务器、最高的 VPN 速度、10 个 VPN 连接、全球流媒体服务、恶意软件和广告拦截器等。"
+      ],
+      "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
+        "从任何地方访问流媒体服务上的内容，包括 Netflix、Disney+ 和 Prime Video。"
+      ],
+      "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
+        "非常适合家庭或小型团队，每个人都可以拥有自己的收件箱和别名。 需要一个自定义域名。"
+      ],
+      "Receive at no extra cost the paid versions of all new privacy services we release in the future, along with early access to all future features and products.": [
+        "免费获得我们未来发布的所有新隐私服务的付费版本，以及对所有未来功能和产品的抢先体验。"
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "使用加密的云存储保护您的文件。 包括自动同步、加密文件共享等。"
+      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "存储空间由 ${ MAIL_APP_NAME } 、${ CALENDAR_APP_NAME } 和 ${ DRIVE_APP_NAME } 共享。"
+        "${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME }、${ DRIVE_APP_NAME } 均共用同一存储空间。"
       ]
     },
     "Spotlight": {
@@ -9772,9 +9850,6 @@
       "Edit": [
         "更改"
       ],
-      "Email address": [
-        "邮箱地址"
-      ],
       "Email addresses": [
         "邮箱地址"
       ],
@@ -9903,14 +9978,8 @@
       "Add Sieve filter": [
         "创建 Sieve 规则"
       ],
-      "Add to Not spam list": [
-        "加入白名单"
-      ],
       "Add to spam list": [
         "加入垃圾邮件名单"
-      ],
-      "Add to your block list": [
-        "加入黑名单"
       ],
       "Add user": [
         "添加用户"
@@ -10510,7 +10579,7 @@
         "登录并授予权限"
       ],
       "Sign in with 2FA": [
-        "使用 2FA 登录"
+        "通过双重验证登录"
       ],
       "Sign out": [
         "退出"
@@ -10529,9 +10598,6 @@
       ],
       "Sort labels alphabetically": [
         "按字母顺序排列标签"
-      ],
-      "Spam and block list": [
-        "垃圾邮件和黑名单"
       ],
       "Start a new import": [
         "开始导入"

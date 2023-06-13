@@ -533,12 +533,6 @@
       "Mark as default": [
         "Označit jako výchozí"
       ],
-      "Mark as not spam": [
-        "Označit jako \"není spam\""
-      ],
-      "Mark as spam": [
-        "Označit jako spam"
-      ],
       "mark emails as": [
         "označit e-maily jako"
       ],
@@ -568,9 +562,6 @@
       ],
       "No": [
         "Ne"
-      ],
-      "Not spam": [
-        "Není spam"
       ],
       "OK": [
         "OK"
@@ -634,9 +625,6 @@
       ],
       "Remove": [
         "Odstranit"
-      ],
-      "Remove Block": [
-        "Odblokovat"
       ],
       "Remove bonuses": [
         "Odebrat bonusy"
@@ -2788,20 +2776,8 @@
       "${ name } failed to move to spam list": [
         "Doménu ${ name } se nepodařilo přesunout na Seznam spamů"
       ],
-      "${ name } failed to move to the not-spam list": [
-        "${ name } se nepodařilo přesunout na seznam vyžádaných e-mailů"
-      ],
-      "${ name } failed to move to your block list": [
-        "Doménu ${ name } se nepodařilo přesunout na Seznam blokovaných"
-      ],
-      "${ name } moved to not spam list": [
-        "Doména ${ name } přesunuta na seznam vyžádaných e-mailů"
-      ],
       "${ name } moved to spam list": [
         "Doména ${ name } byla přesunuta na seznam spamů"
-      ],
-      "${ name } moved to your block list": [
-        "Doména ${ name } přesunuta na Seznam blokovaných"
       ],
       "${ name } successfully deleted": [
         "Doména ${ name } úspěšně smazána"
@@ -2905,20 +2881,8 @@
       "${ name } failed to move to spam list": [
         "E-mailovou adresu ${ name } se nepodařilo přesunout na Seznam spamů"
       ],
-      "${ name } failed to move to the not-spam list": [
-        "${ name } se nepodařilo přesunout na seznam vyžádaných e-mailů"
-      ],
-      "${ name } failed to move to your block list": [
-        "E-mailovou adresu ${ name } se nepodařilo přesunout na Seznam blokovaných"
-      ],
-      "${ name } moved to not spam list": [
-        "E-mailová adresa ${ name } přesunuta na seznam vyžádaných e-mailů"
-      ],
       "${ name } moved to spam list": [
         "Emailová adresa ${ name } byla přesunuta na Seznam spamů"
-      ],
-      "${ name } moved to your block list": [
-        "E-mailová adresa ${ name } přesunuta na Seznam blokovaných"
       ],
       "${ name } successfully deleted": [
         "E-mailová adresa ${ name } úspěšně smazána"
@@ -4330,15 +4294,6 @@
       "Add a custom filter to automatically perform certain actions, like labeling or archiving messages.": [
         "Přidejte si vlastní filtr, který automaticky provede určité akce, jako je označení nebo archivace zpráv."
       ],
-      "Emails from addresses marked as spam by you or ${ BRAND_NAME } will go to the spam folder of your organization members. If you want to allow emails from one of these addresses, mark it as \"not spam\".": [
-        "E-maily z adres, které jste vy nebo ${ BRAND_NAME } označili jako spam, budou chodit do složky spam členů vaší organizace. Pokud chcete e-maily z některé z těchto adres povolit, označte ji jako \"není spam\"."
-      ],
-      "Emails from addresses marked as spam by you or ${ BRAND_NAME } will go to your spam folder. If you want to allow emails from one of these addresses, mark it as \"not spam\".": [
-        "E-maily z adres, které jste vy nebo společnost ${ BRAND_NAME } označili jako spam, budou odeslány do složky Spam. Pokud chcete e-maily z některé z těchto adres povolit, označte je jako \"není spam\"."
-      ],
-      "Emails from blocked addresses won't be delivered.": [
-        "E-maily z blokovaných adres nebudou doručeny."
-      ],
       "Search list": [
         "Vyhledat v seznamu"
       ]
@@ -5523,11 +5478,11 @@
       "Download your PGP keys for use with other PGP-compatible services.": [
         "Stáhněte si Vaše PGP klíče pro použití v jiných službách kompatibilních s PGP."
       ],
-      "Drop a file here to upload": [
-        "Přetažením sem, nahrajte soubor"
+      "Drop file here to upload": [
+        "Soubor nahrajete přetažením sem"
       ],
-      "Drop the file here to upload": [
-        "Přetažením sem, nahrajte soubor"
+      "Drop to import": [
+        "Přetažením importovat"
       ],
       "Each code can only be used once": [
         "Každý kód lze použít pouze jednou"
@@ -6906,6 +6861,9 @@
       "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your recovery phrase or your ${ oldPassword }.": [
         "Vaše současné zprávy, kalendáře nebo kontakty budou uzamčeny. Pro obnovení těchto dat budete potřebovat vaši obnovovací frázi nebo vaše ${ oldPassword }."
       ],
+      "Your files will be encrypted and then saved": [
+        "Vaše soubory budou zašifrovány a uloženy"
+      ],
       "Your import from ${ accounts } is temporarily delayed.": [
         "Váš import z ${ accounts } je dočasně opožděn.",
         "Vaše importy z ${ accounts } jsou dočasně opožděny.",
@@ -7488,9 +7446,6 @@
       "Block malware, ads and trackers": [
         "Blokovat malware, reklamy a sledovače"
       ],
-      "Blocked": [
-        "Blokováno"
-      ],
       "Browser": [
         "Prohlížeč"
       ],
@@ -7892,9 +7847,6 @@
       ],
       "Non-standard ports": [
         "Nestandardní porty"
-      ],
-      "Not spam": [
-        "Není spam"
       ],
       "Notification": [
         "Oznámení"
@@ -8753,17 +8705,11 @@
       "Back to inbox": [
         "Zpět do Doručené pošty"
       ],
-      "Blocked": [
-        "Blokováno"
-      ],
       "Calendar": [
         "Kalendář"
       ],
       "Inbox": [
         "Doručená pošta"
-      ],
-      "Not spam": [
-        "Není spam"
       ],
       "Spam": [
         "Spam"
@@ -11289,9 +11235,6 @@
       "Edit": [
         "Upravit"
       ],
-      "Email address": [
-        "E-mailová adresa"
-      ],
       "Email addresses": [
         "E-mailové adresy"
       ],
@@ -11446,14 +11389,8 @@
       "Add Sieve filter": [
         "Přidat filtr Sieve"
       ],
-      "Add to Not spam list": [
-        "Přidat na seznam vyžádaných e-mailů"
-      ],
       "Add to spam list": [
         "Přidat do seznamu spamů"
-      ],
-      "Add to your block list": [
-        "Přidat na seznam blokovaných"
       ],
       "Add user": [
         "Přidat uživatele"
@@ -12111,9 +12048,6 @@
       ],
       "Sort labels alphabetically": [
         "Řadit štítky abecedně"
-      ],
-      "Spam and block list": [
-        "Spam a seznam blokovaných"
       ],
       "Start a new import": [
         "Zahájit nový import"

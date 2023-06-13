@@ -533,12 +533,6 @@
       "Mark as default": [
         "Markeren als standaard"
       ],
-      "Mark as not spam": [
-        "Markeer als geen spam"
-      ],
-      "Mark as spam": [
-        "Markeer als spam"
-      ],
       "mark emails as": [
         "e-mails markeren als"
       ],
@@ -568,9 +562,6 @@
       ],
       "No": [
         "Nee"
-      ],
-      "Not spam": [
-        "Geen spam"
       ],
       "OK": [
         "OK"
@@ -634,9 +625,6 @@
       ],
       "Remove": [
         "Verwijderen"
-      ],
-      "Remove Block": [
-        "Blok verwijderen"
       ],
       "Remove bonuses": [
         "Verwijder bonussen"
@@ -2776,20 +2764,8 @@
       "${ name } failed to move to spam list": [
         "${ name } niet verplaatst naar spamlijst"
       ],
-      "${ name } failed to move to the not-spam list": [
-        "${ name } kom niet verplaatst worden naar toegestane lijst"
-      ],
-      "${ name } failed to move to your block list": [
-        "${ name } is niet verplaatst naar de blokkeringslijst"
-      ],
-      "${ name } moved to not spam list": [
-        "${ name } verplaatst naar niet-Spamlijst"
-      ],
       "${ name } moved to spam list": [
         "${ name } verplaatst naar spamlijst"
-      ],
-      "${ name } moved to your block list": [
-        "${ name } verplaatst naar blokkeringslijst"
       ],
       "${ name } successfully deleted": [
         "${ name } succesvol verwijderd"
@@ -2893,20 +2869,8 @@
       "${ name } failed to move to spam list": [
         "${ name } niet verplaatst naar spamlijst"
       ],
-      "${ name } failed to move to the not-spam list": [
-        "${ name } kom niet verplaatst worden naar toegestane lijst"
-      ],
-      "${ name } failed to move to your block list": [
-        "${ name } is niet verplaatst naar de blokkeringslijst"
-      ],
-      "${ name } moved to not spam list": [
-        "${ name } verplaatst naar niet-Spamlijst"
-      ],
       "${ name } moved to spam list": [
         "${ name } verplaatst naar spamlijst"
-      ],
-      "${ name } moved to your block list": [
-        "${ name } verplaatst naar blokkeringslijst"
       ],
       "${ name } successfully deleted": [
         "${ name } succesvol verwijderd"
@@ -4287,15 +4251,6 @@
       "Add a custom filter to automatically perform certain actions, like labeling or archiving messages.": [
         "Voeg een aangepaste filter toe om bepaalde acties, zoals berichten labelen of archiveren, automatisch uit te voeren."
       ],
-      "Emails from addresses marked as spam by you or ${ BRAND_NAME } will go to the spam folder of your organization members. If you want to allow emails from one of these addresses, mark it as \"not spam\".": [
-        "E-mails van adressen die door u of ${ BRAND_NAME } als spam zijn gemarkeerd, komen in de spamfolder terecht van uw organisatieleden. Als u e-mails van een van deze adressen wilt toestaan, markeer het dan als \"geen spam\"."
-      ],
-      "Emails from addresses marked as spam by you or ${ BRAND_NAME } will go to your spam folder. If you want to allow emails from one of these addresses, mark it as \"not spam\".": [
-        "E-mails van adressen die door u of ${ BRAND_NAME } als spam zijn gemarkeerd, komen in uw spamfolder terecht. Als u e-mails van een van deze adressen wilt toestaan, markeer het dan als \"geen spam\"."
-      ],
-      "Emails from blocked addresses won't be delivered.": [
-        "E-mails van geblokkeerde adressen worden niet afgeleverd."
-      ],
       "Search list": [
         "Lijst doorzoeken"
       ]
@@ -5417,12 +5372,6 @@
       ],
       "Download your PGP keys for use with other PGP-compatible services.": [
         "Download uw PGP-sleutels voor gebruik met andere PGP-compatibele diensten."
-      ],
-      "Drop a file here to upload": [
-        "Sleep een bestand om te uploaden"
-      ],
-      "Drop the file here to upload": [
-        "Sleep het bestand hierheen om te uploaden"
       ],
       "Each code can only be used once": [
         "Elke code kan maar één keer gebruikt worden"
@@ -7345,9 +7294,6 @@
       "Block malware, ads and trackers": [
         "Blokkeer malware, advertenties en trackers"
       ],
-      "Blocked": [
-        "Geblokkeerd"
-      ],
       "Browser": [
         "Browser"
       ],
@@ -7749,9 +7695,6 @@
       ],
       "Non-standard ports": [
         "Niet-standaard poorten"
-      ],
-      "Not spam": [
-        "Geen spam"
       ],
       "Notification": [
         "Notificatie"
@@ -8590,17 +8533,11 @@
       "Back to inbox": [
         "Terug naar postvak in"
       ],
-      "Blocked": [
-        "Geblokkeerd"
-      ],
       "Calendar": [
         "Agenda"
       ],
       "Inbox": [
         "Postvak in"
-      ],
-      "Not spam": [
-        "Geen spam"
       ],
       "Spam": [
         "Spam"
@@ -8734,6 +8671,10 @@
       "${ n } folder and label": [
         "${ n } map en label",
         "${ n } mappen en labels"
+      ],
+      "${ n } Hide-my-email alias": [
+        "${ n } Hide-My-Email alias",
+        "${ n } Hide-My-Email aliassen"
       ],
       "${ n } label": [
         "${ n } label",
@@ -8957,6 +8898,9 @@
       ],
       "Unlimited folders, labels, and filters": [
         "Ongelimiteerde mappen, labels en filters"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Onbeperkt aantal Hide-My-Email alliassen"
       ],
       "Unlimited labels": [
         "Onbeperkt aantal labels"
@@ -11007,9 +10951,6 @@
       "Edit": [
         "Bewerken"
       ],
-      "Email address": [
-        "E-mailadres"
-      ],
       "Email addresses": [
         "E-mailadressen"
       ],
@@ -11152,14 +11093,8 @@
       "Add Sieve filter": [
         "Sievefilter toevoegen"
       ],
-      "Add to Not spam list": [
-        "Toevoegen aan niet-Spamlijst-lijst"
-      ],
       "Add to spam list": [
         "Toevoegen aan spamlijst"
-      ],
-      "Add to your block list": [
-        "Voeg toe aan uw blokkeerlijst"
       ],
       "Add user": [
         "Gebruiker toevoegen"
@@ -11812,9 +11747,6 @@
       "Sort labels alphabetically": [
         "Sorteer labels alfabetisch"
       ],
-      "Spam and block list": [
-        "Spam- en blokkeerlijst"
-      ],
       "Start a new import": [
         "Start een nieuwe import"
       ],
@@ -12197,6 +12129,9 @@
       ]
     },
     "Upgrade": {
+      "Upgrade to ${ passPlusPlanName } to get unlimited hide-my-email aliases": [
+        "Upgrade naar ${ passPlusPlanName } om onbeperkt Hide-My-Email aliassen te krijgen"
+      ],
       "Upgrade to ${ planName } to connect up to ${ n } device to the VPN at once": [
         "Upgrade naar ${ planName } om tot ${ n } apparaat tegelijkertijd met VPN te verbinden",
         "Upgrade naar ${ planName } om tot ${ n } apparaten tegelijkertijd met VPN te verbinden"
