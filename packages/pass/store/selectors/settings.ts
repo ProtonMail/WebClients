@@ -1,4 +1,3 @@
-import { isEmptyString } from '@proton/pass/utils/string';
 import { omit } from '@proton/shared/lib/helpers/object';
 
 import type { ProxiedSettings } from '../reducers/settings';
@@ -9,12 +8,10 @@ export const selectProxiedSettings = ({ settings }: State): ProxiedSettings =>
 
 export const selectCanLoadDomainImages = ({ settings }: State) => settings.loadDomainImages;
 
-export const selectSessionLockToken = ({ settings }: State) => settings.sessionLockToken ?? undefined;
+export const selectSessionLockToken = ({ settings }: State) => settings.sessionLockToken;
 
-export const selectCanLockSession = (state: State) => {
-    const sessionLockToken = selectSessionLockToken(state);
-    return sessionLockToken !== undefined && !isEmptyString(sessionLockToken);
-};
+export const selectCanLockSession = (state: State) => Boolean(selectSessionLockToken(state));
+
 export const selectSessionLockSettings = ({ settings }: State) => ({
     sessionLockToken: settings.sessionLockToken,
     sessionLockTTL: settings.sessionLockTTL,
