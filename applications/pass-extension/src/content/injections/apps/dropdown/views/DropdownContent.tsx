@@ -22,9 +22,69 @@ import { AliasAutoSuggest } from './AliasAutoSuggest';
 import { ItemsList } from './ItemsList';
 import { PasswordAutoSuggest } from './PasswordAutoSuggest';
 
+/**
+ * settings: `useIFrameContext().loadDomainImages`
+ * userEmail: `dropdownState` when type : AUTOSUGGEST_ALIAS
+ * domainUrl: `dropdownState.items` -> `SafeLoginItem::url`
+ */
+
 export const DropdownContent: VFC = () => {
+    /*
     const { workerState, resizeIFrame, closeIFrame, postMessage } = useIFrameContext();
     const [dropdownState, setDropdownState] = useState<MaybeNull<DropdownSetActionPayload>>(null);
+    */
+
+    // -- FAKE STATE FOR TESTING --
+
+    let { workerState, resizeIFrame, closeIFrame, postMessage } = useIFrameContext();
+    workerState = {
+        ...workerState,
+        loggedIn: true,
+        status: WorkerStatus.READY,
+    };
+
+    // PASSWORD
+    // const [dropdownState, setDropdownState] = useState<MaybeNull<DropdownSetActionPayload>>({
+    //     action: DropdownAction.AUTOSUGGEST_PASSWORD,
+    // });
+
+    // NO LOGIN FOUND
+    // const [dropdownState, setDropdownState] = useState<MaybeNull<DropdownSetActionPayload>>({
+    //     action: DropdownAction.AUTOFILL,
+    //     needsUpgrade: false,
+    //     items: [
+    //     ],
+    // });
+
+    // ITEMS
+    const [dropdownState, setDropdownState] = useState<MaybeNull<DropdownSetActionPayload>>({
+        action: DropdownAction.AUTOFILL,
+        needsUpgrade: false,
+        items: [
+            {
+                name: 'Reddit',
+                username: 'abc@example',
+                shareId: '1',
+                itemId: '1',
+            },
+            {
+                name: 'Proton',
+                username: 'me@proton',
+                shareId: '2',
+                itemId: '2',
+            },
+        ],
+    });
+
+    // ALIAS
+    // const [dropdownState, setDropdownState] = useState<MaybeNull<DropdownSetActionPayload>>({
+    //     action: DropdownAction.AUTOSUGGEST_ALIAS,
+    //     domain: 'localhost',
+    //     prefix: 'test',
+    //     userEmail: 'toto@foo.fr'
+    // });
+
+    // -- END FAKE STATE --
 
     const withStateReset = <F extends Callback>(fn: F): F =>
         pipe(
