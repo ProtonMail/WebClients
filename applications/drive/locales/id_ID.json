@@ -2606,6 +2606,9 @@
       "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
         "Beserta 2700 server di 65+ negara, hubungan sampai 10 perangkat, akses layanan streaming seluruh dunia, pemblokiran malware dan iklan, dan lebih banyak lagi."
       ],
+      "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
+        "Beserta dukungan untuk 3 domain surel kustom, 90 alamat surel, alias Hide My Email tidak terbatas, pembagian kalender, dan lebih banyak lagi."
+      ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Amankan berkas Anda dengan penyimpanan awan terenkripsi. Beserta sinkronisasi otomatis, pembagian berkas terenkripsi, dan lebih banyak lagi."
       ]
@@ -3142,6 +3145,9 @@
       "Attention required": [
         "Diperlukan perhatian"
       ],
+      "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access or decrypt your files for you. To unlock your drive after a password reset, you must have one of the following:": [
+        "Karena ${ DRIVE_APP_NAME } terenkripsi secara ujung ke ujung, kami tidak dapat mengakses atau mendekripsi berkas Anda untuk Anda sendiri. Untuk membuka kunci drive setelah pengaturan ulang kata sandi, Anda harus memiliki salah satu dari hal berikut:"
+      ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Sebelum meminta kode verifikasi baru, periksa folder spam Anda dan pastikan ${ strong } merupakan alamat email yang benar."
       ],
@@ -3277,8 +3283,11 @@
       "Downloading": [
         "Mengunduh"
       ],
-      "Drop the file here to upload": [
-        "Letakkan berkas yang hendak Anda unggah di sini"
+      "Drop file here to upload": [
+        "Lepaskan berkas di sini untuk mengunggah"
+      ],
+      "Drop to import": [
+        "Lepaskan untuk mengimpor"
       ],
       "Duplicate key updated": [
         "Kunci ganda diperbarui"
@@ -3330,6 +3339,12 @@
       ],
       "Failed": [
         "Gagal"
+      ],
+      "Failed to generate a secure link. The reason is: ${ error }": [
+        "Tautan aman gagal dihasilkan. Alasan: ${ error }"
+      ],
+      "Failed to generate a secure link. Try again later": [
+        "Tautan aman gagal dihasilkan. Silakan coba lagi nanti"
       ],
       "Failed to open a secure link. The reason is: ${ error }": [
         "Gagal membuka tautan terenkripsi. Sebab: ${ error }"
@@ -3408,6 +3423,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Apabila Anda tidak menemukan email yang bersangkutan di dalam kotak masuk, mohon periksa folder spam Anda."
+      ],
+      "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process.": [
+        "Apabila Anda memiliki salah satunya, tuju menu pengaturan Akun ${ BRAND_NAME } untuk\nmemulai proses pencabutan blokir."
       ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendars": [
         "Impor ${ calendarCount } dari ${ totalCalendarsCount } kalender"
@@ -3805,6 +3823,9 @@
       "This will overwrite the existing folder": [
         "Tindakan ini akan menimpa folder yang sudah ada"
       ],
+      "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on the device won’t be affected.": [
+        "Tindakan ini akan menghapus perangkat ${ deviceName } yang telah disinkronkan sebelumnya dari ${ DRIVE_APP_NAME }. Berkas lokal yang terdapat pada perangkat yang bersangkutan tidak akan terpengaruh."
+      ],
       "This will replace the existing file with the folder": [
         "Dengan ini, berkas yang telah ada akan diganti dengan folder"
       ],
@@ -4008,6 +4029,9 @@
       ],
       "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ KeyReactivationButton }": [
         "Berkas Anda tidak lagi dapat diakses karena kata sandi yang ada telah diatur ulang. Unggah kembali kunci enkripsi lama untuk dapat kembali mengakses berkas Anda. ${ KeyReactivationButton }"
+      ],
+      "Your files will be encrypted and then saved": [
+        "Berkas Anda akan dienkripsi lalu disimpan"
       ],
       "Your files will be encrypted and then saved.": [
         "Berkas Anda akan dienkripsi dan disimpan."
@@ -4524,6 +4548,9 @@
       "Wonderful": [
         "Luar Biasa"
       ],
+      "Yes, I want to permanently delete my old files": [
+        "Ya, saya ingin menghapus berkas lama saya secara permanen"
+      ],
       "Your password (admin)": [
         "Kata sandi Anda (admin)"
       ]
@@ -4701,6 +4728,9 @@
       ],
       "Custom email domains": [
         "Domain email khusus"
+      ],
+      "Hide-my-email aliases": [
+        "Alias Hide My Email"
       ],
       "Schedule messages at any time": [
         "Jadwalkan pesan sesuai keinginan Anda"
@@ -5393,6 +5423,15 @@
       ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
         "Akses konten di layanan streaming, termasuk Netflix, Disney+, dan Prime Video, dari mana pun."
+      ],
+      "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
+        "Semua layanan premium kami dengan batas tertinggi: 100 alamat surel, dukungan 10 domain kustom, alias Hide My Email tidak terbatas, pembagian kalender, penyimpanan awan dan pembagian berkas terenkripsi, dan lebih banyak lagi."
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Termasuk dukungan untuk 1 domain surel kustom, 10 alamat surel, 10 alias Hide My Email, berbagi kalender, dan lainnya."
+      ],
+      "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Beserta dukungan untuk 3 domain surel kustom, 15 alamat surel, alias Hide My Email tidak terbatas, pembagian kalender, dan lebih banyak lagi."
       ],
       "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
         "Cocok untuk keluarga atau tim kecil, setiap orang dapat memiliki kotak masuk dan alias mereka sendiri. Membutuhkan domain kustom."
