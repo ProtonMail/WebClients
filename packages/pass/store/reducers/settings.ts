@@ -34,15 +34,13 @@ const INITIAL_STATE: SettingsState = {
 const reducer: Reducer<SettingsState> = (state = INITIAL_STATE, action) => {
     if (sessionLockEnableSuccess.match(action)) {
         return partialMerge(state, {
-            sessionLockToken: action.payload.storageToken ?? '',
+            sessionLockToken: action.payload.storageToken,
             sessionLockTTL: action.payload.ttl,
         });
     }
 
     if (sessionUnlockSuccess.match(action)) {
-        return partialMerge(state, {
-            sessionLockToken: action.payload.storageToken,
-        });
+        return partialMerge(state, { sessionLockToken: action.payload.storageToken });
     }
 
     if (sessionLockDisableSuccess.match(action)) {
