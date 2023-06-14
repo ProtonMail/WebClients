@@ -10,7 +10,14 @@ import {
     resumeSession,
 } from '@proton/pass/auth';
 import { browserLocalStorage, browserSessionStorage } from '@proton/pass/extension/storage';
-import { notification, selectSessionLockToken, setUserPlan, stateDestroy, stateLock } from '@proton/pass/store';
+import {
+    notification,
+    selectSessionLockToken,
+    selectUser,
+    setUserPlan,
+    stateDestroy,
+    stateLock,
+} from '@proton/pass/store';
 import type { AccountForkMessage, Api, MaybeNull, WorkerMessageResponse } from '@proton/pass/types';
 import { SessionLockStatus, WorkerMessageType, WorkerStatus } from '@proton/pass/types';
 import { withPayload } from '@proton/pass/utils/fp';
@@ -345,6 +352,9 @@ export const createAuthService = ({
 
     WorkerMessageBroker.registerMessage(WorkerMessageType.ACCOUNT_FORK, withPayload(authService.consumeFork));
     WorkerMessageBroker.registerMessage(WorkerMessageType.SESSION_RESUMED, withPayload(authService.login));
+    WorkerMessageBroker.registerMessage(WorkerMessageType.RESOLVE_USER_DATA, () => ({
+        user: selectUser(store.getState()),
+    }));
 
     return authService;
 };
