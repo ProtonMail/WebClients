@@ -120,7 +120,7 @@ type SelectOptions = {
  * frequently than the shareId / sortOption
  */
 
-export const selectShareItemsWithOptimistic = createSelector(
+const selectShareItemsWithOptimistic = createSelector(
     [
         selectItemsWithOptimistic,
         (_state: State, { shareId }: SelectOptions) => shareId,
@@ -131,26 +131,25 @@ export const selectShareItemsWithOptimistic = createSelector(
     }
 );
 
-export const selectMatchedAndFilteredItemsWithOptimistic = createSelector(
-    [
-        selectShareItemsWithOptimistic,
-        (_state: State, { search }: SelectOptions) => search,
-        (_state: State, { itemType }: SelectOptions) => itemType,
-    ],
-    (items, search, itemType) => {
-        const matched = matchItems(items, search);
-        const filtered = filterItemsByType(matched, itemType);
-        return { matched, filtered, totalCount: items.length };
-    }
-);
+export const selectMatchedAndFilteredItemsWithOptimistic = (options: SelectOptions) => (state: State) =>
+    createSelector(
+        [
+            selectShareItemsWithOptimistic,
+            (_state: State, { search }: SelectOptions) => search,
+            (_state: State, { itemType }: SelectOptions) => itemType,
+        ],
+        (items, search, itemType) => {
+            const matched = matchItems(items, search);
+            const filtered = filterItemsByType(matched, itemType);
+            return { matched, filtered, totalCount: items.length };
+        }
+    )(state, options);
 
-export const selectMatchedTrashItemsWithOptimistic = createSelector(
-    [selectTrashItemsWithOptimistic, (_state: State, search?: string) => search],
-    (items, search) => {
+export const selectMatchedTrashItemsWithOptimistic = (search?: string) => (state: State) =>
+    createSelector([selectTrashItemsWithOptimistic, (_state: State, search?: string) => search], (items, search) => {
         const matched = matchItems(items, search);
         return { matched, totalCount: items.length };
-    }
-);
+    })(state, search);
 
 export const selectItemWithOptimistic = (shareId: string, itemId: string) =>
     createSelector(
