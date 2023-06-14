@@ -27,6 +27,7 @@ import {
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { MAX_CHARS_API } from '@proton/shared/lib/calendar/constants';
 import { Address, UserModel } from '@proton/shared/lib/interfaces';
+import truncate from '@proton/utils/truncate';
 
 import { EasySwitchThunkExtra } from '../../store';
 import { OAUTH_ACTION_PREFIX } from './oauthDraft.actions';
@@ -185,16 +186,10 @@ export const createImporterThunk = createAsyncThunk<ImporterData, Props, EasySwi
 
         const calendarResponse: ImporterCalendar[] | undefined = calendarData?.Calendars?.map(
             (item: APICalendar): ImporterCalendar => {
-                //Calendar cannot have name longer than 100 chars
-                const formattedSource =
-                    item.Source.length > MAX_CHARS_API.CALENDAR_NAME
-                        ? item.Source.slice(0, MAX_CHARS_API.CALENDAR_NAME)
-                        : item.Source;
-
                 return {
                     id: item.ID,
-                    source: formattedSource,
-                    description: item.Description,
+                    source: truncate(item.Source, MAX_CHARS_API.CALENDAR_NAME),
+                    description: truncate(item.Description, MAX_CHARS_API.CALENDAR_DESCRIPTION),
                     checked: true,
                 };
             }
