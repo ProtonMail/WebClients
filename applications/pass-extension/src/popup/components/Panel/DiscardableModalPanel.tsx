@@ -37,7 +37,7 @@ export const DiscardableModalPanel: FC<DiscardableModalProps> = ({ discardable, 
             <SidebarModal
                 open
                 onBackdropClick={onBackdropClick}
-                onEnter={() => (timer.current = setTimeout(() => setDidMount(true), 50))}
+                onEnter={() => (timer.current = setTimeout(() => setDidMount(true), 125))}
                 rootClassName="pass-modal-two--sidebar-content"
             >
                 {children({ confirm: doConfirm, didMount })}
