@@ -29,10 +29,6 @@ export const getCalendarAppRoutes = () => {
                         text: c('Title').t`Invitations`,
                         id: CALENDAR_SETTINGS_SECTION_ID.INVITATIONS,
                     },
-                    {
-                        text: c('Title').t`Theme`,
-                        id: CALENDAR_SETTINGS_SECTION_ID.THEME,
-                    },
                 ],
             },
             calendars: <SectionConfig>{

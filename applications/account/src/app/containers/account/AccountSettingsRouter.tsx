@@ -5,6 +5,7 @@ import { c } from 'ttag';
 
 import { EasySwitchSettingsArea } from '@proton/activation';
 import {
+    AccessibilitySection,
     AccountRecoverySection,
     AutomaticSubscriptionModal,
     CancelSubscriptionSection,
@@ -30,6 +31,7 @@ import {
     SettingsSectionWide,
     SubscriptionModalProvider,
     SubscriptionsSection,
+    ThemesSection,
     TwoFactorSection,
     UsernameSection,
     YourPlanSection,
@@ -39,7 +41,7 @@ import { InviteSection, ReferralInvitesContextProvider, RewardSection } from '@p
 import { APP_NAMES } from '@proton/shared/lib/constants';
 
 import { recoveryIds } from './recoveryIds';
-import { getAccountAppRoutes } from './routes';
+import type { getAccountAppRoutes } from './routes';
 
 const AccountSettingsRouter = ({
     redirect,
@@ -55,7 +57,7 @@ const AccountSettingsRouter = ({
     isPassPlusEnabled: boolean;
 }) => {
     const {
-        routes: { dashboard, upgrade, easySwitch, referral, recovery, security, password, language },
+        routes: { dashboard, upgrade, easySwitch, referral, recovery, security, password, language, appearance },
     } = accountAppRoutes;
 
     return (
@@ -121,6 +123,12 @@ const AccountSettingsRouter = ({
             <Route path={getSectionPath(path, language)}>
                 <PrivateMainSettingsArea config={language}>
                     <LanguageAndTimeSection />
+                </PrivateMainSettingsArea>
+            </Route>
+            <Route path={getSectionPath(path, appearance)}>
+                <PrivateMainSettingsArea config={appearance}>
+                    <ThemesSection accessibilitySettingsAvailable={!!appearance.subsections[1]?.available} />
+                    <AccessibilitySection />
                 </PrivateMainSettingsArea>
             </Route>
             <Route path={getSectionPath(path, security)}>

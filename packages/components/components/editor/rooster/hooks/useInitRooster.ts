@@ -2,10 +2,9 @@ import { RefObject, useCallback, useEffect, useRef } from 'react';
 
 import { IEditor } from 'roosterjs-editor-types';
 
-import { useTheme } from '@proton/components/containers';
+import { useSyncIframeStyles, useTheme } from '@proton/components/containers';
 import useIsMounted from '@proton/hooks/useIsMounted';
 import { MailSettings } from '@proton/shared/lib/interfaces';
-import { PROTON_THEMES_MAP } from '@proton/shared/lib/themes/themes';
 
 import {
     EDITOR_BLOCKQUOTE_TOGGLE_CONTAINER_ID,
@@ -50,8 +49,10 @@ const useInitRooster = ({
 }: Props) => {
     const editorRef = useRef<IEditor>();
     const isMounted = useIsMounted();
-    const [themeIndex] = useTheme();
-    const themeCSSVariables: string = PROTON_THEMES_MAP[themeIndex].theme;
+    const theme = useTheme();
+    const themeCSSVariables = theme.information.style;
+
+    useSyncIframeStyles(iframeRef.current?.contentWindow?.document.documentElement, document.documentElement);
 
     const initRooster = useCallback(async () => {
         const iframe = iframeRef.current as HTMLIFrameElement;
@@ -72,28 +73,28 @@ const useInitRooster = ({
             </style>
         </head>
         <body>
-        <svg class="proton-hidden">
-            <g id="ic-file-shapes">
-                <path fill-rule="evenodd" d="M13 13a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1h5v2.5A1.5 1.5 0 0 0 10.5 6H13v7Zm-.414-8L10 2.414V4.5a.5.5 0 0 0 .5.5h2.086ZM2 3a2 2 0 0 1 2-2h5.172a2 2 0 0 1 1.414.586l2.828 2.828A2 2 0 0 1 14 5.828V13a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V3Zm3 8v1h1v-1H5Zm-.5-1a.5.5 0 0 0-.5.5v2a.5.5 0 0 0 .5.5h2a.5.5 0 0 0 .5-.5v-2a.5.5 0 0 0-.5-.5h-2Z"/>
-                <path fill-rule="evenodd" d="M9.5 9a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1Zm0 1a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z"/>
+        <svg class='proton-hidden'>
+            <g id='ic-file-shapes'>
+                <path fill-rule='evenodd' d='M13 13a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1h5v2.5A1.5 1.5 0 0 0 10.5 6H13v7Zm-.414-8L10 2.414V4.5a.5.5 0 0 0 .5.5h2.086ZM2 3a2 2 0 0 1 2-2h5.172a2 2 0 0 1 1.414.586l2.828 2.828A2 2 0 0 1 14 5.828V13a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V3Zm3 8v1h1v-1H5Zm-.5-1a.5.5 0 0 0-.5.5v2a.5.5 0 0 0 .5.5h2a.5.5 0 0 0 .5-.5v-2a.5.5 0 0 0-.5-.5h-2Z'/>
+                <path fill-rule='evenodd' d='M9.5 9a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1Zm0 1a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z'/>
             </g>
-            <g id="ic-cross-circle">
-                <path fill-rule="evenodd" d="M8 14A6 6 0 1 0 8 2a6 6 0 0 0 0 12Zm0 1A7 7 0 1 0 8 1a7 7 0 0 0 0 14Z"/>
-                <path fill-rule="evenodd" d="M5.146 5.146a.5.5 0 0 1 .708 0L8 7.293l2.146-2.147a.5.5 0 0 1 .708.708L8.707 8l2.147 2.146a.5.5 0 0 1-.708.708L8 8.707l-2.146 2.147a.5.5 0 0 1-.708-.708L7.293 8 5.146 5.854a.5.5 0 0 1 0-.708Z"/>
+            <g id='ic-cross-circle'>
+                <path fill-rule='evenodd' d='M8 14A6 6 0 1 0 8 2a6 6 0 0 0 0 12Zm0 1A7 7 0 1 0 8 1a7 7 0 0 0 0 14Z'/>
+                <path fill-rule='evenodd' d='M5.146 5.146a.5.5 0 0 1 .708 0L8 7.293l2.146-2.147a.5.5 0 0 1 .708.708L8.707 8l2.147 2.146a.5.5 0 0 1-.708.708L8 8.707l-2.146 2.147a.5.5 0 0 1-.708-.708L7.293 8 5.146 5.854a.5.5 0 0 1 0-.708Z'/>
             </g>
-            <g id="ic-three-dots-horizontal">
-              <path d="M4 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"/>
-              <path d="M9 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"/>
-              <path d="M14 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"/>
+            <g id='ic-three-dots-horizontal'>
+              <path d='M4 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z'/>
+              <path d='M9 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z'/>
+              <path d='M14 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z'/>
             </g>
         </svg>
-        <div id="proton-editor-container">
-            <div id=${ROOSTER_EDITOR_WRAPPER_ID}>
-                <div id="${ROOSTER_EDITOR_ID}" ></div>
-                <div id="${EDITOR_BLOCKQUOTE_TOGGLE_CONTAINER_ID}" ></div>
+        <div id='proton-editor-container'>
+            <div id='${ROOSTER_EDITOR_WRAPPER_ID}'>
+                <div id='${ROOSTER_EDITOR_ID}' ></div>
+                <div id='${EDITOR_BLOCKQUOTE_TOGGLE_CONTAINER_ID}' ></div>
             </div>
         </div>
-        <div id="${EDITOR_DROPZONE}" />
+        <div id='${EDITOR_DROPZONE}' />
         </body>
         `);
         iframeDocument.close();

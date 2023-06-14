@@ -1,20 +1,22 @@
 import { useRef } from 'react';
 import { FixedSizeList, ListChildComponentProps } from 'react-window';
 
-
-
-import { Table, TableBody, TableCellBusy, useActiveBreakpoint, useElementRect, useRightToLeft } from '@proton/components';
+import {
+    Table,
+    TableBody,
+    TableCellBusy,
+    useActiveBreakpoint,
+    useElementRect,
+    useRightToLeft,
+} from '@proton/components';
 import { rootFontSize } from '@proton/shared/lib/helpers/dom';
 import clsx from '@proton/utils/clsx';
-
-
 
 import { FileBrowserProps } from '../FileBrowser';
 import { BrowserItemId, DragMoveControls, FileBrowserBaseItem } from '../interface';
 import { useSelection } from '../state/useSelection';
 import ItemRow from './ItemRow';
 import ListHeader from './ListHeader';
-
 
 interface ListItemData<T extends FileBrowserBaseItem> {
     items: T[];
@@ -55,8 +57,8 @@ const ListItemRow = <T extends FileBrowserBaseItem>({ index, style, data }: List
 
     if (loading && index === itemCount - 1) {
         return (
-            <tr style={style}>
-                <TableCellBusy className="flex text-lg flex-justify-center m-0" />
+            <tr style={style} className="flex">
+                <TableCellBusy className="flex w100 text-lg flex-justify-center flex-align-items-center m-0" />
             </tr>
         );
     }
@@ -134,7 +136,7 @@ export const ListView = <T extends FileBrowserBaseItem, T1>({
     const rect = useElementRect(containerRef);
 
     const itemCount = loading ? items.length + 1 : items.length;
-    const itemHeight = rootFontSize * 2.5; // 2.5 x 16 = we want 40px by default
+    const itemHeight = rootFontSize() * 2.5; // 2.5 x 16 = we want 40px by default
 
     const itemData = {
         items,

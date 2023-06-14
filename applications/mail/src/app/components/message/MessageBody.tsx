@@ -3,7 +3,6 @@ import { RefObject, useEffect, useMemo, useRef, useState } from 'react';
 import { useMailSettings, useTheme } from '@proton/components';
 import { scrollIntoView } from '@proton/shared/lib/helpers/dom';
 import { isPlainText } from '@proton/shared/lib/mail/messages';
-import { DARK_THEMES } from '@proton/shared/lib/themes/themes';
 import clsx from '@proton/utils/clsx';
 
 import { useOnMailTo } from '../../containers/ComposeProvider';
@@ -52,8 +51,7 @@ const MessageBody = ({
     const [isIframeContentSet, setIsIframeContentSet] = useState(false);
     const bodyRef = useRef<HTMLDivElement>(null);
     const iframeRef = useRef<HTMLIFrameElement>(null);
-    const [theme] = useTheme();
-    const isDarkTheme = DARK_THEMES.includes(theme);
+    const theme = useTheme();
     const { highlightString, shouldHighlight } = useEncryptedSearchContext();
     const onMailTo = useOnMailTo();
     const [mailSettings] = useMailSettings();
@@ -120,7 +118,7 @@ const MessageBody = ({
                 plain && 'plain',
                 isPrint && 'message-content-print',
                 isPrint || !isIframeContentSet ? '' : 'py-4 px-5',
-                !placeholderMode && !hasDarkStyles && isDarkTheme && !plain && !sourceMode && 'dark-style', // Required for the iframe margin reserved for the horizontal scroll
+                !placeholderMode && !hasDarkStyles && theme.information.dark && !plain && !sourceMode && 'dark-style', // Required for the iframe margin reserved for the horizontal scroll
                 hasQuickReply && 'message-content-has-quick-reply',
             ])}
             data-testid="message-content:body"

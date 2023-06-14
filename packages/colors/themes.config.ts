@@ -43,11 +43,24 @@ const config: ThemeConfig[] = [
         ],
     },
     {
-        output: './themes/dist/contrast.theme.css',
+        output: './themes/dist/contrast-light.theme.css',
         files: [
             {
-                path: './themes/src/contrast/standard-base.css',
+                path: './themes/src/contrast-light/standard-base.css',
                 type: 'light',
+            },
+        ],
+    },
+    {
+        output: './themes/dist/contrast-dark.theme.css',
+        files: [
+            {
+                path: './themes/src/contrast-dark/standard-base.css',
+                type: 'dark',
+            },
+            {
+                path: './themes/src/contrast-dark/prominent-base.css',
+                type: 'dark',
             },
         ],
     },

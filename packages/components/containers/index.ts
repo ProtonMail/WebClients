@@ -2,7 +2,6 @@ export * from './account';
 export * from './addresses';
 export * from './api';
 export * from './app';
-export * from './appearance';
 export * from './authentication';
 export * from './autoReply';
 export * from './banner';

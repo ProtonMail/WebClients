@@ -2,7 +2,6 @@ import { FunctionComponent, ReactNode, useEffect, useRef, useState } from 'react
 
 import { c } from 'ttag';
 
-import { getCryptoWorkerOptions } from '@proton/components/containers/app/cryptoWorkerOptions';
 import metrics from '@proton/metrics';
 import { getApiErrorMessage, getIs401Error } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { requiresNonDelinquent } from '@proton/shared/lib/authentication/apps';
@@ -33,6 +32,7 @@ import {
     useConfig,
     useLoadFeature,
 } from '../../hooks';
+import { getCryptoWorkerOptions } from '../app/cryptoWorkerOptions';
 import { ContactProvider } from '../contacts';
 import { EventManagerProvider, EventModelListener, EventNotices } from '../eventManager';
 import { CalendarModelEventManagerProvider } from '../eventManager/calendar';
@@ -41,7 +41,7 @@ import ForceRefreshProvider from '../forceRefresh/Provider';
 import { KeyTransparencyManager } from '../keyTransparency';
 import { DensityInjector } from '../layouts';
 import { ModalsChildren } from '../modals';
-import { ThemeInjector } from '../themes';
+import ThemeInjector from '../themes/ThemeInjector';
 import DelinquentContainer from './DelinquentContainer';
 import KeyBackgroundManager from './KeyBackgroundManager';
 import StandardLoadErrorPage from './StandardLoadErrorPage';
@@ -107,6 +107,7 @@ const StandardPrivateApp = <T, M extends Model<T>, E, EvtM extends Model<E>>({
         const featuresPromise = getFeature([
             FeatureCode.EarlyAccessScope,
             FeatureCode.PassSettings,
+            FeatureCode.AccessibilitySettings,
             ...preloadFeatures,
         ]);
 

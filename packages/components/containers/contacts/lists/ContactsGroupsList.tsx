@@ -35,7 +35,7 @@ const ContactsGroupsList = ({
     const listRef = useRef<List>(null);
     const listContainerRef = useRef<HTMLDivElement>(null);
 
-    const contactRowHeightComfort = 4 * rootFontSize; // 4 * 16 = we want 64px by default
+    const contactRowHeightComfort = 4 * rootFontSize(); // 4 * 16 = we want 64px by default
 
     const contactGroupIDs: string[] = useMemo(() => {
         return groups.map((group) => group.ID);

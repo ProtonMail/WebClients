@@ -8,9 +8,8 @@ import { MessageState } from '../../../logic/messages/messagesTypes';
 import { getIframeRootDiv, initMessage, setup as messageSetup } from './Message.test.helpers';
 
 jest.mock('@proton/components/containers/themes/ThemeProvider', () => {
-    const { DARK_THEMES } = require('@proton/shared/lib/themes/themes');
     return {
-        useTheme: () => [DARK_THEMES[0]],
+        useTheme: () => ({ information: { dark: true } }),
     };
 });
 
@@ -66,7 +65,7 @@ describe('Message dark styles', () => {
         const content = `
             <div>
                 <p>this is a test</p>
-                <p style="color: #111">with forced color</p>
+                <p style='color: #111'>with forced color</p>
             </div>
         `;
 
@@ -79,7 +78,7 @@ describe('Message dark styles', () => {
         const content = `
             <div>
                 <p>this is a test</p>
-                <p style="background: #0000">with transparent background</p>
+                <p style='background: #0000'>with transparent background</p>
             </div>
         `;
 
@@ -92,7 +91,7 @@ describe('Message dark styles', () => {
         const content = `
             <div>
                 <p>this is a test</p>
-                <p style="color: #fff; background: #000">with forced light section</p>
+                <p style='color: #fff; background: #000'>with forced light section</p>
             </div>
         `;
 

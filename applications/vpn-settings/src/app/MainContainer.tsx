@@ -35,7 +35,6 @@ import {
     StandardErrorPage,
     SubscriptionModalProvider,
     SubscriptionsSection,
-    ThemesSection,
     TopBanners,
     TopNavbarUpsell,
     UnAuthenticated,
@@ -224,7 +223,6 @@ const MainContainer = () => {
                             <Route path={routes.general.to}>
                                 <PrivateMainSettingsArea config={routes.general}>
                                     <LanguageSection locales={locales} />
-                                    <ThemesSection />
                                 </PrivateMainSettingsArea>
                             </Route>
                             <Route path={routes.account.to}>

@@ -77,7 +77,7 @@ const ContactsList = ({
         }
     );
 
-    const contactRowHeightComfort = 4 * rootFontSize + 8; // 4 * 16 = we want 72px by default
+    const contactRowHeightComfort = 4 * rootFontSize() + 8; // 4 * 16 = we want 72px by default
 
     return (
         <div ref={elementRef} className={clsx(isDesktop ? 'items-column-list' : 'items-column-list--mobile')}>
