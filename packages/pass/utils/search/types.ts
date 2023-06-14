@@ -22,3 +22,4 @@ export type SelectItemsByDomainOptions = {
 };
 
 export type SelectAutofillCandidatesOptions = ParsedUrl & { shareId?: string };
+export type SelectAutosaveCandidatesOptions = { domain: string; subdomain: MaybeNull<string>; username: string };
