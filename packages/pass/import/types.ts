@@ -61,7 +61,7 @@ export const PROVIDER_INFO_MAP: Record<ImportProvider, { title: string; fileExte
         },
         [ImportProvider.DASHLANE]: {
             title: 'Dashlane',
-            fileExtension: 'zip',
+            fileExtension: 'zip, csv',
             tutorialUrl: 'https://proton.me/support/pass-import-dashlane',
         },
         [ImportProvider.PROTONPASS]: {
