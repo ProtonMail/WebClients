@@ -8,7 +8,7 @@ import { itemEq } from '@proton/pass/utils/pass/items';
 import { ListItemLink } from '../../../shared/components/router';
 import { ItemsListItem } from '../../components/Item/ItemsListItem';
 import { VirtualList } from '../../components/List/VirtualList';
-import { useItems } from '../../hooks/useItems';
+import { useTrashItems } from '../../hooks/useItems';
 import { useNavigationContext } from '../../hooks/useNavigationContext';
 import { useSelectItemClick } from '../../hooks/useSelectItemClick';
 
@@ -17,13 +17,14 @@ export const TrashItemsList: FC = () => {
     const onSelectItem = useSelectItemClick();
 
     const {
-        trash: { result, count, totalCount },
         filtering: { search },
-    } = useItems();
+        matched,
+        totalCount,
+    } = useTrashItems();
 
     const listRef = useRef<List>(null);
 
-    return count === 0 ? (
+    return matched.length === 0 ? (
         <div className="absolute-center flex flex-justify-center flex-align-items-center w70">
             <span className="block text-break color-weak text-sm p-2 text-center text-break">
                 {totalCount === 0 ? (
@@ -42,9 +43,9 @@ export const TrashItemsList: FC = () => {
     ) : (
         <VirtualList
             ref={listRef}
-            rowCount={count}
+            rowCount={matched.length}
             rowRenderer={({ style, index }) => {
-                const item = result[index];
+                const item = matched[index];
                 return (
                     <div style={style} key={item.itemId}>
                         <ItemsListItem
