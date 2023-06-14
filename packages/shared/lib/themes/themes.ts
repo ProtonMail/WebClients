@@ -138,16 +138,21 @@ export const PROTON_THEMES_MAP = {
 
 export const DARK_THEMES = [ThemeTypes.Carbon, ThemeTypes.Monokai, ThemeTypes.ContrastDark, ThemeTypes.Pass];
 
-export const PROTON_THEMES = [
-    ThemeTypes.Duotone,
-    ThemeTypes.Classic,
-    ThemeTypes.Snow,
-    ThemeTypes.Legacy,
-    ThemeTypes.Carbon,
-    ThemeTypes.Monokai,
-    ThemeTypes.ContrastLight,
-    ThemeTypes.ContrastDark,
-].map((id) => PROTON_THEMES_MAP[id]);
+export const getThemes = (accessibilitySettings: boolean) => {
+    const result = [
+        ThemeTypes.Duotone,
+        ThemeTypes.Classic,
+        ThemeTypes.Snow,
+        ThemeTypes.Legacy,
+        ThemeTypes.Carbon,
+        ThemeTypes.Monokai,
+        ThemeTypes.ContrastLight,
+    ];
+    if (accessibilitySettings) {
+        result.push(ThemeTypes.ContrastDark);
+    }
+    return result.map((id) => PROTON_THEMES_MAP[id]);
+};
 
 export enum ThemeModeSetting {
     Auto,
