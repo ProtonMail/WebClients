@@ -5,7 +5,6 @@ import { Picker } from 'emoji-mart';
 import { c } from 'ttag';
 
 import { DropdownSizeUnit, Icon } from '@proton/components/components';
-import { DARK_THEMES } from '@proton/shared/lib/themes/themes';
 import clsx from '@proton/utils/clsx';
 
 import { useTheme } from '../../../containers/themes';
@@ -49,8 +48,7 @@ interface Props {
 const ToolbarEmojiDropdown = ({ onInsert, openRef, className }: Props) => {
     const dropdownRef = useRef<ToolbarDropdownAction>(null);
 
-    const [theme] = useTheme();
-    const isDarkTheme = DARK_THEMES.includes(theme);
+    const theme = useTheme();
 
     const handleSelect = (emoji: Emoji) => {
         onInsert(emoji);
@@ -77,7 +75,7 @@ const ToolbarEmojiDropdown = ({ onInsert, openRef, className }: Props) => {
             <EmojiPicker
                 autoFocus="true"
                 onEmojiSelect={handleSelect}
-                theme={isDarkTheme ? 'dark' : 'light'}
+                theme={theme.information.dark ? 'dark' : 'light'}
                 set="native"
                 skinTonePosition="none"
                 previewPosition="none"

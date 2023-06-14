@@ -13,10 +13,11 @@ import percentage from '@proton/utils/percentage';
 import { useConfig, useSubscription, useUser } from '../../hooks';
 import { useFocusTrap } from '../focus';
 import { SettingsLink } from '../link';
-import { Meter, getMeterColor } from '../progress';
+import { getMeterColor } from '../progress';
 import { Tooltip } from '../tooltip';
 import Hamburger from './Hamburger';
 import MobileAppsLinks from './MobileAppsLinks';
+import SidebarStorageMeter from './SidebarStorageMeter';
 
 interface Props extends ComponentPropsWithoutRef<'div'> {
     app?: APP_NAMES;
@@ -80,7 +81,10 @@ const Sidebar = ({
 
     const storageText = (
         <>
-            <span className={clsx(['used-space text-bold', `color-${getMeterColor(spacePercentage)}`])}>
+            <span
+                className={clsx(['used-space text-bold', `color-${getMeterColor(spacePercentage)}`])}
+                style={{ '--signal-success': 'initial' }}
+            >
                 {humanSize(UsedSpace)}
             </span>
             &nbsp;/&nbsp;<span className="max-space">{humanSize(MaxSpace)}</span>
@@ -109,8 +113,7 @@ const Sidebar = ({
                 <div className="flex-item-fluid flex-nowrap flex flex-column overflow-overlay pb-4">{children}</div>
                 {APP_NAME !== APPS.PROTONVPN_SETTINGS ? (
                     <div className="app-infos px-3">
-                        <Meter
-                            thin
+                        <SidebarStorageMeter
                             label={`${c('Storage').t`Your current storage:`} ${humanSize(UsedSpace)} / ${humanSize(
                                 MaxSpace
                             )}`}

@@ -54,6 +54,10 @@ export const getMailAppRoutes = ({
                         id: 'general',
                     },
                     {
+                        text: c('Title').t`Layout`,
+                        id: 'layout',
+                    },
+                    {
                         text: c('Title').t`Messages`,
                         id: 'messages',
                     },
@@ -82,25 +86,6 @@ export const getMailAppRoutes = ({
                     {
                         text: c('Title').t`My addresses`,
                         id: 'addresses',
-                    },
-                ],
-            },
-            appearance: {
-                text: c('Title').t`Appearance`,
-                to: '/appearance',
-                icon: 'paint-roller',
-                subsections: [
-                    {
-                        text: c('Title').t`Theme`,
-                        id: 'theme',
-                    },
-                    {
-                        text: c('Title').t`Layout`,
-                        id: 'layout',
-                    },
-                    {
-                        text: c('Title').t`Sender image`,
-                        id: 'sender-image',
                     },
                 ],
             },
