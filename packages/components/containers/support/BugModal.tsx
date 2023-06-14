@@ -16,6 +16,7 @@ import {
     CollapsibleContent,
     CollapsibleHeader,
     CollapsibleHeaderIconButton,
+    DropdownSizeUnit,
     Form,
     Icon,
     InputFieldTwo,
@@ -286,6 +287,11 @@ const BugModal = ({ username: Username = '', email, mode, open, onClose, onExit 
                         }}
                         error={validator([requiredValidator(categoryTitle)])}
                         disabled={loading}
+                        size={{
+                            width: DropdownSizeUnit.Anchor,
+                            maxWidth: DropdownSizeUnit.Viewport,
+                            maxHeight: '16em',
+                        }}
                     >
                         {categoryOptions}
                     </InputFieldTwo>

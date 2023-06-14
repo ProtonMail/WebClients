@@ -8,7 +8,6 @@ import ThemesModal from '@proton/components/containers/themes/ThemesModal';
 import { APP_UPSELL_REF_PATH, MAIL_APP_NAME, UPSELL_COMPONENT, VPN_APP_NAME } from '@proton/shared/lib/constants';
 import { getItem, setItem } from '@proton/shared/lib/helpers/storage';
 import { addUpsellPath, getUpsellRef } from '@proton/shared/lib/helpers/upsell';
-import { PROTON_DEFAULT_THEME } from '@proton/shared/lib/themes/themes';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { MAIL_UPSELL_BANNERS_OPTIONS_URLS } from '../../constants';
@@ -43,8 +42,9 @@ interface Props {
     columnMode: boolean;
     onClose: () => void;
 }
+
 const MailUpsellBanner = ({ needToShowUpsellBanner, columnMode, onClose }: Props) => {
-    const [theme] = useTheme();
+    const theme = useTheme();
 
     const [option, setOption] = useState<MessageOption>();
 
@@ -150,7 +150,7 @@ const MailUpsellBanner = ({ needToShowUpsellBanner, columnMode, onClose }: Props
                     </span>
                 ),
             },
-            theme === PROTON_DEFAULT_THEME && {
+            theme.information.default && {
                 id: 12,
                 text: c('Info').t`Themes can give your inbox a new look.`,
                 cta: (

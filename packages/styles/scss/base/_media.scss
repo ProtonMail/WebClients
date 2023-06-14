@@ -1,7 +1,7 @@
 /**
  * reduced motion MQ: for vestibular disorders
  */
-@include media('reduced-motion') {
+@mixin reduce-motion {
 	*,
 	*::before,
 	*::after {
@@ -15,4 +15,12 @@
 		// enabled in accessibility settings. Even though transitions are not involved.
 		transition-duration: 0.01ms !important;
 	}
+}
+
+@include media('reduced-motion') {
+	@include reduce-motion;
+}
+
+.feature-animations-off {
+	@include reduce-motion;
 }

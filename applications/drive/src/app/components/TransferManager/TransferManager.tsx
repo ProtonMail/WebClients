@@ -30,7 +30,6 @@ interface TransferListEntry<T extends TransferType> {
     type: T;
 }
 
-const ROW_HEIGHT_PX = 4.375 * rootFontSize; // 4.375 * 16 =  we want 70px by default
 const MAX_VISIBLE_TRANSFERS = 5;
 const MAX_VISIBLE_TRANSFERS_MOBILE = 3;
 
@@ -113,6 +112,8 @@ const TransferManager = ({
     const [confirmModal, showConfirmModal] = useConfirmActionModal();
     const { isNarrow } = useActiveBreakpoint();
     const [isRTL] = useRightToLeft();
+
+    const ROW_HEIGHT_PX = 4.375 * rootFontSize(); // 4.375 * 16 =  we want 70px by default
 
     useEffect(() => {
         window.addEventListener('unload', onClear);

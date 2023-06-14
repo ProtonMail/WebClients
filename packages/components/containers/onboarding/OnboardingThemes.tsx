@@ -15,16 +15,11 @@ const OnboardingThemes = ({ themes, themeIdentifier, onChange, ...rest }: Props)
     return (
         <OnboardingContent
             title={c('Onboarding Proton').t`Select a theme`}
-            description={c('Onboarding Proton').t`You can change this anytime in your settings.`}
+            description={c('Onboarding Proton')
+                .t`More theming options are available in your account Settings > Appearance.`}
             {...rest}
         >
-            <ThemeCards
-                className="theme-modal-list"
-                list={themes}
-                size="small"
-                themeIdentifier={themeIdentifier}
-                onChange={onChange}
-            />
+            <ThemeCards list={themes} themeIdentifier={themeIdentifier} onChange={onChange} size="large" />
         </OnboardingContent>
     );
 };

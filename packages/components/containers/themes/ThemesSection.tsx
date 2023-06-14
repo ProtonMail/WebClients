@@ -1,33 +1,94 @@
 import { c } from 'ttag';
 
-import { updateThemeType } from '@proton/shared/lib/api/settings';
-import { PROTON_THEMES, ThemeTypes } from '@proton/shared/lib/themes/themes';
+import { BRAND_NAME } from '@proton/shared/lib/constants';
+import { ColorScheme, PROTON_THEMES, ThemeModeSetting } from '@proton/shared/lib/themes/themes';
 
-import { useApi } from '../../hooks';
-import { SettingsParagraph, SettingsSectionWide } from '../account';
+import { Info, Toggle, useNotifications } from '../..';
+import {
+    SettingsLayout,
+    SettingsLayoutLeft,
+    SettingsLayoutRight,
+    SettingsParagraph,
+    SettingsSectionWide,
+} from '../account';
 import ThemeCards from './ThemeCards';
 import { useTheme } from './ThemeProvider';
+import ThemeSyncModeCard from './ThemeSyncModeCard';
 
-const ThemesSection = () => {
-    const api = useApi();
-    const [theme, setTheme] = useTheme();
+const ThemesSection = ({ accessibilitySettingsAvailable }: { accessibilitySettingsAvailable: boolean }) => {
+    const { information, settings, setTheme, setAutoTheme } = useTheme();
 
-    const handleThemeChange = (newThemeType: ThemeTypes) => {
-        setTheme(newThemeType);
-        api(updateThemeType(newThemeType));
-    };
+    const { createNotification } = useNotifications();
+    const notifyPreferenceSaved = () => createNotification({ text: c('Success').t`Preference saved` });
 
     return (
-        <SettingsSectionWide>
-            <SettingsParagraph>{c('Info').t`Choose the look and feel of the application.`}</SettingsParagraph>
-            <ThemeCards
-                className="flex"
-                liClassName="mr-4 mb-4"
-                list={PROTON_THEMES}
-                themeIdentifier={theme}
-                onChange={handleThemeChange}
-            />
-        </SettingsSectionWide>
+        <>
+            <SettingsSectionWide>
+                <SettingsParagraph>{c('Info')
+                    .t`Customize the look and feel of ${BRAND_NAME} applications.`}</SettingsParagraph>
+            </SettingsSectionWide>
+
+            {accessibilitySettingsAvailable && (
+                <SettingsLayout>
+                    <SettingsLayoutLeft>
+                        <label htmlFor="themeSyncToggle" className="text-semibold align-top">
+                            <span className="mr-2">{c('Label').t`Synchronize with system`}</span>
+                            <Info
+                                title={c('Tooltip')
+                                    .t`Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes`}
+                            />
+                        </label>
+                    </SettingsLayoutLeft>
+                    <SettingsLayoutRight className="flex pt-1">
+                        <Toggle
+                            id="themeSyncToggle"
+                            checked={settings.Mode === ThemeModeSetting.Auto}
+                            onChange={(e) => {
+                                setAutoTheme(e.target.checked);
+                                notifyPreferenceSaved();
+                            }}
+                        />
+                    </SettingsLayoutRight>
+                </SettingsLayout>
+            )}
+
+            {settings.Mode === ThemeModeSetting.Auto ? (
+                <SettingsSectionWide className="flex mt-6 flex-nowrap gap-4 on-mobile-flex-column">
+                    <ThemeSyncModeCard
+                        mode="light"
+                        list={PROTON_THEMES}
+                        themeIdentifier={settings.LightTheme}
+                        onChange={(themeType) => {
+                            setTheme(themeType, ThemeModeSetting.Light);
+                            notifyPreferenceSaved();
+                        }}
+                        active={information.colorScheme === ColorScheme.Light}
+                    />
+                    <ThemeSyncModeCard
+                        mode="dark"
+                        list={PROTON_THEMES}
+                        themeIdentifier={settings.DarkTheme}
+                        onChange={(themeType) => {
+                            setTheme(themeType, ThemeModeSetting.Dark);
+                            notifyPreferenceSaved();
+                        }}
+                        active={information.colorScheme === ColorScheme.Dark}
+                    />
+                </SettingsSectionWide>
+            ) : (
+                <SettingsSectionWide className="mt-6">
+                    <ThemeCards
+                        size="large"
+                        list={PROTON_THEMES}
+                        themeIdentifier={information.theme}
+                        onChange={(themeType) => {
+                            setTheme(themeType);
+                            notifyPreferenceSaved();
+                        }}
+                    />
+                </SettingsSectionWide>
+            )}
+        </>
     );
 };
 

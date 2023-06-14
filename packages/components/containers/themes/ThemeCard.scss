@@ -1,14 +1,7 @@
 @import '~@proton/styles/scss/lib';
 
-.theme-card {
-	&-button {
-		&#{&} {
-			background-color: transparent;
-			padding: rem(4); // Custom padding for theme cards so that the svg takes the full width
-		}
-	}
-
-	&-image {
-		inline-size: rem(122);
+.theme-card-button {
+	&#{&} {
+		background-color: transparent; // Force transparent background even when active
 	}
 }
