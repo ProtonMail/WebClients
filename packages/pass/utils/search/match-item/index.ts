@@ -1,14 +1,14 @@
 import type { Item, ItemType } from '@proton/pass/types';
 import type { ItemMatchFunc, ItemMatchFuncMap } from '@proton/pass/utils/search';
 
-import matchesAliasItem from '../../popup/views/Item/Alias/Alias.match';
-import matchesLoginItem from '../../popup/views/Item/Login/Login.match';
-import matchesNoteItem from '../../popup/views/Item/Note/Note.match';
+import matchesAliasItem from './alias.match';
+import matchesLoginItem from './login.match';
+import matchesNoteItem from './note.match';
 
 /**
  * Each item should expose its own searching mechanism :
- * we may include/exclude certain fields or add extra criteras
- * depending on the type of item we're targetting
+ * we may include/exclude certain fields or add extra criteria
+ * depending on the type of item we're targeting
  */
 const itemMatchers: ItemMatchFuncMap = {
     login: matchesLoginItem,

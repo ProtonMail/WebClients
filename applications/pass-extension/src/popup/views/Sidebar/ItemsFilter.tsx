@@ -38,7 +38,7 @@ const optionsWithoutCount: { [key in ItemsFilterOption]: { label: string; icon: 
 
 export const ItemsFilter: VFC<ItemsFilterProps> = ({ value, onChange }) => {
     const { anchorRef, isOpen, close, toggle } = usePopperAnchor<HTMLButtonElement>();
-    const { matched } = useItems().items;
+    const { matched } = useItems();
 
     const options = useMemo(
         () =>
