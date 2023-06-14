@@ -100,10 +100,16 @@ export const createDropdown = (): InjectedDropdown => {
                     }
                     case DropdownAction.AUTOSUGGEST_ALIAS: {
                         const { domain, subdomain, displayName } = getExtensionContext().url;
+                        const user = await sendMessage.on(
+                            contentScriptMessage({ type: WorkerMessageType.RESOLVE_USER_DATA }),
+                            (res) => (res.type === 'success' ? res.user : null)
+                        );
+
                         return {
                             action,
                             domain: subdomain ?? domain!,
                             prefix: deriveAliasPrefix(displayName!),
+                            userEmail: user?.Email ?? null,
                         };
                     }
                     case DropdownAction.AUTOSUGGEST_PASSWORD: {
