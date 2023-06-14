@@ -1,7 +1,6 @@
-import { Ref, forwardRef, memo, useEffect, useRef } from 'react';
+import { Ref, forwardRef, memo, useRef } from 'react';
 import { Redirect, useRouteMatch } from 'react-router-dom';
 
-import { EasySwitchGmailSyncModal, EasySwitchProvider, useEasySwitchGmailSync } from '@proton/activation/index';
 import {
     CalendarDrawerAppButton,
     ContactDrawerAppButton,
@@ -15,7 +14,6 @@ import {
     useModalState,
     useOpenDrawerOnLoad,
     useUserSettings,
-    useWelcomeFlags,
 } from '@proton/components';
 import { APPS } from '@proton/shared/lib/constants';
 import { isAppInView } from '@proton/shared/lib/drawer/helpers';
@@ -25,6 +23,7 @@ import isTruthy from '@proton/utils/isTruthy';
 
 import PrivateLayout from '../components/layout/PrivateLayout';
 import { LabelActionsContextProvider } from '../components/sidebar/EditLabelContext';
+import MailOnboardingWrapper from '../components/onboarding/MailOnboardingWrapper';
 import { HUMAN_TO_LABEL_IDS } from '../constants';
 import { MailUrlParams } from '../helpers/mailboxUrl';
 import { useContactsListener } from '../hooks/contact/useContactsListener';
@@ -36,7 +35,6 @@ import { usePageHotkeys } from '../hooks/mailbox/usePageHotkeys';
 import { useDeepMemo } from '../hooks/useDeepMemo';
 import { Breakpoints } from '../models/utils';
 import LegacyMessagesMigrationContainer from './LegacyMessagesMigrationContainer';
-import MailStartupModals from './MailStartupModals';
 import MailboxContainer from './mailbox/MailboxContainer';
 
 interface Props {
@@ -47,15 +45,8 @@ interface Props {
 const PageContainer = ({ params: { elementID, labelID, messageID }, breakpoints }: Props, ref: Ref<HTMLDivElement>) => {
     const [userSettings] = useUserSettings();
     const [mailSettings] = useMailSettings();
-    const [, setWelcomeFlagsDone] = useWelcomeFlags();
     const [mailShortcutsProps, setMailShortcutsModalOpen] = useModalState();
     const { showDrawerSidebar, appInView } = useDrawer();
-
-    const [syncModalProps, setSyncModalProps, renderSyncModal] = useModalState();
-    const { derivedValues, handleSyncSkip, handleSyncCallback } = useEasySwitchGmailSync();
-    useEffect(() => {
-        setSyncModalProps(derivedValues.displaySync);
-    }, [derivedValues]);
 
     useOpenDrawerOnLoad();
     const { getFeature } = useFeatures([FeatureCode.LegacyMessageMigrationEnabled]);
@@ -111,23 +102,7 @@ const PageContainer = ({ params: { elementID, labelID, messageID }, breakpoints 
             drawerSpotlightSeenRef={drawerSpotlightSeenRef}
             showDrawerSidebar={showDrawerSidebar}
         >
-            <EasySwitchProvider>
-                <>
-                    {renderSyncModal && (
-                        <EasySwitchGmailSyncModal
-                            onSyncCallback={handleSyncCallback}
-                            onSyncSkipCallback={handleSyncSkip}
-                            {...syncModalProps}
-                        />
-                    )}
-                    {derivedValues.displayOnboarding && (
-                        <MailStartupModals
-                            onboardingOpen={derivedValues.displayOnboarding}
-                            onOnboardingDone={() => setWelcomeFlagsDone()}
-                        />
-                    )}
-                </>
-            </EasySwitchProvider>
+            <MailOnboardingWrapper />
             {runLegacyMessageMigration && <LegacyMessagesMigrationContainer />}
             <LabelActionsContextProvider>
                 <MailboxContainer
