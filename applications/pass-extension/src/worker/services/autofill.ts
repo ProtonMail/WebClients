@@ -27,6 +27,7 @@ export const createAutoFillService = () => {
             username: item.data.content.username,
             itemId: item.itemId,
             shareId: item.shareId,
+            url: item.data.content.urls?.[0],
         }));
 
     const getAutofillData = ({
