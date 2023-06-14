@@ -49,7 +49,9 @@ const HeaderExtra = ({
     // TODO: Remove when API has fixed expiresIn and freeze flag issue
     const isFrozen = isFrozenExpiration(message.data) || !!message.draftFlags?.expiresIn;
     const hasExpiration = !!(message.data?.ExpirationTime || message.draftFlags?.expiresIn);
-    const isSpamOrTrash = message.data?.LabelIDs?.includes(MAILBOX_LABEL_IDS.TRASH || MAILBOX_LABEL_IDS.SPAM);
+    const hasSpamOrTrash =
+        message.data?.LabelIDs?.includes(MAILBOX_LABEL_IDS.TRASH) ||
+        message.data?.LabelIDs?.includes(MAILBOX_LABEL_IDS.SPAM);
 
     if (!getMessageHasData(message)) {
         return null;
@@ -82,8 +84,10 @@ const HeaderExtra = ({
             {showCalendarWidget ? <ExtraEvents message={message} /> : null}
             {isScheduledMessage && canScheduleSend ? <ExtraScheduledMessage message={message} /> : null}
             {hasExpiration && isFrozen ? <ExtraExpirationSentExpirationAutoDelete message={message} /> : null}
-            {hasExpiration && !isFrozen && !isSpamOrTrash ? <ExtraExpirationSelfDestruction message={message} /> : null}
-            {hasExpiration && !isFrozen && isSpamOrTrash ? (
+            {hasExpiration && !isFrozen && !hasSpamOrTrash ? (
+                <ExtraExpirationSelfDestruction message={message} />
+            ) : null}
+            {hasExpiration && !isFrozen && hasSpamOrTrash ? (
                 <ExtraExpirationSentExpirationAutoDelete message={message} autoDelete />
             ) : null}
 
