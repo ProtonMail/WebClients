@@ -23,7 +23,7 @@ const DetailsButton = ({ selectedLinks }: Props) => {
         <>
             <ToolbarButton
                 title={c('Action').t`Details`}
-                icon={<Icon name="info-circle" />}
+                icon={<Icon name="info-circle" alt={c('Action').t`Details`} />}
                 onClick={() => {
                     if (selectedLinks.length === 1) {
                         void showDetailsModal({

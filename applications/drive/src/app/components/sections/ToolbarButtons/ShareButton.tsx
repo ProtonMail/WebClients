@@ -17,7 +17,7 @@ const ShareButton = ({ shareId }: Props) => {
         <>
             <ToolbarButton
                 title={c('Action').t`Get link`}
-                icon={<Icon name="link" />}
+                icon={<Icon name="link" alt={c('Action').t`Get link`} />}
                 onClick={() => {
                     void showFileSharingModal({ shareId, showLinkSharingModal });
                 }}
