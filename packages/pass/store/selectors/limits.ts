@@ -30,19 +30,28 @@ export const selectAliasLimits = createSelector([selectItemsByType('alias'), sel
 });
 
 export const selectTOTPLimits = createSelector([selectItemsByType('login'), selectUserPlan], (loginItems, plan) => {
-    const totpLimit = plan?.TotpLimit ?? Number.MAX_SAFE_INTEGER;
-    const totpItems = loginItems.filter((item) => Boolean(item.data.content.totpUri));
-    const totpTotalCount = totpItems.length;
+    const totpLimit = plan?.TotpLimit;
+    let needsUpgrade = false;
+    let didDowngrade = false;
+    let totpAllowed: (itemId: string) => boolean = () => true;
+
+    if (typeof totpLimit === 'number') {
+        const totpItems = loginItems.filter((item) => Boolean(item.data.content.totpUri));
+        const totpTotalCount = totpItems.length;
+
+        needsUpgrade = totpTotalCount >= totpLimit;
+        didDowngrade = totpTotalCount > totpLimit;
+        totpAllowed = (itemId: string) =>
+            sortItems(totpItems, 'createTimeASC')
+                .slice(0, totpLimit)
+                .some((item) => item.itemId === itemId);
+    }
 
     return {
         totpLimit,
-        totpTotalCount,
-        needsUpgrade: totpTotalCount >= totpLimit,
-        didDowngrade: totpTotalCount > totpLimit,
-        totpAllowed: (itemId: string) =>
-            sortItems(totpItems, 'createTimeASC')
-                .slice(0, totpLimit)
-                .some((item) => item.itemId === itemId),
+        needsUpgrade,
+        didDowngrade,
+        totpAllowed,
     };
 });
 
