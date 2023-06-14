@@ -4691,7 +4691,7 @@ __metadata:
     prettier: ^2.8.8
     redux: ^4.2.1
     redux-saga: ^1.2.3
-    tldts: ^5.7.112
+    tldts: ^6.0.5
     typescript: ^5.1.3
     webextension-polyfill: ^0.10.0
     x2js: ^3.4.4
@@ -25921,7 +25921,7 @@ fsevents@^1.2.7:
     redux: ^4.2.1
     redux-saga: ^1.2.3
     remote-redux-devtools: ^0.5.16
-    tldts: ^5.7.112
+    tldts: ^6.0.5
     ttag: ^1.7.24
     typescript: ^5.1.3
     webextension-polyfill: ^0.10.0
@@ -30407,21 +30407,21 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"tldts-core@npm:^5.7.112":
-  version: 5.7.112
-  resolution: "tldts-core@npm:5.7.112"
-  checksum: e86b1dd29a5fdb18b33b3fb49fc11778c11229adf83cc73d360ef0481d52309b91c8daa9aa6e5cf56540391a49b13c02326eb5311e869bdc66bb952e86b1e2be
+"tldts-core@npm:^6.0.5":
+  version: 6.0.5
+  resolution: "tldts-core@npm:6.0.5"
+  checksum: 8f63ff15f04898525749009551fc87afa21d87268fce548bc0062256d71ccbb68145aa4be965de8ce7669466be88b8c87c3a710df0956e75e38cfdc216458679
   languageName: node
   linkType: hard
 
-"tldts@npm:^5.7.112":
-  version: 5.7.112
-  resolution: "tldts@npm:5.7.112"
+"tldts@npm:^6.0.5":
+  version: 6.0.5
+  resolution: "tldts@npm:6.0.5"
   dependencies:
-    tldts-core: ^5.7.112
+    tldts-core: ^6.0.5
   bin:
     tldts: bin/cli.js
-  checksum: 10832dab1cf4c32d1eac589ee7f301fff954b4419c1b8854599a08516b341fe22b16dd9a4d37b14446475a8812223413a76f9b7f61de6ba24df128891d62a136
+  checksum: 79661c4139bedcff48fe42b8229471d0ee94cf8ec6a332954e9b3fd40d1d8e194dfcdbd2267cd09ba1c5c604227af9f17594a4341ccf42f5df30567fe5951bf7
   languageName: node
   linkType: hard
 
