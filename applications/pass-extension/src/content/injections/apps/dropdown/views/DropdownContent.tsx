@@ -77,12 +77,12 @@ export const DropdownContent: VFC = () => {
         ],
     });
 
-    // ALIAS - TODO: display user email
+    // ALIAS - DONE
     // const [dropdownState, setDropdownState] = useState<MaybeNull<DropdownSetActionPayload>>({
     //     action: DropdownAction.AUTOSUGGEST_ALIAS,
     //     domain: 'localhost',
     //     prefix: 'test',
-    //     userEmail: 'toto@foo.fr'
+    //     userEmail: 'verylongnametototototototototototo@foo.fr'
     // });
 
     // -- END FAKE STATE --
@@ -186,11 +186,18 @@ export const DropdownContent: VFC = () => {
                             <AliasAutoSuggest
                                 prefix={dropdownState.prefix}
                                 domain={dropdownState.domain}
+                                userEmail={dropdownState.userEmail}
                                 onOptions={triggerResize}
-                                onSubmit={withStateReset((aliasEmail) => {
+                                onSubmitAliasEmail={withStateReset((aliasEmail) => {
                                     postMessage({
                                         type: IFrameMessageType.DROPDOWN_AUTOSUGGEST_ALIAS,
                                         payload: { aliasEmail },
+                                    });
+                                })}
+                                onSubmitUserEmail={withStateReset((userEmail) => {
+                                    postMessage({
+                                        type: IFrameMessageType.DROPDOWN_AUTOSUGGEST_USER_EMAIL,
+                                        payload: { userEmail },
                                     });
                                 })}
                             />
