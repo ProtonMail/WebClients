@@ -1,7 +1,7 @@
 import { Meta, Source } from '@storybook/addon-docs';
 
-import { Alert } from '@proton/components';
-import themeDefaultSvg from '@proton/styles/assets/img/themes/theme-thumb-duotone.svg';
+import { Alert, ThemeSvg } from '@proton/components';
+import { PROTON_DEFAULT_THEME, PROTON_THEMES_MAP } from '@proton/shared/lib/themes/themes';
 
 import { getTitle } from '../../../helpers/title';
 
@@ -22,7 +22,7 @@ The applications interface is separated into two sections: the **main** section 
 Since the default theme uses different text and background colors in these sections, it makes sense to separate them in the theming files too.
 
 <figure className="text-center">
-    <img className="shadow-lifted w25" src={themeDefaultSvg} alt="Proton default theme" />
+    <ThemeSvg size="large" colors={PROTON_THEMES_MAP[PROTON_DEFAULT_THEME].thumbColors} className="shadow-lifted w25" />
     <figcaption className="text-sm mt-2 mb-0 text-italic">Proton default theme</figcaption>
 </figure>
 
