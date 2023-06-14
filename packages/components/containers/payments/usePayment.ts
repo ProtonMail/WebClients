@@ -21,9 +21,17 @@ interface Props {
     onPaypalPay: (data: OnPayResult) => void;
     onValidatePaypal?: () => Promise<boolean>;
     defaultMethod?: PAYMENT_METHOD_TYPES | undefined;
+    paypalPrefetchToken?: boolean;
 }
 
-const usePayment = ({ amount, currency, onValidatePaypal, onPaypalPay, defaultMethod }: Props) => {
+const usePayment = ({
+    amount,
+    currency,
+    onValidatePaypal,
+    onPaypalPay,
+    defaultMethod,
+    paypalPrefetchToken = true,
+}: Props) => {
     const { card, setCard, errors: cardErrors, fieldsStatus: cardFieldStatus, isValid } = useCard();
     const [method, setMethod] = useState<PaymentMethodType | undefined>(defaultMethod);
     const [cardSubmitted, setCardSubmitted] = useState(false);
@@ -94,7 +102,7 @@ const usePayment = ({ amount, currency, onValidatePaypal, onPaypalPay, defaultMe
     useEffect(() => {
         paypal.clear();
         paypalCredit.clear();
-        if (isPayPalActive && amount) {
+        if (isPayPalActive && amount && paypalPrefetchToken) {
             paypal.onToken().then(() => paypalCredit.onToken());
         }
     }, [isPayPalActive, amount, currency]);

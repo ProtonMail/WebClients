@@ -24,8 +24,8 @@ export interface PayPalHook {
     isReady: boolean;
     loadingToken: boolean;
     loadingVerification: boolean;
-    onToken: () => Promise<void>;
-    onVerification: () => Promise<void>;
+    onToken: () => Promise<Model>;
+    onVerification: (model?: Model) => Promise<void>;
     clear: () => void;
 }
 
@@ -59,14 +59,14 @@ const usePayPal = ({ amount = 0, currency: Currency, type: Type, onPay, onValida
                 })
             );
             setModel(result);
+            return result;
         } catch (error: any) {
             clear();
             throw error;
         }
     };
 
-    const onVerification = async () => {
-        const { Token, ApprovalURL, ReturnHost } = model;
+    const onVerification = async ({ Token, ApprovalURL, ReturnHost }: Model = model) => {
         const tokenPaymentMethod = await new Promise<TokenPaymentMethod>((resolve, reject) => {
             const onProcess = () => {
                 const abort = new AbortController();
@@ -100,14 +100,16 @@ const usePayPal = ({ amount = 0, currency: Currency, type: Type, onPay, onValida
         isReady: !!model.Token,
         loadingToken,
         loadingVerification,
-        onToken: async () => {
-            return withLoadingToken(onToken());
+        onToken: () => {
+            const tokenPromise = onToken();
+            withLoadingToken(tokenPromise);
+            return tokenPromise;
         },
-        onVerification: async () => {
+        onVerification: async (model?: Model) => {
             if (!((await onValidate?.()) ?? true)) {
                 return;
             }
-            return withLoadingVerification(onVerification());
+            return withLoadingVerification(onVerification(model));
         },
         clear,
     };
