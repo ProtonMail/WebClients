@@ -56,6 +56,7 @@ export enum IFrameMessageType {
     DROPDOWN_AUTOFILL_LOGIN = 'DROPDOWN_AUTOFILL_LOGIN',
     DROPDOWN_AUTOSUGGEST_PASSWORD = 'DROPDOWN_AUTOSUGGEST_PASSWORD',
     DROPDOWN_AUTOSUGGEST_ALIAS = 'DROPDOWN_AUTOSUGGEST_ALIAS',
+    DROPDOWN_AUTOSUGGEST_USER_EMAIL = 'DROPDOWN_AUTOSUGGEST_USER_EMAIL',
     NOTIFICATION_ACTION = 'NOTIFICATION_ACTION',
     NOTIFICATION_AUTOSAVE_REQUEST = 'NOTIFICATION_AUTOSAVE_REQUEST',
     NOTIFICATION_AUTOSAVE_SUCCESS = 'NOTIFICATION_AUTOSAVE_SUCCESS',
@@ -75,6 +76,7 @@ export type IFrameMessage<T extends IFrameMessageType = IFrameMessageType> = Ext
     | { type: IFrameMessageType.DROPDOWN_AUTOFILL_LOGIN; payload: { item: SafeLoginItem } }
     | { type: IFrameMessageType.DROPDOWN_AUTOSUGGEST_PASSWORD; payload: { password: string } }
     | { type: IFrameMessageType.DROPDOWN_AUTOSUGGEST_ALIAS; payload: { aliasEmail: string } }
+    | { type: IFrameMessageType.DROPDOWN_AUTOSUGGEST_USER_EMAIL; payload: { userEmail: string } }
     | { type: IFrameMessageType.NOTIFICATION_ACTION; payload: NotificationSetActionPayload },
     { type: T }
 >;
