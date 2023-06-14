@@ -4,67 +4,42 @@ import type {
     ItemRevision,
     ItemRevisionWithOptimistic,
     ItemType,
-    ItemsSortOption,
     Maybe,
     MaybeNull,
     UniqueItem,
 } from '@proton/pass/types';
 import { invert, prop } from '@proton/pass/utils/fp';
-import { isLoginItem } from '@proton/pass/utils/pass/items';
+import { flattenItemsByShareId, isLoginItem } from '@proton/pass/utils/pass/items';
 import { isTrashed } from '@proton/pass/utils/pass/trash';
-import { ItemUrlMatch, getItemPriorityForUrl, matchAny, matchItem } from '@proton/pass/utils/search';
+import type {
+    SelectAutofillCandidatesOptions,
+    SelectItemsByDomainOptions,
+    SelectItemsOptions,
+} from '@proton/pass/utils/search';
+import {
+    ItemUrlMatch,
+    filterItemsByShareId,
+    filterItemsByType,
+    getItemPriorityForUrl,
+    matchAny,
+    matchItems,
+    sortItems,
+} from '@proton/pass/utils/search';
 import { isEmptyString } from '@proton/pass/utils/string';
-import type { ParsedUrl } from '@proton/pass/utils/url';
 
 import { unwrapOptimisticState } from '../optimistic/utils/transformers';
 import { withOptimisticItemsByShareId } from '../reducers/items';
 import type { State } from '../types';
 
-const flattenItemsByShareId = (itemsByShareId: {
-    [shareId: string]: { [itemId: string]: ItemRevision };
-}): ItemRevision[] => Object.values(itemsByShareId).flatMap(Object.values);
-
-export const sortItems = <T extends ItemRevision>(items: T[], sort?: MaybeNull<ItemsSortOption>) => {
-    if (!sort) return items;
-
-    return items.sort((a, b) => {
-        switch (sort) {
-            case 'createTimeASC':
-                return a.createTime - b.createTime;
-            case 'createTimeDESC':
-                return b.createTime - a.createTime;
-            case 'recent':
-                return (
-                    Math.max(b.lastUseTime ?? b.modifyTime, b.modifyTime) -
-                    Math.max(a.lastUseTime ?? a.modifyTime, a.modifyTime)
-                );
-            case 'titleASC':
-                return a.data.metadata.name.localeCompare(b.data.metadata.name);
-        }
-    });
-};
-
-export const filterItemsByShareId = <T extends ItemRevision>(items: T[], shareId?: MaybeNull<string>) => {
-    if (!shareId) return items;
-    return items.filter((item) => shareId === item.shareId);
-};
-
-export const filterItemsByType = <T extends ItemRevision>(items: T[], itemType?: MaybeNull<ItemType>) => {
-    if (!itemType) return items;
-    return items.filter((item) => !itemType || itemType === item.data.type);
-};
-
-export const matchItems = <T extends ItemRevision>(items: T[], search?: string) => {
-    if (!search || search.trim() === '') return items;
-    return items.filter((item) => matchItem(item.data)(search));
-};
-
+const { asIfNotFailed, asIfNotOptimistic } = withOptimisticItemsByShareId.selectors;
 export const selectByShareId = (state: State) => state.items.byShareId;
 export const selectByOptimisticIds = (state: State) => state.items.byOptimistcId;
+
+export const selectByShareIdAsIfNotFailed = createSelector(selectByShareId, asIfNotFailed);
+export const selectByShareIdAsIfNotOptimistic = createSelector(selectByShareId, asIfNotOptimistic);
 export const selectItems = createSelector([selectByShareId], unwrapOptimisticState);
 export const selectAllItems = createSelector(selectItems, flattenItemsByShareId);
 export const selectAllTrashedItems = createSelector([selectAllItems], (items) => items.filter(isTrashed));
-
 export const selectItemsByShareId = createSelector(
     [selectItems, (_: State, shareId?: string) => shareId],
     (items, shareId) =>
@@ -83,10 +58,6 @@ export const selectItemByShareIdAndId = (shareId: string, itemId: string) =>
 
         return idFromOptimisticId ? byItemId?.[idFromOptimisticId] : byItemId?.[itemId];
     });
-
-const { asIfNotFailed, asIfNotOptimistic } = withOptimisticItemsByShareId.selectors;
-export const selectByShareIdAsIfNotFailed = createSelector(selectByShareId, asIfNotFailed);
-export const selectByShareIdAsIfNotOptimistic = createSelector(selectByShareId, asIfNotOptimistic);
 
 const selectItemsWithOptimisticFactory = ({ trash }: { trash: boolean }) =>
     createSelector(
@@ -107,49 +78,44 @@ const selectItemsWithOptimisticFactory = ({ trash }: { trash: boolean }) =>
 export const selectItemsWithOptimistic = selectItemsWithOptimisticFactory({ trash: false });
 export const selectTrashItemsWithOptimistic = selectItemsWithOptimisticFactory({ trash: true });
 
-type SelectOptions = {
-    itemType?: MaybeNull<ItemType>;
-    shareId?: MaybeNull<string>;
-    search?: string;
-    sort?: MaybeNull<ItemsSortOption>;
-};
-
-/*
- * Selectors organized to separate sort from search, as sorting can be computationally
+/* Selectors organized to separate sort from search, as sorting can be computationally
  * expensive when the number of items is high. The search is expected to change more
- * frequently than the shareId / sortOption
- */
-
+ * frequently than the shareId / sortOption */
 const selectShareItemsWithOptimistic = createSelector(
     [
         selectItemsWithOptimistic,
-        (_state: State, { shareId }: SelectOptions) => shareId,
-        (_state: State, { sort }: SelectOptions) => sort,
+        (_state: State, { shareId }: SelectItemsOptions) => shareId,
+        (_state: State, { sort }: SelectItemsOptions) => sort,
     ],
-    (items, shareId, sort) => {
-        return sortItems(filterItemsByShareId(items, shareId), sort);
+    (items, shareId, sort) => sortItems(filterItemsByShareId(items, shareId), sort)
+);
+
+const matchedAndFilteredItemsWithOptimisticSelector = createSelector(
+    [
+        selectShareItemsWithOptimistic,
+        (_state: State, { search }: SelectItemsOptions) => search,
+        (_state: State, { itemType }: SelectItemsOptions) => itemType,
+    ],
+    (items, search, itemType) => {
+        const matched = matchItems(items, search);
+        const filtered = filterItemsByType(matched, itemType);
+        return { matched, filtered, totalCount: items.length };
     }
 );
 
-export const selectMatchedAndFilteredItemsWithOptimistic = (options: SelectOptions) => (state: State) =>
-    createSelector(
-        [
-            selectShareItemsWithOptimistic,
-            (_state: State, { search }: SelectOptions) => search,
-            (_state: State, { itemType }: SelectOptions) => itemType,
-        ],
-        (items, search, itemType) => {
-            const matched = matchItems(items, search);
-            const filtered = filterItemsByType(matched, itemType);
-            return { matched, filtered, totalCount: items.length };
-        }
-    )(state, options);
+export const selectMatchedAndFilteredItemsWithOptimistic = (options: SelectItemsOptions) => (state: State) =>
+    matchedAndFilteredItemsWithOptimisticSelector(state, options);
 
-export const selectMatchedTrashItemsWithOptimistic = (search?: string) => (state: State) =>
-    createSelector([selectTrashItemsWithOptimistic, (_state: State, search?: string) => search], (items, search) => {
+const matchedTrashItemsWithOptimisticSelector = createSelector(
+    [selectTrashItemsWithOptimistic, (_state: State, search?: string) => search],
+    (items, search) => {
         const matched = matchItems(items, search);
         return { matched, totalCount: items.length };
-    })(state, search);
+    }
+);
+
+export const selectMatchedTrashItemsWithOptimistic = (search?: string) => (state: State) =>
+    matchedTrashItemsWithOptimisticSelector(state, search);
 
 export const selectItemWithOptimistic = (shareId: string, itemId: string) =>
     createSelector(
@@ -164,77 +130,77 @@ export const selectItemWithOptimistic = (shareId: string, itemId: string) =>
                 : undefined
     );
 
-export const selectItemsByType = <T extends ItemType>(type: T) =>
-    createSelector(
-        [selectAllItems, () => type],
-        (items, type) => items.filter((item) => item.data.type === type) as ItemRevision<T>[]
-    );
+const selectItemsByTypeSelector = createSelector([selectAllItems, (_: State, type: ItemType) => type], (items, type) =>
+    items.filter((item) => item.data.type === type)
+);
 
-export const selectLoginItemByUsername = (username?: MaybeNull<string>) =>
-    createSelector([selectItemsByType('login'), () => username], (loginItems, _username) =>
-        loginItems.find((item) => item.data.content.username === _username)
-    );
+export const selectItemsByType =
+    <T extends ItemType>(type: T) =>
+    (state: State) =>
+        selectItemsByTypeSelector(state, type) as ItemRevision<T>[];
 
-export const selectItemsByDomain = (
-    domain: MaybeNull<string>,
-    options: {
-        protocolFilter: string[];
-        isPrivate: boolean;
-        shareId?: string;
-        sortOn?: 'priority' | 'lastUseTime';
-    }
-) =>
-    createSelector(
-        [
-            selectItemsWithOptimistic,
-            () => domain,
-            () => options.protocolFilter,
-            () => options.isPrivate,
-            () => options.shareId,
-            () => options.sortOn ?? 'lastUseTime',
-        ],
-        (items, domain, protocolFilter, isPrivate, shareId, sortOn) =>
-            (typeof domain === 'string' && !isEmptyString(domain)
-                ? items
-                      .reduce<{ item: ItemRevisionWithOptimistic; priority: ItemUrlMatch }[]>((matches, item) => {
-                          const validShareId = !shareId || shareId === item.shareId;
-                          const validItem = !item.optimistic;
-                          const validUrls = isLoginItem(item.data) && matchAny(item.data.content.urls)(domain);
+const loginItemByUsernameSelector = createSelector(
+    [selectItemsByType('login'), (_: State, username?: MaybeNull<string>) => username],
+    (loginItems, _username) => loginItems.find((item) => item.data.content.username === _username)
+);
 
-                          /* If the item does not pass this initial "fuzzy" test, then we
-                           * should not even consider it as an autofill candidate.
-                           * This avoids unnecessarily parsing items' URLs with 'tldts' */
-                          if (!(validShareId && validItem && validUrls)) return matches;
+export const selectLoginItemByUsername = (username?: MaybeNull<string>) => (state: State) =>
+    loginItemByUsernameSelector(state, username);
 
-                          /* `getItemPriorityForUrl` will apply strict domain matching */
-                          const { data } = item as ItemRevisionWithOptimistic<'login'>;
-                          const priority = getItemPriorityForUrl(data)(domain, { protocolFilter, isPrivate });
+const itemsByDomainSelector = createSelector(
+    [
+        selectItemsWithOptimistic,
+        (_state: State, domain: MaybeNull<string>) => domain,
+        (_state: State, _: MaybeNull<string>, { protocolFilter }: SelectItemsByDomainOptions) => protocolFilter,
+        (_state: State, _: MaybeNull<string>, { isPrivate }: SelectItemsByDomainOptions) => isPrivate,
+        (_state: State, _: MaybeNull<string>, { shareId }: SelectItemsByDomainOptions) => shareId,
+        (_state: State, _: MaybeNull<string>, { sortOn }: SelectItemsByDomainOptions) => sortOn ?? 'lastUseTime',
+    ],
+    (items, domain, protocolFilter, isPrivate, shareId, sortOn) =>
+        (typeof domain === 'string' && !isEmptyString(domain)
+            ? items
+                  .reduce<{ item: ItemRevisionWithOptimistic; priority: ItemUrlMatch }[]>((matches, item) => {
+                      const validShareId = !shareId || shareId === item.shareId;
+                      const validItem = !item.optimistic;
+                      const validUrls = isLoginItem(item.data) && matchAny(item.data.content.urls)(domain);
 
-                          /* if negative priority : this item does not match the criteria */
-                          if (priority === ItemUrlMatch.NO_MATCH) return matches;
+                      /* If the item does not pass this initial "fuzzy" test, then we
+                       * should not even consider it as an autofill candidate.
+                       * This avoids unnecessarily parsing items' URLs with 'tldts' */
+                      if (!(validShareId && validItem && validUrls)) return matches;
 
-                          matches.push({ item, priority });
-                          return matches;
-                      }, [])
-                      .sort((a, b) => {
-                          const aPrio = a.priority;
-                          const bPrio = b.priority;
+                      /* `getItemPriorityForUrl` will apply strict domain matching */
+                      const { data } = item as ItemRevisionWithOptimistic<'login'>;
+                      const priority = getItemPriorityForUrl(data)(domain, { protocolFilter, isPrivate });
 
-                          const aTime = a.item.lastUseTime ?? a.item.revisionTime;
-                          const bTime = b.item.lastUseTime ?? b.item.revisionTime;
+                      /* if negative priority : this item does not match the criteria */
+                      if (priority === ItemUrlMatch.NO_MATCH) return matches;
 
-                          /* if we have a priority tie
-                           * fallback to time comparison */
-                          switch (sortOn) {
-                              case 'priority':
-                                  return aPrio > 0 && aPrio === bPrio ? bTime - aTime : bPrio - aPrio;
-                              case 'lastUseTime':
-                                  return bTime - aTime;
-                          }
-                      })
-                      .map(prop('item'))
-                : []) as ItemRevisionWithOptimistic<'login'>[]
-    );
+                      matches.push({ item, priority });
+                      return matches;
+                  }, [])
+                  .sort((a, b) => {
+                      const aPrio = a.priority;
+                      const bPrio = b.priority;
+
+                      const aTime = a.item.lastUseTime ?? a.item.revisionTime;
+                      const bTime = b.item.lastUseTime ?? b.item.revisionTime;
+
+                      /* if we have a priority tie
+                       * fallback to time comparison */
+                      switch (sortOn) {
+                          case 'priority':
+                              return aPrio > 0 && aPrio === bPrio ? bTime - aTime : bPrio - aPrio;
+                          case 'lastUseTime':
+                              return bTime - aTime;
+                      }
+                  })
+                  .map(prop('item'))
+            : []) as ItemRevisionWithOptimistic<'login'>[]
+);
+
+export const selectItemsByDomain = (domain: MaybeNull<string>, options: SelectItemsByDomainOptions) => (state: State) =>
+    itemsByDomainSelector(state, domain, options);
 
 /* Autofill candidates resolution strategy :
  *
@@ -247,8 +213,6 @@ export const selectItemsByDomain = (
  * If we have no subdomain : return all matches (top
  * level and other possible subdomain matches) with
  * top-level domain matches first */
-export type SelectAutofillCandidatesOptions = ParsedUrl & { shareId?: string };
-
 export const selectAutofillCandidates = ({
     shareId,
     domain,
