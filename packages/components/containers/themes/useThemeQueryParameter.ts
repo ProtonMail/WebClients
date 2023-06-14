@@ -12,7 +12,7 @@ import { useTheme } from './ThemeProvider';
  * ThemeTypes, then it uses the default theme.
  */
 const useThemeQueryParameter = () => {
-    const [, setTheme] = useTheme();
+    const theme = useTheme();
 
     const parsedTheme = (() => {
         const queryParams = new URLSearchParams(location.search);
@@ -31,7 +31,7 @@ const useThemeQueryParameter = () => {
     })();
 
     useLayoutEffect(() => {
-        setTheme(parsedTheme);
+        theme.setTheme(parsedTheme);
     }, [parsedTheme]);
 
     return parsedTheme;

@@ -1,5 +1,7 @@
 import '@testing-library/jest-dom';
 
+import '@proton/testing/lib/mockMatchMedia';
+
 const { getComputedStyle } = window;
 
 window.getComputedStyle = (elt) => getComputedStyle(elt);
@@ -23,4 +25,3 @@ jest.mock('@proton/shared/lib/i18n/dateFnLocales', () => ({
 jest.mock('@proton/shared/lib/pow/wasmWorkerWrapper.ts', () => ({
     __esModule: true,
 }));
-

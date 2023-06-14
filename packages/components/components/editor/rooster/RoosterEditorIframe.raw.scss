@@ -1,3 +1,4 @@
+@use 'sass:math';
 @import '~@proton/styles/scss/lib';
 @import '~@proton/styles/scss/base/custom-properties/init';
 @import '~@proton/styles/scss/base/custom-properties/optionals';
@@ -85,40 +86,69 @@ body.isDarkMode {
 	--scrollbar-thumb-hover-color: rgb(255 255 255 / 0.5);
 }
 
-* {
-	scrollbar-width: thin;
-	scrollbar-color: var(--scrollbar-thumb-color) transparent;
-}
+html:not(.feature-scrollbars-off) {
+	* {
+		scrollbar-width: thin;
+		scrollbar-color: var(--scrollbar-thumb-color) transparent;
+	}
 
-*::-webkit-scrollbar {
-	inline-size: 0.625rem; /* 10px */
-	block-size: 0.625rem;
-}
+	*::-webkit-scrollbar {
+		inline-size: 0.625rem; /* 10px */
+		block-size: 0.625rem;
+	}
 
-*::-webkit-scrollbar-thumb {
-	border: 0.125rem solid transparent; /* 2px */
-	background-clip: padding-box;
-	border-radius: 0.313rem; /* 5px */
-	background-color: var(--scrollbar-thumb-color, rgb(0 0 0 / 0.35));
-}
+	*::-webkit-scrollbar-thumb {
+		border: 0.125rem solid transparent; /* 2px */
+		background-clip: padding-box;
+		border-radius: 0.313rem; /* 5px */
+		background-color: var(--scrollbar-thumb-color, rgb(0 0 0 / 0.35));
+	}
 
-*::-webkit-scrollbar-track {
-	background-color: transparent;
-}
+	*::-webkit-scrollbar-track {
+		background-color: transparent;
+	}
 
-*::-webkit-scrollbar-thumb:horizontal:hover,
-*::-webkit-scrollbar-thumb:vertical:hover {
-	background-color: var(--scrollbar-thumb-hover-color, rgb(0 0 0 / 0.5));
-}
+	*::-webkit-scrollbar-thumb:horizontal:hover,
+	*::-webkit-scrollbar-thumb:vertical:hover {
+		background-color: var(--scrollbar-thumb-hover-color, rgb(0 0 0 / 0.5));
+	}
 
-*::-webkit-scrollbar-corner {
-	visibility: hidden;
+	*::-webkit-scrollbar-corner {
+		visibility: hidden;
+	}
 }
 
 html {
 	block-size: 100%;
-	font-size: 100%;
 	cursor: text;
+
+	/* Introduce `--setting-font-size` to make the font size setting possible. */
+
+	/* chosen size * browser default size / app default size * 100% / browser default size */
+	font-size: calc(var(--setting-font-size) * #{math.div(16, 14) * math.div(100%, 16)});
+}
+
+@mixin reduce-motion {
+	*,
+	*::before,
+	*::after {
+		// Using values greater than 0 to have animation events still triggering
+		animation-delay: 1ms !important;
+		animation-duration: 0.001ms !important;
+		animation-iteration-count: 1 !important;
+
+		// This magic value is needed because of https://bugs.webkit.org/show_bug.cgi?id=242510
+		// which affects visibility changes on Safari (iOS + MacOS) when reduce motion is
+		// enabled in accessibility settings. Even though transitions are not involved.
+		transition-duration: 0.01ms !important;
+	}
+}
+@include media('reduced-motion') {
+	@include reduce-motion;
+}
+
+.feature-animations-off {
+	@include reduce-motion;
 }
 
 body {

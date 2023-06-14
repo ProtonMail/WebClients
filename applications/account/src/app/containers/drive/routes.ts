@@ -7,17 +7,6 @@ export const getDriveAppRoutes = () => {
     return <const>{
         header: DRIVE_APP_NAME,
         routes: {
-            general: <SectionConfig>{
-                text: c('Title').t`General`,
-                to: '/general',
-                icon: 'grid-2',
-                subsections: [
-                    {
-                        text: c('Title').t`Theme`,
-                        id: 'theme',
-                    },
-                ],
-            },
             revisions: <SectionConfig>{
                 text: c('Title').t`Version history`,
                 to: '/version-history',

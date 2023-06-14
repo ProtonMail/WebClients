@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 
-import { useIsDarkTheme } from '@proton/components';
+import { useTheme } from '@proton/components';
 import { useAuthentication, useConfig } from '@proton/components/hooks';
 
 import { getImageSize, getSenderImageUrl } from '../helpers/senderImage';
@@ -12,9 +12,9 @@ import { getImageSize, getSenderImageUrl } from '../helpers/senderImage';
  * @returns the sender image URL
  */
 const useSenderImage = (emailAddress: string, bimiSelector?: string) => {
-    const isDarkTheme = useIsDarkTheme();
+    const theme = useTheme();
     const imageSizeRef = useRef(getImageSize());
-    const mode = isDarkTheme ? 'dark' : 'light';
+    const mode = theme.information.dark ? 'dark' : 'light';
     const { UID } = useAuthentication();
     const { API_URL } = useConfig();
     return emailAddress ? getSenderImageUrl(API_URL, UID, emailAddress, imageSizeRef.current, bimiSelector, mode) : '';

@@ -33,13 +33,4 @@
 	&.is-thin {
 		--size: #{em(4)};
 	}
-
-	.sidebar & {
-		--meter-bar-thumb-color-success: var(--text-weak);
-		--meter-bar-background-color: var(--border-weak);
-	}
-}
-
-.sidebar .used-space.color-success {
-	color: var(--text-weak);
 }

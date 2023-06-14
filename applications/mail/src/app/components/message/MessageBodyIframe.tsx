@@ -3,7 +3,7 @@ import { createPortal } from 'react-dom';
 
 import { c } from 'ttag';
 
-import { Icon, Tooltip } from '@proton/components';
+import { Icon, Tooltip, useSyncIframeStyles } from '@proton/components';
 import { useLinkHandler } from '@proton/components/hooks/useLinkHandler';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 import { hasAttachments, isAutoFlaggedPhishing, isSuspicious } from '@proton/shared/lib/mail/messages';
@@ -61,6 +61,8 @@ const MessageBodyIframe = ({
     onFocus,
 }: Props) => {
     const hasAttachment = hasAttachments(message.data);
+
+    useSyncIframeStyles(iframeRef.current?.contentWindow?.document.documentElement, document.documentElement);
 
     const { isResizing } = useMailboxContainerContext();
 

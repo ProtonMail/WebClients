@@ -2,7 +2,6 @@ import { RefObject, useEffect, useRef, useState } from 'react';
 
 import { useTheme } from '@proton/components';
 import useIsMounted from '@proton/hooks/useIsMounted';
-import { PROTON_THEMES_MAP } from '@proton/shared/lib/themes/themes';
 
 import { MessageState } from '../../../logic/messages/messagesTypes';
 import { MESSAGE_IFRAME_BLOCKQUOTE_ID, MESSAGE_IFRAME_ROOT_ID, MESSAGE_IFRAME_TOGGLE_ID } from '../constants';
@@ -33,16 +32,18 @@ const useInitIframeContent = ({
     const hasBeenDone = useRef<boolean>(false);
     const iframeRootDivRef = useRef<HTMLDivElement>();
     const prevContentRef = useRef<string>(content);
-    const [themeIndex] = useTheme();
-    const themeCSSVariables: string = PROTON_THEMES_MAP[themeIndex].theme;
+    const theme = useTheme();
+    const themeIndex = theme.information.theme;
+    const themeCSSVariables = theme.information.style;
     const isMounted = useIsMounted();
+    const themeRef = useRef(themeIndex);
 
     useEffect(() => {
         if (initStatus === 'start') {
             let emailContent = content;
 
             if (!isPlainText) {
-                emailContent += `<div id="${MESSAGE_IFRAME_TOGGLE_ID}"></div><div id="${MESSAGE_IFRAME_BLOCKQUOTE_ID}"></div>`;
+                emailContent += `<div id='${MESSAGE_IFRAME_TOGGLE_ID}'></div><div id='${MESSAGE_IFRAME_BLOCKQUOTE_ID}'></div>`;
             }
 
             const doc = iframeRef.current?.contentDocument;
@@ -76,6 +77,14 @@ const useInitIframeContent = ({
             }
         }
     }, [initStatus]);
+
+    // When theme is updated, need to compute again the styles so that plaintext messages use the correct bg color
+    useEffect(() => {
+        if (themeIndex !== themeRef.current) {
+            setInitStatus('start');
+            themeRef.current = themeIndex;
+        }
+    }, [themeIndex]);
 
     /**
      * On content change, rerun the process to set content inside the iframe

@@ -9,7 +9,6 @@ import {
     CalendarTimeSection,
     PrivateMainAreaLoading,
     PrivateMainSettingsArea,
-    ThemesSection,
     useAddresses,
     useCalendarUserSettings,
     useCalendars,
@@ -31,7 +30,7 @@ import {
 import { locales } from '@proton/shared/lib/i18n/locales';
 import { UserModel } from '@proton/shared/lib/interfaces';
 
-import { getCalendarAppRoutes } from './routes';
+import type { getCalendarAppRoutes } from './routes';
 
 interface Props {
     user: UserModel;
@@ -105,7 +104,6 @@ const CalendarSettingsRouter = ({ user, loadingFeatures, calendarAppRoutes, redi
                     <CalendarTimeSection calendarUserSettings={calendarUserSettings} />
                     <CalendarLayoutSection calendarUserSettings={calendarUserSettings} />
                     <CalendarInvitationsSection calendarUserSettings={calendarUserSettings} locales={locales} />
-                    <ThemesSection />
                 </PrivateMainSettingsArea>
             </Route>
             <Route path={getSectionPath(path, calendarsRoute)} exact>
