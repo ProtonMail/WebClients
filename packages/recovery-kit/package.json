@@ -8,7 +8,7 @@
         "test:dev": "jest --watch"
     },
     "dependencies": {
-        "@pdfme/generator": "^1.2.2",
+        "@pdfme/generator": "^1.2.3",
         "@proton/utils": "workspace:packages/utils"
     },
     "devDependencies": {
