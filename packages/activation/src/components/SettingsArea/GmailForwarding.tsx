@@ -1,7 +1,6 @@
-import { useModalState, useUser } from '@proton/components/index';
+import { GmailSyncModal, useModalState, useUser } from '@proton/components/index';
 
 import { ImportProvider } from '../../interface';
-import GmailSyncModal from '../Modals/GmailSync/GmailSyncModal';
 import ProviderCard from './ProviderCards/ProviderCard';
 
 const GmailForwarding = () => {
