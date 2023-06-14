@@ -8,6 +8,7 @@ import {
     useModalState,
     useRebrandingFeedback,
     useSubscription,
+    useWelcomeFlags,
 } from '@proton/components';
 import { OPEN_OFFER_MODAL_EVENT } from '@proton/shared/lib/constants';
 
@@ -15,10 +16,9 @@ import MailOnboardingModal from '../components/onboarding/MailOnboardingModal';
 
 interface Props {
     onboardingOpen: boolean;
-    onOnboardingDone: () => void;
 }
 
-const MailStartupModals = ({ onboardingOpen, onOnboardingDone }: Props) => {
+const MailStartupModals = ({ onboardingOpen }: Props) => {
     // Onboarding modal
     const [onboardingModal, setOnboardingModal, renderOnboardingModal] = useModalState();
 
@@ -29,6 +29,7 @@ const MailStartupModals = ({ onboardingOpen, onOnboardingDone }: Props) => {
 
     const [rebrandingFeedbackModal, setRebrandingFeedbackModal, renderRebrandingFeedbackModal] = useModalState();
     const handleRebrandingFeedbackModalDisplay = useRebrandingFeedback();
+    const [, setWelcomeFlagsDone] = useWelcomeFlags();
 
     const onceRef = useRef(false);
     useEffect(() => {
@@ -56,7 +57,7 @@ const MailStartupModals = ({ onboardingOpen, onOnboardingDone }: Props) => {
             {renderOnboardingModal && (
                 <MailOnboardingModal
                     onDone={() => {
-                        onOnboardingDone();
+                        setWelcomeFlagsDone();
                         onboardingModal.onClose();
                     }}
                     onExit={onboardingModal.onExit}
