@@ -13,6 +13,7 @@ import { flattenItemsByShareId, isLoginItem } from '@proton/pass/utils/pass/item
 import { isTrashed } from '@proton/pass/utils/pass/trash';
 import type {
     SelectAutofillCandidatesOptions,
+    SelectAutosaveCandidatesOptions,
     SelectItemsByDomainOptions,
     SelectItemsOptions,
 } from '@proton/pass/utils/search';
@@ -213,44 +214,47 @@ export const selectItemsByDomain = (domain: MaybeNull<string>, options: SelectIt
  * If we have no subdomain : return all matches (top
  * level and other possible subdomain matches) with
  * top-level domain matches first */
-export const selectAutofillCandidates = ({
-    shareId,
-    domain,
-    subdomain,
-    isSecure,
-    isPrivate,
-    protocol,
-}: SelectAutofillCandidatesOptions) => {
-    /* if the protocol is null : it likely means the
-     * url validation failed - do not return any candidates */
-    if (protocol === null || domain === null) return () => [];
-    const protocolFilter = !isSecure ? [protocol] : [];
-
-    return createSelector(
-        [
+const autofillCandidatesSelector = createSelector(
+    [
+        (state: State, { domain, isSecure, isPrivate, shareId, protocol }: SelectAutofillCandidatesOptions) =>
             selectItemsByDomain(domain, {
-                protocolFilter,
+                protocolFilter: !isSecure && protocol ? [protocol] : [],
                 isPrivate,
                 shareId,
                 sortOn: 'priority',
-            }),
+            })(state),
+        (state: State, { subdomain, isSecure, isPrivate, shareId, protocol }: SelectAutofillCandidatesOptions) =>
             selectItemsByDomain(subdomain, {
-                protocolFilter,
+                protocolFilter: !isSecure && protocol ? [protocol] : [],
                 isPrivate,
                 shareId,
                 sortOn: 'lastUseTime',
-            }),
-        ],
-        (domainMatches, subdomainMatches) => [
-            ...subdomainMatches /* push subdomain matches on top */,
-            ...domainMatches.filter(({ itemId }) => !subdomainMatches.some((item) => item.itemId === itemId)),
-        ]
-    );
+            })(state),
+    ],
+    (domainMatches, subdomainMatches) => [
+        ...subdomainMatches /* push subdomain matches on top */,
+        ...domainMatches.filter(({ itemId }) => !subdomainMatches.some((item) => item.itemId === itemId)),
+    ]
+);
+
+export const selectAutofillCandidates = (options: SelectAutofillCandidatesOptions) => (state: State) => {
+    /* if the protocol is null : it likely means the
+     * url validation failed - do not return any candidates */
+    if (options.protocol === null || options.domain === null) return [];
+    return autofillCandidatesSelector(state, options);
 };
 
-/* FIXME: account for unsecure hosts when autosaving */
-export const selectAutosaveCandidate = (username: string, domain: string, subdomain?: MaybeNull<string>) =>
-    createSelector(
-        [selectItemsByDomain(subdomain ?? domain, { protocolFilter: [], isPrivate: false }), () => username],
-        (items, username) => items.filter(({ data }) => data.content.username === username)
-    );
+const autosaveCandidateSelector = createSelector(
+    [
+        (state: State, { subdomain, domain }: SelectAutosaveCandidatesOptions) =>
+            selectItemsByDomain(subdomain ?? domain, {
+                protocolFilter: [],
+                isPrivate: false,
+            })(state),
+        (_: State, { username }: SelectAutosaveCandidatesOptions) => username,
+    ],
+    (items, username) => items.filter(({ data }) => data.content.username === username)
+);
+
+export const selectAutosaveCandidate = (options: SelectAutosaveCandidatesOptions) => (state: State) =>
+    autosaveCandidateSelector(state, options);
