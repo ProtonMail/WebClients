@@ -114,6 +114,12 @@ type SelectOptions = {
     sort?: MaybeNull<ItemsSortOption>;
 };
 
+/*
+ * Selectors organized to separate sort from search, as sorting can be computationally
+ * expensive when the number of items is high. The search is expected to change more
+ * frequently than the shareId / sortOption
+ */
+
 export const selectShareItemsWithOptimistic = createSelector(
     [
         selectItemsWithOptimistic,
