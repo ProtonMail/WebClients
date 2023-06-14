@@ -1,5 +1,6 @@
 import type { Runtime } from 'webextension-polyfill';
 
+import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import type { MaybeNull, SafeLoginItem, WorkerState } from '@proton/pass/types';
 
 import type { DropdownSetActionPayload } from './dropdown';
@@ -31,7 +32,7 @@ export interface IFrameApp {
     open: (scrollRef?: HTMLElement) => void;
     close: (options?: { event?: Event; userInitiated: boolean }) => void;
     init: (port: Runtime.Port) => void;
-    reset: (workerState: WorkerState) => void;
+    reset: (workerState: WorkerState, settings: ProxiedSettings) => void;
     destroy: () => void;
 }
 
@@ -40,7 +41,7 @@ export interface IFrameAppService<OpenOptions = {}> {
     open: (options: OpenOptions) => IFrameAppService<OpenOptions>;
     close: () => IFrameAppService<OpenOptions>;
     init: (port: Runtime.Port) => IFrameAppService<OpenOptions>;
-    reset: (workerState: WorkerState) => IFrameAppService<OpenOptions>;
+    reset: (workerState: WorkerState, settings: ProxiedSettings) => IFrameAppService<OpenOptions>;
     destroy: () => void;
 }
 
@@ -66,7 +67,7 @@ export type IFrameEndpoint = 'contentscript' | 'notification' | 'dropdown';
 export type IFrameMessage<T extends IFrameMessageType = IFrameMessageType> = Extract<
     | { type: IFrameMessageType.IFRAME_INJECT_PORT; payload: { port: string } }
     | { type: IFrameMessageType.IFRAME_CONNECTED; payload: { framePort: string; id: IFrameEndpoint } }
-    | { type: IFrameMessageType.IFRAME_INIT; payload: { workerState: WorkerState } }
+    | { type: IFrameMessageType.IFRAME_INIT; payload: { workerState: WorkerState; settings: ProxiedSettings } }
     | { type: IFrameMessageType.IFRAME_OPEN }
     | { type: IFrameMessageType.IFRAME_CLOSE }
     | { type: IFrameMessageType.IFRAME_DIMENSIONS; payload: { height: number; width?: number } }

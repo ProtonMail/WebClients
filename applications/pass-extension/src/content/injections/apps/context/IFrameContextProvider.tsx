@@ -4,12 +4,14 @@ import type { Runtime } from 'webextension-polyfill';
 
 import { contentScriptMessage, portForwardingMessage, sendMessage } from '@proton/pass/extension/message';
 import browser from '@proton/pass/globals/browser';
+import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import type { Maybe, MaybeNull, WorkerMessage, WorkerState } from '@proton/pass/types';
 import { WorkerMessageType } from '@proton/pass/types';
 import { safeCall } from '@proton/pass/utils/fp';
 import { logger } from '@proton/pass/utils/logger';
 import noop from '@proton/utils/noop';
 
+import { INITIAL_SETTINGS } from '../../../../shared/constants';
 import type {
     IFrameEndpoint,
     IFrameMessage,
@@ -22,6 +24,7 @@ import { IFrameMessageType } from '../../../types';
 type IFrameContextValue = {
     endpoint: string;
     workerState: Maybe<Omit<WorkerState, 'UID'>>;
+    settings: ProxiedSettings;
     port: MaybeNull<Runtime.Port>;
     closeIFrame: () => void;
     resizeIFrame: (ref?: MaybeNull<HTMLElement>) => void;
@@ -34,6 +37,7 @@ type PortContext = { port: MaybeNull<Runtime.Port>; forwardTo: MaybeNull<string>
 const IFrameContext = createContext<IFrameContextValue>({
     endpoint: '',
     workerState: undefined,
+    settings: INITIAL_SETTINGS,
     port: null,
     closeIFrame: noop,
     resizeIFrame: noop,
@@ -48,6 +52,7 @@ const IFrameContext = createContext<IFrameContextValue>({
 export const IFrameContextProvider: FC<{ endpoint: IFrameEndpoint }> = ({ endpoint, children }) => {
     const [{ port, forwardTo }, setPortContext] = useState<PortContext>({ port: null, forwardTo: null });
     const [workerState, setWorkerState] = useState<IFrameContextValue['workerState']>();
+    const [settings, setSettings] = useState<ProxiedSettings>(INITIAL_SETTINGS);
 
     const destroyFrame = () => {
         logger.info(`[IFrame::${endpoint}] Unauthorized iframe injection`);
@@ -104,8 +109,9 @@ export const IFrameContextProvider: FC<{ endpoint: IFrameEndpoint }> = ({ endpoi
             port.onMessage.addListener((message: Maybe<IFrameMessage | WorkerMessage>) => {
                 switch (message?.type) {
                     case IFrameMessageType.IFRAME_INIT:
-                        return setWorkerState(message.payload.workerState);
-
+                        setWorkerState(message.payload.workerState);
+                        setSettings(message.payload.settings);
+                        return;
                     /* If for any reason we get a `PORT_UNAUTHORIZED`
                      * message : it likely means the iframe was injected
                      * without being controlled by a content-script either
@@ -178,8 +184,8 @@ export const IFrameContextProvider: FC<{ endpoint: IFrameEndpoint }> = ({ endpoi
     );
 
     const context = useMemo<IFrameContextValue>(
-        () => ({ endpoint, port, closeIFrame, resizeIFrame, postMessage, registerHandler, workerState }),
-        [port, workerState, closeIFrame, resizeIFrame, postMessage, registerHandler]
+        () => ({ endpoint, port, workerState, settings, closeIFrame, resizeIFrame, postMessage, registerHandler }),
+        [port, workerState, settings, closeIFrame, resizeIFrame, postMessage, registerHandler]
     );
 
     return <IFrameContext.Provider value={context}>{children}</IFrameContext.Provider>;
