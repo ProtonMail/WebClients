@@ -1,8 +1,9 @@
 import { createSelector } from '@reduxjs/toolkit';
 
 import { PlanType } from '@proton/pass/types';
+import { sortItems } from '@proton/pass/utils/search';
 
-import { selectItemsByType, sortItems } from './items';
+import { selectItemsByType } from './items';
 import { selectAllVaults } from './shares';
 import { selectUserPlan } from './user';
 
