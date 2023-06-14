@@ -1,7 +1,5 @@
 import { useState } from 'react';
 
-
-
 import { c } from 'ttag';
 
 import {
@@ -129,7 +127,7 @@ const ActionsDropdown = ({ shareId, selectedLinks }: Props) => {
                 ref={anchorRef}
                 aria-expanded={isOpen}
                 onClick={toggle}
-                icon={<Icon name="chevron-down-filled" rotate={isOpen ? 180 : 0} />}
+                icon={<Icon name="chevron-down-filled" alt={c('Title').t`Show actions`} rotate={isOpen ? 180 : 0} />}
                 data-testid="actions-dropdown"
                 title={c('Title').t`Show actions`}
             />
