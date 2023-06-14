@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -70,6 +70,8 @@ const RecoveryStep = ({ defaultPhone, defaultEmail, defaultCountry, onSubmit, on
     const [savePhone, setSavePhone] = useState(!!defaultPhone);
     const [saveEmail, setSaveEmail] = useState(!!defaultEmail);
     const [confirmModal, setConfirmModal, renderConfirmModal] = useModalState();
+    const inputRecoveryPhoneRef = useRef<HTMLInputElement>(null);
+    const inputRecoveryEmailRef = useRef<HTMLInputElement>(null);
 
     const { validator, onFormSubmit } = useFormErrors();
 
@@ -80,8 +82,20 @@ const RecoveryStep = ({ defaultPhone, defaultEmail, defaultCountry, onSubmit, on
         });
     }, []);
 
+    const phoneValidations = savePhone ? [requiredValidator(recoveryPhone)] : [];
+    const emailValidations = saveEmail ? [requiredValidator(recoveryEmail), emailValidator(recoveryEmail)] : [];
+
     const handleSubmit = async () => {
-        if (loading || !onFormSubmit()) {
+        if (loading) {
+            return;
+        }
+
+        if (!onFormSubmit()) {
+            if (phoneValidations.some((validation) => !!validation)) {
+                inputRecoveryPhoneRef.current?.focus();
+            } else if (emailValidations.some((validation) => !!validation)) {
+                inputRecoveryEmailRef.current?.focus();
+            }
             return;
         }
 
@@ -134,7 +148,17 @@ const RecoveryStep = ({ defaultPhone, defaultEmail, defaultCountry, onSubmit, on
                             <Checkbox
                                 id="save-phone"
                                 checked={savePhone}
-                                onChange={loading ? noop : () => setSavePhone(!savePhone)}
+                                onChange={
+                                    loading
+                                        ? noop
+                                        : () => {
+                                              const newValue = !savePhone;
+                                              setSavePhone(newValue);
+                                              if (newValue) {
+                                                  inputRecoveryPhoneRef.current?.focus();
+                                              }
+                                          }
+                                }
                             >
                                 <span className="sr-only">{c('Label').t`Use a recovery phone number`}</span>
                             </Checkbox>
@@ -145,7 +169,7 @@ const RecoveryStep = ({ defaultPhone, defaultEmail, defaultCountry, onSubmit, on
                                 id="recovery-phone"
                                 bigger
                                 label={c('Label').t`Recovery phone number`}
-                                error={validator(savePhone ? [requiredValidator(recoveryPhone)] : [])}
+                                error={validator(phoneValidations)}
                                 disableChange={loading}
                                 autoFocus
                                 defaultCountry={defaultCountry}
@@ -154,6 +178,7 @@ const RecoveryStep = ({ defaultPhone, defaultEmail, defaultCountry, onSubmit, on
                                     setRecoveryPhone(value);
                                     setSavePhone(!!value);
                                 }}
+                                ref={inputRecoveryPhoneRef}
                             />
                         </div>
                     </div>
@@ -163,7 +188,17 @@ const RecoveryStep = ({ defaultPhone, defaultEmail, defaultCountry, onSubmit, on
                             <Checkbox
                                 id="save-email"
                                 checked={saveEmail}
-                                onChange={loading ? noop : () => setSaveEmail(!saveEmail)}
+                                onChange={
+                                    loading
+                                        ? noop
+                                        : () => {
+                                              const newValue = !saveEmail;
+                                              setSaveEmail(newValue);
+                                              if (newValue) {
+                                                  inputRecoveryEmailRef.current?.focus();
+                                              }
+                                          }
+                                }
                             >
                                 <span className="sr-only">{c('Label').t`Use a recovery email address`}</span>
                             </Checkbox>
@@ -173,9 +208,7 @@ const RecoveryStep = ({ defaultPhone, defaultEmail, defaultCountry, onSubmit, on
                                 id="recovery-email"
                                 bigger
                                 label={c('Label').t`Recovery email address`}
-                                error={validator(
-                                    saveEmail ? [requiredValidator(recoveryEmail), emailValidator(recoveryEmail)] : []
-                                )}
+                                error={validator(emailValidations)}
                                 autoFocus
                                 disableChange={loading}
                                 type="email"
@@ -184,6 +217,7 @@ const RecoveryStep = ({ defaultPhone, defaultEmail, defaultCountry, onSubmit, on
                                     setRecoveryEmail(value);
                                     setSaveEmail(!!value);
                                 }}
+                                ref={inputRecoveryEmailRef}
                             />
                         </div>
                     </div>
