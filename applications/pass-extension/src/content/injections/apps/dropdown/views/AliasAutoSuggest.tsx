@@ -19,7 +19,9 @@ import { DropdownItem } from '../components/DropdownItem';
 type Props = {
     prefix: string;
     domain: string;
-    onSubmit: (aliasEmail: string) => void;
+    userEmail: MaybeNull<string>;
+    onSubmitAliasEmail: (aliasEmail: string) => void;
+    onSubmitUserEmail: (userEmail: string) => void;
     onOptions?: () => void;
 };
 
@@ -31,7 +33,14 @@ const isValidAliasOptions = (
 
 const getInitialLoadingText = (): string => c('Info').t`Generating alias...`;
 
-export const AliasAutoSuggest: VFC<Props> = ({ prefix, domain, onOptions, onSubmit }) => {
+export const AliasAutoSuggest: VFC<Props> = ({
+    prefix,
+    domain,
+    userEmail,
+    onOptions,
+    onSubmitAliasEmail,
+    onSubmitUserEmail,
+}) => {
     const ensureMounted = useEnsureMounted();
     const [aliasOptions, setAliasOptions] = useState<MaybeNull<AliasState['aliasOptions']>>(null);
     const [needsUpgrade, setNeedsUpgrade] = useState<boolean>(false);
@@ -96,7 +105,7 @@ export const AliasAutoSuggest: VFC<Props> = ({ prefix, domain, onOptions, onSubm
 
                 ensureMounted(() => {
                     setLoadingText(null);
-                    onSubmit(aliasEmail);
+                    onSubmitAliasEmail(aliasEmail);
                 })();
             } catch (err) {
                 ensureMounted(setError)(true);
@@ -117,11 +126,14 @@ export const AliasAutoSuggest: VFC<Props> = ({ prefix, domain, onOptions, onSubm
 
     return (
         <>
-            <DropdownItem
-                title={c('Title').t`Use my email`}
-                subTitle={<span className="color-primary">{c('Info').t`my-real-email@pr0t0n.me`}</span>}
-                icon="envelope"
-            />
+            {userEmail && (
+                <DropdownItem
+                    title={c('Title').t`Use my email`}
+                    subTitle={userEmail}
+                    icon="envelope"
+                    onClick={() => onSubmitUserEmail(userEmail)}
+                />
+            )}
             <DropdownItem
                 title={needsUpgrade ? c('Info').t`Upgrade ${PASS_APP_NAME}` : c('Title').t`Hide my email`}
                 autogrow={needsUpgrade}
