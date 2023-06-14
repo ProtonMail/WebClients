@@ -211,6 +211,13 @@ export const createDropdown = (): InjectedDropdown => {
         fieldRef.current?.focus({ preventDefault: true });
     });
 
+    iframe.registerMessageHandler(IFrameMessageType.DROPDOWN_AUTOSUGGEST_USER_EMAIL, (message) => {
+        const { userEmail } = message.payload;
+        fieldRef.current?.autofill(userEmail);
+        iframe.close();
+        fieldRef.current?.focus({ preventDefault: true });
+    });
+
     const destroy = () => {
         fieldRef.current = null;
         listeners.removeAll();
