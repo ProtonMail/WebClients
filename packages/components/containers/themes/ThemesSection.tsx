@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { BRAND_NAME } from '@proton/shared/lib/constants';
-import { ColorScheme, PROTON_THEMES, ThemeModeSetting } from '@proton/shared/lib/themes/themes';
+import { ColorScheme, ThemeModeSetting, getThemes } from '@proton/shared/lib/themes/themes';
 
 import { Info, Toggle, useNotifications } from '../..';
 import {
@@ -20,6 +20,8 @@ const ThemesSection = ({ accessibilitySettingsAvailable }: { accessibilitySettin
 
     const { createNotification } = useNotifications();
     const notifyPreferenceSaved = () => createNotification({ text: c('Success').t`Preference saved` });
+
+    const themes = getThemes(accessibilitySettingsAvailable);
 
     return (
         <>
@@ -56,7 +58,7 @@ const ThemesSection = ({ accessibilitySettingsAvailable }: { accessibilitySettin
                 <SettingsSectionWide className="flex mt-6 flex-nowrap gap-4 on-mobile-flex-column">
                     <ThemeSyncModeCard
                         mode="light"
-                        list={PROTON_THEMES}
+                        list={themes}
                         themeIdentifier={settings.LightTheme}
                         onChange={(themeType) => {
                             setTheme(themeType, ThemeModeSetting.Light);
@@ -66,7 +68,7 @@ const ThemesSection = ({ accessibilitySettingsAvailable }: { accessibilitySettin
                     />
                     <ThemeSyncModeCard
                         mode="dark"
-                        list={PROTON_THEMES}
+                        list={themes}
                         themeIdentifier={settings.DarkTheme}
                         onChange={(themeType) => {
                             setTheme(themeType, ThemeModeSetting.Dark);
@@ -79,7 +81,7 @@ const ThemesSection = ({ accessibilitySettingsAvailable }: { accessibilitySettin
                 <SettingsSectionWide className="mt-6">
                     <ThemeCards
                         size="large"
-                        list={PROTON_THEMES}
+                        list={themes}
                         themeIdentifier={information.theme}
                         onChange={(themeType) => {
                             setTheme(themeType);
