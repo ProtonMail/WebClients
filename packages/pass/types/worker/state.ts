@@ -1,4 +1,6 @@
-import type { Maybe } from '../utils';
+import type { ItemDraft } from '@proton/pass/store';
+
+import type { Maybe, MaybeNull } from '../utils';
 
 export enum WorkerStatus {
     IDLE = 'IDLE' /* initial worker state - pending initalization */,
@@ -39,4 +41,5 @@ export type ExtensionLocalData = {
 export type PopupState = {
     hasAutofillCandidates: boolean;
     initialSearch: string;
+    draft: MaybeNull<ItemDraft>;
 };
