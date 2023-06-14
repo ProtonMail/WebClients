@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
-import { ColorScheme, PROTON_THEMES, ThemeModeSetting } from '@proton/shared/lib/themes/themes';
+import { ColorScheme, ThemeModeSetting, getThemes } from '@proton/shared/lib/themes/themes';
 
 import { Info, ModalProps, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, Toggle } from '../../components';
 import { FeatureCode } from '../../containers/features/FeaturesContext';
@@ -15,6 +15,8 @@ const ThemesModal = (props: ModalProps) => {
     const isAccessibilitySettingsEnabled =
         useFeature<boolean>(FeatureCode.AccessibilitySettings)?.feature?.Value === true;
     const { information, settings, setTheme, setAutoTheme } = useTheme();
+
+    const themes = getThemes(isAccessibilitySettingsEnabled);
 
     return (
         <ModalTwo size="large" {...props}>
@@ -43,7 +45,7 @@ const ThemesModal = (props: ModalProps) => {
                         <ThemeSyncModeCard
                             mode="light"
                             size="small"
-                            list={PROTON_THEMES}
+                            list={themes}
                             themeIdentifier={settings.LightTheme}
                             onChange={(themeType) => {
                                 setTheme(themeType, ThemeModeSetting.Light);
@@ -53,7 +55,7 @@ const ThemesModal = (props: ModalProps) => {
                         <ThemeSyncModeCard
                             mode="dark"
                             size="small"
-                            list={PROTON_THEMES}
+                            list={themes}
                             themeIdentifier={settings.DarkTheme}
                             onChange={(themeType) => {
                                 setTheme(themeType, ThemeModeSetting.Dark);
@@ -63,7 +65,7 @@ const ThemesModal = (props: ModalProps) => {
                     </div>
                 ) : (
                     <ThemeCards
-                        list={PROTON_THEMES}
+                        list={themes}
                         themeIdentifier={information.theme}
                         onChange={(themeType) => {
                             setTheme(themeType);
