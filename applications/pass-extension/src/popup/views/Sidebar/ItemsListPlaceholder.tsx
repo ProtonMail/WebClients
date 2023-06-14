@@ -22,7 +22,7 @@ export const ItemsListPlaceholder: VFC = () => {
 
     const { isCreating } = useNavigationContext();
 
-    const { filtering, items } = useItems();
+    const { filtering, totalCount } = useItems();
     const { search } = filtering;
 
     const primaryVaultId = useSelector(selectPrimaryVault).shareId;
@@ -61,7 +61,7 @@ export const ItemsListPlaceholder: VFC = () => {
         []
     );
 
-    if (inNonPrimaryVault && items.totalCount === 0 && didDowngrade) {
+    if (inNonPrimaryVault && totalCount === 0 && didDowngrade) {
         return (
             <div className="flex flex-column gap-3 text-center">
                 <span className="text-semibold inline-block">{c('Title').t`Your vault is empty`}</span>
@@ -74,7 +74,7 @@ export const ItemsListPlaceholder: VFC = () => {
         );
     }
 
-    if (items.totalCount === 0) {
+    if (totalCount === 0) {
         return (
             <div className="flex flex-column gap-3 text-center">
                 <strong className="inline-block">{c('Title').t`Your vault is empty`}</strong>

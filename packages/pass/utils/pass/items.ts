@@ -47,3 +47,7 @@ export const interpolateRecentItems =
                 Math.max(lastUseTime ?? modifyTime, modifyTime) > boundary,
         });
     };
+
+export const flattenItemsByShareId = (itemsByShareId: {
+    [shareId: string]: { [itemId: string]: ItemRevision };
+}): ItemRevision[] => Object.values(itemsByShareId).flatMap(Object.values);

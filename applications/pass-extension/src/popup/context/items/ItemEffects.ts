@@ -22,7 +22,7 @@ import { invert } from '@proton/pass/utils/fp';
 import { belongsToShare, itemEq } from '@proton/pass/utils/pass/items';
 
 import { useShareEventEffect } from '../../../shared/hooks';
-import { useItems } from '../../hooks/useItems';
+import { useItems, useTrashItems } from '../../hooks/useItems';
 import { useNavigationContext } from '../../hooks/useNavigationContext';
 import { usePopupContext } from '../../hooks/usePopupContext';
 import type { ItemsFilteringContextType } from './ItemsFilteringContext';
@@ -48,9 +48,9 @@ export const ItemEffects = () => {
     const { selectedItem, selectItem, unselectItem, isCreating, isEditing, inTrash } = useNavigationContext();
     const {
         filtering: { shareId, shareBeingDeleted, setShareId, setShareBeingDeleted },
-        trash: { result: trashedItems },
-        items: { result: filteredItems },
+        filtered: filteredItems,
     } = useItems();
+    const { matched: trashedItems } = useTrashItems();
 
     const itemFromSelectedOptimisticId = useSelector(selectItemIdByOptimisticId(selectedItem?.itemId));
     const autoselect = !(isEditing || isCreating) && ready;
