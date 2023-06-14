@@ -1,8 +1,4 @@
-import { useCallback } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
-
-import { useGlobals } from '@storybook/api';
-import { FORCE_RE_RENDER } from '@storybook/core-events';
 
 import {
     CacheProvider,
@@ -12,12 +8,11 @@ import {
     NotificationsChildren,
     NotificationsProvider,
     ThemeProvider,
-    useTheme,
 } from '@proton/components';
 import ApiProvider from '@proton/components/containers/api/ApiProvider';
 import ConfigProvider from '@proton/components/containers/config/Provider';
 import createCache from '@proton/shared/lib/helpers/cache';
-import { PROTON_DEFAULT_THEME, PROTON_THEMES, PROTON_THEMES_MAP } from '@proton/shared/lib/themes/themes';
+import { PROTON_DEFAULT_THEME, PROTON_THEMES_MAP, getThemes } from '@proton/shared/lib/themes/themes';
 
 import * as config from '../src/app/config';
 import './prismjs.js';
@@ -33,6 +28,7 @@ const tempConfig = {
 };
 
 const colorSchemes = ['default', 'ui-alias', 'ui-note', 'ui-password', 'ui-login'];
+const themes = getThemes(true);
 
 export const globalTypes = {
     theme: {
@@ -41,7 +37,7 @@ export const globalTypes = {
         defaultValue: PROTON_THEMES_MAP[PROTON_DEFAULT_THEME].label,
         toolbar: {
             icon: 'paintbrush',
-            items: PROTON_THEMES.map(({ label }) => label),
+            items: themes.map(({ label }) => label),
             showName: true,
             title: 'Theme',
             dynamicTitle: true,
@@ -65,7 +61,7 @@ export const decorators = [
     (Story, context) => {
         const { theme: themeGlobal } = context.globals;
 
-        const identifier = PROTON_THEMES.find((theme) => theme.label === themeGlobal)?.identifier;
+        const identifier = themes.find((theme) => theme.label === themeGlobal)?.identifier;
 
         const initialTheme = identifier || PROTON_DEFAULT_THEME;
 
