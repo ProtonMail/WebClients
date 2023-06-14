@@ -1,4 +1,4 @@
-import { type VFC, memo, useRef } from 'react';
+import { type VFC, memo, useEffect, useRef } from 'react';
 import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
@@ -18,11 +18,6 @@ import { useNavigationContext } from '../../hooks/useNavigationContext';
 
 import './Searchbar.scss';
 
-/**
- * FIXME: if we get reports of the search ever feeling slow or sluggish,
- * we might have to either debounce the search query value handling and/or
- * to implement the component as a an uncontroller input.
- */
 const SearchbarRaw: VFC<{ disabled?: boolean; value: string; handleValue: (value: string) => void }> = ({
     disabled,
     value,
@@ -42,6 +37,10 @@ const SearchbarRaw: VFC<{ disabled?: boolean; value: string; handleValue: (value
         inputRef.current?.focus();
     };
 
+    const handleFocus = () => {
+        inputRef.current?.select();
+    };
+
     const handleBlur = () => {
         void (
             !isEmptyString(value) &&
@@ -56,13 +55,21 @@ const SearchbarRaw: VFC<{ disabled?: boolean; value: string; handleValue: (value
         );
     };
 
+    useEffect(() => {
+        handleFocus();
+    }, []);
+
     return (
         <Input
-            ref={inputRef}
+            autoFocus
             className="pass-searchbar"
-            placeholder={`${inTrash ? c('Placeholder').t`Search in Trash` : placeholder}…
-`}
+            disabled={disabled}
+            onBlur={handleBlur}
+            onFocus={handleFocus}
+            onValue={handleValue}
+            placeholder={`${inTrash ? c('Placeholder').t`Search in Trash` : placeholder}…`}
             prefix={<Icon name="magnifier" />}
+            ref={inputRef}
             suffix={
                 value !== '' && (
                     <Button
@@ -79,10 +86,6 @@ const SearchbarRaw: VFC<{ disabled?: boolean; value: string; handleValue: (value
                 )
             }
             value={value}
-            onValue={handleValue}
-            onBlur={handleBlur}
-            disabled={disabled}
-            autoFocus
         />
     );
 };
