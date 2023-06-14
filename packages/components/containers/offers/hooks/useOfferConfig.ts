@@ -57,12 +57,12 @@ const useOfferConfig = (): [OfferConfig | undefined, boolean] => {
         'black-friday-vpn-1-deal-2022': blackFridayVPN1Deal2022,
         'black-friday-vpn-2-deal-2022': blackFridayVPN2Deal2022,
         'black-friday-vpn-3-deal-2022': blackFridayVPN3Deal2022,
+        'summer-2023': summer2023,
         'family-3-deal-2023': family3Deal2023,
         'family-1-deal-2023': family1Deal2023,
         'go-unlimited-2022': goUnlimited2022,
         'special-offer-2022': specialOffer2022,
         'mail-trial-2023': mailTrial2023,
-        'summer-2023': summer2023,
     };
 
     const allOffers = Object.values(operations);
