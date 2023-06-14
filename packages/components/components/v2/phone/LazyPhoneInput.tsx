@@ -1,16 +1,17 @@
-import { Suspense, lazy } from 'react';
+import { Ref, Suspense, forwardRef, lazy } from 'react';
 
 import Loader from '../../loader/Loader';
-import { Props as PhoneInputProps } from './PhoneInput';
+import { Props as PhoneInputProps, Props } from './PhoneInput';
 
 const PhoneInput = lazy(() => import(/* webpackChunkName: "PhoneInput", webpackPreload: true */ './PhoneInput'));
 
-const LazyPhoneInput = (props: PhoneInputProps) => {
+const LazyPhoneInputBase = (props: PhoneInputProps, ref: Ref<HTMLInputElement>) => {
     return (
         <Suspense fallback={<Loader />}>
-            <PhoneInput {...props} />
+            <PhoneInput {...props} ref={ref} />
         </Suspense>
     );
 };
 
+const LazyPhoneInput = forwardRef<HTMLInputElement, Props>(LazyPhoneInputBase);
 export default LazyPhoneInput;

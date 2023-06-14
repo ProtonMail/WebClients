@@ -1,6 +1,7 @@
-import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
+import { Ref, forwardRef, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 
 import { Input, InputProps } from '@proton/atoms';
+import useCombinedRefs from '@proton/hooks/useCombinedRefs';
 import clsx from '@proton/utils/clsx';
 
 import useRightToLeft from '../../../containers/rightToLeft/useRightToLeft';
@@ -34,14 +35,10 @@ export interface Props extends Omit<InputProps, 'type' | 'value' | 'onChange'> {
     onChange: (value: string) => void;
 }
 
-const PhoneInput = ({
-    value: actualValue = '',
-    defaultCountry = 'US',
-    embedded,
-    onChange,
-    onValue,
-    ...rest
-}: Props) => {
+const PhoneInputBase = (
+    { value: actualValue = '', defaultCountry = 'US', embedded, onChange, onValue, ...rest }: Props,
+    ref: Ref<HTMLInputElement>
+) => {
     const inputRef = useRef<HTMLInputElement>(null);
     const selectionRef = useRef<number | null>(null);
     const oldSpecificCountryLengthRef = useRef<number>(0);
@@ -129,7 +126,7 @@ const PhoneInput = ({
             {...rest}
             type="tel"
             value={formattedValueInMode}
-            ref={inputRef}
+            ref={useCombinedRefs(inputRef, ref)}
             placeholder={placeholder}
             dir="ltr"
             containerProps={{ dir: 'ltr' }}
@@ -172,4 +169,5 @@ const PhoneInput = ({
     );
 };
 
+const PhoneInput = forwardRef<HTMLInputElement, Props>(PhoneInputBase);
 export default PhoneInput;
