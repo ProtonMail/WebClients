@@ -1,7 +1,6 @@
 import { createSelector } from '@reduxjs/toolkit';
 
 import type {
-    Item,
     ItemRevision,
     ItemRevisionWithOptimistic,
     ItemType,
@@ -13,7 +12,7 @@ import type {
 import { invert, prop } from '@proton/pass/utils/fp';
 import { isLoginItem } from '@proton/pass/utils/pass/items';
 import { isTrashed } from '@proton/pass/utils/pass/trash';
-import { ItemUrlMatch, getItemPriorityForUrl, matchAny } from '@proton/pass/utils/search';
+import { ItemUrlMatch, getItemPriorityForUrl, matchAny, matchItem } from '@proton/pass/utils/search';
 import { isEmptyString } from '@proton/pass/utils/string';
 import type { ParsedUrl } from '@proton/pass/utils/url';
 
@@ -25,7 +24,9 @@ const flattenItemsByShareId = (itemsByShareId: {
     [shareId: string]: { [itemId: string]: ItemRevision };
 }): ItemRevision[] => Object.values(itemsByShareId).flatMap(Object.values);
 
-export const sortItems = <T extends (ItemRevision | ItemRevisionWithOptimistic)[]>(items: T, sort: ItemsSortOption) => {
+export const sortItems = <T extends ItemRevision>(items: T[], sort?: MaybeNull<ItemsSortOption>) => {
+    if (!sort) return items;
+
     return items.sort((a, b) => {
         switch (sort) {
             case 'createTimeASC':
@@ -40,7 +41,22 @@ export const sortItems = <T extends (ItemRevision | ItemRevisionWithOptimistic)[
             case 'titleASC':
                 return a.data.metadata.name.localeCompare(b.data.metadata.name);
         }
-    }) as T;
+    });
+};
+
+export const filterItemsByShareId = <T extends ItemRevision>(items: T[], shareId?: MaybeNull<string>) => {
+    if (!shareId) return items;
+    return items.filter((item) => shareId === item.shareId);
+};
+
+export const filterItemsByType = <T extends ItemRevision>(items: T[], itemType?: MaybeNull<ItemType>) => {
+    if (!itemType) return items;
+    return items.filter((item) => !itemType || itemType === item.data.type);
+};
+
+export const matchItems = <T extends ItemRevision>(items: T[], search?: string) => {
+    if (!search || search.trim() === '') return items;
+    return items.filter((item) => matchItem(item.data)(search));
 };
 
 export const selectByShareId = (state: State) => state.items.byShareId;
@@ -72,16 +88,61 @@ const { asIfNotFailed, asIfNotOptimistic } = withOptimisticItemsByShareId.select
 export const selectByShareIdAsIfNotFailed = createSelector(selectByShareId, asIfNotFailed);
 export const selectByShareIdAsIfNotOptimistic = createSelector(selectByShareId, asIfNotOptimistic);
 
-export const selectItemsWithOptimistic = createSelector(
-    [selectAllItems, selectByShareIdAsIfNotFailed, selectByShareIdAsIfNotOptimistic],
-    (items, withoutFailed, withoutOptimistic) => {
-        return items.map(
-            (item): ItemRevisionWithOptimistic => ({
-                ...item,
-                failed: withoutFailed[item.shareId]?.[item.itemId]?.revision !== item.revision,
-                optimistic: withoutOptimistic[item.shareId]?.[item.itemId]?.revision !== item.revision,
-            })
-        );
+const selectItemsWithOptimisticFactory = ({ trash }: { trash: boolean }) =>
+    createSelector(
+        [selectAllItems, selectByShareIdAsIfNotFailed, selectByShareIdAsIfNotOptimistic],
+        (items, withoutFailed, withoutOptimistic) => {
+            return items
+                .filter((item) => (trash ? isTrashed(item) : !isTrashed(item)))
+                .map(
+                    (item): ItemRevisionWithOptimistic => ({
+                        ...item,
+                        failed: withoutFailed[item.shareId]?.[item.itemId]?.revision !== item.revision,
+                        optimistic: withoutOptimistic[item.shareId]?.[item.itemId]?.revision !== item.revision,
+                    })
+                );
+        }
+    );
+
+export const selectItemsWithOptimistic = selectItemsWithOptimisticFactory({ trash: false });
+export const selectTrashItemsWithOptimistic = selectItemsWithOptimisticFactory({ trash: true });
+
+type SelectOptions = {
+    itemType?: MaybeNull<ItemType>;
+    shareId?: MaybeNull<string>;
+    search?: string;
+    sort?: MaybeNull<ItemsSortOption>;
+};
+
+export const selectShareItemsWithOptimistic = createSelector(
+    [
+        selectItemsWithOptimistic,
+        (_state: State, { shareId }: SelectOptions) => shareId,
+        (_state: State, { sort }: SelectOptions) => sort,
+    ],
+    (items, shareId, sort) => {
+        return sortItems(filterItemsByShareId(items, shareId), sort);
+    }
+);
+
+export const selectMatchedAndFilteredItemsWithOptimistic = createSelector(
+    [
+        selectShareItemsWithOptimistic,
+        (_state: State, { search }: SelectOptions) => search,
+        (_state: State, { itemType }: SelectOptions) => itemType,
+    ],
+    (items, search, itemType) => {
+        const matched = matchItems(items, search);
+        const filtered = filterItemsByType(matched, itemType);
+        return { matched, filtered, totalCount: items.length };
+    }
+);
+
+export const selectMatchedTrashItemsWithOptimistic = createSelector(
+    [selectTrashItemsWithOptimistic, (_state: State, search?: string) => search],
+    (items, search) => {
+        const matched = matchItems(items, search);
+        return { matched, totalCount: items.length };
     }
 );
 
@@ -109,36 +170,6 @@ export const selectLoginItemByUsername = (username?: MaybeNull<string>) =>
         loginItems.find((item) => item.data.content.username === _username)
     );
 
-export type SelectMatchItemsOptions = {
-    matchItem: (item: Item) => (searchTerm: string) => boolean;
-    needle?: string;
-    shareId?: string;
-    sort?: ItemsSortOption;
-    trash?: boolean;
-};
-
-export const selectMatchItems = createSelector(
-    [selectItemsWithOptimistic, (_: State, options: SelectMatchItemsOptions) => options],
-    (items, options) => {
-        const { needle = '', shareId, sort = 'recent', trash = false, matchItem } = options;
-
-        const itemsByShareId = items.filter(
-            (item) => (!shareId || shareId === item.shareId) && (trash ? isTrashed(item) : !isTrashed(item))
-        );
-
-        const matchedItems =
-            needle.trim() === '' ? itemsByShareId : itemsByShareId.filter((item) => matchItem(item.data)(needle));
-
-        const sortedItems = sortItems(matchedItems, sort);
-
-        return {
-            result: sortedItems,
-            count: sortedItems.length,
-            totalCount: itemsByShareId.length,
-        };
-    }
-);
-
 export const selectItemsByDomain = (
     domain: MaybeNull<string>,
     options: {
@@ -162,7 +193,7 @@ export const selectItemsByDomain = (
                 ? items
                       .reduce<{ item: ItemRevisionWithOptimistic; priority: ItemUrlMatch }[]>((matches, item) => {
                           const validShareId = !shareId || shareId === item.shareId;
-                          const validItem = !item.optimistic && !isTrashed(item);
+                          const validItem = !item.optimistic;
                           const validUrls = isLoginItem(item.data) && matchAny(item.data.content.urls)(domain);
 
                           /* If the item does not pass this initial "fuzzy" test, then we

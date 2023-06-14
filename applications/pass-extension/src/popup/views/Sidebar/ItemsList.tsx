@@ -19,15 +19,16 @@ export const ItemsList: VFC = () => {
 
     const {
         filtering: { search, filter, sort, setSort, setFilter },
-        items: { result: filteredItems, count, totalCount },
+        filtered,
+        totalCount,
     } = useItems();
 
     const listRef = useRef<List>(null);
     useEffect(() => listRef.current?.scrollToRow(0), [filter, sort]);
 
     const { interpolation, interpolationIndexes } = useMemo(
-        () => interpolateRecentItems(filteredItems)(sort === 'recent'),
-        [filteredItems, sort]
+        () => interpolateRecentItems(filtered)(sort === 'recent'),
+        [filtered, sort]
     );
 
     return (
@@ -39,7 +40,7 @@ export const ItemsList: VFC = () => {
                 </div>
             )}
 
-            {count === 0 ? (
+            {filtered.length === 0 ? (
                 <div className="absolute-center flex flex-justify-center flex-align-items-center w70">
                     <ItemsListPlaceholder />
                 </div>
