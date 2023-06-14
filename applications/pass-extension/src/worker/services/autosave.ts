@@ -17,11 +17,11 @@ import store from '../store';
 
 export const createAutoSaveService = () => {
     const resolvePromptOptions = (submission: FormEntry<FormEntryStatus.COMMITTED>): AutoSavePromptOptions => {
-        const candidates = selectAutosaveCandidate(
-            submission.data.username,
-            submission.domain,
-            submission.subdomain
-        )(store.getState());
+        const candidates = selectAutosaveCandidate({
+            domain: submission.domain,
+            subdomain: submission.subdomain,
+            username: submission.data.username,
+        })(store.getState());
 
         /**
          * If no login items found for the current
