@@ -325,6 +325,9 @@
       "Got it": [
         "Зрозуміло"
       ],
+      "Grid layout": [
+        "Макет сітки"
+      ],
       "Hide advanced PGP settings": [
         "Приховати розширені налаштування PGP"
       ],
@@ -785,7 +788,7 @@
     },
     "Bug category": {
       "Application problem": [
-        "Проблема з додатком"
+        "Проблема з програмою"
       ],
       "Bridge problem": [
         "Проблема з Bridge"
@@ -2636,6 +2639,9 @@
       "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
         "Включає 2700 серверів у понад 65 країнах, підключення до 10 пристроїв, доступ до світових сервісів трансляції, захист від зловмисних програм і реклами, а також інші можливості."
       ],
+      "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
+        "Включає підтримку 3 власних доменів, 90 адрес пошти, необмежену кількість псевдонімів Hide-my-email, спільний доступ до календаря та інші можливості."
+      ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Безпечно зберігайте свої файли у зашифрованому хмарному сховищі з автоматичною синхронізацією, зашифрованим спільним доступом та іншими можливостями."
       ]
@@ -2709,6 +2715,31 @@
     "Filter notification": {
       "${ Label.Name } updated": [
         "${ Label.Name } оновлено"
+      ]
+    },
+    "Font face option": {
+      "System default": [
+        "Системна за замовчуванням"
+      ],
+      "Theme default": [
+        "Тема за замовчуванням"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Великий"
+      ],
+      "Medium (recommended)": [
+        "Середній (рекомендовано)"
+      ],
+      "Small": [
+        "Маленький"
+      ],
+      "Very large": [
+        "Дуже великий"
+      ],
+      "Very small": [
+        "Дуже маленький"
       ]
     },
     "Group": {
@@ -3400,6 +3431,9 @@
       "Current version": [
         "Поточна версія"
       ],
+      "Customize the look and feel of ${ BRAND_NAME } applications.": [
+        "Налаштуйте зовнішній вигляд застосунків ${ BRAND_NAME }."
+      ],
       "Decrypting files": [
         "Розшифрування файлів"
       ],
@@ -3441,6 +3475,12 @@
       ],
       "Downloading": [
         "Завантаження"
+      ],
+      "Drop file here to upload": [
+        "Перетягніть файл сюди, щоб вивантажити"
+      ],
+      "Drop to import": [
+        "Перетягніть, щоб імпортувати"
       ],
       "Duplicate key updated": [
         "Дублікат ключа оновлено"
@@ -3541,9 +3581,6 @@
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "Щоб досягти найкращих результатів, уникайте потокової передачі даних і дій, що вимагають багато пам'яті, або розбивайте вивантаження на менші частини."
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "Пересилайте вхідні повідомлення з іншого облікового запису до своєї захищеної поштової скриньки ${ MAIL_APP_NAME }."
-      ],
       "Free forever": [
         "Безплатно назавжди"
       ],
@@ -3600,9 +3637,6 @@
       ],
       "Import mailbox": [
         "Імпортувати поштову скриньку"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "Імпортуйте ваші електронні листи, календарі та контакти з іншої служби до ${ BRAND_NAME }."
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Імпортування ваших даних із ${ fromEmail } до ${ toEmail }."
@@ -4072,8 +4106,8 @@
       "Uploading hundreds of files at once may have a performance impact.": [
         "Завантаження сотень файлів одразу може вплинути на швидкодію."
       ],
-      "Use Drive for Desktop to sync folders on your computer with ${ DRIVE_APP_NAME }. They’ll show up here and be accessible from anywhere. ${ LearnMore }": [
-        "Використовуйте Drive для комп'ютерів, щоб синхронізувати теки на своєму комп'ютері з ${ DRIVE_APP_NAME }. Вони з'являться тут і будуть доступні звідусіль. ${ LearnMore }"
+      "Use Drive for Desktop to sync folders on your computer with ${ DRIVE_APP_NAME }. They’ll show up here and be accessible from anywhere. ${ learnMore }": [
+        "Використовуйте Drive для комп'ютерів, щоб синхронізувати теки на своєму комп'ютері з ${ DRIVE_APP_NAME }. Вони з'являться тут і будуть доступні будь-де. ${ learnMore }"
       ],
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Скористайтеся цією формою, щоб повідомити нас про невідповідні, незаконні,\nабо іншим чином шкідливі спільні файли. Ви збираєтеся повідомити:"
@@ -4166,7 +4200,7 @@
         "Ви втратите всі незбережені зміни."
       ],
       "You've reached the maximum number of addresses in the contact group(s):": [
-        "Ви досягли максимальної кількості адрес у групах контактів:"
+        "Ви досягли максимальної кількості адрес у групі (ах) контактів:"
       ],
       "You've reached the maximum number of addresses in the contact group.": [
         "Ви досягли максимальної кількості адрес у групі контактів."
@@ -4197,6 +4231,9 @@
       ],
       "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ KeyReactivationButton }": [
         "У зв'язку зі скиданням пароля, ваші файли більше недоступні. Для відновлення доступу повторно вивантажте старий ключ шифрування. ${ KeyReactivationButton }"
+      ],
+      "Your files will be encrypted and then saved": [
+        "Ваші файли буде зашифровано, а потім збережено"
       ],
       "Your files will be encrypted and then saved.": [
         "Ваші файли буде зашифровано, а потім збережено."
@@ -4671,6 +4708,9 @@
       "Street address": [
         "Вулиця"
       ],
+      "Synchronize with system": [
+        "Синхронізувати з системою"
+      ],
       "System information": [
         "Інформація про систему"
       ],
@@ -4917,6 +4957,9 @@
       ],
       "Custom email domains": [
         "Власні домени електронної пошти"
+      ],
+      "Hide-my-email aliases": [
+        "Псевдоніми Hide-my-email"
       ],
       "Schedule messages at any time": [
         "Заплануйте надсилання повідомлень в будь-який час"
@@ -5241,6 +5284,9 @@
       "Discover all ${ BRAND_NAME } services": [
         "Ознайомитися з усіма службами ${ BRAND_NAME }"
       ],
+      "More theming options are available in your account Settings > Appearance.": [
+        "Додаткові параметри теми доступні в Налаштування облікового запису > Вигляд."
+      ],
       "Select a theme": [
         "Виберіть тему"
       ],
@@ -5252,9 +5298,6 @@
       ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
         "Використовуйте селектор застосунків у верхньому лівому куті, щоб отримати доступ до всіх служб ${ BRAND_NAME }: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } і ${ DRIVE_SHORT_APP_NAME }."
-      ],
-      "You can change this anytime in your settings.": [
-        "Ви можете змінити це будь-коли в налаштуваннях."
       ]
     },
     "Onboarding Title": {
@@ -5694,6 +5737,15 @@
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
         "Доступ звідусіль до матеріалів сервісів трансляції, включно з Netflix, Disney+ і Prime Video."
       ],
+      "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
+        "Всі найкращі можливості наших преміум функцій: 100 адрес пошти, підтримка 10 власних доменів, необмежена кількість псевдонімів Hide-my-email, спільний доступ до календаря, зашифроване хмарне сховище, спільний доступ до файлів і багато іншого."
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Включає підтримку 1 власного домену, 10 адрес пошти, 10 псевдонімів Hide-my-email, спільний доступ до календаря та інші можливості."
+      ],
+      "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Включає підтримку 3 власних доменів, 15 адрес пошти, необмежену кількість псевдонімів Hide-my-email, спільний доступ до календаря та інші можливості."
+      ],
       "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
         "Ідеально підходить для сім'ї або невеликої команди. Кожен учасник може мати власну поштову скриньку та псевдоніми. Потрібен власний домен."
       ],
@@ -5930,6 +5982,9 @@
         "${ numberOfFailedTransfer.total } невдалих вивантажень",
         "${ numberOfFailedTransfer.total } невдалих вивантажень"
       ],
+      "(active)": [
+        "(активно)"
+      ],
       "Account suspended": [
         "Обліковий запис призупинено"
       ],
@@ -6022,6 +6077,9 @@
       ],
       "Date": [
         "Дата"
+      ],
+      "Day theme": [
+        "Світла тема"
       ],
       "Delete ${ count } contact": [
         "Видалити ${ count } контакт",
@@ -6184,6 +6242,9 @@
       ],
       "Name": [
         "Назва"
+      ],
+      "Night theme": [
+        "Темна тема"
       ],
       "No results found": [
         "Результатів не знайдено"
@@ -6467,6 +6528,9 @@
       ],
       "The import will start with the most recent messages.": [
         "Імпортування розпочнеться з найновіших повідомлень."
+      ],
+      "The selected theme will be active when your system is set to \"light mode\"": [
+        "Вибрана тема буде активною, коли у вашій системі встановлено \"світлий режим\""
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Вивантажте відкритий ключ, щоб увімкнути надсилання наскрізно зашифрованих листів на цю адресу"
