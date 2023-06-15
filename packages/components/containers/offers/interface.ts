@@ -43,8 +43,6 @@ export interface Operation {
     isLoading: boolean;
 }
 
-export type OperationsMap = Record<OfferId, Operation>;
-
 export interface OfferImages {
     sideImage?: string;
     sideImage2x?: string;
