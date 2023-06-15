@@ -92,7 +92,7 @@ export const Tabs = ({
                 <nav className={clsx(['tabs-container border-bottom border-weak', containerClassName])}>
                     <ul
                         className={clsx([
-                            'tabs-list unstyled flex relative m-0 p0',
+                            'tabs-list unstyled flex relative m-0 p-0',
                             fullWidth && 'tabs-list--fullWidth',
                             'flex-align-items-end',
                         ])}
