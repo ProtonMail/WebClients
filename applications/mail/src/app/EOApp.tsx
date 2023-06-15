@@ -23,7 +23,7 @@ import { newVersionUpdater } from '@proton/shared/lib/busy';
 import { getProdId, setVcalProdId } from '@proton/shared/lib/calendar/vcalConfig';
 import createCache, { Cache } from '@proton/shared/lib/helpers/cache';
 import sentry from '@proton/shared/lib/helpers/sentry';
-import { setLocales } from '@proton/shared/lib/i18n/locales';
+import { setTtagLocales } from '@proton/shared/lib/i18n/locales';
 import noop from '@proton/utils/noop';
 
 import * as config from './config';
@@ -33,7 +33,7 @@ import locales from './locales';
 
 import './app.scss';
 
-setLocales(locales);
+setTtagLocales(locales);
 newVersionUpdater(config);
 sentry({ config, sessionTracking: getSessionTrackingEnabled() });
 setVcalProdId(getProdId(config));
