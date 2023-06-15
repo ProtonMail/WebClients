@@ -18,7 +18,7 @@ import { validateNewAliasForm } from '../../../../shared/form/validator/validate
 import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH } from '../../../../shared/form/validator/validate-item';
 import { useAliasOptions } from '../../../../shared/hooks/useAliasOptions';
 import { type ItemNewProps } from '../../../../shared/items';
-import { deriveAliasPrefix } from '../../../../shared/items/alias';
+import { deriveAliasPrefix, reconciliateAliasFromDraft } from '../../../../shared/items/alias';
 import { ValueControl } from '../../../components/Field/Control/ValueControl';
 import { Field } from '../../../components/Field/Field';
 import { FieldsetCluster } from '../../../components/Field/Layout/FieldsetCluster';
@@ -102,12 +102,6 @@ export const AliasNew: VFC<ItemNewProps<'alias'>> = ({ shareId, onSubmit, onCanc
         onAliasOptionsLoaded: async ({ suffixes, mailboxes }) => {
             const draft = await draftHydrated;
             const formValues = draft ?? form.values;
-            /* if alias options have already been loaded, the following block
-             * will be executed on initial mount of the component: initial
-             * validation will be underway and the `form.reset` call will be
-             * invalidated by the initial async validation. For safety, wrap
-             * the `onAliasOptionsLoaded` in a `requestAnimationFrame` so it
-             * triggers on the next repaint */
 
             const firstSuffix = suffixes?.[0];
             const firstMailBox = mailboxes?.[0];
@@ -131,18 +125,8 @@ export const AliasNew: VFC<ItemNewProps<'alias'>> = ({ shareId, onSubmit, onCanc
         shareId: form.values.shareId,
         onHydrated: draftHydrated.resolve,
         sanitize: (formData) => {
-            const { aliasSuffix, mailboxes } = formData;
-            const suffixOptions = aliasOptions?.suffixes ?? [];
-            const mailboxOptions = aliasOptions?.mailboxes ?? [];
-
-            const suffixMatch = suffixOptions.find(({ signature }) => signature === aliasSuffix?.signature);
-            const mailboxesMatch = mailboxOptions.filter(({ id }) => mailboxes.some((mailbox) => id === mailbox.id));
-
-            return {
-                ...formData,
-                aliasSuffix: suffixMatch,
-                mailboxes: mailboxesMatch,
-            };
+            const aliasValues = reconciliateAliasFromDraft(formData, aliasOptions);
+            return { ...formData, ...aliasValues };
         },
     });
 

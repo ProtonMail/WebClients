@@ -22,7 +22,7 @@ import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH } from '../../../../shared/f
 import { validateLoginForm } from '../../../../shared/form/validator/validate-login';
 import { useFeatureFlag } from '../../../../shared/hooks/useFeatureFlag';
 import type { ItemNewProps } from '../../../../shared/items';
-import { deriveAliasPrefix } from '../../../../shared/items/alias';
+import { deriveAliasPrefix, reconciliateAliasFromDraft } from '../../../../shared/items/alias';
 import { QuickActionsDropdown } from '../../../components/Dropdown/QuickActionsDropdown';
 import { ValueControl } from '../../../components/Field/Control/ValueControl';
 import { ExtraFieldGroup } from '../../../components/Field/ExtraFieldGroup/ExtraFieldGroup';
@@ -159,20 +159,11 @@ export const LoginNew: VFC<ItemNewProps<'login'>> = ({ shareId, onSubmit, onCanc
         itemId: 'draft-login',
         shareId: form.values.shareId,
         sanitize: (formData) => {
-            const { aliasSuffix, mailboxes } = formData;
-            const suffixOptions = aliasModal.aliasOptions?.suffixes ?? [];
-            const mailboxOptions = aliasModal.aliasOptions?.mailboxes ?? [];
+            if (!formData.withAlias) return formData;
 
-            const suffixMatch = suffixOptions.find(({ signature }) => signature === aliasSuffix?.signature);
-            const mailboxesMatch = mailboxOptions.filter(({ id }) => mailboxes.some((mailbox) => id === mailbox.id));
-            const withAlias = suffixMatch !== undefined && mailboxesMatch.length > 0;
-
-            return {
-                ...formData,
-                withAlias,
-                aliasSuffix: withAlias ? suffixMatch : undefined,
-                mailboxes: withAlias ? mailboxesMatch : [],
-            };
+            const aliasValues = reconciliateAliasFromDraft(formData, aliasModal.aliasOptions);
+            const withAlias = aliasValues.aliasSuffix !== undefined && aliasValues.mailboxes.length > 0;
+            return { ...formData, ...aliasValues, withAlias };
         },
     });
 
