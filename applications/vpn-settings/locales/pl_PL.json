@@ -371,9 +371,6 @@
       "Upgrade now": [
         "Ulepsz teraz"
       ],
-      "Use ${ label } theme": [
-        "Użyj motywu ${ label }"
-      ],
       "Use a different card": [
         "Użyj innej karty"
       ],
@@ -2222,9 +2219,6 @@
       "By leaving now, changes may not be saved": [
         "Jeśli wyjdziesz teraz, zmiany nie zostaną zapisane"
       ],
-      "Choose the look and feel of the application.": [
-        "Wybierz wygląd aplikacji."
-      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Kliknij przycisk \"Poproś o nowy kod\", aby otrzymać nowy kod weryfikacyjny na numer telefonu ${ strong }. Jeśli numer jest nieprawidłowy, kliknij przycisk \"Edytuj\", aby go poprawić."
       ],
@@ -3054,6 +3048,9 @@
       "Card holder": [
         "Właściciel karty"
       ],
+      "Card information": [
+        "Informacje o karcie"
+      ],
       "Card number": [
         "Numer karty"
       ],
@@ -3590,10 +3587,10 @@
         "${ n } folderów i etykiet"
       ],
       "${ n } Hide-my-email alias": [
-        "${ n } alias Hide My Email",
-        "${ n } aliasy Hide My Email",
-        "${ n } aliasów Hide My Email",
-        "${ n } aliasów Hide My Email"
+        "${ n } alias Hide-my-email",
+        "${ n } aliasy Hide-my-email",
+        "${ n } aliasów Hide-my-email",
+        "${ n } aliasów Hide-my-email"
       ],
       "${ n } label": [
         "${ n } etykieta",
@@ -3824,7 +3821,7 @@
         "Nieograniczona liczba folderów, etykiet i filtrów"
       ],
       "Unlimited hide-my-email aliases": [
-        "Nieograniczona liczba aliasów Hide My Email"
+        "Nieograniczona liczba aliasów Hide-my-email"
       ],
       "Unlimited labels": [
         "Nieograniczona liczba etykiet"
