@@ -20,7 +20,7 @@ const MainRaw: VFC = () => {
     useEffect(() => () => clearNotifications(), []);
 
     return (
-        <FadeIn id="main" className="flex flex-column flex-nowrap w100 h100 overflow-hidden" key="main">
+        <FadeIn id="main" className="flex flex-column flex-nowrap w100 h100 overflow-hidden" key="main" delay={50}>
             <Header />
             <main className="flex flex-align-items-center flex-justify-center flex-nowrap w100 h100">
                 <Sidebar>
