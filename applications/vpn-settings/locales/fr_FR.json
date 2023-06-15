@@ -371,9 +371,6 @@
       "Upgrade now": [
         "Changer d'abonnement"
       ],
-      "Use ${ label } theme": [
-        "Utiliser le thème ${ label }"
-      ],
       "Use a different card": [
         "Utiliser une autre carte"
       ],
@@ -1826,7 +1823,7 @@
         "Cela comprend 2 700 serveurs répartis dans plus de 65 pays, la possibilité de connecter jusqu'à 10 appareils, l'accès aux services de streaming du monde entier, un bloqueur de logiciels malveillants et de publicités et bien d'autres fonctionnalités."
       ],
       "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
-        "Comprend la prise en charge de 3 domaines de messagerie personnalisés, de 90 adresses e-mail, d'un nombre illimité d'alias « Hide My Email », du partage de calendrier…"
+        "Comprend la prise en charge de 3 domaines de messagerie personnalisés, de 90 adresses e-mail, d'un nombre illimité d'alias Hide-my-email, du partage de calendrier…"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Sécurisez vos fichiers grâce au stockage cloud chiffré. Cela comprend la synchronisation automatique, le partage de fichiers chiffrés et d'autres fonctionnalités."
@@ -1969,6 +1966,31 @@
       "Megabyte": [
         "Megaoctet",
         "Megaoctets"
+      ]
+    },
+    "Font face option": {
+      "System default": [
+        "Identique au système"
+      ],
+      "Theme default": [
+        "Thème par défaut"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Grand"
+      ],
+      "Medium (recommended)": [
+        "Moyen (recommandé)"
+      ],
+      "Small": [
+        "Petit"
+      ],
+      "Very large": [
+        "Très grand"
+      ],
+      "Very small": [
+        "Très petit"
       ]
     },
     "Frequency of news": {
@@ -2198,9 +2220,6 @@
       ],
       "By leaving now, changes may not be saved": [
         "En quittant maintenant, les modifications ne seront peut-être pas sauvegardées."
-      ],
-      "Choose the look and feel of the application.": [
-        "Choisissez l'apparence de l'application."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Cliquez sur Demander un nouveau code pour envoyer un nouveau code de vérification à ${ strong }. Si ce numéro de téléphone n'est pas correct, cliquez sur Modifier pour le corriger."
@@ -3019,6 +3038,9 @@
       "Card holder": [
         "Titulaire de la carte"
       ],
+      "Card information": [
+        "Données de la carte"
+      ],
       "Card number": [
         "Numéro de la carte"
       ],
@@ -3105,6 +3127,9 @@
       ],
       "Enter the code displayed on your TV": [
         "Saisissez le code affiché sur votre téléviseur."
+      ],
+      "Expiration (${ patternExpiration })": [
+        "Expiration (${ patternExpiration })"
       ],
       "Expiration date": [
         "Date d’expiration"
@@ -3225,6 +3250,9 @@
       ],
       "Security code": [
         "Code de sécurité"
+      ],
+      "Security code (${ codeName })": [
+        "Code de sécurité (${ codeName })"
       ],
       "Select your country": [
         "Sélectionnez votre pays"
@@ -3535,8 +3563,8 @@
         "${ n } dossiers et labels"
       ],
       "${ n } Hide-my-email alias": [
-        "${ n } alias « Hide My Email »",
-        "${ n } alias « Hide My Email »"
+        "${ n } alias Hide-my-email",
+        "${ n } alias Hide-my-email"
       ],
       "${ n } label": [
         "${ n } label",
@@ -3753,7 +3781,7 @@
         "Dossiers, labels et filtres illimités"
       ],
       "Unlimited hide-my-email aliases": [
-        "Nombre illimité d'alias « Hide My Email »"
+        "Nombre illimité d'alias Hide-my-email"
       ],
       "Unlimited labels": [
         "Labels illimités"
@@ -4609,13 +4637,13 @@
         "Accédez au contenu des services de streaming, dont Netflix, Amazon Prime Video, Canal+, Disney+, France.tv, TF1… où que vous soyez."
       ],
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
-        "Tous nos services premium au plus haut niveau : 100 adresses e-mail, la prise en charge de 10 domaines personnalisés, un nombre illimité d'alias « Hide My Email », le partage de calendriers, le stockage cloud et le partage de fichiers chiffrés…"
+        "Tous nos services premium au plus haut niveau : 100 adresses e-mail, la prise en charge de 10 domaines personnalisés, un nombre illimité d'alias Hide-my-email, le partage de calendriers, le stockage cloud et le partage de fichiers chiffrés…"
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Comprend la prise en charge d'un domaine de messagerie personnalisé, de 10 adresses e-mail, de 10 alias « Hide My Email », du partage de calendrier…"
+        "Comprend la prise en charge d'un domaine de messagerie personnalisé, de 10 adresses e-mail, de 10 alias Hide-my-email, du partage de calendrier…"
       ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Comprend la prise en charge de 3 domaines de messagerie personnalisés, de 15 adresses e-mail, d'un nombre illimité d'alias « Hide My Email », du partage de calendrier…"
+        "Comprend la prise en charge de 3 domaines de messagerie personnalisés, de 15 adresses e-mail, d'un nombre illimité d'alias Hide-my-email, du partage de calendrier…"
       ],
       "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
         "Idéal pour les familles ou les petites équipes, chacun pouvant disposer de sa propre boite de réception et de ses propres alias. Nécessite un domaine personnalisé."

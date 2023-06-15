@@ -371,9 +371,6 @@
       "Upgrade now": [
         "Jetzt upgraden"
       ],
-      "Use ${ label } theme": [
-        "Farbschema „${ label }“ verwenden"
-      ],
       "Use a different card": [
         "Eine andere Karte verwenden"
       ],
@@ -1603,10 +1600,10 @@
         "Unbekannter Status des Zahlungstoken"
       ],
       "Username must begin with a letter or digit": [
-        "Der Benutzername muss mit einem Buchstaben oder einer Ziffer beginnen"
+        "Der Benutzername muss mit einem Buchstaben oder einer Ziffer beginnen."
       ],
       "Username must end with a letter or digit": [
-        "Der Benutzername muss mit einem Buchstaben oder einer Ziffer enden"
+        "Der Benutzername muss mit einem Buchstaben oder einer Ziffer enden."
       ],
       "Wrong recovery phrase. Try again or use another recovery method.": [
         "Wiederherstellungsphrase ungültig. Versuche es erneut oder verwende eine andere Wiederherstellungsmethode."
@@ -1826,7 +1823,7 @@
         "Greife auf blockierte Inhalte zu und surfe privat. Umfasst 2700 Server in über 65 Ländern, die Verbindung von bis zu 10 Geräten, weltweite Streaming-Dienste, Malware- und Werbeblocker und mehr."
       ],
       "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
-        "Beinhaltet Unterstützung für 3 eigene E-Mail-Domains, 90 E-Mail-Adressen, unbegrenzte Hide My Email-Aliasse, Kalenderfreigabe und mehr."
+        "Beinhaltet Unterstützung für 3 eigene E-Mail-Domains, 90 E-Mail-Adressen, unbegrenzte Hide-my-email-Aliasse, Kalenderfreigabe und mehr."
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Sichere deine Dateien mit verschlüsseltem Cloud-Speicher. Beinhaltet automatische Synchronisierung, verschlüsselte Dateifreigabe und mehr."
@@ -1969,6 +1966,28 @@
       "Megabyte": [
         "Megabyte",
         "Megabytes"
+      ]
+    },
+    "Font face option": {
+      "System default": [
+        "Systemvorgabe"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Groß"
+      ],
+      "Medium (recommended)": [
+        "Mittel (empfohlen)"
+      ],
+      "Small": [
+        "Klein"
+      ],
+      "Very large": [
+        "Sehr groß"
+      ],
+      "Very small": [
+        "Sehr klein"
       ]
     },
     "Frequency of news": {
@@ -2198,9 +2217,6 @@
       ],
       "By leaving now, changes may not be saved": [
         "Beim Verlassen werden Änderungen möglicherweise nicht gespeichert"
-      ],
-      "Choose the look and feel of the application.": [
-        "Wähle das Erscheinungsbild der Anwendung."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klicke auf „Neuen Code anfordern“, um einen neuen Verifizierungscode an ${ strong } senden zu lassen. Wenn diese Telefonnummer nicht stimmt, klicke auf „Bearbeiten“, um sie zu korrigieren."
@@ -3019,6 +3035,9 @@
       "Card holder": [
         "Karteninhaber"
       ],
+      "Card information": [
+        "Karteninformationen"
+      ],
       "Card number": [
         "Kartennummer"
       ],
@@ -3105,6 +3124,9 @@
       ],
       "Enter the code displayed on your TV": [
         "Gib den auf deinem Fernseher angezeigten Code ein"
+      ],
+      "Expiration (${ patternExpiration })": [
+        "Ablaufdatum (${ patternExpiration })"
       ],
       "Expiration date": [
         "Ablaufdatum"
@@ -3225,6 +3247,9 @@
       ],
       "Security code": [
         "Sicherheitscode"
+      ],
+      "Security code (${ codeName })": [
+        "Sicherheitscode (${ codeName })"
       ],
       "Select your country": [
         "Wähle dein Land"
@@ -3535,8 +3560,8 @@
         "${ n } Ordner und Kategorien"
       ],
       "${ n } Hide-my-email alias": [
-        "${ n } Hide My Email-Alias",
-        "${ n } Hide My Email-Aliasse"
+        "${ n } Hide-my-email-Alias",
+        "${ n } Hide-my-email-Aliasse"
       ],
       "${ n } label": [
         "${ n } Kategorie",
@@ -3753,7 +3778,7 @@
         "Unbegrenzte Anzahl an Ordnern, Kategorien und Filtern."
       ],
       "Unlimited hide-my-email aliases": [
-        "Unbegrenzte Hide My Email-Aliasse"
+        "Unbegrenzte Hide-my-email-Aliasse"
       ],
       "Unlimited labels": [
         "Unbegrenzte Anzahl von Kategorien"
@@ -4609,13 +4634,13 @@
         "Greife von überall aus auf Inhalte von Streaming-Diensten zu, darunter Netflix, Disney+ und Prime Video."
       ],
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
-        "Alle unsere Premium-Services mit ihren höchsten Limits: 100 E-Mail-Adressen, Unterstützung für 10 eigene Domains, unbegrenzte Hide My Email-Aliasse, Kalenderfreigabe, verschlüsselter Cloud-Speicher und Dateifreigabe, und vieles mehr."
+        "Alle unsere Premium-Services mit ihren höchsten Limits: 100 E-Mail-Adressen, Unterstützung für 10 eigene Domains, unbegrenzte Hide-my-email-Aliasse, Kalenderfreigabe, verschlüsselter Cloud-Speicher und Dateifreigabe, und vieles mehr."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Beinhaltet Unterstützung für eine eigene E-Mail-Domain, 10 E-Mail-Adressen, 10 Hide My Email-Aliasse, Kalenderfreigabe und mehr."
+        "Beinhaltet Unterstützung für eine eigene E-Mail-Domain, 10 E-Mail-Adressen, 10 Hide-my-email-Aliasse, Kalenderfreigabe und mehr."
       ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Beinhaltet Unterstützung für 3 eigene E-Mail-Domains, 15 E-Mail-Adressen, unbegrenzte Hide My Email-Aliasse, Kalenderfreigabe und mehr."
+        "Beinhaltet Unterstützung für 3 eigene E-Mail-Domains, 15 E-Mail-Adressen, unbegrenzte Hide-my-email-Aliasse, Kalenderfreigabe und mehr."
       ],
       "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
         "Perfekt geeignet für Familien oder kleine Teams; jeder kann über seinen eigenen Posteingang und Aliase verfügen. Erfordert eine eigene Domain."

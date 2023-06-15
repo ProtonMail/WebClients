@@ -476,7 +476,7 @@
         "Sembunyikan pesan"
       ],
       "hide-my-email aliases": [
-        "alias Hide My Email"
+        "alias Hide-my-email"
       ],
       "I have a question": [
         "Saya memiliki pertanyaan"
@@ -1831,6 +1831,41 @@
       ],
       "white": [
         "putih"
+      ]
+    },
+    "Commander action": {
+      "Create a new folder": [
+        "Buat folder baru"
+      ],
+      "Create a new label": [
+        "Buat label baru"
+      ],
+      "Go to Archive": [
+        "Ke Arsip"
+      ],
+      "Go to Drafts": [
+        "Ke Draf"
+      ],
+      "Go to Inbox": [
+        "Ke Kotak masuk"
+      ],
+      "Go to Sent": [
+        "Ke Terkirim"
+      ],
+      "Go to Spam": [
+        "Ke Spam"
+      ],
+      "Go to Starred": [
+        "Ke Dibintangi"
+      ],
+      "Go to Trash": [
+        "Ke Sampah"
+      ],
+      "New message": [
+        "Pesan baru"
+      ],
+      "Search": [
+        "Cari"
       ]
     },
     "Composer email icon": {
@@ -3867,7 +3902,7 @@
         "Beserta 2700 server di 65+ negara, hubungan sampai 10 perangkat, akses layanan streaming seluruh dunia, pemblokiran malware dan iklan, dan lebih banyak lagi."
       ],
       "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
-        "Beserta dukungan untuk 3 domain surel kustom, 90 alamat surel, alias Hide My Email tidak terbatas, pembagian kalender, dan lebih banyak lagi."
+        "Beserta dukungan untuk 3 domain surel kustom, 90 alamat surel, alias Hide-my-email tidak terbatas, pembagian kalender, dan lebih banyak lagi."
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Amankan berkas Anda dengan penyimpanan awan terenkripsi. Beserta sinkronisasi otomatis, pembagian berkas terenkripsi, dan lebih banyak lagi."
@@ -4917,9 +4952,6 @@
       "For messages newer than ${ oldestDate }": [
         "Untuk pesan yang lebih baru daripada ${ oldestDate }"
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "Teruskan pesan yang datang dari akun lainnya menuju kotak masuk akun ${ MAIL_APP_NAME } aman Anda."
-      ],
       "Free up some space or add more storage space.": [
         "Kosongkan beberapa ruang atau tambah ruang penyimpanan."
       ],
@@ -4937,6 +4969,9 @@
       ],
       "Hide original message": [
         "Sembunyikan pesan asli"
+      ],
+      "How hide-my-email aliases works": [
+        "Bagaimana cara alias Hide-my-email bekerja"
       ],
       "I'm sending this message to a non-${ MAIL_APP_NAME } user.": [
         "Saya mengirimkan pesan ini kepada pengguna non-${ MAIL_APP_NAME }."
@@ -4976,9 +5011,6 @@
       ],
       "Import mailbox": [
         "Impor kotak surat"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "Impor email, kalender, dan kontak Anda dari layanan lain ke ${ BRAND_NAME }."
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Mengimpor data Anda dari ${ fromEmail } ke ${ toEmail }."
@@ -5120,9 +5152,6 @@
       ],
       "No group found": [
         "Tidak ada grup yang ditemukan"
-      ],
-      "No imports or forwarding history.": [
-        "Tidak ada riwayat impor atau penerusan email yang ditemukan."
       ],
       "No label found": [
         "Tidak ada label yang ditemukan"
@@ -5332,7 +5361,7 @@
         "Tampilkan pesan asli"
       ],
       "SimpleLogin is a ${ BRAND_NAME } service, and your ${ BRAND_NAME_TWO } Account includes hide-my-email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
-        "SimpleLogin adalah layanan ${ BRAND_NAME }, dan akun ${ BRAND_NAME_TWO } Anda beserta alias Hide My Email. Untuk mulai menyamarkan alamat surel Anda, buka SimpleLogin dan buat alias pertama Anda."
+        "SimpleLogin adalah layanan ${ BRAND_NAME }, dan akun ${ BRAND_NAME_TWO } Anda beserta alias Hide-my-email. Untuk mulai menyamarkan alamat surel Anda, buka SimpleLogin dan buat alias pertama Anda."
       ],
       "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
         "SimpleLogin memudahkan Anda untuk dapat membuat akun pada situs pihak ketiga yang tidak terpercaya di kala Anda tidak ingin menggunakan alamat email asli Anda."
@@ -5405,6 +5434,9 @@
       ],
       "These messages will be marked as spam. Would you also like to unsubscribe from future emails?": [
         "Pesan ini akan ditandai sebagai spam. Apakah Anda ingin membatalkan langganan milis ini?"
+      ],
+      "They can't spam you if they don't know your email address. Protect your inbox with hide-my-email aliases.": [
+        "Mereka tidak dapat mengirim Anda spam jika mereka tidak tahu alamat surel Anda. Lindungi kotak masuk Anda dengan alias Hide-my-email."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Akun ini telah ditangguhkan karena ditenggarai telah melanggar ketentuan penggunaan yang berlaku."
@@ -5631,6 +5663,9 @@
       "When do you want your message to self-destruct?": [
         "Kapan Anda ingin pesan ini terhapus secara otomatis?"
       ],
+      "When giving out your email, use a unique, disposable hide-my-email alias instead of your real email address.": [
+        "Saat memberikan surel Anda, gunakan alias Hide-my-email sekali pakai yang unik daripada alamat surel Anda yang asli."
+      ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "Ketika Anda mengaktifkan kunci yang dipercaya untuk ${ senderName }, kunci publik ditambahkan ke rincian kontak."
       ],
@@ -5789,6 +5824,9 @@
       ]
     },
     "info": {
+      "${ filteredList.length } commands found.": [
+        "${ filteredList.length } perintah ditemukan."
+      ],
       "Optional": [
         "Opsional"
       ]
@@ -5948,6 +5986,9 @@
       ],
       "New message": [
         "Pesan baru"
+      ],
+      "Open command panel": [
+        "Buka panel perintah"
       ],
       "Open next message": [
         "Buka pesan selanjutnya"
@@ -6460,6 +6501,9 @@
       ],
       "Toolbar": [
         "Bilah Alat"
+      ],
+      "Type a command...": [
+        "Masukkan perintah..."
       ],
       "Undisclosed Recipients": [
         "Penerima yang Dirahasiakan"
@@ -7042,7 +7086,7 @@
         "Domain email khusus"
       ],
       "Hide-my-email aliases": [
-        "Alias Hide My Email"
+        "Alias Hide-my-email"
       ],
       "Schedule messages at any time": [
         "Jadwalkan pesan sesuai keinginan Anda"
@@ -7156,9 +7200,6 @@
       ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
         "Gunakan pemindah aplikasi yang terdapat pada pojok kiri atas layar untuk mengakses seluruh layanan ${ BRAND_NAME } : ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, dan ${ DRIVE_SHORT_APP_NAME }."
-      ],
-      "You can change this anytime in your settings.": [
-        "Anda dapat mengubah tema yang aktif kapan pun melalui beranda pengaturan Anda."
       ]
     },
     "Option": {
@@ -7323,6 +7364,9 @@
       ],
       "Text": [
         "Teks"
+      ],
+      "Type a command…": [
+        "Masukkan perintah…"
       ],
       "Type text or keyword": [
         "Ketik teks atau kata kunci"
@@ -7815,13 +7859,13 @@
         "Akses konten di layanan streaming, termasuk Netflix, Disney+, dan Prime Video, dari mana pun."
       ],
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
-        "Semua layanan premium kami dengan batas tertinggi: 100 alamat surel, dukungan 10 domain kustom, alias Hide My Email tidak terbatas, pembagian kalender, penyimpanan awan dan pembagian berkas terenkripsi, dan lebih banyak lagi."
+        "Semua layanan premium kami dengan batas tertinggi: 100 alamat surel, dukungan 10 domain kustom, alias Hide-my-email tidak terbatas, pembagian kalender, penyimpanan awan dan pembagian berkas terenkripsi, dan lebih banyak lagi."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Termasuk dukungan untuk 1 domain surel kustom, 10 alamat surel, 10 alias Hide My Email, berbagi kalender, dan lainnya."
+        "Termasuk dukungan untuk 1 domain surel kustom, 10 alamat surel, 10 alias Hide-my-email, berbagi kalender, dan lainnya."
       ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Beserta dukungan untuk 3 domain surel kustom, 15 alamat surel, alias Hide My Email tidak terbatas, pembagian kalender, dan lebih banyak lagi."
+        "Beserta dukungan untuk 3 domain surel kustom, 15 alamat surel, alias Hide-my-email tidak terbatas, pembagian kalender, dan lebih banyak lagi."
       ],
       "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
         "Cocok untuk keluarga atau tim kecil, setiap orang dapat memiliki kotak masuk dan alias mereka sendiri. Membutuhkan domain kustom."
@@ -8753,23 +8797,6 @@
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Uji coba Mail Plus Anda akan berakhir pada ${ textDate }"
-      ]
-    },
-    "Title header": {
-      "Actions": [
-        "Tindakan"
-      ],
-      "Date": [
-        "Tanggal"
-      ],
-      "Import": [
-        "Impor"
-      ],
-      "Size": [
-        "Ukuran"
-      ],
-      "Status": [
-        "Status"
       ]
     },
     "Today icon tooltip in mini calendar": {

@@ -4020,6 +4020,9 @@
       "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
         "包含在 65 個以上的國家的 2700 臺伺服器，可連結多達 10 個裝置，存取世界各地的串流服務，惡意程式防護與廣告攔截器，還有更多功能。"
       ],
+      "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
+        "包含對 3 個自訂電子郵件網域、90 個電子郵件地址、無限個 Hide-my-email 別名、行事曆分享與更多功能的支援。"
+      ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "使用加密的雲端存儲保護您的檔案。包含自動同步、加密檔案分享等。"
       ]
@@ -5193,9 +5196,6 @@
       "Check the status of imports and forwarding.": [
         "查看匯入和轉寄的狀況。"
       ],
-      "Choose the look and feel of the application.": [
-        "選擇應用程式的外觀和感覺。"
-      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "按一下「重新傳送驗證碼」向 ${ strong } 傳送新的驗證碼。如此手機號碼不正確，請按一下「編輯」作出修正。"
       ],
@@ -5321,6 +5321,9 @@
       ],
       "Drop file here to upload": [
         "拖曳檔案到此處來上傳"
+      ],
+      "Drop to import": [
+        "拖放以匯入"
       ],
       "Each code can only be used once": [
         "每組驗證代碼只能使用一次"
@@ -6973,6 +6976,9 @@
       "New message": [
         "撰寫"
       ],
+      "Open command panel": [
+        "開啟命令面板"
+      ],
       "Open next message": [
         "開啟下一則訊息"
       ],
@@ -7217,6 +7223,9 @@
       ],
       "Billing cycle": [
         "帳單週期"
+      ],
+      "Block": [
+        "攔截"
       ],
       "Block email tracking": [
         "封鎖郵件追蹤"
@@ -8455,6 +8464,9 @@
       ],
       "Back to inbox": [
         "返回收件匣"
+      ],
+      "Block": [
+        "攔截"
       ],
       "Calendar": [
         "行事曆"
@@ -10332,6 +10344,15 @@
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
         "在世界各地輕鬆存取影音串流內容，包括 Netflix、Disney+、Prime Video 等."
       ],
+      "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
+        "我們所有具有最高限制的進階版服務：100 個電子郵件地址、支援 10 個自訂網域、無限制的隱藏 Hide-my-email 別名、行事曆分享、加密雲端儲存與檔案分享等。"
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "包含對 1 個自訂電子郵件網域、10 個電子郵件地址、10 個 Hide-my-email 別名、行事曆分享與更多功能的支援。"
+      ],
+      "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "包含對 3 個自訂電子郵件網域、15 個電子郵件地址、無限個 Hide-my-email 別名、行事曆分享與更多功能的支援。"
+      ],
       "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
         "非常適合家庭或小型團隊，每個人都可以擁有自己的收件匣與別名。需要自訂網域。"
       ],
@@ -10963,6 +10984,9 @@
       "Add Sieve filter": [
         "加入 Sieve 篩選器"
       ],
+      "Add to block list": [
+        "加入至攔截清單"
+      ],
       "Add to spam list": [
         "新增到垃圾郵件清單"
       ],
@@ -11553,9 +11577,6 @@
       ],
       "Select when you want this notification to be sent": [
         "請選擇您想此通知何時傳送"
-      ],
-      "Sender image": [
-        "寄件者圖像"
       ],
       "Session management": [
         "工作階段管理"

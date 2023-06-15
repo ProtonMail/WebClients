@@ -1833,6 +1833,41 @@
         "白色"
       ]
     },
+    "Commander action": {
+      "Create a new folder": [
+        "建立新資料夾"
+      ],
+      "Create a new label": [
+        "建立新標籤"
+      ],
+      "Go to Archive": [
+        "前往封存資料夾"
+      ],
+      "Go to Drafts": [
+        "前往草稿資料夾"
+      ],
+      "Go to Inbox": [
+        "前往收件匣"
+      ],
+      "Go to Sent": [
+        "前往寄件備份資料夾"
+      ],
+      "Go to Spam": [
+        "前往垃圾郵件資料夾"
+      ],
+      "Go to Starred": [
+        "前往已加星號資料夾"
+      ],
+      "Go to Trash": [
+        "前往垃圾桶"
+      ],
+      "New message": [
+        "新訊息"
+      ],
+      "Search": [
+        "搜尋"
+      ]
+    },
     "Composer email icon": {
       "End-to-end encrypted": [
         "經端對端加密"
@@ -3866,6 +3901,9 @@
       "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
         "包含在 65 個以上的國家的 2700 臺伺服器，可連結多達 10 個裝置，存取世界各地的串流服務，惡意程式防護與廣告攔截器，還有更多功能。"
       ],
+      "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
+        "包含對 3 個自訂電子郵件網域、90 個電子郵件地址、無限個 Hide-my-email 別名、行事曆分享與更多功能的支援。"
+      ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "使用加密的雲端存儲保護您的檔案。包含自動同步、加密檔案分享等。"
       ]
@@ -4815,6 +4853,9 @@
       "Drop file here to upload": [
         "拖曳檔案到此處來上傳"
       ],
+      "Drop to import": [
+        "拖放以匯入"
+      ],
       "Duplicate key updated": [
         "重複金鑰已更新"
       ],
@@ -4911,9 +4952,6 @@
       "For messages newer than ${ oldestDate }": [
         "自 ${ oldestDate } 起的郵件"
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "將收到的郵件從另一個帳號轉發至您的安全 ${ MAIL_APP_NAME } 收件匣。"
-      ],
       "Free up some space or add more storage space.": [
         "請釋出部分空間或增加更多儲存空間。"
       ],
@@ -4931,6 +4969,9 @@
       ],
       "Hide original message": [
         "隱藏原始訊息"
+      ],
+      "How hide-my-email aliases works": [
+        "Hide-my-email 別名是如何運作的"
       ],
       "I'm sending this message to a non-${ MAIL_APP_NAME } user.": [
         "我正傳送郵件給一位非 ${ MAIL_APP_NAME } 的使用者。"
@@ -4970,9 +5011,6 @@
       ],
       "Import mailbox": [
         "匯入郵箱"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "從其他裝置匯入您的電子郵件、行事曆與聯絡人到 ${ BRAND_NAME }。"
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "正在把你的資料從 ${ fromEmail } 匯入至 ${ toEmail }。"
@@ -5115,9 +5153,6 @@
       "No group found": [
         "未找到群組"
       ],
-      "No imports or forwarding history.": [
-        "未有匯入或轉寄歷程記錄。"
-      ],
       "No label found": [
         "找不到標籤"
       ],
@@ -5153,6 +5188,9 @@
       ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "此郵件已被我們的系統標註為帶有網路釣魚的企圖。請檢查這是否正當郵件。"
+      ],
+      "Our system flagged this message as a suspicious email. Please check that it is legitimate before clicking any links or attachments.": [
+        "我們的系統將此訊息標記為惡意電子郵件。在點擊任何連結或附件前，請先檢查其是否合法。"
       ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/Inline 僅與純文字格式相容。"
@@ -5322,6 +5360,9 @@
       "Show original message": [
         "顯示原始訊息"
       ],
+      "SimpleLogin is a ${ BRAND_NAME } service, and your ${ BRAND_NAME_TWO } Account includes hide-my-email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
+        "SimpleLogin 是 ${ BRAND_NAME } 的服務，您的 ${ BRAND_NAME_TWO } 帳號包含了 Hide-my-email 別名。要開始隱藏您的電子郵件地址，請到 SimpleLogin 並建立您的第一個別名。"
+      ],
       "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
         "簡單登入提供了一個簡單的方法，讓您可以建立使用者但不需要將您的真實電子郵件透露給不可信的第三方網站。"
       ],
@@ -5394,6 +5435,9 @@
       "These messages will be marked as spam. Would you also like to unsubscribe from future emails?": [
         "這些信件將會標記為垃圾信件。請問您也想退訂往後相關的電郵信件嗎？"
       ],
+      "They can't spam you if they don't know your email address. Protect your inbox with hide-my-email aliases.": [
+        "如果他們不知道您的電子郵件地址，他們就無法向您傳送垃圾郵件。使用 Hide-my-email 別名保護您的收件匣。"
+      ],
       "This account has been suspended due to a potential policy violation.": [
         "此帳號可能因違反政策而遭停用。"
       ],
@@ -5408,6 +5452,9 @@
       ],
       "This conversation contains non-trashed messages.": [
         "此交談包含非垃圾訊息。"
+      ],
+      "This conversation contains one or more expiring messages": [
+        "此交談包含了一個或更多過期的訊息"
       ],
       "This conversation contains trashed messages.": [
         "此交談含有已被移至垃圾桶的訊息。"
@@ -5616,6 +5663,9 @@
       "When do you want your message to self-destruct?": [
         "您想要郵件什麼時候自毀？"
       ],
+      "When giving out your email, use a unique, disposable hide-my-email alias instead of your real email address.": [
+        "當發送電子郵件時，請使用唯一、拋棄式 Hide-my-email 別名，來代替您的真實電子郵件地址。"
+      ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "當您為 ${ senderName } 啟用已信任的金鑰，公開金鑰會加入到其連絡人詳細資料。"
       ],
@@ -5774,6 +5824,9 @@
       ]
     },
     "info": {
+      "${ filteredList.length } commands found.": [
+        "找到 ${ filteredList.length } 個指令。"
+      ],
       "Optional": [
         "可選"
       ]
@@ -5933,6 +5986,9 @@
       ],
       "New message": [
         "撰寫"
+      ],
+      "Open command panel": [
+        "開啟命令面板"
       ],
       "Open next message": [
         "開啟下一則訊息"
@@ -6445,6 +6501,9 @@
       ],
       "Toolbar": [
         "工具列"
+      ],
+      "Type a command...": [
+        "輸入命令……"
       ],
       "Undisclosed Recipients": [
         "非公開收件者"
@@ -7141,9 +7200,6 @@
       ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
         "使用左上角的應用程式選取器存取所有的 ${ BRAND_NAME } 服務：${ MAIL_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME } 與 ${ DRIVE_SHORT_APP_NAME }"
-      ],
-      "You can change this anytime in your settings.": [
-        "您隨時都可以在設定中變更。"
       ]
     },
     "Option": {
@@ -7308,6 +7364,9 @@
       ],
       "Text": [
         "文字"
+      ],
+      "Type a command…": [
+        "輸入命令……"
       ],
       "Type text or keyword": [
         "鍵入文字或關鍵詞"
@@ -7798,6 +7857,15 @@
       ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
         "在世界各地輕鬆存取影音串流內容，包括 Netflix、Disney+、Prime Video 等."
+      ],
+      "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
+        "我們所有具有最高限制的進階版服務：100 個電子郵件地址、支援 10 個自訂網域、無限制的隱藏 Hide-my-email 別名、行事曆分享、加密雲端儲存與檔案分享等。"
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "包含對 1 個自訂電子郵件網域、10 個電子郵件地址、10 個 Hide-my-email 別名、行事曆分享與更多功能的支援。"
+      ],
+      "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "包含對 3 個自訂電子郵件網域、15 個電子郵件地址、無限個 Hide-my-email 別名、行事曆分享與更多功能的支援。"
       ],
       "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
         "非常適合家庭或小型團隊，每個人都可以擁有自己的收件匣與別名。需要自訂網域。"
@@ -8729,23 +8797,6 @@
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "您的 Mail Plus 免費方案將於 ${ textDate } 結束"
-      ]
-    },
-    "Title header": {
-      "Actions": [
-        "動作"
-      ],
-      "Date": [
-        "日期"
-      ],
-      "Import": [
-        "匯入"
-      ],
-      "Size": [
-        "大小"
-      ],
-      "Status": [
-        "狀態"
       ]
     },
     "Today icon tooltip in mini calendar": {
