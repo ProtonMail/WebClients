@@ -11,3 +11,13 @@ type UnwrapPromise<T> = T extends any[] ? { [K in keyof T]: UnwrapPromise<T[K]> 
  */
 export const unwrap = async <T extends any[]>(arr: [...T]): Promise<UnwrapPromise<T>> =>
     Promise.all(arr.map((value) => (Array.isArray(value) ? unwrap(value) : value))) as Promise<UnwrapPromise<T>>;
+
+type Awaiter<T> = Promise<T> & { resolve: (value: T | PromiseLike<T>) => void };
+
+export const awaiter = <T>(): Awaiter<T> => {
+    let resolver: ((value: T | PromiseLike<T>) => void) | undefined;
+    const promise = new Promise<T>((resolve) => (resolver = resolve)) as Awaiter<T>;
+    if (resolver) promise.resolve = resolver;
+
+    return promise;
+};
