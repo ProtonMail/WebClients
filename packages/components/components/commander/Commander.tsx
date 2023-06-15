@@ -166,7 +166,7 @@ const Commander = ({ onClose, list, ...rest }: Props) => {
                                 </ul>
                             </>
                         ) : (
-                            <p className="m-1">{c('Info').t`No results found`}</p>
+                            <p className="m-4">{c('Info').t`No results found`}</p>
                         )}
                     </Scroll>
                 </div>
