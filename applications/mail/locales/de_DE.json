@@ -478,7 +478,7 @@
         "Nachrichten ausblenden"
       ],
       "hide-my-email aliases": [
-        "Hide My Email-Aliasse"
+        "Hide-my-email-Aliasse"
       ],
       "I have a question": [
         "Ich habe eine Frage"
@@ -3460,10 +3460,10 @@
         "Unbekannter Fehler."
       ],
       "Username must begin with a letter or digit": [
-        "Der Benutzername muss mit einem Buchstaben oder einer Ziffer beginnen"
+        "Der Benutzername muss mit einem Buchstaben oder einer Ziffer beginnen."
       ],
       "Username must end with a letter or digit": [
-        "Der Benutzername muss mit einem Buchstaben oder einer Ziffer enden"
+        "Der Benutzername muss mit einem Buchstaben oder einer Ziffer enden."
       ],
       "Wrong mailbox password": [
         "Ungültiges Postfach-Passwort"
@@ -3927,7 +3927,7 @@
         "Greife auf blockierte Inhalte zu und surfe privat. Umfasst 2700 Server in über 65 Ländern, die Verbindung von bis zu 10 Geräten, weltweite Streaming-Dienste, Malware- und Werbeblocker und mehr."
       ],
       "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
-        "Beinhaltet Unterstützung für 3 eigene E-Mail-Domains, 90 E-Mail-Adressen, unbegrenzte Hide My Email-Aliasse, Kalenderfreigabe und mehr."
+        "Beinhaltet Unterstützung für 3 eigene E-Mail-Domains, 90 E-Mail-Adressen, unbegrenzte Hide-my-email-Aliasse, Kalenderfreigabe und mehr."
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Sichere deine Dateien mit verschlüsseltem Cloud-Speicher. Beinhaltet automatische Synchronisierung, verschlüsselte Dateifreigabe und mehr."
@@ -4097,9 +4097,31 @@
         "Standard"
       ]
     },
+    "Font face option": {
+      "System default": [
+        "Systemvorgabe"
+      ]
+    },
     "Font Size Default": {
       "Default": [
         "Standard"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Groß"
+      ],
+      "Medium (recommended)": [
+        "Mittel (empfohlen)"
+      ],
+      "Small": [
+        "Klein"
+      ],
+      "Very large": [
+        "Sehr groß"
+      ],
+      "Very small": [
+        "Sehr klein"
       ]
     },
     "forwardmessage": {
@@ -4935,7 +4957,7 @@
         "Ziehe Dateien hierher, um sie hochzuladen"
       ],
       "Drop to import": [
-        "Loslassen zum Importieren"
+        "Ablegen zum Importieren"
       ],
       "Duplicate key updated": [
         "Zweitschlüssel aktualisiert"
@@ -5039,9 +5061,6 @@
       "For messages newer than ${ oldestDate }": [
         "Für Nachrichten, die neuer sind als ${ oldestDate }"
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "Leite ankommende E-Mails eines anderen Kontos in deinen sicheren ${ MAIL_APP_NAME } Posteingang weiter."
-      ],
       "Free up some space or add more storage space.": [
         "Gib etwas Platz frei oder füge zusätzlichen Speicherplatz hinzu."
       ],
@@ -5062,7 +5081,7 @@
         "Originalnachricht ausblenden"
       ],
       "How hide-my-email aliases works": [
-        "Wie Hide My Email-Aliasse funktionieren"
+        "Wie Hide-my-email-Aliasse funktionieren"
       ],
       "I'm sending this message to a non-${ MAIL_APP_NAME } user.": [
         "Ich sende diese Nachricht an einen Nicht-${ MAIL_APP_NAME }-Benutzer."
@@ -5103,9 +5122,6 @@
       ],
       "Import mailbox": [
         "Postfach importieren"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "Importiere deine E-Mails, Kalender und Kontakte eines anderen Dienstes zu ${ BRAND_NAME }."
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Deine Daten werden von ${ fromEmail } nach ${ toEmail } importiert."
@@ -5248,9 +5264,6 @@
       ],
       "No group found": [
         "Keine Gruppe gefunden"
-      ],
-      "No imports or forwarding history.": [
-        "Kein Import- oder Weiterleitungsverlauf."
       ],
       "No label found": [
         "Keine Kategorie gefunden"
@@ -5404,7 +5417,7 @@
         "Nachricht wird geplant..."
       ],
       "Search option that lets you securely search for keywords in the body of email messages.": [
-        "Suchoption, mit der du sicher nach Schlüsselwörtern im Text von E-Mails suchen kannst"
+        "Suchoption, mit der du sicher nach Schlüsselwörtern im Text von E-Mails suchen kannst."
       ],
       "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
         "Die Suche dauert zu lange? ${ dropdownButton } oder ${ toggleOffButton } diesem Suchlauf aus."
@@ -5461,7 +5474,7 @@
         "Originalnachricht anzeigen"
       ],
       "SimpleLogin is a ${ BRAND_NAME } service, and your ${ BRAND_NAME_TWO } Account includes hide-my-email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
-        "SimpleLogin ist ein ${ BRAND_NAME }-Dienst und dein ${ BRAND_NAME_TWO }-Konto beinhaltet Hide My Email-Aliasse. Um mit dem Verstecken deiner E-Mail-Adresse zu beginnen, gehe zu SimpleLogin und erstelle deinen ersten Alias."
+        "SimpleLogin ist ein ${ BRAND_NAME }-Dienst und dein ${ BRAND_NAME_TWO }-Konto beinhaltet Hide-my-email-Aliasse. Um mit dem Verstecken deiner E-Mail-Adresse zu beginnen, gehe zu SimpleLogin und erstelle deinen ersten Alias."
       ],
       "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
         "SimpleLogin bietet eine einfache Möglichkeit, Anmeldungen auf nicht vertrauenswürdigen Websites von Drittanbietern zu erstellen, auf denen du deine tatsächliche E-Mail-Adresse nicht preisgeben möchtest."
@@ -5531,7 +5544,7 @@
         "Bei der Signatur, die zur Überprüfung der Kontaktdaten verwendet wurde, ist ein Fehler aufgetreten, der möglicherweise das Ergebnis einer Passwortzurücksetzung ist."
       ],
       "They can't spam you if they don't know your email address. Protect your inbox with hide-my-email aliases.": [
-        "Du erhältst keinen Spam, wenn deine E-Mail-Adresse nicht bekannt ist. Schütze deinen Posteingang mit Hide My Email-Aliassen."
+        "Du erhältst keinen Spam, wenn deine E-Mail-Adresse nicht bekannt ist. Schütze deinen Posteingang mit Hide-my-email-Aliassen."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Dieses Konto wurde aufgrund eines möglichen Verstoßes gegen die Nutzungsbedingungen gesperrt."
@@ -5936,6 +5949,10 @@
       ]
     },
     "info": {
+      "${ filteredList.length } command found.": [
+        "${ filteredList.length } Befehl gefunden.",
+        "${ filteredList.length } Befehle gefunden."
+      ],
       "Optional": [
         "Optional"
       ]
@@ -6097,6 +6114,9 @@
       ],
       "New message": [
         "Neue Nachricht"
+      ],
+      "Open command panel": [
+        "Befehlspanel öffnen"
       ],
       "Open next message": [
         "Nächste Nachricht öffnen"
@@ -6574,6 +6594,9 @@
       "Street address": [
         "Straße und Hausnummer"
       ],
+      "Synchronize with system": [
+        "Mit System synchronisieren"
+      ],
       "System information": [
         "Systeminformationen"
       ],
@@ -6609,6 +6632,9 @@
       ],
       "Toolbar": [
         "Symbolleiste"
+      ],
+      "Type a command...": [
+        "Befehl eingeben..."
       ],
       "Undisclosed Recipients": [
         "Verborgene Empfänger"
@@ -7199,7 +7225,7 @@
         "Eigene E-Mail-Domains"
       ],
       "Hide-my-email aliases": [
-        "Hide My Email-Aliasse"
+        "Hide-my-email-Aliasse"
       ],
       "Schedule messages at any time": [
         "Nachrichten zu jeder Zeit planen"
@@ -7313,9 +7339,6 @@
       ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
         "Verwende die App-Auswahl oben links, um auf alle ${ BRAND_NAME }-Dienste zuzugreifen: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } und ${ DRIVE_SHORT_APP_NAME }."
-      ],
-      "You can change this anytime in your settings.": [
-        "Dies kann jederzeit in den Einstellungen geändert werden."
       ]
     },
     "Option": {
@@ -7480,6 +7503,9 @@
       ],
       "Text": [
         "Text"
+      ],
+      "Type a command…": [
+        "Befehl eingeben…"
       ],
       "Type text or keyword": [
         "Text oder Schlüsselwort eingeben"
@@ -7988,13 +8014,13 @@
         "Greife von überall aus auf Inhalte von Streaming-Diensten zu, darunter Netflix, Disney+ und Prime Video."
       ],
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
-        "Alle unsere Premium-Services mit ihren höchsten Limits: 100 E-Mail-Adressen, Unterstützung für 10 eigene Domains, unbegrenzte Hide My Email-Aliasse, Kalenderfreigabe, verschlüsselter Cloud-Speicher und Dateifreigabe, und vieles mehr."
+        "Alle unsere Premium-Services mit ihren höchsten Limits: 100 E-Mail-Adressen, Unterstützung für 10 eigene Domains, unbegrenzte Hide-my-email-Aliasse, Kalenderfreigabe, verschlüsselter Cloud-Speicher und Dateifreigabe, und vieles mehr."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Beinhaltet Unterstützung für eine eigene E-Mail-Domain, 10 E-Mail-Adressen, 10 Hide My Email-Aliasse, Kalenderfreigabe und mehr."
+        "Beinhaltet Unterstützung für eine eigene E-Mail-Domain, 10 E-Mail-Adressen, 10 Hide-my-email-Aliasse, Kalenderfreigabe und mehr."
       ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Beinhaltet Unterstützung für 3 eigene E-Mail-Domains, 15 E-Mail-Adressen, unbegrenzte Hide My Email-Aliasse, Kalenderfreigabe und mehr."
+        "Beinhaltet Unterstützung für 3 eigene E-Mail-Domains, 15 E-Mail-Adressen, unbegrenzte Hide-my-email-Aliasse, Kalenderfreigabe und mehr."
       ],
       "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
         "Perfekt geeignet für Familien oder kleine Teams; jeder kann über seinen eigenen Posteingang und Aliase verfügen. Erfordert eine eigene Domain."
@@ -8430,6 +8456,9 @@
       "${ unreads } unread message": [
         "${ unreads } ungelesene Nachricht",
         "${ unreads } ungelesene Nachrichten"
+      ],
+      "(active)": [
+        "(aktiv)"
       ],
       "Account suspended": [
         "Konto gesperrt"
@@ -8969,23 +8998,6 @@
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Deine kostenlose Testversion von Mail Plus endet am ${ textDate }."
-      ]
-    },
-    "Title header": {
-      "Actions": [
-        "Aktionen"
-      ],
-      "Date": [
-        "Datum"
-      ],
-      "Import": [
-        "Importieren"
-      ],
-      "Size": [
-        "Größe"
-      ],
-      "Status": [
-        "Status"
       ]
     },
     "Today icon tooltip in mini calendar": {

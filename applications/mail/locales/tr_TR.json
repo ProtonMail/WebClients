@@ -477,6 +477,9 @@
       "Hide messages": [
         "İletileri gizle"
       ],
+      "hide-my-email aliases": [
+        "E-postamı gizle takma adları"
+      ],
       "I have a question": [
         "Bir sorum var"
       ],
@@ -1833,6 +1836,41 @@
       ],
       "white": [
         "beyaz"
+      ]
+    },
+    "Commander action": {
+      "Create a new folder": [
+        "Yeni bir klasör ekle"
+      ],
+      "Create a new label": [
+        "Yeni bir etiket ekle"
+      ],
+      "Go to Archive": [
+        "Arşive git"
+      ],
+      "Go to Drafts": [
+        "Taslaklar kutusuna git"
+      ],
+      "Go to Inbox": [
+        "Gelen kutusuna git"
+      ],
+      "Go to Sent": [
+        "Gönderilmiş kutusuna git"
+      ],
+      "Go to Spam": [
+        "İstenmeyen kutusuna git"
+      ],
+      "Go to Starred": [
+        "Yıldızlı kutusuna git"
+      ],
+      "Go to Trash": [
+        "Çöp kutusuna git"
+      ],
+      "New message": [
+        "Yeni ileti"
+      ],
+      "Search": [
+        "Ara"
       ]
     },
     "Composer email icon": {
@@ -3888,6 +3926,9 @@
       "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
         "65 üzerindeki ülkede 2.700 sunucu, 10 taneye kadar aygıt bağlayabilme, dünya çapında yayın akışı hizmetlerine erişim, kötü amaçlı yazılım ve reklam engelleyici ile diğer özellikleri içerir."
       ],
+      "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
+        "3 özel e-posta etki alanı, 90 e-posta adresi, sınırsız sayıda e-postamı gizle takma adı, takvim paylaşımı ve diğer özellikler."
+      ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Dosyalarınızı şifrelenmiş bulut depolama alanı ile koruyun. Otomatik eşitleme, şifrelenmiş dosya paylaşımı ve diğer özellikler."
       ]
@@ -4890,6 +4931,12 @@
       "Draft saved.": [
         "Taslak kaydedildi."
       ],
+      "Drop file here to upload": [
+        "Yüklemek için dosyayı buraya bırakın"
+      ],
+      "Drop to import": [
+        "İçe aktarmak için bırakın"
+      ],
       "Duplicate key updated": [
         "Çift anahtar güncellendi"
       ],
@@ -4992,9 +5039,6 @@
       "For messages newer than ${ oldestDate }": [
         "${ oldestDate } tarihinden daha yeni iletiler için"
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "Başka bir hesaptaki e-postalarınızı güvenli ${ MAIL_APP_NAME } gelen kutunuza iletin."
-      ],
       "Free up some space or add more storage space.": [
         "Biraz boş yer açın ya da daha fazla depolama alanı ekleyin."
       ],
@@ -5013,6 +5057,9 @@
       ],
       "Hide original message": [
         "Özgün iletiyi gizle"
+      ],
+      "How hide-my-email aliases works": [
+        "E-postamı gizle takma adları nasıl çalışır"
       ],
       "I'm sending this message to a non-${ MAIL_APP_NAME } user.": [
         "Bu iletiyi ${ MAIL_APP_NAME } kullanmayan bir alıcıya gönderiyorum."
@@ -5053,9 +5100,6 @@
       ],
       "Import mailbox": [
         "Posta kutusunu içe aktar"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "E-postalarınızı, takvimlerinizi ve kişilerinizi başka bir hizmetten ${ BRAND_NAME } içine aktarın."
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "${ fromEmail } verileriniz ${ toEmail } içine aktarılıyor."
@@ -5199,9 +5243,6 @@
       "No group found": [
         "Grup bulunamadı"
       ],
-      "No imports or forwarding history.": [
-        "İçe aktarma veya iletme geçmişi yok."
-      ],
       "No label found": [
         "Herhangi bir etiket bulunamadı"
       ],
@@ -5237,6 +5278,9 @@
       ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Sistemimiz bu iletiyi bir kimlik avı girişimi olarak işaretledi. Lütfen göründüğü gibi olup olmadığını kontrol edin."
+      ],
+      "Our system flagged this message as a suspicious email. Please check that it is legitimate before clicking any links or attachments.": [
+        "Sistemimiz bu iletiyi şüpheli olarak işaretledi. Lütfen herhangi bir bağlantı ya da ek dosya üzerine tıklamadan önce e-postanın sahte olup olmadığına bakın."
       ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/ınline yalnızca düz metin biçimi ile uyumludur."
@@ -5407,6 +5451,9 @@
       "Show original message": [
         "Özgün iletiyi göster"
       ],
+      "SimpleLogin is a ${ BRAND_NAME } service, and your ${ BRAND_NAME_TWO } Account includes hide-my-email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
+        "SimpleLogin bir ${ BRAND_NAME } hizmetidir ve ${ BRAND_NAME_TWO } hesabınızda e-postamı gizle takma adları kullanılmasını sağlar. E-posta adresinizi gizlemeye başlamak için SimpleLogin sitesine gidin ve ilk takma adınızı oluşturun."
+      ],
       "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
         "SimpleLogin, gerçek e-posta adresinizi açıklamak istemediğiniz, güvenilmez üçüncü taraf sitelerinde oturum açmak için basit bir yol sunar."
       ],
@@ -5474,6 +5521,9 @@
       "There has been an error with the signature used to verify the contact details, which may be the result of a password reset.": [
         "Kişi bilgilerini doğrulamak için kullanılan imza ile ilgili bir sorun çıktı. Bu durum parola sıfırlama işleminden kaynaklanıyor olabilir."
       ],
+      "They can't spam you if they don't know your email address. Protect your inbox with hide-my-email aliases.": [
+        "E-posta adresinizi bilmiyorlarsa size istenmeyen e-posta gönderemezler. E-postamı gizle özelliği ile e-posta kutunuzu koruyun."
+      ],
       "This account has been suspended due to a potential policy violation.": [
         "Bu hesap, ilkeye aykırı kullanım olasılığı nedeniyle askıya alınmış."
       ],
@@ -5488,6 +5538,9 @@
       ],
       "This conversation contains non-trashed messages.": [
         "Bu yazışmada çöpe atılmamış iletiler var."
+      ],
+      "This conversation contains one or more expiring messages": [
+        "Bu yazışmada bir ya da birkaç süreli ileti var"
       ],
       "This conversation contains trashed messages.": [
         "Bu yazışmada, çöpe atılmış iletiler var."
@@ -5704,6 +5757,9 @@
       "When do you want your message to self-destruct?": [
         "İletinizin ne zaman kendini yok etmesini istersiniz?"
       ],
+      "When giving out your email, use a unique, disposable hide-my-email alias instead of your real email address.": [
+        "E-posta adresinizi başkalarına verirken, gerçek e-posta adresiniz yerine benzersiz, tek kullanımlık bir e-postamı gizle takma adı kullanın."
+      ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "${ senderName } için güvenilen anahtarları etkinleştirdiğinizde, kişi bilgilerine herkese açık anahtarlar eklenir."
       ],
@@ -5841,6 +5897,9 @@
       "Your email will only be used for this one-time verification.": [
         "E-posta adresiniz yalnızca bu tek seferlik doğrulama için kullanılacak."
       ],
+      "Your files will be encrypted and then saved": [
+        "Dosyalarınız şifrelendikten sonra kaydedilir"
+      ],
       "Your import will not be processed.": [
         "İçe aktarma işleminiz yapılmayacak."
       ],
@@ -5868,6 +5927,10 @@
       ]
     },
     "info": {
+      "${ filteredList.length } command found.": [
+        "${ filteredList.length } komut bulundu.",
+        "${ filteredList.length } komut bulundu."
+      ],
       "Optional": [
         "İsteğe bağlı"
       ]
@@ -6029,6 +6092,9 @@
       ],
       "New message": [
         "Yeni ileti"
+      ],
+      "Open command panel": [
+        "Komut panosunu aç"
       ],
       "Open next message": [
         "Sonraki iletiyi aç"
@@ -6541,6 +6607,9 @@
       ],
       "Toolbar": [
         "Araç çubuğu"
+      ],
+      "Type a command...": [
+        "Bir komut yazın..."
       ],
       "Undisclosed Recipients": [
         "Gizli alıcılar"
@@ -7130,6 +7199,9 @@
       "Custom email domains": [
         "Özel e-posta etki alanları"
       ],
+      "Hide-my-email aliases": [
+        "E-postamı gizle takma adları"
+      ],
       "Schedule messages at any time": [
         "İletileri istediğiniz zamanda gönderin"
       ],
@@ -7242,9 +7314,6 @@
       ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
         "Tüm ${ BRAND_NAME } hizmetlerine erişmek için sol üstteki uygulama seçiciyi kullanın: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } ve ${ DRIVE_SHORT_APP_NAME }."
-      ],
-      "You can change this anytime in your settings.": [
-        "Bunu istediğiniz zaman ayarlarınızdan değiştirebilirsiniz."
       ]
     },
     "Option": {
@@ -7409,6 +7478,9 @@
       ],
       "Text": [
         "Metin"
+      ],
+      "Type a command…": [
+        "Bir komut yazın…"
       ],
       "Type text or keyword": [
         "Metin ya da anahtar sözcük yazın"
@@ -7915,6 +7987,15 @@
       ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
         "Netflix, Disney+ ve Prime Video gibi yayın akışı hizmetlerindeki içeriğe her yerden erişin."
+      ],
+      "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
+        "En yüksek sınırları olan tüm ücretli hizmetler: 100 e-posta adresi, 10 özel etki alanı, sınırsız e-postamı gizle takma adı, takvim gönderisi, şifrelenmiş bulut depolama alanı, dosya paylaşımı ve diğer özellikler."
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "1 özel e-posta etki alanı, 10 e-posta adresi, 10 e-postamı gizle takma adı, takvim paylaşımı ve diğer özellikler."
+      ],
+      "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "3 özel e-posta etki alanı, 15 e-posta adresi, sınırsız sayıda e-postamı gizle takma adı, takvim paylaşımı ve diğer özellikler."
       ],
       "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
         "Aileler veya küçük ekipler için mükemmel. Her birinin kendi gelen kutusu ve takma adı olabilir. Özel bir etki alanı kullanılması gerekir."
@@ -8889,23 +8970,6 @@
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Mail Plus ücretsiz deneme süreniz ${ textDate } tarihinde sonra erecek"
-      ]
-    },
-    "Title header": {
-      "Actions": [
-        "İşlemler"
-      ],
-      "Date": [
-        "Tarih"
-      ],
-      "Import": [
-        "İçe aktar"
-      ],
-      "Size": [
-        "Boyut"
-      ],
-      "Status": [
-        "Durum"
       ]
     },
     "Today icon tooltip in mini calendar": {

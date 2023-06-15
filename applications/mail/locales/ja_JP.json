@@ -4887,9 +4887,6 @@
       "For messages newer than ${ oldestDate }": [
         "${ oldestDate } 以降のメッセージ"
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "他のアカウントで受信したメールを、安全な ${ MAIL_APP_NAME } 受信トレイへ転送します。"
-      ],
       "Free up some space or add more storage space.": [
         "スペースを解放するか、ストレージのスペースをさらに増やしてください。"
       ],
@@ -4946,9 +4943,6 @@
       ],
       "Import mailbox": [
         "メールボックスのインポート"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "メール、カレンダー、連絡先を他のサービスから ${ BRAND_NAME } にインポートします。"
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "データを ${ fromEmail } から ${ toEmail } にインポートしています。"
@@ -5087,9 +5081,6 @@
       ],
       "No group found": [
         "グループが見つかりませんでした"
-      ],
-      "No imports or forwarding history.": [
-        "インポートや転送の履歴はありません。"
       ],
       "No label found": [
         "ラベルが見つかりませんでした"
@@ -7090,9 +7081,6 @@
       ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
         "左上のアプリセレクターで、すべてのアプリにアクセスできます。 ${ BRAND_NAME } サービス: ${ MAIL_SHORT_APP_NAME }・ ${ VPN_SHORT_APP_NAME }・ ${ CALENDAR_SHORT_APP_NAME }・ ${ DRIVE_SHORT_APP_NAME }"
-      ],
-      "You can change this anytime in your settings.": [
-        "この設定はいつでも変更できます。"
       ]
     },
     "Option": {
@@ -8660,23 +8648,6 @@
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Mial Plusのトライアル期間が ${ textDate } に終了します。"
-      ]
-    },
-    "Title header": {
-      "Actions": [
-        "操作"
-      ],
-      "Date": [
-        "日付"
-      ],
-      "Import": [
-        "インポート"
-      ],
-      "Size": [
-        "サイズ"
-      ],
-      "Status": [
-        "状態"
       ]
     },
     "Today icon tooltip in mini calendar": {

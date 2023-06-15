@@ -4992,9 +4992,6 @@
       "For messages newer than ${ oldestDate }": [
         "Üzeneteknek, melyek újabbak mint ${ oldestDate }"
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "Irányítsa át a bejövő leveleit másik címről, a biztonságos ${ MAIL_APP_NAME } fiókjába."
-      ],
       "Free up some space or add more storage space.": [
         "Szabadítson fel helyet vagy vásároljon több területet."
       ],
@@ -5053,9 +5050,6 @@
       ],
       "Import mailbox": [
         "E-mail fiók importálása"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "Importálja az e-mailjeit, naptárait és névjegyeit másik szolgáltatásból a ${ BRAND_NAME } fiókjába."
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Adatok importálása innen: ${ fromEmail }, ide: ${ toEmail }."
@@ -7239,9 +7233,6 @@
       ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
         "Használja az alkalmazás választót a bal felső sarokban, hogy hozzáférjen az összes ${ BRAND_NAME } szolgáltatáshoz: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } és ${ DRIVE_SHORT_APP_NAME }."
-      ],
-      "You can change this anytime in your settings.": [
-        "Ezt a beállításoknál bármikor megváltoztathatja."
       ]
     },
     "Option": {
@@ -8886,23 +8877,6 @@
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "A Mail Plus csomagjának próbaidőszaka lejár: ${ textDate }"
-      ]
-    },
-    "Title header": {
-      "Actions": [
-        "Műveletek"
-      ],
-      "Date": [
-        "Dátum"
-      ],
-      "Import": [
-        "Importálás"
-      ],
-      "Size": [
-        "Méret"
-      ],
-      "Status": [
-        "Állapot"
       ]
     },
     "Today icon tooltip in mini calendar": {
