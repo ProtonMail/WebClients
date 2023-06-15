@@ -20,7 +20,7 @@ import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH } from '../../../../shared/f
 import { validateLoginForm } from '../../../../shared/form/validator/validate-login';
 import { useFeatureFlag } from '../../../../shared/hooks/useFeatureFlag';
 import type { ItemEditProps } from '../../../../shared/items';
-import { deriveAliasPrefix } from '../../../../shared/items/alias';
+import { deriveAliasPrefix, reconciliateAliasFromDraft } from '../../../../shared/items/alias';
 import { DropdownMenuButton } from '../../../components/Dropdown/DropdownMenuButton';
 import { QuickActionsDropdown } from '../../../components/Dropdown/QuickActionsDropdown';
 import { ValueControl } from '../../../components/Field/Control/ValueControl';
@@ -34,6 +34,7 @@ import { TitleField } from '../../../components/Field/TitleField';
 import { UrlGroupField, createNewUrl } from '../../../components/Field/UrlGroupField';
 import { ItemEditPanel } from '../../../components/Panel/ItemEditPanel';
 import { useAliasForLoginModal } from '../../../hooks/useAliasForLoginModal';
+import { useItemDraft } from '../../../hooks/useItemDraft';
 import { usePopupContext } from '../../../hooks/usePopupContext';
 import { AliasModal } from '../Alias/Alias.modal';
 
@@ -151,6 +152,20 @@ export const LoginEdit: VFC<ItemEditProps<'login'>> = ({ vault, revision, onSubm
             .some((url) => url.includes(subdomain ?? domain!));
 
     const aliasModal = useAliasForLoginModal(form);
+
+    useItemDraft<EditLoginItemFormValues>(form, {
+        type: 'login',
+        mode: 'edit',
+        itemId: itemId,
+        shareId: form.values.shareId,
+        sanitize: (formData) => {
+            if (!formData.withAlias) return formData;
+
+            const aliasValues = reconciliateAliasFromDraft(formData, aliasModal.aliasOptions);
+            const withAlias = aliasValues.aliasSuffix !== undefined && aliasValues.mailboxes.length > 0;
+            return { ...formData, ...aliasValues, withAlias };
+        },
+    });
 
     return (
         <>
