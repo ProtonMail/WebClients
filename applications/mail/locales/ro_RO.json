@@ -479,6 +479,9 @@
       "Hide messages": [
         "Ascundere mesaje"
       ],
+      "hide-my-email aliases": [
+        "aliasuri hide-my-email"
+      ],
       "I have a question": [
         "Am o întrebare"
       ],
@@ -1838,6 +1841,41 @@
       ],
       "white": [
         "alb"
+      ]
+    },
+    "Commander action": {
+      "Create a new folder": [
+        "Creare folder"
+      ],
+      "Create a new label": [
+        "Creare etichetă"
+      ],
+      "Go to Archive": [
+        "Accesare «Arhivă»"
+      ],
+      "Go to Drafts": [
+        "Accesare «Ciorne»"
+      ],
+      "Go to Inbox": [
+        "Accesare «Primite»"
+      ],
+      "Go to Sent": [
+        "Accesare «Trimise»"
+      ],
+      "Go to Spam": [
+        "Accesare «Nedorite»"
+      ],
+      "Go to Starred": [
+        "Accesare «Cu stea»"
+      ],
+      "Go to Trash": [
+        "Accesare «Gunoi»"
+      ],
+      "New message": [
+        "Mesaj nou"
+      ],
+      "Search": [
+        "Căutare"
       ]
     },
     "Composer email icon": {
@@ -3913,6 +3951,9 @@
       "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
         "Include 2700 de servere în peste 65 de țări, conectați până la 10 dispozitive, accesați servicii de transmisie în flux la nivel mondial, blocare malware și reclame și multe altele."
       ],
+      "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
+        "Include suport pentru 3 domenii de e-mail personale, 90 adrese de e-mail, aliasuri nelimitate hide-my-email, partajare calendar și altele."
+      ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Protejați-vă fișierele cu stocarea criptată în cloud. Include sincronizare automată, partajare criptată a fișierelor și multe altele."
       ]
@@ -4971,6 +5012,12 @@
       "Draft saved.": [
         "Ciornă salvată."
       ],
+      "Drop file here to upload": [
+        "Plasați fișiere aici pentru încărcare"
+      ],
+      "Drop to import": [
+        "Plasare pentru importare"
+      ],
       "Duplicate key updated": [
         "Cheie duplicat actualizată"
       ],
@@ -5079,9 +5126,6 @@
       "For messages newer than ${ oldestDate }": [
         "Pentru mesaje mai noi de ${ oldestDate }"
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "Redirecționați mesajele primite pe e-mail de la un alt cont în contul securizat al ${ MAIL_APP_NAME }."
-      ],
       "Free up some space or add more storage space.": [
         "Eliberați ceva spațiu sau mai adăugați spațiu de stocare."
       ],
@@ -5101,6 +5145,9 @@
       ],
       "Hide original message": [
         "Ascundere mesaj original"
+      ],
+      "How hide-my-email aliases works": [
+        "Cum funcționează aliasurile hide-my-email"
       ],
       "I'm sending this message to a non-${ MAIL_APP_NAME } user.": [
         "Trimit acest mesaj unui destinatar care nu este utilizator al ${ MAIL_APP_NAME }."
@@ -5142,9 +5189,6 @@
       ],
       "Import mailbox": [
         "Importare mesaje"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "Importați mesajele, calendarele și contactele de la un alt serviciu la ${ BRAND_NAME }."
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Se importă datele de la ${ fromEmail } la ${ toEmail }."
@@ -5289,9 +5333,6 @@
       "No group found": [
         "Nu există grupuri"
       ],
-      "No imports or forwarding history.": [
-        "Nu există istoric de importări și redirecționări."
-      ],
       "No label found": [
         "Nu există etichete"
       ],
@@ -5327,6 +5368,9 @@
       ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Sistemul nostru a marcat acest mesaj ca o încercare de înșelăciune. Verificați dacă este legitim."
+      ],
+      "Our system flagged this message as a suspicious email. Please check that it is legitimate before clicking any links or attachments.": [
+        "Sistemul nostru a etichetat acest mesaj ca fiind suspect. Verificați legitimitatea acestuia înainte de a accesa orice legătură sau fișier atașat."
       ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP / Inline este compatibil doar cu formatul de text simplu."
@@ -5498,6 +5542,9 @@
       "Show original message": [
         "Afișare mesaj original"
       ],
+      "SimpleLogin is a ${ BRAND_NAME } service, and your ${ BRAND_NAME_TWO } Account includes hide-my-email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
+        "SimpleLogin este un serviciu ${ BRAND_NAME }, iar acest cont ${ BRAND_NAME_TWO } include aliasuri hide-my-email de ascundere a adresei de e-mail. Pentru a începe să vă ascundeți adresa, accesați SimpleLogin și creați-vă primul alias."
+      ],
       "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
         "SimpleLogin furnizează o metodă simplă de a crea adrese de autorizare pe site-urile de neîncredere unde nu doriți să vă expuneți adevărata adresă de e-mail."
       ],
@@ -5566,6 +5613,9 @@
       "There has been an error with the signature used to verify the contact details, which may be the result of a password reset.": [
         "A apărut o eroare la semnătura folosită pentru a verifica datele de contact, care poate fi rezultatul resetării parolei."
       ],
+      "They can't spam you if they don't know your email address. Protect your inbox with hide-my-email aliases.": [
+        "Ceilalți nu vă pot trimite mesaje nedorite dacă nu vă cunosc adresa de e-mail. Protejați-vă adresa folosind aliasuri hide-my-email."
+      ],
       "This account has been suspended due to a potential policy violation.": [
         "Acest cont a fost suspendat din cauza unei posibile încălcări a politicii."
       ],
@@ -5580,6 +5630,9 @@
       ],
       "This conversation contains non-trashed messages.": [
         "Această conversație conține mesaje neșterse."
+      ],
+      "This conversation contains one or more expiring messages": [
+        "Această conversație conține unul sau mai multe mesaje care expiră."
       ],
       "This conversation contains trashed messages.": [
         "Această conversație conține mesaje șterse."
@@ -5798,6 +5851,9 @@
       "When do you want your message to self-destruct?": [
         "Când doriți să se autodistrugă mesajul?"
       ],
+      "When giving out your email, use a unique, disposable hide-my-email alias instead of your real email address.": [
+        "Când vă furnizați adresa de e-mail, folosiți un alias hide-my-email unic, temporar, în locul adresei de e-mail reale."
+      ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "Când ați activat cheile de încredere pentru ${ senderName }, cheile publice au fost adăugate la datele de contact."
       ],
@@ -5943,6 +5999,9 @@
       "Your email will only be used for this one-time verification.": [
         "Adresa va fi folosită doar pentru această verificare unică."
       ],
+      "Your files will be encrypted and then saved": [
+        "Fișierele vor fi criptate și apoi salvate."
+      ],
       "Your import will not be processed.": [
         "Importarea nu va fi procesată."
       ],
@@ -5971,6 +6030,11 @@
       ]
     },
     "info": {
+      "${ filteredList.length } command found.": [
+        "S-a ${ filteredList.length } comandă.",
+        "S-au găsit ${ filteredList.length } comenzi.",
+        "S-au găsit ${ filteredList.length } de comenzi."
+      ],
       "Optional": [
         "Opțional"
       ]
@@ -6134,6 +6198,9 @@
       ],
       "New message": [
         "Mesaj nou"
+      ],
+      "Open command panel": [
+        "Deschidere panou de comandă"
       ],
       "Open next message": [
         "Deschidere mesaj următor"
@@ -6646,6 +6713,9 @@
       ],
       "Toolbar": [
         "Bară de unelte"
+      ],
+      "Type a command...": [
+        "Scrieți o comandă..."
       ],
       "Undisclosed Recipients": [
         "Destinatari nedivulgați"
@@ -7243,6 +7313,9 @@
       "Custom email domains": [
         "Domenii personale de e-mail"
       ],
+      "Hide-my-email aliases": [
+        "Aliasuri hide-my-email"
+      ],
       "Schedule messages at any time": [
         "Programați mesajele oricând"
       ],
@@ -7355,9 +7428,6 @@
       ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
         "Folosiți meniul de selectare al aplicațiilor din stânga sus pentru a accesa toate serviciile ${ BRAND_NAME }: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } și ${ DRIVE_SHORT_APP_NAME }."
-      ],
-      "You can change this anytime in your settings.": [
-        "Puteți modifica oricând aceasta în setări."
       ]
     },
     "Option": {
@@ -7522,6 +7592,9 @@
       ],
       "Text": [
         "Text"
+      ],
+      "Type a command…": [
+        "Scrieți o comandă..."
       ],
       "Type text or keyword": [
         "Scrieți un text sau cuvânt cheie"
@@ -8044,6 +8117,15 @@
       ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
         "Accesați de oriunde conținutul serviciilor de transmisii în flux, inclusiv Netflix, Disney + și Prime Video."
+      ],
+      "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
+        "Toate serviciile noastre premium cu limitele la maxim: 100 de adrese de e-mail, suport pentru 10 domenii personale, aliasuri nelimitate hide-my-email, partajare calendar, stocare criptată în cloud și fișiere partajate și multe altele."
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Include suport pentru un domeniu de e-mail personal, 10 adrese de e-mail, 10 aliasuri hide-my-email, partajare calendar și altele."
+      ],
+      "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Include suport pentru 3 domenii de e-mail personale, 15 adrese de e-mail, aliasuri nelimitate hide-my-email, partajare calendar și altele."
       ],
       "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
         "Perfect pentru familii sau echipe mici, fiecare poate avea propria adresă de e-mail și pseudonime. Necesită un domeniu personal."
@@ -9058,23 +9140,6 @@
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Perioada de încercare pentru Mail Plus se încheie la ${ textDate } "
-      ]
-    },
-    "Title header": {
-      "Actions": [
-        "Acțiuni"
-      ],
-      "Date": [
-        "Data"
-      ],
-      "Import": [
-        "Importare"
-      ],
-      "Size": [
-        "Mărime"
-      ],
-      "Status": [
-        "Stare"
       ]
     },
     "Today icon tooltip in mini calendar": {

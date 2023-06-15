@@ -1019,7 +1019,7 @@
         "Hav tillid til"
       ],
       "Trust key": [
-        "Betroet nøgle",
+        "Stol på nøgle",
         "Stol på nøgler"
       ],
       "Trust public key": [
@@ -1241,6 +1241,9 @@
       ]
     },
     "Animation": {
+      "${ nameToDisplay }'s inbox": [
+        "${ nameToDisplay }'s indbakke"
+      ],
       "5 trackers removed": [
         "5 trackere fjernet"
       ],
@@ -2870,6 +2873,9 @@
       "ProtonMail logo and a plus sign": [
         "ProtonMail-logo og et plustegn"
       ],
+      "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
+        "Spar tid ved at sende e-mail eller invitationer til alle på en gang, en premium-funktion blandt mange andre. Opgrader i dag."
+      ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "Filen skal have en maksimal størrelse på ${ MAX_IMPORT_FILE_SIZE_STRING } og have\nop til ${ MAX_IMPORT_CONTACTS_STRING } kontakt. Hvis din fil er større, bedes du opdele den i mindre filer.",
         "Filen skal have en maksimal størrelse på ${ MAX_IMPORT_FILE_SIZE_STRING } og have\nop til ${ MAX_IMPORT_CONTACTS_STRING } kontakter. Hvis din fil er større, bedes du opdele den i mindre filer."
@@ -3402,6 +3408,12 @@
       ],
       "Unknown error.": [
         "Ukendt fejl."
+      ],
+      "Username must begin with a letter or digit": [
+        "Brugernavn skal begynde med et bogstav eller ciffer"
+      ],
+      "Username must end with a letter or digit": [
+        "Brugernavn skal ende på et bogstav eller ciffer"
       ],
       "Wrong mailbox password": [
         "Forkert postkasseadgangskode"
@@ -4070,6 +4082,12 @@
       ]
     },
     "Gmail forwarding": {
+      "Automatically forward": [
+        "Videresend automatisk"
+      ],
+      "Gmail messages to your inbox": [
+        "Gmail-beskeder til din indbakke"
+      ],
       "Sign in with Google": [
         "Log ind med Google"
       ]
@@ -4728,6 +4746,12 @@
       "Confirm phishing report": [
         "Bekræft phishing-anmeldelse"
       ],
+      "Contact assigned to group ${ contactGroupName }": [
+        "Kontakt tilføjet til gruppen ${ contactGroupName }"
+      ],
+      "Contact unassigned to group ${ contactGroupName }": [
+        "Kontakt fjernet fra gruppen ${ contactGroupName }"
+      ],
       "Copied to clipboard": [
         "Kopieret til udklipsholder"
       ],
@@ -4901,9 +4925,6 @@
       "For messages newer than ${ oldestDate }": [
         "For beskeder nyere end ${ oldestDate }"
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "Videresend indgående e-mails fra en anden konto til din sikre ${ MAIL_APP_NAME }-indbakke."
-      ],
       "Free up some space or add more storage space.": [
         "Frigør plads eller tilføj mere lagerplads."
       ],
@@ -4962,9 +4983,6 @@
       ],
       "Import mailbox": [
         "Importér postkasse"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "Importér dine e-mails, kalendere og kontakter fra en anden tjeneste til ${ BRAND_NAME }."
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Importerer dine data fra ${ fromEmail } til ${ toEmail }."
@@ -5043,6 +5061,10 @@
       ],
       "Merged": [
         "Flettet"
+      ],
+      "Message downloaded: ${ currentProgress } out of ${ totalProgress }": [
+        "Besked downloadet: ${ currentProgress } ud af ${ totalProgress }",
+        "Beskeder downloadet: ${ currentProgress } ud af ${ totalProgress }"
       ],
       "Message expiration works out-of-the-box when sending emails to other ${ MAIL_APP_NAME } users. To send expiring emails to non-${ BRAND_NAME } users, please cancel and add password protection to your email.": [
         "Beskedudløb virker uden videre, når du sender e-mails til andre ${ MAIL_APP_NAME }-brugere. For at sende e-mails med udløb til ikke-${ BRAND_NAME }-brugere bedes du annullere og tilføje adgangskodebeskyttelse til din e-mail."
@@ -5707,6 +5729,9 @@
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "Du skrev \"${ attachmentsFoundKeyword }\", men der er ikke tilføjet en vedhæftning. Vil du sende din besked alligevel?"
       ],
+      "You've reached the maximum number of addresses in the contact group.": [
+        "Du har nået det maksimale antal adresser i kontaktgruppen."
+      ],
       "Your ${ BRAND_NAME } Account includes SimpleLogin. Install the browser extension with one click to get started.": [
         "Din ${ BRAND_NAME }-konto inkluderer SimpleLogin. Installér browserudvidelsen med ét klik for at komme i gang."
       ],
@@ -5788,6 +5813,12 @@
       ]
     },
     "Key pinning": {
+      "Clicking \"Trust Key\" will associate this public key with this sender and emails from this address will be automatically cryptographically verified.": [
+        "Ved at trykke på \"Stol på nøgle\" associeres denne offentlige nøgle med denne afsender, og e-mails herfra vil automatisk blive bekræftet kryptografisk."
+      ],
+      "Clicking \"Trust Key\" will create a new contact and associate this public key with this sender. Emails from this address will be automatically cryptographically verified.": [
+        "Ved at trykke på \"Stol på nøgle\" knyttes denne offentlige nøgle til denne afsender, og e-mails fra denne adresse vil automatisk blive kryptografisk bekræftet."
+      ],
       "Do you want to trust the primary public key with the following fingerprint?": [
         "Ønsker du at stole på den primære offentlige nøgle med følgende fingeraftryk?",
         "Ønsker du at stole på de primære offentlige nøgler med følgende fingeraftryk?"
@@ -7031,11 +7062,17 @@
       ]
     },
     "new_plans: feature info": {
+      "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
+        "Opret flere e-mailadresser for dine online identiteter, f.eks. JensShopper@${ domain } for shoppingkonto, JensNyheder@${ domain2 } til nyhedsabonnementer."
+      ],
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "Få ubegrænsede aliaser med SimpleLogin fra ${ BRAND_NAME }"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Lagerplads er delt mellem ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, og ${ DRIVE_APP_NAME }"
+      ],
+      "Use your own custom email domain address, e.g., you@yourname.com": [
+        "Brug din egen brugerdefinerede e-mail-domæneadresse, f.eks. dig@ditnavn.com"
       ]
     },
     "new_plans: label": {
@@ -7115,9 +7152,6 @@
       ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
         "Brug appvælgeren øverst til venstre for at få adgang til alle ${ BRAND_NAME }-tjenester: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } og ${ DRIVE_SHORT_APP_NAME }."
-      ],
-      "You can change this anytime in your settings.": [
-        "Du kan altid ændre dette i dine indstillinger."
       ]
     },
     "Option": {
@@ -7750,6 +7784,9 @@
       ],
       "Schedule send": [
         "Planlæg afsendelse"
+      ],
+      "Try it today.": [
+        "Prøv det i dag."
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "Vi indlæser nu billeder som standard og blokerer afsendere fra at spore dig. Dette kan ændres i ${ settingsLink }."
@@ -8686,23 +8723,6 @@
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Din Mail Plus prøveperiode slutter ${ textDate }"
-      ]
-    },
-    "Title header": {
-      "Actions": [
-        "Handlinger"
-      ],
-      "Date": [
-        "Dato"
-      ],
-      "Import": [
-        "Importér"
-      ],
-      "Size": [
-        "Størrelse"
-      ],
-      "Status": [
-        "Status"
       ]
     },
     "Today icon tooltip in mini calendar": {
