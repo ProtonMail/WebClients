@@ -1,13 +1,16 @@
-import { type VFC, useEffect, useMemo } from 'react';
+import { type VFC, useEffect, useMemo, useRef } from 'react';
 import { useSelector } from 'react-redux';
 
 import { Form, FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
 
 import { selectAliasLimits, selectVaultLimits } from '@proton/pass/store';
+import type { MaybeNull } from '@proton/pass/types';
+import { awaiter } from '@proton/pass/utils/fp/promises';
 import { merge } from '@proton/pass/utils/object';
 import { isEmptyString, uniqueId } from '@proton/pass/utils/string';
 import { getEpoch } from '@proton/pass/utils/time/get-epoch';
+import noop from '@proton/utils/noop';
 
 import { UpgradeButton } from '../../../../shared/components/upgrade/UpgradeButton';
 import type { NewAliasFormValues } from '../../../../shared/form/types';
@@ -24,6 +27,7 @@ import { TitleField } from '../../../components/Field/TitleField';
 import { VaultSelectField } from '../../../components/Field/VaultSelectField';
 import { ItemCard } from '../../../components/Item/ItemCard';
 import { ItemCreatePanel } from '../../../components/Panel/ItemCreatePanel';
+import { useItemDraft } from '../../../hooks/useItemDraft';
 import { usePopupContext } from '../../../hooks/usePopupContext';
 import { AliasForm } from './Alias.form';
 
@@ -33,6 +37,7 @@ export const AliasNew: VFC<ItemNewProps<'alias'>> = ({ shareId, onSubmit, onCanc
     const { domain, subdomain, displayName } = usePopupContext().url;
     const { needsUpgrade } = useSelector(selectAliasLimits);
     const { vaultTotalCount } = useSelector(selectVaultLimits);
+    const { current: draftHydrated } = useRef(awaiter<MaybeNull<NewAliasFormValues>>());
 
     const { aliasPrefix: defaultAliasPrefix, ...defaults } = useMemo(() => {
         const url = subdomain ?? domain;
@@ -94,30 +99,51 @@ export const AliasNew: VFC<ItemNewProps<'alias'>> = ({ shareId, onSubmit, onCanc
 
     const { aliasOptions, aliasOptionsLoading } = useAliasOptions({
         shareId,
-        onAliasOptionsLoaded: useCallback(
-            async ({ suffixes, mailboxes }) =>
-                /* if alias options have already been loaded, the following block
-                 * will be executed on initial mount of the component: initial
-                 * validation will be underway and the `form.reset` call will be
-                 * invalidated by the initial async validation. For safety, wrap
-                 * the `onAliasOptionsLoaded` in a `requestAnimationFrame` so it
-                 * triggers on the next repaint */
-                requestAnimationFrame(() => {
-                    const firstSuffix = suffixes?.[0];
-                    const firstMailBox = mailboxes?.[0];
-                    const prefixFromURL = !isEmptyString(defaultAliasPrefix);
-                    const aliasPrefix = prefixFromURL ? defaultAliasPrefix : deriveAliasPrefix(form.values.name);
+        onAliasOptionsLoaded: async ({ suffixes, mailboxes }) => {
+            const draft = await draftHydrated;
+            const formValues = draft ?? form.values;
+            /* if alias options have already been loaded, the following block
+             * will be executed on initial mount of the component: initial
+             * validation will be underway and the `form.reset` call will be
+             * invalidated by the initial async validation. For safety, wrap
+             * the `onAliasOptionsLoaded` in a `requestAnimationFrame` so it
+             * triggers on the next repaint */
 
-                    const values = merge(form.values, {
-                        aliasPrefix,
-                        ...(firstSuffix && { aliasSuffix: firstSuffix }),
-                        ...(firstMailBox && { mailboxes: [firstMailBox] }),
-                    });
+            const firstSuffix = suffixes?.[0];
+            const firstMailBox = mailboxes?.[0];
+            const prefixFromURL = !isEmptyString(defaultAliasPrefix);
+            const aliasPrefix = prefixFromURL ? defaultAliasPrefix : deriveAliasPrefix(formValues.name);
 
-                    form.resetForm({ values, errors: validateNewAliasForm(values) });
-                }),
-            []
-        ),
+            const values = merge(formValues, {
+                aliasPrefix: formValues.aliasPrefix ? formValues.aliasPrefix : aliasPrefix,
+                aliasSuffix: formValues.aliasSuffix ?? firstSuffix,
+                mailboxes: formValues.mailboxes.length > 0 ? formValues.mailboxes : [firstMailBox],
+            });
+
+            if (!draft) form.resetForm({ values, errors: validateNewAliasForm(values) });
+        },
+    });
+
+    useItemDraft<NewAliasFormValues>(form, {
+        type: 'alias',
+        mode: 'new',
+        itemId: 'draft-alias',
+        shareId: form.values.shareId,
+        onHydrated: draftHydrated.resolve,
+        sanitize: (formData) => {
+            const { aliasSuffix, mailboxes } = formData;
+            const suffixOptions = aliasOptions?.suffixes ?? [];
+            const mailboxOptions = aliasOptions?.mailboxes ?? [];
+
+            const suffixMatch = suffixOptions.find(({ signature }) => signature === aliasSuffix?.signature);
+            const mailboxesMatch = mailboxOptions.filter(({ id }) => mailboxes.some((mailbox) => id === mailbox.id));
+
+            return {
+                ...formData,
+                aliasSuffix: suffixMatch,
+                mailboxes: mailboxesMatch,
+            };
+        },
     });
 
     const { values, touched, setFieldValue } = form;
@@ -127,11 +153,11 @@ export const AliasNew: VFC<ItemNewProps<'alias'>> = ({ shareId, onSubmit, onCanc
         /* update the aliasPrefix with the item's name only :
         - if it hasn't been touched by the user yet
         - a default alias prefix was not resolved  */
-        void (
-            !defaultAliasPrefix &&
-            !touched.aliasPrefix &&
-            setFieldValue('aliasPrefix', deriveAliasPrefix(name), true)
-        );
+        void draftHydrated.then((hydrated) => {
+            if (!hydrated && !defaultAliasPrefix && !touched.aliasPrefix) {
+                setFieldValue('aliasPrefix', deriveAliasPrefix(name), true).catch(noop);
+            }
+        });
     }, [name, touched.aliasPrefix]);
 
     return (
@@ -141,8 +167,7 @@ export const AliasNew: VFC<ItemNewProps<'alias'>> = ({ shareId, onSubmit, onCanc
             handleCancelClick={onCancel}
             valid={form.isValid}
             discardable={!form.dirty}
-            /* if user has reached his alias limit:
-             * disable submit and prompt for upgrade */
+            /* if user has reached his alias limit: disable submit and prompt for upgrade */
             renderSubmitButton={needsUpgrade ? <UpgradeButton key="upgrade-button" /> : undefined}
         >
             {({ didMount }) => (

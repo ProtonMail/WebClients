@@ -36,6 +36,7 @@ import { UrlGroupField, createNewUrl } from '../../../components/Field/UrlGroupF
 import { VaultSelectField } from '../../../components/Field/VaultSelectField';
 import { ItemCreatePanel } from '../../../components/Panel/ItemCreatePanel';
 import { useAliasForLoginModal } from '../../../hooks/useAliasForLoginModal';
+import { useItemDraft } from '../../../hooks/useItemDraft';
 import { usePopupContext } from '../../../hooks/usePopupContext';
 import { AliasModal } from '../Alias/Alias.modal';
 
@@ -151,6 +152,29 @@ export const LoginNew: VFC<ItemNewProps<'login'>> = ({ shareId, onSubmit, onCanc
     });
 
     const aliasModal = useAliasForLoginModal(form);
+
+    useItemDraft<NewLoginItemFormValues>(form, {
+        type: 'login',
+        mode: 'new',
+        itemId: 'draft-login',
+        shareId: form.values.shareId,
+        sanitize: (formData) => {
+            const { aliasSuffix, mailboxes } = formData;
+            const suffixOptions = aliasModal.aliasOptions?.suffixes ?? [];
+            const mailboxOptions = aliasModal.aliasOptions?.mailboxes ?? [];
+
+            const suffixMatch = suffixOptions.find(({ signature }) => signature === aliasSuffix?.signature);
+            const mailboxesMatch = mailboxOptions.filter(({ id }) => mailboxes.some((mailbox) => id === mailbox.id));
+            const withAlias = suffixMatch !== undefined && mailboxesMatch.length > 0;
+
+            return {
+                ...formData,
+                withAlias,
+                aliasSuffix: withAlias ? suffixMatch : undefined,
+                mailboxes: withAlias ? mailboxesMatch : [],
+            };
+        },
+    });
 
     return (
         <>
