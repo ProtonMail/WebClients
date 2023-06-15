@@ -56,6 +56,15 @@
 			border-radius: 0;
 			padding-inline-start: rem(12) !important;
 		}
+
+		// we want the country dropdown to take exactly half of the width
+		&:first-child {
+			flex: 0 0 50%;
+		}
+
+		&:last-child {
+			border: none !important;
+		}
 	}
 }
 
