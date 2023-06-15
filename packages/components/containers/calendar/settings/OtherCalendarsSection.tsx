@@ -126,7 +126,7 @@ const OtherCalendarsSection = ({
                         data-testid="calendar-setting-page:add-holidays-calendar"
                         disabled={!canAdd}
                         onClick={handleCreateHolidaysCalendar}
-                        className="mr1"
+                        className="mr-4"
                     >
                         {addHolidaysCalendarText}
                     </PrimaryButton>

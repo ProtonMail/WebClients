@@ -32,7 +32,7 @@ const RevisionsSettingsBanner = ({
     const retentionLabel = getRetentionLabel(revisionRetentionDays);
     return (
         <div className="flex flex-align-items-center flex-justify-space-between">
-            <p className="m0 color-weak">
+            <p className="m-0 color-weak">
                 {revisionRetentionDays === 0
                     ? c('Info').t`Previous versions are not saved`
                     : c('Info').t`Previous versions are kept for ${retentionLabel}`}
@@ -59,7 +59,7 @@ const RevisionsModalContent = () => {
             ) : (
                 <RevisionsUpgradeBanner />
             )}
-            {isLoading && <CircleLoader className="w100 mauto mt-5" size="large" />}
+            {isLoading && <CircleLoader className="w100 m-auto mt-5" size="large" />}
             {!isLoading && currentRevision ? (
                 <RevisionList currentRevision={currentRevision} categorizedRevisions={categorizedRevisions} />
             ) : null}
