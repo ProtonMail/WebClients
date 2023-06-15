@@ -112,10 +112,7 @@ export async function prepareVolumeForRestore(
             if (!preparedShare) {
                 return undefined;
             }
-            return {
-                ...preparedShare,
-                deviceName: device.deviceName,
-            };
+            return preparedShare;
         })
     );
     return {
