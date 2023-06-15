@@ -135,7 +135,7 @@ const Commander = ({ onClose, list, ...rest }: Props) => {
                     <Scroll className="overflow-hidden">
                         {filteredList.length ? (
                             <>
-                                <ul className="unstyled mt0-5">
+                                <ul className="unstyled mt-2">
                                     {filteredList.map((item, index) => (
                                         <li className="dropdown-item" key={item.value}>
                                             <DropdownMenuButton
@@ -147,7 +147,7 @@ const Commander = ({ onClose, list, ...rest }: Props) => {
                                                 className="w100 flex flex-align-items-center flex-justify-space-between text-left p-3"
                                             >
                                                 <span className="flex flex-align-items-center text-left text-pre">
-                                                    <Icon name={item.icon} className="mr1" />
+                                                    <Icon name={item.icon} className="mr-4" />
                                                     <Mark value={value}>{item.label}</Mark>
                                                 </span>
                                                 <span className="ml-1">
@@ -156,7 +156,7 @@ const Commander = ({ onClose, list, ...rest }: Props) => {
                                                             <Kbd
                                                                 key={shortcut}
                                                                 shortcut={shortcut}
-                                                                className={clsx([i > 0 && 'ml0-5'])}
+                                                                className={clsx([i > 0 && 'ml-2'])}
                                                             />
                                                         ))}
                                                 </span>
@@ -166,7 +166,7 @@ const Commander = ({ onClose, list, ...rest }: Props) => {
                                 </ul>
                             </>
                         ) : (
-                            <p className="m1">{c('Info').t`No results found`}</p>
+                            <p className="m-1">{c('Info').t`No results found`}</p>
                         )}
                     </Scroll>
                 </div>

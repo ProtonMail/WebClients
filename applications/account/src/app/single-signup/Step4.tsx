@@ -37,7 +37,7 @@ const Step4 = ({
                         <h1 className="h2 text-bold">{c('Info').t`Welcome`}</h1>
                         <span className="color-weak">{c('Info').t`To ${planName}`}</span>
                     </div>
-                    <div className="mt-8 mb-6 text-center mauto w100 on-mobile-w100">{img}</div>
+                    <div className="mt-8 mb-6 text-center m-auto w100 on-mobile-w100">{img}</div>
                     <div className="text-center" role="alert">
                         <div className="inline-block w70">
                             <LoadingTextStepper steps={steps} />

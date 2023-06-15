@@ -1,7 +1,5 @@
 import { useState } from 'react';
 
-
-
 import { Button, ButtonLike } from '@proton/atoms';
 import { Checkbox, Icon, RadioGroup, Table, TableBody, TableCell, TableHeader, TableRow } from '@proton/components';
 
@@ -98,7 +96,7 @@ export const Sandbox = () => {
                 <strong className="block mb-4">Toggles</strong>
                 {toggles.map((prop, i) => {
                     return (
-                        <div className="mb0-5" key={i}>
+                        <div className="mb-2" key={i}>
                             <Checkbox
                                 checked={selectedToggles[i]}
                                 onChange={({ target: { checked } }) => {

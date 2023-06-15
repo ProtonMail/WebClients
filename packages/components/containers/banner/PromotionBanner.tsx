@@ -76,7 +76,7 @@ const PromotionBanner = ({
                     size="small"
                     color="weak"
                     shape="ghost"
-                    className="ml-2 mr-1 myauto"
+                    className="ml-2 mr-1 my-auto"
                     title={c('Action').t`Close`}
                 >
                     <Icon name="cross" alt={c('Action').t`Close`} />
