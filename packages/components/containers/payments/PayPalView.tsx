@@ -16,9 +16,10 @@ interface Props {
     amount: number;
     currency: Currency;
     disabled?: boolean;
+    prefetchToken?: boolean;
 }
 
-const PayPalView = ({ type, amount, currency, paypal, paypalCredit, disabled }: Props) => {
+const PayPalView = ({ type, amount, currency, paypal, paypalCredit, disabled, prefetchToken }: Props) => {
     if (amount < MIN_PAYPAL_AMOUNT) {
         return (
             <Alert className="mb-4" type="error">
@@ -46,6 +47,7 @@ const PayPalView = ({ type, amount, currency, paypal, paypalCredit, disabled }: 
             paypal={paypalCredit}
             amount={amount}
             disabled={disabled}
+            prefetchToken={prefetchToken}
         >
             {c('Link').t`click here`}
         </PayPalButton>
