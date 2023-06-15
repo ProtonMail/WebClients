@@ -54,6 +54,9 @@
       "Add phone number": [
         "Προσθήκη αριθμού τηλεφώνου"
       ],
+      "Add public holidays": [
+        "Προσθήκη αργιών"
+      ],
       "Add to group": [
         "Προσθήκη στην ομάδα"
       ],
@@ -290,6 +293,9 @@
       "Join calendar": [
         "Εγγραφή στο ημερολόγιο"
       ],
+      "Keep current time zone": [
+        "Διατήρηση τρέχουσας ζώνης ώρας"
+      ],
       "Load": [
         "Φόρτωση"
       ],
@@ -442,6 +448,9 @@
       ],
       "Select all": [
         "Επιλογή όλων"
+      ],
+      "Select time zone": [
+        "Επιλογή ζώνης ώρας"
       ],
       "Send": [
         "Αποστολή"
@@ -871,6 +880,11 @@
         "Προβολή (δείτε όλες τις λεπτομέρειες)"
       ]
     },
+    "Calendar sharing error": {
+      "Failed to retrieve contact information for ${ address }": [
+        "Αποτυχία ανάκτησης πληροφοριών επικοινωνίας για ${ address }"
+      ]
+    },
     "Calendar sidebar dropdown item": {
       "Add calendar from URL": [
         "Προσθήκη ημερολογίου από URL"
@@ -894,6 +908,9 @@
       "Calendar is syncing": [
         "Το ημερολόγιο συγχρονίζεται"
       ],
+      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
+        "Το ημερολόγιο συγχρονίζεται: μπορεί να χρειαστούν αρκετά λεπτά για να εμφανιστούν όλα τα συμβάντα του."
+      ],
       "Calendar is too big": [
         "Υπερβολικά μεγάλο ημερολόγιο"
       ],
@@ -911,6 +928,17 @@
       ],
       "Unsupported calendar format": [
         "Μη υποστηριζόμενη μορφή ημερολογίου"
+      ]
+    },
+    "Calendar subscription not synced error; long version": {
+      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
+        "Η σύνδεση ημερολογίου δεν είναι προσβάσιμη εκτός του οικοσυστήματος της υπηρεσίας παροχής ημερολογίου."
+      ],
+      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
+        "Η σύνδεση ημερολογίου δεν είναι προσωρινά προσβάσιμη. Βεβαιωθείτε ότι ο σύνδεσμος από τον πάροχο ημερολογίου εξακολουθεί να ισχύει."
+      ],
+      "More than 12 hours passed since last update — ${ CALENDAR_APP_NAME } will try to update the calendar in a few hours.": [
+        "Έχουν περάσει περισσότερες από 12 ώρες από την τελευταία ενημέρωση — ${ CALENDAR_APP_NAME } θα προσπαθήσει να ενημερώσει το ημερολόγιο σε λίγες ώρες."
       ]
     },
     "Calendar view": {
@@ -941,6 +969,11 @@
       ],
       "Expand": [
         "Ανάπτυξη"
+      ]
+    },
+    "colon": {
+      ": ": [
+        ": "
       ]
     },
     "color": {
@@ -1859,6 +1892,11 @@
         "Νήσοι Άλαντ"
       ]
     },
+    "Country select label": {
+      "Based on your time zone": [
+        "Βασισμένο στη ζώνη ώρας σας"
+      ]
+    },
     "Custom frequency option": {
       "After repeating…": [
         "Μετά την επανάληψη…"
@@ -1983,6 +2021,11 @@
     "Disabled calendar tooltip": {
       "The event belongs to a disabled calendar.": [
         "Το γεγονός ανήκει σε ένα απενεργοποιημένο ημερολόγιο."
+      ]
+    },
+    "Don't ask to update timezone checkbox label": {
+      "Don't ask again": [
+        "Να μην ερωτηθώ ξανά"
       ]
     },
     "Dropdown action icon tooltip": {
@@ -2408,6 +2451,9 @@
       "Validation error": [
         "Σφάλμα επικύρωσης"
       ],
+      "You already added this holidays calendar": [
+        "Έχετε ήδη προσθέσει αυτό το εορτολόγιο"
+      ],
       "You can't send a mail to more than 100 recipients": [
         "Δεν μπορείτε να στείλετε μήνυμα σε περισσότερους από 100 παραλήπτες"
       ],
@@ -2628,6 +2674,12 @@
         "ακυρωμένες"
       ]
     },
+    "Event form": {
+      "${ numberOfAttendees } participant": [
+        "${ numberOfAttendees } συμμετέχων",
+        "${ numberOfAttendees } συμμετέχοντες"
+      ]
+    },
     "Event info. Organizer name": {
       "You": [
         "Εσείς"
@@ -2807,6 +2859,11 @@
       ],
       "Your current plan cannot join a Visionary or family plan.": [
         "Το τρέχον σχέδιό σας δεν μπορεί να συμμετάσχει σε ένα Οραματικό ή οικογενειακό σχέδιο."
+      ]
+    },
+    "familyOffer_2023:Footer": {
+      "Discounts are based on the standard monthly pricing.": [
+        "Οι εκπτώσεις βασίζονται στην τυπική μηνιαία τιμολόγηση."
       ]
     },
     "familyOffer_2023:Get Proton Family": {
@@ -3291,6 +3348,9 @@
       ],
       "Attention required": [
         "Χρειάζεται προσοχή"
+      ],
+      "Based on your time zone": [
+        "Βασισμένο στη ζώνη ώρας σας"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Πριν αιτηθείτε νέο κωδικό επαλήθευσης, ελέγξτε τον φάκελό σας Ενοχλητικά και ότι η ${ strong } είναι η σωστή διεύθυνση."
@@ -3844,6 +3904,16 @@
         "Κάντε κλικ για λεπτομέρειες"
       ]
     },
+    "Info; access rights for shared calendar": {
+      "View only": [
+        "Ανάγνωση μόνο"
+      ]
+    },
+    "Info; calendar sharing pop-up": {
+      "Invite others with a ${ BRAND_NAME } account to view or edit events in your calendar.": [
+        "Προσκαλέστε άλλα άτομα με λογαριασμό ${ BRAND_NAME } για προβολή ή επεξεργασία συμβάντων στο ημερολόγιό σας."
+      ]
+    },
     "Info; reset calendar keys modal; part 1": {
       "Some of your calendars will not show details of previously created events.": [
         "Κάποια από τα ημερολόγιά σας δεν θα εμφανίζουν λεπτομέρειες για συμβάντα που δημιουργήθηκαν προηγουμένως."
@@ -3870,6 +3940,15 @@
     "Info; reshare calendar modal; part 2": {
       "You can reshare your calendars in settings.": [
         "Μπορείτε να αναδημοσιεύσετε τα ημερολόγιά σας στις ρυθμίσεις."
+      ]
+    },
+    "Information about why calendar event cannot be saved": {
+      "At most ${ MAX_ATTENDEES } participant is allowed per invitation": [
+        "Το πολύ ${ MAX_ATTENDEES } συμμετέχοντας επιτρέπεται ανά πρόσκληση",
+        "Το πολύ ${ MAX_ATTENDEES } συμμετέχοντες επιτρέπονται ανά πρόσκληση"
+      ],
+      "Creating invites in a shared calendar is not allowed": [
+        "Δεν επιτρέπεται η δημιουργία προσκλήσεων σε κοινόχρηστο ημερολόγιο"
       ]
     },
     "Input label": {
@@ -4094,6 +4173,9 @@
       "Label messages as": [
         "Επισήμανση μηνυμάτων ως"
       ],
+      "Language": [
+        "Γλώσσα"
+      ],
       "Last 12 months only": [
         "Τελευταίοι 12 μήνες μόνο"
       ],
@@ -4212,6 +4294,9 @@
       "Upload picture": [
         "Ανέβασμα εικόνας"
       ],
+      "URL": [
+        "Διεύθυνση URL"
+      ],
       "Verification code": [
         "Κωδικός επαλήθευσης"
       ],
@@ -4285,6 +4370,9 @@
       ],
       "My calendars": [
         "Τα ημερολόγια μου"
+      ],
+      "Other calendars": [
+        "Άλλα ημερολόγια"
       ],
       "Pay invoice": [
         "Πληρωμή τιμολογίου"
@@ -4381,6 +4469,9 @@
       ],
       "Manage calendars": [
         "Διαχείριση ημερολογίων"
+      ],
+      "Upgrade": [
+        "Αναβάθμιση"
       ]
     },
     "Modal for received invitation to share calendar; text": {
@@ -4397,6 +4488,18 @@
       ]
     },
     "Modal title": {
+      "Add public holidays": [
+        "Προσθήκη αργιών"
+      ],
+      "Cannot add more calendars": [
+        "Αδυναμία προσθήκης περισσότερων ημερολογίων"
+      ],
+      "Edit calendar": [
+        "Επεξεργασία ημερολογίου"
+      ],
+      "Get a country's official public holidays calendar.": [
+        "Αποκτήστε το επίσημο ημερολόγιο αργιών μιας χώρας."
+      ],
       "How to import calendars from another service": [
         "Πώς να εισάγετε ημερολόγια από μια άλλη υπηρεσία"
       ],
@@ -4636,6 +4739,14 @@
         "Η ομάδα επαφών ενημερώθηκε"
       ]
     },
+    "Notification in holidays calendar modal": {
+      "Adding holidays calendar failed": [
+        "Η προσθήκη ημερολογίου αργιών απέτυχε"
+      ],
+      "Calendar added": [
+        "Το ημερολόγιο προστέθηκε"
+      ]
+    },
     "Notification in share calendar modal": {
       "Member added": [
         "Το μέλος προστέθηκε",
@@ -4798,8 +4909,8 @@
       "Set up your organization": [
         "Ρυθμίστε τον οργανισμό σας"
       ],
-      "You can change this anytime in your settings.": [
-        "Μπορείτε να το αλλάξετε αυτό οποιαδήποτε στιγμή στις ρυθμίσεις σας."
+      "Set up your organization testing": [
+        "Ρύθμιση των δοκιμών του οργανισμού σας"
       ]
     },
     "Option": {
@@ -4938,6 +5049,9 @@
       "Please describe the problem and include any error messages": [
         "Περιγράψτε το πρόβλημα και συμπεριλάβετε τυχόν μηνύματα σφάλματος"
       ],
+      "Please select a country": [
+        "Παρακαλούμε επιλέξτε μια χώρα"
+      ],
       "Search for group name": [
         "Αναζήτηση ονόματος ομάδας"
       ],
@@ -5040,6 +5154,9 @@
       ]
     },
     "Select search results": {
+      "Check your spelling or select a country from the list.": [
+        "Ελέγξτε την ορθογραφία σας ή επιλέξτε μια χώρα από τη λίστα."
+      ],
       "No results found": [
         "Δεν βρέθηκαν αποτελέσματα"
       ]
@@ -5047,6 +5164,11 @@
     "Settings update growler warning": {
       "Failed to update settings": [
         "Αποτυχία ενημέρωσης ρυθμίσεων"
+      ]
+    },
+    "Share calendar assistive text": {
+      "To invite non-${ BRAND_NAME } users, share your calendar with a link.": [
+        "Για να προσκαλέσετε μη ${ BRAND_NAME } χρήστες, κοινοποιήστε το ημερολόγιό σας με έναν σύνδεσμο."
       ]
     },
     "Share calendar max shares reached error": {
@@ -5086,6 +5208,14 @@
     "Sidebar calendar edit tooltip": {
       "Manage calendar": [
         "Διαχείριση ημερολογίου"
+      ]
+    },
+    "Signature verification error when joining calendar": {
+      "Signature verification error": [
+        "Σφάλμα επαλήθευσης υπογραφής"
+      ],
+      "You have enabled address verification for ${ boldSenderEmail }. We couldn't verify the authenticity of this calendar invite. This may be due to changes in the encryption keys of this contact. Please review its advanced PGP settings, or your can ask ${ boldSenderEmail } for a new invite.": [
+        "Έχετε ενεργοποιήσει την επαλήθευση διεύθυνσης για ${ boldSenderEmail }. Δεν μπορέσαμε να επαληθεύσουμε την αυθεντικότητα αυτής της πρόσκλησης ημερολογίου. Αυτό μπορεί να οφείλεται σε αλλαγές στα κλειδιά κρυπτογράφησης αυτής της επαφής. Ελέγξτε τις προηγμένες ρυθμίσεις PGP ή μπορείτε να ζητήσετε από ${ boldSenderEmail } μια νέα πρόσκληση."
       ]
     },
     "Signing preference for emails": {
@@ -5248,8 +5378,14 @@
       ]
     },
     "Spotlight": {
+      "Add your country's public holidays to your calendar.": [
+        "Προσθέστε τις επίσημες αργίες της χώρας σας στο ημερολόγιό σας."
+      ],
       "Get up to ${ credits } in credits.": [
         "Λάβετε έως και ${ credits } σε πιστώσεις."
+      ],
+      "Public holidays are here!": [
+        "Οι επίσημες αργίες είναι εδώ!"
       ]
     },
     "Storage": {
@@ -5266,6 +5402,9 @@
     "Subscribe to calendar modal": {
       "Calendar URL": [
         "URL Ημερολογίου"
+      ],
+      "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Other calendars.\n${ kbLink }": [
+        "Για να εγγραφείτε σε ένα εξωτερικό ή δημόσιο ημερολόγιο και τις ενημερώσεις του, εισαγάγετε τη διεύθυνση URL. Μια έκδοση μόνο για ανάγνωση του ημερολογίου θα προστεθεί στα ´Άλλα ημερολόγιά σας.\n${ kbLink }"
       ]
     },
     "Subscribe to calendar modal description": {
@@ -5520,6 +5659,11 @@
       "${ minutes } minute": [
         "${ minutes } λεπτό",
         "${ minutes } λεπτά"
+      ]
+    },
+    "Timezone search placeholder": {
+      "Search time zones": [
+        "Αναζήτηση ζώνης ώρας"
       ]
     },
     "Title": {
@@ -5897,6 +6041,11 @@
         "Επιλέξτε έναν αριθμό"
       ]
     },
+    "Title; calendar sharing pop-up": {
+      "Planning just got easier!": [
+        "Ο προγραμματισμός μόλις έγινε ευκολότερος!"
+      ]
+    },
     "Title; create calendar modal": {
       "Create calendar": [
         "Δημιουργία ημερολογίου"
@@ -5969,6 +6118,14 @@
       ],
       "You do not have any contacts to export": [
         "Δεν έχετε επαφές προς εξαγωγή"
+      ]
+    },
+    "Tooltip; share calendar modal ": {
+      "Shared end-to-end encrypted": [
+        "Κοινόχρηστη κρυπτογράφηση από άκρο σε άκρο"
+      ],
+      "Shared end-to-end encrypted with verified contact": [
+        "Κοινόχρηστη κρυπτογράφηση από άκρο σε άκρο με επαληθευμένη επαφή"
       ]
     },
     "Validation": {
