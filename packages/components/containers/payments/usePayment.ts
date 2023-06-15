@@ -22,6 +22,7 @@ interface Props {
     onValidatePaypal?: () => Promise<boolean>;
     defaultMethod?: PAYMENT_METHOD_TYPES | undefined;
     paypalPrefetchToken?: boolean;
+    onBeforeTokenFetchPaypal?: () => Promise<unknown> | unknown;
 }
 
 const usePayment = ({
@@ -31,6 +32,7 @@ const usePayment = ({
     onPaypalPay,
     defaultMethod,
     paypalPrefetchToken = true,
+    onBeforeTokenFetchPaypal,
 }: Props) => {
     const { card, setCard, errors: cardErrors, fieldsStatus: cardFieldStatus, isValid } = useCard();
     const [method, setMethod] = useState<PaymentMethodType | undefined>(defaultMethod);
@@ -43,6 +45,7 @@ const usePayment = ({
         type: PAYPAL,
         onValidate: onValidatePaypal,
         onPay: onPaypalPay,
+        onBeforeTokenFetch: onBeforeTokenFetchPaypal,
     });
 
     const paypalCredit = usePayPal({
@@ -51,6 +54,7 @@ const usePayment = ({
         type: PAYPAL_CREDIT,
         onValidate: onValidatePaypal,
         onPay: onPaypalPay,
+        onBeforeTokenFetch: onBeforeTokenFetchPaypal,
     });
 
     const paymentParameters = useMemo((): ExistingPayment | WrappedCardPayment | null => {
