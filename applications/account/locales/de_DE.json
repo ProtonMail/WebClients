@@ -78,7 +78,7 @@
         "Adresse oder Domain hinzufügen"
       ],
       "Add calendar from URL": [
-        "Kalender mittels URL hinzufügen"
+        "Kalender über URL hinzufügen"
       ],
       "Add condition": [
         "Bedingung hinzufügen"
@@ -127,6 +127,9 @@
       ],
       "Alignment": [
         "Ausrichtung"
+      ],
+      "Allow": [
+        "Erlauben"
       ],
       "Apply": [
         "Übernehmen"
@@ -208,6 +211,9 @@
       ],
       "Continue": [
         "Weiter"
+      ],
+      "Continue anyway": [
+        "Trotzdem fortfahren"
       ],
       "Continue import": [
         "Importvorgang fortsetzen"
@@ -2764,8 +2770,14 @@
       "${ name } deletion failed": [
         "${ name } konnte nicht gelöscht werden"
       ],
+      "${ name } failed to move to block list": [
+        "${ name } konnte nicht in deine Sperrliste verschoben werden."
+      ],
       "${ name } failed to move to spam list": [
         "${ name } konnte nicht in die Spamliste verschoben werden."
+      ],
+      "${ name } moved to block list": [
+        "${ name } in Sperrliste verschoben"
       ],
       "${ name } moved to spam list": [
         "${ name } in Spamliste verschoben."
@@ -3317,10 +3329,10 @@
         "Die hochgeladenen Dateien sind keine gültige privaten Schlüssel. Bitte überprüfe die Dateien und versuche es erneut."
       ],
       "Username must begin with a letter or digit": [
-        "Der Benutzername muss mit einem Buchstaben oder einer Ziffer beginnen"
+        "Der Benutzername muss mit einem Buchstaben oder einer Ziffer beginnen."
       ],
       "Username must end with a letter or digit": [
-        "Der Benutzername muss mit einem Buchstaben oder einer Ziffer enden"
+        "Der Benutzername muss mit einem Buchstaben oder einer Ziffer enden."
       ],
       "Validation error": [
         "Überprüfungsfehler"
@@ -4040,7 +4052,7 @@
         "Greife auf blockierte Inhalte zu und surfe privat. Umfasst 2700 Server in über 65 Ländern, die Verbindung von bis zu 10 Geräten, weltweite Streaming-Dienste, Malware- und Werbeblocker und mehr."
       ],
       "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
-        "Beinhaltet Unterstützung für 3 eigene E-Mail-Domains, 90 E-Mail-Adressen, unbegrenzte Hide My Email-Aliasse, Kalenderfreigabe und mehr."
+        "Beinhaltet Unterstützung für 3 eigene E-Mail-Domains, 90 E-Mail-Adressen, unbegrenzte Hide-my-email-Aliasse, Kalenderfreigabe und mehr."
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Sichere deine Dateien mit verschlüsseltem Cloud-Speicher. Beinhaltet automatische Synchronisierung, verschlüsselte Dateifreigabe und mehr."
@@ -4257,11 +4269,41 @@
       "Add a custom filter to automatically perform certain actions, like labeling or archiving messages.": [
         "Füge einen benutzerdefinierten Filter hinzu, um bestimmte Aktionen, wie das Kategorisieren oder Archivieren von Nachrichten zu automatisieren."
       ],
+      "Allow:": [
+        "Erlauben:"
+      ],
+      "Block:": [
+        "Sperren:"
+      ],
       "Search list": [
         "Liste durchsuchen"
       ],
       "Spam:": [
         "Spam:"
+      ],
+      "Take control over what lands in your inbox by creating the following lists:": [
+        "Behalte die Kontrolle darüber, was in deinem Posteingang landet, indem du die folgenden Listen erstellst:"
+      ],
+      "Take control over what lands in your organization members' inboxes by creating the following lists:": [
+        "Übernimm die Kontrolle darüber, was in den Posteingängen der Mitglieder deiner Organisation landet, indem du die folgenden Listen erstellst:"
+      ],
+      "These lists apply to all accounts in your organization. Members can create their own individual filters, but won't be able to override addresses or domains you blocked.": [
+        "Diese Listen gelten für alle Konten in deiner Organisation. Mitglieder können ihre eigenen individuellen Filter erstellen, aber sie können die von dir blockierten Adressen oder Domänen nicht außer Kraft setzen."
+      ],
+      "To ensure critical messages don't end up in spam and getting missed": [
+        "Um sicherzustellen, dass wichtige Nachrichten nicht im Spam landen und übersehen werden:"
+      ],
+      "To prevent junk mail from clogging up inboxes": [
+        "Um zu verhindern, dass unerwünschte E-Mails deinen Posteingang überfüllen"
+      ],
+      "To prevent junk mail from clogging up your inbox": [
+        "Um zu verhindern, dass unerwünschte E-Mails deinen Posteingang überfüllen"
+      ],
+      "To stop phishing or suspicious emails from entering your email system": [
+        "Um Phishing- oder verdächtige E-Mails daran zu hindern, in dein E-Mail-System zu gelangen:"
+      ],
+      "To stop phishing or suspicious emails from entering your organization's email system": [
+        "Um Phishing- oder verdächtige E-Mails daran zu hindern, in das E-Mail-System deiner Organisation zu gelangen:"
       ]
     },
     "Font Face Default": {
@@ -4269,9 +4311,31 @@
         "Standard"
       ]
     },
+    "Font face option": {
+      "System default": [
+        "Systemvorgabe"
+      ]
+    },
     "Font Size Default": {
       "Default": [
         "Standard"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Groß"
+      ],
+      "Medium (recommended)": [
+        "Mittel (empfohlen)"
+      ],
+      "Small": [
+        "Klein"
+      ],
+      "Very large": [
+        "Sehr groß"
+      ],
+      "Very small": [
+        "Sehr klein"
       ]
     },
     "Frequency of news": {
@@ -5254,9 +5318,6 @@
       "Check the status of imports and forwarding.": [
         "Sieh dir den Status deiner Imports und Weiterleitungen an."
       ],
-      "Choose the look and feel of the application.": [
-        "Wähle das Erscheinungsbild der Anwendung."
-      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klicke auf „Neuen Code anfordern“, um einen neuen Verifizierungscode an ${ strong } senden zu lassen. Wenn diese Telefonnummer nicht stimmt, klicke auf „Bearbeiten“, um sie zu korrigieren."
       ],
@@ -5386,7 +5447,7 @@
         "Ziehe Dateien hierher, um sie hochzuladen"
       ],
       "Drop to import": [
-        "Loslassen zum Importieren"
+        "Ablegen zum Importieren"
       ],
       "Each code can only be used once": [
         "Jeder Code kann nur einmal verwendet werden"
@@ -5631,6 +5692,9 @@
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Deine Daten werden von ${ importedEmailAddress } nach ${ toEmail } importiert."
+      ],
+      "Improve your ${ BRAND_NAME } experience by adapting the application to your needs.": [
+        "Verbessere dein ${ BRAND_NAME }-Erlebnis, indem du die Anwendung an deine Bedürfnisse anpasst."
       ],
       "Inherited from parent folder": [
         "Von übergeordnetem Ordner übernommen"
@@ -7054,6 +7118,9 @@
       "New message": [
         "Neue Nachricht"
       ],
+      "Open command panel": [
+        "Befehlspanel öffnen"
+      ],
       "Open next message": [
         "Nächste Nachricht öffnen"
       ],
@@ -7231,6 +7298,9 @@
       "All-day event notifications": [
         "Benachrichtigungen zu ganztägigen Terminen"
       ],
+      "Allow": [
+        "Erlauben"
+      ],
       "Allow notifications by email": [
         "Benachrichtigungen per E-Mail zulassen"
       ],
@@ -7303,6 +7373,9 @@
       "Billing cycle": [
         "Abrechnungszeitraum"
       ],
+      "Block": [
+        "Sperren"
+      ],
       "Block email tracking": [
         "E-Mail-Tracking blockieren"
       ],
@@ -7332,6 +7405,9 @@
       ],
       "Card holder": [
         "Karteninhaber"
+      ],
+      "Card information": [
+        "Karteninformationen"
       ],
       "Card number": [
         "Kartennummer"
@@ -7453,6 +7529,9 @@
       "Default PGP scheme": [
         "Standard PGP-Schema"
       ],
+      "Default scrollbars": [
+        "Standard-Bildlaufleisten"
+      ],
       "Default view": [
         "Standardansicht"
       ],
@@ -7473,6 +7552,9 @@
       ],
       "Digits": [
         "Ziffern"
+      ],
+      "Disable animations": [
+        "Animationen deaktivieren"
       ],
       "Display name": [
         "Anzeigename"
@@ -7543,6 +7625,9 @@
       "Event notifications": [
         "Terminbenachrichtigungen"
       ],
+      "Expiration (${ patternExpiration })": [
+        "Ablaufdatum (${ patternExpiration })"
+      ],
       "Expiration date": [
         "Ablaufdatum"
       ],
@@ -7557,6 +7642,12 @@
       ],
       "Folder location": [
         "Pfad des Ordners"
+      ],
+      "Font family": [
+        "Schriftart"
+      ],
+      "Font size": [
+        "Schriftgröße"
       ],
       "From: ${ from }": [
         "Von: ${ from }"
@@ -7831,6 +7922,9 @@
       "Security code": [
         "Sicherheitscode"
       ],
+      "Security code (${ codeName })": [
+        "Sicherheitscode (${ codeName })"
+      ],
       "Select your country": [
         "Wähle dein Land"
       ],
@@ -7896,6 +7990,9 @@
       ],
       "Subscription options": [
         "Abonnement-Optionen"
+      ],
+      "Synchronize with system": [
+        "Mit System synchronisieren"
       ],
       "System information": [
         "Systeminformationen"
@@ -8539,6 +8636,9 @@
       "All": [
         "Alle"
       ],
+      "Allow": [
+        "Erlauben"
+      ],
       "Back": [
         "Zurück"
       ],
@@ -8550,6 +8650,9 @@
       ],
       "Back to inbox": [
         "Zurück zum Posteingang"
+      ],
+      "Block": [
+        "Sperren"
       ],
       "Calendar": [
         "Kalender"
@@ -8691,8 +8794,8 @@
         "${ n } Ordner und Kategorien"
       ],
       "${ n } Hide-my-email alias": [
-        "${ n } Hide My Email-Alias",
-        "${ n } Hide My Email-Aliasse"
+        "${ n } Hide-my-email-Alias",
+        "${ n } Hide-my-email-Aliasse"
       ],
       "${ n } label": [
         "${ n } Kategorie",
@@ -8820,7 +8923,7 @@
         "Vereinbarung zur Datenverarbeitung im Rahmen der DSGVO"
       ],
       "Hide-my-email aliases": [
-        "Hide My Email-Aliasse"
+        "Hide-my-email-Aliasse"
       ],
       "High-speed streaming": [
         "Hochgeschwindigkeits-Steaming"
@@ -8921,7 +9024,7 @@
         "Unbegrenzte Anzahl an Ordnern, Kategorien und Filtern."
       ],
       "Unlimited hide-my-email aliases": [
-        "Unbegrenzte Hide My Email-Aliasse"
+        "Unbegrenzte Hide-my-email-Aliasse"
       ],
       "Unlimited labels": [
         "Unbegrenzte Anzahl von Kategorien"
@@ -10465,13 +10568,13 @@
         "Greife von überall aus auf Inhalte von Streaming-Diensten zu, darunter Netflix, Disney+ und Prime Video."
       ],
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
-        "Alle unsere Premium-Services mit ihren höchsten Limits: 100 E-Mail-Adressen, Unterstützung für 10 eigene Domains, unbegrenzte Hide My Email-Aliasse, Kalenderfreigabe, verschlüsselter Cloud-Speicher und Dateifreigabe, und vieles mehr."
+        "Alle unsere Premium-Services mit ihren höchsten Limits: 100 E-Mail-Adressen, Unterstützung für 10 eigene Domains, unbegrenzte Hide-my-email-Aliasse, Kalenderfreigabe, verschlüsselter Cloud-Speicher und Dateifreigabe, und vieles mehr."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Beinhaltet Unterstützung für eine eigene E-Mail-Domain, 10 E-Mail-Adressen, 10 Hide My Email-Aliasse, Kalenderfreigabe und mehr."
+        "Beinhaltet Unterstützung für eine eigene E-Mail-Domain, 10 E-Mail-Adressen, 10 Hide-my-email-Aliasse, Kalenderfreigabe und mehr."
       ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Beinhaltet Unterstützung für 3 eigene E-Mail-Domains, 15 E-Mail-Adressen, unbegrenzte Hide My Email-Aliasse, Kalenderfreigabe und mehr."
+        "Beinhaltet Unterstützung für 3 eigene E-Mail-Domains, 15 E-Mail-Adressen, unbegrenzte Hide-my-email-Aliasse, Kalenderfreigabe und mehr."
       ],
       "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
         "Perfekt geeignet für Familien oder kleine Teams; jeder kann über seinen eigenen Posteingang und Aliase verfügen. Erfordert eine eigene Domain."
@@ -11054,6 +11157,9 @@
       "${ MAIL_APP_NAME } Keyboard Shortcuts": [
         "${ MAIL_APP_NAME }-Tastaturkürzel"
       ],
+      "(active)": [
+        "(aktiv)"
+      ],
       "1. Give a name to the config to be generated": [
         "1. Gib der zu erstellenden Konfiguration einen Namen"
       ],
@@ -11074,6 +11180,9 @@
       ],
       "4. Select a server to connect to": [
         "4. Wähle einen Server aus, mit dem du dich verbinden möchtest"
+      ],
+      "Accessibility": [
+        "Barrierefreiheit"
       ],
       "Account and password": [
         "Konto und Passwort"
@@ -11128,6 +11237,12 @@
       ],
       "Add Sieve filter": [
         "Sieve-Filter hinzufügen"
+      ],
+      "Add to allow list": [
+        "Zur Freigabeliste hinzufügen"
+      ],
+      "Add to block list": [
+        "Zur Sperrliste hinzufügen"
       ],
       "Add to spam list": [
         "Zur Spam-Liste hinzufügen"
@@ -11723,9 +11838,6 @@
       "Select when you want this notification to be sent": [
         "Auswählen, wann diese Benachrichtigung gesendet werden soll"
       ],
-      "Sender image": [
-        "Absenderbild"
-      ],
       "Session management": [
         "Sitzungsverwaltung"
       ],
@@ -11782,6 +11894,9 @@
       ],
       "Sort labels alphabetically": [
         "Kategorien alphabetisch sortieren"
+      ],
+      "Spam, block, and allow lists": [
+        "Spam-, Sperr- und Freigabelisten"
       ],
       "Start a new import": [
         "Neuer Importvorgang"
@@ -12089,11 +12204,17 @@
       "This key is used by ${ MAIL_APP_NAME } to encrypt your contact's data": [
         "Dieser Schlüssel wird von ${ MAIL_APP_NAME } verwendet, um die Daten deiner Kontakte zu verschlüsseln."
       ],
+      "Use your browser’s default scrollbars. These are typically larger and easier to use": [
+        "Verwende die standardmäßigen Bildlaufleisten deines Browsers. Diese sind normalerweise größer und leichter zu bedienen."
+      ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "Es wurde ein Problem mit deiner DNS-Konfiguration festgestellt. Bitte stelle sicher, dass deine Einträge mit den untenstehenden Anweisungen übereinstimmen. Wenn das Problem weiterhin besteht, wird die DKIM-Signatur abgeschaltet."
       ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "Wir haben die DKIM-Signatur aufgrund von Problemen mit deiner DNS-Konfiguration gestoppt. Bitte folge den untenstehenden Anweisungen, um die Signierung erneut vorzunehmen."
+      ],
+      "When enabled, animations and transitions will not show": [
+        "Wenn aktiviert, werden Animationen und Übergänge nicht angezeigt."
       ],
       "When you add a label to a message in a conversation, it will automatically be applied to all future messages you send or receive in that conversation.": [
         "Wenn du einer Nachricht in einem Thema eine Kategorie hinzufügst, wird diese automatisch auf alle zukünftigen Nachrichten angewendet, die du im Rahmen dieses Themas sendest oder empfängst."
@@ -12166,7 +12287,7 @@
     },
     "Upgrade": {
       "Upgrade to ${ passPlusPlanName } to get unlimited hide-my-email aliases": [
-        "Upgrade auf ${ passPlusPlanName } für unbegrenzte Hide My Email-Aliasse"
+        "Upgrade auf ${ passPlusPlanName } für unbegrenzte Hide-my-email-Aliasse"
       ],
       "Upgrade to ${ planName } to connect up to ${ n } device to the VPN at once": [
         "Auf ${ planName } umsteigen, um bis zu ${ n } Gerät auf einmal mit dem VPN verbinden zu können",

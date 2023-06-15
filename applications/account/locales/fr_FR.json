@@ -129,7 +129,7 @@
         "Alignement"
       ],
       "Allow": [
-        "Autoriser"
+        "Adresses autorisées"
       ],
       "Apply": [
         "Appliquer"
@@ -213,7 +213,7 @@
         "Continuer"
       ],
       "Continue anyway": [
-        "Continuer quand même "
+        "Continuer quand même"
       ],
       "Continue import": [
         "Continuer l'importation"
@@ -2771,19 +2771,19 @@
         "${ name } n'a pas pu être supprimé."
       ],
       "${ name } failed to move to allow list": [
-        "${ name } n'a pas pu être placé dans la liste autorisée."
+        "${ name } n'a pas pu être placé dans la liste d'adresses autorisées."
       ],
       "${ name } failed to move to block list": [
-        "${ name } n'a pas pu être placé dans la liste bloquée."
+        "${ name } n'a pas pu être placé dans la liste d'adresses bloquées."
       ],
       "${ name } failed to move to spam list": [
         "${ name } n'a pas pu être placé dans la liste des indésirables/spam."
       ],
       "${ name } moved to allow list": [
-        "${ name } a été placé dans la liste autorisée."
+        "${ name } a été placé dans la liste d'adresses autorisées."
       ],
       "${ name } moved to block list": [
-        "${ name } a été placé dans la liste bloquée."
+        "${ name } a été placé dans la liste d'adresses bloquées."
       ],
       "${ name } moved to spam list": [
         "${ name } a été placé dans la liste des indésirables/spam."
@@ -2888,19 +2888,19 @@
         "${ name } n'a pas pu être supprimé."
       ],
       "${ name } failed to move to allow list": [
-        "${ name } n'a pas pu être placé dans la liste autorisée."
+        "${ name } n'a pas pu être placé dans la liste d'adresses autorisées."
       ],
       "${ name } failed to move to block list": [
-        "${ name } n'a pas pu être placé dans la liste bloquée."
+        "${ name } n'a pas pu être placé dans la liste d'adresses bloquées."
       ],
       "${ name } failed to move to spam list": [
         "${ name } n'a pas pu être placé dans la liste des indésirables/spam."
       ],
       "${ name } moved to allow list": [
-        "${ name } a été placé dans la liste autorisée."
+        "${ name } a été placé dans la liste d'adresses autorisées."
       ],
       "${ name } moved to block list": [
-        "${ name } a été placé dans la liste bloquée."
+        "${ name } a été placé dans la liste d'adresses bloquées."
       ],
       "${ name } moved to spam list": [
         "${ name } a été placé dans la liste des indésirables/spam."
@@ -4070,7 +4070,7 @@
         "Cela comprend 2 700 serveurs répartis dans plus de 65 pays, la possibilité de connecter jusqu'à 10 appareils, l'accès aux services de streaming du monde entier, un bloqueur de logiciels malveillants et de publicités et bien d'autres fonctionnalités."
       ],
       "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
-        "Comprend la prise en charge de 3 domaines de messagerie personnalisés, de 90 adresses e-mail, d'un nombre illimité d'alias « Hide My Email », du partage de calendrier…"
+        "Comprend la prise en charge de 3 domaines de messagerie personnalisés, de 90 adresses e-mail, d'un nombre illimité d'alias Hide-my-email, du partage de calendrier…"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Sécurisez vos fichiers grâce au stockage cloud chiffré. Cela comprend la synchronisation automatique, le partage de fichiers chiffrés et d'autres fonctionnalités."
@@ -4288,16 +4288,40 @@
         "Ajoutez un filtre personnalisé pour effectuer automatiquement certaines actions, comme labelliser ou archiver des messages."
       ],
       "Allow:": [
-        "Autoriser :"
+        "Adresses autorisées :"
       ],
       "Block:": [
-        "Bloquer :"
+        "Adresses bloquées :"
       ],
       "Search list": [
         "Rechercher dans la liste"
       ],
       "Spam:": [
         "Indésirables/spam :"
+      ],
+      "Take control over what lands in your inbox by creating the following lists:": [
+        "Maîtrisez ce qui arrive dans votre boite de réception en créant ces listes :"
+      ],
+      "Take control over what lands in your organization members' inboxes by creating the following lists:": [
+        "Maîtrisez ce qui arrive dans les boites de réception des membres de votre organisation en créant ces listes :"
+      ],
+      "These lists apply to all accounts in your organization. Members can create their own individual filters, but won't be able to override addresses or domains you blocked.": [
+        "Ces listes s'appliquent à tous les comptes de votre organisation. Les membres de votre organisation peuvent créer leurs propres filtres, mais ne pourront pas remplacer les adresses ou les domaines que vous avez bloqués."
+      ],
+      "To ensure critical messages don't end up in spam and getting missed": [
+        "pour que les messages importants ne se retrouvent pas dans les indésirables/spam et ne soient pas manqués."
+      ],
+      "To prevent junk mail from clogging up inboxes": [
+        "pour que les messages indésirables/spam n'encombrent pas les boites de réception."
+      ],
+      "To prevent junk mail from clogging up your inbox": [
+        "pour que les messages indésirables/spam n'encombrent pas votre boite de réception."
+      ],
+      "To stop phishing or suspicious emails from entering your email system": [
+        "pour que les messages de phishing/hameçonnage ou les messages suspects ne puissent pas arriver dans votre messagerie."
+      ],
+      "To stop phishing or suspicious emails from entering your organization's email system": [
+        "pour que les messages de phishing/hameçonnage ou les messages suspects ne puissent pas arriver dans les messageries de votre organisation."
       ]
     },
     "Font Face Default": {
@@ -4305,9 +4329,34 @@
         "Par défaut"
       ]
     },
+    "Font face option": {
+      "System default": [
+        "Identique au système"
+      ],
+      "Theme default": [
+        "Thème par défaut"
+      ]
+    },
     "Font Size Default": {
       "Default": [
         "Par défaut"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Grand"
+      ],
+      "Medium (recommended)": [
+        "Moyen (recommandé)"
+      ],
+      "Small": [
+        "Petit"
+      ],
+      "Very large": [
+        "Très grand"
+      ],
+      "Very small": [
+        "Très petit"
       ]
     },
     "Frequency of news": {
@@ -5290,9 +5339,6 @@
       "Check the status of imports and forwarding.": [
         "Vérifier le statut des importations et des transferts."
       ],
-      "Choose the look and feel of the application.": [
-        "Choisissez l'apparence de l'application."
-      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Cliquez sur Demander un nouveau code pour envoyer un nouveau code de vérification à ${ strong }. Si ce numéro de téléphone n'est pas correct, cliquez sur Modifier pour le corriger."
       ],
@@ -5362,6 +5408,9 @@
       ],
       "Custom yearly": [
         "Chaque année (personnalisé)"
+      ],
+      "Customize the look and feel of ${ BRAND_NAME } applications.": [
+        "Personnalisez le style des applications ${ BRAND_NAME }."
       ],
       "Daily": [
         "Chaque jour"
@@ -5667,6 +5716,9 @@
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Vos données sont en cours d'importation depuis ${ importedEmailAddress } vers ${ toEmail }."
+      ],
+      "Improve your ${ BRAND_NAME } experience by adapting the application to your needs.": [
+        "Améliorez votre expérience ${ BRAND_NAME } en adaptant l'application à vos besoins."
       ],
       "Inherited from parent folder": [
         "Hérité du dossier dans lequel il est placé."
@@ -7090,6 +7142,9 @@
       "New message": [
         "Nouveau message"
       ],
+      "Open command panel": [
+        "Ouvrir le panneau de commandes"
+      ],
       "Open next message": [
         "Ouvrir le message suivant"
       ],
@@ -7268,7 +7323,7 @@
         "Notifications pour les événements d'une journée entière"
       ],
       "Allow": [
-        "Autoriser"
+        "Adresses autorisées"
       ],
       "Allow notifications by email": [
         "Autoriser les notifications par e-mail"
@@ -7343,7 +7398,7 @@
         "Cycle de facturation"
       ],
       "Block": [
-        "Bloquer"
+        "Adresses bloquées"
       ],
       "Block email tracking": [
         "Bloquer le suivi des e-mails"
@@ -7374,6 +7429,9 @@
       ],
       "Card holder": [
         "Titulaire de la carte"
+      ],
+      "Card information": [
+        "Données de la carte"
       ],
       "Card number": [
         "Numéro de la carte"
@@ -7495,6 +7553,9 @@
       "Default PGP scheme": [
         "Protocole PGP par défaut"
       ],
+      "Default scrollbars": [
+        "Barres de défilement par défaut"
+      ],
       "Default view": [
         "Affichage par défaut"
       ],
@@ -7515,6 +7576,9 @@
       ],
       "Digits": [
         "Chiffres"
+      ],
+      "Disable animations": [
+        "Désactiver les animations"
       ],
       "Display name": [
         "Nom d'affichage"
@@ -7585,6 +7649,9 @@
       "Event notifications": [
         "Notifications de l’événement"
       ],
+      "Expiration (${ patternExpiration })": [
+        "Expiration (${ patternExpiration })"
+      ],
       "Expiration date": [
         "Date d’expiration"
       ],
@@ -7599,6 +7666,12 @@
       ],
       "Folder location": [
         "Emplacement du dossier"
+      ],
+      "Font family": [
+        "Famille de police"
+      ],
+      "Font size": [
+        "Taille de police"
       ],
       "From: ${ from }": [
         "De : ${ from }"
@@ -7873,6 +7946,9 @@
       "Security code": [
         "Code de sécurité"
       ],
+      "Security code (${ codeName })": [
+        "Code de sécurité (${ codeName })"
+      ],
       "Select your country": [
         "Sélectionnez votre pays"
       ],
@@ -7938,6 +8014,9 @@
       ],
       "Subscription options": [
         "Options de l'abonnement"
+      ],
+      "Synchronize with system": [
+        "Synchroniser avec les paramètres du système"
       ],
       "System information": [
         "Informations système"
@@ -8582,7 +8661,7 @@
         "Tout"
       ],
       "Allow": [
-        "Autoriser"
+        "Adresses autorisées"
       ],
       "Back": [
         "Précédent"
@@ -8597,7 +8676,7 @@
         "Revenir à la boite de réception"
       ],
       "Block": [
-        "Bloquer"
+        "Adresses bloquées"
       ],
       "Calendar": [
         "Calendrier"
@@ -8739,8 +8818,8 @@
         "${ n } dossiers et labels"
       ],
       "${ n } Hide-my-email alias": [
-        "${ n } alias « Hide My Email »",
-        "${ n } alias « Hide My Email »"
+        "${ n } alias Hide-my-email",
+        "${ n } alias Hide-my-email"
       ],
       "${ n } label": [
         "${ n } label",
@@ -8868,7 +8947,7 @@
         "Accord de traitement des données RGPD"
       ],
       "Hide-my-email aliases": [
-        "Alias « Hide My Email »"
+        "Alias Hide-my-email"
       ],
       "High-speed streaming": [
         "Streaming haut débit"
@@ -8969,7 +9048,7 @@
         "Dossiers, labels et filtres illimités"
       ],
       "Unlimited hide-my-email aliases": [
-        "Nombre illimité d'alias « Hide My Email »"
+        "Nombre illimité d'alias Hide-my-email"
       ],
       "Unlimited labels": [
         "Labels illimités"
@@ -10513,13 +10592,13 @@
         "Accédez au contenu des services de streaming, dont Netflix, Amazon Prime Video, Canal+, Disney+, France.tv, TF1… où que vous soyez."
       ],
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
-        "Tous nos services premium au plus haut niveau : 100 adresses e-mail, la prise en charge de 10 domaines personnalisés, un nombre illimité d'alias « Hide My Email », le partage de calendriers, le stockage cloud et le partage de fichiers chiffrés…"
+        "Tous nos services premium au plus haut niveau : 100 adresses e-mail, la prise en charge de 10 domaines personnalisés, un nombre illimité d'alias Hide-my-email, le partage de calendriers, le stockage cloud et le partage de fichiers chiffrés…"
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Comprend la prise en charge d'un domaine de messagerie personnalisé, de 10 adresses e-mail, de 10 alias « Hide My Email », du partage de calendrier…"
+        "Comprend la prise en charge d'un domaine de messagerie personnalisé, de 10 adresses e-mail, de 10 alias Hide-my-email, du partage de calendrier…"
       ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Comprend la prise en charge de 3 domaines de messagerie personnalisés, de 15 adresses e-mail, d'un nombre illimité d'alias « Hide My Email », du partage de calendrier…"
+        "Comprend la prise en charge de 3 domaines de messagerie personnalisés, de 15 adresses e-mail, d'un nombre illimité d'alias Hide-my-email, du partage de calendrier…"
       ],
       "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
         "Idéal pour les familles ou les petites équipes, chacun pouvant disposer de sa propre boite de réception et de ses propres alias. Nécessite un domaine personnalisé."
@@ -11102,6 +11181,9 @@
       "${ MAIL_APP_NAME } Keyboard Shortcuts": [
         "Raccourcis clavier ${ MAIL_APP_NAME }"
       ],
+      "(active)": [
+        "(activé)"
+      ],
       "1. Give a name to the config to be generated": [
         "1. Donnez un nom à la configuration qui doit être générée"
       ],
@@ -11122,6 +11204,9 @@
       ],
       "4. Select a server to connect to": [
         "4. Sélectionnez le serveur auquel se connecter"
+      ],
+      "Accessibility": [
+        "Accessibilité"
       ],
       "Account and password": [
         "Compte et mot de passe"
@@ -11363,6 +11448,9 @@
       ],
       "Date": [
         "Date"
+      ],
+      "Day theme": [
+        "Thème jour"
       ],
       "Decrypt key": [
         "Déchiffrer la clé"
@@ -11630,6 +11718,9 @@
       "Next": [
         "Suivant"
       ],
+      "Night theme": [
+        "Thème nuit"
+      ],
       "No recovery method": [
         "Aucune méthode de récupération"
       ],
@@ -11777,9 +11868,6 @@
       "Select when you want this notification to be sent": [
         "Sélectionnez le moment où cette notification doit être envoyée."
       ],
-      "Sender image": [
-        "Image de l'expéditeur"
-      ],
       "Session management": [
         "Gestionnaire de sessions"
       ],
@@ -11836,6 +11924,9 @@
       ],
       "Sort labels alphabetically": [
         "Trier les labels par ordre alphabétique"
+      ],
+      "Spam, block, and allow lists": [
+        "Indésirables/spam, adresses bloquées et autorisées"
       ],
       "Start a new import": [
         "Démarrer une nouvelle importation"
@@ -12062,6 +12153,9 @@
       "Account is disconnected": [
         "Compte déconnecté"
       ],
+      "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
+        "Basculez automatiquement entre vos thèmes préférés pour le jour et la nuit, en synchronisation avec les modes jour et nuit de votre système."
+      ],
       "Customize import to reduce the number of folders": [
         "Personnalisez l'importation pour réduire le nombre de dossiers."
       ],
@@ -12125,6 +12219,15 @@
       "The new subscription cycle starts on ${ formattedTime }": [
         "Le nouveau cycle d'abonnement commence le ${ formattedTime }."
       ],
+      "The reduce motion setting is already enabled on this device": [
+        "Le paramètre de réduction des mouvements est déjà activé sur cet appareil."
+      ],
+      "The selected theme will be active when your system is set to \"dark mode\"": [
+        "Le thème sélectionné sera activé quand votre système sera en « thème sombre »."
+      ],
+      "The selected theme will be active when your system is set to \"light mode\"": [
+        "Le thème sélectionné sera activé quand votre système sera en « thème clair »."
+      ],
       "This address has been disabled": [
         "Cette adresse a été désactivée."
       ],
@@ -12143,11 +12246,17 @@
       "This key is used by ${ MAIL_APP_NAME } to encrypt your contact's data": [
         "Cette clé est utilisée par ${ MAIL_APP_NAME } pour chiffrer les données de vos contacts."
       ],
+      "Use your browser’s default scrollbars. These are typically larger and easier to use": [
+        "Utilisez les barres de défilement par défaut de votre navigateur. Elles sont généralement plus grandes et plus faciles à utiliser."
+      ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "Nous avons détecté un problème avec votre configuration DNS. Nous vous invitons à vérifier que vos enregistrements correspondent aux instructions ci-dessous. Si le problème persiste, nous devrons annuler la signature DKIM."
       ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "Nous avons arrêté la signature DKIM en raison de problèmes avec votre configuration DNS. Vous pouvez suivre les instructions ci-dessous pour l'utiliser à nouveau."
+      ],
+      "When enabled, animations and transitions will not show": [
+        "Les animations et les transitions ne s'affichent pas."
       ],
       "When you add a label to a message in a conversation, it will automatically be applied to all future messages you send or receive in that conversation.": [
         "Lorsque vous ajoutez un label à un message dans une conversation, il sera automatiquement appliqué à tous les messages que vous enverrez ou recevrez dans cette conversation."
@@ -12220,7 +12329,7 @@
     },
     "Upgrade": {
       "Upgrade to ${ passPlusPlanName } to get unlimited hide-my-email aliases": [
-        "Passez à ${ passPlusPlanName } pour disposer d'un nombre illimité d'alias « Hide My Email »."
+        "Passez à ${ passPlusPlanName } pour disposer d'un nombre illimité d'alias Hide-my-email."
       ],
       "Upgrade to ${ planName } to connect up to ${ n } device to the VPN at once": [
         "Passez à ${ planName } pour connecter ${ n } appareil au VPN.",

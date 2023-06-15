@@ -180,7 +180,7 @@
         "Escolha um arquivo ou arraste-o aqui"
       ],
       "Choose my own password": [
-        "Escolher seu método de pagamento"
+        "Escolher sua senha"
       ],
       "Claim it": [
         "Revindicar"
@@ -211,6 +211,9 @@
       ],
       "Continue": [
         "Continuar"
+      ],
+      "Continue anyway": [
+        "Continuar mesmo assim"
       ],
       "Continue import": [
         "Continuar importação"
@@ -1387,7 +1390,7 @@
     },
     "Calendar sharing access option label": {
       "Edit (view, create and edit event details)": [
-        "Edição (ver, criar e editar os detelhes do evento)"
+        "Edição (ver, criar e editar os detalhes do evento)"
       ],
       "View (see all event details)": [
         "Visualizar (ver todos os detalhes do evento)"
@@ -4067,7 +4070,7 @@
         "Inclui 2.700 servidores em mais de 65 países. Conecte até 10 dispositivos, acesse serviços de streaming no mundo todo, malware e bloqueador de anúncios e muito mais."
       ],
       "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
-        "Inclui suporte para 3 domínios de e-mail personalizado, 90 endereços de e-mail, aliases ilimitados do \"Hide My Email\", compartilhamento de calendário e muito mais."
+        "Inclui suporte para 3 domínios de e-mail personalizado, 90 endereços de e-mail, aliases ilimitados do Hide-my-email, compartilhamento de calendário e muito mais."
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Proteja seus arquivos com armazenamento criptografado na nuvem. Inclui sincronização automática, compartilhamento de arquivos criptografados e muito mais."
@@ -4512,6 +4515,9 @@
       ],
       "No verification method available": [
         "Nenhum método de verificação disponível"
+      ],
+      "SMS": [
+        "SMS"
       ]
     },
     "Import calendar": {
@@ -5287,9 +5293,6 @@
       "Check the status of imports and forwarding.": [
         "Verificar o status das importações e encaminhamento."
       ],
-      "Choose the look and feel of the application.": [
-        "Escolha a aparência do aplicativo."
-      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Clique em \"Solicitar novo código\" para que um novo código seja enviado para ${ strong }. Se esse número de telefone estiver incorreto, clique em \"Editar\" para corrigir isso."
       ],
@@ -5897,6 +5900,9 @@
       "Outdated recovery phrase; update to ensure access to your data": [
         "Frase de recuperação desatualizada. Atualize para garantir acesso aos seus dados"
       ],
+      "P2P": [
+        "P2P"
+      ],
       "Paid for a ${ rewardMonths } month plan": [
         "Pagou o plano de ${ rewardMonths } mês",
         "Pagou o plano de ${ rewardMonths } meses"
@@ -6366,6 +6372,9 @@
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Recarregue sua conta com créditos que podem ser utilizados para assinar um novo plano ou renovar seu plano atual. Você recebe um crédito a cada ${ i18nCurrency } gasto."
       ],
+      "Tor": [
+        "Tor"
+      ],
       "Total email addresses": [
         "Endereços de e-mail adicionais"
       ],
@@ -6775,7 +6784,7 @@
       ],
       "Your import from ${ accounts } is temporarily delayed.": [
         "Sua importação de ${ accounts } está temporariamente atrasada.",
-        "Sua importação de ${ accounts } estão temporariamente atrasadas."
+        "Suas importações de ${ accounts } estão temporariamente atrasadas."
       ],
       "Your import will not be processed.": [
         "Sua importação não será processada."
@@ -7087,6 +7096,9 @@
       "New message": [
         "Nova mensagem"
       ],
+      "Open command panel": [
+        "Abrir painel de comandos"
+      ],
       "Open next message": [
         "Abrir próxima mensagem"
       ],
@@ -7371,6 +7383,9 @@
       ],
       "Card holder": [
         "Titular do cartão"
+      ],
+      "Card information": [
+        "Informação do cartão"
       ],
       "Card number": [
         "Número do cartão"
@@ -7869,6 +7884,9 @@
       ],
       "Security code": [
         "Código de segurança"
+      ],
+      "Security code (${ codeName })": [
+        "Código de segurança (${ codeName })"
       ],
       "Select your country": [
         "Selecione seu país"
@@ -8404,7 +8422,7 @@
         "Editar calendário"
       ],
       "Get a country's official public holidays calendar.": [
-        "Obtenha o calendário oficial de feriados do seu país."
+        "Obtenha o calendário oficial de feriados de um país."
       ],
       "How to import calendars from another service": [
         "Como importar calendários de outro serviço"
@@ -8736,8 +8754,8 @@
         "${ n } pastas e marcadores"
       ],
       "${ n } Hide-my-email alias": [
-        "${ n } alias do \"Hide My Email\"",
-        "${ n } aliases do \"Hide My Email\""
+        "${ n } alias do Hide-my-email",
+        "${ n } aliases do Hide-my-email"
       ],
       "${ n } label": [
         "${ n } marcador",
@@ -8865,7 +8883,7 @@
         "Contrato de processamento de dados do GDPR"
       ],
       "Hide-my-email aliases": [
-        "Aliases do \"Hide My Email\""
+        "Aliases do Hide-my-email"
       ],
       "High-speed streaming": [
         "Streaming em alta velocidade"
@@ -8966,7 +8984,7 @@
         "Pastas ilimitadas, marcadores e filtros"
       ],
       "Unlimited hide-my-email aliases": [
-        "Aliases do \"Hide My Email\" ilimitados"
+        "Aliases do Hide-my-email ilimitados"
       ],
       "Unlimited labels": [
         "Marcadores ilimitados"
@@ -9002,7 +9020,7 @@
         "Gerenciamento de sessões de usuário"
       ],
       "Vault and Item sharing": [
-        "Cofre e compartilhamento de itens"
+        "Compartilhamento de itens e cofre"
       ],
       "Vault and Item sharing (coming soon)": [
         "Cofre e compartilhamento de itens (em breve)"
@@ -9676,6 +9694,9 @@
       "Ignore group": [
         "Ignorar grupo"
       ],
+      "iOS": [
+        "iOS"
+      ],
       "It's missing a key feature that I need": [
         "Está faltando um recurso que eu preciso"
       ],
@@ -9726,6 +9747,12 @@
       ],
       "Standard server configs": [
         "Configurações padrão do servidor"
+      ],
+      "TCP": [
+        "TCP"
+      ],
+      "UDP": [
+        "UDP"
       ]
     },
     "Option delay send seconds": {
@@ -10136,7 +10163,7 @@
         "Devido a uma alteração de senha, seus privilégios de administrador da organização foram restritos. As seguintes ações já não são permitidas:"
       ],
       "Reading emails of non-private users": [
-        "Ler e-mails de usuários não particulares"
+        "Ler e-mails de usuários não privados"
       ]
     },
     "Select file": {
@@ -10513,13 +10540,13 @@
         "Acesse conteúdo em serviços de streaming, como Netflix, Disney+ e Prime Video de qualquer lugar."
       ],
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
-        "Todos os nossos serviços premium com os limites mais altos: 100 endereços de e-mail, suporte para 10 domínios personalizados, aliases ilimitados do \"Hide My Email\", compartilhamento de calendário, armazenamento criptografado na nuvem e compartilhamento de arquivo e muito mais."
+        "Todos os nossos serviços premium com os limites mais altos: 100 endereços de e-mail, suporte para 10 domínios personalizados, aliases ilimitados do Hide-my-email, compartilhamento de calendário, armazenamento criptografado na nuvem e compartilhamento de arquivo e muito mais."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Inclui suporte para 1 domínio de e-mail personalizado, 10 endereços de e-mail, 10 aliases do \"Hide My Email\", compartilhamento de calendário e muito mais."
+        "Inclui suporte para 1 domínio de e-mail personalizado, 10 endereços de e-mail, 10 aliases do Hide-my-email, compartilhamento de calendário e muito mais."
       ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Inclui suporte para 3 domínios de e-mail personalizado, 15 endereços de e-mail, aliases ilimitados do \"Hide My Email\", compartilhamento de calendário e muito mais."
+        "Inclui suporte para 3 domínios de e-mail personalizado, 15 endereços de e-mail, aliases ilimitados do Hide-my-email, compartilhamento de calendário e muito mais."
       ],
       "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
         "Perfeito para famílias ou equipes pequenas. Cada usuário pode ter sua própria caixa de entrada e aliases. Exige um domínio personalizado."
@@ -11304,7 +11331,7 @@
         "Continue com uma importação parcial?"
       ],
       "Couldn’t create accounts": [
-        "Não foi possivel criar contas"
+        "Não foi possível criar contas."
       ],
       "Create ${ selectedUserIds.length } user": [
         "Criar ${ selectedUserIds.length } usuário",
@@ -11777,9 +11804,6 @@
       "Select when you want this notification to be sent": [
         "Selecione quando você deseja que esta notificação seja enviada"
       ],
-      "Sender image": [
-        "Imagem do remetente"
-      ],
       "Session management": [
         "Gerenciamento de sessão"
       ],
@@ -12220,7 +12244,7 @@
     },
     "Upgrade": {
       "Upgrade to ${ passPlusPlanName } to get unlimited hide-my-email aliases": [
-        "Faça upgrade para o plano ${ passPlusPlanName } e tenha acesso a aliases do \"Hide My Email\" ilimitados."
+        "Faça upgrade para o plano ${ passPlusPlanName } e tenha acesso a aliases do Hide-my-email ilimitados."
       ],
       "Upgrade to ${ planName } to connect up to ${ n } device to the VPN at once": [
         "Atualize para ${ planName } para conectar até ${ n } dispositivo à VPN de uma só vez",
@@ -12308,6 +12332,9 @@
       ],
       "Firefox": [
         "Firefox"
+      ],
+      "iOS": [
+        "iOS"
       ]
     },
     "Warning": {
