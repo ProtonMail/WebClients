@@ -16,11 +16,11 @@ import type { AliasFormValues } from './Alias.validation';
 
 type AliasFormProps<V extends AliasFormValues> = {
     form: FormikContextType<V>;
-    aliasOptionsLoading: UseAliasOptionsResult['aliasOptionsLoading'];
     aliasOptions: UseAliasOptionsResult['aliasOptions'];
+    loading: boolean;
 };
 
-const Wrapper: FC<{
+const AliasFormBase: FC<{
     disabled: boolean;
     loading: boolean;
     mailboxes: AliasMailbox[];
@@ -59,28 +59,20 @@ const Wrapper: FC<{
     );
 };
 
-export const AliasForm = <V extends AliasFormValues = AliasFormValues>({
-    aliasOptionsLoading,
-    aliasOptions,
-    form,
-}: AliasFormProps<V>) => {
+export const AliasForm = <V extends AliasFormValues>({ form, loading, aliasOptions }: AliasFormProps<V>) => {
     const [showAdvanced, setShowAdvanced] = useState(false);
     const toggleShowAdvanced = () => setShowAdvanced((state) => !state);
-    const disabled = aliasOptionsLoading || aliasOptions === null;
+    const disabled = loading || aliasOptions === null;
 
     const wrapperProps = {
         disabled,
-        loading: aliasOptionsLoading,
+        loading,
         mailboxes: aliasOptions?.mailboxes ?? [],
         toggleShowAdvanced,
     };
 
-    if (!showAdvanced) {
-        return <Wrapper {...wrapperProps} />;
-    }
-
-    return (
-        <Wrapper {...wrapperProps}>
+    return showAdvanced ? (
+        <AliasFormBase {...wrapperProps}>
             <FieldsetCluster>
                 <Field
                     name="aliasPrefix"
@@ -95,7 +87,7 @@ export const AliasForm = <V extends AliasFormValues = AliasFormValues>({
                     placeholder={c('Placeholder').t`Select a suffix`}
                     component={SelectField}
                     disabled={disabled}
-                    loading={aliasOptionsLoading}
+                    loading={loading}
                 >
                     {(aliasOptions?.suffixes ?? []).map((suffix) => (
                         <Option key={suffix.value} value={suffix} title={suffix.value}>
@@ -104,6 +96,8 @@ export const AliasForm = <V extends AliasFormValues = AliasFormValues>({
                     ))}
                 </Field>
             </FieldsetCluster>
-        </Wrapper>
+        </AliasFormBase>
+    ) : (
+        <AliasFormBase {...wrapperProps} />
     );
 };

@@ -183,11 +183,7 @@ export const AliasNew: VFC<ItemNewProps<'alias'>> = ({ shareId, onSubmit, onCanc
                                 </ValueControl>
                             </FieldsetCluster>
 
-                            <AliasForm
-                                aliasOptions={aliasOptions}
-                                aliasOptionsLoading={aliasOptionsLoading}
-                                form={form}
-                            />
+                            <AliasForm aliasOptions={aliasOptions} loading={aliasOptionsLoading} form={form} />
 
                             <FieldsetCluster>
                                 <Field
