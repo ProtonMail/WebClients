@@ -4036,6 +4036,9 @@
       "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
         "65 üzerindeki ülkede 2.700 sunucu, 10 taneye kadar aygıt bağlayabilme, dünya çapında yayın akışı hizmetlerine erişim, kötü amaçlı yazılım ve reklam engelleyici ile diğer özellikleri içerir."
       ],
+      "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
+        "3 özel e-posta etki alanı, 90 e-posta adresi, sınırsız sayıda e-postamı gizle takma adı, takvim paylaşımı ve diğer özellikler."
+      ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Dosyalarınızı şifrelenmiş bulut depolama alanı ile koruyun. Otomatik eşitleme, şifrelenmiş dosya paylaşımı ve diğer özellikler."
       ]
@@ -5245,9 +5248,6 @@
       "Check the status of imports and forwarding.": [
         "İçe aktarma ve iletme durumunu denetleyin."
       ],
-      "Choose the look and feel of the application.": [
-        "Uygulamanın görünümünü ve tarzını seçin."
-      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Yeni bir doğrulama kodunun ${ strong } numarasına gönderilmesi için \"Yeni kod iste\" üzerine tıklayın. Bu telefon numarası yanlışsa düzeltmek için \"Düzenle\" üzerine tıklayın."
       ],
@@ -5372,6 +5372,12 @@
       ],
       "Download your PGP keys for use with other PGP-compatible services.": [
         "PGP anahtarlarınızı diğer PGP uyumlu hizmetlerle kullanmak için indirin."
+      ],
+      "Drop file here to upload": [
+        "Yüklemek için dosyayı buraya bırakın"
+      ],
+      "Drop to import": [
+        "İçe aktarmak için bırakın"
       ],
       "Each code can only be used once": [
         "Her kod yalnızca bir kez kullanılabilir"
@@ -6722,6 +6728,9 @@
       "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your recovery phrase or your ${ oldPassword }.": [
         "Var olan iletileriniz, takvimleriniz veya kişileriniz kilitlenir. Bu verileri kurtarmak için kurtarma ifadenize veya ${ oldPassword }nıza gerek duyacaksınız."
       ],
+      "Your files will be encrypted and then saved": [
+        "Dosyalarınız şifrelendikten sonra kaydedilir"
+      ],
       "Your import from ${ accounts } is temporarily delayed.": [
         "${ accounts } hizmetinden içe aktarma işleminiz geçici olarak duraklatıldı.",
         "${ accounts } hizmetinden içe aktarma işlemleriniz geçici olarak duraklatıldı."
@@ -7035,6 +7044,9 @@
       ],
       "New message": [
         "Yeni ileti"
+      ],
+      "Open command panel": [
+        "Komut panosunu aç"
       ],
       "Open next message": [
         "Sonraki iletiyi aç"
@@ -8801,6 +8813,9 @@
       "GDPR data processing agreement": [
         "KVKK veri işleme sözleşmesi"
       ],
+      "Hide-my-email aliases": [
+        "E-postamı gizle takma adları"
+      ],
       "High-speed streaming": [
         "Yüksek hızlı yayın akışı izleme"
       ],
@@ -10443,6 +10458,15 @@
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
         "Netflix, Disney+ ve Prime Video gibi yayın akışı hizmetlerindeki içeriğe her yerden erişin."
       ],
+      "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
+        "En yüksek sınırları olan tüm ücretli hizmetler: 100 e-posta adresi, 10 özel etki alanı, sınırsız e-postamı gizle takma adı, takvim gönderisi, şifrelenmiş bulut depolama alanı, dosya paylaşımı ve diğer özellikler."
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "1 özel e-posta etki alanı, 10 e-posta adresi, 10 e-postamı gizle takma adı, takvim paylaşımı ve diğer özellikler."
+      ],
+      "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "3 özel e-posta etki alanı, 15 e-posta adresi, sınırsız sayıda e-postamı gizle takma adı, takvim paylaşımı ve diğer özellikler."
+      ],
       "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
         "Aileler veya küçük ekipler için mükemmel. Her birinin kendi gelen kutusu ve takma adı olabilir. Özel bir etki alanı kullanılması gerekir."
       ],
@@ -11686,9 +11710,6 @@
       ],
       "Select when you want this notification to be sent": [
         "Bu bildirimin gönderilmesini istediğiniz zamanı seçin"
-      ],
-      "Sender image": [
-        "Gönderici görseli"
       ],
       "Session management": [
         "Oturum yönetimi"

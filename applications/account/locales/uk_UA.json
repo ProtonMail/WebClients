@@ -1195,7 +1195,7 @@
     },
     "Bug category": {
       "Application problem": [
-        "Проблема з додатком"
+        "Проблема з програмою"
       ],
       "Bridge problem": [
         "Проблема з Bridge"
@@ -2782,6 +2782,9 @@
       "${ name } failed to move to spam list": [
         "Не вдалося перемістити ${ name } до вашого списку спаму"
       ],
+      "${ name } moved to allow list": [
+        "${ name } переміщено до списку дозволених"
+      ],
       "${ name } moved to spam list": [
         "${ name } переміщено до списку спаму"
       ],
@@ -4068,6 +4071,9 @@
       "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
         "Включає 2700 серверів у понад 65 країнах, підключення до 10 пристроїв, доступ до світових сервісів трансляції, захист від зловмисних програм і реклами, а також інші можливості."
       ],
+      "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
+        "Включає підтримку 3 власних доменів, 90 адрес пошти, необмежену кількість псевдонімів Hide-my-email, спільний доступ до календаря та інші можливості."
+      ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Безпечно зберігайте свої файли у зашифрованому хмарному сховищі з автоматичною синхронізацією, зашифрованим спільним доступом та іншими можливостями."
       ]
@@ -4306,9 +4312,34 @@
         "Типовий"
       ]
     },
+    "Font face option": {
+      "System default": [
+        "Системна за замовчуванням"
+      ],
+      "Theme default": [
+        "Тема за замовчуванням"
+      ]
+    },
     "Font Size Default": {
       "Default": [
         "Типовий"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Великий"
+      ],
+      "Medium (recommended)": [
+        "Середній (рекомендовано)"
+      ],
+      "Small": [
+        "Маленький"
+      ],
+      "Very large": [
+        "Дуже великий"
+      ],
+      "Very small": [
+        "Дуже маленький"
       ]
     },
     "Frequency of news": {
@@ -5349,9 +5380,6 @@
       "Check the status of imports and forwarding.": [
         "Перевірити стан імпортування та пересилання."
       ],
-      "Choose the look and feel of the application.": [
-        "Налаштуйте зовнішній вигляд програми."
-      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Натисніть \"Запитати новий код\", щоб отримати новий код перевірки на ${ strong }. Якщо цей номер телефону неправильний, натисніть \"Змінити\" для його виправлення."
       ],
@@ -5424,6 +5452,9 @@
       "Custom yearly": [
         "Власне щороку"
       ],
+      "Customize the look and feel of ${ BRAND_NAME } applications.": [
+        "Налаштуйте зовнішній вигляд застосунків ${ BRAND_NAME }."
+      ],
       "Daily": [
         "Щодня"
       ],
@@ -5480,6 +5511,12 @@
       ],
       "Download your PGP keys for use with other PGP-compatible services.": [
         "Завантажте свої ключі PGP для використання з іншими службами, сумісними з PGP."
+      ],
+      "Drop file here to upload": [
+        "Перетягніть файл сюди, щоб вивантажити"
+      ],
+      "Drop to import": [
+        "Перетягніть, щоб імпортувати"
       ],
       "Each code can only be used once": [
         "Кожен код можна використати лише один раз"
@@ -6858,6 +6895,9 @@
       "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your recovery phrase or your ${ oldPassword }.": [
         "Ваші наявні повідомлення, календарі або контакти будуть заблоковані. Щоб відновити ці дані, вам знадобиться ваша фраза для відновлення або ${ oldPassword }."
       ],
+      "Your files will be encrypted and then saved": [
+        "Ваші файли буде зашифровано, а потім збережено"
+      ],
       "Your import from ${ accounts } is temporarily delayed.": [
         "Ваше імпортування з ${ accounts } тимчасово затримано.",
         "Ваші імпортування з ${ accounts } тимчасово затримано.",
@@ -7173,6 +7213,9 @@
       ],
       "New message": [
         "Нове повідомлення"
+      ],
+      "Open command panel": [
+        "Відкрити командну панель"
       ],
       "Open next message": [
         "Відкрити наступне повідомлення"
@@ -8025,6 +8068,9 @@
       "Subscription options": [
         "Опції передплати"
       ],
+      "Synchronize with system": [
+        "Синхронізувати з системою"
+      ],
       "System information": [
         "Інформація про систему"
       ],
@@ -8859,10 +8905,10 @@
         "${ n } тек і міток"
       ],
       "${ n } Hide-my-email alias": [
-        "${ n } псевдонім Hide My Email",
-        "${ n } псевдоніми Hide My Email",
-        "${ n } псевдонімів Hide My Email",
-        "${ n } псевдонімів Hide My Email"
+        "${ n } псевдонім Hide-my-email",
+        "${ n } псевдоніми Hide-my-email",
+        "${ n } псевдонімів Hide-my-email",
+        "${ n } псевдонімів Hide-my-email"
       ],
       "${ n } label": [
         "${ n } мітка",
@@ -8999,6 +9045,9 @@
       "GDPR data processing agreement": [
         "Угода про обробку даних GDPR"
       ],
+      "Hide-my-email aliases": [
+        "Псевдоніми Hide-my-email"
+      ],
       "High-speed streaming": [
         "Високошвидкісна трансляція"
       ],
@@ -9102,7 +9151,7 @@
         "Необмежена кількість тек, міток і фільтрів"
       ],
       "Unlimited hide-my-email aliases": [
-        "Необмежена кількість псевдонімів Hide My Email"
+        "Необмежена кількість псевдонімів Hide-my-email"
       ],
       "Unlimited labels": [
         "Необмежена кількість міток"
@@ -10683,6 +10732,15 @@
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
         "Доступ звідусіль до матеріалів сервісів трансляції, включно з Netflix, Disney+ і Prime Video."
       ],
+      "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
+        "Всі найкращі можливості наших преміум функцій: 100 адрес пошти, підтримка 10 власних доменів, необмежена кількість псевдонімів Hide-my-email, спільний доступ до календаря, зашифроване хмарне сховище, спільний доступ до файлів і багато іншого."
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Включає підтримку 1 власного домену, 10 адрес пошти, 10 псевдонімів Hide-my-email, спільний доступ до календаря та інші можливості."
+      ],
+      "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Включає підтримку 3 власних доменів, 15 адрес пошти, необмежену кількість псевдонімів Hide-my-email, спільний доступ до календаря та інші можливості."
+      ],
       "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
         "Ідеально підходить для сім'ї або невеликої команди. Кожен учасник може мати власну поштову скриньку та псевдоніми. Потрібен власний домен."
       ],
@@ -11296,6 +11354,9 @@
       "${ MAIL_APP_NAME } Keyboard Shortcuts": [
         "Комбінації клавіш ${ MAIL_APP_NAME }"
       ],
+      "(active)": [
+        "(активно)"
+      ],
       "1. Give a name to the config to be generated": [
         "1. Назвіть створювану конфігурацію"
       ],
@@ -11553,6 +11614,9 @@
       ],
       "Date": [
         "Дата"
+      ],
+      "Day theme": [
+        "Світла тема"
       ],
       "Decrypt key": [
         "Розшифрувати ключ"
@@ -11824,6 +11888,9 @@
       "Next": [
         "Далі"
       ],
+      "Night theme": [
+        "Темна тема"
+      ],
       "No recovery method": [
         "Немає способу відновлення"
       ],
@@ -11970,9 +12037,6 @@
       ],
       "Select when you want this notification to be sent": [
         "Виберіть якщо ви хочете, щоб це сповіщення було надіслано"
-      ],
-      "Sender image": [
-        "Зображення відправника"
       ],
       "Session management": [
         "Керування сеансами"
@@ -12323,6 +12387,9 @@
       "The new subscription cycle starts on ${ formattedTime }": [
         "Новий цикл передплати розпочинається з ${ formattedTime }"
       ],
+      "The selected theme will be active when your system is set to \"light mode\"": [
+        "Вибрана тема буде активною, коли у вашій системі встановлено \"світлий режим\""
+      ],
       "This address has been disabled": [
         "Цю адресу було вимкнено"
       ],
@@ -12418,7 +12485,7 @@
     },
     "Upgrade": {
       "Upgrade to ${ passPlusPlanName } to get unlimited hide-my-email aliases": [
-        "Передплатіть ${ passPlusPlanName }, щоб отримати необмежену кількість псевдонімів Hide My Email"
+        "Передплатіть ${ passPlusPlanName }, щоб отримати необмежену кількість псевдонімів Hide-my-email"
       ],
       "Upgrade to ${ planName } to connect up to ${ n } device to the VPN at once": [
         "Передплатіть ${ planName }, щоб під'єднати ${ n } пристрій до VPN за раз",

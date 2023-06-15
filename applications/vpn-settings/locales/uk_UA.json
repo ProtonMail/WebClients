@@ -371,9 +371,6 @@
       "Upgrade now": [
         "Покращити"
       ],
-      "Use ${ label } theme": [
-        "Використовувати тему ${ label }"
-      ],
       "Use a different card": [
         "Використати іншу картку"
       ],
@@ -482,7 +479,7 @@
     },
     "Bug category": {
       "Application problem": [
-        "Проблема з додатком"
+        "Проблема з програмою"
       ],
       "Bridge problem": [
         "Проблема з Bridge"
@@ -1833,6 +1830,9 @@
       "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
         "Включає 2700 серверів у понад 65 країнах, підключення до 10 пристроїв, доступ до світових сервісів трансляції, захист від зловмисних програм і реклами, а також інші можливості."
       ],
+      "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
+        "Включає підтримку 3 власних доменів, 90 адрес пошти, необмежену кількість псевдонімів Hide-my-email, спільний доступ до календаря та інші можливості."
+      ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Безпечно зберігайте свої файли у зашифрованому хмарному сховищі з автоматичною синхронізацією, зашифрованим спільним доступом та іншими можливостями."
       ]
@@ -1986,6 +1986,31 @@
         "Мегабайти",
         "Мегабайтів",
         "Мегабайтів"
+      ]
+    },
+    "Font face option": {
+      "System default": [
+        "Системна за замовчуванням"
+      ],
+      "Theme default": [
+        "Тема за замовчуванням"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Великий"
+      ],
+      "Medium (recommended)": [
+        "Середній (рекомендовано)"
+      ],
+      "Small": [
+        "Маленький"
+      ],
+      "Very large": [
+        "Дуже великий"
+      ],
+      "Very small": [
+        "Дуже маленький"
       ]
     },
     "Frequency of news": {
@@ -2221,9 +2246,6 @@
       ],
       "By leaving now, changes may not be saved": [
         "Якщо ви зараз підете, зміни можуть не зберегтися"
-      ],
-      "Choose the look and feel of the application.": [
-        "Налаштуйте зовнішній вигляд програми."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Натисніть \"Запитати новий код\", щоб отримати новий код перевірки на ${ strong }. Якщо цей номер телефону неправильний, натисніть \"Змінити\" для його виправлення."
@@ -3590,10 +3612,10 @@
         "${ n } тек і міток"
       ],
       "${ n } Hide-my-email alias": [
-        "${ n } псевдонім Hide My Email",
-        "${ n } псевдоніми Hide My Email",
-        "${ n } псевдонімів Hide My Email",
-        "${ n } псевдонімів Hide My Email"
+        "${ n } псевдонім Hide-my-email",
+        "${ n } псевдоніми Hide-my-email",
+        "${ n } псевдонімів Hide-my-email",
+        "${ n } псевдонімів Hide-my-email"
       ],
       "${ n } label": [
         "${ n } мітка",
@@ -3824,7 +3846,7 @@
         "Необмежена кількість тек, міток і фільтрів"
       ],
       "Unlimited hide-my-email aliases": [
-        "Необмежена кількість псевдонімів Hide My Email"
+        "Необмежена кількість псевдонімів Hide-my-email"
       ],
       "Unlimited labels": [
         "Необмежена кількість міток"
@@ -4698,6 +4720,15 @@
       ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
         "Доступ звідусіль до матеріалів сервісів трансляції, включно з Netflix, Disney+ і Prime Video."
+      ],
+      "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
+        "Всі найкращі можливості наших преміум функцій: 100 адрес пошти, підтримка 10 власних доменів, необмежена кількість псевдонімів Hide-my-email, спільний доступ до календаря, зашифроване хмарне сховище, спільний доступ до файлів і багато іншого."
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Включає підтримку 1 власного домену, 10 адрес пошти, 10 псевдонімів Hide-my-email, спільний доступ до календаря та інші можливості."
+      ],
+      "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Включає підтримку 3 власних доменів, 15 адрес пошти, необмежену кількість псевдонімів Hide-my-email, спільний доступ до календаря та інші можливості."
       ],
       "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
         "Ідеально підходить для сім'ї або невеликої команди. Кожен учасник може мати власну поштову скриньку та псевдоніми. Потрібен власний домен."

@@ -481,6 +481,9 @@
       "Hide messages": [
         "Ukryj wiadomości"
       ],
+      "hide-my-email aliases": [
+        "aliasów Hide-my-email"
+      ],
       "I have a question": [
         "Mam pytanie"
       ],
@@ -1843,6 +1846,41 @@
       ],
       "white": [
         "biały"
+      ]
+    },
+    "Commander action": {
+      "Create a new folder": [
+        "Utwórz nowy folder"
+      ],
+      "Create a new label": [
+        "Utwórz nową etykietę"
+      ],
+      "Go to Archive": [
+        "Przejdź do Archiwum"
+      ],
+      "Go to Drafts": [
+        "Przejdź do Szkiców"
+      ],
+      "Go to Inbox": [
+        "Przejdź do Odebranych"
+      ],
+      "Go to Sent": [
+        "Przejdź do Wysłanych"
+      ],
+      "Go to Spam": [
+        "Przejdź do Spamu"
+      ],
+      "Go to Starred": [
+        "Przejdź do Wyróżnionych"
+      ],
+      "Go to Trash": [
+        "Przejdź do Kosza"
+      ],
+      "New message": [
+        "Nowa wiadomość"
+      ],
+      "Search": [
+        "Szukaj"
       ]
     },
     "Composer email icon": {
@@ -5052,6 +5090,12 @@
       "Draft saved.": [
         "Szkic został zapisany."
       ],
+      "Drop file here to upload": [
+        "Upuść, aby przesłać"
+      ],
+      "Drop to import": [
+        "Upuść, aby zaimportować"
+      ],
       "Duplicate key updated": [
         "Zduplikowany klucz został zaktualizowany"
       ],
@@ -5166,9 +5210,6 @@
       "For messages newer than ${ oldestDate }": [
         "Dla wiadomości nowszych niż ${ oldestDate }"
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "Przekieruj wiadomości przychodzące z innego konta do bezpiecznej skrzynki odbiorczej ${ MAIL_APP_NAME }."
-      ],
       "Free up some space or add more storage space.": [
         "Zwolnij część miejsca lub dodaj dodatkową przestrzeń dyskową."
       ],
@@ -5191,7 +5232,7 @@
         "Ukryj oryginalną wiadomość"
       ],
       "How hide-my-email aliases works": [
-        "Jak działają aliasy Hide My Email"
+        "Jak działają aliasy Hide-my-email"
       ],
       "I'm sending this message to a non-${ MAIL_APP_NAME } user.": [
         "Wysyłam wiadomość do użytkownika spoza ${ MAIL_APP_NAME }."
@@ -5234,9 +5275,6 @@
       ],
       "Import mailbox": [
         "Importuj skrzynkę pocztową"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "Importuj wiadomości, kalendarze i kontakty z innej usługi do ${ BRAND_NAME }."
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Trwa importowanie danych z konta ${ fromEmail } do ${ toEmail }."
@@ -5382,9 +5420,6 @@
       "No group found": [
         "Nie znaleziono grupy"
       ],
-      "No imports or forwarding history.": [
-        "Brak importów lub historii przekierowania."
-      ],
       "No label found": [
         "Nie znaleziono etykiety"
       ],
@@ -5485,7 +5520,7 @@
         "Drukuj wiadomość"
       ],
       "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
-        "Chroń swój adres e-mail przed ujawnieniem go w listach mailingowych lub przez spammerów za pomocą funkcji ${ maskMyEmailButton }."
+        "Chroń swój adres e-mail przed ujawnieniem go w listach mailingowych lub przez spammerów za pomocą ${ maskMyEmailButton }."
       ],
       "Recipient: ": [
         "Odbiorca: "
@@ -6048,6 +6083,9 @@
       "Your email will only be used for this one-time verification.": [
         "Adres e-mail zostanie użyty tylko do jednorazowej weryfikacji."
       ],
+      "Your files will be encrypted and then saved": [
+        "Twoje pliki przed zapisaniem zostaną zaszyfrowane"
+      ],
       "Your import will not be processed.": [
         "Twój import nie zostanie przetworzony."
       ],
@@ -6077,6 +6115,12 @@
       ]
     },
     "info": {
+      "${ filteredList.length } command found.": [
+        "Znaleziono ${ filteredList.length } polecenie.",
+        "Znaleziono ${ filteredList.length } polecenia.",
+        "Znaleziono ${ filteredList.length } poleceń.",
+        "Znaleziono ${ filteredList.length } poleceń."
+      ],
       "Optional": [
         "Opcjonalnie"
       ]
@@ -6242,6 +6286,9 @@
       ],
       "New message": [
         "Nowa wiadomość"
+      ],
+      "Open command panel": [
+        "Otwórz panel poleceń"
       ],
       "Open next message": [
         "Otwórz następną wiadomość"
@@ -6754,6 +6801,9 @@
       ],
       "Toolbar": [
         "Pasek narzędzi"
+      ],
+      "Type a command...": [
+        "Wpisz polecenie…"
       ],
       "Undisclosed Recipients": [
         "Nieznani odbiorcy"
@@ -7360,7 +7410,7 @@
         "Niestandardowe domeny"
       ],
       "Hide-my-email aliases": [
-        "Aliasy Hide My Email"
+        "Aliasy Hide-my-email"
       ],
       "Schedule messages at any time": [
         "Zaplanuj wiadomości w dowolnym momencie"
@@ -7474,9 +7524,6 @@
       ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
         "Otwórz menu aplikacji w lewym górnym rogu, aby uzyskać dostęp do wszystkich usług ${ BRAND_NAME }: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } i ${ DRIVE_SHORT_APP_NAME }."
-      ],
-      "You can change this anytime in your settings.": [
-        "Motyw możesz zmienić w ustawieniach."
       ]
     },
     "Option": {
@@ -7641,6 +7688,9 @@
       ],
       "Text": [
         "Tekst"
+      ],
+      "Type a command…": [
+        "Wpisz polecenie…"
       ],
       "Type text or keyword": [
         "Wpisz tekst lub słowo kluczowe"
@@ -9236,23 +9286,6 @@
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Darmowa wersja próbna planu Mail Plus zakończy się ${ textDate }"
-      ]
-    },
-    "Title header": {
-      "Actions": [
-        "Akcje"
-      ],
-      "Date": [
-        "Data"
-      ],
-      "Import": [
-        "Importuj"
-      ],
-      "Size": [
-        "Rozmiar"
-      ],
-      "Status": [
-        "Status"
       ]
     },
     "Today icon tooltip in mini calendar": {

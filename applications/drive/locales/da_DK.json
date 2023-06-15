@@ -1815,6 +1815,9 @@
       "ProtonMail logo and a plus sign": [
         "ProtonMail-logo og et plustegn"
       ],
+      "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
+        "Spar tid ved at sende e-mail eller invitationer til alle på en gang, en premium-funktion blandt mange andre. Opgrader i dag."
+      ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "Filen skal have en maksimal størrelse på ${ MAX_IMPORT_FILE_SIZE_STRING } og have\nop til ${ MAX_IMPORT_CONTACTS_STRING } kontakt. Hvis din fil er større, bedes du opdele den i mindre filer.",
         "Filen skal have en maksimal størrelse på ${ MAX_IMPORT_FILE_SIZE_STRING } og have\nop til ${ MAX_IMPORT_CONTACTS_STRING } kontakter. Hvis din fil er større, bedes du opdele den i mindre filer."
@@ -2177,6 +2180,12 @@
       ],
       "Unknown error": [
         "Ukendt fejl"
+      ],
+      "Username must begin with a letter or digit": [
+        "Brugernavn skal begynde med et bogstav eller ciffer"
+      ],
+      "Username must end with a letter or digit": [
+        "Brugernavn skal ende på et bogstav eller ciffer"
       ],
       "You can't send a mail to more than 100 recipients": [
         "Du kan ikke sende en mail til mere end 100 modtagere"
@@ -3175,6 +3184,12 @@
       "Conflict": [
         "Konflikt"
       ],
+      "Contact assigned to group ${ contactGroupName }": [
+        "Kontakt tilføjet til gruppen ${ contactGroupName }"
+      ],
+      "Contact unassigned to group ${ contactGroupName }": [
+        "Kontakt fjernet fra gruppen ${ contactGroupName }"
+      ],
       "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
         "Fortsæt med at bruge ${ DRIVE_APP_NAME } og lås op for drev senere"
       ],
@@ -3349,9 +3364,6 @@
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "For det bedste resultat, undgå streaming og hukommelses-intens aktivitet, eller split dine uploads op i mindre bidder."
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "Videresend indgående e-mails fra en anden konto til din sikre ${ MAIL_APP_NAME }-indbakke."
-      ],
       "Free forever": [
         "Gratis for evigt"
       ],
@@ -3403,9 +3415,6 @@
       ],
       "Import mailbox": [
         "Importér postkasse"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "Importér dine e-mails, kalendere og kontakter fra en anden tjeneste til ${ BRAND_NAME }."
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Importerer dine data fra ${ fromEmail } til ${ toEmail }."
@@ -3866,9 +3875,6 @@
       "Uploading hundreds of files at once may have a performance impact.": [
         "Upload af hundredvis af filer på én gang kan have en effekt på ydeevnen."
       ],
-      "Use Drive for Desktop to sync folders on your computer with ${ DRIVE_APP_NAME }. They’ll show up here and be accessible from anywhere. ${ LearnMore }": [
-        "Brug Drive for Desktop til at synkronisere mapper på din computer med ${ DRIVE_APP_NAME }. De vil blive vist her og være tilgængelige hvor som helst fra. ${ LearnMore }"
-      ],
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Brug denne formular til at give os besked om upassende, ulovlige,\neller på anden måde skadelige delte filer. Du er ved at anmelde:"
       ],
@@ -3958,6 +3964,9 @@
       ],
       "You will lose all unsaved changes.": [
         "Du vil miste alle ikke-gemte ændringer."
+      ],
+      "You've reached the maximum number of addresses in the contact group.": [
+        "Du har nået det maksimale antal adresser i kontaktgruppen."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Din ${ BRAND_NAME }-konto er i øjeblikket suspenderet. Efter 28 dage vil e-mails ikke længere blive leveret til din indbakke, dine Drive-delingslinks vil blive blokeret, og du vil ikke længere kunne uploade nye filer. For at genoptage normal service skal du betale alle forfaldne fakturaer."
@@ -4701,11 +4710,17 @@
       ]
     },
     "new_plans: feature info": {
+      "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
+        "Opret flere e-mailadresser for dine online identiteter, f.eks. JensShopper@${ domain } for shoppingkonto, JensNyheder@${ domain2 } til nyhedsabonnementer."
+      ],
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "Få ubegrænsede aliaser med SimpleLogin fra ${ BRAND_NAME }"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Lagerplads er delt mellem ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, og ${ DRIVE_APP_NAME }"
+      ],
+      "Use your own custom email domain address, e.g., you@yourname.com": [
+        "Brug din egen brugerdefinerede e-mail-domæneadresse, f.eks. dig@ditnavn.com"
       ]
     },
     "new_plans: label": {
@@ -4969,9 +4984,6 @@
       ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
         "Brug appvælgeren øverst til venstre for at få adgang til alle ${ BRAND_NAME }-tjenester: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } og ${ DRIVE_SHORT_APP_NAME }."
-      ],
-      "You can change this anytime in your settings.": [
-        "Du kan altid ændre dette i dine indstillinger."
       ]
     },
     "Onboarding Title": {

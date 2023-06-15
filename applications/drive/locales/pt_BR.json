@@ -313,13 +313,16 @@
         "Ir para o painel ${ index }"
       ],
       "Go to parent": [
-        "Ir para Enviados"
+        "Ir para pasta principal"
       ],
       "Go to settings": [
         "Ir para configurações"
       ],
       "Got it": [
         "Entendi"
+      ],
+      "Grid layout": [
+        "Exibição em grade"
       ],
       "Hide advanced PGP settings": [
         "Ocultar configurações PGP avançadas"
@@ -2617,7 +2620,7 @@
         "Inclui 2.700 servidores em mais de 65 países. Conecte até 10 dispositivos, acesse serviços de streaming no mundo todo, malware e bloqueador de anúncios e muito mais."
       ],
       "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
-        "Inclui suporte para 3 domínios de e-mail personalizado, 90 endereços de e-mail, aliases ilimitados do \"Hide My Email\", compartilhamento de calendário e muito mais."
+        "Inclui suporte para 3 domínios de e-mail personalizado, 90 endereços de e-mail, aliases ilimitados do Hide-my-email, compartilhamento de calendário e muito mais."
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Proteja seus arquivos com armazenamento criptografado na nuvem. Inclui sincronização automática, compartilhamento de arquivos criptografados e muito mais."
@@ -3440,9 +3443,6 @@
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "Para obter melhores resultados, evite streaming e atividades que consomem muita memória ou divida seu carregamento em lotes menores."
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "Encaminhe e-mails recebidos de outra conta para sua caixa de entrada segura do ${ MAIL_APP_NAME }."
-      ],
       "Free forever": [
         "Grátis para sempre"
       ],
@@ -3497,9 +3497,6 @@
       ],
       "Import mailbox": [
         "Importar Caixa de Entrada"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "Importe seus emails, calendários e contatos de outro serviço para ${ BRAND_NAME }."
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Importando seus dados de ${ fromEmail } para ${ toEmail }."
@@ -3963,8 +3960,8 @@
       "Uploading hundreds of files at once may have a performance impact.": [
         "Enviar centenas de arquivos de uma só vez pode ter impacto no desempenho."
       ],
-      "Use Drive for Desktop to sync folders on your computer with ${ DRIVE_APP_NAME }. They’ll show up here and be accessible from anywhere. ${ LearnMore }": [
-        "Use o Drive para Desktop para sincronizar pastas em seu computador com ${ DRIVE_APP_NAME }. Eles aparecerão aqui e serão acessíveis de qualquer lugar. ${ LearnMore }"
+      "Use Drive for Desktop to sync folders on your computer with ${ DRIVE_APP_NAME }. They’ll show up here and be accessible from anywhere. ${ learnMore }": [
+        "Use o Drive para Desktop para sincronizar pastas em seu computador com ${ DRIVE_APP_NAME }. Eles aparecerão aqui e serão acessíveis de qualquer lugar. ${ learnMore }"
       ],
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Use esse formulário para nos notificar de arquivos compartilhados que são inapropriados, ilegais, ou maliciosos. Você irá denunciar:"
@@ -4127,7 +4124,7 @@
         "dados do arquivo"
       ],
       "file data key": [
-        "Chave de dados do arquivo"
+        "chave de dados do arquivo"
       ],
       "file data order": [
         "ordem de dados do arquivo"
@@ -4797,7 +4794,7 @@
         "Domínios de e-mail personalizados"
       ],
       "Hide-my-email aliases": [
-        "Aliases do \"Hide My Email\""
+        "Aliases do Hide-my-email"
       ],
       "Schedule messages at any time": [
         "Agende mensagens a qualquer momento"
@@ -5095,9 +5092,6 @@
       ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
         "Use o seletor de aplicativos no canto superior esquerdo para acessar todos os serviços de ${ BRAND_NAME }: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } e ${ DRIVE_SHORT_APP_NAME }."
-      ],
-      "You can change this anytime in your settings.": [
-        "Você pode alterar isso a qualquer momento nas suas configurações."
       ]
     },
     "Onboarding Title": {
@@ -5523,13 +5517,13 @@
         "Acesse conteúdo em serviços de streaming, como Netflix, Disney+ e Prime Video de qualquer lugar."
       ],
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
-        "Todos os nossos serviços premium com os limites mais altos: 100 endereços de e-mail, suporte para 10 domínios personalizados, aliases ilimitados do \"Hide My Email\", compartilhamento de calendário, armazenamento criptografado na nuvem e compartilhamento de arquivo e muito mais."
+        "Todos os nossos serviços premium com os limites mais altos: 100 endereços de e-mail, suporte para 10 domínios personalizados, aliases ilimitados do Hide-my-email, compartilhamento de calendário, armazenamento criptografado na nuvem e compartilhamento de arquivo e muito mais."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Inclui suporte para 1 domínio de e-mail personalizado, 10 endereços de e-mail, 10 aliases do \"Hide My Email\", compartilhamento de calendário e muito mais."
+        "Inclui suporte para 1 domínio de e-mail personalizado, 10 endereços de e-mail, 10 aliases do Hide-my-email, compartilhamento de calendário e muito mais."
       ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Inclui suporte para 3 domínios de e-mail personalizado, 15 endereços de e-mail, aliases ilimitados do \"Hide My Email\", compartilhamento de calendário e muito mais."
+        "Inclui suporte para 3 domínios de e-mail personalizado, 15 endereços de e-mail, aliases ilimitados do Hide-my-email, compartilhamento de calendário e muito mais."
       ],
       "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
         "Perfeito para famílias ou equipes pequenas. Cada usuário pode ter sua própria caixa de entrada e aliases. Exige um domínio personalizado."
@@ -5922,8 +5916,8 @@
         "Detalhes da pastas"
       ],
       "Found ${ searchView.numberOfResults } result": [
-        "Encontrados ${ searchView.numberOfResults } resultados",
-        "Encontrandos ${ searchView.numberOfResults } resultados"
+        "${ searchView.numberOfResults } resultado encontrado",
+        "${ searchView.numberOfResults } resultados encontrados"
       ],
       "Groups": [
         "Grupos"

@@ -75,6 +75,9 @@
       "Add PayPal": [
         "Προσθήκη PayPal"
       ],
+      "Add public holidays": [
+        "Προσθήκη αργιών"
+      ],
       "Add sieve filter": [
         "Προσθήκη φίλτρου sieve"
       ],
@@ -666,6 +669,9 @@
       "Select language for invitation emails": [
         "Επιλέξτε γλώσσα για τα προσκλητήρια email"
       ],
+      "Select time zone": [
+        "Επιλογή ζώνης ώρας"
+      ],
       "send auto-reply email": [
         "αποστολή μηνύματος αυτόματης απάντησης"
       ],
@@ -1187,6 +1193,11 @@
         "Προβολή (δείτε όλες τις λεπτομέρειες)"
       ]
     },
+    "Calendar sharing error": {
+      "Failed to retrieve contact information for ${ address }": [
+        "Αποτυχία ανάκτησης πληροφοριών επικοινωνίας για ${ address }"
+      ]
+    },
     "Calendar status": {
       "Active": [
         "Ενεργά"
@@ -1211,6 +1222,9 @@
       "Calendar is syncing": [
         "Το ημερολόγιο συγχρονίζεται"
       ],
+      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
+        "Το ημερολόγιο συγχρονίζεται: μπορεί να χρειαστούν αρκετά λεπτά για να εμφανιστούν όλα τα συμβάντα του."
+      ],
       "Calendar is too big": [
         "Υπερβολικά μεγάλο ημερολόγιο"
       ],
@@ -1228,6 +1242,17 @@
       ],
       "Unsupported calendar format": [
         "Μη υποστηριζόμενη μορφή ημερολογίου"
+      ]
+    },
+    "Calendar subscription not synced error; long version": {
+      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
+        "Η σύνδεση ημερολογίου δεν είναι προσβάσιμη εκτός του οικοσυστήματος της υπηρεσίας παροχής ημερολογίου."
+      ],
+      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
+        "Η σύνδεση ημερολογίου δεν είναι προσωρινά προσβάσιμη. Βεβαιωθείτε ότι ο σύνδεσμος από τον πάροχο ημερολογίου εξακολουθεί να ισχύει."
+      ],
+      "More than 12 hours passed since last update — ${ CALENDAR_APP_NAME } will try to update the calendar in a few hours.": [
+        "Έχουν περάσει περισσότερες από 12 ώρες από την τελευταία ενημέρωση — ${ CALENDAR_APP_NAME } θα προσπαθήσει να ενημερώσει το ημερολόγιο σε λίγες ώρες."
       ]
     },
     "Calendar table settings button tooltip": {
@@ -2320,6 +2345,11 @@
         "Νήσοι Άλαντ"
       ]
     },
+    "Country select label": {
+      "Based on your time zone": [
+        "Βασισμένο στη ζώνη ώρας σας"
+      ]
+    },
     "CountryInfo": {
       "(via ${ entryCountryName })": [
         "(μέσω ${ entryCountryName })"
@@ -2990,6 +3020,9 @@
       "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.": [
         "Λανθασμένος κωδικός επαλήθευσης. Παρακαλούμε βεβαιωθείτε ότι αντιγράψατε σωστά τον κωδικό επαλήθευσης και δοκιμάστε ξανά. Μπορεί να πάρει έως και 24 ώρες για να εφαρμοστούν οι αλλαγές."
       ],
+      "You already added this holidays calendar": [
+        "Έχετε ήδη προσθέσει αυτό το εορτολόγιο"
+      ],
       "You have lost access to your organization keys. Without restoration you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Έχετε χάσει την πρόσβαση στα κλειδιά της επιχείρησης σας. Χωρίς επαναφορά, δεν θα μπορείτε να δημιουργήσετε νέους χρήστες, να προσθέσετε διευθύνσεις σε υπάρχοντες χρήστες ή να αποκτήσετε πρόσβαση σε μη ιδιωτικούς λογαριασμούς χρηστών."
       ],
@@ -3436,6 +3469,11 @@
       ],
       "Your current plan cannot join a Visionary or family plan.": [
         "Το τρέχον σχέδιό σας δεν μπορεί να συμμετάσχει σε ένα Οραματικό ή οικογενειακό σχέδιο."
+      ]
+    },
+    "familyOffer_2023:Footer": {
+      "Discounts are based on the standard monthly pricing.": [
+        "Οι εκπτώσεις βασίζονται στην τυπική μηνιαία τιμολόγηση."
       ]
     },
     "familyOffer_2023:Get Proton Family": {
@@ -4348,6 +4386,9 @@
       "Background color": [
         "Χρώμα φόντου"
       ],
+      "Based on your time zone": [
+        "Βασισμένο στη ζώνη ώρας σας"
+      ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Η βασική πλοήγηση και οι ενέργειες παραμένουν διαθέσιμες ανεξάρτητα από τις συντομεύσεις πληκτρολογίου που είναι ενεργές ή όχι στις ρυθμίσεις."
       ],
@@ -4392,9 +4433,6 @@
       ],
       "Center": [
         "Κέντρο"
-      ],
-      "Choose the look and feel of the application.": [
-        "Επιλέξετε την εμφάνιση και της αίσθηση της εφαρμογής."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Κάντε κλικ στην επιλογή \"Αίτηση νέου κωδικού\" για να σταλεί ένας νέος κωδικός επαλήθευσης στο ${ strong }. Εάν αυτός ο αριθμός τηλεφώνου είναι εσφαλμένος, κάντε κλικ στο \"Επεξεργασία\" για να τον διορθώσετε."
@@ -5515,6 +5553,9 @@
       "Your phone number will only be used for this one-time verification.": [
         "Ο αριθμός τηλεφώνου σας θα χρησιμοποιηθεί μόνο για αυτή τη εφάπαξ επαλήθευση."
       ],
+      "Your plan is limited to 10 versions for up to 7 days": [
+        "Το πρόγραμμά σας περιορίζεται σε 10 εκδόσεις για έως και 7 ημέρες"
+      ],
       "Your recovery phrase": [
         "Η φράση ανάκτησής σας"
       ],
@@ -5572,6 +5613,11 @@
     "Info when deleting payment method": {
       "To avoid any service interruption due to unpaid invoices, please make sure that you have at least 1 valid payment method saved at any point in time.": [
         "Για την αποφυγή τυχόν διακοπής της υπηρεσίας λόγω απλήρωτων τιμολογίων, παρακαλούμε βεβαιωθείτε ότι ανά πάσα στιγμή έχετε τουλάχιστον 1 έγκυρη μέθοδο πληρωμής αποθηκευμένη."
+      ]
+    },
+    "Info; access rights for shared calendar": {
+      "View only": [
+        "Ανάγνωση μόνο"
       ]
     },
     "Input label": {
@@ -5930,6 +5976,14 @@
       "${ n } month": [
         "${ n } μήνας",
         "${ n } μήνες"
+      ],
+      "${ nbDay } day": [
+        "${ nbDay } ημέρα",
+        "${ nbDay } ημέρες"
+      ],
+      "${ nbYear } year": [
+        "${ nbYear } έτος",
+        "${ nbYear } έτη"
       ],
       "${ UsedAddresses } of ${ MaxAddresses } email address": [
         "${ UsedAddresses } από ${ MaxAddresses } διεύθυνση email",
@@ -6328,6 +6382,9 @@
       "Label messages as": [
         "Επισήμανση μηνυμάτων ως"
       ],
+      "Language": [
+        "Γλώσσα"
+      ],
       "Last 12 months only": [
         "Τελευταίοι 12 μήνες μόνο"
       ],
@@ -6615,6 +6672,9 @@
       ],
       "Upload 1 or more recovery files or encryption keys": [
         "Ανεβάστε 1 ή περισσότερα αρχεία ανάκτησης ή κλειδιά κρυπτογράφησης"
+      ],
+      "URL": [
+        "Διεύθυνση URL"
       ],
       "Use a recovery email address": [
         "Χρήση ηλ. διεύθυνσης ανάκτησης"
@@ -6991,6 +7051,15 @@
       ]
     },
     "Modal title": {
+      "Add public holidays": [
+        "Προσθήκη αργιών"
+      ],
+      "Edit calendar": [
+        "Επεξεργασία ημερολογίου"
+      ],
+      "Get a country's official public holidays calendar.": [
+        "Αποκτήστε το επίσημο ημερολόγιο αργιών μιας χώρας."
+      ],
       "How to import calendars from another service": [
         "Πώς να εισάγετε ημερολόγια από μια άλλη υπηρεσία"
       ],
@@ -7641,6 +7710,14 @@
         "Τα διαπιστευτήρια του OpenVPN / IKEv2 επαναδημιουργήθηκαν"
       ]
     },
+    "Notification in holidays calendar modal": {
+      "Adding holidays calendar failed": [
+        "Η προσθήκη ημερολογίου αργιών απέτυχε"
+      ],
+      "Calendar added": [
+        "Το ημερολόγιο προστέθηκε"
+      ]
+    },
     "Notification in share calendar modal": {
       "Member added": [
         "Το μέλος προστέθηκε",
@@ -8023,6 +8100,9 @@
       "Please insert link first": [
         "Παρακαλούμε εισάγετε πρώτα τον σύνδεσμο"
       ],
+      "Please select a country": [
+        "Παρακαλούμε επιλέξτε μια χώρα"
+      ],
       "Search": [
         "Αναζήτηση"
       ],
@@ -8216,6 +8296,9 @@
       ]
     },
     "Select search results": {
+      "Check your spelling or select a country from the list.": [
+        "Ελέγξτε την ορθογραφία σας ή επιλέξτε μια χώρα από τη λίστα."
+      ],
       "No results found": [
         "Δεν βρέθηκαν αποτελέσματα"
       ]
@@ -8265,6 +8348,11 @@
         "Ετικέτες"
       ]
     },
+    "Share calendar assistive text": {
+      "To invite non-${ BRAND_NAME } users, share your calendar with a link.": [
+        "Για να προσκαλέσετε μη ${ BRAND_NAME } χρήστες, κοινοποιήστε το ημερολόγιό σας με έναν σύνδεσμο."
+      ]
+    },
     "Share calendar max shares reached error": {
       "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } member per calendar": [
         "Έχετε ξεπεράσει το όριο του ${ MAX_CALENDAR_MEMBERS } μέλους ανά ημερολόγιο",
@@ -8294,6 +8382,14 @@
     "Shared calendar; Info about calendar owner": {
       "Created by ${ ownerName }": [
         "Δημιουργήθηκε από ${ ownerName }"
+      ]
+    },
+    "Signature verification error when joining calendar": {
+      "Signature verification error": [
+        "Σφάλμα επαλήθευσης υπογραφής"
+      ],
+      "You have enabled address verification for ${ boldSenderEmail }. We couldn't verify the authenticity of this calendar invite. This may be due to changes in the encryption keys of this contact. Please review its advanced PGP settings, or your can ask ${ boldSenderEmail } for a new invite.": [
+        "Έχετε ενεργοποιήσει την επαλήθευση διεύθυνσης για ${ boldSenderEmail }. Δεν μπορέσαμε να επαληθεύσουμε την αυθεντικότητα αυτής της πρόσκλησης ημερολογίου. Αυτό μπορεί να οφείλεται σε αλλαγές στα κλειδιά κρυπτογράφησης αυτής της επαφής. Ελέγξτε τις προηγμένες ρυθμίσεις PGP ή μπορείτε να ζητήσετε από ${ boldSenderEmail } μια νέα πρόσκληση."
       ]
     },
     "Signup label": {
@@ -8507,6 +8603,9 @@
     "Subscribe to calendar modal": {
       "Calendar URL": [
         "URL Ημερολογίου"
+      ],
+      "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Other calendars.\n${ kbLink }": [
+        "Για να εγγραφείτε σε ένα εξωτερικό ή δημόσιο ημερολόγιο και τις ενημερώσεις του, εισαγάγετε τη διεύθυνση URL. Μια έκδοση μόνο για ανάγνωση του ημερολογίου θα προστεθεί στα ´Άλλα ημερολόγιά σας.\n${ kbLink }"
       ]
     },
     "Subscribe to calendar modal description": {
@@ -8932,6 +9031,11 @@
       "${ minutes } minute": [
         "${ minutes } λεπτό",
         "${ minutes } λεπτά"
+      ]
+    },
+    "Timezone search placeholder": {
+      "Search time zones": [
+        "Αναζήτηση ζώνης ώρας"
       ]
     },
     "Title": {
@@ -9543,9 +9647,6 @@
       "Select when you want this notification to be sent": [
         "Επιλέξτε πότε θέλετε να σταλεί αυτή η ειδοποίηση"
       ],
-      "Sender image": [
-        "Εικόνα αποστολέα"
-      ],
       "Session management": [
         "Διαχείριση συνεδρίας"
       ],
@@ -9655,6 +9756,9 @@
       ],
       "Verification": [
         "Επαλήθευση"
+      ],
+      "Version history": [
+        "Ιστορικό εκδόσεων"
       ],
       "VPN apps": [
         "Εφαρμογές VPN"
@@ -9904,6 +10008,14 @@
     "Tooltip sign external messages": {
       "Automatically sign all your outgoing messages so users can verify the authenticity of your messages. This is done in combination with the default PGP settings which can be configured below.": [
         "Υπογράψτε αυτόματα όλα τα εξερχόμενα μηνύματά σας, ώστε οι χρήστες να μπορούν να επαληθεύσουν τη γνησιότητά τους. Αυτό γίνεται σε συνδυασμό με τις προεπιλεγμένες ρυθμίσεις PGP, οι οποίες μπορούν να διαμορφωθούν παρακάτω."
+      ]
+    },
+    "Tooltip; share calendar modal ": {
+      "Shared end-to-end encrypted": [
+        "Κοινόχρηστη κρυπτογράφηση από άκρο σε άκρο"
+      ],
+      "Shared end-to-end encrypted with verified contact": [
+        "Κοινόχρηστη κρυπτογράφηση από άκρο σε άκρο με επαληθευμένη επαφή"
       ]
     },
     "Tor out of date": {
