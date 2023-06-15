@@ -72,7 +72,6 @@ export interface LockedShareForRestore {
 }
 
 export interface LockedDeviceForRestore extends LockedShareForRestore {
-    deviceName: string | undefined;
     shareDecryptedPassphrase: string;
     shareSessionKey: SessionKey;
 }

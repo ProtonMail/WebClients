@@ -34,7 +34,6 @@ export interface RestoreDriveVolume {
     Devices?: {
         LockedShareID: string;
         ShareKeyPacket: string;
-        Name: string;
         PassphraseSignature: string;
     }[];
 }
