@@ -273,3 +273,31 @@ textarea.field,
 		padding-inline: em(16); // design want 42px height (actually 41 to avoid .5px)
 	}
 }
+
+/*
+ * Specific for input fields
+ * TO_CHECK if removable
+ */
+.right-icon,
+.right-text,
+.left-icon {
+	inset-block-start: 0;
+	block-size: #{rem($default-height-fields)}; // height of field
+	align-content: center;
+}
+
+.right-icon {
+	inset-inline-end: 0.5em;
+}
+
+.right-text {
+	inset-inline-end: 1em;
+
+	&-inner {
+		padding-block-end: rem(2);
+	}
+}
+
+.left-icon {
+	inset-inline-start: 0.5em;
+}

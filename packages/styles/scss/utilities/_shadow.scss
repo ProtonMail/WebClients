@@ -6,7 +6,7 @@
 			rgb(var(--shadow-color, var(--shadow-default-color)) / var(--shadow-#{$type}-opacity));
 	}
 
-	.shadow-#{$type} {
+	@include responsive-classes(shadow-#{$type}) {
 		box-shadow: var(--shadow-#{$type}-offset)
 			rgb(var(--shadow-color, var(--shadow-default-color)) / var(--shadow-#{$type}-opacity));
 	}
@@ -18,4 +18,8 @@
 
 .shadow-color-primary {
 	--shadow-color: var(--shadow-primary-color);
+}
+
+@include responsive-classes(shadow-none) {
+	box-shadow: none;
 }
