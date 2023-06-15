@@ -11,6 +11,7 @@ import { Field } from '../../../components/Field/Field';
 import { BaseTextAreaField } from '../../../components/Field/TextareaField';
 import { BaseTitleField } from '../../../components/Field/TitleField';
 import { ItemEditPanel } from '../../../components/Panel/ItemEditPanel';
+import { useItemDraft } from '../../../hooks/useItemDraft';
 
 const FORM_ID = 'edit-note';
 
@@ -34,6 +35,13 @@ export const NoteEdit: VFC<ItemEditProps<'note'>> = ({ vault: { shareId }, revis
         },
         validate: validateNoteForm,
         validateOnChange: true,
+    });
+
+    useItemDraft<NoteFormValues>(form, {
+        type: 'note',
+        mode: 'edit',
+        itemId: itemId,
+        shareId: form.values.shareId,
     });
 
     return (
