@@ -321,6 +321,9 @@
       "Got it": [
         "Entendido"
       ],
+      "Grid layout": [
+        "Diseño de cuadrícula"
+      ],
       "Hide advanced PGP settings": [
         "Ocultar ajustes PGP avanzados"
       ],
@@ -2617,7 +2620,7 @@
         "Incluye 2700 servidores en más de 65 países, conecta hasta 10 dispositivos, acceda a servicios de transmisión en todo el mundo, malware y bloqueador de anuncios, y más."
       ],
       "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
-        "Incluye compatibilidad con 3 dominios de correo electrónico personalizado, 90 direcciones de correo electrónico, alias ilimitados de \"Hide My Email\", posibilidad de compartir calendario, etc."
+        "Incluye compatibilidad con 3 dominios de correo electrónico personalizado, 90 direcciones de correo electrónico, alias ilimitados de Hide-my-email, posibilidad de compartir calendario, etc."
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Proteja sus archivos con almacenamiento en la nube cifrado. Incluye sincronización automática, uso compartido de archivos cifrados y más."
@@ -2682,6 +2685,31 @@
     "Filter notification": {
       "${ Label.Name } updated": [
         "${ Label.Name } actualizado"
+      ]
+    },
+    "Font face option": {
+      "System default": [
+        "Del sistema"
+      ],
+      "Theme default": [
+        "Tema por defecto"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Grande"
+      ],
+      "Medium (recommended)": [
+        "Mediana (recomendado)"
+      ],
+      "Small": [
+        "Pequeña"
+      ],
+      "Very large": [
+        "Muy grande"
+      ],
+      "Very small": [
+        "Muy pequeña"
       ]
     },
     "Group": {
@@ -3297,6 +3325,9 @@
       "Current version": [
         "Versión actual"
       ],
+      "Customize the look and feel of ${ BRAND_NAME } applications.": [
+        "Personalice el aspecto y sensación de las aplicaciones de ${ BRAND_NAME }"
+      ],
       "Decrypting files": [
         "Descifrando archivos"
       ],
@@ -3440,9 +3471,6 @@
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "Para mejores resultados, evite las actividades de streaming o demandantes de memoria, o divida la carga de archivos en lotes más pequeños."
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "Redirija correos entrantes desde otra cuenta a su buzón seguro de ${ MAIL_APP_NAME }."
-      ],
       "Free forever": [
         "Gratis para siempre"
       ],
@@ -3497,9 +3525,6 @@
       ],
       "Import mailbox": [
         "Importar buzón"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "Importe sus correos, calendarios y contactos desde otro servicio a ${ BRAND_NAME }."
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Importando sus datos de ${ fromEmail } a ${ toEmail }."
@@ -3963,8 +3988,8 @@
       "Uploading hundreds of files at once may have a performance impact.": [
         "Cargar cientos de archivos a la vez puede tener un impacto en el rendimiento."
       ],
-      "Use Drive for Desktop to sync folders on your computer with ${ DRIVE_APP_NAME }. They’ll show up here and be accessible from anywhere. ${ LearnMore }": [
-        "Use Drive para Escritorio para sincronizar carpetas en su computadora con ${ DRIVE_APP_NAME }. Se mostrarán aquí y serán accesibles desde cualquier lugar. ${ LearnMore }"
+      "Use Drive for Desktop to sync folders on your computer with ${ DRIVE_APP_NAME }. They’ll show up here and be accessible from anywhere. ${ learnMore }": [
+        "Use Drive para Escritorio para sincronizar carpetas en su computadora con ${ DRIVE_APP_NAME }. Se mostrarán aquí y serán accesibles desde cualquier lugar. ${ learnMore }"
       ],
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Use este formulario para notificarnos sobre archivos compartidos\ninapropiados, ilegales o maliciosos. Está a punto de denunciar:"
@@ -4090,7 +4115,7 @@
         "Sus archivos ya no son accesibles debido a un restablecimiento de contraseña. Vuelva a cargar la clave de cifrado antigua para recuperar el acceso. ${ KeyReactivationButton }"
       ],
       "Your files will be encrypted and then saved": [
-        "Sus archivos serán cifrados y de ahí guardados"
+        "Sus archivos serán cifrados y luego guardados"
       ],
       "Your files will be encrypted and then saved.": [
         "Sus archivos serán cifrados y luego guardados."
@@ -4559,6 +4584,9 @@
       "Street address": [
         "Dirección de calle"
       ],
+      "Synchronize with system": [
+        "Sincronizar con el sistema"
+      ],
       "System information": [
         "Información del sistema"
       ],
@@ -4797,7 +4825,7 @@
         "Dominios de correo electrónico personalizados"
       ],
       "Hide-my-email aliases": [
-        "Alias de \"Hide My Email\""
+        "Alias de Hide-my-email"
       ],
       "Schedule messages at any time": [
         "Programar mensajes a cualquier hora"
@@ -5084,6 +5112,9 @@
       "Discover all ${ BRAND_NAME } services": [
         "Descubra todos los servicios de ${ BRAND_NAME }"
       ],
+      "More theming options are available in your account Settings > Appearance.": [
+        "Más opciones de temas están disponibles en su ajustes de cuenta > apariencia"
+      ],
       "Select a theme": [
         "Seleccionar un tema"
       ],
@@ -5095,9 +5126,6 @@
       ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
         "Use el selector de aplicaciones en la esquina superior izquierda para acceder a todos los servicios de ${ BRAND_NAME }: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } y ${ DRIVE_SHORT_APP_NAME }."
-      ],
-      "You can change this anytime in your settings.": [
-        "Puede cambiar esto en cualquier momento en los ajustes."
       ]
     },
     "Onboarding Title": {
@@ -5523,13 +5551,13 @@
         "Acceda desde cualquier lugar al contenido de servicios de streaming, como Netflix, Disney+ y Prime Video."
       ],
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
-        "Todos nuestros servicios premium al máximo: 100 direcciones de correo electrónico, compatibilidad con 10 dominios personalizados, alias ilimitados de \"Hide My Email\", posibilidad de compartir calendarios y archivos cifrados, almacenamiento cifrado en la nube, etc."
+        "Todos nuestros servicios premium al máximo: 100 direcciones de correo electrónico, compatibilidad con 10 dominios personalizados, alias ilimitados de Hide-my-email, posibilidad de compartir calendarios y archivos cifrados, almacenamiento cifrado en la nube, etc."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Incluye compatibilidad con 1 dominio de correo electrónico personalizado, 10 direcciones de correo electrónico, 10 alias de \"Hide My Email\", posibilidad de compartir calendario, etc."
+        "Incluye compatibilidad con 1 dominio de correo electrónico personalizado, 10 direcciones de correo electrónico, 10 alias de Hide-my-email, posibilidad de compartir calendario, etc."
       ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Incluye compatibilidad con 3 dominios de correo electrónico personalizado, 15 direcciones de correo electrónico, alias ilimitados de \"Hide My Email\", posibilidad de compartir calendario, etc."
+        "Incluye compatibilidad con 3 dominios de correo electrónico personalizado, 15 direcciones de correo electrónico, alias ilimitados de Hide-my-email, posibilidad de compartir calendario, etc."
       ],
       "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
         "Es perfecto para familias o equipos pequeños, ya que cada uno puede tener su propia bandeja de entrada y alias. Requiere un dominio personalizado."
@@ -5741,6 +5769,9 @@
         "${ numberOfFailedTransfer.total } carga fallida",
         "${ numberOfFailedTransfer.total } cargas fallidas"
       ],
+      "(active)": [
+        "(activo)"
+      ],
       "Account suspended": [
         "Cuenta suspendida"
       ],
@@ -5831,6 +5862,9 @@
       ],
       "Date": [
         "Fecha"
+      ],
+      "Day theme": [
+        "Tema de día"
       ],
       "Delete ${ count } contact": [
         "Eliminar ${ count } contacto",
@@ -5985,6 +6019,9 @@
       ],
       "Name": [
         "Nombre"
+      ],
+      "Night theme": [
+        "Tema de noche"
       ],
       "No results found": [
         "No se encontraron resultados"
@@ -6218,6 +6255,9 @@
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Automático indica que el formato en el compositor se utiliza para enviar a este usuario. Texto Plano indica que el mensaje siempre se convertirá a texto plano al enviarlo."
       ],
+      "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
+        "Cambie automáticamente entre sus temas preferidos para el día y la noche en sincronía con los modos de día y noche de su sistema"
+      ],
       "Customize import to reduce the number of folders": [
         "Personalizar importación para reducir el número de carpetas"
       ],
@@ -6268,6 +6308,12 @@
       ],
       "The import will start with the most recent messages.": [
         "La importación comenzará con los mensajes más recientes."
+      ],
+      "The selected theme will be active when your system is set to \"dark mode\"": [
+        "El tema seleccionado estará activo cuando su sistema esté en modo de noche"
+      ],
+      "The selected theme will be active when your system is set to \"light mode\"": [
+        "El tema seleccionado estará activo cuando su sistema esté en \"modo claro\""
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Subir una clave pública para permitir el envío de correos electrónicos cifrados de extremo a extemo a este correo electrónico"
