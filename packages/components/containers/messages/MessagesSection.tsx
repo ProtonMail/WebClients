@@ -175,7 +175,7 @@ const MessagesSection = () => {
                         />
                     </label>
                 </SettingsLayoutLeft>
-                <SettingsLayoutRight className="pt0-5">
+                <SettingsLayoutRight className="pt-2">
                     <SenderImagesToggle className="mr-4" id="senderImagesToggle" />
                 </SettingsLayoutRight>
             </SettingsLayout>
