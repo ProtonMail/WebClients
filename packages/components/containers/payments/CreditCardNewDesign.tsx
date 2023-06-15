@@ -17,6 +17,16 @@ import { CardFieldStatus } from './useCard';
 
 import './CreditCardNewDesign.scss';
 
+const WarningIcon = ({ className }: { className?: string }) => {
+    return (
+        <Icon
+            name="exclamation-circle-filled"
+            className={clsx('flex-item-noshrink color-danger', className)}
+            size={18}
+        />
+    );
+};
+
 interface Props {
     onChange: (key: keyof CardModel, value: string) => void;
     loading?: boolean;
@@ -138,6 +148,14 @@ const CreditCardNewDesign = ({ card, errors, onChange, loading = false, fieldSta
 
     let creditCardForm;
     if (isNarrow) {
+        const cardNumberSuffix = errors.number ? (
+            <WarningIcon />
+        ) : card.number && bankIcon ? (
+            <img src={bankIcon} title={niceType} alt={niceType} width="24" />
+        ) : (
+            <Icon name="credit-card" size={16} className="mr-1" />
+        );
+
         creditCardForm = (
             <>
                 <Label
@@ -158,13 +176,7 @@ const CreditCardNewDesign = ({ card, errors, onChange, loading = false, fieldSta
                             onChange('number', val);
                         }
                     }}
-                    suffix={
-                        card.number && bankIcon ? (
-                            <img src={bankIcon} title={niceType} alt={niceType} width="24" />
-                        ) : (
-                            <Icon name="credit-card" size={16} className="mr-1" />
-                        )
-                    }
+                    suffix={cardNumberSuffix}
                     ref={narrowNumberRef}
                     {...commonNumberProps}
                 />
@@ -185,6 +197,7 @@ const CreditCardNewDesign = ({ card, errors, onChange, loading = false, fieldSta
                             }
                         }}
                         ref={narrowExpRef}
+                        suffix={errors.month ? <WarningIcon /> : null}
                         {...commonExpProps}
                     />
                     <Label htmlFor={commonCvcProps.id} className="sr-only">{c('Label')
@@ -196,6 +209,7 @@ const CreditCardNewDesign = ({ card, errors, onChange, loading = false, fieldSta
                         aria-describedby="error-cvc"
                         ref={narrowCvcRef}
                         error={errors.cvc}
+                        suffix={errors.cvc ? <WarningIcon /> : null}
                         {...commonCvcProps}
                     />
                 </div>
@@ -278,7 +292,7 @@ const CreditCardNewDesign = ({ card, errors, onChange, loading = false, fieldSta
             <div className="error-container mt-1 text-semibold text-sm flex gap-2">
                 {error && (
                     <div className="flex">
-                        <Icon name="exclamation-circle-filled" className="flex-item-noshrink mr-1" size={18} />
+                        <WarningIcon className="mr-1" />
                         {error}
                     </div>
                 )}
@@ -329,6 +343,7 @@ const CreditCardNewDesign = ({ card, errors, onChange, loading = false, fieldSta
                 disableChange={loading}
                 title={title}
                 error={errors.zip}
+                suffix={errors.zip ? <WarningIcon className="mr-2" /> : null}
             />
             <span className="sr-only" id="id_desc_postal">
                 {title}
@@ -336,7 +351,7 @@ const CreditCardNewDesign = ({ card, errors, onChange, loading = false, fieldSta
             <div className="error-container mt-1 mb-3 text-semibold text-sm flex">
                 {errors.zip && (
                     <>
-                        <Icon name="exclamation-circle-filled" className="flex-item-noshrink mr-1" size={18} />
+                        <WarningIcon className="mr-1" />
                         <span data-testid="error-ccnumber">{errors.zip}</span>
                     </>
                 )}
