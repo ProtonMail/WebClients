@@ -3,17 +3,19 @@ import { type FC, createContext, useMemo, useState } from 'react';
 import type { ItemType, ItemsSortOption, MaybeNull } from '@proton/pass/types';
 import noop from '@proton/utils/noop';
 
+import { useDebouncedValue } from '../../../shared/hooks';
 import { usePopupContext } from '../../hooks/usePopupContext';
 
 export type ItemsFilterOption = '*' | ItemType;
 
 export type ItemsFilteringContextType = {
     search: string;
+    debouncedSearch: string;
     sort: ItemsSortOption;
     filter: ItemsFilterOption;
     shareId: MaybeNull<string>;
     shareBeingDeleted: MaybeNull<string>;
-    setSearch: (query: string) => void;
+    setSearch: (value: string) => void;
     setSort: (value: ItemsSortOption) => void;
     setFilter: (value: ItemsFilterOption) => void;
     setShareId: (shareId: MaybeNull<string>) => void;
@@ -24,6 +26,7 @@ export const INITIAL_SORT: ItemsSortOption = 'recent';
 
 export const ItemsFilteringContext = createContext<ItemsFilteringContextType>({
     search: '',
+    debouncedSearch: '',
     sort: INITIAL_SORT,
     filter: '*',
     shareId: null,
@@ -35,15 +38,13 @@ export const ItemsFilteringContext = createContext<ItemsFilteringContextType>({
     setShareBeingDeleted: noop,
 });
 
-/**
- * Store all state related to filtering / sorting items in the UI.
- * To be used directly or in conjunction with high-level react hooks or low-level redux selectors.
- * This could be in a redux state slice instead, but for now using the redux store mainly for vault contents is preferred.
- */
+const SEARCH_DEBOUNCE_TIME = 150;
+
 export const ItemsFilteringContextProvider: FC = ({ children }) => {
     const popup = usePopupContext();
-
     const [search, setSearch] = useState<string>(popup.state.initialSearch);
+    const debouncedSearch = useDebouncedValue(search, SEARCH_DEBOUNCE_TIME);
+
     const [sort, setSort] = useState<ItemsSortOption>(INITIAL_SORT);
     const [filter, setFilter] = useState<ItemsFilterOption>('*');
     const [shareId, setShareId] = useState<MaybeNull<string>>(null);
@@ -52,6 +53,7 @@ export const ItemsFilteringContextProvider: FC = ({ children }) => {
     const context: ItemsFilteringContextType = useMemo(
         () => ({
             search,
+            debouncedSearch,
             sort,
             filter,
             shareId,
@@ -62,7 +64,7 @@ export const ItemsFilteringContextProvider: FC = ({ children }) => {
             setShareId,
             setShareBeingDeleted,
         }),
-        [search, sort, filter, shareId, shareBeingDeleted]
+        [search, debouncedSearch, sort, filter, shareId, shareBeingDeleted]
     );
 
     return <ItemsFilteringContext.Provider value={context}>{children}</ItemsFilteringContext.Provider>;
