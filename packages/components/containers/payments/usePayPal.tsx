@@ -39,9 +39,19 @@ interface Props {
     type: PAYPAL_PAYMENT_METHOD;
     onPay: (data: OnPayResult) => void;
     onValidate?: () => Promise<boolean>;
+    /**
+     * This lifecycle hook is called before the payment token is fetched.
+     * It can be convinient if you need to fullfill some codition before fetching the token.
+     * For example, if you want to perform authentication before fetching the token.
+     * Make sure to disable paypal token prefetching in other components.
+     *
+     * @returns {Promise<unknown> | unknown} If a promise is returned, the token fetching will be delayed
+     * until the promise is resolved.
+     */
+    onBeforeTokenFetch?: () => Promise<unknown> | unknown;
 }
 
-const usePayPal = ({ amount = 0, currency: Currency, type: Type, onPay, onValidate }: Props) => {
+const usePayPal = ({ amount = 0, currency: Currency, type: Type, onPay, onValidate, onBeforeTokenFetch }: Props) => {
     const api = useApi();
     const [model, setModel] = useState<Model>(DEFAULT_MODEL);
     const [loadingVerification, withLoadingVerification] = useLoading();
@@ -101,7 +111,14 @@ const usePayPal = ({ amount = 0, currency: Currency, type: Type, onPay, onValida
         loadingToken,
         loadingVerification,
         onToken: () => {
-            const tokenPromise = onToken();
+            let tokenPromise: Promise<Model>;
+            const beforeTokenFetchResult = onBeforeTokenFetch?.();
+            if (beforeTokenFetchResult instanceof Promise) {
+                tokenPromise = beforeTokenFetchResult.then(onToken);
+            } else {
+                tokenPromise = onToken();
+            }
+
             withLoadingToken(tokenPromise);
             return tokenPromise;
         },
