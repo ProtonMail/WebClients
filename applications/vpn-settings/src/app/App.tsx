@@ -12,7 +12,7 @@ import { getClientID } from '@proton/shared/lib/apps/helper';
 import authentication from '@proton/shared/lib/authentication/authentication';
 import { newVersionUpdater } from '@proton/shared/lib/busy';
 import sentry from '@proton/shared/lib/helpers/sentry';
-import { setLocales } from '@proton/shared/lib/i18n/locales';
+import { setTtagLocales } from '@proton/shared/lib/i18n/locales';
 import initLogicalProperties from '@proton/shared/lib/logical/logical';
 
 import PrivateApp from './PrivateApp';
@@ -22,7 +22,7 @@ import locales from './locales';
 
 import './app.scss';
 
-setLocales(locales);
+setTtagLocales(locales);
 newVersionUpdater(config);
 sentry({ config, uid: authentication.getUID(), sessionTracking: getSessionTrackingEnabled() });
 initLogicalProperties();

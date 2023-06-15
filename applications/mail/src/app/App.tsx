@@ -8,7 +8,7 @@ import authentication from '@proton/shared/lib/authentication/authentication';
 import { newVersionUpdater } from '@proton/shared/lib/busy';
 import { getProdId, setVcalProdId } from '@proton/shared/lib/calendar/vcalConfig';
 import sentry from '@proton/shared/lib/helpers/sentry';
-import { setLocales } from '@proton/shared/lib/i18n/locales';
+import { setTtagLocales } from '@proton/shared/lib/i18n/locales';
 
 import PrivateApp from './PrivateApp';
 import * as config from './config';
@@ -17,7 +17,7 @@ import locales from './locales';
 
 import './app.scss';
 
-setLocales(locales);
+setTtagLocales(locales);
 setupGuestCrossStorage();
 newVersionUpdater(config);
 sentry({ config, uid: authentication.getUID(), sessionTracking: getSessionTrackingEnabled() });
