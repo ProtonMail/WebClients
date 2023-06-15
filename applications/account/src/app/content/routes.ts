@@ -24,6 +24,7 @@ interface Arguments {
     isProtonSentinelEligible: boolean;
     isProtonSentinelFeatureEnabled: boolean;
     isAccessibilitySettingsEnabled: boolean;
+    isOrgTwoFactorEnabled: boolean;
 }
 
 export const getRoutes = ({
@@ -41,6 +42,7 @@ export const getRoutes = ({
     isProtonSentinelEligible,
     isProtonSentinelFeatureEnabled,
     isAccessibilitySettingsEnabled,
+    isOrgTwoFactorEnabled,
 }: Arguments) => {
     return {
         account: getAccountAppRoutes({
@@ -64,7 +66,13 @@ export const getRoutes = ({
         calendar: getCalendarAppRoutes(),
         drive: getDriveAppRoutes(),
         pass: getPassAppRoutes(),
-        organization: getOrganizationAppRoutes({ user, organization, subscription, isOrgSpamBlockListEnabled }),
+        organization: getOrganizationAppRoutes({
+            user,
+            organization,
+            subscription,
+            isOrgSpamBlockListEnabled,
+            isOrgTwoFactorEnabled,
+        }),
         vpn: getVpnAppRoutes(),
     };
 };

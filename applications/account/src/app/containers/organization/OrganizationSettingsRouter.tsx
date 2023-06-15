@@ -8,6 +8,9 @@ import {
     OrganizationPasswordSection,
     OrganizationSection,
     OrganizationSpamFiltersSection,
+    OrganizationTwoFAEnforcementSection,
+    OrganizationTwoFAHeader,
+    OrganizationTwoFARemindersSection,
     PrivateMainSettingsArea,
     UsersAndAddressesSection,
     useOrganization,
@@ -23,18 +26,20 @@ const OrganizationSettingsRouter = ({
     path,
     organizationAppRoutes,
     isOrgSpamBlockListEnabled,
+    isOrgTwoFactorEnabled,
 }: {
     app: APP_NAMES;
     redirect: ReactNode;
     path: string;
     organizationAppRoutes: ReturnType<typeof getOrganizationAppRoutes>;
     isOrgSpamBlockListEnabled: boolean;
+    isOrgTwoFactorEnabled: boolean;
 }) => {
     const onceRef = useRef(false);
     const [organization] = useOrganization();
 
     const {
-        routes: { setup, domains, orgKeys, users, filter },
+        routes: { setup, domains, orgKeys, users, filter, security },
     } = organizationAppRoutes;
 
     return (
@@ -87,6 +92,15 @@ const OrganizationSettingsRouter = ({
                 <Route path={getSectionPath(path, filter)}>
                     <PrivateMainSettingsArea config={filter}>
                         <OrganizationSpamFiltersSection />
+                    </PrivateMainSettingsArea>
+                </Route>
+            )}
+            {getIsSectionAvailable(security) && isOrgTwoFactorEnabled && (
+                <Route path={getSectionPath(path, security)}>
+                    <PrivateMainSettingsArea config={security}>
+                        <OrganizationTwoFAHeader organization={organization} />
+                        <OrganizationTwoFARemindersSection organization={organization} />
+                        <OrganizationTwoFAEnforcementSection organization={organization} />
                     </PrivateMainSettingsArea>
                 </Route>
             )}

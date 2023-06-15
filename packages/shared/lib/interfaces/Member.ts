@@ -30,4 +30,5 @@ export interface Member {
     Addresses?: PartialMemberAddress[];
     '2faStatus': number;
     State?: FAMILY_PLAN_INVITE_STATE; //This is only available for the family invitations
+    TwoFactorRequiredTime: number;
 }
