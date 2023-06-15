@@ -64,6 +64,9 @@
       "Back": [
         "Πίσω"
       ],
+      "Back to Homepage": [
+        "Επιστροφή στην αρχική σελίδα"
+      ],
       "Beta Access": [
         "Beta Πρόσβαση"
       ],
@@ -84,6 +87,9 @@
       ],
       "Cancel upload": [
         "Ακύρωση ανεβάσματος"
+      ],
+      "Change": [
+        "Αλλαγή"
       ],
       "Chat with us": [
         "Επικοινωνήστε μαζί μας"
@@ -198,6 +204,12 @@
       "Delete permanently": [
         "Οριστική διαγραφή"
       ],
+      "Delete this version": [
+        "Διαγραφή αυτής της έκδοσης"
+      ],
+      "Delete version": [
+        "Διαγραφή έκδοσης"
+      ],
       "Deselect all": [
         "Αποεπιλογή όλων"
       ],
@@ -288,6 +300,9 @@
       "Get verification code": [
         "Απόκτηση κωδικού επαλήθευσης"
       ],
+      "Go to Drive": [
+        "Μετάβαση στο Drive"
+      ],
       "Go to label": [
         "Μετάβαση στην ετικέτα"
       ],
@@ -302,6 +317,9 @@
       ],
       "Got it": [
         "Το κατάλαβα"
+      ],
+      "Grid layout": [
+        "Διάταξη Πλέγματος"
       ],
       "Hide advanced PGP settings": [
         "Απόκρυψη προηγμένων ρυθμίσεων PGP"
@@ -516,6 +534,9 @@
       "Save": [
         "Αποθήκευση"
       ],
+      "Save version as copy": [
+        "Αποθήκευση έκδοσης ως αντιγράφου"
+      ],
       "Search": [
         "Αναζήτηση"
       ],
@@ -527,6 +548,9 @@
       ],
       "See plan features": [
         "Προβολή δυνατοτήτων προγράμματος"
+      ],
+      "See version history": [
+        "Δείτε το ιστορικό εκδόσεων"
       ],
       "Select all": [
         "Επιλογή όλων"
@@ -617,6 +641,9 @@
       ],
       "Try another method": [
         "Δοκιμάστε μια άλλη μέθοδο"
+      ],
+      "Try for free": [
+        "Δοκιμάστε δωρεάν"
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Παρακαλώ προσπαθήστε να αποθηκεύσετε ξανά. Η αποθήκευση απέτυχε λόγω: ${ saveError }"
@@ -2531,6 +2558,11 @@
         "Το τρέχον σχέδιό σας δεν μπορεί να συμμετάσχει σε ένα Οραματικό ή οικογενειακό σχέδιο."
       ]
     },
+    "familyOffer_2023:Footer": {
+      "Discounts are based on the standard monthly pricing.": [
+        "Οι εκπτώσεις βασίζονται στην τυπική μηνιαία τιμολόγηση."
+      ]
+    },
     "familyOffer_2023:Get Proton Family": {
       "Get ${ planName }": [
         "Απόκτηση ${ planName }"
@@ -2929,6 +2961,9 @@
         "${ contactsCount } επαφή βρέθηκε",
         "${ contactsCount } επαφές βρέθηκαν"
       ],
+      "${ deviceName } (restored)": [
+        "${ deviceName } (επαναφέρθηκε)"
+      ],
       "${ doneCount } finished": [
         "${ doneCount } τελείωσε",
         "${ doneCount } τελείωσαν"
@@ -3062,6 +3097,9 @@
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "Θέλετε σίγουρα να εξαλείψετε οριστικά όλα τα διαγραμμένα στοιχεία;"
       ],
+      "Are you sure you want to permanently delete": [
+        "Θέλετε σίγουρα να διαγράψετε μόνιμα το"
+      ],
       "Are you sure you want to permanently delete \"${ itemName }\" from trash?": [
         "Είστε βέβαιοι ότι θέλετε να εξαλείψετε οριστικά το διαγραμμένο \"${ itemName }\";"
       ],
@@ -3071,6 +3109,9 @@
       "Attention required": [
         "Χρειάζεται προσοχή"
       ],
+      "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access or decrypt your files for you. To unlock your drive after a password reset, you must have one of the following:": [
+        "Επειδή το ${ DRIVE_APP_NAME } είναι κρυπτογραφημένο από άκρο σε άκρο, δεν μπορούμε να έχουμε πρόσβαση ή να αποκρυπτογραφήσουμε τα αρχεία σας για εσάς. Για να ξεκλειδώσετε τη μονάδα δίσκου μετά την επαναφορά κωδικού πρόσβασης, πρέπει να έχετε ένα από τα εξής:"
+      ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Πριν αιτηθείτε νέο κωδικό επαλήθευσης, ελέγξτε τον φάκελό σας Ενοχλητικά και ότι η ${ strong } είναι η σωστή διεύθυνση."
       ],
@@ -3079,6 +3120,15 @@
       ],
       "Canceled": [
         "Ακυρωμένες"
+      ],
+      "Cannot load link": [
+        "Αποτυχία φόρτωσης συνδέσμου"
+      ],
+      "Cannot load links": [
+        "Αποτυχία φόρτωσης συνδέσμων"
+      ],
+      "Cannot load shared link": [
+        "Αποτυχία φόρτωσης κοινόχρηστου σύνδεσμου"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Δεν μπορείτε να θυμηθείτε τον κωδικό σας? Μπορούμε να σας βοηθήσουμε να καθαρίσετε τα κρυπτογραφημένα δεδομένα όλων των επαφών που κρυπτογραφούνται με αυτό το κλειδί και στη διαδικασία να απορρίψετε την ειδοποίηση."
@@ -3156,6 +3206,12 @@
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "Υποστηρίζονται αρχεία CSV από Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora και κάποιες άλλες εφαρμογές, καθώς και μορφές vCard 3.1 και 4.0 (κωδικοποίηση UTF-8)."
       ],
+      "Current version": [
+        "Τρέχουσα έκδοση"
+      ],
+      "Decrypting files": [
+        "Αποκρυπτογράφηση αρχείων"
+      ],
       "Delete locked drive": [
         "Διαγραφή κλειδωμένης αρχειοθήκης",
         "Διαγραφή κλειδωμένων αρχειοθηκών"
@@ -3211,6 +3267,12 @@
       "Encrypted search is here": [
         "Η κρυπτογραφημένη αναζήτηση έφτασε"
       ],
+      "End-to-end encrypted": [
+        "Διατερματικά κρυπτογραφημένο"
+      ],
+      "Enter password": [
+        "Εισάγετε κωδικό πρόσβασης"
+      ],
       "Enter the code from your authenticator app": [
         "Πληκτρολογήστε τον κωδικό από την εφαρμογή ταυτοποίησης"
       ],
@@ -3239,6 +3301,12 @@
       "Failed": [
         "Απέτυχε"
       ],
+      "Failed to generate a secure link. The reason is: ${ error }": [
+        "Αποτυχία δημιουργίας ασφαλούς συνδέσμου. Η αιτία είναι: ${ error }"
+      ],
+      "Failed to generate a secure link. Try again later": [
+        "Αποτυχία παραγωγής ασφαλούς συνδέσμου. Παρακαλούμε δοκιμάστε ξανά αργότερα"
+      ],
       "Failed to open a secure link. The reason is: ${ error }": [
         "Αποτυχία ανοίγματος ασφαλούς συνδέσμου. Η αιτία είναι: ${ error }"
       ],
@@ -3250,6 +3318,9 @@
       ],
       "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
         "Το αρχείο στερείται υπογραφής. Δεν μπορέσαμε να επαληθεύσουμε ποιος ανέβασε το ${ fileName }."
+      ],
+      "File will not be updated": [
+        "Το αρχείο δεν θα ενημερωθεί"
       ],
       "Finalizing": [
         "Οριστικοποιείται"
@@ -3275,8 +3346,8 @@
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "Για καλύτερα αποτελέσματα, αποφύγετε ροή ή εντατικές σε μνήμη δραστηριότητες ή χωρίστε τη μεταφόρτωση σε μικρότερες παρτίδες."
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "Προωθήστε την εισερχόμενη αλληλογραφία από άλλο λογαριασμό στα ασφαλή εισερχόμενά σας ${ MAIL_APP_NAME }."
+      "Free forever": [
+        "Δωρεάν για πάντα"
       ],
       "Free up some space or add more storage space.": [
         "Ελευθερώστε χώρο ή προσθέστε περισσότερο χώρο αποθήκευσης."
@@ -3284,8 +3355,14 @@
       "Free up some space or contact your administrator.": [
         "Ελευθερώστε χώρο ή επικοινωνήστε με το διαχειριστή σας."
       ],
+      "from the version history?": [
+        "από το ιστορικό εκδόσεων;"
+      ],
       "Get to know ${ DRIVE_APP_NAME } and earn your 500 MB storage bonus! Take action today.": [
         "Γνωρίστε το ${ DRIVE_APP_NAME } και κερδίστε το 500 MB μπόνους αποθήκευσης σας! Αναλάβετε δράση σήμερα."
+      ],
+      "Go ahead, upload a file": [
+        "Προχωρήστε, ανεβάστε ένα αρχείο"
       ],
       "Go to \"My files\" and upload some files first.": [
         "Πηγαίνετε στο \"Τα αρχεία μου\" και ανεβάστε πρώτα μερικά αρχεία."
@@ -3305,6 +3382,9 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Αν δεν βρείτε το μήνυμα στα Εισερχόμενα, παρακαλούμε ελέγξτε τον φάκελο Ενοχλητικά."
       ],
+      "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process.": [
+        "Εάν έχετε ένα από αυτά, συνεχίστε στη ρύθμιση λογαριασμού ${ BRAND_NAME }\nγια να αρχίσετε τη διαδικασία ξεμπλοκαρίσματος."
+      ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Εισαγωγή ${ calendarCount } από ${ totalCalendarsCount } ημερολόγιο",
         "Εισαγωγή ${ calendarCount } από ${ totalCalendarsCount } ημερολόγια"
@@ -3320,9 +3400,6 @@
       ],
       "Import mailbox": [
         "Εισαγωγή γραμματοκιβωτίου"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "Εισαγάγετε τα μηνύματα ηλεκτρονικού ταχυδρομείου, τα ημερολόγια και τις επαφές σας από άλλη υπηρεσία στο ${ BRAND_NAME }."
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Γίνεται εισαγωγή δεδομένων από ${ fromEmail } προς ${ toEmail }."
@@ -3378,11 +3455,17 @@
       "Large imports can take several days.": [
         "Οι μεγάλες εισαγωγές μπορεί να πάρουν αρκετές ημέρες."
       ],
+      "Last week": [
+        "Προηγούμενη εβδομάδα"
+      ],
       "Learn more": [
         "Μάθετε περισσότερα"
       ],
       "Link copied to clipboard": [
         "Ο σύνδεσμος αντιγράφηκε στο πρόχειρο"
+      ],
+      "Link owner has the password": [
+        "Ο κάτοχος του συνδέσμου έχει τον κωδικό πρόσβασης"
       ],
       "Loading": [
         "Φόρτωση"
@@ -3419,6 +3502,9 @@
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Ονομάστε το νέο σας φάκελο και επιλέξτε τον γονικό φάκελο στον οποίο θέλετε να τον τοποθετήσετε. Εάν δεν επιλέξετε γονικό φάκελο, αυτός ο νέος φάκελος θα δημιουργηθεί ως φάκελος ανώτατου επιπέδου."
+      ],
+      "Need to share a file? Then get ${ DRIVE_APP_NAME },\nthe safest way to share, store, and sync your files.": [
+        "Θέλετε να μοιραστείτε ένα αρχείο; Τότε, πάρτε ${ DRIVE_APP_NAME },\nο ασφαλέστερος τρόπος κοινής χρήσης, αποθήκευσης και συγχρονισμού των αρχείων σας."
       ],
       "Network issue": [
         "Πρόβλημα δικτύου"
@@ -3461,6 +3547,9 @@
       ],
       "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
         "Σημείωση: Σε συσκευές όπου εγκαταστήσατε το ${ DRIVE_APP_NAME }, κάποια δεδομένα ίσως είναι ακόμα διαθέσιμα."
+      ],
+      "Nothing here yet": [
+        "Δεν υπάρχει τίποτα εδώ"
       ],
       "of": [
         "από"
@@ -3533,6 +3622,12 @@
       "Preview for this file type is not supported": [
         "Η προεπισκόπηση για αυτόν τον τύπο αρχείου δεν υποστηρίζεται\n*.*, add translation *.*"
       ],
+      "Previous versions are kept for ${ retentionLabel }": [
+        "Οι προηγούμενες εκδόσεις διατηρούνται για ${ retentionLabel }"
+      ],
+      "Previous versions are not saved": [
+        "Οι προηγούμενες εκδόσεις δεν αποθηκεύονται"
+      ],
       "Primary": [
         "Κύριο"
       ],
@@ -3562,6 +3657,9 @@
       ],
       "Restore is in progress. This can take a few seconds.": [
         "Η επαναφορά είναι σε εξέλιξη. Αυτό μπορεί να διαρκέσει μερικά δευτερόλεπτα."
+      ],
+      "Restored files ${ formattedDate }": [
+        "Επαναφορά αρχείων ${ formattedDate }"
       ],
       "Search cannot be enabled in this browser": [
         "Η αναζήτηση δεν γίνεται να ενεργοποιηθεί σε αυτόν τον περιηγητή"
@@ -3596,6 +3694,9 @@
       "Shareable link for ${ boldNameText }": [
         "Κοινοποιήσιμος σύνδεσμος για το ${ boldNameText }"
       ],
+      "Shared link not found": [
+        "Ο κοινόχρηστος σύνδεσμος δεν βρέθηκε"
+      ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Η υπογραφή δεν μπορεί να επικυρωθεί λόγω σφάλματος δικτύου, δοκιμάστε ξανά αργότερα."
       ],
@@ -3620,6 +3721,9 @@
       "support team": [
         "ομάδα υποστήριξης"
       ],
+      "Swiss encrypted file storage": [
+        "Ελβετική κρυπτογραφημένη αποθήκευση αρχείων"
+      ],
       "Temporarily unavailable. Please check back later.": [
         "Προσωρινά μη διαθέσιμο. Παρακαλούμε ελέγξτε ξανά αργότερα."
       ],
@@ -3628,6 +3732,9 @@
       ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "Πρέπει να αποκρυπτογραφήσουμε τοπικά τις επαφές σας προτού μπορέσετε να τις εξάγετε. Στο τέλος της διαδικασίας, θα δημιουργηθεί ένα αρχείο VCF και θα μπορείτε να το κατεβάσετε."
+      ],
+      "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
+        "Τα κρυπτογραφημένα δεδομένα είναι ελαφρώς μεγαλύτερα λόγω της επιβάρυνσης της κρυπτογράφησης και των υπογραφών, που διασφαλίζουν την ασφάλεια των δεδομένων σας."
       ],
       "The following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Τα ακόλουθα μπορεί να έχουν αλλοιωθεί: ${ items }. Ανοίξτε τα μόνο αν το εμπιστεύεστε."
@@ -3646,6 +3753,9 @@
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Αυτός ο περιηγητής δεν υποστηρίζει προεπισκόπηση αρχείων PDF. Παρακαλούμε κατεβάστε το αρχείο."
+      ],
+      "This file may have been deleted, moved or made unavailable. Try reaching out to the file owner.": [
+        "Αυτό το αρχείο ενδέχεται να έχει διαγραφεί, μετακινηθεί ή να μην είναι διαθέσιμο. Δοκιμάστε να επικοινωνήσετε με τον κάτοχο του αρχείου."
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Αυτός ο σύνδεσμος οδηγεί σε μια ιστοσελίδα που ενδέχεται να επιχειρήσει να υποκλέψει πληροφορίες σας, όπως κωδικούς πρόσβασης και στοιχεία πιστωτικών καρτών."
@@ -3672,6 +3782,18 @@
       "This will overwrite the existing folder": [
         "Αυτή η εγγραφή θα διαγράψει τον φάκελο που ήδη υπάρχει"
       ],
+      "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on the device won’t be affected.": [
+        "Αυτό θα διαγράψει από ${ DRIVE_APP_NAME } τη συγχρονισμένη συσκευή ${ deviceName }. Τοπικά αρχεία στη συσκευή δε θα επηρεαστούν."
+      ],
+      "This will replace the existing file with the folder": [
+        "Αυτό θα αντικαταστήσει το υπάρχον αρχείο με το φάκελο"
+      ],
+      "This will replace the existing folder with the file": [
+        "Αυτό θα αντικαταστήσει τον υπάρχοντα φάκελο με το αρχείο"
+      ],
+      "This will upload a new version of the file": [
+        "Αυτό θα ανεβάσει μια νέα έκδοση του αρχείου"
+      ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
         "Για την ενεργοποίηση αληθινά ιδιωτικής αναζήτησης, το ${ DRIVE_APP_NAME } χρειάζεται να δεικτοδοτήσει τα αρχεία σας τοπικά."
       ],
@@ -3692,6 +3814,9 @@
       ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Για να χρησιμοποιήσετε την Επαλήθευση διεύθυνσης, πρέπει να χαρακτηρίσετε Αξιόπιστα ένα ή περισσότερα διαθέσιμα δημόσια κλειδιά, συμπεριλαμβανομένου αυτού που θέλετε να χρησιμοποιήσετε για αποστολή. Αυτό αποτρέπει την απομίμηση των κρυπτογραφημένων κλειδιών."
+      ],
+      "Today": [
+        "Σήμερα"
       ],
       "Transfer canceled for file \"${ name }\"": [
         "Ακύρωση μεταφοράς για το αρχείο \"${ name }\""
@@ -3738,11 +3863,14 @@
       "Uploading hundreds of files at once may have a performance impact.": [
         "Το ανέβασμα εκατοντάδων αρχείων με τη μία ενδέχεται να μειώσει τις επιδόσεις."
       ],
-      "Use Drive for Desktop to sync folders on your computer with ${ DRIVE_APP_NAME }. They’ll show up here and be accessible from anywhere. ${ LearnMore }": [
-        "Χρησιμοποιήστε το Drive για Επιφάνεια Εργασίας για να συγχρονίσετε φακέλους στον υπολογιστή σας με το ${ DRIVE_APP_NAME }. Θα εμφανιστούν εδώ και θα είναι προσβάσιμα από οπουδήποτε. ${ LearnMore }"
+      "Use Drive for Desktop to sync folders on your computer with ${ DRIVE_APP_NAME }. They’ll show up here and be accessible from anywhere. ${ learnMore }": [
+        "Χρησιμοποιήστε το Drive για Επιφάνεια Εργασίας για να συγχρονίσετε φακέλους στον υπολογιστή σας με το ${ DRIVE_APP_NAME }. Θα εμφανιστούν εδώ και θα είναι προσβάσιμα από οπουδήποτε. ${ learnMore }"
       ],
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Χρησιμοποιήστε αυτή τη φόρμα για να μας ενημερώσετε για ακατάλληλες, παράνομες,\nή άλλως κακόβουλα κοινόχρηστα αρχεία. Πρόκειται να αναφέρετε:"
+      ],
+      "Version is deleted": [
+        "Έγινε διαγραφή της έκδοσης"
       ],
       "Version is restored": [
         "Έγινε επαναφορά της έκδοσης"
@@ -3777,6 +3905,9 @@
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
         "Θα γίνει επαναφορά στην έκδοση από ${ formattedRevisionDate }. Όλες οι άλλες εκδόσεις Θα εξακολουθούν να αποθηκεύονται."
       ],
+      "With ${ DRIVE_APP_NAME }, your data is protected with end-to-end encryption. Only you can decrypt it.": [
+        "Με το ${ DRIVE_APP_NAME }, τα δεδομένα σας προστατεύονται με κρυπτογράφηση από άκρο σε άκρο. Μόνο εσείς μπορείτε να το αποκρυπτογραφήσετε."
+      ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Θέλετε να λάβετε έναν νέο κωδικό επαλήθευσης ή να χρησιμοποιήσετε μια εναλλακτική μέθοδο επαλήθευσης;"
       ],
@@ -3788,6 +3919,9 @@
       ],
       "Yes": [
         "Ναι"
+      ],
+      "Yesterday": [
+        "Χθες"
       ],
       "You are about to open another browser tab and visit:": [
         "Πρόκειται να ανοίξετε μια άλλη καρτέλα προγράμματος περιήγησης και να επισκεφτείτε:"
@@ -3867,6 +4001,9 @@
       "Your phone number will only be used for this one-time verification.": [
         "Ο αριθμός τηλεφώνου σας θα χρησιμοποιηθεί μόνο για αυτή τη εφάπαξ επαλήθευση."
       ],
+      "Your plan is limited to 10 versions for up to 7 days": [
+        "Το πρόγραμμά σας περιορίζεται σε 10 εκδόσεις για έως και 7 ημέρες"
+      ],
       "Your previous password": [
         "Ο προηγούμενος κωδικός πρόσβασής σας"
       ],
@@ -3891,6 +4028,9 @@
       ],
       "file data order": [
         "σειρά δεδομένων αρχείου"
+      ],
+      "hash key": [
+        "κλειδί hash"
       ],
       "keys": [
         "κλειδιά"
@@ -3928,6 +4068,14 @@
       ],
       "${ BRAND_NAME } username": [
         "όνομα χρήστη ${ BRAND_NAME }"
+      ],
+      "${ nbDay } day": [
+        "${ nbDay } ημέρα",
+        "${ nbDay } ημέρες"
+      ],
+      "${ nbYear } year": [
+        "${ nbYear } έτος",
+        "${ nbYear } έτη"
       ],
       "(Expired)": [
         "(Ληγμένο)"
@@ -4053,6 +4201,12 @@
       "Download anyway": [
         "Λήψη οπωσδήποτε"
       ],
+      "Downloading ${ percentageValue }%": [
+        "Λήψη ${ percentageValue }%"
+      ],
+      "Duplicate found": [
+        "Βρέθηκε διπλότυπο"
+      ],
       "Email": [
         "Διεύθυνση ηλεκτρονικού ταχυδρομείου"
       ],
@@ -4152,6 +4306,15 @@
       "Import to:": [
         "Εισαγωγή σε:"
       ],
+      "Keep both": [
+        "Κρατήστε και τα δύο"
+      ],
+      "Keep both files": [
+        "Κρατήστε και τα δύο αρχεία"
+      ],
+      "Keep both folders": [
+        "Κρατήστε τους δύο φακέλους"
+      ],
       "Label messages as": [
         "Επισήμανση μηνυμάτων ως"
       ],
@@ -4248,6 +4411,15 @@
       "Region": [
         "Περιοχή"
       ],
+      "Replace existing file": [
+        "Αντικατάσταση υπάρχοντος αρχείου"
+      ],
+      "Replace existing folder": [
+        "Αντικατάσταση υπάρχοντος φακέλου"
+      ],
+      "Report": [
+        "Αναφορά"
+      ],
       "Reveal password": [
         "Εμφάνιση κωδικού"
       ],
@@ -4259,6 +4431,9 @@
       ],
       "Set recovery method": [
         "Ορισμός μεθόδου ανάκτησης"
+      ],
+      "Show indexing progress of Encrypted Search": [
+        "Εμφάνιση προόδου ευρετηρίου της Κρυπτογραφημένης Αναζήτησης"
       ],
       "Sign emails": [
         "Υπογραφεί ηλεκτρονικών ταχυδρομείων"
@@ -4331,6 +4506,9 @@
       ],
       "Wonderful": [
         "Θαυμάσια"
+      ],
+      "Yes, I want to permanently delete my old files": [
+        "Ναι, επιθυμώ την οριστική διαγραφή των παλιών αρχείων μου"
       ],
       "Your password (admin)": [
         "Ο κωδικός σας (διαχειριστής)"
@@ -4645,6 +4823,12 @@
       "All items will soon be permanently deleted from trash": [
         "Όλα τα διαγραμμένα στοιχεία σύντομα θα εξαλειφθούν οριστικά"
       ],
+      "Cannot load link": [
+        "Αποτυχία φόρτωσης συνδέσμου"
+      ],
+      "Cannot load next page": [
+        "Η επόμενη σελίδα απέτυχε να φορτώσει"
+      ],
       "Contact group created": [
         "Η ομάδα επαφών δημιουργήθηκε"
       ],
@@ -4787,8 +4971,8 @@
       "Set up your organization": [
         "Ρυθμίστε τον οργανισμό σας"
       ],
-      "You can change this anytime in your settings.": [
-        "Μπορείτε να το αλλάξετε αυτό οποιαδήποτε στιγμή στις ρυθμίσεις σας."
+      "Set up your organization testing": [
+        "Ρύθμιση των δοκιμών του οργανισμού σας"
       ]
     },
     "Onboarding Title": {
@@ -5327,6 +5511,10 @@
         "${ numberOfFailedTransfer.total } αποτυχημένη μεταφορά",
         "${ numberOfFailedTransfer.total } αποτυχημένες μεταφορές"
       ],
+      "${ numberOfFailedTransfer.total } failed upload": [
+        "${ numberOfFailedTransfer.total } αποτυχημένη μεταφόρτωση",
+        "${ numberOfFailedTransfer.total } αποτυχημένες μεταφορτώσεις"
+      ],
       "Account suspended": [
         "Ο λογαριασμός έχει ανασταλεί"
       ],
@@ -5363,6 +5551,9 @@
       ],
       "Cannot add more addresses": [
         "Δεν είναι δυνατή η προσθήκη περισσότερων διευθύνσεων"
+      ],
+      "Cannot load link": [
+        "Αποτυχία φόρτωσης συνδέσμου"
       ],
       "Change layout": [
         "Αλλαγή διάταξης"
@@ -5510,6 +5701,9 @@
       ],
       "Groups": [
         "Ομάδες"
+      ],
+      "Hm, we couldn't find that one": [
+        "Χμ, δεν μπορέσαμε να το βρούμε αυτό"
       ],
       "Human verification": [
         "Ανθρώπινη Επαλήθευση"
@@ -5742,6 +5936,12 @@
       ],
       "Uploading a large file or folder": [
         "Αποστολή μεγάλου αρχείου ή φακέλου"
+      ],
+      "Version details": [
+        "Λεπτομέρειες έκδοσης"
+      ],
+      "Version history": [
+        "Ιστορικό εκδόσεων"
       ],
       "View contacts": [
         "Προβολή επαφών"
