@@ -103,6 +103,7 @@ const MainContainer = () => {
         FeatureCode.OrgSpamBlockList,
         FeatureCode.ProtonSentinel,
         FeatureCode.AccessibilitySettings,
+        FeatureCode.OrgTwoFactor,
     ]);
 
     const referralProgramFeature = getFeature(FeatureCode.ReferralProgram);
@@ -115,6 +116,7 @@ const MainContainer = () => {
     const isOrgSpamBlockListEnabled = getFeature(FeatureCode.OrgSpamBlockList).feature?.Value === true;
     const isProtonSentinelFeatureEnabled = getFeature(FeatureCode.ProtonSentinel).feature?.Value === true;
     const isAccessibilitySettingsEnabled = getFeature(FeatureCode.AccessibilitySettings).feature?.Value === true;
+    const isOrgTwoFactorEnabled = getFeature(FeatureCode.OrgTwoFactor).feature?.Value === true;
 
     const [isDataRecoveryAvailable, loadingDataRecovery] = useIsDataRecoveryAvailable();
     const loadingFeatures = featuresFlags.some(({ loading }) => loading) || loadingDataRecovery;
@@ -135,6 +137,7 @@ const MainContainer = () => {
         isProtonSentinelEligible: !!userSettings.HighSecurity.Eligible,
         isProtonSentinelFeatureEnabled,
         isAccessibilitySettingsEnabled,
+        isOrgTwoFactorEnabled,
     });
 
     useEffect(() => {
@@ -244,6 +247,7 @@ const MainContainer = () => {
                         organizationAppRoutes={routes.organization}
                         redirect={redirect}
                         isOrgSpamBlockListEnabled={isOrgSpamBlockListEnabled}
+                        isOrgTwoFactorEnabled={isOrgTwoFactorEnabled}
                     />
                 </Route>
                 <Route path={`/${mailSlug}`}>
