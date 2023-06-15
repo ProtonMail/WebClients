@@ -24,8 +24,8 @@ export interface PayPalHook {
     isReady: boolean;
     loadingToken: boolean;
     loadingVerification: boolean;
-    onToken: () => Promise<void>;
-    onVerification: () => Promise<void>;
+    onToken: () => Promise<Model>;
+    onVerification: (model?: Model) => Promise<void>;
     clear: () => void;
 }
 
@@ -39,9 +39,19 @@ interface Props {
     type: PAYPAL_PAYMENT_METHOD;
     onPay: (data: OnPayResult) => void;
     onValidate?: () => Promise<boolean>;
+    /**
+     * This lifecycle hook is called before the payment token is fetched.
+     * It can be convinient if you need to fullfill some codition before fetching the token.
+     * For example, if you want to perform authentication before fetching the token.
+     * Make sure to disable paypal token prefetching in other components.
+     *
+     * @returns {Promise<unknown> | unknown} If a promise is returned, the token fetching will be delayed
+     * until the promise is resolved.
+     */
+    onBeforeTokenFetch?: () => Promise<unknown> | unknown;
 }
 
-const usePayPal = ({ amount = 0, currency: Currency, type: Type, onPay, onValidate }: Props) => {
+const usePayPal = ({ amount = 0, currency: Currency, type: Type, onPay, onValidate, onBeforeTokenFetch }: Props) => {
     const api = useApi();
     const [model, setModel] = useState<Model>(DEFAULT_MODEL);
     const [loadingVerification, withLoadingVerification] = useLoading();
@@ -59,14 +69,14 @@ const usePayPal = ({ amount = 0, currency: Currency, type: Type, onPay, onValida
                 })
             );
             setModel(result);
+            return result;
         } catch (error: any) {
             clear();
             throw error;
         }
     };
 
-    const onVerification = async () => {
-        const { Token, ApprovalURL, ReturnHost } = model;
+    const onVerification = async ({ Token, ApprovalURL, ReturnHost }: Model = model) => {
         const tokenPaymentMethod = await new Promise<TokenPaymentMethod>((resolve, reject) => {
             const onProcess = () => {
                 const abort = new AbortController();
@@ -100,14 +110,23 @@ const usePayPal = ({ amount = 0, currency: Currency, type: Type, onPay, onValida
         isReady: !!model.Token,
         loadingToken,
         loadingVerification,
-        onToken: async () => {
-            return withLoadingToken(onToken());
+        onToken: () => {
+            let tokenPromise: Promise<Model>;
+            const beforeTokenFetchResult = onBeforeTokenFetch?.();
+            if (beforeTokenFetchResult instanceof Promise) {
+                tokenPromise = beforeTokenFetchResult.then(onToken);
+            } else {
+                tokenPromise = onToken();
+            }
+
+            withLoadingToken(tokenPromise);
+            return tokenPromise;
         },
-        onVerification: async () => {
+        onVerification: async (model?: Model) => {
             if (!((await onValidate?.()) ?? true)) {
                 return;
             }
-            return withLoadingVerification(onVerification());
+            return withLoadingVerification(onVerification(model));
         },
         clear,
     };

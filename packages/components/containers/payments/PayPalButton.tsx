@@ -14,28 +14,50 @@ export interface PayPalButtonProps extends ButtonProps {
     amount: number;
     paypal: PayPalHook;
     flow?: PaymentMethodFlows;
+    prefetchToken?: boolean;
 }
 
-const PayPalButton = ({ amount, flow, children, paypal, loading, disabled, ...rest }: PayPalButtonProps) => {
-    const [retry, setRetry] = useState(false);
-    const { createNotification } = useNotifications();
-
+export function canUsePayPal({ amount, flow }: { amount: number; flow?: PaymentMethodFlows }): boolean {
     if (amount < MIN_PAYPAL_AMOUNT && flow !== 'invoice') {
-        return null;
+        return false;
     }
 
     if (amount > MAX_PAYPAL_AMOUNT) {
-        return null;
+        return false;
     }
 
     if (doNotWindowOpen()) {
+        return false;
+    }
+
+    return true;
+}
+
+const PayPalButton = ({
+    amount,
+    flow,
+    children,
+    paypal,
+    loading,
+    disabled,
+    prefetchToken = true,
+    ...rest
+}: PayPalButtonProps) => {
+    const [retry, setRetry] = useState(false);
+    const { createNotification } = useNotifications();
+
+    if (!canUsePayPal({ amount, flow })) {
         return null;
     }
 
     if (retry) {
-        const handleRetry = () => {
-            paypal.onToken();
-            setRetry(false);
+        const handleRetry = async () => {
+            let model = await paypal.onToken();
+            if (prefetchToken) {
+                setRetry(false);
+            } else {
+                await paypal.onVerification(model);
+            }
         };
         return (
             <Button onClick={handleRetry} disabled={disabled} loading={loading} {...rest}>{c('Action')
@@ -49,7 +71,11 @@ const PayPalButton = ({ amount, flow, children, paypal, loading, disabled, ...re
 
     const handleClick = async () => {
         try {
-            await paypal.onVerification();
+            let model: Awaited<ReturnType<PayPalHook['onToken']>> | undefined;
+            if (!prefetchToken) {
+                model = await paypal.onToken();
+            }
+            await paypal.onVerification(model);
         } catch (error: any) {
             // if not coming from API error
             if (error && error.message && !error.config) {
@@ -61,7 +87,7 @@ const PayPalButton = ({ amount, flow, children, paypal, loading, disabled, ...re
 
     return (
         <Button
-            disabled={!paypal.isReady || disabled}
+            disabled={(!paypal.isReady && prefetchToken) || disabled}
             onClick={handleClick}
             loading={paypal.loadingToken || loading}
             {...rest}
