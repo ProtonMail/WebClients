@@ -82,5 +82,12 @@ export const useLoginItemAliasModal = <T extends LoginItemFormValues>(form: Form
         }
     }, [relatedAlias]);
 
-    return { aliasModalOpen, relatedAlias, canCreateAlias, willCreateAlias, usernameIsAlias, setAliasModalOpen };
+    return {
+        setOpen: setAliasModalOpen,
+        open: aliasModalOpen,
+        relatedAlias,
+        canCreate: canCreateAlias,
+        willCreate: willCreateAlias,
+        usernameIsAlias,
+    };
 };

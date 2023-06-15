@@ -7,7 +7,7 @@ import { ALIAS_OPTIONS_VALIDITY_WINDOW } from '@proton/pass/store/sagas/alias-op
 import type { AliasMailbox } from '@proton/pass/types/data/alias';
 import { getEpoch } from '@proton/pass/utils/time';
 
-type SanitizedAliasOptions = {
+export type SanitizedAliasOptions = {
     suffixes: { value: string; signature: string }[];
     mailboxes: AliasMailbox[];
 };
