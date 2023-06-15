@@ -24,7 +24,7 @@ import {
     ImportedCalendar,
     OAuthProps,
 } from '@proton/activation/src/interface';
-import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { getApiError, getIsTimeoutError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { MAX_CHARS_API } from '@proton/shared/lib/calendar/constants';
 import { Address, UserModel } from '@proton/shared/lib/interfaces';
 import truncate from '@proton/utils/truncate';
@@ -71,7 +71,6 @@ export const createImporterThunk = createAsyncThunk<ImporterData, Props, EasySwi
         const products = state.oauthDraft.mailImport?.products!;
         const provider = state.oauthDraft.provider;
 
-        const errors: any[] = [];
         const { Code, Provider, RedirectUri } = oAuthProps;
         const { Token }: { Token: ImportToken } = await thunkAPI.extra.api(
             createToken({
@@ -119,7 +118,6 @@ export const createImporterThunk = createAsyncThunk<ImporterData, Props, EasySwi
                     } catch (e) {
                         const { code, status } = getApiError(e);
                         if (status === 422 && code === IMPORT_ERROR.ACCOUNT_DOES_NOT_EXIST) {
-                            errors.push([ImportType.MAIL, IMPORT_ERROR.ACCOUNT_DOES_NOT_EXIST]);
                             return {
                                 importType: product,
                                 error: c('Error').t`No emails found to import - the account does not have an inbox`,
@@ -143,7 +141,6 @@ export const createImporterThunk = createAsyncThunk<ImporterData, Props, EasySwi
                     } catch (e) {
                         const { code, status } = getApiError(e);
                         if (status === 422 && code === IMPORT_ERROR.ACCOUNT_DOES_NOT_EXIST) {
-                            errors.push([ImportType.CALENDAR, IMPORT_ERROR.ACCOUNT_DOES_NOT_EXIST]);
                             return {
                                 importType: product,
                                 error: c('Error').t`No calendars found to import`,
@@ -166,8 +163,14 @@ export const createImporterThunk = createAsyncThunk<ImporterData, Props, EasySwi
                         };
                     } catch (e) {
                         const { code, status } = getApiError(e);
-                        if (status === 422 && code === IMPORT_ERROR.ACCOUNT_DOES_NOT_EXIST) {
-                            errors.push([ImportType.CONTACTS, IMPORT_ERROR.ACCOUNT_DOES_NOT_EXIST]);
+                        const isTimeout = getIsTimeoutError(e);
+
+                        //Fetching contacts can take a long time and can timeout
+                        if (isTimeout) {
+                            return {
+                                importType: product,
+                            };
+                        } else if (status === 422 && code === IMPORT_ERROR.ACCOUNT_DOES_NOT_EXIST) {
                             return {
                                 importType: product,
                                 error: c('Error').t`No contacts found to import`,
