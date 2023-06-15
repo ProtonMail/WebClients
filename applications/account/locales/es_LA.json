@@ -212,6 +212,9 @@
       "Continue": [
         "Continuar"
       ],
+      "Continue anyway": [
+        "Continuar de todas formas"
+      ],
       "Continue import": [
         "Continuar importación"
       ],
@@ -486,7 +489,7 @@
         "Importar correos"
       ],
       "Import from ICS": [
-        "Importar desde ICS"
+        "Importar desde un archivo ICS"
       ],
       "Import key": [
         "Importar clave"
@@ -4067,7 +4070,7 @@
         "Incluye 2700 servidores en más de 65 países, conecta hasta 10 dispositivos, acceda a servicios de transmisión en todo el mundo, malware y bloqueador de anuncios, y más."
       ],
       "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
-        "Incluye compatibilidad con 3 dominios de correo electrónico personalizado, 90 direcciones de correo electrónico, alias ilimitados de \"Hide My Email\", posibilidad de compartir calendario, etc."
+        "Incluye compatibilidad con 3 dominios de correo electrónico personalizado, 90 direcciones de correo electrónico, alias ilimitados de Hide-my-email, posibilidad de compartir calendario, etc."
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Proteja sus archivos con almacenamiento en la nube cifrado. Incluye sincronización automática, uso compartido de archivos cifrados y más."
@@ -4302,9 +4305,34 @@
         "Por defecto"
       ]
     },
+    "Font face option": {
+      "System default": [
+        "Del sistema"
+      ],
+      "Theme default": [
+        "Tema por defecto"
+      ]
+    },
     "Font Size Default": {
       "Default": [
         "Por defecto"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Grande"
+      ],
+      "Medium (recommended)": [
+        "Mediana (recomendado)"
+      ],
+      "Small": [
+        "Pequeña"
+      ],
+      "Very large": [
+        "Muy grande"
+      ],
+      "Very small": [
+        "Muy pequeña"
       ]
     },
     "Frequency of news": {
@@ -5287,9 +5315,6 @@
       "Check the status of imports and forwarding.": [
         "Verificar el estado de las importaciones y reenvío."
       ],
-      "Choose the look and feel of the application.": [
-        "Elija el aspecto de la aplicación."
-      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Haga clic en \"Solicitar código nuevo\" para que se envíe un código de verificación nuevo a ${ strong }. Si este número telefónico es incorrecto, haga clic en \"Editar\" para corregirlo."
       ],
@@ -5359,6 +5384,9 @@
       ],
       "Custom yearly": [
         "Personalización anual"
+      ],
+      "Customize the look and feel of ${ BRAND_NAME } applications.": [
+        "Personalice el aspecto y sensación de las aplicaciones de ${ BRAND_NAME }"
       ],
       "Daily": [
         "Diario"
@@ -6771,7 +6799,7 @@
         "Sus mensajes, calendarios o contactos existentes serán bloqueados. Para recuperar estos datos, necesitará su frase de recuperación o su ${ oldPassword }."
       ],
       "Your files will be encrypted and then saved": [
-        "Sus archivos serán cifrados y de ahí guardados"
+        "Sus archivos serán cifrados y luego guardados"
       ],
       "Your import from ${ accounts } is temporarily delayed.": [
         "Su importación desde ${ accounts } está retrasada temporalmente.",
@@ -7375,6 +7403,9 @@
       "Card holder": [
         "Titular de la tarjeta"
       ],
+      "Card information": [
+        "Información sobre la tarjeta"
+      ],
       "Card number": [
         "Número de tarjeta"
       ],
@@ -7584,6 +7615,9 @@
       ],
       "Event notifications": [
         "Notificaciones de eventos"
+      ],
+      "Expiration (${ patternExpiration })": [
+        "Expiración (${ patternExpiration })"
       ],
       "Expiration date": [
         "Fecha de expiración"
@@ -7938,6 +7972,9 @@
       ],
       "Subscription options": [
         "Opciones de suscripción"
+      ],
+      "Synchronize with system": [
+        "Sincronizar con el sistema"
       ],
       "System information": [
         "Información del sistema"
@@ -8739,7 +8776,7 @@
         "${ n } carpetas y etiquetas"
       ],
       "${ n } Hide-my-email alias": [
-        "${ n } alias de \"Hide My Email\"",
+        "${ n } alias de Hide My Email",
         "${ n } alias de \"Hide My Email\""
       ],
       "${ n } label": [
@@ -8868,7 +8905,7 @@
         "Acuerdo para el procesamiento de datos conforme al RGPD"
       ],
       "Hide-my-email aliases": [
-        "Alias de \"Hide My Email\""
+        "Alias de Hide-my-email"
       ],
       "High-speed streaming": [
         "Transmisión de gran velocidad"
@@ -10516,13 +10553,13 @@
         "Acceda desde cualquier lugar al contenido de servicios de streaming, como Netflix, Disney+ y Prime Video."
       ],
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
-        "Todos nuestros servicios premium al máximo: 100 direcciones de correo electrónico, compatibilidad con 10 dominios personalizados, alias ilimitados de \"Hide My Email\", posibilidad de compartir calendarios y archivos cifrados, almacenamiento cifrado en la nube, etc."
+        "Todos nuestros servicios premium al máximo: 100 direcciones de correo electrónico, compatibilidad con 10 dominios personalizados, alias ilimitados de Hide-my-email, posibilidad de compartir calendarios y archivos cifrados, almacenamiento cifrado en la nube, etc."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Incluye compatibilidad con 1 dominio de correo electrónico personalizado, 10 direcciones de correo electrónico, 10 alias de \"Hide My Email\", posibilidad de compartir calendario, etc."
+        "Incluye compatibilidad con 1 dominio de correo electrónico personalizado, 10 direcciones de correo electrónico, 10 alias de Hide-my-email, posibilidad de compartir calendario, etc."
       ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Incluye compatibilidad con 3 dominios de correo electrónico personalizado, 15 direcciones de correo electrónico, alias ilimitados de \"Hide My Email\", posibilidad de compartir calendario, etc."
+        "Incluye compatibilidad con 3 dominios de correo electrónico personalizado, 15 direcciones de correo electrónico, alias ilimitados de Hide-my-email, posibilidad de compartir calendario, etc."
       ],
       "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
         "Es perfecto para familias o equipos pequeños, ya que cada uno puede tener su propia bandeja de entrada y alias. Requiere un dominio personalizado."
@@ -11105,6 +11142,9 @@
       "${ MAIL_APP_NAME } Keyboard Shortcuts": [
         "Atajos de teclado de ${ MAIL_APP_NAME }"
       ],
+      "(active)": [
+        "(activo)"
+      ],
       "1. Give a name to the config to be generated": [
         "1. Dar un nombre a la configuración que se va a generar"
       ],
@@ -11125,6 +11165,9 @@
       ],
       "4. Select a server to connect to": [
         "4. Seleccionar un servidor al que conectarse"
+      ],
+      "Accessibility": [
+        "Accesibilidad"
       ],
       "Account and password": [
         "Cuenta y contraseña"
@@ -11366,6 +11409,9 @@
       ],
       "Date": [
         "Fecha"
+      ],
+      "Day theme": [
+        "Tema de día"
       ],
       "Decrypt key": [
         "Descifrar clave"
@@ -11633,6 +11679,9 @@
       "Next": [
         "Siguiente"
       ],
+      "Night theme": [
+        "Tema de noche"
+      ],
       "No recovery method": [
         "Ningún método de recuperación"
       ],
@@ -11779,9 +11828,6 @@
       ],
       "Select when you want this notification to be sent": [
         "Seleccione cuándo desea que se envíe esta notificación"
-      ],
-      "Sender image": [
-        "Imagen del remitente"
       ],
       "Session management": [
         "Gestión de sesiones"
@@ -12068,6 +12114,9 @@
       "Account is disconnected": [
         "La cuenta está desconectada"
       ],
+      "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
+        "Cambie automáticamente entre sus temas preferidos para el día y la noche en sincronía con los modos de día y noche de su sistema"
+      ],
       "Customize import to reduce the number of folders": [
         "Personalizar importación para reducir el número de carpetas"
       ],
@@ -12130,6 +12179,12 @@
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "El nuevo ciclo de suscripción comienza el ${ formattedTime }"
+      ],
+      "The selected theme will be active when your system is set to \"dark mode\"": [
+        "El tema seleccionado estará activo cuando su sistema esté en modo de noche"
+      ],
+      "The selected theme will be active when your system is set to \"light mode\"": [
+        "El tema seleccionado estará activo cuando su sistema esté en \"modo claro\""
       ],
       "This address has been disabled": [
         "Esta dirección fue deshabilitada"
@@ -12226,7 +12281,7 @@
     },
     "Upgrade": {
       "Upgrade to ${ passPlusPlanName } to get unlimited hide-my-email aliases": [
-        "Actualice a ${ passPlusPlanName } para obtener alias ilimitados de \"Hide My Email\"."
+        "Actualice a ${ passPlusPlanName } para obtener alias ilimitados de Hide My Email."
       ],
       "Upgrade to ${ planName } to connect up to ${ n } device to the VPN at once": [
         "Actualice a ${ planName } para conectar hasta ${ n } dispositivo al mismo tiempo",

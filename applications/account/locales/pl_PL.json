@@ -74,6 +74,9 @@
       "Add address": [
         "Dodaj adres"
       ],
+      "Add address or domain": [
+        "Dodaj adres lub domenę"
+      ],
       "Add calendar from URL": [
         "Dodaj kalendarz z adresu URL"
       ],
@@ -2773,8 +2776,20 @@
       "${ name } deletion failed": [
         "Usunięcie domeny ${ name } nie powiodło się"
       ],
+      "${ name } failed to move to allow list": [
+        "Przenoszenie domeny ${ name } do listy dozwolonych nie powiodło się"
+      ],
+      "${ name } failed to move to block list": [
+        "Przenoszenie domeny ${ name } do listy odrzuconych nie powiodło się"
+      ],
       "${ name } failed to move to spam list": [
         "Przenoszenie domeny ${ name } do listy spamu nie powiodło się"
+      ],
+      "${ name } moved to allow list": [
+        "Domena ${ name } została przeniesiona do listy dozwolonych"
+      ],
+      "${ name } moved to block list": [
+        "Domena ${ name } została przeniesiona do listy odrzuconych"
       ],
       "${ name } moved to spam list": [
         "Domena ${ name } została przeniesiona do listy spamu"
@@ -2878,8 +2893,20 @@
       "${ name } deletion failed": [
         "Usunięcie adresu ${ name } nie powiodło się"
       ],
+      "${ name } failed to move to allow list": [
+        "Przenoszenie adresu ${ name } do listy dozwolonych nie powiodło się"
+      ],
+      "${ name } failed to move to block list": [
+        "Przenoszenie adresu ${ name } do listy odrzuconych nie powiodło się"
+      ],
       "${ name } failed to move to spam list": [
         "Przenoszenie adresu ${ name } do listy spamu nie powiodło się"
+      ],
+      "${ name } moved to allow list": [
+        "Adres ${ name } został przeniesiony do listy dozwolonych"
+      ],
+      "${ name } moved to block list": [
+        "Adres ${ name } został przeniesiony do listy odrzuconych"
       ],
       "${ name } moved to spam list": [
         "Adres ${ name } został przeniesiony do listy spamu"
@@ -4293,6 +4320,9 @@
       ],
       "Search list": [
         "Przeszukaj"
+      ],
+      "Spam:": [
+        "Spam:"
       ]
     },
     "Font Face Default": {
@@ -5343,9 +5373,6 @@
       "Check the status of imports and forwarding.": [
         "Sprawdź status importów i przekierowania."
       ],
-      "Choose the look and feel of the application.": [
-        "Wybierz wygląd aplikacji."
-      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Kliknij przycisk \"Poproś o nowy kod\", aby otrzymać nowy kod weryfikacyjny na numer telefonu ${ strong }. Jeśli numer jest nieprawidłowy, kliknij przycisk \"Edytuj\", aby go poprawić."
       ],
@@ -5474,6 +5501,12 @@
       ],
       "Download your PGP keys for use with other PGP-compatible services.": [
         "Pobierz swoje klucze PGP, aby korzystać z nich w innych aplikacjach."
+      ],
+      "Drop file here to upload": [
+        "Upuść, aby przesłać"
+      ],
+      "Drop to import": [
+        "Upuść, aby zaimportować"
       ],
       "Each code can only be used once": [
         "Każdy kod może zostać użyty tylko jeden raz"
@@ -6852,6 +6885,9 @@
       "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your recovery phrase or your ${ oldPassword }.": [
         "Obecne wiadomości, kalendarze i kontakty zostaną zablokowane. Aby odzyskać te dane, będziesz potrzebować hasła odzyskiwania lub ${ oldPassword }."
       ],
+      "Your files will be encrypted and then saved": [
+        "Twoje pliki przed zapisaniem zostaną zaszyfrowane"
+      ],
       "Your import from ${ accounts } is temporarily delayed.": [
         "Proces importowania z konta ${ accounts } jest tymczasowo opóźniony.",
         "Proces importowania z kont ${ accounts } jest tymczasowo opóźniony.",
@@ -7168,6 +7204,9 @@
       "New message": [
         "Nowa wiadomość"
       ],
+      "Open command panel": [
+        "Otwórz panel poleceń"
+      ],
       "Open next message": [
         "Otwórz następną wiadomość"
       ],
@@ -7454,6 +7493,9 @@
       ],
       "Card holder": [
         "Właściciel karty"
+      ],
+      "Card information": [
+        "Informacje o karcie"
       ],
       "Card number": [
         "Numer karty"
@@ -8853,10 +8895,10 @@
         "${ n } folderów i etykiet"
       ],
       "${ n } Hide-my-email alias": [
-        "${ n } alias Hide My Email",
-        "${ n } aliasy Hide My Email",
-        "${ n } aliasów Hide My Email",
-        "${ n } aliasów Hide My Email"
+        "${ n } alias Hide-my-email",
+        "${ n } aliasy Hide-my-email",
+        "${ n } aliasów Hide-my-email",
+        "${ n } aliasów Hide-my-email"
       ],
       "${ n } label": [
         "${ n } etykieta",
@@ -8994,7 +9036,7 @@
         "Umowa przetwarzania danych zgodnie z RODO"
       ],
       "Hide-my-email aliases": [
-        "Aliasy Hide My Email"
+        "Aliasy Hide-my-email"
       ],
       "High-speed streaming": [
         "Szybki streaming"
@@ -9099,7 +9141,7 @@
         "Nieograniczona liczba folderów, etykiet i filtrów"
       ],
       "Unlimited hide-my-email aliases": [
-        "Nieograniczona liczba aliasów Hide My Email"
+        "Nieograniczona liczba aliasów Hide-my-email"
       ],
       "Unlimited labels": [
         "Nieograniczona liczba etykiet"
@@ -11217,11 +11259,17 @@
       "Edit": [
         "Edytuj"
       ],
+      "Email address or domain": [
+        "Adres e-mail lub domena"
+      ],
       "Email addresses": [
         "Adresy e-mail"
       ],
       "Import": [
         "Importuj"
+      ],
+      "List": [
+        "Lista"
       ],
       "Marked as": [
         "Oznaczone jako"
@@ -11370,6 +11418,12 @@
       ],
       "Add Sieve filter": [
         "Dodaj filtr Sieve"
+      ],
+      "Add to allow list": [
+        "Dodaj do listy dozwolonych"
+      ],
+      "Add to block list": [
+        "Dodaj do listy odrzuconych"
       ],
       "Add to spam list": [
         "Dodaj do listy spamu"
@@ -11971,9 +12025,6 @@
       "Select when you want this notification to be sent": [
         "Wybierz, kiedy to powiadomienie ma zostać wysłane"
       ],
-      "Sender image": [
-        "Zdjęcie nadawcy"
-      ],
       "Session management": [
         "Zarządzanie sesją"
       ],
@@ -12030,6 +12081,9 @@
       ],
       "Sort labels alphabetically": [
         "Sortuj etykiety alfabetycznie"
+      ],
+      "Spam, block, and allow lists": [
+        "Spam, listy odrzuconych i dozwolonych"
       ],
       "Start a new import": [
         "Rozpocznij nowy import"
@@ -12418,7 +12472,7 @@
     },
     "Upgrade": {
       "Upgrade to ${ passPlusPlanName } to get unlimited hide-my-email aliases": [
-        "Ulepsz do planu ${ passPlusPlanName }, aby uzyskać nieograniczoną liczbę aliasów Hide My Email"
+        "Ulepsz do planu ${ passPlusPlanName }, aby uzyskać nieograniczoną liczbę aliasów Hide-my-email"
       ],
       "Upgrade to ${ planName } to connect up to ${ n } device to the VPN at once": [
         "Ulepsz do planu ${ planName }, aby połączyć do ${ n } urządzenia VPN jednocześnie",
