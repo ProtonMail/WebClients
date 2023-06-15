@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import type { MessageWithSenderFactory } from '@proton/pass/extension/message';
 import { sendMessage } from '@proton/pass/extension/message';
-import { selectWorkerAlive } from '@proton/pass/store';
+import { selectDidWakeup } from '@proton/pass/store';
 import { sessionLockImmediate, signout, syncIntent } from '@proton/pass/store/actions';
 import type { ExtensionEndpoint, MaybeNull, TabId, WorkerMessageWithSender, WorkerState } from '@proton/pass/types';
 import { WorkerMessageType, WorkerStatus } from '@proton/pass/types';
@@ -74,7 +74,7 @@ export const ExtensionContextProvider = <T extends ExtensionEndpoint>({
     const { tabId } = ExtensionContext.get();
 
     const [state, setState] = useState<WorkerState>(INITIAL_WORKER_STATE);
-    const ready = useSelector(selectWorkerAlive(endpoint, tabId)) && workerReady(state.status);
+    const ready = useSelector(selectDidWakeup(endpoint, tabId)) && workerReady(state.status);
 
     const logout = useCallback(({ soft }: { soft: boolean }) => {
         setState(INITIAL_WORKER_STATE);

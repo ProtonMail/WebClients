@@ -10,7 +10,7 @@ import { useNotifications } from '@proton/components/hooks';
 import { popupMessage, sendMessage } from '@proton/pass/extension/message';
 import { selectWorkerSyncing } from '@proton/pass/store';
 import * as requests from '@proton/pass/store/actions/requests';
-import type { PopupInitialState, WorkerState } from '@proton/pass/types';
+import type { MaybeNull, PopupInitialState, WorkerState } from '@proton/pass/types';
 import { WorkerMessageType, type WorkerMessageWithSender, WorkerStatus } from '@proton/pass/types';
 import type { ParsedUrl } from '@proton/pass/utils/url';
 import { parseUrl } from '@proton/pass/utils/url';
@@ -26,15 +26,18 @@ import { enhanceNotification } from '../../../shared/notification';
 import type { ItemDraftState } from '../../hooks/useItemDraft';
 
 export interface PopupContextValue extends Omit<ExtensionAppContextValue, 'context'> {
+    initialized: boolean /* retrieved popup initial state */;
+    ready: boolean /* enable UI user actions */;
+    url: ParsedUrl /* current tab parsed URL */;
     state: WorkerState & PopupInitialState;
-    url: ParsedUrl;
     sync: () => void;
 }
 
 export const PopupContext = createContext<PopupContextValue>({
-    state: { ...INITIAL_WORKER_STATE, ...INITIAL_POPUP_STATE },
-    url: parseUrl(),
+    initialized: false,
     ready: false,
+    url: parseUrl(),
+    state: { ...INITIAL_WORKER_STATE, ...INITIAL_POPUP_STATE },
     logout: noop,
     lock: noop,
     sync: noop,
@@ -54,7 +57,7 @@ const PopupContextContainer: FC = ({ children }) => {
     const notificationsManager = useContext(NotificationsContext);
     useEffect(() => notificationsManager.setOffset({ y: 10 }), []);
 
-    const [initial, setInitial] = useState<PopupInitialState>(INITIAL_POPUP_STATE);
+    const [initial, setInitial] = useState<MaybeNull<PopupInitialState>>(null);
     const syncing = useSelector(selectWorkerSyncing) || extensionContext.state.status === WorkerStatus.BOOTING;
 
     useRequestStatusEffect(requests.syncing(), {
@@ -100,8 +103,9 @@ const PopupContextContainer: FC = ({ children }) => {
 
         return {
             ...extensionContext,
-            state: { ...state, ...initial },
-            ready: ready && !syncing,
+            state: { ...state, ...(initial ?? INITIAL_POPUP_STATE) },
+            ready: ready && !syncing /* worker ready and no ongoing syncs */,
+            initialized: initial !== null /* `POPUP_INIT` response resolved */,
             url,
         };
     }, [extensionContext, syncing, initial]);
