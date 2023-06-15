@@ -849,10 +849,10 @@
         "Insira 6 algarismos"
       ],
       "Invalid verification code": [
-        "Código de verificação não válido"
+        "O código de verificação não é válido."
       ],
       "Not a valid number": [
-        "Número não válido"
+        "O número não é válido."
       ],
       "Passwords do not match": [
         "As palavras-passe não coincidem."
@@ -926,6 +926,9 @@
       ],
       "No verification method available": [
         "Nenhum método de verificação disponível"
+      ],
+      "SMS": [
+        "SMS"
       ]
     },
     "Info": {
@@ -975,7 +978,7 @@
         "Nenhum resultado"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
-        "Os servidores estão inacessíveis. Por favor, tente novamente dentro de alguns minutos"
+        "Os servidores estão inacessíveis.Tente novamente dentro de alguns minutos."
       ],
       "Session timed out": [
         "A sessão expirou."
@@ -999,7 +1002,7 @@
         "A sua conta ${ BRAND_NAME } de momento está suspensa. Após 28 dias, os e-mails deixarão de ser entregues na sua caixa de entrada, as suas ligações de partilha de disco serão bloqueadas, e não poderá carregar novos ficheiros. Para retomar o serviço normal, pague quaisquer faturas em atraso."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "A sua conta ${ BRAND_NAME } está suspensa de momento. Não receberá e-mails na sua caixa de entrada. Os seus links de partilha do Drive estão inativos e não pode fazer upload de novos arquivos. Para continuar a usar sua conta, efetue o pagamento das faturas vencidas."
+        "A sua conta ${ BRAND_NAME } está suspensa de momento. Não receberá e-mails na sua caixa de entrada. As suas ligações de partilha do Drive estão inativas e não pode carregar novos ficheiros. Para continuar a utilizar a sua conta, efetue o pagamento das faturas vencidas."
       ],
       "Your email will only be used for this one-time verification.": [
         "O seu e-mail só será usado para esta verificação única."
@@ -1066,7 +1069,7 @@
         "Verificação humana"
       ],
       "Invalid verification code": [
-        "Código de verificação não válido"
+        "O código de verificação não é válido."
       ],
       "Request new code": [
         "Pedir novo código"

@@ -3439,6 +3439,12 @@
       "Downloading": [
         "Pobieranie"
       ],
+      "Drop file here to upload": [
+        "Upuść, aby przesłać"
+      ],
+      "Drop to import": [
+        "Upuść, aby zaimportować"
+      ],
       "Duplicate key updated": [
         "Zduplikowany klucz został zaktualizowany"
       ],
@@ -3538,9 +3544,6 @@
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "Ogranicz aktywność wymagającą dużej ilości pamięci (jak streaming) lub prześlij dane partiami."
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "Przekieruj wiadomości przychodzące z innego konta do bezpiecznej skrzynki odbiorczej ${ MAIL_APP_NAME }."
-      ],
       "Free forever": [
         "Darmowy na zawsze"
       ],
@@ -3597,9 +3600,6 @@
       ],
       "Import mailbox": [
         "Importuj skrzynkę pocztową"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "Importuj wiadomości, kalendarze i kontakty z innej usługi do ${ BRAND_NAME }."
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Trwa importowanie danych z konta ${ fromEmail } do ${ toEmail }."
@@ -4069,8 +4069,8 @@
       "Uploading hundreds of files at once may have a performance impact.": [
         "Przesyłanie dużej liczby plików na raz może wpłynąć na wydajność."
       ],
-      "Use Drive for Desktop to sync folders on your computer with ${ DRIVE_APP_NAME }. They’ll show up here and be accessible from anywhere. ${ LearnMore }": [
-        "Użyj dysku na komputerze, aby synchronizować foldery urządzenia z dyskiem ${ DRIVE_APP_NAME }. Pokażą się one tutaj i będą dostępne, gdziekolwiek jesteś. ${ LearnMore }"
+      "Use Drive for Desktop to sync folders on your computer with ${ DRIVE_APP_NAME }. They’ll show up here and be accessible from anywhere. ${ learnMore }": [
+        "Użyj dysku na komputerze, aby synchronizować foldery urządzenia z dyskiem ${ DRIVE_APP_NAME }. Pokażą się one tutaj i będą dostępne, gdziekolwiek jesteś. ${ learnMore }"
       ],
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Użyj tego formularza, aby powiadomić nas o nieodpowiednich, nielegalnych lub złośliwych plikach. Zamierzasz zgłosić:"
@@ -4194,6 +4194,9 @@
       ],
       "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ KeyReactivationButton }": [
         "Pliki nie są już dostępne z powodu zresetowania hasła. Prześlij ponownie stary klucz szyfrowania, aby odzyskać do nich dostęp. ${ KeyReactivationButton }"
+      ],
+      "Your files will be encrypted and then saved": [
+        "Twoje pliki przed zapisaniem zostaną zaszyfrowane"
       ],
       "Your files will be encrypted and then saved.": [
         "Twoje pliki przed zapisaniem zostaną zaszyfrowane."
@@ -4916,7 +4919,7 @@
         "Niestandardowe domeny"
       ],
       "Hide-my-email aliases": [
-        "Aliasy Hide My Email"
+        "Aliasy Hide-my-email"
       ],
       "Schedule messages at any time": [
         "Zaplanuj wiadomości w dowolnym momencie"
@@ -5252,9 +5255,6 @@
       ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
         "Otwórz menu aplikacji w lewym górnym rogu, aby uzyskać dostęp do wszystkich usług ${ BRAND_NAME }: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } i ${ DRIVE_SHORT_APP_NAME }."
-      ],
-      "You can change this anytime in your settings.": [
-        "Motyw możesz zmienić w ustawieniach."
       ]
     },
     "Onboarding Title": {

@@ -477,6 +477,9 @@
       "Hide messages": [
         "Verberg berichten"
       ],
+      "hide-my-email aliases": [
+        "Hide-my-email-aliassen"
+      ],
       "I have a question": [
         "Ik heb een vraag"
       ],
@@ -1833,6 +1836,41 @@
       ],
       "white": [
         "wit"
+      ]
+    },
+    "Commander action": {
+      "Create a new folder": [
+        "Nieuwe map aanmaken"
+      ],
+      "Create a new label": [
+        "Nieuwe label maken"
+      ],
+      "Go to Archive": [
+        "Ga naar Archief"
+      ],
+      "Go to Drafts": [
+        "Ga naar Concepten"
+      ],
+      "Go to Inbox": [
+        "Ga naar inbox"
+      ],
+      "Go to Sent": [
+        "Ga naar Verzonden"
+      ],
+      "Go to Spam": [
+        "Ga naar Spam"
+      ],
+      "Go to Starred": [
+        "Ga naar Berichten met ster"
+      ],
+      "Go to Trash": [
+        "Ga naar Prullenbak"
+      ],
+      "New message": [
+        "Nieuw bericht"
+      ],
+      "Search": [
+        "Zoeken"
       ]
     },
     "Composer email icon": {
@@ -3888,6 +3926,9 @@
       "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
         "Met 2700 servers in meer dan 65 landen, verbinding met maximaal 10 apparaten, wereldwijd toegang tot streamingdiensten, malware- en advertentieblokkering, en meer."
       ],
+      "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
+        "Ondersteuning voor 3 aangepaste e-maildomeinen, 90 e-mailadressen, onbeperkt Hide-my-email-aliassen, gedeelde agenda's en meer."
+      ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Beveilig uw bestanden met versleutelde cloudopslag. Inclusief automatische synchronisatie, versleuteld bestanden delen en meer."
       ]
@@ -4890,6 +4931,12 @@
       "Draft saved.": [
         "Concept opgeslagen."
       ],
+      "Drop file here to upload": [
+        "Sleep bestand hier om te uploaden"
+      ],
+      "Drop to import": [
+        "Neerzetten om te importeren"
+      ],
       "Duplicate key updated": [
         "Dubbele sleutel bijgewerkt"
       ],
@@ -4992,9 +5039,6 @@
       "For messages newer than ${ oldestDate }": [
         "Voor berichten nieuwer dan ${ oldestDate }"
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "Binnenkomende mail doorsturen van een ander account naar uw veilige ${ MAIL_APP_NAME }-inbox."
-      ],
       "Free up some space or add more storage space.": [
         "Maak ruimte vrij of voeg meer opslagruimte toe."
       ],
@@ -5013,6 +5057,9 @@
       ],
       "Hide original message": [
         "Verberg origineel bericht"
+      ],
+      "How hide-my-email aliases works": [
+        "Hoe Hide-my-email-aliassen werken"
       ],
       "I'm sending this message to a non-${ MAIL_APP_NAME } user.": [
         "Ik verzend dit bericht naar een niet-${ MAIL_APP_NAME }-gebruiker."
@@ -5053,9 +5100,6 @@
       ],
       "Import mailbox": [
         "Mailbox importeren"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "Importeer uw e-mails, agenda, en contactpersonen van een andere dienst naar ${ BRAND_NAME }."
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Het importeren van uw gegevens van ${ fromEmail } naar ${ toEmail }."
@@ -5199,9 +5243,6 @@
       "No group found": [
         "Geen groep gevonden"
       ],
-      "No imports or forwarding history.": [
-        "Geen importeer- of doorstuurgeschiedenis."
-      ],
       "No label found": [
         "Geen label gevonden"
       ],
@@ -5237,6 +5278,9 @@
       ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Ons systeem heeft dit bericht gemarkeerd als phishing poging. Controleer of het legitiem is."
+      ],
+      "Our system flagged this message as a suspicious email. Please check that it is legitimate before clicking any links or attachments.": [
+        "Ons systeem heeft dit bericht gemarkeerd als een verdachte e-mail. Controleer of het legitiem is voordat u op links of bijlagen klikt."
       ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/Inline is enkel compatibel met Plain Text-formaat."
@@ -5407,6 +5451,9 @@
       "Show original message": [
         "Toon origineel bericht"
       ],
+      "SimpleLogin is a ${ BRAND_NAME } service, and your ${ BRAND_NAME_TWO } Account includes hide-my-email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
+        "SimpleLogin is een ${ BRAND_NAME }-dienst, en uw ${ BRAND_NAME_TWO }-account bevat Hide-my-email-aliassen. Om te beginnen met het verbergen van uw e-mailadres, ga naar SimpleLogin en maak uw eerste alias aan."
+      ],
       "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
         "SimpleLogin biedt een eenvoudige manier om in te loggen op niet-vertrouwde sites van derden waar u uw eigenlijke e-mailadres niet wilt prijsgeven."
       ],
@@ -5474,6 +5521,9 @@
       "There has been an error with the signature used to verify the contact details, which may be the result of a password reset.": [
         "Er is iets misgegaan met de ondertekening tijdens het controleren van de contactgegevens, dat veroorzaakt kan zijn door het resetten van uw wachtwoord."
       ],
+      "They can't spam you if they don't know your email address. Protect your inbox with hide-my-email aliases.": [
+        "Ze kunnen u geen spam versturen, als ze uw echte e-mailadres niet kennen. Bescherm uw inbox met Hide-my-email-aliassen."
+      ],
       "This account has been suspended due to a potential policy violation.": [
         "Dit account is opgeschort vanwege een potentiële schending van het beleid."
       ],
@@ -5488,6 +5538,9 @@
       ],
       "This conversation contains non-trashed messages.": [
         "Dit gesprek bevat berichten die zich niet in de prullenbak bevinden."
+      ],
+      "This conversation contains one or more expiring messages": [
+        "Dit gesprek bevat een of meer verlopen berichten"
       ],
       "This conversation contains trashed messages.": [
         "Dit gesprek bevat berichten die zich in de prullenbak bevinden."
@@ -5704,6 +5757,9 @@
       "When do you want your message to self-destruct?": [
         "Wanneer wil je dat uw bericht zichzelf vernietigt?"
       ],
+      "When giving out your email, use a unique, disposable hide-my-email alias instead of your real email address.": [
+        "Gebruik bij het geven van uw e-mailadres een unieke, wegwerpbare alias met Hide-my-email, in plaats van uw echte e-mailadres."
+      ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "Toen u vertrouwde sleutels inschakelde voor ${ senderName }, zijn de openbare sleutels meteen toegevoegd aan deze contactpersoon."
       ],
@@ -5841,6 +5897,9 @@
       "Your email will only be used for this one-time verification.": [
         "Uw e-mailadres wordt alleen gebruikt voor deze eenmalige verificatie."
       ],
+      "Your files will be encrypted and then saved": [
+        "Uw bestanden worden versleuteld en vervolgens opgeslagen"
+      ],
       "Your import will not be processed.": [
         "Uw import zal niet worden verwerkt."
       ],
@@ -5868,6 +5927,10 @@
       ]
     },
     "info": {
+      "${ filteredList.length } command found.": [
+        "${ filteredList.length } opdracht gevonden.",
+        "${ filteredList.length } opdrachten gevonden."
+      ],
       "Optional": [
         "Optioneel"
       ]
@@ -6029,6 +6092,9 @@
       ],
       "New message": [
         "Nieuw bericht"
+      ],
+      "Open command panel": [
+        "Bedieningspaneel openen"
       ],
       "Open next message": [
         "Open volgend bericht"
@@ -6541,6 +6607,9 @@
       ],
       "Toolbar": [
         "Werkbalk"
+      ],
+      "Type a command...": [
+        "Typ een opdracht..."
       ],
       "Undisclosed Recipients": [
         "Niet-openbaar gemaakte ontvangers"
@@ -7130,6 +7199,9 @@
       "Custom email domains": [
         "Aangepaste e-maildomeinen"
       ],
+      "Hide-my-email aliases": [
+        "Hide-my-email-aliassen"
+      ],
       "Schedule messages at any time": [
         "Plan berichten in op ieder moment"
       ],
@@ -7242,9 +7314,6 @@
       ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
         "Gebruik de app-kiezer linksboven voor de toegang tot alle ${ BRAND_NAME }-diensten: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } en ${ DRIVE_SHORT_APP_NAME }."
-      ],
-      "You can change this anytime in your settings.": [
-        "U kunt dit op elk gewenst moment wijzigen in uw instellingen."
       ]
     },
     "Option": {
@@ -7409,6 +7478,9 @@
       ],
       "Text": [
         "Tekst"
+      ],
+      "Type a command…": [
+        "Typ een opdracht..."
       ],
       "Type text or keyword": [
         "Voer tekst of trefwoord in"
@@ -7915,6 +7987,15 @@
       ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
         "Bekijk inhoud van streamingdiensten, waaronder Netflix, Disney+ en Prime Video, waar u maar wilt."
+      ],
+      "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
+        "Al onze premium diensten met hun hoogste limieten: 100 e-mailadressen, ondersteuning voor 10 aangepaste domeinen, onbeperkt Hide-my-email-aliassen, gedeelde agenda's, versleutelde cloudopslag, versleuteld bestanden delen en meer."
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Ondersteuning voor 1 aangepast e-maildomein, 10 e-mailadressen, 10 Hide-my-email-aliassen, gedeelde agenda's en meer."
+      ],
+      "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Ondersteuning voor 3 aangepaste e-maildomeinen, 15 e-mailadressen, onbeperkt Hide-my-email-aliassen, gedeelde agenda's en meer."
       ],
       "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
         "Perfect voor gezinnen of kleine teams, met voor iedereen een eigen inbox en aliassen. Vereist een aangepast domein."
@@ -8889,23 +8970,6 @@
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Uw Mail Plus proefversie eindigt op ${ textDate }"
-      ]
-    },
-    "Title header": {
-      "Actions": [
-        "Acties"
-      ],
-      "Date": [
-        "Datum"
-      ],
-      "Import": [
-        "Importeren"
-      ],
-      "Size": [
-        "Grootte"
-      ],
-      "Status": [
-        "Status"
       ]
     },
     "Today icon tooltip in mini calendar": {

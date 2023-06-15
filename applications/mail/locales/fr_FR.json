@@ -478,7 +478,7 @@
         "Masquer les messages"
       ],
       "hide-my-email aliases": [
-        "les alias « Hide My Email »"
+        "les alias Hide-my-email"
       ],
       "I have a question": [
         "J’ai une question"
@@ -1868,6 +1868,9 @@
       ],
       "New message": [
         "Nouveau message"
+      ],
+      "Search": [
+        "Rechercher"
       ]
     },
     "Composer email icon": {
@@ -3924,7 +3927,7 @@
         "Cela comprend 2 700 serveurs répartis dans plus de 65 pays, la possibilité de connecter jusqu'à 10 appareils, l'accès aux services de streaming du monde entier, un bloqueur de logiciels malveillants et de publicités et bien d'autres fonctionnalités."
       ],
       "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
-        "Comprend la prise en charge de 3 domaines de messagerie personnalisés, de 90 adresses e-mail, d'un nombre illimité d'alias « Hide My Email », du partage de calendrier…"
+        "Comprend la prise en charge de 3 domaines de messagerie personnalisés, de 90 adresses e-mail, d'un nombre illimité d'alias Hide-my-email, du partage de calendrier…"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Sécurisez vos fichiers grâce au stockage cloud chiffré. Cela comprend la synchronisation automatique, le partage de fichiers chiffrés et d'autres fonctionnalités."
@@ -4094,9 +4097,34 @@
         "Par défaut"
       ]
     },
+    "Font face option": {
+      "System default": [
+        "Identique au système"
+      ],
+      "Theme default": [
+        "Thème par défaut"
+      ]
+    },
     "Font Size Default": {
       "Default": [
         "Par défaut"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Grand"
+      ],
+      "Medium (recommended)": [
+        "Moyen (recommandé)"
+      ],
+      "Small": [
+        "Petit"
+      ],
+      "Very large": [
+        "Très grand"
+      ],
+      "Very small": [
+        "Très petit"
       ]
     },
     "forwardmessage": {
@@ -4894,6 +4922,9 @@
       "Custom yearly": [
         "Chaque année (personnalisé)"
       ],
+      "Customize the look and feel of ${ BRAND_NAME } applications.": [
+        "Personnalisez le style des applications ${ BRAND_NAME }."
+      ],
       "Daily": [
         "Chaque jour"
       ],
@@ -5036,9 +5067,6 @@
       "For messages newer than ${ oldestDate }": [
         "Pour les messages après le ${ oldestDate }"
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "Transférez les messages entrants d'un autre compte vers votre boite de réception sécurisée ${ MAIL_APP_NAME }."
-      ],
       "Free up some space or add more storage space.": [
         "Libérez de l’espace ou ajoutez plus d’espace de stockage."
       ],
@@ -5059,7 +5087,7 @@
         "Masquer le message d'origine"
       ],
       "How hide-my-email aliases works": [
-        "Fonctionnement des alias « Hide My Email »"
+        "Fonctionnement des alias hide-my-email"
       ],
       "I'm sending this message to a non-${ MAIL_APP_NAME } user.": [
         "J'envoie ce message à une personne qui n'utilise pas ${ MAIL_APP_NAME }."
@@ -5100,9 +5128,6 @@
       ],
       "Import mailbox": [
         "Importer une messagerie"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "Importez vos messages, calendriers et contacts depuis un autre service vers ${ BRAND_NAME }."
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Vos données sont en cours d'importation depuis ${ fromEmail } vers ${ toEmail }."
@@ -5245,9 +5270,6 @@
       ],
       "No group found": [
         "Aucun groupe n'a été trouvé."
-      ],
-      "No imports or forwarding history.": [
-        "Aucun historique d'importations ou de transferts."
       ],
       "No label found": [
         "Aucun label n'a été trouvé."
@@ -5458,7 +5480,7 @@
         "Afficher le message d'origine"
       ],
       "SimpleLogin is a ${ BRAND_NAME } service, and your ${ BRAND_NAME_TWO } Account includes hide-my-email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
-        "SimpleLogin est un service proposé par ${ BRAND_NAME } et votre compte ${ BRAND_NAME_TWO } comprend des alias « Hide My Email ». Pour masquer votre adresse e-mail, rendez-vous sur SimpleLogin et créez votre premier alias."
+        "SimpleLogin est un service proposé par ${ BRAND_NAME } et votre compte ${ BRAND_NAME_TWO } comprend des alias hide-my-email. Pour masquer votre adresse e-mail, rendez-vous sur SimpleLogin et créez votre premier alias."
       ],
       "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
         "SimpleLogin offre un moyen simple de créer des identifiants sur des sites tiers peu fiables pour lesquels vous ne voulez pas révéler votre véritable adresse e-mail."
@@ -5528,7 +5550,7 @@
         "Il y a eu une erreur dans la signature utilisée pour vérifier les coordonnées. Cette erreur peut être due à une réinitialisation du mot de passe.\n"
       ],
       "They can't spam you if they don't know your email address. Protect your inbox with hide-my-email aliases.": [
-        "On ne peut pas vous spammer si l'on ne connaît pas votre adresse e-mail. Protégez votre messagerie avec les alias « Hide My Email »."
+        "On ne peut pas vous spammer si l'on ne connaît pas votre adresse e-mail. Protégez votre messagerie avec les alias Hide-my-email."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Ce compte a été suspendu en raison d’une violation potentielle des règles d’utilisation."
@@ -5764,7 +5786,7 @@
         "Quand voulez-vous que votre message s'autodétruise ?"
       ],
       "When giving out your email, use a unique, disposable hide-my-email alias instead of your real email address.": [
-        "Quand vous communiquez votre adresse e-mail, utilisez un alias unique « Hide My Email » au lieu de votre véritable adresse e-mail."
+        "Quand vous communiquez votre adresse e-mail, utilisez un alias unique Hide-my-email au lieu de votre véritable adresse e-mail."
       ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "Quand vous avez activé les clés de confiance pour ${ senderName }, les clés publiques ont été ajoutées aux informations de contact."
@@ -6098,6 +6120,9 @@
       ],
       "New message": [
         "Nouveau message"
+      ],
+      "Open command panel": [
+        "Ouvrir le panneau de commandes"
       ],
       "Open next message": [
         "Ouvrir le message suivant"
@@ -6574,6 +6599,9 @@
       ],
       "Street address": [
         "Adresse postale"
+      ],
+      "Synchronize with system": [
+        "Synchroniser avec les paramètres du système"
       ],
       "System information": [
         "Informations système"
@@ -7203,7 +7231,7 @@
         "Domaines de messagerie personnalisés"
       ],
       "Hide-my-email aliases": [
-        "Alias « Hide My Email »"
+        "Alias Hide-my-email"
       ],
       "Schedule messages at any time": [
         "Planifiez l'envoi de messages quand vous le voulez"
@@ -7306,6 +7334,9 @@
       "Discover all ${ BRAND_NAME } services": [
         "Découvrez tous les services ${ BRAND_NAME }"
       ],
+      "More theming options are available in your account Settings > Appearance.": [
+        "D'autres thèmes sont disponibles dans vos paramètres de compte, section Apparence."
+      ],
       "Select a theme": [
         "Choisissez un thème"
       ],
@@ -7317,9 +7348,6 @@
       ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
         "Utilisez le sélecteur d'applications en haut à gauche pour accéder à tous les services ${ BRAND_NAME } : ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } et ${ DRIVE_SHORT_APP_NAME }."
-      ],
-      "You can change this anytime in your settings.": [
-        "Vous pouvez modifier cela à tout moment dans vos paramètres."
       ]
     },
     "Option": {
@@ -7995,13 +8023,13 @@
         "Accédez au contenu des services de streaming, dont Netflix, Amazon Prime Video, Canal+, Disney+, France.tv, TF1… où que vous soyez."
       ],
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
-        "Tous nos services premium au plus haut niveau : 100 adresses e-mail, la prise en charge de 10 domaines personnalisés, un nombre illimité d'alias « Hide My Email », le partage de calendriers, le stockage cloud et le partage de fichiers chiffrés…"
+        "Tous nos services premium au plus haut niveau : 100 adresses e-mail, la prise en charge de 10 domaines personnalisés, un nombre illimité d'alias Hide-my-email, le partage de calendriers, le stockage cloud et le partage de fichiers chiffrés…"
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Comprend la prise en charge d'un domaine de messagerie personnalisé, de 10 adresses e-mail, de 10 alias « Hide My Email », du partage de calendrier…"
+        "Comprend la prise en charge d'un domaine de messagerie personnalisé, de 10 adresses e-mail, de 10 alias Hide-my-email, du partage de calendrier…"
       ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Comprend la prise en charge de 3 domaines de messagerie personnalisés, de 15 adresses e-mail, d'un nombre illimité d'alias « Hide My Email », du partage de calendrier…"
+        "Comprend la prise en charge de 3 domaines de messagerie personnalisés, de 15 adresses e-mail, d'un nombre illimité d'alias Hide-my-email, du partage de calendrier…"
       ],
       "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
         "Idéal pour les familles ou les petites équipes, chacun pouvant disposer de sa propre boite de réception et de ses propres alias. Nécessite un domaine personnalisé."
@@ -8438,6 +8466,9 @@
         "${ unreads } message non lu",
         "${ unreads } messages non lus"
       ],
+      "(active)": [
+        "(activé)"
+      ],
       "Account suspended": [
         "Compte suspendu"
       ],
@@ -8552,6 +8583,9 @@
       ],
       "Customize your mail import": [
         "Personnalisez votre importation de messagerie"
+      ],
+      "Day theme": [
+        "Thème jour"
       ],
       "Decryption error": [
         "Erreur de déchiffrement"
@@ -8781,6 +8815,9 @@
       "Next message": [
         "Message suivant"
       ],
+      "Night theme": [
+        "Thème nuit"
+      ],
       "No attachment found": [
         "Il n'y a pas de pièce jointe."
       ],
@@ -8978,23 +9015,6 @@
         "Votre essai gratuit Mail Plus se termine le ${ textDate }."
       ]
     },
-    "Title header": {
-      "Actions": [
-        "Actions"
-      ],
-      "Date": [
-        "Date"
-      ],
-      "Import": [
-        "Importer"
-      ],
-      "Size": [
-        "Taille"
-      ],
-      "Status": [
-        "État"
-      ]
-    },
     "Today icon tooltip in mini calendar": {
       "Today": [
         "Aujourd'hui"
@@ -9003,6 +9023,9 @@
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Automatique : le format utilisé dans l'éditeur est utilisé pour l'envoi à cet utilisateur. Texte brut : le message sera toujours converti en texte brut lors de l'envoi."
+      ],
+      "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
+        "Basculez automatiquement entre vos thèmes préférés pour le jour et la nuit, en synchronisation avec les modes jour et nuit de votre système."
       ],
       "Customize import to reduce the number of folders": [
         "Personnalisez l'importation pour réduire le nombre de dossiers."
@@ -9054,6 +9077,12 @@
       ],
       "The import will start with the most recent messages.": [
         "L'importation commencera par les messages les plus récents."
+      ],
+      "The selected theme will be active when your system is set to \"dark mode\"": [
+        "Le thème sélectionné sera activé quand votre système sera en « thème sombre »."
+      ],
+      "The selected theme will be active when your system is set to \"light mode\"": [
+        "Le thème sélectionné sera activé quand votre système sera en « thème clair »."
       ],
       "This feature is only available for paid users": [
         "Cette fonctionnalité est exclusivement disponible pour les utilisateurs ayant un abonnement payant."

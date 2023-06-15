@@ -2764,6 +2764,9 @@
       "${ name } failed to move to spam list": [
         "${ name } niet verplaatst naar spamlijst"
       ],
+      "${ name } moved to allow list": [
+        "${ name } verplaatst naar toegestane lijst"
+      ],
       "${ name } moved to spam list": [
         "${ name } verplaatst naar spamlijst"
       ],
@@ -4036,6 +4039,9 @@
       "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
         "Met 2700 servers in meer dan 65 landen, verbinding met maximaal 10 apparaten, wereldwijd toegang tot streamingdiensten, malware- en advertentieblokkering, en meer."
       ],
+      "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
+        "Ondersteuning voor 3 aangepaste e-maildomeinen, 90 e-mailadressen, onbeperkt Hide-my-email-aliassen, gedeelde agenda's en meer."
+      ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Beveilig uw bestanden met versleutelde cloudopslag. Inclusief automatische synchronisatie, versleuteld bestanden delen en meer."
       ]
@@ -5245,9 +5251,6 @@
       "Check the status of imports and forwarding.": [
         "Controleer de status van uw import- en doorstuuropdrachten."
       ],
-      "Choose the look and feel of the application.": [
-        "Kies het uiterlijk en gevoel van de applicatie."
-      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klik op \"Vraag nieuwe code aan\" om een nieuwe verificatiecode te sturen naar ${ strong }. Als dit telefoonnummer onjuist is, klik op \"Bewerken\" om het te corrigeren."
       ],
@@ -5372,6 +5375,12 @@
       ],
       "Download your PGP keys for use with other PGP-compatible services.": [
         "Download uw PGP-sleutels voor gebruik met andere PGP-compatibele diensten."
+      ],
+      "Drop file here to upload": [
+        "Sleep bestand hier om te uploaden"
+      ],
+      "Drop to import": [
+        "Neerzetten om te importeren"
       ],
       "Each code can only be used once": [
         "Elke code kan maar één keer gebruikt worden"
@@ -6722,6 +6731,9 @@
       "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your recovery phrase or your ${ oldPassword }.": [
         "Uw bestaande berichten, agenda's of contacten worden vergrendeld. Om deze gegevens te herstellen, heeft u uw herstelzin of uw ${ oldPassword } nodig."
       ],
+      "Your files will be encrypted and then saved": [
+        "Uw bestanden worden versleuteld en vervolgens opgeslagen"
+      ],
       "Your import from ${ accounts } is temporarily delayed.": [
         "Uw import van ${ accounts } is tijdelijk vertraagd.",
         "Uw imports van ${ accounts } zijn tijdelijk vertraagd."
@@ -7035,6 +7047,9 @@
       ],
       "New message": [
         "Nieuw bericht"
+      ],
+      "Open command panel": [
+        "Bedieningspaneel openen"
       ],
       "Open next message": [
         "Open volgend bericht"
@@ -8673,8 +8688,8 @@
         "${ n } mappen en labels"
       ],
       "${ n } Hide-my-email alias": [
-        "${ n } Hide-My-Email alias",
-        "${ n } Hide-My-Email aliassen"
+        "${ n } Hide-my-email-alias",
+        "${ n } Hide-my-email-aliassen"
       ],
       "${ n } label": [
         "${ n } label",
@@ -8801,6 +8816,9 @@
       "GDPR data processing agreement": [
         "AVG-gegevensverwerkingsovereenkomst"
       ],
+      "Hide-my-email aliases": [
+        "Hide-my-email-aliassen"
+      ],
       "High-speed streaming": [
         "Streamen op hoge snelheid"
       ],
@@ -8900,7 +8918,7 @@
         "Ongelimiteerde mappen, labels en filters"
       ],
       "Unlimited hide-my-email aliases": [
-        "Onbeperkt aantal Hide-My-Email alliassen"
+        "Onbeperkt aantal Hide-My-Email-alliassen"
       ],
       "Unlimited labels": [
         "Onbeperkt aantal labels"
@@ -10443,6 +10461,15 @@
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
         "Bekijk inhoud van streamingdiensten, waaronder Netflix, Disney+ en Prime Video, waar u maar wilt."
       ],
+      "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
+        "Al onze premium diensten met hun hoogste limieten: 100 e-mailadressen, ondersteuning voor 10 aangepaste domeinen, onbeperkt Hide-my-email-aliassen, gedeelde agenda's, versleutelde cloudopslag, versleuteld bestanden delen en meer."
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Ondersteuning voor 1 aangepast e-maildomein, 10 e-mailadressen, 10 Hide-my-email-aliassen, gedeelde agenda's en meer."
+      ],
+      "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Ondersteuning voor 3 aangepaste e-maildomeinen, 15 e-mailadressen, onbeperkt Hide-my-email-aliassen, gedeelde agenda's en meer."
+      ],
       "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
         "Perfect voor gezinnen of kleine teams, met voor iedereen een eigen inbox en aliassen. Vereist een aangepast domein."
       ],
@@ -11687,9 +11714,6 @@
       "Select when you want this notification to be sent": [
         "Selecteer wanneer u wilt dat deze melding wordt verzonden"
       ],
-      "Sender image": [
-        "Afbeelding afzender"
-      ],
       "Session management": [
         "Sessiebeheer"
       ],
@@ -12130,7 +12154,7 @@
     },
     "Upgrade": {
       "Upgrade to ${ passPlusPlanName } to get unlimited hide-my-email aliases": [
-        "Upgrade naar ${ passPlusPlanName } om onbeperkt Hide-My-Email aliassen te krijgen"
+        "Upgrade naar ${ passPlusPlanName } om onbeperkt Hide-My-Email-aliassen te krijgen"
       ],
       "Upgrade to ${ planName } to connect up to ${ n } device to the VPN at once": [
         "Upgrade naar ${ planName } om tot ${ n } apparaat tegelijkertijd met VPN te verbinden",
