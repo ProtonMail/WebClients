@@ -481,6 +481,9 @@
       "Hide messages": [
         "Приховати повідомлення"
       ],
+      "hide-my-email aliases": [
+        "псевдоніми Hide-my-email"
+      ],
       "I have a question": [
         "У мене є питання"
       ],
@@ -1325,7 +1328,7 @@
     },
     "Bug category": {
       "Application problem": [
-        "Проблема з додатком"
+        "Проблема з програмою"
       ],
       "Bridge problem": [
         "Проблема з Bridge"
@@ -1843,6 +1846,41 @@
       ],
       "white": [
         "білий"
+      ]
+    },
+    "Commander action": {
+      "Create a new folder": [
+        "Створити нову теку"
+      ],
+      "Create a new label": [
+        "Створити нову мітку"
+      ],
+      "Go to Archive": [
+        "Перейти до Архіву"
+      ],
+      "Go to Drafts": [
+        "Перейти до Чернеток"
+      ],
+      "Go to Inbox": [
+        "Перейти до Вхідних"
+      ],
+      "Go to Sent": [
+        "Перейти до Надісланих"
+      ],
+      "Go to Spam": [
+        "Перейти до Спаму"
+      ],
+      "Go to Starred": [
+        "Перейти до Обраного"
+      ],
+      "Go to Trash": [
+        "Перейти до Смітника"
+      ],
+      "New message": [
+        "Нове повідомлення"
+      ],
+      "Search": [
+        "Пошук"
       ]
     },
     "Composer email icon": {
@@ -3938,6 +3976,9 @@
       "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
         "Включає 2700 серверів у понад 65 країнах, підключення до 10 пристроїв, доступ до світових сервісів трансляції, захист від зловмисних програм і реклами, а також інші можливості."
       ],
+      "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
+        "Включає підтримку 3 власних доменів, 90 адрес пошти, необмежену кількість псевдонімів Hide-my-email, спільний доступ до календаря та інші можливості."
+      ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Безпечно зберігайте свої файли у зашифрованому хмарному сховищі з автоматичною синхронізацією, зашифрованим спільним доступом та іншими можливостями."
       ]
@@ -4116,9 +4157,34 @@
         "Типовий"
       ]
     },
+    "Font face option": {
+      "System default": [
+        "Системна за замовчуванням"
+      ],
+      "Theme default": [
+        "Тема за замовчуванням"
+      ]
+    },
     "Font Size Default": {
       "Default": [
         "Типовий"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Великий"
+      ],
+      "Medium (recommended)": [
+        "Середній (рекомендовано)"
+      ],
+      "Small": [
+        "Маленький"
+      ],
+      "Very large": [
+        "Дуже великий"
+      ],
+      "Very small": [
+        "Дуже маленький"
       ]
     },
     "forwardmessage": {
@@ -5016,6 +5082,9 @@
       "Custom yearly": [
         "Власне щороку"
       ],
+      "Customize the look and feel of ${ BRAND_NAME } applications.": [
+        "Налаштуйте зовнішній вигляд застосунків ${ BRAND_NAME }."
+      ],
       "Daily": [
         "Щодня"
       ],
@@ -5051,6 +5120,12 @@
       ],
       "Draft saved.": [
         "Чернетку збережено."
+      ],
+      "Drop file here to upload": [
+        "Перетягніть файл сюди, щоб вивантажити"
+      ],
+      "Drop to import": [
+        "Перетягніть, щоб імпортувати"
       ],
       "Duplicate key updated": [
         "Дублікат ключа оновлено"
@@ -5166,9 +5241,6 @@
       "For messages newer than ${ oldestDate }": [
         "Для повідомлень новіших ${ oldestDate }"
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "Пересилайте вхідні повідомлення з іншого облікового запису до своєї захищеної поштової скриньки ${ MAIL_APP_NAME }."
-      ],
       "Free up some space or add more storage space.": [
         "Звільніть місце або збільште обсяг сховища."
       ],
@@ -5189,6 +5261,9 @@
       ],
       "Hide original message": [
         "Приховати оригінальне повідомлення"
+      ],
+      "How hide-my-email aliases works": [
+        "Як працюють псевдоніми Hide-my-email"
       ],
       "I'm sending this message to a non-${ MAIL_APP_NAME } user.": [
         "Я надсилаю повідомлення користувачу поза ${ MAIL_APP_NAME }."
@@ -5231,9 +5306,6 @@
       ],
       "Import mailbox": [
         "Імпортувати поштову скриньку"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "Імпортуйте ваші електронні листи, календарі та контакти з іншої служби до ${ BRAND_NAME }."
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Імпортування ваших даних із ${ fromEmail } до ${ toEmail }."
@@ -5379,9 +5451,6 @@
       "No group found": [
         "Групу не знайдено"
       ],
-      "No imports or forwarding history.": [
-        "Немає історії імпортування чи пересилання."
-      ],
       "No label found": [
         "Мітку не знайдено"
       ],
@@ -5417,6 +5486,9 @@
       ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Наша система позначила це повідомлення спробою шахрайства. Переконайтеся, що воно надійне."
+      ],
+      "Our system flagged this message as a suspicious email. Please check that it is legitimate before clicking any links or attachments.": [
+        "Наша система позначила це повідомлення як підозрілий електронний лист. Будь ласка, перевірте, що це законно, перш ніж натиснути будь-які посилання або вкладення."
       ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/Inline сумісний лише з форматом звичайного тексту."
@@ -5589,6 +5661,9 @@
       "Show original message": [
         "Показати оригінальне повідомлення"
       ],
+      "SimpleLogin is a ${ BRAND_NAME } service, and your ${ BRAND_NAME_TWO } Account includes hide-my-email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
+        "SimpleLogin – це сервіс ${ BRAND_NAME }, і ваш обліковий запис ${ BRAND_NAME_TWO } містить псевдоніми Hide-my-email. Щоб почати маскувати адресу електронної пошти, перейдіть до SimpleLogin і створіть свій перший псевдонім."
+      ],
       "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
         "SimpleLogin забезпечує простий спосіб створення облікових записів на не довірених сторонніх сайтах, де ви не хочете розкривати свою справжню адресу електронної пошти."
       ],
@@ -5658,6 +5733,9 @@
       "There has been an error with the signature used to verify the contact details, which may be the result of a password reset.": [
         "Сталася помилка з підписом, використаним для перевірки контактних даних, що могла стати результатом скидання пароля."
       ],
+      "They can't spam you if they don't know your email address. Protect your inbox with hide-my-email aliases.": [
+        "Вони не можуть спамити вас, якщо вони не знають вашу адресу електронної пошти. Захистіть свою поштову скриньку за допомогою псевдонімів Hide-my-email."
+      ],
       "This account has been suspended due to a potential policy violation.": [
         "Цей обліковий запис було призупинено через потенційне порушення правил."
       ],
@@ -5672,6 +5750,9 @@
       ],
       "This conversation contains non-trashed messages.": [
         "Ця розмова містить не видалені повідомлення."
+      ],
+      "This conversation contains one or more expiring messages": [
+        "Ця розмова містить одне або кілька повідомлень, термін дії яких закінчився"
       ],
       "This conversation contains trashed messages.": [
         "Ця розмова містить видалені повідомлення."
@@ -5892,6 +5973,9 @@
       "When do you want your message to self-destruct?": [
         "На коли ви плануєте самознищення свого повідомлення?"
       ],
+      "When giving out your email, use a unique, disposable hide-my-email alias instead of your real email address.": [
+        "Видаючи свою електронну пошту, використовуйте унікальний одноразовий псевдонім Hide-my-email замість вашої реальної адреси електронної пошти."
+      ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "Коли ви увімкнули довірені ключі для ${ senderName }, відкриті ключі було додано до контактних даних."
       ],
@@ -6016,7 +6100,7 @@
         "Ви вказали “${ attachmentsFoundKeyword }”, але вкладення не було додано. Ви все одно хочете надіслати повідомлення?"
       ],
       "You've reached the maximum number of addresses in the contact group(s):": [
-        "Ви досягли максимальної кількості адрес у групах контактів:"
+        "Ви досягли максимальної кількості адрес у групі (ах) контактів:"
       ],
       "You've reached the maximum number of addresses in the contact group.": [
         "Ви досягли максимальної кількості адрес у групі контактів."
@@ -6044,6 +6128,9 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "Ваша електронна пошта використається лише для цієї одноразової перевірки."
+      ],
+      "Your files will be encrypted and then saved": [
+        "Ваші файли буде зашифровано, а потім збережено"
       ],
       "Your import will not be processed.": [
         "Ваш імпорт не буде оброблений."
@@ -6074,6 +6161,12 @@
       ]
     },
     "info": {
+      "${ filteredList.length } command found.": [
+        "${ filteredList.length } команду знайдено.",
+        "${ filteredList.length } команди знайдено.",
+        "${ filteredList.length } команд знайдено.",
+        "${ filteredList.length } команд знайдено."
+      ],
       "Optional": [
         "Необов'язково"
       ]
@@ -6239,6 +6332,9 @@
       ],
       "New message": [
         "Нове повідомлення"
+      ],
+      "Open command panel": [
+        "Відкрити командну панель"
       ],
       "Open next message": [
         "Відкрити наступне повідомлення"
@@ -6716,6 +6812,9 @@
       "Street address": [
         "Вулиця"
       ],
+      "Synchronize with system": [
+        "Синхронізувати з системою"
+      ],
       "System information": [
         "Інформація про систему"
       ],
@@ -6751,6 +6850,9 @@
       ],
       "Toolbar": [
         "Панель інструментів"
+      ],
+      "Type a command...": [
+        "Введіть команду..."
       ],
       "Undisclosed Recipients": [
         "Приховані отримувачі"
@@ -7356,6 +7458,9 @@
       "Custom email domains": [
         "Власні домени електронної пошти"
       ],
+      "Hide-my-email aliases": [
+        "Псевдоніми Hide-my-email"
+      ],
       "Schedule messages at any time": [
         "Заплануйте надсилання повідомлень в будь-який час"
       ],
@@ -7457,6 +7562,9 @@
       "Discover all ${ BRAND_NAME } services": [
         "Ознайомитися з усіма службами ${ BRAND_NAME }"
       ],
+      "More theming options are available in your account Settings > Appearance.": [
+        "Додаткові параметри теми доступні в Налаштування облікового запису > Вигляд."
+      ],
       "Select a theme": [
         "Виберіть тему"
       ],
@@ -7468,9 +7576,6 @@
       ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
         "Використовуйте селектор застосунків у верхньому лівому куті, щоб отримати доступ до всіх служб ${ BRAND_NAME }: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } і ${ DRIVE_SHORT_APP_NAME }."
-      ],
-      "You can change this anytime in your settings.": [
-        "Ви можете змінити це будь-коли в налаштуваннях."
       ]
     },
     "Option": {
@@ -7635,6 +7740,9 @@
       ],
       "Text": [
         "Текст"
+      ],
+      "Type a command…": [
+        "Введіть команду…"
       ],
       "Type text or keyword": [
         "Введіть текст чи ключове слово"
@@ -8174,6 +8282,15 @@
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
         "Доступ звідусіль до матеріалів сервісів трансляції, включно з Netflix, Disney+ і Prime Video."
       ],
+      "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
+        "Всі найкращі можливості наших преміум функцій: 100 адрес пошти, підтримка 10 власних доменів, необмежена кількість псевдонімів Hide-my-email, спільний доступ до календаря, зашифроване хмарне сховище, спільний доступ до файлів і багато іншого."
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Включає підтримку 1 власного домену, 10 адрес пошти, 10 псевдонімів Hide-my-email, спільний доступ до календаря та інші можливості."
+      ],
+      "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Включає підтримку 3 власних доменів, 15 адрес пошти, необмежену кількість псевдонімів Hide-my-email, спільний доступ до календаря та інші можливості."
+      ],
       "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
         "Ідеально підходить для сім'ї або невеликої команди. Кожен учасник може мати власну поштову скриньку та псевдоніми. Потрібен власний домен."
       ],
@@ -8673,6 +8790,9 @@
         "${ unreads } непрочитаних повідомлень",
         "${ unreads } непрочитані повідомлення"
       ],
+      "(active)": [
+        "(активно)"
+      ],
       "Account suspended": [
         "Обліковий запис призупинено"
       ],
@@ -8789,6 +8909,9 @@
       ],
       "Customize your mail import": [
         "Налаштуйте імпорт своєї пошти"
+      ],
+      "Day theme": [
+        "Світла тема"
       ],
       "Decryption error": [
         "Помилка розшифрування"
@@ -9030,6 +9153,9 @@
       "Next message": [
         "Наступне повідомлення"
       ],
+      "Night theme": [
+        "Темна тема"
+      ],
       "No attachment found": [
         "Вкладення не знайдено"
       ],
@@ -9229,23 +9355,6 @@
         "Ваша безплатна пробна версія Mail Plus завершується ${ textDate }"
       ]
     },
-    "Title header": {
-      "Actions": [
-        "Дії"
-      ],
-      "Date": [
-        "Дата"
-      ],
-      "Import": [
-        "Імпорт"
-      ],
-      "Size": [
-        "Розмір"
-      ],
-      "Status": [
-        "Стан"
-      ]
-    },
     "Today icon tooltip in mini calendar": {
       "Today": [
         "Сьогодні"
@@ -9305,6 +9414,9 @@
       ],
       "The import will start with the most recent messages.": [
         "Імпортування розпочнеться з найновіших повідомлень."
+      ],
+      "The selected theme will be active when your system is set to \"light mode\"": [
+        "Вибрана тема буде активною, коли у вашій системі встановлено \"світлий режим\""
       ],
       "This feature is only available for paid users": [
         "Ця функція доступна лише користувачам, які мають передплату"
