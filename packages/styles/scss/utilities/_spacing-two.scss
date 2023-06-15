@@ -2,11 +2,26 @@
 // applications/storybook/src/stories/cssUtilities/Margin.stories.tsx
 
 @function pixel-to-rem($value) {
-	@return if($value == 0 or $value == 'auto', $value, rem($value));
+	@return if(type-of($value) == 'number' and unitless($value), rem($value), $value);
 }
 
-$spacings: '0' 0, '0\\\.5' 2, '1' 4, '2' 8, '3' 12, '4' 16, '5' 20, '6' 24, '7' 28, '8' 32, '10' 40, '11' 44, '12' 48,
-	'14' 56, 'auto' 'auto';
+$spacings: (
+	'0': 0,
+	'0\\\.5': 2,
+	'1': 4,
+	'2': 8,
+	'3': 12,
+	'4': 16,
+	'5': 20,
+	'6': 24,
+	'7': 28,
+	'8': 32,
+	'10': 40,
+	'11': 44,
+	'12': 48,
+	'14': 56,
+	'auto': 'auto',
+);
 $queries: (
 	default: 'all',
 	sm: '>xsmall',
