@@ -93,7 +93,7 @@ const PendingInvitationModal = ({ invite, ...modalProps }: Props) => {
                     loading={loadingReject}
                     disabled={loadingAccept}
                     onClick={() => withLoadingReject(handleRejectInvitation())}
-                >{c('familyOffer_2023:Action').t`Keep current plan`}</Button>
+                >{c('familyOffer_2023:Action').t`Decline invitation`}</Button>
                 {hasErrors ? (
                     <Button color="norm" onClick={() => modalProps.onClose()}>{c('familyOffer_2023:Action')
                         .t`Got it`}</Button>
