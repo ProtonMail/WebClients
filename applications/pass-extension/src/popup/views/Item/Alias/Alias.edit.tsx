@@ -8,6 +8,9 @@ import { Option } from '@proton/components';
 import { selectMailboxesForAlias } from '@proton/pass/store';
 import { merge } from '@proton/pass/utils/object';
 
+import type { EditAliasFormValues } from '../../../../shared/form/types';
+import { validateEditAliasForm } from '../../../../shared/form/validator/validate-alias';
+import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH } from '../../../../shared/form/validator/validate-item';
 import { useAliasOptions } from '../../../../shared/hooks';
 import { type ItemEditProps } from '../../../../shared/items';
 import { ValueControl } from '../../../components/Field/Control/ValueControl';
@@ -17,8 +20,6 @@ import { SelectField } from '../../../components/Field/SelectField';
 import { TextAreaField } from '../../../components/Field/TextareaField';
 import { TitleField } from '../../../components/Field/TitleField';
 import { ItemEditPanel } from '../../../components/Panel/ItemEditPanel';
-import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH } from '../Item/Item.validation';
-import { type EditAliasFormValues, validateEditAliasForm } from './Alias.validation';
 
 const FORM_ID = 'edit-alias';
 
