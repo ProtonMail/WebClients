@@ -212,6 +212,9 @@
       "Continue": [
         "Continuar"
       ],
+      "Continue anyway": [
+        "Continuar de todas formas"
+      ],
       "Continue import": [
         "Continuar la importación"
       ],
@@ -486,7 +489,7 @@
         "Importar correos electrónicos"
       ],
       "Import from ICS": [
-        "Importar desde ICS"
+        "Importar desde un archivo ICS"
       ],
       "Import key": [
         "Importar clave"
@@ -4067,7 +4070,7 @@
         "Incluye 2700 servidores en más de 65 países. Conecta hasta 10 dispositivos, accede a servicios de streaming de todo el mundo, dispón de la protección de bloqueadores de malware y anuncios, etc."
       ],
       "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
-        "Incluye compatibilidad con 3 dominios de correo electrónico personalizado, 90 direcciones de correo electrónico, alias ilimitados de \"Hide My Email\", posibilidad de compartir calendario, etc."
+        "Incluye compatibilidad con 3 dominios de correo electrónico personalizado, 90 direcciones de correo electrónico, alias ilimitados de Hide-my-email, posibilidad de compartir calendario, etc."
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Protege tus archivos con el almacenamiento cifrado en la nube. Incluye sincronización automática, posibilidad de compartir archivos cifrados, etc."
@@ -5286,9 +5289,6 @@
       ],
       "Check the status of imports and forwarding.": [
         "Verifica el estado de las importaciones y de los reenvíos."
-      ],
-      "Choose the look and feel of the application.": [
-        "Elige el aspecto de la aplicación."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Haz clic en \"Solicitar nuevo código\" para enviarte un nuevo código de verificación a ${ strong }. Si esta dirección de correo electrónico es incorrecta, haz clic en \"Editar\" para corregirla."
@@ -7375,6 +7375,9 @@
       "Card holder": [
         "Titular de la tarjeta"
       ],
+      "Card information": [
+        "Información sobre la tarjeta"
+      ],
       "Card number": [
         "Número de tarjeta"
       ],
@@ -8692,7 +8695,7 @@
         "Cambiar plan"
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
-        "Pasar a ${ upsellPlanHumanSize }"
+        "Cambiar a ${ upsellPlanHumanSize }"
       ]
     },
     "new_plans: attribute": {
@@ -8739,8 +8742,8 @@
         "${ n } carpetas y etiquetas"
       ],
       "${ n } Hide-my-email alias": [
-        "${ n } alias de \"Hide My Email\"",
-        "${ n } alias de \"Hide My Email\""
+        "${ n } alias de Hide-my-email",
+        "${ n } alias de Hide-my-email"
       ],
       "${ n } label": [
         "${ n } etiqueta",
@@ -8868,7 +8871,7 @@
         "Acuerdo para el tratamiento de datos conforme al RGPD"
       ],
       "Hide-my-email aliases": [
-        "Alias de \"Hide My Email\""
+        "Alias de Hide-my-email"
       ],
       "High-speed streaming": [
         "Transmisión de gran velocidad"
@@ -8969,7 +8972,7 @@
         "Carpetas, etiquetas y filtros ilimitados"
       ],
       "Unlimited hide-my-email aliases": [
-        "Un número ilimitado de alias \"Hide My Email\""
+        "Un número ilimitado de alias de Hide-my-email"
       ],
       "Unlimited labels": [
         "Etiquetas ilimitadas"
@@ -10513,13 +10516,13 @@
         "Accede desde cualquier lugar al contenido de servicios de transmisión como Netflix, Disney+ o Prime Video."
       ],
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
-        "Todos nuestros servicios premium al máximo: 100 direcciones de correo electrónico, compatibilidad con 10 dominios personalizados, alias ilimitados de \"Hide My Email\", posibilidad de compartir calendarios y archivos cifrados, almacenamiento cifrado en la nube, etc."
+        "Todos nuestros servicios premium al máximo: 100 direcciones de correo electrónico, compatibilidad con 10 dominios personalizados, alias ilimitados de Hide-my-email, posibilidad de compartir calendarios y archivos cifrados, almacenamiento cifrado en la nube, etc."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Incluye compatibilidad con 1 dominio de correo electrónico personalizado, 10 direcciones de correo electrónico, 10 alias de \"Hide My Email\", posibilidad de compartir calendario, etc."
+        "Incluye compatibilidad con 1 dominio de correo electrónico personalizado, 10 direcciones de correo electrónico, 10 alias de Hide-my-email, posibilidad de compartir calendario, etc."
       ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Incluye compatibilidad con 3 dominios de correo electrónico personalizado, 15 direcciones de correo electrónico, alias ilimitados de \"Hide My Email\", posibilidad de compartir calendario, etc."
+        "Incluye compatibilidad con 3 dominios de correo electrónico personalizado, 15 direcciones de correo electrónico, alias ilimitados de Hide-my-email, posibilidad de compartir calendario, etc."
       ],
       "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
         "Perfecto para familias o equipos pequeños. Cada miembro puede tener su propia bandeja de entrada y seudónimo. Requiere un dominio personalizado."
@@ -11777,9 +11780,6 @@
       "Select when you want this notification to be sent": [
         "Selecciona cuándo quieres que se envíe esta notificación."
       ],
-      "Sender image": [
-        "Imagen del remitente"
-      ],
       "Session management": [
         "Administración de sesiones"
       ],
@@ -12223,7 +12223,7 @@
     },
     "Upgrade": {
       "Upgrade to ${ passPlusPlanName } to get unlimited hide-my-email aliases": [
-        "Actualiza a ${ passPlusPlanName } para obtener alias ilimitados de \"Hide My Email\"."
+        "Actualiza a ${ passPlusPlanName } para obtener alias ilimitados de Hide-my-email."
       ],
       "Upgrade to ${ planName } to connect up to ${ n } device to the VPN at once": [
         "Actualiza a ${ planName } para conectar hasta ${ n } dispositivo a la VPN a la vez.",

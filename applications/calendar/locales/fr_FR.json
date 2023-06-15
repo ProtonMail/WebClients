@@ -109,7 +109,7 @@
         "Fermer"
       ],
       "Close event popover": [
-        "Fenêtre la fenêtre de l'événement"
+        "Fermer la fenêtre de l'événement"
       ],
       "Close navigation": [
         "Fermer la navigation"
@@ -2923,7 +2923,7 @@
         "Cela comprend 2 700 serveurs répartis dans plus de 65 pays, la possibilité de connecter jusqu'à 10 appareils, l'accès aux services de streaming du monde entier, un bloqueur de logiciels malveillants et de publicités et bien d'autres fonctionnalités."
       ],
       "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
-        "Comprend la prise en charge de 3 domaines de messagerie personnalisés, de 90 adresses e-mail, d'un nombre illimité d'alias « Hide My Email », du partage de calendrier…"
+        "Comprend la prise en charge de 3 domaines de messagerie personnalisés, de 90 adresses e-mail, d'un nombre illimité d'alias Hide-my-email, du partage de calendrier…"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Sécurisez vos fichiers grâce au stockage cloud chiffré. Cela comprend la synchronisation automatique, le partage de fichiers chiffrés et d'autres fonctionnalités."
@@ -2988,6 +2988,31 @@
     "Filter notification": {
       "${ Label.Name } updated": [
         "${ Label.Name } a été mis à jour."
+      ]
+    },
+    "Font face option": {
+      "System default": [
+        "Identique au système"
+      ],
+      "Theme default": [
+        "Thème par défaut"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Grand"
+      ],
+      "Medium (recommended)": [
+        "Moyen (recommandé)"
+      ],
+      "Small": [
+        "Petit"
+      ],
+      "Very large": [
+        "Très grand"
+      ],
+      "Very small": [
+        "Très petit"
       ]
     },
     "Group": {
@@ -3506,6 +3531,9 @@
       ],
       "Custom yearly": [
         "Chaque année (personnalisé)"
+      ],
+      "Customize the look and feel of ${ BRAND_NAME } applications.": [
+        "Personnalisez le style des applications ${ BRAND_NAME }."
       ],
       "Daily": [
         "Chaque jour"
@@ -4379,6 +4407,9 @@
       "Street address": [
         "Adresse postale"
       ],
+      "Synchronize with system": [
+        "Synchroniser avec les paramètres du système"
+      ],
       "System information": [
         "Informations système"
       ],
@@ -4792,7 +4823,7 @@
         "Domaines de messagerie personnalisés"
       ],
       "Hide-my-email aliases": [
-        "Alias « Hide My Email »"
+        "Alias Hide-my-email"
       ],
       "Schedule messages at any time": [
         "Planifiez l'envoi de messages quand vous le voulez"
@@ -5019,6 +5050,9 @@
       "Discover all ${ BRAND_NAME } services": [
         "Découvrez tous les services ${ BRAND_NAME }"
       ],
+      "More theming options are available in your account Settings > Appearance.": [
+        "D'autres thèmes sont disponibles dans vos paramètres de compte, section Apparence."
+      ],
       "Select a theme": [
         "Choisissez un thème"
       ],
@@ -5030,9 +5064,6 @@
       ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
         "Utilisez le sélecteur d'applications en haut à gauche pour accéder à tous les services ${ BRAND_NAME } : ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } et ${ DRIVE_SHORT_APP_NAME }."
-      ],
-      "You can change this anytime in your settings.": [
-        "Vous pouvez modifier cela à tout moment dans vos paramètres."
       ]
     },
     "Option": {
@@ -5573,13 +5604,13 @@
         "Accédez au contenu des services de streaming, dont Netflix, Amazon Prime Video, Canal+, Disney+, France.tv, TF1… où que vous soyez."
       ],
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
-        "Tous nos services premium au plus haut niveau : 100 adresses e-mail, la prise en charge de 10 domaines personnalisés, un nombre illimité d'alias « Hide My Email », le partage de calendriers, le stockage cloud et le partage de fichiers chiffrés…"
+        "Tous nos services premium au plus haut niveau : 100 adresses e-mail, la prise en charge de 10 domaines personnalisés, un nombre illimité d'alias Hide-my-email, le partage de calendriers, le stockage cloud et le partage de fichiers chiffrés…"
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Comprend la prise en charge d'un domaine de messagerie personnalisé, de 10 adresses e-mail, de 10 alias « Hide My Email », du partage de calendrier…"
+        "Comprend la prise en charge d'un domaine de messagerie personnalisé, de 10 adresses e-mail, de 10 alias Hide-my-email, du partage de calendrier…"
       ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Comprend la prise en charge de 3 domaines de messagerie personnalisés, de 15 adresses e-mail, d'un nombre illimité d'alias « Hide My Email », du partage de calendrier…"
+        "Comprend la prise en charge de 3 domaines de messagerie personnalisés, de 15 adresses e-mail, d'un nombre illimité d'alias Hide-my-email, du partage de calendrier…"
       ],
       "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
         "Idéal pour les familles ou les petites équipes, chacun pouvant disposer de sa propre boite de réception et de ses propres alias. Nécessite un domaine personnalisé."
@@ -5891,6 +5922,9 @@
         "${ emailsCount } adresse e-mail",
         "${ emailsCount } adresses e-mail"
       ],
+      "(active)": [
+        "(activé)"
+      ],
       "Account suspended": [
         "Compte suspendu"
       ],
@@ -5981,6 +6015,9 @@
       ],
       "Customize your mail import": [
         "Personnalisez votre importation de messagerie"
+      ],
+      "Day theme": [
+        "Thème jour"
       ],
       "Delete ${ count } contact": [
         "Supprimer ${ count } contact",
@@ -6080,6 +6117,9 @@
       ],
       "Minicalendar": [
         "Mini calendrier"
+      ],
+      "Night theme": [
+        "Thème nuit"
       ],
       "Open actions dropdown": [
         "Ouvrir le menu déroulant des actions"
@@ -6285,6 +6325,9 @@
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Automatique : le format utilisé dans l'éditeur est utilisé pour l'envoi à cet utilisateur. Texte brut : le message sera toujours converti en texte brut lors de l'envoi."
       ],
+      "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
+        "Basculez automatiquement entre vos thèmes préférés pour le jour et la nuit, en synchronisation avec les modes jour et nuit de votre système."
+      ],
       "Customize import to reduce the number of folders": [
         "Personnalisez l'importation pour réduire le nombre de dossiers."
       ],
@@ -6335,6 +6378,12 @@
       ],
       "The import will start with the most recent messages.": [
         "L'importation commencera par les messages les plus récents."
+      ],
+      "The selected theme will be active when your system is set to \"dark mode\"": [
+        "Le thème sélectionné sera activé quand votre système sera en « thème sombre »."
+      ],
+      "The selected theme will be active when your system is set to \"light mode\"": [
+        "Le thème sélectionné sera activé quand votre système sera en « thème clair »."
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Chargez une clé publique pour activer l'envoi de messages chiffrés de bout en bout à destination de cette adresse e-mail."

@@ -321,6 +321,9 @@
       "Got it": [
         "Verstanden"
       ],
+      "Grid layout": [
+        "Rasteransicht"
+      ],
       "Hide advanced PGP settings": [
         "Erweiterte PGP-Einstellungen ausblenden"
       ],
@@ -2188,10 +2191,10 @@
         "Unbekannter Fehler"
       ],
       "Username must begin with a letter or digit": [
-        "Der Benutzername muss mit einem Buchstaben oder einer Ziffer beginnen"
+        "Der Benutzername muss mit einem Buchstaben oder einer Ziffer beginnen."
       ],
       "Username must end with a letter or digit": [
-        "Der Benutzername muss mit einem Buchstaben oder einer Ziffer enden"
+        "Der Benutzername muss mit einem Buchstaben oder einer Ziffer enden."
       ],
       "You can't send a mail to more than 100 recipients": [
         "Es können keine Mails an mehr als 100 Empfänger gesendet werden"
@@ -2617,7 +2620,7 @@
         "Greife auf blockierte Inhalte zu und surfe privat. Umfasst 2700 Server in über 65 Ländern, die Verbindung von bis zu 10 Geräten, weltweite Streaming-Dienste, Malware- und Werbeblocker und mehr."
       ],
       "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
-        "Beinhaltet Unterstützung für 3 eigene E-Mail-Domains, 90 E-Mail-Adressen, unbegrenzte Hide My Email-Aliasse, Kalenderfreigabe und mehr."
+        "Beinhaltet Unterstützung für 3 eigene E-Mail-Domains, 90 E-Mail-Adressen, unbegrenzte Hide-my-email-Aliasse, Kalenderfreigabe und mehr."
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Sichere deine Dateien mit verschlüsseltem Cloud-Speicher. Beinhaltet automatische Synchronisierung, verschlüsselte Dateifreigabe und mehr."
@@ -2682,6 +2685,28 @@
     "Filter notification": {
       "${ Label.Name } updated": [
         "${ Label.Name } aktualisiert"
+      ]
+    },
+    "Font face option": {
+      "System default": [
+        "Systemvorgabe"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Groß"
+      ],
+      "Medium (recommended)": [
+        "Mittel (empfohlen)"
+      ],
+      "Small": [
+        "Klein"
+      ],
+      "Very large": [
+        "Sehr groß"
+      ],
+      "Very small": [
+        "Sehr klein"
       ]
     },
     "Group": {
@@ -3341,7 +3366,7 @@
         "Ziehe Dateien hierher, um sie hochzuladen"
       ],
       "Drop to import": [
-        "Loslassen zum Importieren"
+        "Ablegen zum Importieren"
       ],
       "Duplicate key updated": [
         "Zweitschlüssel aktualisiert"
@@ -3440,9 +3465,6 @@
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "Die besten Ergebnisse können erzielt werden, indem du Streaming und speicherintensive Aktivitäten vermeidest oder Uploads in kleinere Stapel aufteilst."
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "Leite ankommende E-Mails eines anderen Kontos in deinen sicheren ${ MAIL_APP_NAME } Posteingang weiter."
-      ],
       "Free forever": [
         "Für immer kostenlos"
       ],
@@ -3497,9 +3519,6 @@
       ],
       "Import mailbox": [
         "Postfach importieren"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "Importiere deine E-Mails, Kalender und Kontakte eines anderen Dienstes zu ${ BRAND_NAME }."
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Deine Daten werden von ${ fromEmail } nach ${ toEmail } importiert."
@@ -3963,8 +3982,8 @@
       "Uploading hundreds of files at once may have a performance impact.": [
         "Das gleichzeitige Hochladen von Hunderten von Dateien kann sich negativ auf die Leistung auswirken."
       ],
-      "Use Drive for Desktop to sync folders on your computer with ${ DRIVE_APP_NAME }. They’ll show up here and be accessible from anywhere. ${ LearnMore }": [
-        "Verwende Drive für den Desktop, um Ordner auf deinem Computer mit ${ DRIVE_APP_NAME } zu synchronisieren. Sie werden dann hier angezeigt und sind von überall aus zugänglich. ${ LearnMore }"
+      "Use Drive for Desktop to sync folders on your computer with ${ DRIVE_APP_NAME }. They’ll show up here and be accessible from anywhere. ${ learnMore }": [
+        "Verwende Drive für den Desktop, um Ordner auf deinem Computer mit ${ DRIVE_APP_NAME } zu synchronisieren. Sie werden dann hier angezeigt und sind von überall aus zugänglich. ${ learnMore }"
       ],
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Benutze dieses Formular, um uns unangebrachte, illegale, oder anderweitig schädliche geteilte Dateien zu melden. Du bist dabei, Folgendes zu melden:"
@@ -4559,6 +4578,9 @@
       "Street address": [
         "Straße und Hausnummer"
       ],
+      "Synchronize with system": [
+        "Mit System synchronisieren"
+      ],
       "System information": [
         "Systeminformationen"
       ],
@@ -4797,7 +4819,7 @@
         "Eigene E-Mail-Domains"
       ],
       "Hide-my-email aliases": [
-        "Hide My Email-Aliasse"
+        "Hide-my-email-Aliasse"
       ],
       "Schedule messages at any time": [
         "Nachrichten zu jeder Zeit planen"
@@ -5095,9 +5117,6 @@
       ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
         "Verwende die App-Auswahl oben links, um auf alle ${ BRAND_NAME }-Dienste zuzugreifen: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } und ${ DRIVE_SHORT_APP_NAME }."
-      ],
-      "You can change this anytime in your settings.": [
-        "Dies kann jederzeit in den Einstellungen geändert werden."
       ]
     },
     "Onboarding Title": {
@@ -5520,13 +5539,13 @@
         "Greife von überall aus auf Inhalte von Streaming-Diensten zu, darunter Netflix, Disney+ und Prime Video."
       ],
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
-        "Alle unsere Premium-Services mit ihren höchsten Limits: 100 E-Mail-Adressen, Unterstützung für 10 eigene Domains, unbegrenzte Hide My Email-Aliasse, Kalenderfreigabe, verschlüsselter Cloud-Speicher und Dateifreigabe, und vieles mehr."
+        "Alle unsere Premium-Services mit ihren höchsten Limits: 100 E-Mail-Adressen, Unterstützung für 10 eigene Domains, unbegrenzte Hide-my-email-Aliasse, Kalenderfreigabe, verschlüsselter Cloud-Speicher und Dateifreigabe, und vieles mehr."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Beinhaltet Unterstützung für eine eigene E-Mail-Domain, 10 E-Mail-Adressen, 10 Hide My Email-Aliasse, Kalenderfreigabe und mehr."
+        "Beinhaltet Unterstützung für eine eigene E-Mail-Domain, 10 E-Mail-Adressen, 10 Hide-my-email-Aliasse, Kalenderfreigabe und mehr."
       ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Beinhaltet Unterstützung für 3 eigene E-Mail-Domains, 15 E-Mail-Adressen, unbegrenzte Hide My Email-Aliasse, Kalenderfreigabe und mehr."
+        "Beinhaltet Unterstützung für 3 eigene E-Mail-Domains, 15 E-Mail-Adressen, unbegrenzte Hide-my-email-Aliasse, Kalenderfreigabe und mehr."
       ],
       "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
         "Perfekt geeignet für Familien oder kleine Teams; jeder kann über seinen eigenen Posteingang und Aliase verfügen. Erfordert eine eigene Domain."
@@ -5737,6 +5756,9 @@
       "${ numberOfFailedTransfer.total } failed upload": [
         "${ numberOfFailedTransfer.total } fehlgeschlagener Upload",
         "${ numberOfFailedTransfer.total } fehlgeschlagene Uploads"
+      ],
+      "(active)": [
+        "(aktiv)"
       ],
       "Account suspended": [
         "Konto gesperrt"

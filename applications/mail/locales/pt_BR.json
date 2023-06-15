@@ -478,7 +478,7 @@
         "Ocultar mensagens"
       ],
       "hide-my-email aliases": [
-        "aliases do \"Hide My Email\""
+        "aliases do Hide-my-email"
       ],
       "I have a question": [
         "Eu tenho uma dúvida"
@@ -1836,6 +1836,41 @@
       ],
       "white": [
         "branco"
+      ]
+    },
+    "Commander action": {
+      "Create a new folder": [
+        "Criar uma pasta"
+      ],
+      "Create a new label": [
+        "Criar um novo marcador"
+      ],
+      "Go to Archive": [
+        "Ir para o Arquivo"
+      ],
+      "Go to Drafts": [
+        "Ir para Rascunhos"
+      ],
+      "Go to Inbox": [
+        "Ir para a Caixa de entrada"
+      ],
+      "Go to Sent": [
+        "Ir para Enviados"
+      ],
+      "Go to Spam": [
+        "Ir para Spam"
+      ],
+      "Go to Starred": [
+        "Ir para Favoritos"
+      ],
+      "Go to Trash": [
+        "Ir para Lixeira"
+      ],
+      "New message": [
+        "Nova mensagem"
+      ],
+      "Search": [
+        "Pesquisar"
       ]
     },
     "Composer email icon": {
@@ -3892,7 +3927,7 @@
         "Inclui 2.700 servidores em mais de 65 países. Conecte até 10 dispositivos, acesse serviços de streaming no mundo todo, malware e bloqueador de anúncios e muito mais."
       ],
       "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
-        "Inclui suporte para 3 domínios de e-mail personalizado, 90 endereços de e-mail, aliases ilimitados do \"Hide My Email\", compartilhamento de calendário e muito mais."
+        "Inclui suporte para 3 domínios de e-mail personalizado, 90 endereços de e-mail, aliases ilimitados do Hide-my-email, compartilhamento de calendário e muito mais."
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Proteja seus arquivos com armazenamento criptografado na nuvem. Inclui sincronização automática, compartilhamento de arquivos criptografados e muito mais."
@@ -4083,7 +4118,7 @@
     },
     "Get started checklist completion": {
       "We've increased the total storage of your account to ${ rewardInGb } GB. Get additional storage and unlock premium features today.": [
-        "Aumentamos o espaço de armazenamento total de sua conta para ${ rewardInGb } GB. Obtenha espaço de armazenamento adicional e libere recursos premium hoje."
+        "Aumentamos o espaço de armazenamento total de sua conta para ${ rewardInGb } GB. Obtenha espaço de armazenamento adicional e descubra recursos premium hoje."
       ],
       "You're all set!": [
         "Tudo pronto!"
@@ -4118,7 +4153,7 @@
         "Importe seus contatos ou mensagens"
       ],
       "Quickly transfer your contacts or emails from any provider using our Easy Switch import assistant.": [
-        "Transfira rapidamente seus contatos ou e-mails de qualquer provedor usando nosso assistente de importação Troca Fácil."
+        "Transfira rapidamente seus contatos ou e-mails de qualquer provedor usando nosso assistente de importação Easy Switch."
       ],
       "Sign into the mobile app to complete the action": [
         "Acesse o aplicativo móvel para completar a ação"
@@ -4143,7 +4178,7 @@
     },
     "Get started checklist spotlight": {
       "You can access the checklist anytime from here": [
-        "Você pode acessar a lista de tarefas a qualquer momento daqui"
+        "Você pode acessar a lista de verificação a qualquer momento aqui."
       ]
     },
     "Get started checklist title": {
@@ -5004,9 +5039,6 @@
       "For messages newer than ${ oldestDate }": [
         "Para mensagens mais novas que ${ oldestDate }"
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "Encaminhe e-mails recebidos de outra conta para sua caixa de entrada segura do ${ MAIL_APP_NAME }."
-      ],
       "Free up some space or add more storage space.": [
         "Libere algum espaço ou adicione mais espaço de armazenamento."
       ],
@@ -5027,7 +5059,7 @@
         "Ocultar mensagem original"
       ],
       "How hide-my-email aliases works": [
-        "Funcionamento dos aliases do \"Hide My Email\""
+        "Funcionamento dos aliases do Hide-my-email"
       ],
       "I'm sending this message to a non-${ MAIL_APP_NAME } user.": [
         "Estou enviando essa mensagem para um não-usuário do ${ MAIL_APP_NAME }."
@@ -5068,9 +5100,6 @@
       ],
       "Import mailbox": [
         "Importar Caixa de Entrada"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "Importe seus emails, calendários e contatos de outro serviço para ${ BRAND_NAME }."
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Importando seus dados de ${ fromEmail } para ${ toEmail }."
@@ -5213,9 +5242,6 @@
       ],
       "No group found": [
         "Nenhum grupo encontrado"
-      ],
-      "No imports or forwarding history.": [
-        "Sem histórico de importação ou encaminhamento."
       ],
       "No label found": [
         "Nenhum marcador encontrado"
@@ -5426,7 +5452,7 @@
         "Exibir mensagem original"
       ],
       "SimpleLogin is a ${ BRAND_NAME } service, and your ${ BRAND_NAME_TWO } Account includes hide-my-email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
-        "O SimpleLogin é um serviço da ${ BRAND_NAME }, e sua conta da ${ BRAND_NAME_TWO } inclui os aliases do \"Hide My Email\". Para começar a mascarar seu endereço de e-mail, acesse SimpleLogin e crie seu primeiro alias."
+        "O SimpleLogin é um serviço da ${ BRAND_NAME }, e sua conta da ${ BRAND_NAME_TWO } inclui os aliases do Hide-my-email. Para começar a mascarar seu endereço de e-mail, acesse SimpleLogin e crie seu primeiro alias."
       ],
       "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
         "O SimpleLogin fornece uma maneira simples de cadastrar-se em sites de terceiros não confiáveis nos quais você não quer expor o seu endereço de e-mail real."
@@ -5496,7 +5522,7 @@
         "Houve um erro com a assinatura usada para verificar os detalhes do contato, o que pode ser o resultado de uma redefinição da senha."
       ],
       "They can't spam you if they don't know your email address. Protect your inbox with hide-my-email aliases.": [
-        "Eles não podem enviar spam para você se não souberem seu endereço de e-mail. Proteja sua caixa de entrada com alias do \"Hide My Email\"."
+        "Eles não podem enviar spam para você se não souberem seu endereço de e-mail. Proteja sua caixa de entrada com aliases do Hide-my-email."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Essa conta foi suspensa devido a uma potencial violação da política."
@@ -5732,7 +5758,7 @@
         "Quando você deseja que sua mensagem se autodestrua?"
       ],
       "When giving out your email, use a unique, disposable hide-my-email alias instead of your real email address.": [
-        "Ao distribuir seu e-mail, use um alias exclusivo e descartável do \"Hide My Email\" em vez do seu endereço de e-mail real."
+        "Ao distribuir seu e-mail, use um alias exclusivo e descartável do Hide-my-email em vez do seu endereço de e-mail real."
       ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "Quando você ativou as chaves confiáveis para ${ senderName }, as chaves públicas foram adicionadas aos detalhes do contato."
@@ -5901,6 +5927,10 @@
       ]
     },
     "info": {
+      "${ filteredList.length } command found.": [
+        "${ filteredList.length } comando encontrado.",
+        "${ filteredList.length } comandos encontrados."
+      ],
       "Optional": [
         "Opcional"
       ]
@@ -6062,6 +6092,9 @@
       ],
       "New message": [
         "Nova mensagem"
+      ],
+      "Open command panel": [
+        "Abrir painel de comandos"
       ],
       "Open next message": [
         "Abrir próxima mensagem"
@@ -6574,6 +6607,9 @@
       ],
       "Toolbar": [
         "Barra de ferramentas"
+      ],
+      "Type a command...": [
+        "Digite um comando..."
       ],
       "Undisclosed Recipients": [
         "Destinatários ocultos"
@@ -7164,7 +7200,7 @@
         "Domínios de e-mail personalizados"
       ],
       "Hide-my-email aliases": [
-        "Aliases do \"Hide My Email\""
+        "Aliases do Hide-my-email"
       ],
       "Schedule messages at any time": [
         "Agende mensagens a qualquer momento"
@@ -7278,9 +7314,6 @@
       ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
         "Use o seletor de aplicativos no canto superior esquerdo para acessar todos os serviços de ${ BRAND_NAME }: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } e ${ DRIVE_SHORT_APP_NAME }."
-      ],
-      "You can change this anytime in your settings.": [
-        "Você pode alterar isso a qualquer momento nas suas configurações."
       ]
     },
     "Option": {
@@ -7445,6 +7478,9 @@
       ],
       "Text": [
         "Texto"
+      ],
+      "Type a command…": [
+        "Digite um comando..."
       ],
       "Type text or keyword": [
         "Digite o texto ou a palavra-chave"
@@ -7956,13 +7992,13 @@
         "Acesse conteúdo em serviços de streaming, como Netflix, Disney+ e Prime Video de qualquer lugar."
       ],
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
-        "Todos os nossos serviços premium com os limites mais altos: 100 endereços de e-mail, suporte para 10 domínios personalizados, aliases ilimitados do \"Hide My Email\", compartilhamento de calendário, armazenamento criptografado na nuvem e compartilhamento de arquivo e muito mais."
+        "Todos os nossos serviços premium com os limites mais altos: 100 endereços de e-mail, suporte para 10 domínios personalizados, aliases ilimitados do Hide-my-email, compartilhamento de calendário, armazenamento criptografado na nuvem e compartilhamento de arquivo e muito mais."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Inclui suporte para 1 domínio de e-mail personalizado, 10 endereços de e-mail, 10 aliases do \"Hide My Email\", compartilhamento de calendário e muito mais."
+        "Inclui suporte para 1 domínio de e-mail personalizado, 10 endereços de e-mail, 10 aliases do Hide-my-email, compartilhamento de calendário e muito mais."
       ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Inclui suporte para 3 domínios de e-mail personalizado, 15 endereços de e-mail, aliases ilimitados do \"Hide My Email\", compartilhamento de calendário e muito mais."
+        "Inclui suporte para 3 domínios de e-mail personalizado, 15 endereços de e-mail, aliases ilimitados do Hide-my-email, compartilhamento de calendário e muito mais."
       ],
       "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
         "Perfeito para famílias ou equipes pequenas. Cada usuário pode ter sua própria caixa de entrada e aliases. Exige um domínio personalizado."
@@ -8008,7 +8044,7 @@
         "Esta mensagem é de uma lista de endereços."
       ],
       "Unsubscribed": [
-        "Descadastrado"
+        "Subscrição cancelada"
       ]
     },
     "Step in filter modal": {
@@ -8937,23 +8973,6 @@
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Sua avaliação gratuita do Mail Plus termina em ${ textDate }"
-      ]
-    },
-    "Title header": {
-      "Actions": [
-        "Ações"
-      ],
-      "Date": [
-        "Data"
-      ],
-      "Import": [
-        "Importar"
-      ],
-      "Size": [
-        "Tamanho"
-      ],
-      "Status": [
-        "Status"
       ]
     },
     "Today icon tooltip in mini calendar": {

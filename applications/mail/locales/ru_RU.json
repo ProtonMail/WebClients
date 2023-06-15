@@ -5166,9 +5166,6 @@
       "For messages newer than ${ oldestDate }": [
         "Для сообщений новее, чем ${ oldestDate }"
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "Пересылка входящей почты в ваш безопасный почтовый ящик ${ MAIL_APP_NAME } из другого аккаунта."
-      ],
       "Free up some space or add more storage space.": [
         "Освободите место или добавьте больше места для хранения."
       ],
@@ -5231,9 +5228,6 @@
       ],
       "Import mailbox": [
         "Импорт почтового ящика"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "Импортируйте ваши письма, календари и контакты в ${ BRAND_NAME } из другого сервиса."
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Импорт данных из ${ fromEmail } в ${ toEmail }."
@@ -5378,9 +5372,6 @@
       ],
       "No group found": [
         "Группа не найдена"
-      ],
-      "No imports or forwarding history.": [
-        "Нет истории импорта или пересылки."
       ],
       "No label found": [
         "Ярлыки не найдены"
@@ -7468,9 +7459,6 @@
       ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
         "Используйте переключатель приложений в левом верхнем углу, чтобы получить доступ ко всем сервисам ${ BRAND_NAME }: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } и ${ DRIVE_SHORT_APP_NAME }."
-      ],
-      "You can change this anytime in your settings.": [
-        "Вы можете изменить это в любой момент в настройках."
       ]
     },
     "Option": {
@@ -9227,23 +9215,6 @@
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Ваша бесплатная пробная версия Mail Plus заканчивается ${ textDate }"
-      ]
-    },
-    "Title header": {
-      "Actions": [
-        "Действия"
-      ],
-      "Date": [
-        "Дата"
-      ],
-      "Import": [
-        "Импорт"
-      ],
-      "Size": [
-        "Размер"
-      ],
-      "Status": [
-        "Состояние"
       ]
     },
     "Today icon tooltip in mini calendar": {

@@ -478,7 +478,7 @@
         "Nascondi i messaggi"
       ],
       "hide-my-email aliases": [
-        "alias \"Hide My Email\""
+        "alias Hide-my-email"
       ],
       "I have a question": [
         "Ho una domanda"
@@ -1840,16 +1840,16 @@
     },
     "Commander action": {
       "Create a new folder": [
-        "Crea una cartella"
+        "Crea una nuova cartella"
       ],
       "Create a new label": [
-        "Crea una etichetta"
+        "Crea una nuova etichetta"
       ],
       "Go to Archive": [
-        "Vai all'archivio"
+        "Vai all'Archivio"
       ],
       "Go to Drafts": [
-        "Vai alle bozze"
+        "Vai alle Bozze"
       ],
       "Go to Inbox": [
         "Vai alla posta in entrata"
@@ -1858,13 +1858,13 @@
         "Vai alla posta inviata"
       ],
       "Go to Spam": [
-        "Vai a spam"
+        "Vai a Spam"
       ],
       "Go to Starred": [
-        "Vai ai preferiti"
+        "Vai ai Preferiti"
       ],
       "Go to Trash": [
-        "Vai al cestino"
+        "Vai al Cestino"
       ],
       "New message": [
         "Nuovo messaggio"
@@ -3927,7 +3927,7 @@
         "Include 2700 server in più di 65 Paesi, possibilità di connettere fino a 10 dispositivi, accesso a servizi di streaming in tutto il mondo, blocco di malware e adblocker, e altro ancora."
       ],
       "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
-        "Include il supporto per 3 domini email personalizzati, 90 indirizzi email, alias \"Hide My Email\" illimitati, condivisione del calendario e altro ancora."
+        "Include il supporto per 3 domini email personalizzati, 90 indirizzi email, alias Hide-my-email illimitati, condivisione del calendario e altro ancora."
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Proteggi i tuoi file con l'archiviazione su cloud cifrata. Include la sincronizzazione automatica, la condivisione cifrata dei file e altro ancora."
@@ -4935,7 +4935,7 @@
         "Trascina qui i file da caricare."
       ],
       "Drop to import": [
-        "Trascinare per importare"
+        "Trascina per importare"
       ],
       "Duplicate key updated": [
         "Chiave duplicata aggiornata"
@@ -5039,9 +5039,6 @@
       "For messages newer than ${ oldestDate }": [
         "Per i messaggi più recenti di ${ oldestDate }"
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "Inoltra la posta in arrivo da un altro account alla tua casella di posta sicura di ${ MAIL_APP_NAME }."
-      ],
       "Free up some space or add more storage space.": [
         "Libera dello spazio o aggiungi più spazio di archiviazione."
       ],
@@ -5062,7 +5059,7 @@
         "Nascondi il messaggio originale"
       ],
       "How hide-my-email aliases works": [
-        "Funzionamento degli alias \"Hide-My-Email\""
+        "Funzionamento degli alias Hide-my-email"
       ],
       "I'm sending this message to a non-${ MAIL_APP_NAME } user.": [
         "Sto inviando questo messaggio ad un utente non-${ MAIL_APP_NAME }."
@@ -5103,9 +5100,6 @@
       ],
       "Import mailbox": [
         "Importa casella email"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "Importa le tue email, calendari e contatti da un altro servizio in ${ BRAND_NAME }."
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Importazione dei tuoi dati da ${ fromEmail } a ${ toEmail }."
@@ -5248,9 +5242,6 @@
       ],
       "No group found": [
         "Nessun gruppo trovato"
-      ],
-      "No imports or forwarding history.": [
-        "Nessuna cronologia di importazione o inoltro."
       ],
       "No label found": [
         "Nessuna etichetta trovata"
@@ -5461,7 +5452,7 @@
         "Mostra il messaggio originale"
       ],
       "SimpleLogin is a ${ BRAND_NAME } service, and your ${ BRAND_NAME_TWO } Account includes hide-my-email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
-        "SimpleLogin è un servizio ${ BRAND_NAME } e il tuo account ${ BRAND_NAME_TWO } include alias \"Hide My Email\". Per iniziare a mascherare il tuo indirizzo email, vai su SimpleLogin e crea il tuo primo alias."
+        "SimpleLogin è un servizio ${ BRAND_NAME } e il tuo account ${ BRAND_NAME_TWO } include alias Hide-my-email. Per iniziare a mascherare il tuo indirizzo email, vai su SimpleLogin e crea il tuo primo alias."
       ],
       "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
         "SimpleLogin fornisce un modo semplice per creare accessi a siti di terze parti non attendibili in cui non si desidera esporre il proprio indirizzo email."
@@ -5531,7 +5522,7 @@
         "Si è verificato un errore con la firma usata per verificare i dettagli del contatto, il che potrebbe risultare da un ripristino della password."
       ],
       "They can't spam you if they don't know your email address. Protect your inbox with hide-my-email aliases.": [
-        "Non possono inviarti spam se non conoscono il tuo indirizzo email. Proteggi la tua casella di posta con alias \"Hide My Email\"."
+        "Non possono inviarti spam se non conoscono il tuo indirizzo email. Proteggi la tua casella di posta con alias Hide-my-email."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Questo account è stato sospeso a causa di una potenziale violazione delle politiche."
@@ -5767,7 +5758,7 @@
         "Quando vuoi che il tuo messaggio si autodistrugga?"
       ],
       "When giving out your email, use a unique, disposable hide-my-email alias instead of your real email address.": [
-        "Quando fornisci la tua email, usa un alias unico e monouso \"Hide My Email\" invece del tuo vero indirizzo email."
+        "Quando fornisci la tua email, usa un alias unico e monouso Hide-my-email invece del tuo vero indirizzo email."
       ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "Quando hai abilitato le chiavi attendibili per ${ senderName }, le chiavi pubbliche sono state aggiunte ai dettagli del contatto."
@@ -6103,7 +6094,7 @@
         "Nuovo messaggio"
       ],
       "Open command panel": [
-        "Apri il pannello comandi"
+        "Apri il pannello dei comandi"
       ],
       "Open next message": [
         "Apri il prossimo messaggio"
@@ -7209,7 +7200,7 @@
         "Domini email personalizzati"
       ],
       "Hide-my-email aliases": [
-        "Alias \"Hide My Email\""
+        "Alias Hide-my-email"
       ],
       "Schedule messages at any time": [
         "Programma i messaggi per qualsiasi momento"
@@ -7323,9 +7314,6 @@
       ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
         "Utilizza il raccoglitore delle app in alto a sinistra per accedere a tutti i servizi ${ BRAND_NAME }: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } e ${ DRIVE_SHORT_APP_NAME }."
-      ],
-      "You can change this anytime in your settings.": [
-        "Puoi cambiarlo in qualunque momento nelle impostazioni."
       ]
     },
     "Option": {
@@ -8001,13 +7989,13 @@
         "Accedi ai contenuti dei servizi di streaming, tra cui Netflix, Disney+ e Prime Video, da qualsiasi luogo."
       ],
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
-        "Tutti i nostri servizi premium con il massimo dei limiti: 100 indirizzi email, supporto per 10 domini personalizzati, alias \"Hide My Email\" illimitati, condivisione del calendario, archiviazione su cloud e file sharing cifrati e altro ancora."
+        "Tutti i nostri servizi premium con il massimo dei limiti: 100 indirizzi email, supporto per 10 domini personalizzati, alias Hide-my-email illimitati, condivisione del calendario, archiviazione su cloud e file sharing cifrati e altro ancora."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Include il supporto per 1 dominio email personalizzato, 10 indirizzi email, 10 alias \"Hide My Email\", condivisione del calendario e altro ancora."
+        "Include il supporto per 1 dominio email personalizzato, 10 indirizzi email, 10 alias Hide-my-email, condivisione del calendario e altro ancora."
       ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Include il supporto per 3 domini email personalizzati, 15 indirizzi email, alias \"Hide My Email\" illimitati, condivisione del calendario e altro ancora."
+        "Include il supporto per 3 domini email personalizzati, 15 indirizzi email, alias Hide-my-email illimitati, condivisione del calendario e altro ancora."
       ],
       "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
         "Perfetto per famiglie o team di piccole dimensioni, ogni persona può avere la propria casella di posta e il proprio alias. È necessario un dominio personalizzato."
@@ -8982,23 +8970,6 @@
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "La tua prova gratuita di Mail Plus termina il giorno ${ textDate }"
-      ]
-    },
-    "Title header": {
-      "Actions": [
-        "Azioni"
-      ],
-      "Date": [
-        "Data"
-      ],
-      "Import": [
-        "Importa"
-      ],
-      "Size": [
-        "Dimensione"
-      ],
-      "Status": [
-        "Stato"
       ]
     },
     "Today icon tooltip in mini calendar": {

@@ -40,7 +40,7 @@
         "Дадаць кантакт"
       ],
       "Add email": [
-        "Дадаць адрас электроннай пошты"
+        "Дадаць электронную пошту"
       ],
       "Add group": [
         "Дадаць групу"
@@ -2970,6 +2970,9 @@
       "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
         "Уключае 2700 сервераў у больш чым 65 краінах, магчымасць падключаць да 10 прылад, сэрвісы з трансляцыямі па ўсім свеце, блакіроўку шкодных праграм і рэкламы, а таксама іншыя функцыі."
       ],
+      "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
+        "Уключае падтрымку для 3 карыстальніцкіх даменаў электроннай пошты, 90 адрасоў электроннай пошты, неабмежаваную колькасць псеўданімаў Hide-my-email, абагульванне календара і іншыя функцыі."
+      ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Абараніце свае файлы з дапамогай зашыфраванага воблачнага сховішча. Уключае аўтаматычную сінхранізацыю, шыфраванае абагульванне файлаў і іншыя функцыі."
       ]
@@ -3043,6 +3046,31 @@
     "Filter notification": {
       "${ Label.Name } updated": [
         "${ Label.Name } абноўлена"
+      ]
+    },
+    "Font face option": {
+      "System default": [
+        "Адпаведна сістэме"
+      ],
+      "Theme default": [
+        "Прадвызначаная тэма"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Вялікі"
+      ],
+      "Medium (recommended)": [
+        "Сярэдні (рэкамендуецца)"
+      ],
+      "Small": [
+        "Маленькі"
+      ],
+      "Very large": [
+        "Вельмі вялікі"
+      ],
+      "Very small": [
+        "Вельмі маленькі"
       ]
     },
     "Group": {
@@ -3620,11 +3648,20 @@
       "Custom yearly": [
         "Штогод (карыстальніцкае)"
       ],
+      "Customize the look and feel of ${ BRAND_NAME } applications.": [
+        "Наладзьце знешні выгляд праграм ${ BRAND_NAME }"
+      ],
       "Daily": [
         "Штодзень"
       ],
       "Discard changes?": [
         "Адхіліць змены?"
+      ],
+      "Drop file here to upload": [
+        "Перацягніце файл сюды, каб запампаваць"
+      ],
+      "Drop to import": [
+        "Перацягніце для імпартавання"
       ],
       "Duplicate key updated": [
         "Дублікат ключа абноўлены"
@@ -4094,6 +4131,9 @@
       "Your events will be encrypted and then saved.": [
         "Вашы падзеі будуць зашыфраваны і захаваны."
       ],
+      "Your files will be encrypted and then saved": [
+        "Вашы файлы будуць зашыфраваны, а пасля гэтага захаваны"
+      ],
       "Your import will not be processed.": [
         "Ваша імпартаванне не будзе апрацавана."
       ],
@@ -4490,6 +4530,9 @@
       ],
       "Street address": [
         "Вуліца"
+      ],
+      "Synchronize with system": [
+        "Сінхранізаваць з сістэмай"
       ],
       "System information": [
         "Сістэмная інфармацыя"
@@ -4919,6 +4962,9 @@
       "Custom email domains": [
         "Карыстальніцкія дамены электроннай пошты"
       ],
+      "Hide-my-email aliases": [
+        "Псеўданімаў Hide-my-email"
+      ],
       "Schedule messages at any time": [
         "Заплануйце адпраўку паведамленняў у любы час"
       ],
@@ -5186,6 +5232,9 @@
       "Discover all ${ BRAND_NAME } services": [
         "Пазнаёмцеся з усімі сэрвісамі ${ BRAND_NAME }"
       ],
+      "More theming options are available in your account Settings > Appearance.": [
+        "Дадатковыя параметры даступны ў наладах уліковага запісу > Знешні выгляд."
+      ],
       "Select a theme": [
         "Выберыце тэму"
       ],
@@ -5197,9 +5246,6 @@
       ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
         "Скарыстайцеся выбарам праграм злева ўверсе для атрымання доступу да ўсіх сэрвісаў ${ BRAND_NAME }: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } і ${ DRIVE_SHORT_APP_NAME }."
-      ],
-      "You can change this anytime in your settings.": [
-        "Вы можаце змяніць свой выбар у любы час у наладах."
       ]
     },
     "Option": {
@@ -5767,6 +5813,15 @@
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
         "Атрымлівайце доступ да змесціва сэрвісаў з трансляцыямі, такіх як Netflix, Disney+ і Prime Video з любой краіны ў свеце."
       ],
+      "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
+        "Усе нашы прэміяльныя сэрвісы з іх найвышэйшымі квотамі: 100 адрасоў электроннай пошты, падтрымка для 10 карыстальніцкіх даменаў, неабмежаваная колькасць псеўданімаў Hide-my-email, абагульванне календара, зашыфраванае воблачнае сховішча і абагульванне файлаў, а таксама іншыя функцыі."
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Уключае падтрымку для 1 карыстальніцкага дамена электроннай пошты, 10 адрасоў электроннай пошты, 10 псеўданімаў Hide-my-email, абагульванне календара і іншыя функцыі."
+      ],
+      "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Уключае падтрымку для 3 карыстальніцкіх даменаў электроннай пошты, 15 адрасоў электроннай пошты, неабмежаваную колькасць псеўданімаў Hide-my-email, абагульванне календара і іншыя функцыі."
+      ],
       "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
         "Ідэальна пасуе для сем'яў або невялікіх каманд. У кожнага карыстальніка будзе свая ўласная паштовая скрыня і псеўданімы. Патрабуецца карыстальніцкі дамен."
       ],
@@ -6097,6 +6152,9 @@
         "${ emailsCount } адрасоў электроннай пошты",
         "${ emailsCount } адрасоў электроннай пошты"
       ],
+      "(active)": [
+        "(актыўна)"
+      ],
       "Account suspended": [
         "Уліковы запіс прыпынены"
       ],
@@ -6189,6 +6247,9 @@
       ],
       "Customize your mail import": [
         "Наладжванне імпартавання вашай пошты"
+      ],
+      "Day theme": [
+        "Дзённая тэма"
       ],
       "Delete ${ count } contact": [
         "Выдаліць ${ count } кантакт",
@@ -6294,6 +6355,9 @@
       ],
       "Minicalendar": [
         "Мінікаляндар"
+      ],
+      "Night theme": [
+        "Начная тэма"
       ],
       "Open actions dropdown": [
         "Адкрыць спіс даступных дзеянняў"
@@ -6549,6 +6613,9 @@
       ],
       "The import will start with the most recent messages.": [
         "Імпартаванне пачнецца з самых апошніх паведамленняў."
+      ],
+      "The selected theme will be active when your system is set to \"light mode\"": [
+        "Выбраная тэма будзе актыўна, калі ў вашай сістэме зададзены \"светлы рэжым\""
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Запампуйце публічны ключ, каб уключыць адпраўку лістоў са скразным шыфраваннем на гэты адрас электроннай пошты"

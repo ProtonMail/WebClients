@@ -51,7 +51,7 @@
         "Converse conosco"
       ],
       "Choose my own password": [
-        "Escolher seu método de pagamento"
+        "Escolher sua senha"
       ],
       "Close": [
         "Fechar"
@@ -370,9 +370,6 @@
       ],
       "Upgrade now": [
         "Atualizar agora"
-      ],
-      "Use ${ label } theme": [
-        "Usar o tema ${ label }"
       ],
       "Use a different card": [
         "Usar outro cartão"
@@ -1826,7 +1823,7 @@
         "Inclui 2.700 servidores em mais de 65 países. Conecte até 10 dispositivos, acesse serviços de streaming no mundo todo, malware e bloqueador de anúncios e muito mais."
       ],
       "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
-        "Inclui suporte para 3 domínios de e-mail personalizado, 90 endereços de e-mail, aliases ilimitados do \"Hide My Email\", compartilhamento de calendário e muito mais."
+        "Inclui suporte para 3 domínios de e-mail personalizado, 90 endereços de e-mail, aliases ilimitados do Hide-my-email, compartilhamento de calendário e muito mais."
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Proteja seus arquivos com armazenamento criptografado na nuvem. Inclui sincronização automática, compartilhamento de arquivos criptografados e muito mais."
@@ -2199,9 +2196,6 @@
       "By leaving now, changes may not be saved": [
         "Ao sair agora, as alterações não podem ser salvas"
       ],
-      "Choose the look and feel of the application.": [
-        "Escolha a aparência do aplicativo."
-      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Clique em \"Solicitar novo código\" para que um novo código seja enviado para ${ strong }. Se esse número de telefone estiver incorreto, clique em \"Editar\" para corrigir isso."
       ],
@@ -2445,6 +2439,9 @@
       "Or select a particular server:": [
         "Ou selecione um servidor particular:"
       ],
+      "P2P": [
+        "P2P"
+      ],
       "Password copied to clipboard": [
         "Senha copiada para a área de transferências"
       ],
@@ -2634,6 +2631,9 @@
       ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Recarregue sua conta com créditos que podem ser utilizados para assinar um novo plano ou renovar seu plano atual. Você recebe um crédito a cada ${ i18nCurrency } gasto."
+      ],
+      "Tor": [
+        "Tor"
       ],
       "Total email addresses": [
         "Endereços de e-mail adicionais"
@@ -3019,6 +3019,9 @@
       "Card holder": [
         "Titular do cartão"
       ],
+      "Card information": [
+        "Informação do cartão"
+      ],
       "Card number": [
         "Número do cartão"
       ],
@@ -3225,6 +3228,9 @@
       ],
       "Security code": [
         "Código de segurança"
+      ],
+      "Security code (${ codeName })": [
+        "Código de segurança (${ codeName })"
       ],
       "Select your country": [
         "Selecione seu país"
@@ -3535,8 +3541,8 @@
         "${ n } pastas e marcadores"
       ],
       "${ n } Hide-my-email alias": [
-        "${ n } alias do \"Hide My Email\"",
-        "${ n } aliases do \"Hide My Email\""
+        "${ n } alias do Hide-my-email",
+        "${ n } aliases do Hide-my-email"
       ],
       "${ n } label": [
         "${ n } marcador",
@@ -3753,7 +3759,7 @@
         "Pastas ilimitadas, marcadores e filtros"
       ],
       "Unlimited hide-my-email aliases": [
-        "Aliases do \"Hide My Email\" ilimitados"
+        "Aliases do Hide-my-email ilimitados"
       ],
       "Unlimited labels": [
         "Marcadores ilimitados"
@@ -3783,7 +3789,7 @@
         "Gerenciamento de sessões de usuário"
       ],
       "Vault and Item sharing": [
-        "Cofre e compartilhamento de itens"
+        "Compartilhamento de itens e cofre"
       ],
       "Vault and Item sharing (coming soon)": [
         "Cofre e compartilhamento de itens (em breve)"
@@ -4212,6 +4218,9 @@
       "I use a different ${ BRAND_NAME } account": [
         "Eu uso uma conta ${ BRAND_NAME } diferente"
       ],
+      "iOS": [
+        "iOS"
+      ],
       "It's missing a key feature that I need": [
         "Está faltando um recurso que eu preciso"
       ],
@@ -4229,6 +4238,12 @@
       ],
       "Standard server configs": [
         "Configurações padrão do servidor"
+      ],
+      "TCP": [
+        "TCP"
+      ],
+      "UDP": [
+        "UDP"
       ]
     },
     "Payment method option": {
@@ -4612,13 +4627,13 @@
         "Acesse conteúdo em serviços de streaming, como Netflix, Disney+ e Prime Video de qualquer lugar."
       ],
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
-        "Todos os nossos serviços premium com os limites mais altos: 100 endereços de e-mail, suporte para 10 domínios personalizados, aliases ilimitados do \"Hide My Email\", compartilhamento de calendário, armazenamento criptografado na nuvem e compartilhamento de arquivo e muito mais."
+        "Todos os nossos serviços premium com os limites mais altos: 100 endereços de e-mail, suporte para 10 domínios personalizados, aliases ilimitados do Hide-my-email, compartilhamento de calendário, armazenamento criptografado na nuvem e compartilhamento de arquivo e muito mais."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Inclui suporte para 1 domínio de e-mail personalizado, 10 endereços de e-mail, 10 aliases do \"Hide My Email\", compartilhamento de calendário e muito mais."
+        "Inclui suporte para 1 domínio de e-mail personalizado, 10 endereços de e-mail, 10 aliases do Hide-my-email, compartilhamento de calendário e muito mais."
       ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Inclui suporte para 3 domínios de e-mail personalizado, 15 endereços de e-mail, aliases ilimitados do \"Hide My Email\", compartilhamento de calendário e muito mais."
+        "Inclui suporte para 3 domínios de e-mail personalizado, 15 endereços de e-mail, aliases ilimitados do Hide-my-email, compartilhamento de calendário e muito mais."
       ],
       "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
         "Perfeito para famílias ou equipes pequenas. Cada usuário pode ter sua própria caixa de entrada e aliases. Exige um domínio personalizado."
@@ -5375,6 +5390,11 @@
     "VPN signup": {
       "Swiss flag": [
         "Bandeira suíça"
+      ]
+    },
+    "VPNClient": {
+      "iOS": [
+        "iOS"
       ]
     },
     "Warning": {
