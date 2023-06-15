@@ -15,6 +15,9 @@ import { isEmptyString, uniqueId } from '@proton/pass/utils/string';
 import { getEpoch } from '@proton/pass/utils/time';
 
 import { UpgradeButton } from '../../../../shared/components/upgrade/UpgradeButton';
+import type { EditLoginItemFormValues } from '../../../../shared/form/types';
+import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH } from '../../../../shared/form/validator/validate-item';
+import { validateLoginForm } from '../../../../shared/form/validator/validate-login';
 import { useFeatureFlag } from '../../../../shared/hooks/useFeatureFlag';
 import type { ItemEditProps } from '../../../../shared/items';
 import { deriveAliasPrefix } from '../../../../shared/items/alias';
@@ -33,8 +36,6 @@ import { ItemEditPanel } from '../../../components/Panel/ItemEditPanel';
 import { useAliasForLoginModal } from '../../../hooks/useAliasForLoginModal';
 import { usePopupContext } from '../../../hooks/usePopupContext';
 import { AliasModal } from '../Alias/Alias.modal';
-import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH } from '../Item/Item.validation';
-import { type EditLoginItemFormValues, useLoginItemAliasModal, validateLoginForm } from './Login.validation';
 
 const FORM_ID = 'edit-login';
 

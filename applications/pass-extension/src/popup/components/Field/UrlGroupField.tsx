@@ -10,10 +10,9 @@ import { duplicates } from '@proton/pass/utils/array';
 import { isEmptyString, uniqueId } from '@proton/pass/utils/string';
 import { isValidURL } from '@proton/pass/utils/url';
 
+import type { UrlGroupValues, UrlItem } from '../../../shared/form/types';
 import { FieldBox } from './Layout/FieldBox';
 
-export type UrlItem = { url: string; id: string };
-export type UrlGroupValues = { url: string; urls: UrlItem[] };
 export type UrlGroupProps<V extends UrlGroupValues = UrlGroupValues> = {
     form: FormikContextType<V>;
     renderExtraActions?: (helpers: {
@@ -89,7 +88,7 @@ export const UrlGroupField = <T extends UrlGroupValues>({ form, renderExtraActio
 
                     const handleAdd = (url: string) => {
                         helpers.push(createNewUrl(isValidURL(url).url));
-                        form.setFieldValue('url', '');
+                        return form.setFieldValue('url', '');
                     };
 
                     return (
@@ -150,10 +149,7 @@ export const UrlGroupField = <T extends UrlGroupValues>({ form, renderExtraActio
                                 size="small"
                                 title={c('Action').t`Add`}
                                 className="flex flex-align-items-center gap-1"
-                                onClick={() => {
-                                    handleAdd(values.url);
-                                    inputRef.current?.focus();
-                                }}
+                                onClick={() => handleAdd(values.url).then(() => inputRef.current?.focus())}
                             >
                                 <Icon name="plus" /> {c('Action').t`Add`}
                             </Button>

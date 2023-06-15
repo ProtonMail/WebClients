@@ -8,6 +8,9 @@ import { selectVaultLimits } from '@proton/pass/store';
 import { uniqueId } from '@proton/pass/utils/string';
 import { getEpoch } from '@proton/pass/utils/time';
 
+import type { NoteFormValues } from '../../../../shared/form/types';
+import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH } from '../../../../shared/form/validator/validate-item';
+import { validateNoteForm } from '../../../../shared/form/validator/validate-note';
 import type { ItemNewProps } from '../../../../shared/items';
 import { Field } from '../../../components/Field/Field';
 import { FieldsetCluster } from '../../../components/Field/Layout/FieldsetCluster';
@@ -15,9 +18,6 @@ import { BaseTextAreaField } from '../../../components/Field/TextareaField';
 import { BaseTitleField } from '../../../components/Field/TitleField';
 import { VaultSelectField } from '../../../components/Field/VaultSelectField';
 import { ItemCreatePanel } from '../../../components/Panel/ItemCreatePanel';
-import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH } from '../Item/Item.validation';
-import type { NoteFormValues } from './Note.validation';
-import { validateNoteForm } from './Note.validation';
 
 const FORM_ID = 'new-note';
 
