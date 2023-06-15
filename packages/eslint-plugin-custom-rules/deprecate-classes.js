@@ -3,6 +3,10 @@
 // suggestedClassName is optional
 const deprecatedClassNames = [
     {
+        deprecatedClassName: 'mauto',
+        suggestedClassName: 'm-auto',
+    },
+    {
         deprecatedClassName: 'center',
         suggestedClassName: 'mx-auto',
     },
@@ -25,10 +29,6 @@ const deprecatedClassNames = [
     {
         deprecatedClassName: 'mbauto',
         suggestedClassName: 'mb-auto',
-    },
-    {
-        deprecatedClassName: 'mlauto',
-        suggestedClassName: 'ml-auto',
     },
     {
         deprecatedClassName: 'mlauto',

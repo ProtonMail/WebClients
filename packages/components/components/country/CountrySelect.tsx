@@ -112,7 +112,7 @@ const CountrySelect = ({
                         >
                             <span>
                                 <img
-                                    className="flex-item-noshrink mr0-5"
+                                    className="flex-item-noshrink mr-2"
                                     alt=""
                                     src={getFlagSvg(getCleanCountryCode(option.countryCode))}
                                     width="30"
