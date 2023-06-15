@@ -1734,6 +1734,41 @@
         "λευκό"
       ]
     },
+    "Commander action": {
+      "Create a new folder": [
+        "Δημιουργία νέου φακέλου"
+      ],
+      "Create a new label": [
+        "Δημιουργία νέας ετικέτας"
+      ],
+      "Go to Archive": [
+        "Μετάβαση στα Αρχειοθετημένα"
+      ],
+      "Go to Drafts": [
+        "Μετάβαση στα Πρόχειρα"
+      ],
+      "Go to Inbox": [
+        "Μετάβαση στα Εισερχόμενα"
+      ],
+      "Go to Sent": [
+        "Μετάβαση στα Απεσταλμένα"
+      ],
+      "Go to Spam": [
+        "Μετάβαση στα Ενοχλητικά"
+      ],
+      "Go to Starred": [
+        "Μετάβαση στα Αγαπημένα"
+      ],
+      "Go to Trash": [
+        "Μετάβαση στα Διαγραμμένα"
+      ],
+      "New message": [
+        "Νέο μήνυμα"
+      ],
+      "Search": [
+        "Αναζήτηση"
+      ]
+    },
     "Composer email icon": {
       "End-to-end encrypted": [
         "Διατερματικά κρυπτογραφημένο"
@@ -3737,6 +3772,11 @@
         "Το τρέχον σχέδιό σας δεν μπορεί να συμμετάσχει σε ένα Οραματικό ή οικογενειακό σχέδιο."
       ]
     },
+    "familyOffer_2023:Footer": {
+      "Discounts are based on the standard monthly pricing.": [
+        "Οι εκπτώσεις βασίζονται στην τυπική μηνιαία τιμολόγηση."
+      ]
+    },
     "familyOffer_2023:Get Proton Family": {
       "Get ${ planName }": [
         "Απόκτηση ${ planName }"
@@ -4806,9 +4846,6 @@
       "For messages newer than ${ oldestDate }": [
         "Για μηνύματα νεώτερα από ${ oldestDate }"
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "Προωθήστε την εισερχόμενη αλληλογραφία από άλλο λογαριασμό στα ασφαλή εισερχόμενά σας ${ MAIL_APP_NAME }."
-      ],
       "Free up some space or add more storage space.": [
         "Ελευθερώστε χώρο ή προσθέστε περισσότερο χώρο αποθήκευσης."
       ],
@@ -4867,9 +4904,6 @@
       ],
       "Import mailbox": [
         "Εισαγωγή γραμματοκιβωτίου"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "Εισαγάγετε τα μηνύματα ηλεκτρονικού ταχυδρομείου, τα ημερολόγια και τις επαφές σας από άλλη υπηρεσία στο ${ BRAND_NAME }."
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Γίνεται εισαγωγή δεδομένων από ${ fromEmail } προς ${ toEmail }."
@@ -7035,8 +7069,8 @@
       "Set up your organization": [
         "Ρυθμίστε τον οργανισμό σας"
       ],
-      "You can change this anytime in your settings.": [
-        "Μπορείτε να το αλλάξετε αυτό οποιαδήποτε στιγμή στις ρυθμίσεις σας."
+      "Set up your organization testing": [
+        "Ρύθμιση των δοκιμών του οργανισμού σας"
       ]
     },
     "Option": {
@@ -8583,23 +8617,6 @@
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Η δωρεάν δοκιμή του Mail Plus λήγει στις ${ textDate }"
-      ]
-    },
-    "Title header": {
-      "Actions": [
-        "Ενέργειες"
-      ],
-      "Date": [
-        "Ημερομηνία"
-      ],
-      "Import": [
-        "Εισαγωγή"
-      ],
-      "Size": [
-        "Μέγεθος"
-      ],
-      "Status": [
-        "Κατάσταση"
       ]
     },
     "Today icon tooltip in mini calendar": {

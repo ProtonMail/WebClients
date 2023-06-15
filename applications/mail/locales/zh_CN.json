@@ -2873,16 +2873,16 @@
         "无标签"
       ],
       "ProtonMail logo and a plus sign": [
-        "ProtonMail 的 logo 和 a plus sign"
+        "ProtonMail 图标与一个加号"
       ],
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
-        "一次性向所有人发送电子邮件或邀请函来节省时间，这是许多其他功能中的一个高级功能。现在就升级吧。"
+        "群发日程邀请与邮件，省时又省力，还有更多高级功能，升级账户即可体验。"
       ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files.": [
         "文件大小上限为 ${ MAX_IMPORT_FILE_SIZE_STRING }，且联系人总数上限为 ${ MAX_IMPORT_CONTACTS_STRING }。若您的文件超出限制，请先拆分成较小的文件。"
       ],
       "Unlock custom message scheduling and other benefits when you upgrade your plan.": [
-        "升级计划时解锁自定义消息调度和其他好处。"
+        "升级账户即可自由选择发送时间，还有各种高级功能。"
       ],
       "Unlock unlimited filters that sort your inbox for you and more premium features when you upgrade.": [
         "升级账户即可使用无限量的筛选规则为您自动整理邮箱，还有更多功能等您体验。"
@@ -3642,7 +3642,7 @@
         "出错了"
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
-        "我们无法加载此页面。 请刷新页面或检查您的互联网连接。"
+        "页面加载失败，请刷新或检查网络连接。"
       ],
       "You do not have any contact yet. Start by creating a new contact": [
         "您还没有任何联系人。首先创建一个新的联系人。"
@@ -3734,19 +3734,19 @@
     },
     "familyOffer_2023:Action": {
       "Got it": [
-        "了解了"
+        "知道了"
       ],
       "Keep current plan": [
-        "保持当前计划"
+        "保持当前账户等级"
       ],
       "Switch plans": [
-        "切换计划"
+        "变更账户等级"
       ],
       "View the invitation": [
-        "查看TA的邀请"
+        "查看邀请"
       ],
       "View the invitations": [
-        "查看TA的所有邀请"
+        "查看所有邀请"
       ]
     },
     "familyOffer_2023:Deal details": {
@@ -3765,64 +3765,64 @@
     },
     "familyOffer_2023:Family plan": {
       "${ BRAND_NAME } groups": [
-        "${ BRAND_NAME } 个组"
+        "${ BRAND_NAME } 团体账户"
       ],
       "Accounts with custom domains cannot join a Visionary or family plan.": [
-        "具有自定义域的账户无法加入 Visionary 计划或家庭计划。"
+        "使用自有域名的邮箱不能加入 Visionary 或家庭账户。"
       ],
       "customer support": [
         "客户支持"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
-        "如果您接受邀请，我们会将您从当前计划中转出，并将所有剩余余额存入您的账户。"
+        "如果您接受邀请，我们将为您退订当前账户等级，并将剩余时长折算为余额存入您的账户。"
       ],
       "Invited by: ${ inviteEmail }": [
-        "邀请人： ${ inviteEmail }"
+        "邀请人：${ inviteEmail }"
       ],
       "Manage addresses.": [
-        "管理地址"
+        "管理邮箱地址。"
       ],
       "Owners of a plan with members cannot join another group plan.": [
-        "拥有成员的计划的所有者不能加入另一个团体计划。"
+        "包含子用户的邮箱不能加入其他团体账户。"
       ],
       "Sorry, you can't switch plans at this time.": [
-        "抱歉，您目前无法切换计划。"
+        "抱歉，您目前无法变更账户等级。"
       ],
       "Storage assigned to you: ${ assignedStorage }": [
-        "分配给您的存储空间： ${ assignedStorage }"
+        "分配给您的存储空间：${ assignedStorage }"
       ],
       "The subscription is billed to the Visionary or family plan's primary admin.": [
         "订阅费用由 Visionary 计划或家庭计划的主要管理员支付。"
       ],
       "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Visionary 计划和家庭计划目前不支持外部账户。请在加入之前创建一个 ${ BRAND_NAME } 地址。 ${ addressSettingsLink }"
+        "Visionary 账户与家庭账户目前不支持第三方平台，请创建 ${ BRAND_NAME } 邮箱地址后再加入。${ addressSettingsLink }"
       ],
       "Visionary and family plans do not currently support lifetime accounts.": [
-        "Visionary 计划和家庭计划目前不支持终身账户。"
+        "Visionary 与家庭账户暂不支持终身制。"
       ],
       "You are invited to join ${ invite.OrganizationName }": [
-        "您已受邀加入 ${ invite.OrganizationName }"
+        "有人邀请您加入 ${ invite.OrganizationName }"
       ],
       "You can only accept 3 invitations in a 6-month period. Please contact ${ supportLink } if you require an exception.": [
-        "您在 6 个月内只能接受 3 次邀请。 如果您需要例外，请联系 ${ supportLink } 。"
+        "6 个月内您只能接受 3 次邀请。如果另有需要，请联系${ supportLink }。"
       ],
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
-        "您已受邀加入  ${ bannerOrganization }. ${ viewInviteButton }"
+        "有人邀请您加入 ${ bannerOrganization }。${ viewInviteButton }"
       ],
       "You have successfully joined the Family plan": [
-        "您已成功加入家庭计划"
+        "您已成功加入家庭账户"
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
-        "我们邀请您将您的 ${ BRAND_NAME } 账户链接到此团体计划，并一起享受所有 ${ BRAND_NAME_TWO } 高级功能。"
+        "有人邀请您将 ${ BRAND_NAME } 账户接入此团体账户中，共同享受所有 ${ BRAND_NAME_TWO } 高级功能。"
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
-        "您账户中的电子邮件地址多于此计划中可用的电子邮件地址。 ${ addressSettingsLink }"
+        "您已有的邮箱地址数量超过了此账户分配给您的邮箱地址数。${ addressSettingsLink }"
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
-        "您的账户正在使用 ${ usedSpace } 的存储空间，这超出了为您分配的 ${ inviteSpace } 。删除一些数据或要求该计划的管理员增加您的存储空间。"
+        "您已使用 ${ usedSpace } 存储空间，超过了账户分配的 ${ inviteSpace } 上限。请清理部分数据或要求账户管理员为您的邮箱扩容。"
       ],
       "Your current plan cannot join a Visionary or family plan.": [
-        "您当前的计划无法加入 Visionary 计划或家庭计划。"
+        "您的当前账户无法加入 Visionary 或家庭账户。"
       ]
     },
     "familyOffer_2023:Footer": {
@@ -4902,9 +4902,6 @@
       "For messages newer than ${ oldestDate }": [
         "搜索 ${ oldestDate } 之后的邮件"
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "将其他邮箱收到的邮件自动转发至您安全的 ${ MAIL_APP_NAME } 邮箱。"
-      ],
       "Free up some space or add more storage space.": [
         "释放一些存储空间或付费扩容。"
       ],
@@ -4961,9 +4958,6 @@
       ],
       "Import mailbox": [
         "导入收件箱"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "将您的邮件、日历和通讯录从其他邮箱导入至 ${ BRAND_NAME }。"
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "将您的数据从 ${ fromEmail } 导入至 ${ toEmail }。"
@@ -5105,9 +5099,6 @@
       ],
       "No group found": [
         "未找到群组"
-      ],
-      "No imports or forwarding history.": [
-        "暂无邮件导入与自动转发记录。"
       ],
       "No label found": [
         "未找到标签"
@@ -7032,16 +7023,16 @@
     },
     "new_plans: feature info": {
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
-        "为您的在线身份创建多个电子邮件地址，例如JohnShopper@${ domain } 账户用于购物，JohnNews@${ domain2 } 账户用于订阅新闻"
+        "为您的各类网络需求创建不同的邮箱地址；例如 ChenGouwu@${ domain } 用于注册购物网站，ChenXinwen@${ domain2 } 用于收取时事新闻"
       ],
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
-        "通过 ${ BRAND_NAME } 使用 SimpleLogin 获得无限别名"
+        "通过 ${ BRAND_NAME } 提供的 SimpleLogin 服务使用无限量的邮箱别名"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME }、${ DRIVE_APP_NAME } 均共用同一存储空间"
       ],
       "Use your own custom email domain address, e.g., you@yourname.com": [
-        "使用您自己的自定义电子邮件域地址，例如 you@yourname.com"
+        "在邮箱地址中使用您自己的域名（如 you@yourname.com）"
       ]
     },
     "new_plans: label": {
@@ -7123,9 +7114,6 @@
       ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
         "通过左上角的切换按钮可以前往所有 ${ BRAND_NAME } 服务：${ MAIL_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME } 和 ${ DRIVE_SHORT_APP_NAME }。"
-      ],
-      "You can change this anytime in your settings.": [
-        "您可以随时在设置中更改。"
       ]
     },
     "Option": {
@@ -7587,7 +7575,7 @@
     },
     "specialoffer: Action, Unlimited is a plan name": {
       "Go Unlimited": [
-        "去到 无限制"
+        "开通 Unlimited"
       ]
     },
     "specialoffer: Countdown unit": {
@@ -7617,34 +7605,34 @@
         "3 TB"
       ],
       "6 users": [
-        "6 名使用者"
+        "6 名用户"
       ],
       "64 countries": [
         "64 个国家"
       ],
       "All paid Mail and Calendar features": [
-        "所有付费邮件和日历功能"
+        "享受 Mail 与 Calendar 的所有付费功能"
       ],
       "High speed VPN": [
-        "高速VPN"
+        "高速 VPN"
       ],
       "Highest VPN speed": [
         "VPN 速度最快"
       ],
       "Premium Drive": [
-        "高级云盘"
+        "高级云盘账户"
       ],
       "Premium early access": [
-        "高级抢先体验"
+        "抢先体验高级功能"
       ],
       "Premium Mail and Calendar": [
-        "高级邮件和日历"
+        "高级邮箱与日历账户"
       ],
       "Premium Mail, Calendar and Drive": [
-        "高级邮件、日历和云盘"
+        "享受 Mail、Calendar、Drive 全部高级功能"
       ],
       "Premium VPN": [
-        "高级VPN"
+        "高级 VPN 账户"
       ],
       "Secure cloud storage": [
         "安全的云存储"
@@ -7653,7 +7641,7 @@
         "安全看视频"
       ],
       "Support online privacy": [
-        "支持在线隐私"
+        "支持网络隐私保护"
       ]
     },
     "specialoffer: Footer": {
@@ -7669,7 +7657,7 @@
         "终身优惠"
       ],
       "Limited time only": [
-        "时间不多了"
+        "限时优惠"
       ],
       "Most popular": [
         "最受欢迎"
@@ -7678,15 +7666,15 @@
         "优惠即将结束"
       ],
       "The discount will continue to apply upon renewal until the subscription is canceled or modified": [
-        "折扣将在续订后继续适用，直到订阅被取消或修改"
+        "每次续订均可享受此优惠，直到退订或变更账户等级"
       ]
     },
     "specialoffer: Link": {
       "Go to subscription plans": [
-        "转至订阅计划"
+        "查看账户等级"
       ],
       "Upgrade": [
-        "升级"
+        "升级账户"
       ]
     },
     "specialoffer: Offers": {
@@ -8711,23 +8699,6 @@
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "您的 Mail Plus 免费体验期将于 ${ textDate } 结束"
-      ]
-    },
-    "Title header": {
-      "Actions": [
-        "操作"
-      ],
-      "Date": [
-        "日期"
-      ],
-      "Import": [
-        "导入"
-      ],
-      "Size": [
-        "大小"
-      ],
-      "Status": [
-        "状态"
       ]
     },
     "Today icon tooltip in mini calendar": {
