@@ -39,6 +39,7 @@ interface Props {
     creditCardTopRef?: Ref<HTMLDivElement>;
     disabled?: boolean;
     cardFieldStatus?: CardFieldStatus;
+    paypalPrefetchToken?: boolean;
 }
 
 const Payment = ({
@@ -59,6 +60,7 @@ const Payment = ({
     noMaxWidth = false,
     creditCardTopRef,
     disabled,
+    paypalPrefetchToken,
 }: Props) => {
     const { paymentMethods, options, loading } = useMethods({ amount, paymentMethodStatus, coupon, flow: type });
     const lastUsedMethod = options.usedMethods[options.usedMethods.length - 1];
@@ -162,6 +164,7 @@ const Payment = ({
                             currency={currency}
                             type={type}
                             disabled={disabled}
+                            prefetchToken={paypalPrefetchToken}
                         />
                     )}
                     {customPaymentMethod && (
