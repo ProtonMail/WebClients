@@ -68,7 +68,7 @@ const PendingInvitationModalErrors = ({ errors, invite, onClose }: Props) => {
             <div>
                 <p className="color-danger text-bold m-0">{c('familyOffer_2023:Family plan')
                     .t`Sorry, you can't switch plans at this time.`}</p>
-                <p className="m0">{errorDescription}</p>
+                <p className="m-0">{errorDescription}</p>
             </div>
         </>
     );

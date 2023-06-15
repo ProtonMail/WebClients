@@ -1,7 +1,5 @@
 import { useState } from 'react';
 
-
-
 import {
     CalendarLogo,
     DriveLogo,
@@ -95,7 +93,7 @@ export const Individual = () => (
         <div className="mb-8">
             <DriveLogo />
         </div>
-        <div className="mb2">
+        <div className="mb-8">
             <VpnLogo />
         </div>
         <div>
