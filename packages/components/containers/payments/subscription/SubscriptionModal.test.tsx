@@ -10,7 +10,7 @@ import {
 } from '@proton/components/hooks/helpers/test';
 import { createToken, subscribe } from '@proton/shared/lib/api/payments';
 import { ADDON_NAMES, CYCLE, PLANS } from '@proton/shared/lib/constants';
-import { Audience, PlansMap, SubscriptionCheckResponse, SubscriptionModel } from '@proton/shared/lib/interfaces';
+import { Audience, PlansMap, Renew, SubscriptionCheckResponse, SubscriptionModel } from '@proton/shared/lib/interfaces';
 import {
     apiMock,
     applyHOCs,
@@ -136,6 +136,7 @@ describe('useProration', () => {
             Discount: 0,
             isManagedByMozilla: false,
             External: 0,
+            Renew: Renew.Enabled,
             Plans: [
                 {
                     Amount: 499,

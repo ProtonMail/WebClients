@@ -1,19 +1,44 @@
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms/Button';
+import { useModalTwo } from '@proton/components/components';
+
+import { useSubscription } from '../../../hooks';
 import { SettingsParagraph, SettingsSection } from '../../account';
-import UnsubscribeButton from './UnsubscribeButton';
+import CancelSubscriptionModal from '../CancelSubscriptionModal';
 
 const CancelSubscriptionSection = () => {
+    const [subscription, loadingSubscription] = useSubscription();
+
+    const [cancelSubscriptionModal, showCancelSubscriptionModal] = useModalTwo(CancelSubscriptionModal);
+
+    if (!subscription) {
+        return null;
+    }
+
     return (
-        <SettingsSection>
-            <SettingsParagraph>
-                {c('Info')
-                    .t`This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.`}
-            </SettingsParagraph>
-            <UnsubscribeButton color="danger" shape="outline">
-                {c('Action').t`Downgrade account`}
-            </UnsubscribeButton>
-        </SettingsSection>
+        <>
+            {cancelSubscriptionModal}
+            <SettingsSection>
+                <SettingsParagraph>
+                    {c('Info')
+                        .t`This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.`}
+                </SettingsParagraph>
+                <Button
+                    onClick={() =>
+                        showCancelSubscriptionModal({
+                            subscription,
+                        })
+                    }
+                    data-testid="CancelSubsriptionButton"
+                    color="danger"
+                    shape="outline"
+                    disabled={loadingSubscription}
+                >
+                    {c('Action').t`Cancel subscription`}
+                </Button>
+            </SettingsSection>
+        </>
     );
 };
 
