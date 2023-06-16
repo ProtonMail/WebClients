@@ -1,12 +1,8 @@
-@include responsive-classes(static) {
-	position: static;
-}
-
-@include responsive-classes(relative) {
+.relative {
 	position: relative;
 }
 
-@include responsive-classes(absolute) {
+.absolute {
 	position: absolute;
 	z-index: 1;
 }
@@ -45,7 +41,7 @@
 	inset: 0;
 }
 
-@include responsive-classes(fixed) {
+.fixed {
 	position: fixed;
 }
 
@@ -119,4 +115,31 @@
 	&#{&} {
 		inset-inline-start: var(--left-custom);
 	}
+}
+
+/*
+ * Specific for input fields
+ */
+.right-icon,
+.right-text,
+.left-icon {
+	inset-block-start: 0;
+	block-size: #{rem($default-height-fields)}; // height of field
+	align-content: center;
+}
+
+.right-icon {
+	inset-inline-end: 0.5em;
+}
+
+.right-text {
+	inset-inline-end: 1em;
+
+	&-inner {
+		padding-block-end: rem(2);
+	}
+}
+
+.left-icon {
+	inset-inline-start: 0.5em;
 }
