@@ -7,8 +7,15 @@ import { useActiveBreakpoint } from '@proton/components';
 import useNavigate from '../../../hooks/drive/useNavigate';
 import { EncryptedLink, LinkShareUrl, useSharedLinksView, useThumbnailsDownload } from '../../../store';
 import { SortField } from '../../../store/_views/utils/useSorting';
-import FileBrowser, { Cells, GridHeader, useItemContextMenu, useSelection } from '../../FileBrowser';
-import { BrowserItemId, FileBrowserBaseItem, ListViewHeaderItem } from '../../FileBrowser/interface';
+import FileBrowser, {
+    BrowserItemId,
+    Cells,
+    FileBrowserBaseItem,
+    GridHeader,
+    ListViewHeaderItem,
+    useItemContextMenu,
+    useSelection,
+} from '../../FileBrowser';
 import { GridViewItem } from '../FileBrowser/GridViewItemLink';
 import { AccessCountCell, CreatedCell, ExpirationCell, LocationCell, NameCell } from '../FileBrowser/contentCells';
 import headerItems from '../FileBrowser/headerCells';
@@ -105,7 +112,7 @@ const SharedLinks = ({ shareId, sharedLinksView }: Props) => {
                 return;
             }
             document.getSelection()?.removeAllRanges();
-            navigateToLink(shareId, item.id, item.isFile);
+            navigateToLink(item.rootShareId, item.id, item.isFile);
         },
         [navigateToLink, shareId, browserItems]
     );
