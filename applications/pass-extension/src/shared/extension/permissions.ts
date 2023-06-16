@@ -9,5 +9,8 @@ export const PASS_PERMISSIONS: Permissions.Permissions = {
     origins: manifest.host_permissions ?? [],
 };
 
-export const checkExtensionPermissions = async (): Promise<boolean> => browser.permissions.contains(PASS_PERMISSIONS);
-export const promptForPermissions = async (): Promise<boolean> => browser.permissions.request(PASS_PERMISSIONS);
+export const checkExtensionPermissions = async (): Promise<boolean> =>
+    browser.permissions.contains(PASS_PERMISSIONS).catch(() => false);
+
+export const promptForPermissions = async (): Promise<boolean> =>
+    browser.permissions.request(PASS_PERMISSIONS).catch(() => false);
