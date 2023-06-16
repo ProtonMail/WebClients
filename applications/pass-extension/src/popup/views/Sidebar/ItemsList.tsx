@@ -18,13 +18,13 @@ export const ItemsList: VFC = () => {
     const onSelectItem = useSelectItemClick();
 
     const {
-        filtering: { search, filter, sort, setSort, setFilter },
+        filtering: { search, type, sort, setSort, setType },
         filtered,
         totalCount,
     } = useItems();
 
     const listRef = useRef<List>(null);
-    useEffect(() => listRef.current?.scrollToRow(0), [filter, sort]);
+    useEffect(() => listRef.current?.scrollToRow(0), [type, sort]);
 
     const { interpolation, interpolationIndexes } = useMemo(
         () => interpolateRecentItems(filtered)(sort === 'recent'),
@@ -35,7 +35,7 @@ export const ItemsList: VFC = () => {
         <>
             {totalCount > 0 && (
                 <div className="flex p-3 gap-1">
-                    <ItemsFilter value={filter} onChange={setFilter} />
+                    <ItemsFilter value={type} onChange={setType} />
                     <ItemsSort sort={sort} onSortChange={setSort} />
                 </div>
             )}
