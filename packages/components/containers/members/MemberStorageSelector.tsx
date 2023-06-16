@@ -199,7 +199,7 @@ const MemberStorageSelector = ({
                         </>
                     ) : (
                         <>
-                            <div className="w-custom" style={{ '--width-custom': `${(rect?.height || 0) / ratio}px` }}>
+                            <div className="w-custom" style={{ '--w-custom': `${(rect?.height || 0) / ratio}px` }}>
                                 <Donut segments={segments.map(({ value }) => value)} />
                             </div>
                             <div className="ml-4 text-sm">

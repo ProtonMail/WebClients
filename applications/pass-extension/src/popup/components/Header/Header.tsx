@@ -110,7 +110,7 @@ export const Header: VFC<{}> = () => {
                                 >
                                     <span
                                         className="mr-2 w-custom h-custom rounded-lg overflow-hidden relative pass-item-icon"
-                                        style={{ '--width-custom': `2em`, '--height-custom': `2em` }}
+                                        style={{ '--w-custom': `2em`, '--h-custom': `2em` }}
                                     >
                                         <Icon
                                             name={itemTypeToIconName[type]}
@@ -140,7 +140,7 @@ export const Header: VFC<{}> = () => {
                         >
                             <span
                                 className="mr-2 w-custom h-custom rounded-lg overflow-hidden relative pass-item-icon"
-                                style={{ '--width-custom': `2em`, '--height-custom': `2em` }}
+                                style={{ '--w-custom': `2em`, '--h-custom': `2em` }}
                             >
                                 <Icon name="key" className="absolute-center" color="var(--interaction-norm)" />
                             </span>

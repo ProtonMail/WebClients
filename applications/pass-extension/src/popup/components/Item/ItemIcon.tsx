@@ -49,7 +49,7 @@ export const ItemIcon: VFC<{ item: ItemRevisionWithOptimistic; size: number; cla
                 className,
                 domainURL && imageStatus === ImageStatus.READY && 'pass-item-icon--has-image'
             )}
-            style={{ '--width-custom': `${size}px`, '--height-custom': `${size}px` }}
+            style={{ '--w-custom': `${size}px`, '--h-custom': `${size}px` }}
         >
             <span className="sr-only">{data.type}</span>
 
@@ -60,7 +60,7 @@ export const ItemIcon: VFC<{ item: ItemRevisionWithOptimistic; size: number; cla
                         optimistic && 'opacity-30',
                         failed && 'hidden'
                     )}
-                    style={{ '--width-custom': `${imageSize}px`, '--height-custom': `${imageSize}px` }}
+                    style={{ '--w-custom': `${imageSize}px`, '--h-custom': `${imageSize}px` }}
                     onStatusChange={handleStatusChange}
                     status={imageStatus}
                     url={domainURL ?? ''}

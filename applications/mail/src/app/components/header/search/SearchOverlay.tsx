@@ -128,7 +128,7 @@ const SearchOverlay = ({
         ...varSize,
     };
 
-    const contentStyle = { '--height-custom': 'auto' };
+    const contentStyle = { '--h-custom': 'auto' };
 
     return (
         <Portal>

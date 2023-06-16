@@ -1,7 +1,5 @@
 import { Fragment, MouseEvent, MutableRefObject, RefObject, useEffect, useRef, useState } from 'react';
 
-
-
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
@@ -184,8 +182,8 @@ const AddressesInput = ({
         <div
             className="composer-addresses-item-drag-placeholder my-1 mr-2 max-w100 no-pointer-events h-custom w-custom"
             style={{
-                '--width-custom': `${placeholderSize?.width}px`,
-                '--height-custom': `${placeholderSize?.height}px`,
+                '--w-custom': `${placeholderSize?.width}px`,
+                '--h-custom': `${placeholderSize?.height}px`,
             }}
         />
     );
