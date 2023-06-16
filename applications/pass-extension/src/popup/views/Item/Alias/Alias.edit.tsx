@@ -1,4 +1,4 @@
-import { type VFC, useState } from 'react';
+import { type VFC, useRef } from 'react';
 import { useSelector } from 'react-redux';
 
 import { Form, FormikProvider, useFormik } from 'formik';
@@ -6,8 +6,13 @@ import { c } from 'ttag';
 
 import { Option } from '@proton/components';
 import { selectMailboxesForAlias } from '@proton/pass/store';
+import type { MaybeNull } from '@proton/pass/types';
+import { awaiter } from '@proton/pass/utils/fp/promises';
 import { merge } from '@proton/pass/utils/object';
 
+import type { EditAliasFormValues } from '../../../../shared/form/types';
+import { validateEditAliasForm } from '../../../../shared/form/validator/validate-alias';
+import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH } from '../../../../shared/form/validator/validate-item';
 import { useAliasOptions } from '../../../../shared/hooks';
 import { type ItemEditProps } from '../../../../shared/items';
 import { ValueControl } from '../../../components/Field/Control/ValueControl';
@@ -17,8 +22,7 @@ import { SelectField } from '../../../components/Field/SelectField';
 import { TextAreaField } from '../../../components/Field/TextareaField';
 import { TitleField } from '../../../components/Field/TitleField';
 import { ItemEditPanel } from '../../../components/Panel/ItemEditPanel';
-import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH } from '../Item/Item.validation';
-import { type EditAliasFormValues, validateEditAliasForm } from './Alias.validation';
+import { useItemDraft } from '../../../hooks/useItemDraft';
 
 const FORM_ID = 'edit-alias';
 
@@ -27,7 +31,7 @@ export const AliasEdit: VFC<ItemEditProps<'alias'>> = ({ vault, revision, onCanc
     const { metadata, ...uneditable } = item;
     const { name, note, itemUuid } = metadata;
 
-    const [ready, setReady] = useState(false);
+    const { current: draftHydrated } = useRef(awaiter<MaybeNull<EditAliasFormValues>>());
 
     const mailboxesForAlias = useSelector(selectMailboxesForAlias(aliasEmail!));
     const initialValues: EditAliasFormValues = { name, note, mailboxes: [] };
@@ -58,23 +62,31 @@ export const AliasEdit: VFC<ItemEditProps<'alias'>> = ({ vault, revision, onCanc
 
     const { aliasOptions, aliasOptionsLoading } = useAliasOptions({
         shareId: vault.shareId,
-        onAliasOptionsLoaded: ({ mailboxes }) => {
-            const values = merge(form.values, {
-                mailboxes: mailboxes.filter((mailbox) =>
-                    mailboxesForAlias?.some(({ email }) => email === mailbox.email)
-                ),
-            });
+        onAliasOptionsLoaded: async ({ mailboxes }) => {
+            const draft = await draftHydrated;
+            const formValues = draft ?? form.values;
+            const sanitizedMailboxes = mailboxes.filter((mailbox) =>
+                (draft?.mailboxes ?? mailboxesForAlias ?? []).some(({ email }) => email === mailbox.email)
+            );
 
-            form.resetForm({ errors: validateEditAliasForm(values), values });
-            setReady(true);
+            const values = merge(formValues, { mailboxes: sanitizedMailboxes });
+            if (!draft) form.resetForm({ errors: validateEditAliasForm(values), values });
         },
+    });
+
+    useItemDraft<EditAliasFormValues>(form, {
+        type: 'alias',
+        mode: 'new',
+        itemId: itemId,
+        shareId: vault.shareId,
+        onHydrated: draftHydrated.resolve,
     });
 
     return (
         <ItemEditPanel
             type="alias"
             formId={FORM_ID}
-            valid={ready && form.isValid && form.dirty}
+            valid={!aliasOptionsLoading && form.isValid && form.dirty}
             discardable={!form.dirty}
             handleCancelClick={onCancel}
         >

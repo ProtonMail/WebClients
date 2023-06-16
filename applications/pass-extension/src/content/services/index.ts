@@ -85,16 +85,16 @@ export const createContentScriptClient = (scriptId: string, mainFrame: boolean) 
         const res = await sendMessage(
             contentScriptMessage({
                 type: WorkerMessageType.WORKER_WAKEUP,
-                payload: { endpoint: 'content-script', tabId },
+                payload: { endpoint: 'contentscript', tabId },
             })
         );
 
         if (res.type === 'success' && context.getState().active) {
             const workerState = { loggedIn: res.loggedIn, status: res.status, UID: res.UID };
-            logger.debug(`[ContentScript::${scriptId}] Worker status resolved "${workerState.status}"`);
-
             onWorkerStateChange(workerState);
-            onSettingsChange(res.settings!);
+            onSettingsChange(res.settings);
+
+            logger.debug(`[ContentScript::${scriptId}] Worker status resolved "${workerState.status}"`);
 
             /* if we're in an iframe and the initial detection should not
              * be triggered : destroy this content-script service */
@@ -111,7 +111,7 @@ export const createContentScriptClient = (scriptId: string, mainFrame: boolean) 
     const start = async () => {
         try {
             const extensionContext = await setupExtensionContext({
-                endpoint: 'content-script',
+                endpoint: 'contentscript',
                 onDisconnect: () => destroy({ recycle: true, reason: 'port disconnected' }),
                 onContextChange: (nextCtx) => context.getState().active && handleStart(nextCtx),
             });

@@ -8,6 +8,9 @@ import { selectVaultLimits } from '@proton/pass/store';
 import { uniqueId } from '@proton/pass/utils/string';
 import { getEpoch } from '@proton/pass/utils/time';
 
+import type { NoteFormValues } from '../../../../shared/form/types';
+import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH } from '../../../../shared/form/validator/validate-item';
+import { validateNoteForm } from '../../../../shared/form/validator/validate-note';
 import type { ItemNewProps } from '../../../../shared/items';
 import { Field } from '../../../components/Field/Field';
 import { FieldsetCluster } from '../../../components/Field/Layout/FieldsetCluster';
@@ -15,9 +18,7 @@ import { BaseTextAreaField } from '../../../components/Field/TextareaField';
 import { BaseTitleField } from '../../../components/Field/TitleField';
 import { VaultSelectField } from '../../../components/Field/VaultSelectField';
 import { ItemCreatePanel } from '../../../components/Panel/ItemCreatePanel';
-import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH } from '../Item/Item.validation';
-import type { NoteFormValues } from './Note.validation';
-import { validateNoteForm } from './Note.validation';
+import { useItemDraft } from '../../../hooks/useItemDraft';
 
 const FORM_ID = 'new-note';
 
@@ -45,6 +46,13 @@ export const NoteNew: VFC<ItemNewProps<'note'>> = ({ shareId, onSubmit, onCancel
         validateOnChange: true,
     });
 
+    const draft = useItemDraft<NoteFormValues>(form, {
+        type: 'note',
+        mode: 'new',
+        itemId: 'draft-note',
+        shareId: form.values.shareId,
+    });
+
     return (
         <ItemCreatePanel
             type="note"
@@ -70,7 +78,7 @@ export const NoteNew: VFC<ItemNewProps<'note'>> = ({ shareId, onSubmit, onCancel
                             label={c('Label').t`Name`}
                             labelContainerClassName="sr-only"
                             placeholder={c('Placeholder').t`Untitled`}
-                            autoFocus={didMount}
+                            autoFocus={!draft && didMount}
                             key={`note-name-${didMount}`}
                             maxLength={MAX_ITEM_NAME_LENGTH}
                         />

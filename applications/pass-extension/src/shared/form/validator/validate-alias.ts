@@ -1,27 +1,10 @@
 import { type FormikErrors } from 'formik';
 import { c } from 'ttag';
 
-import type { AliasMailbox } from '@proton/pass/types/data/alias';
 import { validateLocalPart } from '@proton/shared/lib/helpers/email';
 
-import { validateItemErrors } from '../Item/Item.validation';
-
-export type AliasFormValues = {
-    aliasPrefix: string;
-    aliasSuffix?: { signature: string; value: string };
-    mailboxes: AliasMailbox[];
-};
-
-export type NewAliasFormValues = AliasFormValues & {
-    name: string;
-    note: string;
-    shareId: string;
-};
-
-export type EditAliasFormValues = Pick<AliasFormValues, 'mailboxes'> & {
-    name: string;
-    note: string;
-};
+import type { AliasFormValues, EditAliasFormValues, NewAliasFormValues } from '../types';
+import { validateItemErrors } from './validate-item';
 
 export const validateAliasForm = ({
     aliasPrefix,

@@ -3,15 +3,11 @@ import { useSelector } from 'react-redux';
 
 import { selectMatchedAndFilteredItemsWithOptimistic, selectMatchedTrashItemsWithOptimistic } from '@proton/pass/store';
 
-import { useDebouncedValue } from '../../shared/hooks';
 import { ItemsFilteringContext } from '../context/items/ItemsFilteringContext';
-
-const DEBOUNCE_TIME = 150;
 
 export const useItems = () => {
     const filtering = useContext(ItemsFilteringContext);
-    const { search, sort, filter, shareId } = filtering;
-    const debouncedSearch = useDebouncedValue(search, DEBOUNCE_TIME);
+    const { debouncedSearch, sort, filter, shareId } = filtering;
 
     const matchedAndFilteredItems = useSelector(
         selectMatchedAndFilteredItemsWithOptimistic({
@@ -22,21 +18,14 @@ export const useItems = () => {
         })
     );
 
-    return {
-        filtering,
-        ...matchedAndFilteredItems,
-    };
+    return { filtering, ...matchedAndFilteredItems };
 };
 
 export const useTrashItems = () => {
     const filtering = useContext(ItemsFilteringContext);
-    const { search } = filtering;
-    const debouncedSearch = useDebouncedValue(search, DEBOUNCE_TIME);
+    const { debouncedSearch } = filtering;
 
     const matched = useSelector(selectMatchedTrashItemsWithOptimistic(debouncedSearch));
 
-    return {
-        filtering,
-        ...matched,
-    };
+    return { filtering, ...matched };
 };

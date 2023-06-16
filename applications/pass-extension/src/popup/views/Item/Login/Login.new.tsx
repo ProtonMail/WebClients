@@ -17,9 +17,12 @@ import { getEpoch } from '@proton/pass/utils/time/get-epoch';
 import { isValidURL } from '@proton/pass/utils/url';
 
 import { UpgradeButton } from '../../../../shared/components/upgrade/UpgradeButton';
+import type { LoginItemFormValues, NewLoginItemFormValues } from '../../../../shared/form/types';
+import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH } from '../../../../shared/form/validator/validate-item';
+import { validateLoginForm } from '../../../../shared/form/validator/validate-login';
 import { useFeatureFlag } from '../../../../shared/hooks/useFeatureFlag';
 import type { ItemNewProps } from '../../../../shared/items';
-import { deriveAliasPrefix } from '../../../../shared/items/alias';
+import { deriveAliasPrefix, reconciliateAliasFromDraft } from '../../../../shared/items/alias';
 import { QuickActionsDropdown } from '../../../components/Dropdown/QuickActionsDropdown';
 import { ValueControl } from '../../../components/Field/Control/ValueControl';
 import { ExtraFieldGroup } from '../../../components/Field/ExtraFieldGroup/ExtraFieldGroup';
@@ -32,15 +35,10 @@ import { TitleField } from '../../../components/Field/TitleField';
 import { UrlGroupField, createNewUrl } from '../../../components/Field/UrlGroupField';
 import { VaultSelectField } from '../../../components/Field/VaultSelectField';
 import { ItemCreatePanel } from '../../../components/Panel/ItemCreatePanel';
+import { useAliasForLoginModal } from '../../../hooks/useAliasForLoginModal';
+import { useItemDraft } from '../../../hooks/useItemDraft';
 import { usePopupContext } from '../../../hooks/usePopupContext';
 import { AliasModal } from '../Alias/Alias.modal';
-import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH } from '../Item/Item.validation';
-import {
-    type LoginItemFormValues,
-    type NewLoginItemFormValues,
-    useLoginItemAliasModal,
-    validateLoginForm,
-} from './Login.validation';
 
 const FORM_ID = 'new-login';
 
@@ -153,8 +151,21 @@ export const LoginNew: VFC<ItemNewProps<'login'>> = ({ shareId, onSubmit, onCanc
         validateOnBlur: true,
     });
 
-    const { relatedAlias, usernameIsAlias, willCreateAlias, canCreateAlias, aliasModalOpen, setAliasModalOpen } =
-        useLoginItemAliasModal(form);
+    const aliasModal = useAliasForLoginModal(form);
+
+    const draft = useItemDraft<NewLoginItemFormValues>(form, {
+        type: 'login',
+        mode: 'new',
+        itemId: 'draft-login',
+        shareId: form.values.shareId,
+        sanitize: (formData) => {
+            if (!formData.withAlias) return formData;
+
+            const aliasValues = reconciliateAliasFromDraft(formData, aliasModal.aliasOptions);
+            const withAlias = aliasValues.aliasSuffix !== undefined && aliasValues.mailboxes.length > 0;
+            return { ...formData, ...aliasValues, withAlias };
+        },
+    });
 
     return (
         <>
@@ -177,7 +188,7 @@ export const LoginNew: VFC<ItemNewProps<'login'>> = ({ shareId, onSubmit, onCanc
                                     label={c('Label').t`Title`}
                                     placeholder={c('Placeholder').t`Untitled`}
                                     component={TitleField}
-                                    autoFocus={didMount}
+                                    autoFocus={!draft && didMount}
                                     key={`login-name-${didMount}`}
                                     maxLength={MAX_ITEM_NAME_LENGTH}
                                 />
@@ -187,17 +198,17 @@ export const LoginNew: VFC<ItemNewProps<'login'>> = ({ shareId, onSubmit, onCanc
                                 <Field
                                     name="username"
                                     label={(() => {
-                                        if (willCreateAlias) return c('Label').t`Username (new alias)`;
-                                        if (relatedAlias) return c('Label').t`Username (alias)`;
+                                        if (aliasModal.willCreate) return c('Label').t`Username (new alias)`;
+                                        if (aliasModal.relatedAlias) return c('Label').t`Username (alias)`;
                                         return c('Label').t`Username`;
                                     })()}
                                     placeholder={c('Placeholder').t`Enter email or username`}
                                     component={TextField}
                                     itemType="login"
-                                    icon={usernameIsAlias ? 'alias' : 'user'}
+                                    icon={aliasModal.usernameIsAlias ? 'alias' : 'user'}
                                     actions={
                                         [
-                                            willCreateAlias && (
+                                            aliasModal.willCreate && (
                                                 <QuickActionsDropdown color="weak" shape="solid" key="edit-alias">
                                                     <DropdownMenuButton
                                                         className="flex flex-align-items-center text-left"
@@ -218,7 +229,7 @@ export const LoginNew: VFC<ItemNewProps<'login'>> = ({ shareId, onSubmit, onCanc
                                                     </DropdownMenuButton>
                                                 </QuickActionsDropdown>
                                             ),
-                                            canCreateAlias && (
+                                            aliasModal.canCreate && (
                                                 <Button
                                                     icon
                                                     pill
@@ -239,7 +250,7 @@ export const LoginNew: VFC<ItemNewProps<'login'>> = ({ shareId, onSubmit, onCanc
                                                                 })
                                                             )
                                                             .then<any>(() => form.setFieldTouched('aliasPrefix', false))
-                                                            .finally(() => setAliasModalOpen(true))
+                                                            .finally(() => aliasModal.setOpen(true))
                                                     }
                                                 >
                                                     <Icon name="alias" size={20} />
@@ -298,7 +309,11 @@ export const LoginNew: VFC<ItemNewProps<'login'>> = ({ shareId, onSubmit, onCanc
             </ItemCreatePanel>
 
             <AliasModal
-                open={aliasModalOpen}
+                form={form}
+                shareId={shareId}
+                aliasOptions={aliasModal.aliasOptions}
+                loading={aliasModal.loading}
+                open={aliasModal.open}
                 onClose={() =>
                     form
                         .setValues((values) =>
@@ -310,7 +325,7 @@ export const LoginNew: VFC<ItemNewProps<'login'>> = ({ shareId, onSubmit, onCanc
                             })
                         )
                         .then<any>(() => form.setFieldTouched('aliasPrefix', undefined))
-                        .finally(() => setAliasModalOpen(false))
+                        .finally(() => aliasModal.setOpen(false))
                 }
                 handleSubmitClick={() =>
                     form
@@ -321,10 +336,8 @@ export const LoginNew: VFC<ItemNewProps<'login'>> = ({ shareId, onSubmit, onCanc
                                 : values;
                         })
                         .then<any>(() => form.setFieldTouched('aliasPrefix', true))
-                        .finally(() => setAliasModalOpen(false))
+                        .finally(() => aliasModal.setOpen(false))
                 }
-                form={form}
-                shareId={shareId}
             />
         </>
     );

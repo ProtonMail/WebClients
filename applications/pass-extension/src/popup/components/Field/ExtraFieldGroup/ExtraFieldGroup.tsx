@@ -7,12 +7,12 @@ import { FieldArray } from 'formik';
 import { selectExtraFieldLimits } from '@proton/pass/store';
 import type { ExtraFieldType, ItemExtraField } from '@proton/pass/types';
 
+import type { ExtraFieldGroupValues } from '../../../../shared/form/types';
 import { Field } from '../Field';
 import { FieldsetCluster } from '../Layout/FieldsetCluster';
 import { AddExtraFieldDropdown } from './AddExtraFieldDropdown';
 import { ExtraFieldComponent } from './ExtraField';
 
-export type ExtraFieldGroupValues = { extraFields: ItemExtraField[] };
 export type ExtraFieldGroupProps<V extends ExtraFieldGroupValues> = { form: FormikProps<V> };
 
 const getNewField = <T extends ExtraFieldType>(type: T): ItemExtraField => {

@@ -6,7 +6,7 @@ import type { ItemExtraField } from '@proton/pass/types';
 import { parseOTPValue } from '@proton/pass/utils/otp/otp';
 import { isEmptyString } from '@proton/pass/utils/string';
 
-import type { ExtraFieldGroupValues } from './ExtraFieldGroup';
+import type { ExtraFieldGroupValues } from '../types';
 
 export const validateExtraFields = <T extends ExtraFieldGroupValues>(values: T) => {
     const errors = values.extraFields.map((field) => {

@@ -35,6 +35,7 @@ import type { State } from '../types';
 const { asIfNotFailed, asIfNotOptimistic } = withOptimisticItemsByShareId.selectors;
 export const selectByShareId = (state: State) => state.items.byShareId;
 export const selectByOptimisticIds = (state: State) => state.items.byOptimistcId;
+export const selectItemDraft = (state: State) => state.popup.draft;
 
 export const selectByShareIdAsIfNotFailed = createSelector(selectByShareId, asIfNotFailed);
 export const selectByShareIdAsIfNotOptimistic = createSelector(selectByShareId, asIfNotOptimistic);
