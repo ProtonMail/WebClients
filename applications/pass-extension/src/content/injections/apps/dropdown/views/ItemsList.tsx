@@ -15,13 +15,15 @@ type Props = {
     items: SafeLoginItem[];
     needsUpgrade: boolean;
     onSubmit: (item: SafeLoginItem) => void;
+    canLoadFavicons: boolean;
 };
 
-export const ItemsList: VFC<Props> = ({ items, needsUpgrade, onSubmit }) => {
+export const ItemsList: VFC<Props> = ({ items, needsUpgrade, onSubmit, canLoadFavicons }) => {
     const dropdownItems = useMemo(
         () =>
             [
                 needsUpgrade && (
+                    // FIXME: shorter text than "Your plan only allows you to autofill from your primary vault" to use less space
                     <DropdownItem
                         key={'upgrade-autofill'}
                         icon="arrow-out-square"
@@ -34,10 +36,11 @@ export const ItemsList: VFC<Props> = ({ items, needsUpgrade, onSubmit }) => {
                 ...items.map((item) => (
                     <DropdownItem
                         key={item.itemId}
-                        icon="key"
                         title={item.name}
                         subTitle={item.username}
+                        url={item.url}
                         onClick={() => onSubmit(item)}
+                        canLoadFavicons={canLoadFavicons}
                     />
                 )),
             ].filter(truthy),
