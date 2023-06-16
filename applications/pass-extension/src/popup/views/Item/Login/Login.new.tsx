@@ -153,7 +153,7 @@ export const LoginNew: VFC<ItemNewProps<'login'>> = ({ shareId, onSubmit, onCanc
 
     const aliasModal = useAliasForLoginModal(form);
 
-    useItemDraft<NewLoginItemFormValues>(form, {
+    const draft = useItemDraft<NewLoginItemFormValues>(form, {
         type: 'login',
         mode: 'new',
         itemId: 'draft-login',
@@ -188,7 +188,7 @@ export const LoginNew: VFC<ItemNewProps<'login'>> = ({ shareId, onSubmit, onCanc
                                     label={c('Label').t`Title`}
                                     placeholder={c('Placeholder').t`Untitled`}
                                     component={TitleField}
-                                    autoFocus={didMount}
+                                    autoFocus={!draft && didMount}
                                     key={`login-name-${didMount}`}
                                     maxLength={MAX_ITEM_NAME_LENGTH}
                                 />

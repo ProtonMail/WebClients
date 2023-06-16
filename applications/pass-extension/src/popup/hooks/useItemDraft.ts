@@ -86,4 +86,6 @@ export const useItemDraft = <V extends {}>(form: FormikContextType<V>, options: 
             dispatch(itemDraftDiscard());
         };
     }, []);
+
+    return draft;
 };
