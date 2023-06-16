@@ -46,7 +46,7 @@ export const NoteNew: VFC<ItemNewProps<'note'>> = ({ shareId, onSubmit, onCancel
         validateOnChange: true,
     });
 
-    useItemDraft<NoteFormValues>(form, {
+    const draft = useItemDraft<NoteFormValues>(form, {
         type: 'note',
         mode: 'new',
         itemId: 'draft-note',
@@ -78,7 +78,7 @@ export const NoteNew: VFC<ItemNewProps<'note'>> = ({ shareId, onSubmit, onCancel
                             label={c('Label').t`Name`}
                             labelContainerClassName="sr-only"
                             placeholder={c('Placeholder').t`Untitled`}
-                            autoFocus={didMount}
+                            autoFocus={!draft && didMount}
                             key={`note-name-${didMount}`}
                             maxLength={MAX_ITEM_NAME_LENGTH}
                         />
