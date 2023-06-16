@@ -1,19 +1,13 @@
 import type { Runtime } from 'webextension-polyfill';
 
 import { getPersistedSession } from '@proton/pass/auth';
+import type { MessageHandlerCallback } from '@proton/pass/extension/message';
 import { backgroundMessage } from '@proton/pass/extension/message';
 import { browserLocalStorage, browserSessionStorage } from '@proton/pass/extension/storage';
 import browser from '@proton/pass/globals/browser';
+import { selectItemDraft } from '@proton/pass/store';
 import { boot, wakeup } from '@proton/pass/store/actions';
-import type {
-    Maybe,
-    MaybeNull,
-    PopupState,
-    WorkerInitMessage,
-    WorkerMessageResponse,
-    WorkerMessageWithSender,
-    WorkerWakeUpMessage,
-} from '@proton/pass/types';
+import type { MaybeNull, WorkerInitMessage, WorkerMessageWithSender, WorkerWakeUpMessage } from '@proton/pass/types';
 import { WorkerMessageType, WorkerStatus } from '@proton/pass/types';
 import { getErrorMessage } from '@proton/pass/utils/errors';
 import { logger } from '@proton/pass/utils/logger';
@@ -22,6 +16,7 @@ import { parseUrl } from '@proton/pass/utils/url';
 import { workerCanBoot } from '@proton/pass/utils/worker';
 
 import { checkExtensionPermissions } from '../../shared/extension/permissions';
+import { isPopupPort } from '../../shared/extension/port';
 import WorkerMessageBroker from '../channel';
 import { withContext } from '../context';
 import store from '../store';
@@ -121,8 +116,7 @@ export const createActivationService = () => {
             logger.info(`[Worker::Activation] update available ${details.version}`);
             state.updateAvailable = details.version;
 
-            const popupPorts = WorkerMessageBroker.ports.query((name) => name.startsWith('popup'));
-
+            const popupPorts = WorkerMessageBroker.ports.query(isPopupPort());
             /* on available update : only reload the runtime to force the
              * the extension update if the popup is not opened to avoid
              * discarding any ongoing user operations*/
@@ -159,60 +153,57 @@ export const createActivationService = () => {
      * saga while immediately resolving the worker state so the UI can respond to state
      * changes as soon as possible. Regarding the content-script, we simply wait for a
      * ready state as its less "critical" */
-    const handleWakeup = withContext(async (ctx, message: WorkerMessageWithSender<WorkerWakeUpMessage>) => {
-        const { status } = await ctx.init({});
-
-        return new Promise<WorkerMessageResponse<WorkerMessageType.WORKER_WAKEUP>>(async (resolve) => {
+    const handleWakeup = withContext<MessageHandlerCallback<WorkerMessageType.WORKER_WAKEUP>>(
+        async (ctx, message: WorkerMessageWithSender<WorkerWakeUpMessage>) => {
             const { sender: endpoint, payload } = message;
             const { tabId } = payload;
+            const { status } = await ctx.init({});
 
-            const popup = await (async (): Promise<Maybe<PopupState>> => {
-                try {
-                    if (message.sender === 'popup') {
-                        const tab = await browser.tabs.get(tabId);
-                        const parsedUrl = parseUrl(tab.url ?? '');
-                        const { domain } = parsedUrl;
-
-                        const items = ctx.service.autofill.getAutofillCandidates(parsedUrl);
-                        const hasAutofillCandidates = items.length > 0;
-
-                        return {
-                            hasAutofillCandidates,
-                            initialSearch: hasAutofillCandidates && domain ? domain : '',
-                        };
-                    }
-                } catch (_) {}
-            })();
-
-            switch (message.sender) {
-                case 'popup':
-                case 'page': {
-                    /* dispatch a wakeup action for this specific receiver.
-                     * tracking the wakeup's request metadata can be consumed
-                     * in the UI to infer wakeup result - see `wakeup.saga.ts` */
-                    store.dispatch(wakeup({ status }, endpoint, tabId));
-
-                    resolve({
-                        ...ctx.getState(),
-                        buffered: WorkerMessageBroker.buffer.flush(),
-                        popup,
-                    });
-                }
-                case 'content-script': {
-                    /* no need for any redux operations on content-script
-                     * wakeup as it doesn't hold any store. */
-                    return resolve({
-                        ...ctx.getState(),
-                        settings: await ctx.service.settings.resolve(),
-                    });
-                }
+            /* dispatch a wakeup action for this specific receiver.
+             * tracking the wakeup's request metadata can be consumed
+             * in the UI to infer wakeup result - see `wakeup.saga.ts`
+             * no need for any redux operations on content-script wakeup
+             * as it doesn't hold any store. */
+            if (message.sender === 'popup' || message.sender === 'page') {
+                store.dispatch(wakeup({ status }, endpoint, tabId));
             }
-        });
-    });
 
-    const handleInit = withContext(async (ctx, message: WorkerMessageWithSender<WorkerInitMessage>) =>
+            if (message.sender === 'popup') {
+                WorkerMessageBroker.buffer.flush().forEach((notification) => {
+                    WorkerMessageBroker.ports
+                        .query(isPopupPort(tabId))
+                        .forEach((port) => port.postMessage(notification));
+                });
+            }
+
+            return { ...ctx.getState(), settings: await ctx.service.settings.resolve() };
+        }
+    );
+
+    const handleWorkerInit = withContext(async (ctx, message: WorkerMessageWithSender<WorkerInitMessage>) =>
         (await ctx.init({ sync: message.payload.sync })).getState()
     );
+
+    const handlePopupInit = withContext<MessageHandlerCallback<WorkerMessageType.POPUP_INIT>>(async (ctx, message) => {
+        const { payload } = message;
+        const { tabId } = payload;
+
+        /* dispatch a wakeup action for this specific receiver.
+         * tracking the wakeup's request metadata can be consumed
+         * in the UI to infer wakeup result - see `wakeup.saga.ts` */
+        const tab = await browser.tabs.get(tabId);
+        const parsedUrl = parseUrl(tab.url ?? '');
+        const { domain } = parsedUrl;
+        const items = ctx.service.autofill.getAutofillCandidates(parsedUrl);
+        const hasAutofillCandidates = items.length > 0;
+
+        return {
+            hasAutofillCandidates,
+            initialSearch: hasAutofillCandidates && domain ? domain : '',
+            notifications: WorkerMessageBroker.buffer.flush(),
+            draft: selectItemDraft(store.getState()),
+        };
+    });
 
     /* throttle update checks for updates every hour */
     browser.alarms.create(UPDATE_ALARM_NAME, { periodInMinutes: 60 });
@@ -221,7 +212,8 @@ export const createActivationService = () => {
     browser.permissions.onRemoved.addListener(checkPermissionsUpdate);
 
     WorkerMessageBroker.registerMessage(WorkerMessageType.WORKER_WAKEUP, handleWakeup);
-    WorkerMessageBroker.registerMessage(WorkerMessageType.WORKER_INIT, handleInit);
+    WorkerMessageBroker.registerMessage(WorkerMessageType.WORKER_INIT, handleWorkerInit);
+    WorkerMessageBroker.registerMessage(WorkerMessageType.POPUP_INIT, handlePopupInit);
     WorkerMessageBroker.registerMessage(WorkerMessageType.RESOLVE_TAB, (_, { tab }) => ({ tab }));
     WorkerMessageBroker.registerMessage(WorkerMessageType.ACCOUNT_PROBE, () => true);
 

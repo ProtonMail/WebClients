@@ -7,38 +7,42 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { Icon, type ModalProps } from '@proton/components/components';
 import { selectAliasLimits } from '@proton/pass/store';
+import type { MaybeNull } from '@proton/pass/types';
 
 import { SidebarModal } from '../../../../shared/components/sidebarmodal/SidebarModal';
 import { UpgradeButton } from '../../../../shared/components/upgrade/UpgradeButton';
-import { useAliasOptions } from '../../../../shared/hooks/useAliasOptions';
+import type { AliasFormValues } from '../../../../shared/form/types';
+import { validateAliasForm } from '../../../../shared/form/validator/validate-alias';
+import type { SanitizedAliasOptions } from '../../../../shared/hooks/useAliasOptions';
 import { AliasPreview } from '../../../components/Alias/Alias.preview';
 import { ItemCard } from '../../../components/Item/ItemCard';
 import { PanelHeader } from '../../../components/Panel/Header';
 import { Panel } from '../../../components/Panel/Panel';
 import { AliasForm } from './Alias.form';
-import { type AliasFormValues, validateAliasForm } from './Alias.validation';
 
 export type AliasModalRef = {
     open: () => void;
 };
 
 type AliasModalProps<T extends AliasFormValues> = {
-    form: FormikContextType<T>;
-    handleSubmitClick: () => void;
     shareId: string;
+    form: FormikContextType<T>;
+    aliasOptions: MaybeNull<SanitizedAliasOptions>;
+    loading: boolean;
+    handleSubmitClick: () => void;
 } & ModalProps;
 
 export const AliasModal = <T extends AliasFormValues>({
-    form,
     open,
+    form,
     shareId,
+    aliasOptions,
+    loading,
     handleSubmitClick,
     ...modalProps
 }: AliasModalProps<T>) => {
     const [ready, setReady] = useState(false);
     const { needsUpgrade } = useSelector(selectAliasLimits);
-
-    const { aliasOptions, aliasOptionsLoading } = useAliasOptions({ shareId });
 
     useEffect(() => {
         if (open && aliasOptions) {
@@ -107,9 +111,9 @@ export const AliasModal = <T extends AliasFormValues>({
                         className="mt-6"
                         prefix={form.values.aliasPrefix ?? '<prefix>'}
                         suffix={form.values.aliasSuffix?.value ?? '<suffix>'}
-                        loading={aliasOptionsLoading}
+                        loading={loading}
                     />
-                    <AliasForm<T> form={form} aliasOptions={aliasOptions} aliasOptionsLoading={aliasOptionsLoading} />
+                    <AliasForm<T> form={form} aliasOptions={aliasOptions} loading={loading} />
                 </FormikProvider>
             </Panel>
         </SidebarModal>

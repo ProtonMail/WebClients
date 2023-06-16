@@ -3,14 +3,15 @@ import type { VFC } from 'react';
 import { Form, FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
 
+import type { NoteFormValues } from '../../../../shared/form/types';
+import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH } from '../../../../shared/form/validator/validate-item';
+import { validateNoteForm } from '../../../../shared/form/validator/validate-note';
 import type { ItemEditProps } from '../../../../shared/items';
 import { Field } from '../../../components/Field/Field';
 import { BaseTextAreaField } from '../../../components/Field/TextareaField';
 import { BaseTitleField } from '../../../components/Field/TitleField';
 import { ItemEditPanel } from '../../../components/Panel/ItemEditPanel';
-import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH } from '../Item/Item.validation';
-import type { NoteFormValues } from './Note.validation';
-import { validateNoteForm } from './Note.validation';
+import { useItemDraft } from '../../../hooks/useItemDraft';
 
 const FORM_ID = 'edit-note';
 
@@ -34,6 +35,13 @@ export const NoteEdit: VFC<ItemEditProps<'note'>> = ({ vault: { shareId }, revis
         },
         validate: validateNoteForm,
         validateOnChange: true,
+    });
+
+    useItemDraft<NoteFormValues>(form, {
+        type: 'note',
+        mode: 'edit',
+        itemId: itemId,
+        shareId: form.values.shareId,
     });
 
     return (

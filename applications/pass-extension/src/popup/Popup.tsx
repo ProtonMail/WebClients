@@ -16,8 +16,11 @@ import { Lobby } from './views/Lobby/Lobby';
 import './Popup.scss';
 
 const AppOrLobby = () => {
-    const { state } = usePopupContext();
-    return state.loggedIn ? <App /> : <Lobby />;
+    /* navigate away from the `Lobby` only when the worker
+     * is in a ready & logged in state and the popup context
+     * is initialized (initial popup state was resolved) */
+    const { state, initialized } = usePopupContext();
+    return state.loggedIn && initialized ? <App /> : <Lobby />;
 };
 
 const Popup = () => {
