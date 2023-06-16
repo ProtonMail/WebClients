@@ -34,14 +34,14 @@ const getSteps = () => [
 
 export const Welcome: VFC = () => {
     const brandNameJSX = (
-        <img src={passBrandText} className="ml-2 h-custom" style={{ '--height-custom': '28px' }} key="brand" alt="" />
+        <img src={passBrandText} className="ml-2 h-custom" style={{ '--h-custom': '28px' }} key="brand" alt="" />
     );
     const steps = getSteps();
 
     return (
         <>
             <ExtensionHead title={c('Title').t`Thank you for installing ${PASS_APP_NAME}`} />
-            <div className="pass-welcome ui-standard w100 min-h-custom" style={{ '--min-height-custom': '100vh' }}>
+            <div className="pass-welcome ui-standard w100 min-h-custom" style={{ '--min-h-custom': '100vh' }}>
                 <div className="m-auto p-14 color-norm min-h-custom">
                     <div className="pass-welcome--gradient">{/* ADD IMAGE OVERLAY HERE */}</div>
                     <div className="pass-welcome--header-text text-bold flex flex-column flex-align-items-center">
@@ -50,7 +50,7 @@ export const Welcome: VFC = () => {
                                 <img
                                     src="/assets/protonpass-icon.svg"
                                     className="h-custom"
-                                    style={{ '--height-custom': '24px' }}
+                                    style={{ '--h-custom': '24px' }}
                                     alt={PASS_APP_NAME}
                                 />
                             }
@@ -67,7 +67,7 @@ export const Welcome: VFC = () => {
 
                     <div
                         className="mx-auto max-w-custom flex flex-justify-center flex-nowrap on-tablet-flex-column gap-6"
-                        style={{ '--max-width-custom': '1024px' }}
+                        style={{ '--max-w-custom': '1024px' }}
                     >
                         {/* left section */}
                         <div className="flex flex-nowrap flex-column gap-6" style={{ flex: 2 }}>
@@ -121,7 +121,7 @@ export const Welcome: VFC = () => {
                                         <Href href="https://play.google.com/store/apps/details?id=proton.android.pass">
                                             <img
                                                 className="h-custom"
-                                                style={{ '--height-custom': '40px' }}
+                                                style={{ '--h-custom': '40px' }}
                                                 src={playStoreSvg}
                                                 alt="Play Store"
                                             />
@@ -129,7 +129,7 @@ export const Welcome: VFC = () => {
                                         <Href href="https://apps.apple.com/us/app/proton-pass-password-manager/id6443490629">
                                             <img
                                                 className="h-custom"
-                                                style={{ '--height-custom': '40px ' }}
+                                                style={{ '--h-custom': '40px ' }}
                                                 src={appStoreSvg}
                                                 alt="App Store"
                                             />
@@ -175,7 +175,7 @@ export const Welcome: VFC = () => {
                                                         <img
                                                             src={icon}
                                                             className="h-custom"
-                                                            style={{ '--height-custom': '22px' }}
+                                                            style={{ '--h-custom': '22px' }}
                                                             alt=""
                                                         />
                                                     </div>

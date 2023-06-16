@@ -27,7 +27,7 @@ export const DropdownItem: VFC<{
             {icon !== undefined ? (
                 <Icon name={icon} className="mr-4 item-icon" size={24} color="#6D4AFF" />
             ) : (
-                <div className="mr-4 w-custom text-align-center" style={{ '--width-custom': '24px' }}>
+                <div className="mr-4 w-custom text-align-center" style={{ '--w-custom': '24px' }}>
                     <img
                         src={'/assets/protonpass-icon-32.png'}
                         width={18}
