@@ -1,11 +1,11 @@
-import type { Runtime } from 'webextension-polyfill';
+import { type Runtime } from 'webextension-polyfill';
 
 import { getPersistedSession } from '@proton/pass/auth';
 import type { MessageHandlerCallback } from '@proton/pass/extension/message';
 import { backgroundMessage } from '@proton/pass/extension/message';
 import { browserLocalStorage, browserSessionStorage } from '@proton/pass/extension/storage';
 import browser from '@proton/pass/globals/browser';
-import { selectItemDraft } from '@proton/pass/store';
+import { selectItemDraft, selectPopupTabState } from '@proton/pass/store';
 import { boot, wakeup } from '@proton/pass/store/actions';
 import type { MaybeNull, WorkerInitMessage, WorkerMessageWithSender, WorkerWakeUpMessage } from '@proton/pass/types';
 import { WorkerMessageType, WorkerStatus } from '@proton/pass/types';
@@ -193,15 +193,19 @@ export const createActivationService = () => {
          * in the UI to infer wakeup result - see `wakeup.saga.ts` */
         const tab = await browser.tabs.get(tabId);
         const parsedUrl = parseUrl(tab.url ?? '');
-        const { domain } = parsedUrl;
+        const { subdomain, domain } = parsedUrl;
         const items = ctx.service.autofill.getAutofillCandidates(parsedUrl);
         const hasAutofillCandidates = items.length > 0;
 
+        const tabState = selectPopupTabState(tabId)(store.getState());
+        const pushTabState = tabState !== undefined && [subdomain, domain].includes(tabState.domain);
+        const searchForAutofill = hasAutofillCandidates && domain ? domain : '';
+
         return {
-            hasAutofillCandidates,
-            initialSearch: hasAutofillCandidates && domain ? domain : '',
-            notifications: WorkerMessageBroker.buffer.flush(),
+            search: pushTabState ? tabState!.search : searchForAutofill,
             draft: selectItemDraft(store.getState()),
+            selectedItem: pushTabState ? tabState!.selectedItem : null,
+            filters: pushTabState ? tabState!.filters : null,
         };
     });
 
