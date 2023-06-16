@@ -15,9 +15,10 @@ export const INITIAL_WORKER_STATE: WorkerState = {
 };
 
 export const INITIAL_POPUP_STATE: PopupInitialState = {
-    hasAutofillCandidates: false,
-    initialSearch: '',
+    search: '',
     draft: null,
+    filters: null,
+    selectedItem: null,
 };
 
 export const INITIAL_SETTINGS: ProxiedSettings = {
