@@ -3,10 +3,10 @@ import { c } from 'ttag';
 
 import { isEmptyString } from '@proton/pass/utils/string';
 
+import type { BaseItemValues } from '../types';
+
 export const MAX_ITEM_NAME_LENGTH = 200;
 export const MAX_ITEM_NOTE_LENGTH = 25_000;
-
-type BaseItemValues = { name: string; note: string };
 
 export const validateItemErrors = <T extends BaseItemValues = BaseItemValues>(values: T): FormikErrors<T> => {
     const errors: FormikErrors<BaseItemValues> = {};

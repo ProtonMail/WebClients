@@ -21,7 +21,7 @@ export const selectRequestInFlight =
     (state: State): boolean =>
         selectRequestStatus(namespaceOrId)(state) === 'start';
 
-export const selectWorkerAlive = (endpoint: ExtensionEndpoint, tabId: TabId) =>
+export const selectDidWakeup = (endpoint: ExtensionEndpoint, tabId: TabId) =>
     invert(selectRequestInFlight(wakeup(endpoint, tabId)));
 
 export const selectWorkerSyncing = selectRequestInFlight(syncing());

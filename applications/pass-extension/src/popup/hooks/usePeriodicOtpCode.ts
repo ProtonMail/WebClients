@@ -7,6 +7,8 @@ import { popupMessage, sendMessage } from '@proton/pass/extension/message';
 import type { MaybeNull, OtpCode, OtpRequest } from '@proton/pass/types';
 import { WorkerMessageType } from '@proton/pass/types';
 
+import { useEnsureMounted } from '../../shared/hooks/useEnsureMounted';
+
 export type Props = OtpRequest & { totpUri: string };
 
 const requestOtpCodeGeneration = async (payload: OtpRequest): Promise<MaybeNull<OtpCode>> =>
@@ -23,6 +25,7 @@ export const usePeriodicOtpCode = ({ totpUri, ...request }: Props): [MaybeNull<O
     const [otp, setOtp] = useState<MaybeNull<OtpCode>>(null);
     const [percentage, setPercentage] = useState<number>(-1);
     const requestAnimationRef = useRef<number>(-1);
+    const ensureMounted = useEnsureMounted();
 
     const { createNotification } = useNotifications();
 
@@ -30,7 +33,7 @@ export const usePeriodicOtpCode = ({ totpUri, ...request }: Props): [MaybeNull<O
      * OTP code with a valid period - else do nothing */
     const doRequestOtpCodeGeneration = useCallback(async () => {
         const otpCode = await requestOtpCodeGeneration(request);
-        setOtp(otpCode);
+        ensureMounted(setOtp)(otpCode);
 
         if (otpCode === null) {
             return createNotification({
@@ -40,13 +43,13 @@ export const usePeriodicOtpCode = ({ totpUri, ...request }: Props): [MaybeNull<O
         }
 
         if (otpCode !== null && otpCode.period && otpCode.period > 0) {
-            const applyCountdown = () => {
+            const applyCountdown = ensureMounted(() => {
                 requestAnimationRef.current = requestAnimationFrame(() => {
                     const ms = otpCode.expiry * 1000 - Date.now();
                     setPercentage(ms / (otpCode.period * 1000));
                     applyCountdown();
                 });
-            };
+            });
 
             applyCountdown();
         }
@@ -65,9 +68,9 @@ export const usePeriodicOtpCode = ({ totpUri, ...request }: Props): [MaybeNull<O
      * animation frame request and re-init state */
     useEffect(
         () => () => {
-            cancelAnimationFrame(requestAnimationRef.current);
             setOtp(null);
             setPercentage(-1);
+            cancelAnimationFrame(requestAnimationRef.current);
         },
         [shareId, itemId, type, totpUri]
     );

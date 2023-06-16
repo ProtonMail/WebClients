@@ -24,7 +24,6 @@ export const SelectField: FC<SelectFieldProps> = ({
     ...props
 }) => {
     const { error } = useFieldControl({ field, form, meta });
-
     return (
         <FieldBox className={className} icon={icon}>
             <InputFieldTwo<typeof SelectTwo>
@@ -40,7 +39,7 @@ export const SelectField: FC<SelectFieldProps> = ({
                 onChange={undefined}
                 onValue={(value: unknown) => {
                     onValue?.(value);
-                    form.setFieldValue(field.name, value);
+                    return form.setFieldValue(field.name, value);
                 }}
             >
                 {children}
