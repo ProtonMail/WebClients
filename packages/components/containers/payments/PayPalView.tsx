@@ -1,26 +1,28 @@
 import { c } from 'ttag';
 
+import { PaypalProcessorHook, isPaypalProcessorHook } from '@proton/components/payments/react-extensions/usePaypal';
 import { MAX_PAYPAL_AMOUNT, MIN_PAYPAL_AMOUNT } from '@proton/shared/lib/constants';
 import { doNotWindowOpen } from '@proton/shared/lib/helpers/browser';
 import { Currency } from '@proton/shared/lib/interfaces';
 
-import { Alert, DoNotWindowOpenAlertError, Loader, Price } from '../../components';
+import { Alert, DoNotWindowOpenAlertError, Price } from '../../components';
 import { PaymentMethodFlows } from '../paymentMethods/interface';
 import PayPalButton from './PayPalButton';
 import PayPalInfoMessage from './PayPalInfoMessage';
 import { PayPalHook } from './usePayPal';
 
 interface Props {
-    paypal: PayPalHook;
-    paypalCredit: PayPalHook;
+    paypal: PayPalHook | PaypalProcessorHook;
+    paypalCredit: PayPalHook | PaypalProcessorHook;
     type?: PaymentMethodFlows;
     amount: number;
     currency: Currency;
     disabled?: boolean;
     prefetchToken?: boolean;
+    onClick?: () => void;
 }
 
-const PayPalView = ({ type, amount, currency, paypal, paypalCredit, disabled, prefetchToken }: Props) => {
+const PayPalView = ({ type, amount, currency, paypalCredit, disabled, prefetchToken, onClick }: Props) => {
     if (amount < MIN_PAYPAL_AMOUNT) {
         return (
             <Alert className="mb-4" type="error">
@@ -37,9 +39,29 @@ const PayPalView = ({ type, amount, currency, paypal, paypalCredit, disabled, pr
         return <DoNotWindowOpenAlertError />;
     }
 
-    const clickHere = (
+    const clickHere = isPaypalProcessorHook(paypalCredit) ? (
         <PayPalButton
             id="paypal-credit"
+            data-testid="paypal-credit-button"
+            shape="outline"
+            color="norm"
+            flow={type}
+            key="click-here"
+            size="small"
+            paypal={paypalCredit}
+            amount={amount}
+            disabled={disabled || !paypalCredit.tokenFetched}
+            prefetchToken={prefetchToken}
+            currency={currency}
+            onClick={onClick}
+            loading={paypalCredit.processingToken}
+        >
+            {c('Link').t`click here`}
+        </PayPalButton>
+    ) : (
+        <PayPalButton
+            id="paypal-credit"
+            data-testid="paypal-credit-button"
             shape="outline"
             color="norm"
             flow={type}
@@ -49,6 +71,7 @@ const PayPalView = ({ type, amount, currency, paypal, paypalCredit, disabled, pr
             amount={amount}
             disabled={disabled}
             prefetchToken={prefetchToken}
+            loading={paypalCredit.loadingVerification}
         >
             {c('Link').t`click here`}
         </PayPalButton>
@@ -62,8 +85,7 @@ const PayPalView = ({ type, amount, currency, paypal, paypalCredit, disabled, pr
 
     return (
         <div className="p-4 border rounded bg-weak mb-4" data-testid="paypal-view">
-            {paypal.loadingVerification ? <Loader /> : null}
-            {!paypal.loadingVerification && isAllowedPaymentType ? (
+            {isAllowedPaymentType ? (
                 <>
                     <PayPalInfoMessage />
                     <div className="mb-4">
@@ -74,7 +96,7 @@ const PayPalView = ({ type, amount, currency, paypal, paypalCredit, disabled, pr
                     </div>
                 </>
             ) : null}
-            {!paypal.loadingVerification && isAllowedOtherType ? <PayPalInfoMessage /> : null}
+            {isAllowedOtherType ? <PayPalInfoMessage /> : null}
         </div>
     );
 };

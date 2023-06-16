@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { FeatureCode } from '@proton/components/containers';
-import { PAYMENT_METHOD_TYPES, PaymentMethod } from '@proton/components/payments/core';
+import { PAYMENT_METHOD_TYPES, SavedPaymentMethod } from '@proton/components/payments/core';
 import { updateFeatureValue } from '@proton/shared/lib/api/features';
 import { getOrganization } from '@proton/shared/lib/api/organization';
 import { getSubscription, queryPaymentMethods } from '@proton/shared/lib/api/payments';
@@ -154,7 +154,7 @@ export const getUserInfo = async ({
     plans: Plan[];
     upsellPlanCard?: PlanCard;
 }): Promise<{
-    paymentMethods: PaymentMethod[];
+    paymentMethods: SavedPaymentMethod[];
     subscription: Subscription | undefined;
     subscriptionData: SubscriptionData;
     organization: Organization | undefined;
@@ -191,7 +191,7 @@ export const getUserInfo = async ({
     const [paymentMethods, subscription, organization] = await Promise.all([
         state.payable
             ? api<{
-                  PaymentMethods: PaymentMethod[];
+                  PaymentMethods: SavedPaymentMethod[];
               }>(queryPaymentMethods()).then(({ PaymentMethods }) => PaymentMethods)
             : [],
         state.payable && state.admin && state.subscribed

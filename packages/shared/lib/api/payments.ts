@@ -3,6 +3,7 @@ import { PlanIDs } from 'proton-account/src/app/signup/interfaces';
 import { Autopay, WrappedCryptoPayment } from '@proton/components/payments/core';
 import {
     AmountAndCurrency,
+    ChargeablePaymentParameters,
     ExistingPayment,
     TokenPayment,
     TokenPaymentMethod,
@@ -173,7 +174,9 @@ export interface GiftCodeData {
     Amount: number;
 }
 
-export const buyCredit = (data: (TokenPaymentMethod & AmountAndCurrency) | GiftCodeData) => ({
+export const buyCredit = (
+    data: (TokenPaymentMethod & AmountAndCurrency) | GiftCodeData | ChargeablePaymentParameters
+) => ({
     url: 'payments/v4/credit',
     method: 'post',
     data,
