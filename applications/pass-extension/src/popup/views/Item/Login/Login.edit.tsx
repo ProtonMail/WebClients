@@ -163,7 +163,7 @@ export const LoginEdit: VFC<ItemEditProps<'login'>> = ({ vault, revision, onSubm
 
             const aliasValues = reconciliateAliasFromDraft(formData, aliasModal.aliasOptions);
             const withAlias = aliasValues.aliasSuffix !== undefined && aliasValues.mailboxes.length > 0;
-            return { ...formData, ...aliasValues, withAlias };
+            return { ...formData, ...aliasValues, withAlias, username: withAlias ? formData.username : '' };
         },
     });
 
