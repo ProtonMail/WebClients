@@ -69,7 +69,7 @@ export const createIFrameApp = ({
         parent: iframeRoot,
     });
 
-    iframe.style.setProperty(`--${EXTENSION_PREFIX}-iframe-animation`, animation);
+    iframe.style.setProperty(`--${EXTENSION_PREFIX}-iframe-animation`, `${EXTENSION_PREFIX}-anim-${animation}`);
     iframe.addEventListener('load', () => (state.loaded = true), { once: true });
 
     /* Securing the posted message's allowed target origins.
