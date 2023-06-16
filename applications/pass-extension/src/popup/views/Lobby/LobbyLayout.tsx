@@ -18,7 +18,7 @@ export const LobbyLayout: FC<{ overlay: boolean }> = ({ overlay, children }) => 
                 <img
                     src="/assets/protonpass-icon.svg"
                     className={clsx('pass-lobby--logo w-custom max-w-custom', !overlay && 'pass-lobby--logo-hidden')}
-                    style={{ '--width-custom': '292px' }}
+                    style={{ '--w-custom': '292px' }}
                     alt=""
                 />
             </FadeIn>

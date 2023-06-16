@@ -103,36 +103,36 @@
 // Specificity issue with composer and others -_-v
 .w-custom {
 	&#{&} {
-		inline-size: var(--width-custom);
+		inline-size: var(--w-custom);
 	}
 }
 
 .min-w-custom {
 	&#{&} {
-		min-inline-size: var(--min-width-custom);
+		min-inline-size: var(--min-w-custom);
 	}
 }
 
 .max-w-custom {
 	&#{&} {
-		max-inline-size: var(--max-width-custom);
+		max-inline-size: var(--max-w-custom);
 	}
 }
 
 .h-custom {
 	&#{&} {
-		block-size: var(--height-custom);
+		block-size: var(--h-custom);
 	}
 }
 
 .min-h-custom {
 	&#{&} {
-		min-block-size: var(--min-height-custom);
+		min-block-size: var(--min-h-custom);
 	}
 }
 
 .max-h-custom {
 	&#{&} {
-		max-block-size: var(--max-height-custom);
+		max-block-size: var(--max-h-custom);
 	}
 }
