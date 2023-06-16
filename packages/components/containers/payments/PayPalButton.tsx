@@ -3,19 +3,35 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button, ButtonProps } from '@proton/atoms';
+import { PaypalProcessorHook, isPaypalProcessorHook } from '@proton/components/payments/react-extensions/usePaypal';
 import { MAX_PAYPAL_AMOUNT, MIN_PAYPAL_AMOUNT } from '@proton/shared/lib/constants';
 import { doNotWindowOpen } from '@proton/shared/lib/helpers/browser';
+import { Currency } from '@proton/shared/lib/interfaces';
 
 import { useNotifications } from '../../hooks';
 import { PaymentMethodFlows } from '../paymentMethods/interface';
 import { PayPalHook } from './usePayPal';
 
-export interface PayPalButtonProps extends ButtonProps {
+type CommonProps = ButtonProps & {
     amount: number;
-    paypal: PayPalHook;
     flow?: PaymentMethodFlows;
     prefetchToken?: boolean;
+};
+
+export type LegacyPayPalButtonProps = CommonProps & {
+    paypal: PayPalHook;
+};
+
+function isLegacyPayPalButtonProps(props: PayPalButtonProps): props is LegacyPayPalButtonProps {
+    return props && !isPaypalProcessorHook(props.paypal);
 }
+
+export type NewPayPalButtonProps = CommonProps & {
+    currency: Currency;
+    paypal: PaypalProcessorHook;
+};
+
+export type PayPalButtonProps = LegacyPayPalButtonProps | NewPayPalButtonProps;
 
 export function canUsePayPal({ amount, flow }: { amount: number; flow?: PaymentMethodFlows }): boolean {
     if (amount < MIN_PAYPAL_AMOUNT && flow !== 'invoice') {
@@ -33,7 +49,7 @@ export function canUsePayPal({ amount, flow }: { amount: number; flow?: PaymentM
     return true;
 }
 
-const PayPalButton = ({
+export const LegacyPayPalButton = ({
     amount,
     flow,
     children,
@@ -42,7 +58,7 @@ const PayPalButton = ({
     disabled,
     prefetchToken = true,
     ...rest
-}: PayPalButtonProps) => {
+}: LegacyPayPalButtonProps) => {
     const [retry, setRetry] = useState(false);
     const { createNotification } = useNotifications();
 
@@ -95,6 +111,46 @@ const PayPalButton = ({
             {children}
         </Button>
     );
+};
+
+export const NewPayPalButton = ({
+    amount,
+    flow,
+    children,
+    paypal,
+    loading,
+    disabled,
+    currency,
+    ...rest
+}: NewPayPalButtonProps) => {
+    if (paypal.verifyingToken) {
+        return <Button loading {...rest}>{c('Action').t`Loading verification`}</Button>;
+    }
+
+    if (paypal.verificationError) {
+        return (
+            <Button
+                onClick={paypal.fetchPaymentToken}
+                disabled={disabled}
+                loading={paypal.processingToken}
+                {...rest}
+            >{c('Action').t`Retry`}</Button>
+        );
+    }
+
+    return (
+        <Button loading={paypal.processingToken || loading} disabled={disabled} {...rest}>
+            {children}
+        </Button>
+    );
+};
+
+const PayPalButton = (props: PayPalButtonProps) => {
+    if (isLegacyPayPalButtonProps(props)) {
+        return <LegacyPayPalButton {...props} />;
+    }
+
+    return <NewPayPalButton {...props} />;
 };
 
 export default PayPalButton;

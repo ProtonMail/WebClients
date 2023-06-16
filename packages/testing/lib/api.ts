@@ -13,6 +13,10 @@ type ApiMock = { [url: string]: ApiMockEntry[] | undefined };
 
 export const apiMocksMap: ApiMock = {};
 
+let logging = false;
+export const enableMockApiLogging = () => (logging = true);
+export const disableMockApiLogging = () => (logging = false);
+
 export const apiMock = jest.fn<Promise<any>, any>(async (args: any) => {
     const entryKey = Object.keys(apiMocksMap).find((path) => {
         return args.url === path;
@@ -21,7 +25,15 @@ export const apiMock = jest.fn<Promise<any>, any>(async (args: any) => {
         (entry) => entry.method === undefined || entry.method === args.method
     );
     if (entry) {
-        return entry.handler({ ...args });
+        if (logging) {
+            console.log('apiMock', args);
+            console.log('apiMock entry', entry);
+        }
+        const result = entry.handler({ ...args });
+        if (logging) {
+            console.log('apiMock result', result);
+        }
+        return result;
     }
     return {};
 });
@@ -37,12 +49,17 @@ export const addApiMock = (url: string, handler: ApiMockHandler, method?: HttpMe
 
 export const addApiResolver = (url: string, method?: HttpMethod) => {
     let resolveLastPromise: (result: any) => void = noop;
+    let rejectLastPromise: (result: any) => void = noop;
+
     const resolve = (value: any) => resolveLastPromise(value);
-    const promise = new Promise((resolve) => {
+    const reject = (value: any) => rejectLastPromise(value);
+
+    const promise = new Promise((resolve, reject) => {
         resolveLastPromise = resolve;
+        rejectLastPromise = reject;
     });
     addApiMock(url, () => promise, method);
-    return resolve;
+    return { resolve, reject };
 };
 
 export const clearApiMocks = () => {

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
-import { PAYMENT_METHOD_TYPES, process } from '@proton/components/payments/core';
+import { ensureTokenChargeable } from '@proton/components/payments/client-extensions';
+import { PAYMENT_METHOD_TYPES } from '@proton/components/payments/core';
 import { createToken } from '@proton/shared/lib/api/payments';
 import { Api, Currency } from '@proton/shared/lib/interfaces';
 
@@ -91,7 +92,7 @@ const usePayPal = ({
             const onProcess = () => {
                 const abort = new AbortController();
                 return {
-                    promise: process({
+                    promise: ensureTokenChargeable({
                         Token,
                         api,
                         ReturnHost,

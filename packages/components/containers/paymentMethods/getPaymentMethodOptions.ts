@@ -1,14 +1,18 @@
 import { c } from 'ttag';
 
-import { PAYMENT_METHOD_TYPES, PaymentMethod, PaymentMethodStatus } from '@proton/components/payments/core';
+import {
+    PAYMENT_METHOD_TYPES,
+    PaymentMethodStatus,
+    SavedPaymentMethod,
+    isExpired as getIsExpired,
+} from '@proton/components/payments/core';
 import { BLACK_FRIDAY, MIN_BITCOIN_AMOUNT, MIN_PAYPAL_AMOUNT } from '@proton/shared/lib/constants';
-import { isExpired as getIsExpired } from '@proton/shared/lib/helpers/card';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { IconName } from '../../components';
 import { PaymentMethodData, PaymentMethodFlows } from './interface';
 
-const getMethod = (paymentMethod: PaymentMethod) => {
+const getMethod = (paymentMethod: SavedPaymentMethod) => {
     switch (paymentMethod.Type) {
         case PAYMENT_METHOD_TYPES.CARD:
             const brand = paymentMethod.Details.Brand;
@@ -22,11 +26,8 @@ const getMethod = (paymentMethod: PaymentMethod) => {
     }
 };
 
-const getIcon = (paymentMethod: PaymentMethod): IconName | undefined => {
-    if (
-        paymentMethod.Type === PAYMENT_METHOD_TYPES.PAYPAL ||
-        paymentMethod.Type === PAYMENT_METHOD_TYPES.PAYPAL_CREDIT
-    ) {
+const getIcon = (paymentMethod: SavedPaymentMethod): IconName | undefined => {
+    if (paymentMethod.Type === PAYMENT_METHOD_TYPES.PAYPAL) {
         return 'brand-paypal';
     }
     if (paymentMethod.Type === PAYMENT_METHOD_TYPES.CARD) {
@@ -49,7 +50,7 @@ interface Props {
     amount: number;
     coupon: string;
     flow: PaymentMethodFlows;
-    paymentMethods?: PaymentMethod[];
+    paymentMethods?: SavedPaymentMethod[];
     paymentMethodsStatus?: Partial<PaymentMethodStatus>;
 }
 
@@ -73,11 +74,7 @@ export const getPaymentMethodOptions = ({
             if (paymentMethod.Type === PAYMENT_METHOD_TYPES.CARD && paymentMethodsStatus?.Card) {
                 return true;
             }
-            if (
-                (paymentMethod.Type === PAYMENT_METHOD_TYPES.PAYPAL ||
-                    paymentMethod.Type === PAYMENT_METHOD_TYPES.PAYPAL_CREDIT) &&
-                paymentMethodsStatus?.Paypal
-            ) {
+            if (paymentMethod.Type === PAYMENT_METHOD_TYPES.PAYPAL && paymentMethodsStatus?.Paypal) {
                 return true;
             }
             return false;

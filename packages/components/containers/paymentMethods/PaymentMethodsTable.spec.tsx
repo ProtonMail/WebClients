@@ -2,10 +2,10 @@ import { render } from '@testing-library/react';
 
 import {
     Autopay,
-    CardDetails,
     PAYMENT_METHOD_TYPES,
     PayPalDetails,
-    PaymentMethod,
+    SavedCardDetails,
+    SavedPaymentMethod,
 } from '@proton/components/payments/core';
 
 import TableBody from '../../components/table/TableBody';
@@ -37,7 +37,7 @@ describe('PaymentMethodsTable', () => {
     });
 
     it('should render Card method', () => {
-        const Details: CardDetails = {
+        const Details: SavedCardDetails = {
             Name: 'John Smith',
             ExpMonth: '01',
             ExpYear: '2034',
@@ -47,7 +47,7 @@ describe('PaymentMethodsTable', () => {
             Brand: 'Visa',
         };
 
-        const cardPaymentMethod: PaymentMethod = {
+        const cardPaymentMethod: SavedPaymentMethod = {
             Type: PAYMENT_METHOD_TYPES.CARD,
             Details,
             Order: 1,
@@ -81,7 +81,7 @@ describe('PaymentMethodsTable', () => {
             Payer: 'John Smith',
         };
 
-        const paypalMethod: PaymentMethod = {
+        const paypalMethod: SavedPaymentMethod = {
             Type: PAYMENT_METHOD_TYPES.PAYPAL,
             Details,
             Order: 1,
@@ -108,7 +108,7 @@ describe('PaymentMethodsTable', () => {
     });
 
     it('should display multiple payment methods', () => {
-        const Details1: CardDetails = {
+        const Details1: SavedCardDetails = {
             Name: 'John Smith',
             ExpMonth: '01',
             ExpYear: '2034',
@@ -118,7 +118,7 @@ describe('PaymentMethodsTable', () => {
             Brand: 'Visa',
         };
 
-        const cardPaymentMethod1: PaymentMethod = {
+        const cardPaymentMethod1: SavedPaymentMethod = {
             Type: PAYMENT_METHOD_TYPES.CARD,
             Details: Details1,
             Order: 1,
@@ -126,7 +126,7 @@ describe('PaymentMethodsTable', () => {
             Autopay: Autopay.ENABLE,
         };
 
-        const Details2: CardDetails = {
+        const Details2: SavedCardDetails = {
             Name: 'John Smith',
             ExpMonth: '01',
             ExpYear: '2038',
@@ -136,7 +136,7 @@ describe('PaymentMethodsTable', () => {
             Brand: 'Mastercard',
         };
 
-        const cardPaymentMethod2: PaymentMethod = {
+        const cardPaymentMethod2: SavedPaymentMethod = {
             Type: PAYMENT_METHOD_TYPES.CARD,
             Details: Details2,
             Order: 2,
@@ -144,7 +144,7 @@ describe('PaymentMethodsTable', () => {
             Autopay: Autopay.ENABLE,
         };
 
-        const paypalMethod: PaymentMethod = {
+        const paypalMethod: SavedPaymentMethod = {
             Type: PAYMENT_METHOD_TYPES.PAYPAL,
             Details: {
                 BillingAgreementID: 'agreement-id-123',

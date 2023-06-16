@@ -10,7 +10,7 @@ import noop from '@proton/utils/noop';
 
 import { ModalProps, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../components';
 import { useApi, useEventManager, useLoading, useNotifications } from '../../hooks';
-import { CardModel } from '../../payments/core/interface';
+import { CardModel } from '../../payments/core';
 import CreditCard from './CreditCard';
 import RenewToggle, { useRenewToggle } from './RenewToggle';
 import toDetails from './toDetails';
