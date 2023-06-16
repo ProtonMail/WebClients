@@ -5,6 +5,7 @@ import { requestFork } from '@proton/pass/auth';
 import browser from '@proton/pass/globals/browser';
 import type { FORK_TYPE } from '@proton/shared/lib/authentication/ForkInterface';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
+import noop from '@proton/utils/noop';
 
 import { SSO_URL } from '../../app/config';
 import { promptForPermissions } from '../extension/permissions';
@@ -15,7 +16,7 @@ import { usePermissionsGranted } from './usePermissionsGranted';
  * very limited support for the tabs API */
 export const useAccountFork = () => async (type: FORK_TYPE) => {
     const url = await requestFork(SSO_URL, type);
-    return browser.tabs ? browser.tabs.create({ url }) : window.open(url, '_BLANK');
+    return browser.tabs ? browser.tabs.create({ url }).catch(noop) : window.open(url, '_BLANK');
 };
 
 /* before navigating to login we should prompt the
