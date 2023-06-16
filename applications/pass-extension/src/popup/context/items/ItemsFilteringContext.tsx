@@ -1,28 +1,26 @@
 import { type FC, createContext, useMemo, useState } from 'react';
 
-import type { ItemType, ItemsSortOption, MaybeNull } from '@proton/pass/types';
+import type { ItemSortFilter, ItemTypeFilter, MaybeNull } from '@proton/pass/types';
 import noop from '@proton/utils/noop';
 
 import { useDebouncedValue } from '../../../shared/hooks';
 import { usePopupContext } from '../../hooks/usePopupContext';
 
-export type ItemsFilterOption = '*' | ItemType;
-
 export type ItemsFilteringContextType = {
     search: string;
     debouncedSearch: string;
-    sort: ItemsSortOption;
-    filter: ItemsFilterOption;
+    sort: ItemSortFilter;
+    filter: ItemTypeFilter;
     shareId: MaybeNull<string>;
     shareBeingDeleted: MaybeNull<string>;
     setSearch: (value: string) => void;
-    setSort: (value: ItemsSortOption) => void;
-    setFilter: (value: ItemsFilterOption) => void;
+    setSort: (value: ItemSortFilter) => void;
+    setFilter: (value: ItemTypeFilter) => void;
     setShareId: (shareId: MaybeNull<string>) => void;
     setShareBeingDeleted: (shareId: MaybeNull<string>) => void;
 };
 
-export const INITIAL_SORT: ItemsSortOption = 'recent';
+export const INITIAL_SORT: ItemSortFilter = 'recent';
 
 export const ItemsFilteringContext = createContext<ItemsFilteringContextType>({
     search: '',
@@ -45,8 +43,8 @@ export const ItemsFilteringContextProvider: FC = ({ children }) => {
     const [search, setSearch] = useState<string>(popup.state.initialSearch);
     const debouncedSearch = useDebouncedValue(search, SEARCH_DEBOUNCE_TIME);
 
-    const [sort, setSort] = useState<ItemsSortOption>(INITIAL_SORT);
-    const [filter, setFilter] = useState<ItemsFilterOption>('*');
+    const [sort, setSort] = useState<ItemSortFilter>(INITIAL_SORT);
+    const [filter, setFilter] = useState<ItemTypeFilter>('*');
     const [shareId, setShareId] = useState<MaybeNull<string>>(null);
     const [shareBeingDeleted, setShareBeingDeleted] = useState<MaybeNull<string>>(null);
 

@@ -4,16 +4,16 @@ import { c } from 'ttag';
 
 import type { DropdownProps } from '@proton/components';
 import { Dropdown, DropdownButton, DropdownMenu, Icon, usePopperAnchor } from '@proton/components';
-import { ITEMS_SORT_OPTIONS, type ItemsSortOption } from '@proton/pass/types';
+import { type ItemSortFilter } from '@proton/pass/types';
 
 import { DropdownMenuButton } from '../../components/Dropdown/DropdownMenuButton';
 
 interface ItemsSortProps {
-    onSortChange: (option: ItemsSortOption) => void;
-    sort: ItemsSortOption;
+    onSortChange: (option: ItemSortFilter) => void;
+    sort: ItemSortFilter;
 }
 
-function getSortOptionLabel(option: ItemsSortOption) {
+function getSortOptionLabel(option: ItemSortFilter) {
     return {
         createTimeASC: c('Label').t`Oldest to newest`,
         createTimeDESC: c('Label').t`Newest to oldest`,
@@ -23,6 +23,7 @@ function getSortOptionLabel(option: ItemsSortOption) {
 }
 
 const DROPDOWN_SIZE: DropdownProps['size'] = { width: '11rem' };
+const ITEMS_SORT_OPTIONS: ItemSortFilter[] = ['recent', 'titleASC', 'createTimeDESC', 'createTimeASC'];
 
 export const ItemsSort: VFC<ItemsSortProps> = ({ sort, onSortChange }) => {
     const { anchorRef, isOpen, close, toggle } = usePopperAnchor<HTMLButtonElement>();
