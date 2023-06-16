@@ -25,3 +25,7 @@ jest.mock('@proton/shared/lib/i18n/dateFnLocales', () => ({
 jest.mock('@proton/shared/lib/pow/wasmWorkerWrapper.ts', () => ({
     __esModule: true,
 }));
+
+jest.mock('@proton/shared/lib/pow/pbkdfWorkerWrapper.ts', () => ({
+    __esModule: true,
+}));

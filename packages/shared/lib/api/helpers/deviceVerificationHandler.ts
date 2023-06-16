@@ -2,7 +2,7 @@ import { create as createMutex } from '@protontech/mutex-browser';
 
 import { createOnceHandler } from '@proton/shared/lib/apiHandlers';
 import { wait } from '@proton/shared/lib/helpers/promise';
-import wasmWorkerWrapper from '@proton/shared/lib/pow/wasmWorkerWrapper';
+import pbkdfWorkerWrapper from '@proton/shared/lib/pow/pbkdfWorkerWrapper';
 import noop from '@proton/utils/noop';
 import randomIntFromInterval from '@proton/utils/randomIntFromInterval';
 
@@ -11,14 +11,14 @@ import localStorageWithExpiry from './localStorageWithExpiry';
 const onSolve = (b64Source: string): Promise<string> => {
     return new Promise((resolve, reject) => {
         try {
-            const wasmWorker = wasmWorkerWrapper();
-            wasmWorker.postMessage({ b64Source });
+            const pbkdfWorker = pbkdfWorkerWrapper();
+            pbkdfWorker.postMessage({ b64Source });
 
-            wasmWorker.onmessage = (event) => {
+            pbkdfWorker.onmessage = (event) => {
                 resolve(event.data);
             };
 
-            wasmWorker.onerror = (error) => {
+            pbkdfWorker.onerror = (error) => {
                 reject(error);
             };
         } catch (error) {
@@ -57,12 +57,10 @@ export const createDeviceHandlers = () => {
                 const unlockMutex = await getMutexLock(UID);
                 let token = '';
                 try {
-                    const challengeLength = 192;
-                    const challengeData = challengePayload.substring(challengePayload.length - challengeLength);
-                    const lastCachedDate = localStorageWithExpiry.getData(challengeData);
+                    const lastCachedDate = localStorageWithExpiry.getData(challengePayload);
                     if (!lastCachedDate) {
                         token = await onSolve(challengePayload);
-                        localStorageWithExpiry.storeData(challengeData, token, 1 * 60 * 1000);
+                        localStorageWithExpiry.storeData(challengePayload, token, 1 * 60 * 1000);
                         await wait(50);
                     } else {
                         token = lastCachedDate;
