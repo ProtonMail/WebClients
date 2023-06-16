@@ -42,6 +42,10 @@ jest.mock('@proton/shared/lib/pow/wasmWorkerWrapper.ts', () => ({
     __esModule: true,
 }));
 
+jest.mock('@proton/shared/lib/pow/pbkdfWorkerWrapper.ts', () => ({
+    __esModule: true,
+}));
+
 /**
  * Due to a JSDom issue `dialog` tag is not understood correctly
  * Delete this test when the Jest will implement the fix

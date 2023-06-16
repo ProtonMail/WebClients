@@ -16,6 +16,9 @@ jest.mock('@proton/shared/lib/pow/wasmWorkerWrapper.ts', () => ({
     __esModule: true,
 }));
 
+jest.mock('@proton/shared/lib/pow/pbkdfWorkerWrapper.ts', () => ({
+    __esModule: true,
+}));
 // That's an unresolved issue of jsdom https://github.com/jsdom/jsdom/issues/918
 // In particular, we need this fix to render all the components that have PaymentMethodDetails in their trees
 window.SVGElement.prototype.getBBox = jest.fn().mockReturnValue({ width: 0 });
