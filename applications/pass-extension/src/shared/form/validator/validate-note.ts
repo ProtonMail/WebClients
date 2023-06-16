@@ -1,11 +1,6 @@
 import type { FormikErrors } from 'formik';
 
-import { validateItemErrors } from '../Item/Item.validation';
-
-export type NoteFormValues = {
-    name: string;
-    note: string;
-    shareId: string;
-};
+import type { NoteFormValues } from '../types';
+import { validateItemErrors } from './validate-item';
 
 export const validateNoteForm = (values: NoteFormValues): FormikErrors<NoteFormValues> => validateItemErrors(values);

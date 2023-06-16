@@ -25,15 +25,6 @@ export const errorMessage = (error?: string): MessageFailure => ({
     payload: error /* needed for Proton Account auth-ext page */,
 });
 
-/* For security reasons : limit the type of messages that can
- * be processed via externally connectable resources */
-const ALLOWED_EXTERNAL_MESSAGES = [
-    WorkerMessageType.ACCOUNT_FORK,
-    WorkerMessageType.ACCOUNT_EXTENSION,
-    WorkerMessageType.ACCOUNT_PROBE,
-    WorkerMessageType.ACCOUNT_ONBOARDING,
-];
-
 export type MessageHandlerCallback<
     T extends WorkerMessageType = WorkerMessageType,
     M extends WorkerMessageWithSender = Extract<WorkerMessageWithSender, { type: T }>
@@ -41,7 +32,10 @@ export type MessageHandlerCallback<
 
 export type ExtensionMessageBroker = ReturnType<typeof createMessageBroker>;
 
-export const createMessageBroker = () => {
+export const createMessageBroker = (options: {
+    allowExternal: WorkerMessageType[];
+    onDisconnect?: (portName: string) => void;
+}) => {
     const handlers: Map<WorkerMessageType, MessageHandlerCallback> = new Map();
     const ports: Map<string, Runtime.Port> = new Map();
     const buffer: Set<WorkerMessageWithSender> = new Set();
@@ -92,7 +86,7 @@ export const createMessageBroker = () => {
             try {
                 const isExternal = sender.id !== browser.runtime.id;
 
-                if (isExternal && notIn(ALLOWED_EXTERNAL_MESSAGES)(message.type)) {
+                if (isExternal && notIn(options.allowExternal)(message.type)) {
                     logger.warn('[MessageBroker::Message] unauthorized external message');
                     return errorMessage('unauthorized');
                 }
@@ -132,7 +126,10 @@ export const createMessageBroker = () => {
             }
         });
 
-        port.onDisconnect.addListener(({ name }) => ports.delete(name));
+        port.onDisconnect.addListener(({ name }) => {
+            ports.delete(name);
+            options.onDisconnect?.(name);
+        });
     };
 
     const disconnect = () => ports.forEach((port) => port.disconnect());

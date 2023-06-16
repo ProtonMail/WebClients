@@ -5,7 +5,7 @@ import { browserLocalStorage } from '@proton/pass/extension/storage';
 import browser from '@proton/pass/globals/browser';
 import { selectProxiedSettings } from '@proton/pass/store';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
-import { type Maybe, WorkerMessageType } from '@proton/pass/types';
+import { WorkerMessageType } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
 
 import { INITIAL_SETTINGS } from '../../shared/constants';
@@ -85,7 +85,7 @@ export const createSettingsService = () => {
         );
     };
 
-    const resolve = async (): Promise<Maybe<ProxiedSettings>> => {
+    const resolve = async (): Promise<ProxiedSettings> => {
         try {
             const settings = await browserLocalStorage.getItem('settings');
             if (!settings) throw new Error();

@@ -81,7 +81,7 @@ export const createIFrameApp = ({
             contentScriptMessage({ type: WorkerMessageType.RESOLVE_EXTENSION_KEY }),
             async ({ key }) =>
                 waitUntil(() => state.loaded, 100).then(() => {
-                    const secureMessage: IFrameSecureMessage = { ...message, key, sender: 'content-script' };
+                    const secureMessage: IFrameSecureMessage = { ...message, key, sender: 'contentscript' };
                     iframe.contentWindow?.postMessage(secureMessage, iframe.src);
                 })
         );
@@ -93,7 +93,7 @@ export const createIFrameApp = ({
      * the Tabs API in an iframe-injected `web_accessible_resource`
      * to directly open a port with the current tab */
     const sendPortMessage = (rawMessage: IFrameMessage) => {
-        const message: IFrameMessageWithSender = { ...rawMessage, sender: 'content-script' };
+        const message: IFrameMessageWithSender = { ...rawMessage, sender: 'contentscript' };
         void waitUntil(() => state.ready, 100).then(() =>
             state.port?.postMessage(portForwardingMessage(state.framePort!, message))
         );
