@@ -17,7 +17,8 @@ export const deriveAliasPrefix = (name: string) => {
 
 export const reconciliateAliasFromDraft = <V extends AliasFormValues>(
     aliasValues: V,
-    aliasOptions: MaybeNull<SanitizedAliasOptions>
+    aliasOptions: MaybeNull<SanitizedAliasOptions>,
+    fallback?: Partial<AliasFormValues>
 ): AliasFormValues => {
     const { aliasSuffix, mailboxes, aliasPrefix } = aliasValues;
     const suffixOptions = aliasOptions?.suffixes ?? [];
@@ -28,7 +29,7 @@ export const reconciliateAliasFromDraft = <V extends AliasFormValues>(
 
     return {
         aliasPrefix: aliasPrefix,
-        aliasSuffix: suffixMatch,
-        mailboxes: mailboxesMatch,
+        aliasSuffix: suffixMatch ?? fallback?.aliasSuffix,
+        mailboxes: mailboxesMatch.length > 0 ? mailboxesMatch : fallback?.mailboxes ?? [],
     };
 };

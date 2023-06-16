@@ -7,7 +7,6 @@ import { c } from 'ttag';
 import { selectAliasLimits, selectVaultLimits } from '@proton/pass/store';
 import type { MaybeNull } from '@proton/pass/types';
 import { awaiter } from '@proton/pass/utils/fp/promises';
-import { merge } from '@proton/pass/utils/object';
 import { isEmptyString, uniqueId } from '@proton/pass/utils/string';
 import { getEpoch } from '@proton/pass/utils/time/get-epoch';
 import noop from '@proton/utils/noop';
@@ -99,22 +98,25 @@ export const AliasNew: VFC<ItemNewProps<'alias'>> = ({ shareId, onSubmit, onCanc
 
     const { aliasOptions, aliasOptionsLoading } = useAliasOptions({
         shareId,
-        onAliasOptionsLoaded: async ({ suffixes, mailboxes }) => {
+        onAliasOptionsLoaded: async (options) => {
             const draft = await draftHydrated;
             const formValues = draft ?? form.values;
 
-            const firstSuffix = suffixes?.[0];
-            const firstMailBox = mailboxes?.[0];
+            const firstSuffix = options.suffixes[0];
+            const firstMailBox = options.mailboxes[0];
             const prefixFromURL = !isEmptyString(defaultAliasPrefix);
             const aliasPrefix = prefixFromURL ? defaultAliasPrefix : deriveAliasPrefix(formValues.name);
 
-            const values = merge(formValues, {
-                aliasPrefix: formValues.aliasPrefix ? formValues.aliasPrefix : aliasPrefix,
-                aliasSuffix: formValues.aliasSuffix ?? firstSuffix,
-                mailboxes: formValues.mailboxes.length > 0 ? formValues.mailboxes : [firstMailBox],
-            });
+            const defaultAlias = { aliasPrefix, aliasSuffix: firstSuffix, mailboxes: [firstMailBox] };
+            const draftAlias = draft ? reconciliateAliasFromDraft(formValues, options, defaultAlias) : null;
 
-            if (!draft) form.resetForm({ values, errors: validateNewAliasForm(values) });
+            const values = { ...formValues, ...(draftAlias ?? defaultAlias) };
+            const errors = validateNewAliasForm(values);
+
+            if (draft) {
+                await form.setValues(values);
+                form.setErrors(errors);
+            } else form.resetForm({ values, errors });
         },
     });
 
@@ -124,10 +126,6 @@ export const AliasNew: VFC<ItemNewProps<'alias'>> = ({ shareId, onSubmit, onCanc
         itemId: 'draft-alias',
         shareId: form.values.shareId,
         onHydrated: draftHydrated.resolve,
-        sanitize: (formData) => {
-            const aliasValues = reconciliateAliasFromDraft(formData, aliasOptions);
-            return { ...formData, ...aliasValues };
-        },
     });
 
     const { values, touched, setFieldValue } = form;

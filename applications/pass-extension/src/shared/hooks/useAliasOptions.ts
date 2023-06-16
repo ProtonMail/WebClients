@@ -40,9 +40,7 @@ export const useAliasOptions: (options: UseAliasOptionsConfig) => UseAliasOption
     );
 
     useEffect(() => {
-        if (!valid) {
-            dispatch(aliasOptionsRequested({ shareId }));
-        }
+        if (!valid) dispatch(aliasOptionsRequested({ shareId }));
     }, []);
 
     const sanitizedAliasOptions = useMemo(
