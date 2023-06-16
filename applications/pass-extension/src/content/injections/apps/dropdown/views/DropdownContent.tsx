@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { CircleLoader } from '@proton/atoms/CircleLoader';
 import { Icon } from '@proton/components/components';
 import { type Callback, type MaybeNull, WorkerStatus } from '@proton/pass/types';
+import { PassIcon } from '@proton/pass/types/data/passIcon';
 import { pixelEncoder } from '@proton/pass/utils/dom';
 import { pipe, tap } from '@proton/pass/utils/fp';
 import { FORK_TYPE } from '@proton/shared/lib/authentication/ForkInterface';
@@ -37,12 +38,13 @@ export const DropdownContent: VFC = () => {
 
     // -- FAKE STATE FOR TESTING --
 
-    let { workerState, resizeIFrame, closeIFrame, postMessage } = useIFrameContext();
+    let { workerState, resizeIFrame, closeIFrame, postMessage, settings } = useIFrameContext();
     workerState = {
         ...workerState,
         loggedIn: true,
         status: WorkerStatus.READY,
     };
+    const canLoadFavicons = settings.loadDomainImages;
 
     // PASSWORD - DONE
     // const [dropdownState, setDropdownState] = useState<MaybeNull<DropdownSetActionPayload>>({
@@ -67,12 +69,21 @@ export const DropdownContent: VFC = () => {
                 username: 'abc@example',
                 shareId: '1',
                 itemId: '1',
+                url: 'https://www.reddit.com',
             },
             {
                 name: 'Proton',
                 username: 'me@proton',
                 shareId: '2',
                 itemId: '2',
+                url: 'https://account.proton.me',
+            },
+            {
+                name: 'unresolvable favicon',
+                username: 'unresolvable.favicon@proton',
+                shareId: '3',
+                itemId: '3',
+                url: 'https://account.example.example',
             },
         ],
     });
@@ -123,7 +134,7 @@ export const DropdownContent: VFC = () => {
                             onClick={closeIFrame}
                             title={c('Title').t`${PASS_APP_NAME} locked`}
                             subTitle={c('Info').t`Unlock with your pin`}
-                            icon="proton-pass-locked"
+                            icon={PassIcon.LOCKED_LIGHT}
                         />
                     );
                 }
@@ -141,7 +152,7 @@ export const DropdownContent: VFC = () => {
                                     <Icon className="ml-1" name="arrow-out-square" />
                                 </>
                             }
-                            icon="proton-pass-inactive"
+                            icon={PassIcon.INACTIVE}
                             autogrow
                         />
                     );
@@ -159,13 +170,13 @@ export const DropdownContent: VFC = () => {
                                         payload: { item },
                                     })
                                 )}
+                                canLoadFavicons={canLoadFavicons}
                             />
                         ) : (
                             <DropdownItem
                                 onClick={withStateReset(closeIFrame)}
                                 title={PASS_APP_NAME}
                                 subTitle={c('Info').t`No login found`}
-                                removePointer
                             />
                         );
 
