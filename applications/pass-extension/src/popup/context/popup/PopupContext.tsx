@@ -1,6 +1,5 @@
-import { type FC, createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react';
+import { type FC, createContext, useContext, useEffect, useMemo, useState } from 'react';
 import { useSelector } from 'react-redux';
-import { useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
 
@@ -23,7 +22,6 @@ import { INITIAL_POPUP_STATE, INITIAL_WORKER_STATE } from '../../../shared/const
 import { useExtensionContext } from '../../../shared/hooks';
 import { useRequestStatusEffect } from '../../../shared/hooks/useRequestStatusEffect';
 import { enhanceNotification } from '../../../shared/notification';
-import type { ItemDraftState } from '../../hooks/useItemDraft';
 
 export interface PopupContextValue extends ExtensionAppContextValue {
     initialized: boolean /* retrieved popup initial state */;
@@ -48,8 +46,6 @@ export const PopupContext = createContext<PopupContextValue>({
  * of the `useExtensionContext` call which requires this component to
  * be a descendant of `ExtensionContextProvider`  */
 const PopupContextContainer: FC = ({ children }) => {
-    const history = useHistory<ItemDraftState>();
-
     const extensionContext = useExtensionContext();
     const { status } = extensionContext.state;
     const { url, tabId } = extensionContext.context!;
@@ -74,27 +70,11 @@ const PopupContextContainer: FC = ({ children }) => {
             }),
     });
 
-    const onPopupInit = useCallback((state: PopupInitialState) => {
-        setInitial(state);
-
-        if (state.draft !== null) {
-            const { draft } = state;
-            const { itemId, shareId, type, mode } = draft;
-
-            switch (mode) {
-                case 'new':
-                    return history.push(`/item/new/${type}`, { draft });
-                case 'edit':
-                    return history.push(`/share/${shareId}/item/${itemId}/edit`, { draft });
-            }
-        }
-    }, []);
-
     useEffect(() => {
         if (workerReady(status)) {
             void sendMessage.onSuccess(
                 popupMessage({ type: WorkerMessageType.POPUP_INIT, payload: { tabId } }),
-                onPopupInit
+                setInitial
             );
         }
     }, [status]);
