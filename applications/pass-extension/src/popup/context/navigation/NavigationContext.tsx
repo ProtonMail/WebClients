@@ -46,8 +46,19 @@ export const NavigationContextProvider: FC = ({ children }) => {
     }, []);
 
     useEffect(() => {
-        const selectedItem = popup.state.initial.selectedItem;
+        const { selectedItem, draft } = popup.state.initial;
+
         if (selectedItem) selectItem(selectedItem.shareId, selectedItem.itemId, { action: 'replace' });
+
+        if (draft !== null) {
+            const { itemId, shareId, type, mode } = draft;
+            switch (mode) {
+                case 'new':
+                    return history.push(`/item/new/${type}`, { draft });
+                case 'edit':
+                    return history.push(`/share/${shareId}/item/${itemId}/edit`, { draft });
+            }
+        }
     }, []);
 
     return (
