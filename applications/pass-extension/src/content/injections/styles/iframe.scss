@@ -41,7 +41,7 @@ iframe.protonpass-iframe {
 	}
 }
 
-@keyframes fadein {
+@keyframes protonpass-anim-fadein {
 	from {
 		opacity: 0;
 		max-block-size: 0;
@@ -53,7 +53,7 @@ iframe.protonpass-iframe {
 	}
 }
 
-@keyframes slidein {
+@keyframes protonpass-anim-slidein {
 	from {
 		transform: translateX(380px);
 	}
