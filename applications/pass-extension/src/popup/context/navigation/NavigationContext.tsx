@@ -1,8 +1,10 @@
-import { type FC, createContext, useCallback, useState } from 'react';
+import { type FC, createContext, useCallback, useEffect, useState } from 'react';
 import { useHistory, useRouteMatch } from 'react-router-dom';
 
 import type { Maybe, SelectedItem } from '@proton/pass/types';
 import noop from '@proton/utils/noop';
+
+import { usePopupContext } from '../../hooks/usePopupContext';
 
 export type NavigationOptions = { inTrash?: boolean; action?: 'replace' | 'push' };
 
@@ -25,6 +27,7 @@ export const NavigationContext = createContext<NavigationContextValue>({
 });
 
 export const NavigationContextProvider: FC = ({ children }) => {
+    const popup = usePopupContext();
     const history = useHistory();
     const [selectedItem, setSelectedItem] = useState<Maybe<SelectedItem>>(undefined);
 
@@ -40,6 +43,11 @@ export const NavigationContextProvider: FC = ({ children }) => {
     const unselectItem = useCallback((options?: NavigationOptions) => {
         setSelectedItem(undefined);
         history[options?.action ?? 'push'](options?.inTrash ? '/trash' : '');
+    }, []);
+
+    useEffect(() => {
+        const selectedItem = popup.state.initial.selectedItem;
+        if (selectedItem) selectItem(selectedItem.shareId, selectedItem.itemId, { action: 'replace' });
     }, []);
 
     return (
