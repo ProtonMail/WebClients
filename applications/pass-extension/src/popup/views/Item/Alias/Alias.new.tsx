@@ -118,7 +118,7 @@ export const AliasNew: VFC<ItemNewProps<'alias'>> = ({ shareId, onSubmit, onCanc
         },
     });
 
-    useItemDraft<NewAliasFormValues>(form, {
+    const draft = useItemDraft<NewAliasFormValues>(form, {
         type: 'alias',
         mode: 'new',
         itemId: 'draft-alias',
@@ -173,8 +173,8 @@ export const AliasNew: VFC<ItemNewProps<'alias'>> = ({ shareId, onSubmit, onCanc
                                     label={c('Label').t`Title`}
                                     placeholder={c('Label').t`Untitled`}
                                     component={TitleField}
-                                    autoFocus={didMount && !needsUpgrade} /* no autofocus if creation blocked */
-                                    key={`alias-name-${didMount}`} /* trick for autofocus after initial mount */
+                                    autoFocus={!draft && didMount && !needsUpgrade}
+                                    key={`alias-name-${didMount}`}
                                     maxLength={MAX_ITEM_NAME_LENGTH}
                                 />
                             </FieldsetCluster>
