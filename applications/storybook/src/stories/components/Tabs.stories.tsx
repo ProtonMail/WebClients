@@ -131,7 +131,7 @@ export const Sandbox = () => {
 
     return (
         <div>
-            <div style={{ '--max-height-custom': '10rem' }}>{tabsExample}</div>
+            <div style={{ '--max-h-custom': '10rem' }}>{tabsExample}</div>
             <div className="mt-8 mb-14">
                 <strong className="block mb-4">Toggles</strong>
                 {toggles.map((prop, i) => {

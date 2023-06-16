@@ -34,20 +34,20 @@ export const InstallationSuccess: VFC = () => {
     ];
 
     const brandNameJSX = (
-        <img src={passBrandText} className="ml-2 h-custom" style={{ '--height-custom': '28px' }} key="brand" alt="" />
+        <img src={passBrandText} className="ml-2 h-custom" style={{ '--h-custom': '28px' }} key="brand" alt="" />
     );
 
     return (
         <>
             <ExtensionHead title={c('Title').t`Thank you for installing ${PASS_APP_NAME}`} />
-            <div className="pass-lobby ui-standard w100 min-h-custom mw" style={{ '--min-height-custom': '100vh' }}>
+            <div className="pass-lobby ui-standard w100 min-h-custom mw" style={{ '--min-h-custom': '100vh' }}>
                 <img
                     src="/assets/protonpass-icon.svg"
                     className="absolute absolute-center-x w-custom max-w-custom top-custom"
-                    style={{ '--width-custom': '620px', '--top-custom': '-420px' }}
+                    style={{ '--w-custom': '620px', '--top-custom': '-420px' }}
                     alt=""
                 />
-                <Vr className="block h-custom" style={{ '--height-custom': '220px' }} />
+                <Vr className="block h-custom" style={{ '--h-custom': '220px' }} />
                 <div className="m-auto w100 text-center p-14 color-norm">
                     <h1 className="h2 pass-onboarding--heading mb-4 text-bold flex flex-align-items-center flex-justify-center">
                         {c('Title').jt`Thank you for installing ${brandNameJSX}`}
@@ -71,7 +71,7 @@ export const InstallationSuccess: VFC = () => {
                                         <img
                                             src={icon}
                                             className="h-custom"
-                                            style={{ '--height-custom': '24px' }}
+                                            style={{ '--h-custom': '24px' }}
                                             alt={BRAND_NAME}
                                         />
                                     </div>

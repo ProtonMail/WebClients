@@ -176,7 +176,7 @@ const SettingsApp: FC = () => {
                 >
                     <div
                         className="pass-settings flex flex-column ui-standard w100 p-4 mx-auto bg-weak min-h-custom"
-                        style={{ '--min-height-custom': '100vh' }}
+                        style={{ '--min-h-custom': '100vh' }}
                     >
                         <Switch>
                             <Route
