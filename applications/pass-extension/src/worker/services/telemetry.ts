@@ -12,6 +12,7 @@ import { getSettings } from '@proton/shared/lib/api/settings';
 import type { UserSettings } from '@proton/shared/lib/interfaces';
 import chunk from '@proton/utils/chunk';
 import debounce from '@proton/utils/debounce';
+import noop from '@proton/utils/noop';
 
 import WorkerMessageBroker from '../channel';
 import store from '../store';
@@ -135,7 +136,7 @@ export const createTelemetryService = () => {
             await browserLocalStorage.setItem('telemetry', JSON.stringify(bundle));
             await setAlarm(bundle);
             return resolve(bundle);
-        });
+        }).catch(noop);
     }, 500);
 
     /* resets the service's context and both clears any registered
@@ -144,7 +145,7 @@ export const createTelemetryService = () => {
         logger.info('[Worker::Telemetry] Clearing telemetry service...');
 
         void browserLocalStorage.removeItem('telemetry');
-        void browser.alarms.clear(TELEMETRY_ALARM_NAME);
+        browser.alarms.clear(TELEMETRY_ALARM_NAME).catch(noop);
 
         ctx.buffer.length = 0;
         ctx.job = null;
@@ -155,29 +156,27 @@ export const createTelemetryService = () => {
         try {
             ctx.active = await isTelemetryEnabled();
             logger.info(`[Worker::Telemetry] starting service - [enabled: ${ctx.active}]`);
+            const alarm = await browser.alarms.get(TELEMETRY_ALARM_NAME);
 
-            void browser.alarms.get(TELEMETRY_ALARM_NAME).then((alarm) => {
-                if (alarm) {
-                    const when = Math.max(alarm.scheduledTime / 1000 - getEpoch(), 0);
-                    logger.info(`[Worker::Telemetry] found telemetry alarm in ${when}s`);
-                    if (!ctx.active) reset(); /* clear any alarms if telemetry disabled */
-                } else {
-                    return consumeBuffer();
-                }
-            });
+            if (alarm) {
+                const when = Math.max(alarm.scheduledTime / 1000 - getEpoch(), 0);
+                logger.info(`[Worker::Telemetry] found telemetry alarm in ${when}s`);
+                if (!ctx.active) reset(); /* clear any alarms if telemetry disabled */
+            } else await consumeBuffer();
         } catch (_) {
             ctx.active = false;
         }
     };
 
     const pushEvent = async (event: TelemetryEvent): Promise<boolean> => {
-        if (ctx.active) {
-            logger.info(`[Worker::Telemetry] Adding ${event.Event} to current bundle`);
-            ctx.buffer.push(withUserTier(event));
-
-            void consumeBuffer();
-            return true;
-        }
+        try {
+            if (ctx.active) {
+                logger.info(`[Worker::Telemetry] Adding ${event.Event} to current bundle`);
+                ctx.buffer.push(withUserTier(event));
+                await consumeBuffer();
+                return true;
+            }
+        } catch (_) {}
 
         return false;
     };
