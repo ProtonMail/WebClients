@@ -1,4 +1,4 @@
-import type { Item, ItemType, ItemsSortOption, MaybeNull } from '@proton/pass/types';
+import type { Item, ItemSortFilter, ItemType, MaybeNull } from '@proton/pass/types';
 
 import type { ParsedUrl } from '../url';
 
@@ -11,7 +11,7 @@ export type SelectItemsOptions = {
     itemType?: MaybeNull<ItemType>;
     shareId?: MaybeNull<string>;
     search?: string;
-    sort?: MaybeNull<ItemsSortOption>;
+    sort?: MaybeNull<ItemSortFilter>;
 };
 
 export type SelectItemsByDomainOptions = {
