@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { CardModel } from '../../payments/core/interface';
+import { CardModel } from '../../payments/core';
 import { getErrors } from './cardValidator';
 import getDefaultCard from './getDefaultCard';
 

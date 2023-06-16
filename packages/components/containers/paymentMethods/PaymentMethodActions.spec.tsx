@@ -1,6 +1,6 @@
 import { fireEvent, render, waitFor } from '@testing-library/react';
 
-import { Autopay, PAYMENT_METHOD_TYPES, PaymentMethod } from '@proton/components/payments/core';
+import { Autopay, PAYMENT_METHOD_TYPES, SavedPaymentMethod } from '@proton/components/payments/core';
 import { deletePaymentMethod, orderPaymentMethods } from '@proton/shared/lib/api/payments';
 
 import { DropdownActions } from '../../components';
@@ -42,7 +42,7 @@ jest.mock('../../components/modal/Confirm', () =>
 
 describe('PaymentMethodActions', () => {
     it('should show only delete button if paypal is the first method', () => {
-        const method: PaymentMethod = {
+        const method: SavedPaymentMethod = {
             Order: 1,
             ID: 'id-123',
             Type: PAYMENT_METHOD_TYPES.PAYPAL,
@@ -61,7 +61,7 @@ describe('PaymentMethodActions', () => {
     });
 
     it('should show "delete" and "mark as default" button if paypal is not the first', () => {
-        const method: PaymentMethod = {
+        const method: SavedPaymentMethod = {
             Order: 1,
             ID: 'id-123',
             Type: PAYMENT_METHOD_TYPES.PAYPAL,
@@ -80,7 +80,7 @@ describe('PaymentMethodActions', () => {
     });
 
     it('should show Edit, Default and Delete buttons for non-first card', () => {
-        const method: PaymentMethod = {
+        const method: SavedPaymentMethod = {
             Order: 1,
             ID: 'id-123',
             Type: PAYMENT_METHOD_TYPES.CARD,
@@ -104,7 +104,7 @@ describe('PaymentMethodActions', () => {
     });
 
     it('should show Edit and Delete buttons for first card', () => {
-        const method: PaymentMethod = {
+        const method: SavedPaymentMethod = {
             Order: 1,
             ID: 'id-123',
             Type: PAYMENT_METHOD_TYPES.CARD,
@@ -140,7 +140,7 @@ describe('PaymentMethodActions', () => {
         });
 
         it('should open EditCardModal on Edit', async () => {
-            const method: PaymentMethod = {
+            const method: SavedPaymentMethod = {
                 Order: 1,
                 ID: 'id-123',
                 Type: PAYMENT_METHOD_TYPES.CARD,
@@ -166,7 +166,7 @@ describe('PaymentMethodActions', () => {
         });
 
         it('should make an API call on Mark as Default', async () => {
-            const method0: PaymentMethod = {
+            const method0: SavedPaymentMethod = {
                 Order: 0,
                 ID: 'id-000',
                 Type: PAYMENT_METHOD_TYPES.CARD,
@@ -182,7 +182,7 @@ describe('PaymentMethodActions', () => {
                 Autopay: Autopay.ENABLE,
             };
 
-            const method1: PaymentMethod = {
+            const method1: SavedPaymentMethod = {
                 Order: 1,
                 ID: 'id-123',
                 Type: PAYMENT_METHOD_TYPES.CARD,
@@ -221,7 +221,7 @@ describe('PaymentMethodActions', () => {
         });
 
         it('should open ConfirmModal on Delete', async () => {
-            const method: PaymentMethod = {
+            const method: SavedPaymentMethod = {
                 Order: 1,
                 ID: 'id-123',
                 Type: PAYMENT_METHOD_TYPES.CARD,

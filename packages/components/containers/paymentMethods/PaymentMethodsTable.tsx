@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { PaymentMethod, isCardDetails, isPaypalDetails } from '@proton/components/payments/core';
+import { isPaypalDetails, isSavedCardDetails } from '@proton/components/payments/core';
+import { SavedPaymentMethod } from '@proton/components/payments/core';
 import orderBy from '@proton/utils/orderBy';
 
 import { Table, TableBody, TableHeader, TableRow } from '../../components';
@@ -8,11 +9,11 @@ import PaymentMethodActions from './PaymentMethodActions';
 import PaymentMethodState from './PaymentMethodState';
 
 export interface Props {
-    methods: PaymentMethod[];
+    methods: SavedPaymentMethod[];
     loading: boolean;
 }
 
-const MethodCell = ({ method }: { method: PaymentMethod }) => {
+const MethodCell = ({ method }: { method: SavedPaymentMethod }) => {
     if (isPaypalDetails(method.Details)) {
         return (
             <>
@@ -26,7 +27,7 @@ const MethodCell = ({ method }: { method: PaymentMethod }) => {
         );
     }
 
-    if (isCardDetails(method.Details)) {
+    if (isSavedCardDetails(method.Details)) {
         return (
             <span data-testid="card-details">
                 {method.Details.Brand} (•••• {method.Details.Last4})
