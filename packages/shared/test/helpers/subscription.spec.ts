@@ -1,6 +1,6 @@
 import { addWeeks } from 'date-fns';
 
-import { External, Plan, PlanIDs, PlansMap, Subscription } from '@proton/shared/lib/interfaces';
+import { External, Plan, PlanIDs, PlansMap, Renew, Subscription } from '@proton/shared/lib/interfaces';
 
 import { ADDON_NAMES, COUPON_CODES, CYCLE, PLANS } from '../../lib/constants';
 import {
@@ -31,6 +31,7 @@ beforeEach(() => {
         Discount: 123,
         Plans: [],
         External: External.Default,
+        Renew: Renew.Enabled,
     };
 
     defaultPlan = {

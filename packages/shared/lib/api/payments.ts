@@ -12,7 +12,7 @@ import {
 import { INVOICE_OWNER, INVOICE_STATE, INVOICE_TYPE } from '@proton/shared/lib/constants';
 
 import { ProductParam, getProductHeaders } from '../apps/product';
-import { Currency, Cycle } from '../interfaces';
+import { Currency, Cycle, Renew } from '../interfaces';
 
 export const getSubscription = () => ({
     url: 'payments/v4/subscription',
@@ -205,4 +205,14 @@ export const getTokenStatus = (paymentToken: string) => ({
 export const getLastCancelledSubscription = () => ({
     url: 'payments/v4/subscription/latest',
     method: 'get',
+});
+
+export interface RenewalStateData {
+    RenewalState: Renew;
+}
+
+export const changeRenewState = (data: RenewalStateData) => ({
+    url: 'payments/v4/subscription/renew',
+    method: 'put',
+    data,
 });
