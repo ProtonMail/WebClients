@@ -4,20 +4,20 @@ import { c } from 'ttag';
 
 import type { DropdownProps, IconName } from '@proton/components';
 import { Dropdown, DropdownButton, DropdownMenu, Icon, usePopperAnchor } from '@proton/components';
+import type { ItemTypeFilter } from '@proton/pass/types';
 
 import { itemTypeToIconName } from '../../../shared/items';
 import { DropdownMenuButton } from '../../components/Dropdown/DropdownMenuButton';
-import type { ItemsFilterOption } from '../../context/items/ItemsFilteringContext';
 import { useItems } from '../../hooks/useItems';
 
 interface ItemsFilterProps {
-    value: ItemsFilterOption;
-    onChange: (value: ItemsFilterOption) => void;
+    value: ItemTypeFilter;
+    onChange: (value: ItemTypeFilter) => void;
 }
 
 const DROPDOWN_SIZE: DropdownProps['size'] = { width: '11rem' };
 
-const optionsWithoutCount: { [key in ItemsFilterOption]: { label: string; icon: IconName } } = {
+const optionsWithoutCount: { [key in ItemTypeFilter]: { label: string; icon: IconName } } = {
     '*': {
         label: c('Label').t`All`,
         icon: 'grid-2',
@@ -43,7 +43,7 @@ export const ItemsFilter: VFC<ItemsFilterProps> = ({ value, onChange }) => {
     const options = useMemo(
         () =>
             Object.entries(optionsWithoutCount).map(([type, { label, icon }]) => ({
-                type: type as ItemsFilterOption,
+                type: type as ItemTypeFilter,
                 label,
                 icon,
                 count: type === '*' ? matched.length : matched.filter((item) => item.data.type === type).length,

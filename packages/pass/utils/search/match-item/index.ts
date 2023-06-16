@@ -1,4 +1,4 @@
-import type { Item, ItemRevision, ItemType, ItemsSortOption, MaybeNull } from '@proton/pass/types';
+import type { Item, ItemRevision, ItemSortFilter, ItemType, MaybeNull } from '@proton/pass/types';
 import type { ItemMatchFunc, ItemMatchFuncMap } from '@proton/pass/utils/search';
 
 import matchesAliasItem from './alias.match';
@@ -31,7 +31,7 @@ export const filterItemsByType = <T extends ItemRevision>(items: T[], itemType?:
     return items.filter((item) => !itemType || itemType === item.data.type);
 };
 
-export const sortItems = <T extends ItemRevision>(items: T[], sort?: MaybeNull<ItemsSortOption>) => {
+export const sortItems = <T extends ItemRevision>(items: T[], sort?: MaybeNull<ItemSortFilter>) => {
     if (!sort) return items;
 
     return items.sort((a, b) => {
