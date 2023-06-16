@@ -7,11 +7,11 @@ import { ItemsFilteringContext } from '../context/items/ItemsFilteringContext';
 
 export const useItems = () => {
     const filtering = useContext(ItemsFilteringContext);
-    const { debouncedSearch, sort, filter, shareId } = filtering;
+    const { debouncedSearch, sort, type, shareId } = filtering;
 
     const matchedAndFilteredItems = useSelector(
         selectMatchedAndFilteredItemsWithOptimistic({
-            itemType: filter === '*' ? null : filter,
+            itemType: type === '*' ? null : type,
             search: debouncedSearch,
             shareId,
             sort,
