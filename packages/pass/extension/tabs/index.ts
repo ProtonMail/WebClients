@@ -2,12 +2,12 @@ import type { Tabs } from 'webextension-polyfill';
 
 import { contentScriptMessage, sendMessage } from '@proton/pass/extension/message';
 import browser from '@proton/pass/globals/browser';
-import type { Maybe } from '@proton/pass/types';
+import type { Maybe, TabId } from '@proton/pass/types';
 import { WorkerMessageType } from '@proton/pass/types';
 import { first } from '@proton/pass/utils/array';
+import { truthy } from '@proton/pass/utils/fp';
 
-/* We do not have access to the tabs API
- * in a content-script context */
+/* We do not have access to the tabs API  in a content-script context */
 export const getCurrentTab = async (): Promise<Maybe<Tabs.Tab>> => {
     try {
         return browser.tabs !== undefined
@@ -19,3 +19,17 @@ export const getCurrentTab = async (): Promise<Maybe<Tabs.Tab>> => {
               );
     } catch (_) {}
 };
+
+export const filterDeletedTabIds = async (tabIds: TabId[]): Promise<TabId[]> =>
+    (
+        await Promise.all(
+            tabIds.map(async (tabId) => {
+                try {
+                    const tab = await browser.tabs.get(tabId);
+                    if (!tab) return tabId;
+                } catch (_) {
+                    return tabId;
+                }
+            })
+        )
+    ).filter(truthy);
