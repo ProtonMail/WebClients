@@ -43,13 +43,14 @@ const SEARCH_DEBOUNCE_TIME = 150;
 export const ItemsFilteringContextProvider: FC = ({ children }) => {
     const popup = usePopupContext();
     const dispatch = useDispatch();
-    const [search, setSearch] = useState<string>(popup.state.initialSearch);
-    const debouncedSearch = useDebouncedValue(search, SEARCH_DEBOUNCE_TIME);
 
-    const [sort, setSort] = useState<ItemSortFilter>(INITIAL_SORT);
-    const [type, setType] = useState<ItemTypeFilter>('*');
-    const [shareId, setShareId] = useState<MaybeNull<string>>(null);
+    const [search, setSearch] = useState<string>(popup.state.initial.search ?? '');
+    const [sort, setSort] = useState<ItemSortFilter>(popup.state.initial.filters?.sort ?? INITIAL_SORT);
+    const [type, setType] = useState<ItemTypeFilter>(popup.state.initial.filters?.type ?? '*');
+    const [shareId, setShareId] = useState<MaybeNull<string>>(popup.state.initial.filters?.shareId ?? null);
     const [shareBeingDeleted, setShareBeingDeleted] = useState<MaybeNull<string>>(null);
+
+    const debouncedSearch = useDebouncedValue(search, SEARCH_DEBOUNCE_TIME);
 
     /* when updating the sort filters : discard any
      * selected item from the current popup tab */
@@ -59,10 +60,11 @@ export const ItemsFilteringContextProvider: FC = ({ children }) => {
                 tabId: popup.context!.tabId,
                 domain: popup.url.subdomain ?? popup.url.domain ?? null,
                 selectedItem: null,
-                filters: { sort, type },
+                filters: { sort, type, shareId },
+                search: debouncedSearch,
             })
         );
-    }, [sort, type]);
+    }, [sort, type, debouncedSearch, shareId]);
 
     const context: ItemsFilteringContextType = useMemo(
         () => ({
