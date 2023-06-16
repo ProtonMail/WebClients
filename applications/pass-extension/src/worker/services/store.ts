@@ -7,7 +7,7 @@ import store from '../store';
 export const createStoreService = () => {
     WorkerMessageBroker.registerMessage(
         WorkerMessageType.STORE_ACTION,
-        onContextReady((message) => {
+        onContextReady((_, message) => {
             store.dispatch(message.payload.action);
             return true;
         })
