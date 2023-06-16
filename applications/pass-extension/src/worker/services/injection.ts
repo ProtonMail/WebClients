@@ -49,7 +49,7 @@ export const createInjectionService = () => {
     };
 
     const updateInjections = async () => {
-        const tabs = await browser.tabs.query({ url: ['https://*/*', 'http://*/*'] });
+        const tabs = await browser.tabs.query({ url: ['https://*/*', 'http://*/*'] }).catch(() => []);
         await Promise.all(
             tabs.map((tab) => {
                 logger.info(`[InjectionService::update] Re-injecting script on tab ${tab.id}`);

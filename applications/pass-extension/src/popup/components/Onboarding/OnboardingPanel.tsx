@@ -68,7 +68,7 @@ export const OnboardingPanel: VFC = () => {
                 action: {
                     label: c('Label').t`Learn more`,
                     type: 'link',
-                    onClick: () => browser.tabs.create({ url: 'https://proton.me/pass' }),
+                    onClick: () => browser.tabs.create({ url: 'https://proton.me/pass' }).catch(noop),
                 },
             },
             [OnboardingMessage.TRIAL]: {

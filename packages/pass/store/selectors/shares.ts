@@ -30,10 +30,7 @@ export const selectAllVaultWithItemsCount = createSelector([selectAllVaults, sel
 
 export const selectPrimaryVault = createSelector([selectAllVaults], (vaults) => {
     const primaryVault = vaults.find((vault) => vault.primary);
-
-    if (!primaryVault) {
-        throw new SelectorError(`Primary vault not found`);
-    }
+    if (!primaryVault) throw new SelectorError(`Primary vault not found`);
 
     return primaryVault;
 });
