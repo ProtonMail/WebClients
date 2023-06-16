@@ -10,13 +10,15 @@ import {
     REFERRAL_PROGRAM_MAX_AMOUNT,
 } from '@proton/shared/lib/constants';
 import { humanPriceWithCurrency } from '@proton/shared/lib/helpers/humanPrice';
-import { Organization, UserModel, UserType } from '@proton/shared/lib/interfaces';
+import { hasVPN } from '@proton/shared/lib/helpers/subscription';
+import { Organization, Renew, Subscription, UserModel, UserType } from '@proton/shared/lib/interfaces';
 import { isOrganizationFamily, isOrganizationVisionary } from '@proton/shared/lib/organization/helper';
 
 import { recoveryIds } from './recoveryIds';
 
 export const getAccountAppRoutes = ({
     user,
+    subscription,
     isDataRecoveryAvailable,
     isReferralProgramEnabled,
     recoveryNotification,
@@ -27,6 +29,7 @@ export const getAccountAppRoutes = ({
     isAccessibilitySettingsEnabled,
 }: {
     user: UserModel;
+    subscription?: Subscription;
     isDataRecoveryAvailable: boolean;
     isReferralProgramEnabled: boolean;
     isGmailSyncEnabled: boolean;
@@ -47,6 +50,9 @@ export const getAccountAppRoutes = ({
     //Used to determine if a user is on a visionary plan (works for both old and new visionary plans)
     const isVisionaryPlan = !!organization && isOrganizationVisionary(organization);
     const isMemberProton = Type === UserType.PROTON;
+
+    // that's different from user.hasPaidVpn. That's because hasPaidVpn is true even if user has the unlimited plan
+    const hasVpnPlan = hasVPN(subscription);
 
     return <const>{
         header: c('Settings section title').t`Account`,
@@ -92,9 +98,14 @@ export const getAccountAppRoutes = ({
                         available: !isMember,
                     },
                     {
+                        text: c('Title').t`Cancel subscription`,
+                        id: 'cancel-subscription',
+                        available: isPaid && canPay && hasVpnPlan && subscription?.Renew === Renew.Enabled,
+                    },
+                    {
                         text: c('Title').t`Downgrade account`,
                         id: 'downgrade-account',
-                        available: isPaid && canPay,
+                        available: isPaid && canPay && !hasVpnPlan,
                     },
                 ],
             },

@@ -20,13 +20,14 @@ import { toMap } from '@proton/shared/lib/helpers/object';
 import { hasBonuses } from '@proton/shared/lib/helpers/organization';
 import { hasPlanIDs, supportAddons } from '@proton/shared/lib/helpers/planIDs';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
-import { getPlanIDs, hasMigrationDiscount, hasNewVisionary } from '@proton/shared/lib/helpers/subscription';
+import { getPlanIDs, hasMigrationDiscount, hasNewVisionary, hasVPN } from '@proton/shared/lib/helpers/subscription';
 import {
     Audience,
     Currency,
     Cycle,
     PlanIDs,
     PlansMap,
+    Renew,
     SubscriptionCheckResponse,
     SubscriptionModel,
 } from '@proton/shared/lib/interfaces';
@@ -60,6 +61,7 @@ import {
     useVPNServersCount,
 } from '../../../hooks';
 import GenericError from '../../error/GenericError';
+import CancelSubscriptionModal from '../CancelSubscriptionModal';
 import LossLoyaltyModal from '../LossLoyaltyModal';
 import MemberDowngradeModal from '../MemberDowngradeModal';
 import Payment from '../Payment';
@@ -208,6 +210,21 @@ const SubscriptionModal = ({
     const giftCodeRef = useRef<HTMLInputElement>(null);
 
     const handleUnsubscribe = async () => {
+        if (hasVPN(subscription)) {
+            if (subscription.Renew === Renew.Enabled) {
+                await new Promise<void>((resolve, reject) => {
+                    createModal(
+                        <CancelSubscriptionModal onClose={reject} onConfirm={resolve} subscription={subscription} />
+                    );
+                });
+
+                createNotification({ text: c('Success').t`You have successfully cancelled your subscription.` });
+            }
+
+            onClose?.();
+            return;
+        }
+
         // Start promise early
         const shouldCalendarPreventDowngradePromise = getShouldCalendarPreventSubscripitionChange({
             hasPaidMail: hasPaidMail(user),

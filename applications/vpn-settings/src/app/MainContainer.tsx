@@ -11,6 +11,7 @@ import {
     CancelSubscriptionSection,
     CreditsSection,
     DeleteSection,
+    DowngradeSubscriptionSection,
     EmailSubscriptionSection,
     ErrorBoundary,
     FeatureCode,
@@ -86,7 +87,7 @@ const MainContainer = () => {
     const location = useLocation();
     const zendeskRef = useRef<ZendeskRef>();
     const [showChat, setShowChat] = useState({ autoToggle: false, render: false });
-    const routes = getRoutes(user);
+    const routes = getRoutes(user, subscription);
     const canEnableChat = useCanEnableChat(user);
     const [authenticatedBugReportMode, setAuthenticatedBugReportMode] = useState<BugModalMode>();
     const [authenticatedBugReportModal, setAuthenticatedBugReportModal, render] = useModalState();
@@ -216,6 +217,7 @@ const MainContainer = () => {
                                             <CreditsSection />
                                             <GiftCodeSection />
                                             <CancelSubscriptionSection />
+                                            <DowngradeSubscriptionSection />
                                         </PrivateMainSettingsArea>
                                     </SubscriptionModalProvider>
                                 </Route>

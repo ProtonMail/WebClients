@@ -47,6 +47,7 @@ export const getRoutes = ({
     return {
         account: getAccountAppRoutes({
             user,
+            subscription,
             isDataRecoveryAvailable,
             isReferralProgramEnabled,
             recoveryNotification,

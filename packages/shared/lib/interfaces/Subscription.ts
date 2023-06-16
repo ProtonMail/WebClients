@@ -46,6 +46,11 @@ export interface Plan {
     Offers: Offer[];
 }
 
+export enum Renew {
+    Disabled = 0,
+    Enabled = 1,
+}
+
 export enum External {
     Default = 0,
     iOS = 1,
@@ -63,6 +68,7 @@ export interface Subscription {
     Currency: Currency;
     Amount: number;
     RenewAmount: number;
+    Renew: Renew;
     Discount: number;
     Plans: Plan[];
     External: External;
