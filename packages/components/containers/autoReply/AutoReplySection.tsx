@@ -207,7 +207,7 @@ const AutoReplySection = () => {
 
             <SettingsLayout>
                 <SettingsLayoutLeft>
-                    <label htmlFor="autoReplyToggle" className="pb-0 text-semibold">
+                    <label htmlFor="autoReplyToggle" className="pb-0 on-mobile-border-none text-semibold">
                         {c('Label').t`Auto-reply`}
                     </label>
                 </SettingsLayoutLeft>
