@@ -282,7 +282,7 @@ textarea.field,
  .right-text,
  .left-icon {
 	 inset-block-start: 0;
-	 block-size: #{rem($default-height-fields)}; // height of field
+	 block-size: #{rem($default-height-fields)} !important; // height of field, need to override `.icon16p`
 	 align-content: center;
  }
 
