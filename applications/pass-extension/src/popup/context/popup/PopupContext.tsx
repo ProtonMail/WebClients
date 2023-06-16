@@ -29,7 +29,7 @@ export interface PopupContextValue extends ExtensionAppContextValue {
     initialized: boolean /* retrieved popup initial state */;
     ready: boolean /* enable UI user actions */;
     url: ParsedUrl /* current tab parsed URL */;
-    state: WorkerState & PopupInitialState;
+    state: WorkerState & { initial: PopupInitialState };
     sync: () => void;
 }
 
@@ -38,7 +38,7 @@ export const PopupContext = createContext<PopupContextValue>({
     initialized: false,
     ready: false,
     url: parseUrl(),
-    state: { ...INITIAL_WORKER_STATE, ...INITIAL_POPUP_STATE },
+    state: { ...INITIAL_WORKER_STATE, initial: INITIAL_POPUP_STATE },
     logout: noop,
     lock: noop,
     sync: noop,
@@ -104,7 +104,7 @@ const PopupContextContainer: FC = ({ children }) => {
 
         return {
             ...extensionContext,
-            state: { ...state, ...(initial ?? INITIAL_POPUP_STATE) },
+            state: { ...state, initial: initial ?? INITIAL_POPUP_STATE },
             ready: ready && !syncing /* worker ready and no ongoing syncs */,
             initialized: initial !== null /* `POPUP_INIT` response resolved */,
             url,
