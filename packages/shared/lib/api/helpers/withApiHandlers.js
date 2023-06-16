@@ -195,7 +195,6 @@ export default ({ call, UID, onMissingScopes, onVerification }) => {
                             throw error;
                         });
                 }
-
                 throw e;
             });
         };
