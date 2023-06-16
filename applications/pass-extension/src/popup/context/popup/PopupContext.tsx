@@ -25,7 +25,7 @@ import { useRequestStatusEffect } from '../../../shared/hooks/useRequestStatusEf
 import { enhanceNotification } from '../../../shared/notification';
 import type { ItemDraftState } from '../../hooks/useItemDraft';
 
-export interface PopupContextValue extends Omit<ExtensionAppContextValue, 'context'> {
+export interface PopupContextValue extends ExtensionAppContextValue {
     initialized: boolean /* retrieved popup initial state */;
     ready: boolean /* enable UI user actions */;
     url: ParsedUrl /* current tab parsed URL */;
@@ -34,6 +34,7 @@ export interface PopupContextValue extends Omit<ExtensionAppContextValue, 'conte
 }
 
 export const PopupContext = createContext<PopupContextValue>({
+    context: null,
     initialized: false,
     ready: false,
     url: parseUrl(),
