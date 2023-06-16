@@ -1,5 +1,6 @@
 import type { ItemDraft } from '@proton/pass/store';
 
+import type { ItemFilters, SelectedItem } from '../data';
 import type { Maybe, MaybeNull } from '../utils';
 
 export enum WorkerStatus {
@@ -39,7 +40,8 @@ export type ExtensionLocalData = {
 };
 
 export type PopupInitialState = {
-    hasAutofillCandidates: boolean;
-    initialSearch: string;
+    search: MaybeNull<string>;
     draft: MaybeNull<ItemDraft>;
+    filters: MaybeNull<ItemFilters>;
+    selectedItem: MaybeNull<SelectedItem>;
 };

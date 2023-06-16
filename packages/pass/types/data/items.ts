@@ -1,6 +1,7 @@
 import type { OpenedItem } from '../crypto';
 import type { ExtraFieldContentMap, ExtraFieldType, ItemContentMap, ItemType, Metadata } from '../protobuf';
 import type { PlatformSpecific } from '../protobuf/item-v1';
+import type { MaybeNull } from '../utils';
 
 export type ItemExtraField<T extends ExtraFieldType = ExtraFieldType> = {
     [Key in T]: {
@@ -60,5 +61,6 @@ export type ItemMap<T> = {
 export type UniqueItem = { shareId: string; itemId: string };
 export type SelectedItem = UniqueItem;
 
-export const ITEMS_SORT_OPTIONS = ['recent', 'titleASC', 'createTimeDESC', 'createTimeASC'] as const;
-export type ItemsSortOption = (typeof ITEMS_SORT_OPTIONS)[number];
+export type ItemSortFilter = 'recent' | 'titleASC' | 'createTimeDESC' | 'createTimeASC';
+export type ItemTypeFilter = '*' | ItemType;
+export type ItemFilters = { sort: ItemSortFilter; type: ItemTypeFilter; shareId: MaybeNull<string> };
