@@ -4,7 +4,7 @@ import { LatestSubscription } from '@proton/components/payments/core';
 import { APPS, APP_NAMES, CYCLE, DEFAULT_CURRENCY, PLANS, PLAN_SERVICES } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { hasVpnBasic, hasVpnPlus } from '@proton/shared/lib/helpers/subscription';
-import { Audience, Cycle, Plan, PlanIDs, Subscription, UserModel } from '@proton/shared/lib/interfaces';
+import { Audience, Cycle, Plan, PlanIDs, Renew, Subscription, UserModel } from '@proton/shared/lib/interfaces';
 
 const OCTOBER_01 = getUnixTime(new Date(Date.UTC(2021, 9, 1)));
 
@@ -93,3 +93,42 @@ export const getDefaultSelectedProductPlans = (appName: APP_NAMES, planIDs: Plan
     };
 };
 export type SelectedProductPlans = ReturnType<typeof getDefaultSelectedProductPlans>;
+
+interface FreeSubscriptionResult {
+    subscriptionExpiresSoon: false;
+    renewDisabled: false;
+    renewEnabled: true;
+}
+
+type SubscriptionResult = {
+    subscriptionExpiresSoon: boolean;
+    planName: string;
+    renewDisabled: boolean;
+    renewEnabled: boolean;
+};
+
+export function subscriptionExpires(): FreeSubscriptionResult;
+export function subscriptionExpires(subscription: undefined | null): FreeSubscriptionResult;
+export function subscriptionExpires(subscription: Subscription): SubscriptionResult;
+export function subscriptionExpires(subscription?: Subscription | null): FreeSubscriptionResult | SubscriptionResult {
+    if (!subscription) {
+        return {
+            subscriptionExpiresSoon: false,
+            renewDisabled: false,
+            renewEnabled: true,
+        };
+    }
+
+    const renewDisabled = subscription.Renew === Renew.Disabled;
+    const renewEnabled = subscription.Renew === Renew.Enabled;
+    const subscriptionExpiresSoon = renewDisabled;
+
+    const planName = subscription.Plans?.[0]?.Title;
+
+    return {
+        subscriptionExpiresSoon,
+        renewDisabled,
+        renewEnabled,
+        planName,
+    };
+}

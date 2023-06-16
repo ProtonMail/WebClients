@@ -1,5 +1,6 @@
 export { default as AutomaticSubscriptionModal } from './AutomaticSubscriptionModal';
 export { default as CancelSubscriptionSection } from './CancelSubscriptionSection';
+export { default as DowngradeSubscriptionSection } from './DowngradeSubscriptionSection';
 export { default as PlanSelection } from './PlanSelection';
 export { default as SubscriptionModal } from './SubscriptionModal';
 export { default as SubscriptionModalDisabled } from './SubscriptionModalDisabled';

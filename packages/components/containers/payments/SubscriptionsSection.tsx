@@ -2,18 +2,35 @@ import { ReactElement } from 'react';
 
 import { c } from 'ttag';
 
+import { DropdownActionProps } from '@proton/components/components/dropdown/DropdownActions';
+import { changeRenewState } from '@proton/shared/lib/api/payments';
 import { getCheckResultFromSubscription, getCheckout } from '@proton/shared/lib/helpers/checkout';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { getPlanIDs } from '@proton/shared/lib/helpers/subscription';
-import { Currency, Cycle } from '@proton/shared/lib/interfaces';
+import { Currency, Cycle, Renew } from '@proton/shared/lib/interfaces';
+import isTruthy from '@proton/utils/isTruthy';
 
-import { Loader, Table, TableBody, TableCell, TableHeader, TableRow, Time } from '../../components';
+import {
+    DropdownActions,
+    Icon,
+    Loader,
+    Table,
+    TableBody,
+    TableCell,
+    TableHeader,
+    TableRow,
+    Time,
+    Tooltip,
+} from '../../components';
 import { default as Badge, Props as BadgeProps } from '../../components/badge/Badge';
 import Price from '../../components/price/Price';
-import { usePlans, useSubscription } from '../../hooks';
+import { useApi, useEventManager, useLoading, usePlans, useSubscription } from '../../hooks';
 import { SettingsSectionWide } from '../account';
 import MozillaInfoPanel from '../account/MozillaInfoPanel';
 import { getShortBillingText } from './helper';
+import { useSubscriptionModal } from './subscription/SubscriptionModalProvider';
+import { SUBSCRIPTION_STEPS } from './subscription/constants';
+import { subscriptionExpires } from './subscription/helpers';
 
 const getRenewalText = (periodEnd: number) => {
     const formattedEndTime = (
@@ -38,6 +55,8 @@ interface SubscriptionRowProps {
         type: BadgeProps['type'];
     };
     asterisk?: ReactElement;
+    actions?: ReactElement;
+    showPeriodEndWarning?: boolean;
 }
 
 const SubscriptionRow = ({
@@ -50,34 +69,44 @@ const SubscriptionRow = ({
     Currency,
     status,
     asterisk,
+    actions,
+    showPeriodEndWarning = false,
 }: SubscriptionRowProps) => {
     return (
         <TableRow>
-            <TableCell label={c('Title').t`Plan`}>
+            <TableCell label={c('Title subscription').t`Plan`}>
                 <span data-testid="planNameId">
                     {planTitle}
                     {asterisk}
                 </span>
             </TableCell>
-            <TableCell label={c('Title').t`Duration`}>
+            <TableCell label={c('Title subscription').t`Duration`}>
                 <span data-testid="planPeriodId">{getShortBillingText(Cycle)}</span>
             </TableCell>
-            <TableCell label={c('Title').t`Users`}>
+            <TableCell label={c('Title subscription').t`Users`}>
                 <span data-testid="amountOfUsersId">{users}</span>
             </TableCell>
-            <TableCell label={c('Title').t`Start date`}>
+            <TableCell label={c('Title subscription').t`Start date`}>
                 <Time format="PP" sameDayFormat={false} data-testid="planStartTimeId">
                     {PeriodStart}
                 </Time>
             </TableCell>
-            <TableCell label={c('Title').t`End date`}>
+            <TableCell label={c('Title subscription').t`End date`}>
                 <Time format="PP" sameDayFormat={false} data-testid="planEndTimeId">
                     {PeriodEnd}
                 </Time>
+                {showPeriodEndWarning && (
+                    <Tooltip
+                        title={c('Info subscription').t`You can prevent expiry by reactivating the subscription`}
+                        data-testid="periodEndWarning"
+                    >
+                        <Icon name="exclamation-circle-filled" className="color-danger ml-1" size={18} />
+                    </Tooltip>
+                )}
             </TableCell>
             <TableCell
                 data-testid="priceId"
-                label={c('Title').t`Total paid`}
+                label={c('Title subscription').t`Total paid`}
                 className="on-mobile-text-left on-tablet-text-left text-right"
             >
                 <Price currency={Currency}>{PricePerCycle}</Price>
@@ -88,6 +117,12 @@ const SubscriptionRow = ({
             >
                 <Badge type={status.type}>{status.label}</Badge>
             </TableCell>
+            <TableCell
+                data-testid="subscriptionActionsId"
+                className="on-mobile-text-left on-tablet-text-left text-right"
+            >
+                {actions}
+            </TableCell>
         </TableRow>
     );
 };
@@ -95,7 +130,11 @@ const SubscriptionRow = ({
 const SubscriptionsSection = () => {
     const [plans, loadingPlans] = usePlans();
     const [current, loadingSubscription] = useSubscription();
+    const [openSubscriptionModal] = useSubscriptionModal();
     const upcoming = current?.UpcomingSubscription;
+    const api = useApi();
+    const eventManager = useEventManager();
+    const [reactivating, withReactivating] = useLoading();
 
     if (loadingSubscription || loadingPlans) {
         return <Loader />;
@@ -119,10 +158,38 @@ const SubscriptionsSection = () => {
         checkResult: getCheckResultFromSubscription(upcoming),
     });
 
+    const { renewEnabled, subscriptionExpiresSoon } = subscriptionExpires(current);
+
     const asterisk = <span>* </span>;
     const asteriskForCurrent = upcoming ? undefined : asterisk;
 
     const renewalDate = upcoming?.PeriodEnd ?? current.PeriodEnd;
+
+    const dropdownActions: DropdownActionProps[] = [
+        renewEnabled && {
+            text: c('Action subscription').t`Manage`,
+            onClick: () =>
+                openSubscriptionModal({
+                    step: SUBSCRIPTION_STEPS.CHECKOUT,
+                }),
+        },
+        !renewEnabled && {
+            text: c('Action subscription').t`Reactivate`,
+            loading: reactivating,
+            onClick: () => {
+                withReactivating(async () => {
+                    await api(
+                        changeRenewState({
+                            RenewalState: Renew.Enabled,
+                        })
+                    );
+
+                    await eventManager.call();
+                });
+            },
+        },
+    ].filter(isTruthy);
+    const actions = <DropdownActions size="small" list={dropdownActions} />;
 
     return (
         <SettingsSectionWide>
@@ -130,13 +197,17 @@ const SubscriptionsSection = () => {
                 <Table className="table-auto" responsive="cards">
                     <TableHeader>
                         <TableRow>
-                            <TableCell type="header">{c('Title').t`Plan`}</TableCell>
-                            <TableCell type="header">{c('Title').t`Duration`}</TableCell>
-                            <TableCell type="header">{c('Title').t`Users`}</TableCell>
-                            <TableCell type="header">{c('Title').t`Start date`}</TableCell>
-                            <TableCell type="header">{c('Title').t`End date`}</TableCell>
-                            <TableCell type="header" className="text-right">{c('Title').t`Total paid`}</TableCell>
-                            <TableCell type="header"> </TableCell>
+                            <TableCell type="header">{c('Title subscription').t`Plan`}</TableCell>
+                            <TableCell type="header">{c('Title subscription').t`Duration`}</TableCell>
+                            <TableCell type="header">{c('Title subscription').t`Users`}</TableCell>
+                            <TableCell type="header">{c('Title subscription').t`Start date`}</TableCell>
+                            <TableCell type="header">{c('Title subscription').t`End date`}</TableCell>
+                            <TableCell type="header" className="text-right">{c('Title subscription')
+                                .t`Total`}</TableCell>
+                            <TableCell type="header" className="text-right">{c('Title subscription')
+                                .t`Status`}</TableCell>
+                            <TableCell type="header" className="text-right">{c('Title subscription')
+                                .t`Actions`}</TableCell>
                         </TableRow>
                     </TableHeader>
                     <TableBody colSpan={8}>
@@ -144,8 +215,17 @@ const SubscriptionsSection = () => {
                             {...currentCheckout}
                             {...current}
                             PricePerCycle={currentCheckout.withDiscountPerCycle}
-                            status={{ type: 'success', label: c('Subscription status').t`Active` }}
-                            asterisk={asteriskForCurrent}
+                            status={
+                                subscriptionExpiresSoon
+                                    ? {
+                                          type: 'error',
+                                          label: c('Subscription status').t`Expires soon`,
+                                      }
+                                    : { type: 'success', label: c('Subscription status').t`Active` }
+                            }
+                            asterisk={renewEnabled ? asteriskForCurrent : undefined}
+                            actions={actions}
+                            showPeriodEndWarning={subscriptionExpiresSoon}
                         ></SubscriptionRow>
                         {upcoming && (
                             <SubscriptionRow
@@ -153,7 +233,7 @@ const SubscriptionsSection = () => {
                                 {...upcoming}
                                 PricePerCycle={upcoming.RenewAmount}
                                 status={{ type: 'info', label: c('Subscription status').t`Upcoming` }}
-                                asterisk={asterisk}
+                                asterisk={renewEnabled ? asterisk : undefined}
                             ></SubscriptionRow>
                         )}
                     </TableBody>
@@ -163,8 +243,8 @@ const SubscriptionsSection = () => {
                         className="on-mobile-text-left on-tablet-text-left text-right w100"
                         data-testid="renewalDateInfo"
                     >
-                        {asterisk}
-                        {getRenewalText(renewalDate)}
+                        {renewEnabled && asterisk}
+                        {renewEnabled && getRenewalText(renewalDate)}
                     </div>
                 </div>
             </div>
