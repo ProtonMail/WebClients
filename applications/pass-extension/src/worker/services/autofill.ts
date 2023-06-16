@@ -97,7 +97,9 @@ export const createAutoFillService = () => {
 
     WorkerMessageBroker.registerMessage(
         WorkerMessageType.AUTOFILL_QUERY,
-        onContextReady((_, sender) => {
+        onContextReady(({ getState }, _, sender) => {
+            if (!getState().loggedIn) return { items: [], needsUpgrade: false };
+
             const { url, tabId } = parseSender(sender);
             const primaryVaultId = selectPrimaryVault(store.getState()).shareId;
             const { didDowngrade } = selectVaultLimits(store.getState());
@@ -118,7 +120,7 @@ export const createAutoFillService = () => {
 
     WorkerMessageBroker.registerMessage(
         WorkerMessageType.AUTOFILL_SELECT,
-        onContextReady(async (message) => {
+        onContextReady(async (_, message) => {
             const credentials = getAutofillData(message.payload);
 
             if (credentials === undefined) {
@@ -134,7 +136,7 @@ export const createAutoFillService = () => {
      * has been loaded with a new url : update the
      * badge count accordingly */
     browser.tabs.onUpdated.addListener(
-        onContextReady(async (tabId, _, tab) => {
+        onContextReady(async (_, tabId, __, tab) => {
             if (tabId) {
                 const items = getAutofillCandidates(parseUrl(tab.url));
                 return setPopupIconBadge(tabId, items.length);

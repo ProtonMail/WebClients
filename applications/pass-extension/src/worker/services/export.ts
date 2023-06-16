@@ -49,7 +49,7 @@ export const createExportService = () => {
 
     WorkerMessageBroker.registerMessage(
         WorkerMessageType.EXPORT_REQUEST,
-        onContextReady(async ({ payload }) => {
+        onContextReady(async (_, { payload }) => {
             const exportData = await getExportData(payload.encrypted);
             const zip = await createExportZip(exportData);
 

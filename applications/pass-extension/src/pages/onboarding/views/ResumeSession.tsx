@@ -8,6 +8,7 @@ import { browserSessionStorage } from '@proton/pass/extension/storage';
 import browser from '@proton/pass/globals/browser';
 import { WorkerMessageType } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
+import noop from '@proton/utils/noop';
 
 import * as config from '../../../app/config';
 
@@ -19,7 +20,7 @@ import * as config from '../../../app/config';
  * Mimics the authService::resumeSession data flow
  */
 const tryResumeSession = async () => {
-    const tab = await browser.tabs.getCurrent();
+    const tab = await browser.tabs.getCurrent().catch(noop);
     const tabId = tab?.id;
 
     if (!tab || !tabId) return;
