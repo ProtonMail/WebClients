@@ -58,6 +58,7 @@ const PaymentMethodSelector = ({ method, lastUsedMethod, options, onChange, forc
             onChange={({ value }) => onChange(value)}
             className={clsx(narrow && 'wauto')}
             size={size}
+            data-testid="payment-method-selector"
         >
             {options.flatMap((option) => {
                 const child = (
