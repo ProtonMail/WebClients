@@ -126,7 +126,7 @@ const NotificationInputInDrawer = ({
                     style={{ '--grow-custom': '1.5' }}
                 >
                     {hasValueInput && (
-                        <span className="flex-item-noshrink w-custom" style={{ '--width-custom': '4.5em' }}>
+                        <span className="flex-item-noshrink w-custom" style={{ '--w-custom': '4.5em' }}>
                             <IntegerInput
                                 id={NOTIFICATION_INPUT_ID}
                                 data-testid="notification-time-input"

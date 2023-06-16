@@ -27,7 +27,7 @@ const ContactSelectorList = ({
     const isCompactView = userSettings.Density === DENSITY.COMPACT;
 
     return (
-        <div ref={containerRef} className={clsx(['h-custom', className])} style={{ '--height-custom': `300px` }}>
+        <div ref={containerRef} className={clsx(['h-custom', className])} style={{ '--h-custom': `300px` }}>
             <AutoSizer>
                 {({ height, width }) => (
                     <List

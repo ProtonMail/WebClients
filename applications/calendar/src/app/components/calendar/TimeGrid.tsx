@@ -374,7 +374,7 @@ const TimeGrid = ({
                             {isDrawerApp && (
                                 <span
                                     className="h-custom flex flex-column flex-justify-center pt-1"
-                                    style={{ '--height-custom': `${dayEventHeight / 16}rem` }}
+                                    style={{ '--h-custom': `${dayEventHeight / 16}rem` }}
                                 >
                                     {primaryTimezone}
                                 </span>
@@ -384,7 +384,7 @@ const TimeGrid = ({
                             <DayLines days={daysRows[0]} />
                             <div
                                 className="calendar-time-fullday h-custom"
-                                style={{ '--height-custom': `${(actualRows * dayEventHeight) / 16}rem` }}
+                                style={{ '--h-custom': `${(actualRows * dayEventHeight) / 16}rem` }}
                                 data-row="0"
                                 ref={dayGridRef}
                             >

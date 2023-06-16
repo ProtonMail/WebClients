@@ -11,7 +11,7 @@ export default function SharedPageHeader({ children, rootItem, items }: Props) {
     return (
         <div
             className="flex flex-nowrap flex-justify-space-between mb-4 min-h-custom"
-            style={{ '--min-height-custom': '80px' }}
+            style={{ '--min-h-custom': '80px' }}
         >
             <div className="flex flex-nowrap flex-item-fluid flex-align-items-center mb-0 pb-0 mr-4 shared-page-layout-header">
                 {children}

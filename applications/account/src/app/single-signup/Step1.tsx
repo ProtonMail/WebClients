@@ -561,7 +561,7 @@ const Step1 = ({
                             <Fragment key={text}>
                                 <FeatureItem left={left} text={text} />
                                 {i !== arr.length - 1 && (
-                                    <Vr className="h-custom" style={{ '--height-custom': '2.25rem' }} />
+                                    <Vr className="h-custom" style={{ '--h-custom': '2.25rem' }} />
                                 )}
                             </Fragment>
                         );

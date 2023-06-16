@@ -5,8 +5,8 @@ export const getCustomSizingClasses = (style?: any): string => {
         return '';
     }
     return clsx([
-        style['--height-custom'] !== undefined && 'h-custom',
-        style['--width-custom'] !== undefined && 'w-custom',
+        style['--h-custom'] !== undefined && 'h-custom',
+        style['--w-custom'] !== undefined && 'w-custom',
         style['--top-custom'] !== undefined && 'top-custom',
         style['--right-custom'] !== undefined && 'right-custom',
         style['--left-custom'] !== undefined && 'left-custom',

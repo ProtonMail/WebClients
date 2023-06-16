@@ -138,10 +138,7 @@ const CountrySelect = ({ value, options, onChange, embedded, onClosed }: Props) 
                     />
                 </form>
 
-                <div
-                    className="h-custom min-w-custom"
-                    style={{ '--height-custom': '20em', '--min-width-custom': '18em' }}
-                >
+                <div className="h-custom min-w-custom" style={{ '--h-custom': '20em', '--min-w-custom': '18em' }}>
                     {!filteredOptions.length ? (
                         <div className="pl-4" role="alert">{c('Info').t`No results found`}</div>
                     ) : (
