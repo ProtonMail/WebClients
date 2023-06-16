@@ -8,7 +8,6 @@ import { Option } from '@proton/components';
 import { selectMailboxesForAlias } from '@proton/pass/store';
 import type { MaybeNull } from '@proton/pass/types';
 import { awaiter } from '@proton/pass/utils/fp/promises';
-import { merge } from '@proton/pass/utils/object';
 
 import type { EditAliasFormValues } from '../../../../shared/form/types';
 import { validateEditAliasForm } from '../../../../shared/form/validator/validate-alias';
@@ -69,8 +68,13 @@ export const AliasEdit: VFC<ItemEditProps<'alias'>> = ({ vault, revision, onCanc
                 (draft?.mailboxes ?? mailboxesForAlias ?? []).some(({ email }) => email === mailbox.email)
             );
 
-            const values = merge(formValues, { mailboxes: sanitizedMailboxes });
-            if (!draft) form.resetForm({ errors: validateEditAliasForm(values), values });
+            const values = { ...formValues, mailboxes: sanitizedMailboxes };
+            const errors = validateEditAliasForm(values);
+
+            if (draft) {
+                await form.setValues(values);
+                form.setErrors(errors);
+            } else form.resetForm({ values, errors });
         },
     });
 
