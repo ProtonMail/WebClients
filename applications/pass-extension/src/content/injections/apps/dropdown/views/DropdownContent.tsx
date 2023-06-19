@@ -26,7 +26,6 @@ import { PasswordAutoSuggest } from './PasswordAutoSuggest';
 
 /**
  * settings: `useIFrameContext().loadDomainImages`
- * userEmail: `dropdownState` when type : AUTOSUGGEST_ALIAS
  * domainUrl: `dropdownState.items` -> `SafeLoginItem::url`
  */
 
@@ -93,7 +92,6 @@ export const DropdownContent: VFC = () => {
     //     action: DropdownAction.AUTOSUGGEST_ALIAS,
     //     domain: 'localhost',
     //     prefix: 'test',
-    //     userEmail: 'verylongnametototototototototototo@foo.fr'
     // });
 
     // -- END FAKE STATE --
@@ -197,7 +195,6 @@ export const DropdownContent: VFC = () => {
                             <AliasAutoSuggest
                                 prefix={dropdownState.prefix}
                                 domain={dropdownState.domain}
-                                userEmail={dropdownState.userEmail}
                                 onOptions={triggerResize}
                                 onSubmitAliasEmail={withStateReset((aliasEmail) => {
                                     postMessage({
