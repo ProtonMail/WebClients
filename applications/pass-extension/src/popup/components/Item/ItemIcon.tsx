@@ -7,8 +7,8 @@ import { selectCanLoadDomainImages } from '@proton/pass/store';
 import type { ItemRevisionWithOptimistic } from '@proton/pass/types';
 import clsx from '@proton/utils/clsx';
 
+import { ImageStatus, ProxiedDomainImage } from '../../../shared/components/icon/ProxiedDomainImage';
 import { presentItemIcon } from '../../../shared/items';
-import { ImageStatus, ProxiedDomainImage } from './ProxiedDomainImage';
 
 import './ItemIcon.scss';
 
