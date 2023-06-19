@@ -261,7 +261,7 @@ const SwitchAccountContainer = ({ toApp, toAppName, onLogin, activeSessions, onA
                 subTitle={toAppName ? c('Info').t`to continue to ${toAppName}` : undefined}
             />
             <Content className="flex">
-                <div className="w100 max-h-custom" style={{ '--max-height-custom': '25em' }}>
+                <div className="w100 max-h-custom" style={{ '--max-h-custom': '25em' }}>
                     <Scroll>{inner()}</Scroll>
                 </div>
                 <div className="w100 text-center mt-7 mb-2">

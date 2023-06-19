@@ -143,7 +143,7 @@ const FilterPreviewActions = ({ isOpen, isNarrow, toggleOpen, labels, folders, m
         if (actions.autoReply) {
             const label = isOpen ? (
                 <span className="inline-flex flex-row flex-align-items-center condition-token mb-2" role="listitem">
-                    <span className="text-no-decoration max-w-custom" style={{ '--max-width-custom': 'inherit' }}>
+                    <span className="text-no-decoration max-w-custom" style={{ '--max-w-custom': 'inherit' }}>
                         {LABELS_ACTION.autoReply}
                     </span>
                 </span>

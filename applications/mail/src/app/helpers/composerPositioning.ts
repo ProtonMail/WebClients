@@ -17,8 +17,8 @@ const COMPOSER_NARROW_STYLES = {
     '--bottom-custom': 0,
     '--left-custom': 0,
     '--right-custom': 0,
-    '--height-custom': 'auto',
-    '--width-custom': 'auto',
+    '--h-custom': 'auto',
+    '--w-custom': 'auto',
 };
 
 export const computeLeftPosition = (index: number, count: number, windowWidth: number) => {
@@ -83,12 +83,12 @@ export const computeComposerStyle = ({
     if (isNarrow) {
         style = COMPOSER_NARROW_STYLES;
     } else if (minimized) {
-        style['--height-custom'] = '35px';
+        style['--h-custom'] = '35px';
     } else if (maximized) {
         const composerWidth = windowWidth - COMPOSER_GUTTER - APP_BAR_WIDTH;
         style['--left-custom'] = `${windowWidth - composerWidth - COMPOSER_GUTTER}px`;
-        style['--width-custom'] = `${composerWidth}px`;
-        style['--height-custom'] = `${windowHeight - COMPOSER_VERTICAL_GUTTER * 2}px`;
+        style['--w-custom'] = `${composerWidth}px`;
+        style['--h-custom'] = `${windowHeight - COMPOSER_VERTICAL_GUTTER * 2}px`;
     }
 
     return { style, customClasses: getCustomSizingClasses(style) };

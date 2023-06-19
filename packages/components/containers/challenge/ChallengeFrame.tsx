@@ -199,7 +199,7 @@ const ChallengeFrame = ({
 
             if (eventDataType === 'rect' && stage === 'loaded' && eventDataPayload?.height !== undefined) {
                 iframe.classList.add('h-custom');
-                iframe.style.setProperty('--height-custom', `${eventDataPayload.height}px`);
+                iframe.style.setProperty('--h-custom', `${eventDataPayload.height}px`);
             }
 
             if (eventDataType === 'child.message.data' && stage === 'loaded') {
@@ -275,7 +275,7 @@ const ChallengeFrame = ({
         if (iframe && renderDivEl && (!hasSizeObserver || !isLoaded)) {
             const rect = renderDivEl.getBoundingClientRect();
             iframe.classList.add('h-custom');
-            iframe.style.setProperty('--height-custom', `${rect.height}px`);
+            iframe.style.setProperty('--h-custom', `${rect.height}px`);
         }
         if (!renderDivEl || !contentWindow || !isLoaded) {
             return;
