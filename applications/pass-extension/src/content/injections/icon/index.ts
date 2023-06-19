@@ -60,7 +60,9 @@ const getOverlayedElement = (options: { x: number; y: number; parent: HTMLElemen
 /* Force re-render/re-paint of the input element
  * before computing the icon injection styles in
  * order to avoid certain browser rendering optimisations
- * which cause incorrect DOMRect / styles to be resolved */
+ * which cause incorrect DOMRect / styles to be resolved.
+ * ie: check amazon sign-in page without repaint to
+ * reproduce issue */
 const computeIconInjectionStyles = (
     { input, wrapper }: Omit<InjectionElements, 'icon'>,
     { getInputStyle, getBoxStyle, inputBox }: SharedInjectionOptions
@@ -70,7 +72,6 @@ const computeIconInjectionStyles = (
     const { right: inputRight, top: inputTop, height: inputHeight } = input.getBoundingClientRect();
     const { top: boxTop } = inputBox.getBoundingClientRect();
     const { top: wrapperTop, right: wrapperRight } = wrapper.getBoundingClientRect();
-
     const { value: inputWidth } = getComputedWidth(getInputStyle, { node: input, mode: 'outer' });
 
     /* If inputBox is not the input element in the case we
@@ -234,8 +235,11 @@ export const createIcon = (field: FieldHandle): InjectionElements => {
     icon.setAttribute('type', 'button');
 
     const elements = { icon, wrapper, input, inputBox };
+    const boxed = input !== inputBox;
 
-    input.parentElement!.insertBefore(wrapper, input.nextSibling);
+    if (boxed) inputBox.insertBefore(wrapper, inputBox.firstElementChild);
+    else input.parentElement!.insertBefore(wrapper, input);
+
     wrapper.appendChild(icon);
     applyInjectionStyles(elements);
 
