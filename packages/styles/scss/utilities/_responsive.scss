@@ -6,20 +6,6 @@
 }
 
 /**
- * medium/tablet landscape minor breakpoint
- */
-@include media('<=large') {
-	@include spacing-generator(
-		// coordinates
-		(p, pt, pr, pb, pl),
-		// padding sizes
-		(0, 1),
-		// prefix
-		'on-tablet-landscape-'
-	);
-}
-
-/**
  * medium/tablet breakpoint
  */
 @include media('>medium') {
@@ -50,24 +36,6 @@
 		display: block;
 		inline-size: auto;
 	}
-
-	@include spacing-generator(
-		// coordinates
-		(m, mt, mr, mb, ml, mx, my),
-		// margin sizes
-		(0, 0.5, 1, 2),
-		// prefix
-		'on-tablet-'
-	);
-
-	@include spacing-generator(
-		// coordinates
-		(p, pt, pr, pb, pl, px, py),
-		// padding sizes
-		(0, 1, 2),
-		// prefix
-		'on-tablet-'
-	);
 
 	.on-tablet {
 		&-static {
@@ -169,24 +137,6 @@
 		display: block;
 		inline-size: auto;
 	}
-
-	@include spacing-generator(
-		// coordinates
-		(m, mt, mr, mb, ml, mx, my),
-		// margin sizes
-		(0, 0.25, 0.5, 1, 1.25, 1.5, 2, 3.5),
-		// prefix
-		'on-mobile-'
-	);
-
-	@include spacing-generator(
-		// coordinates
-		(p, pt, pr, pb, pl, px, py),
-		// padding sizes
-		(0, 0.25, 0.5, 1, 2),
-		// prefix
-		'on-mobile-'
-	);
 
 	.on-mobile {
 		&-text-left {
@@ -422,22 +372,4 @@
 			display: none;
 		}
 	}
-
-	@include spacing-generator(
-		// coordinates
-		(m, mt, mr, mb, ml),
-		// margin sizes
-		(0, 0.5, 1, 2),
-		// prefix
-		'on-tiny-mobile-'
-	);
-
-	@include spacing-generator(
-		// coordinates
-		(p, pt, pr, pb, pl, px),
-		// padding sizes
-		(0),
-		// prefix
-		'on-tiny-mobile-'
-	);
 }
