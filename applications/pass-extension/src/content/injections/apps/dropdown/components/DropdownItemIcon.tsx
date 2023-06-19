@@ -11,7 +11,7 @@ import type { DropdownIcon } from '@proton/pass/types/data/pass-icon';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
-import { ImageStatus, ProxiedDomainImage } from '../../../../../popup/components/Item/ProxiedDomainImage';
+import { ImageStatus, ProxiedDomainImage } from '../../../../../shared/components/icon/ProxiedDomainImage';
 
 import '../../../../../popup/components/Item/ItemIcon.scss';
 
