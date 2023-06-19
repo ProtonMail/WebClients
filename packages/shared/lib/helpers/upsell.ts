@@ -85,6 +85,13 @@ export const getUpsellRefFromApp = ({
                 component,
                 isSettings: true,
             });
+        } else if (fromApp === APPS.PROTONPASS) {
+            return getUpsellRef({
+                app: APP_UPSELL_REF_PATH.PASS_UPSELL_REF_PATH,
+                feature,
+                component,
+                isSettings: true,
+            });
         } else if (fromApp === APPS.PROTONVPN_SETTINGS) {
             return getUpsellRef({ app: APP_UPSELL_REF_PATH.VPN_UPSELL_REF_PATH, feature, component, isSettings: true });
         }

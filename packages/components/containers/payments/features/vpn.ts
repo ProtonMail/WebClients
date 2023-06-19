@@ -16,6 +16,12 @@ import { PlanCardFeature, PlanCardFeatureDefinition } from './interface';
 
 export const getFreeVPNConnectionTotal = () => c('new_plans: feature').t`1 free VPN connection in total`;
 
+export const getAdvancedVPNFeature = (): PlanCardFeatureDefinition => ({
+    icon: 'checkmark-circle',
+    included: true,
+    text: c('new_plans: Upsell attribute').t`Access advanced VPN features`,
+});
+
 export const getB2BHighSpeedVPNConnectionsText = (n: number) => {
     return c('Subscription attribute').ngettext(
         msgid`${n} high-speed VPN connection per user`,
@@ -23,6 +29,12 @@ export const getB2BHighSpeedVPNConnectionsText = (n: number) => {
         n
     );
 };
+
+export const getB2BHighSpeedVPNConnectionsFeature = (): PlanCardFeatureDefinition => ({
+    icon: 'brand-proton-vpn',
+    text: getB2BHighSpeedVPNConnectionsText(VPN_CONNECTIONS),
+    included: true,
+});
 
 export const getB2BVPNConnectionsText = (n: number) => {
     return c('Subscription attribute').ngettext(
@@ -39,6 +51,12 @@ export const getHighSpeedVPNConnectionsText = (n: number) => {
         n
     );
 };
+
+export const getHighSpeedVPNConnectionsFeature = (): PlanCardFeatureDefinition => ({
+    icon: 'brand-proton-vpn',
+    text: getHighSpeedVPNConnectionsText(VPN_CONNECTIONS),
+    included: true,
+});
 
 export const getVPNConnectionsText = (n: number) => {
     return c('Subscription attribute').ngettext(msgid`${n} VPN connection`, `${n} VPN connections`, n);

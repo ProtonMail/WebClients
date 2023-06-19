@@ -5,15 +5,17 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button';
 import { useModalState } from '@proton/components/components';
 import { useCache } from '@proton/components/hooks';
-import usePendingUserInvitations from '@proton/components/hooks/usePendingUserInvitations';
 import useUid from '@proton/components/hooks/useUid';
 import { PendingInvitation } from '@proton/shared/lib/interfaces';
 import { UserInvitationModel } from '@proton/shared/lib/models';
 
-import PendingInvitationModal from './PendingInvitationModal';
+import PendingInvitationModal from '../PendingInvitationModal';
 
-const PendingInvitationPanel = () => {
-    const [invites = []] = usePendingUserInvitations();
+interface Props {
+    invites: PendingInvitation[];
+}
+
+const PendingInvitationPanel = ({ invites }: Props) => {
     const [selectedInvitation, setSelectedInvitation] = useState<PendingInvitation>();
     const [invitationModal, setInvitationModal, renderInvitationModal] = useModalState();
     const uid = useUid('pending-invitation-dashboard');

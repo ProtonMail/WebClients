@@ -2,7 +2,6 @@
 
 .your-plan-section-container {
 	display: grid;
-	grid-template-columns: repeat(2, 1fr);
 
 	& > div {
 		block-size: fit-content;
@@ -13,4 +12,22 @@
 	}
 }
 
-// .your-account-usage-container { grid-area: 2 / 2 / 3 / 3; } // if we want to go right
+.grid-column-3 {
+	grid-template-columns: repeat(3, 1fr);
+
+	@include media('<=large') {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	@include media('<=medium') {
+		grid-template-columns: repeat(1, 1fr);
+	}
+}
+
+.grid-column-2 {
+	grid-template-columns: repeat(2, 1fr);
+
+	@include media('<=medium') {
+		grid-template-columns: repeat(1, 1fr);
+	}
+}

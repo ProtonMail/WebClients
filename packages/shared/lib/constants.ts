@@ -551,6 +551,7 @@ export enum APP_UPSELL_REF_PATH {
     MAIL_UPSELL_REF_PATH = 'upsell_mail-',
     CALENDAR_UPSELL_REF_PATH = 'upsell_calendar-',
     DRIVE_UPSELL_REF_PATH = 'upsell_drive-',
+    PASS_UPSELL_REF_PATH = 'upsell_pass-',
     VPN_UPSELL_REF_PATH = 'upsell_vpn-',
 }
 
@@ -590,6 +591,15 @@ export enum SHARED_UPSELL_PATHS {
     STORAGE = 'storage',
     STORAGE_PERCENTAGE = 'storage-percentage',
     ORGANIZATION_CAPACITY = 'organization-capacity',
+}
+
+export enum DASHBOARD_UPSELL_PATHS {
+    MAILPLUS = 'mailplus-dashboard',
+    UNLIMITED = 'unlimited-dashboard',
+    DRIVE = 'drive-dashboard',
+    PASS = 'pass-dashboard',
+    FAMILY = 'family-dashboard',
+    BUSINESS = 'business-dashboard',
 }
 
 export const LOYAL_BONUS_STORAGE = 5 * GIGA;

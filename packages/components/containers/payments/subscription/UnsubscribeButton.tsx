@@ -110,7 +110,8 @@ const UnsubscribeButton = ({ className, children, ...rest }: Props) => {
             });
         }
 
-        const shortPlan = currentPlan ? getShortPlan(currentPlan.Name as PLANS, plansMap, vpnServers, {}) : undefined;
+        const shortPlan = currentPlan ? getShortPlan(currentPlan.Name as PLANS, plansMap, { vpnServers }) : undefined;
+
         // We only show the plan downgrade modal for plans that are defined with features
         if (shortPlan) {
             await new Promise<void>((resolve, reject) => {
