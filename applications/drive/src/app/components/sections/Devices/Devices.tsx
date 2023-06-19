@@ -30,7 +30,7 @@ const mobileCells = [DeviceNameCell, ContextMenuCell];
 
 const headerItemsDesktop: ListViewHeaderItem[] = [headerCells.name, headerCellsCommon.placeholder];
 
-const headeItemsMobile: ListViewHeaderItem[] = [headerCells.name, headerCellsCommon.placeholder];
+const headerItemsMobile: ListViewHeaderItem[] = [headerCells.name, headerCellsCommon.placeholder];
 
 function Devices({ view }: Props) {
     const contextMenuAnchorRef = useRef<HTMLDivElement>(null);
@@ -74,7 +74,7 @@ function Devices({ view }: Props) {
     }
 
     const Cells = isDesktop ? desktopCells : mobileCells;
-    const headerItems = isDesktop ? headerItemsDesktop : headeItemsMobile;
+    const headerItems = isDesktop ? headerItemsDesktop : headerItemsMobile;
 
     return (
         <>
