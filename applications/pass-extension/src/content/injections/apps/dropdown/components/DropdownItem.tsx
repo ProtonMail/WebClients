@@ -1,7 +1,7 @@
 import type { ReactNode, VFC } from 'react';
 
 import { DropdownMenuButton } from '@proton/components/components';
-import type { DropdownIcon } from '@proton/pass/types/data/passIcon';
+import type { DropdownIcon } from '@proton/pass/types/data/pass-icon';
 import clsx from '@proton/utils/clsx';
 
 import { DropdownItemIcon } from './DropdownItemIcon';

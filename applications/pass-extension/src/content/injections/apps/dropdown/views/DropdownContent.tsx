@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { CircleLoader } from '@proton/atoms/CircleLoader';
 import { Icon } from '@proton/components/components';
 import { type Callback, type MaybeNull, WorkerStatus } from '@proton/pass/types';
-import { PassIcon } from '@proton/pass/types/data/passIcon';
+import { PassIcon } from '@proton/pass/types/data/pass-icon';
 import { pixelEncoder } from '@proton/pass/utils/dom';
 import { pipe, tap } from '@proton/pass/utils/fp';
 import { FORK_TYPE } from '@proton/shared/lib/authentication/ForkInterface';
