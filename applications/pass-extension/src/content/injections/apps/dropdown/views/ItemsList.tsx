@@ -38,9 +38,9 @@ export const ItemsList: VFC<Props> = ({ items, needsUpgrade, onSubmit, canLoadFa
                         key={item.itemId}
                         title={item.name}
                         subTitle={item.username}
-                        url={item.url}
+                        url={canLoadFavicons ? item.url : undefined}
+                        icon="user"
                         onClick={() => onSubmit(item)}
-                        canLoadFavicons={canLoadFavicons}
                     />
                 )),
             ].filter(truthy),
