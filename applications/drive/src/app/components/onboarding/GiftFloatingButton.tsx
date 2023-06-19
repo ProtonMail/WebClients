@@ -173,7 +173,7 @@ function FloatingSpotlight({
             show={show}
             originalPlacement="top-end"
             className="max-w-custom upper-layer"
-            style={{ '--max-width-custom': '25em' }}
+            style={{ '--max-w-custom': '25em' }}
             hasClose={hasClose}
         >
             <FloatingButton
@@ -181,7 +181,7 @@ function FloatingSpotlight({
                 onClick={onClick}
                 color={color}
                 className="w-custom h-custom"
-                style={{ '--width-custom': '3em', '--height-custom': '3em', '--right': `${rightOffset}rem` }}
+                style={{ '--w-custom': '3em', '--h-custom': '3em', '--right': `${rightOffset}rem` }}
             >
                 <Icon size={24} name={icon} className="m-auto" />
             </FloatingButton>
@@ -285,7 +285,7 @@ function WelcomeAction({
                     'flex flex-justify-center flex-align-items-center',
                     isDone ? 'bg-success' : 'bg-weak',
                 ])}
-                style={{ '--width-custom': '2.5em', '--height-custom': '2.5em' }}
+                style={{ '--w-custom': '2.5em', '--h-custom': '2.5em' }}
             >
                 <Icon name={icon} />
             </div>

@@ -4,11 +4,11 @@
 }
 
 .pass-import-upload {
-	--min-height-custom: 250px;
+	--min-h-custom: 250px;
 
 	transition: min-block-size 0.25s ease-in-out 0.05s;
 
 	&--has-file {
-		--min-height-custom: 1px;
+		--min-h-custom: 1px;
 	}
 }

@@ -63,7 +63,7 @@ export const ApplicationLogs: VFC = () => {
                     >
                         <Icon name="cross" size={12} />
                     </Button>
-                    <div className="scroll-if-needed  max-h-custom" style={{ '--max-height-custom': '300px' }}>
+                    <div className="scroll-if-needed  max-h-custom" style={{ '--max-h-custom': '300px' }}>
                         {logs.map((log, i) => (
                             <span key={i} className="block text-xs color-weak">
                                 {log}
