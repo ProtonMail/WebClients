@@ -172,6 +172,7 @@ export const DropdownContent: VFC = () => {
                             />
                         ) : (
                             <DropdownItem
+                                icon={PassIcon.ACTIVE}
                                 onClick={withStateReset(closeIFrame)}
                                 title={PASS_APP_NAME}
                                 subTitle={c('Info').t`No login found`}
