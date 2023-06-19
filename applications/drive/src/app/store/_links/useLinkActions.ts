@@ -9,11 +9,13 @@ import {
     generateNodeKeys,
 } from '@proton/shared/lib/keys/driveKeys';
 import { getDecryptedSessionKey } from '@proton/shared/lib/keys/drivePassphrase';
+import getRandomString from '@proton/utils/getRandomString';
 
 import { ValidationError } from '../../utils/errorHandling/ValidationError';
 import { useDebouncedRequest } from '../_api';
 import { useDriveCrypto } from '../_crypto';
 import { useDriveEventManager } from '../_events';
+import { useShare } from '../_shares';
 import { useVolumesState } from '../_volumes';
 import { encryptFolderExtendedAttributes } from './extendedAttributes';
 import useLink from './useLink';
@@ -27,6 +29,7 @@ export default function useLinkActions() {
     const debouncedRequest = useDebouncedRequest();
     const events = useDriveEventManager();
     const { getLink, getLinkPrivateKey, getLinkSessionKey, getLinkHashKey } = useLink();
+    const { getSharePrivateKey } = useShare();
     const { getPrimaryAddressKey } = useDriveCrypto();
     const volumeState = useVolumesState();
 
@@ -95,12 +98,12 @@ export default function useLinkActions() {
         }
 
         const meta = await getLink(abortSignal, shareId, linkId);
-
         const [parentPrivateKey, parentHashKey] = await Promise.all([
-            getLinkPrivateKey(abortSignal, shareId, meta.parentLinkId),
-            getLinkHashKey(abortSignal, shareId, meta.parentLinkId),
+            meta.parentLinkId
+                ? getLinkPrivateKey(abortSignal, shareId, meta.parentLinkId)
+                : getSharePrivateKey(abortSignal, shareId),
+            meta.parentLinkId ? getLinkHashKey(abortSignal, shareId, meta.parentLinkId) : null,
         ]);
-
         const [sessionKey, { address, privateKey: addressKey }] = await Promise.all([
             getDecryptedSessionKey({
                 data: meta.encryptedName,
@@ -110,7 +113,7 @@ export default function useLinkActions() {
         ]);
 
         const [Hash, { message: encryptedName }] = await Promise.all([
-            generateLookupHash(newName, parentHashKey),
+            parentHashKey ? generateLookupHash(newName, parentHashKey) : getRandomString(64),
             CryptoProxy.encryptMessage({
                 textData: newName,
                 stripTrailingSpaces: true,
@@ -125,6 +128,7 @@ export default function useLinkActions() {
                     Name: encryptedName,
                     Hash,
                     SignatureAddress: address.Email,
+                    OriginalHash: meta.hash,
                 })
             )
         );

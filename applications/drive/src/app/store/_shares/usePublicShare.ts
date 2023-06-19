@@ -62,6 +62,7 @@ export default function usePublicShare() {
                     contentKeyPacket: Token.ContentKeyPacket,
                     rootShareId: '',
                     xAttr: '',
+                    hash: '',
                 },
             },
         ]);

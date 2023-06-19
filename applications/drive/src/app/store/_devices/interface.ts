@@ -5,6 +5,7 @@ export interface Device {
     linkId: string;
     name: string;
     modificationTime: number;
+    haveLegacyName: boolean;
 }
 
 export type DevicesState = {
