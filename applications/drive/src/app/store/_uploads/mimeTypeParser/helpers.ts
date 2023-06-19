@@ -23,7 +23,7 @@ export function SignatureChecker(sourceBuffer: Buffer) {
 
         for (const [index, signatureByte] of signature.entries()) {
             const sourceByte = sourceBuffer[index + offset];
-            const maskedByte = mask ? signatureByte !== (mask[index] & sourceByte) : sourceByte;
+            const maskedByte = mask ? mask[index] & sourceByte : sourceByte;
 
             if (signatureByte !== maskedByte) {
                 return false;
@@ -52,11 +52,10 @@ export function SignatureChecker(sourceBuffer: Buffer) {
 }
 
 /**
-Checks whether the TAR checksum is valid.
-@param {Buffer} buffer - The TAR header `[offset ... offset + 512]`.
-@param {number} offset - TAR header offset.
-@returns {boolean} `true` if the TAR checksum is valid, otherwise `false`.
-*/
+ Checks whether the TAR checksum is valid.
+ @param {Buffer} buffer - The TAR header `[offset ... offset + 512]`.
+ @returns {boolean} `true` if the TAR checksum is valid, otherwise `false`.
+ */
 export function isTarHeaderChecksumValid(buffer: Buffer) {
     const readSum = parseInt(buffer.toString('utf8', 148, 154).replace(/\0.*$/, '').trim(), 8); // Read sum in header
 
