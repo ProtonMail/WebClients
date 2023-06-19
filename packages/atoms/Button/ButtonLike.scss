@@ -339,23 +339,3 @@
 .button-pill {
 	border-radius: 2em;
 }
-
-.button-promotion,
-.button-promotion:hover {
-	position: relative;
-	background: radial-gradient(78.38% 153.62% at 21.62% 37.5%, #6e4bff 0%, #fd4baf 35.54%, #22d8ff 100%);
-
-	// linear-gradient(90deg, rgba(110,75,255,1) 0%, rgba(253,75,175,1) 35%, rgba(34,216,255,1) 100%);
-	border: 0;
-	color: #6243e6;
-	padding-block: em(8); // 36 height
-
-	&::before {
-		content: '';
-		position: absolute;
-		inset: 1px;
-		z-index: 0;
-		background-color: #f5f3ff;
-		border-radius: 7px; // 8px pour les dark
-	}
-}
