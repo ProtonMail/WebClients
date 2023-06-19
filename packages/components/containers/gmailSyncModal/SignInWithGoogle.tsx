@@ -19,11 +19,11 @@ const SignInWithGoogle = ({ loading, onClick }: Props) => {
             loading={loading}
             disabled={loading}
             className="flex flex-align-items-center p-1 rounded h-custom google-button"
-            style={{ '--height-custom': '3rem' }}
+            style={{ '--h-custom': '3rem' }}
         >
             <span
                 className="bg-norm rounded-sm flex flex-justify-center flex-align-items-center h-custom w-custom"
-                style={{ '--width-custom': '2.5rem', '--height-custom': '2.5rem' }}
+                style={{ '--w-custom': '2.5rem', '--h-custom': '2.5rem' }}
             >
                 <img src={googleLogo} alt="" width={20} height={20} aria-hidden="true" />
             </span>
