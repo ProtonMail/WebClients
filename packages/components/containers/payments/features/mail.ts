@@ -64,6 +64,13 @@ export const getNAddressesFeatureB2B = ({
     };
 };
 
+export const getExtraPersonalizationFeature = (): PlanCardFeatureDefinition => ({
+    icon: 'checkmark-circle',
+    text: c('new_plans: Upsell attribute')
+        .t`Add more personalization with 15 email addresses and support for 3 custom email domains`,
+    included: true,
+});
+
 export const getNMessagesFeature = (n: number | 'unlimited'): PlanCardFeatureDefinition => {
     if (n === Number.POSITIVE_INFINITY || n === 'unlimited') {
         return {
@@ -80,6 +87,12 @@ export const getNMessagesFeature = (n: number | 'unlimited'): PlanCardFeatureDef
         icon: 'speech-bubble',
     };
 };
+
+export const getB2BNDomainsFeature = (): PlanCardFeatureDefinition => ({
+    icon: 'globe',
+    text: c('new_plans: Upsell attribute').t`Cover more ground with support for 10 custom email domains`,
+    included: true,
+});
 
 export const getNDomainsFeature = ({ n, highlight }: { n: number; highlight?: boolean }): PlanCardFeatureDefinition => {
     if (n === 0) {

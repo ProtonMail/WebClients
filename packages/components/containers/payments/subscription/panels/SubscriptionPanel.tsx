@@ -19,8 +19,8 @@ import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 import percentage from '@proton/utils/percentage';
 
-import { Icon, Meter, Price, StripedItem, StripedList } from '../../../components';
-import { PlanCardFeatureDefinition } from '../features/interface';
+import { Icon, Meter, Price, StripedItem, StripedList } from '../../../../components';
+import { PlanCardFeatureDefinition } from '../../features/interface';
 import {
     FREE_PASS_ALIASES,
     FREE_VAULTS,
@@ -30,16 +30,17 @@ import {
     getHideMyEmailAliases,
     getLoginsAndNotes,
     getVaults,
-} from '../features/pass';
+} from '../../features/pass';
 import {
     getB2BHighSpeedVPNConnectionsText,
     getFreeVPNConnectionTotal,
     getHighSpeedVPNConnectionsText,
     getVPNConnectionsText,
-} from '../features/vpn';
-import { OpenSubscriptionModalCallback } from './SubscriptionModalProvider';
-import SubscriptionPanelManageUserButton from './SubscriptionPanelManageUserButton';
-import { SUBSCRIPTION_STEPS } from './constants';
+} from '../../features/vpn';
+import { OpenSubscriptionModalCallback } from '../SubscriptionModalProvider';
+import SubscriptionPanelManageUserButton from '../SubscriptionPanelManageUserButton';
+import { SUBSCRIPTION_STEPS } from '../constants';
+import Panel from './Panel';
 
 interface Item extends Omit<PlanCardFeatureDefinition, 'status' | 'highlight' | 'included'> {
     status?: PlanCardFeatureDefinition['status'];
@@ -322,13 +323,7 @@ const SubscriptionPanel = ({
     };
 
     return (
-        <div
-            className="border rounded px-6 py-5 subscription-panel-container flex-align-self-start on-tablet-order-1 on-mobile-order-1"
-            data-testid="current-plan"
-        >
-            <h2 className="mb-1 h3">
-                <strong>{c('Title').t`Your Plan`}</strong>
-            </h2>
+        <Panel data-testid="current-plan" title={c('Title').t`Your Plan`}>
             <div className="flex flex-wrap flex-align-items-center flex-justify-space-between color-weak">
                 <strong data-testid="plan-name">{planTitle}</strong>
                 {user.hasPaidMail && (
@@ -392,7 +387,7 @@ const SubscriptionPanel = ({
                     data-testid="explore-other-plan"
                 >{c('Action').t`Explore other ${BRAND_NAME} plans`}</Button>
             ) : null}
-        </div>
+        </Panel>
     );
 };
 
