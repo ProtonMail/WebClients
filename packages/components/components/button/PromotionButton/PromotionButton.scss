@@ -1,0 +1,78 @@
+@use 'sass:math';
+@import '~@proton/styles/scss/lib';
+
+.button-promotion {
+	--upgrade-color-stop-1: #fd4baf;
+	--upgrade-color-stop-2: #22d8ff;
+
+	position: relative;
+	border: 0;
+	block-size: rem(36);
+
+	> span {
+		z-index: 2;
+	}
+
+	&.button-small {
+		block-size: rem(28);
+	}
+
+	&.button-large {
+		block-size: rem(44);
+	}
+
+	&::before,
+	&::after {
+		content: '';
+		position: absolute;
+		inset: 1px;
+		z-index: 1;
+		background-color: var(--background-norm);
+		border-radius: calc(var(--border-radius-md) - 1px);
+	}
+
+	&::after {
+		opacity: 0;
+		z-index: 0;
+	}
+
+	&:hover,
+	&:focus-visible {
+		&::before {
+			background-color: var(--interaction-weak-minor-2);
+		}
+
+		&::after {
+			opacity: 1;
+		}
+	}
+
+	&:not(.button-ghost-weak),
+	&.button-for-icon:hover,
+	&.button-for-icon:focus-visible {
+		background: linear-gradient(to right, var(--upgrade-color-stop-1) 0%, var(--upgrade-color-stop-2) 100%);
+		color: var(--text-norm);
+	}
+
+	&--upgrade {
+		block-size: rem(20);
+		padding-inline: rem(6);
+		padding-block: rem(3);
+		border-radius: var(--border-radius-sm);
+
+		&::before {
+			border-radius: calc(var(--border-radius-sm) - 1px);
+		}
+	}
+
+	&--icon-gradient {
+		svg {
+			fill: url(#gradient-horizontal) var(--text-norm);
+		}
+
+		#gradient-horizontal {
+			--color-stop-1: var(--upgrade-color-stop-1);
+			--color-stop-2: var(--upgrade-color-stop-2);
+		}
+	}
+}

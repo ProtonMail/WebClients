@@ -1,5 +1,4 @@
-import { Button } from '@proton/atoms/Button';
-import { Icon } from '@proton/components/components';
+import { PromotionButton } from '../button/PromotionButton';
 
 interface Props {
     onClick: () => void;
@@ -8,17 +7,9 @@ interface Props {
 
 const MailUpsellButton = ({ onClick, text }: Props) => {
     return (
-        <Button
-            shape="outline"
-            onClick={onClick}
-            className="mb-2 md:mb-0 inline-flex flex-nowrap flex-align-items-baseline"
-        >
-            <Icon name="brand-proton-mail-filled" className="flex-item-noshrink my-auto" />
-            <span className="flex-item-noshrink mr-2" aria-hidden="true">
-                +
-            </span>
+        <PromotionButton iconName="brand-proton-mail-filled-plus" onClick={onClick}>
             {text}
-        </Button>
+        </PromotionButton>
     );
 };
 

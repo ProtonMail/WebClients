@@ -83,12 +83,6 @@ function LabelsSection() {
             ) : (
                 <>
                     <div className="mb-7">
-                        {
-                        //Temporary test
-                        }
-                        <Button color="norm" shape="ghost" className="button-promotion mr-2" onClick={() => true}>
-                            <span className="relative">{c('Action').t`Get more labels`}</span>
-                        </Button>
                         {canCreateLabel ? (
                             <Button color="norm" onClick={() => setEditLabelModalOpen(true)}>
                                 {c('Action').t`Add label`}
