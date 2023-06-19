@@ -68,7 +68,7 @@ const MorePopoverEvent = ({
                 isOutsideEnd={false}
                 onClick={() => onClickEvent({ id: event.id, idx: date.getUTCDate(), type: TYPE.MORE })}
                 style={{
-                    '--height-custom': `${DAY_EVENT_HEIGHT}px`,
+                    '--h-custom': `${DAY_EVENT_HEIGHT}px`,
                 }}
                 eventRef={isThisSelected ? targetEventRef : undefined}
             />

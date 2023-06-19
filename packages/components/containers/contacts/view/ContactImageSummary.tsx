@@ -83,7 +83,7 @@ const ContactImageSummary = ({ photo, name, loadImageDirectRef, onToggleLoadDire
                     <span className="inner-ratio-container flex rounded border overflow-hidden">
                         <div
                             className="m-auto flex w-custom"
-                            style={{ '--width-custom': `${Math.min(image.width || 0, image.height || 0)}px` }}
+                            style={{ '--w-custom': `${Math.min(image.width || 0, image.height || 0)}px` }}
                         >
                             <div className="ratio-container-square" style={style}>
                                 <span className="inner-ratio-container" />

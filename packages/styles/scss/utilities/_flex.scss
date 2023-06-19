@@ -1,10 +1,23 @@
-.inline-flex,
+@include responsive-classes(inline-flex) {
+	display: inline-flex;
+	flex-wrap: wrap;
+}
+
 .inline-flex-vcenter {
 	display: inline-flex;
 	flex-wrap: wrap;
 }
 
-.flex,
+@include responsive-classes(flex) {
+	display: flex;
+	flex-wrap: wrap;
+
+	& > * {
+		min-block-size: 0;
+		min-inline-size: 0;
+	}
+}
+
 .flex-flex-children,
 .flex-no-min-children {
 	display: flex;
@@ -12,50 +25,37 @@
 }
 
 @each $direction in (row, row-reverse, column, column-reverse) {
-	.flex-#{$direction} {
+	@include responsive-classes(flex-#{$direction}) {
 		flex-direction: $direction;
 	}
 }
 
 @each $justify in (start, center, end, space-between, space-around, space-evenly) {
 	// Remove prefix when 'start' and 'end' will be recognized by browsers
-	$prefix: '';
-	@if $justify == start or $justify == end {
-		$prefix: 'flex-';
-	}
+	$prefix: if($justify == start or $justify == end, 'flex', '');
 
-	.flex-justify-#{$justify} {
-		justify-content: #{$prefix + $justify};
+	@include responsive-classes(flex-justify-#{$justify}) {
+		justify-content: #{dash-join($prefix, $justify)};
 	}
 }
 
 @each $align in (baseline, start, center, end, baseline, stretch) {
 	// Remove prefix when 'start' and 'end' will be recognized by browsers
-	$prefix: '';
-	@if $align == start or $align == end {
-		$prefix: 'flex-';
-	}
+	$prefix: if($align == start or $align == end, 'flex', '');
 
 	.flex-align-items-#{$align} {
-		align-items: #{$prefix + $align};
+		align-items: #{dash-join($prefix, $align)};
 	}
 
 	.flex-align-self-#{$align} {
-		align-self: #{$prefix + $align};
+		align-self: #{dash-join($prefix, $align)};
 	}
 }
 
 @each $wrap in (wrap, wrap-reverse, nowrap) {
-	.flex-#{$wrap} {
+	@include responsive-classes(flex-#{$wrap}) {
 		flex-wrap: $wrap;
 	}
-}
-
-/* fix aspect ratio */
-.flex > *,
-.no-min-dimensions {
-	min-block-size: 0;
-	min-inline-size: 0;
 }
 
 .flex-flex-children > * {
@@ -72,20 +72,20 @@
 	align-self: center;
 }
 
-.flex-item-fluid {
+@include responsive-classes(flex-item-fluid) {
 	flex: 1 1 0px;
 }
 
-.flex-item-fluid-auto {
+@include responsive-classes(flex-item-fluid-auto) {
 	flex: 1 1 auto;
+}
+
+@include responsive-classes(flex-item-shrink) {
+	flex-shrink: 1;
 }
 
 .flex-item-noshrink {
 	flex-shrink: 0;
-}
-
-.flex-item-shrink-1 {
-	flex-shrink: 1;
 }
 
 .flex-item-nogrow {
@@ -102,4 +102,8 @@
 
 .flex-item-noflex {
 	flex: 0;
+}
+
+@include responsive-classes(order-1) {
+	order: 1;
 }

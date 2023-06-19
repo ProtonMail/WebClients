@@ -1,6 +1,6 @@
 @use 'sass:math';
 
-.wauto {
+@include responsive-classes(wauto) {
 	inline-size: auto;
 	min-inline-size: 0;
 }
@@ -13,22 +13,12 @@
 	block-size: 0;
 }
 
-.h100 {
+@include responsive-classes(h100) {
 	block-size: 100%;
 }
 
-.h100v {
-	block-size: 100vh;
-}
-
-.min-h23r {
-	min-block-size: rem(23);
-}
-
-// .w50 { width: 50%; }
-
 /* prettier-ignore */
-@each $width in (0, 1, 2, 3, 5, 10, 15, 18, 20, 25, 30, math.div(100,3), 35, 40, 45, 49, 50, 55, 60, math.div(100,3) * 2, 70, 75, 80, 90, 95, 100) {
+@each $width in (0, 1, 2, 3, 5, 10, 15, 20, 25, 30, math.div(100,3), 40, 45, 49, 50, 60, math.div(100,3) * 2, 70, 75, 80, 90, 95, 100) {
 	.w#{floor($width)} {
 		inline-size: #{$width * 1%};
 	}
@@ -113,36 +103,36 @@
 // Specificity issue with composer and others -_-v
 .w-custom {
 	&#{&} {
-		inline-size: var(--width-custom);
+		inline-size: var(--w-custom);
 	}
 }
 
 .min-w-custom {
 	&#{&} {
-		min-inline-size: var(--min-width-custom);
+		min-inline-size: var(--min-w-custom);
 	}
 }
 
 .max-w-custom {
 	&#{&} {
-		max-inline-size: var(--max-width-custom);
+		max-inline-size: var(--max-w-custom);
 	}
 }
 
 .h-custom {
 	&#{&} {
-		block-size: var(--height-custom);
+		block-size: var(--h-custom);
 	}
 }
 
 .min-h-custom {
 	&#{&} {
-		min-block-size: var(--min-height-custom);
+		min-block-size: var(--min-h-custom);
 	}
 }
 
 .max-h-custom {
 	&#{&} {
-		max-block-size: var(--max-height-custom);
+		max-block-size: var(--max-h-custom);
 	}
 }
