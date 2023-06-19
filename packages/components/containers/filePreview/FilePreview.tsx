@@ -94,13 +94,12 @@ export const FilePreviewContent = ({
     };
 }) => {
     const [forcePreview, setForcePreview] = useState(false);
-
     const renderPreview = () => {
         if (error) {
             return <PreviewError error={error} />;
         }
 
-        if (!imgThumbnailUrl && isLoading) {
+        if ((mimeType && !isSupportedImage(mimeType) && isLoading) || (!imgThumbnailUrl && isLoading)) {
             return <PreviewLoader />;
         }
 
