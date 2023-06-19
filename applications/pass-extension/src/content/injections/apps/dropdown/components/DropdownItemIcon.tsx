@@ -1,4 +1,4 @@
-import type { VFC} from 'react';
+import type { VFC } from 'react';
 import { useCallback, useState } from 'react';
 
 import { c } from 'ttag';
@@ -6,8 +6,8 @@ import { c } from 'ttag';
 import type { IconName } from '@proton/components/components';
 import { Icon } from '@proton/components/components';
 import type { MaybeNull } from '@proton/pass/types';
-import { PassIcon } from '@proton/pass/types/data/passIcon';
-import type { DropdownIcon } from '@proton/pass/types/data/passIcon';
+import { PassIcon } from '@proton/pass/types/data/pass-icon';
+import type { DropdownIcon } from '@proton/pass/types/data/pass-icon';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
