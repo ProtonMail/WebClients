@@ -8,16 +8,15 @@ const rectOverlap = (from: Rect, to: Rect, offset: number = 0): boolean =>
     );
 
 export const allChildrenOverlap = (el: HTMLElement, maxOffset: number): boolean => {
-    const siblings = [...el.children] as HTMLElement[];
+    const siblings = ([...el.children] as HTMLElement[])
+        .map((el) => el.getBoundingClientRect())
+        .filter(({ height, width }) => height > 0 && width > 0);
 
-    if (siblings.length <= 1) {
-        return true;
-    }
+    if (siblings.length <= 1) return true;
     const [head, ...rest] = siblings;
 
     return rest.reduce<[boolean, Rect]>(
-        ([all, rect], node) => {
-            const nodeRect = node.getBoundingClientRect();
+        ([all, rect], nodeRect) => {
             const hidden = nodeRect.height === 0 && nodeRect.width === 0;
             const overlap = hidden || rectOverlap(nodeRect, rect, maxOffset);
 
@@ -31,6 +30,6 @@ export const allChildrenOverlap = (el: HTMLElement, maxOffset: number): boolean 
                 },
             ];
         },
-        [true, head.getBoundingClientRect()]
+        [true, head]
     )[0];
 };
