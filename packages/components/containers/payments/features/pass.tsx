@@ -20,6 +20,15 @@ export const getCustomDomains = (): PlanCardFeatureDefinition => {
     };
 };
 
+export const getProtonPassFeature = (): PlanCardFeatureDefinition => {
+    return {
+        text: c('new_plans: feature').t`${PASS_APP_NAME} with unlimited hide-my-email aliases`,
+        icon: 'pass-all-vaults',
+        included: true,
+        hideInDowngrade: true,
+    };
+};
+
 export const getLoginsAndNotesText = () => {
     return c('new_plans: feature').t`Unlimited logins and notes`;
 };
