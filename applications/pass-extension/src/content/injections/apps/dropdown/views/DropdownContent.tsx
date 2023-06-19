@@ -47,7 +47,7 @@ export const DropdownContent: VFC = () => {
     useRegisterMessageHandler(IFrameMessageType.IFRAME_OPEN, triggerResize);
 
     return (
-        <div ref={dropdownRef} className="min-h-custom bg-norm" style={{ '--min-height-custom': pixelEncoder(60) }}>
+        <div ref={dropdownRef} className="min-h-custom bg-norm" style={{ '--min-h-custom': pixelEncoder(60) }}>
             {(() => {
                 if (workerState === undefined || dropdownState === null) {
                     return <CircleLoader className="absolute absolute-center m-auto" />;
