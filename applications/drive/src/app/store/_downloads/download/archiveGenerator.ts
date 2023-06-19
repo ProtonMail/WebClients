@@ -40,7 +40,9 @@ export default class ArchiveGenerator {
     }
 
     async writeLinks(links: AsyncGenerator<StartedNestedLinkDownload>) {
-        const zipStream = makeZip(this.transformLinksToZipItems(links));
+        const zipStream = makeZip(this.transformLinksToZipItems(links), {
+            buffersAreUTF8: true,
+        });
         await zipStream.pipeTo(this.writer);
     }
 
