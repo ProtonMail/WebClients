@@ -3,7 +3,7 @@ import { type VFC, useCallback, useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader';
-import { pageMessage, sendMessage } from '@proton/pass/extension/message';
+import { contentScriptMessage, pageMessage, sendMessage } from '@proton/pass/extension/message';
 import type { AliasState } from '@proton/pass/store';
 import { createTelemetryEvent } from '@proton/pass/telemetry/events';
 import { type MaybeNull, type RequiredNonNull, WorkerMessageType } from '@proton/pass/types';
@@ -19,7 +19,6 @@ import { DropdownItem } from '../components/DropdownItem';
 type Props = {
     prefix: string;
     domain: string;
-    userEmail: MaybeNull<string>;
     onSubmitAliasEmail: (aliasEmail: string) => void;
     onSubmitUserEmail: (userEmail: string) => void;
     onOptions?: () => void;
@@ -33,16 +32,10 @@ const isValidAliasOptions = (
 
 const getInitialLoadingText = (): string => c('Info').t`Generating alias...`;
 
-export const AliasAutoSuggest: VFC<Props> = ({
-    prefix,
-    domain,
-    userEmail,
-    onOptions,
-    onSubmitAliasEmail,
-    onSubmitUserEmail,
-}) => {
+export const AliasAutoSuggest: VFC<Props> = ({ prefix, domain, onOptions, onSubmitAliasEmail, onSubmitUserEmail }) => {
     const ensureMounted = useEnsureMounted();
     const [aliasOptions, setAliasOptions] = useState<MaybeNull<AliasState['aliasOptions']>>(null);
+    const [userEmail, setUserEmail] = useState<MaybeNull<string>>(null);
     const [needsUpgrade, setNeedsUpgrade] = useState<boolean>(false);
     const [loadingText, setLoadingText] = useState<MaybeNull<string>>(getInitialLoadingText());
     const [error, setError] = useState<boolean>(false);
@@ -66,6 +59,19 @@ export const AliasAutoSuggest: VFC<Props> = ({
             ensureMounted(setError)(true);
         }
     }, []);
+
+    const requestUserEmail = async () => {
+        try {
+            await sendMessage.on(contentScriptMessage({ type: WorkerMessageType.RESOLVE_USER_DATA }), (response) => {
+                if (response.type === 'success') {
+                    ensureMounted(setUserEmail)(response.user?.Email ?? null);
+                    return;
+                }
+            });
+        } catch (_) {
+            throw new Error('user email could not be resolved');
+        }
+    };
 
     const createAlias = useCallback(
         async ({ suffixes, mailboxes }: RequiredNonNull<AliasState['aliasOptions']>) => {
@@ -121,6 +127,10 @@ export const AliasAutoSuggest: VFC<Props> = ({
     useEffect(() => {
         if (error) setLoadingText(null);
     }, [error]);
+
+    useEffect(() => {
+        requestUserEmail();
+    }, []);
 
     const validAliasOptions = isValidAliasOptions(aliasOptions);
 
