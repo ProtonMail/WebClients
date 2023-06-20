@@ -285,7 +285,7 @@
         "Guardar"
       ],
       "Save selected": [
-        "Guarda tu elección"
+        "Guardar los elementos seleccionados"
       ],
       "Search countries": [
         "Buscar países"
@@ -1658,11 +1658,11 @@
       ]
     },
     "familyOffer_2023:Action": {
+      "Decline invitation": [
+        "Rechazar la invitación"
+      ],
       "Got it": [
         "Entendido"
-      ],
-      "Keep current plan": [
-        "Mantener el plan actual"
       ],
       "Switch plans": [
         "Cambiar de plan"
@@ -1966,6 +1966,31 @@
       "Megabyte": [
         "Megabyte",
         "Megabytes"
+      ]
+    },
+    "Font face option": {
+      "System default": [
+        "Igual que el sistema"
+      ],
+      "Theme default": [
+        "Tema por defecto"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Grande"
+      ],
+      "Medium (recommended)": [
+        "Mediano (recomendado)"
+      ],
+      "Small": [
+        "Pequeño"
+      ],
+      "Very large": [
+        "Muy grande"
+      ],
+      "Very small": [
+        "Muy pequeño"
       ]
     },
     "Frequency of news": {
@@ -3103,6 +3128,9 @@
       "Enter the code displayed on your TV": [
         "Introduce el código mostrado en tu TV"
       ],
+      "Expiration (${ patternExpiration })": [
+        "Expiración (${ patternExpiration })"
+      ],
       "Expiration date": [
         "Fecha de expiración"
       ],
@@ -3222,6 +3250,9 @@
       ],
       "Security code": [
         "Código de seguridad"
+      ],
+      "Security code (${ codeName })": [
+        "Código de seguridad (${ codeName })"
       ],
       "Select your country": [
         "Selecciona tu país"

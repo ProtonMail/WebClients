@@ -285,7 +285,7 @@
         "Salva"
       ],
       "Save selected": [
-        "Salva selezionato"
+        "Salva la scelta"
       ],
       "Search countries": [
         "Cerca tra i paesi"
@@ -1658,11 +1658,11 @@
       ]
     },
     "familyOffer_2023:Action": {
+      "Decline invitation": [
+        "Rifiuta l'invito"
+      ],
       "Got it": [
         "OK"
-      ],
-      "Keep current plan": [
-        "Mantieni il piano attuale"
       ],
       "Switch plans": [
         "Cambia piano"
@@ -1966,6 +1966,31 @@
       "Megabyte": [
         "Megabyte",
         "Megabyte"
+      ]
+    },
+    "Font face option": {
+      "System default": [
+        "Predefinito di sistema"
+      ],
+      "Theme default": [
+        "Tema predefinito"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Grande"
+      ],
+      "Medium (recommended)": [
+        "Medio (consigliato)"
+      ],
+      "Small": [
+        "Piccolo"
+      ],
+      "Very large": [
+        "Molto grande"
+      ],
+      "Very small": [
+        "Molto piccolo"
       ]
     },
     "Frequency of news": {
@@ -3013,6 +3038,9 @@
       "Card holder": [
         "Titolare carta"
       ],
+      "Card information": [
+        "Informazioni carta"
+      ],
       "Card number": [
         "Numero carta"
       ],
@@ -3099,6 +3127,9 @@
       ],
       "Enter the code displayed on your TV": [
         "Inserisci il codice visualizzato sulla tua TV"
+      ],
+      "Expiration (${ patternExpiration })": [
+        "Scadenza (${ patternExpiration })"
       ],
       "Expiration date": [
         "Data di scadenza"
@@ -3219,6 +3250,9 @@
       ],
       "Security code": [
         "Codice di sicurezza"
+      ],
+      "Security code (${ codeName })": [
+        "Codice di sicurezza (${ codeName })"
       ],
       "Select your country": [
         "Seleziona il tuo paese"

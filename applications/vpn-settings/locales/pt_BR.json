@@ -1658,11 +1658,11 @@
       ]
     },
     "familyOffer_2023:Action": {
+      "Decline invitation": [
+        "Recusar convite"
+      ],
       "Got it": [
         "Entendi"
-      ],
-      "Keep current plan": [
-        "Manter o plano atual"
       ],
       "Switch plans": [
         "Trocar de plano"
@@ -1966,6 +1966,31 @@
       "Megabyte": [
         "Megabyte",
         "Megabytes"
+      ]
+    },
+    "Font face option": {
+      "System default": [
+        "Padrão do sistema"
+      ],
+      "Theme default": [
+        "Padrão do tema"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Grande"
+      ],
+      "Medium (recommended)": [
+        "Médio (recomendado)"
+      ],
+      "Small": [
+        "Pequeno"
+      ],
+      "Very large": [
+        "Muito grande"
+      ],
+      "Very small": [
+        "Muito pequeno"
       ]
     },
     "Frequency of news": {
@@ -2606,7 +2631,7 @@
         "Isto irá encerrar qualquer sessão ativa e desabilitar a autenticação de 2 fatores."
       ],
       "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
-        "Este assistente ativará a autenticação de dois fatores (2FA) em sua conta da ${ BRAND_NAME }. A autenticação de dois fatores tornará sua conta da ${ BRAND_NAME_TWO } mais segura, portanto, recomendamos ativá-la."
+        "Este assistente ativará a autenticação de dois fatores (A2F) em sua conta da ${ BRAND_NAME }. A autenticação de dois fatores tornará sua conta da ${ BRAND_NAME_TWO } mais segura, portanto, recomendamos ativá-la."
       ],
       "To ${ planName }": [
         "Para ${ planName }"
@@ -2651,7 +2676,7 @@
         "Tente ${ upsellPlanName } sem risco algum"
       ],
       "two-factor authentication (2FA)": [
-        "Autenticação de dois fatores (2FA)"
+        "Autenticação de dois fatores (A2F)"
       ],
       "Two-factor authentication disabled": [
         "Autenticação de dois fatores desativada"
@@ -2732,7 +2757,7 @@
         "Precisamos autenticar seu pagamento com seu banco."
       ],
       "We recommend using your recovery phrase instead.": [
-        "Nós recomendamos usar sua frase de recuperação."
+        "Em vez disso, recomendamos o uso de sua frase de recuperação."
       ],
       "We use 3-D Secure to protect your payments.": [
         "Usamos o 3-D Secure para proteger os seus pagamentos."
@@ -3108,6 +3133,9 @@
       ],
       "Enter the code displayed on your TV": [
         "Digite o código exibido na sua TV"
+      ],
+      "Expiration (${ patternExpiration })": [
+        "Expiração (${ patternExpiration })"
       ],
       "Expiration date": [
         "Data de expiração"
@@ -3680,7 +3708,7 @@
         "Assinaturas HTML"
       ],
       "Integrated 2FA authenticator": [
-        "Autenticador 2FA integrado"
+        "Autenticador A2F integrado"
       ],
       "Kill switch/always-on VPN": [
         "Kill switch/VPN sempre ativa"
@@ -3765,7 +3793,7 @@
         "Marcadores ilimitados"
       ],
       "Unlimited logins and notes": [
-        "Notas e logins ilimitados"
+        "Notas e inícios de sessão ilimitados"
       ],
       "Unlimited messages per day": [
         "Mensagens ilimitadas por dia"
@@ -4129,7 +4157,7 @@
         "Suporte para protocolos de compartilhamento de arquivos como BitTorrent"
       ],
       "Unique, on-the-fly email addresses that protect your online identity and let you control what lands in your inbox. From SimpleLogin by ${ BRAND_NAME }.": [
-        "Único, endereços de emails temporários para proteger sua identidade online e permitir que você controle o que é enviado para sua caixa de entrada. Do SimpleLogin por ${ BRAND_NAME }."
+        "Único, endereços de e-mails temporários para proteger sua identidade on-line e permitir que você controle o que é enviado para sua caixa de entrada. Do SimpleLogin por ${ BRAND_NAME }."
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Use seu próprio domínio de e-mail personalizado (por exemplo, voce@seunome.com)"

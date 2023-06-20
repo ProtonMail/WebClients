@@ -1666,11 +1666,11 @@
       ]
     },
     "familyOffer_2023:Action": {
+      "Decline invitation": [
+        "Odrzuć zaproszenie"
+      ],
       "Got it": [
         "Ok"
-      ],
-      "Keep current plan": [
-        "Zachowaj obecny plan"
       ],
       "Switch plans": [
         "Zmień plany"
@@ -1983,6 +1983,31 @@
         "megabajty",
         "megabajtów",
         "megabajtów"
+      ]
+    },
+    "Font face option": {
+      "System default": [
+        "Domyślny systemu"
+      ],
+      "Theme default": [
+        "Domyślny motyw"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Duża"
+      ],
+      "Medium (recommended)": [
+        "Średnia (zalecana)"
+      ],
+      "Small": [
+        "Mała"
+      ],
+      "Very large": [
+        "Bardzo duża"
+      ],
+      "Very small": [
+        "Bardzo mała"
       ]
     },
     "Frequency of news": {
@@ -3138,6 +3163,9 @@
       "Enter the code displayed on your TV": [
         "Wpisz kod wyświetlony na telewizorze"
       ],
+      "Expiration (${ patternExpiration })": [
+        "Data wygaśnięcia (${ patternExpiration })"
+      ],
       "Expiration date": [
         "Data wygaśnięcia"
       ],
@@ -3257,6 +3285,9 @@
       ],
       "Security code": [
         "Kod zabezpieczający"
+      ],
+      "Security code (${ codeName })": [
+        "Kod zabezpieczający (${ codeName })"
       ],
       "Select your country": [
         "Wybierz kraj"
