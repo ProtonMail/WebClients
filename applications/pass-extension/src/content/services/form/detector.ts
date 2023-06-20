@@ -19,6 +19,7 @@ const ruleset = rulesetMaker();
 const NOOP_EL = document.createElement('form');
 const DETECTABLE_FORMS = Object.values(FormType).filter((type) => type !== FormType.NOOP);
 const DETECTABLE_FIELDS = Object.values(FormField).filter((type) => type !== FormField.NOOP);
+const LOGIN_DELTA_TOLERANCE = 0.15;
 
 type BoundRuleset = ReturnType<typeof ruleset.against>;
 type PredictionResult<T extends string> = { fnode: FNode; type: T };
@@ -132,7 +133,10 @@ const groupFields = (
  * deceptive to the user */
 const selectBestForm = <T extends string>(scores: PredictionScoreResult<T>[]) => {
     const loginResult = scores.find(({ type }) => type === FormType.LOGIN)!;
-    return loginResult.score > 0.5 ? loginResult : scores[0];
+    const best = scores[0];
+    const delta = Math.abs(loginResult.score - best.score);
+
+    return loginResult.score > 0.5 && delta < LOGIN_DELTA_TOLERANCE ? loginResult : best;
 };
 
 /* Runs the fathom detection and returns a form handle for each detected form.. */
