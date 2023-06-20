@@ -2489,11 +2489,11 @@
       ]
     },
     "familyOffer_2023:Action": {
+      "Decline invitation": [
+        "Rechazar invitación"
+      ],
       "Got it": [
         "Entiendo"
-      ],
-      "Keep current plan": [
-        "Mantener el plan actual"
       ],
       "Switch plans": [
         "Cambiar planes"
@@ -2700,7 +2700,7 @@
         "Grande"
       ],
       "Medium (recommended)": [
-        "Mediana (recomendado)"
+        "Mediana (recomendada)"
       ],
       "Small": [
         "Pequeña"
@@ -3131,7 +3131,7 @@
         "${ selectedCalendarsTotal } de ${ providerCalendars.length } calendarios"
       ],
       "${ selectedCount } selected": [
-        "${ selectedCount } seleccionado"
+        "Selección: ${ selectedCount }"
       ],
       "${ selectedFoldersCount } folder selected": [
         "${ selectedFoldersCount } carpeta seleccionada",
@@ -3748,7 +3748,7 @@
         "La vista previa para este tipo de archivo no está soportada"
       ],
       "Previous versions are kept for ${ retentionLabel }": [
-        "Las versiones anteriores son conservadas para ${ retentionLabel }"
+        "Las versiones anteriores son conservadas durante ${ retentionLabel }"
       ],
       "Previous versions are not saved": [
         "Las versiones anteriores no están guardadas"
@@ -4269,7 +4269,7 @@
         "Categoría"
       ],
       "Child sexual abuse material": [
-        "Material de abuso sexual infantil"
+        "Contenido de pornografía infantil"
       ],
       "City": [
         "Ciudad"
@@ -4819,7 +4819,7 @@
     },
     "new_plans: feature": {
       "Auto-delete spam and trashed messages": [
-        "Auto eliminar spam y mensajes de la papelera"
+        "Eliminar automáticamente spam y mensajes de la papelera"
       ],
       "Custom email domains": [
         "Dominios de correo electrónico personalizados"
@@ -6310,7 +6310,7 @@
         "La importación comenzará con los mensajes más recientes."
       ],
       "The selected theme will be active when your system is set to \"dark mode\"": [
-        "El tema seleccionado estará activo cuando su sistema esté en modo de noche"
+        "El tema seleccionado estará activo cuando su sistema esté en \"modo oscuro\""
       ],
       "The selected theme will be active when your system is set to \"light mode\"": [
         "El tema seleccionado estará activo cuando su sistema esté en \"modo claro\""

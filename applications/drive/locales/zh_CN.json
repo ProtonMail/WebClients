@@ -2452,9 +2452,6 @@
       "Got it": [
         "知道了"
       ],
-      "Keep current plan": [
-        "保持当前账户等级"
-      ],
       "Switch plans": [
         "变更账户等级"
       ],
@@ -2543,10 +2540,10 @@
     },
     "familyOffer_2023:Footer": {
       "*Your subscription will automatically renew at the same rate at the end of your billing cycle.": [
-        "*您的订阅将在您的结算周期结束时以相同的费率自动续订。"
+        "* 计费周期结束时账户将以相同费率自动续费。"
       ],
       "Discounts are based on the standard monthly pricing.": [
-        "折扣基于标准的每月定价。"
+        "折扣基于标准月费计算。"
       ]
     },
     "familyOffer_2023:Get Proton Family": {
@@ -2577,7 +2574,10 @@
     },
     "familyOffer_2023:Tooltip": {
       "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
-        "包括 65 个以上国家/地区的 2700 台服务器，连接多达 10 台设备，访问全球流媒体服务、恶意软件和广告拦截器等。"
+        "连接全球逾 65 个国家的 2700 台服务器，多达 10 台设备同时在线，畅享全球流媒体服务，拦截恶意软件和广告，还有更多功能等您体验。"
+      ],
+      "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
+        "支持 3 个自有域名、90 个邮箱地址、无限量 Hide My Email 邮箱别名、日程共享等功能。"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "使用加密的云存储保护您的文件。 包括自动同步、加密文件共享等。"
@@ -2637,6 +2637,31 @@
     "Filter notification": {
       "${ Label.Name } updated": [
         "${ Label.Name } 标签已更改"
+      ]
+    },
+    "Font face option": {
+      "System default": [
+        "跟随系统"
+      ],
+      "Theme default": [
+        "跟随配色方案"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "大"
+      ],
+      "Medium (recommended)": [
+        "中等（推荐）"
+      ],
+      "Small": [
+        "小"
+      ],
+      "Very large": [
+        "极大"
+      ],
+      "Very small": [
+        "极小"
       ]
     },
     "Group": {
@@ -3187,6 +3212,9 @@
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "支持来自 Outlook、Outlook Express、雅虎邮箱、Hotmail、Eudora 和其他一些应用程序的 CSV 文件，以及 vCard 3.1 和 4.0 格式（UTF-8 编码）。"
       ],
+      "Customize the look and feel of ${ BRAND_NAME } applications.": [
+        "自由定制 ${ BRAND_NAME } 应用的外观。"
+      ],
       "Delete locked drives": [
         "删除锁定的网盘"
       ],
@@ -3222,6 +3250,12 @@
       ],
       "Downloading": [
         "正在下载"
+      ],
+      "Drop file here to upload": [
+        "拖至此处即可上传"
+      ],
+      "Drop to import": [
+        "拖至此处即可导入"
       ],
       "Duplicate key updated": [
         "重复的密钥已更新"
@@ -3865,6 +3899,9 @@
       "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ KeyReactivationButton }": [
         "由于密码重置，无法再访问您的文件。请重新上传旧的加密密钥以重新获得访问权限。${ KeyReactivationButton }"
       ],
+      "Your files will be encrypted and then saved": [
+        "您的文件将被加密保存。"
+      ],
       "Your files will be encrypted and then saved.": [
         "您的文件将被加密并保存。"
       ],
@@ -4290,6 +4327,9 @@
       "Street address": [
         "街道地址"
       ],
+      "Synchronize with system": [
+        "跟随系统"
+      ],
       "System information": [
         "系统信息"
       ],
@@ -4518,6 +4558,9 @@
       ],
       "Custom email domains": [
         "自有域名"
+      ],
+      "Hide-my-email aliases": [
+        "Hide My Email 邮箱别名"
       ],
       "Schedule messages at any time": [
         "自由选择发送时间"
@@ -4778,6 +4821,9 @@
       ],
       "Discover all ${ BRAND_NAME } services": [
         "探索各类 ${ BRAND_NAME } 服务"
+      ],
+      "More theming options are available in your account Settings > Appearance.": [
+        "在设置 > 外观中还有更多配色可供选择。"
       ],
       "Select a theme": [
         "选择配色"
@@ -5076,10 +5122,10 @@
     },
     "specialoffer: Footer": {
       "Discounts are based on the standard monthly pricing.": [
-        "折扣基于标准的每月定价。"
+        "折扣基于标准月费计算。"
       ],
       "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
-        "此订阅将以相同的费率每 2 年自动续订一次，直至取消。"
+        "每两年账户将以相同费率自动续费，直至手动退订。"
       ]
     },
     "specialoffer: Label": {
@@ -5136,13 +5182,13 @@
         "${ n } 个月"
       ],
       "Get the deal": [
-        "达成交易"
+        "立即享受优惠"
       ],
       "Renews after 1 year at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
-        "一年后以折扣价或 ${ discountedAmount } ，而不是 ${ regularAmount } (${ discount }% discount) 续订"
+        "一年后续费时仍可享受折扣价 ${ discountedAmount }（优惠 ${ discount }%），无需支付原价 ${ regularAmount }"
       ],
       "Renews after 2 years at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
-        "两年后以折扣价或 ${ discountedAmount } 而不是 ${ regularAmount } (${ discount }% discount) 续订"
+        "两年后续费时仍可享受折扣价 ${ discountedAmount }（优惠 ${ discount }%），无需支付原价 ${ regularAmount }"
       ],
       "Save ${ discount }%": [
         "立省 ${ discount }%"
@@ -5165,45 +5211,54 @@
     },
     "specialoffer: Title": {
       "Black Friday Sale": [
-        "黑色星期五促销"
+        "黑色星期五特惠"
       ],
       "Cyber Week Sale": [
-        "Cyber Week热卖"
+        "Cyber Week 特惠"
       ],
       "End of year offer": [
-        "年底优惠"
+        "年终特惠"
       ],
       "End of Year Sale": [
-        "年底热卖"
+        "年终特惠"
       ],
       "Get our premium bundle and save more": [
-        "获取我们的高级套餐并节省更多"
+        "选择高级套装更加优惠"
       ],
       "Our discontinued Visionary plan is back for a limited time only": [
-        "我们已停产的 Visionary 计划限时回归"
+        "绝版 Visionary 账户限时回归"
       ],
       "Save more with 2 years of ${ planName }": [
-        "使用两年的${ planName }可节省更多费用"
+        "一次性开通两年 ${ planName } 更加优惠"
       ],
       "Upgrade and save more with 2 years of ${ planName }": [
-        "升级两年的${ planName }并节省更多的费用"
+        "一次性开通两年 ${ planName } 更加优惠"
       ]
     },
     "specialoffer: Tooltip": {
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.": [
-        "访问被阻止的内容并私下浏览。 包括 60 多个国家/地区的 1700 台服务器、最高的 VPN 速度、每位用户 10 个 VPN 连接、全球流媒体服务、恶意软件和广告拦截器等。"
+        "突破网络封锁，保护线上隐私。可连接全球逾 60 个国家的 1700 台服务器，每位用户 10 台设备可同时在线，畅享全球流媒体服务，拦截恶意软件和广告，还有更多功能等您体验。"
       ],
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
-        "访问被阻止的内容并私下浏览。 包括 60 多个国家/地区的 1700 台服务器、最高的 VPN 速度、10 个 VPN 连接、全球流媒体服务、恶意软件和广告拦截器等。"
+        "突破网络封锁，保护线上隐私。可连接全球逾 60 个国家的 1700 台服务器，10 台设备可同时在线，畅享全球流媒体服务，拦截恶意软件和广告，还有更多功能等您体验。"
       ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
-        "从任何地方访问流媒体服务上的内容，包括 Netflix、Disney+ 和 Prime Video。"
+        "随时随地畅享 Netflix、Disney+、Prime Video 等精彩内容。"
+      ],
+      "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
+        "顶格享受我们的所有高级服务：100 个邮箱地址、10 个自有域名、无限量 Hide My Email 邮箱别名、日程共享、支持文件共享的加密云盘等。"
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "支持 1 个自有域名、10 个邮箱地址、10 个 Hide My Email 邮箱别名、日程共享等功能。"
+      ],
+      "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "支持 3 个自有域名、15 个邮箱地址、无限量 Hide My Email 邮箱别名、日程共享等功能。"
       ],
       "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
-        "非常适合家庭或小型团队，每个人都可以拥有自己的收件箱和别名。 需要一个自定义域名。"
+        "适合家庭与小型团队，每个人都能拥有各自的邮箱和地址。需要使用自有域名。"
       ],
       "Receive at no extra cost the paid versions of all new privacy services we release in the future, along with early access to all future features and products.": [
-        "免费获得我们未来发布的所有新隐私服务的付费版本，以及对所有未来功能和产品的抢先体验。"
+        "无需额外付费即可享受我们未来推出的所有隐私保护服务，还能抢先体验各类新产品和新功能。"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "使用加密的云存储保护您的文件。 包括自动同步、加密文件共享等。"
@@ -5390,6 +5445,9 @@
       "${ numberOfFailedTransfer.total } failed uploads": [
         "${ numberOfFailedTransfer.total } 个失败的上传"
       ],
+      "(active)": [
+        "（当前）"
+      ],
       "Account suspended": [
         "账号已被停用"
       ],
@@ -5476,6 +5534,9 @@
       ],
       "Date": [
         "日期"
+      ],
+      "Day theme": [
+        "日间模式"
       ],
       "Delete ${ count } contact groups": [
         "删除 ${ count } 个联系人组"
@@ -5623,6 +5684,9 @@
       ],
       "Name": [
         "名称"
+      ],
+      "Night theme": [
+        "夜间模式"
       ],
       "No results found": [
         "搜索无结果"
@@ -5850,6 +5914,9 @@
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "“自动”表示使用编辑区中指定的格式，“纯文本”则表示向此人发送的邮件一律使用纯文本。"
       ],
+      "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
+        "根据系统设置自动调整日间或夜间模式。"
+      ],
       "Customize import to reduce the number of folders": [
         "自定义导入，减少文件夹数量。"
       ],
@@ -5900,6 +5967,12 @@
       ],
       "The import will start with the most recent messages.": [
         "导入将从最近的信息开始。"
+      ],
+      "The selected theme will be active when your system is set to \"dark mode\"": [
+        "所选模式将在系统设置为“暗色模式”时生效。"
+      ],
+      "The selected theme will be active when your system is set to \"light mode\"": [
+        "所选模式将在系统设置为“亮色模式”时生效。"
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "上传公钥后方可向此地址发送端到端加密邮件"
