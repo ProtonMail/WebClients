@@ -319,6 +319,9 @@
       "Got it": [
         "了解"
       ],
+      "Grid layout": [
+        "網格版面配置"
+      ],
       "Hide advanced PGP settings": [
         "隱藏進階 PGP 設定"
       ],
@@ -2476,11 +2479,11 @@
       ]
     },
     "familyOffer_2023:Action": {
+      "Decline invitation": [
+        "拒絕邀請"
+      ],
       "Got it": [
         "我知道了"
-      ],
-      "Keep current plan": [
-        "維持目前方案"
       ],
       "Switch plans": [
         "切換方案"
@@ -2667,6 +2670,31 @@
     "Filter notification": {
       "${ Label.Name } updated": [
         "${ Label.Name } 已更新"
+      ]
+    },
+    "Font face option": {
+      "System default": [
+        "系統預設值"
+      ],
+      "Theme default": [
+        "佈景主題預設值"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "大"
+      ],
+      "Medium (recommended)": [
+        "中（建議）"
+      ],
+      "Small": [
+        "小"
+      ],
+      "Very large": [
+        "非常大"
+      ],
+      "Very small": [
+        "非常小"
       ]
     },
     "Group": {
@@ -3243,6 +3271,9 @@
       ],
       "Current version": [
         "目前版本"
+      ],
+      "Customize the look and feel of ${ BRAND_NAME } applications.": [
+        "自訂 ${ BRAND_NAME } 應用程式的外觀與感覺。"
       ],
       "Decrypting files": [
         "正在解密檔案"
@@ -3898,6 +3929,9 @@
       "Uploading hundreds of files at once may have a performance impact.": [
         "同一時間上載數以百計的檔案或會有礙效能。"
       ],
+      "Use Drive for Desktop to sync folders on your computer with ${ DRIVE_APP_NAME }. They’ll show up here and be accessible from anywhere. ${ learnMore }": [
+        "使用桌面版的 Drive 來將您電腦上的資料夾與 ${ DRIVE_APP_NAME } 同步。它們將會在此處顯示並在任何地方皆可存取。${ learnMore }"
+      ],
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "使用此表格通知我們不適當、非法，或其它惡意分享的檔案。您即將報告："
       ],
@@ -4488,6 +4522,9 @@
       "Street address": [
         "街道位址"
       ],
+      "Synchronize with system": [
+        "與系統同步"
+      ],
       "System information": [
         "系統資訊"
       ],
@@ -4988,6 +5025,9 @@
       ],
       "Discover all ${ BRAND_NAME } services": [
         "探索所有 ${ BRAND_NAME } 服務"
+      ],
+      "More theming options are available in your account Settings > Appearance.": [
+        "更多佈景主題選項在您的帳號設定→「外觀」中提供。"
       ],
       "Select a theme": [
         "選擇佈景主題"
@@ -5615,6 +5655,9 @@
       "${ numberOfFailedTransfer.total } failed uploads": [
         "${ numberOfFailedTransfer.total } 個檔案上載失敗"
       ],
+      "(active)": [
+        "（啟用）"
+      ],
       "Account suspended": [
         "帳號已被停用"
       ],
@@ -5704,6 +5747,9 @@
       ],
       "Date": [
         "日期"
+      ],
+      "Day theme": [
+        "白天佈景主題"
       ],
       "Delete ${ count } contact groups": [
         "刪除 ${ count } 個聯絡人群組"
@@ -5854,6 +5900,9 @@
       ],
       "Name": [
         "名稱"
+      ],
+      "Night theme": [
+        "夜間佈景主題"
       ],
       "No results found": [
         "查無結果"
@@ -6087,6 +6136,9 @@
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "「自動」表示傳送給此使用者時將使用撰寫工具中的格式。「純文字」表示將一律轉換成純文字才傳送郵件。"
       ],
+      "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
+        "與系統的日夜模式同步，在白天和晚上的偏好佈景主題之間自動切換"
+      ],
       "Customize import to reduce the number of folders": [
         "自訂匯入以減少資料夾數量"
       ],
@@ -6137,6 +6189,12 @@
       ],
       "The import will start with the most recent messages.": [
         "匯入將自近期的郵件開始。"
+      ],
+      "The selected theme will be active when your system is set to \"dark mode\"": [
+        "當您的系統設定為「深色模式」時，將會啟用選定的佈景主題"
+      ],
+      "The selected theme will be active when your system is set to \"light mode\"": [
+        "當您的系統設定為「淺色模式」時，將會啟用選定的佈景主題"
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "上載公開金鑰以啟用傳送端對端加密電郵到此電郵位址"
