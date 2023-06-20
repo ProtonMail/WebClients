@@ -38,6 +38,11 @@ export const getMailPlusFeatures = () => {
             tooltip: c('specialoffer: Tooltip')
                 .t`Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.`,
         },
+        {
+            name: c('summer2023: Short tool name to present Proton Pass').t`Password manager`,
+            tooltip: c('summer2023: Describe Proton Pass')
+                .t`Securely store your passwords and autofill them on websites. Includes unlimited passwords, autofill, password generator, and more.`,
+        },
     ];
 };
 
@@ -62,6 +67,17 @@ export const getUnlimitedFeatures = () => {
     ];
 };
 
+export const getMailDealFeatures = () => {
+    return [
+        getStorageSizeFeature(humanSize(15 * 1024 ** 3, undefined, undefined, 0)),
+        {
+            name: c('summer2023: Deal details').t`Premium Mail and Calendar`,
+            tooltip: c('summer2023: Tooltip')
+                .t`Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.`,
+        },
+    ];
+};
+
 export const getUnlimitedDealFeatures = () => {
     return [
         getStorageSizeFeature(humanSize(500 * 1024 ** 3, undefined, undefined, 0)),
@@ -71,14 +87,19 @@ export const getUnlimitedDealFeatures = () => {
                 .t`Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.`,
         },
         {
-            name: c('specialoffer: Deal details').t`Premium VPN`,
-            tooltip: c('specialoffer: Tooltip')
-                .t`Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.`,
+            name: c('summer2023: Deal details').t`Premium Drive`,
+            tooltip: c('summer2023: Tooltip')
+                .t`Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.`,
         },
         {
-            name: c('specialoffer: Deal details').t`Premium Drive`,
-            tooltip: c('specialoffer: Tooltip')
-                .t`Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.`,
+            name: c('specialoffer: Deal details').t`Premium VPN`,
+            tooltip: c('summer2023: Tooltip')
+                .t`Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.`,
+        },
+        {
+            name: c('summer2023: Deal details').t`Premium Password Manager`,
+            tooltip: c('summer2023: Tooltip')
+                .t`Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.`,
         },
     ];
 };
