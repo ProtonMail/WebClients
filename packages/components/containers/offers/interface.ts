@@ -15,6 +15,7 @@ export type OfferId =
     | 'black-friday-vpn-2-deal-2022'
     | 'black-friday-vpn-3-deal-2022'
     | 'mail-trial-2023'
+    | 'summer-2023'
     | 'family-3-deal-2023'
     | 'family-1-deal-2023';
 
@@ -42,8 +43,6 @@ export interface Operation {
     isLoading: boolean;
 }
 
-export type OperationsMap = Record<OfferId, Operation>;
-
 export interface OfferImages {
     sideImage?: string;
     sideImage2x?: string;
@@ -68,6 +67,7 @@ export interface OfferConfig {
 }
 
 interface Feature {
+    badge?: string;
     disabled?: boolean;
     icon?: IconName;
     name: string;
