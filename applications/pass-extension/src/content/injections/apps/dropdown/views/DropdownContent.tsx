@@ -24,77 +24,10 @@ import { AliasAutoSuggest } from './AliasAutoSuggest';
 import { ItemsList } from './ItemsList';
 import { PasswordAutoSuggest } from './PasswordAutoSuggest';
 
-/**
- * settings: `useIFrameContext().loadDomainImages`
- * domainUrl: `dropdownState.items` -> `SafeLoginItem::url`
- */
-
 export const DropdownContent: VFC = () => {
-    /*
-    const { workerState, resizeIFrame, closeIFrame, postMessage } = useIFrameContext();
+    const { workerState, resizeIFrame, closeIFrame, postMessage, settings } = useIFrameContext();
     const [dropdownState, setDropdownState] = useState<MaybeNull<DropdownSetActionPayload>>(null);
-    */
-
-    // -- FAKE STATE FOR TESTING --
-
-    let { workerState, resizeIFrame, closeIFrame, postMessage, settings } = useIFrameContext();
-    workerState = {
-        ...workerState,
-        loggedIn: true,
-        status: WorkerStatus.READY,
-    };
     const canLoadFavicons = settings.loadDomainImages;
-
-    // PASSWORD - DONE
-    // const [dropdownState, setDropdownState] = useState<MaybeNull<DropdownSetActionPayload>>({
-    //     action: DropdownAction.AUTOSUGGEST_PASSWORD,
-    // });
-
-    // NO LOGIN FOUND - DONE
-    // const [dropdownState, setDropdownState] = useState<MaybeNull<DropdownSetActionPayload>>({
-    //     action: DropdownAction.AUTOFILL,
-    //     needsUpgrade: false,
-    //     items: [
-    //     ],
-    // });
-
-    // ITEMS - TODO: FAVICONS
-    const [dropdownState, setDropdownState] = useState<MaybeNull<DropdownSetActionPayload>>({
-        action: DropdownAction.AUTOFILL,
-        needsUpgrade: false,
-        items: [
-            {
-                name: 'Reddit',
-                username: 'abc@example',
-                shareId: '1',
-                itemId: '1',
-                url: 'https://www.reddit.com',
-            },
-            {
-                name: 'Proton',
-                username: 'me@proton',
-                shareId: '2',
-                itemId: '2',
-                url: 'https://account.proton.me',
-            },
-            {
-                name: 'unresolvable favicon',
-                username: 'unresolvable.favicon@proton',
-                shareId: '3',
-                itemId: '3',
-                url: 'https://account.example.example',
-            },
-        ],
-    });
-
-    // ALIAS - DONE
-    // const [dropdownState, setDropdownState] = useState<MaybeNull<DropdownSetActionPayload>>({
-    //     action: DropdownAction.AUTOSUGGEST_ALIAS,
-    //     domain: 'localhost',
-    //     prefix: 'test',
-    // });
-
-    // -- END FAKE STATE --
 
     const withStateReset = <F extends Callback>(fn: F): F =>
         pipe(
@@ -132,7 +65,7 @@ export const DropdownContent: VFC = () => {
                             onClick={closeIFrame}
                             title={c('Title').t`${PASS_APP_NAME} locked`}
                             subTitle={c('Info').t`Unlock with your pin`}
-                            icon={PassIcon.LOCKED_LIGHT}
+                            icon={PassIcon.LOCKED_DROPDOWN}
                         />
                     );
                 }
@@ -150,7 +83,7 @@ export const DropdownContent: VFC = () => {
                                     <Icon className="ml-1" name="arrow-out-square" />
                                 </>
                             }
-                            icon={PassIcon.INACTIVE}
+                            icon={PassIcon.DISABLED}
                             autogrow
                         />
                     );

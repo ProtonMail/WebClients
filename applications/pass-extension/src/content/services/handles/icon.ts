@@ -3,10 +3,9 @@ import { safeCall } from '@proton/pass/utils/fp';
 import { createListenerStore } from '@proton/pass/utils/listener';
 import debounce from '@proton/utils/debounce';
 
-import { EXTENSION_PREFIX, ICON_CLASSNAME } from '../../constants';
+import { ACTIVE_ICON_SRC, DISABLED_ICON_SRC, EXTENSION_PREFIX, ICON_CLASSNAME, LOCKED_ICON_SRC } from '../../constants';
 import { withContext } from '../../context/context';
 import { applyInjectionStyles, cleanupInjectionStyles, createIcon } from '../../injections/icon';
-import { createLockIcon } from '../../injections/icon/svg';
 import type { FieldHandle, FieldIconHandle } from '../../types';
 
 type CreateIconOptions = { field: FieldHandle };
@@ -17,22 +16,19 @@ export const createFieldIconHandle = ({ field }: CreateIconOptions): FieldIconHa
 
     const input = field.element as HTMLInputElement;
     const { icon, wrapper } = createIcon(field);
-    const lock = createLockIcon();
 
     const setStatus = (status: WorkerStatus) => {
         icon.classList.remove(`${ICON_CLASSNAME}--loading`);
-        safeCall(() => icon.removeChild(lock))();
 
         switch (status) {
             case WorkerStatus.READY:
-                return icon.classList.remove(`${ICON_CLASSNAME}--disabled`);
+                return icon.style.setProperty('background-image', `url("${ACTIVE_ICON_SRC}")`, 'important');
 
             case WorkerStatus.LOCKED:
-                icon.classList.add(`${ICON_CLASSNAME}--disabled`);
-                return icon.appendChild(lock);
+                return icon.style.setProperty('background-image', `url("${LOCKED_ICON_SRC}")`, 'important');
 
             default:
-                return icon.classList.add(`${ICON_CLASSNAME}--disabled`);
+                return icon.style.setProperty('background-image', `url("${DISABLED_ICON_SRC}")`, 'important');
         }
     };
 

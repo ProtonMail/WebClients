@@ -2,9 +2,9 @@ import type { IconName } from '@proton/components/components';
 
 export enum PassIcon {
     ACTIVE = 'protonpass-icon-active',
-    INACTIVE = 'protonpass-icon-inactive',
-    LOCKED_DARK = 'protonpass-icon-locked-dark',
-    LOCKED_LIGHT = 'protonpass-icon-locked-light',
+    DISABLED = 'protonpass-icon-disabled',
+    LOCKED = 'protonpass-icon-locked',
+    LOCKED_DROPDOWN = 'protonpass-icon-locked-dropdown',
 }
 
 export type DropdownIcon = IconName | PassIcon;
