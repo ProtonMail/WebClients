@@ -129,7 +129,7 @@
         "Alignement"
       ],
       "Allow": [
-        "Adresses autorisées"
+        "Autoriser"
       ],
       "Apply": [
         "Appliquer"
@@ -764,11 +764,17 @@
       "Send code": [
         "Envoyer le code"
       ],
+      "Send email reminder": [
+        "Envoyer un rappel par e-mail"
+      ],
       "Send messages with @pm.me": [
         "Envoyer des messages avec @pm.me"
       ],
       "Send my username": [
         "Envoyer mon nom d'utilisateur"
+      ],
+      "Send reminder": [
+        "Envoyer un rappel"
       ],
       "Set as default": [
         "Définir par défaut"
@@ -1072,6 +1078,11 @@
       ],
       "Orphan": [
         "Orpheline"
+      ]
+    },
+    "Admin": {
+      "admin": [
+        "Administrateur"
       ]
     },
     "Alert": {
@@ -3782,6 +3793,9 @@
       "Create a new user": [
         "Créer un nouvel utilisateur"
       ],
+      "Decline invitation": [
+        "Refuser l'invitation"
+      ],
       "Got it": [
         "J'ai compris"
       ],
@@ -3790,9 +3804,6 @@
       ],
       "Invite member to your family": [
         "Invitez des membres à rejoindre votre famille"
-      ],
-      "Keep current plan": [
-        "Garder l'abonnement actuel"
       ],
       "Set up family group": [
         "Configurer le groupe familial"
@@ -4309,7 +4320,7 @@
         "Ces listes s'appliquent à tous les comptes de votre organisation. Les membres de votre organisation peuvent créer leurs propres filtres, mais ne pourront pas remplacer les adresses ou les domaines que vous avez bloqués."
       ],
       "To ensure critical messages don't end up in spam and getting missed": [
-        "pour que les messages importants ne se retrouvent pas dans les indésirables/spam et ne soient pas manqués."
+        "pour que les messages importants ne se retrouvent pas dans les indésirables/spam."
       ],
       "To prevent junk mail from clogging up inboxes": [
         "pour que les messages indésirables/spam n'encombrent pas les boites de réception."
@@ -6141,6 +6152,9 @@
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Sélectionnez les calendriers à importer. Un nouveau calendrier sera créé pour chaque calendrier importé, en fonction du nombre de calendriers disponibles dans votre abonnement."
       ],
+      "Send emails to encourage your members to protect their accounts with 2FA.": [
+        "Envoyez un message à vos membres pour les encourager à protéger leurs comptes en utilisant l'authentification à deux facteurs (A2F)."
+      ],
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "Envoyé avec la messagerie sécurisée <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }.</a>"
       ],
@@ -6267,6 +6281,9 @@
       "The following address was not created.": [
         "L'adresse suivante n'a pas été créée.",
         "Les adresses suivantes n'ont pas été créées."
+      ],
+      "The following members will receive an email prompting them to enable two-factor authentication as soon as possible.": [
+        "Ces membres recevront un e-mail les invitant à activer l'authentification à deux facteurs (A2F) dès que possible."
       ],
       "The format of your CSV file is incorrect.": [
         "Le format de votre fichier CSV n'est pas correct."
@@ -6564,6 +6581,9 @@
       ],
       "We need to authenticate your payment with your bank.": [
         "Nous devons authentifier votre paiement auprès de votre banque."
+      ],
+      "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
+        "Nous vous recommandons de prévenir les membres de l'organisation et de leur demander de configurer l'authentification à deux facteurs (A2F) sur leurs comptes avant de leur imposer son utilisation."
       ],
       "We recommend using your recovery phrase instead.": [
         "Nous vous suggérons d'utiliser une phrase de récupération à la place."
@@ -7431,7 +7451,7 @@
         "Titulaire de la carte"
       ],
       "Card information": [
-        "Données de la carte"
+        "Informations sur la carte"
       ],
       "Card number": [
         "Numéro de la carte"
@@ -7940,6 +7960,12 @@
       "Repeat password": [
         "Confirmer le mot de passe"
       ],
+      "Require 2FA for administrators": [
+        "Exiger l'authentification à deux facteurs (A2F) pour les administrateurs"
+      ],
+      "Require 2FA for everyone": [
+        "Exiger l'authentification à deux facteurs (A2F) pour tout le monde"
+      ],
       "Reveal password": [
         "Afficher le mot de passe"
       ],
@@ -8381,6 +8407,10 @@
       ]
     },
     "Loading info": {
+      "${ twoFAMembers.length }/${ members.length } of your organization member use two-factor authentication.": [
+        "${ twoFAMembers.length } membre de votre organisation sur ${ members.length } utilise l'authentification à deux facteurs (A2F).",
+        "${ twoFAMembers.length } membres de votre organisation sur ${ members.length } utilisent l'authentification à deux facteurs (A2F)."
+      ],
       "Almost there": [
         "Nous y sommes presque."
       ],
@@ -9536,6 +9566,18 @@
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "Les identifiants OpenVPN/IKEv2 ont été regénérés."
+      ],
+      "Reminder has been sent": [
+        "Le rappel a été envoyé."
+      ],
+      "Two-factor authentication has been enforced for administrators": [
+        "L'authentification à deux facteurs (A2F) a été activée pour les administrateurs."
+      ],
+      "Two-factor authentication has been enforced for all members": [
+        "L'authentification à deux facteurs (A2F) a été activée pour tous les membres."
+      ],
+      "Two-factor authentication is not required anymore": [
+        "L'authentification à deux facteurs (A2F) n'est plus obligatoire."
       ]
     },
     "Notification in holidays calendar modal": {
@@ -11304,6 +11346,9 @@
       "Are you sure you want to close?": [
         "Vous voulez vraiment fermer ?"
       ],
+      "Authentication security": [
+        "Sécurité de l'authentification"
+      ],
       "Auto-reply": [
         "Réponse automatique"
       ],
@@ -11868,6 +11913,9 @@
       "Select when you want this notification to be sent": [
         "Sélectionnez le moment où cette notification doit être envoyée."
       ],
+      "Send email reminders?": [
+        "Envoyer un rappel par e-mail ?"
+      ],
       "Session management": [
         "Gestionnaire de sessions"
       ],
@@ -11974,6 +12022,12 @@
       ],
       "Two-factor authentication": [
         "Authentification à deux facteurs"
+      ],
+      "Two-factor authentication enforcement": [
+        "Mise en place de l'authentification à deux facteurs (A2F)"
+      ],
+      "Two-factor authentication reminders": [
+        "Rappels d'authentification à deux facteurs (A2F)"
       ],
       "Type": [
         "Type"
@@ -12189,6 +12243,9 @@
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Si vous avez acheté un code cadeau ou si vous en avez reçu un de notre équipe support, vous pouvez le saisir ici."
       ],
+      "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
+        "Les membres qui n'utilisent pas l'authentification à deux facteurs (A2F) recevront un message leur demandant de l'activer dès que possible."
+      ],
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "Les messages dans le dossier Envoyés ou Brouillons continueront à apparaître dans ce dossier, même si vous les déplacez vers un autre dossier."
       ],
@@ -12256,7 +12313,7 @@
         "Nous avons arrêté la signature DKIM en raison de problèmes avec votre configuration DNS. Vous pouvez suivre les instructions ci-dessous pour l'utiliser à nouveau."
       ],
       "When enabled, animations and transitions will not show": [
-        "Les animations et les transitions ne s'affichent pas."
+        "Les animations et les transitions ne s'afficheront pas."
       ],
       "When you add a label to a message in a conversation, it will automatically be applied to all future messages you send or receive in that conversation.": [
         "Lorsque vous ajoutez un label à un message dans une conversation, il sera automatiquement appliqué à tous les messages que vous enverrez ou recevrez dans cette conversation."
