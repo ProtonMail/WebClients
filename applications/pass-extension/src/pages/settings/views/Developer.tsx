@@ -24,13 +24,13 @@ export const Developer: VFC = () => {
                 </Button>
             </Card>
 
-            <h6 className="mb-2">Dropdown test</h6>
+            {/* <h6 className="mb-2">Dropdown test (create a fake state in DropdownContent)</h6>
 
             <iframe
                 title="dropdown"
                 src="chrome-extension://ghmbeldphafepmbegfdlkpapadhbakde/dropdown.html"
                 style={{ width: '250px', height: '360px' }}
-            />
+            /> */}
         </>
     );
 };

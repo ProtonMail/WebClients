@@ -23,6 +23,8 @@ export const NOTIFICATION_HEIGHT = 335;
 export const NOTIFICATION_WIDTH = 320;
 
 export const ACTIVE_ICON_SRC = browser.runtime.getURL('/assets/protonpass-icon.svg');
+export const LOCKED_ICON_SRC = browser.runtime.getURL('/assets/protonpass-icon-locked.svg');
+export const DISABLED_ICON_SRC = browser.runtime.getURL('/assets/protonpass-icon-disabled.svg');
 export const DROPDOWN_IFRAME_SRC = browser.runtime.getURL('/dropdown.html');
 export const NOTIFICATION_IFRAME_SRC = browser.runtime.getURL('/notification.html');
 
