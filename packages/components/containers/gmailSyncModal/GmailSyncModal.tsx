@@ -15,12 +15,13 @@ import GmailSyncModalAnimation from './GmailSyncModalAnimation';
 import SignInWithGoogle from './SignInWithGoogle';
 
 interface Props extends ModalProps {
+    reduceHeight?: boolean;
     onSyncCallback?: (hasError: boolean) => void;
     onSyncSkipCallback?: () => void;
     noSkip?: boolean;
 }
 
-const GmailSyncModal = ({ onSyncCallback, onSyncSkipCallback, noSkip, ...rest }: Props) => {
+const GmailSyncModal = ({ onSyncCallback, onSyncSkipCallback, reduceHeight, noSkip, ...rest }: Props) => {
     const dispatch = useEasySwitchDispatch();
     const syncState = useEasySwitchSelector(selectCreateSyncState);
     const loading = syncState === 'pending';
@@ -77,10 +78,15 @@ const GmailSyncModal = ({ onSyncCallback, onSyncSkipCallback, noSkip, ...rest }:
                         {c('Gmail forwarding').t`Gmail messages to your inbox`}
                     </h1>
                     <div className="lg:hidden flex-item-grow-2">
-                        <GmailSyncModalAnimation />
+                        <GmailSyncModalAnimation reduceHeight={reduceHeight} />
                     </div>
                     <div className="flex flex-column flex-align-items-center gap-4">
-                        <SignInWithGoogle onClick={handleGoogleSync} loading={loading} disabled={loadingConfig} />
+                        <SignInWithGoogle
+                            onClick={handleGoogleSync}
+                            loading={loading}
+                            disabled={loadingConfig}
+                            fullWidth
+                        />
                         {!noSkip && (
                             <Button shape="ghost" color="norm" fullWidth onClick={handleSyncSkip}>{c('Action')
                                 .t`Skip`}</Button>
@@ -88,7 +94,7 @@ const GmailSyncModal = ({ onSyncCallback, onSyncSkipCallback, noSkip, ...rest }:
                     </div>
                 </div>
                 <div className="hidden lg:block w-6/10">
-                    <GmailSyncModalAnimation />
+                    <GmailSyncModalAnimation reduceHeight={reduceHeight} />
                 </div>
             </ModalContent>
         </ModalTwo>
