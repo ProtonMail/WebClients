@@ -31,7 +31,7 @@ export interface FieldHandle {
     tracked: boolean;
     zIndex: number;
     getFormHandle: () => FormHandle;
-    getBoxElement: () => HTMLElement;
+    getBoxElement: (options?: { revalidate: boolean }) => HTMLElement;
     setValue: (value: string) => void;
     setAction: (action: MaybeNull<DropdownAction>) => void;
     autofill: (value: string) => void;
