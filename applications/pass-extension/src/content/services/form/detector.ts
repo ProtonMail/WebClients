@@ -84,6 +84,14 @@ const getPredictionsFor = <T extends string>(
 ): PredictionResult<T>[] => {
     const candidates: FNode[] = boundRuleset.get(options.type);
 
+    /* first check if we have any pre-detected candidates which
+     * will not be emitted on the base `options.type` as these will
+     * have by-passed the classification pipeline */
+    const preDetected = options.subTypes.flatMap((subType) => {
+        const detected: FNode[] = boundRuleset.get(subType);
+        return detected.map((fnode) => ({ fnode, type: subType }));
+    });
+
     const predictions = candidates.map((fnode) => {
         const fieldTypes = options.subTypes.filter((subType) => fnode.hasType(subType));
         const scores = getScores(fnode, fieldTypes).sort(sortOn('score', 'DESC'));
@@ -91,7 +99,7 @@ const getPredictionsFor = <T extends string>(
         return { fnode, type: best.score > 0.5 ? best.type : options.fallbackType };
     });
 
-    return predictions;
+    return preDetected.concat(predictions);
 };
 
 /* cluster each predicted field by its parent predicted
@@ -161,6 +169,7 @@ const createDetectionRunner = (ruleset: ReturnType<typeof rulesetMaker>, doc: Do
     formPredictions.forEach(({ fnode: { element }, type }) => setFormProcessed(element, type));
     forms.forEach(({ fields }) => fields.forEach(({ field, fieldType }) => setFieldProcessed(field, fieldType)));
     selectUnprocessedForms().forEach((form) => setFormProcessed(form, FormType.NOOP));
+    clearVisibilityCache(); /* clear visibility cache on each detection run */
 
     return forms;
 };
