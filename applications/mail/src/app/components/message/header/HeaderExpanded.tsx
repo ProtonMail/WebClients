@@ -253,7 +253,7 @@ const HeaderExpanded = ({
                                         icon={hasOnlyIcsAttachments ? 'calendar-grid' : undefined}
                                         onClick={handleAttachmentIconClick}
                                         element={message.data}
-                                        className="mr-2"
+                                        className="mr-2 mt-0.5"
                                     />
                                 </span>
                                 <ItemDate element={message.data} labelID={labelID} useTooltip className="text-sm" />
