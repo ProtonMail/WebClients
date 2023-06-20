@@ -13,6 +13,7 @@ import { useElementRect } from '../../hooks';
 import { CardModel } from '../../payments/core/interface';
 import { formatCreditCardNumber, isValidNumber } from './CardNumberInput';
 import { handleExpOnChange } from './ExpInput';
+import { isPotentiallyCVV } from './cardValidator';
 import { CardFieldStatus } from './useCard';
 
 import './CreditCardNewDesign.scss';
@@ -83,10 +84,22 @@ const CreditCardNewDesign = ({ card, errors, onChange, loading = false, fieldSta
         () => getFullList().map(({ value, label: text, disabled }) => ({ value, text, disabled })),
         []
     );
+
+    const maxCvvLength = 4;
     const handleChange =
         (key: keyof CardModel) =>
-        ({ target }: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLSelectElement>) =>
-            onChange(key, target.value);
+        ({ target }: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLSelectElement>) => {
+            const newValue = target.value;
+
+            // todo: if the new design is widely adopted or at least stabilized by several weeks in prod,
+            // then make this logic as part of credit card validation overall, i.e. apply it to getErrors() in useCard() hook
+            const isInvalid = key === 'cvc' && !isPotentiallyCVV(newValue, maxCvvLength);
+            if (isInvalid) {
+                return;
+            }
+
+            onChange(key, newValue);
+        };
 
     // translator: this is the pattern for bank card expiration MM/YY, where MM stands for Month Month and YY Year Year. Please keep the slash in the middle.
     const patternExpiration = c('Info').t`MM/YY`;
@@ -121,6 +134,7 @@ const CreditCardNewDesign = ({ card, errors, onChange, loading = false, fieldSta
         value: card.cvc,
         onChange: handleChange('cvc'),
         disableChange: loading,
+        maxLength: maxCvvLength,
     };
 
     const { valueWithGaps, bankIcon, niceType, codeName } = formatCreditCardNumber(card.number);
