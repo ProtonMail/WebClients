@@ -25,12 +25,8 @@ export const findBoundingInputElement = (el: HTMLElement, minHeight?: number): H
 
     if (label) {
         const labelHeightCheck = label.getBoundingClientRect().height >= minHeightRef;
-        const labelStyles = getComputedStyle(label);
-        const border = parseFloat(labelStyles.getPropertyValue('border-bottom-width'));
-        const labelChildrenOverlap =
-            label?.childElementCount === 1 && allChildrenOverlap(label, BOUNDING_ELEMENT_MAX_OFFSET);
-
-        if (labelHeightCheck && labelChildrenOverlap && border > 0) return label;
+        const labelChildrenOverlap = allChildrenOverlap(label, BOUNDING_ELEMENT_MAX_OFFSET);
+        if (labelHeightCheck && labelChildrenOverlap) return label;
     }
 
     const mb = pixelParser(getComputedStyle(el).marginBottom);
