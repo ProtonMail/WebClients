@@ -3,7 +3,14 @@ import { useMemo, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { InputFieldTwo, RequestNewCodeModal, useApi, useFormErrors, useLoading } from '@proton/components';
+import {
+    InputFieldTwo,
+    RequestNewCodeModal,
+    useApi,
+    useErrorHandler,
+    useFormErrors,
+    useLoading,
+} from '@proton/components';
 import { RecoveryMethod, ValidateResetTokenResponse } from '@proton/components/containers/resetPassword/interface';
 import { validateResetToken } from '@proton/shared/lib/api/reset';
 import { getPrimaryAddress } from '@proton/shared/lib/helpers/address';
@@ -26,6 +33,7 @@ interface Props {
 const ValidateResetTokenForm = ({ onSubmit, onBack, onRequest, method, recoveryMethods, value, username }: Props) => {
     const normalApi = useApi();
     const silentApi = <T,>(config: any) => normalApi<T>({ ...config, silence: true });
+    const handleError = useErrorHandler();
 
     const [loading, withLoading] = useLoading();
     const [confirmModal, setConfirmModal] = useState(false);
@@ -63,11 +71,15 @@ const ValidateResetTokenForm = ({ onSubmit, onBack, onRequest, method, recoveryM
                 }
 
                 const submit = async () => {
-                    const resetResponse = await silentApi<ValidateResetTokenResponse>(
-                        validateResetToken(username, token)
-                    );
-                    setResetResponse(resetResponse);
-                    setConfirmModal(true);
+                    try {
+                        const resetResponse = await silentApi<ValidateResetTokenResponse>(
+                            validateResetToken(username, token)
+                        );
+                        setResetResponse(resetResponse);
+                        setConfirmModal(true);
+                    } catch (e: any) {
+                        handleError(e);
+                    }
                 };
 
                 void withLoading(submit()).catch(noop);
