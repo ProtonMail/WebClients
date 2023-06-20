@@ -3,7 +3,7 @@ import type { WorkerStatus } from '@proton/pass/types';
 import { type Api, WorkerMessageType } from '@proton/pass/types';
 import { waitUntil } from '@proton/pass/utils/fp';
 import { logger } from '@proton/pass/utils/logger';
-import { workerLoggedOut, workerReady, workerStatusResolved } from '@proton/pass/utils/worker';
+import { workerLocked, workerLoggedOut, workerReady, workerStatusResolved } from '@proton/pass/utils/worker';
 import { setUID as setSentryUID } from '@proton/shared/lib/helpers/sentry';
 
 import { setPopupIcon } from '../../shared/extension';
@@ -83,8 +83,9 @@ export const createWorkerContext = (options: { api: Api; status: WorkerStatus })
             logger.info(`[Worker::Context] Status update : ${context.status} -> ${status}`);
             context.status = status;
 
-            if (workerLoggedOut(status)) void setPopupIcon({ loggedIn: false });
-            if (workerReady(status)) void setPopupIcon({ loggedIn: true });
+            if (workerLoggedOut(status)) void setPopupIcon({ loggedIn: false, locked: false });
+            if (workerLocked(status)) void setPopupIcon({ loggedIn: false, locked: true });
+            if (workerReady(status)) void setPopupIcon({ loggedIn: true, locked: false });
 
             WorkerMessageBroker.ports.broadcast(
                 backgroundMessage({

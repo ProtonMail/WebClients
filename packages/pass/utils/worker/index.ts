@@ -11,6 +11,7 @@ import { oneOf, or } from '@proton/pass/utils/fp';
 export const workerReady = oneOf(WorkerStatus.READY);
 export const workerLoggedIn = oneOf(WorkerStatus.AUTHORIZED);
 export const workerLoggedOut = oneOf(WorkerStatus.UNAUTHORIZED, WorkerStatus.RESUMING_FAILED, WorkerStatus.LOCKED);
+export const workerLocked = oneOf(WorkerStatus.LOCKED);
 export const workerErrored = oneOf(WorkerStatus.ERROR, WorkerStatus.RESUMING_FAILED);
 export const workerStale = oneOf(WorkerStatus.IDLE);
 
