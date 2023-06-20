@@ -22,21 +22,22 @@ export const selectAllForms = () => {
 
 /* Unprocessed are forms that have never been seen by our detectors:
  * if that is the case they will lack a `data-protonpass-form` attr */
-export const selectUnprocessedForms = () => {
+export const selectUnprocessedForms = (target: Document | HTMLElement = document) => {
     const selector = `${formOfInterestSelector}:not([${PROCESSED_FORM_ATTR}])`;
-    return Array.from(document.querySelectorAll<HTMLElement>(selector));
+    return Array.from(target.querySelectorAll<HTMLElement>(selector));
 };
-
-export const hasUnprocessedForms = () => selectUnprocessedForms().length > 0;
 
 /* dangling fields are fields that match our `fieldOfInterestSelector`
  * but have either not been processed or do not belong to a currently
  * tracked form */
-export const selectDanglingFields = () => {
+export const selectDanglingFields = (target: Document | HTMLElement = document) => {
     const selector = `:not([${PROCESSED_FIELD_ATTR}]):not([${PROCESSED_FORM_ATTR}] input)`;
-    const candidates = document.querySelectorAll<HTMLInputElement>(fieldOfInterestSelector);
+    const candidates = target.querySelectorAll<HTMLInputElement>(fieldOfInterestSelector);
     return Array.from(candidates).filter((el) => el.matches(selector));
 };
+
+export const hasUnprocessedForms = (target?: Document | HTMLElement) => selectUnprocessedForms(target).length > 0;
+export const hasUnprocessedFields = (target?: Document | HTMLElement) => selectDanglingFields(target).length > 0;
 
 export const setFormProcessed = (el: HTMLElement, formType: FormType): void => {
     el.setAttribute(PROCESSED_FORM_ATTR, formType);
