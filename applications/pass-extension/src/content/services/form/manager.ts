@@ -1,4 +1,5 @@
 import { contentScriptMessage, sendMessage } from '@proton/pass/extension/message';
+import { clearVisibilityCache } from '@proton/pass/fathom';
 import type { FormEntry, PromptedFormEntry, WithAutoSavePromptOptions } from '@proton/pass/types';
 import { FormEntryStatus, WorkerMessageType } from '@proton/pass/types';
 import { createListenerStore } from '@proton/pass/utils/listener';
@@ -124,8 +125,8 @@ export const createFormManager = (options: FormManagerOptions) => {
             garbagecollect();
 
             if (await detector.shouldRunDetection()) {
-                cancelAnimationFrame(ctx.detectionRequest);
-                ctx.detectionRequest = requestAnimationFrame(() => {
+                cancelIdleCallback(ctx.detectionRequest);
+                ctx.detectionRequest = requestIdleCallback(() => {
                     if (ctx.active) {
                         logger.info(`[FormTracker::Detector]: Running detection for "${reason}"`);
                         const forms = detector.runDetection();
@@ -143,7 +144,7 @@ export const createFormManager = (options: FormManagerOptions) => {
                     }
                 });
                 return true;
-            }
+            } else clearVisibilityCache();
 
             ctx.busy = false;
             return false;
@@ -200,7 +201,7 @@ export const createFormManager = (options: FormManagerOptions) => {
         ctx.active = false;
         ctx.busy = false;
 
-        cancelAnimationFrame(ctx.detectionRequest);
+        cancelIdleCallback(ctx.detectionRequest);
         detect.cancel();
         listeners.removeAll();
 
