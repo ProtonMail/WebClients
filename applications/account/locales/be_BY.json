@@ -74,6 +74,9 @@
       "Add address": [
         "Дадаць адрас"
       ],
+      "Add address or domain": [
+        "Дадаць адрас або дамен"
+      ],
       "Add calendar from URL": [
         "Дадаць каляндар з URL-адраса"
       ],
@@ -124,6 +127,9 @@
       ],
       "Alignment": [
         "Выраўноўванне"
+      ],
+      "Allow": [
+        "Дазволіць"
       ],
       "Apply": [
         "Ужыць"
@@ -205,6 +211,9 @@
       ],
       "Continue": [
         "Працягнуць"
+      ],
+      "Continue anyway": [
+        "Усё роўна працягнуць"
       ],
       "Continue import": [
         "Працягнуць імпартаванне"
@@ -645,7 +654,7 @@
         "Выдаліць гэта апавяшчэнне"
       ],
       "Report a problem": [
-        "Паведаміць пра праблему"
+        "Паведаміць аб праблеме"
       ],
       "Request a feature": [
         "Запытаць функцыю"
@@ -755,11 +764,17 @@
       "Send code": [
         "Адправіць код"
       ],
+      "Send email reminder": [
+        "Адправіць напамін поштай"
+      ],
       "Send messages with @pm.me": [
         "Адправіць паведамленне з @pm.me"
       ],
       "Send my username": [
         "Адправіць маё імя карыстальніка"
+      ],
+      "Send reminder": [
+        "Адправіць напамін"
       ],
       "Set as default": [
         "Зрабіць прадвызначаным"
@@ -1067,6 +1082,11 @@
       ],
       "Orphan": [
         "Не прывязана"
+      ]
+    },
+    "Admin": {
+      "admin": [
+        "адміністратар"
       ]
     },
     "Alert": {
@@ -2783,7 +2803,7 @@
         "Не ўдалося перамясціць ${ name } у спіс са спамам"
       ],
       "${ name } moved to allow list": [
-        "${ name } перамешчаны ў спіс дазволеных"
+        "${ name } перамешчаны ў спіс дазволеных адрасоў"
       ],
       "${ name } moved to spam list": [
         "${ name } перамешчаны ў спіс са спамам"
@@ -3784,6 +3804,9 @@
       "Create a new user": [
         "Стварыць новага карыстальніка"
       ],
+      "Decline invitation": [
+        "Адхіліць запрашэнне"
+      ],
       "Got it": [
         "Зразумела"
       ],
@@ -3792,9 +3815,6 @@
       ],
       "Invite member to your family": [
         "Запрасіць удзельніка ў сямейную групу"
-      ],
-      "Keep current plan": [
-        "Пакінуць бягучы тарыфны план"
       ],
       "Set up family group": [
         "Наладзіць сямейную групу"
@@ -4303,8 +4323,41 @@
       "Add a custom filter to automatically perform certain actions, like labeling or archiving messages.": [
         "Дадайце ўласны фільтр для выканання такіх аўтаматычных дзеянняў, як пазначэнне меткай або архіваванне паведамленняў."
       ],
+      "Allow:": [
+        "Дазволеныя:"
+      ],
+      "Block:": [
+        "Заблакіраваныя:"
+      ],
       "Search list": [
         "Спіс пошуку"
+      ],
+      "Spam:": [
+        "Спам:"
+      ],
+      "Take control over what lands in your inbox by creating the following lists:": [
+        "Вазьміце пад кантроль тое, што знаходзіцца ў вашай паштовай скрыні, стварыўшы наступныя спісы:"
+      ],
+      "Take control over what lands in your organization members' inboxes by creating the following lists:": [
+        "Вазьміце пад кантроль тое, што знаходзіцца ў скрынях удзельнікаў вашай арганізацыі, стварыўшы наступныя спісы:"
+      ],
+      "These lists apply to all accounts in your organization. Members can create their own individual filters, but won't be able to override addresses or domains you blocked.": [
+        "Гэтыя спісы ўжываюцца для ўсіх уліковых запісаў у вашай арганізацыі. Удзельнікі змогуць ствараць свае ўласныя фільтры, але не змогуць змяніць заблакіраваныя адрасы або дамены."
+      ],
+      "To ensure critical messages don't end up in spam and getting missed": [
+        "Каб крытычныя паведамленні не трапілі ў спам і не былі прапушчаны"
+      ],
+      "To prevent junk mail from clogging up inboxes": [
+        "Каб прадухіліць захламленне паштовых скрынь"
+      ],
+      "To prevent junk mail from clogging up your inbox": [
+        "Каб прадухіліць захламленне вашай паштовай скрыні"
+      ],
+      "To stop phishing or suspicious emails from entering your email system": [
+        "Каб прадухіліць траплянне фішынгавых або падазроных лістоў у вашу электронную пошту"
+      ],
+      "To stop phishing or suspicious emails from entering your organization's email system": [
+        "Каб прадухіліць траплянне фішынгавых або падазроных лістоў у электронную пошту вашай арганізацыі"
       ]
     },
     "Font Face Default": {
@@ -5764,6 +5817,9 @@
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Імпартаванне вашых даных з ${ importedEmailAddress } у ${ toEmail }."
       ],
+      "Improve your ${ BRAND_NAME } experience by adapting the application to your needs.": [
+        "Паляпшайце свой досвед выкарыстання ${ BRAND_NAME }, адаптаваўшы праграму пад свае патрэбы."
+      ],
       "Inherited from parent folder": [
         "Унаследавана ад бацькоўскай папкі"
       ],
@@ -6193,6 +6249,9 @@
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Выберыце, якія календары імпартаваць. Новыя календары будуць створаны для кожнага імпартаванага календара з улікам колькасці календароў, якія даступны на вашым тарыфным плане."
       ],
+      "Send emails to encourage your members to protect their accounts with 2FA.": [
+        "Адпраўляйце лісты, каб заахвоціць сваіх удзельнікаў абараняць свае ўліковыя запісы з дапамогай 2ФА."
+      ],
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "Адпраўлена з дапамогай бяспечнай электроннай пошты <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
       ],
@@ -6327,6 +6386,9 @@
         "Наступныя адрасы не былі створаны.",
         "Наступныя адрасы не былі створаны.",
         "Наступныя адрасы не былі створаны."
+      ],
+      "The following members will receive an email prompting them to enable two-factor authentication as soon as possible.": [
+        "Наступныя ўдзельнікі атрымаюць ліст з просьбай як мага хутчэй уключыць двухфактарную аўтэнтыфікацыю."
       ],
       "The format of your CSV file is incorrect.": [
         "Няправільны фармат вашага файла CSV."
@@ -6624,6 +6686,9 @@
       ],
       "We need to authenticate your payment with your bank.": [
         "Нам неабходна аўтэнтыфікаваць плацеж з дапамогай вашага банка."
+      ],
+      "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
+        "Мы рэкамендуем апавяшчаць удзельнікаў арганізацыі і прасіць іх наладзіць 2ФА для сваіх уліковых запісаў перад прымусовым ужываннем гэтай тэхналогіі."
       ],
       "We recommend using your recovery phrase instead.": [
         "Замест гэтага мы рэкамендуем выкарыстоўваць фразу аднаўлення."
@@ -7402,6 +7467,9 @@
       "All-day event notifications": [
         "Апавяшчэнні пра падзеі на ўвесь дзень"
       ],
+      "Allow": [
+        "Аўтарызаваныя адрасы"
+      ],
       "Allow notifications by email": [
         "Дазволіць апавяшчэнні па электроннай пошце"
       ],
@@ -7474,6 +7542,9 @@
       "Billing cycle": [
         "Перыяд аплаты"
       ],
+      "Block": [
+        "Заблакіраваць"
+      ],
       "Block email tracking": [
         "Блакіраваць адсочванне электроннай пошты"
       ],
@@ -7503,6 +7574,9 @@
       ],
       "Card holder": [
         "Трымальнік карткі"
+      ],
+      "Card information": [
+        "Звесткі карткі"
       ],
       "Card number": [
         "Нумар карткі"
@@ -7624,6 +7698,9 @@
       "Default PGP scheme": [
         "Прадвызначаная схема PGP"
       ],
+      "Default scrollbars": [
+        "Прадвызначаныя палосы прагорткі"
+      ],
       "Default view": [
         "Прадвызначаны выгляд"
       ],
@@ -7644,6 +7721,9 @@
       ],
       "Digits": [
         "Лічбы"
+      ],
+      "Disable animations": [
+        "Адключыць анімацыю"
       ],
       "Display name": [
         "Бачнае імя"
@@ -7714,6 +7794,9 @@
       "Event notifications": [
         "Апавяшчэнні пра падзею"
       ],
+      "Expiration (${ patternExpiration })": [
+        "Тэрмін дзеяння (${ patternExpiration })"
+      ],
       "Expiration date": [
         "Тэрмін дзеяння"
       ],
@@ -7728,6 +7811,12 @@
       ],
       "Folder location": [
         "Размяшчэнне папкі"
+      ],
+      "Font family": [
+        "Сямейства шрыфтоў"
+      ],
+      "Font size": [
+        "Памер шрыфту"
       ],
       "From: ${ from }": [
         "Ад: ${ from }"
@@ -7996,11 +8085,20 @@
       "Repeat password": [
         "Паўтарыце пароль"
       ],
+      "Require 2FA for administrators": [
+        "Патрабаваць 2ФА для адміністратараў"
+      ],
+      "Require 2FA for everyone": [
+        "Патрабаваць 2ФА для ўсіх удзельнікаў"
+      ],
       "Reveal password": [
         "Паказаць пароль"
       ],
       "Security code": [
         "Код бяспекі"
+      ],
+      "Security code (${ codeName })": [
+        "Код бяспекі (${ codeName })"
       ],
       "Select your country": [
         "Выберыце сваю краіну"
@@ -8434,6 +8532,12 @@
       ]
     },
     "Loading info": {
+      "${ twoFAMembers.length }/${ members.length } of your organization member use two-factor authentication.": [
+        "${ twoFAMembers.length }/${ members.length } удзельніка вашай арганізацыі выкарыстоўвае двухфактарную аўтэнтыфікацыю.",
+        "${ twoFAMembers.length }/${ members.length } удзельнікаў вашай арганізацыі выкарыстоўваюць двухфактарную аўтэнтыфікацыю.",
+        "${ twoFAMembers.length }/${ members.length } удзельнікаў вашай арганізацыі выкарыстоўваюць двухфактарную аўтэнтыфікацыю.",
+        "${ twoFAMembers.length }/${ members.length } удзельнікаў вашай арганізацыі выкарыстоўваюць двухфактарную аўтэнтыфікацыю."
+      ],
       "Almost there": [
         "Амаль гатова"
       ],
@@ -8733,6 +8837,9 @@
       "All": [
         "Усе"
       ],
+      "Allow": [
+        "Аўтарызаваныя адрасы"
+      ],
       "Back": [
         "Назад"
       ],
@@ -8744,6 +8851,9 @@
       ],
       "Back to inbox": [
         "Вярнуцца ва ўваходныя"
+      ],
+      "Block": [
+        "Заблакіраваныя адрасы"
       ],
       "Calendar": [
         "Каляндар"
@@ -9645,6 +9755,18 @@
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "Уліковыя даныя OpenVPN / IKEv2 паўторна згенерыраваныя"
+      ],
+      "Reminder has been sent": [
+        "Напамін адпраўлены"
+      ],
+      "Two-factor authentication has been enforced for administrators": [
+        "Двухфактарная аўтэнтыфікацыя прымусова ўжываецца для адміністратараў"
+      ],
+      "Two-factor authentication has been enforced for all members": [
+        "Двухфактарная аўтэнтыфікацыя прымусова ўжываецца для ўсіх удзельнікаў"
+      ],
+      "Two-factor authentication is not required anymore": [
+        "Двухфактарная аўтэнтыфікацыя больш не патрабуецца"
       ]
     },
     "Notification in holidays calendar modal": {
@@ -11275,11 +11397,17 @@
       "Edit": [
         "Рэдагаваць"
       ],
+      "Email address or domain": [
+        "Адрас электроннай пошты або дамен"
+      ],
       "Email addresses": [
         "Адрасы электроннай пошты"
       ],
       "Import": [
         "Імпартаванне"
+      ],
+      "List": [
+        "Спіс"
       ],
       "Marked as": [
         "Пазначана як"
@@ -11355,7 +11483,7 @@
         "Спалучэнні клавіш ${ MAIL_APP_NAME }"
       ],
       "(active)": [
-        "(актыўна)"
+        "(актыўная)"
       ],
       "1. Give a name to the config to be generated": [
         "1. Назваць згенерыраваную канфігурацыю"
@@ -11377,6 +11505,9 @@
       ],
       "4. Select a server to connect to": [
         "4. Выберыце сервер для падключэння"
+      ],
+      "Accessibility": [
+        "Спецыяльныя магчымасці"
       ],
       "Account and password": [
         "Уліковы запіс і пароль"
@@ -11432,6 +11563,12 @@
       "Add Sieve filter": [
         "Дадаць фільтр Sieve"
       ],
+      "Add to allow list": [
+        "Дадаць у спіс дазволеных адрасоў"
+      ],
+      "Add to block list": [
+        "Дадаць у спіс заблакіраваных адрасоў"
+      ],
       "Add to spam list": [
         "Дадаць у спіс са спамам"
       ],
@@ -11467,6 +11604,9 @@
       ],
       "Are you sure you want to close?": [
         "Вы сапраўды хочаце закрыць?"
+      ],
+      "Authentication security": [
+        "Бяспека аўтэнтыфікацыі"
       ],
       "Auto-reply": [
         "Аўтаматычны адказ"
@@ -11936,9 +12076,6 @@
       "PayPal verification failed": [
         "Не ўдалося ажыццявіць праверку PayPal"
       ],
-      "Personalise your e-mail footer": [
-        "Персаналізуйце ніжні калонтытул ліста"
-      ],
       "Phone": [
         "Тэлефон"
       ],
@@ -11985,7 +12122,7 @@
         "Выдаліць карыстальніка?"
       ],
       "Report a problem": [
-        "Паведаміць пра праблему"
+        "Паведаміць аб праблеме"
       ],
       "Request new code": [
         "Запытаць новы код"
@@ -12037,6 +12174,9 @@
       ],
       "Select when you want this notification to be sent": [
         "Выберыце, калі гэта апавяшчэнне павінна быць адпраўлена"
+      ],
+      "Send email reminders?": [
+        "Адправіць напаміны поштай?"
       ],
       "Session management": [
         "Кіраванне сеансамі"
@@ -12095,6 +12235,9 @@
       "Sort labels alphabetically": [
         "Сартаваць меткі па алфавіце"
       ],
+      "Spam, block, and allow lists": [
+        "Спам і спісы заблакіраваных і дазволеных адрасоў"
+      ],
       "Start a new import": [
         "Пачаць новае імпартаванне"
       ],
@@ -12145,6 +12288,12 @@
       ],
       "Two-factor authentication": [
         "Двухфактарная аўтэнтыфікацыя"
+      ],
+      "Two-factor authentication enforcement": [
+        "Прымусовае ўжыванне двухфактарнай аўтэнтыфікацыі"
+      ],
+      "Two-factor authentication reminders": [
+        "Напаміны аб двухфактарнай аўтэнтыфікацыі"
       ],
       "Type": [
         "Тып"
@@ -12324,6 +12473,9 @@
       "Account is disconnected": [
         "Уліковы запіс адключаны"
       ],
+      "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
+        "Аўтаматычна пераключацца паміж вашымі пажаданымі тэмамі для дня і ночы згодна з начным і дзённым рэжымам вашай сістэмы."
+      ],
       "Customize import to reduce the number of folders": [
         "Наладзьце імпартаванне, каб паменшыць колькасць папак"
       ],
@@ -12357,6 +12509,9 @@
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Калі вы купілі падарункавы код або атрымалі яго ад нашай службы падтрымкі, то можаце ўвесці яго тут."
       ],
+      "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
+        "Удзельнікі, якія не выкарыстоўваць 2ФА, атрымаюць ліст з просьбай як мага хутчэй уключыць двухфактарную аўтэнтыфікацыю."
+      ],
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "Паведамленні ў папках Адпраўленыя або Чарнавікі і далей будуць з'яўляцца ў гэтай папцы, нават калі вы перамясціце іх у іншую папку."
       ],
@@ -12387,6 +12542,12 @@
       "The new subscription cycle starts on ${ formattedTime }": [
         "Новы перыяд аплаты пачнецца ў ${ formattedTime }"
       ],
+      "The reduce motion setting is already enabled on this device": [
+        "Налады памяншэння руху ўжо ўключаны на гэтай прыладзе"
+      ],
+      "The selected theme will be active when your system is set to \"dark mode\"": [
+        "Выбраная тэма будзе актыўна, калі ў вашай сістэме зададзены \"цёмны рэжым\""
+      ],
       "The selected theme will be active when your system is set to \"light mode\"": [
         "Выбраная тэма будзе актыўна, калі ў вашай сістэме зададзены \"светлы рэжым\""
       ],
@@ -12408,11 +12569,17 @@
       "This key is used by ${ MAIL_APP_NAME } to encrypt your contact's data": [
         "Гэты ключ выкарыстоўваецца ${ MAIL_APP_NAME } для шыфравання даных вашых кантактаў"
       ],
+      "Use your browser’s default scrollbars. These are typically larger and easier to use": [
+        "Выкарыстоўвайце стандартную паласу прагорткі свайго браўзера. Звычайна яна больш і ёй прасцей карыстацца."
+      ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "Мы выявілі праблему з канфігурацыяй вашага DNS. Пераканайцеся, што вашы запісы адпавядаюць інструкцыям ніжэй. Калі праблема застанецца, то нам давядзецца адключыць падпісанне DKIM."
       ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "Мы прыпынілі падпісанне DKIM па прычыне праблем з канфігурацыяй вашага DNS. Прытрымлівайцеся інструкцый ніжэй, каб узнавіць падпісанне."
+      ],
+      "When enabled, animations and transitions will not show": [
+        "Калі ўключана, то анімацыя і пераходы паказвацца не будуць"
       ],
       "When you add a label to a message in a conversation, it will automatically be applied to all future messages you send or receive in that conversation.": [
         "Калі вы дабавіце метку да паведамлення ў размове, то яна будзе аўтаматычна ўжыта да ўсіх вашых наступных уваходных або выходных лістоў у гэтай размове."

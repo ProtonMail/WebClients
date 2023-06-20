@@ -3846,11 +3846,11 @@
       ]
     },
     "familyOffer_2023:Action": {
+      "Decline invitation": [
+        "Odrzuć zaproszenie"
+      ],
       "Got it": [
         "Ok"
-      ],
-      "Keep current plan": [
-        "Zachowaj obecny plan"
       ],
       "Switch plans": [
         "Zmień plany"
@@ -4154,9 +4154,34 @@
         "Domyślna"
       ]
     },
+    "Font face option": {
+      "System default": [
+        "Domyślny systemu"
+      ],
+      "Theme default": [
+        "Domyślny motyw"
+      ]
+    },
     "Font Size Default": {
       "Default": [
         "Domyślny"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Duża"
+      ],
+      "Medium (recommended)": [
+        "Średnia (zalecana)"
+      ],
+      "Small": [
+        "Mała"
+      ],
+      "Very large": [
+        "Bardzo duża"
+      ],
+      "Very small": [
+        "Bardzo mała"
       ]
     },
     "forwardmessage": {
@@ -4195,7 +4220,7 @@
         "Pozostał ${ days } dzień",
         "Pozostały ${ days } dni",
         "Pozostało ${ days } dni",
-        "Pozostało ${ days } dni"
+        "Pozostało ${ days } dnia"
       ]
     },
     "Get started checklist instructions": {
@@ -5054,6 +5079,9 @@
       "Custom yearly": [
         "Co rok (niestandardowo)"
       ],
+      "Customize the look and feel of ${ BRAND_NAME } applications.": [
+        "Dostosuj wygląd aplikacji ${ BRAND_NAME }."
+      ],
       "Daily": [
         "Codziennie"
       ],
@@ -5555,9 +5583,6 @@
       "Saved at ${ dateString }": [
         "Zapisano o ${ dateString }"
       ],
-      "Saved on ${ dateString }": [
-        "Zapisano o ${ dateString }"
-      ],
       "Saved yesterday": [
         "Zapisano wczoraj"
       ],
@@ -5710,6 +5735,9 @@
       ],
       "This conversation contains non-trashed messages.": [
         "Ten wątek zawiera nieusunięte wiadomości."
+      ],
+      "This conversation contains one or more expiring messages": [
+        "Wątek zawiera wygasające wiadomości"
       ],
       "This conversation contains trashed messages.": [
         "Ten wątek zawiera usunięte wiadomości."
@@ -6765,6 +6793,9 @@
       ],
       "Street address": [
         "Ulica"
+      ],
+      "Synchronize with system": [
+        "Domyślny systemu"
       ],
       "System information": [
         "Informacje o systemie"
@@ -8732,6 +8763,9 @@
         "${ unreads } nieprzeczytanych wiadomości",
         "${ unreads } nieprzeczytanych wiadomości"
       ],
+      "(active)": [
+        "(aktywny)"
+      ],
       "Account suspended": [
         "Konto zostało zawieszone"
       ],
@@ -8848,6 +8882,9 @@
       ],
       "Customize your mail import": [
         "Dostosuj proces importowania poczty"
+      ],
+      "Day theme": [
+        "Jasny motyw"
       ],
       "Decryption error": [
         "Błąd odszyfrowywania"
@@ -9088,6 +9125,9 @@
       ],
       "Next message": [
         "Następna wiadomość"
+      ],
+      "Night theme": [
+        "Ciemny motyw"
       ],
       "No attachment found": [
         "Nie znaleziono załącznika"

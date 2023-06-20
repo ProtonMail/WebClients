@@ -1658,11 +1658,11 @@
       ]
     },
     "familyOffer_2023:Action": {
+      "Decline invitation": [
+        "Rechazar invitación"
+      ],
       "Got it": [
         "Entiendo"
-      ],
-      "Keep current plan": [
-        "Mantener el plan actual"
       ],
       "Switch plans": [
         "Cambiar planes"
@@ -1981,7 +1981,7 @@
         "Grande"
       ],
       "Medium (recommended)": [
-        "Mediana (recomendado)"
+        "Mediana (recomendada)"
       ],
       "Small": [
         "Pequeña"
@@ -3250,6 +3250,9 @@
       ],
       "Security code": [
         "Código de seguridad"
+      ],
+      "Security code (${ codeName })": [
+        "Código de seguridad (${ codeName })"
       ],
       "Select your country": [
         "Seleccione su país"

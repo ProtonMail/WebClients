@@ -3811,9 +3811,6 @@
       "Got it": [
         "ОК"
       ],
-      "Keep current plan": [
-        "Остаться на текущем тарифе"
-      ],
       "Switch plans": [
         "Сменить тариф"
       ],
@@ -5016,6 +5013,9 @@
       "Custom yearly": [
         "Настраиваемое ежегодное"
       ],
+      "Customize the look and feel of ${ BRAND_NAME } applications.": [
+        "Настройте внешний вид ${ BRAND_NAME } приложений."
+      ],
       "Daily": [
         "Ежедневно"
       ],
@@ -5051,6 +5051,12 @@
       ],
       "Draft saved.": [
         "Черновик сохранен."
+      ],
+      "Drop file here to upload": [
+        "Переместите файл сюда, чтобы скачать"
+      ],
+      "Drop to import": [
+        "Импортировать"
       ],
       "Duplicate key updated": [
         "Дубликат ключа обновлён"
@@ -5409,6 +5415,9 @@
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Наша система отметила это сообщение как попытку фишинга. Пожалуйста, проверьте, является ли оно подлинным."
       ],
+      "Our system flagged this message as a suspicious email. Please check that it is legitimate before clicking any links or attachments.": [
+        "Наша система отметила это сообщение, как подозрительное. Пожалуйста, проверьте корректность адреса, прежде чем переходить по ссылкам или открывать вложения."
+      ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/Inline совместим только с форматом «простой текст»."
       ],
@@ -5663,6 +5672,9 @@
       ],
       "This conversation contains non-trashed messages.": [
         "В этой цепочке писем есть неудаленные сообщения."
+      ],
+      "This conversation contains one or more expiring messages": [
+        "Эта беседа содержит одно или несколько исчезающих сообщений"
       ],
       "This conversation contains trashed messages.": [
         "В этой цепочке писем есть удаленные сообщения."
@@ -6036,6 +6048,9 @@
       "Your email will only be used for this one-time verification.": [
         "Ваш адрес электронной почты будет использован только для этой разовой проверки."
       ],
+      "Your files will be encrypted and then saved": [
+        "Ваши файлы будут зашифрованы и затем сохранены"
+      ],
       "Your import will not be processed.": [
         "Ваш импорт не будет обработан."
       ],
@@ -6065,6 +6080,12 @@
       ]
     },
     "info": {
+      "${ filteredList.length } command found.": [
+        "${ filteredList.length } команда найдена",
+        "${ filteredList.length } найдены команды.",
+        "${ filteredList.length } команд найдено",
+        "${ filteredList.length } найденные команды."
+      ],
       "Optional": [
         "Необязательно"
       ]

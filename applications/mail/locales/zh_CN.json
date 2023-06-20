@@ -475,6 +475,9 @@
       "Hide messages": [
         "隐藏邮件"
       ],
+      "hide-my-email aliases": [
+        "Hide My Email 邮箱别名"
+      ],
       "I have a question": [
         "我有疑问"
       ],
@@ -515,7 +518,7 @@
         "插入"
       ],
       "Insert ${ totalChecked } contacts": [
-        "插入 ${ totalChecked } 个联系人"
+        "添加 ${ totalChecked } 位联系人"
       ],
       "Insert contact": [
         "插入联系人"
@@ -1013,7 +1016,7 @@
         "此邮件含有外链内容。"
       ],
       "To search your emails securely, we need to download a copy of your messages to your browser. The initial download may take a moment.": [
-        "为了安全地搜索您的电子邮件，我们需要将您的邮件副本下载到您的浏览器。 初始下载可能需要一些时间。"
+        "为了安全地搜索您的邮件内容，我们需要在浏览器后台下载您的所有往来邮件。首次下载可能需要耗费一些时间。"
       ],
       "Toggle Calendar app": [
         "切换至 Calendar 应用"
@@ -1828,6 +1831,41 @@
       ],
       "white": [
         "白色"
+      ]
+    },
+    "Commander action": {
+      "Create a new folder": [
+        "创建文件夹"
+      ],
+      "Create a new label": [
+        "创建标签"
+      ],
+      "Go to Archive": [
+        "转至存档"
+      ],
+      "Go to Drafts": [
+        "转至草稿"
+      ],
+      "Go to Inbox": [
+        "转至收件箱"
+      ],
+      "Go to Sent": [
+        "转至已发送"
+      ],
+      "Go to Spam": [
+        "转至垃圾邮件"
+      ],
+      "Go to Starred": [
+        "转至星标邮件"
+      ],
+      "Go to Trash": [
+        "转至废件箱"
+      ],
+      "New message": [
+        "撰写邮件"
+      ],
+      "Search": [
+        "搜索"
       ]
     },
     "Composer email icon": {
@@ -3736,9 +3774,6 @@
       "Got it": [
         "知道了"
       ],
-      "Keep current plan": [
-        "保持当前账户等级"
-      ],
       "Switch plans": [
         "变更账户等级"
       ],
@@ -3827,10 +3862,10 @@
     },
     "familyOffer_2023:Footer": {
       "*Your subscription will automatically renew at the same rate at the end of your billing cycle.": [
-        "*您的订阅将在您的结算周期结束时以相同的费率自动续订。"
+        "* 计费周期结束时账户将以相同费率自动续费。"
       ],
       "Discounts are based on the standard monthly pricing.": [
-        "折扣基于标准的每月定价。"
+        "折扣基于标准月费计算。"
       ]
     },
     "familyOffer_2023:Get Proton Family": {
@@ -3861,7 +3896,10 @@
     },
     "familyOffer_2023:Tooltip": {
       "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
-        "包括 65 个以上国家/地区的 2700 台服务器，连接多达 10 台设备，访问全球流媒体服务、恶意软件和广告拦截器等。"
+        "连接全球逾 65 个国家的 2700 台服务器，多达 10 台设备同时在线，畅享全球流媒体服务，拦截恶意软件和广告，还有更多功能等您体验。"
+      ],
+      "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
+        "支持 3 个自有域名、90 个邮箱地址、无限量 Hide My Email 邮箱别名、日程共享等功能。"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "使用加密的云存储保护您的文件。 包括自动同步、加密文件共享等。"
@@ -4026,9 +4064,34 @@
         "默认"
       ]
     },
+    "Font face option": {
+      "System default": [
+        "跟随系统"
+      ],
+      "Theme default": [
+        "跟随配色方案"
+      ]
+    },
     "Font Size Default": {
       "Default": [
         "默认"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "大"
+      ],
+      "Medium (recommended)": [
+        "中等（推荐）"
+      ],
+      "Small": [
+        "小"
+      ],
+      "Very large": [
+        "极大"
+      ],
+      "Very small": [
+        "极小"
       ]
     },
     "forwardmessage": {
@@ -4773,6 +4836,9 @@
       "Custom yearly": [
         "个人年计划"
       ],
+      "Customize the look and feel of ${ BRAND_NAME } applications.": [
+        "自由定制 ${ BRAND_NAME } 应用的外观。"
+      ],
       "Daily": [
         "每天"
       ],
@@ -4805,6 +4871,12 @@
       ],
       "Draft saved.": [
         "草稿已保存。"
+      ],
+      "Drop file here to upload": [
+        "拖至此处即可上传"
+      ],
+      "Drop to import": [
+        "拖至此处即可导入"
       ],
       "Duplicate key updated": [
         "重复的密钥已更新"
@@ -4919,6 +4991,9 @@
       ],
       "Hide original message": [
         "隐藏原始邮件"
+      ],
+      "How hide-my-email aliases works": [
+        "何为 Hide My Email 邮箱别名"
       ],
       "I'm sending this message to a non-${ MAIL_APP_NAME } user.": [
         "我确定要将此邮件发给非 ${ MAIL_APP_NAME } 邮箱。"
@@ -5062,7 +5137,7 @@
         "邮件将于明天 ${ formattedTime } 发送"
       ],
       "Messages downloaded: ${ currentProgress } out of ${ totalProgress }": [
-        "已下载${ currentProgress }/${ totalProgress } 封邮件"
+        "已下载 ${ currentProgress }/${ totalProgress } 封邮件"
       ],
       "Messages that have been in trash and spam more than 30 days will be automatically deleted.": [
         "已归入垃圾邮件或废件箱超过 30 天的邮件将被直接删除。"
@@ -5135,6 +5210,9 @@
       ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "我们的系统已将此邮件认定为欺诈邮件，请确认其内容真实性。"
+      ],
+      "Our system flagged this message as a suspicious email. Please check that it is legitimate before clicking any links or attachments.": [
+        "系统检测到此邮件来源可疑，请确认邮件真实性后再打开其中的链接或附件。"
       ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/Inline 只能用于纯文本邮件。"
@@ -5248,7 +5326,7 @@
         "定时发送邮件中..."
       ],
       "Search option that lets you securely search for keywords in the body of email messages.": [
-        "搜索选项，可让您安全地搜索电子邮件正文中的关键字。"
+        "开启此选项即可安全地搜索邮件全文。"
       ],
       "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
         "搜索耗时太长？试试${ dropdownButton }或${ toggleOffButton }。"
@@ -5303,6 +5381,9 @@
       ],
       "Show original message": [
         "显示原始邮件"
+      ],
+      "SimpleLogin is a ${ BRAND_NAME } service, and your ${ BRAND_NAME_TWO } Account includes hide-my-email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
+        "您可以使用 ${ BRAND_NAME } 提供的 SimpleLogin 服务隐藏您的 ${ BRAND_NAME_TWO } 邮箱地址，只需前往 SimpleLogin 创建邮箱别名即可。"
       ],
       "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
         "如果您不愿将真实邮箱透露给其他网站，SimpleLogin 能够方便快捷地生成临时邮箱供您使用。"
@@ -5376,6 +5457,9 @@
       "These messages will be marked as spam. Would you also like to unsubscribe from future emails?": [
         "标为垃圾邮件后，是否要退订此类邮件？"
       ],
+      "They can't spam you if they don't know your email address. Protect your inbox with hide-my-email aliases.": [
+        "只要不知道您的邮箱地址就无法发送垃圾邮件。使用 Hide My Email 功能将垃圾邮件拒之门外。"
+      ],
       "This account has been suspended due to a potential policy violation.": [
         "此账户因可能违反用户协议而被封禁。"
       ],
@@ -5390,6 +5474,9 @@
       ],
       "This conversation contains non-trashed messages.": [
         "此会话包含不在废件箱中的邮件。"
+      ],
+      "This conversation contains one or more expiring messages": [
+        "此会话中部分邮件已设置有效期"
       ],
       "This conversation contains trashed messages.": [
         "此会话包含废件箱中的邮件。"
@@ -5491,7 +5578,7 @@
         "待发送的邮件过多，请静待另一封邮件发送后陆续发送此邮件。"
       ],
       "Turn off to only search by date, name, or email address. To disable search message content and delete downloaded messages, go to settings.": [
-        "关闭以仅按日期、姓名或电子邮件地址搜索。 要禁用搜索邮件内容和删除下载的邮件，请转到设置。"
+        "关闭则仅搜索日期、姓名和邮箱地址。前往设置可关闭邮件全文搜索并删除已下载的邮件。"
       ],
       "Turn on to search the content of your messages": [
         "开启以搜索您的邮件全文"
@@ -5597,6 +5684,9 @@
       ],
       "When do you want your message to self-destruct?": [
         "您想何时自动销毁此邮件？"
+      ],
+      "When giving out your email, use a unique, disposable hide-my-email alias instead of your real email address.": [
+        "在网上填写邮箱时，不必使用真实的邮箱地址，只需填写一个可销毁的 Hide My Email 临时邮箱。"
       ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "当您为 ${ senderName } 启用可信密钥时，公钥被添加到联系人详细信息中。"
@@ -5727,6 +5817,9 @@
       "Your email will only be used for this one-time verification.": [
         "您的邮箱将只会用于此一次性验证。"
       ],
+      "Your files will be encrypted and then saved": [
+        "您的文件将被加密保存。"
+      ],
       "Your import will not be processed.": [
         "此次导入将不会进行。"
       ],
@@ -5753,6 +5846,9 @@
       ]
     },
     "info": {
+      "${ filteredList.length } commands found.": [
+        "找到 ${ filteredList.length } 条命令。"
+      ],
       "Optional": [
         "可选"
       ]
@@ -5784,10 +5880,10 @@
     },
     "Key pinning": {
       "Clicking \"Trust Key\" will associate this public key with this sender and emails from this address will be automatically cryptographically verified.": [
-        "单击“信任密钥”会将此公钥与此发件人相关联，来自此地址的电子邮件将自动进行密码验证。"
+        "点击“信任密钥”将该发件人与此公钥关联，以后可自动验证其发来的邮件。"
       ],
       "Clicking \"Trust Key\" will create a new contact and associate this public key with this sender. Emails from this address will be automatically cryptographically verified.": [
-        "单击“信任密钥”将创建一个新联系人并将此公钥与此发件人相关联。 来自该地址的电子邮件将自动进行密码验证。"
+        "点击“信任密钥”将创建联系人并与此公钥关联，以后可自动验证其发来的邮件。"
       ],
       "Do you want to trust the primary public keys with the following fingerprints?": [
         "你想用以下指纹信任主公钥吗？"
@@ -5912,6 +6008,9 @@
       ],
       "New message": [
         "撰写邮件"
+      ],
+      "Open command panel": [
+        "打开命令面板"
       ],
       "Open next message": [
         "打开下一封邮件"
@@ -6389,6 +6488,9 @@
       "Street address": [
         "街道地址"
       ],
+      "Synchronize with system": [
+        "跟随系统"
+      ],
       "System information": [
         "系统信息"
       ],
@@ -6424,6 +6526,9 @@
       ],
       "Toolbar": [
         "工具栏"
+      ],
+      "Type a command...": [
+        "输入命令..."
       ],
       "Undisclosed Recipients": [
         "非公开收件人"
@@ -7005,6 +7110,9 @@
       "Custom email domains": [
         "自有域名"
       ],
+      "Hide-my-email aliases": [
+        "Hide My Email 邮箱别名"
+      ],
       "Schedule messages at any time": [
         "自由选择发送时间"
       ],
@@ -7105,6 +7213,9 @@
       ],
       "Discover all ${ BRAND_NAME } services": [
         "探索各类 ${ BRAND_NAME } 服务"
+      ],
+      "More theming options are available in your account Settings > Appearance.": [
+        "在设置 > 外观中还有更多配色可供选择。"
       ],
       "Select a theme": [
         "选择配色"
@@ -7250,7 +7361,7 @@
         "请先输入链接内容"
       ],
       "Search date, name, email address, or subject line": [
-        "搜索日期、姓名、电子邮件地址或主题行"
+        "搜索日期、姓名、邮箱地址或邮件主题"
       ],
       "Search for group name": [
         "搜索群组名称"
@@ -7278,6 +7389,9 @@
       ],
       "Text": [
         "文本"
+      ],
+      "Type a command…": [
+        "输入命令…"
       ],
       "Type text or keyword": [
         "输入文本或关键词"
@@ -7646,10 +7760,10 @@
     },
     "specialoffer: Footer": {
       "Discounts are based on the standard monthly pricing.": [
-        "折扣基于标准的每月定价。"
+        "折扣基于标准月费计算。"
       ],
       "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
-        "此订阅将以相同的费率每 2 年自动续订一次，直至取消。"
+        "每两年账户将以相同费率自动续费，直至手动退订。"
       ]
     },
     "specialoffer: Label": {
@@ -7706,13 +7820,13 @@
         "${ n } 个月"
       ],
       "Get the deal": [
-        "达成交易"
+        "立即享受优惠"
       ],
       "Renews after 1 year at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
-        "一年后以折扣价或 ${ discountedAmount } ，而不是 ${ regularAmount } (${ discount }% discount) 续订"
+        "一年后续费时仍可享受折扣价 ${ discountedAmount }（优惠 ${ discount }%），无需支付原价 ${ regularAmount }"
       ],
       "Renews after 2 years at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
-        "两年后以折扣价或 ${ discountedAmount } 而不是 ${ regularAmount } (${ discount }% discount) 续订"
+        "两年后续费时仍可享受折扣价 ${ discountedAmount }（优惠 ${ discount }%），无需支付原价 ${ regularAmount }"
       ],
       "Save ${ discount }%": [
         "立省 ${ discount }%"
@@ -7735,45 +7849,54 @@
     },
     "specialoffer: Title": {
       "Black Friday Sale": [
-        "黑色星期五促销"
+        "黑色星期五特惠"
       ],
       "Cyber Week Sale": [
-        "Cyber Week热卖"
+        "Cyber Week 特惠"
       ],
       "End of year offer": [
-        "年底优惠"
+        "年终特惠"
       ],
       "End of Year Sale": [
-        "年底热卖"
+        "年终特惠"
       ],
       "Get our premium bundle and save more": [
-        "获取我们的高级套餐并节省更多"
+        "选择高级套装更加优惠"
       ],
       "Our discontinued Visionary plan is back for a limited time only": [
-        "我们已停产的 Visionary 计划限时回归"
+        "绝版 Visionary 账户限时回归"
       ],
       "Save more with 2 years of ${ planName }": [
-        "使用两年的${ planName }可节省更多费用"
+        "一次性开通两年 ${ planName } 更加优惠"
       ],
       "Upgrade and save more with 2 years of ${ planName }": [
-        "升级两年的${ planName }并节省更多的费用"
+        "一次性开通两年 ${ planName } 更加优惠"
       ]
     },
     "specialoffer: Tooltip": {
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.": [
-        "访问被阻止的内容并私下浏览。 包括 60 多个国家/地区的 1700 台服务器、最高的 VPN 速度、每位用户 10 个 VPN 连接、全球流媒体服务、恶意软件和广告拦截器等。"
+        "突破网络封锁，保护线上隐私。可连接全球逾 60 个国家的 1700 台服务器，每位用户 10 台设备可同时在线，畅享全球流媒体服务，拦截恶意软件和广告，还有更多功能等您体验。"
       ],
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
-        "访问被阻止的内容并私下浏览。 包括 60 多个国家/地区的 1700 台服务器、最高的 VPN 速度、10 个 VPN 连接、全球流媒体服务、恶意软件和广告拦截器等。"
+        "突破网络封锁，保护线上隐私。可连接全球逾 60 个国家的 1700 台服务器，10 台设备可同时在线，畅享全球流媒体服务，拦截恶意软件和广告，还有更多功能等您体验。"
       ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
-        "从任何地方访问流媒体服务上的内容，包括 Netflix、Disney+ 和 Prime Video。"
+        "随时随地畅享 Netflix、Disney+、Prime Video 等精彩内容。"
+      ],
+      "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
+        "顶格享受我们的所有高级服务：100 个邮箱地址、10 个自有域名、无限量 Hide My Email 邮箱别名、日程共享、支持文件共享的加密云盘等。"
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "支持 1 个自有域名、10 个邮箱地址、10 个 Hide My Email 邮箱别名、日程共享等功能。"
+      ],
+      "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "支持 3 个自有域名、15 个邮箱地址、无限量 Hide My Email 邮箱别名、日程共享等功能。"
       ],
       "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
-        "非常适合家庭或小型团队，每个人都可以拥有自己的收件箱和别名。 需要一个自定义域名。"
+        "适合家庭与小型团队，每个人都能拥有各自的邮箱和地址。需要使用自有域名。"
       ],
       "Receive at no extra cost the paid versions of all new privacy services we release in the future, along with early access to all future features and products.": [
-        "免费获得我们未来发布的所有新隐私服务的付费版本，以及对所有未来功能和产品的抢先体验。"
+        "无需额外付费即可享受我们未来推出的所有隐私保护服务，还能抢先体验各类新产品和新功能。"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "使用加密的云存储保护您的文件。 包括自动同步、加密文件共享等。"
@@ -7799,7 +7922,7 @@
         "搜索变得更智能、更快速"
       ],
       "Try it today.": [
-        "马上试试。"
+        "期待您的体验。"
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "我们现已默认允许外链图片加载，并为您开启发件方追踪防护。这些选项可以在${ settingsLink }中更改。"
@@ -7987,7 +8110,7 @@
         "邮件已添加 ${ labelName } 标签。"
       ],
       "Message content search enabled": [
-        "已启用邮件内容搜索"
+        "邮件全文搜索已开启"
       ],
       "Message deleted": [
         "邮件已删除"
@@ -8169,6 +8292,9 @@
       "${ unreads } unread messages": [
         "${ unreads } 封未读邮件"
       ],
+      "(active)": [
+        "（当前）"
+      ],
       "Account suspended": [
         "账号已被停用"
       ],
@@ -8282,6 +8408,9 @@
       ],
       "Customize your mail import": [
         "自定义您的邮件导入"
+      ],
+      "Day theme": [
+        "日间模式"
       ],
       "Decryption error": [
         "解密失败"
@@ -8505,6 +8634,9 @@
       "Next message": [
         "下一封邮件"
       ],
+      "Night theme": [
+        "夜间模式"
+      ],
       "No attachment found": [
         "未找到附件"
       ],
@@ -8710,6 +8842,9 @@
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "“自动”表示使用编辑区中指定的格式，“纯文本”则表示向此人发送的邮件一律使用纯文本。"
       ],
+      "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
+        "根据系统设置自动调整日间或夜间模式。"
+      ],
       "Customize import to reduce the number of folders": [
         "自定义导入，减少文件夹数量。"
       ],
@@ -8760,6 +8895,12 @@
       ],
       "The import will start with the most recent messages.": [
         "导入将从最近的信息开始。"
+      ],
+      "The selected theme will be active when your system is set to \"dark mode\"": [
+        "所选模式将在系统设置为“暗色模式”时生效。"
+      ],
+      "The selected theme will be active when your system is set to \"light mode\"": [
+        "所选模式将在系统设置为“亮色模式”时生效。"
       ],
       "This feature is only available for paid users": [
         "此功能仅供付费用户使用"
