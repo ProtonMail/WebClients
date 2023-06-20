@@ -256,10 +256,7 @@ export default function useUploadFile() {
                 if (conflictStrategy === TransferConflictStrategy.Rename) {
                     return createFile(abortSignal, newName, mimeType, hash, keys);
                 }
-                if (
-                    conflictStrategy === TransferConflictStrategy.Replace ||
-                    conflictStrategy === TransferConflictStrategy.Merge
-                ) {
+                if (conflictStrategy === TransferConflictStrategy.Replace) {
                     if (draftLinkId) {
                         return replaceDraft(abortSignal, file.name, mimeType, hash, keys, draftLinkId);
                     }
