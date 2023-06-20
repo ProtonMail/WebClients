@@ -138,7 +138,7 @@ export const DropdownContent: VFC = () => {
                                 })}
                                 onSubmitUserEmail={withStateReset((userEmail) => {
                                     postMessage({
-                                        type: IFrameMessageType.DROPDOWN_AUTOSUGGEST_USER_EMAIL,
+                                        type: IFrameMessageType.DROPDOWN_AUTOFILL_USER_EMAIL,
                                         payload: { userEmail },
                                     });
                                 })}

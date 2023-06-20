@@ -206,7 +206,7 @@ export const createDropdown = (): InjectedDropdown => {
         fieldRef.current?.focus({ preventDefault: true });
     });
 
-    iframe.registerMessageHandler(IFrameMessageType.DROPDOWN_AUTOSUGGEST_USER_EMAIL, (message) => {
+    iframe.registerMessageHandler(IFrameMessageType.DROPDOWN_AUTOFILL_USER_EMAIL, (message) => {
         const { userEmail } = message.payload;
         fieldRef.current?.autofill(userEmail);
         iframe.close();
