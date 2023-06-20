@@ -2768,9 +2768,6 @@
       "Got it": [
         "了解"
       ],
-      "Keep current plan": [
-        "現在のプランを維持"
-      ],
       "Switch plans": [
         "プランを変更"
       ],
@@ -2953,6 +2950,31 @@
     "Filter notification": {
       "${ Label.Name } updated": [
         "${ Label.Name } は更新されました"
+      ]
+    },
+    "Font face option": {
+      "System default": [
+        "システムのデフォルト"
+      ],
+      "Theme default": [
+        "テーマのデフォルト"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "大"
+      ],
+      "Medium (recommended)": [
+        "中 (推奨)"
+      ],
+      "Small": [
+        "小"
+      ],
+      "Very large": [
+        "極大"
+      ],
+      "Very small": [
+        "極小"
       ]
     },
     "Group": {
@@ -5731,6 +5753,9 @@
       "${ emailsCount } email addresses": [
         "${ emailsCount } 件のメールアドレス"
       ],
+      "(active)": [
+        "(アクティブ)"
+      ],
       "Account suspended": [
         "アカウントが停止されました"
       ],
@@ -5817,6 +5842,9 @@
       ],
       "Customize your mail import": [
         "メールのインポートをカスタマイズ"
+      ],
+      "Day theme": [
+        "昼間のテーマ"
       ],
       "Delete ${ count } contact groups": [
         "${ count } 件の連絡先を削除"
@@ -5913,6 +5941,9 @@
       ],
       "Minicalendar": [
         "ミニカレンダー"
+      ],
+      "Night theme": [
+        "夜間のテーマ"
       ],
       "Open actions dropdown": [
         "アクションのドロップダウンを開く"
