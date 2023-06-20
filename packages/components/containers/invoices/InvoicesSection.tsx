@@ -109,12 +109,14 @@ const InvoicesSection = () => {
                                 <Button className={owner === USER ? 'is-selected' : ''} onClick={handleOwner(USER)}>
                                     {c('Action').t`User`}
                                 </Button>
-                                <Button
-                                    className={owner === ORGANIZATION ? 'is-selected' : ''}
-                                    onClick={handleOwner(ORGANIZATION)}
-                                >
-                                    {c('Action').t`Organization`}
-                                </Button>
+                                {user.isAdmin && (
+                                    <Button
+                                        className={owner === ORGANIZATION ? 'is-selected' : ''}
+                                        onClick={handleOwner(ORGANIZATION)}
+                                    >
+                                        {c('Action').t`Organization`}
+                                    </Button>
+                                )}
                             </ButtonGroup>
                         ) : null}
                         {invoices.length > 0 && (
