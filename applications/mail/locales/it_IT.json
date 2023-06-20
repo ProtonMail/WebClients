@@ -3796,11 +3796,11 @@
       ]
     },
     "familyOffer_2023:Action": {
+      "Decline invitation": [
+        "Rifiuta l'invito"
+      ],
       "Got it": [
         "OK"
-      ],
-      "Keep current plan": [
-        "Mantieni il piano attuale"
       ],
       "Switch plans": [
         "Cambia piano"
@@ -4097,9 +4097,34 @@
         "Predefinito"
       ]
     },
+    "Font face option": {
+      "System default": [
+        "Predefinito di sistema"
+      ],
+      "Theme default": [
+        "Tema predefinito"
+      ]
+    },
     "Font Size Default": {
       "Default": [
         "Predefinito"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Grande"
+      ],
+      "Medium (recommended)": [
+        "Medio (consigliato)"
+      ],
+      "Small": [
+        "Piccolo"
+      ],
+      "Very large": [
+        "Molto grande"
+      ],
+      "Very small": [
+        "Molto piccolo"
       ]
     },
     "forwardmessage": {
@@ -6572,6 +6597,9 @@
       "Street address": [
         "Indirizzo"
       ],
+      "Synchronize with system": [
+        "Sincronizza con il sistema"
+      ],
       "System information": [
         "Informazioni sul sistema"
       ],
@@ -8432,6 +8460,9 @@
         "${ unreads } messaggio non letto",
         "${ unreads } messaggi non letti"
       ],
+      "(active)": [
+        "(attivo)"
+      ],
       "Account suspended": [
         "Account sospeso"
       ],
@@ -8546,6 +8577,9 @@
       ],
       "Customize your mail import": [
         "Personalizza l'importazione della tua mail"
+      ],
+      "Day theme": [
+        "Tema giorno"
       ],
       "Decryption error": [
         "Errore di decriptazione"
@@ -8774,6 +8808,9 @@
       ],
       "Next message": [
         "Prossimo messaggio"
+      ],
+      "Night theme": [
+        "Tema notte"
       ],
       "No attachment found": [
         "Nessun allegato trovato"
