@@ -1,7 +1,7 @@
 import { useFeatures } from '@proton/components/hooks';
 
 import { FeatureCode } from '../../features';
-import { OfferConfig, OfferId, Operation, OperationsMap } from '../interface';
+import { OfferConfig, OfferId, Operation } from '../interface';
 import { blackFridayMail2022Config, useBlackFridayMail2022 } from '../operations/blackFridayMail2022';
 import { blackFridayMailFree2022Config, useBlackFridayMailFree2022 } from '../operations/blackFridayMailFree2022';
 import { blackFridayMailPro2022Config, useBlackFridayMailPro2022 } from '../operations/blackFridayMailPro2022';
@@ -13,6 +13,7 @@ import { family3Deal2023Config, useFamily3Deal2023 } from '../operations/family3
 import { goUnlimited2022Config, useGoUnlimited2022 } from '../operations/goUnlimited2022';
 import { mailTrial2023Config, useMailTrial2023 } from '../operations/mailTrial2023';
 import { specialOffer2022Config, useSpecialOffer2022 } from '../operations/specialOffer2022';
+import { summer2023Config, useSummer2023 } from '../operations/summer2023';
 
 const configs: Record<OfferId, OfferConfig> = {
     'go-unlimited-2022': goUnlimited2022Config,
@@ -26,6 +27,7 @@ const configs: Record<OfferId, OfferConfig> = {
     'mail-trial-2023': mailTrial2023Config,
     'family-3-deal-2023': family3Deal2023Config,
     'family-1-deal-2023': family1Deal2023Config,
+    'summer-2023': summer2023Config,
 };
 
 const OFFERS_FEATURE_FLAGS = Object.values(configs).map(({ featureCode }) => featureCode);
@@ -45,23 +47,23 @@ const useOfferConfig = (): [OfferConfig | undefined, boolean] => {
     const mailTrial2023 = useMailTrial2023();
     const family3Deal2023 = useFamily3Deal2023();
     const family1Deal2023 = useFamily1Deal2023();
+    const summer2023 = useSummer2023();
 
     // Offer order matters
-    const operations: OperationsMap = {
-        'black-friday-mail-free-2022': blackFridayMailFree2022,
-        'black-friday-mail-2022': blackFridayMail2022,
-        'black-friday-mail-pro-2022': blackFridayMailPro2022,
-        'black-friday-vpn-1-deal-2022': blackFridayVPN1Deal2022,
-        'black-friday-vpn-2-deal-2022': blackFridayVPN2Deal2022,
-        'black-friday-vpn-3-deal-2022': blackFridayVPN3Deal2022,
-        'family-3-deal-2023': family3Deal2023,
-        'family-1-deal-2023': family1Deal2023,
-        'go-unlimited-2022': goUnlimited2022,
-        'special-offer-2022': specialOffer2022,
-        'mail-trial-2023': mailTrial2023,
-    };
-
-    const allOffers = Object.values(operations);
+    const allOffers: Operation[] = [
+        blackFridayMailFree2022,
+        blackFridayMail2022,
+        blackFridayMailPro2022,
+        blackFridayVPN1Deal2022,
+        blackFridayVPN2Deal2022,
+        blackFridayVPN3Deal2022,
+        summer2023,
+        family3Deal2023,
+        family1Deal2023,
+        goUnlimited2022,
+        specialOffer2022,
+        mailTrial2023,
+    ];
 
     const validOffer: Operation | undefined = allOffers.find((offer) => !offer.isLoading && offer.isValid);
     const isLoading = allOffers.some((offer) => offer.isLoading);

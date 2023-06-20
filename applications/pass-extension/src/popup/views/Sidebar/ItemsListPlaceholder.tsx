@@ -42,7 +42,7 @@ export const ItemsListPlaceholder: VFC = () => {
             {
                 type: 'alias',
                 icon: itemTypeToIconName.alias,
-                label: c('Label').t`Create a Hide My Email alias`,
+                label: c('Label').t`Create a hide-my-email alias`,
                 onClick: () => history.push(`/item/new/alias`),
             },
             {
