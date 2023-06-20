@@ -74,6 +74,9 @@
       "Add address": [
         "Adres ekle"
       ],
+      "Add address or domain": [
+        "Adres ya da etki alanı ekle"
+      ],
       "Add calendar from URL": [
         "Adresten takvim ekle"
       ],
@@ -124,6 +127,9 @@
       ],
       "Alignment": [
         "Hizalama"
+      ],
+      "Allow": [
+        "İzin ver"
       ],
       "Apply": [
         "Uygula"
@@ -205,6 +211,9 @@
       ],
       "Continue": [
         "İlerle"
+      ],
+      "Continue anyway": [
+        "Yine de ilerle"
       ],
       "Continue import": [
         "İçe aktarmayı sürdür"
@@ -755,11 +764,17 @@
       "Send code": [
         "Kodu gönder"
       ],
+      "Send email reminder": [
+        "E-posta hatırlatıcısı gönder"
+      ],
       "Send messages with @pm.me": [
         "@pm.me adresinden ileti gönderin"
       ],
       "Send my username": [
         "Kullanıcı adımı gönder"
+      ],
+      "Send reminder": [
+        "Hatırlatıcı gönder"
       ],
       "Set as default": [
         "Varsayılan olarak ayarla"
@@ -1063,6 +1078,11 @@
       ],
       "Orphan": [
         "Sahipsiz"
+      ]
+    },
+    "Admin": {
+      "admin": [
+        "Yönetici"
       ]
     },
     "Alert": {
@@ -2761,8 +2781,20 @@
       "${ name } deletion failed": [
         "${ name } silinemedi"
       ],
+      "${ name } failed to move to allow list": [
+        "${ name } izin verilen adresler listesine eklenemedi"
+      ],
+      "${ name } failed to move to block list": [
+        "${ name } engellenen adresler listesine eklenemedi"
+      ],
       "${ name } failed to move to spam list": [
         "${ name } istenmeyenler listenize eklenemedi"
+      ],
+      "${ name } moved to allow list": [
+        "${ name } izin verilen adresler listesine eklendi"
+      ],
+      "${ name } moved to block list": [
+        "${ name } engellenen adresler listesine eklendi"
       ],
       "${ name } moved to spam list": [
         "${ name } istenmeyenler listesine eklendi"
@@ -2866,8 +2898,20 @@
       "${ name } deletion failed": [
         "${ name } silinemedi"
       ],
+      "${ name } failed to move to allow list": [
+        "${ name } izin verilen adresler listesine eklenemedi"
+      ],
+      "${ name } failed to move to block list": [
+        "${ name } engellenen adresler listesine eklenemedi"
+      ],
       "${ name } failed to move to spam list": [
         "${ name } istenmeyenler listenize eklenemedi"
+      ],
+      "${ name } moved to allow list": [
+        "${ name } izin verilen adresler listesine eklendi"
+      ],
+      "${ name } moved to block list": [
+        "${ name } engellenen adresler listesine eklendi"
       ],
       "${ name } moved to spam list": [
         "${ name } istenmeyenler listesine eklendi"
@@ -3749,6 +3793,9 @@
       "Create a new user": [
         "Yeni bir kullanıcı oluştur"
       ],
+      "Decline invitation": [
+        "Daveti reddet"
+      ],
       "Got it": [
         "Anladım"
       ],
@@ -3757,9 +3804,6 @@
       ],
       "Invite member to your family": [
         "Aile üyesi davet et"
-      ],
-      "Keep current plan": [
-        "Geçerli tarifede kal"
       ],
       "Set up family group": [
         "Aile grubunu ayarla"
@@ -4254,8 +4298,41 @@
       "Add a custom filter to automatically perform certain actions, like labeling or archiving messages.": [
         "İletileri etiketlemek ya da arşivlemek gibi belirli işlemleri otomatik olarak yapmak için özel bir süzgeç ekleyin."
       ],
+      "Allow:": [
+        "İzin verilen:"
+      ],
+      "Block:": [
+        "Engellenen:"
+      ],
       "Search list": [
         "Arama listesi"
+      ],
+      "Spam:": [
+        "İstenmeyen:"
+      ],
+      "Take control over what lands in your inbox by creating the following lists:": [
+        "Bu listeleri kullanarak gelen kutunuza ulaşmasını istediğiniz e-postaları belirleyin:"
+      ],
+      "Take control over what lands in your organization members' inboxes by creating the following lists:": [
+        "Bu listeleri kullanarak üyelerinizin gelen kutularına ulaşmasını istediğiniz e-postaları belirleyin:"
+      ],
+      "These lists apply to all accounts in your organization. Members can create their own individual filters, but won't be able to override addresses or domains you blocked.": [
+        "Bu listeler kuruluşunuzdaki tüm hesaplar tarafından kullanılır. Üyeler kendi bireysel süzgeçlerini oluşturabilir, ancak engellediğiniz adresleri veya etki alanlarını geçersiz kılamazlar."
+      ],
+      "To ensure critical messages don't end up in spam and getting missed": [
+        "Kritik iletilerin istenmeyen e-posta olarak algılanmasını engelleyin"
+      ],
+      "To prevent junk mail from clogging up inboxes": [
+        "Gelen kutularının istenmeyen e-postalarla dolmasını engelleyin"
+      ],
+      "To prevent junk mail from clogging up your inbox": [
+        "Gelen kutunuzun istenmeyen e-postalarla dolmasını engelleyin"
+      ],
+      "To stop phishing or suspicious emails from entering your email system": [
+        "Sahte veya şüpheli e-postaların e-posta sisteminize girmesini engelleyin"
+      ],
+      "To stop phishing or suspicious emails from entering your organization's email system": [
+        "Sahte veya şüpheli e-postaların kuruluşunuzun e-posta sistemine girmesini engelleyin"
       ]
     },
     "Font Face Default": {
@@ -4263,9 +4340,34 @@
         "Varsayılan"
       ]
     },
+    "Font face option": {
+      "System default": [
+        "Sistem varsayılanı"
+      ],
+      "Theme default": [
+        "Tema varsayılanı"
+      ]
+    },
     "Font Size Default": {
       "Default": [
         "Varsayılan"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Büyük"
+      ],
+      "Medium (recommended)": [
+        "Orta (önerilen)"
+      ],
+      "Small": [
+        "Küçük"
+      ],
+      "Very large": [
+        "Çok büyük"
+      ],
+      "Very small": [
+        "Çok küçük"
       ]
     },
     "Frequency of news": {
@@ -5318,6 +5420,9 @@
       "Custom yearly": [
         "Yılda bir, özel"
       ],
+      "Customize the look and feel of ${ BRAND_NAME } applications.": [
+        "${ BRAND_NAME } uygulamalarının görünümünü ve kullanımını özelleştirin."
+      ],
       "Daily": [
         "Günlük"
       ],
@@ -5622,6 +5727,9 @@
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "${ importedEmailAddress } verileriniz ${ toEmail } içine aktarılıyor."
+      ],
+      "Improve your ${ BRAND_NAME } experience by adapting the application to your needs.": [
+        "Uygulamayı gereksinimlerinize göre uyarlayarak ${ BRAND_NAME } deneyiminizi iyileştirin."
       ],
       "Inherited from parent folder": [
         "Üst klasörden devralındı"
@@ -6044,6 +6152,9 @@
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Hangi takvimlerin içe aktarılacağını seçin. İçe aktarılan her takvim için tarifenizde bulunan takvim sayısına göre yeni bir takvim oluşturulur."
       ],
+      "Send emails to encourage your members to protect their accounts with 2FA.": [
+        "Üyelerinize hesaplarını iki adımlı doğrulama ile korumaya özendiren e-postalar gönderin."
+      ],
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "Bu ileti <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> güvenli e-posta hizmetiyle gönderilmiştir."
       ],
@@ -6170,6 +6281,9 @@
       "The following address was not created.": [
         "Şu adres eklenemedi.",
         "Şu adresler eklenemedi."
+      ],
+      "The following members will receive an email prompting them to enable two-factor authentication as soon as possible.": [
+        "Şu üyelere, en kısa sürede iki adımlı doğrulamayı etkinleştirmelerini bildiren bir e-posta gönderilecek."
       ],
       "The format of your CSV file is incorrect.": [
         "CSV dosyanız doğru biçimde değil."
@@ -6467,6 +6581,9 @@
       ],
       "We need to authenticate your payment with your bank.": [
         "Ödemenizi bankanızla doğrulamamız gerekiyor."
+      ],
+      "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
+        "İki adımlı doğrulama kullanımını zorunlu kılmadan önce kuruluş üyelerini bilgilendirmenizi ve hesapları için iki adımlı doğrulamayı kurmalarını istemenizi öneririz."
       ],
       "We recommend using your recovery phrase instead.": [
         "Bunun yerine kurtarma ifadesini kullanmanızı öneririz."
@@ -7225,6 +7342,9 @@
       "All-day event notifications": [
         "Tüm gün etkinlik bildirimleri"
       ],
+      "Allow": [
+        "İzin verilen"
+      ],
       "Allow notifications by email": [
         "E-posta bildirimleri kullanılabilsin"
       ],
@@ -7297,6 +7417,9 @@
       "Billing cycle": [
         "Fatura dönemi"
       ],
+      "Block": [
+        "Engellenen"
+      ],
       "Block email tracking": [
         "E-postanın izlenmesi engellensin"
       ],
@@ -7326,6 +7449,9 @@
       ],
       "Card holder": [
         "Kart sahibi"
+      ],
+      "Card information": [
+        "Kart bilgileri"
       ],
       "Card number": [
         "Kart numarası"
@@ -7447,6 +7573,9 @@
       "Default PGP scheme": [
         "Varsayılan PGP şeması"
       ],
+      "Default scrollbars": [
+        "Varsayılan kaydırma çubukları"
+      ],
       "Default view": [
         "Varsayılan görünüm"
       ],
@@ -7467,6 +7596,9 @@
       ],
       "Digits": [
         "Hane sayısı"
+      ],
+      "Disable animations": [
+        "Canlandırmaları kapat"
       ],
       "Display name": [
         "Görüntülenecek ad"
@@ -7537,6 +7669,9 @@
       "Event notifications": [
         "Etkinlik bildirimleri"
       ],
+      "Expiration (${ patternExpiration })": [
+        "Geçerlilik süresi (${ patternExpiration })"
+      ],
       "Expiration date": [
         "Son kullanma tarihi"
       ],
@@ -7551,6 +7686,12 @@
       ],
       "Folder location": [
         "Klasör konumu"
+      ],
+      "Font family": [
+        "Yazı tipi ailesi"
+      ],
+      "Font size": [
+        "Yazı boyutu"
       ],
       "From: ${ from }": [
         "Kimden: ${ from }"
@@ -7819,11 +7960,20 @@
       "Repeat password": [
         "Parola onayı"
       ],
+      "Require 2FA for administrators": [
+        "İki adımlı doğrulama yöneticiler için zorunlu olsun"
+      ],
+      "Require 2FA for everyone": [
+        "İki adımlı doğrulama herkes için zorunlu olsun"
+      ],
       "Reveal password": [
         "Parolayı göster"
       ],
       "Security code": [
         "Güvenlik kodu"
+      ],
+      "Security code (${ codeName })": [
+        "Güvenlik kodu (${ codeName })"
       ],
       "Select your country": [
         "Ülkenizi seçin"
@@ -7890,6 +8040,9 @@
       ],
       "Subscription options": [
         "Abonelik seçenekleri"
+      ],
+      "Synchronize with system": [
+        "Sistem ile aynı"
       ],
       "System information": [
         "Sistem bilgileri"
@@ -8254,6 +8407,10 @@
       ]
     },
     "Loading info": {
+      "${ twoFAMembers.length }/${ members.length } of your organization member use two-factor authentication.": [
+        "Kuruluşunuzdaki ${ twoFAMembers.length }/${ members.length } üye iki adımlı doğrulama kullanıyor.",
+        "Kuruluşunuzdaki ${ twoFAMembers.length }/${ members.length } üye iki adımlı doğrulama kullanıyor."
+      ],
       "Almost there": [
         "Neredeyse tamam"
       ],
@@ -8533,6 +8690,9 @@
       "All": [
         "Tümü"
       ],
+      "Allow": [
+        "İzin verilen"
+      ],
       "Back": [
         "Geri"
       ],
@@ -8544,6 +8704,9 @@
       ],
       "Back to inbox": [
         "Gelen kutusuna dön"
+      ],
+      "Block": [
+        "Engellenen"
       ],
       "Calendar": [
         "Takvim"
@@ -9284,7 +9447,7 @@
         "Dosyalarınızı şifrelenmiş bulut depolama alanı ile koruyun. Otomatik eşitleme, şifrelenmiş dosya paylaşımı ve diğer özellikler."
       ],
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
-        "Kişilerinizin, telefon numarası, adres, doğum günü ve kişisel notlar gibi bilgilerini güvenli bir şekilde saklayın. Sıfır erişimli şifreleme, bu bilgilere ${ BRAND_NAME } tarafından bile erişilememesini sağlar."
+        "Kişilerinizin, telefon numarası, adres, doğum günü ve kişisel notlar gibi bilgilerini güvenli bir şekilde saklayın. Sıfır erişim şifrelemesi, bu bilgilere ${ BRAND_NAME } tarafından bile erişilememesini sağlar."
       ],
       "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
         "Gerek duyduğunuz kadar kişi grubu oluşturarak büyük gruplara hızlı ve kolay bir şekilde e-posta gönderin (her grupta 100 kişiye kadar)"
@@ -9403,6 +9566,18 @@
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "OpenVPN / IKEv2 kimlik bilgileri yeniden oluşturuldu"
+      ],
+      "Reminder has been sent": [
+        "Hatırlatıcı gönderildi"
+      ],
+      "Two-factor authentication has been enforced for administrators": [
+        "Yöneticilerin iki adımlı doğrulama kullanması zorunludur"
+      ],
+      "Two-factor authentication has been enforced for all members": [
+        "Tüm kullanıcıların iki adımlı doğrulama kullanması zorunludur"
+      ],
+      "Two-factor authentication is not required anymore": [
+        "İki adımlı doğrulama artık zorunlu değil"
       ]
     },
     "Notification in holidays calendar modal": {
@@ -10975,11 +11150,17 @@
       "Edit": [
         "Düzenle"
       ],
+      "Email address or domain": [
+        "E-posta adresi ya da etki alanı"
+      ],
       "Email addresses": [
         "E-posta adresleri"
       ],
       "Import": [
         "İçe aktar"
+      ],
+      "List": [
+        "Liste"
       ],
       "Marked as": [
         "Şöyle işaretlenmiş"
@@ -11042,6 +11223,9 @@
       "${ MAIL_APP_NAME } Keyboard Shortcuts": [
         "${ MAIL_APP_NAME } klavye kısayolları"
       ],
+      "(active)": [
+        "(etkin)"
+      ],
       "1. Give a name to the config to be generated": [
         "1. Oluşturulacak yapılandırmaya bir ad verin"
       ],
@@ -11062,6 +11246,9 @@
       ],
       "4. Select a server to connect to": [
         "4. Bağlantı kurulacak bir sunucu seçin"
+      ],
+      "Accessibility": [
+        "Erişilebilirlik"
       ],
       "Account and password": [
         "Hesap ve parola"
@@ -11117,6 +11304,12 @@
       "Add Sieve filter": [
         "Sieve süzgeci ekle"
       ],
+      "Add to allow list": [
+        "İzin verilen adresler listesine ekle"
+      ],
+      "Add to block list": [
+        "Engellenen adresler listesine ekle"
+      ],
       "Add to spam list": [
         "İstenmeyenler listesine ekle"
       ],
@@ -11152,6 +11345,9 @@
       ],
       "Are you sure you want to close?": [
         "Oturumu kapatmak istediğinize emin misiniz?"
+      ],
+      "Authentication security": [
+        "Kimlik doğrulama güvenliği"
       ],
       "Auto-reply": [
         "Otomatik yanıt"
@@ -11297,6 +11493,9 @@
       ],
       "Date": [
         "Tarih"
+      ],
+      "Day theme": [
+        "Gündüz teması"
       ],
       "Decrypt key": [
         "Anahtarın şifresini çöz"
@@ -11564,6 +11763,9 @@
       "Next": [
         "Sonraki"
       ],
+      "Night theme": [
+        "Gece teması"
+      ],
       "No recovery method": [
         "Herhangi bir kurtarma yöntemi yok"
       ],
@@ -11608,9 +11810,6 @@
       ],
       "PayPal verification failed": [
         "PayPal doğrulaması başarısız oldu"
-      ],
-      "Personalise your e-mail footer": [
-        "E-posta alt bilginizi özelleştirin"
       ],
       "Phone": [
         "Telefon"
@@ -11711,6 +11910,9 @@
       "Select when you want this notification to be sent": [
         "Bu bildirimin gönderilmesini istediğiniz zamanı seçin"
       ],
+      "Send email reminders?": [
+        "E-posta hatırlatıcıları gönderilsin mi?"
+      ],
       "Session management": [
         "Oturum yönetimi"
       ],
@@ -11768,6 +11970,9 @@
       "Sort labels alphabetically": [
         "Etiketler alfabetik olarak sıralansın"
       ],
+      "Spam, block, and allow lists": [
+        "Engellenen ve izin verilen adresler listesi"
+      ],
       "Start a new import": [
         "Yeni bir içe aktarma başlatın"
       ],
@@ -11814,6 +12019,12 @@
       ],
       "Two-factor authentication": [
         "İki adımlı doğrulama"
+      ],
+      "Two-factor authentication enforcement": [
+        "İki adımlı doğrulama zorunluluğu"
+      ],
+      "Two-factor authentication reminders": [
+        "İki adımlı doğrulama hatırlatıcıları"
       ],
       "Type": [
         "Tür"
@@ -11993,6 +12204,9 @@
       "Account is disconnected": [
         "Hesap bağlantısı kesildi"
       ],
+      "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
+        "Sisteminizin gündüz ve gece kipine uyarak gündüz ve gece için seçtiğiniz temalar arasında otomatik olarak geçiş yapın"
+      ],
       "Customize import to reduce the number of folders": [
         "Klasör sayısını azaltmak için içe aktarmayı özelleştirin"
       ],
@@ -12026,6 +12240,9 @@
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Satın aldığınız ya da destek ekibimizden verilen bir hediye kodunuz varsa, buraya yazabilirsiniz."
       ],
+      "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
+        "İki adımlı doğrulama kullanmayan üyelere en kısa sürede etkinleştirmelerini isteyen bir e-posta gönderilecek."
+      ],
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "Gönderilmiş veya Taslaklar kutusundaki iletiler, başka bir klasöre taşısanız bile o klasörde görünmeyi sürdürür."
       ],
@@ -12056,6 +12273,15 @@
       "The new subscription cycle starts on ${ formattedTime }": [
         "Yeni gönderim döngüsü ${ formattedTime } zamanında başlayacak"
       ],
+      "The reduce motion setting is already enabled on this device": [
+        "Hareketi azaltma ayarı bu aygıtta zaten etkinleştirilmiş"
+      ],
+      "The selected theme will be active when your system is set to \"dark mode\"": [
+        "Seçilmiş tema sisteminiz \"koyu kipe\" geçtiğinde etkinleştirilecek"
+      ],
+      "The selected theme will be active when your system is set to \"light mode\"": [
+        "Seçilmiş tema sisteminiz \"açık kipe\" geçtiğinde etkinleştirilecek"
+      ],
       "This address has been disabled": [
         "Bu adres devre dışı bırakıldı"
       ],
@@ -12074,11 +12300,17 @@
       "This key is used by ${ MAIL_APP_NAME } to encrypt your contact's data": [
         "Bu anahtar ${ MAIL_APP_NAME } tarafından kişinin verilerinin korunması için kullanılıyor"
       ],
+      "Use your browser’s default scrollbars. These are typically larger and easier to use": [
+        "Tarayıcınızın varsayılan kaydırma çubuklarını kullanın. Bunlar genellikle daha geniştir ve daha kolay kullanılır"
+      ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "DNS yapılandırmanızda bir sorun bulduk. Lütfen kayıtlarınızın aşağıdaki yönergelere uygun olduğundan emin olun. Sorun sürerse, DKIM imzalamayı kapatmamız gerekecek."
       ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "DNS yapılandırmanızdaki sorunlar nedeniyle DKIM imzalamasını durdurduk. İmzalamayı sürdürmek için aşağıdaki yönergeleri izleyin."
+      ],
+      "When enabled, animations and transitions will not show": [
+        "Bu seçenek etkinleştirildiğinde, canlandırma ve geçişler görüntülenmez"
       ],
       "When you add a label to a message in a conversation, it will automatically be applied to all future messages you send or receive in that conversation.": [
         "Bir yazışmadaki bir iletiyi etiketlediğinizde, bu etiket yazışmada göndereceğiniz veya alacağınız tüm yeni iletilere otomatik olarak uygulanır."

@@ -212,6 +212,9 @@
       "Continue": [
         "Continua"
       ],
+      "Continue anyway": [
+        "Continua igualment"
+      ],
       "Continue import": [
         "Continuar importació"
       ],
@@ -761,11 +764,17 @@
       "Send code": [
         "Enviar codi"
       ],
+      "Send email reminder": [
+        "Envia un recordatori per correu electrònic"
+      ],
       "Send messages with @pm.me": [
         "Envia missatges amb @pm.me"
       ],
       "Send my username": [
         "Enviar el meu nom d'usuari"
+      ],
+      "Send reminder": [
+        "Envia un recordatori"
       ],
       "Set as default": [
         "Establir com per defecte"
@@ -1069,6 +1078,11 @@
       ],
       "Orphan": [
         "Orfà"
+      ]
+    },
+    "Admin": {
+      "admin": [
+        "administardor"
       ]
     },
     "Alert": {
@@ -2768,19 +2782,19 @@
         "No s'ha pogut eliminar ${ name }."
       ],
       "${ name } failed to move to allow list": [
-        "No s'ha pogut moure ${ name } a la llista \"No és correu brossa\"."
+        "No s'ha pogut moure ${ name } a la vostra llista d'adreces permeses"
       ],
       "${ name } failed to move to block list": [
-        "No s'ha pogut moure ${ name } a la llista \"Bloquejat\"."
+        "No s'ha pogut moure ${ name } a la vostra llista d'adreces bloquejades"
       ],
       "${ name } failed to move to spam list": [
         "No s'ha pogut moure ${ name } a la llista de correu brossa"
       ],
       "${ name } moved to allow list": [
-        "S'ha mogut ${ name } a la llista \"No és correu brossa\"."
+        "S'ha mogut ${ name } a la vostra llista d'adreces permeses"
       ],
       "${ name } moved to block list": [
-        "S'ha mogut ${ name } a la llista \"Bloquejat\"."
+        "S'ha mogut ${ name } a la vostra llista d'adreces bloquejades"
       ],
       "${ name } moved to spam list": [
         "S'ha mogut ${ name } a la llista de correu brossa"
@@ -2885,19 +2899,19 @@
         "No s'ha pogut eliminar ${ name }."
       ],
       "${ name } failed to move to allow list": [
-        "No s'ha pogut moure ${ name } a la llista \"No és correu brossa\"."
+        "No s'ha pogut moure ${ name } a la llista d'adreces permeses"
       ],
       "${ name } failed to move to block list": [
-        "No s'ha pogut moure ${ name } a la llista \"Bloquejat\"."
+        "No s'ha pogut moure ${ name } a la llista d'adreces bloquejades"
       ],
       "${ name } failed to move to spam list": [
         "No s'ha pogut moure ${ name } a la llista de correu brossa"
       ],
       "${ name } moved to allow list": [
-        "S'ha mogut ${ name } a la llista \"No és correu brossa\"."
+        "S'ha mogut ${ name } a la llista d'adreces permeses"
       ],
       "${ name } moved to block list": [
-        "S'ha mogut ${ name } a la llista \"Bloquejat\"."
+        "S'ha mogut ${ name } a la llista d'adreces bloquejades"
       ],
       "${ name } moved to spam list": [
         "S'ha mogut ${ name } a la llista de correu brossa"
@@ -3779,6 +3793,9 @@
       "Create a new user": [
         "Crea un usuari nou"
       ],
+      "Decline invitation": [
+        "Declina la invitació"
+      ],
       "Got it": [
         "Entesos"
       ],
@@ -3787,9 +3804,6 @@
       ],
       "Invite member to your family": [
         "Convideu un membre a la vostra família"
-      ],
-      "Keep current plan": [
-        "Manté el pla actual"
       ],
       "Set up family group": [
         "Configura el grup familiar"
@@ -4285,16 +4299,40 @@
         "Afegiu un filtre personalitzat per realitzar automàticament certes accions, com ara etiquetar o arxivar missatges."
       ],
       "Allow:": [
-        "Permet:"
+        "Adreces permeses"
       ],
       "Block:": [
-        "Bloqueja:"
+        "Adreces bloquejades:"
       ],
       "Search list": [
         "Llista de cerca"
       ],
       "Spam:": [
         "Correu brossa:"
+      ],
+      "Take control over what lands in your inbox by creating the following lists:": [
+        "Preneu el control sobre què aterra a la safata d'entrada creant les llistes següents:"
+      ],
+      "Take control over what lands in your organization members' inboxes by creating the following lists:": [
+        "Preneu el control sobre què aterra a les safates d'entrada dels membres de la vostra organització creant les llistes següents:"
+      ],
+      "These lists apply to all accounts in your organization. Members can create their own individual filters, but won't be able to override addresses or domains you blocked.": [
+        "Aquestes llistes s'apliquen a tots els comptes de la vostra organització. Els membres poden crear els seus propis filtres individuals, però no podran substituir les adreces o dominis que heu blocat."
+      ],
+      "To ensure critical messages don't end up in spam and getting missed": [
+        "Per assegurar que els missatges crítics no acabin al correu brossa i es perdin"
+      ],
+      "To prevent junk mail from clogging up inboxes": [
+        "Per evitar que el correu brossa ompli les safates d'entrada"
+      ],
+      "To prevent junk mail from clogging up your inbox": [
+        "Per evitar que el correu brossa ompli la vostra safata d'entrada"
+      ],
+      "To stop phishing or suspicious emails from entering your email system": [
+        "Per a evitar que s'introdueixin missatges de correu electrònic de suplantació d'identitat o sospitosos a la vostra bústia"
+      ],
+      "To stop phishing or suspicious emails from entering your organization's email system": [
+        "Per a evitar que s'introdueixin missatges de correu electrònic de suplantació d'identitat o sospitosos a les bústies de la vostra organització"
       ]
     },
     "Font Face Default": {
@@ -4302,9 +4340,34 @@
         "Per defecte"
       ]
     },
+    "Font face option": {
+      "System default": [
+        "Predeterminat del sistema"
+      ],
+      "Theme default": [
+        "Tema per defecte"
+      ]
+    },
     "Font Size Default": {
       "Default": [
         "Per defecte"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Gran"
+      ],
+      "Medium (recommended)": [
+        "Mitjà (recomanat)"
+      ],
+      "Small": [
+        "Petit"
+      ],
+      "Very large": [
+        "Molt gran"
+      ],
+      "Very small": [
+        "Molt petit"
       ]
     },
     "Frequency of news": {
@@ -5357,6 +5420,9 @@
       "Custom yearly": [
         "Personalitzat anualment"
       ],
+      "Customize the look and feel of ${ BRAND_NAME } applications.": [
+        "Personalitzeu l'aspecte de les aplicacions ${ BRAND_NAME }."
+      ],
       "Daily": [
         "Diàriament"
       ],
@@ -5661,6 +5727,9 @@
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Important les vostres dades des de ${ importedEmailAddress } a ${ toEmail }."
+      ],
+      "Improve your ${ BRAND_NAME } experience by adapting the application to your needs.": [
+        "Milloreu la vostra experiència ${ BRAND_NAME } adaptant l'aplicació a les vostres necessitats."
       ],
       "Inherited from parent folder": [
         "Heretat d'una carpeta principal"
@@ -6083,6 +6152,9 @@
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Seleccioneu quins calendaris importar. Es crearà un calendari per cada calendari importat segons el nombre de calendaris disponibles al vostre pla."
       ],
+      "Send emails to encourage your members to protect their accounts with 2FA.": [
+        "Envieu correus electrònics per animar els vostres membres a protegir els seus comptes amb 2FA."
+      ],
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "Enviat amb el correu segur de <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
       ],
@@ -6209,6 +6281,9 @@
       "The following address was not created.": [
         "La següent adreça no s'ha creat.",
         "Les següents adreces no s'han creat."
+      ],
+      "The following members will receive an email prompting them to enable two-factor authentication as soon as possible.": [
+        "Els següents membres rebran un correu electrònic que els demanarà habilitar l'autenticació de dos factors tan aviat com sigui possible."
       ],
       "The format of your CSV file is incorrect.": [
         "El format del fitxer CSV és incorrecte."
@@ -6506,6 +6581,9 @@
       ],
       "We need to authenticate your payment with your bank.": [
         "Hem d'autenticar el vostre pagament amb el vostre banc."
+      ],
+      "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
+        "Recomanem notificar als membres de l'organització i demanar-los que estableixin l'autenticació de dos factors (2FA) per als seus comptes abans de fer-ne complir l'ús."
       ],
       "We recommend using your recovery phrase instead.": [
         "Recomanem utilitzar la frase de recuperació."
@@ -7265,7 +7343,7 @@
         "Notificacions d'esdeveniments de tot el dia"
       ],
       "Allow": [
-        "Permet"
+        "Adreces permeses"
       ],
       "Allow notifications by email": [
         "Permet notificacions per correu"
@@ -7340,7 +7418,7 @@
         "Cicle de facturació"
       ],
       "Block": [
-        "Bloqueja"
+        "Adreces bloquejades"
       ],
       "Block email tracking": [
         "Bloquegi el seguiment del correu electrònic"
@@ -7371,6 +7449,9 @@
       ],
       "Card holder": [
         "Titular de la targeta"
+      ],
+      "Card information": [
+        "Informació de la targeta"
       ],
       "Card number": [
         "Número de la targeta"
@@ -7492,6 +7573,9 @@
       "Default PGP scheme": [
         "Esquema PGP per defecte"
       ],
+      "Default scrollbars": [
+        "Barres de desplaçament predeterminades"
+      ],
       "Default view": [
         "Vista per defecte"
       ],
@@ -7512,6 +7596,9 @@
       ],
       "Digits": [
         "Xifres"
+      ],
+      "Disable animations": [
+        "Desactiva les animacions"
       ],
       "Display name": [
         "Nom a mostrar"
@@ -7582,6 +7669,9 @@
       "Event notifications": [
         "Notificacions d'esdeveniment"
       ],
+      "Expiration (${ patternExpiration })": [
+        "Caducitat (${ patternExpiration })"
+      ],
       "Expiration date": [
         "Data de caducitat"
       ],
@@ -7596,6 +7686,12 @@
       ],
       "Folder location": [
         "Ubicació de la carpeta"
+      ],
+      "Font family": [
+        "Família tipogràfica"
+      ],
+      "Font size": [
+        "Mida de la lletra"
       ],
       "From: ${ from }": [
         "De: ${ from }"
@@ -7864,11 +7960,20 @@
       "Repeat password": [
         "Repetir contrasenya"
       ],
+      "Require 2FA for administrators": [
+        "Requereix 2FA per als administradors"
+      ],
+      "Require 2FA for everyone": [
+        "Requereix 2FA per a tothom"
+      ],
       "Reveal password": [
         "Mostra la contrasenya"
       ],
       "Security code": [
         "Codi de seguretat"
+      ],
+      "Security code (${ codeName })": [
+        "Codi de seguretat (${ codeName })"
       ],
       "Select your country": [
         "Seleccioni el seu país"
@@ -7935,6 +8040,9 @@
       ],
       "Subscription options": [
         "Opcions de subscripció"
+      ],
+      "Synchronize with system": [
+        "Sincronitza amb el sistema"
       ],
       "System information": [
         "Informació del sistema"
@@ -8299,6 +8407,10 @@
       ]
     },
     "Loading info": {
+      "${ twoFAMembers.length }/${ members.length } of your organization member use two-factor authentication.": [
+        "${ twoFAMembers.length }/${ members.length } membre de la vostra organització usa l'autenticació de dos factors.",
+        "${ twoFAMembers.length }/${ members.length } membres de la vostra organització usen l'autenticació de dos factors."
+      ],
       "Almost there": [
         "Ja gairebé està"
       ],
@@ -8579,7 +8691,7 @@
         "Tot"
       ],
       "Allow": [
-        "Permet"
+        "Adreces permeses"
       ],
       "Back": [
         "Torna"
@@ -8594,7 +8706,7 @@
         "Torna a la safata d'entrada"
       ],
       "Block": [
-        "Bloqueja"
+        "Adreces bloquejades"
       ],
       "Calendar": [
         "Calendari"
@@ -9454,6 +9566,18 @@
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "Credencials OpenVPN / IKEv2 regenerades"
+      ],
+      "Reminder has been sent": [
+        "S'ha enviat un recordatori"
+      ],
+      "Two-factor authentication has been enforced for administrators": [
+        "S'ha imposat l'autenticació de dos factors per als administradors"
+      ],
+      "Two-factor authentication has been enforced for all members": [
+        "S'ha imposat l'autenticació de dos factors per a tots els membres"
+      ],
+      "Two-factor authentication is not required anymore": [
+        "L'autenticació de dos factors ja no és necessària"
       ]
     },
     "Notification in holidays calendar modal": {
@@ -11099,6 +11223,9 @@
       "${ MAIL_APP_NAME } Keyboard Shortcuts": [
         "Dreceres de teclat de ${ MAIL_APP_NAME }"
       ],
+      "(active)": [
+        "(actiu)"
+      ],
       "1. Give a name to the config to be generated": [
         "1. Doneu un nom a la configuració que s'ha de generar"
       ],
@@ -11119,6 +11246,9 @@
       ],
       "4. Select a server to connect to": [
         "4. Seleccioneu un servidor al qual us voleu connectar"
+      ],
+      "Accessibility": [
+        "Accessibilitat"
       ],
       "Account and password": [
         "Compte i contrasenya"
@@ -11175,10 +11305,10 @@
         "Afegeix un filtre Sieve"
       ],
       "Add to allow list": [
-        "Afegeix a la llista \"No és correu brossa\""
+        "Afegeix a la llista de permesos"
       ],
       "Add to block list": [
-        "Afegeix a la llista \"Bloquejat\""
+        "Afegeix a la llista de bloquejats"
       ],
       "Add to spam list": [
         "Afegeix a la llista de correu brossa"
@@ -11215,6 +11345,9 @@
       ],
       "Are you sure you want to close?": [
         "Segur que voleu tancar?"
+      ],
+      "Authentication security": [
+        "Seguretat de l'autenticació"
       ],
       "Auto-reply": [
         "Resposta automàtica"
@@ -11360,6 +11493,9 @@
       ],
       "Date": [
         "Data"
+      ],
+      "Day theme": [
+        "Tema de dia"
       ],
       "Decrypt key": [
         "Desxifra la clau"
@@ -11627,6 +11763,9 @@
       "Next": [
         "Següent"
       ],
+      "Night theme": [
+        "Tema de nit"
+      ],
       "No recovery method": [
         "No hi ha mètode de recuperació"
       ],
@@ -11671,9 +11810,6 @@
       ],
       "PayPal verification failed": [
         "Ha fallat la verificació de PayPal"
-      ],
-      "Personalise your e-mail footer": [
-        "Personalitzeu el peu de pàgina del vostre correu electrònic"
       ],
       "Phone": [
         "Telèfon"
@@ -11774,6 +11910,9 @@
       "Select when you want this notification to be sent": [
         "Selecciona quan vols que s'enviï aquesta notificació"
       ],
+      "Send email reminders?": [
+        "Voleu enviar recordatoris per correu electrònic?"
+      ],
       "Session management": [
         "Gestió de sessions"
       ],
@@ -11832,7 +11971,7 @@
         "Ordena les etiquetes alfabèticament"
       ],
       "Spam, block, and allow lists": [
-        "Llistes \"No és correu brossa\", \"Bloquejat\" i \"Correu brossa\""
+        "Llistes de correu brossa, bloquejats i permesos"
       ],
       "Start a new import": [
         "Inicia una nova importació"
@@ -11880,6 +12019,12 @@
       ],
       "Two-factor authentication": [
         "Autenticació de dos factors"
+      ],
+      "Two-factor authentication enforcement": [
+        "Aplicació de l'autenticació de dos factors"
+      ],
+      "Two-factor authentication reminders": [
+        "Recordatoris de l'autenticació de dos factors"
       ],
       "Type": [
         "Tipus"
@@ -12059,6 +12204,9 @@
       "Account is disconnected": [
         "El compte està desconnectat"
       ],
+      "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
+        "Canvia automàticament entre els temes preferits per a dia i nit en sincronització amb els modes de dia i nit del sistema"
+      ],
       "Customize import to reduce the number of folders": [
         "Personalitza la importació per reduir el nombre de carpetes"
       ],
@@ -12092,6 +12240,9 @@
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Si heu comprat un codi regal o n'heu rebut un del nostre equip de suport, escriviu-lo aquí."
       ],
+      "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
+        "Els membres que no utilitzen 2FA rebran un correu electrònic sol·licitant-los que ho habiliten al més aviat possible."
+      ],
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "Els missatges a la carpeta d'Enviats o Esborranys continuaran apareixent a aquestes carpetes, fins i tot si els moveu a una altra carpeta."
       ],
@@ -12122,6 +12273,15 @@
       "The new subscription cycle starts on ${ formattedTime }": [
         "El nou cicle de subscripció comença el ${ formattedTime }"
       ],
+      "The reduce motion setting is already enabled on this device": [
+        "La preferència de reducció de moviment ja està habilitada en aquest dispositiu"
+      ],
+      "The selected theme will be active when your system is set to \"dark mode\"": [
+        "El tema seleccionat s'activarà quan el sistema estigui en «mode fosc»"
+      ],
+      "The selected theme will be active when your system is set to \"light mode\"": [
+        "El tema seleccionat s'activarà quan el sistema estigui en «mode clar»"
+      ],
       "This address has been disabled": [
         "Aquesta adreça s'ha desactivat"
       ],
@@ -12140,11 +12300,17 @@
       "This key is used by ${ MAIL_APP_NAME } to encrypt your contact's data": [
         "Aquesta clau l'utilitza ${ MAIL_APP_NAME } per xifrar les dades dels vostres contactes"
       ],
+      "Use your browser’s default scrollbars. These are typically larger and easier to use": [
+        "Utilitzeu les barres de desplaçament predeterminades del navegador. Normalment són més grans i més fàcils d'utilitzar"
+      ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "Hem detectat un problema amb la vostra configuració DNS. Assegureu-vos que els vostres registres coincideixin amb les instruccions següents. Si el problema continua, haurem de desactivar la signatura de DKIM."
       ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "Hem aturat la signatura de DKIM per problemes amb la vostra configuració DNS. Seguiu les instruccions a continuació per continuar a signar."
+      ],
+      "When enabled, animations and transitions will not show": [
+        "Quan està habilitat, les animacions i les transicions no es mostren"
       ],
       "When you add a label to a message in a conversation, it will automatically be applied to all future messages you send or receive in that conversation.": [
         "Quan afegiu una etiqueta a un missatge d'una conversa, aquesta s'aplicarà automàticament a tots els missatges futurs que envieu o rebeu dins d'aquesta conversa."
