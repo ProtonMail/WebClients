@@ -1,4 +1,4 @@
-export type ThemeSvgSize = 'small' | 'medium-wide' | 'medium' | 'large';
+export type ThemeSvgSize = 'small' | 'medium-wide' | 'medium' | 'large' | 'onboarding';
 export type ThemeSvgColors = { prominent: string; standard: string; primary: string; weak: string };
 
 interface Props {
@@ -13,6 +13,7 @@ const ThemeSvg = ({ size = 'medium-wide', colors, className }: Props) => {
         'medium-wide': { width: 106, height: 44 },
         medium: { width: 106, height: 66 },
         large: { width: 122, height: 78 },
+        onboarding: { width: 122, height: 60 },
     }[size];
 
     return (

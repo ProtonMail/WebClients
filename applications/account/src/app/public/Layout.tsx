@@ -10,6 +10,7 @@ import { getStaticURL } from '@proton/shared/lib/helpers/url';
 import { locales } from '@proton/shared/lib/i18n/locales';
 import clsx from '@proton/utils/clsx';
 
+import { SignupSteps } from '../signup/interfaces';
 import BackButton from './BackButton';
 import LanguageSelect from './LanguageSelect';
 import LayoutFooter from './LayoutFooter';
@@ -26,9 +27,18 @@ export interface Props {
     hasWelcome?: boolean;
     headerClassName?: string;
     stepper?: ReactNode;
+    currentSignupStep?: SignupSteps;
 }
 
-const Layout = ({ children, stepper, hasDecoration, bottomRight, onBack, headerClassName }: Props) => {
+const Layout = ({
+    children,
+    stepper,
+    hasDecoration,
+    bottomRight,
+    onBack,
+    headerClassName,
+    currentSignupStep,
+}: Props) => {
     const { APP_VERSION, APP_NAME } = useConfig();
     const appVersion = getAppVersion(APP_VERSION);
     const version = appVersion; // only to avoid duplicate strings for L10N
@@ -71,8 +81,19 @@ const Layout = ({ children, stepper, hasDecoration, bottomRight, onBack, headerC
                     )}
                 </div>
             </header>
-            <div className="sign-layout-container p-0 sm:px-6 flex flex-nowrap flex-column flex-justify-space-between">
-                <main>
+            <div
+                className={clsx(
+                    'sign-layout-container p-0 sm:px-6 flex flex-nowrap flex-column flex-justify-space-between',
+                    currentSignupStep === SignupSteps.CreatingAccount && !hasDecoration && 'h-full'
+                )}
+            >
+                <main
+                    className={clsx(
+                        currentSignupStep === SignupSteps.CreatingAccount &&
+                            !hasDecoration &&
+                            'flex flex-item-centered-vert'
+                    )}
+                >
                     {children}
                     {hasDecoration && (
                         <div className="flex-item-noshrink text-center px-4 pt-0 pb-0 sm:px-5 sm:pt-8 sm:pb-0">

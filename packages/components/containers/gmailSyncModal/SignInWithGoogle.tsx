@@ -6,18 +6,19 @@ import googleLogo from '@proton/styles/assets/img/import/providers/google.svg';
 import './SignInWithGoogle.scss';
 
 interface Props {
+    fullWidth?: boolean;
     loading: boolean;
     disabled?: boolean;
     onClick: () => void;
 }
 
-const SignInWithGoogle = ({ loading, disabled, onClick }: Props) => {
+const SignInWithGoogle = ({ loading, disabled, onClick, fullWidth }: Props) => {
     return (
         <Button
-            fullWidth
             color="norm"
             onClick={onClick}
             loading={loading}
+            fullWidth={fullWidth}
             disabled={loading || disabled}
             className="flex flex-align-items-center p-1 rounded google-button"
         >
