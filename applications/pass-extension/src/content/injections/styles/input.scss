@@ -21,6 +21,7 @@
 		display: block !important;
 		/* stylelint-disable-next-line */
 		float: left !important;
+		animation: none !important;
 
 		> input {
 			pointer-events: all;
@@ -34,7 +35,7 @@
 		inset-inline-end: em(5);
 		opacity: 0.9;
 		max-inline-size: 0;
-		animation: icon-fade-in 0.25s ease-in-out 0.05s both;
+		animation: icon-fade-in 0.25s ease-in-out 0.05s both !important;
 		transition: opacity 0.2s ease-in-out;
 		@include reset;
 
