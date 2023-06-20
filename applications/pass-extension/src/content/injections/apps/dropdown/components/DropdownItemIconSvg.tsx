@@ -27,7 +27,7 @@ export const DropdownItemIconSvg: VFC<{
                 src={passIconAsset}
                 width={size}
                 height={size}
-                className="ml-1"
+                className="p-1"
                 alt={c('Action').t`Toggle ${PASS_APP_NAME}`}
             />
         </div>
