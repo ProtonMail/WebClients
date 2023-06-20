@@ -2476,9 +2476,6 @@
       "Got it": [
         "了解"
       ],
-      "Keep current plan": [
-        "現在のプランを維持"
-      ],
       "Switch plans": [
         "プランを変更"
       ],
@@ -2661,6 +2658,31 @@
     "Filter notification": {
       "${ Label.Name } updated": [
         "${ Label.Name } は更新されました"
+      ]
+    },
+    "Font face option": {
+      "System default": [
+        "システムのデフォルト"
+      ],
+      "Theme default": [
+        "テーマのデフォルト"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "大"
+      ],
+      "Medium (recommended)": [
+        "中 (推奨)"
+      ],
+      "Small": [
+        "小"
+      ],
+      "Very large": [
+        "極大"
+      ],
+      "Very small": [
+        "極小"
       ]
     },
     "Group": {
@@ -5564,6 +5586,9 @@
       "${ numberOfFailedTransfer.total } failed uploads": [
         "${ numberOfFailedTransfer.total }件のアップロードに失敗"
       ],
+      "(active)": [
+        "(アクティブ)"
+      ],
       "Account suspended": [
         "アカウントが停止されました"
       ],
@@ -5650,6 +5675,9 @@
       ],
       "Date": [
         "日付"
+      ],
+      "Day theme": [
+        "昼間のテーマ"
       ],
       "Delete ${ count } contact groups": [
         "${ count } 件の連絡先を削除"
@@ -5800,6 +5828,9 @@
       ],
       "Name": [
         "名前"
+      ],
+      "Night theme": [
+        "夜間のテーマ"
       ],
       "No results found": [
         "該当する結果が見つかりませんでした"

@@ -321,6 +321,9 @@
       "Got it": [
         "Entendido"
       ],
+      "Grid layout": [
+        "Disposición en cuadrícula"
+      ],
       "Hide advanced PGP settings": [
         "Ocultar configuración PGP avanzada"
       ],
@@ -2486,11 +2489,11 @@
       ]
     },
     "familyOffer_2023:Action": {
+      "Decline invitation": [
+        "Rechazar la invitación"
+      ],
       "Got it": [
         "Entendido"
-      ],
-      "Keep current plan": [
-        "Mantener el plan actual"
       ],
       "Switch plans": [
         "Cambiar de plan"
@@ -2682,6 +2685,31 @@
     "Filter notification": {
       "${ Label.Name } updated": [
         "${ Label.Name } actualizado"
+      ]
+    },
+    "Font face option": {
+      "System default": [
+        "Igual que el sistema"
+      ],
+      "Theme default": [
+        "Tema por defecto"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Grande"
+      ],
+      "Medium (recommended)": [
+        "Mediano (recomendado)"
+      ],
+      "Small": [
+        "Pequeño"
+      ],
+      "Very large": [
+        "Muy grande"
+      ],
+      "Very small": [
+        "Muy pequeño"
       ]
     },
     "Group": {
@@ -3103,7 +3131,7 @@
         "${ selectedCalendarsTotal } de ${ providerCalendars.length } calendarios"
       ],
       "${ selectedCount } selected": [
-        "${ selectedCount } seleccionados"
+        "Selección: ${ selectedCount }"
       ],
       "${ selectedFoldersCount } folder selected": [
         "${ selectedFoldersCount } carpeta seleccionada",
@@ -3297,6 +3325,9 @@
       "Current version": [
         "Versión actual"
       ],
+      "Customize the look and feel of ${ BRAND_NAME } applications.": [
+        "Personalza el aspecto y la sensación de las aplicaciones de ${ BRAND_NAME }"
+      ],
       "Decrypting files": [
         "Descifrando archivos"
       ],
@@ -3353,7 +3384,7 @@
         "Los correos electrónicos son firmados automáticamente."
       ],
       "Enable drive search": [
-        "Activar la búsqueda en almacenamiento"
+        "Activar la búsqueda en Drive"
       ],
       "Enabling drive search": [
         "Activación de la búsqueda en tu unidad"
@@ -3717,7 +3748,7 @@
         "No se admite la vista previa para este tipo de archivo."
       ],
       "Previous versions are kept for ${ retentionLabel }": [
-        "Las versiones anteriores son conservadas para ${ retentionLabel }."
+        "Las versiones anteriores son conservadas durante ${ retentionLabel }."
       ],
       "Previous versions are not saved": [
         "Las versiones anteriores no están guardadas."
@@ -3956,6 +3987,9 @@
       ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "Cargar cientos de archivos a la vez puede reducir el rendimiento."
+      ],
+      "Use Drive for Desktop to sync folders on your computer with ${ DRIVE_APP_NAME }. They’ll show up here and be accessible from anywhere. ${ learnMore }": [
+        "Utiliza Drive para escritorio para sincronizar carpetas en tu ordenador con ${ DRIVE_APP_NAME }. Se mostrarán aquí y serán accesibles desde cualquier lugar. ${ learnMore }"
       ],
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Usa este formulario para notificarnos contenido inapropiado, ilegal\no malicioso en archivos compartidos. Vas a reportar:"
@@ -4235,7 +4269,7 @@
         "Categoría"
       ],
       "Child sexual abuse material": [
-        "Material de abuso sexual infantil"
+        "Contenido de pornografía infantil"
       ],
       "City": [
         "Ciudad"
@@ -4549,6 +4583,9 @@
       ],
       "Street address": [
         "Nombre de la calle"
+      ],
+      "Synchronize with system": [
+        "Sincronizar con el sistema"
       ],
       "System information": [
         "Información del sistema"
@@ -5074,6 +5111,9 @@
       ],
       "Discover all ${ BRAND_NAME } services": [
         "Descubre todos los servicios de ${ BRAND_NAME }"
+      ],
+      "More theming options are available in your account Settings > Appearance.": [
+        "Más opciones de temas están disponibles en tu ajustes de cuenta en la sección Apariencia."
       ],
       "Select a theme": [
         "Seleccionar un tema"
@@ -5726,6 +5766,9 @@
         "${ numberOfFailedTransfer.total } error de carga",
         "${ numberOfFailedTransfer.total } errores de cargas"
       ],
+      "(active)": [
+        "(activo)"
+      ],
       "Account suspended": [
         "Cuenta suspendida"
       ],
@@ -5816,6 +5859,9 @@
       ],
       "Date": [
         "Fecha"
+      ],
+      "Day theme": [
+        "Tema de día"
       ],
       "Delete ${ count } contact": [
         "Eliminar ${ count } contacto",
@@ -5970,6 +6016,9 @@
       ],
       "Name": [
         "Nombre"
+      ],
+      "Night theme": [
+        "Tema de noche"
       ],
       "No results found": [
         "No hay resultados"
@@ -6203,6 +6252,9 @@
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Automático: indica que formato se utiliza en el editor para enviar a este usuario. Texto plano indica que el mensaje siempre se convertirá a texto plano al enviarlo."
       ],
+      "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
+        "Cambia automáticamente entre tus temas preferidos para el día y la noche en sincronía con los modos de día y noche de tu sistema."
+      ],
       "Customize import to reduce the number of folders": [
         "Personaliza la importación para reducir el número de carpetas."
       ],
@@ -6253,6 +6305,12 @@
       ],
       "The import will start with the most recent messages.": [
         "La importación comenzará con los mensajes más recientes."
+      ],
+      "The selected theme will be active when your system is set to \"dark mode\"": [
+        "El tema seleccionado estará activo cuando tu sistema esté en \"modo oscuro\"."
+      ],
+      "The selected theme will be active when your system is set to \"light mode\"": [
+        "El tema seleccionado estará activo cuando tu sistema esté en \"modo claro\"."
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Carga una clave pública para permitir el envío de correos electrónicos cifrados de extremo a extremo a este correo electrónico."
