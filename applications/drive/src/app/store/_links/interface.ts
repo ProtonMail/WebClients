@@ -15,7 +15,7 @@ interface Link {
     createTime: number;
     // metaDataModifyTime represents time when the meta data of the link were
     // modified on the server, such as renaming the link, moving to different
-    // folder and so on. Note that renaming is not cousing the change of modify
+    // folder and so on. Note that renaming is not causing the change of modify
     // time in regular file system. The "real" modify is encrypted in XAttr
     // which is then available in fileModifyTime of DecryptedLink.
     metaDataModifyTime: number;
