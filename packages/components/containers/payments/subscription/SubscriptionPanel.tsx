@@ -369,6 +369,7 @@ const SubscriptionPanel = ({
                     color="norm"
                     path="/users-addresses"
                     size="large"
+                    app={APPS.PROTONMAIL}
                     fullWidth
                 >{c('familyOffer_2023:Family plan').t`Manage user accounts`}</ButtonLike>
             )}
