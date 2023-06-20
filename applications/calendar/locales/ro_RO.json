@@ -2816,11 +2816,11 @@
       ]
     },
     "familyOffer_2023:Action": {
+      "Decline invitation": [
+        "Refuzare invitație"
+      ],
       "Got it": [
         "Am înțeles"
-      ],
-      "Keep current plan": [
-        "Păstrare plan actual"
       ],
       "Switch plans": [
         "Schimbare plan"
@@ -3017,6 +3017,31 @@
     "Filter notification": {
       "${ Label.Name } updated": [
         "${ Label.Name } actualizată"
+      ]
+    },
+    "Font face option": {
+      "System default": [
+        "Implicit din sistem"
+      ],
+      "Theme default": [
+        "Temă implicită"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Mare"
+      ],
+      "Medium (recommended)": [
+        "Mediu (recomandat)"
+      ],
+      "Small": [
+        "Mic"
+      ],
+      "Very large": [
+        "Foarte mare"
+      ],
+      "Very small": [
+        "Foarte mic"
       ]
     },
     "Group": {
@@ -3564,6 +3589,9 @@
       ],
       "Custom yearly": [
         "Anual personalizat"
+      ],
+      "Customize the look and feel of ${ BRAND_NAME } applications.": [
+        "Personalizați aspectul aplicației ${ BRAND_NAME }."
       ],
       "Daily": [
         "Zilnic"
@@ -4441,6 +4469,9 @@
       "Street address": [
         "Strada"
       ],
+      "Synchronize with system": [
+        "Sincronizare cu sistemul"
+      ],
       "System information": [
         "Informații sistem"
       ],
@@ -5109,6 +5140,9 @@
       ],
       "Discover all ${ BRAND_NAME } services": [
         "Descoperiți toate serviciile ${ BRAND_NAME }"
+      ],
+      "More theming options are available in your account Settings > Appearance.": [
+        "Mai multe opțiuni pentru teme sunt disponibile în Setări > Aspect."
       ],
       "Select a theme": [
         "Selectaţi o temă"
@@ -6003,6 +6037,9 @@
         "${ emailsCount } adrese de e-mail",
         "${ emailsCount } de adrese de e-mail"
       ],
+      "(active)": [
+        "(activă)"
+      ],
       "Account suspended": [
         "Cont suspendat"
       ],
@@ -6094,6 +6131,9 @@
       ],
       "Customize your mail import": [
         "Personalizare importare mesaje"
+      ],
+      "Day theme": [
+        "Temă zi"
       ],
       "Delete ${ count } contact": [
         "Ștergere un contact",
@@ -6196,6 +6236,9 @@
       ],
       "Minicalendar": [
         "Minicalendar"
+      ],
+      "Night theme": [
+        "Temă noapte"
       ],
       "Open actions dropdown": [
         "Deschidere meniu acțiuni"
@@ -6401,6 +6444,9 @@
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "«Automat» înseamnă că mesajul va fi trimis acestui contact în formatul din modul de compunere. «Text simplu» înseamnă că mesajul trimis va fi întotdeauna convertit în text simplu fără formatări."
       ],
+      "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
+        "Comutare automată a temei preferate sincron cu modul luminos sau întunecat setat al sistemului."
+      ],
       "Customize import to reduce the number of folders": [
         "Modificați importarea pentru a reduce numărul folderelor"
       ],
@@ -6451,6 +6497,12 @@
       ],
       "The import will start with the most recent messages.": [
         "Importarea va începe cu cele mai recente mesaje."
+      ],
+      "The selected theme will be active when your system is set to \"dark mode\"": [
+        "Tema selectată va fi activă când sistemul va fi setat în „modul întunecat”."
+      ],
+      "The selected theme will be active when your system is set to \"light mode\"": [
+        "Tema selectată va fi activă când sistemul va fi setat în „modul luminos”."
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Încărcați o cheie publică pentru a activa trimiterea mesajelor criptate în ambele părți la această adresă."
