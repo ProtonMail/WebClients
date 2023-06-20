@@ -7,6 +7,7 @@ import { Href } from '@proton/atoms/Href';
 import { AttachedFile, Bordered, Dropzone, FileInput, Icon, InlineLinkButton } from '@proton/components/components';
 import { ImportProvider, ImportProviderValues, PROVIDER_INFO_MAP, extractFileExtension } from '@proton/pass/import';
 import type { MaybeNull } from '@proton/pass/types';
+import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
 import { type ImportFormContext, SUPPORTED_IMPORT_FILE_TYPES } from '../../hooks/useImportForm';
@@ -14,6 +15,17 @@ import { PasswordField } from '../fields';
 import { ImportProviderItem } from './ImportProviderItem';
 
 import './ImportForm.scss';
+
+const providerHasUnsupportedItemTypes = (provider: ImportProvider) => {
+    return (
+        provider !== ImportProvider.BRAVE &&
+        provider !== ImportProvider.FIREFOX &&
+        provider !== ImportProvider.CHROME &&
+        provider !== ImportProvider.EDGE &&
+        provider !== ImportProvider.SAFARI &&
+        provider !== ImportProvider.PROTONPASS
+    );
+};
 
 export const ImportForm: VFC<Omit<ImportFormContext, 'reset' | 'result'>> = ({ form, dropzone, busy }) => {
     const needsPassphrase = useMemo(
@@ -119,6 +131,12 @@ export const ImportForm: VFC<Omit<ImportFormContext, 'reset' | 'result'>> = ({ f
                     </Dropzone>
                     {needsPassphrase && (
                         <Field name="passphrase" label={c('Label').t`Passphrase`} component={PasswordField} />
+                    )}
+                    {providerHasUnsupportedItemTypes(form.values.provider) && (
+                        <em className="block text-sm color-weak mb-2">
+                            {c('Info')
+                                .t`${PASS_APP_NAME} will only import logins and notes. Credit cards, passports, attached files, etc. are not supported at the moment.`}
+                        </em>
                     )}
                 </>
             )}
