@@ -321,6 +321,9 @@
       "Got it": [
         "D'acord"
       ],
+      "Grid layout": [
+        "Disseny de quadrícula"
+      ],
       "Hide advanced PGP settings": [
         "Amagueu la configuració avançada del PGP"
       ],
@@ -2486,11 +2489,11 @@
       ]
     },
     "familyOffer_2023:Action": {
+      "Decline invitation": [
+        "Declina la invitació"
+      ],
       "Got it": [
         "Entesos"
-      ],
-      "Keep current plan": [
-        "Manté el pla actual"
       ],
       "Switch plans": [
         "Canvia de pla"
@@ -2682,6 +2685,31 @@
     "Filter notification": {
       "${ Label.Name } updated": [
         "${ Label.Name } actualitzat"
+      ]
+    },
+    "Font face option": {
+      "System default": [
+        "Predeterminat del sistema"
+      ],
+      "Theme default": [
+        "Tema per defecte"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Gran"
+      ],
+      "Medium (recommended)": [
+        "Mitjà (recomanat)"
+      ],
+      "Small": [
+        "Petit"
+      ],
+      "Very large": [
+        "Molt gran"
+      ],
+      "Very small": [
+        "Molt petit"
       ]
     },
     "Group": {
@@ -3296,6 +3324,9 @@
       ],
       "Current version": [
         "Versió actual"
+      ],
+      "Customize the look and feel of ${ BRAND_NAME } applications.": [
+        "Personalitzeu l'aspecte de les aplicacions ${ BRAND_NAME }."
       ],
       "Decrypting files": [
         "Desxifrant els arxius"
@@ -3957,6 +3988,9 @@
       "Uploading hundreds of files at once may have a performance impact.": [
         "La càrrega de centenars de fitxers alhora pot tenir un impacte en el rendiment."
       ],
+      "Use Drive for Desktop to sync folders on your computer with ${ DRIVE_APP_NAME }. They’ll show up here and be accessible from anywhere. ${ learnMore }": [
+        "Utilitza Drive for Desktop per sincronitzar carpetes al teu ordinador amb ${ DRIVE_APP_NAME }. Es mostraran aquí i seran accessibles des de qualsevol lloc. ${ learnMore }"
+      ],
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Utilitza aquest formulari per notificar-nos de casos inapropiats, il·legals o fitxers compartits maliciosos. Reportes sobre:"
       ],
@@ -4550,6 +4584,9 @@
       "Street address": [
         "Adreça de carrer"
       ],
+      "Synchronize with system": [
+        "Sincronitza amb el sistema"
+      ],
       "System information": [
         "Informació del sistema"
       ],
@@ -5074,6 +5111,9 @@
       ],
       "Discover all ${ BRAND_NAME } services": [
         "Descobriu tots els serveis de ${ BRAND_NAME }"
+      ],
+      "More theming options are available in your account Settings > Appearance.": [
+        "Hi ha disponibles més opcions de temes a Configuració del compte > Aparença."
       ],
       "Select a theme": [
         "Seleccioneu un tema"
@@ -5726,6 +5766,9 @@
         "${ numberOfFailedTransfer.total } pujada fallida",
         "${ numberOfFailedTransfer.total } pujades fallides"
       ],
+      "(active)": [
+        "(actiu)"
+      ],
       "Account suspended": [
         "Compte suspès"
       ],
@@ -5816,6 +5859,9 @@
       ],
       "Date": [
         "Data"
+      ],
+      "Day theme": [
+        "Tema de dia"
       ],
       "Delete ${ count } contact": [
         "Suprimeix ${ count } contacte",
@@ -5970,6 +6016,9 @@
       ],
       "Name": [
         "Nom"
+      ],
+      "Night theme": [
+        "Tema de nit"
       ],
       "No results found": [
         "No s'han trobat resultats."
@@ -6203,6 +6252,9 @@
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Automàtic indica que el format del compositor s'utilitza per enviar-lo a aquest usuari. El text sense format indica que el missatge sempre es convertirà a text sense format en enviar."
       ],
+      "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
+        "Canvia automàticament entre els temes preferits per a dia i nit en sincronització amb els modes de dia i nit del sistema"
+      ],
       "Customize import to reduce the number of folders": [
         "Personalitza la importació per reduir el nombre de carpetes"
       ],
@@ -6253,6 +6305,12 @@
       ],
       "The import will start with the most recent messages.": [
         "La importació començarà amb els missatges més recents."
+      ],
+      "The selected theme will be active when your system is set to \"dark mode\"": [
+        "El tema seleccionat s'activarà quan el sistema estigui en «mode fosc»"
+      ],
+      "The selected theme will be active when your system is set to \"light mode\"": [
+        "El tema seleccionat s'activarà quan el sistema estigui en «mode clar»"
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Pengeu una clau pública per permetre l'enviament de missatges de correu electrònic xifrats de final a extrem a aquest correu electrònic"

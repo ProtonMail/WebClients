@@ -321,6 +321,9 @@
       "Got it": [
         "Capito"
       ],
+      "Grid layout": [
+        "Layout griglia"
+      ],
       "Hide advanced PGP settings": [
         "Nascondi impostazioni PGP avanzate"
       ],
@@ -2486,11 +2489,11 @@
       ]
     },
     "familyOffer_2023:Action": {
+      "Decline invitation": [
+        "Rifiuta l'invito"
+      ],
       "Got it": [
         "OK"
-      ],
-      "Keep current plan": [
-        "Mantieni il piano attuale"
       ],
       "Switch plans": [
         "Cambia piano"
@@ -2682,6 +2685,31 @@
     "Filter notification": {
       "${ Label.Name } updated": [
         "${ Label.Name } aggiornato"
+      ]
+    },
+    "Font face option": {
+      "System default": [
+        "Predefinito di sistema"
+      ],
+      "Theme default": [
+        "Tema predefinito"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Grande"
+      ],
+      "Medium (recommended)": [
+        "Medio (consigliato)"
+      ],
+      "Small": [
+        "Piccolo"
+      ],
+      "Very large": [
+        "Molto grande"
+      ],
+      "Very small": [
+        "Molto piccolo"
       ]
     },
     "Group": {
@@ -3957,6 +3985,9 @@
       "Uploading hundreds of files at once may have a performance impact.": [
         "Caricare centinaia di file in una sola volta può avere un impatto sulle prestazioni."
       ],
+      "Use Drive for Desktop to sync folders on your computer with ${ DRIVE_APP_NAME }. They’ll show up here and be accessible from anywhere. ${ learnMore }": [
+        "Usa Drive per Desktop per sincronizzare le cartelle sul tuo computer con ${ DRIVE_APP_NAME }. Verranno visualizzate qui e saranno accessibili da qualsiasi luogo. ${ learnMore }"
+      ],
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Utilizza questo modulo per informarci di contenuti inappropriati, illegali,\no altri file condivisi dannosi. Stai per segnalare:"
       ],
@@ -4549,6 +4580,9 @@
       ],
       "Street address": [
         "Indirizzo"
+      ],
+      "Synchronize with system": [
+        "Sincronizza con il sistema"
       ],
       "System information": [
         "Informazioni sul sistema"
@@ -5726,6 +5760,9 @@
         "${ numberOfFailedTransfer.total } caricamento fallito",
         "${ numberOfFailedTransfer.total } caricamenti falliti"
       ],
+      "(active)": [
+        "(attivo)"
+      ],
       "Account suspended": [
         "Account sospeso"
       ],
@@ -5816,6 +5853,9 @@
       ],
       "Date": [
         "Data"
+      ],
+      "Day theme": [
+        "Tema giorno"
       ],
       "Delete ${ count } contact": [
         "Elimina ${ count } contatto",
@@ -5970,6 +6010,9 @@
       ],
       "Name": [
         "Nome"
+      ],
+      "Night theme": [
+        "Tema notte"
       ],
       "No results found": [
         "Nessun risultato trovato"

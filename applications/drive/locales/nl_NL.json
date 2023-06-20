@@ -321,6 +321,9 @@
       "Got it": [
         "Begrepen"
       ],
+      "Grid layout": [
+        "Roosterweergave"
+      ],
       "Hide advanced PGP settings": [
         "Geavanceerde PGP-instellingen verbergen"
       ],
@@ -2489,9 +2492,6 @@
       "Got it": [
         "Begrepen"
       ],
-      "Keep current plan": [
-        "Huidig abonnement behouden"
-      ],
       "Switch plans": [
         "Van abonnement wisselen"
       ],
@@ -2682,6 +2682,31 @@
     "Filter notification": {
       "${ Label.Name } updated": [
         "${ Label.Name } bijgewerkt"
+      ]
+    },
+    "Font face option": {
+      "System default": [
+        "Systeem standaard"
+      ],
+      "Theme default": [
+        "Thema standaard"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Groot"
+      ],
+      "Medium (recommended)": [
+        "Gemiddeld (aanbevolen)"
+      ],
+      "Small": [
+        "Klein"
+      ],
+      "Very large": [
+        "Zeer groot"
+      ],
+      "Very small": [
+        "Zeer klein"
       ]
     },
     "Group": {
@@ -3296,6 +3321,9 @@
       ],
       "Current version": [
         "Huidige versie"
+      ],
+      "Customize the look and feel of ${ BRAND_NAME } applications.": [
+        "Pas het uiterlijk van ${ BRAND_NAME } applicaties aan."
       ],
       "Decrypting files": [
         "Bestanden ontsleutelen"
@@ -3957,6 +3985,9 @@
       "Uploading hundreds of files at once may have a performance impact.": [
         "Het uploaden van honderden bestanden in één keer kan een prestatieeffect hebben."
       ],
+      "Use Drive for Desktop to sync folders on your computer with ${ DRIVE_APP_NAME }. They’ll show up here and be accessible from anywhere. ${ learnMore }": [
+        "Gebruik Drive voor Desktop om mappen op uw computer met ${ DRIVE_APP_NAME } te synchroniseren. Ze zullen hier verschijnen en van eender waar beschikbaar worden. ${ learnMore }"
+      ],
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Gebruik dit formulier om ons in te lichten over ongepaste, illegale of op een andere manier schadelijke bestanden. U staat op het punt om te melden:"
       ],
@@ -4550,6 +4581,9 @@
       "Street address": [
         "Adres"
       ],
+      "Synchronize with system": [
+        "Synchroniseren met systeem"
+      ],
       "System information": [
         "Systeeminformatie"
       ],
@@ -5074,6 +5108,9 @@
       ],
       "Discover all ${ BRAND_NAME } services": [
         "Ontdek alle ${ BRAND_NAME }-diensten"
+      ],
+      "More theming options are available in your account Settings > Appearance.": [
+        "Meer thema-opties zijn beschikbaar in uw account Instellingen > Uiterlijk."
       ],
       "Select a theme": [
         "Selecteer een thema"
@@ -5726,6 +5763,9 @@
         "${ numberOfFailedTransfer.total } upload mislukt",
         "${ numberOfFailedTransfer.total } uploads mislukt"
       ],
+      "(active)": [
+        "(actief)"
+      ],
       "Account suspended": [
         "Account opgeschort"
       ],
@@ -5816,6 +5856,9 @@
       ],
       "Date": [
         "Datum"
+      ],
+      "Day theme": [
+        "Dag thema"
       ],
       "Delete ${ count } contact": [
         "Verwijder ${ count } contact",
@@ -5970,6 +6013,9 @@
       ],
       "Name": [
         "Naam"
+      ],
+      "Night theme": [
+        "Nacht thema"
       ],
       "No results found": [
         "Geen resultaten"
@@ -6253,6 +6299,9 @@
       ],
       "The import will start with the most recent messages.": [
         "Het importeren begint met de meest recente berichten."
+      ],
+      "The selected theme will be active when your system is set to \"light mode\"": [
+        "Het geselecteerde thema is actief wanneer uw systeem is ingesteld op \"lichte modus\""
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Upload een openbare sleutel om het sturen van end-to-end versleutelde berichten naar dit e-mailadres mogelijk te maken"
