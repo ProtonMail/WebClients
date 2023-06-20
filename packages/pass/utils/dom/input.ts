@@ -41,7 +41,7 @@ export const findBoundingInputElement = (el: HTMLElement, minHeight?: number): H
     const hasOneChild = parent.childElementCount === 1;
     const childrenOverlap = allChildrenOverlap(parent, BOUNDING_ELEMENT_MAX_OFFSET);
 
-    if (parentHeight >= minHeightRef && !hasTextNode && (hasOneChild || childrenOverlap)) {
+    if (parentHeight > 0 && parentHeight >= minHeightRef && !hasTextNode && (hasOneChild || childrenOverlap)) {
         /* if parent has margin break from recursion to avoid
          * resolving a bounding box that would not contain the
          * necessary styles information to account for the offsets */
