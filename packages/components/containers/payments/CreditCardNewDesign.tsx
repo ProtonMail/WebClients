@@ -126,7 +126,7 @@ const CreditCardNewDesign = ({ card, errors, onChange, loading = false, fieldSta
     const { valueWithGaps, bankIcon, niceType, codeName } = formatCreditCardNumber(card.number);
     const { month, year } = card;
 
-    const isNarrow = formRect ? formRect.width < 350 : false;
+    const isNarrow = formRect ? formRect.width < 400 : false;
 
     let error = null;
     if (errors.number) {
