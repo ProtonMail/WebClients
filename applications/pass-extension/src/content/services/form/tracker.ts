@@ -6,7 +6,6 @@ import { parseFormAction } from '@proton/pass/utils/dom';
 import { createListenerStore } from '@proton/pass/utils/listener';
 import { logger } from '@proton/pass/utils/logger';
 import { isEmptyString } from '@proton/pass/utils/string';
-import debounce from '@proton/utils/debounce';
 import lastItem from '@proton/utils/lastItem';
 
 import { FORM_TRACKER_CONFIG } from '../../constants';
@@ -46,19 +45,6 @@ export const createFormTracker = (form: FormHandle): FormTracker => {
 
     const listeners = createListenerStore();
     const state: FormTrackerState = { isSubmitting: false };
-
-    /* when the type attribute of a field changes : detach it from
-     * the tracked form and re-trigger the detection */
-    const onFieldAttributeChange = withContext<MutationCallback>(
-        ({ service: { formManager } }, mutations: MutationRecord[]) => {
-            mutations.forEach((mutation) => {
-                if (mutation.type === 'attributes' && (mutation.target as HTMLElement).tagName === 'INPUT') {
-                    form.detachField(mutation.target as HTMLInputElement);
-                    void formManager.detect('FieldTypeChange');
-                }
-            });
-        }
-    );
 
     /* FIXME: should account for hidden fields - should also
      * account for different form types for more control */
@@ -176,25 +162,12 @@ export const createFormTracker = (form: FormHandle): FormTracker => {
             ?.focus();
     });
 
-    const onFormResize = () => {
-        const fields = form.getFields();
-        fields.forEach((field) => field.icon?.reposition());
-    };
-
     /* when detaching the form tracker : remove every listener
      * for both the current tracker and all fields*/
     const detach = () => {
         listeners.removeAll();
         form.getFields().forEach((field) => field.detach());
     };
-
-    listeners.addObserver(form.element, onFieldAttributeChange, {
-        attributeFilter: ['type'],
-        childList: true,
-        subtree: true,
-    });
-
-    listeners.addResizeObserver(form.element, debounce(onFormResize, 50, { leading: true }));
 
     if (form.formType !== FormType.NOOP) listeners.addListener(form.element, 'submit', onSubmitHandler);
 
