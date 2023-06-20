@@ -1,4 +1,4 @@
-import { ReactNode, createContext, useCallback, useContext, useEffect, useLayoutEffect, useState } from 'react';
+import { ReactNode, createContext, useCallback, useContext, useEffect, useLayoutEffect, useRef, useState } from 'react';
 
 import { clearBit, hasBit, setBit } from '@proton/shared/lib/helpers/bitset';
 import { getCookie, setCookie } from '@proton/shared/lib/helpers/cookies';
@@ -52,6 +52,7 @@ interface ThemeContextInterface {
     settings: ThemeSetting;
     information: ThemeInformation;
     addListener: (cb: (data: ThemeSetting) => void) => () => void;
+    setAccessibilitySettingsEnabled: (value: boolean) => void;
 }
 
 export const ThemeContext = createContext<ThemeContextInterface>({
@@ -83,6 +84,7 @@ export const ThemeContext = createContext<ThemeContextInterface>({
         },
     },
     addListener: () => noop,
+    setAccessibilitySettingsEnabled: () => noop,
 });
 
 interface Props {
@@ -140,6 +142,7 @@ const getMotionMode = (matches: boolean): MotionModeSetting => {
 const listeners = createListeners<[ThemeSetting]>();
 
 const ThemeProvider = ({ children }: Props) => {
+    const isAccessbilitySettingsEnabledRef = useRef(false);
     const [themeSetting, setThemeSettingDefault] = useState(() => {
         return getParsedThemeSetting(storedTheme);
     });
@@ -195,7 +198,7 @@ const ThemeProvider = ({ children }: Props) => {
             return;
         }
 
-        if (DARK_THEMES.includes(themeType)) {
+        if (DARK_THEMES.includes(themeType) && isAccessbilitySettingsEnabledRef.current) {
             syncThemeSettingValue({ ...themeSetting, Mode: ThemeModeSetting.Dark, DarkTheme: themeType });
         } else {
             syncThemeSettingValue({ ...themeSetting, Mode: ThemeModeSetting.Light, LightTheme: themeType });
@@ -325,6 +328,9 @@ const ThemeProvider = ({ children }: Props) => {
                 setFeature,
                 information,
                 addListener: listeners.subscribe,
+                setAccessibilitySettingsEnabled: (value: boolean) => {
+                    isAccessbilitySettingsEnabledRef.current = value;
+                },
             }}
         >
             <style id={THEME_ID}>{style}</style>
