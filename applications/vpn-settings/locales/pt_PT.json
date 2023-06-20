@@ -165,7 +165,7 @@
         "Ajustar na janela"
       ],
       "Get ${ discountPercentage } off with 24 months": [
-        "Obtém ${ discountPercentage } de desconto com 24 meses"
+        "Obtenha ${ discountPercentage } de desconto com 24 meses"
       ],
       "Get ${ vpnPlus }": [
         "Obter o ${ vpnPlus }"
@@ -220,6 +220,9 @@
       ],
       "Pay": [
         "Pagar"
+      ],
+      "Pay ${ price } now": [
+        "Pague ${ price } agora"
       ],
       "Previous": [
         "Anterior"
@@ -276,7 +279,7 @@
         "Guardar"
       ],
       "Save selected": [
-        "Guardar selecionados"
+        "Guardar a escolha"
       ],
       "Search countries": [
         "Pesquisar países"
@@ -1590,11 +1593,11 @@
       ]
     },
     "familyOffer_2023:Action": {
+      "Decline invitation": [
+        "Recusar o convite"
+      ],
       "Got it": [
         "Entendido"
-      ],
-      "Keep current plan": [
-        "Manter o plano atual"
       ],
       "Switch plans": [
         "Mudar de plano"
@@ -1833,6 +1836,31 @@
         "Megabytes"
       ]
     },
+    "Font face option": {
+      "System default": [
+        "Predefinição do sistema"
+      ],
+      "Theme default": [
+        "Tema predefinido"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Grande"
+      ],
+      "Medium (recommended)": [
+        "Médio (recomendado)"
+      ],
+      "Small": [
+        "Pequeno"
+      ],
+      "Very large": [
+        "Muito grande"
+      ],
+      "Very small": [
+        "Muito pequeno"
+      ]
+    },
     "Frequency of news": {
       "(1 email per month)": [
         "(1 e-mail por mês)"
@@ -1892,6 +1920,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "O ${ appName } precisa da sua permissão para ${ enableDesktopNotifications }."
       ],
+      "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
+        "${ boldWarning } Se continuar, perderá o acesso a todos os dados encriptados existentes na sua conta."
+      ],
       "${ fileName }: full-size image": [
         "${ fileName }: imagem em tamanho máximo"
       ],
@@ -1937,6 +1968,9 @@
       "30-day money-back guarantee": [
         "Reembolso garantido durante 30 dias"
       ],
+      "30-day money-back guarantee.": [
+        "Garantia de devolução do dinheiro durante 30 dias"
+      ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Um número de telemóvel pode ser usado para verificar apenas uma conta ${ BRAND_NAME }"
       ],
@@ -1970,6 +2004,9 @@
       "Amount below minimum (${ amount }).": [
         "Quantia abaixo do mínimo (${ amount })."
       ],
+      "Any ${ twoFa } method on your account will be disabled.": [
+        "Qualquer método ${ twoFa } na sua conta será desativado."
+      ],
       "Are you sure you want to disable two-factor authentication?": [
         "Tem certeza de que deseja desativar a autenticação em dois passos?"
       ],
@@ -1997,6 +2034,9 @@
       "Billed every 30 months": [
         "Facturação a cada 30 meses"
       ],
+      "Billed every month": [
+        "Faturação mensal"
+      ],
       "Billing cycle: ${ text }": [
         "Ciclo de facturação: ${ text }"
       ],
@@ -2012,6 +2052,9 @@
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Clique em \"Pedir novo código\" para receber um novo código de verificação em ${ strong }. Se o telefone estiver incorrecto, clique em \"Editar\" para o corrigir."
       ],
+      "Continue with ${ freeName }": [
+        "Continuar com ${ freeName }"
+      ],
       "Country code": [
         "Código de país"
       ],
@@ -2026,6 +2069,9 @@
       ],
       "Do not use the OpenVPN / IKEv2 credentials in ${ VPN_APP_NAME } applications or on the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
         "Não utilize as credenciais OpenVPN/IKEv2 nas aplicações ${ VPN_APP_NAME } ou no painel do ${ VPN_APP_NAME }. ${ learnMore }"
+      ],
+      "Done! We sent a code to ${ destination }.": [
+        "Já está! Enviámos um código para ${ destination }."
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "A regressão terminará todas as ligações a servidores pagos do ${ VPN_APP_NAME }."
@@ -2058,7 +2104,10 @@
         "Introduzir o código de verificação. Digite ${ digit }."
       ],
       "Enter your ${ BRAND_NAME } Account details.": [
-        "Introduz os detalhes da tua conta ${ BRAND_NAME }."
+        "Introduza os detalhes da sua conta ${ BRAND_NAME }."
+      ],
+      "Enter your ${ BRAND_NAME } Account email address or username.": [
+        "Introduza o seu endereço de e-mail ou nome de utilizador da conta ${ BRAND_NAME }."
       ],
       "Enter your own password (as organization admin).": [
         "Insira a sua palavra-passe (como administrador da organização)."
@@ -2079,7 +2128,7 @@
         "Liberte algum espaço ou contacte um administrador."
       ],
       "Get a ${ BRAND_NAME } address to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
-        "Obtém um endereço ${ BRAND_NAME } para usar todos os serviços ${ BRAND_NAME_TWO } incluindo ${ MAIL_SHORT_APP_NAME } e ${ CALENDAR_SHORT_APP_NAME }."
+        "Obtenha um endereço ${ BRAND_NAME } para utilizar todos os serviços ${ BRAND_NAME_TWO } incluindo ${ MAIL_SHORT_APP_NAME } e ${ CALENDAR_SHORT_APP_NAME }."
       ],
       "here": [
         "aqui"
@@ -2171,6 +2220,9 @@
       "old password": [
         "palavra-passe antiga"
       ],
+      "Once you reset your password:": [
+        "Uma vez a sua palavra-passe redefinida:"
+      ],
       "One account. All ${ BRAND_NAME } services.": [
         "Uma conta. Todos os serviços da ${ BRAND_NAME }."
       ],
@@ -2185,6 +2237,9 @@
       ],
       "Plan upgrade required": [
         "Actualização do plano requerida"
+      ],
+      "Please enter the 12-word recovery phrase associated with your account.": [
+        "Introduza a frase de recuperação de 12 palavras associada à sua conta."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "Note que ao clicar em Confirmar a sua conta terá ${ creditsRemaining } créditos restantes."
@@ -2209,6 +2264,9 @@
       ],
       "Preview for this file type is not supported": [
         "A pré-visualização deste tipo de arquivo não é suportada"
+      ],
+      "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
+        "O preço inclui todos os descontos aplicáveis com base no ciclo e cupões não expirados guardados na sua conta."
       ],
       "Priority support": [
         "Apoio ao cliente prioritário"
@@ -2242,6 +2300,9 @@
       ],
       "Session timed out": [
         "A sessão expirou."
+      ],
+      "Setting up your Drive": [
+        "Configurando o seu Drive"
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Sendo utilizador(a) leal, a sua conta dispõe de funcionalidades adicionais."
@@ -2280,6 +2341,9 @@
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "Isto substituirá a sua palavra-passe temporária. Utilize-a para aceder à sua conta ${ BRAND_NAME } no futuro."
       ],
+      "This will sign you out of any active sessions and disable 2-factor authentication.": [
+        "Isto retira-o de todas as sessões ativas e desativa a autenticação de dois factores."
+      ],
       "to continue to ${ toAppName }": [
         "para continuar para ${ toAppName }"
       ],
@@ -2289,8 +2353,11 @@
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and visit our blog from time to time.": [
         "Para se manter atualizado com o último desenvolvimento dos produtos ${ BRAND_NAME }, pode subscrever os nossos vários e-mails e visitar o nosso blog de vez em quando."
       ],
+      "To proceed, select an account recovery method so we can verify the request.": [
+        "Para continuar, seleccione um método de recuperação de conta para podermos verificar o pedido."
+      ],
       "to use ${ toAppName } and all ${ BRAND_NAME } services": [
-        "para usar ${ toAppName } e todos os serviços ${ BRAND_NAME }"
+        "para utilizar ${ toAppName } e todos os serviços ${ BRAND_NAME }"
       ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Recarregue a sua conta com créditos que poderá utilizar para subscrever um novo plano ou renovar o plano atual. Recebe um crédito por cada ${ i18nCurrency } gasto."
@@ -2373,6 +2440,9 @@
       "We couldn’t process your payment.": [
         "Não foi possível realizar o pagamento."
       ],
+      "We recommend using your recovery phrase instead.": [
+        "Em vez disso, recomendamos que utilize a sua frase de recuperação."
+      ],
       "We use 3-D Secure to protect your payments.": [
         "Utilizamos 3-D Secure para proteger os seus pagamentos."
       ],
@@ -2384,6 +2454,9 @@
       ],
       "Welcome": [
         "Boas vindas"
+      ],
+      "We’ll send a reset code to the phone number you provided for account recovery.": [
+        "Enviaremos um código de reinicialização para o endereço de correio e-mail que forneceu para a recuperação da conta."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Após a configuração da autenticação de dois fatores, serão fornecidos códigos de recuperação que poderá usar para se autenticar, no caso de perder o acesso à aplicação de autenticação."
@@ -2416,6 +2489,9 @@
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your subscription.": [
         "Pode manter até ${ MAX_CALENDARS_FREE } calendário. Remova as hiperligações dos calendários partilhados antes de cancelar a sua subscrição.",
         "Pode manter até ${ MAX_CALENDARS_FREE } calendários. Remova as hiperligações dos calendários partilhados antes de cancelar a sua subscrição."
+      ],
+      "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
+        "Só pode ter uma instância de chat aberta por vez. Feche as conversas anteriores antes de iniciar uma nova."
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Não definiu um método de recuperação, a recuperação da conta será impossível se se esquecer da palavra-passe. Deseja continuar sem um método de recuperação?"
@@ -2451,7 +2527,7 @@
         "A sua palavra-passe do ${ BRAND_NAME }"
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there.": [
-        "A tua ${ VPN_APP_NAME } e ${ MAIL_APP_NAME } estão interligadas. Para eliminar ambas, por favor inicia sessão em ${ loginLink } e elimina aí a tua conta."
+        "A sua ${ VPN_APP_NAME } e ${ MAIL_APP_NAME } estão ligadas. Para eliminar ambas, inicie sessão em ${ loginLink } e elimine aí a sua conta."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "A sua conta tem pelo menos uma factura em atraso. O acesso em breve será restrito. ${ payInvoiceLink }"
@@ -2467,6 +2543,12 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "O seu e-mail só será usado para esta verificação única."
+      ],
+      "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your ${ oldPassword }.": [
+        "As mensagens, calendários ou contactos existentes ficarão bloqueados. Para recuperar estes dados, necessitará do seu ${ oldPassword }."
+      ],
+      "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your recovery phrase or your ${ oldPassword }.": [
+        "As mensagens, calendários ou contactos existentes ficarão bloqueados. Para recuperar estes dados, necessitará da sua frase de recuperação ou do seu ${ oldPassword }."
       ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "Os seus detalhes de pagamento estão protegidos por encriptação TLS e pelas leis de privacidade suíças."
@@ -2767,6 +2849,9 @@
       "Phone number": [
         "Número de telefone"
       ],
+      "Phrase consists of 12 unique words in a specific order": [
+        "A frase é composta por 12 palavras únicas numa ordem específica."
+      ],
       "Postal code": [
         "Código postal"
       ],
@@ -2805,6 +2890,9 @@
       ],
       "Two-password mode": [
         "Modo palavra-passe dupla"
+      ],
+      "Use a recovery email address": [
+        "Utilizar um e-mail de recuperação"
       ],
       "Use a recovery phone number": [
         "Utilizar um número de telefone de recuperação"
@@ -2944,11 +3032,17 @@
       ]
     },
     "Live Chat Modal": {
+      "Live chat is available with ${ planName }": [
+        "Chat em directo disponível com ${ planName }"
+      ],
       "Open support form": [
         "Abrir o formulário de suporte"
       ],
       "Upgrade subscription": [
         "Atualizar a sua subscrição"
+      ],
+      "Upgrade to unlock chat support and other premium features, or use our free support form to report your issue.": [
+        "Atualize para desbloquear o suporte por chat e outras funcionalidades premium, ou utilize o nosso formulário de suporte gratuito para comunicar o seu problema."
       ]
     },
     "Message": {
@@ -3185,8 +3279,8 @@
         "Apoio ao cliente prioritário"
       ],
       "Protect ${ n } device at a time": [
-        "Protege ${ n } dispositivo ao mesmo tempo",
-        "Protege ${ n } dispositivos ao mesmo tempo"
+        "Proteja ${ n } dispositivo ao mesmo tempo",
+        "Proteja ${ n } dispositivos ao mesmo tempo"
       ],
       "Router support": [
         "Suporte para router"
@@ -4017,6 +4111,9 @@
       "${ VPN_APP_NAME } clients": [
         "Clientes ${ VPN_APP_NAME }"
       ],
+      "1. Give a name to the config to be generated": [
+        "1. Dê um nome a configuração a ser gerada"
+      ],
       "1. Select platform": [
         "1. Seleccionar plataforma"
       ],
@@ -4028,6 +4125,12 @@
       ],
       "3. Select config file and download": [
         "3. Seleccionar configuração e transferir"
+      ],
+      "3. Select VPN options": [
+        "3. Selecione as opções da VPN"
+      ],
+      "4. Select a server to connect to": [
+        "4. Selecione o servidor para ligar"
       ],
       "Account": [
         "Conta"
@@ -4088,6 +4191,9 @@
       ],
       "Confirm downgrade": [
         "Confirmar a alteração da conta"
+      ],
+      "Confirm loss of ${ BRAND_NAME } bonuses": [
+        "Confirme a perda dos bônus ${ BRAND_NAME }"
       ],
       "Confirm phone number": [
         "Confirmar número de telefone"
@@ -4338,6 +4444,9 @@
       "Verification": [
         "Verificação"
       ],
+      "Verification failed": [
+        "Erro de verificação"
+      ],
       "Verify email address": [
         "Verifique o seu endereço de e-mail"
       ],
@@ -4373,6 +4482,9 @@
       ],
       "Your subscriptions": [
         "As suas subscrições"
+      ],
+      "You’ve been invited to try ${ MAIL_APP_NAME }": [
+        "Foi convidade a testar o ${ MAIL_APP_NAME }."
       ]
     },
     "Title for payment methods table": {

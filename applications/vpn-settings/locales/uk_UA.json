@@ -1666,11 +1666,11 @@
       ]
     },
     "familyOffer_2023:Action": {
+      "Decline invitation": [
+        "Відхилити запрошення"
+      ],
       "Got it": [
         "Зрозуміло"
-      ],
-      "Keep current plan": [
-        "Лишити поточний тарифний план"
       ],
       "Switch plans": [
         "Змінити тарифний план"
@@ -1748,7 +1748,7 @@
         "Призначений вам обсяг сховища: ${ assignedStorage }"
       ],
       "The subscription is billed to the Visionary or family plan's primary admin.": [
-        "Рахунок за передплату виставляється основному адміністратору Visionary або сімейного плану."
+        "Рахунок за передплату виставляється головному адміністратору Visionary або сімейного плану."
       ],
       "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
         "Visionary і сімейні плани наразі не підтримують зовнішні облікові записи. Перш ніж приєднатися, створіть адресу ${ BRAND_NAME }. ${ addressSettingsLink }"
@@ -1990,10 +1990,10 @@
     },
     "Font face option": {
       "System default": [
-        "Системна за замовчуванням"
+        "Системна"
       ],
       "Theme default": [
-        "Тема за замовчуванням"
+        "Стандартна тема"
       ]
     },
     "Font size option": {
@@ -3076,6 +3076,9 @@
       "Card holder": [
         "Власник картки"
       ],
+      "Card information": [
+        "Інформація про картку"
+      ],
       "Card number": [
         "Номер картки"
       ],
@@ -3162,6 +3165,9 @@
       ],
       "Enter the code displayed on your TV": [
         "Введіть код, показаний на вашому телевізорі"
+      ],
+      "Expiration (${ patternExpiration })": [
+        "Термін дії (${ patternExpiration })"
       ],
       "Expiration date": [
         "Термін дії"
@@ -3282,6 +3288,9 @@
       ],
       "Security code": [
         "Код безпеки"
+      ],
+      "Security code (${ codeName })": [
+        "Код безпеки (${ codeName })"
       ],
       "Select your country": [
         "Виберіть вашу країну"
@@ -4238,7 +4247,7 @@
         "Під час надсилання іншим користувачам ${ MAIL_APP_NAME }, шифрування відбувається автоматично. Щоб надіслати користувачам поза ${ MAIL_APP_NAME_TWO }, необхідно налаштувати пароль заздалегідь."
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
-        "Ви можете мати більше одного адміністратора. Усі адміністратори можуть додавати користувачів та керувати ними, однак лише основний адміністратор може контролювати платежі."
+        "Ви можете мати більше одного адміністратора. Усі адміністратори можуть додавати користувачів та керувати ними, однак контролювати платежі може лише головний адміністратор."
       ]
     },
     "new_plans: Upsell attribute": {
@@ -5029,13 +5038,13 @@
     },
     "Tab subscription modal": {
       "For businesses": [
-        "Для бізнесу"
+        "Професійний"
       ],
       "For families": [
-        "Для родин"
+        "Сімейний"
       ],
       "For individuals": [
-        "Для особистого користування"
+        "Особистий"
       ]
     },
     "TableHeader": {

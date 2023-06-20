@@ -858,7 +858,7 @@
     },
     "Calendar self sharing error": {
       "You already have access to this calendar": [
-        "Já tens acesso a este calendário"
+        "Já tem acesso a este calendário."
       ]
     },
     "Calendar share limit modal": {
@@ -893,7 +893,7 @@
     },
     "Calendar sharing error": {
       "Failed to retrieve contact information for ${ address }": [
-        "Não foi possível obter a informação de contacto para o email ${ address }"
+        "Não foi possível obter a informação de contacto para o e-mail ${ address }."
       ]
     },
     "Calendar sidebar dropdown item": {
@@ -917,7 +917,7 @@
         "O calendário não pôde ser desencriptado."
       ],
       "Calendar is syncing": [
-        "O calendário está a sincronizar"
+        "O calendário está a sincronizar."
       ],
       "Calendar is syncing: it may take several minutes for all of its events to show up.": [
         "O calendário está a sincronizar: a exibição de todos os eventos, poderá demorar vários minutos."
@@ -935,7 +935,7 @@
         "Erro ao sincronizar o calendário"
       ],
       "More than 12 hours passed since last update": [
-        "Mais de 12 horas passaram desde a última atualização"
+        "Mais de 12 horas passaram desde a última atualização."
       ],
       "Unsupported calendar format": [
         "Formato de calendário não suportado"
@@ -1905,7 +1905,7 @@
     },
     "Country select label": {
       "Based on your time zone": [
-        "Baseado no teu fuso horário"
+        "Baseado no seu fuso horário"
       ]
     },
     "Custom frequency option": {
@@ -2469,7 +2469,7 @@
         "Erro de validação"
       ],
       "You already added this holidays calendar": [
-        "Tu já adicionas-te esse calendário de feriados"
+        "Já adicionou este calendário de férias."
       ],
       "You can't send a mail to more than 100 recipients": [
         "Não pode enviar um e-mail para mais de 100 destinatários."
@@ -2792,11 +2792,11 @@
       ]
     },
     "familyOffer_2023:Action": {
+      "Decline invitation": [
+        "Recusar o convite"
+      ],
       "Got it": [
         "Entendido"
-      ],
-      "Keep current plan": [
-        "Manter o plano atual"
       ],
       "Switch plans": [
         "Mudar de plano"
@@ -2988,6 +2988,31 @@
     "Filter notification": {
       "${ Label.Name } updated": [
         "${ Label.Name } atualizada"
+      ]
+    },
+    "Font face option": {
+      "System default": [
+        "Predefinição do sistema"
+      ],
+      "Theme default": [
+        "Tema predefinido"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Grande"
+      ],
+      "Medium (recommended)": [
+        "Médio (recomendado)"
+      ],
+      "Small": [
+        "Pequeno"
+      ],
+      "Very large": [
+        "Muito grande"
+      ],
+      "Very small": [
+        "Muito pequeno"
       ]
     },
     "Group": {
@@ -3441,7 +3466,7 @@
         "Atenção Requerida"
       ],
       "Based on your time zone": [
-        "Baseado no teu fuso horário"
+        "Baseado no seu fuso horário"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Antes de pedir um novo código de verificação, verifique a sua pasta de spam’ e verifique que ${ strong } é o endereço correto."
@@ -3506,6 +3531,9 @@
       ],
       "Custom yearly": [
         "Personalização anual"
+      ],
+      "Customize the look and feel of ${ BRAND_NAME } applications.": [
+        "Personalize o aspeto e a sensação das aplicações ${ BRAND_NAME }."
       ],
       "Daily": [
         "Diariamente"
@@ -4379,6 +4407,9 @@
       "Street address": [
         "Endereço postal"
       ],
+      "Synchronize with system": [
+        "Sincronizar com o sistema"
+      ],
       "System information": [
         "Informação do sistema"
       ],
@@ -5019,6 +5050,9 @@
       "Discover all ${ BRAND_NAME } services": [
         "Descubra todos os serviços de ${ BRAND_NAME }"
       ],
+      "More theming options are available in your account Settings > Appearance.": [
+        "Estão disponíveis mais opções de temas nas configurações da conta, na secção Aspeto."
+      ],
       "Select a theme": [
         "Seleccionar um tema"
       ],
@@ -5314,12 +5348,12 @@
     },
     "Share calendar modal input placeholder": {
       "Enter an email address or group name": [
-        "Introduz um endereço de e-mail ou nome de grupo"
+        "Introduza um endereço de e-mail ou nome de grupo."
       ]
     },
     "Share calendar modal title": {
       "Share with ${ BRAND_NAME } users": [
-        "Partilha com utilizadores ${ BRAND_NAME }"
+        "Partilhe com utilizadores ${ BRAND_NAME }"
       ]
     },
     "Shared calendar; Info about calendar owner": {
@@ -5678,7 +5712,7 @@
         "Calendário criado"
       ],
       "Calendar information updated": [
-        "Informação do calendário atualizada"
+        "As informações do calendário foram atualizadas."
       ],
       "Calendar updated": [
         "Calendário atualizado"
@@ -5888,6 +5922,9 @@
         "${ emailsCount } endereço de e-mail",
         "${ emailsCount } endereços de e-mail"
       ],
+      "(active)": [
+        "(ativo)"
+      ],
       "Account suspended": [
         "Conta suspensa"
       ],
@@ -5978,6 +6015,9 @@
       ],
       "Customize your mail import": [
         "Personalize a sua importação de e-mail"
+      ],
+      "Day theme": [
+        "Tema diurno"
       ],
       "Delete ${ count } contact": [
         "Eliminar ${ count } contacto",
@@ -6077,6 +6117,9 @@
       ],
       "Minicalendar": [
         "Minicalendário"
+      ],
+      "Night theme": [
+        "Tema noturno"
       ],
       "Open actions dropdown": [
         "Abrir lista de ações"
@@ -6282,6 +6325,9 @@
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Automático indica que o formato no compositor é usado para enviar para este utilizador. Texto simples indica que a mensagem será sempre convertida para texto simples ao enviar."
       ],
+      "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
+        "Alterne automaticamente entre os seus temas preferidos para o dia e para a noite, em sincronia com os modos diurno e noturno do seu sistema."
+      ],
       "Customize import to reduce the number of folders": [
         "Personalize a importação para reduzir o número de pastas"
       ],
@@ -6332,6 +6378,12 @@
       ],
       "The import will start with the most recent messages.": [
         "A importação começará com as mensagens mais recentes."
+      ],
+      "The selected theme will be active when your system is set to \"dark mode\"": [
+        "O tema selecionado ficará ativo quando o sistema estiver definido para o \"modo escuro\"."
+      ],
+      "The selected theme will be active when your system is set to \"light mode\"": [
+        "O tema selecionado ficará ativo quando o sistema estiver definido para o \"modo claro\"."
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Envie uma chave pública para permitir o envio de e-mails encriptados ponta a ponta para este e-mail."
