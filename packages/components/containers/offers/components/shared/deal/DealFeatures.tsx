@@ -2,7 +2,15 @@ import { useMemo } from 'react';
 
 import { c } from 'ttag';
 
-import { Icon, Info, InlineLinkButton, StripedItem, StripedList, useActiveBreakpoint } from '@proton/components/';
+import {
+    Badge,
+    Icon,
+    Info,
+    InlineLinkButton,
+    StripedItem,
+    StripedList,
+    useActiveBreakpoint,
+} from '@proton/components/';
 import clsx from '@proton/utils/clsx';
 
 import { useDealContext } from './DealContext';
@@ -36,6 +44,7 @@ const DealFeatures = ({ isExpanded, expand }: Props) => {
                                 )
                             }
                         >
+                            {feature.badge && <Badge type="primary">{feature.badge}</Badge>}
                             <span className={clsx(['text-left', feature.disabled && 'color-disabled'])}>
                                 {feature.name}
                             </span>
