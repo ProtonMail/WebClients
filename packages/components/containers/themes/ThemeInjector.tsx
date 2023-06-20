@@ -15,7 +15,7 @@ import { useTheme } from './ThemeProvider';
 
 const ThemeInjector = () => {
     const [userSettings] = useUserSettings();
-    const { addListener, settings, setThemeSetting } = useTheme();
+    const { addListener, settings, setThemeSetting, setAccessibilitySettingsEnabled } = useTheme();
     const api = useApi();
     const silentApi = getSilentApi(api);
     const isAccessibilitySettingsEnabled =
@@ -29,6 +29,10 @@ const ThemeInjector = () => {
         isAccessibilitySettingsEnabled && userSettings.Theme && 'Mode' in userSettings.Theme
             ? userSettings.Theme
             : legacyThemeSettings;
+
+    useLayoutEffect(() => {
+        setAccessibilitySettingsEnabled(isAccessibilitySettingsEnabled);
+    }, [isAccessibilitySettingsEnabled]);
 
     useLayoutEffect(() => {
         setThemeSetting(themeSetting);
