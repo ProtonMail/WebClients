@@ -149,7 +149,7 @@ export const createFormManager = (options: FormManagerOptions) => {
             ctx.busy = false;
             return false;
         }),
-        250,
+        150,
         { leading: true }
     );
 
