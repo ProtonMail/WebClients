@@ -21,6 +21,9 @@
     "account": {
       "Forwarding will start soon. New emails will appear in your inbox.": [
         "Η προώθηση θα ξεκινήσει σύντομα. Νέα μηνύματα ηλεκτρονικού ταχυδρομείου θα εμφανιστούν στα εισερχόμενά σας."
+      ],
+      "Mail forward stopped": [
+        "Η προώθηση αλληλογραφίας σταμάτησε"
       ]
     },
     "Action": {
@@ -945,6 +948,15 @@
       ]
     },
     "Animation": {
+      "${ nameToDisplay }'s inbox": [
+        "Εισερχόμενα του ${ nameToDisplay }"
+      ],
+      "5 trackers removed": [
+        "Αφαιρέθηκαν 5 ιχνηλάτες"
+      ],
+      "Auto forwarded": [
+        "Αυτόματη προώθηση"
+      ],
       "Email received": [
         "Ελήφθη email"
       ],
@@ -1081,6 +1093,9 @@
       "Other": [
         "Άλλο"
       ],
+      "Pass problem": [
+        "Πρόβλημα Pass"
+      ],
       "Payments problem": [
         "Πρόβλημα πληρωμής"
       ],
@@ -1113,6 +1128,9 @@
       ]
     },
     "Button": {
+      "Continue using ${ MAIL_APP_NAME }.": [
+        "Συνεχίστε να χρησιμοποιείτε ${ MAIL_APP_NAME }."
+      ],
       "Copy": [
         "Αντιγραφή"
       ],
@@ -1346,11 +1364,17 @@
       "fern": [
         "φτέρη"
       ],
+      "field drab": [
+        "μονότονο πεδίο"
+      ],
       "forest": [
         "δάσος"
       ],
       "gainsboro": [
         "γκέινσμπορο"
+      ],
+      "japanese laurel": [
+        "ιαπωνική δάφνη"
       ],
       "kiwi": [
         "ακτινίδιο"
@@ -1361,11 +1385,17 @@
       "light carmine pink": [
         "ανοιχτό ροζ καρμίνη"
       ],
+      "light moss green": [
+        "ανοιχτό πράσινο βρύα"
+      ],
       "light red": [
         "ανοιχτό κόκκινο"
       ],
       "maize": [
         "καλαμπόκι"
+      ],
+      "mughal green": [
+        "mughal πράσινο"
       ],
       "ocean": [
         "ωκεανός"
@@ -1393,6 +1423,12 @@
       ],
       "persian red": [
         "περσικό κόκκινο"
+      ],
+      "philippine gray": [
+        "φιλιππίνων γκρι"
+      ],
+      "philippine silver": [
+        "φιλιππίνων ασήμι"
       ],
       "pickle": [
         "τουρσί"
@@ -1423,6 +1459,9 @@
       ],
       "sahara": [
         "Σαχάρα"
+      ],
+      "satin sheen gold": [
+        "σατέν γυαλιστερό χρυσό"
       ],
       "slateblue": [
         "μπλε ροζέ"
@@ -2460,6 +2499,9 @@
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Φαίνεται ότι η λίστα επαφών που εισάγετε περιέχει κάποιες ομάδες. Παρακαλούμε εξετάστε τον τρόπο εισαγωγής αυτών των ομάδων."
       ],
+      "ProtonMail logo and a plus sign": [
+        "Λογότυπο ProtonMail και σύμβολο συν"
+      ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "Το αρχείο πρέπει να έχει μέγιστο μέγεθος ${ MAX_IMPORT_FILE_SIZE_STRING } και να έχει μέχρι και ${ MAX_IMPORT_CONTACTS_STRING } επαφή. Εάν το αρχείο σας είναι μεγαλύτερο, διαχωρίστε το σε μικρότερα αρχεία.",
         "Το αρχείο πρέπει να έχει μέγιστο μέγεθος ${ MAX_IMPORT_FILE_SIZE_STRING } και να έχει\nμέχρι και ${ MAX_IMPORT_CONTACTS_STRING } επαφές. Εάν το αρχείο σας είναι μεγαλύτερο, διαχωρίστε το σε μικρότερα αρχεία."
@@ -2765,6 +2807,9 @@
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "Συγχωνεύστε τουλάχιστον ${ calendarsToFixCount } ημερολόγιο με ένα υπάρχον ημερολόγιο του ${ BRAND_NAME }",
         "Συγχωνεύστε τουλάχιστον ${ calendarsToFixCount } ημερολόγια με υπάρχοντα ημερολόγια του ${ BRAND_NAME }"
+      ],
+      "Missing key packet": [
+        "Λείπει πακέτο κλειδιού"
       ],
       "Missing signature": [
         "Λείπει η υπογραφή"
@@ -3243,11 +3288,17 @@
       "Oops, something went wrong": [
         "Ωχ, κάτι πήγε στραβά"
       ],
+      "Please refresh the page or try again later.": [
+        "Παρακαλούμε ανανεώσετε τη σελίδα ή προσπαθήσετε αργότερα."
+      ],
       "Something went wrong": [
         "Κάτι πήγε στραβά"
       ],
       "Too many child sessions, please clear your cookies and sign back in.": [
         "Πάρα πολλές υποσυνεδρίες, παρακαλούμε καθαρίστε τα cookies σας και συνδεθείτε ξανά."
+      ],
+      "We couldn't load this page. Please refresh the page or check your internet connection.": [
+        "Δεν ήταν δυνατή η φόρτωση αυτής της σελίδας. Ανανεώστε τη σελίδα ή ελέγξτε τη σύνδεσή σας στο διαδίκτυο."
       ]
     },
     "Error message, recovery": {
@@ -3379,11 +3430,11 @@
       ]
     },
     "familyOffer_2023:Action": {
+      "Decline invitation": [
+        "Αρνηση πρόσκλησης."
+      ],
       "Got it": [
         "Το κατάλαβα"
-      ],
-      "Keep current plan": [
-        "Διατηρήστε το τρέχον σχέδιο"
       ],
       "Switch plans": [
         "Αλλαγή προγράμματος;"
@@ -3472,6 +3523,9 @@
       ]
     },
     "familyOffer_2023:Footer": {
+      "*Your subscription will automatically renew at the same rate at the end of your billing cycle.": [
+        "*Η συνδρομή σας θα ανανεωθεί αυτόματα με την ίδια τιμή στο τέλος του κύκλου χρέωσής σας."
+      ],
       "Discounts are based on the standard monthly pricing.": [
         "Οι εκπτώσεις βασίζονται στην τυπική μηνιαία τιμολόγηση."
       ]
@@ -3481,9 +3535,22 @@
         "Απόκτηση ${ planName }"
       ]
     },
+    "familyOffer_2023:Info": {
+      "Online privacy, for your whole family": [
+        "Online ιδιωτικότητα, για όλη την οικογένειά σας"
+      ]
+    },
+    "familyOffer_2023:Title": {
+      "Introducing ${ planName }": [
+        "Παρουσιάζουμε το ${ planName }"
+      ]
+    },
     "familyOffer_2023:Tooltip": {
       "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
         "Περιλαμβάνει 2700 διακομιστές σε 65+ χώρες, συνδέει έως και 10 συσκευές, έχει πρόσβαση σε παγκόσμιες υπηρεσίες ροής, προστασια κακόβουλο λογισμικό και αποκλεισμό διαφημίσεων και πολλά άλλα."
+      ],
+      "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
+        "Περιλαμβάνει υποστήριξη για 3 προσαρμοσμένους τομείς ηλεκτρονικού ταχυδρομείου, 90 διευθύνσεις ηλεκτρονικού ταχυδρομείου, απεριόριστα hide-my-email ψευδώνυμα, κοινή χρήση ημερολογίου και πολλά άλλα."
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Ασφαλίστε τα αρχεία σας με κρυπτογραφημένο χώρο αποθήκευσης cloud. Περιλαμβάνει αυτόματο συγχρονισμό, κρυπτογραφημένη κοινή χρήση αρχείων και πολλά άλλα."
@@ -3519,7 +3586,15 @@
         "Διαγραφή κλειδιού"
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Παρουσιάστηκε κάποιο πρόβλημα κατά τον έλεγχο ταυτότητας με το κλειδί ασφαλείας σας. Παρακαλώ προσπαθήστε ξανά."
+      ]
+    },
     "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Εισαγάγετε ένα κλειδί ασφαλείας συνδεδεμένο με τον ${ BRAND_NAME } λογαριασμό σας ."
+      ],
       "Security key": [
         "Κλειδί ασφαλείας"
       ]
@@ -3631,9 +3706,34 @@
         "Προεπιλεγμένο"
       ]
     },
+    "Font face option": {
+      "System default": [
+        "Προεπιλογή συστήματος"
+      ],
+      "Theme default": [
+        "Προεπιλεγμένο θέμα"
+      ]
+    },
     "Font Size Default": {
       "Default": [
         "Προεπιλεγμένο"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Μεγάλο"
+      ],
+      "Medium (recommended)": [
+        "Μεσαίο (συνιστάται)"
+      ],
+      "Small": [
+        "Μικρό"
+      ],
+      "Very large": [
+        "Πολύ μεγάλο"
+      ],
+      "Very small": [
+        "Πολύ μικρό"
       ]
     },
     "Frequency of news": {
@@ -3648,6 +3748,9 @@
       ]
     },
     "Gmail forwarding": {
+      "Automatically forward": [
+        "Αυτόματη προώθηση"
+      ],
       "Gmail messages to your inbox": [
         "Μηνύματα Gmail στα εισερχόμενά σας"
       ],
@@ -3895,6 +3998,15 @@
       ]
     },
     "Import error": {
+      "${ BRAND_NAME } can't connect to your account. Please make sure that:": [
+        "Αδυναμία σύνδεσης του ${ BRAND_NAME } στον λογαριασμό σας. Παρακαλούμε βεβαιωθείτε ότι:"
+      ],
+      "${ BRAND_NAME } can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
+        "Αδυναμία σύνδεσης του ${ BRAND_NAME } στον εξωτερικό λογαριασμό σας. Παρακαλούμε ελέγξτε για σωστή διεύθυνση και αριθμό θύρας του διακομιστή αλληλογραφίας."
+      ],
+      "${ BRAND_NAME } can't connect to your external account. Please make sure that:": [
+        "Αδυναμία σύνδεσης του ${ BRAND_NAME } στον εξωτερικό λογαριασμό σας. Παρακαλούμε βεβαιωθείτε ότι:"
+      ],
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
         "Αδυναμία σύνδεσης του ${ BRAND_NAME } στον λογαριασμό σας Yahoo. Παρακαλούμε ελέγξτε για σωστή διεύθυνση και αριθμό θύρας του διακομιστή αλληλογραφίας."
       ],
@@ -3928,6 +4040,9 @@
       "Your email account requires an app password to export your data.": [
         "Ο λογαριασμός email σας απαιτεί κωδικό πρόσβασης για την εξαγωγή των δεδομένων σας."
       ],
+      "Your email account requires one to export your data.": [
+        "Ο λογαριασμός email σας απαιτεί έναν για εξαγωγή των δεδομένων σας"
+      ],
       "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
         "Η διεύθυνση email και ο κωδικός πρόσβασης της εφαρμογής σας είναι σωστά. Χρησιμοποιήστε το ${ boldNot } τον κανονικό κωδικό πρόσβασης σας."
       ],
@@ -3949,8 +4064,14 @@
       ]
     },
     "Import instructions": {
+      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to ${ BRAND_NAME }.": [
+        "Ανάλογα με τον πάροχο υπηρεσιών ηλεκτρονικού ταχυδρομείου σας, ίσως χρειαστεί να δημιουργήσετε πρώτα ένα ${ knowledgeBaseLink } για να μπορέσετε να κάνετε εισαγωγή στο ${ BRAND_NAME }."
+      ],
       "Expand the dropdown menu by clicking on the 3 dots (...).": [
         "Ανοίξτε το αναδιπλούμενο μενού κάνοντας κλικ στις 3 τελείες (...)."
+      ],
+      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by ${ BRAND_NAME }.": [
+        "Δημιουργήστε το ${ boldAppPassword } και χρησιμοποιήστε το στη θέση του κανονικού κωδικού πρόσβασής σας όταν σας ζητηθεί από ${ BRAND_NAME }."
       ],
       "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }.": [
         "Πηγαίνετε στο ${ boldAccountInfo }, κάτω από το προφίλ σας στο ${ yahooMailLink }."
@@ -3963,6 +4084,21 @@
       ],
       "Select ${ boldExportCSV }.": [
         "Επιλέξτε ${ boldExportCSV }."
+      ],
+      "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "Για να εισαγάγετε ένα ημερολόγιο στο ${ BRAND_NAME }, χρειάζεστε το ${ knowledgeBaseLink }. Κατεβάστε το από το Yahoo σε 3 εύκολα βήματα:"
+      ],
+      "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        "Για να εισαγάγετε ένα ημερολόγιο στο ${ BRAND_NAME }, χρειάζεστε το ${ knowledgeBaseLink }. Κάντε λήψη αυτού πριν ξεκινήσετε τη διαδικασία εισαγωγής."
+      ],
+      "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "Για να εισαγάγετε επαφές στο ${ BRAND_NAME }, χρειάζεστε ένα ${ knowledgeBaseLink }. Κατεβάστε το από το Yahoo σε 3 εύκολα βήματα:"
+      ],
+      "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        "Για να εισαγάγετε επαφές στο ${ BRAND_NAME }, χρειάζεστε ένα ${ knowledgeBaseLink }. Κάντε λήψη αυτού πριν ξεκινήσετε τη διαδικασία εισαγωγής."
+      ],
+      "To import emails to ${ BRAND_NAME }, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
+        "Για να εισαγάγετε μηνύματα ηλεκτρονικού ταχυδρομείου στο ${ BRAND_NAME }, χρειάζεστε ένα ${ appPasswordLink } από το Yahoo. Αποκτήστε το ακολουθώντας αυτά τα βήματα:"
       ]
     },
     "Import instructions emphasis": {
@@ -4492,6 +4628,9 @@
       "Custom yearly": [
         "Προσαρμοσμένη ετήσια"
       ],
+      "Customize the look and feel of ${ BRAND_NAME } applications.": [
+        "Προσαρμόστε την εμφάνιση και την αίσθηση των ${ BRAND_NAME } εφαρμογών."
+      ],
       "Daily": [
         "Καθημερινά"
       ],
@@ -4537,6 +4676,12 @@
       ],
       "Download your PGP keys for use with other PGP-compatible services.": [
         "Κατεβάστε τα κλειδιά PGP σας για χρήση με άλλες υπηρεσίες συμβατές με PGP."
+      ],
+      "Drop file here to upload": [
+        "Σύρετε ένα αρχείο εδώ για μεταφόρτωση"
+      ],
+      "Drop to import": [
+        "Απόθεση για εισαγωγή"
       ],
       "Each code can only be used once": [
         "Κάθε κωδικός μπορεί να χρησιμοποιηθεί μόνο μια φορά"
@@ -5531,6 +5676,9 @@
       "Your email will only be used for this one-time verification.": [
         "Το email σας θα χρησιμοποιηθεί μόνο για αυτή τη εφάπαξ επαλήθευση."
       ],
+      "Your files will be encrypted and then saved": [
+        "Τα αρχεία σας θα κρυπτογραφηθούν και στη συνέχεια θα αποθηκευτούν"
+      ],
       "Your import from ${ accounts } is temporarily delayed.": [
         "Η εισαγωγή σας από το ${ accounts } καθυστερεί προσωρινά.",
         "Η εισαγωγή σας από τα ${ accounts } καθυστερούν προσωρινά."
@@ -5844,6 +5992,9 @@
       ],
       "New message": [
         "Νέο μήνυμα"
+      ],
+      "Open command panel": [
+        "Άνοιγμα πίνακα εντολών"
       ],
       "Open next message": [
         "Άνοιγμα επόμενου μηνύματος"
@@ -6633,6 +6784,9 @@
       ],
       "Subscription options": [
         "Επιλογές συνδρομής"
+      ],
+      "Synchronize with system": [
+        "Συγχρονισμός με το σύστημα"
       ],
       "System information": [
         "Πληροφορίες Συστήματος"
@@ -7424,6 +7578,9 @@
       "Free VPN on a single device": [
         "Δωρεάν VPN σε μία μόνο συσκευή"
       ],
+      "Hide-my-email aliases": [
+        "Hide-my-email ψευδώνυμα"
+      ],
       "High-speed VPN on ${ n } device": [
         "VPN υψηλής ταχύτητας σε ${ n } συσκευή",
         "VPN υψηλής ταχύτητας σε ${ n } συσκευές"
@@ -7769,9 +7926,19 @@
         "εβδομάδες πριν"
       ]
     },
+    "Oauth instructions": {
+      "Next you'll need to sign in to your Google account and grant ${ BRAND_NAME } access to your data.": [
+        "Στη συνέχεια, θα πρέπει να συνδεθείτε στον λογαριασμό σας Google και να παραχωρήσετε στο ${ BRAND_NAME } πρόσβαση στα δεδομένα σας."
+      ]
+    },
     "Oauth instructions video": {
       "For the import to work, you must select all requested items as shown in the GIF.": [
         "Για να ολοκληρωθεί η διαδικασία της εισαγωγής πρέπει να επιλέξετε όλα τα απαραίτητα στοιχεία, όπως φαίνεται στο GIF."
+      ]
+    },
+    "Oauth instructions video alternative": {
+      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
+        "Επιλέξτε σε τι μπορεί να έχει πρόσβαση το ${ BRAND_NAME }: δείτε τα μηνύματα ηλεκτρονικού ταχυδρομείου και τις ρυθμίσεις σας, προβάλετε και κατεβάστε τις επαφές σας, προβάλετε και κατεβάστε όλες τις ατζέντες στις οποίες έχετε πρόσβαση από την Ατζέντα Google."
       ]
     },
     "Onboarding": {
@@ -8464,14 +8631,38 @@
       "64 countries": [
         "64 χώρες"
       ],
+      "All paid Mail and Calendar features": [
+        "Όλες οι δυνατότητες Αλληλογραφίας και Ημερολογίου επί πληρωμή"
+      ],
       "High speed VPN": [
         "VPN υψηλής ταχύτητας"
       ],
       "Highest VPN speed": [
         "Ύψιστη ταχύτητα VPN"
       ],
+      "Premium Drive": [
+        "Premium Μονάδα Αποθήκευσης"
+      ],
+      "Premium early access": [
+        "Premium πρώιμη πρόσβαση"
+      ],
+      "Premium Mail and Calendar": [
+        "Premium Αλληλογραφία και Ημερολόγιο"
+      ],
+      "Premium Mail, Calendar and Drive": [
+        "Premium Αλληλογραφία, Ημερολόγιο και Μονάδα Αποθήκευσης"
+      ],
+      "Premium VPN": [
+        "Premium VPN"
+      ],
+      "Secure cloud storage": [
+        "Ασφαλής αποθήκευση στο cloud"
+      ],
       "Secure streaming": [
         "Ασφαλής μετάδοση"
+      ],
+      "Support online privacy": [
+        "Υποστήριξη ηλεκτρονικού απορρήτου"
       ]
     },
     "specialoffer: Footer": {
@@ -8491,6 +8682,12 @@
       ],
       "Most popular": [
         "Τα πιο δημοφιλή"
+      ],
+      "Offer ends soon": [
+        "Η προσφορά λήγει σύντομα"
+      ],
+      "The discount will continue to apply upon renewal until the subscription is canceled or modified": [
+        "Η έκπτωση θα συνεχίσει να ισχύει μετά την ανανέωση έως ότου ακυρωθεί ή τροποποιηθεί η συνδρομή"
       ]
     },
     "specialoffer: Link": {
@@ -8533,6 +8730,12 @@
       "Get the deal": [
         "Αποκτήστε την προσφορά"
       ],
+      "Renews after 1 year at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
+        "Ανανεώνεται μετά από 1 έτος σε μειωμένη τιμή ${ discountedAmount } αντί για ${ regularAmount } (${ discount }% έκπτωση)"
+      ],
+      "Renews after 2 years at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
+        "Ανανεώνεται μετά από 2 έτη σε μειωμένη τιμή ${ discountedAmount } αντί για ${ regularAmount } (${ discount }% έκπτωση)"
+      ],
       "Save ${ discount }%": [
         "Εξοικονομήστε ${ discount }%"
       ],
@@ -8555,9 +8758,54 @@
     "specialoffer: Title": {
       "Black Friday Sale": [
         "Προσφορά Black Friday"
+      ],
+      "Cyber Week Sale": [
+        "Πώληση Cyber Week"
+      ],
+      "End of year offer": [
+        "Προσφορά τέλους έτους"
+      ],
+      "End of Year Sale": [
+        "Προσφορά Τέλους Έτους"
+      ],
+      "Get our premium bundle and save more": [
+        "Αποκτήστε το premium πακέτο μας και εξοικονομήστε περισσότερα"
+      ],
+      "Our discontinued Visionary plan is back for a limited time only": [
+        "Το διακοπέν πρόγραμμα Visionary επιστρέφει μόνο για περιορισμένο χρονικό διάστημα"
+      ],
+      "Save more with 2 years of ${ planName }": [
+        "Εξοικονομήστε περισσότερα με 2 χρόνια ${ planName }"
+      ],
+      "Upgrade and save more with 2 years of ${ planName }": [
+        "Αναβαθμίστε και εξοικονομήστε περισσότερα με 2 χρόνια ${ planName }"
       ]
     },
     "specialoffer: Tooltip": {
+      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.": [
+        "Αποκτήστε πρόσβαση σε αποκλεισμένο περιεχόμενο και περιηγηθείτε ιδιωτικά. Περιλαμβάνει 1700 διακομιστές σε 60+ χώρες, υψηλότερη ταχύτητα VPN, 10 συνδέσεις VPN ανά χρήστη, παγκόσμιες υπηρεσίες ροής, αποκλεισμό κακόβουλου λογισμικού και διαφημίσεων και πολλά άλλα."
+      ],
+      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
+        "Αποκτήστε πρόσβαση σε αποκλεισμένο περιεχόμενο και περιηγηθείτε ιδιωτικά. Περιλαμβάνει 1700 διακομιστές σε 60+ χώρες, υψηλότερη ταχύτητα VPN, 10 συνδέσεις VPN, παγκόσμιες υπηρεσίες ροής, αποκλεισμό κακόβουλου λογισμικού και διαφημίσεων και πολλά άλλα."
+      ],
+      "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
+        "Αποκτήστε πρόσβαση σε περιεχόμενο σε υπηρεσίες ροής, συμπεριλαμβανομένων των Netflix, Disney+ και Prime Video, από οπουδήποτε."
+      ],
+      "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
+        "Όλες οι premium υπηρεσίες μας με τα υψηλότερα όριά τους: 100 διευθύνσεις email, υποστήριξη για 10 προσαρμοσμένους τομείς, απεριόριστα hide-my-email ψευδώνυμα, κοινή χρήση ημερολογίου, κρυπτογραφημένη αποθήκευση cloud και κοινή χρήση αρχείων και πολλά άλλα."
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Περιλαμβάνει υποστήριξη για 1 προσαρμοσμένο τομέα ηλεκτρονικού ταχυδρομείου, 10 διευθύνσεις ηλεκτρονικού ταχυδρομείου, 10 hide-my-email ψευδώνυμα, κοινή χρήση ημερολογίου και πολλά άλλα."
+      ],
+      "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Περιλαμβάνει υποστήριξη για 3 προσαρμοσμένους τομείς ηλεκτρονικού ταχυδρομείου, 15 διευθύνσεις ηλεκτρονικού ταχυδρομείου, απεριόριστα hide-my-email ψευδώνυμα, κοινή χρήση ημερολογίου και πολλά άλλα."
+      ],
+      "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
+        "Ιδανικό για οικογένειες ή μικρές ομάδες, το καθένα μπορεί να έχει τα δικά του εισερχόμενα και ψευδώνυμα. Απαιτεί προσαρμοσμένος τομέας."
+      ],
+      "Receive at no extra cost the paid versions of all new privacy services we release in the future, along with early access to all future features and products.": [
+        "Λάβετε χωρίς επιπλέον κόστος τις πληρωμένες εκδόσεις όλων των νέων υπηρεσιών απορρήτου που θα κυκλοφορήσουμε στο μέλλον, μαζί με έγκαιρη πρόσβαση σε όλες τις μελλοντικές λειτουργίες και προϊόντα."
+      ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Ασφαλίστε τα αρχεία σας με κρυπτογραφημένο χώρο αποθήκευσης cloud. Περιλαμβάνει αυτόματο συγχρονισμό, κρυπτογραφημένη κοινή χρήση αρχείων και πολλά άλλα."
       ],
@@ -8568,6 +8816,9 @@
     "Spotlight": {
       "Get up to ${ credits } in credits.": [
         "Λάβετε έως και ${ credits } σε πιστώσεις."
+      ],
+      "Invite friends to ${ BRAND_NAME }": [
+        "Προσκαλέστε φίλους στο ${ BRAND_NAME }"
       ]
     },
     "State": {
@@ -9042,6 +9293,9 @@
       "${ MAIL_APP_NAME } Keyboard Shortcuts": [
         "${ MAIL_APP_NAME } Συντομεύσεις Πληκτρολογίου"
       ],
+      "(active)": [
+        "(ενεργό)"
+      ],
       "1. Give a name to the config to be generated": [
         "1. Δώστε όνομα στην παραγόμενη διαμόρφωση"
       ],
@@ -9276,6 +9530,9 @@
       ],
       "Date": [
         "Ραντεβού"
+      ],
+      "Day theme": [
+        "Ανοιχτό θέμα"
       ],
       "Decrypt key": [
         "Αποκρυπτογράφηση κλειδιού"
@@ -9517,6 +9774,9 @@
       ],
       "Next": [
         "Επόμενο"
+      ],
+      "Night theme": [
+        "Σκούρο θέμα"
       ],
       "No recovery method": [
         "Χωρίς μέθοδο ανάκτησης"
@@ -9896,6 +10156,9 @@
       "Account is disconnected": [
         "Ο λογαριασμός είναι αποσυνδεδεμένος"
       ],
+      "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
+        "Αυτόματη εναλλαγή μεταξύ των προτιμώμενων θεμάτων ημέρας και νύχτας σε συγχρονισμό με τις λειτουργίες ημέρας και νύχτας του συστήματός σας"
+      ],
       "Customize import to reduce the number of folders": [
         "Προσαρμόστε την εισαγωγή για μείωση του αριθμού των φακέλων"
       ],
@@ -9949,6 +10212,12 @@
       ],
       "The import will start with the most recent messages.": [
         "Η εισαγωγή θα ξεκινήσει με τα πιο πρόσφατα μηνύματα."
+      ],
+      "The selected theme will be active when your system is set to \"dark mode\"": [
+        "Το επιλεγμένο θέμα θα είναι ενεργό όταν το σύστημά σας έχει ρυθμιστεί σε \"σκοτεινή λειτουργία\""
+      ],
+      "The selected theme will be active when your system is set to \"light mode\"": [
+        "Το επιλεγμένο θέμα θα είναι ενεργό όταν το σύστημά σας έχει ρυθμιστεί σε \"λειτουργία φωτισμού\""
       ],
       "This address has been disabled": [
         "Αυτή η διεύθυνση έχει απενεργοποιηθεί"
@@ -10153,6 +10422,9 @@
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Δυστυχώς, δεν είμαστε συνδεδεμένοι αυτή τη στιγμή. Παρακαλούμε συμπληρώστε την παρακάτω φόρμα για να περιγράψετε το πρόβλημά σας και θα το εξετάσουμε και θα επικοινωνήσουμε μαζί σας όταν επιστρέψουμε στο διαδίκτυο."
       ],
+      "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
+        "Δεν ήταν δυνατή η επαλήθευση του διακομιστή αλληλογραφίας. Εάν το εμπιστεύεστε, μπορείτε να παραλείψετε αυτήν την επαλήθευση."
+      ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "Εντοπίσαμε ένα πρόβλημα με τη ρύθμιση παραμέτρων DNS. Βεβαιωθείτε ότι τα αρχεία σας ταιριάζουν με τις παρακάτω οδηγίες. Εάν το πρόβλημα εξακολουθεί, θα πρέπει να αλλάξουμε την αποσύνδεση DKIM."
       ],
@@ -10161,6 +10433,9 @@
       ],
       "You will lose any customization you made so far.": [
         "Θα χάσετε οποιαδήποτε προσαρμογές που κάνατε μέχρι στιγμής."
+      ],
+      "Your free trial ends on ${ textDate }. ${ action }": [
+        "Η δωρεάν δοκιμή σας λήγει στις ${ textDate }. ${ action }"
       ],
       "Your recovery file is outdated. It can't recover new data if you reset your account again.": [
         "Το αρχείο ανάκτησης είναι ξεπερασμένο; Δεν μπορεί να ανακτήσει νέα δεδομένα αν θέλετε να επαναφέρετε ξανά τον λογαριασμό σας."

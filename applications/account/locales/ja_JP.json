@@ -111,6 +111,9 @@
       "Alignment": [
         "配置"
       ],
+      "Allow": [
+        "許可"
+      ],
       "Apply": [
         "適用"
       ],
@@ -3603,9 +3606,6 @@
       "Got it": [
         "了解"
       ],
-      "Keep current plan": [
-        "現在のプランを維持"
-      ],
       "Set up family group": [
         "家族グループを設定"
       ],
@@ -3654,6 +3654,9 @@
       ],
       "Manage addresses.": [
         "アドレスの管理"
+      ],
+      "Manage user accounts": [
+        "ユーザーアカウントを管理"
       ],
       "Owners of a plan with members cannot join another group plan.": [
         "メンバーがいるプランのオーナーは他のグループプランに加入できません。"
@@ -3978,9 +3981,34 @@
         "既定"
       ]
     },
+    "Font face option": {
+      "System default": [
+        "システムのデフォルト"
+      ],
+      "Theme default": [
+        "テーマのデフォルト"
+      ]
+    },
     "Font Size Default": {
       "Default": [
         "既定"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "大"
+      ],
+      "Medium (recommended)": [
+        "中 (推奨)"
+      ],
+      "Small": [
+        "小"
+      ],
+      "Very large": [
+        "極大"
+      ],
+      "Very small": [
+        "極小"
       ]
     },
     "Frequency of news": {
@@ -5985,6 +6013,9 @@
       "Week and month views only apply to desktop.": [
         "週と月のビューはデスクトップにのみ適用されます。"
       ],
+      "Welcome": [
+        "ようこそ"
+      ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "リセットコードをアカウント回復に設定したメールアドレスに送信しました。"
       ],
@@ -6663,6 +6694,9 @@
       "All-day event notifications": [
         "終日の予定の通知"
       ],
+      "Allow": [
+        "許可"
+      ],
       "Allow notifications by email": [
         "メールによる通知を許可"
       ],
@@ -6731,6 +6765,9 @@
       ],
       "Billing cycle": [
         "支払い間隔"
+      ],
+      "Block": [
+        "ブロック"
       ],
       "Block email tracking": [
         "メールのトラッキングをブロック"
@@ -6882,6 +6919,9 @@
       "Default PGP scheme": [
         "標準 PGP 方式"
       ],
+      "Default scrollbars": [
+        "デフォルトのスクロールバー"
+      ],
       "Default view": [
         "既定の表示形式"
       ],
@@ -6902,6 +6942,9 @@
       ],
       "Digits": [
         "桁"
+      ],
+      "Disable animations": [
+        "アニメーションを無効にする"
       ],
       "Display name": [
         "表示名"
@@ -6986,6 +7029,12 @@
       ],
       "Folder location": [
         "フォルダーの場所"
+      ],
+      "Font family": [
+        "フォントファミリー"
+      ],
+      "Font size": [
+        "フォントサイズ"
       ],
       "From: ${ from }": [
         "送信者: ${ from }"
@@ -7952,6 +8001,9 @@
       "All": [
         "すべて"
       ],
+      "Allow": [
+        "許可"
+      ],
       "Back": [
         "戻る"
       ],
@@ -7963,6 +8015,9 @@
       ],
       "Back to inbox": [
         "受信箱に戻る"
+      ],
+      "Block": [
+        "ブロック"
       ],
       "Calendar": [
         "カレンダー"
@@ -10051,6 +10106,9 @@
       "Edit": [
         "編集"
       ],
+      "Email address or domain": [
+        "メールアドレスかドメイン"
+      ],
       "Email addresses": [
         "メールアドレス"
       ],
@@ -10111,6 +10169,9 @@
     "Title": {
       "${ MAIL_APP_NAME } Keyboard Shortcuts": [
         "${ MAIL_APP_NAME } のキーボードショートカット"
+      ],
+      "(active)": [
+        "(アクティブ)"
       ],
       "1. Give a name to the config to be generated": [
         "1. 生成する設定ファイルに名前をつける"
@@ -10186,6 +10247,12 @@
       ],
       "Add Sieve filter": [
         "Sieve フィルターの追加"
+      ],
+      "Add to allow list": [
+        "許可リストに追加"
+      ],
+      "Add to block list": [
+        "ブロックリストに追加"
       ],
       "Add to spam list": [
         "迷惑メールリストに追加"
@@ -10366,6 +10433,9 @@
       ],
       "Date": [
         "日付"
+      ],
+      "Day theme": [
+        "昼間のテーマ"
       ],
       "Decrypt key": [
         "キーを復号"
@@ -10628,6 +10698,9 @@
       "Next": [
         "次へ"
       ],
+      "Night theme": [
+        "夜間のテーマ"
+      ],
       "No recovery method": [
         "回復手段がありません"
       ],
@@ -10669,9 +10742,6 @@
       ],
       "PayPal verification failed": [
         "PayPal 認証に失敗しました。"
-      ],
-      "Personalise your e-mail footer": [
-        "メールのフッターをカスタマイズ"
       ],
       "Phone": [
         "電話番号"
@@ -11121,11 +11191,17 @@
       "This key is used by ${ MAIL_APP_NAME } to encrypt your contact's data": [
         "このキーは連絡先データを暗号化するのに ${ MAIL_APP_NAME } で使用されています"
       ],
+      "Use your browser’s default scrollbars. These are typically larger and easier to use": [
+        "ブラウザのデフォルトのスクロールバーを使用します。これは通常、大きくて使いやすいです。"
+      ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "DNS 構成に問題があります。次の手段に従いレコードを確認してください。それでも問題が解決しない場合は DKIM 署名をオフにする必要があります。"
       ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "DNS 設定に問題があるため、DKIM の署名を停止しました。署名を再開するには、以下の手順に従ってください。"
+      ],
+      "When enabled, animations and transitions will not show": [
+        "有効にすると、アニメーションと遷移は表示されなくなります。"
       ],
       "When you add a label to a message in a conversation, it will automatically be applied to all future messages you send or receive in that conversation.": [
         "会話のメッセージにラベルを追加すると、その後同じ会話で送受信されるすべてのメッセージに同じラベルが適用されます。"
@@ -11237,6 +11313,11 @@
       ],
       "${ numberOfServers } in ${ numberOfCountries } countries": [
         "${ numberOfCountries } か国で ${ numberOfServers } 台"
+      ]
+    },
+    "VPN signup": {
+      "Swiss flag": [
+        "スイスの国旗"
       ]
     },
     "VPNClient": {
