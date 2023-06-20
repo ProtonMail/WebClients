@@ -3033,7 +3033,7 @@
         "O evento é amanhã."
       ],
       "Event starting now": [
-        "Evento iniciando agora"
+        "O evento começa agora."
       ],
       "Event starts in ${ minutesUntilEvent } minute": [
         "O evento começa em ${ minutesUntilEvent } minuto",
@@ -3796,11 +3796,11 @@
       ]
     },
     "familyOffer_2023:Action": {
+      "Decline invitation": [
+        "Recusar o convite"
+      ],
       "Got it": [
         "Entendido"
-      ],
-      "Keep current plan": [
-        "Manter o plano atual"
       ],
       "Switch plans": [
         "Mudar de plano"
@@ -4097,14 +4097,39 @@
         "Predefinição"
       ]
     },
+    "Font face option": {
+      "System default": [
+        "Predefinição do sistema"
+      ],
+      "Theme default": [
+        "Tema predefinido"
+      ]
+    },
     "Font Size Default": {
       "Default": [
         "Predefinição"
       ]
     },
+    "Font size option": {
+      "Large": [
+        "Grande"
+      ],
+      "Medium (recommended)": [
+        "Médio (recomendado)"
+      ],
+      "Small": [
+        "Pequeno"
+      ],
+      "Very large": [
+        "Muito grande"
+      ],
+      "Very small": [
+        "Muito pequeno"
+      ]
+    },
     "forwardmessage": {
       "Date: On ${ date }": [
-        "Data: ${ date }"
+        "Data: em ${ date }"
       ],
       "From: ${ senderString }": [
         "De: ${ senderString }"
@@ -4621,8 +4646,8 @@
         "${ NumMessages } mensagens na conversa"
       ],
       "${ numOccurrences } occurrence found": [
-        "${ numOccurrences } ocurrência encontrada",
-        "${ numOccurrences } ocurrências encontradas"
+        "${ numOccurrences } ocorrência encontrada",
+        "${ numOccurrences } ocorrências encontradas"
       ],
       "${ numOccurrences } occurrence found in the mail content": [
         "${ numOccurrences } ocurrência encontrada no conteúdo de e-mail ",
@@ -4897,6 +4922,9 @@
       "Custom yearly": [
         "Personalização anual"
       ],
+      "Customize the look and feel of ${ BRAND_NAME } applications.": [
+        "Personalize o aspeto e a sensação das aplicações ${ BRAND_NAME }."
+      ],
       "Daily": [
         "Diariamente"
       ],
@@ -4966,7 +4994,7 @@
       ],
       "Email trackers can violate your privacy. ${ BRAND_NAME } found and blocked ${ numberOfTrackers } tracker.": [
         "Os rastreadores de e-mail podem violar a sua privacidade. ${ BRAND_NAME } encontrou e bloqueou ${ numberOfTrackers } rastreador.",
-        "Os rastreadores de e-mail  podem violar a sua privacidade. ${ BRAND_NAME } encontrou e bloqueou ${ numberOfTrackers } rastreador."
+        "Os rastreadores de e-mail podem violar a sua privacidade. ${ BRAND_NAME } encontrou e bloqueou ${ numberOfTrackers } os rastreadores."
       ],
       "Email trackers can violate your privacy. Turn on tracker protection to prevent senders from knowing whether and when you have opened a message.": [
         "Os rastreadores de e-mail pode violar tua privacidade. podem violar a sua privacidade. Ative a proteção contra rastreadores para evitar que os remetentes saibam se e quando abriu uma mensagem."
@@ -5512,8 +5540,8 @@
         "Erro na verificação de ${ contactName }: o contacto não está correctamente assinado.\nPode ser o resultado de uma reinicialização de palavra-passe.\nTem de assinar novamente o contacto para poder enviar uma mensagem para ${ contactAddress } ou editar o contacto."
       ],
       "The verification of ${ contactNames } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddresses } or edit the contact.": [
-        "Erro na verificação de ${ contactNames }: o contacto não está correctamente assinado.\nPode ser o resultado de uma reinicialização de palavra-passe.\nTem de assinar novamente o contacto para poder enviar uma mensagem para ${ contactAddresses } ou editar o contacto.",
-        "Erro na verificação de ${ contactNames }: os contactos não estão correctamente assinados.\nPode ser o resultado de uma redefinição de palavra-passe.\nTem de assinar novamente os contactos para poder enviar uma mensagem para ${ contactAddresses } ou editar os contactos."
+        "Erro na verificação de ${ contactNames }: o contacto não está corretamente assinado.\nPode ser o resultado de uma reinicialização de palavra-passe.\nTem de assinar novamente o contacto para poder enviar uma mensagem para ${ contactAddresses } ou editar o contacto.",
+        "Erro na verificação de ${ contactNames }: os contactos não estão corretamente assinados.\nPode ser o resultado de uma redefinição de palavra-passe.\nTem de assinar novamente os contactos para poder enviar uma mensagem para ${ contactAddresses } ou editar os contactos."
       ],
       "Themes can give your inbox a new look.": [
         "Os temas podem dar uma nova aparência à sua caixa de entrada."
@@ -5822,8 +5850,8 @@
         "Tem **${ count } conversas** armazenadas desta pasta."
       ],
       "You have **${ count } conversation** tagged with this label": [
-        "Tem **${ count } conversa com esta etiqueta",
-        "Tem **${ count } conversas com esta etiqueta"
+        "Tem **${ count } conversa** com esta etiqueta",
+        "Tem **${ count } conversas** com esta etiqueta"
       ],
       "You have **${ count } message** stored in this folder": [
         "Tem **${ count } mensagem** armazenada desta pasta.",
@@ -5853,8 +5881,8 @@
         "Selecionou **${ count } conversas** desta pasta"
       ],
       "You selected **${ count } conversation** with this label": [
-        "Selecionou *${ count } conversa** com esta etiqueta",
-        "Selecionou *${ count } conversas** com esta etiqueta"
+        "Selecionou **${ count } conversa** com esta etiqueta",
+        "Selecionou **${ count } conversas** com esta etiqueta"
       ],
       "You selected **${ count } message** from this folder": [
         "Selecionou **${ count } mensagem** desta pasta",
@@ -5862,7 +5890,7 @@
       ],
       "You selected **${ count } message** with this label": [
         "Selecionou **${ count } mensagem** com esta etiqueta",
-        "Selecionou *${ count } mensagens** com esta etiqueta"
+        "Selecionou **${ count } mensagens** com esta etiqueta"
       ],
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "Escreveu \"${ attachmentsFoundKeyword }\", mas não adicionou nenhum anexo. Ainda quer enviar esta mensagem?"
@@ -6572,6 +6600,9 @@
       "Street address": [
         "Endereço postal"
       ],
+      "Synchronize with system": [
+        "Sincronizar com o sistema"
+      ],
       "System information": [
         "Informação do sistema"
       ],
@@ -7007,7 +7038,7 @@
         "Envio anulado"
       ],
       "Undoing send...": [
-        "Cancelando envio..."
+        "A cancelar o envio..."
       ]
     },
     "MIME type": {
@@ -7302,6 +7333,9 @@
       ],
       "Discover all ${ BRAND_NAME } services": [
         "Descubra todos os serviços de ${ BRAND_NAME }"
+      ],
+      "More theming options are available in your account Settings > Appearance.": [
+        "Estão disponíveis mais opções de temas nas configurações da conta, na secção Aspeto."
       ],
       "Select a theme": [
         "Seleccionar um tema"
@@ -7637,7 +7671,7 @@
         "Nenhum resultado"
       ],
       "No unread messages found": [
-        "Nenuma mensagem por ler"
+        "Não foram encontradas mensagens não lidas."
       ]
     },
     "Select files": {
@@ -8432,6 +8466,9 @@
         "${ unreads } mensagem não lida",
         "${ unreads } mensagens não lidas"
       ],
+      "(active)": [
+        "(ativo)"
+      ],
       "Account suspended": [
         "Conta suspensa"
       ],
@@ -8546,6 +8583,9 @@
       ],
       "Customize your mail import": [
         "Personalize a sua importação de e-mail"
+      ],
+      "Day theme": [
+        "Tema diurno"
       ],
       "Decryption error": [
         "Erro ao desencriptar"
@@ -8775,6 +8815,9 @@
       "Next message": [
         "Mensagem seguinte"
       ],
+      "Night theme": [
+        "Tema noturno"
+      ],
       "No attachment found": [
         "Nenhum anexo encontrado"
       ],
@@ -8981,6 +9024,9 @@
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Automático indica que o formato no compositor é usado para enviar para este utilizador. Texto simples indica que a mensagem será sempre convertida para texto simples ao enviar."
       ],
+      "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
+        "Alterne automaticamente entre os seus temas preferidos para o dia e para a noite, em sincronia com os modos diurno e noturno do seu sistema."
+      ],
       "Customize import to reduce the number of folders": [
         "Personalize a importação para reduzir o número de pastas"
       ],
@@ -9031,6 +9077,12 @@
       ],
       "The import will start with the most recent messages.": [
         "A importação começará com as mensagens mais recentes."
+      ],
+      "The selected theme will be active when your system is set to \"dark mode\"": [
+        "O tema selecionado ficará ativo quando o sistema estiver definido para o \"modo escuro\"."
+      ],
+      "The selected theme will be active when your system is set to \"light mode\"": [
+        "O tema selecionado ficará ativo quando o sistema estiver definido para o \"modo claro\"."
       ],
       "This feature is only available for paid users": [
         "Esta funcionalidade só está disponível para utilizadores pagantes"

@@ -1856,22 +1856,25 @@
         "Vytvořit nový štítek"
       ],
       "Go to Archive": [
-        "Přejít do archivu"
+        "Přejít do Archivu"
       ],
       "Go to Drafts": [
-        "Přejít do konceptů"
+        "Přejít do Konceptů"
+      ],
+      "Go to Inbox": [
+        "Přejít do Doručené pošty"
       ],
       "Go to Sent": [
-        "Přejít do odeslaných"
+        "Přejít do Odeslaných"
       ],
       "Go to Spam": [
-        "Přejít do spamu"
+        "Přejít do Spamu"
       ],
       "Go to Starred": [
-        "Přejít do oblíbených"
+        "Přejít do S hvězdičkou"
       ],
       "Go to Trash": [
-        "Přejít do koše"
+        "Přejít do Koše"
       ],
       "New message": [
         "Nová zpráva"
@@ -3843,11 +3846,11 @@
       ]
     },
     "familyOffer_2023:Action": {
+      "Decline invitation": [
+        "Odmítnout pozvánku"
+      ],
       "Got it": [
         "Rozumím"
-      ],
-      "Keep current plan": [
-        "Zachovat aktuální tarif"
       ],
       "Switch plans": [
         "Změnit tarif"
@@ -4154,9 +4157,34 @@
         "Výchozí"
       ]
     },
+    "Font face option": {
+      "System default": [
+        "Systémové výchozí"
+      ],
+      "Theme default": [
+        "Výchozí téma"
+      ]
+    },
     "Font Size Default": {
       "Default": [
         "Výchozí"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Velký"
+      ],
+      "Medium (recommended)": [
+        "Střední (doporučeno)"
+      ],
+      "Small": [
+        "Malý"
+      ],
+      "Very large": [
+        "Velmi velké"
+      ],
+      "Very small": [
+        "Velmi malé"
       ]
     },
     "forwardmessage": {
@@ -5091,10 +5119,10 @@
         "Koncept uložen."
       ],
       "Drop file here to upload": [
-        "Soubor nahrajete přetažením sem"
+        "Sem přetáhněte soubor pro nahrání"
       ],
       "Drop to import": [
-        "Přetažením importovat"
+        "Přetažením provedete import"
       ],
       "Duplicate key updated": [
         "Duplicitní klíč byl aktualizován"
@@ -5721,7 +5749,7 @@
         "Tato konverzace obsahuje zprávy, které nejsou v koši."
       ],
       "This conversation contains one or more expiring messages": [
-        "Tato konverzace obsahuje jednu nebo více zpráv, jejichž platnost vyprší"
+        "Tato konverzace obsahuje jednu nebo více zpráv s omezenou dobou platnosti"
       ],
       "This conversation contains trashed messages.": [
         "Tato konverzace obsahuje zprávy vyhozené do koše."
@@ -6296,6 +6324,9 @@
       "New message": [
         "Nová zpráva"
       ],
+      "Open command panel": [
+        "Otevřít příkazový panel"
+      ],
       "Open next message": [
         "Otevřít následující zprávu"
       ],
@@ -6771,6 +6802,9 @@
       ],
       "Street address": [
         "Ulice a č. p."
+      ],
+      "Synchronize with system": [
+        "Synchronizovat se systémem"
       ],
       "System information": [
         "Informace o systému"
@@ -8237,7 +8271,7 @@
         "Přístup k obsahu streamovacích služeb, včetně Netflix, Disney+ a Prime Video, odkudkoli."
       ],
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
-        "Všechny naše prémiové služby s nejvyššími limity: 100 e-mailových adres, podpora 10 vlastních domén, neomezený počet aliasů Skryj můj e-mail, sdílení kalendáře, šifrované cloudové úložiště a sdílení souborů a další."
+        "Všechny naše prémiové služby s nejvyššími limity: 100 e-mailových adres, podpora 10 vlastních domén, neomezený počet aliasů hide-my-email, sdílení kalendáře, šifrované cloudové úložiště a sdílení souborů a další."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Obsahuje podporu 1 vlastní e-mailové domény, 10 e-mailových adres, 10 aliasů Hide-my-email, sdílení kalendáře a další funkce."
@@ -8744,6 +8778,9 @@
         "${ unreads } nepřečtených zpráv",
         "${ unreads } nepřečtených zpráv"
       ],
+      "(active)": [
+        "(aktivní)"
+      ],
       "Account suspended": [
         "Účet pozastaven"
       ],
@@ -8860,6 +8897,9 @@
       ],
       "Customize your mail import": [
         "Přizpůsobte si proces importování e-mailů"
+      ],
+      "Day theme": [
+        "Denní motiv"
       ],
       "Decryption error": [
         "Chyba dešifrování"
@@ -9100,6 +9140,9 @@
       ],
       "Next message": [
         "Další zpráva"
+      ],
+      "Night theme": [
+        "Noční motiv"
       ],
       "No attachment found": [
         "Žádná příloha nenalezena"

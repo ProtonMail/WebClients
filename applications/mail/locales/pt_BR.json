@@ -3254,7 +3254,7 @@
         "A mensagem precisa ser enviada primeiro"
       ],
       "Message processing error.": [
-        "Erro no processamento da mensagem."
+        "Erro ao processar a mensagem"
       ],
       "Missing key packet": [
         "Pacote de chave ausente"
@@ -3796,11 +3796,11 @@
       ]
     },
     "familyOffer_2023:Action": {
+      "Decline invitation": [
+        "Recusar convite"
+      ],
       "Got it": [
         "Entendi"
-      ],
-      "Keep current plan": [
-        "Manter o plano atual"
       ],
       "Switch plans": [
         "Trocar de plano"
@@ -4097,9 +4097,34 @@
         "Padrão"
       ]
     },
+    "Font face option": {
+      "System default": [
+        "Padrão do sistema"
+      ],
+      "Theme default": [
+        "Padrão do tema"
+      ]
+    },
     "Font Size Default": {
       "Default": [
         "Padrão"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Grande"
+      ],
+      "Medium (recommended)": [
+        "Médio (recomendado)"
+      ],
+      "Small": [
+        "Pequeno"
+      ],
+      "Very large": [
+        "Muito grande"
+      ],
+      "Very small": [
+        "Muito pequeno"
       ]
     },
     "forwardmessage": {
@@ -4897,6 +4922,9 @@
       "Custom yearly": [
         "Personalizar anualmente"
       ],
+      "Customize the look and feel of ${ BRAND_NAME } applications.": [
+        "Personalize a aparência e o estilo das aplicações da ${ BRAND_NAME }."
+      ],
       "Daily": [
         "Diariamente"
       ],
@@ -4932,7 +4960,7 @@
         "Rascunho salvo."
       ],
       "Drop file here to upload": [
-        "Solte o arquivo aqui para enviar"
+        "Solte o arquivo aqui para fazer o upload"
       ],
       "Drop to import": [
         "Solte para importar"
@@ -5059,7 +5087,7 @@
         "Ocultar mensagem original"
       ],
       "How hide-my-email aliases works": [
-        "Funcionamento dos aliases do Hide-my-email"
+        "Como funcionam os aliases do hide-my-email"
       ],
       "I'm sending this message to a non-${ MAIL_APP_NAME } user.": [
         "Estou enviando essa mensagem para um não-usuário do ${ MAIL_APP_NAME }."
@@ -5803,7 +5831,7 @@
         "Você pode ativar as notificações para receber alertas quando novas mensagens de e-mail chegarem nesta pasta."
       ],
       "You can use ${ VPN_APP_NAME } for free, today.": [
-        "Você pode usar o ${ VPN_APP_NAME } de graça hoje."
+        "Você pode usar o ${ VPN_APP_NAME } gratuitamente, hoje."
       ],
       "You cannot reply from the invited address.": [
         "Você não pode responder a partir do endereço convidado."
@@ -6572,6 +6600,9 @@
       "Street address": [
         "Endereço"
       ],
+      "Synchronize with system": [
+        "Sincronizar com o sistema"
+      ],
       "System information": [
         "Informações do sistema"
       ],
@@ -7303,6 +7334,9 @@
       "Discover all ${ BRAND_NAME } services": [
         "Descubra todos os serviços do ${ BRAND_NAME }"
       ],
+      "More theming options are available in your account Settings > Appearance.": [
+        "Mais opções de temas estão disponíveis em Configurações da conta > Aparência."
+      ],
       "Select a theme": [
         "Selecione um tema"
       ],
@@ -7675,7 +7709,7 @@
         "Os seguintes endereços não são válidos: ${ invalidAddresses }"
       ],
       "We have detected some warnings. The following email address may not receive emails:": [
-        "Detectamos algumas alertas. O seguinte endereço de e-mail pode não receber e-mails:",
+        "Detectamos alguns alertas. O seguinte endereço de e-mail pode não receber e-mails:",
         "Detectamos alguns alertas. Os seguintes endereços de e-mail podem não receber e-mails:"
       ]
     },
@@ -8044,7 +8078,7 @@
         "Esta mensagem é de uma lista de endereços."
       ],
       "Unsubscribed": [
-        "Subscrição cancelada"
+        "Assinatura cancelada"
       ]
     },
     "Step in filter modal": {
@@ -8435,6 +8469,9 @@
         "${ unreads } mensagem não lida",
         "${ unreads } mensagens não lidas"
       ],
+      "(active)": [
+        "(ativo)"
+      ],
       "Account suspended": [
         "Conta suspensa"
       ],
@@ -8549,6 +8586,9 @@
       ],
       "Customize your mail import": [
         "Personalize sua importação de e-mail"
+      ],
+      "Day theme": [
+        "Tema diurno"
       ],
       "Decryption error": [
         "Erro ao descriptografar"
@@ -8778,6 +8818,9 @@
       "Next message": [
         "Próxima mensagem"
       ],
+      "Night theme": [
+        "Tema noturno"
+      ],
       "No attachment found": [
         "Nenhum anexo encontrado"
       ],
@@ -8984,6 +9027,9 @@
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Indica automaticamente o formato no compositor que é usado para enviar para este usuário. Texto simples indica que a mensagem será sempre convertida em texto simples (sem formatação) no envio."
       ],
+      "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
+        "Troque automaticamente entre seus temas preferidos para dia e noite em sincronia com os modos dia e noite do seu sistema"
+      ],
       "Customize import to reduce the number of folders": [
         "Personalize importação para reduzir o número de pastas"
       ],
@@ -9034,6 +9080,12 @@
       ],
       "The import will start with the most recent messages.": [
         "A importação começará com as mensagens mais recentes."
+      ],
+      "The selected theme will be active when your system is set to \"dark mode\"": [
+        "O tema selecionado estará ativo quando o seu sistema estiver configurado no modo \"escuro\""
+      ],
+      "The selected theme will be active when your system is set to \"light mode\"": [
+        "O tema selecionado estará ativo quando o seu sistema estiver configurado no modo \"claro\""
       ],
       "This feature is only available for paid users": [
         "Este recurso só está disponível para usuários com um plano pago"

@@ -3061,7 +3061,7 @@
         "Etkinlik iptal edildi"
       ],
       "Event was updated. This reminder is out-of-date.": [
-        "Etkinlik güncellendi. Bu anımsatıcı güncel değil."
+        "Etkinlik güncellendi. Bu hatırlatıcı güncel değil."
       ]
     },
     "Email subject": {
@@ -3796,11 +3796,11 @@
       ]
     },
     "familyOffer_2023:Action": {
+      "Decline invitation": [
+        "Daveti reddet"
+      ],
       "Got it": [
         "Anladım"
-      ],
-      "Keep current plan": [
-        "Geçerli tarifede kal"
       ],
       "Switch plans": [
         "Tarifeleri değiştir"
@@ -4097,9 +4097,34 @@
         "Varsayılan"
       ]
     },
+    "Font face option": {
+      "System default": [
+        "Sistem varsayılanı"
+      ],
+      "Theme default": [
+        "Tema varsayılanı"
+      ]
+    },
     "Font Size Default": {
       "Default": [
         "Varsayılan"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Büyük"
+      ],
+      "Medium (recommended)": [
+        "Orta (önerilen)"
+      ],
+      "Small": [
+        "Küçük"
+      ],
+      "Very large": [
+        "Çok büyük"
+      ],
+      "Very small": [
+        "Çok küçük"
       ]
     },
     "forwardmessage": {
@@ -4896,6 +4921,9 @@
       ],
       "Custom yearly": [
         "Yılda bir, özel"
+      ],
+      "Customize the look and feel of ${ BRAND_NAME } applications.": [
+        "${ BRAND_NAME } uygulamalarının görünümünü ve kullanımını özelleştirin."
       ],
       "Daily": [
         "Günlük"
@@ -6572,6 +6600,9 @@
       "Street address": [
         "Sokak adresi"
       ],
+      "Synchronize with system": [
+        "Sistem ile aynı"
+      ],
       "System information": [
         "Sistem bilgileri"
       ],
@@ -7302,6 +7333,9 @@
       ],
       "Discover all ${ BRAND_NAME } services": [
         "Tüm ${ BRAND_NAME } hizmetlerini keşfedin"
+      ],
+      "More theming options are available in your account Settings > Appearance.": [
+        "Diğer tema ayarlarını Ayarlar > Görünüm bölümünde bulabilirsiniz."
       ],
       "Select a theme": [
         "Bir tema seçin"
@@ -8432,6 +8466,9 @@
         "${ unreads } okunmamış ileti",
         "${ unreads } okunmamış ileti"
       ],
+      "(active)": [
+        "(etkin)"
+      ],
       "Account suspended": [
         "Hesap askıya alınmış"
       ],
@@ -8546,6 +8583,9 @@
       ],
       "Customize your mail import": [
         "Posta içe aktarma işleminizi özelleştirin"
+      ],
+      "Day theme": [
+        "Gündüz teması"
       ],
       "Decryption error": [
         "Şifre çözme sorunu"
@@ -8775,6 +8815,9 @@
       "Next message": [
         "Sonraki ileti"
       ],
+      "Night theme": [
+        "Gece teması"
+      ],
       "No attachment found": [
         "Herhangi bir ek dosya bulunamadı"
       ],
@@ -8981,6 +9024,9 @@
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Otomatik, bu kullanıcıya gönderim için oluşturucudaki biçimin kullanılacağını belirtir. Düz metin, iletinin gönderim sırasında her zaman düz metne dönüştürüleceğini belirtir."
       ],
+      "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
+        "Sisteminizin gündüz ve gece kipine uyarak gündüz ve gece için seçtiğiniz temalar arasında otomatik olarak geçiş yapın"
+      ],
       "Customize import to reduce the number of folders": [
         "Klasör sayısını azaltmak için içe aktarmayı özelleştirin"
       ],
@@ -9031,6 +9077,12 @@
       ],
       "The import will start with the most recent messages.": [
         "İçe aktarma yeni iletilerden eski iletilere doğru yapılacak."
+      ],
+      "The selected theme will be active when your system is set to \"dark mode\"": [
+        "Seçilmiş tema sisteminiz \"koyu kipe\" geçtiğinde etkinleştirilecek"
+      ],
+      "The selected theme will be active when your system is set to \"light mode\"": [
+        "Seçilmiş tema sisteminiz \"açık kipe\" geçtiğinde etkinleştirilecek"
       ],
       "This feature is only available for paid users": [
         "Bu özelliği yalnızca ücretli tarife kullanıcıları kullanabilir"
