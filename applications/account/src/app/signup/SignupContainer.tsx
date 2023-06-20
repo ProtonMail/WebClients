@@ -41,7 +41,7 @@ import {
 } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { toMap } from '@proton/shared/lib/helpers/object';
-import { getPlanFromPlanIDs, hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
+import { getPlanFromPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { getNormalCycleFromCustomCycle } from '@proton/shared/lib/helpers/subscription';
 import { Api, Currency, Cycle, HumanVerificationMethodType, Plan, PlansMap } from '@proton/shared/lib/interfaces';
 import { getLocalPart } from '@proton/shared/lib/keys/setupAddress';
@@ -851,10 +851,6 @@ const SignupContainer = ({
             )}
             {step === CreatingAccount && (
                 <LoadingStep
-                    toApp={toApp}
-                    hasPayment={
-                        hasPlanIDs(model.subscriptionData.planIDs) && model.subscriptionData.checkResult.AmountDue > 0
-                    }
                     onSetup={async () => {
                         try {
                             if (!cache) {
@@ -1025,6 +1021,7 @@ const SignupContainer = ({
 
     return (
         <Layout
+            currentSignupStep={step}
             onBack={handleBackStep}
             bottomRight={<SignupSupportDropdown />}
             hasDecoration={hasDecoration}

@@ -59,7 +59,7 @@ const CountrySelect = ({ value, options, onChange, embedded, onClosed }: Props) 
                     pickRef.current = false;
                     setIsOpen(!isOpen);
                 }}
-                className="unstyled flex-align-self-stretch my-1 pr-2 border-right"
+                className="unstyled flex-align-self-stretch my-3 pr-2 border-right"
                 ref={anchorRef}
                 caretClassName="my-auto"
                 aria-live="assertive"
