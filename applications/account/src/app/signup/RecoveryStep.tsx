@@ -4,7 +4,6 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import {
-    Checkbox,
     InputFieldTwo,
     PhoneInput,
     Prompt,
@@ -144,31 +143,12 @@ const RecoveryStep = ({ defaultPhone, defaultEmail, defaultCountry, onSubmit, on
                     noValidate
                 >
                     <div className="flex mb-2">
-                        <div className="flex-item-noshrink">
-                            <Checkbox
-                                id="save-phone"
-                                checked={savePhone}
-                                onChange={
-                                    loading
-                                        ? noop
-                                        : () => {
-                                              const newValue = !savePhone;
-                                              setSavePhone(newValue);
-                                              if (newValue) {
-                                                  inputRecoveryPhoneRef.current?.focus();
-                                              }
-                                          }
-                                }
-                            >
-                                <span className="sr-only">{c('Label').t`Use a recovery phone number`}</span>
-                            </Checkbox>
-                        </div>
                         <div className="flex-item-fluid pl-2 mt-0.5">
                             <InputFieldTwo
                                 as={PhoneInput}
                                 id="recovery-phone"
                                 bigger
-                                label={c('Label').t`Recovery phone number`}
+                                label={c('Label').t`Phone number`}
                                 error={validator(phoneValidations)}
                                 disableChange={loading}
                                 autoFocus
@@ -184,30 +164,11 @@ const RecoveryStep = ({ defaultPhone, defaultEmail, defaultCountry, onSubmit, on
                     </div>
 
                     <div className="flex">
-                        <div className="flex-item-noshrink">
-                            <Checkbox
-                                id="save-email"
-                                checked={saveEmail}
-                                onChange={
-                                    loading
-                                        ? noop
-                                        : () => {
-                                              const newValue = !saveEmail;
-                                              setSaveEmail(newValue);
-                                              if (newValue) {
-                                                  inputRecoveryEmailRef.current?.focus();
-                                              }
-                                          }
-                                }
-                            >
-                                <span className="sr-only">{c('Label').t`Use a recovery email address`}</span>
-                            </Checkbox>
-                        </div>
                         <div className="flex-item-fluid pl-2 mt-0.5">
                             <InputFieldTwo
                                 id="recovery-email"
                                 bigger
-                                label={c('Label').t`Recovery email address`}
+                                label={c('Label').t`Email address`}
                                 error={validator(emailValidations)}
                                 autoFocus
                                 disableChange={loading}
