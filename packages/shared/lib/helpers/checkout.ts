@@ -327,5 +327,9 @@ export const getIsCustomCycle = (cycle: CYCLE) => {
 };
 
 export const getIsOfferBasedOnCoupon = (code: string) => {
-    return [COUPON_CODES.MAIL_BLACK_FRIDAY_2022, COUPON_CODES.VPN_BLACK_FRIDAY_2022].includes(code as COUPON_CODES);
+    return [
+        COUPON_CODES.MAIL_BLACK_FRIDAY_2022,
+        COUPON_CODES.VPN_BLACK_FRIDAY_2022,
+        COUPON_CODES.ANNIVERSARY23,
+    ].includes(code as COUPON_CODES);
 };
