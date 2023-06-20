@@ -2840,11 +2840,11 @@
       ]
     },
     "familyOffer_2023:Action": {
+      "Decline invitation": [
+        "Odrzuć zaproszenie"
+      ],
       "Got it": [
         "Ok"
-      ],
-      "Keep current plan": [
-        "Zachowaj obecny plan"
       ],
       "Switch plans": [
         "Zmień plany"
@@ -3043,6 +3043,31 @@
     "Filter notification": {
       "${ Label.Name } updated": [
         "Etykieta ${ Label.Name } została zaktualizowana"
+      ]
+    },
+    "Font face option": {
+      "System default": [
+        "Domyślny systemu"
+      ],
+      "Theme default": [
+        "Domyślny motyw"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Duża"
+      ],
+      "Medium (recommended)": [
+        "Średnia (zalecana)"
+      ],
+      "Small": [
+        "Mała"
+      ],
+      "Very large": [
+        "Bardzo duża"
+      ],
+      "Very small": [
+        "Bardzo mała"
       ]
     },
     "Group": {
@@ -3619,6 +3644,9 @@
       ],
       "Custom yearly": [
         "Co rok (niestandardowo)"
+      ],
+      "Customize the look and feel of ${ BRAND_NAME } applications.": [
+        "Dostosuj wygląd aplikacji ${ BRAND_NAME }."
       ],
       "Daily": [
         "Codziennie"
@@ -4499,6 +4527,9 @@
       ],
       "Street address": [
         "Ulica"
+      ],
+      "Synchronize with system": [
+        "Domyślny systemu"
       ],
       "System information": [
         "Informacje o systemie"
@@ -6109,6 +6140,9 @@
         "${ emailsCount } adresów e-mail",
         "${ emailsCount } adresów e-mail"
       ],
+      "(active)": [
+        "(aktywny)"
+      ],
       "Account suspended": [
         "Konto zostało zawieszone"
       ],
@@ -6201,6 +6235,9 @@
       ],
       "Customize your mail import": [
         "Dostosuj proces importowania poczty"
+      ],
+      "Day theme": [
+        "Jasny motyw"
       ],
       "Delete ${ count } contact": [
         "Usuń kontakt",
@@ -6306,6 +6343,9 @@
       ],
       "Minicalendar": [
         "Minikalendarz"
+      ],
+      "Night theme": [
+        "Ciemny motyw"
       ],
       "Open actions dropdown": [
         "Otwórz listę akcji"
