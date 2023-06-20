@@ -74,6 +74,9 @@
       "Add address": [
         "Додати адресу"
       ],
+      "Add address or domain": [
+        "Додати адресу або домен"
+      ],
       "Add calendar from URL": [
         "Додати календар з URL-адреси"
       ],
@@ -124,6 +127,9 @@
       ],
       "Alignment": [
         "Вирівнювання"
+      ],
+      "Allow": [
+        "Дозволити"
       ],
       "Apply": [
         "Застосувати"
@@ -205,6 +211,9 @@
       ],
       "Continue": [
         "Продовжити"
+      ],
+      "Continue anyway": [
+        "Все одно продовжити"
       ],
       "Continue import": [
         "Продовжити імпорт"
@@ -755,11 +764,17 @@
       "Send code": [
         "Надіслати код"
       ],
+      "Send email reminder": [
+        "Надіслати нагадування поштою"
+      ],
       "Send messages with @pm.me": [
         "Надсилайте повідомлення з адреси @pm.me"
       ],
       "Send my username": [
         "Надіслати моє ім'я користувача"
+      ],
+      "Send reminder": [
+        "Надіслати нагадування"
       ],
       "Set as default": [
         "Встановити типовим"
@@ -1067,6 +1082,11 @@
       ],
       "Orphan": [
         "Не прив'язано"
+      ]
+    },
+    "Admin": {
+      "admin": [
+        "адміністратор"
       ]
     },
     "Alert": {
@@ -2779,11 +2799,20 @@
       "${ name } deletion failed": [
         "Не вдалося видалити ${ name }"
       ],
+      "${ name } failed to move to allow list": [
+        "${ name } не вдалося перемістити до списку дозволених"
+      ],
+      "${ name } failed to move to block list": [
+        "${ name } не вдалося перемістити до списку блокування"
+      ],
       "${ name } failed to move to spam list": [
         "Не вдалося перемістити ${ name } до вашого списку спаму"
       ],
       "${ name } moved to allow list": [
         "${ name } переміщено до списку дозволених"
+      ],
+      "${ name } moved to block list": [
+        "${ name } переміщено до списку блокування"
       ],
       "${ name } moved to spam list": [
         "${ name } переміщено до списку спаму"
@@ -2887,8 +2916,20 @@
       "${ name } deletion failed": [
         "Не вдалося видалити ${ name }"
       ],
+      "${ name } failed to move to allow list": [
+        "${ name } не вдалося перемістити до списку дозволених"
+      ],
+      "${ name } failed to move to block list": [
+        "${ name } не вдалося перемістити до списку блокування"
+      ],
       "${ name } failed to move to spam list": [
         "Не вдалося перемістити ${ name } до вашого списку спаму"
+      ],
+      "${ name } moved to allow list": [
+        "${ name } переміщено до списку дозволених"
+      ],
+      "${ name } moved to block list": [
+        "${ name } переміщено до списку блокування"
       ],
       "${ name } moved to spam list": [
         "${ name } переміщено до списку спаму"
@@ -3784,6 +3825,9 @@
       "Create a new user": [
         "Створити нового користувача"
       ],
+      "Decline invitation": [
+        "Відхилити запрошення"
+      ],
       "Got it": [
         "Зрозуміло"
       ],
@@ -3792,9 +3836,6 @@
       ],
       "Invite member to your family": [
         "Запросити учасника до родини"
-      ],
-      "Keep current plan": [
-        "Лишити поточний тарифний план"
       ],
       "Set up family group": [
         "Налаштувати сімейну групу"
@@ -3890,7 +3931,7 @@
         "Призначений вам обсяг сховища: ${ assignedStorage }"
       ],
       "The subscription is billed to the Visionary or family plan's primary admin.": [
-        "Рахунок за передплату виставляється основному адміністратору Visionary або сімейного плану."
+        "Рахунок за передплату виставляється головному адміністратору Visionary або сімейного плану."
       ],
       "To ease the transition, we're giving you a 30-day courtesy trial of ${ BRAND_NAME } Unlimited*.": [
         "Щоб полегшити перехід, ми надаємо вам 30-денну пробну версію ${ BRAND_NAME } Unlimited*."
@@ -4303,8 +4344,41 @@
       "Add a custom filter to automatically perform certain actions, like labeling or archiving messages.": [
         "Додайте власний фільтр для автоматичного виконання певних дій, наприклад, позначення міткою чи архівування повідомлень."
       ],
+      "Allow:": [
+        "Дозвіл"
+      ],
+      "Block:": [
+        "Блокування:"
+      ],
       "Search list": [
         "Шукати у списку"
+      ],
+      "Spam:": [
+        "Спам:"
+      ],
+      "Take control over what lands in your inbox by creating the following lists:": [
+        "Візьміть під контроль те, що знаходиться у вашій поштовій скриньці, створивши наступні списки:"
+      ],
+      "Take control over what lands in your organization members' inboxes by creating the following lists:": [
+        "Керуйте тим, що потрапляє в теку \"Вхідні\" учасників вашої організації, створивши такі списки:"
+      ],
+      "These lists apply to all accounts in your organization. Members can create their own individual filters, but won't be able to override addresses or domains you blocked.": [
+        "Ці списки застосовуються до всіх облікових записів у вашій організації. Учасники можуть створювати власні фільтри, але не зможуть замінити адреси або заблоковані домени."
+      ],
+      "To ensure critical messages don't end up in spam and getting missed": [
+        "Щоб критичні повідомлення не потрапляли в спам і не були пропущені"
+      ],
+      "To prevent junk mail from clogging up inboxes": [
+        "Щоб небажана пошта не засмічувала \"Вхідні\""
+      ],
+      "To prevent junk mail from clogging up your inbox": [
+        "Щоб небажана пошта не засмічувала вашу папку \"Вхідні\"."
+      ],
+      "To stop phishing or suspicious emails from entering your email system": [
+        "Щоб запобігти потраплянню фішингових або підозрілих електронних листів у вашу електронну пошту"
+      ],
+      "To stop phishing or suspicious emails from entering your organization's email system": [
+        "Щоб запобігти потраплянню фішингових або підозрілих електронних листів в електронну пошту вашої організації"
       ]
     },
     "Font Face Default": {
@@ -4314,10 +4388,10 @@
     },
     "Font face option": {
       "System default": [
-        "Системна за замовчуванням"
+        "Системна"
       ],
       "Theme default": [
-        "Тема за замовчуванням"
+        "Стандартна тема"
       ]
     },
     "Font Size Default": {
@@ -5764,6 +5838,9 @@
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Імпортування ваших даних із ${ importedEmailAddress } до ${ toEmail }."
       ],
+      "Improve your ${ BRAND_NAME } experience by adapting the application to your needs.": [
+        "Поліпшуйте свій досвід користування ${ BRAND_NAME }, адаптувавши застосунок до своїх потреб"
+      ],
       "Inherited from parent folder": [
         "Успадковано від теки вищого рівня"
       ],
@@ -6193,6 +6270,9 @@
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Виберіть, які календарі імпортувати. Для кожного імпортованого календаря буде створено новий календар згідно з кількістю календарів, доступною у вашому тарифному плані."
       ],
+      "Send emails to encourage your members to protect their accounts with 2FA.": [
+        "Надсилайте електронні листи, щоб заохотити своїх користувачів захищати свої облікові записи за допомогою 2FA."
+      ],
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "Надіслано за допомогою безпечної пошти <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
       ],
@@ -6328,6 +6408,9 @@
         "Ці адреси не створені.",
         "Ці адреси не створені."
       ],
+      "The following members will receive an email prompting them to enable two-factor authentication as soon as possible.": [
+        "Наступні учасники отримають електронного листа з проханням якнайшвидше ввімкнути двоетапну автентифікацію."
+      ],
       "The format of your CSV file is incorrect.": [
         "Формат вашого CSV-файлу неправильний."
       ],
@@ -6452,7 +6535,7 @@
         "Щоб забезпечити постійний доступ до вашого облікового запису, укажіть спосіб його відновлення"
       ],
       "To ensure you don’t lose important data, ${ DRIVE_APP_NAME } saves older versions of your files as you and your collaborators make changes. Select how long ${ BRAND_NAME } should keep previous versions.": [
-        "Щоб не втратити важливі дані, ${ DRIVE_APP_NAME } зберігає старіші версії ваших файлів, коли ви та ваші колеги вносите зміни. Виберіть, як довго ${ BRAND_NAME } має зберігати попередні версії."
+        "Щоб не втратити важливі дані, ${ DRIVE_APP_NAME } зберігає старіші версії ваших файлів, коли ви та інші учасники вносите зміни. Виберіть, як довго ${ BRAND_NAME } має зберігати попередні версії."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "З метою протидії спаму та зловживанням, будь ласка, підтвердьте, що ви людина."
@@ -6624,6 +6707,9 @@
       ],
       "We need to authenticate your payment with your bank.": [
         "Потрібно підтвердити оплату у вашому банку."
+      ],
+      "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
+        "Ми рекомендуємо сповістити членів організації та попросити їх налаштувати 2FA для своїх облікових записів, перш ніж застосовувати 2FA."
       ],
       "We recommend using your recovery phrase instead.": [
         "Радимо натомість скористатися вашою фразою відновлення."
@@ -7402,6 +7488,9 @@
       "All-day event notifications": [
         "Сповіщення про події на цілий день"
       ],
+      "Allow": [
+        "Дозволити"
+      ],
       "Allow notifications by email": [
         "Дозволити сповіщення електронною поштою"
       ],
@@ -7474,6 +7563,9 @@
       "Billing cycle": [
         "Платіжний цикл"
       ],
+      "Block": [
+        "Блокувати"
+      ],
       "Block email tracking": [
         "Блокувати відстеження листів"
       ],
@@ -7503,6 +7595,9 @@
       ],
       "Card holder": [
         "Власник картки"
+      ],
+      "Card information": [
+        "Інформація про картку"
       ],
       "Card number": [
         "Номер картки"
@@ -7624,6 +7719,9 @@
       "Default PGP scheme": [
         "Типова схема PGP"
       ],
+      "Default scrollbars": [
+        "Смуги прокрутки за замовчуванням"
+      ],
       "Default view": [
         "Типовий вигляд"
       ],
@@ -7644,6 +7742,9 @@
       ],
       "Digits": [
         "Цифри"
+      ],
+      "Disable animations": [
+        "Вимкнути анімації"
       ],
       "Display name": [
         "Ім'я"
@@ -7714,6 +7815,9 @@
       "Event notifications": [
         "Сповіщення про події"
       ],
+      "Expiration (${ patternExpiration })": [
+        "Термін дії (${ patternExpiration })"
+      ],
       "Expiration date": [
         "Термін дії"
       ],
@@ -7728,6 +7832,12 @@
       ],
       "Folder location": [
         "Розташування теки"
+      ],
+      "Font family": [
+        "Сімейство шрифтів"
+      ],
+      "Font size": [
+        "Розмір шрифту"
       ],
       "From: ${ from }": [
         "Від: ${ from }"
@@ -7996,11 +8106,20 @@
       "Repeat password": [
         "Повторити пароль"
       ],
+      "Require 2FA for administrators": [
+        "Вимагати 2FA для адміністраторів"
+      ],
+      "Require 2FA for everyone": [
+        "Вимагати 2FA для всіх"
+      ],
       "Reveal password": [
         "Показати пароль"
       ],
       "Security code": [
         "Код безпеки"
+      ],
+      "Security code (${ codeName })": [
+        "Код безпеки (${ codeName })"
       ],
       "Select your country": [
         "Виберіть вашу країну"
@@ -8434,6 +8553,12 @@
       ]
     },
     "Loading info": {
+      "${ twoFAMembers.length }/${ members.length } of your organization member use two-factor authentication.": [
+        "${ twoFAMembers.length }/${ members.length } учасників вашої організації використовує двофакторну автентифікацію.",
+        "${ twoFAMembers.length }/${ members.length } учасників вашої організації використовує двофакторну автентифікацію.",
+        "${ twoFAMembers.length }/${ members.length } учасників вашої організації використовує двофакторну автентифікацію.",
+        "${ twoFAMembers.length }/${ members.length } учасників вашої організації використовує двофакторну автентифікацію."
+      ],
       "Almost there": [
         "Майже готово"
       ],
@@ -8733,6 +8858,9 @@
       "All": [
         "Усі"
       ],
+      "Allow": [
+        "Дозволені"
+      ],
       "Back": [
         "Назад"
       ],
@@ -8744,6 +8872,9 @@
       ],
       "Back to inbox": [
         "Назад до вхідних"
+      ],
+      "Block": [
+        "Заблоковані"
       ],
       "Calendar": [
         "Календар"
@@ -9572,7 +9703,7 @@
         "Під час надсилання іншим користувачам ${ MAIL_APP_NAME }, шифрування відбувається автоматично. Щоб надіслати користувачам поза ${ MAIL_APP_NAME_TWO }, необхідно налаштувати пароль заздалегідь."
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
-        "Ви можете мати більше одного адміністратора. Усі адміністратори можуть додавати користувачів та керувати ними, однак лише основний адміністратор може контролювати платежі."
+        "Ви можете мати більше одного адміністратора. Усі адміністратори можуть додавати користувачів та керувати ними, однак контролювати платежі може лише головний адміністратор."
       ]
     },
     "new_plans: upgrade": {
@@ -9645,6 +9776,18 @@
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "Облікові дані OpenVPN / IKEv2 повторно згенеровано"
+      ],
+      "Reminder has been sent": [
+        "Нагадування надіслано"
+      ],
+      "Two-factor authentication has been enforced for administrators": [
+        "Для адміністраторів застосовано двоетапну автентифікацію"
+      ],
+      "Two-factor authentication has been enforced for all members": [
+        "Двоетапна автентифікація була застосована для всіх членів"
+      ],
+      "Two-factor authentication is not required anymore": [
+        "Двофакторна автентифікація більше не потрібна"
       ]
     },
     "Notification in holidays calendar modal": {
@@ -11242,13 +11385,13 @@
     },
     "Tab subscription modal": {
       "For businesses": [
-        "Для бізнесу"
+        "Професійний"
       ],
       "For families": [
-        "Для родин"
+        "Сімейний"
       ],
       "For individuals": [
-        "Для особистого користування"
+        "Особистий"
       ]
     },
     "Table header; invitations to share calendar": {
@@ -11275,11 +11418,17 @@
       "Edit": [
         "Змінити"
       ],
+      "Email address or domain": [
+        "Адреса електронної пошти або ім'я користувача"
+      ],
       "Email addresses": [
         "Адреси е-пошти"
       ],
       "Import": [
         "Імпорт"
+      ],
+      "List": [
+        "Список"
       ],
       "Marked as": [
         "Позначено як"
@@ -11378,6 +11527,9 @@
       "4. Select a server to connect to": [
         "4. Виберіть сервер, до якого потрібно під'єднатися"
       ],
+      "Accessibility": [
+        "Доступність"
+      ],
       "Account and password": [
         "Обліковий запис і пароль"
       ],
@@ -11432,6 +11584,12 @@
       "Add Sieve filter": [
         "Додати фільтр Sieve"
       ],
+      "Add to allow list": [
+        "Додати до списку дозволених"
+      ],
+      "Add to block list": [
+        "Додати до списку блокування"
+      ],
       "Add to spam list": [
         "Додати до списку спаму"
       ],
@@ -11467,6 +11625,9 @@
       ],
       "Are you sure you want to close?": [
         "Ви дійсно хочете закрити?"
+      ],
+      "Authentication security": [
+        "Безпека автентифікації"
       ],
       "Auto-reply": [
         "Автоматична відповідь"
@@ -11936,9 +12097,6 @@
       "PayPal verification failed": [
         "Не вдалося пройти перевірку PayPal"
       ],
-      "Personalise your e-mail footer": [
-        "Налаштуйте нижній колонтитул листа"
-      ],
       "Phone": [
         "Телефон"
       ],
@@ -12038,6 +12196,9 @@
       "Select when you want this notification to be sent": [
         "Виберіть якщо ви хочете, щоб це сповіщення було надіслано"
       ],
+      "Send email reminders?": [
+        "Надіслати нагадування поштою?"
+      ],
       "Session management": [
         "Керування сеансами"
       ],
@@ -12095,6 +12256,9 @@
       "Sort labels alphabetically": [
         "Сортувати мітки за алфавітом"
       ],
+      "Spam, block, and allow lists": [
+        "Спам, блокування та списки дозволених"
+      ],
       "Start a new import": [
         "Почати новий імпорт"
       ],
@@ -12145,6 +12309,12 @@
       ],
       "Two-factor authentication": [
         "Двоетапна перевірка"
+      ],
+      "Two-factor authentication enforcement": [
+        "Впровадження двоетапної перевірки"
+      ],
+      "Two-factor authentication reminders": [
+        "Нагадування про двоетапну перевірку"
       ],
       "Type": [
         "Тип"
@@ -12324,6 +12494,9 @@
       "Account is disconnected": [
         "Обліковий запис від'єднано"
       ],
+      "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
+        "Автоматичне перемикання між вашими улюбленими темами дня і ночі синхронізовано з денним і нічним режимами вашої системи"
+      ],
       "Customize import to reduce the number of folders": [
         "Налаштуйте імпорт щоб зменшити кількість тек"
       ],
@@ -12357,6 +12530,9 @@
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Якщо ви придбали подарунковий код або отримали його від нашої служби підтримки, ви можете ввести його тут."
       ],
+      "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
+        "Учасники, які не використовують 2FA, отримають електронного листа з проханням ввімкнути його якомога швидше."
+      ],
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "Повідомлення в теці Надіслані або Чернетки й надалі з'являтимуться в тій теці, навіть якщо ви перемістите їх до іншої теки."
       ],
@@ -12387,6 +12563,12 @@
       "The new subscription cycle starts on ${ formattedTime }": [
         "Новий цикл передплати розпочинається з ${ formattedTime }"
       ],
+      "The reduce motion setting is already enabled on this device": [
+        "Налаштування зменшення руху вже ввімкнено на цьому пристрої"
+      ],
+      "The selected theme will be active when your system is set to \"dark mode\"": [
+        "Вибрана тема буде активною, коли ваша система буде переведена в \"темний режим\""
+      ],
       "The selected theme will be active when your system is set to \"light mode\"": [
         "Вибрана тема буде активною, коли у вашій системі встановлено \"світлий режим\""
       ],
@@ -12408,11 +12590,17 @@
       "This key is used by ${ MAIL_APP_NAME } to encrypt your contact's data": [
         "${ MAIL_APP_NAME } використовує цей ключ для шифрування ваших контактних даних"
       ],
+      "Use your browser’s default scrollbars. These are typically larger and easier to use": [
+        "Використовуйте стандартні смуги прокрутки вашого браузера. Зазвичай вони більші та прості у використанні"
+      ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "Ми виявили проблему з вашою конфігурацією DNS. Переконайтеся, що ваші записи відповідають інструкціям нижче. Якщо проблема не зникне, нам доведеться вимкнути підписання DKIM."
       ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "Ми зупинили підписання DKIM через проблеми з конфігурацією вашого DNS. Будь ласка, дотримуйтесь наведених нижче інструкцій, щоб відновити підпис."
+      ],
+      "When enabled, animations and transitions will not show": [
+        "Якщо ввімкнено, анімації та переходи не показуватимуться"
       ],
       "When you add a label to a message in a conversation, it will automatically be applied to all future messages you send or receive in that conversation.": [
         "Коли ви додаєте мітку до повідомлення в розмові, вона автоматично застосується до всіх майбутніх повідомлень, які ви надсилаєте або отримуєте в цій розмові."

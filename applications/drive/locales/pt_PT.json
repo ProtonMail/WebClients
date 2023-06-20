@@ -179,7 +179,7 @@
         "Criar nova pasta"
       ],
       "Create new text file": [
-        "Criar novo ficheiro de texto"
+        "Criar um ficheiro de texto"
       ],
       "Customize": [
         "Personalizar"
@@ -228,6 +228,9 @@
       "Download": [
         "Transferir"
       ],
+      "Download (${ count })": [
+        "Transferência (${ count })"
+      ],
       "Download all": [
         "Transferir tudo"
       ],
@@ -236,6 +239,9 @@
       ],
       "Download the Windows application": [
         "Transferir a aplicação para o Windows"
+      ],
+      "Drive Locked": [
+        "Unidade bloqueada"
       ],
       "Edit": [
         "Editar"
@@ -260,6 +266,9 @@
       ],
       "enable desktop notifications": [
         "ativar as notificações"
+      ],
+      "Enable drive search": [
+        "Ativar a pesquisa na unidade"
       ],
       "Expand": [
         "Expandir"
@@ -293,6 +302,9 @@
       ],
       "Get verification code": [
         "Obter código de verificação"
+      ],
+      "Go to Drive": [
+        "Ir para o Drive"
       ],
       "Go to label": [
         "Ir para a etiqueta"
@@ -534,11 +546,14 @@
       "Search countries": [
         "Pesquisar países"
       ],
+      "Search drive": [
+        "Pesquisar na unidade"
+      ],
       "See plan features": [
         "Veja as funcionalidades do plano"
       ],
       "See version history": [
-        "Ver histório das versões"
+        "Ver o histórico das versões"
       ],
       "Select all": [
         "Seleccionar tudo"
@@ -631,7 +646,7 @@
         "Tentar outro método"
       ],
       "Try for free": [
-        "Experimentar grátis"
+        "Experimente gratuitamente"
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Tente guardar novamente. Erro ao guardar devido a: ${ saveError }"
@@ -659,6 +674,9 @@
       ],
       "Upgrade now": [
         "Actualizar agora"
+      ],
+      "Upload anyway": [
+        "Carregar de qualquer forma"
       ],
       "Upload file": [
         "Enviar ficheiro"
@@ -695,6 +713,9 @@
       ],
       "View invoice": [
         "Ver factura"
+      ],
+      "Your 500 MB bonus": [
+        "O seu bónus de 500 MB"
       ],
       "Zoom in": [
         "Ampliar"
@@ -1946,6 +1967,9 @@
         "Desmarque pelo menos ${ calendarsToFixCount } calendário",
         "Desconsidere pelo menos ${ calendarsToFixCount } calendários ou"
       ],
+      "Device name does not match": [
+        "O nome do dispositivo não corresponde."
+      ],
       "Domain not available, try again later": [
         "Domínio indisponível, tente novamente mais tarde"
       ],
@@ -1958,8 +1982,20 @@
       "Enter 6 digits": [
         "Insira 6 algarismos"
       ],
+      "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
+        "O ficheiro \"${ item.name }\" não pode ser carregado devido ao erro \"${ error }\"."
+      ],
+      "File \"${ name }\" is already downloading": [
+        "O fichero \"${ name }\" já está a ser descarregado."
+      ],
+      "File cannot be merged with folder": [
+        "O ficheiro não pode ser unido à pasta."
+      ],
       "File selection is already downloading": [
         "Os ficheiros selecionados já estão sendo transferidos."
+      ],
+      "Folder \"${ name }\" is already downloading": [
+        "A pasta \"${ name }\" já está a ser descarregada."
       ],
       "Folder name cannot be empty.": [
         "O nome da pasta não pode estar vazio."
@@ -2049,6 +2085,9 @@
       "Primary address key is not decrypted.": [
         "A chave de endereço principal não está desencriptada."
       ],
+      "Report failed to be sent": [
+        "Erro ao enviar o relatório"
+      ],
       "Request timed out": [
         "O pedido expirou"
       ],
@@ -2106,6 +2145,9 @@
       "The original file has missing active revision": [
         "O ficheiro original tem uma revisão ativa em falta."
       ],
+      "The original file has missing hash key": [
+        "O ficheiro original tem uma chave hash em falta."
+      ],
       "The original file has missing session key": [
         "O ficheiro original tem uma chave de sessão em falta."
       ],
@@ -2114,6 +2156,9 @@
       ],
       "The original folder not found": [
         "A pasta original não foi encontrada."
+      ],
+      "The original folder or file not found": [
+        "A pasta ou ficheiro original não foi encontrado."
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Há pastas demais na sua conta externa. Personalize a importação para excluir algumas pastas."
@@ -2444,11 +2489,11 @@
       ]
     },
     "familyOffer_2023:Action": {
+      "Decline invitation": [
+        "Recusar o convite"
+      ],
       "Got it": [
         "Entendido"
-      ],
-      "Keep current plan": [
-        "Manter o plano atual"
       ],
       "Switch plans": [
         "Mudar de plano"
@@ -2640,6 +2685,31 @@
     "Filter notification": {
       "${ Label.Name } updated": [
         "${ Label.Name } atualizada"
+      ]
+    },
+    "Font face option": {
+      "System default": [
+        "Predefinição do sistema"
+      ],
+      "Theme default": [
+        "Tema predefinido"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Grande"
+      ],
+      "Medium (recommended)": [
+        "Médio (recomendado)"
+      ],
+      "Small": [
+        "Pequeno"
+      ],
+      "Very large": [
+        "Muito grande"
+      ],
+      "Very small": [
+        "Muito pequeno"
       ]
     },
     "Group": {
@@ -2961,6 +3031,18 @@
       ]
     },
     "Info": {
+      "${ activeDownloadsCount } downloading": [
+        "${ activeDownloadsCount } transferência em curso",
+        "${ activeDownloadsCount } transferências em curso"
+      ],
+      "${ activeDownloadsCount } downloading (${ downloadProgress }%)": [
+        "${ activeDownloadsCount } transferência em curso (${ downloadProgress }%)",
+        "${ activeDownloadsCount } transferências em curso (${ downloadProgress }%)"
+      ],
+      "${ activeUploadsCount } uploading (${ uploadProgress }%)": [
+        "${ activeUploadsCount } transferência em curso (${ uploadProgress }%)",
+        "${ activeUploadsCount } transferências em curso (${ uploadProgress }%)"
+      ],
       "${ addressCount } email address": [
         "${ addressCount } endereço de e-mail",
         "${ addressCount } endereços de e-mail"
@@ -2994,6 +3076,9 @@
       "${ contactsCount } contact found": [
         "${ contactsCount } contacto encontrado",
         "${ contactsCount } contactos encontrados"
+      ],
+      "${ deviceName } (restored)": [
+        "${ deviceName } (restaurado)"
       ],
       "${ doneCount } finished": [
         "${ doneCount } terminado",
@@ -3044,6 +3129,9 @@
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } de ${ providerCalendars.length } calendário",
         "${ selectedCalendarsTotal } de ${ providerCalendars.length } calendários"
+      ],
+      "${ selectedCount } selected": [
+        "Seleção: ${ selectedCount }"
       ],
       "${ selectedFoldersCount } folder selected": [
         "${ selectedFoldersCount } pasta selecionada",
@@ -3101,13 +3189,22 @@
       "All your changes will be lost.": [
         "Todas as suas alterações serão perdidas."
       ],
+      "Also try looking in Trash.": [
+        "Tente também procurar no lixo."
+      ],
       "An active recovery file": [
         "Um ficheiro de recuperação ativo"
       ],
       "and": [
         "e"
       ],
+      "And access it from anywhere": [
+        "E acedê-lo a partir de qualquer lugar"
+      ],
       "Anyone with this link can access your file.": [
+        "Qualquer pessoa com esta ligação terá acesso ao ficheiro."
+      ],
+      "Anyone with this link can access your folder.": [
         "Qualquer pessoa com esta ligação terá acesso ao ficheiro."
       ],
       "Are you sure you want to discard your changes?": [
@@ -3116,8 +3213,20 @@
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "Tem a certeza de que deseja esvaziar o lixo e eliminar permanentemente todos os itens?"
       ],
+      "Are you sure you want to permanently delete": [
+        "Tem certeza de que deseja eliminar permanentemente"
+      ],
+      "Are you sure you want to permanently delete \"${ itemName }\" from trash?": [
+        "Tem certeza de que deseja eliminar permanentemente \"${ itemName }\" do lixo?"
+      ],
+      "Are you sure you want to permanently delete selected items from trash?": [
+        "Tem a certeza de que deseja eliminar permanentemente os itens seleccionados do lixo?"
+      ],
       "Attention required": [
         "Atenção Requerida"
+      ],
+      "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access or decrypt your files for you. To unlock your drive after a password reset, you must have one of the following:": [
+        "Uma vez que ${ DRIVE_APP_NAME } está encriptado de ponta a ponta, não podemos aceder ou desencriptar os seus ficheiros por si. Para desbloquear a unidade após uma reinicialização da palavra-passe, tem de ter uma das seguintes opções:"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Antes de pedir um novo código de verificação, verifique a sua pasta de spam’ e verifique que ${ strong } é o endereço correto."
@@ -3152,6 +3261,12 @@
       "Clear encrypted search data": [
         "Limpar os dados de pesquisa encriptada"
       ],
+      "Clearing browser data will clear the search index on this device. All files would need to be re-indexed again while using the search functionality.": [
+        "A limpeza dos dados do navegador limpará o índice de pesquisa neste dispositivo. Todos os ficheiros terão de ser novamente indexados ao utilizar a funcionalidade de pesquisa."
+      ],
+      "Clears browser data related to the encrypted search.": [
+        "Limpa os dados do navegador relacionados com a pesquisa encriptada."
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Clique em \"Pedir novo código\" para receber um novo código de verificação em ${ strong }. Se o telefone estiver incorrecto, clique em \"Editar\" para o corrigir."
       ],
@@ -3166,6 +3281,9 @@
       ],
       "Contact unassigned to group ${ contactGroupName }": [
         "Contacto não atribuído ao grupo ${ contactGroupName }"
+      ],
+      "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
+        "Continue a utilizar ${ DRIVE_APP_NAME } e desbloqueie a unidade mais tarde."
       ],
       "Country code": [
         "Código de país"
@@ -3198,11 +3316,17 @@
       "Creating link to file": [
         "A criar ligação ao ficheiro"
       ],
+      "Creating link to folder": [
+        "A criar uma ligação para a pasta"
+      ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "São suportados os arquivos CSV do Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora e algumas outras aplicações, bem como os formatos vCard 3.1 e 4.0 (codificação UTF-8)."
       ],
       "Current version": [
         "Versão atual"
+      ],
+      "Customize the look and feel of ${ BRAND_NAME } applications.": [
+        "Personalize o aspeto e a sensação das aplicações ${ BRAND_NAME }."
       ],
       "Decrypting files": [
         "Desencriptação de ficheiros"
@@ -3210,6 +3334,15 @@
       "Delete locked drive": [
         "Eliminar a unidade bloqueada",
         "Eliminar as unidades bloqueadas"
+      ],
+      "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
+        "A assinatura digital foi verificada. Este ficheiro foi carregado de forma segura por ${ emailAddress }."
+      ],
+      "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
+        "A assinatura digital foi verificada. Esta pasta foi carregada de forma segura por ${ emailAddress }."
+      ],
+      "double your storage": [
+        "dobrar o seu armazenamento"
       ],
       "Download canceled": [
         "A transferência foi cancelada."
@@ -3224,7 +3357,10 @@
         "A transferência foi terminada."
       ],
       "Download of ${ downloadFileName } will be aborted": [
-        "Download do arquivo ${ downloadFileName } vai ser abortado"
+        "A transferência para ${ downloadFileName } será cancelada."
+      ],
+      "Download paused due to connection issue; it will resume automatically": [
+        "A transferência foi interrompida devido a um problema de ligação. Será retomada automaticamente."
       ],
       "Downloaded": [
         "Transferido"
@@ -3246,6 +3382,12 @@
       ],
       "Emails are automatically signed": [
         "Os e-mails são assinados automaticamente"
+      ],
+      "Enable drive search": [
+        "Ativar a pesquisa na unidade"
+      ],
+      "Enabling drive search": [
+        "Ativação da pesquisa na unidade"
       ],
       "Encrypted search is here": [
         "A pesquisa encriptada está aqui"
@@ -3284,20 +3426,50 @@
       "Failed": [
         "Erro"
       ],
+      "Failed to generate a secure link. The reason is: ${ error }": [
+        "Erro ao gerar uma ligação segura. O motivo é: ${ error }"
+      ],
+      "Failed to generate a secure link. Try again later": [
+        "Erro ao gerar uma ligação segura. Tente novamente mais tarde"
+      ],
+      "Failed to open a secure link. The reason is: ${ error }": [
+        "Erro ao abrir uma ligação segura. O motivo é: ${ error }"
+      ],
+      "File \"${ name }\" was deleted during download": [
+        "O ficheiro \"${ name }\" foi eliminado durante a transferência."
+      ],
+      "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
+        "O ficheiro não tem assinatura. Não foi possível verificar se ${ emailAddress } carregou ${ fileName }."
+      ],
+      "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
+        "O ficheiro não tem assinatura. Não foi possível verificar quem carregou ${ fileName }."
+      ],
       "File will not be updated": [
         "O ficheiro não será atualizado."
       ],
       "Finalizing": [
         "A finalizar"
       ],
+      "Folder \"${ link.name }\" was deleted during download": [
+        "A pasta \"${ link.name }\" foi eliminada durante a transferência."
+      ],
       "Folder contents will merge into a single folder": [
         "O conteúdo da pasta será unido numa única pasta"
+      ],
+      "Folder is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
+        "A pasta não tem assinatura. Não foi possível verificar se ${ emailAddress } carregou ${ fileName }."
+      ],
+      "Folder is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
+        "A pasta não tem assinatura. Não foi possível verificar quem carregou ${ fileName }."
       ],
       "Folder will not be uploaded": [
         "A pasta não será enviada"
       ],
       "Folders you sync from your computer will appear here.": [
         "As pastas que sincronizar a partir do seu computador aparecerão aqui."
+      ],
+      "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
+        "Para obter melhores resultados, evite atividades de streaming e de memória intensiva ou divida o carregamento em lotes mais pequenos."
       ],
       "Free forever": [
         "Grátis para sempre"
@@ -3308,11 +3480,23 @@
       "Free up some space or contact your administrator.": [
         "Liberte algum espaço ou contacte um administrador."
       ],
+      "from the version history?": [
+        "do histórico de versões?"
+      ],
+      "Get to know ${ DRIVE_APP_NAME } and earn your 500 MB storage bonus! Take action today.": [
+        "Conheça o ${ DRIVE_APP_NAME } e beneficie de um bónus de armazenamento de 500 MB!"
+      ],
+      "Go ahead, upload a file": [
+        "Carregue um ficheiro"
+      ],
       "Go to \"My files\" and upload some files first.": [
         "Vá a \"Os meus ficheiros\" e envie alguns primeiro."
       ],
       "here": [
         "aqui"
+      ],
+      "How does encrypted search work?": [
+        "Como funciona a pesquisa encriptada?"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Se tiver problemas ao criar a conta, solicite um convite e responderemos dentro de um dia útil."
@@ -3322,6 +3506,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Se não encontrar o e-mail na sua caixa de entrada, verifique a pasta de spam."
+      ],
+      "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process.": [
+        "Se tiver uma destas opções, aceda à definição de conta ${ BRAND_NAME } para iniciar o processo de desbloqueio."
       ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Importar ${ calendarCount } de ${ totalCalendarsCount } calendário",
@@ -3345,6 +3532,12 @@
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Importando os seus dados de ${ importedEmailAddress } para ${ toEmail }."
       ],
+      "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
+        "Indexação de itens: ${ esProgress } de ${ totalProgressToShow }"
+      ],
+      "Indexing search results…": [
+        "Indexação dos resultados da pesquisa…"
+      ],
       "Inherited from parent folder": [
         "Herança da pasta principal"
       ],
@@ -3359,6 +3552,15 @@
       ],
       "Internet connection restored.": [
         "Ligação à Internet reposta."
+      ],
+      "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
+        "Parece que tentou recentemente carregar ${ uploadName }. Se o carregamento falhou, ${ replaceFile }. Se o carregamento ainda estiver em curso, a substituição do ficheiro cancelará o carregamento em curso."
+      ],
+      "Items in the trash will stay here until you delete them permanently": [
+        "Os itens no lixo permanecerão aqui até serem eliminados permanentemente."
+      ],
+      "It’s as easy as drag and drop or selecting files": [
+        "É tão fácil como arrastar e largar ou selecionar ficheiros"
       ],
       "It’s easy and secure": [
         "É fácil e seguro"
@@ -3387,6 +3589,9 @@
       "Link copied to clipboard": [
         "Ligação copiada para a área de transferência"
       ],
+      "Link owner has the password": [
+        "O proprietário da ligação tem a palavra-passe"
+      ],
       "Loading": [
         "A carregar"
       ],
@@ -3394,7 +3599,7 @@
         "A carregar ${ appName }"
       ],
       "Loading link": [
-        "Carregamento da hiperligação"
+        "Carregamento da ligação"
       ],
       "Loading links": [
         "Carregamento das ligações"
@@ -3404,6 +3609,9 @@
       ],
       "Loading...": [
         "A carregar..."
+      ],
+      "Makes your account safer": [
+        "Protege a sua conta"
       ],
       "Merged": [
         "Unido"
@@ -3419,6 +3627,9 @@
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Nomeie a sua nova pasta e seleccione a pasta principalonde deseja colocá-la. Se não seleccionar uma pasta principal, esta nova pasta será criada como uma pasta de nível superior."
+      ],
+      "Need to share a file? Then get ${ DRIVE_APP_NAME },\nthe safest way to share, store, and sync your files.": [
+        "Precisa de partilhar um ficheiro? Então obtenha ${ DRIVE_APP_NAME },\na forma mais segura de partilhar, armazenar e sincronizar os seus ficheiros."
       ],
       "Network issue": [
         "Problema de rede"
@@ -3456,8 +3667,20 @@
       "Not a valid URL": [
         "Não é um URL válido"
       ],
+      "Not all files were transferred. Try uploading or downloading the files again.": [
+        "Nem todos os ficheiros foram transferidos. Tente carregar ou descarregar os ficheiros novamente."
+      ],
+      "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
+        "Nota: os dados podem ainda estar disponíveis localmente em dispositivos onde tenha instalado ${ DRIVE_APP_NAME }."
+      ],
+      "Nothing here yet": [
+        "Neste momento, não há nada aqui."
+      ],
       "of": [
         "de"
+      ],
+      "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
+        "Uma das suas unidades encriptadas está bloqueada. É muito provável que isto se deva a uma reinicialização recente da palavra-passe."
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Uma ou mais chaves confiáveis foram marcadas como \"comprometidas\" pelo proprietário. Recomendamos que \"desconfie\" dessas chaves."
@@ -3469,14 +3692,23 @@
       "Only the people with the link and the password can access this file.": [
         "Só as pessoas com a ligação e a palavra-passe podem aceder ao ficheiro."
       ],
+      "Only the people with the link and the password can access this folder.": [
+        "Só as pessoas com a ligação e a palavra-passe podem aceder a esta pasta."
+      ],
       "Paused": [
         "Em pausa"
+      ],
+      "Permanently delete all files in your locked drive": [
+        "Elimine permanentemente todos os ficheiros da sua unidade bloqueada."
       ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/Inline é apenas compatível com o formato Texto Simples."
       ],
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "PGP/MIME envia automaticamente a mensagem usando o modo de composição atual."
+      ],
+      "Please enter the password to decrypt and view content.": [
+        "Introduza a palavra-passe para desencriptar e ver o conteúdo."
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Note que os endereços atribuídos a este grupo NÃO serão eliminados."
@@ -3506,14 +3738,26 @@
       "Preparing link to file": [
         "A preparar ligação ao ficheiro"
       ],
+      "Preparing link to folder": [
+        "A preparar uma ligação à pasta"
+      ],
       "Preview failed to be loaded": [
         "Erro no carregamento da pré-visualização"
       ],
       "Preview for this file type is not supported": [
         "A pré-visualização deste tipo de arquivo não é suportada"
       ],
+      "Previous versions are kept for ${ retentionLabel }": [
+        "As versões anteriores são mantidas durante ${ retentionLabel }"
+      ],
+      "Previous versions are not saved": [
+        "As versões anteriores não são guardadas."
+      ],
       "Primary": [
         "Principal"
+      ],
+      "Private search enabled. You may now close this dialogue and search for files and folders.": [
+        "A pesquisa privada está ativada. Pode agora fechar esta caixa de diálogo e pesquisar ficheiros e pastas."
       ],
       "Queued": [
         "Em espera"
@@ -3531,16 +3775,25 @@
         "Actualizar a página ou ${ link } resolve automaticamente a maioria dos problemas."
       ],
       "Report has been sent": [
-        "A denúncia foi enviada"
+        "A denúncia foi enviada."
       ],
       "Restore": [
         "Restaurar"
       ],
+      "Restore is in progress. This can take a few seconds.": [
+        "A restauração está em progresso. Isto pode demorar alguns segundos."
+      ],
       "Restored files ${ formattedDate }": [
         "Ficheiros restaurados ${ formattedDate }"
       ],
+      "Search cannot be enabled in this browser": [
+        "A pesquisa não pode ser activada neste navegador."
+      ],
       "Search Enabled": [
         "A pesquisa foi ativada."
+      ],
+      "Select an uploaded file or folder and create a link to it.": [
+        "Selecione um ficheiro ou pasta carregado e crie uma ligação para o mesmo."
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Seleccione o formato de e-mail predefinido a utilizar para este endereço de e-mail."
@@ -3569,8 +3822,23 @@
       "Shared link not found": [
         "A ligação partilhada não foi encontrada."
       ],
+      "Signature cannot be validated due to network error, please try again later.": [
+        "A assinatura não pode ser validada devido a um erro de rede. Tente novamente mais tarde."
+      ],
+      "Signature check will be ignored": [
+        "A verificação da assinatura será ignorada."
+      ],
       "Signature issue": [
         "Problema de assinatura"
+      ],
+      "Some files failed to download. Try downloading the files again.": [
+        "Alguns ficheiros não foram descarregados. Tente descarregar os ficheiros novamente."
+      ],
+      "Some files failed to upload. Try uploading the files again.": [
+        "Alguns ficheiros não puderam ser carregados. Tente carregar os ficheiros novamente."
+      ],
+      "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
+        "Alguns dos seus ficheiros já não estão acessíveis. Restaure o acesso aos ficheiros. ${ StartRecoveryButton }"
       ],
       "Something went wrong, please try again later.": [
         "Algo correu mal. Tente novamente mais tarde."
@@ -3578,11 +3846,26 @@
       "support team": [
         "equipa de assistência"
       ],
+      "Swiss encrypted file storage": [
+        "Armazenamento de ficheiros encriptados na Suíça"
+      ],
       "Temporarily unavailable. Please check back later.": [
         "Temporariamente indisponível. Tente mais tarde."
       ],
+      "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
+        "A conta pode ter uma nova chave ou o seguinte pode ter sido adulterado: ${ items } Abra apenas se confiar nele."
+      ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "Temos de desencriptar localmente os seus contactos antes que os possa exportar. No final do processo, será gerado um ficheiro VCF e poderá transferi-lo."
+      ],
+      "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
+        "Os dados encriptados são ligeiramente maiores devido à encriptação e às assinaturas, que garantem a segurança dos seus dados."
+      ],
+      "The following may have been tampered with: ${ items }. Only open if you trust it.": [
+        "O seguinte pode ter sido adulterado: ${ items }. Abra apenas se confiar nele."
+      ],
+      "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
+        "Há ficheiros que ainda têm de ser transferidos. Ao fechar o gestor de transferências, todas as operações serão terminadas."
       ],
       "There are no files yet": [
         "Ainda não há ficheiros"
@@ -3596,6 +3879,9 @@
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Este navegador não suporta a antevisão de documentos PDF. Transfira o ficheiro."
       ],
+      "This file may have been deleted, moved or made unavailable. Try reaching out to the file owner.": [
+        "Este ficheiro pode ter sido eliminado, movido ou indisponível. Tente contactar o proprietário do ficheiro."
+      ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Esta hiperligação leva a um website que pode tentar roubar a sua informação, como palavras-passe e números de cartão de crédito."
       ],
@@ -3605,15 +3891,39 @@
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Esta ligação pode ser um ataque homográfico. Verifique se esta é a ligação que deseja visitar, ou não a abra."
       ],
+      "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
+        "Este link foi criado com uma versão antiga do Drive e não pode ser modificado. Elimine esta ligação e crie uma para alterar as definições."
+      ],
       "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
         "A ligação será permanentemente desativada. Ninguém poderá aceder ao ficheiro com ela. Para voltar a partilhá-lo, precisará de uma nova ligação."
       ],
+      "This link will be permanently disabled. No one with this link will be able to access your folder. To reshare the folder, you will need a new link.": [
+        "A ligação será permanentemente desativada. Ninguém poderá aceder à sua pasta com ela. Para voltar a partilhá-la, precisará de uma nova ligação."
+      ],
       "This will delete the link and remove access to your file or folder for anyone with the link.": [
-        "Isto elimina a hiperligação e remove o acesso ao ficheiro ou pasta através da ligação existente.",
-        "Isto elimina as hiperligações e remove o acesso ao ficheiro ou pasta através da ligação existente."
+        "Isto elimina a ligação e remove o acesso ao ficheiro ou pasta através da ligação existente.",
+        "Isto elimina as ligações e remove o acesso ao ficheiro ou pasta através da ligação existente."
       ],
       "This will overwrite the existing folder": [
         "Isto vai sobrescrever a pasta existente"
+      ],
+      "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on the device won’t be affected.": [
+        "Isto irá remover de ${ DRIVE_APP_NAME } o dispositivo sincronizado ${ deviceName }. Os ficheiros locais no dispositivo não serão afetados."
+      ],
+      "This will replace the existing file with the folder": [
+        "Isto irá substituir o ficheiro existente pela pasta."
+      ],
+      "This will replace the existing folder with the file": [
+        "Isto substituirá a pasta existente pelo ficheiro."
+      ],
+      "This will upload a new version of the file": [
+        "Isto carregará uma nova versão do ficheiro."
+      ],
+      "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
+        "Para permitir uma pesquisa verdadeiramente privada, ${ DRIVE_APP_NAME } precisa de indexar os seus ficheiros localmente."
+      ],
+      "To enable truly private search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
+        "Para permitir uma pesquisa verdadeiramente privada, precisamos de indexar os seus ficheiros localmente. Pode continuar a utilizar ${ DRIVE_APP_NAME } normalmente e avisá-lo-emos quando a indexação estiver concluída."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Para combater o spam e abusos, confirme que é um ser humano."
@@ -3633,17 +3943,38 @@
       "Today": [
         "Hoje"
       ],
+      "Transfer canceled for file \"${ name }\"": [
+        "A transferência foi cancelada para o ficheiro \"${ name }\"."
+      ],
+      "Transfer canceled for folder \"${ name }\"": [
+        "A transferência foi cancelada para a pasta \"${ name }\"."
+      ],
+      "Transfer skipped for file \"${ file.name }\"": [
+        "A transferência foi ignorada para o ficheiro \"${ file.name }\"."
+      ],
+      "Transfer skipped for folder \"${ folderName }\"": [
+        "A transferência foi ignorada para a pasta \"${ folderName }\"."
+      ],
       "Trash": [
         "Lixo"
       ],
+      "Try searching by file name, date, or type.": [
+        "Tente pesquisar por nome de ficheiro, data ou tipo."
+      ],
       "Unknown error": [
         "Erro desconhecido"
+      ],
+      "Unlock drive to recover files": [
+        "Desbloquear a unidade para recuperar os ficheiros"
       ],
       "Unsaved changes": [
         "Alterações não guardadas"
       ],
       "Unsupported file": [
         "Ficheiro não suportado"
+      ],
+      "Updating drive search...": [
+        "Atualização da pesquisa na unidade..."
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Actualize agora para ter acesso a recursos, produtos e armazenamento premium por um preço especial."
@@ -3657,11 +3988,26 @@
       "Uploading hundreds of files at once may have a performance impact.": [
         "Enviar centenas de ficheiros de uma só vez pode ter impacto no desempenho."
       ],
+      "Use Drive for Desktop to sync folders on your computer with ${ DRIVE_APP_NAME }. They’ll show up here and be accessible from anywhere. ${ learnMore }": [
+        "Utilize o Drive para Desktop para sincronizar pastas no seu computador com ${ DRIVE_APP_NAME }. Elas aparecerão aqui e serão acessíveis a partir de qualquer ponto. ${ learnMore }"
+      ],
+      "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
+        "Utilize este formulário para nos notificar de ficheiros partilhados inadequados, ilegais,\nou ficheiros partilhados maliciosos. Está prestes a denunciar:"
+      ],
       "Version is deleted": [
         "A versão é eliminada."
       ],
       "Version is restored": [
         "A versão foi restaurada."
+      ],
+      "Way to go, you’ve just doubled your free storage!": [
+        "Muito bem! Acabou de duplicar o seu armazenamento gratuito!"
+      ],
+      "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
+        "Não foi possível verificar se ${ emailAddress } carregou ${ fileName }."
+      ],
+      "We couldn’t verify who uploaded ${ fileName }.": [
+        "Não foi possível verificar quem carregou ${ fileName }."
       ],
       "We'll notify you when the import is done.": [
         "Vamos avisá-lo quando a importação for concluída."
@@ -3680,6 +4026,12 @@
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Após a configuração da autenticação de dois fatores, serão fornecidos códigos de recuperação que poderá usar para se autenticar, no caso de perder o acesso à aplicação de autenticação."
+      ],
+      "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
+        "será restaurado para a versão de ${ formattedRevisionDate }. Todas as outras versões continuarão a ser guardadas."
+      ],
+      "With ${ DRIVE_APP_NAME }, your data is protected with end-to-end encryption. Only you can decrypt it.": [
+        "Com ${ DRIVE_APP_NAME }, os seus dados estão protegidos com encriptação de ponta a ponta. Só você pode desencriptá-los."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Deseja receber um novo código de verificação ou usar um método de verificação alternativo?"
@@ -3717,6 +4069,9 @@
       "You cannot undo this action.": [
         "Esta ação não pode ser desfeita."
       ],
+      "You have ${ expiresInDays } days left to claim your 500 MB welcome bonus and ": [
+        "Restam-lhe ${ expiresInDays } dias para reclamar o seu bónus de boas-vindas de 500 MB e "
+      ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "Atingiu ${ spaceDisplayed }% da sua capacidade de armazenamento. ${ freeUpMessage } ${ upgradeLink }"
       ],
@@ -3748,13 +4103,16 @@
         "A sua conta tem pelo menos uma fatura vencida. A sua conta é restrita. O não pagamento regular bloqueará os seus e-mails e hiperligações de partilha. ${ payInvoiceLink }"
       ],
       "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
-        "O seu navegador atual não suporta transferir arquivos grandes devido à indisponibilidade de service workers. Transferir arquivos grandes pode travar ou fazer com que o navegador não responda mais. Por favor, usa a versão mais recente de um ${ recommendedBrowser } e tente novamente."
+        "O seu navigador atual não suporta a transferência de ficheiros grandes devido à indisponibilidade de fornecedores de serviços. A transferência de ficheiros grandes pode falhar ou fazer com que o navegdor deixe de responder. Utilize a versão mais recente de um ${ recommendedBrowser } e tente novamente."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Os seus dados estão prontos para serem importados de ${ importedEmailAddressStrong } para a sua conta ${ BRAND_NAME }."
       ],
       "Your email will only be used for this one-time verification.": [
         "O seu e-mail só será usado para esta verificação única."
+      ],
+      "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ KeyReactivationButton }": [
+        "Os seus ficheiros já não estão acessíveis devido a uma reinicialização da palavra-passe. Volte a enviar a chave de encriptação antiga para recuperar o acesso. ${ KeyReactivationButton }"
       ],
       "Your files will be encrypted and then saved": [
         "Os seus ficheiros serão encriptados e depois guardados."
@@ -3770,6 +4128,9 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "O seu telefone só será usado para esta verificação única."
+      ],
+      "Your plan is limited to 10 versions for up to 7 days": [
+        "O seu plano é limitado a 10 versões por até 7 dias."
       ],
       "Your previous password": [
         "A sua palavras-passe anterior"
@@ -3907,6 +4268,9 @@
       "Category": [
         "Categoria"
       ],
+      "Child sexual abuse material": [
+        "Conteúdo de pornografia infantil"
+      ],
       "City": [
         "Cidade"
       ],
@@ -3964,6 +4328,9 @@
       ],
       "Download anyway": [
         "Transferir assim mesmo"
+      ],
+      "Downloading ${ percentageValue }%": [
+        "Transferência ${ percentageValue }%"
       ],
       "Duplicate found": [
         "Duplicado encontrado"
@@ -4151,6 +4518,9 @@
       "Phone number": [
         "Número de telefone"
       ],
+      "Please provide full details to help us take appropriate action": [
+        "Forneça todos os detalhes para nos ajudar a tomar as medidas adequadas."
+      ],
       "Port": [
         "Porta"
       ],
@@ -4190,6 +4560,9 @@
       "Set recovery method": [
         "Definir um método de recuperação"
       ],
+      "Show indexing progress of Encrypted Search": [
+        "Mostrar o progresso da indexação da pesquisa encriptada"
+      ],
       "Sign emails": [
         "Assinar os e-mails"
       ],
@@ -4211,11 +4584,17 @@
       "Street address": [
         "Endereço postal"
       ],
+      "Synchronize with system": [
+        "Sincronizar com o sistema"
+      ],
       "System information": [
         "Informação do sistema"
       ],
       "Text": [
         "Texto"
+      ],
+      "This will permanently delete all files in your locked drive.": [
+        "Isto irá eliminar permanentemente todos os ficheiros da unidade bloqueada."
       ],
       "To: ${ to }": [
         "Para: ${ to }"
@@ -4234,6 +4613,9 @@
       ],
       "Unlock drive": [
         "Desbloquear a unidade"
+      ],
+      "Unlock drive (recommended)": [
+        "Desbloquear a unidade (recomendado)"
       ],
       "Unlock later": [
         "Desbloquear mais tarde"
@@ -4255,6 +4637,9 @@
       ],
       "Wonderful": [
         "Maravilhoso"
+      ],
+      "Yes, I want to permanently delete my old files": [
+        "Sim, quero eliminar permanentemente os meus ficheiros antigos."
       ],
       "Your password (admin)": [
         "A sua palavra-passe (admin)"
@@ -4492,6 +4877,9 @@
       "\"${ name }\" failed to be created": [
         "Erro ao criar \"${ name }\""
       ],
+      "\"${ name }\" failed to be deleted permanently from trash": [
+        "Erro ao eliminar \"${ name }\" permanentemente do lixo"
+      ],
       "\"${ name }\" failed to be moved": [
         "Erro ao mover \"${ name }\""
       ],
@@ -4526,6 +4914,14 @@
         "Erro ao desencriptar ${ count } item",
         "Erro ao desencriptar ${ count } itens"
       ],
+      "${ numberOfItems } item deleted permanently from trash": [
+        "${ numberOfItems } item permanentemente eliminado do lixo",
+        "${ numberOfItems } itens permanentemente eliminados do lixo"
+      ],
+      "${ numberOfItems } item failed to be deleted permanently from trash": [
+        "Erro ao eliminar ${ numberOfItems } item permanentemente do lixo",
+        "Erro ao eliminar ${ numberOfItems } itens permanentemente do lixo"
+      ],
       "${ numberOfItems } item failed to be moved": [
         "Erro ao mover ${ numberOfItems } item",
         "Erro ao mover ${ numberOfItems } itens"
@@ -4550,17 +4946,34 @@
         "${ numberOfItems } item movido",
         "${ numberOfItems } itens movidos"
       ],
+      "${ numberOfItems } link to your item failed to be deleted": [
+        "Erro ao eliminar ${ numberOfItems } ligação ao seu item",
+        "Erro ao eliminar ${ numberOfItems } ligações aos seus itens"
+      ],
+      "${ numberOfItems } link to your item was deleted": [
+        "${ numberOfItems } ligação ao seu item foi eliminada.",
+        "${ numberOfItems } ligações aos seus itens foram eliminadas."
+      ],
       "All items will soon be permanently deleted from trash": [
         "Todos os itens serão permanentemente eliminados do lixo"
       ],
       "Cannot load link": [
         "Não é possível carregar a ligação."
       ],
+      "Cannot load next page": [
+        "Não é possível carregar a página seguinte."
+      ],
       "Contact group created": [
         "Grupo de contactos criado"
       ],
       "Contact group updated": [
         "Grupo de contactos atualizado"
+      ],
+      "Device failed to be removed": [
+        "Erro ao remover o dispositivo"
+      ],
+      "Device failed to be renamed": [
+        "Erro ao mudar o nome do dispositivo"
       ],
       "Device removed": [
         "O dispositivo foi removido."
@@ -4571,11 +4984,21 @@
       "Encrypted search activated": [
         "A pesquisa encriptada foi ativada."
       ],
+      "Failed to download files: ${ err }": [
+        "Erro ao descarregar os ficheiros: ${ err }"
+      ],
       "Failed to move, please try again": [
         "Erro ao mover. Tente novamente."
       ],
       "Failed to upload files: ${ err }": [
         "Erro ao carregar ficheiros: ${ err }"
+      ],
+      "File or folder \"${ filename }\" and ${ count } other are already uploading": [
+        "O ficheiro ou pasta \"${ filename }\" e ${ count } mais já estão a ser carregados.",
+        "O ficheiro ou pasta \"${ filename }\" e ${ count } mais já estão a ser carregados."
+      ],
+      "File or folder \"${ filename }\" is already uploading": [
+        "O ficheiro ou pasta \"${ filename }\" já está a ser carregado."
       ],
       "File or folder is missing a name": [
         "Ficheiro ou pasta sem nome"
@@ -4604,17 +5027,38 @@
         "Mover ${ movingCount } item",
         "Mover ${ movingCount } itens"
       ],
+      "Not enough space to upload ${ formattedTotal }": [
+        "Não há espaço suficiente para carregar ${ formattedTotal }."
+      ],
+      "Root folder failed to be loaded": [
+        "Erro ao carregar a pasta principal"
+      ],
       "Subfolder failed to be loaded": [
         "Erro ao carregar a subpasta"
+      ],
+      "The link to \"${ name }\" failed to be deleted": [
+        "Erro ao eliminar a ligação para \"${ name }\""
       ],
       "The link to \"${ name }\" was deleted": [
         "A ligação para \"${ name }\" foi eliminada."
       ],
+      "The link to your item failed to be deleted": [
+        "Erro ao eliminar a ligação ao item"
+      ],
       "The link to your item was deleted": [
         "A ligação ao seu item foi eliminada."
       ],
+      "Trash failed to be emptied": [
+        "Erro ao esvaziar o lixo"
+      ],
+      "Your old files will be deleted in 72 hours": [
+        "Os seus ficheiros antigos serão eliminados em 72 horas."
+      ],
       "Your settings failed to be saved": [
         "Erro ao guardar as suas configurações"
+      ],
+      "Your settings have been changed successfully": [
+        "As suas configurações foram alteradas."
       ]
     },
     "Oauth instructions": {
@@ -4635,17 +5079,30 @@
     "Onboarding Action": {
       "Next": [
         "Seguinte"
+      ],
+      "Start using ${ DRIVE_APP_NAME }": [
+        "Comece a utilizar o ${ DRIVE_APP_NAME }"
       ]
     },
     "Onboarding Info": {
       "Create a share link": [
         "Criar uma ligação de partilha"
       ],
+      "Get started using ${ DRIVE_APP_NAME } and we'll double your free storage to 1GB!": [
+        "Comece a utilizar ${ DRIVE_APP_NAME } e duplicaremos o seu armazenamento gratuito para chegar a 1 GB!"
+      ],
       "Set a recovery method": [
         "Definir um método de recuperação"
       ],
+      "Simply complete the following in the next ${ expiresInDays } day:": [
+        "Basta concluir os seguintes passos dentro de ${ expiresInDays } dia:",
+        "Basta concluir os seguintes passos dentro de ${ expiresInDays } dias:"
+      ],
       "Upload a file": [
         "Carregar um ficheiro"
+      ],
+      "Your trusty online vault for vital documents and precious memories.": [
+        "O seu cofre em linha de confiança para os seus documentos vitais e as suas memórias preciosas."
       ]
     },
     "Onboarding Proton": {
@@ -4654,6 +5111,9 @@
       ],
       "Discover all ${ BRAND_NAME } services": [
         "Descubra todos os serviços de ${ BRAND_NAME }"
+      ],
+      "More theming options are available in your account Settings > Appearance.": [
+        "Estão disponíveis mais opções de temas nas configurações da conta, na secção Aspeto."
       ],
       "Select a theme": [
         "Seleccionar um tema"
@@ -4671,6 +5131,9 @@
     "Onboarding Title": {
       "Welcome to ${ DRIVE_APP_NAME }": [
         "Boas-vindas ao ${ DRIVE_APP_NAME }"
+      ],
+      "Your welcome bonus": [
+        "O seu bónus de boas-vindas"
       ]
     },
     "Option": {
@@ -5115,6 +5578,9 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Convidar amigos para ${ BRAND_NAME }"
+      ],
+      "Now you can easily search Drive files while keeping your data secure.": [
+        "Agora pode pesquisar facilmente ficheiros na unidade, mantendo os seus dados seguros."
       ]
     },
     "Storage": {
@@ -5181,7 +5647,7 @@
         "A recuperação foi iniciada."
       ],
       "The link to your file was successfully copied": [
-        "A hiperligação do seu ficheiro foi copiada."
+        "A ligação do seu ficheiro foi copiada."
       ],
       "Undo in progress": [
         "Desfazer em curso"
@@ -5300,6 +5766,9 @@
         "${ numberOfFailedTransfer.total } erro de carregamento",
         "${ numberOfFailedTransfer.total } erros de carregamento"
       ],
+      "(active)": [
+        "(ativo)"
+      ],
       "Account suspended": [
         "Conta suspensa"
       ],
@@ -5330,6 +5799,9 @@
       ],
       "Beta Access": [
         "Acesso Beta"
+      ],
+      "Browser might run out of memory": [
+        "O navegador pode ficar sem memória."
       ],
       "Cannot add more addresses": [
         "Não é possível adicionar mais endereços"
@@ -5388,6 +5860,9 @@
       "Date": [
         "Data"
       ],
+      "Day theme": [
+        "Tema diurno"
+      ],
       "Delete ${ count } contact": [
         "Eliminar ${ count } contacto",
         "Eliminar ${ count } contactos"
@@ -5410,6 +5885,12 @@
       ],
       "Discard changes?": [
         "Descartar alterações?"
+      ],
+      "Download unverified file?": [
+        "Descarregar um ficheiro não verificado?"
+      ],
+      "Download unverified folder?": [
+        "Descarregar uma pasta não verificada?"
       ],
       "Drop to upload": [
         "Solte para enviar"
@@ -5440,6 +5921,9 @@
       ],
       "Empty trash": [
         "Esvaziar lixo"
+      ],
+      "Enable drive search": [
+        "Ativar a pesquisa na unidade"
       ],
       "Enter your password": [
         "Insira a sua palavra-passe"
@@ -5476,7 +5960,7 @@
         "Grupos"
       ],
       "Hm, we couldn't find that one": [
-        "Não foi possível encontrar esse elemento"
+        "Não foi possível encontrar esse elemento."
       ],
       "Human verification": [
         "Verificação humana"
@@ -5533,6 +6017,9 @@
       "Name": [
         "Nome"
       ],
+      "Night theme": [
+        "Tema noturno"
+      ],
       "No results found": [
         "Nenhum resultado foi encontrado."
       ],
@@ -5562,6 +6049,9 @@
       ],
       "Other names": [
         "Outros nomes"
+      ],
+      "Performance might be affected": [
+        "O desempenho pode ser afetado."
       ],
       "Phone numbers": [
         "Números de telefone"
@@ -5677,6 +6167,15 @@
       "The link expired": [
         "A ligação expirou."
       ],
+      "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
+        "Este ficheir tem uma assinatura em falta ou inválida. Ir para Menu (⋮) → Detalhes para obter informações."
+      ],
+      "This folder has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
+        "Esta pasta tem uma assinatura em falta ou inválida. Ir para Menu (⋮) → Detalhes para obter informações."
+      ],
+      "This link is password protected": [
+        "Esta ligação está protegida por palavra-passe."
+      ],
       "Total size": [
         "Tamanho total"
       ],
@@ -5694,6 +6193,9 @@
       ],
       "Uploaded by": [
         "Enviado por"
+      ],
+      "Uploading a large file or folder": [
+        "Transferência de um ficheiro ou pasta grande"
       ],
       "Version details": [
         "Detalhes da versão"
@@ -5725,6 +6227,9 @@
       "You have no folders yet": [
         "Ainda não tem pastas"
       ],
+      "Your 500 MB bonus": [
+        "O seu bónus de 500 MB"
+      ],
       "Your changes are not synced yet": [
         "As suas alterações ainda não foram sincronizadas"
       ],
@@ -5733,6 +6238,9 @@
       ],
       "Your welcome actions": [
         "As suas ações de boas-vindas"
+      ],
+      "You’ve got 1 GB of storage": [
+        "Tem 1 GB de armazenamento."
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -5743,6 +6251,9 @@
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Automático indica que o formato no compositor é usado para enviar para este utilizador. Texto simples indica que a mensagem será sempre convertida para texto simples ao enviar."
+      ],
+      "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
+        "Alterne automaticamente entre os seus temas preferidos para o dia e para a noite, em sincronia com os modos diurno e noturno do seu sistema."
       ],
       "Customize import to reduce the number of folders": [
         "Personalize a importação para reduzir o número de pastas"
@@ -5794,6 +6305,12 @@
       ],
       "The import will start with the most recent messages.": [
         "A importação começará com as mensagens mais recentes."
+      ],
+      "The selected theme will be active when your system is set to \"dark mode\"": [
+        "O tema selecionado ficará ativo quando o sistema estiver definido para o \"modo escuro\"."
+      ],
+      "The selected theme will be active when your system is set to \"light mode\"": [
+        "O tema selecionado ficará ativo quando o sistema estiver definido para o \"modo claro\"."
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Envie uma chave pública para permitir o envio de e-mails encriptados ponta a ponta para este e-mail."

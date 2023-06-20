@@ -2768,11 +2768,11 @@
       ]
     },
     "familyOffer_2023:Action": {
+      "Decline invitation": [
+        "拒絕邀請"
+      ],
       "Got it": [
         "我知道了"
-      ],
-      "Keep current plan": [
-        "維持目前方案"
       ],
       "Switch plans": [
         "切換方案"
@@ -2959,6 +2959,31 @@
     "Filter notification": {
       "${ Label.Name } updated": [
         "${ Label.Name } 已更新"
+      ]
+    },
+    "Font face option": {
+      "System default": [
+        "系統預設值"
+      ],
+      "Theme default": [
+        "佈景主題預設值"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "大"
+      ],
+      "Medium (recommended)": [
+        "中（建議）"
+      ],
+      "Small": [
+        "小"
+      ],
+      "Very large": [
+        "非常大"
+      ],
+      "Very small": [
+        "非常小"
       ]
     },
     "Group": {
@@ -3448,6 +3473,9 @@
       ],
       "Custom yearly": [
         "自訂每年"
+      ],
+      "Customize the look and feel of ${ BRAND_NAME } applications.": [
+        "自訂 ${ BRAND_NAME } 應用程式的外觀與感覺。"
       ],
       "Daily": [
         "每日"
@@ -4317,6 +4345,9 @@
       "Street address": [
         "街道位址"
       ],
+      "Synchronize with system": [
+        "與系統同步"
+      ],
       "System information": [
         "系統資訊"
       ],
@@ -4927,6 +4958,9 @@
       ],
       "Discover all ${ BRAND_NAME } services": [
         "探索所有 ${ BRAND_NAME } 服務"
+      ],
+      "More theming options are available in your account Settings > Appearance.": [
+        "更多佈景主題選項在您的帳號設定→「外觀」中提供。"
       ],
       "Select a theme": [
         "選擇佈景主題"
@@ -5770,6 +5804,9 @@
       "${ emailsCount } email addresses": [
         "${ emailsCount }電子郵件位址"
       ],
+      "(active)": [
+        "（啟用）"
+      ],
       "Account suspended": [
         "帳號已被停用"
       ],
@@ -5859,6 +5896,9 @@
       ],
       "Customize your mail import": [
         "自訂您的郵件匯入"
+      ],
+      "Day theme": [
+        "白天佈景主題"
       ],
       "Delete ${ count } contact groups": [
         "刪除 ${ count } 個聯絡人群組"
@@ -5955,6 +5995,9 @@
       ],
       "Minicalendar": [
         "小型行事曆"
+      ],
+      "Night theme": [
+        "夜間佈景主題"
       ],
       "Open actions dropdown": [
         "展開操作下拉選單"
@@ -6160,6 +6203,9 @@
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "「自動」表示傳送給此使用者時將使用撰寫工具中的格式。「純文字」表示將一律轉換成純文字才傳送郵件。"
       ],
+      "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
+        "與系統的日夜模式同步，在白天和晚上的偏好佈景主題之間自動切換"
+      ],
       "Customize import to reduce the number of folders": [
         "自訂匯入以減少資料夾數量"
       ],
@@ -6210,6 +6256,12 @@
       ],
       "The import will start with the most recent messages.": [
         "匯入將自近期的郵件開始。"
+      ],
+      "The selected theme will be active when your system is set to \"dark mode\"": [
+        "當您的系統設定為「深色模式」時，將會啟用選定的佈景主題"
+      ],
+      "The selected theme will be active when your system is set to \"light mode\"": [
+        "當您的系統設定為「淺色模式」時，將會啟用選定的佈景主題"
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "上載公開金鑰以啟用傳送端對端加密電郵到此電郵位址"
