@@ -328,6 +328,9 @@
       "Download ${ attachmentName }": [
         "${ attachmentName } をダウンロード"
       ],
+      "Downloading": [
+        "ダウンロード中"
+      ],
       "Edit": [
         "編集"
       ],
@@ -471,6 +474,9 @@
       ],
       "Hide messages": [
         "メッセージを非表示"
+      ],
+      "hide-my-email aliases": [
+        "hide-my-email エイリアス"
       ],
       "I have a question": [
         "サポートに質問"
@@ -1822,6 +1828,41 @@
       ],
       "white": [
         "白"
+      ]
+    },
+    "Commander action": {
+      "Create a new folder": [
+        "新しいフォルダーを作成"
+      ],
+      "Create a new label": [
+        "新しいラベルを作成"
+      ],
+      "Go to Archive": [
+        "アーカイブを開く"
+      ],
+      "Go to Drafts": [
+        "下書きを開く"
+      ],
+      "Go to Inbox": [
+        "受信トレイを開く"
+      ],
+      "Go to Sent": [
+        "送信済みを開く"
+      ],
+      "Go to Spam": [
+        "迷惑メールを開く"
+      ],
+      "Go to Starred": [
+        "星印付きを開く"
+      ],
+      "Go to Trash": [
+        "ごみ箱を開く"
+      ],
+      "New message": [
+        "新しいメッセージ"
+      ],
+      "Search": [
+        "検索"
       ]
     },
     "Composer email icon": {
@@ -3727,9 +3768,6 @@
       "Got it": [
         "了解"
       ],
-      "Keep current plan": [
-        "現在のプランを維持"
-      ],
       "Switch plans": [
         "プランを変更"
       ],
@@ -4017,9 +4055,34 @@
         "既定"
       ]
     },
+    "Font face option": {
+      "System default": [
+        "システムのデフォルト"
+      ],
+      "Theme default": [
+        "テーマのデフォルト"
+      ]
+    },
     "Font Size Default": {
       "Default": [
         "既定"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "大"
+      ],
+      "Medium (recommended)": [
+        "中 (推奨)"
+      ],
+      "Small": [
+        "小"
+      ],
+      "Very large": [
+        "極大"
+      ],
+      "Very small": [
+        "極小"
       ]
     },
     "forwardmessage": {
@@ -6395,6 +6458,9 @@
       "Toolbar": [
         "ツールバー"
       ],
+      "Type a command...": [
+        "コマンドを入力..."
+      ],
       "Undisclosed Recipients": [
         "非公開の宛先"
       ],
@@ -7216,6 +7282,9 @@
       "Please insert link first": [
         "最初にリンクを挿入してください"
       ],
+      "Search date, name, email address, or subject line": [
+        "日付、名前、メールアドレス、件名で検索"
+      ],
       "Search for group name": [
         "グループ名で検索"
       ],
@@ -7242,6 +7311,9 @@
       ],
       "Text": [
         "テキスト"
+      ],
+      "Type a command…": [
+        "コマンドを入力…"
       ],
       "Type text or keyword": [
         "テキストまたはキーワードを入力"
@@ -7944,6 +8016,9 @@
       "Message added to ${ labelName }.": [
         "メッセージを ${ labelName } に追加しました。"
       ],
+      "Message content search enabled": [
+        "メッセージ内容の検索が有効になりました"
+      ],
       "Message deleted": [
         "メッセージが削除されました"
       ],
@@ -8124,6 +8199,9 @@
       "${ unreads } unread messages": [
         "${ unreads } 件の未読メッセージ"
       ],
+      "(active)": [
+        "(アクティブ)"
+      ],
       "Account suspended": [
         "アカウントが停止されました"
       ],
@@ -8234,6 +8312,9 @@
       ],
       "Customize your mail import": [
         "メールのインポートをカスタマイズ"
+      ],
+      "Day theme": [
+        "昼間のテーマ"
       ],
       "Decryption error": [
         "復号エラー"
@@ -8456,6 +8537,9 @@
       ],
       "Next message": [
         "次のメッセージ"
+      ],
+      "Night theme": [
+        "夜間のテーマ"
       ],
       "No attachment found": [
         "添付ファイルが見つかりませんでした"

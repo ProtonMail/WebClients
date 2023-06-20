@@ -2489,11 +2489,11 @@
       ]
     },
     "familyOffer_2023:Action": {
+      "Decline invitation": [
+        "Recusar convite"
+      ],
       "Got it": [
         "Entendi"
-      ],
-      "Keep current plan": [
-        "Manter o plano atual"
       ],
       "Switch plans": [
         "Trocar de plano"
@@ -2685,6 +2685,31 @@
     "Filter notification": {
       "${ Label.Name } updated": [
         "${ Label.Name } atualizado"
+      ]
+    },
+    "Font face option": {
+      "System default": [
+        "Padrão do sistema"
+      ],
+      "Theme default": [
+        "Padrão do tema"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Grande"
+      ],
+      "Medium (recommended)": [
+        "Médio (recomendado)"
+      ],
+      "Small": [
+        "Pequeno"
+      ],
+      "Very large": [
+        "Muito grande"
+      ],
+      "Very small": [
+        "Muito pequeno"
       ]
     },
     "Group": {
@@ -3300,6 +3325,9 @@
       "Current version": [
         "Versão atual"
       ],
+      "Customize the look and feel of ${ BRAND_NAME } applications.": [
+        "Personalize a aparência e o estilo das aplicações da ${ BRAND_NAME }."
+      ],
       "Decrypting files": [
         "Descriptografando arquivos"
       ],
@@ -3341,7 +3369,7 @@
         "Baixando"
       ],
       "Drop file here to upload": [
-        "Solte o arquivo aqui para enviar"
+        "Solte o arquivo aqui para fazer o upload"
       ],
       "Drop to import": [
         "Solte para importar"
@@ -4241,7 +4269,7 @@
         "Categoria"
       ],
       "Child sexual abuse material": [
-        "Material de abuso sexual infantil"
+        "Conteúdo de pornografia infantil"
       ],
       "City": [
         "Cidade"
@@ -4555,6 +4583,9 @@
       ],
       "Street address": [
         "Endereço"
+      ],
+      "Synchronize with system": [
+        "Sincronizar com o sistema"
       ],
       "System information": [
         "Informações do sistema"
@@ -4963,8 +4994,8 @@
         "Falha ao enviar arquivos: ${ err }"
       ],
       "File or folder \"${ filename }\" and ${ count } other are already uploading": [
-        "\"${ filename }\" e ${ count } outro arquivo ou pasta já estão sendo enviados",
-        "\"${ filename }\" e ${ count } outros arquivos ou pastas já estão sendo enviados"
+        "O arquivo ou a pasta \"${ filename }\" e ${ count } mais já estão sendo enviados.",
+        "O arquivo ou a pasta \"${ filename }\" e ${ count } mais já estão sendo enviados."
       ],
       "File or folder \"${ filename }\" is already uploading": [
         "O arquivo ou pasta \"${ filename }\" já está sendo enviado"
@@ -5064,8 +5095,8 @@
         "Definir um método de recuperação"
       ],
       "Simply complete the following in the next ${ expiresInDays } day:": [
-        "Basta preencher o seguinte no próximo ${ expiresInDays } dia:",
-        "Basta preencher o seguinte nos próximos ${ expiresInDays } dias:"
+        "Basta preencher o seguinte dentro de ${ expiresInDays } dia:",
+        "Basta preencher o seguinte dentro de ${ expiresInDays } dias:"
       ],
       "Upload a file": [
         "Enviar um arquivo"
@@ -5080,6 +5111,9 @@
       ],
       "Discover all ${ BRAND_NAME } services": [
         "Descubra todos os serviços do ${ BRAND_NAME }"
+      ],
+      "More theming options are available in your account Settings > Appearance.": [
+        "Mais opções de temas estão disponíveis em Configurações da conta > Aparência."
       ],
       "Select a theme": [
         "Selecione um tema"
@@ -5735,6 +5769,9 @@
         "${ numberOfFailedTransfer.total } falha em upload",
         "${ numberOfFailedTransfer.total } falhas em uploads"
       ],
+      "(active)": [
+        "(ativo)"
+      ],
       "Account suspended": [
         "Conta suspensa"
       ],
@@ -5825,6 +5862,9 @@
       ],
       "Date": [
         "Encontro"
+      ],
+      "Day theme": [
+        "Tema diurno"
       ],
       "Delete ${ count } contact": [
         "Excluir ${ count } contato",
@@ -5979,6 +6019,9 @@
       ],
       "Name": [
         "Nome"
+      ],
+      "Night theme": [
+        "Tema noturno"
       ],
       "No results found": [
         "Nenhum resultado encontrado"
@@ -6212,6 +6255,9 @@
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Indica automaticamente o formato no compositor que é usado para enviar para este usuário. Texto simples indica que a mensagem será sempre convertida em texto simples (sem formatação) no envio."
       ],
+      "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
+        "Troque automaticamente entre seus temas preferidos para dia e noite em sincronia com os modos dia e noite do seu sistema"
+      ],
       "Customize import to reduce the number of folders": [
         "Personalize importação para reduzir o número de pastas"
       ],
@@ -6262,6 +6308,12 @@
       ],
       "The import will start with the most recent messages.": [
         "A importação começará com as mensagens mais recentes."
+      ],
+      "The selected theme will be active when your system is set to \"dark mode\"": [
+        "O tema selecionado estará ativo quando o seu sistema estiver configurado no modo \"escuro\""
+      ],
+      "The selected theme will be active when your system is set to \"light mode\"": [
+        "O tema selecionado estará ativo quando o seu sistema estiver configurado no modo \"claro\""
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Carregue uma chave pública para permitir o envio de e-mails criptografados de ponta a ponta para este e-mail"

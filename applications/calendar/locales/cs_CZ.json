@@ -2840,11 +2840,11 @@
       ]
     },
     "familyOffer_2023:Action": {
+      "Decline invitation": [
+        "Odmítnout pozvánku"
+      ],
       "Got it": [
         "Rozumím"
-      ],
-      "Keep current plan": [
-        "Zachovat aktuální tarif"
       ],
       "Switch plans": [
         "Změnit tarif"
@@ -3046,6 +3046,31 @@
     "Filter notification": {
       "${ Label.Name } updated": [
         "${ Label.Name } byl aktualizován"
+      ]
+    },
+    "Font face option": {
+      "System default": [
+        "Systémové výchozí"
+      ],
+      "Theme default": [
+        "Výchozí téma"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Velký"
+      ],
+      "Medium (recommended)": [
+        "Střední (doporučeno)"
+      ],
+      "Small": [
+        "Malý"
+      ],
+      "Very large": [
+        "Velmi velké"
+      ],
+      "Very small": [
+        "Velmi malé"
       ]
     },
     "Group": {
@@ -3630,10 +3655,10 @@
         "Zahodit změny?"
       ],
       "Drop file here to upload": [
-        "Soubor nahrajete přetažením sem"
+        "Sem přetáhněte soubor pro nahrání"
       ],
       "Drop to import": [
-        "Přetažením importovat"
+        "Přetažením provedete import"
       ],
       "Duplicate key updated": [
         "Duplicitní klíč byl aktualizován"
@@ -4502,6 +4527,9 @@
       ],
       "Street address": [
         "Ulice a č. p."
+      ],
+      "Synchronize with system": [
+        "Synchronizovat se systémem"
       ],
       "System information": [
         "Informace o systému"
@@ -5780,7 +5808,7 @@
         "Přístup k obsahu streamovacích služeb, včetně Netflix, Disney+ a Prime Video, odkudkoli."
       ],
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
-        "Všechny naše prémiové služby s nejvyššími limity: 100 e-mailových adres, podpora 10 vlastních domén, neomezený počet aliasů Skryj můj e-mail, sdílení kalendáře, šifrované cloudové úložiště a sdílení souborů a další."
+        "Všechny naše prémiové služby s nejvyššími limity: 100 e-mailových adres, podpora 10 vlastních domén, neomezený počet aliasů hide-my-email, sdílení kalendáře, šifrované cloudové úložiště a sdílení souborů a další."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Obsahuje podporu 1 vlastní e-mailové domény, 10 e-mailových adres, 10 aliasů Hide-my-email, sdílení kalendáře a další funkce."
@@ -6118,6 +6146,9 @@
         "${ emailsCount } e-mailových adres",
         "${ emailsCount } e-mailových adres"
       ],
+      "(active)": [
+        "(aktivní)"
+      ],
       "Account suspended": [
         "Účet pozastaven"
       ],
@@ -6210,6 +6241,9 @@
       ],
       "Customize your mail import": [
         "Přizpůsobte si proces importování e-mailů"
+      ],
+      "Day theme": [
+        "Denní motiv"
       ],
       "Delete ${ count } contact": [
         "Smazat ${ count } kontakt",
@@ -6315,6 +6349,9 @@
       ],
       "Minicalendar": [
         "Minikalendář"
+      ],
+      "Night theme": [
+        "Noční motiv"
       ],
       "Open actions dropdown": [
         "Otevřít seznam akcí"

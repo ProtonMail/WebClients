@@ -98,7 +98,7 @@
         "Як заплановано"
       ],
       "At most 100 contacts are allowed per contact group": [
-        "До групи контактів можна додати не більш ніж 100 контактів"
+        "До групи контактів можна додати не більше ніж 100 контактів"
       ],
       "Attach screenshot(s)": [
         "Додати знімки екрана"
@@ -482,7 +482,7 @@
         "Приховати повідомлення"
       ],
       "hide-my-email aliases": [
-        "псевдоніми Hide-my-email"
+        "псевдонімів Hide-my-email"
       ],
       "I have a question": [
         "У мене є питання"
@@ -1871,7 +1871,7 @@
         "Перейти до Спаму"
       ],
       "Go to Starred": [
-        "Перейти до Обраного"
+        "Перейти до Позначених зірочкою"
       ],
       "Go to Trash": [
         "Перейти до Смітника"
@@ -3846,11 +3846,11 @@
       ]
     },
     "familyOffer_2023:Action": {
+      "Decline invitation": [
+        "Відхилити запрошення"
+      ],
       "Got it": [
         "Зрозуміло"
-      ],
-      "Keep current plan": [
-        "Лишити поточний тарифний план"
       ],
       "Switch plans": [
         "Змінити тарифний план"
@@ -3905,7 +3905,7 @@
         "Призначений вам обсяг сховища: ${ assignedStorage }"
       ],
       "The subscription is billed to the Visionary or family plan's primary admin.": [
-        "Рахунок за передплату виставляється основному адміністратору Visionary або сімейного плану."
+        "Рахунок за передплату виставляється головному адміністратору Visionary або сімейного плану."
       ],
       "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
         "Visionary і сімейні плани наразі не підтримують зовнішні облікові записи. Перш ніж приєднатися, створіть адресу ${ BRAND_NAME }. ${ addressSettingsLink }"
@@ -4159,10 +4159,10 @@
     },
     "Font face option": {
       "System default": [
-        "Системна за замовчуванням"
+        "Системна"
       ],
       "Theme default": [
-        "Тема за замовчуванням"
+        "Стандартна тема"
       ]
     },
     "Font Size Default": {
@@ -5488,7 +5488,7 @@
         "Наша система позначила це повідомлення спробою шахрайства. Переконайтеся, що воно надійне."
       ],
       "Our system flagged this message as a suspicious email. Please check that it is legitimate before clicking any links or attachments.": [
-        "Наша система позначила це повідомлення як підозрілий електронний лист. Будь ласка, перевірте, що це законно, перш ніж натиснути будь-які посилання або вкладення."
+        "Наша система позначила це повідомлення підозрілим. Перш ніж натискати будь-які посилання чи відкривати вкладення, переконайтеся, що відправнику можна довіряти."
       ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/Inline сумісний лише з форматом звичайного тексту."
@@ -5734,7 +5734,7 @@
         "Сталася помилка з підписом, використаним для перевірки контактних даних, що могла стати результатом скидання пароля."
       ],
       "They can't spam you if they don't know your email address. Protect your inbox with hide-my-email aliases.": [
-        "Вони не можуть спамити вас, якщо вони не знають вашу адресу електронної пошти. Захистіть свою поштову скриньку за допомогою псевдонімів Hide-my-email."
+        "Вони не зможуть надсилати небажані повідомлення не знаючи вашої адреси електронної пошти. Захистіть свою поштову скриньку за допомогою псевдонімів Hide-my-email."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Цей обліковий запис було призупинено через потенційне порушення правил."
@@ -6100,7 +6100,7 @@
         "Ви вказали “${ attachmentsFoundKeyword }”, але вкладення не було додано. Ви все одно хочете надіслати повідомлення?"
       ],
       "You've reached the maximum number of addresses in the contact group(s):": [
-        "Ви досягли максимальної кількості адрес у групі (ах) контактів:"
+        "Ви досягли максимальної кількості адрес у групах контактів:"
       ],
       "You've reached the maximum number of addresses in the contact group.": [
         "Ви досягли максимальної кількості адрес у групі контактів."
@@ -6162,10 +6162,10 @@
     },
     "info": {
       "${ filteredList.length } command found.": [
-        "${ filteredList.length } команду знайдено.",
-        "${ filteredList.length } команди знайдено.",
-        "${ filteredList.length } команд знайдено.",
-        "${ filteredList.length } команд знайдено."
+        "Знайдено ${ filteredList.length } команду.",
+        "Знайдено ${ filteredList.length } команди.",
+        "Знайдено ${ filteredList.length } команд.",
+        "Знайдено ${ filteredList.length } команд."
       ],
       "Optional": [
         "Необов'язково"
@@ -6198,10 +6198,10 @@
     },
     "Key pinning": {
       "Clicking \"Trust Key\" will associate this public key with this sender and emails from this address will be automatically cryptographically verified.": [
-        "Натиснувши \"Довіряти ключу\", ви зв'яжете цей відкритий ключ з цим відправником, і листи з цієї адреси будуть автоматично криптографічно перевірені."
+        "Якщо натиснути \"Довіряти ключу\", цей відкритий ключ буде пов'язано з цим відправником, і листи з цієї адреси будуть автоматично криптографічно перевіреними."
       ],
       "Clicking \"Trust Key\" will create a new contact and associate this public key with this sender. Emails from this address will be automatically cryptographically verified.": [
-        "Натиснувши \"Довіряти ключу\", ви створите новий контакт і пов'яжете цей відкритий ключ з цим відправником. Листи з цієї адреси будуть автоматично криптографічно перевірені."
+        "Якщо натиснути \"Довіряти ключу\", створиться новий контакт і цей відкритий ключ буде пов'язано з цим відправником. Листи з цієї адреси будуть автоматично криптографічно перевіреними."
       ],
       "Do you want to trust the primary public key with the following fingerprint?": [
         "Ви хочете довіряти основному відкритому ключу з таким цифровим відбитком?",
@@ -7563,7 +7563,7 @@
         "Ознайомитися з усіма службами ${ BRAND_NAME }"
       ],
       "More theming options are available in your account Settings > Appearance.": [
-        "Додаткові параметри теми доступні в Налаштування облікового запису > Вигляд."
+        "Додаткові параметри теми доступні в меню Налаштування > Зовнішній вигляд."
       ],
       "Select a theme": [
         "Виберіть тему"
@@ -9364,6 +9364,9 @@
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Автоматично означає, що для надсилання цьому користувачу використовується формат редактора. Звичайний текст означає, що повідомлення завжди перетворюватиметься у звичайний текст під час надсилання."
       ],
+      "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
+        "Автоматичне перемикання між вашими улюбленими темами дня і ночі синхронізовано з денним і нічним режимами вашої системи"
+      ],
       "Customize import to reduce the number of folders": [
         "Налаштуйте імпорт щоб зменшити кількість тек"
       ],
@@ -9414,6 +9417,9 @@
       ],
       "The import will start with the most recent messages.": [
         "Імпортування розпочнеться з найновіших повідомлень."
+      ],
+      "The selected theme will be active when your system is set to \"dark mode\"": [
+        "Вибрана тема буде активною, коли ваша система буде переведена в \"темний режим\""
       ],
       "The selected theme will be active when your system is set to \"light mode\"": [
         "Вибрана тема буде активною, коли у вашій системі встановлено \"світлий режим\""

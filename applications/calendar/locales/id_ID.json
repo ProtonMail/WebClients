@@ -2771,9 +2771,6 @@
       "Got it": [
         "Mengerti"
       ],
-      "Keep current plan": [
-        "Tetap paket saat ini"
-      ],
       "Switch plans": [
         "Ganti paket"
       ],
@@ -2959,6 +2956,14 @@
     "Filter notification": {
       "${ Label.Name } updated": [
         "${ Label.Name } berhasil diperbarui"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Besar"
+      ],
+      "Small": [
+        "Kecil"
       ]
     },
     "Group": {
@@ -5770,6 +5775,9 @@
       "${ emailsCount } email addresses": [
         "${ emailsCount } alamat email"
       ],
+      "(active)": [
+        "(aktif)"
+      ],
       "Account suspended": [
         "Akun ditangguhkan"
       ],
@@ -5955,6 +5963,9 @@
       ],
       "Minicalendar": [
         "Kalender mini"
+      ],
+      "Night theme": [
+        "Tema malam"
       ],
       "Open actions dropdown": [
         "Buka menu tindakan"

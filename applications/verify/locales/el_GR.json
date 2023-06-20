@@ -889,11 +889,25 @@
       "Error: ${ errorMessage }": [
         "Σφάλμα: ${ errorMessage }"
       ],
+      "Please refresh the page or try again later.": [
+        "Παρακαλούμε ανανεώσετε τη σελίδα ή προσπαθήσετε αργότερα."
+      ],
       "Something went wrong": [
         "Κάτι πήγε στραβά"
+      ],
+      "We couldn't load this page. Please refresh the page or check your internet connection.": [
+        "Δεν ήταν δυνατή η φόρτωση αυτής της σελίδας. Ανανεώστε τη σελίδα ή ελέγξτε τη σύνδεσή σας στο διαδίκτυο."
+      ]
+    },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Παρουσιάστηκε κάποιο πρόβλημα κατά τον έλεγχο ταυτότητας με το κλειδί ασφαλείας σας. Παρακαλώ προσπαθήστε ξανά."
       ]
     },
     "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Εισαγάγετε ένα κλειδί ασφαλείας συνδεδεμένο με τον ${ BRAND_NAME } λογαριασμό σας ."
+      ],
       "Security key": [
         "Κλειδί ασφαλείας"
       ]
@@ -901,6 +915,31 @@
     "fido2: Label": {
       "Security key": [
         "Κλειδί ασφαλείας"
+      ]
+    },
+    "Font face option": {
+      "System default": [
+        "Προεπιλογή συστήματος"
+      ],
+      "Theme default": [
+        "Προεπιλεγμένο θέμα"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Μεγάλο"
+      ],
+      "Medium (recommended)": [
+        "Μεσαίο (συνιστάται)"
+      ],
+      "Small": [
+        "Μικρό"
+      ],
+      "Very large": [
+        "Πολύ μεγάλο"
+      ],
+      "Very small": [
+        "Πολύ μικρό"
       ]
     },
     "Human verification method": {

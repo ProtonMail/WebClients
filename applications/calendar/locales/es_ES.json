@@ -2792,11 +2792,11 @@
       ]
     },
     "familyOffer_2023:Action": {
+      "Decline invitation": [
+        "Rechazar la invitación"
+      ],
       "Got it": [
         "Entendido"
-      ],
-      "Keep current plan": [
-        "Mantener el plan actual"
       ],
       "Switch plans": [
         "Cambiar de plan"
@@ -2988,6 +2988,31 @@
     "Filter notification": {
       "${ Label.Name } updated": [
         "${ Label.Name } actualizado"
+      ]
+    },
+    "Font face option": {
+      "System default": [
+        "Igual que el sistema"
+      ],
+      "Theme default": [
+        "Tema por defecto"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Grande"
+      ],
+      "Medium (recommended)": [
+        "Mediano (recomendado)"
+      ],
+      "Small": [
+        "Pequeño"
+      ],
+      "Very large": [
+        "Muy grande"
+      ],
+      "Very small": [
+        "Muy pequeño"
       ]
     },
     "Group": {
@@ -3506,6 +3531,9 @@
       ],
       "Custom yearly": [
         "Personalización anual"
+      ],
+      "Customize the look and feel of ${ BRAND_NAME } applications.": [
+        "Personalza el aspecto y la sensación de las aplicaciones de ${ BRAND_NAME }"
       ],
       "Daily": [
         "Diariamente"
@@ -4379,6 +4407,9 @@
       "Street address": [
         "Nombre de la calle"
       ],
+      "Synchronize with system": [
+        "Sincronizar con el sistema"
+      ],
       "System information": [
         "Información del sistema"
       ],
@@ -5018,6 +5049,9 @@
       ],
       "Discover all ${ BRAND_NAME } services": [
         "Descubre todos los servicios de ${ BRAND_NAME }"
+      ],
+      "More theming options are available in your account Settings > Appearance.": [
+        "Más opciones de temas están disponibles en tu ajustes de cuenta en la sección Apariencia."
       ],
       "Select a theme": [
         "Seleccionar un tema"
@@ -5888,6 +5922,9 @@
         "${ emailsCount } dirección de correo electrónico",
         "${ emailsCount } direcciones de correo electrónico"
       ],
+      "(active)": [
+        "(activo)"
+      ],
       "Account suspended": [
         "Cuenta suspendida"
       ],
@@ -5978,6 +6015,9 @@
       ],
       "Customize your mail import": [
         "Personalizar la importación de tu correo"
+      ],
+      "Day theme": [
+        "Tema de día"
       ],
       "Delete ${ count } contact": [
         "Eliminar ${ count } contacto",
@@ -6077,6 +6117,9 @@
       ],
       "Minicalendar": [
         "Minicalendario"
+      ],
+      "Night theme": [
+        "Tema de noche"
       ],
       "Open actions dropdown": [
         "Abrir lista desplegable de acciones"
@@ -6282,6 +6325,9 @@
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Automático: indica que formato se utiliza en el editor para enviar a este usuario. Texto plano indica que el mensaje siempre se convertirá a texto plano al enviarlo."
       ],
+      "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
+        "Cambia automáticamente entre tus temas preferidos para el día y la noche en sincronía con los modos de día y noche de tu sistema."
+      ],
       "Customize import to reduce the number of folders": [
         "Personaliza la importación para reducir el número de carpetas."
       ],
@@ -6332,6 +6378,12 @@
       ],
       "The import will start with the most recent messages.": [
         "La importación comenzará con los mensajes más recientes."
+      ],
+      "The selected theme will be active when your system is set to \"dark mode\"": [
+        "El tema seleccionado estará activo cuando tu sistema esté en \"modo oscuro\"."
+      ],
+      "The selected theme will be active when your system is set to \"light mode\"": [
+        "El tema seleccionado estará activo cuando tu sistema esté en \"modo claro\"."
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Carga una clave pública para permitir el envío de correos electrónicos cifrados de extremo a extremo a este correo electrónico."

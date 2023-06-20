@@ -2792,11 +2792,11 @@
       ]
     },
     "familyOffer_2023:Action": {
+      "Decline invitation": [
+        "Einladung ablehnen"
+      ],
       "Got it": [
         "Verstanden"
-      ],
-      "Keep current plan": [
-        "Aktuellen Tarif behalten"
       ],
       "Switch plans": [
         "Tarife wechseln"
@@ -3528,6 +3528,9 @@
       ],
       "Custom yearly": [
         "Benutzerdefiniert jährlich"
+      ],
+      "Customize the look and feel of ${ BRAND_NAME } applications.": [
+        "Passe das Aussehen der ${ BRAND_NAME }-Anwendungen an."
       ],
       "Daily": [
         "Täglich"
@@ -5044,6 +5047,9 @@
       "Discover all ${ BRAND_NAME } services": [
         "Entdecke alle ${ BRAND_NAME }-Dienste"
       ],
+      "More theming options are available in your account Settings > Appearance.": [
+        "Weitere Farbschemaoptionen findest du in deinem Konto unter Einstellungen > Aussehen."
+      ],
       "Select a theme": [
         "Farbschema auswählen"
       ],
@@ -6007,6 +6013,9 @@
       "Customize your mail import": [
         "Mail-Import anpassen"
       ],
+      "Day theme": [
+        "Helles Design"
+      ],
       "Delete ${ count } contact": [
         "${ count } Kontakt löschen",
         "${ count } Kontakte löschen"
@@ -6105,6 +6114,9 @@
       ],
       "Minicalendar": [
         "Minikalender"
+      ],
+      "Night theme": [
+        "Dunkles Design"
       ],
       "Open actions dropdown": [
         "Auswahlliste „Aktionen“ öffnen"
@@ -6310,6 +6322,9 @@
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "„Automatisch“ zeigt an, dass das Format im Verfassen-Fenster verwendet wird, um an diesen Benutzer zu senden. Klartext bedeutet, dass die Nachricht beim Senden immer in Klartext umgewandelt wird."
       ],
+      "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
+        "Automatisches Umschalten zwischen deinen bevorzugten Farbschemata für Tag und Nacht, synchron mit dem Tag- und Nachtmodus deines Systems."
+      ],
       "Customize import to reduce the number of folders": [
         "Importvorgänge anpassen, um die Anzahl der Ordner zu reduzieren"
       ],
@@ -6360,6 +6375,12 @@
       ],
       "The import will start with the most recent messages.": [
         "Der Import beginnt mit den neuesten Nachrichten."
+      ],
+      "The selected theme will be active when your system is set to \"dark mode\"": [
+        "Das ausgewählte Farbschema ist aktiv, wenn dein System auf \"Dunkler Modus\" eingestellt ist."
+      ],
+      "The selected theme will be active when your system is set to \"light mode\"": [
+        "Das ausgewählte Farbschema ist aktiv, wenn dein System auf \"Heller Modus\" eingestellt ist."
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Lade einen öffentlichen Schlüssel hoch, um das Senden von Ende-zu-Ende-verschlüsselten Nachrichten an diese E-Mail-Adresse zu ermöglichen"

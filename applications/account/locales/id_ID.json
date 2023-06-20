@@ -125,6 +125,9 @@
       "Alignment": [
         "Penjajaran"
       ],
+      "Allow": [
+        "Izinkan"
+      ],
       "Apply": [
         "Terapkan"
       ],
@@ -1061,6 +1064,11 @@
       ],
       "Orphan": [
         "Tidak berinduk"
+      ]
+    },
+    "Admin": {
+      "admin": [
+        "admin"
       ]
     },
     "Alert": {
@@ -2755,9 +2763,6 @@
       "${ name } failed to move to spam list": [
         "${ name } gagal dipindahkan ke daftar spam"
       ],
-      "${ name } moved to allow list": [
-        "${ name } dipindahkan ke daftar izin"
-      ],
       "${ name } moved to spam list": [
         "${ name } dipindahkan ke daftar spam"
       ],
@@ -3745,9 +3750,6 @@
       "Invite member to your family": [
         "Undang anggota ke keluarga Anda"
       ],
-      "Keep current plan": [
-        "Tetap paket saat ini"
-      ],
       "Set up family group": [
         "Atur grup keluarga"
       ],
@@ -4236,6 +4238,9 @@
       ],
       "Search list": [
         "Daftar pencarian"
+      ],
+      "Spam:": [
+        "Spam:"
       ]
     },
     "Font Face Default": {
@@ -4246,6 +4251,14 @@
     "Font Size Default": {
       "Default": [
         "Bawaan"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Besar"
+      ],
+      "Small": [
+        "Kecil"
       ]
     },
     "Frequency of news": {
@@ -7155,6 +7168,9 @@
       "All-day event notifications": [
         "Notifikasi acara sepanjang hari"
       ],
+      "Allow": [
+        "Alamat yang diizinkan"
+      ],
       "Allow notifications by email": [
         "Izinkan notifikasi melalui email"
       ],
@@ -7226,6 +7242,9 @@
       ],
       "Billing cycle": [
         "Siklus tagihan"
+      ],
+      "Block": [
+        "Diblokir"
       ],
       "Block email tracking": [
         "Blokir pelacak email"
@@ -7481,6 +7500,9 @@
       ],
       "Folder location": [
         "Lokasi folder"
+      ],
+      "Font family": [
+        "Jenis fon"
       ],
       "From: ${ from }": [
         "Dari: ${ from }"
@@ -8453,6 +8475,9 @@
       "All": [
         "Semua"
       ],
+      "Allow": [
+        "Alamat yang diotorisasikan"
+      ],
       "Back": [
         "Kembali"
       ],
@@ -8464,6 +8489,9 @@
       ],
       "Back to inbox": [
         "Kembali ke kotak masuk"
+      ],
+      "Block": [
+        "Alamat yang diblokir"
       ],
       "Calendar": [
         "Kalender"
@@ -10851,6 +10879,9 @@
       "Import": [
         "Impor"
       ],
+      "List": [
+        "Daftar"
+      ],
       "Marked as": [
         "Ditandai sebagai"
       ],
@@ -10905,6 +10936,9 @@
     "Title": {
       "${ MAIL_APP_NAME } Keyboard Shortcuts": [
         "Pintasan Keyboard ${ MAIL_APP_NAME }"
+      ],
+      "(active)": [
+        "(aktif)"
       ],
       "1. Give a name to the config to be generated": [
         "1. Beri nama konfigurasi yang akan dibuat"
@@ -11425,6 +11459,9 @@
       "Next": [
         "Selanjutnya"
       ],
+      "Night theme": [
+        "Tema malam"
+      ],
       "No recovery method": [
         "Tidak ada metode pemulihan"
       ],
@@ -11469,9 +11506,6 @@
       ],
       "PayPal verification failed": [
         "Verifikasi PayPal gagal"
-      ],
-      "Personalise your e-mail footer": [
-        "Ubah footer surel Anda"
       ],
       "Phone": [
         "Telepon"

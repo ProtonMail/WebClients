@@ -764,11 +764,17 @@
       "Send code": [
         "Enviar código"
       ],
+      "Send email reminder": [
+        "Enviar correo electrónico de recordatorio"
+      ],
       "Send messages with @pm.me": [
         "Enviar mensajes con @pm.me"
       ],
       "Send my username": [
         "Enviar mi nombre de usuario"
+      ],
+      "Send reminder": [
+        "Enviar recordatorio"
       ],
       "Set as default": [
         "Establecer por defecto"
@@ -1072,6 +1078,11 @@
       ],
       "Orphan": [
         "Huérfana"
+      ]
+    },
+    "Admin": {
+      "admin": [
+        "administrador"
       ]
     },
     "Alert": {
@@ -2771,19 +2782,19 @@
         "Error al eliminar ${ name }"
       ],
       "${ name } failed to move to allow list": [
-        "Error al mover ${ name } a la lista \"No spam\""
+        "Error al mover ${ name } a su lista de direcciones permitidas."
       ],
       "${ name } failed to move to block list": [
-        "Error al mover ${ name } a la lista \"Bloqueado\""
+        "Error al mover ${ name } a su lista de direcciones bloqueadas"
       ],
       "${ name } failed to move to spam list": [
         "Error al mover ${ name } a la Lista de spam"
       ],
       "${ name } moved to allow list": [
-        "${ name } fue movido a la lista \"No spam\"."
+        "${ name } fue movido a su lista de direcciones permitidas."
       ],
       "${ name } moved to block list": [
-        "${ name } fue movido a la lista \"Bloqueado\"."
+        "${ name } fue movida a su lista de direcciones bloqueadas."
       ],
       "${ name } moved to spam list": [
         "${ name } movido a la Lista de spam"
@@ -2888,19 +2899,19 @@
         "Error al eliminar ${ name }"
       ],
       "${ name } failed to move to allow list": [
-        "Error al mover ${ name } a la lista \"No spam\""
+        "Error al mover ${ name } a su lista de direcciones permitidas."
       ],
       "${ name } failed to move to block list": [
-        "Error al mover ${ name } a la lista \"Bloqueado\""
+        "Error al mover ${ name } a su lista de direcciones bloqueadas"
       ],
       "${ name } failed to move to spam list": [
         "Error al mover ${ name } a la Lista de spam"
       ],
       "${ name } moved to allow list": [
-        "${ name } fue movido a la lista \"No spam\"."
+        "${ name } ha sido movida a su lista de direcciones permitidas."
       ],
       "${ name } moved to block list": [
-        "${ name } fue movido a la lista \"Bloqueado\"."
+        "${ name } fue movida a su lista de direcciones bloqueadas."
       ],
       "${ name } moved to spam list": [
         "${ name } movido a la Lista de spam"
@@ -3782,6 +3793,9 @@
       "Create a new user": [
         "Crear un nuevo usuario"
       ],
+      "Decline invitation": [
+        "Rechazar invitación"
+      ],
       "Got it": [
         "Entiendo"
       ],
@@ -3790,9 +3804,6 @@
       ],
       "Invite member to your family": [
         "Invite a un miembro a su familia"
-      ],
-      "Keep current plan": [
-        "Mantener el plan actual"
       ],
       "Set up family group": [
         "Configurar grupo familiar"
@@ -4288,16 +4299,40 @@
         "Añada un filtro personalizado para ejecutar automáticamente ciertas acciones, como etiquetar o archivar mensajes."
       ],
       "Allow:": [
-        "Permitir:"
+        "Permitida:"
       ],
       "Block:": [
-        "Bloquear:"
+        "Bloqueada:"
       ],
       "Search list": [
         "Buscar en lista"
       ],
       "Spam:": [
         "Spam:"
+      ],
+      "Take control over what lands in your inbox by creating the following lists:": [
+        "Controle lo que llega a su bandeja de entrada creando estas listas:"
+      ],
+      "Take control over what lands in your organization members' inboxes by creating the following lists:": [
+        "Controle lo que llega a las bandejas de entrada de los miembros de su organización creando estas listas:"
+      ],
+      "These lists apply to all accounts in your organization. Members can create their own individual filters, but won't be able to override addresses or domains you blocked.": [
+        "Estas listas se aplican a todas las cuentas de su organización. Los miembros de su organización pueden crear sus propios filtros, pero no podrán sustituir las direcciones o dominios que haya bloqueado."
+      ],
+      "To ensure critical messages don't end up in spam and getting missed": [
+        "Para mantener los mensajes importantes fuera de la carpeta de spam."
+      ],
+      "To prevent junk mail from clogging up inboxes": [
+        "Para mantener los mensajes no deseados o spam fuera de las bandejas de entrada."
+      ],
+      "To prevent junk mail from clogging up your inbox": [
+        "Para mantener los mensajes no deseados o spam fuera de su bandeja de entrada."
+      ],
+      "To stop phishing or suspicious emails from entering your email system": [
+        "Para evitar que lleguen a su bandeja de entrada mensajes de phishing o sospechosos."
+      ],
+      "To stop phishing or suspicious emails from entering your organization's email system": [
+        "Para evitar que lleguen a la bandeja de entrada de su organización mensajes de phishing o sospechosos."
       ]
     },
     "Font Face Default": {
@@ -4323,7 +4358,7 @@
         "Grande"
       ],
       "Medium (recommended)": [
-        "Mediana (recomendado)"
+        "Mediana (recomendada)"
       ],
       "Small": [
         "Pequeña"
@@ -5432,7 +5467,7 @@
         "Al darse de baja finalizará cualquier conexión a servidores de pago de ${ VPN_APP_NAME }."
       ],
       "Download our CSV template, fill in the user details, and then upload your completed CSV file to create accounts for these users.": [
-        "Descargue nuestra plantilla CSV, llene los datos de usuario y luego cargue su archivo CSV completo para crear cuentas para estos usuarios."
+        "Descargue nuestra plantilla CSV, complete los datos de usuario y luego cargue su archivo CSV completo para crear cuentas para estos usuarios."
       ],
       "Download recovery file": [
         "Descargar archivo de recuperación"
@@ -5692,6 +5727,9 @@
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Importando sus datos desde ${ importedEmailAddress } a ${ toEmail }."
+      ],
+      "Improve your ${ BRAND_NAME } experience by adapting the application to your needs.": [
+        "Mejore su experiencia en ${ BRAND_NAME } adaptando la aplicación a sus necesidades."
       ],
       "Inherited from parent folder": [
         "Heredada de la carpeta padre"
@@ -5974,7 +6012,7 @@
         "Ingrese la frase de recuperación de 12 palabras asociada con su cuenta."
       ],
       "Please fill out this field.": [
-        "Llene este campo."
+        "Complete este campo."
       ],
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
         "Manténgala segura. La necesitará para acceder a su cuenta y descifrar sus datos en caso de un restablecimiento de contraseña."
@@ -5998,7 +6036,7 @@
         "Seleccione las carpetas que desea importar:"
       ],
       "Please select the type of link you want to insert and fill in all the fields.": [
-        "Seleccione el tipo de enlace que desea insertar y rellenar en todos los campos."
+        "Seleccione el tipo de enlace que desea insertar y complete todos los campos."
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Intente de nuevo usando un método de pago diferente o contacte con su banco."
@@ -6113,6 +6151,9 @@
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Seleccione los calendarios que desea importar. Se creará un calendario nuevo para cada calendario importado de acuerdo con el número de calendarios disponibles en su plan."
+      ],
+      "Send emails to encourage your members to protect their accounts with 2FA.": [
+        "Envíe correos electrónicos para animar sus miembros a proteger sus cuentas con 2FA."
       ],
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "Enviado con <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> - correo electrónico seguro."
@@ -6240,6 +6281,9 @@
       "The following address was not created.": [
         "La siguiente dirección no fue creada.",
         "Las siguientes direcciones no fueron creadas."
+      ],
+      "The following members will receive an email prompting them to enable two-factor authentication as soon as possible.": [
+        "Los siguientes miembros recibirán un correo electrónico pidiéndoles que habiliten la autenticación de dos factores tan pronto como sea posible."
       ],
       "The format of your CSV file is incorrect.": [
         "El formato de su archivo CSV es incorrecto."
@@ -6537,6 +6581,9 @@
       ],
       "We need to authenticate your payment with your bank.": [
         "Necesitamos autenticar su pago con su banco."
+      ],
+      "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
+        "Recomendamos notificar a los miembros de la organización y pedirles que configuren 2FA para sus cuentas antes de requerir el uso de 2FA."
       ],
       "We recommend using your recovery phrase instead.": [
         "Recomendamos usar su frase de recuperación en su lugar."
@@ -7296,7 +7343,7 @@
         "Notificaciones de eventos durante todo el día"
       ],
       "Allow": [
-        "Permitir"
+        "Permitida"
       ],
       "Allow notifications by email": [
         "Permitir notificaciones por correo"
@@ -7353,7 +7400,7 @@
         "Mostrar imágenes remotas automáticamente"
       ],
       "Auto-delete unwanted messages": [
-        "Auto eliminar mensajes no deseados"
+        "Eliminar automáticamente mensajes no deseados"
       ],
       "Auto-detect primary time zone": [
         "Autodetectar zona horaria principal"
@@ -7371,7 +7418,7 @@
         "Ciclo de facturación"
       ],
       "Block": [
-        "Bloquear"
+        "Bloqueada"
       ],
       "Block email tracking": [
         "Bloquear el rastreo de correo"
@@ -7526,6 +7573,9 @@
       "Default PGP scheme": [
         "Esquema PGP por defecto"
       ],
+      "Default scrollbars": [
+        "Barras de desplazamiento por defecto"
+      ],
       "Default view": [
         "Vista por defecto"
       ],
@@ -7546,6 +7596,9 @@
       ],
       "Digits": [
         "Dígitos"
+      ],
+      "Disable animations": [
+        "Desactivar las animaciones"
       ],
       "Display name": [
         "Nombre a mostrar"
@@ -7633,6 +7686,12 @@
       ],
       "Folder location": [
         "Ubicación de la carpeta"
+      ],
+      "Font family": [
+        "Familia de fuente"
+      ],
+      "Font size": [
+        "Tamaño de fuente"
       ],
       "From: ${ from }": [
         "De: ${ from }"
@@ -7901,11 +7960,20 @@
       "Repeat password": [
         "Repetir contraseña"
       ],
+      "Require 2FA for administrators": [
+        "Requerir 2FA para los administradores"
+      ],
+      "Require 2FA for everyone": [
+        "Requerir 2FA para todos"
+      ],
       "Reveal password": [
         "Mostrar contraseña"
       ],
       "Security code": [
         "Código de seguridad"
+      ],
+      "Security code (${ codeName })": [
+        "Código de seguridad (${ codeName })"
       ],
       "Select your country": [
         "Seleccione su país"
@@ -8339,6 +8407,10 @@
       ]
     },
     "Loading info": {
+      "${ twoFAMembers.length }/${ members.length } of your organization member use two-factor authentication.": [
+        "${ twoFAMembers.length }/${ members.length } para el miembro de su organización usando autenticación de dos factores",
+        "${ twoFAMembers.length }/${ members.length } para los miembros de su organización usando autenticación de dos factores"
+      ],
       "Almost there": [
         "Ya casi está"
       ],
@@ -8619,7 +8691,7 @@
         "Todos"
       ],
       "Allow": [
-        "Permitir"
+        "Permitida"
       ],
       "Back": [
         "Atrás"
@@ -8634,7 +8706,7 @@
         "Volver al buzón"
       ],
       "Block": [
-        "Bloquear"
+        "Bloqueada"
       ],
       "Calendar": [
         "Calendario"
@@ -8827,7 +8899,7 @@
         "Seguridad avanzada al compartir archivos"
       ],
       "Auto-delete spam and trashed messages": [
-        "Auto eliminar spam y mensajes de la papelera"
+        "Eliminar automáticamente spam y mensajes de la papelera"
       ],
       "Auto-reply": [
         "Respuesta automática"
@@ -9494,6 +9566,18 @@
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "Credenciales OpenVPN/IKEv2 regeneradas"
+      ],
+      "Reminder has been sent": [
+        "El recordatorio ha sido enviado"
+      ],
+      "Two-factor authentication has been enforced for administrators": [
+        "La autenticación de dos factores ha sido requerida para los administradores"
+      ],
+      "Two-factor authentication has been enforced for all members": [
+        "La autenticación de dos factores ha sido requerida para todos los miembros"
+      ],
+      "Two-factor authentication is not required anymore": [
+        "La autenticación de dos factores ya no es requerida"
       ]
     },
     "Notification in holidays calendar modal": {
@@ -11224,10 +11308,10 @@
         "Añadir filtro Sieve"
       ],
       "Add to allow list": [
-        "Añadir a la lista \"No spam\""
+        "Añadir a la lista de direcciones permitidas"
       ],
       "Add to block list": [
-        "Añadir a la lista \"Bloqueado\""
+        "Añadir a la lista de direcciones bloqueadas"
       ],
       "Add to spam list": [
         "Añadir a la lista de spam"
@@ -11264,6 +11348,9 @@
       ],
       "Are you sure you want to close?": [
         "¿En verdad desea cerrar?"
+      ],
+      "Authentication security": [
+        "Autenticación de seguridad"
       ],
       "Auto-reply": [
         "Autorrespuesta"
@@ -11829,6 +11916,9 @@
       "Select when you want this notification to be sent": [
         "Seleccione cuándo desea que se envíe esta notificación"
       ],
+      "Send email reminders?": [
+        "¿Enviar recordatorios por correo electrónico?"
+      ],
       "Session management": [
         "Gestión de sesiones"
       ],
@@ -11887,7 +11977,7 @@
         "Ordenar etiquetas alfabéticamente"
       ],
       "Spam, block, and allow lists": [
-        "Listas de \"No spam\", \"Bloqueo\" y \"Spam\""
+        "Listas de direcciones permitidas, bloqueadas y spam"
       ],
       "Start a new import": [
         "Iniciar una importación nueva"
@@ -11935,6 +12025,12 @@
       ],
       "Two-factor authentication": [
         "Autenticación de dos factores"
+      ],
+      "Two-factor authentication enforcement": [
+        "Autenticación de dos factores requerida"
+      ],
+      "Two-factor authentication reminders": [
+        "Recordatorios de autenticación de dos factores"
       ],
       "Type": [
         "Tipo"
@@ -12150,6 +12246,9 @@
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Si compó un código de regalo o recibió uno de nuestro equipo de soporte, puede ingresarlo aquí."
       ],
+      "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
+        "Los miembros que no usan 2FA recibirán un correo electrónico pidiéndoles que la habiliten tan pronto como sea posible."
+      ],
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "Los mensajes en la carpeta enviados o borradores continuarán apareciendo en esa carpeta, incluso si los mueve a otra carpeta."
       ],
@@ -12180,8 +12279,11 @@
       "The new subscription cycle starts on ${ formattedTime }": [
         "El nuevo ciclo de suscripción comienza el ${ formattedTime }"
       ],
+      "The reduce motion setting is already enabled on this device": [
+        "El ajuste de reducción de movimiento ya está activado en este dispositivo."
+      ],
       "The selected theme will be active when your system is set to \"dark mode\"": [
-        "El tema seleccionado estará activo cuando su sistema esté en modo de noche"
+        "El tema seleccionado estará activo cuando su sistema esté en \"modo oscuro\""
       ],
       "The selected theme will be active when your system is set to \"light mode\"": [
         "El tema seleccionado estará activo cuando su sistema esté en \"modo claro\""
@@ -12204,11 +12306,17 @@
       "This key is used by ${ MAIL_APP_NAME } to encrypt your contact's data": [
         "Esta clave es usada por ${ MAIL_APP_NAME } para cifrar los datos de sus contactos"
       ],
+      "Use your browser’s default scrollbars. These are typically larger and easier to use": [
+        "Use las barras de desplazamiento del navegador por defecto. Son más grandes y fáciles de usar en general."
+      ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "Detectamos un problema con su configuración DNS. Asegúrese de que sus registros coinciden con las instrucciones de abajo. Si el problema persiste, tendremos que cerrar la sesión de DKIM."
       ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "Detuvimos la firma de DKIM por problemas con su configuración de DNS. Siga las instrucciones a continuación para reanudar la firma."
+      ],
+      "When enabled, animations and transitions will not show": [
+        "Al habilitarse, las animaciones y transiciones no se mostrarán."
       ],
       "When you add a label to a message in a conversation, it will automatically be applied to all future messages you send or receive in that conversation.": [
         "Cuando añada una etiqueta a un mensaje en una conversación, se aplicará automáticamente a todos los mensajes futuros que envíe o reciba en esa conversación."

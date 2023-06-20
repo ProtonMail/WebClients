@@ -2764,9 +2764,6 @@
       "${ name } failed to move to spam list": [
         "${ name } niet verplaatst naar spamlijst"
       ],
-      "${ name } moved to allow list": [
-        "${ name } verplaatst naar toegestane lijst"
-      ],
       "${ name } moved to spam list": [
         "${ name } verplaatst naar spamlijst"
       ],
@@ -3761,9 +3758,6 @@
       "Invite member to your family": [
         "Lid uitnodigen voor uw gezin"
       ],
-      "Keep current plan": [
-        "Huidig abonnement behouden"
-      ],
       "Set up family group": [
         "Gezinsgroep configureren"
       ],
@@ -4266,9 +4260,34 @@
         "Standaard"
       ]
     },
+    "Font face option": {
+      "System default": [
+        "Systeem standaard"
+      ],
+      "Theme default": [
+        "Thema standaard"
+      ]
+    },
     "Font Size Default": {
       "Default": [
         "Standaard"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Groot"
+      ],
+      "Medium (recommended)": [
+        "Gemiddeld (aanbevolen)"
+      ],
+      "Small": [
+        "Klein"
+      ],
+      "Very large": [
+        "Zeer groot"
+      ],
+      "Very small": [
+        "Zeer klein"
       ]
     },
     "Frequency of news": {
@@ -5320,6 +5339,9 @@
       ],
       "Custom yearly": [
         "Aangepast jaarlijks"
+      ],
+      "Customize the look and feel of ${ BRAND_NAME } applications.": [
+        "Pas het uiterlijk van ${ BRAND_NAME } applicaties aan."
       ],
       "Daily": [
         "Dagelijks"
@@ -7893,6 +7915,9 @@
       ],
       "Subscription options": [
         "Abonnementsopties"
+      ],
+      "Synchronize with system": [
+        "Synchroniseren met systeem"
       ],
       "System information": [
         "Systeeminformatie"
@@ -11045,6 +11070,9 @@
       "${ MAIL_APP_NAME } Keyboard Shortcuts": [
         "${ MAIL_APP_NAME } Sneltoetsen"
       ],
+      "(active)": [
+        "(actief)"
+      ],
       "1. Give a name to the config to be generated": [
         "1. Geef een naam aan de te genereren configuratie"
       ],
@@ -11300,6 +11328,9 @@
       ],
       "Date": [
         "Datum"
+      ],
+      "Day theme": [
+        "Dag thema"
       ],
       "Decrypt key": [
         "Sleutel decoderen"
@@ -11567,6 +11598,9 @@
       "Next": [
         "Volgende"
       ],
+      "Night theme": [
+        "Nacht thema"
+      ],
       "No recovery method": [
         "Geen herstelmethode"
       ],
@@ -11611,9 +11645,6 @@
       ],
       "PayPal verification failed": [
         "PayPal verificatie mislukt"
-      ],
-      "Personalise your e-mail footer": [
-        "De voettekst van uw e-mail personaliseren"
       ],
       "Phone": [
         "Telefoon"
@@ -12058,6 +12089,9 @@
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "De nieuwe abonnementscyclus start op ${ formattedTime }"
+      ],
+      "The selected theme will be active when your system is set to \"light mode\"": [
+        "Het geselecteerde thema is actief wanneer uw systeem is ingesteld op \"lichte modus\""
       ],
       "This address has been disabled": [
         "Dit adres is uitgeschakeld"

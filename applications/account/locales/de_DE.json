@@ -764,11 +764,17 @@
       "Send code": [
         "Code senden"
       ],
+      "Send email reminder": [
+        "Erinnerungs-E-Mail senden"
+      ],
       "Send messages with @pm.me": [
         "Nachrichten mit @pm.me senden"
       ],
       "Send my username": [
         "Meinen Benutzernamen senden"
+      ],
+      "Send reminder": [
+        "Erinnerung senden"
       ],
       "Set as default": [
         "Als Standard festlegen"
@@ -2770,14 +2776,20 @@
       "${ name } deletion failed": [
         "${ name } konnte nicht gelöscht werden"
       ],
+      "${ name } failed to move to allow list": [
+        "${ name } konnte nicht in die Liste zugelassener E-Mail-Adressen verschoben werden."
+      ],
       "${ name } failed to move to block list": [
-        "${ name } konnte nicht in deine Sperrliste verschoben werden."
+        "${ name } konnte nicht in die Liste gesperrter E-Mail-Adressen verschoben werden."
       ],
       "${ name } failed to move to spam list": [
         "${ name } konnte nicht in die Spamliste verschoben werden."
       ],
+      "${ name } moved to allow list": [
+        "${ name } wurde in die Liste zugelassener E-Mail-Adressen verschoben."
+      ],
       "${ name } moved to block list": [
-        "${ name } in Sperrliste verschoben"
+        "${ name } wurde in die Liste gesperrter E-Mail-Adressen verschoben."
       ],
       "${ name } moved to spam list": [
         "${ name } in Spamliste verschoben."
@@ -2881,8 +2893,20 @@
       "${ name } deletion failed": [
         "${ name } konnte nicht gelöscht werden"
       ],
+      "${ name } failed to move to allow list": [
+        "${ name } konnte nicht in die Liste zugelassener E-Mail-Adressen verschoben werden."
+      ],
+      "${ name } failed to move to block list": [
+        "${ name } konnte nicht in die Liste gesperrter E-Mail-Adressen verschoben werden."
+      ],
       "${ name } failed to move to spam list": [
         "${ name } konnte nicht in die Spamliste verschoben werden."
+      ],
+      "${ name } moved to allow list": [
+        "${ name } wurde in die Liste zugelassener E-Mail-Adressen verschoben."
+      ],
+      "${ name } moved to block list": [
+        "${ name } wurde in die Liste gesperrter E-Mail-Adressen verschoben."
       ],
       "${ name } moved to spam list": [
         "${ name } in Spamliste verschoben."
@@ -3764,6 +3788,9 @@
       "Create a new user": [
         "Neuen Benutzer erstellen"
       ],
+      "Decline invitation": [
+        "Einladung ablehnen"
+      ],
       "Got it": [
         "Verstanden"
       ],
@@ -3772,9 +3799,6 @@
       ],
       "Invite member to your family": [
         "Mitglied in Family einladen"
-      ],
-      "Keep current plan": [
-        "Aktuellen Tarif behalten"
       ],
       "Set up family group": [
         "Familiengruppe einrichten"
@@ -4270,10 +4294,10 @@
         "Füge einen benutzerdefinierten Filter hinzu, um bestimmte Aktionen, wie das Kategorisieren oder Archivieren von Nachrichten zu automatisieren."
       ],
       "Allow:": [
-        "Erlauben:"
+        "Zugelassen:"
       ],
       "Block:": [
-        "Sperren:"
+        "Gesperrt:"
       ],
       "Search list": [
         "Liste durchsuchen"
@@ -5388,6 +5412,9 @@
       "Custom yearly": [
         "Benutzerdefiniert jährlich"
       ],
+      "Customize the look and feel of ${ BRAND_NAME } applications.": [
+        "Passe das Aussehen der ${ BRAND_NAME }-Anwendungen an."
+      ],
       "Daily": [
         "Täglich"
       ],
@@ -6117,6 +6144,9 @@
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Bitte wähle die zu importierenden Kalender aus. Für jeden importierten Kalender wird ein neuer Kalender erstellt, bis das Maximum deines Abonnements erreicht ist."
       ],
+      "Send emails to encourage your members to protect their accounts with 2FA.": [
+        "Versende E-Mails, um deine Mitglieder anzuregen, ihre Konten mit 2FA zu schützen."
+      ],
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "Sicher versendet mit <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
       ],
@@ -6243,6 +6273,9 @@
       "The following address was not created.": [
         "Die folgende E-Mail-Adresse wurde nicht erstellt.",
         "Die folgenden E-Mail-Adressen wurden nicht erstellt."
+      ],
+      "The following members will receive an email prompting them to enable two-factor authentication as soon as possible.": [
+        "Die folgenden Mitglieder erhalten eine E-Mail, in der sie aufgefordert werden, die Zwei-Faktor-Authentifizierung so bald wie möglich zu aktivieren."
       ],
       "The format of your CSV file is incorrect.": [
         "Das Format der CSV-Datei ist ungültig."
@@ -6540,6 +6573,9 @@
       ],
       "We need to authenticate your payment with your bank.": [
         "Wir müssen deine Zahlung bei deiner Bank authentifizieren."
+      ],
+      "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
+        "Wir empfehlen, die Mitglieder der Organisation zu benachrichtigen und sie zu bitten, 2FA für ihre Konten einzurichten, bevor du die Verwendung von 2FA erzwingst."
       ],
       "We recommend using your recovery phrase instead.": [
         "Wir empfehlen, stattdessen deine Wiederherstellungsphrase zu verwenden."
@@ -7299,7 +7335,7 @@
         "Benachrichtigungen zu ganztägigen Terminen"
       ],
       "Allow": [
-        "Erlauben"
+        "Zugelassen"
       ],
       "Allow notifications by email": [
         "Benachrichtigungen per E-Mail zulassen"
@@ -7374,7 +7410,7 @@
         "Abrechnungszeitraum"
       ],
       "Block": [
-        "Sperren"
+        "Gesperrt"
       ],
       "Block email tracking": [
         "E-Mail-Tracking blockieren"
@@ -7554,7 +7590,7 @@
         "Ziffern"
       ],
       "Disable animations": [
-        "Animationen deaktivieren"
+        "Animationen ausschalten"
       ],
       "Display name": [
         "Anzeigename"
@@ -7915,6 +7951,12 @@
       ],
       "Repeat password": [
         "Passwort wiederholen"
+      ],
+      "Require 2FA for administrators": [
+        "2FA für Administratoren verlangen"
+      ],
+      "Require 2FA for everyone": [
+        "2FA für alle verlangen"
       ],
       "Reveal password": [
         "Passwort anzeigen"
@@ -8357,6 +8399,10 @@
       ]
     },
     "Loading info": {
+      "${ twoFAMembers.length }/${ members.length } of your organization member use two-factor authentication.": [
+        "${ twoFAMembers.length }/${ members.length } Mitglieder deiner Organisation verwendet die Zwei-Faktor-Authentifizierung.",
+        "${ twoFAMembers.length }/${ members.length } der Mitglieder deiner Organisation verwenden die Zwei-Faktor-Authentifizierung."
+      ],
       "Almost there": [
         "Fast geschafft"
       ],
@@ -8637,7 +8683,7 @@
         "Alle"
       ],
       "Allow": [
-        "Erlauben"
+        "Zugelassen"
       ],
       "Back": [
         "Zurück"
@@ -8652,7 +8698,7 @@
         "Zurück zum Posteingang"
       ],
       "Block": [
-        "Sperren"
+        "Gesperrt"
       ],
       "Calendar": [
         "Kalender"
@@ -9512,6 +9558,18 @@
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "OpenVPN/IKEv2-Zugangsdaten wiederhergestellt"
+      ],
+      "Reminder has been sent": [
+        "Eine Erinnerung wurde versandt"
+      ],
+      "Two-factor authentication has been enforced for administrators": [
+        "Die Zwei-Faktor-Authentifizierung wurde für Administratoren verlangt."
+      ],
+      "Two-factor authentication has been enforced for all members": [
+        "Die Zwei-Faktor-Authentifizierung wurde für alle verlangt."
+      ],
+      "Two-factor authentication is not required anymore": [
+        "Die Zwei-Faktor-Authentifizierung ist nicht mehr erforderlich."
       ]
     },
     "Notification in holidays calendar modal": {
@@ -11239,10 +11297,10 @@
         "Sieve-Filter hinzufügen"
       ],
       "Add to allow list": [
-        "Zur Freigabeliste hinzufügen"
+        "Zur Liste zugelassener E-Mail-Adressen hinzufügen"
       ],
       "Add to block list": [
-        "Zur Sperrliste hinzufügen"
+        "Zur Liste gesperrter E-Mail-Adressen hinzufügen"
       ],
       "Add to spam list": [
         "Zur Spam-Liste hinzufügen"
@@ -11279,6 +11337,9 @@
       ],
       "Are you sure you want to close?": [
         "Wirklich schließen?"
+      ],
+      "Authentication security": [
+        "Sicherheit der Authentifizierung"
       ],
       "Auto-reply": [
         "Automatische Antworten"
@@ -11424,6 +11485,9 @@
       ],
       "Date": [
         "Datum"
+      ],
+      "Day theme": [
+        "Helles Design"
       ],
       "Decrypt key": [
         "Schlüssel entschlüsseln"
@@ -11691,6 +11755,9 @@
       "Next": [
         "Weiter"
       ],
+      "Night theme": [
+        "Dunkles Design"
+      ],
       "No recovery method": [
         "Keine Wiederherstellungsmethode"
       ],
@@ -11838,6 +11905,9 @@
       "Select when you want this notification to be sent": [
         "Auswählen, wann diese Benachrichtigung gesendet werden soll"
       ],
+      "Send email reminders?": [
+        "Erinnerungs-E-Mails senden?"
+      ],
       "Session management": [
         "Sitzungsverwaltung"
       ],
@@ -11895,9 +11965,6 @@
       "Sort labels alphabetically": [
         "Kategorien alphabetisch sortieren"
       ],
-      "Spam, block, and allow lists": [
-        "Spam-, Sperr- und Freigabelisten"
-      ],
       "Start a new import": [
         "Neuer Importvorgang"
       ],
@@ -11944,6 +12011,12 @@
       ],
       "Two-factor authentication": [
         "Zwei‐Faktor‐Authentifizierung"
+      ],
+      "Two-factor authentication enforcement": [
+        "Verlangen der Zwei-Faktor-Authentifizierung"
+      ],
+      "Two-factor authentication reminders": [
+        "Erinnerungen an die Zwei-Faktor-Authentifizierung"
       ],
       "Type": [
         "Typ"
@@ -12123,6 +12196,9 @@
       "Account is disconnected": [
         "Die Verbindung zum Konto ist unterbrochen"
       ],
+      "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
+        "Automatisches Umschalten zwischen deinen bevorzugten Farbschemata für Tag und Nacht, synchron mit dem Tag- und Nachtmodus deines Systems."
+      ],
       "Customize import to reduce the number of folders": [
         "Importvorgänge anpassen, um die Anzahl der Ordner zu reduzieren"
       ],
@@ -12156,6 +12232,9 @@
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Wenn du einen Geschenkgutschein erworben oder von unserem Support-Team erhalten hast, kannst du ihn hier eingeben."
       ],
+      "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
+        "Mitglieder, die keine 2FA verwenden, erhalten eine E-Mail mit der Aufforderung, sie so bald wie möglich zu aktivieren."
+      ],
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "Nachrichten in den Ordnern „Gesendet“ oder „Entwürfe“ werden weiterhin in diesem Ordner angezeigt, auch wenn du diese in einen anderen Ordner verschiebst."
       ],
@@ -12185,6 +12264,15 @@
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Der neue Abonnementzyklus beginnt am ${ formattedTime }."
+      ],
+      "The reduce motion setting is already enabled on this device": [
+        "Die Einstellung \"Bewegung reduzieren\" ist auf diesem Gerät bereits aktiviert."
+      ],
+      "The selected theme will be active when your system is set to \"dark mode\"": [
+        "Das ausgewählte Farbschema ist aktiv, wenn dein System auf \"Dunkler Modus\" eingestellt ist."
+      ],
+      "The selected theme will be active when your system is set to \"light mode\"": [
+        "Das ausgewählte Farbschema ist aktiv, wenn dein System auf \"Heller Modus\" eingestellt ist."
       ],
       "This address has been disabled": [
         "Diese Adresse wurde deaktiviert"

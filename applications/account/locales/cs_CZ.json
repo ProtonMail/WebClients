@@ -74,6 +74,9 @@
       "Add address": [
         "Přidat adresu"
       ],
+      "Add address or domain": [
+        "Přidat adresu nebo doménu"
+      ],
       "Add calendar from URL": [
         "Přidat kalendář z URL"
       ],
@@ -124,6 +127,9 @@
       ],
       "Alignment": [
         "Zarovnání"
+      ],
+      "Allow": [
+        "Povolit"
       ],
       "Apply": [
         "Použít"
@@ -205,6 +211,9 @@
       ],
       "Continue": [
         "Pokračovat"
+      ],
+      "Continue anyway": [
+        "Přesto pokračovat"
       ],
       "Continue import": [
         "Pokračovat v importu"
@@ -755,11 +764,17 @@
       "Send code": [
         "Odeslat kód"
       ],
+      "Send email reminder": [
+        "Poslat připomenutí e-mailem"
+      ],
       "Send messages with @pm.me": [
         "Odesílat zprávy s @pm.me"
       ],
       "Send my username": [
         "Poslat mé uživatelské jméno"
+      ],
+      "Send reminder": [
+        "Poslat připomenutí"
       ],
       "Set as default": [
         "Nastavit jako výchozí"
@@ -2776,6 +2791,9 @@
       "${ name } failed to move to spam list": [
         "Doménu ${ name } se nepodařilo přesunout na Seznam spamů"
       ],
+      "${ name } moved to block list": [
+        "${ name } byl přesunut na seznam blokovaných"
+      ],
       "${ name } moved to spam list": [
         "Doména ${ name } byla přesunuta na seznam spamů"
       ],
@@ -3775,6 +3793,9 @@
       "Create a new user": [
         "Vytvořit nového uživatele"
       ],
+      "Decline invitation": [
+        "Odmítnout pozvánku"
+      ],
       "Got it": [
         "Rozumím"
       ],
@@ -3783,9 +3804,6 @@
       ],
       "Invite member to your family": [
         "Pozvat člena do vaší rodiny"
-      ],
-      "Keep current plan": [
-        "Zachovat aktuální tarif"
       ],
       "Set up family group": [
         "Nastavit rodinnou skupinu"
@@ -4294,8 +4312,17 @@
       "Add a custom filter to automatically perform certain actions, like labeling or archiving messages.": [
         "Přidejte si vlastní filtr, který automaticky provede určité akce, jako je označení nebo archivace zpráv."
       ],
+      "Allow:": [
+        "Povolit:"
+      ],
+      "Block:": [
+        "Blokovat:"
+      ],
       "Search list": [
         "Vyhledat v seznamu"
+      ],
+      "Spam:": [
+        "Spam:"
       ]
     },
     "Font Face Default": {
@@ -4303,9 +4330,34 @@
         "Výchozí"
       ]
     },
+    "Font face option": {
+      "System default": [
+        "Systémové výchozí"
+      ],
+      "Theme default": [
+        "Výchozí téma"
+      ]
+    },
     "Font Size Default": {
       "Default": [
         "Výchozí"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Velký"
+      ],
+      "Medium (recommended)": [
+        "Střední (doporučeno)"
+      ],
+      "Small": [
+        "Malý"
+      ],
+      "Very large": [
+        "Velmi velké"
+      ],
+      "Very small": [
+        "Velmi malé"
       ]
     },
     "Frequency of news": {
@@ -5476,10 +5528,10 @@
         "Stáhněte si Vaše PGP klíče pro použití v jiných službách kompatibilních s PGP."
       ],
       "Drop file here to upload": [
-        "Soubor nahrajete přetažením sem"
+        "Sem přetáhněte soubor pro nahrání"
       ],
       "Drop to import": [
-        "Přetažením importovat"
+        "Přetažením provedete import"
       ],
       "Each code can only be used once": [
         "Každý kód lze použít pouze jednou"
@@ -7177,6 +7229,9 @@
       "New message": [
         "Nová zpráva"
       ],
+      "Open command panel": [
+        "Otevřít příkazový panel"
+      ],
       "Open next message": [
         "Otevřít následující zprávu"
       ],
@@ -7362,6 +7417,9 @@
       "All-day event notifications": [
         "Oznámení celodenních událostí"
       ],
+      "Allow": [
+        "Povolit"
+      ],
       "Allow notifications by email": [
         "Povolit oznámení e-mailem"
       ],
@@ -7434,6 +7492,9 @@
       "Billing cycle": [
         "Fakturační období"
       ],
+      "Block": [
+        "Blokovat"
+      ],
       "Block email tracking": [
         "Blokovat sledování emailů"
       ],
@@ -7463,6 +7524,9 @@
       ],
       "Card holder": [
         "Držitel karty"
+      ],
+      "Card information": [
+        "Informace o kartě"
       ],
       "Card number": [
         "Číslo karty"
@@ -7584,6 +7648,9 @@
       "Default PGP scheme": [
         "Výchozí schéma PGP"
       ],
+      "Default scrollbars": [
+        "Výchozí posuvníky"
+      ],
       "Default view": [
         "Výchozí zobrazení"
       ],
@@ -7604,6 +7671,9 @@
       ],
       "Digits": [
         "Číslice"
+      ],
+      "Disable animations": [
+        "Zakázat animace"
       ],
       "Display name": [
         "Zobrazované jméno"
@@ -7674,6 +7744,9 @@
       "Event notifications": [
         "Oznámení události"
       ],
+      "Expiration (${ patternExpiration })": [
+        "Vypršení (${ patternExpiration })"
+      ],
       "Expiration date": [
         "Konec platnosti"
       ],
@@ -7688,6 +7761,12 @@
       ],
       "Folder location": [
         "Umístění složky"
+      ],
+      "Font family": [
+        "Rodina písma"
+      ],
+      "Font size": [
+        "Velikost písma"
       ],
       "From: ${ from }": [
         "Od: ${ from }"
@@ -7956,11 +8035,20 @@
       "Repeat password": [
         "Zopakujte heslo"
       ],
+      "Require 2FA for administrators": [
+        "Vyžaduje dvoufázové oveření pro administrátory"
+      ],
+      "Require 2FA for everyone": [
+        "Vyžaduje dvoufázové ověření pro všechny"
+      ],
       "Reveal password": [
         "Zobrazit heslo"
       ],
       "Security code": [
         "Bezpečnostní kód"
+      ],
+      "Security code (${ codeName })": [
+        "Kód zabezpečení (${ codeName })"
       ],
       "Select your country": [
         "Vyberte svou zemi"
@@ -8027,6 +8115,9 @@
       ],
       "Subscription options": [
         "Možnosti předplatného"
+      ],
+      "Synchronize with system": [
+        "Synchronizovat se systémem"
       ],
       "System information": [
         "Informace o systému"
@@ -8690,6 +8781,9 @@
       "All": [
         "Vše"
       ],
+      "Allow": [
+        "Povolit"
+      ],
       "Back": [
         "Zpět"
       ],
@@ -8701,6 +8795,9 @@
       ],
       "Back to inbox": [
         "Zpět do Doručené pošty"
+      ],
+      "Block": [
+        "Blokovat"
       ],
       "Calendar": [
         "Kalendář"
@@ -9602,6 +9699,9 @@
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "OpenVPN / IKEv2 údaje byly obnoveny"
+      ],
+      "Reminder has been sent": [
+        "Připomenutí bylo odesláno"
       ]
     },
     "Notification in holidays calendar modal": {
@@ -10690,7 +10790,7 @@
         "Přístup k obsahu streamovacích služeb, včetně Netflix, Disney+ a Prime Video, odkudkoli."
       ],
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
-        "Všechny naše prémiové služby s nejvyššími limity: 100 e-mailových adres, podpora 10 vlastních domén, neomezený počet aliasů Skryj můj e-mail, sdílení kalendáře, šifrované cloudové úložiště a sdílení souborů a další."
+        "Všechny naše prémiové služby s nejvyššími limity: 100 e-mailových adres, podpora 10 vlastních domén, neomezený počet aliasů hide-my-email, sdílení kalendáře, šifrované cloudové úložiště a sdílení souborů a další."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Obsahuje podporu 1 vlastní e-mailové domény, 10 e-mailových adres, 10 aliasů Hide-my-email, sdílení kalendáře a další funkce."
@@ -11238,6 +11338,9 @@
       "Import": [
         "Importovat"
       ],
+      "List": [
+        "Seznam"
+      ],
       "Marked as": [
         "Označeno jako"
       ],
@@ -11311,6 +11414,9 @@
       "${ MAIL_APP_NAME } Keyboard Shortcuts": [
         "${ MAIL_APP_NAME } klávesové zkratky"
       ],
+      "(active)": [
+        "(aktivní)"
+      ],
       "1. Give a name to the config to be generated": [
         "1. Pojmenujte konfiguraci, která se má vygenerovat"
       ],
@@ -11331,6 +11437,9 @@
       ],
       "4. Select a server to connect to": [
         "4. Vyberte server, ke kterému se chcete připojit"
+      ],
+      "Accessibility": [
+        "Přístupnost"
       ],
       "Account and password": [
         "Účet a heslo"
@@ -11385,6 +11494,12 @@
       ],
       "Add Sieve filter": [
         "Přidat filtr Sieve"
+      ],
+      "Add to allow list": [
+        "Přidat na seznam povolených"
+      ],
+      "Add to block list": [
+        "Přidat na seznam blokovaných"
       ],
       "Add to spam list": [
         "Přidat do seznamu spamů"
@@ -11568,6 +11683,9 @@
       ],
       "Date": [
         "Datum"
+      ],
+      "Day theme": [
+        "Denní motiv"
       ],
       "Decrypt key": [
         "Dešifrovat klíč"
@@ -11839,6 +11957,9 @@
       "Next": [
         "Další"
       ],
+      "Night theme": [
+        "Noční motiv"
+      ],
       "No recovery method": [
         "Žádná metoda pro obnovení"
       ],
@@ -11883,9 +12004,6 @@
       ],
       "PayPal verification failed": [
         "Ověření platby PayPal se nezdařilo"
-      ],
-      "Personalise your e-mail footer": [
-        "Přizpůsobte si zápatí e-mailu"
       ],
       "Phone": [
         "Telefon"
@@ -11985,6 +12103,9 @@
       ],
       "Select when you want this notification to be sent": [
         "Vyberte, kdy chcete, aby bylo toto oznámení odesláno"
+      ],
+      "Send email reminders?": [
+        "Poslat připomenutí e-mailem?"
       ],
       "Session management": [
         "Správce relací"
@@ -12093,6 +12214,9 @@
       ],
       "Two-factor authentication": [
         "Dvoufázové ověření"
+      ],
+      "Two-factor authentication reminders": [
+        "Připomenutí dvoufázového ověření"
       ],
       "Type": [
         "Typ"

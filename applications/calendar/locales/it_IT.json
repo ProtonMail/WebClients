@@ -2792,11 +2792,11 @@
       ]
     },
     "familyOffer_2023:Action": {
+      "Decline invitation": [
+        "Rifiuta l'invito"
+      ],
       "Got it": [
         "OK"
-      ],
-      "Keep current plan": [
-        "Mantieni il piano attuale"
       ],
       "Switch plans": [
         "Cambia piano"
@@ -2988,6 +2988,31 @@
     "Filter notification": {
       "${ Label.Name } updated": [
         "${ Label.Name } aggiornato"
+      ]
+    },
+    "Font face option": {
+      "System default": [
+        "Predefinito di sistema"
+      ],
+      "Theme default": [
+        "Tema predefinito"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Grande"
+      ],
+      "Medium (recommended)": [
+        "Medio (consigliato)"
+      ],
+      "Small": [
+        "Piccolo"
+      ],
+      "Very large": [
+        "Molto grande"
+      ],
+      "Very small": [
+        "Molto piccolo"
       ]
     },
     "Group": {
@@ -4378,6 +4403,9 @@
       ],
       "Street address": [
         "Indirizzo"
+      ],
+      "Synchronize with system": [
+        "Sincronizza con il sistema"
       ],
       "System information": [
         "Informazioni sul sistema"
@@ -5888,6 +5916,9 @@
         "${ emailsCount } indirizzo email",
         "${ emailsCount } indirizzi email"
       ],
+      "(active)": [
+        "(attivo)"
+      ],
       "Account suspended": [
         "Account sospeso"
       ],
@@ -5978,6 +6009,9 @@
       ],
       "Customize your mail import": [
         "Personalizza l'importazione della tua mail"
+      ],
+      "Day theme": [
+        "Tema giorno"
       ],
       "Delete ${ count } contact": [
         "Elimina ${ count } contatto",
@@ -6077,6 +6111,9 @@
       ],
       "Minicalendar": [
         "Mini calendario"
+      ],
+      "Night theme": [
+        "Tema notte"
       ],
       "Open actions dropdown": [
         "Apri menu a discesa delle azioni"

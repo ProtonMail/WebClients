@@ -74,6 +74,9 @@
       "Add address": [
         "加入電郵位址"
       ],
+      "Add address or domain": [
+        "添加位址網域域"
+      ],
       "Add calendar from URL": [
         "從 URL 加入行事曆"
       ],
@@ -124,6 +127,9 @@
       ],
       "Alignment": [
         "對齊方式"
+      ],
+      "Allow": [
+        "允許"
       ],
       "Apply": [
         "套用"
@@ -205,6 +211,9 @@
       ],
       "Continue": [
         "繼續"
+      ],
+      "Continue anyway": [
+        "仍要繼續"
       ],
       "Continue import": [
         "繼續匯入"
@@ -755,11 +764,17 @@
       "Send code": [
         "傳送代碼"
       ],
+      "Send email reminder": [
+        "傳送電子郵件提醒"
+      ],
       "Send messages with @pm.me": [
         "透過@pm.me寄送訊息"
       ],
       "Send my username": [
         "發送我的使用者名稱"
+      ],
+      "Send reminder": [
+        "發送提醒"
       ],
       "Set as default": [
         "設為預設"
@@ -1061,6 +1076,11 @@
       ],
       "Orphan": [
         "已孤立"
+      ]
+    },
+    "Admin": {
+      "admin": [
+        "管理員"
       ]
     },
     "Alert": {
@@ -2755,6 +2775,9 @@
       "${ name } failed to move to spam list": [
         "${ name } 無法移至垃圾郵件黑名單"
       ],
+      "${ name } moved to allow list": [
+        "${ name } 已移動至允許清單"
+      ],
       "${ name } moved to spam list": [
         "${ name } 已移至垃圾郵件黑名單"
       ],
@@ -2857,8 +2880,14 @@
       "${ name } deletion failed": [
         "${ name } 刪除失敗"
       ],
+      "${ name } failed to move to allow list": [
+        "${ name } 無法移至允許清單"
+      ],
       "${ name } failed to move to spam list": [
         "${ name } 無法移至垃圾郵件黑名單"
+      ],
+      "${ name } moved to allow list": [
+        "${ name } 已移至允許清單"
       ],
       "${ name } moved to spam list": [
         "${ name } 已移至垃圾郵件黑名單"
@@ -3733,6 +3762,9 @@
       "Create a new user": [
         "建立新使用者"
       ],
+      "Decline invitation": [
+        "拒絕邀請"
+      ],
       "Got it": [
         "我知道了"
       ],
@@ -3741,9 +3773,6 @@
       ],
       "Invite member to your family": [
         "邀請成員至您的家庭"
-      ],
-      "Keep current plan": [
-        "維持目前方案"
       ],
       "Set up family group": [
         "設定家庭群組"
@@ -4231,8 +4260,17 @@
       "Add a custom filter to automatically perform certain actions, like labeling or archiving messages.": [
         "新增自訂篩選規則以自動執行特定動作，例如加上標籤或封存郵件。"
       ],
+      "Allow:": [
+        "允許:"
+      ],
+      "Block:": [
+        "封鎖:"
+      ],
       "Search list": [
         "搜索列表"
+      ],
+      "Spam:": [
+        "垃圾郵件:"
       ]
     },
     "Font Face Default": {
@@ -4240,9 +4278,34 @@
         "預設"
       ]
     },
+    "Font face option": {
+      "System default": [
+        "系統預設值"
+      ],
+      "Theme default": [
+        "佈景主題預設值"
+      ]
+    },
     "Font Size Default": {
       "Default": [
         "預設"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "大"
+      ],
+      "Medium (recommended)": [
+        "中（建議）"
+      ],
+      "Small": [
+        "小"
+      ],
+      "Very large": [
+        "非常大"
+      ],
+      "Very small": [
+        "非常小"
       ]
     },
     "Frequency of news": {
@@ -5265,6 +5328,9 @@
       "Custom yearly": [
         "自訂每年"
       ],
+      "Customize the look and feel of ${ BRAND_NAME } applications.": [
+        "自訂 ${ BRAND_NAME } 應用程式的外觀與感覺。"
+      ],
       "Daily": [
         "每日"
       ],
@@ -5567,6 +5633,9 @@
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "匯入您的資料自 ${ importedEmailAddress } 至 ${ toEmail }。"
+      ],
+      "Improve your ${ BRAND_NAME } experience by adapting the application to your needs.": [
+        "增加您${ BRAND_NAME }的使用體驗，使用應用程式以滿足需求"
       ],
       "Inherited from parent folder": [
         "繼承自上層資料夾"
@@ -5985,6 +6054,9 @@
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "請選取要匯入的行事曆。將根據您的方案中可用的行事曆數量為每個匯入的行事曆建立一個新的行事曆。"
       ],
+      "Send emails to encourage your members to protect their accounts with 2FA.": [
+        "傳送電子郵件鼓勵成員使用雙重驗證以保護帳號"
+      ],
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "使用 <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> 安全電子郵件傳送。"
       ],
@@ -6107,6 +6179,9 @@
       ],
       "The following addresses were not created.": [
         "以下的電子郵件地址還未建立。"
+      ],
+      "The following members will receive an email prompting them to enable two-factor authentication as soon as possible.": [
+        "以下成員將收到電子郵件提示盡速使用雙重身份驗證"
       ],
       "The format of your CSV file is incorrect.": [
         "您的 CSV 檔案格式不正確。"
@@ -7152,6 +7227,9 @@
       "All-day event notifications": [
         "全日事件通知"
       ],
+      "Allow": [
+        "允許"
+      ],
       "Allow notifications by email": [
         "允許電郵通知"
       ],
@@ -7225,7 +7303,7 @@
         "帳單週期"
       ],
       "Block": [
-        "攔截"
+        "封鎖"
       ],
       "Block email tracking": [
         "封鎖郵件追蹤"
@@ -7256,6 +7334,9 @@
       ],
       "Card holder": [
         "持卡人"
+      ],
+      "Card information": [
+        "卡片資料"
       ],
       "Card number": [
         "卡號"
@@ -7377,6 +7458,9 @@
       "Default PGP scheme": [
         "預設 PGP 格式"
       ],
+      "Default scrollbars": [
+        "預設滑桿"
+      ],
       "Default view": [
         "預設檢視"
       ],
@@ -7397,6 +7481,9 @@
       ],
       "Digits": [
         "位數"
+      ],
+      "Disable animations": [
+        "停用動畫"
       ],
       "Display name": [
         "顯示名稱"
@@ -7467,6 +7554,9 @@
       "Event notifications": [
         "事件通知"
       ],
+      "Expiration (${ patternExpiration })": [
+        "到期日(${ patternExpiration })"
+      ],
       "Expiration date": [
         "有效期限"
       ],
@@ -7481,6 +7571,12 @@
       ],
       "Folder location": [
         "資料夾位置"
+      ],
+      "Font family": [
+        "字型系列"
+      ],
+      "Font size": [
+        "字體大小"
       ],
       "From: ${ from }": [
         "寄件者: ${ from }"
@@ -7749,11 +7845,20 @@
       "Repeat password": [
         "重複輸入密碼"
       ],
+      "Require 2FA for administrators": [
+        "要求管理員使用雙重驗證"
+      ],
+      "Require 2FA for everyone": [
+        "要求所有人使用雙重驗證"
+      ],
       "Reveal password": [
         "顯示密碼"
       ],
       "Security code": [
         "安全碼"
+      ],
+      "Security code (${ codeName })": [
+        "安全驗證代碼(${ codeName })"
       ],
       "Select your country": [
         "請選擇您的國家"
@@ -7820,6 +7925,9 @@
       ],
       "Subscription options": [
         "訂閱選項"
+      ],
+      "Synchronize with system": [
+        "與系統同步"
       ],
       "System information": [
         "系統資訊"
@@ -8184,6 +8292,9 @@
       ]
     },
     "Loading info": {
+      "${ twoFAMembers.length }/${ members.length } of your organization members use two-factor authentication.": [
+        "您組織的${ twoFAMembers.length }/${ members.length }成員使用了雙重身分驗證"
+      ],
       "Almost there": [
         "快完成了"
       ],
@@ -8453,6 +8564,9 @@
       "All": [
         "全部"
       ],
+      "Allow": [
+        "允許"
+      ],
       "Back": [
         "返回"
       ],
@@ -8466,7 +8580,7 @@
         "返回收件匣"
       ],
       "Block": [
-        "攔截"
+        "封鎖"
       ],
       "Calendar": [
         "行事曆"
@@ -9305,6 +9419,18 @@
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "OpenVPN / IKEv2 認證已重新生成"
+      ],
+      "Reminder has been sent": [
+        "提醒已傳送"
+      ],
+      "Two-factor authentication has been enforced for administrators": [
+        "以強制管理員使用雙重身分驗證"
+      ],
+      "Two-factor authentication has been enforced for all members": [
+        "以強制使用成員雙重身份驗證"
+      ],
+      "Two-factor authentication is not required anymore": [
+        "雙重身份驗證已無需繼續使用"
       ]
     },
     "Notification in holidays calendar modal": {
@@ -10848,11 +10974,17 @@
       "Edit": [
         "編輯"
       ],
+      "Email address or domain": [
+        "電子郵件地址或網域"
+      ],
       "Email addresses": [
         "電郵位址"
       ],
       "Import": [
         "匯入"
+      ],
+      "List": [
+        "列表"
       ],
       "Marked as": [
         "標示為"
@@ -10909,6 +11041,9 @@
       "${ MAIL_APP_NAME } Keyboard Shortcuts": [
         "${ MAIL_APP_NAME }鍵盤快捷鍵"
       ],
+      "(active)": [
+        "（啟用）"
+      ],
       "1. Give a name to the config to be generated": [
         "1. 為生成的設定檔取一個名稱"
       ],
@@ -10929,6 +11064,9 @@
       ],
       "4. Select a server to connect to": [
         "4. 選取要連接的服務器"
+      ],
+      "Accessibility": [
+        "協助工具"
       ],
       "Account and password": [
         "帳號與密碼"
@@ -10984,8 +11122,11 @@
       "Add Sieve filter": [
         "加入 Sieve 篩選器"
       ],
+      "Add to allow list": [
+        "新增至允許清單"
+      ],
       "Add to block list": [
-        "加入至攔截清單"
+        "新增至封鎖清單"
       ],
       "Add to spam list": [
         "新增到垃圾郵件清單"
@@ -11022,6 +11163,9 @@
       ],
       "Are you sure you want to close?": [
         "您確定要關閉嗎？"
+      ],
+      "Authentication security": [
+        "安全驗證"
       ],
       "Auto-reply": [
         "自動回覆"
@@ -11166,6 +11310,9 @@
       ],
       "Date": [
         "日期"
+      ],
+      "Day theme": [
+        "白天佈景主題"
       ],
       "Decrypt key": [
         "解密金鑰"
@@ -11431,6 +11578,9 @@
       "Next": [
         "下一頁"
       ],
+      "Night theme": [
+        "夜間佈景主題"
+      ],
       "No recovery method": [
         "沒有復原方法"
       ],
@@ -11475,9 +11625,6 @@
       ],
       "PayPal verification failed": [
         "PayPal 驗證失敗"
-      ],
-      "Personalise your e-mail footer": [
-        "個人化您的電子郵件簽名"
       ],
       "Phone": [
         "電話"
@@ -11578,6 +11725,9 @@
       "Select when you want this notification to be sent": [
         "請選擇您想此通知何時傳送"
       ],
+      "Send email reminders?": [
+        "傳送電子郵件提醒"
+      ],
       "Session management": [
         "工作階段管理"
       ],
@@ -11635,6 +11785,9 @@
       "Sort labels alphabetically": [
         "依照字母排序標籤"
       ],
+      "Spam, block, and allow lists": [
+        "垃圾郵件、封鎖、允許清單"
+      ],
       "Start a new import": [
         "開始新匯入"
       ],
@@ -11679,6 +11832,12 @@
       ],
       "Two-factor authentication": [
         "兩步驟驗證"
+      ],
+      "Two-factor authentication enforcement": [
+        "執行雙重身分驗證"
+      ],
+      "Two-factor authentication reminders": [
+        "兩步驟驗證體醒"
       ],
       "Type": [
         "類型"
@@ -11858,6 +12017,9 @@
       "Account is disconnected": [
         "帳號已中斷連線"
       ],
+      "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
+        "與系統的日夜模式同步，在白天和晚上的偏好佈景主題之間自動切換"
+      ],
       "Customize import to reduce the number of folders": [
         "自訂匯入以減少資料夾數量"
       ],
@@ -11920,6 +12082,12 @@
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "新的訂閱週期開始在${ formattedTime }"
+      ],
+      "The selected theme will be active when your system is set to \"dark mode\"": [
+        "當您的系統設定為「深色模式」時，將會啟用選定的佈景主題"
+      ],
+      "The selected theme will be active when your system is set to \"light mode\"": [
+        "當您的系統設定為「淺色模式」時，將會啟用選定的佈景主題"
       ],
       "This address has been disabled": [
         "此電郵位址已被停用"

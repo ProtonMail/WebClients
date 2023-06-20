@@ -325,6 +325,9 @@
       "Got it": [
         "Ok"
       ],
+      "Grid layout": [
+        "Widok siatki"
+      ],
       "Hide advanced PGP settings": [
         "Ukryj zaawansowane ustawienia PGP"
       ],
@@ -2506,11 +2509,11 @@
       ]
     },
     "familyOffer_2023:Action": {
+      "Decline invitation": [
+        "Odrzuć zaproszenie"
+      ],
       "Got it": [
         "Ok"
-      ],
-      "Keep current plan": [
-        "Zachowaj obecny plan"
       ],
       "Switch plans": [
         "Zmień plany"
@@ -2709,6 +2712,31 @@
     "Filter notification": {
       "${ Label.Name } updated": [
         "Etykieta ${ Label.Name } została zaktualizowana"
+      ]
+    },
+    "Font face option": {
+      "System default": [
+        "Domyślny systemu"
+      ],
+      "Theme default": [
+        "Domyślny motyw"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Duża"
+      ],
+      "Medium (recommended)": [
+        "Średnia (zalecana)"
+      ],
+      "Small": [
+        "Mała"
+      ],
+      "Very large": [
+        "Bardzo duża"
+      ],
+      "Very small": [
+        "Bardzo mała"
       ]
     },
     "Group": {
@@ -3396,6 +3424,9 @@
       ],
       "Current version": [
         "Obecna wersja"
+      ],
+      "Customize the look and feel of ${ BRAND_NAME } applications.": [
+        "Dostosuj wygląd aplikacji ${ BRAND_NAME }."
       ],
       "Decrypting files": [
         "Odszyfrowywanie plików"
@@ -4671,6 +4702,9 @@
       "Street address": [
         "Ulica"
       ],
+      "Synchronize with system": [
+        "Domyślny systemu"
+      ],
       "System information": [
         "Informacje o systemie"
       ],
@@ -5933,6 +5967,9 @@
         "Przesyłanie ${ numberOfFailedTransfer.total } plików nie powiodło się",
         "Przesyłanie ${ numberOfFailedTransfer.total } plików nie powiodło się"
       ],
+      "(active)": [
+        "(aktywny)"
+      ],
       "Account suspended": [
         "Konto zostało zawieszone"
       ],
@@ -6025,6 +6062,9 @@
       ],
       "Date": [
         "Data"
+      ],
+      "Day theme": [
+        "Jasny motyw"
       ],
       "Delete ${ count } contact": [
         "Usuń kontakt",
@@ -6187,6 +6227,9 @@
       ],
       "Name": [
         "Nazwa"
+      ],
+      "Night theme": [
+        "Ciemny motyw"
       ],
       "No results found": [
         "Nie znaleziono żadnych wyników"
