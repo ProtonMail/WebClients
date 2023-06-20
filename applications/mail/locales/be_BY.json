@@ -830,7 +830,7 @@
         "Бяспечны адказ"
       ],
       "Report a problem": [
-        "Паведаміць пра праблему"
+        "Паведаміць аб праблеме"
       ],
       "Report phishing": [
         "Паведаміць пра фішынг"
@@ -1862,7 +1862,7 @@
         "Перайсці ў Чарнавікі"
       ],
       "Go to Inbox": [
-        "Перайсці ва Уваходныя"
+        "Перайсці ва Ўваходныя"
       ],
       "Go to Sent": [
         "Перайсці ў Адпраўленыя"
@@ -3846,11 +3846,11 @@
       ]
     },
     "familyOffer_2023:Action": {
+      "Decline invitation": [
+        "Адхіліць запрашэнне"
+      ],
       "Got it": [
         "Зразумела"
-      ],
-      "Keep current plan": [
-        "Пакінуць бягучы тарыфны план"
       ],
       "Switch plans": [
         "Змяніць тарыфны план"
@@ -5752,7 +5752,7 @@
         "Гэта размова змяшчае паведамленні, якія не былі выдаленыя."
       ],
       "This conversation contains one or more expiring messages": [
-        "Гэта размова змяшчае адно або некалькі пратэрмінаваных паведамленняў"
+        "Гэта размова змяшчае адно або некалькі паведамленняў з тэрмінам дзеяння"
       ],
       "This conversation contains trashed messages.": [
         "Гэта размова змяшчае выдаленыя паведамленні."
@@ -7563,7 +7563,7 @@
         "Пазнаёмцеся з усімі сэрвісамі ${ BRAND_NAME }"
       ],
       "More theming options are available in your account Settings > Appearance.": [
-        "Дадатковыя параметры даступны ў наладах уліковага запісу > Знешні выгляд."
+        "Дадатковыя параметры тэмы даступны ў меню ўліковага запісу Налады > Знешні выгляд."
       ],
       "Select a theme": [
         "Выберыце тэму"
@@ -8791,7 +8791,7 @@
         "${ unreads } непрачытаныя паведамленні"
       ],
       "(active)": [
-        "(актыўна)"
+        "(актыўная)"
       ],
       "Account suspended": [
         "Уліковы запіс прыпынены"
@@ -9214,7 +9214,7 @@
         "Адказаць усім"
       ],
       "Report a problem": [
-        "Паведаміць пра праблему"
+        "Паведаміць аб праблеме"
       ],
       "Request new code": [
         "Запытаць новы код"
@@ -9364,6 +9364,9 @@
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "“Аўтаматычна” азначае, што для адпраўкі гэтаму карыстальніку выкарыстоўваецца фармат рэдактара. “Звычайны тэкст” азначае, што пры адпраўцы паведамленне заўсёды будзе ператварацца ў звычайны тэкст."
       ],
+      "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
+        "Аўтаматычна пераключацца паміж вашымі пажаданымі тэмамі для дня і ночы згодна з начным і дзённым рэжымам вашай сістэмы."
+      ],
       "Customize import to reduce the number of folders": [
         "Наладзьце імпартаванне, каб паменшыць колькасць папак"
       ],
@@ -9414,6 +9417,9 @@
       ],
       "The import will start with the most recent messages.": [
         "Імпартаванне пачнецца з самых апошніх паведамленняў."
+      ],
+      "The selected theme will be active when your system is set to \"dark mode\"": [
+        "Выбраная тэма будзе актыўна, калі ў вашай сістэме зададзены \"цёмны рэжым\""
       ],
       "The selected theme will be active when your system is set to \"light mode\"": [
         "Выбраная тэма будзе актыўна, калі ў вашай сістэме зададзены \"светлы рэжым\""
