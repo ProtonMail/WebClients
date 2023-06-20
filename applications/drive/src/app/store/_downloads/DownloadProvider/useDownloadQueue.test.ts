@@ -14,6 +14,7 @@ function makeDownloadLink(name: string, isFile = true): LinkDownload {
         mimeType: isFile ? 'text/plain' : 'Folder',
         size: 1234,
         signatureAddress: 'address',
+        fileModifyTime: 0,
     };
 }
 
