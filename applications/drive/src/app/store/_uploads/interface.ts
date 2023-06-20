@@ -118,6 +118,5 @@ export type BlockToken = {
 export enum TransferConflictStrategy {
     Rename = 'rename',
     Replace = 'replace',
-    Merge = 'merge',
     Skip = 'skip',
 }
