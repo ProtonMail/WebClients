@@ -1,7 +1,14 @@
-import { type FNode, fieldOfInterestSelector, isFormOfInterest, rulesetMaker } from '@proton/pass/fathom';
+import {
+    type FNode,
+    clearVisibilityCache,
+    fieldOfInterestSelector,
+    isFormOfInterest,
+    rulesetMaker,
+} from '@proton/pass/fathom';
 import { FormField, FormType } from '@proton/pass/types';
 import { sortOn } from '@proton/pass/utils/fp/sort';
 import { logger } from '@proton/pass/utils/logger';
+import { wait } from '@proton/shared/lib/helpers/promise';
 
 import type { DetectedField, DetectedForm } from '../../types';
 import {
@@ -41,7 +48,8 @@ type PredictionBestSelector<T extends string> = (scores: PredictionScoreResult<T
  * to avoid flagging input fields as processed and missing out
  * on detection */
 const shouldRunDetection = (): Promise<boolean> =>
-    new Promise((resolve) => {
+    new Promise(async (resolve) => {
+        await wait(50);
         requestAnimationFrame(() => {
             const runForForms = selectAllForms().reduce<boolean>((runDetection, form) => {
                 if (formProcessed(form)) {
