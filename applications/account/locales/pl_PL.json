@@ -128,6 +128,9 @@
       "Alignment": [
         "Wyrównanie"
       ],
+      "Allow": [
+        "Zezwól"
+      ],
       "Apply": [
         "Zastosuj"
       ],
@@ -208,6 +211,9 @@
       ],
       "Continue": [
         "Kontynuuj"
+      ],
+      "Continue anyway": [
+        "Kontynuuj mimo to"
       ],
       "Continue import": [
         "Kontynuuj importowanie"
@@ -758,11 +764,17 @@
       "Send code": [
         "Wyślij kod"
       ],
+      "Send email reminder": [
+        "Wyślij przypomnienie"
+      ],
       "Send messages with @pm.me": [
         "Wysyłaj wiadomości z adresu @pm.me"
       ],
       "Send my username": [
         "Wyślij moją nazwę użytkownika"
+      ],
+      "Send reminder": [
+        "Wyślij przypomnienie"
       ],
       "Set as default": [
         "Ustaw jako domyślną"
@@ -1064,6 +1076,11 @@
       ],
       "Orphan": [
         "Osierocony"
+      ]
+    },
+    "Admin": {
+      "admin": [
+        "administrator"
       ]
     },
     "Alert": {
@@ -2777,19 +2794,19 @@
         "Usunięcie domeny ${ name } nie powiodło się"
       ],
       "${ name } failed to move to allow list": [
-        "Przenoszenie domeny ${ name } do listy dozwolonych nie powiodło się"
+        "Przenoszenie domeny ${ name } do listy dozwolonych adresów nie powiodło się"
       ],
       "${ name } failed to move to block list": [
-        "Przenoszenie domeny ${ name } do listy odrzuconych nie powiodło się"
+        "Przenoszenie domeny ${ name } do listy zablokowanych nadawców nie powiodło się"
       ],
       "${ name } failed to move to spam list": [
         "Przenoszenie domeny ${ name } do listy spamu nie powiodło się"
       ],
       "${ name } moved to allow list": [
-        "Domena ${ name } została przeniesiona do listy dozwolonych"
+        "Domena ${ name } została przeniesiona do listy dozwolonych adresów"
       ],
       "${ name } moved to block list": [
-        "Domena ${ name } została przeniesiona do listy odrzuconych"
+        "Domena ${ name } została przeniesiona do listy zablokowanych"
       ],
       "${ name } moved to spam list": [
         "Domena ${ name } została przeniesiona do listy spamu"
@@ -2894,19 +2911,19 @@
         "Usunięcie adresu ${ name } nie powiodło się"
       ],
       "${ name } failed to move to allow list": [
-        "Przenoszenie adresu ${ name } do listy dozwolonych nie powiodło się"
+        "Przenoszenie adresu ${ name } do listy dozwolonych adresów nie powiodło się"
       ],
       "${ name } failed to move to block list": [
-        "Przenoszenie adresu ${ name } do listy odrzuconych nie powiodło się"
+        "Przenoszenie adresu ${ name } do listy zablokowanych nadawców nie powiodło się"
       ],
       "${ name } failed to move to spam list": [
         "Przenoszenie adresu ${ name } do listy spamu nie powiodło się"
       ],
       "${ name } moved to allow list": [
-        "Adres ${ name } został przeniesiony do listy dozwolonych"
+        "Adres ${ name } został przeniesiony do listy dozwolonych adresów"
       ],
       "${ name } moved to block list": [
-        "Adres ${ name } został przeniesiony do listy odrzuconych"
+        "Adres ${ name } został przeniesiony do listy zablokowanych"
       ],
       "${ name } moved to spam list": [
         "Adres ${ name } został przeniesiony do listy spamu"
@@ -3802,6 +3819,9 @@
       "Create a new user": [
         "Utwórz nowego użytkownika"
       ],
+      "Decline invitation": [
+        "Odrzuć zaproszenie"
+      ],
       "Got it": [
         "Ok"
       ],
@@ -3810,9 +3830,6 @@
       ],
       "Invite member to your family": [
         "Zaproś użytkownika do swojej rodziny"
-      ],
-      "Keep current plan": [
-        "Zachowaj obecny plan"
       ],
       "Set up family group": [
         "Skonfiguruj grupę rodzinną"
@@ -4318,11 +4335,23 @@
       "Add a custom filter to automatically perform certain actions, like labeling or archiving messages.": [
         "Dodaj filtr niestandardowy do wykonywania automatycznych czynności, takich jak etykietowanie lub archiwizacja wiadomości."
       ],
+      "Allow:": [
+        "Dozwolone:"
+      ],
+      "Block:": [
+        "Zablokowane:"
+      ],
       "Search list": [
         "Przeszukaj"
       ],
       "Spam:": [
         "Spam:"
+      ],
+      "To prevent junk mail from clogging up inboxes": [
+        "Aby zapobiegać zapychaniu skrzynek odbiorczych przez wiadomości-śmieci"
+      ],
+      "To prevent junk mail from clogging up your inbox": [
+        "Aby zapobiegać zapychaniu skrzynki odbiorczej przez wiadomości-śmieci"
       ]
     },
     "Font Face Default": {
@@ -4330,9 +4359,34 @@
         "Domyślna"
       ]
     },
+    "Font face option": {
+      "System default": [
+        "Domyślny systemu"
+      ],
+      "Theme default": [
+        "Domyślny motyw"
+      ]
+    },
     "Font Size Default": {
       "Default": [
         "Domyślny"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Duża"
+      ],
+      "Medium (recommended)": [
+        "Średnia (zalecana)"
+      ],
+      "Small": [
+        "Mała"
+      ],
+      "Very large": [
+        "Bardzo duża"
+      ],
+      "Very small": [
+        "Bardzo mała"
       ]
     },
     "Frequency of news": {
@@ -5444,6 +5498,9 @@
       ],
       "Custom yearly": [
         "Co rok (niestandardowo)"
+      ],
+      "Customize the look and feel of ${ BRAND_NAME } applications.": [
+        "Dostosuj wygląd aplikacji ${ BRAND_NAME }."
       ],
       "Daily": [
         "Codziennie"
@@ -7392,6 +7449,9 @@
       "All-day event notifications": [
         "Powiadomienia wydarzenia całodniowego"
       ],
+      "Allow": [
+        "Dozwolone"
+      ],
       "Allow notifications by email": [
         "Zezwalaj na powiadomienia przez e-mail"
       ],
@@ -7463,6 +7523,9 @@
       ],
       "Billing cycle": [
         "Cykl rozliczeniowy"
+      ],
+      "Block": [
+        "Zablokowane"
       ],
       "Block email tracking": [
         "Zablokuj śledzenie wiadomości"
@@ -7617,6 +7680,9 @@
       "Default PGP scheme": [
         "Domyślny schemat PGP"
       ],
+      "Default scrollbars": [
+        "Domyślne paski przewijania"
+      ],
       "Default view": [
         "Domyślny widok"
       ],
@@ -7637,6 +7703,9 @@
       ],
       "Digits": [
         "Cyfry"
+      ],
+      "Disable animations": [
+        "Wyłącz animacje"
       ],
       "Display name": [
         "Nazwa wyświetlana"
@@ -7707,6 +7776,9 @@
       "Event notifications": [
         "Powiadomienia wydarzenia"
       ],
+      "Expiration (${ patternExpiration })": [
+        "Data wygaśnięcia (${ patternExpiration })"
+      ],
       "Expiration date": [
         "Data wygaśnięcia"
       ],
@@ -7721,6 +7793,12 @@
       ],
       "Folder location": [
         "Lokalizacja folderu"
+      ],
+      "Font family": [
+        "Czcionka"
+      ],
+      "Font size": [
+        "Rozmiar czcionki"
       ],
       "From: ${ from }": [
         "Od: ${ from }"
@@ -7989,11 +8067,20 @@
       "Repeat password": [
         "Potwierdź hasło"
       ],
+      "Require 2FA for administrators": [
+        "Wymagaj uwierzytelniania dwustopniowego od administratorów"
+      ],
+      "Require 2FA for everyone": [
+        "Wymagaj uwierzytelniania dwustopniowego od wszystkich użytkowników"
+      ],
       "Reveal password": [
         "Pokaż hasło"
       ],
       "Security code": [
         "Kod zabezpieczający"
+      ],
+      "Security code (${ codeName })": [
+        "Kod zabezpieczający (${ codeName })"
       ],
       "Select your country": [
         "Wybierz kraj"
@@ -8060,6 +8147,9 @@
       ],
       "Subscription options": [
         "Opcje subskrypcji"
+      ],
+      "Synchronize with system": [
+        "Domyślny systemu"
       ],
       "System information": [
         "Informacje o systemie"
@@ -8723,6 +8813,9 @@
       "All": [
         "Wszystkie"
       ],
+      "Allow": [
+        "Dozwolone"
+      ],
       "Back": [
         "Wstecz"
       ],
@@ -8734,6 +8827,9 @@
       ],
       "Back to inbox": [
         "Powrót do poczty"
+      ],
+      "Block": [
+        "Zablokowane"
       ],
       "Calendar": [
         "Kalendarz"
@@ -9635,6 +9731,18 @@
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "Dane logowania OpenVPN / IKEv2 zostały ponownie wygenerowane"
+      ],
+      "Reminder has been sent": [
+        "Przypomnienie zostało wysłane"
+      ],
+      "Two-factor authentication has been enforced for administrators": [
+        "Uwierzytelnianie dwustopniowe jest wymagane dla administratorów"
+      ],
+      "Two-factor authentication has been enforced for all members": [
+        "Uwierzytelnianie dwustopniowe jest wymagane dla wszystkich użytkowników"
+      ],
+      "Two-factor authentication is not required anymore": [
+        "Uwierzytelnianie dwustopniowe nie jest wymagane"
       ]
     },
     "Notification in holidays calendar modal": {
@@ -11344,6 +11452,9 @@
       "${ MAIL_APP_NAME } Keyboard Shortcuts": [
         "Skróty klawiszowe ${ MAIL_APP_NAME }"
       ],
+      "(active)": [
+        "(aktywny)"
+      ],
       "1. Give a name to the config to be generated": [
         "1. Wybierz nazwę konfiguracji"
       ],
@@ -11364,6 +11475,9 @@
       ],
       "4. Select a server to connect to": [
         "4. Wybierz serwer"
+      ],
+      "Accessibility": [
+        "Dostępność"
       ],
       "Account and password": [
         "Konto i hasło"
@@ -11423,7 +11537,7 @@
         "Dodaj do listy dozwolonych"
       ],
       "Add to block list": [
-        "Dodaj do listy odrzuconych"
+        "Dodaj do listy zablokowanych"
       ],
       "Add to spam list": [
         "Dodaj do listy spamu"
@@ -11460,6 +11574,9 @@
       ],
       "Are you sure you want to close?": [
         "Czy na pewno chcesz zamknąć edytor filtra?"
+      ],
+      "Authentication security": [
+        "Bezpieczeństwo uwierzytelniania"
       ],
       "Auto-reply": [
         "Autoresponder"
@@ -11607,6 +11724,9 @@
       ],
       "Date": [
         "Data"
+      ],
+      "Day theme": [
+        "Jasny motyw"
       ],
       "Decrypt key": [
         "Odszyfruj klucz"
@@ -11878,6 +11998,9 @@
       "Next": [
         "Dalej"
       ],
+      "Night theme": [
+        "Ciemny motyw"
+      ],
       "No recovery method": [
         "Brak metody odzyskiwania"
       ],
@@ -12025,6 +12148,9 @@
       "Select when you want this notification to be sent": [
         "Wybierz, kiedy to powiadomienie ma zostać wysłane"
       ],
+      "Send email reminders?": [
+        "Wysłać przypomnienia?"
+      ],
       "Session management": [
         "Zarządzanie sesją"
       ],
@@ -12083,7 +12209,7 @@
         "Sortuj etykiety alfabetycznie"
       ],
       "Spam, block, and allow lists": [
-        "Spam, listy odrzuconych i dozwolonych"
+        "Lista spamu, zablokowanych i dozwolonych"
       ],
       "Start a new import": [
         "Rozpocznij nowy import"
@@ -12135,6 +12261,12 @@
       ],
       "Two-factor authentication": [
         "Uwierzytelnianie dwustopniowe"
+      ],
+      "Two-factor authentication enforcement": [
+        "Wymuszanie uwierzytelniania dwustopniowego"
+      ],
+      "Two-factor authentication reminders": [
+        "Przypomnienia o uwierzytelnianiu dwustopniowym"
       ],
       "Type": [
         "Typ"
@@ -12395,11 +12527,17 @@
       "This key is used by ${ MAIL_APP_NAME } to encrypt your contact's data": [
         "Ten klucz jest używany przez ${ MAIL_APP_NAME } do szyfrowania danych kontaktów"
       ],
+      "Use your browser’s default scrollbars. These are typically larger and easier to use": [
+        "Używaj domyślnych pasków przewijania przeglądarki. Są one zazwyczaj większe i łatwiejsze w użyciu"
+      ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "Wykryliśmy problem z konfiguracją rekordów DNS. Upewnij się, że rekordy pasują do instrukcji. Jeśli ten problem będzie się powtarzał, wyłączymy podpisywanie DKIM."
       ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "Zatrzymaliśmy podpisywanie DKIM z powodu problemów z konfiguracją rekordów DNS. Wykonaj tę instrukcję, aby wznowić podpisywanie."
+      ],
+      "When enabled, animations and transitions will not show": [
+        "Po włączeniu tej opcji, animacje i przejścia nie będą wyświetlane"
       ],
       "When you add a label to a message in a conversation, it will automatically be applied to all future messages you send or receive in that conversation.": [
         "Po dodaniu etykiety do wiadomości w wątku, wszystkie przyszłe wiadomości przychodzące i wychodzące będą otrzymywać tę samą etykietę."
