@@ -1,4 +1,4 @@
-import { ChangeEvent, useEffect, useMemo, useRef } from 'react';
+import { ChangeEvent, useEffect, useMemo, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -46,10 +46,13 @@ const useAdvancer = (
     currentFieldState: string,
     condition: boolean
 ) => {
+    const [advanced, setAdvanced] = useState(false);
+
     useEffect(() => {
         const currentElementFocused = document.activeElement === currentElementRef.current;
-        if (condition && currentElementFocused && nextElementRef.current) {
+        if (condition && currentElementFocused && nextElementRef.current && !advanced) {
             nextElementRef.current.focus();
+            setAdvanced(true);
         }
     }, [currentFieldState, condition]);
 };
