@@ -212,6 +212,9 @@
       "Continue": [
         "Continua"
       ],
+      "Continue anyway": [
+        "Continua comunque"
+      ],
       "Continue import": [
         "Continua l'importazione"
       ],
@@ -726,7 +729,7 @@
         "Salva file ICS"
       ],
       "Save selected": [
-        "Salva selezionato"
+        "Salva la scelta"
       ],
       "Search": [
         "Cerca"
@@ -761,11 +764,17 @@
       "Send code": [
         "Invia codice"
       ],
+      "Send email reminder": [
+        "Invia promemoria email"
+      ],
       "Send messages with @pm.me": [
         "Invia messaggi con @pm.me"
       ],
       "Send my username": [
         "Invia il mio nome utente"
+      ],
+      "Send reminder": [
+        "Invia promemoria"
       ],
       "Set as default": [
         "Imposta come predefinito"
@@ -1069,6 +1078,11 @@
       ],
       "Orphan": [
         "Orfano"
+      ]
+    },
+    "Admin": {
+      "admin": [
+        "amministratore"
       ]
     },
     "Alert": {
@@ -2768,19 +2782,19 @@
         "eliminazione di ${ name } non riuscita"
       ],
       "${ name } failed to move to allow list": [
-        "${ name } non è stato spostato nella lista \"Non spam\"."
+        "Spostamento di ${ name } nella lista consentiti fallito"
       ],
       "${ name } failed to move to block list": [
-        "${ name } non è stato spostato nella lista \"Bloccato\"."
+        "Spostamento di ${ name } nella lista bloccati fallito"
       ],
       "${ name } failed to move to spam list": [
         "Spostamento di ${ name } nella lista di mittenti spam fallito"
       ],
       "${ name } moved to allow list": [
-        "${ name } è stato spostato nella lista \"Non spam\"."
+        "${ name } spostato nella lista consentiti"
       ],
       "${ name } moved to block list": [
-        "${ name } è stato spostato nella lista \"Bloccato\"."
+        "${ name } spostato nella lista bloccati"
       ],
       "${ name } moved to spam list": [
         "Spostamento di ${ name } nella lista spam effettuato"
@@ -2885,19 +2899,19 @@
         "eliminazione di ${ name } non riuscita"
       ],
       "${ name } failed to move to allow list": [
-        "${ name } non è stato spostato nella lista “Non spam“."
+        "Spostamento di ${ name } nella lista consentiti fallito"
       ],
       "${ name } failed to move to block list": [
-        "${ name } non è stato spostato nella lista \"Bloccato\"."
+        "Spostamento di ${ name } nella lista bloccati fallito"
       ],
       "${ name } failed to move to spam list": [
         "Spostamento di ${ name } nella lista di mittenti spam fallito"
       ],
       "${ name } moved to allow list": [
-        "${ name } è stato spostato nella lista “Non spam“."
+        "${ name } spostato nella lista consentiti"
       ],
       "${ name } moved to block list": [
-        "${ name } è stato spostato nella lista \"Bloccato\"."
+        "${ name } spostato nella lista bloccati"
       ],
       "${ name } moved to spam list": [
         "Spostamento di ${ name } nella lista spam effettuato"
@@ -3779,6 +3793,9 @@
       "Create a new user": [
         "Crea un nuovo utente"
       ],
+      "Decline invitation": [
+        "Rifiuta l'invito"
+      ],
       "Got it": [
         "OK"
       ],
@@ -3787,9 +3804,6 @@
       ],
       "Invite member to your family": [
         "Invita un membro nella tua famiglia"
-      ],
-      "Keep current plan": [
-        "Mantieni il piano attuale"
       ],
       "Set up family group": [
         "Configura il gruppo familiare"
@@ -4302,9 +4316,34 @@
         "Predefinito"
       ]
     },
+    "Font face option": {
+      "System default": [
+        "Predefinito di sistema"
+      ],
+      "Theme default": [
+        "Tema predefinito"
+      ]
+    },
     "Font Size Default": {
       "Default": [
         "Predefinito"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Grande"
+      ],
+      "Medium (recommended)": [
+        "Medio (consigliato)"
+      ],
+      "Small": [
+        "Piccolo"
+      ],
+      "Very large": [
+        "Molto grande"
+      ],
+      "Very small": [
+        "Molto piccolo"
       ]
     },
     "Frequency of news": {
@@ -7372,6 +7411,9 @@
       "Card holder": [
         "Titolare carta"
       ],
+      "Card information": [
+        "Informazioni carta"
+      ],
       "Card number": [
         "Numero carta"
       ],
@@ -7513,6 +7555,9 @@
       "Digits": [
         "Numeri"
       ],
+      "Disable animations": [
+        "Disabilita animazioni"
+      ],
       "Display name": [
         "Nome visualizzato"
       ],
@@ -7582,6 +7627,9 @@
       "Event notifications": [
         "Notifiche dell'evento"
       ],
+      "Expiration (${ patternExpiration })": [
+        "Scadenza (${ patternExpiration })"
+      ],
       "Expiration date": [
         "Data di scadenza"
       ],
@@ -7596,6 +7644,12 @@
       ],
       "Folder location": [
         "Percorso cartella"
+      ],
+      "Font family": [
+        "Famiglia di caratteri"
+      ],
+      "Font size": [
+        "Dimensioni carattere"
       ],
       "From: ${ from }": [
         "Da: ${ from }"
@@ -7870,6 +7924,9 @@
       "Security code": [
         "Codice di sicurezza"
       ],
+      "Security code (${ codeName })": [
+        "Codice di sicurezza (${ codeName })"
+      ],
       "Select your country": [
         "Seleziona il tuo paese"
       ],
@@ -7935,6 +7992,9 @@
       ],
       "Subscription options": [
         "Opzioni dell'abbonamento"
+      ],
+      "Synchronize with system": [
+        "Sincronizza con il sistema"
       ],
       "System information": [
         "Informazioni sul sistema"
@@ -9454,6 +9514,9 @@
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "Credenziali OpenVPN / IKEv2 rigenerate"
+      ],
+      "Reminder has been sent": [
+        "Il promemoria è stato inviato"
       ]
     },
     "Notification in holidays calendar modal": {
@@ -11099,6 +11162,9 @@
       "${ MAIL_APP_NAME } Keyboard Shortcuts": [
         "${ MAIL_APP_NAME } Scorciatoie da tastiera"
       ],
+      "(active)": [
+        "(attivo)"
+      ],
       "1. Give a name to the config to be generated": [
         "1. Dai un nome alla configurazione da generare"
       ],
@@ -11119,6 +11185,9 @@
       ],
       "4. Select a server to connect to": [
         "4. Seleziona un server a cui connettersi"
+      ],
+      "Accessibility": [
+        "Accessibilità"
       ],
       "Account and password": [
         "Account e password"
@@ -11175,10 +11244,10 @@
         "Aggiungi filtro Sieve"
       ],
       "Add to allow list": [
-        "Aggiungi alla lista “Non spam“"
+        "Aggiungi alla lista consentiti"
       ],
       "Add to block list": [
-        "Aggiungi alla lista “Bloccato“"
+        "Aggiungi alla lista bloccati"
       ],
       "Add to spam list": [
         "Aggiungi alla lista degli spam"
@@ -11215,6 +11284,9 @@
       ],
       "Are you sure you want to close?": [
         "Confermi di voler chiudere?"
+      ],
+      "Authentication security": [
+        "Sicurezza autenticazione"
       ],
       "Auto-reply": [
         "Risposta automatica"
@@ -11360,6 +11432,9 @@
       ],
       "Date": [
         "Data"
+      ],
+      "Day theme": [
+        "Tema giorno"
       ],
       "Decrypt key": [
         "Decripta chiave"
@@ -11627,6 +11702,9 @@
       "Next": [
         "Successiva"
       ],
+      "Night theme": [
+        "Tema notte"
+      ],
       "No recovery method": [
         "Nessun metodo di recupero"
       ],
@@ -11671,9 +11749,6 @@
       ],
       "PayPal verification failed": [
         "Verifica PayPal fallita"
-      ],
-      "Personalise your e-mail footer": [
-        "Personalizza il piè di pagina della tua email"
       ],
       "Phone": [
         "Telefono"
@@ -11774,6 +11849,9 @@
       "Select when you want this notification to be sent": [
         "Scegli quando vuoi inviare questa notifica"
       ],
+      "Send email reminders?": [
+        "Inviare promemoria email?"
+      ],
       "Session management": [
         "Gestione sessione"
       ],
@@ -11830,9 +11908,6 @@
       ],
       "Sort labels alphabetically": [
         "Ordina etichette in modo alfabetico"
-      ],
-      "Spam, block, and allow lists": [
-        "Liste \"Non spam\", \"Bloccato\", \"Spam\""
       ],
       "Start a new import": [
         "Avvia una nuova importazione"

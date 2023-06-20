@@ -2795,9 +2795,6 @@
       "Got it": [
         "Begrepen"
       ],
-      "Keep current plan": [
-        "Huidig abonnement behouden"
-      ],
       "Switch plans": [
         "Van abonnement wisselen"
       ],
@@ -2988,6 +2985,31 @@
     "Filter notification": {
       "${ Label.Name } updated": [
         "${ Label.Name } bijgewerkt"
+      ]
+    },
+    "Font face option": {
+      "System default": [
+        "Systeem standaard"
+      ],
+      "Theme default": [
+        "Thema standaard"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Groot"
+      ],
+      "Medium (recommended)": [
+        "Gemiddeld (aanbevolen)"
+      ],
+      "Small": [
+        "Klein"
+      ],
+      "Very large": [
+        "Zeer groot"
+      ],
+      "Very small": [
+        "Zeer klein"
       ]
     },
     "Group": {
@@ -3506,6 +3528,9 @@
       ],
       "Custom yearly": [
         "Aangepast jaarlijks"
+      ],
+      "Customize the look and feel of ${ BRAND_NAME } applications.": [
+        "Pas het uiterlijk van ${ BRAND_NAME } applicaties aan."
       ],
       "Daily": [
         "Dagelijks"
@@ -4379,6 +4404,9 @@
       "Street address": [
         "Adres"
       ],
+      "Synchronize with system": [
+        "Synchroniseren met systeem"
+      ],
       "System information": [
         "Systeeminformatie"
       ],
@@ -5018,6 +5046,9 @@
       ],
       "Discover all ${ BRAND_NAME } services": [
         "Ontdek alle ${ BRAND_NAME }-diensten"
+      ],
+      "More theming options are available in your account Settings > Appearance.": [
+        "Meer thema-opties zijn beschikbaar in uw account Instellingen > Uiterlijk."
       ],
       "Select a theme": [
         "Selecteer een thema"
@@ -5888,6 +5919,9 @@
         "${ emailsCount } e-mailadres",
         "${ emailsCount } e-mailadressen"
       ],
+      "(active)": [
+        "(actief)"
+      ],
       "Account suspended": [
         "Account opgeschort"
       ],
@@ -5978,6 +6012,9 @@
       ],
       "Customize your mail import": [
         "Uw e-mailimport aanpassen"
+      ],
+      "Day theme": [
+        "Dag thema"
       ],
       "Delete ${ count } contact": [
         "Verwijder ${ count } contact",
@@ -6077,6 +6114,9 @@
       ],
       "Minicalendar": [
         "Mini-agenda"
+      ],
+      "Night theme": [
+        "Nacht thema"
       ],
       "Open actions dropdown": [
         "Open dropdown-menu voor acties"
@@ -6332,6 +6372,9 @@
       ],
       "The import will start with the most recent messages.": [
         "Het importeren begint met de meest recente berichten."
+      ],
+      "The selected theme will be active when your system is set to \"light mode\"": [
+        "Het geselecteerde thema is actief wanneer uw systeem is ingesteld op \"lichte modus\""
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Upload een openbare sleutel om het sturen van end-to-end versleutelde berichten naar dit e-mailadres mogelijk te maken"

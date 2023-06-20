@@ -3799,9 +3799,6 @@
       "Got it": [
         "Begrepen"
       ],
-      "Keep current plan": [
-        "Huidig abonnement behouden"
-      ],
       "Switch plans": [
         "Van abonnement wisselen"
       ],
@@ -4097,9 +4094,34 @@
         "Standaard"
       ]
     },
+    "Font face option": {
+      "System default": [
+        "Systeem standaard"
+      ],
+      "Theme default": [
+        "Thema standaard"
+      ]
+    },
     "Font Size Default": {
       "Default": [
         "Standaard"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Groot"
+      ],
+      "Medium (recommended)": [
+        "Gemiddeld (aanbevolen)"
+      ],
+      "Small": [
+        "Klein"
+      ],
+      "Very large": [
+        "Zeer groot"
+      ],
+      "Very small": [
+        "Zeer klein"
       ]
     },
     "forwardmessage": {
@@ -4896,6 +4918,9 @@
       ],
       "Custom yearly": [
         "Aangepast jaarlijks"
+      ],
+      "Customize the look and feel of ${ BRAND_NAME } applications.": [
+        "Pas het uiterlijk van ${ BRAND_NAME } applicaties aan."
       ],
       "Daily": [
         "Dagelijks"
@@ -6572,6 +6597,9 @@
       "Street address": [
         "Adres"
       ],
+      "Synchronize with system": [
+        "Synchroniseren met systeem"
+      ],
       "System information": [
         "Systeeminformatie"
       ],
@@ -7302,6 +7330,9 @@
       ],
       "Discover all ${ BRAND_NAME } services": [
         "Ontdek alle ${ BRAND_NAME }-diensten"
+      ],
+      "More theming options are available in your account Settings > Appearance.": [
+        "Meer thema-opties zijn beschikbaar in uw account Instellingen > Uiterlijk."
       ],
       "Select a theme": [
         "Selecteer een thema"
@@ -8432,6 +8463,9 @@
         "${ unreads } ongelezen bericht",
         "${ unreads } ongelezen berichten"
       ],
+      "(active)": [
+        "(actief)"
+      ],
       "Account suspended": [
         "Account opgeschort"
       ],
@@ -8546,6 +8580,9 @@
       ],
       "Customize your mail import": [
         "Uw e-mailimport aanpassen"
+      ],
+      "Day theme": [
+        "Dag thema"
       ],
       "Decryption error": [
         "Ontsleutelingsfout"
@@ -8774,6 +8811,9 @@
       ],
       "Next message": [
         "Volgend bericht"
+      ],
+      "Night theme": [
+        "Nacht thema"
       ],
       "No attachment found": [
         "Geen bijlage gevonden"
@@ -9031,6 +9071,9 @@
       ],
       "The import will start with the most recent messages.": [
         "Het importeren begint met de meest recente berichten."
+      ],
+      "The selected theme will be active when your system is set to \"light mode\"": [
+        "Het geselecteerde thema is actief wanneer uw systeem is ingesteld op \"lichte modus\""
       ],
       "This feature is only available for paid users": [
         "Deze functionaliteit is alleen beschikbaar voor betalende gebruikers"
