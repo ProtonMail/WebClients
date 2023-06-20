@@ -1,21 +1,30 @@
 import { ChangeEvent, FormEvent, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { flushSync } from 'react-dom';
 
-
-
 import { Point, utils } from '@noble/ed25519';
 import { c } from 'ttag';
-
-
 
 import { Button, CircleLoader, Href } from '@proton/atoms';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { base64StringToUint8Array, uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 import { readableTime } from '@proton/shared/lib/helpers/time';
 
-
-
-import { Alert, ConfirmModal, Details, ErrorButton, Icon, Info, InputFieldTwo, Option, Radio, Row, SelectTwo, Summary, TextArea, Toggle } from '../../../components';
+import {
+    Alert,
+    ConfirmModal,
+    Details,
+    ErrorButton,
+    Icon,
+    Info,
+    InputFieldTwo,
+    Option,
+    Radio,
+    Row,
+    SelectTwo,
+    Summary,
+    TextArea,
+    Toggle,
+} from '../../../components';
 import { useModalTwo } from '../../../components/modalTwo/useModalTwo';
 import { getObjectKeys } from '../../../helpers';
 import { getCountryByAbbr } from '../../../helpers/countries';
@@ -31,10 +40,21 @@ import { KeyPair } from './KeyPair';
 import WireGuardCreationModal, { WireGuardCreationModalProps } from './WireGuardCreationModal';
 import { deleteCertificates, generateCertificate, getKey, queryVPNClientConfig } from './api';
 import { CURVE } from './curve';
-import { FeatureFlagsConfig, FeatureOption, FeatureSelection, FeaturesConfig, FeaturesValues, clientConfigKeys, formatFeatureShortName, formatFeatureValue, getKeyOfCheck, initialFeaturesConfig, isFeatureSelection } from './feature';
+import {
+    FeatureFlagsConfig,
+    FeatureOption,
+    FeatureSelection,
+    FeaturesConfig,
+    FeaturesValues,
+    clientConfigKeys,
+    formatFeatureShortName,
+    formatFeatureValue,
+    getKeyOfCheck,
+    initialFeaturesConfig,
+    isFeatureSelection,
+} from './feature';
 import { normalize } from './normalize';
 import useCertificates from './useCertificates';
-
 
 enum PLATFORM {
     MACOS = 'macOS',
@@ -483,14 +503,17 @@ const WireGuardConfigurationSection = () => {
                 await addPromise;
             }
         },
-        [peer, getFeatureValues, platform]
+        [peer, getFeatureValues, platform, creating]
     );
 
     if (!logicalInfoLoading && logicals.length && typeof logical === 'undefined') {
         void selectLogical(bestLogical, true);
     }
 
-    const createWithLogical = (logical: Logical, silent = false) => selectLogical(logical, silent, true);
+    const createWithLogical = useCallback(
+        (logical: Logical, silent = false) => selectLogical(logical, silent, true),
+        [selectLogical]
+    );
 
     const revokeCertificate = (name: string) => {
         createNotification({
@@ -767,9 +790,9 @@ const WireGuardConfigurationSection = () => {
                                 },
                             ].map(({ value, label }) => {
                                 return (
-                                    <div key={value} className="mr-8 mb-4">
+                                    <div key={'wg-' + value} className="mr-8 mb-4">
                                         <Radio
-                                            id={'platform-' + value}
+                                            id={'wg-platform-' + value}
                                             onChange={() => setPlatform(value)}
                                             checked={platform === value}
                                             name="platform"
@@ -783,8 +806,8 @@ const WireGuardConfigurationSection = () => {
                         </div>
                         <h3 className="mt-8 mb-2">{c('Title').t`3. Select VPN options`}</h3>
                         {getFeatureKeys().map((key) => (
-                            <div className="mb-4" key={'feature-' + key}>
-                                <label className="field-two-container w100" htmlFor={'feature-' + key}>
+                            <div className="mb-4" key={'wg-feature-' + key}>
+                                <label className="field-two-container w100" htmlFor={'wg-feature-' + key}>
                                     {isFeatureSelection(featuresConfig[key]) ? (
                                         <>
                                             <div className="flex field-two-label-container flex-justify-space-between flex-nowrap flex-align-items-end">
@@ -794,14 +817,14 @@ const WireGuardConfigurationSection = () => {
                                                 </span>
                                             </div>
                                             <SelectTwo
-                                                id={'feature-' + key}
-                                                key={'feature-' + key}
+                                                id={'wg-feature-' + key}
+                                                key={'wg-feature-' + key}
                                                 value={featuresConfig[key].value}
                                                 onValue={(value) => setFeature(key, value)}
                                             >
                                                 {(featuresConfig[key] as FeatureSelection).values.map((option) => (
                                                     <Option
-                                                        key={'feature-' + key + '-' + option.value}
+                                                        key={'wg-feature-' + key + '-' + option.value}
                                                         title={option.name}
                                                         value={option.value}
                                                     />
