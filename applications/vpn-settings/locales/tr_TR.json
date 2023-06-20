@@ -1658,11 +1658,11 @@
       ]
     },
     "familyOffer_2023:Action": {
+      "Decline invitation": [
+        "Daveti reddet"
+      ],
       "Got it": [
         "Anladım"
-      ],
-      "Keep current plan": [
-        "Geçerli tarifede kal"
       ],
       "Switch plans": [
         "Tarifeleri değiştir"
@@ -1966,6 +1966,31 @@
       "Megabyte": [
         "Megabayt",
         "Megabayt"
+      ]
+    },
+    "Font face option": {
+      "System default": [
+        "Sistem varsayılanı"
+      ],
+      "Theme default": [
+        "Tema varsayılanı"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Büyük"
+      ],
+      "Medium (recommended)": [
+        "Orta (önerilen)"
+      ],
+      "Small": [
+        "Küçük"
+      ],
+      "Very large": [
+        "Çok büyük"
+      ],
+      "Very small": [
+        "Çok küçük"
       ]
     },
     "Frequency of news": {
@@ -3013,6 +3038,9 @@
       "Card holder": [
         "Kart sahibi"
       ],
+      "Card information": [
+        "Kart bilgileri"
+      ],
       "Card number": [
         "Kart numarası"
       ],
@@ -3099,6 +3127,9 @@
       ],
       "Enter the code displayed on your TV": [
         "Televizyonunuzda görüntülenen kodu yazın"
+      ],
+      "Expiration (${ patternExpiration })": [
+        "Geçerlilik süresi (${ patternExpiration })"
       ],
       "Expiration date": [
         "Son kullanma tarihi"
@@ -3219,6 +3250,9 @@
       ],
       "Security code": [
         "Güvenlik kodu"
+      ],
+      "Security code (${ codeName })": [
+        "Güvenlik kodu (${ codeName })"
       ],
       "Select your country": [
         "Ülkenizi seçin"
@@ -4087,7 +4121,7 @@
         "Dosyalarınızı şifrelenmiş bulut depolama alanı ile koruyun. Otomatik eşitleme, şifrelenmiş dosya paylaşımı ve diğer özellikler."
       ],
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
-        "Kişilerinizin, telefon numarası, adres, doğum günü ve kişisel notlar gibi bilgilerini güvenli bir şekilde saklayın. Sıfır erişimli şifreleme, bu bilgilere ${ BRAND_NAME } tarafından bile erişilememesini sağlar."
+        "Kişilerinizin, telefon numarası, adres, doğum günü ve kişisel notlar gibi bilgilerini güvenli bir şekilde saklayın. Sıfır erişim şifrelemesi, bu bilgilere ${ BRAND_NAME } tarafından bile erişilememesini sağlar."
       ],
       "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
         "Gerek duyduğunuz kadar kişi grubu oluşturarak büyük gruplara hızlı ve kolay bir şekilde e-posta gönderin (her grupta 100 kişiye kadar)"
