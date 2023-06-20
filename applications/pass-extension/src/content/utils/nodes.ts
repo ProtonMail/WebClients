@@ -1,5 +1,11 @@
-import { fieldOfInterestSelector, formOfInterestSelector, isUserEditableField } from '@proton/pass/fathom';
-import type { FormField, FormType } from '@proton/pass/types';
+import {
+    fieldOfInterestSelector,
+    formOfInterestSelector,
+    isUserEditableField,
+    setFormType,
+    setInputType,
+} from '@proton/pass/fathom';
+import { FormField, FormType } from '@proton/pass/types';
 
 import { PROCESSED_FIELD_ATTR, PROCESSED_FORM_ATTR } from '../constants';
 
@@ -32,11 +38,15 @@ export const selectDanglingFields = () => {
     return Array.from(candidates).filter((el) => el.matches(selector));
 };
 
-export const setFormProcessed = (el: HTMLElement, formType: FormType): void =>
+export const setFormProcessed = (el: HTMLElement, formType: FormType): void => {
     el.setAttribute(PROCESSED_FORM_ATTR, formType);
+    if (formType !== FormType.NOOP) setFormType(el, formType);
+};
 
-export const setFieldProcessed = (el: HTMLElement, fieldType: FormField): void =>
+export const setFieldProcessed = (el: HTMLInputElement, fieldType: FormField): void => {
     el.setAttribute(PROCESSED_FIELD_ATTR, fieldType);
+    if (fieldType !== FormField.NOOP) setInputType(el, fieldType);
+};
 
 export const setFormProcessable = (el: HTMLElement): void => el.removeAttribute(PROCESSED_FORM_ATTR);
 export const setFieldProcessable = (el: HTMLElement): void => el.removeAttribute(PROCESSED_FIELD_ATTR);
