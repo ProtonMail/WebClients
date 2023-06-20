@@ -1,6 +1,7 @@
 import type { FormType } from '@proton/pass/types';
 import { FormField } from '@proton/pass/types';
 import { getMaxZIndex } from '@proton/pass/utils/dom';
+import { createListenerStore } from '@proton/pass/utils/listener';
 import { logger } from '@proton/pass/utils/logger';
 import { uniqueId } from '@proton/pass/utils/string';
 
@@ -13,6 +14,7 @@ export type FormHandlesProps = { zIndex: number };
 
 export const createFormHandles = (options: DetectedForm): FormHandle => {
     const { form, formType, fields: detectedFields } = options;
+    const listeners = createListenerStore();
     const zIndex = getMaxZIndex(form) + 1;
 
     const formHandle: FormHandle = {
@@ -85,11 +87,23 @@ export const createFormHandles = (options: DetectedForm): FormHandle => {
 
         detach() {
             logger.debug(`[FormHandles]: Detaching tracker for form [${formType}:${formHandle.id}]`);
+            listeners.removeAll();
             setFormProcessable(form);
             Array.from(form.querySelectorAll('input')).forEach(setFieldProcessable);
             formHandle.tracker?.detach();
+            formHandle.getFields().forEach((field) => field.detach());
         },
     };
+
+    /* when tooltips / error messages appear : it may be
+     * insufficient to listen to the input field's resize
+     * to detect the icon needs repositioning */
+    const onFormResize = () => {
+        const fields = formHandle.getFields();
+        fields.forEach((field) => field.icon?.reposition());
+    };
+
+    listeners.addResizeObserver(options.form, onFormResize);
 
     return formHandle;
 };
