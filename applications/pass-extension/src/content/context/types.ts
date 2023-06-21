@@ -24,4 +24,5 @@ export interface ContentScriptContext {
     getSettings: () => ProxiedSettings;
     setSettings: (update: Partial<ProxiedSettings>) => void;
     getExtensionContext: () => ExtensionContextType;
+    destroy: (options: { reason: string; recycle?: boolean }) => void;
 }
