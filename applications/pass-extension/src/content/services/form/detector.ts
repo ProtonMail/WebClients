@@ -3,6 +3,7 @@ import {
     clearVisibilityCache,
     fieldOfInterestSelector,
     isFormOfInterest,
+    isVisibleField,
     rulesetMaker,
 } from '@proton/pass/fathom';
 import { FormField, FormType } from '@proton/pass/types';
@@ -196,10 +197,20 @@ const createDetectionRunner =
          * each detected form should be flagged via the `data-protonpass-form` attribute so as to
          * avoid triggering unnecessary detections if nothing of interest has changed in the DOM.
          * · `formPredictions` will include only visible forms : flag them with prediction class
-         * · all form fields should be flagged as processed with the `data-protonpass-field` attr
+         * · all form fields which have been detected should be flagged as processed with the
+         *   `data-protonpass-field` attr. The remaining fields without classification results
+         *   should only be flagged as processed if they are visible or `[type="hidden"]`. This
+         *   heuristic flagging allows detection triggers to monitor new fields correctly.
          * · query all unprocessed forms (including invisible ones) and flag them as `NOOP` */
         formPredictions.forEach(({ fnode: { element }, type }) => setFormProcessed(element, type));
-        forms.forEach(({ fields }) => fields.forEach(({ field, fieldType }) => setFieldProcessed(field, fieldType)));
+        forms.forEach(({ fields }) =>
+            fields.forEach(({ field, fieldType }) => {
+                if (fieldType !== FormField.NOOP || field.type === 'hidden' || isVisibleField(field)) {
+                    setFieldProcessed(field, fieldType);
+                }
+            })
+        );
+
         selectUnprocessedForms().forEach((form) => setFormProcessed(form, FormType.NOOP));
         clearVisibilityCache(); /* clear visibility cache on each detection run */
 
