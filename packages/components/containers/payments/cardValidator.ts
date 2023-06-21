@@ -55,8 +55,13 @@ const check = (card: CardModel, key: KeyOfCardModel): string | undefined => {
     }
 };
 
-export const getErrors = (card: CardModel): Partial<CardModel> => {
-    return ['fullname', 'number', 'month', 'year', 'cvc', 'zip', 'country'].reduce((acc, key) => {
+export const getErrors = (card: CardModel, ignoreName = false): Partial<CardModel> => {
+    const fields = ['number', 'month', 'year', 'cvc', 'zip', 'country'];
+    if (!ignoreName) {
+        fields.unshift('fullname');
+    }
+
+    return fields.reduce((acc, key) => {
         const error = check(card, key as KeyOfCardModel);
         if (error) {
             acc[key] = error;
