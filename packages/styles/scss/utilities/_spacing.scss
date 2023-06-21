@@ -1,58 +1,125 @@
 // when updating margin sizes, please update them in Storybook accordingly
 // applications/storybook/src/stories/cssUtilities/Margin.stories.tsx
-@include spacing-generator(
-	// coordinates
-	(m, mt, mr, mb, ml, mx, my),
-	// margin sizes
-	(0, 0.1, 0.15, 0.2, 0.25, 0.3, 0.4, 0.5, 0.6, 0.75, 0.85, 1, 1.25, 1.5, 1.75, 2, 2.5, 3, 4)
+
+@function pixel-to-rem($value) {
+	@return if(type-of($value) == 'number' and unitless($value), rem($value), $value);
+}
+
+$spacings: (
+	'0': 0,
+	'0\\\.5': 2,
+	'1': 4,
+	'2': 8,
+	'3': 12,
+	'4': 16,
+	'5': 20,
+	'6': 24,
+	'7': 28,
+	'8': 32,
+	'10': 40,
+	'11': 44,
+	'12': 48,
+	'14': 56,
+	'auto': 'auto',
+);
+$queries: (
+	default: 'all',
+	sm: '>xsmall',
+	md: '>small',
+	lg: '>medium',
+	xl: '>large',
 );
 
-// when updating padding sizes, please update them in Storybook accordingly
-// applications/storybook/src/stories/cssUtilities/Padding.stories.tsx
-@include spacing-generator(
-	// coordinates
-	(p, pt, pr, pb, pl, px, py),
-	// padding sizes
-	(0, 0.15, 0.25, 0.3, 0.5, 0.75, 1, 1.25, 1.5, 1.75, 2, 2.25, 3, 4, 5)
-);
-
-.mtauto {
-	margin-block-start: auto;
-}
-
-.mrauto {
-	margin-inline-end: auto;
-}
-
-.mbauto {
-	margin-block-end: auto;
-}
-
-.mlauto {
-	margin-inline-start: auto;
-}
-
-.pl-custom {
-	&#{&} {
-		padding-inline-start: var(--padding-left-custom);
+// generate css custom props
+:root {
+	@each $spacingname, $size in $spacings {
+		--space-#{$spacingname}: #{pixel-to-rem($size)};
 	}
 }
 
-.pb-custom {
-	&#{&} {
-		padding-block-end: var(--padding-bottom-custom);
+// generate `margin` and `padding` classes
+$properties: (
+	m: 'margin',
+	p: 'padding',
+);
+$placements: (
+	default: '',
+	y: 'block',
+	t: 'block-start',
+	b: 'block-end',
+	x: 'inline',
+	l: 'inline-start',
+	r: 'inline-end',
+);
+
+@each $breakpointname, $query in $queries {
+	@include media($query) {
+		@each $propertyname, $property in $properties {
+			@each $placementname, $placement in $placements {
+				$cssproperty: if($placementname == 'default', $property, dash-join($property, $placement));
+
+				@each $spacingname, $size in $spacings {
+					@if not($property == 'padding' and $spacingname == 'auto') {
+						$classname: #{if($breakpointname == 'default', '', $breakpointname + '\\\:')}#{$propertyname}#{if(
+								$placementname == 'default',
+								'',
+								$placementname
+							)}-#{$spacingname};
+
+						.#{$classname} {
+							#{$cssproperty}: #{pixel-to-rem($size)};
+						}
+					}
+				}
+
+				$classname: #{if($breakpointname == 'default', '', $breakpointname + '\\\:')}#{$propertyname}#{if(
+						$placementname == 'default',
+						'',
+						$placementname
+					)}-custom;
+				$value: #{if($breakpointname == 'default', '', $breakpointname + '-')}#{$propertyname}#{if(
+						$placementname == 'default',
+						'',
+						$placementname
+					)}-custom;
+
+				.#{$classname} {
+					#{$cssproperty}: var(--#{$value});
+				}
+			}
+		}
 	}
 }
 
-.mauto {
-	margin: auto;
-}
+// generate `gap` classes
+$properties: (
+	gap: 'gap',
+);
+$placements: (
+	default: '',
+	x: 'column',
+	y: 'row',
+);
 
-.center, // deprecated
-.mxauto {
-	margin-inline: auto;
-}
+@each $breakpointname, $query in $queries {
+	@include media($query) {
+		@each $propertyname, $property in $properties {
+			@each $placementname, $placement in $placements {
+				@each $spacingname, $size in $spacings {
+					@if not($spacingname == 'auto') {
+						$classname: #{if($breakpointname == 'default', '', $breakpointname + '\\\:')}#{$propertyname}#{if(
+								$placementname == 'default',
+								'',
+								'-' + $placementname
+							)}-#{$spacingname};
+						$cssproperty: if($placementname == 'default', $property, dash-join($placement, $property));
 
-.myauto {
-	margin-block: auto;
+						.#{$classname} {
+							#{$cssproperty}: #{pixel-to-rem($size)};
+						}
+					}
+				}
+			}
+		}
+	}
 }
