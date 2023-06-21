@@ -29,7 +29,9 @@ const EditCardModal = ({ card: existingCard, renewState, paymentMethodId, ...res
     const { createNotification } = useNotifications();
     const createPaymentToken = usePaymentToken();
     const title = existingCard ? c('Title').t`Edit credit/debit card` : c('Title').t`Add credit/debit card`;
-    const { card, setCard, errors, isValid } = useCard(existingCard);
+    const { card, setCard, errors, isValid } = useCard({
+        initialCard: existingCard,
+    });
     const [submitted, setSubmitted] = useState(false);
     const {
         onChange: renewOnChange,
