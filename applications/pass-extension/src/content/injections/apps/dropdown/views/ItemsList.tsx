@@ -28,7 +28,10 @@ export const ItemsList: VFC<Props> = ({ items, needsUpgrade, onSubmit, canLoadFa
                         key={'upgrade-autofill'}
                         icon="arrow-out-square"
                         title={c('Info').t`Upgrade ${PASS_APP_NAME}`}
-                        subTitle={c('Warning').t`Your plan only allows you to autofill from your primary vault`}
+                        subTitle={
+                            <span className="text-sm block">{c('Warning')
+                                .t`Your plan only allows you to autofill from your primary vault`}</span>
+                        }
                         onClick={navigateToUpgrade}
                         autogrow
                     />

@@ -10,6 +10,7 @@ import { type MaybeNull, type RequiredNonNull, WorkerMessageType } from '@proton
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
+import noop from '@proton/utils/noop';
 
 import { navigateToUpgrade } from '../../../../..//shared/components/upgrade/UpgradeButton';
 import { AliasPreview } from '../../../../../shared/components/alias/Alias.preview';
@@ -44,6 +45,7 @@ export const AliasAutoSuggest: VFC<Props> = ({ prefix, domain, onOptions, onSubm
         try {
             setLoadingText(getInitialLoadingText());
             setError(false);
+            await wait(500);
 
             await sendMessage.on(pageMessage({ type: WorkerMessageType.ALIAS_OPTIONS }), (response) => {
                 if (response.type === 'success' && response.options !== null) {
@@ -121,36 +123,38 @@ export const AliasAutoSuggest: VFC<Props> = ({ prefix, domain, onOptions, onSubm
     );
 
     useEffect(() => {
-        void wait(500).then(requestAliasOptions);
+        wait(500)
+            .then(() => Promise.all([requestAliasOptions(), requestUserEmail()]))
+            .catch(noop);
     }, []);
 
     useEffect(() => {
         if (error) setLoadingText(null);
     }, [error]);
 
-    useEffect(() => {
-        requestUserEmail();
-    }, []);
-
     const validAliasOptions = isValidAliasOptions(aliasOptions);
 
     return (
         <>
-            {userEmail && (
-                <DropdownItem
-                    title={c('Title').t`Use my email`}
-                    subTitle={userEmail}
-                    icon="envelope"
-                    onClick={() => onSubmitUserEmail(userEmail)}
-                />
-            )}
+            <DropdownItem
+                title={c('Title').t`Use my email`}
+                subTitle={
+                    userEmail ?? (
+                        <span className="text-sm block">
+                            <CircleLoader className="mr-2" />
+                        </span>
+                    )
+                }
+                icon="envelope"
+                onClick={userEmail ? () => onSubmitUserEmail(userEmail) : noop}
+            />
             <DropdownItem
                 title={needsUpgrade ? c('Info').t`Upgrade ${PASS_APP_NAME}` : c('Title').t`Hide my email`}
                 autogrow={needsUpgrade}
                 subTitle={(() => {
                     if (loadingText) {
                         return (
-                            <span>
+                            <span className="text-sm block">
                                 <CircleLoader className="mr-2" />
                                 {loadingText}
                             </span>
@@ -158,12 +162,15 @@ export const AliasAutoSuggest: VFC<Props> = ({ prefix, domain, onOptions, onSubm
                     }
 
                     if (needsUpgrade) {
-                        return <span>{c('Warning').t`Your plan does not allow you to create more aliases`}</span>;
+                        return (
+                            <span className="text-sm block">{c('Warning')
+                                .t`Your plan does not allow you to create more aliases`}</span>
+                        );
                     }
 
                     if (error) {
                         return (
-                            <span className="color-danger">
+                            <span className="color-danger text-sm block">
                                 {c('Error').t`Cannot create alias.`}{' '}
                                 <span className="text-semibold text-underline">{c('Action').t`Try again`}</span>
                             </span>
