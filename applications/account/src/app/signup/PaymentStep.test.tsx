@@ -77,11 +77,6 @@ beforeEach(() => {
                 [CYCLE.YEARLY]: 1099 * 12,
                 [CYCLE.TWO_YEARS]: 1099 * 24,
             },
-            DefaultPricing: {
-                [CYCLE.MONTHLY]: 1099,
-                [CYCLE.YEARLY]: 1099 * 12,
-                [CYCLE.TWO_YEARS]: 1099 * 24,
-            },
             State: 1,
             Offers: [],
         },
