@@ -42,7 +42,6 @@ export interface Plan {
     Features: number;
     Quantity: Quantity;
     Pricing: Pricing;
-    DefaultPricing: Pricing;
     State: number;
     Offers: Offer[];
 }
