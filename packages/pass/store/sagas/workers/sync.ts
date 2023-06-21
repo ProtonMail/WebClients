@@ -43,7 +43,7 @@ export function* synchronize(
 ): Generator<unknown, SynchronizationResult> {
     const cachedShares = selectAllShares(state);
     const remote = ((yield requestShares()) as ShareGetResponse[]).sort(sortOn('CreateTime', 'ASC'));
-    const primaryShareId = remote.find(({ Primary }) => Primary === true)?.ShareID;
+    let primaryShareId = remote.find(({ Primary }) => Primary === true)?.ShareID;
 
     /* `cachedShareIds`: all shares currently in local cache
      * `inactiveCachedShareIds` : cached shares which can no longer be opened
@@ -99,12 +99,13 @@ export function* synchronize(
      * we need to (re-)create the primary vault share */
     if (!hasActivePrimaryVault) {
         logger.info(`[Saga::Sync] No primary vault found, creating primary vault..`);
-        incomingShares.push(
-            (yield createVault({
-                content: { name: 'Personal', description: 'Personal vault', display: {} },
-                primary: true,
-            })) as Share<ShareType.Vault>
-        );
+        const primaryVault = (yield createVault({
+            content: { name: 'Personal', description: 'Personal vault', display: {} },
+            primary: true,
+        })) as Share<ShareType.Vault>;
+
+        primaryShareId = primaryVault.shareId;
+        incomingShares.push(primaryVault);
     }
 
     logger.info(`[Saga::Sync] Discovered ${cachedShareIds.length} share(s) in cache`);
