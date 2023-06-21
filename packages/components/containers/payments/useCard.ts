@@ -24,10 +24,10 @@ const getInitialFieldStatus = (): CardFieldStatus => ({
     country: true,
 });
 
-const useCard = (initialCard: CardModel = getDefaultCard()) => {
+const useCard = ({ initialCard = getDefaultCard(), ignoreName = false } = {}) => {
     const [card, update] = useState<CardModel>(initialCard);
     const setCard = (key: keyof CardModel, value: string) => update((card) => ({ ...card, [key]: value }));
-    const errors = getErrors(card);
+    const errors = getErrors(card, ignoreName);
     const isValid = !Object.keys(errors).length;
 
     const fields = Object.keys(errors) as (keyof CardModel)[];
