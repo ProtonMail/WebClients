@@ -57,7 +57,7 @@ const CustomExpirationModal = ({ onSubmit, ...rest }: Props) => {
         onSubmit(date);
     };
 
-    const handleDate = (newDate?: Date) => {
+    const handleDate = (newDate?: Date, keepExistingTime?: boolean) => {
         if (!newDate) {
             return;
         }
@@ -66,6 +66,13 @@ const CustomExpirationModal = ({ onSubmit, ...rest }: Props) => {
 
         if (isBefore(newDate, now)) {
             return;
+        }
+
+        if (keepExistingTime) {
+            const hours = date.getHours();
+            const minutes = date.getMinutes();
+            const seconds = date.getSeconds();
+            newDate.setHours(hours, minutes, seconds);
         }
 
         setDate(newDate);
@@ -88,7 +95,7 @@ const CustomExpirationModal = ({ onSubmit, ...rest }: Props) => {
                         as={DateInput}
                         id="expiration-date"
                         label={c('Label attach to date input to select a date').t`Date`}
-                        onChange={(newDate?: Date) => newDate && handleDate(endOfDay(newDate))}
+                        onChange={(newDate?: Date) => newDate && handleDate(newDate, true)}
                         value={date}
                         min={minDate}
                         weekStartsOn={getWeekStartsOn({ WeekStart: userSettings.WeekStart })}
