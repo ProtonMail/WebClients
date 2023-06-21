@@ -10,13 +10,17 @@ import { createIFrameService } from '../services/iframes/service';
 import { CSContext } from './context';
 import type { CSContextState, ContentScriptContext } from './types';
 
-export const createContentScriptContext = (scriptId: string, mainFrame: boolean): ContentScriptContext => {
+export const createContentScriptContext = (options: {
+    scriptId: string;
+    mainFrame: boolean;
+    destroy: (options: { reason: string; recycle?: boolean }) => void;
+}): ContentScriptContext => {
     const state: CSContextState = { active: true, loggedIn: false, status: WorkerStatus.IDLE, UID: undefined };
     const settings: ProxiedSettings = INITIAL_SETTINGS;
 
     const context: ContentScriptContext = CSContext.set({
-        mainFrame,
-        scriptId,
+        mainFrame: options.mainFrame,
+        scriptId: options.scriptId,
         service: {
             formManager: createFormManager({
                 /* attach or detach dropdown based on the
@@ -37,6 +41,7 @@ export const createContentScriptContext = (scriptId: string, mainFrame: boolean)
         setState: (update) => Object.assign(state, update),
         getSettings: () => settings,
         setSettings: (update) => Object.assign(settings, update),
+        destroy: options.destroy,
     });
 
     return context;

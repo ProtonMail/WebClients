@@ -16,6 +16,7 @@ import { WorkerMessageType, type WorkerMessageWithSender, type WorkerState } fro
 import { createListenerStore } from '@proton/pass/utils/listener';
 import { logger } from '@proton/pass/utils/logger';
 import { setUID as setSentryUID } from '@proton/shared/lib/helpers/sentry';
+import noop from '@proton/utils/noop';
 
 import { ExtensionContext, type ExtensionContextType, setupExtensionContext } from '../../shared/extension';
 import { CSContext } from '../context/context';
@@ -25,52 +26,59 @@ import { DOMCleanUp } from '../injections/cleanup';
 import '../injections/styles/injection.scss';
 
 export const createContentScriptClient = (scriptId: string, mainFrame: boolean) => {
-    const context = createContentScriptContext(scriptId, mainFrame);
     const listeners = createListenerStore();
 
-    /* Only destroy the injection DOM if we're not going to
-     * recycle this content-script service.  */
-    const destroy = (options: { reason: string; recycle?: boolean }) => {
-        if (context.getState().active) {
-            logger.debug(`[ContentScript::${scriptId}] destroying.. [reason: "${options.reason}"]`, options.recycle);
+    const context = createContentScriptContext({
+        scriptId,
+        mainFrame,
+        destroy: (options) => {
+            if (context.getState().active) {
+                logger.info(`[ContentScript::${scriptId}] destroying.. [reason: "${options.reason}"]`, options.recycle);
 
-            listeners.removeAll();
-            context.setState({ active: options.recycle ?? false });
-            context.service.formManager.destroy();
+                listeners.removeAll();
+                context.setState({ active: options.recycle ?? false });
+                context.service.formManager.destroy();
 
-            if (!options.recycle) {
-                context.service.iframe.destroy();
-                CSContext.clear();
-                DOMCleanUp();
+                /* Only destroy the injection DOM if we're not going to
+                 * recycle this content-script service.  */
+                if (!options.recycle) {
+                    context.service.iframe.destroy();
+                    CSContext.clear();
+                    DOMCleanUp();
+                }
+
+                ExtensionContext.read()?.destroy();
             }
+        },
+    });
 
-            ExtensionContext.read()?.destroy();
+    const onWorkerStateChange = (workerState: WorkerState) => {
+        if (context.getState().active) {
+            const { loggedIn, UID } = workerState;
+            setSentryUID(UID);
+
+            context.setState(workerState);
+            context.service.iframe.reset();
+            context.service.formManager.sync();
+
+            if (!loggedIn) context.service.autofill.setLoginItemsCount(0);
         }
     };
 
-    const onWorkerStateChange = (workerState: WorkerState) => {
-        const { loggedIn, UID } = workerState;
-        setSentryUID(UID);
-
-        context.setState(workerState);
-        context.service.iframe.reset();
-        context.service.formManager.sync();
-
-        if (!loggedIn) context.service.autofill.setLoginItemsCount(0);
-    };
-
     const onSettingsChange = (settings: ProxiedSettings) => {
-        context.setSettings(settings);
-        context.service.iframe.reset();
-        context.service.formManager.sync();
-        void context.service.autofill.queryItems();
+        if (context.getState().active) {
+            context.setSettings(settings);
+            context.service.iframe.reset();
+            context.service.formManager.sync();
+            context.service.autofill.queryItems().catch(noop);
+        }
     };
 
     const onPortMessage = async (message: WorkerMessageWithSender): Promise<void> => {
         if (message.sender === 'background') {
             switch (message.type) {
                 case WorkerMessageType.UNLOAD_CONTENT_SCRIPT:
-                    return destroy({ recycle: false, reason: 'unload script' });
+                    return context.destroy({ recycle: false, reason: 'unload script' });
                 case WorkerMessageType.WORKER_STATUS:
                     return onWorkerStateChange(message.payload.state);
                 case WorkerMessageType.SETTINGS_UPDATE:
@@ -98,7 +106,7 @@ export const createContentScriptClient = (scriptId: string, mainFrame: boolean) 
 
             /* if we're in an iframe and the initial detection should not
              * be triggered : destroy this content-script service */
-            if (!mainFrame) return destroy({ reason: 'subframe discarded', recycle: false });
+            if (!mainFrame) return context.destroy({ reason: 'subframe discarded', recycle: false });
 
             port.onMessage.addListener(onPortMessage);
 
@@ -112,7 +120,7 @@ export const createContentScriptClient = (scriptId: string, mainFrame: boolean) 
         try {
             const extensionContext = await setupExtensionContext({
                 endpoint: 'contentscript',
-                onDisconnect: () => destroy({ recycle: true, reason: 'port disconnected' }),
+                onDisconnect: () => context.destroy({ recycle: true, reason: 'port disconnected' }),
                 onContextChange: (nextCtx) => context.getState().active && handleStart(nextCtx),
             });
 
@@ -120,11 +128,11 @@ export const createContentScriptClient = (scriptId: string, mainFrame: boolean) 
             return await handleStart(extensionContext);
         } catch (e) {
             logger.debug(`[ContentScript::${scriptId}] Setup error`, e);
-            destroy({ recycle: false, reason: 'setup error' });
+            context.destroy({ recycle: false, reason: 'setup error' });
         }
     };
 
-    return { start, destroy };
+    return { start, destroy: context.destroy };
 };
 
 export type ContentScriptClientService = ReturnType<typeof createContentScriptClient>;
