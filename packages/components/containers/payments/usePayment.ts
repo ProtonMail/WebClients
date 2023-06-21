@@ -23,6 +23,7 @@ interface Props {
     defaultMethod?: PAYMENT_METHOD_TYPES | undefined;
     paypalPrefetchToken?: boolean;
     onBeforeTokenFetchPaypal?: () => Promise<unknown> | unknown;
+    ignoreName?: boolean;
 }
 
 const usePayment = ({
@@ -33,8 +34,9 @@ const usePayment = ({
     defaultMethod,
     paypalPrefetchToken = true,
     onBeforeTokenFetchPaypal,
+    ignoreName = false,
 }: Props) => {
-    const { card, setCard, errors: cardErrors, fieldsStatus: cardFieldStatus, isValid } = useCard();
+    const { card, setCard, errors: cardErrors, fieldsStatus: cardFieldStatus, isValid } = useCard({ ignoreName });
     const [method, setMethod] = useState<PaymentMethodType | undefined>(defaultMethod);
     const [cardSubmitted, setCardSubmitted] = useState(false);
     const isPayPalActive = method === PAYPAL;
