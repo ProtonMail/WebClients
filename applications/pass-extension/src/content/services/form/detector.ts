@@ -175,9 +175,9 @@ const createDetectionRunner = (ruleset: ReturnType<typeof rulesetMaker>, doc: Do
     /* Form / fields flagging :
      * each detected form should be flagged via the `data-protonpass-form` attribute so as to
      * avoid triggering unnecessary detections if nothing of interest has changed in the DOM.
-     * - `formPredictions` will include only visible forms : flag them with prediction class
-     * - all form fields should be flagged as processed with the `data-protonpass-field` attr
-     * - query all unprocessed forms (including invisible ones) and flag them as `NOOP` */
+     * · `formPredictions` will include only visible forms : flag them with prediction class
+     * · all form fields should be flagged as processed with the `data-protonpass-field` attr
+     * · query all unprocessed forms (including invisible ones) and flag them as `NOOP` */
     formPredictions.forEach(({ fnode: { element }, type }) => setFormProcessed(element, type));
     forms.forEach(({ fields }) => fields.forEach(({ field, fieldType }) => setFieldProcessed(field, fieldType)));
     selectUnprocessedForms().forEach((form) => setFormProcessed(form, FormType.NOOP));

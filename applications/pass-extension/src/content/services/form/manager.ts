@@ -7,11 +7,10 @@ import { logger } from '@proton/pass/utils/logger';
 import debounce from '@proton/utils/debounce';
 
 import { isSubmissionCommitted } from '../../../shared/form';
-import { PROCESSED_FIELD_ATTR } from '../../constants';
 import { withContext } from '../../context/context';
 import type { FormHandle } from '../../types';
 import { NotificationAction } from '../../types';
-import { hasUnprocessedForms } from '../../utils/nodes';
+import { hasUnprocessedFields, hasUnprocessedForms, isNodeOfInterest } from '../../utils/nodes';
 import { createFormHandles } from '../handles/form';
 
 type FormManagerOptions = { onDetection: (forms: FormHandle[]) => void };
@@ -122,10 +121,10 @@ export const createFormManager = (options: FormManagerOptions) => {
         withContext<(reason: string) => Promise<boolean>>(async ({ service: { detector } }, reason: string) => {
             if (ctx.busy || !ctx.active) return false;
             ctx.busy = true;
+            cancelIdleCallback(ctx.detectionRequest);
             garbagecollect();
 
             if (await detector.shouldRunDetection()) {
-                cancelIdleCallback(ctx.detectionRequest);
                 ctx.detectionRequest = requestIdleCallback(() => {
                     if (ctx.active) {
                         logger.info(`[FormTracker::Detector]: Running detection for "${reason}"`);
@@ -153,45 +152,77 @@ export const createFormManager = (options: FormManagerOptions) => {
         { leading: true }
     );
 
-    /* As we're listening for mutations on the whole DOM tree : only process
-     * the mutations of interests : new or deleted input fields or mutation
-     * changes in target elements containing input fields. This heuristic should
-     * be fine-tuned to avoid missing-out on mutations of interest  */
+    /**
+     * Form Detection Trigger via DOM Mutation :
+     *
+     * This mutation observer handler is set up to track changes on the DOM,
+     * specifically looking for mutations related to form or field elements.
+     * It employs a combination of heuristics to determine whether the observed
+     * mutations contain changes that warrant running the detection algorithm.
+     *
+     * The observer is configured to listen for mutations in the subtree of
+     * the document body, including changes to the 'style' and 'aria-hidden'
+     * attributes (this handles the case for certain modals being pre-rendered
+     * in the DOM not being currently tracked)
+     * The callback analyzes the mutations and checks for the following :
+     * · New input fields, forms, or elements with unprocessed fields
+     * · Deleted input fields or forms being removed from the DOM
+     * · Attribute changes in elements with unprocessed fields
+     *
+     * If any of the mutations indicate relevant changes, the detection algorithm
+     * is triggered. Note: The heuristic checks may need further fine-tuning to
+     * ensure all relevant mutations are captured.*/
     const onMutation = (mutations: MutationRecord[]) => {
         const triggerFormChange = mutations.some((mutation) => {
-            const newNodes = Array.from(mutation.addedNodes);
-            const deletedNodes = Array.from(mutation.removedNodes);
-            const target = mutation.target as HTMLElement;
+            if (mutation.type === 'childList') {
+                const newNodes = Array.from(mutation.addedNodes);
+                const deletedNodes = Array.from(mutation.removedNodes);
 
-            return (
-                newNodes.some((node) => node instanceof HTMLInputElement || node instanceof HTMLFormElement) ||
-                deletedNodes.some((node) => node instanceof HTMLInputElement || node instanceof HTMLFormElement) ||
-                target.querySelector(`input:not([${PROCESSED_FIELD_ATTR}])`) !== null
-            );
+                return (
+                    newNodes.some(
+                        (node) => isNodeOfInterest(node) || (node instanceof HTMLElement && hasUnprocessedFields(node))
+                    ) || deletedNodes.some(isNodeOfInterest)
+                );
+            }
+
+            if (mutation.type === 'attributes') {
+                const target = mutation.target as HTMLElement;
+                return target !== document.body && mutation.type === 'attributes' && hasUnprocessedFields(target);
+            }
+
+            return false;
         });
 
         if (triggerFormChange) void detect('DomMutation');
     };
 
-    /* we want to avoid swarming detection requests on every transition end
-     * as we are listening for them on the document.body and we'll catch all
-     * bubbling `transitionend` events: debounce the function and only run the
-     * detectors if we have unprocessed forms in the DOM */
+    /**
+     * Form Detection Trigger via Transition Events
+     *
+     * We want to avoid swarming detection requests on every `transitionend`
+     * event as we are listening for them on the `document.body` and will
+     * catch all bubbling events. The function is debounced to ensure it runs
+     * only when necessary, and only if there are unprocessed forms in the DOM.
+     * · The detection is executed only if there are unprocessed forms
+     * · The purpose is to catch appearing forms that may have been previously
+     *   filtered out by the ML algorithm when it was first triggered */
     const onTransition = debounce(
         () => requestAnimationFrame(() => hasUnprocessedForms() && detect('TransitionEnd')),
-        150,
+        250,
         { leading: true }
     );
 
-    /* the mutation observer in this call will only watch for changes
-     * on the body subtree - this will not catch attribute changes on
-     * elements : we rely on a different mechanism to  detect these
-     * changes (ie: visibility or style changes - the detectors will only
-     * try to match visible forms for performance reasons) */
     const observe = () => {
         if (!ctx.active) {
             ctx.active = true;
-            listeners.addObserver(document.body, onMutation, { childList: true, subtree: true });
+
+            listeners.addObserver(document.body, onMutation, {
+                childList: true,
+                subtree: true,
+                attributeFilter: ['style', 'class'],
+                attributes: true,
+            });
+
             listeners.addListener(document.body, 'transitionend', onTransition);
             listeners.addListener(document.body, 'animationend', onTransition);
         }

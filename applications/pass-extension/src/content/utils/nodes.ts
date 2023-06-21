@@ -9,6 +9,8 @@ import { FormField, FormType } from '@proton/pass/types';
 
 import { PROCESSED_FIELD_ATTR, PROCESSED_FORM_ATTR } from '../constants';
 
+export const isNodeOfInterest = (node: Node) => node instanceof HTMLInputElement || node instanceof HTMLFormElement;
+
 /* As a heuristic we can safely ignore forms of type `[role="search"]` as we are most
  * likely not interested in tracking those. Since we apply a clustering algorithm in
  * the detectors, we may have non-form elements  detected as forms - we can retrieve
@@ -36,16 +38,22 @@ export const selectDanglingFields = (target: Document | HTMLElement = document) 
     return Array.from(candidates).filter((el) => el.matches(selector));
 };
 
+export const selectUnprocessedFields = (target: Document | HTMLElement = document) => {
+    const selector = `:not([${PROCESSED_FIELD_ATTR}])`;
+    const candidates = target.querySelectorAll<HTMLInputElement>(fieldOfInterestSelector);
+    return Array.from(candidates).filter((el) => el.matches(selector));
+};
+
 export const hasUnprocessedForms = (target?: Document | HTMLElement) => selectUnprocessedForms(target).length > 0;
-export const hasUnprocessedFields = (target?: Document | HTMLElement) => selectDanglingFields(target).length > 0;
+export const hasUnprocessedFields = (target?: Document | HTMLElement) => selectUnprocessedFields(target).length > 0;
 
 export const setFormProcessed = (el: HTMLElement, formType: FormType): void => {
-    el.setAttribute(PROCESSED_FORM_ATTR, formType);
+    el.setAttribute(PROCESSED_FORM_ATTR, '');
     if (formType !== FormType.NOOP) setFormType(el, formType);
 };
 
 export const setFieldProcessed = (el: HTMLInputElement, fieldType: FormField): void => {
-    el.setAttribute(PROCESSED_FIELD_ATTR, fieldType);
+    el.setAttribute(PROCESSED_FIELD_ATTR, '');
     if (fieldType !== FormField.NOOP) setInputType(el, fieldType);
 };
 
