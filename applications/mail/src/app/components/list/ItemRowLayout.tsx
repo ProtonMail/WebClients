@@ -137,14 +137,14 @@ const ItemRowLayout = ({
                 isCollapsed={false}
             />
 
-            <span className="flex w3e ml-2 text-center flex-justify-end">
+            <span className="flex flex-nowrap w5e ml-2 text-center flex-justify-end">
                 {hasExpiration && (
                     <ItemExpiration expirationTime={expirationTime} element={element} labelID={labelID} />
                 )}
                 <ItemAttachmentIcon
                     icon={hasOnlyIcsAttachments ? 'calendar-grid' : undefined}
                     element={element}
-                    className="flex-item-noshrink"
+                    className="flex-item-noshrink ml-2"
                 />
             </span>
 
