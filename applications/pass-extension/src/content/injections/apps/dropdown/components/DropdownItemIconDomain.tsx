@@ -26,13 +26,13 @@ export const DropdownItemIconDomain: VFC<{
                 className,
                 url && imageStatus === ImageStatus.READY && 'pass-item-icon--has-image'
             )}
-            style={{ '--width-custom': `${size}px`, '--height-custom': `${size}px` }}
+            style={{ '--w-custom': `${size}px`, '--h-custom': `${size}px` }}
         >
             <ProxiedDomainImage
                 className={clsx('absolute-center w-custom h-custom', imageStatus !== ImageStatus.READY && 'hidden')}
                 style={{
-                    '--width-custom': `${faviconSize}px`,
-                    '--height-custom': `${faviconSize}px`,
+                    '--w-custom': `${faviconSize}px`,
+                    '--h-custom': `${faviconSize}px`,
                 }}
                 onStatusChange={handleStatusChange}
                 status={imageStatus}

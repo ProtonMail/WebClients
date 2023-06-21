@@ -22,7 +22,7 @@ export const DropdownItem: VFC<{
 }> = ({ onClick, title, subTitle, icon, url, disabled, autogrow, className = 'ui-login' }) => (
     <DropdownMenuButton
         className={clsx('text-left h-custom', className)}
-        style={autogrow ? {} : { '--custom-height': `${DROPDOWN_ITEM_HEIGHT}px` }}
+        style={autogrow ? {} : { '--h-custom': `${DROPDOWN_ITEM_HEIGHT}px` }}
         onClick={onClick}
         disabled={disabled}
     >

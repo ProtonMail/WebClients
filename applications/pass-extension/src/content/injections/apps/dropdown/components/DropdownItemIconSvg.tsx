@@ -4,8 +4,8 @@ import { c } from 'ttag';
 
 import type { IconName } from '@proton/components/components';
 import { Icon } from '@proton/components/components';
-import { PassIcon } from '@proton/pass/types/data/pass-icon';
 import type { DropdownIcon } from '@proton/pass/types/data/pass-icon';
+import { PassIcon } from '@proton/pass/types/data/pass-icon';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
@@ -21,7 +21,7 @@ export const DropdownItemIconSvg: VFC<{
     return passIconAsset ? (
         <div
             className={clsx('w-custom h-custom text-align-center', className)}
-            style={{ '--width-custom': `${size}px`, '--height-custom': `${size}px` }}
+            style={{ '--w-custom': `${size}px`, '--h-custom': `${size}px` }}
         >
             <img
                 src={passIconAsset}
@@ -34,7 +34,7 @@ export const DropdownItemIconSvg: VFC<{
     ) : (
         <div
             className={clsx('pass-item-icon w-custom h-custom rounded-xl overflow-hidden relative', className)}
-            style={{ '--width-custom': `${size}px`, '--height-custom': `${size}px` }}
+            style={{ '--w-custom': `${size}px`, '--h-custom': `${size}px` }}
         >
             <Icon className="absolute-center" name={icon as IconName} size={20} color="var(--interaction-norm)" />
         </div>
