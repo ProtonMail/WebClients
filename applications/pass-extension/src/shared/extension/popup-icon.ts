@@ -1,17 +1,15 @@
 import browser from '@proton/pass/globals/browser';
 import noop from '@proton/utils/noop';
 
-export const setPopupIcon = (options: { loggedIn: boolean; locked: boolean }): Promise<void> => {
-    let iconStatus = '';
-    if (options.locked) {
-        iconStatus = '-locked';
-    } else if (!options.loggedIn) {
-        iconStatus = '-disabled';
-    }
+export const setPopupIcon = (options: { disabled: boolean; locked: boolean }): Promise<void> => {
+    let suffix = '';
+    if (options.disabled) suffix = '-disabled';
+    if (options.locked) suffix = '-locked';
+
     return browser.action.setIcon({
         path: {
-            16: `./assets/protonpass-icon-16${iconStatus}.png`,
-            32: `./assets/protonpass-icon-32${iconStatus}.png`,
+            16: `./assets/protonpass-icon-16${suffix}.png`,
+            32: `./assets/protonpass-icon-32${suffix}.png`,
         },
     });
 };

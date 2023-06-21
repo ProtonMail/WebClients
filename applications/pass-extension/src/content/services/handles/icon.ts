@@ -1,6 +1,7 @@
-import { WorkerStatus } from '@proton/pass/types';
-import { safeCall } from '@proton/pass/utils/fp';
+import type { WorkerStatus } from '@proton/pass/types';
+import { or, safeCall } from '@proton/pass/utils/fp';
 import { createListenerStore } from '@proton/pass/utils/listener';
+import { workerErrored, workerLocked, workerLoggedOut, workerStale } from '@proton/pass/utils/worker';
 import debounce from '@proton/utils/debounce';
 
 import { ACTIVE_ICON_SRC, DISABLED_ICON_SRC, EXTENSION_PREFIX, ICON_CLASSNAME, LOCKED_ICON_SRC } from '../../constants';
@@ -20,16 +21,13 @@ export const createFieldIconHandle = ({ field }: CreateIconOptions): FieldIconHa
     const setStatus = (status: WorkerStatus) => {
         icon.classList.remove(`${ICON_CLASSNAME}--loading`);
 
-        switch (status) {
-            case WorkerStatus.READY:
-                return icon.style.setProperty('background-image', `url("${ACTIVE_ICON_SRC}")`, 'important');
+        const iconUrl = (() => {
+            if (workerLocked(status)) return LOCKED_ICON_SRC;
+            if (or(workerLoggedOut, workerErrored, workerStale)(status)) return DISABLED_ICON_SRC;
+            return ACTIVE_ICON_SRC;
+        })();
 
-            case WorkerStatus.LOCKED:
-                return icon.style.setProperty('background-image', `url("${LOCKED_ICON_SRC}")`, 'important');
-
-            default:
-                return icon.style.setProperty('background-image', `url("${DISABLED_ICON_SRC}")`, 'important');
-        }
+        icon.style.setProperty('background-image', `url("${iconUrl}")`, 'important');
     };
 
     const setCount = (count: number) => {
