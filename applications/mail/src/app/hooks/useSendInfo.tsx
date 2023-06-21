@@ -90,6 +90,7 @@ export const useUpdateRecipientSendInfo = (
                 setMapSendInfo((mapSendInfo) => ({
                     ...mapSendInfo,
                     [emailAddress]: {
+                        encryptionPreferenceError: ENCRYPTION_PREFERENCES_ERROR_TYPES.EMAIL_ADDRESS_ERROR,
                         sendPreferences: undefined,
                         sendIcon: {
                             colorClassName: 'color-danger',
@@ -166,6 +167,7 @@ export const useUpdateRecipientSendInfo = (
                 isVerified: encryptionPreferences.isContactSignatureVerified,
                 creationTime: encryptionPreferences.contactSignatureTimestamp,
             };
+
             setMapSendInfo((mapSendInfo) => ({
                 ...mapSendInfo,
                 [emailAddress]: {
@@ -173,6 +175,7 @@ export const useUpdateRecipientSendInfo = (
                     sendIcon,
                     loading: false,
                     emailValidation,
+                    encryptionPreferenceError: encryptionPreferences.error?.type,
                     emailAddressWarnings: encryptionPreferences.emailAddressWarnings || [],
                     contactSignatureInfo,
                 },

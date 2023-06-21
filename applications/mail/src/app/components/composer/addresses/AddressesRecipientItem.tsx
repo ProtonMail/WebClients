@@ -16,6 +16,7 @@ import {
 import { createContactPropertyUid } from '@proton/shared/lib/contacts/properties';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import { Recipient } from '@proton/shared/lib/interfaces/Address';
+import { ENCRYPTION_PREFERENCES_ERROR_TYPES } from '@proton/shared/lib/mail/encryptionPreferences';
 import { inputToRecipient, recipientToInput } from '@proton/shared/lib/mail/recipient';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
@@ -172,6 +173,9 @@ const AddressesRecipientItem = ({
         ? sendInfo?.emailAddressWarnings?.[0]
         : c('Info').t`Right-click for options`;
 
+    const shouldHaveHref =
+        sendInfo?.encryptionPreferenceError !== ENCRYPTION_PREFERENCES_ERROR_TYPES.EMAIL_ADDRESS_ERROR;
+
     return (
         <>
             <div
@@ -194,7 +198,7 @@ const AddressesRecipientItem = ({
                 <span className="relative interactive-pseudo-inset flex flex-row flex-nowrap">
                     {(icon || loading) && (
                         <span className="flex pl-2 my-auto flex-item-noshrink">
-                            <EncryptionStatusIcon loading={loading} {...icon} />
+                            <EncryptionStatusIcon loading={loading} {...icon} shouldHaveHref={shouldHaveHref} />
                         </span>
                     )}
                     <Tooltip title={title}>
