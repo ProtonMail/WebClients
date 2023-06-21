@@ -8,8 +8,10 @@ import {
 import { FormField, FormType } from '@proton/pass/types';
 import { sortOn } from '@proton/pass/utils/fp/sort';
 import { logger } from '@proton/pass/utils/logger';
+import { withMaxExecutionTime } from '@proton/pass/utils/time';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
+import { MAX_MAX_DETECTION_TIME, MIN_MAX_DETECTION_TIME } from '../../constants';
 import type { DetectedField, DetectedForm } from '../../types';
 import {
     fieldProcessable,
@@ -148,43 +150,61 @@ const selectBestForm = <T extends string>(scores: PredictionScoreResult<T>[]) =>
 };
 
 /* Runs the fathom detection and returns a form handle for each detected form.. */
-const createDetectionRunner = (ruleset: ReturnType<typeof rulesetMaker>, doc: Document) => (): DetectedForm[] => {
-    const boundRuleset = ruleset.against(doc.body);
+const createDetectionRunner =
+    (ruleset: ReturnType<typeof rulesetMaker>, doc: Document) =>
+    (options: { onBottleneck: (data: {}) => void }): DetectedForm[] => {
+        const [formPredictions, fieldPredictions] = withMaxExecutionTime(
+            (): [PredictionResult<FormType>[], PredictionResult<FormField>[]] => {
+                const boundRuleset = ruleset.against(doc.body);
+                return [
+                    getPredictionsFor<FormType>(boundRuleset, {
+                        type: 'form',
+                        subTypes: DETECTABLE_FORMS,
+                        fallbackType: FormType.NOOP,
+                        selectBest: selectBestForm,
+                    }),
+                    getPredictionsFor(boundRuleset, {
+                        type: 'field',
+                        subTypes: DETECTABLE_FIELDS,
+                        fallbackType: FormField.NOOP,
+                    }),
+                ];
+            },
+            {
+                maxTime: MIN_MAX_DETECTION_TIME,
+                onMaxTime: (ms) => {
+                    const host = window.location.hostname;
+                    logger.info(`[Detector::run] detector slow down detected on ${host} (took ${ms}ms)`);
 
-    const formPredictions = getPredictionsFor<FormType>(boundRuleset, {
-        type: 'form',
-        subTypes: DETECTABLE_FORMS,
-        fallbackType: FormType.NOOP,
-        selectBest: selectBestForm,
-    });
+                    if (ms >= MAX_MAX_DETECTION_TIME) {
+                        options.onBottleneck({ ms, host });
+                        throw new Error();
+                    }
+                },
+            }
+        )();
 
-    const fieldPredictions = getPredictionsFor(boundRuleset, {
-        type: 'field',
-        subTypes: DETECTABLE_FIELDS,
-        fallbackType: FormField.NOOP,
-    });
+        const fieldMap = groupFields(formPredictions, fieldPredictions);
 
-    const fieldMap = groupFields(formPredictions, fieldPredictions);
+        const forms = formPredictions.map(({ fnode: formFNode, type: formType }) => ({
+            form: formFNode.element as HTMLElement,
+            formType,
+            fields: fieldMap.get(formFNode.element) ?? [],
+        }));
 
-    const forms = formPredictions.map(({ fnode: formFNode, type: formType }) => ({
-        form: formFNode.element as HTMLElement,
-        formType,
-        fields: fieldMap.get(formFNode.element) ?? [],
-    }));
+        /* Form / fields flagging :
+         * each detected form should be flagged via the `data-protonpass-form` attribute so as to
+         * avoid triggering unnecessary detections if nothing of interest has changed in the DOM.
+         * · `formPredictions` will include only visible forms : flag them with prediction class
+         * · all form fields should be flagged as processed with the `data-protonpass-field` attr
+         * · query all unprocessed forms (including invisible ones) and flag them as `NOOP` */
+        formPredictions.forEach(({ fnode: { element }, type }) => setFormProcessed(element, type));
+        forms.forEach(({ fields }) => fields.forEach(({ field, fieldType }) => setFieldProcessed(field, fieldType)));
+        selectUnprocessedForms().forEach((form) => setFormProcessed(form, FormType.NOOP));
+        clearVisibilityCache(); /* clear visibility cache on each detection run */
 
-    /* Form / fields flagging :
-     * each detected form should be flagged via the `data-protonpass-form` attribute so as to
-     * avoid triggering unnecessary detections if nothing of interest has changed in the DOM.
-     * · `formPredictions` will include only visible forms : flag them with prediction class
-     * · all form fields should be flagged as processed with the `data-protonpass-field` attr
-     * · query all unprocessed forms (including invisible ones) and flag them as `NOOP` */
-    formPredictions.forEach(({ fnode: { element }, type }) => setFormProcessed(element, type));
-    forms.forEach(({ fields }) => fields.forEach(({ field, fieldType }) => setFieldProcessed(field, fieldType)));
-    selectUnprocessedForms().forEach((form) => setFormProcessed(form, FormType.NOOP));
-    clearVisibilityCache(); /* clear visibility cache on each detection run */
-
-    return forms;
-};
+        return forms;
+    };
 
 export const createDetectorService = () => {
     return {
