@@ -42,15 +42,15 @@ export const createFieldIconHandle = ({ field }: CreateIconOptions): FieldIconHa
     };
 
     const reposition = debounce(
-        () => {
+        (revalidate: boolean = false) => {
             cancelAnimationFrame(repositionRequest);
             repositionRequest = requestAnimationFrame(() => {
                 cleanupInjectionStyles({ input, wrapper });
-                applyInjectionStyles({ input, wrapper, inputBox: field.getBoxElement(), icon });
+                applyInjectionStyles({ input, wrapper, inputBox: field.getBoxElement({ revalidate }), icon });
             });
         },
         50,
-        { leading: true }
+        { leading: true, trailing: true }
     );
 
     /* `reposition` is debounced and wrapped in a `requestAnimationFrame`
@@ -84,11 +84,26 @@ export const createFieldIconHandle = ({ field }: CreateIconOptions): FieldIconHa
     listeners.addListener(icon, 'mousedown', onClick);
 
     /* repositioning the icon can happen either :
-     * - on window resize
-     * - on form resize (handled in `FormTracker`)
-     * - on new elements added to the field box (ie: icons) */
-    listeners.addListener(window, 'resize', reposition);
-    listeners.addObserver(field.boxElement, reposition, { childList: true });
+     * · on window resize
+     * · on form resize (handled in `FormHandles`)
+     * · on new elements added to the field box (ie: icons) */
+    const target = field.element === field.boxElement ? field.element.parentElement! : field.boxElement;
+
+    listeners.addListener(window, 'resize', () => reposition(false));
+    listeners.addResizeObserver(target, () => reposition(false));
+    listeners.addObserver(
+        target,
+        () => {
+            /* if the subtree changes we may be dealing with error messages,
+             * tooltips or even icon indicators appearing : in this case we
+             * should revalidate the input field's bounding box as it we may
+             * have resolved an element which is no longer a correct fit for
+             * injection */
+            reposition.cancel();
+            reposition(true);
+        },
+        { childList: true, subtree: true }
+    );
 
     return { element: icon, setStatus, setCount, detach, reposition };
 };

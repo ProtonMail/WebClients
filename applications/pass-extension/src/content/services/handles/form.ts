@@ -1,11 +1,14 @@
 import type { FormType } from '@proton/pass/types';
 import { FormField } from '@proton/pass/types';
 import { getMaxZIndex } from '@proton/pass/utils/dom';
+import { createListenerStore } from '@proton/pass/utils/listener';
 import { logger } from '@proton/pass/utils/logger';
 import { uniqueId } from '@proton/pass/utils/string';
+import debounce from '@proton/utils/debounce';
 
+import { withContext } from '../../context/context';
 import type { DetectedField, DetectedForm, FormHandle } from '../../types';
-import { setFieldProcessable, setFormProcessable } from '../../utils/nodes';
+import { hasUnprocessedFields, setFieldProcessable, setFormProcessable } from '../../utils/nodes';
 import { createFormTracker } from '../form/tracker';
 import { createFieldHandles } from './field';
 
@@ -13,6 +16,7 @@ export type FormHandlesProps = { zIndex: number };
 
 export const createFormHandles = (options: DetectedForm): FormHandle => {
     const { form, formType, fields: detectedFields } = options;
+    const listeners = createListenerStore();
     const zIndex = getMaxZIndex(form) + 1;
 
     const formHandle: FormHandle = {
@@ -85,11 +89,36 @@ export const createFormHandles = (options: DetectedForm): FormHandle => {
 
         detach() {
             logger.debug(`[FormHandles]: Detaching tracker for form [${formType}:${formHandle.id}]`);
+            listeners.removeAll();
             setFormProcessable(form);
             Array.from(form.querySelectorAll('input')).forEach(setFieldProcessable);
             formHandle.tracker?.detach();
+            formHandle.getFields().forEach((field) => field.detach());
         },
     };
+
+    /**
+     * Detection trigger & repositioning via Form Resize
+     *
+     * This handler is responsible for triggering the repositioning flow for
+     * our injections when tooltips or error messages appear. Additionally, it
+     * checks if the form's parent element has unprocessed fields. This detection
+     * mechanism during a resize is particularly useful for "stacked" or "multi-
+     * step" forms where multiple forms (or clusters of inputs) are overlayed on
+     * top of each other. The purpose is to handle dynamic changes in form layouts
+     * and stacked forms effectively without looking for unprocessed fields
+     * on the full DOM as this may lead to too many detection triggers */
+    const onFormResize = debounce(
+        withContext(({ service: { formManager } }) => {
+            const fields = formHandle.getFields();
+            fields.forEach((field) => field.icon?.reposition());
+
+            if (hasUnprocessedFields(options.form.parentElement!)) void formManager.detect('FormResized');
+        }),
+        50
+    );
+
+    listeners.addResizeObserver(options.form, onFormResize);
 
     return formHandle;
 };

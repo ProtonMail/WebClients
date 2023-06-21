@@ -25,12 +25,8 @@ export const findBoundingInputElement = (el: HTMLElement, minHeight?: number): H
 
     if (label) {
         const labelHeightCheck = label.getBoundingClientRect().height >= minHeightRef;
-        const labelStyles = getComputedStyle(label);
-        const border = parseFloat(labelStyles.getPropertyValue('border-bottom-width'));
-        const labelChildrenOverlap =
-            label?.childElementCount === 1 && allChildrenOverlap(label, BOUNDING_ELEMENT_MAX_OFFSET);
-
-        if (labelHeightCheck && labelChildrenOverlap && border > 0) return label;
+        const labelChildrenOverlap = allChildrenOverlap(label, BOUNDING_ELEMENT_MAX_OFFSET);
+        if (labelHeightCheck && labelChildrenOverlap) return label;
     }
 
     const mb = pixelParser(getComputedStyle(el).marginBottom);
@@ -45,7 +41,7 @@ export const findBoundingInputElement = (el: HTMLElement, minHeight?: number): H
     const hasOneChild = parent.childElementCount === 1;
     const childrenOverlap = allChildrenOverlap(parent, BOUNDING_ELEMENT_MAX_OFFSET);
 
-    if (parentHeight >= minHeightRef && !hasTextNode && (hasOneChild || childrenOverlap)) {
+    if (parentHeight > 0 && parentHeight >= minHeightRef && !hasTextNode && (hasOneChild || childrenOverlap)) {
         /* if parent has margin break from recursion to avoid
          * resolving a bounding box that would not contain the
          * necessary styles information to account for the offsets */

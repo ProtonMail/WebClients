@@ -1,8 +1,18 @@
-import { type FNode, fieldOfInterestSelector, isFormOfInterest, rulesetMaker } from '@proton/pass/fathom';
+import {
+    type FNode,
+    clearVisibilityCache,
+    fieldOfInterestSelector,
+    isFormOfInterest,
+    isVisibleField,
+    rulesetMaker,
+} from '@proton/pass/fathom';
 import { FormField, FormType } from '@proton/pass/types';
 import { sortOn } from '@proton/pass/utils/fp/sort';
 import { logger } from '@proton/pass/utils/logger';
+import { withMaxExecutionTime } from '@proton/pass/utils/time';
+import { wait } from '@proton/shared/lib/helpers/promise';
 
+import { MAX_MAX_DETECTION_TIME, MIN_MAX_DETECTION_TIME } from '../../constants';
 import type { DetectedField, DetectedForm } from '../../types';
 import {
     fieldProcessable,
@@ -19,6 +29,7 @@ const ruleset = rulesetMaker();
 const NOOP_EL = document.createElement('form');
 const DETECTABLE_FORMS = Object.values(FormType).filter((type) => type !== FormType.NOOP);
 const DETECTABLE_FIELDS = Object.values(FormField).filter((type) => type !== FormField.NOOP);
+const LOGIN_DELTA_TOLERANCE = 0.15;
 
 type BoundRuleset = ReturnType<typeof ruleset.against>;
 type PredictionResult<T extends string> = { fnode: FNode; type: T };
@@ -40,7 +51,8 @@ type PredictionBestSelector<T extends string> = (scores: PredictionScoreResult<T
  * to avoid flagging input fields as processed and missing out
  * on detection */
 const shouldRunDetection = (): Promise<boolean> =>
-    new Promise((resolve) => {
+    new Promise(async (resolve) => {
+        await wait(50);
         requestAnimationFrame(() => {
             const runForForms = selectAllForms().reduce<boolean>((runDetection, form) => {
                 if (formProcessed(form)) {
@@ -84,6 +96,14 @@ const getPredictionsFor = <T extends string>(
 ): PredictionResult<T>[] => {
     const candidates: FNode[] = boundRuleset.get(options.type);
 
+    /* first check if we have any pre-detected candidates which
+     * will not be emitted on the base `options.type` as these will
+     * have by-passed the classification pipeline */
+    const preDetected = options.subTypes.flatMap((subType) => {
+        const detected: FNode[] = boundRuleset.get(subType);
+        return detected.map((fnode) => ({ fnode, type: subType }));
+    });
+
     const predictions = candidates.map((fnode) => {
         const fieldTypes = options.subTypes.filter((subType) => fnode.hasType(subType));
         const scores = getScores(fnode, fieldTypes).sort(sortOn('score', 'DESC'));
@@ -91,7 +111,7 @@ const getPredictionsFor = <T extends string>(
         return { fnode, type: best.score > 0.5 ? best.type : options.fallbackType };
     });
 
-    return predictions;
+    return preDetected.concat(predictions);
 };
 
 /* cluster each predicted field by its parent predicted
@@ -124,46 +144,78 @@ const groupFields = (
  * deceptive to the user */
 const selectBestForm = <T extends string>(scores: PredictionScoreResult<T>[]) => {
     const loginResult = scores.find(({ type }) => type === FormType.LOGIN)!;
-    return loginResult.score > 0.5 ? loginResult : scores[0];
+    const best = scores[0];
+    const delta = Math.abs(loginResult.score - best.score);
+
+    return loginResult.score > 0.5 && delta < LOGIN_DELTA_TOLERANCE ? loginResult : best;
 };
 
 /* Runs the fathom detection and returns a form handle for each detected form.. */
-const createDetectionRunner = (ruleset: ReturnType<typeof rulesetMaker>, doc: Document) => (): DetectedForm[] => {
-    const boundRuleset = ruleset.against(doc.body);
+const createDetectionRunner =
+    (ruleset: ReturnType<typeof rulesetMaker>, doc: Document) =>
+    (options: { onBottleneck: (data: {}) => void }): DetectedForm[] => {
+        const [formPredictions, fieldPredictions] = withMaxExecutionTime(
+            (): [PredictionResult<FormType>[], PredictionResult<FormField>[]] => {
+                const boundRuleset = ruleset.against(doc.body);
+                return [
+                    getPredictionsFor<FormType>(boundRuleset, {
+                        type: 'form',
+                        subTypes: DETECTABLE_FORMS,
+                        fallbackType: FormType.NOOP,
+                        selectBest: selectBestForm,
+                    }),
+                    getPredictionsFor(boundRuleset, {
+                        type: 'field',
+                        subTypes: DETECTABLE_FIELDS,
+                        fallbackType: FormField.NOOP,
+                    }),
+                ];
+            },
+            {
+                maxTime: MIN_MAX_DETECTION_TIME,
+                onMaxTime: (ms) => {
+                    const host = window.location.hostname;
+                    logger.info(`[Detector::run] detector slow down detected on ${host} (took ${ms}ms)`);
 
-    const formPredictions = getPredictionsFor<FormType>(boundRuleset, {
-        type: 'form',
-        subTypes: DETECTABLE_FORMS,
-        fallbackType: FormType.NOOP,
-        selectBest: selectBestForm,
-    });
+                    if (ms >= MAX_MAX_DETECTION_TIME) {
+                        options.onBottleneck({ ms, host });
+                        throw new Error();
+                    }
+                },
+            }
+        )();
 
-    const fieldPredictions = getPredictionsFor(boundRuleset, {
-        type: 'field',
-        subTypes: DETECTABLE_FIELDS,
-        fallbackType: FormField.NOOP,
-    });
+        const fieldMap = groupFields(formPredictions, fieldPredictions);
 
-    const fieldMap = groupFields(formPredictions, fieldPredictions);
+        const forms = formPredictions.map(({ fnode: formFNode, type: formType }) => ({
+            form: formFNode.element as HTMLElement,
+            formType,
+            fields: fieldMap.get(formFNode.element) ?? [],
+        }));
 
-    const forms = formPredictions.map(({ fnode: formFNode, type: formType }) => ({
-        form: formFNode.element as HTMLElement,
-        formType,
-        fields: fieldMap.get(formFNode.element) ?? [],
-    }));
+        /* Form / fields flagging :
+         * each detected form should be flagged via the `data-protonpass-form` attribute so as to
+         * avoid triggering unnecessary detections if nothing of interest has changed in the DOM.
+         * · `formPredictions` will include only visible forms : flag them with prediction class
+         * · all form fields which have been detected should be flagged as processed with the
+         *   `data-protonpass-field` attr. The remaining fields without classification results
+         *   should only be flagged as processed if they are visible or `[type="hidden"]`. This
+         *   heuristic flagging allows detection triggers to monitor new fields correctly.
+         * · query all unprocessed forms (including invisible ones) and flag them as `NOOP` */
+        formPredictions.forEach(({ fnode: { element }, type }) => setFormProcessed(element, type));
+        forms.forEach(({ fields }) =>
+            fields.forEach(({ field, fieldType }) => {
+                if (fieldType !== FormField.NOOP || field.type === 'hidden' || isVisibleField(field)) {
+                    setFieldProcessed(field, fieldType);
+                }
+            })
+        );
 
-    /* Form / fields flagging :
-     * each detected form should be flagged via the `data-protonpass-form` attribute so as to
-     * avoid triggering unnecessary detections if nothing of interest has changed in the DOM.
-     * - `formPredictions` will include only visible forms : flag them with prediction class
-     * - all form fields should be flagged as processed with the `data-protonpass-field` attr
-     * - query all unprocessed forms (including invisible ones) and flag them as `NOOP` */
-    formPredictions.forEach(({ fnode: { element }, type }) => setFormProcessed(element, type));
-    forms.forEach(({ fields }) => fields.forEach(({ field, fieldType }) => setFieldProcessed(field, fieldType)));
-    selectUnprocessedForms().forEach((form) => setFormProcessed(form, FormType.NOOP));
+        selectUnprocessedForms().forEach((form) => setFormProcessed(form, FormType.NOOP));
+        clearVisibilityCache(); /* clear visibility cache on each detection run */
 
-    return forms;
-};
+        return forms;
+    };
 
 export const createDetectorService = () => {
     return {
