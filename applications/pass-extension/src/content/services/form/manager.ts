@@ -5,6 +5,7 @@ import { FormEntryStatus, WorkerMessageType } from '@proton/pass/types';
 import { createListenerStore } from '@proton/pass/utils/listener';
 import { logger } from '@proton/pass/utils/logger';
 import debounce from '@proton/utils/debounce';
+import noop from '@proton/utils/noop';
 
 import { isSubmissionCommitted } from '../../../shared/form';
 import { withContext } from '../../context/context';
@@ -118,36 +119,53 @@ export const createFormManager = (options: FormManagerOptions) => {
      * - on each detected form: recycle/create form handle and reconciliate its fields
      * Returns a boolean flag indicating wether or not the detection was ran */
     const detect = debounce(
-        withContext<(reason: string) => Promise<boolean>>(async ({ service: { detector } }, reason: string) => {
-            if (ctx.busy || !ctx.active) return false;
-            ctx.busy = true;
-            cancelIdleCallback(ctx.detectionRequest);
-            garbagecollect();
+        withContext<(reason: string) => Promise<boolean>>(
+            async ({ destroy, service: { detector } }, reason: string) => {
+                if (ctx.busy || !ctx.active) return false;
+                ctx.busy = true;
+                cancelIdleCallback(ctx.detectionRequest);
+                garbagecollect();
 
-            if (await detector.shouldRunDetection()) {
-                ctx.detectionRequest = requestIdleCallback(() => {
-                    if (ctx.active) {
-                        logger.info(`[FormTracker::Detector]: Running detection for "${reason}"`);
-                        const forms = detector.runDetection();
+                if (await detector.shouldRunDetection()) {
+                    ctx.detectionRequest = requestIdleCallback(() => {
+                        if (ctx.active) {
+                            logger.info(`[FormTracker::Detector]: Running detection for "${reason}"`);
 
-                        forms.forEach((options) => {
-                            const formHandle = ctx.trackedForms.get(options.form) ?? createFormHandles(options);
-                            ctx.trackedForms.set(options.form, formHandle);
-                            formHandle.reconciliate(options.formType, options.fields);
-                            formHandle.attach();
-                        });
+                            try {
+                                const forms = detector.runDetection({
+                                    onBottleneck: (data) => {
+                                        void sendMessage(
+                                            contentScriptMessage({
+                                                type: WorkerMessageType.SENTRY_CS_EVENT,
+                                                payload: { message: 'DetectorBottleneck', data },
+                                            })
+                                        ).catch(noop);
 
-                        options.onDetection(getTrackedForms());
-                        void reconciliate();
-                        ctx.busy = false;
-                    }
-                });
-                return true;
-            } else clearVisibilityCache();
+                                        destroy({ reason: 'detector bottleneck', recycle: false });
+                                    },
+                                });
 
-            ctx.busy = false;
-            return false;
-        }),
+                                forms.forEach((options) => {
+                                    const formHandle = ctx.trackedForms.get(options.form) ?? createFormHandles(options);
+                                    ctx.trackedForms.set(options.form, formHandle);
+                                    formHandle.reconciliate(options.formType, options.fields);
+                                    formHandle.attach();
+                                });
+
+                                options.onDetection(getTrackedForms());
+                                void reconciliate();
+                                ctx.busy = false;
+                            } catch (_) {}
+                        }
+                    });
+
+                    return true;
+                } else clearVisibilityCache();
+
+                ctx.busy = false;
+                return false;
+            }
+        ),
         150,
         { leading: true }
     );
