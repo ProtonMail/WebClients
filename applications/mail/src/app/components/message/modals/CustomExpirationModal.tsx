@@ -62,9 +62,7 @@ const CustomExpirationModal = ({ onSubmit, ...rest }: Props) => {
             return;
         }
 
-        const now = new Date();
-
-        if (isBefore(newDate, now)) {
+        if (isBefore(newDate, startOfToday())) {
             return;
         }
 
