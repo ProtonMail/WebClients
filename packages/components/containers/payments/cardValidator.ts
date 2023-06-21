@@ -8,8 +8,10 @@ import { CardModel } from '../../payments/core/interface';
 
 export const isCardNumber = (value: string) => valid.number(value).isValid;
 export const isCVV = (value: string, maxLength: number) => valid.cvv(value, maxLength).isValid;
+export const isPotentiallyCVV = (value: string, maxLength: number) => valid.cvv(value, maxLength).isPotentiallyValid;
 export const isPostalCode = (value: string) => valid.postalCode(value).isValid;
-export const isExpirationDate = (month: string, year: string) => valid.expirationDate({ month, year }).isValid;
+export const isExpirationDate = (month: string, year: string) =>
+    valid.expirationDate({ month, year }).isValid && month.length === 2;
 
 type KeyOfCardModel = keyof CardModel;
 
@@ -53,8 +55,13 @@ const check = (card: CardModel, key: KeyOfCardModel): string | undefined => {
     }
 };
 
-export const getErrors = (card: CardModel): Partial<CardModel> => {
-    return ['fullname', 'number', 'month', 'year', 'cvc', 'zip', 'country'].reduce((acc, key) => {
+export const getErrors = (card: CardModel, ignoreName = false): Partial<CardModel> => {
+    const fields = ['number', 'month', 'year', 'cvc', 'zip', 'country'];
+    if (!ignoreName) {
+        fields.unshift('fullname');
+    }
+
+    return fields.reduce((acc, key) => {
         const error = check(card, key as KeyOfCardModel);
         if (error) {
             acc[key] = error;
