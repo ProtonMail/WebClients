@@ -5,7 +5,6 @@ import { c } from 'ttag';
 import { traceError } from '@proton/shared/lib/helpers/sentry';
 import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';
 
-import useSyncIframeStyles from '../../containers/themes/useSyncIframeStyles';
 import UnsupportedPreview from './UnsupportedPreview';
 
 interface Props {
@@ -18,7 +17,9 @@ export const SandboxedPreview: FC<Props> = ({ contents, mimeType, onDownload }) 
     const [isError, setError] = useState(false);
     const ref = useRef<HTMLIFrameElement>(null);
 
-    useSyncIframeStyles(ref.current?.contentWindow?.document.documentElement, document.documentElement);
+    // Word document can have custom styles that can include external link.
+    // We want to block those external request for security reasons.
+    const csp = `style-src 'self' 'unsafe-inline'; img-src 'self' blob: data:; font-src 'self' blob: data:; default-src 'self'; script-src 'self' ${origin}`;
 
     useEffect(() => {
         const sandbox = ref.current;
@@ -57,6 +58,8 @@ export const SandboxedPreview: FC<Props> = ({ contents, mimeType, onDownload }) 
         const setSandboxUrl = async () => {
             const html = `<!doctype html><html>
             <head>
+               <meta http-equiv="Content-Security-Policy" content="${csp}">
+
             <style>html, body { border: 0; margin: 0; padding: 0; width: 100%; height: 100%; }</style>
             <script type='text/javascript' src='${origin}/assets/sandbox.js'></script>
             </head>
@@ -89,6 +92,9 @@ export const SandboxedPreview: FC<Props> = ({ contents, mimeType, onDownload }) 
             ref={ref}
             className="file-preview-container w100 h100"
             sandbox="allow-scripts"
+            // Attribute is still experimental: https://developer.mozilla.org/en-US/docs/Web/API/HTMLIFrameElement/csp
+            // @ts-ignore
+            csp={csp}
         />
     );
 };
