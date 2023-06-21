@@ -270,6 +270,10 @@ export const getShopURL = () => {
     return `https://shop.proton.me`;
 };
 
+export const getDownloadUrl = (path: string) => {
+    return `https://proton.me/downloads${path}`;
+};
+
 export const getSupportContactURL = (params: string) => {
     return getStaticURL(`/support/contact?${params}`);
 };
