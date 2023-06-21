@@ -1,4 +1,5 @@
-import type { FormField, FormType } from '@proton/pass/types';
+import type { FormType } from '@proton/pass/types';
+import { FormField } from '@proton/pass/types';
 import { findBoundingInputElement } from '@proton/pass/utils/dom';
 import { createListenerStore } from '@proton/pass/utils/listener';
 
@@ -54,6 +55,21 @@ const onInputField = (field: FieldHandle): (() => void) =>
         field.setValue((field.element as HTMLInputElement).value);
     });
 
+/* when the type attribute of a field changes : detach it from
+ * the tracked form and re-trigger the detection */
+const onFieldAttributeChange = (field: FieldHandle): MutationCallback =>
+    withContext<MutationCallback>(({ service: { formManager } }, mutations) => {
+        if ([FormField.PASSWORD_CURRENT, FormField.PASSWORD_NEW].includes(field.fieldType)) return;
+
+        mutations.forEach((mutation) => {
+            const target = mutation.target as HTMLInputElement;
+            if (mutation.type === 'attributes' && mutation.oldValue !== target.type) {
+                field.getFormHandle().detachField(mutation.target as HTMLInputElement);
+                void formManager.detect('FieldTypeChange');
+            }
+        });
+    });
+
 /* trigger the submit handler on keydown enter */
 const onKeyDownField =
     (onSubmit: () => void) =>
@@ -68,7 +84,7 @@ export const createFieldHandles = ({
     getFormHandle,
 }: CreateFieldHandlesOptions): FieldHandle => {
     const listeners = createListenerStore();
-    const boxElement = findBoundingInputElement(element);
+    let boxElement = findBoundingInputElement(element);
 
     const field: FieldHandle = {
         formType,
@@ -81,7 +97,8 @@ export const createFieldHandles = ({
         tracked: false,
         zIndex,
         getFormHandle,
-        getBoxElement: () => field.boxElement,
+        getBoxElement: (options) =>
+            options?.revalidate ? (boxElement = findBoundingInputElement(element)) : boxElement,
         setValue: (value) => (field.value = value),
         setAction: (action) => (field.action = action),
 
@@ -122,6 +139,10 @@ export const createFieldHandles = ({
             listeners.addListener(field.element, 'focus', onFocusField(field));
             listeners.addListener(field.element, 'input', onInputField(field));
             listeners.addListener(field.element, 'keydown', onKeyDownField(onSubmit));
+            listeners.addObserver(field.element, onFieldAttributeChange(field), {
+                attributeFilter: ['type'],
+                attributeOldValue: true,
+            });
         },
 
         detach: () => {

@@ -26,6 +26,10 @@ export const ACTIVE_ICON_SRC = browser.runtime.getURL('/assets/protonpass-icon.s
 export const DROPDOWN_IFRAME_SRC = browser.runtime.getURL('/dropdown.html');
 export const NOTIFICATION_IFRAME_SRC = browser.runtime.getURL('/notification.html');
 
+/* heuristic max detection time duration in ms for sanity checking */
+export const MIN_MAX_DETECTION_TIME = 250;
+export const MAX_MAX_DETECTION_TIME = 1_000;
+
 /* ⚠️ WIP ⚠️
  * This list should be actively maintained
  * to list all top-level domains of email
