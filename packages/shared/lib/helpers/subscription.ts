@@ -221,17 +221,7 @@ export const hasTwoYears = (subscription?: Subscription) => {
     return subscription?.Cycle === CYCLE.TWO_YEARS;
 };
 
-type PriceMap = { [key in CYCLE]: number };
-type NullablePriceMap = { [key in CYCLE]: number | null };
-
-export const getPricingFromPlanIDs = (
-    planIDs: PlanIDs,
-    plansMap: PlansMap
-): {
-    all: PriceMap;
-    plans: PriceMap;
-    plansWithoutDiscount: NullablePriceMap;
-} => {
+export const getPricingFromPlanIDs = (planIDs: PlanIDs, plansMap: PlansMap) => {
     return Object.entries(planIDs).reduce(
         (acc, [planName, quantity]) => {
             const plan = plansMap[planName as keyof PlansMap];
@@ -239,22 +229,10 @@ export const getPricingFromPlanIDs = (
                 return acc;
             }
 
-            const add = (target: PriceMap, cycle: CYCLE) => {
+            const add = (target: any, cycle: CYCLE) => {
                 const price = plan.Pricing[cycle];
                 if (price) {
                     target[cycle] += quantity * price;
-                }
-            };
-
-            const addDefaultPricing = (target: NullablePriceMap, cycle: CYCLE) => {
-                if (!plan.DefaultPricing) {
-                    return;
-                }
-
-                const price = plan.DefaultPricing[cycle];
-                if (price !== undefined) {
-                    const currentValue = target[cycle] ?? 0;
-                    target[cycle] = currentValue + quantity * price;
                 }
             };
 
@@ -266,36 +244,19 @@ export const getPricingFromPlanIDs = (
                 allCycles.forEach((cycle) => {
                     add(acc.plans, cycle);
                 });
-
-                allCycles.forEach((cycle) => {
-                    addDefaultPricing(acc.plansWithoutDiscount, cycle);
-                });
             }
 
             return acc;
         },
         {
-            all: {
-                [CYCLE.MONTHLY]: 0,
-                [CYCLE.YEARLY]: 0,
-                [CYCLE.TWO_YEARS]: 0,
-                [CYCLE.THIRTY]: 0,
-                [CYCLE.FIFTEEN]: 0,
-            } as PriceMap,
+            all: { [CYCLE.MONTHLY]: 0, [CYCLE.YEARLY]: 0, [CYCLE.TWO_YEARS]: 0, [CYCLE.THIRTY]: 0, [CYCLE.FIFTEEN]: 0 },
             plans: {
                 [CYCLE.MONTHLY]: 0,
                 [CYCLE.YEARLY]: 0,
                 [CYCLE.TWO_YEARS]: 0,
                 [CYCLE.THIRTY]: 0,
                 [CYCLE.FIFTEEN]: 0,
-            } as PriceMap,
-            plansWithoutDiscount: {
-                [CYCLE.MONTHLY]: null,
-                [CYCLE.YEARLY]: null,
-                [CYCLE.TWO_YEARS]: null,
-                [CYCLE.THIRTY]: null,
-                [CYCLE.FIFTEEN]: null,
-            } as NullablePriceMap,
+            },
         }
     );
 };
@@ -310,19 +271,7 @@ export interface TotalPricing {
 export const getTotalFromPricing = (pricing: ReturnType<typeof getPricingFromPlanIDs>, cycle: CYCLE): TotalPricing => {
     const total = pricing.all[cycle];
     const totalPerMonth = pricing.plans[cycle] / cycle;
-
-    // If the current cycle pricing is different from the default cycle pricing,
-    // then it means that the current cycle is already discounted.
-    // Which in turn means that we will compare the plan cycle against itself undiscounted
-    // rather than on the multiplication of monthly.
-    let totalNoDiscount: number;
-    const defaultCyclePrice = pricing.plansWithoutDiscount[cycle];
-    if (defaultCyclePrice !== null && pricing.plans[cycle] !== defaultCyclePrice) {
-        totalNoDiscount = defaultCyclePrice;
-    } else {
-        totalNoDiscount = pricing.all[CYCLE.MONTHLY] * cycle;
-    }
-
+    const totalNoDiscount = pricing.all[CYCLE.MONTHLY] * cycle;
     const discount = cycle === CYCLE.MONTHLY ? 0 : totalNoDiscount - total;
     return {
         discount,
