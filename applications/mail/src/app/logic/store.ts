@@ -24,7 +24,7 @@ const thunkExtraArgs = {} as unknown as AppThunkExtra['extra'];
 export const useSetReduxThunkExtraArgs = () => {
     const api = useApi();
     const notifications = useNotifications();
-    const events = useEventManager();
+    const eventManager = useEventManager();
 
     /**
      * https://beta.reactjs.org/reference/react/useRef#avoiding-recreating-the-ref-contents
@@ -32,7 +32,7 @@ export const useSetReduxThunkExtraArgs = () => {
     const thunkExtraArgsDefined = useRef(false);
     if (!thunkExtraArgsDefined.current) {
         thunkExtraArgsDefined.current = true;
-        Object.assign(thunkExtraArgs, { api, notifications, events });
+        Object.assign(thunkExtraArgs, { api, notifications, eventManager });
     }
 };
 
