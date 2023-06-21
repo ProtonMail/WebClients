@@ -68,6 +68,7 @@ export enum WorkerMessageType {
     ONBOARDING_REQUEST = 'ONBOARDING_REQUEST',
     ONBOARDING_ACK = 'ONBOARDING_ACK',
     TELEMETRY_EVENT = 'TELEMETRY_EVENT',
+    SENTRY_CS_EVENT = 'SENTRY_CS_EVENT',
     LOG_EVENT = 'LOG_EVENT',
     LOG_REQUEST = 'LOG_REQUEST',
     SETTINGS_UPDATE = 'SETTINGS_UPDATE',
@@ -112,6 +113,7 @@ export type ShareServerEventMessage = WithPayload<WorkerMessageType.SHARE_SERVER
 export type OnboardingRequestMessage = { type: WorkerMessageType.ONBOARDING_REQUEST };
 export type OnboardingAckMessage = WithPayload<WorkerMessageType.ONBOARDING_ACK, { message: OnboardingMessage }>;
 export type TelemetryEventMessage = WithPayload<WorkerMessageType.TELEMETRY_EVENT, { event: TelemetryEvent }>;
+export type SentryCSEventMessage = WithPayload<WorkerMessageType.SENTRY_CS_EVENT, { message: string; data: any }>;
 export type LogEventMessage = WithPayload<WorkerMessageType.LOG_EVENT, { log: string }>;
 export type LogRequestMessage = { type: WorkerMessageType.LOG_REQUEST };
 export type SettingsUpdateMessage = WithPayload<WorkerMessageType.SETTINGS_UPDATE, ProxiedSettings>;
@@ -155,6 +157,7 @@ export type WorkerMessage =
     | OnboardingRequestMessage
     | OnboardingAckMessage
     | TelemetryEventMessage
+    | SentryCSEventMessage
     | LogEventMessage
     | LogRequestMessage
     | SettingsUpdateMessage
