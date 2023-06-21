@@ -1,3 +1,4 @@
+import { captureMessage as sentryCaptureMessage } from '@sentry/browser';
 import type { Runtime } from 'webextension-polyfill';
 
 import { backgroundMessage } from '@proton/pass/extension/message';
@@ -83,6 +84,11 @@ export const createInjectionService = () => {
             })
         )
     );
+
+    WorkerMessageBroker.registerMessage(WorkerMessageType.SENTRY_CS_EVENT, ({ payload }) => {
+        sentryCaptureMessage(payload.message, { extra: payload });
+        return true;
+    });
 
     return { updateInjections };
 };
