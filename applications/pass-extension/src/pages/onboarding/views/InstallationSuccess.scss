@@ -1,0 +1,15 @@
+@import '~@proton/styles/scss/lib';
+
+.pass-installation--dot {
+	inline-size: rem(24);
+	block-size: rem(24);
+	font-size: rem(11);
+}
+
+.pass-installation--connect-illustration {
+	block-size: 160px !important;
+}
+
+.pass-installation--pin-tutorial {
+	border: 2px solid white;
+}
