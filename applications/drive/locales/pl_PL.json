@@ -241,6 +241,9 @@
       "Download anyway": [
         "Pobierz mimo to"
       ],
+      "Download apps": [
+        "Pobierz aplikacje"
+      ],
       "Download the Windows application": [
         "Pobierz aplikację na Windowsa"
       ],
@@ -784,6 +787,17 @@
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "Jeśli napotkasz problemy, możesz wyłączyć dostęp beta."
+      ]
+    },
+    "Billing cycle option": {
+      "Annually": [
+        "Rocznie"
+      ],
+      "Monthly": [
+        "Miesięcznie"
+      ],
+      "Two-year": [
+        "Co dwa lata"
       ]
     },
     "Bug category": {
@@ -2175,9 +2189,6 @@
       "The original folder not found": [
         "Oryginalny folder nie został znaleziony"
       ],
-      "The original folder or file not found": [
-        "Oryginalny folder lub plik nie został znaleziony"
-      ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Posiadasz zbyt wiele folderów na swoim koncie zewnętrznym. Dostosuj proces importowania, aby usunąć niektóre foldery."
       ],
@@ -3329,6 +3340,9 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Przed poproszeniem o nowy kod weryfikacyjny, sprawdź folder Spam i poprawność adresu ${ strong }."
       ],
+      "Billing cycle: ${ text }": [
+        "Cykl rozliczeniowy: ${ text }"
+      ],
       "Calendar side panel": [
         "Panel boczny kalendarza"
       ],
@@ -3556,9 +3570,6 @@
       ],
       "Folder \"${ link.name }\" was deleted during download": [
         "Folder \"${ link.name }\" został usunięty podczas pobierania"
-      ],
-      "Folder contents will merge into a single folder": [
-        "Zawartość folderu zostanie scalona do pojedynczego folderu"
       ],
       "Folder is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "Brak podpisu folderu. Nie możemy zweryfikować, czy adres ${ emailAddress } przesłał plik ${ fileName }."
@@ -4016,9 +4027,6 @@
         "Spowoduje to usunięcie linków i dostępu do folderów dla każdego, kto posiada link.",
         "Spowoduje to usunięcie linków i dostępu do folderów dla każdego, kto posiada link."
       ],
-      "This will overwrite the existing folder": [
-        "Spowoduje to nadpisanie istniejącego folderu"
-      ],
       "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on the device won’t be affected.": [
         "Spowoduje to usunięcie zsynchronizowanego urządzenia ${ deviceName } z ${ DRIVE_APP_NAME }. Lokalne pliki na urządzeniu nie zostaną utracone."
       ],
@@ -4227,7 +4235,7 @@
         "Pliki nie są już dostępne z powodu zresetowania hasła. Prześlij ponownie stary klucz szyfrowania, aby odzyskać do nich dostęp. ${ KeyReactivationButton }"
       ],
       "Your files will be encrypted and then saved": [
-        "Twoje pliki przed zapisaniem zostaną zaszyfrowane"
+        "Twoje pliki, przed zapisaniem, zostaną zaszyfrowane"
       ],
       "Your files will be encrypted and then saved.": [
         "Twoje pliki przed zapisaniem zostaną zaszyfrowane."
@@ -4590,9 +4598,6 @@
       ],
       "Manage categories": [
         "Zarządzaj kategoriami"
-      ],
-      "Merge a folder": [
-        "Scal folder"
       ],
       "Modified": [
         "Data modyfikacji"
@@ -5408,6 +5413,11 @@
         "Nazwa"
       ]
     },
+    "Platform": {
+      "Windows": [
+        "Windows"
+      ]
+    },
     "Progress bar description": {
       "${ contactsExported.length } out of ${ countContacts } contact successfully exported.": [
         "Pomyślnie wyeksportowano ${ contactsExported.length } z ${ countContacts } kontaktu.",
@@ -5577,9 +5587,6 @@
       ],
       "Mail, Calendar, Drive": [
         "Usługi Mail, Calendar i Drive"
-      ],
-      "Premium Drive": [
-        "Usługa Drive w wersji premium"
       ],
       "Premium early access": [
         "Wczesny dostęp premium"
@@ -6002,6 +6009,9 @@
       ],
       "Beta Access": [
         "Dostęp beta"
+      ],
+      "Billing cycle": [
+        "Cykl rozliczeniowy"
       ],
       "Browser might run out of memory": [
         "Brak pamięci przeglądarki"
