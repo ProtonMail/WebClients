@@ -1326,6 +1326,17 @@
         "Jestliže zaznamenáte problémy, vždy můžete deaktivovat Beta Přístup."
       ]
     },
+    "Billing cycle option": {
+      "Annually": [
+        "Ročně"
+      ],
+      "Monthly": [
+        "Měsíčně"
+      ],
+      "Two-year": [
+        "Dva roky"
+      ]
+    },
     "Bug category": {
       "Application problem": [
         "Problém s aplikací"
@@ -4998,6 +5009,9 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Před vyžádáním nového ověřovacího kódu zkontrolujte složku spamu a zkontrolujte, zda je adresa ${ strong } správná."
       ],
+      "Billing cycle: ${ text }": [
+        "Fakturační cyklus: ${ text }"
+      ],
       "Body: ": [
         "Tělo: "
       ],
@@ -8117,9 +8131,6 @@
       "Highest VPN speed": [
         "Nejvyšší rychlost VPN"
       ],
-      "Premium Drive": [
-        "Prémiový Disk"
-      ],
       "Premium early access": [
         "Prémiový předběžný přístup"
       ],
@@ -8822,6 +8833,9 @@
       ],
       "Beta Access": [
         "Beta přístup"
+      ],
+      "Billing cycle": [
+        "Fakturační cyklus"
       ],
       "Blind Carbon Copy": [
         "Skrytá kopie"
