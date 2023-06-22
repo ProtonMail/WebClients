@@ -3781,6 +3781,9 @@
       "Create a new user": [
         "Создать нового пользователя"
       ],
+      "Decline invitation": [
+        "Отклонить приглашение"
+      ],
       "Got it": [
         "ОК"
       ],
@@ -4065,6 +4068,9 @@
       "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
         "Включает 2700 серверов в более чем 65 странах с возможностью подключения до 10 устройств, доступ к стриминговым платформам со всего мира, блокировщик рекламы и вредоносного ПО и другие преимущества."
       ],
+      "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
+        "Включает поддержку 3 своих доменов, 90 адресов электронной почты, неограниченного количества псевдонимов hide-my-email, совместный доступ к календарю и другое."
+      ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Защитите свои материалы при помощи зашифрованного облачного хранилища. Используйте автоматическую синхронизацию, зашифрованный обмен файлами и многое другое."
       ]
@@ -4303,9 +4309,34 @@
         "По умолчанию"
       ]
     },
+    "Font face option": {
+      "System default": [
+        "Системный по умолчанию"
+      ],
+      "Theme default": [
+        "Из темы по умолчанию"
+      ]
+    },
     "Font Size Default": {
       "Default": [
         "По умолчанию"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Большой"
+      ],
+      "Medium (recommended)": [
+        "Средний (Рекомендуется)"
+      ],
+      "Small": [
+        "Маленький"
+      ],
+      "Very large": [
+        "Очень большой"
+      ],
+      "Very small": [
+        "Очень маленький"
       ]
     },
     "Frequency of news": {
@@ -7180,6 +7211,9 @@
       "New message": [
         "Новое сообщение"
       ],
+      "Open command panel": [
+        "Открыть панель команд"
+      ],
       "Open next message": [
         "Открыть следующее сообщение"
       ],
@@ -8030,6 +8064,9 @@
       ],
       "Subscription options": [
         "Параметры подписки"
+      ],
+      "Synchronize with system": [
+        "Синхронизировать с системой"
       ],
       "System information": [
         "Сведения о системе"
@@ -9004,6 +9041,9 @@
       ],
       "GDPR data processing agreement": [
         "Соглашение об обработке данных в соответствии с GDPR"
+      ],
+      "Hide-my-email aliases": [
+        "Псевдонимы hide-my-email"
       ],
       "High-speed streaming": [
         "Высокоскоростной стриминг"
@@ -10531,9 +10571,6 @@
       "Highest VPN speed": [
         "Высочайшая скорость VPN"
       ],
-      "Premium Drive": [
-        "Платная версия Drive"
-      ],
       "Premium early access": [
         "Ранний доступ"
       ],
@@ -10688,6 +10725,15 @@
       ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
         "Наслаждайтесь контентом на стриминговых платформах, таких как Netflix, Disney+ и Amazon Prime Video, из любой точки мира."
+      ],
+      "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
+        "Все наших платные сервисы с максимальными лимитами: 100 адресов электронной почты, поддержка 10 своих доменов и неограниченного числа псевдонимов hide-my-email, совместный доступ к календарю, зашифрованное облачное хранилище и обмен файлами, и другое."
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Включает поддержку 1 своего домена, 10 адресов электронной почты, 10 псевдонимов hide-my-email, совместный доступ к календарю и другие преимущества."
+      ],
+      "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Включает поддержку 3 своих доменов, 15 адресов электронной почты, неограниченного количества псевдонимов hide-my-email, совместный доступ к календарю и другие преимущества."
       ],
       "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
         "Идеально подходит семьям и небольшим командам. У каждого участника будут свои почтовый ящик и алиасы. Необходимо иметь свой домен."
@@ -11302,6 +11348,9 @@
       "${ MAIL_APP_NAME } Keyboard Shortcuts": [
         "${ MAIL_APP_NAME } Быстрые клавиши"
       ],
+      "(active)": [
+        "(активна)"
+      ],
       "1. Give a name to the config to be generated": [
         "1. Дайте имя генерируемой конфигурации"
       ],
@@ -11559,6 +11608,9 @@
       ],
       "Date": [
         "Дата"
+      ],
+      "Day theme": [
+        "Дневная тема"
       ],
       "Decrypt key": [
         "Расшифровать ключ"
@@ -11829,6 +11881,9 @@
       ],
       "Next": [
         "Далее"
+      ],
+      "Night theme": [
+        "Ночная тема"
       ],
       "No recovery method": [
         "Отсутствует метод восстановления"
@@ -12322,6 +12377,9 @@
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Новый цикл подписки начинается ${ formattedTime }"
+      ],
+      "The selected theme will be active when your system is set to \"light mode\"": [
+        "Выбранная тема станет доступной, когда на системе выбрано \"светлое оформление\""
       ],
       "This address has been disabled": [
         "Этот адрес был отключён"
