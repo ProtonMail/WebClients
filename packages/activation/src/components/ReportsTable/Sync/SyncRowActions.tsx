@@ -25,7 +25,7 @@ const SyncRowActions = ({ syncId }: Props) => {
 
     const [loadingApiChange, withLoadingApiChange] = useLoading();
 
-    const { triggerOAuthPopup } = useOAuthPopup({
+    const { triggerOAuthPopup, loadingConfig } = useOAuthPopup({
         errorMessage: c('Error').t`Your forward will not be processed.`,
     });
 
@@ -66,6 +66,7 @@ const SyncRowActions = ({ syncId }: Props) => {
                 {
                     text: c('account').t`Reconnect`,
                     onClick: handleReconnectClick,
+                    disabled: loadingConfig,
                 },
                 deleteSyncButton,
             ];
