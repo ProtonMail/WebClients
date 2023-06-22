@@ -1,3 +1,4 @@
+import type { GeneratePasswordOptions } from '@proton/pass/password';
 import type { ItemDraft } from '@proton/pass/store';
 
 import type { ItemFilters, SelectedItem } from '../data';
@@ -44,4 +45,5 @@ export type PopupInitialState = {
     draft: MaybeNull<ItemDraft>;
     filters: MaybeNull<ItemFilters>;
     selectedItem: MaybeNull<SelectedItem>;
+    passwordOptions: MaybeNull<GeneratePasswordOptions>;
 };

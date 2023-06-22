@@ -1,10 +1,11 @@
 import type { AnyAction, Reducer } from 'redux';
 
+import type { GeneratePasswordOptions } from '@proton/pass/password';
 import type { ItemFilters, ItemType, MaybeNull, SelectedItem, TabId, UniqueItem } from '@proton/pass/types';
 import { merge, objectDelete } from '@proton/pass/utils/object';
 
 import { itemDraftDiscard, itemDraftSave } from '../actions';
-import { popupTabStateGarbageCollect, popupTabStateSave } from '../actions/creators/popup';
+import { popupPasswordOptionsSave, popupTabStateGarbageCollect, popupTabStateSave } from '../actions/creators/popup';
 
 export type ItemDraft<T extends {} = {}> = UniqueItem & {
     mode: 'new' | 'edit';
@@ -16,16 +17,17 @@ export type PopupTabState = {
     tabId: TabId;
     domain: MaybeNull<string>;
     search: MaybeNull<string>;
-    filters: MaybeNull<ItemFilters>;
     selectedItem: MaybeNull<SelectedItem>;
 };
 
 export type PopupState = {
     draft: MaybeNull<ItemDraft>;
     tabs: { [tabId: TabId]: PopupTabState };
+    filters: MaybeNull<ItemFilters>;
+    passwordOptions: MaybeNull<GeneratePasswordOptions>;
 };
 
-const initialState: PopupState = { draft: null, tabs: {} };
+const initialState: PopupState = { draft: null, tabs: {}, filters: null, passwordOptions: null };
 
 const popupReducer: Reducer<PopupState> = (state = initialState, action: AnyAction) => {
     if (itemDraftSave.match(action)) return { ...state, draft: action.payload };
@@ -33,6 +35,7 @@ const popupReducer: Reducer<PopupState> = (state = initialState, action: AnyActi
 
     if (popupTabStateSave.match(action)) {
         return merge(state, {
+            filters: action.payload.filters ?? state.filters,
             tabs: {
                 [action.payload.tabId]: action.payload,
             },
@@ -47,6 +50,10 @@ const popupReducer: Reducer<PopupState> = (state = initialState, action: AnyActi
                 state.tabs
             ),
         };
+    }
+
+    if (popupPasswordOptionsSave.match(action)) {
+        return { ...state, passwordOptions: action.payload };
     }
 
     return state;

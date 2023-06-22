@@ -4,6 +4,7 @@
  * top of the password. */
 export const uppercaseChars = 'ABCDEFGHJKMNPQRSTUVWXYZ';
 export const lowercaseChars = 'abcdefghjkmnpqrstuvwxyz';
+export const alphabeticChars = uppercaseChars + lowercaseChars + 'iolIOL';
 export const digitChars = '0123456789';
 export const specialChars = '!#$%&()*+.:;<=>?@[]^';
 
