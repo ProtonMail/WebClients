@@ -2,13 +2,7 @@ import { useCallback, useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 
 import type { GeneratePasswordOptions } from '@proton/pass/password';
-import {
-    DEFAULT_PASSWORD_LENGTH,
-    digitChars,
-    generatePassword,
-    lowercaseChars,
-    uppercaseChars,
-} from '@proton/pass/password';
+import { DEFAULT_PASSWORD_LENGTH, alphabeticChars, digitChars, generatePassword } from '@proton/pass/password';
 import { SeperatorOptions } from '@proton/pass/password/memorable';
 import { popupPasswordOptionsSave } from '@proton/pass/store/actions/creators/popup';
 import { merge } from '@proton/pass/utils/object';
@@ -31,8 +25,7 @@ export const charTypeToClassName = {
 };
 
 export const getTypeFromChar = (char: string) => {
-    if (lowercaseChars.includes(char)) return CharType.Alphabetic;
-    if (uppercaseChars.includes(char)) return CharType.Alphabetic;
+    if (alphabeticChars.includes(char)) return CharType.Alphabetic;
     if (digitChars.includes(char)) return CharType.Digit;
 
     return CharType.Special;
