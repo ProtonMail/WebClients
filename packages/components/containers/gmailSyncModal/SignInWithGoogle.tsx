@@ -7,17 +7,18 @@ import './SignInWithGoogle.scss';
 
 interface Props {
     loading: boolean;
+    disabled?: boolean;
     onClick: () => void;
 }
 
-const SignInWithGoogle = ({ loading, onClick }: Props) => {
+const SignInWithGoogle = ({ loading, disabled, onClick }: Props) => {
     return (
         <Button
             fullWidth
             color="norm"
             onClick={onClick}
             loading={loading}
-            disabled={loading}
+            disabled={loading || disabled}
             className="flex flex-align-items-center p-1 rounded h-custom google-button"
             style={{ '--h-custom': '3rem' }}
         >
