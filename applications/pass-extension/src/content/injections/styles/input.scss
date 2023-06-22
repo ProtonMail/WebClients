@@ -105,25 +105,6 @@
 		}
 	}
 
-	&--svg {
-		position: absolute;
-		inset: 0;
-		filter: drop-shadow(1px 2px 4px black);
-
-		svg {
-			position: absolute;
-			inset: 0;
-			block-size: 50%;
-			inline-size: 50%;
-			stroke-width: 2px;
-			fill: white;
-			color: white;
-			margin: auto;
-			transform: translateX(-20%);
-			opacity: 0.89;
-		}
-	}
-
 	@keyframes icon-fade-in {
 		from {
 			opacity: 0;

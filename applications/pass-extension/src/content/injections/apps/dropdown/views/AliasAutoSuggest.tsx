@@ -10,16 +10,19 @@ import { type MaybeNull, type RequiredNonNull, WorkerMessageType } from '@proton
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
+import noop from '@proton/utils/noop';
 
 import { navigateToUpgrade } from '../../../../..//shared/components/upgrade/UpgradeButton';
 import { AliasPreview } from '../../../../../shared/components/alias/Alias.preview';
 import { useEnsureMounted } from '../../../../../shared/hooks/useEnsureMounted';
+import { type IFrameMessage, IFrameMessageType } from '../../../../types';
+import { useIFrameContext } from '../../context/IFrameContextProvider';
 import { DropdownItem } from '../components/DropdownItem';
 
 type Props = {
     prefix: string;
     domain: string;
-    onSubmit: (aliasEmail: string) => void;
+    onSubmit: (message: IFrameMessage) => void;
     onOptions?: () => void;
 };
 
@@ -33,6 +36,7 @@ const getInitialLoadingText = (): string => c('Info').t`Generating alias...`;
 
 export const AliasAutoSuggest: VFC<Props> = ({ prefix, domain, onOptions, onSubmit }) => {
     const ensureMounted = useEnsureMounted();
+    const { userEmail } = useIFrameContext();
     const [aliasOptions, setAliasOptions] = useState<MaybeNull<AliasState['aliasOptions']>>(null);
     const [needsUpgrade, setNeedsUpgrade] = useState<boolean>(false);
     const [loadingText, setLoadingText] = useState<MaybeNull<string>>(getInitialLoadingText());
@@ -42,9 +46,10 @@ export const AliasAutoSuggest: VFC<Props> = ({ prefix, domain, onOptions, onSubm
         try {
             setLoadingText(getInitialLoadingText());
             setError(false);
+            await wait(500);
 
-            await sendMessage.on(pageMessage({ type: WorkerMessageType.ALIAS_OPTIONS }), (response) => {
-                if (response.type === 'success' && response.options !== null) {
+            await sendMessage.onSuccess(pageMessage({ type: WorkerMessageType.ALIAS_OPTIONS }), (response) => {
+                if (response.options !== null) {
                     ensureMounted(setAliasOptions)(response.options);
                     ensureMounted(setNeedsUpgrade)(response.needsUpgrade);
                     return onOptions?.(); /* notify parent component if we need an iframe resize */
@@ -96,7 +101,10 @@ export const AliasAutoSuggest: VFC<Props> = ({ prefix, domain, onOptions, onSubm
 
                 ensureMounted(() => {
                     setLoadingText(null);
-                    onSubmit(aliasEmail);
+                    onSubmit({
+                        type: IFrameMessageType.DROPDOWN_AUTOSUGGEST_ALIAS,
+                        payload: { aliasEmail },
+                    });
                 })();
             } catch (err) {
                 ensureMounted(setError)(true);
@@ -106,7 +114,7 @@ export const AliasAutoSuggest: VFC<Props> = ({ prefix, domain, onOptions, onSubm
     );
 
     useEffect(() => {
-        void wait(500).then(requestAliasOptions);
+        wait(500).then(requestAliasOptions).catch(noop);
     }, []);
 
     useEffect(() => {
@@ -116,50 +124,78 @@ export const AliasAutoSuggest: VFC<Props> = ({ prefix, domain, onOptions, onSubm
     const validAliasOptions = isValidAliasOptions(aliasOptions);
 
     return (
-        <DropdownItem
-            title={needsUpgrade ? c('Info').t`Upgrade ${PASS_APP_NAME}` : c('Title').t`Create email alias`}
-            autogrow={needsUpgrade}
-            subTitle={(() => {
-                if (loadingText) {
-                    return (
-                        <span>
-                            <CircleLoader className="mr-2" />
-                            {loadingText}
+        <>
+            <DropdownItem
+                title={c('Title').t`Use my email`}
+                disabled={!userEmail}
+                subTitle={
+                    userEmail ?? (
+                        <span className="block flex flex-align-items-center">
+                            <CircleLoader className="mr-1" />
+                            <span>{c('Info').t`Loading...`}</span>
                         </span>
-                    );
+                    )
                 }
+                icon="envelope"
+                onClick={
+                    userEmail
+                        ? () =>
+                              onSubmit({
+                                  type: IFrameMessageType.DROPDOWN_AUTOFILL_USER_EMAIL,
+                                  payload: { userEmail },
+                              })
+                        : noop
+                }
+            />
+            <DropdownItem
+                title={needsUpgrade ? c('Info').t`Upgrade ${PASS_APP_NAME}` : c('Title').t`Hide my email`}
+                autogrow={needsUpgrade}
+                subTitle={(() => {
+                    if (loadingText) {
+                        return (
+                            <span className="block flex flex-align-items-center">
+                                <CircleLoader className="mr-1" />
+                                <span>{loadingText}</span>
+                            </span>
+                        );
+                    }
 
-                if (needsUpgrade) {
-                    return <span>{c('Warning').t`Your plan does not allow you to create more aliases`}</span>;
-                }
+                    if (needsUpgrade) {
+                        return (
+                            <span className="text-sm block">{c('Warning')
+                                .t`Your plan does not allow you to create more aliases`}</span>
+                        );
+                    }
 
-                if (error) {
-                    return (
-                        <span className="color-danger">
-                            {c('Error').t`Cannot create alias.`}{' '}
-                            <span className="text-semibold text-underline">{c('Action').t`Try again`}</span>
-                        </span>
-                    );
-                }
+                    if (error) {
+                        return (
+                            <span className="color-danger text-sm block">
+                                {c('Error').t`Cannot create alias.`}{' '}
+                                <span className="text-semibold text-underline">{c('Action').t`Try again`}</span>
+                            </span>
+                        );
+                    }
 
-                if (validAliasOptions) {
-                    return (
-                        <AliasPreview
-                            prefix={prefix}
-                            suffix={aliasOptions.suffixes[0].suffix}
-                            standalone
-                            key="alias-preview"
-                        />
-                    );
-                }
-            })()}
-            icon={needsUpgrade ? 'arrow-out-square' : 'alias'}
-            disabled={loadingText !== null}
-            onClick={(() => {
-                if (needsUpgrade) return navigateToUpgrade;
-                if (error) return requestAliasOptions;
-                if (validAliasOptions) return () => createAlias(aliasOptions);
-            })()}
-        />
+                    if (validAliasOptions) {
+                        return (
+                            <AliasPreview
+                                prefix={prefix}
+                                suffix={aliasOptions.suffixes[0].suffix}
+                                standalone
+                                key="alias-preview"
+                            />
+                        );
+                    }
+                })()}
+                icon={needsUpgrade ? 'arrow-out-square' : 'alias'}
+                className="ui-alias"
+                disabled={loadingText !== null}
+                onClick={(() => {
+                    if (needsUpgrade) return navigateToUpgrade;
+                    if (error) return requestAliasOptions;
+                    if (validAliasOptions) return () => createAlias(aliasOptions);
+                })()}
+            />
+        </>
     );
 };

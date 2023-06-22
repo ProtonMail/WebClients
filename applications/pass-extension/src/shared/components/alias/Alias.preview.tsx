@@ -21,7 +21,7 @@ export const AliasPreview: VFC<{
     );
 
     return standalone ? (
-        <div className={clsx(['color-primary', className])}>{content}</div>
+        <div className={className}>{content}</div>
     ) : (
         <div className={clsx(['flex mb-4', className])}>
             <small className="flex-item-nogrow flex-item-noshrink mr-0.5">{c('Info').t`You're about to create`}</small>

@@ -12,7 +12,6 @@ import {
 } from '@proton/pass/utils/dom';
 
 import {
-    ACTIVE_ICON_SRC,
     EXTENSION_PREFIX,
     ICON_CLASSNAME,
     ICON_MAX_HEIGHT,
@@ -168,7 +167,6 @@ const applyIconInjectionStyles = (elements: InjectionElements, shared: SharedInj
     icon.style.right = styles.icon.right;
     icon.style.width = styles.icon.size;
     icon.style.height = styles.icon.size;
-    icon.style.setProperty('background-image', `url("${ACTIVE_ICON_SRC}")`, 'important');
     icon.style.setProperty(`--${EXTENSION_PREFIX}-icon-lineheight`, styles.icon.size);
     icon.style.setProperty(
         `--${EXTENSION_PREFIX}-icon-fontsize`,
