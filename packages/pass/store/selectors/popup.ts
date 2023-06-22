@@ -10,3 +10,6 @@ export const selectPopupTabState =
     (tabId: TabId) =>
     (state: State): Maybe<PopupTabState> =>
         state.popup.tabs?.[tabId];
+
+export const selectPopupFilters = (state: State) => state.popup.filters;
+export const selectPopupPasswordOptions = (state: State) => state.popup.passwordOptions;

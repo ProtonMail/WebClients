@@ -1,15 +1,14 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
 
 import type { GeneratePasswordOptions } from '@proton/pass/password';
-import {
-    DEFAULT_PASSWORD_LENGTH,
-    digitChars,
-    generatePassword,
-    lowercaseChars,
-    uppercaseChars,
-} from '@proton/pass/password';
+import { DEFAULT_PASSWORD_LENGTH, alphabeticChars, digitChars, generatePassword } from '@proton/pass/password';
 import { SeperatorOptions } from '@proton/pass/password/memorable';
+import { popupPasswordOptionsSave } from '@proton/pass/store/actions/creators/popup';
 import { merge } from '@proton/pass/utils/object';
+import debounce from '@proton/utils/debounce';
+
+import { usePopupContext } from '../../popup/hooks/usePopupContext';
 
 export enum CharType {
     Alphabetic,
@@ -26,8 +25,7 @@ export const charTypeToClassName = {
 };
 
 export const getTypeFromChar = (char: string) => {
-    if (lowercaseChars.includes(char)) return CharType.Alphabetic;
-    if (uppercaseChars.includes(char)) return CharType.Alphabetic;
+    if (alphabeticChars.includes(char)) return CharType.Alphabetic;
     if (digitChars.includes(char)) return CharType.Digit;
 
     return CharType.Special;
@@ -80,7 +78,11 @@ export const DEFAULT_RANDOM_PW_OPTIONS: GeneratePasswordOptions = {
 };
 
 export const usePasswordGenerator = () => {
-    const [passwordOptions, setOptions] = useState<GeneratePasswordOptions>(DEFAULT_MEMORABLE_PW_OPTIONS);
+    const dispatch = useDispatch();
+    const { initial } = usePopupContext().state;
+    const [passwordOptions, setOptions] = useState<GeneratePasswordOptions>(
+        initial.passwordOptions ?? DEFAULT_MEMORABLE_PW_OPTIONS
+    );
     const [password, setPassword] = useState(() => generatePassword(passwordOptions));
 
     const regeneratePassword = () => setPassword(generatePassword(passwordOptions));
@@ -97,7 +99,15 @@ export const usePasswordGenerator = () => {
         });
 
     const options = Object.values(passwordOptions.options);
-    useEffect(regeneratePassword, [...options]);
+    const savePasswordOptions = useCallback(
+        debounce((opts: GeneratePasswordOptions) => dispatch(popupPasswordOptionsSave(opts)), 250),
+        []
+    );
+
+    useEffect(() => {
+        regeneratePassword();
+        savePasswordOptions(passwordOptions);
+    }, [...options]);
 
     return {
         password,

@@ -1,6 +1,7 @@
 import { type FC, createContext, useEffect, useMemo, useState } from 'react';
 import { useDispatch } from 'react-redux';
 
+import usePrevious from '@proton/hooks/usePrevious';
 import { popupTabStateSave } from '@proton/pass/store/actions/creators/popup';
 import type { ItemSortFilter, ItemTypeFilter, MaybeNull } from '@proton/pass/types';
 import noop from '@proton/utils/noop';
@@ -49,22 +50,30 @@ export const ItemsFilteringContextProvider: FC = ({ children }) => {
     const [type, setType] = useState<ItemTypeFilter>(popup.state.initial.filters?.type ?? '*');
     const [shareId, setShareId] = useState<MaybeNull<string>>(popup.state.initial.filters?.shareId ?? null);
     const [shareBeingDeleted, setShareBeingDeleted] = useState<MaybeNull<string>>(null);
-
     const debouncedSearch = useDebouncedValue(search, SEARCH_DEBOUNCE_TIME);
 
-    /* when updating the sort filters : discard any
-     * selected item from the current popup tab */
+    const filters = useMemo(
+        () => ({ filters: { sort, type, shareId }, search: debouncedSearch }),
+        [sort, type, debouncedSearch, shareId]
+    );
+
+    const prevFilters = usePrevious(filters);
+
+    /* when updating filters : discard any selected item from
+     * the current popup tab. Don't dispatch on initial mount
+     * (`prevFilters` will be `undefined`) */
     useEffect(() => {
-        dispatch(
-            popupTabStateSave({
-                tabId: popup.context!.tabId,
-                domain: popup.url.subdomain ?? popup.url.domain ?? null,
-                selectedItem: null,
-                filters: { sort, type, shareId },
-                search: debouncedSearch,
-            })
-        );
-    }, [sort, type, debouncedSearch, shareId]);
+        if (prevFilters) {
+            dispatch(
+                popupTabStateSave({
+                    tabId: popup.context!.tabId,
+                    domain: popup.url.subdomain ?? popup.url.domain ?? null,
+                    selectedItem: null,
+                    ...filters,
+                })
+            );
+        }
+    }, [filters]);
 
     const context: ItemsFilteringContextType = useMemo(
         () => ({
