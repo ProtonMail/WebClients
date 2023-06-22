@@ -53,5 +53,5 @@ export const getMinExpirationTime = (date: Date) => {
     // 9:30, 10:00, 10:30
     const nextIntervals = Array.from(Array(3)).map((_, i) => addMinutes(nowForInterval, 30 * (i + 1)));
 
-    return nextIntervals.find((interval) => interval > now && differenceInMinutes(interval, now) >= 30);
+    return nextIntervals.find((interval) => interval > now && differenceInMinutes(interval, now) >= 15);
 };
