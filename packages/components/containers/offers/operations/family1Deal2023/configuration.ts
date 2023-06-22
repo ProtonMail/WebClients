@@ -15,7 +15,6 @@ const config: OfferConfig = {
     featureCode: FeatureCode.OfferFamily2023,
     getCTAContent: () => c('familyOffer_2023:Get Proton Family').t`Get ${planName}`,
     icon: 'users-plus',
-    autoPopUp: 'one-time',
     deals: [
         {
             ref: 'family_offer-1-deal-24',
