@@ -2,9 +2,13 @@ import { c } from 'ttag';
 
 import { SectionConfig } from '@proton/components';
 import { VPN_APP_NAME } from '@proton/shared/lib/constants';
-import { UserModel } from '@proton/shared/lib/interfaces';
+import { hasVPN } from '@proton/shared/lib/helpers/subscription';
+import { Renew, Subscription, UserModel } from '@proton/shared/lib/interfaces';
 
-export const getRoutes = (user: UserModel) => {
+export const getRoutes = (user: UserModel, subscription?: Subscription) => {
+    // that's different from user.hasPaidVpn. That's because hasPaidVpn is true even if user has the unlimited plan
+    const hasVpnPlan = hasVPN(subscription);
+
     return {
         dashboard: <SectionConfig>{
             text: c('Title').t`Dashboard`,
@@ -35,9 +39,14 @@ export const getRoutes = (user: UserModel) => {
                     id: 'gift-code',
                 },
                 {
-                    text: c('Title').t`Downgrade account`,
-                    available: user.hasPaidVpn,
+                    text: c('Title').t`Cancel subscription`,
                     id: 'cancel-subscription',
+                    available: user.hasPaidVpn && hasVpnPlan && subscription?.Renew === Renew.Enabled,
+                },
+                {
+                    text: c('Title').t`Downgrade account`,
+                    id: 'downgrade-account',
+                    available: user.isPaid && !hasVpnPlan,
                 },
             ],
         },
