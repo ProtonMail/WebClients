@@ -15,8 +15,15 @@ interface Props {
     onClose: () => void;
 }
 const CalendarSearchActivation = ({ isIndexing, onClose }: Props) => {
-    const { isLibraryInitialized, enableEncryptedSearch, getProgressRecorderRef } = useEncryptedSearchLibrary();
-    const esState = useEncryptedSearchState({
+    const {
+        isLibraryInitialized,
+        enableEncryptedSearch,
+        getProgressRecorderRef,
+        pauseMetadataIndexing,
+        getESDBStatus,
+    } = useEncryptedSearchLibrary();
+    const { isMetadataIndexingPaused } = getESDBStatus();
+    const { esState } = useEncryptedSearchState({
         isIndexing,
         getProgressRecorderRef,
     });
@@ -25,8 +32,11 @@ const CalendarSearchActivation = ({ isIndexing, onClose }: Props) => {
         if (!isLibraryInitialized) {
             return;
         }
-        void enableEncryptedSearch();
-    }, [isLibraryInitialized]);
+
+        if (!isMetadataIndexingPaused) {
+            void enableEncryptedSearch();
+        }
+    }, [isLibraryInitialized, isMetadataIndexingPaused]);
 
     return (
         <div className="p-4">
@@ -42,7 +52,27 @@ const CalendarSearchActivation = ({ isIndexing, onClose }: Props) => {
                 {c('Description')
                     .t`To enable truly private search ${CALENDAR_APP_NAME} needs to index your files locally. You can still use ${CALENDAR_APP_NAME} normally — we'll let you know when indexing is done.`}
             </div>
-            <CalendarSearchProgress esState={esState} />
+            <CalendarSearchProgress esState={esState} isPaused={isMetadataIndexingPaused} />
+            <div className="flex flex-row-reverse mt-4">
+                <Button shape="ghost" color="norm" onClick={onClose}>
+                    {c('Action').t`Got it`}
+                </Button>
+                {isMetadataIndexingPaused ? (
+                    <Button
+                        shape="ghost"
+                        color="norm"
+                        onClick={() => {
+                            void enableEncryptedSearch();
+                        }}
+                    >
+                        {c('Action').t`Resume indexing`}
+                    </Button>
+                ) : (
+                    <Button shape="ghost" color="norm" onClick={pauseMetadataIndexing}>
+                        {c('Action').t`Pause indexing`}
+                    </Button>
+                )}
+            </div>
         </div>
     );
 };

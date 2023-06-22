@@ -35,7 +35,7 @@ interface Props {
     isNarrow: boolean;
     containerRef: HTMLDivElement | null;
     isIndexing: boolean;
-    searchIsActive: boolean;
+    isSearchActive: boolean;
     onClose: () => void;
     showMore: boolean;
     toggleShowMore: () => void;
@@ -46,7 +46,7 @@ const AdvancedSearch = ({
     isNarrow,
     containerRef,
     isIndexing,
-    searchIsActive,
+    isSearchActive,
     onClose,
     showMore,
     searchInputValue,
@@ -57,7 +57,7 @@ const AdvancedSearch = ({
     const [model, updateModel] = useState<SearchModel>(initializeModel(history, searchInputValue));
 
     const handleSearch = ({ target }: ChangeEvent<HTMLInputElement>) => {
-        if (!searchIsActive) {
+        if (!isSearchActive) {
             return;
         }
         updateModel({ ...model, keyword: target.value });
@@ -134,8 +134,8 @@ const AdvancedSearch = ({
                     }
                 />
             </div>
-            {!searchIsActive ? (
-                <CalendarSearchActivation isIndexing={isIndexing} onClose={() => {}} />
+            {!isSearchActive ? (
+                <CalendarSearchActivation isIndexing={isIndexing} onClose={onClose} />
             ) : (
                 <CalendarSearchForm
                     model={model}

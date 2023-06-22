@@ -1,12 +1,21 @@
 import * as useActiveBreakpointModule from '@proton/components/hooks/useActiveBreakpoint';
 
-type HookReturnType = ReturnType<typeof useActiveBreakpointModule.default>;
-export const mockUseActiveBreakpoint = (value: Partial<HookReturnType>) => {
+export const mockUseActiveBreakpoint = (value?: Partial<ReturnType<typeof useActiveBreakpointModule.default>>) => {
     const mockedUseActiveBreakpoint = jest.spyOn(useActiveBreakpointModule, 'default');
 
-    mockedUseActiveBreakpoint.mockReturnValue({
+    const values = {
+        breakpoint: 'desktop',
+        isDesktop: true,
+        isTablet: false,
+        isMobile: false,
+        isTinyMobile: false,
         ...value,
-    } as HookReturnType);
+    };
+
+    mockedUseActiveBreakpoint.mockReturnValue({
+        ...values,
+        isNarrow: values.isMobile || values.isTinyMobile,
+    });
 
     return mockedUseActiveBreakpoint;
 };
