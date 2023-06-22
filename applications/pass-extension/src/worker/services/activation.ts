@@ -5,7 +5,12 @@ import type { MessageHandlerCallback } from '@proton/pass/extension/message';
 import { backgroundMessage } from '@proton/pass/extension/message';
 import { browserLocalStorage, browserSessionStorage } from '@proton/pass/extension/storage';
 import browser from '@proton/pass/globals/browser';
-import { selectItemDraft, selectPopupTabState } from '@proton/pass/store';
+import {
+    selectItemDraft,
+    selectPopupFilters,
+    selectPopupPasswordOptions,
+    selectPopupTabState,
+} from '@proton/pass/store';
 import { boot, wakeup } from '@proton/pass/store/actions';
 import type { MaybeNull, WorkerInitMessage, WorkerMessageWithSender, WorkerWakeUpMessage } from '@proton/pass/types';
 import { WorkerMessageType, WorkerStatus } from '@proton/pass/types';
@@ -198,6 +203,8 @@ export const createActivationService = () => {
         const hasAutofillCandidates = items.length > 0;
 
         const tabState = selectPopupTabState(tabId)(store.getState());
+        const filters = selectPopupFilters(store.getState());
+        const passwordOptions = selectPopupPasswordOptions(store.getState());
         const pushTabState = tabState !== undefined && [subdomain, domain].includes(tabState.domain);
         const searchForAutofill = hasAutofillCandidates && domain ? domain : '';
 
@@ -205,7 +212,8 @@ export const createActivationService = () => {
             search: pushTabState ? tabState!.search : searchForAutofill,
             draft: selectItemDraft(store.getState()),
             selectedItem: pushTabState ? tabState!.selectedItem : null,
-            filters: pushTabState ? tabState!.filters : null,
+            filters,
+            passwordOptions,
         };
     });
 
