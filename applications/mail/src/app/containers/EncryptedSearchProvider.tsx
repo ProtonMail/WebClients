@@ -62,7 +62,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
     const getMessageCounts = useGetMessageCounts();
     const api = useApi();
     const [welcomeFlags] = useWelcomeFlags();
-    const { update: updateSpotlightES } = useFeature(FeatureCode.SpotlightEncryptedSearch);
+    const { feature: featureES, update: updateSpotlightES } = useFeature(FeatureCode.SpotlightEncryptedSearch);
     const { feature: esAutomaticBackgroundIndexingFeature } = useFeature(FeatureCode.ESAutomaticBackgroundIndexing);
     const { createNotification } = useNotifications();
     const { isSearch, page } = parseSearchParams(history.location);
@@ -196,8 +196,10 @@ const EncryptedSearchProvider = ({ children }: Props) => {
         // Enable encrypted search for all new users. For paid users only,
         // automatically enable content search too
         if (welcomeFlags.isWelcomeFlow && !isMobile()) {
-            // Prevent showing the spotlight for ES to them
-            await updateSpotlightES(false);
+            // Prevent showing the spotlight for ES to them (as long as the spotlight feature exists)
+            if (featureES !== undefined) {
+                await updateSpotlightES(false);
+            }
             return esLibraryFunctions.enableEncryptedSearch().then((success) => {
                 if (success) {
                     return esLibraryFunctions.enableContentSearch({ notify: false });
