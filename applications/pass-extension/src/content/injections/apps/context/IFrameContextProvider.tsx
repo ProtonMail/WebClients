@@ -4,12 +4,14 @@ import type { Runtime } from 'webextension-polyfill';
 
 import { contentScriptMessage, portForwardingMessage, sendMessage } from '@proton/pass/extension/message';
 import browser from '@proton/pass/globals/browser';
+import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import type { Maybe, MaybeNull, WorkerMessage, WorkerState } from '@proton/pass/types';
 import { WorkerMessageType } from '@proton/pass/types';
 import { safeCall } from '@proton/pass/utils/fp';
 import { logger } from '@proton/pass/utils/logger';
 import noop from '@proton/utils/noop';
 
+import { INITIAL_SETTINGS } from '../../../../shared/constants';
 import type {
     IFrameEndpoint,
     IFrameMessage,
@@ -20,9 +22,11 @@ import type {
 import { IFrameMessageType } from '../../../types';
 
 type IFrameContextValue = {
+    port: MaybeNull<Runtime.Port>;
     endpoint: string;
     workerState: Maybe<Omit<WorkerState, 'UID'>>;
-    port: MaybeNull<Runtime.Port>;
+    settings: ProxiedSettings;
+    userEmail: MaybeNull<string>;
     closeIFrame: () => void;
     resizeIFrame: (ref?: MaybeNull<HTMLElement>) => void;
     postMessage: (message: IFrameMessage) => void;
@@ -32,9 +36,11 @@ type IFrameContextValue = {
 type PortContext = { port: MaybeNull<Runtime.Port>; forwardTo: MaybeNull<string> };
 
 const IFrameContext = createContext<IFrameContextValue>({
+    port: null,
     endpoint: '',
     workerState: undefined,
-    port: null,
+    settings: INITIAL_SETTINGS,
+    userEmail: null,
     closeIFrame: noop,
     resizeIFrame: noop,
     postMessage: noop,
@@ -48,6 +54,8 @@ const IFrameContext = createContext<IFrameContextValue>({
 export const IFrameContextProvider: FC<{ endpoint: IFrameEndpoint }> = ({ endpoint, children }) => {
     const [{ port, forwardTo }, setPortContext] = useState<PortContext>({ port: null, forwardTo: null });
     const [workerState, setWorkerState] = useState<IFrameContextValue['workerState']>();
+    const [settings, setSettings] = useState<ProxiedSettings>(INITIAL_SETTINGS);
+    const [userEmail, setUserEmail] = useState<MaybeNull<string>>(null);
 
     const destroyFrame = () => {
         logger.info(`[IFrame::${endpoint}] Unauthorized iframe injection`);
@@ -88,7 +96,14 @@ export const IFrameContextProvider: FC<{ endpoint: IFrameEndpoint }> = ({ endpoi
                 event.data.sender === 'contentscript'
             ) {
                 window.removeEventListener('message', onPostMessageHandler);
-                handlePortInjection(event.data).catch(noop);
+                handlePortInjection(event.data)
+                    .then(() =>
+                        sendMessage.onSuccess(
+                            contentScriptMessage({ type: WorkerMessageType.RESOLVE_USER_DATA }),
+                            (response) => response.user?.Email && setUserEmail(response.user.Email)
+                        )
+                    )
+                    .catch(noop);
             }
         }),
         []
@@ -104,8 +119,9 @@ export const IFrameContextProvider: FC<{ endpoint: IFrameEndpoint }> = ({ endpoi
             port.onMessage.addListener((message: Maybe<IFrameMessage | WorkerMessage>) => {
                 switch (message?.type) {
                     case IFrameMessageType.IFRAME_INIT:
-                        return setWorkerState(message.payload.workerState);
-
+                        setWorkerState(message.payload.workerState);
+                        setSettings(message.payload.settings);
+                        return;
                     /* If for any reason we get a `PORT_UNAUTHORIZED`
                      * message : it likely means the iframe was injected
                      * without being controlled by a content-script either
@@ -178,8 +194,18 @@ export const IFrameContextProvider: FC<{ endpoint: IFrameEndpoint }> = ({ endpoi
     );
 
     const context = useMemo<IFrameContextValue>(
-        () => ({ endpoint, port, closeIFrame, resizeIFrame, postMessage, registerHandler, workerState }),
-        [port, workerState, closeIFrame, resizeIFrame, postMessage, registerHandler]
+        () => ({
+            port,
+            endpoint,
+            workerState,
+            settings,
+            userEmail,
+            closeIFrame,
+            resizeIFrame,
+            postMessage,
+            registerHandler,
+        }),
+        [port, workerState, settings, userEmail, closeIFrame, resizeIFrame, postMessage, registerHandler]
     );
 
     return <IFrameContext.Provider value={context}>{children}</IFrameContext.Provider>;

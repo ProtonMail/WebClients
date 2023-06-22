@@ -100,6 +100,7 @@ export const createDropdown = (): InjectedDropdown => {
                     }
                     case DropdownAction.AUTOSUGGEST_ALIAS: {
                         const { domain, subdomain, displayName } = getExtensionContext().url;
+
                         return {
                             action,
                             domain: subdomain ?? domain!,
@@ -201,6 +202,13 @@ export const createDropdown = (): InjectedDropdown => {
     iframe.registerMessageHandler(IFrameMessageType.DROPDOWN_AUTOSUGGEST_ALIAS, ({ payload }) => {
         const { aliasEmail } = payload;
         fieldRef.current?.autofill(aliasEmail);
+        iframe.close();
+        fieldRef.current?.focus({ preventDefault: true });
+    });
+
+    iframe.registerMessageHandler(IFrameMessageType.DROPDOWN_AUTOFILL_USER_EMAIL, (message) => {
+        const { userEmail } = message.payload;
+        fieldRef.current?.autofill(userEmail);
         iframe.close();
         fieldRef.current?.focus({ preventDefault: true });
     });

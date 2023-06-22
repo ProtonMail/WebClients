@@ -1,6 +1,7 @@
 import type { Runtime } from 'webextension-polyfill';
 
 import { contentScriptMessage, portForwardingMessage, sendMessage } from '@proton/pass/extension/message';
+import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import type { Maybe, MaybeNull, WorkerState } from '@proton/pass/types';
 import { WorkerMessageType } from '@proton/pass/types';
 import { createElement, pixelEncoder } from '@proton/pass/utils/dom';
@@ -180,8 +181,8 @@ export const createIFrameApp = ({
         state.port.onMessage.addListener(onMessageHandler);
     };
 
-    const reset = (workerState: WorkerState) => {
-        sendPortMessage({ type: IFrameMessageType.IFRAME_INIT, payload: { workerState } });
+    const reset = (workerState: WorkerState, settings: ProxiedSettings) => {
+        sendPortMessage({ type: IFrameMessageType.IFRAME_INIT, payload: { workerState, settings } });
     };
 
     const destroy = () => {
