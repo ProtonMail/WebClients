@@ -16,6 +16,7 @@ export const PasswordAutoSuggest: VFC<{ onSubmit: (password: string) => void }> 
             title={c('Title').t`Use secure password`}
             subTitle={<span className="text-monospace">{getCharsGroupedByColor(password)}</span>}
             icon="key"
+            className="ui-password"
         />
     );
 };

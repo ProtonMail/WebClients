@@ -12,7 +12,6 @@ export const PROCESSED_FORM_ATTR = `data-${EXTENSION_PREFIX}-form`;
 export const ICON_ROOT_CLASSNAME = `${EXTENSION_PREFIX}-input`;
 export const ICON_WRAPPER_CLASSNAME = `${ICON_ROOT_CLASSNAME}--wrapper`;
 export const ICON_CLASSNAME = `${ICON_ROOT_CLASSNAME}--icon`;
-export const ICON_SVG = `${ICON_ROOT_CLASSNAME}--svg`;
 
 export const ICON_PADDING = 5;
 export const ICON_MAX_HEIGHT = 25;
@@ -23,6 +22,8 @@ export const NOTIFICATION_HEIGHT = 335;
 export const NOTIFICATION_WIDTH = 320;
 
 export const ACTIVE_ICON_SRC = browser.runtime.getURL('/assets/protonpass-icon.svg');
+export const LOCKED_ICON_SRC = browser.runtime.getURL('/assets/protonpass-icon-locked.svg');
+export const DISABLED_ICON_SRC = browser.runtime.getURL('/assets/protonpass-icon-disabled.svg');
 export const DROPDOWN_IFRAME_SRC = browser.runtime.getURL('/dropdown.html');
 export const NOTIFICATION_IFRAME_SRC = browser.runtime.getURL('/notification.html');
 

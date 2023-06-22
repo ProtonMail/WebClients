@@ -7,12 +7,13 @@ import type { AliasState } from '@proton/pass/store';
 import type { Notification } from '@proton/pass/store/actions/with-notification';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import type { ExtensionForkResultPayload } from '@proton/shared/lib/authentication/sessionForking';
+import type { User } from '@proton/shared/lib/interfaces';
 
 import type { ShareEventPayload } from '../api';
 import type { ForkPayload } from '../api/fork';
 import type { AliasCreationDTO, SelectedItem } from '../data';
 import type { TelemetryEvent } from '../data/telemetry';
-import type { Maybe } from '../utils';
+import type { Maybe, MaybeNull } from '../utils';
 import type { AutosavePayload, WithAutoSavePromptOptions } from './autosave';
 import type { SafeLoginItem } from './data';
 import type { FormEntry, NewFormEntry, PromptedFormEntry } from './form';
@@ -47,6 +48,7 @@ export enum WorkerMessageType {
     START_CONTENT_SCRIPT = 'START_CONTENT_SCRIPT',
     RESOLVE_EXTENSION_KEY = 'RESOLVE_EXTENSION_KEY',
     RESOLVE_TAB = 'RESOLVE_TAB',
+    RESOLVE_USER_DATA = 'RESOLVE_USER_DATA',
     PORT_FORWARDING_MESSAGE = 'PORT_FORWARDING',
     PORT_UNAUTHORIZED = 'PORT_UNAUTHORIZED',
     NOTIFICATION = 'NOTIFICATION',
@@ -106,6 +108,7 @@ export type AliasCreateMessage = WithPayload<WorkerMessageType.ALIAS_CREATE, { u
 export type OTPCodeGenerateMessage = WithPayload<WorkerMessageType.OTP_CODE_GENERATE, OtpRequest>;
 export type ResolveTabIdMessage = { type: WorkerMessageType.RESOLVE_TAB };
 export type ResolveExtensionKeyMessage = { type: WorkerMessageType.RESOLVE_EXTENSION_KEY };
+export type ResolveUserDataMessage = { type: WorkerMessageType.RESOLVE_USER_DATA };
 export type PortUnauthorizedMessage = { type: WorkerMessageType.PORT_UNAUTHORIZED };
 export type ExportRequestMessage = WithPayload<WorkerMessageType.EXPORT_REQUEST, ExportRequestPayload>;
 export type ImportDecryptMessage = WithPayload<WorkerMessageType.EXPORT_DECRYPT, { data: string; passphrase: string }>;
@@ -149,6 +152,7 @@ export type WorkerMessage =
     | AliasCreateMessage
     | ResolveTabIdMessage
     | ResolveExtensionKeyMessage
+    | ResolveUserDataMessage
     | ExportRequestMessage
     | ImportDecryptMessage
     | ShareServerEventMessage
@@ -187,6 +191,7 @@ type WorkerMessageResponseMap = {
     [WorkerMessageType.EXPORT_DECRYPT]: { data: string };
     [WorkerMessageType.ONBOARDING_REQUEST]: { message?: OnboardingMessage };
     [WorkerMessageType.LOG_REQUEST]: { logs: string[] };
+    [WorkerMessageType.RESOLVE_USER_DATA]: { user: MaybeNull<User> };
 };
 
 export type WorkerMessageResponse<MessageType> = MessageType extends keyof WorkerMessageResponseMap

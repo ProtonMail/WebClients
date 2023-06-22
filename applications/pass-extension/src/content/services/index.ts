@@ -15,6 +15,7 @@ import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import { WorkerMessageType, type WorkerMessageWithSender, type WorkerState } from '@proton/pass/types';
 import { createListenerStore } from '@proton/pass/utils/listener';
 import { logger } from '@proton/pass/utils/logger';
+import { workerReady } from '@proton/pass/utils/worker';
 import { setUID as setSentryUID } from '@proton/shared/lib/helpers/sentry';
 import noop from '@proton/utils/noop';
 
@@ -54,7 +55,7 @@ export const createContentScriptClient = (scriptId: string, mainFrame: boolean) 
 
     const onWorkerStateChange = (workerState: WorkerState) => {
         if (context.getState().active) {
-            const { loggedIn, UID } = workerState;
+            const { loggedIn, UID, status } = workerState;
             setSentryUID(UID);
 
             context.setState(workerState);
@@ -62,6 +63,7 @@ export const createContentScriptClient = (scriptId: string, mainFrame: boolean) 
             context.service.formManager.sync();
 
             if (!loggedIn) context.service.autofill.setLoginItemsCount(0);
+            if (workerReady(status)) context.service.autofill.queryItems().catch(noop);
         }
     };
 
