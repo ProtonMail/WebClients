@@ -105,6 +105,7 @@ const DesktopDownloadDropdown = ({ className }: Props) => {
                                         className="text-left flex flex-align-items-center"
                                         href={client.file.url}
                                         download
+                                        key={client.id}
                                     >
                                         <Icon name={client.icon} className="color-weak mr-2" />
                                         {client.label}
@@ -112,7 +113,11 @@ const DesktopDownloadDropdown = ({ className }: Props) => {
                                 );
                             } else {
                                 return (
-                                    <DropdownMenuButton className="text-left flex flex-align-items-center" disabled>
+                                    <DropdownMenuButton
+                                        className="text-left flex flex-align-items-center"
+                                        disabled
+                                        key={client.id}
+                                    >
                                         <Icon name={client.icon} className="color-weak mr-2" />
                                         {client.label}
                                     </DropdownMenuButton>

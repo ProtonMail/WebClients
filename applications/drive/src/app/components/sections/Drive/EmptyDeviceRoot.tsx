@@ -5,7 +5,7 @@ import uploadSvg from '@proton/styles/assets/img/illustrations/empty-device-root
 
 const EmptyDeviceRoot = () => {
     return (
-        <div role="presentation" onClick={close} className="flex w100 flex flex-item-fluid">
+        <div role="presentation" className="flex w100 flex flex-item-fluid">
             <EmptyViewContainer
                 imageProps={{ src: uploadSvg, title: c('Info').t`No synced folders` }}
                 data-testid="my-files-device-root-empty-placeholder"
