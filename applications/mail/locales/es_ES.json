@@ -1316,6 +1316,17 @@
         "Si encuentras problemas, siempre puedes deshabilitar el acceso beta."
       ]
     },
+    "Billing cycle option": {
+      "Annually": [
+        "Anual"
+      ],
+      "Monthly": [
+        "Mensualmente"
+      ],
+      "Two-year": [
+        "Bienal"
+      ]
+    },
     "Bug category": {
       "Application problem": [
         "Problema con la aplicación"
@@ -4840,6 +4851,9 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Antes de solicitar un nuevo código de verificación, verifica tu carpeta de spam y verifica que ${ strong } la dirección es correcta."
       ],
+      "Billing cycle: ${ text }": [
+        "Ciclo de facturación: ${ text }"
+      ],
       "Body: ": [
         "Cuerpo: "
       ],
@@ -7871,9 +7885,6 @@
       "Highest VPN speed": [
         "VPN de máxima velocidad"
       ],
-      "Premium Drive": [
-        "Drive premium"
-      ],
       "Premium early access": [
         "Acceso anticipado premium"
       ],
@@ -8508,6 +8519,9 @@
       ],
       "Beta Access": [
         "Acceso beta"
+      ],
+      "Billing cycle": [
+        "Ciclo de facturación"
       ],
       "Blind Carbon Copy": [
         "Con copia oculta"

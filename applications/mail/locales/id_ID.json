@@ -476,7 +476,7 @@
         "Sembunyikan pesan"
       ],
       "hide-my-email aliases": [
-        "alias Hide-my-email"
+        "alias hide-my-email"
       ],
       "I have a question": [
         "Saya memiliki pertanyaan"
@@ -1309,6 +1309,17 @@
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "Apabila Anda menemui suatu masalah, Anda dapat menonaktifkan Akses Beta kapan saja."
+      ]
+    },
+    "Billing cycle option": {
+      "Annually": [
+        "Tahunan"
+      ],
+      "Monthly": [
+        "Bulanan"
+      ],
+      "Two-year": [
+        "Dua tahun"
       ]
     },
     "Bug category": {
@@ -3771,6 +3782,9 @@
       ]
     },
     "familyOffer_2023:Action": {
+      "Decline invitation": [
+        "Tolak undangan"
+      ],
       "Got it": [
         "Mengerti"
       ],
@@ -4064,6 +4078,14 @@
         "Bawaan"
       ]
     },
+    "Font face option": {
+      "System default": [
+        "Bawaan sistem"
+      ],
+      "Theme default": [
+        "Tema bawaan"
+      ]
+    },
     "Font Size Default": {
       "Default": [
         "Bawaan"
@@ -4073,8 +4095,17 @@
       "Large": [
         "Besar"
       ],
+      "Medium (recommended)": [
+        "Sedang (direkomendasikan)"
+      ],
       "Small": [
         "Kecil"
+      ],
+      "Very large": [
+        "Sangat besar"
+      ],
+      "Very small": [
+        "Mungil"
       ]
     },
     "forwardmessage": {
@@ -4741,6 +4772,9 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Sebelum meminta kode verifikasi baru, periksa folder spam Anda dan pastikan ${ strong } merupakan alamat email yang benar."
       ],
+      "Billing cycle: ${ text }": [
+        "Siklus tagihan: ${ text }"
+      ],
       "Body: ": [
         "Isi: "
       ],
@@ -4821,6 +4855,9 @@
       ],
       "Custom yearly": [
         "Sesuaikan tahunan"
+      ],
+      "Customize the look and feel of ${ BRAND_NAME } applications.": [
+        "Sesuaikan tampilan dan nuansa aplikasi ${ BRAND_NAME } Anda."
       ],
       "Daily": [
         "Harian"
@@ -4976,7 +5013,7 @@
         "Sembunyikan pesan asli"
       ],
       "How hide-my-email aliases works": [
-        "Bagaimana cara alias Hide-my-email bekerja"
+        "Bagaimana cara alias hide-my-email bekerja"
       ],
       "I'm sending this message to a non-${ MAIL_APP_NAME } user.": [
         "Saya mengirimkan pesan ini kepada pengguna non-${ MAIL_APP_NAME }."
@@ -5366,7 +5403,7 @@
         "Tampilkan pesan asli"
       ],
       "SimpleLogin is a ${ BRAND_NAME } service, and your ${ BRAND_NAME_TWO } Account includes hide-my-email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
-        "SimpleLogin adalah layanan ${ BRAND_NAME }, dan akun ${ BRAND_NAME_TWO } Anda beserta alias Hide-my-email. Untuk mulai menyamarkan alamat surel Anda, buka SimpleLogin dan buat alias pertama Anda."
+        "SimpleLogin merupakan layanan milik ${ BRAND_NAME }, dan akun ${ BRAND_NAME_TWO } Anda meliputi perlindungan Hide My Email. Untuk mulai menyamarkan alamat email Anda, buka SimpleLogin dan buat alamat email samaran Anda."
       ],
       "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
         "SimpleLogin memudahkan Anda untuk dapat membuat akun pada situs pihak ketiga yang tidak terpercaya di kala Anda tidak ingin menggunakan alamat email asli Anda."
@@ -5441,7 +5478,7 @@
         "Pesan ini akan ditandai sebagai spam. Apakah Anda ingin membatalkan langganan milis ini?"
       ],
       "They can't spam you if they don't know your email address. Protect your inbox with hide-my-email aliases.": [
-        "Mereka tidak dapat mengirim Anda spam jika mereka tidak tahu alamat surel Anda. Lindungi kotak masuk Anda dengan alias Hide-my-email."
+        "Mereka tidak akan dapat menyerang Anda dengan spam apabila mereka tidak tahu alamat email Anda. Lindungi kotak masuk Anda dengan alias hide-my-email."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Akun ini telah ditangguhkan karena ditenggarai telah melanggar ketentuan penggunaan yang berlaku."
@@ -5669,7 +5706,7 @@
         "Kapan Anda ingin pesan ini terhapus secara otomatis?"
       ],
       "When giving out your email, use a unique, disposable hide-my-email alias instead of your real email address.": [
-        "Saat memberikan surel Anda, gunakan alias Hide-my-email sekali pakai yang unik daripada alamat surel Anda yang asli."
+        "Pada saat Anda memberikan alamat email Anda, gunakanlah alamat email samaran sekali pakai yang dihasilkan oleh hide-my-email alih-alih alamat email asli Anda."
       ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "Ketika Anda mengaktifkan kunci yang dipercaya untuk ${ senderName }, kunci publik ditambahkan ke rincian kontak."
@@ -6471,6 +6508,9 @@
       "Street address": [
         "Alamat jalan"
       ],
+      "Synchronize with system": [
+        "Sinkronkan dengan sistem"
+      ],
       "System information": [
         "Informasi sistem"
       ],
@@ -7091,7 +7131,7 @@
         "Domain email khusus"
       ],
       "Hide-my-email aliases": [
-        "Alias Hide-my-email"
+        "Alias hide-my-email"
       ],
       "Schedule messages at any time": [
         "Jadwalkan pesan sesuai keinginan Anda"
@@ -7193,6 +7233,9 @@
       ],
       "Discover all ${ BRAND_NAME } services": [
         "Telusuri seluruh layanan ${ BRAND_NAME }"
+      ],
+      "More theming options are available in your account Settings > Appearance.": [
+        "Opsi penataan tema tersedia pada menu Pengaturan > Tampilan."
       ],
       "Select a theme": [
         "Pilih tema"
@@ -7712,9 +7755,6 @@
       ],
       "Highest VPN speed": [
         "Kecepatan VPN tertinggi"
-      ],
-      "Premium Drive": [
-        "Drive Premium"
       ],
       "Premium early access": [
         "Akses dini Premium"
@@ -8314,6 +8354,9 @@
       "Beta Access": [
         "Akses Beta"
       ],
+      "Billing cycle": [
+        "Siklus tagihan"
+      ],
       "Blind Carbon Copy": [
         "Tembusan Tertutup"
       ],
@@ -8388,6 +8431,9 @@
       ],
       "Customize your mail import": [
         "Sesuaikan proses impor email"
+      ],
+      "Day theme": [
+        "Tema siang"
       ],
       "Decryption error": [
         "Kesalahan dekripsi"
@@ -8819,6 +8865,9 @@
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Opsi Otomatis berarti pesan akan dikirim apa adanya sesuai format tulis yang dipakai. Opsi Teks Polos berarti pesan akan selalu dikirim dalam bentuk teks polos."
       ],
+      "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
+        "Sesuaikan tema aplikasi dengan mode terang dan gelap pada sistem Anda secara otomatis"
+      ],
       "Customize import to reduce the number of folders": [
         "Sesuaikan impor untuk mengurangi jumlah folder"
       ],
@@ -8869,6 +8918,12 @@
       ],
       "The import will start with the most recent messages.": [
         "Proses impor akan dimulai dari pesan Anda yang paling baru."
+      ],
+      "The selected theme will be active when your system is set to \"dark mode\"": [
+        "Tema yang dipilih akan aktif pada saat sistem Anda diatur ke \"mode gelap\""
+      ],
+      "The selected theme will be active when your system is set to \"light mode\"": [
+        "Tema yang dipilih akan aktif pada saat sistem Anda diatur ke \"mode terang\""
       ],
       "This feature is only available for paid users": [
         "Fitur ini hanya tersedia untuk pengguna berbayar"

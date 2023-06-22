@@ -1311,6 +1311,17 @@
         "若您遇上問題，您隨時可以停用 Beta 測試版。"
       ]
     },
+    "Billing cycle option": {
+      "Annually": [
+        "每年"
+      ],
+      "Monthly": [
+        "每月"
+      ],
+      "Two-year": [
+        "兩年"
+      ]
+    },
     "Bug category": {
       "Application problem": [
         "應用程式問題"
@@ -4761,6 +4772,9 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "在申請一組新的驗證碼之前，請檢查您的垃圾郵件資料夾以及 ${ strong } 的位址正確無誤。"
       ],
+      "Billing cycle: ${ text }": [
+        "帳單週期：${ text }"
+      ],
       "Body: ": [
         "內文 : "
       ],
@@ -7742,9 +7756,6 @@
       "Highest VPN speed": [
         "業界最高 VPN 速率"
       ],
-      "Premium Drive": [
-        "進階版雲端硬碟"
-      ],
       "Premium early access": [
         "進階版搶先體驗"
       ],
@@ -8342,6 +8353,9 @@
       ],
       "Beta Access": [
         "測試版體驗"
+      ],
+      "Billing cycle": [
+        "帳單週期"
       ],
       "Blind Carbon Copy": [
         "密件副本"

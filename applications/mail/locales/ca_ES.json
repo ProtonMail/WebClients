@@ -1316,6 +1316,17 @@
         "Si trobeu problemes, sempre podeu desactivar l'Accés Beta."
       ]
     },
+    "Billing cycle option": {
+      "Annually": [
+        "Anualment"
+      ],
+      "Monthly": [
+        "Mensual"
+      ],
+      "Two-year": [
+        "Bianual"
+      ]
+    },
     "Bug category": {
       "Application problem": [
         "Problema d’aplicació"
@@ -4840,6 +4851,9 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Abans de sol·licitar un nou codi de verificació, reviseu la carpeta de correu brossa i si ${ strong } és l'adreça correcta."
       ],
+      "Billing cycle: ${ text }": [
+        "Cicle de facturació: ${ text }"
+      ],
       "Body: ": [
         "Cos: "
       ],
@@ -7871,9 +7885,6 @@
       "Highest VPN speed": [
         "La velocitat VPN més alta"
       ],
-      "Premium Drive": [
-        "Drive Prèmium"
-      ],
       "Premium early access": [
         "Accés anticipat prèmium"
       ],
@@ -8508,6 +8519,9 @@
       ],
       "Beta Access": [
         "Accés Beta"
+      ],
+      "Billing cycle": [
+        "Cicle de facturació"
       ],
       "Blind Carbon Copy": [
         "Copia Carbó Amagada"

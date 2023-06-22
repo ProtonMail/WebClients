@@ -1316,6 +1316,17 @@
         "Εάν αντιμετωπίσετε προβλήματα, μπορείτε πάντα να απενεργοποιήσετε την Πρόσβαση Beta."
       ]
     },
+    "Billing cycle option": {
+      "Annually": [
+        "Ετησίως"
+      ],
+      "Monthly": [
+        "Μηνιαία"
+      ],
+      "Two-year": [
+        "Δύο έτη"
+      ]
+    },
     "Bug category": {
       "Application problem": [
         "Πρόβλημα εφαρμογής"
@@ -3403,7 +3414,7 @@
         "Μη έγκυρο όνομα ετικέτας. Παρακαλούμε δοκιμάστε ένα διαφορετικό."
       ],
       "The label name is too long. Please choose a different name.": [
-        "Υπερβολικό μήκος ονόματος ετικέτας. Παρακαλούμε δοκιμάστε ένα συντομότερο."
+        "Το όνομα της ετικέτας είναι πολύ μεγάλο. Δοκιμάστε ένα διαφορετικό όνομα."
       ],
       "The maximum expiration is 4 weeks": [
         "Η μέγιστη λήξη είναι 4 εβδομάδες"
@@ -3421,7 +3432,7 @@
         "Παρουσιάστηκε πρόβλημα με την ενημέρωση των τοπικών μηνυμάτων σας, θα ληφθούν ξανά για να ενεργοποιήσετε την αναζήτηση περιεχομένου"
       ],
       "There was an error when exporting the contacts vCards": [
-        "Παρουσιάστηκε σφάλμα κατά την εξαγωγή επαφών vCards"
+        "Παρουσιάστηκε σφάλμα κατά την εξαγωγή επαφών σε vCards"
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Αυτό το πεδίο υπερβαίνει το μέγιστο των χαρακτήρων ${ maximumLength }."
@@ -3472,7 +3483,7 @@
         "Δεν μπορείτε να στείλετε μήνυμα σε περισσότερους από 100 παραλήπτες"
       ],
       "You can't send vCard files of more than 10 contacts": [
-        "Δεν μπορείτε να στείλετε φακέλους vCard για περισσότερες από 10 επαφές"
+        "Δεν μπορείτε να στείλετε αρχεία vCard για περισσότερες από 10 επαφές"
       ],
       "You cannot open more than ${ maxActiveComposer } composer window at a time": [
         "Δεν μπορείτε να ανοίξετε πάνω από ${ maxActiveComposer } παράθυρο συντάκτη τη φορά",
@@ -3699,7 +3710,7 @@
         "Ωχ, κάτι πήγε στραβά"
       ],
       "Please refresh the page or try again later.": [
-        "Παρακαλούμε ανανεώσετε τη σελίδα ή προσπαθήσετε αργότερα."
+        "Παρακαλούμε ανανεώστε τη σελίδα ή δοκιμάστε ξανά αργότερα."
       ],
       "Something went wrong": [
         "Κάτι πήγε στραβά"
@@ -4839,6 +4850,9 @@
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Πριν αιτηθείτε νέο κωδικό επαλήθευσης, ελέγξτε τον φάκελό σας Ενοχλητικά και ότι η ${ strong } είναι η σωστή διεύθυνση."
+      ],
+      "Billing cycle: ${ text }": [
+        "Κύκλος χρέωσης: ${ text }"
       ],
       "Body: ": [
         "Σώμα: "
@@ -7871,9 +7885,6 @@
       "Highest VPN speed": [
         "Ύψιστη ταχύτητα VPN"
       ],
-      "Premium Drive": [
-        "Premium Μονάδα Αποθήκευσης"
-      ],
       "Premium early access": [
         "Premium πρώιμη πρόσβαση"
       ],
@@ -8508,6 +8519,9 @@
       ],
       "Beta Access": [
         "Beta Πρόσβαση"
+      ],
+      "Billing cycle": [
+        "Κύκλος χρέωσης"
       ],
       "Blind Carbon Copy": [
         "Κρυφή Κοινοποίηση"
