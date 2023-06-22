@@ -81,16 +81,22 @@ declare const getFieldAttributes: (el: HTMLElement) => string[];
 declare const getFormAttributes: (el: HTMLElement) => string[];
 declare const DETECTED_FIELD_TYPE_ATTR = 'data-protonpass-field-type';
 declare const DETECTED_FORM_TYPE_ATTR = 'data-protonpass-form-type';
+declare const DETECTED_CLUSTER_ATTR = 'data-protonpass-cluster';
+declare const IGNORE_ELEMENT_ATTR = 'data-protonpass-ignore';
 declare const setInputType: (input: HTMLInputElement, type: string) => void;
 declare const setFormType: (form: HTMLElement, type: string) => void;
+declare const setClusterType: (el: HTMLElement) => void;
+declare const setIgnoreType: (el: HTMLElement) => void;
 
 export {
+    DETECTED_CLUSTER_ATTR,
     DETECTED_FIELD_TYPE_ATTR,
     DETECTED_FORM_TYPE_ATTR,
     EL_ATTRIBUTES,
     FIELD_ATTRIBUTES,
     FORM_ATTRIBUTES,
     FormInputIterator,
+    IGNORE_ELEMENT_ATTR,
     TEXT_ATTRIBUTES,
     anchorLinkSelector,
     buttonSubmitSelector,
@@ -131,7 +137,9 @@ export {
     otpSelector,
     passwordSelector,
     rulesetMaker,
+    setClusterType,
     setFormType,
+    setIgnoreType,
     setInputType,
     socialSelector,
     splitFieldsByVisibility,
