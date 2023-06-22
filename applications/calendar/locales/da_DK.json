@@ -717,6 +717,17 @@
         "Hvis du støder på problemer, kan du altid deaktivere beta-adgang."
       ]
     },
+    "Billing cycle option": {
+      "Annually": [
+        "Årlig"
+      ],
+      "Monthly": [
+        "Månedlig"
+      ],
+      "Two-year": [
+        "To-År"
+      ]
+    },
     "Bug category": {
       "Application problem": [
         "Applikationsproblem"
@@ -3379,6 +3390,9 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Før du anmoder om en ny bekræftelseskode, bør du tjekke din spam-mappe samt kontrollere, at ${ strong } er den korrekte adresse."
       ],
+      "Billing cycle: ${ text }": [
+        "Faktureringsperiode: ${ text }"
+      ],
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
         "Ved at dele alle detaljer om begivenheden i denne kalender, accepterer du at give ${ BRAND_NAME } adgang til denne kalenders krypterede oplysninger."
       ],
@@ -3445,6 +3459,9 @@
       ],
       "Discard changes?": [
         "Kassér ændringer?"
+      ],
+      "Drop to import": [
+        "Drop for at importere"
       ],
       "Duplicate key updated": [
         "Duplikeret nøgle opdateret"
@@ -3906,6 +3923,9 @@
       ],
       "Your events will be encrypted and then saved.": [
         "Dine begivenheder vil blive krypteret og derefter gemt."
+      ],
+      "Your files will be encrypted and then saved": [
+        "Din filer vil blive krypteret og derefter gemt"
       ],
       "Your import will not be processed.": [
         "Din import vil ikke blive behandlet."
@@ -5323,9 +5343,6 @@
       "Highest VPN speed": [
         "Højeste VPN-hastighed"
       ],
-      "Premium Drive": [
-        "Premium Drive"
-      ],
       "Premium early access": [
         "Premium tidlig adgang"
       ],
@@ -5764,6 +5781,9 @@
       ],
       "Beta Access": [
         "Beta-adgang"
+      ],
+      "Billing cycle": [
+        "Faktureringscyklus"
       ],
       "Calendar": [
         "Kalender"

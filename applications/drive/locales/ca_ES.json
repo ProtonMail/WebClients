@@ -782,6 +782,17 @@
         "Si trobeu problemes, sempre podeu desactivar l'Accés Beta."
       ]
     },
+    "Billing cycle option": {
+      "Annually": [
+        "Anualment"
+      ],
+      "Monthly": [
+        "Mensual"
+      ],
+      "Two-year": [
+        "Bianual"
+      ]
+    },
     "Bug category": {
       "Application problem": [
         "Problema d’aplicació"
@@ -2157,9 +2168,6 @@
       "The original folder not found": [
         "No s'ha trobat la carpeta original"
       ],
-      "The original folder or file not found": [
-        "No s'ha trobat la carpeta o fitxer originals"
-      ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Hi ha massa carpetes al vostre compte extern. Personalitzeu la importació per eliminar algunes carpetes."
       ],
@@ -3231,6 +3239,9 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Abans de sol·licitar un nou codi de verificació, reviseu la carpeta de correu brossa i si ${ strong } és l'adreça correcta."
       ],
+      "Billing cycle: ${ text }": [
+        "Cicle de facturació: ${ text }"
+      ],
       "Calendar side panel": [
         "Panell lateral del calendari"
       ],
@@ -3452,9 +3463,6 @@
       ],
       "Folder \"${ link.name }\" was deleted during download": [
         "La carpeta «${ link.name }» s'ha eliminat durant la baixada"
-      ],
-      "Folder contents will merge into a single folder": [
-        "Els continguts de la carpeta es combinaran en una sola carpeta"
       ],
       "Folder is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "La carpeta no està signada. No podem verificar que ${ emailAddress } va carregar ${ fileName }."
@@ -3904,9 +3912,6 @@
         "Això suprimirà l'enllaç i eliminarà l'accés al vostre fitxer o carpeta per a qualsevol persona que el tingui.",
         "Això suprimirà els enllaços i eliminarà l'accés als teus fitxers o carpetes per a qualsevol persona que els tingui."
       ],
-      "This will overwrite the existing folder": [
-        "Se sobreescriurà la carpeta existent"
-      ],
       "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on the device won’t be affected.": [
         "Això eliminarà des de ${ DRIVE_APP_NAME } el dispositiu sincronitzat ${ deviceName }. Els fitxers locals al dispositiu no es veuran afectats."
       ],
@@ -3918,6 +3923,9 @@
       ],
       "This will upload a new version of the file": [
         "Això carregarà una nova versió del fitxer"
+      ],
+      "This will upload a new version of the folder": [
+        "Això carregarà una nova versió de la carpeta"
       ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
         "Per activar la cerca realment privada ${ DRIVE_APP_NAME } necessita indexar els teus fitxers localment."
@@ -4472,9 +4480,6 @@
       ],
       "Manage categories": [
         "Gestiona les categories"
-      ],
-      "Merge a folder": [
-        "Fusionar una carpeta"
       ],
       "Modified": [
         "Modificació"
@@ -5396,9 +5401,6 @@
       "Highest VPN speed": [
         "La velocitat VPN més alta"
       ],
-      "Premium Drive": [
-        "Drive Prèmium"
-      ],
       "Premium early access": [
         "Accés anticipat prèmium"
       ],
@@ -5799,6 +5801,9 @@
       ],
       "Beta Access": [
         "Accés Beta"
+      ],
+      "Billing cycle": [
+        "Cicle de facturació"
       ],
       "Browser might run out of memory": [
         "És possible que el navegador arribi al límit de memòria"

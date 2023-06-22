@@ -1134,6 +1134,17 @@
         "Ma tmugreḍ uguren tzemreḍ ad tsenseḍ anekcum Biṭa."
       ]
     },
+    "Billing cycle option": {
+      "Annually": [
+        "S useggas"
+      ],
+      "Monthly": [
+        "S wayyur"
+      ],
+      "Two-year": [
+        "Snat n tikkal i useggas"
+      ]
+    },
     "Bug category": {
       "Application problem": [
         "Ugur n usnas"
@@ -3897,6 +3908,9 @@
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Inig azaduran akked tigawin ad qqimen wejden ama remden neɣ ur rmiden ara yinegzumen n unasiw deg yiɣewwaren."
       ],
+      "Billing cycle: ${ text }": [
+        "Asellek yal:${ text }"
+      ],
       "Body: ": [
         "Tafekka: "
       ],
@@ -6580,6 +6594,9 @@
       ],
       "Beta Access": [
         "Anekcum Biṭa"
+      ],
+      "Billing cycle": [
+        "Twala n ufter"
       ],
       "Blind Carbon Copy": [
         "Anɣal n Blind Carbon"
