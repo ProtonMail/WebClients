@@ -43,9 +43,9 @@ const CalendarSearchProvider = ({ children }: Props) => {
     const [renderCounter, setRenderCounter] = useState(0);
     const [loading, withLoading] = useLoading();
 
-    const { dbExists, isEnablingEncryptedSearch, isRefreshing } = getESDBStatus();
+    const { dbExists, isEnablingEncryptedSearch, isRefreshing, isMetadataIndexingPaused } = getESDBStatus();
 
-    const isIndexing = isEnablingEncryptedSearch || isRefreshing;
+    const isIndexing = isEnablingEncryptedSearch || isRefreshing || isMetadataIndexingPaused;
     const isActive = dbExists && !isIndexing;
 
     const triggerSearch = useCallback(() => {

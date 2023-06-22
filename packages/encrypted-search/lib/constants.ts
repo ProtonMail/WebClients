@@ -144,7 +144,8 @@ export const defaultESStatus = {
     isSearching: false,
     isFirstSearch: true,
     isEnablingEncryptedSearch: false,
-    isPaused: false,
+    isContentIndexingPaused: false,
+    isMetadataIndexingPaused: false,
     contentIndexingDone: false,
 };
 
@@ -172,7 +173,8 @@ export const defaultESContext: EncryptedSearchFunctions<any, any, any> = {
     getProgressRecorderRef: () => ({ current: [0, 0] }),
     shouldHighlight: () => false,
     initializeES: async () => {},
-    pauseIndexing: async () => {},
+    pauseContentIndexing: async () => {},
+    pauseMetadataIndexing: async () => {},
     cacheIndexedDB: async () => {},
     toggleEncryptedSearch: async () => {},
     resetCache: () => {},

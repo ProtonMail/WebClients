@@ -236,15 +236,7 @@ export interface ESEvent<ESItemMetadata> {
  */
 export type ESItem<ESItemMetadata, ESItemContent> = ESItemMetadata & Partial<ESItemContent>;
 
-/**
- * Internal variables on the status of ES
- */
-export interface ESStatus<ESItemMetadata, ESItemContent, ESSearchParameters> {
-    permanentResults: ESItem<ESItemMetadata, ESItemContent>[];
-    setResultsList: ESSetResultsList<ESItemMetadata, ESItemContent>;
-    lastTimePoint: ESTimepoint | undefined;
-    previousESSearchParams: ESSearchParameters | undefined;
-    cachedIndexKey: CryptoKey | undefined;
+export interface ESStatusBooleans {
     dbExists: boolean;
     isDBLimited: boolean;
     esEnabled: boolean;
@@ -254,9 +246,21 @@ export interface ESStatus<ESItemMetadata, ESItemContent, ESSearchParameters> {
     isSearching: boolean;
     isFirstSearch: boolean;
     isEnablingContentSearch: boolean;
+    isContentIndexingPaused: boolean;
+    isMetadataIndexingPaused: boolean;
     isEnablingEncryptedSearch: boolean;
-    isPaused: boolean;
     contentIndexingDone: boolean;
+}
+
+/**
+ * Internal variables on the status of ES
+ */
+export interface ESStatus<ESItemMetadata, ESItemContent, ESSearchParameters> extends ESStatusBooleans {
+    permanentResults: ESItem<ESItemMetadata, ESItemContent>[];
+    setResultsList: ESSetResultsList<ESItemMetadata, ESItemContent>;
+    lastTimePoint: ESTimepoint | undefined;
+    previousESSearchParams: ESSearchParameters | undefined;
+    cachedIndexKey: CryptoKey | undefined;
 }
 
 /**
@@ -272,7 +276,8 @@ export interface ESStatus<ESItemMetadata, ESItemContent, ESSearchParameters> {
  * @var isCacheLimited whether the cache is limited, i.e. it doesn't contain all items that are in IndexedDB
  * @var isCacheReady whether in-memory cache load is filled
  * @var isEnablingEncryptedSearch whether indexing of metadata is ongoing
- * @var isPaused whether content indexing is paused
+ * @var isContentIndexingPaused whether content indexing is paused
+ * @var isMetadataIndexingPaused whether metadata indexing is paused
  * @var contentIndexingDone whether content indexing is finished
  */
 export interface ESDBStatus<ESItemMetadata, ESItemContent, ESSearchParameters>
@@ -287,7 +292,8 @@ export interface ESDBStatus<ESItemMetadata, ESItemContent, ESSearchParameters>
             | 'isSearchPartial'
             | 'isSearching'
             | 'isEnablingEncryptedSearch'
-            | 'isPaused'
+            | 'isContentIndexingPaused'
+            | 'isMetadataIndexingPaused'
             | 'contentIndexingDone'
         >,
         Pick<ESCache<unknown, unknown>, 'isCacheLimited' | 'isCacheReady'> {}

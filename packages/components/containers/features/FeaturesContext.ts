@@ -42,6 +42,8 @@ export enum FeatureCode {
     BundlePromoShown = 'BundlePromoShown',
     CalendarFeedbackEnabled = 'CalendarFeedbackEnabled',
     CalendarFetchMetadataOnly = 'CalendarFetchMetadataOnly',
+    CalendarEncryptedSearch = 'CalendarEncryptedSearch',
+    CalendarSearchSpotlight = 'CalendarSearchSpotlight',
     CalendarSharingEnabled = 'CalendarSharingEnabled',
     CalendarSharingSpotlight = 'CalendarSharingSpotlight',
     CleanUTMTrackers = 'CleanUTMTrackers',

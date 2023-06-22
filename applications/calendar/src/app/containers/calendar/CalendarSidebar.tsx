@@ -132,6 +132,7 @@ const CalendarSidebar = ({
             default: Date.UTC(2023, 7, 10, 12),
         }
     );
+
     const shouldShowHolidaysSpotlight = useSpotlightShow(showHolidaysSpotlight);
 
     const addCalendarText = c('Dropdown action icon tooltip').t`Add calendar`;
