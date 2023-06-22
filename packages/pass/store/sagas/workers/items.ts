@@ -253,9 +253,13 @@ const requestAllItemsForShareId = async (shareId: string): Promise<ItemRevisionC
     return pageIterator();
 };
 
+/* avoid throwing when decrypting items for a shareId - this avoids blocking
+ * the user if one item is corrupted or is using a newer proto version */
 export async function requestItemsForShareId(shareId: string): Promise<ItemRevision[]> {
     const items = await requestAllItemsForShareId(shareId);
-    return Promise.all(items.map((encryptedItem) => parseItemRevision(shareId, encryptedItem)));
+    return (
+        await Promise.all(items.map((encryptedItem) => parseItemRevision(shareId, encryptedItem).catch(() => null)))
+    ).filter(truthy);
 }
 
 export const importItemsBatch = async (options: {
