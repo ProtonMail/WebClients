@@ -25,9 +25,8 @@ import { ItemsList } from './ItemsList';
 import { PasswordAutoSuggest } from './PasswordAutoSuggest';
 
 export const DropdownContent: VFC = () => {
-    const { workerState, resizeIFrame, closeIFrame, postMessage, settings } = useIFrameContext();
+    const { workerState, resizeIFrame, closeIFrame, postMessage } = useIFrameContext();
     const [dropdownState, setDropdownState] = useState<MaybeNull<DropdownSetActionPayload>>(null);
-    const canLoadFavicons = settings.loadDomainImages;
 
     const withStateReset = <F extends Callback>(fn: F): F =>
         pipe(
@@ -101,7 +100,6 @@ export const DropdownContent: VFC = () => {
                                         payload: { item },
                                     })
                                 )}
-                                canLoadFavicons={canLoadFavicons}
                             />
                         ) : (
                             <DropdownItem
@@ -130,18 +128,7 @@ export const DropdownContent: VFC = () => {
                                 prefix={dropdownState.prefix}
                                 domain={dropdownState.domain}
                                 onOptions={triggerResize}
-                                onSubmitAliasEmail={withStateReset((aliasEmail) => {
-                                    postMessage({
-                                        type: IFrameMessageType.DROPDOWN_AUTOSUGGEST_ALIAS,
-                                        payload: { aliasEmail },
-                                    });
-                                })}
-                                onSubmitUserEmail={withStateReset((userEmail) => {
-                                    postMessage({
-                                        type: IFrameMessageType.DROPDOWN_AUTOFILL_USER_EMAIL,
-                                        payload: { userEmail },
-                                    });
-                                })}
+                                onSubmit={withStateReset(postMessage)}
                             />
                         );
                 }

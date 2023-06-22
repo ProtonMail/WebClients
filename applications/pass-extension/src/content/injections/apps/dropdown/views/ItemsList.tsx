@@ -8,6 +8,7 @@ import { truthy } from '@proton/pass/utils/fp';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 import { navigateToUpgrade } from '../../../../../shared/components/upgrade/UpgradeButton';
+import { useIFrameContext } from '../../context/IFrameContextProvider';
 import { DropdownItem } from '../components/DropdownItem';
 import { DropdownItemsList } from '../components/DropdownItemsList';
 
@@ -15,15 +16,15 @@ type Props = {
     items: SafeLoginItem[];
     needsUpgrade: boolean;
     onSubmit: (item: SafeLoginItem) => void;
-    canLoadFavicons: boolean;
 };
 
-export const ItemsList: VFC<Props> = ({ items, needsUpgrade, onSubmit, canLoadFavicons }) => {
+export const ItemsList: VFC<Props> = ({ items, needsUpgrade, onSubmit }) => {
+    const { settings } = useIFrameContext();
+
     const dropdownItems = useMemo(
         () =>
             [
                 needsUpgrade && (
-                    // FIXME: shorter text than "Your plan only allows you to autofill from your primary vault" to use less space
                     <DropdownItem
                         key={'upgrade-autofill'}
                         icon="arrow-out-square"
@@ -41,7 +42,7 @@ export const ItemsList: VFC<Props> = ({ items, needsUpgrade, onSubmit, canLoadFa
                         key={item.itemId}
                         title={item.name}
                         subTitle={item.username}
-                        url={canLoadFavicons ? item.url : undefined}
+                        url={settings.loadDomainImages ? item.url : undefined}
                         icon="user"
                         onClick={() => onSubmit(item)}
                     />

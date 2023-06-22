@@ -3,7 +3,7 @@ import { type VFC, useCallback, useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader';
-import { contentScriptMessage, pageMessage, sendMessage } from '@proton/pass/extension/message';
+import { pageMessage, sendMessage } from '@proton/pass/extension/message';
 import type { AliasState } from '@proton/pass/store';
 import { createTelemetryEvent } from '@proton/pass/telemetry/events';
 import { type MaybeNull, type RequiredNonNull, WorkerMessageType } from '@proton/pass/types';
@@ -15,13 +15,14 @@ import noop from '@proton/utils/noop';
 import { navigateToUpgrade } from '../../../../..//shared/components/upgrade/UpgradeButton';
 import { AliasPreview } from '../../../../../shared/components/alias/Alias.preview';
 import { useEnsureMounted } from '../../../../../shared/hooks/useEnsureMounted';
+import { type IFrameMessage, IFrameMessageType } from '../../../../types';
+import { useIFrameContext } from '../../context/IFrameContextProvider';
 import { DropdownItem } from '../components/DropdownItem';
 
 type Props = {
     prefix: string;
     domain: string;
-    onSubmitAliasEmail: (aliasEmail: string) => void;
-    onSubmitUserEmail: (userEmail: string) => void;
+    onSubmit: (message: IFrameMessage) => void;
     onOptions?: () => void;
 };
 
@@ -33,10 +34,10 @@ const isValidAliasOptions = (
 
 const getInitialLoadingText = (): string => c('Info').t`Generating alias...`;
 
-export const AliasAutoSuggest: VFC<Props> = ({ prefix, domain, onOptions, onSubmitAliasEmail, onSubmitUserEmail }) => {
+export const AliasAutoSuggest: VFC<Props> = ({ prefix, domain, onOptions, onSubmit }) => {
     const ensureMounted = useEnsureMounted();
+    const { userEmail } = useIFrameContext();
     const [aliasOptions, setAliasOptions] = useState<MaybeNull<AliasState['aliasOptions']>>(null);
-    const [userEmail, setUserEmail] = useState<MaybeNull<string>>(null);
     const [needsUpgrade, setNeedsUpgrade] = useState<boolean>(false);
     const [loadingText, setLoadingText] = useState<MaybeNull<string>>(getInitialLoadingText());
     const [error, setError] = useState<boolean>(false);
@@ -47,8 +48,8 @@ export const AliasAutoSuggest: VFC<Props> = ({ prefix, domain, onOptions, onSubm
             setError(false);
             await wait(500);
 
-            await sendMessage.on(pageMessage({ type: WorkerMessageType.ALIAS_OPTIONS }), (response) => {
-                if (response.type === 'success' && response.options !== null) {
+            await sendMessage.onSuccess(pageMessage({ type: WorkerMessageType.ALIAS_OPTIONS }), (response) => {
+                if (response.options !== null) {
                     ensureMounted(setAliasOptions)(response.options);
                     ensureMounted(setNeedsUpgrade)(response.needsUpgrade);
                     return onOptions?.(); /* notify parent component if we need an iframe resize */
@@ -61,19 +62,6 @@ export const AliasAutoSuggest: VFC<Props> = ({ prefix, domain, onOptions, onSubm
             ensureMounted(setError)(true);
         }
     }, []);
-
-    const requestUserEmail = async () => {
-        try {
-            await sendMessage.on(contentScriptMessage({ type: WorkerMessageType.RESOLVE_USER_DATA }), (response) => {
-                if (response.type === 'success') {
-                    ensureMounted(setUserEmail)(response.user?.Email ?? null);
-                    return;
-                }
-            });
-        } catch (_) {
-            throw new Error('user email could not be resolved');
-        }
-    };
 
     const createAlias = useCallback(
         async ({ suffixes, mailboxes }: RequiredNonNull<AliasState['aliasOptions']>) => {
@@ -113,7 +101,10 @@ export const AliasAutoSuggest: VFC<Props> = ({ prefix, domain, onOptions, onSubm
 
                 ensureMounted(() => {
                     setLoadingText(null);
-                    onSubmitAliasEmail(aliasEmail);
+                    onSubmit({
+                        type: IFrameMessageType.DROPDOWN_AUTOSUGGEST_ALIAS,
+                        payload: { aliasEmail },
+                    });
                 })();
             } catch (err) {
                 ensureMounted(setError)(true);
@@ -123,9 +114,7 @@ export const AliasAutoSuggest: VFC<Props> = ({ prefix, domain, onOptions, onSubm
     );
 
     useEffect(() => {
-        wait(500)
-            .then(() => Promise.all([requestAliasOptions(), requestUserEmail()]))
-            .catch(noop);
+        wait(500).then(requestAliasOptions).catch(noop);
     }, []);
 
     useEffect(() => {
@@ -138,15 +127,25 @@ export const AliasAutoSuggest: VFC<Props> = ({ prefix, domain, onOptions, onSubm
         <>
             <DropdownItem
                 title={c('Title').t`Use my email`}
+                disabled={!userEmail}
                 subTitle={
                     userEmail ?? (
-                        <span className="text-sm block">
-                            <CircleLoader className="mr-2" />
+                        <span className="block flex flex-align-items-center">
+                            <CircleLoader className="mr-1" />
+                            <span>{c('Info').t`Loading...`}</span>
                         </span>
                     )
                 }
                 icon="envelope"
-                onClick={userEmail ? () => onSubmitUserEmail(userEmail) : noop}
+                onClick={
+                    userEmail
+                        ? () =>
+                              onSubmit({
+                                  type: IFrameMessageType.DROPDOWN_AUTOFILL_USER_EMAIL,
+                                  payload: { userEmail },
+                              })
+                        : noop
+                }
             />
             <DropdownItem
                 title={needsUpgrade ? c('Info').t`Upgrade ${PASS_APP_NAME}` : c('Title').t`Hide my email`}
@@ -154,9 +153,9 @@ export const AliasAutoSuggest: VFC<Props> = ({ prefix, domain, onOptions, onSubm
                 subTitle={(() => {
                     if (loadingText) {
                         return (
-                            <span className="text-sm block">
-                                <CircleLoader className="mr-2" />
-                                {loadingText}
+                            <span className="block flex flex-align-items-center">
+                                <CircleLoader className="mr-1" />
+                                <span>{loadingText}</span>
                             </span>
                         );
                     }
