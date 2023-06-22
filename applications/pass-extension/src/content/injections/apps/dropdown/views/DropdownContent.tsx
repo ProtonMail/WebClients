@@ -3,7 +3,9 @@ import { type VFC, useCallback, useLayoutEffect, useRef, useState } from 'react'
 import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader';
+import { Icon } from '@proton/components/components';
 import { type Callback, type MaybeNull, WorkerStatus } from '@proton/pass/types';
+import { PassIcon } from '@proton/pass/types/data/pass-icon';
 import { pixelEncoder } from '@proton/pass/utils/dom';
 import { pipe, tap } from '@proton/pass/utils/fp';
 import { FORK_TYPE } from '@proton/shared/lib/authentication/ForkInterface';
@@ -62,7 +64,7 @@ export const DropdownContent: VFC = () => {
                             onClick={closeIFrame}
                             title={c('Title').t`${PASS_APP_NAME} locked`}
                             subTitle={c('Info').t`Unlock with your pin`}
-                            icon="lock-filled"
+                            icon={PassIcon.LOCKED_DROPDOWN}
                         />
                     );
                 }
@@ -74,8 +76,14 @@ export const DropdownContent: VFC = () => {
                                 closeIFrame();
                                 await accountFork(FORK_TYPE.SWITCH);
                             }}
-                            title={PASS_APP_NAME}
-                            subTitle={c('Info').t`Login with your ${BRAND_NAME} account`}
+                            subTitle={
+                                <>
+                                    {c('Info').t`Enable ${PASS_APP_NAME} by connecting your ${BRAND_NAME} account`}
+                                    <Icon className="ml-1" name="arrow-out-square" />
+                                </>
+                            }
+                            icon={PassIcon.DISABLED}
+                            autogrow
                         />
                     );
                 }
@@ -95,10 +103,10 @@ export const DropdownContent: VFC = () => {
                             />
                         ) : (
                             <DropdownItem
+                                icon={PassIcon.ACTIVE}
                                 onClick={withStateReset(closeIFrame)}
                                 title={PASS_APP_NAME}
                                 subTitle={c('Info').t`No login found`}
-                                disabled
                             />
                         );
 
@@ -120,12 +128,7 @@ export const DropdownContent: VFC = () => {
                                 prefix={dropdownState.prefix}
                                 domain={dropdownState.domain}
                                 onOptions={triggerResize}
-                                onSubmit={withStateReset((aliasEmail) => {
-                                    postMessage({
-                                        type: IFrameMessageType.DROPDOWN_AUTOSUGGEST_ALIAS,
-                                        payload: { aliasEmail },
-                                    });
-                                })}
+                                onSubmit={withStateReset(postMessage)}
                             />
                         );
                 }

@@ -1,12 +1,12 @@
-import { WorkerStatus } from '@proton/pass/types';
-import { safeCall } from '@proton/pass/utils/fp';
+import type { WorkerStatus } from '@proton/pass/types';
+import { or, safeCall } from '@proton/pass/utils/fp';
 import { createListenerStore } from '@proton/pass/utils/listener';
+import { workerErrored, workerLocked, workerLoggedOut, workerStale } from '@proton/pass/utils/worker';
 import debounce from '@proton/utils/debounce';
 
-import { EXTENSION_PREFIX, ICON_CLASSNAME } from '../../constants';
+import { ACTIVE_ICON_SRC, DISABLED_ICON_SRC, EXTENSION_PREFIX, ICON_CLASSNAME, LOCKED_ICON_SRC } from '../../constants';
 import { withContext } from '../../context/context';
 import { applyInjectionStyles, cleanupInjectionStyles, createIcon } from '../../injections/icon';
-import { createLockIcon } from '../../injections/icon/svg';
 import type { FieldHandle, FieldIconHandle } from '../../types';
 
 type CreateIconOptions = { field: FieldHandle };
@@ -17,23 +17,17 @@ export const createFieldIconHandle = ({ field }: CreateIconOptions): FieldIconHa
 
     const input = field.element as HTMLInputElement;
     const { icon, wrapper } = createIcon(field);
-    const lock = createLockIcon();
 
     const setStatus = (status: WorkerStatus) => {
         icon.classList.remove(`${ICON_CLASSNAME}--loading`);
-        safeCall(() => icon.removeChild(lock))();
 
-        switch (status) {
-            case WorkerStatus.READY:
-                return icon.classList.remove(`${ICON_CLASSNAME}--disabled`);
+        const iconUrl = (() => {
+            if (workerLocked(status)) return LOCKED_ICON_SRC;
+            if (or(workerLoggedOut, workerErrored, workerStale)(status)) return DISABLED_ICON_SRC;
+            return ACTIVE_ICON_SRC;
+        })();
 
-            case WorkerStatus.LOCKED:
-                icon.classList.add(`${ICON_CLASSNAME}--disabled`);
-                return icon.appendChild(lock);
-
-            default:
-                return icon.classList.add(`${ICON_CLASSNAME}--disabled`);
-        }
+        icon.style.setProperty('background-image', `url("${iconUrl}")`, 'important');
     };
 
     const setCount = (count: number) => {

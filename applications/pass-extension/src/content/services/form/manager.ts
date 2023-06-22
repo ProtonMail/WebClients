@@ -129,7 +129,7 @@ export const createFormManager = (options: FormManagerOptions) => {
                 if (await detector.shouldRunDetection()) {
                     ctx.detectionRequest = requestIdleCallback(() => {
                         if (ctx.active) {
-                            logger.info(`[FormTracker::Detector]: Running detection for "${reason}"`);
+                            logger.info(`[FormTracker::Detector] Running detection for "${reason}"`);
 
                             try {
                                 const forms = detector.runDetection({
@@ -155,7 +155,9 @@ export const createFormManager = (options: FormManagerOptions) => {
                                 options.onDetection(getTrackedForms());
                                 void reconciliate();
                                 ctx.busy = false;
-                            } catch (_) {}
+                            } catch (err) {
+                                logger.warn(`[FormTracker::Detector] ${err}`);
+                            }
                         }
                     });
 

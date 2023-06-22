@@ -3,8 +3,9 @@ import {
     clearVisibilityCache,
     fieldOfInterestSelector,
     isFormOfInterest,
-    isVisibleField,
+    isVisible,
     rulesetMaker,
+    setIgnoreType,
 } from '@proton/pass/fathom';
 import { FormField, FormType } from '@proton/pass/types';
 import { sortOn } from '@proton/pass/utils/fp/sort';
@@ -20,7 +21,6 @@ import {
     formProcessed,
     selectAllForms,
     selectDanglingFields,
-    selectUnprocessedForms,
     setFieldProcessed,
     setFormProcessed,
 } from '../../utils/nodes';
@@ -88,7 +88,7 @@ const getScores = <T extends string>(fnode: FNode, types: T[]): PredictionScoreR
 const getPredictionsFor = <T extends string>(
     boundRuleset: BoundRuleset,
     options: {
-        type: 'form' | 'field';
+        type: 'form-el' | 'field';
         subTypes: T[];
         fallbackType: T;
         selectBest?: PredictionBestSelector<T>;
@@ -143,10 +143,12 @@ const groupFields = (
 /* Always prefer login - in case of misprediction it's less
  * deceptive to the user */
 const selectBestForm = <T extends string>(scores: PredictionScoreResult<T>[]) => {
-    const loginResult = scores.find(({ type }) => type === FormType.LOGIN)!;
     const best = scores[0];
-    const delta = Math.abs(loginResult.score - best.score);
+    const loginResult = scores.find(({ type }) => type === FormType.LOGIN);
 
+    if (!loginResult) return best;
+
+    const delta = Math.abs(loginResult.score - best.score);
     return loginResult.score > 0.5 && delta < LOGIN_DELTA_TOLERANCE ? loginResult : best;
 };
 
@@ -159,7 +161,7 @@ const createDetectionRunner =
                 const boundRuleset = ruleset.against(doc.body);
                 return [
                     getPredictionsFor<FormType>(boundRuleset, {
-                        type: 'form',
+                        type: 'form-el',
                         subTypes: DETECTABLE_FORMS,
                         fallbackType: FormType.NOOP,
                         selectBest: selectBestForm,
@@ -203,15 +205,16 @@ const createDetectionRunner =
          *   heuristic flagging allows detection triggers to monitor new fields correctly.
          * · query all unprocessed forms (including invisible ones) and flag them as `NOOP` */
         formPredictions.forEach(({ fnode: { element }, type }) => setFormProcessed(element, type));
+
         forms.forEach(({ fields }) =>
             fields.forEach(({ field, fieldType }) => {
-                if (fieldType !== FormField.NOOP || field.type === 'hidden' || isVisibleField(field)) {
-                    setFieldProcessed(field, fieldType);
-                }
+                const hidden = field.type === 'hidden';
+                const detected = fieldType !== FormField.NOOP;
+                if (detected || hidden || isVisible(field, { opacity: true })) setFieldProcessed(field, fieldType);
+                if (!detected && hidden) setIgnoreType(field);
             })
         );
 
-        selectUnprocessedForms().forEach((form) => setFormProcessed(form, FormType.NOOP));
         clearVisibilityCache(); /* clear visibility cache on each detection run */
 
         return forms;

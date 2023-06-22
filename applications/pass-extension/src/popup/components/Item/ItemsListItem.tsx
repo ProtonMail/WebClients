@@ -11,10 +11,10 @@ import { escapeRegex, getMatches } from '@proton/shared/lib/helpers/regex';
 import { normalize } from '@proton/shared/lib/helpers/string';
 import clsx from '@proton/utils/clsx';
 
+import { ItemIcon } from '../../../shared/components/icon/ItemIcon';
 import { presentListItem } from '../../../shared/items';
 import { itemTypeToItemClassName } from '../../../shared/items/className';
 import { VaultIcon } from '../Vault/VaultIcon';
-import { ItemIcon } from './ItemIcon';
 
 import './ItemsListItem.scss';
 
