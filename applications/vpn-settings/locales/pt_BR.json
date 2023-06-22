@@ -1440,10 +1440,10 @@
         "Eu uso uma conta ${ BRAND_NAME } diferente"
       ],
       "Missing feature(s)": [
-        "Recurso(s) ausente(s)"
+        "Funções ausentes"
       ],
       "My reason isn't listed, please comment": [
-        "Minha razão não está listada, por favor comente"
+        "Minha razão não está listada. Comente."
       ],
       "Streaming service unsupported": [
         "Serviço de streaming não suportado"
@@ -1471,13 +1471,13 @@
         "Quantidade abaixo do mínimo."
       ],
       "Checkout expired, please try again": [
-        "Pedido expirado. Por favor, tente novamente"
+        "Pedido expirado. Tente novamente"
       ],
       "Code wrong or not valid anymore": [
         "Código errado ou não é mais válido"
       ],
       "Domain not available, try again later": [
-        "Domínio indisponível, tente novamente mais tarde"
+        "Domínio indisponível. Tente novamente mais tarde."
       ],
       "Email is not valid": [
         "O e-mail é inválido"
@@ -1495,7 +1495,7 @@
         "Credenciais de início de sessão inválidos. Tente novamente."
       ],
       "Incorrect mailbox password. Please try again.": [
-        "Senha da caixa de correio incorreta. Por favor, tente novamente."
+        "Senha da caixa de correio incorreta. Tente novamente."
       ],
       "Invalid ${ name } code": [
         "Código ${ name } inválido"
@@ -1540,16 +1540,16 @@
         "Processo de pagamento não suportado"
       ],
       "Payments are currently not available, please try again later": [
-        "Os pagamentos não estão disponíveis no momento. Por favor, tente novamente mais tarde"
+        "Os pagamentos não estão disponíveis no momento. Tente novamente mais tarde"
       ],
       "Please generate keys before you try to change your password": [
-        "Por favor, crie novas chaves antes de tentar alterar sua senha"
+        "Crie chaves antes de tentar alterar sua senha"
       ],
       "Please set a recovery email first": [
         "Em primeiro lugar, defina um e-mail de recuperação"
       ],
       "Please set a recovery phone number first": [
-        "Por favor, defina um número de telefone de recuperação primeiro"
+        "Defina um número de telefone de recuperação primeiro"
       ],
       "Process aborted": [
         "Processo abortado"
@@ -1561,13 +1561,13 @@
         "Falha na verificação da assinatura"
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Algo deu errado. Por favor, ${ refresh } a página para continuar. Se você continuar vendo esta mensagem de erro, entre em contato com nossa ${ supportTeam }."
+        "Ocorreu um erro. ${ refresh } a página para continuar. Se você continuar vendo esta mensagem de erro, entre em contato com nossa ${ supportTeam }."
       ],
       "Tab closed": [
         "Guia fechada"
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or sign in via a computer.": [
-        "O navegador que você está usando não permite que o pagamento seja completamente autorizado. Por favor, use um navegador diferente ou inicie a sessão através de um computador."
+        "O navegador que você está usando não permite que o pagamento seja completamente autorizado. Use um navegador diferente ou inicie a sessão através de um computador."
       ],
       "The email addresses do not match": [
         "Os endereços de e-mail não são iguais"
@@ -1612,7 +1612,7 @@
         "Você não tem faturas."
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
-        "Sua conta ou organização tem uma fatura vencida. Por favor, pague todas as faturas pendentes."
+        "Sua conta ou organização tem uma fatura vencida. Pague todas as faturas pendentes."
       ]
     },
     "Error message": {
@@ -1758,7 +1758,7 @@
         "Você foi convidado a participar de ${ bannerOrganization }. ${ viewInviteButton }"
       ],
       "You have successfully joined the Family plan": [
-        "Você entrou no plano familiar com sucesso"
+        "Você entrou no plano familiar"
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "Você foi convidado a vincular sua Conta ${ BRAND_NAME } a este plano de grupo e aproveitar juntos de todos os recursos premium de ${ BRAND_NAME_TWO }."
@@ -1860,13 +1860,13 @@
     },
     "fido2: Error": {
       "Please disable 2FA via security key before disabling TOTP": [
-        "Por favor, desative A2F através da chave de segurança antes de desativar TOTP"
+        "Desative A2F através da chave de segurança antes de desativar TOTP"
       ],
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Ocorreu um erro ao autenticar com sua chave de segurança. Por favor, tente novamente."
+        "Ocorreu um erro ao autenticar com sua chave de segurança. Tente novamente."
       ],
       "Something went wrong registering your security key. Please try again.": [
-        "Algo deu errado ao registrar sua chave de segurança. Por favor, tente novamente."
+        "Algo deu errado ao registrar sua chave de segurança. Tente novamente."
       ]
     },
     "fido2: Info": {
@@ -1926,7 +1926,7 @@
         "Nome da sua chave de segurança"
       ],
       "Register your security key": [
-        "Registrar a sua chave de segurança"
+        "Registre a sua chave de segurança"
       ],
       "Registered security keys": [
         "Chaves de segurança registradas"
@@ -2075,7 +2075,7 @@
         "${ boldWarning } Você perderá o acesso a todos os dados criptografados atuais em sua conta se continuar."
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
-        "A tecnologia de criptografia do ${ BRAND_NAME } significa que ninguém pode acessar sua senha - nem mesmo nós."
+        "A tecnologia de criptografia da ${ BRAND_NAME } significa que ninguém pode acessar sua senha - nem mesmo nós."
       ],
       "${ fileName }: full-size image": [
         "${ fileName }: imagem em tamanho real"
@@ -2126,10 +2126,10 @@
         "Garantia de devolução do seu dinheiro por até 30 dias."
       ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
-        "Um nome para te ajudar a identificar onde irá usá-lo, podendo facilmente revogar ou extender depois."
+        "Um nome para ajudá-lo a identificar onde você o utiliza, para poder revogá-lo ou estendê-lo facilmente mais tarde."
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
-        "Um número de telefone apenas pode ser utilizado para verificar uma conta ${ BRAND_NAME }"
+        "Um número de telefone apenas pode ser usado para verificar uma conta ${ BRAND_NAME }"
       ],
       "A user is an account associated with a single username, mailbox, and person": [
         "Um usuário é uma conta associada com um único nome de usuário, caixa de correio e pessoa"
@@ -2141,7 +2141,7 @@
         "Tamanho da conta"
       ],
       "Account successfully updated": [
-        "Conta atualizada com sucesso"
+        "Conta atualizada"
       ],
       "add a recovery method": [
         "adicionar um método de recuperação"
@@ -2153,7 +2153,7 @@
         "Opções adicionais"
       ],
       "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
-        "Após efetuar o seu pagamento em Bitcoin. Por favor, siga as instruções abaixo para fazer o upgrade de plano."
+        "Após efetuar o seu pagamento em Bitcoin. Siga as instruções abaixo para fazer o upgrade de plano."
       ],
       "All ${ BRAND_NAME } apps and their premium features": [
         "Todos os aplicativos da ${ BRAND_NAME } e as suas funcionalidades premium"
@@ -2237,7 +2237,7 @@
         "Criando sua conta"
       ],
       "Credit for the unused portion of your previous plan subscription": [
-        "Crédito pela parte não utilizada no plano anterior da sua assinatura"
+        "Crédito pela parte não usada no plano anterior da sua assinatura"
       ],
       "Custom email domains": [
         "Domínios personalizados de e-mail"
@@ -2264,7 +2264,7 @@
         "Cada código só pode ser usado uma única vez"
       ],
       "Email address already used": [
-        "Endereço de e-mail já utilizado"
+        "Endereço de e-mail já usado"
       ],
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
         "A hospedagem de e-mails para 10 nomes de domínio de e-mail adicionais está incluída gratuitamente. Domínios adicionais podem ser adicionados por ${ price }."
@@ -2288,7 +2288,7 @@
         "Digite o código enviado para o seu número de telefone ${ phone }."
       ],
       "Enter the code that was sent to ${ email }. If you can't find the message in your inbox, please check your spam folder.": [
-        "Digite o código de recuperação que foi enviado para ${ email }. Se você não encontrar o e-mail na sua caixa de entrada, por favor, verifique sua pasta de spam."
+        "Digite o código de recuperação enviado para ${ email }. Se você não encontrar o e-mail na sua caixa de entrada, verifique sua pasta de spam."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Digite o código de verificação que foi enviado para ${ destinationText }."
@@ -2336,7 +2336,7 @@
         "Obtenha um endereço da ${ BRAND_NAME } para usar todos os serviços da ${ BRAND_NAME_TWO } incluindo ${ MAIL_SHORT_APP_NAME } e ${ CALENDAR_SHORT_APP_NAME }."
       ],
       "Get my ${ BRAND_NAME } address": [
-        "Obter meu endereço de ${ BRAND_NAME }"
+        "Obter meu endereço da ${ BRAND_NAME }"
       ],
       "here": [
         "aqui"
@@ -2360,7 +2360,7 @@
         "Se você nunca usou a autenticação de dois fatores antes, nós recomendamos você ${ guideButton }."
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
-        "Se você perder seu dispositivo habilitado com a autenticação de dois fatores, estes códigos poderão ser utilizados no lugar do código de 6 dígitos para iniciar sessão em sua conta. Cada código poderá ser utilizado apenas uma vez."
+        "Se você perder seu dispositivo habilitado com a autenticação de dois fatores, estes códigos poderão ser usados no lugar do código de 6 dígitos para iniciar sessão em sua conta. Cada código poderá ser usado apenas uma vez."
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Se você prosseguir com o downgrade, perderá o acesso aos recursos pagos do ${ MAIL_APP_NAME } e ${ VPN_APP_NAME }."
@@ -2375,7 +2375,7 @@
         "Se você deseja combinar esta conta com outra, NÃO a apague."
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
-        "Importante: Por favor, certifique-se de salvar os códigos de recuperação. Caso contrário, você perderá permanentemente o acesso à sua conta se perder o dispositivo de autenticação de dois fatores."
+        "Importante: Certifique-se de salvar os códigos de recuperação. Caso contrário, você perderá permanentemente o acesso à sua conta se perder o dispositivo de autenticação de dois fatores."
       ],
       "Install a Country configuration file to connect to a random server in the country of your choice.": [
         "Instale um arquivo de configuração do país para se conectar a um servidor aleatório no país de sua escolha."
@@ -2393,13 +2393,13 @@
         "Perda de conexão com a internet"
       ],
       "Internet connection lost. Please check your device's connectivity.": [
-        "Perda de conexão com a internet. Por favor, verifique a conexão do seu dispositivo."
+        "Perda de conexão com a internet. Verifique a conexão do seu dispositivo."
       ],
       "Internet connection restored.": [
         "Conexão com a internet restaurada."
       ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
-        "Saiba como iniciar sessão no ${ VPN_APP_NAME } com aplicativos de VPN de terceiros."
+        "Saiba como iniciar sessão no ${ VPN_APP_NAME } com aplicações de VPN de terceiros."
       ],
       "Learn more": [
         "Saiba mais"
@@ -2486,19 +2486,19 @@
         "Digite a frase de recuperação de 12 palavras associada à sua conta."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
-        "Por favor, note que ao clicar no botão Confirmar a sua conta terá ${ creditsRemaining } créditos restantes."
+        "Note que ao clicar no botão Confirmar a sua conta terá ${ creditsRemaining } créditos restantes."
       ],
       "Please provide an email address in case we need to contact you.": [
-        "Por favor, forneça um endereço de e-mail para entrar em contato com você."
+        "Forneça um endereço de e-mail para entrar em contato com você."
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Tente novamente com outro método de pagamento ou entre em contato com seu banco."
       ],
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
-        "Por favor, tente novamente, use um método de pagamento diferente ou entre em contato com seu banco."
+        "Tente novamente, use um método de pagamento diferente ou entre em contato com seu banco."
       ],
       "Please verify payment at the new tab which was opened.": [
-        "Por favor, verifique o pagamento na nova guia que foi aberta."
+        "Verifique o pagamento na nova guia que foi aberta."
       ],
       "Please wait till your changes are synced with the server.": [
         "Aguarde até que suas alterações sejam sincronizadas com o servidor."
@@ -2604,13 +2604,13 @@
         "Estes arquivos de configuração permitem escolher a qual servidor do ${ VPN_APP_NAME } você será conectado ao usar um aplicativo de VPN de terceiros ou ao configurar uma conexão de VPN em um roteador."
       ],
       "These configurations are provided to work with WireGuard routers and official clients.": [
-        "Essas configurações são fornecidas para operar com roteadores WireGuard e clientes oficiais."
+        "Essas configurações são fornecidas para operar com roteadores e clientes oficiais WireGuard."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Essa conta foi suspensa devido a uma potencial violação da política."
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
-        "Este navegador não suporta pré-visualização de documentos PDF. Por favor, baixe o arquivo."
+        "Este navegador não suporta pré-visualização de documentos PDF. Baixe o arquivo."
       ],
       "This can take a few seconds or a few minutes depending on your device": [
         "Isto pode demorar alguns segundos ou alguns minutos dependendo do seu dispositivo"
@@ -2622,7 +2622,7 @@
         "Isso permitirá que o PayPal seja usado para pagar sua assinatura da ${ BRAND_NAME }. Iremos redirecioná-lo para o PayPal em uma nova guia do navegador. Se você usar bloqueadores de pop-up, desative-os para continuar."
       ],
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
-        "Isso irá deletar permanentemente sua conta e todas as suas informações. Você não será capaz de reativar essa conta."
+        "Isso excluirá permanentemente sua conta e todas as suas informações. Você não conseguirá reativar essa conta."
       ],
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "Isso substituirá a sua senha temporária. Você a usará para acessar a sua conta do ${ BRAND_NAME } no futuro."
@@ -2655,7 +2655,7 @@
         "para usar ${ toAppName } e todos os serviços da ${ BRAND_NAME }"
       ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
-        "Recarregue sua conta com créditos que podem ser utilizados para assinar um novo plano ou renovar seu plano atual. Você recebe um crédito a cada ${ i18nCurrency } gasto."
+        "Recarregue sua conta com créditos que podem ser usados para assinar um novo plano ou renovar seu plano atual. Você recebe um crédito a cada ${ i18nCurrency } gasto."
       ],
       "Tor": [
         "Tor"
@@ -2724,7 +2724,7 @@
         "A verificação pode levar alguns minutos."
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
-        "O processo de verificação abrirá uma nova guia. Por favor, desative os bloqueadores de pop-ups. Você não será cobrado. Qualquer quantia usada para verificar seu cartão será reembolsada imediatamente."
+        "O processo de verificação abrirá uma nova guia. Desative os bloqueadores de pop-ups. Você não será cobrado. Qualquer quantia usada para verificar seu cartão será reembolsada imediatamente."
       ],
       "Verify your identity with a time-based one-time password from an authenticator app": [
         "Verifique sua identidade com a senha baseada em tempo em um aplicativo autenticador"
@@ -2808,16 +2808,16 @@
         "Você pode personalizar e baixar suas faturas para fins contábeis."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
-        "Você pode manter até ${ MAX_CALENDARS_FREE } calendário. Remova links de calendários compartilhados e qualquer ${ BRAND_NAME } usuário com quem você compartilhou seus calendários antes de cancelar sua ${ MAIL_SHORT_APP_NAME } assinatura.",
-        "Você pode manter até ${ MAX_CALENDARS_FREE } calendários. Remova links de calendários compartilhados e qualquer ${ BRAND_NAME } usuário com quem você compartilhou seus calendários antes de cancelar sua ${ MAIL_SHORT_APP_NAME } assinatura."
+        "Você pode manter até ${ MAX_CALENDARS_FREE } calendário. Remova links de calendários compartilhados e qualquer usuário do ${ BRAND_NAME } com quem você compartilhou seus calendários antes de cancelar sua assinatura do ${ MAIL_SHORT_APP_NAME }.",
+        "Você pode manter até ${ MAX_CALENDARS_FREE } calendários. Remova links de calendários compartilhados e qualquer usuário do ${ BRAND_NAME } com quem você compartilhou seus calendários antes de cancelar sua assinatura do ${ MAIL_SHORT_APP_NAME }."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
-        "Você pode manter até ${ MAX_CALENDARS_FREE } calendário. Remova links de calendários compartilhados e qualquer ${ BRAND_NAME } usuário com quem você compartilhou seus calendários antes de cancelar sua assinatura.",
-        "Você pode manter até ${ MAX_CALENDARS_FREE } calendários. Remova links de calendários compartilhados e qualquer ${ BRAND_NAME } usuário com quem você compartilhou seus calendários antes de cancelar sua assinatura."
+        "Você pode manter até ${ MAX_CALENDARS_FREE } calendário. Remova links de calendários compartilhados e qualquer usuário do ${ BRAND_NAME } com quem você compartilhou seus calendários antes de cancelar sua assinatura.",
+        "Você pode manter até ${ MAX_CALENDARS_FREE } calendários. Remova links de calendários compartilhados e qualquer usuário do ${ BRAND_NAME } com quem você compartilhou seus calendários antes de cancelar sua assinatura."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
-        "Você pode manter até ${ MAX_CALENDARS_FREE } calendário. Remova os links do calendário compartilhado antes de cancelar sua ${ MAIL_SHORT_APP_NAME } assinatura.",
-        "Você pode manter até ${ MAX_CALENDARS_FREE } calendários. Remova os links do calendário compartilhado antes de cancelar sua ${ MAIL_SHORT_APP_NAME } assinatura."
+        "Você pode manter até ${ MAX_CALENDARS_FREE } calendário. Remova os links do calendário compartilhado antes de cancelar sua assinatura do ${ MAIL_SHORT_APP_NAME }.",
+        "Você pode manter até ${ MAX_CALENDARS_FREE } calendários. Remova os links do calendário compartilhado antes de cancelar sua assinatura do${ MAIL_SHORT_APP_NAME }."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your subscription.": [
         "Você pode manter até ${ MAX_CALENDARS_FREE } calendário. Remova os links do calendário compartilhado antes de cancelar sua assinatura.",
@@ -2830,7 +2830,7 @@
         "Você pode usar as seguintes credenciais para se conectar a um servidor do ${ VPN_APP_NAME } usando um aplicativo de VPN de código aberto de terceiros, como Tunnelblick para macOS ou OpenVPN para GNU/Linux."
       ],
       "You cannot use the OpenVPN / IKEv2 credentials to sign in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
-        "Não é possível utilizar as credenciais do OpenVPN/IKEv2 para iniciar sessão nos aplicativos do ${ VPN_APP_NAME } ou no painel do ${ VPN_APP_NAME }. ${ learnMore }"
+        "Não é possível usar as credenciais do OpenVPN/IKEv2 para iniciar sessão nos aplicativos do ${ VPN_APP_NAME } ou no painel do ${ VPN_APP_NAME }. ${ learnMore }"
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Você não definiu um método de recuperação, então a recuperação de conta não será possível se você esquecer sua senha. Continuar sem definir o método de recuperação?"
@@ -2848,7 +2848,7 @@
         "Você deve ter um cartão de crédito ou uma conta bancária vinculada na sua conta do PayPal para que possa ser adicionada como método de pagamento."
       ],
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
-        "Você deve ter um cartão de crédito ou uma conta bancária vinculada à sua conta do PayPal. Se a sua conta do PayPal não tem isso, por favor clique no botão abaixo."
+        "Você deve ter um cartão de crédito ou uma conta bancária vinculada à sua conta do PayPal. Se a sua conta do PayPal não tem isso, clique no botão abaixo."
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "Você atingiu ${ spaceDisplayed }% da sua capacidade de armazenamento. ${ freeUpMessage } ${ upgradeLink }"
@@ -2878,7 +2878,7 @@
         "Sua senha da ${ BRAND_NAME }"
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there.": [
-        "Suas contas ${ VPN_APP_NAME } e ${ MAIL_APP_NAME } estão conectadas. Para excluir ambas, por favor inicia sessão em ${ loginLink } e exclua sua conta lá."
+        "Suas contas ${ VPN_APP_NAME } e ${ MAIL_APP_NAME } estão conectadas. Para excluir ambas, inicia sessão em ${ loginLink } e exclua sua conta lá."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Sua conta tem pelo menos uma fatura vencida. O seu acesso será restringido em breve. ${ payInvoiceLink }"
@@ -2893,7 +2893,7 @@
         "A sua conta será atualizada assim que o pagamento for aprovado."
       ],
       "Your email will only be used for this one-time verification.": [
-        "Seu e-mail só será utilizado para essa verificação única."
+        "Seu e-mail só será usado para essa verificação única."
       ],
       "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your ${ oldPassword }.": [
         "Suas mensagens, calendários ou contatos existentes serão bloqueados. Para recuperar esses dados, você precisará de sua frase de recuperação ou sua ${ oldPassword }"
@@ -2905,10 +2905,10 @@
         "Suas informações de pagamento estão protegidas com a criptografia TLS e leis de privacidade suíças."
       ],
       "Your phone number will only be used for this one-time verification.": [
-        "Seu número de telefone somente será utilizado nessa verificação única."
+        "Seu número de telefone somente será usado nessa verificação única."
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
-        "Sua assinatura é gerenciada pela Mozilla. Por favor, entre em contato com o suporte da Mozilla."
+        "Sua assinatura é gerenciada pela Mozilla. Entre em contato com o suporte da Mozilla."
       ]
     },
     "Info for cash payment method": {
@@ -3291,7 +3291,7 @@
         "Código de verificação"
       ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
-        "Sentimos muito em vê-lo partir. Por favor, explique por que você está partindo para nos ajudar a melhorar."
+        "Sentimos muito em vê-lo partir. Explique por que você está partindo para nos ajudar a melhorar."
       ],
       "What happened?": [
         "O que aconteceu?"
@@ -3857,10 +3857,10 @@
         "Privacidade e segurança abrangentes com todos os serviços da ${ BRAND_NAME } combinados."
       ],
       "For next-level password management and identity protection.": [
-        "Para um próximo nível em gerenciamento de senhas e proteção de identidade."
+        "Para um gerenciamento de senhas e proteção de identidade de nível superior."
       ],
       "If you delete your account, you lose all ${ visionary } plan benefits and it won’t be available if you create a new account.": [
-        "Se excluir sua conta, você perderá todos os benefícios do plano ${ visionary }, o qual não estará mais disponível se você criar uma nova conta."
+        "Se excluir sua conta, você perderá todos os benefícios do plano ${ visionary }, o qual não estará mais disponível se você criar uma conta."
       ],
       "If you downgrade your account, you lose all ${ visionary } plan benefits and it won’t be available if you try to subscribe again.": [
         "Se fizer o downgrade da sua conta, você perderá todos os benefícios do plano ${ visionary }, o qual não estará mais disponível se você tentar assinar novamente."
@@ -3899,7 +3899,7 @@
         "A conta inicial gratuita criada para oferecer privacidade a todos por padrão."
       ],
       "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
-        "Seu plano atual está com um preço promocional. Se excluir sua conta, você perderá seu preço promocional, o qual não estará mais disponível se você criar uma nova conta."
+        "Seu plano atual está com um preço promocional. Se excluir sua conta, você perderá seu preço promocional, o qual não estará mais disponível se você criar uma conta."
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Seu plano atual está com um preço promocional. Se fizer o downgrade da sua conta, você perderá seu preço promocional, o qual não estará mais disponível se você tentar assinar novamente."
@@ -4006,7 +4006,7 @@
         "Acesse conteúdo de serviços de streaming, incluindo Netflix, Disney+ e Prime Video, em qualquer lugar"
       ],
       "Addresses have full sending and receiving capability. A user can have multiple addresses assigned to them; however, a single address cannot be assigned to multiple users.": [
-        "Os endereços têm todos os recursos de envio e recebimento de mensagens. Um usuário pode ter vários endereços atribuídos a ele; no entanto, um único endereço não pode ser atribuído a mais de um usuário."
+        "Os endereços têm todos os recursos de envio e recebimento de mensagens. Um usuário pode ter vários endereços atribuídos a ele; no entanto, não é possível atribuir um único endereço a mais de um usuário."
       ],
       "Advanced security VPN with global network": [
         "VPN de segurança avançada com uma rede global"
@@ -4330,7 +4330,7 @@
         "Selecione o número de usuários a serem incluídos em seu plano. Cada usuário adicional custa ${ price }."
       ],
       "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
-        "Se você precisar de mais de ${ maxUsers } conta de usuário, por favor ${ contact } nossa equipe de vendas.",
+        "Se você precisar de mais de ${ maxUsers } conta de usuário, ${ contact } nossa equipe de vendas.",
         "Se você precisar de mais de ${ maxUsers } contas de usuário, ${ contact } nossa equipe de vendas."
       ]
     },
@@ -4502,9 +4502,6 @@
       ],
       "Mail, Calendar, Drive": [
         "Mail, Calendar e Drive"
-      ],
-      "Premium Drive": [
-        "Drive Premium"
       ],
       "Premium early access": [
         "Acesso antecipado premium"
@@ -4805,10 +4802,10 @@
         "Você tem certeza?"
       ],
       "Auto-pay is disabled": [
-        "Autopagamento está desativado"
+        "O pagamento automático está desativado."
       ],
       "Auto-pay is enabled": [
-        "Autopagamento está ativado"
+        "O pagamento automático está ativado."
       ],
       "Disable": [
         "Desativar"
@@ -4817,7 +4814,7 @@
         "Ativar suporte de pagamento automático"
       ],
       "Keep auto-pay": [
-        "Manter autopagamento"
+        "Manter o pagamento automático"
       ],
       "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. Furthermore, if you forget to make a manual payment and auto-pay is disabled for all payment methods, we may auto-downgrade your account which will lead to the loss of many features.": [
         "Nosso sistema não efetuará mais a cobrança automática usando esse método de pagamento, mas sua assinatura ainda será renovada no final do ciclo de cobrança. Se você quiser fazer downgrade ou alterar sua assinatura, ainda precisará fazer isso antes do final do período de cobrança. Além disso, se você esquecer de fazer um pagamento manual e o pagamento automático estiver desabilitado para todos os métodos de pagamento, podemos rebaixar automaticamente sua conta, o que levará à perda de muitos recursos."
@@ -4901,10 +4898,10 @@
         "Número de telefone atualizado"
       ],
       "Verification successful": [
-        "Verificado com sucesso"
+        "Verificado"
       ],
       "You have successfully unsubscribed": [
-        "Você cancelou a inscrição com sucesso"
+        "Você cancelou a inscrição"
       ]
     },
     "Success notification": {
@@ -5379,7 +5376,7 @@
         "versão estável"
       ],
       "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
-        "Esta versão do navegador Tor não é suportada. Por favor, atualize-o para a última ${ stableRelease }"
+        "Esta versão do navegador Tor não é suportada. Atualize-o para a última ${ stableRelease }."
       ]
     },
     "Validation": {

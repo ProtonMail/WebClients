@@ -1326,6 +1326,17 @@
         "Пры ўзнікненні праблем, вы заўсёды можаце адключыць бэта-доступ."
       ]
     },
+    "Billing cycle option": {
+      "Annually": [
+        "Штогод"
+      ],
+      "Monthly": [
+        "Штомесяц"
+      ],
+      "Two-year": [
+        "Кожныя два гады"
+      ]
+    },
     "Bug category": {
       "Application problem": [
         "Праблема з праграмай"
@@ -1862,7 +1873,7 @@
         "Перайсці ў Чарнавікі"
       ],
       "Go to Inbox": [
-        "Перайсці ва Ўваходныя"
+        "Перайсці ва Уваходныя"
       ],
       "Go to Sent": [
         "Перайсці ў Адпраўленыя"
@@ -4998,6 +5009,9 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Перад запытам новага праверачнага кода праверце папку са спамам, а таксама ці правільна азначаны адрас ${ strong }."
       ],
+      "Billing cycle: ${ text }": [
+        "Перыяд аплаты: ${ text }"
+      ],
       "Body: ": [
         "Цела: "
       ],
@@ -8129,9 +8143,6 @@
       "Highest VPN speed": [
         "Найвышэйшая хуткасць VPN"
       ],
-      "Premium Drive": [
-        "Прэміяльныя функцыі Drive"
-      ],
       "Premium early access": [
         "Ранні доступ да новых функцый"
       ],
@@ -8834,6 +8845,9 @@
       ],
       "Beta Access": [
         "Бэта-доступ"
+      ],
+      "Billing cycle": [
+        "Перыяд аплаты"
       ],
       "Blind Carbon Copy": [
         "Схаваная копія"

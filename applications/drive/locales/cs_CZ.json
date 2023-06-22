@@ -786,6 +786,17 @@
         "Jestliže zaznamenáte problémy, vždy můžete deaktivovat Beta Přístup."
       ]
     },
+    "Billing cycle option": {
+      "Annually": [
+        "Ročně"
+      ],
+      "Monthly": [
+        "Měsíčně"
+      ],
+      "Two-year": [
+        "Dva roky"
+      ]
+    },
     "Bug category": {
       "Application problem": [
         "Problém s aplikací"
@@ -2175,9 +2186,6 @@
       "The original folder not found": [
         "Původní složka nebyla nalezena"
       ],
-      "The original folder or file not found": [
-        "Původní složka nebo soubor nebyl nalezen"
-      ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Na vašem externím účtu je příliš mnoho složek. Upravte prosím import pro odstranění některých složek."
       ],
@@ -3335,6 +3343,9 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Před vyžádáním nového ověřovacího kódu zkontrolujte složku spamu a zkontrolujte, zda je adresa ${ strong } správná."
       ],
+      "Billing cycle: ${ text }": [
+        "Fakturační cyklus: ${ text }"
+      ],
       "Calendar side panel": [
         "Postranní panel kalendáře"
       ],
@@ -3559,9 +3570,6 @@
       ],
       "Folder \"${ link.name }\" was deleted during download": [
         "Složka \"${ link.name }\" byla smazána během stahování"
-      ],
-      "Folder contents will merge into a single folder": [
-        "Obsah složky bude sloučen do jedné složky"
       ],
       "Folder is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "Složce chybí podpis. Nemohli jsme ověřit, že ${ emailAddress } nahrál(a) ${ fileName }."
@@ -4018,9 +4026,6 @@
         "Tím odstraníte odkazy a zrušíte přístup k vašim souborům nebo složkám pro každého, kdo má tyto odkazy.",
         "Tím odstraníte odkazy a zrušíte přístup k vašim souborům nebo složkám pro každého, kdo má tyto odkazy.",
         "Tím odstraníte odkazy a zrušíte přístup k vašim souborům nebo složkám pro každého, kdo má tyto odkazy."
-      ],
-      "This will overwrite the existing folder": [
-        "Tím se přepíše existující složka"
       ],
       "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on the device won’t be affected.": [
         "Tím odstraníte z ${ DRIVE_APP_NAME } synchronizované zařízení ${ deviceName }. Místní soubory v zařízení nebudou ovlivněny."
@@ -4593,9 +4598,6 @@
       ],
       "Manage categories": [
         "Zpravovat kategorie"
-      ],
-      "Merge a folder": [
-        "Sloučit složku"
       ],
       "Modified": [
         "Upraveno"
@@ -5578,9 +5580,6 @@
       "Highest VPN speed": [
         "Nejvyšší rychlost VPN"
       ],
-      "Premium Drive": [
-        "Prémiový Disk"
-      ],
       "Premium early access": [
         "Prémiový předběžný přístup"
       ],
@@ -6011,6 +6010,9 @@
       ],
       "Beta Access": [
         "Beta přístup"
+      ],
+      "Billing cycle": [
+        "Fakturační cyklus"
       ],
       "Browser might run out of memory": [
         "Prohlížeči možná dochází paměť"

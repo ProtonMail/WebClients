@@ -777,6 +777,17 @@
         "問題が発生するなどした場合、いつでもベータ版アクセスを無効にできます。"
       ]
     },
+    "Billing cycle option": {
+      "Annually": [
+        "1年払い"
+      ],
+      "Monthly": [
+        "月額"
+      ],
+      "Two-year": [
+        "2年払い"
+      ]
+    },
     "Bug category": {
       "Application problem": [
         "アプリケーションに関する問題"
@@ -2142,9 +2153,6 @@
       "The original folder not found": [
         "元のフォルダーが見つかりません"
       ],
-      "The original folder or file not found": [
-        "元のフォルダーまたはファイルが見つかりません"
-      ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "外部アカウントのフォルダーが多すぎます。いくつかのフォルダーを削除するにはインポートをカスタマイズしてください。"
       ],
@@ -3164,6 +3172,9 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "新しい検証コードを要求する前に、迷惑メールフォルダーを確認し、${ strong } が正しいアドレスなことを確認してください。"
       ],
+      "Billing cycle: ${ text }": [
+        "支払いサイクル: ${ text }"
+      ],
       "Calendar side panel": [
         "カレンダーサイドパネル"
       ],
@@ -3367,9 +3378,6 @@
       ],
       "Folder \"${ link.name }\" was deleted during download": [
         "フォルダー「${ link.name }」はダウンロード中に削除されました"
-      ],
-      "Folder contents will merge into a single folder": [
-        "フォルダーの中身を1つのフォルダーに統合します"
       ],
       "Folder is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "フォルダーに署名がありません。${ emailAddress } がアップロードした ${ fileName } を検証できませんでした。"
@@ -3811,9 +3819,6 @@
       ],
       "This will delete the links and remove access to your files or folders for anyone with the links.": [
         "共有リンクは削除され、今後誰に対しても機能しなくなります。"
-      ],
-      "This will overwrite the existing folder": [
-        "既存のフォルダーに上書きします"
       ],
       "This will replace the existing file with the folder": [
         "既存のファイルをフォルダーで置き換えます"
@@ -4368,9 +4373,6 @@
       ],
       "Manage categories": [
         "カテゴリーを管理"
-      ],
-      "Merge a folder": [
-        "フォルダーを統合"
       ],
       "Modified": [
         "更新日時"
@@ -5242,9 +5244,6 @@
       "Highest VPN speed": [
         "最高速 VPN"
       ],
-      "Premium Drive": [
-        "プレミアム Drive"
-      ],
       "Premium early access": [
         "プレミアム早期アクセス"
       ],
@@ -5618,6 +5617,9 @@
       ],
       "Beta Access": [
         "ベータ版アクセス"
+      ],
+      "Billing cycle": [
+        "支払い間隔"
       ],
       "Browser might run out of memory": [
         "ブラウザーのメモリが不足する可能性があります。"

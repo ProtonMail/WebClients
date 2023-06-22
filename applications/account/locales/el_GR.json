@@ -51,6 +51,9 @@
       "Add address": [
         "Προσθήκη διεύθυνσης"
       ],
+      "Add calendar from URL": [
+        "Προσθήκη ημερολογίου από URL"
+      ],
       "Add condition": [
         "Προσθήκη συνθήκης"
       ],
@@ -907,8 +910,20 @@
       "Disable": [
         "Απενεργοποίηση"
       ],
+      "Disable encryption": [
+        "Απενεργοποίηση κρυπτογράφησης"
+      ],
+      "Disable expect signed": [
+        "Απενεργοποίηση απαίτησης υπογραφής"
+      ],
       "Enable": [
         "Ενεργοποίηση"
+      ],
+      "Enable encryption": [
+        "Ενεργοποίηση κρυπτογράφησης"
+      ],
+      "Enable expect signed": [
+        "Ενεργοποίηση απαίτησης υπογραφής"
       ],
       "Generate missing keys": [
         "Δημιουργία των κλειδιών που λείπουν"
@@ -929,6 +944,12 @@
       ],
       "Missing keys": [
         "Κλειδιά που λείπουν"
+      ],
+      "No E2EE": [
+        "Χωρίς E2EE"
+      ],
+      "No signing": [
+        "Μη υπογεγραμμένο"
       ],
       "Orphan": [
         "Ορφανό"
@@ -2386,7 +2407,7 @@
     },
     "Country select label": {
       "Based on your time zone": [
-        "Βασισμένο στη ζώνη ώρας σας"
+        "Βάσει της ζώνης ώρας σας"
       ]
     },
     "CountryInfo": {
@@ -2982,7 +3003,7 @@
         "Μη έγκυρο όνομα ετικέτας. Παρακαλούμε δοκιμάστε ένα διαφορετικό."
       ],
       "The label name is too long. Please choose a different name.": [
-        "Υπερβολικό μήκος ονόματος ετικέτας. Παρακαλούμε δοκιμάστε ένα συντομότερο."
+        "Το όνομα της ετικέτας είναι πολύ μεγάλο. Δοκιμάστε ένα διαφορετικό όνομα."
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Το ελάχιστο ποσό πίστωσης που μπορεί να προστεθεί είναι ${ price }"
@@ -3289,7 +3310,7 @@
         "Ωχ, κάτι πήγε στραβά"
       ],
       "Please refresh the page or try again later.": [
-        "Παρακαλούμε ανανεώσετε τη σελίδα ή προσπαθήσετε αργότερα."
+        "Παρακαλούμε ανανεώστε τη σελίδα ή δοκιμάστε ξανά αργότερα."
       ],
       "Something went wrong": [
         "Κάτι πήγε στραβά"
@@ -3424,6 +3445,11 @@
         "Απόκτηση ${ planName }"
       ]
     },
+    "familyOffer_2023: Title": {
+      "Your account's benefits": [
+        "Τα προνόμια του λογαριασμού σας"
+      ]
+    },
     "familyOffer_2023: Tooltip": {
       "Storage space is shared between family members across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
         "Ο αποθηκευτικός χώρος μοιράζεται μεταξύ των μελών της οικογένειας στα ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } και ${ DRIVE_APP_NAME }."
@@ -3538,6 +3564,9 @@
     "familyOffer_2023:Info": {
       "Online privacy, for your whole family": [
         "Online ιδιωτικότητα, για όλη την οικογένειά σας"
+      ],
+      "To create a new user, a configured custom domain is required.": [
+        "Για δημιουργία νέου χρήστη, απαιτείται ένας παραμετροποιημένος προσαρμοσμένος τομέας."
       ]
     },
     "familyOffer_2023:Title": {
@@ -4459,6 +4488,9 @@
       "and": [
         "και"
       ],
+      "Any ${ twoFa } method on your account will be disabled.": [
+        "Τυχόν μέθοδος ${ twoFa } στον λογαριασμό σας θα απενεργοποιηθεί."
+      ],
       "Anyone with this link can see all the event details of this calendar such as title, location or participants.": [
         "Οποιοσδήποτε με αυτόν τον σύνδεσμο μπορεί να δει όλες τις λεπτομέρειες των συμβάντων σε αυτό το ημερολόγιο, όπως τον τίτλο, την τοποθεσία και τους συμμετέχοντες."
       ],
@@ -5060,6 +5092,12 @@
       "of": [
         "από"
       ],
+      "old password": [
+        "παλαιός κωδικός"
+      ],
+      "Once you reset your password:": [
+        "Μετά την αλλαγή του κωδικού σας:"
+      ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Αλλάξτε αυτές τις ρυθμίσεις μόνο αν χρησιμοποιείτε PGP με παραλήπτες εκτός ${ BRAND_NAME }."
       ],
@@ -5273,6 +5311,10 @@
       "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ${ MAIL_APP_NAME } in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
         "Το SPF χρησιμοποιείται για να καθορίσει ποιος επιτρέπεται να στείλει μηνύματα για τον τομέα, για αυτό συνιστούμε έντονα να συμπεριλάβετε το ${ MAIL_APP_NAME } στην εγγραφή σας SPF. Παρακαλούμε προσθέστε την ακόλουθη εγγραφή TXT στον DNS σας, κατά κανόνα στον πίνακα ελέγχου του καταχωρητή σας ονομάτων τομέων."
       ],
+      "Step ${ step }": [
+        "Βήμα ${ step }",
+        "Βήματα ${ step }"
+      ],
       "Storage allocated to other users in this organisation": [
         "Κατανομή αποθηκευτικού χώρου σε άλλους χρήστες αυτού του οργανισμού"
       ],
@@ -5432,6 +5474,9 @@
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Προσθέστε στο λογαριασμό πιστωτικές μονάδες, τις οποίες μπορείτε να χρησιμοποιήσετε για να έχετε μια νέα συνδρομή πακέτου/πλάνου ή να ανανεώσετε το τρέχον πακέτο σας. Λαμβάνετε μία πιστωτική μονάδα για κάθε ${ i18nCurrency } που ξοδεύτηκε."
       ],
+      "two-factor authentication (2FA)": [
+        "ταυτοποίηση δύο παραγόντων (2FA)"
+      ],
       "Two-factor authentication disabled": [
         "Έλεγχος ταυτότητας δύο παραγόντων απενεργοποιημένος"
       ],
@@ -5492,6 +5537,9 @@
       "Version ${ version }": [
         "'Εκδοση ${ version }"
       ],
+      "Version history": [
+        "Ιστορικό εκδόσεων"
+      ],
       "Visa Secure logo": [
         "λογότυπο Visa Secure"
       ],
@@ -5527,6 +5575,9 @@
       ],
       "Week and month views only apply to desktop.": [
         "Οι προβολές εβδομάδας και μήνα ισχύουν μόνο για την επιφάνεια εργασίας."
+      ],
+      "Welcome": [
+        "Καλώς ήρθατε"
       ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "Θα στείλουμε έναν κωδικό επαναφοράς στην ηλ. διεύθυνση που καθορίσατε για ανακτήσεις λογαριασμού."
@@ -8639,9 +8690,6 @@
       ],
       "Highest VPN speed": [
         "Ύψιστη ταχύτητα VPN"
-      ],
-      "Premium Drive": [
-        "Premium Μονάδα Αποθήκευσης"
       ],
       "Premium early access": [
         "Premium πρώιμη πρόσβαση"
