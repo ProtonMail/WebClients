@@ -16,6 +16,7 @@ import clsx from '@proton/utils/clsx';
 import { Option, Price, Radio, SelectTwo } from '../../../components';
 import InputField from '../../../components/v2/field/InputField';
 import { getMonthFreeText, getMonthsFree } from '../../offers/helpers/offerCopies';
+import RenewalNotice from '../RenewalNotice';
 import { getShortBillingText } from '../helper';
 
 interface Props {
@@ -191,81 +192,97 @@ const SubscriptionCycleSelector = ({
         const cycle = cycles[0];
 
         return (
-            <div className={singleClassName}>
-                <CycleItem monthlySuffix={monthlySuffix} totals={totals} cycle={cycle} currency={currency} />
-            </div>
+            <>
+                <div className={clsx(singleClassName, 'mb-2')}>
+                    <CycleItem monthlySuffix={monthlySuffix} totals={totals} cycle={cycle} currency={currency} />
+                </div>
+                <RenewalNotice renewCycle={cycleSelected} />
+            </>
         );
     }
 
     if (mode === 'select') {
         return (
-            <InputField
-                label={c('Label').t`Billing cycle`}
-                as={SelectTwo}
-                bigger
-                value={cycleSelected}
-                onValue={(value: any) => onChangeCycle(value)}
-                assistiveText={
-                    <Price currency={currency} suffix={monthlySuffix}>
-                        {totals[cycleSelected].totalPerMonth}
-                    </Price>
-                }
-            >
-                {cycles.map((cycle) => {
-                    return (
-                        <Option value={cycle} title={getShortBillingText(cycle)} key={cycle}>
-                            <div className="flex flex-justify-space-between">
-                                <span className="flex-item-noshrink">{getShortBillingText(cycle)}</span>
-                                <span
-                                    className={clsx(['flex-item-noshrink', cycle !== cycleSelected && 'color-success'])}
-                                >
-                                    {getDiscountPrice(totals[cycle].discount, currency)}
-                                </span>
-                            </div>
-                        </Option>
-                    );
-                })}
-            </InputField>
+            <>
+                <InputField
+                    label={c('Label').t`Billing cycle`}
+                    as={SelectTwo}
+                    bigger
+                    value={cycleSelected}
+                    onValue={(value: any) => onChangeCycle(value)}
+                    assistiveText={
+                        <Price currency={currency} suffix={monthlySuffix}>
+                            {totals[cycleSelected].totalPerMonth}
+                        </Price>
+                    }
+                >
+                    {cycles.map((cycle) => {
+                        return (
+                            <Option value={cycle} title={getShortBillingText(cycle)} key={cycle}>
+                                <div className="flex flex-justify-space-between">
+                                    <span className="flex-item-noshrink">{getShortBillingText(cycle)}</span>
+                                    <span
+                                        className={clsx([
+                                            'flex-item-noshrink',
+                                            cycle !== cycleSelected && 'color-success',
+                                        ])}
+                                    >
+                                        {getDiscountPrice(totals[cycle].discount, currency)}
+                                    </span>
+                                </div>
+                            </Option>
+                        );
+                    })}
+                </InputField>
+                <RenewalNotice renewCycle={cycleSelected} className="mt-2" />
+            </>
         );
     }
 
     return (
-        <ul className="unstyled m-0 plan-cycle-selector">
-            {cycles.map((cycle) => {
-                const isSelected = cycle === cycleSelected;
-                return (
-                    <li key={`${cycle}`} className="flex flex-align-items-stretch mb-4" data-testid={`cycle-${cycle}`}>
-                        <button
-                            className={clsx([
-                                'w100 p-4 plan-cycle-button flex flex-nowrap border rounded text-left',
-                                isSelected && 'border-primary',
-                                isSelected && 'border-2',
-                            ])}
-                            disabled={disabled}
-                            onClick={() => onChangeCycle(cycle)}
-                            type="button"
-                            aria-pressed={isSelected}
+        <>
+            <ul className="unstyled m-0 plan-cycle-selector">
+                {cycles.map((cycle) => {
+                    const isSelected = cycle === cycleSelected;
+                    return (
+                        <li
+                            key={`${cycle}`}
+                            className="flex flex-align-items-stretch mb-4"
+                            data-testid={`cycle-${cycle}`}
                         >
-                            <div className="flex-item-noshrink" aria-hidden="true">
-                                <Radio
-                                    id={`${cycle}`}
-                                    name="cycleFakeField"
-                                    tabIndex={-1}
-                                    checked={isSelected}
-                                    readOnly
+                            <button
+                                className={clsx([
+                                    'w100 p-4 plan-cycle-button flex flex-nowrap border rounded text-left',
+                                    isSelected && 'border-primary',
+                                    isSelected && 'border-2',
+                                ])}
+                                disabled={disabled}
+                                onClick={() => onChangeCycle(cycle)}
+                                type="button"
+                                aria-pressed={isSelected}
+                            >
+                                <div className="flex-item-noshrink" aria-hidden="true">
+                                    <Radio
+                                        id={`${cycle}`}
+                                        name="cycleFakeField"
+                                        tabIndex={-1}
+                                        checked={isSelected}
+                                        readOnly
+                                    />
+                                </div>
+                                <CycleItem
+                                    totals={totals}
+                                    monthlySuffix={monthlySuffix}
+                                    currency={currency}
+                                    cycle={cycle}
                                 />
-                            </div>
-                            <CycleItem
-                                totals={totals}
-                                monthlySuffix={monthlySuffix}
-                                currency={currency}
-                                cycle={cycle}
-                            />
-                        </button>
-                    </li>
-                );
-            })}
-        </ul>
+                            </button>
+                        </li>
+                    );
+                })}
+            </ul>
+            <RenewalNotice renewCycle={cycleSelected} />
+        </>
     );
 };
 
