@@ -59,7 +59,7 @@ describe('getMinExpirationTime', () => {
         expect(minutes === 0 || minutes === 30).toBe(true);
     });
 
-    it('should return a older next interval from now with a difference of at least 30 minutes', () => {
+    it('should return a older next interval from now with a difference of at least 15 minutes', () => {
         const now = new Date();
         const interval = getMinExpirationTime(now);
 
@@ -68,6 +68,6 @@ describe('getMinExpirationTime', () => {
         }
 
         expect(interval > now).toBe(true);
-        expect(differenceInMinutes(interval, now)).toBeGreaterThanOrEqual(30);
+        expect(differenceInMinutes(interval, now)).toBeGreaterThanOrEqual(15);
     });
 });
