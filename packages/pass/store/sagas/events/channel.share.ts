@@ -84,8 +84,10 @@ export function* onShareEvent(
         ...DeletedItemIDs.map((itemId) => put(itemDeleteSync({ itemId, shareId }))),
         ...UpdatedItems.map((encryptedItem) =>
             call(function* () {
-                const item: ItemRevision = yield parseItemRevision(shareId, encryptedItem);
-                yield put(itemEditSync({ shareId: item.shareId, itemId: item.itemId, item }));
+                try {
+                    const item: ItemRevision = yield parseItemRevision(shareId, encryptedItem);
+                    yield put(itemEditSync({ shareId: item.shareId, itemId: item.itemId, item }));
+                } catch (_) {}
             })
         ),
         ...(LastUseItems ?? []).map(({ ItemID, LastUseTime }) =>
