@@ -160,9 +160,14 @@ export interface EncryptedSearchFunctions<ESItemMetadata, ESSearchParameters, ES
     initializeES: () => Promise<void>;
 
     /**
-     * Pause the currently ongoing indexing process, if any
+     * Pause the currently ongoing content indexing process, if any
      */
-    pauseIndexing: () => Promise<void>;
+    pauseContentIndexing: () => Promise<void>;
+
+    /**
+     * Pause the currently ongoing metadata indexing process, if any
+     */
+    pauseMetadataIndexing: () => Promise<void>;
 
     /**
      * Start the caching routine, i.e. fetching and decrypting as many items from the ES

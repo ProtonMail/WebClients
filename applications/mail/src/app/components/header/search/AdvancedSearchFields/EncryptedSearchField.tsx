@@ -17,15 +17,16 @@ interface Props {
 }
 
 const EncryptedSearchField = ({ esState }: Props) => {
-    const { enableContentSearch, getESDBStatus, pauseIndexing, toggleEncryptedSearch, getProgressRecorderRef } =
+    const { enableContentSearch, getESDBStatus, pauseContentIndexing, toggleEncryptedSearch, getProgressRecorderRef } =
         useEncryptedSearchContext();
+
     const {
         isEnablingContentSearch,
         esEnabled,
         isDBLimited,
         isRefreshing,
         isEnablingEncryptedSearch,
-        isPaused,
+        isContentIndexingPaused,
         contentIndexingDone,
     } = getESDBStatus();
     const { esProgress, oldestTime, totalIndexingItems, estimatedMinutes, currentProgressValue } = esState;
@@ -33,10 +34,10 @@ const EncryptedSearchField = ({ esState }: Props) => {
     const [enableESModalProps, setEnableESModalOpen, renderEnableESModal] = useModalState();
 
     // Switches
-    const showProgress = isEnablingContentSearch || isPaused || (contentIndexingDone && isRefreshing);
+    const showProgress = isEnablingContentSearch || isContentIndexingPaused || (contentIndexingDone && isRefreshing);
     const showSubTitleSection = contentIndexingDone && !isRefreshing && isDBLimited && !isEnablingEncryptedSearch;
     let isEstimating = estimatedMinutes === 0 && (totalIndexingItems === 0 || esProgress !== totalIndexingItems);
-    const showToggle = isEnablingContentSearch || isPaused || contentIndexingDone;
+    const showToggle = isEnablingContentSearch || isContentIndexingPaused || contentIndexingDone;
 
     // ES progress
     const progressFromBuildEvent = isRefreshing
@@ -113,8 +114,8 @@ const EncryptedSearchField = ({ esState }: Props) => {
     const totalProgress = getProgressRecorderRef().current[1];
     const currentProgress = Math.min(esProgress, totalProgress);
     isEstimating ||= currentProgress === 0;
-    let progressStatus: ReactNode = '';
-    if (isPaused) {
+    let progressStatus: string = '';
+    if (isContentIndexingPaused) {
         progressStatus = c('Info').t`Downloading paused`;
     } else if (isEstimating) {
         progressStatus = c('Info').t`Estimating time remaining...`;
@@ -149,12 +150,12 @@ const EncryptedSearchField = ({ esState }: Props) => {
         <Progress
             value={progressValue || 0}
             aria-describedby="timeRemaining"
-            className={clsx(['my-4 flex-item-fluid', isPaused ? 'progress-bar--disabled' : undefined])}
+            className={clsx(['my-4 flex-item-fluid', isContentIndexingPaused ? 'progress-bar--disabled' : undefined])}
         />
     );
     const disablePauseResumeButton = contentIndexingDone && !isEnablingContentSearch;
     const showPauseResumeButton = showProgress && (!contentIndexingDone || isEnablingContentSearch) && !isRefreshing;
-    const pauseResumeButton = isPaused ? (
+    const pauseResumeButton = isContentIndexingPaused ? (
         <Button
             shape="solid"
             color="norm"
@@ -165,7 +166,7 @@ const EncryptedSearchField = ({ esState }: Props) => {
             {c('Action').t`Resume`}
         </Button>
     ) : (
-        <Button className="ml-4" onClick={pauseIndexing} disabled={disablePauseResumeButton}>
+        <Button className="ml-4" onClick={pauseContentIndexing} disabled={disablePauseResumeButton}>
             {c('Action').t`Pause`}
         </Button>
     );
@@ -198,7 +199,7 @@ const EncryptedSearchField = ({ esState }: Props) => {
                         aria-atomic="true"
                         className={clsx([
                             'color-weak relative advanced-search-time-remaining',
-                            isEstimating || isPaused ? 'visibility-hidden' : undefined,
+                            isEstimating || isContentIndexingPaused ? 'visibility-hidden' : undefined,
                         ])}
                     >
                         {etaMessage}

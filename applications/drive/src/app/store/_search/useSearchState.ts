@@ -6,9 +6,9 @@ const useSearchState = () => {
     const { getProgressRecorderRef, getESDBStatus } = useSearchLibrary();
     const { isEnablingEncryptedSearch, isRefreshing } = getESDBStatus();
 
-    const esState = useEncryptedSearchState({
+    const { esState } = useEncryptedSearchState({
         isIndexing: isEnablingEncryptedSearch || isRefreshing,
-        getProgressRecorderRef
+        getProgressRecorderRef,
     });
 
     return esState;

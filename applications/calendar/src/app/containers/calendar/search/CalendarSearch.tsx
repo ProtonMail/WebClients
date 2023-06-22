@@ -70,7 +70,7 @@ const CalendarSearch = ({ isNarrow, containerRef, onSearch }: Props) => {
                     isNarrow={isNarrow}
                     containerRef={containerRef}
                     isIndexing={isIndexing}
-                    searchIsActive={isActive}
+                    isSearchActive={isActive}
                     onClose={close}
                     showMore={showMore}
                     toggleShowMore={toggleShowMore}

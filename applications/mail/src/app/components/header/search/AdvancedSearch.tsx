@@ -167,6 +167,28 @@ const AdvancedSearch = ({
         onClose();
     };
 
+    const handleStartDateChange = async (begin: Date | undefined) => {
+        if (begin) {
+            let oldestTime = -1;
+            const wasIndexingDone = await contentIndexingProgress.isIndexingDone(user.ID);
+            if (wasIndexingDone && isDBLimited) {
+                oldestTime = lastContentTime;
+            }
+            if (oldestTime !== -1 && isBefore(begin, oldestTime)) {
+                return;
+            }
+        }
+        if (!model.end || isBefore(begin || -Infinity, model.end)) {
+            updateModel({ ...model, begin });
+        }
+    };
+
+    const handleEndDateChange = (end: Date | undefined) => {
+        if (!model.begin || isEqual(model.begin, end || Infinity) || isAfter(end || Infinity, model.begin)) {
+            updateModel({ ...model, end });
+        }
+    };
+
     const handleClear = () => {
         updateModel((currentModel) => ({ ...currentModel, keyword: '' }));
         searchInputRef.current?.focus();
@@ -240,23 +262,7 @@ const AdvancedSearch = ({
                                     id="begin-date"
                                     data-testid="advanced-search:start-date"
                                     value={model.begin}
-                                    onChange={async (begin) => {
-                                        if (begin) {
-                                            let oldestTime = -1;
-                                            const wasIndexingDone = await contentIndexingProgress.isIndexingDone(
-                                                user.ID
-                                            );
-                                            if (wasIndexingDone && isDBLimited) {
-                                                oldestTime = lastContentTime;
-                                            }
-                                            if (oldestTime !== -1 && isBefore(begin, oldestTime)) {
-                                                return;
-                                            }
-                                        }
-                                        if (!model.end || isBefore(begin || -Infinity, model.end)) {
-                                            updateModel({ ...model, begin });
-                                        }
-                                    }}
+                                    onChange={handleStartDateChange}
                                 />
                             </div>
                             <div className="flex-item-fluid">
@@ -267,15 +273,7 @@ const AdvancedSearch = ({
                                     id="end-date"
                                     data-testid="advanced-search:end-date"
                                     value={model.end}
-                                    onChange={(end) => {
-                                        if (
-                                            !model.begin ||
-                                            isEqual(model.begin, end || Infinity) ||
-                                            isAfter(end || Infinity, model.begin)
-                                        ) {
-                                            updateModel({ ...model, end });
-                                        }
-                                    }}
+                                    onChange={handleEndDateChange}
                                 />
                             </div>
                         </div>

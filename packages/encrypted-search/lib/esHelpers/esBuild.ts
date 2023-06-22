@@ -197,6 +197,7 @@ const storeItemsMetadata = async <ESItemMetadata extends Object>(
 
 /**
  * Start metadata indexing
+ * @returns true when process is gracefully stopped (or paused)
  */
 export const buildMetadataDB = async <ESItemMetadata extends Object>(
     userID: string,
@@ -221,6 +222,11 @@ export const buildMetadataDB = async <ESItemMetadata extends Object>(
 
     let batchLength = 0;
     while (resultMetadata.length) {
+        // When metadata indexing is paused or aborted
+        if (abortIndexingRef.current.signal.aborted) {
+            return true;
+        }
+
         const success = await storeItemsMetadata<ESItemMetadata>(
             userID,
             resultMetadata,
