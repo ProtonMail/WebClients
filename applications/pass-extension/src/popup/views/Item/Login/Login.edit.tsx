@@ -20,7 +20,7 @@ import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH } from '../../../../shared/f
 import { validateLoginForm } from '../../../../shared/form/validator/validate-login';
 import { useFeatureFlag } from '../../../../shared/hooks/useFeatureFlag';
 import type { ItemEditProps } from '../../../../shared/items';
-import { deriveAliasPrefix, reconciliateAliasFromDraft } from '../../../../shared/items/alias';
+import { deriveAliasPrefix, sanitizeLoginAliasHydration, sanitizeLoginAliasSave } from '../../../../shared/items/alias';
 import { DropdownMenuButton } from '../../../components/Dropdown/DropdownMenuButton';
 import { QuickActionsDropdown } from '../../../components/Dropdown/QuickActionsDropdown';
 import { ValueControl } from '../../../components/Field/Control/ValueControl';
@@ -158,13 +158,8 @@ export const LoginEdit: VFC<ItemEditProps<'login'>> = ({ vault, revision, onSubm
         mode: 'edit',
         itemId: itemId,
         shareId: form.values.shareId,
-        sanitize: (formData) => {
-            if (!formData.withAlias) return formData;
-
-            const aliasValues = reconciliateAliasFromDraft(formData, aliasModal.aliasOptions);
-            const withAlias = aliasValues.aliasSuffix !== undefined && aliasValues.mailboxes.length > 0;
-            return { ...formData, ...aliasValues, withAlias, username: withAlias ? formData.username : '' };
-        },
+        sanitizeSave: sanitizeLoginAliasSave,
+        sanitizeHydration: sanitizeLoginAliasHydration(aliasModal.aliasOptions),
     });
 
     return (
