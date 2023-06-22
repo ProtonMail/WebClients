@@ -539,7 +539,7 @@
         "Проблема зі швидкістю"
       ],
       "Streaming problem": [
-        "Проблема трансляції"
+        "Проблема стримінгу"
       ],
       "Update problem": [
         "Проблема з оновленням"
@@ -1454,7 +1454,7 @@
         "Моя причина відсутня, додати коментар"
       ],
       "Streaming service unsupported": [
-        "Не підтримується сервіс трансляції"
+        "Непідтримуваний стримінговий сервіс"
       ],
       "Subscription is too expensive": [
         "Надто висока вартість передплати"
@@ -1828,7 +1828,7 @@
     },
     "familyOffer_2023:Tooltip": {
       "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
-        "Включає 2700 серверів у понад 65 країнах, підключення до 10 пристроїв, доступ до світових сервісів трансляції, захист від зловмисних програм і реклами, а також інші можливості."
+        "Включає 2700 серверів у понад 65 країнах, підключення до 10 пристроїв, доступ до світових стримінгових сервісів, захист від зловмисних програм і реклами, а також інші можливості."
       ],
       "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
         "Включає підтримку 3 власних доменів, 90 адрес пошти, необмежену кількість псевдонімів Hide-my-email, спільний доступ до календаря та інші можливості."
@@ -1854,7 +1854,7 @@
         "Secure Core сервери"
       ],
       "Secure streaming support": [
-        "Підтримка безпечного потокового передавання"
+        "Підтримка безпечного стримінгу"
       ],
       "Torrenting support (P2P)": [
         "Підтримка торентів (P2P)"
@@ -3119,7 +3119,7 @@
         "Чи не бажаєте повідомити нас, який провайдер?"
       ],
       "Could you please specify which streaming service?": [
-        "Не могли б ви вказати, який саме потоковий сервіс?"
+        "Не могли б ви вказати, який саме стримінговий сервіс?"
       ],
       "Could you please specify?": [
         "Не могли б ви уточнити?"
@@ -3759,7 +3759,7 @@
         "Угода про обробку даних GDPR"
       ],
       "High-speed streaming": [
-        "Високошвидкісна трансляція"
+        "Високошвидкісний стримінг"
       ],
       "High-speed Swiss VPN that protects your privacy": [
         "Високошвидкісна швейцарська VPN, що захищає вашу приватність"
@@ -3925,7 +3925,7 @@
         "Комплексна приватність і безпека з усіма службами ${ BRAND_NAME }."
       ],
       "For next-level password management and identity protection.": [
-        "Для вищого рівня керування паролями та захисту особистих даних."
+        "Для вдосконаленого керування паролями та захисту особистих даних."
       ],
       "If you delete your account, you lose all ${ visionary } plan benefits and it won’t be available if you create a new account.": [
         "Якщо ви видалите свій обліковий запис, то втратите всі переваги тарифного плану ${ visionary } та не зможете передплатити його знову після створення нового облікового запису."
@@ -4073,7 +4073,7 @@
     },
     "new_plans: tooltip": {
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
-        "Доступ звідусіль до сервісів трансляції, включно з Netflix, Disney+ та Prime Video"
+        "Доступ звідусіль до стримінгових сервісів, включно з Netflix, Disney+ та Prime Video"
       ],
       "Addresses have full sending and receiving capability. A user can have multiple addresses assigned to them; however, a single address cannot be assigned to multiple users.": [
         "Адреси мають повноцінні можливості надсилання й отримання. Користувач може мати різні адреси, однак одну адресу не можна призначити різним користувачам."
@@ -4229,7 +4229,7 @@
         "Підтримка протоколів обміну даними, як-от BitTorrent"
       ],
       "Unique, on-the-fly email addresses that protect your online identity and let you control what lands in your inbox. From SimpleLogin by ${ BRAND_NAME }.": [
-        "Унікальні, миттєві адреси електронної пошти, які захищають ваші особисті дані та дозволяють контролювати, що потрапляє до вашої поштової скриньки. Завдяки SimpleLogin від ${ BRAND_NAME }."
+        "Унікальні, миттєві адреси електронної пошти, які захищають ваші особисті дані та дають змогу контролювати, що потрапляє до вашої поштової скриньки. Завдяки SimpleLogin від ${ BRAND_NAME }."
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Використовуйте власні домени адрес електронної пошти, наприклад, you@yourname.com"
@@ -4577,9 +4577,6 @@
       "Highest VPN speed": [
         "Найвища швидкість VPN"
       ],
-      "Premium Drive": [
-        "Premium Drive"
-      ],
       "Premium early access": [
         "Ранній преміумдоступ"
       ],
@@ -4596,7 +4593,7 @@
         "Безпечне хмарне сховище"
       ],
       "Secure streaming": [
-        "Захищена трансляція"
+        "Захищений стримінг"
       ],
       "Support online privacy": [
         "Підтримка онлайн-приватності"
@@ -4722,13 +4719,13 @@
     },
     "specialoffer: Tooltip": {
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.": [
-        "Доступ до заблокованого вмісту та приватний перегляд. Включає 1700 серверів у понад 60 країнах, найвищу швидкість VPN, 10 VPN-з'єднань на користувача, всесвітні сервіси трансляції, захист від зловмисних програм і реклами, а також інші можливості."
+        "Доступ до заблокованого вмісту та приватний перегляд. Включає 1700 серверів у понад 60 країнах, найвищу швидкість VPN, 10 VPN-з'єднань на користувача, всесвітні стримінгові сервіси, захист від зловмисних програм і реклами, а також інші можливості."
       ],
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
-        "Доступ до заблокованого вмісту та приватний перегляд. Включає 1700 серверів у понад 60 країнах, найвищу швидкість VPN, 10 VPN-з'єднань, всесвітні сервіси трансляції, захист від зловмисних програм і реклами, а також інші можливості."
+        "Доступ до заблокованого вмісту та приватний перегляд. Включає 1700 серверів у понад 60 країнах, найвищу швидкість VPN, 10 VPN-з'єднань, всесвітні стримінгові сервіси, захист від зловмисних програм і реклами, а також інші можливості."
       ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
-        "Доступ звідусіль до матеріалів сервісів трансляції, включно з Netflix, Disney+ і Prime Video."
+        "Доступ звідусіль до матеріалів стримінгових сервісів, включно з Netflix, Disney+ і Prime Video."
       ],
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
         "Всі найкращі можливості наших преміум функцій: 100 адрес пошти, підтримка 10 власних доменів, необмежена кількість псевдонімів Hide-my-email, спільний доступ до календаря, зашифроване хмарне сховище, спільний доступ до файлів і багато іншого."
@@ -4856,7 +4853,7 @@
         "1 VPN-з'єднання"
       ],
       "Access to streaming services globally": [
-        "Доступ до сервісів трансляції по всьому світу"
+        "Доступ до стримінгових сервісів по всьому світу"
       ],
       "Built-in ad blocker (NetShield)": [
         "Вбудований блокувальник реклами (NetShield)"

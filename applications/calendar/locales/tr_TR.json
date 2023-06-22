@@ -723,6 +723,17 @@
         "Sorunlarla karşılaşırsanız, istediğiniz zaman Beta erişimini devre dışı bırakabilirsiniz."
       ]
     },
+    "Billing cycle option": {
+      "Annually": [
+        "Yıllık"
+      ],
+      "Monthly": [
+        "Aylık"
+      ],
+      "Two-year": [
+        "Iki yıllık"
+      ]
+    },
     "Bug category": {
       "Application problem": [
         "Uygulama sorunu"
@@ -2899,7 +2910,7 @@
     },
     "familyOffer_2023:Info": {
       "Online privacy, for your whole family": [
-        "Tüm aileniz için çevrimiçi gizlilik"
+        "Tüm aileniz için çevrim içi gizlilik"
       ]
     },
     "familyOffer_2023:Onboarding Proton": {
@@ -3470,6 +3481,9 @@
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Yeni bir doğrulama kodu istemeden önce İstenmeyen kutunuza bakın ve ${ strong } adresinin doğru olduğundan emin olun."
+      ],
+      "Billing cycle: ${ text }": [
+        "Faturalama dönemi: ${ text }"
       ],
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
         "Bu takvimin tüm etkinlik ayrıntılarını paylaşarak, bu takvimin şifrelenmiş bilgilerine ${ BRAND_NAME } tarafından erişilmesine izin vermiş olursunuz."
@@ -4843,7 +4857,7 @@
     },
     "new_plans: feature info": {
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
-        "Çevrimiçi kimlikleriniz için e-posta adresleri oluşturun. Örneğin alışveriş işlemleri için AliAlisveris@${ domain }, haber aboneliği için AliHaber@${ domain2 } gibi takma adlar oluşturabilirsiniz"
+        "Çevrim içi kimlikleriniz için e-posta adresleri oluşturun. Örneğin alışveriş işlemleri için AliAlisveris@${ domain }, haber aboneliği için AliHaber@${ domain2 } gibi takma adlar oluşturabilirsiniz"
       ],
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "${ BRAND_NAME } SimpleLogin ile sınırsız takma ad edinin"
@@ -5452,9 +5466,6 @@
       "Highest VPN speed": [
         "En yüksek VPN hızı"
       ],
-      "Premium Drive": [
-        "Ücretli Drive"
-      ],
       "Premium early access": [
         "Öncelikli erken erişim"
       ],
@@ -5474,7 +5485,7 @@
         "Güvenli yayın akışı"
       ],
       "Support online privacy": [
-        "Çevrimiçi gizliliği destekleyin"
+        "Çevrim içi gizliliği destekleyin"
       ]
     },
     "specialoffer: Footer": {
@@ -5961,6 +5972,9 @@
       ],
       "Beta Access": [
         "Beta erişimi"
+      ],
+      "Billing cycle": [
+        "Fatura dönemi"
       ],
       "Calendar": [
         "Takvim"
@@ -6484,7 +6498,7 @@
         "Bu içe aktarma işlemi, ${ BRAND_NAME } hesabınızla kullanılabilecek depolama alanını aşabilir. Lütfen içe aktarmanızı özelleştirmeyi değerlendirin."
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
-        "Ne yazık ki, şu anca çevrimiçi değiliz. Lütfen sorununuzu aktarmak için aşağıdaki formu doldurun. Yeniden çevrimiçi olduğumuzda inceleyip size geri döneceğiz."
+        "Ne yazık ki, şu anca çevrim içi değiliz. Lütfen sorununuzu aktarmak için aşağıdaki formu doldurun. Yeniden çevrim içi olduğumuzda inceleyip size geri döneceğiz."
       ],
       "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
         "E-posta sunucusunu doğrulayamadık. Sunucuya güveniyorsanız, bu doğrulamayı atlayabilirsiniz."

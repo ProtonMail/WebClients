@@ -599,6 +599,17 @@
         "Ma tmugreḍ uguren tzemreḍ ad tsenseḍ anekcum Biṭa."
       ]
     },
+    "Billing cycle option": {
+      "Annually": [
+        "S useggas"
+      ],
+      "Monthly": [
+        "S wayyur"
+      ],
+      "Two-year": [
+        "Snat n tikkal i useggas"
+      ]
+    },
     "Bug category": {
       "Application problem": [
         "Ugur n usnas"
@@ -2713,6 +2724,9 @@
       "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
         "Yal yiwen yesεan aseɣwen-a yezmer ad iwali ma yella d ilelli i telliḍ neɣ tceɣleḍ ɣef uwitay-ik·im. Ur zmiren ad walin talqayt n tedyanin am uzwel, adig neɣ imttekkiyen."
       ],
+      "Billing cycle: ${ text }": [
+        "Asellek yal:${ text }"
+      ],
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
         "S beṭṭu n telqayt tummidt n tedyant n uwitay-a, ad tqebleḍ ad tmuddeḍ i ${ BRAND_NAME } anekcum ɣer talɣut-a yettwawgelhen n uwitay."
       ],
@@ -4357,6 +4371,9 @@
       ],
       "Beta Access": [
         "Anekcum Biṭa"
+      ],
+      "Billing cycle": [
+        "Twala n ufter"
       ],
       "Calendar": [
         "Awitay"

@@ -1301,6 +1301,17 @@
         "Hvis du støder på problemer, kan du altid deaktivere beta-adgang."
       ]
     },
+    "Billing cycle option": {
+      "Annually": [
+        "Årlig"
+      ],
+      "Monthly": [
+        "Månedlig"
+      ],
+      "Two-year": [
+        "To-År"
+      ]
+    },
     "Bug category": {
       "Application problem": [
         "Applikationsproblem"
@@ -4707,6 +4718,9 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Før du anmoder om en ny bekræftelseskode, bør du tjekke din spam-mappe samt kontrollere, at ${ strong } er den korrekte adresse."
       ],
+      "Billing cycle: ${ text }": [
+        "Faktureringsperiode: ${ text }"
+      ],
       "Body: ": [
         "Indhold: "
       ],
@@ -4819,6 +4833,9 @@
       ],
       "Draft saved.": [
         "Kladde gemt."
+      ],
+      "Drop to import": [
+        "Drop for at importere"
       ],
       "Duplicate key updated": [
         "Duplikeret nøgle opdateret"
@@ -5752,6 +5769,9 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "Din e-mail vil kun blive brugt til denne engangsbekræftelse."
+      ],
+      "Your files will be encrypted and then saved": [
+        "Din filer vil blive krypteret og derefter gemt"
       ],
       "Your import will not be processed.": [
         "Din import vil ikke blive behandlet."
@@ -7661,9 +7681,6 @@
       "Highest VPN speed": [
         "Højeste VPN-hastighed"
       ],
-      "Premium Drive": [
-        "Premium Drive"
-      ],
       "Premium early access": [
         "Premium tidlig adgang"
       ],
@@ -8224,6 +8241,9 @@
       ],
       "Beta Access": [
         "Beta-adgang"
+      ],
+      "Billing cycle": [
+        "Faktureringscyklus"
       ],
       "Blind Carbon Copy": [
         "Blind karbonkopi"
