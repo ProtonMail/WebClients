@@ -36,7 +36,7 @@
         "Mais informações: ${ safeTitle }"
       ],
       "Refresh the page": [
-        "Actualizar a página"
+        "Atualizar a página"
       ],
       "Request new code": [
         "Pedir novo código"
@@ -66,7 +66,7 @@
         "Verificar conta"
       ],
       "View invoice": [
-        "Ver factura"
+        "Ver fatura"
       ]
     },
     "Country name": {
@@ -838,7 +838,7 @@
     },
     "Delinquent modal title": {
       "Overdue invoice": [
-        "Factura em dívida"
+        "Fatura em dívida"
       ]
     },
     "Error": {
@@ -846,7 +846,7 @@
         "O e-mail não é válido."
       ],
       "Enter 6 digits": [
-        "Insira 6 algarismos"
+        "Introduza 6 algarismos"
       ],
       "Invalid verification code": [
         "O código de verificação não é válido."
@@ -864,13 +864,13 @@
         "Os endereços de e-mail não coincidem."
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
-        "Este campo excede o máximo de ${ maximumLength } caracteres."
+        "Este campo excede o máximo de ${ maximumLength } carateres."
       ],
       "This field is required": [
-        "Este campo é requerido"
+        "Este campo é obrigatório"
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
-        "Este campo requer um mínimo de ${ minimumLength } caracteres."
+        "Este campo requer um mínimo de ${ minimumLength } carateres."
       ],
       "Try using only letters, numerals, and _.-": [
         "Tente utilizar apenas letras, números e _.-"
@@ -896,7 +896,7 @@
         "Ocorreu um erro"
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
-        "Não foi possível carregar esta página. Por favor, atualize a página ou verifique a sua ligação à Internet."
+        "Não é possível carregar esta página. Por favor, atualize a página ou verifique a sua ligação à Internet."
       ]
     },
     "fido2: Error": {
@@ -906,7 +906,7 @@
     },
     "fido2: Info": {
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Insira uma chave de segurança associada à sua conta ${ BRAND_NAME }."
+        "Introduza uma chave de segurança associada à sua conta ${ BRAND_NAME }."
       ],
       "Security key": [
         "Chave de segurança"
@@ -958,7 +958,7 @@
     },
     "Info": {
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
-        "Um número de telemóvel pode ser usado para verificar apenas uma conta ${ BRAND_NAME }"
+        "Um número de telemóvel pode ser utilizado para verificar apenas uma conta ${ BRAND_NAME }"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Antes de pedir um novo código de verificação, verifique a sua pasta de spam’ e verifique que ${ strong } é o endereço correto."
@@ -970,19 +970,19 @@
         "Código de país"
       ],
       "Each code can only be used once": [
-        "Cada código só pode ser usado uma vez"
+        "Cada código só pode ser utilizado uma vez"
       ],
       "Enter the code from your authenticator app": [
         "Introduza o código da sua aplicação de autenticação."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
-        "Insira o código de verificação que foi enviado para ${ destinationText }."
+        "Introduza o código de verificação que foi enviado para ${ destinationText }."
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Introduzir o código de verificação. Digite ${ digit }."
       ],
       "Enter your own password (as organization admin).": [
-        "Insira a sua palavra-passe (como administrador da organização)."
+        "Introduza a sua palavra-passe (como administrador da organização)."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Se tiver problemas ao criar a conta, solicite um convite e responderemos dentro de um dia útil."
@@ -1030,10 +1030,10 @@
         "A sua conta ${ BRAND_NAME } está suspensa de momento. Não receberá e-mails na sua caixa de entrada. As suas ligações de partilha do Drive estão inativas e não pode carregar novos ficheiros. Para continuar a utilizar a sua conta, efetue o pagamento das faturas vencidas."
       ],
       "Your email will only be used for this one-time verification.": [
-        "O seu e-mail só será usado para esta verificação única."
+        "O seu e-mail só será utilizado para esta verificação única."
       ],
       "Your phone number will only be used for this one-time verification.": [
-        "O seu telefone só será usado para esta verificação única."
+        "O seu telefone só será utilizado para esta verificação única."
       ]
     },
     "Label": {
@@ -1088,7 +1088,7 @@
     },
     "Title": {
       "Enter your password": [
-        "Insira a sua palavra-passe"
+        "Introduza a sua palavra-passe"
       ],
       "Human verification": [
         "Verificação humana"
@@ -1105,12 +1105,12 @@
     },
     "Validation": {
       "Password must contain at least ${ length } character": [
-        "A palavra-passe deve conter pelo menos ${ length } caracteres",
-        "A palavra-passe deve conter pelo menos ${ length } caracteres."
+        "A palavra-passe deve conter pelo menos ${ length } carateres",
+        "A palavra-passe deve conter pelo menos ${ length } carateres."
       ],
       "Try a shorter username (${ n } character max)": [
-        "Tente um nome de utilizador mais pequeno (máximo de caracter ${ n })",
-        "Tente um nome de utilizador mais pequeno (máximo de caracteres ${ n })"
+        "Tente um nome de utilizador mais pequeno (máximo de carater ${ n })",
+        "Tente um nome de utilizador mais pequeno (máximo de carateres ${ n })"
       ]
     }
   }
