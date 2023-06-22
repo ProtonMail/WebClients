@@ -4,6 +4,7 @@ import {
     fieldOfInterestSelector,
     isFormOfInterest,
     isVisible,
+    isVisibleField,
     rulesetMaker,
     setIgnoreType,
 } from '@proton/pass/fathom';
@@ -210,8 +211,11 @@ const createDetectionRunner =
             fields.forEach(({ field, fieldType }) => {
                 const hidden = field.type === 'hidden';
                 const detected = fieldType !== FormField.NOOP;
-                if (detected || hidden || isVisible(field, { opacity: true })) setFieldProcessed(field, fieldType);
+
                 if (!detected && hidden) setIgnoreType(field);
+                if (detected || hidden || (isVisibleField(field) && isVisible(field, { opacity: true }))) {
+                    setFieldProcessed(field, fieldType);
+                }
             })
         );
 
