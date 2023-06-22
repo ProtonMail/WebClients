@@ -1,4 +1,5 @@
 import {
+    DETECTED_CLUSTER_ATTR,
     fieldOfInterestSelector,
     formOfInterestSelector,
     isUserEditableField,
@@ -17,7 +18,7 @@ export const isNodeOfInterest = (node: Node) => node instanceof HTMLInputElement
  * these by querying for the `PROCESSED_FORM_ATTR` attribute which is added to the element
  * upon successful detection */
 export const selectAllForms = () => {
-    const selector = `${formOfInterestSelector}, [${PROCESSED_FORM_ATTR}]`;
+    const selector = `${formOfInterestSelector}, [${PROCESSED_FORM_ATTR}], [${DETECTED_CLUSTER_ATTR}]`;
     const candidates = document.querySelectorAll<HTMLElement>(selector);
     return Array.from(candidates);
 };
@@ -25,7 +26,7 @@ export const selectAllForms = () => {
 /* Unprocessed are forms that have never been seen by our detectors:
  * if that is the case they will lack a `data-protonpass-form` attr */
 export const selectUnprocessedForms = (target: Document | HTMLElement = document) => {
-    const selector = `${formOfInterestSelector}:not([${PROCESSED_FORM_ATTR}])`;
+    const selector = `${formOfInterestSelector}:not([${PROCESSED_FORM_ATTR}]), [${DETECTED_CLUSTER_ATTR}]:not([${PROCESSED_FORM_ATTR}])`;
     return Array.from(target.querySelectorAll<HTMLElement>(selector));
 };
 
