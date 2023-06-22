@@ -1654,6 +1654,9 @@
       ]
     },
     "familyOffer_2023:Action": {
+      "Decline invitation": [
+        "Tolak undangan"
+      ],
       "Got it": [
         "Mengerti"
       ],
@@ -1955,12 +1958,29 @@
         "Megabyte"
       ]
     },
+    "Font face option": {
+      "System default": [
+        "Bawaan sistem"
+      ],
+      "Theme default": [
+        "Tema bawaan"
+      ]
+    },
     "Font size option": {
       "Large": [
         "Besar"
       ],
+      "Medium (recommended)": [
+        "Sedang (direkomendasikan)"
+      ],
       "Small": [
         "Kecil"
+      ],
+      "Very large": [
+        "Sangat besar"
+      ],
+      "Very small": [
+        "Mungil"
       ]
     },
     "Frequency of news": {
@@ -2999,6 +3019,9 @@
       "Card holder": [
         "Pemegang kartu"
       ],
+      "Card information": [
+        "Informasi kartu"
+      ],
       "Card number": [
         "Nomor kartu"
       ],
@@ -3085,6 +3108,9 @@
       ],
       "Enter the code displayed on your TV": [
         "Masukkan kode yang tertera pada TV Anda"
+      ],
+      "Expiration (${ patternExpiration })": [
+        "Kedaluwarsa (${ patternExpiration })"
       ],
       "Expiration date": [
         "Tanggal kedaluwarsa"
@@ -3205,6 +3231,9 @@
       ],
       "Security code": [
         "Kode keamanan"
+      ],
+      "Security code (${ codeName })": [
+        "Kode keamanan (${ codeName })"
       ],
       "Select your country": [
         "Pilih negara Anda"
@@ -3715,7 +3744,7 @@
         "Tanpa batasan jumlah folder, label, dan filter"
       ],
       "Unlimited hide-my-email aliases": [
-        "Alias Hide-my-email tidak terbatas"
+        "Tanpa batasan jumlah alias Hide My Email"
       ],
       "Unlimited labels": [
         "Tanpa batasan jumlah label"
@@ -4089,7 +4118,7 @@
         "Dapatkan alamat email yang berakhir pada domain khusus milik Anda sendiri, cth. anda@namaanda.com"
       ],
       "We keep no session usage logs of what you do online, and we do not log metadata that can compromise your privacy": [
-        "Kami tidak menyimpan catatan sesi yang merekam aktivitas daring Anda, dan kami juga tidak menyimpan informasi metadata apa pun yang dapat membayahakan privasi Anda"
+        "Kami tidak menyimpan log sesi yang merekam aktivitas daring Anda, dan kami juga tidak merekam informasi metadata yang dapat membahayakan privasi Anda"
       ],
       "We’re committed to helping customers subject to HIPAA/HITECH regulations safeguard protected health information (PHI). Signed BAAs are available for all ${ BRAND_NAME } for Business customers.": [
         "Kami berkomitmen untuk membantu para pelanggan kami tunduk pada standar undang-undang HIPAA/HITECH yang bertujuan untuk melindungi rekam jejak kesehatan pribadi (PHI) tiap-tiap individu. Kami menawarkan Perjanjian Kerjasama Bisnis (BAA) yang telah ditandangani bagi seluruh pelanggan ${ BRAND_NAME } for Business kami."
@@ -4409,9 +4438,6 @@
       ],
       "Highest VPN speed": [
         "Kecepatan VPN tertinggi"
-      ],
-      "Premium Drive": [
-        "Drive Premium"
       ],
       "Premium early access": [
         "Akses dini Premium"
