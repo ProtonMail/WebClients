@@ -1,23 +1,30 @@
-import {useUser} from '@proton/components/hooks';
-import {SECOND} from '@proton/shared/lib/constants';
-import {wait} from '@proton/shared/lib/helpers/promise';
 import { useEffect, useRef, useState } from 'react';
-import {defaultESIndexingState} from './constants';
-import {estimateIndexingProgress} from './esHelpers';
-import {ESIndexingState, ESTimepoint} from './models';
+
+import { useUser } from '@proton/components/hooks';
+import { SECOND } from '@proton/shared/lib/constants';
+import { wait } from '@proton/shared/lib/helpers/promise';
+
+import { defaultESIndexingState } from './constants';
+import { estimateIndexingProgress } from './esHelpers';
+import { ESIndexingState, ESTimepoint } from './models';
 
 interface Props {
     isIndexing: boolean;
     getProgressRecorderRef: () => { current: ESTimepoint };
+    shouldPersistEstimation?: boolean;
 }
 
-const useEncryptedSearchState = ({ isIndexing, getProgressRecorderRef }: Props) => {
+/**
+ * This hook provides helpers related to the progress of the ES indexing
+ */
+const useEncryptedSearchState = ({ isIndexing, getProgressRecorderRef, shouldPersistEstimation }: Props) => {
     const [user] = useUser();
     const [esState, setESState] = useState<ESIndexingState>(defaultESIndexingState);
 
     const abortProgressRef = useRef<AbortController>(new AbortController());
 
-    const setProgress = async () => {
+    const pollProgress = async (inputESState: ESIndexingState) => {
+        let localESState: ESIndexingState = inputESState;
         while (!abortProgressRef.current.signal.aborted) {
             const [esProgress, esTotal] = getProgressRecorderRef().current;
             const endTime = performance.now();
@@ -27,20 +34,22 @@ const useEncryptedSearchState = ({ isIndexing, getProgressRecorderRef }: Props) 
                 esProgress,
                 esTotal,
                 endTime,
-                esState,
-                false
+                localESState,
+                Boolean(shouldPersistEstimation)
             );
 
-            setESState((esState) => {
-                return {
-                    ...esState,
-                    endTime,
-                    esProgress,
-                    totalIndexingItems: esTotal,
-                    estimatedMinutes: estimatedMinutes || esState.estimatedMinutes,
-                    currentProgressValue: currentProgressValue || esState.currentProgressValue,
-                };
-            });
+            const newESState: ESIndexingState = {
+                ...localESState,
+                endTime,
+                esProgress,
+                totalIndexingItems: esTotal,
+                estimatedMinutes: estimatedMinutes ?? localESState.estimatedMinutes,
+                currentProgressValue: currentProgressValue || localESState.currentProgressValue,
+            };
+
+            localESState = { ...newESState };
+            setESState(newESState);
+
             await wait(2 * SECOND);
         }
     };
@@ -48,21 +57,32 @@ const useEncryptedSearchState = ({ isIndexing, getProgressRecorderRef }: Props) 
     const startProgress = async () => {
         abortProgressRef.current = new AbortController();
         const [esPrevProgress, totalIndexingItems] = getProgressRecorderRef().current;
-        setESState((esState) => {
-            return {
-                ...esState,
-                startTime: performance.now(),
-                esPrevProgress,
-                totalIndexingItems,
-            };
-        });
-        await wait(2 * SECOND);
-        void setProgress();
+
+        const initialESState: ESIndexingState = {
+            ...esState,
+            startTime: performance.now(),
+            esPrevProgress,
+            esProgress: esPrevProgress,
+            totalIndexingItems,
+        };
+
+        setESState(initialESState);
+        await wait(5 * SECOND);
+        void pollProgress(initialESState);
     };
 
     const stopProgress = () => {
         abortProgressRef.current.abort();
         setESState(() => defaultESIndexingState);
+    };
+
+    const setOldestTime = async (oldestTime: number) => {
+        setESState((esState) => {
+            return {
+                ...esState,
+                oldestTime,
+            };
+        });
     };
 
     useEffect(() => {
@@ -79,7 +99,7 @@ const useEncryptedSearchState = ({ isIndexing, getProgressRecorderRef }: Props) 
         return () => stopProgress();
     }, []);
 
-    return esState;
+    return { esState, setOldestTime };
 };
 
 export default useEncryptedSearchState;

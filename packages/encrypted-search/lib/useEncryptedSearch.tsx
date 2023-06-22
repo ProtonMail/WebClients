@@ -149,6 +149,7 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
         esCacheRef.current.isCacheLimited = false;
         esCacheRef.current.isCacheReady = false;
     };
+
     useOnLogout(async () => resetCache());
 
     /**
@@ -206,7 +207,8 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
      * @var isSearching whether a search is ongoing
      * @var isCacheLimited whether the cache is limited, i.e. it doesn't contain all items that are in IndexedDB
      * @var isEnablingEncryptedSearch whether indexing of metadata is ongoing
-     * @var isPaused whether content indexing is paused
+     * @var isContentIndexingPaused whether content indexing is paused
+     * @var isMetadataIndexingPaused whether metadata indexing is paused
      * @var contentIndexingDone whether content indexing has completed
      */
     const getESDBStatus = () => {
@@ -220,7 +222,8 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
             isSearchPartial,
             isSearching,
             isEnablingEncryptedSearch,
-            isPaused,
+            isContentIndexingPaused,
+            isMetadataIndexingPaused,
             contentIndexingDone,
         } = esStatus;
         const { isCacheLimited, isCacheReady } = esCacheRef.current;
@@ -236,7 +239,8 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
             isSearchPartial,
             isSearching,
             isEnablingEncryptedSearch,
-            isPaused,
+            isContentIndexingPaused,
+            isMetadataIndexingPaused,
             contentIndexingDone,
         };
         return esDBStatus;
@@ -400,8 +404,8 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
         // of if it already finished. If content indexing is ongoing, we don't overwrite the
         // last event IDs from IDB because we'll need to catch up from them to update content.
         // In other words, metadata will be re-synced once the latter happens
-        const { isEnablingContentSearch, isPaused } = esStatus;
-        if (!isEnablingContentSearch && !isPaused) {
+        const { isEnablingContentSearch, isContentIndexingPaused } = esStatus;
+        if (!isEnablingContentSearch && !isContentIndexingPaused) {
             await writeAllEvents(userID, eventsToStore);
         }
 
@@ -483,6 +487,22 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
     };
 
     /**
+     * Pause the currently ongoing indexing process, if any
+     */
+    const pauseMetadataIndexing = async () => {
+        abortIndexingRef.current.abort();
+        setESStatus((esStatus) => ({
+            ...esStatus,
+            isEnablingEncryptedSearch: false,
+            isMetadataIndexingPaused: true,
+        }));
+
+        await metadataIndexingProgress.setStatus(userID, INDEXING_STATUS.PAUSED);
+        await metadataIndexingProgress.incrementNumPauses(userID);
+        await metadataIndexingProgress.addTimestamp(userID, TIMESTAMP_TYPE.STOP);
+    };
+
+    /**
      * Set up the ES IndexedDB and populate it with items metadata. It optionally accepts
      * an object with one property.
      * @param isRefreshed is only used to be forward to the metrics route for statistical purposes.
@@ -502,6 +522,7 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
         setESStatus((esStatus) => ({
             ...esStatus,
             isEnablingEncryptedSearch: true,
+            isMetadataIndexingPaused: false,
         }));
 
         const handleError = async (esSupported = true) => {
@@ -604,13 +625,19 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
         // in case of clearing data and logout
         abortIndexingRef.current = new AbortController();
 
+        const previousProgress = await metadataIndexingProgress.read(userID);
         const currentItems = (await readNumMetadata(userID)) || 0;
-        const totalItems = await esCallbacks.getTotalItems();
+        let totalItems = await esCallbacks.getTotalItems();
         recordProgress(currentItems, totalItems);
         const recordProgressLocal = (progress: number) => {
             const newProgress = currentItems + progress;
             recordProgress(newProgress, totalItems);
         };
+
+        if (previousProgress) {
+            await metadataIndexingProgress.setStatus(userID, INDEXING_STATUS.INDEXING);
+            ({ totalItems } = previousProgress);
+        }
 
         let success = false;
         while (!success) {
@@ -628,7 +655,6 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
 
             // Kill switch in case user logs out or deletes data
             if (abortIndexingRef.current.signal.aborted) {
-                await esDelete();
                 return false;
             }
 
@@ -698,12 +724,12 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
     /**
      * Pause the currently ongoing indexing process, if any
      */
-    const pauseIndexing = async () => {
+    const pauseContentIndexing = async () => {
         abortIndexingRef.current.abort();
         setESStatus((esStatus) => ({
             ...esStatus,
             isEnablingContentSearch: false,
-            isPaused: true,
+            isContentIndexingPaused: true,
         }));
 
         await contentIndexingProgress.setStatus(userID, INDEXING_STATUS.PAUSED);
@@ -754,7 +780,7 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
         setESStatus((esStatus) => ({
             ...esStatus,
             isEnablingContentSearch: true,
-            isPaused: false,
+            isContentIndexingPaused: false,
             esEnabled: false,
         }));
 
@@ -1236,16 +1262,15 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
             return dbCorruptError();
         }
 
-        // If metadata indexing was ongoing, continue it. We only
-        // check for the INDEXING status because metadata indexing cannot be
-        // PAUSED. Note that if IDB exists and metadata progress doesn't,
+        // If metadata indexing was ongoing, continue it.
+        // Note that if IDB exists and metadata progress doesn't,
         // something is wrong
         const metadataProgress = await metadataIndexingProgress.read(userID);
         if (!metadataProgress) {
             return dbCorruptError();
         }
 
-        if (metadataProgress.status === INDEXING_STATUS.INDEXING) {
+        if ([INDEXING_STATUS.INDEXING, INDEXING_STATUS.PAUSED].includes(metadataProgress.status)) {
             void enableEncryptedSearch();
             return;
         }
@@ -1266,9 +1291,9 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
         // Check whether content indexing was ongoing
         const contentProgress = await contentIndexingProgress.read(userID);
 
-        const isIndexingContent = !!contentProgress && contentProgress.status === INDEXING_STATUS.INDEXING;
-        const isPaused = !!contentProgress && contentProgress.status === INDEXING_STATUS.PAUSED;
-        const contentIndexingDone = !!contentProgress && contentProgress.status === INDEXING_STATUS.ACTIVE;
+        const isIndexingContent = contentProgress?.status === INDEXING_STATUS.INDEXING;
+        const isContentIndexingPaused = contentProgress?.status === INDEXING_STATUS.PAUSED;
+        const contentIndexingDone = contentProgress?.status === INDEXING_STATUS.ACTIVE;
 
         if (isIndexingContent) {
             return enableContentSearch();
@@ -1277,7 +1302,7 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
         setESStatus((esStatus) => ({
             ...esStatus,
             cachedIndexKey: indexKey,
-            isPaused,
+            isContentIndexingPaused,
             contentIndexingDone,
         }));
 
@@ -1318,7 +1343,8 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
             toggleEncryptedSearch,
             enableEncryptedSearch,
             enableContentSearch,
-            pauseIndexing,
+            pauseContentIndexing,
+            pauseMetadataIndexing,
             getProgressRecorderRef,
             highlightString,
             highlightMetadata,

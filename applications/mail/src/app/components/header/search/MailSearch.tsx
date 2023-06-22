@@ -22,7 +22,7 @@ import { isEncryptedSearchAvailable } from '../../../helpers/encryptedSearch/esU
 import { extractSearchParameters } from '../../../helpers/mailboxUrl';
 import { useClickMailContent } from '../../../hooks/useClickMailContent';
 import { Breakpoints } from '../../../models/utils';
-import useEncryptedSearchToggleState from '../useEncryptedSearchToggleState';
+import { useMailEncryptedSearchState } from '../useMailEncryptedSearchState';
 import AdvancedSearch from './AdvancedSearch';
 import MailSearchInput from './MailSearchInput';
 import MailSearchSpotlight from './MailSearchSpotlight';
@@ -50,7 +50,7 @@ const MailSearch = ({ breakpoints, labelID, location, columnMode }: Props) => {
     const [, loadingAddresses] = useAddresses();
     const { getESDBStatus, cacheIndexedDB, closeDropdown } = useEncryptedSearchContext();
     const { dropdownOpened } = getESDBStatus();
-    const esState = useEncryptedSearchToggleState(isOpen);
+    const esState = useMailEncryptedSearchState(isOpen);
     const showEncryptedSearch = isEncryptedSearchAvailable(user, isESUserInterfaceAvailable);
 
     // Show more from inside AdvancedSearch to persist the state when the overlay is closed
