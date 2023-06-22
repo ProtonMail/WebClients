@@ -3,22 +3,18 @@ import { useEffect } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import { Icon, Price, useConfig, useLoading } from '@proton/components';
 import {
+    Alert3ds,
     CurrencySelector,
-    Icon,
     Payment as PaymentComponent,
-    Price,
+    PlanCustomization,
     StyledPayPalButton,
-    useConfig,
-    useLoading,
-    usePayment,
-} from '@proton/components';
-import Alert3ds from '@proton/components/containers/payments/Alert3ds';
-import PlanCustomization from '@proton/components/containers/payments/subscription/PlanCustomization';
-import SubscriptionCycleSelector, {
     SubscriptionCheckoutCycleItem,
-} from '@proton/components/containers/payments/subscription/SubscriptionCycleSelector';
-import usePaymentToken from '@proton/components/containers/payments/usePaymentToken';
+    SubscriptionCycleSelector,
+    usePayment,
+    usePaymentToken,
+} from '@proton/components/containers/payments';
 import {
     AmountAndCurrency,
     CardPayment,
@@ -167,13 +163,6 @@ const PaymentStep = ({
                         onChangePlanIDs={onChangePlanIDs}
                     />
                     <div className="text-sm">
-                        <div className="flex flex-nowrap color-weak mb-2">
-                            <span className="flex-item-noshrink mr-2">
-                                <Icon name="shield" />
-                            </span>
-                            <span className="flex-item-fluid pt-0.5">{c('Info')
-                                .t`Payments are protected with TLS encryption and Swiss privacy laws.`}</span>
-                        </div>
                         {hasGuarantee && (
                             <div className="flex flex-nowrap color-weak mb-2">
                                 <span className="flex-item-noshrink mr-2">
@@ -242,6 +231,13 @@ const PaymentStep = ({
                                         : c('Action').t`Confirm`}
                                 </Button>
                                 <Alert3ds />
+                                <div className="flex flex-nowrap color-weak mb-2 text-sm mx-7">
+                                    <span className="flex-item-noshrink mr-2">
+                                        <Icon name="shield" />
+                                    </span>
+                                    <span className="flex-item-fluid">{c('Info')
+                                        .t`Payments are protected with TLS encryption and Swiss privacy laws.`}</span>
+                                </div>
                             </>
                         )}
                     </form>

@@ -1,7 +1,9 @@
 export { default as AutomaticSubscriptionModal } from './AutomaticSubscriptionModal';
 export { default as CancelSubscriptionSection } from './CancelSubscriptionSection';
 export { default as DowngradeSubscriptionSection } from './DowngradeSubscriptionSection';
+export { default as PlanCustomization } from './PlanCustomization';
 export { default as PlanSelection } from './PlanSelection';
+export { SubscriptionCheckoutCycleItem, default as SubscriptionCycleSelector } from './SubscriptionCycleSelector';
 export { default as SubscriptionModal } from './SubscriptionModal';
 export { default as SubscriptionModalDisabled } from './SubscriptionModalDisabled';
 export * from './SubscriptionModalProvider';
