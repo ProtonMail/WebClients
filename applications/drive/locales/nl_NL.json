@@ -782,6 +782,17 @@
         "Als u problemen ondervindt, kunt u Bèta Toegang altijd uitschakelen."
       ]
     },
+    "Billing cycle option": {
+      "Annually": [
+        "Jaarlijks"
+      ],
+      "Monthly": [
+        "Maandelijks"
+      ],
+      "Two-year": [
+        "Tweejaarlijks"
+      ]
+    },
     "Bug category": {
       "Application problem": [
         "Applicatieprobleem"
@@ -2157,9 +2168,6 @@
       "The original folder not found": [
         "De originele map niet gevonden"
       ],
-      "The original folder or file not found": [
-        "De originele map of bestand niet gevonden"
-      ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Er zijn te veel mappen op uw externe account. Pas de import aan om enkele mappen te verwijderen."
       ],
@@ -3228,6 +3236,9 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Controleer uw spammap en of ${ strong } het correcte e-mailadres is voordat u een nieuwe verificatiecode aanvraagt."
       ],
+      "Billing cycle: ${ text }": [
+        "Facturatiefrequentie: ${ text }"
+      ],
       "Calendar side panel": [
         "Agenda zijpaneel"
       ],
@@ -3449,9 +3460,6 @@
       ],
       "Folder \"${ link.name }\" was deleted during download": [
         "Map \"${ link.name }\" werd verwijderd tijdens downloaden"
-      ],
-      "Folder contents will merge into a single folder": [
-        "De inhoud van de mappen wordt samengevoegd tot één enkele map"
       ],
       "Folder is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "Handtekening van map ontbreekt. We konden niet verifiëren dat ${ emailAddress } ${ fileName } heeft geüpload."
@@ -3900,9 +3908,6 @@
       "This will delete the link and remove access to your file or folder for anyone with the link.": [
         "Dit zal de link verwijderen en de toegang tot uw bestand of map voor iedereen met de link verwijderen.",
         "Dit zal de links verwijderen en de toegang tot uw bestanden en mappen voor iedereen met de links verwijderen."
-      ],
-      "This will overwrite the existing folder": [
-        "Dit zal de bestaande map overschrijven"
       ],
       "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on the device won’t be affected.": [
         "Dit verwijdert het gesynchroniseerde apparaat ${ deviceName } van ${ DRIVE_APP_NAME }. Lokale bestanden op het apparaat blijven onaangeroerd."
@@ -4469,9 +4474,6 @@
       ],
       "Manage categories": [
         "Beheer categorieën"
-      ],
-      "Merge a folder": [
-        "Map samenvoegen"
       ],
       "Modified": [
         "Gewijzigd"
@@ -5393,9 +5395,6 @@
       "Highest VPN speed": [
         "Hoogste VPN-snelheid"
       ],
-      "Premium Drive": [
-        "Premium Drive"
-      ],
       "Premium early access": [
         "Premium vroege toegang"
       ],
@@ -5796,6 +5795,9 @@
       ],
       "Beta Access": [
         "Bèta toegang"
+      ],
+      "Billing cycle": [
+        "Factuurperiode"
       ],
       "Browser might run out of memory": [
         "Browser valt mogelijk zonder geheugen"
