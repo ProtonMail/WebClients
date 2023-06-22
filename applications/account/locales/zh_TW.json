@@ -2772,11 +2772,20 @@
       "${ name } deletion failed": [
         "${ name } 刪除失敗"
       ],
+      "${ name } failed to move to allow list": [
+        "${ name }移至允許清單失敗"
+      ],
+      "${ name } failed to move to block list": [
+        "${ name }移至封鎖清單失敗"
+      ],
       "${ name } failed to move to spam list": [
         "${ name } 無法移至垃圾郵件黑名單"
       ],
       "${ name } moved to allow list": [
         "${ name } 已移動至允許清單"
+      ],
+      "${ name } moved to block list": [
+        "${ name }移至封鎖清單"
       ],
       "${ name } moved to spam list": [
         "${ name } 已移至垃圾郵件黑名單"
@@ -2883,11 +2892,17 @@
       "${ name } failed to move to allow list": [
         "${ name } 無法移至允許清單"
       ],
+      "${ name } failed to move to block list": [
+        "${ name }移至封鎖清單失敗"
+      ],
       "${ name } failed to move to spam list": [
         "${ name } 無法移至垃圾郵件黑名單"
       ],
       "${ name } moved to allow list": [
         "${ name } 已移至允許清單"
+      ],
+      "${ name } moved to block list": [
+        "${ name }移至封鎖清單"
       ],
       "${ name } moved to spam list": [
         "${ name } 已移至垃圾郵件黑名單"
@@ -4271,6 +4286,9 @@
       ],
       "Spam:": [
         "垃圾郵件:"
+      ],
+      "These lists apply to all accounts in your organization. Members can create their own individual filters, but won't be able to override addresses or domains you blocked.": [
+        "此清單套用至所有組織成員帳號。成員可以設定獨立的過濾清單，但無法覆您封鎖的電子郵件地址或網域。"
       ]
     },
     "Font Face Default": {
@@ -6479,6 +6497,9 @@
       ],
       "We need to authenticate your payment with your bank.": [
         "我們需要與您的銀行認證您的付款。"
+      ],
+      "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
+        "我們建議於強制啟用雙重驗證前通知組織成員為帳號設定雙重驗證"
       ],
       "We recommend using your recovery phrase instead.": [
         "我們建議您使用你的復原短語取代它。"
@@ -10315,9 +10336,6 @@
       "Highest VPN speed": [
         "業界最高 VPN 速率"
       ],
-      "Premium Drive": [
-        "進階版雲端硬碟"
-      ],
       "Premium early access": [
         "進階版搶先體驗"
       ],
@@ -12053,6 +12071,9 @@
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "若您已購買或從我們的支援團隊收到禮品代碼，您可在此輸入。"
       ],
+      "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
+        "未使用雙重驗證的成員將收到電子郵件要求它們盡速啟用"
+      ],
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "在 [已傳送] 或 [草稿] 資料夾中的郵件將繼續保留原處，即使您將郵件移動至另一個資料夾。"
       ],
@@ -12107,11 +12128,17 @@
       "This key is used by ${ MAIL_APP_NAME } to encrypt your contact's data": [
         "此金鑰用於 ${ MAIL_APP_NAME } 以加密您的聯絡人資訊"
       ],
+      "Use your browser’s default scrollbars. These are typically larger and easier to use": [
+        "使用瀏覽器預設的滾動拉桿。此會更明顯、容易使用"
+      ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "我們偵測到您的 DNS 配置有問題。請確保您的 DNS 記錄符合下列指示。如果問題持續，我們將需要關閉 DKIM 簽章。"
       ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "我們已停止 DKIM 簽章，因為您的 DNS 配置發生問題。請遵照下列指示以恢復簽章。"
+      ],
+      "When enabled, animations and transitions will not show": [
+        "當啟用，動畫及移動不會顯示"
       ],
       "When you add a label to a message in a conversation, it will automatically be applied to all future messages you send or receive in that conversation.": [
         "當您為會話中的郵件加入標籤，該標籤將自動套用至日後在該會話中傳送或接收的所有郵件。"

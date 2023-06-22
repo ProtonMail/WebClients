@@ -2797,7 +2797,7 @@
         "Przenoszenie domeny ${ name } do listy dozwolonych adresów nie powiodło się"
       ],
       "${ name } failed to move to block list": [
-        "Przenoszenie domeny ${ name } do listy zablokowanych nadawców nie powiodło się"
+        "Przenoszenie domeny ${ name } do listy zablokowanych nie powiodło się"
       ],
       "${ name } failed to move to spam list": [
         "Przenoszenie domeny ${ name } do listy spamu nie powiodło się"
@@ -2914,7 +2914,7 @@
         "Przenoszenie adresu ${ name } do listy dozwolonych adresów nie powiodło się"
       ],
       "${ name } failed to move to block list": [
-        "Przenoszenie adresu ${ name } do listy zablokowanych nadawców nie powiodło się"
+        "Przenoszenie adresu ${ name } do listy zablokowanych nie powiodło się"
       ],
       "${ name } failed to move to spam list": [
         "Przenoszenie adresu ${ name } do listy spamu nie powiodło się"
@@ -6943,7 +6943,7 @@
         "Obecne wiadomości, kalendarze i kontakty zostaną zablokowane. Aby odzyskać te dane, będziesz potrzebować hasła odzyskiwania lub ${ oldPassword }."
       ],
       "Your files will be encrypted and then saved": [
-        "Twoje pliki przed zapisaniem zostaną zaszyfrowane"
+        "Twoje pliki, przed zapisaniem, zostaną zaszyfrowane"
       ],
       "Your import from ${ accounts } is temporarily delayed.": [
         "Proces importowania z konta ${ accounts } jest tymczasowo opóźniony.",
@@ -10674,9 +10674,6 @@
       ],
       "Mail, Calendar, Drive": [
         "Usługi Mail, Calendar i Drive"
-      ],
-      "Premium Drive": [
-        "Usługa Drive w wersji premium"
       ],
       "Premium early access": [
         "Wczesny dostęp premium"

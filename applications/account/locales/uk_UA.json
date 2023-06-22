@@ -213,7 +213,7 @@
         "Продовжити"
       ],
       "Continue anyway": [
-        "Все одно продовжити"
+        "Усе одно продовжити"
       ],
       "Continue import": [
         "Продовжити імпорт"
@@ -1275,7 +1275,7 @@
         "Проблема зі швидкістю"
       ],
       "Streaming problem": [
-        "Проблема трансляції"
+        "Проблема стримінгу"
       ],
       "Update problem": [
         "Проблема з оновленням"
@@ -2835,7 +2835,7 @@
         "Моя причина відсутня, додати коментар"
       ],
       "Streaming service unsupported": [
-        "Не підтримується сервіс трансляції"
+        "Непідтримуваний стримінговий сервіс"
       ],
       "Subscription is too expensive": [
         "Надто висока вартість передплати"
@@ -3970,7 +3970,7 @@
         "Перш ніж створити нового користувача, потрібно налаштувати власний домен."
       ],
       "You will lose access to all premium features and storage space included with ${ BRAND_NAME } Family.": [
-        "Ви втратите доступ до всіх преміумфункцій і простору сховища, включених до ${ BRAND_NAME } Family."
+        "Ви втратите доступ до всіх преміумфункцій і простору сховища, включених до Сімейного ${ BRAND_NAME }."
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "Вас запрошено пов'язати обліковий запис ${ BRAND_NAME } із цим груповим планом і разом користуватися всіма преміумфункціями ${ BRAND_NAME_TWO }"
@@ -4110,7 +4110,7 @@
     },
     "familyOffer_2023:Tooltip": {
       "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
-        "Включає 2700 серверів у понад 65 країнах, підключення до 10 пристроїв, доступ до світових сервісів трансляції, захист від зловмисних програм і реклами, а також інші можливості."
+        "Включає 2700 серверів у понад 65 країнах, підключення до 10 пристроїв, доступ до світових стримінгових сервісів, захист від зловмисних програм і реклами, а також інші можливості."
       ],
       "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
         "Включає підтримку 3 власних доменів, 90 адрес пошти, необмежену кількість псевдонімів Hide-my-email, спільний доступ до календаря та інші можливості."
@@ -4142,7 +4142,7 @@
         "Secure Core сервери"
       ],
       "Secure streaming support": [
-        "Підтримка безпечного потокового передавання"
+        "Підтримка безпечного стримінгу"
       ],
       "Torrenting support (P2P)": [
         "Підтримка торентів (P2P)"
@@ -4345,7 +4345,7 @@
         "Додайте власний фільтр для автоматичного виконання певних дій, наприклад, позначення міткою чи архівування повідомлень."
       ],
       "Allow:": [
-        "Дозвіл"
+        "Дозволені:"
       ],
       "Block:": [
         "Блокування:"
@@ -4357,28 +4357,28 @@
         "Спам:"
       ],
       "Take control over what lands in your inbox by creating the following lists:": [
-        "Візьміть під контроль те, що знаходиться у вашій поштовій скриньці, створивши наступні списки:"
+        "Контролюйте все, що перебуває у вашій поштовій скриньці, створивши такі списки:"
       ],
       "Take control over what lands in your organization members' inboxes by creating the following lists:": [
         "Керуйте тим, що потрапляє в теку \"Вхідні\" учасників вашої організації, створивши такі списки:"
       ],
       "These lists apply to all accounts in your organization. Members can create their own individual filters, but won't be able to override addresses or domains you blocked.": [
-        "Ці списки застосовуються до всіх облікових записів у вашій організації. Учасники можуть створювати власні фільтри, але не зможуть замінити адреси або заблоковані домени."
+        "Ці списки застосовуються до всіх облікових записів у вашій організації. Учасники зможуть створювати власні фільтри, але не зможуть замінювати адреси або заблоковані домени."
       ],
       "To ensure critical messages don't end up in spam and getting missed": [
-        "Щоб критичні повідомлення не потрапляли в спам і не були пропущені"
+        "Щоб надважливі повідомлення не потрапляли в спам і не були пропущені"
       ],
       "To prevent junk mail from clogging up inboxes": [
         "Щоб небажана пошта не засмічувала \"Вхідні\""
       ],
       "To prevent junk mail from clogging up your inbox": [
-        "Щоб небажана пошта не засмічувала вашу папку \"Вхідні\"."
+        "Щоб небажана пошта не засмічувала вашу теку \"Вхідні\"."
       ],
       "To stop phishing or suspicious emails from entering your email system": [
-        "Щоб запобігти потраплянню фішингових або підозрілих електронних листів у вашу електронну пошту"
+        "Щоб запобігти потраплянню фішингових або підозрілих електронних листів у вашу скриньку"
       ],
       "To stop phishing or suspicious emails from entering your organization's email system": [
-        "Щоб запобігти потраплянню фішингових або підозрілих електронних листів в електронну пошту вашої організації"
+        "Щоб запобігти потраплянню фішингових або підозрілих електронних листів у скриньку вашої організації"
       ]
     },
     "Font Face Default": {
@@ -5839,7 +5839,7 @@
         "Імпортування ваших даних із ${ importedEmailAddress } до ${ toEmail }."
       ],
       "Improve your ${ BRAND_NAME } experience by adapting the application to your needs.": [
-        "Поліпшуйте свій досвід користування ${ BRAND_NAME }, адаптувавши застосунок до своїх потреб"
+        "Зробіть користування ${ BRAND_NAME } зручнішим, адаптувавши застосунок до своїх потреб."
       ],
       "Inherited from parent folder": [
         "Успадковано від теки вищого рівня"
@@ -6271,7 +6271,7 @@
         "Виберіть, які календарі імпортувати. Для кожного імпортованого календаря буде створено новий календар згідно з кількістю календарів, доступною у вашому тарифному плані."
       ],
       "Send emails to encourage your members to protect their accounts with 2FA.": [
-        "Надсилайте електронні листи, щоб заохотити своїх користувачів захищати свої облікові записи за допомогою 2FA."
+        "Надішліть електронні листи своїм користувачам, щоб заохотити їх захистити свої облікові записи за допомогою двоетапної перевірки."
       ],
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "Надіслано за допомогою безпечної пошти <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
@@ -6409,7 +6409,7 @@
         "Ці адреси не створені."
       ],
       "The following members will receive an email prompting them to enable two-factor authentication as soon as possible.": [
-        "Наступні учасники отримають електронного листа з проханням якнайшвидше ввімкнути двоетапну автентифікацію."
+        "Зазначені учасники отримають електронного листа з проханням якнайшвидше ввімкнути двоетапну перевірку."
       ],
       "The format of your CSV file is incorrect.": [
         "Формат вашого CSV-файлу неправильний."
@@ -6709,7 +6709,7 @@
         "Потрібно підтвердити оплату у вашому банку."
       ],
       "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
-        "Ми рекомендуємо сповістити членів організації та попросити їх налаштувати 2FA для своїх облікових записів, перш ніж застосовувати 2FA."
+        "Перш ніж впроваджувати двоетапну перевірку, ми радимо повідомити про це учасників організації та попросити їх налаштувати її заздалегідь."
       ],
       "We recommend using your recovery phrase instead.": [
         "Радимо натомість скористатися вашою фразою відновлення."
@@ -7675,7 +7675,7 @@
         "Чи не бажаєте повідомити нас, який провайдер?"
       ],
       "Could you please specify which streaming service?": [
-        "Не могли б ви вказати, який саме потоковий сервіс?"
+        "Не могли б ви вказати, який саме стримінговий сервіс?"
       ],
       "Could you please specify?": [
         "Не могли б ви уточнити?"
@@ -7720,7 +7720,7 @@
         "Типова схема PGP"
       ],
       "Default scrollbars": [
-        "Смуги прокрутки за замовчуванням"
+        "Усталені смуги прокручування"
       ],
       "Default view": [
         "Типовий вигляд"
@@ -7744,7 +7744,7 @@
         "Цифри"
       ],
       "Disable animations": [
-        "Вимкнути анімації"
+        "Вимкнути анімацію"
       ],
       "Display name": [
         "Ім'я"
@@ -8554,10 +8554,10 @@
     },
     "Loading info": {
       "${ twoFAMembers.length }/${ members.length } of your organization member use two-factor authentication.": [
-        "${ twoFAMembers.length }/${ members.length } учасників вашої організації використовує двофакторну автентифікацію.",
-        "${ twoFAMembers.length }/${ members.length } учасників вашої організації використовує двофакторну автентифікацію.",
-        "${ twoFAMembers.length }/${ members.length } учасників вашої організації використовує двофакторну автентифікацію.",
-        "${ twoFAMembers.length }/${ members.length } учасників вашої організації використовує двофакторну автентифікацію."
+        "У вашій організації двоетапну перевірку використовує ${ twoFAMembers.length } учасник із ${ members.length }.",
+        "У вашій організації двоетапну перевірку використовують ${ twoFAMembers.length } учасники з ${ members.length }.",
+        "У вашій організації двоетапну перевірку використовують ${ twoFAMembers.length } учасників із ${ members.length }.",
+        "У вашій організації двоетапну перевірку використовують ${ twoFAMembers.length } учасників із ${ members.length }."
       ],
       "Almost there": [
         "Майже готово"
@@ -9180,7 +9180,7 @@
         "Псевдоніми Hide-my-email"
       ],
       "High-speed streaming": [
-        "Високошвидкісна трансляція"
+        "Високошвидкісний стримінг"
       ],
       "High-speed Swiss VPN that protects your privacy": [
         "Високошвидкісна швейцарська VPN, що захищає вашу приватність"
@@ -9395,7 +9395,7 @@
         "Комплексна приватність і безпека з усіма службами ${ BRAND_NAME }."
       ],
       "For next-level password management and identity protection.": [
-        "Для вищого рівня керування паролями та захисту особистих даних."
+        "Для вдосконаленого керування паролями та захисту особистих даних."
       ],
       "If you delete your account, you lose all ${ visionary } plan benefits and it won’t be available if you create a new account.": [
         "Якщо ви видалите свій обліковий запис, то втратите всі переваги тарифного плану ${ visionary } та не зможете передплатити його знову після створення нового облікового запису."
@@ -9529,7 +9529,7 @@
     },
     "new_plans: tooltip": {
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
-        "Доступ звідусіль до сервісів трансляції, включно з Netflix, Disney+ та Prime Video"
+        "Доступ звідусіль до стримінгових сервісів, включно з Netflix, Disney+ та Prime Video"
       ],
       "Addresses have full sending and receiving capability. A user can have multiple addresses assigned to them; however, a single address cannot be assigned to multiple users.": [
         "Адреси мають повноцінні можливості надсилання й отримання. Користувач може мати різні адреси, однак одну адресу не можна призначити різним користувачам."
@@ -9685,7 +9685,7 @@
         "Підтримка протоколів обміну даними, як-от BitTorrent"
       ],
       "Unique, on-the-fly email addresses that protect your online identity and let you control what lands in your inbox. From SimpleLogin by ${ BRAND_NAME }.": [
-        "Унікальні, миттєві адреси електронної пошти, які захищають ваші особисті дані та дозволяють контролювати, що потрапляє до вашої поштової скриньки. Завдяки SimpleLogin від ${ BRAND_NAME }."
+        "Унікальні, миттєві адреси електронної пошти, які захищають ваші особисті дані та дають змогу контролювати, що потрапляє до вашої поштової скриньки. Завдяки SimpleLogin від ${ BRAND_NAME }."
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Використовуйте власні домени адрес електронної пошти, наприклад, you@yourname.com"
@@ -9784,10 +9784,10 @@
         "Для адміністраторів застосовано двоетапну автентифікацію"
       ],
       "Two-factor authentication has been enforced for all members": [
-        "Двоетапна автентифікація була застосована для всіх членів"
+        "Для всіх учасників застосовано двоетапну перевірку"
       ],
       "Two-factor authentication is not required anymore": [
-        "Двофакторна автентифікація більше не потрібна"
+        "Двоетапна перевірка більше не обов'язкова"
       ]
     },
     "Notification in holidays calendar modal": {
@@ -10717,9 +10717,6 @@
       "Highest VPN speed": [
         "Найвища швидкість VPN"
       ],
-      "Premium Drive": [
-        "Premium Drive"
-      ],
       "Premium early access": [
         "Ранній преміумдоступ"
       ],
@@ -10736,7 +10733,7 @@
         "Безпечне хмарне сховище"
       ],
       "Secure streaming": [
-        "Захищена трансляція"
+        "Захищений стримінг"
       ],
       "Support online privacy": [
         "Підтримка онлайн-приватності"
@@ -10867,13 +10864,13 @@
     },
     "specialoffer: Tooltip": {
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.": [
-        "Доступ до заблокованого вмісту та приватний перегляд. Включає 1700 серверів у понад 60 країнах, найвищу швидкість VPN, 10 VPN-з'єднань на користувача, всесвітні сервіси трансляції, захист від зловмисних програм і реклами, а також інші можливості."
+        "Доступ до заблокованого вмісту та приватний перегляд. Включає 1700 серверів у понад 60 країнах, найвищу швидкість VPN, 10 VPN-з'єднань на користувача, всесвітні стримінгові сервіси, захист від зловмисних програм і реклами, а також інші можливості."
       ],
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
-        "Доступ до заблокованого вмісту та приватний перегляд. Включає 1700 серверів у понад 60 країнах, найвищу швидкість VPN, 10 VPN-з'єднань, всесвітні сервіси трансляції, захист від зловмисних програм і реклами, а також інші можливості."
+        "Доступ до заблокованого вмісту та приватний перегляд. Включає 1700 серверів у понад 60 країнах, найвищу швидкість VPN, 10 VPN-з'єднань, всесвітні стримінгові сервіси, захист від зловмисних програм і реклами, а також інші можливості."
       ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
-        "Доступ звідусіль до матеріалів сервісів трансляції, включно з Netflix, Disney+ і Prime Video."
+        "Доступ звідусіль до матеріалів стримінгових сервісів, включно з Netflix, Disney+ і Prime Video."
       ],
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
         "Всі найкращі можливості наших преміум функцій: 100 адрес пошти, підтримка 10 власних доменів, необмежена кількість псевдонімів Hide-my-email, спільний доступ до календаря, зашифроване хмарне сховище, спільний доступ до файлів і багато іншого."
@@ -11049,7 +11046,7 @@
         "1 VPN-з'єднання"
       ],
       "Access to streaming services globally": [
-        "Доступ до сервісів трансляції по всьому світу"
+        "Доступ до стримінгових сервісів по всьому світу"
       ],
       "Built-in ad blocker (NetShield)": [
         "Вбудований блокувальник реклами (NetShield)"
@@ -11419,7 +11416,7 @@
         "Змінити"
       ],
       "Email address or domain": [
-        "Адреса електронної пошти або ім'я користувача"
+        "Адреса е-пошти або домен"
       ],
       "Email addresses": [
         "Адреси е-пошти"
@@ -12531,7 +12528,7 @@
         "Якщо ви придбали подарунковий код або отримали його від нашої служби підтримки, ви можете ввести його тут."
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
-        "Учасники, які не використовують 2FA, отримають електронного листа з проханням ввімкнути його якомога швидше."
+        "Учасники, які не використовують 2FA, отримають електронного листа з проханням ввімкнути її якнайшвидше."
       ],
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "Повідомлення в теці Надіслані або Чернетки й надалі з'являтимуться в тій теці, навіть якщо ви перемістите їх до іншої теки."
@@ -12591,7 +12588,7 @@
         "${ MAIL_APP_NAME } використовує цей ключ для шифрування ваших контактних даних"
       ],
       "Use your browser’s default scrollbars. These are typically larger and easier to use": [
-        "Використовуйте стандартні смуги прокрутки вашого браузера. Зазвичай вони більші та прості у використанні"
+        "Використовуйте стандартні смуги прокручування вашого браузера. Зазвичай вони більші та простіші для користування"
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "Ми виявили проблему з вашою конфігурацією DNS. Переконайтеся, що ваші записи відповідають інструкціям нижче. Якщо проблема не зникне, нам доведеться вимкнути підписання DKIM."
@@ -12600,7 +12597,7 @@
         "Ми зупинили підписання DKIM через проблеми з конфігурацією вашого DNS. Будь ласка, дотримуйтесь наведених нижче інструкцій, щоб відновити підпис."
       ],
       "When enabled, animations and transitions will not show": [
-        "Якщо ввімкнено, анімації та переходи не показуватимуться"
+        "Якщо ввімкнено, анімація та переходи не показуватимуться"
       ],
       "When you add a label to a message in a conversation, it will automatically be applied to all future messages you send or receive in that conversation.": [
         "Коли ви додаєте мітку до повідомлення в розмові, вона автоматично застосується до всіх майбутніх повідомлень, які ви надсилаєте або отримуєте в цій розмові."
