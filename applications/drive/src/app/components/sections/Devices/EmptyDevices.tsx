@@ -1,27 +1,57 @@
+import React, { useEffect, useState } from 'react';
+
 import { c } from 'ttag';
 
-import { EmptyViewContainer } from '@proton/components';
-import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
-import noContentSvg from '@proton/styles/assets/img/illustrations/empty-devices.svg';
+import { EmptyViewContainer, Icon, PrimaryButton } from '@proton/components';
+import { fetchDesktopVersion } from '@proton/shared/lib/apps/desktopVersions';
+import { DESKTOP_APP_NAMES, DESKTOP_PLATFORMS, RELEASE_CATEGORIES } from '@proton/shared/lib/constants';
+import emptyDevicesImg from '@proton/styles/assets/img/illustrations/empty-devices.png';
 
-import './EmptyDevices.scss';
+import { logError } from '../../../utils/errorHandling';
 
 const EmptyDevices = () => {
-    const learnMore = (
-        <p className="p-0 m-0" key="learn-more-paragraph">
-            <a href={'https://drive.proton.me/urls/3SF8FZV8B0#grWxkmu9q4NP'} target="_blank" key="learn-more-link">
-                {c('Action').t`Download the Windows application`}
-            </a>
-        </p>
-    );
+    const [downloadUrl, setDownloadUrl] = useState<string | undefined>(undefined);
+
+    useEffect(() => {
+        fetchDesktopVersion({
+            appName: DESKTOP_APP_NAMES.DRIVE,
+            version: 'latest',
+            platform: DESKTOP_PLATFORMS.WINDOWS,
+            category: RELEASE_CATEGORIES.STABLE,
+        }).then(
+            (result) => setDownloadUrl(result?.url),
+            (reason) => logError(`Download link cannot be fetched\n${reason}`)
+        );
+    }, []);
+
+    const downloadDisabled = !downloadUrl;
+
+    const syncFoldersText = c('Info').t`Sync folders from your computer`;
+    const downloadText = c('Action').t`Download Drive for Windows`;
+
+    const startDownload = () => {
+        if (!downloadUrl) {
+            logError('Trying download without download url.');
+            return;
+        }
+        window.location.href = downloadUrl;
+    };
 
     return (
-        <EmptyViewContainer imageProps={{ src: noContentSvg, title: c('Info').t`No synced computers` }}>
-            <h3 className="text-bold">{c('Info').t`No synced computers`}</h3>
-            <div className="empty-devices-placeholder-info">
+        <EmptyViewContainer imageProps={{ src: emptyDevicesImg, alt: syncFoldersText, height: 180 }}>
+            <h3 className="text-bold">{syncFoldersText}</h3>
+            <p className="mt-2 max-w-custom" style={{ '--max-w-custom': '400px' }}>
                 {c('Info')
-                    .jt`Use Drive for Desktop to sync folders on your computer with ${DRIVE_APP_NAME}. They’ll show up here and be accessible from anywhere. ${learnMore}`}
-            </div>
+                    .t`Sync folders with ease using our desktop app, ensuring your files are always up to date and accessible from anywhere.`}
+            </p>
+            <PrimaryButton
+                onClick={startDownload}
+                className="mt-8 mx-auto flex flex-align-items-center"
+                disabled={downloadDisabled}
+            >
+                <Icon name="brand-windows" className="mr-2" />
+                {downloadText}
+            </PrimaryButton>
         </EmptyViewContainer>
     );
 };
