@@ -25,7 +25,7 @@ const GmailSyncModal = ({ onSyncCallback, onSyncSkipCallback, noSkip, ...rest }:
     const syncState = useEasySwitchSelector(selectCreateSyncState);
     const loading = syncState === 'pending';
 
-    const { triggerOAuthPopup } = useOAuthPopup({
+    const { triggerOAuthPopup, loadingConfig } = useOAuthPopup({
         errorMessage: c('loc_nightly:Error').t`Your sync will not be processed.`,
     });
 
@@ -80,7 +80,7 @@ const GmailSyncModal = ({ onSyncCallback, onSyncSkipCallback, noSkip, ...rest }:
                         <GmailSyncModalAnimation />
                     </div>
                     <div className="flex flex-column flex-align-items-center gap-4">
-                        <SignInWithGoogle onClick={handleGoogleSync} loading={loading} />
+                        <SignInWithGoogle onClick={handleGoogleSync} loading={loading} disabled={loadingConfig} />
                         {!noSkip && (
                             <Button shape="ghost" color="norm" fullWidth onClick={handleSyncSkip}>{c('Action')
                                 .t`Skip`}</Button>
