@@ -22,10 +22,11 @@ import type {
 import { IFrameMessageType } from '../../../types';
 
 type IFrameContextValue = {
+    port: MaybeNull<Runtime.Port>;
     endpoint: string;
     workerState: Maybe<Omit<WorkerState, 'UID'>>;
     settings: ProxiedSettings;
-    port: MaybeNull<Runtime.Port>;
+    userEmail: MaybeNull<string>;
     closeIFrame: () => void;
     resizeIFrame: (ref?: MaybeNull<HTMLElement>) => void;
     postMessage: (message: IFrameMessage) => void;
@@ -35,10 +36,11 @@ type IFrameContextValue = {
 type PortContext = { port: MaybeNull<Runtime.Port>; forwardTo: MaybeNull<string> };
 
 const IFrameContext = createContext<IFrameContextValue>({
+    port: null,
     endpoint: '',
     workerState: undefined,
     settings: INITIAL_SETTINGS,
-    port: null,
+    userEmail: null,
     closeIFrame: noop,
     resizeIFrame: noop,
     postMessage: noop,
@@ -53,6 +55,7 @@ export const IFrameContextProvider: FC<{ endpoint: IFrameEndpoint }> = ({ endpoi
     const [{ port, forwardTo }, setPortContext] = useState<PortContext>({ port: null, forwardTo: null });
     const [workerState, setWorkerState] = useState<IFrameContextValue['workerState']>();
     const [settings, setSettings] = useState<ProxiedSettings>(INITIAL_SETTINGS);
+    const [userEmail, setUserEmail] = useState<MaybeNull<string>>(null);
 
     const destroyFrame = () => {
         logger.info(`[IFrame::${endpoint}] Unauthorized iframe injection`);
@@ -93,7 +96,14 @@ export const IFrameContextProvider: FC<{ endpoint: IFrameEndpoint }> = ({ endpoi
                 event.data.sender === 'contentscript'
             ) {
                 window.removeEventListener('message', onPostMessageHandler);
-                handlePortInjection(event.data).catch(noop);
+                handlePortInjection(event.data)
+                    .then(() =>
+                        sendMessage.onSuccess(
+                            contentScriptMessage({ type: WorkerMessageType.RESOLVE_USER_DATA }),
+                            (response) => response.user?.Email && setUserEmail(response.user.Email)
+                        )
+                    )
+                    .catch(noop);
             }
         }),
         []
@@ -184,8 +194,18 @@ export const IFrameContextProvider: FC<{ endpoint: IFrameEndpoint }> = ({ endpoi
     );
 
     const context = useMemo<IFrameContextValue>(
-        () => ({ endpoint, port, workerState, settings, closeIFrame, resizeIFrame, postMessage, registerHandler }),
-        [port, workerState, settings, closeIFrame, resizeIFrame, postMessage, registerHandler]
+        () => ({
+            port,
+            endpoint,
+            workerState,
+            settings,
+            userEmail,
+            closeIFrame,
+            resizeIFrame,
+            postMessage,
+            registerHandler,
+        }),
+        [port, workerState, settings, userEmail, closeIFrame, resizeIFrame, postMessage, registerHandler]
     );
 
     return <IFrameContext.Provider value={context}>{children}</IFrameContext.Provider>;
