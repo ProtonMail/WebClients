@@ -16,16 +16,16 @@ export type PopupTabState = {
     tabId: TabId;
     domain: MaybeNull<string>;
     search: MaybeNull<string>;
-    filters: MaybeNull<ItemFilters>;
     selectedItem: MaybeNull<SelectedItem>;
 };
 
 export type PopupState = {
     draft: MaybeNull<ItemDraft>;
     tabs: { [tabId: TabId]: PopupTabState };
+    filters: MaybeNull<ItemFilters>;
 };
 
-const initialState: PopupState = { draft: null, tabs: {} };
+const initialState: PopupState = { draft: null, tabs: {}, filters: null };
 
 const popupReducer: Reducer<PopupState> = (state = initialState, action: AnyAction) => {
     if (itemDraftSave.match(action)) return { ...state, draft: action.payload };
@@ -33,6 +33,7 @@ const popupReducer: Reducer<PopupState> = (state = initialState, action: AnyActi
 
     if (popupTabStateSave.match(action)) {
         return merge(state, {
+            filters: action.payload.filters ?? state.filters,
             tabs: {
                 [action.payload.tabId]: action.payload,
             },
