@@ -727,6 +727,17 @@
         "Jeśli napotkasz problemy, możesz wyłączyć dostęp beta."
       ]
     },
+    "Billing cycle option": {
+      "Annually": [
+        "Rocznie"
+      ],
+      "Monthly": [
+        "Miesięcznie"
+      ],
+      "Two-year": [
+        "Co dwa lata"
+      ]
+    },
     "Bug category": {
       "Application problem": [
         "Problem z aplikacją"
@@ -3582,6 +3593,9 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Przed poproszeniem o nowy kod weryfikacyjny, sprawdź folder Spam i poprawność adresu ${ strong }."
       ],
+      "Billing cycle: ${ text }": [
+        "Cykl rozliczeniowy: ${ text }"
+      ],
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
         "Udostępniając wszystkie szczegóły wydarzenia w kalendarzu, akceptujesz przyznanie dostępu usłudze ${ BRAND_NAME } do zaszyfrowanych danych kalendarza."
       ],
@@ -4129,7 +4143,7 @@
         "Twoje wydarzenia przed zapisaniem zostaną zaszyfrowane."
       ],
       "Your files will be encrypted and then saved": [
-        "Twoje pliki przed zapisaniem zostaną zaszyfrowane"
+        "Twoje pliki, przed zapisaniem, zostaną zaszyfrowane"
       ],
       "Your import will not be processed.": [
         "Twój import nie zostanie przetworzony."
@@ -5657,9 +5671,6 @@
       "Mail, Calendar, Drive": [
         "Usługi Mail, Calendar i Drive"
       ],
-      "Premium Drive": [
-        "Usługa Drive w wersji premium"
-      ],
       "Premium early access": [
         "Wczesny dostęp premium"
       ],
@@ -6181,6 +6192,9 @@
       ],
       "Beta Access": [
         "Dostęp beta"
+      ],
+      "Billing cycle": [
+        "Cykl rozliczeniowy"
       ],
       "Calendar": [
         "Kalendarz"

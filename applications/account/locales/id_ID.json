@@ -74,6 +74,9 @@
       "Add address": [
         "Tambah alamat"
       ],
+      "Add address or domain": [
+        "Tambah alamat atau domain"
+      ],
       "Add calendar from URL": [
         "Tambahkan kalender dari URL"
       ],
@@ -208,6 +211,9 @@
       ],
       "Continue": [
         "Lanjut"
+      ],
+      "Continue anyway": [
+        "Tetap lanjut"
       ],
       "Continue import": [
         "Lanjutkan impor"
@@ -758,11 +764,17 @@
       "Send code": [
         "Kirim kode"
       ],
+      "Send email reminder": [
+        "Kirim pengingat email"
+      ],
       "Send messages with @pm.me": [
         "Kirim pesan dengan @pm.me"
       ],
       "Send my username": [
         "Kirim nama pengguna saya"
+      ],
+      "Send reminder": [
+        "Kirim pengingat"
       ],
       "Set as default": [
         "Atur sebagai default"
@@ -2760,8 +2772,20 @@
       "${ name } deletion failed": [
         "${ name } gagal dihapus"
       ],
+      "${ name } failed to move to allow list": [
+        "${ name } gagal dipindahkan ke daftar alamat yang diizinkan"
+      ],
+      "${ name } failed to move to block list": [
+        "${ name } gagal dipindahkan ke daftar alamat yang diblokir"
+      ],
       "${ name } failed to move to spam list": [
         "${ name } gagal dipindahkan ke daftar spam"
+      ],
+      "${ name } moved to allow list": [
+        "${ name } dipindahkan ke daftar alamat yang diizinkan"
+      ],
+      "${ name } moved to block list": [
+        "${ name } dipindahkan ke daftar alamat yang diblokir"
       ],
       "${ name } moved to spam list": [
         "${ name } dipindahkan ke daftar spam"
@@ -2865,8 +2889,20 @@
       "${ name } deletion failed": [
         "${ name } gagal dihapus"
       ],
+      "${ name } failed to move to allow list": [
+        "${ name } gagal dipindahkan ke daftar alamat yang diizinkan"
+      ],
+      "${ name } failed to move to block list": [
+        "${ name } gagal dipindahkan ke daftar alamat yang diblokir"
+      ],
       "${ name } failed to move to spam list": [
         "${ name } gagal dipindahkan ke daftar spam"
+      ],
+      "${ name } moved to allow list": [
+        "${ name } dipindahkan ke daftar alamat yang diizinkan"
+      ],
+      "${ name } moved to block list": [
+        "${ name } dipindahkan ke daftar alamat yang diblokir"
       ],
       "${ name } moved to spam list": [
         "${ name } dipindahkan ke daftar spam"
@@ -3741,6 +3777,9 @@
       "Create a new user": [
         "Buat pengguna baru"
       ],
+      "Decline invitation": [
+        "Tolak undangan"
+      ],
       "Got it": [
         "Mengerti"
       ],
@@ -4236,16 +4275,42 @@
       "Add a custom filter to automatically perform certain actions, like labeling or archiving messages.": [
         "Tambahkan saringan kustom untuk melakukan tindakan khusus secara otomatis, seperti memberi label atau mengarsip pesan."
       ],
+      "Allow:": [
+        "Izin:"
+      ],
+      "Block:": [
+        "Blokir:"
+      ],
       "Search list": [
         "Daftar pencarian"
       ],
       "Spam:": [
         "Spam:"
+      ],
+      "Take control over what lands in your inbox by creating the following lists:": [
+        "Kendalikan hal-hal apa saja yang akan masuk ke dalam kotak masuk Anda dengan membuat daftar berikut:"
+      ],
+      "Take control over what lands in your organization members' inboxes by creating the following lists:": [
+        "Kendalikan hal-hal apa saja yang akan masuk ke dalam kotak masuk milik para anggota organisasi Anda dengan membuat daftar berikut:"
+      ],
+      "To prevent junk mail from clogging up inboxes": [
+        "Untuk mencegah email sampah memenuhi kotak masuk yang ada"
+      ],
+      "To prevent junk mail from clogging up your inbox": [
+        "Untuk mencegah email sampah memenuhi kotak masuk Anda"
       ]
     },
     "Font Face Default": {
       "Default": [
         "Bawaan"
+      ]
+    },
+    "Font face option": {
+      "System default": [
+        "Bawaan sistem"
+      ],
+      "Theme default": [
+        "Tema bawaan"
       ]
     },
     "Font Size Default": {
@@ -4257,8 +4322,17 @@
       "Large": [
         "Besar"
       ],
+      "Medium (recommended)": [
+        "Sedang (direkomendasikan)"
+      ],
       "Small": [
         "Kecil"
+      ],
+      "Very large": [
+        "Sangat besar"
+      ],
+      "Very small": [
+        "Mungil"
       ]
     },
     "Frequency of news": {
@@ -5281,6 +5355,9 @@
       "Custom yearly": [
         "Sesuaikan tahunan"
       ],
+      "Customize the look and feel of ${ BRAND_NAME } applications.": [
+        "Sesuaikan tampilan dan nuansa aplikasi ${ BRAND_NAME } Anda."
+      ],
       "Daily": [
         "Harian"
       ],
@@ -5522,7 +5599,7 @@
         "Apabila Anda kehilangan kata sandi Anda dan perlu untuk menyetel ulang akun, ${ boldImperative } bagi Anda untuk memiliki ${ boldAccountRecovery } yang aktif."
       ],
       "If you lose your password and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
-        "Apabila Anda kehilangan kata sandi Anda dan perlu untuk menyetel ulang akun, ${ boldImperative } bagi Anda untuk memiliki ${ boldAccountAndRecovery } yang aktif. Apabila tidak, Anda beresiko tidak akan lagi dapat mengakses email, kontak, atau berkas yang Anda miliki."
+        "Apabila Anda kehilangan kata sandi Anda dan perlu untuk menyetel ulang akun, ${ boldImperative } bagi Anda untuk memiliki ${ boldAccountAndRecovery } yang aktif. Apabila tidak, Anda beresiko untuk tidak lagi dapat mengakses email, kontak, atau berkas yang Anda miliki."
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Apabila Anda kehilangan perangkat yang Anda gunakan untuk proses autentikasi dua faktor, kode berikut akan dapat digunakan sebagai pengganti kode autentikasi dua faktor agar Anda dapat masuk ke akun Anda. Masing-masing kode hanya dapat digunakan sekali."
@@ -5583,6 +5660,9 @@
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Mengimpor data Anda dari ${ importedEmailAddress } menuju ${ toEmail }."
+      ],
+      "Improve your ${ BRAND_NAME } experience by adapting the application to your needs.": [
+        "Perkaya pengalaman ${ BRAND_NAME } Anda dengan menyesuaikan aplikasi sesuai dengan kebutuhan Anda."
       ],
       "Inherited from parent folder": [
         "Diwariskan dari folder induk"
@@ -5729,7 +5809,7 @@
         "Tidak ada kunci akun"
       ],
       "No account recovery method set; you are at risk of losing access to your account": [
-        "Tidak ada metode pemulihan akun yang ditentukan; Anda beresiko kehilangan akses menuju akun Anda"
+        "Tidak ada metode pemulihan akun yang ditentukan; Anda beresiko unuk kehilangan akses menuju akun Anda"
       ],
       "No action selected": [
         "Tidak ada tindakan yang dipilih"
@@ -5741,7 +5821,7 @@
         "Tanpa perlu kartu kredit"
       ],
       "No data recovery method set; you are at risk of losing access to your data": [
-        "Tidak ada metode pemulihan data yang ditentukan; Anda beresiko kehilangan akses menuju data Anda"
+        "Tidak ada metode pemulihan data yang ditentukan; Anda beresiko untuk kehilangan akses menuju data Anda"
       ],
       "No folder selected": [
         "Tidak ada folder yang dipilih"
@@ -6001,6 +6081,9 @@
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Pilih kalender mana saja yang akan diimpor. Untuk setiap kalender yang diimpor, sistem kami akan membuat kalender baru hingga batas jumlah kalender maksimum yang diperkenankan oleh paket Anda."
       ],
+      "Send emails to encourage your members to protect their accounts with 2FA.": [
+        "Kirim email pengingat agar anggota organisasi Anda terdorong untuk melindungi akun mereka dengan 2FA."
+      ],
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "Dikirim melalui layanan email aman <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
       ],
@@ -6123,6 +6206,9 @@
       ],
       "The following addresses were not created.": [
         "Alamat berikut gagal dibuat."
+      ],
+      "The following members will receive an email prompting them to enable two-factor authentication as soon as possible.": [
+        "Para pengguna berikut akan menerima email yang berisi permintaan untuk mengaktifkan autentikasi dua faktor sesegera mungkin."
       ],
       "The format of your CSV file is incorrect.": [
         "Format berkas CSV Anda tidak sesuai."
@@ -6365,7 +6451,7 @@
         "Gunakan server terbaik berdasarkan beban jaringan dan posisi Anda saat ini: ${ formattedBestServerName }"
       ],
       "Use the different types of email addresses and aliases offered by ${ BRAND_NAME }.": [
-        "Gunakan jenis-jenis alamat surel dan alias berbeda yang ditawarkan oleh ${ BRAND_NAME }."
+        "Gunakan berbagai jenis alamat email dan alias berbeda yang ditawarkan oleh ${ BRAND_NAME }."
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Gunakan informasi kredensial berikut pada saat Anda hendak terhubung ke server ${ VPN_APP_NAME } di luar aplikasi resmi kami, semisal melalui Tunnelblick di macOS atau OpenVPN di GNU/Linux."
@@ -6420,6 +6506,9 @@
       ],
       "We need to authenticate your payment with your bank.": [
         "Kami perlu untuk mengautentikasi pembayaran Anda dengan bank Anda."
+      ],
+      "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
+        "Sebelum Anda mewajibkan penggunaan 2FA, kami menyarankan Anda untuk terlebih dahulu memberi tahu anggota organisasi Anda dan meminta mereka untuk mengatur 2FA pada akun mereka masing-masing."
       ],
       "We recommend using your recovery phrase instead.": [
         "Kami menyarankan Anda untuk menggunakan frasa pemulihan."
@@ -7276,6 +7365,9 @@
       "Card holder": [
         "Pemegang kartu"
       ],
+      "Card information": [
+        "Informasi kartu"
+      ],
       "Card number": [
         "Nomor kartu"
       ],
@@ -7396,6 +7488,9 @@
       "Default PGP scheme": [
         "Skema PGP default"
       ],
+      "Default scrollbars": [
+        "Scrollbar bawaan"
+      ],
       "Default view": [
         "Tampilan default"
       ],
@@ -7416,6 +7511,9 @@
       ],
       "Digits": [
         "Digit"
+      ],
+      "Disable animations": [
+        "Nonaktifkan animasi"
       ],
       "Display name": [
         "Nama tampilan"
@@ -7486,6 +7584,9 @@
       "Event notifications": [
         "Notifikasi acara"
       ],
+      "Expiration (${ patternExpiration })": [
+        "Kedaluwarsa (${ patternExpiration })"
+      ],
       "Expiration date": [
         "Tanggal kedaluwarsa"
       ],
@@ -7503,6 +7604,9 @@
       ],
       "Font family": [
         "Jenis fon"
+      ],
+      "Font size": [
+        "Ukuran huruf"
       ],
       "From: ${ from }": [
         "Dari: ${ from }"
@@ -7771,11 +7875,20 @@
       "Repeat password": [
         "Ulangi kata sandi"
       ],
+      "Require 2FA for administrators": [
+        "Wajibkan penggunaan 2FA bagi administrator"
+      ],
+      "Require 2FA for everyone": [
+        "Wajibkan penggunaan 2FA bagi semua pengguna"
+      ],
       "Reveal password": [
         "Perlihatkan kata sandi"
       ],
       "Security code": [
         "Kode keamanan"
+      ],
+      "Security code (${ codeName })": [
+        "Kode keamanan (${ codeName })"
       ],
       "Select your country": [
         "Pilih negara Anda"
@@ -7842,6 +7955,9 @@
       ],
       "Subscription options": [
         "Pilihan langganan"
+      ],
+      "Synchronize with system": [
+        "Sinkronkan dengan sistem"
       ],
       "System information": [
         "Informasi sistem"
@@ -8206,6 +8322,9 @@
       ]
     },
     "Loading info": {
+      "${ twoFAMembers.length }/${ members.length } of your organization members use two-factor authentication.": [
+        "${ twoFAMembers.length }/${ members.length } anggota organisasi Anda menggunakan autentikasi dua faktor."
+      ],
       "Almost there": [
         "Hampir selesai"
       ],
@@ -8236,7 +8355,7 @@
         "Aktifkan log lanjutan"
       ],
       "Enable authentication logs": [
-        "Aktifkan catatan autentikasi"
+        "Aktifkan log autentikasi"
       ]
     },
     "Mail import summary": {
@@ -8476,7 +8595,7 @@
         "Semua"
       ],
       "Allow": [
-        "Alamat yang diotorisasikan"
+        "Alamat yang diotorisir"
       ],
       "Back": [
         "Kembali"
@@ -8746,7 +8865,7 @@
         "Persetujuan pemrosesan data GDPR"
       ],
       "Hide-my-email aliases": [
-        "Alias Hide-my-email"
+        "Alias hide-my-email"
       ],
       "High-speed streaming": [
         "Streaming berkecepatan tinggi"
@@ -8845,7 +8964,7 @@
         "Tanpa batasan jumlah folder, label, dan filter"
       ],
       "Unlimited hide-my-email aliases": [
-        "Alias Hide-my-email tidak terbatas"
+        "Tanpa batasan jumlah alias Hide My Email"
       ],
       "Unlimited labels": [
         "Tanpa batasan jumlah label"
@@ -9248,7 +9367,7 @@
         "Dapatkan alamat email yang berakhir pada domain khusus milik Anda sendiri, cth. anda@namaanda.com"
       ],
       "We keep no session usage logs of what you do online, and we do not log metadata that can compromise your privacy": [
-        "Kami tidak menyimpan catatan sesi yang merekam aktivitas daring Anda, dan kami juga tidak menyimpan informasi metadata apa pun yang dapat membayahakan privasi Anda"
+        "Kami tidak menyimpan log sesi yang merekam aktivitas daring Anda, dan kami juga tidak merekam informasi metadata yang dapat membahayakan privasi Anda"
       ],
       "We’re committed to helping customers subject to HIPAA/HITECH regulations safeguard protected health information (PHI). Signed BAAs are available for all ${ BRAND_NAME } for Business customers.": [
         "Kami berkomitmen untuk membantu para pelanggan kami tunduk pada standar undang-undang HIPAA/HITECH yang bertujuan untuk melindungi rekam jejak kesehatan pribadi (PHI) tiap-tiap individu. Kami menawarkan Perjanjian Kerjasama Bisnis (BAA) yang telah ditandangani bagi seluruh pelanggan ${ BRAND_NAME } for Business kami."
@@ -9330,6 +9449,18 @@
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "Kredensial OpenVPN / IKEv2 berhasil dibuat ulang"
+      ],
+      "Reminder has been sent": [
+        "Pengingat telah dikirim"
+      ],
+      "Two-factor authentication has been enforced for administrators": [
+        "Autentikasi dua faktor telah diwajibkan untuk administrator"
+      ],
+      "Two-factor authentication has been enforced for all members": [
+        "Autentikasi dua faktor telah diwajibkan untuk seluruh anggota"
+      ],
+      "Two-factor authentication is not required anymore": [
+        "Autentikasi dua faktor tidak lagi dibutuhkan"
       ]
     },
     "Notification in holidays calendar modal": {
@@ -10214,9 +10345,6 @@
       "Highest VPN speed": [
         "Kecepatan VPN tertinggi"
       ],
-      "Premium Drive": [
-        "Drive Premium"
-      ],
       "Premium early access": [
         "Akses dini Premium"
       ],
@@ -10873,6 +11001,9 @@
       "Edit": [
         "Sunting"
       ],
+      "Email address or domain": [
+        "Alamat email atau domain"
+      ],
       "Email addresses": [
         "Alamat email"
       ],
@@ -10961,6 +11092,9 @@
       "4. Select a server to connect to": [
         "4. Pilih sebuah server untuk disambungkan"
       ],
+      "Accessibility": [
+        "Aksesibilitas"
+      ],
       "Account and password": [
         "Akun dan kata sandi"
       ],
@@ -11015,6 +11149,12 @@
       "Add Sieve filter": [
         "Tambah filter Sieve"
       ],
+      "Add to allow list": [
+        "Tambahkan ke daftar alamat yang diizinkan"
+      ],
+      "Add to block list": [
+        "Tambahkan ke daftar alamat yang diblokir"
+      ],
       "Add to spam list": [
         "Tambahkan ke daftar spam"
       ],
@@ -11050,6 +11190,9 @@
       ],
       "Are you sure you want to close?": [
         "Yakin ingin menutupnya?"
+      ],
+      "Authentication security": [
+        "Keamanan autentikasi"
       ],
       "Auto-reply": [
         "Pesan balasan otomatis"
@@ -11194,6 +11337,9 @@
       ],
       "Date": [
         "Tanggal"
+      ],
+      "Day theme": [
+        "Tema siang"
       ],
       "Decrypt key": [
         "Dekripsi kunci"
@@ -11606,6 +11752,9 @@
       "Select when you want this notification to be sent": [
         "Pilih saat Anda ingin notifikasi ini dikirim"
       ],
+      "Send email reminders?": [
+        "Kirim pengingat email?"
+      ],
       "Session management": [
         "Pengelolaan sesi"
       ],
@@ -11663,6 +11812,9 @@
       "Sort labels alphabetically": [
         "Urutkan sesuai abjad"
       ],
+      "Spam, block, and allow lists": [
+        "Daftar spam, blokir, dan izin"
+      ],
       "Start a new import": [
         "Mulai impor baru"
       ],
@@ -11707,6 +11859,12 @@
       ],
       "Two-factor authentication": [
         "Autentikasi dua faktor"
+      ],
+      "Two-factor authentication enforcement": [
+        "Pewajiban autentikasi dua faktor"
+      ],
+      "Two-factor authentication reminders": [
+        "Pengingat autentikasi dua faktor"
       ],
       "Type": [
         "Tipe"
@@ -11886,6 +12044,9 @@
       "Account is disconnected": [
         "Akun terputus"
       ],
+      "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
+        "Sesuaikan tema aplikasi dengan mode terang dan gelap pada sistem Anda secara otomatis"
+      ],
       "Customize import to reduce the number of folders": [
         "Sesuaikan impor untuk mengurangi jumlah folder"
       ],
@@ -11919,6 +12080,9 @@
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Apabila Anda telah membeli kode hadiah atau telah menerima kode hadiah dari tim layanan dukungan kami, silakan masukkan kode tersebut di sini."
       ],
+      "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
+        "Anggota organisasi yang tidak menggunakan 2FA akan menerima email yang meminta mereka untuk mengaktifkan 2FA sesegera mungkin."
+      ],
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "Pesan di folder Terkirim atau Draf akan selalu muncul di folder tersebut, walaupun Anda memindahkannya ke folder lain."
       ],
@@ -11949,6 +12113,15 @@
       "The new subscription cycle starts on ${ formattedTime }": [
         "Siklus langganan baru akan dimulai pada ${ formattedTime }"
       ],
+      "The reduce motion setting is already enabled on this device": [
+        "Pengaturan pengurang gerakan telah diaktifkan pada perangkat ini"
+      ],
+      "The selected theme will be active when your system is set to \"dark mode\"": [
+        "Tema yang dipilih akan aktif pada saat sistem Anda diatur ke \"mode gelap\""
+      ],
+      "The selected theme will be active when your system is set to \"light mode\"": [
+        "Tema yang dipilih akan aktif pada saat sistem Anda diatur ke \"mode terang\""
+      ],
       "This address has been disabled": [
         "Alamat ini telah dinonaktifkan"
       ],
@@ -11967,11 +12140,17 @@
       "This key is used by ${ MAIL_APP_NAME } to encrypt your contact's data": [
         "Kunci ini digunakan oleh ${ MAIL_APP_NAME } untuk mengenkripsi data kontak Anda"
       ],
+      "Use your browser’s default scrollbars. These are typically larger and easier to use": [
+        "Gunakan scrollbar bawaan milik browser Anda. Scrollbar ini pada umumnya lebih besar dan lebih mudah untuk digunakan"
+      ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "Kami mendeteksi adanya masalah pada konfigurasi DNS Anda. Pastikan data rekaman DNS Anda telah sesuai dengan petunjuk di bawah ini. Apabila masalah ini terus berlanjut, kami terpaksa akan menonaktifkan penandatanganan DKIM."
       ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "Kami menghentikan penandatanganan DKIM karena masalah pada konfigurasi DNS Anda. Silakan ikuti petunjuk di bawah untuk melanjutkan proses tanda tangan."
+      ],
+      "When enabled, animations and transitions will not show": [
+        "Pada saat diaktifkan, efek animasi dan transisi tidak akan ditampilkan"
       ],
       "When you add a label to a message in a conversation, it will automatically be applied to all future messages you send or receive in that conversation.": [
         "Ketika Anda menambahkan label ke sebuah pesan dalam percakapan, itu akan secara otomatis diterapkan pada semua pesan mendatang yang Anda kirim atau terima dalam percakapan itu."

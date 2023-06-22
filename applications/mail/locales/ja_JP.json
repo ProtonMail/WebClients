@@ -1308,6 +1308,17 @@
         "問題が発生するなどした場合、いつでもベータ版アクセスを無効にできます。"
       ]
     },
+    "Billing cycle option": {
+      "Annually": [
+        "1年払い"
+      ],
+      "Monthly": [
+        "月額"
+      ],
+      "Two-year": [
+        "2年払い"
+      ]
+    },
     "Bug category": {
       "Application problem": [
         "アプリケーションに関する問題"
@@ -4743,6 +4754,9 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "新しい検証コードを要求する前に、迷惑メールフォルダーを確認し、${ strong } が正しいアドレスなことを確認してください。"
       ],
+      "Billing cycle: ${ text }": [
+        "支払いサイクル: ${ text }"
+      ],
       "Body: ": [
         "本文: "
       ],
@@ -5945,6 +5959,9 @@
       ],
       "New message": [
         "新規メッセージ"
+      ],
+      "Open command panel": [
+        "コマンドパネルを開く"
       ],
       "Open next message": [
         "次のメッセージを開く"
@@ -7655,9 +7672,6 @@
       "Highest VPN speed": [
         "最高速 VPN"
       ],
-      "Premium Drive": [
-        "プレミアム Drive"
-      ],
       "Premium early access": [
         "プレミアム早期アクセス"
       ],
@@ -8240,6 +8254,9 @@
       ],
       "Beta Access": [
         "ベータ版アクセス"
+      ],
+      "Billing cycle": [
+        "支払い間隔"
       ],
       "Blind Carbon Copy": [
         "ブラインドカーボンコピー (Blind Carbon Copy)"

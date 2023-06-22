@@ -237,6 +237,9 @@
       "Download anyway": [
         "Télécharger quand même"
       ],
+      "Download apps": [
+        "Télécharger les applications"
+      ],
       "Download the Windows application": [
         "Télécharger l'application Windows"
       ],
@@ -780,6 +783,17 @@
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "Si vous rencontrez des problèmes, vous pouvez toujours désactiver l'accès à la version bêta."
+      ]
+    },
+    "Billing cycle option": {
+      "Annually": [
+        "Annuel"
+      ],
+      "Monthly": [
+        "Mensuel"
+      ],
+      "Two-year": [
+        "Tous les deux ans"
       ]
     },
     "Bug category": {
@@ -2157,9 +2171,6 @@
       "The original folder not found": [
         "Le dossier d'origine est introuvable."
       ],
-      "The original folder or file not found": [
-        "Le dossier ou le fichier d'origine est introuvable."
-      ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Il y a trop de dossiers dans votre compte externe. Nous vous invitons à personnaliser l'importation pour supprimer certains dossiers."
       ],
@@ -2620,7 +2631,7 @@
         "Cela comprend 2 700 serveurs répartis dans plus de 65 pays, la possibilité de connecter jusqu'à 10 appareils, l'accès aux services de streaming du monde entier, un bloqueur de logiciels malveillants et de publicités et bien d'autres fonctionnalités."
       ],
       "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
-        "Comprend la prise en charge de 3 domaines de messagerie personnalisés, de 90 adresses e-mail, d'un nombre illimité d'alias Hide-my-email, du partage de calendrier…"
+        "Comprend la prise en charge de 3 domaines de messagerie personnalisés, de 90 adresses e-mail, d'un nombre illimité d'alias « hide-my-email », du partage de calendrier…"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Sécurisez vos fichiers grâce au stockage cloud chiffré. Cela comprend la synchronisation automatique, le partage de fichiers chiffrés et d'autres fonctionnalités."
@@ -3231,6 +3242,9 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Avant de demander un nouveau code de vérification, nous vous recommandons de vérifier votre dossier indésirables/spam et de vous assurer que l'adresse ${ strong } est correcte."
       ],
+      "Billing cycle: ${ text }": [
+        "Cycle de facturation : ${ text }"
+      ],
       "Calendar side panel": [
         "Panneau latéral du calendrier"
       ],
@@ -3452,9 +3466,6 @@
       ],
       "Folder \"${ link.name }\" was deleted during download": [
         "Le dossier « ${ link.name } » a été supprimé pendant le téléchargement."
-      ],
-      "Folder contents will merge into a single folder": [
-        "Les contenus des dossiers seront fusionnés dans un seul dossier."
       ],
       "Folder is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "Il manque la signature du dossier. Nous n'avons pas pu vérifier que ${ emailAddress } a chargé le fichier ${ fileName }."
@@ -3904,9 +3915,6 @@
         "Cela supprimera le lien et l'accès à votre fichier ou dossier pour toute personne ayant le lien.",
         "Cela supprimera les liens et l'accès à vos fichiers ou dossiers pour toute personne ayant les liens."
       ],
-      "This will overwrite the existing folder": [
-        "Cela écrasera et remplacera le dossier existant."
-      ],
       "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on the device won’t be affected.": [
         "Cela supprimera l'appareil synchronisé ${ deviceName } de ${ DRIVE_APP_NAME }. Les fichiers locaux sur l'appareil ne seront pas affectés."
       ],
@@ -3918,6 +3926,9 @@
       ],
       "This will upload a new version of the file": [
         "Cela importera une nouvelle version du fichier."
+      ],
+      "This will upload a new version of the folder": [
+        "Cela importera une nouvelle version du dossier."
       ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
         "Pour que la recherche soit réellement privée, ${ DRIVE_APP_NAME } doit indexer vos fichiers localement."
@@ -4473,9 +4484,6 @@
       "Manage categories": [
         "Gérer les catégories"
       ],
-      "Merge a folder": [
-        "Fusionner dans un dossier"
-      ],
       "Modified": [
         "Modifié"
       ],
@@ -4825,7 +4833,7 @@
         "Domaines de messagerie personnalisés"
       ],
       "Hide-my-email aliases": [
-        "Alias Hide-my-email"
+        "Alias « hide-my-email »"
       ],
       "Schedule messages at any time": [
         "Planifiez l'envoi de messages quand vous le voulez"
@@ -5245,6 +5253,11 @@
         "Nom"
       ]
     },
+    "Platform": {
+      "Windows": [
+        "Windows"
+      ]
+    },
     "Progress bar description": {
       "${ contactsExported.length } out of ${ countContacts } contact successfully exported.": [
         "${ contactsExported.length } contact sur ${ countContacts } a été exporté.",
@@ -5396,9 +5409,6 @@
       "Highest VPN speed": [
         "Vitesse VPN maximale"
       ],
-      "Premium Drive": [
-        "Drive premium"
-      ],
       "Premium early access": [
         "Accès premium en avant-première"
       ],
@@ -5548,13 +5558,13 @@
         "Accédez au contenu des services de streaming, dont Netflix, Amazon Prime Video, Canal+, Disney+, France.tv, TF1… où que vous soyez."
       ],
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
-        "Tous nos services premium au plus haut niveau : 100 adresses e-mail, la prise en charge de 10 domaines personnalisés, un nombre illimité d'alias Hide-my-email, le partage de calendriers, le stockage cloud et le partage de fichiers chiffrés…"
+        "Tous nos services premium au plus haut niveau : 100 adresses e-mail, la prise en charge de 10 domaines personnalisés, un nombre illimité d'alias « hide-my-email », le partage de calendriers, le stockage cloud et le partage de fichiers chiffrés…"
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Comprend la prise en charge d'un domaine de messagerie personnalisé, de 10 adresses e-mail, de 10 alias Hide-my-email, du partage de calendrier…"
+        "Comprend la prise en charge d'un domaine de messagerie personnalisé, de 10 adresses e-mail, de 10 alias « hide-my-email », du partage de calendrier…"
       ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Comprend la prise en charge de 3 domaines de messagerie personnalisés, de 15 adresses e-mail, d'un nombre illimité d'alias Hide-my-email, du partage de calendrier…"
+        "Comprend la prise en charge de 3 domaines de messagerie personnalisés, de 15 adresses e-mail, d'un nombre illimité d'alias « hide-my-email », du partage de calendrier…"
       ],
       "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
         "Idéal pour les familles ou les petites équipes, chacun pouvant disposer de sa propre boite de réception et de ses propres alias. Nécessite un domaine personnalisé."
@@ -5799,6 +5809,9 @@
       ],
       "Beta Access": [
         "Accès à la version bêta"
+      ],
+      "Billing cycle": [
+        "Cycle de facturation"
       ],
       "Browser might run out of memory": [
         "Le navigateur est peut-être à court de mémoire."

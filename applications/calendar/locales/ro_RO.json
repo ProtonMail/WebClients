@@ -725,6 +725,17 @@
         "Dacă întâmpinați probleme, puteți dezactiva întotdeauna accesul la Beta."
       ]
     },
+    "Billing cycle option": {
+      "Annually": [
+        "Anual"
+      ],
+      "Monthly": [
+        "Lunar"
+      ],
+      "Two-year": [
+        "Bianual"
+      ]
+    },
     "Bug category": {
       "Application problem": [
         "Problemă aplicație"
@@ -3528,6 +3539,9 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Înainte de a solicita un cod nou de verificare, verificați-vă folderul de mesaje nedorite și verificați dacă ${ strong } este adresa corectă."
       ],
+      "Billing cycle: ${ text }": [
+        "Ciclu facturare: ${ text }"
+      ],
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
         "Partajând toate detaliile evenimentului din acest calendar, sunteți de acord să permiteți accesul ${ BRAND_NAME } la aceste informații criptate din calendar."
       ],
@@ -5556,9 +5570,6 @@
       "Highest VPN speed": [
         "Viteză VPN maximă"
       ],
-      "Premium Drive": [
-        "Drive premium"
-      ],
       "Premium early access": [
         "Acces timpuriu premium"
       ],
@@ -6077,6 +6088,9 @@
       ],
       "Beta Access": [
         "Acces la Beta"
+      ],
+      "Billing cycle": [
+        "Ciclu de facturare"
       ],
       "Calendar": [
         "Calendar"
