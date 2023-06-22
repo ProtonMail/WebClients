@@ -10,6 +10,7 @@ import PendingInvitationTopBanner from './PendingInvitationTopBanner';
 import ReferralTopBanner from './ReferralTopBanner';
 import StorageLimitTopBanner from './StorageLimitTopBanner';
 import SubUserTopBanner from './SubUserTopBanner';
+import SubscriptionEndsBanner from './SubscriptionEndsBanner';
 import TimeOutOfSyncTopBanner from './TimeOutOfSyncTopBanner';
 
 interface Props {
@@ -29,6 +30,7 @@ const TopBanners = ({ children, app }: Props) => {
             <DesktopNotificationTopBanner />
             <ReferralTopBanner />
             <PendingInvitationTopBanner />
+            <SubscriptionEndsBanner />
             {children}
         </>
     );

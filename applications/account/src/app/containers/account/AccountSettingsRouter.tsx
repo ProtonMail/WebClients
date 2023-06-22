@@ -12,6 +12,7 @@ import {
     CreditsSection,
     DataRecoverySection,
     DeleteSection,
+    DowngradeSubscriptionSection,
     EmailSubscriptionSection,
     FamilyPlanSection,
     GiftCodeSection,
@@ -75,6 +76,7 @@ const AccountSettingsRouter = ({
                             <InvoicesSection />
                             <EmailSubscriptionSection />
                             <CancelSubscriptionSection />
+                            <DowngradeSubscriptionSection />
                         </PrivateMainSettingsArea>
                     </SubscriptionModalProvider>
                 </Route>
