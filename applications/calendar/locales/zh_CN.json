@@ -715,6 +715,17 @@
         "如果使用过程中遇到问题，您可以随时关闭该选项。"
       ]
     },
+    "Billing cycle option": {
+      "Annually": [
+        "按年付费"
+      ],
+      "Monthly": [
+        "月费"
+      ],
+      "Two-year": [
+        "两年付费"
+      ]
+    },
     "Bug category": {
       "Application problem": [
         "应用程序问题"
@@ -2744,6 +2755,9 @@
       ]
     },
     "familyOffer_2023:Action": {
+      "Decline invitation": [
+        "拒绝邀请"
+      ],
       "Got it": [
         "知道了"
       ],
@@ -3383,6 +3397,9 @@
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "重新接收验证码前，请先检查垃圾邮件文件夹，并确认邮箱地址 ${ strong } 是否正确。"
+      ],
+      "Billing cycle: ${ text }": [
+        "计费周期：${ text }"
       ],
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
         "分享此日历的全部事件详情，即表示您同意授权 ${ BRAND_NAME } 访问此日历的加密信息。"
@@ -5268,9 +5285,6 @@
       "Highest VPN speed": [
         "VPN 速度最快"
       ],
-      "Premium Drive": [
-        "高级云盘账户"
-      ],
       "Premium early access": [
         "抢先体验高级功能"
       ],
@@ -5748,6 +5762,9 @@
       ],
       "Beta Access": [
         "测试版功能"
+      ],
+      "Billing cycle": [
+        "计费周期"
       ],
       "Calendar": [
         "日历"

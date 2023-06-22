@@ -481,6 +481,9 @@
       "Hide messages": [
         "Скрыть сообщения"
       ],
+      "hide-my-email aliases": [
+        "псевдонимы hide-my-email"
+      ],
       "I have a question": [
         "У меня есть вопрос"
       ],
@@ -1323,6 +1326,17 @@
         "Если вы столкнетесь с проблемами, то всегда можете отключить доступ к Beta-функциям."
       ]
     },
+    "Billing cycle option": {
+      "Annually": [
+        "Ежегодно"
+      ],
+      "Monthly": [
+        "Ежемесячно"
+      ],
+      "Two-year": [
+        "Каждые 2 года"
+      ]
+    },
     "Bug category": {
       "Application problem": [
         "Проблема в приложении"
@@ -1843,6 +1857,41 @@
       ],
       "white": [
         "белый"
+      ]
+    },
+    "Commander action": {
+      "Create a new folder": [
+        "Создать новую папку"
+      ],
+      "Create a new label": [
+        "Создать новый ярлык"
+      ],
+      "Go to Archive": [
+        "Перейти в Архив"
+      ],
+      "Go to Drafts": [
+        "Перейти в Черновики"
+      ],
+      "Go to Inbox": [
+        "Перейти во Входящие"
+      ],
+      "Go to Sent": [
+        "Перейти в Отправленные"
+      ],
+      "Go to Spam": [
+        "Перейти в Спам"
+      ],
+      "Go to Starred": [
+        "Перейти в Отмеченные звёздами"
+      ],
+      "Go to Trash": [
+        "Перейти в Корзину"
+      ],
+      "New message": [
+        "Новое сообщение"
+      ],
+      "Search": [
+        "Поиск"
       ]
     },
     "Composer email icon": {
@@ -3808,6 +3857,9 @@
       ]
     },
     "familyOffer_2023:Action": {
+      "Decline invitation": [
+        "Отклонить приглашение"
+      ],
       "Got it": [
         "ОК"
       ],
@@ -3934,6 +3986,9 @@
     "familyOffer_2023:Tooltip": {
       "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
         "Включает 2700 серверов в более чем 65 странах с возможностью подключения до 10 устройств, доступ к стриминговым платформам со всего мира, блокировщик рекламы и вредоносного ПО и другие преимущества."
+      ],
+      "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
+        "Включает поддержку 3 своих доменов, 90 адресов электронной почты, неограниченного количества псевдонимов hide-my-email, совместный доступ к календарю и другое."
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Защитите свои материалы при помощи зашифрованного облачного хранилища. Используйте автоматическую синхронизацию, зашифрованный обмен файлами и многое другое."
@@ -4113,9 +4168,34 @@
         "По умолчанию"
       ]
     },
+    "Font face option": {
+      "System default": [
+        "Системный по умолчанию"
+      ],
+      "Theme default": [
+        "Из темы по умолчанию"
+      ]
+    },
     "Font Size Default": {
       "Default": [
         "По умолчанию"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Большой"
+      ],
+      "Medium (recommended)": [
+        "Средний (Рекомендуется)"
+      ],
+      "Small": [
+        "Маленький"
+      ],
+      "Very large": [
+        "Очень большой"
+      ],
+      "Very small": [
+        "Очень маленький"
       ]
     },
     "forwardmessage": {
@@ -4929,6 +5009,9 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Прежде чем запросить новый код подтверждения, проверьте свою папку спама и убедитесь, что ${ strong } - это корректный адрес."
       ],
+      "Billing cycle: ${ text }": [
+        "Платежный цикл: ${ text }"
+      ],
       "Body: ": [
         "Тело сообщения: "
       ],
@@ -5192,6 +5275,9 @@
       ],
       "Hide original message": [
         "Скрыть исходное сообщение"
+      ],
+      "How hide-my-email aliases works": [
+        "Как работают псевдонимы hide-my-email"
       ],
       "I'm sending this message to a non-${ MAIL_APP_NAME } user.": [
         "Я отправляю это сообщение пользователю, не являющемуся пользователем ${ MAIL_APP_NAME }."
@@ -5589,6 +5675,9 @@
       "Show original message": [
         "Показать исходное сообщение"
       ],
+      "SimpleLogin is a ${ BRAND_NAME } service, and your ${ BRAND_NAME_TWO } Account includes hide-my-email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
+        "SimpleLogin является услугой сервиса ${ BRAND_NAME }, и ваш аккаунт ${ BRAND_NAME_TWO } включает в себя псевдонимы hide-my-email. Чтобы начать маскировать свой адрес электронной почты, зайдите в SimpleLogin и создайте свой первый псевдоним."
+      ],
       "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
         "SimpleLogin предоставляет простой способ создания логинов на ненадежных сторонних сайтах, где вы не хотите раскрывать свой реальный адрес электронной почты."
       ],
@@ -5657,6 +5746,9 @@
       ],
       "There has been an error with the signature used to verify the contact details, which may be the result of a password reset.": [
         "Произошла ошибка с подписью, использованной для проверки контактных данных, это может быть вызвано сбросом пароля."
+      ],
+      "They can't spam you if they don't know your email address. Protect your inbox with hide-my-email aliases.": [
+        "Они не могут отправить вам спам, если не знают ваш адрес электронной почты. Защитите свой почтовый ящик псевдонимом hide-my-email."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Этот аккаунт был отключен из-за возможного нарушения политики."
@@ -5894,6 +5986,9 @@
       ],
       "When do you want your message to self-destruct?": [
         "Когда вы хотите, чтобы ваше сообщение самоуничтожилось?"
+      ],
+      "When giving out your email, use a unique, disposable hide-my-email alias instead of your real email address.": [
+        "Сообщая свой адрес электронной почты, используйте уникальный одноразовый псевдоним hide-my-email вместо своего настоящего адреса электронной почты."
       ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "Когда вы сделали активными доверенные ключи для ${ senderName }, эти открытые ключи были добавлены к контактным данным."
@@ -6251,6 +6346,9 @@
       ],
       "New message": [
         "Новое сообщение"
+      ],
+      "Open command panel": [
+        "Открыть панель команд"
       ],
       "Open next message": [
         "Открыть следующее сообщение"
@@ -6728,6 +6826,9 @@
       "Street address": [
         "Адрес"
       ],
+      "Synchronize with system": [
+        "Синхронизировать с системой"
+      ],
       "System information": [
         "Сведения о системе"
       ],
@@ -6763,6 +6864,9 @@
       ],
       "Toolbar": [
         "Панель инструментов"
+      ],
+      "Type a command...": [
+        "Введите команду..."
       ],
       "Undisclosed Recipients": [
         "Скрытые получатели"
@@ -7368,6 +7472,9 @@
       "Custom email domains": [
         "Пользовательские домены электронной почты"
       ],
+      "Hide-my-email aliases": [
+        "Псевдонимы hide-my-email"
+      ],
       "Schedule messages at any time": [
         "Планируйте сообщения в любое время"
       ],
@@ -7468,6 +7575,9 @@
       ],
       "Discover all ${ BRAND_NAME } services": [
         "Узнайте обо всех службах ${ BRAND_NAME }"
+      ],
+      "More theming options are available in your account Settings > Appearance.": [
+        "Больше вариантов оформления доступно в Настройках аккаунта > Внешний вид."
       ],
       "Select a theme": [
         "Выберите тему"
@@ -7644,6 +7754,9 @@
       ],
       "Text": [
         "Текст"
+      ],
+      "Type a command…": [
+        "Введите команду…"
       ],
       "Type text or keyword": [
         "Введите текст или ключевое слово"
@@ -8030,9 +8143,6 @@
       "Highest VPN speed": [
         "Высочайшая скорость VPN"
       ],
-      "Premium Drive": [
-        "Платная версия Drive"
-      ],
       "Premium early access": [
         "Ранний доступ"
       ],
@@ -8182,6 +8292,15 @@
       ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
         "Наслаждайтесь контентом на стриминговых платформах, таких как Netflix, Disney+ и Amazon Prime Video, из любой точки мира."
+      ],
+      "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
+        "Все наших платные сервисы с максимальными лимитами: 100 адресов электронной почты, поддержка 10 своих доменов и неограниченного числа псевдонимов hide-my-email, совместный доступ к календарю, зашифрованное облачное хранилище и обмен файлами, и другое."
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Включает поддержку 1 своего домена, 10 адресов электронной почты, 10 псевдонимов hide-my-email, совместный доступ к календарю и другие преимущества."
+      ],
+      "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Включает поддержку 3 своих доменов, 15 адресов электронной почты, неограниченного количества псевдонимов hide-my-email, совместный доступ к календарю и другие преимущества."
       ],
       "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
         "Идеально подходит семьям и небольшим командам. У каждого участника будут свои почтовый ящик и алиасы. Необходимо иметь свой домен."
@@ -8682,6 +8801,9 @@
         "${ unreads } непрочитанных сообщений",
         "${ unreads } непрочитанных сообщений"
       ],
+      "(active)": [
+        "(активна)"
+      ],
       "Account suspended": [
         "Аккаунт временно заблокирован"
       ],
@@ -8723,6 +8845,9 @@
       ],
       "Beta Access": [
         "Бета-доступ"
+      ],
+      "Billing cycle": [
+        "Период оплаты"
       ],
       "Blind Carbon Copy": [
         "Скрытая копия"
@@ -8798,6 +8923,9 @@
       ],
       "Customize your mail import": [
         "Настройка импорта вашей почты"
+      ],
+      "Day theme": [
+        "Дневная тема"
       ],
       "Decryption error": [
         "Ошибка расшифровки"
@@ -9038,6 +9166,9 @@
       ],
       "Next message": [
         "Cледующее сообщение"
+      ],
+      "Night theme": [
+        "Ночная тема"
       ],
       "No attachment found": [
         "Вложение не найдено"
@@ -9297,6 +9428,9 @@
       ],
       "The import will start with the most recent messages.": [
         "Импорт начнётся с самых последних сообщений."
+      ],
+      "The selected theme will be active when your system is set to \"light mode\"": [
+        "Выбранная тема станет доступной, когда на системе выбрано \"светлое оформление\""
       ],
       "This feature is only available for paid users": [
         "Эта функция доступна только пользователям с платными тарифами"

@@ -786,6 +786,17 @@
         "Пры ўзнікненні праблем, вы заўсёды можаце адключыць бэта-доступ."
       ]
     },
+    "Billing cycle option": {
+      "Annually": [
+        "Штогод"
+      ],
+      "Monthly": [
+        "Штомесяц"
+      ],
+      "Two-year": [
+        "Кожныя два гады"
+      ]
+    },
     "Bug category": {
       "Application problem": [
         "Праблема з праграмай"
@@ -2175,9 +2186,6 @@
       "The original folder not found": [
         "Арыгінальная папка не знойдзена"
       ],
-      "The original folder or file not found": [
-        "Арыгінальная папка або файл не знойдзены"
-      ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "У вашым знешнім уліковым запісе занадта шмат папак. Наладзьце імпартаванне, каб выдаліць некаторыя папкі."
       ],
@@ -3335,6 +3343,9 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Перад запытам новага праверачнага кода праверце папку са спамам, а таксама ці правільна азначаны адрас ${ strong }."
       ],
+      "Billing cycle: ${ text }": [
+        "Перыяд аплаты: ${ text }"
+      ],
       "Calendar side panel": [
         "Бакавая панэль календара"
       ],
@@ -3562,9 +3573,6 @@
       ],
       "Folder \"${ link.name }\" was deleted during download": [
         "Папка \"${ link.name }\" была выдалена падчас спампоўвання"
-      ],
-      "Folder contents will merge into a single folder": [
-        "Змесціва папкі будзе аб'яднана ў адну папку"
       ],
       "Folder is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "Папка не мае подпісу. Мы не можам праверыць, што ${ emailAddress } запампаваў ${ fileName }."
@@ -4021,9 +4029,6 @@
         "Гэта выдаліць спасылкі і закрые доступ да вашых файлаў або папак для ўсіх у каго яны ёсць.",
         "Гэта выдаліць спасылкі і закрые доступ да вашых файлаў або папак для ўсіх у каго яны ёсць.",
         "Гэта выдаліць спасылкі і закрые доступ да вашых файлаў або папак для ўсіх у каго яны ёсць."
-      ],
-      "This will overwrite the existing folder": [
-        "Гэта перазапіша існуючую папку"
       ],
       "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on the device won’t be affected.": [
         "Гэта выдаліць з ${ DRIVE_APP_NAME } сінхранізаваную прыладу з назвай ${ deviceName }. Лакальныя файлы застануцца не змененымі."
@@ -4596,9 +4601,6 @@
       ],
       "Manage categories": [
         "Кіраванне катэгорыямі"
-      ],
-      "Merge a folder": [
-        "Аб'яднаць папку"
       ],
       "Modified": [
         "Зменена"
@@ -5584,9 +5586,6 @@
       "Highest VPN speed": [
         "Найвышэйшая хуткасць VPN"
       ],
-      "Premium Drive": [
-        "Прэміяльныя функцыі Drive"
-      ],
       "Premium early access": [
         "Ранні доступ да новых функцый"
       ],
@@ -6017,6 +6016,9 @@
       ],
       "Beta Access": [
         "Бэта-доступ"
+      ],
+      "Billing cycle": [
+        "Перыяд аплаты"
       ],
       "Browser might run out of memory": [
         "Браўзеру магчыма не хапае памяці"

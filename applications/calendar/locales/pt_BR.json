@@ -267,7 +267,7 @@
         "Eu tenho uma dúvida"
       ],
       "Image could not be loaded with tracker protection.": [
-        "A imagem não pôde ser carregada devido à proteção de rastreamento."
+        "Não foi possível carregar a imagem devido à proteção de rastreamento."
       ],
       "Image will be loaded without a proxy": [
         "A imagem será carregada sem um proxy."
@@ -723,6 +723,17 @@
         "Se você tiver problemas, você pode sempre desativar o Acesso beta."
       ]
     },
+    "Billing cycle option": {
+      "Annually": [
+        "Anualmente"
+      ],
+      "Monthly": [
+        "Mensalmente"
+      ],
+      "Two-year": [
+        "Dois anos"
+      ]
+    },
     "Bug category": {
       "Application problem": [
         "Problema no aplicativo"
@@ -869,10 +880,10 @@
         "Gerenciar membros"
       ],
       "Unable to create more calendar links": [
-        "Incapaz de criar mais links de calendários"
+        "Não é possível criar mais links de calendários"
       ],
       "Unable to share this calendar with more ${ BRAND_NAME } users": [
-        "Incapaz de compartilhar esse calendário com mais usuários do ${ BRAND_NAME }"
+        "Não é possível compartilhar esse calendário com mais usuários do ${ BRAND_NAME }"
       ],
       "You have reached the maximum of ${ MAX_CALENDAR_MEMBERS } member for this calendar.\nTo share this calendar with more ${ BRAND_NAME } accounts, remove some members.": [
         "Você atingiu o máximo de ${ MAX_CALENDAR_MEMBERS } membro para este calendário.\nPara compartilhar este calendário com mais contas do ${ BRAND_NAME }, remova alguns membros.",
@@ -914,7 +925,7 @@
     },
     "Calendar subscription not synced error": {
       "Calendar could not be decrypted": [
-        "O calendário não pôde ser descriptografado"
+        "Não foi possível descriptografar o calendário."
       ],
       "Calendar is syncing": [
         "Calendário está sincronizando"
@@ -946,7 +957,7 @@
         "O link do calendário não está acessível para fora do ecossistema do provedor do calendário."
       ],
       "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
-        "O link do calendário está temporariamente inacessível. Por favor, verifique se o link do provedor do calendário ainda é válido."
+        "O link do calendário está temporariamente inacessível. Verifique se o link do provedor do calendário ainda é válido."
       ],
       "More than 12 hours passed since last update — ${ CALENDAR_APP_NAME } will try to update the calendar in a few hours.": [
         "Mais de 12 horas se passaram desde a última atualização — O ${ CALENDAR_APP_NAME } vai tentar atualizar o calendário em algumas horas."
@@ -2008,7 +2019,7 @@
         "Arraste e solte para classificar a prioridade de mesclagem dos contatos. Desmarque os contatos que você não deseja mesclar."
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
-        "Você pode importar eventos no formato iCal (arquivo ICS). O arquivo deve ter o tamanho máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } e ter até ${ MAX_IMPORT_EVENTS_STRING } eventos. Se o seu arquivo for maior, por favor divida-o em arquivos menores."
+        "Você pode importar eventos no formato iCal (arquivo ICS). O arquivo deve ter o tamanho máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } e ter até ${ MAX_IMPORT_EVENTS_STRING } eventos. Se o seu arquivo for maior, divida-o em arquivos menores."
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Você pode marcar para exclusão os contatos que não quer mesclar nem manter. A exclusão somente ocorrerá após o botão de mesclagem ser clicado"
@@ -2192,13 +2203,13 @@
         "Não é possível exportar este contato."
       ],
       "Contact could not be saved": [
-        "O contato não pôde ser salvo"
+        "Não foi possível salvar o contato."
       ],
       "Contact name is too long": [
         "Nome do contato é muito longo"
       ],
       "Contact signature could not be verified": [
-        "A assinatura do contato não pôde ser verificada"
+        "Não foi possível verificar a assinatura do contato."
       ],
       "Contact signature not verified": [
         "Assinatura do contato não foi verificada"
@@ -2215,7 +2226,7 @@
         "Desmarque ao menos ${ calendarsToFixCount } calendários ou"
       ],
       "Domain not available, try again later": [
-        "Domínio indisponível, tente novamente mais tarde"
+        "Domínio indisponível. Tente novamente mais tarde."
       ],
       "Email address disabled": [
         "Endereço de e-mail desativado"
@@ -2257,7 +2268,7 @@
         "Credenciais de início de sessão inválidos. Tente novamente."
       ],
       "Incorrect mailbox password. Please try again.": [
-        "Senha da caixa de correio incorreta. Por favor, tente novamente."
+        "Senha da caixa de correio incorreta. Tente novamente."
       ],
       "Interval cannot be empty": [
         "O intervalo não pode estar vazio"
@@ -2341,7 +2352,7 @@
         "As senhas não correspondem"
       ],
       "Please create an address first.": [
-        "Por favor, primeiro crie um endereço de e-mail."
+        "Primeiro crie um endereço de e-mail."
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Corrija o conflito em destaque para prosseguir.",
@@ -2379,28 +2390,28 @@
         "Falha na verificação da assinatura"
       ],
       "Some contacts could not be deleted": [
-        "Alguns contatos não puderam ser excluídos"
+        "Não foi possível excluir alguns contatos."
       ],
       "Some groups could not be deleted": [
-        "Alguns grupos não puderam ser excluídos"
+        "Não foi possível excluir alguns grupos."
       ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
-        "Alguns dos seus nomes de pastas estão indisponíveis. Por favor, personalize a importação para editar esses nomes."
+        "Alguns dos seus nomes de pastas estão indisponíveis. Personalize a importação para editar esses nomes."
       ],
       "Some of your folder names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
-        "Alguns dos seus nomes de pastas excederam o limite máximo de caracteres do ${ MAIL_APP_NAME }. Por favor, personalize a importação para editar esses nomes."
+        "Alguns dos seus nomes de pastas excederam o limite máximo de caracteres do ${ MAIL_APP_NAME }. Personalize a importação para editar esses nomes."
       ],
       "Some of your label names are reserved. Please customize the import to edit these names.": [
-        "Alguns nomes de marcadores estão reservados. Por favor, personalize a importação para editar esses nomes."
+        "Alguns nomes de marcadores estão reservados. Personalize a importação para editar esses nomes."
       ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
-        "Alguns nomes de marcadores estão indisponíveis. Por favor, personalize a importação para editar esses nomes."
+        "Alguns nomes de marcadores estão indisponíveis. Personalize a importação para editar esses nomes."
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
-        "Alguns dos seus nomes de marcadores excederam o limite máximo de caracteres do ${ MAIL_APP_NAME }. Por favor, personalize a importação para editar esses nomes."
+        "Alguns dos seus nomes de marcadores excederam o limite máximo de caracteres do ${ MAIL_APP_NAME }. Personalize a importação para editar esses nomes."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Algo deu errado. Por favor, ${ refresh } a página para continuar. Se você continuar vendo esta mensagem de erro, entre em contato com nossa ${ supportTeam }."
+        "Ocorreu um erro. ${ refresh } a página para continuar. Se você continuar vendo esta mensagem de erro, entre em contato com nossa ${ supportTeam }."
       ],
       "Start time must be before end time": [
         "A hora de início deve ser antes da hora de término"
@@ -2412,22 +2423,22 @@
         "Os endereços de e-mail não são iguais"
       ],
       "The folder name is invalid. Please choose a different name.": [
-        "O nome da pasta é inválido. Por favor, escolha um nome diferente."
+        "O nome da pasta é inválido. Escolha um nome diferente."
       ],
       "The folder name is too long. Please choose a different name.": [
-        "O nome da pasta é muito longo. Por favor, escolha um nome diferente."
+        "O nome da pasta é muito longo. Escolha um nome diferente."
       ],
       "The label name is invalid. Please choose a different name.": [
-        "O nome do marcador é inválido. Por favor, escolha um nome diferente."
+        "O nome do marcador é inválido. Escolha um nome diferente."
       ],
       "The label name is too long. Please choose a different name.": [
-        "O nome do marcador é muito longo. Por favor, escolha um nome diferente."
+        "O nome do marcador é muito longo. Escolha um nome diferente."
       ],
       "The sending key is not valid": [
         "A chave de envio não é válida"
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
-        "Existem muitas pastas em sua conta externa. Por favor, personalize a importação para excluir algumas pastas."
+        "Existem muitas pastas em sua conta externa. Personalize a importação para excluir algumas pastas."
       ],
       "There was an error when exporting the contacts vCards": [
         "Houve um erro ao exportar os vCards dos contatos"
@@ -2442,10 +2453,10 @@
         "Este campo exige um mínimo de ${ minimumLength } caracteres."
       ],
       "This folder name is not available. Please choose a different name.": [
-        "Este nome para a pasta não está disponível. Por favor, escolha outro nome."
+        "Este nome para a pasta não está disponível. Escolha outro nome."
       ],
       "This label name is not available. Please choose a different name.": [
-        "Este nome de marcador não está disponível. Por favor, escolha outro nome."
+        "Este nome de marcador não está disponível. Escolha outro nome."
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Essa mensagem pode conter alguns links de URL que podem não serem abertos corretamente pelo seu navegador."
@@ -2513,7 +2524,7 @@
         "O arquivo ${ formattedFilename } contém mais de ${ MAX_IMPORT_EVENTS_STRING } eventos."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
-        "Seu arquivo ${ formattedFilename } tem um método inválido e não pode ser importado."
+        "Seu arquivo ${ formattedFilename } tem um método inválido e não é possível importá-lo."
       ],
       "Your file ${ formattedFilename } has no events to be imported.": [
         "O arquivo ${ formattedFilename } não tem eventos a serem importados."
@@ -2558,7 +2569,7 @@
     },
     "Error importing event": {
       "Bad format. Component cannot be read.": [
-        "Formato incorreto. O componente não pode ser lido."
+        "Formato incorreto. Não é possível ler o componente."
       ],
       "Calendar": [
         "Calendário"
@@ -2627,7 +2638,7 @@
         "Notificação fora dos limites"
       ],
       "Original recurring event could not be found": [
-        "O evento recorrente original não pôde ser encontrado"
+        "Não foi possível encontrar o evento recorrente original."
       ],
       "Recurring event has no occurrences": [
         "Evento recorrente sem datas"
@@ -2710,10 +2721,10 @@
     },
     "Event invitation error": {
       "Attached ICS file could not be decrypted": [
-        "Arquivo ICS anexado não pôde ser descriptografado"
+        "Não foi possível descriptografar o arquivo ICS anexado."
       ],
       "Attached ICS file could not be read": [
-        "Arquivo ICS anexado não pôde ser lido"
+        "Não foi possível ler o arquivo ICS anexado."
       ],
       "Invalid invitation": [
         "Convite inválido"
@@ -2746,7 +2757,7 @@
         "Não foi possível atualizar o evento no seu calendário"
       ],
       "Your answer was sent, but the event could not be added to your calendar": [
-        "Sua resposta foi enviada, mas o evento não pôde ser adicionado ao seu calendário"
+        "Sua resposta foi enviada, mas não foi possível adicionar o evento ao seu calendário."
       ],
       "Your answer was sent, but the event could not be updated in your calendar": [
         "Sua resposta foi enviada, mas o evento não pôde ser atualizado em seu calendário"
@@ -2869,7 +2880,7 @@
         "Você foi convidado a participar de ${ bannerOrganization }. ${ viewInviteButton }"
       ],
       "You have successfully joined the Family plan": [
-        "Você entrou no plano familiar com sucesso"
+        "Você entrou no plano familiar"
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "Você foi convidado a vincular sua Conta ${ BRAND_NAME } a este plano de grupo e aproveitar juntos de todos os recursos premium de ${ BRAND_NAME_TWO }."
@@ -2936,7 +2947,7 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Ocorreu um erro ao autenticar com sua chave de segurança. Por favor, tente novamente."
+        "Ocorreu um erro ao autenticar com sua chave de segurança. Tente novamente."
       ]
     },
     "fido2: Info": {
@@ -3072,8 +3083,8 @@
         "${ totalImported }/${ totalToImport } eventos criptografados e adicionados ao seu calendário"
       ],
       "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
-        "Um erro ocorreu durante a encriptação e inclusão de seu evento. ${ totalImported } de ${ totalToImport } evento importado com sucesso.",
-        "Um erro ocorreu durante a encriptação e inclusão de seu evento. ${ totalImported } de ${ totalToImport } eventos importados com sucesso."
+        "Um erro ocorreu durante a encriptação e inclusão de seu evento. ${ totalImported } de ${ totalToImport } evento importado.",
+        "Um erro ocorreu durante a encriptação e inclusão de seu evento. ${ totalImported } de ${ totalToImport } eventos importados."
       ],
       "An error occurred while encrypting and adding your event. No event could be imported.": [
         "Ocorreu um erro ao criptografar e adicionar seu evento. Nenhum evento pôde ser importado."
@@ -3088,13 +3099,13 @@
         "Criptografando e adicionando eventos ao seu calendário: ${ totalImported }/${ totalToImport }"
       ],
       "Event successfully imported. The imported event will now appear in your calendar.": [
-        "Evento importado com sucesso. O evento importado agora aparecerá em sua agenda."
+        "Evento importado. O evento importado agora aparecerá em sua agenda."
       ],
       "Events successfully imported. The imported events will now appear in your calendar.": [
-        "Eventos importados com sucesso. Os eventos importados agora aparecerão em sua agenda."
+        "Eventos importados. Os eventos importados agora aparecerão em sua agenda."
       ],
       "Please don't close the tab before the importing process is finished.": [
-        "Por favor, não feche a aba antes que o processo de importação termine."
+        "Não feche a aba antes que o processo de importação termine."
       ]
     },
     "Import calendar warning": {
@@ -3130,16 +3141,16 @@
         "Ocorreu um erro ao criptografar e adicionar seu contato. Nenhum contato pôde ser importado."
       ],
       "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
-        "Ocorreu um erro ao criptografar e adicionar seus contatos. ${ totalImported } de ${ totalToImport } contatos importados com sucesso."
+        "Ocorreu um erro ao criptografar e adicionar seus contatos. ${ totalImported } de ${ totalToImport } contatos importados."
       ],
       "An error occurred while encrypting and adding your contacts. No contact could be imported.": [
         "Ocorreu um erro ao criptografar e adicionar seus contatos. Nenhum contato pôde ser importado."
       ],
       "Contact successfully imported. The imported contact will now appear in your contact list.": [
-        "Contato importado com sucesso. O contato importado aparecerá em sua lista de contatos."
+        "Contato importado. O contato importado aparecerá em sua lista de contatos."
       ],
       "Contacts successfully imported. The imported contacts will now appear in your contact list.": [
-        "Contatos importados com sucesso. Os contatos importados aparecerão em sua lista de contatos."
+        "Contatos importados. Os contatos importados aparecerão em sua lista de contatos."
       ]
     },
     "Import contact error": {
@@ -3171,16 +3182,16 @@
         "A ${ BRAND_NAME } não pode se conectar à sua conta. Certifique-se de que:"
       ],
       "${ BRAND_NAME } can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
-        "A ${ BRAND_NAME } não pode se conectar à sua conta externa. Por favor, certifique-se de que o endereço do servidor de e-mail e o número da porta estejam corretos."
+        "A ${ BRAND_NAME } não pode se conectar à sua conta externa. Certifique-se de que o endereço do servidor de e-mail e o número da porta estejam corretos."
       ],
       "${ BRAND_NAME } can't connect to your external account. Please make sure that:": [
         "A ${ BRAND_NAME } não pode se conectar à sua conta externa. Certifique-se de que:"
       ],
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
-        "A ${ BRAND_NAME } não pode se conectar à sua conta do Yahoo. Por favor, certifique-se de que o endereço do servidor de e-mail e o número da porta estejam corretos."
+        "A ${ BRAND_NAME } não pode se conectar à sua conta do Yahoo. Certifique-se de que o endereço do servidor de e-mail e o número da porta estejam corretos."
       ],
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
-        "A ${ BRAND_NAME } não pode se conectar à sua conta do Yahoo. Por favor, certifique-se de que:"
+        "A ${ BRAND_NAME } não pode se conectar à sua conta do Yahoo. Certifique-se de que:"
       ],
       "2-step verification is enabled in your external account.": [
         "A verificação em duas etapas está ativada em sua conta externa."
@@ -3408,8 +3419,8 @@
         "${ selectedFoldersCountLocalized } marcadores selecionados"
       ],
       "${ updated } contact updated successfully.": [
-        "${ updated } contato atualizado com sucesso.",
-        "${ updated } contatos atualizados com sucesso."
+        "${ updated } contato atualizado.",
+        "${ updated } contatos atualizados."
       ],
       "(${ memberCount } member)": [
         "(${ memberCount } membro)",
@@ -3422,10 +3433,10 @@
         "Um e-mail de cancelamento será enviado aos participantes do evento. Você gostaria de excluir todos os eventos desta série?"
       ],
       "A cancellation email will be sent to the event participants. Would you like to delete this event?": [
-        "Um e-mail de cancelamento será enviado aos participantes do evento. Você gostaria de deletar este evento?"
+        "Um e-mail de cancelamento será enviado aos participantes do evento. Você gostaria de excluir este evento?"
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
-        "Um número de telefone apenas pode ser utilizado para verificar uma conta ${ BRAND_NAME }"
+        "Um número de telefone apenas pode ser usado para verificar uma conta ${ BRAND_NAME }"
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "O acesso à conta foi restringido devido a faturas não pagas. Entre em contato com o seu administrador."
@@ -3470,6 +3481,9 @@
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Antes de pedir um novo código de verificação, verifique sua pasta de spam e verifique que ${ strong } é o endereço correto."
+      ],
+      "Billing cycle: ${ text }": [
+        "Ciclo de faturamento: ${ text }"
       ],
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
         "Ao compartilhar todas as informações do evento deste calendário, você aceita conceder ao ${ BRAND_NAME } o acesso a estas informações criptografadas do calendário."
@@ -3636,7 +3650,7 @@
         "Perda de conexão com a internet"
       ],
       "Internet connection lost. Please check your device's connectivity.": [
-        "Perda de conexão com a internet. Por favor, verifique a conexão do seu dispositivo."
+        "Perda de conexão com a internet. Verifique a conexão do seu dispositivo."
       ],
       "Internet connection restored.": [
         "Conexão com a internet restaurada."
@@ -3735,10 +3749,10 @@
         "Note que este processo pode levar algum tempo, dependendo do tamanho da sua lista de contatos."
       ],
       "Please remove the duplicates and try again.": [
-        "Por favor, remova as duplicatas e tente novamente."
+        "Remova as duplicatas e tente novamente."
       ],
       "Please select the folders you would like to import:": [
-        "Por favor, selecione as pastas que deseja importar:"
+        "Selecione as pastas que deseja importar:"
       ],
       "Please select which email address or addresses to add to ${ groupCount } group.": [
         "Selecione qual endereço de e-mail ou endereços adicionar ao grupo ${ groupCount }.",
@@ -3793,7 +3807,7 @@
         "equipe de suporte"
       ],
       "Temporarily unavailable. Please check back later.": [
-        "Temporariamente indisponível. Por favor, retorne mais tarde."
+        "Temporariamente indisponível. Retorne mais tarde."
       ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "O aplicativo precisa descriptografar localmente seus contatos antes que eles possam ser exportados. Ao final do processo, um arquivo VCF será gerado e você poderá baixá-lo."
@@ -3802,19 +3816,19 @@
         "Os seguintes participantes não podem ser notificados sobre suas alterações:"
       ],
       "The organizer cannot be notified that you decline the invitation:": [
-        "O organizador não pode ser notificado de que você recusou o convite:"
+        "Não é possível notificar o organizador de que você recusou o convite:"
       ],
       "The organizer cannot be notified that you want to change your answer:": [
-        "O organizador não pode ser notificado de que você deseja alterar sua resposta:"
+        "Não é possível notificar o organizador de que você deseja alterar sua resposta:"
       ],
       "The organizer could not be notified that you changed your answer:": [
-        "O organizador não pôde ser notificado de que você alterou sua resposta:"
+        "Não foi possível notificar o organizador de que você alterou sua resposta:"
       ],
       "The organizer has updated some of the events in this series. Changing the calendar is not supported yet for this type of recurring events.": [
         "O organizador atualizou alguns dos eventos desta série. A alteração do calendário ainda não é compatível com este tipo de eventos recorrentes."
       ],
       "The organizer of this event will be notified that you decline the invitation. Would you like to delete this event?": [
-        "O organizador deste evento será notificado de que você recusou o convite. Você gostaria de deletar este evento?"
+        "O organizador deste evento será notificado de que você recusou o convite. Você gostaria de excluir este evento?"
       ],
       "The organizer of this event will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete this event anyway?": [
         "O organizador deste evento não será notificado de que você recusou o convite, pois você não pode enviar e-mails do endereço convidado. Gostaria de excluir este evento mesmo assim?"
@@ -3838,7 +3852,7 @@
         "Este evento foi atualizado pelo organizador. Deseja excluir este evento?"
       ],
       "This event has been updated. The organizer will be notified that you decline the invitation. Would you like to delete this event?": [
-        "Este evento foi atualizado. O organizador será notificado de que você recusou o convite. Você gostaria de deletar este evento?"
+        "Este evento foi atualizado. O organizador será notificado de que você recusou o convite. Você gostaria de excluir este evento?"
       ],
       "This event has been updated. The organizer will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete this event anyway?": [
         "Este evento foi atualizado. O organizador não será notificado de que você recusou o convite porque você não pode enviar e-mails do endereço convidado. Gostaria de excluir este evento mesmo assim?"
@@ -3847,7 +3861,7 @@
         "Esse link leva a um site que pode estar tentando roubar suas informações, como senhas e detalhes de cartão de crédito."
       ],
       "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Este link pode ser um ataque homógrafo e não pode ser aberto pelo navegador Edge. Se você tiver certeza de que o link é legítimo, use um navegador diferente para abrí-lo."
+        "Este link pode ser um ataque homógrafo e não é possível abri-lo pelo navegador Edge. Se você tiver certeza de que o link é legítimo, use um navegador diferente para abri-lo."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Este link pode ser um ataque homográfico. Verifique se este é o link que você deseja visitar, caso contrário, não abra."
@@ -3862,10 +3876,10 @@
         "Para assinar novamente seus contatos, precisamos comparar todos os contatos com a lista de chaves criptográficas disponíveis em sua conta. Se nenhuma correspondência for encontrada, seu contato será assinado novamente com a chave de criptografia principal."
       ],
       "To recover your data, you need to re-activate the account key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
-        "Para recuperar seus dados, você precisa reativar a chave da conta utilizada quando os dados foram criados. Isso exigirá que você lembre a senha utilizada quando a chave foi gerada."
+        "Para recuperar seus dados, você precisa reativar a chave da conta usada quando os dados foram criados. Isso exigirá que você lembre a senha usada quando a chave foi gerada."
       ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
-        "Para poder utilizar a verificação de endereço, você deve confiar em uma ou mais chaves públicas disponíveis, incluindo aquela que você deseja usar para o envio. Isso evita que as chaves de criptografia possam ser falsificadas."
+        "Para poder usar a verificação de endereço, você deve confiar em uma ou mais chaves públicas disponíveis, incluindo aquela que você deseja usar para o envio. Isso evita que as chaves de criptografia possam ser falsificadas."
       ],
       "Update recurring event": [
         "Atualizar evento recorrente"
@@ -3997,16 +4011,16 @@
         "Sua conta tem pelo menos uma fatura vencida. Sua conta é restrita. O não pagamento contínuo bloqueará seus e-mails e links de compartilhamento. ${ payInvoiceLink }"
       ],
       "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete all events in this series anyway?": [
-        "Seu endereço está desativado. Um e-mail de cancelamento não pode ser enviado aos participantes do evento. Gostaria de excluir todos os eventos desta série mesmo assim?"
+        "Seu endereço está desativado. Não é possível enviar um e-mail de cancelamento aos participantes do evento. Gostaria de excluir todos os eventos desta série mesmo assim?"
       ],
       "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete this event anyway?": [
-        "Seu endereço está desativado. Um e-mail de cancelamento não pode ser enviado aos participantes do evento. Você gostaria de excluir este evento mesmo assim?"
+        "Seu endereço está desativado. Não é possível enviar um e-mail de cancelamento aos participantes do evento. Você gostaria de excluir este evento mesmo assim?"
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Seus dados estão prontos para importação de ${ importedEmailAddressStrong } para sua conta da ${ BRAND_NAME }."
       ],
       "Your email will only be used for this one-time verification.": [
-        "Seu e-mail só será utilizado para essa verificação única."
+        "Seu e-mail só será usado para essa verificação única."
       ],
       "Your events will be encrypted and then saved.": [
         "Seus eventos serão criptografados e depois salvos."
@@ -4021,7 +4035,7 @@
         "Suas informações de início de sessão não serão salvas após a importação ser concluída."
       ],
       "Your phone number will only be used for this one-time verification.": [
-        "Seu número de telefone somente será utilizado nessa verificação única."
+        "Seu número de telefone somente será usado nessa verificação única."
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "O fuso horário de seu sistema parece ter mudado para ${ timezone }. Você deseja atualizar suas preferências de fuso horário?"
@@ -4122,7 +4136,7 @@
         "Nome de usuário do ${ BRAND_NAME }"
       ],
       "(Temporarily unavailable. Please check back later.)": [
-        "(Temporariamente indisponível. Por favor, retorne mais tarde.)"
+        "(Temporariamente indisponível. Retorne mais tarde.)"
       ],
       "Add email address": [
         "Adicionar endereços de e-mail"
@@ -4615,7 +4629,7 @@
         "Juntar ao calendário"
       ],
       "Unable to join more calendars": [
-        "Incapaz de juntar mais calendários"
+        "Não é possível juntar mais calendários"
       ]
     },
     "Modal title": {
@@ -5148,12 +5162,12 @@
     },
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
-        "A chave não pode ser usada para criptografar"
+        "Não é possível usar a chave para criptografar."
       ]
     },
     "PGP Key info": {
       "${ emailAddress } has marked this key as compromised. This key cannot be used neither for encryption nor for signature verification.": [
-        "${ emailAddress } marcou esta chave como comprometida. Essa chave não pode ser usada para criptografia nem para verificação de assinatura."
+        "${ emailAddress } marcou esta chave como comprometida. Não é possível usar essa chave para criptografia nem para verificação de assinatura."
       ],
       "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
         "${ emailAddress } marcou esta chave como obsoleta. Esta chave só pode ser usada para verificação de assinatura."
@@ -5241,16 +5255,16 @@
     },
     "Progress bar description": {
       "${ contactsExported.length } out of ${ countContacts } contact successfully exported.": [
-        "${ contactsExported.length } de ${ countContacts } contato exportado com sucesso.",
-        "${ contactsExported.length } de ${ countContacts } contatos exportados com sucesso."
+        "${ contactsExported.length } de ${ countContacts } contato exportado.",
+        "${ contactsExported.length } de ${ countContacts } contatos exportados."
       ],
       "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
-        "${ model.deleted.length } de ${ totalBeDeleted } contato excluídos com sucesso.",
-        "${ model.deleted.length } de ${ totalBeDeleted } contatos excluídos com sucesso."
+        "${ model.deleted.length } de ${ totalBeDeleted } contato excluídos.",
+        "${ model.deleted.length } de ${ totalBeDeleted } contatos excluídos."
       ],
       "${ model.submitted.length } out of ${ totalBeMerged } contact successfully merged.": [
-        "${ model.submitted.length } de ${ totalBeMerged } contato mesclados com sucesso.",
-        "${ model.submitted.length } de ${ totalBeMerged } contatos mesclados com sucesso."
+        "${ model.submitted.length } de ${ totalBeMerged } contato mesclados.",
+        "${ model.submitted.length } de ${ totalBeMerged } contatos mesclados."
       ],
       "No contacts exported.": [
         "Nenhum contato exportado."
@@ -5454,9 +5468,6 @@
       ],
       "Mail, Calendar, Drive": [
         "Mail, Calendar e Drive"
-      ],
-      "Premium Drive": [
-        "Drive Premium"
       ],
       "Premium early access": [
         "Acesso antecipado premium"
@@ -5822,7 +5833,7 @@
         "Desfazer em andamento"
       ],
       "Verification successful": [
-        "Verificado com sucesso"
+        "Verificado"
       ]
     },
     "Success notification when user send feedback": {
@@ -5964,6 +5975,9 @@
       ],
       "Beta Access": [
         "Acesso beta"
+      ],
+      "Billing cycle": [
+        "Ciclo de faturamento"
       ],
       "Calendar": [
         "Calendário"
@@ -6134,7 +6148,7 @@
         "Abrir o menu de configurações"
       ],
       "Organizer cannot be notified": [
-        "O organizador não pode ser notificado"
+        "Não é possível notificar o organizador."
       ],
       "Other information": [
         "Outra informação"
@@ -6143,7 +6157,7 @@
         "Outros nomes"
       ],
       "Participants cannot be notified": [
-        "Os participantes não podem ser notificados"
+        "Não é possível notificar os participantes."
       ],
       "Phone numbers": [
         "Números de telefone"
@@ -6350,7 +6364,7 @@
         "Editar nomes de marcadores"
       ],
       "Email encryption forces email signature to help authenticate your sent messages": [
-        "A criptografia de e-mail sempre utiliza a assinatura de e-mail para ajudar a autenticar as mensagens enviadas"
+        "A criptografia de e-mail sempre usa a assinatura de e-mail para ajudar a autenticar as mensagens enviadas"
       ],
       "Encrypted data": [
         "Dados criptografados"
@@ -6374,10 +6388,10 @@
         "As subpastas do sistema aparecerão como pastas separadas no ${ MAIL_APP_NAME }"
       ],
       "The image could not be loaded": [
-        "A imagem não pôde ser carregada."
+        "Não foi possível carregar a imagem."
       ],
       "The image could not be loaded using proxy": [
-        "A imagem não pôde ser carregada usando proxy"
+        "Não foi possível carregar a imagem usando proxy."
       ],
       "The import will start with the most recent messages.": [
         "A importação começará com as mensagens mais recentes."
@@ -6451,7 +6465,7 @@
         "Você tem certeza que deseja excluir este contato permanentemente?"
       ],
       "Contacts could not be merged": [
-        "Os contatos não puderam ser mesclados"
+        "Não foi possível mesclar os contatos."
       ],
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Se você não se lembra de sua senha, é impossível reativar sua chave. Nós podemos ajudá-lo a descartar o banner de alerta, mas no processo você perderá o acesso permanente a todos os dados criptografados com essa chave."

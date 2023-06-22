@@ -1316,6 +1316,17 @@
         "Als u problemen ondervindt, kunt u Bèta Toegang altijd uitschakelen."
       ]
     },
+    "Billing cycle option": {
+      "Annually": [
+        "Jaarlijks"
+      ],
+      "Monthly": [
+        "Maandelijks"
+      ],
+      "Two-year": [
+        "Tweejaarlijks"
+      ]
+    },
     "Bug category": {
       "Application problem": [
         "Applicatieprobleem"
@@ -4837,6 +4848,9 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Controleer uw spammap en of ${ strong } het correcte e-mailadres is voordat u een nieuwe verificatiecode aanvraagt."
       ],
+      "Billing cycle: ${ text }": [
+        "Facturatiefrequentie: ${ text }"
+      ],
       "Body: ": [
         "Tekst: "
       ],
@@ -7868,9 +7882,6 @@
       "Highest VPN speed": [
         "Hoogste VPN-snelheid"
       ],
-      "Premium Drive": [
-        "Premium Drive"
-      ],
       "Premium early access": [
         "Premium vroege toegang"
       ],
@@ -8505,6 +8516,9 @@
       ],
       "Beta Access": [
         "Bèta toegang"
+      ],
+      "Billing cycle": [
+        "Factuurperiode"
       ],
       "Blind Carbon Copy": [
         "BCC"

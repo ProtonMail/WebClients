@@ -784,6 +784,17 @@
         "Dacă întâmpinați probleme, puteți dezactiva întotdeauna accesul la Beta."
       ]
     },
+    "Billing cycle option": {
+      "Annually": [
+        "Anual"
+      ],
+      "Monthly": [
+        "Lunar"
+      ],
+      "Two-year": [
+        "Bianual"
+      ]
+    },
     "Bug category": {
       "Application problem": [
         "Problemă aplicație"
@@ -2166,9 +2177,6 @@
       "The original folder not found": [
         "Folderul original nu a fost găsit."
       ],
-      "The original folder or file not found": [
-        "Folderul sau fișierul original nu a fost găsit."
-      ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Aveți prea multe foldere în contul extern. Modificați opțiunile de importare pentru a șterge unele foldere."
       ],
@@ -3283,6 +3291,9 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Înainte de a solicita un cod nou de verificare, verificați-vă folderul de mesaje nedorite și verificați dacă ${ strong } este adresa corectă."
       ],
+      "Billing cycle: ${ text }": [
+        "Ciclu facturare: ${ text }"
+      ],
       "Calendar side panel": [
         "Panou lateral calendar"
       ],
@@ -3507,9 +3518,6 @@
       ],
       "Folder \"${ link.name }\" was deleted during download": [
         "Folderul „${ link.name }” a fost șters în timpul descărcării."
-      ],
-      "Folder contents will merge into a single folder": [
-        "Conținutul folderelor se va îmbina într-unul singur."
       ],
       "Folder is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "Lipsește semnătura folderului. Nu am putut verifica dacă ${ emailAddress } a încărcat ${ fileName }."
@@ -3962,9 +3970,6 @@
         "Această operație va șterge și elimina accesul la fișier sau folder pentru oricine are legătura.",
         "Această operație va șterge și elimina accesul la fișiere sau foldere pentru oricine are legătura.",
         "Această operație va șterge și elimina accesul la fișiere sau foldere pentru oricine are legătura."
-      ],
-      "This will overwrite the existing folder": [
-        "Aceasta va suprascrie folderul existent."
       ],
       "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on the device won’t be affected.": [
         "Acest lucru va elimina din ${ DRIVE_APP_NAME } dispozitivul sincronizat ${ deviceName }. Fișierele locale de pe dispozitiv nu vor fi afectate."
@@ -4534,9 +4539,6 @@
       ],
       "Manage categories": [
         "Gestionare categorii"
-      ],
-      "Merge a folder": [
-        "Îmbinare folder"
       ],
       "Modified": [
         "Modificat"
@@ -5490,9 +5492,6 @@
       "Highest VPN speed": [
         "Viteză VPN maximă"
       ],
-      "Premium Drive": [
-        "Drive premium"
-      ],
       "Premium early access": [
         "Acces timpuriu premium"
       ],
@@ -5908,6 +5907,9 @@
       ],
       "Beta Access": [
         "Acces la Beta"
+      ],
+      "Billing cycle": [
+        "Ciclu de facturare"
       ],
       "Browser might run out of memory": [
         "Navigatorul ar putea rămâne fără memorie"

@@ -1316,6 +1316,17 @@
         "Si encuentra problemas, siempre puede deshabilitar el acceso beta."
       ]
     },
+    "Billing cycle option": {
+      "Annually": [
+        "Anual"
+      ],
+      "Monthly": [
+        "Mensual"
+      ],
+      "Two-year": [
+        "Dos años"
+      ]
+    },
     "Bug category": {
       "Application problem": [
         "Problema de la aplicación"
@@ -4840,6 +4851,9 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Antes de solicitar un código de verificación nuevo, revise su carpeta de spam y verifique que ${ strong } sea la dirección correcta."
       ],
+      "Billing cycle: ${ text }": [
+        "Ciclo de facturación: ${ text }"
+      ],
       "Body: ": [
         "Cuerpo: "
       ],
@@ -5308,7 +5322,7 @@
         "Nuestro sistema marcó este mensaje como un intento de suplantación. Compruebe que es legítimo."
       ],
       "Our system flagged this message as a suspicious email. Please check that it is legitimate before clicking any links or attachments.": [
-        "Nuestro sistema identificó este mensaje como correo electrónico sospechoso. Por favor revise que es legítimo antes de abrir cualquier enlace o archivo adjunto"
+        "Nuestro sistema identificó este mensaje como correo electrónico sospechoso. Revise que es legítimo antes de abrir cualquier enlace o archivo adjunto."
       ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/Inline solo es compatible con el formato de Texto Plano."
@@ -7874,9 +7888,6 @@
       "Mail, Calendar, Drive": [
         "Mail, Calendar y Drive"
       ],
-      "Premium Drive": [
-        "Drive premium"
-      ],
       "Premium early access": [
         "Acceso anticipado premium"
       ],
@@ -8511,6 +8522,9 @@
       ],
       "Beta Access": [
         "Acceso beta"
+      ],
+      "Billing cycle": [
+        "Ciclo de facturación"
       ],
       "Blind Carbon Copy": [
         "Con copia oculta"

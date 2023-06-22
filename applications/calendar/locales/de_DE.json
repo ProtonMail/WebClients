@@ -723,6 +723,17 @@
         "Wenn Probleme auftreten, kannst du den Beta-Zugang jederzeit deaktivieren."
       ]
     },
+    "Billing cycle option": {
+      "Annually": [
+        "Jährlich"
+      ],
+      "Monthly": [
+        "Monatlich"
+      ],
+      "Two-year": [
+        "Zwei Jahre"
+      ]
+    },
     "Bug category": {
       "Application problem": [
         "Anwendungsproblem"
@@ -3468,6 +3479,9 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Bevor du einen neuen Bestätigungscode anforderst, überprüfe deinen Spam-Ordner und stelle sicher, dass ${ strong } die richtige Adresse ist."
       ],
+      "Billing cycle: ${ text }": [
+        "Abrechnungszeitraum: ${ text }"
+      ],
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
         "Indem du die vollständigen Termindetails dieses Kalenders freigibst, erklärst du dich damit einverstanden, ${ BRAND_NAME } Zugriff auf diese verschlüsselten Informationen des Kalenders zu gewähren."
       ],
@@ -5449,9 +5463,6 @@
       "Highest VPN speed": [
         "Höchste VPN-Geschwindigkeit"
       ],
-      "Premium Drive": [
-        "Premium-Drive"
-      ],
       "Premium early access": [
         "Premium-frühzeitiger Zugang"
       ],
@@ -5958,6 +5969,9 @@
       ],
       "Beta Access": [
         "Beta-Zugang"
+      ],
+      "Billing cycle": [
+        "Abrechnungszeitraum"
       ],
       "Calendar": [
         "Kalender"

@@ -727,6 +727,17 @@
         "Если вы столкнетесь с проблемами, то всегда можете отключить доступ к Beta-функциям."
       ]
     },
+    "Billing cycle option": {
+      "Annually": [
+        "Ежегодно"
+      ],
+      "Monthly": [
+        "Ежемесячно"
+      ],
+      "Two-year": [
+        "Каждые 2 года"
+      ]
+    },
     "Bug category": {
       "Application problem": [
         "Проблема в приложении"
@@ -2840,6 +2851,9 @@
       ]
     },
     "familyOffer_2023:Action": {
+      "Decline invitation": [
+        "Отклонить приглашение"
+      ],
       "Got it": [
         "ОК"
       ],
@@ -2967,6 +2981,9 @@
       "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
         "Включает 2700 серверов в более чем 65 странах с возможностью подключения до 10 устройств, доступ к стриминговым платформам со всего мира, блокировщик рекламы и вредоносного ПО и другие преимущества."
       ],
+      "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
+        "Включает поддержку 3 своих доменов, 90 адресов электронной почты, неограниченного количества псевдонимов hide-my-email, совместный доступ к календарю и другое."
+      ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Защитите свои материалы при помощи зашифрованного облачного хранилища. Используйте автоматическую синхронизацию, зашифрованный обмен файлами и многое другое."
       ]
@@ -3040,6 +3057,31 @@
     "Filter notification": {
       "${ Label.Name } updated": [
         "${ Label.Name } обновлён"
+      ]
+    },
+    "Font face option": {
+      "System default": [
+        "Системный по умолчанию"
+      ],
+      "Theme default": [
+        "Из темы по умолчанию"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Большой"
+      ],
+      "Medium (recommended)": [
+        "Средний (Рекомендуется)"
+      ],
+      "Small": [
+        "Маленький"
+      ],
+      "Very large": [
+        "Очень большой"
+      ],
+      "Very small": [
+        "Очень маленький"
       ]
     },
     "Group": {
@@ -3553,6 +3595,9 @@
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Прежде чем запросить новый код подтверждения, проверьте свою папку спама и убедитесь, что ${ strong } - это корректный адрес."
+      ],
+      "Billing cycle: ${ text }": [
+        "Платежный цикл: ${ text }"
       ],
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
         "Предоставляя полную информацию о подробностях события из этого календаря, вы соглашаетесь предоставить ${ BRAND_NAME } доступ к зашифрованной информации этого календаря."
@@ -4500,6 +4545,9 @@
       "Street address": [
         "Адрес"
       ],
+      "Synchronize with system": [
+        "Синхронизировать с системой"
+      ],
       "System information": [
         "Сведения о системе"
       ],
@@ -4928,6 +4976,9 @@
       "Custom email domains": [
         "Пользовательские домены электронной почты"
       ],
+      "Hide-my-email aliases": [
+        "Псевдонимы hide-my-email"
+      ],
       "Schedule messages at any time": [
         "Планируйте сообщения в любое время"
       ],
@@ -5194,6 +5245,9 @@
       ],
       "Discover all ${ BRAND_NAME } services": [
         "Узнайте обо всех службах ${ BRAND_NAME }"
+      ],
+      "More theming options are available in your account Settings > Appearance.": [
+        "Больше вариантов оформления доступно в Настройках аккаунта > Внешний вид."
       ],
       "Select a theme": [
         "Выберите тему"
@@ -5620,9 +5674,6 @@
       "Highest VPN speed": [
         "Высочайшая скорость VPN"
       ],
-      "Premium Drive": [
-        "Платная версия Drive"
-      ],
       "Premium early access": [
         "Ранний доступ"
       ],
@@ -5772,6 +5823,15 @@
       ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
         "Наслаждайтесь контентом на стриминговых платформах, таких как Netflix, Disney+ и Amazon Prime Video, из любой точки мира."
+      ],
+      "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
+        "Все наших платные сервисы с максимальными лимитами: 100 адресов электронной почты, поддержка 10 своих доменов и неограниченного числа псевдонимов hide-my-email, совместный доступ к календарю, зашифрованное облачное хранилище и обмен файлами, и другое."
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Включает поддержку 1 своего домена, 10 адресов электронной почты, 10 псевдонимов hide-my-email, совместный доступ к календарю и другие преимущества."
+      ],
+      "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Включает поддержку 3 своих доменов, 15 адресов электронной почты, неограниченного количества псевдонимов hide-my-email, совместный доступ к календарю и другие преимущества."
       ],
       "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
         "Идеально подходит семьям и небольшим командам. У каждого участника будут свои почтовый ящик и алиасы. Необходимо иметь свой домен."
@@ -6103,6 +6163,9 @@
         "${ emailsCount } адресов электронной почты",
         "${ emailsCount } адреса электронной почты"
       ],
+      "(active)": [
+        "(активна)"
+      ],
       "Account suspended": [
         "Аккаунт временно заблокирован"
       ],
@@ -6141,6 +6204,9 @@
       ],
       "Beta Access": [
         "Бета-доступ"
+      ],
+      "Billing cycle": [
+        "Период оплаты"
       ],
       "Calendar": [
         "Календарь"
@@ -6195,6 +6261,9 @@
       ],
       "Customize your mail import": [
         "Настройка импорта вашей почты"
+      ],
+      "Day theme": [
+        "Дневная тема"
       ],
       "Delete ${ count } contact": [
         "Удалить ${ count } контакт",
@@ -6300,6 +6369,9 @@
       ],
       "Minicalendar": [
         "Миникалендарь"
+      ],
+      "Night theme": [
+        "Ночная тема"
       ],
       "Open actions dropdown": [
         "Показать список доступных действий"
@@ -6555,6 +6627,9 @@
       ],
       "The import will start with the most recent messages.": [
         "Импорт начнётся с самых последних сообщений."
+      ],
+      "The selected theme will be active when your system is set to \"light mode\"": [
+        "Выбранная тема станет доступной, когда на системе выбрано \"светлое оформление\""
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Загрузите публичный ключ, чтобы включить отправку зашифрованных писем на этот адрес"

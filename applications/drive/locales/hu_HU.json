@@ -779,6 +779,17 @@
         "Ha problémába ütközik, mindig lesz lehetősége letiltani a Béta hozzáférést."
       ]
     },
+    "Billing cycle option": {
+      "Annually": [
+        "Évente"
+      ],
+      "Monthly": [
+        "Havonta"
+      ],
+      "Two-year": [
+        "Kétévente"
+      ]
+    },
     "Bug category": {
       "Application problem": [
         "Probléma az alkalmazással"
@@ -2154,9 +2165,6 @@
       "The original folder not found": [
         "Az eredeti mappa nem található"
       ],
-      "The original folder or file not found": [
-        "Az eredeti mappa vagy fájl nem található"
-      ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Túl sok mappa van a külső e-mail fiókban. Módosítsa az importálás beállításait, hogy néhány mappát töröljön."
       ],
@@ -3410,9 +3418,6 @@
       "Folder \"${ link.name }\" was deleted during download": [
         "\"${ link.name }\" mappa törölve lett letöltés közben"
       ],
-      "Folder contents will merge into a single folder": [
-        "Összefűzi a mappák tartalmát egy mappává"
-      ],
       "Folder is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "A mappa aláírása hiányzik. Nem tudtuk megerősíteni, hogy ${ emailAddress } töltötte fel ezt: ${ fileName }."
       ],
@@ -3860,9 +3865,6 @@
       "This will delete the link and remove access to your file or folder for anyone with the link.": [
         "Ez törli a hivatkozást és megszünteti a fájl vagy mappa elérhetőségét azok számára, akiknek elküldte.",
         "Ez törli a hivatkozásokat és megszünteti a fájlok vagy mappák elérhetőségét azok számára, akiknek elküldte."
-      ],
-      "This will overwrite the existing folder": [
-        "Felülírja a meglévő mappát"
       ],
       "This will replace the existing file with the folder": [
         "Ez lecseréli a meglévő fájl a mappával"
@@ -4420,9 +4422,6 @@
       ],
       "Manage categories": [
         "Kategóriák kezelése"
-      ],
-      "Merge a folder": [
-        "Egy mappa összefűzése"
       ],
       "Modified": [
         "Módosítva"
@@ -5335,9 +5334,6 @@
       "Highest VPN speed": [
         "Legnagyobb VPN sebesség"
       ],
-      "Premium Drive": [
-        "Prémium Drive"
-      ],
       "Premium early access": [
         "Prémium korai-hozzáférés"
       ],
@@ -5726,6 +5722,9 @@
       ],
       "Beta Access": [
         "Béta hozzáférés"
+      ],
+      "Billing cycle": [
+        "Számlázási ciklus"
       ],
       "Browser might run out of memory": [
         "A böngésző kifuthat memóriából"

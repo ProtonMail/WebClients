@@ -667,6 +667,17 @@
         "Ma tmugreḍ uguren tzemreḍ ad tsenseḍ anekcum Biṭa."
       ]
     },
+    "Billing cycle option": {
+      "Annually": [
+        "S useggas"
+      ],
+      "Monthly": [
+        "S wayyur"
+      ],
+      "Two-year": [
+        "Snat n tikkal i useggas"
+      ]
+    },
     "Bug category": {
       "Application problem": [
         "Ugur n usnas"
@@ -2592,6 +2603,9 @@
       "Are you sure you want to permanently delete selected items from trash?": [
         "Tebɣiḍ s tidet ad tekkseḍ s wudem imezgi iferdisen yettwafernen seg tqecwalt?"
       ],
+      "Billing cycle: ${ text }": [
+        "Asellek yal:${ text }"
+      ],
       "Canceled": [
         "Yettwasefsex"
       ],
@@ -2716,9 +2730,6 @@
       ],
       "Finalizing": [
         "Akemmel"
-      ],
-      "Folder contents will merge into a single folder": [
-        "Igburen n ukaram ad zdin deg yiwen n ukaram"
       ],
       "Folder will not be uploaded": [
         "Akaram ur d-yettali ara"
@@ -2970,9 +2981,6 @@
       "This will delete the link and remove access to your file or folder for anyone with the link.": [
         "Ayagi ad ikkes aseɣwen yerna ad ikkes adduf ɣer afaylu-inek neɣ akaram i yal yiwen yesɛan aseɣwen-nni.",
         "Ayagi ad ikkes aseɣwen yerna ad ikkes adduf ɣer ifuyla-inek neɣ ikaramen i yal yiwen yesɛan aseɣwen-nni."
-      ],
-      "This will overwrite the existing folder": [
-        "Aya ad d-yeglu s tira ɣef ukaram yellan"
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Akken ad nennaɣ mgal ispament, senqed ma yella kečč d amdan."
@@ -3339,9 +3347,6 @@
       ],
       "Malware": [
         "Aseɣẓan"
-      ],
-      "Merge a folder": [
-        "Zdi akaram"
       ],
       "Modified": [
         "Yettwabeddel"
@@ -4141,6 +4146,9 @@
       ],
       "Beta Access": [
         "Anekcum Biṭa"
+      ],
+      "Billing cycle": [
+        "Twala n ufter"
       ],
       "Change layout": [
         "Snifel taneɣruft"

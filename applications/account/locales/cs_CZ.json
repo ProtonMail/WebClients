@@ -1078,6 +1078,11 @@
         "Sirotek"
       ]
     },
+    "Admin": {
+      "admin": [
+        "administrátor"
+      ]
+    },
     "Alert": {
       "By leaving now, some contacts may not be imported": [
         "Pokud teď odejdete, některé kontakty nebudou importovány"
@@ -2788,6 +2793,12 @@
       "${ name } deletion failed": [
         "Smazání domény ${ name } selhalo"
       ],
+      "${ name } failed to move to allow list": [
+        "${ name } se nepodařilo přesunout na Seznam povolených"
+      ],
+      "${ name } failed to move to block list": [
+        "${ name } se nepodařilo přesunout na Seznam blokovaných"
+      ],
       "${ name } failed to move to spam list": [
         "Doménu ${ name } se nepodařilo přesunout na Seznam spamů"
       ],
@@ -2895,6 +2906,12 @@
       ],
       "${ name } deletion failed": [
         "Smazání e-mailové adresy ${ name } selhalo"
+      ],
+      "${ name } failed to move to allow list": [
+        "${ name } se nepodařilo přesunout na Seznam povolených"
+      ],
+      "${ name } failed to move to block list": [
+        "${ name } se nepodařilo přesunout na Seznam blokovaných"
       ],
       "${ name } failed to move to spam list": [
         "E-mailovou adresu ${ name } se nepodařilo přesunout na Seznam spamů"
@@ -10631,9 +10648,6 @@
       "Highest VPN speed": [
         "Nejvyšší rychlost VPN"
       ],
-      "Premium Drive": [
-        "Prémiový Disk"
-      ],
       "Premium early access": [
         "Prémiový předběžný přístup"
       ],
@@ -11331,6 +11345,9 @@
       ],
       "Edit": [
         "Upravit"
+      ],
+      "Email address or domain": [
+        "E-mailová adresa nebo doména"
       ],
       "Email addresses": [
         "E-mailové adresy"
