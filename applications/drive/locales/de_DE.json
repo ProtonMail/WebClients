@@ -237,6 +237,9 @@
       "Download anyway": [
         "Trotzdem herunterladen"
       ],
+      "Download apps": [
+        "Apps herunterladen"
+      ],
       "Download the Windows application": [
         "Windows-Anwendung herunterladen"
       ],
@@ -780,6 +783,17 @@
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "Wenn Probleme auftreten, kannst du den Beta-Zugang jederzeit deaktivieren."
+      ]
+    },
+    "Billing cycle option": {
+      "Annually": [
+        "Jährlich"
+      ],
+      "Monthly": [
+        "Monatlich"
+      ],
+      "Two-year": [
+        "Zwei Jahre"
       ]
     },
     "Bug category": {
@@ -2157,9 +2171,6 @@
       "The original folder not found": [
         "Der ursprüngliche Ordner wurde nicht gefunden"
       ],
-      "The original folder or file not found": [
-        "Der ursprüngliche Ordner oder die Datei wurde nicht gefunden"
-      ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Es gibt zu viele Ordner in deinem externen Konto. Bitte passe den Import an, um einige Ordner zu löschen."
       ],
@@ -3228,6 +3239,9 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Bevor du einen neuen Bestätigungscode anforderst, überprüfe deinen Spam-Ordner und stelle sicher, dass ${ strong } die richtige Adresse ist."
       ],
+      "Billing cycle: ${ text }": [
+        "Abrechnungszeitraum: ${ text }"
+      ],
       "Calendar side panel": [
         "Kalender-Seitenleiste"
       ],
@@ -3449,9 +3463,6 @@
       ],
       "Folder \"${ link.name }\" was deleted during download": [
         "Der Ordner „${ link.name }“ wurde während des Downloads gelöscht."
-      ],
-      "Folder contents will merge into a single folder": [
-        "Die Inhalte der Ordner werden in einen einzigen Ordner zusammengeführt"
       ],
       "Folder is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "Bei dem Ordner fehlt die Signatur. Wir konnten nicht verifizieren, dass ${ emailAddress } ${ fileName } hochgeladen hat."
@@ -3901,9 +3912,6 @@
         "Dadurch wird der Link gelöscht und der Zugriff auf deine Datei oder deinen Ordner für jeden, der über den Link verfügt, entfernt.",
         "Dadurch werden die Links gelöscht und der Zugriff auf deine Dateien oder deine Ordner für jeden, der über die Links verfügt, entfernt."
       ],
-      "This will overwrite the existing folder": [
-        "Dadurch wird der vorhandene Ordner überschrieben"
-      ],
       "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on the device won’t be affected.": [
         "Dadurch wird das synchronisierte Gerät ${ deviceName } aus ${ DRIVE_APP_NAME } entfernt. Lokale Dateien auf dem Gerät sind davon nicht betroffen."
       ],
@@ -3915,6 +3923,9 @@
       ],
       "This will upload a new version of the file": [
         "Dadurch wird eine neue Version der Datei hochgeladen."
+      ],
+      "This will upload a new version of the folder": [
+        "Dadurch wird eine neue Version des Ordners hochgeladen."
       ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
         "Um eine wirklich private Suche zu ermöglichen, muss ${ DRIVE_APP_NAME } deine Dateien lokal indexieren."
@@ -4469,9 +4480,6 @@
       ],
       "Manage categories": [
         "Kategorien verwalten"
-      ],
-      "Merge a folder": [
-        "Ordner zusammenführen"
       ],
       "Modified": [
         "Geändert"
@@ -5242,6 +5250,11 @@
         "Name"
       ]
     },
+    "Platform": {
+      "Windows": [
+        "Windows"
+      ]
+    },
     "Progress bar description": {
       "${ contactsExported.length } out of ${ countContacts } contact successfully exported.": [
         "${ contactsExported.length } von ${ countContacts } Kontakt wurden erfolgreich exportiert.",
@@ -5392,9 +5405,6 @@
       ],
       "Highest VPN speed": [
         "Höchste VPN-Geschwindigkeit"
-      ],
-      "Premium Drive": [
-        "Premium-Drive"
       ],
       "Premium early access": [
         "Premium-frühzeitiger Zugang"
@@ -5796,6 +5806,9 @@
       ],
       "Beta Access": [
         "Beta-Zugang"
+      ],
+      "Billing cycle": [
+        "Abrechnungszeitraum"
       ],
       "Browser might run out of memory": [
         "Dem Browser geht möglicherweise der Speicher aus"

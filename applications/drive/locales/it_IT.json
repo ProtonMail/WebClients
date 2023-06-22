@@ -782,6 +782,17 @@
         "Se riscontri problemi, puoi sempre disabilitare l'Accesso Beta."
       ]
     },
+    "Billing cycle option": {
+      "Annually": [
+        "Annuale"
+      ],
+      "Monthly": [
+        "Mensile"
+      ],
+      "Two-year": [
+        "Due anni"
+      ]
+    },
     "Bug category": {
       "Application problem": [
         "Problema con l'applicazione"
@@ -2157,9 +2168,6 @@
       "The original folder not found": [
         "La cartella originale non è stata trovata"
       ],
-      "The original folder or file not found": [
-        "La cartella o il file originale non sono stati trovati"
-      ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Ci sono troppe cartelle nel tuo account esterno. Personalizza l'importazione per eliminare alcune cartelle."
       ],
@@ -3231,6 +3239,9 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Prima di richiedere un nuovo codice di verifica, controlla la tua cartella spam e verifica che ${ strong } sia l'indirizzo corretto."
       ],
+      "Billing cycle: ${ text }": [
+        "Ciclo di fatturazione: ${ text }"
+      ],
       "Calendar side panel": [
         "Pannello laterale del calendario"
       ],
@@ -3324,6 +3335,9 @@
       ],
       "Current version": [
         "Versione attuale"
+      ],
+      "Customize the look and feel of ${ BRAND_NAME } applications.": [
+        "Personalizza l'aspetto delle applicazioni ${ BRAND_NAME }"
       ],
       "Decrypting files": [
         "Decrittografia dei file"
@@ -3449,9 +3463,6 @@
       ],
       "Folder \"${ link.name }\" was deleted during download": [
         "La cartella \"${ link.name }\" è stata eliminata durante il download"
-      ],
-      "Folder contents will merge into a single folder": [
-        "Il contenuto della cartella si unirà in una singola cartella"
       ],
       "Folder is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "Firma della cartella mancante. Non è stato possibile verificare che ${ emailAddress } abbia caricato ${ fileName }."
@@ -3900,9 +3911,6 @@
       "This will delete the link and remove access to your file or folder for anyone with the link.": [
         "Questo eliminerà il collegamento e rimuoverà l'accesso al file o alla cartella per chiunque abbia il collegamento.",
         "Questo eliminerà i collegamenti e rimuoverà l'accesso ai tuoi file o cartelle per chiunque abbia i collegamenti."
-      ],
-      "This will overwrite the existing folder": [
-        "Questo sovrascriverà la cartella esistente"
       ],
       "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on the device won’t be affected.": [
         "Questo rimuoverà da ${ DRIVE_APP_NAME } il dispositivo sincronizzato ${ deviceName }. I file locali sul dispositivo non saranno interessati."
@@ -4469,9 +4477,6 @@
       ],
       "Manage categories": [
         "Gestione delle categorie"
-      ],
-      "Merge a folder": [
-        "Unisci una cartella"
       ],
       "Modified": [
         "Modificato"
@@ -5109,6 +5114,9 @@
       "Discover all ${ BRAND_NAME } services": [
         "Scopri tutti i servizi ${ BRAND_NAME }"
       ],
+      "More theming options are available in your account Settings > Appearance.": [
+        "Sono disponibili ulteriori opzioni di personalizzazione del tema nelle Impostazioni del tuo account, nella sezione Aspetto."
+      ],
       "Select a theme": [
         "Seleziona un tema"
       ],
@@ -5389,9 +5397,6 @@
       ],
       "Highest VPN speed": [
         "Massima velocità della VPN"
-      ],
-      "Premium Drive": [
-        "Drive premium"
       ],
       "Premium early access": [
         "Accesso anticipato premium"
@@ -5793,6 +5798,9 @@
       ],
       "Beta Access": [
         "Accesso Beta"
+      ],
+      "Billing cycle": [
+        "Ciclo di fatturazione"
       ],
       "Browser might run out of memory": [
         "Il browser potrebbe esaurire la memoria"
@@ -6246,6 +6254,9 @@
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Automatico indica che il formato nel compositore è usato per inviare a questo utente. Testo semplice indica che il messaggio sarà sempre convertito in testo semplice all'invio."
       ],
+      "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
+        "Passi automaticamente tra i tuoi temi preferiti per il giorno e per la notte in sincronia con le modalità di giorno e di notte del tuo sistema."
+      ],
       "Customize import to reduce the number of folders": [
         "Personalizza l'importazione per ridurre il numero di cartelle"
       ],
@@ -6296,6 +6307,12 @@
       ],
       "The import will start with the most recent messages.": [
         "L'importazione inizierà con i messaggi più recenti."
+      ],
+      "The selected theme will be active when your system is set to \"dark mode\"": [
+        "Il tema selezionato sarà attivo quando il tuo sistema è impostato su \"modalità scura\"."
+      ],
+      "The selected theme will be active when your system is set to \"light mode\"": [
+        "Il tema selezionato sarà attivo quando il tuo sistema è impostato su \"modalità chiara\"."
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Carica una chiave pubblica per abilitare l'invio di email crittografate end-to-end a questa email"

@@ -773,6 +773,17 @@
         "Hvis du støder på problemer, kan du altid deaktivere beta-adgang."
       ]
     },
+    "Billing cycle option": {
+      "Annually": [
+        "Årlig"
+      ],
+      "Monthly": [
+        "Månedlig"
+      ],
+      "Two-year": [
+        "To-År"
+      ]
+    },
     "Bug category": {
       "Application problem": [
         "Applikationsproblem"
@@ -2148,9 +2159,6 @@
       "The original folder not found": [
         "Den oprindelige mappe ikke fundet"
       ],
-      "The original folder or file not found": [
-        "Den oprindelige mappe eller fil ikke fundet"
-      ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Der er for mange mapper i din eksterne konto. Rediger venligst importen for at slette nogle mapper."
       ],
@@ -3136,6 +3144,9 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Før du anmoder om en ny bekræftelseskode, bør du tjekke din spam-mappe samt kontrollere, at ${ strong } er den korrekte adresse."
       ],
+      "Billing cycle: ${ text }": [
+        "Faktureringsperiode: ${ text }"
+      ],
       "Calendar side panel": [
         "Kalender-sidepanel"
       ],
@@ -3270,6 +3281,9 @@
       "Downloading": [
         "Downloader"
       ],
+      "Drop to import": [
+        "Drop for at importere"
+      ],
       "Duplicate key updated": [
         "Duplikeret nøgle opdateret"
       ],
@@ -3342,9 +3356,6 @@
       ],
       "Folder \"${ link.name }\" was deleted during download": [
         "Mappe \"${ link.name }\" blev slettet under download"
-      ],
-      "Folder contents will merge into a single folder": [
-        "Mappeindhold vil blive flettet sammen til én enkelt mappe"
       ],
       "Folder is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "Mappen mangler sin signatur. Vi kunne ikke verficere at ${ emailAddress } uploadede ${ fileName }."
@@ -3791,9 +3802,6 @@
         "Dette vil slette linket og fjerne adgangen til din fil eller mappe for alle, der har linket.",
         "Dette vil slette linkene og fjerne adgangen til dine file eller mapper for alle, der har linkene."
       ],
-      "This will overwrite the existing folder": [
-        "Dette vil overskrive den eksisterende mappe"
-      ],
       "This will replace the existing file with the folder": [
         "Dette vil erstatte eksisterende fil med mappen"
       ],
@@ -3991,6 +3999,9 @@
       ],
       "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ KeyReactivationButton }": [
         "Dine filer er ikke længere tilgængelige på grund af en nulstilling af adgangskoden. Gen-upload den gamle krypteringsnøgle for at få adgang igen. ${ KeyReactivationButton }"
+      ],
+      "Your files will be encrypted and then saved": [
+        "Din filer vil blive krypteret og derefter gemt"
       ],
       "Your files will be encrypted and then saved.": [
         "Dine filer vil blive krypteret og derefter gemt."
@@ -4347,9 +4358,6 @@
       ],
       "Manage categories": [
         "Administrer kategorier"
-      ],
-      "Merge a folder": [
-        "Flet en mappe"
       ],
       "Modified": [
         "Ændret"
@@ -5246,9 +5254,6 @@
       "Highest VPN speed": [
         "Højeste VPN-hastighed"
       ],
-      "Premium Drive": [
-        "Premium Drive"
-      ],
       "Premium early access": [
         "Premium tidlig adgang"
       ],
@@ -5581,6 +5586,9 @@
       ],
       "Beta Access": [
         "Beta-adgang"
+      ],
+      "Billing cycle": [
+        "Faktureringscyklus"
       ],
       "Browser might run out of memory": [
         "Browseren løber måske tør for hukommelse"

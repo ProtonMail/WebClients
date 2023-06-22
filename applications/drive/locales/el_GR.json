@@ -782,6 +782,17 @@
         "Εάν αντιμετωπίσετε προβλήματα, μπορείτε πάντα να απενεργοποιήσετε την Πρόσβαση Beta."
       ]
     },
+    "Billing cycle option": {
+      "Annually": [
+        "Ετησίως"
+      ],
+      "Monthly": [
+        "Μηνιαία"
+      ],
+      "Two-year": [
+        "Δύο έτη"
+      ]
+    },
     "Bug category": {
       "Application problem": [
         "Πρόβλημα εφαρμογής"
@@ -2137,7 +2148,7 @@
         "Μη έγκυρο όνομα ετικέτας. Παρακαλούμε δοκιμάστε ένα διαφορετικό."
       ],
       "The label name is too long. Please choose a different name.": [
-        "Υπερβολικό μήκος ονόματος ετικέτας. Παρακαλούμε δοκιμάστε ένα συντομότερο."
+        "Το όνομα της ετικέτας είναι πολύ μεγάλο. Δοκιμάστε ένα διαφορετικό όνομα."
       ],
       "The new revision of original file is not uploaded yet, please try again later": [
         "Η νέα αναθεώρηση του πρωτότυπου αρχείου δεν έχει μεταφορτωθεί ακόμα, παρακαλούμε δοκιμάστε αργότερα"
@@ -2157,14 +2168,11 @@
       "The original folder not found": [
         "Ο αρχικός φάκελος δε βρέθηκε"
       ],
-      "The original folder or file not found": [
-        "Ο αρχικός φάκελος ή το αρχείο δε βρέθηκε"
-      ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Υπερβολικός αριθμός φακέλων στον εξωτερικό λογαριασμό σας. Παρακαλούμε προσαρμόστε την εισαγωγή, προς διαγραφή μερικών φακέλων."
       ],
       "There was an error when exporting the contacts vCards": [
-        "Παρουσιάστηκε σφάλμα κατά την εξαγωγή επαφών vCards"
+        "Παρουσιάστηκε σφάλμα κατά την εξαγωγή επαφών σε vCards"
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Αυτό το πεδίο υπερβαίνει το μέγιστο των χαρακτήρων ${ maximumLength }."
@@ -2200,7 +2208,7 @@
         "Δεν μπορείτε να στείλετε μήνυμα σε περισσότερους από 100 παραλήπτες"
       ],
       "You can't send vCard files of more than 10 contacts": [
-        "Δεν μπορείτε να στείλετε φακέλους vCard για περισσότερες από 10 επαφές"
+        "Δεν μπορείτε να στείλετε αρχεία vCard για περισσότερες από 10 επαφές"
       ],
       "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
         "Έχετε συμπληρώσει τον μέγιστο αριθμό ημερολογίων. Δεν ήταν δυνατή η εισαγωγή ορισμένων ημερολογίων."
@@ -2397,7 +2405,7 @@
         "Ωχ, κάτι πήγε στραβά"
       ],
       "Please refresh the page or try again later.": [
-        "Παρακαλούμε ανανεώσετε τη σελίδα ή προσπαθήσετε αργότερα."
+        "Παρακαλούμε ανανεώστε τη σελίδα ή δοκιμάστε ξανά αργότερα."
       ],
       "Something went wrong": [
         "Κάτι πήγε στραβά"
@@ -3231,6 +3239,9 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Πριν αιτηθείτε νέο κωδικό επαλήθευσης, ελέγξτε τον φάκελό σας Ενοχλητικά και ότι η ${ strong } είναι η σωστή διεύθυνση."
       ],
+      "Billing cycle: ${ text }": [
+        "Κύκλος χρέωσης: ${ text }"
+      ],
       "Calendar side panel": [
         "Πλαϊνό πλαίσιο ημερολογίου"
       ],
@@ -3452,9 +3463,6 @@
       ],
       "Folder \"${ link.name }\" was deleted during download": [
         "Ο φάκελος \"${ link.name }\" διαγράφηκε κατά τη λήψη"
-      ],
-      "Folder contents will merge into a single folder": [
-        "Τα περιεχόμενα των φακέλων θα συγχωνευθούν σε έναν μοναδικό φάκελο"
       ],
       "Folder is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "Ο φάκελος στερείται υπογραφής. Δεν μπορέσαμε να επαληθεύσουμε ότι ο ${ fileName } ανέβηκε από ${ emailAddress }."
@@ -3903,9 +3911,6 @@
       "This will delete the link and remove access to your file or folder for anyone with the link.": [
         "Αυτό θα διαγράψει τον σύνδεσμο και θα καταργήσει την πρόσβαση στο αρχείο ή φάκελο σας για οποιονδήποτε με τον σύνδεσμο.",
         "Αυτό θα διαγράψει τους συνδέσμους και θα καταργήσει την πρόσβαση στα αρχεία ή φακέλους σας για οποιονδήποτε με τους συνδέσμους."
-      ],
-      "This will overwrite the existing folder": [
-        "Αυτή η εγγραφή θα διαγράψει τον φάκελο που ήδη υπάρχει"
       ],
       "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on the device won’t be affected.": [
         "Αυτό θα διαγράψει από ${ DRIVE_APP_NAME } τη συγχρονισμένη συσκευή ${ deviceName }. Τοπικά αρχεία στη συσκευή δε θα επηρεαστούν."
@@ -4472,9 +4477,6 @@
       ],
       "Manage categories": [
         "Διαχείριση κατηγοριών"
-      ],
-      "Merge a folder": [
-        "Συγχώνευση φακέλου"
       ],
       "Modified": [
         "Τροποποιήθηκε"
@@ -5396,9 +5398,6 @@
       "Highest VPN speed": [
         "Ύψιστη ταχύτητα VPN"
       ],
-      "Premium Drive": [
-        "Premium Μονάδα Αποθήκευσης"
-      ],
       "Premium early access": [
         "Premium πρώιμη πρόσβαση"
       ],
@@ -5799,6 +5798,9 @@
       ],
       "Beta Access": [
         "Beta Πρόσβαση"
+      ],
+      "Billing cycle": [
+        "Κύκλος χρέωσης"
       ],
       "Browser might run out of memory": [
         "Ο περιηγητής ενδέχεται να ξεμείνει από μνήμη"

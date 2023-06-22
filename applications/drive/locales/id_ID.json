@@ -780,6 +780,17 @@
         "Apabila Anda menemui suatu masalah, Anda dapat menonaktifkan Akses Beta kapan saja."
       ]
     },
+    "Billing cycle option": {
+      "Annually": [
+        "Tahunan"
+      ],
+      "Monthly": [
+        "Bulanan"
+      ],
+      "Two-year": [
+        "Dua tahun"
+      ]
+    },
     "Bug category": {
       "Application problem": [
         "Masalah aplikasi"
@@ -2148,9 +2159,6 @@
       "The original folder not found": [
         "Folder asli tidak ditemukan"
       ],
-      "The original folder or file not found": [
-        "Map atau berkas asli tidak ditemukan"
-      ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Ada terlalu banyak folder di dalam akun eksternal Anda. Mohon sesuaikan parameter impor Anda agar sebagian folder dapat terhapus."
       ],
@@ -2479,6 +2487,9 @@
       ]
     },
     "familyOffer_2023:Action": {
+      "Decline invitation": [
+        "Tolak undangan"
+      ],
       "Got it": [
         "Mengerti"
       ],
@@ -2669,12 +2680,29 @@
         "${ Label.Name } berhasil diperbarui"
       ]
     },
+    "Font face option": {
+      "System default": [
+        "Bawaan sistem"
+      ],
+      "Theme default": [
+        "Tema bawaan"
+      ]
+    },
     "Font size option": {
       "Large": [
         "Besar"
       ],
+      "Medium (recommended)": [
+        "Sedang (direkomendasikan)"
+      ],
       "Small": [
         "Kecil"
+      ],
+      "Very large": [
+        "Sangat besar"
+      ],
+      "Very small": [
+        "Mungil"
       ]
     },
     "Group": {
@@ -3159,6 +3187,9 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Sebelum meminta kode verifikasi baru, periksa folder spam Anda dan pastikan ${ strong } merupakan alamat email yang benar."
       ],
+      "Billing cycle: ${ text }": [
+        "Siklus tagihan: ${ text }"
+      ],
       "Calendar side panel": [
         "Panel samping kalender"
       ],
@@ -3251,6 +3282,9 @@
       ],
       "Current version": [
         "Versi saat ini"
+      ],
+      "Customize the look and feel of ${ BRAND_NAME } applications.": [
+        "Sesuaikan tampilan dan nuansa aplikasi ${ BRAND_NAME } Anda."
       ],
       "Decrypting files": [
         "Mendekripsi berkas"
@@ -3374,9 +3408,6 @@
       ],
       "Folder \"${ link.name }\" was deleted during download": [
         "Folder \"${ link.name }\" telah dihapus pada saat pengunduhan sedang berlangsung"
-      ],
-      "Folder contents will merge into a single folder": [
-        "Konten folder akan digabungkan jadi satu folder"
       ],
       "Folder is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "Folder ini tidak ditandatangani. Kami tidak dapat memverifikasi bahwa ${ fileName } diunggah oleh ${ emailAddress }."
@@ -3822,9 +3853,6 @@
       "This will delete the links and remove access to your files or folders for anyone with the links.": [
         "Tindakan ini akan menonaktifkan tautan ini dan membuat berkas atau folder Anda tidak lagi dapat diakses melalui tautan yang bersangkutan."
       ],
-      "This will overwrite the existing folder": [
-        "Tindakan ini akan menimpa folder yang sudah ada"
-      ],
       "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on the device won’t be affected.": [
         "Tindakan ini akan menghapus perangkat ${ deviceName } yang telah disinkronkan sebelumnya dari ${ DRIVE_APP_NAME }. Berkas lokal yang terdapat pada perangkat yang bersangkutan tidak akan terpengaruh."
       ],
@@ -3905,6 +3933,9 @@
       ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "Mengunggah ratusan berkas sekaligus dapat berdampak pada kinerja."
+      ],
+      "Use Drive for Desktop to sync folders on your computer with ${ DRIVE_APP_NAME }. They’ll show up here and be accessible from anywhere. ${ learnMore }": [
+        "Gunakan Drive for Desktop untuk menyinkronkan folder pada komputer Anda dengan ${ DRIVE_APP_NAME }. Folder yang telah disinkronkan akan muncul pada halaman ini dan dapat diakses dari mana saja. ${ learnMore }"
       ],
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Gunakan formulir berikut untuk melaporkan berkas yang berisikan hal-hal yang\ntidak pantas, ilegal, ataupun berbahaya kepada kami. Anda akan melaporkan:"
@@ -4385,9 +4416,6 @@
       "Manage categories": [
         "Kelola kategori"
       ],
-      "Merge a folder": [
-        "Gabungkan folder"
-      ],
       "Modified": [
         "Dimodifikasi"
       ],
@@ -4495,6 +4523,9 @@
       ],
       "Street address": [
         "Alamat jalan"
+      ],
+      "Synchronize with system": [
+        "Sinkronkan dengan sistem"
       ],
       "System information": [
         "Informasi sistem"
@@ -4729,7 +4760,7 @@
         "Domain email khusus"
       ],
       "Hide-my-email aliases": [
-        "Alias Hide-my-email"
+        "Alias hide-my-email"
       ],
       "Schedule messages at any time": [
         "Jadwalkan pesan sesuai keinginan Anda"
@@ -4996,6 +5027,9 @@
       ],
       "Discover all ${ BRAND_NAME } services": [
         "Telusuri seluruh layanan ${ BRAND_NAME }"
+      ],
+      "More theming options are available in your account Settings > Appearance.": [
+        "Opsi penataan tema tersedia pada menu Pengaturan > Tampilan."
       ],
       "Select a theme": [
         "Pilih tema"
@@ -5269,9 +5303,6 @@
       ],
       "Highest VPN speed": [
         "Kecepatan VPN tertinggi"
-      ],
-      "Premium Drive": [
-        "Drive Premium"
       ],
       "Premium early access": [
         "Akses dini Premium"
@@ -5656,6 +5687,9 @@
       "Beta Access": [
         "Akses Beta"
       ],
+      "Billing cycle": [
+        "Siklus tagihan"
+      ],
       "Browser might run out of memory": [
         "Memori browser Anda mungkin tidak mencukupi"
       ],
@@ -5715,6 +5749,9 @@
       ],
       "Date": [
         "Tanggal"
+      ],
+      "Day theme": [
+        "Tema siang"
       ],
       "Delete ${ count } contact groups": [
         "Hapus ${ count } grup kontak"
@@ -6101,6 +6138,9 @@
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Opsi Otomatis berarti pesan akan dikirim apa adanya sesuai format tulis yang dipakai. Opsi Teks Polos berarti pesan akan selalu dikirim dalam bentuk teks polos."
       ],
+      "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
+        "Sesuaikan tema aplikasi dengan mode terang dan gelap pada sistem Anda secara otomatis"
+      ],
       "Customize import to reduce the number of folders": [
         "Sesuaikan impor untuk mengurangi jumlah folder"
       ],
@@ -6151,6 +6191,12 @@
       ],
       "The import will start with the most recent messages.": [
         "Proses impor akan dimulai dari pesan Anda yang paling baru."
+      ],
+      "The selected theme will be active when your system is set to \"dark mode\"": [
+        "Tema yang dipilih akan aktif pada saat sistem Anda diatur ke \"mode gelap\""
+      ],
+      "The selected theme will be active when your system is set to \"light mode\"": [
+        "Tema yang dipilih akan aktif pada saat sistem Anda diatur ke \"mode terang\""
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Unggah kunci publik untuk mengaktifkan pengiriman pesan terenkripsi ujung ke ujung ke alamat ini"
