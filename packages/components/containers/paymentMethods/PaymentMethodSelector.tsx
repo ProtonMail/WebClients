@@ -1,7 +1,8 @@
-import { PaymentMethodType } from '@proton/components/payments/core';
 import clsx from '@proton/utils/clsx';
 
-import { Icon, Option, Radio, SelectTwo } from '../../components';
+import { DropdownSizeUnit, Icon, Option, Radio, SelectTwo } from '../../components';
+import { DropdownSize } from '../../components/dropdown/utils';
+import { PaymentMethodType } from '../../payments/core';
 import { PaymentMethodData } from './interface';
 
 interface Props {
@@ -10,9 +11,10 @@ interface Props {
     onChange: (value: PaymentMethodType) => void;
     lastUsedMethod?: PaymentMethodData;
     forceDropdown?: boolean;
+    narrow?: boolean;
 }
 
-const PaymentMethodSelector = ({ method, lastUsedMethod, options, onChange, forceDropdown }: Props) => {
+const PaymentMethodSelector = ({ method, lastUsedMethod, options, onChange, forceDropdown, narrow }: Props) => {
     if (options.length <= 2 && !forceDropdown) {
         return (
             <>
@@ -42,8 +44,21 @@ const PaymentMethodSelector = ({ method, lastUsedMethod, options, onChange, forc
             </>
         );
     }
+
+    const size: DropdownSize | undefined = narrow
+        ? {
+              width: DropdownSizeUnit.Dynamic,
+          }
+        : undefined;
+
     return (
-        <SelectTwo id="select-method" value={method} onChange={({ value }) => onChange(value)}>
+        <SelectTwo
+            id="select-method"
+            value={method}
+            onChange={({ value }) => onChange(value)}
+            className={clsx(narrow && 'wauto')}
+            size={size}
+        >
             {options.flatMap((option) => {
                 const child = (
                     <Option key={option.value} value={option.value} title={option.text}>
