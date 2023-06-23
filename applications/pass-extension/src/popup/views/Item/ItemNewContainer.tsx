@@ -9,6 +9,7 @@ import type { ItemNewProps } from '../../../shared/items/types';
 import { useItemsFilteringContext } from '../../hooks/useItemsFilteringContext';
 import { useNavigationContext } from '../../hooks/useNavigationContext';
 import { AliasNew } from './Alias/Alias.new';
+import { CreditCardNew } from './CreditCard/CreditCard.new';
 import { LoginNew } from './Login/Login.new';
 import { NoteNew } from './Note/Note.new';
 
@@ -16,6 +17,7 @@ const itemNewMap: { [T in ItemType]: VFC<ItemNewProps<T>> } = {
     login: LoginNew,
     note: NoteNew,
     alias: AliasNew,
+    creditCard: CreditCardNew,
 };
 
 export const ItemNewContainer: VFC = () => {

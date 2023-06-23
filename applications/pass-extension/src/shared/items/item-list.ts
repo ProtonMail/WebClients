@@ -19,6 +19,10 @@ const itemListPresenter: ItemListPresenterMap = {
         heading: data.metadata.name,
         subheading: aliasEmail!,
     }),
+    creditCard: ({ data }) => ({
+        heading: data.metadata.name,
+        subheading: data.content.cardholderName,
+    }),
 };
 
 export const presentListItem = <T extends ItemType>(revision: ItemRevision<T>): PresentedListItem =>
