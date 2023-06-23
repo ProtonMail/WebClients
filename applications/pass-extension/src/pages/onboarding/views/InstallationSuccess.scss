@@ -12,4 +12,8 @@
 	&--connect-illustration {
 		block-size: 160px !important;
 	}
+
+	&--white-separator {
+		background-color: var(--text-weak);
+	}
 }
