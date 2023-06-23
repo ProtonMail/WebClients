@@ -45,6 +45,37 @@ export interface ItemLogin {
  */
 export interface ItemAlias {}
 /**
+ * @generated from protobuf message proton_pass_item_v1.ItemCreditCard
+ */
+export interface ItemCreditCard {
+    /**
+     * @generated from protobuf field: string cardholder_name = 1;
+     */
+    cardholderName: string;
+    /**
+     * @generated from protobuf field: proton_pass_item_v1.CardType card_type = 2;
+     */
+    cardType: CardType;
+    /**
+     * @generated from protobuf field: string number = 3;
+     */
+    number: string;
+    /**
+     * @generated from protobuf field: string verification_number = 4;
+     */
+    verificationNumber: string;
+    /**
+     * Expected format: YYYY-MM, always containing two numbers for the month, even if is 01
+     *
+     * @generated from protobuf field: string expiration_date = 5;
+     */
+    expirationDate: string;
+    /**
+     * @generated from protobuf field: string pin = 6;
+     */
+    pin: string;
+}
+/**
  * Client extras
  *
  * @generated from protobuf message proton_pass_item_v1.AllowedAndroidApp
@@ -194,6 +225,13 @@ export interface Content {
               alias: ItemAlias;
           }
         | {
+              oneofKind: 'creditCard';
+              /**
+               * @generated from protobuf field: proton_pass_item_v1.ItemCreditCard credit_card = 5;
+               */
+              creditCard: ItemCreditCard;
+          }
+        | {
               oneofKind: undefined;
           };
 }
@@ -217,6 +255,33 @@ export interface Item {
      * @generated from protobuf field: repeated proton_pass_item_v1.ExtraField extra_fields = 4;
      */
     extraFields: ExtraField[];
+}
+/**
+ * Credit cards
+ *
+ * @generated from protobuf enum proton_pass_item_v1.CardType
+ */
+export enum CardType {
+    /**
+     * @generated from protobuf enum value: Unspecified = 0;
+     */
+    Unspecified = 0,
+    /**
+     * @generated from protobuf enum value: Other = 1;
+     */
+    Other = 1,
+    /**
+     * @generated from protobuf enum value: Visa = 2;
+     */
+    Visa = 2,
+    /**
+     * @generated from protobuf enum value: Mastercard = 3;
+     */
+    Mastercard = 3,
+    /**
+     * @generated from protobuf enum value: AmericanExpress = 4;
+     */
+    AmericanExpress = 4,
 }
 // @generated message type with reflection information, may provide speed optimized methods
 class ItemNote$Type extends MessageType<ItemNote> {
@@ -341,6 +406,96 @@ class ItemAlias$Type extends MessageType<ItemAlias> {
  * @generated MessageType for protobuf message proton_pass_item_v1.ItemAlias
  */
 export const ItemAlias = new ItemAlias$Type();
+// @generated message type with reflection information, may provide speed optimized methods
+class ItemCreditCard$Type extends MessageType<ItemCreditCard> {
+    constructor() {
+        super('proton_pass_item_v1.ItemCreditCard', [
+            { no: 1, name: 'cardholder_name', kind: 'scalar', T: 9 /*ScalarType.STRING*/ },
+            { no: 2, name: 'card_type', kind: 'enum', T: () => ['proton_pass_item_v1.CardType', CardType] },
+            { no: 3, name: 'number', kind: 'scalar', T: 9 /*ScalarType.STRING*/ },
+            { no: 4, name: 'verification_number', kind: 'scalar', T: 9 /*ScalarType.STRING*/ },
+            { no: 5, name: 'expiration_date', kind: 'scalar', T: 9 /*ScalarType.STRING*/ },
+            { no: 6, name: 'pin', kind: 'scalar', T: 9 /*ScalarType.STRING*/ },
+        ]);
+    }
+    create(value?: PartialMessage<ItemCreditCard>): ItemCreditCard {
+        const message = {
+            cardholderName: '',
+            cardType: 0,
+            number: '',
+            verificationNumber: '',
+            expirationDate: '',
+            pin: '',
+        };
+        globalThis.Object.defineProperty(message, MESSAGE_TYPE, { enumerable: false, value: this });
+        if (value !== undefined) reflectionMergePartial<ItemCreditCard>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(
+        reader: IBinaryReader,
+        length: number,
+        options: BinaryReadOptions,
+        target?: ItemCreditCard
+    ): ItemCreditCard {
+        let message = target ?? this.create(),
+            end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* string cardholder_name */ 1:
+                    message.cardholderName = reader.string();
+                    break;
+                case /* proton_pass_item_v1.CardType card_type */ 2:
+                    message.cardType = reader.int32();
+                    break;
+                case /* string number */ 3:
+                    message.number = reader.string();
+                    break;
+                case /* string verification_number */ 4:
+                    message.verificationNumber = reader.string();
+                    break;
+                case /* string expiration_date */ 5:
+                    message.expirationDate = reader.string();
+                    break;
+                case /* string pin */ 6:
+                    message.pin = reader.string();
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === 'throw')
+                        throw new globalThis.Error(
+                            `Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`
+                        );
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: ItemCreditCard, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* string cardholder_name = 1; */
+        if (message.cardholderName !== '') writer.tag(1, WireType.LengthDelimited).string(message.cardholderName);
+        /* proton_pass_item_v1.CardType card_type = 2; */
+        if (message.cardType !== 0) writer.tag(2, WireType.Varint).int32(message.cardType);
+        /* string number = 3; */
+        if (message.number !== '') writer.tag(3, WireType.LengthDelimited).string(message.number);
+        /* string verification_number = 4; */
+        if (message.verificationNumber !== '')
+            writer.tag(4, WireType.LengthDelimited).string(message.verificationNumber);
+        /* string expiration_date = 5; */
+        if (message.expirationDate !== '') writer.tag(5, WireType.LengthDelimited).string(message.expirationDate);
+        /* string pin = 6; */
+        if (message.pin !== '') writer.tag(6, WireType.LengthDelimited).string(message.pin);
+        let u = options.writeUnknownFields;
+        if (u !== false) (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message proton_pass_item_v1.ItemCreditCard
+ */
+export const ItemCreditCard = new ItemCreditCard$Type();
 // @generated message type with reflection information, may provide speed optimized methods
 class AllowedAndroidApp$Type extends MessageType<AllowedAndroidApp> {
     constructor() {
@@ -862,6 +1017,7 @@ class Content$Type extends MessageType<Content> {
             { no: 2, name: 'note', kind: 'message', oneof: 'content', T: () => ItemNote },
             { no: 3, name: 'login', kind: 'message', oneof: 'content', T: () => ItemLogin },
             { no: 4, name: 'alias', kind: 'message', oneof: 'content', T: () => ItemAlias },
+            { no: 5, name: 'credit_card', kind: 'message', oneof: 'content', T: () => ItemCreditCard },
         ]);
     }
     create(value?: PartialMessage<Content>): Content {
@@ -909,6 +1065,17 @@ class Content$Type extends MessageType<Content> {
                         ),
                     };
                     break;
+                case /* proton_pass_item_v1.ItemCreditCard credit_card */ 5:
+                    message.content = {
+                        oneofKind: 'creditCard',
+                        creditCard: ItemCreditCard.internalBinaryRead(
+                            reader,
+                            reader.uint32(),
+                            options,
+                            (message.content as any).creditCard
+                        ),
+                    };
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === 'throw')
@@ -942,6 +1109,13 @@ class Content$Type extends MessageType<Content> {
             ItemAlias.internalBinaryWrite(
                 message.content.alias,
                 writer.tag(4, WireType.LengthDelimited).fork(),
+                options
+            ).join();
+        /* proton_pass_item_v1.ItemCreditCard credit_card = 5; */
+        if (message.content.oneofKind === 'creditCard')
+            ItemCreditCard.internalBinaryWrite(
+                message.content.creditCard,
+                writer.tag(5, WireType.LengthDelimited).fork(),
                 options
             ).join();
         let u = options.writeUnknownFields;
