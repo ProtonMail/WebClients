@@ -66,14 +66,15 @@
 			position: absolute !important;
 			inset: 0 !important;
 			margin: auto !important;
-			inline-size: 80% !important;
-			transform: translateX(-10%);
+			inline-size: 100% !important;
 			color: white !important;
 			text-align: center !important;
 			font-family: system-ui, sans-serif !important;
 			line-height: var(--protonpass-icon-lineheight) !important;
 			font-size: var(--protonpass-icon-fontsize) !important;
 			display: block !important;
+			font-weight: bold !important;
+			text-shadow: 0 0.5px 3px #320dc5 !important;
 		}
 
 		&--disabled {
