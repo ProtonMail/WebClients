@@ -4,7 +4,14 @@ import { createListenerStore } from '@proton/pass/utils/listener';
 import { workerErrored, workerLocked, workerLoggedOut, workerStale } from '@proton/pass/utils/worker';
 import debounce from '@proton/utils/debounce';
 
-import { ACTIVE_ICON_SRC, DISABLED_ICON_SRC, EXTENSION_PREFIX, ICON_CLASSNAME, LOCKED_ICON_SRC } from '../../constants';
+import {
+    ACTIVE_ICON_SRC,
+    COUNTER_ICON_SRC,
+    DISABLED_ICON_SRC,
+    EXTENSION_PREFIX,
+    ICON_CLASSNAME,
+    LOCKED_ICON_SRC,
+} from '../../constants';
 import { withContext } from '../../context/context';
 import { applyInjectionStyles, cleanupInjectionStyles, createIcon } from '../../injections/icon';
 import type { FieldHandle, FieldIconHandle } from '../../types';
@@ -33,6 +40,10 @@ export const createFieldIconHandle = ({ field }: CreateIconOptions): FieldIconHa
     const setCount = (count: number) => {
         const safeCount = count === 0 || !count ? '' : String(count);
         icon.style.setProperty(`--${EXTENSION_PREFIX}-items-count`, `"${safeCount}"`);
+
+        if (count > 0) {
+            icon.style.setProperty('background-image', `url("${COUNTER_ICON_SRC}")`, 'important');
+        }
     };
 
     const reposition = debounce(
