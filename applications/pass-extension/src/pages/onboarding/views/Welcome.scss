@@ -1,31 +1,29 @@
 @import '~@proton/styles/scss/lib';
 
-.pass-welcome--onboarding-video {
-	position: relative;
-	padding-block-end: 48%;
-	block-size: 0;
-	inline-size: 100%;
-	overflow: hidden;
-
-	iframe {
-		position: absolute;
-		inset-block-start: 0;
-		inset-inline-start: 0;
+.pass-welcome {
+	&--onboarding-video {
+		position: relative;
+		padding-block-end: 48%;
+		block-size: 0;
 		inline-size: 100%;
-		block-size: 100%;
+		overflow: hidden;
+
+		iframe {
+			position: absolute;
+			inset-block-start: 0;
+			inset-inline-start: 0;
+			inline-size: 100%;
+			block-size: 100%;
+		}
 	}
-}
 
-.pass-welcome--onboarding-pin {
-	border: 2px solid white;
-}
-
-.pass-welcome--on-medium-default-grow {
-	@include media('<medium') {
-		flex: 1 1 auto !important;
+	&--on-medium-default-grow {
+		@include media('<medium') {
+			flex: 1 1 auto !important;
+		}
 	}
-}
 
-.pass-welcome--import-btn {
-	outline: 1px solid var(--interaction-norm-major-2);
+	&--import-btn {
+		outline: 1px solid var(--interaction-norm-major-2);
+	}
 }
