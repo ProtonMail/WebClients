@@ -1,6 +1,6 @@
-.ui-note {
-    --interaction-norm: #FFD5A1;
-    --interaction-weak: #3E3537;
+.ui-red {
+    --interaction-norm: #FC9C9F;
+    --interaction-weak: #3D2E3A;
 
     --interaction-norm-hover: var(--interaction-norm-major-1);
     --interaction-norm-active: var(--interaction-norm-major-2);
