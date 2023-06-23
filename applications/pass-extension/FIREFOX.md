@@ -74,7 +74,7 @@ In order to generate the sources and the build for a Firefox addon release run t
 yarn run generate:ff-release [out-dir] [branch-name]? [commit]?
 ```
 
-Specifify an `out-dir` located outside of the current git repository to avoid any conflicts. You may optionally specify a target branch and commit. If you don't it will fallback to the `pass-extension` branch.
+Specifify an `out-dir` located outside of the current git repository to avoid any conflicts. You may optionally specify a target branch and commit. If you don't it will fallback to the `main` branch.
 
 Most of the time this will suffice <sup>3</sup> :
 

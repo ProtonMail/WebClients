@@ -1,6 +1,5 @@
-import type { VFC} from 'react';
-import { useEffect } from 'react';
-import { useState } from 'react';
+import type { VFC } from 'react';
+import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -40,7 +39,7 @@ const brandNameJSX = (
 );
 
 export const InstallationSuccess: VFC = () => {
-    const login = useNavigateToLogin();
+    const login = useNavigateToLogin({ replace: true });
     const [isPinned, setIsPinned] = useState<MaybeNull<boolean>>(null);
 
     const { createNotification } = useNotifications();
@@ -57,7 +56,7 @@ export const InstallationSuccess: VFC = () => {
         if (isPinned === false) {
             createNotification({
                 text: c('Error').t`Please pin the extension to continue.`,
-                type: 'info',
+                type: 'error',
                 showCloseButton: false,
             });
         }
@@ -78,7 +77,7 @@ export const InstallationSuccess: VFC = () => {
                     <div className="pass-onboarding--gradient"></div>
                     <div className="flex flex-column">
                         <div className="flex flex-column">
-                            <div className="flex flex-align-items-center gap-2 mb-4">
+                            <div className="pt-2 flex flex-align-items-center gap-2 mb-4">
                                 {
                                     <img
                                         src="/assets/protonpass-icon.svg"
@@ -89,14 +88,13 @@ export const InstallationSuccess: VFC = () => {
                                 }
                                 <span>{brandNameJSX}</span>
                             </div>
-                            <h1 className="h2 pass-onboarding--white-text mb-10 text-bold">
-                                {c('Title').jt`Welcome to ${PASS_APP_NAME}`}
-                            </h1>
+                            <h1 className="pass-onboarding--white-text mt-4 mb-8 text-semibold">{c('Title')
+                                .jt`Welcome!`}</h1>
                         </div>
 
                         <div className="flex flex-align-items-center gap-2 mb-4">
-                            <span>Step {isPinned ? 2 : 1} of 2</span>
-                            <hr className="my-2 flex flex-item-fluid-auto" />
+                            <span className="text-bold">Step {isPinned ? 2 : 1} of 2</span>
+                            <hr className="pass-installation--white-separator my-2 flex flex-item-fluid-auto" />
                         </div>
 
                         <div className="mx-auto flex flex-justify-center flex-nowrap on-tablet-flex-column gap-12">
@@ -115,7 +113,7 @@ export const InstallationSuccess: VFC = () => {
                                                 {steps.map(({ key, icon, description }, idx) => (
                                                     <li key={key} className="flex mb-5 flex-align-items-center">
                                                         <div
-                                                            className="pass-installation--dot bg-primary rounded-50 text-center mr-3 relative"
+                                                            className="pass-installation--dot rounded-50 text-center mr-3 relative"
                                                             aria-hidden="true"
                                                         >
                                                             <span className="absolute absolute-center">{idx + 1}</span>
@@ -152,16 +150,7 @@ export const InstallationSuccess: VFC = () => {
                                     </div>
 
                                     <div className="flex">
-                                        <img
-                                            src={
-                                                BUILD_TARGET === 'firefox'
-                                                    ? '/assets/onboarding-pin-firefox.gif'
-                                                    : '/assets/onboarding-pin.gif'
-                                            }
-                                            alt=""
-                                            className="pass-installation--pin-tutorial rounded-xl"
-                                            width="445"
-                                        />
+                                        <img src="/assets/pin-tutorial.gif" alt="" width="325" />
                                     </div>
                                 </>
                             )}
@@ -202,12 +191,12 @@ export const InstallationSuccess: VFC = () => {
                                         </Button>
                                     </div>
 
-                                    <div className="flex flex-justify-center">
+                                    <div className="flex flex-justify-center flex-align-items-center">
                                         <img
                                             src="assets/onboarding-connect-illustration.svg"
                                             alt=""
                                             className="pass-installation--connect-illustration"
-                                            width="545"
+                                            width="428"
                                         />
                                     </div>
                                 </>
