@@ -22,6 +22,7 @@ import type { ItemTypeViewProps } from '../../../../shared/items/types';
 import { useNavigationContext } from '../../../hooks/useNavigationContext';
 import { VaultSelectModal, useVaultSelectModalHandles } from '../../Vault/VaultSelect.modal';
 import { AliasView } from '../Alias/Alias.view';
+import { CreditCardView } from '../CreditCard/CreditCard.view';
 import { LoginView } from '../Login/Login.view';
 import { NoteView } from '../Note/Note.view';
 
@@ -37,6 +38,7 @@ const itemTypeViewMap: { [T in ItemType]: VFC<ItemTypeViewProps<T>> } = {
     login: LoginView,
     note: NoteView,
     alias: AliasView,
+    creditCard: CreditCardView,
 };
 
 export const ItemView: VFC<Props> = ({ item, failureAction, shareId, itemId, vault }) => {
