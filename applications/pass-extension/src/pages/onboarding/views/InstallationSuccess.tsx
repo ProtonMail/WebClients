@@ -1,4 +1,4 @@
-import type { VFC} from 'react';
+import type { VFC } from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
 
@@ -152,16 +152,7 @@ export const InstallationSuccess: VFC = () => {
                                     </div>
 
                                     <div className="flex">
-                                        <img
-                                            src={
-                                                BUILD_TARGET === 'firefox'
-                                                    ? '/assets/onboarding-pin-firefox.gif'
-                                                    : '/assets/onboarding-pin.gif'
-                                            }
-                                            alt=""
-                                            className="pass-installation--pin-tutorial rounded-xl"
-                                            width="445"
-                                        />
+                                        <img src="/assets/pin-tutorial.gif" alt="" width="445" />
                                     </div>
                                 </>
                             )}
