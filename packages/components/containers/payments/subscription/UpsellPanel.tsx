@@ -25,6 +25,7 @@ import {
     hasVPN,
     isTrial,
 } from '@proton/shared/lib/helpers/subscription';
+import { dateLocale } from '@proton/shared/lib/i18n';
 import { Currency, Plan, Subscription, UserModel } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
@@ -126,7 +127,9 @@ const UpsellPanel = ({ currency, subscription, plans, user, openSubscriptionModa
     // Trial upsell
     if (isTrial(subscription) && subscription.PeriodEnd && mailPlan) {
         const mailPlanName = mailPlan.Title;
-        const formattedTrialExpirationDate = format(fromUnixTime(subscription.PeriodEnd || 0), 'MMMM d, y');
+        const formattedTrialExpirationDate = format(fromUnixTime(subscription.PeriodEnd || 0), 'PPP', {
+            locale: dateLocale,
+        });
         const handleUpgrade = () =>
             openSubscriptionModal({
                 plan: PLANS.MAIL,
