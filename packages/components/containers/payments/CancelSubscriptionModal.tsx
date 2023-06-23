@@ -57,7 +57,7 @@ const CancelSubscriptionModal = ({ subscription, onConfirm, onClose, ...rest }: 
             {...rest}
         >
             <p>{c('Info')
-                .jt`If you cancel, you ${vpnPlanName} subscription will not be renewed when it expires on ${expiryDate}.`}</p>
+                .jt`If you cancel, your ${vpnPlanName} subscription will not be renewed when it expires on ${expiryDate}.`}</p>
             <p>{c('Info').t`You will lose access to ${vpnPlanNameShort} servers and features on this date.`}</p>
         </Prompt>
     );
