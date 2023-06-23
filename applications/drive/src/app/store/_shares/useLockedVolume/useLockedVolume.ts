@@ -15,7 +15,6 @@ import isTruthy from '@proton/utils/isTruthy';
 
 import { useDebouncedRequest } from '../../_api';
 import { useDriveCrypto } from '../../_crypto';
-import { useDevicesListing } from '../../_devices';
 import { useLink } from '../../_links';
 import { GLOBAL_FORBIDDEN_CHARACTERS } from '../../_links/link';
 import { useDebouncedFunction } from '../../_utils';
@@ -27,7 +26,7 @@ import { getPossibleAddressPrivateKeys, prepareVolumeForRestore } from './utils'
 
 type LockedShares = {
     defaultShare: ShareWithKey;
-    devices: (ShareWithKey & { deviceName?: string })[];
+    devices: ShareWithKey[];
 }[];
 
 /**
@@ -35,7 +34,6 @@ type LockedShares = {
  */
 export default function useLockedVolume() {
     const { getLinkPrivateKey, getLinkHashKey } = useLink();
-    const { getDeviceByShareId } = useDevicesListing();
 
     return useLockedVolumeInner({
         sharesState: useSharesState(),
@@ -46,7 +44,6 @@ export default function useLockedVolume() {
         prepareVolumeForRestore,
         getLinkHashKey,
         getLinkPrivateKey,
-        getDeviceByShareId,
     });
 }
 
@@ -59,7 +56,6 @@ type LockedVolumesCallbacks = {
     prepareVolumeForRestore: typeof prepareVolumeForRestore;
     getLinkPrivateKey: ReturnType<typeof useLink>['getLinkPrivateKey'];
     getLinkHashKey: ReturnType<typeof useLink>['getLinkHashKey'];
-    getDeviceByShareId: ReturnType<typeof useDevicesListing>['getDeviceByShareId'];
 };
 
 export function useLockedVolumeInner({
@@ -71,7 +67,6 @@ export function useLockedVolumeInner({
     prepareVolumeForRestore,
     getLinkPrivateKey,
     getLinkHashKey,
-    getDeviceByShareId,
 }: LockedVolumesCallbacks) {
     const { preventLeave } = usePreventLeave();
     const debouncedFunction = useDebouncedFunction();
@@ -84,14 +79,7 @@ export function useLockedVolumeInner({
                     return {
                         defaultShare: await getShareWithKey(abortSignal, defaultShare.shareId),
                         devices: await Promise.all(
-                            devices.map(async (device) => {
-                                const share = await getShareWithKey(abortSignal, device.shareId);
-                                const shareDevice = getDeviceByShareId(device.shareId);
-                                return {
-                                    ...share,
-                                    deviceName: shareDevice?.name,
-                                };
-                            })
+                            devices.map((device) => getShareWithKey(abortSignal, device.shareId))
                         ),
                     };
                 })
@@ -202,12 +190,11 @@ export function useLockedVolumeInner({
                 ),
             ]);
 
-        const devicesPayload = lockedDevices.map(({ shareId, deviceName }, idx) => {
+        const devicesPayload = lockedDevices.map(({ shareId }, idx) => {
             const { shareKeyPacket, sharePassphraseSignature } = devicePassphrases[idx];
             return {
                 LockedShareID: shareId,
                 ShareKeyPacket: shareKeyPacket,
-                Name: c('Info').t`${deviceName} (restored)`,
                 PassphraseSignature: sharePassphraseSignature,
             };
         });
