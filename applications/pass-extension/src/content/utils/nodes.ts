@@ -1,5 +1,6 @@
 import {
     DETECTED_CLUSTER_ATTR,
+    IGNORE_ELEMENT_ATTR,
     fieldOfInterestSelector,
     formOfInterestSelector,
     isUserEditableField,
@@ -24,23 +25,25 @@ export const selectAllForms = () => {
 };
 
 /* Unprocessed are forms that have never been seen by our detectors:
- * if that is the case they will lack a `data-protonpass-form` attr */
+ * · not processed form of interest
+ * · not processed detected cluster */
 export const selectUnprocessedForms = (target: Document | HTMLElement = document) => {
     const selector = `${formOfInterestSelector}:not([${PROCESSED_FORM_ATTR}]), [${DETECTED_CLUSTER_ATTR}]:not([${PROCESSED_FORM_ATTR}])`;
     return Array.from(target.querySelectorAll<HTMLElement>(selector));
 };
 
-/* dangling fields are fields that match our `fieldOfInterestSelector`
- * but have either not been processed or do not belong to a currently
- * tracked form */
+/* dangling fields are fields that match our `fieldOfInterestSelector` and :
+ * · have not been already processed
+ * · do not belong to a processed form
+ * · are not flagged as ignored */
 export const selectDanglingFields = (target: Document | HTMLElement = document) => {
-    const selector = `:not([${PROCESSED_FIELD_ATTR}]):not([${PROCESSED_FORM_ATTR}] input)`;
+    const selector = `:not([${PROCESSED_FIELD_ATTR}]):not([${PROCESSED_FORM_ATTR}] input):not([${IGNORE_ELEMENT_ATTR}])`;
     const candidates = target.querySelectorAll<HTMLInputElement>(fieldOfInterestSelector);
     return Array.from(candidates).filter((el) => el.matches(selector));
 };
 
 export const selectUnprocessedFields = (target: Document | HTMLElement = document) => {
-    const selector = `:not([${PROCESSED_FIELD_ATTR}])`;
+    const selector = `:not([${PROCESSED_FIELD_ATTR}]):not([${IGNORE_ELEMENT_ATTR}])`;
     const candidates = target.querySelectorAll<HTMLInputElement>(fieldOfInterestSelector);
     return Array.from(candidates).filter((el) => el.matches(selector));
 };
