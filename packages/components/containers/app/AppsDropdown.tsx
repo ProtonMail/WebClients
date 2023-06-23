@@ -2,10 +2,11 @@ import { ForwardedRef, Fragment, forwardRef } from 'react';
 
 import { c } from 'ttag';
 
+import ProtonBadge from '@proton/components/components/protonBadge/ProtonBadge';
 import { FeatureCode } from '@proton/components/containers';
 import { useConfig, useFeature, useUser } from '@proton/components/hooks';
 import { getAppShortName } from '@proton/shared/lib/apps/helper';
-import { APP_NAMES, BRAND_NAME } from '@proton/shared/lib/constants';
+import { APPS, APP_NAMES, BRAND_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
 import { Icon, Logo, SimpleDropdown } from '../../components';
@@ -77,6 +78,9 @@ const AppsDropdown = ({ onDropdownClick, app, ...rest }: AppsDropdownProps, ref:
                                     >
                                         {appToLinkToName}
                                     </span>
+                                    {appToLinkTo === APPS.PROTONPASS && (
+                                        <ProtonBadge text={c('Info').t`New`} tooltipText="" selected={false} />
+                                    )}
                                 </ProductLink>
                             </li>
                         </Fragment>
