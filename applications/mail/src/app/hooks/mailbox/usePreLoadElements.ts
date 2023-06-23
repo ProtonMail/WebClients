@@ -11,7 +11,14 @@ import { load } from '../../logic/conversations/conversationsActions';
 import { initialize } from '../../logic/messages/read/messagesReadActions';
 import { RootState, useAppDispatch } from '../../logic/store';
 
-const usePreLoadElements = (elementIDs: string[], isConversation: boolean, labelID: string) => {
+interface Props {
+    elementIDs: string[];
+    isConversation: boolean;
+    labelID: string;
+    loading: boolean;
+}
+
+const usePreLoadElements = ({ elementIDs, isConversation, labelID, loading }: Props) => {
     const dispatch = useAppDispatch();
     const { feature } = useFeature(FeatureCode.NumberOfPreloadedConversations);
     const numberOfPreloadedConversations = feature?.Value || 0;
@@ -44,10 +51,10 @@ const usePreLoadElements = (elementIDs: string[], isConversation: boolean, label
             }
         };
 
-        if (isConversation && firstElementIDs.length > 0) {
+        if (!loading && isConversation && firstElementIDs.length > 0) {
             void preload();
         }
-    }, [firstElementIDs.join(), isConversation, labelID]); // "firstElementIDs.join()" makes firstElementIDs dependency stable
+    }, [firstElementIDs.join(), isConversation, labelID, loading]); // "firstElementIDs.join()" makes firstElementIDs dependency stable
 };
 
 export default usePreLoadElements;
