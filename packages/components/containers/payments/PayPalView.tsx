@@ -7,6 +7,7 @@ import { Currency } from '@proton/shared/lib/interfaces';
 import { Alert, DoNotWindowOpenAlertError, Loader, Price } from '../../components';
 import { PaymentMethodFlows } from '../paymentMethods/interface';
 import PayPalButton from './PayPalButton';
+import PayPalInfoMessage from './PayPalInfoMessage';
 import { PayPalHook } from './usePayPal';
 
 interface Props {
@@ -64,10 +65,7 @@ const PayPalView = ({ type, amount, currency, paypal, paypalCredit, disabled, pr
             {paypal.loadingVerification ? <Loader /> : null}
             {!paypal.loadingVerification && isAllowedPaymentType ? (
                 <>
-                    <div className="mb-4">
-                        {c('Info')
-                            .t`We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.`}
-                    </div>
+                    <PayPalInfoMessage />
                     <div className="mb-4">
                         {c('Info')
                             .t`You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.`}
@@ -76,14 +74,7 @@ const PayPalView = ({ type, amount, currency, paypal, paypalCredit, disabled, pr
                     </div>
                 </>
             ) : null}
-            {!paypal.loadingVerification && isAllowedOtherType ? (
-                <>
-                    <div className="mb-4">
-                        {c('Info')
-                            .t`We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.`}
-                    </div>
-                </>
-            ) : null}
+            {!paypal.loadingVerification && isAllowedOtherType ? <PayPalInfoMessage /> : null}
         </div>
     );
 };
