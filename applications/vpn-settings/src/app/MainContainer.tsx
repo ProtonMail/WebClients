@@ -36,6 +36,7 @@ import {
     StandardErrorPage,
     SubscriptionModalProvider,
     SubscriptionsSection,
+    ThemesSection,
     TopBanners,
     TopNavbarUpsell,
     UnAuthenticated,
@@ -76,6 +77,9 @@ const MainContainer = () => {
 
     const passPlusPlanFeature = useFeature<boolean>(FeatureCode.PassPlusPlan);
     const isPassPlusEnabled = passPlusPlanFeature.feature?.Value === true;
+
+    const isAccessibilitySettingsEnabled =
+        useFeature<boolean>(FeatureCode.AccessibilitySettings)?.feature?.Value === true;
 
     const [user] = useUser();
     const [subscription, loadingSubscription] = useSubscription();
@@ -225,6 +229,7 @@ const MainContainer = () => {
                             <Route path={routes.general.to}>
                                 <PrivateMainSettingsArea config={routes.general}>
                                     <LanguageSection locales={locales} />
+                                    <ThemesSection accessibilitySettingsAvailable={isAccessibilitySettingsEnabled} />
                                 </PrivateMainSettingsArea>
                             </Route>
                             <Route path={routes.account.to}>
