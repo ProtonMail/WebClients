@@ -1,6 +1,5 @@
 import type { VFC } from 'react';
-import { useEffect } from 'react';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -40,7 +39,7 @@ const brandNameJSX = (
 );
 
 export const InstallationSuccess: VFC = () => {
-    const login = useNavigateToLogin();
+    const login = useNavigateToLogin({ replace: true });
     const [isPinned, setIsPinned] = useState<MaybeNull<boolean>>(null);
 
     const { createNotification } = useNotifications();
