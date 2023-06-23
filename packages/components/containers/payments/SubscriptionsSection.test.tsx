@@ -90,13 +90,13 @@ describe('SubscriptionsSection', () => {
         expect(container).not.toHaveTextContent('Upcoming');
     });
 
-    it('should display Expires soon badge if renew is disabled', () => {
+    it('should display Expiring badge if renew is disabled', () => {
         subscription.Renew = Renew.Disabled;
         const { container } = render(<ContextSubscriptionSection />);
 
         expect(container).toHaveTextContent('Proton Unlimited');
         expect(container).toHaveTextContent('119.88');
-        expect(container).toHaveTextContent('Expires soon');
+        expect(container).toHaveTextContent('Expiring');
     });
 
     it('should not render asterisk if Renew is disabled', () => {

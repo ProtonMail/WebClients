@@ -219,7 +219,7 @@ const SubscriptionsSection = () => {
                                 subscriptionExpiresSoon
                                     ? {
                                           type: 'error',
-                                          label: c('Subscription status').t`Expires soon`,
+                                          label: c('Subscription status').t`Expiring`,
                                       }
                                     : { type: 'success', label: c('Subscription status').t`Active` }
                             }
