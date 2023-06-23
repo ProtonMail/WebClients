@@ -33,6 +33,10 @@ const getSteps = () => [
     },
 ];
 
+const brandNameJSX = (
+    <img src={passBrandText} className="ml-2 h-custom" style={{ '--h-custom': '28px' }} key="brand" alt="" />
+);
+
 export const InstallationSuccess: VFC = () => {
     const login = useNavigateToLogin();
     const [isPinned, setIsPinned] = useState(false);
@@ -58,10 +62,6 @@ export const InstallationSuccess: VFC = () => {
     };
 
     const steps = getSteps();
-
-    const brandNameJSX = (
-        <img src={passBrandText} className="ml-2 h-custom" style={{ '--h-custom': '28px' }} key="brand" alt="" />
-    );
 
     return (
         <>
@@ -169,7 +169,6 @@ export const InstallationSuccess: VFC = () => {
                                             {c('Info').t`Sign in or create an account to continue.`}
                                         </h2>
                                         <Button
-                                            icon
                                             pill
                                             size="large"
                                             shape="solid"
@@ -183,13 +182,12 @@ export const InstallationSuccess: VFC = () => {
                                             </span>
                                         </Button>
                                         <Button
-                                            icon
                                             pill
                                             size="large"
                                             shape="outline"
                                             color="weak"
                                             onClick={() => login(FORK_TYPE.SIGNUP)}
-                                            aria-label={c('Action').t`Sign in`}
+                                            aria-label={c('Action').t`Create an account`}
                                         >
                                             <span className="flex flex-justify-center px-4">
                                                 {c('Action').t`Create a ${BRAND_NAME} account`}
