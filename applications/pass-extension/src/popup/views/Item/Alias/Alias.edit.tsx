@@ -80,7 +80,7 @@ export const AliasEdit: VFC<ItemEditProps<'alias'>> = ({ vault, revision, onCanc
 
     useItemDraft<EditAliasFormValues>(form, {
         type: 'alias',
-        mode: 'new',
+        mode: 'edit',
         itemId: itemId,
         shareId: vault.shareId,
         onHydrated: draftHydrated.resolve,
