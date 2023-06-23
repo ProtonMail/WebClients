@@ -24,7 +24,7 @@ REPO_DIR=$(realpath "../..")
 SOURCE_DIR=$(realpath .)
 
 # fallback to current commit if none specified
-# fallback to pass-extension branch if none specified
+# fallback to main branch if none specified
 if [ -z "$OUT" ]; then
     echo -e "${WARNING}No output directory specified: using \"../../..\"${NOCOLOR}"
     echo -e "${WARNING}${USAGE}${NOCOLOR}"
@@ -40,9 +40,9 @@ if [[ "$OUT_DIR" == "$REPO_DIR"* ]]; then
     exit 0
 fi
 
-# fallback to pass-extension branch if none specified
+# fallback to main branch if none specified
 if [ -z "$BRANCH" ]; then
-    BRANCH="pass-extension"
+    BRANCH="main"
 fi
 
 # fallback to current commit if none specified

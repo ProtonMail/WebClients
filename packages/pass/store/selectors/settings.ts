@@ -1,10 +1,13 @@
+import { createSelector } from '@reduxjs/toolkit';
+
 import { omit } from '@proton/shared/lib/helpers/object';
 
-import type { ProxiedSettings } from '../reducers/settings';
 import type { State } from '../types';
+import { selectState } from './utils';
 
-export const selectProxiedSettings = ({ settings }: State): ProxiedSettings =>
-    omit(settings, ['sessionLockTTL', 'sessionLockToken']);
+export const selectProxiedSettings = createSelector(selectState, ({ settings }: State) =>
+    omit(settings, ['sessionLockTTL', 'sessionLockToken'])
+);
 
 export const selectCanLoadDomainImages = ({ settings }: State) => settings.loadDomainImages;
 
@@ -12,7 +15,7 @@ export const selectSessionLockToken = ({ settings }: State) => settings.sessionL
 
 export const selectCanLockSession = (state: State) => Boolean(selectSessionLockToken(state));
 
-export const selectSessionLockSettings = ({ settings }: State) => ({
+export const selectSessionLockSettings = createSelector(selectState, ({ settings }: State) => ({
     sessionLockToken: settings.sessionLockToken,
     sessionLockTTL: settings.sessionLockTTL,
-});
+}));
