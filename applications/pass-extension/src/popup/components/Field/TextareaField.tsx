@@ -1,4 +1,5 @@
-import { type VFC, forwardRef, useEffect, useRef, useState } from 'react';
+import type { ForwardRefRenderFunction } from 'react';
+import { type VFC, forwardRef, useEffect, useMemo, useRef, useState } from 'react';
 
 import { type FieldProps } from 'formik';
 
@@ -15,36 +16,52 @@ import { FieldBox, type FieldBoxProps } from './Layout/FieldBox';
 
 export type BaseTextAreaFieldProps = FieldProps & InputFieldProps<typeof TextAreaTwo>;
 
-export const BaseTextAreaField: VFC<BaseTextAreaFieldProps> = forwardRef(
-    ({ className, form, field, labelContainerClassName, meta, onKeyDown, onPaste, ...props }, ref) => {
-        const { error } = useFieldControl({ form, field, meta });
-        const pasteLengthLimiter = usePasteLengthLimiter();
-        const maxLengthLimiter = useMaxLengthLimiter();
+const DEFAULT_MIN_ROWS = 1;
+const DEFAULT_MAX_ROWS = 5;
 
-        return (
-            <InputFieldTwo
-                as={TextAreaTwo}
-                autoGrow
-                unstyled
-                assistContainerClassName="hidden-empty"
-                className={clsx('border-none flex p-0 resize-none', className)}
-                error={error}
-                labelContainerClassName={clsx(
-                    'm-0 text-normal text-sm',
-                    error ? 'color-danger' : 'color-weak',
-                    labelContainerClassName
-                )}
-                minRows={1}
-                ref={ref}
-                rows={5}
-                {...field}
-                {...props}
-                onPaste={props.maxLength ? pasteLengthLimiter(props.maxLength, onPaste) : onPaste}
-                onKeyDown={props.maxLength ? maxLengthLimiter(props.maxLength, onKeyDown) : onKeyDown}
-            />
-        );
-    }
-);
+const BaseTextAreaFieldRender: ForwardRefRenderFunction<HTMLTextAreaElement, BaseTextAreaFieldProps> = (
+    { className, form, field, labelContainerClassName, meta, onKeyDown, onPaste, ...props },
+    ref
+) => {
+    const { error } = useFieldControl({ form, field, meta });
+    const pasteLengthLimiter = usePasteLengthLimiter();
+    const maxLengthLimiter = useMaxLengthLimiter();
+
+    const { value } = field;
+    const { minRows, rows } = props;
+
+    /* the nested `useAutoGrow` doesn't support initial row resolution
+     * on initial mount - we resort to a dynamic `minRows` prop */
+    const dynamicMinRows = useMemo(
+        () => Math.max(minRows ?? DEFAULT_MIN_ROWS, Math.min(value.split('\n').length, rows ?? DEFAULT_MAX_ROWS)),
+        [minRows, rows, value]
+    );
+
+    return (
+        <InputFieldTwo
+            as={TextAreaTwo}
+            ref={ref}
+            autoGrow
+            unstyled
+            assistContainerClassName="hidden-empty"
+            className={clsx('border-none flex p-0 resize-none', className)}
+            error={error}
+            labelContainerClassName={clsx(
+                'm-0 text-normal text-sm',
+                error ? 'color-danger' : 'color-weak',
+                labelContainerClassName
+            )}
+            rows={DEFAULT_MAX_ROWS}
+            {...field}
+            {...props}
+            minRows={dynamicMinRows}
+            onPaste={props.maxLength ? pasteLengthLimiter(props.maxLength, onPaste) : onPaste}
+            onKeyDown={props.maxLength ? maxLengthLimiter(props.maxLength, onKeyDown) : onKeyDown}
+        />
+    );
+};
+
+export const BaseTextAreaField = forwardRef(BaseTextAreaFieldRender);
 
 export const BaseMaskedTextAreaField: VFC<BaseTextAreaFieldProps> = ({ form, field, ...rest }) => {
     const { value } = field;
@@ -68,7 +85,7 @@ export const BaseMaskedTextAreaField: VFC<BaseTextAreaFieldProps> = ({ form, fie
             form={form}
             field={field}
             ref={ref}
-            rows={masked ? 1 : rest.rows}
+            rows={masked ? DEFAULT_MIN_ROWS : rest.rows}
             value={maskedValue}
             {...rest}
         />
@@ -83,15 +100,8 @@ export const TextAreaField: VFC<TextAreaFieldProps> = ({
     className,
     icon,
     ...props
-}) => {
-    return (
-        <FieldBox
-            actions={actions}
-            actionsContainerClassName={actionsContainerClassName}
-            className={className}
-            icon={icon}
-        >
-            <BaseTextAreaField {...props} />
-        </FieldBox>
-    );
-};
+}) => (
+    <FieldBox actions={actions} actionsContainerClassName={actionsContainerClassName} className={className} icon={icon}>
+        <BaseTextAreaField {...props} />
+    </FieldBox>
+);
