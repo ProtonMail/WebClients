@@ -166,9 +166,10 @@ const ThemeProvider = ({ children }: Props) => {
         const listener = (e: MediaQueryListEvent) => {
             setColorScheme(getColorScheme(e.matches));
         };
-        matchMediaScheme.addEventListener('change', listener);
+        // Safari <14 does not support addEventListener on match media queries
+        matchMediaScheme.addEventListener?.('change', listener);
         return () => {
-            matchMediaScheme.removeEventListener('change', listener);
+            matchMediaScheme.removeEventListener?.('change', listener);
         };
     }, []);
 
@@ -177,9 +178,10 @@ const ThemeProvider = ({ children }: Props) => {
         const listener = (e: MediaQueryListEvent) => {
             setMotionMode(getMotionMode(e.matches));
         };
-        matchMediaMotion.addEventListener('change', listener);
+        // Safari <14 does not support addEventListener on match media queries
+        matchMediaMotion.addEventListener?.('change', listener);
         return () => {
-            matchMediaMotion.removeEventListener('change', listener);
+            matchMediaMotion.removeEventListener?.('change', listener);
         };
     }, []);
 
