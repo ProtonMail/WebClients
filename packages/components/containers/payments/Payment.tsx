@@ -141,6 +141,7 @@ const Payment = ({
                         onChange={(value) => onMethod(value)}
                         lastUsedMethod={lastUsedMethod}
                         forceDropdown={isSignupPass}
+                        narrow={isSignupPass}
                     />
                 </div>
                 <div className="mt-4">
