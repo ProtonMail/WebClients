@@ -1,3 +1,22 @@
+# Release 5.0.14.0 – July 5, 2023
+
+## Added
+
+-   Generation of thumbnails for videos
+
+## Improved
+
+-   File icons
+-   Detection of several mime types
+-   Security of previewing Office Open XML (docx) documents
+
+## Fixed
+
+-   Preview of files with thumbnails
+-   Preview of shared files from computers
+-   Progress indication on the download page
+-   Naming issue during recovery of computers
+
 # Release 5.0.13.0 – May 10, 2023
 
 ## Added
