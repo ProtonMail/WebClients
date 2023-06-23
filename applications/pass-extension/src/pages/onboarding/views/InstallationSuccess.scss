@@ -5,6 +5,8 @@
 		inline-size: rem(24);
 		block-size: rem(24);
 		font-size: rem(11);
+		color: var(--background-invert);
+		background: var(--primary);
 	}
 
 	&--connect-illustration {

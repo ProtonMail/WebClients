@@ -114,7 +114,7 @@ export const InstallationSuccess: VFC = () => {
                                                 {steps.map(({ key, icon, description }, idx) => (
                                                     <li key={key} className="flex mb-5 flex-align-items-center">
                                                         <div
-                                                            className="pass-installation--dot bg-primary rounded-50 text-center mr-3 relative"
+                                                            className="pass-installation--dot rounded-50 text-center mr-3 relative"
                                                             aria-hidden="true"
                                                         >
                                                             <span className="absolute absolute-center">{idx + 1}</span>
