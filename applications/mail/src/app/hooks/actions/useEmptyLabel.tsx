@@ -53,8 +53,10 @@ export const useEmptyLabel = () => {
         await call();
         createNotification({
             text: isLabel
-                ? c('empty messages: success').t`Label cleared`
-                : c('empty messages: success').t`Folder cleared`,
+                ? // translator: Notification displayed when the user clicked on the "Delete all" action inside a custom label
+                  c('empty messages: success').t`Label cleared`
+                : // translator: Notification displayed when the user clicked on the "Delete all" action inside a custom folder
+                  c('empty messages: success').t`Folder cleared`,
         });
     };
 
