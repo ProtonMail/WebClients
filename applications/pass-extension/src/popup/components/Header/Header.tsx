@@ -28,18 +28,22 @@ import { usePasswordGeneratorContext } from '../PasswordGenerator/PasswordGenera
 import { MenuDropdown } from './MenuDropdown';
 import { Searchbar } from './Searchbar';
 
-const ITEM_TYPE_DROPDOWN_BUTTONS = [
+const ITEM_TYPE_DROPDOWN_BUTTONS: { label: string; type: ItemType }[] = [
     {
         label: c('Label').t`Login`,
-        type: 'login' as const,
+        type: 'login',
     },
     {
         label: c('Label').t`Alias`,
-        type: 'alias' as const,
+        type: 'alias',
+    },
+    {
+        label: c('Label').t`Credit Card`,
+        type: 'creditCard',
     },
     {
         label: c('Label').t`Note`,
-        type: 'note' as const,
+        type: 'note',
     },
 ];
 
