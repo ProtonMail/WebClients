@@ -1,7 +1,6 @@
-.ui-login {
-    --interaction-norm: #A779FF;
-
-    --interaction-weak: #30284A;
+.ui-teal {
+    --interaction-norm: #6ABDB3;
+    --interaction-weak: #26333D;
 
     --focus-outline: var(--interaction-norm-major-2);
     --focus-ring: var(--interaction-norm-minor-1);
