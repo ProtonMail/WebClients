@@ -49,6 +49,12 @@ export const ItemsListPlaceholder: VFC = () => {
                 onClick: () => history.push(`/item/new/alias`),
             },
             {
+                type: 'creditCard',
+                icon: itemTypeToIconName.creditCard,
+                label: c('Label').t`Create a credit card`,
+                onClick: () => history.push(`/item/new/creditCard`),
+            },
+            {
                 type: 'note',
                 icon: itemTypeToIconName.note,
                 label: c('Label').t`Create an encrypted note`,

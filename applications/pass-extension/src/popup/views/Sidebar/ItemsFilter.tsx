@@ -22,13 +22,17 @@ const optionsWithoutCount: { [key in ItemTypeFilter]: { label: string; icon: Ico
         label: c('Label').t`All`,
         icon: 'grid-2',
     },
+    login: {
+        label: c('Label').t`Logins`,
+        icon: itemTypeToIconName.login,
+    },
     alias: {
         label: c('Label').t`Aliases`,
         icon: itemTypeToIconName.alias,
     },
-    login: {
-        label: c('Label').t`Logins`,
-        icon: itemTypeToIconName.login,
+    creditCard: {
+        label: c('Label').t`Credit Cards`,
+        icon: itemTypeToIconName.creditCard,
     },
     note: {
         label: c('Label').t`Notes`,
