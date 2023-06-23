@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { PAYMENT_METHOD_TYPES, PaymentMethodType } from '@proton/components/payments/core';
+import { PAYMENT_METHOD_TYPES, PaymentMethodType, methodMatches } from '@proton/components/payments/core';
 import { Currency, SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
 
 import { Price, PrimaryButton } from '../../../components';
@@ -65,18 +65,10 @@ const SubscriptionSubmitButton = ({
         return <StyledPayPalButton flow="subscription" paypal={paypal} className={className} amount={amountDue} />;
     }
 
-    if (!loading && method === PAYMENT_METHOD_TYPES.CASH) {
+    if (!loading && methodMatches(method, [PAYMENT_METHOD_TYPES.CASH, PAYMENT_METHOD_TYPES.BITCOIN])) {
         return (
             <PrimaryButton className={className} disabled={disabled} loading={loading} onClick={onClose}>
                 {c('Action').t`Done`}
-            </PrimaryButton>
-        );
-    }
-
-    if (method === PAYMENT_METHOD_TYPES.BITCOIN) {
-        return (
-            <PrimaryButton className={className} disabled={true} loading={loading}>
-                {c('Info').t`Awaiting transaction`}
             </PrimaryButton>
         );
     }
