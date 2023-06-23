@@ -16,11 +16,7 @@ export const ImportProviderItem: VFC<{
             shape="ghost"
             className="flex flex-column flex-align-items-center rounded pass-import-providers--item px-0 py-2"
         >
-            <img
-                className="m-2"
-                alt={title}
-                src={value === 'protonpass' ? '/assets/protonpass-icon-24.svg' : `/assets/${value}-icon-24.png`}
-            ></img>
+            <img className="m-2" alt={title} src={`/assets/${value}-icon-48.png`} width="24" height="24"></img>
             <span className="mb-0.5">{title}</span>
             <span className="color-weak">{fileExtension}</span>
         </ButtonLike>
