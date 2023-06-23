@@ -219,9 +219,15 @@ const createDetectionRunner =
             })
         );
 
-        clearVisibilityCache(); /* clear visibility cache on each detection run */
+        /* only start tracking forms which have a positive detection result or
+         * dangling forms which have at least one detected field */
+        const formsToTrack = forms.filter(
+            ({ formType, fields }) =>
+                formType !== FormType.NOOP || fields.some(({ fieldType }) => fieldType !== FormField.NOOP)
+        );
 
-        return forms;
+        clearVisibilityCache(); /* clear visibility cache on each detection run */
+        return formsToTrack;
     };
 
 export const createDetectorService = () => {
