@@ -37,14 +37,13 @@ export const createFieldIconHandle = ({ field }: CreateIconOptions): FieldIconHa
         icon.style.setProperty('background-image', `url("${iconUrl}")`, 'important');
     };
 
-    const setCount = (count: number) => {
+    const setCount = withContext<(count: number) => void>(({ getState }, count: number) => {
         const safeCount = count === 0 || !count ? '' : String(count);
         icon.style.setProperty(`--${EXTENSION_PREFIX}-items-count`, `"${safeCount}"`);
 
-        if (count > 0) {
-            icon.style.setProperty('background-image', `url("${COUNTER_ICON_SRC}")`, 'important');
-        }
-    };
+        if (count > 0) return icon.style.setProperty('background-image', `url("${COUNTER_ICON_SRC}")`, 'important');
+        return setStatus(getState().status);
+    });
 
     const reposition = debounce(
         (revalidate: boolean = false) => {
