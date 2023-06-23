@@ -8,7 +8,9 @@ import { Button } from '@proton/atoms/Button';
 import { Icon, InputFieldTwo, PasswordInputTwo } from '@proton/components/components';
 import { useNotifications } from '@proton/components/hooks';
 import { contentScriptMessage, sendMessage } from '@proton/pass/extension/message';
+import type { Item } from '@proton/pass/types';
 import { AutoSaveType, type PromptedFormEntry, WorkerMessageType } from '@proton/pass/types';
+import { partialMerge } from '@proton/pass/utils/object';
 import { uniqueId } from '@proton/pass/utils/string';
 import { isValidURL } from '@proton/pass/utils/url';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
@@ -47,32 +49,35 @@ export const Autosave: VFC<{ submission: PromptedFormEntry; onAutoSaved: () => v
             setBusy(true);
 
             const { valid, url } = isValidURL(submissionURL);
-            const revision =
+
+            const item: Item<'login'> =
                 submission.autosave.data.action === AutoSaveType.UPDATE
-                    ? {
-                          note: submission.autosave.data.item.data.metadata.note,
-                          urls: Array.from(
-                              new Set(submission.autosave.data.item.data.content.urls.concat(valid ? [url] : []))
-                          ),
-                      }
+                    ? partialMerge(submission.autosave.data.item.data, {
+                          metadata: { name: title },
+                          content: {
+                              username,
+                              password,
+                              urls: Array.from(
+                                  new Set(submission.autosave.data.item.data.content.urls.concat(valid ? [url] : []))
+                              ),
+                          },
+                      })
                     : {
-                          note: c('Info').t`Autosaved on ${submissionURL}`,
-                          urls: valid ? [url] : [],
+                          type: 'login',
+                          metadata: {
+                              name: title,
+                              note: c('Info').t`Autosaved on ${submissionURL}`,
+                              itemUuid: uniqueId(),
+                          },
+                          content: { username, password, urls: valid ? [url] : [], totpUri: '' },
+                          extraFields: [],
                       };
 
             try {
                 const result = await sendMessage(
                     contentScriptMessage({
                         type: WorkerMessageType.AUTOSAVE_REQUEST,
-                        payload: {
-                            submission,
-                            item: {
-                                type: 'login',
-                                metadata: { name: title, note: revision.note, itemUuid: uniqueId() },
-                                content: { username, password, urls: revision.urls, totpUri: '' },
-                                extraFields: [],
-                            },
-                        },
+                        payload: { submission, item },
                     })
                 );
 
