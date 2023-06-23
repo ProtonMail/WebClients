@@ -20,6 +20,7 @@ import BitcoinInfoMessage from './BitcoinInfoMessage';
 import Cash from './Cash';
 import CreditCard from './CreditCard';
 import CreditCardNewDesign from './CreditCardNewDesign';
+import PayPalInfoMessage from './PayPalInfoMessage';
 import PayPalView from './PayPalView';
 import { CardFieldStatus } from './useCard';
 
@@ -188,7 +189,7 @@ const Payment = ({
                             )}
                         </>
                     )}
-                    {method === PAYMENT_METHOD_TYPES.PAYPAL && (
+                    {method === PAYMENT_METHOD_TYPES.PAYPAL && !isSignupPass && (
                         <PayPalView
                             paypal={paypal}
                             paypalCredit={paypalCredit}
@@ -199,6 +200,7 @@ const Payment = ({
                             prefetchToken={paypalPrefetchToken}
                         />
                     )}
+                    {method === PAYMENT_METHOD_TYPES.PAYPAL && isSignupPass && <PayPalInfoMessage />}
                     {customPaymentMethod && (
                         <>
                             <PaymentMethodDetails
