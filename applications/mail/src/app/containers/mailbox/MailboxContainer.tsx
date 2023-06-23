@@ -257,7 +257,7 @@ const MailboxContainer = ({
 
     const conversationMode = isConversationMode(labelID, mailSettings, location);
 
-    usePreLoadElements(elementIDs, conversationMode, labelID);
+    usePreLoadElements({ elementIDs, isConversation: conversationMode, labelID, loading });
 
     const {
         elementRef,
