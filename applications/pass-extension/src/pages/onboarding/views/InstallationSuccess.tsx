@@ -45,7 +45,7 @@ export const InstallationSuccess: VFC = () => {
 
     const nextStep = async () => {
         try {
-            // @ts-ignore
+            // @ts-ignore: missing definition for getUserSettings()
             const userSettings = await browser.action.getUserSettings();
             if (!userSettings.isOnToolbar) {
                 createNotification({
@@ -53,9 +53,9 @@ export const InstallationSuccess: VFC = () => {
                     type: 'info',
                     showCloseButton: false,
                 });
-                return;
+            } else {
+                setIsPinned(true);
             }
-            setIsPinned(true);
         } catch (_) {
             setIsPinned(true);
         }
