@@ -88,7 +88,8 @@ export const InstallationSuccess: VFC = () => {
                                 }
                                 <span>{brandNameJSX}</span>
                             </div>
-                            <h1 className="pass-onboarding--white-text mb-10 text-bold">{c('Title').jt`Welcome!`}</h1>
+                            <h1 className="pass-onboarding--white-text mt-4 mb-8 text-semibold">{c('Title')
+                                .jt`Welcome!`}</h1>
                         </div>
 
                         <div className="flex flex-align-items-center gap-2 mb-4">
@@ -190,7 +191,7 @@ export const InstallationSuccess: VFC = () => {
                                         </Button>
                                     </div>
 
-                                    <div className="flex flex-justify-center">
+                                    <div className="flex flex-justify-center flex-align-items-center">
                                         <img
                                             src="assets/onboarding-connect-illustration.svg"
                                             alt=""
