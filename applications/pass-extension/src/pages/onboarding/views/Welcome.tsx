@@ -10,6 +10,7 @@ import playStoreSvg from '@proton/styles/assets/img/illustrations/play-store.svg
 
 import passBrandText from '../../../../public/assets/protonpass-brand.svg';
 import { ExtensionHead } from '../../../shared/components/page/ExtensionHead';
+import { OnboardingLink } from '../../../shared/links';
 
 import './Welcome.scss';
 
@@ -51,7 +52,7 @@ export const Welcome: VFC = () => {
                                     </h3>
                                     <div className="pass-welcome--onboarding-video rounded-xl">
                                         <iframe
-                                            src="https://www.youtube.com/embed/Nm4DCAjePOM?cc_load_policy=1"
+                                            src={OnboardingLink.YOUTUBE}
                                             title={c('Info').t`Discover ${PASS_APP_NAME} Youtube Video`}
                                             allowFullScreen
                                         />
@@ -92,7 +93,7 @@ export const Welcome: VFC = () => {
                                         <div className="text-xl">{c('Info')
                                             .t`Access your passwords on the go with our mobile apps.`}</div>
                                         <div className="flex gap-3 flex-nowrap">
-                                            <Href href="https://play.google.com/store/apps/details?id=proton.android.pass">
+                                            <Href href={OnboardingLink.ANDROID}>
                                                 <img
                                                     className="h-custom"
                                                     style={{ '--h-custom': '40px' }}
@@ -100,7 +101,7 @@ export const Welcome: VFC = () => {
                                                     alt="Play Store"
                                                 />
                                             </Href>
-                                            <Href href="https://apps.apple.com/us/app/proton-pass-password-manager/id6443490629">
+                                            <Href href={OnboardingLink.IOS}>
                                                 <img
                                                     className="h-custom"
                                                     style={{ '--h-custom': '40px ' }}

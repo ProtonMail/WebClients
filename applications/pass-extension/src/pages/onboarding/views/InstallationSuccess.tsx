@@ -1,11 +1,13 @@
-import type { VFC } from 'react';
+import type { VFC} from 'react';
+import { useEffect } from 'react';
 import { useState } from 'react';
 
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
 import { useNotifications } from '@proton/components';
-import browser from '@proton/pass/globals/browser';
+import { chromeAPI } from '@proton/pass/globals/browser';
+import type { MaybeNull } from '@proton/pass/types';
 import { FORK_TYPE } from '@proton/shared/lib/authentication/ForkInterface';
 import { BRAND_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
 
@@ -39,26 +41,31 @@ const brandNameJSX = (
 
 export const InstallationSuccess: VFC = () => {
     const login = useNavigateToLogin();
-    const [isPinned, setIsPinned] = useState(false);
+    const [isPinned, setIsPinned] = useState<MaybeNull<boolean>>(null);
 
     const { createNotification } = useNotifications();
 
-    const nextStep = async () => {
-        try {
-            // @ts-ignore: missing definition for getUserSettings()
-            const userSettings = await browser.action.getUserSettings();
-            if (!userSettings.isOnToolbar) {
-                createNotification({
-                    text: c('Error').t`Please pin the extension to continue.`,
-                    type: 'info',
-                    showCloseButton: false,
-                });
-            } else {
-                setIsPinned(true);
-            }
-        } catch (_) {
-            setIsPinned(true);
+    const nextStep = (): Promise<boolean> | true =>
+        BUILD_TARGET === 'chrome'
+            ? chromeAPI.action
+                  .getUserSettings()
+                  .then((setting) => setting.isOnToolbar)
+                  .catch(() => true)
+            : true;
+
+    useEffect(() => {
+        if (isPinned === false) {
+            createNotification({
+                text: c('Error').t`Please pin the extension to continue.`,
+                type: 'info',
+                showCloseButton: false,
+            });
         }
+    }, [isPinned]);
+
+    const handleNextStepClick = async () => {
+        setIsPinned(null);
+        setIsPinned(await nextStep());
     };
 
     const steps = getSteps();
@@ -134,7 +141,7 @@ export const InstallationSuccess: VFC = () => {
                                             shape="solid"
                                             color="norm"
                                             className="mt-5"
-                                            onClick={nextStep}
+                                            onClick={handleNextStepClick}
                                             aria-label={c('Action').t`Done`}
                                         >
                                             <span className="flex flex-justify-center px-4">
