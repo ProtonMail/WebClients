@@ -31,7 +31,7 @@ const SubscriptionEndsBanner = () => {
     return (
         <TopBanner className="bg-danger">
             {c('Info')
-                .jt`Subscription ends soon: Reactivate by ${byDate} to keep your ${planName} benefits. ${reactivateLink}`}
+                .jt`Subscription ending: Reactivate by ${byDate} to keep your ${planName} benefits. ${reactivateLink}`}
         </TopBanner>
     );
 };
