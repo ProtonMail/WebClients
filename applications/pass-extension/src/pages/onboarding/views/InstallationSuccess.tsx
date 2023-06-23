@@ -56,7 +56,7 @@ export const InstallationSuccess: VFC = () => {
         if (isPinned === false) {
             createNotification({
                 text: c('Error').t`Please pin the extension to continue.`,
-                type: 'info',
+                type: 'error',
                 showCloseButton: false,
             });
         }
