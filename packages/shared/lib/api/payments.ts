@@ -1,6 +1,6 @@
 import { PlanIDs } from 'proton-account/src/app/signup/interfaces';
 
-import { Autopay } from '@proton/components/payments/core';
+import { Autopay, WrappedCryptoPayment } from '@proton/components/payments/core';
 import {
     AmountAndCurrency,
     ExistingPayment,
@@ -189,7 +189,11 @@ export const validateCredit = (data: ValidateCreditData) => ({
     data,
 });
 
-export type CreateTokenData = (AmountAndCurrency | {}) & (WrappedPaypalPayment | WrappedCardPayment | ExistingPayment);
+export type CreateBitcoinTokenData = AmountAndCurrency & WrappedCryptoPayment;
+
+export type CreateTokenData =
+    | ((AmountAndCurrency | {}) & (WrappedPaypalPayment | WrappedCardPayment | ExistingPayment))
+    | CreateBitcoinTokenData;
 
 export const createToken = (data: CreateTokenData) => ({
     url: 'payments/v4/tokens',
