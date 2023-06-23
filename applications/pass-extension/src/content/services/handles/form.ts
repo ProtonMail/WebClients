@@ -113,7 +113,7 @@ export const createFormHandles = (options: DetectedForm): FormHandle => {
             const fields = formHandle.getFields();
             fields.forEach((field) => field.icon?.reposition());
 
-            if (hasUnprocessedFields(options.form.parentElement!)) void formManager.detect('FormResized');
+            if (hasUnprocessedFields(options.form.parentElement!)) void formManager.detect('NewFormFields');
         }),
         50
     );
