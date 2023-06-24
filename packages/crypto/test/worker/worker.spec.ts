@@ -120,6 +120,45 @@ tBiO7HKQxoGj3FnUTJnI52Y0pIg=
         expect(decryptionResult.verified).to.equal(VERIFICATION_STATUS.NOT_SIGNED);
     });
 
+    it('decryptMessage - supports decrypting e2ee forwarded message', async () => {
+        // final recipient key
+        const fwdRecipientKeyArmored = `-----BEGIN PGP PRIVATE KEY BLOCK-----
+
+xVgEZAdtGBYJKwYBBAHaRw8BAQdAcNgHyRGEaqGmzEqEwCobfUkyrJnY8faBvsf9
+R2c5ZzYAAP9bFL4nPBdo04ei0C2IAh5RXOpmuejGC3GAIn/UmL5cYQ+XzRtjaGFy
+bGVzIDxjaGFybGVzQHByb3Rvbi5tZT7CigQTFggAPAUCZAdtGAmQFXJtmBzDhdcW
+IQRl2gNflypl1XjRUV8Vcm2YHMOF1wIbAwIeAQIZAQILBwIVCAIWAAIiAQAAJKYA
+/2qY16Ozyo5erNz51UrKViEoWbEpwY3XaFVNzrw+b54YAQC7zXkf/t5ieylvjmA/
+LJz3/qgH5GxZRYAH9NTpWyW1AsdxBGQHbRgSCisGAQQBl1UBBQEBB0CxmxoJsHTW
+TiETWh47ot+kwNA1hCk1IYB9WwKxkXYyIBf/CgmKXzV1ODP/mRmtiBYVV+VQk5MF
+EAAA/1NW8D8nMc2ky140sPhQrwkeR7rVLKP2fe5n4BEtAnVQEB3CeAQYFggAKgUC
+ZAdtGAmQFXJtmBzDhdcWIQRl2gNflypl1XjRUV8Vcm2YHMOF1wIbUAAAl/8A/iIS
+zWBsBR8VnoOVfEE+VQk6YAi7cTSjcMjfsIez9FYtAQDKo9aCMhUohYyqvhZjn8aS
+3t9mIZPc+zRJtCHzQYmhDg==
+=lESj
+-----END PGP PRIVATE KEY BLOCK-----`;
+
+        const fwdCiphertextArmored = `-----BEGIN PGP MESSAGE-----
+
+wV4DB27Wn97eACkSAQdA62TlMU2QoGmf5iBLnIm4dlFRkLIg+6MbaatghwxK+Ccw
+yGZuVVMAK/ypFfebDf4D/rlEw3cysv213m8aoK8nAUO8xQX3XQq3Sg+EGm0BNV8E
+0kABEPyCWARoo5klT1rHPEhelnz8+RQXiOIX3G685XCWdCmaV+tzW082D0xGXSlC
+7lM8r1DumNnO8srssko2qIja
+=pVRa
+-----END PGP MESSAGE-----`;
+
+        const fwdRecipientKey = await CryptoWorker.importPrivateKey({
+            armoredKey: fwdRecipientKeyArmored,
+            passphrase: null,
+        });
+
+        const { data } = await CryptoWorker.decryptMessage({
+            armoredMessage: fwdCiphertextArmored,
+            decryptionKeys: fwdRecipientKey,
+        });
+        expect(data).to.deep.equal('Message for Bob');
+    });
+
     it('decryptMessageLegacy - it can decrypt a legacy message', async () => {
         const privateKeyRef = await CryptoWorker.importPrivateKey({
             armoredKey: testPrivateKeyLegacy,
@@ -836,6 +875,42 @@ jdam/kRWvRjS8LMZDsVICPpOrwhQXkRlAQDFe4bzH3MY16IqrIq70QSCxqLJ
         expect((await sourceKey.getPrimaryUser()).user.userID).to.deep.equal(
             (await exportedTargetKey.getPrimaryUser()).user.userID
         );
+    });
+
+    it('generateE2EEForwardingMaterial - the generated key is encrypted', async () => {
+        const bobKey = await CryptoWorker.importPrivateKey({
+            armoredKey: `-----BEGIN PGP PRIVATE KEY BLOCK-----
+
+xVgEYkMx+RYJKwYBBAHaRw8BAQdA2wiwC/FbumCQYlJAEHeRCm2GZD0S1aPt
+BG6ZcpuehWUAAQDpWPNfvUtTnn6AiJ/xEQ09so7ZWF+2GHlaOglSQUADwQ5J
+zQ88Y0B3b3JrZXIudGVzdD7CiQQQFgoAGgUCYkMx+QQLCQcIAxUICgQWAAIB
+AhsDAh4BACEJECO0b8qLQMw0FiEEYiHKmAo/cFLglZrtI7RvyotAzDRu6QEA
+mbhLi00tsTr7hmJxIPw4JLHGw8UVvztUfeyFE6ZqAIsBAJtF8P9pcZxHKb58
+nNamH0U5+cC+9hN9uw2pn51NIY8KzQ88YkB3b3JrZXIudGVzdD7CiQQQFgoA
+GgUCYkMx+QQLCQcIAxUICgQWAAIBAhsDAh4BACEJECO0b8qLQMw0FiEEYiHK
+mAo/cFLglZrtI7RvyotAzDSSNwD+JDTJNbf8/0u9QUS3liusBKk5qKUPXG+j
+ezH+Sgw1wagA/36wOxNMHxVUJXBjYiOIrZjcUKwXPR2pjke6zgntRuQOx10E
+YkMx+RIKKwYBBAGXVQEFAQEHQJDjVd81zZuOdxAkjMe6Y+8Bj8gF9PKBkMJ+
+I8Yc2OQKAwEIBwAA/2Ikos/IDw3uCSa6DGRoMDzQzZSwyzIO0XhoP9cgKSb4
+Dw/CeAQYFggACQUCYkMx+QIbDAAhCRAjtG/Ki0DMNBYhBGIhypgKP3BS4JWa
+7SO0b8qLQMw02YoBAOwG3hB8S5NBjdam/kRWvRjS8LMZDsVICPpOrwhQXkRl
+AQDFe4bzH3MY16IqrIq70QSCxqLJ0Ao+NYb1whc/mXYOAA==
+=p5Q+
+-----END PGP PRIVATE KEY BLOCK-----`,
+            passphrase: null,
+        });
+
+        const { proxyParameter, forwardeeKey } = await CryptoWorker.generateE2EEForwardingMaterial({
+            forwarderKey: bobKey,
+            userIDsForForwardeeKey: { email: 'bob@test.com', comment: 'Forwarding from Bob' },
+            passphrase: 'passphrase',
+        });
+        expect(proxyParameter).to.have.length(32);
+        const charlieKey = await CryptoWorker.importPrivateKey({
+            armoredKey: forwardeeKey,
+            passphrase: 'passphrase',
+        });
+        expect(charlieKey.equals(bobKey)).to.be.false; // sanity check
     });
 
     describe('Key management API', () => {
