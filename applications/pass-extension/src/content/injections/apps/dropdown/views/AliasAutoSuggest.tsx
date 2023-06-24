@@ -22,7 +22,7 @@ import { DropdownItem } from '../components/DropdownItem';
 type Props = {
     prefix: string;
     domain: string;
-    onSubmit: (message: IFrameMessage) => void;
+    onMessage?: (message: IFrameMessage) => void;
     onOptions?: () => void;
 };
 
@@ -34,7 +34,7 @@ const isValidAliasOptions = (
 
 const getInitialLoadingText = (): string => c('Info').t`Generating alias...`;
 
-export const AliasAutoSuggest: VFC<Props> = ({ prefix, domain, onOptions, onSubmit }) => {
+export const AliasAutoSuggest: VFC<Props> = ({ prefix, domain, onOptions, onMessage }) => {
     const ensureMounted = useEnsureMounted();
     const { userEmail } = useIFrameContext();
     const [aliasOptions, setAliasOptions] = useState<MaybeNull<AliasState['aliasOptions']>>(null);
@@ -101,7 +101,7 @@ export const AliasAutoSuggest: VFC<Props> = ({ prefix, domain, onOptions, onSubm
 
                 ensureMounted(() => {
                     setLoadingText(null);
-                    onSubmit({
+                    onMessage?.({
                         type: IFrameMessageType.DROPDOWN_AUTOSUGGEST_ALIAS,
                         payload: { aliasEmail },
                     });
@@ -140,7 +140,7 @@ export const AliasAutoSuggest: VFC<Props> = ({ prefix, domain, onOptions, onSubm
                 onClick={
                     userEmail
                         ? () =>
-                              onSubmit({
+                              onMessage?.({
                                   type: IFrameMessageType.DROPDOWN_AUTOFILL_USER_EMAIL,
                                   payload: { userEmail },
                               })
