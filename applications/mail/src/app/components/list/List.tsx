@@ -136,7 +136,7 @@ const List = (
         showTaskRunningBanner
     );
 
-    //Reduce the checklist if there are more than 4 elements in the view
+    // Reduce the checklist if there are more than 4 elements in the view
     useEffect(() => {
         if (inputElements.length >= 5 && displayState === FULL) {
             changeChecklistDisplay(REDUCED);

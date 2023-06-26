@@ -6,7 +6,6 @@ import { Button } from '@proton/atoms/Button';
 import { Href } from '@proton/atoms/Href';
 import { ModalStateProps, ModalTwo, ModalTwoHeader, StepDot, StepDots } from '@proton/components/components';
 import ModalContent from '@proton/components/components/modalTwo/ModalContent';
-import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import blockEmails from '@proton/styles/assets/img/illustrations/checklist-block-emails.svg';
 import fullyEncrypted from '@proton/styles/assets/img/illustrations/checklist-fully-encrypted.svg';
@@ -26,23 +25,23 @@ const getProtectInboxState = (): ProtectInboxStepProps[] => {
     return [
         {
             img: trackingProtection,
-            title: c('Get started checklist instructions').t`Email tracking protection`,
+            title: c('Get started checklist instructions').t`Protection from trackers`,
             knowledgeBaseLink: '/email-tracker-protection',
             description: c('Get started checklist instructions')
-                .t`${MAIL_APP_NAME} blocks known trackers commonly found in newsletters and promotional email, preventing senders from spying on you.`,
+                .t`We stop advertisers and data collectors from profiling you.`,
         },
         {
             img: blockEmails,
-            title: c('Get started checklist instructions').t`Block unwanted emails`,
+            title: c('Get started checklist instructions').t`Block unsavory senders`,
             knowledgeBaseLink: '/block-sender',
             description: c('Get started checklist instructions')
-                .t`${MAIL_APP_NAME} blocks spam and unwanted emails so you can focus on what matters. With one-click unsubscribe, you can control what shows up in your inbox.`,
+                .t`Block email communications from scammers permanently.`,
         },
         {
             img: fullyEncrypted,
-            title: c('Get started checklist instructions').t`Fully-encrypted emails`,
+            title: c('Get started checklist instructions').t`For your eyes only`,
             description: c('Get started checklist instructions')
-                .t`We use end-to-end encryption and zero-access encryption to ensure that only you can read your emails. We cannot read or give anyone else access to your emails.`,
+                .t`Encryption so strong, only you and intended recipients can view your emails.`,
         },
     ];
 };
@@ -52,9 +51,9 @@ const ProtectInboxStep = ({ img, title, description, knowledgeBaseLink }: Protec
         <div>
             <img src={img} alt="" className="w100 h-custom" style={{ '--h-custom': '15rem' }} />
             {/* Avoid text jumping when changing step, fixed height ensure proper display of the text */}
-            <div className="mb-0 mt-2 h-custom min-h10e">
+            <div className="mb-0 mt-2 h-custom min-h5e">
                 <h1 className="text-bold text-2xl mt-4">{title}</h1>
-                <p className="m-0">{description}</p>
+                <span className="m-0">{description}</span>{' '}
                 {knowledgeBaseLink && (
                     <Href href={getKnowledgeBaseUrl(knowledgeBaseLink)}>{c('Get started checklist instructions')
                         .t`Learn more`}</Href>
@@ -83,8 +82,16 @@ const ProtectInboxModal = (props: ModalStateProps) => {
         setStep((current) => current + 1);
     };
 
+    const handleClose = () => {
+        if (isLastStep && !items.has('ProtectInbox')) {
+            markItemsAsDone('ProtectInbox');
+        }
+
+        props.onClose();
+    };
+
     return (
-        <ModalTwo {...props} size="small">
+        <ModalTwo {...props} size="small" onClose={handleClose}>
             <ModalTwoHeader />
             <ModalContent>
                 <ProtectInboxStep {...protectedItems[step]} />
