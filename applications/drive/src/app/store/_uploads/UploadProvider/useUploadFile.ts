@@ -12,7 +12,6 @@ import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 import {
     CreateFileResult,
     CreateFileRevisionResult,
-    FileRevisionState,
     RequestUploadResult,
 } from '@proton/shared/lib/interfaces/drive/file';
 import { encryptName, generateLookupHash } from '@proton/shared/lib/keys/driveKeys';
@@ -29,7 +28,6 @@ import { useVolumesState } from '../../_volumes';
 import { MAX_UPLOAD_BLOCKS_LOAD } from '../constants';
 import { initUploadFileWorker } from '../initUploadFileWorker';
 import {
-    BlockToken,
     FileKeys,
     FileRequestBlock,
     ThumbnailRequestBlock,
@@ -361,7 +359,7 @@ export default function useUploadFile() {
             },
             finalize: queuedFunction(
                 'upload_finalize',
-                async (blockTokens: BlockToken[], signature: string, signatureAddress: string, xattr: string) => {
+                async (signature: string, signatureAddress: string, xattr: string) => {
                     const createdFileRevision = await createdFileRevisionPromise;
                     if (!createdFileRevision) {
                         throw new Error(`Draft for "${file.name}" hasn't been created prior to uploading`);
@@ -374,11 +372,6 @@ export default function useUploadFile() {
 
                     await debouncedRequest(
                         queryUpdateFileRevision(shareId, createdFileRevision.fileID, createdFileRevision.revisionID, {
-                            State: FileRevisionState.Active,
-                            BlockList: blockTokens.map((blockToken) => ({
-                                Index: blockToken.index,
-                                Token: blockToken.token,
-                            })),
                             ManifestSignature: signature,
                             SignatureAddress: signatureAddress,
                             XAttr: xattr,
