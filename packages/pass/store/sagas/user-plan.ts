@@ -2,18 +2,20 @@ import { put, select, takeLeading } from 'redux-saga/effects';
 
 import { setUserPlan, wakeupSuccess } from '../actions';
 import type { UserPlanState } from '../reducers';
-import type { State } from '../types';
+import type { State, WorkerRootSagaOptions } from '../types';
 import { getUserPlan } from './workers/user';
 
 /* Try to sync the user plan on each wakeup success */
-function* syncPlan() {
+function* syncPlan({ getAuth }: WorkerRootSagaOptions) {
     try {
-        const { user }: State = yield select();
-        const plan: UserPlanState = yield getUserPlan(user);
-        yield plan !== user.plan && put(setUserPlan(plan));
-    } catch (err) {}
+        if (getAuth().hasSession()) {
+            const { user }: State = yield select();
+            const plan: UserPlanState = yield getUserPlan(user);
+            yield plan !== user.plan && put(setUserPlan(plan));
+        }
+    } catch (_) {}
 }
 
-export default function* watcher() {
-    yield takeLeading(wakeupSuccess.match, syncPlan);
+export default function* watcher(options: WorkerRootSagaOptions) {
+    yield takeLeading(wakeupSuccess.match, syncPlan, options);
 }

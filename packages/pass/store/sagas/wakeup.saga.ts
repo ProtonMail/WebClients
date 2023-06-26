@@ -1,6 +1,5 @@
 import { fork, put, select, take, takeEvery } from 'redux-saga/effects';
 
-import { authentication } from '@proton/pass/auth';
 import { filterDeletedTabIds } from '@proton/pass/extension/tabs';
 import type { TabId } from '@proton/pass/types';
 import { WorkerStatus } from '@proton/pass/types';
@@ -10,11 +9,14 @@ import { boot, stateSync, wakeupSuccess } from '../actions';
 import { popupTabStateGarbageCollect } from '../actions/creators/popup';
 import type { WithReceiverAction } from '../actions/with-receiver';
 import { selectPopupStateTabIds } from '../selectors';
-import type { State } from '../types';
+import type { State, WorkerRootSagaOptions } from '../types';
 
-function* wakeupWorker({ payload: { status }, meta }: WithReceiverAction<ReturnType<typeof action.wakeup>>) {
+function* wakeupWorker(
+    { getAuth }: WorkerRootSagaOptions,
+    { payload: { status }, meta }: WithReceiverAction<ReturnType<typeof action.wakeup>>
+) {
     const { tabId, endpoint } = meta.receiver;
-    const loggedIn = authentication?.hasSession();
+    const loggedIn = getAuth().hasSession();
 
     switch (status) {
         case WorkerStatus.IDLE:
@@ -51,6 +53,6 @@ function* wakeupWorker({ payload: { status }, meta }: WithReceiverAction<ReturnT
     yield put(wakeupSuccess(endpoint!, tabId!));
 }
 
-export default function* wakeup(): Generator {
-    yield takeEvery(action.wakeup.match, wakeupWorker);
+export default function* wakeup(options: WorkerRootSagaOptions): Generator {
+    yield takeEvery(action.wakeup.match, wakeupWorker, options);
 }
