@@ -4,10 +4,17 @@ import { IMAGE_PROXY_FLAGS } from '@proton/shared/lib/constants';
 import { MessageUTMTracker } from '@proton/shared/lib/models/mailUtmTrackers';
 
 import { addToCache, minimalCache } from '../../../helpers/test/cache';
-import { clearAll, setFeatureFlags } from '../../../helpers/test/helper';
+import { clearAll } from '../../../helpers/test/helper';
 import { render } from '../../../helpers/test/render';
 import { MessageState } from '../../../logic/messages/messagesTypes';
 import ItemSpyTrackerIcon from './ItemSpyTrackerIcon';
+
+jest.mock('@proton/components/hooks/useProgressiveRollout', () => {
+    return {
+        __esModule: true,
+        default: jest.fn(() => true),
+    };
+});
 
 const messageWithTrackers: MessageState = {
     localID: 'messageWithTrackerId',
@@ -70,10 +77,6 @@ const messageWithoutTrackers: MessageState = {
 };
 
 describe('ItemSpyTrackerIcon', () => {
-    beforeEach(() => {
-        setFeatureFlags('CleanUTMTrackers', true);
-    });
-
     afterEach(() => {
         clearAll();
     });

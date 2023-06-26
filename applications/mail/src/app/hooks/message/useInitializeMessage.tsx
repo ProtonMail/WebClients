@@ -2,7 +2,14 @@ import { useCallback } from 'react';
 
 import { PayloadAction } from '@reduxjs/toolkit';
 
-import { FeatureCode, useApi, useAuthentication, useFeatures, useMailSettings } from '@proton/components';
+import {
+    FeatureCode,
+    useApi,
+    useAuthentication,
+    useFeature,
+    useMailSettings,
+    useProgressiveRollout,
+} from '@proton/components';
 import { WorkerDecryptionResult } from '@proton/crypto';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
@@ -60,10 +67,10 @@ export const useInitializeMessage = () => {
     const { verifyKeys } = useKeyVerification();
     const authentication = useAuthentication();
 
-    const { getFeature } = useFeatures([FeatureCode.NumAttachmentsWithoutEmbedded, FeatureCode.CleanUTMTrackers]);
+    const { feature } = useFeature(FeatureCode.NumAttachmentsWithoutEmbedded);
 
-    const isNumAttachmentsWithoutEmbedded = getFeature(FeatureCode.NumAttachmentsWithoutEmbedded).feature?.Value;
-    const canCleanUTMTrackers = getFeature(FeatureCode.CleanUTMTrackers).feature?.Value;
+    const isNumAttachmentsWithoutEmbedded = feature?.Value;
+    const canCleanUTMTrackers = useProgressiveRollout(FeatureCode.CleanUTMTrackers);
 
     const onUpdateAttachment = (ID: string, attachment: WorkerDecryptionResult<Uint8Array>) => {
         dispatch(updateAttachment({ ID, attachment }));
