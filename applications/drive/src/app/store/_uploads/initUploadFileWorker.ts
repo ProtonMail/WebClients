@@ -2,7 +2,6 @@ import { traceError } from '@proton/shared/lib/helpers/sentry';
 
 import { TransferCancel } from '../../components/TransferManager/transfer';
 import {
-    BlockToken,
     FileKeys,
     FileRequestBlock,
     ThumbnailRequestBlock,
@@ -74,9 +73,9 @@ export function initUploadFileWorker(
                 onProgress: (increment: number) => {
                     onProgress?.(increment);
                 },
-                finalize: (blockTokens: BlockToken[], signature: string, signatureAddress: string, xattr: string) => {
+                finalize: (signature: string, signatureAddress: string, xattr: string) => {
                     onFinalize?.();
-                    finalize(blockTokens, signature, signatureAddress, xattr).then(resolve).catch(reject);
+                    finalize(signature, signatureAddress, xattr).then(resolve).catch(reject);
                 },
                 onNetworkError: (error: string) => {
                     onNetworkError?.(error);
