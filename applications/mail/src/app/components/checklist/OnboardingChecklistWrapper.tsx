@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 
 import { isAfter } from 'date-fns';
 import { c } from 'ttag';
@@ -13,11 +13,12 @@ import {
     useModalState,
 } from '@proton/components/components';
 import { FeatureCode, GmailSyncModal } from '@proton/components/containers';
-import { useActiveBreakpoint, useFeature, useMailSettings } from '@proton/components/hooks';
+import { useActiveBreakpoint, useFeature, useLocalState, useMailSettings, useUser } from '@proton/components/hooks';
 import { CHECKLIST_DISPLAY_TYPE, ChecklistKey } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
 import { useGetStartedChecklist } from 'proton-mail/containers/onboardingChecklist/provider/GetStartedChecklistProvider';
+import { deleteCheckedItemsForUser } from 'proton-mail/helpers/checklist/checkedItemsStorage';
 import { isColumnMode } from 'proton-mail/helpers/mailSettings';
 
 import OnboardingChecklistHeader from './OnboardingChecklistHeader';
@@ -33,20 +34,18 @@ interface Props {
     smallVariant?: boolean;
     hideDismissButton?: boolean;
     displayOnMobile?: boolean;
-    customText?: string;
-    reduceSpace?: boolean;
 }
 
 const UsersOnboardingChecklist = ({
     smallVariant = false,
     displayOnMobile = false,
     hideDismissButton = false,
-    reduceSpace = false,
 }: Props) => {
     const [mailSettings] = useMailSettings();
     const { isNarrow } = useActiveBreakpoint();
+    const [user] = useUser();
 
-    const [rewardShowed, setRewardShowed] = useState(false);
+    const [rewardShowed, setRewardShowed] = useLocalState(false, 'checklist-reward-showed');
 
     const [gmailForwardProps, setGmailForwardOpen, renderGmailForward] = useModalState();
     const [protectLoginProps, setProtectModalOpen, renderProtectInbox] = useModalState();
@@ -54,16 +53,13 @@ const UsersOnboardingChecklist = ({
     const [mobileAppsProps, setMobileAppsOpen, renderMobileApps] = useModalState();
     const [storageRewardProps, setStorageRewardOpen, renderStorageReward] = useModalState();
 
-    const { isUserPaid, items, changeChecklistDisplay, isChecklistFinished, userWasRewarded } =
-        useGetStartedChecklist();
-    const canOpenStorageReward =
-        isChecklistFinished &&
-        !userWasRewarded &&
-        !rewardShowed &&
-        !isUserPaid &&
-        !gmailForwardProps.open &&
-        !protectLoginProps.open &&
-        !loginModalProps.open;
+    const { items, changeChecklistDisplay, isChecklistFinished, userWasRewarded } = useGetStartedChecklist();
+
+    // This is used to display the reward modal, can only be opened when user is finished and all modals are closed
+    const areAllModalsClosed =
+        !gmailForwardProps.open && !protectLoginProps.open && !loginModalProps.open && !mobileAppsProps.open;
+    const canUserSeeRewardModal = isChecklistFinished && !userWasRewarded && !rewardShowed;
+    const canOpenStorageReward = canUserSeeRewardModal && areAllModalsClosed;
 
     useEffect(() => {
         if (canOpenStorageReward) {
@@ -79,6 +75,11 @@ const UsersOnboardingChecklist = ({
     };
 
     const handleDismiss = () => {
+        // Clean the session storage state
+        if (isChecklistFinished) {
+            deleteCheckedItemsForUser(user.ID);
+        }
+
         const newState = isChecklistFinished ? CHECKLIST_DISPLAY_TYPE.HIDDEN : CHECKLIST_DISPLAY_TYPE.REDUCED;
         changeChecklistDisplay(newState);
     };
@@ -87,12 +88,13 @@ const UsersOnboardingChecklist = ({
         <EasySwitchProvider>
             <>
                 <div
+                    data-testid="onboarding-checklist"
                     className={clsx(
                         'flex flex-column w100',
-                        //The checklist is displayed on both the list and details (right side when column mode), we need to hide it on the list when the side details view is visible
+                        // The checklist is displayed on both the list and details (right side when column mode), we need to hide it on the list when the side details view is visible
                         displayOnMobile && 'free-checklist--container',
                         isColumnMode(mailSettings) && !smallVariant && 'flex-justify-center h100',
-                        !reduceSpace && !smallVariant && 'p-3 md:p-6',
+                        !smallVariant && 'p-3 md:p-6',
                         !isNarrow && !smallVariant && 'flex-item-centered-vert',
                         smallVariant
                             ? 'mx-2 flex-align-self-end'
@@ -103,7 +105,6 @@ const UsersOnboardingChecklist = ({
                     <ul className={clsx('flex flex-column unstyled my-0', !smallVariant && 'gap-2 md:px-3')}>
                         <li>
                             <CheckListProtectInbox
-                                alwaysClickable
                                 smallVariant={smallVariant}
                                 onClick={() => setProtectModalOpen(true)}
                                 style={{ borderRadius: smallVariant ? '0.5rem 0.5rem 0 0' : null }}
@@ -119,7 +120,6 @@ const UsersOnboardingChecklist = ({
                         </li>
                         <li>
                             <CheckListAccountLogin
-                                alwaysClickable
                                 smallVariant={smallVariant}
                                 onClick={() => setLoginModalOpen(true)}
                                 done={items.has(ChecklistKey.AccountLogin)}

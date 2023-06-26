@@ -20,7 +20,7 @@ const PendingInvitationPanel = () => {
     const cache = useCache();
 
     useEffect(() => {
-        //Force refresh the invitations when user navigates back to the dashboard
+        // Force refresh the invitations when user navigates back to the dashboard
         if (cache.get(UserInvitationModel.key)) {
             cache.delete(UserInvitationModel.key);
         }

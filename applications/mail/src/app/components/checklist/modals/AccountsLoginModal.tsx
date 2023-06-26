@@ -3,20 +3,22 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { ModalStateProps, ModalTwo, ModalTwoContent, ModalTwoHeader } from '@proton/components/components';
-import { useUserSettings } from '@proton/components/hooks';
+import { useUser, useUserSettings } from '@proton/components/hooks';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
-import { getItem, setItem } from '@proton/shared/lib/helpers/sessionStorage';
 import { ChecklistKey } from '@proton/shared/lib/interfaces';
 
 import { useGetStartedChecklist } from 'proton-mail/containers/onboardingChecklist/provider/GetStartedChecklistProvider';
+import {
+    getSavedCheckedItemsForUser,
+    saveCheckedItemsForUser,
+} from 'proton-mail/helpers/checklist/checkedItemsStorage';
 
 import ServiceItem from './AccountsLoginModalServiceItem';
 import { getOnlineAccounts } from './OnlineAccounts';
 
-const SESSIONS_STORAGE_KEY = 'checkedItems';
-
 const AccountsLoginModal = (props: ModalStateProps) => {
     const { items, markItemsAsDone } = useGetStartedChecklist();
+    const [user] = useUser();
 
     const [{ Locale }] = useUserSettings();
     const isUserInUS = Locale === 'en_US';
@@ -25,15 +27,16 @@ const AccountsLoginModal = (props: ModalStateProps) => {
     const links = getOnlineAccounts();
 
     useEffect(() => {
-        const checked = getItem(SESSIONS_STORAGE_KEY);
-        setCheckedItems(checked ? JSON.parse(checked) : []);
+        const data = getSavedCheckedItemsForUser(user.ID);
+        setCheckedItems(data);
     }, []);
 
     const handleDoneClick = async (serviceKey: string, hideItem: boolean) => {
         if (hideItem) {
             const newCheckedItems = [...checkedItems, serviceKey];
             setCheckedItems(newCheckedItems);
-            setItem(SESSIONS_STORAGE_KEY, JSON.stringify(newCheckedItems));
+            // Save both the user id and the checked items to avoid issue with multiple sessions
+            saveCheckedItemsForUser(user.ID, newCheckedItems);
         }
 
         if (!items.has(ChecklistKey.AccountLogin)) {
@@ -49,7 +52,7 @@ const AccountsLoginModal = (props: ModalStateProps) => {
                     .t`Have an account with one of these services? Just click to change the email address to your ${MAIL_APP_NAME} address.`}</p>
                 <div>
                     {links.map((group) => {
-                        //Hide group if whole group is US only and user is not in US or if whole group is done
+                        // Hide group if whole group is US only and user is not in US or if whole group is done
                         if (group.services.every((service) => service.usOnly) && !isUserInUS) {
                             return null;
                         }
@@ -62,10 +65,10 @@ const AccountsLoginModal = (props: ModalStateProps) => {
                                 <div className="mb-6 flex flex-column gap-2">
                                     {areAllServiceDone ? (
                                         <p className="color-weak text-sm mt-0">{c('Get started checklist instructions')
-                                            .t`All services marked as done`}</p>
+                                            .t`Nice! You've updated all services in this category.`}</p>
                                     ) : (
                                         group.services.map((service) => {
-                                            //Hide services that are US only for users outside of US
+                                            // Hide services that are US only for users outside of US
                                             if (service.usOnly && !isUserInUS) {
                                                 return null;
                                             }

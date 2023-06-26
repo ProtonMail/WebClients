@@ -8,7 +8,7 @@ import {
     MnemonicPhraseStepButtons,
     MnemonicPhraseStepContent,
 } from '@proton/components/containers/mnemonic/MnemonicPhraseStep';
-import { useApi, useGetUserKeys, useUser } from '@proton/components/hooks';
+import { useApi, useEventManager, useGetUserKeys, useUser } from '@proton/components/hooks';
 import { reactivateMnemonicPhrase } from '@proton/shared/lib/api/settingsMnemonic';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { MnemonicData, generateMnemonicPayload, generateMnemonicWithSalt } from '@proton/shared/lib/mnemonic';
@@ -31,6 +31,7 @@ const MnemonicPromptModal = ({ open, onClose, onExit }: Props) => {
     const [step, setStep] = useState(STEPS.INFO);
     const api = useApi();
     const getUserKeys = useGetUserKeys();
+    const { call } = useEventManager();
 
     const [reactivatingMnemonic, setReactivatingMnemonic] = useState(false);
 
@@ -50,6 +51,11 @@ const MnemonicPromptModal = ({ open, onClose, onExit }: Props) => {
 
         void generateMnemonicData();
     }, [open]);
+
+    const handleExit = () => {
+        call();
+        onClose?.();
+    };
 
     const handleSubmit = async () => {
         if (!mnemonicData) {
@@ -73,7 +79,14 @@ const MnemonicPromptModal = ({ open, onClose, onExit }: Props) => {
 
     if (step === STEPS.INFO) {
         return (
-            <ModalTwo as="form" size="small" open={open} onClose={onClose} onExit={onExit} onSubmit={handleSubmit}>
+            <ModalTwo
+                as="form"
+                size="small"
+                open={open}
+                onClose={handleExit}
+                onExit={handleExit}
+                onSubmit={handleSubmit}
+            >
                 <ModalTwoHeader />
                 <ModalTwoContent>
                     <div className="pb-4 text-center m-auto w66 on-mobile-w100">
@@ -112,13 +125,13 @@ const MnemonicPromptModal = ({ open, onClose, onExit }: Props) => {
         const { mnemonic } = mnemonicData;
 
         return (
-            <ModalTwo size="small" open={open} onClose={onClose} onExit={onExit}>
+            <ModalTwo size="small" open={open} onClose={handleExit} onExit={onExit}>
                 <ModalTwoHeader title={c('Info').t`Your recovery phrase`} />
                 <ModalTwoContent>
                     <MnemonicPhraseStepContent mnemonic={mnemonic} />
                 </ModalTwoContent>
                 <ModalTwoFooter>
-                    <MnemonicPhraseStepButtons mnemonic={mnemonic} onDone={onClose} />
+                    <MnemonicPhraseStepButtons mnemonic={mnemonic} onDone={handleExit} />
                 </ModalTwoFooter>
             </ModalTwo>
         );

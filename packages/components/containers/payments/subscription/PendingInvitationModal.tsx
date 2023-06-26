@@ -50,7 +50,7 @@ const PendingInvitationModal = ({ invite, ...modalProps }: Props) => {
             text: c('familyOffer_2023:Family plan').t`You have successfully joined the Family plan`,
         });
         if (protonConfig.APP_NAME === APPS.PROTONACCOUNT) {
-            cache.delete(OrganizationModel.key); //Force refresh the organization since it's not present in the event manager
+            cache.delete(OrganizationModel.key); // Force refresh the organization since it's not present in the event manager
             goToSettings('/account-password', APPS.PROTONACCOUNT);
         }
     };

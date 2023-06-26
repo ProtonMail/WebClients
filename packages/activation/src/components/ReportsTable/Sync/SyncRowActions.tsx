@@ -72,7 +72,7 @@ const SyncRowActions = ({ syncId }: Props) => {
             ];
         }
 
-        //If gmail sync isn't available users can only delete sync
+        // If gmail sync isn't available users can only delete sync
         return [deleteSyncButton];
     };
 

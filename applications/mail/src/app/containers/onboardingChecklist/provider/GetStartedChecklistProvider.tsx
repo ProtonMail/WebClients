@@ -29,7 +29,7 @@ const completedChecklist = [
     ChecklistKey.MobileApp,
 ];
 
-//TODO delete when cleaning the old checklist
+// TODO delete when cleaning the old checklist
 const oldCompletedChecklist = [
     ChecklistKey.Import,
     ChecklistKey.SendMessage,
@@ -37,7 +37,7 @@ const oldCompletedChecklist = [
     ChecklistKey.RecoveryMethod,
 ];
 
-interface ContextState {
+export interface ContextState {
     expiresAt: Date;
     loading: boolean;
     isUserPaid: boolean;
@@ -56,7 +56,7 @@ const GetStartedChecklistProvider = ({ children }: { children: ReactNode }) => {
     const silentApi = getSilentApi(api);
     const { call } = useEventManager();
     const [submitting, withSubmitting] = useLoading();
-    //Delete feature flag when cleaning the old checklist
+    // TODO delete when cleaning the old checklist
     const { feature, loading: loadingFeature } = useFeature<boolean>(FeatureCode.NewOnboardingChecklist);
 
     // This is used in the checklist to make optimistic UI updates. It marks the checklist item as done or store the display state
@@ -78,7 +78,7 @@ const GetStartedChecklistProvider = ({ children }: { children: ReactNode }) => {
     const isChecklistFinished =
         feature && feature.Value
             ? completedChecklist.every((item) => items.includes(item))
-            : oldCompletedChecklist.every((item) => items.includes(item)); //TODO delete this condition when the old checklist is cleaned
+            : oldCompletedChecklist.every((item) => items.includes(item)); // TODO delete when cleaning the old checklist
 
     useEffect(() => {
         if (submitting) {
@@ -128,7 +128,7 @@ const GetStartedChecklistProvider = ({ children }: { children: ReactNode }) => {
     };
 
     const getExpiredAt = (): Date => {
-        //Old checklist don't contain the expiration date and it needs to be calculated, to delete when cleaning code
+        // TODO delete when cleaning the old checklist
         if (!feature?.Value) {
             return isUserPaid
                 ? addDays(fromUnixTime(paidUserChecklist.CreatedAt), 18)
