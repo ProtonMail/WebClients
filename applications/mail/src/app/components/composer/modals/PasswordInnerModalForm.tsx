@@ -1,53 +1,28 @@
-import { ChangeEvent, useEffect, useState } from 'react';
+import { ChangeEvent, useState } from 'react';
 
 import { c } from 'ttag';
 
 import { Copy, Info, InputFieldTwo, PasswordInputTwo, generateUID, useNotifications } from '@proton/components';
+import { minLengthValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 
 import './PasswordInnerModal.scss';
+
+const MIN_PASSWORD_LENGTH = 8;
 
 interface Props {
     password: string;
     setPassword: (password: string) => void;
     passwordHint: string;
     setPasswordHint: (hint: string) => void;
-    isPasswordSet: boolean;
-    setIsPasswordSet: (value: boolean) => void;
     validator: (validations: string[]) => string;
 }
 
-const PasswordInnerModalForm = ({
-    password,
-    setPassword,
-    passwordHint,
-    setPasswordHint,
-    isPasswordSet,
-    setIsPasswordSet,
-    validator,
-}: Props) => {
+const PasswordInnerModalForm = ({ password, setPassword, passwordHint, setPasswordHint, validator }: Props) => {
     const [uid] = useState(generateUID('password-modal'));
     const { createNotification } = useNotifications();
 
-    useEffect(() => {
-        if (password !== '') {
-            setIsPasswordSet(true);
-        } else if (password === '') {
-            setIsPasswordSet(false);
-        }
-    }, [password]);
-
     const handleChange = (setter: (value: string) => void) => (event: ChangeEvent<HTMLInputElement>) => {
         setter(event.target.value);
-    };
-
-    const getErrorText = (isConfirmInput = false) => {
-        if (isPasswordSet !== undefined && !isPasswordSet) {
-            if (isConfirmInput) {
-                return c('Error').t`Please repeat the password`;
-            }
-            return c('Error').t`Please set a password`;
-        }
-        return '';
     };
 
     const passwordLabel = (
@@ -67,7 +42,7 @@ const PasswordInnerModalForm = ({
             placeholder={c('Placeholder').t`Password`}
             defaultType="text"
             onChange={handleChange(setPassword)}
-            error={validator([getErrorText()])}
+            error={validator([requiredValidator(password), minLengthValidator(password, MIN_PASSWORD_LENGTH)])}
         />
     );
     return (
