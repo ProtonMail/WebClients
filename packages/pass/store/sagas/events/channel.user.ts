@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/no-throw-literal, curly */
 import { all, fork, put, select } from 'redux-saga/effects';
 
-import { authentication } from '@proton/pass/auth';
 import { PassCrypto } from '@proton/pass/crypto';
 import { type Api, ChannelType, type ServerEvent } from '@proton/pass/types';
 import { notIn, prop } from '@proton/pass/utils/fp';
@@ -17,8 +16,13 @@ import type { State, WorkerRootSagaOptions } from '../../types';
 import { getUserPlan } from '../workers/user';
 import { eventChannelFactory } from './channel.factory';
 import { channelEventsWorker, channelWakeupWorker } from './channel.worker';
+import type { EventChannel } from './types';
 
-function* onUserEvent(event: ServerEvent<ChannelType.USER>) {
+function* onUserEvent(
+    event: ServerEvent<ChannelType.USER>,
+    _: EventChannel<ChannelType.USER>,
+    { getAuth }: WorkerRootSagaOptions
+) {
     if (event.error) throw event.error;
 
     logger.info(`[ServerEvents::User] event ${logId(event.EventID!)}`);
@@ -48,7 +52,7 @@ function* onUserEvent(event: ServerEvent<ChannelType.USER>) {
 
         if (keysUpdated) {
             logger.info(`[Saga::Events] Detected user keys update`);
-            const keyPassword = authentication.getPassword();
+            const keyPassword = getAuth().getPassword();
             const addresses = (yield select(selectAllAddresses)) as Address[];
             yield PassCrypto.hydrate({ user, keyPassword, addresses });
             yield put(syncIntent({})); /* trigger a full data sync */
