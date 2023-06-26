@@ -8,7 +8,6 @@ import { type Callback, type MaybeNull, WorkerStatus } from '@proton/pass/types'
 import { PassIcon } from '@proton/pass/types/data/pass-icon';
 import { pixelEncoder } from '@proton/pass/utils/dom';
 import { pipe, tap } from '@proton/pass/utils/fp';
-import { FORK_TYPE } from '@proton/shared/lib/authentication/ForkInterface';
 import { BRAND_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 import { useAccountFork } from '../../../../../shared/hooks';
@@ -74,7 +73,7 @@ export const DropdownContent: VFC = () => {
                         <DropdownItem
                             onClick={async () => {
                                 closeIFrame();
-                                await accountFork(FORK_TYPE.SWITCH);
+                                await accountFork();
                             }}
                             subTitle={
                                 <>
