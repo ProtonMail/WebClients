@@ -1,4 +1,4 @@
-import { TidyURL } from 'tidy-url';
+import { TidyURL } from '@protontech/tidy-url';
 
 import { MessageUTMTracker } from '@proton/shared/lib/models/mailUtmTrackers';
 
