@@ -48,6 +48,7 @@ const CancelSubscriptionModal = ({ subscription, onConfirm, onClose, ...rest }: 
                         onClose?.();
                     }}
                     color="danger"
+                    data-testid="cancelSubscription"
                 >
                     {c('Action').t`Cancel subscription`}
                 </Button>,
