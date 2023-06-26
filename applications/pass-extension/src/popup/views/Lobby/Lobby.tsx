@@ -33,7 +33,7 @@ const LobbyContent: VFC = () => {
         async () =>
             workerErrored(state.status)
                 ? sendMessage(popupMessage({ type: WorkerMessageType.WORKER_INIT, payload: { sync: true } }))
-                : login(FORK_TYPE.SWITCH),
+                : login(),
         [state.status]
     );
 
