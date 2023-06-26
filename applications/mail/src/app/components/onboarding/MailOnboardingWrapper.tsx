@@ -15,7 +15,7 @@ const MailOnboardingWrapper = () => {
     const [userSettings] = useUserSettings();
     const [welcomeFlags, setWelcomeFlagsDone] = useWelcomeFlags();
 
-    //The modal state is handled inside the MailStartupModals component
+    // The modal state is handled inside the MailStartupModals component
     const [openStartupModal, setOpenStartupModal] = useState(false);
     const [syncModalProps, setSyncModalOpen, renderSyncModal] = useModalState();
 

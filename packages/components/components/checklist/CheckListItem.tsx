@@ -6,15 +6,14 @@ import clsx from '@proton/utils/clsx';
 import './CheckListItem.scss';
 
 interface Props {
-    largeIcon?: string; //TODO make this required when  cleaning
-    smallIcon?: string; //TODO make this required when  cleaning
+    largeIcon?: string; // TODO delete when cleaning the old checklist
+    smallIcon?: string; // TODO delete when cleaning the old checklist
     text: string | string[];
     onClick?: () => void;
     smallVariant: boolean;
     style?: CSSProperties;
     disabled?: boolean;
     done: boolean;
-    alwaysClickable?: boolean;
     'data-testid'?: string;
 }
 
@@ -27,19 +26,8 @@ const CheckListItem = ({
     style,
     done,
     disabled,
-    alwaysClickable,
     'data-testid': dataTestId,
 }: Props) => {
-    const isDisabled = (done && !alwaysClickable) || disabled;
-
-    const handleClick = () => {
-        if (done && !alwaysClickable) {
-            return;
-        }
-
-        onClick?.();
-    };
-
     const getIconSize = () => {
         let iconSize: IconSize = 16;
 
@@ -52,13 +40,12 @@ const CheckListItem = ({
 
     return (
         <button
-            disabled={isDisabled}
-            onClick={handleClick}
+            disabled={disabled}
+            onClick={() => onClick?.()}
             className={clsx(
                 'flex flex-nowrap flex-align-items-center text-left checkList-item border-none w100',
                 onClick !== undefined && !disabled ? 'cursor-pointer' : 'cursor-default',
-                smallVariant ? 'p-0 text-sm color-norm p-2 mb-0.5 gap-2' : 'px-4 py-3 rounded-lg gap-3',
-                done && !alwaysClickable && 'text-strike'
+                smallVariant ? 'p-0 text-sm color-norm p-2 mb-0.5 gap-2' : 'px-4 py-3 rounded-lg gap-3'
             )}
             style={{
                 ...style,
@@ -75,12 +62,13 @@ const CheckListItem = ({
                         '--h-custom': smallVariant ? '1.5rem' : '3rem',
                     }}
                     alt=""
+                    data-testId={smallVariant ? 'checklist-item-icon-small' : 'checklist-item-icon-large'}
                 />
             )}
             <span className={clsx('flex-item-fluid px-2', done && 'opacity-50')}>{text}</span>
             <div
                 className={clsx(
-                    'w-custom h-custom',
+                    'w-custom h-custom flex flex-align-self-center',
                     done && 'bg-primary rounded-50 flex flex-align-items-center flex-justify-center flex-item-noshrink'
                 )}
                 style={{

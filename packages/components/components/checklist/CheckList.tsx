@@ -20,7 +20,6 @@ interface CheckListItemProps {
     disabled?: boolean;
     style?: CSSProperties;
     onClick?: () => void;
-    alwaysClickable?: boolean;
     'data-testid'?: string;
 }
 
@@ -30,13 +29,12 @@ export const CheckListProtectInbox = ({
     done = false,
     style,
     disabled = false,
-    alwaysClickable = false,
     'data-testid': dataTestId,
 }: CheckListItemProps) => {
-    // translator: This text is in bold inside the sentence "Protect your inbox with our privacy features"
-    const strongText = <strong>{c('Get started checklist instructions').t`Protect your inbox`}</strong>;
-    // translator: The whole sentence is "Protect your inbox with our privacy features"
-    const text = c('Get started checklist instructions').jt`${strongText} with our privacy features`;
+    // translator: This text is in bold inside the sentence "Discover how our privacy features protect you"
+    const strongText = <strong>{c('Get started checklist instructions').t`privacy features`}</strong>;
+    // translator: The whole sentence is "Discover how our privacy features protect you" with privacy feature in bold
+    const text = c('Get started checklist instructions').jt`Discover how our ${strongText} protect you`;
     const smallText = c('Get started checklist instructions').t`Discover privacy features`;
 
     return (
@@ -49,7 +47,6 @@ export const CheckListProtectInbox = ({
             style={style}
             done={done}
             disabled={disabled}
-            alwaysClickable={alwaysClickable}
             data-testid={dataTestId}
         />
     );
@@ -61,12 +58,11 @@ export const CheckListGmailForward = ({
     done = false,
     style,
     disabled = false,
-    alwaysClickable = false,
     'data-testid': dataTestId,
 }: CheckListItemProps) => {
     // translator: This text is in bold inside the sentence "Set up auto-forwarding from Gmail"
     const strongText = <strong>{c('Get started checklist instructions').t`auto-forwarding`}</strong>;
-    // translator: The whole sentence is "Set up auto-forwarding from Gmail"
+    // translator: The whole sentence is "Set up auto-forwarding from Gmail" with "auto-forwarding" in bold
     const text = c('Get started checklist instructions').jt`Set up ${strongText} from Gmail`;
     const smallText = c('Get started checklist instructions').t`Auto-forward Gmail`;
 
@@ -80,7 +76,6 @@ export const CheckListGmailForward = ({
             style={style}
             done={done}
             disabled={disabled}
-            alwaysClickable={alwaysClickable}
             data-testid={dataTestId}
         />
     );
@@ -92,12 +87,11 @@ export const CheckListAccountLogin = ({
     done = false,
     style,
     disabled = false,
-    alwaysClickable = false,
     'data-testid': dataTestId,
 }: CheckListItemProps) => {
     // translator: This text is in bold inside the sentence "Change account logins to your Proton address"
     const strongText = <strong>{c('Get started checklist instructions').t`account logins`}</strong>;
-    // translator: The whole sentence is "Change account logins to your Proton address"
+    // translator: The whole sentence is "Change account logins to your Proton address" with "account logins" in bold
     const text = c('Get started checklist instructions').jt`Change ${strongText} to your ${BRAND_NAME} address`;
     const smallText = c('Get started checklist instructions').t`Update your logins`;
 
@@ -111,7 +105,6 @@ export const CheckListAccountLogin = ({
             style={style}
             done={done}
             disabled={disabled}
-            alwaysClickable={alwaysClickable}
             data-testid={dataTestId}
         />
     );
@@ -123,14 +116,11 @@ export const CheckListMobileStores = ({
     done = false,
     style,
     disabled = false,
-    alwaysClickable = false,
     'data-testid': dataTestId,
 }: CheckListItemProps) => {
-    const googleLink = <strong>Android</strong>;
-    const appleLink = <strong>iOS</strong>;
-    // translator: The whole sentence is "Get the ProtonMail app on Google Play or App Store", where "Google Play" and "App Store" are links and bold
-    const text = c('Get started checklist instructions')
-        .jt`Get the ${MAIL_APP_NAME} app on ${googleLink} or ${appleLink}`;
+    const strongText = <strong>{c('Get started checklist instructions').t`${MAIL_APP_NAME} app`}</strong>;
+    // translator: The whole sentence is "Get the ProtonMail app on Google Play or App Store", where "Proton Mail app" is in bold
+    const text = c('Get started checklist instructions').jt`Get the ${strongText} on Android or iOS`;
     const smallText = c('Get started checklist instructions').t`Get the App`;
 
     return (
@@ -143,7 +133,6 @@ export const CheckListMobileStores = ({
             style={style}
             done={done}
             disabled={disabled}
-            alwaysClickable={alwaysClickable}
             data-testid={dataTestId}
         />
     );

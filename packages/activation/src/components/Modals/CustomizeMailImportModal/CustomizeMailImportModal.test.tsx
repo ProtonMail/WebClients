@@ -1,7 +1,5 @@
 import { fireEvent, screen, waitFor } from '@testing-library/dom';
 
-
-
 import { ApiMailImporterFolder } from '@proton/activation/src/api/api.interface';
 import MailImportFoldersParser from '@proton/activation/src/helpers/MailImportFoldersParser/MailImportFoldersParser';
 import { MailImportDestinationFolder, TIME_PERIOD } from '@proton/activation/src/interface';
@@ -10,11 +8,8 @@ import { ModalStateProps } from '@proton/components';
 import { ADDRESS_STATUS, ADDRESS_TYPE } from '@proton/shared/lib/constants';
 import { Address } from '@proton/shared/lib/interfaces';
 
-
-
 import CustomizeMailImportModal from './CustomizeMailImportModal';
 import { MailImportFields } from './CustomizeMailImportModal.interface';
-
 
 const address: Address = {
     DisplayName: 'Testing',
@@ -120,40 +115,40 @@ describe('Customize modal tests', () => {
 
         screen.getByTestId('CustomizeModal:folderHeader');
 
-        //Display folders
+        // Display folders
         const showFolderButton = screen.getByTestId('CustomizeModal:toggleFolders');
         fireEvent.click(showFolderButton);
         screen.getByTestId('CustomizeModal:destinationItem');
 
-        //Toggle folder checkbox
+        // Toggle folder checkbox
         const checkboxes = screen.getAllByTestId('CustomizeModal:checkbox');
         fireEvent.click(checkboxes[0]);
         fireEvent.click(checkboxes[0]);
 
-        //Close folders
+        // Close folders
         fireEvent.click(showFolderButton);
         expect(screen.queryByTestId('CustomizeModal:destinationItem')).toBeNull();
 
-        //Open and close the edit label modal
+        // Open and close the edit label modal
         const editLabelButton = screen.getByTestId('CustomizeModal:editLabel');
         fireEvent.click(editLabelButton);
         screen.getByTestId('label-modal');
         const editLabelCloseButton = screen.getByTestId('label-modal:cancel');
         fireEvent.click(editLabelCloseButton);
 
-        //Change default time period
+        // Change default time period
         const select = screen.getByText('Last month only');
         fireEvent.click(select);
         fireEvent.click(screen.getByText('Last 3 months only'));
 
-        //Close modal and expect confirmation modal and close it
+        // Close modal and expect confirmation modal and close it
         const cancelButton = screen.getByTestId('CustomizeModal:modalCancel');
         fireEvent.click(cancelButton);
         screen.getByTestId('CancelModal:container');
         const closeModal = screen.getByTestId('CancelModal:cancel');
         fireEvent.click(closeModal);
 
-        //Click again the cancel button but cancel the changes this time
+        // Click again the cancel button but cancel the changes this time
         fireEvent.click(cancelButton);
         const quitModal = screen.getByTestId('CancelModal:quit');
         fireEvent.click(quitModal);
@@ -182,15 +177,15 @@ describe('Customize modal tests', () => {
         fireEvent.click(showFolderButton);
         expect(screen.queryByTestId('CustomizeModal:destinationItem')).toBeNull();
 
-        //Expect to see gmail categories
+        // Expect to see gmail categories
         screen.getByTestId('CustomizeModal:gmailCategories');
 
-        //Change the Gmail category
+        // Change the Gmail category
         const select = screen.getByText('Move to Inbox');
         fireEvent.click(select);
         fireEvent.click(screen.getByText('Move to Archive'));
 
-        //Submit the change and verify the new payload
+        // Submit the change and verify the new payload
         const modalSave = screen.getByTestId('CustomizeModal:modalSave');
         fireEvent.click(modalSave);
         expect(onSubmit).toHaveBeenCalledTimes(1);
@@ -272,7 +267,7 @@ describe('Customize modal tests', () => {
 
         expect(onSubmit).toHaveBeenCalledTimes(0);
 
-        //Fix the error by changing input and click the buttons again
+        // Fix the error by changing input and click the buttons again
         fireEvent.change(input, { target: { value: 'New Name' } });
 
         await waitFor(() => expect(input).toBeValid());
@@ -285,7 +280,7 @@ describe('Customize modal tests', () => {
 
         fireEvent.click(modalSave);
         expect(onSubmit).toHaveBeenCalledTimes(1);
-        //Update initial mapping to have the new folder name
+        // Update initial mapping to have the new folder name
         const newMapping = fields.mapping;
         newMapping[0].protonPath = ['New Name'];
         expect(onSubmit).toHaveBeenCalledWith({ ...fields, mapping: newMapping });

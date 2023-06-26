@@ -1,6 +1,8 @@
 import { c } from 'ttag';
 
+import { NotificationDot } from '@proton/atoms/NotificationDot';
 import { DropdownMenuButton, Tooltip, useModalState } from '@proton/components/components';
+import { KeyTransparencyDetailsModal } from '@proton/components/components/keyTransparency';
 import {
     MailComposerModeModal,
     MailDensityModal,
@@ -18,6 +20,7 @@ import { KeyTransparencyActivation } from '@proton/shared/lib/interfaces';
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import ClearBrowserDataModal from './ClearBrowserDataModal';
 import MailDefaultHandlerModal from './MailDefaultHandlerModal';
+import OnboardingChecklistModal from './OnboardingChecklistModal';
 
 const MailHeaderSettingsButton = () => {
     const [{ Density, Checklists }] = useUserSettings();
@@ -33,7 +36,8 @@ const MailHeaderSettingsButton = () => {
     const [mailComposerModeProps, setMailComposerModeModalOpen] = useModalState();
     const [mailDefaultHandlerProps, setDefaultHandlerModalOpen] = useModalState();
     const [onboardingChecklistProps, setOnboardingChecklistProps] = useModalState();
-    const hasOnboardingChecklist = Checklists?.includes('get-started');
+
+    const hasFreeOnboardingChecklist = Checklists?.includes('get-started');
 
     const [keyTransparencyDetailsModalProps, setKeyTransparencyDetailsModalOpen] = useModalState();
     const { ktActivation } = useKeyTransparencyContext();
@@ -114,8 +118,7 @@ const MailHeaderSettingsButton = () => {
                         <span className="flex-item-fluid text-left">{c('Action').t`Default email application`}</span>
                     </DropdownMenuButton>
                 )}
-                {clearDataButton}
-                {hasOnboardingChecklist && (
+                {hasFreeOnboardingChecklist && (
                     <>
                         <hr className="my-2" />
                         <DropdownMenuButton
@@ -131,6 +134,7 @@ const MailHeaderSettingsButton = () => {
                         </DropdownMenuButton>
                     </>
                 )}
+                {clearDataButton}
                 {showKT && (
                     <DropdownMenuButton
                         onClick={() => setKeyTransparencyDetailsModalOpen(true)}

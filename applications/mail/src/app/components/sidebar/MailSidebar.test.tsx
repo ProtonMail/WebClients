@@ -8,8 +8,13 @@ import { getAppVersion } from '@proton/components';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import { LABEL_TYPE, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { removeItem, setItem } from '@proton/shared/lib/helpers/storage';
+import { CHECKLIST_DISPLAY_TYPE } from '@proton/shared/lib/interfaces';
 import range from '@proton/utils/range';
 
+import {
+    ContextState,
+    useGetStartedChecklist,
+} from '../../containers/onboardingChecklist/provider/GetStartedChecklistProvider';
 import {
     addToCache,
     assertFocus,
@@ -24,6 +29,18 @@ import { SYSTEM_FOLDER_SECTION } from '../../hooks/useMoveSystemFolders';
 import MailSidebar from './MailSidebar';
 
 jest.mock('../../../../CHANGELOG.md', () => 'ProtonMail Changelog');
+
+// TODO delete when cleaning the old checklist
+jest.mock('@proton/components/hooks/useFeature', () => () => ({ feature: { Value: true } }));
+
+jest.mock('../../containers/onboardingChecklist/provider/GetStartedChecklistProvider', () => ({
+    __esModule: true,
+    useGetStartedChecklist: jest.fn(),
+    default: ({ children }: { children: any }) => <>{children}</>,
+}));
+
+jest.mock('../../containers/onboardingChecklist/provider/GetStartedChecklistProvider');
+const mockedReturn = useGetStartedChecklist as jest.MockedFunction<any>;
 
 loudRejection();
 
@@ -94,11 +111,20 @@ const setupTest = (labels: any[] = [], messageCounts: any[] = [], conversationCo
     addToCache('Labels', labels);
     addToCache('MessageCounts', messageCounts);
     addToCache('ConversationCounts', conversationCounts);
+
+    mockedReturn.mockReturnValue({
+        displayState: CHECKLIST_DISPLAY_TYPE.FULL,
+        items: new Set(),
+    } as ContextState);
 };
 
 describe('MailSidebar', () => {
     const setup = async () => {
         minimalCache();
+        mockedReturn.mockReturnValue({
+            displayState: CHECKLIST_DISPLAY_TYPE.FULL,
+            items: new Set(),
+        } as ContextState);
 
         const result = await render(<MailSidebar {...props} />, false);
 
@@ -376,5 +402,70 @@ describe('MailSidebar', () => {
 
             assertFocus(target);
         });
+    });
+});
+
+describe('Sidebar checklist display', () => {
+    beforeEach(() => {
+        minimalCache();
+    });
+
+    it('Should display the checklist if state is reduced', async () => {
+        mockedReturn.mockReturnValue({
+            displayState: CHECKLIST_DISPLAY_TYPE.REDUCED,
+            items: new Set(),
+        } as ContextState);
+
+        const { getByTestId, container } = await render(<MailSidebar {...props} />, false);
+        getByTestId('onboarding-checklist');
+
+        const nav = container.querySelector('nav');
+        expect(nav?.childNodes.length).toEqual(3);
+    });
+
+    it('Should not display the checklist if state is full', async () => {
+        mockedReturn.mockReturnValue({
+            displayState: CHECKLIST_DISPLAY_TYPE.FULL,
+            items: new Set(),
+        } as ContextState);
+
+        const { queryByTestId, container } = await render(<MailSidebar {...props} />, false);
+        const checklistWrapper = queryByTestId('onboarding-checklist');
+        const nav = container.querySelector('nav');
+
+        expect(checklistWrapper).toBeNull();
+        expect(nav?.childNodes.length).toEqual(2);
+    });
+
+    it('Should not display the checklist if state is hidden', async () => {
+        mockedReturn.mockReturnValue({
+            displayState: CHECKLIST_DISPLAY_TYPE.HIDDEN,
+            items: new Set(),
+        } as ContextState);
+
+        const { queryByTestId, container } = await render(<MailSidebar {...props} />, false);
+        const checklistWrapper = queryByTestId('onboarding-checklist');
+        const nav = container.querySelector('nav');
+
+        expect(checklistWrapper).toBeNull();
+        expect(nav?.childNodes.length).toEqual(2);
+    });
+
+    it('Should hide the checklist when pressing the cross button in the sidebar', async () => {
+        const mockedChangeDisplay = jest.fn();
+        mockedReturn.mockReturnValue({
+            displayState: CHECKLIST_DISPLAY_TYPE.REDUCED,
+            items: new Set(),
+            changeChecklistDisplay: mockedChangeDisplay,
+        } as Partial<ContextState>);
+
+        const { container, getByTestId } = await render(<MailSidebar {...props} />, false);
+
+        const nav = container.querySelector('nav');
+        expect(nav?.childNodes.length).toEqual(3);
+
+        const closeButton = getByTestId('onboarding-checklist-header-hide-button');
+        fireEvent.click(closeButton);
+        expect(mockedChangeDisplay).toHaveBeenCalledWith(CHECKLIST_DISPLAY_TYPE.HIDDEN);
     });
 });

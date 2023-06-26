@@ -45,12 +45,7 @@ const getCanReactiveMnemonic = (user: UserModel) => {
     );
 };
 
-const OldChecklist = ({
-    smallVariant = false,
-    displayOnMobile = false,
-    reduceSpace = false,
-    hideDismissButton,
-}: Props) => {
+const OldChecklist = ({ smallVariant = false, displayOnMobile = false, hideDismissButton }: Props) => {
     const [user] = useUser();
     const [mailSettings] = useMailSettings();
     const onCompose = useOnCompose();
@@ -104,10 +99,10 @@ const OldChecklist = ({
             <div
                 className={clsx(
                     'flex flex-column w100',
-                    //The checklist is displayed on both the list and details (right side when column mode), we need to hide it on the list when the side details view is visible
+                    // The checklist is displayed on both the list and details (right side when column mode), we need to hide it on the list when the side details view is visible
                     displayOnMobile && 'free-checklist--container',
                     isColumnMode(mailSettings) && !smallVariant && 'flex-justify-center h100',
-                    !reduceSpace && !smallVariant && 'p-3 md:p-6',
+                    !smallVariant && 'p-3 md:p-6',
                     !isNarrow && !smallVariant && 'flex-item-centered-vert',
                     smallVariant
                         ? 'mx-2 flex-align-self-end'
@@ -129,8 +124,8 @@ const OldChecklist = ({
                         <p className="m-0 mb-1 text-lg text-bold lh130">{c('Get started checklist instructions')
                             .t`Protect and simplify your email`}</p>
                         {!isUserPaid && (
-                            <p className="m-0 color-weak">{c('Get started checklist instructions')
-                                .t`Get 1 GB total storage for completing these steps`}</p>
+                            <p className="m-0 color-weak w-2/3 m-auto">{c('Get started checklist instructions')
+                                .t`Double your free storage to 1 GB when you complete the following:`}</p>
                         )}
                     </div>
                 )}
