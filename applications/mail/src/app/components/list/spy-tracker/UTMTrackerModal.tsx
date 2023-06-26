@@ -38,7 +38,7 @@ const UTMTrackerModal = ({ message, ...rest }: Props) => {
             <ModalTwoHeader title={utmTrackerText} />
             <ModalTwoContent>
                 <div className="border rounded-lg mb-4 p-4 flex flex-nowrap flex-align-items-center">
-                    <img src={cleanLinkImg} alt={utmTrackerText} className="flex-item-noshrink" />
+                    <img src={cleanLinkImg} alt="" className="flex-item-noshrink" />
                     <p className="color-weak flex-item-fluid pl-4 my-0">
                         {c('Info')
                             .t`You can click links in this email without being profiled and leaking your online activity with advertisers.`}
