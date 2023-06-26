@@ -2,7 +2,6 @@ import type { AnyAction } from 'redux';
 import type { Task } from 'redux-saga';
 import { cancel, fork, select, take, takeLatest } from 'redux-saga/effects';
 
-import { authentication } from '@proton/pass/auth/authentication';
 import { PassCrypto } from '@proton/pass/crypto';
 import { CACHE_SALT_LENGTH, encryptData, getCacheEncryptionKey } from '@proton/pass/crypto/utils';
 import { browserLocalStorage } from '@proton/pass/extension/storage';
@@ -20,10 +19,10 @@ import { reducerMap } from '../reducers';
 import { selectSessionLockToken } from '../selectors';
 import type { State, WorkerRootSagaOptions } from '../types';
 
-function* cacheWorker(action: AnyAction, { onCacheRequest }: WorkerRootSagaOptions) {
+function* cacheWorker(action: AnyAction, { onCacheRequest, getAuth }: WorkerRootSagaOptions) {
     yield wait(500);
 
-    if (authentication?.hasSession() && onCacheRequest()) {
+    if (getAuth().hasSession() && onCacheRequest()) {
         try {
             const sessionLockToken: Maybe<string> = yield select(selectSessionLockToken);
             const cacheSalt = crypto.getRandomValues(new Uint8Array(CACHE_SALT_LENGTH));

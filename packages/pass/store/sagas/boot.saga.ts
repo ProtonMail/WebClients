@@ -1,6 +1,5 @@
 import { call, put, select, takeLeading } from 'redux-saga/effects';
 
-import { authentication } from '@proton/pass/auth/authentication';
 import { PassCrypto } from '@proton/pass/crypto';
 import { isPassCryptoError } from '@proton/pass/crypto/utils/errors';
 import type { Maybe, RequiredNonNull } from '@proton/pass/types';
@@ -27,7 +26,7 @@ function* bootWorker(options: WorkerRootSagaOptions) {
 
         yield call(PassCrypto.hydrate, {
             user,
-            keyPassword: authentication.getPassword(),
+            keyPassword: options.getAuth().getPassword(),
             addresses: Object.values(addresses),
             snapshot: cache?.snapshot,
         });
