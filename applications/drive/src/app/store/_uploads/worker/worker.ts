@@ -118,7 +118,7 @@ async function start(
                 addressPrivateKey
             ),
         ]);
-        uploadWorker.postDone(buffer.blockTokens, signature, addressEmail, xattr);
+        uploadWorker.postDone(signature, addressEmail, xattr);
     };
     startUploadJobs(
         pauser,
