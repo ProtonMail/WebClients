@@ -36,11 +36,11 @@ const store = configureStore({
 });
 
 const options: RequiredNonNull<WorkerRootSagaOptions> = {
-    /**
-     * Sets the worker status according to the
+    getAuth: withContext((ctx) => ctx.service.auth.authStore),
+
+    /* Sets the worker status according to the
      * boot sequence's result. On boot failure,
-     * clear
-     */
+     * clear */
     onBoot: withContext(async (ctx, result) => {
         if (result.ok) {
             ctx.setStatus(WorkerStatus.READY);
@@ -58,9 +58,7 @@ const options: RequiredNonNull<WorkerRootSagaOptions> = {
 
     onSignout: withContext((ctx) => ctx.service.auth.logout()),
 
-    onSessionLocked: withContext((ctx) => {
-        ctx.service.auth.lock();
-    }),
+    onSessionLocked: withContext((ctx) => ctx.service.auth.lock()),
 
     onSessionUnlocked: withContext(async (ctx) => {
         ctx.service.auth.unlock();
