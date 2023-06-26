@@ -73,11 +73,9 @@ export const ImportForm: VFC<Omit<ImportFormContext, 'reset' | 'result'>> = ({ f
                         <div className="flex flex-align-items-center">
                             <div className="mr-2">
                                 <img
-                                    src={
-                                        form.values.provider === ImportProvider.PROTONPASS
-                                            ? '/assets/protonpass-icon-24.svg'
-                                            : `/assets/${form.values.provider}-icon-24.png`
-                                    }
+                                    src={`/assets/${form.values.provider}-icon-48.png`}
+                                    width="24"
+                                    height="24"
                                     alt=""
                                 />
                             </div>
