@@ -170,7 +170,7 @@ export const InstallationSuccess: VFC = () => {
                                             shape="solid"
                                             color="norm"
                                             className="mb-4"
-                                            onClick={() => login(FORK_TYPE.SWITCH)}
+                                            onClick={() => login()}
                                             aria-label={c('Action').t`Sign in`}
                                         >
                                             <span className="flex flex-justify-center px-4">

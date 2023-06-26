@@ -14,7 +14,7 @@ import { usePermissionsGranted } from './usePermissionsGranted';
 /* depending on where we execute this : we may or may not
  * have access to the tabs API - Firefox content-scripts have
  * very limited support for the tabs API */
-export const useAccountFork = () => async (type: FORK_TYPE, replace?: boolean) => {
+export const useAccountFork = () => async (type?: FORK_TYPE, replace?: boolean) => {
     const url = await requestFork(SSO_URL, type);
 
     if (replace) return window.location.replace(url);
@@ -30,7 +30,7 @@ export const useNavigateToLogin = (options?: { autoClose?: boolean; replace?: bo
     const accountFork = useAccountFork();
     const permissionsGranted = usePermissionsGranted();
 
-    return async (type: FORK_TYPE) => {
+    return async (type?: FORK_TYPE) => {
         if (permissionsGranted || (await promptForPermissions())) {
             return accountFork(type, options?.replace).finally(async () => {
                 if (options?.autoClose) window.close();

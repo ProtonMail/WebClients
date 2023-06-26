@@ -13,14 +13,14 @@ import type { StorageData } from '../extension/storage/types';
 import type { Api } from '../types';
 
 /* FIXME: update to `APPS.PROTONPASSBROWSEREXTENSION` */
-export const requestFork = async (host: string, type: FORK_TYPE) => {
+export const requestFork = async (host: string, type?: FORK_TYPE) => {
     const state = encodeBase64URL(uint8ArrayToString(crypto.getRandomValues(new Uint8Array(32))));
 
     const searchParams = new URLSearchParams();
     searchParams.append('app', APPS.PROTONEXTENSION);
     searchParams.append('state', state);
-    searchParams.append('t', type);
     searchParams.append('independent', '0');
+    if (type) searchParams.append('t', type);
 
     await browserSessionStorage.setItem<StorageData>(`f${state}`, JSON.stringify({}));
 
