@@ -48,6 +48,7 @@ declare const fieldSelector = 'input, select, textarea';
 declare const editableFieldSelector: string;
 declare const fieldOfInterestSelector: string;
 declare const buttonSubmitSelector: string;
+declare const buttonSelector: string;
 declare const anchorLinkSelector = 'a, span[role="button"]';
 declare const captchaSelector = '[class*="captcha"], [id*="captcha"], [name*="captcha"]';
 declare const socialSelector = '[class*=social],[aria-label*=with]';
@@ -99,6 +100,7 @@ export {
     IGNORE_ELEMENT_ATTR,
     TEXT_ATTRIBUTES,
     anchorLinkSelector,
+    buttonSelector,
     buttonSubmitSelector,
     cacheContext,
     captchaSelector,
