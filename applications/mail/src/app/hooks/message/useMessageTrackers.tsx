@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 
-import { FeatureCode, useFeature, useMailSettings } from '@proton/components';
+import { FeatureCode, useMailSettings, useProgressiveRollout } from '@proton/components';
 import { IMAGE_PROXY_FLAGS } from '@proton/shared/lib/constants';
 
 import {
@@ -18,7 +18,7 @@ export interface Tracker {
 
 export const useMessageTrackers = (message: MessageState) => {
     const [mailSettings] = useMailSettings();
-    const { feature } = useFeature(FeatureCode.CleanUTMTrackers);
+    const isCleanUTMTrackersAvailable = useProgressiveRollout(FeatureCode.CleanUTMTrackers);
 
     const hasProtection = (mailSettings?.ImageProxy ? mailSettings.ImageProxy : 0) > IMAGE_PROXY_FLAGS.NONE;
 
@@ -47,7 +47,7 @@ export const useMessageTrackers = (message: MessageState) => {
         hasImageTrackers: numberOfImageTrackers > 0,
 
         // UTM trackers
-        canCleanUTMTrackers: !!feature?.Value,
+        canCleanUTMTrackers: isCleanUTMTrackersAvailable,
         utmTrackers,
         numberOfUTMTrackers,
         utmTrackerText,
