@@ -44,25 +44,15 @@ interface Props {
 }
 
 const ComposerPasswordModal = ({ message, onClose, onChange }: Props) => {
-    const {
-        password,
-        setPassword,
-        passwordHint,
-        setPasswordHint,
-        isPasswordSet,
-        setIsPasswordSet,
-        validator,
-        onFormSubmit,
-    } = useExternalExpiration(message);
+    const { password, setPassword, passwordHint, setPasswordHint, validator, onFormSubmit } =
+        useExternalExpiration(message);
     const { createNotification } = useNotifications();
     const dispatch = useAppDispatch();
 
     const isEdition = message?.draftFlags?.expiresIn;
 
     const handleSubmit = () => {
-        onFormSubmit();
-
-        if (!isPasswordSet) {
+        if (!onFormSubmit()) {
             return;
         }
 
@@ -130,8 +120,6 @@ const ComposerPasswordModal = ({ message, onClose, onChange }: Props) => {
                 setPassword={setPassword}
                 passwordHint={passwordHint}
                 setPasswordHint={setPasswordHint}
-                isPasswordSet={isPasswordSet}
-                setIsPasswordSet={setIsPasswordSet}
                 validator={validator}
             />
         </ComposerInnerModal>
