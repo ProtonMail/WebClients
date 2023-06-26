@@ -23,9 +23,12 @@ const SubscriptionEndsBanner = () => {
     const byDate = <Time format="PP">{subscription.PeriodEnd}</Time>;
 
     const reactivateLink = (
-        <SettingsLink key="reactivate-subscription" className="color-inherit" path="/dashboard#your-subscriptions">{c(
-            'Link'
-        ).t`Reactivate now`}</SettingsLink>
+        <SettingsLink
+            data-testid="reactivate-link"
+            key="reactivate-subscription"
+            className="color-inherit"
+            path="/dashboard#your-subscriptions"
+        >{c('Link').t`Reactivate now`}</SettingsLink>
     );
 
     return (
