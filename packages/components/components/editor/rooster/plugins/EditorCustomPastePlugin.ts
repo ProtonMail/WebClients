@@ -69,11 +69,8 @@ class EditorCustomPastePlugin implements EditorPlugin {
         event.sanitizingOption.attributeCallbacks = callbackMap;
         event.sanitizingOption.additionalAllowedAttributes = ['bgcolor'];
         event.sanitizingOption.additionalTagReplacements = {
-            // @ts-expect-error
             INPUT: null,
-            // @ts-expect-error
             TEXTAREA: null,
-            // @ts-expect-error
             FORM: null,
         };
     }
