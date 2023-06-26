@@ -19,10 +19,8 @@ export const requestFork = async (host: string, type?: FORK_TYPE) => {
     const searchParams = new URLSearchParams();
     searchParams.append('app', APPS.PROTONEXTENSION);
     searchParams.append('state', state);
-    if (type) {
-        searchParams.append('t', type);
-    }
     searchParams.append('independent', '0');
+    if (type) searchParams.append('t', type);
 
     await browserSessionStorage.setItem<StorageData>(`f${state}`, JSON.stringify({}));
 
