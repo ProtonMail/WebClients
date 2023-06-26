@@ -68,17 +68,9 @@ const ComposerExpirationModal = ({ message, onClose, onChange }: Props) => {
     const isExpirationSet = message?.draftFlags?.expiresIn;
     const [isSendOutside, setIsSendOutside] = useState(false);
 
-    const {
-        password,
-        setPassword,
-        passwordHint,
-        setPasswordHint,
-        isPasswordSet,
-        setIsPasswordSet,
-        validator,
-        onFormSubmit,
-    } = useExternalExpiration(message);
-
+    const { password, setPassword, passwordHint, setPasswordHint, validator, onFormSubmit } =
+        useExternalExpiration(message);
+    const isPasswordSet = !!password;
     const currentDate = new Date();
     const [date, setDate] = useState<Date>(set(addWeeks(currentDate, 1), { hours: 9, minutes: 0, seconds: 0 }));
 
@@ -243,8 +235,6 @@ const ComposerExpirationModal = ({ message, onClose, onChange }: Props) => {
                     setPassword={setPassword}
                     passwordHint={passwordHint}
                     setPasswordHint={setPasswordHint}
-                    isPasswordSet={isPasswordSet}
-                    setIsPasswordSet={setIsPasswordSet}
                     validator={validator}
                 />
             )}
