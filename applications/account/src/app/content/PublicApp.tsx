@@ -103,6 +103,20 @@ const getLocalRedirect = (pathname?: string) => {
     };
 };
 
+const SIGN_IN_ROUTES = [
+    SSO_PATHS.LOGIN,
+    SSO_PATHS.MAIL_SIGN_IN,
+    SSO_PATHS.CALENDAR_SIGN_IN,
+    SSO_PATHS.PASS_SIGN_IN,
+    SSO_PATHS.VPN_SIGN_IN,
+    SSO_PATHS.DRIVE_SIGN_IN,
+];
+
+// All SSO paths except login
+const DISABLE_AUTO_SIGN_IN_ROUTES: string[] = Object.values(SSO_PATHS).filter(
+    (path) => !SIGN_IN_ROUTES.includes(path as any)
+);
+
 const UNAUTHENTICATED_ROUTES = {
     UNSUBSCRIBE: '/unsubscribe',
     VERIFY_EMAIL: '/verify-email',
@@ -323,11 +337,7 @@ const PublicApp = ({ onLogin, locales }: Props) => {
 
     const handleActiveSessions = ({ session, sessions }: GetActiveSessionsResult) => {
         // Ignore the automatic login
-        if (
-            ignoreAutoRef.current ||
-            // All SSO paths except login
-            (Object.values(SSO_PATHS).includes(location.pathname as any) && location.pathname !== SSO_PATHS.LOGIN)
-        ) {
+        if (ignoreAutoRef.current || DISABLE_AUTO_SIGN_IN_ROUTES.includes(location.pathname)) {
             setActiveSessions(sessions);
             if (sessions.length >= 1) {
                 setHasBackToSwitch(true);
