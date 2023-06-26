@@ -60,7 +60,7 @@ const useOAuthPopup = ({ errorMessage }: Props) => {
         provider: ImportProvider;
         scope: string;
         loginHint?: string;
-        //TODO properly type this
+        // TODO properly type this
         callback: (oauthProps: any) => void | Promise<void>;
     }) => {
         let interval: number;

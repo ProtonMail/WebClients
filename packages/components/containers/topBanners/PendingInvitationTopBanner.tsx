@@ -24,7 +24,7 @@ const PendingInvitationTopBanner = () => {
     const inviteLengths = invites.length;
 
     useEffect(() => {
-        //Force refresh the invitations when the organization changes since this could cause errors in the invitations
+        // Force refresh the invitations when the organization changes since this could cause errors in the invitations
         if (cache.get(UserInvitationModel.key) && organization) {
             cache.delete(UserInvitationModel.key);
         }

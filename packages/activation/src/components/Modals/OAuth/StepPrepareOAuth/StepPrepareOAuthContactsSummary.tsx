@@ -11,13 +11,13 @@ const StepPrepareContactsSummary = ({ isSelected }: Props) => {
     const importerData = useEasySwitchSelector(selectOauthImportStateImporterData);
     const { contacts } = importerData!;
 
-    //Don't display anything if Contact isn't selected or if there is no data
+    // Don't display anything if Contact isn't selected or if there is no data
     if (!isSelected || contacts === undefined) {
         return null;
     }
 
     const { numContact, numGroups } = contacts;
-    //Don't display anything if the number received are not numbers
+    // Don't display anything if the number received are not numbers
     if (Number.isNaN(numContact) || Number.isNaN(numGroups)) {
         return null;
     }

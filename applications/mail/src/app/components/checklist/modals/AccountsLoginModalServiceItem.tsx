@@ -40,6 +40,7 @@ const AccountsLoginModalServiceItem = ({ service, onServiceDone, isServiceDone }
                 isNarrow && 'pb-2',
                 isServiceDone && 'invisible'
             )}
+            data-testid="accounts-login-modal-service-item"
             style={{ '--h-custom': isNarrow ? 'auto' : '3rem' }}
         >
             <div className="flex flex-align-items-center flex-item-grow-2 gap-2">

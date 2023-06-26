@@ -79,7 +79,7 @@ const EmptyView = ({ labelID, isSearch, isUnread }: Props) => {
         </div>
     ) : (
         <EmptyViewContainer imageProps={imageProps}>
-            <h3 className="text-bold">
+            <h3 className="text-bold" data-testid="empty-view-placeholder--empty-title">
                 {isSearch
                     ? c('Search - no results').t`No results found`
                     : isFolder
