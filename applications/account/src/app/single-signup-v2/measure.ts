@@ -12,9 +12,9 @@ import { SessionData, SignupCacheResult } from '../signup/interfaces';
 export type InteractFields = 'email' | 'email_confirm' | 'pwd' | 'pwd_confirm';
 
 type TelemetryPaymentMethods = {
-    BTC: 'true' | 'false';
-    Paypal: 'true' | 'false';
-    CC: 'true' | 'false';
+    bitcoin: 'true' | 'false';
+    paypal: 'true' | 'false';
+    credit_card: 'true' | 'false';
 };
 
 export type TelemetryPayType = 'pay_cc' | 'pay_pp' | 'pay_pp_no_cc' | 'pay_btc';
@@ -77,7 +77,7 @@ export type TelemetryMeasurementData =
     | {
           event: TelemetryAccountSignupEvents.beAvailableExternal;
           dimensions: {
-              availableExternal: 'true' | 'false';
+              available_external: 'true' | 'false';
           };
       }
     | {
@@ -194,9 +194,9 @@ export const getPlanNameFromSession = (session: SessionData): PLANS => {
 
 export const getPaymentMethodsAvailable = (paymentMethodsAvailable: PaymentMethodStatus): TelemetryPaymentMethods => {
     return {
-        BTC: paymentMethodsAvailable.Bitcoin ? 'true' : 'false',
-        Paypal: paymentMethodsAvailable.Paypal ? 'true' : 'false',
-        CC: paymentMethodsAvailable.Card ? 'true' : 'false',
+        bitcoin: paymentMethodsAvailable.Bitcoin ? 'true' : 'false',
+        paypal: paymentMethodsAvailable.Paypal ? 'true' : 'false',
+        credit_card: paymentMethodsAvailable.Card ? 'true' : 'false',
     };
 };
 
