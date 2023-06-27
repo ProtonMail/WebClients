@@ -58,7 +58,7 @@ export const getVPNAppFeature = (options?: { family?: boolean }): PlanCardFeatur
         tooltip: options?.family
             ? c('new_plans: tooltip')
                   .t`Protect your family from harmful websites and access our high-speed VPN servers to stream your favorite content`
-            : c('new_plans: tooltip').t`Advanced security VPN with global network`,
+            : c('new_plans: tooltip').t`${VPN_APP_NAME}: unblock content, browse privately`,
         included: true,
         icon: 'brand-proton-vpn',
     };

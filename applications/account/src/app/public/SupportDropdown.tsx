@@ -21,7 +21,7 @@ const SupportDropdown = ({ content = c('Action').t`Need help?`, children, button
     return (
         <>
             <SupportDropdownButton
-                className={clsx('mx-auto relative color-primary', buttonClassName)}
+                className={clsx('relative color-primary', buttonClassName)}
                 aria-describedby={uid}
                 buttonRef={anchorRef}
                 isOpen={isOpen}

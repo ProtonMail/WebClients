@@ -5,6 +5,7 @@ import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { FeatureCode, Loader, useFeature, useFolders, useLabels } from '@proton/components';
+import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import { TelemetrySimpleLoginEvents } from '@proton/shared/lib/api/telemetry';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { MailSettings } from '@proton/shared/lib/interfaces';
@@ -120,24 +121,6 @@ const SelectionPane = ({ labelID, mailSettings, location, labelCount, checkedIDs
               );
     };
 
-    // Replace "**" by strong tags
-    const getFormattedText = (text: string) => {
-        const splitText = text.split('**');
-        // If the length is odd, it means that we can apply the change on the text
-        if (splitText.length > 2 && splitText.length % 2 !== 0) {
-            const formattedText = splitText.map((s, index) => {
-                // All odd indexes corresponds to a part to surround with a tag
-                if (index % 2 !== 0) {
-                    return <strong key={`formattedText-${s}`}>{s}</strong>;
-                }
-                return <span key={`formattedText-${s}`}>{s}</span>;
-            });
-
-            return <>{formattedText}</>;
-        }
-        return text;
-    };
-
     const text = isCustomLabel ? getLabelText() : getFolderText();
 
     const showText = checkeds || labelCount;
@@ -175,7 +158,7 @@ const SelectionPane = ({ labelID, mailSettings, location, labelCount, checkedIDs
                             {labelName}
                         </h3>
                     )}
-                    <p className="mb-8 text-keep-space">{showText ? getFormattedText(text) : null}</p>
+                    <p className="mb-8 text-keep-space">{showText ? getBoldFormattedText(text) : null}</p>
                     <div className="mb-8">
                         <img
                             src={conversationSvg}

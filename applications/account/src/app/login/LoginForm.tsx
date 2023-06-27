@@ -23,7 +23,7 @@ import {
 import { getIsVPNApp } from '@proton/shared/lib/authentication/apps';
 import { APP_NAMES, BRAND_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
-import { getKnowledgeBaseUrl, stringifySearchParams } from '@proton/shared/lib/helpers/url';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import noop from '@proton/utils/noop';
 
 import SupportDropdown from '../public/SupportDropdown';
@@ -42,7 +42,7 @@ interface Props {
     defaultUsername?: string;
     hasRemember?: boolean;
     trustedDeviceRecoveryFeature?: { loading?: boolean; feature: { Value: boolean } | undefined };
-    signupOptions?: Record<string, string | undefined>;
+    signupUrl: string;
 }
 
 const LoginForm = ({
@@ -52,7 +52,7 @@ const LoginForm = ({
     signInText = c('Action').t`Sign in`,
     hasRemember,
     trustedDeviceRecoveryFeature,
-    signupOptions,
+    signupUrl,
 }: Props) => {
     const { APP_NAME } = useConfig();
     const [submitting, withSubmitting] = useLoading();
@@ -102,12 +102,8 @@ const LoginForm = ({
         </Href>
     );
 
-    const signUp = (
-        <Link
-            key="signup"
-            className="link link-focus text-nowrap"
-            to={SSO_PATHS.SIGNUP + stringifySearchParams(signupOptions || {}, '?')}
-        >
+    const signUp = signupUrl && (
+        <Link key="signup" className="link link-focus text-nowrap" to={signupUrl}>
             {c('Link').t`Create account`}
         </Link>
     );
@@ -222,18 +218,20 @@ const LoginForm = ({
                     }
                 </Button>
 
-                <div className="text-center mt-4">
-                    {
-                        // translator: Full sentence "New to Proton? Create account"
-                        c('Go to sign up').jt`New to ${BRAND_NAME}? ${signUp}`
-                    }
-                </div>
+                {signUp && (
+                    <div className="text-center mt-4">
+                        {
+                            // translator: Full sentence "New to Proton? Create account"
+                            c('Go to sign up').jt`New to ${BRAND_NAME}? ${signUp}`
+                        }
+                    </div>
+                )}
 
                 <hr className="my-4" />
 
                 <div className="text-center">
                     <SupportDropdown
-                        buttonClassName="link color-primary link-focus"
+                        buttonClassName="mx-auto link link-focus"
                         content={c('Link').t`Trouble signing in?`}
                     >
                         <Link

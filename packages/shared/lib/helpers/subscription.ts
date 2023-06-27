@@ -1,7 +1,7 @@
 import { addWeeks, fromUnixTime, isBefore } from 'date-fns';
 
 import { ADDON_NAMES, APPS, APP_NAMES, COUPON_CODES, CYCLE, PLANS, PLAN_SERVICES, PLAN_TYPES } from '../constants';
-import { External, PlanIDs, PlansMap, Subscription } from '../interfaces';
+import { External, Plan, PlanIDs, PlansMap, Pricing, Subscription } from '../interfaces';
 import { hasBit } from './bitset';
 
 const { PLAN, ADDON } = PLAN_TYPES;
@@ -25,9 +25,13 @@ const {
 } = PLANS;
 
 export const getPlan = (subscription: Subscription | undefined, service?: PLAN_SERVICES) => {
-    return (subscription?.Plans || []).find(
+    const result = (subscription?.Plans || []).find(
         ({ Services, Type }) => Type === PLAN && (service === undefined ? true : hasBit(Services, service))
     );
+    if (result) {
+        return result as Plan & { Name: PLANS };
+    }
+    return result;
 };
 
 export const getAddons = (subscription: Subscription | undefined) =>
@@ -40,7 +44,7 @@ export const getPlanName = (subscription: Subscription | undefined, service: PLA
     return plan?.Name;
 };
 
-const hasSomePlan = (subscription: Subscription | undefined, planName: PLANS) => {
+export const hasSomePlan = (subscription: Subscription | undefined, planName: PLANS) => {
     return (subscription?.Plans || []).some(({ Name }) => Name === planName);
 };
 
@@ -265,12 +269,13 @@ export interface TotalPricing {
     discount: number;
     total: number;
     totalPerMonth: number;
+    totalNoDiscountPerMonth: number;
     discountPercentage: number;
 }
 
 export const getTotalFromPricing = (pricing: ReturnType<typeof getPricingFromPlanIDs>, cycle: CYCLE): TotalPricing => {
     const total = pricing.all[cycle];
-    const totalPerMonth = pricing.plans[cycle] / cycle;
+    const totalPerMonth = pricing.all[cycle] / cycle;
     const totalNoDiscount = pricing.all[CYCLE.MONTHLY] * cycle;
     const discount = cycle === CYCLE.MONTHLY ? 0 : totalNoDiscount - total;
     return {
@@ -278,5 +283,38 @@ export const getTotalFromPricing = (pricing: ReturnType<typeof getPricingFromPla
         discountPercentage: Math.round((discount / totalNoDiscount) * 100),
         total,
         totalPerMonth,
+        totalNoDiscountPerMonth: totalNoDiscount / cycle,
     };
+};
+
+interface OfferResult {
+    pricing: Pricing;
+    cycles: CYCLE[];
+    valid: boolean;
+}
+
+export const getPlanOffer = (plan: Plan) => {
+    const result = [CYCLE.MONTHLY, CYCLE.YEARLY, CYCLE.TWO_YEARS].reduce<OfferResult>(
+        (acc, cycle) => {
+            acc.pricing[cycle] = (plan.DefaultPricing?.[cycle] ?? 0) - (plan.Pricing?.[cycle] ?? 0);
+            return acc;
+        },
+        {
+            valid: false,
+            cycles: [],
+            pricing: {
+                [CYCLE.MONTHLY]: 0,
+                [CYCLE.YEARLY]: 0,
+                [CYCLE.TWO_YEARS]: 0,
+                [CYCLE.FIFTEEN]: 0,
+                [CYCLE.THIRTY]: 0,
+            },
+        }
+    );
+    const sortedResults = (Object.entries(result.pricing) as unknown as [CYCLE, number][]).sort((a, b) => b[1] - a[1]);
+    result.cycles = sortedResults.map(([cycle]) => cycle);
+    if (sortedResults[0][1] > 0) {
+        result.valid = true;
+    }
+    return result;
 };

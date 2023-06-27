@@ -1,10 +1,10 @@
 import { getFirstTop } from '../../helpers/countries';
 import { CardModel } from '../../payments/core/interface';
 
-const getDefault = (): CardModel => {
+const getDefault = (ignoreName?: boolean): CardModel => {
     const { value: country } = getFirstTop();
 
-    return {
+    const card: CardModel = {
         fullname: '',
         number: '',
         month: '',
@@ -13,6 +13,12 @@ const getDefault = (): CardModel => {
         zip: '',
         country,
     };
+
+    if (ignoreName) {
+        delete card.fullname;
+    }
+
+    return card;
 };
 
 export default getDefault;

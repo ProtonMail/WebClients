@@ -38,6 +38,7 @@ describe('signupActions', () => {
             };
 
             const cache: SignupCacheResult = {
+                type: 'signup',
                 accountData: {
                     username: 'user123',
                     domain: 'proton.me',
@@ -95,6 +96,7 @@ describe('signupActions', () => {
             };
 
             const cache: SignupCacheResult = {
+                type: 'signup',
                 accountData: {
                     username: 'user123',
                     domain: 'proton.me',
@@ -160,6 +162,7 @@ describe('signupActions', () => {
             };
 
             const cache: SignupCacheResult = {
+                type: 'signup',
                 accountData: {
                     username: 'user123',
                     domain: 'proton.me',
@@ -225,6 +228,7 @@ describe('signupActions', () => {
             };
 
             const cache: SignupCacheResult = {
+                type: 'signup',
                 accountData: {
                     username: 'user123',
                     domain: 'proton.me',

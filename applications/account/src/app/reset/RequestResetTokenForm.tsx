@@ -1,26 +1,21 @@
 import { ReactNode, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
-
-
 import { c } from 'ttag';
-
-
 
 import { Button } from '@proton/atoms';
 import { Icon, InputFieldTwo, PhoneInput, Tabs, useFormErrors, useLoading } from '@proton/components';
-import MnemonicInputField, { useMnemonicInputValidation } from '@proton/components/containers/mnemonic/MnemonicInputField';
+import MnemonicInputField, {
+    useMnemonicInputValidation,
+} from '@proton/components/containers/mnemonic/MnemonicInputField';
 import { RecoveryMethod } from '@proton/components/containers/resetPassword/interface';
 import { SSO_PATHS } from '@proton/shared/lib/constants';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
-
-
 import Text from '../public/Text';
 import MnemonicResetPasswordConfirmModal from './MnemonicResetPasswordConfirmModal';
-
 
 const BorderedWarningText = ({ children }: { children: ReactNode }) => {
     return (
@@ -37,9 +32,17 @@ interface Props {
     methods: RecoveryMethod[];
     defaultMethod?: RecoveryMethod;
     defaultValue?: string;
+    defaultEmail?: string;
 }
 
-const RequestResetTokenForm = ({ onSubmit, defaultCountry, methods, defaultMethod, defaultValue = '' }: Props) => {
+const RequestResetTokenForm = ({
+    defaultEmail: maybeDefaultEmail,
+    onSubmit,
+    defaultCountry,
+    methods,
+    defaultMethod,
+    defaultValue = '',
+}: Props) => {
     const history = useHistory();
     const [loading, withLoading] = useLoading();
 
@@ -60,7 +63,7 @@ const RequestResetTokenForm = ({ onSubmit, defaultCountry, methods, defaultMetho
         return foundMethod !== -1 ? foundMethod : 0;
     });
 
-    const [email, setEmail] = useState(defaultMethod === 'email' ? defaultValue : '');
+    const [email, setEmail] = useState(maybeDefaultEmail || (defaultMethod === 'email' ? defaultValue : ''));
     const [phone, setPhone] = useState(defaultMethod === 'sms' ? defaultValue : '');
     const [mnemonic, setMnemonic] = useState(defaultMethod === 'mnemonic' ? defaultValue : '');
     const [mnemonicResetConfirmModal, setMnemonicResetConfirmModal] = useState(false);

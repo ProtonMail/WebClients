@@ -26,6 +26,7 @@ import {
     getDevices,
     getHideMyEmailAliases,
     getLoginsAndNotes,
+    getPassAppFeature,
     getVaults,
 } from './pass';
 import {
@@ -84,6 +85,7 @@ export const getBundlePlan = (plan: Plan): ShortPlan => {
             getCalendarAppFeature(),
             getDriveAppFeature(),
             getVPNAppFeature(),
+            getPassAppFeature(),
         ],
     };
 };
@@ -238,6 +240,7 @@ export const getBundleProPlan = (plan: Plan): ShortPlan => {
             getContactGroupsManagement(),
             getCalendarAppFeature(),
             getDriveAppFeature(),
+            getPassAppFeature(),
             getB2BHighSpeedVPNConnections(),
             getNetShield(true),
             getSecureCore(true),
@@ -260,6 +263,7 @@ export const getNewVisionaryPlan = (plan: Plan): ShortPlan => {
             getContactGroupsManagement(),
             getCalendarAppFeature(),
             getDriveAppFeature(),
+            getPassAppFeature(),
             getB2BHighSpeedVPNConnections(),
             getNetShield(true),
             getSecureCore(true),
@@ -284,6 +288,7 @@ export const getFamilyPlan = (plan: Plan): ShortPlan => {
             getCalendarAppFeature({ family: true }),
             getDriveAppFeature({ family: true }),
             getVPNAppFeature({ family: true }),
+            getPassAppFeature(),
             getSupport('priority'),
         ],
     };
@@ -293,8 +298,7 @@ export const getShortPlan = (
     plan: PLANS,
     plansMap: PlansMap,
     vpnServers: VPNServersCountData,
-    options: { boldStorageSize?: boolean } = {},
-    isPassPlusEnabled: boolean
+    options: { boldStorageSize?: boolean } = {}
 ) => {
     const { boldStorageSize } = options;
     if (plan === PLANS.FREE) {
@@ -312,7 +316,7 @@ export const getShortPlan = (
         case PLANS.DRIVE:
             return getDrivePlan(planData, boldStorageSize);
         case PLANS.PASS_PLUS:
-            return isPassPlusEnabled ? getPassPlan(planData) : null;
+            return getPassPlan(planData);
         case PLANS.MAIL_PRO:
             return getMailProPlan(planData);
         case PLANS.BUNDLE:

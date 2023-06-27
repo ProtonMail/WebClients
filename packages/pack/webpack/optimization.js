@@ -21,8 +21,6 @@ module.exports = ({ isProduction }) => ({
     minimize: isProduction,
     minimizer: [
         new TerserPlugin({
-            // openpgp and elliptic are written into assets with WriteWebpackPlugin and get minified
-            exclude: /\/node_modules\/(?!(asmcrypto\.js|pmcrypto))|openpgp|elliptic/,
             extractComments: false,
             parallel: !isWSL(),
             terserOptions: {
@@ -36,7 +34,8 @@ module.exports = ({ isProduction }) => ({
         chunks(chunk) {
             // This is the default "async" filter provided by webpack
             const async = !chunk.canBeInitial();
-            return chunk.name !== 'crypto-worker' && async;
+            // We exclude the crypto-worker and recovery-kit to be split, because we want them all in one file
+            return chunk.name !== 'recovery-kit' && chunk.name !== 'crypto-worker' && async;
         },
     },
 });

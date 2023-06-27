@@ -3,6 +3,8 @@ import { c } from 'ttag';
 import { ThemeColor } from '@proton/colors';
 import { SectionConfig } from '@proton/components';
 import {
+    APPS,
+    APP_NAMES,
     BRAND_NAME,
     DEFAULT_CURRENCY,
     PRODUCT_NAMES,
@@ -17,6 +19,7 @@ import { isOrganizationFamily, isOrganizationVisionary } from '@proton/shared/li
 import { recoveryIds } from './recoveryIds';
 
 export const getAccountAppRoutes = ({
+    app,
     user,
     subscription,
     isDataRecoveryAvailable,
@@ -28,6 +31,7 @@ export const getAccountAppRoutes = ({
     isProtonSentinelFeatureEnabled,
     isAccessibilitySettingsEnabled,
 }: {
+    app: APP_NAMES;
     user: UserModel;
     subscription?: Subscription;
     isDataRecoveryAvailable: boolean;
@@ -259,7 +263,7 @@ export const getAccountAppRoutes = ({
                 text: c('Title').t`Import via ${PRODUCT_NAMES.EASY_SWITCH}`,
                 to: '/easy-switch',
                 icon: 'arrow-down-to-square',
-                available: !isExternal,
+                available: !isExternal && app !== APPS.PROTONPASS,
                 description: isGmailSyncEnabled
                     ? c('Settings description')
                           .t`Complete the transition to privacy with our secure importing and forwarding tools.`

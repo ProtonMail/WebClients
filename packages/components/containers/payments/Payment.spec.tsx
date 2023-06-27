@@ -28,6 +28,7 @@ describe('Payment', () => {
 
         render(
             <Payment
+                api={apiMock}
                 type="subscription"
                 onMethod={() => {}}
                 method={PAYMENT_METHOD_TYPES.CARD}
@@ -46,6 +47,7 @@ describe('Payment', () => {
 
         let { container } = render(
             <Payment
+                api={apiMock}
                 type="subscription"
                 onMethod={() => {}}
                 method={PAYMENT_METHOD_TYPES.CARD}
@@ -68,6 +70,7 @@ describe('Payment', () => {
 
         let { container } = render(
             <Payment
+                api={apiMock}
                 onMethod={() => {}}
                 type="signup"
                 method={PAYMENT_METHOD_TYPES.CARD}
@@ -103,6 +106,7 @@ describe('Payment', () => {
 
         let { container } = render(
             <Payment
+                api={apiMock}
                 onMethod={() => {}}
                 type="signup"
                 method="my-custom-method-123"
@@ -138,6 +142,7 @@ describe('Payment', () => {
 
         let { container } = render(
             <Payment
+                api={apiMock}
                 onMethod={() => {}}
                 type="signup"
                 method="my-custom-method-123"

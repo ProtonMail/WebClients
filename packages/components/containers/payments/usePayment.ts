@@ -6,7 +6,7 @@ import {
     isExistingPaymentMethod,
     methodMatches,
 } from '@proton/components/payments/core';
-import { Currency } from '@proton/shared/lib/interfaces';
+import { Api, Currency } from '@proton/shared/lib/interfaces';
 
 import { ExistingPayment, WrappedCardPayment } from '../../payments/core/interface';
 import toDetails from './toDetails';
@@ -16,10 +16,12 @@ import usePayPal, { OnPayResult } from './usePayPal';
 const { CARD, BITCOIN, CASH, PAYPAL, PAYPAL_CREDIT } = PAYMENT_METHOD_TYPES;
 
 interface Props {
+    api: Api;
     amount: number;
     currency: Currency;
     onPaypalPay: (data: OnPayResult) => void;
-    onValidatePaypal?: () => Promise<boolean>;
+    onPaypalError?: (type: 'pay_pp' | 'pay_pp_no_cc') => void;
+    onValidatePaypal?: (type: 'pay_pp' | 'pay_pp_no_cc') => Promise<boolean>;
     defaultMethod?: PAYMENT_METHOD_TYPES | undefined;
     paypalPrefetchToken?: boolean;
     onBeforeTokenFetchPaypal?: () => Promise<unknown> | unknown;
@@ -27,10 +29,12 @@ interface Props {
 }
 
 const usePayment = ({
+    api,
     amount,
     currency,
     onValidatePaypal,
     onPaypalPay,
+    onPaypalError,
     defaultMethod,
     paypalPrefetchToken = true,
     onBeforeTokenFetchPaypal,
@@ -42,19 +46,23 @@ const usePayment = ({
     const isPayPalActive = method === PAYPAL;
 
     const paypal = usePayPal({
+        api,
         amount,
         currency,
         type: PAYPAL,
-        onValidate: onValidatePaypal,
+        onValidate: onValidatePaypal ? () => onValidatePaypal('pay_pp') : undefined,
+        onError: onPaypalError ? () => onPaypalError('pay_pp') : undefined,
         onPay: onPaypalPay,
         onBeforeTokenFetch: onBeforeTokenFetchPaypal,
     });
 
     const paypalCredit = usePayPal({
+        api,
         amount,
         currency,
         type: PAYPAL_CREDIT,
-        onValidate: onValidatePaypal,
+        onValidate: onValidatePaypal ? () => onValidatePaypal('pay_pp_no_cc') : undefined,
+        onError: onPaypalError ? () => onPaypalError('pay_pp_no_cc') : undefined,
         onPay: onPaypalPay,
         onBeforeTokenFetch: onBeforeTokenFetchPaypal,
     });

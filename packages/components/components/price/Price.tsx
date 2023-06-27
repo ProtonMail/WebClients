@@ -23,6 +23,7 @@ export interface Props {
     suffixClassName?: string;
     currencyClassName?: string;
     amountClassName?: string;
+    wrapperClassName?: string;
 }
 
 const Price = ({
@@ -35,6 +36,7 @@ const Price = ({
     isDisplayedInSentence = false,
     large,
     'data-testid': dataTestId,
+    wrapperClassName = 'flex-item-noshrink inline-flex flex-align-items-baseline',
     suffixClassName,
     currencyClassName,
     amountClassName,
@@ -48,17 +50,15 @@ const Price = ({
             {decimal ? <span className="decimal">.{decimal}</span> : null}
         </span>
     );
-    const s = suffix ? <span className={clsx(['suffix', suffixClassName, !isDisplayedInSentence && 'ml-1'])}>{suffix}</span> : null;
+    const s = suffix ? (
+        <span className={clsx(['suffix', suffixClassName, !isDisplayedInSentence && 'ml-1'])}>{suffix}</span>
+    ) : null;
     const pr = prefix ? <span className={clsx(['prefix', isDisplayedInSentence && 'mr-1'])}>{prefix}</span> : null;
 
     if (currency === 'CHF') {
         return (
             <span
-                className={clsx([
-                    'price flex-item-noshrink inline-flex flex-align-items-baseline',
-                    large && 'price--large',
-                    className,
-                ])}
+                className={clsx(['price', wrapperClassName, large && 'price--large', className])}
                 data-currency={currency}
             >
                 {pr}
@@ -73,11 +73,7 @@ const Price = ({
     if (currency === 'EUR') {
         return (
             <span
-                className={clsx([
-                    'price flex-item-noshrink inline-flex flex-align-items-baseline',
-                    large && 'price--large',
-                    className,
-                ])}
+                className={clsx(['price', wrapperClassName, large && 'price--large', className])}
                 data-currency={currency}
             >
                 {pr}
@@ -90,11 +86,7 @@ const Price = ({
     }
     return (
         <span
-            className={clsx([
-                'price flex-item-noshrink inline-flex flex-align-items-baseline',
-                large && 'price--large',
-                className,
-            ])}
+            className={clsx(['price', wrapperClassName, large && 'price--large', className])}
             data-currency={currency}
         >
             {pr}
