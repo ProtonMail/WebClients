@@ -29,9 +29,8 @@ import chrome from './logos/chrome.svg';
 import firefox from './logos/firefox.svg';
 import playStore from './logos/play-store.svg';
 import safari from './logos/safari.svg';
+import installExtension from './pass-extension-illustration.svg';
 import androidStore from './store/android.svg';
-import chromeStore from './store/chrome.svg';
-import firefoxStore from './store/firefox.svg';
 import iosStore from './store/ios.svg';
 
 const getBrowserTitle = (appName: string, browserName: string) => {
@@ -137,15 +136,14 @@ export const getInfo = (
         const type = getTelemetryClientType(Clients.Firefox);
         return {
             type,
-            title: c('pass_signup_2023: Info').t`Install web extension`,
-            subTitle: c('pass_signup_2023: Info').t`to start using ${PASS_APP_NAME} in your browser`,
+            title: c('pass_signup_2023: Info').t`Install extension`,
+            subTitle: '',
             content: (
                 <>
                     {getContent(
-                        firefoxStore,
+                        installExtension,
                         // translator: full sentence is: Download the <Proton Pass> browser extension from Firefox Add-ons and install it to start using <Proton Pass> in your browser.
-                        c('pass_signup_2023: Info')
-                            .t`Download the ${PASS_APP_NAME} browser extension from Firefox Add-ons and install it to start using ${PASS_APP_NAME2} in your browser.`
+                        c('pass_signup_2023: Info').t`Download the extension from the Firefox Add-ons.`
                     )}
                 </>
             ),
@@ -155,7 +153,7 @@ export const getInfo = (
                     {skip}
                 </>
             ),
-            preload: getPreload(firefoxStore),
+            preload: getPreload(installExtension),
         };
     }
 
@@ -181,15 +179,14 @@ export const getInfo = (
         })();
         return {
             type,
-            title: c('pass_signup_2023: Info').t`Install web extension`,
-            subTitle: c('pass_signup_2023: Info').t`to start using ${PASS_APP_NAME} in your browser`,
+            title: c('pass_signup_2023: Info').t`Install extension`,
+            subTitle: '',
             content: (
                 <>
                     {getContent(
-                        chromeStore,
+                        installExtension,
                         // translator: full sentence is: Download the <Proton Pass> browser extension in the Chrome Web Store and install it to start using <Proton Pass> in your browser.
-                        c('pass_signup_2023: Info')
-                            .t`Download the ${PASS_APP_NAME} browser extension in the Chrome Web Store and install it to start using ${PASS_APP_NAME2} in your browser.`
+                        c('pass_signup_2023: Info').t`Download the extension from the Chrome Web Store.`
                     )}
                 </>
             ),
@@ -199,7 +196,7 @@ export const getInfo = (
                     {skip}
                 </>
             ),
-            preload: getPreload(chromeStore),
+            preload: getPreload(installExtension),
         };
     }
 
