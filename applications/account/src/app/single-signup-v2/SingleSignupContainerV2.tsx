@@ -405,6 +405,7 @@ const SingleSignupContainerV2 = ({ fork, activeSessions, loader, onLogin, produc
                     dimensions: {
                         signedin: 'no',
                         intent: normalizeProduct(productParam),
+                        plan: PLANS.FREE,
                     },
                 });
             }
@@ -524,7 +525,7 @@ const SingleSignupContainerV2 = ({ fork, activeSessions, loader, onLogin, produc
         triggerModals(session);
         measure({
             event: TelemetryAccountSignupEvents.userSignInSuccess,
-            dimensions: { current_plan: getPlanNameFromSession(session) },
+            dimensions: { plan: getPlanNameFromSession(session) },
         });
     };
 

@@ -202,31 +202,34 @@ const AccountStepPayment = ({
                         event.preventDefault();
 
                         const run = async () => {
-                            if (onValidate() && paymentParameters && handleCardSubmit() && validatePayment()) {
-                                const amountAndCurrency: AmountAndCurrency = {
-                                    Currency: options.currency,
-                                    Amount: options.checkResult.AmountDue,
-                                };
-
-                                if (amountAndCurrency.Amount <= 0) {
-                                    return onPay(undefined);
-                                }
-
-                                const data = await createPaymentToken(
-                                    paymentParameters,
-                                    getDefaultVerifyPayment(createModal, normalApi),
-                                    normalApi,
-                                    { amountAndCurrency }
-                                );
-
-                                return onPay(data.Payment);
+                            if (!paymentParameters) {
+                                throw new Error('Missing payment parameters');
                             }
+
+                            const amountAndCurrency: AmountAndCurrency = {
+                                Currency: options.currency,
+                                Amount: options.checkResult.AmountDue,
+                            };
+
+                            if (amountAndCurrency.Amount <= 0) {
+                                return onPay(undefined);
+                            }
+
+                            const data = await createPaymentToken(
+                                paymentParameters,
+                                getDefaultVerifyPayment(createModal, normalApi),
+                                normalApi,
+                                { amountAndCurrency }
+                            );
+                            return onPay(data.Payment);
                         };
 
                         measurePaySubmit('pay_cc');
-                        withLoadingSignup(run()).catch(() => {
-                            measurePayError('pay_cc');
-                        });
+                        if (onValidate() && handleCardSubmit() && validatePayment()) {
+                            withLoadingSignup(run()).catch(() => {
+                                measurePayError('pay_cc');
+                            });
+                        }
                     }}
                     method="post"
                 >
@@ -255,7 +258,7 @@ const AccountStepPayment = ({
                                     if (value) {
                                         measure({
                                             event: TelemetryAccountSignupEvents.paymentSelect,
-                                            dimensions: { action: value },
+                                            dimensions: { type: value },
                                         });
                                     }
                                 }
@@ -306,16 +309,12 @@ const AccountStepPayment = ({
                                     color="norm"
                                     fullWidth
                                     onClick={() => {
-                                        const run = async () => {
-                                            if (onValidate() && validatePayment()) {
-                                                return onPay('signup-token');
-                                            }
-                                        };
-
                                         measurePaySubmit('pay_btc');
-                                        withLoadingSignup(run()).catch(() => {
-                                            measurePayError('pay_btc');
-                                        });
+                                        if (onValidate() && validatePayment()) {
+                                            withLoadingSignup(onPay('signup-token')).catch(() => {
+                                                measurePayError('pay_btc');
+                                            });
+                                        }
                                     }}
                                 >
                                     {c('pass_signup_2023: Action').t`Continue with Bitcoin`}

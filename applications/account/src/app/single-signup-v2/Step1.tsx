@@ -210,17 +210,17 @@ const Step1 = ({
     };
 
     const handleChangeCurrency = async (currency: Currency) => {
-        measure({ event: TelemetryAccountSignupEvents.selectCurrency, dimensions: { currency } });
+        measure({ event: TelemetryAccountSignupEvents.currencySelect, dimensions: { currency } });
         return handleOptimistic({ currency });
     };
 
     const handleChangeCycle = async (cycle: Cycle) => {
-        measure({ event: TelemetryAccountSignupEvents.selectCycle, dimensions: { cycle: `${cycle}` } });
+        measure({ event: TelemetryAccountSignupEvents.cycleSelect, dimensions: { cycle: `${cycle}` } });
         return handleOptimistic({ cycle });
     };
 
     const handleChangePlan = async (planIDs: PlanIDs, planName: PLANS) => {
-        measure({ event: TelemetryAccountSignupEvents.selectPlan, dimensions: { plan_name: planName } });
+        measure({ event: TelemetryAccountSignupEvents.planSelect, dimensions: { plan: planName } });
         const plan = model.plans.find((plan) => plan.Name === planName);
 
         if (model.session?.subscription && model.session.organization && plan?.Name) {
@@ -357,6 +357,9 @@ const Step1 = ({
                                 onSelect={(planIDs, planName) => {
                                     return withLoadingPaymentDetails(handleChangePlan(planIDs, planName)).catch(noop);
                                 }}
+                                onSelectedClick={() => {
+                                    accountDetailsRef.current?.scrollInto('email');
+                                }}
                             />
                         ) : (
                             <UpsellCardSelector
@@ -464,6 +467,7 @@ const Step1 = ({
                                     <div className="flex flex-align-items-start flex-justify-space-between gap-14">
                                         <div className="flex-item-fluid w0 relative">
                                             <AccountStepDetails
+                                                model={model}
                                                 measure={measure}
                                                 loading={loadingChallenge || loadingSignout}
                                                 api={silentApi}
@@ -481,25 +485,11 @@ const Step1 = ({
                                                 onSubmit={
                                                     hasSelectedFree
                                                         ? () => {
-                                                              const run = async () => {
-                                                                  if (
-                                                                      (await accountDetailsRef.current?.validate()) ??
-                                                                      true
-                                                                  ) {
-                                                                      await handleCompletion(
-                                                                          getFreeSubscriptionData(
-                                                                              model.subscriptionData
-                                                                          )
-                                                                      );
-                                                                  }
-                                                              };
-
-                                                              withLoadingSignup(run()).catch(noop);
-
-                                                              measure({
-                                                                  event: TelemetryAccountSignupEvents.userCheckout,
-                                                                  dimensions: { type: 'free' },
-                                                              });
+                                                              withLoadingSignup(
+                                                                  handleCompletion(
+                                                                      getFreeSubscriptionData(model.subscriptionData)
+                                                                  )
+                                                              ).catch(noop);
                                                           }
                                                         : undefined
                                                 }
