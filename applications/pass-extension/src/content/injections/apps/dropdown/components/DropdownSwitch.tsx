@@ -6,7 +6,7 @@ import { CircleLoader } from '@proton/atoms/CircleLoader';
 import { Icon } from '@proton/components/components';
 import type { MaybeNull } from '@proton/pass/types';
 import { WorkerStatus } from '@proton/pass/types';
-import { PassIcon } from '@proton/pass/types/data/pass-icon';
+import { PassIconStatus } from '@proton/pass/types/data/pass-icon';
 import { pixelEncoder } from '@proton/pass/utils/dom';
 import { FORK_TYPE } from '@proton/shared/lib/authentication/ForkInterface';
 import { BRAND_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
@@ -49,7 +49,7 @@ const DropdownSwitchRender: ForwardRefRenderFunction<HTMLDivElement, Props> = (
                             onClick={onClose}
                             title={c('Title').t`${PASS_APP_NAME} locked`}
                             subTitle={c('Info').t`Unlock with your pin`}
-                            icon={PassIcon.LOCKED_DROPDOWN}
+                            icon={PassIconStatus.LOCKED_DROPDOWN}
                         />
                     );
                 }
@@ -67,7 +67,7 @@ const DropdownSwitchRender: ForwardRefRenderFunction<HTMLDivElement, Props> = (
                                     <Icon className="ml-1" name="arrow-out-square" />
                                 </>
                             }
-                            icon={PassIcon.DISABLED}
+                            icon={PassIconStatus.DISABLED}
                             autogrow
                         />
                     );
@@ -79,7 +79,7 @@ const DropdownSwitchRender: ForwardRefRenderFunction<HTMLDivElement, Props> = (
                             <ItemsList items={state.items} needsUpgrade={state.needsUpgrade} onMessage={onMessage} />
                         ) : (
                             <DropdownItem
-                                icon={PassIcon.ACTIVE}
+                                icon={PassIconStatus.ACTIVE}
                                 onClick={onClose}
                                 title={PASS_APP_NAME}
                                 subTitle={c('Info').t`No login found`}
