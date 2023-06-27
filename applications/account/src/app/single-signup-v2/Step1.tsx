@@ -357,6 +357,9 @@ const Step1 = ({
                                 onSelect={(planIDs, planName) => {
                                     return withLoadingPaymentDetails(handleChangePlan(planIDs, planName)).catch(noop);
                                 }}
+                                onSelectedClick={() => {
+                                    accountDetailsRef.current?.scrollInto('email');
+                                }}
                             />
                         ) : (
                             <UpsellCardSelector
@@ -481,25 +484,11 @@ const Step1 = ({
                                                 onSubmit={
                                                     hasSelectedFree
                                                         ? () => {
-                                                              const run = async () => {
-                                                                  if (
-                                                                      (await accountDetailsRef.current?.validate()) ??
-                                                                      true
-                                                                  ) {
-                                                                      await handleCompletion(
-                                                                          getFreeSubscriptionData(
-                                                                              model.subscriptionData
-                                                                          )
-                                                                      );
-                                                                  }
-                                                              };
-
-                                                              withLoadingSignup(run()).catch(noop);
-
-                                                              measure({
-                                                                  event: TelemetryAccountSignupEvents.userCheckout,
-                                                                  dimensions: { type: 'free' },
-                                                              });
+                                                              withLoadingSignup(
+                                                                  handleCompletion(
+                                                                      getFreeSubscriptionData(model.subscriptionData)
+                                                                  )
+                                                              ).catch(noop);
                                                           }
                                                         : undefined
                                                 }

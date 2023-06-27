@@ -21,6 +21,7 @@ import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { AccountData, SignupType } from '../signup/interfaces';
+import { runAfterScroll } from './helper';
 import { Measure, OnOpenLogin } from './interface';
 import { InteractFields } from './measure';
 import {
@@ -79,6 +80,7 @@ const defaultInputStates = {
 export interface AccountStepDetailsRef {
     validate: () => boolean;
     data: () => Promise<AccountData>;
+    scrollInto: (target: 'email' | 'emailConfirm' | 'password' | 'passwordConfirm') => void;
 }
 
 const getMeasurement = (diff: Partial<AccountDetailsInputState>) => {
@@ -226,14 +228,24 @@ const AccountStepDetails = ({
 
     const scrollInto = (target: 'email' | 'emailConfirm' | 'password' | 'passwordConfirm') => {
         if (target === 'email' || target === 'emailConfirm') {
-            setTimeout(() => {
-                formInputRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }, 0);
+            formInputRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+            const focusChallenge = (id: string) => {
+                // This is a hack prevent scroll since we'd need to add support for that in challenge
+                // TODO: Add support for preventScroll
+                const scrollEl = document.body.querySelector('.scroll-if-needed');
+                if (!scrollEl) {
+                    return;
+                }
+                runAfterScroll(scrollEl, () => {
+                    challengeRefEmail.current?.focus(id);
+                });
+            };
             if (target === 'email') {
-                challengeRefEmail.current?.focus('#email');
+                focusChallenge('#email');
             }
             if (target === 'emailConfirm') {
-                challengeRefEmail.current?.focus('#email-confirm');
+                focusChallenge('#email-confirm');
             }
             return;
         }
@@ -249,10 +261,8 @@ const AccountStepDetails = ({
         if (!el) {
             return;
         }
-        el.focus();
-        setTimeout(() => {
-            el.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        }, 0);
+        el.focus({ preventScroll: true });
+        el.scrollIntoView({ behavior: 'smooth', block: 'center' });
     };
 
     const errorDetails = getErrorDetails({
@@ -306,6 +316,7 @@ const AccountStepDetails = ({
                 domain: '',
             };
         },
+        scrollInto,
     }));
 
     useEffect(() => {
@@ -361,7 +372,17 @@ const AccountStepDetails = ({
                 name="account-form"
                 onSubmit={async (event) => {
                     event.preventDefault();
-                    onSubmit?.();
+                    // Not valid
+                    if (!onSubmit) {
+                        return;
+                    }
+                    measure({
+                        event: TelemetryAccountSignupEvents.userCheckout,
+                        dimensions: { type: 'free' },
+                    });
+                    if (validateAccountDetails()) {
+                        onSubmit();
+                    }
                 }}
             >
                 <div className="flex flex-column gap-1 mb-4">
