@@ -12,6 +12,7 @@ import {
     useConfig,
     useErrorHandler,
     useFeature,
+    useForceRefresh,
     useLoading,
     useModalState,
     useVPNServersCount,
@@ -50,6 +51,10 @@ import { toMap } from '@proton/shared/lib/helpers/object';
 import { hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { traceError } from '@proton/shared/lib/helpers/sentry';
+import { languageCode } from '@proton/shared/lib/i18n';
+import { getBrowserLocale, getClosestLocaleCode } from '@proton/shared/lib/i18n/helper';
+import { loadDateLocale, loadLocale } from '@proton/shared/lib/i18n/loadLocale';
+import { locales } from '@proton/shared/lib/i18n/locales';
 import { Audience, Plan, PlansMap } from '@proton/shared/lib/interfaces';
 import type { User } from '@proton/shared/lib/interfaces/User';
 import { FREE_PLAN, getFreeCheckResult } from '@proton/shared/lib/subscription/freePlans';
@@ -147,6 +152,7 @@ let ranPreload = false;
 const SingleSignupContainerV2 = ({ fork, activeSessions, loader, onLogin, productParam, clientType }: Props) => {
     const ktFeature = useFeature<KT_FF>(FeatureCode.KeyTransparencyWEB);
     const { APP_NAME } = useConfig();
+    const forceRefresh = useForceRefresh();
 
     const [model, setModel] = useState<SignupModelV2>(defaultSignupModel);
     const step1Ref = useRef<Step1Rref | undefined>(undefined);
@@ -156,6 +162,20 @@ const SingleSignupContainerV2 = ({ fork, activeSessions, loader, onLogin, produc
             ...model,
             ...diff,
         }));
+    }, []);
+
+    useEffect(() => {
+        if (languageCode === 'fr') {
+            return;
+        }
+        // Force english until more languages are translated
+        const newLocale = 'en';
+        const localeCode = getClosestLocaleCode(newLocale, locales);
+        const run = async () => {
+            await Promise.all([loadLocale(localeCode, locales), loadDateLocale(localeCode, getBrowserLocale())]);
+            forceRefresh();
+        };
+        run();
     }, []);
 
     const unauthApi = useApi();
