@@ -3318,12 +3318,6 @@
         "Bitte behebe den hervorgehobenen Konflikt, um fortfahren zu können.",
         "Bitte behebe die hervorgehobenen Konflikte, um fortfahren zu können."
       ],
-      "Please repeat the password": [
-        "Bitte Passwort erneut eingeben"
-      ],
-      "Please set a password": [
-        "Bitte ein Passwort festlegen"
-      ],
       "Port is required": [
         "Port ist erforderlich"
       ],
@@ -4110,7 +4104,10 @@
     },
     "Font face option": {
       "System default": [
-        "Systemvorgabe"
+        "Systemstandard"
+      ],
+      "Theme default": [
+        "Standard-Farbschema"
       ]
     },
     "Font Size Default": {
@@ -5511,6 +5508,9 @@
       "Subject: ": [
         "Betreff: "
       ],
+      "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
+        "Dein Abonnement endet bald: Reaktiviere es bis zum ${ byDate }, um deine ${ planName }-Vorteile zu behalten. ${ reactivateLink }"
+      ],
       "support team": [
         "Support-Team"
       ],
@@ -5797,7 +5797,7 @@
         "Wann soll sich die Nachricht selbst zerstören?"
       ],
       "When giving out your email, use a unique, disposable hide-my-email alias instead of your real email address.": [
-        "Wenn du deine E-Mail-Adresse weitergibst, verwende anstelle deiner echten E-Mail-Adresse einen eindeutigen und einmaligen Hide My Email-Alias."
+        "Wenn du deine E-Mail-Adresse weitergibst, verwende anstelle deiner echten E-Mail-Adresse einen eindeutigen und einmaligen Hide-my-email-Alias."
       ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "Wenn du für ${ senderName } vertrauenswürdige Schlüssel aktiviert hast, wurden die öffentlichen Schlüssel zu den Kontaktdaten hinzugefügt."
@@ -6872,6 +6872,9 @@
       ],
       "Re-enable the address linked to this calendar to update your invitation.": [
         "Reaktiviere die mit diesem Kalender verknüpfte E-Mail-Adresse, um deine Einladung aktualisieren zu können."
+      ],
+      "Reactivate now": [
+        "Jetzt reaktivieren"
       ],
       "Request an invite": [
         "Einladung anfordern"
@@ -8370,6 +8373,48 @@
     "Success notification when user send feedback": {
       "Feedback sent": [
         "Feedback gesendet"
+      ]
+    },
+    "summer2023: Deal details": {
+      "Premium Password Manager": [
+        "Premium-Passwortmanager"
+      ]
+    },
+    "summer2023: Describe Proton Pass": {
+      "Securely store your passwords and autofill them on websites. Includes unlimited passwords, autofill, password generator, and more.": [
+        "Speichere deine Passwörter sicher und lasse sie automatisch auf Websites einfügen. Beinhaltet unbegrenzte Passwörter, automatisches Einfügen, Passwortgenerator und mehr."
+      ]
+    },
+    "summer2023: Tooltip": {
+      "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
+        "Erstelle sichere Anmeldedaten auf allen deinen Geräten. Beinhaltet unbegrenzte Aliase, 20 Tresore, integrierte 2FA, automatisches Einfügen von Kreditkartendaten und mehr."
+      ],
+      "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "Greife auf blockierte Inhalte zu und surfe privat. Umfasst 2950 Server in über 65 Ländern, die Verbindung von bis zu 10 Geräten, weltweite Streaming-Dienste, Malware- und Werbeblocker und mehr."
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "Sichere deine Dateien mit verschlüsseltem Cloud-Speicher. Beinhaltet Versionsverlauf, verschlüsselte Dateifreigabe und mehr."
+      ]
+    },
+    "summer2023:Footer": {
+      "*Your subscription will automatically renew at the standard discounted rate at the end of your billing cycle.": [
+        "*Dein Abonnement verlängert sich am Ende deines Abrechnungszeitraums automatisch zum Standard-Rabattpreis."
+      ],
+      "Discounts are based on the standard monthly pricing. This offer is only available to first-time subscribers.": [
+        "Rabatte basieren auf den monatlichen Standardpreisen. Dieses Angebot gilt nur für Erstabonnenten."
+      ]
+    },
+    "summer2023:Info": {
+      "For a limited time, get the best ${ BRAND_NAME } has to offer at an exclusive discount.": [
+        "Erhalte für begrenzte Zeit das Beste, was ${ BRAND_NAME } zu bieten hat, mit einem exklusiven Rabatt."
+      ],
+      "We’re celebrating the nine-year anniversary of our crowdfunding!": [
+        "Wir feiern das neunjährige Jubiläum unseres Crowdfundings!"
+      ]
+    },
+    "summer2023:Offer title": {
+      "${ BRAND_NAME } Anniversary Sale": [
+        "Jubiläumsangebot von ${ BRAND_NAME }"
       ]
     },
     "Table header": {

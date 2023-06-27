@@ -3358,12 +3358,6 @@
         "Выпраўце вылучаныя канфлікты, каб працягнуць.",
         "Выпраўце вылучаныя канфлікты, каб працягнуць."
       ],
-      "Please repeat the password": [
-        "Паўтарыце пароль"
-      ],
-      "Please set a password": [
-        "Задайце пароль"
-      ],
       "Port is required": [
         "Патрабуецца ўвесці порт"
       ],
@@ -4257,7 +4251,7 @@
         "Увайдзіце ў мабільную праграму, каб завяршыць гэта дзеянне"
       ],
       "Using your mobile device, scan this QR code or visit": [
-        "Выкарыстоўваючы сваю мабільную прыладу, адскануйце гэты QR-код або наведайце"
+        "Выкарыстоўваючы сваю мабільную прыладу, адсканіруйце гэты QR-код або наведайце"
       ]
     },
     "Get started checklist item": {
@@ -5160,7 +5154,7 @@
         "Адрас электроннай пошты"
       ],
       "Email is forwarded to your mailbox; your email address stays hidden.": [
-        "Электронная пошта перасылаецца ў вашу паштовую скрыню; ваш адрас электроннай пошты застаецца схаваным."
+        "Ліст перасылаецца ў вашу паштовую скрыню; ваш адрас электроннай пошты застаецца схаваным."
       ],
       "Email tracker protection is disabled": [
         "Абарона электроннай пошты ад праграм сачэння адключана"
@@ -5679,7 +5673,7 @@
         "SimpleLogin - гэта сэрвіс ${ BRAND_NAME } і ваш уліковы запіс ${ BRAND_NAME_TWO } уключае псеўданімы для функцыі Hide-my-email. Для таго, каб пачаць маскіраваць ваш адрас электроннай пошты, перайдзіце ў SimpleLogin і стварыце свой першы псеўданім."
       ],
       "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
-        "SimpleLogin забяспечвае просты спосаб для стварэння лагінаў на старонніх сайтах, якім вы не надта давяраеце і не хочаце раскрываць свой сапраўдны адрас электроннай пошты."
+        "SimpleLogin забяспечвае просты спосаб для стварэння адрасоў электроннай пошты на старонніх сайтах, якім вы не надта давяраеце і не хочаце раскрываць свой сапраўдны адрас электроннай пошты."
       ],
       "Sorry, this message does not exist or has already expired.": [
         "Прабачце, але гэтага паведамлення не існуе або яно пратэрмінаванае."
@@ -5695,6 +5689,9 @@
       ],
       "Subject: ": [
         "Тэма: "
+      ],
+      "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
+        "Падпіска заканчваецца: актывуйце яе паўторна да ${ byDate }, каб пакінуць перавагі свайго тарыфнага плана ${ planName }. ${ reactivateLink }"
       ],
       "support team": [
         "каманда падтрымкі"
@@ -6120,7 +6117,7 @@
         "Вы дасягнулі максімальнай колькасці адрасоў у групе кантактаў:"
       ],
       "Your ${ BRAND_NAME } Account includes SimpleLogin. Install the browser extension with one click to get started.": [
-        "Ваш уліковы запіс уключае ${ BRAND_NAME }. Каб пачаць працу, усталюйце пашырэнне для браўзера адным націсканнем."
+        "Ваш уліковы запіс ${ BRAND_NAME } уключае SimpleLogin. Каб пачаць працу, усталюйце пашырэнне для браўзера адным націскам."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Ваш уліковы запіс ${ BRAND_NAME } у цяперашні час прыпынены. На 29 дзень, лісты больш не будуць трапляць у паштовую скрыню, а абагуленыя спасылкі на воблачным дыску будуць заблакіраваны, і вы не зможаце запампоўваць новыя файлы. Для ўзнаўлення звычайнага абслугоўвання, аплаціце ўсе неаплачаныя рахункі."
@@ -6150,7 +6147,7 @@
         "Ваша імпартаванне не будзе апрацавана."
       ],
       "Your login information will not be saved after the import is completed.": [
-        "Пасля завяршэння імпартавання вашы ўліковыя даныя не будуць захаваны."
+        "Пасля завяршэння імпартавання вашы даныя ўваходу не будуць захаваны."
       ],
       "Your message will expire in ${ numberOfDays } day.": [
         "Тэрмін дзеяння вашага паведамлення міне праз ${ numberOfDays } дзень.",
@@ -7087,6 +7084,9 @@
       ],
       "Re-enable the address linked to this calendar to update your invitation.": [
         "Для абнаўлення вашага запрашэння неабходна паўторна ўключыць адрас, які звязаны з гэтым календаром."
+      ],
+      "Reactivate now": [
+        "Актываваць паўторна"
       ],
       "Request an invite": [
         "Запытаць запрашэнне"
