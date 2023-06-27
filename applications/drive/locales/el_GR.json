@@ -237,8 +237,11 @@
       "Download anyway": [
         "Λήψη οπωσδήποτε"
       ],
-      "Download the Windows application": [
-        "Κατεβάστε την εφαρμογή για Windows"
+      "Download apps": [
+        "Λήψη εφαρμογών"
+      ],
+      "Download Drive for Windows": [
+        "Λήψη του Drive για Windows"
       ],
       "Drive Locked": [
         "Αρχειοθήκη Κλειδωμένη"
@@ -3085,9 +3088,6 @@
         "${ contactsCount } επαφή βρέθηκε",
         "${ contactsCount } επαφές βρέθηκαν"
       ],
-      "${ deviceName } (restored)": [
-        "${ deviceName } (επαναφέρθηκε)"
-      ],
       "${ doneCount } finished": [
         "${ doneCount } τελείωσε",
         "${ doneCount } τελείωσαν"
@@ -3663,9 +3663,6 @@
       "No results found": [
         "Δεν βρέθηκαν αποτελέσματα"
       ],
-      "No synced computers": [
-        "Δεν υπάρχουν συγχρονισμένοι υπολογιστές"
-      ],
       "No synced folders": [
         "Δεν υπάρχουν συγχρονισμένοι φάκελοι"
       ],
@@ -3851,11 +3848,20 @@
       "Something went wrong, please try again later.": [
         "Κάτι πήγε στραβά, παρακαλούμε δοκιμάστε ξανά αργότερα."
       ],
+      "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
+        "Λήξη συνδρομής: Ενεργοποιήστε ξανά κατά ${ byDate } για να διατηρήσετε τα οφέλη σας ${ planName }. ${ reactivateLink }"
+      ],
       "support team": [
         "ομάδα υποστήριξης"
       ],
       "Swiss encrypted file storage": [
         "Ελβετική κρυπτογραφημένη αποθήκευση αρχείων"
+      ],
+      "Sync folders from your computer": [
+        "Συγχρονισμός φακέλων από τον υπολογιστή σας"
+      ],
+      "Sync folders with ease using our desktop app, ensuring your files are always up to date and accessible from anywhere.": [
+        "Συγχρονίστε φακέλους με ευκολία χρησιμοποιώντας την εφαρμογή μας για υπολογιστές, διασφαλίζοντας ότι τα αρχεία σας είναι πάντα ενημερωμένα και προσβάσιμα από οπουδήποτε."
       ],
       "Temporarily unavailable. Please check back later.": [
         "Προσωρινά μη διαθέσιμο. Παρακαλούμε ελέγξτε ξανά αργότερα."
@@ -3923,6 +3929,9 @@
       ],
       "This will upload a new version of the file": [
         "Αυτό θα ανεβάσει μια νέα έκδοση του αρχείου"
+      ],
+      "This will upload a new version of the folder": [
+        "Αυτό θα ανεβάσει μια νέα έκδοση του φακέλου"
       ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
         "Για την ενεργοποίηση αληθινά ιδιωτικής αναζήτησης, το ${ DRIVE_APP_NAME } χρειάζεται να δεικτοδοτήσει τα αρχεία σας τοπικά."
@@ -3992,9 +4001,6 @@
       ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "Το ανέβασμα εκατοντάδων αρχείων με τη μία ενδέχεται να μειώσει τις επιδόσεις."
-      ],
-      "Use Drive for Desktop to sync folders on your computer with ${ DRIVE_APP_NAME }. They’ll show up here and be accessible from anywhere. ${ learnMore }": [
-        "Χρησιμοποιήστε το Drive για Επιφάνεια Εργασίας για να συγχρονίσετε φακέλους στον υπολογιστή σας με το ${ DRIVE_APP_NAME }. Θα εμφανιστούν εδώ και θα είναι προσβάσιμα από οπουδήποτε. ${ learnMore }"
       ],
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Χρησιμοποιήστε αυτή τη φόρμα για να μας ενημερώσετε για ακατάλληλες, παράνομες,\nή άλλως κακόβουλα κοινόχρηστα αρχεία. Πρόκειται να αναφέρετε:"
@@ -4702,6 +4708,9 @@
       "Pay invoice": [
         "Πληρωμή τιμολογίου"
       ],
+      "Reactivate now": [
+        "Επανενεργοποίηση τώρα"
+      ],
       "Request an invite": [
         "Ζητήστε μια πρόσκληση"
       ],
@@ -5245,6 +5254,11 @@
     "Placeholder for contact group name": {
       "Name": [
         "Όνομα"
+      ]
+    },
+    "Platform": {
+      "Windows": [
+        "Windows"
       ]
     },
     "Progress bar description": {

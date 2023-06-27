@@ -235,8 +235,11 @@
       "Download anyway": [
         "Tetap unduh"
       ],
-      "Download the Windows application": [
-        "Unduh aplikasi Windows kami"
+      "Download apps": [
+        "Unduh aplikasi"
+      ],
+      "Download Drive for Windows": [
+        "Unduh Drive untuk Windows"
       ],
       "Drive Locked": [
         "Drive Terkunci"
@@ -3052,9 +3055,6 @@
       "${ contactsCount } contacts found": [
         "${ contactsCount } kontak ditemukan"
       ],
-      "${ deviceName } (restored)": [
-        "${ deviceName } (dipulihkan)"
-      ],
       "${ doneCount } finished": [
         "${ doneCount } telah selesai terproses"
       ],
@@ -3607,9 +3607,6 @@
       "No results found": [
         "Tidak ada hasil yang ditemukan"
       ],
-      "No synced computers": [
-        "Tidak ada komputer yang disinkronkan"
-      ],
       "No synced folders": [
         "Tidak ada folder yang disinkronkan"
       ],
@@ -3793,11 +3790,20 @@
       "Something went wrong, please try again later.": [
         "Ada sesuatu yang salah, silakan coba lagi nanti."
       ],
+      "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
+        "Langganan akan segera berakhir: Aktifkan kembali paket Anda sebelum tanggal ${ byDate } untuk tetap memperoleh manfaat ${ planName } Anda. ${ reactivateLink }"
+      ],
       "support team": [
         "tim dukungan"
       ],
       "Swiss encrypted file storage": [
         "Layanan penyimpanan berkas terenkripsi dari Swiss"
+      ],
+      "Sync folders from your computer": [
+        "Sinkronkan folder dari komputer Anda"
+      ],
+      "Sync folders with ease using our desktop app, ensuring your files are always up to date and accessible from anywhere.": [
+        "Sinkronkan folder dengan mudah melalui aplikasi desktop kami, memastikan berkas Anda selalu terkini dan dapat diakses dari mana saja."
       ],
       "Temporarily unavailable. Please check back later.": [
         "Hal yang Anda tuju saat ini sedang tidak tersedia. Mohon periksa lagi nanti."
@@ -3864,6 +3870,9 @@
       ],
       "This will upload a new version of the file": [
         "Dengan ini, versi baru berkas akan diunggah"
+      ],
+      "This will upload a new version of the folder": [
+        "Dengan ini, versi baru folder akan diunggah"
       ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
         "Untuk mengaktifkan mode pencarian yang sepenuhnya privat, ${ DRIVE_APP_NAME } perlu untuk terlebih dahulu mengindeks berkas Anda secara lokal."
@@ -3933,9 +3942,6 @@
       ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "Mengunggah ratusan berkas sekaligus dapat berdampak pada kinerja."
-      ],
-      "Use Drive for Desktop to sync folders on your computer with ${ DRIVE_APP_NAME }. They’ll show up here and be accessible from anywhere. ${ learnMore }": [
-        "Gunakan Drive for Desktop untuk menyinkronkan folder pada komputer Anda dengan ${ DRIVE_APP_NAME }. Folder yang telah disinkronkan akan muncul pada halaman ini dan dapat diakses dari mana saja. ${ learnMore }"
       ],
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Gunakan formulir berikut untuk melaporkan berkas yang berisikan hal-hal yang\ntidak pantas, ilegal, ataupun berbahaya kepada kami. Anda akan melaporkan:"
@@ -4640,6 +4646,9 @@
       "Pay invoice": [
         "Bayar tagihan"
       ],
+      "Reactivate now": [
+        "Aktifkan kembali"
+      ],
       "Request an invite": [
         "Minta undangan"
       ],
@@ -5159,6 +5168,11 @@
     "Placeholder for contact group name": {
       "Name": [
         "Nama"
+      ]
+    },
+    "Platform": {
+      "Windows": [
+        "Windows"
       ]
     },
     "Progress bar description": {

@@ -237,8 +237,11 @@
       "Download anyway": [
         "Baixa igualment"
       ],
-      "Download the Windows application": [
-        "Descarregar l'aplicació de Windows"
+      "Download apps": [
+        "Descarrega les aplicacions"
+      ],
+      "Download Drive for Windows": [
+        "Descarregueu Drive per a Windows"
       ],
       "Drive Locked": [
         "Unitat bloquejada"
@@ -3085,9 +3088,6 @@
         "${ contactsCount } contacte trobat",
         "${ contactsCount } contactes trobats"
       ],
-      "${ deviceName } (restored)": [
-        "${ deviceName } (restaurat)"
-      ],
       "${ doneCount } finished": [
         "${ doneCount } finalitzat",
         "${ doneCount } finalitzats"
@@ -3663,9 +3663,6 @@
       "No results found": [
         "No s'han trobat resultats."
       ],
-      "No synced computers": [
-        "Ordinadors no sincronitzats"
-      ],
       "No synced folders": [
         "Carpetes no sincronitzades"
       ],
@@ -3851,11 +3848,20 @@
       "Something went wrong, please try again later.": [
         "S'ha produït un error. Intenteu-ho més tard."
       ],
+      "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
+        "La subscripció està finalitzant: Reactiveu-la abans de ${ byDate } per a mantenir els beneficis de ${ planName }. ${ reactivateLink }"
+      ],
       "support team": [
         "equip de suport"
       ],
       "Swiss encrypted file storage": [
         "Emmagatzematge de fitxers xifrats suïs"
+      ],
+      "Sync folders from your computer": [
+        "Sincronitzeu carpetes des del vostre ordinador"
+      ],
+      "Sync folders with ease using our desktop app, ensuring your files are always up to date and accessible from anywhere.": [
+        "Sincronitzeu carpetes amb facilitat utilitzant la nostra aplicació d'escriptori, assegurant que els vostres fitxers estiguin sempre actualitzats i accessibles des de qualsevol lloc."
       ],
       "Temporarily unavailable. Please check back later.": [
         "No disponible temporalment. Comproveu-ho de nou més tard."
@@ -3996,9 +4002,6 @@
       "Uploading hundreds of files at once may have a performance impact.": [
         "La càrrega de centenars de fitxers alhora pot tenir un impacte en el rendiment."
       ],
-      "Use Drive for Desktop to sync folders on your computer with ${ DRIVE_APP_NAME }. They’ll show up here and be accessible from anywhere. ${ learnMore }": [
-        "Utilitza Drive for Desktop per sincronitzar carpetes al teu ordinador amb ${ DRIVE_APP_NAME }. Es mostraran aquí i seran accessibles des de qualsevol lloc. ${ learnMore }"
-      ],
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Utilitza aquest formulari per notificar-nos de casos inapropiats, il·legals o fitxers compartits maliciosos. Reportes sobre:"
       ],
@@ -4090,7 +4093,7 @@
         "Perdreu tots els canvis sense desar."
       ],
       "You've reached the maximum number of addresses in the contact group(s):": [
-        "Heu assolit el nombre màxim d'adreces en els grups de contactes:"
+        "Heu assolit el nombre màxim d'adreces en el o els grups de contactes:"
       ],
       "You've reached the maximum number of addresses in the contact group.": [
         "Heu assolit el nombre màxim d'adreces en els grups de contactes."
@@ -4705,6 +4708,9 @@
       "Pay invoice": [
         "Paga la factura"
       ],
+      "Reactivate now": [
+        "Reactiva ara"
+      ],
       "Request an invite": [
         "Demana una invitació"
       ],
@@ -5248,6 +5254,11 @@
     "Placeholder for contact group name": {
       "Name": [
         "Nom"
+      ]
+    },
+    "Platform": {
+      "Windows": [
+        "Windows"
       ]
     },
     "Progress bar description": {

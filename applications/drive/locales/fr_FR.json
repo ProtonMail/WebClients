@@ -240,8 +240,8 @@
       "Download apps": [
         "Télécharger les applications"
       ],
-      "Download the Windows application": [
-        "Télécharger l'application Windows"
+      "Download Drive for Windows": [
+        "Téléchargez Drive pour Windows"
       ],
       "Drive Locked": [
         "Disque verrouillé"
@@ -1959,7 +1959,7 @@
         "Le nombre maximum de calendriers a été atteint."
       ],
       "Cannot export this contact": [
-        "Ce contact ne peut pas être exporté."
+        "Impossible d'exporter ce contact"
       ],
       "Contact could not be saved": [
         "Le contact n’a pas pu être enregistré."
@@ -3088,9 +3088,6 @@
         "${ contactsCount } contact trouvé",
         "${ contactsCount } contacts trouvés"
       ],
-      "${ deviceName } (restored)": [
-        "${ deviceName } (restauré)"
-      ],
       "${ doneCount } finished": [
         "${ doneCount } terminé",
         "${ doneCount } terminés"
@@ -3252,13 +3249,13 @@
         "Annulé"
       ],
       "Cannot load link": [
-        "Le lien n'a pas pu être chargé."
+        "Impossible de charger le lien"
       ],
       "Cannot load links": [
-        "Les liens n'ont pas pu être chargés."
+        "Impossible de charger les liens"
       ],
       "Cannot load shared link": [
-        "Le lien partagé n'a pas pu être chargé."
+        "Impossible de charger le lien partagé"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Vous ne vous souvenez pas de votre mot de passe ? Nous pouvons vous aider à effacer les données chiffrées de tous les contacts chiffrés avec cette clé et, par la même occasion, à supprimer l'alerte."
@@ -3666,9 +3663,6 @@
       "No results found": [
         "Aucun résultat n'a été trouvé."
       ],
-      "No synced computers": [
-        "Aucun ordinateur n'est synchronisé."
-      ],
       "No synced folders": [
         "Il n'y a aucun dossier synchronisé."
       ],
@@ -3854,11 +3848,20 @@
       "Something went wrong, please try again later.": [
         "Un problème est survenu, réessayez plus tard."
       ],
+      "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
+        "L'abonnement se termine : réactivez-le avant le ${ byDate } pour continuer à bénéficier des avantages de ${ planName }. ${ reactivateLink }"
+      ],
       "support team": [
         "équipe support"
       ],
       "Swiss encrypted file storage": [
         "Stockage de fichiers chiffrés, basé en Suisse"
+      ],
+      "Sync folders from your computer": [
+        "Synchronisez des dossiers depuis votre ordinateur"
+      ],
+      "Sync folders with ease using our desktop app, ensuring your files are always up to date and accessible from anywhere.": [
+        "Synchronisez facilement vos dossiers avec notre application de bureau, pour que vos fichiers soient toujours à jour et accessibles, où que vous soyez."
       ],
       "Temporarily unavailable. Please check back later.": [
         "Temporairement indisponible. Nous vous invitons à vérifier plus tard."
@@ -3998,9 +4001,6 @@
       ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "Le téléchargement de centaines de fichiers en même temps peut réduire les performances."
-      ],
-      "Use Drive for Desktop to sync folders on your computer with ${ DRIVE_APP_NAME }. They’ll show up here and be accessible from anywhere. ${ learnMore }": [
-        "Utilisez Drive pour ordinateur et synchronisez les dossiers de votre ordinateur avec ${ DRIVE_APP_NAME }. Ils apparaîtront ici et seront accessibles où que vous soyez. ${ learnMore }"
       ],
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Utilisez ce formulaire pour nous signaler des fichiers partagés inappropriés, illégaux ou tout autre fichier partagé malveillant. Vous êtes sur le point de signaler :"
@@ -4708,6 +4708,9 @@
       "Pay invoice": [
         "Payer la facture"
       ],
+      "Reactivate now": [
+        "Réactiver maintenant"
+      ],
       "Request an invite": [
         "Demander une invitation"
       ],
@@ -4966,10 +4969,10 @@
         "Tous les éléments seront bientôt supprimés définitivement du dossier Corbeille."
       ],
       "Cannot load link": [
-        "Le lien n'a pas pu être chargé."
+        "Impossible de charger le lien"
       ],
       "Cannot load next page": [
-        "La page suivante n'a pas pu être chargée."
+        "Impossible de charger la page suivante"
       ],
       "Contact group created": [
         "Le groupe de contacts a été créé."
@@ -5671,6 +5674,48 @@
         "Votre commentaire a été envoyé."
       ]
     },
+    "summer2023: Deal details": {
+      "Premium Password Manager": [
+        "Gestionnaire de mots de passe premium"
+      ]
+    },
+    "summer2023: Describe Proton Pass": {
+      "Securely store your passwords and autofill them on websites. Includes unlimited passwords, autofill, password generator, and more.": [
+        "Enregistrez vos mots de passe en toute sécurité et renseignez-les automatiquement sur les sites web. Profitez d'un nombre illimité de mots de passe, du remplissage automatique, d'un générateur de mots de passe et de bien d'autres fonctionnalités."
+      ]
+    },
+    "summer2023: Tooltip": {
+      "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
+        "Créez des identifiants de connexion sécurisés sur tous vos appareils. Profitez d'un nombre illimité d'alias, de 20 coffres-forts, de l'authentification à deux facteurs (2FA) intégrée, du remplissage automatique des cartes bancaires et de bien d'autres fonctionnalités."
+      ],
+      "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "Cela comprend 2 950 serveurs répartis dans plus de 65 pays, la possibilité de connecter jusqu'à 10 appareils, l'accès aux services de streaming du monde entier, un bloqueur de logiciels malveillants et de publicités et bien d'autres fonctionnalités."
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "Sécurisez vos fichiers grâce au stockage cloud chiffré. Profitez de l'historique des versions, du partage chiffré des fichiers et de bien d'autres fonctionnalités."
+      ]
+    },
+    "summer2023:Footer": {
+      "*Your subscription will automatically renew at the standard discounted rate at the end of your billing cycle.": [
+        "*Votre abonnement sera automatiquement renouvelé au tarif réduit habituel à la fin de votre cycle de facturation."
+      ],
+      "Discounts are based on the standard monthly pricing. This offer is only available to first-time subscribers.": [
+        "Les réductions sont calculées sur les prix mensuels habituels. Cette offre est réservée aux nouveaux abonnés."
+      ]
+    },
+    "summer2023:Info": {
+      "For a limited time, get the best ${ BRAND_NAME } has to offer at an exclusive discount.": [
+        "Profitez du meilleur de ${ BRAND_NAME } à un prix exceptionnel (offre à durée limitée)."
+      ],
+      "We’re celebrating the nine-year anniversary of our crowdfunding!": [
+        "Nous fêtons les neuf ans de notre financement participatif !"
+      ]
+    },
+    "summer2023:Offer title": {
+      "${ BRAND_NAME } Anniversary Sale": [
+        "Offre spéciale : anniversaire ${ BRAND_NAME }"
+      ]
+    },
     "Table header": {
       "Action": [
         "Action"
@@ -5817,10 +5862,10 @@
         "Le navigateur est peut-être à court de mémoire."
       ],
       "Cannot add more addresses": [
-        "Il n'est pas possible d'ajouter d'autres adresses."
+        "Impossible d'ajouter plus d'adresses"
       ],
       "Cannot load link": [
-        "Le lien n'a pas pu être chargé."
+        "Impossible de charger le lien"
       ],
       "Change layout": [
         "Modifier la mise en page"
