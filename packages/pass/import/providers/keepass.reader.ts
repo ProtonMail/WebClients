@@ -10,32 +10,50 @@ import { ImportReaderError } from '../helpers/reader.error';
 import { getImportedVaultName, importLoginItem } from '../helpers/transformers';
 import type { ImportVault } from '../types';
 import { type ImportPayload } from '../types';
-import type { KeePassEntry, KeePassFile, KeePassGroup, KeePassItem, KeyPassEntryValue } from './keepass.types';
+import type { KeePassEntry, KeePassEntryValue, KeePassFile, KeePassGroup, KeePassItem } from './keepass.types';
 
-const getKeyPassEntryValue = (Value: KeyPassEntryValue): string => (typeof Value === 'string' ? Value : Value.__text);
+const getKeePassEntryValue = (Value: KeePassEntryValue): string => (typeof Value === 'string' ? Value : Value.__text);
+
+const getKeePassProtectInMemoryValue = (Value: KeePassEntryValue): string =>
+    typeof Value === 'string' ? '' : Value._ProtectInMemory;
 
 const entryToItem = (entry: KeePassEntry): ItemImportIntent<'login'> => {
     const entryString = Array.isArray(entry.String) ? entry.String : [entry.String];
-    const item = entryString.reduce<KeePassItem>((acc, { Key, Value }) => {
-        if (Key === undefined || Value === undefined) {
-            return acc;
-        }
-        switch (Key) {
-            case 'Title':
-                acc.name = getKeyPassEntryValue(Value);
-                break;
-            case 'Notes':
-                acc.note = getKeyPassEntryValue(Value);
-                break;
-            case 'otp':
-                acc.totp = getKeyPassEntryValue(Value);
-                break;
-            default:
-                acc[Key.toLowerCase() as keyof KeePassItem] = getKeyPassEntryValue(Value);
-        }
+    const item = entryString.reduce<KeePassItem>(
+        (acc, { Key, Value }) => {
+            if (!Key || !Value) return acc;
 
-        return acc;
-    }, {} as KeePassItem);
+            switch (Key) {
+                case 'Title':
+                    acc.name = getKeePassEntryValue(Value);
+                    break;
+                case 'Notes':
+                    acc.note = getKeePassEntryValue(Value);
+                    break;
+                case 'UserName':
+                    acc.username = getKeePassEntryValue(Value);
+                    break;
+                case 'Password':
+                    acc.password = getKeePassEntryValue(Value);
+                    break;
+                case 'URL':
+                    acc.url = getKeePassEntryValue(Value);
+                    break;
+                case 'otp':
+                    acc.totp = getKeePassEntryValue(Value);
+                    break;
+                default:
+                    acc.customFields.push({
+                        fieldName: Key,
+                        type: getKeePassProtectInMemoryValue(Value) ? 'hidden' : 'text',
+                        data: { content: getKeePassEntryValue(Value) ?? '' },
+                    });
+            }
+
+            return acc;
+        },
+        { customFields: [] }
+    );
 
     return importLoginItem({
         name: item.name,
@@ -44,6 +62,7 @@ const entryToItem = (entry: KeePassEntry): ItemImportIntent<'login'> => {
         password: item.password,
         urls: [item.url],
         totp: item.totp,
+        extraFields: item.customFields,
     });
 };
 
