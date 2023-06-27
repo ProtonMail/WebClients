@@ -80,7 +80,7 @@ export const createAsyncValidator = () => {
 
                         measure({
                             event: TelemetryAccountSignupEvents.beAvailableExternal,
-                            dimensions: { available_external: 'true' },
+                            dimensions: { available: 'yes' },
                         });
                     }
                 })
@@ -94,7 +94,7 @@ export const createAsyncValidator = () => {
 
                         measure({
                             event: TelemetryAccountSignupEvents.beAvailableExternal,
-                            dimensions: { available_external: 'false' },
+                            dimensions: { available: 'no' },
                         });
                     }
                     if (lastEmail === email) {
