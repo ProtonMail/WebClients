@@ -162,7 +162,7 @@ export const render = async (ui: ReactElement, useMinimalCache = true): Promise<
     return { ...result, rerender, unmount };
 };
 
-export const renderHook = async (callback: (props: any) => any, useMinimalCache = true) => {
+export const renderHook = async <TProps, TResult>(callback: (props: TProps) => TResult, useMinimalCache = true) => {
     registerFeatureFlagsApiMock();
 
     if (useMinimalCache) {
@@ -170,7 +170,7 @@ export const renderHook = async (callback: (props: any) => any, useMinimalCache 
         registerMinimalFlags();
     }
 
-    const result = originalRenderHook<any, any>(callback, { wrapper: TestProvider as any });
+    const result = originalRenderHook<TProps, TResult>(callback, { wrapper: TestProvider as any });
     await actHook(() => wait(0));
     return result;
 };
