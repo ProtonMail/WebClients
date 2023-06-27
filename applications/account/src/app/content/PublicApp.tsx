@@ -22,7 +22,7 @@ import { OAuthLastAccess, getOAuthLastAccess } from '@proton/shared/lib/api/oaut
 import { getAppHref, getClientID, getExtension, getInvoicesPathname } from '@proton/shared/lib/apps/helper';
 import { DEFAULT_APP, getAppFromPathname, getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
 import { FORK_TYPE } from '@proton/shared/lib/authentication/ForkInterface';
-import { getIsVPNApp, getToApp, getToAppName } from '@proton/shared/lib/authentication/apps';
+import { getIsPassApp, getIsVPNApp, getToApp, getToAppName } from '@proton/shared/lib/authentication/apps';
 import { PushForkResponse } from '@proton/shared/lib/authentication/interface';
 import { stripLocalBasenameFromPathname } from '@proton/shared/lib/authentication/pathnameHelper';
 import {
@@ -323,7 +323,7 @@ const PublicApp = ({ onLogin, locales }: Props) => {
         setActiveSessions(sessions);
 
         if (newForkState.type === SSOType.Proton && newForkState.payload.type === FORK_TYPE.SIGNUP) {
-            history.replace(getSignupUrl(newForkState));
+            history.replace(getSignupUrl(newForkState, maybePreAppIntent));
             return;
         }
 
@@ -384,7 +384,15 @@ const PublicApp = ({ onLogin, locales }: Props) => {
     const toInternalAppName = maybePreAppIntent && getToAppName(maybePreAppIntent);
     const toAppName = toOAuthName || toInternalAppName;
 
-    const clientType = getIsVPNApp(maybePreAppIntent) ? CLIENT_TYPES.VPN : CLIENT_TYPES.MAIL;
+    const clientType = (() => {
+        if (getIsVPNApp(maybePreAppIntent)) {
+            return CLIENT_TYPES.VPN;
+        }
+        if (getIsPassApp(maybePreAppIntent)) {
+            return CLIENT_TYPES.PASS;
+        }
+        return CLIENT_TYPES.MAIL;
+    })();
     const setupVPN = true; /* True until apps have been deployed to support key-less accounts*/
 
     const loader = <AccountLoaderPage />;
@@ -574,7 +582,7 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                                                             hasBackToSwitch ? () => history.push('/switch') : undefined
                                                         }
                                                         setupVPN={setupVPN}
-                                                        signupUrl={getSignupUrl(forkState)}
+                                                        signupUrl={getSignupUrl(forkState, maybePreAppIntent)}
                                                     />
                                                 </Route>
                                                 <Redirect
