@@ -3318,12 +3318,6 @@
         "Solucione el conflicto resaltado para continuar.",
         "Solucione los conflictos resaltados para continuar."
       ],
-      "Please repeat the password": [
-        "Repita la contraseña"
-      ],
-      "Please set a password": [
-        "Establezca una contraseña"
-      ],
       "Port is required": [
         "Puerto requerido"
       ],
@@ -5514,6 +5508,9 @@
       "Subject: ": [
         "Asunto: "
       ],
+      "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
+        "Su suscripción terminará pronto: reactívela antes de ${ byDate } para mantener los beneficios de ${ planName }. ${ reactivateLink }"
+      ],
       "support team": [
         "equipo de soporte"
       ],
@@ -6875,6 +6872,9 @@
       ],
       "Re-enable the address linked to this calendar to update your invitation.": [
         "Rehabilite la dirección vinculada a este calendario para actualizar su invitación."
+      ],
+      "Reactivate now": [
+        "Reactivar ahora"
       ],
       "Request an invite": [
         "Solicitar una invitación"
@@ -8376,6 +8376,48 @@
     "Success notification when user send feedback": {
       "Feedback sent": [
         "Comentarios enviados"
+      ]
+    },
+    "summer2023: Deal details": {
+      "Premium Password Manager": [
+        "Administrador de contraseñas premium"
+      ]
+    },
+    "summer2023: Describe Proton Pass": {
+      "Securely store your passwords and autofill them on websites. Includes unlimited passwords, autofill, password generator, and more.": [
+        "Guarde sus contraseñas con seguridad y complételas de forma automática en los sitios web. Se incluyen contraseñas ilimitadas, función de completado automático, generador de contraseñas y más."
+      ]
+    },
+    "summer2023: Tooltip": {
+      "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
+        "Cree datos de inicio de sesión seguros para todos sus dispositivos. Se incluyen alias ilimitados, 20 bóvedas, 2FA integrada, función de completado automático de tarjetas de crédito y más."
+      ],
+      "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "Incluye 2950 servidores en más de 65 países, conecta hasta 10 dispositivos, acceda a servicios de transmisión en todo el mundo, malware y bloqueador de anuncios, y más."
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "Asegure sus archivos con almacenamiento en la nube cifrado. Se incluyen el historial de versiones, el intercambio de archivos cifrado y más."
+      ]
+    },
+    "summer2023:Footer": {
+      "*Your subscription will automatically renew at the standard discounted rate at the end of your billing cycle.": [
+        "* Su suscripción se renovará automáticamente con la tarifa estándar con descuento al final de su ciclo de facturación."
+      ],
+      "Discounts are based on the standard monthly pricing. This offer is only available to first-time subscribers.": [
+        "Los descuentos se aplican sobre la tarifa mensual estándar. La oferta solo se encuentra disponibles para quienes se suscriban por primera vez."
+      ]
+    },
+    "summer2023:Info": {
+      "For a limited time, get the best ${ BRAND_NAME } has to offer at an exclusive discount.": [
+        "Por tiempo limitado, obtenga lo mejor de ${ BRAND_NAME } con un descuento exclusivo."
+      ],
+      "We’re celebrating the nine-year anniversary of our crowdfunding!": [
+        "¡Celebramos el 9.° aniversario de nuestra financiación colectiva!"
+      ]
+    },
+    "summer2023:Offer title": {
+      "${ BRAND_NAME } Anniversary Sale": [
+        "Ofertas de aniversario de ${ BRAND_NAME }"
       ]
     },
     "Table header": {

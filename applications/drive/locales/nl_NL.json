@@ -237,9 +237,6 @@
       "Download anyway": [
         "Toch downloaden"
       ],
-      "Download the Windows application": [
-        "Download de Windows-applicatie"
-      ],
       "Drive Locked": [
         "Drive versleuteld"
       ],
@@ -3082,9 +3079,6 @@
         "${ contactsCount } contactpersoon gevonden",
         "${ contactsCount } contactpersonen gevonden"
       ],
-      "${ deviceName } (restored)": [
-        "${ deviceName } (hersteld)"
-      ],
       "${ doneCount } finished": [
         "${ doneCount } voltooid",
         "${ doneCount } voltooid"
@@ -3660,9 +3654,6 @@
       "No results found": [
         "Geen resultaten gevonden"
       ],
-      "No synced computers": [
-        "Geen gesynchroniseerde computers"
-      ],
       "No synced folders": [
         "Geen gesynchroniseerde mappen"
       ],
@@ -3989,9 +3980,6 @@
       ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "Het uploaden van honderden bestanden in één keer kan een prestatieeffect hebben."
-      ],
-      "Use Drive for Desktop to sync folders on your computer with ${ DRIVE_APP_NAME }. They’ll show up here and be accessible from anywhere. ${ learnMore }": [
-        "Gebruik Drive voor Desktop om mappen op uw computer met ${ DRIVE_APP_NAME } te synchroniseren. Ze zullen hier verschijnen en van eender waar beschikbaar worden. ${ learnMore }"
       ],
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Gebruik dit formulier om ons in te lichten over ongepaste, illegale of op een andere manier schadelijke bestanden. U staat op het punt om te melden:"
@@ -5655,6 +5643,48 @@
     "Success notification when user send feedback": {
       "Feedback sent": [
         "Feedback verzonden"
+      ]
+    },
+    "summer2023: Deal details": {
+      "Premium Password Manager": [
+        "Premium wachtwoordmanager"
+      ]
+    },
+    "summer2023: Describe Proton Pass": {
+      "Securely store your passwords and autofill them on websites. Includes unlimited passwords, autofill, password generator, and more.": [
+        "Sla uw wachtwoorden veilig op en vul ze automatisch in op websites. Met een onbeperkt aantal wachtwoorden, automatisch invullen, wachtwoordgenerator en meer."
+      ]
+    },
+    "summer2023: Tooltip": {
+      "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
+        "Maak veilige inloggegevens op al uw apparaten. Inclusief onbeperkte aliassen, 20 kluizen, geïntegreerde 2FA, automatisch invullen van creditcardgegevens en meer."
+      ],
+      "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "Met 2950 servers in meer dan 65 landen, verbinding met maximaal 10 apparaten, wereldwijd toegang tot streamingdiensten, malware- en advertentieblokkering, en meer."
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "Beveilig uw bestanden met versleutelde cloudopslag. Inclusief versiegeschiedenis, versleuteld bestanden delen en meer."
+      ]
+    },
+    "summer2023:Footer": {
+      "*Your subscription will automatically renew at the standard discounted rate at the end of your billing cycle.": [
+        "*Uw abonnement wordt aan het einde van uw factureringscyclus automatisch verlengd tegen het standaard aanbiedingstarief."
+      ],
+      "Discounts are based on the standard monthly pricing. This offer is only available to first-time subscribers.": [
+        "Kortingen gebaseerd op de standaardprijzen per maand. Deze aanbieding is alleen beschikbaar voor nieuwe abonnees."
+      ]
+    },
+    "summer2023:Info": {
+      "For a limited time, get the best ${ BRAND_NAME } has to offer at an exclusive discount.": [
+        "Het allerbeste van ${ BRAND_NAME } is nu tijdelijk verkrijgbaar met een exclusieve korting."
+      ],
+      "We’re celebrating the nine-year anniversary of our crowdfunding!": [
+        "We vieren het negenjarige jubileum van onze crowdfunding!"
+      ]
+    },
+    "summer2023:Offer title": {
+      "${ BRAND_NAME } Anniversary Sale": [
+        "${ BRAND_NAME }-jubileumaanbieding"
       ]
     },
     "Table header": {

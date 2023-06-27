@@ -97,6 +97,9 @@
       "As Scheduled": [
         "Som Planlagt"
       ],
+      "At most 100 contacts are allowed per contact group": [
+        "Højst 100 kontakter er tilladt pr. kontaktgruppe"
+      ],
       "Attach screenshot(s)": [
         "Vedhæft skærmfoto(s)"
       ],
@@ -327,6 +330,9 @@
       "Download ${ attachmentName }": [
         "Download ${ attachmentName }"
       ],
+      "Downloading": [
+        "Downloader"
+      ],
       "Edit": [
         "Redigér"
       ],
@@ -471,11 +477,17 @@
       "Hide messages": [
         "Skjul beskeder"
       ],
+      "hide-my-email aliases": [
+        "Hide-my-email-aliasser"
+      ],
       "I have a question": [
         "Jeg har et spørgsmål"
       ],
       "Image could not be loaded with tracker protection.": [
         "Billede kunne ikke indlæses med tracker beskyttelse."
+      ],
+      "Image will be loaded without a proxy": [
+        "Billede vil blive indlæst uden en proxy"
       ],
       "Images will be loaded without a proxy": [
         "Billeder vil blive indlæst uden en proxy"
@@ -1005,6 +1017,9 @@
       ],
       "This message contains remote content.": [
         "Denne besked indeholder eksternt indhold."
+      ],
+      "To search your emails securely, we need to download a copy of your messages to your browser. The initial download may take a moment.": [
+        "For at søge sikkert i dine e-mails, har vi brug for at downloade en kopi af dine beskeder til din browser. Den første download kan tage et stykke tid."
       ],
       "Toggle Calendar app": [
         "Skift Kalender-app"
@@ -2881,9 +2896,6 @@
       "No labels": [
         "Ingen etiketter"
       ],
-      "ProtonMail logo and a plus sign": [
-        "ProtonMail-logo og et plustegn"
-      ],
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "Spar tid ved at sende e-mail eller invitationer til alle på en gang, en premium-funktion blandt mange andre. Opgrader i dag."
       ],
@@ -3267,12 +3279,6 @@
       "Please fix the highlighted conflict to proceed.": [
         "Løs venligst den fremhævede konflikt for at fortsætte.",
         "Løs venligst de fremhævede konflikter for at fortsætte."
-      ],
-      "Please repeat the password": [
-        "Gentag adgangskoden"
-      ],
-      "Please set a password": [
-        "Opsæt en adgangskode"
       ],
       "Port is required": [
         "Port er påkrævet."
@@ -3757,6 +3763,9 @@
       ]
     },
     "familyOffer_2023:Action": {
+      "Decline invitation": [
+        "Afvis invitation"
+      ],
       "Got it": [
         "Forstået"
       ],
@@ -3806,11 +3815,38 @@
       "Sorry, you can't switch plans at this time.": [
         "Beklager, du kan i øjeblikket ikke ændre abonnement."
       ],
+      "Storage assigned to you: ${ assignedStorage }": [
+        "Lagerplads tildelt dig: ${ assignedStorage }"
+      ],
+      "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
+        "Visionary- og familie-abonnementer understøtter på nuværende tidspunkt ikke eksterne kontoer. Opret en ${ BRAND_NAME }-adresse før du tilmelder dig. ${ addressSettingsLink }"
+      ],
       "Visionary and family plans do not currently support lifetime accounts.": [
         "Visionary og familie-abonnementer understøtter på nuværende tidspunkt ikke livstidskonti."
       ],
+      "You are invited to join ${ invite.OrganizationName }": [
+        "Du er inviteret til at blive medlem af ${ invite.OrganizationName }"
+      ],
+      "You can only accept 3 invitations in a 6-month period. Please contact ${ supportLink } if you require an exception.": [
+        "Du kan kun acceptere 3 invitationer i en 6-måneds periode. Kontakt venligst ${ supportLink } hvis du har brug for en undtagelse."
+      ],
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Du er blevet inviteret til at blive medlem af ${ bannerOrganization }. ${ viewInviteButton }"
+      ],
+      "You have successfully joined the Family plan": [
+        "Du er tilmeldt familie-abonnementet."
+      ],
+      "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
+        "Du er inviteret til at forbinde din ${ BRAND_NAME }-konto til dette gruppe-abonnement og sammen nyde alle ${ BRAND_NAME_TWO } premium funktionerne."
+      ],
+      "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
+        "Din konto har flere e-mailadresser en det, der er tilgængeligt for dig på dette abonnement. ${ addressSettingsLink }"
+      ],
+      "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
+        "Din konto bruger ${ usedSpace } lagerplads, hvilket overstiger de ${ inviteSpace } du har fået tildelt. Slet nogle data eller bed abonnementsadministratoren om at øge din lagerplads."
+      ],
+      "Your current plan cannot join a Visionary or family plan.": [
+        "Dit nuværende abonnement kan ikke tilmelde sig et Visionary- eller familie-abonnement."
       ]
     },
     "familyOffer_2023:Get Proton Family": {
@@ -4000,9 +4036,34 @@
         "Standard"
       ]
     },
+    "Font face option": {
+      "System default": [
+        "Systemstandard"
+      ],
+      "Theme default": [
+        "Temastandard"
+      ]
+    },
     "Font Size Default": {
       "Default": [
         "Standard"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Stor"
+      ],
+      "Medium (recommended)": [
+        "Mellem (anbefalet)"
+      ],
+      "Small": [
+        "Lille"
+      ],
+      "Very large": [
+        "Meget stor"
+      ],
+      "Very small": [
+        "Meget lille"
       ]
     },
     "forwardmessage": {
@@ -4803,6 +4864,9 @@
       "Custom yearly": [
         "Tilpasset årlig"
       ],
+      "Customize the look and feel of ${ BRAND_NAME } applications.": [
+        "Tilpas udseendes og fornemmelsen af ${ BRAND_NAME }-applikationer."
+      ],
       "Daily": [
         "Daglig"
       ],
@@ -4825,6 +4889,9 @@
       "Don't forget to share the password with the recipient": [
         "Glem ikke at dele adgangskoden med modtageren"
       ],
+      "Downloading paused": [
+        "Download sat på pause"
+      ],
       "Draft": [
         "Kladde"
       ],
@@ -4833,6 +4900,9 @@
       ],
       "Draft saved.": [
         "Kladde gemt."
+      ],
+      "Drop file here to upload": [
+        "Træk fil hertil for at uploade"
       ],
       "Drop to import": [
         "Drop for at importere"
@@ -4957,6 +5027,9 @@
       ],
       "Hide original message": [
         "Skjul oprindelig besked"
+      ],
+      "How hide-my-email aliases works": [
+        "Sådan virker Hide-my-email"
       ],
       "I'm sending this message to a non-${ MAIL_APP_NAME } user.": [
         "Jeg sender denne besked til en, som ikke bruger ${ MAIL_APP_NAME }."
@@ -5176,6 +5249,9 @@
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Vores system markerede denne besked som et phishing-forsøg. Kontroller, at den er legitim."
       ],
+      "Our system flagged this message as a suspicious email. Please check that it is legitimate before clicking any links or attachments.": [
+        "Vores system har markeret denne besked som en mistænkelig e-mail. Tjek venligst, at den er legitim før du klikker på linke eller vedhæftede filer."
+      ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/Inline er kun kompatibel med Plain Text-formatet."
       ],
@@ -5288,6 +5364,9 @@
       "Scheduling message...": [
         "Planlægger besked..."
       ],
+      "Search option that lets you securely search for keywords in the body of email messages.": [
+        "Søgemulighed der lader sig søge sikkert for nøgleord i indholdet af e-mailbeskeder."
+      ],
       "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
         "Tager søgningen for lang tid? ${ dropdownButton } eller ${ toggleOffButton } fra denne søgesession."
       ],
@@ -5342,6 +5421,9 @@
       "Show original message": [
         "Vis oprindelig besked"
       ],
+      "SimpleLogin is a ${ BRAND_NAME } service, and your ${ BRAND_NAME_TWO } Account includes hide-my-email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
+        "SimpleLogin er en ${ BRAND_NAME }-tjeneste, og din ${ BRAND_NAME_TWO }-konto inkluderer Hide-my-email-aliasser. For at begynde at skjule din e-mailadresse, skal du gå til SimpleLogin og oprette dit første alias."
+      ],
       "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
         "SimpleLogin tilbyder en let måde at oprette konti hos upålidelige tredjepartssider hvor du ikke ønsker at vise din rigtige e-mailadresse."
       ],
@@ -5359,6 +5441,9 @@
       ],
       "Subject: ": [
         "Emne: "
+      ],
+      "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
+        "Abonnement er ved at udløbe: Genaktiver inden ${ byDate } for at beholde dine ${ planName }-fordele. ${ reactivateLink }"
       ],
       "support team": [
         "supportteam"
@@ -5409,6 +5494,9 @@
       "There has been an error with the signature used to verify the contact details, which may be the result of a password reset.": [
         "Der er opstået en fejl med den underskrift, der bruges til at verificere kontaktoplysningerne, hvilket kan være resultatet af en nulstilling af adgangskoden."
       ],
+      "They can't spam you if they don't know your email address. Protect your inbox with hide-my-email aliases.": [
+        "De kan ikke spamme dig, hvis de ikke kender din e-mailadresse. Beskyt din indbakke med Hide-my-email-aliasser."
+      ],
       "This account has been suspended due to a potential policy violation.": [
         "Denne konto er blevet suspenderet på grund af en potentiel overtrædelse af politik."
       ],
@@ -5423,6 +5511,9 @@
       ],
       "This conversation contains non-trashed messages.": [
         "Denne samtale indeholder ikke-kasserede beskeder."
+      ],
+      "This conversation contains one or more expiring messages": [
+        "Denne samtale indeholder en eller flere beskeder med udløb"
       ],
       "This conversation contains trashed messages.": [
         "Denne samtale indeholder kasserede beskeder."
@@ -5531,6 +5622,9 @@
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "Der er for mange meddelelser, der venter på at blive afsendt. Vent med at planlægge denne meddelelse, indtil en anden er blevet sendt."
       ],
+      "Turn off to only search by date, name, or email address. To disable search message content and delete downloaded messages, go to settings.": [
+        "Slå fra for kun at søge efter dato, navn og e-mailadresse. For at deaktivere søgning i beskedindhold og slette downloadede beskeder, skal du gå til indstillinger."
+      ],
       "Turn on to search the content of your messages": [
         "Slå til for at søge i indholdet af dine beskeder"
       ],
@@ -5635,6 +5729,9 @@
       ],
       "When do you want your message to self-destruct?": [
         "Hvornår ønsker du, at din besked skal selvdestruere?"
+      ],
+      "When giving out your email, use a unique, disposable hide-my-email alias instead of your real email address.": [
+        "Når du udleverer din e-mail, kan du bruge et unikt Hide-my-email-alias i stedet for din rigtige e-mailadresse."
       ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "Da du aktiverede betroede nøgler for ${ senderName }, blev de offentlige nøgler tilføjet til kontaktoplysningerne."
@@ -5743,6 +5840,9 @@
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "Du skrev \"${ attachmentsFoundKeyword }\", men der er ikke tilføjet en vedhæftning. Vil du sende din besked alligevel?"
       ],
+      "You've reached the maximum number of addresses in the contact group(s):": [
+        "Du har nået det maksimale antal adresser i kontaktgruppen/grupperne:"
+      ],
       "You've reached the maximum number of addresses in the contact group.": [
         "Du har nået det maksimale antal adresser i kontaktgruppen."
       ],
@@ -5800,6 +5900,10 @@
       ]
     },
     "info": {
+      "${ filteredList.length } command found.": [
+        "${ filteredList.length } kommando fundet.",
+        "${ filteredList.length } kommandoer funder."
+      ],
       "Optional": [
         "Valgfrit"
       ]
@@ -5961,6 +6065,9 @@
       ],
       "New message": [
         "Ny besked"
+      ],
+      "Open command panel": [
+        "Åbn kommandopanel"
       ],
       "Open next message": [
         "Åbn næste besked"
@@ -6438,6 +6545,9 @@
       "Street address": [
         "Adresse"
       ],
+      "Synchronize with system": [
+        "Synkroniser med system"
+      ],
       "System information": [
         "Systemoplysninger"
       ],
@@ -6473,6 +6583,9 @@
       ],
       "Toolbar": [
         "Værktøjslinje"
+      ],
+      "Type a command...": [
+        "Skriv en kommando..."
       ],
       "Undisclosed Recipients": [
         "Oplyste modtagere"
@@ -6693,6 +6806,9 @@
       ],
       "Re-enable the address linked to this calendar to update your invitation.": [
         "Genaktivér adressen knyttet til denne kalender for at opdatere din invitation."
+      ],
+      "Reactivate now": [
+        "Genaktiver nu"
       ],
       "Request an invite": [
         "Anmod om invitation"
@@ -7062,6 +7178,9 @@
       "Custom email domains": [
         "Brugerdefinerede e-maildomæner"
       ],
+      "Hide-my-email aliases": [
+        "Hide-my-email-aliasser"
+      ],
       "Schedule messages at any time": [
         "Planlæg beskeder til ethvert tidspunkt"
       ],
@@ -7304,6 +7423,9 @@
       "Please insert link first": [
         "Indsæt link først"
       ],
+      "Search date, name, email address, or subject line": [
+        "Søg dato, navn, e-mailadresse eller emnelinje"
+      ],
       "Search for group name": [
         "Søg efter gruppenavn"
       ],
@@ -7330,6 +7452,9 @@
       ],
       "Text": [
         "Tekst"
+      ],
+      "Type a command…": [
+        "Skriv en kommando…"
       ],
       "Type text or keyword": [
         "Indtast tekst eller nøgleord"
@@ -8012,6 +8137,9 @@
       "Message added to ${ labelName }.": [
         "Besked føjet til ${ labelName }."
       ],
+      "Message content search enabled": [
+        "Beskedindholdssøgning aktiveret"
+      ],
       "Message deleted": [
         "Besked slettet"
       ],
@@ -8202,6 +8330,9 @@
         "${ unreads } ulæst besked",
         "${ unreads } ulæste beskeder"
       ],
+      "(active)": [
+        "(aktiv)"
+      ],
       "Account suspended": [
         "Konto suspenderet"
       ],
@@ -8319,6 +8450,9 @@
       ],
       "Customize your mail import": [
         "Tilpas din mail-import"
+      ],
+      "Day theme": [
+        "Dagstema"
       ],
       "Decryption error": [
         "Dekrypteringsfejl"
@@ -8548,6 +8682,9 @@
       "Next message": [
         "Næste besked"
       ],
+      "Night theme": [
+        "Nattetema"
+      ],
       "No attachment found": [
         "Ingen vedhæftning fundet"
       ],
@@ -8705,6 +8842,9 @@
       "Trust public key?": [
         "Hav tillid til offentlig nøgle?"
       ],
+      "Unlock contacts groups": [
+        "Få adgang til kontaktgrupper"
+      ],
       "Unsubscribe": [
         "Afmeld abonnement"
       ],
@@ -8751,6 +8891,9 @@
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Automatisk betyder, at formatet i skrivesessionen benyttes ved afsendelse til denne bruger. Simpel tekst indikerer, at beskeden altid konverteres til simpel tekst ved afsendelse."
       ],
+      "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
+        "Skift automatisk mellem dine foretrukne temaer for dag og nat synkront med dit systems dag- og nattilstande"
+      ],
       "Customize import to reduce the number of folders": [
         "Tilpas import for at reducere antallet af mapper"
       ],
@@ -8796,8 +8939,17 @@
       "The image could not be loaded": [
         "Billedet kunne ikke indlæses"
       ],
+      "The image could not be loaded using proxy": [
+        "Billedet kunne ikke indlæses med en proxy"
+      ],
       "The import will start with the most recent messages.": [
         "Importen vil starte med de seneste beskeder."
+      ],
+      "The selected theme will be active when your system is set to \"dark mode\"": [
+        "Det valgte tema vil blive aktiveret når dit system er sat til \"mørk tilstand\""
+      ],
+      "The selected theme will be active when your system is set to \"light mode\"": [
+        "Det valgte tema vil blive aktiveret når dit system er sat til \"lys tilstand\""
       ],
       "This feature is only available for paid users": [
         "Denne funktion er kun tilgængelig for betalende brugere"

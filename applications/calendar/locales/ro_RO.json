@@ -554,10 +554,10 @@
         "Actualizare frază de recuperare"
       ],
       "Upgrade": [
-        "Modernizare"
+        "Modificare"
       ],
       "Upgrade now": [
-        "Modernizare"
+        "Modificare"
       ],
       "Upload picture": [
         "Încărcare imagine"
@@ -3391,7 +3391,7 @@
         "${ addressCount } de adrese de e-mail"
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
-        "${ appName } are nevoie de permisiunea dvs. pentru ${ enableDesktopNotifications }."
+        "${ appName } necesită permisiunea pentru ${ enableDesktopNotifications }."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "Un calendar nou",
@@ -3632,7 +3632,7 @@
         "Introduceți codul din aplicația Authenticator."
       ],
       "Enter the credentials of the email account you want to import from.": [
-        "Introduceți datele de conectare ale contului de e-mail din care doriți să importați."
+        "Introduceți datele de conectare a contului de e-mail din care doriți să importați."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Introduceți codul de verificare care a fost trimis la ${ destinationText }."
@@ -3863,6 +3863,9 @@
       "Some of your answers to occurrences previously updated by the organizer will be lost.": [
         "Unele dintre răspunsurile dvs. la evenimentele actualizate anterior de către organizator vor fi pierdute."
       ],
+      "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
+        "Abonamentul se încheie: reactivați-l până la ${ byDate } pentru a vă păstra beneficiile planului ${ planName }. ${ reactivateLink }"
+      ],
       "support team": [
         "echipa de asistență"
       ],
@@ -4050,7 +4053,7 @@
         "Veţi actualiza toate evenimentele din această serie. Participanţii eliminaţi vor fi notificaţi."
       ],
       "You've reached the maximum number of addresses in the contact group(s):": [
-        "Ați atins numărul maxim de adrese din grupul de contacte."
+        "Ați atins numărul maxim de adrese din grupul de contacte:"
       ],
       "You've reached the maximum number of addresses in the contact group.": [
         "Ați atins numărul maxim de adrese din grupul de contacte."
@@ -4584,11 +4587,14 @@
       "Pay invoice": [
         "Plată factură"
       ],
+      "Reactivate now": [
+        "Reactivare"
+      ],
       "Request an invite": [
         "Solicitați o invitație"
       ],
       "Upgrade account": [
-        "Modernizare cont"
+        "Modificare cont"
       ],
       "What’s this?": [
         "Ce este asta?"
@@ -4683,7 +4689,7 @@
         "Gestionare calendare"
       ],
       "Upgrade": [
-        "Modernizare"
+        "Modificare"
       ]
     },
     "Modal for received invitation to share calendar; text": {
@@ -4710,7 +4716,7 @@
         "Editare calendar"
       ],
       "Get a country's official public holidays calendar.": [
-        "Obțineți calendarul oficial al vacanțelor publice al unei țări."
+        "Obțineți calendarul oficial al vacanțelor publice a unei țări."
       ],
       "How to import calendars from another service": [
         "Cum se importă calendarele din alt serviciu"
@@ -4891,7 +4897,7 @@
     },
     "new_plans: Action": {
       "Upgrade now": [
-        "Modernizare"
+        "Modificare"
       ]
     },
     "new_plans: action": {
@@ -5622,7 +5628,7 @@
         "Accesare planuri abonamente"
       ],
       "Upgrade": [
-        "Modernizare"
+        "Modificare"
       ]
     },
     "specialoffer: Offers": {
