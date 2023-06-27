@@ -41,6 +41,9 @@
       "Cancel": [
         "Скасувати"
       ],
+      "Cancel subscription": [
+        "Скасувати передплату"
+      ],
       "Change mailbox password": [
         "Змінити пароль поштової скриньки"
       ],
@@ -190,6 +193,9 @@
       ],
       "Increase": [
         "Збільшити"
+      ],
+      "Keep my ${ vpnPlanNameShort } subscription": [
+        "Залишити мою передплату ${ vpnPlanNameShort }"
       ],
       "Load more": [
         "Завантажити ще"
@@ -371,6 +377,9 @@
       "Upgrade now": [
         "Покращити"
       ],
+      "Use ${ label } theme": [
+        "Використовувати тему ${ label }"
+      ],
       "Use a different card": [
         "Використати іншу картку"
       ],
@@ -426,6 +435,14 @@
       ],
       "Try free for 30 days": [
         "Спробуйте безплатно протягом 30 днів"
+      ]
+    },
+    "Action subscription": {
+      "Manage": [
+        "Керувати"
+      ],
+      "Reactivate": [
+        "Повторна активація"
       ]
     },
     "Addon": {
@@ -2091,6 +2108,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } потребує вашого дозволу, щоб ${ enableDesktopNotifications }."
       ],
+      "${ autoRenewal } your subscription will renew automatically on ${ renewalTime }.": [
+        "${ autoRenewal } передплату буде автоматично поновлено ${ renewalTime }."
+      ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Продовживши, ви втратите доступ до усіх зашифрованих даних вашого облікового запису."
       ],
@@ -2178,9 +2198,6 @@
       "Additional options": [
         "Додаткові опції"
       ],
-      "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
-        "Після здійснення платежу в Bitcoin, дотримуйтесь наведених далі настанов для оновлення."
-      ],
       "All ${ BRAND_NAME } apps and their premium features": [
         "Всі програми від ${ BRAND_NAME } з преміумфункціями"
       ],
@@ -2189,6 +2206,9 @@
       ],
       "American Express SafeKey logo": [
         "Логотип American Express SafeKey"
+      ],
+      "Amount above maximum (${ amount }).": [
+        "Сума перевищує максимум (${ amount })."
       ],
       "Amount below minimum (${ amount }).": [
         "Сума нижче найменшої (${ amount })."
@@ -2204,6 +2224,9 @@
       ],
       "Attention required": [
         "Потребує уваги"
+      ],
+      "Auto-renewal: ": [
+        "Автопоновлення: "
       ],
       "Balance from your previous subscription": [
         "Баланс після вашої попередньої передплати"
@@ -2267,6 +2290,9 @@
       ],
       "Custom email domains": [
         "Власні домени електронної пошти"
+      ],
+      "Customize the look and feel of ${ BRAND_NAME } applications.": [
+        "Налаштуйте зовнішній вигляд програм ${ BRAND_NAME }."
       ],
       "Discover ProtectBuy logo": [
         "Логотип Discover ProtectBuy"
@@ -2376,6 +2402,9 @@
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Якщо ви вважаєте, що це помилка, зв'яжіться з нами ${ contactLink }."
       ],
+      "If you cancel, your ${ vpnPlanName } subscription will not be renewed when it expires on ${ expiryDate }.": [
+        "Якщо ви скасуєте передплату ${ vpnPlanName }, її не буде поновлено, коли вона завершиться ${ expiryDate }."
+      ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Якщо ви не можете знайти лист у вхідних повідомленнях, перевірте свою теку спаму."
       ],
@@ -2402,6 +2431,9 @@
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Важливо: Впевніться, що ви зберегли коди відновлення. Інакше ви можете назавжди втратити доступ до свого облікового запису в разі втрати пристрою двоетапної перевірки."
+      ],
+      "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
+        "Наступним кроком ви зможете внести депозит за допомогою Bitcoin-адреси."
       ],
       "Install a Country configuration file to connect to a random server in the country of your choice.": [
         "Установіть файл конфігурації країни для під'єднання до випадкового сервера у вибраній країні."
@@ -2604,6 +2636,12 @@
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
         "Простір сховища спільний для ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } та ${ DRIVE_APP_NAME }."
       ],
+      "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
+        "Надішліть депозит за наступною адресою або відскануйте QR-код. Ваш депозит буде показаний на вашому рахунку після підтвердження."
+      ],
+      "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
+        "Передплата закінчується: повторно активуйте її до ${ byDate }, щоб зберегти переваги ${ planName }. ${ reactivateLink }"
+      ],
       "Support for 1 custom email domain": [
         "Підтримка 1 власного домену електронної пошти"
       ],
@@ -2640,6 +2678,9 @@
       "This can take a few seconds or a few minutes depending on your device": [
         "Це може тривати кілька секунд або кілька хвилин залежно від вашого пристрою"
       ],
+      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
+        "Це скасує вашу поточну платну підписку, і ви втратите всі накопичені привілеї лояльності."
+      ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
         "Це скасує вашу поточну передплату і ви втратите будь-які накопичені переваги лояльності. Залишковий баланс вашої передплати буде повернено як кредити облікового запису."
       ],
@@ -2660,6 +2701,9 @@
       ],
       "To ${ planName }": [
         "Для ${ planName }"
+      ],
+      "To complete your payment, please send ${ btcAmountBold } to the address below.": [
+        "Щоб завершити платіж, надішліть ${ btcAmountBold } на вказану нижче адресу."
       ],
       "to continue to ${ toAppName }": [
         "для переходу до ${ toAppName }"
@@ -2889,6 +2933,9 @@
       "You will be redirected to the VPN download page": [
         "Вас буде перенаправлено на сторінку завантаження VPN"
       ],
+      "You will lose access to ${ vpnPlanNameShort } servers and features on this date.": [
+        "Ви втратите доступ до серверів і функцій ${ vpnPlanNameShort } після цієї дати."
+      ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Для користування ${ MAIL_APP_NAME } і ${ CALENDAR_APP_NAME } потрібна адреса ${ BRAND_NAME }"
       ],
@@ -2954,6 +3001,11 @@
     "Info message for custom invoice modal": {
       "Add your name (or company name) and address to your invoices.": [
         "Додайте своє ім'я (або назву компанії) та адресу до своїх рахунків."
+      ]
+    },
+    "Info subscription": {
+      "You can prevent expiry by reactivating the subscription": [
+        "Ви можете запобігти закінченню терміну дії, відновивши підписку"
       ]
     },
     "Info when deleting payment method": {
@@ -3067,11 +3119,11 @@
       "Browser version": [
         "Версія браузера"
       ],
-      "BTC address:": [
-        "BTC адреса:"
+      "BTC address": [
+        "BTC адреса"
       ],
-      "BTC amount:": [
-        "Сума в BTC:"
+      "BTC amount": [
+        "Сума в BTC"
       ],
       "Card holder": [
         "Власник картки"
@@ -3301,6 +3353,9 @@
       "Subscription options": [
         "Опції передплати"
       ],
+      "Synchronize with system": [
+        "Синхронізувати з системою"
+      ],
       "System information": [
         "Інформація про систему"
       ],
@@ -3404,6 +3459,9 @@
       "Forgot username?": [
         "Забули ім'я користувача?"
       ],
+      "How to pay with Bitcoin?": [
+        "Як оплатити за допомогою Bitcoin?"
+      ],
       "Learn more": [
         "Докладніше"
       ],
@@ -3418,6 +3476,9 @@
       ],
       "Privacy policy": [
         "Політика приватності"
+      ],
+      "Reactivate now": [
+        "Повторно активувати"
       ],
       "Request an invite": [
         "Запитати запрошення"
@@ -4725,7 +4786,7 @@
         "Доступ до заблокованого вмісту та приватний перегляд. Включає 1700 серверів у понад 60 країнах, найвищу швидкість VPN, 10 VPN-з'єднань, всесвітні стримінгові сервіси, захист від зловмисних програм і реклами, а також інші можливості."
       ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
-        "Доступ звідусіль до матеріалів стримінгових сервісів, включно з Netflix, Disney+ і Prime Video."
+        "Доступ звідусіль до стримінгових сервісів, включно з Netflix, Disney+ та Prime Video."
       ],
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
         "Всі найкращі можливості наших преміум функцій: 100 адрес пошти, підтримка 10 власних доменів, необмежена кількість псевдонімів Hide-my-email, спільний доступ до календаря, зашифроване хмарне сховище, спільний доступ до файлів і багато іншого."
@@ -4937,6 +4998,9 @@
       "Active": [
         "Активний"
       ],
+      "Expiring": [
+        "Термін дії"
+      ],
       "Upcoming": [
         "Невдовзі"
       ]
@@ -4999,8 +5063,14 @@
       "Phone number updated": [
         "Номер телефону оновлено"
       ],
+      "Preference saved": [
+        "Налаштування збережено"
+      ],
       "Verification successful": [
         "Перевірка пройшла успішно"
+      ],
+      "You have successfully cancelled your subscription.": [
+        "Ви успішно скасували передплату."
       ],
       "You have successfully unsubscribed": [
         "Ви успішно скасували передплату"
@@ -5070,6 +5140,9 @@
       "${ VPN_APP_NAME } clients": [
         "Клієнти ${ VPN_APP_NAME }"
       ],
+      "(active)": [
+        "(активно)"
+      ],
       "1. Give a name to the config to be generated": [
         "1. Назвіть створювану конфігурацію"
       ],
@@ -5133,6 +5206,12 @@
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Скасувати передплату ${ MAIL_SHORT_APP_NAME }"
       ],
+      "Cancel subscription": [
+        "Скасувати передплату"
+      ],
+      "Cancel subscription?": [
+        "Скасувати передплату?"
+      ],
       "Card verification": [
         "Перевірка картки"
       ],
@@ -5178,6 +5257,9 @@
       "Date": [
         "Дата"
       ],
+      "Day theme": [
+        "Світла тема"
+      ],
       "Delete": [
         "Видалити"
       ],
@@ -5199,9 +5281,6 @@
       "Downloads": [
         "Завантаження"
       ],
-      "Duration": [
-        "Тривалість"
-      ],
       "Edit credit/debit card": [
         "Редагувати кредитну/платіжну картку"
       ],
@@ -5213,9 +5292,6 @@
       ],
       "Email subscriptions": [
         "Підписки електронної пошти"
-      ],
-      "End date": [
-        "Дата завершення"
       ],
       "Enter your password": [
         "Введіть свій пароль"
@@ -5259,6 +5335,9 @@
       "Next": [
         "Далі"
       ],
+      "Night theme": [
+        "Темна тема"
+      ],
       "No recovery method": [
         "Немає способу відновлення"
       ],
@@ -5300,9 +5379,6 @@
       ],
       "Phone": [
         "Телефон"
-      ],
-      "Plan": [
-        "Тарифний план"
       ],
       "Plan summary": [
         "Підсумок плану"
@@ -5370,9 +5446,6 @@
       "Sign out": [
         "Вийти"
       ],
-      "Start date": [
-        "Дата початку"
-      ],
       "Status": [
         "Стан"
       ],
@@ -5381,9 +5454,6 @@
       ],
       "Switch to two-password mode": [
         "Перемкнутися на двопарольний режим"
-      ],
-      "Total paid": [
-        "Усього сплачено"
       ],
       "TV sign in": [
         "Вхід на телевізорі"
@@ -5399,9 +5469,6 @@
       ],
       "Unsupported browser": [
         "Непідтримуваний браузер"
-      ],
-      "Users": [
-        "Користувачі"
       ],
       "Verification": [
         "Перевірка"
@@ -5465,12 +5532,50 @@
         "Рахунок-фактура ${ MAIL_APP_NAME }"
       ]
     },
+    "Title subscription": {
+      "Actions": [
+        "Дії"
+      ],
+      "Duration": [
+        "Тривалість"
+      ],
+      "End date": [
+        "Дата завершення"
+      ],
+      "Plan": [
+        "Тарифний план"
+      ],
+      "Start date": [
+        "Дата початку"
+      ],
+      "Status": [
+        "Стан"
+      ],
+      "Total": [
+        "Усього"
+      ],
+      "Total paid": [
+        "Усього сплачено"
+      ],
+      "Users": [
+        "Користувачі"
+      ]
+    },
     "Tooltip": {
+      "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
+        "Автоматичне перемикання між вашими улюбленими темами дня і ночі синхронізовано з денним і нічним режимами вашої системи"
+      ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Якщо ви придбали подарунковий код або отримали його від нашої служби підтримки, ви можете ввести його тут."
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Новий цикл передплати розпочинається з ${ formattedTime }"
+      ],
+      "The selected theme will be active when your system is set to \"dark mode\"": [
+        "Вибрана тема буде активною, коли ваша система буде переведена в \"темний режим\""
+      ],
+      "The selected theme will be active when your system is set to \"light mode\"": [
+        "Вибрана тема буде активною, коли у вашій системі встановлено \"світлий режим\""
       ]
     },
     "Tor out of date": {
