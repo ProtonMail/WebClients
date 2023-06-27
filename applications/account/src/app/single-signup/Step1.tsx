@@ -31,7 +31,6 @@ import {
     useErrorHandler,
     useFeature,
     useLoading,
-    useNotifications,
 } from '@proton/components/hooks';
 import {
     AmountAndCurrency,
@@ -43,15 +42,11 @@ import {
 } from '@proton/components/payments/core';
 import metrics, { observeApiError } from '@proton/metrics';
 import { WebCoreVpnSingleSignupStep1InteractionTotal } from '@proton/metrics/types/web_core_vpn_single_signup_step1_interaction_total_v1.schema';
-import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { TelemetryAccountSignupBasicEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
-import { queryCheckEmailAvailability } from '@proton/shared/lib/api/user';
 import { ProductParam } from '@proton/shared/lib/apps/product';
 import { getIsVPNApp } from '@proton/shared/lib/authentication/apps';
 import { APPS, CLIENT_TYPES, CYCLE, PLANS, VPN_CONNECTIONS, VPN_SHORT_APP_NAME } from '@proton/shared/lib/constants';
-import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
-import { getOwnershipVerificationHeaders, mergeHeaders } from '@proton/shared/lib/fetch/headers';
 import { confirmEmailValidator, emailValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import { toMap } from '@proton/shared/lib/helpers/object';
@@ -67,8 +62,12 @@ import noop from '@proton/utils/noop';
 import { getSubscriptionPrices } from '../signup/helper';
 import { SignupActionResponse, SignupCacheResult, SignupModel, SignupType } from '../signup/interfaces';
 import { handleCreateUser } from '../signup/signupActions/handleCreateUser';
+import {
+    EmailValidationState,
+    createAsyncValidator,
+    defaultEmailValidationState,
+} from '../single-signup-v2/validateEmail';
 import { useFlowRef } from '../useFlowRef';
-import AlreadyUsedNotification from './AlreadyUsedNotification';
 import Box from './Box';
 import CycleSelector from './CycleSelector';
 import Guarantee from './Guarantee';
@@ -78,6 +77,27 @@ import UpsellModal from './UpsellModal';
 import swissFlag from './flag.svg';
 import { getUpsellShortPlan } from './helper';
 import { OnUpdate } from './interface';
+
+const validator = createAsyncValidator();
+
+const getErrorDetails = ({
+    emailValidationState,
+    email,
+    emailConfirm,
+}: {
+    emailValidationState?: EmailValidationState;
+    email: string;
+    emailConfirm: string;
+}) => {
+    return {
+        email: [
+            email === emailValidationState?.email ? emailValidationState?.message : '',
+            requiredValidator(email),
+            emailValidator(email),
+        ].find((x) => !!x),
+        emailConfirm: [confirmEmailValidator(email, emailConfirm)].find((x) => !!x),
+    };
+};
 
 const FeatureItem = ({ left, text }: { left: ReactNode; text: string }) => {
     return (
@@ -145,11 +165,10 @@ const Step1 = ({
     const [upsellModalProps, setUpsellModal, renderUpsellModal] = useModalState();
     const { isDesktop } = useActiveBreakpoint();
     const { APP_NAME } = useConfig();
-    const { createNotification } = useNotifications();
     const [email, setEmail] = useState('');
     const [confirmEmail, setConfirmEmail] = useState('');
     const trimmedEmail = email.trim();
-    const [emailAsyncError, setEmailAsyncError] = useState({ email: '', message: '' });
+    const [emailValidationState, setEmailValidationState] = useState<EmailValidationState>(defaultEmailValidationState);
     const emailRef = useRef<HTMLInputElement>(null);
     const emailConfirmRef = useRef<HTMLInputElement>(null);
     const freeSignupUrl = 'https://account.protonvpn.com/signup';
@@ -384,16 +403,11 @@ const Step1 = ({
             return { ...old, [key]: { ...old[key], ...diff } };
         });
     };
+    const errors = getErrorDetails({ emailValidationState, email: trimmedEmail, emailConfirm: confirmEmail.trim() });
 
-    const emailError = [
-        email === emailAsyncError.email ? emailAsyncError.message : '',
-        requiredValidator(trimmedEmail),
-        emailValidator(trimmedEmail),
-    ].find((x) => !!x);
-    const emailValidationError = inputState.email.interactive && inputState.email.focus ? emailError : undefined;
-    const emailConfirmError = [confirmEmailValidator(trimmedEmail, confirmEmail.trim())].find((x) => !!x);
+    const emailValidationError = inputState.email.interactive && inputState.email.focus ? errors.email : undefined;
     const emailConfirmValidationError =
-        inputState.emailConfirm.interactive && inputState.emailConfirm.focus ? emailConfirmError : undefined;
+        inputState.emailConfirm.interactive && inputState.emailConfirm.focus ? errors.emailConfirm : undefined;
 
     const validatePayment = () => {
         if (loadingPayment || loadingPaymentDetails) {
@@ -403,43 +417,13 @@ const Step1 = ({
     };
 
     const validateEmail = () => {
-        if (emailError || emailConfirmError) {
+        if (errors.email || errors.emailConfirm) {
             mergeInputState('email', { interactive: true, focus: true });
             mergeInputState('emailConfirm', { interactive: true, focus: true });
-            scrollIntoEmail(emailConfirmError && !emailError ? 'confirm' : undefined);
+            scrollIntoEmail(errors.emailConfirm && !errors.email ? 'confirm' : undefined);
             return false;
         }
         return true;
-    };
-
-    const validateAsyncEmail = async () => {
-        const validateFlow = createFlow();
-        try {
-            await silentApi(mergeHeaders(queryCheckEmailAvailability(email), getOwnershipVerificationHeaders('lax')));
-            return true;
-        } catch (e) {
-            if (!validateFlow()) {
-                return false;
-            }
-            const { code, message } = getApiError(e);
-            if (
-                [
-                    API_CUSTOM_ERROR_CODES.ALREADY_USED,
-                    API_CUSTOM_ERROR_CODES.EMAIL_FORMAT,
-                    API_CUSTOM_ERROR_CODES.NOT_ALLOWED,
-                ].includes(code)
-            ) {
-                setEmailAsyncError({ email, message });
-                createNotification({
-                    type: 'error',
-                    text: <AlreadyUsedNotification onUpdate={onUpdate} to={signInTo} />,
-                    key: 'already-used',
-                    expiration: 7000,
-                });
-                scrollIntoEmail();
-            }
-            return false;
-        }
     };
 
     const {
@@ -457,9 +441,9 @@ const Step1 = ({
         defaultMethod: paymentMethods[0],
         amount: subscriptionData.checkResult.AmountDue,
         currency,
-        onValidatePaypal: async () => {
+        onValidatePaypal: () => {
             onUpdate({ pay: 'paypal' });
-            if (!validatePayment() || !validateEmail() || !(await validateAsyncEmail())) {
+            if (!validatePayment() || !validateEmail()) {
                 return false;
             }
             return true;
@@ -602,6 +586,19 @@ const Step1 = ({
                                     onValue={(value: string) => {
                                         setEmail(value);
                                         mergeInputState('email', { interactive: true });
+
+                                        const email = value.trim();
+                                        const errors = getErrorDetails({
+                                            email,
+                                            emailConfirm: confirmEmail.trim(),
+                                        });
+                                        validator.trigger({
+                                            api: silentApi,
+                                            error: !!(errors.email || errors.emailConfirm),
+                                            email,
+                                            set: setEmailValidationState,
+                                            measure: async () => {},
+                                        });
                                     }}
                                     onFocus={() => {
                                         handleUpdate('email', { emType: 'set' });
@@ -624,6 +621,19 @@ const Step1 = ({
                                         onValue={(value: string) => {
                                             setConfirmEmail(value);
                                             mergeInputState('emailConfirm', { interactive: true });
+
+                                            const email = trimmedEmail;
+                                            const errors = getErrorDetails({
+                                                email,
+                                                emailConfirm: value.trim(),
+                                            });
+                                            validator.trigger({
+                                                api: silentApi,
+                                                error: !!(errors.email || errors.emailConfirm),
+                                                email,
+                                                set: setEmailValidationState,
+                                                measure: async () => {},
+                                            });
                                         }}
                                         onFocus={() => {
                                             handleUpdate('email', { emType: 'confirm' });
@@ -666,8 +676,7 @@ const Step1 = ({
                                                 !paymentParameters ||
                                                 !handleCardSubmit() ||
                                                 !validatePayment() ||
-                                                !validateEmail() ||
-                                                !(await validateAsyncEmail())
+                                                !validateEmail()
                                             ) {
                                                 return;
                                             }
