@@ -250,7 +250,7 @@ const AccountStepDetails = ({
             await api(mergeHeaders(queryCheckEmailAvailability(email), getOwnershipVerificationHeaders('lax')));
             measure({
                 event: TelemetryAccountSignupEvents.beAvailableExternal,
-                dimensions: { availableExternal: 'true' },
+                dimensions: { available_external: 'true' },
             });
             return true;
         } catch (e) {
@@ -281,7 +281,7 @@ const AccountStepDetails = ({
                 scrollInto('email');
                 measure({
                     event: TelemetryAccountSignupEvents.beAvailableExternal,
-                    dimensions: { availableExternal: 'false' },
+                    dimensions: { available_external: 'false' },
                 });
             }
             return false;
