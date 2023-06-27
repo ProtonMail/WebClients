@@ -8,12 +8,15 @@ import { Button } from '@proton/atoms/Button';
 import { Icon, InputFieldTwo, PasswordInputTwo } from '@proton/components/components';
 import { useNotifications } from '@proton/components/hooks';
 import { contentScriptMessage, sendMessage } from '@proton/pass/extension/message';
+import { createTelemetryEvent } from '@proton/pass/telemetry/events';
 import type { Item } from '@proton/pass/types';
 import { AutoSaveType, type PromptedFormEntry, WorkerMessageType } from '@proton/pass/types';
+import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import { partialMerge } from '@proton/pass/utils/object';
 import { uniqueId } from '@proton/pass/utils/string';
 import { isValidURL } from '@proton/pass/utils/url';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
+import noop from '@proton/utils/noop';
 
 import { useIFrameContext } from '../../context/IFrameContextProvider';
 
@@ -25,7 +28,7 @@ type AutosaveFormValues = {
     password: string;
 };
 
-export const Autosave: VFC<{ submission: PromptedFormEntry; onAutoSaved: () => void }> = ({
+export const Autosave: VFC<{ submission: PromptedFormEntry; onAutoSaved?: () => void }> = ({
     submission,
     onAutoSaved,
 }) => {
@@ -81,12 +84,20 @@ export const Autosave: VFC<{ submission: PromptedFormEntry; onAutoSaved: () => v
                     })
                 );
 
-                return result.type === 'success'
-                    ? onAutoSaved()
-                    : createNotification({
-                          text: c('Warning').t`Unable to save`,
-                          type: 'error',
-                      });
+                if (result.type === 'success') {
+                    sendMessage(
+                        contentScriptMessage({
+                            type: WorkerMessageType.TELEMETRY_EVENT,
+                            payload: {
+                                event: createTelemetryEvent(TelemetryEventName.AutosaveDone, {}, {}),
+                            },
+                        })
+                    ).catch(noop);
+
+                    return onAutoSaved?.();
+                }
+
+                return createNotification({ text: c('Warning').t`Unable to save`, type: 'error' });
             } catch (_) {
             } finally {
                 setBusy(false);
