@@ -1,29 +1,77 @@
+import type { ReactNode } from 'react';
 import { type VFC, useCallback, useState } from 'react';
 import { useSelector } from 'react-redux';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader';
+import type { IconName, IconSize } from '@proton/components';
 import { Icon } from '@proton/components';
 import { selectCanLoadDomainImages } from '@proton/pass/store';
-import type { ItemRevisionWithOptimistic } from '@proton/pass/types';
+import type { ItemRevisionWithOptimistic, MaybeNull } from '@proton/pass/types';
 import clsx from '@proton/utils/clsx';
 
-import { ImageStatus, ProxiedDomainImage } from '../../../shared/components/icon/ProxiedDomainImage';
-import { presentItemIcon } from '../../../shared/items';
+import { presentItemIcon } from '../../items/icons';
+import { IconBox } from './IconBox';
+import { ImageStatus, ProxiedDomainImage } from './ProxiedDomainImage';
 
-import './ItemIcon.scss';
+type BaseItemIconProps = {
+    icon: IconName;
+    url?: MaybeNull<string>;
+    size: IconSize;
+    loadImage?: boolean;
+    alt: string;
+    className?: string;
+    iconClassName?: string;
+    renderIndicators?: () => ReactNode;
+};
 
-export const ItemIcon: VFC<{ item: ItemRevisionWithOptimistic; size: number; className: string }> = ({
-    item,
+type ItemIconProps = { item: ItemRevisionWithOptimistic; size: IconSize; className: string };
+
+export const BaseItemIcon: VFC<BaseItemIconProps> = ({
+    icon,
+    url,
     size,
+    loadImage = true,
+    alt,
     className,
+    iconClassName,
+    renderIndicators,
 }) => {
-    const { data, optimistic, failed } = item;
-    const loadDomainImages = useSelector(selectCanLoadDomainImages);
     const [imageStatus, setImageStatus] = useState<ImageStatus>(ImageStatus.LOADING);
-    const domainURL = data.type === 'login' ? data.content.urls?.[0] : null;
-    const imageSize = Math.round(size * 0.6);
 
     const handleStatusChange = useCallback((status: ImageStatus) => setImageStatus(status), []);
+
+    return (
+        <IconBox size={size} className={className} mode={url && imageStatus === ImageStatus.READY ? 'image' : 'icon'}>
+            <span className="sr-only">{alt}</span>
+
+            {loadImage && (
+                <ProxiedDomainImage
+                    className={clsx('w-custom h-custom absolute-center', iconClassName)}
+                    style={{ '--w-custom': `${size}px`, '--h-custom': `${size}px` }}
+                    onStatusChange={handleStatusChange}
+                    status={imageStatus}
+                    url={url ?? ''}
+                />
+            )}
+
+            {imageStatus !== ImageStatus.READY && (
+                <Icon
+                    className={clsx('absolute-center', iconClassName)}
+                    color="var(--interaction-norm)"
+                    name={icon}
+                    size={size}
+                />
+            )}
+
+            {renderIndicators?.()}
+        </IconBox>
+    );
+};
+
+export const ItemIcon: VFC<ItemIconProps> = ({ item, size, className }) => {
+    const { data, optimistic, failed } = item;
+    const loadDomainImages = useSelector(selectCanLoadDomainImages);
+    const domainURL = data.type === 'login' ? data.content.urls?.[0] : null;
 
     const renderIndicators = () => {
         if (failed) {
@@ -32,7 +80,7 @@ export const ItemIcon: VFC<{ item: ItemRevisionWithOptimistic; size: number; cla
                     className="absolute-center"
                     color="var(--signal-warning)"
                     name="exclamation-circle-filled"
-                    size={20}
+                    size={size}
                 />
             );
         }
@@ -43,40 +91,15 @@ export const ItemIcon: VFC<{ item: ItemRevisionWithOptimistic; size: number; cla
     };
 
     return (
-        <div
-            className={clsx(
-                'pass-item-icon w-custom h-custom rounded-xl overflow-hidden relative',
-                className,
-                domainURL && imageStatus === ImageStatus.READY && 'pass-item-icon--has-image'
-            )}
-            style={{ '--w-custom': `${size}px`, '--h-custom': `${size}px` }}
-        >
-            <span className="sr-only">{data.type}</span>
-
-            {loadDomainImages && (
-                <ProxiedDomainImage
-                    className={clsx(
-                        'w-custom h-custom absolute-center',
-                        optimistic && 'opacity-30',
-                        failed && 'hidden'
-                    )}
-                    style={{ '--w-custom': `${imageSize}px`, '--h-custom': `${imageSize}px` }}
-                    onStatusChange={handleStatusChange}
-                    status={imageStatus}
-                    url={domainURL ?? ''}
-                />
-            )}
-
-            {imageStatus !== ImageStatus.READY && (
-                <Icon
-                    className={clsx('absolute-center', optimistic && 'opacity-30', failed && 'hidden')}
-                    color="var(--interaction-norm)"
-                    name={presentItemIcon(data)}
-                    size={20}
-                />
-            )}
-
-            {renderIndicators()}
-        </div>
+        <BaseItemIcon
+            icon={presentItemIcon(data)}
+            url={domainURL}
+            size={size}
+            alt={data.type}
+            className={className}
+            iconClassName={clsx(optimistic && 'opacity-30', failed && 'hidden')}
+            renderIndicators={renderIndicators}
+            loadImage={loadDomainImages}
+        />
     );
 };
