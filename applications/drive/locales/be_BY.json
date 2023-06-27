@@ -241,8 +241,11 @@
       "Download anyway": [
         "Усё роўна спампаваць"
       ],
-      "Download the Windows application": [
-        "Спампаваць праграму для Windows"
+      "Download apps": [
+        "Спампаваць праграмы"
+      ],
+      "Download Drive for Windows": [
+        "Спампаваць Drive для Windows"
       ],
       "Drive Locked": [
         "Дыск заблакіраваны"
@@ -3151,9 +3154,6 @@
         "Знойдзена ${ contactsCount } кантактаў",
         "Знойдзена ${ contactsCount } кантакты"
       ],
-      "${ deviceName } (restored)": [
-        "${ deviceName } (адноўлены)"
-      ],
       "${ doneCount } finished": [
         "${ doneCount } завершаны",
         "${ doneCount } завершана",
@@ -3775,9 +3775,6 @@
       "No results found": [
         "Нічога не знойдзена"
       ],
-      "No synced computers": [
-        "Няма сінхранізаваных камп'ютараў"
-      ],
       "No synced folders": [
         "Няма сінхранізаваных папак"
       ],
@@ -3967,11 +3964,20 @@
       "Something went wrong, please try again later.": [
         "Нешта пайшло не так. Паспрабуйце яшчэ раз пазней."
       ],
+      "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
+        "Падпіска заканчваецца: актывуйце яе паўторна да ${ byDate }, каб пакінуць перавагі свайго тарыфнага плана ${ planName }. ${ reactivateLink }"
+      ],
       "support team": [
         "каманда падтрымкі"
       ],
       "Swiss encrypted file storage": [
         "Швейцарскае зашыфраванае файлавае сховішча"
+      ],
+      "Sync folders from your computer": [
+        "Сінхранізацыя папак з вашага камп'ютара"
+      ],
+      "Sync folders with ease using our desktop app, ensuring your files are always up to date and accessible from anywhere.": [
+        "З лёгкасцю сінхранізуйце папкі выкарыстоўваючы нашу праграму для камп'ютараў, каб вашы файлы заўсёды былі ў актуальным стане і даступны з любога месца ў свеце."
       ],
       "Temporarily unavailable. Please check back later.": [
         "Часова недаступны. Паўтарыце спробу пазней."
@@ -4042,6 +4048,9 @@
       "This will upload a new version of the file": [
         "Гэта запампуе новую версію файла"
       ],
+      "This will upload a new version of the folder": [
+        "Гэта запампуе новую версію папкі"
+      ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
         "${ DRIVE_APP_NAME } неабходна лакальна праіндэксаваць вашы файлы для таго, каб задзейнічаць сапраўды прыватны пошук."
       ],
@@ -4110,9 +4119,6 @@
       ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "Запампоўванне сотняў файлаў адразу можа паўплываць на прадукцыйнасць."
-      ],
-      "Use Drive for Desktop to sync folders on your computer with ${ DRIVE_APP_NAME }. They’ll show up here and be accessible from anywhere. ${ learnMore }": [
-        "Выкарыстоўвайце настольную версію Drive для сінхранізацыі папак на вашым камп'ютары з ${ DRIVE_APP_NAME }. Файлы з'явяцца тут і будуць даступны з любога месца. ${ learnMore }"
       ],
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Выкарыстоўвайце гэту форму, каб апавясціць нас пра непрымальны, недапушчальны або іншы падазроны абагулены файл. Вы збіраецеся паскардзіцца:"
@@ -4247,7 +4253,7 @@
         "Ваша імпартаванне не будзе апрацавана."
       ],
       "Your login information will not be saved after the import is completed.": [
-        "Пасля завяршэння імпартавання вашы ўліковыя даныя не будуць захаваны."
+        "Пасля завяршэння імпартавання вашы даныя ўваходу не будуць захаваны."
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Ваш нумар тэлефона будзе выкарыстаны толькі для бягучай аднаразовай праверкі."
@@ -4825,6 +4831,9 @@
       ],
       "Pay invoice": [
         "Аплаціць рахунак"
+      ],
+      "Reactivate now": [
+        "Актываваць паўторна"
       ],
       "Request an invite": [
         "Запытаць запрашэнне"
@@ -5417,6 +5426,11 @@
     "Placeholder for contact group name": {
       "Name": [
         "Назва"
+      ]
+    },
+    "Platform": {
+      "Windows": [
+        "Windows"
       ]
     },
     "Progress bar description": {

@@ -241,8 +241,11 @@
       "Download anyway": [
         "Усе одно завантажити"
       ],
-      "Download the Windows application": [
-        "Завантажити застосунок для Windows"
+      "Download apps": [
+        "Завантажити застосунки"
+      ],
+      "Download Drive for Windows": [
+        "Завантажити Drive для Windows"
       ],
       "Drive Locked": [
         "Сховище заблоковано"
@@ -3151,9 +3154,6 @@
         "Знайдено ${ contactsCount } контактів",
         "Знайдено ${ contactsCount } контактів"
       ],
-      "${ deviceName } (restored)": [
-        "${ deviceName } (відновлено)"
-      ],
       "${ doneCount } finished": [
         "${ doneCount } завершено",
         "${ doneCount } завершено",
@@ -3443,7 +3443,7 @@
         "Поточна версія"
       ],
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
-        "Налаштуйте зовнішній вигляд застосунків ${ BRAND_NAME }."
+        "Налаштуйте зовнішній вигляд програм ${ BRAND_NAME }."
       ],
       "Decrypting files": [
         "Розшифрування файлів"
@@ -3775,9 +3775,6 @@
       "No results found": [
         "Результатів не знайдено"
       ],
-      "No synced computers": [
-        "Немає синхронізованих комп'ютерів"
-      ],
       "No synced folders": [
         "Немає синхронізованих тек"
       ],
@@ -3967,11 +3964,20 @@
       "Something went wrong, please try again later.": [
         "Сталася помилка, повторіть спробу пізніше."
       ],
+      "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
+        "Передплата закінчується: повторно активуйте її до ${ byDate }, щоб зберегти переваги ${ planName }. ${ reactivateLink }"
+      ],
       "support team": [
         "командою підтримки"
       ],
       "Swiss encrypted file storage": [
         "Швейцарське зашифроване сховище файлів"
+      ],
+      "Sync folders from your computer": [
+        "Синхронізація тек з комп’ютера"
+      ],
+      "Sync folders with ease using our desktop app, ensuring your files are always up to date and accessible from anywhere.": [
+        "З легкістю синхронізуйте теки за допомогою нашого застосунку для настільних комп'ютерів, щоб ваші файли завжди були актуальними та доступними з будь-якого місця."
       ],
       "Temporarily unavailable. Please check back later.": [
         "Тимчасово недоступно. Повторіть спробу пізніше."
@@ -4019,10 +4025,10 @@
         "Це посилання було створено за допомогою старої версії Drive і не може бути змінене. Видаліть це посилання та створіть нове, щоб змінити налаштування."
       ],
       "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
-        "Це посилання буде вимкнено назавжди. Ніхто не матиме доступ до вашого файлу за цим посиланням. Щоб поділитися файлом, вам знадобиться нове посилання."
+        "Це посилання буде вимкнено. Ніхто не матиме доступу до вашого файлу за цим посиланням. Щоб надати спільний доступ до файлу, вам знадобиться нове посилання."
       ],
       "This link will be permanently disabled. No one with this link will be able to access your folder. To reshare the folder, you will need a new link.": [
-        "Це посилання буде вимкнено назавжди. Ніхто не матиме доступ до вашої теки за цим посиланням. Щоб поділитися текою, вам знадобиться нове посилання."
+        "Це посилання буде вимкнено. Ніхто не матиме доступу до вашої теки за цим посиланням. Щоб надати спільний доступ до теки, вам знадобиться нове посилання."
       ],
       "This will delete the link and remove access to your file or folder for anyone with the link.": [
         "Це видалить посилання та вилучить доступ до вашої теки для всіх, хто має посилання.",
@@ -4041,6 +4047,9 @@
       ],
       "This will upload a new version of the file": [
         "Це призведе до вивантаження нової версії файлу"
+      ],
+      "This will upload a new version of the folder": [
+        "Це вивантажить нову версію теки"
       ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
         "Щоб увімкнути повноцінний приватний пошук, ${ DRIVE_APP_NAME } повинен індексувати ваші файли локально."
@@ -4110,9 +4119,6 @@
       ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "Завантаження сотень файлів одразу може вплинути на швидкодію."
-      ],
-      "Use Drive for Desktop to sync folders on your computer with ${ DRIVE_APP_NAME }. They’ll show up here and be accessible from anywhere. ${ learnMore }": [
-        "Використовуйте програму Drive, щоб синхронізувати теки на своєму комп'ютері з ${ DRIVE_APP_NAME }. Вони з'являться тут і будуть доступні де завгодно. ${ learnMore }"
       ],
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Скористайтеся цією формою, щоб повідомити нас про невідповідні, незаконні,\nабо іншим чином шкідливі спільні файли. Ви збираєтеся повідомити:"
@@ -4826,6 +4832,9 @@
       "Pay invoice": [
         "Сплатити рахунок"
       ],
+      "Reactivate now": [
+        "Повторно активувати"
+      ],
       "Request an invite": [
         "Запитати запрошення"
       ],
@@ -5113,7 +5122,7 @@
         "${ numberOfItems } посилання на ваші елементи було видалено"
       ],
       "All items will soon be permanently deleted from trash": [
-        "Усі елементи скоро буде остаточно видалено з смітника"
+        "Усі елементи невдовзі будуть остаточно видалені зі смітника"
       ],
       "Cannot load link": [
         "Не вдалося завантажити посилання"
@@ -5417,6 +5426,11 @@
     "Placeholder for contact group name": {
       "Name": [
         "Назва"
+      ]
+    },
+    "Platform": {
+      "Windows": [
+        "Windows"
       ]
     },
     "Progress bar description": {
@@ -5734,7 +5748,7 @@
         "Доступ до заблокованого вмісту та приватний перегляд. Включає 1700 серверів у понад 60 країнах, найвищу швидкість VPN, 10 VPN-з'єднань, всесвітні стримінгові сервіси, захист від зловмисних програм і реклами, а також інші можливості."
       ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
-        "Доступ звідусіль до матеріалів стримінгових сервісів, включно з Netflix, Disney+ і Prime Video."
+        "Доступ звідусіль до стримінгових сервісів, включно з Netflix, Disney+ та Prime Video."
       ],
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
         "Всі найкращі можливості наших преміум функцій: 100 адрес пошти, підтримка 10 власних доменів, необмежена кількість псевдонімів Hide-my-email, спільний доступ до календаря, зашифроване хмарне сховище, спільний доступ до файлів і багато іншого."

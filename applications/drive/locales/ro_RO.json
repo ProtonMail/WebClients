@@ -239,8 +239,11 @@
       "Download anyway": [
         "Descărcare așa"
       ],
-      "Download the Windows application": [
-        "Descărcare aplicație Windows"
+      "Download apps": [
+        "Descărcare aplicație"
+      ],
+      "Download Drive for Windows": [
+        "Descărcare Drive pentru Windows"
       ],
       "Drive Locked": [
         "Unitate blocată"
@@ -672,10 +675,10 @@
         "Actualizare frază de recuperare"
       ],
       "Upgrade": [
-        "Modernizare"
+        "Modificare"
       ],
       "Upgrade now": [
-        "Modernizare"
+        "Modificare"
       ],
       "Upload anyway": [
         "Încărcare așa"
@@ -3083,7 +3086,7 @@
         "${ addressCount } de adrese de e-mail"
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
-        "${ appName } are nevoie de permisiunea dvs. pentru ${ enableDesktopNotifications }."
+        "${ appName } necesită permisiunea pentru ${ enableDesktopNotifications }."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "Un calendar nou",
@@ -3117,9 +3120,6 @@
         "S-a găsit un contact",
         "S-au găsit ${ contactsCount } contacte",
         "S-au găsit ${ contactsCount } de contacte"
-      ],
-      "${ deviceName } (restored)": [
-        "${ deviceName } (restaurate)"
       ],
       "${ doneCount } finished": [
         "S-a transferat unul",
@@ -3467,7 +3467,7 @@
         "Introduceți codul din aplicația Authenticator."
       ],
       "Enter the credentials of the email account you want to import from.": [
-        "Introduceți datele de conectare ale contului de e-mail din care doriți să importați."
+        "Introduceți datele de conectare a contului de e-mail din care doriți să importați."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Introduceți codul de verificare care a fost trimis la ${ destinationText }."
@@ -3719,9 +3719,6 @@
       "No results found": [
         "Nu s-au găsit rezultate"
       ],
-      "No synced computers": [
-        "Calculatoare nesincronizate"
-      ],
       "No synced folders": [
         "Foldere nesincronizate"
       ],
@@ -3909,11 +3906,20 @@
       "Something went wrong, please try again later.": [
         "A apărut o problemă. Reîncercați mai târziu."
       ],
+      "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
+        "Abonamentul se încheie: reactivați-l până la ${ byDate } pentru a vă păstra beneficiile planului ${ planName }. ${ reactivateLink }"
+      ],
       "support team": [
         "echipa de asistență"
       ],
       "Swiss encrypted file storage": [
         "Stocare fișiere criptate în Elveția"
+      ],
+      "Sync folders from your computer": [
+        "Sincronizare foldere de pe computer"
+      ],
+      "Sync folders with ease using our desktop app, ensuring your files are always up to date and accessible from anywhere.": [
+        "Sincronizați ușor folderele folosind aplicația pentru desktop, asigurându-vă că fișierele vă sunt întotdeauna actualizate și accesibile de oriunde."
       ],
       "Temporarily unavailable. Please check back later.": [
         "Temporar indisponibil. Vă rugăm să reveniți mai târziu."
@@ -3983,6 +3989,9 @@
       "This will upload a new version of the file": [
         "Aceasta va încărca o nouă versiune a fișierului."
       ],
+      "This will upload a new version of the folder": [
+        "Aceasta va încărca o nouă versiune a folderului."
+      ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
         "Pentru a permite o căutare cu adevărat privată, ${ DRIVE_APP_NAME } trebuie să vă indexeze fișierele la nivel local."
       ],
@@ -4051,9 +4060,6 @@
       ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "Încărcarea simultană a sute de fișiere poate avea un impact asupra performanței."
-      ],
-      "Use Drive for Desktop to sync folders on your computer with ${ DRIVE_APP_NAME }. They’ll show up here and be accessible from anywhere. ${ learnMore }": [
-        "Utilizați Drive pentru Desktop pentru a sincroniza folderele de pe computer cu ${ DRIVE_APP_NAME }. Acestea vor apărea aici și vor fi accesibile de oriunde. ${ learnMore }"
       ],
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Folosiți acest formular pentru a ne anunța despre fișierele partajate nepotrivite, ilegale sau în vreun fel malițioase. Urmează să raportați:"
@@ -4146,7 +4152,7 @@
         "Veți pierde toate modificările nesalvate."
       ],
       "You've reached the maximum number of addresses in the contact group(s):": [
-        "Ați atins numărul maxim de adrese din grupul de contacte."
+        "Ați atins numărul maxim de adrese din grupul de contacte:"
       ],
       "You've reached the maximum number of addresses in the contact group.": [
         "Ați atins numărul maxim de adrese din grupul de contacte."
@@ -4764,6 +4770,9 @@
       "Pay invoice": [
         "Plată factură"
       ],
+      "Reactivate now": [
+        "Reactivare"
+      ],
       "Request an invite": [
         "Solicitați o invitație"
       ],
@@ -4774,7 +4783,7 @@
         "Gunoi"
       ],
       "Upgrade account": [
-        "Modernizare cont"
+        "Modificare cont"
       ],
       "What’s this?": [
         "Ce este asta?"
@@ -4878,7 +4887,7 @@
     },
     "new_plans: Action": {
       "Upgrade now": [
-        "Modernizare"
+        "Modificare"
       ]
     },
     "new_plans: action": {
@@ -5333,6 +5342,11 @@
         "Nume"
       ]
     },
+    "Platform": {
+      "Windows": [
+        "Windows"
+      ]
+    },
     "Progress bar description": {
       "${ contactsExported.length } out of ${ countContacts } contact successfully exported.": [
         "S-a exportat ${ contactsExported.length } din ${ countContacts } contact cu succes.",
@@ -5544,7 +5558,7 @@
         "Accesare planuri abonamente"
       ],
       "Upgrade": [
-        "Modernizare"
+        "Modificare"
       ]
     },
     "specialoffer: Offers": {
