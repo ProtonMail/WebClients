@@ -104,8 +104,12 @@ const AddressesRecipientItem = ({
 
     const handleInputKey = (event: KeyboardEvent) => {
         if (event.key === 'Enter') {
-            confirmInput();
             event.preventDefault();
+            if (!editableRef.current || editableRef.current.textContent === recipientToInput(recipient)) {
+                setEditableMode(false);
+                return;
+            }
+            confirmInput();
             setEditableMode(false);
         }
     };
