@@ -2200,7 +2200,7 @@
         "L'annulation n'a pas pu être envoyée."
       ],
       "Cannot export this contact": [
-        "Ce contact ne peut pas être exporté."
+        "Impossible d'exporter ce contact"
       ],
       "Contact could not be saved": [
         "Le contact n’a pas pu être enregistré."
@@ -3803,6 +3803,9 @@
       "Some of your answers to occurrences previously updated by the organizer will be lost.": [
         "Certaines de vos réponses à des événements précédemment mis à jour par l’organisateur seront perdues."
       ],
+      "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
+        "L'abonnement se termine : réactivez-le avant le ${ byDate } pour continuer à bénéficier des avantages de ${ planName }. ${ reactivateLink }"
+      ],
       "support team": [
         "équipe support"
       ],
@@ -4522,6 +4525,9 @@
       "Pay invoice": [
         "Payer la facture"
       ],
+      "Reactivate now": [
+        "Réactiver maintenant"
+      ],
       "Request an invite": [
         "Demander une invitation"
       ],
@@ -4637,7 +4643,7 @@
         "Ajouter les jours fériés"
       ],
       "Cannot add more calendars": [
-        "Il n'est pas possible d'ajouter d'autres calendriers."
+        "Impossible d'ajouter d'autres calendriers"
       ],
       "Edit calendar": [
         "Modifier le calendrier"
@@ -5228,7 +5234,7 @@
         "Décrivez le problème et incluez les éventuels messages d'erreur."
       ],
       "Please select a country": [
-        "Sélectionnez un pays."
+        "Sélectionnez un pays"
       ],
       "Search for group name": [
         "Rechercher un nom de groupe"
@@ -5838,6 +5844,48 @@
         "Votre commentaire a été envoyé."
       ]
     },
+    "summer2023: Deal details": {
+      "Premium Password Manager": [
+        "Gestionnaire de mots de passe premium"
+      ]
+    },
+    "summer2023: Describe Proton Pass": {
+      "Securely store your passwords and autofill them on websites. Includes unlimited passwords, autofill, password generator, and more.": [
+        "Enregistrez vos mots de passe en toute sécurité et renseignez-les automatiquement sur les sites web. Profitez d'un nombre illimité de mots de passe, du remplissage automatique, d'un générateur de mots de passe et de bien d'autres fonctionnalités."
+      ]
+    },
+    "summer2023: Tooltip": {
+      "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
+        "Créez des identifiants de connexion sécurisés sur tous vos appareils. Profitez d'un nombre illimité d'alias, de 20 coffres-forts, de l'authentification à deux facteurs (2FA) intégrée, du remplissage automatique des cartes bancaires et de bien d'autres fonctionnalités."
+      ],
+      "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "Cela comprend 2 950 serveurs répartis dans plus de 65 pays, la possibilité de connecter jusqu'à 10 appareils, l'accès aux services de streaming du monde entier, un bloqueur de logiciels malveillants et de publicités et bien d'autres fonctionnalités."
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "Sécurisez vos fichiers grâce au stockage cloud chiffré. Profitez de l'historique des versions, du partage chiffré des fichiers et de bien d'autres fonctionnalités."
+      ]
+    },
+    "summer2023:Footer": {
+      "*Your subscription will automatically renew at the standard discounted rate at the end of your billing cycle.": [
+        "*Votre abonnement sera automatiquement renouvelé au tarif réduit habituel à la fin de votre cycle de facturation."
+      ],
+      "Discounts are based on the standard monthly pricing. This offer is only available to first-time subscribers.": [
+        "Les réductions sont calculées sur les prix mensuels habituels. Cette offre est réservée aux nouveaux abonnés."
+      ]
+    },
+    "summer2023:Info": {
+      "For a limited time, get the best ${ BRAND_NAME } has to offer at an exclusive discount.": [
+        "Profitez du meilleur de ${ BRAND_NAME } à un prix exceptionnel (offre à durée limitée)."
+      ],
+      "We’re celebrating the nine-year anniversary of our crowdfunding!": [
+        "Nous fêtons les neuf ans de notre financement participatif !"
+      ]
+    },
+    "summer2023:Offer title": {
+      "${ BRAND_NAME } Anniversary Sale": [
+        "Offre spéciale : anniversaire ${ BRAND_NAME }"
+      ]
+    },
     "Table header": {
       "Action": [
         "Action"
@@ -5983,7 +6031,7 @@
         "Alarme de calendrier"
       ],
       "Cannot add more addresses": [
-        "Il n'est pas possible d'ajouter d'autres adresses."
+        "Impossible d'ajouter plus d'adresses"
       ],
       "Change my answer": [
         "Changer ma réponse"
