@@ -244,8 +244,8 @@
       "Download apps": [
         "Pobierz aplikacje"
       ],
-      "Download the Windows application": [
-        "Pobierz aplikację na Windowsa"
+      "Download Drive for Windows": [
+        "Pobierz Proton Drive na Windowsa"
       ],
       "Drive Locked": [
         "Dysk jest zablokowany"
@@ -2650,8 +2650,11 @@
       "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
         "Zawiera 2700 serwerów w ponad 65 krajach z możliwością połączenia do 10 urządzeń, dostępem do globalnych usług streamingu oraz funkcję blokowania reklam, złośliwego oprogramowania i wiele więcej."
       ],
+      "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
+        "Zawiera obsługę 3 niestandardowych domen, 90 adresów e-mail, nieograniczoną liczbę aliasów Hide-my-email, udostępnianie kalendarza i wiele więcej."
+      ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
-        "Zabezpiecz pliki dzięki zaszyfrowanej przestrzeni dyskowej w chmurze. Obejmuje automatyczną synchronizację, szyfrowane udostępnianie plików i nie tylko."
+        "Zabezpiecz pliki dzięki szyfrowanej przestrzeni dyskowej w chmurze. Zawiera automatyczną synchronizację, szyfrowane udostępnianie plików i wiele więcej."
       ]
     },
     "Feedback Modal Title": {
@@ -3150,9 +3153,6 @@
         "${ contactsCount } znalezione kontakty",
         "${ contactsCount } znalezionych kontaktów",
         "${ contactsCount } znalezionych kontaktów"
-      ],
-      "${ deviceName } (restored)": [
-        "${ deviceName } (przywrócone)"
       ],
       "${ doneCount } finished": [
         "Transfer ${ doneCount } pliku został zakończony",
@@ -3772,9 +3772,6 @@
       "No results found": [
         "Nie znaleziono żadnych wyników"
       ],
-      "No synced computers": [
-        "Brak zsynchronizowanych urządzeń"
-      ],
       "No synced folders": [
         "Brak zsynchronizowanych folderów"
       ],
@@ -3970,6 +3967,12 @@
       "Swiss encrypted file storage": [
         "Szwajcarska zaszyfrowana przestrzeń dyskowa"
       ],
+      "Sync folders from your computer": [
+        "Synchronizuj foldery ze swoim urządzeniem"
+      ],
+      "Sync folders with ease using our desktop app, ensuring your files are always up to date and accessible from anywhere.": [
+        "Synchronizuj foldery za pomocą aplikacji desktopowej, aby Twoje pliki były aktualne i dostępne, gdziekolwiek jesteś."
+      ],
       "Temporarily unavailable. Please check back later.": [
         "Usługa jest tymczasowo niedostępna. Spróbuj ponownie później."
       ],
@@ -4039,6 +4042,9 @@
       "This will upload a new version of the file": [
         "Spowoduje to przesłanie nowej wersji pliku"
       ],
+      "This will upload a new version of the folder": [
+        "Spowoduje to przesłanie nowej wersji folderu"
+      ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
         "Aby włączyć prywatne wyszukiwanie, aplikacja ${ DRIVE_APP_NAME } musi lokalnie zaindeksować pliki."
       ],
@@ -4107,9 +4113,6 @@
       ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "Przesyłanie dużej liczby plików na raz może wpłynąć na wydajność."
-      ],
-      "Use Drive for Desktop to sync folders on your computer with ${ DRIVE_APP_NAME }. They’ll show up here and be accessible from anywhere. ${ learnMore }": [
-        "Użyj dysku na komputerze, aby synchronizować foldery urządzenia z dyskiem ${ DRIVE_APP_NAME }. Pokażą się one tutaj i będą dostępne, gdziekolwiek jesteś. ${ learnMore }"
       ],
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Użyj tego formularza, aby powiadomić nas o nieodpowiednich, nielegalnych lub złośliwych plikach. Zamierzasz zgłosić:"
@@ -4823,6 +4826,9 @@
       "Pay invoice": [
         "Zapłać fakturę"
       ],
+      "Reactivate now": [
+        "Reaktywuj"
+      ],
       "Request an invite": [
         "Poproś o zaproszenie"
       ],
@@ -5283,6 +5289,9 @@
       "Discover all ${ BRAND_NAME } services": [
         "Poznaj wszystkie usługi ${ BRAND_NAME }"
       ],
+      "More theming options are available in your account Settings > Appearance.": [
+        "Więcej motywów jest dostępnych w Ustawieniach konta > Wygląd."
+      ],
       "Select a theme": [
         "Wybierz motyw"
       ],
@@ -5738,6 +5747,15 @@
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
         "Uzyskaj dostęp z dowolnego miejsca do treści w usługach streamingowych, takich jak Netflix, Disney+ i Prime Video."
       ],
+      "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
+        "Wszystkie nasze usługi premium z najwyższymi limitami: 100 adresów e-mail, obsługa 10 niestandardowych domen, nieograniczona liczba aliasów Hide-my-email, udostępnianie kalendarza, szyfrowane przechowywanie oraz udostępnianie plików i wiele więcej."
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Zawiera obsługę 1 niestandardowej domeny, 10 adresów e-mail, 10 aliasów Hide-my-email, udostępnianie kalendarza i wiele więcej."
+      ],
+      "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Zawiera obsługę 3 niestandardowych domen, 15 adresów e-mail, nieograniczoną liczbę aliasów Hide-my-email, udostępnianie kalendarza i wiele więcej."
+      ],
       "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
         "Idealne rozwiązanie dla rodzin lub małych zespołów, każda osoba może mieć własną skrzynkę odbiorczą i aliasy. Wymaga niestandardowej domeny."
       ],
@@ -5745,7 +5763,7 @@
         "Otrzymaj bez dodatkowych kosztów płatne wersje wszystkich nowych usług prywatności, jakie wydamy w przyszłości, a także wczesny dostęp do wszystkich przyszłych funkcji i produktów."
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
-        "Zabezpiecz pliki dzięki zaszyfrowanej przestrzeni dyskowej w chmurze. Obejmuje automatyczną synchronizację, szyfrowane udostępnianie plików i nie tylko."
+        "Zabezpiecz pliki dzięki szyfrowanej przestrzeni dyskowej w chmurze. Zawiera automatyczną synchronizację, szyfrowane udostępnianie plików i wiele więcej."
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
         "Przestrzeń dyskowa jest współdzielona przez ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } oraz ${ DRIVE_APP_NAME }."
@@ -5847,6 +5865,48 @@
     "Success notification when user send feedback": {
       "Feedback sent": [
         "Opinia została wysłana"
+      ]
+    },
+    "summer2023: Deal details": {
+      "Premium Password Manager": [
+        "Menedżer haseł w wersji Premium"
+      ]
+    },
+    "summer2023: Describe Proton Pass": {
+      "Securely store your passwords and autofill them on websites. Includes unlimited passwords, autofill, password generator, and more.": [
+        "W bezpieczny sposób przechowuj hasła i automatycznie je uzupełniaj w witrynach internetowych. Obejmuje nieograniczoną liczbę haseł, opcję automatycznego uzupełniania, generator haseł i nie tylko."
+      ]
+    },
+    "summer2023: Tooltip": {
+      "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
+        "Twórz bezpieczne dane logowania na wszystkich urządzeniach. Obejmuje nielimitowaną liczbę aliasów, 20 zabezpieczonych folderów, zintegrowane uwierzytelnianie dwustopniowe, automatyczne uzupełnianie danych karty kredytowej i nie tylko."
+      ],
+      "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "Obsługuje 2950 serwerów w ponad 65 krajach z możliwością połączenia do 10 urządzeń, dostępem do globalnych usług streamingowych oraz z funkcją blokowania reklam i złośliwego oprogramowania i więcej."
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "Zabezpiecz pliki dzięki zaszyfrowanej przestrzeni dyskowej w chmurze. Obejmuje historię wersji, szyfrowane udostępnianie plików i nie tylko."
+      ]
+    },
+    "summer2023:Footer": {
+      "*Your subscription will automatically renew at the standard discounted rate at the end of your billing cycle.": [
+        "* Twoja subskrypcja zostanie automatycznie odnowiona w obniżonej cenie na koniec cyklu rozliczeniowego."
+      ],
+      "Discounts are based on the standard monthly pricing. This offer is only available to first-time subscribers.": [
+        "Zniżki są oparte na standardowych cenach miesięcznych. Ta oferta jest dostępna tylko dla nowych subskrybentów."
+      ]
+    },
+    "summer2023:Info": {
+      "For a limited time, get the best ${ BRAND_NAME } has to offer at an exclusive discount.": [
+        "Przez ograniczony czas możesz uzyskać najlepsze oferty ${ BRAND_NAME } z wyjątkowymi zniżkami."
+      ],
+      "We’re celebrating the nine-year anniversary of our crowdfunding!": [
+        "Świętujemy dziewięciolecie naszego crowdfundingu!"
+      ]
+    },
+    "summer2023:Offer title": {
+      "${ BRAND_NAME } Anniversary Sale": [
+        "Wyprzedaż jubileuszowa ${ BRAND_NAME }"
       ]
     },
     "Table header": {
@@ -6473,6 +6533,9 @@
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Format automatyczny wyśle do tego użytkownika wiadomość w formacie użytym w edytorze. Format zwykłego tekstu oznacza, że wiadomość przed wysłaniem zostanie przekonwertowana do zwykłego tekstu."
       ],
+      "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
+        "Przełączaj się między motywami na dzień i noc, synchronizując je z systemowymi trybami dziennymi i nocnymi"
+      ],
       "Customize import to reduce the number of folders": [
         "Dostosuj proces importowania, aby zmniejszyć liczbę folderów"
       ],
@@ -6523,6 +6586,12 @@
       ],
       "The import will start with the most recent messages.": [
         "Proces importowania rozpocznie się od najnowszych wiadomości."
+      ],
+      "The selected theme will be active when your system is set to \"dark mode\"": [
+        "Wybrany motyw będzie aktywny, gdy w systemie jest ustawiony ciemny motyw"
+      ],
+      "The selected theme will be active when your system is set to \"light mode\"": [
+        "Wybrany motyw będzie aktywny, gdy w systemie jest ustawiony jasny motyw"
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Prześlij klucz publiczny, aby włączyć wysyłanie wiadomości zaszyfrowanych end-to-end dla tego adresu e-mail"

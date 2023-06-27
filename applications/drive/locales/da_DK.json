@@ -52,6 +52,9 @@
       "Apply": [
         "Anvend"
       ],
+      "At most 100 contacts are allowed per contact group": [
+        "Højst 100 kontakter er tilladt pr. kontaktgruppe"
+      ],
       "Attach screenshot(s)": [
         "Vedhæft skærmfoto(s)"
       ],
@@ -234,9 +237,6 @@
       "Download anyway": [
         "Download alligevel"
       ],
-      "Download the Windows application": [
-        "Download Windows-applikationen"
-      ],
       "Drive Locked": [
         "Drev låst"
       ],
@@ -332,6 +332,9 @@
       ],
       "Image could not be loaded with tracker protection.": [
         "Billede kunne ikke indlæses med tracker beskyttelse."
+      ],
+      "Image will be loaded without a proxy": [
+        "Billede vil blive indlæst uden en proxy"
       ],
       "Import": [
         "Importér"
@@ -1823,9 +1826,6 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Fletter kontakter... Dette kan tage et par minutter. Når processen er afsluttet, kan du lukke dette vindue."
       ],
-      "ProtonMail logo and a plus sign": [
-        "ProtonMail-logo og et plustegn"
-      ],
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "Spar tid ved at sende e-mail eller invitationer til alle på en gang, en premium-funktion blandt mange andre. Opgrader i dag."
       ],
@@ -2488,6 +2488,9 @@
       ]
     },
     "familyOffer_2023:Action": {
+      "Decline invitation": [
+        "Afvis invitation"
+      ],
       "Got it": [
         "Forstået"
       ],
@@ -2537,11 +2540,38 @@
       "Sorry, you can't switch plans at this time.": [
         "Beklager, du kan i øjeblikket ikke ændre abonnement."
       ],
+      "Storage assigned to you: ${ assignedStorage }": [
+        "Lagerplads tildelt dig: ${ assignedStorage }"
+      ],
+      "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
+        "Visionary- og familie-abonnementer understøtter på nuværende tidspunkt ikke eksterne kontoer. Opret en ${ BRAND_NAME }-adresse før du tilmelder dig. ${ addressSettingsLink }"
+      ],
       "Visionary and family plans do not currently support lifetime accounts.": [
         "Visionary og familie-abonnementer understøtter på nuværende tidspunkt ikke livstidskonti."
       ],
+      "You are invited to join ${ invite.OrganizationName }": [
+        "Du er inviteret til at blive medlem af ${ invite.OrganizationName }"
+      ],
+      "You can only accept 3 invitations in a 6-month period. Please contact ${ supportLink } if you require an exception.": [
+        "Du kan kun acceptere 3 invitationer i en 6-måneds periode. Kontakt venligst ${ supportLink } hvis du har brug for en undtagelse."
+      ],
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Du er blevet inviteret til at blive medlem af ${ bannerOrganization }. ${ viewInviteButton }"
+      ],
+      "You have successfully joined the Family plan": [
+        "Du er tilmeldt familie-abonnementet."
+      ],
+      "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
+        "Du er inviteret til at forbinde din ${ BRAND_NAME }-konto til dette gruppe-abonnement og sammen nyde alle ${ BRAND_NAME_TWO } premium funktionerne."
+      ],
+      "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
+        "Din konto har flere e-mailadresser en det, der er tilgængeligt for dig på dette abonnement. ${ addressSettingsLink }"
+      ],
+      "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
+        "Din konto bruger ${ usedSpace } lagerplads, hvilket overstiger de ${ inviteSpace } du har fået tildelt. Slet nogle data eller bed abonnementsadministratoren om at øge din lagerplads."
+      ],
+      "Your current plan cannot join a Visionary or family plan.": [
+        "Dit nuværende abonnement kan ikke tilmelde sig et Visionary- eller familie-abonnement."
       ]
     },
     "familyOffer_2023:Get Proton Family": {
@@ -2626,6 +2656,31 @@
     "Filter notification": {
       "${ Label.Name } updated": [
         "${ Label.Name } opdateret"
+      ]
+    },
+    "Font face option": {
+      "System default": [
+        "Systemstandard"
+      ],
+      "Theme default": [
+        "Temastandard"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Stor"
+      ],
+      "Medium (recommended)": [
+        "Mellem (anbefalet)"
+      ],
+      "Small": [
+        "Lille"
+      ],
+      "Very large": [
+        "Meget stor"
+      ],
+      "Very small": [
+        "Meget lille"
       ]
     },
     "Group": {
@@ -2993,9 +3048,6 @@
         "${ contactsCount } kontakt fundet",
         "${ contactsCount } kontakter fundet"
       ],
-      "${ deviceName } (restored)": [
-        "${ deviceName } (gendannet)"
-      ],
       "${ doneCount } finished": [
         "${ doneCount } færdig",
         "${ doneCount } færdig"
@@ -3241,6 +3293,9 @@
       "Current version": [
         "Aktuel version"
       ],
+      "Customize the look and feel of ${ BRAND_NAME } applications.": [
+        "Tilpas udseendes og fornemmelsen af ${ BRAND_NAME }-applikationer."
+      ],
       "Decrypting files": [
         "Dekrypterer filer"
       ],
@@ -3280,6 +3335,9 @@
       ],
       "Downloading": [
         "Downloader"
+      ],
+      "Drop file here to upload": [
+        "Træk fil hertil for at uploade"
       ],
       "Drop to import": [
         "Drop for at importere"
@@ -3553,9 +3611,6 @@
       "No results found": [
         "Ingen resultater fundet"
       ],
-      "No synced computers": [
-        "Ingen synkroniserede computere"
-      ],
       "No synced folders": [
         "Ingen synkroniserede mapper"
       ],
@@ -3740,6 +3795,9 @@
       ],
       "Something went wrong, please try again later.": [
         "Noget gik galt. Prøv igen senere."
+      ],
+      "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
+        "Abonnement er ved at udløbe: Genaktiver inden ${ byDate } for at beholde dine ${ planName }-fordele. ${ reactivateLink }"
       ],
       "support team": [
         "supportteam"
@@ -3969,6 +4027,9 @@
       ],
       "You will lose all unsaved changes.": [
         "Du vil miste alle ikke-gemte ændringer."
+      ],
+      "You've reached the maximum number of addresses in the contact group(s):": [
+        "Du har nået det maksimale antal adresser i kontaktgruppen/grupperne:"
       ],
       "You've reached the maximum number of addresses in the contact group.": [
         "Du har nået det maksimale antal adresser i kontaktgruppen."
@@ -4464,6 +4525,9 @@
       "Street address": [
         "Adresse"
       ],
+      "Synchronize with system": [
+        "Synkroniser med system"
+      ],
       "System information": [
         "Systemoplysninger"
       ],
@@ -4573,6 +4637,9 @@
       ],
       "Pay invoice": [
         "Betal faktura"
+      ],
+      "Reactivate now": [
+        "Genaktiver nu"
       ],
       "Request an invite": [
         "Anmod om invitation"
@@ -4697,6 +4764,9 @@
       ],
       "Custom email domains": [
         "Brugerdefinerede e-maildomæner"
+      ],
+      "Hide-my-email aliases": [
+        "Hide-my-email-aliasser"
       ],
       "Schedule messages at any time": [
         "Planlæg beskeder til ethvert tidspunkt"
@@ -5556,6 +5626,9 @@
         "${ numberOfFailedTransfer.total } fejlende overførsel",
         "${ numberOfFailedTransfer.total } fejlende overførsler"
       ],
+      "(active)": [
+        "(aktiv)"
+      ],
       "Account suspended": [
         "Konto suspenderet"
       ],
@@ -5649,6 +5722,9 @@
       ],
       "Date": [
         "Dato"
+      ],
+      "Day theme": [
+        "Dagstema"
       ],
       "Delete ${ count } contact": [
         "Slet ${ count } kontakt",
@@ -5803,6 +5879,9 @@
       ],
       "Name": [
         "Navn"
+      ],
+      "Night theme": [
+        "Nattetema"
       ],
       "No results found": [
         "Ingen resultater fundet"
@@ -5969,6 +6048,9 @@
       "Type": [
         "Type"
       ],
+      "Unlock contacts groups": [
+        "Få adgang til kontaktgrupper"
+      ],
       "Uploaded": [
         "Uploadet"
       ],
@@ -6033,6 +6115,9 @@
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Automatisk betyder, at formatet i skrivesessionen benyttes ved afsendelse til denne bruger. Simpel tekst indikerer, at beskeden altid konverteres til simpel tekst ved afsendelse."
       ],
+      "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
+        "Skift automatisk mellem dine foretrukne temaer for dag og nat synkront med dit systems dag- og nattilstande"
+      ],
       "Customize import to reduce the number of folders": [
         "Tilpas import for at reducere antallet af mapper"
       ],
@@ -6078,8 +6163,17 @@
       "The image could not be loaded": [
         "Billedet kunne ikke indlæses"
       ],
+      "The image could not be loaded using proxy": [
+        "Billedet kunne ikke indlæses med en proxy"
+      ],
       "The import will start with the most recent messages.": [
         "Importen vil starte med de seneste beskeder."
+      ],
+      "The selected theme will be active when your system is set to \"dark mode\"": [
+        "Det valgte tema vil blive aktiveret når dit system er sat til \"mørk tilstand\""
+      ],
+      "The selected theme will be active when your system is set to \"light mode\"": [
+        "Det valgte tema vil blive aktiveret når dit system er sat til \"lys tilstand\""
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Upload en offentlig nøgle for at aktivere afsendelse af end-to-end krypterede e-mails til denne e-mail"
