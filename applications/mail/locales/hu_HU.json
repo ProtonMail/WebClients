@@ -477,6 +477,9 @@
       "Hide messages": [
         "Üzenetek elrejtése"
       ],
+      "hide-my-email aliases": [
+        "hide-my-email álnevek"
+      ],
       "I have a question": [
         "Kérdésem van"
       ],
@@ -1844,6 +1847,41 @@
       ],
       "white": [
         "fehér"
+      ]
+    },
+    "Commander action": {
+      "Create a new folder": [
+        "Új mappa létrehozása"
+      ],
+      "Create a new label": [
+        "Új címke létrehozása"
+      ],
+      "Go to Archive": [
+        "Ugrás az archívumhoz"
+      ],
+      "Go to Drafts": [
+        "Ugrás a piszkozatokhoz"
+      ],
+      "Go to Inbox": [
+        "Ugrás a beérkezett üzenetekhez"
+      ],
+      "Go to Sent": [
+        "Ugrás az elküldött levelekhez"
+      ],
+      "Go to Spam": [
+        "Ugrás a levélszeméthez"
+      ],
+      "Go to Starred": [
+        "Ugrás a csillagozottakhoz"
+      ],
+      "Go to Trash": [
+        "Ugrás a lomtárhoz"
+      ],
+      "New message": [
+        "Új üzenet"
+      ],
+      "Search": [
+        "Keresés"
       ]
     },
     "Composer email icon": {
@@ -3280,12 +3318,6 @@
         "Javítsa ki a megjelölt hibát a folytatáshoz.",
         "Javítsa ki a megjelölt hibákat a folytatáshoz."
       ],
-      "Please repeat the password": [
-        "Adja meg ismételten a jelszót"
-      ],
-      "Please set a password": [
-        "Kérjük, állítson be jelszót"
-      ],
       "Port is required": [
         "A port megadása szükséges"
       ],
@@ -3769,6 +3801,9 @@
       ]
     },
     "familyOffer_2023:Action": {
+      "Decline invitation": [
+        "Meghívó visszautasítása"
+      ],
       "Got it": [
         "Értem"
       ],
@@ -3895,6 +3930,9 @@
     "familyOffer_2023:Tooltip": {
       "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
         "2700 szerver, több mint 65 országban, csatlakoztasson akár 10 eszközt, érje el a videós szolgáltatásokat bárhonnan a világban, vírus és reklámblokkolót valamit további lehetőségeket is tartalmaz."
+      ],
+      "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
+        "Tartalmazza 3 egyéni e-mail domain név, 90 e-mail cím, korlátlan hide-my-email álnév, naptármegosztás és még sok más támogatását."
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Tartsa biztonságban fájljait, titkosított felhőtárhelyen. Automatikus szinkronizálást, titkosított megosztás és további lehetőségeket tartalmaz."
@@ -4064,9 +4102,34 @@
         "Alapértelmezett"
       ]
     },
+    "Font face option": {
+      "System default": [
+        "Rendszer alapértelmezett"
+      ],
+      "Theme default": [
+        "Alapértelmezett téma"
+      ]
+    },
     "Font Size Default": {
       "Default": [
         "Alapértelmezett"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Nagy"
+      ],
+      "Medium (recommended)": [
+        "Közepes (ajánlott)"
+      ],
+      "Small": [
+        "Kicsi"
+      ],
+      "Very large": [
+        "Nagyon nagy"
+      ],
+      "Very small": [
+        "Nagyon kicsi"
       ]
     },
     "forwardmessage": {
@@ -4864,6 +4927,9 @@
       "Custom yearly": [
         "Egyéni, évente"
       ],
+      "Customize the look and feel of ${ BRAND_NAME } applications.": [
+        "Szabja testre a ${ BRAND_NAME } alkalmazások megjelenését."
+      ],
       "Daily": [
         "Naponta"
       ],
@@ -4897,6 +4963,12 @@
       ],
       "Draft saved.": [
         "Piszkozat mentve."
+      ],
+      "Drop file here to upload": [
+        "Húzza ide a fájlokat a feltöltéshez"
+      ],
+      "Drop to import": [
+        "Húzza ide az importáláshoz"
       ],
       "Duplicate key updated": [
         "Duplikált kulcs frissítve"
@@ -5018,6 +5090,9 @@
       ],
       "Hide original message": [
         "Eredeti üzenet elrejtése"
+      ],
+      "How hide-my-email aliases works": [
+        "Hogyan működnek a hide-my-email álnevek"
       ],
       "I'm sending this message to a non-${ MAIL_APP_NAME } user.": [
         "Egy nem-${ MAIL_APP_NAME } címzettnek küldöm ezt az üzenetet."
@@ -5237,6 +5312,9 @@
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "A rendszerünk úgy érzékelte, hogy ez egy adathalász kísérlet. Kérjük ellenőrizze, hogy esetleg mégsem az."
       ],
+      "Our system flagged this message as a suspicious email. Please check that it is legitimate before clicking any links or attachments.": [
+        "A rendszerünk ezt az üzenetet gyanús e-mailként jelezte. Kérjük, ellenőrizze, hogy az üzenet forrása megbízható-e, mielőtt bármilyen linkre vagy csatolmányra kattintana."
+      ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "A PGP/Inline csak Egyszerű Szöveg formátummal támogatott."
       ],
@@ -5406,6 +5484,9 @@
       "Show original message": [
         "Eredeti üzenet megjelenítése"
       ],
+      "SimpleLogin is a ${ BRAND_NAME } service, and your ${ BRAND_NAME_TWO } Account includes hide-my-email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
+        "A SimpleLogin egy ${ BRAND_NAME } szolgáltatás és a ${ BRAND_NAME_TWO } fiókja tartalmazza a hide-my-email címeit. E-mail címének elrejtéséhez, nyissa meg a SimpleLogin oldalt és hozza létre első alternatív e-mail címét."
+      ],
       "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
         "A SimpleLogin egy egyszerű lehetőséget biztosít arra, hogy nem teljesen megbízhatónak ítélt oldalakon, a saját e-mail címének felfedése nélkül regisztráljon."
       ],
@@ -5423,6 +5504,9 @@
       ],
       "Subject: ": [
         "Tárgy: "
+      ],
+      "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
+        "Az előfizetés megszűnik: Aktiválja újra eddig: ${ byDate } , hogy megtarthassa ezen csomagjának előnyeit: ${ planName } ${ reactivateLink }"
       ],
       "support team": [
         "ügyfélszolgálat"
@@ -5473,6 +5557,9 @@
       "There has been an error with the signature used to verify the contact details, which may be the result of a password reset.": [
         "Hiba történt a névjegy aláírásnak ellenőrzésekor. Ezt jelszó visszaállítás is okozhatja."
       ],
+      "They can't spam you if they don't know your email address. Protect your inbox with hide-my-email aliases.": [
+        "Senki sem tud önnek levélszemetet küldeni, ha nem ismerik a valós e-mail címét. Védje meg az e-mail címét a hide-my-email szolgáltatással."
+      ],
       "This account has been suspended due to a potential policy violation.": [
         "Ez a fiók felfüggesztésre került a szabályzat valószínűsíthető megsértése miatt."
       ],
@@ -5487,6 +5574,9 @@
       ],
       "This conversation contains non-trashed messages.": [
         "Ez a beszélgetés nem-törölt üzeneteket is tartalmaz."
+      ],
+      "This conversation contains one or more expiring messages": [
+        "Ez a beszélgetés egy vagy több lejáró üzenetet tartalmaz"
       ],
       "This conversation contains trashed messages.": [
         "Ez a beszélgetés törölt üzeneteket is tartalmaz."
@@ -5703,6 +5793,9 @@
       "When do you want your message to self-destruct?": [
         "Mikor szeretné, hogy az üzenet megsemmisítse önmagát?"
       ],
+      "When giving out your email, use a unique, disposable hide-my-email alias instead of your real email address.": [
+        "Amikor megadja valahol az e-mail címét, adjon meg egy egyedi, eldobható, hide-my-email alternatív címet a valós e-mail címe helyett."
+      ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "Amikor engedélyezte a megbízható kulcsok kezelését \"${ senderName }\" címzetthez, a nyilvános kulcsok bekerültek a névjegyébe."
       ],
@@ -5840,6 +5933,9 @@
       "Your email will only be used for this one-time verification.": [
         "Az e-mail csak erre az egyszeri ellenőrzésre lesz felhasználva."
       ],
+      "Your files will be encrypted and then saved": [
+        "A fájlok titkosításra majd pedig mentésre kerülnek"
+      ],
       "Your import will not be processed.": [
         "Az importálás nem lesz feldolgozva."
       ],
@@ -5867,6 +5963,10 @@
       ]
     },
     "info": {
+      "${ filteredList.length } command found.": [
+        "${ filteredList.length } parancs található.",
+        "${ filteredList.length } parancs található."
+      ],
       "Optional": [
         "Nem kötelező"
       ]
@@ -6505,6 +6605,9 @@
       "Street address": [
         "Utca, házszám"
       ],
+      "Synchronize with system": [
+        "Szinkronizálás a rendszerrel"
+      ],
       "System information": [
         "Rendszer információk"
       ],
@@ -6540,6 +6643,9 @@
       ],
       "Toolbar": [
         "Eszköztár"
+      ],
+      "Type a command...": [
+        "Írjon be egy parancsot…"
       ],
       "Undisclosed Recipients": [
         "Címzettek nem láthatók"
@@ -6760,6 +6866,9 @@
       ],
       "Re-enable the address linked to this calendar to update your invitation.": [
         "A meghívó frissítéséhez, engedélyezze újra a naptárhoz tartozó címét."
+      ],
+      "Reactivate now": [
+        "Újraaktiválás most"
       ],
       "Request an invite": [
         "Meghívó kérése"
@@ -7129,6 +7238,9 @@
       "Custom email domains": [
         "Saját domain nevek"
       ],
+      "Hide-my-email aliases": [
+        "Hide-my-email álnevek"
+      ],
       "Schedule messages at any time": [
         "Üzenetek ütemezése bármikor"
       ],
@@ -7229,6 +7341,9 @@
       ],
       "Discover all ${ BRAND_NAME } services": [
         "Fedezze fel az összes ${ BRAND_NAME } szolgáltatást"
+      ],
+      "More theming options are available in your account Settings > Appearance.": [
+        "További téma lehetőségek a fiók beállítások > Megjelenés menüpontban érhetők el."
       ],
       "Select a theme": [
         "Téma kiválasztása"
@@ -7405,6 +7520,9 @@
       ],
       "Text": [
         "Szöveg"
+      ],
+      "Type a command…": [
+        "Írjon be egy parancsot…"
       ],
       "Type text or keyword": [
         "Írjon be szöveget"
@@ -7909,6 +8027,15 @@
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
         "Akárhonnan elérhet videós szolgáltatásokat, mint például Netflix, Disney+ vagy Prime Video."
       ],
+      "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
+        "Minden prémium szolgáltatásunk a legmagasabb korlátokkal: 100 e-mail cím, 10 saját domain név támogatása, korlátlan számú hide-my-email álnév, naptármegosztás, titkosított felhőalapú tárolás és fájlmegosztás stb."
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Tartalmazza 1 egyéni e-mail domain név, 10 e-mail cím, 10 hide-my-email álnév, naptármegosztás és még sok más támogatását."
+      ],
+      "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Tartalmazza 3 egyéni e-mail domain név, 15 e-mail cím, korlátlan hide-my-email álnév, naptármegosztás és még sok más támogatását."
+      ],
       "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
         "Ideális családoknak és kisebb csoportoknak, mindenkinek saját e-mail fiókja és e-mail álnevei lehetnek. Saját domain név szükséges."
       ],
@@ -8344,6 +8471,9 @@
         "${ unreads } olvasatlan üzenet",
         "${ unreads } olvasatlan üzenet"
       ],
+      "(active)": [
+        "(aktív)"
+      ],
       "Account suspended": [
         "Fiók felfüggesztve"
       ],
@@ -8461,6 +8591,9 @@
       ],
       "Customize your mail import": [
         "Az e-mail importálás testreszabása"
+      ],
+      "Day theme": [
+        "Nappali téma"
       ],
       "Decryption error": [
         "Visszafejtési hiba"
@@ -8690,6 +8823,9 @@
       "Next message": [
         "Következő üzenet"
       ],
+      "Night theme": [
+        "Éjszakai téma"
+      ],
       "No attachment found": [
         "Nincs melléklet"
       ],
@@ -8896,6 +9032,9 @@
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Automatikus beállítás esetén, a szerkesztőben használt módban kerülnek elküldésre a levelek. Egyszerű szöveg esetén, ennek a partnernek, az összes üzenet egyszerű szöveggé alakul az elküldéskor."
       ],
+      "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
+        "Automatikus váltás az Ön által preferált nappali és éjszakai témák között a rendszer nappali és éjszakai üzemmódjával szinkronban."
+      ],
       "Customize import to reduce the number of folders": [
         "Módosítsa az importálás beállításait hogy kevesebb mappára legyen szükség"
       ],
@@ -8946,6 +9085,12 @@
       ],
       "The import will start with the most recent messages.": [
         "Az importálás a legfrissebb üzenetekkel kezdődik."
+      ],
+      "The selected theme will be active when your system is set to \"dark mode\"": [
+        "A kiválasztott téma akkor lesz aktív, ha a rendszer \"sötét üzemmódba\" van állítva."
+      ],
+      "The selected theme will be active when your system is set to \"light mode\"": [
+        "A kiválasztott téma akkor lesz aktív, ha a rendszer \"világos üzemmódba\" van állítva."
       ],
       "This feature is only available for paid users": [
         "Ez a lehetőség csak előfizetéses csomagokban érhető érhető el"

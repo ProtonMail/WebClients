@@ -1259,10 +1259,10 @@
     },
     "Amount of completed get started checklist items": {
       "${ numberOfCompletedItems }/${ totalNumberOfItems } complete": [
-        "${ numberOfCompletedItems }/${ totalNumberOfItems } завершено",
-        "${ numberOfCompletedItems }/${ totalNumberOfItems } завершено",
-        "${ numberOfCompletedItems }/${ totalNumberOfItems } завершено",
-        "${ numberOfCompletedItems }/${ totalNumberOfItems } завершено"
+        "${ numberOfCompletedItems }/${ totalNumberOfItems } завершён",
+        "${ numberOfCompletedItems }/${ totalNumberOfItems } завершены",
+        "${ numberOfCompletedItems }/${ totalNumberOfItems } завершены",
+        "${ numberOfCompletedItems }/${ totalNumberOfItems } завершены"
       ]
     },
     "Animation": {
@@ -3358,12 +3358,6 @@
         "Пожалуйста, исправьте выделенные конфликты, чтобы продолжить.",
         "Пожалуйста, исправьте выделенные конфликты, чтобы продолжить."
       ],
-      "Please repeat the password": [
-        "Пожалуйста, повторите пароль"
-      ],
-      "Please set a password": [
-        "Пожалуйста, задайте пароль"
-      ],
       "Port is required": [
         "Нужно указать порт"
       ],
@@ -4767,13 +4761,13 @@
         "${ NumMessages } сообщений в цепочке писем"
       ],
       "${ numOccurrences } occurrence found": [
-        "Вхождений найдено - ${ numOccurrences }",
+        "Найдено ${ numOccurrences } вхождение",
         "Найдено ${ numOccurrences } вхождения",
         "Найдено ${ numOccurrences } вхождений",
         "Найдено ${ numOccurrences } вхождений"
       ],
       "${ numOccurrences } occurrence found in the mail content": [
-        "Количество вхождений в тексте письма - ${ numOccurrences }",
+        "Найдено ${ numOccurrences } вхождение в содержимом почты",
         "Найдено ${ numOccurrences } вхождения в содержимом почты",
         "Найдено ${ numOccurrences } вхождений в содержимом почты",
         "Найдено ${ numOccurrences } вхождений в содержимом почты"
@@ -5226,13 +5220,13 @@
         "Срок действия"
       ],
       "Expires in ${ formattedDate }": [
-        "Истекает в ${ formattedDate }"
+        "Истекает через ${ formattedDate }"
       ],
       "Expires in ${ minutesDiff } minute": [
-        "Истекает через ${ minutesDiff } мин.",
-        "Истекает через ${ minutesDiff } мин.",
-        "Истекает через ${ minutesDiff } мин.",
-        "Истекает через ${ minutesDiff } мин"
+        "Истекает через ${ minutesDiff } минуту",
+        "Истекает через ${ minutesDiff } минуты",
+        "Истекает через ${ minutesDiff } минут",
+        "Истекает через ${ minutesDiff } минут"
       ],
       "Expires in less than ${ hoursDiff } hour": [
         "Истекает менее, чем через ${ hoursDiff } час",
@@ -5695,6 +5689,9 @@
       ],
       "Subject: ": [
         "Тема: "
+      ],
+      "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
+        "Окончание подписки: для сохранения преимуществ плана ${ planName } необходимо её восстановить до ${ byDate }. ${ reactivateLink }"
       ],
       "support team": [
         "служба поддержки"
@@ -6224,10 +6221,10 @@
         "Хотите ли вы доверять основным открытым ключам со следующим цифровым отпечатком?"
       ],
       "You have enabled Address Verification with Trusted Keys for this email address,\nbut no active encryption key has been trusted.\nYou must trust a key valid for sending in order to send a message to this email address.": [
-        "Вы включили проверку адреса доверенными ключами, но ни один из активных ключей для шифрования не является доверенным для этого адреса электронной почты.\nВы должны доверять ключу для отправки, чтобы отправлять сообщения на этот адрес.",
-        "Вы включили проверку адреса доверенными ключами, но ни один из активных ключей для шифрования не является доверенным для этого адреса электронной почты.\nВы должны доверять ключу для отправки, чтобы отправлять сообщения на этот адрес.",
-        "Вы включили проверку адреса доверенными ключами, но ни один из активных ключей для шифрования не является доверенным для этого адреса электронной почты.\nВы должны доверять ключу для отправки, чтобы отправлять сообщения на этот адрес.",
-        "Вы включили проверку адреса доверенными ключами, но ни один из активных ключей для шифрования не является доверенным для этого адреса электронной почты.\nВы должны доверять ключу для отправки, чтобы отправлять сообщения на этот адрес."
+        "Вы включили проверку адреса доверенными ключами для этого адреса электронной почты, но ни один из активных ключей для шифрования не является доверенным.\nВы должны доверять ключу для отправки, чтобы отправлять сообщения на этот адрес.",
+        "Вы включили проверку адреса доверенными ключами для этого адреса электронной почты, но ни один из активных ключей для шифрования не является доверенным.\nВы должны доверять ключам для отправки, чтобы отправлять сообщения на эти адреса.",
+        "Вы включили проверку адреса доверенными ключами для этого адреса электронной почты, но ни один из активных ключей для шифрования не является доверенным.\nВы должны доверять ключам для отправки, чтобы отправлять сообщения на эти адреса.",
+        "Вы включили проверку адреса доверенными ключами для этого адреса электронной почты, но ни один из активных ключей для шифрования не является доверенным.\nВы должны доверять ключам для отправки, чтобы отправлять сообщения на эти адреса."
       ]
     },
     "Key validation warning": {
@@ -6851,7 +6848,7 @@
         "Время"
       ],
       "To": [
-        "Кому"
+        "До"
       ],
       "To:": [
         "Кому:"
@@ -7088,6 +7085,9 @@
       "Re-enable the address linked to this calendar to update your invitation.": [
         "Повторно включите адрес, связанный с этим календарем, для обновления вашего приглашения."
       ],
+      "Reactivate now": [
+        "Восстановить подписку"
+      ],
       "Request an invite": [
         "Запросить приглашение"
       ],
@@ -7196,10 +7196,10 @@
         "Импортировать все сообщения из ${ itemsToImportCount } ярлыков и пометить их ярлыком как"
       ],
       "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
-        "Импортировать все сообщения из ${ selectedItemsToImportCount }/${ itemsToImportCount } папок и пометить их как",
-        "Импортировать все сообщения из ${ selectedItemsToImportCount }/${ itemsToImportCount } папок и пометить их как",
-        "Импортировать все сообщения из ${ selectedItemsToImportCount }/${ itemsToImportCount } папок и пометить их как",
-        "Импортировать все сообщения из ${ selectedItemsToImportCount }/${ itemsToImportCount } папок и пометить их как"
+        "Импортировать все сообщения из ${ selectedItemsToImportCount } из ${ itemsToImportCount } папки и пометить их как",
+        "Импортировать все сообщения из ${ selectedItemsToImportCount } из ${ itemsToImportCount } папок и пометить их как",
+        "Импортировать все сообщения из ${ selectedItemsToImportCount } из ${ itemsToImportCount } папок и пометить их как",
+        "Импортировать все сообщения из ${ selectedItemsToImportCount } из ${ itemsToImportCount } папок и пометить их как"
       ],
       "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
         "Импортировать все сообщения с ${ selectedItemsToImportCount } из ${ itemsToImportCount } ярлыка, и пометить их как",
@@ -8092,25 +8092,25 @@
         "${ days } день",
         "${ days } дня",
         "${ days } дней",
-        "${ days } дня"
+        "${ days } дней"
       ],
       "${ hours } hour": [
         "${ hours } час",
         "${ hours } часа",
         "${ hours } часов",
-        "${ hours } часа"
+        "${ hours } часов"
       ],
       "${ minutes } minute": [
         "${ minutes } минута",
         "${ minutes } минуты",
         "${ minutes } минут",
-        "${ minutes } минуты"
+        "${ minutes } минут"
       ],
       "${ seconds } second": [
         "${ seconds } секунда",
         "${ seconds } секунды",
         "${ seconds } секунд",
-        "${ seconds } секунды"
+        "${ seconds } секунд"
       ]
     },
     "specialoffer: Deal": {
@@ -8118,7 +8118,7 @@
         "${ n } месяц БЕСПЛАТНО",
         "${ n } месяца БЕСПЛАТНО",
         "${ n } месяцев БЕСПЛАТНО",
-        "${ n } БЕСПЛАТНЫХ месяца"
+        "${ n } месяцев БЕСПЛАТНО"
       ]
     },
     "specialoffer: Deal details": {
@@ -8227,7 +8227,7 @@
         "за ${ n } месяц",
         "за ${ n } месяца",
         "за ${ n } месяцев",
-        "за ${ n } месяца"
+        "за ${ n } месяцев"
       ],
       "Get the deal": [
         "Получить скидку"
@@ -8415,10 +8415,10 @@
         "${ elementsCount } цепочек писем помечены как прочитанные."
       ],
       "${ elementsCount } conversation marked as Starred.": [
-        "Обсуждений, отмеченных звёздочкой, - ${ elementsCount }.",
-        "Обсуждений, отмеченных звёздочкой, - ${ elementsCount }.",
-        "Обсуждений, отмеченных звёздочкой, - ${ elementsCount }.",
-        "Обсуждений, отмеченных звёздочкой, - ${ elementsCount }."
+        "${ elementsCount } цепочка писем отмечена звёздочкой.",
+        "${ elementsCount } цепочки писем отмечены звёздочкой.",
+        "${ elementsCount } цепочек писем отмечены звёздочкой.",
+        "${ elementsCount } цепочек писем отмечены звёздочкой."
       ],
       "${ elementsCount } conversation marked as unread.": [
         "${ elementsCount } цепочка писем помечена как непрочитанная.",
@@ -8445,10 +8445,10 @@
         "${ elementsCount } цепочек писем перемещены в спам, а отправители добавлены в ваш список спама."
       ],
       "${ elementsCount } conversation removed from ${ labelName }.": [
-        "Обсуждений, удалённых из ${ labelName } - ${ elementsCount }.",
-        "Обсуждений, удалённых из ${ labelName } - ${ elementsCount }.",
-        "Обсуждений, удалённых из ${ labelName } - ${ elementsCount }.",
-        "Обсуждений, удалённых из ${ labelName } - ${ elementsCount }."
+        "С ${ elementsCount } цепочки писем снят ярлык ${ labelName }.",
+        "С ${ elementsCount } цепочек писем снят ярлык ${ labelName }.",
+        "С ${ elementsCount } цепочек писем снят ярлык ${ labelName }.",
+        "С ${ elementsCount } цепочек писем снят ярлык ${ labelName }."
       ],
       "${ elementsCount } message added to ${ labelName }.": [
         "${ elementsCount } сообщению добавлен ярлык ${ labelName }.",
@@ -8463,10 +8463,10 @@
         "${ elementsCount } сообщений отмечены как прочитанные."
       ],
       "${ elementsCount } message marked as Starred.": [
-        "Сообщений, отмеченных звёздочкой, - ${ elementsCount } .",
+        "${ elementsCount } сообщение отмечено звёздочкой.",
         "${ elementsCount } сообщения отмечены звёздочкой.",
         "${ elementsCount } сообщений отмечены звёздочкой.",
-        "Сообщений, отмеченных звёздочкой, - ${ elementsCount } ."
+        "${ elementsCount } сообщений отмечены звёздочкой."
       ],
       "${ elementsCount } message marked as unread.": [
         "${ elementsCount } сообщение помечено как непрочитанное.",
@@ -8493,10 +8493,10 @@
         "${ elementsCount } сообщений перемещены в спам, а отправители добавлены в список спама."
       ],
       "${ elementsCount } message removed from ${ labelName }.": [
-        "Сообщений, удалённых из ${ labelName } - ${ elementsCount }.",
-        "Сообщений, удалённых из ${ labelName } - ${ elementsCount }.",
-        "Сообщений, удалённых из ${ labelName } - ${ elementsCount }.",
-        "Сообщений, удалённых из ${ labelName } - ${ elementsCount }."
+        "С ${ elementsCount } сообщения снят ярлык ${ labelName }.",
+        "С ${ elementsCount } сообщений снят ярлык ${ labelName }.",
+        "С ${ elementsCount } сообщений снят ярлык ${ labelName }.",
+        "С ${ elementsCount } сообщений снят ярлык ${ labelName }."
       ],
       "Address copied to clipboard": [
         "Адрес скопирован в буфер обмена"
@@ -8681,6 +8681,48 @@
     "Success notification when user send feedback": {
       "Feedback sent": [
         "Отзыв отправлен"
+      ]
+    },
+    "summer2023: Deal details": {
+      "Premium Password Manager": [
+        "Платная версия менеджера паролей"
+      ]
+    },
+    "summer2023: Describe Proton Pass": {
+      "Securely store your passwords and autofill them on websites. Includes unlimited passwords, autofill, password generator, and more.": [
+        "Храните неограниченное количество паролей в безопасности и используйте их автозаполнение, чтобы входить в аккаунты одним нажатием. Мы также предлагаем генератор паролей и другие функции."
+      ]
+    },
+    "summer2023: Tooltip": {
+      "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
+        "Создавайте надежные данные для входа на всех устройствах. Вам будут доступны неограниченное количество псевдонимов, 20 хранилищ, встроенная двухфакторная аутентификация, автозаполнение данных кредитной карты и многое другое."
+      ],
+      "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "Включает 2950 серверов в более чем 65 странах с возможностью подключения до 10 устройств, доступ к стриминговым платформам со всего мира, блокировщик рекламы и вредоносного ПО и другие преимущества."
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "Защитите свои материалы при помощи зашифрованного облачного хранилища. Вам будут доступны история версий, зашифрованный обмен файлами и многое другое."
+      ]
+    },
+    "summer2023:Footer": {
+      "*Your subscription will automatically renew at the standard discounted rate at the end of your billing cycle.": [
+        "* Ваша подписка автоматически продлится по стандартной цене с учетом скидки в конце платежного цикла."
+      ],
+      "Discounts are based on the standard monthly pricing. This offer is only available to first-time subscribers.": [
+        "Скидки рассчитываются исходя из стандартной платы за 1 месяц. Предложение действует только для новых подписчиков."
+      ]
+    },
+    "summer2023:Info": {
+      "For a limited time, get the best ${ BRAND_NAME } has to offer at an exclusive discount.": [
+        "Получите эксклюзивную скидку от ${ BRAND_NAME }. Предложение ограничено по времени!"
+      ],
+      "We’re celebrating the nine-year anniversary of our crowdfunding!": [
+        "Мы празднуем девятую годовщину нашего проекта!"
+      ]
+    },
+    "summer2023:Offer title": {
+      "${ BRAND_NAME } Anniversary Sale": [
+        "Праздничная распродажа ${ BRAND_NAME }"
       ]
     },
     "Table header": {
@@ -9378,6 +9420,9 @@
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Значение \"Автоматический\" обозначает формат содержимого редактора, применяемый при отправке этому пользователю. \"Простой текст\" означает, что при отправке сообщение всегда будет преобразовываться в простой текст."
       ],
+      "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
+        "Автоматически переключаться между вашими предпочтительными темами для дня и ночи синхронно с системными дневным и ночным режимами."
+      ],
       "Customize import to reduce the number of folders": [
         "Настройте импорт, чтобы уменьшить количество папок"
       ],
@@ -9428,6 +9473,9 @@
       ],
       "The import will start with the most recent messages.": [
         "Импорт начнётся с самых последних сообщений."
+      ],
+      "The selected theme will be active when your system is set to \"dark mode\"": [
+        "Выбранная тема станет активной, когда в системе будет выбрана \"тёмная тема\""
       ],
       "The selected theme will be active when your system is set to \"light mode\"": [
         "Выбранная тема станет доступной, когда на системе выбрано \"светлое оформление\""
