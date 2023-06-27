@@ -7,7 +7,7 @@ import Spams from '../filters/spams/Spams';
 
 const OrganizationSpamFiltersSection = () => (
     <SettingsSectionWide>
-        <SettingsParagraph learnMoreUrl={getKnowledgeBaseUrl('/spam-filtering')}>
+        <SettingsParagraph learnMoreUrl={getKnowledgeBaseUrl('/filter-lists-organization')}>
             {c('FilterSettings')
                 .t`Take control over what lands in your organization members' inboxes by creating the following lists:`}
             <ul className="mt-2">
