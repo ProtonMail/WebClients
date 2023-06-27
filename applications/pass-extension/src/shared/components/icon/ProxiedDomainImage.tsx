@@ -1,6 +1,7 @@
 import { type CSSProperties, type VFC, useEffect, useMemo } from 'react';
 
 import { safeCall } from '@proton/pass/utils/fp';
+import { isValidURL } from '@proton/pass/utils/url';
 
 import { API_URL } from '../../../app/config';
 
@@ -26,7 +27,7 @@ const getImageURL = (domain?: string) => {
 };
 
 export const ProxiedDomainImage: VFC<Props> = ({ className, onStatusChange, status, url, style = {} }) => {
-    const domain = useMemo(() => safeCall(() => new URL(url).host)(), [url]);
+    const domain = useMemo(() => safeCall(() => new URL(isValidURL(url).url).host)(), [url]);
     useEffect(() => onStatusChange(domain ? ImageStatus.LOADING : ImageStatus.ERROR), [domain, onStatusChange]);
 
     const styles = { visibility: status === ImageStatus.READY ? 'visible' : 'hidden', ...style };

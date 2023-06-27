@@ -1,13 +1,13 @@
 import { type VFC, useState } from 'react';
 
-import { Field, Form, FormikProvider, useFormik } from 'formik';
-import type { FieldProps } from 'formik/dist/Field';
+import type { FormikErrors } from 'formik';
+import { Form, FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
-import { Icon, InputFieldTwo, PasswordInputTwo } from '@proton/components/components';
 import { useNotifications } from '@proton/components/hooks';
 import { contentScriptMessage, sendMessage } from '@proton/pass/extension/message';
+import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import { createTelemetryEvent } from '@proton/pass/telemetry/events';
 import type { Item } from '@proton/pass/types';
 import { AutoSaveType, type PromptedFormEntry, WorkerMessageType } from '@proton/pass/types';
@@ -15,31 +15,29 @@ import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import { partialMerge } from '@proton/pass/utils/object';
 import { uniqueId } from '@proton/pass/utils/string';
 import { isValidURL } from '@proton/pass/utils/url';
-import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 
-import { useIFrameContext } from '../../context/IFrameContextProvider';
+import { Field } from '../../../../../popup/components/Field/Field';
+import { FieldsetCluster } from '../../../../../popup/components/Field/Layout/FieldsetCluster';
+import { TextField } from '../../../../../popup/components/Field/TextField';
+import { TitleField } from '../../../../../popup/components/Field/TitleField';
+import { BaseItemIcon } from '../../../../../shared/components/icon/ItemIcon';
+import { MAX_ITEM_NAME_LENGTH, validateItemName } from '../../../../../shared/form/validator/validate-item';
+import { NotificationHeader } from './NotificationHeader';
 
 import './Autosave.scss';
 
-type AutosaveFormValues = {
-    title: string;
-    username: string;
-    password: string;
-};
+type Props = { submission: PromptedFormEntry; onClose?: () => void; settings: ProxiedSettings };
+type AutosaveFormValues = { name: string; username: string; password: string };
 
-export const Autosave: VFC<{ submission: PromptedFormEntry; onAutoSaved?: () => void }> = ({
-    submission,
-    onAutoSaved,
-}) => {
-    const { closeIFrame } = useIFrameContext();
+export const Autosave: VFC<Props> = ({ submission, settings, onClose }) => {
     const { createNotification } = useNotifications();
     const [busy, setBusy] = useState(false);
     const submissionURL = submission.subdomain ?? submission.domain;
 
     const form = useFormik<AutosaveFormValues>({
         initialValues: {
-            title:
+            name:
                 submission.autosave.data.action === AutoSaveType.UPDATE
                     ? submission.autosave.data.item.data.metadata.name
                     : submissionURL,
@@ -47,8 +45,16 @@ export const Autosave: VFC<{ submission: PromptedFormEntry; onAutoSaved?: () => 
             password: submission.data.password,
         },
         validateOnChange: true,
+        validate: (values) => {
+            const errors: FormikErrors<AutosaveFormValues> = {};
 
-        onSubmit: async ({ title, username, password }) => {
+            const nameError = validateItemName(values.name);
+            if (nameError) errors.name = nameError;
+
+            return errors;
+        },
+
+        onSubmit: async ({ name, username, password }) => {
             setBusy(true);
 
             const { valid, url } = isValidURL(submissionURL);
@@ -56,7 +62,7 @@ export const Autosave: VFC<{ submission: PromptedFormEntry; onAutoSaved?: () => 
             const item: Item<'login'> =
                 submission.autosave.data.action === AutoSaveType.UPDATE
                     ? partialMerge(submission.autosave.data.item.data, {
-                          metadata: { name: title },
+                          metadata: { name },
                           content: {
                               username,
                               password,
@@ -68,7 +74,7 @@ export const Autosave: VFC<{ submission: PromptedFormEntry; onAutoSaved?: () => 
                     : {
                           type: 'login',
                           metadata: {
-                              name: title,
+                              name,
                               note: c('Info').t`Autosaved on ${submissionURL}`,
                               itemUuid: uniqueId(),
                           },
@@ -94,7 +100,7 @@ export const Autosave: VFC<{ submission: PromptedFormEntry; onAutoSaved?: () => 
                         })
                     ).catch(noop);
 
-                    return onAutoSaved?.();
+                    return onClose?.();
                 }
 
                 return createNotification({ text: c('Warning').t`Unable to save`, type: 'error' });
@@ -107,51 +113,57 @@ export const Autosave: VFC<{ submission: PromptedFormEntry; onAutoSaved?: () => 
 
     return (
         <FormikProvider value={form}>
-            <Form className="flex flex-column h100">
-                <div className="flex flex-nowrap flex-item-noshrink flex-align-items-start flex-justify-space-between">
-                    <div className="mt-1">
-                        <h3 className="text-bold text-2xl">
-                            {submission.autosave.data.action === AutoSaveType.NEW &&
-                                c('Info').t`Add to ${PASS_APP_NAME}`}
-                            {submission.autosave.data.action === AutoSaveType.UPDATE && c('Info').t`Update credentials`}
-                        </h3>
-                    </div>
-                    <div className="modal-two-header-actions flex flex-item-noshrink flex-nowrap flex-align-items-stretch">
-                        <Button className="flex-item-noshrink" shape="ghost" icon onClick={closeIFrame}>
-                            <Icon name="cross-big" />
-                        </Button>
-                    </div>
-                </div>
-                <div className="flex-item-fluid">
-                    <div className="flex flex-align-items-center mt-5 mb-4">
-                        <Icon name={'key'} className="mr-2 item-icon" color="#6D4AFF" />
-                        <Field name="title">
-                            {({ field }: FieldProps<AutosaveFormValues['title'], AutosaveFormValues>) => (
-                                <input
-                                    className="item-name--input text-xl text-bold flex-item-fluid"
-                                    spellCheck={false}
-                                    autoComplete={'off'}
-                                    {...field}
-                                />
-                            )}
-                        </Field>
+            <Form className="ui-login flex flex-column h100 flex-justify-space-between">
+                <NotificationHeader
+                    title={(() => {
+                        switch (submission.autosave.data.action) {
+                            case AutoSaveType.NEW:
+                                return c('Info').t`Save login`;
+                            case AutoSaveType.UPDATE:
+                                return c('Info').t`Update login`;
+                        }
+                    })()}
+                    onClose={onClose}
+                />
+                <div>
+                    <div className="flex flex-nowrap flex-align-items-center mb-2">
+                        <BaseItemIcon
+                            url={submission.domain}
+                            icon={'user'}
+                            size={20}
+                            alt=""
+                            className="flex-item-noshrink"
+                            loadImage={settings.loadDomainImages}
+                        />
+                        <div className="flex-item-fluid-auto">
+                            <Field
+                                name="name"
+                                component={TitleField}
+                                spellCheck={false}
+                                autoComplete={'off'}
+                                placeholder={c('Placeholder').t`Untitled`}
+                                maxLength={MAX_ITEM_NAME_LENGTH}
+                                className="pr-0"
+                                dense
+                            />
+                        </div>
                     </div>
 
-                    <Field name="username">
-                        {({ field }: FieldProps<AutosaveFormValues['username'], AutosaveFormValues>) => (
-                            <InputFieldTwo dense label="Username" className="mb-2" {...field} />
-                        )}
-                    </Field>
-
-                    <Field name="password">
-                        {({ field }: FieldProps<AutosaveFormValues['password'], AutosaveFormValues>) => (
-                            <InputFieldTwo dense as={PasswordInputTwo} label="Password" {...field} />
-                        )}
-                    </Field>
+                    <FieldsetCluster>
+                        <Field name="username" component={TextField} label={c('Label').t`Username`} />
+                        <Field name="password" component={TextField} label={c('Label').t`Password`} masked />
+                    </FieldsetCluster>
                 </div>
-                <div className="flex flex-justify-space-between">
-                    <Button onClick={closeIFrame}>{c('Action').t`Not now`}</Button>
-                    <Button color="norm" type="submit" loading={busy} disabled={busy}>
+                <div className="flex flex-justify-space-between gap-3">
+                    <Button pill color="norm" shape="outline" onClick={onClose}>{c('Action').t`Not now`}</Button>
+                    <Button
+                        pill
+                        color="norm"
+                        type="submit"
+                        loading={busy}
+                        disabled={busy}
+                        className="flex-item-fluid-auto"
+                    >
                         {(() => {
                             switch (submission.autosave.data.action) {
                                 case AutoSaveType.NEW:
