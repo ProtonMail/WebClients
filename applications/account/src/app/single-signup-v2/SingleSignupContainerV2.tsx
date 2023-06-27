@@ -164,7 +164,10 @@ const SingleSignupContainerV2 = ({ fork, activeSessions, loader, onLogin, produc
         return sendTelemetryReport({
             api: unauthApi,
             measurementGroup: TelemetryMeasurementGroups.accountSignup,
-            dimensions,
+            dimensions: {
+                ...dimensions,
+                flow: 'pass_signup_launch',
+            },
             event,
         }).catch(noop);
     };
