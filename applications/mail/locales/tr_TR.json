@@ -3318,12 +3318,6 @@
         "İlerlemek için lütfen vurgulanan çakışmayı düzeltin.",
         "İlerlemek için lütfen vurgulanan çakışmaları düzeltin."
       ],
-      "Please repeat the password": [
-        "Lütfen parolayı yeniden yazın"
-      ],
-      "Please set a password": [
-        "Lütfen bir parola ayarlayın"
-      ],
       "Port is required": [
         "Bağlantı noktasının yazılması zorunludur"
       ],
@@ -5514,6 +5508,9 @@
       "Subject: ": [
         "Konu: "
       ],
+      "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
+        "Abonelik sona eriyor: ${ planName } tarifesinin ek özelliklerini korumak için ${ byDate } tarihine kadar yeniden etkinleştirin. ${ reactivateLink }"
+      ],
       "support team": [
         "destek ekibi"
       ],
@@ -6875,6 +6872,9 @@
       ],
       "Re-enable the address linked to this calendar to update your invitation.": [
         "Davetinizi güncellemek için bu takvime bağlı adresi yeniden etkinleştirin."
+      ],
+      "Reactivate now": [
+        "Şimdi yeniden etkinleştir"
       ],
       "Request an invite": [
         "Davet iste"
@@ -8373,6 +8373,70 @@
     "Success notification when user send feedback": {
       "Feedback sent": [
         "Geri bildirim gönderildi"
+      ]
+    },
+    "summer2023: Billing cycle option": {
+      "1 year": [
+        "1 yıl"
+      ],
+      "2 years": [
+        "2 yıl"
+      ]
+    },
+    "summer2023: Deal details": {
+      "Premium Drive": [
+        "Ücretli Drive"
+      ],
+      "Premium Mail and Calendar": [
+        "Ücretli Mail ve Calendar"
+      ],
+      "Premium Password Manager": [
+        "Ücretli Parola Yöneticisi"
+      ]
+    },
+    "summer2023: Describe Proton Pass": {
+      "Securely store your passwords and autofill them on websites. Includes unlimited passwords, autofill, password generator, and more.": [
+        "Parolalarınızı güvenle saklayın ve sitelerde otomatik olarak kullanın. Sınırsız parola, otomatik doldurma, parola oluşturucu ve daha fazlasını içerir."
+      ]
+    },
+    "summer2023: Short tool name to present Proton Pass": {
+      "Password manager": [
+        "Parola yöneticisi"
+      ]
+    },
+    "summer2023: Tooltip": {
+      "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
+        "Tüm aygıtlarınızda güvenli hesap bilgileri oluşturun. Sınırsız takma ad (e-posta adresi), 20 kasa, entegre 2 adımlı doğrulama, kredi kartı otomatik doldurma ve daha fazlasını içerir."
+      ],
+      "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "65 üzerindeki ülkede 2950'nin üzerinde sunucu, 10 taneye kadar aygıt bağlayabilme, dünya çapında yayın akışı hizmetlerine erişim, kötü amaçlı yazılım ve reklam engelleyici ile diğer özellikleri içerir."
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "1 özel e-posta etki alanı, 10 e-posta adresi, 10 hide-my-email takma adı, takvim paylaşma ve daha fazlası için destek içerir."
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "Dosyalarınızı şifrelenmiş bulut depolama alanı ile koruyun. Sürüm geçmişi, şifrelenmiş dosya paylaşımı ve diğer özellikler."
+      ]
+    },
+    "summer2023:Footer": {
+      "*Your subscription will automatically renew at the standard discounted rate at the end of your billing cycle.": [
+        "*Aboneliğiniz, faturalama döneminizin sonunda otomatik olarak standart tarife üzerinden yenilenir."
+      ],
+      "Discounts are based on the standard monthly pricing. This offer is only available to first-time subscribers.": [
+        "İnidirmler standart aylık ücretlendirme temellidir. Bu teklif sadece ilk defa abone olacaklar için geçerlidir."
+      ]
+    },
+    "summer2023:Info": {
+      "For a limited time, get the best ${ BRAND_NAME } has to offer at an exclusive discount.": [
+        "Sınırlı bir süre için ${ BRAND_NAME }'un en iyi ürünlerini özel bir indirim ile edinin."
+      ],
+      "We’re celebrating the nine-year anniversary of our crowdfunding!": [
+        "Topluluk desteğimizin dokuzuncu yıl dönümünü kutluyoruz!"
+      ]
+    },
+    "summer2023:Offer title": {
+      "${ BRAND_NAME } Anniversary Sale": [
+        "${ BRAND_NAME } Yıl Dönümü Fırsatları"
       ]
     },
     "Table header": {

@@ -864,7 +864,7 @@
         "Os endereços de e-mail não coincidem."
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
-        "Este campo excede o máximo de ${ maximumLength } carateres."
+        "Este campo excede o máximo de ${ maximumLength } caracteres."
       ],
       "This field is required": [
         "Este campo é obrigatório"
@@ -944,7 +944,7 @@
     },
     "Human verification method": {
       "Email": [
-        "Correio electronico"
+        "E-mail"
       ],
       "Manual": [
         "Manual"
@@ -961,10 +961,10 @@
         "Um número de telemóvel pode ser utilizado para verificar apenas uma conta ${ BRAND_NAME }"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
-        "Antes de pedir um novo código de verificação, verifique a sua pasta de spam’ e verifique que ${ strong } é o endereço correto."
+        "Antes de pedir um novo código de verificação, verifique a sua pasta de spam e verifique que ${ strong } é o endereço correto."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
-        "Clique em \"Pedir novo código\" para receber um novo código de verificação em ${ strong }. Se o telefone estiver incorrecto, clique em \"Editar\" para o corrigir."
+        "Clique em \"Pedir novo código\" para receber um novo código de verificação em ${ strong }. Se o telefone estiver incorreto, clique em \"Editar\" para o corrigir."
       ],
       "Country code": [
         "Código de país"
@@ -1027,7 +1027,7 @@
         "A sua conta ${ BRAND_NAME } de momento está suspensa. Após 28 dias, os e-mails deixarão de ser entregues na sua caixa de entrada, as suas ligações de partilha de disco serão bloqueadas, e não poderá carregar novos ficheiros. Para retomar o serviço normal, pague quaisquer faturas em atraso."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "A sua conta ${ BRAND_NAME } está suspensa de momento. Não receberá e-mails na sua caixa de entrada. As suas ligações de partilha do Drive estão inativas e não pode carregar novos ficheiros. Para continuar a utilizar a sua conta, efetue o pagamento das faturas vencidas."
+        "A sua conta ${ BRAND_NAME } está suspensa de momento. Não receberá e-mails na sua caixa de entrada. As suas ligações de partilha do Drive estão inativas e não pode carregar novos ficheiros. Para continuar a utilizar a sua conta, por favor efetue o pagamento das faturas vencidas."
       ],
       "Your email will only be used for this one-time verification.": [
         "O seu e-mail só será utilizado para esta verificação única."
@@ -1105,11 +1105,11 @@
     },
     "Validation": {
       "Password must contain at least ${ length } character": [
-        "A palavra-passe deve conter pelo menos ${ length } carateres",
+        "A palavra-passe deve conter pelo menos ${ length } caráter.",
         "A palavra-passe deve conter pelo menos ${ length } carateres."
       ],
       "Try a shorter username (${ n } character max)": [
-        "Tente um nome de utilizador mais pequeno (máximo de carater ${ n })",
+        "Tente um nome de utilizador mais pequeno (máximo de ${ n } caráter)",
         "Tente um nome de utilizador mais pequeno (máximo de carateres ${ n })"
       ]
     }

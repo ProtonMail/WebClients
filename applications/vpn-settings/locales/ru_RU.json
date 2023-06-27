@@ -41,6 +41,9 @@
       "Cancel": [
         "Отменить"
       ],
+      "Cancel subscription": [
+        "Отменить подписку"
+      ],
       "Change mailbox password": [
         "Изменить пароль почтового ящика"
       ],
@@ -190,6 +193,9 @@
       ],
       "Increase": [
         "Увеличить"
+      ],
+      "Keep my ${ vpnPlanNameShort } subscription": [
+        "Сохранить мою подписку ${ vpnPlanNameShort }"
       ],
       "Load more": [
         "Загрузить ещё"
@@ -371,6 +377,9 @@
       "Upgrade now": [
         "Улучшить сейчас"
       ],
+      "Use ${ label } theme": [
+        "Использовать тему ${ label }"
+      ],
       "Use a different card": [
         "Использовать другую карту"
       ],
@@ -426,6 +435,14 @@
       ],
       "Try free for 30 days": [
         "Попробуйте бесплатно в течение 30 дней"
+      ]
+    },
+    "Action subscription": {
+      "Manage": [
+        "Управлять"
+      ],
+      "Reactivate": [
+        "Возобновить"
       ]
     },
     "Addon": {
@@ -2091,6 +2108,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } нужно ваше разрешение, чтобы ${ enableDesktopNotifications }."
       ],
+      "${ autoRenewal } your subscription will renew automatically on ${ renewalTime }.": [
+        "${ autoRenewal } ваша подписка будет автоматически продлена ${ renewalTime }."
+      ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Если вы продолжите, то потеряете доступ ко всем текущим зашифрованным данным в вашего аккаунта."
       ],
@@ -2178,9 +2198,6 @@
       "Additional options": [
         "Дополнительные параметры"
       ],
-      "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
-        "После внесения оплаты Bitcoin, пожалуйста, следуйте согласно указаниям ниже, чтобы произвести улучшение."
-      ],
       "All ${ BRAND_NAME } apps and their premium features": [
         "Все приложения ${ BRAND_NAME } и их платные функции"
       ],
@@ -2189,6 +2206,9 @@
       ],
       "American Express SafeKey logo": [
         "Логотип American Express SafeKey"
+      ],
+      "Amount above maximum (${ amount }).": [
+        "Сумма выше максимальной (${ amount })."
       ],
       "Amount below minimum (${ amount }).": [
         "Сумма ниже допустимого минимума (${ amount })."
@@ -2204,6 +2224,9 @@
       ],
       "Attention required": [
         "Требуется внимание"
+      ],
+      "Auto-renewal: ": [
+        "Автопродление: "
       ],
       "Balance from your previous subscription": [
         "Баланс с прошлой подписки"
@@ -2267,6 +2290,9 @@
       ],
       "Custom email domains": [
         "Пользовательские домены электронной почты"
+      ],
+      "Customize the look and feel of ${ BRAND_NAME } applications.": [
+        "Настройте внешний вид ${ BRAND_NAME } приложений."
       ],
       "Discover ProtectBuy logo": [
         "Логотип Discover ProtectBuy"
@@ -2376,6 +2402,9 @@
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Если вы считаете, что это ошибка, пожалуйста, свяжитесь с нами ${ contactLink }."
       ],
+      "If you cancel, your ${ vpnPlanName } subscription will not be renewed when it expires on ${ expiryDate }.": [
+        "Если вы отмените, ваша подписка ${ vpnPlanName } не будет продлена после истечения её срока действия ${ expiryDate }."
+      ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Если сообщения нет в папке Входящие, проверьте, не попало ли оно в папку Спам."
       ],
@@ -2402,6 +2431,9 @@
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Важно: пожалуйста, убедитесь, что вы сохранили коды восстановления. Иначе вы можете навсегда потерять доступ к своей учётной записи, если потеряете своё устройство для двухфакторной аутентификации."
+      ],
+      "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
+        "На следующем шаге вы сможете отправить депозит, используя адрес Bitcoin."
       ],
       "Install a Country configuration file to connect to a random server in the country of your choice.": [
         "Установите конфигурационный файл страны для подключения к случайно выбранному серверу в выбранной стране."
@@ -2604,6 +2636,12 @@
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
         "Объём хранилища распределяется между ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } и ${ DRIVE_APP_NAME }."
       ],
+      "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
+        "Отправьте депозит, используя указанный адрес, или отсканируйте QR-код. Ваш депозит будет отражен в вашем аккаунте после подтверждения."
+      ],
+      "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
+        "Окончание подписки: для сохранения преимуществ плана ${ planName } необходимо её восстановить до ${ byDate }. ${ reactivateLink }"
+      ],
       "Support for 1 custom email domain": [
         "Поддержка 1 пользовательского домена электронной почты"
       ],
@@ -2640,6 +2678,9 @@
       "This can take a few seconds or a few minutes depending on your device": [
         "Это может занять от нескольких секунд до нескольких минут в зависимости от вашего устройства"
       ],
+      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
+        "Это отменит вашу текущую платную подписку и вы потеряете все льготы по лояльности, которые вы накопили."
+      ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
         "Это приведет к отмене вашей текущей платной подписки, и вы потеряете все накопленные вами преимущества лояльности. Оставшаяся сумма подписки будет возвращена в виде остатка на счету."
       ],
@@ -2660,6 +2701,9 @@
       ],
       "To ${ planName }": [
         "На ${ planName }"
+      ],
+      "To complete your payment, please send ${ btcAmountBold } to the address below.": [
+        "Для завершения оплаты, пожалуйста, отправьте ${ btcAmountBold } на адрес ниже."
       ],
       "to continue to ${ toAppName }": [
         "чтобы продолжить в ${ toAppName }"
@@ -2889,6 +2933,9 @@
       "You will be redirected to the VPN download page": [
         "Вы будете перенаправлены на страницу загрузки VPN"
       ],
+      "You will lose access to ${ vpnPlanNameShort } servers and features on this date.": [
+        "В этот день вы потеряете доступ к серверам и возможностям ${ vpnPlanNameShort }."
+      ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Вам понадобится адрес ${ BRAND_NAME } для использования ${ MAIL_APP_NAME } и ${ CALENDAR_APP_NAME }"
       ],
@@ -3067,14 +3114,17 @@
       "Browser version": [
         "Версия браузера"
       ],
-      "BTC address:": [
-        "Биткоин-адрес:"
+      "BTC address": [
+        "Адрес BTC"
       ],
-      "BTC amount:": [
-        "Сумма в биткоинах:"
+      "BTC amount": [
+        "Сумма BTC"
       ],
       "Card holder": [
         "Владелец карты"
+      ],
+      "Card information": [
+        "Информация о карте"
       ],
       "Card number": [
         "Номер карты"
@@ -3162,6 +3212,9 @@
       ],
       "Enter the code displayed on your TV": [
         "Введите код, отображаемый на вашем ТВ"
+      ],
+      "Expiration (${ patternExpiration })": [
+        "Срок действия (${ patternExpiration })"
       ],
       "Expiration date": [
         "Срок действия"
@@ -3283,6 +3336,9 @@
       "Security code": [
         "Код безопасности"
       ],
+      "Security code (${ codeName })": [
+        "Код безопасности (${ codeName })"
+      ],
       "Select your country": [
         "Выберите вашу страну"
       ],
@@ -3291,6 +3347,9 @@
       ],
       "Subscription options": [
         "Параметры подписки"
+      ],
+      "Synchronize with system": [
+        "Синхронизировать с системой"
       ],
       "System information": [
         "Сведения о системе"
@@ -3395,6 +3454,9 @@
       "Forgot username?": [
         "Забыли имя пользователя?"
       ],
+      "How to pay with Bitcoin?": [
+        "Как оплатить с помощью Bitcoin?"
+      ],
       "Learn more": [
         "Подробнее"
       ],
@@ -3409,6 +3471,9 @@
       ],
       "Privacy policy": [
         "Политика конфиденциальности"
+      ],
+      "Reactivate now": [
+        "Восстановить подписку"
       ],
       "Request an invite": [
         "Запросить приглашение"
@@ -4517,25 +4582,25 @@
         "${ days } день",
         "${ days } дня",
         "${ days } дней",
-        "${ days } дня"
+        "${ days } дней"
       ],
       "${ hours } hour": [
         "${ hours } час",
         "${ hours } часа",
         "${ hours } часов",
-        "${ hours } часа"
+        "${ hours } часов"
       ],
       "${ minutes } minute": [
         "${ minutes } минута",
         "${ minutes } минуты",
         "${ minutes } минут",
-        "${ minutes } минуты"
+        "${ minutes } минут"
       ],
       "${ seconds } second": [
         "${ seconds } секунда",
         "${ seconds } секунды",
         "${ seconds } секунд",
-        "${ seconds } секунды"
+        "${ seconds } секунд"
       ]
     },
     "specialoffer: Deal": {
@@ -4543,7 +4608,7 @@
         "${ n } месяц БЕСПЛАТНО",
         "${ n } месяца БЕСПЛАТНО",
         "${ n } месяцев БЕСПЛАТНО",
-        "${ n } БЕСПЛАТНЫХ месяца"
+        "${ n } месяцев БЕСПЛАТНО"
       ]
     },
     "specialoffer: Deal details": {
@@ -4652,7 +4717,7 @@
         "за ${ n } месяц",
         "за ${ n } месяца",
         "за ${ n } месяцев",
-        "за ${ n } месяца"
+        "за ${ n } месяцев"
       ],
       "Get the deal": [
         "Получить скидку"
@@ -4928,6 +4993,9 @@
       "Active": [
         "Активна"
       ],
+      "Expiring": [
+        "Истекающий"
+      ],
       "Upcoming": [
         "Предстоящий"
       ]
@@ -4990,8 +5058,14 @@
       "Phone number updated": [
         "Номер телефона обновлён"
       ],
+      "Preference saved": [
+        "Настройки сохранены"
+      ],
       "Verification successful": [
         "Проверка прошла успешно"
+      ],
+      "You have successfully cancelled your subscription.": [
+        "Вы успешно отменили свою подписку."
       ],
       "You have successfully unsubscribed": [
         "Подписка отменена"
@@ -5022,6 +5096,48 @@
     "Suffix for price": {
       "per month": [
         "в месяц"
+      ]
+    },
+    "summer2023: Deal details": {
+      "Premium Password Manager": [
+        "Платная версия менеджера паролей"
+      ]
+    },
+    "summer2023: Describe Proton Pass": {
+      "Securely store your passwords and autofill them on websites. Includes unlimited passwords, autofill, password generator, and more.": [
+        "Храните неограниченное количество паролей в безопасности и используйте их автозаполнение, чтобы входить в аккаунты одним нажатием. Мы также предлагаем генератор паролей и другие функции."
+      ]
+    },
+    "summer2023: Tooltip": {
+      "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
+        "Создавайте надежные данные для входа на всех устройствах. Вам будут доступны неограниченное количество псевдонимов, 20 хранилищ, встроенная двухфакторная аутентификация, автозаполнение данных кредитной карты и многое другое."
+      ],
+      "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "Включает 2950 серверов в более чем 65 странах с возможностью подключения до 10 устройств, доступ к стриминговым платформам со всего мира, блокировщик рекламы и вредоносного ПО и другие преимущества."
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "Защитите свои материалы при помощи зашифрованного облачного хранилища. Вам будут доступны история версий, зашифрованный обмен файлами и многое другое."
+      ]
+    },
+    "summer2023:Footer": {
+      "*Your subscription will automatically renew at the standard discounted rate at the end of your billing cycle.": [
+        "* Ваша подписка автоматически продлится по стандартной цене с учетом скидки в конце платежного цикла."
+      ],
+      "Discounts are based on the standard monthly pricing. This offer is only available to first-time subscribers.": [
+        "Скидки рассчитываются исходя из стандартной платы за 1 месяц. Предложение действует только для новых подписчиков."
+      ]
+    },
+    "summer2023:Info": {
+      "For a limited time, get the best ${ BRAND_NAME } has to offer at an exclusive discount.": [
+        "Получите эксклюзивную скидку от ${ BRAND_NAME }. Предложение ограничено по времени!"
+      ],
+      "We’re celebrating the nine-year anniversary of our crowdfunding!": [
+        "Мы празднуем девятую годовщину нашего проекта!"
+      ]
+    },
+    "summer2023:Offer title": {
+      "${ BRAND_NAME } Anniversary Sale": [
+        "Праздничная распродажа ${ BRAND_NAME }"
       ]
     },
     "Tab subscription modal": {
@@ -5060,6 +5176,9 @@
     "Title": {
       "${ VPN_APP_NAME } clients": [
         "Клиенты ${ VPN_APP_NAME }"
+      ],
+      "(active)": [
+        "(активна)"
       ],
       "1. Give a name to the config to be generated": [
         "1. Дайте имя генерируемой конфигурации"
@@ -5124,6 +5243,12 @@
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Отменить подписку ${ MAIL_SHORT_APP_NAME }"
       ],
+      "Cancel subscription": [
+        "Отменить подписку"
+      ],
+      "Cancel subscription?": [
+        "Отменить подписку?"
+      ],
       "Card verification": [
         "Проверка карты"
       ],
@@ -5169,6 +5294,9 @@
       "Date": [
         "Дата"
       ],
+      "Day theme": [
+        "Дневная тема"
+      ],
       "Delete": [
         "Удалить"
       ],
@@ -5190,9 +5318,6 @@
       "Downloads": [
         "Загрузки"
       ],
-      "Duration": [
-        "Длительность"
-      ],
       "Edit credit/debit card": [
         "Изменить кредитную/дебетовую карту"
       ],
@@ -5204,9 +5329,6 @@
       ],
       "Email subscriptions": [
         "Подписки на рассылки"
-      ],
-      "End date": [
-        "Дата окончания"
       ],
       "Enter your password": [
         "Введите свой пароль"
@@ -5250,6 +5372,9 @@
       "Next": [
         "Далее"
       ],
+      "Night theme": [
+        "Ночная тема"
+      ],
       "No recovery method": [
         "Отсутствует метод восстановления"
       ],
@@ -5291,9 +5416,6 @@
       ],
       "Phone": [
         "Телефон"
-      ],
-      "Plan": [
-        "Тариф"
       ],
       "Plan summary": [
         "Сводка по тарифу"
@@ -5361,9 +5483,6 @@
       "Sign out": [
         "Выйти"
       ],
-      "Start date": [
-        "Дата начала"
-      ],
       "Status": [
         "Состояние"
       ],
@@ -5372,9 +5491,6 @@
       ],
       "Switch to two-password mode": [
         "Переключение в режим с двумя паролями"
-      ],
-      "Total paid": [
-        "Всего оплачено"
       ],
       "TV sign in": [
         "Вход на ТВ"
@@ -5390,9 +5506,6 @@
       ],
       "Unsupported browser": [
         "Неподдерживаемый браузер"
-      ],
-      "Users": [
-        "Пользователи"
       ],
       "Verification": [
         "Подтверждение"
@@ -5456,12 +5569,50 @@
         "Счет ${ MAIL_APP_NAME }"
       ]
     },
+    "Title subscription": {
+      "Actions": [
+        "Действия"
+      ],
+      "Duration": [
+        "Длительность"
+      ],
+      "End date": [
+        "Дата окончания"
+      ],
+      "Plan": [
+        "Тариф"
+      ],
+      "Start date": [
+        "Дата начала"
+      ],
+      "Status": [
+        "Статус"
+      ],
+      "Total": [
+        "Итого"
+      ],
+      "Total paid": [
+        "Всего оплачено"
+      ],
+      "Users": [
+        "Пользователи"
+      ]
+    },
     "Tooltip": {
+      "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
+        "Автоматически переключаться между вашими предпочтительными темами для дня и ночи синхронно с системными дневным и ночным режимами."
+      ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Если вы купили подарочный код или получили его от нашей службы поддержки, вы можете ввести его здесь."
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Новый цикл подписки начинается ${ formattedTime }"
+      ],
+      "The selected theme will be active when your system is set to \"dark mode\"": [
+        "Выбранная тема станет активной, когда в системе будет выбрана \"тёмная тема\""
+      ],
+      "The selected theme will be active when your system is set to \"light mode\"": [
+        "Выбранная тема станет доступной, когда на системе выбрано \"светлое оформление\""
       ]
     },
     "Tor out of date": {

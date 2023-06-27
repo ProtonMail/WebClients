@@ -41,6 +41,9 @@
       "Cancel": [
         "İptal"
       ],
+      "Cancel subscription": [
+        "Aboneliği iptal et"
+      ],
       "Change mailbox password": [
         "Posta kutusu parolasını değiştir"
       ],
@@ -190,6 +193,9 @@
       ],
       "Increase": [
         "Artır"
+      ],
+      "Keep my ${ vpnPlanNameShort } subscription": [
+        "${ vpnPlanNameShort } aboneliğimi koru"
       ],
       "Load more": [
         "Diğerlerini yükle"
@@ -371,6 +377,9 @@
       "Upgrade now": [
         "Şimdi yükselt"
       ],
+      "Use ${ label } theme": [
+        "${ label } teması kullanılsın"
+      ],
       "Use a different card": [
         "Başka bir kart kullanın"
       ],
@@ -426,6 +435,14 @@
       ],
       "Try free for 30 days": [
         "30 gün boyunca ücretsiz olarak deneyin"
+      ]
+    },
+    "Action subscription": {
+      "Manage": [
+        "Yönet"
+      ],
+      "Reactivate": [
+        "Yeniden etkinleştir"
       ]
     },
     "Addon": {
@@ -2071,6 +2088,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName }, ${ enableDesktopNotifications } için izninizi istiyor."
       ],
+      "${ autoRenewal } your subscription will renew automatically on ${ renewalTime }.": [
+        "${ autoRenewal } aboneliğinizi ${ renewalTime } zamanında yenileyecek."
+      ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } İlerlerseniz hesabınızda bulunan tüm şifrelenmiş verilere erişiminizi kaybedeceksiniz."
       ],
@@ -2152,9 +2172,6 @@
       "Additional options": [
         "Ek seçenekler"
       ],
-      "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
-        "Bitcoin ödemenizi yaptıktan sonra, tarifenizi yükseltmek için aşağıdaki yönergeleri izleyin."
-      ],
       "All ${ BRAND_NAME } apps and their premium features": [
         "Tüm ${ BRAND_NAME } uygulamaları ve ücretli özellikleri"
       ],
@@ -2163,6 +2180,9 @@
       ],
       "American Express SafeKey logo": [
         "American Express SafeKey logosu"
+      ],
+      "Amount above maximum (${ amount }).": [
+        "Tutar en fazla miktarın üzerinde (${ amount })."
       ],
       "Amount below minimum (${ amount }).": [
         "Tutar en az miktarın altında (${ amount })."
@@ -2178,6 +2198,9 @@
       ],
       "Attention required": [
         "İlgilenmeniz gerekiyor"
+      ],
+      "Auto-renewal: ": [
+        "Otomatik yenileme: "
       ],
       "Balance from your previous subscription": [
         "Önceki aboneliğinizden kalan tutar"
@@ -2241,6 +2264,9 @@
       ],
       "Custom email domains": [
         "Özel e-posta etki alanları"
+      ],
+      "Customize the look and feel of ${ BRAND_NAME } applications.": [
+        "${ BRAND_NAME } uygulamalarının görünümünü ve kullanımını özelleştirin."
       ],
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy logosu"
@@ -2350,6 +2376,9 @@
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Bir yanlışlık olduğunu düşünüyorsanız, lütfen ${ contactLink } üzerinden bizimle görüşün."
       ],
+      "If you cancel, your ${ vpnPlanName } subscription will not be renewed when it expires on ${ expiryDate }.": [
+        "İptal ederseniz, ${ vpnPlanName } aboneliğiniz ${ expiryDate } tarihinde sona erdiğinde yenilenmeyecek."
+      ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "E-postayı Gelen kutunuzda göremezseniz, İstenmeyen kutusuna bakmayı unutmayın."
       ],
@@ -2376,6 +2405,9 @@
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Önemli: Lütfen kurtarma kodlarını kaydettiğinize emin olun. Bu kodlar olmadan, iki adımlı doğrulama aygıtınızı kaybederseniz hesabınıza asla erişemezsiniz."
+      ],
+      "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
+        "Bir sonraki adımda, bir Bitcoin adresi kullanarak ön ödemenizi yapabilirsiniz."
       ],
       "Install a Country configuration file to connect to a random server in the country of your choice.": [
         "Seçtiğiniz ülkedeki rastgele bir sunucuya bağlanmak için bir ülke yapılandırma dosyası yükleyin."
@@ -2576,6 +2608,12 @@
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
         "Depolama alanı ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } ve ${ DRIVE_APP_NAME } arasında paylaşılır."
       ],
+      "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
+        "Ödemeyi aşağıdaki adrese yapın ya da QR kodunu tarayın. Ön ödemeniz onaylandıktan sonra hesabınıza yansıtılacak."
+      ],
+      "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
+        "Abonelik sona eriyor: ${ planName } tarifesinin ek özelliklerini korumak için ${ byDate } tarihine kadar yeniden etkinleştirin. ${ reactivateLink }"
+      ],
       "Support for 1 custom email domain": [
         "1 özel e-posta etki alanı desteği"
       ],
@@ -2612,6 +2650,9 @@
       "This can take a few seconds or a few minutes depending on your device": [
         "Bu işlem aygıtınıza bağlı olarak birkaç saniye ya da dakika sürebilir"
       ],
+      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
+        "Bu işlem, var olan ücretli aboneliğinizi iptal edecek ve kazandığınız sadık müşteri özelliklerini kaybedeceksiniz."
+      ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
         "Bu işlem, geçerli ücretli aboneliğinizi iptal edecek ve kazandığınız sadık kullanıcı ek faydalarını kaybedeceksiniz. Aboneliğinizin kalan bakiyesi hesap kredisi olarak iade edilecek."
       ],
@@ -2632,6 +2673,9 @@
       ],
       "To ${ planName }": [
         "${ planName } tarifesine"
+      ],
+      "To complete your payment, please send ${ btcAmountBold } to the address below.": [
+        "Ödemenizi tamamlamak için aşağıdaki adrese ${ btcAmountBold } gönderin."
       ],
       "to continue to ${ toAppName }": [
         "${ toAppName } uygulamasına ilerlemek için"
@@ -2853,6 +2897,9 @@
       "You will be redirected to the VPN download page": [
         "VPN indirme sayfasına yönlendirileceksiniz"
       ],
+      "You will lose access to ${ vpnPlanNameShort } servers and features on this date.": [
+        "Bu tarihte ${ vpnPlanNameShort } sunucularına ve özelliklerine erişiminizi kaybedeceksiniz."
+      ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "${ MAIL_APP_NAME } ve ${ CALENDAR_APP_NAME } kullanmak için bir ${ BRAND_NAME } adresiniz olmalıdır"
       ],
@@ -2918,6 +2965,11 @@
     "Info message for custom invoice modal": {
       "Add your name (or company name) and address to your invoices.": [
         "Faturalarınıza adınızı (veya şirket adınızı) ve adresinizi ekleyin."
+      ]
+    },
+    "Info subscription": {
+      "You can prevent expiry by reactivating the subscription": [
+        "Aboneliği yeniden etkinleştirerek hizmetin sona ermesini önleyebilirsiniz"
       ]
     },
     "Info when deleting payment method": {
@@ -3029,11 +3081,11 @@
       "Browser version": [
         "Tarayıcı sürümü"
       ],
-      "BTC address:": [
-        "BTC adresi:"
+      "BTC address": [
+        "BTC adresi"
       ],
-      "BTC amount:": [
-        "BTC tutarı:"
+      "BTC amount": [
+        "BTC tutarı"
       ],
       "Card holder": [
         "Kart sahibi"
@@ -3263,6 +3315,9 @@
       "Subscription options": [
         "Abonelik seçenekleri"
       ],
+      "Synchronize with system": [
+        "Sistem ile aynı"
+      ],
       "System information": [
         "Sistem bilgileri"
       ],
@@ -3366,6 +3421,9 @@
       "Forgot username?": [
         "Kullanıcı adınızı mı unuttunuz?"
       ],
+      "How to pay with Bitcoin?": [
+        "Bitcoin ile nasıl ödeme yapabilirsiniz?"
+      ],
       "Learn more": [
         "Ayrıntılı bilgi alın"
       ],
@@ -3380,6 +3438,9 @@
       ],
       "Privacy policy": [
         "Gizlilik ilkesi"
+      ],
+      "Reactivate now": [
+        "Şimdi yeniden etkinleştir"
       ],
       "Request an invite": [
         "Davet iste"
@@ -4817,6 +4878,9 @@
       "Active": [
         "Etkin"
       ],
+      "Expiring": [
+        "Sona eriyor"
+      ],
       "Upcoming": [
         "Yaklaşan"
       ]
@@ -4879,8 +4943,14 @@
       "Phone number updated": [
         "Telefon numarası güncellendi"
       ],
+      "Preference saved": [
+        "Ayar kaydedildi"
+      ],
       "Verification successful": [
         "Doğrulandı"
+      ],
+      "You have successfully cancelled your subscription.": [
+        "Aboneliğinizi iptal ettiniz."
       ],
       "You have successfully unsubscribed": [
         "Abonelikten ayrıldınız"
@@ -4911,6 +4981,70 @@
     "Suffix for price": {
       "per month": [
         "aylık"
+      ]
+    },
+    "summer2023: Billing cycle option": {
+      "1 year": [
+        "1 yıl"
+      ],
+      "2 years": [
+        "2 yıl"
+      ]
+    },
+    "summer2023: Deal details": {
+      "Premium Drive": [
+        "Ücretli Drive"
+      ],
+      "Premium Mail and Calendar": [
+        "Ücretli Mail ve Calendar"
+      ],
+      "Premium Password Manager": [
+        "Ücretli Parola Yöneticisi"
+      ]
+    },
+    "summer2023: Describe Proton Pass": {
+      "Securely store your passwords and autofill them on websites. Includes unlimited passwords, autofill, password generator, and more.": [
+        "Parolalarınızı güvenle saklayın ve sitelerde otomatik olarak kullanın. Sınırsız parola, otomatik doldurma, parola oluşturucu ve daha fazlasını içerir."
+      ]
+    },
+    "summer2023: Short tool name to present Proton Pass": {
+      "Password manager": [
+        "Parola yöneticisi"
+      ]
+    },
+    "summer2023: Tooltip": {
+      "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
+        "Tüm aygıtlarınızda güvenli hesap bilgileri oluşturun. Sınırsız takma ad (e-posta adresi), 20 kasa, entegre 2 adımlı doğrulama, kredi kartı otomatik doldurma ve daha fazlasını içerir."
+      ],
+      "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "65 üzerindeki ülkede 2950'nin üzerinde sunucu, 10 taneye kadar aygıt bağlayabilme, dünya çapında yayın akışı hizmetlerine erişim, kötü amaçlı yazılım ve reklam engelleyici ile diğer özellikleri içerir."
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "1 özel e-posta etki alanı, 10 e-posta adresi, 10 hide-my-email takma adı, takvim paylaşma ve daha fazlası için destek içerir."
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "Dosyalarınızı şifrelenmiş bulut depolama alanı ile koruyun. Sürüm geçmişi, şifrelenmiş dosya paylaşımı ve diğer özellikler."
+      ]
+    },
+    "summer2023:Footer": {
+      "*Your subscription will automatically renew at the standard discounted rate at the end of your billing cycle.": [
+        "*Aboneliğiniz, faturalama döneminizin sonunda otomatik olarak standart tarife üzerinden yenilenir."
+      ],
+      "Discounts are based on the standard monthly pricing. This offer is only available to first-time subscribers.": [
+        "İnidirmler standart aylık ücretlendirme temellidir. Bu teklif sadece ilk defa abone olacaklar için geçerlidir."
+      ]
+    },
+    "summer2023:Info": {
+      "For a limited time, get the best ${ BRAND_NAME } has to offer at an exclusive discount.": [
+        "Sınırlı bir süre için ${ BRAND_NAME }'un en iyi ürünlerini özel bir indirim ile edinin."
+      ],
+      "We’re celebrating the nine-year anniversary of our crowdfunding!": [
+        "Topluluk desteğimizin dokuzuncu yıl dönümünü kutluyoruz!"
+      ]
+    },
+    "summer2023:Offer title": {
+      "${ BRAND_NAME } Anniversary Sale": [
+        "${ BRAND_NAME } Yıl Dönümü Fırsatları"
       ]
     },
     "Tab subscription modal": {
@@ -4949,6 +5083,9 @@
     "Title": {
       "${ VPN_APP_NAME } clients": [
         "${ VPN_APP_NAME } istemcileri"
+      ],
+      "(active)": [
+        "(etkin)"
       ],
       "1. Give a name to the config to be generated": [
         "1. Oluşturulacak yapılandırmaya bir ad verin"
@@ -5013,6 +5150,12 @@
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "${ MAIL_SHORT_APP_NAME } aboneliğinizi iptal edin"
       ],
+      "Cancel subscription": [
+        "Aboneliği iptal et"
+      ],
+      "Cancel subscription?": [
+        "Abonelik iptal edilsin mi?"
+      ],
       "Card verification": [
         "Kart doğrulama"
       ],
@@ -5058,6 +5201,9 @@
       "Date": [
         "Tarih"
       ],
+      "Day theme": [
+        "Gündüz teması"
+      ],
       "Delete": [
         "Sil"
       ],
@@ -5079,9 +5225,6 @@
       "Downloads": [
         "İndirmeler"
       ],
-      "Duration": [
-        "Süre"
-      ],
       "Edit credit/debit card": [
         "Kredi ya da banka kartını düzenle"
       ],
@@ -5093,9 +5236,6 @@
       ],
       "Email subscriptions": [
         "Eposta abonelikleri"
-      ],
-      "End date": [
-        "Bitiş tarihi"
       ],
       "Enter your password": [
         "Parolanızı yazın"
@@ -5139,6 +5279,9 @@
       "Next": [
         "Sonraki"
       ],
+      "Night theme": [
+        "Gece teması"
+      ],
       "No recovery method": [
         "Herhangi bir kurtarma yöntemi yok"
       ],
@@ -5180,9 +5323,6 @@
       ],
       "Phone": [
         "Telefon"
-      ],
-      "Plan": [
-        "Tarife"
       ],
       "Plan summary": [
         "Tarife özeti"
@@ -5250,9 +5390,6 @@
       "Sign out": [
         "Oturumu kapat"
       ],
-      "Start date": [
-        "Başlangıç tarihi"
-      ],
       "Status": [
         "Durum"
       ],
@@ -5261,9 +5398,6 @@
       ],
       "Switch to two-password mode": [
         "İki parola kipine geç"
-      ],
-      "Total paid": [
-        "Toplam ödenen"
       ],
       "TV sign in": [
         "TV oturumu açma"
@@ -5279,9 +5413,6 @@
       ],
       "Unsupported browser": [
         "Tarayıcı desteklenmiyor"
-      ],
-      "Users": [
-        "Kullanıcı sayısı"
       ],
       "Verification": [
         "Doğrulama"
@@ -5345,12 +5476,50 @@
         "${ MAIL_APP_NAME } faturası"
       ]
     },
+    "Title subscription": {
+      "Actions": [
+        "İşlemler"
+      ],
+      "Duration": [
+        "Süre"
+      ],
+      "End date": [
+        "Bitiş tarihi"
+      ],
+      "Plan": [
+        "Tarife"
+      ],
+      "Start date": [
+        "Başlangıç tarihi"
+      ],
+      "Status": [
+        "Durum"
+      ],
+      "Total": [
+        "Toplam"
+      ],
+      "Total paid": [
+        "Toplam ödenen"
+      ],
+      "Users": [
+        "Kullanıcı sayısı"
+      ]
+    },
     "Tooltip": {
+      "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
+        "Sisteminizin gündüz ve gece kipine uyarak gündüz ve gece için seçtiğiniz temalar arasında otomatik olarak geçiş yapın"
+      ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Satın aldığınız ya da destek ekibimizden verilen bir hediye kodunuz varsa, buraya yazabilirsiniz."
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Yeni gönderim döngüsü ${ formattedTime } zamanında başlayacak"
+      ],
+      "The selected theme will be active when your system is set to \"dark mode\"": [
+        "Seçilmiş tema sisteminiz \"koyu kipe\" geçtiğinde etkinleştirilecek"
+      ],
+      "The selected theme will be active when your system is set to \"light mode\"": [
+        "Seçilmiş tema sisteminiz \"açık kipe\" geçtiğinde etkinleştirilecek"
       ]
     },
     "Tor out of date": {
