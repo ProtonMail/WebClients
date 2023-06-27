@@ -11,11 +11,11 @@ import { ImportReaderError } from '../helpers/reader.error';
 import { getImportedVaultName, importLoginItem } from '../helpers/transformers';
 import type { ImportVault } from '../types';
 import { type ImportPayload } from '../types';
-import type { KeePassEntry, KeePassFile, KeePassGroup, KeePassItem, KeyPassEntryValue } from './keepass.types';
+import type { KeePassEntry, KeePassEntryValue, KeePassFile, KeePassGroup, KeePassItem } from './keepass.types';
 
-const getKeyPassEntryValue = (Value: KeyPassEntryValue): string => (typeof Value === 'string' ? Value : Value.__text);
+const getKeePassEntryValue = (Value: KeePassEntryValue): string => (typeof Value === 'string' ? Value : Value.__text);
 
-const getKeePassProtectInMemoryValue = (Value: KeyPassEntryValue): string =>
+const getKeePassProtectInMemoryValue = (Value: KeePassEntryValue): string =>
     typeof Value === 'string' ? '' : Value._ProtectInMemory;
 
 const entryToItem = (entry: KeePassEntry): ItemImportIntent<'login'> => {
@@ -27,28 +27,28 @@ const entryToItem = (entry: KeePassEntry): ItemImportIntent<'login'> => {
             }
             switch (Key) {
                 case 'Title':
-                    acc.name = getKeyPassEntryValue(Value);
+                    acc.name = getKeePassEntryValue(Value);
                     break;
                 case 'Notes':
-                    acc.note = getKeyPassEntryValue(Value);
+                    acc.note = getKeePassEntryValue(Value);
                     break;
                 case 'UserName':
-                    acc.username = getKeyPassEntryValue(Value);
+                    acc.username = getKeePassEntryValue(Value);
                     break;
                 case 'Password':
-                    acc.password = getKeyPassEntryValue(Value);
+                    acc.password = getKeePassEntryValue(Value);
                     break;
                 case 'URL':
-                    acc.url = getKeyPassEntryValue(Value);
+                    acc.url = getKeePassEntryValue(Value);
                     break;
                 case 'otp':
-                    acc.totp = getKeyPassEntryValue(Value);
+                    acc.totp = getKeePassEntryValue(Value);
                     break;
                 default:
                     acc.customFields.push({
                         fieldName: Key,
                         type: getKeePassProtectInMemoryValue(Value) ? 'hidden' : 'text',
-                        data: { content: getKeyPassEntryValue(Value) ?? '' },
+                        data: { content: getKeePassEntryValue(Value) ?? '' },
                     });
             }
 
