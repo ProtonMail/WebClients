@@ -9,6 +9,7 @@ import type { Maybe, MaybeNull, WorkerMessage, WorkerState } from '@proton/pass/
 import { WorkerMessageType } from '@proton/pass/types';
 import { safeCall } from '@proton/pass/utils/fp';
 import { logger } from '@proton/pass/utils/logger';
+import { workerReady } from '@proton/pass/utils/worker';
 import noop from '@proton/utils/noop';
 
 import { INITIAL_SETTINGS } from '../../../../shared/constants';
@@ -96,18 +97,22 @@ export const IFrameContextProvider: FC<{ endpoint: IFrameEndpoint }> = ({ endpoi
                 event.data.sender === 'contentscript'
             ) {
                 window.removeEventListener('message', onPostMessageHandler);
-                handlePortInjection(event.data)
-                    .then(() =>
-                        sendMessage.onSuccess(
-                            contentScriptMessage({ type: WorkerMessageType.RESOLVE_USER_DATA }),
-                            (response) => response.user?.Email && setUserEmail(response.user.Email)
-                        )
-                    )
-                    .catch(noop);
+                handlePortInjection(event.data).catch(noop);
             }
         }),
         []
     );
+
+    useEffect(() => {
+        if (userEmail === null && workerState && workerReady(workerState?.status)) {
+            sendMessage
+                .onSuccess(
+                    contentScriptMessage({ type: WorkerMessageType.RESOLVE_USER_DATA }),
+                    (response) => response.user?.Email && setUserEmail(response.user.Email)
+                )
+                .catch(noop);
+        }
+    }, [workerState, userEmail]);
 
     useEffect(() => {
         window.addEventListener('message', onPostMessageHandler);
