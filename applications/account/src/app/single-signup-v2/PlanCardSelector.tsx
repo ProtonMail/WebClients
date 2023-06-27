@@ -84,6 +84,7 @@ const PlanCardView = ({
     selected,
     guarantee,
     onSelect,
+    onSelectedClick,
     upsell,
     cta,
 }: {
@@ -99,6 +100,7 @@ const PlanCardView = ({
     selected: boolean;
     guarantee: boolean;
     onSelect?: () => void;
+    onSelectedClick?: () => void;
     upsell?: ReactNode;
     cta?: ReactNode;
 }) => {
@@ -119,7 +121,7 @@ const PlanCardView = ({
                     selected && 'border-primary border-2',
                     !onSelect && 'cursor-default'
                 )}
-                onClick={!selected ? onSelect : undefined}
+                onClick={!selected ? onSelect : onSelectedClick}
                 aria-pressed={selected}
                 style={{
                     ...(selected
@@ -217,6 +219,7 @@ export const PlanCardSelector = ({
     onSelect,
     currency,
     plan,
+    onSelectedClick,
     planCards,
 }: {
     plansMap: PlansMap;
@@ -225,6 +228,7 @@ export const PlanCardSelector = ({
     plan: PLANS | ADDON_NAMES | undefined;
     planCards: PlanCard[];
     onSelect: (planIDs: PlanIDs, plan: PLANS, upsellFrom?: PLANS) => void;
+    onSelectedClick?: () => void;
 }) => {
     return (
         <div className="flex flex-justify-space-between gap-4 on-tablet-flex-column">
@@ -260,6 +264,7 @@ export const PlanCardSelector = ({
                         onSelect={() => {
                             onSelect(planIDs, planCard.plan);
                         }}
+                        onSelectedClick={onSelectedClick}
                         guarantee={planCard.guarantee}
                         highlightPrice={highlight}
                         selected={selected}
