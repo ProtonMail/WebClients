@@ -68,3 +68,12 @@ export const updateCountersForMarkAs = (elementBefore: Element, elementAfter: El
         return { ...counter, Unread };
     });
 };
+
+export const getCountersByLabelId = (counters: LabelCount[] = []) =>
+    counters.reduce(
+        (acc: { [labelID: string]: LabelCount }, current) => ({
+            ...acc,
+            ...(current.LabelID && { [current.LabelID]: current }),
+        }),
+        {}
+    );
