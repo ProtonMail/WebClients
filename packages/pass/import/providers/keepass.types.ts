@@ -1,6 +1,6 @@
-import type { Maybe, MaybeArray } from '@proton/pass/types';
+import type { ItemExtraField, MaybeArray } from '@proton/pass/types';
 
-export type KeePassEntryValue = { _ProtectInMemory: 'string'; __text: string } | string;
+export type KeePassEntryValue = { _ProtectInMemory: string; __text: string } | string;
 
 export type KeePassCustomFields = { Key: string; Value: KeePassEntryValue }[];
 
@@ -33,10 +33,11 @@ export type KeePassFile = {
 };
 
 export type KeePassItem = {
-    name: Maybe<string>;
-    url: Maybe<string>;
-    username: Maybe<string>;
-    password: Maybe<string>;
-    note: Maybe<string>;
-    totp: Maybe<string>;
+    name?: string;
+    url?: string;
+    username?: string;
+    password?: string;
+    note?: string;
+    totp?: string;
+    customFields: ItemExtraField[];
 };
