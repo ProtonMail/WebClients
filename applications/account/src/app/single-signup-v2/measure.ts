@@ -11,10 +11,11 @@ import { SessionData, SignupCacheResult } from '../signup/interfaces';
 
 export type InteractFields = 'email' | 'email_confirm' | 'pwd' | 'pwd_confirm';
 
+type TelemetryBoolean = 'yes' | 'no';
 type TelemetryPaymentMethods = {
-    bitcoin: 'true' | 'false';
-    paypal: 'true' | 'false';
-    credit_card: 'true' | 'false';
+    btc: TelemetryBoolean;
+    paypal: TelemetryBoolean;
+    cc: TelemetryBoolean;
 };
 
 export type TelemetryPayType = 'pay_cc' | 'pay_pp' | 'pay_pp_no_cc' | 'pay_btc';
@@ -24,52 +25,42 @@ export type TelemetryExtensionPlatform = 'ios' | 'ff' | 'android' | 'chrome' | '
 export type TelemetryGetExtension = `get_${TelemetryExtensionPlatform}`;
 export type TelemetryDownloadExtension = `download_${TelemetryExtensionPlatform}`;
 
-export type SignupFinishEvents =
-    | {
-          event: TelemetryAccountSignupEvents.signupFinish;
-          dimensions: {
-              type: 'free';
-              plan: 'free';
-          };
-      }
-    | {
-          event: TelemetryAccountSignupEvents.signupFinish;
-          dimensions: {
-              type: TelemetryPayType;
-              plan: PLANS;
-              cycle: `${CYCLE}`;
-              currency: Currency;
-          };
-      };
+export type SignupFinishEvents = {
+    event: TelemetryAccountSignupEvents.signupFinish;
+    dimensions: {
+        type: TelemetryPayType;
+        plan: PLANS;
+        cycle: `${CYCLE}`;
+        currency: Currency;
+    };
+    values: {
+        amount_charged: number;
+    };
+};
 
 export type TelemetryMeasurementData =
     | {
           event: TelemetryAccountSignupEvents.pageLoad;
-          dimensions:
-              | {
-                    signedin: 'yes';
-                    intent: string | undefined;
-                    plan: PLANS;
-                }
-              | {
-                    signedin: 'no';
-                    intent: string | undefined;
-                };
-      }
-    | {
-          event: TelemetryAccountSignupEvents.selectPlan;
           dimensions: {
-              plan_name: PLANS;
+              signedin: TelemetryBoolean;
+              intent: string | undefined;
+              plan: PLANS;
           };
       }
     | {
-          event: TelemetryAccountSignupEvents.selectCurrency;
+          event: TelemetryAccountSignupEvents.planSelect;
+          dimensions: {
+              plan: PLANS;
+          };
+      }
+    | {
+          event: TelemetryAccountSignupEvents.currencySelect;
           dimensions: {
               currency: Currency;
           };
       }
     | {
-          event: TelemetryAccountSignupEvents.selectCycle;
+          event: TelemetryAccountSignupEvents.cycleSelect;
           dimensions: {
               cycle: `${CYCLE}`;
           };
@@ -77,19 +68,13 @@ export type TelemetryMeasurementData =
     | {
           event: TelemetryAccountSignupEvents.beAvailableExternal;
           dimensions: {
-              available_external: 'true' | 'false';
+              available: TelemetryBoolean;
           };
       }
     | {
           event: TelemetryAccountSignupEvents.interactAccountCreate;
           dimensions: {
               field: InteractFields;
-          };
-      }
-    | {
-          event: TelemetryAccountSignupEvents.userCheckout;
-          dimensions: {
-              type: 'free';
           };
       }
     | {
@@ -101,7 +86,7 @@ export type TelemetryMeasurementData =
     | {
           event: TelemetryAccountSignupEvents.userSignInSuccess;
           dimensions: {
-              current_plan: PLANS;
+              plan: PLANS;
           };
       }
     | {
@@ -111,7 +96,7 @@ export type TelemetryMeasurementData =
     | {
           event: TelemetryAccountSignupEvents.paymentSelect;
           dimensions: {
-              action: 'open' | 'select_cc' | 'select_pp' | 'select_btc';
+              type: 'open' | 'select_cc' | 'select_pp' | 'select_btc';
           };
       }
     | {
@@ -133,7 +118,24 @@ export type TelemetryMeasurementData =
           event: TelemetryAccountSignupEvents.loadPaymentBtc;
           dimensions: {};
       }
-    | SignupFinishEvents
+    | {
+          event: TelemetryAccountSignupEvents.hvNeeded;
+          dimensions: {
+              api_call: string;
+          };
+      }
+    | {
+          event: TelemetryAccountSignupEvents.signupFinish;
+          dimensions: {
+              type: TelemetryPayType;
+              plan: PLANS;
+              cycle: `${CYCLE}`;
+              currency: Currency;
+          };
+          values: {
+              amount_charged: number;
+          };
+      }
     | {
           event: TelemetryAccountSignupEvents.onboardingStart;
           dimensions: {};
@@ -194,9 +196,9 @@ export const getPlanNameFromSession = (session: SessionData): PLANS => {
 
 export const getPaymentMethodsAvailable = (paymentMethodsAvailable: PaymentMethodStatus): TelemetryPaymentMethods => {
     return {
-        bitcoin: paymentMethodsAvailable.Bitcoin ? 'true' : 'false',
-        paypal: paymentMethodsAvailable.Paypal ? 'true' : 'false',
-        credit_card: paymentMethodsAvailable.Card ? 'true' : 'false',
+        btc: paymentMethodsAvailable.Bitcoin ? 'yes' : 'no',
+        paypal: paymentMethodsAvailable.Paypal ? 'yes' : 'no',
+        cc: paymentMethodsAvailable.Card ? 'yes' : 'no',
     };
 };
 
@@ -207,8 +209,13 @@ export const getSignupTelemetryData = (plans: Plan[], cache: SignupCacheResult):
         return {
             event: TelemetryAccountSignupEvents.signupFinish,
             dimensions: {
-                type: 'free',
-                plan: 'free',
+                type: 'pay_cc',
+                plan: PLANS.FREE,
+                cycle: `${cache.subscriptionData.cycle}`,
+                currency: cache.subscriptionData.currency,
+            },
+            values: {
+                amount_charged: 0,
             },
         };
     }
@@ -221,6 +228,9 @@ export const getSignupTelemetryData = (plans: Plan[], cache: SignupCacheResult):
             plan,
             cycle: `${cache.subscriptionData.cycle}`,
             currency: cache.subscriptionData.currency,
+        },
+        values: {
+            amount_charged: cache.subscriptionData.checkResult.AmountDue,
         },
     };
 };
