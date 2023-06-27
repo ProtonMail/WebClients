@@ -1,3 +1,5 @@
+import { ReactElement } from 'react';
+
 import { c } from 'ttag';
 
 import { useFeature } from '@proton/components/hooks';
@@ -64,6 +66,12 @@ const getPlanPanel = (enabledProductPlans: PLANS[], planName: PLANS, plansMap: P
     }
 };
 
+interface Tab {
+    title: string;
+    content: ReactElement;
+    audience: Audience;
+}
+
 interface Props {
     planIDs: PlanIDs;
     currency: Currency;
@@ -85,7 +93,7 @@ interface Props {
     subscription?: Subscription;
     organization?: Organization;
     calendarSharingEnabled: boolean;
-    isPassPlusEnabled: boolean;
+    filter?: Audience[];
 }
 
 const PlanSelection = ({
@@ -108,7 +116,7 @@ const PlanSelection = ({
     selectedProductPlans,
     onChangeSelectedProductPlans,
     calendarSharingEnabled,
-    isPassPlusEnabled,
+    filter,
 }: Props) => {
     const featureContext = useFeature(FeatureCode.FamilyPlan);
     if (featureContext.loading) {
@@ -118,12 +126,7 @@ const PlanSelection = ({
 
     const currentPlan = subscription ? subscription.Plans?.find(({ Type }) => Type === PLAN_TYPES.PLAN) : null;
 
-    const enabledProductB2CPlans = [
-        PLANS.MAIL,
-        PLANS.VPN,
-        PLANS.DRIVE,
-        isPassPlusEnabled ? PLANS.PASS_PLUS : undefined,
-    ].filter(isTruthy);
+    const enabledProductB2CPlans = [PLANS.MAIL, PLANS.VPN, PLANS.DRIVE, PLANS.PASS_PLUS].filter(isTruthy);
     const enabledProductB2BPlans = [PLANS.MAIL_PRO /*, PLANS.DRIVE_PRO*/];
 
     const B2CPlans = [
@@ -150,7 +153,7 @@ const PlanSelection = ({
         const isFree = plan.ID === PLANS.FREE;
         const isCurrentPlan = isFree ? !currentPlan : currentPlan?.ID === plan.ID;
         const isRecommended = recommendedPlans.includes(plan.Name as PLANS);
-        const shortPlan = getShortPlan(plan.Name as PLANS, plansMap, vpnServers, {}, isPassPlusEnabled);
+        const shortPlan = getShortPlan(plan.Name as PLANS, plansMap, vpnServers, {});
 
         if (!shortPlan) {
             return null;
@@ -207,12 +210,7 @@ const PlanSelection = ({
                     mode === 'settings' ? (
                         <PlanCardFeaturesShort plan={shortPlan} icon />
                     ) : (
-                        <PlanCardFeatures
-                            audience={audience}
-                            features={features}
-                            planName={plan.Name as PLANS}
-                            isPassPlusEnabled={isPassPlusEnabled}
-                        />
+                        <PlanCardFeatures audience={audience} features={features} planName={plan.Name as PLANS} />
                     )
                 }
                 onSelect={(planName) => {
@@ -229,7 +227,7 @@ const PlanSelection = ({
         );
     };
 
-    const tabs = [
+    const tabs: Tab[] = [
         {
             title: c('Tab subscription modal').t`For individuals`,
             content: (
@@ -270,7 +268,12 @@ const PlanSelection = ({
             ),
             audience: Audience.B2B,
         },
-    ].filter(isTruthy);
+    ].filter((tab): tab is Tab => {
+        if (!tab) {
+            return false;
+        }
+        return filter?.includes(tab.audience) ?? true;
+    });
 
     const currencyItem = (
         <CurrencySelector mode="select-two" currency={currency} onSelect={onChangeCurrency} disabled={loading} />
@@ -304,12 +307,8 @@ const PlanSelection = ({
             <DriveLogo variant="glyph-only" />
             <Icon name="plus" alt="+" className="mx-2" />
             <VpnLogo variant="glyph-only" />
-            {isPassPlusEnabled && (
-                <>
-                    <Icon name="plus" alt="+" className="mx-2" />
-                    <PassLogo variant="glyph-only" />
-                </>
-            )}
+            <Icon name="plus" alt="+" className="mx-2" />
+            <PassLogo variant="glyph-only" />
         </div>
     );
 

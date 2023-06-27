@@ -94,13 +94,12 @@ export enum FeatureCode {
     KeyTransparencyWEB = 'KeyTransparencyWEB',
     AutoDelete = 'AutoDelete',
     FamilyPlan = 'FamilyPlan',
-    PassSettings = 'PassSettings',
-    PassPlusPlan = 'PassPlusPlan',
     OrgSpamBlockList = 'OrgSpamBlockList',
     ProtonSentinel = 'ProtonSentinel',
     AccessibilitySettings = 'AccessibilitySettings',
     OrgTwoFactor = 'OrgTwoFactor',
     UnreadFavicon = 'UnreadFavicon',
+    PassSignup = 'PassSignup',
 }
 
 export interface FeaturesContextValue {

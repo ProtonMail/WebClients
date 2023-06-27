@@ -73,7 +73,7 @@ export const getCalendarAppFeature = (options?: { family?: boolean }): PlanCardF
         text: CALENDAR_APP_NAME,
         tooltip: options?.family
             ? c('new_plans: tooltip').t`Keep your plans private to you and your family with an encrypted calendar`
-            : c('new_plans: tooltip').t`End-to-end encrypted calendar`,
+            : c('new_plans: tooltip').t`${CALENDAR_APP_NAME}: end-to-end encrypted calendar`,
         included: true,
         icon: 'brand-proton-calendar',
     };

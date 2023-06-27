@@ -113,7 +113,7 @@ const SetupSupportDropdown = () => {
     return (
         <>
             {render && <AuthenticatedBugModal {...authenticatedBugReportModal} />}
-            <SupportDropdown>
+            <SupportDropdown buttonClassName="mx-auto">
                 <DropdownMenuButton className="text-left" onClick={handleBugReportClick}>
                     <Icon name="bug" className="mr-2" />
                     {c('Action').t`Report a problem`}

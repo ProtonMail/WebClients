@@ -8,23 +8,15 @@
 
 	.exp {
 		.input-element {
-			max-inline-size: rem(74);
-
-			// the font of InputTwo is larger on mobiles, so we need to make the input field wider
-			@include media('<=small') {
-				max-inline-size: rem(82);
-			}
+			// ems should scale accordingly on mobile.
+			max-inline-size: 5.5em;
 		}
 	}
 
 	.cvv {
 		.input-element {
-			max-inline-size: rem(40);
-
-			// the font of InputTwo is larger on mobiles, so we need to make the input field wider
-			@include media('<=small') {
-				max-inline-size: rem(46);
-			}
+			// ems should scale accordingly on mobile.
+			max-inline-size: 3em;
 		}
 	}
 

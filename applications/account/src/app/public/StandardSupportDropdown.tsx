@@ -15,7 +15,7 @@ const StandardSupportDropdown = () => {
     return (
         <>
             {render && <BugModal {...bugReportModal} />}
-            <SupportDropdown>
+            <SupportDropdown buttonClassName="mx-auto">
                 <DropdownMenuLink
                     className="flex flex-nowrap text-left"
                     href={getStaticURL('/support')}

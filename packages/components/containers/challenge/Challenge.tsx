@@ -1,7 +1,6 @@
 import { useRef, useState } from 'react';
 
 import { getApiSubdomainUrl } from '@proton/shared/lib/helpers/url';
-import clsx from '@proton/utils/clsx';
 import randomIntFromInterval from '@proton/utils/randomIntFromInterval';
 
 import ChallengeError from './ChallengeError';
@@ -23,7 +22,6 @@ const Challenge = ({
     onError,
     bodyClassName,
     iframeClassName,
-    loaderClassName,
     name,
     type,
     ...rest
@@ -59,7 +57,7 @@ const Challenge = ({
             src={challengeSrc}
             errorTimeout={errorTimeout}
             className={iframeClassName ? iframeClassName : 'w100'}
-            bodyClassName={clsx('color-norm bg-norm', bodyClassName)}
+            bodyClassName={bodyClassName}
             style={style}
             onSuccess={() => {
                 onSuccess?.(challengeLogRef.current);

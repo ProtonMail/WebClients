@@ -9,7 +9,8 @@ module.exports = {
         '^.+\\.(m?js|tsx?)$': '<rootDir>/jest.transform.js',
     },
     moduleNameMapper: {
-        '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm)$': '@proton/components/__mocks__/fileMock.js',
+        '\\.(jpg|jpeg|png|pdf|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm)$':
+            '@proton/components/__mocks__/fileMock.js',
         '\\.(css|scss|less)$': '@proton/components/__mocks__/styleMock.js',
         '\\.(md)$': '<rootDir>/src/__mocks__/mdMock.ts',
         '@protontech/sieve.js': '@proton/components/__mocks__/sieve.js',

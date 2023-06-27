@@ -1,17 +1,19 @@
 import { useEffect, useState } from 'react';
-import { useHistory, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { Button, CircleLoader } from '@proton/atoms';
+import { Button, ButtonLike, CircleLoader } from '@proton/atoms';
 import { GenericError, useApi, useErrorHandler, useLoading } from '@proton/components';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { postVerifyValidate } from '@proton/shared/lib/api/verify';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 
+import PublicFooter from '../components/PublicFooter';
 import PublicLayout from '../components/PublicLayout';
 import ExpiredError from './ExpiredError';
+import accountIllustration from './account-illustration.svg';
 
 interface Props {
     onSubscribe: (jwt: string) => void;
@@ -22,22 +24,19 @@ enum ErrorType {
     API,
 }
 
-const VerifyRecoveryEmailContainer = ({ onSubscribe }: Props) => {
+const VerifyEmailContainer = ({ onSubscribe }: Props) => {
     const api = useApi();
     const silentApi = getSilentApi(api);
     const handleError = useErrorHandler();
     const [error, setError] = useState<{ type: ErrorType } | null>(null);
     const [loading, withLoading] = useLoading(true);
     const location = useLocation();
-    const history = useHistory();
     const [jwt, setJwt] = useState('');
     const params = new URLSearchParams(location.search);
     const type = params.get('type');
 
     useEffect(() => {
         const jwt = location.hash.substring(1);
-
-        history.replace({ search: location.search, hash: '' });
 
         const promise = silentApi(postVerifyValidate({ JWT: jwt }))
             .then(() => {
@@ -57,7 +56,7 @@ const VerifyRecoveryEmailContainer = ({ onSubscribe }: Props) => {
     }, []);
 
     return (
-        <main className="main-area">
+        <main className="main-area h100">
             {(() => {
                 if (error) {
                     if (error.type === ErrorType.Expired) {
@@ -90,27 +89,33 @@ const VerifyRecoveryEmailContainer = ({ onSubscribe }: Props) => {
                         </div>
                     );
                 }
-                const signIn = (
-                    <a key="1" href="/switch" target="_self">
-                        {c('Recovery Email').t`sign in`}
-                    </a>
-                );
                 return (
                     <PublicLayout
-                        main={c('Recovery Email').jt`Your recovery email has been successfully verified.`}
+                        className="h100"
+                        img={<img src={accountIllustration} alt="" />}
+                        header={c('Email').t`Email verified`}
+                        main={
+                            <div className="text-center">
+                                <div className="mb-2">{c('Email').t`Thank you for verifying your email address.`}</div>
+                                {c('Email').t`You can safely close this tab.`}
+                            </div>
+                        }
                         footer={
                             type === 'subscribe' && onSubscribe ? (
-                                <Button color="norm" onClick={() => onSubscribe(jwt)}>{c('Action')
-                                    .t`Manage communication preferences`}</Button>
+                                <Button color="norm" fullWidth onClick={() => onSubscribe(jwt)}>
+                                    {c('Action').t`Manage communication preferences`}
+                                </Button>
                             ) : (
-                                c('Recovery Email').jt`You can safely close this tab.`
+                                <ButtonLike fullWidth as="a" href="/switch" target="_self">
+                                    {c('Action').t`Sign in`}
+                                </ButtonLike>
                             )
                         }
-                        below={c('Recovery Email').jt`Back to ${signIn}.`}
+                        below={<PublicFooter />}
                     />
                 );
             })()}
         </main>
     );
 };
-export default VerifyRecoveryEmailContainer;
+export default VerifyEmailContainer;

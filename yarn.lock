@@ -4036,12 +4036,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@pdf-lib/standard-fonts@npm:^1.0.0":
+"@pdf-lib/standard-fonts@npm:1.0.0":
   version: 1.0.0
   resolution: "@pdf-lib/standard-fonts@npm:1.0.0"
   dependencies:
     pako: ^1.0.6
   checksum: 7dc629b83862424a64b10c7ae34d789e0045a1a589f34a66a7f8e197f177cdb410969424e5d90f67b35c848db8b045cfa0a664941bdfb2d9b5413dbf44232981
+  languageName: node
+  linkType: hard
+
+"@pdf-lib/standard-fonts@patch:@pdf-lib/standard-fonts@npm%3A1.0.0#./.yarn/patches/@pdf-lib-standard-fonts-npm-1.0.0-963255903e.patch::locator=root%40workspace%3A.":
+  version: 1.0.0
+  resolution: "@pdf-lib/standard-fonts@patch:@pdf-lib/standard-fonts@npm%3A1.0.0#./.yarn/patches/@pdf-lib-standard-fonts-npm-1.0.0-963255903e.patch::version=1.0.0&hash=03fd48&locator=root%40workspace%3A."
+  dependencies:
+    pako: ^1.0.6
+  checksum: 7177a752cf24147069a99314031d0c3210dd0198de1070e646f6dbe87798d0ee7a376a73c6c86abd7859acbeae62a39d20ca1a4258aab571ea97d29457a3ee19
   languageName: node
   linkType: hard
 
@@ -25663,6 +25672,7 @@ fsevents@^1.2.7:
     "@types/react-router-dom": ^5.3.3
     babel-jest: ^29.5.0
     cross-env: ^7.0.3
+    date-fns: ^2.30.0
     eslint: ^8.42.0
     jest: ^29.5.0
     jest-environment-jsdom: ^29.5.0

@@ -1,8 +1,24 @@
 import { c, msgid } from 'ttag';
 
-import { BRAND_NAME, PLANS } from '@proton/shared/lib/constants';
+import { BRAND_NAME, PASS_APP_NAME, PLANS } from '@proton/shared/lib/constants';
 
 import { PlanCardFeature, PlanCardFeatureDefinition } from './interface';
+
+export const getPassAppFeature = (): PlanCardFeatureDefinition => {
+    return {
+        text: PASS_APP_NAME,
+        included: true,
+        icon: 'brand-proton',
+        tooltip: c('tooltip').t`${PASS_APP_NAME}: end-to-end encrypted password manager`,
+    };
+};
+
+export const getCustomDomains = (): PlanCardFeatureDefinition => {
+    return {
+        text: c('new_plans: feature').t`Custom domains for email aliases`,
+        included: true,
+    };
+};
 
 export const getLoginsAndNotesText = () => {
     return c('new_plans: feature').t`Unlimited logins and notes`;
@@ -14,6 +30,20 @@ export const getLoginsAndNotes = (): PlanCardFeatureDefinition => {
         icon: 'note',
         included: true,
         hideInDowngrade: true,
+    };
+};
+
+export const getItems = (): PlanCardFeatureDefinition => {
+    return {
+        text: c('new_plans: feature').t`Organize items with multiple vaults`,
+        included: true,
+    };
+};
+
+export const getCreditCards = (): PlanCardFeatureDefinition => {
+    return {
+        text: c('new_plans: feature').t`Autofill credit cards (coming soon)`,
+        included: true,
     };
 };
 
@@ -30,16 +60,17 @@ export const getDevices = (): PlanCardFeatureDefinition => {
     };
 };
 
+export const getNHideMyEmailAliasesText = (n: number) => {
+    return c('new_plans: feature').ngettext(msgid`${n} hide-my-email alias`, `${n} hide-my-email aliases`, n);
+};
+
 export const getUnlimitedHideMyEmailAliasesText = () => {
     return c('new_plans: feature').t`Unlimited hide-my-email aliases`;
 };
 
 export const getHideMyEmailAliases = (n: number | 'unlimited'): PlanCardFeatureDefinition => {
     return {
-        text:
-            n === 'unlimited'
-                ? getUnlimitedHideMyEmailAliasesText()
-                : c('new_plans: feature').ngettext(msgid`${n} Hide-my-email alias`, `${n} Hide-my-email aliases`, n),
+        text: n === 'unlimited' ? getUnlimitedHideMyEmailAliasesText() : getNHideMyEmailAliasesText(10),
         tooltip: c('new_plans: tooltip')
             .t`Unique, on-the-fly email addresses that protect your online identity and let you control what lands in your inbox. From SimpleLogin by ${BRAND_NAME}.`,
         included: true,
@@ -143,7 +174,7 @@ export const getPassFeatures = (): PlanCardFeature[] => {
                 [PLANS.VPN]: getVaults(FREE_VAULTS),
                 [PLANS.DRIVE]: getVaults(FREE_VAULTS),
                 [PLANS.PASS_PLUS]: getVaults(PASS_PLUS_VAULTS),
-                [PLANS.FAMILY]: getVaults(FREE_VAULTS),
+                [PLANS.FAMILY]: getVaults(PASS_PLUS_VAULTS),
                 [PLANS.MAIL_PRO]: getVaults(FREE_VAULTS),
                 [PLANS.BUNDLE_PRO]: getVaults(PASS_PLUS_VAULTS),
             },
@@ -157,7 +188,7 @@ export const getPassFeatures = (): PlanCardFeature[] => {
                 [PLANS.VPN]: getHideMyEmailAliases(FREE_PASS_ALIASES),
                 [PLANS.DRIVE]: getHideMyEmailAliases(FREE_PASS_ALIASES),
                 [PLANS.PASS_PLUS]: getHideMyEmailAliases('unlimited'),
-                [PLANS.FAMILY]: getHideMyEmailAliases(FREE_PASS_ALIASES),
+                [PLANS.FAMILY]: getHideMyEmailAliases('unlimited'),
                 [PLANS.MAIL_PRO]: getHideMyEmailAliases(FREE_PASS_ALIASES),
                 [PLANS.BUNDLE_PRO]: getHideMyEmailAliases('unlimited'),
             },
@@ -171,7 +202,7 @@ export const getPassFeatures = (): PlanCardFeature[] => {
                 [PLANS.VPN]: get2FAAuthenticator(),
                 [PLANS.DRIVE]: get2FAAuthenticator(),
                 [PLANS.PASS_PLUS]: get2FAAuthenticator(true),
-                [PLANS.FAMILY]: get2FAAuthenticator(),
+                [PLANS.FAMILY]: get2FAAuthenticator(true),
                 [PLANS.MAIL_PRO]: get2FAAuthenticator(),
                 [PLANS.BUNDLE_PRO]: get2FAAuthenticator(true),
             },
@@ -199,7 +230,7 @@ export const getPassFeatures = (): PlanCardFeature[] => {
                 [PLANS.VPN]: getSharing(),
                 [PLANS.DRIVE]: getSharing(),
                 [PLANS.PASS_PLUS]: getSharing(true),
-                [PLANS.FAMILY]: getSharing(),
+                [PLANS.FAMILY]: getSharing(true),
                 [PLANS.MAIL_PRO]: getSharing(),
                 [PLANS.BUNDLE_PRO]: getSharing(true),
             },
@@ -213,10 +244,19 @@ export const getPassFeatures = (): PlanCardFeature[] => {
                 [PLANS.VPN]: getDataBreachMonitoring(),
                 [PLANS.DRIVE]: getDataBreachMonitoring(),
                 [PLANS.PASS_PLUS]: getDataBreachMonitoring(true),
-                [PLANS.FAMILY]: getDataBreachMonitoring(),
+                [PLANS.FAMILY]: getDataBreachMonitoring(true),
                 [PLANS.MAIL_PRO]: getDataBreachMonitoring(),
                 [PLANS.BUNDLE_PRO]: getDataBreachMonitoring(true),
             },
         },
     ];
+};
+
+export const getPassIdentityFeature = (): PlanCardFeatureDefinition => {
+    return {
+        text: PASS_APP_NAME,
+        tooltip: c('new_plans: tooltip').t`Password management and identity protection`,
+        included: true,
+        icon: 'pass-all-vaults',
+    };
 };

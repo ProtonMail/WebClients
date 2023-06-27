@@ -28,7 +28,6 @@ export interface Props
     className?: string;
     empty?: boolean;
     bodyClassName?: string;
-    loaderClassName?: string;
     hasSizeObserver?: boolean;
     title?: string;
     onError?: (logs: ChallengeLog[]) => void;

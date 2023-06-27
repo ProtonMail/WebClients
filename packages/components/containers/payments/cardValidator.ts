@@ -6,10 +6,10 @@ import { isEmpty } from '@proton/shared/lib/helpers/validators';
 
 import { CardModel } from '../../payments/core/interface';
 
-export const isCardNumber = (value: string) => valid.number(value).isValid;
-export const isCVV = (value: string, maxLength: number) => valid.cvv(value, maxLength).isValid;
+export const isCardNumber = (value?: string) => valid.number(value).isValid;
+export const isCVV = (value: string | undefined, maxLength: number) => valid.cvv(value, maxLength).isValid;
 export const isPotentiallyCVV = (value: string, maxLength: number) => valid.cvv(value, maxLength).isPotentiallyValid;
-export const isPostalCode = (value: string) => valid.postalCode(value).isValid;
+export const isPostalCode = (value: string | undefined) => valid.postalCode(value).isValid;
 export const isExpirationDate = (month: string, year: string) =>
     valid.expirationDate({ month, year }).isValid && month.length === 2;
 

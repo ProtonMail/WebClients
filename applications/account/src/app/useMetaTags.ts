@@ -1,8 +1,15 @@
 import { useEffect, useMemo } from 'react';
 import { useLocation } from 'react-router-dom';
 
-export const useMetaTags = ({ title, description }: { title: string; description: string }) => {
+const defaultValue = { title: undefined, description: undefined };
+
+export const useMetaTags = (options: { title: string; description: string } | null) => {
+    const { title, description } = options || defaultValue;
+
     useEffect(() => {
+        if (options === null || description === undefined) {
+            return;
+        }
         const node = document.querySelector('meta[name="description"]');
         const og = document.querySelector('meta[property="og:description"]');
         const twitter = document.querySelector('meta[name="twitter:description"]');
@@ -13,7 +20,7 @@ export const useMetaTags = ({ title, description }: { title: string; description
 
     // This is explicitly happening in render and not in a useEffect to allow children to override parent titles
     useMemo(() => {
-        if (title === undefined) {
+        if (options === null || title === undefined) {
             return;
         }
         document.title = title;
@@ -25,6 +32,9 @@ export const useMetaTags = ({ title, description }: { title: string; description
 
     const location = useLocation();
     useEffect(() => {
+        if (options === null) {
+            return;
+        }
         const canonical = document.querySelector('link[rel="canonical"]');
         const og = document.querySelector('meta[property="og:url"]');
         if (!canonical) {
