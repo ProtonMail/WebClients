@@ -241,8 +241,11 @@
       "Download anyway": [
         "Все равно скачать"
       ],
-      "Download the Windows application": [
-        "Загрузить приложение для Windows"
+      "Download apps": [
+        "Скачать приложения"
+      ],
+      "Download Drive for Windows": [
+        "Скачать приложение хранилища для Windows"
       ],
       "Drive Locked": [
         "Хранилище заблокировано"
@@ -3151,9 +3154,6 @@
         "Найдено ${ contactsCount } контактов",
         "Найдено ${ contactsCount } контактов"
       ],
-      "${ deviceName } (restored)": [
-        "${ deviceName } (восстановлен)"
-      ],
       "${ doneCount } finished": [
         "${ doneCount } завершен",
         "${ doneCount } завершены",
@@ -3775,9 +3775,6 @@
       "No results found": [
         "Результаты не найдены"
       ],
-      "No synced computers": [
-        "Нет синхронизированных компьютеров"
-      ],
       "No synced folders": [
         "Нет синхронизированных папок"
       ],
@@ -3967,11 +3964,20 @@
       "Something went wrong, please try again later.": [
         "Что-то пошло не так. Пожалуйста, повторите попытку позже."
       ],
+      "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
+        "Окончание подписки: для сохранения преимуществ плана ${ planName } необходимо её восстановить до ${ byDate }. ${ reactivateLink }"
+      ],
       "support team": [
         "служба поддержки"
       ],
       "Swiss encrypted file storage": [
         "Швейцарское зашифрованное хранилище файлов"
+      ],
+      "Sync folders from your computer": [
+        "Синхронизировать папки с вашего компьютера."
+      ],
+      "Sync folders with ease using our desktop app, ensuring your files are always up to date and accessible from anywhere.": [
+        "С лёгкостью синхронизируйте папки с помощью нашего приложения для компьютера, которое гарантирует, что ваши файлы всегда будут актуальны и доступны из откуда угодно."
       ],
       "Temporarily unavailable. Please check back later.": [
         "Временно недоступно. Пожалуйста, проверьте позже."
@@ -4042,6 +4048,9 @@
       "This will upload a new version of the file": [
         "При этом будет загружена новая версия файла"
       ],
+      "This will upload a new version of the folder": [
+        "Будет загружена новая версия папки"
+      ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
         "Чтобы включить действительно конфиденциальный поиск, ${ DRIVE_APP_NAME } должен проиндексировать ваши файлы локально."
       ],
@@ -4110,9 +4119,6 @@
       ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "Одновременная загрузка сотен файлов может повлиять на производительность."
-      ],
-      "Use Drive for Desktop to sync folders on your computer with ${ DRIVE_APP_NAME }. They’ll show up here and be accessible from anywhere. ${ learnMore }": [
-        "Используйте Drive для настольных компьютеров, чтобы синхронизировать папки на вашем компьютере с ${ DRIVE_APP_NAME }. Они будут отображаться здесь и будут доступны отовсюду. ${ learnMore }"
       ],
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Используйте эту форму, чтобы уведомить нас о неприемлемых, незаконных,\nили других вредоносных файлах общего доступа. Вы собираетесь сообщить:"
@@ -4826,6 +4832,9 @@
       "Pay invoice": [
         "Оплатить счёт"
       ],
+      "Reactivate now": [
+        "Восстановить подписку"
+      ],
       "Request an invite": [
         "Запросить приглашение"
       ],
@@ -4882,10 +4891,10 @@
         "Импортировать все сообщения из ${ itemsToImportCount } ярлыков и пометить их ярлыком как"
       ],
       "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
-        "Импортировать все сообщения из ${ selectedItemsToImportCount }/${ itemsToImportCount } папок и пометить их как",
-        "Импортировать все сообщения из ${ selectedItemsToImportCount }/${ itemsToImportCount } папок и пометить их как",
-        "Импортировать все сообщения из ${ selectedItemsToImportCount }/${ itemsToImportCount } папок и пометить их как",
-        "Импортировать все сообщения из ${ selectedItemsToImportCount }/${ itemsToImportCount } папок и пометить их как"
+        "Импортировать все сообщения из ${ selectedItemsToImportCount } из ${ itemsToImportCount } папки и пометить их как",
+        "Импортировать все сообщения из ${ selectedItemsToImportCount } из ${ itemsToImportCount } папок и пометить их как",
+        "Импортировать все сообщения из ${ selectedItemsToImportCount } из ${ itemsToImportCount } папок и пометить их как",
+        "Импортировать все сообщения из ${ selectedItemsToImportCount } из ${ itemsToImportCount } папок и пометить их как"
       ],
       "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
         "Импортировать все сообщения с ${ selectedItemsToImportCount } из ${ itemsToImportCount } ярлыка, и пометить их как",
@@ -5419,6 +5428,11 @@
         "Имя"
       ]
     },
+    "Platform": {
+      "Windows": [
+        "Windows"
+      ]
+    },
     "Progress bar description": {
       "${ contactsExported.length } out of ${ countContacts } contact successfully exported.": [
         "${ contactsExported.length } из ${ countContacts } контакта успешно экспортированы.",
@@ -5535,25 +5549,25 @@
         "${ days } день",
         "${ days } дня",
         "${ days } дней",
-        "${ days } дня"
+        "${ days } дней"
       ],
       "${ hours } hour": [
         "${ hours } час",
         "${ hours } часа",
         "${ hours } часов",
-        "${ hours } часа"
+        "${ hours } часов"
       ],
       "${ minutes } minute": [
         "${ minutes } минута",
         "${ minutes } минуты",
         "${ minutes } минут",
-        "${ minutes } минуты"
+        "${ minutes } минут"
       ],
       "${ seconds } second": [
         "${ seconds } секунда",
         "${ seconds } секунды",
         "${ seconds } секунд",
-        "${ seconds } секунды"
+        "${ seconds } секунд"
       ]
     },
     "specialoffer: Deal": {
@@ -5561,7 +5575,7 @@
         "${ n } месяц БЕСПЛАТНО",
         "${ n } месяца БЕСПЛАТНО",
         "${ n } месяцев БЕСПЛАТНО",
-        "${ n } БЕСПЛАТНЫХ месяца"
+        "${ n } месяцев БЕСПЛАТНО"
       ]
     },
     "specialoffer: Deal details": {
@@ -5670,7 +5684,7 @@
         "за ${ n } месяц",
         "за ${ n } месяца",
         "за ${ n } месяцев",
-        "за ${ n } месяца"
+        "за ${ n } месяцев"
       ],
       "Get the deal": [
         "Получить скидку"
@@ -5854,6 +5868,48 @@
     "Success notification when user send feedback": {
       "Feedback sent": [
         "Отзыв отправлен"
+      ]
+    },
+    "summer2023: Deal details": {
+      "Premium Password Manager": [
+        "Платная версия менеджера паролей"
+      ]
+    },
+    "summer2023: Describe Proton Pass": {
+      "Securely store your passwords and autofill them on websites. Includes unlimited passwords, autofill, password generator, and more.": [
+        "Храните неограниченное количество паролей в безопасности и используйте их автозаполнение, чтобы входить в аккаунты одним нажатием. Мы также предлагаем генератор паролей и другие функции."
+      ]
+    },
+    "summer2023: Tooltip": {
+      "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
+        "Создавайте надежные данные для входа на всех устройствах. Вам будут доступны неограниченное количество псевдонимов, 20 хранилищ, встроенная двухфакторная аутентификация, автозаполнение данных кредитной карты и многое другое."
+      ],
+      "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "Включает 2950 серверов в более чем 65 странах с возможностью подключения до 10 устройств, доступ к стриминговым платформам со всего мира, блокировщик рекламы и вредоносного ПО и другие преимущества."
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "Защитите свои материалы при помощи зашифрованного облачного хранилища. Вам будут доступны история версий, зашифрованный обмен файлами и многое другое."
+      ]
+    },
+    "summer2023:Footer": {
+      "*Your subscription will automatically renew at the standard discounted rate at the end of your billing cycle.": [
+        "* Ваша подписка автоматически продлится по стандартной цене с учетом скидки в конце платежного цикла."
+      ],
+      "Discounts are based on the standard monthly pricing. This offer is only available to first-time subscribers.": [
+        "Скидки рассчитываются исходя из стандартной платы за 1 месяц. Предложение действует только для новых подписчиков."
+      ]
+    },
+    "summer2023:Info": {
+      "For a limited time, get the best ${ BRAND_NAME } has to offer at an exclusive discount.": [
+        "Получите эксклюзивную скидку от ${ BRAND_NAME }. Предложение ограничено по времени!"
+      ],
+      "We’re celebrating the nine-year anniversary of our crowdfunding!": [
+        "Мы празднуем девятую годовщину нашего проекта!"
+      ]
+    },
+    "summer2023:Offer title": {
+      "${ BRAND_NAME } Anniversary Sale": [
+        "Праздничная распродажа ${ BRAND_NAME }"
       ]
     },
     "Table header": {
@@ -6480,6 +6536,9 @@
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Значение \"Автоматический\" обозначает формат содержимого редактора, применяемый при отправке этому пользователю. \"Простой текст\" означает, что при отправке сообщение всегда будет преобразовываться в простой текст."
       ],
+      "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
+        "Автоматически переключаться между вашими предпочтительными темами для дня и ночи синхронно с системными дневным и ночным режимами."
+      ],
       "Customize import to reduce the number of folders": [
         "Настройте импорт, чтобы уменьшить количество папок"
       ],
@@ -6530,6 +6589,9 @@
       ],
       "The import will start with the most recent messages.": [
         "Импорт начнётся с самых последних сообщений."
+      ],
+      "The selected theme will be active when your system is set to \"dark mode\"": [
+        "Выбранная тема станет активной, когда в системе будет выбрана \"тёмная тема\""
       ],
       "The selected theme will be active when your system is set to \"light mode\"": [
         "Выбранная тема станет доступной, когда на системе выбрано \"светлое оформление\""
