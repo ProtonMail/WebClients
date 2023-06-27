@@ -12,14 +12,13 @@ export const getToAppName = (toApp?: APP_NAMES) => {
     return APPS_CONFIGURATION[toApp]?.name || '';
 };
 
+export const vpnApps = [APPS.PROTONVPN_SETTINGS, APPS.PROTONVPNBROWSEREXTENSION];
+export const passApps = [APPS.PROTONPASS, APPS.PROTONEXTENSION, APPS.PROTONPASSBROWSEREXTENSION];
+
+export const externalApps = [...vpnApps, APPS.PROTONDRIVE, ...passApps];
+
 export const requiresProtonAddress: APP_NAMES[] = [APPS.PROTONMAIL, APPS.PROTONCALENDAR];
-export const requiresAddress: APP_NAMES[] = [
-    ...requiresProtonAddress,
-    APPS.PROTONDRIVE,
-    APPS.PROTONEXTENSION,
-    APPS.PROTONPASSBROWSEREXTENSION,
-    APPS.PROTONPASS,
-];
+export const requiresAddress: APP_NAMES[] = [...requiresProtonAddress, APPS.PROTONDRIVE, ...passApps];
 
 export const requiresNonDelinquent: APP_NAMES[] = [
     APPS.PROTONMAIL,
@@ -28,18 +27,12 @@ export const requiresNonDelinquent: APP_NAMES[] = [
     APPS.PROTONDRIVE,
 ];
 
-export const vpnApps = [APPS.PROTONVPN_SETTINGS, APPS.PROTONVPNBROWSEREXTENSION];
-
-export const externalApps = [
-    ...vpnApps,
-    APPS.PROTONDRIVE,
-    APPS.PROTONEXTENSION,
-    APPS.PROTONPASSBROWSEREXTENSION,
-    APPS.PROTONPASS,
-];
-
 export const getHasAppExternalSignup = (toApp?: APP_NAMES) => {
     return externalApps.includes(toApp as any);
+};
+
+export const getIsPassApp = (toApp?: APP_NAMES) => {
+    return passApps.includes(toApp as any);
 };
 
 export const getIsVPNApp = (toApp?: APP_NAMES, clientType?: CLIENT_TYPES) => {
