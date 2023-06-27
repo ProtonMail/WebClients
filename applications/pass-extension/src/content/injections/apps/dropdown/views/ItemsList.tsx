@@ -8,6 +8,8 @@ import { truthy } from '@proton/pass/utils/fp';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 import { navigateToUpgrade } from '../../../../../shared/components/upgrade/UpgradeButton';
+import type { IFrameMessage } from '../../../../types';
+import { IFrameMessageType } from '../../../../types';
 import { useIFrameContext } from '../../context/IFrameContextProvider';
 import { DropdownItem } from '../components/DropdownItem';
 import { DropdownItemsList } from '../components/DropdownItemsList';
@@ -15,10 +17,10 @@ import { DropdownItemsList } from '../components/DropdownItemsList';
 type Props = {
     items: SafeLoginItem[];
     needsUpgrade: boolean;
-    onSubmit: (item: SafeLoginItem) => void;
+    onMessage?: (message: IFrameMessage) => void;
 };
 
-export const ItemsList: VFC<Props> = ({ items, needsUpgrade, onSubmit }) => {
+export const ItemsList: VFC<Props> = ({ items, needsUpgrade, onMessage }) => {
     const { settings } = useIFrameContext();
 
     const dropdownItems = useMemo(
@@ -44,11 +46,16 @@ export const ItemsList: VFC<Props> = ({ items, needsUpgrade, onSubmit }) => {
                         subTitle={item.username}
                         url={settings.loadDomainImages ? item.url : undefined}
                         icon="user"
-                        onClick={() => onSubmit(item)}
+                        onClick={() =>
+                            onMessage?.({
+                                type: IFrameMessageType.DROPDOWN_AUTOFILL_LOGIN,
+                                payload: { item },
+                            })
+                        }
                     />
                 )),
             ].filter(truthy),
-        [items, needsUpgrade, onSubmit]
+        [items, needsUpgrade, onMessage]
     );
 
     return <DropdownItemsList>{dropdownItems}</DropdownItemsList>;
