@@ -1002,6 +1002,14 @@
         "Prova gratis per 30 giorni"
       ]
     },
+    "Action subscription": {
+      "Manage": [
+        "Gestisci"
+      ],
+      "Reactivate": [
+        "Riattiva"
+      ]
+    },
     "Action; accept invitation to share calendar": {
       "Accept": [
         "Accetta"
@@ -5126,9 +5134,6 @@
       "Admin account allocation": [
         "Allocazione dell'account amministratore"
       ],
-      "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
-        "Dopo aver effettuato il pagamento in Bitcoin, segui le istruzioni qui sotto per effettuare l'upgrade."
-      ],
       "Align left": [
         "Allinea a sinistra"
       ],
@@ -5232,6 +5237,9 @@
       ],
       "Attention required": [
         "Attenzione"
+      ],
+      "Auto-renewal: ": [
+        "Rinnovo automatico: "
       ],
       "Auto-reply is active each month between the selected start and end time.": [
         "La risposta automatica sarà attiva ogni mese tra le date di inizio e fine selezionate."
@@ -6746,9 +6754,6 @@
       "You will NOT be able to decrypt any messages, files, and other data encrypted with this key.": [
         "NON sarai in grado di decrittografare messaggi, file e altri dati crittografati con questa chiave."
       ],
-      "You will receive priority support from specialists trained in account protection. For any account security concerns, please contact us ${ hereLink }.": [
-        "Riceverai supporto prioritario da specialisti addestrati in protezione di account. Per qualsiasi problema di sicurezza dell'account, contattaci a ${ hereLink }."
-      ],
       "You will see more details in the Security logs below for important events such as sign in attempts.": [
         "Vedrai più dettagli nei log di sicurezza in basso per eventi importanti come tentativi di accesso."
       ],
@@ -7399,11 +7404,8 @@
       "Browser version": [
         "Versione del browser"
       ],
-      "BTC address:": [
-        "Indirizzo BTC:"
-      ],
-      "BTC amount:": [
-        "Importo BTC:"
+      "BTC address": [
+        "Indirizzo BTC"
       ],
       "Calendar": [
         "Calendario"
@@ -8285,6 +8287,9 @@
       "Common sign up issues": [
         "Problemi di registrazione comuni"
       ],
+      "contact us": [
+        "contattaci"
+      ],
       "Create account": [
         "Crea account"
       ],
@@ -8296,9 +8301,6 @@
       ],
       "General": [
         "Generale"
-      ],
-      "here": [
-        "qui"
       ],
       "How to unlock data": [
         "Come sbloccare i dati"
@@ -8323,6 +8325,9 @@
       ],
       "Privacy policy": [
         "Informativa sulla privacy"
+      ],
+      "Reactivate now": [
+        "Riattiva"
       ],
       "Request an invite": [
         "Richiedi un invito"
@@ -9883,6 +9888,117 @@
         "Tu"
       ]
     },
+    "pass_signup_2023: Action": {
+      "Continue": [
+        "Continua"
+      ],
+      "Download again ${ size }": [
+        "Scarica di nuovo ${ size }"
+      ],
+      "Download to continue ${ size }": [
+        "Scarica per continuare ${ size }"
+      ],
+      "Upgrade my plan": [
+        "Migliora il mio piano"
+      ]
+    },
+    "pass_signup_2023: Feature": {
+      "End-to-end encrypted": [
+        "Con crittografia end-to-end"
+      ],
+      "Open source": [
+        "Open source"
+      ],
+      "Protected by Swiss privacy laws": [
+        "Ti protegge la legislazione svizzera sulla privacy"
+      ],
+      "Swiss based": [
+        "Sede in Svizzera"
+      ]
+    },
+    "pass_signup_2023: Header": {
+      "Select your plan": [
+        "Seleziona il tuo piano"
+      ]
+    },
+    "pass_signup_2023: Info": {
+      "${ PASS_APP_NAME } benefits": [
+        "Vantaggi di ${ PASS_APP_NAME }"
+      ],
+      "Creating your account": [
+        "Creazione del tuo account"
+      ],
+      "End-to-end encrypted notes": [
+        "Note con crittografia end-to-end"
+      ],
+      "Free forever": [
+        "Gratis per sempre"
+      ],
+      "Get ${ appName } for ${ browserName }": [
+        "Ottieni ${ appName } per ${ browserName }"
+      ],
+      "Get ${ appName } for ${ browserName } soon": [
+        "Ottieni ${ appName } per ${ browserName } presto"
+      ],
+      "Install app": [
+        "Installa l'app"
+      ],
+      "Install app and extension": [
+        "Installa l'app e l'estensione"
+      ],
+      "Install web extension": [
+        "Installa l'estensione web"
+      ],
+      "Open-source and audited": [
+        "Codice open source ed esaminabile"
+      ],
+      "per month, billed annually": [
+        "al mese con fatturazione annuale"
+      ],
+      "per month, billed every 15 months": [
+        "al mese con fatturazione ogni 15 mesi"
+      ],
+      "per month, billed every 30 months": [
+        "al mese con fatturazione ogni 30 mesi"
+      ],
+      "per month, billed every month": [
+        "al mese con fatturazione mensile"
+      ],
+      "per month, billed every two years": [
+        "al mese con fatturazione ogni due anni"
+      ],
+      "Preparing your Recovery Kit": [
+        "Preparazione del tuo kit di recupero"
+      ],
+      "Protected by Swiss privacy laws": [
+        "Ti protegge la legislazione svizzera sulla privacy"
+      ],
+      "Updating your account": [
+        "Aggiornamento del tuo account"
+      ],
+      "Verifying your payment": [
+        "Verifica del tuo pagamento"
+      ],
+      "Welcome to ${ plan }": [
+        "Ti diamo il benvenuto in ${ plan }"
+      ],
+      "Works on all devices": [
+        "Funziona su tutti i dispositivi"
+      ]
+    },
+    "pass_signup_2023: Onboarding": {
+      "Welcome to ${ PASS_APP_NAME }": [
+        "Ti diamo il benvenuto in ${ PASS_APP_NAME }"
+      ]
+    },
+    "pass_signup_2023: Title": {
+      "Create your ${ BRAND_NAME } account": [
+        "Crea il tuo account ${ BRAND_NAME }"
+      ],
+      "Secure your account": [
+        "Proteggi il tuo account"
+      ]
+    },
     "Payment method option": {
       "Credit/debit card": [
         "Carta di credito/debito"
@@ -11049,6 +11165,48 @@
         "Impossibile esportare i dettagli sugli eventi"
       ]
     },
+    "summer2023: Deal details": {
+      "Premium Password Manager": [
+        "Password manager premium"
+      ]
+    },
+    "summer2023: Describe Proton Pass": {
+      "Securely store your passwords and autofill them on websites. Includes unlimited passwords, autofill, password generator, and more.": [
+        "Memorizza in modo sicuro le tue password e inseriscile automaticamente nei siti web. Sono incluse password illimitate, generatore di password e altro ancora."
+      ]
+    },
+    "summer2023: Tooltip": {
+      "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
+        "Crea dati di accesso sicuri su tutti i tuoi dispositivi. Sono inclusi alias illimitati, 20 casseforti, autenticazione a due fattori integrata, compilazione automatica con i dati delle carte di credito e altro ancora."
+      ],
+      "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "Include 2950 server in più di 65 Paesi, possibilità di connettere fino a 10 dispositivi, accesso a servizi di streaming in tutto il mondo, blocco di malware e adblocker, e altro ancora."
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "Proteggi i tuoi file con l'archiviazione in cloud crittografata. Sono incluse la cronologia delle versioni, la sincronizzazione automatica, la condivisione di file crittografati e altre funzioni ancora."
+      ]
+    },
+    "summer2023:Footer": {
+      "*Your subscription will automatically renew at the standard discounted rate at the end of your billing cycle.": [
+        "*Alla fine del ciclo di fatturazione l'abbonamento si rinnoverà automaticamente con lo sconto standard."
+      ],
+      "Discounts are based on the standard monthly pricing. This offer is only available to first-time subscribers.": [
+        "Gli sconti si basano sul prezzo mensile standard. L'offerta è disponibile solo per i nuovi abbonati."
+      ]
+    },
+    "summer2023:Info": {
+      "For a limited time, get the best ${ BRAND_NAME } has to offer at an exclusive discount.": [
+        "Per un periodo limitato, hai a disposizione tutto il meglio di ${ BRAND_NAME } con uno sconto esclusivo."
+      ],
+      "We’re celebrating the nine-year anniversary of our crowdfunding!": [
+        "Stiamo festeggiando il nono anniversario del nostro crowdfunding!"
+      ]
+    },
+    "summer2023:Offer title": {
+      "${ BRAND_NAME } Anniversary Sale": [
+        "Promozione per l'anniversario di ${ BRAND_NAME }"
+      ]
+    },
     "Tab in domain modal": {
       "Addresses": [
         "Indirizzi"
@@ -11496,9 +11654,6 @@
       "Download ${ VPN_APP_NAME }": [
         "Scarica ${ VPN_APP_NAME }"
       ],
-      "Duration": [
-        "Durata"
-      ],
       "Edit credit/debit card": [
         "Modifica carta di credito/debito"
       ],
@@ -11534,9 +11689,6 @@
       ],
       "Encryption and keys": [
         "Crittografia e chiavi"
-      ],
-      "End date": [
-        "Data di fine"
       ],
       "Enter your password": [
         "Inserisci la tua password"
@@ -11753,9 +11905,6 @@
       "Phone": [
         "Telefono"
       ],
-      "Plan": [
-        "Piano"
-      ],
       "Plan summary": [
         "Riepilogo piano"
       ],
@@ -11912,9 +12061,6 @@
       "Start a new import": [
         "Avvia una nuova importazione"
       ],
-      "Start date": [
-        "Data d'inizio"
-      ],
       "Start import process": [
         "Avvia il processo d'importazione"
       ],
@@ -11947,9 +12093,6 @@
       "Time zone": [
         "Fuso orario"
       ],
-      "Total paid": [
-        "Totale pagato"
-      ],
       "Track your referrals": [
         "Tieni traccia dei tuoi referral"
       ],
@@ -11967,9 +12110,6 @@
       ],
       "Upgrade plan": [
         "Aggiorna piano"
-      ],
-      "Users": [
-        "Utenti"
       ],
       "Users and addresses": [
         "Utenti e indirizzi"
@@ -12110,6 +12250,35 @@
       ],
       "Role": [
         "Ruolo"
+      ]
+    },
+    "Title subscription": {
+      "Actions": [
+        "Azioni"
+      ],
+      "Duration": [
+        "Durata"
+      ],
+      "End date": [
+        "Data di fine"
+      ],
+      "Plan": [
+        "Piano"
+      ],
+      "Start date": [
+        "Data d'inizio"
+      ],
+      "Status": [
+        "Stato"
+      ],
+      "Total": [
+        "Totale"
+      ],
+      "Total paid": [
+        "Totale pagato"
+      ],
+      "Users": [
+        "Utenti"
       ]
     },
     "Title; create calendar modal": {

@@ -241,8 +241,11 @@
       "Download anyway": [
         "Přesto stáhnout"
       ],
-      "Download the Windows application": [
-        "Stáhněte si aplikaci pro Windows"
+      "Download apps": [
+        "Stáhnout aplikace"
+      ],
+      "Download Drive for Windows": [
+        "Stáhnout Drive pro Windows"
       ],
       "Drive Locked": [
         "Disk uzamčen"
@@ -3151,9 +3154,6 @@
         "${ contactsCount } kontaktů nalezeno",
         "${ contactsCount } kontaktů nalezeno"
       ],
-      "${ deviceName } (restored)": [
-        "${ deviceName } (obnoveno)"
-      ],
       "${ doneCount } finished": [
         "${ doneCount } ukončený",
         "${ doneCount } ukončené",
@@ -3441,6 +3441,9 @@
       ],
       "Current version": [
         "Současná verze"
+      ],
+      "Customize the look and feel of ${ BRAND_NAME } applications.": [
+        "Přizpůsobte si vzhled aplikací ${ BRAND_NAME }."
       ],
       "Decrypting files": [
         "Dešifrování souborů"
@@ -3772,9 +3775,6 @@
       "No results found": [
         "Nebyly nalezeny žádné výsledky"
       ],
-      "No synced computers": [
-        "Žádné synchronizované počítače"
-      ],
       "No synced folders": [
         "Žádné synchronizované složky"
       ],
@@ -3964,11 +3964,20 @@
       "Something went wrong, please try again later.": [
         "Něco se pokazilo, prosím zkuste to později."
       ],
+      "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
+        "Předplatné vyprší: opětovně aktivujte dne ${ byDate } pro zachování vašich výhod tarifu ${ planName }. ${ reactivateLink }"
+      ],
       "support team": [
         "tým podpory"
       ],
       "Swiss encrypted file storage": [
         "Švýcarské šifrované úložiště souborů"
+      ],
+      "Sync folders from your computer": [
+        "Synchronizovat složky z vašeho počítače"
+      ],
+      "Sync folders with ease using our desktop app, ensuring your files are always up to date and accessible from anywhere.": [
+        "Snadno synchronizujte složky pomocí naší aplikace pro stolní počítače, aby byly vaše soubory vždy aktuální a dostupné odkudkoli."
       ],
       "Temporarily unavailable. Please check back later.": [
         "Dočasně nedostupné. Zkontrolujte to prosím později."
@@ -4039,6 +4048,9 @@
       "This will upload a new version of the file": [
         "Tímto se nahraje nová verze souboru"
       ],
+      "This will upload a new version of the folder": [
+        "Tímto se nahraje nová verze složky"
+      ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
         "Aby bylo možné povolit soukromé vyhledávání, musí ${ DRIVE_APP_NAME } indexovat vaše soubory lokálně."
       ],
@@ -4107,9 +4119,6 @@
       ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "Nahrávání stovek souborů najednou, může zapříčinit snížení výkonu."
-      ],
-      "Use Drive for Desktop to sync folders on your computer with ${ DRIVE_APP_NAME }. They’ll show up here and be accessible from anywhere. ${ learnMore }": [
-        "Pomocí Drive pro PC můžete synchronizovat složky v počítači s ${ DRIVE_APP_NAME }. Zobrazí se zde a budou přístupné odkudkoli. ${ learnMore }"
       ],
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Pomocí tohoto formuláře nás můžete upozornit na nevhodné, nezákonné,\nnebo jinak škodlivé sdílené soubory. Chystáte se nahlásit:"
@@ -4823,6 +4832,9 @@
       "Pay invoice": [
         "Zaplatit fakturu"
       ],
+      "Reactivate now": [
+        "Opětovně nyní aktivovat"
+      ],
       "Request an invite": [
         "Požádat o pozvánku"
       ],
@@ -5283,6 +5295,9 @@
       "Discover all ${ BRAND_NAME } services": [
         "Objevte všechny služby ${ BRAND_NAME }"
       ],
+      "More theming options are available in your account Settings > Appearance.": [
+        "Další možnosti úprav motivů jsou k dispozici v Nastavení účtu > Vzhled."
+      ],
       "Select a theme": [
         "Vyberte motiv"
       ],
@@ -5411,6 +5426,11 @@
     "Placeholder for contact group name": {
       "Name": [
         "Jméno"
+      ]
+    },
+    "Platform": {
+      "Windows": [
+        "Windows"
       ]
     },
     "Progress bar description": {
@@ -6474,6 +6494,9 @@
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Automatický označuje, že formát v editoru bude použit pro odeslání uživateli. Prostý text znamená, že zpráva bude při odeslání vždy převedena na prostý text."
       ],
+      "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
+        "Automatické přepínání mezi preferovanými denními a nočními motivy v synchronizaci s denním a nočním režimem systému."
+      ],
       "Customize import to reduce the number of folders": [
         "Přizpůsobte proces importu, abyste snížili počet složek"
       ],
@@ -6524,6 +6547,12 @@
       ],
       "The import will start with the most recent messages.": [
         "Import začne nejnovějšími zprávami."
+      ],
+      "The selected theme will be active when your system is set to \"dark mode\"": [
+        "Vybraný motiv bude použit, když je systém nastaven na \"tmavý režim\"."
+      ],
+      "The selected theme will be active when your system is set to \"light mode\"": [
+        "Vybraný motiv bude použit, když je systém nastaven na \"světlý režim\"."
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Pro zasílání e-mailů s koncovým šifrováním na tuto e-mailovou adresu, nahrajte prosím veřejný klíč"

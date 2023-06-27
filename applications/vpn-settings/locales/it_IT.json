@@ -371,6 +371,9 @@
       "Upgrade now": [
         "Effettua l'upgrade ora"
       ],
+      "Use ${ label } theme": [
+        "Usa il tema ${ label }"
+      ],
       "Use a different card": [
         "Utilizza una carta diversa"
       ],
@@ -426,6 +429,14 @@
       ],
       "Try free for 30 days": [
         "Prova gratis per 30 giorni"
+      ]
+    },
+    "Action subscription": {
+      "Manage": [
+        "Gestisci"
+      ],
+      "Reactivate": [
+        "Riattiva"
       ]
     },
     "Addon": {
@@ -2152,9 +2163,6 @@
       "Additional options": [
         "Opzioni aggiuntive"
       ],
-      "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
-        "Dopo aver effettuato il pagamento in Bitcoin, segui le istruzioni qui sotto per effettuare l'upgrade."
-      ],
       "All ${ BRAND_NAME } apps and their premium features": [
         "Tutte le app ${ BRAND_NAME } e le loro funzionalità premium"
       ],
@@ -2178,6 +2186,9 @@
       ],
       "Attention required": [
         "Attenzione"
+      ],
+      "Auto-renewal: ": [
+        "Rinnovo automatico: "
       ],
       "Balance from your previous subscription": [
         "Saldo del tuo abbonamento precedente"
@@ -2241,6 +2252,9 @@
       ],
       "Custom email domains": [
         "Domini email personalizzati"
+      ],
+      "Customize the look and feel of ${ BRAND_NAME } applications.": [
+        "Personalizza l'aspetto delle applicazioni ${ BRAND_NAME }"
       ],
       "Discover ProtectBuy logo": [
         "Logo Discover ProtectBuy"
@@ -3029,11 +3043,8 @@
       "Browser version": [
         "Versione del browser"
       ],
-      "BTC address:": [
-        "Indirizzo BTC:"
-      ],
-      "BTC amount:": [
-        "Importo BTC:"
+      "BTC address": [
+        "Indirizzo BTC"
       ],
       "Card holder": [
         "Titolare carta"
@@ -3263,6 +3274,9 @@
       "Subscription options": [
         "Opzioni dell'abbonamento"
       ],
+      "Synchronize with system": [
+        "Sincronizza con il sistema"
+      ],
       "System information": [
         "Informazioni sul sistema"
       ],
@@ -3380,6 +3394,9 @@
       ],
       "Privacy policy": [
         "Informativa sulla privacy"
+      ],
+      "Reactivate now": [
+        "Riattiva"
       ],
       "Request an invite": [
         "Richiedi un invito"
@@ -4879,6 +4896,9 @@
       "Phone number updated": [
         "Numero di telefono aggiornato"
       ],
+      "Preference saved": [
+        "Preferenze salvate"
+      ],
       "Verification successful": [
         "Verifica riuscita"
       ],
@@ -4911,6 +4931,48 @@
     "Suffix for price": {
       "per month": [
         "al mese"
+      ]
+    },
+    "summer2023: Deal details": {
+      "Premium Password Manager": [
+        "Password manager premium"
+      ]
+    },
+    "summer2023: Describe Proton Pass": {
+      "Securely store your passwords and autofill them on websites. Includes unlimited passwords, autofill, password generator, and more.": [
+        "Memorizza in modo sicuro le tue password e inseriscile automaticamente nei siti web. Sono incluse password illimitate, generatore di password e altro ancora."
+      ]
+    },
+    "summer2023: Tooltip": {
+      "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
+        "Crea dati di accesso sicuri su tutti i tuoi dispositivi. Sono inclusi alias illimitati, 20 casseforti, autenticazione a due fattori integrata, compilazione automatica con i dati delle carte di credito e altro ancora."
+      ],
+      "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "Include 2950 server in più di 65 Paesi, possibilità di connettere fino a 10 dispositivi, accesso a servizi di streaming in tutto il mondo, blocco di malware e adblocker, e altro ancora."
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "Proteggi i tuoi file con l'archiviazione in cloud crittografata. Sono incluse la cronologia delle versioni, la sincronizzazione automatica, la condivisione di file crittografati e altre funzioni ancora."
+      ]
+    },
+    "summer2023:Footer": {
+      "*Your subscription will automatically renew at the standard discounted rate at the end of your billing cycle.": [
+        "*Alla fine del ciclo di fatturazione l'abbonamento si rinnoverà automaticamente con lo sconto standard."
+      ],
+      "Discounts are based on the standard monthly pricing. This offer is only available to first-time subscribers.": [
+        "Gli sconti si basano sul prezzo mensile standard. L'offerta è disponibile solo per i nuovi abbonati."
+      ]
+    },
+    "summer2023:Info": {
+      "For a limited time, get the best ${ BRAND_NAME } has to offer at an exclusive discount.": [
+        "Per un periodo limitato, hai a disposizione tutto il meglio di ${ BRAND_NAME } con uno sconto esclusivo."
+      ],
+      "We’re celebrating the nine-year anniversary of our crowdfunding!": [
+        "Stiamo festeggiando il nono anniversario del nostro crowdfunding!"
+      ]
+    },
+    "summer2023:Offer title": {
+      "${ BRAND_NAME } Anniversary Sale": [
+        "Promozione per l'anniversario di ${ BRAND_NAME }"
       ]
     },
     "Tab subscription modal": {
@@ -4949,6 +5011,9 @@
     "Title": {
       "${ VPN_APP_NAME } clients": [
         "${ VPN_APP_NAME } clienti"
+      ],
+      "(active)": [
+        "(attivo)"
       ],
       "1. Give a name to the config to be generated": [
         "1. Dai un nome alla configurazione da generare"
@@ -5058,6 +5123,9 @@
       "Date": [
         "Data"
       ],
+      "Day theme": [
+        "Tema giorno"
+      ],
       "Delete": [
         "Elimina"
       ],
@@ -5079,9 +5147,6 @@
       "Downloads": [
         "Download"
       ],
-      "Duration": [
-        "Durata"
-      ],
       "Edit credit/debit card": [
         "Modifica carta di credito/debito"
       ],
@@ -5093,9 +5158,6 @@
       ],
       "Email subscriptions": [
         "Newsletter"
-      ],
-      "End date": [
-        "Data di fine"
       ],
       "Enter your password": [
         "Inserisci la tua password"
@@ -5139,6 +5201,9 @@
       "Next": [
         "Successiva"
       ],
+      "Night theme": [
+        "Tema notte"
+      ],
       "No recovery method": [
         "Nessun metodo di recupero"
       ],
@@ -5180,9 +5245,6 @@
       ],
       "Phone": [
         "Telefono"
-      ],
-      "Plan": [
-        "Piano"
       ],
       "Plan summary": [
         "Riepilogo piano"
@@ -5250,9 +5312,6 @@
       "Sign out": [
         "Esci"
       ],
-      "Start date": [
-        "Data d'inizio"
-      ],
       "Status": [
         "Stato"
       ],
@@ -5261,9 +5320,6 @@
       ],
       "Switch to two-password mode": [
         "Passa alla modalità a doppia password"
-      ],
-      "Total paid": [
-        "Totale pagato"
       ],
       "TV sign in": [
         "Accesso TV"
@@ -5279,9 +5335,6 @@
       ],
       "Unsupported browser": [
         "Browser non supportato"
-      ],
-      "Users": [
-        "Utenti"
       ],
       "Verification": [
         "Verifica"
@@ -5345,12 +5398,50 @@
         "${ MAIL_APP_NAME } fattura"
       ]
     },
+    "Title subscription": {
+      "Actions": [
+        "Azioni"
+      ],
+      "Duration": [
+        "Durata"
+      ],
+      "End date": [
+        "Data di fine"
+      ],
+      "Plan": [
+        "Piano"
+      ],
+      "Start date": [
+        "Data d'inizio"
+      ],
+      "Status": [
+        "Stato"
+      ],
+      "Total": [
+        "Totale"
+      ],
+      "Total paid": [
+        "Totale pagato"
+      ],
+      "Users": [
+        "Utenti"
+      ]
+    },
     "Tooltip": {
+      "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
+        "Passi automaticamente tra i tuoi temi preferiti per il giorno e per la notte in sincronia con le modalità di giorno e di notte del tuo sistema."
+      ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Se hai acquistato un codice regalo o ne hai ricevuto uno dal nostro team di supporto, puoi inserirlo qui."
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Il nuovo ciclo di abbonamento inizia il ${ formattedTime }"
+      ],
+      "The selected theme will be active when your system is set to \"dark mode\"": [
+        "Il tema selezionato sarà attivo quando il tuo sistema è impostato su \"modalità scura\"."
+      ],
+      "The selected theme will be active when your system is set to \"light mode\"": [
+        "Il tema selezionato sarà attivo quando il tuo sistema è impostato su \"modalità chiara\"."
       ]
     },
     "Tor out of date": {

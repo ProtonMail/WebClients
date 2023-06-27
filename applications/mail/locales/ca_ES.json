@@ -3318,12 +3318,6 @@
         "Arregleu el conflicte ressaltat per continuar.",
         "Arregleu els conflictes ressaltats per continuar."
       ],
-      "Please repeat the password": [
-        "Repetiu la contrassenya"
-      ],
-      "Please set a password": [
-        "Establiu una contrassenya"
-      ],
       "Port is required": [
         "Es requereix el port"
       ],
@@ -5514,6 +5508,9 @@
       "Subject: ": [
         "Assumpte: "
       ],
+      "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
+        "La subscripció està finalitzant: Reactiveu-la abans de ${ byDate } per a mantenir els beneficis de ${ planName }. ${ reactivateLink }"
+      ],
       "support team": [
         "equip de suport"
       ],
@@ -5910,7 +5907,7 @@
         "Heu escrit \"${ attachmentsFoundKeyword }\", però no s'ha afegit cap adjunt. Voleu enviar el missatge de totes maneres?"
       ],
       "You've reached the maximum number of addresses in the contact group(s):": [
-        "Heu assolit el nombre màxim d'adreces en els grups de contactes:"
+        "Heu assolit el nombre màxim d'adreces en el o els grups de contactes:"
       ],
       "You've reached the maximum number of addresses in the contact group.": [
         "Heu assolit el nombre màxim d'adreces en els grups de contactes."
@@ -6875,6 +6872,9 @@
       ],
       "Re-enable the address linked to this calendar to update your invitation.": [
         "Reactivar l'adreça enllaçada a aquest calendari per actualitzar la vostra invitació."
+      ],
+      "Reactivate now": [
+        "Reactiva ara"
       ],
       "Request an invite": [
         "Demana una invitació"

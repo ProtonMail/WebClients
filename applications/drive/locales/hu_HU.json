@@ -237,8 +237,11 @@
       "Download anyway": [
         "Letöltés mindenképpen"
       ],
-      "Download the Windows application": [
-        "A Windows alkalmazás letöltése"
+      "Download apps": [
+        "Alkalmazások letöltése"
+      ],
+      "Download Drive for Windows": [
+        "Drive letöltése Windowsra"
       ],
       "Drive Locked": [
         "Tárhely zárolva"
@@ -320,6 +323,9 @@
       ],
       "Got it": [
         "Rendben!"
+      ],
+      "Grid layout": [
+        "Rács elrendezés"
       ],
       "Hide advanced PGP settings": [
         "Haladó PGP beállítások elrejtése"
@@ -2494,6 +2500,9 @@
       ]
     },
     "familyOffer_2023:Action": {
+      "Decline invitation": [
+        "Meghívó visszautasítása"
+      ],
       "Got it": [
         "Értem"
       ],
@@ -2621,6 +2630,9 @@
       "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
         "2700 szerver, több mint 65 országban, csatlakoztasson akár 10 eszközt, érje el a videós szolgáltatásokat bárhonnan a világban, vírus és reklámblokkolót valamit további lehetőségeket is tartalmaz."
       ],
+      "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
+        "Tartalmazza 3 egyéni e-mail domain név, 90 e-mail cím, korlátlan hide-my-email álnév, naptármegosztás és még sok más támogatását."
+      ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Tartsa biztonságban fájljait, titkosított felhőtárhelyen. Automatikus szinkronizálást, titkosított megosztás és további lehetőségeket tartalmaz."
       ]
@@ -2684,6 +2696,31 @@
     "Filter notification": {
       "${ Label.Name } updated": [
         "${ Label.Name } frissítve"
+      ]
+    },
+    "Font face option": {
+      "System default": [
+        "Rendszer alapértelmezett"
+      ],
+      "Theme default": [
+        "Alapértelmezett téma"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Nagy"
+      ],
+      "Medium (recommended)": [
+        "Közepes (ajánlott)"
+      ],
+      "Small": [
+        "Kicsi"
+      ],
+      "Very large": [
+        "Nagyon nagy"
+      ],
+      "Very small": [
+        "Nagyon kicsi"
       ]
     },
     "Group": {
@@ -3051,9 +3088,6 @@
         "${ contactsCount } névjegy található",
         "${ contactsCount } névjegy található"
       ],
-      "${ deviceName } (restored)": [
-        "${ deviceName } (helyreállított)"
-      ],
       "${ doneCount } finished": [
         "${ doneCount } kész",
         "${ doneCount } kész"
@@ -3299,6 +3333,9 @@
       "Current version": [
         "Jelenlegi változat"
       ],
+      "Customize the look and feel of ${ BRAND_NAME } applications.": [
+        "Szabja testre a ${ BRAND_NAME } alkalmazások megjelenését."
+      ],
       "Decrypting files": [
         "Fájlok visszafejtése"
       ],
@@ -3338,6 +3375,12 @@
       ],
       "Downloading": [
         "Letöltés"
+      ],
+      "Drop file here to upload": [
+        "Húzza ide a fájlokat a feltöltéshez"
+      ],
+      "Drop to import": [
+        "Húzza ide az importáláshoz"
       ],
       "Duplicate key updated": [
         "Duplikált kulcs frissítve"
@@ -3617,9 +3660,6 @@
       "No results found": [
         "Nincs találat"
       ],
-      "No synced computers": [
-        "Nincs szinkronizált számítógép"
-      ],
       "No synced folders": [
         "Nincsenek szinkronizált mappák"
       ],
@@ -3805,11 +3845,20 @@
       "Something went wrong, please try again later.": [
         "Hiba történt. Kérjük, próbálkozzon később."
       ],
+      "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
+        "Az előfizetés megszűnik: Aktiválja újra eddig: ${ byDate } , hogy megtarthassa ezen csomagjának előnyeit: ${ planName } ${ reactivateLink }"
+      ],
       "support team": [
         "ügyfélszolgálat"
       ],
       "Swiss encrypted file storage": [
         "Svájci titkosított tárhely"
+      ],
+      "Sync folders from your computer": [
+        "Mappák szinkronizálása a számítógépéről"
+      ],
+      "Sync folders with ease using our desktop app, ensuring your files are always up to date and accessible from anywhere.": [
+        "Szinkronizáljon mappákat könnyedén az asztali alkalmazással, biztosítva ezzel, hogy fájljainak legfrissebb változatát bárhonnan elérhesse."
       ],
       "Temporarily unavailable. Please check back later.": [
         "Átmenetileg nem elérhető. Próbálja meg később."
@@ -3874,6 +3923,9 @@
       ],
       "This will upload a new version of the file": [
         "Ez a fájl egy új változatát fogja feltölteni"
+      ],
+      "This will upload a new version of the folder": [
+        "Ez a mappa egy új változatát fogja feltölteni"
       ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
         "Az igazán privát kereséshez az szükséges, hogy a ${ DRIVE_APP_NAME } helyileg indexelje a fájlokat."
@@ -4066,6 +4118,9 @@
       ],
       "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ KeyReactivationButton }": [
         "A jelszó visszaállítása miatt, a fájljai már nem érhetők el. Töltse fel a korábbi titkosítási kulcsát, hogy újra elérhesse a fájljait. ${ KeyReactivationButton }"
+      ],
+      "Your files will be encrypted and then saved": [
+        "A fájlok titkosításra majd pedig mentésre kerülnek"
       ],
       "Your files will be encrypted and then saved.": [
         "A fájlok titkosításra majd pedig feltöltésre kerülnek."
@@ -4531,6 +4586,9 @@
       "Street address": [
         "Utca, házszám"
       ],
+      "Synchronize with system": [
+        "Szinkronizálás a rendszerrel"
+      ],
       "System information": [
         "Rendszer információk"
       ],
@@ -4643,6 +4701,9 @@
       ],
       "Pay invoice": [
         "Számla kifizetése"
+      ],
+      "Reactivate now": [
+        "Újraaktiválás most"
       ],
       "Request an invite": [
         "Meghívó kérése"
@@ -4767,6 +4828,9 @@
       ],
       "Custom email domains": [
         "Saját domain nevek"
+      ],
+      "Hide-my-email aliases": [
+        "Hide-my-email álnevek"
       ],
       "Schedule messages at any time": [
         "Üzenetek ütemezése bármikor"
@@ -5053,6 +5117,9 @@
       "Discover all ${ BRAND_NAME } services": [
         "Fedezze fel az összes ${ BRAND_NAME } szolgáltatást"
       ],
+      "More theming options are available in your account Settings > Appearance.": [
+        "További téma lehetőségek a fiók beállítások > Megjelenés menüpontban érhetők el."
+      ],
       "Select a theme": [
         "Téma kiválasztása"
       ],
@@ -5181,6 +5248,11 @@
     "Placeholder for contact group name": {
       "Name": [
         "Név"
+      ]
+    },
+    "Platform": {
+      "Windows": [
+        "Windows"
       ]
     },
     "Progress bar description": {
@@ -5482,6 +5554,15 @@
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
         "Akárhonnan elérhet videós szolgáltatásokat, mint például Netflix, Disney+ vagy Prime Video."
       ],
+      "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
+        "Minden prémium szolgáltatásunk a legmagasabb korlátokkal: 100 e-mail cím, 10 saját domain név támogatása, korlátlan számú hide-my-email álnév, naptármegosztás, titkosított felhőalapú tárolás és fájlmegosztás stb."
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Tartalmazza 1 egyéni e-mail domain név, 10 e-mail cím, 10 hide-my-email álnév, naptármegosztás és még sok más támogatását."
+      ],
+      "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Tartalmazza 3 egyéni e-mail domain név, 15 e-mail cím, korlátlan hide-my-email álnév, naptármegosztás és még sok más támogatását."
+      ],
       "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
         "Ideális családoknak és kisebb csoportoknak, mindenkinek saját e-mail fiókja és e-mail álnevei lehetnek. Saját domain név szükséges."
       ],
@@ -5692,6 +5773,9 @@
         "${ numberOfFailedTransfer.total } meghiúsult feltöltés",
         "${ numberOfFailedTransfer.total } meghiúsult feltöltés"
       ],
+      "(active)": [
+        "(aktív)"
+      ],
       "Account suspended": [
         "Fiók felfüggesztve"
       ],
@@ -5785,6 +5869,9 @@
       ],
       "Date": [
         "Dátum"
+      ],
+      "Day theme": [
+        "Nappali téma"
       ],
       "Delete ${ count } contact": [
         "${ count } névjegy törlése",
@@ -5939,6 +6026,9 @@
       ],
       "Name": [
         "Név"
+      ],
+      "Night theme": [
+        "Éjszakai téma"
       ],
       "No results found": [
         "Nincs találat"
@@ -6172,6 +6262,9 @@
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Automatikus beállítás esetén, a szerkesztőben használt módban kerülnek elküldésre a levelek. Egyszerű szöveg esetén, ennek a partnernek, az összes üzenet egyszerű szöveggé alakul az elküldéskor."
       ],
+      "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
+        "Automatikus váltás az Ön által preferált nappali és éjszakai témák között a rendszer nappali és éjszakai üzemmódjával szinkronban."
+      ],
       "Customize import to reduce the number of folders": [
         "Módosítsa az importálás beállításait hogy kevesebb mappára legyen szükség"
       ],
@@ -6222,6 +6315,12 @@
       ],
       "The import will start with the most recent messages.": [
         "Az importálás a legfrissebb üzenetekkel kezdődik."
+      ],
+      "The selected theme will be active when your system is set to \"dark mode\"": [
+        "A kiválasztott téma akkor lesz aktív, ha a rendszer \"sötét üzemmódba\" van állítva."
+      ],
+      "The selected theme will be active when your system is set to \"light mode\"": [
+        "A kiválasztott téma akkor lesz aktív, ha a rendszer \"világos üzemmódba\" van állítva."
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Töltsön fel egy nyilvános kulcsot, hogy erre a címre lehetővé tegye végpontok közt titkosított üzenetek küldését"

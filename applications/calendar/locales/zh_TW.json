@@ -2152,7 +2152,7 @@
         "帳號不存在"
       ],
       "Address primary private key not found": [
-        "找不到電子郵件地址主要私密金鑰"
+        "找不到電子郵件位址主要私密金鑰"
       ],
       "Already a member of this calendar": [
         "已經是行事曆的成員了"
@@ -2356,7 +2356,7 @@
         "某些聯絡人不具備有效的電郵位址 ${ list }"
       ],
       "Some contacts have no email addresses: ${ list }": [
-        "部份聯絡人無電子郵件地址：${ list }"
+        "部份聯絡人無電子郵件位址：${ list }"
       ],
       "Some contacts have no email addresses: ${ noEmailsContactNamesList } ": [
         "部份聯絡人無電郵位址 : ${ noEmailsContactNamesList } "
@@ -2398,7 +2398,7 @@
         "位址可能拼錯了"
       ],
       "The email addresses do not match": [
-        "電子郵件地址不相符"
+        "電子郵件位址不相符"
       ],
       "The folder name is invalid. Please choose a different name.": [
         "此資料夾名稱無法使用。請換另一個名稱。"
@@ -2709,7 +2709,7 @@
         "無效的回應"
       ],
       "The event could not be added to your calendar. No answer was sent": [
-        "無法在您的行事曆中添加活動。未發送任何答复"
+        "無法在您的行事曆中加入活動。未發送任何回覆"
       ],
       "The event could not be updated in your calendar. No answer was sent": [
         "無法在您的行事曆中更新活動。未發送任何答复"
@@ -2826,7 +2826,7 @@
         "邀請人：${ inviteEmail }"
       ],
       "Manage addresses.": [
-        "管理電子郵件地址。"
+        "管理電子郵件位址。"
       ],
       "Owners of a plan with members cannot join another group plan.": [
         "有成員的方案的擁有者無法加入其他群組方案。"
@@ -2862,7 +2862,7 @@
         "我們邀請您將您的 ${ BRAND_NAME } 帳號連結至此群組方案，並一起享受所有 ${ BRAND_NAME_TWO } 進階功能。"
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
-        "您帳號中的電子郵件地址多於此方案中可用的電子郵件地址。${ addressSettingsLink }"
+        "您帳號中的電子郵件位址多於此方案中可用的電子郵件位址。${ addressSettingsLink }"
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "您的帳號已使用 ${ usedSpace } 的儲存空間，這超過了為您分配的 ${ inviteSpace }。刪除一些資料或要求方案管理員增加您的儲存空間。"
@@ -2910,7 +2910,7 @@
         "包含在 65 個以上的國家的 2700 臺伺服器，可連結多達 10 個裝置，存取世界各地的串流服務，惡意程式防護與廣告攔截器，還有更多功能。"
       ],
       "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
-        "包含對 3 個自訂電子郵件網域、90 個電子郵件地址、無限個 Hide-my-email 別名、行事曆分享與更多功能的支援。"
+        "包含對 3 組自訂電子郵件網域、90 組電子郵件位址、無限組 hide-my-email 別名、行事曆分享與更多功能的支援。"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "使用加密的雲端存儲保護您的檔案。包含自動同步、加密檔案分享等。"
@@ -3086,7 +3086,7 @@
     },
     "Import calendar; import invitation": {
       "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your ${ BRAND_NAME } email address.": [
-        "已匯入的邀請在 ${ CALENDAR_APP_NAME } 中顯示為簡單事件，沒有舉辦人與參與者的詳細資料。若要取得事件更新並顯示參與者，請要求舉辦人以您的 ${ BRAND_NAME } 電子郵件地址向您發出邀請。"
+        "已匯入的邀請在 ${ CALENDAR_APP_NAME } 中顯示為簡單事件，沒有舉辦人與參與者的詳細資料。若要取得事件更新並顯示參與者，請要求舉辦人以您的 ${ BRAND_NAME } 電子郵件位址向您發出邀請。"
       ],
       "This file contains event invitations:": [
         "此檔案包含事件邀請："
@@ -3188,7 +3188,7 @@
         "您的電子郵件帳號要求一個方式來匯出您的資料。"
       ],
       "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        "您的電子郵件地址和應用程式密碼均為正確。${ boldNot } 使用您的一般密碼。"
+        "您的電子郵件位址和應用程式密碼均為正確。${ boldNot } 使用您的一般密碼。"
       ],
       "Your email address and password are correct.": [
         "您的電郵位址和密碼均為正確."
@@ -3426,7 +3426,7 @@
         "在申請一組新的驗證碼之前，請檢查您的垃圾郵件資料夾以及 ${ strong } 的位址正確無誤。"
       ],
       "Billing cycle: ${ text }": [
-        "帳單週期：${ text }"
+        "繳款單週期：${ text }"
       ],
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
         "為分享此行事曆的完整事件細節，您允許 ${ BRAND_NAME } 存取此加密行事曆的資料。"
@@ -3489,7 +3489,7 @@
         "自訂每年"
       ],
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
-        "自訂 ${ BRAND_NAME } 應用程式的外觀與感覺。"
+        "自訂 ${ BRAND_NAME } 應用程式的視覺與設計。"
       ],
       "Daily": [
         "每日"
@@ -3576,7 +3576,7 @@
         "匯入郵箱"
       ],
       "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "從其他裝置匯入您的電子郵件、行事曆與聯絡人到 ${ BRAND_NAME }。"
+        "從其它服務匯入您的電子郵件、行事曆與通訊錄至 ${ BRAND_NAME }。"
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "正在把你的資料從 ${ fromEmail } 匯入至 ${ toEmail }。"
@@ -3742,6 +3742,9 @@
       ],
       "Some of your answers to occurrences previously updated by the organizer will be lost.": [
         "您對召集人先前更新的事件所作的某些回答將會遺失。"
+      ],
+      "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
+        "訂閱即將結束:於${ byDate }重新啟用以維持${ planName }的福利。${ reactivateLink }"
       ],
       "support team": [
         "支援團隊"
@@ -3936,19 +3939,19 @@
         "您以達到通訊群組郵件地址最高上限"
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
-        "已凍結您的 ${ BRAND_NAME } 帳號 。 28 日後，收件匣停收電郵，磁碟機共享連結失效，您無法再上載新檔案。 如欲恢復正常服務，請支付所有逾期帳單。"
+        "已凍結您的 ${ BRAND_NAME } 帳號 。 28 日後，收件匣停收電郵，磁碟機共享連結失效，您無法再上載新檔案。 如欲恢復正常服務，請支付所有逾期繳款單。"
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "已凍結您的 ${ BRAND_NAME } 帳號 。 收件匣停收電郵，磁碟機共享連結失效，您無法再上載新檔案。 如欲正常使用服務，請支付所有逾期帳單。"
+        "已凍結您的 ${ BRAND_NAME } 帳號 。 收件匣停收電郵，磁碟機共享連結失效，您無法再上載新檔案。 如欲正常使用服務，請支付所有逾期繳款單。"
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "您的帳號至少有一張逾期帳單。您的存取將受限制。${ payInvoiceLink }"
       ],
       "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
-        "由於有多於一張逾期帳單，目前已凍結您的帳號並終止所有服務直至收到付款。 ${ payInvoiceLink }"
+        "您的帳號已有超過一期以上的逾期繳款單，因此造成帳號限制使用，等待您繳清帳款後，所有服務即恢復正常。 ${ payInvoiceLink }"
       ],
       "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
-        "由於出現多於一張逾期帳單，您的帳號將受限制。持續欠款將封鎖您的電郵和共享連結。 ${ payInvoiceLink }"
+        "您的帳號已有超過一期以上的逾期繳款單，因此帳號功能將受限。若持續未繳清款項，則將封鎖您的電郵和共享連結。 ${ payInvoiceLink }"
       ],
       "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete all events in this series anyway?": [
         "您的電郵位址已停用。取消函無法傳送給各事件參與者。您仍然要刪除此一系列中全部事件嗎？"
@@ -4460,6 +4463,9 @@
       "Pay invoice": [
         "繳付帳單"
       ],
+      "Reactivate now": [
+        "現在重新啟用"
+      ],
       "Request an invite": [
         "請求邀請"
       ],
@@ -4779,7 +4785,7 @@
         "資料夾、標籤和篩選器無上限"
       ],
       "Up to 15 email addresses": [
-        "多達 15 個電子郵件地址"
+        "多達 15 組電子郵件位址"
       ],
       "Up to 3 TB of storage": [
         "多達 3 TB的儲存空間"
@@ -4787,7 +4793,7 @@
     },
     "new_plans: feature info": {
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
-        "創建多重電子郵件地址身分，如JohnShopper@${ domain }給購物用途， JohnNews@${ domain2 }給訂閱新聞使用"
+        "創建多重電子郵件位址身分，如JohnShopper@${ domain }給購物用途， JohnNews@${ domain2 }給訂閱新聞使用"
       ],
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "使用 ${ BRAND_NAME } 的 SimpleLogin 取得無限的別名"
@@ -4974,7 +4980,7 @@
         "探索所有 ${ BRAND_NAME } 服務"
       ],
       "More theming options are available in your account Settings > Appearance.": [
-        "更多佈景主題選項在您的帳號設定→「外觀」中提供。"
+        "更多布景主題選項在您的帳號設定→「介面視覺」中提供。"
       ],
       "Select a theme": [
         "選擇佈景主題"
@@ -5083,7 +5089,7 @@
     },
     "PGP key warning": {
       "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "寄送金鑰所定義的使用者識別碼 (${ keyUserIds }) 中找不到電子郵件地址"
+        "寄送金鑰所定義的使用者識別碼 (${ keyUserIds }) 中找不到電子郵件位址"
       ]
     },
     "Placeholder": {
@@ -5263,7 +5269,7 @@
     },
     "Share calendar modal input placeholder": {
       "Enter an email address or group name": [
-        "輸入電子郵件地址或群組名稱"
+        "輸入電子郵件位址或群組名稱"
       ]
     },
     "Share calendar modal title": {
@@ -5501,22 +5507,22 @@
     },
     "specialoffer: Tooltip": {
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.": [
-        "存取被封鎖的內容並進行私密瀏覽。包含 60 多個國家的 1700 台伺服器、最高的 VPN 速度、每個使用者 10 個 VPN 連線、全球串流服務、惡意軟體與廣告封鎖器等。"
+        "存取被攔截的內容並進行私密瀏覽。包含 60 多個國家的 1700 台伺服器、最高的 VPN 速度、每個使用者 10 個 VPN 連線、全球影音串流服務、惡意軟體與廣告攔截器等。"
       ],
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
-        "存取被封鎖的內容並進行私密瀏覽。包含 60 多個國家的 1700 台伺服器、最高的 VPN 速度、10 個 VPN 連線、全球串流服務、惡意軟體與廣告封鎖器等。"
+        "存取攔截的內容並進行私密瀏覽。包含 60 多個國家的 1700 臺伺服器、最高的 VPN 速度、10 個 VPN 連線、全球串流影音服務以及惡意軟體與廣告攔截器等。"
       ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
         "在世界各地輕鬆存取影音串流內容，包括 Netflix、Disney+、Prime Video 等."
       ],
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
-        "我們所有具有最高限制的進階版服務：100 個電子郵件地址、支援 10 個自訂網域、無限制的隱藏 Hide-my-email 別名、行事曆分享、加密雲端儲存與檔案分享等。"
+        "我們所有具有最高限制的進階版服務：100 組電子郵件位址、支援 10 組自訂網域、無限制的隱藏 hide-my-email 別名、行事曆分享、加密雲端儲存與檔案分享等。"
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "包含對 1 個自訂電子郵件網域、10 個電子郵件地址、10 個 Hide-my-email 別名、行事曆分享與更多功能的支援。"
+        "包含對 1 個自訂電子郵件網域、10 組電子郵件位址、10 組 hide-my-email 別名、行事曆分享與更多功能的支援。"
       ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "包含對 3 個自訂電子郵件網域、15 個電子郵件地址、無限個 Hide-my-email 別名、行事曆分享與更多功能的支援。"
+        "包含對 3 個自訂電子郵件網域、15 組電子郵件位址、無限組 hide-my-email 別名、行事曆分享與更多功能的支援。"
       ],
       "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
         "非常適合家庭或小型團隊，每個人都可以擁有自己的收件匣與別名。需要自訂網域。"
@@ -5855,7 +5861,7 @@
         "測試版體驗"
       ],
       "Billing cycle": [
-        "帳單週期"
+        "繳款單週期"
       ],
       "Calendar": [
         "行事曆"
@@ -5864,7 +5870,7 @@
         "行事曆鬧鐘"
       ],
       "Cannot add more addresses": [
-        "無法添加更多地址"
+        "無法加入更多位址"
       ],
       "Change my answer": [
         "更改我的回答"
@@ -6389,7 +6395,7 @@
         "要存取此共享行事曆，啟用此地址，或是要求 ${ boldCalendarOwnerEmail } 傳送邀請到作用中的地址。"
       ],
       "You cannot join this calendar because your invited email address (${ boldInvitedAddress }) is disabled.": [
-        "因為您邀請的電子郵件地址 (${ boldInvitedAddress }) 已停用，因此無法加入此行事曆。"
+        "由於您邀請的電子郵件位址 (${ boldInvitedAddress }) 已停用，因此無法加入此行事曆。"
       ]
     },
     "Weekly recurring event, frequency": {
