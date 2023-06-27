@@ -3803,6 +3803,9 @@
       "Some of your answers to occurrences previously updated by the organizer will be lost.": [
         "Algumas das suas respostas a ocorrências previamente atualizadas pelo organizador serão perdidas."
       ],
+      "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
+        "Assinatura encerrada: Reative até ${ byDate } para manter os benefícios do seu ${ planName } ${ reactivateLink }"
+      ],
       "support team": [
         "equipe de suporte"
       ],
@@ -3990,7 +3993,7 @@
         "Você vai atualizar todos os eventos desta série. Os participantes removidos serão notificados."
       ],
       "You've reached the maximum number of addresses in the contact group(s):": [
-        "Você alcançou o número máximo de endereços nos grupos de contato"
+        "Você alcançou o número máximo de endereços ,o grupo ou grupos de contato:"
       ],
       "You've reached the maximum number of addresses in the contact group.": [
         "Você alcançou o número máximo de endereços no grupo de contato."
@@ -4521,6 +4524,9 @@
       ],
       "Pay invoice": [
         "Pagar fatura"
+      ],
+      "Reactivate now": [
+        "Reativar agora"
       ],
       "Request an invite": [
         "Solicitar um convite"
@@ -5839,6 +5845,48 @@
     "Success notification when user send feedback": {
       "Feedback sent": [
         "Comentário enviado"
+      ]
+    },
+    "summer2023: Deal details": {
+      "Premium Password Manager": [
+        "Gerenciador de senhas premium"
+      ]
+    },
+    "summer2023: Describe Proton Pass": {
+      "Securely store your passwords and autofill them on websites. Includes unlimited passwords, autofill, password generator, and more.": [
+        "Armazene suas senhas com segurança e preencha-as automaticamente em sites. Inclui senhas ilimitadas, preenchimento automático, gerador de senhas e mais."
+      ]
+    },
+    "summer2023: Tooltip": {
+      "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
+        "Crie detalhes seguros de início de sessão em todos os seus dispositivos. Inclui aliases ilimitados, 20 cofres, A2F integrada, preenchimento automático de cartão de crédito e muito mais."
+      ],
+      "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "Inclui 2.950 servidores em mais de 65 países. Conecte até 10 dispositivos, acesse serviços de streaming no mundo todo, malware e bloqueador de anúncios e muito mais."
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "Proteja seus arquivos com armazenamento em nuvem criptografado. Inclui histórico de versões, compartilhamento de arquivo criptografado e muito mais."
+      ]
+    },
+    "summer2023:Footer": {
+      "*Your subscription will automatically renew at the standard discounted rate at the end of your billing cycle.": [
+        "*Sua assinatura será renovada automaticamente com a taxa com desconto padrão ao final do seu ciclo de faturamento."
+      ],
+      "Discounts are based on the standard monthly pricing. This offer is only available to first-time subscribers.": [
+        "Os descontos são baseados no preço mensal padrão. Esta oferta está disponível somente para novos assinantes."
+      ]
+    },
+    "summer2023:Info": {
+      "For a limited time, get the best ${ BRAND_NAME } has to offer at an exclusive discount.": [
+        "Por tempo limitado, obtenha o melhor de ${ BRAND_NAME } com um desconto exclusivo."
+      ],
+      "We’re celebrating the nine-year anniversary of our crowdfunding!": [
+        "Estamos celebrando o 9º aniversário de nosso crowdfunding!"
+      ]
+    },
+    "summer2023:Offer title": {
+      "${ BRAND_NAME } Anniversary Sale": [
+        "Oferta de aniversário ${ BRAND_NAME }"
       ]
     },
     "Table header": {
