@@ -7,6 +7,7 @@ import { CircleLoader } from '@proton/atoms/CircleLoader';
 import { Icon, InlineLinkButton, InputFieldTwo, PasswordInputTwo } from '@proton/components/components';
 import { Challenge, ChallengeRef } from '@proton/components/containers';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
+import { PLANS } from '@proton/shared/lib/constants';
 import {
     confirmEmailValidator,
     confirmPasswordValidator,
@@ -22,7 +23,7 @@ import isTruthy from '@proton/utils/isTruthy';
 
 import { AccountData, SignupType } from '../signup/interfaces';
 import { runAfterScroll } from './helper';
-import { Measure, OnOpenLogin } from './interface';
+import { Measure, OnOpenLogin, SignupModelV2 } from './interface';
 import { InteractFields } from './measure';
 import {
     EmailAsyncState,
@@ -149,6 +150,7 @@ interface Props {
     disableChange: boolean;
     onSubmit?: () => void;
     api: Api;
+    model: SignupModelV2;
     onChallengeLoaded: () => void;
     onChallengeError: () => void;
     onOpenLogin: OnOpenLogin;
@@ -163,6 +165,7 @@ const AccountStepDetails = ({
     disableChange,
     onSubmit,
     api,
+    model,
     onChallengeLoaded,
     onChallengeError,
     onOpenLogin,
@@ -378,7 +381,12 @@ const AccountStepDetails = ({
                     }
                     measure({
                         event: TelemetryAccountSignupEvents.userCheckout,
-                        dimensions: { type: 'free' },
+                        dimensions: {
+                            type: 'pay_cc',
+                            plan: PLANS.FREE,
+                            cycle: `${model.subscriptionData.cycle}`,
+                            currency: model.subscriptionData.currency,
+                        },
                     });
                     if (validateAccountDetails()) {
                         onSubmit();

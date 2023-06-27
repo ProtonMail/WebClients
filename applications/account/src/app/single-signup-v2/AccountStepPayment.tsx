@@ -258,7 +258,7 @@ const AccountStepPayment = ({
                                     if (value) {
                                         measure({
                                             event: TelemetryAccountSignupEvents.paymentSelect,
-                                            dimensions: { action: value },
+                                            dimensions: { type: value },
                                         });
                                     }
                                 }
