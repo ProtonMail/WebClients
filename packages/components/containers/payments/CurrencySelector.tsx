@@ -1,11 +1,13 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import { Props as SelectProps } from '@proton/components/components/selectTwo/SelectTwo';
 import { CURRENCIES, DEFAULT_CURRENCY } from '@proton/shared/lib/constants';
 import { Currency } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
-import { ButtonGroup, Option, Select, SelectTwo } from '../../components';
+import { ButtonGroup, Option, SelectTwo } from '../../components';
+import LegacySelect, { Props as LegacySelectBaseProps } from '../../components/select/Select';
 
 const addSymbol = (currency: Currency) => {
     if (currency === 'EUR') {
@@ -19,20 +21,36 @@ const addSymbol = (currency: Currency) => {
     return currency;
 };
 
-interface Props {
-    mode?: 'select' | 'buttons' | 'select-two';
+interface SelectTwoProps extends Omit<SelectProps<Currency>, 'onSelect' | 'children'> {
+    mode: 'select-two';
     currency?: Currency;
     onSelect: (newCurrency: Currency) => void;
+}
+
+interface ButtonGroupProps {
+    mode: 'buttons';
+    onSelect: (newCurrency: Currency) => void;
+    currency?: Currency;
     loading?: boolean;
     className?: string;
     id?: string;
     disabled?: boolean;
 }
 
-const CurrencySelector = ({ currency = DEFAULT_CURRENCY, onSelect, mode = 'select', loading, ...rest }: Props) => {
+interface LegacySelectProps extends Omit<LegacySelectBaseProps, 'onSelect' | 'children' | 'options'> {
+    mode: 'select';
+    currency?: Currency;
+    onSelect: (newCurrency: Currency) => void;
+    loading?: boolean;
+}
+
+type Props = ButtonGroupProps | SelectTwoProps | LegacySelectProps;
+
+const CurrencySelector = (props: Props) => {
     const options = CURRENCIES.map((c) => ({ text: c, value: c }));
 
-    if (mode === 'buttons') {
+    if (props.mode === 'buttons') {
+        const { currency = DEFAULT_CURRENCY, onSelect, loading, ...rest } = props;
         return (
             <ButtonGroup {...rest}>
                 {options.map(({ text, value }) => {
@@ -51,9 +69,11 @@ const CurrencySelector = ({ currency = DEFAULT_CURRENCY, onSelect, mode = 'selec
         );
     }
 
-    if (mode === 'select') {
+    if (props.mode === 'select') {
+        const { currency = DEFAULT_CURRENCY, onSelect, loading, ...rest } = props;
+
         return (
-            <Select
+            <LegacySelect
                 title={c('Title').t`Currency`}
                 value={currency}
                 options={options.map((option) => ({ ...option, text: addSymbol(option.text as Currency) }))}
@@ -64,7 +84,8 @@ const CurrencySelector = ({ currency = DEFAULT_CURRENCY, onSelect, mode = 'selec
         );
     }
 
-    if (mode === 'select-two') {
+    if (props.mode === 'select-two') {
+        const { currency = DEFAULT_CURRENCY, onSelect, loading, ...rest } = props;
         const handleChange = ({ value }: { value: Currency }) => onSelect(value);
         return (
             <SelectTwo
@@ -73,6 +94,7 @@ const CurrencySelector = ({ currency = DEFAULT_CURRENCY, onSelect, mode = 'selec
                 loading={loading}
                 // eslint-disable-next-line jsx-a11y/aria-props
                 aria-description={c('Title').t`Currency`}
+                {...rest}
             >
                 {options.map(({ text, value }) => {
                     return (

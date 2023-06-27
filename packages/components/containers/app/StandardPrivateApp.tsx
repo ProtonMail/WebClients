@@ -106,7 +106,6 @@ const StandardPrivateApp = <T, M extends Model<T>, E, EvtM extends Model<E>>({
 
         const featuresPromise = getFeature([
             FeatureCode.EarlyAccessScope,
-            FeatureCode.PassSettings,
             FeatureCode.AccessibilitySettings,
             ...preloadFeatures,
         ]);

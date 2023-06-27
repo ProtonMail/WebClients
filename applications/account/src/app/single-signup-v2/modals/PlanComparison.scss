@@ -1,0 +1,30 @@
+@import '~@proton/styles/scss/lib';
+
+.plan-comparison {
+	&-list {
+		inline-size: 9em;
+	}
+
+	&-item {
+		border: 1px solid transparent; // to avoid differences between column without borders
+
+		&--selected {
+			border-color: rgb(226 219 255 / 1);
+
+			& + & {
+				border-block-start-color: transparent;
+			}
+
+			&:first-child {
+				// or &-first#{&} if it's not always the first one of the list
+				border-start-start-radius: var(--border-radius-md);
+				border-start-end-radius: var(--border-radius-md);
+			}
+
+			&-last#{&} {
+				border-end-start-radius: var(--border-radius-md);
+				border-end-end-radius: var(--border-radius-md);
+			}
+		}
+	}
+}

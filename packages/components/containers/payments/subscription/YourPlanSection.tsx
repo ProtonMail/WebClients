@@ -4,7 +4,6 @@ import { Loader } from '../../../components';
 import {
     useAddresses,
     useCalendars,
-    useFeature,
     useLoad,
     useOrganization,
     usePlans,
@@ -14,7 +13,6 @@ import {
 } from '../../../hooks';
 import { SettingsSectionWide } from '../../account';
 import MozillaInfoPanel from '../../account/MozillaInfoPanel';
-import { FeatureCode } from '../../features';
 import PendingInvitationPanel from './PendingInvitationsPanel';
 import { useSubscriptionModal } from './SubscriptionModalProvider';
 import SubscriptionPanel from './SubscriptionPanel';
@@ -40,12 +38,9 @@ const YourPlanSection = ({ app }: Props) => {
 
     useLoad();
 
-    const passPlusPlanFeature = useFeature<boolean>(FeatureCode.PassPlusPlan);
-    const isPassPlusEnabled = passPlusPlanFeature.feature?.Value === true;
-
     const loading = loadingSubscription || loadingOrganization || loadingPlans;
 
-    if (loading || passPlusPlanFeature.loading) {
+    if (loading) {
         return <Loader />;
     }
 
@@ -61,7 +56,6 @@ const YourPlanSection = ({ app }: Props) => {
         <SettingsSectionWide>
             <div className="your-plan-section-container gap-8">
                 <SubscriptionPanel
-                    isPassPlusEnabled={isPassPlusEnabled}
                     app={app}
                     currency={currency}
                     subscription={subscription}
@@ -73,7 +67,6 @@ const YourPlanSection = ({ app }: Props) => {
                 />
                 <PendingInvitationPanel />
                 <UpsellPanel
-                    isPassPlusEnabled={isPassPlusEnabled}
                     app={app}
                     currency={currency}
                     subscription={subscription}

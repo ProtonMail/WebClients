@@ -3,8 +3,7 @@ import { ForwardedRef, Fragment, forwardRef } from 'react';
 import { c } from 'ttag';
 
 import ProtonBadge from '@proton/components/components/protonBadge/ProtonBadge';
-import { FeatureCode } from '@proton/components/containers';
-import { useConfig, useFeature, useUser } from '@proton/components/hooks';
+import { useConfig, useUser } from '@proton/components/hooks';
 import { getAppShortName } from '@proton/shared/lib/apps/helper';
 import { APPS, APP_NAMES, BRAND_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
@@ -20,8 +19,6 @@ interface AppsDropdownProps {
 const AppsDropdown = ({ onDropdownClick, app, ...rest }: AppsDropdownProps, ref: ForwardedRef<HTMLButtonElement>) => {
     const [user] = useUser();
     const { APP_NAME } = useConfig();
-    const passSettingsFeature = useFeature<boolean>(FeatureCode.PassSettings);
-    const isPassSettingsEnabled = passSettingsFeature.feature?.Value === true;
 
     return (
         <SimpleDropdown
@@ -44,7 +41,7 @@ const AppsDropdown = ({ onDropdownClick, app, ...rest }: AppsDropdownProps, ref:
             as="button"
         >
             <ul className="unstyled my-0 p-4">
-                {apps({ isPassSettingsEnabled }).map((appToLinkTo) => {
+                {apps().map((appToLinkTo) => {
                     const appToLinkToName = getAppShortName(appToLinkTo);
                     const current = app && appToLinkTo === app;
 

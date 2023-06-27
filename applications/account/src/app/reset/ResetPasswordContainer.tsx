@@ -103,6 +103,7 @@ const ResetPasswordContainer = ({ onLogin, setupVPN }: Props) => {
             appName: APP_NAME,
             persistent: persistent ?? true,
             username: username ?? '',
+            type: 'internal',
             Methods: [],
             hasTrustedDeviceRecovery,
             ktFeature,
@@ -184,6 +185,7 @@ const ResetPasswordContainer = ({ onLogin, setupVPN }: Props) => {
                     persistent: persistent ?? true,
                     username: username ?? '',
                     Methods: [],
+                    type: 'internal',
                     hasTrustedDeviceRecovery,
                     ktFeature,
                 };
@@ -236,6 +238,7 @@ const ResetPasswordContainer = ({ onLogin, setupVPN }: Props) => {
                                 setupVPN,
                                 appName: APP_NAME,
                                 username,
+                                type: 'internal',
                                 Methods: [],
                                 persistent,
                                 hasTrustedDeviceRecovery,
@@ -285,6 +288,7 @@ const ResetPasswordContainer = ({ onLogin, setupVPN }: Props) => {
         return handleCancel;
     })();
 
+    console.log(cache);
     const children = (
         <Main>
             {step === STEPS.LOADING && (
@@ -357,6 +361,11 @@ const ResetPasswordContainer = ({ onLogin, setupVPN }: Props) => {
                     <Content>
                         <RequestResetTokenForm
                             defaultCountry={defaultCountry}
+                            defaultEmail={
+                                cache.type === 'external' && cache.Methods.includes('login')
+                                    ? cache.username
+                                    : undefined
+                            }
                             defaultMethod={cache.method}
                             defaultValue={cache.value}
                             methods={cache.Methods}

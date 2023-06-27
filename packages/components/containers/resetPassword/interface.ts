@@ -37,6 +37,7 @@ export interface ResetCacheResult {
     username: string;
     persistent: boolean;
     Methods: RecoveryMethod[];
+    type: AccountType;
     method?: RecoveryMethod;
     value?: string;
     token?: string;

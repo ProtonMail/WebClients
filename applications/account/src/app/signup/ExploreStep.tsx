@@ -16,10 +16,9 @@ import { getSignupApplication } from './helper';
 
 interface Props {
     onExplore: (app: APP_NAMES) => Promise<void>;
-    isPassSettingsEnabled: boolean;
 }
 
-const ExploreStep = ({ onExplore, isPassSettingsEnabled }: Props) => {
+const ExploreStep = ({ onExplore }: Props) => {
     const { APP_NAME } = useConfig();
     const [type, setType] = useState<APP_NAMES | undefined>(undefined);
     const [loading, withLoading] = useLoading();
@@ -36,13 +35,7 @@ const ExploreStep = ({ onExplore, isPassSettingsEnabled }: Props) => {
             <Header title={c('new_plans: title').t`Start exploring the ${BRAND_NAME} universe`} />
             <Content>
                 <ul className="unstyled m-0 divide-y">
-                    {[
-                        APPS.PROTONMAIL,
-                        APPS.PROTONCALENDAR,
-                        APPS.PROTONDRIVE,
-                        APPS.PROTONVPN_SETTINGS,
-                        isPassSettingsEnabled ? APPS.PROTONPASS : undefined,
-                    ]
+                    {[APPS.PROTONMAIL, APPS.PROTONCALENDAR, APPS.PROTONDRIVE, APPS.PROTONVPN_SETTINGS, APPS.PROTONPASS]
                         .filter(isTruthy)
                         .map((app) => {
                             const name = getAppName(app);

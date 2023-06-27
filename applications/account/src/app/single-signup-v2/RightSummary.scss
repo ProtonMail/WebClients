@@ -1,0 +1,10 @@
+@import '~@proton/styles/scss/lib';
+
+.right-summary {
+	inline-size: rem(320);
+	background: var(--background-norm);
+
+	&--gradient {
+		background: linear-gradient(81.4deg, rgb(109 74 255 / 0.037) 0%, rgb(70 26 255 / 0.01) 100%), var(--background-norm);
+	}
+}
