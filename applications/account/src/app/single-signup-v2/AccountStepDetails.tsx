@@ -4,14 +4,9 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader';
-import { InlineLinkButton, InputFieldTwo, PasswordInputTwo } from '@proton/components/components';
+import { Icon, InlineLinkButton, InputFieldTwo, PasswordInputTwo } from '@proton/components/components';
 import { Challenge, ChallengeRef } from '@proton/components/containers';
-import { useNotifications } from '@proton/components/hooks';
-import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
-import { queryCheckEmailAvailability } from '@proton/shared/lib/api/user';
-import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
-import { getOwnershipVerificationHeaders, mergeHeaders } from '@proton/shared/lib/fetch/headers';
 import {
     confirmEmailValidator,
     confirmPasswordValidator,
@@ -26,14 +21,20 @@ import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { AccountData, SignupType } from '../signup/interfaces';
-import { useFlowRef } from '../useFlowRef';
-import AlreadyUsedNotification from './AlreadyUsedNotification';
 import { Measure, OnOpenLogin } from './interface';
 import { InteractFields } from './measure';
+import {
+    EmailAsyncState,
+    EmailValidationState,
+    createAsyncValidator,
+    defaultEmailValidationState,
+} from './validateEmail';
 
 const first = <T,>(errors: T[]) => {
     return errors.find((x) => !!x);
 };
+
+const validator = createAsyncValidator();
 
 interface InputState {
     interactive: boolean;
@@ -76,7 +77,7 @@ const defaultInputStates = {
 };
 
 export interface AccountStepDetailsRef {
-    validate: () => Promise<boolean>;
+    validate: () => boolean;
     data: () => Promise<AccountData>;
 }
 
@@ -108,6 +109,39 @@ const getMeasurement = (diff: Partial<AccountDetailsInputState>) => {
         .filter(isTruthy);
 };
 
+const getErrorDetails = ({
+    emailValidationState,
+    email = '',
+    emailConfirm = '',
+    password = '',
+    passwordConfirm = '',
+}: {
+    emailValidationState?: EmailValidationState;
+    email?: string;
+    emailConfirm?: string;
+    password?: string;
+    passwordConfirm?: string;
+}): ErrorDetails => {
+    const trimmedEmail = email.trim();
+    const trimmedEmailConfirm = emailConfirm.trim();
+    return {
+        email: first([
+            trimmedEmail === emailValidationState?.email ? emailValidationState?.message : '',
+            requiredValidator(trimmedEmail),
+            emailValidator(trimmedEmail),
+        ]),
+        emailConfirm: first([
+            requiredValidator(trimmedEmailConfirm),
+            confirmEmailValidator(trimmedEmail, trimmedEmailConfirm),
+        ]),
+        password: first([requiredValidator(password), passwordLengthValidator(password)]),
+        passwordConfirm: first([
+            requiredValidator(passwordConfirm),
+            confirmPasswordValidator(passwordConfirm, password),
+        ]),
+    };
+};
+
 interface Props {
     accountStepDetailsRef: MutableRefObject<AccountStepDetailsRef | undefined>;
     disableChange: boolean;
@@ -133,9 +167,6 @@ const AccountStepDetails = ({
     appName,
     measure,
 }: Props) => {
-    const { createNotification } = useNotifications();
-    const createFlow = useFlowRef();
-
     const challengeRefEmail = useRef<ChallengeRef>();
     const formInputRef = useRef<HTMLFormElement>(null);
     const inputValuesRef = useRef({ email: false, emailConfirm: false });
@@ -145,7 +176,7 @@ const AccountStepDetails = ({
 
     const trimmedEmail = details.email.trim();
 
-    const [emailAsyncError, setEmailAsyncError] = useState({ email: '', message: '' });
+    const [emailValidationState, setEmailValidationState] = useState<EmailValidationState>(defaultEmailValidationState);
 
     const emailRef = useRef<HTMLInputElement>(null);
     const emailConfirmRef = useRef<HTMLInputElement>(null);
@@ -193,23 +224,6 @@ const AccountStepDetails = ({
         });
     }, []);
 
-    const errorDetails: ErrorDetails = {
-        email: first([
-            trimmedEmail === emailAsyncError.email ? emailAsyncError.message : '',
-            requiredValidator(trimmedEmail),
-            emailValidator(trimmedEmail),
-        ]),
-        emailConfirm: first([
-            requiredValidator(details.emailConfirm.trim()),
-            confirmEmailValidator(trimmedEmail, details.emailConfirm.trim()),
-        ]),
-        password: first([requiredValidator(details.password), passwordLengthValidator(details.password)]),
-        passwordConfirm: first([
-            requiredValidator(details.passwordConfirm),
-            confirmPasswordValidator(details.passwordConfirm, details.password),
-        ]),
-    };
-
     const scrollInto = (target: 'email' | 'emailConfirm' | 'password' | 'passwordConfirm') => {
         if (target === 'email' || target === 'emailConfirm') {
             setTimeout(() => {
@@ -241,57 +255,22 @@ const AccountStepDetails = ({
         }, 0);
     };
 
-    const validateAsyncEmail = async () => {
-        const email = trimmedEmail;
-
-        const validateFlow = createFlow();
-
-        try {
-            await api(mergeHeaders(queryCheckEmailAvailability(email), getOwnershipVerificationHeaders('lax')));
-            measure({
-                event: TelemetryAccountSignupEvents.beAvailableExternal,
-                dimensions: { available_external: 'true' },
-            });
-            return true;
-        } catch (e) {
-            if (!validateFlow()) {
-                return false;
-            }
-            const { code, message } = getApiError(e);
-            if (
-                [
-                    API_CUSTOM_ERROR_CODES.ALREADY_USED,
-                    API_CUSTOM_ERROR_CODES.EMAIL_FORMAT,
-                    API_CUSTOM_ERROR_CODES.NOT_ALLOWED,
-                ].includes(code)
-            ) {
-                setEmailAsyncError({ email, message });
-                createNotification({
-                    type: 'error',
-                    text: (
-                        <AlreadyUsedNotification
-                            onClick={() => {
-                                onOpenLogin({ email, location: 'error_msg' });
-                            }}
-                        />
-                    ),
-                    key: 'already-used',
-                    expiration: 7000,
-                });
-                scrollInto('email');
-                measure({
-                    event: TelemetryAccountSignupEvents.beAvailableExternal,
-                    dimensions: { available_external: 'false' },
-                });
-            }
-            return false;
-        }
-    };
+    const errorDetails = getErrorDetails({
+        emailValidationState,
+        email: trimmedEmail,
+        emailConfirm: details.emailConfirm,
+        password: details.password,
+        passwordConfirm: details.passwordConfirm,
+    });
 
     const validateAccountDetails = () => {
         const fields = ((): (keyof AccountDetailsInputState)[] => {
+            const hasValidAsyncEmailState =
+                emailValidationState.email === trimmedEmail && emailValidationState.state === EmailAsyncState.Success;
+
             return (
                 [
+                    !hasValidAsyncEmailState ? 'email' : undefined,
                     errorDetails.email ? 'email' : undefined,
                     errorDetails.emailConfirm ? 'emailConfirm' : undefined,
                     errorDetails.password ? 'password' : undefined,
@@ -314,8 +293,8 @@ const AccountStepDetails = ({
     };
 
     useImperativeHandle(accountStepDetailsRef, () => ({
-        validate: async () => {
-            return validateAccountDetails() && (await validateAsyncEmail());
+        validate: () => {
+            return validateAccountDetails();
         },
         data: async () => {
             return {
@@ -408,6 +387,17 @@ const AccountStepDetails = ({
                             label={c('Signup label').t`Email address`}
                             inputClassName="email-input-field"
                             error={emailError}
+                            suffix={(() => {
+                                if (emailError) {
+                                    return undefined;
+                                }
+                                if (emailValidationState.state === EmailAsyncState.Success) {
+                                    return <Icon name="checkmark-circle" className="color-success" size={16} />;
+                                }
+                                if (emailValidationState.state === EmailAsyncState.Loading) {
+                                    return <CircleLoader size="small" />;
+                                }
+                            })()}
                             disableChange={disableChange}
                             dense={!emailError}
                             rootClassName={!emailError ? 'pb-2' : undefined}
@@ -416,14 +406,34 @@ const AccountStepDetails = ({
                                 inputValuesRef.current.email = true;
                                 setInputsDiff({ email: value });
                                 setInputsStateDiff({ email: { interactive: true } });
+                                const email = value.trim();
+                                const errors = getErrorDetails({
+                                    email,
+                                    emailConfirm: details.emailConfirm.trim(),
+                                });
+                                validator.trigger({
+                                    api,
+                                    error: !!(errors.email || errors.emailConfirm),
+                                    email,
+                                    set: setEmailValidationState,
+                                    measure,
+                                });
                             }}
                             onBlur={() => {
                                 // Doesn't work because it's in the challenge
-                                setInputsStateDiff({ emailConfirm: { focus: true } });
+                                setInputsStateDiff({ email: { focus: true } });
+                            }}
+                            onClick={() => {
+                                if (inputValuesRef.current.emailConfirm) {
+                                    setInputsStateDiff({ emailConfirm: { focus: true } });
+                                }
                             }}
                             onKeyDown={(event: KeyboardEvent<HTMLInputElement>) => {
                                 if (event.key === 'Enter') {
                                     onSubmit?.();
+                                }
+                                if (event.key === 'Tab') {
+                                    setInputsStateDiff({ email: { focus: true } });
                                 }
                             }}
                         />
@@ -443,14 +453,34 @@ const AccountStepDetails = ({
                                     inputValuesRef.current.emailConfirm = true;
                                     setInputsDiff({ emailConfirm: value });
                                     setInputsStateDiff({ emailConfirm: { interactive: true } });
+                                    const email = details.email.trim();
+                                    const errors = getErrorDetails({
+                                        email,
+                                        emailConfirm: value.trim(),
+                                    });
+                                    validator.trigger({
+                                        api,
+                                        error: !!(errors.email || errors.emailConfirm),
+                                        email,
+                                        set: setEmailValidationState,
+                                        measure,
+                                    });
                                 }}
                                 onBlur={() => {
                                     // Doesn't work because it's in the challenge
                                     setInputsStateDiff({ emailConfirm: { focus: true } });
                                 }}
+                                onClick={() => {
+                                    if (inputValuesRef.current.email) {
+                                        setInputsStateDiff({ email: { focus: true } });
+                                    }
+                                }}
                                 onKeyDown={(event: KeyboardEvent<HTMLInputElement>) => {
                                     if (event.key === 'Enter') {
                                         onSubmit?.();
+                                    }
+                                    if (event.key === 'Tab') {
+                                        setInputsStateDiff({ emailConfirm: { focus: true } });
                                     }
                                 }}
                             />
