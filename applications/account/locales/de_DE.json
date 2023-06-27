@@ -158,6 +158,9 @@
       "Cancel": [
         "Abbrechen"
       ],
+      "Cancel subscription": [
+        "Abonnement kündigen"
+      ],
       "Change mailbox password": [
         "Postfach-Passwort ändern"
       ],
@@ -517,6 +520,9 @@
       ],
       "Keep": [
         "Behalten"
+      ],
+      "Keep my ${ vpnPlanNameShort } subscription": [
+        "${ vpnPlanNameShort }-Abonnement behalten"
       ],
       "label emails as": [
         "Nachrichten folgender Kategorie zuordnen"
@@ -1002,6 +1008,14 @@
         "30 Tage lang kostenlos testen"
       ]
     },
+    "Action subscription": {
+      "Manage": [
+        "Verwalten"
+      ],
+      "Reactivate": [
+        "Reaktivieren"
+      ]
+    },
     "Action; accept invitation to share calendar": {
       "Accept": [
         "Annehmen"
@@ -1078,6 +1092,11 @@
       ],
       "Orphan": [
         "Verwaist"
+      ]
+    },
+    "Admin": {
+      "admin": [
+        "Administrator"
       ]
     },
     "Alert": {
@@ -4337,7 +4356,10 @@
     },
     "Font face option": {
       "System default": [
-        "Systemvorgabe"
+        "Systemstandard"
+      ],
+      "Theme default": [
+        "Standard-Farbschema"
       ]
     },
     "Font Size Default": {
@@ -4904,6 +4926,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } benötigt deine Erlaubnis, um ${ enableDesktopNotifications }."
       ],
+      "${ autoRenewal } your subscription will renew automatically on ${ renewalTime }.": [
+        "${ autoRenewal } Dein Abonnement wird automatisch am ${ renewalTime } verlängert."
+      ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Wenn du fortfährst, verlierst du den Zugriff auf alle derzeit verschlüsselten Daten in deinem Konto."
       ],
@@ -5142,9 +5167,6 @@
       "Admin account allocation": [
         "Admin-Konto-Zuweisung"
       ],
-      "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
-        "Nachdem du deine Bitcoin-Zahlung getätigt hast, folge bitte den nachfolgenden Anweisungen zum Wechsel."
-      ],
       "Align left": [
         "Linksbündig"
       ],
@@ -5185,6 +5207,9 @@
       ],
       "American Express SafeKey logo": [
         "American Express SafeKey Logo"
+      ],
+      "Amount above maximum (${ amount }).": [
+        "Maximalbetrag überschritten (${ amount })."
       ],
       "Amount below minimum (${ amount }).": [
         "Mindestbetrag unterschritten (${ amount })."
@@ -5248,6 +5273,9 @@
       ],
       "Attention required": [
         "Aufmerksamkeit erforderlich"
+      ],
+      "Auto-renewal: ": [
+        "Automatische Verlängerung:"
       ],
       "Auto-reply is active each month between the selected start and end time.": [
         "Das automatische Antworten ist jeden Monat zwischen der gewählten Start- und Endzeit aktiv."
@@ -5638,6 +5666,9 @@
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Wenn du glaubst, dass dies ungerechtfertigt ist, kontaktiere uns bitte ${ contactLink }."
       ],
+      "If you cancel, your ${ vpnPlanName } subscription will not be renewed when it expires on ${ expiryDate }.": [
+        "Wenn du kündigst, wird dein ${ vpnPlanName }-Abonnement nach Ablauf am ${ expiryDate } nicht verlängert."
+      ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Wenn du die E-Mail nicht in deinem Posteingang finden kannst, überprüfe bitte deinen Spam-Ordner."
       ],
@@ -5722,6 +5753,9 @@
       ],
       "Improve your ${ BRAND_NAME } experience by adapting the application to your needs.": [
         "Verbessere dein ${ BRAND_NAME }-Erlebnis, indem du die Anwendung an deine Bedürfnisse anpasst."
+      ],
+      "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
+        "Im nächsten Schritt kann eine Einzahlung mit einer Bitcoin-Adresse getätigt werden."
       ],
       "Inherited from parent folder": [
         "Von übergeordnetem Ordner übernommen"
@@ -6220,6 +6254,12 @@
       "Store this password and file in a safe place. You’ll need them again to import your key.": [
         "Bewahre das Passwort und die Datei an einem sicheren Ort auf. Du benötigst sie erneut, um deinen Schlüssel zu importieren."
       ],
+      "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
+        "Tätige eine Einzahlung über die folgende Adresse, oder scanne den QR-Code. Die Einzahlung wird nach der Bestätigung auf deinem Konto gutgeschrieben."
+      ],
+      "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
+        "Dein Abonnement endet bald: Reaktiviere es bis zum ${ byDate }, um deine ${ planName }-Vorteile zu behalten. ${ reactivateLink }"
+      ],
       "Support for 1 custom email domain": [
         "Unterstützung für eine eigene E-Mail-Domain"
       ],
@@ -6343,6 +6383,9 @@
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Dieser Benutzer ist zurzeit für Zahlungen für deine Organisation zuständig. Wenn du den Benutzer zurückstufst, wirst du für die Zahlungen deiner Organisation zuständig."
       ],
+      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
+        "Dadurch wird dein aktuelles bezahltes Abonnement gekündigt und du verlierst alle Treuevorteile, die du angesammelt hast."
+      ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
         "Dadurch wird dein aktuelles kostenpflichtiges Abonnement aufgehoben und du verlierst alle angesammelten Treuevorteile. Der verbleibende Restbetrag deines Abonnements wird als Kontoguthaben zurückerstattet."
       ],
@@ -6384,6 +6427,9 @@
       ],
       "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
         "Um Datenverluste zu vermeiden, lösche sie nur, wenn du dir sicher bist, was du tust oder eine Kopie exportiert hast."
+      ],
+      "To complete your payment, please send ${ btcAmountBold } to the address below.": [
+        "Um die Zahlung abzuschließen, sende bitte ${ btcAmountBold } an die untenstehende Adresse."
       ],
       "To confirm, please enter the name of the user you wish to delete.": [
         "Gib zur Bestätigung bitte den Namen des zu löschenden Benutzers ein."
@@ -6768,13 +6814,16 @@
       "You will be redirected to the VPN download page": [
         "Du wirst zur VPN-Download-Seite weitergeleitet"
       ],
+      "You will lose access to ${ vpnPlanNameShort } servers and features on this date.": [
+        "An diesem Datum verlierst du den Zugang zu ${ vpnPlanNameShort }-Servern und -funktionen."
+      ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Du benötigst eine ${ BRAND_NAME }-Adresse um ${ MAIL_APP_NAME } und ${ CALENDAR_APP_NAME } zu nutzen"
       ],
       "You will NOT be able to decrypt any messages, files, and other data encrypted with this key.": [
         "Du wirst NICHT in der Lage sein, mit diesem Schlüssel verschlüsselte Nachrichten, Dateien und andere Daten zu entschlüsseln."
       ],
-      "You will receive priority support from specialists trained in account protection. For any account security concerns, please contact us ${ hereLink }.": [
+      "You will receive priority support from specialists trained in account protection. For any account security concerns, please ${ hereLink }.": [
         "Du erhältst bevorzugte Unterstützung von Spezialisten, die für den Schutz deines Kontos ausgebildet sind. Wenn du Fragen zur Kontosicherheit hast, kontaktiere uns bitte ${ hereLink }."
       ],
       "You will see more details in the Security logs below for important events such as sign in attempts.": [
@@ -6917,6 +6966,11 @@
     "Info on errors": {
       "Click for details": [
         "Für Details klicken"
+      ]
+    },
+    "Info subscription": {
+      "You can prevent expiry by reactivating the subscription": [
+        "Du kannst das Ablaufen verhindern, indem du das Abonnement reaktivierst."
       ]
     },
     "Info when deleting payment method": {
@@ -7427,11 +7481,11 @@
       "Browser version": [
         "Browserversion"
       ],
-      "BTC address:": [
-        "Bitcoin‐Adresse:"
+      "BTC address": [
+        "Bitcoin‐Adresse"
       ],
-      "BTC amount:": [
-        "Betrag in Bitcoin:"
+      "BTC amount": [
+        "Betrag in Bitcoin"
       ],
       "Calendar": [
         "Kalender"
@@ -7590,7 +7644,7 @@
         "Ziffern"
       ],
       "Disable animations": [
-        "Animationen ausschalten"
+        "Animationen deaktivieren"
       ],
       "Display name": [
         "Anzeigename"
@@ -8322,6 +8376,9 @@
       "Common sign up issues": [
         "Häufige Probleme bei der Registrierung"
       ],
+      "contact us": [
+        "Kontaktiere uns"
+      ],
       "Create account": [
         "Konto erstellen"
       ],
@@ -8334,8 +8391,8 @@
       "General": [
         "Allgemein"
       ],
-      "here": [
-        "hier"
+      "How to pay with Bitcoin?": [
+        "Wie bezahlt man mit Bitcoin?"
       ],
       "How to unlock data": [
         "Wie Daten entsperrt werden"
@@ -8360,6 +8417,9 @@
       ],
       "Privacy policy": [
         "Datenschutzerklärung"
+      ],
+      "Reactivate now": [
+        "Jetzt reaktivieren"
       ],
       "Request an invite": [
         "Einladung anfordern"
@@ -8400,8 +8460,8 @@
     },
     "Loading info": {
       "${ twoFAMembers.length }/${ members.length } of your organization member use two-factor authentication.": [
-        "${ twoFAMembers.length }/${ members.length } Mitglieder deiner Organisation verwendet die Zwei-Faktor-Authentifizierung.",
-        "${ twoFAMembers.length }/${ members.length } der Mitglieder deiner Organisation verwenden die Zwei-Faktor-Authentifizierung."
+        "${ twoFAMembers.length }/${ members.length } Mitglied deiner Organisation verwendet die Zwei-Faktor-Authentifizierung.",
+        "${ twoFAMembers.length }/${ members.length } Mitglieder deiner Organisation verwenden die Zwei-Faktor-Authentifizierung."
       ],
       "Almost there": [
         "Fast geschafft"
@@ -9933,6 +9993,41 @@
         "Du"
       ]
     },
+    "pass_signup_2023: Feature": {
+      "End-to-end encrypted": [
+        "Ende-zu-Ende-verschlüsselt"
+      ],
+      "Open source": [
+        "Quelloffen"
+      ],
+      "Protected by Swiss privacy laws": [
+        "Geschützt durch Schweizer Datenschutzgesetze"
+      ],
+      "Swiss based": [
+        "In der Schweiz ansässig"
+      ]
+    },
+    "pass_signup_2023: Header": {
+      "Upgrade your plan": [
+        "Dein Abonnement upgraden"
+      ]
+    },
+    "pass_signup_2023: Info": {
+      "Creating your account": [
+        "Dein Konto wird erstellt"
+      ],
+      "Verifying your payment": [
+        "Deine Zahlung wird verifiziert"
+      ],
+      "Welcome to ${ plan }": [
+        "Willkommen bei ${ plan }"
+      ]
+    },
+    "pass_signup_2023: Onboarding": {
+      "Welcome to ${ PASS_APP_NAME }": [
+        "Willkommen bei ${ PASS_APP_NAME }"
+      ]
+    },
     "Payment method option": {
       "Credit/debit card": [
         "Kredit-/Debitkarte"
@@ -10854,6 +10949,9 @@
       "Active": [
         "Aktiv"
       ],
+      "Expiring": [
+        "Verfallend"
+      ],
       "Upcoming": [
         "Demnächst"
       ]
@@ -11021,6 +11119,9 @@
       "Verification successful": [
         "Verifizierung erfolgreich"
       ],
+      "You have successfully cancelled your subscription.": [
+        "Du hast dein Abonnement erfolgreich gekündigt."
+      ],
       "You have successfully unsubscribed": [
         "Du hast das Abonnement erfolgreich gekündigt."
       ]
@@ -11097,6 +11198,48 @@
     "Summary of errors during export calendar": {
       "Details about events that couldn't be exported": [
         "Details zu den Terminen, die nicht exportiert werden konnten"
+      ]
+    },
+    "summer2023: Deal details": {
+      "Premium Password Manager": [
+        "Premium-Passwortmanager"
+      ]
+    },
+    "summer2023: Describe Proton Pass": {
+      "Securely store your passwords and autofill them on websites. Includes unlimited passwords, autofill, password generator, and more.": [
+        "Speichere deine Passwörter sicher und lasse sie automatisch auf Websites einfügen. Beinhaltet unbegrenzte Passwörter, automatisches Einfügen, Passwortgenerator und mehr."
+      ]
+    },
+    "summer2023: Tooltip": {
+      "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
+        "Erstelle sichere Anmeldedaten auf allen deinen Geräten. Beinhaltet unbegrenzte Aliase, 20 Tresore, integrierte 2FA, automatisches Einfügen von Kreditkartendaten und mehr."
+      ],
+      "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "Greife auf blockierte Inhalte zu und surfe privat. Umfasst 2950 Server in über 65 Ländern, die Verbindung von bis zu 10 Geräten, weltweite Streaming-Dienste, Malware- und Werbeblocker und mehr."
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "Sichere deine Dateien mit verschlüsseltem Cloud-Speicher. Beinhaltet Versionsverlauf, verschlüsselte Dateifreigabe und mehr."
+      ]
+    },
+    "summer2023:Footer": {
+      "*Your subscription will automatically renew at the standard discounted rate at the end of your billing cycle.": [
+        "*Dein Abonnement verlängert sich am Ende deines Abrechnungszeitraums automatisch zum Standard-Rabattpreis."
+      ],
+      "Discounts are based on the standard monthly pricing. This offer is only available to first-time subscribers.": [
+        "Rabatte basieren auf den monatlichen Standardpreisen. Dieses Angebot gilt nur für Erstabonnenten."
+      ]
+    },
+    "summer2023:Info": {
+      "For a limited time, get the best ${ BRAND_NAME } has to offer at an exclusive discount.": [
+        "Erhalte für begrenzte Zeit das Beste, was ${ BRAND_NAME } zu bieten hat, mit einem exklusiven Rabatt."
+      ],
+      "We’re celebrating the nine-year anniversary of our crowdfunding!": [
+        "Wir feiern das neunjährige Jubiläum unseres Crowdfundings!"
+      ]
+    },
+    "summer2023:Offer title": {
+      "${ BRAND_NAME } Anniversary Sale": [
+        "Jubiläumsangebot von ${ BRAND_NAME }"
       ]
     },
     "Tab in domain modal": {
@@ -11359,6 +11502,12 @@
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "${ MAIL_SHORT_APP_NAME }-Abonnement kündigen"
       ],
+      "Cancel subscription": [
+        "Abonnement kündigen"
+      ],
+      "Cancel subscription?": [
+        "Abonnement kündigen?"
+      ],
       "Card verification": [
         "Kartenprüfung"
       ],
@@ -11546,9 +11695,6 @@
       "Download ${ VPN_APP_NAME }": [
         "${ VPN_APP_NAME } herunterladen"
       ],
-      "Duration": [
-        "Dauer"
-      ],
       "Edit credit/debit card": [
         "Kredit-/Debitkarte bearbeiten"
       ],
@@ -11584,9 +11730,6 @@
       ],
       "Encryption and keys": [
         "Verschlüsselung und Schlüssel"
-      ],
-      "End date": [
-        "Enddatum"
       ],
       "Enter your password": [
         "Passwort eingeben"
@@ -11806,9 +11949,6 @@
       "Phone": [
         "Telefon"
       ],
-      "Plan": [
-        "Abonnement"
-      ],
       "Plan summary": [
         "Abo-Zusammenfassung"
       ],
@@ -11962,11 +12102,11 @@
       "Sort labels alphabetically": [
         "Kategorien alphabetisch sortieren"
       ],
+      "Spam, block, and allow lists": [
+        "Listen gesperrter und zugelassener Absender"
+      ],
       "Start a new import": [
         "Neuer Importvorgang"
-      ],
-      "Start date": [
-        "Startdatum"
       ],
       "Start import process": [
         "Importvorgang starten"
@@ -12000,9 +12140,6 @@
       "Time zone": [
         "Zeitzone"
       ],
-      "Total paid": [
-        "Insgesamt gezahlt"
-      ],
       "Track your referrals": [
         "Verfolge deine Empfehlungen"
       ],
@@ -12026,9 +12163,6 @@
       ],
       "Upgrade plan": [
         "Abonnement upgraden"
-      ],
-      "Users": [
-        "Benutzer"
       ],
       "Users and addresses": [
         "Benutzer und E-Mail-Adressen"
@@ -12169,6 +12303,35 @@
       ],
       "Role": [
         "Rolle"
+      ]
+    },
+    "Title subscription": {
+      "Actions": [
+        "Aktionen"
+      ],
+      "Duration": [
+        "Dauer"
+      ],
+      "End date": [
+        "Enddatum"
+      ],
+      "Plan": [
+        "Abonnement"
+      ],
+      "Start date": [
+        "Startdatum"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "Total": [
+        "Gesamt"
+      ],
+      "Total paid": [
+        "Insgesamt gezahlt"
+      ],
+      "Users": [
+        "Benutzer"
       ]
     },
     "Title; create calendar modal": {

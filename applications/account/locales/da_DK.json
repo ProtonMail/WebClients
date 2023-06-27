@@ -47,9 +47,6 @@
       "activate": [
         "aktivér"
       ],
-      "Activate ${ user.Name }@pm.me": [
-        "Aktiver ${ user.Name }@pm.me"
-      ],
       "Activate organization key": [
         "Aktivér organisationsnøgle"
       ],
@@ -2621,9 +2618,6 @@
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Det ser ud til at kontaktlisten du importerer indeholder nogle grupper. Gennemgå hvordan disse grupper skal importeres."
       ],
-      "ProtonMail logo and a plus sign": [
-        "ProtonMail-logo og et plustegn"
-      ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "Filen skal have en maksimal størrelse på ${ MAX_IMPORT_FILE_SIZE_STRING } og have\nop til ${ MAX_IMPORT_CONTACTS_STRING } kontakt. Hvis din fil er større, bedes du opdele den i mindre filer.",
         "Filen skal have en maksimal størrelse på ${ MAX_IMPORT_FILE_SIZE_STRING } og have\nop til ${ MAX_IMPORT_CONTACTS_STRING } kontakter. Hvis din fil er større, bedes du opdele den i mindre filer."
@@ -3629,6 +3623,9 @@
       ]
     },
     "familyOffer_2023:Action": {
+      "Decline invitation": [
+        "Afvis invitation"
+      ],
       "Got it": [
         "Forstået"
       ],
@@ -3678,11 +3675,38 @@
       "Sorry, you can't switch plans at this time.": [
         "Beklager, du kan i øjeblikket ikke ændre abonnement."
       ],
+      "Storage assigned to you: ${ assignedStorage }": [
+        "Lagerplads tildelt dig: ${ assignedStorage }"
+      ],
+      "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
+        "Visionary- og familie-abonnementer understøtter på nuværende tidspunkt ikke eksterne kontoer. Opret en ${ BRAND_NAME }-adresse før du tilmelder dig. ${ addressSettingsLink }"
+      ],
       "Visionary and family plans do not currently support lifetime accounts.": [
         "Visionary og familie-abonnementer understøtter på nuværende tidspunkt ikke livstidskonti."
       ],
+      "You are invited to join ${ invite.OrganizationName }": [
+        "Du er inviteret til at blive medlem af ${ invite.OrganizationName }"
+      ],
+      "You can only accept 3 invitations in a 6-month period. Please contact ${ supportLink } if you require an exception.": [
+        "Du kan kun acceptere 3 invitationer i en 6-måneds periode. Kontakt venligst ${ supportLink } hvis du har brug for en undtagelse."
+      ],
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Du er blevet inviteret til at blive medlem af ${ bannerOrganization }. ${ viewInviteButton }"
+      ],
+      "You have successfully joined the Family plan": [
+        "Du er tilmeldt familie-abonnementet."
+      ],
+      "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
+        "Du er inviteret til at forbinde din ${ BRAND_NAME }-konto til dette gruppe-abonnement og sammen nyde alle ${ BRAND_NAME_TWO } premium funktionerne."
+      ],
+      "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
+        "Din konto har flere e-mailadresser en det, der er tilgængeligt for dig på dette abonnement. ${ addressSettingsLink }"
+      ],
+      "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
+        "Din konto bruger ${ usedSpace } lagerplads, hvilket overstiger de ${ inviteSpace } du har fået tildelt. Slet nogle data eller bed abonnementsadministratoren om at øge din lagerplads."
+      ],
+      "Your current plan cannot join a Visionary or family plan.": [
+        "Dit nuværende abonnement kan ikke tilmelde sig et Visionary- eller familie-abonnement."
       ]
     },
     "familyOffer_2023:Get Proton Family": {
@@ -3911,9 +3935,34 @@
         "Standard"
       ]
     },
+    "Font face option": {
+      "System default": [
+        "Systemstandard"
+      ],
+      "Theme default": [
+        "Temastandard"
+      ]
+    },
     "Font Size Default": {
       "Default": [
         "Standard"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Stor"
+      ],
+      "Medium (recommended)": [
+        "Mellem (anbefalet)"
+      ],
+      "Small": [
+        "Lille"
+      ],
+      "Very large": [
+        "Meget stor"
+      ],
+      "Very small": [
+        "Meget lille"
       ]
     },
     "Frequency of news": {
@@ -4528,9 +4577,6 @@
         "${ selectedFoldersCountLocalized } etiket valgt",
         "${ selectedFoldersCountLocalized } etiketter valgt"
       ],
-      "${ storageSize } storage": [
-        "${ storageSize } lagerplads"
-      ],
       "${ vpnPlus } required for Country level connection.": [
         "${ vpnPlus } påkrævet for forbindelse på landniveau."
       ],
@@ -4641,9 +4687,6 @@
       ],
       "Admin account allocation": [
         "Admin-konto tildeling"
-      ],
-      "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
-        "Når du har foretaget din Bitcoin-betaling, så følg anvisningerne nedenfor for at opgradere."
       ],
       "Align left": [
         "Venstrestil"
@@ -4761,6 +4804,9 @@
       "Background color": [
         "Baggrundsfarve"
       ],
+      "Based on your time zone": [
+        "Baseret på din tidszone"
+      ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Grundlæggende navigation og handlinger forbliver tilgængelige, uanset om tastaturgenveje er aktive eller ej i indstillingerne."
       ],
@@ -4873,6 +4919,9 @@
       "Custom yearly": [
         "Tilpasset årlig"
       ],
+      "Customize the look and feel of ${ BRAND_NAME } applications.": [
+        "Tilpas udseendes og fornemmelsen af ${ BRAND_NAME }-applikationer."
+      ],
       "Daily": [
         "Daglig"
       ],
@@ -4921,6 +4970,9 @@
       ],
       "Download your PGP keys for use with other PGP-compatible services.": [
         "Download dine PGP-nøgler til brug sammen med andre PGP-kompatible tjenester."
+      ],
+      "Drop file here to upload": [
+        "Træk fil hertil for at uploade"
       ],
       "Drop to import": [
         "Drop for at importere"
@@ -5287,9 +5339,6 @@
       "No addresses exist": [
         "Ingen adresser findes"
       ],
-      "No credit card required": [
-        "Der kræves ikke kreditkort"
-      ],
       "No data recovery method set; you are at risk of losing access to your data": [
         "Ingen metode til datagendannelse indstillet. Du risikerer at miste adgang til dine data"
       ],
@@ -5580,6 +5629,9 @@
       ],
       "Store this password and file in a safe place. You’ll need them again to import your key.": [
         "Gem denne adgangskode og fil på et sikkert sted. Du skal bruge dem igen for at importere din nøgle."
+      ],
+      "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
+        "Abonnement er ved at udløbe: Genaktiver inden ${ byDate } for at beholde dine ${ planName }-fordele. ${ reactivateLink }"
       ],
       "Support for 1 custom email domain": [
         "Understøttelse af 1 brugerdefineret e-mail-domæne"
@@ -6375,6 +6427,9 @@
       "New message": [
         "Ny besked"
       ],
+      "Open command panel": [
+        "Åbn kommandopanel"
+      ],
       "Open next message": [
         "Åbn næste besked"
       ],
@@ -6632,12 +6687,6 @@
       ],
       "Browser version": [
         "Browser-version"
-      ],
-      "BTC address:": [
-        "BTC-adresse:"
-      ],
-      "BTC amount:": [
-        "BTC-beløb:"
       ],
       "Calendar": [
         "Kalender"
@@ -7206,6 +7255,9 @@
       "Subscription options": [
         "Abonnementsmuligheder"
       ],
+      "Synchronize with system": [
+        "Synkroniser med system"
+      ],
       "System information": [
         "Systemoplysninger"
       ],
@@ -7226,9 +7278,6 @@
       ],
       "Time format": [
         "Tidsformat"
-      ],
-      "Time zone": [
-        "Tidszone"
       ],
       "To: ${ to }": [
         "Til: ${ to }"
@@ -7429,11 +7478,6 @@
         "Række"
       ]
     },
-    "Label, credit card": {
-      "ZIP code": [
-        "Postnummer"
-      ]
-    },
     "Label/folder modal": {
       "Create folder": [
         "Opret mappe"
@@ -7524,6 +7568,9 @@
       ],
       "Privacy policy": [
         "Privatlivspolitik"
+      ],
+      "Reactivate now": [
+        "Genaktiver nu"
       ],
       "Request an invite": [
         "Anmod om invitation"
@@ -8063,6 +8110,9 @@
       "GDPR data processing agreement": [
         "GDPR databehandleraftale"
       ],
+      "Hide-my-email aliases": [
+        "Hide-my-email-aliasser"
+      ],
       "High-speed VPN on ${ n } device": [
         "Højhastigheds VPN på ${ n } enhed",
         "Højhastigheds VPN på ${ n } enheder"
@@ -8170,9 +8220,6 @@
       ]
     },
     "new_plans: heading": {
-      "Support": [
-        "Støtte"
-      ],
       "Team management": [
         "Brugeradministration"
       ]
@@ -8489,6 +8536,9 @@
       ]
     },
     "Notification in holidays calendar modal": {
+      "Adding holidays calendar failed": [
+        "Fejl under tilføjelse af helligdags-kalender"
+      ],
       "Calendar added": [
         "Kalender tilføjet"
       ]
@@ -9579,16 +9629,6 @@
         "Højhastigheds VPN på ${ maxVpn } enheder"
       ]
     },
-    "Subscription change warning": {
-      "Got it": [
-        "Forstået"
-      ]
-    },
-    "Subscription renewal state": {
-      "Disable": [
-        "Deaktivér"
-      ]
-    },
     "Subscription saving": {
       "Save": [
         "Spar"
@@ -9938,6 +9978,9 @@
       "${ MAIL_APP_NAME } Keyboard Shortcuts": [
         "${ MAIL_APP_NAME } Tastaturgenveje"
       ],
+      "(active)": [
+        "(aktiv)"
+      ],
       "1. Give a name to the config to be generated": [
         "1. Giv et navn til den konfiguration, der skal genereres"
       ],
@@ -10185,6 +10228,9 @@
       "Date": [
         "Dato"
       ],
+      "Day theme": [
+        "Dagstema"
+      ],
       "Decrypt key": [
         "Dekryptér nøgle"
       ],
@@ -10242,9 +10288,6 @@
       "Download ${ VPN_APP_NAME }": [
         "Download ${ VPN_APP_NAME }"
       ],
-      "Duration": [
-        "Varighed"
-      ],
       "Edit credit/debit card": [
         "Redigér kredit / betalingskort"
       ],
@@ -10280,9 +10323,6 @@
       ],
       "Encryption and keys": [
         "Kryptering og nøgler"
-      ],
-      "End date": [
-        "Slutdato"
       ],
       "Enter your password": [
         "Indtast din adgangskode"
@@ -10445,6 +10485,9 @@
       "Next": [
         "Næste"
       ],
+      "Night theme": [
+        "Nattetema"
+      ],
       "No recovery method": [
         "Ingen gendannelsesmetode"
       ],
@@ -10460,9 +10503,6 @@
       "OpenVPN configuration files": [
         "OpenVPN-opsætningsfiler"
       ],
-      "Other calendars": [
-        "Andre kalendere"
-      ],
       "Password": [
         "Adgangskode"
       ],
@@ -10471,9 +10511,6 @@
       ],
       "Pay invoice": [
         "Betal faktura"
-      ],
-      "Payment failed": [
-        "Betaling mislykkedes"
       ],
       "Payment methods": [
         "Betalingsmetoder"
@@ -10486,9 +10523,6 @@
       ],
       "Phone": [
         "Telefon"
-      ],
-      "Plan": [
-        "Abonnement"
       ],
       "Plan summary": [
         "Abonnementoversigt"
@@ -10637,9 +10671,6 @@
       "Start a new import": [
         "Start en ny import"
       ],
-      "Start date": [
-        "Startdato"
-      ],
       "Start import process": [
         "Start importeringsprocessen"
       ],
@@ -10672,9 +10703,6 @@
       "Time zone": [
         "Tidszone"
       ],
-      "Total paid": [
-        "Betalt i alt"
-      ],
       "Track your referrals": [
         "Spor dine henvisninger"
       ],
@@ -10693,9 +10721,6 @@
       "Upgrade plan": [
         "Opgradér abonnement"
       ],
-      "Users": [
-        "Brugere"
-      ],
       "Users and addresses": [
         "Brugere og adresser"
       ],
@@ -10704,9 +10729,6 @@
       ],
       "Verify email address": [
         "Bekræft e-mailadresse"
-      ],
-      "Verifying your payment...": [
-        "Verificerer din betaling..."
       ],
       "Version history": [
         "Versionshistorik"
@@ -10850,6 +10872,9 @@
       "Account is disconnected": [
         "Kontoforbindelse er afbrudt"
       ],
+      "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
+        "Skift automatisk mellem dine foretrukne temaer for dag og nat synkront med dit systems dag- og nattilstande"
+      ],
       "Customize import to reduce the number of folders": [
         "Tilpas import for at reducere antallet af mapper"
       ],
@@ -10909,6 +10934,12 @@
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Den nye abonnementscyklus starter ${ formattedTime }"
+      ],
+      "The selected theme will be active when your system is set to \"dark mode\"": [
+        "Det valgte tema vil blive aktiveret når dit system er sat til \"mørk tilstand\""
+      ],
+      "The selected theme will be active when your system is set to \"light mode\"": [
+        "Det valgte tema vil blive aktiveret når dit system er sat til \"lys tilstand\""
       ],
       "This address has been disabled": [
         "Denne adresse er deaktiveret"
@@ -11076,9 +11107,6 @@
       ],
       "Are you sure you want to delete the phone number?": [
         "Er du sikker på, at du vil slette telefonnummeret?"
-      ],
-      "Are you sure you want to delete this address?": [
-        "Er du sikker på, at du vil slette denne adresse?"
       ],
       "Are you sure you want to discard your import?": [
         "Er du sikker på, at du vil kassere din import?"

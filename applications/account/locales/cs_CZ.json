@@ -158,6 +158,9 @@
       "Cancel": [
         "Zrušit"
       ],
+      "Cancel subscription": [
+        "Zrušit předplatné"
+      ],
       "Change mailbox password": [
         "Změnit heslo poštovní schránky"
       ],
@@ -517,6 +520,9 @@
       ],
       "Keep": [
         "Zachovat"
+      ],
+      "Keep my ${ vpnPlanNameShort } subscription": [
+        "Zachovat mé předplatné ${ vpnPlanNameShort }"
       ],
       "label emails as": [
         "označit e-maily jako"
@@ -1000,6 +1006,14 @@
       ],
       "Try free for 30 days": [
         "Vyzkoušet na 30 dní zdarma"
+      ]
+    },
+    "Action subscription": {
+      "Manage": [
+        "Spravovat"
+      ],
+      "Reactivate": [
+        "Opětovně aktivovat"
       ]
     },
     "Action; accept invitation to share calendar": {
@@ -5211,9 +5225,6 @@
       "Admin account allocation": [
         "Přidělení účtu správce"
       ],
-      "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
-        "Po provedení Bitcoin platby postupujte podle níže uvedených pokynů a proveďte upgrade."
-      ],
       "Align left": [
         "Zarovnat doleva"
       ],
@@ -5258,6 +5269,9 @@
       ],
       "American Express SafeKey logo": [
         "Logo American Express SafeKey"
+      ],
+      "Amount above maximum (${ amount }).": [
+        "Částka vyšší než maximum (${ amount })."
       ],
       "Amount below minimum (${ amount }).": [
         "Částka je nižší než minimální možná hodnota (${ amount })."
@@ -5486,6 +5500,9 @@
       ],
       "Custom yearly": [
         "Roční nastavení"
+      ],
+      "Customize the look and feel of ${ BRAND_NAME } applications.": [
+        "Přizpůsobte si vzhled aplikací ${ BRAND_NAME }."
       ],
       "Daily": [
         "Denně"
@@ -5795,6 +5812,9 @@
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Importujeme Vaše data z ${ importedEmailAddress } do ${ toEmail }."
+      ],
+      "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
+        "V dalším kroku budete moci odeslat vklad pomocí adresy Bitcoin."
       ],
       "Inherited from parent folder": [
         "Převzato z nadřazené složky"
@@ -6300,6 +6320,12 @@
       "Store this password and file in a safe place. You’ll need them again to import your key.": [
         "Heslo a soubor uschovejte na bezpečném místě. Budete je znovu potřebovat k importu klíče."
       ],
+      "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
+        "Zálohu odešlete na následující adresu nebo naskenujte QR kód. Po potvrzení se vklad promítne na váš účet."
+      ],
+      "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
+        "Předplatné vyprší: opětovně aktivujte dne ${ byDate } pro zachování vašich výhod tarifu ${ planName }. ${ reactivateLink }"
+      ],
       "Support for 1 custom email domain": [
         "Podpora 1 vlastní e-mailové domény"
       ],
@@ -6467,6 +6493,9 @@
       ],
       "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
         "Abyste předešli ztrátě dat, klíč smažte pouze v případě, že víte, co děláte, nebo pokud máte klíč zálohovaný."
+      ],
+      "To complete your payment, please send ${ btcAmountBold } to the address below.": [
+        "Pro dokončení platby zašlete ${ btcAmountBold } na níže uvedenou adresu."
       ],
       "To confirm, please enter the name of the user you wish to delete.": [
         "Chcete-li potvrdit, zadejte jméno uživatele, kterého chcete odstranit."
@@ -6863,9 +6892,6 @@
       ],
       "You will NOT be able to decrypt any messages, files, and other data encrypted with this key.": [
         "NEBUDETE moci dešifrovat zprávy, soubory a další data zašifrovaná tímto klíčem."
-      ],
-      "You will receive priority support from specialists trained in account protection. For any account security concerns, please contact us ${ hereLink }.": [
-        "Přednostní podporu vám poskytnou specialisté vyškolení v oblasti ochrany účtů. V případě jakýchkoli obav o zabezpečení účtu nás prosím kontaktujte zde ${ hereLink }."
       ],
       "You will see more details in the Security logs below for important events such as sign in attempts.": [
         "Podrobnější informace o důležitých událostech, např. o pokusech o přihlášení, najdete v níže uvedených bezpečnostních protokolech."
@@ -7527,11 +7553,11 @@
       "Browser version": [
         "Verze prohlížeče"
       ],
-      "BTC address:": [
-        "Adresa BTC:"
+      "BTC address": [
+        "Adresa BTC"
       ],
-      "BTC amount:": [
-        "Částka BTC:"
+      "BTC amount": [
+        "Částka BTC"
       ],
       "Calendar": [
         "Kalendář"
@@ -8434,8 +8460,8 @@
       "General": [
         "Obecné"
       ],
-      "here": [
-        "zde"
+      "How to pay with Bitcoin?": [
+        "Jak platit pomocí Bitcoinu?"
       ],
       "How to unlock data": [
         "Jak odemknout údaje"
@@ -8460,6 +8486,9 @@
       ],
       "Privacy policy": [
         "Zásady ochrany osobních údajů"
+      ],
+      "Reactivate now": [
+        "Opětovně nyní aktivovat"
       ],
       "Request an invite": [
         "Požádat o pozvánku"
@@ -8499,6 +8528,12 @@
       ]
     },
     "Loading info": {
+      "${ twoFAMembers.length }/${ members.length } of your organization member use two-factor authentication.": [
+        "${ twoFAMembers.length }/${ members.length } člena vaší organizace používat dvoufaktorové ověřování.",
+        "${ twoFAMembers.length }/${ members.length } členy vaší organizace používat dvoufaktorové ověřování.",
+        "${ twoFAMembers.length }/${ members.length } členů vaší organizace používat dvoufaktorové ověřování.",
+        "${ twoFAMembers.length }/${ members.length } členů vaší organizace používat dvoufaktorové ověřování."
+      ],
       "Almost there": [
         "Téměř hotovo"
       ],
@@ -11554,6 +11589,9 @@
       "Are you sure you want to close?": [
         "Opravdu chcete zavřít editor filtrů?"
       ],
+      "Authentication security": [
+        "Zabezpečení ověření"
+      ],
       "Auto-reply": [
         "Automatická odpověď"
       ],
@@ -11574,6 +11612,12 @@
       ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Zrušit předplatné ${ MAIL_SHORT_APP_NAME }"
+      ],
+      "Cancel subscription": [
+        "Zrušit předplatné"
+      ],
+      "Cancel subscription?": [
+        "Zrušit předplatné?"
       ],
       "Card verification": [
         "Ověření karty"
@@ -11764,9 +11808,6 @@
       "Download ${ VPN_APP_NAME }": [
         "Stáhnout ${ VPN_APP_NAME }"
       ],
-      "Duration": [
-        "Doba trvání"
-      ],
       "Edit credit/debit card": [
         "Editovat kreditní/debetní kartu"
       ],
@@ -11802,9 +11843,6 @@
       ],
       "Encryption and keys": [
         "Šifrování a klíče"
-      ],
-      "End date": [
-        "Datum ukončení"
       ],
       "Enter your password": [
         "Zadejte Vaše heslo"
@@ -12022,11 +12060,11 @@
       "PayPal verification failed": [
         "Ověření platby PayPal se nezdařilo"
       ],
+      "Personalise your e-mail footer": [
+        "Přizpůsobte si zápatí e-mailu"
+      ],
       "Phone": [
         "Telefon"
-      ],
-      "Plan": [
-        "Tarif"
       ],
       "Plan summary": [
         "Shrnutí tarifu"
@@ -12184,9 +12222,6 @@
       "Start a new import": [
         "Zahájit nový import"
       ],
-      "Start date": [
-        "Datum zahájení"
-      ],
       "Start import process": [
         "Zahájit proces importu"
       ],
@@ -12223,14 +12258,14 @@
       "Time zone": [
         "Časové pásmo"
       ],
-      "Total paid": [
-        "Celkem zaplaceno"
-      ],
       "Track your referrals": [
         "Sledujte svá doporučení"
       ],
       "Two-factor authentication": [
         "Dvoufázové ověření"
+      ],
+      "Two-factor authentication enforcement": [
+        "Vynucení dvoufázového ověřování"
       ],
       "Two-factor authentication reminders": [
         "Připomenutí dvoufázového ověření"
@@ -12246,9 +12281,6 @@
       ],
       "Upgrade plan": [
         "Navýšit tarif"
-      ],
-      "Users": [
-        "Uživatelé"
       ],
       "Users and addresses": [
         "Uživatelé a adresy"
@@ -12391,6 +12423,35 @@
         "Role"
       ]
     },
+    "Title subscription": {
+      "Actions": [
+        "Akce"
+      ],
+      "Duration": [
+        "Doba trvání"
+      ],
+      "End date": [
+        "Datum ukončení"
+      ],
+      "Plan": [
+        "Tarif"
+      ],
+      "Start date": [
+        "Datum zahájení"
+      ],
+      "Status": [
+        "Stav"
+      ],
+      "Total": [
+        "Celkem"
+      ],
+      "Total paid": [
+        "Celkem zaplaceno"
+      ],
+      "Users": [
+        "Uživatelé"
+      ]
+    },
     "Title; create calendar modal": {
       "Create calendar": [
         "Vytvořit kalendář"
@@ -12412,6 +12473,9 @@
       ],
       "Account is disconnected": [
         "Účet je odpojen"
+      ],
+      "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
+        "Automatické přepínání mezi preferovanými denními a nočními motivy v synchronizaci s denním a nočním režimem systému."
       ],
       "Customize import to reduce the number of folders": [
         "Přizpůsobte proces importu, abyste snížili počet složek"
@@ -12475,6 +12539,12 @@
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Nový cyklus předplatného začíná ${ formattedTime }"
+      ],
+      "The selected theme will be active when your system is set to \"dark mode\"": [
+        "Vybraný motiv bude použit, když je systém nastaven na \"tmavý režim\"."
+      ],
+      "The selected theme will be active when your system is set to \"light mode\"": [
+        "Vybraný motiv bude použit, když je systém nastaven na \"světlý režim\"."
       ],
       "This address has been disabled": [
         "Tato adresa byla zakázána"

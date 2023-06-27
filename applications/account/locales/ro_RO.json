@@ -158,6 +158,9 @@
       "Cancel": [
         "Anulare"
       ],
+      "Cancel subscription": [
+        "Anulare abonament"
+      ],
       "Change mailbox password": [
         "Schimbare parolă mesaje"
       ],
@@ -517,6 +520,9 @@
       ],
       "Keep": [
         "Păstrare"
+      ],
+      "Keep my ${ vpnPlanNameShort } subscription": [
+        "Păstrez abonamentul ${ vpnPlanNameShort }"
       ],
       "label emails as": [
         "etichetare mesaje ca"
@@ -906,13 +912,13 @@
         "Actualizare frază de recuperare"
       ],
       "Upgrade": [
-        "Modernizare"
+        "Modificare"
       ],
       "Upgrade now": [
-        "Modernizare"
+        "Modificare"
       ],
       "Upgrade your plan": [
-        "Modernizare plan"
+        "Modificare plan"
       ],
       "Upload picture": [
         "Încărcare imagine"
@@ -1002,6 +1008,14 @@
         "Încercați gratuit 30 de zile"
       ]
     },
+    "Action subscription": {
+      "Manage": [
+        "Gestionare"
+      ],
+      "Reactivate": [
+        "Reactivare"
+      ]
+    },
     "Action; accept invitation to share calendar": {
       "Accept": [
         "Acceptare"
@@ -1053,7 +1067,7 @@
         "Se salvează"
       ],
       "Set as default": [
-        "Setare ca implicit"
+        "Setare ca implicită"
       ]
     },
     "Address status": {
@@ -2747,7 +2761,7 @@
         "Urmăriți starea și activitatea celor recomandați."
       ],
       "Unlock shorter email addresses and other premium features by upgrading.": [
-        "Deblocați adrese de e-mail mai scurte și alte funcții premium prin modernizarea contului."
+        "Deblocați adrese de e-mail mai scurte și alte funcții premium modificându-vă contul."
       ],
       "Unlock unlimited filters that sort your inbox for you and more premium features when you upgrade.": [
         "Deblocați filtre nelimitate care vă sortează mesajele și alte funcții premium dacă modernizați contul."
@@ -4941,7 +4955,10 @@
     },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
-        "${ appName } are nevoie de permisiunea dvs. pentru ${ enableDesktopNotifications }."
+        "${ appName } necesită permisiunea pentru ${ enableDesktopNotifications }."
+      ],
+      "${ autoRenewal } your subscription will renew automatically on ${ renewalTime }.": [
+        "${ autoRenewal } abonamentul se va reînnoi automat la ${ renewalTime }."
       ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Veți pierde accesul la toate datele actuale criptate din cont dacă continuați."
@@ -5175,7 +5192,7 @@
         "Adăugați un număr de telefon de recuperare"
       ],
       "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
-        "Adaugă o nouă protecție contului. Va fi necesar să folosiți verificarea prin A2F de fiecare dată când vă conectați."
+        "Adaugă o nouă protecție contului. Va trebui să folosiți verificarea cu doi factori de fiecare dată când vă conectați."
       ],
       "Add image URL": [
         "Adăugare URL imagine"
@@ -5199,9 +5216,6 @@
       ],
       "Admin account allocation": [
         "Alocare cont admin"
-      ],
-      "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
-        "După efectuarea plății cu Bitcoin, urmați instrucțiunile de mai jos pentru modernizare."
       ],
       "Align left": [
         "Aliniere la stânga"
@@ -5245,6 +5259,9 @@
       ],
       "American Express SafeKey logo": [
         "Logo American Express SafeKey"
+      ],
+      "Amount above maximum (${ amount }).": [
+        "Suma este peste maxim acceptat (${ amount })."
       ],
       "Amount below minimum (${ amount }).": [
         "Suma este sub minimul acceptat (${ amount })."
@@ -5308,6 +5325,9 @@
       ],
       "Attention required": [
         "Necesită atenție"
+      ],
+      "Auto-renewal: ": [
+        "Autoreînnoire: "
       ],
       "Auto-reply is active each month between the selected start and end time.": [
         "Răspunsul automat este activ în fiecare lună între data de activare și de dezactivare."
@@ -5596,7 +5616,7 @@
         "Introduceți codul de recuperare trimis la ${ email }. Dacă nu găsiți mesajul în mesajele primite, verificați în folderul cu mesaje nedorite."
       ],
       "Enter the credentials of the email account you want to import from.": [
-        "Introduceți datele de conectare ale contului de e-mail din care doriți să importați."
+        "Introduceți datele de conectare a contului de e-mail din care doriți să importați."
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
         "Introduceți parola organizației pentru a restaura privilegiile administratorului. ${ learnMore }"
@@ -5700,6 +5720,9 @@
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Dacă credeți că acest lucru este o eroare, vă rugăm să ne contactați la ${ contactLink }."
       ],
+      "If you cancel, your ${ vpnPlanName } subscription will not be renewed when it expires on ${ expiryDate }.": [
+        "Dacă anulați, abonamentul la ${ vpnPlanName } nu va fi reînnoit când va expira la ${ expiryDate }."
+      ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Dacă nu vedeți mesajul verificați în folderul de mesaje nedorite."
       ],
@@ -5785,6 +5808,9 @@
       ],
       "Improve your ${ BRAND_NAME } experience by adapting the application to your needs.": [
         "Îmbunătățiți-vă experiența ${ BRAND_NAME } adaptând aplicație după nevoile personale."
+      ],
+      "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
+        "În pasul următor, veți putea trimite o depunere folosind o adresă de Bitcoin."
       ],
       "Inherited from parent folder": [
         "Moştenit de la folderul părinte"
@@ -6215,7 +6241,7 @@
         "Trimiteți mesaje membrilor pentru a-i încuraja să-ți protejeze contul prin autentificarea cu doi factori."
       ],
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
-        "Trimis cu <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> e-mail securizat."
+        "E-mail securizat trimis cu <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
       ],
       "Server is currently down": [
         "Serverul este în prezent inactiv"
@@ -6287,6 +6313,12 @@
       ],
       "Store this password and file in a safe place. You’ll need them again to import your key.": [
         "Păstrați această parolă și fișierul într-un loc sigur. Veți avea din nou nevoie de ele pentru a importa cheia."
+      ],
+      "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
+        "Faceți o depunere folosind adresa următoare sau scanați codul QR. Depunerea va apărea în cont după confirmare."
+      ],
+      "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
+        "Abonamentul se încheie: reactivați-l până la ${ byDate } pentru a vă păstra beneficiile planului ${ planName }. ${ reactivateLink }"
       ],
       "Support for 1 custom email domain": [
         "Suport pentru un domeniu de e-mail personal"
@@ -6414,6 +6446,9 @@
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Acest utilizator este în prezent responsabil pentru plăţile organizaţiei. Retrogradând acest membru, veți deveni responsabil pentru plăţile organizaţiei."
       ],
+      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
+        "Aceasta va anula abonamentul cu plată actual și veți pierde orice beneficii de loialitate pe care le-ați acumulat."
+      ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
         "Aceasta vă va anula abonamentul plătit și veți pierde orice beneficii de loialitate acumulate. Soldul rămas din abonament va fi returnat ca și credit în cont."
       ],
@@ -6455,6 +6490,9 @@
       ],
       "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
         "Pentru a evita pierderea de date, ștergeți-o numai dacă știți ce faceți sau dacă ați exportat o copie."
+      ],
+      "To complete your payment, please send ${ btcAmountBold } to the address below.": [
+        "Pentru a finaliza plata, trimiteți ${ btcAmountBold } la adresa de mai jos."
       ],
       "To confirm, please enter the name of the user you wish to delete.": [
         "Pentru a confirma, introduceţi numele utilizatorului pe care doriţi să-l ştergeţi."
@@ -6844,14 +6882,17 @@
       "You will be redirected to the VPN download page": [
         "Vi se va deschide pagina de descărcare pentru VPN"
       ],
+      "You will lose access to ${ vpnPlanNameShort } servers and features on this date.": [
+        "Veți pierde accesul la serverele ${ vpnPlanNameShort } și la funcții la această dată."
+      ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Veți avea nevoie de o adresă ${ BRAND_NAME } pentru a utiliza ${ MAIL_APP_NAME } și ${ CALENDAR_APP_NAME }"
       ],
       "You will NOT be able to decrypt any messages, files, and other data encrypted with this key.": [
         "NU veți putea decripta niciun mesaj, fișier sau alte date criptate cu această cheie."
       ],
-      "You will receive priority support from specialists trained in account protection. For any account security concerns, please contact us ${ hereLink }.": [
-        "Veți primi sprijin prioritar de la specialiști instruiți în protecția conturilor. Pentru orice probleme legate de securitatea contului, vă rugăm să ne contactați ${ hereLink }."
+      "You will receive priority support from specialists trained in account protection. For any account security concerns, please ${ hereLink }.": [
+        "Veți primi asistență prioritară de la specialiști instruiți în protecția conturilor. Pentru orice probleme legate de securitatea contului, ${ hereLink }."
       ],
       "You will see more details in the Security logs below for important events such as sign in attempts.": [
         "Veți vedea mai multe detalii în jurnalele de securitate de mai jos pentru evenimente importante, cum ar fi încercările de conectare."
@@ -6994,6 +7035,11 @@
     "Info on errors": {
       "Click for details": [
         "Apăsați pentru detalii"
+      ]
+    },
+    "Info subscription": {
+      "You can prevent expiry by reactivating the subscription": [
+        "Puteți preîntâmpina expirarea prin reactivarea abonamentului."
       ]
     },
     "Info when deleting payment method": {
@@ -7508,11 +7554,11 @@
       "Browser version": [
         "Versiune navigator"
       ],
-      "BTC address:": [
-        "Adresa BTC:"
+      "BTC address": [
+        "Adresa BTC"
       ],
-      "BTC amount:": [
-        "Suma BTC:"
+      "BTC amount": [
+        "Suma BTC"
       ],
       "Calendar": [
         "Calendar"
@@ -8403,6 +8449,9 @@
       "Common sign up issues": [
         "Probleme comune de înregistrare"
       ],
+      "contact us": [
+        "contactați-ne"
+      ],
       "Create account": [
         "Creare cont"
       ],
@@ -8415,8 +8464,8 @@
       "General": [
         "Generale"
       ],
-      "here": [
-        "aici"
+      "How to pay with Bitcoin?": [
+        "Cum să plătiți cu Bitcoin?"
       ],
       "How to unlock data": [
         "Cum se deblochează datele"
@@ -8442,6 +8491,9 @@
       "Privacy policy": [
         "Politica de confidențialitate"
       ],
+      "Reactivate now": [
+        "Reactivare"
+      ],
       "Request an invite": [
         "Solicitați o invitație"
       ],
@@ -8461,7 +8513,7 @@
         "Aveți probleme la autentificare?"
       ],
       "Upgrade account": [
-        "Modernizare cont"
+        "Modificare cont"
       ],
       "Upgrade your plan": [
         "Treceți la alt plan"
@@ -8597,7 +8649,7 @@
         "Editare calendar"
       ],
       "Get a country's official public holidays calendar.": [
-        "Obțineți calendarul oficial al vacanțelor publice al unei țări."
+        "Obțineți calendarul oficial al vacanțelor publice a unei țări."
       ],
       "How to import calendars from another service": [
         "Cum se importă calendarele din alt serviciu"
@@ -8841,7 +8893,7 @@
         "Păstrez contul ${ currentPlanName } $"
       ],
       "Upgrade now": [
-        "Modernizare"
+        "Modificare"
       ]
     },
     "new_plans: action": {
@@ -10654,7 +10706,7 @@
         "Accesare planuri abonamente"
       ],
       "Upgrade": [
-        "Modernizare"
+        "Modificare"
       ]
     },
     "specialoffer: Offers": {
@@ -10996,6 +11048,9 @@
       "Active": [
         "Activ"
       ],
+      "Expiring": [
+        "Expiră"
+      ],
       "Upcoming": [
         "Urmează"
       ]
@@ -11162,6 +11217,9 @@
       ],
       "Verification successful": [
         "Verificare reușită"
+      ],
+      "You have successfully cancelled your subscription.": [
+        "Ați anulat abonamentul."
       ],
       "You have successfully unsubscribed": [
         "V-ați dezabonat cu succes"
@@ -11507,6 +11565,12 @@
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Anulare abonare ${ MAIL_SHORT_APP_NAME }"
       ],
+      "Cancel subscription": [
+        "Anulare abonament"
+      ],
+      "Cancel subscription?": [
+        "Anulare abonament?"
+      ],
       "Card verification": [
         "Verificare card"
       ],
@@ -11695,9 +11759,6 @@
       "Download ${ VPN_APP_NAME }": [
         "Descărcare ${ VPN_APP_NAME }"
       ],
-      "Duration": [
-        "Durata"
-      ],
       "Edit credit/debit card": [
         "Editare card de credit/debit"
       ],
@@ -11733,9 +11794,6 @@
       ],
       "Encryption and keys": [
         "Criptare și chei"
-      ],
-      "End date": [
-        "Data sfârșit"
       ],
       "Enter your password": [
         "Introduceţi parola"
@@ -11951,11 +12009,11 @@
       "PayPal verification failed": [
         "Verificarea PayPal a eșuat"
       ],
+      "Personalise your e-mail footer": [
+        "Personalizați subsolul mesajelor"
+      ],
       "Phone": [
         "Telefon"
-      ],
-      "Plan": [
-        "Plan"
       ],
       "Plan summary": [
         "Sumar planuri"
@@ -12116,9 +12174,6 @@
       "Start a new import": [
         "Începere importare nouă"
       ],
-      "Start date": [
-        "Dată început"
-      ],
       "Start import process": [
         "Începere proces de importare"
       ],
@@ -12153,9 +12208,6 @@
       "Time zone": [
         "Fus orar"
       ],
-      "Total paid": [
-        "Total plătit"
-      ],
       "Track your referrals": [
         "Monitorizare persoane recomandate"
       ],
@@ -12178,10 +12230,7 @@
         "Navigator nesuportat"
       ],
       "Upgrade plan": [
-        "Modernizare plan"
-      ],
-      "Users": [
-        "Utilizatori"
+        "Modificare plan"
       ],
       "Users and addresses": [
         "Utilizatori și adrese"
@@ -12324,6 +12373,35 @@
         "Rol"
       ]
     },
+    "Title subscription": {
+      "Actions": [
+        "Acțiuni"
+      ],
+      "Duration": [
+        "Durata"
+      ],
+      "End date": [
+        "Data sfârșit"
+      ],
+      "Plan": [
+        "Plan"
+      ],
+      "Start date": [
+        "Dată început"
+      ],
+      "Status": [
+        "Stare"
+      ],
+      "Total": [
+        "Total"
+      ],
+      "Total paid": [
+        "Total plătit"
+      ],
+      "Users": [
+        "Utilizatori"
+      ]
+    },
     "Title; create calendar modal": {
       "Create calendar": [
         "Creare calendar"
@@ -12392,7 +12470,7 @@
         "Stabiliți modul în care arată lista de mesaje în mod implicit."
       ],
       "Set the default Composer popup size as small or full screen.": [
-        "Setare dimensiune implicită a panoului de compunere mesaje ca micșorat sau complet."
+        "Setare dimensiune implicită a panoului de compunere mesaje."
       ],
       "Set the default layout for your Inbox.": [
         "Setare aspect implicit pentru lista de mesaje."
