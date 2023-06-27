@@ -17,9 +17,15 @@ import ToolbarDropdown from './ToolbarDropdown';
 const { DRAFTS, ALL_DRAFTS, ALL_MAIL, INBOX, SENT, ALL_SENT, ARCHIVE, STARRED, SCHEDULED, TRASH, SPAM } =
     MAILBOX_LABEL_IDS;
 
-const canMoveAll = (labelID: string, elementIDs: string[], selectedIDs: string[], isSearch: boolean) => {
+const canMoveAll = (
+    currentLabelID: string,
+    targetLabelID: string,
+    elementIDs: string[],
+    selectedIDs: string[],
+    isSearch: boolean
+) => {
     return (
-        !labelIncludes(labelID, TRASH, ALL_MAIL, SCHEDULED) &&
+        !labelIncludes(currentLabelID, targetLabelID, ALL_MAIL, SCHEDULED) &&
         elementIDs.length > 0 &&
         selectedIDs.length === 0 &&
         !isSearch
@@ -71,7 +77,8 @@ const MoreDropdown = ({
     const inMore = {
         move: actions.length > 0 && selectedIDs.length > 0,
         additionalDropdowns: isTiny && selectedIDs.length > 0,
-        moveAll: canMoveAll(labelID, elementIDs, selectedIDs, isSearch),
+        moveAllToArchive: canMoveAll(labelID, ARCHIVE, elementIDs, selectedIDs, isSearch),
+        moveAllToTrash: canMoveAll(labelID, TRASH, elementIDs, selectedIDs, isSearch),
         delete: canEmpty(labelID, elementIDs, selectedIDs, isSearch),
     };
 
@@ -83,7 +90,8 @@ const MoreDropdown = ({
 
     const handleEmptyLabel = () => emptyLabel(labelID);
 
-    const handleMoveAll = () => moveAll(labelID);
+    const handleMoveAllToArchive = () => moveAll(labelID, ARCHIVE);
+    const handleMoveAllToTrash = () => moveAll(labelID, TRASH);
 
     const inbox = (
         <DropdownMenuButton
@@ -222,11 +230,11 @@ const MoreDropdown = ({
                                     </DropdownMenuButton>
                                 </>
                             ) : null}
-                            {inMore.moveAll ? (
+                            {inMore.moveAllToTrash ? (
                                 <DropdownMenuButton
                                     className="text-left"
-                                    onClick={handleMoveAll}
-                                    data-testid="toolbar:moveAll"
+                                    onClick={handleMoveAllToTrash}
+                                    data-testid="toolbar:moveAllToTrash"
                                 >
                                     <Icon name="trash" className="mr-2" />
                                     {
@@ -235,6 +243,16 @@ const MoreDropdown = ({
                                         // which is deleting all messages. This is different
                                         c('Action').t`Move all to trash`
                                     }
+                                </DropdownMenuButton>
+                            ) : null}
+                            {inMore.moveAllToArchive ? (
+                                <DropdownMenuButton
+                                    className="text-left"
+                                    onClick={handleMoveAllToArchive}
+                                    data-testid="toolbar:moveAllToArchive"
+                                >
+                                    <Icon name="archive-box" className="mr-2" />
+                                    {c('Action').t`Move all to archive`}
                                 </DropdownMenuButton>
                             ) : null}
                             {inMore.delete ? (

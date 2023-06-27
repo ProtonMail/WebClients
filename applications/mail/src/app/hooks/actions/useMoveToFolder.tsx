@@ -339,7 +339,7 @@ export const useMoveToFolder = (setContainFocus?: Dispatch<SetStateAction<boolea
                 const suggestMoveAll =
                     elements.length === PAGE_SIZE && folderID === TRASH && !isCustomLabel(fromLabelID, labels);
 
-                const handleMoveAll = suggestMoveAll ? () => moveAll(fromLabelID) : undefined;
+                const handleMoveAll = suggestMoveAll ? () => moveAll(fromLabelID, TRASH) : undefined;
 
                 const moveAllButton = handleMoveAll ? (
                     <MoveAllNotificationButton
