@@ -49,6 +49,7 @@ export * from './notifications';
 export * from './offers';
 export * from './onboarding';
 export * from './organization';
+export * from './otherMailPreferences';
 export * from './overview';
 export * from './password';
 export * from './paymentMethods';

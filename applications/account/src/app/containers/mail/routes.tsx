@@ -65,6 +65,10 @@ export const getMailAppRoutes = ({
                         text: c('Title').t`Composing`,
                         id: 'composing',
                     },
+                    {
+                        text: c('Title').t`Other preferences`,
+                        id: 'other-preferences',
+                    },
                 ],
             },
             privacy: {
