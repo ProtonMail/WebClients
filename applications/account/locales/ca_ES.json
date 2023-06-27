@@ -158,6 +158,9 @@
       "Cancel": [
         "Cancel·la"
       ],
+      "Cancel subscription": [
+        "Cancel·lar la subscripció"
+      ],
       "Change mailbox password": [
         "Canviar contrasenya de la bústia de correu"
       ],
@@ -517,6 +520,9 @@
       ],
       "Keep": [
         "Mantenir"
+      ],
+      "Keep my ${ vpnPlanNameShort } subscription": [
+        "Mantén la meva subscripció ${ vpnPlanNameShort }"
       ],
       "label emails as": [
         "etiquetar correus electrònics com"
@@ -1000,6 +1006,14 @@
       ],
       "Try free for 30 days": [
         "Prova gratuïta durant 30 dies"
+      ]
+    },
+    "Action subscription": {
+      "Manage": [
+        "Gestiona"
+      ],
+      "Reactivate": [
+        "Reactiva"
       ]
     },
     "Action; accept invitation to share calendar": {
@@ -4912,6 +4926,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } necessita el vostre permís per ${ enableDesktopNotifications }."
       ],
+      "${ autoRenewal } your subscription will renew automatically on ${ renewalTime }.": [
+        "${ autoRenewal } la vostra subscripció es renovarà automàticament el ${ renewalTime }."
+      ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Si continueu, perdreu l'accés a totes les dades xifrades actuals del vostre compte."
       ],
@@ -5150,9 +5167,6 @@
       "Admin account allocation": [
         "Assignació del compte d'administrador"
       ],
-      "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
-        "Després de fer el pagament amb Bitcoin, seguiu les següents instruccions per actualitzar."
-      ],
       "Align left": [
         "Alinea a l'esquerra"
       ],
@@ -5193,6 +5207,9 @@
       ],
       "American Express SafeKey logo": [
         "Logo d'American Express SafeKey"
+      ],
+      "Amount above maximum (${ amount }).": [
+        "Import superior al màxim (${ amount })."
       ],
       "Amount below minimum (${ amount }).": [
         "Import inferior al mínim (${ amount })."
@@ -5256,6 +5273,9 @@
       ],
       "Attention required": [
         "Requereix atenció"
+      ],
+      "Auto-renewal: ": [
+        "Renovació automàtica: "
       ],
       "Auto-reply is active each month between the selected start and end time.": [
         "La resposta automàtica està activa durant cada mes entre l'hora inicial i final seleccionada."
@@ -5646,6 +5666,9 @@
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Si creieu que es tracta d'un error, poseu-vos en contacte amb nosaltres ${ contactLink }."
       ],
+      "If you cancel, your ${ vpnPlanName } subscription will not be renewed when it expires on ${ expiryDate }.": [
+        "Si ho cancel·leu, la subscripció ${ vpnPlanName } no es renovarà en caducar el ${ expiryDate }."
+      ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Si no trobeu el correu electrònic a la safata d'entrada, comproveu la vostra carpeta de correu brossa."
       ],
@@ -5730,6 +5753,9 @@
       ],
       "Improve your ${ BRAND_NAME } experience by adapting the application to your needs.": [
         "Milloreu la vostra experiència ${ BRAND_NAME } adaptant l'aplicació a les vostres necessitats."
+      ],
+      "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
+        "Al proper pas podreu enviar un dipòsit utilitzant una adreça Bitcoin."
       ],
       "Inherited from parent folder": [
         "Heretat d'una carpeta principal"
@@ -6228,6 +6254,12 @@
       "Store this password and file in a safe place. You’ll need them again to import your key.": [
         "Emmagatzemeu aquesta contrasenya i aquest fitxer en un lloc segur. Els necessitareu de nou per importar la vostra clau."
       ],
+      "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
+        "Envieu un dipòsit utilitzant l'adreça següent o escanegeu el codi QR. El dipòsit es reflectirà al vostre compte després de confirmar-lo."
+      ],
+      "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
+        "La subscripció està finalitzant: Reactiveu-la abans de ${ byDate } per a mantenir els beneficis de ${ planName }. ${ reactivateLink }"
+      ],
       "Support for 1 custom email domain": [
         "Suport per a 1 domini de correu personalitzat"
       ],
@@ -6351,6 +6383,9 @@
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Actualment, aquest usuari és responsable dels pagaments de la vostra organització. Degradant aquest membre, sereu responsable dels pagaments de la vostra organització."
       ],
+      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
+        "Això cancel·larà la vostra subscripció de pagament actual i perdreu els beneficis de fidelitat que heu acumulat."
+      ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
         "Es cancel·larà la vostra subscripció de pagament actual i perdreu qualsevol benefici de fidelitat que hagueu acumulat. El balanç restant de la vostra subscripció es retornarà com a crèdits del compte."
       ],
@@ -6392,6 +6427,9 @@
       ],
       "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
         "Per evitar la pèrdua de dades, elimineu-ho només si sabeu el que esteu fent o n'heu exportat una còpia."
+      ],
+      "To complete your payment, please send ${ btcAmountBold } to the address below.": [
+        "Per a completar el pagament, envieu ${ btcAmountBold } a l'adreça de sota."
       ],
       "To confirm, please enter the name of the user you wish to delete.": [
         "Per confirmar-ho, introduïu el nom de l'usuari que vulgueu suprimir."
@@ -6776,14 +6814,17 @@
       "You will be redirected to the VPN download page": [
         "Se us redirigirà a la pàgina de descàrrega de VPN"
       ],
+      "You will lose access to ${ vpnPlanNameShort } servers and features on this date.": [
+        "Perdreu accés a servidors i funcions de ${ vpnPlanNameShort } en aquesta data."
+      ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Necessitareu una adreça ${ BRAND_NAME } per utilitzar ${ MAIL_APP_NAME } i ${ CALENDAR_APP_NAME }"
       ],
       "You will NOT be able to decrypt any messages, files, and other data encrypted with this key.": [
         "NO podreu desxifrar cap missatge, fitxer i altres dades xifrades amb aquesta clau."
       ],
-      "You will receive priority support from specialists trained in account protection. For any account security concerns, please contact us ${ hereLink }.": [
-        "Rebreu suport prioritari d'especialistes formats en protecció de comptes. Per qualsevol problema de seguretat del compte, contacteu amb nosaltres ${ hereLink }."
+      "You will receive priority support from specialists trained in account protection. For any account security concerns, please ${ hereLink }.": [
+        "Rebreu suport prioritari d'especialistes formats en protecció de comptes. Per qualsevol problema de seguretat del compte, ${ hereLink }."
       ],
       "You will see more details in the Security logs below for important events such as sign in attempts.": [
         "Veureu més detalls als següents registres de seguretat per a esdeveniments importants com ara intents d'inici de sessió."
@@ -6925,6 +6966,11 @@
     "Info on errors": {
       "Click for details": [
         "Cliqueu per veure'n detalls"
+      ]
+    },
+    "Info subscription": {
+      "You can prevent expiry by reactivating the subscription": [
+        "Podeu evitar el venciment reactivant la subscripció"
       ]
     },
     "Info when deleting payment method": {
@@ -7435,11 +7481,11 @@
       "Browser version": [
         "Versió del navegador"
       ],
-      "BTC address:": [
-        "Adreça BTC:"
+      "BTC address": [
+        "Adreça BTC"
       ],
-      "BTC amount:": [
-        "Import de BTC:"
+      "BTC amount": [
+        "Import de BTC"
       ],
       "Calendar": [
         "Calendari"
@@ -8330,6 +8376,9 @@
       "Common sign up issues": [
         "Problemes comuns de registre"
       ],
+      "contact us": [
+        "contacteu amb nosaltres"
+      ],
       "Create account": [
         "Crea un compte"
       ],
@@ -8342,8 +8391,8 @@
       "General": [
         "General"
       ],
-      "here": [
-        "aquí"
+      "How to pay with Bitcoin?": [
+        "Com pagar amb Bitcoin?"
       ],
       "How to unlock data": [
         "Com desbloquejar les dades"
@@ -8368,6 +8417,9 @@
       ],
       "Privacy policy": [
         "Política de privacitat"
+      ],
+      "Reactivate now": [
+        "Reactiva ara"
       ],
       "Request an invite": [
         "Demana una invitació"
@@ -10862,6 +10914,9 @@
       "Active": [
         "Actiu"
       ],
+      "Expiring": [
+        "Caduca"
+      ],
       "Upcoming": [
         "Pròximament"
       ]
@@ -11028,6 +11083,9 @@
       ],
       "Verification successful": [
         "Èxit de verificació"
+      ],
+      "You have successfully cancelled your subscription.": [
+        "Heu cancel·lat la vostra subscripció."
       ],
       "You have successfully unsubscribed": [
         "Heu anul·lat la subscripció amb èxit"
@@ -11367,6 +11425,12 @@
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Cancel·la la subscripció ${ MAIL_SHORT_APP_NAME }"
       ],
+      "Cancel subscription": [
+        "Cancel·la la subscripció"
+      ],
+      "Cancel subscription?": [
+        "Voleu cancel·lar la subscripció?"
+      ],
       "Card verification": [
         "Verificació de la targeta"
       ],
@@ -11554,9 +11618,6 @@
       "Download ${ VPN_APP_NAME }": [
         "Baixa ${ VPN_APP_NAME }"
       ],
-      "Duration": [
-        "Durada"
-      ],
       "Edit credit/debit card": [
         "Modificar targeta de crèdit"
       ],
@@ -11592,9 +11653,6 @@
       ],
       "Encryption and keys": [
         "Xifratge i claus"
-      ],
-      "End date": [
-        "Data final"
       ],
       "Enter your password": [
         "Introduïu la vostra contrasenya"
@@ -11814,9 +11872,6 @@
       "Phone": [
         "Telèfon"
       ],
-      "Plan": [
-        "Pla"
-      ],
       "Plan summary": [
         "Resum del pla"
       ],
@@ -11976,9 +12031,6 @@
       "Start a new import": [
         "Inicia una nova importació"
       ],
-      "Start date": [
-        "Data d'inici"
-      ],
       "Start import process": [
         "Iniciar el procés d'importació"
       ],
@@ -12011,9 +12063,6 @@
       "Time zone": [
         "Fus horari"
       ],
-      "Total paid": [
-        "Total pagat"
-      ],
       "Track your referrals": [
         "Seguiu les vostres recomanacions"
       ],
@@ -12037,9 +12086,6 @@
       ],
       "Upgrade plan": [
         "Millora el pla"
-      ],
-      "Users": [
-        "Usuaris"
       ],
       "Users and addresses": [
         "Usuaris i adreces"
@@ -12180,6 +12226,35 @@
       ],
       "Role": [
         "Rol"
+      ]
+    },
+    "Title subscription": {
+      "Actions": [
+        "Accions"
+      ],
+      "Duration": [
+        "Durada"
+      ],
+      "End date": [
+        "Data de fi"
+      ],
+      "Plan": [
+        "Pla"
+      ],
+      "Start date": [
+        "Data d'inici"
+      ],
+      "Status": [
+        "Estat"
+      ],
+      "Total": [
+        "Total"
+      ],
+      "Total paid": [
+        "Total pagat"
+      ],
+      "Users": [
+        "Usuaris"
       ]
     },
     "Title; create calendar modal": {

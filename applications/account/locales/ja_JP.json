@@ -24,9 +24,6 @@
       ],
       "Mail forward stopped": [
         "メールの転送を停止しました"
-      ],
-      "Reconnect": [
-        "再接続"
       ]
     },
     "Action": {
@@ -948,11 +945,6 @@
         "失効させる"
       ]
     },
-    "Action in trial plan": {
-      "No, thanks": [
-        "いいえ"
-      ]
-    },
     "Action; accept invitation to share calendar": {
       "Accept": [
         "承認"
@@ -992,9 +984,6 @@
       ],
       "Saving": [
         "保存中"
-      ],
-      "Set as default": [
-        "デフォルトとして設定"
       ]
     },
     "Address status": {
@@ -1048,9 +1037,6 @@
       ],
       "Email received": [
         "メールを受信"
-      ],
-      "Encrypted": [
-        "暗号化済み"
       ],
       "New email": [
         "新しいメール"
@@ -2895,9 +2881,6 @@
       "Error in one of the conditions": [
         "いずれかの条件にエラーがあります"
       ],
-      "Expired": [
-        "有効期限切れ"
-      ],
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
         "アクティブなセッションを取得できませんでした。${ refresh } するか、後ほど再度お試しください。"
       ],
@@ -3446,9 +3429,6 @@
       ],
       "Please refresh the page or try again later.": [
         "ページを再読み込みするか、後でもう一度お試しください。"
-      ],
-      "Something went wrong": [
-        "不具合が発生しました"
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "このページをロードできません。ページを再読み込みするかインターネットの接続状況を確認してください。"
@@ -4462,9 +4442,6 @@
       "Canceled": [
         "キャンセル"
       ],
-      "Canceling": [
-        "キャンセル中"
-      ],
       "Completed": [
         "完了"
       ],
@@ -4606,9 +4583,6 @@
       "${ selectedFoldersCountLocalized } labels selected": [
         "${ selectedFoldersCountLocalized } 件のラベルを選択"
       ],
-      "${ storageSize } storage": [
-        "${ storageSize } ストレージ"
-      ],
       "${ userFound } users found": [
         "${ userFound } 人のユーザーが見つかりました"
       ],
@@ -4719,9 +4693,6 @@
       ],
       "Admin account allocation": [
         "管理者アカウント割り当て"
-      ],
-      "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
-        "ビットコインでのお支払い後は、以下の指示に従ってアップグレードしてください。"
       ],
       "Align left": [
         "左揃え"
@@ -4839,6 +4810,9 @@
       ],
       "Balance from your previous subscription": [
         "前回の定期購入時の残高"
+      ],
+      "Based on your time zone": [
+        "現在のタイムゾーンに基づく"
       ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "一般的なナビゲーションと基本操作はキーボードショートカットの設定に関係なく利用できます。"
@@ -5235,9 +5209,6 @@
       ],
       "IMPORTANT: Some registrars do not accept CNAME values with a period at the end (while others require it). If your registrar does not accept your CNAME records, please delete the period at the end of each CNAME value and try again.": [
         "重要: レジストラーによっては (他のレジストラーで要求する) 終了期限付きCNAMEの値が使えません。もしあなたが使用しているレジストラで CNAME レコードが使えない場合、各 CNAME の期限を削除して再度試してみてください。"
-      ],
-      "Importing your data from ${ fromEmail } to ${ toEmail }.": [
-        "データを ${ fromEmail } から ${ toEmail } にインポートしています。"
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "データを ${ importedEmailAddress } から ${ toEmail } にインポートしています。"
@@ -5683,17 +5654,11 @@
       "Storage for users": [
         "ユーザーのストレージ"
       ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "ストレージ容量は ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME }、${ DRIVE_APP_NAME } で共有されます."
-      ],
       "Storage used by this user": [
         "ストレージはこのユーザーによって使われています"
       ],
       "Store this password and file in a safe place. You’ll need them again to import your key.": [
         "このパスワードとファイルは安全な場所に保管してください。パスワードとファイルは鍵をインポートするときにもう一度必要になります。"
-      ],
-      "Support for 1 custom email domain": [
-        "1 つの独自メールドメインをサポート"
       ],
       "support team": [
         "サポートチーム"
@@ -5895,9 +5860,6 @@
       ],
       "Unlimited folders, labels, and filters": [
         "制限なしのフォルダー、ラベル、フィルター"
-      ],
-      "Unlimited messages": [
-        "送信数制限なし"
       ],
       "Unsaved changes": [
         "未保存の変更"
@@ -6153,9 +6115,6 @@
       ],
       "You will NOT be able to decrypt any messages, files, and other data encrypted with this key.": [
         "この鍵で暗号化されたすべてのメッセージ、ファイル、その他のデータは復号できなくなります。"
-      ],
-      "You will receive priority support from specialists trained in account protection. For any account security concerns, please contact us ${ hereLink }.": [
-        "あなたは、アカウント保護に精通した専門家からの優先的なサポートを受けます。アカウントセキュリティに関して不安がある場合は、${ hereLink }から私たちにご連絡ください。"
       ],
       "You will see more details in the Security logs below for important events such as sign in attempts.": [
         "サインイン試行などの重要なイベントについては、以下のセキュリティログで詳細を確認することができます。"
@@ -6786,12 +6745,6 @@
       ],
       "Browser version": [
         "ブラウザのバージョン"
-      ],
-      "BTC address:": [
-        "BTC アドレス:"
-      ],
-      "BTC amount:": [
-        "BTC 金額:"
       ],
       "Calendar": [
         "カレンダー"
@@ -7598,11 +7551,6 @@
         "行"
       ]
     },
-    "Label, credit card": {
-      "ZIP code": [
-        "郵便番号"
-      ]
-    },
     "Label/folder modal": {
       "Create folder": [
         "フォルダーの作成"
@@ -7672,9 +7620,6 @@
       ],
       "General": [
         "一般"
-      ],
-      "here": [
-        "こちら"
       ],
       "How to unlock data": [
         "データのロックを解除する方法"
@@ -8667,6 +8612,9 @@
       ]
     },
     "Notification in holidays calendar modal": {
+      "Adding holidays calendar failed": [
+        "祝日カレンダーの追加に失敗しました"
+      ],
       "Calendar added": [
         "カレンダーを追加しました"
       ]
@@ -9384,11 +9332,6 @@
         "ラベル"
       ]
     },
-    "Share calendar assistive text": {
-      "To invite non-${ BRAND_NAME } users, share your calendar with a link.": [
-        "非 ${ BRAND_NAME } ユーザーを招待するには、リンクでカレンダーを共有します."
-      ]
-    },
     "Share calendar max shares reached error": {
       "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } members per calendar": [
         "カレンダーのメンバーの上限 ${ MAX_CALENDAR_MEMBERS } を超過しました。"
@@ -9792,9 +9735,6 @@
       ]
     },
     "Subscription change warning": {
-      "Got it": [
-        "了承"
-      ],
       "Subscriptions": [
         "サブスクリプション"
       ]
@@ -9813,9 +9753,6 @@
       ],
       "Auto-pay is enabled": [
         "自動支払いが有効です"
-      ],
-      "Disable": [
-        "無効化"
       ],
       "Enable auto-pay support": [
         "自動支払い対応を有効にする"
@@ -10497,9 +10434,6 @@
       "Download ${ VPN_APP_NAME }": [
         "${ VPN_APP_NAME } をダウンロード"
       ],
-      "Duration": [
-        "期間"
-      ],
       "Edit credit/debit card": [
         "クレジット・デビットカードの編集"
       ],
@@ -10535,9 +10469,6 @@
       ],
       "Encryption and keys": [
         "暗号化と鍵"
-      ],
-      "End date": [
-        "終了日"
       ],
       "Enter your password": [
         "パスワードを入力"
@@ -10731,9 +10662,6 @@
       "Pay invoice": [
         "請求の支払い"
       ],
-      "Payment failed": [
-        "支払いに失敗しました"
-      ],
       "Payment methods": [
         "支払い方法"
       ],
@@ -10745,9 +10673,6 @@
       ],
       "Phone": [
         "電話番号"
-      ],
-      "Plan": [
-        "プラン"
       ],
       "Plan summary": [
         "プランの概要"
@@ -10902,9 +10827,6 @@
       "Start a new import": [
         "新しいインポートを開始"
       ],
-      "Start date": [
-        "開始日"
-      ],
       "Start import process": [
         "インポートを開始"
       ],
@@ -10935,9 +10857,6 @@
       "Time zone": [
         "タイムゾーン"
       ],
-      "Total paid": [
-        "合計金額"
-      ],
       "Track your referrals": [
         "招待状況を確認"
       ],
@@ -10955,9 +10874,6 @@
       ],
       "Upgrade plan": [
         "プランをアップグレード"
-      ],
-      "Users": [
-        "ユーザー数"
       ],
       "Users and addresses": [
         "ユーザーとアドレス"
@@ -11341,9 +11257,6 @@
       "Are you sure you want to delete the phone number?": [
         "本当にこの電話番号を削除しますか？"
       ],
-      "Are you sure you want to delete this address?": [
-        "本当にこのアドレスを削除してよいですか。"
-      ],
       "Are you sure you want to discard your import?": [
         "インポートを破棄してよろしいですか?"
       ],
@@ -11364,9 +11277,6 @@
       ],
       "By disabling this address, you will no longer be able to send or receive emails using this address and all the linked ${ BRAND_NAME } products will also be disabled. Are you sure you want to disable this address?": [
         "このアドレスを無効にすることで、このアドレスを使ったメールの送受信ができなくなり、リンクされているすべての ${ BRAND_NAME } 製品も無効となります。本当にこのアドレスを無効にしますか？"
-      ],
-      "Please add at least one recipient.": [
-        "少なくとも 1 件の宛先を追加してください。"
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "この支払い方法を選択すると、すぐにアカウントをアップグレードすることはできません。お支払いが確認され次第アカウントが更新されます。"

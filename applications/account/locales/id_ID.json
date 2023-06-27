@@ -158,6 +158,9 @@
       "Cancel": [
         "Batal"
       ],
+      "Cancel subscription": [
+        "Batalkan langganan"
+      ],
       "Change mailbox password": [
         "Ubah kata sandi kotak surat"
       ],
@@ -517,6 +520,9 @@
       ],
       "Keep": [
         "Simpan"
+      ],
+      "Keep my ${ vpnPlanNameShort } subscription": [
+        "Pertahankan langganan ${ vpnPlanNameShort } saya"
       ],
       "label emails as": [
         "labeli email sebagai"
@@ -1000,6 +1006,14 @@
       ],
       "Try free for 30 days": [
         "Coba gratis selama 30 hari"
+      ]
+    },
+    "Action subscription": {
+      "Manage": [
+        "Kelola"
+      ],
+      "Reactivate": [
+        "Aktifkan kembali"
       ]
     },
     "Action; accept invitation to share calendar": {
@@ -4273,7 +4287,7 @@
     },
     "FilterSettings": {
       "Add a custom filter to automatically perform certain actions, like labeling or archiving messages.": [
-        "Tambahkan saringan kustom untuk melakukan tindakan khusus secara otomatis, seperti memberi label atau mengarsip pesan."
+        "Tambahkan filter khusus untuk melangsungkan tindakan tertentu secara otomatis, seperti pelabelan atau pengarsipan pesan."
       ],
       "Allow:": [
         "Izin:"
@@ -4293,11 +4307,23 @@
       "Take control over what lands in your organization members' inboxes by creating the following lists:": [
         "Kendalikan hal-hal apa saja yang akan masuk ke dalam kotak masuk milik para anggota organisasi Anda dengan membuat daftar berikut:"
       ],
+      "These lists apply to all accounts in your organization. Members can create their own individual filters, but won't be able to override addresses or domains you blocked.": [
+        "Daftar ini akan berlaku bagi seluruh akun pada organisasi Anda. Masing-masing anggota organisasi akan dapat membuat filter khusus untuk diri mereka sendiri, namun mereka tidak akan dapat melewati batasan alamat atau domain yang Anda tentukan."
+      ],
+      "To ensure critical messages don't end up in spam and getting missed": [
+        "Untuk memastikan agar pesan penting tidak sampai masuk ke spam dan terlewatkan"
+      ],
       "To prevent junk mail from clogging up inboxes": [
-        "Untuk mencegah email sampah memenuhi kotak masuk yang ada"
+        "Untuk mencegah agar email sampah tidak sampai memenuhi kotak masuk yang ada"
       ],
       "To prevent junk mail from clogging up your inbox": [
-        "Untuk mencegah email sampah memenuhi kotak masuk Anda"
+        "Untuk mencegah agar email sampah tidak sampai memenuhi kotak masuk Anda"
+      ],
+      "To stop phishing or suspicious emails from entering your email system": [
+        "Untuk menghentikan email phishing atau yang mencurigakan agar tidak masuk ke sistem email Anda"
+      ],
+      "To stop phishing or suspicious emails from entering your organization's email system": [
+        "Untuk menghentikan email phishing atau yang mencurigakan agar tidak masuk ke sistem email organisasi Anda"
       ]
     },
     "Font Face Default": {
@@ -4869,6 +4895,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } memerlukan izin Anda untuk ${ enableDesktopNotifications }."
       ],
+      "${ autoRenewal } your subscription will renew automatically on ${ renewalTime }.": [
+        "${ autoRenewal } langganan Anda akan diperpanjang otomatis pada ${ renewalTime }."
+      ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Apabila Anda melanjutkan, Anda akan kehilangan akses menuju seluruh data yang terenkripsi pada akun Anda."
       ],
@@ -5088,9 +5117,6 @@
       "Admin account allocation": [
         "Alokasi akun admin"
       ],
-      "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
-        "Usai melakukan pembayaran dengan Bitcoin, harap ikuti instruksi di bawah untuk meningkatkan."
-      ],
       "Align left": [
         "Rata kiri"
       ],
@@ -5129,6 +5155,9 @@
       ],
       "American Express SafeKey logo": [
         "Logo American Express Safekey"
+      ],
+      "Amount above maximum (${ amount }).": [
+        "Nominal transaksi melebihi batas maksimum (${ amount })."
       ],
       "Amount below minimum (${ amount }).": [
         "Di bawah jumlah minimum (${ amount })."
@@ -5192,6 +5221,9 @@
       ],
       "Attention required": [
         "Diperlukan perhatian"
+      ],
+      "Auto-renewal: ": [
+        "Perpanjangan otomatis: "
       ],
       "Auto-reply is active each month between the selected start and end time.": [
         "Pesan balasan otomatis akan terkirim setiap bulannya pada rentang waktu yang ditentukan."
@@ -5580,6 +5612,9 @@
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Apabila Anda merasa ini adalah sebuah kesalahan, silakan hubungi kami ${ contactLink }."
       ],
+      "If you cancel, your ${ vpnPlanName } subscription will not be renewed when it expires on ${ expiryDate }.": [
+        "Apabila Anda membatalkan langganan, paket ${ vpnPlanName } Anda tidak akan diperbarui ketika langganan ini berakhir pada tanggal ${ expiryDate }"
+      ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Apabila Anda tidak menemukan email yang bersangkutan di dalam kotak masuk, mohon periksa folder spam Anda."
       ],
@@ -5663,6 +5698,9 @@
       ],
       "Improve your ${ BRAND_NAME } experience by adapting the application to your needs.": [
         "Perkaya pengalaman ${ BRAND_NAME } Anda dengan menyesuaikan aplikasi sesuai dengan kebutuhan Anda."
+      ],
+      "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
+        "Pada langkah selanjutnya, Anda dapat mengirimkan deposit menggunakan alamat Bitcoin."
       ],
       "Inherited from parent folder": [
         "Diwariskan dari folder induk"
@@ -5920,7 +5958,7 @@
         "Silakan tambahkan alamat email pengguna pada baris berikut"
       ],
       "Please add passwords for the users on rows": [
-        "Silakan tambahkan kata sandi pengguna pada baris berikut"
+        "Mohon tambahkan kata sandi pengguna pada baris"
       ],
       "Please authenticate your card in the verification tab.": [
         "Silakan autentikasi kartu Anda pada tab verifikasi."
@@ -6156,6 +6194,12 @@
       "Store this password and file in a safe place. You’ll need them again to import your key.": [
         "Simpan kata sandi dan berkas ini di tempat yang aman. Anda akan membutuhkan keduanya untuk mengimpor kunci Anda."
       ],
+      "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
+        "Kirimkan deposit menggunakan alamat berikut atau pindai kode QR. Deposit Anda akan tercermin di akun setelah konfirmasi."
+      ],
+      "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
+        "Langganan akan segera berakhir: Aktifkan kembali paket Anda sebelum tanggal ${ byDate } untuk tetap memperoleh manfaat ${ planName } Anda. ${ reactivateLink }"
+      ],
       "Support for 1 custom email domain": [
         "Dukungan 1 alamat email dengan domain khusus"
       ],
@@ -6276,6 +6320,9 @@
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Pengguna ini saat ini bertanggung jawab atas pembayaran untuk organisasi Anda. Dengan menurunkan anggota ini, Anda akan bertanggung jawab atas pembayaran untuk organisasi Anda."
       ],
+      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
+        "Tindakan ini akan membatalkan langganan berbayar Anda saat ini dan Anda akan kehilangan manfaat loyalitas yang telah Anda kumpulkan."
+      ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
         "Tindakan ini akan membatalkan langganan berbayar yang Anda miliki saat ini beserta seluruh keuntungan loyalitas yang telah Anda kumpulkan. Saldo yang tersisa dari langganan Anda akan dikembalikan dalam bentuk kredit akun."
       ],
@@ -6317,6 +6364,9 @@
       ],
       "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
         "Untuk mencegah hilangnya data, mohon hapus kunci ini hanya apabila Anda telah benar-benar paham akan segala resikonya atau apabila Anda telah mengekspor kunci duplikatnya."
+      ],
+      "To complete your payment, please send ${ btcAmountBold } to the address below.": [
+        "Untuk menyelesaikan pembayaran Anda, silakan kirim ${ btcAmountBold } ke alamat di bawah ini."
       ],
       "To confirm, please enter the name of the user you wish to delete.": [
         "Untuk mengonfirmasi, harap masukkan nama pengguna yang ingin Anda hapus."
@@ -6696,14 +6746,17 @@
       "You will be redirected to the VPN download page": [
         "Anda akan dialihkan ke laman pengunduhan VPN"
       ],
+      "You will lose access to ${ vpnPlanNameShort } servers and features on this date.": [
+        "Anda akan kehilangan akses ke server dan fitur ${ vpnPlanNameShort } pada tanggal ini."
+      ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Anda akan butuh alamat ${ BRAND_NAME } untuk dapat menggunakan ${ MAIL_APP_NAME } dan ${ CALENDAR_APP_NAME }"
       ],
       "You will NOT be able to decrypt any messages, files, and other data encrypted with this key.": [
         "Anda TIDAK akan dapat mendekripsi pesan, berkas, atau data apa pun yang terenkripsi dengan kunci ini."
       ],
-      "You will receive priority support from specialists trained in account protection. For any account security concerns, please contact us ${ hereLink }.": [
-        "Anda akan menerima dukungan prioritas dari tim spesialis yang terlatih dalam hal perlindungan akun. Untuk segala pertanyaan seputar keamanan akun, silakan hubungi kami ${ hereLink },"
+      "You will receive priority support from specialists trained in account protection. For any account security concerns, please ${ hereLink }.": [
+        "Anda akan memperoleh dukungan prioritas dari para ahli yang terlatih dalam hal perlindungan akun. Untuk pertanyaan apa pun seputar keamanan akun, silakan ${ hereLink }"
       ],
       "You will see more details in the Security logs below for important events such as sign in attempts.": [
         "Anda akan dapat melihat rincian lebih lanjut seputar berbagai kejadian penting, seperti upaya masuk ke akun Anda, pada log keamanan di bawah."
@@ -6844,6 +6897,11 @@
     "Info on errors": {
       "Click for details": [
         "Klik untuk rincian"
+      ]
+    },
+    "Info subscription": {
+      "You can prevent expiry by reactivating the subscription": [
+        "Anda dapat mencegah paket Anda kedaluwarsa dengan mengaktifkan kembali langganan"
       ]
     },
     "Info when deleting payment method": {
@@ -7350,11 +7408,11 @@
       "Browser version": [
         "Versi peramban"
       ],
-      "BTC address:": [
-        "Alamat BTC:"
+      "BTC address": [
+        "Alamat BTC"
       ],
-      "BTC amount:": [
-        "Jumlah BTC:"
+      "BTC amount": [
+        "Jumlah BTC"
       ],
       "Calendar": [
         "Kalender"
@@ -8245,6 +8303,9 @@
       "Common sign up issues": [
         "Masalah pendaftaran umum"
       ],
+      "contact us": [
+        "hubungi kami"
+      ],
       "Create account": [
         "Buat akun"
       ],
@@ -8257,8 +8318,8 @@
       "General": [
         "Umum"
       ],
-      "here": [
-        "di sini"
+      "How to pay with Bitcoin?": [
+        "Bagaimana cara membayar dengan Bitcoin?"
       ],
       "How to unlock data": [
         "Bagaimana cara membuka kunci data"
@@ -8283,6 +8344,9 @@
       ],
       "Privacy policy": [
         "Kebijakan privasi"
+      ],
+      "Reactivate now": [
+        "Aktifkan kembali"
       ],
       "Request an invite": [
         "Minta undangan"
@@ -10169,7 +10233,7 @@
         "Selesaikan transisi menuju privasi dengan perangkat impor aman kami."
       ],
       "Keep your inbox organized with folders and labels. ${ learnMoreLink }": [
-        "Tetap kotak masuk Anda teratur dengan folder dan label. ${ learnMoreLink }"
+        "Jaga agar kotak masuk Anda tetap teratur dengan folder dan label. ${ learnMoreLink }"
       ]
     },
     "Settings section title": {
@@ -10716,6 +10780,9 @@
       "Active": [
         "Aktif"
       ],
+      "Expiring": [
+        "Segera berakhir"
+      ],
       "Upcoming": [
         "Akan datang"
       ]
@@ -10882,6 +10949,9 @@
       ],
       "Verification successful": [
         "Verifikasi berhasil"
+      ],
+      "You have successfully cancelled your subscription.": [
+        "Anda telah berhasil membatalkan langganan Anda."
       ],
       "You have successfully unsubscribed": [
         "Anda berhasil berhenti berlangganan"
@@ -11215,6 +11285,12 @@
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Batalkan langganan ${ MAIL_SHORT_APP_NAME }"
       ],
+      "Cancel subscription": [
+        "Batalkan langganan"
+      ],
+      "Cancel subscription?": [
+        "Batalkan langganan?"
+      ],
       "Card verification": [
         "Verifikasi kartu"
       ],
@@ -11401,9 +11477,6 @@
       "Download ${ VPN_APP_NAME }": [
         "Unduh ${ VPN_APP_NAME }"
       ],
-      "Duration": [
-        "Durasi"
-      ],
       "Edit credit/debit card": [
         "Sunting rincian kartu kredit/debit"
       ],
@@ -11439,9 +11512,6 @@
       ],
       "Encryption and keys": [
         "Enkripsi dan kunci"
-      ],
-      "End date": [
-        "Tanggal akhir"
       ],
       "Enter your password": [
         "Masukkan kata sandi Anda"
@@ -11656,9 +11726,6 @@
       "Phone": [
         "Telepon"
       ],
-      "Plan": [
-        "Paket"
-      ],
       "Plan summary": [
         "Ringkasan paket"
       ],
@@ -11818,9 +11885,6 @@
       "Start a new import": [
         "Mulai impor baru"
       ],
-      "Start date": [
-        "Tanggal mulai"
-      ],
       "Start import process": [
         "Mulai proses impor"
       ],
@@ -11851,9 +11915,6 @@
       "Time zone": [
         "Zona waktu"
       ],
-      "Total paid": [
-        "Total yang dibayarkan"
-      ],
       "Track your referrals": [
         "Lacak rujukan Anda"
       ],
@@ -11877,9 +11938,6 @@
       ],
       "Upgrade plan": [
         "Tingkatkan akun"
-      ],
-      "Users": [
-        "Pengguna"
       ],
       "Users and addresses": [
         "Pengguna dan alamat"
@@ -12020,6 +12078,35 @@
       ],
       "Role": [
         "Peran"
+      ]
+    },
+    "Title subscription": {
+      "Actions": [
+        "Tindakan"
+      ],
+      "Duration": [
+        "Durasi"
+      ],
+      "End date": [
+        "Tanggal berakhir"
+      ],
+      "Plan": [
+        "Paket"
+      ],
+      "Start date": [
+        "Tanggal mulai"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "Total": [
+        "Total"
+      ],
+      "Total paid": [
+        "Total yang dibayarkan"
+      ],
+      "Users": [
+        "Pengguna"
       ]
     },
     "Title; create calendar modal": {
