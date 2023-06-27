@@ -106,7 +106,43 @@ describe('Import Keeper CSV', () => {
             totpUri: '',
         });
         expect(loginItemCustomFields.trashed).toEqual(false);
-        expect(loginItemCustomFields.extraFields).toEqual([]);
+        expect(loginItemCustomFields.extraFields).toEqual([
+            {
+                fieldName: 'Hidden Field',
+                type: 'hidden',
+                data: {
+                    content: 'this is custom field: hidden',
+                },
+            },
+            {
+                fieldName: 'Security Question & Answer',
+                type: 'text',
+                data: {
+                    content: 'this is custom field: security question? this is custom field: security answer',
+                },
+            },
+            {
+                fieldName: 'Website Address',
+                type: 'text',
+                data: {
+                    content: 'https://this-is-custom-field-url.example.com',
+                },
+            },
+            {
+                fieldName: 'Phone',
+                type: 'text',
+                data: {
+                    content: 'Mobile US (+1) (555) 555-5555 Ex',
+                },
+            },
+            {
+                fieldName: 'Hidden Field with edited label',
+                type: 'text',
+                data: {
+                    content: 'this is custom field: hidden with edited label',
+                },
+            },
+        ]);
 
         /* login with multiple lines */
         const loginItemMultipleLines = items[4] as ItemImportIntent<'login'>;
@@ -140,7 +176,22 @@ describe('Import Keeper CSV', () => {
             totpUri: '',
         });
         expect(loginItemMultipleUrls.trashed).toEqual(false);
-        expect(loginItemMultipleUrls.extraFields).toEqual([]);
+        expect(loginItemMultipleUrls.extraFields).toEqual([
+            {
+                fieldName: 'Website Address',
+                type: 'text',
+                data: {
+                    content: 'https://second.example.com',
+                },
+            },
+            {
+                fieldName: 'Website Address with edited label',
+                type: 'text',
+                data: {
+                    content: 'https://edited-label.example.com',
+                },
+            },
+        ]);
 
         /* login payment card */
         const loginItemPaymentCard = items[6] as ItemImportIntent<'login'>;
@@ -157,22 +208,32 @@ describe('Import Keeper CSV', () => {
             totpUri: '',
         });
         expect(loginItemPaymentCard.trashed).toEqual(false);
-        expect(loginItemPaymentCard.extraFields).toEqual([]);
+        expect(loginItemPaymentCard.extraFields).toEqual([
+            {
+                fieldName: 'Bank Account',
+                type: 'text',
+                data: {
+                    content: 'Checking | 980',
+                },
+            },
+            {
+                fieldName: 'Hidden Field',
+                type: 'hidden',
+                data: {
+                    content: 'this is custom field: hidden',
+                },
+            },
+        ]);
 
         /* login secure note */
-        const loginItemSecureNote = items[7] as ItemImportIntent<'login'>;
-        expect(loginItemSecureNote.type).toEqual('login');
+        const loginItemSecureNote = items[7] as ItemImportIntent<'note'>;
+        expect(loginItemSecureNote.type).toEqual('note');
         expect(loginItemSecureNote.createTime).toBeUndefined();
         expect(loginItemSecureNote.modifyTime).toBeUndefined();
         expect(loginItemSecureNote.metadata.itemUuid).not.toBeUndefined();
         expect(loginItemSecureNote.metadata.name).toEqual('secure note item');
         expect(loginItemSecureNote.metadata.note).toEqual('foo');
-        expect(loginItemSecureNote.content).toEqual({
-            username: '',
-            password: '',
-            urls: [],
-            totpUri: '',
-        });
+        expect(loginItemSecureNote.content).toEqual({});
         expect(loginItemSecureNote.trashed).toEqual(false);
         expect(loginItemSecureNote.extraFields).toEqual([]);
 
@@ -191,7 +252,15 @@ describe('Import Keeper CSV', () => {
             totpUri: '',
         });
         expect(loginItemSshKey.trashed).toEqual(false);
-        expect(loginItemSshKey.extraFields).toEqual([]);
+        expect(loginItemSshKey.extraFields).toEqual([
+            {
+                fieldName: 'Key Pair',
+                type: 'text',
+                data: {
+                    content: 'privatekey | publickey',
+                },
+            },
+        ]);
     });
 
     it('should correctly parse items from 2nd vault', () => {
