@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { Input } from '@proton/atoms';
 import { SelectChangeEvent } from '@proton/components/components/selectTwo/select';
 import { requestAnimationFrameRateLimiter } from '@proton/components/hooks/useElementRect';
+import { rootFontSize } from '@proton/shared/lib/helpers/dom';
 import clsx from '@proton/utils/clsx';
 
 import { Icon, Label, Option, SelectTwo } from '../../components';
@@ -140,7 +141,9 @@ const CreditCardNewDesign = ({ card, errors, onChange, loading = false, fieldSta
     const { valueWithGaps, bankIcon, niceType, codeName } = formatCreditCardNumber(card.number);
     const { month, year } = card;
 
-    const isNarrow = formRect ? formRect.width < 400 : false;
+    // 25 x 16 = we want eq 400px width to trigger the adaptation being zoom-friendly
+    const narrowWidth = rootFontSize() * 25;
+    const isNarrow = formRect ? formRect.width < narrowWidth : false;
 
     let error = null;
     if (errors.number) {

@@ -4,7 +4,7 @@ import { PaymentMethod, PaymentMethodStatus } from '@proton/components/payments/
 import { queryPaymentMethodStatus, queryPaymentMethods } from '@proton/shared/lib/api/payments';
 import { Api } from '@proton/shared/lib/interfaces';
 
-import { useApi, useAuthentication, useLoading } from '../../hooks';
+import { useLoading } from '../../hooks';
 import { getPaymentMethodOptions } from './getPaymentMethodOptions';
 import { PaymentMethodFlows } from './interface';
 
@@ -18,30 +18,43 @@ async function getPaymentMethodStatus(api: Api): Promise<PaymentMethodStatus> {
 }
 
 interface Props {
+    api: Api;
     amount: number;
     coupon: string;
     flow: PaymentMethodFlows;
     paymentMethodStatus?: PaymentMethodStatus;
+    paymentMethods?: PaymentMethod[];
+    isAuthenticated: boolean;
 }
 
-const useMethods = ({ paymentMethodStatus: maybePaymentMethodsStatus, amount, coupon, flow }: Props) => {
-    const api = useApi();
-    const { UID } = useAuthentication();
-    const isAuthenticated = !!UID;
+const useMethods = ({
+    api,
+    paymentMethodStatus: maybePaymentMethodsStatus,
+    paymentMethods: maybePaymentMethods,
+    amount,
+    coupon,
+    flow,
+    isAuthenticated,
+}: Props) => {
     const [result, setResult] = useState<{
         paymentMethods: PaymentMethod[];
         paymentMethodsStatus: Partial<PaymentMethodStatus>;
     }>({
-        paymentMethods: [],
-        paymentMethodsStatus: {},
+        paymentMethods: maybePaymentMethods || [],
+        paymentMethodsStatus: maybePaymentMethodsStatus || {},
     });
-    const [loading, withLoading] = useLoading();
+    const [loading, withLoading] = useLoading(false);
 
     useEffect(() => {
+        // Already set in state, no need to update
+        if (maybePaymentMethods && maybePaymentMethodsStatus) {
+            return;
+        }
+
         const run = async () => {
             const statusPromise = maybePaymentMethodsStatus ?? getPaymentMethodStatus(api);
 
-            const paymentMethodsPromise = isAuthenticated ? getPaymentMethods(api) : [];
+            const paymentMethodsPromise = maybePaymentMethods ?? (isAuthenticated ? getPaymentMethods(api) : []);
 
             const [paymentMethodsStatus, paymentMethods] = await Promise.all([statusPromise, paymentMethodsPromise]);
 

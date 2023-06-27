@@ -68,7 +68,7 @@ export const getDriveAppFeature = (options?: { family?: boolean }): PlanCardFeat
         tooltip: options?.family
             ? c('new_plans: tooltip')
                   .t`Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.`
-            : c('new_plans: tooltip').t`End-to-end encrypted file storage`,
+            : c('new_plans: tooltip').t`${DRIVE_APP_NAME}: end-to-end encrypted cloud storage`,
         included: true,
         icon: 'brand-proton-drive',
     };

@@ -215,7 +215,7 @@ const ExtraUnsubscribe = ({ message }: Props) => {
     };
 
     const handleSimpleLoginModalOpen = () => {
-        // We need to send a telemetry request when the user clicks on the hide my email button
+        // We need to send a telemetry request when the user clicks on the hide-my-email button
         handleSendTelemetryData(TelemetrySimpleLoginEvents.simplelogin_modal_view, {}, true);
         unsubscribedModalProps.onClose();
         setSimpleLoginModalOpen(true);
@@ -227,7 +227,7 @@ const ExtraUnsubscribe = ({ message }: Props) => {
 
     /*
      * translator:
-     * ${maskMyEmailButton} link to open the Hide My Email modal
+     * ${maskMyEmailButton} link to open the hide-my-email modal
      * Full sentence for reference: "Protect your email from being leaked to mailing lists or spammers with hide-my-email aliases."
      */
     const maskMyEmailButton = (
@@ -243,8 +243,8 @@ const ExtraUnsubscribe = ({ message }: Props) => {
 
     /*
      * translator:
-     * ${maskMyEmailButton} link to open the Hide My Email modal
-     * Full sentence for reference: "Protect your email from being leaked to mailing lists or spammers with Hide My Email."
+     * ${maskMyEmailButton} link to open the hide-my-email modal
+     * Full sentence for reference: "Protect your email from being leaked to mailing lists or spammers with hide-my-email."
      */
     const unsubscribeSLtext = c('Info')
         .jt`Protect your email from being leaked to mailing lists or spammers with ${maskMyEmailButton}.`;

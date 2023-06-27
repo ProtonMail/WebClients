@@ -1,4 +1,5 @@
 import { ThemeColor } from '@proton/colors';
+import { APP_NAMES } from '@proton/shared/lib/constants';
 import { Address, Organization, Subscription, UserModel } from '@proton/shared/lib/interfaces';
 
 import { getAccountAppRoutes } from '../containers/account/routes';
@@ -10,6 +11,7 @@ import { getPassAppRoutes } from '../containers/pass/routes';
 import { getVpnAppRoutes } from '../containers/vpn/routes';
 
 interface Arguments {
+    app: APP_NAMES;
     user: UserModel;
     addresses: Address[];
     subscription: Subscription;
@@ -28,6 +30,7 @@ interface Arguments {
 }
 
 export const getRoutes = ({
+    app,
     user,
     organization,
     addresses,
@@ -46,6 +49,7 @@ export const getRoutes = ({
 }: Arguments) => {
     return {
         account: getAccountAppRoutes({
+            app,
             user,
             subscription,
             isDataRecoveryAvailable,

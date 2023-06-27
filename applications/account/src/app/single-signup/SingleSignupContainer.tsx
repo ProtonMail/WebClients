@@ -24,6 +24,7 @@ import {
     APP_NAMES,
     BRAND_NAME,
     CLIENT_TYPES,
+    CYCLE,
     DEFAULT_CURRENCY,
     PLANS,
     VPN_APP_NAME,
@@ -59,7 +60,7 @@ export const defaultSignupModel: SignupModel = {
     subscriptionData: {
         skipUpsell: false,
         currency: 'EUR',
-        cycle: 12,
+        cycle: CYCLE.YEARLY,
         planIDs: {},
         checkResult: getFreeCheckResult(),
     },
@@ -116,11 +117,7 @@ const SingleSignupContainer = ({ loader, onLogin, productParam }: Props) => {
     const [loadingDependencies, withLoadingDependencies] = useLoading(true);
 
     const [signupParameters] = useState(() => {
-        const result = getSignupSearchParams(location.search);
-        return {
-            ...result,
-            preSelectedPlan: result.preSelectedPlan || 'vpn2022',
-        };
+        return getSignupSearchParams(new URLSearchParams(location.search), { preSelectedPlan: PLANS.VPN });
     });
 
     const [model, setModel] = useState<SignupModel>(defaultSignupModel);
@@ -242,9 +239,9 @@ const SingleSignupContainer = ({ loader, onLogin, productParam }: Props) => {
 
     return (
         <>
-            <link rel="preload" href={onboardingVPNWelcome} as="image" />
-            <link rel="preload" href={onboardingVPNWelcome2} as="image" />
-            <link rel="preload" href={vpnUpsellIllustration} as="image" />
+            <link rel="prefetch" href={onboardingVPNWelcome} as="image" />
+            <link rel="prefetch" href={onboardingVPNWelcome2} as="image" />
+            <link rel="prefetch" href={vpnUpsellIllustration} as="image" />
             <UnAuthenticated>
                 {step === Steps.One && (
                     <Step1

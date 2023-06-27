@@ -101,6 +101,7 @@ const PaymentSelector = ({ currency, amount, onChangeCurrency, onChangeAmount, m
                 </div>
                 <div className="flex-item-fluid mb-2 md:mb-0">
                     <CurrencySelector
+                        mode="select"
                         className="w100"
                         id="id_desc_currency"
                         currency={currency}

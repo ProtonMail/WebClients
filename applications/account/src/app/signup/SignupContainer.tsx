@@ -130,12 +130,6 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
     const normalApi = useApi();
     const history = useHistory();
 
-    const passSettingsFeature = useFeature<boolean>(FeatureCode.PassSettings);
-    const isPassSettingsEnabled = passSettingsFeature.feature?.Value === true;
-
-    const passPlusPlanFeature = useFeature<boolean>(FeatureCode.PassPlusPlan);
-    const isPassPlusEnabled = passPlusPlanFeature.feature?.Value === true;
-
     const ktFeature = useFeature<KT_FF>(FeatureCode.KeyTransparencyWEB);
     // Override the app to always be mail in trial or refer-a-friend signup
     if (isMailTrial || isMailRefer) {
@@ -143,7 +137,7 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
         toAppName = MAIL_APP_NAME;
     }
     const [signupParameters] = useState(() => {
-        const params = getSignupSearchParams(location.search);
+        const params = getSignupSearchParams(new URLSearchParams(location.search));
         if (isMailTrial) {
             params.referrer = REFERRER_CODE_MAIL_TRIAL;
         }
@@ -483,10 +477,7 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
             return { upsellPlanName: PLANS.DRIVE };
         }
 
-        if (
-            isPassPlusEnabled &&
-            (toApp === APPS.PROTONPASS || toApp === APPS.PROTONEXTENSION || toApp === APPS.PROTONPASSBROWSEREXTENSION)
-        ) {
+        if (toApp === APPS.PROTONPASS || toApp === APPS.PROTONEXTENSION || toApp === APPS.PROTONPASSBROWSEREXTENSION) {
             return { upsellPlanName: PLANS.PASS_PLUS };
         }
 
@@ -611,6 +602,7 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
                             ...model.subscriptionData,
                         };
                         const cache: SignupCacheResult = {
+                            type: 'signup',
                             appName: APP_NAME,
                             appIntent: toApp
                                 ? {
@@ -745,7 +737,6 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
             )}
             {step === Upsell && (
                 <UpsellStep
-                    isPassPlusEnabled={isPassPlusEnabled}
                     experiment={multipleUpsellExperiment}
                     onBack={handleBackStep}
                     currency={model.subscriptionData.currency}
@@ -788,6 +779,7 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
             )}
             {step === Payment && model.paymentMethodStatus && (
                 <PaymentStep
+                    api={normalApi}
                     onBack={handleBackStep}
                     paymentMethodStatus={model.paymentMethodStatus}
                     plans={model.plans}
@@ -964,7 +956,6 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
             )}
             {step === Explore && (
                 <ExploreStep
-                    isPassSettingsEnabled={isPassSettingsEnabled}
                     onExplore={async (app) => {
                         try {
                             if (!cache) {

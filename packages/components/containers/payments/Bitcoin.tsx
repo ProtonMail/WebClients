@@ -13,10 +13,10 @@ import {
 } from '@proton/shared/lib/api/payments';
 import { MAX_BITCOIN_AMOUNT, MIN_BITCOIN_AMOUNT } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
-import { Currency } from '@proton/shared/lib/interfaces';
+import { Api, Currency } from '@proton/shared/lib/interfaces';
 
 import { Alert, Bordered, Loader, Price } from '../../components';
-import { useApi, useLoading } from '../../hooks';
+import { useLoading } from '../../hooks';
 import { PaymentMethodFlows } from '../paymentMethods/interface';
 import BitcoinDetails from './BitcoinDetails';
 import BitcoinQRCode, { OwnProps as BitcoinQRCodeProps } from './BitcoinQRCode';
@@ -25,25 +25,27 @@ function pause() {
     return wait(10000);
 }
 
-const useCheckStatus = (token: string | null, onTokenValidated: (token: string) => void, enabled: boolean) => {
+const useCheckStatus = (
+    api: Api,
+    token: string | null,
+    onTokenValidated: (token: string) => void,
+    enabled: boolean
+) => {
     const [paymentValidated, setPaymentValidated] = useState(false);
-
-    const api = useApi();
-    const silentApi = getSilentApi(api);
-
-    const validate = async (token: string): Promise<boolean> => {
-        try {
-            const { Status } = await silentApi<any>(getTokenStatus(token));
-            if (Status === PAYMENT_TOKEN_STATUS.STATUS_CHARGEABLE) {
-                return true;
-            }
-        } catch {}
-
-        return false;
-    };
 
     useEffect(() => {
         let active = enabled;
+
+        const validate = async (token: string): Promise<boolean> => {
+            try {
+                const { Status } = await api<any>(getTokenStatus(token));
+                if (Status === PAYMENT_TOKEN_STATUS.STATUS_CHARGEABLE) {
+                    return true;
+                }
+            } catch {}
+
+            return false;
+        };
 
         async function run() {
             if (!token) {
@@ -81,6 +83,7 @@ export interface ValidatedBitcoinToken extends TokenPaymentMethod {
 }
 
 interface Props {
+    api: Api;
     amount: number;
     currency: Currency;
     type: PaymentMethodFlows;
@@ -89,14 +92,22 @@ interface Props {
     enableValidation?: boolean;
 }
 
-const Bitcoin = ({ amount, currency, type, onTokenValidated, awaitingPayment, enableValidation = false }: Props) => {
-    const api = useApi();
+const Bitcoin = ({
+    api,
+    amount,
+    currency,
+    type,
+    onTokenValidated,
+    awaitingPayment,
+    enableValidation = false,
+}: Props) => {
     const silentApi = getSilentApi(api);
     const [loading, withLoading] = useLoading();
     const [error, setError] = useState(false);
     const [model, setModel] = useState({ amountBitcoin: 0, address: '', token: null });
 
     const { paymentValidated } = useCheckStatus(
+        silentApi,
         model.token,
         (token) =>
             onTokenValidated?.({

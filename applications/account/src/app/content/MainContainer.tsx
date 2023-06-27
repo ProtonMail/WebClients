@@ -33,7 +33,9 @@ import { DEFAULT_APP, getAppFromPathnameSafe, getSlugFromApp } from '@proton/sha
 import { stripLocalBasenameFromPathname } from '@proton/shared/lib/authentication/pathnameHelper';
 import { APPS, SETUP_ADDRESS_PATH } from '@proton/shared/lib/constants';
 import { stripLeadingAndTrailingSlash } from '@proton/shared/lib/helpers/string';
+import { UserModel } from '@proton/shared/lib/interfaces';
 import { getRequiresAddressSetup } from '@proton/shared/lib/keys';
+import { hasPaidPass } from '@proton/shared/lib/user/helpers';
 
 import AccountSettingsRouter from '../containers/account/AccountSettingsRouter';
 import OrganizationSettingsRouter from '../containers/organization/OrganizationSettingsRouter';
@@ -69,6 +71,17 @@ const getRoutePaths = (prefix: string, sectionConfigs: SectionConfig[]) => {
     return sectionConfigs.map((section) => getSectionPath(prefix, section));
 };
 
+const getDefaultPassRedirect = (
+    user: UserModel,
+    accountRoutes: ReturnType<typeof getRoutes>['account'],
+    passRoutes: ReturnType<typeof getRoutes>['pass']
+) => {
+    if (hasPaidPass(user) || !user.canPay || !getIsSectionAvailable(accountRoutes.routes.dashboard)) {
+        return passRoutes.routes.downloads.to;
+    }
+    return accountRoutes.routes.dashboard.to;
+};
+
 const getDefaultRedirect = (accountRoutes: ReturnType<typeof getRoutes>['account']) => {
     if (getIsSectionAvailable(accountRoutes.routes.dashboard)) {
         return accountRoutes.routes.dashboard.to;
@@ -98,8 +111,6 @@ const MainContainer = () => {
         FeatureCode.CalendarSharingEnabled,
         FeatureCode.HolidaysCalendars,
         FeatureCode.EasySwitch,
-        FeatureCode.PassSettings,
-        FeatureCode.PassPlusPlan,
         FeatureCode.OrgSpamBlockList,
         FeatureCode.ProtonSentinel,
         FeatureCode.AccessibilitySettings,
@@ -111,8 +122,6 @@ const MainContainer = () => {
     const isSpyTrackerEnabled = getFeature(FeatureCode.SpyTrackerProtection).feature?.Value === true;
     const isSmtpTokenEnabled = getFeature(FeatureCode.SmtpToken).feature?.Value === true;
     const isGmailSyncEnabled = getFeature(FeatureCode.EasySwitch).feature?.Value.GoogleMailSync === true;
-    const isPassSettingsEnabled = getFeature(FeatureCode.PassSettings).feature?.Value === true;
-    const isPassPlusEnabled = getFeature(FeatureCode.PassPlusPlan).feature?.Value === true;
     const isOrgSpamBlockListEnabled = getFeature(FeatureCode.OrgSpamBlockList).feature?.Value === true;
     const isProtonSentinelFeatureEnabled = getFeature(FeatureCode.ProtonSentinel).feature?.Value === true;
     const isAccessibilitySettingsEnabled = getFeature(FeatureCode.AccessibilitySettings).feature?.Value === true;
@@ -122,7 +131,11 @@ const MainContainer = () => {
     const loadingFeatures = featuresFlags.some(({ loading }) => loading) || loadingDataRecovery;
     const recoveryNotification = useRecoveryNotification(false);
 
+    const app = getAppFromPathnameSafe(location.pathname) || DEFAULT_APP;
+    const appSlug = getSlugFromApp(app);
+
     const routes = getRoutes({
+        app,
         user,
         addresses,
         organization,
@@ -145,9 +158,6 @@ const MainContainer = () => {
     }, [location.pathname, location.hash]);
 
     useDeviceRecovery();
-
-    const app = getAppFromPathnameSafe(location.pathname) || DEFAULT_APP;
-    const appSlug = getSlugFromApp(app);
 
     /*
      * There's no logical app to return/go to from VPN settings since the
@@ -215,11 +225,14 @@ const MainContainer = () => {
             return <PrivateMainAreaLoading />;
         }
 
-        if (app === APPS.PROTONPASS && !isPassSettingsEnabled) {
-            return <Redirect to={`/${getSlugFromApp(DEFAULT_APP)}${getDefaultRedirect(routes.account)}`} />;
-        }
+        const path = (() => {
+            if (app === APPS.PROTONPASS) {
+                return getDefaultPassRedirect(user, routes.account, routes.pass);
+            }
+            return getDefaultRedirect(routes.account);
+        })();
 
-        return <Redirect to={`/${appSlug}${getDefaultRedirect(routes.account)}`} />;
+        return <Redirect to={`/${appSlug}${path}`} />;
     })();
 
     if (getRequiresAddressSetup(app, user)) {
@@ -229,11 +242,10 @@ const MainContainer = () => {
 
     return (
         <PrivateAppContainer top={top} header={header} sidebar={sidebar}>
-            <AccountStartupModals />
+            <AccountStartupModals app={app} />
             <Switch>
                 <Route path={anyAccountAppRoute}>
                     <AccountSettingsRouter
-                        isPassPlusEnabled={isPassPlusEnabled}
                         app={app}
                         path={prefixPath}
                         accountAppRoutes={routes.account}
@@ -277,13 +289,11 @@ const MainContainer = () => {
                         <DriveSettingsRouter driveAppRoutes={routes.drive} redirect={redirect} />
                     </Suspense>
                 </Route>
-                {isPassSettingsEnabled && (
-                    <Route path={`/${passSlug}`}>
-                        <Suspense fallback={<PrivateMainAreaLoading />}>
-                            <PassSettingsRouter passAppRoutes={routes.pass} redirect={redirect} />
-                        </Suspense>
-                    </Route>
-                )}
+                <Route path={`/${passSlug}`}>
+                    <Suspense fallback={<PrivateMainAreaLoading />}>
+                        <PassSettingsRouter passAppRoutes={routes.pass} redirect={redirect} />
+                    </Suspense>
+                </Route>
                 {redirect}
             </Switch>
         </PrivateAppContainer>

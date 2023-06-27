@@ -91,7 +91,6 @@ interface Props {
     plans: Plan[];
     user: UserModel;
     openSubscriptionModal: OpenSubscriptionModalCallback;
-    isPassPlusEnabled: boolean;
 }
 
 const getHighSpeedVPN = (connections: number) => {
@@ -114,7 +113,7 @@ const getUpgradeText = (planName: string) => {
     return c('new_plans: Title').t`Upgrade to ${planName}`;
 };
 
-const UpsellPanel = ({ currency, subscription, plans, user, openSubscriptionModal, app, isPassPlusEnabled }: Props) => {
+const UpsellPanel = ({ currency, subscription, plans, user, openSubscriptionModal, app }: Props) => {
     if (!user.canPay || !subscription) {
         return null;
     }
@@ -244,7 +243,7 @@ const UpsellPanel = ({ currency, subscription, plans, user, openSubscriptionModa
 
     const passPlan = plans.find(({ Name }) => Name === PLANS.PASS_PLUS);
     // Pass upsell
-    if (isPassPlusEnabled && user.isFree && app === APPS.PROTONPASS && passPlan) {
+    if (user.isFree && app === APPS.PROTONPASS && passPlan) {
         const plan = passPlan;
         const { features, description } = getPassPlan(plan);
 
@@ -274,6 +273,14 @@ const UpsellPanel = ({ currency, subscription, plans, user, openSubscriptionModa
             />
         );
     }
+
+    const passItems: Item[] = [
+        {
+            icon: 'pass-all-vaults',
+            text: c('new_plans: Upsell attribute')
+                .t`Secure your passwords and identity with an open-source and encrypted password manager.`,
+        },
+    ];
 
     const bundlePlan = plans.find(({ Name }) => Name === PLANS.BUNDLE);
     const bundleStorage = humanSize(bundlePlan?.MaxSpace ?? 500, undefined, undefined, 0);
@@ -340,6 +347,7 @@ const UpsellPanel = ({ currency, subscription, plans, user, openSubscriptionModa
                           text: c('new_plans: Upsell attribute').t`Access advanced VPN features`,
                       },
                   ] as const)),
+            ...passItems,
         ];
         return (
             <UpsellBox
@@ -394,6 +402,7 @@ const UpsellPanel = ({ currency, subscription, plans, user, openSubscriptionModa
                 icon: 'checkmark-circle',
                 text: c('new_plans: Upsell attribute').t`Access advanced VPN features`,
             },
+            ...passItems,
         ];
         return (
             <UpsellBox

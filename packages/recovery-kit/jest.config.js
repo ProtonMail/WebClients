@@ -1,7 +1,7 @@
 module.exports = {
     setupFilesAfterEnv: ['./jest.setup.js'],
     preset: 'ts-jest',
-    testRegex: 'tests/.*\\.test\\.ts$',
+    testRegex: '.*\\.test\\.ts$',
     clearMocks: true,
     collectCoverage: true,
     coverageReporters: ['text', 'lcov', 'cobertura'],
