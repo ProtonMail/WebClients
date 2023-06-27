@@ -7,6 +7,7 @@ import { ChecklistId } from './Checklist';
 export enum SETTINGS_STATUS {
     UNVERIFIED = 0,
     VERIFIED = 1,
+    INVALID = 2,
 }
 
 export enum SETTINGS_PASSWORD_MODE {
