@@ -541,8 +541,8 @@ const Step1 = ({
                                         payment,
                                     });
                                 }}
-                                onValidate={async () => {
-                                    return (await accountDetailsRef.current?.validate()) ?? true;
+                                onValidate={() => {
+                                    return accountDetailsRef.current?.validate() ?? true;
                                 }}
                                 withLoadingSignup={withLoadingSignup}
                             />

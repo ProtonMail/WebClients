@@ -39,7 +39,7 @@ interface Props {
     currency: Currency;
     type: PAYPAL_PAYMENT_METHOD;
     onPay: (data: OnPayResult) => void;
-    onValidate?: () => Promise<boolean>;
+    onValidate?: () => boolean;
     onError?: () => void;
     /**
      * This lifecycle hook is called before the payment token is fetched.
@@ -133,7 +133,7 @@ const usePayPal = ({
             return tokenPromise;
         },
         onVerification: async (model?: Model) => {
-            if (!((await onValidate?.()) ?? true)) {
+            if (!(onValidate?.() ?? true)) {
                 return;
             }
             return withLoadingVerification(onVerification(model)).catch((e) => {
