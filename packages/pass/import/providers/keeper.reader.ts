@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import type { ItemImportIntent, Maybe } from '@proton/pass/types';
+import type { ItemExtraField, ItemImportIntent, Maybe } from '@proton/pass/types';
 import { truthy } from '@proton/pass/utils/fp';
 import { logger } from '@proton/pass/utils/logger';
 import { uniqueId } from '@proton/pass/utils/string';
@@ -19,6 +19,24 @@ const extractTOTP = (item: KeeperItem): string => {
      * totp per item */
     const indexBeforeTOTP = item.findIndex((element) => element === 'TFC:Keeper');
     return indexBeforeTOTP > 0 ? item[indexBeforeTOTP + 1] : '';
+};
+
+const extractExtraFields = (item: KeeperItem): ItemExtraField[] => {
+    const customFields: ItemExtraField[] = [];
+    if (item.length > 7) {
+        for (let i = 7; i < item.length; i += 2) {
+            // skip totp field because it was already added in extractTOTP above
+            if (item[i] == 'TFC:Keeper') continue;
+            customFields.push({
+                fieldName: item[i],
+                type: item[i] === 'Hidden Field' ? 'hidden' : 'text',
+                data: {
+                    content: item[i + 1],
+                },
+            });
+        }
+    }
+    return customFields;
 };
 
 /* item type is not defined in the CSV, so we import
@@ -63,6 +81,7 @@ export const readKeeperData = async (data: string): Promise<ImportPayload> => {
                                 password: item[3],
                                 urls: [item[4]],
                                 totp: extractTOTP(item),
+                                extraFields: extractExtraFields(item),
                             });
                         })
                         .filter(truthy),
