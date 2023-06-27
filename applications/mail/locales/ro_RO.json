@@ -1096,10 +1096,10 @@
         "Actualizare frază de recuperare"
       ],
       "Upgrade": [
-        "Modernizare"
+        "Modificare"
       ],
       "Upgrade now": [
-        "Modernizare"
+        "Modificare"
       ],
       "Upload picture": [
         "Încărcare imagine"
@@ -3338,12 +3338,6 @@
         "Remediați conflictele evidențiate pentru a continua.",
         "Remediați conflictele evidențiate pentru a continua."
       ],
-      "Please repeat the password": [
-        "Reintroduceți parola."
-      ],
-      "Please set a password": [
-        "Setați o parolă."
-      ],
       "Port is required": [
         "Portul este obligatoriu"
       ],
@@ -4627,7 +4621,7 @@
         "${ addressCount } de adrese de e-mail"
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
-        "${ appName } are nevoie de permisiunea dvs. pentru ${ enableDesktopNotifications }."
+        "${ appName } necesită permisiunea pentru ${ enableDesktopNotifications }."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "Un calendar nou",
@@ -5116,7 +5110,7 @@
         "Introduceți codul din aplicația Authenticator."
       ],
       "Enter the credentials of the email account you want to import from.": [
-        "Introduceți datele de conectare ale contului de e-mail din care doriți să importați."
+        "Introduceți datele de conectare a contului de e-mail din care doriți să importați."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Introduceți codul de verificare care a fost trimis la ${ destinationText }."
@@ -5564,7 +5558,7 @@
         "Trimiterea mesajelor de la o adresă @pm.me este o funcție cu plată. Mesajul va fi trimis de la adresa implicită ${ email }."
       ],
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
-        "Trimis cu <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> e-mail securizat."
+        "E-mail securizat trimis cu <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Serverele nu sunt accesibile. Mai reîncercați peste câteva minute."
@@ -5604,6 +5598,9 @@
       ],
       "Subject: ": [
         "Subiect: "
+      ],
+      "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
+        "Abonamentul se încheie: reactivați-l până la ${ byDate } pentru a vă păstra beneficiile planului ${ planName }. ${ reactivateLink }"
       ],
       "support team": [
         "echipa de asistență"
@@ -6012,7 +6009,7 @@
         "Ați scris „${ attachmentsFoundKeyword }”, dar nu a fost adăugat niciun atașament. Doriți să trimiteți totuși mesajul?"
       ],
       "You've reached the maximum number of addresses in the contact group(s):": [
-        "Ați atins numărul maxim de adrese din grupul de contacte."
+        "Ați atins numărul maxim de adrese din grupul de contacte:"
       ],
       "You've reached the maximum number of addresses in the contact group.": [
         "Ați atins numărul maxim de adrese din grupul de contacte."
@@ -6982,6 +6979,9 @@
       "Re-enable the address linked to this calendar to update your invitation.": [
         "Reactivați adresa asociată acestui calendar pentru a vă actualiza invitația."
       ],
+      "Reactivate now": [
+        "Reactivare"
+      ],
       "Request an invite": [
         "Solicitați o invitație"
       ],
@@ -7010,7 +7010,7 @@
         "Gunoi"
       ],
       "Upgrade account": [
-        "Modernizare cont"
+        "Modificare cont"
       ],
       "What’s this?": [
         "Ce este asta?"
@@ -7343,7 +7343,7 @@
     },
     "new_plans: Action": {
       "Upgrade now": [
-        "Modernizare"
+        "Modificare"
       ]
     },
     "new_plans: action": {
@@ -8066,7 +8066,7 @@
         "Accesare planuri abonamente"
       ],
       "Upgrade": [
-        "Modernizare"
+        "Modificare"
       ]
     },
     "specialoffer: Offers": {

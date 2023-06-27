@@ -3318,12 +3318,6 @@
         "Arregla el conflicto resaltado para continuar.",
         "Arregla los conflictos resaltados para continuar."
       ],
-      "Please repeat the password": [
-        "Repite la contraseña."
-      ],
-      "Please set a password": [
-        "Establece una contraseña."
-      ],
       "Port is required": [
         "Puerto requerido"
       ],
@@ -5514,6 +5508,9 @@
       "Subject: ": [
         "Asunto: "
       ],
+      "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
+        "Tu suscripción terminará pronto: reactívala antes de ${ byDate } para mantener los beneficios de ${ planName }. ${ reactivateLink }"
+      ],
       "support team": [
         "equipo de soporte"
       ],
@@ -6875,6 +6872,9 @@
       ],
       "Re-enable the address linked to this calendar to update your invitation.": [
         "Rehabilita la dirección vinculada a este calendario para actualizar tu invitación."
+      ],
+      "Reactivate now": [
+        "Reactivar"
       ],
       "Request an invite": [
         "Solicitar una invitación"
@@ -8373,6 +8373,70 @@
     "Success notification when user send feedback": {
       "Feedback sent": [
         "Comentarios enviados"
+      ]
+    },
+    "summer2023: Billing cycle option": {
+      "1 year": [
+        "1 año"
+      ],
+      "2 years": [
+        "2 años"
+      ]
+    },
+    "summer2023: Deal details": {
+      "Premium Drive": [
+        "Drive premium"
+      ],
+      "Premium Mail and Calendar": [
+        "Mail y Calendar premium"
+      ],
+      "Premium Password Manager": [
+        "Administrador de contraseñas premium"
+      ]
+    },
+    "summer2023: Describe Proton Pass": {
+      "Securely store your passwords and autofill them on websites. Includes unlimited passwords, autofill, password generator, and more.": [
+        "Almacena tus contraseñas e introdúcelas automáticamente en los sitios web con toda seguridad. Incluye contraseñas ilimitadas, introducción automática, generador de contraseñas, etc."
+      ]
+    },
+    "summer2023: Short tool name to present Proton Pass": {
+      "Password manager": [
+        "Gestor de contraseñas"
+      ]
+    },
+    "summer2023: Tooltip": {
+      "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
+        "Crea credenciales seguras de inicio de sesión en todos tus dispositivos. Incluye alias ilimitados, 20 cámaras acorazadas, 2FA integrado, introducción automática de datos de tarjeta de pago, etc."
+      ],
+      "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "Incluye 2950 servidores en más de 65 países. Conecta hasta 10 dispositivos, accede a servicios de streaming de todo el mundo, dispón de la protección de bloqueadores de malware y anuncios, etc."
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Incluye compatibilidad con 1 dominio de correo electrónico personalizado, 10 direcciones de correo electrónico, 10 alias de hide-my-email, posibilidad de compartir calendario, etc."
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "Protege tus archivos con el almacenamiento cifrado en la nube. Incluye historial de versiones, posibilidad de compartir archivos cifrados, etc."
+      ]
+    },
+    "summer2023:Footer": {
+      "*Your subscription will automatically renew at the standard discounted rate at the end of your billing cycle.": [
+        "* Tu suscripción se renovará automáticamente con el mismo precio reducido al término del ciclo de facturación."
+      ],
+      "Discounts are based on the standard monthly pricing. This offer is only available to first-time subscribers.": [
+        "Los descuentos se calculan a partir de las tarifas mensuales estándar. Esta promoción solo está disponible para nuevos suscriptores."
+      ]
+    },
+    "summer2023:Info": {
+      "For a limited time, get the best ${ BRAND_NAME } has to offer at an exclusive discount.": [
+        "Aprovecha los mejores productos de ${ BRAND_NAME } a precios irresistibles por tiempo limitado."
+      ],
+      "We’re celebrating the nine-year anniversary of our crowdfunding!": [
+        "¡Estamos celebrando el noveno aniversario de nuestra campaña de micromecenazgo!"
+      ]
+    },
+    "summer2023:Offer title": {
+      "${ BRAND_NAME } Anniversary Sale": [
+        "Rebajas de aniversario de ${ BRAND_NAME }"
       ]
     },
     "Table header": {
