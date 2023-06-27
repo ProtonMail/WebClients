@@ -41,6 +41,9 @@
       "Cancel": [
         "Batal"
       ],
+      "Cancel subscription": [
+        "Batalkan langganan"
+      ],
       "Change mailbox password": [
         "Ubah kata sandi kotak surat"
       ],
@@ -190,6 +193,9 @@
       ],
       "Increase": [
         "Tingkatkan"
+      ],
+      "Keep my ${ vpnPlanNameShort } subscription": [
+        "Pertahankan langganan ${ vpnPlanNameShort } saya"
       ],
       "Load more": [
         "Muat lebih banyak"
@@ -371,6 +377,9 @@
       "Upgrade now": [
         "Tingkatkan sekarang"
       ],
+      "Use ${ label } theme": [
+        "Gunakan tema ${ label }"
+      ],
       "Use a different card": [
         "Gunakan kartu lain"
       ],
@@ -426,6 +435,14 @@
       ],
       "Try free for 30 days": [
         "Coba gratis selama 30 hari"
+      ]
+    },
+    "Action subscription": {
+      "Manage": [
+        "Kelola"
+      ],
+      "Reactivate": [
+        "Aktifkan kembali"
       ]
     },
     "Addon": {
@@ -2061,6 +2078,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } memerlukan izin Anda untuk ${ enableDesktopNotifications }."
       ],
+      "${ autoRenewal } your subscription will renew automatically on ${ renewalTime }.": [
+        "${ autoRenewal } langganan Anda akan diperpanjang otomatis pada ${ renewalTime }."
+      ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Apabila Anda melanjutkan, Anda akan kehilangan akses menuju seluruh data yang terenkripsi pada akun Anda."
       ],
@@ -2139,9 +2159,6 @@
       "Additional options": [
         "Pengaturan tambahan"
       ],
-      "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
-        "Usai melakukan pembayaran dengan Bitcoin, harap ikuti instruksi di bawah untuk meningkatkan."
-      ],
       "All ${ BRAND_NAME } apps and their premium features": [
         "Seluruh aplikasi ${ BRAND_NAME } dan berbagai fitur premium di dalamnya"
       ],
@@ -2150,6 +2167,9 @@
       ],
       "American Express SafeKey logo": [
         "Logo American Express Safekey"
+      ],
+      "Amount above maximum (${ amount }).": [
+        "Nominal transaksi melebihi batas maksimum (${ amount })."
       ],
       "Amount below minimum (${ amount }).": [
         "Di bawah jumlah minimum (${ amount })."
@@ -2165,6 +2185,9 @@
       ],
       "Attention required": [
         "Diperlukan perhatian"
+      ],
+      "Auto-renewal: ": [
+        "Perpanjangan otomatis: "
       ],
       "Balance from your previous subscription": [
         "Saldo dari langganan terakhir Anda"
@@ -2228,6 +2251,9 @@
       ],
       "Custom email domains": [
         "Domain email khusus"
+      ],
+      "Customize the look and feel of ${ BRAND_NAME } applications.": [
+        "Sesuaikan tampilan dan nuansa aplikasi ${ BRAND_NAME } Anda."
       ],
       "Discover ProtectBuy logo": [
         "Logo Discover ProtectBuy"
@@ -2337,6 +2363,9 @@
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Apabila Anda merasa ini adalah sebuah kesalahan, silakan hubungi kami ${ contactLink }."
       ],
+      "If you cancel, your ${ vpnPlanName } subscription will not be renewed when it expires on ${ expiryDate }.": [
+        "Apabila Anda membatalkan langganan, paket ${ vpnPlanName } Anda tidak akan diperbarui ketika langganan ini berakhir pada tanggal ${ expiryDate }"
+      ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Apabila Anda tidak menemukan email yang bersangkutan di dalam kotak masuk, mohon periksa folder spam Anda."
       ],
@@ -2363,6 +2392,9 @@
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Penting: Pastikan Anda menyimpan kode pemulihan. Jika tidak, Anda dapat kehilangan akses ke akun Anda secara permanen jika kehilangan perangkat autentikasi dua faktor Anda."
+      ],
+      "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
+        "Pada langkah selanjutnya, Anda dapat mengirimkan deposit menggunakan alamat Bitcoin."
       ],
       "Install a Country configuration file to connect to a random server in the country of your choice.": [
         "Pasang berkas konfigurasi negara untuk tersambung ke server secara acak di negara pilihan Anda."
@@ -2562,6 +2594,12 @@
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
         "Kuota penyimpanan diperuntukkan bagi ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, dan ${ DRIVE_APP_NAME } secara bersamaan."
       ],
+      "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
+        "Kirimkan deposit menggunakan alamat berikut atau pindai kode QR. Deposit Anda akan tercermin di akun setelah konfirmasi."
+      ],
+      "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
+        "Langganan akan segera berakhir: Aktifkan kembali paket Anda sebelum tanggal ${ byDate } untuk tetap memperoleh manfaat ${ planName } Anda. ${ reactivateLink }"
+      ],
       "Support for 1 custom email domain": [
         "Dukungan 1 alamat email dengan domain khusus"
       ],
@@ -2598,6 +2636,9 @@
       "This can take a few seconds or a few minutes depending on your device": [
         "Proses ini dapat memerlukan waktu beberapa detik atau menit tergantung kemampuan perangkat Anda"
       ],
+      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
+        "Tindakan ini akan membatalkan langganan berbayar Anda saat ini dan Anda akan kehilangan manfaat loyalitas yang telah Anda kumpulkan."
+      ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
         "Tindakan ini akan membatalkan langganan berbayar yang Anda miliki saat ini beserta seluruh keuntungan loyalitas yang telah Anda kumpulkan. Saldo yang tersisa dari langganan Anda akan dikembalikan dalam bentuk kredit akun."
       ],
@@ -2618,6 +2659,9 @@
       ],
       "To ${ planName }": [
         "Di ${ planName }"
+      ],
+      "To complete your payment, please send ${ btcAmountBold } to the address below.": [
+        "Untuk menyelesaikan pembayaran Anda, silakan kirim ${ btcAmountBold } ke alamat di bawah ini."
       ],
       "to continue to ${ toAppName }": [
         "untuk melanjutkan ke ${ toAppName }"
@@ -2835,6 +2879,9 @@
       "You will be redirected to the VPN download page": [
         "Anda akan dialihkan ke laman pengunduhan VPN"
       ],
+      "You will lose access to ${ vpnPlanNameShort } servers and features on this date.": [
+        "Anda akan kehilangan akses ke server dan fitur ${ vpnPlanNameShort } pada tanggal ini."
+      ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Anda akan butuh alamat ${ BRAND_NAME } untuk dapat menggunakan ${ MAIL_APP_NAME } dan ${ CALENDAR_APP_NAME }"
       ],
@@ -2900,6 +2947,11 @@
     "Info message for custom invoice modal": {
       "Add your name (or company name) and address to your invoices.": [
         "Masukkan nama dan alamat Anda (atau perusahaan Anda) ke tagihan."
+      ]
+    },
+    "Info subscription": {
+      "You can prevent expiry by reactivating the subscription": [
+        "Anda dapat mencegah paket Anda kedaluwarsa dengan mengaktifkan kembali langganan"
       ]
     },
     "Info when deleting payment method": {
@@ -3010,11 +3062,11 @@
       "Browser version": [
         "Versi peramban"
       ],
-      "BTC address:": [
-        "Alamat BTC:"
+      "BTC address": [
+        "Alamat BTC"
       ],
-      "BTC amount:": [
-        "Jumlah BTC:"
+      "BTC amount": [
+        "Jumlah BTC"
       ],
       "Card holder": [
         "Pemegang kartu"
@@ -3244,6 +3296,9 @@
       "Subscription options": [
         "Pilihan langganan"
       ],
+      "Synchronize with system": [
+        "Sinkronkan dengan sistem"
+      ],
       "System information": [
         "Informasi sistem"
       ],
@@ -3347,6 +3402,9 @@
       "Forgot username?": [
         "Lupa nama pengguna?"
       ],
+      "How to pay with Bitcoin?": [
+        "Bagaimana cara membayar dengan Bitcoin?"
+      ],
       "Learn more": [
         "Lebih lanjut"
       ],
@@ -3361,6 +3419,9 @@
       ],
       "Privacy policy": [
         "Kebijakan privasi"
+      ],
+      "Reactivate now": [
+        "Aktifkan kembali"
       ],
       "Request an invite": [
         "Minta undangan"
@@ -4757,6 +4818,9 @@
       "Active": [
         "Aktif"
       ],
+      "Expiring": [
+        "Segera berakhir"
+      ],
       "Upcoming": [
         "Akan datang"
       ]
@@ -4819,8 +4883,14 @@
       "Phone number updated": [
         "Nomor telepon telah diperbarui"
       ],
+      "Preference saved": [
+        "Preferensi disimpan"
+      ],
       "Verification successful": [
         "Verifikasi berhasil"
+      ],
+      "You have successfully cancelled your subscription.": [
+        "Anda telah berhasil membatalkan langganan Anda."
       ],
       "You have successfully unsubscribed": [
         "Anda berhasil berhenti berlangganan"
@@ -4890,6 +4960,9 @@
       "${ VPN_APP_NAME } clients": [
         "Klien ${ VPN_APP_NAME }"
       ],
+      "(active)": [
+        "(aktif)"
+      ],
       "1. Give a name to the config to be generated": [
         "1. Beri nama konfigurasi yang akan dibuat"
       ],
@@ -4953,6 +5026,12 @@
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Batalkan langganan ${ MAIL_SHORT_APP_NAME }"
       ],
+      "Cancel subscription": [
+        "Batalkan langganan"
+      ],
+      "Cancel subscription?": [
+        "Batalkan langganan?"
+      ],
       "Card verification": [
         "Verifikasi kartu"
       ],
@@ -4998,6 +5077,9 @@
       "Date": [
         "Tanggal"
       ],
+      "Day theme": [
+        "Tema siang"
+      ],
       "Delete": [
         "Hapus"
       ],
@@ -5019,9 +5101,6 @@
       "Downloads": [
         "Unduhan"
       ],
-      "Duration": [
-        "Durasi"
-      ],
       "Edit credit/debit card": [
         "Sunting rincian kartu kredit/debit"
       ],
@@ -5033,9 +5112,6 @@
       ],
       "Email subscriptions": [
         "Email berlangganan"
-      ],
-      "End date": [
-        "Tanggal akhir"
       ],
       "Enter your password": [
         "Masukkan kata sandi Anda"
@@ -5079,6 +5155,9 @@
       "Next": [
         "Selanjutnya"
       ],
+      "Night theme": [
+        "Tema malam"
+      ],
       "No recovery method": [
         "Tidak ada metode pemulihan"
       ],
@@ -5120,9 +5199,6 @@
       ],
       "Phone": [
         "Telepon"
-      ],
-      "Plan": [
-        "Paket"
       ],
       "Plan summary": [
         "Ringkasan paket"
@@ -5190,9 +5266,6 @@
       "Sign out": [
         "Keluar"
       ],
-      "Start date": [
-        "Tanggal mulai"
-      ],
       "Status": [
         "Status"
       ],
@@ -5201,9 +5274,6 @@
       ],
       "Switch to two-password mode": [
         "Beralih ke mode dua kata sandi"
-      ],
-      "Total paid": [
-        "Total yang dibayarkan"
       ],
       "TV sign in": [
         "Masuk TV"
@@ -5219,9 +5289,6 @@
       ],
       "Unsupported browser": [
         "Browser tidak didukung"
-      ],
-      "Users": [
-        "Pengguna"
       ],
       "Verification": [
         "Verifikasi"
@@ -5285,12 +5352,50 @@
         "Tagihan ${ MAIL_APP_NAME }"
       ]
     },
+    "Title subscription": {
+      "Actions": [
+        "Tindakan"
+      ],
+      "Duration": [
+        "Durasi"
+      ],
+      "End date": [
+        "Tanggal berakhir"
+      ],
+      "Plan": [
+        "Paket"
+      ],
+      "Start date": [
+        "Tanggal mulai"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "Total": [
+        "Total"
+      ],
+      "Total paid": [
+        "Total yang dibayarkan"
+      ],
+      "Users": [
+        "Pengguna"
+      ]
+    },
     "Tooltip": {
+      "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
+        "Sesuaikan tema aplikasi dengan mode terang dan gelap pada sistem Anda secara otomatis"
+      ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Apabila Anda telah membeli kode hadiah atau telah menerima kode hadiah dari tim layanan dukungan kami, silakan masukkan kode tersebut di sini."
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Siklus langganan baru akan dimulai pada ${ formattedTime }"
+      ],
+      "The selected theme will be active when your system is set to \"dark mode\"": [
+        "Tema yang dipilih akan aktif pada saat sistem Anda diatur ke \"mode gelap\""
+      ],
+      "The selected theme will be active when your system is set to \"light mode\"": [
+        "Tema yang dipilih akan aktif pada saat sistem Anda diatur ke \"mode terang\""
       ]
     },
     "Tor out of date": {

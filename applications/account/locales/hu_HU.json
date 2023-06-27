@@ -83,6 +83,9 @@
       "Add PayPal": [
         "PayPal hozzáadása"
       ],
+      "Add public holidays": [
+        "Munkaszüneti napok hozzáadása"
+      ],
       "Add sieve filter": [
         "Új Sieve szűrő"
       ],
@@ -127,6 +130,9 @@
       ],
       "Cancel": [
         "Mégsem"
+      ],
+      "Cancel subscription": [
+        "Előfizetés lemondása"
       ],
       "Change mailbox password": [
         "E-mail titkosítási jelszó módosítása"
@@ -2478,6 +2484,11 @@
         "Aland-szigetek"
       ]
     },
+    "Country select label": {
+      "Based on your time zone": [
+        "A jelenlegi időzóna alapján"
+      ]
+    },
     "CountryInfo": {
       "(via ${ entryCountryName })": [
         "(${ entryCountryName }-on keresztül)"
@@ -3210,6 +3221,9 @@
       "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.": [
         "Hibás visszaigazoló kód. Bizonyosodjon meg róla, hogy jól másolta ki a visszaigazoló kódot és próbálja újból. 24 órába is beletelhet, amíg a változások érvénybe lépnek."
       ],
+      "You already added this holidays calendar": [
+        "Már hozzáadta ezt a munkaszüneti naptárat"
+      ],
       "You have lost access to your organization keys. Without restoration you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Elvesztette az elérését a szervezeti kulcsokhoz. Visszaállítás nélkül nem fog tudni új felhasználókat létrehozni, címeket felvenni meglévő felhasználókhoz, vagy nem-privát fiókokat elérni."
       ],
@@ -3602,6 +3616,9 @@
       ]
     },
     "familyOffer_2023:Action": {
+      "Decline invitation": [
+        "Meghívó visszautasítása"
+      ],
       "Got it": [
         "Értem"
       ],
@@ -3717,6 +3734,9 @@
     "familyOffer_2023:Tooltip": {
       "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
         "2700 szerver, több mint 65 országban, csatlakoztasson akár 10 eszközt, érje el a videós szolgáltatásokat bárhonnan a világban, vírus és reklámblokkolót valamit további lehetőségeket is tartalmaz."
+      ],
+      "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
+        "Tartalmazza 3 egyéni e-mail domain név, 90 e-mail cím, korlátlan hide-my-email álnév, naptármegosztás és még sok más támogatását."
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Tartsa biztonságban fájljait, titkosított felhőtárhelyen. Automatikus szinkronizálást, titkosított megosztás és további lehetőségeket tartalmaz."
@@ -3939,9 +3959,34 @@
         "Alapértelmezett"
       ]
     },
+    "Font face option": {
+      "System default": [
+        "Rendszer alapértelmezett"
+      ],
+      "Theme default": [
+        "Alapértelmezett téma"
+      ]
+    },
     "Font Size Default": {
       "Default": [
         "Alapértelmezett"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Nagy"
+      ],
+      "Medium (recommended)": [
+        "Közepes (ajánlott)"
+      ],
+      "Small": [
+        "Kicsi"
+      ],
+      "Very large": [
+        "Nagyon nagy"
+      ],
+      "Very small": [
+        "Nagyon kicsi"
       ]
     },
     "Frequency of news": {
@@ -4647,9 +4692,6 @@
       "Admin account allocation": [
         "Tárhely admin fiók számára"
       ],
-      "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
-        "A Bitcoin fizetés után, kövesse a lenti utasításokat a nagyobb csomagra váltáshoz."
-      ],
       "Align left": [
         "Balra igazítás"
       ],
@@ -4762,6 +4804,9 @@
       ],
       "Background color": [
         "Háttérszín"
+      ],
+      "Based on your time zone": [
+        "A jelenlegi időzóna alapján"
       ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Az alapvető navigációs lehetőségek akkor is megmaradnak, ha a beállításokban letiltotta a gyorsbillentyűket."
@@ -4881,6 +4926,9 @@
       "Custom yearly": [
         "Egyéni, évente"
       ],
+      "Customize the look and feel of ${ BRAND_NAME } applications.": [
+        "Szabja testre a ${ BRAND_NAME } alkalmazások megjelenését."
+      ],
       "Daily": [
         "Naponta"
       ],
@@ -4929,6 +4977,12 @@
       ],
       "Download your PGP keys for use with other PGP-compatible services.": [
         "Letöltheti a PGP kulcsát más PGP kompatibilis szolgáltatásokban való használathoz."
+      ],
+      "Drop file here to upload": [
+        "Húzza ide a fájlokat a feltöltéshez"
+      ],
+      "Drop to import": [
+        "Húzza ide az importáláshoz"
       ],
       "Each code can only be used once": [
         "Minden kódot csak egyszer lehet felhasználni"
@@ -5608,6 +5662,9 @@
       "Store this password and file in a safe place. You’ll need them again to import your key.": [
         "Tárolja a jelszót és a fájlt egy biztos helyen. Szüksége lesz rá később a kulcsa importálásához."
       ],
+      "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
+        "Az előfizetés megszűnik: Aktiválja újra eddig: ${ byDate } , hogy megtarthassa ezen csomagjának előnyeit: ${ planName } ${ reactivateLink }"
+      ],
       "Support for 1 custom email domain": [
         "Egy saját e-mail domain név használata"
       ],
@@ -6100,6 +6157,13 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "Az e-mail csak erre az egyszeri ellenőrzésre lesz felhasználva."
+      ],
+      "Your files will be encrypted and then saved": [
+        "A fájlok titkosításra majd pedig mentésre kerülnek"
+      ],
+      "Your import from ${ accounts } is temporarily delayed.": [
+        "Az importálás a ${ accounts } címről átmenetileg késik.",
+        "Az importálások a ${ accounts } címről átmenetileg késnek."
       ],
       "Your import will not be processed.": [
         "Az importálás nem lesz feldolgozva."
@@ -6669,12 +6733,6 @@
       "Browser version": [
         "Böngésző verziója"
       ],
-      "BTC address:": [
-        "BTC cím:"
-      ],
-      "BTC amount:": [
-        "BTC összeg:"
-      ],
       "Calendar": [
         "Naptár"
       ],
@@ -6981,6 +7039,9 @@
       "Label messages as": [
         "Üzenetek megjelölése címkével"
       ],
+      "Language": [
+        "Nyelv"
+      ],
       "Last 12 months only": [
         "Csak az utolsó 12 hónap"
       ],
@@ -7235,6 +7296,9 @@
       ],
       "Subscription options": [
         "Előfizetés lehetőségei"
+      ],
+      "Synchronize with system": [
+        "Szinkronizálás a rendszerrel"
       ],
       "System information": [
         "Rendszer információk"
@@ -7532,6 +7596,9 @@
       "Privacy policy": [
         "Adatvédelmi irányelvek"
       ],
+      "Reactivate now": [
+        "Újraaktiválás most"
+      ],
       "Request an invite": [
         "Meghívó kérése"
       ],
@@ -7662,6 +7729,15 @@
       ]
     },
     "Modal title": {
+      "Add public holidays": [
+        "Munkaszüneti napok hozzáadása"
+      ],
+      "Edit calendar": [
+        "Naptár szerkesztése"
+      ],
+      "Get a country's official public holidays calendar.": [
+        "Szerezze be egy ország hivatalos munkaszüneti naptárát."
+      ],
       "How to import calendars from another service": [
         "Naptárak importálása más szolgáltatótól"
       ],
@@ -8070,6 +8146,9 @@
       ],
       "GDPR data processing agreement": [
         "GDPR adatfeldolgozói megállapodás"
+      ],
+      "Hide-my-email aliases": [
+        "Hide-my-email álnevek"
       ],
       "High-speed VPN on ${ n } device": [
         "Nagysebességű VPN ${ n } eszközön",
@@ -8564,6 +8643,14 @@
         "OpenVPN / IKEv2 azonosító frissítve"
       ]
     },
+    "Notification in holidays calendar modal": {
+      "Adding holidays calendar failed": [
+        "A munkaszüneti napok hozzáadása sikertelen"
+      ],
+      "Calendar added": [
+        "Naptár hozzáadva"
+      ]
+    },
     "Notification in share calendar modal": {
       "Invitation deleted": [
         "Meghívó törölve"
@@ -8879,9 +8966,17 @@
       "${ upgradeLink } to get more storage, or remove some storage to free up space.": [
         "${ upgradeLink } további tárhely eléréshez, vagy szabadítson fel tárhelyet."
       ],
+      "Your plan includes a maximum of ${ availableAddresses } more address.": [
+        "A csomag legfeljebb ${ availableAddresses } további címet tartalmaz.",
+        "A csomag legfeljebb ${ availableAddresses } további címet tartalmaz."
+      ],
       "Your plan includes a maximum of ${ availableNumberOfMembers } more organizational user.": [
         "A csomagja maximum ${ availableNumberOfMembers } további szervezeti felhasználót tesz lehetővé.",
         "A csomagja maximum ${ availableNumberOfMembers } további szervezeti felhasználót tesz lehetővé."
+      ],
+      "Your plan includes a maximum of ${ availableVPNAccess } more VPN account.": [
+        "A csomag legfeljebb ${ availableVPNAccess } további VPN kapcsolatot tartalmaz.",
+        "A csomag legfeljebb ${ availableVPNAccess } további VPN kapcsolatot tartalmaz."
       ],
       "Your plan includes a maximum of ${ humanReadableAvailableSpace } more storage.": [
         "A csomag legfeljebb ${ humanReadableAvailableSpace } további tárhelyet tartalmaz."
@@ -8987,6 +9082,9 @@
       ],
       "Please insert link first": [
         "Kérjük, előbb illessze be a hivatkozást"
+      ],
+      "Please select a country": [
+        "Válasszon ki egy országot"
       ],
       "Search": [
         "Keresés"
@@ -9227,6 +9325,9 @@
       ]
     },
     "Select search results": {
+      "Check your spelling or select a country from the list.": [
+        "Ellenőrizze a helyesírást vagy válasszon országot a listából."
+      ],
       "No results found": [
         "Nincs találat"
       ]
@@ -9552,6 +9653,15 @@
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
         "Akárhonnan elérhet videós szolgáltatásokat, mint például Netflix, Disney+ vagy Prime Video."
       ],
+      "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
+        "Minden prémium szolgáltatásunk a legmagasabb korlátokkal: 100 e-mail cím, 10 saját domain név támogatása, korlátlan számú hide-my-email álnév, naptármegosztás, titkosított felhőalapú tárolás és fájlmegosztás stb."
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Tartalmazza 1 egyéni e-mail domain név, 10 e-mail cím, 10 hide-my-email álnév, naptármegosztás és még sok más támogatását."
+      ],
+      "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Tartalmazza 3 egyéni e-mail domain név, 15 e-mail cím, korlátlan hide-my-email álnév, naptármegosztás és még sok más támogatását."
+      ],
       "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
         "Ideális családoknak és kisebb csoportoknak, mindenkinek saját e-mail fiókja és e-mail álnevei lehetnek. Saját domain név szükséges."
       ],
@@ -9606,6 +9716,9 @@
     "Subscribe to calendar modal": {
       "Calendar URL": [
         "Naptár URL"
+      ],
+      "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Other calendars.\n${ kbLink }": [
+        "Egy külső vagy nyilvános naptárra és annak eseményeire való feliratkozáshoz, írja be annak URL címét. Egy csak olvasható naptárként fog megjelenni a további naptárainál. ${ kbLink }"
       ]
     },
     "Subscribe to calendar modal description": {
@@ -10031,6 +10144,9 @@
       "${ MAIL_APP_NAME } Keyboard Shortcuts": [
         "${ MAIL_APP_NAME } gyorsbillentyűk"
       ],
+      "(active)": [
+        "(aktív)"
+      ],
       "1. Give a name to the config to be generated": [
         "1. Adjon nevet a létrehozandó beálltásnak"
       ],
@@ -10287,6 +10403,9 @@
       "Date": [
         "Dátum"
       ],
+      "Day theme": [
+        "Nappali téma"
+      ],
       "Decrypt key": [
         "Kulcs visszafejtése"
       ],
@@ -10344,9 +10463,6 @@
       "Download ${ VPN_APP_NAME }": [
         "${ VPN_APP_NAME } letöltése"
       ],
-      "Duration": [
-        "Időtartam"
-      ],
       "Edit credit/debit card": [
         "Bankkártya szerkesztése"
       ],
@@ -10382,9 +10498,6 @@
       ],
       "Encryption and keys": [
         "Titkosítás és kulcsok"
-      ],
-      "End date": [
-        "Befejező dátum"
       ],
       "Enter your password": [
         "Adja meg a jelszavát"
@@ -10544,6 +10657,9 @@
       "Next": [
         "Következő"
       ],
+      "Night theme": [
+        "Éjszakai téma"
+      ],
       "No recovery method": [
         "Nincs helyreállítási módszer"
       ],
@@ -10591,9 +10707,6 @@
       ],
       "Phone": [
         "Telefonszám"
-      ],
-      "Plan": [
-        "Csomag"
       ],
       "Plan summary": [
         "Csomag összefoglaló"
@@ -10748,9 +10861,6 @@
       "Start a new import": [
         "Új importálás indítása"
       ],
-      "Start date": [
-        "Kezdő dátum"
-      ],
       "Start import process": [
         "Importálási folyamat indítása"
       ],
@@ -10783,9 +10893,6 @@
       "Time zone": [
         "Időzóna"
       ],
-      "Total paid": [
-        "Kifizetve összesen"
-      ],
       "Track your referrals": [
         "Meghívók megtekintése"
       ],
@@ -10803,9 +10910,6 @@
       ],
       "Upgrade plan": [
         "Váltás nagyobb csomagra"
-      ],
-      "Users": [
-        "Felhasználók"
       ],
       "Users and addresses": [
         "Felhasználók és címek"
@@ -10970,6 +11074,9 @@
       "Account is disconnected": [
         "A fiók lecsatlakoztatva"
       ],
+      "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
+        "Automatikus váltás az Ön által preferált nappali és éjszakai témák között a rendszer nappali és éjszakai üzemmódjával szinkronban."
+      ],
       "Customize import to reduce the number of folders": [
         "Módosítsa az importálás beállításait hogy kevesebb mappára legyen szükség"
       ],
@@ -11023,6 +11130,12 @@
       ],
       "The import will start with the most recent messages.": [
         "Az importálás a legfrissebb üzenetekkel kezdődik."
+      ],
+      "The selected theme will be active when your system is set to \"dark mode\"": [
+        "A kiválasztott téma akkor lesz aktív, ha a rendszer \"sötét üzemmódba\" van állítva."
+      ],
+      "The selected theme will be active when your system is set to \"light mode\"": [
+        "A kiválasztott téma akkor lesz aktív, ha a rendszer \"világos üzemmódba\" van állítva."
       ],
       "This address has been disabled": [
         "Ez a cím van letiltva"

@@ -3662,6 +3662,9 @@
       "Custom yearly": [
         "Roční nastavení"
       ],
+      "Customize the look and feel of ${ BRAND_NAME } applications.": [
+        "Přizpůsobte si vzhled aplikací ${ BRAND_NAME }."
+      ],
       "Daily": [
         "Denně"
       ],
@@ -3919,6 +3922,9 @@
       ],
       "Some of your answers to occurrences previously updated by the organizer will be lost.": [
         "Některé vaše odpovědi na události, které byly dříve aktualizovány organizátorem, budou ztraceny."
+      ],
+      "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
+        "Předplatné vyprší: opětovně aktivujte dne ${ byDate } pro zachování vašich výhod tarifu ${ planName }. ${ reactivateLink }"
       ],
       "support team": [
         "tým podpory"
@@ -4643,6 +4649,9 @@
       "Pay invoice": [
         "Zaplatit fakturu"
       ],
+      "Reactivate now": [
+        "Opětovně nyní aktivovat"
+      ],
       "Request an invite": [
         "Požádat o pozvánku"
       ],
@@ -5242,6 +5251,9 @@
       ],
       "Discover all ${ BRAND_NAME } services": [
         "Objevte všechny služby ${ BRAND_NAME }"
+      ],
+      "More theming options are available in your account Settings > Appearance.": [
+        "Další možnosti úprav motivů jsou k dispozici v Nastavení účtu > Vzhled."
       ],
       "Select a theme": [
         "Vyberte motiv"
@@ -6571,6 +6583,9 @@
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Automatický označuje, že formát v editoru bude použit pro odeslání uživateli. Prostý text znamená, že zpráva bude při odeslání vždy převedena na prostý text."
       ],
+      "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
+        "Automatické přepínání mezi preferovanými denními a nočními motivy v synchronizaci s denním a nočním režimem systému."
+      ],
       "Customize import to reduce the number of folders": [
         "Přizpůsobte proces importu, abyste snížili počet složek"
       ],
@@ -6621,6 +6636,12 @@
       ],
       "The import will start with the most recent messages.": [
         "Import začne nejnovějšími zprávami."
+      ],
+      "The selected theme will be active when your system is set to \"dark mode\"": [
+        "Vybraný motiv bude použit, když je systém nastaven na \"tmavý režim\"."
+      ],
+      "The selected theme will be active when your system is set to \"light mode\"": [
+        "Vybraný motiv bude použit, když je systém nastaven na \"světlý režim\"."
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Pro zasílání e-mailů s koncovým šifrováním na tuto e-mailovou adresu, nahrajte prosím veřejný klíč"

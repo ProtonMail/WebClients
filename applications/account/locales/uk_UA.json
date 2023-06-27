@@ -158,6 +158,9 @@
       "Cancel": [
         "Скасувати"
       ],
+      "Cancel subscription": [
+        "Скасувати передплату"
+      ],
       "Change mailbox password": [
         "Змінити пароль поштової скриньки"
       ],
@@ -517,6 +520,9 @@
       ],
       "Keep": [
         "Залишити"
+      ],
+      "Keep my ${ vpnPlanNameShort } subscription": [
+        "Залишити мою передплату ${ vpnPlanNameShort }"
       ],
       "label emails as": [
         "позначати листи міткою"
@@ -1000,6 +1006,14 @@
       ],
       "Try free for 30 days": [
         "Спробуйте безплатно протягом 30 днів"
+      ]
+    },
+    "Action subscription": {
+      "Manage": [
+        "Керувати"
+      ],
+      "Reactivate": [
+        "Повторна активація"
       ]
     },
     "Action; accept invitation to share calendar": {
@@ -3970,7 +3984,7 @@
         "Перш ніж створити нового користувача, потрібно налаштувати власний домен."
       ],
       "You will lose access to all premium features and storage space included with ${ BRAND_NAME } Family.": [
-        "Ви втратите доступ до всіх преміумфункцій і простору сховища, включених до Сімейного ${ BRAND_NAME }."
+        "Ви втратите доступ до всіх преміумфункцій і простору сховища, включених до ${ BRAND_NAME } Family."
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "Вас запрошено пов'язати обліковий запис ${ BRAND_NAME } із цим груповим планом і разом користуватися всіма преміумфункціями ${ BRAND_NAME_TWO }"
@@ -4366,7 +4380,7 @@
         "Ці списки застосовуються до всіх облікових записів у вашій організації. Учасники зможуть створювати власні фільтри, але не зможуть замінювати адреси або заблоковані домени."
       ],
       "To ensure critical messages don't end up in spam and getting missed": [
-        "Щоб надважливі повідомлення не потрапляли в спам і не були пропущені"
+        "Щоб не пропускати важливих повідомлень і не дозволяти їм потрапити до спаму"
       ],
       "To prevent junk mail from clogging up inboxes": [
         "Щоб небажана пошта не засмічувала \"Вхідні\""
@@ -4375,10 +4389,10 @@
         "Щоб небажана пошта не засмічувала вашу теку \"Вхідні\"."
       ],
       "To stop phishing or suspicious emails from entering your email system": [
-        "Щоб запобігти потраплянню фішингових або підозрілих електронних листів у вашу скриньку"
+        "Щоб шахрайські або підозрілі електронні листи не потрапляли до вашої поштової скриньки"
       ],
       "To stop phishing or suspicious emails from entering your organization's email system": [
-        "Щоб запобігти потраплянню фішингових або підозрілих електронних листів у скриньку вашої організації"
+        "Щоб шахрайські або підозрілі електронні листи не потрапляли до поштової скриньки вашої організації"
       ]
     },
     "Font Face Default": {
@@ -4974,6 +4988,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } потребує вашого дозволу, щоб ${ enableDesktopNotifications }."
       ],
+      "${ autoRenewal } your subscription will renew automatically on ${ renewalTime }.": [
+        "${ autoRenewal } передплату буде автоматично поновлено ${ renewalTime }."
+      ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Продовживши, ви втратите доступ до усіх зашифрованих даних вашого облікового запису."
       ],
@@ -5250,9 +5267,6 @@
       "Admin account allocation": [
         "Розподілення для облікового запису адміністратора"
       ],
-      "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
-        "Після здійснення платежу в Bitcoin, дотримуйтесь наведених далі настанов для оновлення."
-      ],
       "Align left": [
         "Вирівняти ліворуч"
       ],
@@ -5297,6 +5311,9 @@
       ],
       "American Express SafeKey logo": [
         "Логотип American Express SafeKey"
+      ],
+      "Amount above maximum (${ amount }).": [
+        "Сума перевищує максимум (${ amount })."
       ],
       "Amount below minimum (${ amount }).": [
         "Сума нижче найменшої (${ amount })."
@@ -5360,6 +5377,9 @@
       ],
       "Attention required": [
         "Потребує уваги"
+      ],
+      "Auto-renewal: ": [
+        "Автопоновлення: "
       ],
       "Auto-reply is active each month between the selected start and end time.": [
         "Автовідповідач активний щомісяця між заданим початковим та кінцевим часом."
@@ -5527,7 +5547,7 @@
         "Власне щороку"
       ],
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
-        "Налаштуйте зовнішній вигляд застосунків ${ BRAND_NAME }."
+        "Налаштуйте зовнішній вигляд програм ${ BRAND_NAME }."
       ],
       "Daily": [
         "Щодня"
@@ -5754,6 +5774,9 @@
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Якщо ви вважаєте, що це помилка, зв'яжіться з нами ${ contactLink }."
       ],
+      "If you cancel, your ${ vpnPlanName } subscription will not be renewed when it expires on ${ expiryDate }.": [
+        "Якщо ви скасуєте передплату ${ vpnPlanName }, її не буде поновлено, коли вона завершиться ${ expiryDate }."
+      ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Якщо ви не можете знайти лист у вхідних повідомленнях, перевірте свою теку спаму."
       ],
@@ -5840,6 +5863,9 @@
       ],
       "Improve your ${ BRAND_NAME } experience by adapting the application to your needs.": [
         "Зробіть користування ${ BRAND_NAME } зручнішим, адаптувавши застосунок до своїх потреб."
+      ],
+      "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
+        "Наступним кроком ви зможете внести депозит за допомогою Bitcoin-адреси."
       ],
       "Inherited from parent folder": [
         "Успадковано від теки вищого рівня"
@@ -6348,6 +6374,12 @@
       "Store this password and file in a safe place. You’ll need them again to import your key.": [
         "Зберігайте цей пароль і файл у надійному місці. Вам потрібно буде знову імпортувати ваш ключ."
       ],
+      "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
+        "Надішліть депозит за наступною адресою або відскануйте QR-код. Ваш депозит буде показаний на вашому рахунку після підтвердження."
+      ],
+      "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
+        "Передплата закінчується: повторно активуйте її до ${ byDate }, щоб зберегти переваги ${ planName }. ${ reactivateLink }"
+      ],
       "Support for 1 custom email domain": [
         "Підтримка 1 власного домену електронної пошти"
       ],
@@ -6477,6 +6509,9 @@
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Цей користувач зараз уповноважений здійснювати платежі для вашої організації. Понизивши його роль, повноваження для платежів перейдуть до вас."
       ],
+      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
+        "Це скасує вашу поточну платну підписку, і ви втратите всі накопичені привілеї лояльності."
+      ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
         "Це скасує вашу поточну передплату і ви втратите будь-які накопичені переваги лояльності. Залишковий баланс вашої передплати буде повернено як кредити облікового запису."
       ],
@@ -6518,6 +6553,9 @@
       ],
       "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
         "Щоб уникнути втрати даних, видаляйте його лише якщо впевнені у своїх діях або експортували копію."
+      ],
+      "To complete your payment, please send ${ btcAmountBold } to the address below.": [
+        "Щоб завершити платіж, надішліть ${ btcAmountBold } на вказану нижче адресу."
       ],
       "To confirm, please enter the name of the user you wish to delete.": [
         "Щоб підтвердити, введіть ім'я користувача, якого ви хочете видалити."
@@ -6912,14 +6950,17 @@
       "You will be redirected to the VPN download page": [
         "Вас буде перенаправлено на сторінку завантаження VPN"
       ],
+      "You will lose access to ${ vpnPlanNameShort } servers and features on this date.": [
+        "Ви втратите доступ до серверів і функцій ${ vpnPlanNameShort } після цієї дати."
+      ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Для користування ${ MAIL_APP_NAME } і ${ CALENDAR_APP_NAME } потрібна адреса ${ BRAND_NAME }"
       ],
       "You will NOT be able to decrypt any messages, files, and other data encrypted with this key.": [
         "Ви не зможете розшифрувати будь-які повідомлення, файли та інші дані, зашифровані цим ключем."
       ],
-      "You will receive priority support from specialists trained in account protection. For any account security concerns, please contact us ${ hereLink }.": [
-        "Ви отримаєте пріоритетну підтримку від фахівців з питань захисту облікових записів. Якщо вас непокоять будь-які питання щодо безпеки облікового запису, зверніться до нас ${ hereLink }."
+      "You will receive priority support from specialists trained in account protection. For any account security concerns, please ${ hereLink }.": [
+        "Ви отримаєте першочергову підтримку від спеціалістів, які пройшли навчання захисту облікових записів. З питань безпеки облікового запису, будь ласка, ${ hereLink }."
       ],
       "You will see more details in the Security logs below for important events such as sign in attempts.": [
         "У наведених нижче журналах ви побачите більше подробиць про важливі події, як-от спроби входу до системи."
@@ -7063,6 +7104,11 @@
     "Info on errors": {
       "Click for details": [
         "Натисніть для подробиць"
+      ]
+    },
+    "Info subscription": {
+      "You can prevent expiry by reactivating the subscription": [
+        "Ви можете запобігти закінченню терміну дії, відновивши підписку"
       ]
     },
     "Info when deleting payment method": {
@@ -7581,11 +7627,11 @@
       "Browser version": [
         "Версія браузера"
       ],
-      "BTC address:": [
-        "BTC адреса:"
+      "BTC address": [
+        "BTC адреса"
       ],
-      "BTC amount:": [
-        "Сума в BTC:"
+      "BTC amount": [
+        "Сума в BTC"
       ],
       "Calendar": [
         "Календар"
@@ -7720,7 +7766,7 @@
         "Типова схема PGP"
       ],
       "Default scrollbars": [
-        "Усталені смуги прокручування"
+        "Типові смуги прокручування"
       ],
       "Default view": [
         "Типовий вигляд"
@@ -8476,6 +8522,9 @@
       "Common sign up issues": [
         "Поширені проблеми з реєстрацією"
       ],
+      "contact us": [
+        "зв'яжіться з нами"
+      ],
       "Create account": [
         "Зареєструватися"
       ],
@@ -8488,8 +8537,8 @@
       "General": [
         "Загальні"
       ],
-      "here": [
-        "тут"
+      "How to pay with Bitcoin?": [
+        "Як оплатити за допомогою Bitcoin?"
       ],
       "How to unlock data": [
         "Як розблокувати дані"
@@ -8514,6 +8563,9 @@
       ],
       "Privacy policy": [
         "Політика приватності"
+      ],
+      "Reactivate now": [
+        "Повторно активувати"
       ],
       "Request an invite": [
         "Запитати запрошення"
@@ -10870,7 +10922,7 @@
         "Доступ до заблокованого вмісту та приватний перегляд. Включає 1700 серверів у понад 60 країнах, найвищу швидкість VPN, 10 VPN-з'єднань, всесвітні стримінгові сервіси, захист від зловмисних програм і реклами, а також інші можливості."
       ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
-        "Доступ звідусіль до матеріалів стримінгових сервісів, включно з Netflix, Disney+ і Prime Video."
+        "Доступ звідусіль до стримінгових сервісів, включно з Netflix, Disney+ та Prime Video."
       ],
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
         "Всі найкращі можливості наших преміум функцій: 100 адрес пошти, підтримка 10 власних доменів, необмежена кількість псевдонімів Hide-my-email, спільний доступ до календаря, зашифроване хмарне сховище, спільний доступ до файлів і багато іншого."
@@ -11130,6 +11182,9 @@
       "Active": [
         "Активний"
       ],
+      "Expiring": [
+        "Термін дії"
+      ],
       "Upcoming": [
         "Невдовзі"
       ]
@@ -11296,6 +11351,9 @@
       ],
       "Verification successful": [
         "Перевірка пройшла успішно"
+      ],
+      "You have successfully cancelled your subscription.": [
+        "Ви успішно скасували передплату."
       ],
       "You have successfully unsubscribed": [
         "Ви успішно скасували передплату"
@@ -11647,6 +11705,12 @@
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Скасувати передплату ${ MAIL_SHORT_APP_NAME }"
       ],
+      "Cancel subscription": [
+        "Скасувати передплату"
+      ],
+      "Cancel subscription?": [
+        "Скасувати передплату?"
+      ],
       "Card verification": [
         "Перевірка картки"
       ],
@@ -11836,9 +11900,6 @@
       "Download ${ VPN_APP_NAME }": [
         "Завантажити ${ VPN_APP_NAME }"
       ],
-      "Duration": [
-        "Тривалість"
-      ],
       "Edit credit/debit card": [
         "Редагувати кредитну/платіжну картку"
       ],
@@ -11874,9 +11935,6 @@
       ],
       "Encryption and keys": [
         "Шифрування та ключі"
-      ],
-      "End date": [
-        "Дата завершення"
       ],
       "Enter your password": [
         "Введіть свій пароль"
@@ -12094,11 +12152,11 @@
       "PayPal verification failed": [
         "Не вдалося пройти перевірку PayPal"
       ],
+      "Personalise your e-mail footer": [
+        "Налаштуйте нижній колонтитул листа"
+      ],
       "Phone": [
         "Телефон"
-      ],
-      "Plan": [
-        "Тарифний план"
       ],
       "Plan summary": [
         "Підсумок плану"
@@ -12259,9 +12317,6 @@
       "Start a new import": [
         "Почати новий імпорт"
       ],
-      "Start date": [
-        "Дата початку"
-      ],
       "Start import process": [
         "Розпочати процес імпортування"
       ],
@@ -12298,9 +12353,6 @@
       "Time zone": [
         "Часовий пояс"
       ],
-      "Total paid": [
-        "Усього сплачено"
-      ],
       "Track your referrals": [
         "Відстежуйте свої запрошення"
       ],
@@ -12324,9 +12376,6 @@
       ],
       "Upgrade plan": [
         "Оновити тарифний план"
-      ],
-      "Users": [
-        "Користувачі"
       ],
       "Users and addresses": [
         "Користувачі та адреси"
@@ -12469,6 +12518,35 @@
         "Роль"
       ]
     },
+    "Title subscription": {
+      "Actions": [
+        "Дії"
+      ],
+      "Duration": [
+        "Тривалість"
+      ],
+      "End date": [
+        "Дата завершення"
+      ],
+      "Plan": [
+        "Тарифний план"
+      ],
+      "Start date": [
+        "Дата початку"
+      ],
+      "Status": [
+        "Стан"
+      ],
+      "Total": [
+        "Усього"
+      ],
+      "Total paid": [
+        "Усього сплачено"
+      ],
+      "Users": [
+        "Користувачі"
+      ]
+    },
     "Title; create calendar modal": {
       "Create calendar": [
         "Створити календар"
@@ -12528,7 +12606,7 @@
         "Якщо ви придбали подарунковий код або отримали його від нашої служби підтримки, ви можете ввести його тут."
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
-        "Учасники, які не використовують 2FA, отримають електронного листа з проханням ввімкнути її якнайшвидше."
+        "Учасники, які не використовують двоетапну перевірку, отримають електронного листа з проханням увімкнути її якнайшвидше."
       ],
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "Повідомлення в теці Надіслані або Чернетки й надалі з'являтимуться в тій теці, навіть якщо ви перемістите їх до іншої теки."

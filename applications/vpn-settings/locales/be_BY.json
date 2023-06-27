@@ -41,6 +41,9 @@
       "Cancel": [
         "Скасаваць"
       ],
+      "Cancel subscription": [
+        "Скасаваць падпіску"
+      ],
       "Change mailbox password": [
         "Змяніць пароль паштовай скрыні"
       ],
@@ -190,6 +193,9 @@
       ],
       "Increase": [
         "Павялічыць"
+      ],
+      "Keep my ${ vpnPlanNameShort } subscription": [
+        "Пакінуць падпіску ${ vpnPlanNameShort }"
       ],
       "Load more": [
         "Загрузіць больш"
@@ -371,6 +377,9 @@
       "Upgrade now": [
         "Палепшыць зараз"
       ],
+      "Use ${ label } theme": [
+        "Выкарыстоўваць тэму ${ label }"
+      ],
       "Use a different card": [
         "Скарыстацца іншай карткай"
       ],
@@ -426,6 +435,14 @@
       ],
       "Try free for 30 days": [
         "Паспрабуйце бясплатна на працягу 30 дзён"
+      ]
+    },
+    "Action subscription": {
+      "Manage": [
+        "Кіраваць"
+      ],
+      "Reactivate": [
+        "Актываваць паўторна"
       ]
     },
     "Addon": {
@@ -2091,6 +2108,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } неабходны ваш дазвол на ${ enableDesktopNotifications }."
       ],
+      "${ autoRenewal } your subscription will renew automatically on ${ renewalTime }.": [
+        "${ autoRenewal } ваша падпіска будзе падоўжана аўтаматычна ${ renewalTime }."
+      ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Вы страціце доступ да ўсіх бягучых зашыфраваных даных у вашым уліковым запісе, калі працягніце."
       ],
@@ -2178,9 +2198,6 @@
       "Additional options": [
         "Дадатковы параметры"
       ],
-      "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
-        "Пасля ўнясення аплаты Bitcoin, прытрымлівайцеся наступных інструкцый, каб палепшыць тарыфны план."
-      ],
       "All ${ BRAND_NAME } apps and their premium features": [
         "Усе праграмы ${ BRAND_NAME } і іх прэміяльныя функцыі"
       ],
@@ -2189,6 +2206,9 @@
       ],
       "American Express SafeKey logo": [
         "Лагатып American Express SafeKey"
+      ],
+      "Amount above maximum (${ amount }).": [
+        "Сума перавышае максімум (${ amount })."
       ],
       "Amount below minimum (${ amount }).": [
         "Сума ніжэй за мінімум (${ amount })."
@@ -2204,6 +2224,9 @@
       ],
       "Attention required": [
         "Патрабуецца ўвага"
+      ],
+      "Auto-renewal: ": [
+        "Аўтаматычнае падаўжэнне: "
       ],
       "Balance from your previous subscription": [
         "Баланс з вашай папярэдняй падпіскі"
@@ -2267,6 +2290,9 @@
       ],
       "Custom email domains": [
         "Карыстальніцкія дамены электроннай пошты"
+      ],
+      "Customize the look and feel of ${ BRAND_NAME } applications.": [
+        "Наладзьце знешні выгляд праграм ${ BRAND_NAME }"
       ],
       "Discover ProtectBuy logo": [
         "Лагатып Discover ProtectBuy"
@@ -2376,6 +2402,9 @@
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Калі вы ўпэўнены, што гэта памылка, напішыце нам на адрас ${ contactLink }."
       ],
+      "If you cancel, your ${ vpnPlanName } subscription will not be renewed when it expires on ${ expiryDate }.": [
+        "Калі вы скасуеце, ваша падпіска ${ vpnPlanName } не будзе падоўжана пасля завяршэння тэрміну яе дзеяння ${ expiryDate }."
+      ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Калі паведамлення няма ў папцы з уваходнымі лістамі, то магчыма, што яно трапіла ў папку са спамам."
       ],
@@ -2402,6 +2431,9 @@
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Важна! Пераканайцеся, што вы захавалі коды аднаўлення. У адваротным выпадку вы незваротна страціце доступ да вашага ўліковага запісу, калі згубіце вашу прыладу двухфактарнай аўтэнтыфікацыі."
+      ],
+      "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
+        "На наступным кроку вы можаце адправіць дэпазіт з выкарыстаннем адраса Bitcoin."
       ],
       "Install a Country configuration file to connect to a random server in the country of your choice.": [
         "Усталюйце файл канфігурацыі краіны для падключэння да выпадковага сервера ў краіне, якую вы выбралі."
@@ -2566,10 +2598,10 @@
         "Захаванне вашага пароля"
       ],
       "Scan QR code instead": [
-        "Сканаваць QR-код"
+        "Сканіраваць QR-код"
       ],
       "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "Адскануйце гэты код сваёй прыладай з двухфактарнай аўтэнтыфікацыяй, каб наладзіць свой уліковы запіс. ${ switchButton }."
+        "Адсканіруйце гэты код сваёй прыладай з двухфактарнай аўтэнтыфікацыяй, каб наладзіць свой уліковы запіс. ${ switchButton }."
       ],
       "Securing your account": [
         "Абарона вашага ўліковага запісу"
@@ -2603,6 +2635,12 @@
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
         "Прастора сховішча размеркавана паміж ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } і ${ DRIVE_APP_NAME }."
+      ],
+      "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
+        "Адпраўце дэпазіт выкарыстоўваючы наступны адрас або адсканіруйце QR-код. Ваш дэпазіт адлюструецца на вашым рахунку пасля пацвярджэння."
+      ],
+      "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
+        "Падпіска заканчваецца: актывуйце яе паўторна да ${ byDate }, каб пакінуць перавагі свайго тарыфнага плана ${ planName }. ${ reactivateLink }"
       ],
       "Support for 1 custom email domain": [
         "Падтрымка для 1 карыстальніцкага дамена электроннай пошты"
@@ -2640,6 +2678,9 @@
       "This can take a few seconds or a few minutes depending on your device": [
         "Гэта можа заняць ад некалькіх секунд да некалькіх хвілін у залежнасці ад вашай прылады"
       ],
+      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
+        "Гэта скасуе вашу бягучую платную падпіску і вы страціце ўсе перавагі пастаяннага карыстальніка, якія вы назапасілі."
+      ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
         "Гэта скасуе вашу бягучую платную падпіску і вы страціце ўсе перавагі пастаяннага карыстальніка, якія вы назапасілі. Рэшта балансу вашай падпіскі вернецца на ваш уліковы запіс у выглядзе крэдытаў."
       ],
@@ -2660,6 +2701,9 @@
       ],
       "To ${ planName }": [
         "у тарыфным плане ${ planName }"
+      ],
+      "To complete your payment, please send ${ btcAmountBold } to the address below.": [
+        "Каб завяршыць плацеж, адпраўце ${ btcAmountBold } на пазначаны ніжэй адрас."
       ],
       "to continue to ${ toAppName }": [
         "для працягу ў ${ toAppName }"
@@ -2836,10 +2880,10 @@
         "Вы можаце пакінуць да ${ MAX_CALENDARS_FREE } календароў. Выдаліце спасылкі на абагулены каляндар і ўсіх карыстальнікаў ${ BRAND_NAME } з якімі вы абагулілі календары перад тым, як скасаваць сваю падпіску ${ MAIL_SHORT_APP_NAME }."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
-        "Вы можаце мець да ${ MAX_CALENDARS_FREE } календара. Выдаліце спасылкі на абагулены каляндар і ўсіх карыстальнікаў ${ BRAND_NAME } з якімі вы абагулілі календары перад тым, як скасаваць сваю падпіску.",
-        "Вы можаце мець да ${ MAX_CALENDARS_FREE } календароў. Выдаліце спасылкі на абагулены каляндар і ўсіх карыстальнікаў ${ BRAND_NAME } з якімі вы абагулілі календары перад тым, як скасаваць сваю падпіску.",
-        "Вы можаце мець да ${ MAX_CALENDARS_FREE } календароў. Выдаліце спасылкі на абагулены каляндар і ўсіх карыстальнікаў ${ BRAND_NAME } з якімі вы абагулілі календары перад тым, як скасаваць сваю падпіску.",
-        "Вы можаце мець да ${ MAX_CALENDARS_FREE } календароў. Выдаліце спасылкі на абагулены каляндар і ўсіх карыстальнікаў ${ BRAND_NAME } з якімі вы абагулілі календары перад тым, як скасаваць сваю падпіску."
+        "Вы можаце пакінуць да ${ MAX_CALENDARS_FREE } календара. Выдаліце спасылкі на абагулены каляндар і ўсіх карыстальнікаў ${ BRAND_NAME } з якімі вы абагулілі календары перад тым, як скасаваць сваю падпіску.",
+        "Вы можаце пакінуць да ${ MAX_CALENDARS_FREE } календароў. Выдаліце спасылкі на абагулены каляндар і ўсіх карыстальнікаў ${ BRAND_NAME } з якімі вы абагулілі календары перад тым, як скасаваць сваю падпіску.",
+        "Вы можаце пакінуць да ${ MAX_CALENDARS_FREE } календароў. Выдаліце спасылкі на абагулены каляндар і ўсіх карыстальнікаў ${ BRAND_NAME } з якімі вы абагулілі календары перад тым, як скасаваць сваю падпіску.",
+        "Вы можаце пакінуць да ${ MAX_CALENDARS_FREE } календароў. Выдаліце спасылкі на абагулены каляндар і ўсіх карыстальнікаў ${ BRAND_NAME } з якімі вы абагулілі календары перад тым, як скасаваць сваю падпіску."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Вы можаце пакінуць да ${ MAX_CALENDARS_FREE } календара. Выдаліце спасылкі на абагулены каляндар перад тым, як скасаваць сваю падпіску ${ MAIL_SHORT_APP_NAME }.",
@@ -2888,6 +2932,9 @@
       ],
       "You will be redirected to the VPN download page": [
         "Вы будзеце перанакіраваны на старонку спампоўвання VPN"
+      ],
+      "You will lose access to ${ vpnPlanNameShort } servers and features on this date.": [
+        "Вы страціце доступ да сервераў ${ vpnPlanNameShort } і функцыі пасля наступлення гэтай даты."
       ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Вам будзе неабходны адрас ${ BRAND_NAME } для выкарыстання ${ MAIL_APP_NAME } і ${ CALENDAR_APP_NAME }"
@@ -2954,6 +3001,11 @@
     "Info message for custom invoice modal": {
       "Add your name (or company name) and address to your invoices.": [
         "Дадаць ваша імя (або назву кампаніі) і адрас у вашы рахункі."
+      ]
+    },
+    "Info subscription": {
+      "You can prevent expiry by reactivating the subscription": [
+        "Вы можаце прадухіліць завяршэнне дзеяння падпіскі паўторна актываваўшы яе"
       ]
     },
     "Info when deleting payment method": {
@@ -3067,11 +3119,11 @@
       "Browser version": [
         "Версія браўзера"
       ],
-      "BTC address:": [
-        "Адрас BTC:"
+      "BTC address": [
+        "Адрас BTC"
       ],
-      "BTC amount:": [
-        "Сума ў BTC:"
+      "BTC amount": [
+        "Сума BTC"
       ],
       "Card holder": [
         "Трымальнік карткі"
@@ -3301,6 +3353,9 @@
       "Subscription options": [
         "Параметры падпіскі"
       ],
+      "Synchronize with system": [
+        "Сінхранізаваць з сістэмай"
+      ],
       "System information": [
         "Сістэмная інфармацыя"
       ],
@@ -3404,6 +3459,9 @@
       "Forgot username?": [
         "Забылі імя карыстальніка?"
       ],
+      "How to pay with Bitcoin?": [
+        "Як заплаціць з дапамогай Bitcoin?"
+      ],
       "Learn more": [
         "Даведацца больш"
       ],
@@ -3418,6 +3476,9 @@
       ],
       "Privacy policy": [
         "Палітыка прыватнасці"
+      ],
+      "Reactivate now": [
+        "Актываваць паўторна"
       ],
       "Request an invite": [
         "Запытаць запрашэнне"
@@ -3861,7 +3922,7 @@
         "Неабмежаваная колькасць метак"
       ],
       "Unlimited logins and notes": [
-        "Неабмежаваная колькасць лагінаў і нататак"
+        "Неабмежаваная колькасць запісаў уваходу і нататак"
       ],
       "Unlimited messages per day": [
         "Неабмежаваная колькасць паведамленняў у дзень"
@@ -4937,6 +4998,9 @@
       "Active": [
         "Актыўна"
       ],
+      "Expiring": [
+        "Тэрмін дзеяння"
+      ],
       "Upcoming": [
         "Надыходзячы"
       ]
@@ -4999,8 +5063,14 @@
       "Phone number updated": [
         "Нумар тэлефона абноўлены"
       ],
+      "Preference saved": [
+        "Параметр захаваны"
+      ],
       "Verification successful": [
         "Паспяхова праверана"
+      ],
+      "You have successfully cancelled your subscription.": [
+        "Вы паспяхова скасавалі сваю падпіску."
       ],
       "You have successfully unsubscribed": [
         "Вы паспяхова адпісаліся"
@@ -5070,6 +5140,9 @@
       "${ VPN_APP_NAME } clients": [
         "Кліенты ${ VPN_APP_NAME }"
       ],
+      "(active)": [
+        "(актыўная)"
+      ],
       "1. Give a name to the config to be generated": [
         "1. Назваць згенерыраваную канфігурацыю"
       ],
@@ -5133,6 +5206,12 @@
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Скасаваць падпіску ${ MAIL_SHORT_APP_NAME }"
       ],
+      "Cancel subscription": [
+        "Скасаваць падпіску"
+      ],
+      "Cancel subscription?": [
+        "Скасаваць падпіску?"
+      ],
       "Card verification": [
         "Праверка карткі"
       ],
@@ -5178,6 +5257,9 @@
       "Date": [
         "Дата"
       ],
+      "Day theme": [
+        "Дзённая тэма"
+      ],
       "Delete": [
         "Выдаліць"
       ],
@@ -5199,9 +5281,6 @@
       "Downloads": [
         "Спампоўкі"
       ],
-      "Duration": [
-        "Працягласць"
-      ],
       "Edit credit/debit card": [
         "Рэдагаваць даныя банкаўскай карткі"
       ],
@@ -5213,9 +5292,6 @@
       ],
       "Email subscriptions": [
         "Падпіскі электроннай пошты"
-      ],
-      "End date": [
-        "Дата завяршэння"
       ],
       "Enter your password": [
         "Увядзіце пароль"
@@ -5259,6 +5335,9 @@
       "Next": [
         "Далей"
       ],
+      "Night theme": [
+        "Начная тэма"
+      ],
       "No recovery method": [
         "Адсутнічае метад аднаўлення"
       ],
@@ -5300,9 +5379,6 @@
       ],
       "Phone": [
         "Тэлефон"
-      ],
-      "Plan": [
-        "Тарыфны план"
       ],
       "Plan summary": [
         "Зводка па тарыфным плане"
@@ -5370,9 +5446,6 @@
       "Sign out": [
         "Выйсці"
       ],
-      "Start date": [
-        "Дата пачатку"
-      ],
       "Status": [
         "Статус"
       ],
@@ -5381,9 +5454,6 @@
       ],
       "Switch to two-password mode": [
         "Пераключыцца ў рэжым з двума паролямі"
-      ],
-      "Total paid": [
-        "Агульны кошт"
       ],
       "TV sign in": [
         "Увайсці на тэлевізары"
@@ -5399,9 +5469,6 @@
       ],
       "Unsupported browser": [
         "Браўзер не падтрымліваецца"
-      ],
-      "Users": [
-        "Карыстальнікі"
       ],
       "Verification": [
         "Праверка"
@@ -5465,12 +5532,50 @@
         "Рахунак ${ MAIL_APP_NAME }"
       ]
     },
+    "Title subscription": {
+      "Actions": [
+        "Дзеянні"
+      ],
+      "Duration": [
+        "Працягласць"
+      ],
+      "End date": [
+        "Дата завяршэння"
+      ],
+      "Plan": [
+        "Тарыфны план"
+      ],
+      "Start date": [
+        "Дата пачатку"
+      ],
+      "Status": [
+        "Статус"
+      ],
+      "Total": [
+        "Агулам"
+      ],
+      "Total paid": [
+        "Агульны кошт"
+      ],
+      "Users": [
+        "Карыстальнікі"
+      ]
+    },
     "Tooltip": {
+      "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
+        "Аўтаматычна пераключацца паміж вашымі пажаданымі тэмамі для дня і ночы згодна з начным і дзённым рэжымам вашай сістэмы."
+      ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Калі вы купілі падарункавы код або атрымалі яго ад нашай службы падтрымкі, то можаце ўвесці яго тут."
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Новы перыяд аплаты пачнецца ў ${ formattedTime }"
+      ],
+      "The selected theme will be active when your system is set to \"dark mode\"": [
+        "Выбраная тэма будзе актыўна, калі ў вашай сістэме зададзены \"цёмны рэжым\""
+      ],
+      "The selected theme will be active when your system is set to \"light mode\"": [
+        "Выбраная тэма будзе актыўна, калі ў вашай сістэме зададзены \"светлы рэжым\""
       ]
     },
     "Tor out of date": {
