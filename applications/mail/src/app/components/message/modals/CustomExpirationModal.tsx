@@ -17,8 +17,9 @@ import {
 } from '@proton/components';
 import { getWeekStartsOn } from '@proton/shared/lib/settings/helper';
 
+import { getMinExpirationTime } from 'proton-mail/helpers/expiration';
+
 import { EXPIRATION_TIME_MAX_DAYS } from '../../../constants';
-import { getMinScheduleTime } from '../../../helpers/schedule';
 
 interface Props extends Omit<ModalProps, 'onSubmit'> {
     onSubmit: (expirationDate: Date) => void;
@@ -62,9 +63,7 @@ const CustomExpirationModal = ({ onSubmit, ...rest }: Props) => {
             return;
         }
 
-        const now = new Date();
-
-        if (isBefore(newDate, now)) {
+        if (isBefore(newDate, startOfToday())) {
             return;
         }
 
@@ -111,7 +110,7 @@ const CustomExpirationModal = ({ onSubmit, ...rest }: Props) => {
                         label={c('Label attach to time input to select hours').t`Time`}
                         onChange={handleDate}
                         value={date}
-                        min={getMinScheduleTime(date)}
+                        min={getMinExpirationTime(date)}
                         max={isToday(date) ? endOfToday() : undefined}
                         data-testid="message:expiration-time-input"
                         required
