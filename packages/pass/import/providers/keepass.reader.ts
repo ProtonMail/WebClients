@@ -3,7 +3,6 @@ import { c } from 'ttag';
 import X2JS from 'x2js';
 
 import type { ItemImportIntent, MaybeNull } from '@proton/pass/types';
-import type { ItemExtraField } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
 import { uniqueId } from '@proton/pass/utils/string';
 
@@ -20,11 +19,10 @@ const getKeePassProtectInMemoryValue = (Value: KeePassEntryValue): string =>
 
 const entryToItem = (entry: KeePassEntry): ItemImportIntent<'login'> => {
     const entryString = Array.isArray(entry.String) ? entry.String : [entry.String];
-    const item = entryString.reduce<KeePassItem & { customFields: ItemExtraField[] }>(
+    const item = entryString.reduce<KeePassItem>(
         (acc, { Key, Value }) => {
-            if (Key === undefined || Value === undefined) {
-                return acc;
-            }
+            if (!Key || !Value) return acc;
+
             switch (Key) {
                 case 'Title':
                     acc.name = getKeePassEntryValue(Value);
@@ -54,7 +52,7 @@ const entryToItem = (entry: KeePassEntry): ItemImportIntent<'login'> => {
 
             return acc;
         },
-        { customFields: [] } as KeePassItem & { customFields: [] }
+        { customFields: [] }
     );
 
     return importLoginItem({
