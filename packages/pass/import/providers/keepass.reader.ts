@@ -3,6 +3,7 @@ import { c } from 'ttag';
 import X2JS from 'x2js';
 
 import type { ItemImportIntent, MaybeNull } from '@proton/pass/types';
+import type { ItemExtraField } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
 import { uniqueId } from '@proton/pass/utils/string';
 
@@ -14,28 +15,47 @@ import type { KeePassEntry, KeePassFile, KeePassGroup, KeePassItem, KeyPassEntry
 
 const getKeyPassEntryValue = (Value: KeyPassEntryValue): string => (typeof Value === 'string' ? Value : Value.__text);
 
+const getKeePassProtectInMemoryValue = (Value: KeyPassEntryValue): string =>
+    typeof Value === 'string' ? '' : Value._ProtectInMemory;
+
 const entryToItem = (entry: KeePassEntry): ItemImportIntent<'login'> => {
     const entryString = Array.isArray(entry.String) ? entry.String : [entry.String];
-    const item = entryString.reduce<KeePassItem>((acc, { Key, Value }) => {
-        if (Key === undefined || Value === undefined) {
-            return acc;
-        }
-        switch (Key) {
-            case 'Title':
-                acc.name = getKeyPassEntryValue(Value);
-                break;
-            case 'Notes':
-                acc.note = getKeyPassEntryValue(Value);
-                break;
-            case 'otp':
-                acc.totp = getKeyPassEntryValue(Value);
-                break;
-            default:
-                acc[Key.toLowerCase() as keyof KeePassItem] = getKeyPassEntryValue(Value);
-        }
+    const item = entryString.reduce<KeePassItem & { customFields: ItemExtraField[] }>(
+        (acc, { Key, Value }) => {
+            if (Key === undefined || Value === undefined) {
+                return acc;
+            }
+            switch (Key) {
+                case 'Title':
+                    acc.name = getKeyPassEntryValue(Value);
+                    break;
+                case 'Notes':
+                    acc.note = getKeyPassEntryValue(Value);
+                    break;
+                case 'UserName':
+                    acc.username = getKeyPassEntryValue(Value);
+                    break;
+                case 'Password':
+                    acc.password = getKeyPassEntryValue(Value);
+                    break;
+                case 'URL':
+                    acc.url = getKeyPassEntryValue(Value);
+                    break;
+                case 'otp':
+                    acc.totp = getKeyPassEntryValue(Value);
+                    break;
+                default:
+                    acc.customFields.push({
+                        fieldName: Key,
+                        type: getKeePassProtectInMemoryValue(Value) ? 'hidden' : 'text',
+                        data: { content: getKeyPassEntryValue(Value) ?? '' },
+                    });
+            }
 
-        return acc;
-    }, {} as KeePassItem);
+            return acc;
+        },
+        { customFields: [] } as KeePassItem & { customFields: [] }
+    );
 
     return importLoginItem({
         name: item.name,
@@ -44,6 +64,7 @@ const entryToItem = (entry: KeePassEntry): ItemImportIntent<'login'> => {
         password: item.password,
         urls: [item.url],
         totp: item.totp,
+        extraFields: item.customFields,
     });
 };
 

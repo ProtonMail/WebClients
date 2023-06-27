@@ -56,7 +56,29 @@ describe('Import KeePass xml', () => {
         expect(loginItem.content.totpUri).toEqual(
             'otpauth://totp/Entry%20A:nobodyA%40proton.me%40account.proton.me?issuer=Entry%20A&secret=VZKDI2A4UP2NG5BB&algorithm=SHA1&digits=6&period=30'
         );
-        expect(loginItem.extraFields).toEqual([]);
+        expect(loginItem.extraFields).toEqual([
+            {
+                fieldName: 'Hidden 1',
+                type: 'hidden',
+                data: {
+                    content: 'Hidden 1 content',
+                },
+            },
+            {
+                fieldName: 'Text 1',
+                type: 'text',
+                data: {
+                    content: 'Text 1 content',
+                },
+            },
+            {
+                fieldName: 'TimeOtp-Secret-Base32',
+                type: 'text',
+                data: {
+                    content: 'VZKDI2A4UP2NG5BB',
+                },
+            },
+        ]);
         expect(loginItem.platformSpecific).toBeUndefined();
         expect(loginItem.trashed).toEqual(false);
     });
@@ -123,7 +145,15 @@ describe('Import KeePass xml', () => {
         expect(loginItem2.content.password).toEqual('proton123');
         expect(loginItem2.content.urls).toEqual([]);
         expect(loginItem2.content.totpUri).toEqual('');
-        expect(loginItem2.extraFields).toEqual([]);
+        expect(loginItem2.extraFields).toEqual([
+            {
+                fieldName: 'Custom',
+                type: 'hidden',
+                data: {
+                    content: 'ABCDEF',
+                },
+            },
+        ]);
         expect(loginItem2.platformSpecific).toBeUndefined();
         expect(loginItem2.trashed).toEqual(false);
     });
