@@ -1,6 +1,7 @@
 import type { ReactNode, VFC } from 'react';
 
 import { Card } from '@proton/atoms/Card';
+import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import { AutoSaveType, FormEntryStatus, FormType } from '@proton/pass/types';
 
 import { NOTIFICATION_HEIGHT, NOTIFICATION_WIDTH } from '../../../content/constants';
@@ -23,6 +24,8 @@ const MockIFrameContainer: VFC<{ children: ReactNode }> = ({ children }) => (
     </div>
 );
 
+const MockSettings = { loadDomainImages: true } as ProxiedSettings;
+
 export const NotificationDebug: VFC = () => {
     return (
         <Card rounded className="mb-4 p-3 relative">
@@ -30,7 +33,7 @@ export const NotificationDebug: VFC = () => {
             <hr className="mt-2 mb-4 border-weak" />
             <div className="gap-4" style={{ columnCount: 2 }}>
                 <MockIFrameContainer>
-                    <NotificationSwitch state={null} />
+                    <NotificationSwitch state={null} settings={MockSettings} />
                 </MockIFrameContainer>
 
                 <MockIFrameContainer>
@@ -53,6 +56,7 @@ export const NotificationDebug: VFC = () => {
                                 },
                             },
                         }}
+                        settings={MockSettings}
                     />
                 </MockIFrameContainer>
 
@@ -62,7 +66,7 @@ export const NotificationDebug: VFC = () => {
                             action: NotificationAction.AUTOSAVE_PROMPT,
                             submission: {
                                 status: FormEntryStatus.COMMITTED,
-                                domain: 'proton.me',
+                                domain: 'netflix.com',
                                 subdomain: null,
                                 type: FormType.LOGIN,
                                 partial: false,
@@ -73,7 +77,7 @@ export const NotificationDebug: VFC = () => {
                                         item: {
                                             data: {
                                                 type: 'login',
-                                                metadata: { name: 'Proton.me', note: 'Autosaved', itemUuid: '' },
+                                                metadata: { name: 'netflix.com', note: 'Autosaved', itemUuid: '' },
                                                 content: {
                                                     username: 'nobody@proton.me',
                                                     password: '',
@@ -91,6 +95,7 @@ export const NotificationDebug: VFC = () => {
                                 },
                             },
                         }}
+                        settings={MockSettings}
                     />
                 </MockIFrameContainer>
             </div>
