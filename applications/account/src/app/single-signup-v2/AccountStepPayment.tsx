@@ -61,7 +61,7 @@ interface Props {
     loadingPaymentDetails: boolean;
     loadingSignup: boolean;
     onPay: (payment: 'signup-token' | PaypalPayment | TokenPayment | CardPayment | undefined) => Promise<void>;
-    onValidate: () => Promise<boolean>;
+    onValidate: () => boolean;
     withLoadingSignup: WithLoading;
     measure: Measure;
     defaultMethod: PAYMENT_METHOD_TYPES | undefined;
@@ -151,13 +151,9 @@ const AccountStepPayment = ({
         onPaypalError: (type) => {
             measurePayError(type);
         },
-        onValidatePaypal: async (type) => {
+        onValidatePaypal: (type) => {
             measurePaySubmit(type);
-
-            if ((await onValidate()) && validatePayment()) {
-                return true;
-            }
-            return false;
+            return onValidate() && validatePayment();
         },
         onPaypalPay({ Payment, type }) {
             return withLoadingSignup(onPay(Payment)).catch(() => {
@@ -206,7 +202,7 @@ const AccountStepPayment = ({
                         event.preventDefault();
 
                         const run = async () => {
-                            if ((await onValidate()) && paymentParameters && handleCardSubmit() && validatePayment()) {
+                            if (onValidate() && paymentParameters && handleCardSubmit() && validatePayment()) {
                                 const amountAndCurrency: AmountAndCurrency = {
                                     Currency: options.currency,
                                     Amount: options.checkResult.AmountDue,
@@ -311,7 +307,7 @@ const AccountStepPayment = ({
                                     fullWidth
                                     onClick={() => {
                                         const run = async () => {
-                                            if ((await onValidate()) && validatePayment()) {
+                                            if (onValidate() && validatePayment()) {
                                                 return onPay('signup-token');
                                             }
                                         };

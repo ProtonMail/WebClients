@@ -21,7 +21,7 @@ interface Props {
     currency: Currency;
     onPaypalPay: (data: OnPayResult) => void;
     onPaypalError?: (type: 'pay_pp' | 'pay_pp_no_cc') => void;
-    onValidatePaypal?: (type: 'pay_pp' | 'pay_pp_no_cc') => Promise<boolean>;
+    onValidatePaypal?: (type: 'pay_pp' | 'pay_pp_no_cc') => boolean;
     defaultMethod?: PAYMENT_METHOD_TYPES | undefined;
     paypalPrefetchToken?: boolean;
     onBeforeTokenFetchPaypal?: () => Promise<unknown> | unknown;
