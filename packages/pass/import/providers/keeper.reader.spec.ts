@@ -226,19 +226,14 @@ describe('Import Keeper CSV', () => {
         ]);
 
         /* login secure note */
-        const loginItemSecureNote = items[7] as ItemImportIntent<'login'>;
-        expect(loginItemSecureNote.type).toEqual('login');
+        const loginItemSecureNote = items[7] as ItemImportIntent<'note'>;
+        expect(loginItemSecureNote.type).toEqual('note');
         expect(loginItemSecureNote.createTime).toBeUndefined();
         expect(loginItemSecureNote.modifyTime).toBeUndefined();
         expect(loginItemSecureNote.metadata.itemUuid).not.toBeUndefined();
         expect(loginItemSecureNote.metadata.name).toEqual('secure note item');
         expect(loginItemSecureNote.metadata.note).toEqual('foo');
-        expect(loginItemSecureNote.content).toEqual({
-            username: '',
-            password: '',
-            urls: [],
-            totpUri: '',
-        });
+        expect(loginItemSecureNote.content).toEqual({});
         expect(loginItemSecureNote.trashed).toEqual(false);
         expect(loginItemSecureNote.extraFields).toEqual([]);
 
