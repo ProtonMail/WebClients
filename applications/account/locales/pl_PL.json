@@ -158,6 +158,9 @@
       "Cancel": [
         "Anuluj"
       ],
+      "Cancel subscription": [
+        "Anuluj subskrypcję"
+      ],
       "Change mailbox password": [
         "Zmień hasło skrzynki pocztowej"
       ],
@@ -517,6 +520,9 @@
       ],
       "Keep": [
         "Zachowaj"
+      ],
+      "Keep my ${ vpnPlanNameShort } subscription": [
+        "Zachowaj plan ${ vpnPlanNameShort }"
       ],
       "label emails as": [
         "oznacz wiadomości jako"
@@ -1000,6 +1006,14 @@
       ],
       "Try free for 30 days": [
         "Wypróbuj za darmo przez 30 dni"
+      ]
+    },
+    "Action subscription": {
+      "Manage": [
+        "Zarządzaj"
+      ],
+      "Reactivate": [
+        "Reaktywuj"
       ]
     },
     "Action; accept invitation to share calendar": {
@@ -4106,8 +4120,11 @@
       "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
         "Zawiera 2700 serwerów w ponad 65 krajach z możliwością połączenia do 10 urządzeń, dostępem do globalnych usług streamingu oraz funkcję blokowania reklam, złośliwego oprogramowania i wiele więcej."
       ],
+      "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
+        "Zawiera obsługę 3 niestandardowych domen, 90 adresów e-mail, nieograniczoną liczbę aliasów Hide-my-email, udostępnianie kalendarza i wiele więcej."
+      ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
-        "Zabezpiecz pliki dzięki zaszyfrowanej przestrzeni dyskowej w chmurze. Obejmuje automatyczną synchronizację, szyfrowane udostępnianie plików i nie tylko."
+        "Zabezpiecz pliki dzięki szyfrowanej przestrzeni dyskowej w chmurze. Zawiera automatyczną synchronizację, szyfrowane udostępnianie plików i wiele więcej."
       ]
     },
     "Feature": {
@@ -4347,11 +4364,29 @@
       "Spam:": [
         "Spam:"
       ],
+      "Take control over what lands in your inbox by creating the following lists:": [
+        "Przejmij kontrolę nad tym, co ląduje w Twojej skrzynce odbiorczej za pomocą następujących list:"
+      ],
+      "Take control over what lands in your organization members' inboxes by creating the following lists:": [
+        "Przejmij kontrolę nad tym, co ląduje w skrzynkach odbiorczych użytkowników organizacji za pomocą następujących list:"
+      ],
+      "These lists apply to all accounts in your organization. Members can create their own individual filters, but won't be able to override addresses or domains you blocked.": [
+        "Te listy obowiązują dla wszystkich kont w organizacji. Użytkownicy mogą tworzyć własne filtry, ale nie będą w stanie zastąpić zablokowanych adresów lub domen."
+      ],
+      "To ensure critical messages don't end up in spam and getting missed": [
+        "Aby zapewnić, że najważniejsze wiadomości nie trafią do Spamu i nie zostaną pominięte"
+      ],
       "To prevent junk mail from clogging up inboxes": [
         "Aby zapobiegać zapychaniu skrzynek odbiorczych przez wiadomości-śmieci"
       ],
       "To prevent junk mail from clogging up your inbox": [
         "Aby zapobiegać zapychaniu skrzynki odbiorczej przez wiadomości-śmieci"
+      ],
+      "To stop phishing or suspicious emails from entering your email system": [
+        "Aby zapobiegać przedostawaniu się prób wyłudzenia informacji lub podejrzanych wiadomości do poczty"
+      ],
+      "To stop phishing or suspicious emails from entering your organization's email system": [
+        "Aby zapobiegać przedostawaniu się prób wyłudzenia informacji lub podejrzanych wiadomości do poczty organizacji"
       ]
     },
     "Font Face Default": {
@@ -5223,9 +5258,6 @@
       "Admin account allocation": [
         "Przestrzeń dyskowa administratora"
       ],
-      "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
-        "Po dokonaniu płatności w Bitcoinach wykonaj tę instrukcję, aby ulepszyć konto."
-      ],
       "Align left": [
         "Wyrównaj do lewej"
       ],
@@ -5270,6 +5302,9 @@
       ],
       "American Express SafeKey logo": [
         "Logo American Express SafeKey"
+      ],
+      "Amount above maximum (${ amount }).": [
+        "Kwota powyżej maksimum (${ amount })."
       ],
       "Amount below minimum (${ amount }).": [
         "Kwota poniżej minimum (${ amount })."
@@ -5333,6 +5368,9 @@
       ],
       "Attention required": [
         "Wymagana uwaga"
+      ],
+      "Auto-renewal: ": [
+        "Automatyczne odnowienie: "
       ],
       "Auto-reply is active each month between the selected start and end time.": [
         "Autoresponder jest aktywny co miesiąc w wybranym przedziale czasowym."
@@ -5727,6 +5765,9 @@
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Jeśli uważasz, że nastąpiła pomyłka, skontaktuj się z nami ${ contactLink }."
       ],
+      "If you cancel, your ${ vpnPlanName } subscription will not be renewed when it expires on ${ expiryDate }.": [
+        "Jeśli anulujesz subskrypcję ${ vpnPlanName }, nie zostanie ona automatycznie odnowiona ${ expiryDate }."
+      ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Jeśli nie widzisz wiadomości w skrzynce odbiorczej, sprawdź folder Spam."
       ],
@@ -5810,6 +5851,9 @@
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Trwa importowanie danych z konta ${ importedEmailAddress } do ${ toEmail }."
+      ],
+      "Improve your ${ BRAND_NAME } experience by adapting the application to your needs.": [
+        "Popraw wrażenia z użytkowania ${ BRAND_NAME }, dostosowując aplikację do swoich potrzeb."
       ],
       "Inherited from parent folder": [
         "Zastosowano z folderu nadrzędnego"
@@ -6240,6 +6284,9 @@
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Wybierz, które kalendarze chcesz zaimportować. Dla każdego importowanego kalendarza zostanie utworzony nowy kalendarz, aż do osiągnięcia limitu kalendarzy dostępnych w Twoim planie."
       ],
+      "Send emails to encourage your members to protect their accounts with 2FA.": [
+        "Wyślij wiadomości, aby zachęcić użytkowników do ochrony swoich kont za pomocą uwierzytelniania dwustopniowego."
+      ],
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "Wysłano z bezpiecznej poczty e-mail <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
       ],
@@ -6375,6 +6422,9 @@
         "Następujące adresy nie zostały utworzone.",
         "Następujące adresy nie zostały utworzone."
       ],
+      "The following members will receive an email prompting them to enable two-factor authentication as soon as possible.": [
+        "Następujący użytkownicy otrzymają wiadomość z prośbą o włączenie uwierzytelniania dwustopniowego."
+      ],
       "The format of your CSV file is incorrect.": [
         "Format pliku CSV jest nieprawidłowy."
       ],
@@ -6440,6 +6490,9 @@
       ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Ten użytkownik jest obecnie odpowiedzialny za płatności w Twojej organizacji. Obniżając status tego użytkownika, staniesz się jednocześnie odpowiedzialny za płatności."
+      ],
+      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
+        "Spowoduje to anulowanie obecnej płatnej subskrypcji i utratę wszystkich zgromadzonych bonusów lojalnościowych."
       ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
         "Spowoduje to anulowanie obecnej płatnej subskrypcji i utratę wszystkich zgromadzonych bonusów lojalnościowych. Pozostałe środki subskrypcji zostaną zwrócone na Twoje konto w postaci środków."
@@ -6672,6 +6725,9 @@
       "We need to authenticate your payment with your bank.": [
         "Musimy zweryfikować płatność z Twoim bankiem."
       ],
+      "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
+        "Przed wymuszeniem uwierzytelniania dwustopniowego, zalecamy poinformowanie użytkowników organizacji i poproszenie ich o włączenie tej opcji."
+      ],
       "We recommend using your recovery phrase instead.": [
         "Zamiast tego zalecamy użycie hasła odzyskiwania."
       ],
@@ -6873,14 +6929,14 @@
       "You will be redirected to the VPN download page": [
         "Zostaniesz przekierowany do strony pobierania aplikacji VPN"
       ],
+      "You will lose access to ${ vpnPlanNameShort } servers and features on this date.": [
+        "W tym dniu stracisz dostęp do serwerów planu ${ vpnPlanNameShort } i ich funkcji."
+      ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Będziesz potrzebować adresu ${ BRAND_NAME }, aby używać poczty ${ MAIL_APP_NAME } i usługi ${ CALENDAR_APP_NAME }"
       ],
       "You will NOT be able to decrypt any messages, files, and other data encrypted with this key.": [
         "NIE będziesz mógł odszyfrować wiadomości, plików i innych danych zaszyfrowanych za pomocą tego klucza."
-      ],
-      "You will receive priority support from specialists trained in account protection. For any account security concerns, please contact us ${ hereLink }.": [
-        "Otrzymasz priorytetowe wsparcie od specjalistów przeszkolonych w zakresie ochrony konta. W przypadku jakichkolwiek obaw skontaktuj się z nami ${ hereLink }."
       ],
       "You will see more details in the Security logs below for important events such as sign in attempts.": [
         "Zobaczysz w logach bezpieczeństwa więcej szczegółów zdarzeń, np. próby logowania."
@@ -7024,6 +7080,11 @@
     "Info on errors": {
       "Click for details": [
         "Kliknij po szczegóły"
+      ]
+    },
+    "Info subscription": {
+      "You can prevent expiry by reactivating the subscription": [
+        "Możesz zapobiec wygaśnięciu subskrypcji, reaktywując ją ponownie"
       ]
     },
     "Info when deleting payment method": {
@@ -7542,11 +7603,11 @@
       "Browser version": [
         "Wersja przeglądarki"
       ],
-      "BTC address:": [
-        "Adres BTC:"
+      "BTC address": [
+        "Adres BTC"
       ],
-      "BTC amount:": [
-        "Kwota BTC:"
+      "BTC amount": [
+        "Kwota BTC"
       ],
       "Calendar": [
         "Kalendarz"
@@ -8449,9 +8510,6 @@
       "General": [
         "Ogólne"
       ],
-      "here": [
-        "tutaj"
-      ],
       "How to unlock data": [
         "Jak odblokować dane"
       ],
@@ -8475,6 +8533,9 @@
       ],
       "Privacy policy": [
         "Polityka prywatności"
+      ],
+      "Reactivate now": [
+        "Reaktywuj"
       ],
       "Request an invite": [
         "Poproś o zaproszenie"
@@ -8514,6 +8575,12 @@
       ]
     },
     "Loading info": {
+      "${ twoFAMembers.length }/${ members.length } of your organization member use two-factor authentication.": [
+        "${ twoFAMembers.length } / ${ members.length } użytkowników organizacji korzysta z uwierzytelniania dwustopniowego.",
+        "${ twoFAMembers.length } / ${ members.length } użytkowników organizacji korzysta z uwierzytelniania dwustopniowego.",
+        "${ twoFAMembers.length } / ${ members.length } użytkowników organizacji korzysta z uwierzytelniania dwustopniowego.",
+        "${ twoFAMembers.length } / ${ members.length } użytkowników organizacji korzysta z uwierzytelniania dwustopniowego."
+      ],
       "Almost there": [
         "Już prawie"
       ],
@@ -10830,6 +10897,15 @@
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
         "Uzyskaj dostęp z dowolnego miejsca do treści w usługach streamingowych, takich jak Netflix, Disney+ i Prime Video."
       ],
+      "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
+        "Wszystkie nasze usługi premium z najwyższymi limitami: 100 adresów e-mail, obsługa 10 niestandardowych domen, nieograniczona liczba aliasów Hide-my-email, udostępnianie kalendarza, szyfrowane przechowywanie oraz udostępnianie plików i wiele więcej."
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Zawiera obsługę 1 niestandardowej domeny, 10 adresów e-mail, 10 aliasów Hide-my-email, udostępnianie kalendarza i wiele więcej."
+      ],
+      "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Zawiera obsługę 3 niestandardowych domen, 15 adresów e-mail, nieograniczoną liczbę aliasów Hide-my-email, udostępnianie kalendarza i wiele więcej."
+      ],
       "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
         "Idealne rozwiązanie dla rodzin lub małych zespołów, każda osoba może mieć własną skrzynkę odbiorczą i aliasy. Wymaga niestandardowej domeny."
       ],
@@ -10837,7 +10913,7 @@
         "Otrzymaj bez dodatkowych kosztów płatne wersje wszystkich nowych usług prywatności, jakie wydamy w przyszłości, a także wczesny dostęp do wszystkich przyszłych funkcji i produktów."
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
-        "Zabezpiecz pliki dzięki zaszyfrowanej przestrzeni dyskowej w chmurze. Obejmuje automatyczną synchronizację, szyfrowane udostępnianie plików i nie tylko."
+        "Zabezpiecz pliki dzięki szyfrowanej przestrzeni dyskowej w chmurze. Zawiera automatyczną synchronizację, szyfrowane udostępnianie plików i wiele więcej."
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
         "Przestrzeń dyskowa jest współdzielona przez ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } oraz ${ DRIVE_APP_NAME }."
@@ -11246,6 +11322,9 @@
       "Verification successful": [
         "Weryfikacja powiodła się"
       ],
+      "You have successfully cancelled your subscription.": [
+        "Subskrypcja została anulowana."
+      ],
       "You have successfully unsubscribed": [
         "Subskrypcja została anulowana"
       ]
@@ -11322,6 +11401,48 @@
     "Summary of errors during export calendar": {
       "Details about events that couldn't be exported": [
         "Szczegóły wydarzeń, które nie mogły zostać wyeksportowane"
+      ]
+    },
+    "summer2023: Deal details": {
+      "Premium Password Manager": [
+        "Menedżer haseł w wersji Premium"
+      ]
+    },
+    "summer2023: Describe Proton Pass": {
+      "Securely store your passwords and autofill them on websites. Includes unlimited passwords, autofill, password generator, and more.": [
+        "W bezpieczny sposób przechowuj hasła i automatycznie je uzupełniaj w witrynach internetowych. Obejmuje nieograniczoną liczbę haseł, opcję automatycznego uzupełniania, generator haseł i nie tylko."
+      ]
+    },
+    "summer2023: Tooltip": {
+      "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
+        "Twórz bezpieczne dane logowania na wszystkich urządzeniach. Obejmuje nielimitowaną liczbę aliasów, 20 zabezpieczonych folderów, zintegrowane uwierzytelnianie dwustopniowe, automatyczne uzupełnianie danych karty kredytowej i nie tylko."
+      ],
+      "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "Obsługuje 2950 serwerów w ponad 65 krajach z możliwością połączenia do 10 urządzeń, dostępem do globalnych usług streamingowych oraz z funkcją blokowania reklam i złośliwego oprogramowania i więcej."
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "Zabezpiecz pliki dzięki zaszyfrowanej przestrzeni dyskowej w chmurze. Obejmuje historię wersji, szyfrowane udostępnianie plików i nie tylko."
+      ]
+    },
+    "summer2023:Footer": {
+      "*Your subscription will automatically renew at the standard discounted rate at the end of your billing cycle.": [
+        "* Twoja subskrypcja zostanie automatycznie odnowiona w obniżonej cenie na koniec cyklu rozliczeniowego."
+      ],
+      "Discounts are based on the standard monthly pricing. This offer is only available to first-time subscribers.": [
+        "Zniżki są oparte na standardowych cenach miesięcznych. Ta oferta jest dostępna tylko dla nowych subskrybentów."
+      ]
+    },
+    "summer2023:Info": {
+      "For a limited time, get the best ${ BRAND_NAME } has to offer at an exclusive discount.": [
+        "Przez ograniczony czas możesz uzyskać najlepsze oferty ${ BRAND_NAME } z wyjątkowymi zniżkami."
+      ],
+      "We’re celebrating the nine-year anniversary of our crowdfunding!": [
+        "Świętujemy dziewięciolecie naszego crowdfundingu!"
+      ]
+    },
+    "summer2023:Offer title": {
+      "${ BRAND_NAME } Anniversary Sale": [
+        "Wyprzedaż jubileuszowa ${ BRAND_NAME }"
       ]
     },
     "Tab in domain modal": {
@@ -11596,6 +11717,12 @@
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Anuluj subskrypcję ${ MAIL_SHORT_APP_NAME }"
       ],
+      "Cancel subscription": [
+        "Anuluj subskrypcję"
+      ],
+      "Cancel subscription?": [
+        "Anulować subskrypcję?"
+      ],
       "Card verification": [
         "Weryfikacja karty płatniczej"
       ],
@@ -11785,9 +11912,6 @@
       "Download ${ VPN_APP_NAME }": [
         "Pobierz ${ VPN_APP_NAME }"
       ],
-      "Duration": [
-        "Czas trwania"
-      ],
       "Edit credit/debit card": [
         "Edytuj kartę płatniczą"
       ],
@@ -11823,9 +11947,6 @@
       ],
       "Encryption and keys": [
         "Szyfrowanie i klucze"
-      ],
-      "End date": [
-        "Data zakończenia"
       ],
       "Enter your password": [
         "Wpisz hasło"
@@ -12049,9 +12170,6 @@
       "Phone": [
         "Telefon"
       ],
-      "Plan": [
-        "Plan"
-      ],
       "Plan summary": [
         "Podsumowanie planu"
       ],
@@ -12211,9 +12329,6 @@
       "Start a new import": [
         "Rozpocznij nowy import"
       ],
-      "Start date": [
-        "Data rozpoczęcia"
-      ],
       "Start import process": [
         "Rozpocznij proces importowania"
       ],
@@ -12250,9 +12365,6 @@
       "Time zone": [
         "Strefa czasu"
       ],
-      "Total paid": [
-        "Łącznie"
-      ],
       "Track your referrals": [
         "Sprawdź aktywność linku polecającego"
       ],
@@ -12276,9 +12388,6 @@
       ],
       "Upgrade plan": [
         "Ulepsz plan"
-      ],
-      "Users": [
-        "Użytkownicy"
       ],
       "Users and addresses": [
         "Użytkownicy i adresy"
@@ -12421,6 +12530,35 @@
         "Rola"
       ]
     },
+    "Title subscription": {
+      "Actions": [
+        "Akcje"
+      ],
+      "Duration": [
+        "Czas trwania"
+      ],
+      "End date": [
+        "Data zakończenia"
+      ],
+      "Plan": [
+        "Plan"
+      ],
+      "Start date": [
+        "Data rozpoczęcia"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "Total": [
+        "Łącznie"
+      ],
+      "Total paid": [
+        "Zapłacono"
+      ],
+      "Users": [
+        "Użytkownicy"
+      ]
+    },
     "Title; create calendar modal": {
       "Create calendar": [
         "Utwórz kalendarz"
@@ -12442,6 +12580,9 @@
       ],
       "Account is disconnected": [
         "Konto zostało odłączone"
+      ],
+      "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
+        "Przełączaj się między motywami na dzień i noc, synchronizując je z systemowymi trybami dziennymi i nocnymi"
       ],
       "Customize import to reduce the number of folders": [
         "Dostosuj proces importowania, aby zmniejszyć liczbę folderów"
@@ -12476,6 +12617,9 @@
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Kupiony lub otrzymany kod podarunkowy możesz wpisać tutaj."
       ],
+      "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
+        "Użytkownicy, którzy nie korzystają z uwierzytelniania dwustopniowego, otrzymają wiadomość z prośbą o jej włączenie."
+      ],
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "Wiadomości w folderze Wysłane lub Szkice będą nadal wyświetlane w tym folderze, nawet jeśli przeniesiesz je do innego folderu."
       ],
@@ -12505,6 +12649,15 @@
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Nowa subskrypcja rozpocznie się ${ formattedTime }"
+      ],
+      "The reduce motion setting is already enabled on this device": [
+        "Redukcja ruchu jest włączona na tym urządzeniu"
+      ],
+      "The selected theme will be active when your system is set to \"dark mode\"": [
+        "Wybrany motyw będzie aktywny, gdy w systemie jest ustawiony ciemny motyw"
+      ],
+      "The selected theme will be active when your system is set to \"light mode\"": [
+        "Wybrany motyw będzie aktywny, gdy w systemie jest ustawiony jasny motyw"
       ],
       "This address has been disabled": [
         "Ten adres został wyłączony"
