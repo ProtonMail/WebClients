@@ -155,18 +155,7 @@ export const Autosave: VFC<Props> = ({ submission, settings, onClose }) => {
                     </FieldsetCluster>
                 </div>
                 <div className="flex flex-justify-space-between gap-3">
-                    <Button
-                        pill
-                        color="norm"
-                        shape="outline"
-                        onClick={onClose}
-                        style={{
-                            /* FIXME: handle in pill button styles */
-                            '--button-default-text-color': 'var(--interaction-norm-major-1)',
-                            '--button-hover-text-color': 'var(--interaction-norm-major-2)',
-                            '--button-active-text-color': 'var(--interaction-norm-major-3)',
-                        }}
-                    >{c('Action').t`Not now`}</Button>
+                    <Button pill color="norm" shape="outline" onClick={onClose}>{c('Action').t`Not now`}</Button>
                     <Button
                         pill
                         color="norm"
