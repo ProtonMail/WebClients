@@ -158,6 +158,9 @@
       "Cancel": [
         "Скасаваць"
       ],
+      "Cancel subscription": [
+        "Скасаваць падпіску"
+      ],
       "Change mailbox password": [
         "Змяніць пароль паштовай скрыні"
       ],
@@ -517,6 +520,9 @@
       ],
       "Keep": [
         "Пакінуць"
+      ],
+      "Keep my ${ vpnPlanNameShort } subscription": [
+        "Пакінуць падпіску ${ vpnPlanNameShort }"
       ],
       "label emails as": [
         "пазначыць лісты як"
@@ -1000,6 +1006,14 @@
       ],
       "Try free for 30 days": [
         "Паспрабуйце бясплатна на працягу 30 дзён"
+      ]
+    },
+    "Action subscription": {
+      "Manage": [
+        "Кіраваць"
+      ],
+      "Reactivate": [
+        "Актываваць паўторна"
       ]
     },
     "Action; accept invitation to share calendar": {
@@ -2799,11 +2813,20 @@
       "${ name } deletion failed": [
         "Не ўдалося выдаліць ${ name }"
       ],
+      "${ name } failed to move to allow list": [
+        "Не ўдалося перамясціць ${ name } у спіс дазволеных"
+      ],
+      "${ name } failed to move to block list": [
+        "Не ўдалося перамясціць ${ name } у спіс заблакіраваных"
+      ],
       "${ name } failed to move to spam list": [
         "Не ўдалося перамясціць ${ name } у спіс са спамам"
       ],
       "${ name } moved to allow list": [
         "${ name } перамешчаны ў спіс дазволеных адрасоў"
+      ],
+      "${ name } moved to block list": [
+        "${ name } перамешчаны ў спіс заблакіраваных"
       ],
       "${ name } moved to spam list": [
         "${ name } перамешчаны ў спіс са спамам"
@@ -2907,8 +2930,20 @@
       "${ name } deletion failed": [
         "Не ўдалося выдаліць ${ name }"
       ],
+      "${ name } failed to move to allow list": [
+        "Не ўдалося перамясціць ${ name } у спіс дазволеных"
+      ],
+      "${ name } failed to move to block list": [
+        "Не ўдалося перамясціць ${ name } у спіс заблакіраваных"
+      ],
       "${ name } failed to move to spam list": [
         "Не ўдалося перамясціць ${ name } у спіс са спамам"
+      ],
+      "${ name } moved to allow list": [
+        "${ name } перамешчаны ў спіс дазволеных"
+      ],
+      "${ name } moved to block list": [
+        "${ name } перамешчана ў спіс заблакіраваных"
       ],
       "${ name } moved to spam list": [
         "${ name } перамешчаны ў спіс са спамам"
@@ -4953,6 +4988,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } неабходны ваш дазвол на ${ enableDesktopNotifications }."
       ],
+      "${ autoRenewal } your subscription will renew automatically on ${ renewalTime }.": [
+        "${ autoRenewal } ваша падпіска будзе падоўжана аўтаматычна ${ renewalTime }."
+      ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Вы страціце доступ да ўсіх бягучых зашыфраваных даных у вашым уліковым запісе, калі працягніце."
       ],
@@ -4987,7 +5025,7 @@
         "${ current } з ${ total }"
       ],
       "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
-        "${ DRIVE_APP_NAME } больш не будзе захоўваць папярэднія версіі вашых файлаў."
+        "${ DRIVE_APP_NAME } больш не будзе пакідаць папярэднія версіі вашых файлаў."
       ],
       "${ emailAddress } is invalid": [
         "Памылковы адрас ${ emailAddress }"
@@ -5229,9 +5267,6 @@
       "Admin account allocation": [
         "Вылучэнне ўліковага запісу адміністратара"
       ],
-      "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
-        "Пасля ўнясення аплаты Bitcoin, прытрымлівайцеся наступных інструкцый, каб палепшыць тарыфны план."
-      ],
       "Align left": [
         "Выраўнаваць па левым краі"
       ],
@@ -5276,6 +5311,9 @@
       ],
       "American Express SafeKey logo": [
         "Лагатып American Express SafeKey"
+      ],
+      "Amount above maximum (${ amount }).": [
+        "Сума перавышае максімум (${ amount })."
       ],
       "Amount below minimum (${ amount }).": [
         "Сума ніжэй за мінімум (${ amount })."
@@ -5339,6 +5377,9 @@
       ],
       "Attention required": [
         "Патрабуецца ўвага"
+      ],
+      "Auto-renewal: ": [
+        "Аўтаматычнае падаўжэнне: "
       ],
       "Auto-reply is active each month between the selected start and end time.": [
         "Аўтаматычны адказ актыўны кожны месяц паміж выбранай пачатковай і канчатковай датамі."
@@ -5733,6 +5774,9 @@
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Калі вы ўпэўнены, што гэта памылка, напішыце нам на адрас ${ contactLink }."
       ],
+      "If you cancel, your ${ vpnPlanName } subscription will not be renewed when it expires on ${ expiryDate }.": [
+        "Калі вы скасуеце, ваша падпіска ${ vpnPlanName } не будзе падоўжана пасля завяршэння тэрміну яе дзеяння ${ expiryDate }."
+      ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Калі паведамлення няма ў папцы з уваходнымі лістамі, то магчыма, што яно трапіла ў папку са спамам."
       ],
@@ -5819,6 +5863,9 @@
       ],
       "Improve your ${ BRAND_NAME } experience by adapting the application to your needs.": [
         "Паляпшайце свой досвед выкарыстання ${ BRAND_NAME }, адаптаваўшы праграму пад свае патрэбы."
+      ],
+      "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
+        "На наступным кроку вы можаце адправіць дэпазіт з выкарыстаннем адраса Bitcoin."
       ],
       "Inherited from parent folder": [
         "Унаследавана ад бацькоўскай папкі"
@@ -6232,10 +6279,10 @@
         "Захаванне вашага пароля"
       ],
       "Scan QR code instead": [
-        "Сканаваць QR-код"
+        "Сканіраваць QR-код"
       ],
       "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "Адскануйце гэты код сваёй прыладай з двухфактарнай аўтэнтыфікацыяй, каб наладзіць свой уліковы запіс. ${ switchButton }."
+        "Адсканіруйце гэты код сваёй прыладай з двухфактарнай аўтэнтыфікацыяй, каб наладзіць свой уліковы запіс. ${ switchButton }."
       ],
       "Securing your account": [
         "Абарона вашага ўліковага запісу"
@@ -6326,6 +6373,12 @@
       ],
       "Store this password and file in a safe place. You’ll need them again to import your key.": [
         "Захоўвайце гэты пароль і файл у надзейным месцы. Яны неабходны, каб імпартаваць ваш ключ."
+      ],
+      "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
+        "Адпраўце дэпазіт выкарыстоўваючы наступны адрас або адсканіруйце QR-код. Ваш дэпазіт адлюструецца на вашым рахунку пасля пацвярджэння."
+      ],
+      "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
+        "Падпіска заканчваецца: актывуйце яе паўторна да ${ byDate }, каб пакінуць перавагі свайго тарыфнага плана ${ planName }. ${ reactivateLink }"
       ],
       "Support for 1 custom email domain": [
         "Падтрымка для 1 карыстальніцкага дамена электроннай пошты"
@@ -6456,6 +6509,9 @@
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Гэты карыстальнік з'яўляецца адказным за плацяжы ў вашай арганізацыі. Паніжэнне правоў гэтага ўдзельніка прывядзе да таго, што за плацяжы арганізацыі будзеце адказваць вы."
       ],
+      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
+        "Гэта скасуе вашу бягучую платную падпіску і вы страціце ўсе перавагі пастаяннага карыстальніка, якія вы назапасілі."
+      ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
         "Гэта скасуе вашу бягучую платную падпіску і вы страціце ўсе перавагі пастаяннага карыстальніка, якія вы назапасілі. Рэшта балансу вашай падпіскі вернецца на ваш уліковы запіс у выглядзе крэдытаў."
       ],
@@ -6497,6 +6553,9 @@
       ],
       "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
         "Каб не страціць даныя, выдаляйце іх толькі пасля экспартавання копіі або калі цалкам упэўнены ў сваіх дзеяннях."
+      ],
+      "To complete your payment, please send ${ btcAmountBold } to the address below.": [
+        "Каб завяршыць плацеж, адпраўце ${ btcAmountBold } на пазначаны ніжэй адрас."
       ],
       "To confirm, please enter the name of the user you wish to delete.": [
         "Для пацвярджэння ўвядзіце імя карыстальніка, якое вы хочаце выдаліць."
@@ -6799,10 +6858,10 @@
         "Вы можаце пакінуць да ${ MAX_CALENDARS_FREE } календароў. Выдаліце спасылкі на абагулены каляндар і ўсіх карыстальнікаў ${ BRAND_NAME } з якімі вы абагулілі календары перад тым, як скасаваць сваю падпіску ${ MAIL_SHORT_APP_NAME }."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
-        "Вы можаце мець да ${ MAX_CALENDARS_FREE } календара. Выдаліце спасылкі на абагулены каляндар і ўсіх карыстальнікаў ${ BRAND_NAME } з якімі вы абагулілі календары перад тым, як скасаваць сваю падпіску.",
-        "Вы можаце мець да ${ MAX_CALENDARS_FREE } календароў. Выдаліце спасылкі на абагулены каляндар і ўсіх карыстальнікаў ${ BRAND_NAME } з якімі вы абагулілі календары перад тым, як скасаваць сваю падпіску.",
-        "Вы можаце мець да ${ MAX_CALENDARS_FREE } календароў. Выдаліце спасылкі на абагулены каляндар і ўсіх карыстальнікаў ${ BRAND_NAME } з якімі вы абагулілі календары перад тым, як скасаваць сваю падпіску.",
-        "Вы можаце мець да ${ MAX_CALENDARS_FREE } календароў. Выдаліце спасылкі на абагулены каляндар і ўсіх карыстальнікаў ${ BRAND_NAME } з якімі вы абагулілі календары перад тым, як скасаваць сваю падпіску."
+        "Вы можаце пакінуць да ${ MAX_CALENDARS_FREE } календара. Выдаліце спасылкі на абагулены каляндар і ўсіх карыстальнікаў ${ BRAND_NAME } з якімі вы абагулілі календары перад тым, як скасаваць сваю падпіску.",
+        "Вы можаце пакінуць да ${ MAX_CALENDARS_FREE } календароў. Выдаліце спасылкі на абагулены каляндар і ўсіх карыстальнікаў ${ BRAND_NAME } з якімі вы абагулілі календары перад тым, як скасаваць сваю падпіску.",
+        "Вы можаце пакінуць да ${ MAX_CALENDARS_FREE } календароў. Выдаліце спасылкі на абагулены каляндар і ўсіх карыстальнікаў ${ BRAND_NAME } з якімі вы абагулілі календары перад тым, як скасаваць сваю падпіску.",
+        "Вы можаце пакінуць да ${ MAX_CALENDARS_FREE } календароў. Выдаліце спасылкі на абагулены каляндар і ўсіх карыстальнікаў ${ BRAND_NAME } з якімі вы абагулілі календары перад тым, як скасаваць сваю падпіску."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Вы можаце пакінуць да ${ MAX_CALENDARS_FREE } календара. Выдаліце спасылкі на абагулены каляндар перад тым, як скасаваць сваю падпіску ${ MAIL_SHORT_APP_NAME }.",
@@ -6891,14 +6950,17 @@
       "You will be redirected to the VPN download page": [
         "Вы будзеце перанакіраваны на старонку спампоўвання VPN"
       ],
+      "You will lose access to ${ vpnPlanNameShort } servers and features on this date.": [
+        "Вы страціце доступ да сервераў ${ vpnPlanNameShort } і функцыі пасля наступлення гэтай даты."
+      ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Вам будзе неабходны адрас ${ BRAND_NAME } для выкарыстання ${ MAIL_APP_NAME } і ${ CALENDAR_APP_NAME }"
       ],
       "You will NOT be able to decrypt any messages, files, and other data encrypted with this key.": [
         "Вы НЕ зможаце расшыфраваць паведамленні, файлы і іншыя даныя, якія зашыфраваны гэтым ключом."
       ],
-      "You will receive priority support from specialists trained in account protection. For any account security concerns, please contact us ${ hereLink }.": [
-        "Вы атрымаеце прыярытэтную падтрымку ад спецыялістаў, якія маюць досвед у абароне ўліковых запісаў. У выпадку пытанняў звязаных з іх парушэннямі бяспекі, вы можаце звязацца з намі ${ hereLink }"
+      "You will receive priority support from specialists trained in account protection. For any account security concerns, please ${ hereLink }.": [
+        "Вы атрымаеце прыярытэтную падтрымку ад спецыялістаў, якія маюць досвед у абароне ўліковых запісаў. У выпадку пытанняў звязаных з бяспекай уліковага запісу, перайдзіце па спасылцы ${ hereLink }"
       ],
       "You will see more details in the Security logs below for important events such as sign in attempts.": [
         "Вы ўбачыце ніжэй больш падрабязнасцей у журнале бяспекі пра такія важныя падзеі, як спробы ўваходу."
@@ -6973,10 +7035,10 @@
         "Ваша імпартаванне не будзе апрацавана."
       ],
       "Your login information will not be saved after the import is completed.": [
-        "Пасля завяршэння імпартавання вашы ўліковыя даныя не будуць захаваны."
+        "Пасля завяршэння імпартавання вашы даныя ўваходу не будуць захаваны."
       ],
       "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
-        "Пароль вашай арганізацыі можа выкарыстоўвацца некалькімі карыстальнікамі, якім вы вырашыце даць правы адміністратара. Ён таксама з'яўляецца кодам аварыйнага аднаўлення доступу ў вашай арганізацыі ў выпадку, калі вы раптам страціце доступ да свайго ўліковага запісу. Захавайце дадзены пароль і трымайце яго ў бяспечным месцы."
+        "Пароль вашай арганізацыі можа выкарыстоўвацца некалькімі карыстальнікамі, якім вы вырашыце даць правы адміністратара. Ён таксама з'яўляецца кодам аварыйнага аднаўлення доступу вашай арганізацыі ў выпадку, калі вы раптам страціце доступ да свайго ўліковага запісу. Захавайце дадзены пароль і трымайце яго ў бяспечным месцы."
       ],
       "Your organization's emails are protected with end-to-end encryption using the organization key. This fingerprint can be used to verify that all administrators in your account have the same key.": [
         "Лісты вашай арганізацыі абаронены скразным шыфраваннем з выкарыстаннем ключа арганізацыі. Гэты адбітак можна выкарыстоўваць для праверкі таго, што ўсе адміністратары вашага ўліковага запісу маюць аднолькавы ключ."
@@ -7042,6 +7104,11 @@
     "Info on errors": {
       "Click for details": [
         "Націсніце, каб даведацца падрабязнасці"
+      ]
+    },
+    "Info subscription": {
+      "You can prevent expiry by reactivating the subscription": [
+        "Вы можаце прадухіліць завяршэнне дзеяння падпіскі паўторна актываваўшы яе"
       ]
     },
     "Info when deleting payment method": {
@@ -7560,11 +7627,11 @@
       "Browser version": [
         "Версія браўзера"
       ],
-      "BTC address:": [
-        "Адрас BTC:"
+      "BTC address": [
+        "Адрас BTC"
       ],
-      "BTC amount:": [
-        "Сума ў BTC:"
+      "BTC amount": [
+        "Сума BTC"
       ],
       "Calendar": [
         "Каляндар"
@@ -7741,7 +7808,7 @@
         "Больш не пытаць"
       ],
       "Don't keep versions": [
-        "Не захоўваць версіі"
+        "Не пакідаць версіі"
       ],
       "Duration": [
         "Працягласць"
@@ -7870,7 +7937,7 @@
         "Заставацца ў сістэме"
       ],
       "Keep messages in Sent/Drafts": [
-        "Захоўваць паведамленні ў Адпраўленых/Чарнавіках"
+        "Пакідаць паведамленні ў Адпраўленых/Чарнавіках"
       ],
       "Key": [
         "Ключ"
@@ -8455,6 +8522,9 @@
       "Common sign up issues": [
         "Распаўсюджаныя праблемы рэгістрацыі"
       ],
+      "contact us": [
+        "звязацца з намі"
+      ],
       "Create account": [
         "Стварыць уліковы запіс"
       ],
@@ -8467,8 +8537,8 @@
       "General": [
         "Агульныя"
       ],
-      "here": [
-        "тут"
+      "How to pay with Bitcoin?": [
+        "Як заплаціць з дапамогай Bitcoin?"
       ],
       "How to unlock data": [
         "Як разблакіраваць даныя"
@@ -8493,6 +8563,9 @@
       ],
       "Privacy policy": [
         "Палітыка прыватнасці"
+      ],
+      "Reactivate now": [
+        "Актываваць паўторна"
       ],
       "Request an invite": [
         "Запытаць запрашэнне"
@@ -9267,7 +9340,7 @@
         "Неабмежаваная колькасць метак"
       ],
       "Unlimited logins and notes": [
-        "Неабмежаваная колькасць лагінаў і нататак"
+        "Неабмежаваная колькасць запісаў уваходу і нататак"
       ],
       "Unlimited messages per day": [
         "Неабмежаваная колькасць паведамленняў у дзень"
@@ -11109,6 +11182,9 @@
       "Active": [
         "Актыўна"
       ],
+      "Expiring": [
+        "Тэрмін дзеяння"
+      ],
       "Upcoming": [
         "Надыходзячы"
       ]
@@ -11275,6 +11351,9 @@
       ],
       "Verification successful": [
         "Паспяхова праверана"
+      ],
+      "You have successfully cancelled your subscription.": [
+        "Вы паспяхова скасавалі сваю падпіску."
       ],
       "You have successfully unsubscribed": [
         "Вы паспяхова адпісаліся"
@@ -11626,6 +11705,12 @@
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Скасаваць падпіску ${ MAIL_SHORT_APP_NAME }"
       ],
+      "Cancel subscription": [
+        "Скасаваць падпіску"
+      ],
+      "Cancel subscription?": [
+        "Скасаваць падпіску?"
+      ],
       "Card verification": [
         "Праверка карткі"
       ],
@@ -11815,9 +11900,6 @@
       "Download ${ VPN_APP_NAME }": [
         "Спампаваць ${ VPN_APP_NAME }"
       ],
-      "Duration": [
-        "Працягласць"
-      ],
       "Edit credit/debit card": [
         "Рэдагаваць даныя банкаўскай карткі"
       ],
@@ -11853,9 +11935,6 @@
       ],
       "Encryption and keys": [
         "Шыфраванне і ключы"
-      ],
-      "End date": [
-        "Дата завяршэння"
       ],
       "Enter your password": [
         "Увядзіце пароль"
@@ -12073,11 +12152,11 @@
       "PayPal verification failed": [
         "Не ўдалося ажыццявіць праверку PayPal"
       ],
+      "Personalise your e-mail footer": [
+        "Персаналізуйце ніжні калонтытул ліста"
+      ],
       "Phone": [
         "Тэлефон"
-      ],
-      "Plan": [
-        "Тарыфны план"
       ],
       "Plan summary": [
         "Зводка па тарыфным плане"
@@ -12238,9 +12317,6 @@
       "Start a new import": [
         "Пачаць новае імпартаванне"
       ],
-      "Start date": [
-        "Дата пачатку"
-      ],
       "Start import process": [
         "Пачаць працэс імпартавання"
       ],
@@ -12277,9 +12353,6 @@
       "Time zone": [
         "Часавы пояс"
       ],
-      "Total paid": [
-        "Агульны кошт"
-      ],
       "Track your referrals": [
         "Сачэнне за рэферальнымі запрашэннямі"
       ],
@@ -12303,9 +12376,6 @@
       ],
       "Upgrade plan": [
         "Палепшыць тарыфны план"
-      ],
-      "Users": [
-        "Карыстальнікі"
       ],
       "Users and addresses": [
         "Карыстальнікі і адрасы"
@@ -12446,6 +12516,35 @@
       ],
       "Role": [
         "Роля"
+      ]
+    },
+    "Title subscription": {
+      "Actions": [
+        "Дзеянні"
+      ],
+      "Duration": [
+        "Працягласць"
+      ],
+      "End date": [
+        "Дата завяршэння"
+      ],
+      "Plan": [
+        "Тарыфны план"
+      ],
+      "Start date": [
+        "Дата пачатку"
+      ],
+      "Status": [
+        "Статус"
+      ],
+      "Total": [
+        "Агулам"
+      ],
+      "Total paid": [
+        "Агульны кошт"
+      ],
+      "Users": [
+        "Карыстальнікі"
       ]
     },
     "Title; create calendar modal": {
