@@ -2652,9 +2652,6 @@
       "Please refresh the page or try again later.": [
         "ページを再読み込みするか、後でもう一度お試しください。"
       ],
-      "Something went wrong": [
-        "不具合が発生しました"
-      ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "このページをロードできません。ページを再読み込みするかインターネットの接続状況を確認してください。"
       ],
@@ -3410,6 +3407,9 @@
       "Attention required": [
         "注意が必要です"
       ],
+      "Based on your time zone": [
+        "現在のタイムゾーンに基づく"
+      ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "新しい検証コードを要求する前に、迷惑メールフォルダーを確認し、${ strong } が正しいアドレスなことを確認してください。"
       ],
@@ -3556,9 +3556,6 @@
       ],
       "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
         "メール、カレンダー、連絡先を他のサービスから ${ BRAND_NAME } にインポートします。"
-      ],
-      "Importing your data from ${ fromEmail } to ${ toEmail }.": [
-        "データを ${ fromEmail } から ${ toEmail } にインポートしています。"
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "データを ${ importedEmailAddress } から ${ toEmail } にインポートしています。"
@@ -4542,9 +4539,6 @@
       "Add public holidays": [
         "祝日を追加"
       ],
-      "Cannot add more calendars": [
-        "カレンダーをこれ以上追加できません"
-      ],
       "Edit calendar": [
         "カレンダーの編集"
       ],
@@ -4782,6 +4776,9 @@
       ]
     },
     "Notification in holidays calendar modal": {
+      "Adding holidays calendar failed": [
+        "祝日カレンダーの追加に失敗しました"
+      ],
       "Calendar added": [
         "カレンダーを追加しました"
       ]
@@ -5202,11 +5199,6 @@
     "Settings update growler warning": {
       "Failed to update settings": [
         "設定の更新に失敗しました"
-      ]
-    },
-    "Share calendar assistive text": {
-      "To invite non-${ BRAND_NAME } users, share your calendar with a link.": [
-        "非 ${ BRAND_NAME } ユーザーを招待するには、リンクでカレンダーを共有します."
       ]
     },
     "Share calendar max shares reached error": {
