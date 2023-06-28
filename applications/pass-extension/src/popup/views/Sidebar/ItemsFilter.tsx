@@ -5,7 +5,9 @@ import { c } from 'ttag';
 import type { DropdownProps, IconName } from '@proton/components';
 import { Dropdown, DropdownButton, DropdownMenu, Icon, usePopperAnchor } from '@proton/components';
 import type { ItemTypeFilter } from '@proton/pass/types';
+import { PassFeature } from '@proton/pass/types/api/features';
 
+import { useFeatureFlag } from '../../../shared/hooks/useFeatureFlag';
 import { itemTypeToIconName } from '../../../shared/items';
 import { DropdownMenuButton } from '../../components/Dropdown/DropdownMenuButton';
 import { useItems } from '../../hooks/useItems';
@@ -43,6 +45,7 @@ const getOptionsWithoutCount = (): { [key in ItemTypeFilter]: { label: string; i
 export const ItemsFilter: VFC<ItemsFilterProps> = ({ value, onChange }) => {
     const { anchorRef, isOpen, close, toggle } = usePopperAnchor<HTMLButtonElement>();
     const { matched } = useItems();
+    const showCreditCards = useFeatureFlag<boolean>(PassFeature.PassCreditCardsV1);
 
     const options = useMemo(
         () =>
@@ -81,18 +84,22 @@ export const ItemsFilter: VFC<ItemsFilterProps> = ({ value, onChange }) => {
                 size={DROPDOWN_SIZE}
             >
                 <DropdownMenu>
-                    {options.map(({ type, count, label, icon }) => (
-                        <DropdownMenuButton
-                            key={type}
-                            onClick={() => onChange(type)}
-                            isSelected={type === value}
-                            size="small"
-                        >
-                            <Icon className="mr-2 color-weak" name={icon} />
-                            {label}
-                            <span className="color-weak ml-1">({count})</span>
-                        </DropdownMenuButton>
-                    ))}
+                    {options.map(({ type, count, label, icon }) => {
+                        if (type === 'creditCard' && !showCreditCards) return null;
+
+                        return (
+                            <DropdownMenuButton
+                                key={type}
+                                onClick={() => onChange(type)}
+                                isSelected={type === value}
+                                size="small"
+                            >
+                                <Icon className="mr-2 color-weak" name={icon} />
+                                {label}
+                                <span className="color-weak ml-1">({count})</span>
+                            </DropdownMenuButton>
+                        );
+                    })}
                 </DropdownMenu>
             </Dropdown>
         </>
