@@ -1,29 +1,59 @@
 import { useEffect } from 'react';
 
+import { useOnline } from '@proton/components/hooks';
+import { HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
+
 const useDynamicFavicon = (faviconSrc: string) => {
-    useEffect(() => {
-        // Ensure all favicons are removed, otherwise chrome has trouble updating to the dynamic icon
-        const links = document.querySelectorAll('link[rel="icon"]:not([data-dynamic-favicon])');
-        links.forEach((link) => {
-            link.remove();
-        });
+    const onlineStatus = useOnline();
 
-        const favicon = document.querySelector('link[rel="icon"][type="image/svg+xml"][data-dynamic-favicon]');
-        // Add random param to force refresh
-        const randomParameter = Math.random().toString(36).substring(2);
-        const href = `${faviconSrc}?v=${randomParameter}`;
+    useEffect(
+        () => {
+            const run = async () => {
+                // Add random param to force refresh
+                const randomParameter = Math.random().toString(36).substring(2);
+                const href = `${faviconSrc}?v=${randomParameter}`;
 
-        if (favicon) {
-            favicon.setAttribute('href', href);
-        } else {
-            const link = document.createElement('link');
-            link.setAttribute('rel', 'icon');
-            link.setAttribute('type', 'image/svg+xml');
-            link.setAttribute('data-dynamic-favicon', '');
-            link.setAttribute('href', href);
-            document.head.appendChild(link);
-        }
-    }, [faviconSrc]);
+                try {
+                    /**
+                     * Proactively fetch favicon to test if /assets are reachable.
+                     * * If that goes well, the request is cached and not launched again below when actually changing the favicon in the HTML
+                     * * If that doesn't work, we want to handle the error here since we can't attach an error handled to the link tag that controls the favicon
+                     */
+                    const { status } = await fetch(href);
+
+                    if (status !== HTTP_STATUS_CODE.OK) {
+                        throw new Error('New favicon was not fetched properly');
+                    }
+                } catch (e) {
+                    // if we cannot fetch the favicon, do not attempt to change it
+                    return;
+                }
+
+                // Ensure all favicons are removed, otherwise chrome has trouble updating to the dynamic icon
+                const links = document.querySelectorAll('link[rel="icon"]:not([data-dynamic-favicon])');
+                links.forEach((link) => {
+                    link.remove();
+                });
+
+                const favicon = document.querySelector('link[rel="icon"][type="image/svg+xml"][data-dynamic-favicon]');
+
+                if (favicon) {
+                    favicon.setAttribute('href', href);
+                } else {
+                    const link = document.createElement('link');
+                    link.setAttribute('rel', 'icon');
+                    link.setAttribute('type', 'image/svg+xml');
+                    link.setAttribute('data-dynamic-favicon', '');
+                    link.setAttribute('href', href);
+                    document.head.appendChild(link);
+                }
+            };
+
+            run();
+        },
+        // onlineStatus is a dependency so that we re-try to update the favicon when back online
+        [faviconSrc, onlineStatus]
+    );
 };
 
 export default useDynamicFavicon;
