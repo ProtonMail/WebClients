@@ -45,7 +45,7 @@
     },
     "Action": {
       "${ BRAND_NAME } introduction": [
-        "Introdução do ${ BRAND_NAME }"
+        "Introdução da ${ BRAND_NAME }"
       ],
       "${ BRAND_NAME } shop": [
         "Loja ${ BRAND_NAME }"
@@ -69,7 +69,7 @@
         "Adicionar"
       ],
       "Add ${ BRAND_NAME } Account": [
-        "Adicionar conta ${ BRAND_NAME }"
+        "Adicionar conta da ${ BRAND_NAME }"
       ],
       "Add address": [
         "Adicionar endereço"
@@ -396,7 +396,7 @@
         "Criptografar e exportar"
       ],
       "Explore other ${ BRAND_NAME } plans": [
-        "Explorar outros planos ${ BRAND_NAME }"
+        "Explorar outros planos da ${ BRAND_NAME }"
       ],
       "Export": [
         "Exportar"
@@ -1134,7 +1134,7 @@
     },
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
-        "Aplicativos do ${ BRAND_NAME }"
+        "Aplicativos da ${ BRAND_NAME }"
       ]
     },
     "Attached ics file error": {
@@ -2730,7 +2730,7 @@
         "Criptografando e importando contatos... Isso pode levar alguns minutos. Quando o processo estiver concluído, você poderá fechar esta janela."
       ],
       "Get up to ${ credits } in credits by inviting friends to ${ BRAND_NAME }.": [
-        "Ganhe até ${ credits } em créditos convidando amigos para a ${ BRAND_NAME }."
+        "Receba até ${ credits } em créditos convidando amigos para a ${ BRAND_NAME }."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Parece que a lista de contatos que você está importando contém alguns grupos. Verifique como esses grupos devem ser importados."
@@ -2828,7 +2828,7 @@
         "Funções ausentes"
       ],
       "My reason isn't listed, please comment": [
-        "Minha razão não está listada. Comente."
+        "Meu motivo não está listado. Comente."
       ],
       "Streaming service unsupported": [
         "Serviço de streaming não suportado"
@@ -2860,6 +2860,20 @@
       ],
       "90 minutes": [
         "90 minutos"
+      ]
+    },
+    "Email": {
+      "Email verified": [
+        "E-mail verificado"
+      ],
+      "Thank you for verifying your email address.": [
+        "Obrigado por verificar seu endereço de e-mail."
+      ],
+      "Thanks for letting us know": [
+        "Obrigado por nos informar"
+      ],
+      "You can safely close this tab.": [
+        "Você pode fechar esta aba com segurança."
       ]
     },
     "Email body for description (description part)": {
@@ -2955,6 +2969,9 @@
       ]
     },
     "Email Unsubscribe": {
+      "Email subscriptions": [
+        "Inscrições de e-mail"
+      ],
       "Which emails do you want to receive from ${ BRAND_NAME }?": [
         "Quais e-mails você deseja receber da ${ BRAND_NAME }?"
       ],
@@ -3163,7 +3180,7 @@
         "Nenhuma chave WKD recuperada para o usuário é válida para o envio"
       ],
       "Not a ${ BRAND_NAME } account": [
-        "Não é uma conta do ${ BRAND_NAME }"
+        "Não é uma conta da ${ BRAND_NAME }"
       ],
       "Not a valid number": [
         "Não é um número válido"
@@ -3239,7 +3256,7 @@
         "A chave primária não é valida para o envio"
       ],
       "Primary key retrieved for ${ BRAND_NAME } user is not valid for sending": [
-        "Chave primária recuperada para o usuário ${ BRAND_NAME } não é válida para o envio"
+        "A chave primária recuperada para o usuário da ${ BRAND_NAME } não é válida para o envio."
       ],
       "Process aborted": [
         "Processo abortado"
@@ -3919,7 +3936,7 @@
         "Para facilitar a transação, estamos oferecendo a você uma avaliação gratuita de 30 dias do ${ BRAND_NAME } Unlimited*."
       ],
       "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Atualmente, os planos Visionary e familiar não oferecem suporte a contas externas. Crie um endereço ${ BRAND_NAME } antes de participar. ${ addressSettingsLink }"
+        "Atualmente, os planos Visionary e familiar não oferecem suporte a contas externas. Crie um endereço da ${ BRAND_NAME } antes de participar. ${ addressSettingsLink }"
       ],
       "Visionary and family plans do not currently support lifetime accounts.": [
         "Atualmente, planos Visionary e familiares não oferecem suporte a contas vitalícias."
@@ -3955,7 +3972,7 @@
         "Você perderá o acesso a todos os recursos premium e espaço de armazenamento incluso com ${ BRAND_NAME } Family."
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
-        "Você foi convidado a vincular sua Conta ${ BRAND_NAME } a este plano de grupo e aproveitar juntos de todos os recursos premium de ${ BRAND_NAME_TWO }."
+        "Você foi convidado a vincular sua conta da ${ BRAND_NAME } a este plano de grupo e aproveitar juntos de todos os recursos premium da ${ BRAND_NAME_TWO }."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Sua conta tem mais endereços de e-mail do que a quantidade que está disponível para você neste plano. ${ addressSettingsLink }"
@@ -4156,7 +4173,7 @@
         "Você tem certeza que deseja excluir a chave de segurança ${ name }?"
       ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Insira uma chave de segurança vinculada à sua conta ${ BRAND_NAME }."
+        "Insira uma chave de segurança vinculada à sua conta da ${ BRAND_NAME }."
       ],
       "Insert your security key into your device's USB port.": [
         "Insira sua chave de segurança na porta USB do seu dispositivo."
@@ -4635,7 +4652,7 @@
     },
     "Import calendar; import invitation": {
       "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your ${ BRAND_NAME } email address.": [
-        "Eventos importados aparecem em ${ CALENDAR_APP_NAME } como eventos simples, sem organizador nem detalhes de participantes. Para receber atualizações e ver participantes, peça aos organizadores que te convidem usando seu endereço de e-mail do ${ BRAND_NAME }."
+        "Eventos importados aparecem no ${ CALENDAR_APP_NAME } como eventos simples, sem organizador nem detalhes de participantes. Para receber atualizações e ver participantes, peça aos organizadores que te convidem usando seu endereço de e-mail da ${ BRAND_NAME }."
       ],
       "This file contains an event invitation:": [
         "Este arquivo contém um convite para um evento:",
@@ -4768,7 +4785,7 @@
         "Expanda o menu clicando nos 3 pontinhos (...)."
       ],
       "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by ${ BRAND_NAME }.": [
-        "Gere a ${ boldAppPassword } e a use no lugar de sua senha regular quando perguntado pelo ${ BRAND_NAME }."
+        "Gere a ${ boldAppPassword } e a use no lugar de sua senha regular quando perguntado pela ${ BRAND_NAME }."
       ],
       "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }.": [
         "Vá para ${ boldAccountInfo } em seu perfil em ${ yahooMailLink }."
@@ -4789,13 +4806,13 @@
         "Para importar um calendário para a ${ BRAND_NAME }, você precisa do ${ knowledgeBaseLink }. Baixe-o antes de iniciar o processo de importação."
       ],
       "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
-        "Para importar contatos para o ${ BRAND_NAME }, você precisa de um ${ knowledgeBaseLink }. Baixe-o do Yahoo em 3 passos simples:"
+        "Para importar contatos para a ${ BRAND_NAME }, você precisa de um ${ knowledgeBaseLink }. Baixe-o do Yahoo em 3 passos simples:"
       ],
       "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
         "Para importar contatos para a ${ BRAND_NAME }, você precisa de um ${ knowledgeBaseLink }. Baixe-o antes de iniciar o processo de importação."
       ],
       "To import emails to ${ BRAND_NAME }, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
-        "Para importar e-mail para o ${ BRAND_NAME }, você precisa de uma ${ appPasswordLink } do Yahoo. Consiga-a seguindo esses passos:"
+        "Para importar e-mail para a ${ BRAND_NAME }, você precisa de uma ${ appPasswordLink } do Yahoo. Consiga-a seguindo esses passos:"
       ]
     },
     "Import instructions emphasis": {
@@ -4934,6 +4951,9 @@
       ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Você perderá o acesso a todos os dados criptografados atuais em sua conta se continuar."
+      ],
+      "${ BRAND_NAME } is privacy you can trust, ensured by strong encryption, open-source code, and Swiss privacy laws. We believe nobody should be able to exploit your data, period. Our technology and business are based upon this fundamentally stronger definition of privacy.": [
+        "${ BRAND_NAME } é a privacidade em que você pode confiar, garantida por criptografia forte, código-fonte aberto e leis suíças de privacidade. Acreditamos que ninguém deve ser capaz de explorar seus dados, e ponto final. Nossas tecnologias e negócios são baseados e fundamentatos na mais forte definição de privacidade."
       ],
       "${ BRAND_NAME } paused an import because it lost the connection with your other email provider. Please reconnect.": [
         "A ${ BRAND_NAME } pausou uma importação porque ela perdeu a conexão com o outro provedor de e-mail. Reconecte."
@@ -5101,7 +5121,7 @@
         "Um nome para ajudá-lo a identificar onde você o utiliza, para poder revogá-lo ou estendê-lo facilmente mais tarde."
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
-        "Um número de telefone apenas pode ser usado para verificar uma conta ${ BRAND_NAME }"
+        "Um número de telefone apenas pode ser usado para verificar uma conta da ${ BRAND_NAME }"
       ],
       "A recovery file lets you unlock and view your data after an account reset": [
         "Um arquivo de recuperação permite desbloquear e visualizar seus dados após uma redefinição de conta"
@@ -5131,7 +5151,7 @@
         "Conta atualizada"
       ],
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
-        "Ative pelo menos um método de recuperação de dados para garantir que você possa continuar acessando o conteúdo de sua conta ${ BRAND_NAME } caso perca sua senha."
+        "Ative pelo menos um método de recuperação de dados para garantir que você possa continuar acessando o conteúdo de sua conta da ${ BRAND_NAME } caso perca sua senha."
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Adicione um endereço de e-mail @pm.me na sua conta. Este domínio simples e curto significa \"${ MAIL_APP_NAME } me\" ou \"Mensagem privado\""
@@ -5365,7 +5385,7 @@
         "Ao sair agora, as alterações não podem ser salvas"
       ],
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
-        "Ao compartilhar todas as informações do evento deste calendário, você aceita conceder ao ${ BRAND_NAME } o acesso a estas informações criptografadas do calendário."
+        "Ao compartilhar todas as informações do evento deste calendário, você aceita conceder a ${ BRAND_NAME } o acesso a estas informações criptografadas do calendário."
       ],
       "Center": [
         "Centralizar"
@@ -5502,7 +5522,7 @@
         "Baixe suas chaves PGP para usar com outros serviços compatíveis com PGP."
       ],
       "Drop file here to upload": [
-        "Solte o arquivo aqui para fazer o upload"
+        "Solte o arquivo aqui para enviar"
       ],
       "Drop to import": [
         "Solte para importar"
@@ -5518,9 +5538,6 @@
       ],
       "Email address": [
         "Endereço de e-mail"
-      ],
-      "Email address already used": [
-        "Endereço de e-mail já usado"
       ],
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
         "A hospedagem de e-mails para 10 nomes de domínio de e-mail adicionais está incluída gratuitamente. Domínios adicionais podem ser adicionados por ${ price }."
@@ -5577,10 +5594,10 @@
         "Digite o código de verificação. Insira ${ digit }."
       ],
       "Enter your ${ BRAND_NAME } Account details.": [
-        "Insira os detalhes da sua conta ${ BRAND_NAME }."
+        "Insira os detalhes da sua conta da ${ BRAND_NAME }."
       ],
       "Enter your ${ BRAND_NAME } Account email address or username.": [
-        "Entre seu e-mail ou nome de usuário da conta ${ BRAND_NAME }."
+        "Entre seu e-mail ou nome de usuário da conta da ${ BRAND_NAME }."
       ],
       "Enter your own password (as organization admin).": [
         "Digite sua própria senha (como administrador da organização)."
@@ -5605,6 +5622,9 @@
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Os filtros funcionam em todos os e-mails, incluindo os e-mails recebidos e enviados. Cada filtro deve conter pelo menos um nome, uma condição e uma ação a ser salva."
+      ],
+      "for choosing ${ product }": [
+        "por escolher ${ product }"
       ],
       "For choosing ${ product }": [
         "Por escolher ${ product }"
@@ -5963,7 +5983,7 @@
         "Uma conta. Todos os serviços da ${ BRAND_NAME }."
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
-        "Altere essas configurações apenas se você estiver usando o PGP com destinatários que não usam o ${ BRAND_NAME }."
+        "Altere essas configurações apenas se você estiver usando o PGP com destinatários que não usam a ${ BRAND_NAME }."
       ],
       "Only you can see the labels.": [
         "Somente você pode ver os marcadores."
@@ -5991,6 +6011,9 @@
       ],
       "Outdated recovery phrase; update to ensure access to your data": [
         "Frase de recuperação desatualizada. Atualize para garantir acesso aos seus dados"
+      ],
+      "Over 100 million people and businesses have signed up for ${ BRAND_NAME }.": [
+        "Mais de 100 milhões de pessoas e empresas já possuem ${ BRAND_NAME }."
       ],
       "P2P": [
         "P2P"
@@ -6124,6 +6147,9 @@
       "Recovery information will remain on this device unless you select to delete it.": [
         "As informações de recuperação permanecerão neste dispositivo, a menos que você opte por excluí-las."
       ],
+      "Recovery kit copied to clipboard": [
+        "Chave de recuperação copiada para a área de transferência"
+      ],
       "Recovery phrase copied to clipboard": [
         "Frase de recuperação copiada para a área de transferência"
       ],
@@ -6147,6 +6173,9 @@
       ],
       "Remove one of your calendars to join this one": [
         "Ative este endereço para juntar-se a este calendário"
+      ],
+      "Report link expired": [
+        "Link do relatório expirou"
       ],
       "Restore": [
         "Restaurar"
@@ -6266,6 +6295,9 @@
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Assinatura encerrada: Reative até ${ byDate } para manter os benefícios do seu ${ planName } ${ reactivateLink }"
       ],
+      "Summary": [
+        "Resumo"
+      ],
       "Support for 1 custom email domain": [
         "Suporte para 1 domínio de e-mail personalizado"
       ],
@@ -6328,6 +6360,9 @@
       ],
       "The Import-Export app allows you to export messages for local backups and to restore previous backups to your account.": [
         "O aplicativo Import-Export permite exportar mensagens para backups locais e restaurar backups anteriores para sua conta."
+      ],
+      "The link to report that that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue.": [
+        "O link para informar que você não configurou uma conta ${ BRAND_NAME } expirou. Por favor, entre em contato com nossa equipe de suporte para resolver este problema."
       ],
       "The name will be visible to your users while they are signed in.": [
         "O nome será visível aos seus usuários enquanto eles estiverem conectados."
@@ -6420,7 +6455,7 @@
         "Isso excluirá permanentemente sua conta e todas as suas informações. Você não conseguirá reativar essa conta."
       ],
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
-        "Isso substituirá a sua senha temporária. Você a usará para acessar a sua conta do ${ BRAND_NAME } no futuro."
+        "Isso substituirá a sua senha temporária. Você a usará para acessar a sua conta da ${ BRAND_NAME } no futuro."
       ],
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "Isto irá encerrar qualquer sessão ativa e desabilitar a autenticação de 2 fatores."
@@ -6735,12 +6770,12 @@
         "Você pode importar um tipo de dado por vez."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
-        "Você pode manter até ${ MAX_CALENDARS_FREE } calendário. Remova links de calendários compartilhados e qualquer usuário do ${ BRAND_NAME } com quem você compartilhou seus calendários antes de cancelar sua assinatura do ${ MAIL_SHORT_APP_NAME }.",
-        "Você pode manter até ${ MAX_CALENDARS_FREE } calendários. Remova links de calendários compartilhados e qualquer usuário do ${ BRAND_NAME } com quem você compartilhou seus calendários antes de cancelar sua assinatura do ${ MAIL_SHORT_APP_NAME }."
+        "Você pode manter até ${ MAX_CALENDARS_FREE } calendário. Remova links de calendários compartilhados e qualquer usuário da ${ BRAND_NAME } com quem você compartilhou seus calendários antes de cancelar sua assinatura do ${ MAIL_SHORT_APP_NAME }.",
+        "Você pode manter até ${ MAX_CALENDARS_FREE } calendários. Remova links de calendários compartilhados e qualquer usuário da ${ BRAND_NAME } com quem você compartilhou seus calendários antes de cancelar sua assinatura do ${ MAIL_SHORT_APP_NAME }."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
-        "Você pode manter até ${ MAX_CALENDARS_FREE } calendário. Remova links de calendários compartilhados e qualquer usuário do ${ BRAND_NAME } com quem você compartilhou seus calendários antes de cancelar sua assinatura.",
-        "Você pode manter até ${ MAX_CALENDARS_FREE } calendários. Remova links de calendários compartilhados e qualquer usuário do ${ BRAND_NAME } com quem você compartilhou seus calendários antes de cancelar sua assinatura."
+        "Você pode manter até ${ MAX_CALENDARS_FREE } calendário. Remova links de calendários compartilhados e qualquer usuário da ${ BRAND_NAME } com quem você compartilhou seus calendários antes de cancelar sua assinatura.",
+        "Você pode manter até ${ MAX_CALENDARS_FREE } calendários. Remova links de calendários compartilhados e qualquer usuário da ${ BRAND_NAME } com quem você compartilhou seus calendários antes de cancelar sua assinatura."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Você pode manter até ${ MAX_CALENDARS_FREE } calendário. Remova os links do calendário compartilhado antes de cancelar sua assinatura do ${ MAIL_SHORT_APP_NAME }.",
@@ -6854,16 +6889,16 @@
         "A sua conta da ${ BRAND_NAME } está associada com ${ externalEmailAddress }."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
-        "Sua conta de ${ BRAND_NAME } está atualmente suspensa. Após 28 dias, os e-mails não serão mais entregues em sua caixa de entrada, seus links de compartilhamento de Drive serão bloqueados e você não poderá fazer upload de novos arquivos. Para retomar o serviço normal, favor pagar qualquer fatura vencida."
+        "Sua conta da ${ BRAND_NAME } está atualmente suspensa. Após 28 dias, os e-mails não serão mais entregues em sua caixa de entrada, seus links de compartilhamento de Drive serão bloqueados e você não poderá enviar novos arquivos. Para retomar o serviço normal, favor pagar qualquer fatura vencida."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "Sua conta ${ BRAND_NAME } está suspensa no momento. Os e-mails não estão mais sendo entregues em sua caixa de entrada. Seus links de compartilhamento do Drive não estão mais ativos e você não pode fazer upload de novos arquivos. Para continuar usando sua conta, pague as faturas vencidas."
+        "Sua conta da ${ BRAND_NAME } está suspensa no momento. Os e-mails não estão mais sendo entregues em sua caixa de entrada. Seus links de compartilhamento do Drive não estão mais ativos e você não pode enviar novos arquivos. Para continuar usando sua conta, pague as faturas vencidas."
       ],
       "Your ${ BRAND_NAME } password": [
         "Sua senha da ${ BRAND_NAME }"
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there.": [
-        "Suas contas ${ VPN_APP_NAME } e ${ MAIL_APP_NAME } estão conectadas. Para excluir ambas, inicia sessão em ${ loginLink } e exclua sua conta lá."
+        "Suas contas ${ VPN_APP_NAME } e ${ MAIL_APP_NAME } estão vinculadas. Para excluir ambas, inicia sessão em ${ loginLink } e exclua sua conta lá."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Sua conta tem pelo menos uma fatura vencida. O seu acesso será restringido em breve. ${ payInvoiceLink }"
@@ -7340,10 +7375,10 @@
         " e ${ l }"
       ],
       "${ BRAND_NAME } email or username": [
-        "E-mail ou nome de usuário do ${ BRAND_NAME }"
+        "Endereço de e-mail ou nome de usuário da ${ BRAND_NAME }"
       ],
       "${ BRAND_NAME } username": [
-        "Nome de usuário do ${ BRAND_NAME }"
+        "Nome de usuário da ${ BRAND_NAME }"
       ],
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } de ${ humanMaxSpace }"
@@ -8357,7 +8392,7 @@
         "Para adicionar um novo calendário, remova um existente."
       ],
       "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
-        "Para acrescentar um calendário novo, remova outro calendário ou atualize seu plano da ${ BRAND_NAME } para um plano ${ MAIL_SHORT_APP_NAME } pago."
+        "Para adicionar um calendário, remova outro calendário ou atualize seu plano da ${ BRAND_NAME } para um plano ${ MAIL_SHORT_APP_NAME } pago."
       ],
       "You've reached the maximum number of calendars available in your plan.": [
         "Você alcançou o número máximo de calendários disponíveis no seu plano."
@@ -8423,6 +8458,9 @@
       ],
       "Pay invoice": [
         "Pagar fatura"
+      ],
+      "Paypal without credit card": [
+        "Paypal sem cartão de crédito"
       ],
       "Privacy policy": [
         "Política de privacidade"
@@ -8908,7 +8946,7 @@
         "${ n } pasta e marcador",
         "${ n } pastas e marcadores"
       ],
-      "${ n } Hide-my-email alias": [
+      "${ n } hide-my-email alias": [
         "${ n } alias do Hide-my-email",
         "${ n } aliases do Hide-my-email"
       ],
@@ -8982,6 +9020,9 @@
       ],
       "Contact groups management": [
         "Gerenciamento de grupos de contatos"
+      ],
+      "Custom domains for email aliases": [
+        "Domínios personalizados para encaminhamento de mensagens"
       ],
       "Custom email domains": [
         "Domínios de e-mail personalizados"
@@ -9067,6 +9108,9 @@
       ],
       "No-logs policy": [
         "Política de nenhum registro"
+      ],
+      "Organize items with multiple vaults": [
+        "Organize itens em múltiplos cofres"
       ],
       "Password-protected Emails": [
         "E-mails protegidos por senha"
@@ -9186,7 +9230,7 @@
         "Crie vários endereços de e-mail para suas identidades on-line, por exemplo: JoaoLojas@${ domain } para contas de lojas e JoaoNoticias@${ domain2 } para assinaturas de notícias"
       ],
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
-        "Obtenha aliases ilimitados com SimpleLogin do ${ BRAND_NAME }"
+        "Obtenha aliases ilimitados com SimpleLogin da ${ BRAND_NAME }"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "O espaço de armazenamento é compartilhado entre o ${ MAIL_APP_NAME }, o ${ CALENDAR_APP_NAME } e o ${ DRIVE_APP_NAME }."
@@ -9201,26 +9245,6 @@
       ],
       "Team management": [
         "Gerenciamento de equipes"
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Torne a privacidade seu padrão para backup, armazenamento, compartilhamento e recuperação de arquivos."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Caso contrário, o acesso à sua conta será limitado e, futuramente, sua conta será desativada."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Para continuar usando o ${ MAIL_APP_NAME } com recursos premium, escolha sua assinatura e opções de pagamento."
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "Faça o upgrade para o pacote para empresas com acesso a todos os serviços premium da ${ BRAND_NAME }."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "Faça o upgrade para o pacote de privacidade completo e acesse todos os serviços premium da ${ BRAND_NAME }."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Sua avaliação termina em ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: info": {
@@ -9301,6 +9325,26 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Seu plano atual está com um preço promocional. Se fizer o downgrade da sua conta, você perderá seu preço promocional, o qual não estará mais disponível se você tentar assinar novamente."
+      ]
+    },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Torne a privacidade seu padrão para backup, armazenamento, compartilhamento e recuperação de arquivos."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Caso contrário, o acesso à sua conta será limitado e, futuramente, sua conta será desativada."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Para continuar usando o ${ MAIL_APP_NAME } com recursos premium, escolha sua assinatura e opções de pagamento."
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "Faça o upgrade para o pacote para empresas com acesso a todos os serviços premium da ${ BRAND_NAME }."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "Faça o upgrade para o pacote de privacidade completo e acesse todos os serviços premium da ${ BRAND_NAME }."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Sua avaliação termina em ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -9389,9 +9433,6 @@
       "Addresses have full sending and receiving capability. A user can have multiple addresses assigned to them; however, a single address cannot be assigned to multiple users.": [
         "Os endereços têm todos os recursos de envio e recebimento de mensagens. Um usuário pode ter vários endereços atribuídos a ele; no entanto, não é possível atribuir um único endereço a mais de um usuário."
       ],
-      "Advanced security VPN with global network": [
-        "VPN de segurança avançada com uma rede global"
-      ],
       "Allows you to access more than one network at the same time, e.g., stream a film from another country while still getting local search results": [
         "Permite que você acesse mais de uma rede ao mesmo tempo (por exemplo, faça streaming de um filme de outro país e, ao mesmo tempo, receba resultados de pesquisa locais)"
       ],
@@ -9425,12 +9466,6 @@
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "Compartilhe facilmente seus calendários com familiares, amigos ou colegas"
-      ],
-      "End-to-end encrypted calendar": [
-        "Calendário criptografado de ponta a ponta"
-      ],
-      "End-to-end encrypted file storage": [
-        "Armazenamento de arquivos criptografado de ponta a ponta"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Garante que você receba todos os e-mails enviados ao seu domínio, mesmo que o endereço de e-mail não exista, tenha deixado de existir ou contenha um erro de digitação"
@@ -9469,10 +9504,13 @@
         "Ferramenta de gerenciamento da organização que possibilita que os administradores adicionem e removam usuários, aloquem armazenamento, configurem domínios e executem outras tarefas"
       ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
-        "Nossa infraestrutura robusta garante que você conseguirá acessar sua conta sempre que precisar"
+        "A confiabilidade de nossa infraestrutura garante o acesso à sua conta sempre que necessário."
       ],
       "Our servers’ hard disks are fully encrypted with multiple password layers so your data is protected even if our hardware is compromised": [
         "Os discos rígidos dos nossos servidores são totalmente criptografados com múltiplas camadas de senha para que seus dados sejam protegidos mesmo que nosso hardware seja comprometido"
+      ],
+      "Password management and identity protection": [
+        "Gerenciamento de senha e proteção de identidade"
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Personalize sua assinatura de e-mail com logotipos, imagens, ícones de redes sociais, links para seus detalhes de contato e muito mais"
@@ -9716,7 +9754,7 @@
     },
     "Oauth instructions": {
       "Next you'll need to sign in to your Google account and grant ${ BRAND_NAME } access to your data.": [
-        "Em seguida, você precisará iniciar sessão na sua conta do Google e conceder ao ${ BRAND_NAME } o acesso aos seus dados."
+        "Em seguida, você precisará iniciar sessão na sua conta do Google e conceder a ${ BRAND_NAME } o acesso aos seus dados."
       ]
     },
     "Oauth instructions video": {
@@ -9726,7 +9764,7 @@
     },
     "Oauth instructions video alternative": {
       "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
-        "Selecione o que ${ BRAND_NAME } pode acessar: visualize suas mensagens de e-mail e configurações, visualize e baixe seus contatos, visualize e baixe todas as agendas que você acessa no Google Agenda."
+        "Selecione o que a ${ BRAND_NAME } pode acessar: visualize suas mensagens de e-mail e configurações, visualize e baixe seus contatos, visualize e baixe todas as agendas que você acessa no Google Agenda."
       ]
     },
     "Onboarding": {
@@ -10018,6 +10056,9 @@
       "Continue to ${ free }": [
         "Continuar com ${ free }"
       ],
+      "Continue with Bitcoin": [
+        "Continuar com Bitcoin"
+      ],
       "create a new account": [
         "criar uma conta"
       ],
@@ -10031,6 +10072,9 @@
         "Ou ${ createANewAccount }"
       ],
       "Start using ${ appName }": [
+        "Começar a usar o ${ appName }"
+      ],
+      "Start using ${ appName } now": [
         "Começar a usar o ${ appName }"
       ]
     },
@@ -10052,6 +10096,12 @@
       "Continue with your ${ BRAND_NAME } account": [
         "Continue com a sua conta da ${ BRAND_NAME }"
       ],
+      "Limited time offer": [
+        "Oferta por tempo limitado"
+      ],
+      "Recommended": [
+        "Recomendado"
+      ],
       "Select your plan": [
         "Selecione seu plano"
       ],
@@ -10060,14 +10110,59 @@
       ]
     },
     "pass_signup_2023: Info": {
+      "${ PASS_APP_NAME } benefits": [
+        "Benefícios do ${ PASS_APP_NAME }"
+      ],
+      "+ ${ relativePrice } per month": [
+        "+ ${ relativePrice } por mês"
+      ],
       "Creating your account": [
         "Criando sua conta"
+      ],
+      "End-to-end encrypted notes": [
+        "Notas com criptografia de ponta a ponta"
       ],
       "Free forever": [
         "Gratuito para sempre"
       ],
+      "Get ${ appName } for ${ browserName }": [
+        "Obtenha ${ appName } para ${ browserName }"
+      ],
+      "Get ${ appName } for ${ browserName } soon": [
+        "Obtenha ${ appName } para ${ browserName } em breve"
+      ],
+      "Install app": [
+        "Instala o aplicativo"
+      ],
+      "Install app and extension": [
+        "Instale o aplicativo y a extensão"
+      ],
       "One easy subscription.": [
         "Uma assinatura fácil."
+      ],
+      "Open-source and audited": [
+        "Código aberto e auditado"
+      ],
+      "per month, billed annually": [
+        "por mês com cobrança anual"
+      ],
+      "per month, billed every 15 months": [
+        "por mês com cobrança a cada 15 meses"
+      ],
+      "per month, billed every 30 months": [
+        "por mês com cobrança a cada 30 meses"
+      ],
+      "per month, billed every month": [
+        "por mês com cobrança a cada mês"
+      ],
+      "per month, billed every two years": [
+        "por mês com cobrança a cada dois anos"
+      ],
+      "Protected by Swiss privacy laws": [
+        "Protegido pelas leis de privacidade suíças"
+      ],
+      "to start using ${ PASS_APP_NAME } on your phone": [
+        "para começar a usar o ${ PASS_APP_NAME } em seu telefone"
       ],
       "Updating your account": [
         "Atualizando sua conta"
@@ -10077,6 +10172,9 @@
       ],
       "Welcome to ${ plan }": [
         "Boas-vindas ao ${ plan }"
+      ],
+      "Works on all devices": [
+        "Funciona em todos os dispositivos"
       ],
       "You currently have": [
         "Você tem atualmente"
@@ -10088,8 +10186,14 @@
       ]
     },
     "pass_signup_2023: Title": {
+      "${ upsellPlanTitle } plan": [
+        "Plano ${ upsellPlanTitle }"
+      ],
       "Create your ${ BRAND_NAME } account": [
         "Crie sua conta do ${ BRAND_NAME }"
+      ],
+      "Secure your account": [
+        "Proteja a sua conta"
       ]
     },
     "Payment method option": {
@@ -10291,6 +10395,9 @@
       "Email address not yet verified.": [
         "Endereço de e-mail ainda não verificado."
       ],
+      "Email removed": [
+        "E-mail removido"
+      ],
       "sign in": [
         "iniciar sessão"
       ],
@@ -10312,14 +10419,8 @@
       "Verifying your email address increases your account security and allows additional options for recovery.": [
         "Verificar seu endereço de e-mail aumenta a segurança de sua conta e permite opções adicionais de recuperação."
       ],
-      "You can safely close this tab.": [
-        "Você pode fechar esta aba com segurança."
-      ],
       "Your recovery email has been successfully removed.": [
         "Seu e-mail de recuperação foi removido."
-      ],
-      "Your recovery email has been successfully verified.": [
-        "Seu e-mail de recuperação foi verificado."
       ]
     },
     "Recovery method": {
@@ -10496,7 +10597,7 @@
     },
     "Share calendar assistive text": {
       "To invite non-${ BRAND_NAME } users, share your calendar with a link.": [
-        "Para convidar usuários fora do ${ BRAND_NAME }, compartilhe seu calendário com um link."
+        "Para convidar usuários fora da ${ BRAND_NAME }, compartilhe seu calendário com um link."
       ]
     },
     "Share calendar max shares reached error": {
@@ -10507,7 +10608,7 @@
     },
     "Share calendar modal description": {
       "Add the ${ BRAND_NAME } accounts with whom you want to share ${ calendarName }. We’ll send them an invite.": [
-        "Adicione as contas do ${ BRAND_NAME } com as quais você deseja compartilhar ${ calendarName }. Vamos enviar um convite para eles."
+        "Adicione as contas da ${ BRAND_NAME } com as quais você deseja compartilhar ${ calendarName }. Vamos enviar um convite para eles."
       ]
     },
     "Share calendar modal input placeholder": {
@@ -10517,7 +10618,7 @@
     },
     "Share calendar modal title": {
       "Share with ${ BRAND_NAME } users": [
-        "Compartilhar com usuários do ${ BRAND_NAME }"
+        "Compartilhar com usuários da ${ BRAND_NAME }"
       ]
     },
     "Shared calendar label input placeholder": {
@@ -10542,6 +10643,9 @@
       "Confirm email address": [
         "Confirmar endereço de e-mail"
       ],
+      "Confirm password": [
+        "Confirmar senha"
+      ],
       "Display name": [
         "Nome de exibição"
       ],
@@ -10550,6 +10654,9 @@
       ],
       "Email address": [
         "Endereço de e-mail"
+      ],
+      "Password": [
+        "Senha"
       ],
       "Username": [
         "Nome de usuário"
@@ -11267,7 +11374,21 @@
         "Detalhes sobre os eventos que não puderam ser exportados"
       ]
     },
+    "summer2023: Billing cycle option": {
+      "1 year": [
+        "1 ano"
+      ],
+      "2 years": [
+        "2 anos"
+      ]
+    },
     "summer2023: Deal details": {
+      "Premium Drive": [
+        "Drive premium"
+      ],
+      "Premium Mail and Calendar": [
+        "E-mail e calendário versão premium"
+      ],
       "Premium Password Manager": [
         "Gerenciador de senhas premium"
       ]
@@ -11277,12 +11398,20 @@
         "Armazene suas senhas com segurança e preencha-as automaticamente em sites. Inclui senhas ilimitadas, preenchimento automático, gerador de senhas e mais."
       ]
     },
+    "summer2023: Short tool name to present Proton Pass": {
+      "Password manager": [
+        "Gerenciador de senhas"
+      ]
+    },
     "summer2023: Tooltip": {
       "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
         "Crie detalhes seguros de início de sessão em todos os seus dispositivos. Inclui aliases ilimitados, 20 cofres, A2F integrada, preenchimento automático de cartão de crédito e muito mais."
       ],
       "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
         "Inclui 2.950 servidores em mais de 65 países. Conecte até 10 dispositivos, acesse serviços de streaming no mundo todo, malware e bloqueador de anúncios e muito mais."
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Inclui suporte para 1 domínio de e-mail personalizado, 10 endereços de e-mail, 10 aliases do hide-my-email, compartilhamento de calendário e muito mais."
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "Proteja seus arquivos com armazenamento em nuvem criptografado. Inclui histórico de versões, compartilhamento de arquivo criptografado e muito mais."
@@ -11624,7 +11753,7 @@
         "Confirmar downgrade"
       ],
       "Confirm loss of ${ BRAND_NAME } bonuses": [
-        "Confirmar pérdida de beneficios do ${ BRAND_NAME }"
+        "Confirmar a perda dos benefícios da ${ BRAND_NAME }"
       ],
       "Confirm phone number": [
         "Confirme o número do telefone"
@@ -11655,10 +11784,10 @@
         "Criar contas de usuários"
       ],
       "Create your ${ BRAND_NAME } Account": [
-        "Crie sua conta do ${ BRAND_NAME }."
+        "Crie sua conta da ${ BRAND_NAME }."
       ],
       "Create your ${ BRAND_NAME } address": [
-        "Criar seu endereço de ${ BRAND_NAME }"
+        "Criar seu endereço da ${ BRAND_NAME }"
       ],
       "Creating user accounts": [
         "Criando contas de usuários"
@@ -11989,6 +12118,9 @@
       "Other calendars": [
         "Outros calendários"
       ],
+      "Other preferences": [
+        "Outras preferências"
+      ],
       "Password": [
         "Senha"
       ],
@@ -12281,6 +12413,9 @@
       ],
       "Your Plan": [
         "Seu plano"
+      ],
+      "Your plan": [
+        "O seu plano"
       ],
       "Your recovery status": [
         "Estado da sua recuperação"
@@ -12676,31 +12811,17 @@
         "${ numberOfServers } em ${ numberOfCountries } países"
       ]
     },
-    "VPN signup": {
-      "Swiss flag": [
-        "Bandeira suíça"
-      ]
-    },
     "VPNClient": {
-      "Brave": [
-        "Brave"
-      ],
-      "Chrome": [
-        "Chrome"
-      ],
-      "Firefox": [
-        "Firefox"
-      ],
       "iOS": [
         "iOS"
       ]
     },
     "Warning": {
       "${ BRAND_NAME } will merge all folders with the same name. To avoid this, change the names before import.": [
-        "O ${ BRAND_NAME } mesclará todas as pastas com o mesmo nome. Para evitar isso, altere os nomes antes da importação."
+        "A ${ BRAND_NAME } mesclará todas as pastas com o mesmo nome. Para evitar isso, altere os nomes antes da importação."
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
-        "O ${ BRAND_NAME } irá transferir o máximo de dados possível, começando com as mensagens mais recentes."
+        "A ${ BRAND_NAME } irá transferir o máximo de dados possível, começando com as mensagens mais recentes."
       ],
       "Are you sure you want to delete the phone number?": [
         "Você tem certeza que deseja excluir o número de telefone?"
@@ -12751,7 +12872,7 @@
         "O dispositivo ou serviço que usa esse token não poderá mais enviar e-mail através do ${ MAIL_APP_NAME }."
       ],
       "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
-        "Esta importação pode exceder a capacidade de armazenamento atualmente disponível em sua conta do ${ BRAND_NAME }. Considere realizar sua importação de forma personalizada."
+        "Esta importação pode exceder a capacidade de armazenamento atualmente disponível em sua conta da ${ BRAND_NAME }. Considere realizar sua importação de forma personalizada."
       ],
       "This will remove all messages, folders, and labels created during the import.": [
         "Isso removerá todas as mensagens, pastas e marcadores criados durante a importação."

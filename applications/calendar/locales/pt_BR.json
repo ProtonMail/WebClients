@@ -22,7 +22,7 @@
     },
     "Action": {
       "${ BRAND_NAME } introduction": [
-        "Introdução do ${ BRAND_NAME }"
+        "Introdução da ${ BRAND_NAME }"
       ],
       "${ BRAND_NAME } shop": [
         "Loja ${ BRAND_NAME }"
@@ -601,7 +601,7 @@
     },
     "Action title": {
       "Share with ${ BRAND_NAME } users": [
-        "Compartilhar com usuários do ${ BRAND_NAME }"
+        "Compartilhar com usuários da ${ BRAND_NAME }"
       ],
       "Share with anyone": [
         "Compartilhar com o qualquer pessoa"
@@ -687,7 +687,7 @@
     },
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
-        "Aplicativos do ${ BRAND_NAME }"
+        "Aplicativos da ${ BRAND_NAME }"
       ]
     },
     "Attached ics file error": {
@@ -883,11 +883,11 @@
         "Não é possível criar mais links de calendários"
       ],
       "Unable to share this calendar with more ${ BRAND_NAME } users": [
-        "Não é possível compartilhar esse calendário com mais usuários do ${ BRAND_NAME }"
+        "Não é possível compartilhar esse calendário com mais usuários da ${ BRAND_NAME }"
       ],
       "You have reached the maximum of ${ MAX_CALENDAR_MEMBERS } member for this calendar.\nTo share this calendar with more ${ BRAND_NAME } accounts, remove some members.": [
-        "Você atingiu o máximo de ${ MAX_CALENDAR_MEMBERS } membro para este calendário.\nPara compartilhar este calendário com mais contas do ${ BRAND_NAME }, remova alguns membros.",
-        "Você atingiu o máximo de ${ MAX_CALENDAR_MEMBERS } membros para este calendário.\nPara compartilhar este calendário com mais contas do ${ BRAND_NAME }, remova alguns membros."
+        "Você atingiu o máximo de ${ MAX_CALENDAR_MEMBERS } membro para este calendário.\nPara compartilhar este calendário com mais contas da ${ BRAND_NAME }, remova alguns membros.",
+        "Você atingiu o máximo de ${ MAX_CALENDAR_MEMBERS } membros para este calendário.\nPara compartilhar este calendário com mais contas da ${ BRAND_NAME }, remova alguns membros."
       ],
       "You have reached the maximum of ${ MAX_LINKS_PER_CALENDAR } link for this calendar.\nTo create a new link to this calendar, delete an existing one.": [
         "Você atingiu o máximo de ${ MAX_LINKS_PER_CALENDAR } link para este calendário.\nPara criar um novo link para este calendário, exclua um existente.",
@@ -2329,7 +2329,7 @@
         "Nenhuma chave WKD recuperada para o usuário é válida para o envio"
       ],
       "Not a ${ BRAND_NAME } account": [
-        "Não é uma conta do ${ BRAND_NAME }"
+        "Não é uma conta da ${ BRAND_NAME }"
       ],
       "Not a valid number": [
         "Não é um número válido"
@@ -2371,7 +2371,7 @@
         "A chave primária não é valida para o envio"
       ],
       "Primary key retrieved for ${ BRAND_NAME } user is not valid for sending": [
-        "Chave primária recuperada para o usuário ${ BRAND_NAME } não é válida para o envio"
+        "A chave primária recuperada para o usuário da ${ BRAND_NAME } não é válida para o envio."
       ],
       "Removed duplicate recipient: ${ joinedRecipients }": [
         "Destinatário duplicado removido: ${ joinedRecipients }",
@@ -2865,7 +2865,7 @@
         "A assinatura será cobrada do administrador principal do plano Visionary ou familiar."
       ],
       "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Atualmente, os planos Visionary e familiar não oferecem suporte a contas externas. Crie um endereço ${ BRAND_NAME } antes de participar. ${ addressSettingsLink }"
+        "Atualmente, os planos Visionary e familiar não oferecem suporte a contas externas. Crie um endereço da ${ BRAND_NAME } antes de participar. ${ addressSettingsLink }"
       ],
       "Visionary and family plans do not currently support lifetime accounts.": [
         "Atualmente, planos Visionary e familiares não oferecem suporte a contas vitalícias."
@@ -2883,7 +2883,7 @@
         "Você entrou no plano familiar"
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
-        "Você foi convidado a vincular sua Conta ${ BRAND_NAME } a este plano de grupo e aproveitar juntos de todos os recursos premium de ${ BRAND_NAME_TWO }."
+        "Você foi convidado a vincular sua conta da ${ BRAND_NAME } a este plano de grupo e aproveitar juntos de todos os recursos premium da ${ BRAND_NAME_TWO }."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Sua conta tem mais endereços de e-mail do que a quantidade que está disponível para você neste plano. ${ addressSettingsLink }"
@@ -2952,7 +2952,7 @@
     },
     "fido2: Info": {
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Insira uma chave de segurança vinculada à sua conta ${ BRAND_NAME }."
+        "Insira uma chave de segurança vinculada à sua conta da ${ BRAND_NAME }."
       ],
       "Security key": [
         "Chave de segurança"
@@ -3118,7 +3118,7 @@
     },
     "Import calendar; import invitation": {
       "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your ${ BRAND_NAME } email address.": [
-        "Eventos importados aparecem em ${ CALENDAR_APP_NAME } como eventos simples, sem organizador nem detalhes de participantes. Para receber atualizações e ver participantes, peça aos organizadores que te convidem usando seu endereço de e-mail do ${ BRAND_NAME }."
+        "Eventos importados aparecem no ${ CALENDAR_APP_NAME } como eventos simples, sem organizador nem detalhes de participantes. Para receber atualizações e ver participantes, peça aos organizadores que te convidem usando seu endereço de e-mail da ${ BRAND_NAME }."
       ],
       "This file contains an event invitation:": [
         "Este arquivo contém um convite para um evento:",
@@ -3246,7 +3246,7 @@
         "Expanda o menu clicando nos 3 pontinhos (...)."
       ],
       "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by ${ BRAND_NAME }.": [
-        "Gere a ${ boldAppPassword } e a use no lugar de sua senha regular quando perguntado pelo ${ BRAND_NAME }."
+        "Gere a ${ boldAppPassword } e a use no lugar de sua senha regular quando perguntado pela ${ BRAND_NAME }."
       ],
       "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }.": [
         "Vá para ${ boldAccountInfo } em seu perfil em ${ yahooMailLink }."
@@ -3267,13 +3267,13 @@
         "Para importar um calendário para a ${ BRAND_NAME }, você precisa do ${ knowledgeBaseLink }. Baixe-o antes de iniciar o processo de importação."
       ],
       "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
-        "Para importar contatos para o ${ BRAND_NAME }, você precisa de um ${ knowledgeBaseLink }. Baixe-o do Yahoo em 3 passos simples:"
+        "Para importar contatos para a ${ BRAND_NAME }, você precisa de um ${ knowledgeBaseLink }. Baixe-o do Yahoo em 3 passos simples:"
       ],
       "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
         "Para importar contatos para a ${ BRAND_NAME }, você precisa de um ${ knowledgeBaseLink }. Baixe-o antes de iniciar o processo de importação."
       ],
       "To import emails to ${ BRAND_NAME }, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
-        "Para importar e-mail para o ${ BRAND_NAME }, você precisa de uma ${ appPasswordLink } do Yahoo. Consiga-a seguindo esses passos:"
+        "Para importar e-mail para a ${ BRAND_NAME }, você precisa de uma ${ appPasswordLink } do Yahoo. Consiga-a seguindo esses passos:"
       ]
     },
     "Import instructions emphasis": {
@@ -3436,7 +3436,7 @@
         "Um e-mail de cancelamento será enviado aos participantes do evento. Você gostaria de excluir este evento?"
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
-        "Um número de telefone apenas pode ser usado para verificar uma conta ${ BRAND_NAME }"
+        "Um número de telefone apenas pode ser usado para verificar uma conta da ${ BRAND_NAME }"
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "O acesso à conta foi restringido devido a faturas não pagas. Entre em contato com o seu administrador."
@@ -3486,7 +3486,7 @@
         "Ciclo de faturamento: ${ text }"
       ],
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
-        "Ao compartilhar todas as informações do evento deste calendário, você aceita conceder ao ${ BRAND_NAME } o acesso a estas informações criptografadas do calendário."
+        "Ao compartilhar todas as informações do evento deste calendário, você aceita conceder a ${ BRAND_NAME } o acesso a estas informações criptografadas do calendário."
       ],
       "Calendar side panel": [
         "Painel lateral de calendário"
@@ -3556,7 +3556,7 @@
         "Descartar alterações?"
       ],
       "Drop file here to upload": [
-        "Solte o arquivo aqui para fazer o upload"
+        "Solte o arquivo aqui para enviar"
       ],
       "Drop to import": [
         "Solte para importar"
@@ -3993,16 +3993,16 @@
         "Você vai atualizar todos os eventos desta série. Os participantes removidos serão notificados."
       ],
       "You've reached the maximum number of addresses in the contact group(s):": [
-        "Você alcançou o número máximo de endereços ,o grupo ou grupos de contato:"
+        "Você alcançou o número máximo de endereços no grupo ou grupo de contatos"
       ],
       "You've reached the maximum number of addresses in the contact group.": [
         "Você alcançou o número máximo de endereços no grupo de contato."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
-        "Sua conta de ${ BRAND_NAME } está atualmente suspensa. Após 28 dias, os e-mails não serão mais entregues em sua caixa de entrada, seus links de compartilhamento de Drive serão bloqueados e você não poderá fazer upload de novos arquivos. Para retomar o serviço normal, favor pagar qualquer fatura vencida."
+        "Sua conta da ${ BRAND_NAME } está atualmente suspensa. Após 28 dias, os e-mails não serão mais entregues em sua caixa de entrada, seus links de compartilhamento de Drive serão bloqueados e você não poderá enviar novos arquivos. Para retomar o serviço normal, favor pagar qualquer fatura vencida."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "Sua conta ${ BRAND_NAME } está suspensa no momento. Os e-mails não estão mais sendo entregues em sua caixa de entrada. Seus links de compartilhamento do Drive não estão mais ativos e você não pode fazer upload de novos arquivos. Para continuar usando sua conta, pague as faturas vencidas."
+        "Sua conta da ${ BRAND_NAME } está suspensa no momento. Os e-mails não estão mais sendo entregues em sua caixa de entrada. Seus links de compartilhamento do Drive não estão mais ativos e você não pode enviar novos arquivos. Para continuar usando sua conta, pague as faturas vencidas."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Sua conta tem pelo menos uma fatura vencida. O seu acesso será restringido em breve. ${ payInvoiceLink }"
@@ -4056,7 +4056,7 @@
     },
     "Info; calendar sharing pop-up": {
       "Invite others with a ${ BRAND_NAME } account to view or edit events in your calendar.": [
-        "Convide outras pessoas com uma conta ${ BRAND_NAME } para visualizar ou editar eventos em seu calendário."
+        "Convide outras pessoas com uma conta da ${ BRAND_NAME } para visualizar ou editar eventos em seu calendário."
       ]
     },
     "Info; reset calendar keys modal; part 1": {
@@ -4136,7 +4136,7 @@
     },
     "Label": {
       "${ BRAND_NAME } username": [
-        "Nome de usuário do ${ BRAND_NAME }"
+        "Nome de usuário da ${ BRAND_NAME }"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Temporariamente indisponível. Retorne mais tarde.)"
@@ -4500,7 +4500,7 @@
         "Para adicionar um novo calendário, remova um existente."
       ],
       "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
-        "Para acrescentar um calendário novo, remova outro calendário ou atualize seu plano da ${ BRAND_NAME } para um plano ${ MAIL_SHORT_APP_NAME } pago."
+        "Para adicionar um calendário, remova outro calendário ou atualize seu plano da ${ BRAND_NAME } para um plano ${ MAIL_SHORT_APP_NAME } pago."
       ],
       "You've reached the maximum number of calendars available in your plan.": [
         "Você alcançou o número máximo de calendários disponíveis no seu plano."
@@ -4866,7 +4866,7 @@
         "Crie vários endereços de e-mail para suas identidades on-line, por exemplo: JoaoLojas@${ domain } para contas de lojas e JoaoNoticias@${ domain2 } para assinaturas de notícias"
       ],
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
-        "Obtenha aliases ilimitados com SimpleLogin do ${ BRAND_NAME }"
+        "Obtenha aliases ilimitados com SimpleLogin da ${ BRAND_NAME }"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "O espaço de armazenamento é compartilhado entre o ${ MAIL_APP_NAME }, o ${ CALENDAR_APP_NAME } e o ${ DRIVE_APP_NAME }."
@@ -5034,7 +5034,7 @@
     },
     "Oauth instructions": {
       "Next you'll need to sign in to your Google account and grant ${ BRAND_NAME } access to your data.": [
-        "Em seguida, você precisará iniciar sessão na sua conta do Google e conceder ao ${ BRAND_NAME } o acesso aos seus dados."
+        "Em seguida, você precisará iniciar sessão na sua conta do Google e conceder a ${ BRAND_NAME } o acesso aos seus dados."
       ]
     },
     "Oauth instructions video": {
@@ -5044,7 +5044,7 @@
     },
     "Oauth instructions video alternative": {
       "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
-        "Selecione o que ${ BRAND_NAME } pode acessar: visualize suas mensagens de e-mail e configurações, visualize e baixe seus contatos, visualize e baixe todas as agendas que você acessa no Google Agenda."
+        "Selecione o que a ${ BRAND_NAME } pode acessar: visualize suas mensagens de e-mail e configurações, visualize e baixe seus contatos, visualize e baixe todas as agendas que você acessa no Google Agenda."
       ]
     },
     "Onboarding": {
@@ -5068,7 +5068,7 @@
         "Configure a sua organização, vincule seu nome de domínio e crie contas para garantir que todos os membros da sua organização estejam protegidos."
       ],
       "Discover all ${ BRAND_NAME } services": [
-        "Descubra todos os serviços do ${ BRAND_NAME }"
+        "Descubra todos os serviços da ${ BRAND_NAME }"
       ],
       "More theming options are available in your account Settings > Appearance.": [
         "Mais opções de temas estão disponíveis em Configurações da conta > Aparência."
@@ -5083,7 +5083,7 @@
         "Configure a sua organização"
       ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
-        "Use o seletor de aplicativos no canto superior esquerdo para acessar todos os serviços de ${ BRAND_NAME }: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } e ${ DRIVE_SHORT_APP_NAME }."
+        "Use o seletor de aplicativos no canto superior esquerdo para acessar todos os serviços da ${ BRAND_NAME }: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } e ${ DRIVE_SHORT_APP_NAME }."
       ]
     },
     "Option": {
@@ -5352,7 +5352,7 @@
     },
     "Share calendar assistive text": {
       "To invite non-${ BRAND_NAME } users, share your calendar with a link.": [
-        "Para convidar usuários fora do ${ BRAND_NAME }, compartilhe seu calendário com um link."
+        "Para convidar usuários fora da ${ BRAND_NAME }, compartilhe seu calendário com um link."
       ]
     },
     "Share calendar max shares reached error": {
@@ -5363,7 +5363,7 @@
     },
     "Share calendar modal description": {
       "Add the ${ BRAND_NAME } accounts with whom you want to share ${ calendarName }. We’ll send them an invite.": [
-        "Adicione as contas do ${ BRAND_NAME } com as quais você deseja compartilhar ${ calendarName }. Vamos enviar um convite para eles."
+        "Adicione as contas da ${ BRAND_NAME } com as quais você deseja compartilhar ${ calendarName }. Vamos enviar um convite para eles."
       ]
     },
     "Share calendar modal input placeholder": {
@@ -5373,7 +5373,7 @@
     },
     "Share calendar modal title": {
       "Share with ${ BRAND_NAME } users": [
-        "Compartilhar com usuários do ${ BRAND_NAME }"
+        "Compartilhar com usuários da ${ BRAND_NAME }"
       ]
     },
     "Shared calendar; Info about calendar owner": {
@@ -5847,7 +5847,21 @@
         "Comentário enviado"
       ]
     },
+    "summer2023: Billing cycle option": {
+      "1 year": [
+        "1 ano"
+      ],
+      "2 years": [
+        "2 anos"
+      ]
+    },
     "summer2023: Deal details": {
+      "Premium Drive": [
+        "Drive premium"
+      ],
+      "Premium Mail and Calendar": [
+        "E-mail e calendário versão premium"
+      ],
       "Premium Password Manager": [
         "Gerenciador de senhas premium"
       ]
@@ -5857,12 +5871,20 @@
         "Armazene suas senhas com segurança e preencha-as automaticamente em sites. Inclui senhas ilimitadas, preenchimento automático, gerador de senhas e mais."
       ]
     },
+    "summer2023: Short tool name to present Proton Pass": {
+      "Password manager": [
+        "Gerenciador de senhas"
+      ]
+    },
     "summer2023: Tooltip": {
       "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
         "Crie detalhes seguros de início de sessão em todos os seus dispositivos. Inclui aliases ilimitados, 20 cofres, A2F integrada, preenchimento automático de cartão de crédito e muito mais."
       ],
       "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
         "Inclui 2.950 servidores em mais de 65 países. Conecte até 10 dispositivos, acesse serviços de streaming no mundo todo, malware e bloqueador de anúncios e muito mais."
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Inclui suporte para 1 domínio de e-mail personalizado, 10 endereços de e-mail, 10 aliases do hide-my-email, compartilhamento de calendário e muito mais."
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "Proteja seus arquivos com armazenamento em nuvem criptografado. Inclui histórico de versões, compartilhamento de arquivo criptografado e muito mais."
@@ -6490,10 +6512,10 @@
     },
     "Warning": {
       "${ BRAND_NAME } will merge all folders with the same name. To avoid this, change the names before import.": [
-        "O ${ BRAND_NAME } mesclará todas as pastas com o mesmo nome. Para evitar isso, altere os nomes antes da importação."
+        "A ${ BRAND_NAME } mesclará todas as pastas com o mesmo nome. Para evitar isso, altere os nomes antes da importação."
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
-        "O ${ BRAND_NAME } irá transferir o máximo de dados possível, começando com as mensagens mais recentes."
+        "A ${ BRAND_NAME } irá transferir o máximo de dados possível, começando com as mensagens mais recentes."
       ],
       "Are you sure you want to discard your import?": [
         "Você tem certeza de que quer descartar sua importação?"
@@ -6546,7 +6568,7 @@
         "Essa ação é irreversível. Digite a palavra ${ boldDanger } no campo para continuar."
       ],
       "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
-        "Esta importação pode exceder a capacidade de armazenamento atualmente disponível em sua conta do ${ BRAND_NAME }. Considere realizar sua importação de forma personalizada."
+        "Esta importação pode exceder a capacidade de armazenamento atualmente disponível em sua conta da ${ BRAND_NAME }. Considere realizar sua importação de forma personalizada."
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Infelizmente, não estamos on-line no momento. Preencha o formulário abaixo para descrever seu problema. Nós investigaremos e entraremos em contato quando estivermos de volta."
