@@ -207,12 +207,12 @@ const AccountStepPayment = ({
                         };
 
                         const run = async () => {
-                            if (!paymentParameters) {
-                                throw new Error('Missing payment parameters');
-                            }
-
                             if (amountAndCurrency.Amount <= 0) {
                                 return onPay(undefined);
+                            }
+
+                            if (!paymentParameters) {
+                                throw new Error('Missing payment parameters');
                             }
 
                             const data = await createPaymentToken(
