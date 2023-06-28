@@ -49,8 +49,8 @@ export enum TelemetryAccountSignupEvents {
     hvNeeded = 'be.hv_needed',
     loadPaymentBtc = 'fe.load_payment_btc',
     onboardingStart = 'fe.onboarding_start',
-    onboardShown = 'user.onboarding_shown',
-    onboardFinish = 'user.onboarding_finish',
+    onboardShown = 'fe.onboarding_shown',
+    onboardFinish = 'fe.onboarding_finish',
     signupFinish = 'fe.signup_finish',
 }
 
