@@ -6210,17 +6210,17 @@
         "Asefrek n terbaɛt"
       ]
     },
-    "new_plans: Info": {
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Aneεruḍ-ik·im ad yekfu deg ${ formattedTrialExpirationDate }"
-      ]
-    },
     "new_plans: info": {
       "Popular": [
         "Mucaɛ"
       ],
       "Set automatic replies to inform contacts you are out of the office or unable to respond.": [
         "Sbadu tiririyin tiwurmanin i wakken ad telɣuḍ inermisen mačči deg lbiru i telliḍ neɣ ur tezmireḍ ara ad terreḍ."
+      ]
+    },
+    "new_plans: Info": {
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Aneεruḍ-ik·im ad yekfu deg ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -6264,9 +6264,6 @@
       ]
     },
     "new_plans: tooltip": {
-      "End-to-end encrypted calendar": [
-        "Awitay ittwawegelhen seg yixef ɣer yixef"
-      ],
       "Route your internet traffic through the Tor network with a single click": [
         "Azen timahilin-ik•im n internet s useqdec n uzeṭṭa Tor s yiwen n usiti"
       ],
@@ -6765,12 +6762,6 @@
       ],
       "Verifying your email address increases your account security and allows additional options for recovery.": [
         "Aselken n tansa imayl inek•inem ad iwenneɛ taɣellist yerna yernu tiwuriwin-nniḍen i tririt."
-      ],
-      "You can safely close this tab.": [
-        "Tzemreḍ ad tmedleḍ iccer-agi s tɣellist."
-      ],
-      "Your recovery email has been successfully verified.": [
-        "Imayl-inek•inem n tririt yettwaselken akken iwata."
       ]
     },
     "Recovery method": {
@@ -7985,6 +7976,9 @@
       ],
       "Your calendar link": [
         "Aseɣwen n uwitayen-ik"
+      ],
+      "Your plan": [
+        "Aɣawas-ik·im"
       ],
       "Your recovery status": [
         "Addad n tririt-inek•inem"

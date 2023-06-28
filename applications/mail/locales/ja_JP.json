@@ -508,6 +508,9 @@
       "Import from .csv or vCard": [
         ".csv または vCard からインポート"
       ],
+      "In the morning": [
+        "午前中"
+      ],
       "Inline": [
         "インライン"
       ],
@@ -1256,6 +1259,9 @@
       ],
       "Email received": [
         "メールを受信"
+      ],
+      "Encrypted": [
+        "暗号化済み"
       ],
       "New email": [
         "新しいメール"
@@ -2918,6 +2924,9 @@
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files.": [
         "最大 ${ MAX_IMPORT_FILE_SIZE_STRING } のファイルサイズ、最大 ${ MAX_IMPORT_CONTACTS_STRING } 件の連絡先に対応しています。それより大きなファイルは、分割してください。"
       ],
+      "Unlock custom message scheduling and other benefits when you upgrade your plan.": [
+        "プランをアップグレードすると、カスタムメッセージの送信予約などを使用できます。"
+      ],
       "Unlock unlimited filters that sort your inbox for you and more premium features when you upgrade.": [
         "アップグレードすると、受信トレイを整理するフィルターを無制限に作成するなどのプレミアム機能が利用できます。"
       ],
@@ -3665,6 +3674,9 @@
       ],
       "Please refresh the page or try again later.": [
         "ページを再読み込みするか、後でもう一度お試しください。"
+      ],
+      "Something went wrong": [
+        "不具合が発生しました"
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "このページをロードできません。ページを再読み込みするかインターネットの接続状況を確認してください。"
@@ -4925,6 +4937,9 @@
       "Expiration time": [
         "有効期限"
       ],
+      "Expires in ${ formattedDate }": [
+        "${ formattedDate } に期限が切れます"
+      ],
       "Expires in ${ minutesDiff } minutes": [
         "有効期限は ${ minutesDiff } 分です。"
       ],
@@ -4999,6 +5014,9 @@
       ],
       "Import mailbox": [
         "メールボックスのインポート"
+      ],
+      "Importing your data from ${ fromEmail } to ${ toEmail }.": [
+        "データを ${ fromEmail } から ${ toEmail } にインポートしています。"
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "データを ${ importedEmailAddress } から ${ toEmail } にインポートしています。"
@@ -5155,6 +5173,9 @@
       ],
       "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
         "アップロードされた鍵はすべて暗号化には使用できないものです。指定のアドレスにメールを送信するには、正しい鍵をアップロードするかメールの暗号化をオフにしてください。"
+      ],
+      "Normal": [
+        "標準"
       ],
       "Not a valid URL": [
         "有効な URL ではありません"
@@ -5482,6 +5503,12 @@
       ],
       "This message will expire on ${ longDateMEssage }": [
         "このメッセージの有効期限は ${ longDateMEssage } です。"
+      ],
+      "This message will expire today at ${ shortDateMessage }": [
+        "このメッセージの有効期限は今日の ${ shortDateMessage } までです"
+      ],
+      "This message will expire tomorrow at ${ shortDateMessage }": [
+        "このメッセージの有効期限は明日の ${ shortDateMessage } までです"
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "この公開鍵は自動的に、このメールアドレスへ送信するメールの暗号化に使用されます。"
