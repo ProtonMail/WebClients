@@ -11,6 +11,7 @@ import playStoreSvg from '@proton/styles/assets/img/illustrations/play-store.svg
 import passBrandText from '../../../../public/assets/protonpass-brand.svg';
 import { ExtensionHead } from '../../../shared/components/page/ExtensionHead';
 import { OnboardingLink } from '../../../shared/links';
+import { SubTheme } from '../../../shared/theme/sub-theme';
 
 import './Welcome.scss';
 
@@ -76,7 +77,7 @@ export const Welcome: VFC = () => {
                                         <ButtonLike
                                             as="a"
                                             href="/settings.html#/import"
-                                            className="w100 ui-login pass-welcome--import-btn"
+                                            className={`w100 ${SubTheme.VIOLET} pass-welcome--import-btn`}
                                             pill
                                             size="large"
                                             shape="ghost"
