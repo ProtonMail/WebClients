@@ -2,13 +2,14 @@ import { Dispatch, SetStateAction, useCallback, useEffect, useMemo, useState } f
 
 import { c, msgid } from 'ttag';
 
-import { useGetEncryptionPreferences } from '@proton/components';
+import { useGetEncryptionPreferences, useKeyTransparencyContext } from '@proton/components';
 import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
 import { PublicKeyReference } from '@proton/crypto';
 import useIsMounted from '@proton/hooks/useIsMounted';
 import { processApiRequestsSafe } from '@proton/shared/lib/api/helpers/safeApiRequests';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import { omit } from '@proton/shared/lib/helpers/object';
+import { KeyTransparencyActivation } from '@proton/shared/lib/interfaces';
 import { Recipient } from '@proton/shared/lib/interfaces/Address';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import { GetEncryptionPreferences } from '@proton/shared/lib/interfaces/hooks/GetEncryptionPreferences';
@@ -61,6 +62,7 @@ export const useUpdateRecipientSendInfo = (
     const getEncryptionPreferences = useGetEncryptionPreferences();
     const contactsMap = useContactsMap();
     const emailAddress = recipient.Address;
+    const { ktActivation } = useKeyTransparencyContext();
 
     const [askForKeyPinningModal, handleShowAskForKeyPinningModal] = useModalTwo(AskForKeyPinningModal);
 
@@ -159,7 +161,7 @@ export const useUpdateRecipientSendInfo = (
 
                 return updateRecipientIcon();
             }
-            const sendIcon = getSendStatusIcon(sendPreferences);
+            const sendIcon = getSendStatusIcon(sendPreferences, ktActivation);
             const contactSignatureInfo = {
                 isVerified: encryptionPreferences.isContactSignatureVerified,
                 creationTime: encryptionPreferences.contactSignatureTimestamp,
@@ -178,7 +180,7 @@ export const useUpdateRecipientSendInfo = (
         };
 
         void updateRecipientIcon();
-    }, [emailAddress, contactsMap]);
+    }, [emailAddress, contactsMap, ktActivation]);
 
     return { handleRemove, askForKeyPinningModal, contactResignModal };
 };
@@ -211,6 +213,8 @@ export const useUpdateGroupSendInfo = (
         }
         onRemove();
     };
+
+    const { ktActivation } = useKeyTransparencyContext();
 
     useEffect(() => {
         const abortController = new AbortController();
@@ -249,7 +253,7 @@ export const useUpdateGroupSendInfo = (
             }
             const encryptionPreferences = await getEncryptionPreferences(emailAddress, 0, contactsMap);
             const sendPreferences = getSendPreferences(encryptionPreferences, message.data);
-            const sendIcon = getSendStatusIcon(sendPreferences);
+            const sendIcon = getSendStatusIcon(sendPreferences, ktActivation);
             const contactSignatureInfo = {
                 isVerified: encryptionPreferences.isContactSignatureVerified,
                 creationTime: encryptionPreferences.contactSignatureTimestamp,
@@ -348,7 +352,7 @@ export const useUpdateGroupSendInfo = (
         return () => {
             abortController.abort();
         };
-    }, []);
+    }, [ktActivation]);
 
     return { handleRemove, askForKeyPinningModal, contactResignModal };
 };
@@ -358,11 +362,12 @@ const getUpdatedSendInfo = async (
     message: MessageState,
     setMapSendInfo: Dispatch<SetStateAction<MapSendInfo>>,
     getEncryptionPreferences: GetEncryptionPreferences,
+    ktActivation: KeyTransparencyActivation,
     contactsMap: ContactsMap
 ) => {
     const encryptionPreferences = await getEncryptionPreferences(emailAddress, 0, contactsMap);
     const sendPreferences = getSendPreferences(encryptionPreferences, message.data);
-    const sendIcon = getSendStatusIcon(sendPreferences);
+    const sendIcon = getSendStatusIcon(sendPreferences, ktActivation);
     const contactSignatureInfo = {
         isVerified: encryptionPreferences.isContactSignatureVerified,
         creationTime: encryptionPreferences.contactSignatureTimestamp,
@@ -389,6 +394,7 @@ const getUpdatedSendInfo = async (
 export const useReloadSendInfo = () => {
     const getEncryptionPreferences = useGetEncryptionPreferences();
     const contactsMap = useContactsMap();
+    const { ktActivation } = useKeyTransparencyContext();
 
     return useCallback(
         async (messageSendInfo: MessageSendInfo | undefined, message: MessageState) => {
@@ -401,7 +407,14 @@ export const useReloadSendInfo = () => {
             const recipients = getRecipientsAddresses(message.data);
             const requests = recipients.map(
                 (emailAddress) => () =>
-                    getUpdatedSendInfo(emailAddress, message, setMapSendInfo, getEncryptionPreferences, contactsMap)
+                    getUpdatedSendInfo(
+                        emailAddress,
+                        message,
+                        setMapSendInfo,
+                        getEncryptionPreferences,
+                        ktActivation,
+                        contactsMap
+                    )
             );
             const loadingMapSendInfo = recipients.reduce(
                 (acc, emailAddress) => {
@@ -415,6 +428,6 @@ export const useReloadSendInfo = () => {
             // the routes called in requests support 100 calls every 10 seconds
             await processApiRequestsSafe(requests, 100, 10 * 1000);
         },
-        [getEncryptionPreferences, contactsMap]
+        [getEncryptionPreferences, contactsMap, ktActivation]
     );
 };

@@ -1,5 +1,3 @@
-import type { FeatureContextValue } from '@proton/components/containers/features/FeaturesContext';
-import type { KT_FF } from '@proton/components/containers/keyTransparency/ktStatus';
 import { CryptoProxy } from '@proton/crypto';
 import { getAllAddresses } from '@proton/shared/lib/api/addresses';
 import { auth, authMnemonic, getMnemonicAuthInfo } from '@proton/shared/lib/api/auth';
@@ -13,7 +11,7 @@ import { AuthResponse, InfoResponse } from '@proton/shared/lib/authentication/in
 import { persistSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { APP_NAMES } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
-import { Api, UserSettings, User as tsUser } from '@proton/shared/lib/interfaces';
+import { Api, KeyTransparencyActivation, UserSettings, User as tsUser } from '@proton/shared/lib/interfaces';
 import {
     generateKeySaltAndPassphrase,
     getDecryptedUserKeysHelper,
@@ -34,7 +32,6 @@ import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
 import { createPreAuthKTVerifier } from '../keyTransparency';
-import { createGetKTActivation } from '../keyTransparency/useGetKTActivation';
 import {
     AccountType,
     RecoveryMethod,
@@ -53,18 +50,13 @@ export const handleNewPassword = async ({
     cache: ResetCacheResult;
     api: Api;
 }): Promise<ResetActionResponse> => {
-    const { username, token, resetResponse, persistent, appName, ktFeature, hasTrustedDeviceRecovery } = cache;
+    const { username, token, resetResponse, persistent, appName, ktActivation, hasTrustedDeviceRecovery } = cache;
     if (!resetResponse || !token) {
         throw new Error('Missing response');
     }
     const { Addresses: addresses } = resetResponse;
 
-    const getKTActivation = createGetKTActivation(
-        ktFeature.get().then((result) => result?.Value),
-        appName
-    );
-
-    const { preAuthKTVerify, preAuthKTCommit } = createPreAuthKTVerifier(getKTActivation, api);
+    const { preAuthKTVerify, preAuthKTCommit } = createPreAuthKTVerifier(ktActivation, api);
 
     const { passphrase, salt } = await generateKeySaltAndPassphrase(password);
     const { addressKeysPayload, userKeyPayload } = await getResetAddressesKeysV2({
@@ -359,7 +351,7 @@ export const handleRequestRecoveryMethods = async ({
     persistent,
     api,
     hasTrustedDeviceRecovery,
-    ktFeature,
+    ktActivation,
 }: {
     setupVPN: boolean;
     appName: APP_NAMES;
@@ -367,7 +359,7 @@ export const handleRequestRecoveryMethods = async ({
     persistent: boolean;
     api: Api;
     hasTrustedDeviceRecovery: boolean;
-    ktFeature: FeatureContextValue<KT_FF>;
+    ktActivation: KeyTransparencyActivation;
 }): Promise<ResetActionResponse> => {
     try {
         const { Type, Methods }: { Type: AccountType; Methods: RecoveryMethod[] } = await api(
@@ -386,7 +378,7 @@ export const handleRequestRecoveryMethods = async ({
                     Methods,
                     type: Type,
                     hasTrustedDeviceRecovery,
-                    ktFeature,
+                    ktActivation,
                 },
                 to: STEPS.VALIDATE_RESET_TOKEN,
             };
@@ -408,7 +400,7 @@ export const handleRequestRecoveryMethods = async ({
                 Methods,
                 type: Type,
                 hasTrustedDeviceRecovery,
-                ktFeature,
+                ktActivation,
             },
             to: STEPS.REQUEST_RESET_TOKEN,
         };

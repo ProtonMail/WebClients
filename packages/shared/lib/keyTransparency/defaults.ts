@@ -15,6 +15,5 @@ export const getDefaultKTLS = (): KTLocalStorageAPI => {
 };
 
 export const defaultKeyTransparencyState: KeyTransparencyState = {
-    selfAuditPromise: Promise.resolve(),
-    ktLSAPI: getDefaultKTLS(),
+    selfAuditResult: undefined,
 };

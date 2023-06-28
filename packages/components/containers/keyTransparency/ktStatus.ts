@@ -1,5 +1,5 @@
 import { KT_DOMAINS, getBaseDomain, getKTLocalStorage, removeKTFromLS } from '@proton/key-transparency';
-import { APPS, APP_NAMES } from '@proton/shared/lib/constants';
+import { APP_NAMES } from '@proton/shared/lib/constants';
 import { KTLocalStorageAPI } from '@proton/shared/lib/interfaces';
 
 export enum KtFeatureEnum {
@@ -15,7 +15,7 @@ export const isKTActive = async (APP_NAME: APP_NAMES, feature: KT_FF) => {
     //  - the api is not prod's or proton.black's
     //  - there is no access to cross-storage.
     //  - BigInt is not supported (it is needed for VRF verification);
-    if (feature === undefined || feature === KtFeatureEnum.DISABLE || APP_NAME === APPS.PROTONVPN_SETTINGS) {
+    if (feature === undefined || feature === KtFeatureEnum.DISABLE) {
         return false;
     }
 

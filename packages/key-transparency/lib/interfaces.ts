@@ -2,6 +2,7 @@ import { PublicKeyReference } from '@proton/crypto';
 import { FetchedSignedKeyList } from '@proton/shared/lib/interfaces';
 
 import { KT_CERTIFICATE_ISSUER, KT_DOMAINS } from './constants';
+import { KeyTransparencyError } from './helpers';
 
 export interface KeyWithFlags {
     Flags: number;
@@ -18,20 +19,17 @@ export enum KTPROOF_TYPE {
 export interface Proof {
     Neighbors: (string | null)[];
     Verifier: string;
-    Revision: number;
     Type: KTPROOF_TYPE;
     ObsolescenceToken: string | null;
 }
 
-export interface PartialKTBlobContent {
+export interface KTBlobContent {
     creationTimestamp: number;
-    PublicKeys: string[];
+    expectedMinEpochID: number;
     email: string;
-    isObsolete: boolean;
-}
-
-export interface KTBlobContent extends PartialKTBlobContent {
-    ExpectedMinEpochID: number;
+    data: string;
+    revision: number;
+    isCatchall?: boolean;
 }
 
 export interface KTBlobValuesWithInfo {
@@ -67,4 +65,41 @@ export interface Epoch {
     ClaimedTime: number;
     Domain: KT_DOMAINS;
     CertificateTime: number;
+}
+
+export enum AddressAuditStatus {
+    Success,
+    Failure,
+    Warning,
+}
+
+export enum AddressAuditWarningReason {
+    NullSKL,
+    UnverifiableHistory,
+}
+
+export interface AddressAuditWarningDetails {
+    reason: AddressAuditWarningReason;
+    addressWasDisabled?: boolean;
+    sklVerificationFailed?: boolean;
+}
+
+export interface AddressAuditResult {
+    email: string;
+    status: AddressAuditStatus;
+    warningDetails?: AddressAuditWarningDetails;
+    error?: KeyTransparencyError;
+}
+
+export interface LocalStorageAuditResult {
+    email: string;
+    success: boolean;
+    error?: KeyTransparencyError;
+}
+
+export interface SelfAuditResult {
+    auditTime: number;
+    addressAuditResults: AddressAuditResult[];
+    localStorageAuditResultsOwnAddress: LocalStorageAuditResult[];
+    localStorageAuditResultsOtherAddress: LocalStorageAuditResult[];
 }
