@@ -1107,6 +1107,11 @@
         "Ao sair agora, alguns eventos podem não ser importados."
       ]
     },
+    "Alter": {
+      "This will disconnect all the routers and clients using this certificate.": [
+        "Isto desligará todos os routers e clientes que utilizam este certificado."
+      ]
+    },
     "Animation": {
       "${ nameToDisplay }'s inbox": [
         "Inbox de ${ nameToDisplay }"
@@ -1377,6 +1382,9 @@
       ],
       "Share outside ${ BRAND_NAME }": [
         "Partilhe fora de ${ BRAND_NAME }"
+      ],
+      "Share with ${ BRAND_NAME } users": [
+        "Partilhe com utilizadores ${ BRAND_NAME }"
       ],
       "Share with anyone": [
         "Partilhar com o qualquer pessoa"
@@ -2711,6 +2719,9 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "A encriptar e importar contactos... Pode levar alguns minutos. Quando o processo terminar, poderá fechar este diálogo."
       ],
+      "Get up to ${ credits } in credits by inviting friends to ${ BRAND_NAME }.": [
+        "Receba até ${ credits } em créditos ao convidar amigos para ${ BRAND_NAME }."
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Parece que a lista de contactos que está a importar já contém grupos. Reveja como esses grupos devem ser importados."
       ],
@@ -2729,6 +2740,9 @@
       ],
       "Track the status and activity of your referrals.": [
         "Acompanhe as suas referências."
+      ],
+      "Unlock shorter email addresses and other premium features by upgrading.": [
+        "Consiga endereços de e-mail mais curtos e outras funcionalidades premium ao atualizar o seu plano."
       ],
       "Unlock unlimited filters that sort your inbox for you and more premium features when you upgrade.": [
         "Desbloqueie filtros ilimitados que ordenam a sua caixa de entrada por si e mais funcionalidades premium ao atualizar."
@@ -2836,6 +2850,17 @@
       ],
       "90 minutes": [
         "90 minutos"
+      ]
+    },
+    "Email": {
+      "Email verified": [
+        "O e-mail foi verificado."
+      ],
+      "Thanks for letting us know": [
+        "Obrigado por nos informar."
+      ],
+      "You can safely close this tab.": [
+        "Pode fechar este separador com segurança."
       ]
     },
     "Email body for description (description part)": {
@@ -3296,6 +3321,9 @@
       "The minimum payment we accept is ${ price }": [
         "O pagamento mínimo que aceitamos é ${ price }"
       ],
+      "The organization key must be activated first": [
+        "Tem de ativar a chave da organização primeiro"
+      ],
       "The organization key must be activated first.": [
         "Tem de ativar a chave da organização primeiro."
       ],
@@ -3337,6 +3365,9 @@
       ],
       "Unknown payment token status": [
         "Estado do símbolo de pagamento desconhecido"
+      ],
+      "Uploaded file is not a valid private key. Please verify and try again.": [
+        "O ficheiro enviado não é uma chave privada válida. Verifique e tente novamente."
       ],
       "Uploaded files are not valid private keys. Please verify and try again.": [
         "Os ficheiros carregados não são chaves privadas válidas. Verifique e tente novamente."
@@ -3885,6 +3916,9 @@
       "The subscription is billed to the Visionary or family plan's primary admin.": [
         "A subscrição é faturada ao administrador principal do plano Visionary ou family."
       ],
+      "To ease the transition, we're giving you a 30-day courtesy trial of ${ BRAND_NAME } Unlimited*.": [
+        "Para facilitar a transição, estamos a oferecer-lhe uma avaliação gratuita de 30 dias da ${ BRAND_NAME } Unlimited*."
+      ],
       "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
         "Os planos Visionary e Family não suportam atualmente contas externas. Crie um endereço ${ BRAND_NAME } antes de aderir. ${ addressSettingsLink }"
       ],
@@ -3914,6 +3948,9 @@
       ],
       "You need to configure a custom domain before creating a new user.": [
         "É necessário configurar um domínio personalizado antes de criar um utilizador."
+      ],
+      "You will lose access to all premium features and storage space included with ${ BRAND_NAME } Family.": [
+        "Perderá o acesso a todas as funcionalidades premium e espaço de armazenamento incluídos na ${ BRAND_NAME } Family."
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "Está convidado a associar a sua conta ${ BRAND_NAME } a este plano de grupo e a usufruir em conjunto de todas as funcionalidades premium ${ BRAND_NAME_TWO }."
@@ -3948,6 +3985,12 @@
       "Online privacy, for your whole family": [
         "Privacidade online, para toda a sua família"
       ],
+      "The invitation will be cancelled and the user won't be able to join ${ organization.Name }.": [
+        "O convite será cancelado e o utilizador não poderá aderir a ${ organization.Name }."
+      ],
+      "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
+        "A conta do utilizador será transferida para um plano ilimitado da ${ BRAND_NAME } para uma avaliação gratuita de 30 dias*."
+      ],
       "To create a new user, a configured custom domain is required.": [
         "Para criar um utilizador, é necessário um domínio personalizado configurado."
       ],
@@ -3978,6 +4021,9 @@
       ]
     },
     "familyOffer_2023:Member downgrade modal": {
+      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
+        "Esta ação elimina permanentemente todos os subutilizadores, contas e dados associados à sua organização."
+      ],
       "This will remove all ${ BRAND_NAME } premium features for every family member.": [
         "Esta ação removerá todas as funcionalidades premium da ${ BRAND_NAME } para cada membro da família."
       ]
@@ -4267,6 +4313,12 @@
       "Spam:": [
         "Spam:"
       ],
+      "Take control over what lands in your inbox by creating the following lists:": [
+        "Controle o que chega à sua caixa de entrada criando estas listas:"
+      ],
+      "Take control over what lands in your organization members' inboxes by creating the following lists:": [
+        "Assuma o controlo do que chega às caixas de entrada dos membros da sua organização criando as seguintes listas:"
+      ],
       "These lists apply to all accounts in your organization. Members can create their own individual filters, but won't be able to override addresses or domains you blocked.": [
         "Estas listas aplicam-se a todas as contas da sua organização. Os membros podem criar os seus próprios filtros individuais, mas não poderão substituir os endereços ou domínios que bloqueou."
       ],
@@ -4391,6 +4443,9 @@
       ],
       "Device": [
         "Dispositivo"
+      ],
+      "Enter your email address": [
+        "Introduza o seu endereço de e-mail"
       ],
       "Event": [
         "Evento"
@@ -5532,6 +5587,9 @@
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Os filtros funcionam em todos os e-mails, incluindo recebidos e enviados. Cada filtro deve conter pelo menos um nome, uma condição e uma ação."
       ],
+      "for choosing ${ product }": [
+        "por escolher ${ product }"
+      ],
       "For choosing ${ product }": [
         "Por escolher ${ product }"
       ],
@@ -5928,6 +5986,9 @@
       "Paid for a monthly plan": [
         "Pago para o plano mensal"
       ],
+      "Password copied to clipboard": [
+        "A palavra-passe é copiada para a área de transferência."
+      ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Os pagamentos são protegidos através de encriptação TLS e pelas leis de privacidade suíças."
       ],
@@ -6071,6 +6132,9 @@
       "Remove one of your calendars to join this one": [
         "Ative este endereço para juntar-se a este calendário."
       ],
+      "Report link expired": [
+        "A ligação do relatório expirou."
+      ],
       "Restore": [
         "Restaurar"
       ],
@@ -6174,6 +6238,9 @@
       "Storage for users": [
         "Armazenamento para utilizadores"
       ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "O espaço de armazenamento é partilhado entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } e ${ DRIVE_APP_NAME }."
+      ],
       "Storage used by this user": [
         "Armazenamento utilizado por este utilizador"
       ],
@@ -6185,6 +6252,9 @@
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "A subscrição termina: Reative até ${ byDate } para manter os seus benefícios ${ planName }. ${ reactivateLink }"
+      ],
+      "Summary": [
+        "Resumo"
       ],
       "Support for 1 custom email domain": [
         "Suporte para 1 domínio de e-mail personalizado"
@@ -6983,6 +7053,9 @@
       ],
       "The encryption keys for your address are being generated. This may take several minutes and temporarily freeze your browser.": [
         "As chaves de encriptação para o seu endereço estão a ser geradas. Isto pode levar alguns minutos e bloquear temporariamente o seu navegador."
+      ],
+      "You can generate a new encryption key if you think your previous key has been compromised.": [
+        "Pode gerar uma nova chave de encriptação se pensa que a sua chave anterior foi comprometida."
       ]
     },
     "Key state badge": {
@@ -7361,6 +7434,9 @@
       ],
       "Auto show remote images": [
         "Mostrar imagens remotas automaticamente"
+      ],
+      "Auto-delete unwanted messages": [
+        "Eliminar as mensagens indesejadas automaticamente"
       ],
       "Auto-detect primary time zone": [
         "Auto-detectar fuso horário primário"
@@ -8329,6 +8405,9 @@
       "Pay invoice": [
         "Pagar fatura"
       ],
+      "Paypal without credit card": [
+        "Paypal sem cartão de crédito"
+      ],
       "Privacy policy": [
         "Política de privacidade"
       ],
@@ -8745,6 +8824,9 @@
       "Get ${ planName }": [
         "Obter ${ planName }"
       ],
+      "Get ${ upsellShortPlan.title }": [
+        "Obtenha o ${ upsellShortPlan.title }"
+      ],
       "Got it": [
         "Entendido"
       ],
@@ -8807,7 +8889,7 @@
         "${ n } pasta e etiqueta",
         "${ n } pastas e etiquetas"
       ],
-      "${ n } Hide-my-email alias": [
+      "${ n } hide-my-email alias": [
         "${ n } alias do Hide-my-email",
         "${ n } aliases do Hide-my-email"
       ],
@@ -9099,17 +9181,6 @@
         "Gestão de equipa"
       ]
     },
-    "new_plans: Info": {
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "Atualize para o pacote para empresas com acesso a todos os serviços premium da ${ BRAND_NAME }."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "Atualize para o pacote de privacidade completo e aceda a todos os serviços premium da ${ BRAND_NAME }."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "O seu teste termina em ${ formattedTrialExpirationDate }."
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } que termina com ${ last4 }"
@@ -9132,6 +9203,9 @@
       "* With 30-month subscription. Other subscription options available at checkout.": [
         "* Com subscrição de 30 mês. Outras opções de subscrição disponíveis na finalização da compra."
       ],
+      "Applicable credits, proration, and coupons are applied in the next step": [
+        "Os créditos, repartições e cupões aplicáveis são aplicados na etapa seguinte."
+      ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Privacidade e segurança abrangentes com todos os serviços da ${ BRAND_NAME } combinados."
       ],
@@ -9146,6 +9220,9 @@
       ],
       "Privacy and security suite for businesses, including all premium ${ BRAND_NAME } services.": [
         "Pacote de privacidade e segurança para empresas, incluindo todos os serviços premium da ${ BRAND_NAME }."
+      ],
+      "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
+        "Proteja a privacidade da sua família com todos os serviços da ${ BRAND_NAME } combinados."
       ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "Armazenamento em nuvem seguro que permite armazenar, sincronizar e compartilhar ficheiros com facilidade e segurança."
@@ -9164,6 +9241,23 @@
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
         "A conta inicial gratuita criada para oferecer privacidade a todos por padrão."
+      ]
+    },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Proteja a sua privacidade quando se trata de fazer cópias de segurança, armazenar, partilhar e recuperar ficheiros."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Caso contrário, o acesso à sua conta será limitado e a sua conta acabará por ser desativada."
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "Atualize para o pacote para empresas com acesso a todos os serviços premium da ${ BRAND_NAME }."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "Atualize para o pacote de privacidade completo e aceda a todos os serviços premium da ${ BRAND_NAME }."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "O seu teste termina em ${ formattedTrialExpirationDate }."
       ]
     },
     "new_plans: Label": {
@@ -9246,15 +9340,27 @@
       ]
     },
     "new_plans: tooltip": {
-      "Advanced security VPN with global network": [
-        "VPN de segurança avançada com rede global"
+      "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
+        "Aceda a conteúdos em serviços de streaming, incluindo Netflix, Disney+ e Prime Video, a partir de qualquer lugar"
       ],
       "Allows you to set up automatic responses (auto-reply) for your incoming messages": [
         "Permite-lhe configurar respostas automáticas para as suas mensagens recebidas"
       ],
+      "Control access to your shared files by adding password protection and link expiration dates": [
+        "Controle o acesso aos seus ficheiros partilhados, adicionando proteção por palavra-passe e datas de expiração das ligações."
+      ],
+      "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
+        "Crie vários endereços de e-mail para as suas identidades em linha, por exemplo, JoãoCompras@${ domain } para as contas de compras, JoãoNotícias@${ domain } para as subscrições nos sítios de notícias"
+      ],
       "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
         "Crie até ${ n } calendário ou adicione calendários de amigos, familiares, colegas e organizações.",
         "Crie até ${ n } calendários ou adicione calendários de amigos, familiares, colegas e organizações."
+      ],
+      "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
+        "Defende-se contra a ameaça à privacidade da VPN ao enviar o tráfego na internet por vários servidores."
+      ],
+      "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers.": [
+        "Defende-se contra a ameaça à privacidade da VPN ao enviar o tráfego na internet por vários servidores."
       ],
       "Easily share your calendars with your colleagues, family, and friends via a link": [
         "Partilhe facilmente os seus calendários com os seus colegas, família e amigos com uma ligação."
@@ -9262,17 +9368,20 @@
       "Easily share your calendars with your family, friends, or colleagues": [
         "Partilhe facilmente os seus calendários com a sua família, amigos ou colegas."
       ],
-      "End-to-end encrypted calendar": [
-        "Calendário encriptado de ponta a ponta"
-      ],
-      "End-to-end encrypted file storage": [
-        "Armazenamento de ficheiros encriptados de ponta a ponta"
-      ],
       "Force sign-out of user sessions when user credentials are believed to be compromised": [
         "Força a saída das sessões de utilizador quando se pensa que as credenciais do utilizador estão comprometidas."
       ],
       "Keep your plans private to you and your family with an encrypted calendar": [
         "Mantenha os seus planos privados para si e para a sua família com um calendário encriptado."
+      ],
+      "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
+        "Pode adicionar etiquetas às suas mensagens para as tornar mais fáceis de encontrar ou para aplicar filtros."
+      ],
+      "Option to view non-private user inboxes as the user would, including full message and contact details": [
+        "Opção para ver as caixas de entrada de utilizadores não privados como o utilizador faria, incluindo todas as mensagens e detalhes de contacto"
+      ],
+      "Our robust infrastructure ensures you will be able to access your account when you need it": [
+        "A fiabilidade da nossa infraestrutura garante-lhe o acesso à sua conta sempre que precisar."
       ],
       "Quickly set up out-of-office messages": [
         "Configure rapidamente mensagens Fora do escritório"
@@ -9283,6 +9392,21 @@
       "Reset user passwords and reset two-factor authentication on users": [
         "Reponha as palavras-passe dos utilizadores e a autenticação de dois fatores."
       ],
+      "Route your internet traffic through the Tor network with a single click": [
+        "Envie todo o seu tráfego na internet através da rede Tor com um único clique."
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "Proteja os seus ficheiros com armazenamento encriptado na nuvem. Inclui sincronização automática, partilha de ficheiros encriptados e muito mais."
+      ],
+      "Set up filters to automatically reply to, sort, and/or label your emails": [
+        "Configure filtros para responder, ordenar e/ou etiquetar automaticamente os seus e-mails."
+      ],
+      "Share your files or folders with anyone by using secure, shareable links": [
+        "Partilhe os seus ficheiros ou pastas com qualquer pessoa, utilizando ligações seguras e partilháveis."
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }": [
+        "O espaço de armazenamento é partilhado entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } e ${ DRIVE_APP_NAME }"
+      ],
       "Support for file-sharing protocols like BitTorrent": [
         "Suporte para protocolos de partilha de ficheiros, como o BitTorrent"
       ],
@@ -9291,6 +9415,9 @@
       ]
     },
     "new_plans: upgrade": {
+      "Included with ${ plus }, ${ bundle }, and ${ BRAND_NAME } for Business.": [
+        "Incluído com ${ plus }, ${ bundle } e ${ BRAND_NAME } for Business."
+      ],
       "Included with all ${ BRAND_NAME } for Business plans.": [
         "Incluído com todos os planos ${ BRAND_NAME } for Business"
       ]
@@ -9867,6 +9994,9 @@
       "contact": [
         "contacto"
       ],
+      "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
+        "Selecione o número de utilizadores a incluir no seu plano. Cada utilizador adicional custa ${ price }."
+      ],
       "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
         "Se precisar de mais de ${ maxUsers } conta de utilizador, ${ contact } a nossa equipa de vendas.",
         "Se precisar de mais de ${ maxUsers } contas de utilizador, ${ contact } a nossa equipa de vendas."
@@ -9935,6 +10065,9 @@
       "Email address not yet verified.": [
         "O endereço de e-mail ainda não foi verificado."
       ],
+      "Email removed": [
+        "O email foi removido."
+      ],
       "sign in": [
         "iniciar sessão"
       ],
@@ -9953,14 +10086,11 @@
       "Verify with email": [
         "Verificar com e-mail"
       ],
-      "You can safely close this tab.": [
-        "Pode fechar este separador com segurança."
+      "Verifying your email address increases your account security and allows additional options for recovery.": [
+        "A verificação do seu endereço de e-mail aumenta a segurança da sua conta e permite opções de recuperação adicionais."
       ],
       "Your recovery email has been successfully removed.": [
         "O seu endereço de e-mail de recuperação foi removido."
-      ],
-      "Your recovery email has been successfully verified.": [
-        "O seu endereço de e-mail de recuperação foi verificado."
       ]
     },
     "Recovery method": {
@@ -9995,6 +10125,9 @@
       ],
       "Verify this recovery phone number now: ${ phone.Value }": [
         "Verifique este número de telefone de recuperação agora: ${ phone.Value }"
+      ],
+      "Verifying your phone number increases your account security and allows additional options for recovery.": [
+        "A verificação do seu número de telefone aumenta a segurança da sua conta e permite opções de recuperação adicionais."
       ]
     },
     "Remark about a key type option": {
@@ -10011,6 +10144,9 @@
       ]
     },
     "Remove calendar section text": {
+      "If you leave this calendar, you'll have to ask the owner to join again.": [
+        "Se sair deste calendário, terá de pedir ao proprietário para aderir novamente."
+      ],
       "This calendar will be removed from your account.": [
         "Este calendário será removido da sua conta"
       ]
@@ -10174,6 +10310,9 @@
       "Confirm email address": [
         "Confirmar o endereço de e-mail"
       ],
+      "Confirm password": [
+        "Confirmar a palavra-passe"
+      ],
       "Display name": [
         "Nome a mostrar"
       ],
@@ -10182,6 +10321,9 @@
       ],
       "Email address": [
         "Endereço de e-mail"
+      ],
+      "Password": [
+        "Palavra-passe"
       ],
       "Username": [
         "Utilizador"
@@ -10562,6 +10704,9 @@
       "1 VPN connection": [
         "1 ligação VPN"
       ],
+      "Access to streaming services globally": [
+        "Aceda a serviços de streaming globalmente"
+      ],
       "Built-in ad blocker (NetShield)": [
         "Bloqueador integrado (NetShield)"
       ],
@@ -10573,6 +10718,12 @@
     "Subscription change warning": {
       "Got it": [
         "Entendido"
+      ],
+      "Just sign in to your Apple App Store account, then press ${ subscriptions }.": [
+        "Basta iniciar sessão na sua conta da Apple App Store e, em seguida, premir ${ subscriptions }."
+      ],
+      "Just sign in to your Play Store account, then press ${ subscriptions }.": [
+        "Basta iniciar sessão na sua conta da Play Store e, em seguida, premir ${ subscriptions }."
       ],
       "Manage your subscription on ${ subscriptionManager }": [
         "Gira a sua subscrição em ${ subscriptionManager }."
@@ -10979,6 +11130,9 @@
       ]
     },
     "Title": {
+      "${ appName } Free": [
+        "${ appName } Free"
+      ],
       "${ MAIL_APP_NAME } Keyboard Shortcuts": [
         "${ MAIL_APP_NAME } Atalhos de teclado"
       ],
@@ -11549,6 +11703,9 @@
       "Other calendars": [
         "Outros calendários"
       ],
+      "Other preferences": [
+        "Outras preferências"
+      ],
       "Password": [
         "Palavra-passe"
       ],
@@ -11842,6 +11999,9 @@
       "Your Plan": [
         "O seu plano"
       ],
+      "Your plan": [
+        "O seu plano"
+      ],
       "Your recovery status": [
         "O seu estado de recuperação"
       ],
@@ -12025,6 +12185,9 @@
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "As mensagens da pasta Enviado ou Rascunhos continuarão a aparecer nesta pasta, mesmo que as mova para outra pasta."
       ],
+      "See number of unread messages in the tab icon": [
+        "Ver o número de mensagens não lidas no ícone do separador"
+      ],
       "Set how your list of messages looks like by default.": [
         "Definia a aparência predefinida da lista de mensagens."
       ],
@@ -12160,6 +12323,11 @@
         "Atualize para ${ planName } para puder ligar até ${ n } dispositivos à VPN ao mesmo tempo."
       ]
     },
+    "Upgrade notice": {
+      "Upgrade to a ${ MAIL_SHORT_APP_NAME } paid plan to share your calendar.": [
+        "Atualize para um plano pago ${ MAIL_SHORT_APP_NAME } para partilhar o seu calendário."
+      ]
+    },
     "User referee invited via email": {
       "Invited via email": [
         "Convidado por e-mail"
@@ -12222,11 +12390,6 @@
         "${ numberOfServers } em ${ numberOfCountries } países"
       ]
     },
-    "VPN signup": {
-      "Swiss flag": [
-        "Bandeira suíça"
-      ]
-    },
     "VPNClient": {
       "iOS": [
         "iOS"
@@ -12241,6 +12404,9 @@
       ],
       "Are you sure you want to delete the phone number?": [
         "Tem a certeza de que deseja eliminar este número de telefone?"
+      ],
+      "Are you sure you want to delete this address?": [
+        "Tem a certeza de que pretende eliminar este endereço?"
       ],
       "Are you sure you want to discard your import?": [
         "Tem certeza de que deseja descartar a importação?"
@@ -12278,8 +12444,14 @@
       "The date and time settings on your device are out of sync. ${ learnMore }": [
         "As definições de data e hora no seu dispositivo, não estão sincronizadas. ${ learnMore }"
       ],
+      "The device or service using this token will no longer be able to send email through ${ MAIL_APP_NAME }.": [
+        "O dispositivo ou serviço que utiliza este token deixará de poder enviar e-mails através de ${ MAIL_APP_NAME }."
+      ],
       "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
         "Esta importação pode exceder a capacidade de armazenamento atualmente disponível na sua conta ${ BRAND_NAME }. Por favor, considere a possibilidade de personalizar a sua importação."
+      ],
+      "This will remove all messages, folders, and labels created during the import.": [
+        "Isto removerá todas as mensagens, pastas e etiquetas criadas durante a importação."
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Infelizmente, não estamos online de momento. Por favor, preencha o formulário abaixo para descrever o seu problema e nós iremos analisá-lo e entraremos em contacto quando estivermos novamente online."
@@ -12304,6 +12476,9 @@
       ],
       "Your recovery file is outdated. It can't recover new data if you reset your account again.": [
         "O seu ficheiro de recuperação está desatualizado. Não é possível recuperar novos dados se reiniciar novamente a sua conta."
+      ],
+      "Your recovery phrase is outdated. It can't recover new data if you reset your account again.": [
+        "A sua frase de recuperação está desatualizada. Não é possível recuperar novos dados se reiniciar novamente a sua conta."
       ]
     },
     "Warning for domain modal": {
