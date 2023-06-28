@@ -325,7 +325,14 @@ const AccountStepPayment = ({
 
                         return (
                             <>
-                                <Button type="submit" size="large" loading={loadingSignup} color="norm" fullWidth>
+                                <Button
+                                    type="submit"
+                                    size="large"
+                                    loading={loadingSignup}
+                                    color="norm"
+                                    fullWidth
+                                    data-testid="pay"
+                                >
                                     {cta}
                                 </Button>
                                 {selectedPlanCard?.guarantee && (
