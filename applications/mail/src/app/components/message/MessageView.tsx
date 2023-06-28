@@ -336,6 +336,7 @@ const MessageView = (
             conversationMode,
             mailSettings,
             messageRef: elementRef,
+            conversationID: conversationID
         },
         {
             hasFocus: !!hasFocus,
@@ -415,6 +416,7 @@ const MessageView = (
                         filterDropdownToggleRef={filterDropdownToggleRef}
                         parentMessageRef={elementRef}
                         conversationIndex={conversationIndex}
+                        conversationID={conversationID}
                     />
                     <MessageBody
                         labelID={labelID}
