@@ -2853,6 +2853,20 @@
         "90 分鐘"
       ]
     },
+    "Email": {
+      "Email verified": [
+        "電子郵件已驗證"
+      ],
+      "Thank you for verifying your email address.": [
+        "謝謝您驗證您的電子郵件地址。"
+      ],
+      "Thanks for letting us know": [
+        "感謝您讓我們知道"
+      ],
+      "You can safely close this tab.": [
+        "您可以安全地關閉此分頁。"
+      ]
+    },
     "Email body for description (description part)": {
       "Description: ${ eventDescription }": [
         "描述：${ eventDescription }"
@@ -2946,6 +2960,9 @@
       ]
     },
     "Email Unsubscribe": {
+      "Email subscriptions": [
+        "訂閱電子報"
+      ],
       "Which emails do you want to receive from ${ BRAND_NAME }?": [
         "您想收到哪些 ${ BRAND_NAME } 的最新消息？"
       ],
@@ -3623,6 +3640,9 @@
       ]
     },
     "Error message, recovery": {
+      "Contact ${ BRAND_NAME }": [
+        "聯絡人 ${ BRAND_NAME }"
+      ],
       "Please ${ signIn } to resend a recovery email verification request.": [
         "請 ${ signIn } 以重新傳送還原電子郵件驗證請求。"
       ],
@@ -4901,6 +4921,9 @@
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } 若你選擇繼續，你會遺失所有的已加密資料。"
       ],
+      "${ BRAND_NAME } is privacy you can trust, ensured by strong encryption, open-source code, and Swiss privacy laws. We believe nobody should be able to exploit your data, period. Our technology and business are based upon this fundamentally stronger definition of privacy.": [
+        "${ BRAND_NAME }是您可信任的隱私，使用高強度的加密、開源、及受瑞士隱私法管理。我們相信無人能夠取得您的資料。我們的科技及企業定義更高一層的隱私。"
+      ],
       "${ BRAND_NAME } paused an import because it lost the connection with your other email provider. Please reconnect.": [
         "因為與您另一個電郵提供者的連線中斷，${ BRAND_NAME } 已暫停了一項匯入。請重新連線。"
       ],
@@ -5462,9 +5485,6 @@
       "Email address": [
         "電郵位址"
       ],
-      "Email address already used": [
-        "電子郵件已被使用"
-      ],
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
         "免費提供 10 個自訂電郵網域名稱的託管服務。 亦可加入更多網域，現在只需 ${ price }。"
       ],
@@ -5548,6 +5568,9 @@
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "篩選器適用於所有電郵，包括內送及外寄電郵。每一個篩選器起碼必須包含一個名稱、一個條件及一個動作。"
+      ],
+      "for choosing ${ product }": [
+        "選用 ${ product }"
       ],
       "For choosing ${ product }": [
         "選用 ${ product }"
@@ -5933,6 +5956,9 @@
       "Outdated recovery phrase; update to ensure access to your data": [
         "密碼短語已過時，更新以確保您可以存取您的資料"
       ],
+      "Over 100 million people and businesses have signed up for ${ BRAND_NAME }.": [
+        "超過億人及企業註冊${ BRAND_NAME }"
+      ],
       "Paid for a ${ rewardMonths } months plan": [
         "已付費 ${ rewardMonths } 個月方案"
       ],
@@ -6059,6 +6085,9 @@
       "Recovery information will remain on this device unless you select to delete it.": [
         "除非您選擇並刪除，否則復原的資料仍留在本裝置內。"
       ],
+      "Recovery kit copied to clipboard": [
+        "復原金鑰已複製到剪貼簿"
+      ],
       "Recovery phrase copied to clipboard": [
         "復原短語已複製到剪貼簿"
       ],
@@ -6082,6 +6111,9 @@
       ],
       "Remove one of your calendars to join this one": [
         "移除其中一個行事曆以加入目前這個"
+      ],
+      "Report link expired": [
+        "回報逾期連結"
       ],
       "Restore": [
         "還原"
@@ -6199,6 +6231,9 @@
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "訂閱即將結束:於${ byDate }重新啟用以維持${ planName }的福利。${ reactivateLink }"
+      ],
+      "Summary": [
+        "摘要"
       ],
       "Support for 1 custom email domain": [
         "支援 1 個自訂電子郵件網域"
@@ -7966,6 +8001,9 @@
       "Show sender images": [
         "顯示寄件者的圖像"
       ],
+      "Show unread count in Favicon": [
+        "顯示未讀的文章"
+      ],
       "Show week numbers": [
         "顯示週數"
       ],
@@ -8341,6 +8379,9 @@
       ],
       "Pay invoice": [
         "繳付帳單"
+      ],
+      "Paypal without credit card": [
+        "PayPal沒有信用卡"
       ],
       "Privacy policy": [
         "隱私權政策"
@@ -8805,8 +8846,8 @@
       "${ n } folders and labels": [
         "${ n } 個資料夾和標籤"
       ],
-      "${ n } Hide-my-email aliases": [
-        "${ n } 隱藏電子郵件別名"
+      "${ n } hide-my-email aliases": [
+        "${ n } hide-my-email 組別名"
       ],
       "${ n } labels": [
         "${ n } 個標籤"
@@ -8856,6 +8897,9 @@
       "Auto-reply": [
         "自動回覆"
       ],
+      "Autofill credit cards (coming soon)": [
+        "自動填入信用卡(近期將到)"
+      ],
       "Available on all platforms": [
         "適用於所有平台"
       ],
@@ -8873,6 +8917,9 @@
       ],
       "Contact groups management": [
         "聯絡人群組管理"
+      ],
+      "Custom domains for email aliases": [
+        "電子郵件別名的自訂網域"
       ],
       "Custom email domains": [
         "自訂電郵網域"
@@ -8957,6 +9004,9 @@
       ],
       "No-logs policy": [
         "零日誌政策"
+      ],
+      "Organize items with multiple vaults": [
+        "組織項目與多重保管庫"
       ],
       "Password-protected Emails": [
         "密碼 - 安全防護的電子郵件"
@@ -9092,26 +9142,6 @@
         "團隊管理"
       ]
     },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "將隱私權設定為檔案備份、儲存、共享和檢索的預設值。"
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "否則您對帳號的存取將會受限，且您的帳號最終將會停用。"
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "要繼續使用有進階功能的 ${ MAIL_APP_NAME }，請選擇您的訂購授權與繳款選項。"
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "升級到商業組合，以存取所有 ${ BRAND_NAME } 的優質服務。"
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "升級到終極的隱私權組合，以存取所有 ${ BRAND_NAME } 的優質服務。"
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "您的試用期結束於 ${ formattedTrialExpirationDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } 後四碼 ${ last4 }"
@@ -9190,6 +9220,26 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "你正在當前的計畫中享受促銷價格。若你將帳號降級，你將會永遠失去此促銷價，即使你決定重新訂閱也是。"
+      ]
+    },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "將隱私權設定為檔案備份、儲存、共享和檢索的預設值。"
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "否則您對帳號的存取將會受限，且您的帳號最終將會停用。"
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "要繼續使用有進階功能的 ${ MAIL_APP_NAME }，請選擇您的訂購授權與繳款選項。"
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "升級到商業組合，以存取所有 ${ BRAND_NAME } 的優質服務。"
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "升級到終極的隱私權組合，以存取所有 ${ BRAND_NAME } 的優質服務。"
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "您的試用期結束於 ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -9271,14 +9321,23 @@
       ]
     },
     "new_plans: tooltip": {
+      "${ CALENDAR_APP_NAME }: end-to-end encrypted calendar": [
+        "${ CALENDAR_APP_NAME }:點對點加密的行事曆"
+      ],
+      "${ DRIVE_APP_NAME }: end-to-end encrypted cloud storage": [
+        "${ DRIVE_APP_NAME }:點對點加密的雲端儲存"
+      ],
+      "${ MAIL_APP_NAME }: end-to-end encrypted email": [
+        "${ MAIL_APP_NAME }:點對點加密的電子郵件"
+      ],
+      "${ VPN_APP_NAME }: unblock content, browse privately": [
+        "${ VPN_APP_NAME }:解鎖內容、更隱私的瀏覽"
+      ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
         "在世界各地輕鬆存取影音串流內容，包括 Netflix、Disney+、Prime Video 等"
       ],
       "Addresses have full sending and receiving capability. A user can have multiple addresses assigned to them; however, a single address cannot be assigned to multiple users.": [
         "電郵位址具有完整的傳送和接收能力。單一使用者可有多組指派的位址；但是一組電郵位址不能指派給多位使用者。"
-      ],
-      "Advanced security VPN with global network": [
-        "涵蓋全球網路的進階安全性 VPN"
       ],
       "Allows you to access more than one network at the same time, e.g., stream a film from another country while still getting local search results": [
         "允許您同時存取多個網路，例如：影音串流服務傳輸來自另一個國家的電影，同時仍可獲得當地搜尋結果"
@@ -9312,12 +9371,6 @@
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "輕鬆與您的家人、好友或同事分享您的行事曆"
-      ],
-      "End-to-end encrypted calendar": [
-        "端對端加密行事曆"
-      ],
-      "End-to-end encrypted file storage": [
-        "端到端加密檔案儲存"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "確保您接收所有傳送至您的網域的電子郵件，即使電子郵件位址並不存在、不復存在，或是拼寫有誤"
@@ -9360,6 +9413,9 @@
       ],
       "Our servers’ hard disks are fully encrypted with multiple password layers so your data is protected even if our hardware is compromised": [
         "我們以多層密碼完整加密伺服器上的硬碟，即使硬碟被整顆拔走，您的資料仍具備防護力"
+      ],
+      "Password management and identity protection": [
+        "使用密碼管理及身分保護"
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "以標誌、影像、社交媒體圖示、您的聯絡詳情連結等等，個人化您的電子郵件簽名檔"
@@ -9487,6 +9543,9 @@
       ],
       "Priority support": [
         "優先支援"
+      ],
+      "Secure your passwords and identity with an open-source and encrypted password manager.": [
+        "透過開源和加密的密碼管理器保護你的密碼和身分資料"
       ],
       "Support for 1 custom email domain": [
         "支援 1 個自訂電郵網域"
@@ -10078,6 +10137,9 @@
       "Email address not yet verified.": [
         "電郵位址尚未驗證。"
       ],
+      "Email removed": [
+        "電子郵件已移除"
+      ],
       "sign in": [
         "登入"
       ],
@@ -10099,14 +10161,8 @@
       "Verifying your email address increases your account security and allows additional options for recovery.": [
         "驗證您的電郵位址可以增加您帳號的安全性，並提供了額外的還原選項。"
       ],
-      "You can safely close this tab.": [
-        "您可以安全地關閉此分頁。"
-      ],
       "Your recovery email has been successfully removed.": [
         "已成功移除您的復原用電郵位址。"
-      ],
-      "Your recovery email has been successfully verified.": [
-        "您的還原電郵已成功驗證。"
       ]
     },
     "Recovery method": {
@@ -10328,6 +10384,9 @@
       "Confirm email address": [
         "確認電子郵件地址"
       ],
+      "Confirm password": [
+        "確認密碼"
+      ],
       "Display name": [
         "顯示名稱"
       ],
@@ -10336,6 +10395,9 @@
       ],
       "Email address": [
         "電子郵件地址"
+      ],
+      "Password": [
+        "密碼"
       ],
       "Username": [
         "使用者名稱"
@@ -11135,6 +11197,9 @@
       ]
     },
     "Title": {
+      "${ appName } Free": [
+        "${ appName } Free"
+      ],
       "${ MAIL_APP_NAME } Keyboard Shortcuts": [
         "${ MAIL_APP_NAME }鍵盤快捷鍵"
       ],
@@ -11702,6 +11767,9 @@
       "Other calendars": [
         "其他行事曆"
       ],
+      "Other preferences": [
+        "其他的偏好設定"
+      ],
       "Password": [
         "密碼"
       ],
@@ -11993,6 +12061,9 @@
       "Your Plan": [
         "你的方案"
       ],
+      "Your plan": [
+        "您的方案"
+      ],
       "Your recovery status": [
         "你的復原狀態"
       ],
@@ -12176,6 +12247,9 @@
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "在 [已傳送] 或 [草稿] 資料夾中的郵件將繼續保留原處，即使您將郵件移動至另一個資料夾。"
       ],
+      "See number of unread messages in the tab icon": [
+        "於分頁圖示查看未讀的訊息"
+      ],
       "Set how your list of messages looks like by default.": [
         "設定電郵清單的預設外觀。"
       ],
@@ -12262,6 +12336,11 @@
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
         "您的外部帳號可能已達其24小時頻寬限制。${ BRAND_NAME } 將會盡快重試匯入。"
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: end-to-end encrypted password manager": [
+        "${ PASS_APP_NAME }:點對點加密的密碼管理器"
       ]
     },
     "Tooltip automatically attach public key": {
@@ -12378,22 +12457,6 @@
       ],
       "${ numberOfServers } in ${ numberOfCountries } countries": [
         "分布於 ${ numberOfCountries } 國家的 ${ numberOfServers } 台伺服器"
-      ]
-    },
-    "VPN signup": {
-      "Swiss flag": [
-        "瑞士國旗"
-      ]
-    },
-    "VPNClient": {
-      "Brave": [
-        "Brave"
-      ],
-      "Chrome": [
-        "Chrome"
-      ],
-      "Firefox": [
-        "Firefox"
       ]
     },
     "Warning": {
