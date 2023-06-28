@@ -41,6 +41,9 @@
       "Cancel": [
         "Annulla"
       ],
+      "Cancel subscription": [
+        "Annulla abbonamento"
+      ],
       "Change mailbox password": [
         "Cambia la password della casella email"
       ],
@@ -2277,9 +2280,6 @@
       "Each code can only be used once": [
         "Ogni codice può essere utilizzato una sola volta"
       ],
-      "Email address already used": [
-        "Indirizzo email già in uso"
-      ],
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
         "L'hosting di posta elettronica per 10 nomi di dominio di posta elettronica personalizzati è incluso gratuitamente. È possibile aggiungere ulteriori domini per ${ price }."
       ],
@@ -3046,6 +3046,9 @@
       "BTC address": [
         "Indirizzo BTC"
       ],
+      "BTC amount": [
+        "Importo BTC"
+      ],
       "Card holder": [
         "Titolare carta"
       ],
@@ -3579,10 +3582,6 @@
         "${ n } cartella ed etichetta",
         "${ n } cartelle ed etichette"
       ],
-      "${ n } Hide-my-email alias": [
-        "${ n } alias \"Hide My Email\"",
-        "${ n } alias \"Hide My Email\""
-      ],
       "${ n } label": [
         "${ n } etichetta",
         "${ n } etichette"
@@ -3650,6 +3649,9 @@
       ],
       "Contact groups management": [
         "Gestione dei gruppi di contatti"
+      ],
+      "Custom domains for email aliases": [
+        "Domini personalizzati per alias email"
       ],
       "Custom email domains": [
         "Domini email personalizzati"
@@ -4019,9 +4021,6 @@
       "Addresses have full sending and receiving capability. A user can have multiple addresses assigned to them; however, a single address cannot be assigned to multiple users.": [
         "Gli indirizzi hanno piena capacità di invio e ricezione. Un utente può avere più indirizzi assegnati; tuttavia, un singolo indirizzo non può essere assegnato a più utenti."
       ],
-      "Advanced security VPN with global network": [
-        "VPN di sicurezza avanzata con rete globale"
-      ],
       "Allows you to access more than one network at the same time, e.g., stream a film from another country while still getting local search results": [
         "Ti consente di accedere a più di una rete allo stesso tempo, ad esempio, guarda un film in streaming da un altro paese mentre ottieni ancora risultati di ricerca locali"
       ],
@@ -4055,12 +4054,6 @@
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "Condividi facilmente i tuoi calendari con familiari, amici o colleghi"
-      ],
-      "End-to-end encrypted calendar": [
-        "Calendario con crittografia end-to-end"
-      ],
-      "End-to-end encrypted file storage": [
-        "Archiviazione di file con crittografia end-to-end"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Ti assicura la ricezione di tutte le email inviate al tuo dominio, anche se l'indirizzo email non esiste, non esiste più o ha un errore di battitura"
@@ -4834,6 +4827,9 @@
       "Active": [
         "Attivo"
       ],
+      "Expiring": [
+        "Scadenza"
+      ],
       "Upcoming": [
         "In arrivo"
       ]
@@ -4933,7 +4929,21 @@
         "al mese"
       ]
     },
+    "summer2023: Billing cycle option": {
+      "1 year": [
+        "1 anno"
+      ],
+      "2 years": [
+        "2 anni"
+      ]
+    },
     "summer2023: Deal details": {
+      "Premium Drive": [
+        "Drive premium"
+      ],
+      "Premium Mail and Calendar": [
+        "Mail e Calendar premium"
+      ],
       "Premium Password Manager": [
         "Password manager premium"
       ]
@@ -4949,6 +4959,9 @@
       ],
       "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
         "Include 2950 server in più di 65 Paesi, possibilità di connettere fino a 10 dispositivi, accesso a servizi di streaming in tutto il mondo, blocco di malware e adblocker, e altro ancora."
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Include il supporto per 1 dominio email personalizzato, 10 indirizzi email, 10 alias hide-my-email, condivisione del calendario e altro ancora."
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "Proteggi i tuoi file con l'archiviazione in cloud crittografata. Sono incluse la cronologia delle versioni, la sincronizzazione automatica, la condivisione di file crittografati e altre funzioni ancora."
@@ -5077,6 +5090,12 @@
       ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Annulla l'abbonamento a ${ MAIL_SHORT_APP_NAME }"
+      ],
+      "Cancel subscription": [
+        "Annulla abbonamento"
+      ],
+      "Cancel subscription?": [
+        "Annulla abbonamento?"
       ],
       "Card verification": [
         "Verifica della carta"
@@ -5483,11 +5502,6 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } in ${ numberOfCountries } paese",
         "${ numberOfServers } in ${ numberOfCountries } paesi"
-      ]
-    },
-    "VPN signup": {
-      "Swiss flag": [
-        "Bandiera svizzera"
       ]
     },
     "Warning": {

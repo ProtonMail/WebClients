@@ -478,7 +478,7 @@
         "İletileri gizle"
       ],
       "hide-my-email aliases": [
-        "E-postamı gizle takma adları"
+        "Hide-my-email takma adları"
       ],
       "I have a question": [
         "Bir sorum var"
@@ -649,6 +649,9 @@
       "Move all messages from this label": [
         "Bu etiketteki tüm iletileri taşı"
       ],
+      "Move all to archive": [
+        "Tümünü arşivle"
+      ],
       "Move all to trash": [
         "Tümünü çöpe at"
       ],
@@ -659,7 +662,7 @@
         "Şuraya taşınsın"
       ],
       "Move to archive": [
-        "Arşive taşı"
+        "Arşivle"
       ],
       "Move to inbox": [
         "Gelen kutusuna taşı"
@@ -3932,7 +3935,7 @@
         "65 üzerindeki ülkede 2.700 sunucu, 10 taneye kadar aygıt bağlayabilme, dünya çapında yayın akışı hizmetlerine erişim, kötü amaçlı yazılım ve reklam engelleyici ile diğer özellikleri içerir."
       ],
       "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
-        "3 özel e-posta etki alanı, 90 e-posta adresi, sınırsız sayıda e-postamı gizle takma adı, takvim paylaşımı ve diğer özellikler."
+        "3 özel e-posta etki alanı, 90 e-posta adresi, sınırsız sayıda hide-my-email takma adı, takvim paylaşımı ve diğer özellikler."
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Dosyalarınızı şifrelenmiş bulut depolama alanı ile koruyun. Otomatik eşitleme, şifrelenmiş dosya paylaşımı ve diğer özellikler."
@@ -4803,6 +4806,9 @@
       "Are you sure you want to discard your changes?": [
         "Değişiklikleri silmek istediğinize emin misiniz?"
       ],
+      "Are you sure you want to move all messages in this location to Archive?": [
+        "Bu klasördeki tüm iletileri arşivlemek istediğinize emin misiniz?"
+      ],
       "Are you sure you want to move all messages in this location to Trash?": [
         "Bu klasördeki tüm iletileri çöpe atmak istediğinize emin misiniz?"
       ],
@@ -5095,7 +5101,7 @@
         "Özgün iletiyi gizle"
       ],
       "How hide-my-email aliases works": [
-        "E-postamı gizle takma adları nasıl çalışır"
+        "Hide-my-email adları nasıl çalışır"
       ],
       "I'm sending this message to a non-${ MAIL_APP_NAME } user.": [
         "Bu iletiyi ${ MAIL_APP_NAME } kullanmayan bir alıcıya gönderiyorum."
@@ -5488,7 +5494,7 @@
         "Özgün iletiyi göster"
       ],
       "SimpleLogin is a ${ BRAND_NAME } service, and your ${ BRAND_NAME_TWO } Account includes hide-my-email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
-        "SimpleLogin bir ${ BRAND_NAME } hizmetidir ve ${ BRAND_NAME_TWO } hesabınızda e-postamı gizle takma adları kullanılmasını sağlar. E-posta adresinizi gizlemeye başlamak için SimpleLogin sitesine gidin ve ilk takma adınızı oluşturun."
+        "SimpleLogin bir ${ BRAND_NAME } hizmetidir ve ${ BRAND_NAME_TWO } hesabınızda hide-my-email takma adları kullanılmasını sağlar. E-posta adresinizi gizlemeye başlamak için SimpleLogin sitesine gidin ve ilk takma adınızı oluşturun."
       ],
       "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
         "SimpleLogin, gerçek e-posta adresinizi açıklamak istemediğiniz, güvenilmez üçüncü taraf sitelerinde oturum açmak için basit bir yol sunar."
@@ -5561,7 +5567,7 @@
         "Kişi bilgilerini doğrulamak için kullanılan imza ile ilgili bir sorun çıktı. Bu durum parola sıfırlama işleminden kaynaklanıyor olabilir."
       ],
       "They can't spam you if they don't know your email address. Protect your inbox with hide-my-email aliases.": [
-        "E-posta adresinizi bilmiyorlarsa size istenmeyen e-posta gönderemezler. E-postamı gizle özelliği ile e-posta kutunuzu koruyun."
+        "E-posta adresinizi bilmiyorlarsa size istenmeyen e-posta gönderemezler. hide-my-email takma adları ile e-posta kutunuzu koruyun."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Bu hesap, ilkeye aykırı kullanım olasılığı nedeniyle askıya alınmış."
@@ -5797,7 +5803,7 @@
         "İletinizin ne zaman kendini yok etmesini istersiniz?"
       ],
       "When giving out your email, use a unique, disposable hide-my-email alias instead of your real email address.": [
-        "E-posta adresinizi başkalarına verirken, gerçek e-posta adresiniz yerine benzersiz, tek kullanımlık bir e-postamı gizle takma adı kullanın."
+        "E-posta adresinizi başkalarına verirken, gerçek e-posta adresiniz yerine benzersiz, tek kullanımlık bir hide-my-email takma adı kullanın."
       ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "${ senderName } için güvenilen anahtarları etkinleştirdiğinizde, kişi bilgilerine herkese açık anahtarlar eklenir."
@@ -6112,7 +6118,7 @@
         "Sağa git / genişlet"
       ],
       "Move to Archive": [
-        "Arşive taşı"
+        "Arşivle"
       ],
       "Move to Inbox": [
         "Gelen kutusuna taşı"
@@ -6246,7 +6252,7 @@
         "Tüm kişiler"
       ],
       "Also archive": [
-        "Arşive taşı"
+        "Ayrıca arşivlensin"
       ],
       "Always label sender's emails": [
         "Göndericinin e-postaları şu şekilde etiketlensin"
@@ -6498,7 +6504,7 @@
         "Şuraya taşınsın"
       ],
       "Move to Archive": [
-        "Arşive taşı"
+        "Arşivle"
       ],
       "Move to Inbox": [
         "Gelen kutusuna taşı"
@@ -7245,7 +7251,7 @@
         "Özel e-posta etki alanları"
       ],
       "Hide-my-email aliases": [
-        "E-postamı gizle takma adları"
+        "Hide-my-email takma adları"
       ],
       "Schedule messages at any time": [
         "İletileri istediğiniz zamanda gönderin"
@@ -8034,13 +8040,13 @@
         "Netflix, Disney+ ve Prime Video gibi yayın akışı hizmetlerindeki içeriğe her yerden erişin."
       ],
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
-        "En yüksek sınırları olan tüm ücretli hizmetler: 100 e-posta adresi, 10 özel etki alanı, sınırsız e-postamı gizle takma adı, takvim gönderisi, şifrelenmiş bulut depolama alanı, dosya paylaşımı ve diğer özellikler."
+        "En yüksek sınırları olan tüm ücretli hizmetler: 100 e-posta adresi, 10 özel etki alanı, sınırsız hide-my-email takma adı, takvim gönderisi, şifrelenmiş bulut depolama alanı, dosya paylaşımı ve diğer özellikler."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "1 özel e-posta etki alanı, 10 e-posta adresi, 10 e-postamı gizle takma adı, takvim paylaşımı ve diğer özellikler."
+        "1 özel e-posta etki alanı, 10 e-posta adresi, 10 hide-my-email takma adı, takvim paylaşımı ve diğer özellikler."
       ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "3 özel e-posta etki alanı, 15 e-posta adresi, sınırsız sayıda e-postamı gizle takma adı, takvim paylaşımı ve diğer özellikler."
+        "3 özel e-posta etki alanı, 15 e-posta adresi, sınırsız sayıda hide-my-email takma adı, takvim paylaşımı ve diğer özellikler."
       ],
       "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
         "Aileler veya küçük ekipler için mükemmel. Her birinin kendi gelen kutusu ve takma adı olabilir. Özel bir etki alanı kullanılması gerekir."
@@ -8862,6 +8868,9 @@
       ],
       "More selections": [
         "Diğer seçimler"
+      ],
+      "Move all messages to Archive": [
+        "Tüm iletileri arşivle"
       ],
       "Move all messages to Trash": [
         "Tüm iletileri çöpe at"
