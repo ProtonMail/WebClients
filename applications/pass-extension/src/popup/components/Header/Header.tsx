@@ -19,7 +19,7 @@ import { pipe } from '@proton/pass/utils/fp';
 import clsx from '@proton/utils/clsx';
 
 import { itemTypeToIconName } from '../../../shared/items';
-import { itemTypeToItemClassName } from '../../../shared/items/className';
+import { itemTypeToSubThemeClassName } from '../../../shared/theme/sub-theme';
 import { useCopyToClipboard } from '../../hooks/useCopyToClipboard';
 import { useItemsFilteringContext } from '../../hooks/useItemsFilteringContext';
 import { usePopupContext } from '../../hooks/usePopupContext';
@@ -63,7 +63,7 @@ export const Header: VFC<{}> = () => {
     const handleNewPasswordClick = () => {
         void generatePassword({
             actionLabel: c('Action').t`Copy and close`,
-            className: 'ui-password',
+            className: 'ui-red',
             onSubmit: (password) => copyToClipboard(password),
         });
     };
@@ -102,7 +102,10 @@ export const Header: VFC<{}> = () => {
                 >
                     <DropdownMenu>
                         {ITEM_TYPE_DROPDOWN_BUTTONS.map(({ type, label }) => (
-                            <span className={itemTypeToItemClassName[type]} key={`item-type-dropdown-button-${type}`}>
+                            <span
+                                className={itemTypeToSubThemeClassName[type]}
+                                key={`item-type-dropdown-button-${type}`}
+                            >
                                 <DropdownMenuButton
                                     key={type}
                                     className="flex flex-align-items-center py-2 px-4"
@@ -135,7 +138,7 @@ export const Header: VFC<{}> = () => {
                         ))}
 
                         <DropdownMenuButton
-                            className="text-left flex flex-align-items-center ui-password"
+                            className="text-left flex flex-align-items-center ui-red"
                             onClick={withClose(handleNewPasswordClick)}
                         >
                             <span

@@ -3,8 +3,8 @@ import type { ReactNode, VFC } from 'react';
 import { DropdownMenuButton } from '@proton/components/components';
 import clsx from '@proton/utils/clsx';
 
-import type { DropdownItemIconProps } from './DropdownItemIcon';
-import { DropdownItemIcon } from './DropdownItemIcon';
+import { SubTheme } from '../../../../../shared/theme/sub-theme';
+import { DropdownItemIcon, type DropdownItemIconProps } from './DropdownItemIcon';
 
 export const DROPDOWN_ITEM_HEIGHT = 60;
 
@@ -15,14 +15,11 @@ export const DropdownItem: VFC<
         subTitle: ReactNode;
         disabled?: boolean;
         autogrow?: boolean;
-        /* FIXME once theming is implemented: rename className prop to
-         * itemType or similar and automatically derive the className
-         * using something similar to itemTypeToItemClassName[itemType] */
-        className?: 'ui-login' | 'ui-alias' | 'ui-password';
+        subTheme?: SubTheme;
     } & DropdownItemIconProps
-> = ({ onClick, title, subTitle, icon, url, disabled, autogrow, className = 'ui-login' }) => (
+> = ({ onClick, title, subTitle, icon, url, disabled, autogrow, subTheme = SubTheme.VIOLET }) => (
     <DropdownMenuButton
-        className={clsx('text-left h-custom', className)}
+        className={clsx('text-left h-custom', subTheme)}
         style={autogrow ? {} : { '--h-custom': `${DROPDOWN_ITEM_HEIGHT}px` }}
         onClick={onClick}
         disabled={disabled}
