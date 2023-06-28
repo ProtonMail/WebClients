@@ -36,7 +36,7 @@ import { UrlGroupField, createNewUrl } from '../../../components/Field/UrlGroupF
 import { VaultSelectField } from '../../../components/Field/VaultSelectField';
 import { ItemCreatePanel } from '../../../components/Panel/ItemCreatePanel';
 import { useAliasForLoginModal } from '../../../hooks/useAliasForLoginModal';
-import { useItemDraft } from '../../../hooks/useItemDraft';
+import { useDraftSync, useItemDraft } from '../../../hooks/useItemDraft';
 import { usePopupContext } from '../../../hooks/usePopupContext';
 import { AliasModal } from '../Alias/Alias.modal';
 
@@ -151,9 +151,10 @@ export const LoginNew: VFC<ItemNewProps<'login'>> = ({ shareId, onSubmit, onCanc
         validateOnBlur: true,
     });
 
-    const aliasModal = useAliasForLoginModal(form);
+    const itemDraft = useItemDraft<NewLoginItemFormValues>();
+    const aliasModal = useAliasForLoginModal(form, { lazy: !itemDraft?.formData.withAlias });
 
-    const draft = useItemDraft<NewLoginItemFormValues>(form, {
+    const draft = useDraftSync<NewLoginItemFormValues>(form, {
         type: 'login',
         mode: 'new',
         itemId: 'draft-login',
