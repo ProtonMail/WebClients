@@ -179,15 +179,17 @@ const SingleSignupContainerV2 = ({ fork, activeSessions, loader, onLogin, produc
 
     const unauthApi = useApi();
 
-    const measure = ({ dimensions, event }: TelemetryMeasurementData) => {
+    const measure = (data: TelemetryMeasurementData) => {
+        const values = 'values' in data ? data.values : {};
         return sendTelemetryReport({
             api: unauthApi,
             measurementGroup: TelemetryMeasurementGroups.accountSignup,
+            event: data.event,
             dimensions: {
-                ...dimensions,
+                ...data.dimensions,
                 flow: 'pass_signup_launch',
             },
-            event,
+            values,
         }).catch(noop);
     };
 
@@ -214,6 +216,8 @@ const SingleSignupContainerV2 = ({ fork, activeSessions, loader, onLogin, produc
         titles,
         planCards,
         benefits,
+        product,
+        shortAppName,
         productAppName,
         preload,
         setupImg,
@@ -742,6 +746,8 @@ const SingleSignupContainerV2 = ({ fork, activeSessions, loader, onLogin, produc
                         api={normalApi}
                         benefits={benefits}
                         measure={measure}
+                        app={product}
+                        shortAppName={shortAppName}
                         appName={productAppName}
                         selectedPlan={selectedPlan}
                         currentPlan={model.upsell.currentPlan}
