@@ -150,23 +150,21 @@ const PlanCardView = ({
                             </strong>
                         </div>
 
-                        <div className="mt-4 mb-6 text-center">
+                        <div className="mt-4 mb-6 text-center w100">
                             <div
                                 id={`${cycle}-price`}
                                 className={clsx(
                                     totals.discountPercentage > 0 ? '' : 'flex-align-items-baseline',
-                                    'flex gap-1 flex-align-items-center flex-justify-items-center'
+                                    'flex gap-1 flex-align-items-center flex-justify-center'
                                 )}
                             >
-                                <div className="mx-auto">
-                                    <span className={clsx(highlightPrice && 'color-primary', 'text-bold h1')}>
-                                        {getSimplePriceString(currency, totals.totalPerMonth, '')}
-                                    </span>
-                                </div>
+                                <span className={clsx(highlightPrice && 'color-primary', 'text-bold h1')}>
+                                    {getSimplePriceString(currency, totals.totalPerMonth, '')}
+                                </span>
                                 <div
                                     className={clsx(
                                         totals.discountPercentage > 0 && 'flex flex-column flex-justify-center',
-                                        'text-left mx-auto'
+                                        'text-left'
                                     )}
                                 >
                                     {totals.discountPercentage > 0 && (
