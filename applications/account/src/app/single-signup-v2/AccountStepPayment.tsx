@@ -274,7 +274,7 @@ const AccountStepPayment = ({
                         <div className="mb-4">{c('Info').t`No payment is required at this time.`}</div>
                     )}
                     {(() => {
-                        if (method === PAYMENT_METHOD_TYPES.PAYPAL) {
+                        if (method === PAYMENT_METHOD_TYPES.PAYPAL && options.checkResult.AmountDue > 0) {
                             return (
                                 <div className="flex flex-column">
                                     <StyledPayPalButton
@@ -296,7 +296,7 @@ const AccountStepPayment = ({
                             );
                         }
 
-                        if (method === PAYMENT_METHOD_TYPES.BITCOIN) {
+                        if (method === PAYMENT_METHOD_TYPES.BITCOIN && options.checkResult.AmountDue > 0) {
                             if (isAuthenticated) {
                                 return null;
                             }
