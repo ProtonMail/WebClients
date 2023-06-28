@@ -1,4 +1,4 @@
-import { findByTestId, fireEvent } from '@testing-library/dom';
+import { findByTestId, fireEvent } from '@testing-library/react';
 
 import { mockWindowLocation, resetWindowLocation } from '@proton/components/helpers/url.test.helpers';
 import { IMAGE_PROXY_FLAGS, SHOW_IMAGES } from '@proton/shared/lib/constants';

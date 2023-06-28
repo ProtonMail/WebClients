@@ -1,4 +1,4 @@
-import { Matcher, fireEvent } from '@testing-library/dom';
+import { Matcher, fireEvent } from '@testing-library/react';
 
 import { MAILBOX_LABEL_IDS, VIEW_MODE } from '@proton/shared/lib/constants';
 import { MailSettings } from '@proton/shared/lib/interfaces';

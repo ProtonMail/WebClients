@@ -1,4 +1,4 @@
-import { fireEvent } from '@testing-library/dom';
+import { fireEvent } from '@testing-library/react';
 import { act, getByTestId as getByTestIdDefault, screen } from '@testing-library/react';
 
 import { ACCENT_COLORS } from '@proton/shared/lib/colors';
@@ -224,7 +224,7 @@ describe('LabelDropdown', () => {
         const { getByTestId, queryAllByTestId } = await setup();
 
         // Search for a label which does not exist
-        const searchInput = await getByTestId('label-dropdown:search-input');
+        const searchInput = getByTestId('label-dropdown:search-input');
 
         await act(async () => {
             fireEvent.change(searchInput, { target: { value: search } });
@@ -233,7 +233,7 @@ describe('LabelDropdown', () => {
         });
 
         // No more option are displayed
-        const labels = (await queryAllByTestId(/label-dropdown:label-checkbox-/)) as HTMLInputElement[];
+        const labels = queryAllByTestId(/label-dropdown:label-checkbox-/) as HTMLInputElement[];
         expect(labels.length).toBe(0);
 
         // Click on the create label button
@@ -253,7 +253,7 @@ describe('LabelDropdown', () => {
         const { getByTestId, queryAllByTestId } = await setup();
 
         // Search for a label which does not exist
-        const searchInput = await getByTestId('label-dropdown:search-input');
+        const searchInput = getByTestId('label-dropdown:search-input');
 
         await act(async () => {
             fireEvent.change(searchInput, { target: { value: search } });
@@ -262,7 +262,7 @@ describe('LabelDropdown', () => {
         });
 
         // No more option are displayed
-        const labels = (await queryAllByTestId(/label-dropdown:label-checkbox-/)) as HTMLInputElement[];
+        const labels = queryAllByTestId(/label-dropdown:label-checkbox-/) as HTMLInputElement[];
         expect(labels.length).toBe(0);
 
         // Click on the create label option

@@ -1,4 +1,4 @@
-import { fireEvent, getByTitle, waitFor } from '@testing-library/dom';
+import { fireEvent, getByTitle, waitFor } from '@testing-library/react';
 import { act } from '@testing-library/react';
 import loudRejection from 'loud-rejection';
 

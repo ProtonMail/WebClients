@@ -1,6 +1,6 @@
 import { MutableRefObject } from 'react';
 
-import { findByTestId, fireEvent, waitFor } from '@testing-library/dom';
+import { findByTestId, fireEvent, waitFor } from '@testing-library/react';
 import { act } from '@testing-library/react';
 import loudRejection from 'loud-rejection';
 

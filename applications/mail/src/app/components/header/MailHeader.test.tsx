@@ -1,4 +1,4 @@
-import { fireEvent, getByText } from '@testing-library/dom';
+import { fireEvent, getByText } from '@testing-library/react';
 import { screen } from '@testing-library/react';
 import loudRejection from 'loud-rejection';
 
