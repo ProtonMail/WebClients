@@ -1840,7 +1840,7 @@
         "65 üzerindeki ülkede 2.700 sunucu, 10 taneye kadar aygıt bağlayabilme, dünya çapında yayın akışı hizmetlerine erişim, kötü amaçlı yazılım ve reklam engelleyici ile diğer özellikleri içerir."
       ],
       "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
-        "3 özel e-posta etki alanı, 90 e-posta adresi, sınırsız sayıda e-postamı gizle takma adı, takvim paylaşımı ve diğer özellikler."
+        "3 özel e-posta etki alanı, 90 e-posta adresi, sınırsız sayıda hide-my-email takma adı, takvim paylaşımı ve diğer özellikler."
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Dosyalarınızı şifrelenmiş bulut depolama alanı ile koruyun. Otomatik eşitleme, şifrelenmiş dosya paylaşımı ve diğer özellikler."
@@ -2288,9 +2288,6 @@
       ],
       "Each code can only be used once": [
         "Her kod yalnızca bir kez kullanılabilir"
-      ],
-      "Email address already used": [
-        "E-posta adresi zaten kullanılmış"
       ],
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
         "10 özel etki alanına kadar e-posta barındırması ücretsizdir. Ek etki alanları için ${ price } eklenir."
@@ -3623,9 +3620,9 @@
         "${ n } klasör ve etiket",
         "${ n } klasör ve etiket"
       ],
-      "${ n } Hide-my-email alias": [
-        "${ n } e-postamı gizle takma adı",
-        "${ n } e-postamı gizle takma adı"
+      "${ n } hide-my-email alias": [
+        "${ n } hide-my-email takma adı",
+        "${ n } hide-my-email takma adı"
       ],
       "${ n } label": [
         "${ n } etiket",
@@ -3677,6 +3674,9 @@
       "Auto-reply": [
         "Otomatik yanıt"
       ],
+      "Autofill credit cards (coming soon)": [
+        "Otomatik kredi kartı doldurma (yakında)"
+      ],
       "Available on all platforms": [
         "Tüm platformlarda kullanılabilir"
       ],
@@ -3694,6 +3694,9 @@
       ],
       "Contact groups management": [
         "Kişi grupları yönetimi"
+      ],
+      "Custom domains for email aliases": [
+        "E-posta takma adları için özel etki alanları"
       ],
       "Custom email domains": [
         "Özel e-posta etki alanları"
@@ -3777,6 +3780,9 @@
       "No-logs policy": [
         "Kayıt tutmama ilkesi"
       ],
+      "Organize items with multiple vaults": [
+        "Birden çok kasa ile ögeleri gruplayın"
+      ],
       "Password-protected Emails": [
         "Parola korumalı e-postalar"
       ],
@@ -3842,7 +3848,7 @@
         "Sınırsız klasör, etiket ve süzgeç"
       ],
       "Unlimited hide-my-email aliases": [
-        "Sınırsız e-postamı gizle takma adı"
+        "Sınırsız hide-my-email takma adı"
       ],
       "Unlimited labels": [
         "Sınırsız etiket"
@@ -4057,14 +4063,23 @@
       ]
     },
     "new_plans: tooltip": {
+      "${ CALENDAR_APP_NAME }: end-to-end encrypted calendar": [
+        "${ CALENDAR_APP_NAME }: Uçtan uca şifrelenmiş takvim"
+      ],
+      "${ DRIVE_APP_NAME }: end-to-end encrypted cloud storage": [
+        "${ DRIVE_APP_NAME }: Uçtan uca şifrelenmiş bulut depolama alanı"
+      ],
+      "${ MAIL_APP_NAME }: end-to-end encrypted email": [
+        "${ MAIL_APP_NAME }: Uçtan uca şifrelenmiş e-posta"
+      ],
+      "${ VPN_APP_NAME }: unblock content, browse privately": [
+        "${ VPN_APP_NAME }: Engellenen içeriğe erişin, gizli kalarak gezinin"
+      ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
         "Netflix, Disney+ ve Prime Video gibi yayın akışı hizmetlerindeki içeriğe her yerden erişin"
       ],
       "Addresses have full sending and receiving capability. A user can have multiple addresses assigned to them; however, a single address cannot be assigned to multiple users.": [
         "Adreslerin tam gönderme ve alma özelliği vardır. Bir kullanıcının kendisine atanmış birden fazla adresi olabilir. Ancak, tek bir adres birden çok kullanıcıya atanamaz."
-      ],
-      "Advanced security VPN with global network": [
-        "Dünya çağında ağ ile gelişmiş güvenlik VPN hizmeti"
       ],
       "Allows you to access more than one network at the same time, e.g., stream a film from another country while still getting local search results": [
         "Aynı anda birden fazla ağa erişmenizi sağlar. Örneğin arama sonuçlarını yerel olarak alırken başka bir ülkeden bir film yayın akışını izleyebilirsiniz"
@@ -4099,12 +4114,6 @@
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "Takvimlerinizi aileniz, arkadaşlarınız veya iş arkadaşlarınızla kolayca paylaşın"
-      ],
-      "End-to-end encrypted calendar": [
-        "Uçtan uca şifrelenmiş takvim"
-      ],
-      "End-to-end encrypted file storage": [
-        "Uçtan uca şifrelenmiş dosya depolama alanı"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Alıcı e-posta adresi hiç var olmasa da, silinmiş olsa da ya da hatalı yazılmış olsa da etki alanınıza gönderilen tüm e-postaları almanızı sağlar"
@@ -4147,6 +4156,9 @@
       ],
       "Our servers’ hard disks are fully encrypted with multiple password layers so your data is protected even if our hardware is compromised": [
         "Sunucularımızın sabit diskleri birden çok parola katmanıyla tamamen şifrelenmiştir. Böylece donanımımız ele geçirilse bile verileriniz korunur"
+      ],
+      "Password management and identity protection": [
+        "Parola yönetimi ve kimlik koruması"
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "E-posta imzanızı logolar, görseller, sosyal ağ simgeleri, iletişim bilgilerinizin bağlantıları ve diğer şeylerle kişiselleştirin"
@@ -4267,6 +4279,9 @@
       ],
       "Priority support": [
         "Öncelikli destek"
+      ],
+      "Secure your passwords and identity with an open-source and encrypted password manager.": [
+        "Açık kaynaklı ve şifrelenmiş bir parola yöneticisi ile parolalarınızı ve kimliğinizi koruyun."
       ],
       "Support for 1 custom email domain": [
         "1 özel e-posta etki alanı desteği"
@@ -4695,13 +4710,13 @@
         "Netflix, Disney+ ve Prime Video gibi yayın akışı hizmetlerindeki içeriğe her yerden erişin."
       ],
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
-        "En yüksek sınırları olan tüm ücretli hizmetler: 100 e-posta adresi, 10 özel etki alanı, sınırsız e-postamı gizle takma adı, takvim gönderisi, şifrelenmiş bulut depolama alanı, dosya paylaşımı ve diğer özellikler."
+        "En yüksek sınırları olan tüm ücretli hizmetler: 100 e-posta adresi, 10 özel etki alanı, sınırsız hide-my-email takma adı, takvim gönderisi, şifrelenmiş bulut depolama alanı, dosya paylaşımı ve diğer özellikler."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "1 özel e-posta etki alanı, 10 e-posta adresi, 10 e-postamı gizle takma adı, takvim paylaşımı ve diğer özellikler."
+        "1 özel e-posta etki alanı, 10 e-posta adresi, 10 hide-my-email takma adı, takvim paylaşımı ve diğer özellikler."
       ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "3 özel e-posta etki alanı, 15 e-posta adresi, sınırsız sayıda e-postamı gizle takma adı, takvim paylaşımı ve diğer özellikler."
+        "3 özel e-posta etki alanı, 15 e-posta adresi, sınırsız sayıda hide-my-email takma adı, takvim paylaşımı ve diğer özellikler."
       ],
       "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
         "Aileler veya küçük ekipler için mükemmel. Her birinin kendi gelen kutusu ve takma adı olabilir. Özel bir etki alanı kullanılması gerekir."
@@ -5522,6 +5537,11 @@
         "Seçilmiş tema sisteminiz \"açık kipe\" geçtiğinde etkinleştirilecek"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: end-to-end encrypted password manager": [
+        "${ PASS_APP_NAME }: Uçtan uca şifrelenmiş parola yöneticisi"
+      ]
+    },
     "Tor out of date": {
       "stable release": [
         "kararlı sürüm"
@@ -5561,11 +5581,6 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfCountries } ülkede ${ numberOfServers }",
         "${ numberOfCountries } ülkede ${ numberOfServers }"
-      ]
-    },
-    "VPN signup": {
-      "Swiss flag": [
-        "İsviçre bayrağı"
       ]
     },
     "Warning": {

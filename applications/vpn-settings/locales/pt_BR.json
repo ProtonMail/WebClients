@@ -6,7 +6,7 @@
   "contexts": {
     "Action": {
       "${ BRAND_NAME } introduction": [
-        "Introdução do ${ BRAND_NAME }"
+        "Introdução da ${ BRAND_NAME }"
       ],
       "${ BRAND_NAME } shop": [
         "Loja ${ BRAND_NAME }"
@@ -162,7 +162,7 @@
         "ativar notificações na área de trabalho"
       ],
       "Explore other ${ BRAND_NAME } plans": [
-        "Explorar outros planos ${ BRAND_NAME }"
+        "Explorar outros planos da ${ BRAND_NAME }"
       ],
       "Extend": [
         "Estender"
@@ -1460,7 +1460,7 @@
         "Funções ausentes"
       ],
       "My reason isn't listed, please comment": [
-        "Minha razão não está listada. Comente."
+        "Meu motivo não está listado. Comente."
       ],
       "Streaming service unsupported": [
         "Serviço de streaming não suportado"
@@ -1760,7 +1760,7 @@
         "A assinatura será cobrada do administrador principal do plano Visionary ou familiar."
       ],
       "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Atualmente, os planos Visionary e familiar não oferecem suporte a contas externas. Crie um endereço ${ BRAND_NAME } antes de participar. ${ addressSettingsLink }"
+        "Atualmente, os planos Visionary e familiar não oferecem suporte a contas externas. Crie um endereço da ${ BRAND_NAME } antes de participar. ${ addressSettingsLink }"
       ],
       "Visionary and family plans do not currently support lifetime accounts.": [
         "Atualmente, planos Visionary e familiares não oferecem suporte a contas vitalícias."
@@ -1778,7 +1778,7 @@
         "Você entrou no plano familiar"
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
-        "Você foi convidado a vincular sua Conta ${ BRAND_NAME } a este plano de grupo e aproveitar juntos de todos os recursos premium de ${ BRAND_NAME_TWO }."
+        "Você foi convidado a vincular sua conta da ${ BRAND_NAME } a este plano de grupo e aproveitar juntos de todos os recursos premium da ${ BRAND_NAME_TWO }."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Sua conta tem mais endereços de e-mail do que a quantidade que está disponível para você neste plano. ${ addressSettingsLink }"
@@ -1897,7 +1897,7 @@
         "Você tem certeza que deseja excluir a chave de segurança ${ name }?"
       ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Insira uma chave de segurança vinculada à sua conta ${ BRAND_NAME }."
+        "Insira uma chave de segurança vinculada à sua conta da ${ BRAND_NAME }."
       ],
       "Insert your security key into your device's USB port.": [
         "Insira sua chave de segurança na porta USB do seu dispositivo."
@@ -2149,7 +2149,7 @@
         "Um nome para ajudá-lo a identificar onde você o utiliza, para poder revogá-lo ou estendê-lo facilmente mais tarde."
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
-        "Um número de telefone apenas pode ser usado para verificar uma conta ${ BRAND_NAME }"
+        "Um número de telefone apenas pode ser usado para verificar uma conta da ${ BRAND_NAME }"
       ],
       "A user is an account associated with a single username, mailbox, and person": [
         "Um usuário é uma conta associada com um único nome de usuário, caixa de correio e pessoa"
@@ -2289,9 +2289,6 @@
       "Each code can only be used once": [
         "Cada código só pode ser usado uma única vez"
       ],
-      "Email address already used": [
-        "Endereço de e-mail já usado"
-      ],
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
         "A hospedagem de e-mails para 10 nomes de domínio de e-mail adicionais está incluída gratuitamente. Domínios adicionais podem ser adicionados por ${ price }."
       ],
@@ -2323,10 +2320,10 @@
         "Digite o código de verificação. Insira ${ digit }."
       ],
       "Enter your ${ BRAND_NAME } Account details.": [
-        "Insira os detalhes da sua conta ${ BRAND_NAME }."
+        "Insira os detalhes da sua conta da ${ BRAND_NAME }."
       ],
       "Enter your ${ BRAND_NAME } Account email address or username.": [
-        "Entre seu e-mail ou nome de usuário da conta ${ BRAND_NAME }."
+        "Entre seu e-mail ou nome de usuário da conta da ${ BRAND_NAME }."
       ],
       "Enter your own password (as organization admin).": [
         "Digite sua própria senha (como administrador da organização)."
@@ -2666,7 +2663,7 @@
         "Isso excluirá permanentemente sua conta e todas as suas informações. Você não conseguirá reativar essa conta."
       ],
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
-        "Isso substituirá a sua senha temporária. Você a usará para acessar a sua conta do ${ BRAND_NAME } no futuro."
+        "Isso substituirá a sua senha temporária. Você a usará para acessar a sua conta da ${ BRAND_NAME } no futuro."
       ],
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "Isto irá encerrar qualquer sessão ativa e desabilitar a autenticação de 2 fatores."
@@ -2852,12 +2849,12 @@
         "Você pode personalizar e baixar suas faturas para fins contábeis."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
-        "Você pode manter até ${ MAX_CALENDARS_FREE } calendário. Remova links de calendários compartilhados e qualquer usuário do ${ BRAND_NAME } com quem você compartilhou seus calendários antes de cancelar sua assinatura do ${ MAIL_SHORT_APP_NAME }.",
-        "Você pode manter até ${ MAX_CALENDARS_FREE } calendários. Remova links de calendários compartilhados e qualquer usuário do ${ BRAND_NAME } com quem você compartilhou seus calendários antes de cancelar sua assinatura do ${ MAIL_SHORT_APP_NAME }."
+        "Você pode manter até ${ MAX_CALENDARS_FREE } calendário. Remova links de calendários compartilhados e qualquer usuário da ${ BRAND_NAME } com quem você compartilhou seus calendários antes de cancelar sua assinatura do ${ MAIL_SHORT_APP_NAME }.",
+        "Você pode manter até ${ MAX_CALENDARS_FREE } calendários. Remova links de calendários compartilhados e qualquer usuário da ${ BRAND_NAME } com quem você compartilhou seus calendários antes de cancelar sua assinatura do ${ MAIL_SHORT_APP_NAME }."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
-        "Você pode manter até ${ MAX_CALENDARS_FREE } calendário. Remova links de calendários compartilhados e qualquer usuário do ${ BRAND_NAME } com quem você compartilhou seus calendários antes de cancelar sua assinatura.",
-        "Você pode manter até ${ MAX_CALENDARS_FREE } calendários. Remova links de calendários compartilhados e qualquer usuário do ${ BRAND_NAME } com quem você compartilhou seus calendários antes de cancelar sua assinatura."
+        "Você pode manter até ${ MAX_CALENDARS_FREE } calendário. Remova links de calendários compartilhados e qualquer usuário da ${ BRAND_NAME } com quem você compartilhou seus calendários antes de cancelar sua assinatura.",
+        "Você pode manter até ${ MAX_CALENDARS_FREE } calendários. Remova links de calendários compartilhados e qualquer usuário da ${ BRAND_NAME } com quem você compartilhou seus calendários antes de cancelar sua assinatura."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Você pode manter até ${ MAX_CALENDARS_FREE } calendário. Remova os links do calendário compartilhado antes de cancelar sua assinatura do ${ MAIL_SHORT_APP_NAME }.",
@@ -2916,16 +2913,16 @@
         "Você permanecerá conectado mesmo depois de fechar o navegador."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
-        "Sua conta de ${ BRAND_NAME } está atualmente suspensa. Após 28 dias, os e-mails não serão mais entregues em sua caixa de entrada, seus links de compartilhamento de Drive serão bloqueados e você não poderá fazer upload de novos arquivos. Para retomar o serviço normal, favor pagar qualquer fatura vencida."
+        "Sua conta da ${ BRAND_NAME } está atualmente suspensa. Após 28 dias, os e-mails não serão mais entregues em sua caixa de entrada, seus links de compartilhamento de Drive serão bloqueados e você não poderá enviar novos arquivos. Para retomar o serviço normal, favor pagar qualquer fatura vencida."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "Sua conta ${ BRAND_NAME } está suspensa no momento. Os e-mails não estão mais sendo entregues em sua caixa de entrada. Seus links de compartilhamento do Drive não estão mais ativos e você não pode fazer upload de novos arquivos. Para continuar usando sua conta, pague as faturas vencidas."
+        "Sua conta da ${ BRAND_NAME } está suspensa no momento. Os e-mails não estão mais sendo entregues em sua caixa de entrada. Seus links de compartilhamento do Drive não estão mais ativos e você não pode enviar novos arquivos. Para continuar usando sua conta, pague as faturas vencidas."
       ],
       "Your ${ BRAND_NAME } password": [
         "Sua senha da ${ BRAND_NAME }"
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there.": [
-        "Suas contas ${ VPN_APP_NAME } e ${ MAIL_APP_NAME } estão conectadas. Para excluir ambas, inicia sessão em ${ loginLink } e exclua sua conta lá."
+        "Suas contas ${ VPN_APP_NAME } e ${ MAIL_APP_NAME } estão vinculadas. Para excluir ambas, inicia sessão em ${ loginLink } e exclua sua conta lá."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Sua conta tem pelo menos uma fatura vencida. O seu acesso será restringido em breve. ${ payInvoiceLink }"
@@ -3039,10 +3036,10 @@
     },
     "Label": {
       "${ BRAND_NAME } email or username": [
-        "E-mail ou nome de usuário do ${ BRAND_NAME }"
+        "Endereço de e-mail ou nome de usuário da ${ BRAND_NAME }"
       ],
       "${ BRAND_NAME } username": [
-        "Nome de usuário do ${ BRAND_NAME }"
+        "Nome de usuário da ${ BRAND_NAME }"
       ],
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } de ${ humanMaxSpace }"
@@ -3629,7 +3626,7 @@
         "${ n } pasta e marcador",
         "${ n } pastas e marcadores"
       ],
-      "${ n } Hide-my-email alias": [
+      "${ n } hide-my-email alias": [
         "${ n } alias do Hide-my-email",
         "${ n } aliases do Hide-my-email"
       ],
@@ -3700,6 +3697,9 @@
       ],
       "Contact groups management": [
         "Gerenciamento de grupos de contatos"
+      ],
+      "Custom domains for email aliases": [
+        "Domínios personalizados para encaminhamento de mensagens"
       ],
       "Custom email domains": [
         "Domínios de e-mail personalizados"
@@ -3782,6 +3782,9 @@
       ],
       "No-logs policy": [
         "Política de nenhum registro"
+      ],
+      "Organize items with multiple vaults": [
+        "Organize itens em múltiplos cofres"
       ],
       "Password-protected Emails": [
         "E-mails protegidos por senha"
@@ -4069,9 +4072,6 @@
       "Addresses have full sending and receiving capability. A user can have multiple addresses assigned to them; however, a single address cannot be assigned to multiple users.": [
         "Os endereços têm todos os recursos de envio e recebimento de mensagens. Um usuário pode ter vários endereços atribuídos a ele; no entanto, não é possível atribuir um único endereço a mais de um usuário."
       ],
-      "Advanced security VPN with global network": [
-        "VPN de segurança avançada com uma rede global"
-      ],
       "Allows you to access more than one network at the same time, e.g., stream a film from another country while still getting local search results": [
         "Permite que você acesse mais de uma rede ao mesmo tempo (por exemplo, faça streaming de um filme de outro país e, ao mesmo tempo, receba resultados de pesquisa locais)"
       ],
@@ -4105,12 +4105,6 @@
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "Compartilhe facilmente seus calendários com familiares, amigos ou colegas"
-      ],
-      "End-to-end encrypted calendar": [
-        "Calendário criptografado de ponta a ponta"
-      ],
-      "End-to-end encrypted file storage": [
-        "Armazenamento de arquivos criptografado de ponta a ponta"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Garante que você receba todos os e-mails enviados ao seu domínio, mesmo que o endereço de e-mail não exista, tenha deixado de existir ou contenha um erro de digitação"
@@ -4149,10 +4143,13 @@
         "Ferramenta de gerenciamento da organização que possibilita que os administradores adicionem e removam usuários, aloquem armazenamento, configurem domínios e executem outras tarefas"
       ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
-        "Nossa infraestrutura robusta garante que você conseguirá acessar sua conta sempre que precisar"
+        "A confiabilidade de nossa infraestrutura garante o acesso à sua conta sempre que necessário."
       ],
       "Our servers’ hard disks are fully encrypted with multiple password layers so your data is protected even if our hardware is compromised": [
         "Os discos rígidos dos nossos servidores são totalmente criptografados com múltiplas camadas de senha para que seus dados sejam protegidos mesmo que nosso hardware seja comprometido"
+      ],
+      "Password management and identity protection": [
+        "Gerenciamento de senha e proteção de identidade"
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Personalize sua assinatura de e-mail com logotipos, imagens, ícones de redes sociais, links para seus detalhes de contato e muito mais"
@@ -5001,7 +4998,21 @@
         "por mês"
       ]
     },
+    "summer2023: Billing cycle option": {
+      "1 year": [
+        "1 ano"
+      ],
+      "2 years": [
+        "2 anos"
+      ]
+    },
     "summer2023: Deal details": {
+      "Premium Drive": [
+        "Drive premium"
+      ],
+      "Premium Mail and Calendar": [
+        "E-mail e calendário versão premium"
+      ],
       "Premium Password Manager": [
         "Gerenciador de senhas premium"
       ]
@@ -5011,12 +5022,20 @@
         "Armazene suas senhas com segurança e preencha-as automaticamente em sites. Inclui senhas ilimitadas, preenchimento automático, gerador de senhas e mais."
       ]
     },
+    "summer2023: Short tool name to present Proton Pass": {
+      "Password manager": [
+        "Gerenciador de senhas"
+      ]
+    },
     "summer2023: Tooltip": {
       "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
         "Crie detalhes seguros de início de sessão em todos os seus dispositivos. Inclui aliases ilimitados, 20 cofres, A2F integrada, preenchimento automático de cartão de crédito e muito mais."
       ],
       "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
         "Inclui 2.950 servidores em mais de 65 países. Conecte até 10 dispositivos, acesse serviços de streaming no mundo todo, malware e bloqueador de anúncios e muito mais."
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Inclui suporte para 1 domínio de e-mail personalizado, 10 endereços de e-mail, 10 aliases do hide-my-email, compartilhamento de calendário e muito mais."
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "Proteja seus arquivos com armazenamento em nuvem criptografado. Inclui histórico de versões, compartilhamento de arquivo criptografado e muito mais."
@@ -5171,7 +5190,7 @@
         "Confirmar downgrade"
       ],
       "Confirm loss of ${ BRAND_NAME } bonuses": [
-        "Confirmar pérdida de beneficios do ${ BRAND_NAME }"
+        "Confirmar a perda dos benefícios da ${ BRAND_NAME }"
       ],
       "Confirm phone number": [
         "Confirme o número do telefone"
@@ -5180,7 +5199,7 @@
         "Parabéns por escolher a privacidade!"
       ],
       "Create your ${ BRAND_NAME } Account": [
-        "Crie sua conta do ${ BRAND_NAME }."
+        "Crie sua conta da ${ BRAND_NAME }."
       ],
       "Credits": [
         "Créditos"
@@ -5557,11 +5576,6 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } em ${ numberOfCountries } país",
         "${ numberOfServers } em ${ numberOfCountries } países"
-      ]
-    },
-    "VPN signup": {
-      "Swiss flag": [
-        "Bandeira suíça"
       ]
     },
     "VPNClient": {
