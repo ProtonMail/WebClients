@@ -20,7 +20,7 @@ import { getShortBillingText } from '@proton/components/containers/payments/help
 import { useLoading } from '@proton/components/hooks';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
-import { BRAND_NAME, CYCLE, PLANS } from '@proton/shared/lib/constants';
+import { APP_NAMES, BRAND_NAME, CYCLE, PLANS } from '@proton/shared/lib/constants';
 import { getOptimisticCheckResult } from '@proton/shared/lib/helpers/checkout';
 import { switchPlan } from '@proton/shared/lib/helpers/planIDs';
 import {
@@ -44,11 +44,14 @@ import Box from './Box';
 import BoxContent from './BoxContent';
 import BoxHeader from './BoxHeader';
 import FeatureItem from './FeatureItem';
+import FreeLogo from './FreeLogo';
 import Layout from './Layout';
 import { PlanCard, PlanCardSelector, UpsellCardSelector } from './PlanCardSelector';
+import RightPlanSummary from './RightPlanSummary';
 import RightSummary from './RightSummary';
-import { getFreeSubscriptionData } from './helper';
+import { getFreeSubscriptionData, getFreeTitle } from './helper';
 import { Measure, OnOpenLogin, OptimisticOptions, SignupMode, SignupModelV2, UpsellTypes } from './interface';
+import { getFreePassFeatures } from './pass/configuration';
 
 export interface Step1Rref {
     handleOptimistic: (options: Partial<OptimisticOptions>) => Promise<void>;
@@ -59,6 +62,8 @@ const Step1 = ({
     relativePrice,
     logo,
     features,
+    app,
+    shortAppName,
     appName,
     titles,
     selectedPlan,
@@ -80,6 +85,8 @@ const Step1 = ({
     mode,
 }: {
     relativePrice: string;
+    app: APP_NAMES;
+    shortAppName: string;
     appName: string;
     logo: ReactNode;
     titles: { [SignupMode.Default]: ReactNode; [SignupMode.Onboarding]: ReactNode };
@@ -400,9 +407,21 @@ const Step1 = ({
                         )}
                     </BoxContent>
                 </Box>
-                <Box className={clsx('mt-12 w100', isOnboardingMode && 'hidden')}>
+                <Box className={clsx('mt-12 w100', isOnboardingMode && !hasSelectedFree && 'hidden')}>
                     {(() => {
-                        const step2Summary = (
+                        const step2Summary = isOnboardingMode ? (
+                            <RightSummary className="mx-auto md:mx-0">
+                                <RightPlanSummary
+                                    title={getFreeTitle(shortAppName)}
+                                    price={getSimplePriceString(options.currency, 0, '')}
+                                    regularPrice={getSimplePriceString(options.currency, 0, '')}
+                                    logo={<FreeLogo app={app} />}
+                                    discount={0}
+                                    free
+                                    features={getFreePassFeatures()}
+                                ></RightPlanSummary>
+                            </RightSummary>
+                        ) : (
                             <RightSummary gradient className="p-6 no-mobile rounded-xl">
                                 {benefits}
                             </RightSummary>
@@ -449,12 +468,19 @@ const Step1 = ({
                                                         {cta}
                                                     </Button>
                                                 )}
-                                                <div className={clsx('text-center', hasSelectedFree ? 'mt-4' : 'mt-6')}>
-                                                    {
-                                                        // translator: Full sentence "Or create a new account"
-                                                        c('pass_signup_2023: Action').jt`Or ${createANewAccount}`
-                                                    }
-                                                </div>
+                                                {!isOnboardingMode && (
+                                                    <div
+                                                        className={clsx(
+                                                            'text-center',
+                                                            hasSelectedFree ? 'mt-4' : 'mt-6'
+                                                        )}
+                                                    >
+                                                        {
+                                                            // translator: Full sentence "Or create a new account"
+                                                            c('pass_signup_2023: Action').jt`Or ${createANewAccount}`
+                                                        }
+                                                    </div>
+                                                )}
                                             </div>
                                             {step2Summary}
                                         </div>
