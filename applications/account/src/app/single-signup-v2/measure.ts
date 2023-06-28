@@ -124,18 +124,7 @@ export type TelemetryMeasurementData =
               api_call: string;
           };
       }
-    | {
-          event: TelemetryAccountSignupEvents.signupFinish;
-          dimensions: {
-              type: TelemetryPayType;
-              plan: PLANS;
-              cycle: `${CYCLE}`;
-              currency: Currency;
-          };
-          values: {
-              amount_charged: number;
-          };
-      }
+    | SignupFinishEvents
     | {
           event: TelemetryAccountSignupEvents.onboardingStart;
           dimensions: {};
