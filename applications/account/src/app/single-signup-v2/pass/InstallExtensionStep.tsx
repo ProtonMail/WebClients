@@ -136,14 +136,15 @@ export const getInfo = (
         const type = getTelemetryClientType(Clients.Firefox);
         return {
             type,
-            title: c('pass_signup_2023: Info').t`Install extension`,
+            title: c('pass_signup_2023: Info').t`Install ${PASS_APP_NAME}`,
             subTitle: '',
             content: (
                 <>
                     {getContent(
                         installExtension,
                         // translator: full sentence is: Download the <Proton Pass> browser extension from Firefox Add-ons and install it to start using <Proton Pass> in your browser.
-                        c('pass_signup_2023: Info').t`Download the extension from the Firefox Add-ons.`
+                        c('pass_signup_2023: Info')
+                            .t`${PASS_APP_NAME} is available as a browser extension on Firefox Add-ons.`
                     )}
                 </>
             ),
@@ -179,14 +180,15 @@ export const getInfo = (
         })();
         return {
             type,
-            title: c('pass_signup_2023: Info').t`Install extension`,
+            title: c('pass_signup_2023: Info').t`Install ${PASS_APP_NAME}`,
             subTitle: '',
             content: (
                 <>
                     {getContent(
                         installExtension,
                         // translator: full sentence is: Download the <Proton Pass> browser extension in the Chrome Web Store and install it to start using <Proton Pass> in your browser.
-                        c('pass_signup_2023: Info').t`Download the extension from the Chrome Web Store.`
+                        c('pass_signup_2023: Info')
+                            .t`${PASS_APP_NAME} is available as a browser extension on the Chrome Web Store.`
                     )}
                 </>
             ),
