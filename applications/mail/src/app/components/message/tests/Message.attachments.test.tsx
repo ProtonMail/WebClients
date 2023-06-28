@@ -1,4 +1,4 @@
-import { fireEvent, within } from '@testing-library/dom';
+import { fireEvent, within } from '@testing-library/react';
 
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';

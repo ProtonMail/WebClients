@@ -1,4 +1,4 @@
-import { waitFor } from '@testing-library/dom';
+import { waitFor } from '@testing-library/react';
 
 import { FeatureCode } from '@proton/components';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
