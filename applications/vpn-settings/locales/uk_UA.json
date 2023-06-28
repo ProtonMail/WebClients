@@ -2315,9 +2315,6 @@
       "Each code can only be used once": [
         "Кожен код можна використати лише один раз"
       ],
-      "Email address already used": [
-        "Адреса електронної пошти вже використовується"
-      ],
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
         "Розміщення до 10 власних доменних імен електронної пошти включено безплатно. Більше доменів можна додати за ${ price }."
       ],
@@ -3681,11 +3678,11 @@
         "${ n } тек і міток",
         "${ n } тек і міток"
       ],
-      "${ n } Hide-my-email alias": [
-        "${ n } псевдонім Hide-my-email",
-        "${ n } псевдоніми Hide-my-email",
-        "${ n } псевдонімів Hide-my-email",
-        "${ n } псевдонімів Hide-my-email"
+      "${ n } hide-my-email alias": [
+        "${ n } hide-my-email псевдонім",
+        "${ n } hide-my-email псевдоніми",
+        "${ n } hide-my-email псевдонімів",
+        "${ n } hide-my-email псевдонімів"
       ],
       "${ n } label": [
         "${ n } мітка",
@@ -3747,6 +3744,9 @@
       "Auto-reply": [
         "Автовідповідь"
       ],
+      "Autofill credit cards (coming soon)": [
+        "Автозаповнення кредитних карток (незабаром)"
+      ],
       "Available on all platforms": [
         "Доступність на всіх платформах"
       ],
@@ -3764,6 +3764,9 @@
       ],
       "Contact groups management": [
         "Керування групами контактів"
+      ],
+      "Custom domains for email aliases": [
+        "Власні домени для псевдонімів електронної пошти"
       ],
       "Custom email domains": [
         "Власні домени електронної пошти"
@@ -3848,6 +3851,9 @@
       ],
       "No-logs policy": [
         "Політика без журналювання"
+      ],
+      "Organize items with multiple vaults": [
+        "Упорядкування елементів з декількома сховищами"
       ],
       "Password-protected Emails": [
         "Електронні листи, захищені паролем"
@@ -4133,14 +4139,23 @@
       ]
     },
     "new_plans: tooltip": {
+      "${ CALENDAR_APP_NAME }: end-to-end encrypted calendar": [
+        "${ CALENDAR_APP_NAME }: наскрізне шифрування календаря"
+      ],
+      "${ DRIVE_APP_NAME }: end-to-end encrypted cloud storage": [
+        "${ DRIVE_APP_NAME }: наскрізне шифрування сховища"
+      ],
+      "${ MAIL_APP_NAME }: end-to-end encrypted email": [
+        "${ MAIL_APP_NAME }: наскрізне шифрування пошти"
+      ],
+      "${ VPN_APP_NAME }: unblock content, browse privately": [
+        "${ VPN_APP_NAME }: розблокувати вміст, приватний перегляд"
+      ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
         "Доступ звідусіль до стримінгових сервісів, включно з Netflix, Disney+ та Prime Video"
       ],
       "Addresses have full sending and receiving capability. A user can have multiple addresses assigned to them; however, a single address cannot be assigned to multiple users.": [
         "Адреси мають повноцінні можливості надсилання й отримання. Користувач може мати різні адреси, однак одну адресу не можна призначити різним користувачам."
-      ],
-      "Advanced security VPN with global network": [
-        "Розширена безпека VPN з глобальною мережею"
       ],
       "Allows you to access more than one network at the same time, e.g., stream a film from another country while still getting local search results": [
         "Дає вам змогу отримувати доступ до понад однієї мережі одночасно, наприклад, транслювати фільм з іншої країни та отримувати місцеві результати пошуку"
@@ -4177,12 +4192,6 @@
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "Легко діліться календарями з родиною, друзями чи колегами"
-      ],
-      "End-to-end encrypted calendar": [
-        "Наскрізно зашифрований календар"
-      ],
-      "End-to-end encrypted file storage": [
-        "Наскрізно зашифроване сховище файлів"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Гарантовано отримуйте всі електронні листи, надіслані на ваш домен, навіть якщо адреси не існує або вона введена з помилкою"
@@ -4225,6 +4234,9 @@
       ],
       "Our servers’ hard disks are fully encrypted with multiple password layers so your data is protected even if our hardware is compromised": [
         "Жорсткі диски наших серверів цілком зашифровані з багаторівневим парольним захистом, тому ваші дані залишатимуться в безпеці навіть у випадку несанкціонованого доступу"
+      ],
+      "Password management and identity protection": [
+        "Управління паролями та захист особистих даних"
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Налаштуйте свій підпис з використанням логотипів, зображень, піктограм соціальних мереж, посилань на свої контакти та інших можливостей"
@@ -4347,6 +4359,9 @@
       ],
       "Priority support": [
         "Пріоритетна підтримка"
+      ],
+      "Secure your passwords and identity with an open-source and encrypted password manager.": [
+        "Захистіть свої паролі та ідентифікаційні дані за допомогою зашифрованого менеджера паролів із відкритим кодом."
       ],
       "Support for 1 custom email domain": [
         "Підтримка 1 власного домену е-пошти"
@@ -5578,6 +5593,11 @@
         "Вибрана тема буде активною, коли у вашій системі встановлено \"світлий режим\""
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: end-to-end encrypted password manager": [
+        "${ PASS_APP_NAME }: наскрізне шифрування менеджера паролів"
+      ]
+    },
     "Tor out of date": {
       "stable release": [
         "стабільна версія"
@@ -5629,11 +5649,6 @@
         "${ numberOfServers } в ${ numberOfCountries } країнах",
         "${ numberOfServers } в ${ numberOfCountries } країнах",
         "${ numberOfServers } в ${ numberOfCountries } країнах"
-      ]
-    },
-    "VPN signup": {
-      "Swiss flag": [
-        "Швейцарський прапор"
       ]
     },
     "Warning": {

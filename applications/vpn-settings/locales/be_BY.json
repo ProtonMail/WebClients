@@ -2315,9 +2315,6 @@
       "Each code can only be used once": [
         "Кожны код можа выкарыстоўвацца толькі адзін раз"
       ],
-      "Email address already used": [
-        "Адрас электроннай пошты ўжо выкарыстоўваецца"
-      ],
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
         "Размяшчэнне электроннай пошты для 10 карыстальніцкіх даменных імён электроннай пошты даецца карыстальніку бясплатна. За дадатковыя дамены будзе спаганяцца плата ў памеры ${ price }."
       ],
@@ -3681,7 +3678,7 @@
         "${ n } папак і метак",
         "${ n } папкі і меткі"
       ],
-      "${ n } Hide-my-email alias": [
+      "${ n } hide-my-email alias": [
         "${ n } псеўданім Hide-my-email",
         "${ n } псеўданімы Hide-my-email",
         "${ n } псеўданімаў Hide-my-email",
@@ -3747,6 +3744,9 @@
       "Auto-reply": [
         "Аўтаматычны адказ"
       ],
+      "Autofill credit cards (coming soon)": [
+        "Аўтазапаўненне крэдытных картак (неўзабаве з'явіцца)"
+      ],
       "Available on all platforms": [
         "Даступна на ўсіх платформах"
       ],
@@ -3764,6 +3764,9 @@
       ],
       "Contact groups management": [
         "Кіраванне групамі кантактаў"
+      ],
+      "Custom domains for email aliases": [
+        "Карыстальніцкія дамены для псеўданімаў электроннай пошты"
       ],
       "Custom email domains": [
         "Карыстальніцкія дамены электроннай пошты"
@@ -3848,6 +3851,9 @@
       ],
       "No-logs policy": [
         "Палітыка адсутнасці журналаў актыўнасці"
+      ],
+      "Organize items with multiple vaults": [
+        "Упарадкаванне элементаў з некалькімі сховішчамі"
       ],
       "Password-protected Emails": [
         "Лісты абароненыя паролем"
@@ -4133,14 +4139,23 @@
       ]
     },
     "new_plans: tooltip": {
+      "${ CALENDAR_APP_NAME }: end-to-end encrypted calendar": [
+        "${ CALENDAR_APP_NAME }: каляндар са скразным шыфраваннем"
+      ],
+      "${ DRIVE_APP_NAME }: end-to-end encrypted cloud storage": [
+        "${ DRIVE_APP_NAME }: воблачнае сховішча са скразным шыфраваннем"
+      ],
+      "${ MAIL_APP_NAME }: end-to-end encrypted email": [
+        "${ MAIL_APP_NAME }: электронная пошта са скразным шыфраваннем"
+      ],
+      "${ VPN_APP_NAME }: unblock content, browse privately": [
+        "${ VPN_APP_NAME }: разблакіроўка змесціва, прыватны прагляд"
+      ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
         "Атрымлівайце доступ да змесціва сэрвісаў з трансляцыямі, такіх як Netflix, Disney+ і Prime Video з любой краіны ў свеце"
       ],
       "Addresses have full sending and receiving capability. A user can have multiple addresses assigned to them; however, a single address cannot be assigned to multiple users.": [
         "Адрасы з'яўляюцца поўнафункцыянальнымі для адпраўкі і атрымання лістоў. Карыстальнік можа мець некалькі адрасоў, але адзін адрас нельга прызначыць некалькім карыстальнікам."
-      ],
-      "Advanced security VPN with global network": [
-        "Сэрвіс з пашыранымі функцыямі бяспекі VPN для працы ў інтэрнэце"
       ],
       "Allows you to access more than one network at the same time, e.g., stream a film from another country while still getting local search results": [
         "Забяспечвае доступ да некалькіх сетак адначасова. Напрыклад, вы можаце глядзець фільм з іншай краіны і адначасова атрымліваць мясцовыя вынікі на пошукавыя запыты"
@@ -4177,12 +4192,6 @@
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "Лёгка дзяліцеся вашымі календарамі з сям'ёй, сябрамі або калегамі"
-      ],
-      "End-to-end encrypted calendar": [
-        "Каляндар зашыфраваны скразным метадам"
-      ],
-      "End-to-end encrypted file storage": [
-        "Файлы ў сховішчы зашыфраваны скразным метадам"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Гарантуе, што вы атрымаеце ўсе лісты, якія адпраўлены на ваш дамен, нават калі адрас электроннай пошты не існуе, больш не існуе або ў напісанні адраса зроблена памылка"
@@ -4225,6 +4234,9 @@
       ],
       "Our servers’ hard disks are fully encrypted with multiple password layers so your data is protected even if our hardware is compromised": [
         "Жорсткія дыскі на нашых серверах цалкам зашыфраваны і маюць некалькі ўзроўняў пароляў. Таму, нават калі бяспека цэнтра апрацоўкі даных будзе парушана вашы даныя будуць надзейна абаронены"
+      ],
+      "Password management and identity protection": [
+        "Кіраванне паролямі і абарона ідэнтыфікацыі"
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Персаналізуйце свой подпіс у электронных лістах з дапамогай лагатыпаў, відарысаў, значкоў з сацыяльных сетак, спасылак на вашы кантактныя звесткі і г.д."
@@ -4347,6 +4359,9 @@
       ],
       "Priority support": [
         "Прыярытэтная падтрымка"
+      ],
+      "Secure your passwords and identity with an open-source and encrypted password manager.": [
+        "Абараняйце свае паролі і пасведчанні з дапамогай зашыфраванага менеджара пароляў, які мае адкрыты зыходны код."
       ],
       "Support for 1 custom email domain": [
         "Падтрымка для 1 карыстальніцкага дамена электроннай пошты"
@@ -5578,6 +5593,11 @@
         "Выбраная тэма будзе актыўна, калі ў вашай сістэме зададзены \"светлы рэжым\""
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: end-to-end encrypted password manager": [
+        "${ PASS_APP_NAME }: менеджар пароляў са скразным шыфраваннем"
+      ]
+    },
     "Tor out of date": {
       "stable release": [
         "стабільны выпуск"
@@ -5629,11 +5649,6 @@
         "${ numberOfServers } у ${ numberOfCountries } краінах",
         "${ numberOfServers } у ${ numberOfCountries } краінах",
         "${ numberOfServers } у ${ numberOfCountries } краінах"
-      ]
-    },
-    "VPN signup": {
-      "Swiss flag": [
-        "Швейцарскі сцяг"
       ]
     },
     "Warning": {
