@@ -21,7 +21,7 @@ import { SelectField } from '../../../components/Field/SelectField';
 import { TextAreaField } from '../../../components/Field/TextareaField';
 import { TitleField } from '../../../components/Field/TitleField';
 import { ItemEditPanel } from '../../../components/Panel/ItemEditPanel';
-import { useItemDraft } from '../../../hooks/useItemDraft';
+import { useDraftSync } from '../../../hooks/useItemDraft';
 
 const FORM_ID = 'edit-alias';
 
@@ -78,7 +78,7 @@ export const AliasEdit: VFC<ItemEditProps<'alias'>> = ({ vault, revision, onCanc
         },
     });
 
-    useItemDraft<EditAliasFormValues>(form, {
+    useDraftSync<EditAliasFormValues>(form, {
         type: 'alias',
         mode: 'edit',
         itemId: itemId,

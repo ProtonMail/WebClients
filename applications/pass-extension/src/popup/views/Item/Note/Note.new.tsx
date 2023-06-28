@@ -18,7 +18,7 @@ import { BaseTextAreaField } from '../../../components/Field/TextareaField';
 import { BaseTitleField } from '../../../components/Field/TitleField';
 import { VaultSelectField } from '../../../components/Field/VaultSelectField';
 import { ItemCreatePanel } from '../../../components/Panel/ItemCreatePanel';
-import { useItemDraft } from '../../../hooks/useItemDraft';
+import { useDraftSync } from '../../../hooks/useItemDraft';
 
 const FORM_ID = 'new-note';
 
@@ -46,7 +46,7 @@ export const NoteNew: VFC<ItemNewProps<'note'>> = ({ shareId, onSubmit, onCancel
         validateOnChange: true,
     });
 
-    const draft = useItemDraft<NoteFormValues>(form, {
+    const draft = useDraftSync<NoteFormValues>(form, {
         type: 'note',
         mode: 'new',
         itemId: 'draft-note',
