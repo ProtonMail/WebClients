@@ -164,9 +164,9 @@ const MainContainer = () => {
      * vpn web app is also settings which you are already in. Redirect to
      * the default path in account in that case.
      */
-    const isVpn = app === APPS.PROTONVPN_SETTINGS;
-    const toApp = isVpn ? APPS.PROTONACCOUNT : app;
-    const to = isVpn ? getSlugFromApp(APPS.PROTONVPN_SETTINGS) : '/';
+    const isLocal = [APPS.PROTONVPN_SETTINGS, APPS.PROTONPASS].includes(app as any);
+    const toApp = isLocal ? APPS.PROTONACCOUNT : app;
+    const to = isLocal ? `/${getSlugFromApp(app)}` : '/';
     const prefixPath = `/${appSlug}`;
 
     const logo = (
