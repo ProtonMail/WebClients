@@ -2312,9 +2312,6 @@
       "Each code can only be used once": [
         "Każdy kod może zostać użyty tylko jeden raz"
       ],
-      "Email address already used": [
-        "Adres e-mail został już wykorzystany"
-      ],
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
         "Poczta e-mail dla 10 niestandardowych domen za darmo. Dodatkowe domeny możesz dodać za ${ price }."
       ],
@@ -3663,7 +3660,7 @@
         "${ n } folderów i etykiet",
         "${ n } folderów i etykiet"
       ],
-      "${ n } Hide-my-email alias": [
+      "${ n } hide-my-email alias": [
         "${ n } alias Hide-my-email",
         "${ n } aliasy Hide-my-email",
         "${ n } aliasów Hide-my-email",
@@ -4121,9 +4118,6 @@
       "Addresses have full sending and receiving capability. A user can have multiple addresses assigned to them; however, a single address cannot be assigned to multiple users.": [
         "Adresy służą do wysyłania i odbierania wiadomości. Użytkownik może mieć przypisanych wiele adresów, ale jeden adres nie może zostać przypisany do wielu użytkowników."
       ],
-      "Advanced security VPN with global network": [
-        "Zaawansowane bezpieczeństwo VPN z globalną siecią"
-      ],
       "Allows you to access more than one network at the same time, e.g., stream a film from another country while still getting local search results": [
         "Umożliwia jednoczesny dostęp do więcej niż jednej sieci, np. streaming filmu z innego kraju przy jednoczesnym uzyskiwaniu lokalnych wyników wyszukiwania"
       ],
@@ -4159,12 +4153,6 @@
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "Udostępnij swoje kalendarze rodzinie, znajomym i współpracownikom"
-      ],
-      "End-to-end encrypted calendar": [
-        "Kalendarz zaszyfrowany end-to-end"
-      ],
-      "End-to-end encrypted file storage": [
-        "Przestrzeń dyskowa zaszyfrowana end-to-end"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Zapewnia odbieranie wszystkich wiadomości wysyłanych do domeny, nawet jeśli adres e-mail nie istnieje, przestał istnieć lub zawiera literówkę"
@@ -5085,7 +5073,21 @@
         "miesięcznie"
       ]
     },
+    "summer2023: Billing cycle option": {
+      "1 year": [
+        "1 rok"
+      ],
+      "2 years": [
+        "2 lata"
+      ]
+    },
     "summer2023: Deal details": {
+      "Premium Drive": [
+        "Usługa Drive w wersji premium"
+      ],
+      "Premium Mail and Calendar": [
+        "Usługi Mail i Calendar w wersji premium"
+      ],
       "Premium Password Manager": [
         "Menedżer haseł w wersji Premium"
       ]
@@ -5095,12 +5097,20 @@
         "W bezpieczny sposób przechowuj hasła i automatycznie je uzupełniaj w witrynach internetowych. Obejmuje nieograniczoną liczbę haseł, opcję automatycznego uzupełniania, generator haseł i nie tylko."
       ]
     },
+    "summer2023: Short tool name to present Proton Pass": {
+      "Password manager": [
+        "Menadżer haseł"
+      ]
+    },
     "summer2023: Tooltip": {
       "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
         "Twórz bezpieczne dane logowania na wszystkich urządzeniach. Obejmuje nielimitowaną liczbę aliasów, 20 zabezpieczonych folderów, zintegrowane uwierzytelnianie dwustopniowe, automatyczne uzupełnianie danych karty kredytowej i nie tylko."
       ],
       "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
         "Obsługuje 2950 serwerów w ponad 65 krajach z możliwością połączenia do 10 urządzeń, dostępem do globalnych usług streamingowych oraz z funkcją blokowania reklam i złośliwego oprogramowania i więcej."
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Zawiera obsługę 1 niestandardowej domeny e-mail, 10 adresów e-mail, 10 aliasów hide-my-email, udostępnianie kalendarza i nie tylko."
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "Zabezpiecz pliki dzięki zaszyfrowanej przestrzeni dyskowej w chmurze. Obejmuje historię wersji, szyfrowane udostępnianie plików i nie tylko."
@@ -5653,11 +5663,6 @@
         "${ numberOfServers } w ${ numberOfCountries } krajach",
         "${ numberOfServers } w ${ numberOfCountries } krajach",
         "${ numberOfServers } w ${ numberOfCountries } krajach"
-      ]
-    },
-    "VPN signup": {
-      "Swiss flag": [
-        "Szwajcarska flaga"
       ]
     },
     "Warning": {

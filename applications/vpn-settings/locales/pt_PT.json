@@ -455,6 +455,11 @@
         "+ ${ users } utilizadores"
       ]
     },
+    "Alter": {
+      "This will disconnect all the routers and clients using this certificate.": [
+        "Isto desligará todos os routers e clientes que utilizam este certificado."
+      ]
+    },
     "Baseline in trial plan": {
       "${ mailPlus }: the privacy-first Mail and Calendar solution for your everyday communications needs.": [
         "${ mailPlus }: a solução de e-mail e calendário com foco em privacidade para as suas necessidades diárias de comunicação."
@@ -1812,6 +1817,9 @@
       ]
     },
     "familyOffer_2023:Member downgrade modal": {
+      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
+        "Esta ação elimina permanentemente todos os subutilizadores, contas e dados associados à sua organização."
+      ],
       "This will remove all ${ BRAND_NAME } premium features for every family member.": [
         "Esta ação removerá todas as funcionalidades premium da ${ BRAND_NAME } para cada membro da família."
       ]
@@ -2046,6 +2054,9 @@
     "Header": {
       "Best deal": [
         "Melhor oferta"
+      ],
+      "Enter your email address": [
+        "Introduza o seu endereço de e-mail"
       ],
       "Get help": [
         "Obter ajuda"
@@ -2485,6 +2496,9 @@
       "P2P": [
         "P2P"
       ],
+      "Password copied to clipboard": [
+        "A palavra-passe é copiada para a área de transferência."
+      ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Os pagamentos são protegidos através de encriptação TLS e pelas leis de privacidade suíças."
       ],
@@ -2590,6 +2604,9 @@
       "Step ${ step }": [
         "Passo ${ step }",
         "Passos ${ step }"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "O espaço de armazenamento é partilhado entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } e ${ DRIVE_APP_NAME }."
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Envie um depósito utilizando o seguinte endereço ou digitalize o código QR. O seu depósito será apresentado na sua conta após confirmação."
@@ -3524,6 +3541,9 @@
       "Get ${ planName }": [
         "Obter ${ planName }"
       ],
+      "Get ${ upsellShortPlan.title }": [
+        "Obtenha o ${ upsellShortPlan.title }"
+      ],
       "Got it": [
         "Entendido"
       ],
@@ -3606,7 +3626,7 @@
         "${ n } pasta e etiqueta",
         "${ n } pastas e etiquetas"
       ],
-      "${ n } Hide-my-email alias": [
+      "${ n } hide-my-email alias": [
         "${ n } alias do Hide-my-email",
         "${ n } aliases do Hide-my-email"
       ],
@@ -3885,6 +3905,9 @@
       "* With 30-month subscription. Other subscription options available at checkout.": [
         "* Com subscrição de 30 mês. Outras opções de subscrição disponíveis na finalização da compra."
       ],
+      "Applicable credits, proration, and coupons are applied in the next step": [
+        "Os créditos, repartições e cupões aplicáveis são aplicados na etapa seguinte."
+      ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Privacidade e segurança abrangentes com todos os serviços da ${ BRAND_NAME } combinados."
       ],
@@ -3899,6 +3922,9 @@
       ],
       "Privacy and security suite for businesses, including all premium ${ BRAND_NAME } services.": [
         "Pacote de privacidade e segurança para empresas, incluindo todos os serviços premium da ${ BRAND_NAME }."
+      ],
+      "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
+        "Proteja a privacidade da sua família com todos os serviços da ${ BRAND_NAME } combinados."
       ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "Armazenamento em nuvem seguro que permite armazenar, sincronizar e compartilhar ficheiros com facilidade e segurança."
@@ -3917,6 +3943,12 @@
       ]
     },
     "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Proteja a sua privacidade quando se trata de fazer cópias de segurança, armazenar, partilhar e recuperar ficheiros."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Caso contrário, o acesso à sua conta será limitado e a sua conta acabará por ser desativada."
+      ],
       "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
         "Atualize para o pacote para empresas com acesso a todos os serviços premium da ${ BRAND_NAME }."
       ],
@@ -4004,15 +4036,27 @@
       ]
     },
     "new_plans: tooltip": {
-      "Advanced security VPN with global network": [
-        "VPN de segurança avançada com rede global"
+      "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
+        "Aceda a conteúdos em serviços de streaming, incluindo Netflix, Disney+ e Prime Video, a partir de qualquer lugar"
       ],
       "Allows you to set up automatic responses (auto-reply) for your incoming messages": [
         "Permite-lhe configurar respostas automáticas para as suas mensagens recebidas"
       ],
+      "Control access to your shared files by adding password protection and link expiration dates": [
+        "Controle o acesso aos seus ficheiros partilhados, adicionando proteção por palavra-passe e datas de expiração das ligações."
+      ],
+      "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
+        "Crie vários endereços de e-mail para as suas identidades em linha, por exemplo, JoãoCompras@${ domain } para as contas de compras, JoãoNotícias@${ domain } para as subscrições nos sítios de notícias"
+      ],
       "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
         "Crie até ${ n } calendário ou adicione calendários de amigos, familiares, colegas e organizações.",
         "Crie até ${ n } calendários ou adicione calendários de amigos, familiares, colegas e organizações."
+      ],
+      "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
+        "Defende-se contra a ameaça à privacidade da VPN ao enviar o tráfego na internet por vários servidores."
+      ],
+      "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers.": [
+        "Defende-se contra a ameaça à privacidade da VPN ao enviar o tráfego na internet por vários servidores."
       ],
       "Easily share your calendars with your colleagues, family, and friends via a link": [
         "Partilhe facilmente os seus calendários com os seus colegas, família e amigos com uma ligação."
@@ -4020,17 +4064,20 @@
       "Easily share your calendars with your family, friends, or colleagues": [
         "Partilhe facilmente os seus calendários com a sua família, amigos ou colegas."
       ],
-      "End-to-end encrypted calendar": [
-        "Calendário encriptado de ponta a ponta"
-      ],
-      "End-to-end encrypted file storage": [
-        "Armazenamento de ficheiros encriptados de ponta a ponta"
-      ],
       "Force sign-out of user sessions when user credentials are believed to be compromised": [
         "Força a saída das sessões de utilizador quando se pensa que as credenciais do utilizador estão comprometidas."
       ],
       "Keep your plans private to you and your family with an encrypted calendar": [
         "Mantenha os seus planos privados para si e para a sua família com um calendário encriptado."
+      ],
+      "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
+        "Pode adicionar etiquetas às suas mensagens para as tornar mais fáceis de encontrar ou para aplicar filtros."
+      ],
+      "Option to view non-private user inboxes as the user would, including full message and contact details": [
+        "Opção para ver as caixas de entrada de utilizadores não privados como o utilizador faria, incluindo todas as mensagens e detalhes de contacto"
+      ],
+      "Our robust infrastructure ensures you will be able to access your account when you need it": [
+        "A fiabilidade da nossa infraestrutura garante-lhe o acesso à sua conta sempre que precisar."
       ],
       "Quickly set up out-of-office messages": [
         "Configure rapidamente mensagens Fora do escritório"
@@ -4040,6 +4087,21 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Reponha as palavras-passe dos utilizadores e a autenticação de dois fatores."
+      ],
+      "Route your internet traffic through the Tor network with a single click": [
+        "Envie todo o seu tráfego na internet através da rede Tor com um único clique."
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "Proteja os seus ficheiros com armazenamento encriptado na nuvem. Inclui sincronização automática, partilha de ficheiros encriptados e muito mais."
+      ],
+      "Set up filters to automatically reply to, sort, and/or label your emails": [
+        "Configure filtros para responder, ordenar e/ou etiquetar automaticamente os seus e-mails."
+      ],
+      "Share your files or folders with anyone by using secure, shareable links": [
+        "Partilhe os seus ficheiros ou pastas com qualquer pessoa, utilizando ligações seguras e partilháveis."
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }": [
+        "O espaço de armazenamento é partilhado entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } e ${ DRIVE_APP_NAME }"
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Suporte para protocolos de partilha de ficheiros, como o BitTorrent"
@@ -4196,6 +4258,9 @@
       "contact": [
         "contacto"
       ],
+      "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
+        "Selecione o número de utilizadores a incluir no seu plano. Cada utilizador adicional custa ${ price }."
+      ],
       "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
         "Se precisar de mais de ${ maxUsers } conta de utilizador, ${ contact } a nossa equipa de vendas.",
         "Se precisar de mais de ${ maxUsers } contas de utilizador, ${ contact } a nossa equipa de vendas."
@@ -4230,6 +4295,9 @@
       ],
       "Verify with email": [
         "Verificar com e-mail"
+      ],
+      "Verifying your email address increases your account security and allows additional options for recovery.": [
+        "A verificação do seu endereço de e-mail aumenta a segurança da sua conta e permite opções de recuperação adicionais."
       ]
     },
     "Recovery method": {
@@ -4264,6 +4332,9 @@
       ],
       "Verify this recovery phone number now: ${ phone.Value }": [
         "Verifique este número de telefone de recuperação agora: ${ phone.Value }"
+      ],
+      "Verifying your phone number increases your account security and allows additional options for recovery.": [
+        "A verificação do seu número de telefone aumenta a segurança da sua conta e permite opções de recuperação adicionais."
       ]
     },
     "Shared calendar; Info about calendar owner": {
@@ -4610,6 +4681,9 @@
       "1 VPN connection": [
         "1 ligação VPN"
       ],
+      "Access to streaming services globally": [
+        "Aceda a serviços de streaming globalmente"
+      ],
       "Built-in ad blocker (NetShield)": [
         "Bloqueador integrado (NetShield)"
       ],
@@ -4621,6 +4695,12 @@
     "Subscription change warning": {
       "Got it": [
         "Entendido"
+      ],
+      "Just sign in to your Apple App Store account, then press ${ subscriptions }.": [
+        "Basta iniciar sessão na sua conta da Apple App Store e, em seguida, premir ${ subscriptions }."
+      ],
+      "Just sign in to your Play Store account, then press ${ subscriptions }.": [
+        "Basta iniciar sessão na sua conta da Play Store e, em seguida, premir ${ subscriptions }."
       ],
       "Manage your subscription on ${ subscriptionManager }": [
         "Gira a sua subscrição em ${ subscriptionManager }."
@@ -5287,11 +5367,6 @@
         "${ numberOfServers } em ${ numberOfCountries } países"
       ]
     },
-    "VPN signup": {
-      "Swiss flag": [
-        "Bandeira suíça"
-      ]
-    },
     "VPNClient": {
       "iOS": [
         "iOS"
@@ -5300,6 +5375,9 @@
     "Warning": {
       "Are you sure you want to delete the phone number?": [
         "Tem a certeza de que deseja eliminar este número de telefone?"
+      ],
+      "Are you sure you want to delete this address?": [
+        "Tem a certeza de que pretende eliminar este endereço?"
       ],
       "By deleting this address, you will no longer be able to receive daily email notifications.": [
         "Ao eliminar este endereço, já não poderá receber notificações diárias do correio."
