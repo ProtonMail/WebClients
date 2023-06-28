@@ -201,15 +201,15 @@ const AccountStepPayment = ({
                     onSubmit={async (event) => {
                         event.preventDefault();
 
+                        const amountAndCurrency: AmountAndCurrency = {
+                            Currency: options.currency,
+                            Amount: options.checkResult.AmountDue,
+                        };
+
                         const run = async () => {
                             if (!paymentParameters) {
                                 throw new Error('Missing payment parameters');
                             }
-
-                            const amountAndCurrency: AmountAndCurrency = {
-                                Currency: options.currency,
-                                Amount: options.checkResult.AmountDue,
-                            };
 
                             if (amountAndCurrency.Amount <= 0) {
                                 return onPay(undefined);
@@ -224,10 +224,11 @@ const AccountStepPayment = ({
                             return onPay(data.Payment);
                         };
 
-                        measurePaySubmit('pay_cc');
+                        const type = amountAndCurrency.Amount <= 0 ? 'free' : 'pay_cc';
+                        measurePaySubmit(type);
                         if (onValidate() && handleCardSubmit() && validatePayment()) {
                             withLoadingSignup(run()).catch(() => {
-                                measurePayError('pay_cc');
+                                measurePayError(type);
                             });
                         }
                     }}
