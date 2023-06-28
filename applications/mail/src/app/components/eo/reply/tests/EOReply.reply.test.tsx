@@ -1,4 +1,4 @@
-import { waitFor } from '@testing-library/dom';
+import { waitFor } from '@testing-library/react';
 
 import { releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../../helpers/test/crypto';
 import { EOClearAll, reply } from '../../../../helpers/test/eo/helpers';

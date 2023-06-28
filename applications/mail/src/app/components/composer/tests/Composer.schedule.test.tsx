@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { fireEvent, screen, waitFor } from '@testing-library/dom';
+import { fireEvent, screen, waitFor } from '@testing-library/react';
 import { act, getByTestId as getByTestIdDefault, getByText as getByTextDefault } from '@testing-library/react';
 import { format, getUnixTime } from 'date-fns';
 import { enUS } from 'date-fns/locale';
@@ -248,7 +248,7 @@ describe('Composer scheduled messages', () => {
         const scheduledSendButton = getByTestIdDefault(dropdown, 'composer:schedule-send:custom');
         fireEvent.click(scheduledSendButton);
 
-        const modal = await getByTestId('composer:modal:norecipients');
+        const modal = getByTestId('composer:modal:norecipients');
         getByTextDefault(modal, 'Recipient missing');
     });
 
@@ -266,7 +266,7 @@ describe('Composer scheduled messages', () => {
         const scheduledSendButton = getByTestIdDefault(dropdown, 'composer:schedule-send:custom');
         fireEvent.click(scheduledSendButton);
 
-        const modal = await getByTestId('composer:modal:nosubject');
+        const modal = getByTestId('composer:modal:nosubject');
         getByTextDefault(modal, 'Subject missing');
     });
 

@@ -1,4 +1,4 @@
-import { fireEvent, getByTestId } from '@testing-library/dom';
+import { fireEvent, getByTestId } from '@testing-library/react';
 import loudRejection from 'loud-rejection';
 
 import { ROOSTER_EDITOR_ID } from '@proton/components/components/editor/constants';

@@ -1,4 +1,4 @@
-import { findByText, waitFor } from '@testing-library/dom';
+import { findByText, waitFor } from '@testing-library/react';
 
 import { releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../../helpers/test/crypto';
 import { EOBody, EOClearAll, EOSubject } from '../../../../helpers/test/eo/helpers';

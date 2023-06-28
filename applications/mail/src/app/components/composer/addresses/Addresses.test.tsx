@@ -1,6 +1,6 @@
 import { MutableRefObject } from 'react';
 
-import { fireEvent, getAllByRole, screen } from '@testing-library/dom';
+import { fireEvent, getAllByRole, screen } from '@testing-library/react';
 import { act, getByText } from '@testing-library/react';
 
 import { Recipient } from '@proton/shared/lib/interfaces';
