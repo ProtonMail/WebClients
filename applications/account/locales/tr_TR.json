@@ -2862,6 +2862,23 @@
         "90 dakika"
       ]
     },
+    "Email": {
+      "Email verified": [
+        "E-posta doğrulandı"
+      ],
+      "Thank you for verifying your email address.": [
+        "E-posta adresinizi doğruladığınız için teşekkür ederiz."
+      ],
+      "Thanks for letting us know": [
+        "Bize bildirdiğiniz için teşekkür ederiz"
+      ],
+      "We've noted that this account doesn't belong to you. We'll investigate and act accordingly.": [
+        "Bu hesabın size ait olmadığı bilgisini aldık. Konuyu soruşturup gerekli işlemleri yapacağız."
+      ],
+      "You can safely close this tab.": [
+        "Bu sekmeyi kapatabilirsiniz."
+      ]
+    },
     "Email body for description (description part)": {
       "Description: ${ eventDescription }": [
         "Açıklama: ${ eventDescription }"
@@ -2955,6 +2972,9 @@
       ]
     },
     "Email Unsubscribe": {
+      "Email subscriptions": [
+        "E-posta abonelikleri"
+      ],
       "Which emails do you want to receive from ${ BRAND_NAME }?": [
         "Hangi ${ BRAND_NAME } e-postalarını almak istersiniz?"
       ],
@@ -3638,6 +3658,9 @@
       ]
     },
     "Error message, recovery": {
+      "Contact ${ BRAND_NAME }": [
+        "${ BRAND_NAME } ile görüşün"
+      ],
       "Please ${ signIn } to resend a recovery email verification request.": [
         "Lütfen yeni bir kurtarma e-postası doğrulama isteği göndermek için ${ signIn }ın."
       ],
@@ -4095,7 +4118,7 @@
         "65 üzerindeki ülkede 2.700 sunucu, 10 taneye kadar aygıt bağlayabilme, dünya çapında yayın akışı hizmetlerine erişim, kötü amaçlı yazılım ve reklam engelleyici ile diğer özellikleri içerir."
       ],
       "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
-        "3 özel e-posta etki alanı, 90 e-posta adresi, sınırsız sayıda e-postamı gizle takma adı, takvim paylaşımı ve diğer özellikler."
+        "3 özel e-posta etki alanı, 90 e-posta adresi, sınırsız sayıda hide-my-email takma adı, takvim paylaşımı ve diğer özellikler."
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Dosyalarınızı şifrelenmiş bulut depolama alanı ile koruyun. Otomatik eşitleme, şifrelenmiş dosya paylaşımı ve diğer özellikler."
@@ -4932,6 +4955,9 @@
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } İlerlerseniz hesabınızda bulunan tüm şifrelenmiş verilere erişiminizi kaybedeceksiniz."
       ],
+      "${ BRAND_NAME } is privacy you can trust, ensured by strong encryption, open-source code, and Swiss privacy laws. We believe nobody should be able to exploit your data, period. Our technology and business are based upon this fundamentally stronger definition of privacy.": [
+        "${ BRAND_NAME }, güçlü şifreleme, açık kaynak kodu ve İsviçre gizlilik yasaları tarafından sağlanan, güvenebileceğiniz bir gizlilik sunar. Kimsenin verilerinizden yarar sağlamaması gerektiğine inanıyoruz, nokta. Teknolojimiz ve işimiz, gizliliğin temelden daha güçlü olan bu tanımına dayanıyor."
+      ],
       "${ BRAND_NAME } paused an import because it lost the connection with your other email provider. Please reconnect.": [
         "${ BRAND_NAME }, diğer e-posta hizmeti sağlayıcınızla bağlantıyı kaybettiğinden içe aktarma işlemini duraklattı. Lüften yeniden bağlanın."
       ],
@@ -5516,9 +5542,6 @@
       "Email address": [
         "E-posta adresi"
       ],
-      "Email address already used": [
-        "E-posta adresi zaten kullanılmış"
-      ],
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
         "10 özel etki alanına kadar e-posta barındırması ücretsizdir. Ek etki alanları için ${ price } eklenir."
       ],
@@ -5602,6 +5625,9 @@
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Süzgeçler, alınan ve gönderilen tüm e-postalara uygulanır. Her süzgeçte en az bir ad ve bir koşul ve işlem bulunmalıdır."
+      ],
+      "for choosing ${ product }": [
+        "${ product } seçtiğiniz için"
       ],
       "For choosing ${ product }": [
         "${ product } seçtiğiniz için"
@@ -5989,6 +6015,9 @@
       "Outdated recovery phrase; update to ensure access to your data": [
         "Kurtarma ifadesi eski olabilir. Verilerinize erişebileceğinizden emin olmak için güncelleyin"
       ],
+      "Over 100 million people and businesses have signed up for ${ BRAND_NAME }.": [
+        "100 milyon üzerinde kişi ve kuruluş ${ BRAND_NAME } hesabı açtı."
+      ],
       "Paid for a ${ rewardMonths } month plan": [
         "${ rewardMonths } aylık tarife için ödeme yapıldı",
         "${ rewardMonths } aylık tarife için ödeme yapıldı"
@@ -6118,6 +6147,9 @@
       "Recovery information will remain on this device unless you select to delete it.": [
         "Siz silmeyi seçmedikçe kurtarma bilgileri bu aygıt üzerinde kalacak."
       ],
+      "Recovery kit copied to clipboard": [
+        "Kurtarma anahtarı panoya kopyalandı"
+      ],
       "Recovery phrase copied to clipboard": [
         "Kurtarma ifadesi panoya kopyalandı"
       ],
@@ -6141,6 +6173,9 @@
       ],
       "Remove one of your calendars to join this one": [
         "Bu takvime katılabilmek için var olan takvimlerinizden birini silin"
+      ],
+      "Report link expired": [
+        "Bildirim bağlantısının süresi geçmiş"
       ],
       "Restore": [
         "Geri yükle"
@@ -6260,6 +6295,9 @@
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Abonelik sona eriyor: ${ planName } tarifesinin ek özelliklerini korumak için ${ byDate } tarihine kadar yeniden etkinleştirin. ${ reactivateLink }"
       ],
+      "Summary": [
+        "Özet"
+      ],
       "Support for 1 custom email domain": [
         "1 özel e-posta etki alanı desteği"
       ],
@@ -6322,6 +6360,9 @@
       ],
       "The Import-Export app allows you to export messages for local backups and to restore previous backups to your account.": [
         "Import-Export uygulaması, iletilerinizin yerel yedek olarak dışa aktarılmasını ve daha önce alınmış yedeklerin geri yüklenmesi için içe aktarılmasını sağlar."
+      ],
+      "The link to report that that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue.": [
+        "${ BRAND_NAME } hesabı oluşturmadığınızı bildiren bağlantının süresi dolmuş. Bu sorunu çözmek için lütfen destek ekibimizle görüşün."
       ],
       "The name will be visible to your users while they are signed in.": [
         "Oturum açtıklarında kullanıcılarınıza görüntülenecek ad."
@@ -7188,7 +7229,7 @@
         "Sağa git / genişlet"
       ],
       "Move to Archive": [
-        "Arşive taşı"
+        "Arşivle"
       ],
       "Move to Inbox": [
         "Gelen kutusuna taşı"
@@ -7854,7 +7895,7 @@
         "Şuraya taşınsın"
       ],
       "Move to Archive": [
-        "Arşive taşı"
+        "Arşivle"
       ],
       "Move to Inbox": [
         "Gelen kutusuna taşı"
@@ -8038,6 +8079,9 @@
       ],
       "Show sender images": [
         "Gönderici görselleri görüntülensin"
+      ],
+      "Show unread count in Favicon": [
+        "Okunmamış sayısı site simgesinde görüntülensin"
       ],
       "Show week numbers": [
         "Hafta numaraları görüntülensin"
@@ -8414,6 +8458,9 @@
       ],
       "Pay invoice": [
         "Faturayı öde"
+      ],
+      "Paypal without credit card": [
+        "Kredi kartı olmadan PayPal"
       ],
       "Privacy policy": [
         "Gizlilik ilkesi"
@@ -8899,9 +8946,9 @@
         "${ n } klasör ve etiket",
         "${ n } klasör ve etiket"
       ],
-      "${ n } Hide-my-email alias": [
-        "${ n } e-postamı gizle takma adı",
-        "${ n } e-postamı gizle takma adı"
+      "${ n } hide-my-email alias": [
+        "${ n } hide-my-email takma adı",
+        "${ n } hide-my-email takma adı"
       ],
       "${ n } label": [
         "${ n } etiket",
@@ -8956,6 +9003,9 @@
       "Auto-reply": [
         "Otomatik yanıt"
       ],
+      "Autofill credit cards (coming soon)": [
+        "Otomatik kredi kartı doldurma (yakında)"
+      ],
       "Available on all platforms": [
         "Tüm platformlarda kullanılabilir"
       ],
@@ -8973,6 +9023,9 @@
       ],
       "Contact groups management": [
         "Kişi grupları yönetimi"
+      ],
+      "Custom domains for email aliases": [
+        "E-posta takma adları için özel etki alanları"
       ],
       "Custom email domains": [
         "Özel e-posta etki alanları"
@@ -9029,7 +9082,7 @@
         "KVKK veri işleme sözleşmesi"
       ],
       "Hide-my-email aliases": [
-        "E-postamı gizle takma adları"
+        "Hide-my-email takma adları"
       ],
       "High-speed streaming": [
         "Yüksek hızlı yayın akışı izleme"
@@ -9058,6 +9111,9 @@
       ],
       "No-logs policy": [
         "Kayıt tutmama ilkesi"
+      ],
+      "Organize items with multiple vaults": [
+        "Birden çok kasa ile ögeleri gruplayın"
       ],
       "Password-protected Emails": [
         "Parola korumalı e-postalar"
@@ -9130,7 +9186,7 @@
         "Sınırsız klasör, etiket ve süzgeç"
       ],
       "Unlimited hide-my-email aliases": [
-        "Sınırsız e-postamı gizle takma adı"
+        "Sınırsız hide-my-email takma adı"
       ],
       "Unlimited labels": [
         "Sınırsız etiket"
@@ -9192,26 +9248,6 @@
       ],
       "Team management": [
         "Ekip yönetimi"
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Dosya yedekleme, depolama, paylaşma ve alma işlemlerinizde standart olarak gizlilik sağlayın."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Yoksa hesabınıza erişim sınırlanacak ve sonunda hesabınız devre dışı bırakılacak."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "${ MAIL_APP_NAME } uygulamasını ücretli tarife özellikleriyle kullanmayı sürdürmek istiyorsanız, abonelik ve ödeme seçeneklerinizi belirleyin."
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "Tüm ücretli ${ BRAND_NAME } hizmetlerine erişim sağlayan kurumsal gizlilik paketine yükseltin."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "Tüm ücretli ${ BRAND_NAME } hizmetlerine erişim sağlayan en üst düzey gizlilik paketine yükseltin."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Deneme süreniz ${ formattedTrialExpirationDate } tarihinde sona eriyor"
       ]
     },
     "new_plans: info": {
@@ -9294,6 +9330,26 @@
         "Geçerli tarifenizde bir fırsat fiyatından yararlanıyorsunuz. Hesap tarifenizi düşürürseniz, fırsat fiyatınızı kaybedersiniz ve bu tarifeye yeniden abone olamazsınız."
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Dosya yedekleme, depolama, paylaşma ve alma işlemlerinizde standart olarak gizlilik sağlayın."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Yoksa hesabınıza erişim sınırlanacak ve sonunda hesabınız devre dışı bırakılacak."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "${ MAIL_APP_NAME } uygulamasını ücretli tarife özellikleriyle kullanmayı sürdürmek istiyorsanız, abonelik ve ödeme seçeneklerinizi belirleyin."
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "Tüm ücretli ${ BRAND_NAME } hizmetlerine erişim sağlayan kurumsal gizlilik paketine yükseltin."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "Tüm ücretli ${ BRAND_NAME } hizmetlerine erişim sağlayan en üst düzey gizlilik paketine yükseltin."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Deneme süreniz ${ formattedTrialExpirationDate } tarihinde sona eriyor"
+      ]
+    },
     "new_plans: Label": {
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } / ${ humanMaxSpace }"
@@ -9374,14 +9430,23 @@
       ]
     },
     "new_plans: tooltip": {
+      "${ CALENDAR_APP_NAME }: end-to-end encrypted calendar": [
+        "${ CALENDAR_APP_NAME }: Uçtan uca şifrelenmiş takvim"
+      ],
+      "${ DRIVE_APP_NAME }: end-to-end encrypted cloud storage": [
+        "${ DRIVE_APP_NAME }: Uçtan uca şifrelenmiş bulut depolama alanı"
+      ],
+      "${ MAIL_APP_NAME }: end-to-end encrypted email": [
+        "${ MAIL_APP_NAME }: Uçtan uca şifrelenmiş e-posta"
+      ],
+      "${ VPN_APP_NAME }: unblock content, browse privately": [
+        "${ VPN_APP_NAME }: Engellenen içeriğe erişin, gizli kalarak gezinin"
+      ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
         "Netflix, Disney+ ve Prime Video gibi yayın akışı hizmetlerindeki içeriğe her yerden erişin"
       ],
       "Addresses have full sending and receiving capability. A user can have multiple addresses assigned to them; however, a single address cannot be assigned to multiple users.": [
         "Adreslerin tam gönderme ve alma özelliği vardır. Bir kullanıcının kendisine atanmış birden fazla adresi olabilir. Ancak, tek bir adres birden çok kullanıcıya atanamaz."
-      ],
-      "Advanced security VPN with global network": [
-        "Dünya çağında ağ ile gelişmiş güvenlik VPN hizmeti"
       ],
       "Allows you to access more than one network at the same time, e.g., stream a film from another country while still getting local search results": [
         "Aynı anda birden fazla ağa erişmenizi sağlar. Örneğin arama sonuçlarını yerel olarak alırken başka bir ülkeden bir film yayın akışını izleyebilirsiniz"
@@ -9416,12 +9481,6 @@
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "Takvimlerinizi aileniz, arkadaşlarınız veya iş arkadaşlarınızla kolayca paylaşın"
-      ],
-      "End-to-end encrypted calendar": [
-        "Uçtan uca şifrelenmiş takvim"
-      ],
-      "End-to-end encrypted file storage": [
-        "Uçtan uca şifrelenmiş dosya depolama alanı"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Alıcı e-posta adresi hiç var olmasa da, silinmiş olsa da ya da hatalı yazılmış olsa da etki alanınıza gönderilen tüm e-postaları almanızı sağlar"
@@ -9464,6 +9523,9 @@
       ],
       "Our servers’ hard disks are fully encrypted with multiple password layers so your data is protected even if our hardware is compromised": [
         "Sunucularımızın sabit diskleri birden çok parola katmanıyla tamamen şifrelenmiştir. Böylece donanımımız ele geçirilse bile verileriniz korunur"
+      ],
+      "Password management and identity protection": [
+        "Parola yönetimi ve kimlik koruması"
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "E-posta imzanızı logolar, görseller, sosyal ağ simgeleri, iletişim bilgilerinizin bağlantıları ve diğer şeylerle kişiselleştirin"
@@ -9592,6 +9654,9 @@
       ],
       "Priority support": [
         "Öncelikli destek"
+      ],
+      "Secure your passwords and identity with an open-source and encrypted password manager.": [
+        "Açık kaynaklı ve şifrelenmiş bir parola yöneticisi ile parolalarınızı ve kimliğinizi koruyun."
       ],
       "Support for 1 custom email domain": [
         "1 özel e-posta etki alanı desteği"
@@ -10192,6 +10257,9 @@
       "Email address not yet verified.": [
         "E-posta adresi henüz doğrulanmamış."
       ],
+      "Email removed": [
+        "E-posta silindi"
+      ],
       "sign in": [
         "oturum aç"
       ],
@@ -10213,14 +10281,8 @@
       "Verifying your email address increases your account security and allows additional options for recovery.": [
         "E-posta adresinizi doğrulamak hesabınızın güvenliğini arttırır ve yeni bir kurtarma seçeneği ekler."
       ],
-      "You can safely close this tab.": [
-        "Bu sekmeyi kapatabilirsiniz."
-      ],
       "Your recovery email has been successfully removed.": [
         "Kurtarma e-postası adresiniz silindi."
-      ],
-      "Your recovery email has been successfully verified.": [
-        "Kurtarma e-postası adresiniz doğrulandı."
       ]
     },
     "Recovery method": {
@@ -10443,6 +10505,9 @@
       "Confirm email address": [
         "E-posta adresi onayı"
       ],
+      "Confirm password": [
+        "Parola onayı"
+      ],
       "Display name": [
         "Görüntülenecek ad"
       ],
@@ -10451,6 +10516,9 @@
       ],
       "Email address": [
         "E-posta adresi"
+      ],
+      "Password": [
+        "Parola"
       ],
       "Username": [
         "Kullanıcı adı"
@@ -10683,13 +10751,13 @@
         "Netflix, Disney+ ve Prime Video gibi yayın akışı hizmetlerindeki içeriğe her yerden erişin."
       ],
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
-        "En yüksek sınırları olan tüm ücretli hizmetler: 100 e-posta adresi, 10 özel etki alanı, sınırsız e-postamı gizle takma adı, takvim gönderisi, şifrelenmiş bulut depolama alanı, dosya paylaşımı ve diğer özellikler."
+        "En yüksek sınırları olan tüm ücretli hizmetler: 100 e-posta adresi, 10 özel etki alanı, sınırsız hide-my-email takma adı, takvim gönderisi, şifrelenmiş bulut depolama alanı, dosya paylaşımı ve diğer özellikler."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "1 özel e-posta etki alanı, 10 e-posta adresi, 10 e-postamı gizle takma adı, takvim paylaşımı ve diğer özellikler."
+        "1 özel e-posta etki alanı, 10 e-posta adresi, 10 hide-my-email takma adı, takvim paylaşımı ve diğer özellikler."
       ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "3 özel e-posta etki alanı, 15 e-posta adresi, sınırsız sayıda e-postamı gizle takma adı, takvim paylaşımı ve diğer özellikler."
+        "3 özel e-posta etki alanı, 15 e-posta adresi, sınırsız sayıda hide-my-email takma adı, takvim paylaşımı ve diğer özellikler."
       ],
       "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
         "Aileler veya küçük ekipler için mükemmel. Her birinin kendi gelen kutusu ve takma adı olabilir. Özel bir etki alanı kullanılması gerekir."
@@ -11339,6 +11407,9 @@
       ]
     },
     "Title": {
+      "${ appName } Free": [
+        "${ appName } Free"
+      ],
       "${ MAIL_APP_NAME } Keyboard Shortcuts": [
         "${ MAIL_APP_NAME } klavye kısayolları"
       ],
@@ -11909,6 +11980,9 @@
       "Other calendars": [
         "Diğer takvimler"
       ],
+      "Other preferences": [
+        "Diğer ayarlar"
+      ],
       "Password": [
         "Parola"
       ],
@@ -12202,6 +12276,9 @@
       "Your Plan": [
         "Tarifeniz"
       ],
+      "Your plan": [
+        "Tarifeniz"
+      ],
       "Your recovery status": [
         "Kurtarma durumunuz"
       ],
@@ -12385,6 +12462,9 @@
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "Gönderilmiş veya Taslaklar kutusundaki iletiler, başka bir klasöre taşısanız bile o klasörde görünmeyi sürdürür."
       ],
+      "See number of unread messages in the tab icon": [
+        "Okunmamış ileti sayısını sekme simgesinde görüntüler"
+      ],
       "Set how your list of messages looks like by default.": [
         "İleti listenizin varsayılan olarak nasıl görüneceğini seçin."
       ],
@@ -12473,6 +12553,11 @@
         "Dış hesabınız 24 saatlik bant genişliği sınırına ulaşmış olabilir. ${ BRAND_NAME }, olabilecek en kısa sürede içe aktarma işlemini sürdürmeye çalışacak."
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: end-to-end encrypted password manager": [
+        "${ PASS_APP_NAME }: Uçtan uca şifrelenmiş parola yöneticisi"
+      ]
+    },
     "Tooltip automatically attach public key": {
       "This automatically adds your public key to each message you send. Recipients can use this to verify the authenticity of your messages and send encrypted messages to you.": [
         "Bu seçenek, gönderdiğiniz her iletiye otomatik olarak herkese açık anahtarınızın eklenmesini sağlar. Alıcılar bu anahtarı kullanarak, iletilerinizi doğrulayabilir ve size şifrelenmiş iletiler gönderebilir."
@@ -12522,7 +12607,7 @@
     },
     "Upgrade": {
       "Upgrade to ${ passPlusPlanName } to get unlimited hide-my-email aliases": [
-        "Sınırsız sayıda e-postamı gizle takma adı kullanmak için ${ passPlusPlanName } tarifesine yükseltin"
+        "Sınırsız sayıda hide-my-email takma adı kullanmak için ${ passPlusPlanName } tarifesine yükseltin"
       ],
       "Upgrade to ${ planName } to connect up to ${ n } device to the VPN at once": [
         "Aynı anda ${ n } aygıt ile VPN bağlantısı kurmak için ${ planName }ne yükseltin",
@@ -12594,22 +12679,6 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfCountries } ülkede ${ numberOfServers }",
         "${ numberOfCountries } ülkede ${ numberOfServers }"
-      ]
-    },
-    "VPN signup": {
-      "Swiss flag": [
-        "İsviçre bayrağı"
-      ]
-    },
-    "VPNClient": {
-      "Brave": [
-        "Brave"
-      ],
-      "Chrome": [
-        "Chrome"
-      ],
-      "Firefox": [
-        "Firefox"
       ]
     },
     "Warning": {
