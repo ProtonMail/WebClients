@@ -23,16 +23,21 @@ type UseItemDraftOptions<V extends {}> = Pick<ItemDraft, 'type' | 'mode' | 'item
      * containing stale values (ie: see `Alias.new`) */
     onHydrated?: (hydration: MaybeNull<ItemDraft<V>['formData']>) => void;
 };
+
+export const useItemDraft = <V extends {}>() => {
+    const location = useLocation<ItemDraftState<V>>();
+    return location.state?.draft;
+};
+
 /* Everytime the passed values change, this hook triggers
  * a debounced  dispatch with the form data. The `itemDraft`
  * action is cache blocking to avoid swarming the service
  * worker with encryption requests. The draft data should
  * only be encrypted & cached when the pop-up is closed.*/
-export const useItemDraft = <V extends {}>(form: FormikContextType<V>, options: UseItemDraftOptions<V>) => {
+export const useDraftSync = <V extends {}>(form: FormikContextType<V>, options: UseItemDraftOptions<V>) => {
     const [ready, setReady] = useState<boolean>(false);
 
-    const location = useLocation<ItemDraftState<V>>();
-    const draft = location.state?.draft;
+    const draft = useItemDraft<V>();
     const { values, dirty } = form;
 
     const dispatch = useDispatch();
