@@ -1805,7 +1805,7 @@
     },
     "familyOffer_2023:Info": {
       "Online privacy, for your whole family": [
-        "Online-Privatsphäre für deine ganze Family"
+        "Online-Privatsphäre für deine ganze Familie"
       ]
     },
     "familyOffer_2023:Label": {
@@ -2288,9 +2288,6 @@
       ],
       "Each code can only be used once": [
         "Jeder Code kann nur einmal verwendet werden"
-      ],
-      "Email address already used": [
-        "E-Mail-Adresse wird bereits verwendet"
       ],
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
         "E-Mail-Hosting für 10 eigene E-Mail-Domainnamen ist kostenlos enthalten. Zusätzliche Domains können für ${ price } hinzugefügt werden."
@@ -3623,9 +3620,9 @@
         "${ n } Ordner und Kategorie",
         "${ n } Ordner und Kategorien"
       ],
-      "${ n } Hide-my-email alias": [
-        "${ n } Hide-my-email-Alias",
-        "${ n } Hide-my-email-Aliasse"
+      "${ n } hide-my-email alias": [
+        "${ n } hide-my-email-Alias",
+        "${ n } hide-my-email-Aliasse"
       ],
       "${ n } label": [
         "${ n } Kategorie",
@@ -3677,6 +3674,9 @@
       "Auto-reply": [
         "Automatische Antworten"
       ],
+      "Autofill credit cards (coming soon)": [
+        "Kreditkarten automatisch ausfüllen (bald verfügbar)"
+      ],
       "Available on all platforms": [
         "Verfügbar auf allen Plattformen"
       ],
@@ -3694,6 +3694,9 @@
       ],
       "Contact groups management": [
         "Kontaktgruppenverwaltung"
+      ],
+      "Custom domains for email aliases": [
+        "Eigene Domains für E-Mail-Aliasse"
       ],
       "Custom email domains": [
         "Eigene E-Mail-Domains"
@@ -4057,14 +4060,23 @@
       ]
     },
     "new_plans: tooltip": {
+      "${ CALENDAR_APP_NAME }: end-to-end encrypted calendar": [
+        "${ CALENDAR_APP_NAME }: Ende-zu-Ende-verschlüsselter Kalender"
+      ],
+      "${ DRIVE_APP_NAME }: end-to-end encrypted cloud storage": [
+        "${ DRIVE_APP_NAME }: Ende-zu-Ende-verschlüsselter Cloud-Speicher"
+      ],
+      "${ MAIL_APP_NAME }: end-to-end encrypted email": [
+        "${ MAIL_APP_NAME }: Ende-zu-Ende-verschlüsselte E-Mails"
+      ],
+      "${ VPN_APP_NAME }: unblock content, browse privately": [
+        "${ VPN_APP_NAME }: Inhalte entsperren, privat surfen"
+      ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
         "Greife von überall aus auf Inhalte von Streaming-Diensten zu, darunter Netflix, Disney+ und Prime Video."
       ],
       "Addresses have full sending and receiving capability. A user can have multiple addresses assigned to them; however, a single address cannot be assigned to multiple users.": [
         "E-Mail-Adressen besitzen volle Funktionalität hinsichtlich des Sendens und Empfangens von Nachrichten. Einem Benutzer können mehrere Adressen zugewiesen werden, eine Adresse kann jedoch nicht mehreren Benutzern zugeordnet sein."
-      ],
-      "Advanced security VPN with global network": [
-        "VPN mit erweiterter Sicherheit und globalem Netzwerk"
       ],
       "Allows you to access more than one network at the same time, e.g., stream a film from another country while still getting local search results": [
         "Mit dieser Funktion kannst du auf mehr als ein Netzwerk gleichzeitig zugreifen, z. B. wenn du einen Film aus einem anderen Land streamst und gleichzeitig lokale Suchergebnisse abrufst."
@@ -4099,12 +4111,6 @@
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "Teile deine Kalender ganz einfach mit Verwandten, Freunden oder Kollegen"
-      ],
-      "End-to-end encrypted calendar": [
-        "Ende-zu-Ende-verschlüsselter Kalender"
-      ],
-      "End-to-end encrypted file storage": [
-        "Ende-zu-Ende-verschlüsselter Speicher"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Mit dieser Funktion stellst du sicher, dass du alle an deine Domain gesendeten E-Mails erhältst, auch wenn die E-Mail-Adresse nicht oder nicht mehr existiert oder einen Tippfehler enthält."
@@ -4147,6 +4153,9 @@
       ],
       "Our servers’ hard disks are fully encrypted with multiple password layers so your data is protected even if our hardware is compromised": [
         "Die Festplatten unserer Server werden mit mehreren Passwortebenen vollständig verschlüsselt, sodass deine Daten auch dann geschützt bleiben, wenn unsere Hardware kompromittiert wurde."
+      ],
+      "Password management and identity protection": [
+        "Passwortverwaltung und Identitätsschutz"
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Gestalte deine E-Mail-Signatur individuell mit Logos, Bildern, Symbolen sozialer Netzwerke, Links zu deinen Kontaktdaten und mehr."
@@ -4267,6 +4276,9 @@
       ],
       "Priority support": [
         "Priorisierter Support"
+      ],
+      "Secure your passwords and identity with an open-source and encrypted password manager.": [
+        "Sichere deine Passwörter und deine Identität mit einem quelloffenen und verschlüsselten Passwort-Manager."
       ],
       "Support for 1 custom email domain": [
         "Unterstützung für eine eigene E-Mail-Domain"
@@ -4983,7 +4995,21 @@
         "pro Monat"
       ]
     },
+    "summer2023: Billing cycle option": {
+      "1 year": [
+        "Ein Jahr"
+      ],
+      "2 years": [
+        "2 Jahre"
+      ]
+    },
     "summer2023: Deal details": {
+      "Premium Drive": [
+        "Premium-Drive"
+      ],
+      "Premium Mail and Calendar": [
+        "Premium Mail und Calendar"
+      ],
       "Premium Password Manager": [
         "Premium-Passwortmanager"
       ]
@@ -4993,12 +5019,20 @@
         "Speichere deine Passwörter sicher und lasse sie automatisch auf Websites einfügen. Beinhaltet unbegrenzte Passwörter, automatisches Einfügen, Passwortgenerator und mehr."
       ]
     },
+    "summer2023: Short tool name to present Proton Pass": {
+      "Password manager": [
+        "Passwort-Manager"
+      ]
+    },
     "summer2023: Tooltip": {
       "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
         "Erstelle sichere Anmeldedaten auf allen deinen Geräten. Beinhaltet unbegrenzte Aliase, 20 Tresore, integrierte 2FA, automatisches Einfügen von Kreditkartendaten und mehr."
       ],
       "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
         "Greife auf blockierte Inhalte zu und surfe privat. Umfasst 2950 Server in über 65 Ländern, die Verbindung von bis zu 10 Geräten, weltweite Streaming-Dienste, Malware- und Werbeblocker und mehr."
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Beinhaltet Unterstützung für eine eigene E-Mail-Domain, 10 E-Mail-Adressen, 10 Hide-my-email-Aliasse, Kalenderfreigabe und mehr."
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "Sichere deine Dateien mit verschlüsseltem Cloud-Speicher. Beinhaltet Versionsverlauf, verschlüsselte Dateifreigabe und mehr."
@@ -5500,6 +5534,11 @@
         "Das ausgewählte Farbschema ist aktiv, wenn dein System auf \"Heller Modus\" eingestellt ist."
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: end-to-end encrypted password manager": [
+        "${ PASS_APP_NAME }: Ende-zu-Ende-verschlüsselter Passwort-Manager"
+      ]
+    },
     "Tor out of date": {
       "stable release": [
         "stabile Version"
@@ -5539,11 +5578,6 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } in ${ numberOfCountries } Land",
         "${ numberOfServers } in ${ numberOfCountries } Ländern"
-      ]
-    },
-    "VPN signup": {
-      "Swiss flag": [
-        "Schweizer Flagge"
       ]
     },
     "Warning": {

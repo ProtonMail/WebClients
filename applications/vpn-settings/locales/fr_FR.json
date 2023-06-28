@@ -2289,9 +2289,6 @@
       "Each code can only be used once": [
         "Chaque code ne peut être utilisé qu'une seule fois."
       ],
-      "Email address already used": [
-        "L'adresse e-mail est déjà utilisée."
-      ],
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
         "L'hébergement de messagerie pour 10 noms de domaine personnalisés est inclus gratuitement. Des domaines supplémentaires peuvent être ajoutés pour ${ price }."
       ],
@@ -3623,10 +3620,6 @@
         "${ n } dossier et label",
         "${ n } dossiers et labels"
       ],
-      "${ n } Hide-my-email alias": [
-        "${ n } alias « hide-my-email »",
-        "${ n } alias « hide-my-email »"
-      ],
       "${ n } label": [
         "${ n } label",
         "${ n } labels"
@@ -3694,6 +3687,9 @@
       ],
       "Contact groups management": [
         "Gestion des groupes de contacts"
+      ],
+      "Custom domains for email aliases": [
+        "Domaines personnalisés pour les alias d'adresses e-mail"
       ],
       "Custom email domains": [
         "Domaines de messagerie personnalisés"
@@ -4063,9 +4059,6 @@
       "Addresses have full sending and receiving capability. A user can have multiple addresses assigned to them; however, a single address cannot be assigned to multiple users.": [
         "Chaque adresse peut envoyer et recevoir des messages. Un utilisateur peut avoir plusieurs adresses, mais une adresse ne peut être attribuée qu'à un seul utilisateur."
       ],
-      "Advanced security VPN with global network": [
-        "VPN haute sécurité avec un réseau mondial"
-      ],
       "Allows you to access more than one network at the same time, e.g., stream a film from another country while still getting local search results": [
         "Avec cette fonctionnalité, vous pouvez accéder à plus d'un réseau en même temps. Vous pouvez par exemple regarder un film en streaming depuis un autre pays que celui où vous vous trouvez tout en consultant des informations locales (du pays où vous vous trouvez)."
       ],
@@ -4099,12 +4092,6 @@
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "Partagez facilement vos calendriers avec votre famille, vos amis ou vos collègues."
-      ],
-      "End-to-end encrypted calendar": [
-        "Calendrier chiffré de bout en bout"
-      ],
-      "End-to-end encrypted file storage": [
-        "Stockage de fichiers chiffré de bout en bout"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Recevez tous les messages envoyés à votre domaine, y compris ceux envoyés à une adresse qui n'existe pas (ou plus) ou contenant une faute de frappe."
@@ -4983,7 +4970,21 @@
         "par mois"
       ]
     },
+    "summer2023: Billing cycle option": {
+      "1 year": [
+        "1 an"
+      ],
+      "2 years": [
+        "2 ans"
+      ]
+    },
     "summer2023: Deal details": {
+      "Premium Drive": [
+        "Drive version premium"
+      ],
+      "Premium Mail and Calendar": [
+        "Mail et Calendar version premium"
+      ],
       "Premium Password Manager": [
         "Gestionnaire de mots de passe premium"
       ]
@@ -4993,12 +4994,20 @@
         "Enregistrez vos mots de passe en toute sécurité et renseignez-les automatiquement sur les sites web. Profitez d'un nombre illimité de mots de passe, du remplissage automatique, d'un générateur de mots de passe et de bien d'autres fonctionnalités."
       ]
     },
+    "summer2023: Short tool name to present Proton Pass": {
+      "Password manager": [
+        "Gestionnaire de mots de passe"
+      ]
+    },
     "summer2023: Tooltip": {
       "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
         "Créez des identifiants de connexion sécurisés sur tous vos appareils. Profitez d'un nombre illimité d'alias, de 20 coffres-forts, de l'authentification à deux facteurs (2FA) intégrée, du remplissage automatique des cartes bancaires et de bien d'autres fonctionnalités."
       ],
       "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
         "Cela comprend 2 950 serveurs répartis dans plus de 65 pays, la possibilité de connecter jusqu'à 10 appareils, l'accès aux services de streaming du monde entier, un bloqueur de logiciels malveillants et de publicités et bien d'autres fonctionnalités."
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Cela comprend la prise en charge de 1 domaines de messagerie personnalisés, de 10 adresses e-mail, d'un nombre illimité d'alias « hide-my-email », du partage de calendriers et bien d'autres fonctionnalités."
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "Sécurisez vos fichiers grâce au stockage cloud chiffré. Profitez de l'historique des versions, du partage chiffré des fichiers et de bien d'autres fonctionnalités."
@@ -5539,11 +5548,6 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } dans ${ numberOfCountries } pays",
         "${ numberOfServers } dans ${ numberOfCountries } pays"
-      ]
-    },
-    "VPN signup": {
-      "Swiss flag": [
-        "Drapeau suisse"
       ]
     },
     "Warning": {
