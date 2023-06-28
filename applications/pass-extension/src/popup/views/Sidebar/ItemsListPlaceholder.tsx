@@ -8,9 +8,12 @@ import { Button } from '@proton/atoms/Button';
 import type { IconName } from '@proton/components/components';
 import { Icon } from '@proton/components/components';
 import { selectPrimaryVault, selectVaultLimits } from '@proton/pass/store';
+import type { ItemType } from '@proton/pass/types';
+import clsx from '@proton/utils/clsx';
 
 import { UpgradeButton } from '../../../shared/components/upgrade/UpgradeButton';
 import { itemTypeToIconName } from '../../../shared/items/icons';
+import { itemTypeToSubThemeClassName } from '../../../shared/theme/sub-theme';
 import { ItemCard } from '../../components/Item/ItemCard';
 import { useItems } from '../../hooks/useItems';
 import { useNavigationContext } from '../../hooks/useNavigationContext';
@@ -30,7 +33,7 @@ export const ItemsListPlaceholder: VFC = () => {
     const { didDowngrade } = useSelector(selectVaultLimits);
 
     const getQuickActions = useMemo<
-        { type: string; icon: IconName; label: string; onClick: (e: MouseEvent<HTMLElement>) => void }[]
+        { type: ItemType | 'import'; icon: IconName; label: string; onClick: (e: MouseEvent<HTMLElement>) => void }[]
     >(
         () => [
             {
@@ -88,7 +91,7 @@ export const ItemsListPlaceholder: VFC = () => {
                             shape="solid"
                             color="weak"
                             key={`quick-action-${type}`}
-                            className={`ui-${type} w100 relative`}
+                            className={clsx('w100 relative', type !== 'import' && itemTypeToSubThemeClassName[type])}
                             onClick={onClick}
                         >
                             <Icon

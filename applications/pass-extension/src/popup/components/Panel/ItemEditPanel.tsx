@@ -6,7 +6,7 @@ import { Button } from '@proton/atoms';
 import { Icon } from '@proton/components';
 import type { ItemType } from '@proton/pass/types';
 
-import { itemTypeToItemClassName } from '../../../shared/items/className';
+import { itemTypeToSubThemeClassName } from '../../../shared/theme/sub-theme';
 import { DiscardableModalPanel, type DiscardableModalProps } from './DiscardableModalPanel';
 import { PanelHeader } from './Header';
 import { Panel } from './Panel';
@@ -22,7 +22,7 @@ export const ItemEditPanel: FC<Props> = ({ type, formId, valid, discardable, han
     <DiscardableModalPanel onDiscard={handleCancelClick} discardable={discardable}>
         {(props) => (
             <Panel
-                className={itemTypeToItemClassName[type]}
+                className={itemTypeToSubThemeClassName[type]}
                 header={
                     <PanelHeader
                         actions={[

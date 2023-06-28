@@ -8,8 +8,8 @@ import { DropdownMenuButton, Icon } from '@proton/components';
 import { selectAllVaults } from '@proton/pass/store';
 import type { ItemType, VaultShare } from '@proton/pass/types';
 
-import { itemTypeToItemClassName } from '../../../shared/items/className';
 import type { ItemTypeViewProps } from '../../../shared/items/types';
+import { itemTypeToSubThemeClassName } from '../../../shared/theme/sub-theme';
 import { QuickActionsDropdown } from '../../components/Dropdown/QuickActionsDropdown';
 import { VAULT_ICON_MAP } from '../../components/Vault/constants';
 import { PanelHeader } from './Header';
@@ -48,7 +48,7 @@ export const ItemViewPanel: FC<Props> = ({
 
     return (
         <Panel
-            className={itemTypeToItemClassName[type]}
+            className={itemTypeToSubThemeClassName[type]}
             header={
                 <PanelHeader
                     title={name}

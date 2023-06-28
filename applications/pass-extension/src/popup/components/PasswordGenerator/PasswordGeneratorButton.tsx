@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { Button, type ButtonProps } from '@proton/atoms';
 import { Icon } from '@proton/components/components';
 
-import { itemTypeToItemClassName } from '../../../shared/items/className';
+import { SubTheme } from '../../../shared/theme/sub-theme';
 import { usePasswordGeneratorContext } from './PasswordGeneratorContext';
 
 type Props = Omit<ButtonProps, 'onSubmit'> & { onSubmit: (password: string) => void };
@@ -16,7 +16,7 @@ const PasswordGeneratorButtonRaw: VFC<Props> = ({ onSubmit, type, ...rest }) => 
         generatePassword({
             onSubmit,
             actionLabel: c('Action').t`Fill password`,
-            className: itemTypeToItemClassName.login /* no-need for a type prop yet: only used for Login items */,
+            className: SubTheme.VIOLET /* no-need for a type prop yet: only used for Login items */,
         });
 
     return (
