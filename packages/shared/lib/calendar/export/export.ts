@@ -3,6 +3,7 @@ import { c } from 'ttag';
 
 import { CryptoProxy } from '@proton/crypto';
 import { withSupportedSequence } from '@proton/shared/lib/calendar/icsSurgery/vevent';
+import isTruthy from '@proton/utils/isTruthy';
 import partition from '@proton/utils/partition';
 import unique from '@proton/utils/unique';
 
@@ -168,6 +169,41 @@ const decryptEvent = async ({
     }
 };
 
+const tryDecryptEvent = async ({
+    calendar,
+    event,
+    calendarSettings,
+    defaultTzid,
+    weekStartsOn,
+    addresses,
+    getAddressKeys,
+    getCalendarKeys,
+}: {
+    calendar: VisualCalendar;
+    event: CalendarEvent;
+    calendarSettings: CalendarSettings;
+    addresses: Address[];
+    getAddressKeys: GetAddressKeys;
+    getCalendarKeys: GetCalendarKeys;
+    weekStartsOn: WeekStartsOn;
+    defaultTzid: string;
+}) => {
+    // ignore auto-added invites in shared calendars (they can't be decrypted and we don't display them in the UI)
+    if (!getIsOwnedCalendar(calendar) && getIsAutoAddedInvite(event)) {
+        return null;
+    }
+    return decryptEvent({
+        event,
+        calendarEmail: calendar.Email,
+        calendarSettings,
+        defaultTzid,
+        weekStartsOn,
+        addresses,
+        getAddressKeys,
+        getCalendarKeys,
+    });
+};
+
 interface ProcessData {
     calendar: VisualCalendar;
     addresses: Address[];
@@ -230,33 +266,22 @@ export const processInBatches = async ({
 
         const Events = EventsResponses.map((eventResponse) => eventResponse.Event);
 
-        const exportableEvents = getIsOwnedCalendar(calendar)
-            ? Events
-            : Events.filter((event) => {
-                  // ignore auto-added invites in shared calendars (they can't be decrypted and we don't display them in the UI)
-                  return !getIsAutoAddedInvite(event);
-              });
-
-        const eventsLength = exportableEvents.length;
-        if (!eventsLength) {
-            continue;
-        }
-
         if (signal.aborted) {
             return [[], [], totalToProcess];
         }
+        onProgress(Events, [], []);
 
-        onProgress(exportableEvents, [], []);
+        const eventsLength = Events.length;
 
-        lastId = exportableEvents[eventsLength - 1].ID;
+        lastId = Events[eventsLength - 1].ID;
 
         totalEventsFetched += eventsLength;
 
         const promise = Promise.all(
-            exportableEvents.map((event) =>
-                decryptEvent({
+            Events.map((event) =>
+                tryDecryptEvent({
+                    calendar,
                     event,
-                    calendarEmail: calendar.Email,
                     calendarSettings,
                     defaultTzid,
                     weekStartsOn,
@@ -267,8 +292,9 @@ export const processInBatches = async ({
             )
         )
             .then((veventsOrErrors) => {
+                const veventsOrErrorsNonNull: (VcalVeventComponent | ExportError)[] = veventsOrErrors.filter(isTruthy);
                 const [veventComponents, exportErrors] = partition<VcalVeventComponent, ExportError>(
-                    veventsOrErrors,
+                    veventsOrErrorsNonNull,
                     (item): item is VcalVeventComponent => !Array.isArray(item)
                 );
 
@@ -277,7 +303,7 @@ export const processInBatches = async ({
                 onProgress([], veventComponents, exportErrors);
             })
             .catch((e) => {
-                const exportErrors: ExportError[] = exportableEvents.map(() => [
+                const exportErrors: ExportError[] = Events.map(() => [
                     e.message,
                     EXPORT_EVENT_ERROR_TYPES.DECRYPTION_ERROR,
                 ]);
