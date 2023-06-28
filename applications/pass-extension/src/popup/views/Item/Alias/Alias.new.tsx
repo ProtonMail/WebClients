@@ -26,7 +26,7 @@ import { TitleField } from '../../../components/Field/TitleField';
 import { VaultSelectField } from '../../../components/Field/VaultSelectField';
 import { ItemCard } from '../../../components/Item/ItemCard';
 import { ItemCreatePanel } from '../../../components/Panel/ItemCreatePanel';
-import { useItemDraft } from '../../../hooks/useItemDraft';
+import { useDraftSync } from '../../../hooks/useItemDraft';
 import { usePopupContext } from '../../../hooks/usePopupContext';
 import { AliasForm } from './Alias.form';
 
@@ -120,7 +120,7 @@ export const AliasNew: VFC<ItemNewProps<'alias'>> = ({ shareId, onSubmit, onCanc
         },
     });
 
-    const draft = useItemDraft<NewAliasFormValues>(form, {
+    const draft = useDraftSync<NewAliasFormValues>(form, {
         type: 'alias',
         mode: 'new',
         itemId: 'draft-alias',
