@@ -1,6 +1,5 @@
 import { ChallengeResult } from '@proton/components';
 import { VerificationModel } from '@proton/components/containers/api/humanVerification/interface';
-import { KT_FF } from '@proton/components/containers/keyTransparency/ktStatus';
 import { AddressGeneration, AppIntent, AuthSession } from '@proton/components/containers/login/interface';
 import { SelectedProductPlans } from '@proton/components/containers/payments/subscription/PlanSelection';
 import { PayPalHook } from '@proton/components/containers/payments/usePayPal';
@@ -16,6 +15,7 @@ import {
     Cycle,
     HumanVerificationMethodType,
     Organization,
+    KeyTransparencyActivation,
     Plan,
     Subscription,
     SubscriptionCheckResponse,
@@ -179,7 +179,7 @@ export interface SignupCacheResult {
     setupData?: SetupData;
     accountData: AccountData;
     subscriptionData: SubscriptionData;
-    ktFeature: KT_FF;
+    ktActivation: KeyTransparencyActivation;
     appName: APP_NAMES;
     inviteData: InviteData | undefined;
     referralData: ReferralData | undefined;

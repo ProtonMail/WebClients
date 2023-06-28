@@ -13,18 +13,32 @@ export interface SignedKeyListItem {
 }
 
 interface SKLEpochs {
-    MinEpochID: number | null;
-    MaxEpochID: number | null;
-    ExpectedMinEpochID?: number;
-}
-
-export interface ActiveSignedKeyList extends SignedKeyList, SKLEpochs {}
-
-export interface ObsolescentSignedKeyList extends SKLEpochs {
     Data: string | null;
     Signature: string | null;
+    MinEpochID: number | null;
+    MaxEpochID: number | null;
+    ObsolescenceToken?: string;
+    ExpectedMinEpochID?: number;
+    Revision?: number;
+}
+
+export interface ActiveSignedKeyList extends SignedKeyList, SKLEpochs {
+    Data: string;
+    Signature: string;
+}
+
+export interface ObsolescentSignedKeyList extends SKLEpochs {
+    ObsolescenceToken: string;
+}
+
+export interface ActiveSignedKeyListWithRevision extends ActiveSignedKeyList {
+    Revision: number;
+}
+
+export interface ObsolescentSignedKeyListWithRevision extends ObsolescentSignedKeyList {
+    Revision: number;
 }
 
 // SKL served by the server. Note that Data and Signature
 // might be missing or be null for obsolescent SKLs
-export type FetchedSignedKeyList = ActiveSignedKeyList | ObsolescentSignedKeyList;
+export type FetchedSignedKeyList = ActiveSignedKeyListWithRevision | ObsolescentSignedKeyListWithRevision;

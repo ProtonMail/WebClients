@@ -1,20 +1,6 @@
-import { CryptoProxy } from '@proton/crypto';
-import noop from '@proton/utils/noop';
-
-import { KEY_FLAG, MIME_TYPES, RECIPIENT_TYPES } from '../../constants';
-import { API_CUSTOM_ERROR_CODES } from '../../errors';
-import {
-    Api,
-    ApiKeysConfig,
-    FetchedSignedKeyList,
-    IGNORE_KT,
-    ProcessedApiKey,
-    VerifyOutboundPublicKeys,
-} from '../../interfaces';
-import { getPublicKeys } from '../keys';
-
-const { KEY_GET_ADDRESS_MISSING, KEY_GET_DOMAIN_MISSING_MX, KEY_GET_INPUT_INVALID } = API_CUSTOM_ERROR_CODES;
-const EMAIL_ERRORS = [KEY_GET_ADDRESS_MISSING, KEY_GET_DOMAIN_MISSING_MX, KEY_GET_INPUT_INVALID];
+import { Api, ApiKeysConfig, KeyTransparencyActivation, VerifyOutboundPublicKeys } from '../../interfaces';
+import getPublicKeysEmailHelperLegacy from './getPublicKeysEmailHelperLegacy';
+import getPublicKeysEmailHelperWithKT from './getPublicKeysEmailHelperWithKT';
 
 /**
  * Ask the API for public keys for a given email address. The response will contain keys both
@@ -22,60 +8,23 @@ const EMAIL_ERRORS = [KEY_GET_ADDRESS_MISSING, KEY_GET_DOMAIN_MISSING_MX, KEY_GE
  */
 const getPublicKeysEmailHelper = async (
     api: Api,
+    ktActivation: KeyTransparencyActivation,
     Email: string,
     verifyOutboundPublicKeys: VerifyOutboundPublicKeys,
     silence = false,
     noCache = false
 ): Promise<ApiKeysConfig> => {
-    try {
-        const config: any = { ...getPublicKeys({ Email }), silence };
-        if (noCache) {
-            config.cache = 'no-cache';
-        }
-        const {
-            Keys = [],
-            SignedKeyList,
-            IgnoreKT,
-            ...rest
-        } = await api<{
-            RecipientType: RECIPIENT_TYPES;
-            MIMEType: MIME_TYPES;
-            Keys: { PublicKey: string; Flags: KEY_FLAG }[];
-            SignedKeyList: FetchedSignedKeyList | null;
-            Warnings: string[];
-            IgnoreKT?: IGNORE_KT;
-        }>(config);
-        const publicKeys: ProcessedApiKey[] = Keys.map(({ Flags, PublicKey }) => ({
-            armoredKey: PublicKey,
-            flags: Flags,
-        }));
-        await Promise.all(
-            publicKeys.map(async ({ armoredKey }, index) => {
-                try {
-                    const key = await CryptoProxy.importPublicKey({ armoredKey });
-                    publicKeys[index].publicKey = key;
-                } catch {
-                    noop();
-                }
-            })
-        );
-        await verifyOutboundPublicKeys(Keys, Email, SignedKeyList, IgnoreKT);
-        return {
-            ...rest,
-            publicKeys,
-            SignedKeyList,
-        };
-    } catch (error: any) {
-        const { data = {} } = error;
-        if (EMAIL_ERRORS.includes(data.Code)) {
-            return {
-                publicKeys: [],
-                Errors: [data.Error],
-                SignedKeyList: null,
-            };
-        }
-        throw error;
+    if (ktActivation === KeyTransparencyActivation.DISABLED) {
+        return getPublicKeysEmailHelperLegacy(api, Email, silence, noCache);
     }
+    const result = await getPublicKeysEmailHelperWithKT(api, Email, verifyOutboundPublicKeys, silence, noCache);
+    if (ktActivation === KeyTransparencyActivation.LOG_ONLY) {
+        return {
+            ...result,
+            ktVerificationStatus: undefined,
+        };
+    }
+    return result;
 };
 
 export default getPublicKeysEmailHelper;

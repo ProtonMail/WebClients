@@ -779,7 +779,12 @@ export const ENCRYPTION_CONFIGS: { [key: string]: EncryptionConfig } = {
 
 export enum KEY_FLAG {
     FLAG_EMAIL_NO_SIGN = 8,
-    // Flag used for external addresses
+    /**
+     * Key can't be used to encrypt email. There are multiple scenarios where this can happen
+     * - the key is associated to a product without Mail, like Drive or VPN
+     * - the key is associated to an external address
+     * - the key is associated to an internal address e2e encryption disabled (e.g. because of forwarding)
+     */
     FLAG_EMAIL_NO_ENCRYPT = 4,
     // Key can be used to encrypt
     FLAG_NOT_OBSOLETE = 2,

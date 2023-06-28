@@ -15,7 +15,7 @@ const DEFAULT_LIFETIME = 30 * MINUTE;
 export const useGetPublicKeys = () => {
     const cache = useCache();
     const api = useApi();
-    const { verifyOutboundPublicKeys } = useKeyTransparencyContext();
+    const { verifyOutboundPublicKeys, ktActivation } = useKeyTransparencyContext();
 
     return useCallback(
         (email, lifetime = DEFAULT_LIFETIME, noCache = false) => {
@@ -23,7 +23,8 @@ export const useGetPublicKeys = () => {
                 cache.set(CACHE_KEY, new Map());
             }
             const subCache = cache.get(CACHE_KEY);
-            const miss = () => getPublicKeysEmailHelper(api, email, verifyOutboundPublicKeys, true, noCache);
+            const miss = () =>
+                getPublicKeysEmailHelper(api, ktActivation, email, verifyOutboundPublicKeys, true, noCache);
             return getPromiseValue(subCache, email, miss, lifetime);
         },
         [api, cache]

@@ -9,12 +9,11 @@ import { Vr } from '@proton/atoms/Vr';
 import { Icon, InlineLinkButton, InputFieldTwo, Price, useModalState } from '@proton/components/components';
 import {
     CurrencySelector,
-    FeatureCode,
     Payment as PaymentComponent,
     StyledPayPalButton,
     usePayment,
 } from '@proton/components/containers';
-import { KT_FF } from '@proton/components/containers/keyTransparency/ktStatus';
+import useKTActivation from '@proton/components/containers/keyTransparency/useKTActivation';
 import Alert3ds from '@proton/components/containers/payments/Alert3ds';
 import {
     getCountries,
@@ -29,7 +28,6 @@ import {
     useApi,
     useConfig,
     useErrorHandler,
-    useFeature,
     useLoading,
 } from '@proton/components/hooks';
 import {
@@ -161,7 +159,7 @@ const Step1 = ({
     hideFreePlan: boolean;
     upsellImg: ReactElement;
 }) => {
-    const ktFeature = useFeature<KT_FF>(FeatureCode.KeyTransparencyWEB);
+    const ktActivation = useKTActivation();
     const [upsellModalProps, setUpsellModal, renderUpsellModal] = useModalState();
     const { isDesktop } = useActiveBreakpoint();
     const { APP_NAME } = useConfig();
@@ -360,7 +358,7 @@ const Step1 = ({
                 persistent: false,
                 trusted: false,
                 clientType,
-                ktFeature: (await ktFeature.get())?.Value,
+                ktActivation,
             };
 
             if (!validateFlow()) {
