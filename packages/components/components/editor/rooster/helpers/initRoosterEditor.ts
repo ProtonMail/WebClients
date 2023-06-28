@@ -2,6 +2,7 @@ import { RefObject } from 'react';
 
 import { DefaultFormat, Direction, EditorPlugin, IEditor } from 'roosterjs-editor-types';
 
+import { isMac } from '@proton/shared/lib/helpers/browser';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 
 import { DEFAULT_FONT_FACE, DEFAULT_FONT_SIZE, ROOSTER_SNAPSHOTS_MAX_SIZE } from '../../constants';
@@ -45,7 +46,10 @@ export const initRoosterEditor = async (element: HTMLDivElement, options: Option
     } = await import(/* webpackChunkName: "roosterjs", webpackPreload: true */ 'roosterjs');
 
     const plugins: EditorPlugin[] = [
-        new ContentEdit(),
+        new ContentEdit({
+            indentWhenAltShiftRight: !isMac(),
+            outdentWhenAltShiftLeft: !isMac(),
+        }),
         new Paste(),
         new HyperLink(),
         new EditorEventListener(options.onEditorEvent),
