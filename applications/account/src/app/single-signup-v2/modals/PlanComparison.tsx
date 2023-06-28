@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { DriveLogo, MailLogo, PassLogo, VpnLogo } from '@proton/components/components';
 import {
+    APPS,
     DRIVE_SHORT_APP_NAME,
     MAIL_SHORT_APP_NAME,
     PASS_SHORT_APP_NAME,
@@ -14,15 +15,10 @@ import { Plan, PlansMap } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 
+import FreeLogo from '../FreeLogo';
 import { getFreeTitle } from '../helper';
-import driveFree from '../logo/plan-drive-free.svg';
-import mailFree from '../logo/plan-mail-free.svg';
-import passFree from '../logo/plan-pass-free.svg';
-import vpnFree from '../logo/plan-vpn-free.svg';
 
 import './PlanComparison.scss';
-
-const getFreeLogo = (src: string) => <img src={src} height="20" alt="" />;
 
 const PlanItem = ({
     icon,
@@ -112,40 +108,41 @@ const PlanComparison = ({ currentPlan, upsellPlan, unlockPlan, children, plansMa
     const paidMap = getPaidMap(plansMap);
     const upsellPlanTitle = upsellPlan?.Title || '';
 
+    const freeSize = 18;
     const left: Item[] = [
         currentPlan?.Name === PLANS.MAIL_PRO
             ? {
                   plan: PLANS.MAIL_PRO,
                   title: getFreeTitle(MAIL_SHORT_APP_NAME),
-                  icon: getFreeLogo(mailFree),
+                  icon: <FreeLogo app={APPS.PROTONMAIL} size={freeSize} />,
                   selected: false,
                   bold: false,
               }
             : {
                   plan: PLANS.MAIL,
                   title: getFreeTitle(MAIL_SHORT_APP_NAME),
-                  icon: getFreeLogo(mailFree),
+                  icon: <FreeLogo app={APPS.PROTONMAIL} size={freeSize} />,
                   selected: false,
                   bold: false,
               },
         {
             plan: PLANS.PASS_PLUS,
             title: getFreeTitle(PASS_SHORT_APP_NAME),
-            icon: getFreeLogo(passFree),
+            icon: <FreeLogo app={APPS.PROTONPASS} size={freeSize} />,
             selected: false,
             bold: false,
         },
         {
             plan: PLANS.DRIVE,
             title: getFreeTitle(DRIVE_SHORT_APP_NAME),
-            icon: getFreeLogo(driveFree),
+            icon: <FreeLogo app={APPS.PROTONDRIVE} size={freeSize} />,
             selected: false,
             bold: false,
         },
         {
             plan: PLANS.VPN,
             title: getFreeTitle(VPN_SHORT_APP_NAME),
-            icon: getFreeLogo(vpnFree),
+            icon: <FreeLogo app={APPS.PROTONVPN_SETTINGS} size={freeSize} />,
             selected: false,
             bold: false,
         },

@@ -216,6 +216,8 @@ const SingleSignupContainerV2 = ({ fork, activeSessions, loader, onLogin, produc
         titles,
         planCards,
         benefits,
+        product,
+        shortAppName,
         productAppName,
         preload,
         setupImg,
@@ -744,6 +746,8 @@ const SingleSignupContainerV2 = ({ fork, activeSessions, loader, onLogin, produc
                         api={normalApi}
                         benefits={benefits}
                         measure={measure}
+                        app={product}
+                        shortAppName={shortAppName}
                         appName={productAppName}
                         selectedPlan={selectedPlan}
                         currentPlan={model.upsell.currentPlan}

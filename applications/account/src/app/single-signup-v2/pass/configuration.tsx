@@ -10,7 +10,7 @@ import {
     getLoginsAndNotes,
 } from '@proton/components/containers/payments/features/pass';
 import { PlanCardFeatureList } from '@proton/components/containers/payments/subscription/PlanCardFeatures';
-import { APPS, BRAND_NAME, CYCLE, PASS_APP_NAME, PLANS } from '@proton/shared/lib/constants';
+import { APPS, BRAND_NAME, CYCLE, PASS_APP_NAME, PASS_SHORT_APP_NAME, PLANS } from '@proton/shared/lib/constants';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
@@ -64,6 +64,10 @@ export const getPassBenefits = (): BenefitItem[] => {
     ];
 };
 
+export const getFreePassFeatures = () => {
+    return [getLoginsAndNotes(), getDevices(), getHideMyEmailAliases(10)];
+};
+
 export const getCustomPassFeatures = () => {
     return [
         getLoginsAndNotes(),
@@ -112,12 +116,7 @@ export const getPassConfiguration = ({ isDesktop }: { isDesktop: boolean }) => {
     const planCards: PlanCard[] = [
         {
             plan: PLANS.FREE,
-            subsection: (
-                <PlanCardFeatureList
-                    {...planCardFeatureProps}
-                    features={[getLoginsAndNotes(), getDevices(), getHideMyEmailAliases(10)]}
-                />
-            ),
+            subsection: <PlanCardFeatureList {...planCardFeatureProps} features={getFreePassFeatures()} />,
             type: 'standard',
             guarantee: false,
         },
@@ -160,6 +159,7 @@ export const getPassConfiguration = ({ isDesktop }: { isDesktop: boolean }) => {
             cycle: CYCLE.YEARLY,
         },
         product: APPS.PROTONPASS,
+        shortAppName: PASS_SHORT_APP_NAME,
         productAppName: PASS_APP_NAME,
         setupImg: <img src={setupPass} alt={c('pass_signup_2023: Onboarding').t`Welcome to ${PASS_APP_NAME}`} />,
         preload: (
