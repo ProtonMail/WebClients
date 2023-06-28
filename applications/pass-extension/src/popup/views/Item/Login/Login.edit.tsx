@@ -34,7 +34,7 @@ import { TitleField } from '../../../components/Field/TitleField';
 import { UrlGroupField, createNewUrl } from '../../../components/Field/UrlGroupField';
 import { ItemEditPanel } from '../../../components/Panel/ItemEditPanel';
 import { useAliasForLoginModal } from '../../../hooks/useAliasForLoginModal';
-import { useItemDraft } from '../../../hooks/useItemDraft';
+import { useDraftSync, useItemDraft } from '../../../hooks/useItemDraft';
 import { usePopupContext } from '../../../hooks/usePopupContext';
 import { AliasModal } from '../Alias/Alias.modal';
 
@@ -151,9 +151,10 @@ export const LoginEdit: VFC<ItemEditProps<'login'>> = ({ vault, revision, onSubm
             .concat(form.values.url)
             .some((url) => url.includes(subdomain ?? domain!));
 
-    const aliasModal = useAliasForLoginModal(form);
+    const itemDraft = useItemDraft<EditLoginItemFormValues>();
+    const aliasModal = useAliasForLoginModal(form, { lazy: !itemDraft?.formData.withAlias });
 
-    useItemDraft<EditLoginItemFormValues>(form, {
+    useDraftSync<EditLoginItemFormValues>(form, {
         type: 'login',
         mode: 'edit',
         itemId: itemId,

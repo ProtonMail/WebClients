@@ -1,4 +1,4 @@
-import { useEffect, useMemo } from 'react';
+import { useCallback, useEffect, useMemo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { aliasOptionsRequested, selectAliasOptions, selectRequest } from '@proton/pass/store';
@@ -14,15 +14,18 @@ export type SanitizedAliasOptions = {
 
 export type UseAliasOptionsConfig = {
     shareId: string;
+    lazy?: boolean /* defer the alias options dispatch */;
     onAliasOptionsLoaded?: (aliasOptions: SanitizedAliasOptions) => any;
 };
 
 export type UseAliasOptionsResult = {
     aliasOptionsLoading: boolean;
     aliasOptions: SanitizedAliasOptions | null;
+    requestAliasOptions: () => void;
 };
 
 export const useAliasOptions: (options: UseAliasOptionsConfig) => UseAliasOptionsResult = ({
+    lazy = false,
     shareId,
     onAliasOptionsLoaded,
 }) => {
@@ -39,9 +42,14 @@ export const useAliasOptions: (options: UseAliasOptionsConfig) => UseAliasOption
         [aliasOptions]
     );
 
+    const requestAliasOptions = useCallback(
+        () => !valid && dispatch(aliasOptionsRequested({ shareId })),
+        [shareId, valid]
+    );
+
     useEffect(() => {
-        if (!valid) dispatch(aliasOptionsRequested({ shareId }));
-    }, []);
+        if (!lazy) requestAliasOptions();
+    }, [lazy]);
 
     const sanitizedAliasOptions = useMemo(
         () =>
@@ -63,5 +71,5 @@ export const useAliasOptions: (options: UseAliasOptionsConfig) => UseAliasOption
         }
     }, [aliasOptionsLoading]);
 
-    return { aliasOptions: sanitizedAliasOptions, aliasOptionsLoading };
+    return { aliasOptions: sanitizedAliasOptions, aliasOptionsLoading, requestAliasOptions };
 };
