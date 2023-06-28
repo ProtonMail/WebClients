@@ -1,4 +1,4 @@
-import { fireEvent } from '@testing-library/dom';
+import { fireEvent } from '@testing-library/react';
 
 import { queryConversations } from '@proton/shared/lib/api/conversations';
 import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';

@@ -1,4 +1,4 @@
-import { fireEvent } from '@testing-library/dom';
+import { fireEvent } from '@testing-library/react';
 import { act } from '@testing-library/react';
 
 import { PublicKeyReference } from '@proton/crypto';

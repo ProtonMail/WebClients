@@ -1,4 +1,4 @@
-import { fireEvent, getByTestId as getByTestIdDefault } from '@testing-library/dom';
+import { fireEvent, getByTestId as getByTestIdDefault } from '@testing-library/react';
 import { act } from '@testing-library/react';
 import { addHours } from 'date-fns';
 import loudRejection from 'loud-rejection';

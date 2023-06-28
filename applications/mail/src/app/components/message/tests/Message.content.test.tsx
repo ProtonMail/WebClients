@@ -1,4 +1,4 @@
-import { fireEvent, screen } from '@testing-library/dom';
+import { fireEvent, screen } from '@testing-library/react';
 
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
