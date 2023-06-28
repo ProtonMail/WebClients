@@ -204,6 +204,40 @@ const tryDecryptEvent = async ({
     });
 };
 
+const fetchAndTryDecryptEvent = async ({
+    api,
+    eventID,
+    calendar,
+    calendarSettings,
+    defaultTzid,
+    weekStartsOn,
+    addresses,
+    getAddressKeys,
+    getCalendarKeys,
+}: {
+    api: Api;
+    eventID: string;
+    calendar: VisualCalendar;
+    calendarSettings: CalendarSettings;
+    addresses: Address[];
+    getAddressKeys: GetAddressKeys;
+    getCalendarKeys: GetCalendarKeys;
+    weekStartsOn: WeekStartsOn;
+    defaultTzid: string;
+}) => {
+    const event = (await api<{ Event: CalendarEvent }>({ ...getEvent(calendar.ID, eventID), silence: true })).Event;
+    return tryDecryptEvent({
+        event,
+        calendar,
+        calendarSettings,
+        defaultTzid,
+        weekStartsOn,
+        addresses,
+        getAddressKeys,
+        getCalendarKeys,
+    });
+};
+
 interface ProcessData {
     calendar: VisualCalendar;
     addresses: Address[];
@@ -257,31 +291,19 @@ export const processInBatches = async ({
 
         const [{ IDs }] = await Promise.all([api<{ IDs: string[] }>(queryEventIDs(calendar.ID, params)), wait(DELAY)]);
 
-        const EventsResponses: { Event: CalendarEvent }[] = await Promise.all(
-            IDs.map(
-                (eventID: string): Promise<{ Event: CalendarEvent }> =>
-                    api<{ Event: CalendarEvent }>({ ...getEvent(calendar.ID, eventID), silence: true })
-            )
-        );
-
-        const Events = EventsResponses.map((eventResponse) => eventResponse.Event);
-
         if (signal.aborted) {
             return [[], [], totalToProcess];
         }
-        onProgress(Events, [], []);
 
-        const eventsLength = Events.length;
-
-        lastId = Events[eventsLength - 1].ID;
-
-        totalEventsFetched += eventsLength;
+        lastId = IDs[IDs.length - 1];
+        totalEventsFetched += IDs.length;
 
         const promise = Promise.all(
-            Events.map((event) =>
-                tryDecryptEvent({
+            IDs.map((eventID) =>
+                fetchAndTryDecryptEvent({
+                    api,
+                    eventID,
                     calendar,
-                    event,
                     calendarSettings,
                     defaultTzid,
                     weekStartsOn,
@@ -303,7 +325,7 @@ export const processInBatches = async ({
                 onProgress([], veventComponents, exportErrors);
             })
             .catch((e) => {
-                const exportErrors: ExportError[] = Events.map(() => [
+                const exportErrors: ExportError[] = IDs.map(() => [
                     e.message,
                     EXPORT_EVENT_ERROR_TYPES.DECRYPTION_ERROR,
                 ]);
