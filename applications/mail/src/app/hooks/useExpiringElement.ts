@@ -1,5 +1,7 @@
 import { useMemo } from 'react';
 
+import { getUnixTime } from 'date-fns';
+
 import { Conversation } from '../models/conversation';
 import { Element } from '../models/element';
 import { useGetAllMessages, useGetMessage } from './message/useMessage';
@@ -23,8 +25,9 @@ export const useExpiringElement = (element: Element, conversationMode = false) =
                 const expiringMessageFromConversation = allMessages.find(
                     (message) => message?.data?.ConversationID === element.ID && !!message?.draftFlags?.expiresIn
                 );
+
                 const draftExpirationTime = expiringMessageFromConversation?.draftFlags?.expiresIn
-                    ? expiringMessageFromConversation.draftFlags?.expiresIn.getTime() / 1000
+                    ? getUnixTime(expiringMessageFromConversation.draftFlags?.expiresIn)
                     : 0;
                 const expirationTime =
                     expiringMessageFromConversation?.data?.ExpirationTime || draftExpirationTime || 0;
@@ -35,7 +38,7 @@ export const useExpiringElement = (element: Element, conversationMode = false) =
                 const message = getMessage(element.ID);
 
                 const draftExpirationTime = message?.draftFlags?.expiresIn
-                    ? message.draftFlags?.expiresIn.getTime() / 1000
+                    ? getUnixTime(message.draftFlags?.expiresIn)
                     : 0;
                 const expirationTime = message?.data?.ExpirationTime || draftExpirationTime || 0;
 
@@ -45,7 +48,8 @@ export const useExpiringElement = (element: Element, conversationMode = false) =
         return undefined;
     }, [element, conversationMode]);
 
-    const hasExpiration = !!expirationTime && expirationTime > 0;
-
-    return { expirationTime, hasExpiration };
+    return {
+        expirationTime,
+        hasExpiration: !!expirationTime && expirationTime > 0,
+    };
 };
