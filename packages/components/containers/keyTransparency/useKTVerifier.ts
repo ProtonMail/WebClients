@@ -1,68 +1,88 @@
 import { useRef } from 'react';
 
-import { PartialKTBlobContent, commitOwnKeystoLS, verifyAuditAddressesResult } from '@proton/key-transparency';
+import { serverTime } from '@proton/crypto';
+import { commitSKLToLS, fetchSignedKeyLists, getKTLocalStorage, ktSentryReport } from '@proton/key-transparency';
 import {
+    Address,
     Api,
     DecryptedKey,
     KeyTransparencyActivation,
     KeyTransparencyCommit,
     KeyTransparencyVerify,
+    SignedKeyList,
     UserModel,
 } from '@proton/shared/lib/interfaces';
 
-import useGetKTActivation from './useGetKTActivation';
-import { useKeyTransparencyContext } from './useKeyTransparencyContext';
-
-interface KTBlobSelf {
-    ktBlobContent: PartialKTBlobContent;
-    addressID: string;
-    userID: string;
-}
+import { useConfig } from '../../hooks';
+import useKTActivation from './useKTActivation';
 
 /**
  * Return a KT verifier for when the state exists, i.e. we are inside the apps
  * and therefore self audit could run and the normal flow of verification can be performed
  */
 const useKTVerifier = (api: Api, getUser: () => Promise<UserModel>) => {
-    const { getKTState } = useKeyTransparencyContext();
-    const getKTActivation = useGetKTActivation();
-    const { selfAuditPromise, ktLSAPI } = getKTState().current;
-    const ktBlobValues = useRef<KTBlobSelf[]>([]);
+    const { APP_NAME } = useConfig();
+    const ktLSAPI = getKTLocalStorage(APP_NAME);
+    const ktActivation = useKTActivation();
 
-    const keyTransparencyVerify: KeyTransparencyVerify = async (address, signedKeyList, publicKeys) => {
-        if ((await getKTActivation()) === KeyTransparencyActivation.DISABLED) {
+    interface CreatedSKL {
+        address: Address;
+        revision?: number;
+        signedKeyList: SignedKeyList;
+        creationTimestamp: number;
+    }
+    const createdSKLs = useRef<CreatedSKL[]>([]);
+
+    const keyTransparencyVerify: KeyTransparencyVerify = async (address, signedKeyList) => {
+        if (ktActivation === KeyTransparencyActivation.DISABLED) {
             return;
         }
 
-        let ktBlobContent: PartialKTBlobContent;
-        try {
-            ktBlobContent = await verifyAuditAddressesResult(address, signedKeyList, selfAuditPromise, publicKeys);
-        } catch (error: any) {
-            // In case of error here, for now we only log to sentry
-            // the problem without stopping users' operativity
-            return;
-        }
-
-        const { ID } = await getUser();
-
-        ktBlobValues.current.push({
-            ktBlobContent,
-            addressID: address.ID,
-            userID: ID,
+        createdSKLs.current.push({
+            address,
+            revision: address.SignedKeyList?.Revision,
+            signedKeyList,
+            creationTimestamp: +serverTime(),
         });
     };
 
     const keyTransparencyCommit: KeyTransparencyCommit = async (userKeys: DecryptedKey[]) => {
-        if ((await getKTActivation()) === KeyTransparencyActivation.DISABLED) {
-            return;
-        }
+        try {
+            if (ktActivation === KeyTransparencyActivation.DISABLED) {
+                return;
+            }
 
-        const privateKeys = userKeys.map(({ privateKey }) => privateKey);
-        let extendedKTBlobValue = ktBlobValues.current.shift();
-        while (!!extendedKTBlobValue) {
-            const { addressID, userID, ktBlobContent } = extendedKTBlobValue;
-            await commitOwnKeystoLS(ktBlobContent, privateKeys, api, ktLSAPI, userID, addressID);
-            extendedKTBlobValue = ktBlobValues.current.shift();
+            if (!createdSKLs.current.length) {
+                return;
+            }
+
+            const user = await getUser();
+
+            const privateKeys = userKeys.map(({ privateKey }) => privateKey);
+
+            for (const savedSKL of createdSKLs.current) {
+                const allSKLs = await fetchSignedKeyLists(api, savedSKL?.revision ?? 0, savedSKL.address.Email);
+                const correspondingSKL = allSKLs.find((skl) => savedSKL.signedKeyList.Data == skl.Data);
+                if (!correspondingSKL || !correspondingSKL.Revision || !correspondingSKL.ExpectedMinEpochID) {
+                    ktSentryReport('Could not find new SKL revision and expectedMinEpochID', {
+                        email: savedSKL.address.Email,
+                    });
+                    return;
+                }
+                const ktBlob = {
+                    creationTimestamp: savedSKL.creationTimestamp,
+                    expectedMinEpochID: correspondingSKL.ExpectedMinEpochID,
+                    revision: correspondingSKL.Revision,
+                    email: savedSKL.address.Email,
+                    data: savedSKL.signedKeyList.Data,
+                };
+                await commitSKLToLS(ktBlob, privateKeys, ktLSAPI, user.ID, savedSKL.address.ID);
+            }
+            createdSKLs.current = [];
+        } catch (error: any) {
+            const errorMessage = error instanceof Error ? error.message : 'unknown error';
+            const stack = error instanceof Error ? error.stack : undefined;
+            ktSentryReport(errorMessage, { context: 'KeyTransparencyCommit', stack });
         }
     };
 

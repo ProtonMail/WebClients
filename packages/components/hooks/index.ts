@@ -59,6 +59,7 @@ export {
     useGetCalendarKeys,
 } from './useGetDecryptedPassphraseAndCalendarKeys';
 export { default as useGetEncryptionPreferences } from './useGetEncryptionPreferences';
+export { default as useGetVerificationPreferences } from './useGetVerificationPreferences';
 export { default as useGetOrganizationKeyRaw } from './useGetOrganizationKeyRaw';
 export { default as useGetPublicKeys } from './useGetPublicKeys';
 export { default as useHasOutdatedRecoveryFile } from './useHasOutdatedRecoveryFile';

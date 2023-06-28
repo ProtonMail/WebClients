@@ -10,9 +10,9 @@ import { MessageVerification } from '../../../logic/messages/messagesTypes';
 import { store } from '../../../logic/store';
 import ExtraAskResign from './ExtraAskResign';
 
-const getMessageVerification = (isSenderVerified: boolean, pinnedKeys?: PublicKeyReference[]) => {
+const getMessageVerification = (pinnedKeysVerified: boolean, pinnedKeys?: PublicKeyReference[]) => {
     return {
-        senderVerified: isSenderVerified,
+        pinnedKeysVerified,
         senderPinnedKeys: pinnedKeys,
     } as MessageVerification;
 };

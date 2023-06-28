@@ -1,13 +1,12 @@
 import { CryptoProxy } from '@proton/crypto';
 import { arrayToHexString, binaryStringToArray, hexStringToArray } from '@proton/crypto/lib/utils';
 import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
-import { Api, FetchedSignedKeyList } from '@proton/shared/lib/interfaces';
+import { FetchedSignedKeyList } from '@proton/shared/lib/interfaces';
 import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';
 
 import { KT_DOMAINS, KT_LEN, LEFT_N, vrfHexKeyDev, vrfHexKeyProd } from '../constants/constants';
-import { fetchProof, fetchRecentEpoch } from '../helpers/fetchHelpers';
-import { getBaseDomain, ktSentryReport } from '../helpers/utils';
-import { Epoch, KTPROOF_TYPE, Proof } from '../interfaces';
+import { getBaseDomain, throwKTError } from '../helpers/utils';
+import { KTPROOF_TYPE, Proof } from '../interfaces';
 import { vrfVerify } from './vrf';
 
 /**
@@ -27,9 +26,15 @@ const verifyVRFProof = async (proof: Proof, email: string) => {
         );
         return vrfHash;
     } catch (error: any) {
-        ktSentryReport(error.message, { context: 'verifyVRFProof', email, verifier: proof.Verifier });
-        throw new Error(error.message);
+        return throwKTError('VRF proof verification failed', { email, verifier: proof.Verifier, cause: error });
     }
+};
+
+const getMerkleTreePath = (vrfHash: Uint8Array, revision: number): Uint8Array => {
+    return mergeUint8Arrays([
+        vrfHash.subarray(0, 28),
+        new Uint8Array([revision >>> 24, revision >>> 18, revision >>> 8, revision]),
+    ]);
 };
 
 /**
@@ -42,18 +47,17 @@ const verifyNeighbors = async (
     Neighbors: (string | null)[],
     TreeHash: string,
     vrfHash: Uint8Array,
+    revision: number,
     leafValue: Uint8Array = new Uint8Array(KT_LEN).fill(0),
     incompleteHashing: boolean = true
 ) => {
     if (Neighbors.length !== KT_LEN * 8) {
-        ktSentryReport('Inconsistent number of neighbors', {
-            context: 'verifyNeighbors',
+        return throwKTError('Inconsistent number of neighbors', {
             neighborsLength: Neighbors.length,
         });
-        throw new Error('Inconsistent number of neighbors');
     }
 
-    const key = vrfHash.subarray(0, KT_LEN);
+    const key = getMerkleTreePath(vrfHash, revision);
     const emptyNode = new Uint8Array(KT_LEN);
 
     let startHashing = false;
@@ -81,15 +85,13 @@ const verifyNeighbors = async (
     }
 
     if (arrayToHexString(leafValue) !== TreeHash) {
-        ktSentryReport('Hash chain does not result in TreeHash', {
-            context: 'verifyNeighbors',
+        return throwKTError('Hash chain does not result in TreeHash', {
             Neighbors: JSON.stringify(Neighbors),
             TreeHash,
             vrfHash: arrayToHexString(vrfHash),
             leafValue: arrayToHexString(leafValue),
             incompleteHashing,
         });
-        throw new Error('Hash chain does not result in TreeHash');
     }
 };
 
@@ -97,237 +99,134 @@ const verifyNeighbors = async (
  * Verify an address is not in KT by checking the Merkle Tree from the leaf 00...000. It only
  * starts hashing from the first non-null neighbour from the bottom of the tree
  */
-const verifyProofOfAbscence = async (proof: Proof, email: string, TreeHash: string) => {
+export const verifyProofOfAbscenceForRevision = async (
+    proof: Proof,
+    email: string,
+    TreeHash: string,
+    Revision: number
+) => {
+    if (proof.Type !== KTPROOF_TYPE.ABSENCE) {
+        return throwKTError('Proof type should be of absence', {
+            email,
+            proofType: proof.Type,
+        });
+    }
     const vrfHash = await verifyVRFProof(proof, email);
-    return verifyNeighbors(proof.Neighbors, TreeHash, vrfHash);
+    return verifyNeighbors(proof.Neighbors, TreeHash, vrfHash, Revision);
+};
+
+/**
+ * Verify an address is not in KT by checking the Merkle Tree from the leaf 00...000. It only
+ * starts hashing from the first non-null neighbour from the bottom of the tree
+ *
+ */
+export const verifyProofOfAbscenceForAllRevision = async (proof: Proof, email: string, TreeHash: string) => {
+    await verifyProofOfAbscenceForRevision(proof, email, TreeHash, 0);
+    proof.Neighbors.slice(224).forEach((neighbor) => {
+        if (neighbor != null) {
+            return throwKTError('Revision subtree is not empty', {
+                Neighbors: JSON.stringify(proof.Neighbors),
+            });
+        }
+    });
 };
 
 /**
  * Compute the leaf value as the SHA256 of the concatenation of the content,
  * either an obsolescence token or a SKL's data, and the revision
  */
-const computeLeafValue = async (content: Uint8Array, Revision: number) =>
-    CryptoProxy.computeHash({
+const computeLeafValue = async (content: Uint8Array, minEpochID: number): Promise<Uint8Array> => {
+    return CryptoProxy.computeHash({
         algorithm: 'SHA256',
         data: mergeUint8Arrays([
             await CryptoProxy.computeHash({
                 algorithm: 'SHA256',
                 data: content,
             }),
-            new Uint8Array([Revision >>> 24, Revision >>> 16, Revision >>> 8, Revision]),
+            new Uint8Array([minEpochID >>> 24, minEpochID >>> 16, minEpochID >>> 8, minEpochID]),
         ]),
     });
+};
 
 /**
  * Verify proof of obscolescence, i.e. with an ObsolescenceToken instead of a SKL. This also
  * entails to verifying that the server didn't place a valid SKL in the ObsolescenceToken field
  */
-const verifyProofOfObsolescence = async (proof: Proof, email: string, TreeHash: string, ObsolescenceToken: string) => {
-    const { Type, Revision } = proof;
+export const verifyProofOfObsolescence = async (
+    proof: Proof,
+    email: string,
+    TreeHash: string,
+    signedKeyList: Partial<FetchedSignedKeyList>
+) => {
+    const { Type } = proof;
     if (Type !== KTPROOF_TYPE.OBSOLESCENCE) {
-        ktSentryReport('Proof type should be of obsolescence', {
-            context: 'verifyProofOfObsolescence',
+        return throwKTError('Proof type should be of obsolescence', {
             email,
             proofType: Type,
         });
-        throw new Error('Proof type should be of obsolescence');
+    }
+    const { ObsolescenceToken, MinEpochID, Revision } = signedKeyList;
+    if (!ObsolescenceToken || !MinEpochID || !Revision) {
+        return throwKTError('Obsolescence proof with incomplete information', {
+            email,
+            signedKeyList,
+        });
     }
     if (!/^[a-f0-9]+$/.test(ObsolescenceToken)) {
-        ktSentryReport('ObsolescenceToken should be an hex string', {
-            context: 'verifyProofOfObsolescence',
+        return throwKTError('ObsolescenceToken should be an hex string', {
             email,
             ObsolescenceToken,
         });
-        throw new Error('ObsolescenceToken should be an hex string');
     }
-
     const vrfHash = await verifyVRFProof(proof, email);
-    const leafValue = await computeLeafValue(binaryStringToArray(ObsolescenceToken), Revision);
+    const leafValue = await computeLeafValue(binaryStringToArray(ObsolescenceToken), MinEpochID);
 
-    await verifyNeighbors(proof.Neighbors, TreeHash, vrfHash, leafValue, false);
+    await verifyNeighbors(proof.Neighbors, TreeHash, vrfHash, Revision, leafValue, false);
 };
 
 /**
  * Verify the KT proof given by the server for a specific email address
  */
-const verifyProofOfExistence = async (proof: Proof, email: string, TreeHash: string, sklData: string) => {
-    const { Type, Revision } = proof;
-    if (Type !== KTPROOF_TYPE.EXISTENCE) {
-        ktSentryReport('Proof type should be of existence', {
-            context: 'verifyProofOfExistence',
-            email,
-            proofType: Type,
-        });
-        throw new Error('Proof type should be of existence');
-    }
-
-    const vrfHash = await verifyVRFProof(proof, email);
-    const leafValue = await computeLeafValue(binaryStringToArray(sklData), Revision);
-
-    await verifyNeighbors(proof.Neighbors, TreeHash, vrfHash, leafValue, false);
-};
-
-/**
- * Verify that a proof of abscence exists and is correctly verified. This is
- * useful in scenarios where some actions on the keys can legitimately be
- * performed only if an address has never been in KT before, e.g. key upgrade
- * and key migration. If such actions, which can be triggered by the server,
- * are performed over addresses already in KT, they are considered to be malicious
- */
-export const verifyLatestProofOfAbsence = async (api: Api, email: string) => {
-    const epoch = await fetchRecentEpoch(api);
-    if (!epoch) {
-        return;
-    }
-
-    const { Proof } = await fetchProof(epoch.EpochID, email, api);
-
-    if (Proof.Type !== KTPROOF_TYPE.ABSENCE) {
-        ktSentryReport('Proof type should be of abscence', {
-            context: 'verifyLatestProofOfAbsence',
-            email,
-            proofType: Proof.Type,
-        });
-        return;
-    }
-
-    try {
-        await verifyProofOfAbscence(Proof, email, epoch.TreeHash);
-    } catch (error: any) {
-        // Since this function is used inside the apps directly, we shouldn't let
-        // it throw nor, for the time being of UI-less KT, trigger anything
-        ktSentryReport('Proof of abscence verification failed', {
-            context: 'verifyLatestProofOfAbsence',
-            email,
-        });
-    }
-};
-
-/**
- * Verify the absence or obsolescence proof of an email address for which no Signed Key List was provided.
- * Because a SKL is provided even for obsolescent catchall, the case where none is given
- * at all can only mean that both the proof and the catchall proof must be of absence
- */
-export const verifySKLAbsenceOrObsolescence = async (api: Api, email: string) => {
-    const epoch = await fetchRecentEpoch(api);
-    if (!epoch) {
-        return;
-    }
-
-    const { Proof } = await fetchProof(epoch.EpochID, email, api);
-
-    const { ObsolescenceToken, Type } = Proof;
-
-    if (Type === KTPROOF_TYPE.ABSENCE) {
-        return verifyProofOfAbscence(Proof, email, epoch.TreeHash);
-    } else if (Type === KTPROOF_TYPE.OBSOLESCENCE && ObsolescenceToken) {
-        return verifyProofOfObsolescence(Proof, email, epoch.TreeHash, ObsolescenceToken);
-    } else {
-        ktSentryReport('Proof type should be of absence or obsolescence', {
-            context: 'verifySKLAbsenceOrObsolescence',
-            ObsolescenceToken,
-            proofType: Type,
-            email,
-        });
-        throw new Error('Proof type should be of absence or obsolescence');
-    }
-
-    /* Ignore CatchAllProof for the time being
-    if (!CatchAllProof) {
-        ktSentryReport('CatchAllProof must exist', {
-            context: 'verifySKLAbsence',
-        });
-        throw new Error('CatchAllProof must exist');
-    }
-
-    const { ObsolescenceToken: CatchAllToken, Type: CatchAllType } = CatchAllProof;
-    const domain = getEmailDomain(email);
-
-    if (!!CatchAllToken || CatchAllType !== KTPROOF_TYPE.ABSENCE) {
-        ktSentryReport('CatchAllProof type should be of abscence', {
-            context: 'verifySKLAbsence',
-            CatchAllToken,
-            CatchAllType,
-        });
-        throw new Error('CatchAllProof type should be of abscence');
-    }
-    return verifyProofOfAbscence(CatchAllProof, domain, epoch.TreeHash);
-    */
-};
-
-/**
- * Verify the existence or obsolescence proofs, either its own or its catchall's, of
- * an email address for which a Signed Key List was provided
- */
-export const verifySKLExistence = async (
-    api: Api,
-    epoch: Epoch,
+export const verifyProofOfExistence = async (
+    proof: Proof,
     email: string,
-    signedKeyList: FetchedSignedKeyList
+    TreeHash: string,
+    signedKeyList: Partial<FetchedSignedKeyList>
 ) => {
-    const { Proof, CatchAllProof } = await fetchProof(epoch.EpochID, email, api);
+    const { Type } = proof;
+    if (Type !== KTPROOF_TYPE.EXISTENCE) {
+        return throwKTError('Proof type should be of existence', {
+            email,
+            proofType: Type,
+        });
+    }
+    const { Data, MinEpochID, Revision } = signedKeyList;
+    if (!Data || !MinEpochID || !Revision) {
+        return throwKTError('Existence proof with incomplete information', {
+            email,
+            signedKeyList,
+        });
+    }
+    const vrfHash = await verifyVRFProof(proof, email);
+    const leafValue = await computeLeafValue(binaryStringToArray(Data), MinEpochID);
 
-    const { ObsolescenceToken, Type, Revision } = Proof;
+    await verifyNeighbors(proof.Neighbors, TreeHash, vrfHash, Revision, leafValue, false);
+};
 
-    if (ObsolescenceToken) {
-        if (Type !== KTPROOF_TYPE.OBSOLESCENCE) {
-            ktSentryReport('Proof type should be of obsolescence', {
-                context: 'verifySKLExistence',
-                proofType: Type,
-                email,
-            });
-            throw new Error('Proof type should be of obsolescence');
-        }
-        await verifyProofOfObsolescence(Proof, email, epoch.TreeHash, ObsolescenceToken);
+export const verifyProofOfExistenceOrObsolescence = async (
+    proof: Proof,
+    email: string,
+    TreeHash: string,
+    signedKeyList: Partial<FetchedSignedKeyList>
+) => {
+    if (proof.Type === KTPROOF_TYPE.EXISTENCE) {
+        await verifyProofOfExistence(proof, email, TreeHash, signedKeyList);
+    } else if (proof.Type === KTPROOF_TYPE.OBSOLESCENCE) {
+        await verifyProofOfObsolescence(proof, email, TreeHash, signedKeyList);
     } else {
-        if (Type !== KTPROOF_TYPE.EXISTENCE || !signedKeyList.Data || !signedKeyList.Signature || !!CatchAllProof) {
-            ktSentryReport('Proof type should be of existence', {
-                context: 'verifySKLExistence',
-                signedKeyList: JSON.stringify(signedKeyList),
-                CatchAllProof,
-                proofType: Type,
-                email,
-            });
-            throw new Error('Proof type should be of existence');
-        }
-        await verifyProofOfExistence(Proof, email, epoch.TreeHash, signedKeyList.Data);
-
-        return { Revision, ObsolescenceToken };
-    }
-
-    /* Ignore CatchAllProof for the time being
-    if (!CatchAllProof) {
-        ktSentryReport('CatchAllProof must exist', {
-            context: 'verifySKLExistence',
+        return throwKTError('Proof type should be of existence or obsolescence', {
+            email,
+            proofType: proof.Type,
         });
-        throw new Error('CatchAllProof must exist');
     }
-
-    const { ObsolescenceToken: CatchAllToken, Type: CatchAllType } = CatchAllProof;
-    const domain = getEmailDomain(email);
-
-    if (CatchAllToken) {
-        if (CatchAllType !== KTPROOF_TYPE.OBSOLESCENCE) {
-            ktSentryReport('CatchAllProof type should be of obsolescence', {
-                context: 'verifySKLExistence',
-                catchallProofType: CatchAllType,
-            });
-            throw new Error('CatchAllProof type should be of obsolescence');
-        }
-        await verifyProofOfObsolescence(CatchAllProof, domain, epoch.TreeHash, CatchAllToken);
-
-        return { Revision, ObsolescenceToken };
-    }
-
-    if (CatchAllType !== KTPROOF_TYPE.ABSENCE) {
-        ktSentryReport('CatchAllProof type should be of abscence', {
-            context: 'verifySKLExistence',
-            catchallProofType: CatchAllType,
-        });
-        throw new Error('CatchAllProof type should be of abscence');
-    }
-    await verifyProofOfAbscence(CatchAllProof, domain, epoch.TreeHash);
-    */
-
-    return { Revision, ObsolescenceToken };
 };

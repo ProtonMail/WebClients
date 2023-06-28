@@ -1,9 +1,9 @@
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 
 import { metrics } from '../api/metrics';
-import { TelemetryEvents, TelemetryMeasurementGroups, sendTelemetryData } from '../api/telemetry';
+import { TelemetryReport, sendMultipleTelemetryData, sendTelemetryData } from '../api/telemetry';
 import { METRICS_LOG, SECOND } from '../constants';
-import { Api, SimpleMap } from '../interfaces';
+import { Api } from '../interfaces';
 import { wait } from './promise';
 
 // Make the metrics false by default to avoid (rare) cases where we could have sendMetricReport or sendTelemetryReport
@@ -34,6 +34,11 @@ export const sendMetricsReport = async (api: Api, Log: METRICS_LOG, Title?: stri
     void api(metrics({ Log, Title, Data }));
 };
 
+interface SendTelemetryReportArgs extends TelemetryReport {
+    api: Api;
+    silence?: boolean;
+}
+
 /**
  * Send a telemetry report (/data/v1/stats endpoint)
  */
@@ -44,14 +49,7 @@ export const sendTelemetryReport = async ({
     values,
     dimensions,
     silence = true,
-}: {
-    api: Api;
-    measurementGroup: TelemetryMeasurementGroups;
-    event: TelemetryEvents;
-    values?: SimpleMap<number>;
-    dimensions?: SimpleMap<string>;
-    silence?: boolean;
-}) => {
+}: SendTelemetryReportArgs) => {
     const possiblySilentApi = silence ? getSilentApi(api) : api;
 
     if (!metricsEnabled) {
@@ -59,14 +57,41 @@ export const sendTelemetryReport = async ({
     }
 
     try {
-        await possiblySilentApi(
+        void (await possiblySilentApi(
             sendTelemetryData({
                 MeasurementGroup: measurementGroup,
                 Event: event,
-                Values: values || {},
+                Values: values,
                 Dimensions: dimensions,
             })
-        );
+        ));
+    } catch {
+        // fail silently
+    }
+};
+
+interface SendMultipleTelemetryReportsArgs {
+    api: Api;
+    reports: TelemetryReport[];
+    silence?: boolean;
+}
+
+/**
+ * Send multiple telemetry reports (/data/v1/stats/multiple endpoint)
+ */
+export const sendMultipleTelemetryReports = async ({
+    api,
+    reports,
+    silence = true,
+}: SendMultipleTelemetryReportsArgs) => {
+    const possiblySilentApi = silence ? getSilentApi(api) : api;
+
+    if (!metricsEnabled) {
+        return;
+    }
+
+    try {
+        void (await possiblySilentApi(sendMultipleTelemetryData({ reports })));
     } catch {
         // fail silently
     }

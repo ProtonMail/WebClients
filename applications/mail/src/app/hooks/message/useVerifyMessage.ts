@@ -1,6 +1,6 @@
 import { useCallback } from 'react';
 
-import { useApi, useGetEncryptionPreferences } from '@proton/components';
+import { useApi, useGetVerificationPreferences } from '@proton/components';
 import { PublicKeyReference, WorkerDecryptionResult, getMatchingSigningKey } from '@proton/crypto';
 import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 
@@ -21,7 +21,7 @@ export const useVerifyMessage = (localID: string) => {
     const getMessage = useGetMessage();
     const getAttachment = useGetAttachment();
     const dispatch = useAppDispatch();
-    const getEncryptionPreferences = useGetEncryptionPreferences();
+    const getVerificationPreferences = useGetVerificationPreferences();
     const getMessageKeys = useGetMessageKeys();
     const contactsMap = useContactsMap();
 
@@ -37,7 +37,7 @@ export const useVerifyMessage = (localID: string) => {
 
             const errors: MessageErrors = {};
 
-            let encryptionPreferences;
+            let verificationPreferences;
             let verification;
             let signingPublicKey: PublicKeyReference | undefined;
             let attachedPublicKeys: PublicKeyReference[] | undefined;
@@ -45,7 +45,7 @@ export const useVerifyMessage = (localID: string) => {
             try {
                 const senderAddress = getData().Sender.Address;
 
-                encryptionPreferences = await getEncryptionPreferences(senderAddress, 0, contactsMap);
+                verificationPreferences = await getVerificationPreferences(senderAddress, 0, contactsMap);
 
                 const messageKeys = await getMessageKeys(getData());
 
@@ -53,7 +53,7 @@ export const useVerifyMessage = (localID: string) => {
                     decryptedRawContent,
                     signature,
                     getData(),
-                    encryptionPreferences.verifyingPinnedKeys
+                    verificationPreferences.verifyingKeys
                 );
 
                 attachedPublicKeys = await extractKeysFromAttachments(
@@ -66,8 +66,8 @@ export const useVerifyMessage = (localID: string) => {
                 const autocryptKeys = await extractKeysFromAutocrypt(getData().ParsedHeaders, senderAddress);
 
                 const allSenderPublicKeys = [
-                    ...encryptionPreferences.pinnedKeys,
-                    ...encryptionPreferences.apiKeys,
+                    ...verificationPreferences.apiKeys,
+                    ...verificationPreferences.pinnedKeys,
                     ...attachedPublicKeys,
                     ...autocryptKeys,
                 ];
@@ -90,7 +90,7 @@ export const useVerifyMessage = (localID: string) => {
                 dispatch(
                     verificationComplete({
                         ID: localID,
-                        encryptionPreferences,
+                        verificationPreferences,
                         verification,
                         signingPublicKey,
                         attachedPublicKeys,

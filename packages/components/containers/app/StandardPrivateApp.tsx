@@ -222,7 +222,7 @@ const StandardPrivateApp = <T, M extends Model<T>, E, EvtM extends Model<E>>({
         <EventManagerProvider eventManager={eventManagerRef.current}>
             <CalendarModelEventManagerProvider>
                 <ContactProvider>
-                    <KeyTransparencyManager APP_NAME={APP_NAME}>
+                    <KeyTransparencyManager appName={APP_NAME}>
                         <EventModelListener models={eventModels} />
                         <EventNotices />
                         <ThemeInjector />

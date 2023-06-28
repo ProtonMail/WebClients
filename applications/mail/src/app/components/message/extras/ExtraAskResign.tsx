@@ -18,7 +18,7 @@ interface Props {
 }
 
 const ExtraAskResign = ({ message, messageVerification, onResignContact }: Props) => {
-    const { senderVerified, senderPinnedKeys } = messageVerification || {};
+    const { pinnedKeysVerified, senderPinnedKeys } = messageVerification || {};
     const { Address = '' } = message.Sender || {};
     const contactsMap = useContactsMap();
 
@@ -30,7 +30,7 @@ const ExtraAskResign = ({ message, messageVerification, onResignContact }: Props
 
     const senderName = message?.Sender?.Name || message?.Sender?.Address; // No optional in translations
 
-    if (senderVerified || !senderPinnedKeys?.length) {
+    if (pinnedKeysVerified || !senderPinnedKeys?.length) {
         return null;
     }
 

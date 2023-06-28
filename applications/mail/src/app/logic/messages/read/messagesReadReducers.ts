@@ -161,25 +161,34 @@ export const documentInitializeFulfilled = (
 export const verificationComplete = (
     state: Draft<MessagesState>,
     {
-        payload: { ID, encryptionPreferences, verification, attachedPublicKeys, signingPublicKey, errors },
+        payload: { ID, verificationPreferences, verification, attachedPublicKeys, signingPublicKey, errors },
     }: PayloadAction<VerificationParams>
 ) => {
     const messageState = getMessage(state, ID);
 
     if (messageState) {
-        const pinnedFingerprints = new Set(encryptionPreferences?.pinnedKeys.map((key) => key.getFingerprint()));
-        const senderPinnableKeys = encryptionPreferences?.apiKeys.filter(
-            (key) => !pinnedFingerprints.has(key.getFingerprint())
+        const senderPinnableKeys = verificationPreferences?.apiKeys.filter(
+            (key) => !verificationPreferences?.pinnedKeysFingerprints?.has(key.getFingerprint())
         );
+        const signingFingerprint = signingPublicKey?.getFingerprint();
+        const signingPublicKeyIsPinned = signingFingerprint
+            ? verificationPreferences?.pinnedKeysFingerprints?.has(signingFingerprint)
+            : undefined;
+        const signingPublicKeyIsCompromised = signingFingerprint
+            ? verificationPreferences?.compromisedKeysFingerprints?.has(signingFingerprint)
+            : undefined;
         messageState.verification = {
             // do not use compromised keys for verification
-            senderPinnedKeys: encryptionPreferences?.verifyingPinnedKeys,
+            senderPinnedKeys: verificationPreferences?.pinnedKeys,
             senderPinnableKeys,
             signingPublicKey,
             attachedPublicKeys,
-            senderVerified: encryptionPreferences?.isContactSignatureVerified,
+            pinnedKeysVerified: verificationPreferences?.pinnedKeysVerified,
             verificationStatus: verification?.verified,
             verificationErrors: verification?.verificationErrors,
+            ktVerificationStatus: verificationPreferences?.ktVerificationStatus,
+            signingPublicKeyIsPinned,
+            signingPublicKeyIsCompromised,
         };
         messageState.errors = { ...messageState.errors, ...errors };
     }
@@ -192,7 +201,7 @@ export const resign = (
     const messageState = getMessage(state, ID);
 
     if (messageState && messageState.verification) {
-        messageState.verification.senderVerified = isContactSignatureVerified;
+        messageState.verification.pinnedKeysVerified = isContactSignatureVerified;
     }
 };
 
