@@ -1,4 +1,5 @@
 export enum PassFeature {
+    PassCreditCardsV1 = 'PassCreditCardsV1',
     PassCustomFields = 'PassCustomFields',
 }
 

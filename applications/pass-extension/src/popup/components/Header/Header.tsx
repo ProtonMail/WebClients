@@ -15,9 +15,11 @@ import {
 } from '@proton/components';
 import { selectAliasLimits } from '@proton/pass/store';
 import type { ItemType } from '@proton/pass/types';
+import { PassFeature } from '@proton/pass/types/api/features';
 import { pipe } from '@proton/pass/utils/fp';
 import clsx from '@proton/utils/clsx';
 
+import { useFeatureFlag } from '../../../shared/hooks/useFeatureFlag';
 import { itemTypeToIconName } from '../../../shared/items';
 import { itemTypeToSubThemeClassName } from '../../../shared/theme/sub-theme';
 import { useCopyToClipboard } from '../../hooks/useCopyToClipboard';
@@ -39,10 +41,12 @@ export const Header: VFC<{}> = () => {
     const withClose = <T extends (...args: any[]) => void>(action: T) => pipe(action, close) as T;
     const copyToClipboard = useCopyToClipboard();
     const { needsUpgrade, aliasLimit, aliasLimited, aliasTotalCount } = useSelector(selectAliasLimits);
+    const showCreditCards = useFeatureFlag<boolean>(PassFeature.PassCreditCardsV1);
 
     const handleNewItemClick = (type: ItemType) => {
-        // Trick to be able to return to the initial route using history.goBack() if user switches
-        // from iteam creation routes for multiple subsequent item types.
+        /* Trick to be able to return to the initial route using
+         * history.goBack() if user switches from iteam creation
+         * routes for multiple subsequent item types. */
         const shouldReplace = history.location.pathname.includes('/item/new/');
         history[shouldReplace ? 'replace' : 'push'](`/item/new/${type}`);
     };
@@ -99,6 +103,8 @@ export const Header: VFC<{}> = () => {
                 >
                     <DropdownMenu>
                         {quickAddActions.map(({ type, label }) => {
+                            if (type === 'creditCard' && !showCreditCards) return null;
+
                             return (
                                 <DropdownMenuButton
                                     key={`item-type-dropdown-button-${type}`}
