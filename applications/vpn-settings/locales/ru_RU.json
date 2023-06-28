@@ -2315,9 +2315,6 @@
       "Each code can only be used once": [
         "Каждый код может быть использован только один раз"
       ],
-      "Email address already used": [
-        "Адрес электронной почты уже используется"
-      ],
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
         "Почтовый хостинг для 10 своих почтовых доменов включен бесплатно. Дополнительные домены могут быть добавлены за ${ price }."
       ],
@@ -3676,12 +3673,6 @@
         "${ n } папок и ярлыков",
         "Папок и ярлыков: ${ n }"
       ],
-      "${ n } Hide-my-email alias": [
-        "${ n } псевдоним для скрытия своей электронной почты",
-        "${ n } псевдонима для скрытия своей электронной почты",
-        "${ n } псевдонимов для скрытия своей электронной почты",
-        "${ n } псевдонимов для скрытия своей электронной почты"
-      ],
       "${ n } label": [
         "${ n } ярлык",
         "${ n } ярлыка",
@@ -4134,9 +4125,6 @@
       "Addresses have full sending and receiving capability. A user can have multiple addresses assigned to them; however, a single address cannot be assigned to multiple users.": [
         "В адресах есть полный функционал для отправки и получения сообщений. Одному пользователю можно назначить несколько адресов, однако один адрес нельзя назначить разным пользователям"
       ],
-      "Advanced security VPN with global network": [
-        "VPN с повышенным уровнем безопасности при работе в глобальной сети"
-      ],
       "Allows you to access more than one network at the same time, e.g., stream a film from another country while still getting local search results": [
         "Открывает одновременный доступ к нескольким сетям. Например, вы можете смотреть в Интернете фильм из другой страны и при этом получать местные результаты на поисковой запрос"
       ],
@@ -4172,12 +4160,6 @@
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "Легко делитесь своими календарями с семьей, друзьями или коллегами"
-      ],
-      "End-to-end encrypted calendar": [
-        "Календарь, зашифрованный сквозным методом"
-      ],
-      "End-to-end encrypted file storage": [
-        "Файлы в хранилище зашифрованы сквозным методом"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Гарантирует, что вы получите все письма, отправленные на ваш домен, даже если адрес электронной почты не существует, его больше нет или в нем допущена ошибка"
@@ -5098,7 +5080,21 @@
         "в месяц"
       ]
     },
+    "summer2023: Billing cycle option": {
+      "1 year": [
+        "1 год"
+      ],
+      "2 years": [
+        "2 года"
+      ]
+    },
     "summer2023: Deal details": {
+      "Premium Drive": [
+        "Платная версия Drive"
+      ],
+      "Premium Mail and Calendar": [
+        "Платная версия Mail и Calendar"
+      ],
       "Premium Password Manager": [
         "Платная версия менеджера паролей"
       ]
@@ -5108,12 +5104,20 @@
         "Храните неограниченное количество паролей в безопасности и используйте их автозаполнение, чтобы входить в аккаунты одним нажатием. Мы также предлагаем генератор паролей и другие функции."
       ]
     },
+    "summer2023: Short tool name to present Proton Pass": {
+      "Password manager": [
+        "Менеджер паролей"
+      ]
+    },
     "summer2023: Tooltip": {
       "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
         "Создавайте надежные данные для входа на всех устройствах. Вам будут доступны неограниченное количество псевдонимов, 20 хранилищ, встроенная двухфакторная аутентификация, автозаполнение данных кредитной карты и многое другое."
       ],
       "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
         "Включает 2950 серверов в более чем 65 странах с возможностью подключения до 10 устройств, доступ к стриминговым платформам со всего мира, блокировщик рекламы и вредоносного ПО и другие преимущества."
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Включает поддержку 1 пользовательского домена, 10 адресов электронной почты, 10 алиасов hide-my-email, совместный доступ к календарю и другие преимущества."
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "Защитите свои материалы при помощи зашифрованного облачного хранилища. Вам будут доступны история версий, зашифрованный обмен файлами и многое другое."
@@ -5666,11 +5670,6 @@
         "${ numberOfServers } в ${ numberOfCountries } странах",
         "${ numberOfServers } в ${ numberOfCountries } странах",
         "${ numberOfServers } в ${ numberOfCountries } странах"
-      ]
-    },
-    "VPN signup": {
-      "Swiss flag": [
-        "Флаг Швейцарии"
       ]
     },
     "Warning": {
