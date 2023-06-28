@@ -173,7 +173,7 @@
         "Netejar la consulta"
       ],
       "Clear search": [
-        "Netejar cerca"
+        "Neteja la cerca"
       ],
       "Click here.": [
         "Feu clic aquí."
@@ -295,13 +295,13 @@
         "Eliminar esborrany"
       ],
       "Delete folder": [
-        "Eliminar carpeta"
+        "Elimina la carpeta"
       ],
       "Delete label": [
-        "Eliminar etiqueta"
+        "Elimina l'etiqueta"
       ],
       "Delete permanently": [
-        "Suprimeix permanentment"
+        "Elimina de manera permanent"
       ],
       "Deselect": [
         "Anul·la la selecció"
@@ -331,7 +331,7 @@
         "Descarregar ${ attachmentName }"
       ],
       "Downloading": [
-        "Descarregant"
+        "S'està descarregant"
       ],
       "Edit": [
         "Edita"
@@ -563,7 +563,7 @@
         "Carrega la imatge"
       ],
       "Load more": [
-        "Carrega-ne més"
+        "Carrega'n més"
       ],
       "Loading${ ellipsis }": [
         "Carregant${ ellipsis }"
@@ -648,6 +648,9 @@
       ],
       "Move all messages from this label": [
         "Mou tots els missatges d'aquesta etiqueta"
+      ],
+      "Move all to archive": [
+        "Moure-ho tot a l'arxiu"
       ],
       "Move all to trash": [
         "Mou-ho tot a la paperera"
@@ -878,7 +881,7 @@
         "Cerca al contingut del missatge"
       ],
       "See business plans": [
-        "Veure les subscripcions per a empreses"
+        "Mostra les subscripcions per a empreses"
       ],
       "See plan features": [
         "Veure les funcionalitats del pla"
@@ -920,7 +923,7 @@
         "Establir"
       ],
       "Set as default": [
-        "Establir com per defecte"
+        "Estableix com a predeterminat"
       ],
       "Set encryption": [
         "Defineix el xifrat"
@@ -2011,7 +2014,7 @@
         "Rol"
       ],
       "Time zone": [
-        "Fus horari"
+        "Zona horària"
       ],
       "Title": [
         "Títol"
@@ -3140,7 +3143,7 @@
         "Escolliu una data futura."
       ],
       "Choose a date within the next ${ EXPIRATION_TIME_MAX_DAYS } day.": [
-        "Escolliu una data dintre del proper ${ EXPIRATION_TIME_MAX_DAYS } dia.",
+        "Escolliu una data dintre d'${ EXPIRATION_TIME_MAX_DAYS } dia.",
         "Escolliu una data dintre dels propers ${ EXPIRATION_TIME_MAX_DAYS } dies."
       ],
       "Choose a date within the next ${ SCHEDULED_MAX_DATE_DAYS } day.": [
@@ -3172,12 +3175,12 @@
         "Error de desxifratge: ha fallat el desxifratge del contingut xifrat d’aquest missatge."
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
-        "Desmarqueu almenys ${ calendarsToFixCount } calendari.",
-        "Desmarqueu almenys ${ calendarsToFixCount } calendaris."
+        "Desseleccioneu almenys ${ calendarsToFixCount } calendari",
+        "Desseleccioneu almenys ${ calendarsToFixCount } calendaris"
       ],
       "Deselect at least ${ calendarsToFixCount } calendar or": [
-        "Desmarqueu almenys ${ calendarsToFixCount } calendari o",
-        "Desmarqueu almenys ${ calendarsToFixCount } calendaris o"
+        "Desseleccioneu almenys ${ calendarsToFixCount } calendari o",
+        "Desseleccioneu almenys ${ calendarsToFixCount } calendaris o"
       ],
       "Domain not available, try again later": [
         "El domini no està disponible, torneu-ho a provar més tard"
@@ -3189,7 +3192,7 @@
         "Correu electrònic deshabilitada"
       ],
       "Email address is required": [
-        "L'adreça de correu electrònic és obligatòria."
+        "L'adreça de correu electrònic és obligatòria"
       ],
       "Email is not valid": [
         "El correu electrònic no és vàlid"
@@ -3228,7 +3231,7 @@
         "La càrrega de la imatge ha fallat"
       ],
       "IMAP server is required": [
-        "Es requereix un servidor IMAP."
+        "El servidor IMAP és obligatori"
       ],
       "Incorrect login credentials. Please try again.": [
         "Credencials d'inici de sessió incorrectes. Torneu-ho a provar."
@@ -3258,8 +3261,8 @@
         "S'ha excedit el nombre màxim d'adjunts (${ attachmentsCountLimit })"
       ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
-        "Combineu almenys ${ calendarsToFixCount } calendari importat amb un calendari ${ BRAND_NAME } existent.",
-        "Combineu almenys ${ calendarsToFixCount } calendaris importats amb els vostres calendaris ${ BRAND_NAME } existents."
+        "Combineu almenys ${ calendarsToFixCount } calendari amb un calendari de ${ BRAND_NAME } existent",
+        "Combineu almenys ${ calendarsToFixCount } calendaris amb calendaris de ${ BRAND_NAME } existents"
       ],
       "Message needs to be sent first": [
         "El missatge s'ha d'enviar prèviament"
@@ -3286,7 +3289,7 @@
         "No s'ha trobat cap contacte per importar"
       ],
       "No emails found to import - the account does not have an inbox": [
-        "No s'han trobat correus electrònics per a importar - el compte no té una safata d'entrada"
+        "No s'han trobat correus electrònics per a importar. El compte no té una safata d'entrada"
       ],
       "No valid address found": [
         "No s’ha trobat una adreça vàlida"
@@ -3306,10 +3309,10 @@
         "Alguns grups no tenen contactes: ${ noContactGroupList } "
       ],
       "Password is required": [
-        "La contrasenya és obligatòria."
+        "La contrasenya és obligatòria"
       ],
       "Passwords do not match": [
-        "Les contrasenyes no coincideixen."
+        "Les contrasenyes no coincideixen"
       ],
       "Please activate your search again": [
         "Activeu de nou la vostra cerca."
@@ -3319,7 +3322,7 @@
         "Arregleu els conflictes ressaltats per continuar."
       ],
       "Port is required": [
-        "Es requereix el port"
+        "El port és obligatori"
       ],
       "Primary address key is not decrypted": [
         "La clau de la adreça primària no està desxifrada"
@@ -3331,7 +3334,7 @@
         "La clau principal no és vàlida per a l'enviament"
       ],
       "Primary key retrieved for ${ BRAND_NAME } user is not valid for sending": [
-        "La clau principal obtinguda per a l'usuari de ${ BRAND_NAME } no és vàlida per enviar"
+        "La clau principal obtinguda per a l'usuari de ${ BRAND_NAME } no és vàlida per a l'enviament"
       ],
       "Public key could not be trusted": [
         "La clau pública no pot ser verificada"
@@ -3371,7 +3374,7 @@
         "Alguns dels vostres noms de carpeta no estan disponibles. Personalitzeu la importació per tal d'editar-ne els noms."
       ],
       "Some of your folder names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
-        "Els noms d'algunes de les carpetes superen el límit de caràcters màxim de ${ MAIL_APP_NAME }. Modifiqueu la importació per tal d'editar-ne els noms."
+        "Els noms d'algunes de les carpetes superen el límit màxim de caràcters de ${ MAIL_APP_NAME }. Personalitzeu la importació per a editar-ne els noms."
       ],
       "Some of your label names are reserved. Please customize the import to edit these names.": [
         "Alguns dels vostres noms d'etiqueta estan reservats. Personalitzeu la importació per tal d'editar-ne els noms."
@@ -3393,7 +3396,7 @@
         "No s'ha pogut desxifrar els fitxers adjunts.\nSi teniu la clau privada corresponent, encara podreu desxifrar\nels fitxers amb un programa com GnuPG."
       ],
       "The email addresses do not match": [
-        "Les adreces de correu electrònic no coincideixen."
+        "Les adreces de correu electrònic no coincideixen"
       ],
       "The folder name is invalid. Please choose a different name.": [
         "El nom de la carpeta no és vàlid. Escolliu-ne un altre."
@@ -3429,10 +3432,10 @@
         "Hi ha hagut un error exportant les vcards dels contactes"
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
-        "Aquest camp requereix el màxim de ${ maximumLength } caràcters."
+        "Aquest camp excedeix el màxim de ${ maximumLength } caràcters."
       ],
       "This field is required": [
-        "Aquest camp és obligatori."
+        "Aquest camp és obligatori"
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Aquest camp requereix un mínim de ${ minimumLength } caràcters."
@@ -3450,13 +3453,13 @@
         "Aquest missatge ja s'ha enviat. S'ha guardat un esborrany nou."
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
-        "Aquest missatge pot contenir algunes adreces URL que no es poden obrir amb el navegador actual."
+        "Aquest missatge pot contenir adreces URL que no es puguin obrir amb el navegador actual."
       ],
       "Trusted keys are not valid for sending": [
         "Les claus de confiança no són vàlides per enviar-les"
       ],
       "Try using only letters, numerals, and _.-": [
-        "Intenteu utilitzant només lletres, numèrics, i _.-"
+        "Intenteu utilitzar només lletres, numerals i _.-"
       ],
       "Unknown error": [
         "Error desconegut"
@@ -3477,7 +3480,7 @@
         "No podeu enviar un correu a més de 100 destinataris"
       ],
       "You can't send vCard files of more than 10 contacts": [
-        "No podeu enviar arxius vCard de més de 10 contactes."
+        "No podeu enviar fitxers vCard de més de 10 contactes"
       ],
       "You cannot open more than ${ maxActiveComposer } composer window at a time": [
         "No podeu obrir més de ${ maxActiveComposer } finestra d'editor a la vegada",
@@ -3487,7 +3490,7 @@
         "No has proporcionat un arxiu."
       ],
       "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
-        "No es poden importar tots els calendaris perquè heu arribat al límit de calendaris."
+        "Heu assolit el nombre màxim de calendaris. No s'han pogut importar alguns calendaris."
       ],
       "You must set a name": [
         "Heu d'establir un nom"
@@ -4745,7 +4748,7 @@
         "Una sol·licitud per cancel·lar la subscripció serà enviada al remitent de la llista de correu i es processarà automàticament."
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "Accés al compte restringit a causa de factures impagades. Contacteu amb el vostre administrador."
+        "L'accés al compte està restringit a causa de factures impagades. Contacteu amb el vostre administrador."
       ],
       "Activation in progress": [
         "Activació en procés"
@@ -4803,6 +4806,9 @@
       "Are you sure you want to discard your changes?": [
         "N'estás segur que desitges descartar els teus canvis?"
       ],
+      "Are you sure you want to move all messages in this location to Archive?": [
+        "Voleu moure tots els missatges d'aquesta ubicació a l'Arxiu?"
+      ],
       "Are you sure you want to move all messages in this location to Trash?": [
         "Segur que voleu moure tots els missatges d'aquesta carpeta a la paperera?"
       ],
@@ -4831,7 +4837,7 @@
         "Adjunta la clau pública"
       ],
       "Attention required": [
-        "Requereix atenció"
+        "Es requereix la vostra atenció"
       ],
       "Automatically delete messages that have been in trash and spam for more than 30 days.": [
         "Suprimeix automàticament els missatges que han estat a la carpeta Paperera i Correu brossa durant més de 30 dies."
@@ -4885,10 +4891,10 @@
         "Confirmeu l'informe de phishing"
       ],
       "Contact assigned to group ${ contactGroupName }": [
-        "Contacte assignat al grup ${ contactGroupName }."
+        "S'ha assignat el contacte al grup ${ contactGroupName }"
       ],
       "Contact unassigned to group ${ contactGroupName }": [
-        "Contacte sense assignar al grup ${ contactGroupName }."
+        "S'ha desfet l'assignació del contacte al grup ${ contactGroupName }"
       ],
       "Copied to clipboard": [
         "Copiat al porta-retalls"
@@ -4931,7 +4937,7 @@
         "Personalitzat anualment"
       ],
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
-        "Personalitzeu l'aspecte de les aplicacions ${ BRAND_NAME }."
+        "Personalitzeu l'aspecte de les aplicacions de ${ BRAND_NAME }."
       ],
       "Daily": [
         "Diàriament"
@@ -4971,13 +4977,13 @@
         "Arrossegueu el fitxer aquí per carregar-lo."
       ],
       "Drop to import": [
-        "Arrossega aquí per importar"
+        "Arrossegueu aquí per a importar"
       ],
       "Duplicate key updated": [
         "Clau duplicada actualitzada"
       ],
       "Each code can only be used once": [
-        "Cada codi només es pot utilitzar una vegada."
+        "Cada codi només es pot utilitzar una vegada"
       ],
       "Edit encryption": [
         "Edita el xifrat"
@@ -5008,7 +5014,7 @@
         "Els rastrejadors de correu electrònic poden violar la vostra privacitat. Activeu la protecció de rastrejadors per evitar que els remitents sàpiguen si heu obert un missatge o quan ho heu fet."
       ],
       "Emails are automatically signed": [
-        "Els correus són signats automàticament"
+        "Els correus se signen automàticament"
       ],
       "Emails stored in this folder will not be deleted and can still be found in the All Mail folder.": [
         "Els correus electrònics emmagatzemats en aquesta carpeta no s'eliminaran i continuaran trobant-se a la carpeta Tot el correu."
@@ -5024,7 +5030,7 @@
         "Xifrar el missatge"
       ],
       "Enter the code from your authenticator app": [
-        "Introduïu el codi de la vostra app d'autenticació."
+        "Introduïu el codi de la vostra aplicació d'autenticació"
       ],
       "Enter the credentials of the email account you want to import from.": [
         "Introduïu les credencials del compte de correu electrònic des d'on voleu importar."
@@ -5033,7 +5039,7 @@
         "Introduïu el codi de verificació que s’ha enviat a ${ destinationText }."
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "Entreu el codi de verificació. Dígit ${ digit }."
+        "Introduïu el codi de verificació. Dígit ${ digit }."
       ],
       "Enter your own password (as organization admin).": [
         "Introduïu la vostra contrasenya (com a administrador d'organització)."
@@ -5055,12 +5061,12 @@
         "Caduca en ${ formattedDate }"
       ],
       "Expires in ${ minutesDiff } minute": [
-        "Caduca en ${ minutesDiff } minut.",
-        "Caduca en ${ minutesDiff } minuts."
+        "Caduca en ${ minutesDiff } minut",
+        "Caduca en ${ minutesDiff } minuts"
       ],
       "Expires in less than ${ hoursDiff } hour": [
-        "Caduca en menys de ${ hoursDiff } hora.",
-        "Caduca en menys de ${ hoursDiff } hores."
+        "Caduca en menys d'${ hoursDiff } hora",
+        "Caduca en menys de ${ hoursDiff } hores"
       ],
       "file attached": [
         "arxiu adjunt",
@@ -5138,7 +5144,7 @@
         "Importar bústia de correu"
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
-        "Important les vostres dades des de ${ fromEmail } a ${ toEmail }."
+        "S'estan important les vostres dades des de ${ fromEmail } a ${ toEmail }."
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Important les vostres dades des de ${ importedEmailAddress } a ${ toEmail }."
@@ -5198,7 +5204,7 @@
         "S'està carregant la previsualització"
       ],
       "Loading...": [
-        "Carregant..."
+        "S'està carregant..."
       ],
       "Manage your folders": [
         "Gestioneu les vostres carpetes"
@@ -5232,7 +5238,7 @@
         "Missatge enviat."
       ],
       "Message will be sent in the morning at ${ formattedTime }": [
-        "El missatge s'enviarà al matí a les ${ formattedTime }."
+        "El missatge s'enviarà al matí a les ${ formattedTime }"
       ],
       "Message will be sent on ${ dateString } at ${ formattedTime }": [
         "El missatge s'enviarà ${ dateString } a les ${ formattedTime }"
@@ -5295,10 +5301,10 @@
         "No s'han trobat rastrejadors, però algunes imatges no s'han pogut carregar amb la protecció de seguiment"
       ],
       "non-${ MAIL_APP_NAME }": [
-        "no-${ MAIL_APP_NAME }"
+        "de fora de ${ MAIL_APP_NAME }"
       ],
       "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
-        "Cap de les claus carregades és vàlida per al xifrat. Per a poder enviar missatges a aquesta adreça carregueu una clau vàlida o desactiveu \"Xifra correus electrònics\"."
+        "Cap de les claus carregades és vàlida per al xifratge. Per a poder enviar missatges a aquesta adreça, carregueu una clau vàlida o desactiveu \"Xifra els correus electrònics\"."
       ],
       "Normal": [
         "Normal"
@@ -5310,7 +5316,7 @@
         "de"
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
-        "Una o més de les vostres claus de confiança ha estat marcada com a \"compromesa\" pel seu propietari. Us recomanem que marqueu aquestes claus com a \"no confiables\"."
+        "Una o més de les vostres claus de confiança han estat marcades com a \"compromeses\" pel seu propietari. Us recomanem que marqueu aquestes claus com a \"no confiables\"."
       ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "El nostre sistema ha marcat aquest missatge com un intent de suplantació d'identitat. Comproveu que sigui legítim."
@@ -5322,7 +5328,7 @@
         "PGP/Inline només és compatible amb format de Text Pla."
       ],
       "PGP/MIME automatically sends the message using the current composer mode.": [
-        "PGP/MIME envia automàticament el missatge utilitzant el mode de l'editor actual."
+        "PGP/MIME envia automàticament el missatge utilitzant el mode d'editor actual."
       ],
       "Phone number": [
         "Número de telèfon"
@@ -5368,10 +5374,10 @@
         "Espereu mentre busquem contactes que continguin dades xifrades amb la clau inactiva."
       ],
       "Preview failed to be loaded": [
-        "La previsualització no s'ha pogut carregar."
+        "La previsualització no s'ha pogut carregar"
       ],
       "Preview for this file type is not supported": [
-        "La previsualització d'aquest tipus de fitxers no és compatible."
+        "La previsualització d'aquest tipus de fitxers no és compatible"
       ],
       "Primary": [
         "Principal"
@@ -5386,7 +5392,7 @@
         "Destinatari: "
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
-        "La informació de recuperació es mantindrà en aquest dispositiu a menys que escolliu eliminar-la."
+        "La informació de recuperació es mantindrà en aquest dispositiu llevat que escolliu eliminar-la."
       ],
       "Recovery phrase copied to clipboard": [
         "Frase de recuperació copiada al porta-retalls"
@@ -5419,7 +5425,7 @@
         "Desat el ${ dateString }"
       ],
       "Saved yesterday": [
-        "Desat ahir"
+        "S'ha desat ahir"
       ],
       "Saving draft…": [
         "Desant l'esborrany…"
@@ -5515,7 +5521,7 @@
         "equip de suport"
       ],
       "Temporarily unavailable. Please check back later.": [
-        "No disponible temporalment. Comproveu-ho de nou més tard."
+        "No està disponible temporalment. Comproveu-ho de nou més tard."
       ],
       "Test link": [
         "Enllaç de prova"
@@ -5536,7 +5542,7 @@
         "S'està preparant la base de dades local."
       ],
       "The message has expired": [
-        "Aquest missatge ha caducat."
+        "Aquest missatge ha caducat"
       ],
       "The original message you are trying to forward / reply to is in the process of being sent. If you continue, you will not be able to undo sending of the original message any longer.": [
         "El missatge original que esteu intentant reenviar o respondre està en procés d'enviament. Si continueu, ja no podreu desfer l'enviament del missatge original."
@@ -5595,10 +5601,10 @@
         "Aquesta invitació es desa en un calendari desactivat."
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
-        "Aquest enllaç dirigeix a una pàgina web que podria estar intentant recopilar dades personals com ara contrasenyes o informació de les vostres targetes de crèdit."
+        "Aquest enllaç porta a un lloc web que us podria estar intentant robar la informació, com ara contrasenyes i detalls de targetes de crèdit."
       ],
       "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Aquest enllaç podria ser un atac homògraf i no es pot obrir amb el navegador Edge. Si esteu segurs de que aquest enllaç és legítim, feu servir un navegador diferent per obrir-lo."
+        "Aquest enllaç podria ser un atac homògraf i no es pot obrir amb el navegador Edge. Si esteu segurs que aquest enllaç és legítim, feu servir un navegador diferent per a obrir-lo."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Aquest enllaç pot ser un atac de homògraf. Si esteu segurs que l’enllaç és el que vols, o no l'obriu."
@@ -5619,10 +5625,10 @@
         "Aquest missatge està signat per una clau que encara no s'ha confiat."
       ],
       "This message will be automatically deleted on ${ longDateMEssage }": [
-        "Aquest missatge s'eliminarà automàticament el ${ longDateMEssage }.."
+        "Aquest missatge s'eliminarà automàticament el ${ longDateMEssage }"
       ],
       "This message will be automatically deleted on ${ shortDateMessage }": [
-        "Aquest missatge s'eliminarà automàticament el ${ shortDateMessage }."
+        "Aquest missatge s'eliminarà automàticament el ${ shortDateMessage }"
       ],
       "This message will be marked as spam. Would you also like to unsubscribe from future emails?": [
         "Aquest missatge serà marcat com a correu brossa. Us agradaria també cancel·lar la subscripció per a futurs correus?",
@@ -5650,13 +5656,13 @@
         "Aquest missatge expirarà el ${ formattedDate }"
       ],
       "This message will expire on ${ longDateMEssage }": [
-        "Aquest missatge caducarà el ${ longDateMEssage }."
+        "Aquest missatge caducarà el ${ longDateMEssage }"
       ],
       "This message will expire today at ${ shortDateMessage }": [
-        "Aquest missatge caducarà avui a les ${ shortDateMessage }."
+        "Aquest missatge caducarà avui a les ${ shortDateMessage }"
       ],
       "This message will expire tomorrow at ${ shortDateMessage }": [
-        "Aquest missatge caducarà demà a les ${ shortDateMessage }."
+        "Aquest missatge caducarà demà a les ${ shortDateMessage }"
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "Aquesta clau pública serà utilitzada automàticament per xifrar el correu electrónic enviat a aquenta adreça."
@@ -5665,16 +5671,16 @@
         "La clau pública del aquest remitent no ha tingut confiança encara."
       ],
       "To fight spam and abuse, please verify you are human.": [
-        "Per combatre el correu brossa, verifiqueu que sou humà."
+        "Per lluitar contra el correu brossa i l'abús, verifiqueu que sou humà."
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
-        "Per importar esdeveniments creeu abans un calendari a ${ CALENDAR_APP_NAME }. Aquí és on apareixeran tots els esdeveniments després de la importació."
+        "Per importar esdeveniments, creeu abans un calendari en ${ CALENDAR_APP_NAME }. Aquí és on apareixeran tots els esdeveniments després de la importació."
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "Per tornar a signar els vostres contactes necessitem comprovar cada contacte comparant-lo amb la llista de claus xifrades disponibles al vostre compte. Si no es troben coincidències, el vostre contacte es tornarà a signar amb la clau de xifratge primària."
       ],
       "To recover your data, you need to re-activate the account key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
-        "Per recuperar les vostres dades, heu de tornar a activar la clau del compte utilitzada en el moment en què es van crear les dades. Això requerirà que recordeu la contrasenya utilitzada quan es va generar la clau."
+        "Per recuperar les dades, heu de tornar a activar la clau del compte utilitzada en el moment que es van crear les dades. Això requereix que recordeu la contrasenya utilitzada quan es va generar la clau."
       ],
       "To unsubscribe from this mailing list, an email will be sent from ${ boldFrom } with following details as defined by the sender of the newsletter:": [
         "Per a cancel·lar la subscripció d'aquesta llista de correu, s'enviarà un correu des de ${ boldFrom } amb els següents detalls definits pel remitent del butlletí:"
@@ -5698,7 +5704,7 @@
         "Desbloqueja el missatge"
       ],
       "Unsaved changes": [
-        "Canvis no desats"
+        "Els canvis no s'han desat"
       ],
       "Unsupported file": [
         "Fitxer no compatible"
@@ -5749,10 +5755,10 @@
         "Actualitzeu el vostre pla per utilitzar ${ MAIL_APP_NAME } amb Apple Mail, Outlook o Thunderbird."
       ],
       "Upgrade to use auto-reply when you're away.": [
-        "Actualitzeu el vostre pla per utilitzar la resposta automàtica quan esteu fora."
+        "Milloreu per a utilitzar la resposta automàtica quan esteu fora."
       ],
       "Upload picture": [
-        "Carrega imatge"
+        "Carrega la imatge"
       ],
       "URL link": [
         "Enllaç URL"
@@ -5803,7 +5809,7 @@
         "Quan actives les claus de confiança per ${ senderName }, les claus públiques s'afegeixen a les dades de contacte."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Quan configures l'autenticació de doble factor, se't proporcionen codis de recuperació que podeu fer servir per iniciar sessió en cas que perdeu accés a l'aplicació d'autenticació."
+        "Quan configureu l'autenticació de doble factor, se us proporcionen codis de recuperació que podeu fer servir per a iniciar la sessió en cas que perdeu l'accés a l'aplicació d'autenticació."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Voleu rebre un codi de verificació nou o utilitzar un mètode de verificació alternatiu?"
@@ -5907,19 +5913,19 @@
         "Heu escrit \"${ attachmentsFoundKeyword }\", però no s'ha afegit cap adjunt. Voleu enviar el missatge de totes maneres?"
       ],
       "You've reached the maximum number of addresses in the contact group(s):": [
-        "Heu assolit el nombre màxim d'adreces en el o els grups de contactes:"
+        "Heu assolit el nombre màxim d'adreces en el grup o els grups de contactes:"
       ],
       "You've reached the maximum number of addresses in the contact group.": [
-        "Heu assolit el nombre màxim d'adreces en els grups de contactes."
+        "Heu assolit el nombre màxim d'adreces en el grup de contactes."
       ],
       "Your ${ BRAND_NAME } Account includes SimpleLogin. Install the browser extension with one click to get started.": [
         "El vostre compte ${ BRAND_NAME } inclou SimpleLogin. Instal·leu l'extensió del navegador amb un clic per a començar."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
-        "El vostre compte ${ BRAND_NAME } actualment està suspès. Passats 28 dies, els correus electrònics deixaran de lliurar-se a la vostra safata d'entrada, els vostres enllaços compartits de Drive es bloquejaran, i no podreu carregar-hi nous fitxers. Per a restablir el servei normal pagueu qualsevol factura vençuda."
+        "El vostre compte de ${ BRAND_NAME } actualment està suspès. Passats 28 dies, els correus electrònics deixaran de lliurar-se a la vostra safata d'entrada, els enllaços compartits de Drive es bloquejaran i no podreu carregar-hi fitxers nous. Per a restablir el servei normal, pagueu les factures vençudes."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "El vostre compte ${ BRAND_NAME } actualment està suspès. Els correus electrònics ja no es lliuraren a la vostra safata d'entrada. Els vostres enllaços compartits de Drive ja no estan actius, i no podeu carregar-hi nous fitxers. Per a continuar utilitzant el vostre compte pagueu qualsevol factura vençuda."
+        "El vostre compte de ${ BRAND_NAME } actualment està suspès. Els correus electrònics ja no es lliuren a la vostra safata d'entrada. Els vostres enllaços compartits de Drive ja no estan actius i no podeu carregar-hi fitxers nous. Per a continuar utilitzant el vostre compte, pagueu les factures vençudes."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "El vostre compte té almenys una factura en retard. El vostre accés aviat quedarà restringit. ${ payInvoiceLink }"
@@ -5931,13 +5937,13 @@
         "El vostre compte té almenys una factura vençuda. El vostre compte està restringit. La manca de pagament continuada us bloquejarà els correus electrònics i enllaços de compartició. ${ payInvoiceLink }"
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
-        "Les vostres dades estan a punt per ser importades des de ${ importedEmailAddressStrong } al vostre compte de ${ BRAND_NAME }."
+        "Les vostres dades estan a punt per a ser importades des de ${ importedEmailAddressStrong } al vostre compte de ${ BRAND_NAME }."
       ],
       "Your email will only be used for this one-time verification.": [
         "El vostre correu electrònic només s’utilitzarà per a aquesta única verificació."
       ],
       "Your files will be encrypted and then saved": [
-        "Es xifraran els fitxers i després es desaran."
+        "Es xifraran els fitxers i després es desaran"
       ],
       "Your import will not be processed.": [
         "La vostra importació no es processarà."
@@ -5967,8 +5973,8 @@
     },
     "info": {
       "${ filteredList.length } command found.": [
-        "${ filteredList.length } comanda trobada.",
-        "${ filteredList.length } comandas trobadas."
+        "S'ha trobat ${ filteredList.length } comanda.",
+        "S'han trobat ${ filteredList.length } comandes."
       ],
       "Optional": [
         "Opcional"
@@ -6970,20 +6976,20 @@
     },
     "Mail import summary": {
       "Import all messages from ${ itemsToImportCount } folder and label them as": [
-        "Importa tots els missatges d' ${ itemsToImportCount } carpeta i etiquetar-los com a",
-        "Importa tots els missatges d'$${ itemsToImportCount } carpetes i etiquetar-los com a"
+        "Importa tots els missatges d'${ itemsToImportCount } carpeta i etiqueta'ls com a",
+        "Importa tots els missatges de ${ itemsToImportCount } carpetes i etiqueta'ls com a"
       ],
       "Import all messages from ${ itemsToImportCount } label and label them as": [
-        "Importar tots els missatges d' ${ itemsToImportCount } etiqueta i etiquetar-los com a",
-        "Importar tots els missatges d'$${ itemsToImportCount } etiquetés i etiquetar-los com a"
+        "Importa tots els missatges d'${ itemsToImportCount } etiqueta i etiqueta'ls com a",
+        "Importa tots els missatges de ${ itemsToImportCount } etiquetes i etiqueta'ls com a"
       ],
       "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
-        "Importa tots els missatges d'${ selectedItemsToImportCount } de ${ itemsToImportCount } carpeta i etiqueta'ls com a",
-        "Importa tots els missatges d'${ selectedItemsToImportCount } de ${ itemsToImportCount } carpetes i etiqueta'ls com a"
+        "Importa tots els missatges d'${ selectedItemsToImportCount } carpeta de ${ itemsToImportCount } i etiqueta'ls com a",
+        "Importa tots els missatges de ${ selectedItemsToImportCount } carpetes de ${ itemsToImportCount } i etiqueta'ls com a"
       ],
       "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
-        "Importa tots els missatges d'${ selectedItemsToImportCount } de ${ itemsToImportCount } etiqueta i etiqueta'ls com a",
-        "Importa tots els missatges d'${ selectedItemsToImportCount } de ${ itemsToImportCount } etiquetés i etiqueta'ls com a"
+        "Importa tots els missatges d'${ selectedItemsToImportCount } etiqueta de ${ itemsToImportCount } i etiqueta'ls com a",
+        "Importa tots els missatges de ${ selectedItemsToImportCount } etiquetes de ${ itemsToImportCount } i etiqueta'ls com a"
       ]
     },
     "Mailbox": {
@@ -7759,8 +7765,8 @@
         "Enviat per ${ MAIL_APP_NAME } amb xifrat d'accés zero"
       ],
       "Sent by ${ MAIL_APP_NAME } with zero-access encryption to verified recipient": [
-        "Enviat per ${ MAIL_APP_NAME } amb xifrat d'accés zero a un destinatari verificat",
-        "Enviats per ${ MAIL_APP_NAME } amb xifrat d'accés zero a un destinatari verificat"
+        "S'ha enviat per ${ MAIL_APP_NAME } amb xifratge d'accés zero a un destinatari verificat",
+        "S'ha enviat per ${ MAIL_APP_NAME } amb xifratge d'accés zero a destinataris verificats"
       ],
       "Sent by you with end-to-end encryption": [
         "Enviat per vós amb xifrat d'extrem a extrem"
@@ -8798,6 +8804,9 @@
       ],
       "More selections": [
         "Més seleccions"
+      ],
+      "Move all messages to Archive": [
+        "Mou tots els missatges a l'Arxiu"
       ],
       "Move all messages to Trash": [
         "Mou tots els missatges a la paperera"
