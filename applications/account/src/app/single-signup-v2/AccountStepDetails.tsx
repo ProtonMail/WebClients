@@ -421,7 +421,14 @@ const AccountStepDetails = ({
                                     return undefined;
                                 }
                                 if (emailValidationState.state === EmailAsyncState.Success) {
-                                    return <Icon name="checkmark-circle" className="color-success" size={16} />;
+                                    return (
+                                        <Icon
+                                            name="checkmark-circle"
+                                            className="color-success"
+                                            size={16}
+                                            data-testid="email-valid"
+                                        />
+                                    );
                                 }
                                 if (emailValidationState.state === EmailAsyncState.Loading) {
                                     return <CircleLoader size="small" />;
