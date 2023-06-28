@@ -382,7 +382,7 @@ const AccountStepDetails = ({
                     measure({
                         event: TelemetryAccountSignupEvents.userCheckout,
                         dimensions: {
-                            type: 'pay_cc',
+                            type: 'free',
                             plan: PLANS.FREE,
                             cycle: `${model.subscriptionData.cycle}`,
                             currency: model.subscriptionData.currency,

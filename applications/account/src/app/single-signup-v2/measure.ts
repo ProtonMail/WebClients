@@ -18,7 +18,7 @@ type TelemetryPaymentMethods = {
     cc: TelemetryBoolean;
 };
 
-export type TelemetryPayType = 'pay_cc' | 'pay_pp' | 'pay_pp_no_cc' | 'pay_btc';
+export type TelemetryPayType = 'free' | 'pay_cc' | 'pay_pp' | 'pay_pp_no_cc' | 'pay_btc';
 
 export type TelemetryExtensionPlatform = 'ios' | 'ff' | 'android' | 'chrome' | 'safari' | 'edge' | 'brave' | 'unknown';
 
@@ -209,7 +209,7 @@ export const getSignupTelemetryData = (plans: Plan[], cache: SignupCacheResult):
         return {
             event: TelemetryAccountSignupEvents.signupFinish,
             dimensions: {
-                type: 'pay_cc',
+                type: 'free',
                 plan: PLANS.FREE,
                 cycle: `${cache.subscriptionData.cycle}`,
                 currency: cache.subscriptionData.currency,
