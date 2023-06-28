@@ -36,7 +36,7 @@ export const authFallback = () => {
                         return await sendMessage(contentScriptMessage({ type: WorkerMessageType.ACCOUNT_ONBOARDING }));
 
                     case WorkerMessageType.ACCOUNT_PROBE:
-                        return window.postMessage(successMessage({}));
+                        return window.postMessage(successMessage({ token: message.data?.token }));
                 }
             }
         } catch (e) {
