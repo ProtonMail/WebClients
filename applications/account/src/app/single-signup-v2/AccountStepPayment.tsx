@@ -14,7 +14,6 @@ import {
     usePayment,
 } from '@proton/components/containers';
 import { getTotalBillingText } from '@proton/components/containers/payments/helper';
-import { PlanCardFeatureList } from '@proton/components/containers/payments/subscription/PlanCardFeatures';
 import { getDefaultVerifyPayment } from '@proton/components/containers/payments/usePaymentToken';
 import { useConfig } from '@proton/components/hooks';
 import { WithLoading } from '@proton/components/hooks/useLoading';
@@ -38,8 +37,8 @@ import isTruthy from '@proton/utils/isTruthy';
 
 import Guarantee from './Guarantee';
 import { PlanCard } from './PlanCardSelector';
+import RightPlanSummary from './RightPlanSummary';
 import RightSummary from './RightSummary';
-import SaveLabel from './SaveLabel';
 import { getSummaryPlan } from './configuration';
 import { Measure, OptimisticOptions, SignupModelV2 } from './interface';
 import { TelemetryPayType, getPaymentMethod } from './measure';
@@ -351,54 +350,14 @@ const AccountStepPayment = ({
             </div>
             {summaryPlan && (
                 <RightSummary className="mx-auto md:mx-0">
-                    <div className="w100 border rounded-xl p-6">
-                        <div className="text-rg text-bold mb-4">{c('Info').t`Summary`}</div>
-                        <div className="flex gap-2 flex-nowrap mb-2 flex-align-items-center">
-                            <div className="border rounded-lg p-2" title={summaryPlan.title}>
-                                {summaryPlan.logo}
-                            </div>
-                            <div className="flex-item-fluid ">
-                                <div className="flex flex rwo gap-2">
-                                    <div className="text-rg text-bold flex-item-fluid">{summaryPlan.title}</div>
-
-                                    <div className="text-rg text-bold">
-                                        {getSimplePriceString(options.currency, pricePerMonth, '')}
-                                    </div>
-                                </div>
-                                <div className="flex-item-fluid flex flex-align-items-center gap-2">
-                                    {totals.discountPercentage > 0 && (
-                                        <div className="flex-item-fluid">
-                                            <SaveLabel highlightPrice={false} percent={totals.discountPercentage} />
-                                        </div>
-                                    )}
-
-                                    {totals.discountPercentage > 0 && (
-                                        <span className="inline-flex">
-                                            <span className="text-sm color-weak text-strike text-ellipsis">
-                                                {getSimplePriceString(
-                                                    options.currency,
-                                                    totals.totalNoDiscountPerMonth,
-                                                    ''
-                                                )}
-                                            </span>
-                                            <span className="text-sm color-weak ml-1">{` ${c('Suffix')
-                                                .t`/month`}`}</span>
-                                        </span>
-                                    )}
-                                </div>
-                            </div>
-                        </div>
-                        <PlanCardFeatureList
-                            odd={false}
-                            margin={false}
-                            features={summaryPlan.features}
-                            icon={false}
-                            highlight={false}
-                            iconSize={16}
-                            tooltip={false}
-                            className="text-sm mb-5 gap-1"
-                            itemClassName="color-weak"
-                        />
+                    <RightPlanSummary
+                        title={summaryPlan.title}
+                        price={getSimplePriceString(options.currency, pricePerMonth, '')}
+                        regularPrice={getSimplePriceString(options.currency, totals.totalNoDiscountPerMonth, '')}
+                        logo={summaryPlan.logo}
+                        discount={totals.discountPercentage}
+                        features={summaryPlan.features}
+                    >
                         <div className="flex flex-column gap-2">
                             {(() => {
                                 const proration = subscriptionData.checkResult?.Proration ?? 0;
@@ -471,7 +430,7 @@ const AccountStepPayment = ({
                                 </span>
                             </div>
                         </div>
-                    </div>
+                    </RightPlanSummary>
                 </RightSummary>
             )}
         </div>
