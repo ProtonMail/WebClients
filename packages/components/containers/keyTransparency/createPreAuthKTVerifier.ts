@@ -1,85 +1,79 @@
-import { CryptoProxy } from '@proton/crypto';
-import { PartialKTBlobContent, commitOwnKeystoLS, ktSentryReport, verifySKLSignature } from '@proton/key-transparency';
-import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
+import { serverTime } from '@proton/crypto';
+import { commitSKLToLS, fetchSignedKeyLists, ktSentryReport } from '@proton/key-transparency';
 import {
+    Address,
     Api,
     DecryptedKey,
-    GetKTActivation,
     KeyTransparencyActivation,
     PreAuthKTVerifier,
     PreAuthKTVerify,
+    SignedKeyList,
 } from '@proton/shared/lib/interfaces';
 import { getDefaultKTLS } from '@proton/shared/lib/keyTransparency';
-
-interface KTBlobPreAuth {
-    ktBlobContent: PartialKTBlobContent;
-    addressID: string;
-    userKeys: DecryptedKey[];
-}
 
 /**
  * Return a KT verifier for when getSignedKeyList is called before apps are properly mounted,
  * e.g. signup or login, such that self audit couldn't have run and user keys are not directly accessible
  */
-const createPreAuthKTVerifier = (getKTActivation: GetKTActivation, api: Api): PreAuthKTVerifier => {
-    const ktBlobsPreAuth: KTBlobPreAuth[] = [];
+const createPreAuthKTVerifier = (ktActivation: KeyTransparencyActivation, api: Api): PreAuthKTVerifier => {
+    interface CreatedSKL {
+        address: Address;
+        revision?: number;
+        userKeys: DecryptedKey[];
+        signedKeyList: SignedKeyList;
+        creationTimestamp: number;
+    }
+    var createdSKLs: CreatedSKL[] = [];
 
-    const preAuthKTVerify: PreAuthKTVerify =
-        (userKeys: DecryptedKey[]) => async (address, signedKeyList, publicKeys) => {
-            if ((await getKTActivation()) === KeyTransparencyActivation.DISABLED) {
-                return;
-            }
+    const ktLSAPI = getDefaultKTLS();
 
-            const signatureTimestamp = await verifySKLSignature(
-                publicKeys,
-                signedKeyList.Data,
-                signedKeyList.Signature,
-                'preAuthKTVerify',
-                address.Email
-            );
-
-            if (!signatureTimestamp) {
-                // This shouldn't throw as long as KT is UI-less
-                return;
-            }
-
-            const ktBlobContent: PartialKTBlobContent = {
-                PublicKeys: await Promise.all(publicKeys.map((key) => CryptoProxy.exportPublicKey({ key }))),
-                creationTimestamp: signatureTimestamp.getTime(),
-                email: canonicalizeInternalEmail(address.Email),
-                isObsolete: signedKeyList.Data === null && signedKeyList.Signature === null,
-            };
-
-            const ktBlobPreAuth: KTBlobPreAuth = {
-                ktBlobContent,
-                addressID: address.ID,
-                userKeys,
-            };
-
-            ktBlobsPreAuth.push(ktBlobPreAuth);
-        };
-
-    const preAuthKTCommit = async (userID: string) => {
-        if ((await getKTActivation()) === KeyTransparencyActivation.DISABLED) {
+    const preAuthKTVerify: PreAuthKTVerify = (userKeys: DecryptedKey[]) => async (address, signedKeyList) => {
+        if (ktActivation === KeyTransparencyActivation.DISABLED) {
             return;
         }
+        createdSKLs.push({
+            address,
+            revision: address.SignedKeyList?.Revision,
+            userKeys,
+            signedKeyList,
+            creationTimestamp: +serverTime(),
+        });
+    };
 
-        for (const ktBlobPreAuth of ktBlobsPreAuth) {
-            const { userKeys, addressID, ktBlobContent } = ktBlobPreAuth;
-            await commitOwnKeystoLS(
-                ktBlobContent,
-                userKeys.map(({ privateKey }) => privateKey),
-                api,
-                getDefaultKTLS(),
-                userID,
-                addressID
-            ).catch((error: any) => {
-                ktSentryReport('Failure during own keys commitment', {
-                    context: 'preAuthKTCommit',
-                    errorMessage: error.message,
-                    addressID,
-                });
-            });
+    const preAuthKTCommit = async (userID: string) => {
+        try {
+            if (ktActivation === KeyTransparencyActivation.DISABLED) {
+                return;
+            }
+
+            if (!createdSKLs.length) {
+                return;
+            }
+
+            for (const savedSKL of createdSKLs) {
+                const allSKLs = await fetchSignedKeyLists(api, savedSKL.revision ?? 0, savedSKL.address.Email);
+                const correspondingSKL = allSKLs.find((skl) => savedSKL.signedKeyList.Data == skl.Data);
+                if (!correspondingSKL || !correspondingSKL.Revision || !correspondingSKL.ExpectedMinEpochID) {
+                    ktSentryReport('Could not find new SKL revision and expectedMinEpochID', {
+                        email: savedSKL.address.Email,
+                    });
+                    return;
+                }
+                const privateKeys = savedSKL.userKeys.map(({ privateKey }) => privateKey);
+                const ktBlob = {
+                    creationTimestamp: savedSKL.creationTimestamp,
+                    expectedMinEpochID: correspondingSKL.ExpectedMinEpochID,
+                    revision: correspondingSKL.Revision,
+                    email: savedSKL.address.Email,
+                    data: savedSKL.signedKeyList.Data,
+                };
+                await commitSKLToLS(ktBlob, privateKeys, ktLSAPI, userID, savedSKL.address.ID);
+            }
+            createdSKLs = [];
+        } catch (error: any) {
+            const errorMessage = error instanceof Error ? error.message : 'unknown error';
+            const stack = error instanceof Error ? error.stack : undefined;
+            ktSentryReport(errorMessage, { context: 'preAuthKTCommit', stack });
         }
     };
 

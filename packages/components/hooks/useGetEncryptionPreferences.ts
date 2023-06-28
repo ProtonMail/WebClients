@@ -4,6 +4,7 @@ import getPublicKeysVcardHelper from '@proton/shared/lib/api/helpers/getPublicKe
 import { MINUTE, RECIPIENT_TYPES } from '@proton/shared/lib/constants';
 import { getSelfSendAddresses } from '@proton/shared/lib/helpers/address';
 import { canonicalizeEmail, canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
+import { KT_VERIFICATION_STATUS } from '@proton/shared/lib/interfaces';
 import { GetEncryptionPreferences } from '@proton/shared/lib/interfaces/hooks/GetEncryptionPreferences';
 import { getKeyHasFlagsToEncrypt } from '@proton/shared/lib/keys';
 import { getActiveKeys } from '@proton/shared/lib/keys/getActiveKeys';
@@ -59,7 +60,12 @@ const useGetEncryptionPreferences = () => {
                 const canSend = canEncrypt && getKeyHasFlagsToEncrypt(primaryAddressKey.flags);
                 selfSend = { address: selfAddress, publicKey: selfPublicKey, canSend };
                 // For own addresses, we use the decrypted keys in selfSend and do not fetch any data from the API
-                apiKeysConfig = { Keys: [], publicKeys: [], RecipientType: RECIPIENT_TYPES.TYPE_INTERNAL };
+                apiKeysConfig = {
+                    Keys: [],
+                    publicKeys: [],
+                    RecipientType: RECIPIENT_TYPES.TYPE_INTERNAL,
+                    ktVerificationStatus: KT_VERIFICATION_STATUS.VERIFIED_KEYS,
+                };
                 pinnedKeysConfig = { pinnedKeys: [], isContact: false };
             } else {
                 const { publicKeys } = splitKeys(await getUserKeys());

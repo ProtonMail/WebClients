@@ -1,7 +1,7 @@
 import { HOUR } from '@proton/shared/lib/constants';
 
 export const MAX_EPOCH_INTERVAL = 72 * HOUR;
-export const EXP_EPOCH_INTERVAL = 4 * HOUR;
+export const EXPECTED_EPOCH_INTERVAL = 4 * HOUR;
 
 // VRF constants
 export const vrfHexKeyDev = '2d7688feb429f714f102f758412cd4b81337b307122770f620ad9e4ac898a2eb';
@@ -11,6 +11,8 @@ export const ptLen = 2 * N; // = qLen
 export const CO_FACTOR = 8;
 export const LEFT_N = 1; // left neighbour
 export const KT_LEN = 32;
+
+export const epochChainVersion = 1;
 
 export enum KT_DOMAINS {
     PROD = 'keytransparency.ch',
@@ -28,12 +30,12 @@ export enum KT_CERTIFICATE_ISSUER {
 export const SCT_THRESHOLD = 2;
 
 export const KT_VE_SIGNING_CONTEXT = {
-    value: 'key-transparency.verified-epoch',
+    value: `key-transparency.verified-epoch.${epochChainVersion}`,
     critical: true,
 };
 
 export const KT_VE_VERIFICATION_CONTEXT = {
-    value: 'key-transparency.verified-epoch',
+    value: `key-transparency.verified-epoch.${epochChainVersion}`,
     required: true,
 };
 

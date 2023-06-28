@@ -2,6 +2,7 @@ import { PublicKeyReference } from '@proton/crypto';
 
 import { MIME_TYPES, PACKAGE_TYPE } from '../../constants';
 import { EncryptionPreferencesError } from '../../mail/encryptionPreferences';
+import { KT_VERIFICATION_STATUS } from '../EncryptionPreferences';
 import { SimpleMap } from '../utils';
 
 export interface SendPreferences {
@@ -15,6 +16,7 @@ export interface SendPreferences {
     hasPinnedKeys: boolean;
     warnings?: string[];
     error?: EncryptionPreferencesError;
+    ktVerificationStatus?: KT_VERIFICATION_STATUS;
 }
 
 export interface Packets {

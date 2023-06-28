@@ -1,33 +1,46 @@
-import { ReactNode, useCallback, useEffect, useRef } from 'react';
+import { ReactNode, useEffect, useState } from 'react';
 
 import { CryptoProxy, serverTime } from '@proton/crypto';
 import {
-    EXP_EPOCH_INTERVAL,
+    AddressAuditStatus,
+    EXPECTED_EPOCH_INTERVAL,
     KTBlobContent,
-    KT_STATUS,
-    auditAddresses,
-    commitOthersKeystoLS,
+    KTPublicKeyStatus,
+    SelfAuditResult,
+    commitSKLToLS,
     getAuditResult,
     getKTLocalStorage,
     ktSentryReport,
-    verifyPublicKeys,
-    verifySKLSignature,
+    selfAudit,
+    storeAuditResult,
+    verifyPublicKeysAddressAndCatchall,
 } from '@proton/key-transparency';
+import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
+import {
+    TelemetryKeyTransparencySelfAuditErrorEvents,
+    TelemetryMeasurementGroups,
+    TelemetryReport,
+} from '@proton/shared/lib/api/telemetry';
 import { APP_NAMES } from '@proton/shared/lib/constants';
 import { stringToUint8Array, uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
+import { sendMultipleTelemetryReports } from '@proton/shared/lib/helpers/metrics';
 import {
+    ArmoredKeyWithFlags,
+    FetchedSignedKeyList,
     KeyTransparencyActivation,
     KeyTransparencyState,
+    SaveSKLToLS,
+    SimpleMap,
     VerifyOutboundPublicKeys,
 } from '@proton/shared/lib/interfaces';
-import { GetAddresses } from '@proton/shared/lib/interfaces/hooks/GetAddresses';
-import { AddressesModel } from '@proton/shared/lib/models';
+import { getWarningReason } from '@proton/shared/lib/keyTransparency/telemetry';
+import { getPrimaryKey } from '@proton/shared/lib/keys';
 
-import { useApi, useGetUserKeys, useUser } from '../../hooks';
+import { useApi, useGetAddresses, useGetUserKeys, useUser } from '../../hooks';
 import { KTContext } from './ktContext';
 import { removeKTBlobs } from './ktStatus';
-import { useFixMultiplePrimaryKeys } from './useFixMultiplePrimaryKeys';
-import useGetKTActivation from './useGetKTActivation';
+import useGetLatestEpoch from './useGetLatestEpoch';
+import useKTActivation from './useKTActivation';
 import { KeyTransparencyContext } from './useKeyTransparencyContext';
 
 /**
@@ -43,170 +56,230 @@ const generateID = async (userID: string, email: string) => {
 
 interface Props {
     children: ReactNode;
-    APP_NAME: APP_NAMES;
+    appName: APP_NAMES;
 }
 
-const useGetAddresses = (): GetAddresses => {
-    const api = useApi();
-    return useCallback(() => AddressesModel.get(api), [api]);
-};
-
-const KeyTransparencyManager = ({ children, APP_NAME }: Props) => {
-    const getKTActivation = useGetKTActivation();
+const KeyTransparencyManager = ({ children, appName }: Props) => {
+    const ktActivation = useKTActivation();
     const getAddresses = useGetAddresses();
     const getUserKeys = useGetUserKeys();
+    const getLatestEpoch = useGetLatestEpoch();
     const [{ ID: userID }] = useUser();
     const normalApi = useApi();
-    const silentApi = <T,>(config: any) => normalApi<T>({ ...config, silence: true });
-    const ktLSAPI = getKTLocalStorage(APP_NAME);
-    const fixMultiplePrimaryKeys = useFixMultiplePrimaryKeys();
+    const silentApi = getSilentApi(normalApi);
+    const ktLSAPI = getKTLocalStorage(appName);
 
-    const ktState = useRef<KeyTransparencyState>({
-        selfAuditPromise: Promise.resolve(),
-        ktLSAPI,
-    });
+    const [ktState, setKTState] = useState<KeyTransparencyState>({ selfAuditResult: undefined });
 
-    /**
-     * Returns the current state of the Key Transparency manager
-     */
-    const getKTState = () => ktState;
+    const saveSKLToLS: SaveSKLToLS = async (
+        email: string,
+        data: string,
+        revision: number,
+        expectedMinEpochID: number,
+        addressID?: string,
+        isCatchall?: boolean
+    ) => {
+        // The fake address is generated just for matching purposes inside the stashedKeys
+        // structure and to avoid writing the email in plaintext in localStorage
+        const storedAddressID = addressID ?? (await generateID(userID, email));
 
-    /**
-     * In case some public keys used to send messages are not yet in
-     * Key Transparency, we postpone verification to a later time
-     */
-    const verifyOutboundPublicKeys: VerifyOutboundPublicKeys = async (keyList, email, SignedKeyList, IgnoreKT) => {
-        if ((await getKTActivation()) === KeyTransparencyActivation.DISABLED) {
-            return;
+        const ktBlobContent: KTBlobContent = {
+            creationTimestamp: +serverTime(),
+            email,
+            data,
+            revision,
+            expectedMinEpochID,
+            isCatchall,
+        };
+
+        const userKeys = await getUserKeys();
+        await commitSKLToLS(
+            ktBlobContent,
+            userKeys.map(({ privateKey }) => privateKey),
+            ktLSAPI,
+            userID,
+            storedAddressID
+        );
+    };
+
+    const verifyOutboundPublicKeys: VerifyOutboundPublicKeys = async (
+        email: string,
+        keysIntendendedForEmail: boolean,
+        address: {
+            keyList: ArmoredKeyWithFlags[];
+            signedKeyList: FetchedSignedKeyList | null;
+        },
+        catchAll?: {
+            keyList: ArmoredKeyWithFlags[];
+            signedKeyList: FetchedSignedKeyList | null;
         }
+    ): Promise<{
+        addressKTStatus?: KTPublicKeyStatus;
+        catchAllKTStatus?: KTPublicKeyStatus;
+    }> => {
+        if (ktActivation === KeyTransparencyActivation.DISABLED) {
+            return {};
+        }
+        return verifyPublicKeysAddressAndCatchall(
+            silentApi,
+            saveSKLToLS,
+            getLatestEpoch,
+            email,
+            keysIntendendedForEmail,
+            address,
+            catchAll
+        ).catch((error) => {
+            const errorMessage = error instanceof Error ? error.message : 'unknown error';
+            const stack = error instanceof Error ? error.stack : undefined;
+            ktSentryReport(errorMessage, { context: 'VerifyOutboundPublicKeys', stack });
+            return {};
+        });
+    };
 
-        const ktStatus = await verifyPublicKeys(keyList, email, SignedKeyList, normalApi, IgnoreKT);
+    const reportSelfAuditErrors = async (selfAuditResult: SelfAuditResult) => {
+        const failedAddressAuditsResults = selfAuditResult.addressAuditResults.filter(
+            ({ status }) => status !== AddressAuditStatus.Success
+        );
+        const failedLocalStorageAuditsOwn = selfAuditResult.localStorageAuditResultsOwnAddress.filter(
+            ({ success }) => !success
+        );
+        const failedLocalStorageAuditsOther = selfAuditResult.localStorageAuditResultsOtherAddress.filter(
+            ({ success }) => !success
+        );
 
-        if (SignedKeyList) {
-            // In case the keys are not in KT yet, we stash them for later verification
-            if (ktStatus === KT_STATUS.KT_MINEPOCHID_NULL) {
-                const { Data, Signature, ExpectedMinEpochID } = SignedKeyList;
+        const failedAddressAudits = failedAddressAuditsResults.map(({ email, status, warningDetails }) => ({
+            email,
+            status,
+            warningDetails,
+        }));
+        const failedLSAuditsOwn = failedLocalStorageAuditsOwn.map(({ email }) => email);
+        const failedLSAuditsOther = failedLocalStorageAuditsOther.map(({ email }) => email);
 
-                // Since MinEpochID is null, ExpectedMinEpochID must be returned
-                if (!ExpectedMinEpochID) {
-                    ktSentryReport('ExpectedMinEpochID set to null for a SKL with MinEpochID set to null', {
-                        context: 'verifyOutboundPublicKeys',
-                        email,
-                    });
-                    return;
-                }
+        if (failedAddressAudits.length || failedLSAuditsOwn.length || failedLSAuditsOther.length) {
+            ktSentryReport('Self audit would display an error', {
+                failedAddressAudits,
+                failedLSAuditsOwn,
+                failedLSAuditsOther,
+            });
 
-                // The fake address is generated just for matching purposes inside the stashedKeys
-                // structure and to avoid wiriting the email in plaintext in localStorage
-                const fakeAddressID = await generateID(userID, email);
+            const reports: TelemetryReport[] = [];
 
-                const isActive = Data !== null && Signature !== null;
-                const PublicKeys = keyList.map(({ PublicKey }) => PublicKey);
-                const ktBlobContent: KTBlobContent = {
-                    PublicKeys,
-                    ExpectedMinEpochID,
-                    creationTimestamp: +serverTime(),
-                    email,
-                    isObsolete: !isActive,
+            failedAddressAuditsResults.forEach(({ status, warningDetails }) => {
+                const dimensions: SimpleMap<string> = {
+                    type: 'address',
+                    result: status === AddressAuditStatus.Warning ? 'warning' : 'failure',
+                    reason: getWarningReason(warningDetails),
                 };
 
-                // NOTE: signatureTimestamp is needed to store creationTimestamp, however in case
-                // Data and Signature don't exist, i.e. we're dealing with an obsolescent SKL,
-                // creationTimestamp should be extracted directly from the ObsolescenceToken
-                if (isActive) {
-                    const verificationKeys = await Promise.all(
-                        PublicKeys.map((armoredKey) => CryptoProxy.importPublicKey({ armoredKey }))
-                    );
-
-                    const signatureTimestamp = await verifySKLSignature(
-                        verificationKeys,
-                        Data,
-                        Signature,
-                        'verifyOutboundPublicKeys',
-                        email
-                    );
-
-                    if (!signatureTimestamp) {
-                        return;
-                    }
-
-                    ktBlobContent.creationTimestamp = signatureTimestamp.getTime();
-                }
-
-                const userKeys = await getUserKeys();
-                await commitOthersKeystoLS(
-                    ktBlobContent,
-                    userKeys.map(({ privateKey }) => privateKey),
-                    ktState.current.ktLSAPI,
-                    userID,
-                    fakeAddressID
-                ).catch((error: any) => {
-                    ktSentryReport('Failure during others keys commitment', {
-                        context: 'verifyOutboundPublicKeys',
-                        errorMessage: error.message,
-                    });
+                reports.push({
+                    measurementGroup: TelemetryMeasurementGroups.keyTransparency,
+                    event: TelemetryKeyTransparencySelfAuditErrorEvents.self_audit_error,
+                    dimensions,
                 });
-            }
+            });
+            failedLocalStorageAuditsOwn.forEach(() => {
+                const dimensions: SimpleMap<string> = {
+                    type: 'local_storage_own_keys',
+                    result: 'failure',
+                    reason: 'local_key_changes_not_applied',
+                };
+
+                reports.push({
+                    measurementGroup: TelemetryMeasurementGroups.keyTransparency,
+                    event: TelemetryKeyTransparencySelfAuditErrorEvents.self_audit_error,
+                    dimensions,
+                });
+            });
+            failedLocalStorageAuditsOther.forEach(() => {
+                const dimensions: SimpleMap<string> = {
+                    type: 'local_storage_other_keys',
+                    result: 'failure',
+                    reason: 'past_keys_not_authentic',
+                };
+
+                reports.push({
+                    measurementGroup: TelemetryMeasurementGroups.keyTransparency,
+                    event: TelemetryKeyTransparencySelfAuditErrorEvents.self_audit_error,
+                    dimensions,
+                });
+            });
+
+            void sendMultipleTelemetryReports({
+                api: silentApi,
+                reports,
+            });
         }
     };
 
-    useEffect(() => {
-        const run = async () => {
-            const ktActivation = await getKTActivation();
-            const addressesPromise = getAddresses();
-
-            // Since we cannot check the feature flag at login time, the
-            // createPreAuthKTVerifier helper might have created blobs
-            // in local storage. If this is the case and the feature flag
-            // turns out to be disabled, we remove them all
-            if (ktActivation === KeyTransparencyActivation.DISABLED) {
-                const addresses = await addressesPromise;
-                await removeKTBlobs(
+    const runSelfAudit = async () => {
+        // Since we cannot check the feature flag at login time, the
+        // createPreAuthKTVerifier helper might have created blobs
+        // in local storage. If this is the case and the feature flag
+        // turns out to be disabled, we remove them all
+        if (ktActivation === KeyTransparencyActivation.DISABLED) {
+            const addresses = await getAddresses();
+            await removeKTBlobs(
+                userID,
+                addresses.map(({ ID }) => ID),
+                ktLSAPI
+            );
+            return;
+        }
+        const userKeys = await getUserKeys();
+        const userPrivateKeys = userKeys.map(({ privateKey }) => privateKey);
+        const { publicKey: userPrimaryPublicKey } = getPrimaryKey(userKeys) || {};
+        if (!userPrimaryPublicKey) {
+            throw new Error('User has no user keys');
+        }
+        const lastSelfAudit = await getAuditResult(userID, userPrivateKeys, ktLSAPI);
+        const lastSelfAuditTime = lastSelfAudit?.auditTime ?? 0;
+        const elapsedTime = +serverTime() - lastSelfAuditTime;
+        let timer = EXPECTED_EPOCH_INTERVAL;
+        if (elapsedTime > EXPECTED_EPOCH_INTERVAL) {
+            try {
+                const addresses = await getAddresses();
+                const selfAuditResult = await selfAudit(
                     userID,
-                    addresses.map(({ ID }) => ID),
-                    ktLSAPI
-                );
-                return;
-            }
-
-            const userKeys = await getUserKeys();
-            const lastSelfAudit = await getAuditResult(userID, ktLSAPI);
-
-            const elapsedTime = +serverTime() - (lastSelfAudit || 0);
-            let timer = EXP_EPOCH_INTERVAL;
-            if (elapsedTime > EXP_EPOCH_INTERVAL) {
-                const addresses = await addressesPromise;
-                const selfAuditPromise = auditAddresses(
-                    userID,
-                    [normalApi, silentApi],
+                    silentApi,
                     addresses,
                     userKeys,
                     ktLSAPI,
-                    fixMultiplePrimaryKeys
+                    saveSKLToLS,
+                    getLatestEpoch
                 );
-
-                selfAuditPromise.catch((e) => console.log({ e, stack: e.stack }));
-
-                // Run ends
-                ktState.current = {
-                    selfAuditPromise,
-                    ktLSAPI,
-                };
-            } else {
-                timer = elapsedTime;
+                await reportSelfAuditErrors(selfAuditResult);
+                if (selfAuditResult) {
+                    await storeAuditResult(userID, selfAuditResult, userPrimaryPublicKey, ktLSAPI);
+                    setKTState({ selfAuditResult });
+                }
+            } catch (error: any) {
+                const errorMessage = error instanceof Error ? error.message : 'unknown error';
+                const stack = error instanceof Error ? error.stack : undefined;
+                ktSentryReport(errorMessage, { context: 'SelfAudit', stack });
+                return;
             }
+        } else {
+            setKTState({ selfAuditResult: lastSelfAudit ?? undefined });
+            timer = elapsedTime;
+        }
 
-            // Repeat every expectedEpochInterval (4h)
-            setTimeout(() => {
-                void run();
-            }, timer);
-        };
+        // Repeat every expectedEpochInterval (4h)
+        setTimeout(() => {
+            void runSelfAudit();
+        }, timer);
+    };
 
-        void run();
-    }, []);
+    useEffect(() => {
+        runSelfAudit().catch((error) => {
+            const errorMessage = error instanceof Error ? error.message : 'unknown error';
+            const stack = error instanceof Error ? error.stack : undefined;
+            ktSentryReport(errorMessage, { context: 'runSelfAudit', stack });
+        });
+    }, [ktActivation]);
 
     const ktFunctions: KTContext = {
-        getKTState,
+        ktState,
+        ktActivation,
         verifyOutboundPublicKeys,
     };
 

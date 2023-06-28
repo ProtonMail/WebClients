@@ -12,7 +12,7 @@ import {
     useState,
 } from 'react';
 
-import { FeatureCode, useFeature } from '@proton/components';
+import { FeatureCode, useFeature, useKeyTransparencyContext } from '@proton/components';
 import createScrollIntoView from '@proton/components/helpers/createScrollIntoView';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 import { Label } from '@proton/shared/lib/interfaces/Label';
@@ -111,6 +111,8 @@ const MessageView = (
 
     const elementRef = useRef<HTMLElement>(null);
 
+    const { ktActivation } = useKeyTransparencyContext();
+
     const { message, messageLoaded, bodyLoaded } = useMessage(inputMessage.ID, conversationID);
     const load = useLoadMessage(inputMessage);
     const initialize = useInitializeMessage();
@@ -134,8 +136,11 @@ const MessageView = (
             return getSentStatusIconInfo(message);
         }
         // else it's a received message
-        return { globalIcon: getReceivedStatusIcon(message.data, message.verification), mapStatusIcon: {} };
-    }, [message]);
+        return {
+            globalIcon: getReceivedStatusIcon(message.data, message.verification, ktActivation),
+            mapStatusIcon: {},
+        };
+    }, [message, ktActivation]);
 
     const handleLoadRemoteImages = async () => {
         await loadRemoteImages();

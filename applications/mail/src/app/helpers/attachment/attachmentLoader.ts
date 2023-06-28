@@ -61,7 +61,7 @@ export const getDecryptedAttachment = async (
         if (!isOutside) {
             const sessionKey = await getSessionKey(attachment, messageKeys.privateKeys);
             // verify attachment signature only when sender is verified
-            const publicKeys = verification?.senderVerified ? verification.senderPinnedKeys : undefined;
+            const publicKeys = verification?.pinnedKeysVerified ? verification.senderPinnedKeys : undefined;
             return await decrypt(encryptedBinary, sessionKey, attachment.Signature, publicKeys);
         }
         const sessionKey = await getEOSessionKey(attachment, messageKeys.password);

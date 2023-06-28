@@ -1,6 +1,5 @@
 import { c } from 'ttag';
 
-import { KT_FF } from '@proton/components/containers/keyTransparency/ktStatus';
 import { serverTime, wasServerTimeEverUpdated } from '@proton/crypto';
 import { getAllAddresses } from '@proton/shared/lib/api/addresses';
 import { auth2FA, getInfo, revoke } from '@proton/shared/lib/api/auth';
@@ -18,6 +17,7 @@ import { wait } from '@proton/shared/lib/helpers/promise';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import {
     Api,
+    KeyTransparencyActivation,
     UserSettings,
     Address as tsAddress,
     KeySalt as tsKeySalt,
@@ -43,7 +43,6 @@ import noop from '@proton/utils/noop';
 
 import { ChallengeResult } from '../challenge';
 import { createKeyMigrationKTVerifier, createPreAuthKTVerifier } from '../keyTransparency';
-import { createGetKTActivation } from '../keyTransparency/useGetKTActivation';
 import { AuthActionResponse, AuthCacheResult, AuthStep } from './interface';
 import { getAuthTypes, handleUnlockKey } from './loginHelper';
 
@@ -424,7 +423,7 @@ export const handleLogin = async ({
     toApp,
     payload,
     setupVPN,
-    ktFeature,
+    ktActivation,
 }: {
     username: string;
     password: string;
@@ -436,7 +435,7 @@ export const handleLogin = async ({
     toApp: APP_NAMES | undefined;
     payload?: ChallengeResult;
     setupVPN: boolean;
-    ktFeature: KT_FF;
+    ktActivation: KeyTransparencyActivation;
 }): Promise<AuthActionResponse> => {
     const infoResult = await api<InfoResponse>(getInfo(username));
     const { authVersion, result: authResponse } = await loginWithFallback({
@@ -446,8 +445,6 @@ export const handleLogin = async ({
         payload,
         persistent,
     });
-
-    const getKTActivation = createGetKTActivation(Promise.resolve(ktFeature), appName);
 
     const cache: AuthCacheResult = {
         authResponse,
@@ -463,8 +460,8 @@ export const handleLogin = async ({
         ignoreUnlock,
         hasTrustedDeviceRecovery,
         setupVPN,
-        preAuthKTVerifier: createPreAuthKTVerifier(getKTActivation, api),
-        keyMigrationKTVerifier: createKeyMigrationKTVerifier(getKTActivation, api),
+        preAuthKTVerifier: createPreAuthKTVerifier(ktActivation, api),
+        keyMigrationKTVerifier: createKeyMigrationKTVerifier(ktActivation, api),
     };
 
     return next({ cache, from: AuthStep.LOGIN });
