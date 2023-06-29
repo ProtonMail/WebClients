@@ -81,6 +81,8 @@ const AuthExtension = () => {
         }
     }, [extension]);
 
+    const defaultData = defaults[type] || defaults.error;
+
     return (
         <Layout hasDecoration={false}>
             <Main>
@@ -91,9 +93,9 @@ const AuthExtension = () => {
                         </div>
                     )}
 
-                    <h1 className="h3 text-bold mb-0 mt-2 md:mt-0">{payload?.title ?? defaults[type].title}</h1>
+                    <h1 className="h3 text-bold mb-0 mt-2 md:mt-0">{payload?.title ?? defaultData.title}</h1>
                     <Text className="mt-4">
-                        {payload?.message ?? defaults[type].message}
+                        {payload?.message ?? defaultData.message}
                         {errorDetail && ` (${errorDetail})`}
                     </Text>
                 </Content>
