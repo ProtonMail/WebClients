@@ -1,5 +1,6 @@
 import { KeyboardEvent, MutableRefObject, useEffect, useMemo, useRef, useState } from 'react';
 
+import { normalize } from '@proton/shared/lib/helpers/string';
 import clsx from '@proton/utils/clsx';
 
 import Dropdown, { DropdownProps } from '../dropdown/Dropdown';
@@ -130,7 +131,8 @@ const SelectTwo = <V extends any>({
             setSearch('');
         }, clearSearchAfter);
 
-        const indexOfMatchedOption = searchableItems.findIndex((v) => v.startsWith(search));
+        const normalizedSearch = normalize(search);
+        const indexOfMatchedOption = searchableItems.findIndex((v) => normalize(v).startsWith(normalizedSearch));
 
         if (indexOfMatchedOption !== -1) {
             if (isOpen) {
