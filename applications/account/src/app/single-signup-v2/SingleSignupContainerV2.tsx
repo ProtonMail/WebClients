@@ -66,6 +66,8 @@ import { SessionData, SignupCacheResult, SubscriptionData, UserCacheResult } fro
 import { getPlanIDsFromParams, getSignupSearchParams } from '../signup/searchParams';
 import { handleDone, handleSetupMnemonic, handleSetupUser, handleSubscribeUser } from '../signup/signupActions';
 import { handleCreateUser } from '../signup/signupActions/handleCreateUser';
+import { getSignupMeta } from '../signup/signupPagesJson';
+import { useMetaTags } from '../useMetaTags';
 import LoginModal from './LoginModal';
 import Step1, { Step1Rref } from './Step1';
 import Step2 from './Step2';
@@ -148,10 +150,12 @@ interface Props {
 
 let ranPreload = false;
 
-const SingleSignupContainerV2 = ({ fork, activeSessions, loader, onLogin, productParam, clientType }: Props) => {
+const SingleSignupContainerV2 = ({ toApp, fork, activeSessions, loader, onLogin, productParam, clientType }: Props) => {
     const ktActivation = useKTActivation();
     const { APP_NAME } = useConfig();
     const forceRefresh = useForceRefresh();
+
+    useMetaTags(getSignupMeta(toApp, APP_NAME, { isMailTrial: false, isMailRefer: false }));
 
     const [model, setModel] = useState<SignupModelV2>(defaultSignupModel);
     const step1Ref = useRef<Step1Rref | undefined>(undefined);
