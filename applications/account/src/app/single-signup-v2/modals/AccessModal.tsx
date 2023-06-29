@@ -2,15 +2,19 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
 import { ModalProps, ModalTwo, ModalTwoContent, ModalTwoFooter } from '@proton/components/components';
+import { useLoading } from '@proton/components/hooks';
 
 import access from '../pass/access.svg';
 
 interface Props extends ModalProps {
     plan: string;
     appName: string;
+    onContinue: () => void;
+    onSignOut: () => Promise<void>;
 }
 
-const AccessModal = ({ plan, appName, ...rest }: Props) => {
+const AccessModal = ({ plan, appName, onClose, onContinue, onSignOut, ...rest }: Props) => {
+    const [loading, withLoading] = useLoading();
     return (
         <ModalTwo {...rest} disableCloseOnEscape={true} size="small">
             <ModalTwoContent>
@@ -24,7 +28,25 @@ const AccessModal = ({ plan, appName, ...rest }: Props) => {
                 </div>
             </ModalTwoContent>
             <ModalTwoFooter>
-                <Button color="norm" onClick={rest.onClose} fullWidth>
+                <Button
+                    shape="ghost"
+                    color="norm"
+                    loading={loading}
+                    onClick={async () => {
+                        await withLoading(onSignOut().then(() => onClose?.()));
+                    }}
+                    fullWidth
+                >
+                    {c('pass_signup_2023: Action').t`Create another account instead`}
+                </Button>
+                <Button
+                    color="norm"
+                    onClick={() => {
+                        onContinue();
+                        onClose?.();
+                    }}
+                    fullWidth
+                >
                     {c('pass_signup_2023: Action').t`Start using ${appName}`}
                 </Button>
             </ModalTwoFooter>
