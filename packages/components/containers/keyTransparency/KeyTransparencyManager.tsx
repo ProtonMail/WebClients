@@ -5,7 +5,6 @@ import {
     AddressAuditStatus,
     EXPECTED_EPOCH_INTERVAL,
     KTBlobContent,
-    KTPublicKeyStatus,
     SelfAuditResult,
     commitSKLToLS,
     getAuditResult,
@@ -29,6 +28,7 @@ import {
     FetchedSignedKeyList,
     KeyTransparencyActivation,
     KeyTransparencyState,
+    KeyTransparencyVerificationResult,
     SaveSKLToLS,
     SimpleMap,
     VerifyOutboundPublicKeys,
@@ -114,8 +114,8 @@ const KeyTransparencyManager = ({ children, appName }: Props) => {
             signedKeyList: FetchedSignedKeyList | null;
         }
     ): Promise<{
-        addressKTStatus?: KTPublicKeyStatus;
-        catchAllKTStatus?: KTPublicKeyStatus;
+        addressKTResult?: KeyTransparencyVerificationResult;
+        catchAllKTResult?: KeyTransparencyVerificationResult;
     }> => {
         if (ktActivation === KeyTransparencyActivation.DISABLED) {
             return {};

@@ -2,17 +2,22 @@ import React from 'react';
 
 import { c } from 'ttag';
 
+import { NotificationDot } from '@proton/atoms/NotificationDot';
 import { DropdownMenuButton, Tooltip, useModalState } from '@proton/components/components';
+import { KeyTransparencyDetailsModal } from '@proton/components/components/keyTransparency';
 import {
     MailComposerModeModal,
     MailDensityModal,
     MailShortcutsModal,
     MailViewLayoutModal,
     TopNavbarListItemSettingsDropdown,
+    useKeyTransparencyContext,
 } from '@proton/components/containers';
 import { useMailSettings, useUserSettings } from '@proton/components/hooks';
+import useKeyTransparencyNotification from '@proton/components/hooks/useKeyTransparencyNotification';
 import { APPS, COMPOSER_MODE, DENSITY, VIEW_LAYOUT } from '@proton/shared/lib/constants';
 import { isFirefox } from '@proton/shared/lib/helpers/browser';
+import { KeyTransparencyActivation } from '@proton/shared/lib/interfaces';
 
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import ClearBrowserDataModal from './ClearBrowserDataModal';
@@ -31,6 +36,10 @@ const MailHeaderSettingsButton = () => {
     const [mailDensityProps, setMailDensityModalOpen] = useModalState();
     const [mailComposerModeProps, setMailComposerModeModalOpen] = useModalState();
     const [mailDefaultHandlerProps, setDefaultHandlerModalOpen] = useModalState();
+    const [keyTransparencyDetailsModalProps, setKeyTransparencyDetailsModalOpen] = useModalState();
+    const { ktActivation } = useKeyTransparencyContext();
+    const keyTransparencyNotification = useKeyTransparencyNotification();
+    const showKT = ktActivation === KeyTransparencyActivation.SHOW_UI;
 
     const clearDataButton =
         dbExists || esEnabled ? (
@@ -52,7 +61,11 @@ const MailHeaderSettingsButton = () => {
 
     return (
         <>
-            <TopNavbarListItemSettingsDropdown to="/mail" toApp={APPS.PROTONACCOUNT}>
+            <TopNavbarListItemSettingsDropdown
+                to="/mail"
+                toApp={APPS.PROTONACCOUNT}
+                notificationDotColor={keyTransparencyNotification}
+            >
                 <hr className="my-2" />
                 <DropdownMenuButton
                     onClick={() => setMailShortcutsModalOpen(true)}
@@ -103,6 +116,21 @@ const MailHeaderSettingsButton = () => {
                     </DropdownMenuButton>
                 )}
                 {clearDataButton}
+                {showKT && (
+                    <DropdownMenuButton
+                        onClick={() => setKeyTransparencyDetailsModalOpen(true)}
+                        className="flex flex-nowrap flex-justify-space-between flex-align-items-center"
+                    >
+                        {c('loc_nightly: Key transparency details').t`Key Transparency`}
+                        {keyTransparencyNotification && (
+                            <NotificationDot
+                                className="ml-4"
+                                color={keyTransparencyNotification}
+                                alt={c('Action').t`Attention required`}
+                            />
+                        )}
+                    </DropdownMenuButton>
+                )}
             </TopNavbarListItemSettingsDropdown>
             <MailShortcutsModal {...mailShortcutsProps} />
             <MailViewLayoutModal {...mailViewLayoutProps} />
@@ -110,6 +138,7 @@ const MailHeaderSettingsButton = () => {
             <MailComposerModeModal {...mailComposerModeProps} />
             <MailDefaultHandlerModal {...mailDefaultHandlerProps} />
             <ClearBrowserDataModal {...clearBrowserDataProps} />
+            <KeyTransparencyDetailsModal {...keyTransparencyDetailsModalProps} />
         </>
     );
 };
