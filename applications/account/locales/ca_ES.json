@@ -141,7 +141,7 @@
         "Adjunta una o més captures de pantalla"
       ],
       "Attention required": [
-        "Requereix atenció"
+        "Es requereix la vostra atenció"
       ],
       "Authenticate": [
         "Autentica"
@@ -540,10 +540,10 @@
         "Gestiona les preferències de comunicació"
       ],
       "Manage folders": [
-        "Gestionar carpetes"
+        "Gestiona les carpetes"
       ],
       "Manage labels": [
-        "Gestionar etiquetes"
+        "Gestiona les etiquetes"
       ],
       "Mark as default": [
         "Marca per defecte"
@@ -747,7 +747,7 @@
         "Configuració de cerca"
       ],
       "See plan features": [
-        "Veure les funcionalitats del pla"
+        "Mostra les característiques del pla"
       ],
       "Select ${ planTitle }": [
         "Selecciona ${ planTitle }"
@@ -798,7 +798,7 @@
         "Compartir"
       ],
       "Share via link": [
-        "Comparteix amb enllaç"
+        "Comparteix amb un enllaç"
       ],
       "Sharing options": [
         "Opcions de compartició"
@@ -849,7 +849,7 @@
         "Omet"
       ],
       "Skip verification": [
-        "Ometre la verificació"
+        "Omet la verificació"
       ],
       "Sort": [
         "Ordena"
@@ -912,7 +912,7 @@
         "Actualitza la frase de recuperació"
       ],
       "Upgrade": [
-        "Actualitza"
+        "Millora"
       ],
       "Upgrade now": [
         "Actualitzar ara"
@@ -4955,6 +4955,9 @@
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Si continueu, perdreu l'accés a totes les dades xifrades actuals del vostre compte."
       ],
+      "${ BRAND_NAME } is privacy you can trust, ensured by strong encryption, open-source code, and Swiss privacy laws. We believe nobody should be able to exploit your data, period. Our technology and business are based upon this fundamentally stronger definition of privacy.": [
+        "${ BRAND_NAME } és privacitat de confiança, assegurada amb xifratge fort, de codi obert, i lleis de privacitat Suïsses. Creiem que ningú hauria de poder explotar les vostres dades, i punt. La nostra tecnologia i negoci estan basats fonamentalment en aquesta definició de forta privacitat."
+      ],
       "${ BRAND_NAME } paused an import because it lost the connection with your other email provider. Please reconnect.": [
         "${ BRAND_NAME } ha aturat una importació perquè ha perdut la connexió amb el vostre altre proveïdor de correu electrònic. Torneu a connectar."
       ],
@@ -5623,6 +5626,9 @@
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Els filtres funcionen en tots els correus electrònics, inclosos els que es reben i els enviats. Cada filtre ha de contenir almenys un nom, una condició i una acció."
       ],
+      "for choosing ${ product }": [
+        "per escollir ${ product }"
+      ],
       "For choosing ${ product }": [
         "Per triar ${ product }"
       ],
@@ -5631,6 +5637,9 @@
       ],
       "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
         "Transferiu els missatges entrants d'un altre compte vers la vostra safata d'entrada segura de ${ MAIL_APP_NAME }."
+      ],
+      "Free forever": [
+        "Gratuït per sempre"
       ],
       "Free up some space or add more storage space.": [
         "Allibereu una mica d’espai o afegiu més espai d’emmagatzematge."
@@ -6009,6 +6018,9 @@
       "Outdated recovery phrase; update to ensure access to your data": [
         "Frase de recuperació obsoleta; actualitzeu per garantir l'accés a les vostres dades"
       ],
+      "Over 100 million people and businesses have signed up for ${ BRAND_NAME }.": [
+        "Més de 100 milions de persones i negocis s'han registrat a ${ BRAND_NAME }."
+      ],
       "Paid for a ${ rewardMonths } month plan": [
         "Ha pagat un pla de ${ rewardMonths } mes",
         "Ha pagat un pla de ${ rewardMonths } mesos"
@@ -6138,6 +6150,9 @@
       "Recovery information will remain on this device unless you select to delete it.": [
         "La informació de recuperació es mantindrà en aquest dispositiu llevat que escolliu eliminar-la."
       ],
+      "Recovery kit copied to clipboard": [
+        "Paquet de recuperació copiat al porta-retalls"
+      ],
       "Recovery phrase copied to clipboard": [
         "Frase de recuperació copiada al porta-retalls"
       ],
@@ -6161,6 +6176,9 @@
       ],
       "Remove one of your calendars to join this one": [
         "Elimineu un dels vostres calendaris per unir-vos a aquest"
+      ],
+      "Report link expired": [
+        "Enllaç de notificació expirat"
       ],
       "Restore": [
         "Restaura"
@@ -6345,6 +6363,9 @@
       ],
       "The Import-Export app allows you to export messages for local backups and to restore previous backups to your account.": [
         "L'aplicació Import-Export us permet exportar missatges per a còpies de seguretat locals i restaurar còpies de seguretat anteriors al vostre compte."
+      ],
+      "The link to report that that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue.": [
+        "L'enllaç per a notificar que no heu configurat un compte ${ BRAND_NAME } ha caducat. Contacteu amb el nostre equip de suport per a resoldre aquest problema."
       ],
       "The name will be visible to your users while they are signed in.": [
         "El nom serà visible per als vostre usuaris quan estiguin connectats."
@@ -7652,7 +7673,7 @@
         "Elimina"
       ],
       "Delete recovery-related information.": [
-        "Eliminar la informació de recuperació."
+        "Elimina la informació de recuperació."
       ],
       "Density": [
         "Densitat"
@@ -9232,6 +9253,26 @@
         "Gestió d'equip"
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Feu de la privacitat la vostra opció per defecte per a còpia de seguretat, emmagatzematge, compartició i recuperació de fitxers."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "En cas contrari, es limitarà l'accés al vostre compte i, finalment, el vostre compte es desactivarà."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Per continuar utilitzant ${ MAIL_APP_NAME } amb característiques prèmium, trieu les opcions de subscripció i pagament."
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "Milloreu al paquet empresarial amb accés a tots els serveis prèmium ${ BRAND_NAME }."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "Milloreu al paquet de privacitat definitiu i accediu a tots els serveis prèmium ${ BRAND_NAME }."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "El període de prova acaba el ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } acabant en ${ last4 }."
@@ -9310,26 +9351,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Esteu gaudint d'un preu promocional al vostre pla actual. Si feu una baixada de categoria al vostre compte, perdreu el preu promocional i no estarà disponible si intenteu subscriure-us novament."
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Feu de la privacitat la vostra opció per defecte per a còpia de seguretat, emmagatzematge, compartició i recuperació de fitxers."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "En cas contrari, es limitarà l'accés al vostre compte i, finalment, el vostre compte es desactivarà."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Per continuar utilitzant ${ MAIL_APP_NAME } amb característiques prèmium, trieu les opcions de subscripció i pagament."
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "Milloreu al paquet empresarial amb accés a tots els serveis prèmium ${ BRAND_NAME }."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "Milloreu al paquet de privacitat definitiu i accediu a tots els serveis prèmium ${ BRAND_NAME }."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "El període de prova acaba el ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -9513,7 +9534,7 @@
         "Personalitzeu la vostra signatura de correu electrònic amb logotips, imatges, icones de xarxes socials, enllaços als detalls de contacte i més"
       ],
       "Phone support is available from the ${ BRAND_NAME } Customer Success team during European business hours, for customers with 6 or more users": [
-        "El suport telefònic està disponible per part de l'equip d'èxit al client de ${ BRAND_NAME } durant les hores de negoci a Europa per a clients amb 6 o més usuaris"
+        "L'equip d'atenció al client de ${ BRAND_NAME } ofereix assistència telefònica a l'horari laboral europeu als clients que tenen, com a mínim, 6 usuaris."
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Evita que ${ BRAND_NAME } o tercers accedeixin als missatges. Les úniques persones que poden llegir els missatges són el remitent i el destinatari previst."
@@ -9588,7 +9609,7 @@
         "Quan esteu connectat a la nostra VPN, el vostre DNS fa les consultes a través del túnel VPN xifrat, augmentant la vostra privacitat i seguretat en línia"
       ],
       "When sending to other ${ MAIL_APP_NAME } users, encryption is automatic. Sending to non-${ MAIL_APP_NAME_TWO } users requires setting a password prior to sending.": [
-        "Quan s'envia a altres usuaris de ${ MAIL_APP_NAME }, el xifratge és automàtic. L'enviament a usuaris que no siguin de ${ MAIL_APP_NAME_TWO } requereix establir abans una contrasenya."
+        "Quan s'envia a altres usuaris de ${ MAIL_APP_NAME }, el xifratge és automàtic. L'enviament a usuaris que no utilitzen ${ MAIL_APP_NAME_TWO } requereix establir abans una contrasenya."
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "Podeu tenir més d'un administrador. Tots els administradors poden afegir i gestionar usuaris, però només l'administrador primari té control sobre la facturació."
@@ -10120,7 +10141,7 @@
         "Número de telèfon"
       ],
       "Please describe the problem and include any error messages": [
-        "Descriu el problema i inclou-hi qualssevol missatges d'error."
+        "Descriviu el problema i incloeu qualsevol missatge d'error"
       ],
       "Please insert link first": [
         "Inseriu l'enllaç primer"

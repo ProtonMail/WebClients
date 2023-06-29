@@ -2859,6 +2859,20 @@
         "90 minuti"
       ]
     },
+    "Email": {
+      "Email verified": [
+        "Email verificata"
+      ],
+      "Thank you for verifying your email address.": [
+        "Grazie per avere verificato l'indirizzo email."
+      ],
+      "Thanks for letting us know": [
+        "Grazie per averci informato"
+      ],
+      "You can safely close this tab.": [
+        "Puoi chiudere questa scheda."
+      ]
+    },
     "Email body for description (description part)": {
       "Description: ${ eventDescription }": [
         "Descrizione: ${ eventDescription }"
@@ -3638,6 +3652,9 @@
       ]
     },
     "Error message, recovery": {
+      "Contact ${ BRAND_NAME }": [
+        "Contatto ${ BRAND_NAME }"
+      ],
       "Please ${ signIn } to resend a recovery email verification request.": [
         "${ signIn } per inviare nuovamente una richiesta di verifica dell'email di recupero."
       ],
@@ -5582,6 +5599,9 @@
       "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
         "Inoltra la posta in arrivo da un altro account alla tua casella di posta sicura di ${ MAIL_APP_NAME }."
       ],
+      "Free forever": [
+        "Gratis per sempre"
+      ],
       "Free up some space or add more storage space.": [
         "Libera dello spazio o aggiungi più spazio di archiviazione."
       ],
@@ -5635,6 +5655,9 @@
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Se credi che questo sia un errore, contattaci ${ contactLink }."
+      ],
+      "If you cancel, your ${ vpnPlanName } subscription will not be renewed when it expires on ${ expiryDate }.": [
+        "Se cancelli, il tuo abbonamento ${ vpnPlanName } non verrà rinnovato quando scadrà il ${ expiryDate }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Se non trovi l'email nella tua casella di posta, controlla la cartella spam."
@@ -6763,6 +6786,9 @@
       "You will NOT be able to decrypt any messages, files, and other data encrypted with this key.": [
         "NON sarai in grado di decrittografare messaggi, file e altri dati crittografati con questa chiave."
       ],
+      "You will receive priority support from specialists trained in account protection. For any account security concerns, please ${ hereLink }.": [
+        "Riceverai supporto prioritario da specialisti addestrati in protezione di account. Per qualsiasi problema di sicurezza dell'account, ${ hereLink }."
+      ],
       "You will see more details in the Security logs below for important events such as sign in attempts.": [
         "Vedrai più dettagli nei log di sicurezza in basso per eventi importanti come tentativi di accesso."
       ],
@@ -6903,6 +6929,11 @@
     "Info on errors": {
       "Click for details": [
         "Clicca per maggiori dettagli"
+      ]
+    },
+    "Info subscription": {
+      "You can prevent expiry by reactivating the subscription": [
+        "Puoi prevenire la scadenza riattivando l'abbonamento"
       ]
     },
     "Info when deleting payment method": {
@@ -8314,6 +8345,9 @@
       "General": [
         "Generale"
       ],
+      "How to pay with Bitcoin?": [
+        "Come pagare con Bitcoin?"
+      ],
       "How to unlock data": [
         "Come sbloccare i dati"
       ],
@@ -8334,6 +8368,9 @@
       ],
       "Pay invoice": [
         "Pagamento della fattura"
+      ],
+      "Paypal without credit card": [
+        "Paypal senza carta di credito"
       ],
       "Privacy policy": [
         "Informativa sulla privacy"
@@ -9109,6 +9146,26 @@
         "Gestione del team"
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Rendi la privacy la tua impostazione predefinita per il backup, l'archiviazione, la condivisione e il recupero dei file."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "In caso contrario, l'accesso al tuo account sarà limitato e il tuo account verrà di seguito disabilitato."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Per continuare a utilizzare ${ MAIL_APP_NAME } con le funzionalità premium, scegli l'abbonamento e le opzioni di pagamento."
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "Effettua l'upgrade al pacchetto per le aziende con accesso a tutti i servizi premium di ${ BRAND_NAME }."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "Effettua l'upgrade al pacchetto per la privacy definitivo e accedi a tutti i servizi premium di ${ BRAND_NAME }."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Il periodo di prova termina il ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } che termina con ${ last4 }"
@@ -9187,26 +9244,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Stai godendo di un prezzo promozionale sul tuo piano attuale. Se esegui il downgrade del tuo account, perderai la possibilità di usufruire di questa promozione e non sarà più disponibile se provi ad abbonarti di nuovo."
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Rendi la privacy la tua impostazione predefinita per il backup, l'archiviazione, la condivisione e il recupero dei file."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "In caso contrario, l'accesso al tuo account sarà limitato e il tuo account verrà di seguito disabilitato."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Per continuare a utilizzare ${ MAIL_APP_NAME } con le funzionalità premium, scegli l'abbonamento e le opzioni di pagamento."
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "Effettua l'upgrade al pacchetto per le aziende con accesso a tutti i servizi premium di ${ BRAND_NAME }."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "Effettua l'upgrade al pacchetto per la privacy definitivo e accedi a tutti i servizi premium di ${ BRAND_NAME }."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Il periodo di prova termina il ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -9371,6 +9408,9 @@
       "Our servers’ hard disks are fully encrypted with multiple password layers so your data is protected even if our hardware is compromised": [
         "Gli hard disk dei nostri server sono completamente cifrati con più livelli di password, così i tuoi dati sono protetti anche se il nostro hardware è compromesso"
       ],
+      "Password management and identity protection": [
+        "Gestione password e protezione dell'identità"
+      ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Personalizza la tua firma email con loghi, immagini, icone di social media, link ai tuoi dettagli di contatto e altro ancora"
       ],
@@ -9450,7 +9490,7 @@
         "Quando sei connesso alla nostra VPN, il tuo DNS effettua query attraverso il nostro tunnel VPN cifrato, migliorando la tua privacy e sicurezza online"
       ],
       "When sending to other ${ MAIL_APP_NAME } users, encryption is automatic. Sending to non-${ MAIL_APP_NAME_TWO } users requires setting a password prior to sending.": [
-        "Quando si invia ad altri utenti ${ MAIL_APP_NAME }, la crittografia è automatica. L'invio a utenti non-${ MAIL_APP_NAME_TWO } richiede l'impostazione di una password prima dell'invio."
+        "Quando si invia ad altri utenti ${ MAIL_APP_NAME }, la crittografia è automatica. L'invio a utenti che non utilizzano ${ MAIL_APP_NAME_TWO } richiede l'impostazione di una password prima dell'invio."
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "Puoi avere più di un amministratore. Tutti gli amministratori possono aggiungere e gestire gli utenti, ma solo l'amministratore principale ha il controllo sulla fatturazione."
@@ -9498,6 +9538,9 @@
       ],
       "Priority support": [
         "Assistenza prioritaria"
+      ],
+      "Secure your passwords and identity with an open-source and encrypted password manager.": [
+        "Metti al sicuro le tue password e la tua identità con un gestore delle password open-source e crittografato."
       ],
       "Support for 1 custom email domain": [
         "Assistenza per 1 dominio email personalizzato"
@@ -11134,6 +11177,9 @@
       "Verification successful": [
         "Verifica riuscita"
       ],
+      "You have successfully cancelled your subscription.": [
+        "Hai annullato l'abbonamento con successo."
+      ],
       "You have successfully unsubscribed": [
         "Abbonamento annullato con successo"
       ]
@@ -11382,7 +11428,7 @@
     },
     "Title": {
       "${ appName } Free": [
-        "${ appName } Gratis"
+        "${ appName } Free"
       ],
       "${ MAIL_APP_NAME } Keyboard Shortcuts": [
         "${ MAIL_APP_NAME } Scorciatoie da tastiera"
@@ -12134,6 +12180,9 @@
       "Sort labels alphabetically": [
         "Ordina etichette in modo alfabetico"
       ],
+      "Spam, block, and allow lists": [
+        "Liste di spam, blocco, e consenso"
+      ],
       "Start a new import": [
         "Avvia una nuova importazione"
       ],
@@ -12174,6 +12223,9 @@
       ],
       "Two-factor authentication": [
         "Autenticazione a due fattori"
+      ],
+      "Two-factor authentication reminders": [
+        "Promemoria per l'autenticazione a due fattori"
       ],
       "Type": [
         "Tipo"
