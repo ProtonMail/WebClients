@@ -6,7 +6,7 @@ const TOP_COUNTRIES = [
     { label: 'Germany', value: 'DE' },
     { label: 'Canada', value: 'CA' },
 ];
-export const DEFAULT_SEPARATOR = { label: '------------------', value: '', disabled: true };
+export const DEFAULT_SEPARATOR = { label: '------------------', value: '', disabled: true, key: 'separator' };
 const COUNTRIES = [
     { value: 'AF', label: 'Afghanistan' },
     { value: 'AL', label: 'Albania' },
@@ -250,13 +250,22 @@ const countriesByAbbr = COUNTRIES.reduce<{ [key: string]: string }>(
 
 export const getCountryByAbbr = (abbr: string) => countriesByAbbr[abbr];
 export const correctAbbr = (abbr: string) => (abbr === 'UK' ? 'GB' : abbr);
-export const getFullList = () =>
-    TOP_COUNTRIES.concat([DEFAULT_SEPARATOR], COUNTRIES) as [
-        {
-            value: string;
-            label: string;
-            disabled?: boolean;
-        }
-    ];
+
+interface CountryItem {
+    value: string;
+    key: string;
+    label: string;
+    disabled: boolean;
+}
+
+export const getFullList = (): CountryItem[] =>
+    TOP_COUNTRIES.map((country) => ({
+        ...country,
+        key: `${country.value}-top`,
+        disabled: false,
+    })).concat(
+        [DEFAULT_SEPARATOR],
+        COUNTRIES.map((country) => ({ ...country, disabled: false, key: country.value }))
+    );
 export const getList = () => COUNTRIES;
 export const getFirstTop = () => TOP_COUNTRIES[0];
