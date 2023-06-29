@@ -1,5 +1,4 @@
 import { CryptoProxy } from '@proton/crypto';
-import { KTPublicKeyStatus } from '@proton/key-transparency/lib';
 
 import { KEY_FLAG, RECIPIENT_TYPES } from '../../constants';
 import { API_CUSTOM_ERROR_CODES } from '../../errors';
@@ -43,20 +42,6 @@ const importKeys = async (keys: KeyWithFlags[]): Promise<ProcessedApiKey[]> => {
     );
 };
 
-const getKTVerificationStatus = (status: KTPublicKeyStatus | undefined): KT_VERIFICATION_STATUS | undefined => {
-    switch (status) {
-        case undefined:
-            return undefined;
-        case KTPublicKeyStatus.VERIFIED_PRESENT:
-            return KT_VERIFICATION_STATUS.VERIFIED_KEYS;
-        case KTPublicKeyStatus.VERIFIED_ABSENT:
-        case KTPublicKeyStatus.VERIFICATION_SKIPPED:
-            return KT_VERIFICATION_STATUS.UNVERIFIED_KEYS;
-        default:
-            return KT_VERIFICATION_STATUS.VERIFICATION_FAILED;
-    }
-};
-
 const getPublicKeysEmailHelperWithKT = async (
     api: Api,
     Email: string,
@@ -65,7 +50,7 @@ const getPublicKeysEmailHelperWithKT = async (
     noCache = false
 ): Promise<ApiKeysConfig> => {
     try {
-        const { addressKeys, catchAllKeys, unverifiedKeys, addressKTStatus, catchAllKTStatus, ...rest } =
+        const { addressKeys, catchAllKeys, unverifiedKeys, addressKTResult, catchAllKTResult, ...rest } =
             await getAndVerifyApiKeys(api, Email, true, verifyOutboundPublicKeys, silence, noCache);
 
         // First we use verified internal address keys
@@ -74,53 +59,56 @@ const getPublicKeysEmailHelperWithKT = async (
         if (mailCapableAddressKeys.length != 0) {
             return {
                 publicKeys: await importKeys(mailCapableAddressKeys),
-                ktVerificationStatus: addressKTStatus ? getKTVerificationStatus(addressKTStatus) : undefined,
+                ktVerificationResult: addressKTResult,
                 RecipientType: RECIPIENT_TYPES.TYPE_INTERNAL,
                 ...rest,
             };
         }
 
+        const keysChangedRecently = !!addressKTResult?.keysChangedRecently || !!catchAllKTResult?.keysChangedRecently;
+        const verificationFailed =
+            addressKTResult?.status === KT_VERIFICATION_STATUS.VERIFICATION_FAILED ||
+            catchAllKTResult?.status === KT_VERIFICATION_STATUS.VERIFICATION_FAILED;
+
         // Then we check if there are unverified internal address keys
         if (unverifiedKeys) {
             const mailCapableUnverifiedInternalKeys = getMailCapableKeys(getInternalKeys(unverifiedKeys));
             if (mailCapableUnverifiedInternalKeys.length != 0) {
-                const ktVerificationStatus =
-                    addressKTStatus === KTPublicKeyStatus.VERIFICATION_FAILED
-                        ? KT_VERIFICATION_STATUS.VERIFICATION_FAILED
-                        : KT_VERIFICATION_STATUS.UNVERIFIED_KEYS;
-
+                const status = verificationFailed
+                    ? KT_VERIFICATION_STATUS.VERIFICATION_FAILED
+                    : KT_VERIFICATION_STATUS.UNVERIFIED_KEYS;
                 return {
                     publicKeys: await importKeys(mailCapableUnverifiedInternalKeys),
-                    ktVerificationStatus,
+                    ktVerificationResult: { status, keysChangedRecently },
                     RecipientType: RECIPIENT_TYPES.TYPE_INTERNAL,
                     ...rest,
                 };
             }
         }
+
         // Then we check if there are internal catchall keys
         if (catchAllKeys) {
             const mailCapableCatchAllKeys = getMailCapableKeys(catchAllKeys);
             if (mailCapableCatchAllKeys.length != 0) {
-                const ktVerificationStatus =
-                    addressKTStatus === KTPublicKeyStatus.VERIFICATION_FAILED
-                        ? KT_VERIFICATION_STATUS.VERIFICATION_FAILED
-                        : getKTVerificationStatus(catchAllKTStatus);
-
+                const status = verificationFailed
+                    ? KT_VERIFICATION_STATUS.VERIFICATION_FAILED
+                    : catchAllKTResult?.status;
+                const ktVerificationResult = catchAllKTResult ? { status: status!, keysChangedRecently } : undefined;
                 return {
                     publicKeys: await importKeys(mailCapableCatchAllKeys),
-                    ktVerificationStatus,
+                    ktVerificationResult,
                     RecipientType: RECIPIENT_TYPES.TYPE_INTERNAL,
                     ...rest,
                 };
             }
         }
 
-        const verificationFailed =
-            addressKTStatus === KTPublicKeyStatus.VERIFICATION_FAILED ||
-            catchAllKTStatus === KTPublicKeyStatus.VERIFICATION_FAILED;
-        const ktVerificationStatus = verificationFailed
-            ? KT_VERIFICATION_STATUS.VERIFICATION_FAILED
-            : KT_VERIFICATION_STATUS.UNVERIFIED_KEYS;
+        const ktVerificationResult = {
+            status: verificationFailed
+                ? KT_VERIFICATION_STATUS.VERIFICATION_FAILED
+                : KT_VERIFICATION_STATUS.UNVERIFIED_KEYS,
+            keysChangedRecently,
+        };
 
         // Finally we check if there are external unverified keys
         if (unverifiedKeys) {
@@ -129,7 +117,7 @@ const getPublicKeysEmailHelperWithKT = async (
                 const firstUnverifiedKey = mailCapableUnverifiedExternalKeys[0];
                 return {
                     publicKeys: await importKeys([firstUnverifiedKey]),
-                    ktVerificationStatus,
+                    ktVerificationResult,
                     RecipientType: RECIPIENT_TYPES.TYPE_EXTERNAL,
                     ...rest,
                 };
@@ -138,7 +126,7 @@ const getPublicKeysEmailHelperWithKT = async (
         return {
             publicKeys: [],
             RecipientType: RECIPIENT_TYPES.TYPE_EXTERNAL,
-            ktVerificationStatus,
+            ktVerificationResult,
             ...rest,
         };
     } catch (error: any) {

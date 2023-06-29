@@ -1,5 +1,5 @@
 import type { PrivateKeyReference, PublicKeyReference, WorkerDecryptionResult } from '@proton/crypto';
-import { Api, KT_VERIFICATION_STATUS, RequireSome, SimpleMap } from '@proton/shared/lib/interfaces';
+import { Api, KeyTransparencyVerificationResult, RequireSome, SimpleMap } from '@proton/shared/lib/interfaces';
 import { VerificationPreferences } from '@proton/shared/lib/interfaces/VerificationPreferences';
 import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
@@ -88,7 +88,7 @@ export interface MessageVerification {
     /**
      * Key transparency verification status
      */
-    ktVerificationStatus: KT_VERIFICATION_STATUS | undefined;
+    ktVerificationResult: KeyTransparencyVerificationResult | undefined;
 }
 
 export interface AbstractMessageImage {
