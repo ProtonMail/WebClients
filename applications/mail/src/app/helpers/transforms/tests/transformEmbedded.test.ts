@@ -98,6 +98,7 @@ describe('transformEmbedded', () => {
                 hasEmbeddedImages: true,
                 showRemoteImages: false,
                 showEmbeddedImages: true,
+                trackersStatus: 'not-loaded',
                 images: [
                     {
                         type: 'embedded',

@@ -2,11 +2,20 @@ import { useCallback } from 'react';
 
 import { PayloadAction } from '@reduxjs/toolkit';
 
-import { FeatureCode, useApi, useAuthentication, useFeature, useMailSettings } from '@proton/components';
+import {
+    FeatureCode,
+    useApi,
+    useAuthentication,
+    useFeature,
+    useMailSettings,
+    useProgressiveRollout,
+} from '@proton/components';
 import { WorkerDecryptionResult } from '@proton/crypto';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { isDraft, isPlainText } from '@proton/shared/lib/mail/messages';
+import { MessageUTMTracker } from '@proton/shared/lib/models/mailUtmTrackers';
+import uniqueBy from '@proton/utils/uniqueBy';
 
 import { LOAD_RETRY_COUNT, LOAD_RETRY_DELAY } from '../../constants';
 import { getPureAttachments } from '../../helpers/attachment/attachment';
@@ -25,6 +34,7 @@ import { loadEmbedded } from '../../logic/messages/images/messagesImagesActions'
 import {
     LoadEmbeddedParams,
     LoadEmbeddedResults,
+    LoadRemoteResults,
     MessageErrors,
     MessageImages,
     MessageRemoteImage,
@@ -32,6 +42,7 @@ import {
     MessageStateWithDataFull,
 } from '../../logic/messages/messagesTypes';
 import {
+    cleanUTMTrackers,
     documentInitializeFulfilled,
     documentInitializePending,
     load,
@@ -56,7 +67,10 @@ export const useInitializeMessage = () => {
     const { verifyKeys } = useKeyVerification();
     const authentication = useAuthentication();
 
-    const isNumAttachmentsWithoutEmbedded = useFeature(FeatureCode.NumAttachmentsWithoutEmbedded).feature?.Value;
+    const { feature } = useFeature(FeatureCode.NumAttachmentsWithoutEmbedded);
+
+    const isNumAttachmentsWithoutEmbedded = feature?.Value;
+    const canCleanUTMTrackers = useProgressiveRollout(FeatureCode.CleanUTMTrackers);
 
     const onUpdateAttachment = (ID: string, attachment: WorkerDecryptionResult<Uint8Array>) => {
         dispatch(updateAttachment({ ID, attachment }));
@@ -162,8 +176,20 @@ export const useInitializeMessage = () => {
                 return handleDispatchLoadRemoteImagesDirect(localID, imagesToLoad, dispatch);
             };
 
+            const handleCleanUTMTrackers = (utmTrackers: MessageUTMTracker[]) => {
+                const uniqueTrackers = uniqueBy(utmTrackers, (tracker) => tracker.originalURL);
+                const dispatchResult = dispatch(cleanUTMTrackers({ ID: localID, utmTrackers: uniqueTrackers }));
+                return dispatchResult as any as Promise<LoadRemoteResults[]>;
+            };
+
             preparation = isPlainText({ MIMEType })
-                ? await preparePlainText(decryption.decryptedBody, isDraft(message.data))
+                ? await preparePlainText(
+                      decryption.decryptedBody,
+                      isDraft(message.data),
+                      mailSettings,
+                      canCleanUTMTrackers,
+                      handleCleanUTMTrackers
+                  )
                 : await prepareHtml(
                       {
                           ...message,
@@ -175,7 +201,9 @@ export const useInitializeMessage = () => {
                       handleLoadEmbeddedImages,
                       handleLoadRemoteImagesProxy,
                       handleLoadFakeImagesProxy,
-                      handleLoadRemoteImagesDirect
+                      handleLoadRemoteImagesDirect,
+                      handleCleanUTMTrackers,
+                      canCleanUTMTrackers
                   );
 
             if (!isPlainText({ MIMEType })) {
@@ -184,6 +212,7 @@ export const useInitializeMessage = () => {
                     showRemoteImages: preparation.showRemoteImages as boolean,
                     hasEmbeddedImages: preparation.hasEmbeddedImages as boolean,
                     showEmbeddedImages: preparation.showEmbeddedImages as boolean,
+                    trackersStatus: 'not-loaded',
                     images: [...(preparation.remoteImages || []), ...(preparation.embeddedImages || [])],
                 };
             }

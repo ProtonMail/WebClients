@@ -4750,6 +4750,7 @@ __metadata:
     "@protontech/mimemessage": ~v1.1.4
     "@protontech/mutex-browser": ^1.0.5
     "@protontech/sieve.js": ^2.0.6
+    "@protontech/tidy-url": ^1.6.17
     "@protontech/timezone-support": ^3.0.0
     "@sentry/browser": ^7.55.0
     "@types/dompurify": ^3.0.2
@@ -4895,6 +4896,13 @@ __metadata:
   version: 2.0.6
   resolution: "@protontech/sieve.js@npm:2.0.6"
   checksum: 8f85bcef1ae5705f0a7339ef16c076d7287335a5e96c8aef714e2b84a2ae68a114588dc1d68e713f72bd51edfafa51932470102ca911295b782742cecda3b35f
+  languageName: node
+  linkType: hard
+
+"@protontech/tidy-url@npm:^1.6.17":
+  version: 1.6.17
+  resolution: "@protontech/tidy-url@npm:1.6.17"
+  checksum: ab4ce10513a67ddd6718f61b03030c4a3da41b51e5cd1a9bd76b3b1d7176de38c111ec6d4379a734e5d240398ebb78705e379aa471892b980e31014ca73432f3
   languageName: node
   linkType: hard
 
@@ -25851,6 +25859,7 @@ fsevents@^1.2.7:
     "@proton/styles": "workspace:packages/styles"
     "@proton/testing": "workspace:packages/testing"
     "@protontech/mimemessage": ~v1.1.4
+    "@protontech/tidy-url": ^1.6.17
     "@reduxjs/toolkit": ^1.9.5
     "@testing-library/dom": ^8.20.0
     "@testing-library/jest-dom": ^5.16.5

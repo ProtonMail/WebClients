@@ -6,7 +6,6 @@ import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message'
 import { addApiMock } from '@proton/testing/lib/api';
 import noop from '@proton/utils/noop';
 
-import { setFeatureFlags } from '../../../helpers/test/api';
 import { addToCache, minimalCache } from '../../../helpers/test/cache';
 import {
     GeneratedKey,
@@ -49,7 +48,6 @@ describe('message trackers', () => {
         addKeysToAddressKeysCache(addressID, toKeys);
 
         addApiMock('core/v4/keys', () => ({}));
-        setFeatureFlags('SpyTrackerProtection', true);
     });
 
     afterAll(async () => {
