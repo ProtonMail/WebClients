@@ -32,7 +32,6 @@ import {
 import { produceExtensionFork, produceFork, produceOAuthFork } from '@proton/shared/lib/authentication/sessionForking';
 import {
     APPS,
-    APPS_CONFIGURATION,
     CLIENT_TYPES,
     SETUP_ADDRESS_PATH,
     SSO_PATHS,
@@ -43,6 +42,7 @@ import { withUIDHeaders } from '@proton/shared/lib/fetch/headers';
 import { replaceUrl } from '@proton/shared/lib/helpers/browser';
 import { setMetricsEnabled } from '@proton/shared/lib/helpers/metrics';
 import { stripLeadingAndTrailingSlash } from '@proton/shared/lib/helpers/string';
+import { getPathFromLocation, joinPaths } from '@proton/shared/lib/helpers/url';
 import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 import { getEncryptedSetupBlob, getRequiresAddressSetup } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
@@ -66,40 +66,36 @@ import AccountLoaderPage from './AccountLoaderPage';
 import AccountPublicApp from './AccountPublicApp';
 import { getSignupUrl } from './helper';
 
-const getPathFromLocation = (location: H.Location) => {
-    return [location.pathname, location.search, location.hash].join('');
-};
-
 export const getSearchParams = (search: string) => {
     const searchParams = new URLSearchParams(search);
     const { product, productParam } = getProductParams(window.location.pathname, searchParams);
     return { product, productParam };
 };
 
-const getLocalRedirect = (pathname?: string) => {
-    if (!pathname) {
+const getLocalRedirect = (path?: string) => {
+    if (!path) {
         return undefined;
     }
-    const trimmedPathname = stripLeadingAndTrailingSlash(stripLocalBasenameFromPathname(pathname));
+    const trimmedPathname = stripLeadingAndTrailingSlash(stripLocalBasenameFromPathname(path));
     if (!trimmedPathname) {
         return undefined;
     }
     // Special case to not add the slug...
-    if (pathname.includes(SETUP_ADDRESS_PATH)) {
+    if (path.includes(SETUP_ADDRESS_PATH)) {
         return {
-            pathname,
+            path,
             toApp: DEFAULT_APP,
         };
     }
     const toApp = getAppFromPathname(trimmedPathname);
     if (!toApp) {
         return {
-            pathname: `${getSlugFromApp(DEFAULT_APP)}/${trimmedPathname}`,
-            toApp: DEFAULT_APP,
+            path,
+            toApp: undefined,
         };
     }
     return {
-        pathname,
+        path,
         toApp,
     };
 };
@@ -224,14 +220,23 @@ const PublicApp = ({ onLogin, locales }: Props) => {
         // Handle special case going for internal vpn on account settings.
         const localRedirect = (() => {
             if (maybeLocalRedirect) {
-                return maybeLocalRedirect;
+                if (maybeLocalRedirect.toApp) {
+                    return maybeLocalRedirect;
+                }
+                return {
+                    path: joinPaths(getSlugFromApp(toApp), maybeLocalRedirect.path),
+                    toApp: toApp,
+                };
             }
-            if (toApp === APPS.PROTONVPN_SETTINGS || toApp === APPS.PROTONPASS) {
-                return getLocalRedirect(APPS_CONFIGURATION[toApp].settingsSlug);
+            if ([APPS.PROTONVPN_SETTINGS, APPS.PROTONPASS].includes(toApp as any)) {
+                return {
+                    path: '/',
+                    toApp: toApp,
+                };
             }
         })();
 
-        if (getRequiresAddressSetup(toApp, user) && !localRedirect?.pathname.includes(SETUP_ADDRESS_PATH)) {
+        if (getRequiresAddressSetup(toApp, user) && !localRedirect?.path.includes(SETUP_ADDRESS_PATH)) {
             const blob = loginPassword
                 ? await getEncryptedSetupBlob(getUIDApi(UID, api), loginPassword).catch(noop)
                 : undefined;
@@ -249,7 +254,7 @@ const PublicApp = ({ onLogin, locales }: Props) => {
         if (user.Delinquent >= UNPAID_STATE.DELINQUENT) {
             return onLogin({
                 ...args,
-                path: `${getSlugFromApp(toApp)}${getInvoicesPathname(config.APP_NAME)}`,
+                path: joinPaths(getSlugFromApp(toApp), getInvoicesPathname(config.APP_NAME)),
             });
         }
 
@@ -278,25 +283,25 @@ const PublicApp = ({ onLogin, locales }: Props) => {
         }
 
         const url = (() => {
-            let pathname;
+            let path;
 
             if (localRedirect) {
                 if (args.flow === 'signup' && toApp === APPS.PROTONVPN_SETTINGS) {
-                    pathname = `/${getSlugFromApp(APPS.PROTONVPN_SETTINGS)}/vpn-apps?prompt=true`;
+                    path = joinPaths(getSlugFromApp(APPS.PROTONVPN_SETTINGS), '/vpn-apps?prompt=true');
                 } else if (args.flow === 'signup' && toApp === APPS.PROTONPASS) {
-                    pathname = `/${getSlugFromApp(APPS.PROTONPASS)}/download`;
+                    path = joinPaths(getSlugFromApp(APPS.PROTONPASS), '/download');
                 } else {
-                    pathname = localRedirect.pathname || '';
+                    path = localRedirect.path || '';
                 }
-                return new URL(getAppHref(pathname, APPS.PROTONACCOUNT, LocalID));
+                return new URL(getAppHref(path, APPS.PROTONACCOUNT, LocalID));
             }
 
             if (toApp === APPS.PROTONMAIL) {
-                pathname = '/inbox';
+                path = '/inbox';
             } else {
-                pathname = '/';
+                path = '/';
             }
-            return new URL(getAppHref(pathname, toApp, LocalID));
+            return new URL(getAppHref(path, toApp, LocalID));
         })();
 
         if (args.flow === 'signup') {
@@ -309,7 +314,7 @@ const PublicApp = ({ onLogin, locales }: Props) => {
         if (url.hostname === window.location.hostname || !isSSOMode) {
             return onLogin({
                 ...args,
-                path: `${url.pathname}${url.search}${url.hash}`,
+                path: getPathFromLocation(url),
             });
         }
 
