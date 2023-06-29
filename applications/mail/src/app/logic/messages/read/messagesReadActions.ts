@@ -3,6 +3,7 @@ import { createAction, createAsyncThunk } from '@reduxjs/toolkit';
 import { getMessage } from '@proton/shared/lib/api/messages';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import { MessageUTMTracker } from '@proton/shared/lib/models/mailUtmTrackers';
 
 import { LOAD_RETRY_DELAY } from '../../../constants';
 import { MessageEvent } from '../../../models/event';
@@ -60,3 +61,7 @@ export const resetVerification = createAction<string[]>('messages/verification/r
 export const applyDarkStyle = createAction<{ ID: string; hasDarkStyle: boolean }>('messages/applyDarkStyle');
 
 export const removeDarkStyle = createAction<{ ID: string; noDarkStyle: boolean }>('messages/removeDarkStyle');
+
+export const cleanUTMTrackers = createAction<{ ID: string; utmTrackers: MessageUTMTracker[] }>(
+    'messages/cleanUTMTrackers'
+);

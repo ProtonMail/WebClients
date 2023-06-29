@@ -1,8 +1,8 @@
+import { useMemo } from 'react';
+
 import { c, msgid } from 'ttag';
 
-
-
-import { Button, Href } from '@proton/atoms';
+import { Href } from '@proton/atoms';
 import {
     Collapsible,
     CollapsibleContent,
@@ -14,9 +14,8 @@ import {
     ModalTwoContent,
     ModalTwoFooter,
     ModalTwoHeader,
-    useMailSettings,
 } from '@proton/components';
-import PreventTrackingToggle from '@proton/components/containers/emailPrivacy/PreventTrackingToggle';
+import trackersImg from '@proton/styles/assets/img/illustrations/trackers-found.svg';
 import clsx from '@proton/utils/clsx';
 
 import { emailTrackerProtectionURL } from '../../../constants';
@@ -29,13 +28,12 @@ interface Props extends ModalProps {
 }
 
 const SpyTrackerModal = ({ message, ...rest }: Props) => {
-    const [mailSettings] = useMailSettings();
+    const { numberOfImageTrackers, imageTrackerText, imageTrackers } = useMessageTrackers(message);
 
-    const { onClose } = rest;
-
-    const { hasProtection, numberOfTrackers, needsMoreProtection, title, modalText, trackers } = useMessageTrackers({
-        message,
-    });
+    const modalDescription = useMemo(() => {
+        return c('Info')
+            .t`You can read this email without revealing your interactions, location, or device to advertisers.`;
+    }, [numberOfImageTrackers]);
 
     const getHeaderContent = (tracker: Tracker) => {
         return (
@@ -46,9 +44,9 @@ const SpyTrackerModal = ({ message, ...rest }: Props) => {
                     className="flex-item-noshrink"
                     data-testid="privacy:icon-number-of-trackers"
                     aria-label={c('Info').ngettext(
-                        msgid`${numberOfTrackers} email tracker blocked`,
-                        `${numberOfTrackers} email trackers blocked`,
-                        numberOfTrackers
+                        msgid`${numberOfImageTrackers} email tracker blocked`,
+                        `${numberOfImageTrackers} email trackers blocked`,
+                        numberOfImageTrackers
                     )}
                 />
             </div>
@@ -59,46 +57,20 @@ const SpyTrackerModal = ({ message, ...rest }: Props) => {
         <Href href={emailTrackerProtectionURL} data-testid="spyTrackerModal:learnmore">{c('Info').t`Learn more`}</Href>
     );
 
-    let content;
-    let testID;
-    let footerText;
-
-    if (needsMoreProtection) {
-        content = (
-            <>
-                {modalText}
-                <div>{learnMoreLink}</div>
-                <div className="mt-4">
-                    <PreventTrackingToggle
-                        id="preventTrackingToggle"
-                        preventTracking={mailSettings?.ImageProxy || 0}
-                        data-testid="privacy:prevent-tracking-toggle"
-                    />
-                    <span className="ml-2">{c('Action').t`Turn on tracker protection`}</span>
+    return (
+        <ModalTwo data-testid="spyTrackerModal:trackers" {...rest}>
+            <ModalTwoHeader title={imageTrackerText} />
+            <ModalTwoContent>
+                <div className="border rounded-lg mb-4 p-4 flex flex-nowrap flex-align-items-center">
+                    <img src={trackersImg} alt={imageTrackerText} className="flex-item-noshrink" />
+                    <p className="color-weak flex-item-fluid pl-4 my-0">
+                        {modalDescription}
+                        <br />
+                        <span>{learnMoreLink}</span>
+                    </p>
                 </div>
-            </>
-        );
 
-        testID = 'spyTrackerModal:needsMoreProtection';
-
-        footerText = c('Action').t`OK`;
-    } else if (hasProtection && numberOfTrackers === 0) {
-        content = (
-            <>
-                {modalText}
-                <div>{learnMoreLink}</div>
-            </>
-        );
-
-        testID = 'spyTrackerModal:noTrackers';
-
-        footerText = c('Action').t`Got it`;
-    } else {
-        content = (
-            <>
-                {modalText}
-                <div className="mb-4">{learnMoreLink}</div>
-                {trackers.map((tracker, index) => {
+                {imageTrackers.map((tracker, index) => {
                     return (
                         <Collapsible
                             key={tracker.name}
@@ -129,23 +101,8 @@ const SpyTrackerModal = ({ message, ...rest }: Props) => {
                         </Collapsible>
                     );
                 })}
-            </>
-        );
-
-        testID = 'spyTrackerModal:trackers';
-
-        footerText = c('Action').t`Got it`;
-    }
-
-    return (
-        <ModalTwo data-testid={testID} {...rest}>
-            <ModalTwoHeader title={title} />
-            <ModalTwoContent>{content}</ModalTwoContent>
-            <ModalTwoFooter>
-                <Button className="ml-auto" color="norm" onClick={onClose}>
-                    {footerText}
-                </Button>
-            </ModalTwoFooter>
+            </ModalTwoContent>
+            <ModalTwoFooter />
         </ModalTwo>
     );
 };

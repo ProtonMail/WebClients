@@ -33,12 +33,12 @@ import ItemDate from '../../list/ItemDate';
 import ItemLabels from '../../list/ItemLabels';
 import ItemLocation from '../../list/ItemLocation';
 import ItemStar from '../../list/ItemStar';
+import ItemSpyTrackerIcon from '../../list/spy-tracker/ItemSpyTrackerIcon';
 import MailRecipients from '../recipients/MailRecipients';
 import RecipientItem from '../recipients/RecipientItem';
 import RecipientType from '../recipients/RecipientType';
 import HeaderExtra from './HeaderExtra';
 import HeaderMoreDropdown from './HeaderMoreDropdown';
-import HeaderTopPrivacyIcon from './HeaderTopPrivacyIcon';
 
 interface Props {
     labelID: string;
@@ -107,6 +107,8 @@ const HeaderExpanded = ({
     const recipients = getRecipients(message.data);
     const recipientsOrGroup = getRecipientsOrGroups(recipients);
 
+    // Show trackers icon when body is loaded so that we do not display it before cleaning trackers in links
+    const canShowTrackersIcon = bodyLoaded;
     const handleClick = (event: MouseEvent) => {
         if (
             (event.target as HTMLElement).closest('.stop-propagation') ||
@@ -200,7 +202,7 @@ const HeaderExpanded = ({
             ])}
             data-testid={`message-header-expanded:${conversationIndex}`}
         >
-            <HeaderTopPrivacyIcon message={message} />
+            {canShowTrackersIcon && <ItemSpyTrackerIcon message={message} />}
             {isNarrow && messageLoaded && (
                 <div className="flex flex-align-items-center flex-justify-space-between my-2" onClick={handleClick}>
                     <span className="inline-flex">

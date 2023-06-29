@@ -5,6 +5,7 @@ import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import { canonicalizeEmail } from '@proton/shared/lib/helpers/email';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { isScheduledSend, isSent, isDraft as testIsDraft } from '@proton/shared/lib/mail/messages';
+import { MessageUTMTracker } from '@proton/shared/lib/models/mailUtmTrackers';
 
 import { parseLabelIDsInEvent } from '../../../helpers/elements';
 import { LabelIDsChanges, MessageEvent } from '../../../models/event';
@@ -233,5 +234,16 @@ export const removeDarkStyle = (
 
     if (messageState && messageState.messageDocument) {
         messageState.messageDocument.noDarkStyle = noDarkStyle;
+    }
+};
+
+export const cleanUTMTrackers = (
+    state: Draft<MessagesState>,
+    { payload: { ID, utmTrackers } }: PayloadAction<{ ID: string; utmTrackers: MessageUTMTracker[] }>
+) => {
+    const messageState = getMessage(state, ID);
+
+    if (messageState) {
+        messageState.messageUTMTrackers = utmTrackers;
     }
 };

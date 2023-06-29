@@ -1,3 +1,6 @@
+import { getUTMTrackersFromURL } from '@proton/shared/lib/mail/trackers';
+import { MessageUTMTracker } from '@proton/shared/lib/models/mailUtmTrackers';
+
 import { matches } from '../dom';
 
 const PROTOCOLS = ['ftp://', 'http://', 'https://', 'xmpp:', 'tel:', 'callto:'];
@@ -48,7 +51,23 @@ const sanitizeRelativeHttpLinks = (link: HTMLLinkElement) => {
         // link.href is the absolute value of the link: mail.proton.me is prepended, use getAttribute
         const url = link.getAttribute('href');
 
-        link.setAttribute('href', `http://${url}`);
+        if (url) {
+            link.setAttribute('href', `http://${url}`);
+        }
+    }
+};
+
+const removeTrackingTokens = (link: HTMLLinkElement) => {
+    if (matches(link, EXCLUDE_ANCHORS) && link.nodeName === 'A') {
+        const href = link.getAttribute('href');
+
+        if (href) {
+            const { url, utmTracker } = getUTMTrackersFromURL(href);
+
+            link.setAttribute('href', url);
+
+            return utmTracker;
+        }
     }
 };
 
@@ -62,13 +81,32 @@ const disableAnchors = (link: HTMLLinkElement) => {
     }
 };
 
-export const transformLinks = (document: Element) => {
+export const transformLinks = (
+    document: Element,
+    onCleanUTMTrackers: (utmTrackers: MessageUTMTracker[]) => void,
+    canCleanUTMTrackers: boolean
+) => {
     const links = [...document.querySelectorAll('[href]')] as HTMLLinkElement[];
+
+    const utmTrackers: MessageUTMTracker[] = [];
 
     links.forEach((link) => {
         httpInNewTab(link);
         noReferrerInfo(link);
+
+        if (canCleanUTMTrackers) {
+            const tracker = removeTrackingTokens(link);
+
+            if (tracker) {
+                utmTrackers.push(tracker);
+            }
+        }
+
         sanitizeRelativeHttpLinks(link);
         disableAnchors(link);
     });
+
+    if (utmTrackers.length > 0) {
+        onCleanUTMTrackers(utmTrackers);
+    }
 };

@@ -7,6 +7,7 @@ export enum TelemetryMeasurementGroups {
     accountSignupBasic = 'account.any.signup_basic',
     accountSignup = 'account.any.signup',
     keyTransparency = 'any.web.key_transparency',
+    mailPrivacyDropdown = 'mail.web.privacy_dropdown',
 }
 
 export enum TelemetrySimpleLoginEvents {
@@ -58,13 +59,18 @@ export enum TelemetryKeyTransparencySelfAuditErrorEvents {
     self_audit_error = 'self_audit_error',
 }
 
+export enum TelemetryMailEvents {
+    privacy_dropdown_opened = 'privacy_dropdown_opened',
+}
+
 export type TelemetryEvents =
     | TelemetrySimpleLoginEvents
     | TelemetryScreenSizeEvents
     | TelemetryCalendarEvents
     | TelemetryAccountSignupBasicEvents
     | TelemetryAccountSignupEvents
-    | TelemetryKeyTransparencySelfAuditErrorEvents;
+    | TelemetryKeyTransparencySelfAuditErrorEvents
+    | TelemetryMailEvents;
 
 export interface TelemetryReport {
     measurementGroup: TelemetryMeasurementGroups;

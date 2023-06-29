@@ -1,19 +1,20 @@
-import { fireEvent } from '@testing-library/dom';
-import {
-    findByText as findByTextDefault,
-    getByText as getByTextDefault,
-    queryAllByTestId as queryAllByTestIdDefault,
-    queryByTestId as queryByTestIdDefault,
-} from '@testing-library/react';
+import { fireEvent, getByText, screen } from '@testing-library/dom';
 
-import { IMAGE_PROXY_FLAGS, SHOW_IMAGES } from '@proton/shared/lib/constants';
+import { IMAGE_PROXY_FLAGS } from '@proton/shared/lib/constants';
+import { MessageUTMTracker } from '@proton/shared/lib/models/mailUtmTrackers';
 
-import { setFeatureFlags } from '../../../helpers/test/api';
 import { addToCache, minimalCache } from '../../../helpers/test/cache';
+import { clearAll } from '../../../helpers/test/helper';
 import { render } from '../../../helpers/test/render';
 import { MessageState } from '../../../logic/messages/messagesTypes';
-import HeaderTopPrivacyIcon from '../../message/header/HeaderTopPrivacyIcon';
 import ItemSpyTrackerIcon from './ItemSpyTrackerIcon';
+
+jest.mock('@proton/components/hooks/useProgressiveRollout', () => {
+    return {
+        __esModule: true,
+        default: jest.fn(() => true),
+    };
+});
 
 const messageWithTrackers: MessageState = {
     localID: 'messageWithTrackerId',
@@ -22,6 +23,7 @@ const messageWithTrackers: MessageState = {
         hasRemoteImages: false,
         showEmbeddedImages: true,
         showRemoteImages: true,
+        trackersStatus: 'loaded',
         images: [
             {
                 type: 'embedded',
@@ -43,6 +45,13 @@ const messageWithTrackers: MessageState = {
             },
         ],
     },
+    messageUTMTrackers: [
+        {
+            originalURL: 'http://tracker.com/utm_content=tracker',
+            cleanedURL: 'http://tracker.com',
+            removed: [{ key: 'utm_source', value: 'tracker' }],
+        },
+    ] as MessageUTMTracker[],
 };
 
 const messageWithoutTrackers: MessageState = {
@@ -52,6 +61,7 @@ const messageWithoutTrackers: MessageState = {
         hasRemoteImages: false,
         showEmbeddedImages: true,
         showRemoteImages: true,
+        trackersStatus: 'loaded',
         images: [
             {
                 type: 'embedded',
@@ -67,27 +77,23 @@ const messageWithoutTrackers: MessageState = {
 };
 
 describe('ItemSpyTrackerIcon', () => {
-    it.each`
-        imageProxy                | showImage           | message                   | isIconDisplayed | isNumberDisplayed | expectedTooltip
-        ${IMAGE_PROXY_FLAGS.ALL}  | ${SHOW_IMAGES.SHOW} | ${messageWithTrackers}    | ${true}         | ${true}           | ${'2 email trackers blocked'}
-        ${IMAGE_PROXY_FLAGS.ALL}  | ${SHOW_IMAGES.SHOW} | ${messageWithoutTrackers} | ${true}         | ${false}          | ${'No email trackers found'}
-        ${IMAGE_PROXY_FLAGS.ALL}  | ${SHOW_IMAGES.HIDE} | ${messageWithTrackers}    | ${true}         | ${true}           | ${'2 email trackers blocked'}
-        ${IMAGE_PROXY_FLAGS.ALL}  | ${SHOW_IMAGES.HIDE} | ${messageWithoutTrackers} | ${true}         | ${false}          | ${'No email trackers found'}
-        ${IMAGE_PROXY_FLAGS.NONE} | ${SHOW_IMAGES.HIDE} | ${messageWithTrackers}    | ${true}         | ${true}           | ${'Email tracker protection is disabled'}
-        ${IMAGE_PROXY_FLAGS.NONE} | ${SHOW_IMAGES.HIDE} | ${messageWithoutTrackers} | ${true}         | ${false}          | ${'Email tracker protection is disabled'}
-        ${IMAGE_PROXY_FLAGS.NONE} | ${SHOW_IMAGES.SHOW} | ${messageWithTrackers}    | ${true}         | ${true}           | ${'2 email trackers blocked'}
-        ${IMAGE_PROXY_FLAGS.NONE} | ${SHOW_IMAGES.SHOW} | ${messageWithoutTrackers} | ${false}        | ${false}          | ${''}
-    `(
-        'should display the icon [$isIconDisplayed] with number [$isNumberDisplayed] and tooltip [$expectedTooltip]',
-        async ({ imageProxy, showImage, message, isIconDisplayed, isNumberDisplayed, expectedTooltip }) => {
-            minimalCache();
-            setFeatureFlags('SpyTrackerProtection', true);
-            addToCache('MailSettings', { ImageProxy: imageProxy, HideRemoteImages: showImage });
+    afterEach(() => {
+        clearAll();
+    });
 
-            const { getByTestId, queryByTestId, getAllByText } = await render(
-                <ItemSpyTrackerIcon message={message} />,
-                false
-            );
+    it.each`
+        imageProxy                | message                   | isIconDisplayed | isNumberDisplayed | expectedTooltip
+        ${IMAGE_PROXY_FLAGS.ALL}  | ${messageWithTrackers}    | ${true}         | ${true}           | ${'2 email trackers blocked'}
+        ${IMAGE_PROXY_FLAGS.ALL}  | ${messageWithoutTrackers} | ${true}         | ${false}          | ${'No email trackers found'}
+        ${IMAGE_PROXY_FLAGS.NONE} | ${messageWithTrackers}    | ${true}         | ${true}           | ${'Email tracker protection is disabled'}
+        ${IMAGE_PROXY_FLAGS.NONE} | ${messageWithoutTrackers} | ${true}         | ${false}          | ${'Email tracker protection is disabled'}
+    `(
+        'should display the icon [$isIconDisplayed] with number [$isNumberDisplayed] when proxy is [$imageProxy]',
+        async ({ imageProxy, message, isIconDisplayed, isNumberDisplayed }) => {
+            minimalCache();
+            addToCache('MailSettings', { ImageProxy: imageProxy });
+
+            const { queryByTestId } = await render(<ItemSpyTrackerIcon message={message} />, false);
 
             const icon = queryByTestId('privacy:tracker-icon');
 
@@ -102,69 +108,130 @@ describe('ItemSpyTrackerIcon', () => {
                 const numberOfTrackers = queryByTestId('privacy:icon-number-of-trackers');
                 if (isNumberDisplayed) {
                     expect(numberOfTrackers).toBeTruthy();
-                    expect(numberOfTrackers?.innerHTML).toEqual('2');
+                    expect(numberOfTrackers?.innerHTML).toEqual('3');
                 } else {
                     expect(numberOfTrackers).toBeNull();
                 }
-
-                // Check the text of the Tooltip
-                const tooltip = getByTestId('privacy:icon-tooltip');
-                fireEvent.mouseOver(tooltip);
-                getAllByText(expectedTooltip);
             }
         }
     );
 
-    it('should open a modal with "No email trackers found" title', async () => {
+    it('should open the privacy dropdown with trackers info', async () => {
         minimalCache();
-        setFeatureFlags('SpyTrackerProtection', true);
-        addToCache('MailSettings', { ImageProxy: IMAGE_PROXY_FLAGS.ALL, HideRemoteImages: SHOW_IMAGES.SHOW });
+        addToCache('MailSettings', { ImageProxy: IMAGE_PROXY_FLAGS.ALL });
 
-        const { findByTestId } = await render(<HeaderTopPrivacyIcon message={messageWithoutTrackers} />, false);
+        await render(<ItemSpyTrackerIcon message={messageWithTrackers} />, false);
 
-        const icon = await findByTestId('privacy:tracker-icon');
+        const icon = await screen.findByTestId('privacy:tracker-icon');
         fireEvent.click(icon);
 
-        const modal = await findByTestId('spyTrackerModal:noTrackers');
-        getByTextDefault(modal, 'No email trackers found');
+        // Dropdown title
+        const title = screen.getByTestId('privacy:title');
+        getByText(title, 'This email is protected');
+        // Dropdown description
+        const description = screen.getByTestId('privacy:description');
+        getByText(description, 'You can read the message and click on links without being tracked.');
+
+        const imageTrackerRow = screen.getByTestId('privacy:image-row');
+        const utmTrackerRow = screen.getByTestId('privacy:utm-row');
+
+        getByText(imageTrackerRow, '2 trackers blocked');
+        getByText(utmTrackerRow, '1 link cleaned');
     });
 
-    it('should open a modal to set trackers protection mode', async () => {
+    it('should open the privacy dropdown with no trackers found', async () => {
         minimalCache();
-        setFeatureFlags('SpyTrackerProtection', true);
-        addToCache('MailSettings', { ImageProxy: IMAGE_PROXY_FLAGS.NONE, HideRemoteImages: SHOW_IMAGES.HIDE });
+        addToCache('MailSettings', { ImageProxy: IMAGE_PROXY_FLAGS.ALL });
 
-        const { findByTestId } = await render(<HeaderTopPrivacyIcon message={messageWithoutTrackers} />, false);
+        await render(<ItemSpyTrackerIcon message={messageWithoutTrackers} />, false);
 
-        const icon = await findByTestId('privacy:tracker-icon');
+        const icon = await screen.findByTestId('privacy:tracker-icon');
         fireEvent.click(icon);
 
-        const modal = await findByTestId('spyTrackerModal:needsMoreProtection');
-        getByTextDefault(modal, 'Email tracker protection is disabled');
+        // Dropdown title
+        const title = screen.getByTestId('privacy:title');
+        getByText(title, 'No trackers found');
+        // Dropdown description
+        const description = screen.getByTestId('privacy:description');
+        getByText(description, 'You can read the message and click on links without being tracked.');
 
-        const settingToggle = queryByTestIdDefault(modal, 'privacy:prevent-tracking-toggle');
-        expect(settingToggle).toBeTruthy();
+        const imageTrackerRow = screen.getByTestId('privacy:image-row');
+        const utmTrackerRow = screen.getByTestId('privacy:utm-row');
+
+        getByText(imageTrackerRow, 'No trackers found');
+        getByText(utmTrackerRow, 'No links cleaned');
     });
 
-    it('should open a modal to list all trackers found', async () => {
+    it('should open the privacy dropdown with no protection', async () => {
         minimalCache();
-        setFeatureFlags('SpyTrackerProtection', true);
-        addToCache('MailSettings', { ImageProxy: IMAGE_PROXY_FLAGS.ALL, HideRemoteImages: SHOW_IMAGES.SHOW });
+        addToCache('MailSettings', { ImageProxy: IMAGE_PROXY_FLAGS.NONE });
 
-        const { findByTestId } = await render(<HeaderTopPrivacyIcon message={messageWithTrackers} />, false);
+        await render(<ItemSpyTrackerIcon message={messageWithTrackers} />, false);
 
-        const icon = await findByTestId('privacy:tracker-icon');
+        const icon = await screen.findByTestId('privacy:tracker-icon');
         fireEvent.click(icon);
 
-        const modal = await findByTestId('spyTrackerModal:trackers');
-        getByTextDefault(modal, '2 email trackers blocked');
+        // Dropdown title
+        const title = screen.getByTestId('privacy:title');
+        getByText(title, 'Protect your email');
+        // Dropdown description
+        const description = screen.getByTestId('privacy:description');
+        getByText(
+            description,
+            'You can read the message and click on links without being tracked with email tracker protection.'
+        );
 
-        await findByTextDefault(modal, 'Tracker 1');
-        await findByTextDefault(modal, 'Tracker 2');
+        screen.getByTestId('privacy:prevent-tracking-toggle');
+    });
 
-        const trackersBubbles = queryAllByTestIdDefault(modal, 'privacy:icon-number-of-trackers');
-        trackersBubbles.forEach((trackerBubble) => {
-            expect(trackerBubble.innerHTML).toEqual('1');
-        });
+    it('should open the image tracker modal and list expected info', async () => {
+        minimalCache();
+        addToCache('MailSettings', { ImageProxy: IMAGE_PROXY_FLAGS.ALL });
+
+        await render(<ItemSpyTrackerIcon message={messageWithTrackers} />, false);
+
+        const icon = await screen.findByTestId('privacy:tracker-icon');
+        fireEvent.click(icon);
+
+        const imageTrackerRow = screen.getByTestId('privacy:image-row');
+
+        // Open the image tracker modal
+        fireEvent.click(imageTrackerRow);
+
+        const modal = screen.getByTestId('spyTrackerModal:trackers');
+
+        getByText(
+            modal,
+            'You can read this email without revealing your interactions, location, or device to advertisers.'
+        );
+
+        // Trackers are visible
+        getByText(modal, 'Tracker 1');
+        getByText(modal, 'Tracker 2');
+    });
+
+    it('should open the utm tracker modal and list expected info', async () => {
+        minimalCache();
+        addToCache('MailSettings', { ImageProxy: IMAGE_PROXY_FLAGS.ALL });
+
+        await render(<ItemSpyTrackerIcon message={messageWithTrackers} />, false);
+
+        const icon = await screen.findByTestId('privacy:tracker-icon');
+        fireEvent.click(icon);
+
+        const utmTrackerRow = screen.getByTestId('privacy:utm-row');
+
+        // Open the utm tracker modal
+        fireEvent.click(utmTrackerRow);
+
+        const modal = screen.getByTestId('utmTrackerModal:trackers');
+
+        getByText(
+            modal,
+            'You can click links in this email without being profiled and leaking your online activity with advertisers.'
+        );
+
+        // Trackers are visible
+        getByText(modal, 'http://tracker.com/utm_content=tracker');
     });
 });
