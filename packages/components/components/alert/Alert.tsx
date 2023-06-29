@@ -2,7 +2,7 @@ import { ReactNode } from 'react';
 
 import clsx from '@proton/utils/clsx';
 
-type AlertType = 'info' | 'error' | 'warning' | 'success';
+export type AlertType = 'info' | 'error' | 'warning' | 'success';
 
 type ClassesMap = { [key in AlertType]: string };
 

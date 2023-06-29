@@ -2,6 +2,8 @@ import { ComponentPropsWithoutRef, ReactNode, forwardRef } from 'react';
 
 import { c } from 'ttag';
 
+import { ThemeColor } from '@proton/colors/types';
+
 import { AppLink, DropdownMenu, DropdownMenuButton, DropdownMenuLink, Icon } from '../../components';
 import SimpleDropdown from '../../components/dropdown/SimpleDropdown';
 import TopNavbarListItemButton, {
@@ -34,6 +36,7 @@ const TopNavbarListItemSettingsButton = forwardRef(TopNavbarListItemSettingsButt
 
 interface Props extends ComponentPropsWithoutRef<typeof AppLink> {
     children?: ReactNode;
+    notificationDotColor?: ThemeColor;
 }
 
 const TopNavbarListItemSettingsDropdown = (props: Props) => {
@@ -49,7 +52,7 @@ const TopNavbarListItemSettingsDropdown = (props: Props) => {
         createModal(<ThemesModal />);
     };
 
-    const { to, toApp, children } = props;
+    const { to, toApp, children, notificationDotColor } = props;
 
     return (
         <SimpleDropdown
@@ -57,6 +60,7 @@ const TopNavbarListItemSettingsDropdown = (props: Props) => {
             originalPlacement="bottom-start"
             hasCaret={false}
             dropdownStyle={{ '--min-width': '18em' }}
+            notificationDotColor={notificationDotColor}
         >
             <DropdownMenu>
                 <DropdownMenuLink as={AppLink} to={to} toApp={toApp} target="_self">
@@ -74,7 +78,6 @@ const TopNavbarListItemSettingsDropdown = (props: Props) => {
                         {earlyAccess.value ? c('Early Access Enabled').t`On` : c('Early Access Disabled').t`Off`}
                     </span>
                 </DropdownMenuButton>
-
                 <DropdownMenuButton
                     onClick={handleThemeClick}
                     className="flex flex-nowrap flex-justify-space-between flex-align-items-center"

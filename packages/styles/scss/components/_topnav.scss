@@ -9,6 +9,17 @@
 		inset-inline-start: calc(#{rem(17.5)} + #{rem(15)});
 		inset-block-start: calc(50% - #{rem(14)});
 	}
+
+	// used for KT notification
+	&--notification {
+		.notification-dot {
+			inline-size: 0.5rem;
+			block-size: 0.5rem;
+			position: absolute;
+			inset-inline-end: 0.2em;
+			inset-block-start: 0.2em;
+		}
+	}
 }
 
 .topnav-list > li:not(:last-child) {
@@ -84,6 +95,13 @@
 
 		.topnav-link--blackfriday::before {
 			inset-inline-start: calc(#{rem(5)} + #{rem(15)});
+		}
+
+		.topnav-link--notification {
+			.notification-dot {
+				inset-inline-end: 0.1em;
+				inset-block-start: 0.1em;
+			}
 		}
 	}
 }
@@ -174,6 +192,15 @@
 	.topnav-link--blackfriday::before {
 		inset-inline-start: calc(#{rem(10)} + #{rem(22)});
 		inset-block-start: calc(50% - #{rem(18)});
+	}
+
+	.topnav-link--notification {
+		&#{&} {
+			.notification-dot {
+				inset-inline-end: 0.15em;
+				inset-block-start: 0.15em;
+			}
+		}
 	}
 }
 
