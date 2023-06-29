@@ -246,7 +246,7 @@ interface ProcessData {
     api: Api;
     signal: AbortSignal;
     onProgress: (
-        calendarEvents: CalendarEvent[],
+        calendarEventIDs: string[],
         veventComponents: VcalVeventComponent[],
         exportErrors: ExportError[]
     ) => void;
@@ -294,6 +294,8 @@ export const processInBatches = async ({
         if (signal.aborted) {
             return [[], [], totalToProcess];
         }
+
+        onProgress(IDs, [], []);
 
         lastId = IDs[IDs.length - 1];
         totalEventsFetched += IDs.length;
