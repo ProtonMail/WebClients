@@ -80,6 +80,7 @@ export const getMailMappingErrors = (
             //We remove the items with categories when importing with Google to avoid conflicts if user has a folder named "Forums", "Updates", "Promotions" or "Social"
             return isLabelMapping ? !item.category : true;
         })
+        .filter((item) => item.checked)
         .forEach((item) => {
             const itemErrors = getMailMappingError(item, labels, folders, importMapping, isLabelMapping);
             if (itemErrors.length) {
