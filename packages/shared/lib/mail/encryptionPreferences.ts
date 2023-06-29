@@ -4,7 +4,13 @@ import { PublicKeyReference } from '@proton/crypto';
 
 import { extractDraftMIMEType, extractScheme, extractSign } from '../api/helpers/mailSettings';
 import { BRAND_NAME, CONTACT_MIME_TYPES, PGP_SCHEMES } from '../constants';
-import { ContactPublicKeyModel, KT_VERIFICATION_STATUS, MailSettings, PublicKeyModel, SelfSend } from '../interfaces';
+import {
+    ContactPublicKeyModel,
+    KeyTransparencyVerificationResult,
+    MailSettings,
+    PublicKeyModel,
+    SelfSend,
+} from '../interfaces';
 import { getEmailMismatchWarning, getIsValidForSending } from '../keys/publicKeys';
 
 export enum ENCRYPTION_PREFERENCES_ERROR_TYPES {
@@ -47,7 +53,7 @@ export interface EncryptionPreferences {
     warnings?: string[];
     error?: EncryptionPreferencesError;
     emailAddressWarnings?: string[];
-    ktVerificationStatus?: KT_VERIFICATION_STATUS;
+    ktVerificationResult?: KeyTransparencyVerificationResult;
 }
 
 const extractEncryptionPreferencesOwnAddress = (
@@ -64,7 +70,7 @@ const extractEncryptionPreferencesOwnAddress = (
         contactSignatureTimestamp,
         emailAddressWarnings,
         emailAddressErrors,
-        ktVerificationStatus,
+        ktVerificationResult,
     } = publicKeyModel;
     const { address, publicKey, canSend } = selfSend;
     const hasApiKeys = !!address.HasKeys;
@@ -84,7 +90,7 @@ const extractEncryptionPreferencesOwnAddress = (
         isContactSignatureVerified,
         contactSignatureTimestamp,
         emailAddressWarnings,
-        ktVerificationStatus,
+        ktVerificationResult,
     };
     if (emailAddressErrors?.length) {
         const errorString = emailAddressErrors[0];
@@ -138,7 +144,7 @@ const extractEncryptionPreferencesInternal = (publicKeyModel: PublicKeyModel): E
         contactSignatureTimestamp,
         emailAddressWarnings,
         emailAddressErrors,
-        ktVerificationStatus,
+        ktVerificationResult,
     } = publicKeyModel;
     const hasApiKeys = !!apiKeys.length;
     const hasPinnedKeys = !!pinnedKeys.length;
@@ -157,7 +163,7 @@ const extractEncryptionPreferencesInternal = (publicKeyModel: PublicKeyModel): E
         isContactSignatureVerified,
         contactSignatureTimestamp,
         emailAddressWarnings,
-        ktVerificationStatus,
+        ktVerificationResult,
     };
     if (emailAddressErrors?.length) {
         const errorString = emailAddressErrors[0];
@@ -235,7 +241,7 @@ const extractEncryptionPreferencesExternalWithWKDKeys = (publicKeyModel: PublicK
         contactSignatureTimestamp,
         emailAddressWarnings,
         emailAddressErrors,
-        ktVerificationStatus,
+        ktVerificationResult,
     } = publicKeyModel;
     const hasApiKeys = true;
     const hasPinnedKeys = !!pinnedKeys.length;
@@ -254,7 +260,7 @@ const extractEncryptionPreferencesExternalWithWKDKeys = (publicKeyModel: PublicK
         isContactSignatureVerified,
         contactSignatureTimestamp,
         emailAddressWarnings,
-        ktVerificationStatus,
+        ktVerificationResult,
     };
     if (emailAddressErrors?.length) {
         const errorString = emailAddressErrors[0];
@@ -322,7 +328,7 @@ const extractEncryptionPreferencesExternalWithoutWKDKeys = (publicKeyModel: Publ
         contactSignatureTimestamp,
         emailAddressWarnings,
         emailAddressErrors,
-        ktVerificationStatus,
+        ktVerificationResult,
     } = publicKeyModel;
     const hasPinnedKeys = !!pinnedKeys.length;
     const result = {
@@ -340,7 +346,7 @@ const extractEncryptionPreferencesExternalWithoutWKDKeys = (publicKeyModel: Publ
         isContactSignatureVerified,
         contactSignatureTimestamp,
         emailAddressWarnings,
-        ktVerificationStatus,
+        ktVerificationResult,
     };
     if (emailAddressErrors?.length) {
         const errorString = emailAddressErrors[0];

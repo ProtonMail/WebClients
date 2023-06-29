@@ -71,7 +71,7 @@ export const getSendStatusIcon = (
     sendPreferences: SendPreferences,
     ktActivation: KeyTransparencyActivation
 ): StatusIcon | undefined => {
-    const { encrypt, pgpScheme, hasApiKeys, isPublicKeyPinned, warnings, error, ktVerificationStatus } =
+    const { encrypt, pgpScheme, hasApiKeys, isPublicKeyPinned, warnings, error, ktVerificationResult } =
         sendPreferences;
     const ktActivated = ktActivation === KeyTransparencyActivation.SHOW_UI;
     const validationErrorsMessage = warnings?.join('; ');
@@ -81,6 +81,7 @@ export const getSendStatusIcon = (
     if (error) {
         return { colorClassName: 'color-danger', isEncrypted: false, fill: FAIL, text: error.message };
     }
+    const ktVerificationStatus = ktVerificationResult?.status;
     if (ktActivated && ktVerificationStatus === KT_VERIFICATION_STATUS.VERIFICATION_FAILED) {
         return {
             colorClassName: getLockColor(pgpScheme),
@@ -106,7 +107,11 @@ export const getSendStatusIcon = (
                 text: c('Composer email icon').t`End-to-end encrypted to verified recipient`,
             };
         }
-        if (ktActivated && ktVerificationStatus === KT_VERIFICATION_STATUS.VERIFIED_KEYS) {
+        if (
+            ktActivated &&
+            ktVerificationStatus === KT_VERIFICATION_STATUS.VERIFIED_KEYS &&
+            !ktVerificationResult?.keysChangedRecently
+        ) {
             return {
                 ...result,
                 fill: PLAIN,
@@ -362,8 +367,10 @@ const getReceivedStatusIconInternalWithKT = (
         signingPublicKey,
         signingPublicKeyIsPinned,
         signingPublicKeyIsCompromised,
-        ktVerificationStatus,
+        ktVerificationResult,
     } = verification;
+
+    const ktVerificationStatus = ktVerificationResult?.status;
 
     const hasPinnedKeys = !!senderPinnedKeys?.length;
     const messageEncryptionDetails = getInternalMessageText(verificationStatus);
@@ -512,7 +519,10 @@ const getReceivedStatusIconInternalWithKT = (
                 },
             };
         }
-        if (ktVerificationStatus === KT_VERIFICATION_STATUS.VERIFIED_KEYS) {
+        if (
+            ktVerificationStatus === KT_VERIFICATION_STATUS.VERIFIED_KEYS &&
+            !ktVerificationResult?.keysChangedRecently
+        ) {
             return {
                 ...result,
                 text: messageEncryptionDetails,
