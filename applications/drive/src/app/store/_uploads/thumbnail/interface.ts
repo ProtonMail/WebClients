@@ -3,3 +3,7 @@ export interface ThumbnailData {
     originalWidth?: number;
     originalHeight?: number;
 }
+
+export interface ThumbnailGenerator {
+    (file: Blob): Promise<ThumbnailData | undefined>;
+}
