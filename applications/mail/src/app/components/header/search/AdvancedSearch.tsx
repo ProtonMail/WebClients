@@ -105,7 +105,7 @@ const AdvancedSearch = ({
     const [model, updateModel] = useState<SearchModel>(initializeModel(history, labelID, searchInputValue));
     const [user] = useUser();
     const { getESDBStatus } = useEncryptedSearchContext();
-    const { isDBLimited, lastContentTime } = getESDBStatus();
+    const { isDBLimited, lastContentTime, esEnabled } = getESDBStatus();
 
     const senderListAnchorRef = useRef<HTMLDivElement>(null);
     const toListAnchorRef = useRef<HTMLDivElement>(null);
@@ -186,6 +186,7 @@ const AdvancedSearch = ({
                             </Button>
                         ) : null
                     }
+                    esEnabled={esEnabled}
                 />
             </div>
             <div className={clsx(['pt-4 px-5 pb-0'])}>
