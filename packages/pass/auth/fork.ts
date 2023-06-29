@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-throw-literal */
 import { pullForkSession, setRefreshCookies as refreshTokens } from '@proton/shared/lib/api/auth';
 import { getUser } from '@proton/shared/lib/api/user';
 import type { FORK_TYPE } from '@proton/shared/lib/authentication/ForkInterface';

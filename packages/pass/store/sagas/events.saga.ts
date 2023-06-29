@@ -10,6 +10,9 @@ import { logger } from '@proton/pass/utils/logger';
 import {
     boot,
     bootSuccess,
+    importItemsFailure,
+    importItemsIntent,
+    importItemsSuccess,
     signoutSuccess,
     stateDestroy,
     stateLock,
@@ -26,13 +29,21 @@ function* eventsWorker(options: WorkerRootSagaOptions): Generator {
     yield all([userChannel, shareChannels, sharesChannel].map((effect) => fork(effect, api, options)));
 }
 
-const startPollingActions = or(bootSuccess.match, syncSuccess.match, syncFailure.match);
+const startPollingActions = or(
+    bootSuccess.match,
+    syncSuccess.match,
+    syncFailure.match,
+    importItemsSuccess.match,
+    importItemsFailure.match
+);
+
 const cancelPollingActions = or(
     boot.match,
     signoutSuccess.match,
     stateLock.match,
     syncIntent.match,
-    stateDestroy.match
+    stateDestroy.match,
+    importItemsIntent.match
 );
 
 export default function* watcher(options: WorkerRootSagaOptions): Generator {
