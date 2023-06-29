@@ -3289,7 +3289,7 @@
         "Nenhum contato encontrado para importação"
       ],
       "No emails found to import - the account does not have an inbox": [
-        "Nenhum email encontrado para importação - a conta não possui uma caixa de entrada"
+        "Nenhum e-mail encontrado para importação — a conta não possui uma caixa de entrada."
       ],
       "No valid address found": [
         "Nenhum endereço válido encontrado"
@@ -5017,10 +5017,10 @@
         "E-mails são assinados automaticamente"
       ],
       "Emails stored in this folder will not be deleted and can still be found in the All Mail folder.": [
-        "Os emails armazenados nesta pasta não serão excluídos e ainda podem ser encontrados na pasta Todos os emails."
+        "Os e-mails armazenados nesta pasta não serão excluídos e ainda podem ser encontrados na pasta Todos os e-mails."
       ],
       "Emails tagged with this label will not be deleted and can still be found in the respective folder.": [
-        "Emails marcados com este marcador não serão excluídos e ainda podem ser encontrados na respectiva pasta."
+        "Os e-mails marcados com este marcador não serão excluídos e ainda podem ser encontrados na respectiva pasta."
       ],
       "embedded image": [
         "imagem incorporada",
@@ -6019,6 +6019,11 @@
       "You have enabled Address Verification with Trusted Keys for this email address,\nbut no active encryption key has been trusted.\nYou must trust a key valid for sending in order to send a message to this email address.": [
         "Você ativou a verificação de endereço com chaves confiáveis para este endereço de e-mail,\nmas nenhuma chave de criptografia ativa foi confiada.\nVocê deve confiar em uma chave válida para enviar uma mensagem para este endereço de e-mail.",
         "Você ativou a verificação de endereço com chaves confiáveis para estes endereços de e-mail,\nmas nenhuma chave de criptografia ativa foi confiada.\nVocê deve confiar nas chaves válidas para envio, para poder enviar uma mensagem a estes endereços de e-mail."
+      ]
+    },
+    "Key transparency details button": {
+      "Click here for more details.": [
+        "Clique aqui para mais detalhes."
       ]
     },
     "Key validation warning": {
@@ -7733,6 +7738,22 @@
         "Detectamos alguns alertas. Os seguintes endereços de e-mail podem não receber e-mails:"
       ]
     },
+    "Sender verification details": {
+      "Sender verification": [
+        "Verificação do remetente"
+      ],
+      "Sender verification failed: ${ icon.senderVerificationDetails.description }": [
+        "Falha na verificação do remetente: ${ icon.senderVerificationDetails.description }"
+      ],
+      "Sender verified: ${ icon.senderVerificationDetails.description }": [
+        "O remetente foi verificado: ${ icon.senderVerificationDetails.description }"
+      ]
+    },
+    "Sender verification error": {
+      "Verification key is not in the list of trusted keys.": [
+        "A chave de verificação não está na lista de chaves de confiança."
+      ]
+    },
     "Sent email icon": {
       "Encrypted by ${ MAIL_APP_NAME }": [
         "Criptografado pelo ${ MAIL_APP_NAME }"
@@ -8540,8 +8561,8 @@
     },
     "Title": {
       "${ emailsCount } email address": [
-        "${ emailsCount } endereço de email",
-        "${ emailsCount } endereços de email"
+        "${ emailsCount } endereço de e-mail",
+        "${ emailsCount } endereços de e-mail"
       ],
       "${ MAIL_APP_NAME } Keyboard Shortcuts": [
         "Atalhos do teclado do ${ MAIL_APP_NAME }"

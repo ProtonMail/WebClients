@@ -29,10 +29,10 @@
         "Afegeix una adreça"
       ],
       "Add Bcc recipients": [
-        "Afegeix destinatari CCA"
+        "Afegeix destinatari Cco"
       ],
       "Add Cc recipients": [
-        "Afegeix destinatari CC"
+        "Afegeix destinataris Cc"
       ],
       "Add condition": [
         "Afegeix una condició"
@@ -107,7 +107,7 @@
         "Adjuntar"
       ],
       "Attention required": [
-        "Requereix atenció"
+        "Es requereix la vostra atenció"
       ],
       "Authenticate": [
         "Autentica"
@@ -119,7 +119,7 @@
         "Accés beta"
       ],
       "Blind Carbon Copy": [
-        "Copia carbó amagada"
+        "Copia carbó oculta"
       ],
       "Block": [
         "Bloqueja"
@@ -448,7 +448,7 @@
         "Ves a la pàgina anterior"
       ],
       "Go to settings": [
-        "Aneu a les preferències"
+        "Ves a les preferències"
       ],
       "Go to SimpleLogin": [
         "Ves a SimpleLogin"
@@ -575,10 +575,10 @@
         "Disseny de la bústia de correu"
       ],
       "Manage folders": [
-        "Gestionar carpetes"
+        "Gestiona les carpetes"
       ],
       "Manage labels": [
-        "Gestionar etiquetes"
+        "Gestiona les etiquetes"
       ],
       "Mark as read": [
         "Marca com a llegit"
@@ -884,7 +884,7 @@
         "Mostra les subscripcions per a empreses"
       ],
       "See plan features": [
-        "Veure les funcionalitats del pla"
+        "Mostra les característiques del pla"
       ],
       "Select all": [
         "Seleccionar-ho tot"
@@ -935,7 +935,7 @@
         "Estableix la frase de recuperació"
       ],
       "Share via link": [
-        "Comparteix amb enllaç"
+        "Comparteix amb un enllaç"
       ],
       "Sharing options": [
         "Opcions de compartició"
@@ -992,7 +992,7 @@
         "Omet"
       ],
       "Skip verification": [
-        "Ometre la verificació"
+        "Omet la verificació"
       ],
       "Some images could not be loaded with tracker protection.": [
         "Algunes imatges no s'han pogut carregar amb la protecció contra el rastreig."
@@ -1095,7 +1095,7 @@
         "Actualitza la frase de recuperació"
       ],
       "Upgrade": [
-        "Actualitza"
+        "Millora"
       ],
       "Upgrade now": [
         "Actualitzar ara"
@@ -4840,7 +4840,7 @@
         "Es requereix la vostra atenció"
       ],
       "Automatically delete messages that have been in trash and spam for more than 30 days.": [
-        "Suprimeix automàticament els missatges que han estat a la carpeta Paperera i Correu brossa durant més de 30 dies."
+        "Elimineu automàticament els missatges que han estat a la paperera i al correu brossa durant més de 30 dies."
       ],
       "Background color": [
         "Color de fons"
@@ -4962,7 +4962,7 @@
         "No oblidi compartir la contrassenya amb el destinatari"
       ],
       "Downloading paused": [
-        "S'ha pausat la descàrrega"
+        "S'ha posat la descàrrega en pausa"
       ],
       "Draft": [
         "Esborrany"
@@ -4998,7 +4998,7 @@
         "Adreça de correu electrònic"
       ],
       "Email is forwarded to your mailbox; your email address stays hidden.": [
-        "El correu electrònic és reenviat a la vostra bústia de correu; la vostra adreça de correu electrònic resta amagada."
+        "El correu electrònic es reenvia a la vostra bústia de correu. La vostra adreça de correu electrònic resta amagada."
       ],
       "Email tracker protection is disabled": [
         "La protecció de rastrejador de correu electrònic està desactivada"
@@ -5058,7 +5058,7 @@
         "Data de caducitat"
       ],
       "Expires in ${ formattedDate }": [
-        "Caduca en ${ formattedDate }"
+        "Caduca el ${ formattedDate }"
       ],
       "Expires in ${ minutesDiff } minute": [
         "Caduca en ${ minutesDiff } minut",
@@ -5101,7 +5101,7 @@
         "Amaga el missatge original"
       ],
       "How hide-my-email aliases works": [
-        "Funcionament dels àlies Hide-my-email"
+        "Funcionament dels àlies hide-my-email"
       ],
       "I'm sending this message to a non-${ MAIL_APP_NAME } user.": [
         "Envio aquest missatge a un usuari que no és de ${ MAIL_APP_NAME }."
@@ -5250,13 +5250,13 @@
         "El missatge s'enviarà demà a les ${ formattedTime }"
       ],
       "Messages that have been in trash and spam more than 30 days will be automatically deleted.": [
-        "Els missatges que hagin estat a la carpeta Paperera i Correu brossa més de 30 dies se suprimiran automàticament."
+        "Els missatges que hagin estat a la paperera i al correu brossa més de 30 dies se suprimiran automàticament."
       ],
       "Monthly ${ onDayString }": [
         "Mensual ${ onDayString }"
       ],
       "Moving messages. This may take a while.": [
-        "Movent missatges. Pot trigar una estona."
+        "S'estan movent missatges. Això pot trigar una estona."
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Poseu un nom a la vostra nova carpeta i seleccioneu la carpeta principal a la qual vulgueu introduir-la. Si no seleccioneu una carpeta principal, aquesta nova carpeta es crearà com a carpeta de primer nivell."
@@ -5443,7 +5443,7 @@
         "La cerca està trigant massa? ${ dropdownButton } o ${ toggleOffButton } d'aquesta sessió de cerca."
       ],
       "Secure your files with encrypted cloud storage for free, today.": [
-        "Protegiu els vostres fitxers amb emmagatzematge al núvol xifrat, de manera gratuïta, avui."
+        "Protegiu avui els vostres fitxers amb emmagatzematge al núvol xifrat de manera gratuïta."
       ],
       "Seems like you are all caught up for now": [
         "Sembla que ara mateix esteu al dia"
@@ -5482,7 +5482,7 @@
         "S'ha esgotat el temps de sessió"
       ],
       "Set ${ MAIL_APP_NAME } as your default email application for this browser. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
-        "Establir ${ MAIL_APP_NAME } com a l'aplicació de correu electrònic per defecte per aquest navegador. ${ MAIL_APP_NAME } s'obrirà automàticament quan cliqueu un enllaç de correu electrònic."
+        "Establiu ${ MAIL_APP_NAME } com a aplicació de correu electrònic per defecte en aquest navegador. ${ MAIL_APP_NAME } s'obrirà automàticament quan cliqueu un enllaç de correu electrònic."
       ],
       "Set a recovery phrase": [
         "Establir una frase de recuperació"
@@ -5494,10 +5494,10 @@
         "Mostra el missatge original"
       ],
       "SimpleLogin is a ${ BRAND_NAME } service, and your ${ BRAND_NAME_TWO } Account includes hide-my-email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
-        "SimpleLogin és un servei de ${ BRAND_NAME } i el vostre compte de ${ BRAND_NAME_TWO } inclou àlies Hide-my-email. Per començar a emmascarar la vostra adreça de correu electrònic aneu a SimpleLogin i creeu el vostre primer àlies."
+        "SimpleLogin és un servei de ${ BRAND_NAME } i el vostre compte de ${ BRAND_NAME_TWO } inclou àlies hide-my-email. Per a començar a emmascarar la vostra adreça de correu electrònic, aneu a SimpleLogin i creeu el vostre primer àlies."
       ],
       "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
-        "SimpleLogin proporciona una forma fàcil de crear inicis de sessió a llocs de tercers que no són de confiança on no voleu revelar la vostra adreça de correu electrònic actual."
+        "SimpleLogin proporciona una forma fàcil de crear inicis de sessió a llocs de tercers no confiables on no voleu revelar la vostra adreça de correu electrònic real."
       ],
       "Sorry, this message does not exist or has already expired.": [
         "Ho sentim, aquest missatge no existeix o ja ha expirat."
@@ -5539,7 +5539,7 @@
         "És possible que les dades que heu introduït a l'esborrany no es desin si sortiu de la pàgina."
       ],
       "The local database is being prepared": [
-        "S'està preparant la base de dades local."
+        "S'està preparant la base de dades local"
       ],
       "The message has expired": [
         "Aquest missatge ha caducat"
@@ -5567,7 +5567,7 @@
         "S'ha produït un error amb la firma utilitzada per verificar les dades de contacte, que poden ser el resultat d'un restabliment de contrasenya."
       ],
       "They can't spam you if they don't know your email address. Protect your inbox with hide-my-email aliases.": [
-        "No us poden enviar correu brossa si no saben la vostra adreça de correu electrònic. Protegiu la vostra safata d'entrada amb Hide-my-email."
+        "No us poden enviar correu brossa si no saben la vostra adreça de correu electrònic. Protegiu la vostra safata d'entrada amb els àlies de hide-my-email."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Aquest compte ha estat suspès a causa d'una possible infracció de les polítiques."
@@ -5713,7 +5713,7 @@
         "Actualitzant la cerca del contingut del missatge..."
       ],
       "Updating your local messages, message content won't be searched during this update": [
-        "Actualitzant els vostres missatges locals. No es buscarà en el contingut dels missatges durant aquesta actualització"
+        "S'estan actualitzant els vostres missatges locals. No se cercarà en el contingut dels missatges durant aquesta actualització"
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Milloreu ara per obtenir característiques prèmium, productes i emmagatzematge a un preu especial"
@@ -5722,19 +5722,19 @@
         "Actualitzeu per afegir més adreces al vostre compte."
       ],
       "Upgrade to automatically delete messages that have been in trash and spam for more than 30 days.": [
-        "Actualitza per eliminar automàticament els missatges que han estat a la carpeta Paperera i Correu brossa durant més de 30 dies."
+        "Milloreu per eliminar automàticament els missatges que han estat a la paperera i al correu brossa durant més de 30 dies."
       ],
       "Upgrade to create more folders, filters, and addresses.": [
         "Actualitzeu per crear més carpetes, filtres, i adreces."
       ],
       "Upgrade to level up your privacy.": [
-        "Actualitzeu el vostre pla per millorar la vostra protecció de privadesa."
+        "Milloreu per augmentar la vostra privacitat."
       ],
       "Upgrade to send email from @pm.me addresses.": [
         "Actualitzeu per enviar correu electrònic des d'adreces @pm.me."
       ],
       "Upgrade to send emails from your custom email domain.": [
-        "Actualitzeu el vostre pla per enviar missatges des del vostre domini de correu electrònic personalitzat."
+        "Milloreu per enviar missatges des del vostre domini de correu electrònic personalitzat."
       ],
       "Upgrade to send emails to contact groups easily.": [
         "Actualitzeu per enviar correus electrònics fàcilment a grups de contactes."
@@ -5749,10 +5749,10 @@
         "Actualitzeu per donar suport a la privacitat i obtenir més funcionalitats."
       ],
       "Upgrade to unlock premium features.": [
-        "Actualitzeu per desbloquejar funcions prèmium."
+        "Milloreu per a desbloquejar característiques prèmium."
       ],
       "Upgrade to use ${ MAIL_APP_NAME } with Apple Mail, Outlook or Thunderbird.": [
-        "Actualitzeu el vostre pla per utilitzar ${ MAIL_APP_NAME } amb Apple Mail, Outlook o Thunderbird."
+        "Milloreu per a utilitzar ${ MAIL_APP_NAME } amb Apple Mail, Outlook o Thunderbird."
       ],
       "Upgrade to use auto-reply when you're away.": [
         "Milloreu per a utilitzar la resposta automàtica quan esteu fora."
@@ -5803,7 +5803,7 @@
         "Quan voleu que el vostre missatge es destrueix automàticament?"
       ],
       "When giving out your email, use a unique, disposable hide-my-email alias instead of your real email address.": [
-        "Quan doneu el vostre correu electrònic, utilitzeu un àlies Hide-my-email únic, d'un sol ús en compte de la vostra adreça de correu electrònic real."
+        "Quan doneu el vostre correu electrònic, utilitzeu un àlies hide-my-email únic d'un sol ús en compte de la vostra adreça de correu electrònic real."
       ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "Quan actives les claus de confiança per ${ senderName }, les claus públiques s'afegeixen a les dades de contacte."
@@ -5919,7 +5919,7 @@
         "Heu assolit el nombre màxim d'adreces en el grup de contactes."
       ],
       "Your ${ BRAND_NAME } Account includes SimpleLogin. Install the browser extension with one click to get started.": [
-        "El vostre compte ${ BRAND_NAME } inclou SimpleLogin. Instal·leu l'extensió del navegador amb un clic per a començar."
+        "El vostre compte de ${ BRAND_NAME } inclou SimpleLogin. Instal·leu l'extensió del navegador amb un clic per a començar."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "El vostre compte de ${ BRAND_NAME } actualment està suspès. Passats 28 dies, els correus electrònics deixaran de lliurar-se a la vostra safata d'entrada, els enllaços compartits de Drive es bloquejaran i no podreu carregar-hi fitxers nous. Per a restablir el servei normal, pagueu les factures vençudes."
@@ -6351,7 +6351,7 @@
         "Elimina"
       ],
       "Delete recovery-related information.": [
-        "Eliminar la informació de recuperació."
+        "Elimina la informació de recuperació."
       ],
       "Don't ask again": [
         "No tornis a preguntar"
@@ -6522,7 +6522,7 @@
         "Notificació"
       ],
       "OK": [
-        "OK"
+        "D'acord"
       ],
       "Operating system": [
         "Sistema operatiu"
@@ -6657,13 +6657,13 @@
         "Barra d'eines"
       ],
       "Type a command...": [
-        "Escriu una comanda..."
+        "Escriviu una ordre..."
       ],
       "Undisclosed Recipients": [
         "Destinataris ocults"
       ],
       "Upload picture": [
-        "Carrega imatge"
+        "Carrega la imatge"
       ],
       "Verification code": [
         "Codi de verificació"
@@ -7462,10 +7462,10 @@
         "Adreça de correu electrònic"
       ],
       "End date": [
-        "Data final"
+        "Data de finalització"
       ],
       "Filter folders": [
-        "Filtra carpetes"
+        "Filtra les carpetes"
       ],
       "Filter groups": [
         "Filtra grups"
@@ -7498,7 +7498,7 @@
         "Número de telèfon"
       ],
       "Please describe the problem and include any error messages": [
-        "Descriu el problema i inclou-hi qualssevol missatges d'error."
+        "Descriviu el problema i incloeu qualsevol missatge d'error"
       ],
       "Please insert link first": [
         "Inseriu l'enllaç primer"
@@ -7534,7 +7534,7 @@
         "Text"
       ],
       "Type a command…": [
-        "Escriu una comanda…"
+        "Escriviu una ordre…"
       ],
       "Type text or keyword": [
         "Escrigui text o paraula clau"
