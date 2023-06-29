@@ -649,6 +649,9 @@
       "Move all messages from this label": [
         "Mover todos los mensajes con esta etiqueta"
       ],
+      "Move all to archive": [
+        "Mover todo al archivo"
+      ],
       "Move all to trash": [
         "Mover todo a la papelera"
       ],
@@ -4803,6 +4806,9 @@
       "Are you sure you want to discard your changes?": [
         "¿Estás seguro de que quieres descartar los cambios?"
       ],
+      "Are you sure you want to move all messages in this location to Archive?": [
+        "¿Estás seguro de que quieres mover todos los mensajes de esta carpeta al Archivo?"
+      ],
       "Are you sure you want to move all messages in this location to Trash?": [
         "¿Estás seguro de que quiere mover todos los mensajes de esta carpeta a la papelera?"
       ],
@@ -6013,6 +6019,11 @@
       "You have enabled Address Verification with Trusted Keys for this email address,\nbut no active encryption key has been trusted.\nYou must trust a key valid for sending in order to send a message to this email address.": [
         "Has habilitado la verificación de dirección con claves de confianza para esta dirección de correo,\npero no se han confiado claves de cifrado activas.\nDebes confiar en una clave válida para poder enviar mensajes a esta dirección.",
         "Has habilitado la verificación de dirección con claves de confianza para estas direcciones de correo,\npero no se han confiado claves de cifrado activas.\nDebes confiar en las claves válidas para poder enviar mensajes a estas direcciones."
+      ]
+    },
+    "Key transparency details button": {
+      "Click here for more details.": [
+        "Haz clic aquí para obtener más información."
       ]
     },
     "Key validation warning": {
@@ -7727,6 +7738,22 @@
         "Se han detectado algunas advertencias. Es posible que las siguientes direcciones de correo electrónico no reciban correos electrónicos:"
       ]
     },
+    "Sender verification details": {
+      "Sender verification": [
+        "Verificación del remitente"
+      ],
+      "Sender verification failed: ${ icon.senderVerificationDetails.description }": [
+        "Error al verificar el remitente: ${ icon.senderVerificationDetails.description }."
+      ],
+      "Sender verified: ${ icon.senderVerificationDetails.description }": [
+        "Se ha verificado el remitente: ${ icon.senderVerificationDetails.description }."
+      ]
+    },
+    "Sender verification error": {
+      "Verification key is not in the list of trusted keys.": [
+        "La clave de verificación no está en la lista de las claves de confianza."
+      ]
+    },
     "Sent email icon": {
       "Encrypted by ${ MAIL_APP_NAME }": [
         "Cifrado por ${ MAIL_APP_NAME }"
@@ -8862,6 +8889,9 @@
       ],
       "More selections": [
         "Más selecciones"
+      ],
+      "Move all messages to Archive": [
+        "Mover todos los mensajes al Archivo"
       ],
       "Move all messages to Trash": [
         "Mover todos los mensajes a la papelera"
