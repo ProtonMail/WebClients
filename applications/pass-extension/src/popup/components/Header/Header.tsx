@@ -1,4 +1,4 @@
-import type { VFC } from 'react';
+import { type VFC, useMemo } from 'react';
 import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
@@ -28,24 +28,7 @@ import { usePasswordGeneratorContext } from '../PasswordGenerator/PasswordGenera
 import { MenuDropdown } from './MenuDropdown';
 import { Searchbar } from './Searchbar';
 
-const ITEM_TYPE_DROPDOWN_BUTTONS: { label: string; type: ItemType }[] = [
-    {
-        label: c('Label').t`Login`,
-        type: 'login',
-    },
-    {
-        label: c('Label').t`Alias`,
-        type: 'alias',
-    },
-    {
-        label: c('Label').t`Credit Card`,
-        type: 'creditCard',
-    },
-    {
-        label: c('Label').t`Note`,
-        type: 'note',
-    },
-];
+type QuickAddAction = { label: string; type: ItemType };
 
 export const Header: VFC<{}> = () => {
     const history = useHistory();
@@ -71,6 +54,16 @@ export const Header: VFC<{}> = () => {
             onSubmit: (password) => copyToClipboard(password),
         });
     };
+
+    const quickAddActions = useMemo<QuickAddAction[]>(
+        () => [
+            { label: c('Label').t`Login`, type: 'login' },
+            { label: c('Label').t`Alias`, type: 'alias' },
+            { label: c('Label').t`Credit Card`, type: 'creditCard' },
+            { label: c('Label').t`Note`, type: 'note' },
+        ],
+        []
+    );
 
     return (
         <>
@@ -105,14 +98,11 @@ export const Header: VFC<{}> = () => {
                     originalPlacement="bottom-start"
                 >
                     <DropdownMenu>
-                        {ITEM_TYPE_DROPDOWN_BUTTONS.map(({ type, label }) => (
-                            <span
-                                className={itemTypeToSubThemeClassName[type]}
-                                key={`item-type-dropdown-button-${type}`}
-                            >
+                        {quickAddActions.map(({ type, label }) => {
+                            return (
                                 <DropdownMenuButton
-                                    key={type}
-                                    className="flex flex-align-items-center py-2 px-4"
+                                    key={`item-type-dropdown-button-${type}`}
+                                    className={`${itemTypeToSubThemeClassName[type]} flex flex-align-items-center py-2 px-4`}
                                     onClick={withClose(() => handleNewItemClick(type))}
                                 >
                                     <span
@@ -138,8 +128,8 @@ export const Header: VFC<{}> = () => {
                                         )
                                     }
                                 </DropdownMenuButton>
-                            </span>
-                        ))}
+                            );
+                        })}
 
                         <DropdownMenuButton
                             className="text-left flex flex-align-items-center ui-red"
