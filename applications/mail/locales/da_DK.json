@@ -649,6 +649,9 @@
       "Move all messages from this label": [
         "Flyt alle beskeder fra denne etikette"
       ],
+      "Move all to archive": [
+        "Flyt alle til arkiv"
+      ],
       "Move all to trash": [
         "Flyt alle til papirkurv"
       ],
@@ -1847,6 +1850,41 @@
       ],
       "white": [
         "hvid"
+      ]
+    },
+    "Commander action": {
+      "Create a new folder": [
+        "Opret en ny mappe"
+      ],
+      "Create a new label": [
+        "Opret en ny etiket"
+      ],
+      "Go to Archive": [
+        "Gå til arkiv"
+      ],
+      "Go to Drafts": [
+        "Gå til kladder"
+      ],
+      "Go to Inbox": [
+        "Gå til indbakke"
+      ],
+      "Go to Sent": [
+        "Gå til sendt"
+      ],
+      "Go to Spam": [
+        "Gå til spam"
+      ],
+      "Go to Starred": [
+        "Gå til stjernemarkeret"
+      ],
+      "Go to Trash": [
+        "Gå til papirkurv"
+      ],
+      "New message": [
+        "Ny besked"
+      ],
+      "Search": [
+        "Søg"
       ]
     },
     "Composer email icon": {
@@ -3806,6 +3844,9 @@
       "customer support": [
         "kundeservice"
       ],
+      "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
+        "Hvis du accepterer invitationen, overflytter vi dig fra dit nuværende abonnement og krediterer din konto med en eventuel restsaldo."
+      ],
       "Invited by: ${ inviteEmail }": [
         "Inviteret af: ${ inviteEmail }"
       ],
@@ -3820,6 +3861,9 @@
       ],
       "Storage assigned to you: ${ assignedStorage }": [
         "Lagerplads tildelt dig: ${ assignedStorage }"
+      ],
+      "The subscription is billed to the Visionary or family plan's primary admin.": [
+        "Abonnementet faktureres til Visionary- eller Family-abonnementets primære administrator."
       ],
       "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
         "Visionary- og familie-abonnementer understøtter på nuværende tidspunkt ikke eksterne kontoer. Opret en ${ BRAND_NAME }-adresse før du tilmelder dig. ${ addressSettingsLink }"
@@ -4739,6 +4783,9 @@
       ],
       "Are you sure you want to discard your changes?": [
         "Er du sikker på at du vil kassere dine ændringer?"
+      ],
+      "Are you sure you want to move all messages in this location to Archive?": [
+        "Er du sikker på, at du vil flytte alle beskeder på denne placering til papirkurven?"
       ],
       "Are you sure you want to move all messages in this location to Trash?": [
         "Er du sikker på, at du vil flytte alle beskeder på denne placeirng til papirkurven?"
@@ -5998,7 +6045,7 @@
         "Gå til Kladder"
       ],
       "Go to Inbox": [
-        "Gå til Indbakke"
+        "Gå til indbakke"
       ],
       "Go to Sent": [
         "Gå til Sendt"
@@ -6052,7 +6099,7 @@
         "Flyt til Arkiv"
       ],
       "Move to Inbox": [
-        "Flyt til Indbakke"
+        "Flyt til indbakke"
       ],
       "Move to Spam": [
         "Flyt til Spam"
@@ -7910,6 +7957,12 @@
       ]
     },
     "specialoffer: Tooltip": {
+      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
+        "Få adgang til blokeret indhold, og browse privat. Inkluderer 1700 servere i mere end 60 lande, højeste VPN-hastighed, 10 VPN-forbindelser, verdensomspændende streamingtjenester, malware- og ad-blocker og meget mere."
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "Beskyt dine filer med krypteret lagring i skyen. Inkluderer automatisk synkronisering, krypteret fildeling og meget mere."
+      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
         "Lagerplads er delt mellem ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, og ${ DRIVE_APP_NAME }."
       ]
@@ -8654,6 +8707,9 @@
       ],
       "More selections": [
         "Flere valg"
+      ],
+      "Move all messages to Archive": [
+        "Flyt alle beskeder til arkiv"
       ],
       "Move all messages to Trash": [
         "Flyt alle beskeder til papirkurv"
