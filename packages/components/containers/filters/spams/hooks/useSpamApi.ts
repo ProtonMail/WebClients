@@ -29,6 +29,16 @@ interface IncomingDefaultsApiResults {
     GlobalTotal: number;
 }
 
+interface IncomingDefaultsApiResult {
+    Code: number;
+    IncomingDefault: IncomingDefault;
+}
+
+interface IncomingDefaultsDeleteApiResult {
+    Code: number;
+    Responses: [];
+}
+
 const getHumanReadableLocation = (location: INCOMING_DEFAULTS_LOCATION): SpamLocation => {
     if (location === LOCATION_BY_TYPE.NON_SPAM) {
         return 'NON_SPAM';
@@ -97,20 +107,22 @@ const useSpamApi = (isOrganization: boolean = false) => {
             Domain: type === 'domain' ? name : undefined,
             Email: type === 'email' ? name : undefined,
         };
-        void api<{ Email: string; Location: number; Domain: string }>(
+        return api<IncomingDefaultsApiResult>(
             isOrganization ? addOrgIncomingDefault(params) : addIncomingDefault(params)
         );
     };
 
     const updateSpam = async (id: string, nextLocation: SpamLocation) => {
         const params = { Location: LOCATION_BY_TYPE[nextLocation] };
-        void api<IncomingDefaultsApiResults>(
+        return api<IncomingDefaultsApiResult>(
             isOrganization ? updateOrgIncomingDefault(id, params) : updateIncomingDefault(id, params)
         );
     };
 
     const deleteSpam = async (id: string) => {
-        void api(isOrganization ? deleteOrgIncomingDefaults([id]) : deleteIncomingDefaults([id]));
+        return api<IncomingDefaultsDeleteApiResult>(
+            isOrganization ? deleteOrgIncomingDefaults([id]) : deleteIncomingDefaults([id])
+        );
     };
 
     return { fetchSpams, insertSpam, updateSpam, deleteSpam };
