@@ -138,6 +138,8 @@ export const findLongestMatchingIndex = (strings: string[] = [], substring = '')
     return i;
 };
 
+export const stripLeadingSlash = (str: string) => str.replace(/^\/+/g, '');
+export const stripTrailingSlash = (str: string) => str.replace(/\/+$/g, '');
 export const stripLeadingAndTrailingSlash = (str: string) => str.replace(/^\/+|\/+$/g, '');
 
 export const removeDiacritics = (str: string) => {

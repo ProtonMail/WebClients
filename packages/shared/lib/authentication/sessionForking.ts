@@ -1,3 +1,4 @@
+import { getPathFromLocation } from '@proton/shared/lib/helpers/url';
 import getRandomString from '@proton/utils/getRandomString';
 import noop from '@proton/utils/noop';
 
@@ -255,7 +256,7 @@ export const consumeFork = async ({ selector, api, state, key, persistent, trust
         throw new InvalidForkConsumeError('Missing url');
     }
     const url = new URL(previousUrl);
-    const path = `${url.pathname}${url.search}${url.hash}`;
+    const path = getPathFromLocation(url);
 
     const { UID, AccessToken, RefreshToken, Payload, LocalID } = await api<PullForkResponse>(pullForkSession(selector));
     const authApi = <T>(config: any) => api<T>(withAuthHeaders(UID, AccessToken, config));
