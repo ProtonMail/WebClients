@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-throw-literal */
+import { captureException as sentryCaptureException } from '@sentry/browser';
 import { c } from 'ttag';
 
 import {
@@ -184,6 +185,23 @@ export const createAuthService = ({
             } catch (error: any) {
                 void authService.logout();
                 const additionalMessage = error.message ?? '';
+
+                if (error instanceof Error) {
+                    /* API errors are excluded from core's sentry `beforeSend`
+                     * handler: wrap the error message to by-pass */
+                    const loginError = new Error(error.message);
+                    loginError.name = 'PassLoginError';
+                    loginError.cause = error.cause;
+                    loginError.stack = error.stack;
+
+                    sentryCaptureException(loginError, {
+                        extra: {
+                            forkSelector: data.selector,
+                            persistent: data.persistent,
+                            trusted: data.trusted,
+                        },
+                    });
+                }
 
                 store.dispatch(
                     notification({
