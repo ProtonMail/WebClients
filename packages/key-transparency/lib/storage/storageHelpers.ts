@@ -51,10 +51,12 @@ export const getAllKTBlobValuesWithInfo = async (
                     })
                 ).data
             );
+            // Legacy blob did not set the revision, we ignore them
+            const newKTBlobs = ktBlobsContent.filter(({ revision }) => revision !== undefined);
             ktBlobValuesWithInfoMap.set(storedAddress, {
                 userID,
                 addressID: storedAddress,
-                ktBlobsContent,
+                ktBlobsContent: newKTBlobs,
             });
         } catch (error: any) {
             const errorMessage = error instanceof Error ? error.message : 'unknown error';
@@ -168,7 +170,12 @@ export const getAuditResult = async (
 ): Promise<SelfAuditResult | undefined> => {
     try {
         const armoredMessage = await ktLSAPI.getItem(generateKeyAuditName(userID));
+
         if (armoredMessage) {
+            if (!armoredMessage.startsWith('-----BEGIN PGP MESSAGE-----')) {
+                // Old audits blob were only containing the audit time, not encrypted.
+                return;
+            }
             const decrypted = await CryptoProxy.decryptMessage({
                 armoredMessage,
                 decryptionKeys: userPrivateKeys,
