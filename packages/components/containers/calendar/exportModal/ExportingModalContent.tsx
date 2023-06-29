@@ -6,7 +6,6 @@ import { getEventsCount } from '@proton/shared/lib/api/calendars';
 import { getApiWithAbort } from '@proton/shared/lib/api/helpers/customConfig';
 import { processInBatches } from '@proton/shared/lib/calendar/export/export';
 import {
-    CalendarEvent,
     EXPORT_ERRORS,
     EXPORT_STEPS,
     ExportCalendarModel,
@@ -53,13 +52,13 @@ const ExportingModalContent = ({ model, setModel, onFinish }: Props) => {
         };
 
         const handleExportProgress = (
-            events: CalendarEvent[],
+            eventIDs: string[],
             veventComponents: VcalVeventComponent[],
             exportErrors: ExportError[]
         ) => {
             setModelWithAbort((currentModel) => ({
                 ...currentModel,
-                totalFetched: currentModel.totalFetched + events.length,
+                totalFetched: currentModel.totalFetched + eventIDs.length,
                 totalProcessed: currentModel.totalProcessed + veventComponents.length,
                 exportErrors: [...currentModel.exportErrors, ...exportErrors],
             }));
