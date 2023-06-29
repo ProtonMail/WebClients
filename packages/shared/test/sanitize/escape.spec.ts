@@ -15,6 +15,14 @@ describe('Escape', () => {
         it('Should not replace percent line-height by unset', () => {
             expect(escapeForbiddenStyle('line-height: 100%;')).toBe('line-height: 100%;');
         });
+
+        it('Should disable dark styles Color schemes', () => {
+            expect(escapeForbiddenStyle('Color-scheme: light dark;')).toBe('proton-disabled-Color-scheme: light dark;');
+        });
+
+        it('Should disable dark styles media queries', () => {
+            expect(escapeForbiddenStyle('(prefers-color-scheme: dark)')).toBe('(prefers-color-scheme: never)');
+        });
     });
 
     describe('recurringUnescapeCSSEncoding', () => {
