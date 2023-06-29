@@ -2872,6 +2872,9 @@
       "Thanks for letting us know": [
         "Obrigado por nos informar"
       ],
+      "We've noted that this account doesn't belong to you. We'll investigate and act accordingly.": [
+        "Notamos que essa conta não lhe pertence. Investigaremos e atuaremos de acordo."
+      ],
       "You can safely close this tab.": [
         "Você pode fechar esta aba com segurança."
       ]
@@ -2976,7 +2979,7 @@
         "Quais e-mails você deseja receber da ${ BRAND_NAME }?"
       ],
       "You resubscribed to ${ categoriesJsx } emails.": [
-        "Você assinou novamente os emails de ${ categoriesJsx }."
+        "Você assinou novamente os e-mails de ${ categoriesJsx }."
       ],
       "You unsubscribed from ${ categoriesJsx } emails.": [
         "Você cancelou a assinatura de e-mails de ${ categoriesJsx }."
@@ -3171,7 +3174,7 @@
         "Nenhum contato encontrado para importação"
       ],
       "No emails found to import - the account does not have an inbox": [
-        "Nenhum email encontrado para importação - a conta não possui uma caixa de entrada"
+        "Nenhum e-mail encontrado para importação — a conta não possui uma caixa de entrada."
       ],
       "No valid address found": [
         "Nenhum endereço válido encontrado"
@@ -3372,6 +3375,9 @@
       ],
       "Trusted keys are not valid for sending": [
         "As chaves confiáveis não são válidas para o envio"
+      ],
+      "Try again later": [
+        "Tente novamente mais tarde"
       ],
       "Try using only letters, numerals, and _.-": [
         "Tente usar apenas letras, números e _.-"
@@ -3655,6 +3661,9 @@
       ]
     },
     "Error message, recovery": {
+      "Contact ${ BRAND_NAME }": [
+        "Contate ${ BRAND_NAME }"
+      ],
       "Please ${ signIn } to resend a recovery email verification request.": [
         "${ signIn } para reenviar uma solicitação de verificação de e-mail de recuperação."
       ],
@@ -4997,7 +5006,7 @@
         "${ firstRemainingCalendarName } será definido como calendário padrão."
       ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
-        "O ${ MAIL_APP_NAME } também pode ser usado com uma senha única que substitui as senhas de login e de acesso à caixa de email. Para habilitar o modo de senha única, digite a senha única que deseja usar e clique em Salvar."
+        "O ${ MAIL_APP_NAME } também pode ser usado com uma senha única que substitui as senhas de início de sessão e de acesso à caixa de e-mail. Para habilitar o modo de senha única, digite a senha única que deseja usar e clique em Salvar."
       ],
       "${ MAIL_APP_NAME } supports DKIM signing for custom domains. To use DKIM authentication, please add the following CNAME record into your DNS settings for this domain. This can typically be done in the control panel of your domain name registrar.": [
         "O ${ MAIL_APP_NAME } suporta assinatura DKIM para domínios personalizados. Para usar autenticação DKIM, adicione o seguinte registro CNAME nas suas configurações de DNS para este domínio. Isso geralmente pode ser feito no painel de controle de sua hospedagem ou registrador de nomes de domínio."
@@ -5431,7 +5440,7 @@
         "Criar e gerenciar subcontas além de atribuir a elas endereços de e-mail em seu domínio personalizado."
       ],
       "Create email addresses for other people, manage ${ MAIL_APP_NAME } for a business, school, or group. Get started by adding your organization name and custom domain (e.g. @yourcompany.com). ": [
-        "Crie endereços de email para outras pessoas, gerencie ${ MAIL_APP_NAME } para um negócio, escola, ou grupo. Comece adicionando o nome e domínio personalizado da sua organização (ex. @suaempresa.com). "
+        "Crie endereços de e-mail para outras pessoas, gerencie ${ MAIL_APP_NAME } para um negócio, escola, ou grupo. Comece adicionando o nome e domínio personalizado da sua organização (ex. @suaempresa.com). "
       ],
       "Create in": [
         "Criar em"
@@ -5549,10 +5558,10 @@
         "Preferências de e-mail salvas"
       ],
       "Emails stored in this folder will not be deleted and can still be found in the All Mail folder.": [
-        "Os emails armazenados nesta pasta não serão excluídos e ainda podem ser encontrados na pasta Todos os emails."
+        "Os e-mails armazenados nesta pasta não serão excluídos e ainda podem ser encontrados na pasta Todos os e-mails."
       ],
       "Emails tagged with this label will not be deleted and can still be found in the respective folder.": [
-        "Emails marcados com este marcador não serão excluídos e ainda podem ser encontrados na respectiva pasta."
+        "Os e-mails marcados com este marcador não serão excluídos e ainda podem ser encontrados na respectiva pasta."
       ],
       "Enable this address to join this calendar": [
         "Ative este endereço para juntar-se a este calendário"
@@ -5635,6 +5644,9 @@
       "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
         "Encaminhe e-mails recebidos de outra conta para sua caixa de entrada segura do ${ MAIL_APP_NAME }."
       ],
+      "Free forever": [
+        "Grátis para sempre"
+      ],
       "Free up some space or add more storage space.": [
         "Libere algum espaço ou adicione mais espaço de armazenamento."
       ],
@@ -5696,7 +5708,7 @@
         "Se você não encontrar o e-mail na caixa de entrada. Verifique a pasta de spam."
       ],
       "If you have a custom domain with ${ MAIL_APP_NAME }, you can set a catch-all email address to receive messages sent to your domain but to an invalid email address (e.g., because of typos).": [
-        "Se você tem um domínio personalizado com o ${ MAIL_APP_NAME }, você pode definir um email catch-all que receberá mensagens enviadas para o seu domínio, mas com um endereço de email inválido (por exemplo, devido a erros de digitação)."
+        "Se você tem um domínio personalizado com o ${ MAIL_APP_NAME }, você pode definir um e-mail catch-all que receberá mensagens enviadas para o seu domínio, mas com um endereço de e-mail inválido (por exemplo, devido a erros de digitação)."
       ],
       "If you have a gift code, enter it below to apply your discount.": [
         "Se você tem um vale-presente, insira-o abaixo para aplicar o desconto."
@@ -5760,7 +5772,7 @@
         "Importar Caixa de Entrada"
       ],
       "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "Importe seus emails, calendários e contatos de outro serviço para ${ BRAND_NAME }."
+        "Importe seus e-mails, calendários e contatos de outro serviço para ${ BRAND_NAME }."
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Importante: Certifique-se de salvar os códigos de recuperação. Caso contrário, você perderá permanentemente o acesso à sua conta se perder o dispositivo de autenticação de dois fatores."
@@ -6265,7 +6277,7 @@
         "Algumas chaves foram reativadas"
       ],
       "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ${ MAIL_APP_NAME } in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
-        "O SPF é usado para especificar quem tem permissão de enviar emails usando este domínio, por isso recomendamos que inclua o ${ MAIL_APP_NAME } em seu registro SPF. Adicione o seguinte registro TXT ao seu DNS. Isso geralmente pode ser feito no painel de controle de sua hospedagem ou registrador de nomes de domínio."
+        "O SPF é usado para especificar quem tem permissão de enviar e-mails usando este domínio, por isso recomendamos que inclua o ${ MAIL_APP_NAME } em seu registro SPF. Adicione o seguinte registro TXT ao seu DNS. Isso geralmente pode ser feito no painel de controle de sua hospedagem ou registrador de nomes de domínio."
       ],
       "Step ${ step }": [
         "Etapa ${ step }",
@@ -7130,6 +7142,11 @@
       ],
       "Primary": [
         "Primária"
+      ]
+    },
+    "Key transparency details button": {
+      "Click here for more details.": [
+        "Clique aqui para mais detalhes."
       ]
     },
     "Key type option": {
@@ -8083,6 +8100,9 @@
       "Show sender images": [
         "Mostrar imagens do remetente"
       ],
+      "Show unread count in Favicon": [
+        "Mostrar a contagem de não lidos no Favicon"
+      ],
       "Show week numbers": [
         "Exibir números das semanas"
       ],
@@ -9003,6 +9023,9 @@
       "Auto-reply": [
         "Resposta automática"
       ],
+      "Autofill credit cards (coming soon)": [
+        "Preenchimento automático de cartões de crédito (em breve)"
+      ],
       "Available on all platforms": [
         "Disponível em todas plataformas"
       ],
@@ -9247,6 +9270,26 @@
         "Gerenciamento de equipes"
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Torne a privacidade seu padrão para backup, armazenamento, compartilhamento e recuperação de arquivos."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Caso contrário, o acesso à sua conta será limitado e, futuramente, sua conta será desativada."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Para continuar usando o ${ MAIL_APP_NAME } com recursos premium, escolha sua assinatura e opções de pagamento."
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "Faça o upgrade para o pacote para empresas com acesso a todos os serviços premium da ${ BRAND_NAME }."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "Faça o upgrade para o pacote de privacidade completo e acesse todos os serviços premium da ${ BRAND_NAME }."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Sua avaliação termina em ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } com final ${ last4 }"
@@ -9325,26 +9368,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Seu plano atual está com um preço promocional. Se fizer o downgrade da sua conta, você perderá seu preço promocional, o qual não estará mais disponível se você tentar assinar novamente."
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Torne a privacidade seu padrão para backup, armazenamento, compartilhamento e recuperação de arquivos."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Caso contrário, o acesso à sua conta será limitado e, futuramente, sua conta será desativada."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Para continuar usando o ${ MAIL_APP_NAME } com recursos premium, escolha sua assinatura e opções de pagamento."
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "Faça o upgrade para o pacote para empresas com acesso a todos os serviços premium da ${ BRAND_NAME }."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "Faça o upgrade para o pacote de privacidade completo e acesse todos os serviços premium da ${ BRAND_NAME }."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Sua avaliação termina em ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -9427,6 +9450,18 @@
       ]
     },
     "new_plans: tooltip": {
+      "${ CALENDAR_APP_NAME }: end-to-end encrypted calendar": [
+        "${ CALENDAR_APP_NAME }: calendário criptografado de ponta a ponta"
+      ],
+      "${ DRIVE_APP_NAME }: end-to-end encrypted cloud storage": [
+        "${ DRIVE_APP_NAME }: armazenamento em nuvem criptografado de ponta a ponta"
+      ],
+      "${ MAIL_APP_NAME }: end-to-end encrypted email": [
+        "${ MAIL_APP_NAME }: e-mail criptografado de ponta a ponta"
+      ],
+      "${ VPN_APP_NAME }: unblock content, browse privately": [
+        "${ VPN_APP_NAME }: desbloqueie conteúdos e navegue em privado"
+      ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
         "Acesse conteúdo de serviços de streaming, incluindo Netflix, Disney+ e Prime Video, em qualquer lugar"
       ],
@@ -9453,7 +9488,7 @@
         "Crie até ${ n } calendários ou adicione calendários de amigos, familiares, colegas e organizações"
       ],
       "Create up to ${ n } email addresses/aliases for the whole family. Use them for your online identities, e.g., MyFamilySubs@${ domain } for online subscriptions.": [
-        "Crie até ${ n } endereços de email/alias para toda a família. Use-os para as suas identidades online, como por exemplo, MeuPlanoFamilia@${ domain } para planos online."
+        "Crie até ${ n } endereços de e-mail/alias para toda a família. Use-os para as suas identidades online, como por exemplo, MeuPlanoFamilia@${ domain } para planos online."
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Proteja-se de ameaças à privacidade da VPN ao transmitir seu tráfego de internet por meio de múltiplos servidores"
@@ -9492,7 +9527,7 @@
         "Gerencie sua assinatura, incluindo a personalização do seu plano. Os métodos de pagamento aceitos são cartão de crédito, PayPal, criptomoeda e transferência eletrônica."
       ],
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
-        "Em dias úteis, receba o suporte da equipe de Suporte ao Cliente da ${ BRAND_NAME } com respostas em até 24 horas"
+        "Em dias úteis, a equipe de suporte ao cliente da ${ BRAND_NAME } o ajudará em até 24 horas após a sua solicitação."
       ],
       "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME_TWO } VPN at the same time, you need two VPN connections.": [
         "Uma conexão VPN permite que um dispositivo se conecte ao ${ BRAND_NAME } de cada vez. Por exemplo, para conectar um telefone e um portátil a ${ BRAND_NAME_TWO } em simultâneo, você precisa de duas conexões VPN."
@@ -9591,7 +9626,7 @@
         "Quando você se conecta à nossa VPN, seu DNS faz consultas por meio do nosso túnel VPN criptografado, aumentando sua privacidade e segurança on-line"
       ],
       "When sending to other ${ MAIL_APP_NAME } users, encryption is automatic. Sending to non-${ MAIL_APP_NAME_TWO } users requires setting a password prior to sending.": [
-        "Ao enviar para outros usuários do ${ MAIL_APP_NAME }, a criptografia é automática. O envio para usuários que não são ${ MAIL_APP_NAME_TWO } requer a definição de uma senha antes do envio."
+        "Ao enviar para outros usuários do ${ MAIL_APP_NAME }, a criptografia é automática. O envio para usuários que não usam ${ MAIL_APP_NAME_TWO } requer a definição de uma senha antes do envio."
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "Você pode ter mais de um administrador. Todos os administradores podem adicionar e gerenciar usuários, mas apenas o administrador primário tem controle sobre o faturamento."
@@ -9639,6 +9674,9 @@
       ],
       "Priority support": [
         "Suporte prioritário"
+      ],
+      "Secure your passwords and identity with an open-source and encrypted password manager.": [
+        "Proteja a suas senhas e identidade com um gerenciador de senha criptografada de códio aberto."
       ],
       "Support for 1 custom email domain": [
         "Suporte para 1 domínio de e-mail personalizado"
@@ -11548,6 +11586,9 @@
       ]
     },
     "Title": {
+      "${ appName } Free": [
+        "${ appName } Free"
+      ],
       "${ MAIL_APP_NAME } Keyboard Shortcuts": [
         "Atalhos do teclado do ${ MAIL_APP_NAME }"
       ],
@@ -12600,6 +12641,9 @@
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "As mensagens da pasta Enviados ou Rascunhos continuarão a aparecer naquela pasta, mesmo se você movê-las para outra pasta."
       ],
+      "See number of unread messages in the tab icon": [
+        "Ver o número de mensagens não lidas no ícone da guia"
+      ],
       "Set how your list of messages looks like by default.": [
         "Defina a aparência da sua lista de mensagens por padrão."
       ],
@@ -12610,7 +12654,7 @@
         "Defina o layout padrão da sua caixa de entrada."
       ],
       "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalise your signature anytime in the settings.": [
-        "Define o seguinte rodapé nos emails que você envia: ${ signature } O link aponta para o seu link de referência. O rodapé aparecerá abaixo de sua assinatura. Você pode personalizar sua assinatura a qualquer momento nas configurações."
+        "Define o seguinte rodapé nos e-mails que você envia: ${ signature } O link aponta para o seu link de referência. O rodapé aparecerá abaixo de sua assinatura. Você pode personalizar sua assinatura a qualquer momento nas configurações."
       ],
       "Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.": [
         "Mostrar a imagem de cada remetente na lista de mensagens. Em seguida, as iniciais do remetente será mostrada se uma foto não estiver disponível."
@@ -12686,6 +12730,11 @@
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
         "Sua conta externa pode ter atingido o seu limite de largura de banda de 24 horas. O ${ BRAND_NAME } tentará retomar a importação o mais rápido possível."
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: end-to-end encrypted password manager": [
+        "${ PASS_APP_NAME }: gerenciador de senhas criptografadas de ponta a ponta"
       ]
     },
     "Tooltip automatically attach public key": {
