@@ -46,10 +46,21 @@ type InputInitialStyles = {
 const getOverlayedElement = (options: { x: number; y: number; parent: HTMLElement }): MaybeNull<HTMLElement> => {
     try {
         const { x, y, parent } = options;
+        const maxWidth = parent.offsetWidth;
+
         if (Number.isNaN(x) || Number.isNaN(y)) return null;
         const overlays = Array.from(document.elementsFromPoint(x, y) as HTMLElement[]);
-        const candidates = overlays.filter((el) => !el.matches(`.${ICON_CLASSNAME}`) && parent.contains(el));
 
+        const candidates = overlays.filter((el) => {
+            /* exclude our own injected elements */
+            if (el.matches(`.${ICON_CLASSNAME}`)) return false;
+            /* exclude elements not in the current stack */
+            if (!parent.contains(el)) return false;
+            /* exclude "placeholder" overlays */
+            if (el.innerText.length > 0 && el.offsetWidth >= maxWidth * 0.9) return false;
+
+            return true;
+        });
         return candidates?.[0] ?? null;
     } catch (_) {
         return null;
