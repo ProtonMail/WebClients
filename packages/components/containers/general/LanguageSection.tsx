@@ -1,6 +1,8 @@
 import { c } from 'ttag';
 
+import { Href } from '@proton/atoms/Href';
 import { updateLocale } from '@proton/shared/lib/api/settings';
+import { getBlogURL } from '@proton/shared/lib/helpers/url';
 import { getBrowserLocale, getClosestLocaleCode } from '@proton/shared/lib/i18n/helper';
 import { loadDateLocale, loadLocale } from '@proton/shared/lib/i18n/loadLocale';
 import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
@@ -32,10 +34,9 @@ const LanguageSection = ({ locales = {} }: Props) => {
     const [loading, withLoading] = useLoading();
     const forceRefresh = useForceRefresh();
 
-    const options = Object.keys(LOCALES).map((value) => ({
-        title: LOCALES[value],
-        value,
-    }));
+    const languageOptions = Object.entries(LOCALES).map(([key, value]) => (
+        <Option key={key} title={value} value={key} />
+    ));
 
     const handleChange = async (locale: string) => {
         await api(updateLocale(locale));
@@ -64,14 +65,15 @@ const LanguageSection = ({ locales = {} }: Props) => {
                     value={displayedValue}
                     disabled={loading}
                     onChange={({ value }) => {
-                        withLoading(handleChange(value));
+                        void withLoading(handleChange(value));
                     }}
                     aria-describedby="label-languageSelect"
                 >
-                    {options.map((option) => (
-                        <Option key={option.value} {...option} />
-                    ))}
+                    {languageOptions}
                 </SelectTwo>
+                <div className="mt-1 text-sm">
+                    <Href href={getBlogURL('/translation-community')}>{c('Link').t`Help translate`}</Href>
+                </div>
             </SettingsLayoutRight>
         </SettingsLayout>
     );
