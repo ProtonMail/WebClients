@@ -29,10 +29,12 @@ import {
 import ContactEmailsProvider from '@proton/components/containers/contacts/ContactEmailsProvider';
 import { getIsSectionAvailable, getSectionPath } from '@proton/components/containers/layout/helper';
 import useTelemetryScreenSize from '@proton/components/hooks/useTelemetryScreenSize';
-import { DEFAULT_APP, getAppFromPathnameSafe, getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
+import { getAppFromPathnameSafe, getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
+import { getToApp } from '@proton/shared/lib/authentication/apps';
 import { stripLocalBasenameFromPathname } from '@proton/shared/lib/authentication/pathnameHelper';
 import { APPS, SETUP_ADDRESS_PATH } from '@proton/shared/lib/constants';
 import { stripLeadingAndTrailingSlash } from '@proton/shared/lib/helpers/string';
+import { getPathFromLocation } from '@proton/shared/lib/helpers/url';
 import { UserModel } from '@proton/shared/lib/interfaces';
 import { SETTINGS_PROTON_SENTINEL_STATE } from '@proton/shared/lib/interfaces';
 import { getRequiresAddressSetup } from '@proton/shared/lib/keys';
@@ -130,7 +132,8 @@ const MainContainer = () => {
     const loadingFeatures = featuresFlags.some(({ loading }) => loading) || loadingDataRecovery;
     const recoveryNotification = useRecoveryNotification(false);
 
-    const app = getAppFromPathnameSafe(location.pathname) || DEFAULT_APP;
+    const appFromPathname = getAppFromPathnameSafe(location.pathname);
+    const app = appFromPathname || getToApp(undefined, user);
     const appSlug = getSlugFromApp(app);
 
     const routes = getRoutes({
@@ -223,6 +226,10 @@ const MainContainer = () => {
     const redirect = (() => {
         if (loadingOrganization || loadingFeatures || loadingSubscription) {
             return <PrivateMainAreaLoading />;
+        }
+
+        if (!appFromPathname) {
+            return <Redirect to={`/${appSlug}${getPathFromLocation(location)}`} />;
         }
 
         const path = (() => {

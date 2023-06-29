@@ -1,3 +1,5 @@
+import { stripLeadingSlash, stripTrailingSlash } from '@proton/shared/lib/helpers/string';
+
 import { APPS, APPS_CONFIGURATION, APP_NAMES, DOH_DOMAINS, LINK_TYPES } from '../constants';
 import window from '../window';
 
@@ -328,4 +330,14 @@ export const formatURLForAjaxRequest = () => {
     url.hash = '';
 
     return url;
+};
+
+export const getPathFromLocation = (location: { pathname: string; hash: string; search: string }) => {
+    return [location.pathname, location.search, location.hash].join('');
+};
+
+export const joinPaths = (...paths: string[]) => {
+    return paths.reduce((acc, path) => {
+        return `${stripTrailingSlash(acc)}/${stripLeadingSlash(path)}`;
+    }, '');
 };
