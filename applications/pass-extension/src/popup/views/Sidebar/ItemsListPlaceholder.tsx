@@ -13,7 +13,7 @@ import clsx from '@proton/utils/clsx';
 
 import { UpgradeButton } from '../../../shared/components/upgrade/UpgradeButton';
 import { itemTypeToIconName } from '../../../shared/items/icons';
-import { itemTypeToSubThemeClassName } from '../../../shared/theme/sub-theme';
+import { SubTheme } from '../../../shared/theme/sub-theme';
 import { ItemCard } from '../../components/Item/ItemCard';
 import { useItems } from '../../hooks/useItems';
 import { useNavigationContext } from '../../hooks/useNavigationContext';
@@ -33,7 +33,13 @@ export const ItemsListPlaceholder: VFC = () => {
     const { didDowngrade } = useSelector(selectVaultLimits);
 
     const getQuickActions = useMemo<
-        { type: ItemType | 'import'; icon: IconName; label: string; onClick: (e: MouseEvent<HTMLElement>) => void }[]
+        {
+            type: ItemType | 'import';
+            icon: IconName;
+            label: string;
+            onClick: (e: MouseEvent<HTMLElement>) => void;
+            subTheme?: SubTheme;
+        }[]
     >(
         () => [
             {
@@ -41,24 +47,28 @@ export const ItemsListPlaceholder: VFC = () => {
                 icon: itemTypeToIconName.login,
                 label: c('Label').t`Create a login`,
                 onClick: () => history.push(`/item/new/login`),
+                subTheme: SubTheme.VIOLET,
             },
             {
                 type: 'alias',
                 icon: itemTypeToIconName.alias,
                 label: c('Label').t`Create a hide-my-email alias`,
                 onClick: () => history.push(`/item/new/alias`),
+                subTheme: SubTheme.TEAL,
             },
             {
                 type: 'creditCard',
                 icon: itemTypeToIconName.creditCard,
                 label: c('Label').t`Create a credit card`,
                 onClick: () => history.push(`/item/new/creditCard`),
+                subTheme: SubTheme.LIME,
             },
             {
                 type: 'note',
                 icon: itemTypeToIconName.note,
                 label: c('Label').t`Create an encrypted note`,
                 onClick: () => history.push(`/item/new/note`),
+                subTheme: SubTheme.ORANGE,
             },
             {
                 type: 'import',
@@ -91,13 +101,13 @@ export const ItemsListPlaceholder: VFC = () => {
                     .t`Let's get you started by creating your first item`}</span>
 
                 {!isCreating &&
-                    getQuickActions.map(({ type, icon, label, onClick }) => (
+                    getQuickActions.map(({ type, icon, label, onClick, subTheme }) => (
                         <Button
                             pill
                             shape="solid"
                             color="weak"
                             key={`quick-action-${type}`}
-                            className={clsx('w100 relative', type !== 'import' && itemTypeToSubThemeClassName[type])}
+                            className={clsx('w100 relative', subTheme)}
                             onClick={onClick}
                         >
                             <Icon

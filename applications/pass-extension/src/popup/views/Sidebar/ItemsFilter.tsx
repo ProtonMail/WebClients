@@ -17,7 +17,7 @@ interface ItemsFilterProps {
 
 const DROPDOWN_SIZE: DropdownProps['size'] = { width: '11rem' };
 
-const optionsWithoutCount: { [key in ItemTypeFilter]: { label: string; icon: IconName } } = {
+const getOptionsWithoutCount = (): { [key in ItemTypeFilter]: { label: string; icon: IconName } } => ({
     '*': {
         label: c('Label').t`All`,
         icon: 'grid-2',
@@ -38,7 +38,7 @@ const optionsWithoutCount: { [key in ItemTypeFilter]: { label: string; icon: Ico
         label: c('Label').t`Notes`,
         icon: itemTypeToIconName.note,
     },
-};
+});
 
 export const ItemsFilter: VFC<ItemsFilterProps> = ({ value, onChange }) => {
     const { anchorRef, isOpen, close, toggle } = usePopperAnchor<HTMLButtonElement>();
@@ -46,7 +46,7 @@ export const ItemsFilter: VFC<ItemsFilterProps> = ({ value, onChange }) => {
 
     const options = useMemo(
         () =>
-            Object.entries(optionsWithoutCount).map(([type, { label, icon }]) => ({
+            Object.entries(getOptionsWithoutCount()).map(([type, { label, icon }]) => ({
                 type: type as ItemTypeFilter,
                 label,
                 icon,
