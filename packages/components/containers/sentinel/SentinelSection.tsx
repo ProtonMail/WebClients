@@ -20,7 +20,8 @@ const SentinelSection = () => {
     const api = useApi();
     const [loadingSentinel, withLoadingSentinel] = useLoading();
     const protonSentinel = settings.HighSecurity.Value;
-    const sentinelEligible = !!settings.HighSecurity.Eligible;
+    const sentinelEligible =
+        !!settings.HighSecurity.Eligible || settings.HighSecurity.Value === SETTINGS_PROTON_SENTINEL_STATE.ENABLED;
     const { call } = useEventManager();
 
     const handleHighSecurity = async (newHighSecurityState: Boolean) => {
@@ -34,7 +35,7 @@ const SentinelSection = () => {
 
     // translator: full sentence is: You will receive priority support from specialists trained in account protection. For any account security concerns, please <contact us>.
     const hereLink = (
-        <Href href={getSupportContactURL(`topic=account_security&username=${user.Name}`)}>{c('Link')
+        <Href href={getSupportContactURL(`topic=account+security&username=${user.Email}`)}>{c('Link')
             .t`contact us`}</Href>
     );
 
