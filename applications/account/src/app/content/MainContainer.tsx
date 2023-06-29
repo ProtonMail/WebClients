@@ -34,6 +34,7 @@ import { stripLocalBasenameFromPathname } from '@proton/shared/lib/authenticatio
 import { APPS, SETUP_ADDRESS_PATH } from '@proton/shared/lib/constants';
 import { stripLeadingAndTrailingSlash } from '@proton/shared/lib/helpers/string';
 import { UserModel } from '@proton/shared/lib/interfaces';
+import { SETTINGS_PROTON_SENTINEL_STATE } from '@proton/shared/lib/interfaces';
 import { getRequiresAddressSetup } from '@proton/shared/lib/keys';
 import { hasPaidPass } from '@proton/shared/lib/user/helpers';
 
@@ -144,7 +145,9 @@ const MainContainer = () => {
         isGmailSyncEnabled,
         recoveryNotification: recoveryNotification?.color,
         isOrgSpamBlockListEnabled,
-        isProtonSentinelEligible: !!userSettings.HighSecurity.Eligible,
+        isProtonSentinelEligible:
+            !!userSettings.HighSecurity.Eligible ||
+            userSettings.HighSecurity.Value === SETTINGS_PROTON_SENTINEL_STATE.ENABLED,
         isProtonSentinelFeatureEnabled,
         isAccessibilitySettingsEnabled,
         isOrgTwoFactorEnabled,
