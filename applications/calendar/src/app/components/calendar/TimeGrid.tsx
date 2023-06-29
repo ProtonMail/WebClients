@@ -359,7 +359,7 @@ const TimeGrid = ({
                                         </Button>
                                     </Tooltip>
                                 </ButtonGroup>
-                                <Tooltip title={format(date, 'PP', { locale: dateLocale })}>
+                                <Tooltip title={format(now, 'PP', { locale: dateLocale })}>
                                     <Button onClick={onClickToday} size="small">{c('Action').t`Today`}</Button>
                                 </Tooltip>
                             </div>
