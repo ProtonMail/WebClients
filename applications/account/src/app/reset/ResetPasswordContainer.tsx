@@ -288,7 +288,6 @@ const ResetPasswordContainer = ({ onLogin, setupVPN }: Props) => {
         return handleCancel;
     })();
 
-    console.log(cache);
     const children = (
         <Main>
             {step === STEPS.LOADING && (
