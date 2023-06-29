@@ -20,6 +20,7 @@ import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { Api } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
+import noop from '@proton/utils/noop';
 
 import { AccountData, SignupType } from '../signup/interfaces';
 import { runAfterScroll } from './helper';
@@ -314,7 +315,7 @@ const AccountStepDetails = ({
                 email: trimmedEmail,
                 password: details.password,
                 signupType: SignupType.Email,
-                payload: await challengeRefEmail.current?.getChallenge(),
+                payload: await challengeRefEmail.current?.getChallenge().catch(noop),
                 username: '',
                 domain: '',
             };
