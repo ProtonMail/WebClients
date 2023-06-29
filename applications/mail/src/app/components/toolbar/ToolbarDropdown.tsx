@@ -114,6 +114,7 @@ const ToolbarDropdown = ({
                         className={dropDownClassName}
                         originalPlacement="bottom"
                         autoClose={false}
+                        autoCloseOutside={!lock}
                         isOpen={additionalOpen === index}
                         size={{ maxWidth: DropdownSizeUnit.Viewport, maxHeight: DropdownSizeUnit.Viewport }}
                         anchorRef={anchorRef}
