@@ -18,6 +18,8 @@ import {
 } from '../../../utils/transfer';
 import { MAX_UPLOAD_BLOCKS_LOAD, MAX_UPLOAD_FOLDER_LOAD } from '../constants';
 import { UploadFileItem, UploadFileList } from '../interface';
+import { UploadModalContainer } from './UploadModalContainer';
+import { UploadProviderState } from './UploadProviderState';
 import { UpdateFilter } from './interface';
 import useUploadConflict from './useUploadConflict';
 import useUploadControl from './useUploadControl';
@@ -25,7 +27,7 @@ import useUploadFile from './useUploadFile';
 import useUploadFolder from './useUploadFolder';
 import useUploadQueue, { convertFilterToFunction } from './useUploadQueue';
 
-export default function useUpload() {
+export default function useUpload(): [UploadProviderState, UploadModalContainer] {
     const onlineStatus = useOnline();
     const getUser = useGetUser();
     const { call } = useEventManager();
@@ -253,18 +255,22 @@ export default function useUpload() {
         }
     }, [onlineStatus]);
 
-    return {
-        uploads: queue.allUploads,
-        hasUploads: queue.hasUploads,
-        uploadFiles,
-        getProgresses: control.getProgresses,
-        pauseUploads: control.pauseUploads,
-        resumeUploads: control.resumeUploads,
-        cancelUploads: control.cancelUploads,
-        restartUploads,
-        removeUploads: control.removeUploads,
-        clearUploads: control.clearUploads,
-        fileThresholdModal,
-        conflictModal,
-    };
+    return [
+        {
+            uploads: queue.allUploads,
+            hasUploads: queue.hasUploads,
+            uploadFiles,
+            getUploadsProgresses: control.getProgresses,
+            pauseUploads: control.pauseUploads,
+            resumeUploads: control.resumeUploads,
+            cancelUploads: control.cancelUploads,
+            restartUploads,
+            removeUploads: control.removeUploads,
+            clearUploads: control.clearUploads,
+        },
+        {
+            fileThresholdModal,
+            conflictModal,
+        },
+    ];
 }
