@@ -1,5 +1,8 @@
 import LinkifyIt from 'linkify-it';
 
+import { getUTMTrackersFromURL } from '@proton/shared/lib/mail/trackers';
+import { MessageUTMTracker } from '@proton/shared/lib/models/mailUtmTrackers';
+
 const linkifyInstance = new LinkifyIt();
 
 const htmlEntities = (str = '') => {
@@ -11,20 +14,46 @@ const htmlEntities = (str = '') => {
  * Input : `hello http://www.protonmail.com`
  * Output : `hello <a target="_blank" rel="noreferrer nofollow noopener" href="http://protonmail.com">http://protonmail.com</a>`
  */
-export const transformLinkify = (content = '', target = '_blank', rel = 'noreferrer nofollow noopener') => {
+export const transformLinkify = ({
+    content = '',
+    target = '_blank',
+    rel = 'noreferrer nofollow noopener',
+    canCleanUTMTrackers = false,
+    onCleanUTMTrackers,
+}: {
+    content?: string;
+    target?: string;
+    rel?: string;
+    canCleanUTMTrackers?: boolean;
+    onCleanUTMTrackers?: (utmTrackers: MessageUTMTracker[]) => void;
+}) => {
     const matches = linkifyInstance.match(content);
 
     if (!matches) {
         return htmlEntities(content);
     }
 
+    const utmTrackers: MessageUTMTracker[] = [];
     let last = 0;
     const result = matches.reduce<string[]>((result, match) => {
         if (last < match.index) {
             result.push(htmlEntities(content.slice(last, match.index)));
         }
         result.push(`<a target="${target}" rel="${rel}" href="`);
-        result.push(match.url);
+
+        // Clean trackers in plaintext messages
+        if (canCleanUTMTrackers) {
+            const { url, utmTracker } = getUTMTrackersFromURL(match.url);
+
+            result.push(url);
+
+            if (utmTracker) {
+                utmTrackers.push(utmTracker);
+            }
+        } else {
+            result.push(match.url);
+        }
+
         result.push('">');
         result.push(match.text);
         result.push('</a>');
@@ -33,6 +62,11 @@ export const transformLinkify = (content = '', target = '_blank', rel = 'norefer
 
         return result;
     }, []);
+
+    // Push all trackers found to mail redux store
+    if (utmTrackers.length > 0) {
+        onCleanUTMTrackers?.(utmTrackers);
+    }
 
     if (last < content.length) {
         result.push(htmlEntities(content.slice(last)));

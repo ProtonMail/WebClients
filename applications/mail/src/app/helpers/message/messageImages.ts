@@ -64,6 +64,7 @@ export const updateImages = (
             hasEmbeddedImages: false,
             showRemoteImages: false,
             showEmbeddedImages: false,
+            trackersStatus: 'not-loaded',
             images: [],
         },
         ...(original || {}),
@@ -212,9 +213,7 @@ export const handleDispatchLoadFakeImagesProxy = (
 ) => {
     // Make one call per image, it's possible that several images in the message have the same URL.
     const uniqueImages = uniqueBy(imagesToLoad, (image) => image.url);
-    const dispatchResult = uniqueImages.map((image) => {
-        return dispatch(loadFakeProxy({ ID, imageToLoad: image, api, firstLoad }));
-    });
+    const dispatchResult = dispatch(loadFakeProxy({ ID, imagesToLoad: uniqueImages, api, firstLoad }));
     return dispatchResult as any as Promise<LoadRemoteResults[]>;
 };
 

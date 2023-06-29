@@ -52,8 +52,7 @@ const MessageDetailsModal = ({
     onContactEdit,
     ...rest
 }: Props) => {
-    const { getFeature } = useFeatures([FeatureCode.SpyTrackerProtection, FeatureCode.NumAttachmentsWithoutEmbedded]);
-    const { feature: spyTrackerFeature } = getFeature(FeatureCode.SpyTrackerProtection);
+    const { getFeature } = useFeatures([FeatureCode.NumAttachmentsWithoutEmbedded]);
     const { feature: numAttachmentsWithoutEmbeddedFeature } = getFeature(FeatureCode.NumAttachmentsWithoutEmbedded);
 
     const { onClose } = rest;
@@ -66,11 +65,15 @@ const MessageDetailsModal = ({
 
     const sizeText = humanSize(getSize(message.data || ({} as Element)));
 
-    const { hasProtection, hasShowRemoteImage, numberOfTrackers, needsMoreProtection, title } = useMessageTrackers({
-        message,
-    });
-    const displayTrackerIcon =
-        !(!hasProtection && hasShowRemoteImage && numberOfTrackers === 0) && spyTrackerFeature?.Value;
+    const {
+        numberOfImageTrackers,
+        numberOfUTMTrackers,
+        needsMoreProtection,
+        imageTrackerText,
+        utmTrackerText,
+        hasTrackers,
+    } = useMessageTrackers(message);
+    const displayTrackerIcon = hasTrackers && !needsMoreProtection;
 
     const { pureAttachmentsCount, embeddedAttachmentsCount } = getAttachmentCounts(
         getAttachments(message.data),
@@ -148,15 +151,15 @@ const MessageDetailsModal = ({
                         <div className="mb-2 flex flex-nowrap flex-align-items-center">
                             <span className="mr-2 relative inline-flex item-spy-tracker-link flex-align-items-center">
                                 <SpyTrackerIcon
-                                    numberOfTrackers={numberOfTrackers}
+                                    numberOfTrackers={numberOfImageTrackers + numberOfUTMTrackers}
                                     needsMoreProtection={needsMoreProtection}
-                                    title={title}
+                                    title={imageTrackerText}
                                     isStandaloneIcon
                                     className="m-auto"
                                 />
                             </span>
-                            <span className="pl-1 flex-item-fluid text-ellipsis" title={title}>
-                                {title}
+                            <span className="pl-0.5 flex-item-fluid text-ellipsis" title={imageTrackerText}>
+                                {imageTrackerText}, {utmTrackerText}
                             </span>
                         </div>
                     )}
