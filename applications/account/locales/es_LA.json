@@ -4959,7 +4959,7 @@
         "${ boldWarning } Perderá el acceso a todos los datos cifrados actuales en su cuenta si continúa."
       ],
       "${ BRAND_NAME } is privacy you can trust, ensured by strong encryption, open-source code, and Swiss privacy laws. We believe nobody should be able to exploit your data, period. Our technology and business are based upon this fundamentally stronger definition of privacy.": [
-        "${ BRAND_NAME } es la privacidad en la que puede confiar, garantizada por un cifrado sólido, código fuente abierto y leyes de privacidad suizas. Creemos que nadie debería de poder explotar sus datos. Nuestra tecnología y negocio se basan en esta definición de privacidad fundamentalmente más fuerte."
+        "${ BRAND_NAME } es la privacidad en la que puede confiar, garantizada por un cifrado sólido, código abierto y leyes de privacidad suizas. Creemos que nadie debería de poder explotar sus datos. Nuestra tecnología y negocio se basan en esta definición de privacidad fundamentalmente más fuerte."
       ],
       "${ BRAND_NAME } paused an import because it lost the connection with your other email provider. Please reconnect.": [
         "${ BRAND_NAME } pausó una importación porque perdió conexión con su otro proveedor de correo electrónico. Vuelva a conectar."
@@ -5640,6 +5640,9 @@
       ],
       "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
         "Redirija correos entrantes desde otra cuenta a su buzón seguro de ${ MAIL_APP_NAME }."
+      ],
+      "Free forever": [
+        "Gratis para siempre"
       ],
       "Free up some space or add more storage space.": [
         "Libere algo de espacio o añada más espacio de almacenamiento."
@@ -7130,6 +7133,11 @@
       ],
       "Primary": [
         "Principal"
+      ]
+    },
+    "Key transparency details button": {
+      "Click here for more details.": [
+        "Haga clic aquí para obtener más información."
       ]
     },
     "Key type option": {
@@ -9007,7 +9015,7 @@
         "Respuesta automática"
       ],
       "Autofill credit cards (coming soon)": [
-        "Autocompletar tarjetas de crédito (próximamente)"
+        "Completado automático de tarjetas de crédito (próximamente)"
       ],
       "Available on all platforms": [
         "Disponible en todas las plataformas"
@@ -9253,6 +9261,26 @@
         "Gestión de equipos"
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Haga que la privacidad sea su opción predeterminada para la copia de seguridad, el almacenamiento, el uso compartido y la recuperación de archivos."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "De lo contrario, el acceso a su cuenta será limitado y la cuenta eventualmente deshabilitada."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Para continuar usando ${ MAIL_APP_NAME } con funciones premium, elija su suscripción y opciones de pago."
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "Actualice al paquete de negocios con acceso a todos los servicios premium de ${ BRAND_NAME }."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "Actualice al paquete de privaciad definitivo y acceda a todos los servicios premium de ${ BRAND_NAME }."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Su prueba termina el ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } que termina en ${ last4 }"
@@ -9331,26 +9359,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Está disfrutando de un precio promocional en su plan actual. Si pasa a un plan inferior, perderá el precio promocional y no estará disponible si crea una cuenta nueva."
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Haga que la privacidad sea su opción predeterminada para la copia de seguridad, el almacenamiento, el uso compartido y la recuperación de archivos."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "De lo contrario, el acceso a su cuenta será limitado y la cuenta eventualmente deshabilitada."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Para continuar usando ${ MAIL_APP_NAME } con funciones premium, elija su suscripción y opciones de pago."
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "Actualice al paquete de negocios con acceso a todos los servicios premium de ${ BRAND_NAME }."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "Actualice al paquete de privaciad definitivo y acceda a todos los servicios premium de ${ BRAND_NAME }."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Su prueba termina el ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -9534,7 +9542,7 @@
         "Personalice su firma de correo electrónico con logotipos, imágenes, íconos de redes sociales, enlaces a sus datos de contacto y más"
       ],
       "Phone support is available from the ${ BRAND_NAME } Customer Success team during European business hours, for customers with 6 or more users": [
-        "El soporte telefónico está disponible del equipo de servicio al cliente de ${ BRAND_NAME } durante el horario laboral europeo para clientes con 6 o más usuarios."
+        "El equipo de atención al cliente de ${ BRAND_NAME } ofrece asistencia telefónica en horario laboral europeo a los clientes que tienen, como mínimo, 6 usuarios."
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Evita que ${ BRAND_NAME } o terceros puedan acceder a los mensajes. Los únicos que pueden leerlos son el remitente y el destinatario."
@@ -11576,7 +11584,7 @@
     },
     "Title": {
       "${ appName } Free": [
-        "${ appName } Gratuito"
+        "${ appName } Free"
       ],
       "${ MAIL_APP_NAME } Keyboard Shortcuts": [
         "Atajos de teclado de ${ MAIL_APP_NAME }"
