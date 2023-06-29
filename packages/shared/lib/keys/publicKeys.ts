@@ -250,6 +250,6 @@ export const getContactPublicKeyModel = async ({
         contactSignatureTimestamp,
         emailAddressWarnings: apiKeysConfig.Warnings,
         emailAddressErrors: apiKeysConfig.Errors,
-        ktVerificationStatus: apiKeysConfig.ktVerificationStatus,
+        ktVerificationResult: apiKeysConfig.ktVerificationResult,
     };
 };

@@ -1,6 +1,6 @@
 import { PublicKeyReference } from '@proton/crypto';
 
-import { KT_VERIFICATION_STATUS } from './EncryptionPreferences';
+import { KeyTransparencyVerificationResult } from './KeyTransparency';
 
 export interface VerificationPreferences {
     isOwnAddress: boolean;
@@ -9,6 +9,6 @@ export interface VerificationPreferences {
     pinnedKeys: PublicKeyReference[];
     compromisedKeysFingerprints?: Set<string>;
     pinnedKeysFingerprints?: Set<string>;
-    ktVerificationStatus?: KT_VERIFICATION_STATUS;
+    ktVerificationResult?: KeyTransparencyVerificationResult;
     pinnedKeysVerified?: boolean;
 }

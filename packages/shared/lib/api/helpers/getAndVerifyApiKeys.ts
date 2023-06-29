@@ -1,6 +1,9 @@
-import { KTPublicKeyStatus } from '@proton/key-transparency/lib';
-
-import { Api, FetchedSignedKeyList, VerifyOutboundPublicKeys } from '../../interfaces';
+import {
+    Api,
+    FetchedSignedKeyList,
+    KeyTransparencyVerificationResult,
+    VerifyOutboundPublicKeys,
+} from '../../interfaces';
 import { getAllPublicKeys } from '../keys';
 
 export enum ApiKeySource {
@@ -20,9 +23,9 @@ export interface KeyWithFlagsAndSource extends KeyWithFlags {
 
 export interface ApiKeysWithKTStatus {
     addressKeys: KeyWithFlags[];
-    addressKTStatus?: KTPublicKeyStatus;
+    addressKTResult?: KeyTransparencyVerificationResult;
     catchAllKeys?: KeyWithFlags[];
-    catchAllKTStatus?: KTPublicKeyStatus;
+    catchAllKTResult?: KeyTransparencyVerificationResult;
     unverifiedKeys?: KeyWithFlagsAndSource[];
     Code?: number;
     Warnings?: string[];
@@ -76,21 +79,19 @@ export const getAndVerifyApiKeys = async (
     const catchAllKeys = CatchAll?.Keys.map(({ PublicKey, Flags }) => {
         return { armoredKey: PublicKey, flags: Flags };
     });
-    let ktStatus;
-    if (verifyOutboundPublicKeys) {
-        ktStatus = await verifyOutboundPublicKeys(
-            Email,
-            keysIntendedForEmail,
-            { keyList: Address.Keys, signedKeyList: Address.SignedKeyList },
-            CatchAll ? { keyList: CatchAll.Keys, signedKeyList: CatchAll.SignedKeyList } : undefined
-        );
-    }
+    const ktResult = verifyOutboundPublicKeys
+        ? await verifyOutboundPublicKeys(
+              Email,
+              keysIntendedForEmail,
+              { keyList: Address.Keys, signedKeyList: Address.SignedKeyList },
+              CatchAll ? { keyList: CatchAll.Keys, signedKeyList: CatchAll.SignedKeyList } : undefined
+          )
+        : {};
     return {
         addressKeys,
-        addressKTStatus: ktStatus?.addressKTStatus,
         catchAllKeys,
-        catchAllKTStatus: ktStatus?.catchAllKTStatus,
         unverifiedKeys,
         ...rest,
+        ...ktResult,
     };
 };
