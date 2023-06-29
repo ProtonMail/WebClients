@@ -12,10 +12,11 @@ interface Props {
     showSearchIcon?: boolean;
     suffix?: ReactNode;
     unstyled?: boolean;
+    esEnabled: boolean;
 }
 
 const SearchField = (
-    { onSubmit, onChange, value, showSearchIcon = true, suffix, unstyled }: Props,
+    { onSubmit, onChange, value, showSearchIcon = true, suffix, unstyled, esEnabled }: Props,
     ref: React.Ref<HTMLInputElement>
 ) => (
     <div className="relative flex-item-fluid">
@@ -31,7 +32,11 @@ const SearchField = (
                 )
             }
             dense
-            placeholder={c('Placeholder').t`Search date, name, email address, or subject line`}
+            placeholder={
+                esEnabled
+                    ? c('Placeholder').t`Search messages`
+                    : c('Placeholder').t`Search date, name, email address, or subject line`
+            }
             value={value}
             autoFocus
             onChange={onChange}
