@@ -449,7 +449,7 @@ const SingleSignupContainerV2 = ({ fork, activeSessions, loader, onLogin, produc
 
     const signingOutRef = useRef(false);
 
-    const handleSignOut = async () => {
+    const handleSignOut = async (reset = false) => {
         if (!model.plans.length) {
             return;
         }
@@ -466,6 +466,7 @@ const SingleSignupContainerV2 = ({ fork, activeSessions, loader, onLogin, produc
                 const previousPlanIDs = model.subscriptionData.planIDs;
                 // We keep the previous plan IDs if no addon was added and if the selected plan is included in any of the offered plans.
                 if (
+                    !reset &&
                     Object.keys(previousPlanIDs).length <= 1 &&
                     planCards.some((planCard) => previousPlanIDs[planCard.plan] > 0)
                 ) {
@@ -708,31 +709,30 @@ const SingleSignupContainerV2 = ({ fork, activeSessions, loader, onLogin, produc
                     {...accessModalProps}
                     plan={model.upsell.plan?.Title || ''}
                     appName={PASS_APP_NAME}
-                    onClose={async () => {
-                        accessModalProps.onClose();
+                    onSignOut={() => {
+                        return handleSignOut(true);
+                    }}
+                    onContinue={async () => {
                         await handleStartUserOnboarding(getFreeSubscriptionData(model.subscriptionData));
                     }}
                 />
             )}
-            {(() => {
-                if (!renderSubUserModal) {
-                    return null;
-                }
-                return (
-                    <SubUserModal
-                        {...subUserModalProps}
-                        currentPlan={model.upsell.currentPlan}
-                        appName={PASS_SHORT_APP_NAME}
-                        plansMap={model.plansMap}
-                        upsellPlan={model.upsell.plan}
-                        unlockPlan={model.upsell.unlockPlan}
-                        onClose={async () => {
-                            subUserModalProps.onClose();
-                            await handleStartUserOnboarding(getFreeSubscriptionData(model.subscriptionData));
-                        }}
-                    />
-                );
-            })()}
+            {renderSubUserModal && (
+                <SubUserModal
+                    {...subUserModalProps}
+                    currentPlan={model.upsell.currentPlan}
+                    appName={PASS_SHORT_APP_NAME}
+                    plansMap={model.plansMap}
+                    upsellPlan={model.upsell.plan}
+                    unlockPlan={model.upsell.unlockPlan}
+                    onSignOut={() => {
+                        return handleSignOut(true);
+                    }}
+                    onContinue={async () => {
+                        await handleStartUserOnboarding(getFreeSubscriptionData(model.subscriptionData));
+                    }}
+                />
+            )}
             <UnAuthenticated>
                 {model.step === Steps.Account && (
                     <Step1
