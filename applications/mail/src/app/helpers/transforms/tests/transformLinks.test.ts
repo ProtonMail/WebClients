@@ -12,6 +12,7 @@ describe('transformLinks service', () => {
         <a href="tel://lol.jpg">tel</a>
         <a href="callto://lol.jpg">callto</a>
         <a href="mailto://lol.jpg">mailto</a>
+        <a href="https://ads.com?utm_content=toto">utm</a>
         <div href id="hrefLink">xxxx</div>
     `;
 
@@ -21,7 +22,7 @@ describe('transformLinks service', () => {
         const doc = document.createElement('DIV');
         doc.innerHTML = content;
 
-        transformLinks(doc);
+        transformLinks(doc, jest.fn(), true);
 
         const querySelector = (selectors: string) => doc.querySelector(selectors);
         const querySelectorAll = (selectors: string) => [...doc.querySelectorAll(selectors)];
@@ -41,8 +42,14 @@ describe('transformLinks service', () => {
 
         it('should add target for real link', () => {
             const { querySelectorAll } = setup();
-            expect(querySelectorAll('[target="_blank"]').length).toEqual(3);
-            expect(querySelectorAll('[href^="http"][target="_blank"]').length).toEqual(3);
+            expect(querySelectorAll('[target="_blank"]').length).toEqual(4);
+            expect(querySelectorAll('[href^="http"][target="_blank"]').length).toEqual(4);
+        });
+
+        it('should strip tracking parameters (utm)', () => {
+            const { querySelector } = setup(ADD_REF);
+            expect(querySelector('[href="https://ads.com/"]')).toBeTruthy();
+            expect(querySelector('[href*="utm_content=toto"]')).toBeFalsy();
         });
     });
 
