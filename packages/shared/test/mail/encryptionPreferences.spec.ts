@@ -48,6 +48,7 @@ const pinnedFakeKey3: PublicKeyReference = {
 } as any;
 
 describe('extractEncryptionPreferences for an internal user', () => {
+    const ktVerificationResult = { status: KT_VERIFICATION_STATUS.VERIFIED_KEYS };
     const model = {
         emailAddress: 'user@pm.me',
         publicKeys: { apiKeys: [], pinnedKeys: [] },
@@ -65,7 +66,7 @@ describe('extractEncryptionPreferences for an internal user', () => {
         isContact: true,
         isContactSignatureVerified: true,
         contactSignatureTimestamp: new Date(0),
-        ktVerificationStatus: KT_VERIFICATION_STATUS.VERIFIED_KEYS,
+        ktVerificationResult,
     };
     const mailSettings = {
         Sign: PGP_SIGN,
@@ -106,7 +107,7 @@ describe('extractEncryptionPreferences for an internal user', () => {
             isContactSignatureVerified: undefined,
             contactSignatureTimestamp: undefined,
             emailAddressWarnings: undefined,
-            ktVerificationStatus: KT_VERIFICATION_STATUS.VERIFIED_KEYS,
+            ktVerificationResult,
         });
     });
 
@@ -140,7 +141,7 @@ describe('extractEncryptionPreferences for an internal user', () => {
             isContactSignatureVerified: true,
             contactSignatureTimestamp: new Date(0),
             emailAddressWarnings: undefined,
-            ktVerificationStatus: KT_VERIFICATION_STATUS.VERIFIED_KEYS,
+            ktVerificationResult,
         });
     });
 
@@ -175,7 +176,7 @@ describe('extractEncryptionPreferences for an internal user', () => {
             isContactSignatureVerified: true,
             contactSignatureTimestamp: new Date(0),
             emailAddressWarnings: undefined,
-            ktVerificationStatus: KT_VERIFICATION_STATUS.VERIFIED_KEYS,
+            ktVerificationResult,
         });
     });
 
@@ -302,6 +303,7 @@ describe('extractEncryptionPreferences for an internal user', () => {
 
 const testExtractEncryptionPreferencesWithWKD = (encrypt: boolean) =>
     describe(`extractEncryptionPreferences for an external user with WKD keys (encrypt: ${encrypt})`, () => {
+        const ktVerificationResult = { status: KT_VERIFICATION_STATUS.UNVERIFIED_KEYS };
         const model = {
             encrypt,
             emailAddress: 'user@pm.me',
@@ -320,7 +322,7 @@ const testExtractEncryptionPreferencesWithWKD = (encrypt: boolean) =>
             isContact: true,
             isContactSignatureVerified: true,
             contactSignatureTimestamp: new Date(0),
-            ktVerificationStatus: KT_VERIFICATION_STATUS.UNVERIFIED_KEYS,
+            ktVerificationResult,
         };
         const mailSettings = {
             Sign: 0,
@@ -361,7 +363,7 @@ const testExtractEncryptionPreferencesWithWKD = (encrypt: boolean) =>
                 isContactSignatureVerified: undefined,
                 emailAddressWarnings: undefined,
                 contactSignatureTimestamp: undefined,
-                ktVerificationStatus: KT_VERIFICATION_STATUS.UNVERIFIED_KEYS,
+                ktVerificationResult,
             });
         });
 
@@ -395,7 +397,7 @@ const testExtractEncryptionPreferencesWithWKD = (encrypt: boolean) =>
                 isContactSignatureVerified: true,
                 contactSignatureTimestamp: new Date(0),
                 emailAddressWarnings: undefined,
-                ktVerificationStatus: KT_VERIFICATION_STATUS.UNVERIFIED_KEYS,
+                ktVerificationResult,
             });
         });
 
@@ -430,7 +432,7 @@ const testExtractEncryptionPreferencesWithWKD = (encrypt: boolean) =>
                 isContactSignatureVerified: true,
                 contactSignatureTimestamp: new Date(0),
                 emailAddressWarnings: undefined,
-                ktVerificationStatus: KT_VERIFICATION_STATUS.UNVERIFIED_KEYS,
+                ktVerificationResult,
             });
         });
 
@@ -535,6 +537,7 @@ testExtractEncryptionPreferencesWithWKD(true);
 testExtractEncryptionPreferencesWithWKD(false);
 
 describe('extractEncryptionPreferences for an external user without WKD keys', () => {
+    const ktVerificationResult = { status: KT_VERIFICATION_STATUS.UNVERIFIED_KEYS };
     const model = {
         emailAddress: 'user@tatoo.me',
         publicKeys: { apiKeys: [], pinnedKeys: [], verifyingPinnedKeys: [] },
@@ -554,7 +557,7 @@ describe('extractEncryptionPreferences for an external user without WKD keys', (
         isContact: true,
         isContactSignatureVerified: true,
         contactSignatureTimestamp: new Date(0),
-        ktVerificationStatus: KT_VERIFICATION_STATUS.UNVERIFIED_KEYS,
+        ktVerificationResult,
     };
     const mailSettings = {
         Sign: PGP_SIGN,
@@ -581,7 +584,7 @@ describe('extractEncryptionPreferences for an external user without WKD keys', (
             isContactSignatureVerified: true,
             contactSignatureTimestamp: new Date(0),
             emailAddressWarnings: undefined,
-            ktVerificationStatus: KT_VERIFICATION_STATUS.UNVERIFIED_KEYS,
+            ktVerificationResult,
         });
     });
 
@@ -611,7 +614,7 @@ describe('extractEncryptionPreferences for an external user without WKD keys', (
             isContactSignatureVerified: undefined,
             contactSignatureTimestamp: undefined,
             emailAddressWarnings: undefined,
-            ktVerificationStatus: KT_VERIFICATION_STATUS.UNVERIFIED_KEYS,
+            ktVerificationResult,
         });
     });
 
@@ -633,7 +636,7 @@ describe('extractEncryptionPreferences for an external user without WKD keys', (
             isContactSignatureVerified: true,
             contactSignatureTimestamp: new Date(0),
             emailAddressWarnings: undefined,
-            ktVerificationStatus: KT_VERIFICATION_STATUS.UNVERIFIED_KEYS,
+            ktVerificationResult,
         });
     });
 
@@ -669,7 +672,7 @@ describe('extractEncryptionPreferences for an external user without WKD keys', (
             isContactSignatureVerified: true,
             contactSignatureTimestamp: new Date(0),
             emailAddressWarnings: undefined,
-            ktVerificationStatus: KT_VERIFICATION_STATUS.UNVERIFIED_KEYS,
+            ktVerificationResult,
         });
     });
 
@@ -725,6 +728,7 @@ describe('extractEncryptionPreferences for an own address', () => {
     const apiKeys = [fakeKey1, fakeKey2];
     const pinnedKeys = [] as PublicKeyReference[];
     const verifyingPinnedKeys = [] as PublicKeyReference[];
+    const ktVerificationResult = { status: KT_VERIFICATION_STATUS.VERIFIED_KEYS };
     const model = {
         emailAddress: 'user@pm.me',
         publicKeys: { apiKeys, pinnedKeys, verifyingPinnedKeys },
@@ -741,7 +745,7 @@ describe('extractEncryptionPreferences for an own address', () => {
         pgpAddressDisabled: false,
         isContact: false,
         emailAddressWarnings: undefined,
-        ktVerificationStatus: KT_VERIFICATION_STATUS.VERIFIED_KEYS,
+        ktVerificationResult,
     };
     const mailSettings = {
         Sign: PGP_SIGN,
@@ -778,7 +782,7 @@ describe('extractEncryptionPreferences for an own address', () => {
             isContactSignatureVerified: undefined,
             contactSignatureTimestamp: undefined,
             emailAddressWarnings: undefined,
-            ktVerificationStatus: KT_VERIFICATION_STATUS.VERIFIED_KEYS,
+            ktVerificationResult,
         });
     });
 

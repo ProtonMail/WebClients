@@ -9,6 +9,7 @@ import {
     RECIPIENT_TYPES,
 } from '../constants';
 import { Address } from './Address';
+import { KeyTransparencyVerificationResult } from './KeyTransparency';
 import { MailSettings } from './MailSettings';
 
 export interface PublicKeyWithPref {
@@ -37,7 +38,7 @@ export interface ApiKeysConfig {
     MIMEType?: MIME_TYPES;
     Warnings?: string[];
     Errors?: string[];
-    ktVerificationStatus?: KT_VERIFICATION_STATUS;
+    ktVerificationResult?: KeyTransparencyVerificationResult;
 }
 
 export interface PinnedKeysConfig {
@@ -85,7 +86,7 @@ export interface ContactPublicKeyModel {
     contactSignatureTimestamp?: Date;
     emailAddressWarnings?: string[];
     emailAddressErrors?: string[];
-    ktVerificationStatus?: KT_VERIFICATION_STATUS;
+    ktVerificationResult?: KeyTransparencyVerificationResult;
 }
 
 export interface PublicKeyModel {
@@ -113,11 +114,5 @@ export interface PublicKeyModel {
     contactSignatureTimestamp?: Date;
     emailAddressWarnings?: string[];
     emailAddressErrors?: string[];
-    ktVerificationStatus?: KT_VERIFICATION_STATUS;
-}
-
-export enum KT_VERIFICATION_STATUS {
-    VERIFIED_KEYS,
-    UNVERIFIED_KEYS,
-    VERIFICATION_FAILED,
+    ktVerificationResult?: KeyTransparencyVerificationResult;
 }
