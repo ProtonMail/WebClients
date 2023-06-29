@@ -2364,6 +2364,9 @@
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Se credi che questo sia un errore, contattaci ${ contactLink }."
       ],
+      "If you cancel, your ${ vpnPlanName } subscription will not be renewed when it expires on ${ expiryDate }.": [
+        "Se cancelli, il tuo abbonamento ${ vpnPlanName } non verrà rinnovato quando scadrà il ${ expiryDate }."
+      ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Se non trovi l'email nella tua casella di posta, controlla la cartella spam."
       ],
@@ -2934,6 +2937,11 @@
         "Aggiungi il tuo nome (o il nome dell'azienda) e l'indirizzo alle tue fatture."
       ]
     },
+    "Info subscription": {
+      "You can prevent expiry by reactivating the subscription": [
+        "Puoi prevenire la scadenza riattivando l'abbonamento"
+      ]
+    },
     "Info when deleting payment method": {
       "To avoid any service interruption due to unpaid invoices, please make sure that you have at least 1 valid payment method saved at any point in time.": [
         "Per evitare interruzioni di servizio dovute a fatture non pagate, assicurati di avere almeno 1 metodo di pagamento valido salvato in qualsiasi momento."
@@ -3382,6 +3390,9 @@
       ],
       "Forgot username?": [
         "Nome utente dimenticato?"
+      ],
+      "How to pay with Bitcoin?": [
+        "Come pagare con Bitcoin?"
       ],
       "Learn more": [
         "Per saperne di più"
@@ -4097,6 +4108,9 @@
       "Our servers’ hard disks are fully encrypted with multiple password layers so your data is protected even if our hardware is compromised": [
         "Gli hard disk dei nostri server sono completamente cifrati con più livelli di password, così i tuoi dati sono protetti anche se il nostro hardware è compromesso"
       ],
+      "Password management and identity protection": [
+        "Gestione password e protezione dell'identità"
+      ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Personalizza la tua firma email con loghi, immagini, icone di social media, link ai tuoi dettagli di contatto e altro ancora"
       ],
@@ -4176,7 +4190,7 @@
         "Quando sei connesso alla nostra VPN, il tuo DNS effettua query attraverso il nostro tunnel VPN cifrato, migliorando la tua privacy e sicurezza online"
       ],
       "When sending to other ${ MAIL_APP_NAME } users, encryption is automatic. Sending to non-${ MAIL_APP_NAME_TWO } users requires setting a password prior to sending.": [
-        "Quando si invia ad altri utenti ${ MAIL_APP_NAME }, la crittografia è automatica. L'invio a utenti non-${ MAIL_APP_NAME_TWO } richiede l'impostazione di una password prima dell'invio."
+        "Quando si invia ad altri utenti ${ MAIL_APP_NAME }, la crittografia è automatica. L'invio a utenti che non utilizzano ${ MAIL_APP_NAME_TWO } richiede l'impostazione di una password prima dell'invio."
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "Puoi avere più di un amministratore. Tutti gli amministratori possono aggiungere e gestire gli utenti, ma solo l'amministratore principale ha il controllo sulla fatturazione."
@@ -4216,6 +4230,9 @@
       ],
       "Priority support": [
         "Assistenza prioritaria"
+      ],
+      "Secure your passwords and identity with an open-source and encrypted password manager.": [
+        "Metti al sicuro le tue password e la tua identità con un gestore delle password open-source e crittografato."
       ],
       "Support for 1 custom email domain": [
         "Assistenza per 1 dominio email personalizzato"
@@ -4897,6 +4914,9 @@
       ],
       "Verification successful": [
         "Verifica riuscita"
+      ],
+      "You have successfully cancelled your subscription.": [
+        "Hai annullato l'abbonamento con successo."
       ],
       "You have successfully unsubscribed": [
         "Abbonamento annullato con successo"

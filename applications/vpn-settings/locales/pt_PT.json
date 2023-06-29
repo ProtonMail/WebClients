@@ -1607,6 +1607,9 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Este campo requer um mínimo de ${ minimumLength } carateres."
       ],
+      "Try again later": [
+        "Tente novamente mais tarde"
+      ],
       "Try using only letters, numerals, and _.-": [
         "Tente utilizar apenas letras, números e _.-"
       ],
@@ -3034,6 +3037,11 @@
         "Subscrição"
       ]
     },
+    "Key transparency details button": {
+      "Click here for more details.": [
+        "Clique aqui para mais detalhes."
+      ]
+    },
     "Label": {
       "${ BRAND_NAME } email or username": [
         "E-mail ou nome de utilizador do ${ BRAND_NAME }"
@@ -3680,6 +3688,9 @@
       "Auto-reply": [
         "Resposta automática"
       ],
+      "Autofill credit cards (coming soon)": [
+        "Preenchimento automático de cartões de crédito (em breve)"
+      ],
       "Available on all platforms": [
         "Disponível em todas as plataformas"
       ],
@@ -3697,6 +3708,9 @@
       ],
       "Contact groups management": [
         "Gestão de grupos de contacto"
+      ],
+      "Custom domains for email aliases": [
+        "Domínios customizados para encaminhamento de mensagens"
       ],
       "Custom email domains": [
         "Domínios de e-mail personalizados"
@@ -3740,6 +3754,9 @@
       "Fast P2P/BitTorrent downloads": [
         "Transferências rápidas de P2P/BitTorrent"
       ],
+      "Free features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and ${ DRIVE_SHORT_APP_NAME }": [
+        "Recursos gratuitos de ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } e ${ DRIVE_SHORT_APP_NAME }"
+      ],
       "Free VPN on a single device": [
         "VPN gratuita num único dispositivo"
       ],
@@ -3776,6 +3793,9 @@
       ],
       "No-logs policy": [
         "Política de inexistência de registos"
+      ],
+      "Organize items with multiple vaults": [
+        "Organize os itens com vários cofres"
       ],
       "Password-protected Emails": [
         "E-mails protegidos por palavra-passe"
@@ -3914,8 +3934,17 @@
       "For next-level password management and identity protection.": [
         "Para uma gestão de palavras-passe e proteção de identidade de nível superior."
       ],
+      "If you delete your account, you lose all ${ visionary } plan benefits and it won’t be available if you create a new account.": [
+        "Se eliminar a sua conta, perde todos os benefícios do plano ${ visionary } e este não estará disponível se criar uma nova conta."
+      ],
+      "If you switch to a different plan, you lose all ${ visionary } plan benefits and won’t be able to switch back to ${ visionary }.": [
+        "Se mudar para um plano diferente, perde todos os benefícios do plano ${ visionary } e não poderá voltar a mudar para o plano ${ visionary }."
+      ],
       "Most popular": [
         "Mais popular"
+      ],
+      "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
+        "O nosso plano ${ visionary } já não está disponível para novos subscritores, pois se trata de um plano especial para utilizadores originais da ${ BRAND_NAME } com caraterísticas e vantagens especiais."
       ],
       "Popular": [
         "Popular"
@@ -3940,6 +3969,9 @@
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
         "A conta inicial gratuita criada para oferecer privacidade a todos por padrão."
+      ],
+      "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
+        "Está a beneficiar de um preço promocional no seu plano atual. Se eliminar a sua conta, perderá o preço promocional e este não estará disponível se criar uma nova conta."
       ]
     },
     "new_plans: Info": {
@@ -3948,6 +3980,9 @@
       ],
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "Caso contrário, o acesso à sua conta será limitado e a sua conta acabará por ser desativada."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Para continuar a utilizar ${ MAIL_APP_NAME } com funcionalidades premium, escolha a sua subscrição e as opções de pagamento."
       ],
       "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
         "Atualize para o pacote para empresas com acesso a todos os serviços premium da ${ BRAND_NAME }."
@@ -4036,11 +4071,29 @@
       ]
     },
     "new_plans: tooltip": {
+      "${ CALENDAR_APP_NAME }: end-to-end encrypted calendar": [
+        "${ CALENDAR_APP_NAME }: calendário encriptado de ponta a ponta"
+      ],
+      "${ MAIL_APP_NAME }: end-to-end encrypted email": [
+        "${ MAIL_APP_NAME }: e-mail encriptado de ponta a ponta"
+      ],
+      "${ VPN_APP_NAME }: unblock content, browse privately": [
+        "${ VPN_APP_NAME }: desbloqueie conteúdos e navegue em privado"
+      ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
         "Aceda a conteúdos em serviços de streaming, incluindo Netflix, Disney+ e Prime Video, a partir de qualquer lugar"
       ],
+      "Addresses have full sending and receiving capability. A user can have multiple addresses assigned to them; however, a single address cannot be assigned to multiple users.": [
+        "Cada endereço pode enviar e receber mensagens. Um utilizador pode ter vários endereços, mas um endereço só pode ser atribuído a um utilizador."
+      ],
+      "Allows you to access more than one network at the same time, e.g., stream a film from another country while still getting local search results": [
+        "Permite-lhe aceder a mais do que uma rede ao mesmo tempo. Por exemplo: ver um filme de outro país sem deixar de obter resultados de pesquisa locais."
+      ],
       "Allows you to set up automatic responses (auto-reply) for your incoming messages": [
         "Permite-lhe configurar respostas automáticas para as suas mensagens recebidas"
+      ],
+      "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
+        "O envio de e-mail promocional ou programático em massa não é atualmente suportado. Recomendamos a utilização de um fornecedor de serviços de e-mail dedicado para este caso de utilização."
       ],
       "Control access to your shared files by adding password protection and link expiration dates": [
         "Controle o acesso aos seus ficheiros partilhados, adicionando proteção por palavra-passe e datas de expiração das ligações."
@@ -4051,6 +4104,9 @@
       "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
         "Crie até ${ n } calendário ou adicione calendários de amigos, familiares, colegas e organizações.",
         "Crie até ${ n } calendários ou adicione calendários de amigos, familiares, colegas e organizações."
+      ],
+      "Create up to ${ n } email addresses/aliases for the whole family. Use them for your online identities, e.g., MyFamilySubs@${ domain } for online subscriptions.": [
+        "Crie até ${ n } endereços de e-mail/aliases para toda a família. Utilize-os para as suas identidades em linha. Por exemplo, SubscriçõesFamília@${ domain } para subscrições em linha."
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Defende-se contra a ameaça à privacidade da VPN ao enviar o tráfego na internet por vários servidores."
@@ -4064,20 +4120,62 @@
       "Easily share your calendars with your family, friends, or colleagues": [
         "Partilhe facilmente os seus calendários com a sua família, amigos ou colegas."
       ],
+      "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
+        "Garante que recebe todos os e-mails enviados para o seu domínio, mesmo que o endereço de e-mail não exista, já não exista ou tenha um erro tipográfico."
+      ],
       "Force sign-out of user sessions when user credentials are believed to be compromised": [
         "Força a saída das sessões de utilizador quando se pensa que as credenciais do utilizador estão comprometidas."
       ],
       "Keep your plans private to you and your family with an encrypted calendar": [
         "Mantenha os seus planos privados para si e para a sua família com um calendário encriptado."
       ],
+      "Keeps you protected by blocking all network connections when you are unexpectedly disconnected from our VPN server.": [
+        "Mantém-no protegido, bloqueando todas as ligações de rede quando é inesperadamente desligado do nosso servidor VPN."
+      ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Pode adicionar etiquetas às suas mensagens para as tornar mais fáceis de encontrar ou para aplicar filtros."
+      ],
+      "Like a folder, a vault is a convenient way to organize your items. Sharing vaults with friends and family is in the works.": [
+        "Tal como uma pasta, um cofre e é uma forma prática de organizar os seus itens. A partilha de cofres com amigos e familiares está a ser preparada."
+      ],
+      "Manage your subscription, including customization of your plan. Payment methods accepted are credit card, PayPal, cryptocurrency, and wire transfer.": [
+        "Gira a sua subscrição, incluindo a personalização do seu plano. Os métodos de pagamento aceites são cartão de crédito, PayPal, criptomoeda e transferência bancária."
+      ],
+      "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
+        "Nos dias úteis, a equipa de apoio ao cliente de ${ BRAND_NAME } irá ajudá-lo no prazo de 24 horas após o seu pedido."
+      ],
+      "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME_TWO } VPN at the same time, you need two VPN connections.": [
+        "Uma ligação VPN permite que um dispositivo se ligue a ${ BRAND_NAME } VPN ea qualquer momento. Por exemplo, para ligar um telefone e um computador portátil à ${ BRAND_NAME_TWO } VPN ao mesmo tempo, são necessárias duas ligações VPN."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Opção para ver as caixas de entrada de utilizadores não privados como o utilizador faria, incluindo todas as mensagens e detalhes de contacto"
       ],
+      "Organization management tool that lets admins add and remove users, allocate storage, configure domains, and perform other tasks": [
+        "Ferramenta de gestão da organização que permite aos administradores adicionar e remover utilizadores, atribuir armazenamento, configurar domínios e realizar outras tarefas."
+      ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "A fiabilidade da nossa infraestrutura garante-lhe o acesso à sua conta sempre que precisar."
+      ],
+      "Our servers’ hard disks are fully encrypted with multiple password layers so your data is protected even if our hardware is compromised": [
+        "Os discos rígidos dos nossos servidores são totalmente encriptados com várias camadas de palavras-passe, pelo que os seus dados estão protegidos mesmo que o nosso equipamento seja comprometido."
+      ],
+      "Password management and identity protection": [
+        "Gestão de palavras-passe e proteção de identidade"
+      ],
+      "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
+        "Personalize a sua assinatura de e-mail com logótipos, imagens, ícones de redes sociais, ligações para os seus dados de contacto e muito mais."
+      ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Success team during European business hours, for customers with 6 or more users": [
+        "A equipa de apoio ao cliente da ${ BRAND_NAME } presta apoio telefónico durante o horário de expediente europeu a clientes com pelo menos 6 utilizadores."
+      ],
+      "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
+        "Impede que as mensagens sejam acedidas por ${ BRAND_NAME } ou por terceiros. As únicas pessoas que podem ler as mensagens são o remetente e o destinatário pretendido."
+      ],
+      "Protect every device connected to your WiFi network. It’s also useful if you have devices that do not support VPN settings directly.": [
+        "Proteja todos os dispositivos ligados à sua rede WiFi. Também é útil se tiver dispositivos que não suportam diretamente configurações VPN."
+      ],
+      "Protect your family from harmful websites and access our high-speed VPN servers to stream your favorite content": [
+        "Proteja a sua família de sítios web prejudiciais e aceda aos nossos servidores VPN de alta velocidade para ver os seus conteúdos favoritos."
       ],
       "Quickly set up out-of-office messages": [
         "Configure rapidamente mensagens Fora do escritório"
@@ -4094,11 +4192,20 @@
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Proteja os seus ficheiros com armazenamento encriptado na nuvem. Inclui sincronização automática, partilha de ficheiros encriptados e muito mais."
       ],
+      "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
+        "Armazene com segurança os detalhes dos seus contatos, como número de telefone, endereço, data de nascimento e anotações pessoais. A criptografia de acesso zero garante que nem mesmo ${ BRAND_NAME } possa acessá-los."
+      ],
+      "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
+        "Envie e-mails para grandes grupos de forma rápida e fácil, criando quantos grupos de contactos forem necessários (até 100 contactos por grupo)"
+      ],
       "Set up filters to automatically reply to, sort, and/or label your emails": [
         "Configure filtros para responder, ordenar e/ou etiquetar automaticamente os seus e-mails."
       ],
       "Share your files or folders with anyone by using secure, shareable links": [
         "Partilhe os seus ficheiros ou pastas com qualquer pessoa, utilizando ligações seguras e partilháveis."
+      ],
+      "Specially designed NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware": [
+        "Especialmente concebido, o NetShield protege o seu dispositivo e acelera a navegação bloqueando anúncios, rastreadores e malware."
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }": [
         "O espaço de armazenamento é partilhado entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } e ${ DRIVE_APP_NAME }"
@@ -4108,6 +4215,18 @@
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Utilize os seus próprios endereços de domínio de e-mail personalizado. Por exemplo: você@oseunome.pt"
+      ],
+      "We keep no session usage logs of what you do online, and we do not log metadata that can compromise your privacy": [
+        "Não mantemos registos de utilização de sessões do que faz em linha e não registamos metadados que possam comprometer a sua privacidade."
+      ],
+      "When connected to our VPN, your DNS queries through our encrypted VPN tunnel, adding to your online privacy and security": [
+        "Quando ligado à nossa VPN, as suas consultas DNS passam pelo nosso túnel VPN encriptado, aumentando a sua privacidade e segurança em linha."
+      ],
+      "When sending to other ${ MAIL_APP_NAME } users, encryption is automatic. Sending to non-${ MAIL_APP_NAME_TWO } users requires setting a password prior to sending.": [
+        "Ao enviar para outros utilizadores do ${ MAIL_APP_NAME }, a encriptação é automática. O envio para utilizadores que não utilizam ${ MAIL_APP_NAME_TWO } requer a definição de uma palavra-passe antes do envio."
+      ],
+      "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
+        "Pode ter mais do que um administrador. Todos os administradores podem adicionar e gerir utilizadores, mas apenas o administrador principal tem controlo sobre a faturação."
       ]
     },
     "new_plans: Upsell attribute": {
@@ -4144,6 +4263,9 @@
       ],
       "Priority support": [
         "Apoio ao cliente prioritário"
+      ],
+      "Secure your passwords and identity with an open-source and encrypted password manager.": [
+        "Proteja as suas palavras-passe e a sua identidade com um gestor de palavras-passe de código aberto e encriptado."
       ],
       "Support for 1 custom email domain": [
         "Suporte para 1 domínio de e-mail personalizado"
@@ -4710,6 +4832,12 @@
       ],
       "Subscriptions": [
         "Subscrições"
+      ],
+      "Your plan was purchased using an Android app. So to make changes to your plan or update your payment details, you’ll need to go to the Google Play Store.": [
+        "O seu plano foi adquirido através de uma aplicação Android. Por isso, para fazer alterações ao seu plano ou atualizar os seus dados de pagamento, terá de ir à Google Play Store."
+      ],
+      "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
+        "O seu plano foi adquirido através de uma aplicação iOS. Por isso, para fazer alterações ao seu plano ou atualizar os seus dados de pagamento, terá de ir à Apple App Store."
       ]
     },
     "Subscription price": {
@@ -5324,6 +5452,11 @@
       ],
       "The selected theme will be active when your system is set to \"light mode\"": [
         "O tema selecionado ficará ativo quando o sistema estiver definido para o \"modo claro\"."
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: end-to-end encrypted password manager": [
+        "${ PASS_APP_NAME }: gestor de plavaras-passe encriptadas de ponta a ponta"
       ]
     },
     "Tor out of date": {
