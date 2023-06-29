@@ -6021,6 +6021,11 @@
         "Du hast die Adressüberprüfung mit vertrauenswürdigen Schlüsseln für diese E-Mail-Adressen aktiviert, aber es wurde kein aktiver Verschlüsselungsschlüssel als vertrauenswürdig eingestuft.\nDu musst den für den Versand gültigen Schlüsseln vertrauen, um eine Nachricht an diese E-Mail-Adressen senden zu können."
       ]
     },
+    "Key transparency details button": {
+      "Click here for more details.": [
+        "Klicke hier für weitere Details."
+      ]
+    },
     "Key validation warning": {
       "Recipient's key validation failed: ${ validationErrorsMessage }": [
         "Schlüsselüberprüfung des Empfängers fehlgeschlagen: ${ validationErrorsMessage }"
@@ -7731,6 +7736,22 @@
       "We have detected some warnings. The following email address may not receive emails:": [
         "Es wurden einige Warnungen erkannt. Die folgende E-Mail-Adresse kann möglicherweise keine Nachrichten empfangen:",
         "Es wurden einige Warnungen erkannt. Die folgenden E-Mail-Adressen können möglicherweise keine Nachrichten empfangen:"
+      ]
+    },
+    "Sender verification details": {
+      "Sender verification": [
+        "Absenderverifizierung"
+      ],
+      "Sender verification failed: ${ icon.senderVerificationDetails.description }": [
+        "Absenderverifizierung fehlgeschlagen: ${ icon.senderVerificationDetails.description }"
+      ],
+      "Sender verified: ${ icon.senderVerificationDetails.description }": [
+        "Absender verifiziert: ${ icon.senderVerificationDetails.description }"
+      ]
+    },
+    "Sender verification error": {
+      "Verification key is not in the list of trusted keys.": [
+        "Der Verifizierungsschlüssel ist nicht in der Liste der vertrauenswürdigen Schlüssel enthalten."
       ]
     },
     "Sent email icon": {
