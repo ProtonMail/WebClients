@@ -2061,7 +2061,7 @@
         "Nenhum contato encontrado para importação"
       ],
       "No emails found to import - the account does not have an inbox": [
-        "Nenhum email encontrado para importação - a conta não possui uma caixa de entrada"
+        "Nenhum e-mail encontrado para importação — a conta não possui uma caixa de entrada."
       ],
       "No valid address found": [
         "Nenhum endereço válido encontrado"
@@ -4201,6 +4201,11 @@
         "Confiável"
       ]
     },
+    "Key transparency details button": {
+      "Click here for more details.": [
+        "Clique aqui para mais detalhes."
+      ]
+    },
     "Label": {
       "# of downloads": [
         "# de downloads"
@@ -5831,8 +5836,8 @@
         "# de downloads"
       ],
       "${ emailsCount } email address": [
-        "${ emailsCount } endereço de email",
-        "${ emailsCount } endereços de email"
+        "${ emailsCount } endereço de e-mail",
+        "${ emailsCount } endereços de e-mail"
       ],
       "${ numberOfFailedTransfer.total } failed download": [
         "${ numberOfFailedTransfer.total } falha em download",

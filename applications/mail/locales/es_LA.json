@@ -6021,6 +6021,11 @@
         "Ha habilitado la verificación de direcciones con claves de confianza para estas direcciones de correo,\npero no se han confiado claves de cifrado activas.\nDebe confiar en las claves válidas para poder enviar mensajes a estas direcciones."
       ]
     },
+    "Key transparency details button": {
+      "Click here for more details.": [
+        "Haga clic aquí para obtener más información."
+      ]
+    },
     "Key validation warning": {
       "Recipient's key validation failed: ${ validationErrorsMessage }": [
         "Falló la validación de la clave del destinatario: ${ validationErrorsMessage }"
@@ -7731,6 +7736,22 @@
       "We have detected some warnings. The following email address may not receive emails:": [
         "Hemos detectado algunas advertencias. Es posible que la siguiente dirección de correo no reciba correos:",
         "Hemos detectado algunas advertencias. Es posible que las siguientes direcciones de correo no reciban correos:"
+      ]
+    },
+    "Sender verification details": {
+      "Sender verification": [
+        "Verificación del remitente"
+      ],
+      "Sender verification failed: ${ icon.senderVerificationDetails.description }": [
+        "Error al verificar el remitente: ${ icon.senderVerificationDetails.description }."
+      ],
+      "Sender verified: ${ icon.senderVerificationDetails.description }": [
+        "Remitente verificado: ${ icon.senderVerificationDetails.description }"
+      ]
+    },
+    "Sender verification error": {
+      "Verification key is not in the list of trusted keys.": [
+        "La clave de verificación no está en la lista de las claves de confianza."
       ]
     },
     "Sent email icon": {

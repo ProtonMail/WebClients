@@ -1607,6 +1607,9 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Ce champ nécessite un minimum de ${ minimumLength } caractères."
       ],
+      "Try again later": [
+        "Veuillez réessayer plus tard."
+      ],
       "Try using only letters, numerals, and _.-": [
         "Essayez d'utiliser uniquement des lettres, des chiffres et ces signes : _ . -"
       ],
@@ -2341,7 +2344,7 @@
         "expire le ${ expirationDate }"
       ],
       "For choosing ${ product }": [
-        "Pour avoir choisi ${ product }"
+        "d'avoir choisi ${ product }"
       ],
       "For Visa, MasterCard and Discover, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
         "Pour Visa, MasterCard et Discover, les 3 chiffres au verso de votre carte. Pour American Express, les 4 chiffres au recto de votre carte."
@@ -3028,6 +3031,11 @@
         "Abonnement"
       ]
     },
+    "Key transparency details button": {
+      "Click here for more details.": [
+        "Cliquez ici pour plus de détails."
+      ]
+    },
     "Label": {
       "${ BRAND_NAME } email or username": [
         "Adresse e-mail ou nom d'utilisateur ${ BRAND_NAME }"
@@ -3620,6 +3628,10 @@
         "${ n } dossier et label",
         "${ n } dossiers et labels"
       ],
+      "${ n } hide-my-email alias": [
+        "${ n } alias « hide-my-email »",
+        "${ n } alias « hide-my-email »"
+      ],
       "${ n } label": [
         "${ n } label",
         "${ n } labels"
@@ -3669,6 +3681,9 @@
       ],
       "Auto-reply": [
         "Réponse automatique"
+      ],
+      "Autofill credit cards (coming soon)": [
+        "Remplissage automatique des cartes de crédit (à venir)"
       ],
       "Available on all platforms": [
         "Disponible sur toutes les plateformes"
@@ -3772,6 +3787,9 @@
       ],
       "No-logs policy": [
         "Politique de non-journalisation (no log)"
+      ],
+      "Organize items with multiple vaults": [
+        "Organiser les éléments avec plusieurs coffres"
       ],
       "Password-protected Emails": [
         "Messages protégés par mot de passe"
@@ -4053,6 +4071,18 @@
       ]
     },
     "new_plans: tooltip": {
+      "${ CALENDAR_APP_NAME }: end-to-end encrypted calendar": [
+        "${ CALENDAR_APP_NAME }: calendrier chiffré de bout-en-bout"
+      ],
+      "${ DRIVE_APP_NAME }: end-to-end encrypted cloud storage": [
+        "${ DRIVE_APP_NAME }: stockage cloud chiffré de bout-en-bout"
+      ],
+      "${ MAIL_APP_NAME }: end-to-end encrypted email": [
+        "${ MAIL_APP_NAME }: messagerie chiffrée de bout-en-bout"
+      ],
+      "${ VPN_APP_NAME }: unblock content, browse privately": [
+        "${ VPN_APP_NAME } : débloquez des contenus et surfez de façon anonyme"
+      ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
         "Accédez aux contenus des services de streaming, dont Netflix, Amazon Prime Video, Canal+, Disney+, France.tv, TF1… où que vous soyez."
       ],
@@ -4134,6 +4164,9 @@
       ],
       "Our servers’ hard disks are fully encrypted with multiple password layers so your data is protected even if our hardware is compromised": [
         "Les disques durs de nos serveurs sont entièrement chiffrés avec plusieurs couches de mots de passe pour protéger vos données même si notre matériel est compromis."
+      ],
+      "Password management and identity protection": [
+        "Gestionnaire de mots de passe et protection d'identité"
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Personnalisez votre signature d'e-mail avec des logos, images, icônes de réseaux sociaux, liens vers vos coordonnées…"
@@ -4254,6 +4287,9 @@
       ],
       "Priority support": [
         "Assistance prioritaire"
+      ],
+      "Secure your passwords and identity with an open-source and encrypted password manager.": [
+        "Sécurisez vos mots de passe et votre identité grâce à un gestionnaire de mots de passe chiffré et open-source."
       ],
       "Support for 1 custom email domain": [
         "Prise en charge d'un nom de domaine personnalisé"
@@ -5507,6 +5543,11 @@
       ],
       "The selected theme will be active when your system is set to \"light mode\"": [
         "Le thème sélectionné sera activé quand votre système sera en « thème clair »."
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: end-to-end encrypted password manager": [
+        "${ PASS_APP_NAME }: gestionnaire de mots de passe chiffré de bout-en-bout"
       ]
     },
     "Tor out of date": {
