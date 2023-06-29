@@ -2862,6 +2862,23 @@
         "90 minutos"
       ]
     },
+    "Email": {
+      "Email verified": [
+        "Correo verificado"
+      ],
+      "Thank you for verifying your email address.": [
+        "Gracias por verificar tu dirección de correo."
+      ],
+      "Thanks for letting us know": [
+        "Gracias por avisarnos"
+      ],
+      "We've noted that this account doesn't belong to you. We'll investigate and act accordingly.": [
+        "Hemos notado que esta cuenta no lte pertenece. Investigaremos y actuaremos en consecuencia."
+      ],
+      "You can safely close this tab.": [
+        "Ya puedes cerrar esta ventana."
+      ]
+    },
     "Email body for description (description part)": {
       "Description: ${ eventDescription }": [
         "Descripción: ${ eventDescription }"
@@ -2955,6 +2972,9 @@
       ]
     },
     "Email Unsubscribe": {
+      "Email subscriptions": [
+        "Suscripciones de correo"
+      ],
       "Which emails do you want to receive from ${ BRAND_NAME }?": [
         "¿Qué correos electrónicos quieres recibir de ${ BRAND_NAME }?"
       ],
@@ -3356,6 +3376,9 @@
       "Trusted keys are not valid for sending": [
         "Las claves de confianza no son válidas para el envío"
       ],
+      "Try again later": [
+        "Vuelva a intentarlo más tarde"
+      ],
       "Try using only letters, numerals, and _.-": [
         "Utiliza solo letras, números y _.-"
       ],
@@ -3638,6 +3661,9 @@
       ]
     },
     "Error message, recovery": {
+      "Contact ${ BRAND_NAME }": [
+        "Contacta ${ BRAND_NAME }"
+      ],
       "Please ${ signIn } to resend a recovery email verification request.": [
         "${ signIn } para reenviar una solicitud de verificación de la dirección de correo de recuperación."
       ],
@@ -4932,6 +4958,9 @@
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Si continúas perderás el acceso a todos los datos cifrados actuales en tu cuenta."
       ],
+      "${ BRAND_NAME } is privacy you can trust, ensured by strong encryption, open-source code, and Swiss privacy laws. We believe nobody should be able to exploit your data, period. Our technology and business are based upon this fundamentally stronger definition of privacy.": [
+        "${ BRAND_NAME } es la privacidad en la que puedes confiar, garantizada por un cifrado sólido, código abierto y leyes de privacidad suizas. Nadie debería de poder explotar tus datos. Nuestra tecnología y negocio se basan en esta definición de privacidad fundamentalmente más fuerte."
+      ],
       "${ BRAND_NAME } paused an import because it lost the connection with your other email provider. Please reconnect.": [
         "${ BRAND_NAME } ha pausado una importación porque ha perdido la conexión con tu otro proveedor de correo electrónico. Vuelve a conectar."
       ],
@@ -5600,6 +5629,9 @@
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Los filtros funcionan en todos los correos electrónicos, incluidos los entrantes o enviados. Cada filtro debe contener al menos un nombre, una condición y una acción."
       ],
+      "for choosing ${ product }": [
+        "por elegir ${ product }"
+      ],
       "For choosing ${ product }": [
         "Por elegir ${ product }"
       ],
@@ -5608,6 +5640,9 @@
       ],
       "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
         "Redirige correos entrantes desde otra cuenta a tu bandeja de entrada segura de ${ MAIL_APP_NAME }."
+      ],
+      "Free forever": [
+        "Gratis para siempre"
       ],
       "Free up some space or add more storage space.": [
         "Libera algo de espacio o añade más espacio de almacenamiento."
@@ -5986,6 +6021,9 @@
       "Outdated recovery phrase; update to ensure access to your data": [
         "Frase de recuperación desactualizada. Actualízala para garantizar el acceso a tus datos."
       ],
+      "Over 100 million people and businesses have signed up for ${ BRAND_NAME }.": [
+        "Más de 100 millones de personas y negocios se han registrado en ${ BRAND_NAME }."
+      ],
       "Paid for a ${ rewardMonths } month plan": [
         "Pagó un plan de ${ rewardMonths } mes",
         "Pagó un plan de ${ rewardMonths } meses"
@@ -6115,6 +6153,9 @@
       "Recovery information will remain on this device unless you select to delete it.": [
         "La información de recuperación permanecerá en este dispositivo a menos que la elimines."
       ],
+      "Recovery kit copied to clipboard": [
+        "El kit de recuperación ha sido copiado al portapapeles."
+      ],
       "Recovery phrase copied to clipboard": [
         "Frase de recuperación copiada en el portapapeles"
       ],
@@ -6138,6 +6179,9 @@
       ],
       "Remove one of your calendars to join this one": [
         "Elimina uno de tus calendarios para unirte a este."
+      ],
+      "Report link expired": [
+        "Notificar el enlace expirado"
       ],
       "Restore": [
         "Restaurar"
@@ -6257,6 +6301,9 @@
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Tu suscripción terminará pronto: reactívala antes de ${ byDate } para mantener los beneficios de ${ planName }. ${ reactivateLink }"
       ],
+      "Summary": [
+        "Resumen"
+      ],
       "Support for 1 custom email domain": [
         "Soporte para 1 dominio de correo electrónico personalizado"
       ],
@@ -6319,6 +6366,9 @@
       ],
       "The Import-Export app allows you to export messages for local backups and to restore previous backups to your account.": [
         "La aplicación Import-Export te permite exportar mensajes para crear copias de seguridad locales y restaurar copias de seguridad anteriores en tu cuenta."
+      ],
+      "The link to report that that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue.": [
+        "El enlace para notificar que no has configurado una cuenta de ${ BRAND_NAME } ha expirado. Póngate en contacto con nuestro equipo de soporte para resolver este problema."
       ],
       "The name will be visible to your users while they are signed in.": [
         "Tus usuarios verán el nombre mientras estén conectados."
@@ -7083,6 +7133,11 @@
       ],
       "Primary": [
         "Principal"
+      ]
+    },
+    "Key transparency details button": {
+      "Click here for more details.": [
+        "Haz clic aquí para obtener más información."
       ]
     },
     "Key type option": {
@@ -8036,6 +8091,9 @@
       "Show sender images": [
         "Mostrar imágenes del remitente"
       ],
+      "Show unread count in Favicon": [
+        "Mostrar contador sin leer en el favicono"
+      ],
       "Show week numbers": [
         "Mostrar los números de la semana"
       ],
@@ -8411,6 +8469,9 @@
       ],
       "Pay invoice": [
         "Pagar factura"
+      ],
+      "Paypal without credit card": [
+        "PayPal sin tarjeta de crédito"
       ],
       "Privacy policy": [
         "Política de privacidad"
@@ -8896,6 +8957,10 @@
         "${ n } carpeta y etiqueta",
         "${ n } carpetas y etiquetas"
       ],
+      "${ n } hide-my-email alias": [
+        "${ n } alias de Hide-my-email",
+        "${ n } alias de Hide-my-email"
+      ],
       "${ n } label": [
         "${ n } etiqueta",
         "${ n } etiquetas"
@@ -8949,6 +9014,9 @@
       "Auto-reply": [
         "Respuesta automática"
       ],
+      "Autofill credit cards (coming soon)": [
+        "Relleno automático de tarjetas de crédito (próximamente)"
+      ],
       "Available on all platforms": [
         "Disponible en todas las plataformas"
       ],
@@ -8966,6 +9034,9 @@
       ],
       "Contact groups management": [
         "Administración de grupos de contactos"
+      ],
+      "Custom domains for email aliases": [
+        "Dominios personalizados para alias de correo electrónico"
       ],
       "Custom email domains": [
         "Dominios de correo personalizados"
@@ -9051,6 +9122,9 @@
       ],
       "No-logs policy": [
         "Política de cero registros"
+      ],
+      "Organize items with multiple vaults": [
+        "Organizar elementos en bóvedas múltiples"
       ],
       "Password-protected Emails": [
         "Correos electrónicos protegidos con contraseña"
@@ -9187,6 +9261,26 @@
         "Gestión de equipos"
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Haz que la privacidad sea tu opción por defecto para la copia de seguridad, el almacenamiento, el intercambio y la recuperación de archivos."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Si no lo haces, tendrás un acceso limitado a tu cuenta y eventualmente se desactivará."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Para seguir usando ${ MAIL_APP_NAME } con las funciones prémium, suscríbete y elige el método de pago."
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "Pásate al plan para empresas y disfruta de todos los servicios prémium de ${ BRAND_NAME }."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "Pásate al plan de privacidad más completo y disfruta de todos los servicios prémium de ${ BRAND_NAME }."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Tu periodo de pruebas acaba el ${ formattedTrialExpirationDate }."
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } que termina con ${ last4 }"
@@ -9265,26 +9359,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Ahora mismo pagas un precio especial por tu plan. Si te pasas a un plan inferior, perderás esta ventaja y no la recuperarás suscribiéndote de nuevo."
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Haz que la privacidad sea tu opción por defecto para la copia de seguridad, el almacenamiento, el intercambio y la recuperación de archivos."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Si no lo haces, tendrás un acceso limitado a tu cuenta y eventualmente se desactivará."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Para seguir usando ${ MAIL_APP_NAME } con las funciones prémium, suscríbete y elige el método de pago."
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "Pásate al plan para empresas y disfruta de todos los servicios prémium de ${ BRAND_NAME }."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "Pásate al plan de privacidad más completo y disfruta de todos los servicios prémium de ${ BRAND_NAME }."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Tu periodo de pruebas acaba el ${ formattedTrialExpirationDate }."
       ]
     },
     "new_plans: Label": {
@@ -9367,6 +9441,18 @@
       ]
     },
     "new_plans: tooltip": {
+      "${ CALENDAR_APP_NAME }: end-to-end encrypted calendar": [
+        "${ CALENDAR_APP_NAME }: calendario cifrado de extremo a extremo"
+      ],
+      "${ DRIVE_APP_NAME }: end-to-end encrypted cloud storage": [
+        "${ DRIVE_APP_NAME }: almacenamiento en la nube cifrado de extremo a extremo"
+      ],
+      "${ MAIL_APP_NAME }: end-to-end encrypted email": [
+        "${ MAIL_APP_NAME }: correo electrónico cifrado de extremo a extremo"
+      ],
+      "${ VPN_APP_NAME }: unblock content, browse privately": [
+        "${ VPN_APP_NAME }: desbloquee contenido y navegue en privado"
+      ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
         "Accede desde cualquier lugar al contenido de servicios de streaming como Netflix, Disney+ y Prime Video."
       ],
@@ -9432,7 +9518,7 @@
         "Administra tu suscripción y personaliza también tu plan. Puedes pagar con tarjeta de crédito, PayPal, criptomonedas y transferencia."
       ],
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
-        "Los días laborables recibirás la ayuda del equipo de atención al cliente de ${ BRAND_NAME } en un plazo máximo de 24 horas desde la solicitud."
+        "En días laborales, recibe soporte del equipo de servicio al cliente de ${ BRAND_NAME } en menos de 24 horas"
       ],
       "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME_TWO } VPN at the same time, you need two VPN connections.": [
         "Cada conexión VPN permite que un solo dispositivo se conecte a ${ BRAND_NAME } VPN en cualquier momento. Por ejemplo, para conectar un teléfono y un portátil a ${ BRAND_NAME_TWO } VPN a la vez, necesitas dos conexiones VPN."
@@ -9449,11 +9535,14 @@
       "Our servers’ hard disks are fully encrypted with multiple password layers so your data is protected even if our hardware is compromised": [
         "Los discos duros de nuestros servidores están completamente cifrados con numerosas capas de contraseñas, por lo que tus datos estarán protegidos aunque nuestro hardware se vea comprometido."
       ],
+      "Password management and identity protection": [
+        "Gestión de contraseñas y protección de identidad"
+      ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Personaliza tu firma de correo electrónico con logotipos, imágenes, iconos de redes sociales, enlaces en tus datos de contacto, etc."
       ],
       "Phone support is available from the ${ BRAND_NAME } Customer Success team during European business hours, for customers with 6 or more users": [
-        "El equipo de satisfacción de ${ BRAND_NAME } ofrece asistencia telefónica en horario laboral europeo a los clientes que tienen, como mínimo, 6 usuarios."
+        "El equipo de atención al cliente de ${ BRAND_NAME } ofrece asistencia telefónica en horario laboral europeo a los clientes que tienen, como mínimo, 6 usuarios."
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Impide que ${ BRAND_NAME } o terceros puedan acceder a los mensajes. Los únicos que pueden leerlos son el remitente y el destinatario."
@@ -9528,7 +9617,7 @@
         "Mientras estás conectado a nuestra VPN, las consultas de DNS pasan por nuestro túnel VPN cifrado, por lo que tendrás todavía más privacidad y seguridad en internet."
       ],
       "When sending to other ${ MAIL_APP_NAME } users, encryption is automatic. Sending to non-${ MAIL_APP_NAME_TWO } users requires setting a password prior to sending.": [
-        "Los correos que envías a usuarios de ${ MAIL_APP_NAME } se cifran automáticamente. Si el destinatario no usa ${ MAIL_APP_NAME_TWO }, tendrás que establecer una contraseña antes de enviar el mensaje."
+        "Los correos que envías a usuarios de ${ MAIL_APP_NAME } se cifran automáticamente. Si el destinatario no utiliza ${ MAIL_APP_NAME_TWO }, tendrás que establecer una contraseña antes de enviar el mensaje."
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "Puedes tener varios administradores. Todos tienen permiso para añadir y gestionar usuarios, pero solo el administrador principal puede controlar la facturación."
@@ -9576,6 +9665,9 @@
       ],
       "Priority support": [
         "Soporte prioritario"
+      ],
+      "Secure your passwords and identity with an open-source and encrypted password manager.": [
+        "Asegura tus contraseñas e identidad con un gestor de contraseñas cifrado de código abierto."
       ],
       "Support for 1 custom email domain": [
         "Soporte para 1 dominio de correo electrónico personalizado"
@@ -10338,6 +10430,9 @@
       "Email address not yet verified.": [
         "No has aún verificado la dirección de correo electrónico."
       ],
+      "Email removed": [
+        "Correo electrónico eliminado"
+      ],
       "sign in": [
         "iniciar sesión"
       ],
@@ -10583,6 +10678,9 @@
       "Confirm email address": [
         "Confirmar la dirección de correo electrónico"
       ],
+      "Confirm password": [
+        "Confirmar la contraseña"
+      ],
       "Display name": [
         "Nombre para mostrar"
       ],
@@ -10591,6 +10689,9 @@
       ],
       "Email address": [
         "Dirección de correo electrónico"
+      ],
+      "Password": [
+        "Contraseña"
       ],
       "Username": [
         "Nombre de usuario"
@@ -11479,6 +11580,9 @@
       ]
     },
     "Title": {
+      "${ appName } Free": [
+        "${ appName } Free"
+      ],
       "${ MAIL_APP_NAME } Keyboard Shortcuts": [
         "Atajos de teclado de ${ MAIL_APP_NAME }"
       ],
@@ -12049,6 +12153,9 @@
       "Other calendars": [
         "Otros calendarios"
       ],
+      "Other preferences": [
+        "Otras preferencias"
+      ],
       "Password": [
         "Contraseña"
       ],
@@ -12528,6 +12635,9 @@
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "Los mensajes en la carpeta Enviados o Borradores continuarán apareciendo en esa carpeta, incluso si los mueves a otra carpeta."
       ],
+      "See number of unread messages in the tab icon": [
+        "Ver el número de mensajes sin leer en el ícono de la pestaña"
+      ],
       "Set how your list of messages looks like by default.": [
         "Establece el aspecto de tu lista de mensajes por defecto."
       ],
@@ -12614,6 +12724,11 @@
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
         "Es posible que tu cuenta externa haya alcanzado el límite de ancho de banda de 24 horas. ${ BRAND_NAME } intentará reanudar la importación tan pronto como sea posible."
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: end-to-end encrypted password manager": [
+        "${ PASS_APP_NAME }: gestor de contraseñas cifrado de extremo a extremo"
       ]
     },
     "Tooltip automatically attach public key": {

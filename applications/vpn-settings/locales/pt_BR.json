@@ -1607,6 +1607,9 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Este campo exige um mínimo de ${ minimumLength } caracteres."
       ],
+      "Try again later": [
+        "Tente novamente mais tarde"
+      ],
       "Try using only letters, numerals, and _.-": [
         "Tente usar apenas letras, números e _.-"
       ],
@@ -2104,7 +2107,7 @@
         "${ fileName }: pré-visualização em baixa resolução"
       ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
-        "O ${ MAIL_APP_NAME } também pode ser usado com uma senha única que substitui as senhas de login e de acesso à caixa de email. Para habilitar o modo de senha única, digite a senha única que deseja usar e clique em Salvar."
+        "O ${ MAIL_APP_NAME } também pode ser usado com uma senha única que substitui as senhas de início de sessão e de acesso à caixa de e-mail. Para habilitar o modo de senha única, digite a senha única que deseja usar e clique em Salvar."
       ],
       "${ number } city": [
         "${ number } cidade",
@@ -3034,6 +3037,11 @@
         "Assinatura"
       ]
     },
+    "Key transparency details button": {
+      "Click here for more details.": [
+        "Clique aqui para mais detalhes."
+      ]
+    },
     "Label": {
       "${ BRAND_NAME } email or username": [
         "Endereço de e-mail ou nome de usuário da ${ BRAND_NAME }"
@@ -3680,6 +3688,9 @@
       "Auto-reply": [
         "Resposta automática"
       ],
+      "Autofill credit cards (coming soon)": [
+        "Preenchimento automático de cartões de crédito (em breve)"
+      ],
       "Available on all platforms": [
         "Disponível em todas plataformas"
       ],
@@ -4066,6 +4077,18 @@
       ]
     },
     "new_plans: tooltip": {
+      "${ CALENDAR_APP_NAME }: end-to-end encrypted calendar": [
+        "${ CALENDAR_APP_NAME }: calendário criptografado de ponta a ponta"
+      ],
+      "${ DRIVE_APP_NAME }: end-to-end encrypted cloud storage": [
+        "${ DRIVE_APP_NAME }: armazenamento em nuvem criptografado de ponta a ponta"
+      ],
+      "${ MAIL_APP_NAME }: end-to-end encrypted email": [
+        "${ MAIL_APP_NAME }: e-mail criptografado de ponta a ponta"
+      ],
+      "${ VPN_APP_NAME }: unblock content, browse privately": [
+        "${ VPN_APP_NAME }: desbloqueie conteúdos e navegue em privado"
+      ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
         "Acesse conteúdo de serviços de streaming, incluindo Netflix, Disney+ e Prime Video, em qualquer lugar"
       ],
@@ -4092,7 +4115,7 @@
         "Crie até ${ n } calendários ou adicione calendários de amigos, familiares, colegas e organizações"
       ],
       "Create up to ${ n } email addresses/aliases for the whole family. Use them for your online identities, e.g., MyFamilySubs@${ domain } for online subscriptions.": [
-        "Crie até ${ n } endereços de email/alias para toda a família. Use-os para as suas identidades online, como por exemplo, MeuPlanoFamilia@${ domain } para planos online."
+        "Crie até ${ n } endereços de e-mail/alias para toda a família. Use-os para as suas identidades online, como por exemplo, MeuPlanoFamilia@${ domain } para planos online."
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Proteja-se de ameaças à privacidade da VPN ao transmitir seu tráfego de internet por meio de múltiplos servidores"
@@ -4131,7 +4154,7 @@
         "Gerencie sua assinatura, incluindo a personalização do seu plano. Os métodos de pagamento aceitos são cartão de crédito, PayPal, criptomoeda e transferência eletrônica."
       ],
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
-        "Em dias úteis, receba o suporte da equipe de Suporte ao Cliente da ${ BRAND_NAME } com respostas em até 24 horas"
+        "Em dias úteis, a equipe de suporte ao cliente da ${ BRAND_NAME } o ajudará em até 24 horas após a sua solicitação."
       ],
       "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME_TWO } VPN at the same time, you need two VPN connections.": [
         "Uma conexão VPN permite que um dispositivo se conecte ao ${ BRAND_NAME } de cada vez. Por exemplo, para conectar um telefone e um portátil a ${ BRAND_NAME_TWO } em simultâneo, você precisa de duas conexões VPN."
@@ -4230,7 +4253,7 @@
         "Quando você se conecta à nossa VPN, seu DNS faz consultas por meio do nosso túnel VPN criptografado, aumentando sua privacidade e segurança on-line"
       ],
       "When sending to other ${ MAIL_APP_NAME } users, encryption is automatic. Sending to non-${ MAIL_APP_NAME_TWO } users requires setting a password prior to sending.": [
-        "Ao enviar para outros usuários do ${ MAIL_APP_NAME }, a criptografia é automática. O envio para usuários que não são ${ MAIL_APP_NAME_TWO } requer a definição de uma senha antes do envio."
+        "Ao enviar para outros usuários do ${ MAIL_APP_NAME }, a criptografia é automática. O envio para usuários que não usam ${ MAIL_APP_NAME_TWO } requer a definição de uma senha antes do envio."
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "Você pode ter mais de um administrador. Todos os administradores podem adicionar e gerenciar usuários, mas apenas o administrador primário tem controle sobre o faturamento."
@@ -4270,6 +4293,9 @@
       ],
       "Priority support": [
         "Suporte prioritário"
+      ],
+      "Secure your passwords and identity with an open-source and encrypted password manager.": [
+        "Proteja a suas senhas e identidade com um gerenciador de senha criptografada de códio aberto."
       ],
       "Support for 1 custom email domain": [
         "Suporte para 1 domínio de e-mail personalizado"
@@ -5535,6 +5561,11 @@
       ],
       "The selected theme will be active when your system is set to \"light mode\"": [
         "O tema selecionado estará ativo quando o seu sistema estiver configurado no modo \"claro\""
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: end-to-end encrypted password manager": [
+        "${ PASS_APP_NAME }: gerenciador de senhas criptografadas de ponta a ponta"
       ]
     },
     "Tor out of date": {
