@@ -1661,6 +1661,9 @@
       ]
     },
     "familyOffer_2023:Action": {
+      "Decline invitation": [
+        "Uitnodiging afwijzen"
+      ],
       "Got it": [
         "Begrepen"
       ],
@@ -2573,6 +2576,9 @@
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
         "Opslagruimte wordt gedeeld door ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } en ${ DRIVE_APP_NAME }."
       ],
+      "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
+        "Het abonnement loopt af: Heractiveer het voor ${ byDate } om de voordelen van uw ${ planName } te behouden. ${ reactivateLink }"
+      ],
       "Support for 1 custom email domain": [
         "Ondersteuning voor 1 aangepast e-maildomein"
       ],
@@ -3369,6 +3375,9 @@
       "Privacy policy": [
         "Privacybeleid"
       ],
+      "Reactivate now": [
+        "Nu heractiveren"
+      ],
       "Request an invite": [
         "Uitnodiging aanvragen"
       ],
@@ -3600,6 +3609,9 @@
       "Auto-reply": [
         "Automatisch beantwoorden"
       ],
+      "Autofill credit cards (coming soon)": [
+        "Autofill creditcards (weldra klaar)"
+      ],
       "Available on all platforms": [
         "Beschikbaar op alle platformen"
       ],
@@ -3617,6 +3629,9 @@
       ],
       "Contact groups management": [
         "Beheer van contactgroepen"
+      ],
+      "Custom domains for email aliases": [
+        "Aangepaste domeinen voor e-mailalliassen"
       ],
       "Custom email domains": [
         "Aangepaste e-maildomeinen"
@@ -5376,11 +5391,17 @@
       ]
     },
     "Tooltip": {
+      "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
+        "Automatisch wisselen tussen uw favoriete thema's voor dag en nacht met de dag- en nachtmodus van uw systeem"
+      ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Als u een geschenkcode heeft gekocht of een heeft ontvangen van ons supportteam, kunt u deze hier invoeren."
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "De nieuwe abonnementscyclus start op ${ formattedTime }"
+      ],
+      "The selected theme will be active when your system is set to \"dark mode\"": [
+        "Het gekozen thema zal actief zijn zodra uw systeem op \"donkere modus\" is ingesteld."
       ],
       "The selected theme will be active when your system is set to \"light mode\"": [
         "Het geselecteerde thema is actief wanneer uw systeem is ingesteld op \"lichte modus\""
