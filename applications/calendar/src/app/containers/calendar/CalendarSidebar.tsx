@@ -110,7 +110,11 @@ const CalendarSidebar = ({
         !user.hasPaidMail
     );
 
-    const { show: showHolidaysSpotlight, onDisplayed: onHolidaysSpotlightDisplayed } = useSpotlightOnFeature(
+    const {
+        show: showHolidaysSpotlight,
+        onDisplayed: onHolidaysSpotlightDisplayed,
+        onClose: onCloseHolidaysSpotlight,
+    } = useSpotlightOnFeature(
         FeatureCode.HolidaysCalendarsSpotlight,
         !isWelcomeFlow && !isNarrow && !holidaysCalendars.length,
         // TODO: update
@@ -178,6 +182,12 @@ const CalendarSidebar = ({
             />
         </Tooltip>
     );
+    const handleClickPlusButton = () => {
+        // close spotlight if it's on display
+        if (shouldShowHolidaysSpotlight) {
+            onCloseHolidaysSpotlight();
+        }
+    };
 
     const myCalendarsList = (
         <SidebarList>
@@ -213,6 +223,7 @@ const CalendarSidebar = ({
                                         className="navigation-link-header-group-control flex"
                                         content={<Icon name="plus" className="navigation-icon" alt={addCalendarText} />}
                                         ref={dropdownRef}
+                                        onClick={handleClickPlusButton}
                                     >
                                         <DropdownMenu>
                                             <DropdownMenuButton
