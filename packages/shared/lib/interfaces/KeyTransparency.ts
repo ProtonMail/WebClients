@@ -1,5 +1,5 @@
 import { PublicKeyReference } from '@proton/crypto';
-import { Epoch, KTPublicKeyStatus, SelfAuditResult } from '@proton/key-transparency/lib';
+import { Epoch, SelfAuditResult } from '@proton/key-transparency/lib';
 
 import { Address } from './Address';
 import { DecryptedKey } from './Key';
@@ -53,8 +53,8 @@ export type VerifyOutboundPublicKeys = (
         signedKeyList: FetchedSignedKeyList | null;
     }
 ) => Promise<{
-    addressKTStatus?: KTPublicKeyStatus;
-    catchAllKTStatus?: KTPublicKeyStatus;
+    addressKTResult?: KeyTransparencyVerificationResult;
+    catchAllKTResult?: KeyTransparencyVerificationResult;
 }>;
 
 export type SaveSKLToLS = (
@@ -75,3 +75,14 @@ export enum KeyTransparencyActivation {
 }
 
 export type GetLatestEpoch = (forceRefresh?: boolean) => Epoch;
+
+export enum KT_VERIFICATION_STATUS {
+    VERIFIED_KEYS,
+    UNVERIFIED_KEYS,
+    VERIFICATION_FAILED,
+}
+
+export interface KeyTransparencyVerificationResult {
+    status: KT_VERIFICATION_STATUS;
+    keysChangedRecently?: boolean;
+}

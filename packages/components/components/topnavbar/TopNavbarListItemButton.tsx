@@ -1,7 +1,10 @@
 import { ElementType, ForwardedRef, ReactElement, cloneElement, forwardRef } from 'react';
 import { PolymorphicPropsWithRef } from 'react-polymorphic-types';
 
-import { ButtonLike, ButtonLikeProps } from '@proton/atoms';
+import { c } from 'ttag';
+
+import { ButtonLike, ButtonLikeProps, NotificationDot } from '@proton/atoms';
+import { ThemeColor } from '@proton/colors/types';
 import clsx from '@proton/utils/clsx';
 
 type ButtonButtonLikeProps = ButtonLikeProps<'button'>;
@@ -11,7 +14,7 @@ interface OwnProps {
     shape?: ButtonButtonLikeProps['shape'];
     icon: ReactElement;
     text: string;
-    hasRedDot?: boolean;
+    notificationDotColor?: ThemeColor;
 }
 
 export type TopNavbarListItemButtonProps<E extends ElementType> = PolymorphicPropsWithRef<OwnProps, E>;
@@ -26,7 +29,7 @@ const TopNavbarListItemButtonBase = <E extends ElementType = typeof defaultEleme
         icon,
         disabled,
         className,
-        hasRedDot,
+        notificationDotColor,
         tabIndex,
         children,
         as,
@@ -43,9 +46,9 @@ const TopNavbarListItemButtonBase = <E extends ElementType = typeof defaultEleme
             color={color}
             shape={shape}
             className={clsx([
-                'topnav-link inline-flex flex-nowrap flex-align-items-center',
-                hasRedDot && 'relative topnav-link--blackfriday',
+                'topnav-link inline-flex flex-nowrap flex-align-items-center relative',
                 className,
+                notificationDotColor && 'topnav-link--notification',
             ])}
             disabled={isDisabled}
             tabIndex={isDisabled ? -1 : tabIndex}
@@ -56,6 +59,13 @@ const TopNavbarListItemButtonBase = <E extends ElementType = typeof defaultEleme
                 className: clsx([icon.props.className, 'topnav-icon mr-2']),
             })}
             <span className="navigation-title">{text}</span>
+            {notificationDotColor && (
+                <NotificationDot
+                    className="ml-1"
+                    color={notificationDotColor}
+                    alt={c('Action').t`Attention required`}
+                />
+            )}
             {children}
         </ButtonLike>
     );

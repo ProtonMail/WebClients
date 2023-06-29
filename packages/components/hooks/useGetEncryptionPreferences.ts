@@ -64,7 +64,7 @@ const useGetEncryptionPreferences = () => {
                     Keys: [],
                     publicKeys: [],
                     RecipientType: RECIPIENT_TYPES.TYPE_INTERNAL,
-                    ktVerificationStatus: KT_VERIFICATION_STATUS.VERIFIED_KEYS,
+                    ktVerificationResult: { status: KT_VERIFICATION_STATUS.VERIFIED_KEYS },
                 };
                 pinnedKeysConfig = { pinnedKeys: [], isContact: false };
             } else {
