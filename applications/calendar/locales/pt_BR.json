@@ -2320,7 +2320,7 @@
         "Nenhum contato encontrado para importação"
       ],
       "No emails found to import - the account does not have an inbox": [
-        "Nenhum email encontrado para importação - a conta não possui uma caixa de entrada"
+        "Nenhum e-mail encontrado para importação — a conta não possui uma caixa de entrada."
       ],
       "No valid address found": [
         "Nenhum endereço válido encontrado"
@@ -3635,7 +3635,7 @@
         "Importar Caixa de Entrada"
       ],
       "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "Importe seus emails, calendários e contatos de outro serviço para ${ BRAND_NAME }."
+        "Importe seus e-mails, calendários e contatos de outro serviço para ${ BRAND_NAME }."
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Importando seus dados de ${ fromEmail } para ${ toEmail }."
@@ -4127,6 +4127,11 @@
       ],
       "Trusted": [
         "Confiável"
+      ]
+    },
+    "Key transparency details button": {
+      "Click here for more details.": [
+        "Clique aqui para mais detalhes."
       ]
     },
     "Knowledge base link label": {
@@ -6003,8 +6008,8 @@
     },
     "Title": {
       "${ emailsCount } email address": [
-        "${ emailsCount } endereço de email",
-        "${ emailsCount } endereços de email"
+        "${ emailsCount } endereço de e-mail",
+        "${ emailsCount } endereços de e-mail"
       ],
       "(active)": [
         "(ativo)"
@@ -6374,7 +6379,7 @@
         "Novidades"
       ],
       "You have invited participants with equivalent emails": [
-        "Você convidou os participantes com emails equivalentes"
+        "Você convidou os participantes com e-mails equivalentes."
       ],
       "Your calendar link": [
         "Link do seu calendário"
