@@ -21,7 +21,7 @@ const getPublicKeysEmailHelper = async (
     if (ktActivation === KeyTransparencyActivation.LOG_ONLY) {
         return {
             ...result,
-            ktVerificationStatus: undefined,
+            ktVerificationResult: undefined,
         };
     }
     return result;

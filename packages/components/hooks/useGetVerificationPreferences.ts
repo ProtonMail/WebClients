@@ -63,13 +63,13 @@ const useGetVerificationPreferences = () => {
                     apiKeys: activePublicKeys,
                     pinnedKeys: [],
                     compromisedFingerprints,
-                    ktVerificationStatus: KT_VERIFICATION_STATUS.VERIFIED_KEYS,
+                    ktVerificationResult: { status: KT_VERIFICATION_STATUS.VERIFIED_KEYS },
                 };
             }
             const {
                 RecipientType,
                 publicKeys: apiKeys,
-                ktVerificationStatus,
+                ktVerificationResult,
             }: ApiKeysConfig = await getPublicKeys(emailAddress, lifetime);
             const isInternal = RecipientType === RECIPIENT_TYPES.TYPE_INTERNAL;
             const { publicKeys } = splitKeys(await getUserKeys());
@@ -90,7 +90,7 @@ const useGetVerificationPreferences = () => {
             let verifyingKeys: PublicKeyReference[] = [];
             if (pinnedKeys) {
                 verifyingKeys = getVerifyingKeys(pinnedKeys, compromisedKeysFingerprints);
-            } else if (isInternal && ktVerificationStatus === KT_VERIFICATION_STATUS.VERIFIED_KEYS) {
+            } else if (isInternal && ktVerificationResult?.status === KT_VERIFICATION_STATUS.VERIFIED_KEYS) {
                 verifyingKeys = getVerifyingKeys(apiPublicKeys, compromisedKeysFingerprints);
             }
             return {
@@ -98,7 +98,7 @@ const useGetVerificationPreferences = () => {
                 verifyingKeys,
                 pinnedKeys,
                 apiKeys: apiPublicKeys,
-                ktVerificationStatus,
+                ktVerificationResult,
                 pinnedKeysFingerprints,
                 compromisedKeysFingerprints,
                 pinnedKeysVerified,
