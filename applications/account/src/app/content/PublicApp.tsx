@@ -517,8 +517,8 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                                                         loader={loader}
                                                         productParam={APPS.PROTONPASS}
                                                         clientType={CLIENT_TYPES.PASS}
-                                                        toApp={maybePreAppIntent}
-                                                        toAppName={toAppName}
+                                                        toApp={APPS.PROTONPASS}
+                                                        toAppName={getToAppName(APPS.PROTONPASS)}
                                                         onLogin={handleLogin}
                                                         fork={!!forkState}
                                                         onBack={
