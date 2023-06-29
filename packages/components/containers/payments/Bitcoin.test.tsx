@@ -1,7 +1,7 @@
 import { render, waitFor } from '@testing-library/react';
 
 import { PAYMENT_TOKEN_STATUS } from '@proton/components/payments/core';
-import { createToken, getTokenStatus } from '@proton/shared/lib/api/payments';
+import { createBitcoinPayment, createToken, getTokenStatus } from '@proton/shared/lib/api/payments';
 import { addApiMock, apiMock, applyHOCs, flushPromises, withApi, withConfig } from '@proton/testing';
 
 import Bitcoin from './Bitcoin';
@@ -26,10 +26,17 @@ const defaultTokenResponse = {
     },
 };
 
+const createBitcoinPaymentUrl = createBitcoinPayment(500, 'USD').url;
+const defaultBitcoinPaymentResponse = {
+    AmountBitcoin: 0.00975,
+    Address: 'address-987',
+};
+
 beforeEach(() => {
     jest.clearAllMocks();
 
     addApiMock(createTokenUrl, () => defaultTokenResponse);
+    addApiMock(createBitcoinPaymentUrl, () => defaultBitcoinPaymentResponse);
 });
 
 it('should render', async () => {
@@ -39,6 +46,25 @@ it('should render', async () => {
             amount={1000}
             currency="USD"
             type="signup"
+            onTokenValidated={onTokenValidated}
+            awaitingPayment={false}
+        />
+    );
+    await waitFor(() => {
+        expect(container).not.toBeEmptyDOMElement();
+    });
+
+    expect(container).toHaveTextContent('address-987');
+    expect(container).toHaveTextContent('0.00975');
+});
+
+it('should render for signup-pass', async () => {
+    const { container } = render(
+        <BitcoinContext
+            api={apiMock}
+            amount={1000}
+            currency="USD"
+            type="signup-pass"
             onTokenValidated={onTokenValidated}
             awaitingPayment={false}
         />
@@ -76,7 +102,7 @@ it('should check the token every 10 seconds', async () => {
             api={apiMock}
             amount={1000}
             currency="USD"
-            type="signup"
+            type="signup-pass"
             onTokenValidated={onTokenValidated}
             awaitingPayment={false}
             enableValidation={true}
@@ -99,4 +125,39 @@ it('should check the token every 10 seconds', async () => {
     await flushPromises();
 
     expect(onTokenValidated).toHaveBeenCalledTimes(1); // check that it's called only once
+});
+
+it('should not poll the token for the old flows', async () => {
+    addApiMock(getTokenStatus('token-123').url, () => {
+        return { Status: PAYMENT_TOKEN_STATUS.STATUS_PENDING };
+    });
+
+    render(
+        <BitcoinContext
+            api={apiMock}
+            amount={1000}
+            currency="USD"
+            type="signup"
+            onTokenValidated={onTokenValidated}
+            awaitingPayment={false}
+            enableValidation={true}
+        />
+    );
+
+    jest.advanceTimersByTime(11000);
+    await flushPromises();
+
+    addApiMock(getTokenStatus('token-123').url, function second() {
+        return { Status: PAYMENT_TOKEN_STATUS.STATUS_CHARGEABLE };
+    });
+
+    jest.advanceTimersByTime(11000);
+    await flushPromises();
+
+    expect(onTokenValidated).toHaveBeenCalledTimes(0);
+
+    jest.advanceTimersByTime(11000);
+    await flushPromises();
+
+    expect(onTokenValidated).toHaveBeenCalledTimes(0);
 });
