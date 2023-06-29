@@ -1607,6 +1607,9 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Este campo requiere un mínimo de ${ minimumLength } caracteres."
       ],
+      "Try again later": [
+        "Vuelva a intentarlo más tarde"
+      ],
       "Try using only letters, numerals, and _.-": [
         "Utiliza solo letras, números y _.-"
       ],
@@ -3028,6 +3031,11 @@
         "Suscripción"
       ]
     },
+    "Key transparency details button": {
+      "Click here for more details.": [
+        "Haz clic aquí para obtener más información."
+      ]
+    },
     "Label": {
       "${ BRAND_NAME } email or username": [
         "Correo electrónico o nombre de usuario de ${ BRAND_NAME }"
@@ -3620,6 +3628,10 @@
         "${ n } carpeta y etiqueta",
         "${ n } carpetas y etiquetas"
       ],
+      "${ n } hide-my-email alias": [
+        "${ n } alias de Hide-my-email",
+        "${ n } alias de Hide-my-email"
+      ],
       "${ n } label": [
         "${ n } etiqueta",
         "${ n } etiquetas"
@@ -3670,6 +3682,9 @@
       "Auto-reply": [
         "Respuesta automática"
       ],
+      "Autofill credit cards (coming soon)": [
+        "Relleno automático de tarjetas de crédito (próximamente)"
+      ],
       "Available on all platforms": [
         "Disponible en todas las plataformas"
       ],
@@ -3687,6 +3702,9 @@
       ],
       "Contact groups management": [
         "Administración de grupos de contactos"
+      ],
+      "Custom domains for email aliases": [
+        "Dominios personalizados para alias de correo electrónico"
       ],
       "Custom email domains": [
         "Dominios de correo personalizados"
@@ -3769,6 +3787,9 @@
       ],
       "No-logs policy": [
         "Política de cero registros"
+      ],
+      "Organize items with multiple vaults": [
+        "Organizar elementos en bóvedas múltiples"
       ],
       "Password-protected Emails": [
         "Correos electrónicos protegidos con contraseña"
@@ -4050,6 +4071,18 @@
       ]
     },
     "new_plans: tooltip": {
+      "${ CALENDAR_APP_NAME }: end-to-end encrypted calendar": [
+        "${ CALENDAR_APP_NAME }: calendario cifrado de extremo a extremo"
+      ],
+      "${ DRIVE_APP_NAME }: end-to-end encrypted cloud storage": [
+        "${ DRIVE_APP_NAME }: almacenamiento en la nube cifrado de extremo a extremo"
+      ],
+      "${ MAIL_APP_NAME }: end-to-end encrypted email": [
+        "${ MAIL_APP_NAME }: correo electrónico cifrado de extremo a extremo"
+      ],
+      "${ VPN_APP_NAME }: unblock content, browse privately": [
+        "${ VPN_APP_NAME }: desbloquee contenido y navegue en privado"
+      ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
         "Accede desde cualquier lugar al contenido de servicios de streaming como Netflix, Disney+ y Prime Video."
       ],
@@ -4115,7 +4148,7 @@
         "Administra tu suscripción y personaliza también tu plan. Puedes pagar con tarjeta de crédito, PayPal, criptomonedas y transferencia."
       ],
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
-        "Los días laborables recibirás la ayuda del equipo de atención al cliente de ${ BRAND_NAME } en un plazo máximo de 24 horas desde la solicitud."
+        "En días laborales, recibe soporte del equipo de servicio al cliente de ${ BRAND_NAME } en menos de 24 horas"
       ],
       "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME_TWO } VPN at the same time, you need two VPN connections.": [
         "Cada conexión VPN permite que un solo dispositivo se conecte a ${ BRAND_NAME } VPN en cualquier momento. Por ejemplo, para conectar un teléfono y un portátil a ${ BRAND_NAME_TWO } VPN a la vez, necesitas dos conexiones VPN."
@@ -4132,11 +4165,14 @@
       "Our servers’ hard disks are fully encrypted with multiple password layers so your data is protected even if our hardware is compromised": [
         "Los discos duros de nuestros servidores están completamente cifrados con numerosas capas de contraseñas, por lo que tus datos estarán protegidos aunque nuestro hardware se vea comprometido."
       ],
+      "Password management and identity protection": [
+        "Gestión de contraseñas y protección de identidad"
+      ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Personaliza tu firma de correo electrónico con logotipos, imágenes, iconos de redes sociales, enlaces en tus datos de contacto, etc."
       ],
       "Phone support is available from the ${ BRAND_NAME } Customer Success team during European business hours, for customers with 6 or more users": [
-        "El equipo de satisfacción de ${ BRAND_NAME } ofrece asistencia telefónica en horario laboral europeo a los clientes que tienen, como mínimo, 6 usuarios."
+        "El equipo de atención al cliente de ${ BRAND_NAME } ofrece asistencia telefónica en horario laboral europeo a los clientes que tienen, como mínimo, 6 usuarios."
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Impide que ${ BRAND_NAME } o terceros puedan acceder a los mensajes. Los únicos que pueden leerlos son el remitente y el destinatario."
@@ -4211,7 +4247,7 @@
         "Mientras estás conectado a nuestra VPN, las consultas de DNS pasan por nuestro túnel VPN cifrado, por lo que tendrás todavía más privacidad y seguridad en internet."
       ],
       "When sending to other ${ MAIL_APP_NAME } users, encryption is automatic. Sending to non-${ MAIL_APP_NAME_TWO } users requires setting a password prior to sending.": [
-        "Los correos que envías a usuarios de ${ MAIL_APP_NAME } se cifran automáticamente. Si el destinatario no usa ${ MAIL_APP_NAME_TWO }, tendrás que establecer una contraseña antes de enviar el mensaje."
+        "Los correos que envías a usuarios de ${ MAIL_APP_NAME } se cifran automáticamente. Si el destinatario no utiliza ${ MAIL_APP_NAME_TWO }, tendrás que establecer una contraseña antes de enviar el mensaje."
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "Puedes tener varios administradores. Todos tienen permiso para añadir y gestionar usuarios, pero solo el administrador principal puede controlar la facturación."
@@ -4251,6 +4287,9 @@
       ],
       "Priority support": [
         "Soporte prioritario"
+      ],
+      "Secure your passwords and identity with an open-source and encrypted password manager.": [
+        "Asegura tus contraseñas e identidad con un gestor de contraseñas cifrado de código abierto."
       ],
       "Support for 1 custom email domain": [
         "Soporte para 1 dominio de correo electrónico personalizado"
@@ -5504,6 +5543,11 @@
       ],
       "The selected theme will be active when your system is set to \"light mode\"": [
         "El tema seleccionado estará activo cuando tu sistema esté en \"modo claro\"."
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: end-to-end encrypted password manager": [
+        "${ PASS_APP_NAME }: gestor de contraseñas cifrado de extremo a extremo"
       ]
     },
     "Tor out of date": {
