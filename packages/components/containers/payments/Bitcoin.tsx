@@ -124,25 +124,36 @@ const Bitcoin = ({
     );
 
     const request = async () => {
-        setError(false);
-        try {
-            const data: CreateBitcoinTokenData = {
-                Amount: amount,
-                Currency: currency,
-                Payment: {
-                    Type: 'cryptocurrency',
-                    Details: {
-                        Coin: 'bitcoin',
-                    },
-                },
-            };
+        const fetchWithoutToken = async () => {
+            const { AmountBitcoin, Address } = await api(createBitcoinPayment(amount, currency));
+            setModel({ amountBitcoin: AmountBitcoin, address: Address, token: null });
+        };
 
+        const fetchAsToken = async () => {
             try {
+                const data: CreateBitcoinTokenData = {
+                    Amount: amount,
+                    Currency: currency,
+                    Payment: {
+                        Type: 'cryptocurrency',
+                        Details: {
+                            Coin: 'bitcoin',
+                        },
+                    },
+                };
                 const { Token, Data } = await silentApi<any>(createToken(data));
                 setModel({ amountBitcoin: Data.CoinAmount, address: Data.CoinAddress, token: Token });
             } catch (error) {
-                const { AmountBitcoin, Address } = await api(createBitcoinPayment(amount, currency));
-                setModel({ amountBitcoin: AmountBitcoin, address: Address, token: null });
+                await fetchWithoutToken();
+            }
+        };
+
+        setError(false);
+        try {
+            if (type === 'signup-pass') {
+                await fetchAsToken();
+            } else {
+                await fetchWithoutToken();
             }
         } catch (error) {
             setError(true);
