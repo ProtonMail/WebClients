@@ -37,46 +37,34 @@ interface Arguments {
 const updateAllRecurrence = ({ component, originalComponent, mode, isAttendee }: Arguments): VcalVeventComponent => {
     // Have to set the old UID (this won't be necessary until we merge chains)
     const veventWithOldUID = {
-        ...component,
+        ...omit(component, ['recurrence-id']),
         uid: { value: originalComponent.uid.value },
     } as VcalVeventComponent;
 
-    // Strip any RECURRENCE-ID when updating all events
-    delete veventWithOldUID['recurrence-id'];
-
     if (mode === UpdateAllPossibilities.KEEP_SINGLE_EDITS || isAttendee) {
-        // Copy over the exdates, if any
-        if (originalComponent.exdate) {
-            veventWithOldUID.exdate = originalComponent.exdate;
-        }
-        // If single edits are to be kept, the start time can not change, shouldn't get here if not but just to be sure
-        veventWithOldUID.dtstart = originalComponent.dtstart;
-        veventWithOldUID.dtend = getEndDateTimeMerged(
-            component.dtstart,
-            getDtendProperty(component),
-            veventWithOldUID.dtstart
-        );
-
-        return veventWithOldUID;
+        return {
+            ...veventWithOldUID,
+            // If single edits are to be kept, the start time can not change, shouldn't get here if not but just to be sure
+            dtstart: originalComponent.dtstart,
+            dtend: getEndDateTimeMerged(component.dtstart, getDtendProperty(component), veventWithOldUID.dtstart),
+            // Copy over the exdates, if any
+            ...(originalComponent.exdate && { exdate: originalComponent.exdate }),
+        };
     }
 
     if (mode === UpdateAllPossibilities.KEEP_ORIGINAL_START_DATE_BUT_USE_TIME) {
-        // Time changed so remove the exdate
-        delete veventWithOldUID.exdate;
-
         const mergedDtstart = getStartDateTimeMerged(component.dtstart, originalComponent.dtstart);
-        const mergedDtend = getEndDateTimeMerged(component.dtstart, getDtendProperty(component), mergedDtstart);
 
-        veventWithOldUID.dtstart = mergedDtstart;
-        veventWithOldUID.dtend = mergedDtend;
-
-        return veventWithOldUID;
+        return {
+            // Time changed so remove the exdate
+            ...omit(veventWithOldUID, ['exdate']),
+            dtstart: mergedDtstart,
+            dtend: getEndDateTimeMerged(component.dtstart, getDtendProperty(component), mergedDtstart),
+        };
     }
 
-    delete veventWithOldUID.exdate;
-
     // Date has changed here
-    return getComponentWithUpdatedRrule(veventWithOldUID);
+    return getComponentWithUpdatedRrule(omit(veventWithOldUID, ['exdate']));
 };
 
 export default updateAllRecurrence;

@@ -286,6 +286,7 @@ const getSaveEventActions = async ({
             onSendPrefsErrors,
             handleSyncActions,
         });
+
         const successText = getSingleEventText(undefined, newEditEventData, saveInviteActions);
         return {
             syncActions: multiSyncActions,
