@@ -1,6 +1,7 @@
 import { serverTime } from '@proton/crypto';
 import { absoluteToRelativeTrigger, getIsAbsoluteTrigger } from '@proton/shared/lib/calendar/alarms/trigger';
 
+import { DAY } from '../constants';
 import { fromUTCDate } from '../date/timezone';
 import { omit, pick } from '../helpers/object';
 import {
@@ -31,8 +32,8 @@ import { generateProtonCalendarUID, getDisplayTitle, hasMoreThan, wrap } from '.
 import { withMandatoryPublishFields as withVAlarmMandatoryPublishFields } from './valarmHelper';
 import { parse, serialize, toTriggerString } from './vcal';
 import { prodId } from './vcalConfig';
-import { dateTimeToProperty } from './vcalConverter';
-import { getEventStatus, getIsCalendar, getIsEventComponent } from './vcalHelper';
+import { dateTimeToProperty, propertyToUTCDate } from './vcalConverter';
+import { getEventStatus, getIsAllDay, getIsCalendar, getIsEventComponent } from './vcalHelper';
 
 const { ENCRYPTED_AND_SIGNED, SIGNED, CLEAR_TEXT } = CALENDAR_CARD_TYPE;
 
@@ -109,6 +110,26 @@ export const withMandatoryPublishFields = <T>(
             withVAlarmMandatoryPublishFields(component, eventTitle, email)
         ),
     });
+};
+
+type VeventWithRequiredDtStart<T> = RequireOnly<VcalVeventComponent, 'dtstart'> & T;
+
+export const withoutRedundantDtEnd = <T>(
+    properties: VeventWithRequiredDtStart<T>
+): VeventWithRequiredDtStart<T> | Omit<VeventWithRequiredDtStart<T>, 'dtend'> => {
+    const utcDtStart = +propertyToUTCDate(properties.dtstart);
+    const utcDtEnd = properties.dtend ? +propertyToUTCDate(properties.dtend) : undefined;
+
+    // All day events date ranges are stored non-inclusively, so if a full day event has same start and end day, we can ignore it
+    const ignoreDtend =
+        !utcDtEnd ||
+        (getIsAllDay(properties) ? Math.floor((utcDtEnd - utcDtStart) / DAY) <= 1 : utcDtStart === utcDtEnd);
+
+    if (ignoreDtend) {
+        return omit(properties, ['dtend']);
+    }
+
+    return properties;
 };
 
 export const withRequiredProperties = <T>(properties: VcalVeventComponent & T): VcalVeventComponent & T => {

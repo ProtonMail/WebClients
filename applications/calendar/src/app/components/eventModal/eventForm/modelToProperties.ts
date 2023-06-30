@@ -1,4 +1,4 @@
-import { addDays } from 'date-fns';
+import { addDays, isSameDay } from 'date-fns';
 
 import { dedupeNotifications } from '@proton/shared/lib/calendar/alarms';
 import { modelToValarmComponent } from '@proton/shared/lib/calendar/alarms/modelToValarm';
@@ -10,7 +10,6 @@ import {
     propertyToUTCDate,
 } from '@proton/shared/lib/calendar/vcalConverter';
 import { withRequiredProperties } from '@proton/shared/lib/calendar/veventHelper';
-import { isSameDay } from '@proton/shared/lib/date-fns-utc';
 import { omit } from '@proton/shared/lib/helpers/object';
 import { DateTimeModel, EventModel } from '@proton/shared/lib/interfaces/calendar';
 import { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
@@ -44,6 +43,7 @@ const modelToDateProperties = ({ start, end, isAllDay }: EventModel) => {
     // All day events date ranges are stored non-inclusively, so add a full day from the selected date to the end date
     const modifiedEnd = isAllDay ? { ...end, date: addDays(end.date, 1) } : end;
     const dtend = modelToDateProperty(modifiedEnd, isAllDay);
+
     const ignoreDtend = isAllDay
         ? isSameDay(start.date, end.date)
         : +propertyToUTCDate(dtstart) === +propertyToUTCDate(dtend);
