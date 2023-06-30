@@ -1,3 +1,22 @@
+## Release 5.0.25.0 — July 12, 2023
+
+### New features
+
+-   We are extending the messages content search to all Proton users
+-   Links that directly contain UTM parameters are now cleaned if you have the Block email tracking setting on. This will prevent advertisers to track your interaction with your emails
+-   Access easily important email action through a command tool (CMD + K)
+-   Add a setting to show the number of the unread messages directly in the browser tab icon
+
+### Improvements
+
+-   Add the option to archive all messages from a folder
+-   We've updated our Terms and Conditions (I think legal asked for this one)
+
+### Fixes
+
+-   Fix some emails content that was not showing correctly in dark mode
+-   Fix Has file filter for message threads in custom folders
+
 ## Release 5.0.24.0 — June 28, 2023
 
 ### Improvements
