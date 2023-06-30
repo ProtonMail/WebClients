@@ -50,7 +50,7 @@
   --interaction-weak-major-3: #b1b3b9;
   --interaction-weak-contrast: #000000;
   --text-norm: #262a33;
-  --text-weak: #696f7d;
+  --text-weak: #585d69;
   --text-hint: #a4a9b5;
   --text-disabled: #babec7;
   --text-invert: white;
@@ -76,6 +76,7 @@
   --optional-font-family: system-ui, sans-serif;
   --optional-border-radius: 3;
   --optional-main-border-color: transparent;
+  --optional-email-item-read-background-color: #f7f8fa;
   --optional-logo-text-proton-color: initial;
   --optional-logo-text-product-color: initial;
   --optional-promotion-text-color: #15006f;
