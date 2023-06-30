@@ -13,9 +13,10 @@ import {
     Icon,
     usePopperAnchor,
 } from '@proton/components';
-import { selectAliasLimits } from '@proton/pass/store';
+import { selectAliasLimits, selectPassPlan } from '@proton/pass/store';
 import type { ItemType } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
+import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { pipe } from '@proton/pass/utils/fp';
 import clsx from '@proton/utils/clsx';
 
@@ -41,6 +42,7 @@ export const Header: VFC<{}> = () => {
     const withClose = <T extends (...args: any[]) => void>(action: T) => pipe(action, close) as T;
     const copyToClipboard = useCopyToClipboard();
     const { needsUpgrade, aliasLimit, aliasLimited, aliasTotalCount } = useSelector(selectAliasLimits);
+    const isFreePlan = useSelector(selectPassPlan) === UserPassPlan.FREE;
     const showCreditCards = useFeatureFlag<boolean>(PassFeature.PassCreditCardsV1);
 
     const handleNewItemClick = (type: ItemType) => {
@@ -110,6 +112,7 @@ export const Header: VFC<{}> = () => {
                                     key={`item-type-dropdown-button-${type}`}
                                     className={`${itemTypeToSubThemeClassName[type]} flex flex-align-items-center py-2 px-4`}
                                     onClick={withClose(() => handleNewItemClick(type))}
+                                    disabled={isFreePlan && type === 'creditCard'}
                                 >
                                     <span
                                         className="mr-2 w-custom h-custom rounded-lg overflow-hidden relative pass-item-icon"
