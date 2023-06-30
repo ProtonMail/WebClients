@@ -55,22 +55,22 @@
         "postcss-logical": "^6.2.0",
         "react-refresh": "^0.14.0",
         "resolve-url-loader": "^5.0.0",
-        "sass": "^1.63.4",
+        "sass": "^1.63.6",
         "sass-loader": "^13.3.2",
         "terser-webpack-plugin": "^5.3.9",
         "ttag": "^1.7.24",
         "ttag-cli": "^1.10.5",
-        "webpack": "^5.86.0",
+        "webpack": "^5.88.1",
         "webpack-cli": "^5.1.4",
         "webpack-dev-server": "^4.15.1",
         "webpack-retry-chunk-load-plugin": "^3.1.1",
         "webpack-subresource-integrity": "^5.1.0"
     },
     "devDependencies": {
-        "eslint": "^8.42.0",
+        "eslint": "^8.43.0",
         "prettier": "^2.8.8"
     },
     "engines": {
-        "node": ">= v18.16.0"
+        "node": ">= v18.16.1"
     }
 }
