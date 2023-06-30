@@ -195,14 +195,9 @@ export const createFormManager = (options: FormManagerOptions) => {
     const onMutation = (mutations: MutationRecord[]) => {
         const triggerFormChange = mutations.some((mutation) => {
             if (mutation.type === 'childList') {
-                const newNodes = Array.from(mutation.addedNodes);
-                const deletedNodes = Array.from(mutation.removedNodes);
-
-                return (
-                    newNodes.some(
-                        (node) => isNodeOfInterest(node) || (node instanceof HTMLElement && hasUnprocessedFields(node))
-                    ) || deletedNodes.some(isNodeOfInterest)
-                );
+                const deletedNodes = Array.from(mutation.removedNodes).some(isNodeOfInterest);
+                const newNodes = Array.from(mutation.addedNodes).some(isNodeOfInterest);
+                return newNodes || deletedNodes;
             }
 
             if (mutation.type === 'attributes') {
