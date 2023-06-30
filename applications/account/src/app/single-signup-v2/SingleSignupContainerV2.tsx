@@ -183,20 +183,6 @@ const SingleSignupContainerV2 = ({ toApp, fork, activeSessions, loader, onLogin,
 
     const unauthApi = useApi();
 
-    const measure = (data: TelemetryMeasurementData) => {
-        const values = 'values' in data ? data.values : {};
-        return sendTelemetryReport({
-            api: unauthApi,
-            measurementGroup: TelemetryMeasurementGroups.accountSignup,
-            event: data.event,
-            dimensions: {
-                ...data.dimensions,
-                flow: 'pass_signup_launch',
-            },
-            values,
-        }).catch(noop);
-    };
-
     const UID = model.session?.UID;
     const normalApi = UID ? getUIDApi(UID, unauthApi) : unauthApi;
     const silentApi = getSilentApi(normalApi);
@@ -292,6 +278,20 @@ const SingleSignupContainerV2 = ({ toApp, fork, activeSessions, loader, onLogin,
             mode,
         };
     });
+
+    const measure = (data: TelemetryMeasurementData) => {
+        const values = 'values' in data ? data.values : {};
+        return sendTelemetryReport({
+            api: unauthApi,
+            measurementGroup: TelemetryMeasurementGroups.accountSignup,
+            event: data.event,
+            dimensions: {
+                ...data.dimensions,
+                flow: signupParameters.mode === SignupMode.Onboarding ? 'pass_web_first_onboard' : 'pass_signup',
+            },
+            values,
+        }).catch(noop);
+    };
 
     const selectedPlan = getPlanFromPlanIDs(model.plans, model.subscriptionData.planIDs) || FREE_PLAN;
     const upsellPlanCard = planCards.find((planCard) => planCard.type === 'best');
@@ -493,6 +493,8 @@ const SingleSignupContainerV2 = ({ toApp, fork, activeSessions, loader, onLogin,
                 upsellPlanCard,
             });
 
+            measure({ event: TelemetryAccountSignupEvents.beSignOutSuccess, dimensions: {} });
+
             setModelDiff({
                 optimistic: {},
                 session: undefined,
@@ -552,7 +554,7 @@ const SingleSignupContainerV2 = ({ toApp, fork, activeSessions, loader, onLogin,
 
         triggerModals(session);
         measure({
-            event: TelemetryAccountSignupEvents.userSignInSuccess,
+            event: TelemetryAccountSignupEvents.beSignInSuccess,
             dimensions: { plan: getPlanNameFromSession(session) },
         });
     };
