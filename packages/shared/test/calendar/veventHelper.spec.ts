@@ -2,7 +2,7 @@ import { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
 
 import { CALENDAR_CARD_TYPE } from '../../lib/calendar/constants';
 import { parse } from '../../lib/calendar/vcal';
-import { getVeventParts, withMandatoryPublishFields } from '../../lib/calendar/veventHelper';
+import { getVeventParts, withMandatoryPublishFields, withoutRedundantDtEnd } from '../../lib/calendar/veventHelper';
 import { toCRLF } from '../../lib/helpers/string';
 
 const { ENCRYPTED_AND_SIGNED, SIGNED, CLEAR_TEXT } = CALENDAR_CARD_TYPE;
@@ -300,5 +300,101 @@ END:VEVENT
         };
 
         expect(withMandatoryPublishFields(vevent, 'protonlovestesting@proton.me')).toEqual(expected);
+    });
+});
+
+fdescribe('withoutRedundantDtEnd', () => {
+    describe('full day', () => {
+        it('should remove redundant dtend', () => {
+            const ALL_DAY_COMPONENT = parse(`BEGIN:VEVENT
+UID:abc
+DTSTAMP:20230614T101702Z
+DTSTART;VALUE=DATE:20190812
+DTEND;VALUE=DATE:20190813
+SUMMARY:text
+RRULE:FREQ=DAILY
+END:VEVENT`) as VcalVeventComponent;
+
+            expect(withoutRedundantDtEnd(ALL_DAY_COMPONENT)).toEqual({
+                component: 'vevent',
+                uid: { value: 'abc' },
+                dtstart: { value: { year: 2019, month: 8, day: 12 }, parameters: { type: 'date' } },
+                dtstamp: { value: { year: 2023, month: 6, day: 14, hours: 10, minutes: 17, seconds: 2, isUTC: true } },
+                summary: { value: 'text' },
+                rrule: { value: { freq: 'DAILY' } },
+            });
+        });
+
+        it('should not remove dtend', () => {
+            const ALL_DAY_COMPONENT = parse(`BEGIN:VEVENT
+UID:abc
+DTSTAMP:20230614T101702Z
+DTSTART;VALUE=DATE:20190812
+DTEND;VALUE=DATE:20190814
+SUMMARY:text
+RRULE:FREQ=DAILY
+END:VEVENT`) as VcalVeventComponent;
+
+            expect(withoutRedundantDtEnd(ALL_DAY_COMPONENT)).toEqual({
+                component: 'vevent',
+                uid: { value: 'abc' },
+                dtstart: { value: { year: 2019, month: 8, day: 12 }, parameters: { type: 'date' } },
+                dtstamp: { value: { year: 2023, month: 6, day: 14, hours: 10, minutes: 17, seconds: 2, isUTC: true } },
+                dtend: { value: { year: 2019, month: 8, day: 14 }, parameters: { type: 'date' } },
+                summary: { value: 'text' },
+                rrule: { value: { freq: 'DAILY' } },
+            });
+        });
+    });
+
+    describe('part day', () => {
+        it('should remove redundant dtend', () => {
+            const PART_DAY_COMPONENT = parse(`BEGIN:VEVENT
+UID:abc
+DTSTAMP:20230614T101702Z
+DTSTART;TZID=Europe/Zurich:20190719T120000
+DTEND;TZID=Europe/Zurich:20190719T120000
+SUMMARY:text
+RRULE:FREQ=DAILY
+END:VEVENT`) as VcalVeventComponent;
+
+            expect(withoutRedundantDtEnd(PART_DAY_COMPONENT)).toEqual({
+                component: 'vevent',
+                uid: { value: 'abc' },
+                dtstamp: { value: { year: 2023, month: 6, day: 14, hours: 10, minutes: 17, seconds: 2, isUTC: true } },
+                dtstart: {
+                    value: { year: 2019, month: 7, day: 19, hours: 12, minutes: 0, seconds: 0, isUTC: false },
+                    parameters: {
+                        tzid: 'Europe/Zurich',
+                    },
+                },
+                summary: { value: 'text' },
+                rrule: { value: { freq: 'DAILY' } },
+            });
+        });
+
+        it('should not remove dtend', () => {
+            const PART_DAY_COMPONENT = parse(`BEGIN:VEVENT
+UID:abc
+DTSTAMP:20230614T101702Z
+DTSTART;TZID=Europe/Zurich:20190719T120000
+DTEND:20190719T160000Z
+SUMMARY:text
+RRULE:FREQ=DAILY
+END:VEVENT`) as VcalVeventComponent;
+
+            expect(withoutRedundantDtEnd(PART_DAY_COMPONENT)).toEqual({
+                component: 'vevent',
+                uid: { value: 'abc' },
+                dtstamp: { value: { year: 2023, month: 6, day: 14, hours: 10, minutes: 17, seconds: 2, isUTC: true } },
+                dtstart: {
+                    value: { year: 2019, month: 7, day: 19, hours: 12, minutes: 0, seconds: 0, isUTC: false },
+                    parameters: { tzid: 'Europe/Zurich' },
+                },
+                dtend: { value: { year: 2019, month: 7, day: 19, hours: 16, minutes: 0, seconds: 0, isUTC: true } },
+                summary: { value: 'text' },
+                rrule: { value: { freq: 'DAILY' } },
+            });
+        });
     });
 });
