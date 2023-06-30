@@ -81,10 +81,7 @@ const CreditCardNewDesign = ({ card, errors, onChange, loading = false, fieldSta
     const formContainer = useRef<HTMLDivElement>(null);
     const formRect = useElementRect(formContainer, requestAnimationFrameRateLimiter);
 
-    const countries = useMemo(
-        () => getFullList().map(({ value, label: text, disabled }) => ({ value, text, disabled })),
-        []
-    );
+    const countries = useMemo(() => getFullList(), []);
 
     const maxCvvLength = 4;
     const handleChange =
@@ -343,10 +340,10 @@ const CreditCardNewDesign = ({ card, errors, onChange, loading = false, fieldSta
                         id="country"
                         value={card.country}
                     >
-                        {countries.map(({ value, text, disabled }) => {
+                        {countries.map(({ key, value, label, disabled }) => {
                             return (
-                                <Option key={value} value={value} title={text} disabled={disabled}>
-                                    {value === DEFAULT_SEPARATOR.value ? <hr className="m-0" /> : text}
+                                <Option key={key} value={value} title={label} disabled={disabled}>
+                                    {value === DEFAULT_SEPARATOR.value ? <hr className="m-0" /> : label}
                                 </Option>
                             );
                         })}
