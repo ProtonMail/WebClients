@@ -15,7 +15,7 @@ const c = (component, start, end) => {
     return {
         ...component,
         dtstart: getDateOrDateTimeProperty(component.dtstart, start),
-        dtend: getDateOrDateTimeProperty(component.dtend, end),
+        ...(end && { dtend: getDateOrDateTimeProperty(component.dtend, end) }),
     };
 };
 
