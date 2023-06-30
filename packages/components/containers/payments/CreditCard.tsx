@@ -17,7 +17,7 @@ interface Props {
 
 const CreditCard = ({ card, errors, onChange, loading = false }: Props) => {
     const countries = useMemo(
-        () => getFullList().map(({ value, label: text, disabled }) => ({ value, text, disabled })),
+        () => getFullList().map(({ key, value, label: text, disabled }) => ({ key, value, text, disabled })),
         []
     );
     const handleChange =
