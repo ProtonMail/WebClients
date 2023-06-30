@@ -77,7 +77,7 @@ export const PROVIDER_INFO_MAP: Record<ImportProvider, { title: string; fileExte
         [ImportProvider.KEEPER]: {
             title: 'Keeper',
             fileExtension: 'csv',
-            tutorialUrl: '',
+            tutorialUrl: 'https://proton.me/support/pass-import-keeper',
         },
     };
 
