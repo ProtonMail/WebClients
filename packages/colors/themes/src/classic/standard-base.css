@@ -16,7 +16,7 @@
     --interaction-weak: #d0d3da;
 
     --text-norm: #262a33;
-    --text-weak: #696f7d;
+    --text-weak: #585D69;
     --text-hint: #a4a9b5;
     --text-disabled: #babec7;
     --text-invert: white;
@@ -55,6 +55,8 @@
     --optional-border-radius: 3;
 
     --optional-main-border-color: transparent;
+
+    --optional-email-item-read-background-color: #F7F8FA;
 
     /* Reset because prominent part overrides those colors */
     --optional-logo-text-proton-color: initial;
