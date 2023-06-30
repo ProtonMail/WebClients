@@ -5,10 +5,10 @@ import { selectExtraFieldLimits } from '@proton/pass/store';
 import type { ItemExtraField } from '@proton/pass/types';
 import { isEmptyString } from '@proton/pass/utils/string';
 
-import { UpgradeButton } from '../../../../shared/components/upgrade/UpgradeButton';
 import { getExtraFieldOption } from '../ExtraFieldGroup/ExtraField';
 import { FieldsetCluster } from '../Layout/FieldsetCluster';
 import { OTPValueControl } from './OTPValueControl';
+import { UpgradeControl } from './UpgradeControl';
 import { ValueControl } from './ValueControl';
 
 type ExtraFieldsControlProps = {
@@ -26,11 +26,7 @@ export const ExtraFieldsControl: VFC<ExtraFieldsControlProps> = ({ extraFields, 
             const key = `${index}-${fieldName}`;
 
             if (needsUpgrade) {
-                return (
-                    <ValueControl icon={icon} key={key} label={fieldName}>
-                        <UpgradeButton inline />
-                    </ValueControl>
-                );
+                return <UpgradeControl icon={icon} key={key} label={fieldName} />;
             }
 
             switch (type) {

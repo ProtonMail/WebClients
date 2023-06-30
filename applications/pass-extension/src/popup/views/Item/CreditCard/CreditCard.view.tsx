@@ -1,9 +1,14 @@
 import { type VFC } from 'react';
+import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
+import { selectPassPlan } from '@proton/pass/store';
+import { UserPassPlan } from '@proton/pass/types/api/plan';
+
 import type { ItemTypeViewProps } from '../../../../shared/items/types';
 import { MaskedValueControl } from '../../../components/Field/Control/MaskedValueControl';
+import { UpgradeControl } from '../../../components/Field/Control/UpgradeControl';
 import { ValueControl } from '../../../components/Field/Control/ValueControl';
 import { FieldsetCluster } from '../../../components/Field/Layout/FieldsetCluster';
 import { cardNumberMask, expDateMask } from '../../../components/Field/masks/credit-card';
@@ -16,18 +21,24 @@ export const CreditCardView: VFC<ItemTypeViewProps<'creditCard'>> = ({ vault, re
         content: { cardholderName, number, expirationDate, verificationNumber, pin },
     } = item;
 
+    const isFreePlan = useSelector(selectPassPlan) === UserPassPlan.FREE;
+
     return (
         <ItemViewPanel type="creditCard" name={name} vault={vault} {...itemViewProps}>
             <FieldsetCluster mode="read" as="div">
                 <ValueControl clickToCopy icon="user" label={c('Label').t`Cardholder name`} value={cardholderName} />
-                <MaskedValueControl
-                    clickToCopy
-                    hidden
-                    icon="credit-card"
-                    label={c('Label').t`Card number`}
-                    mask={cardNumberMask(number)}
-                    value={number}
-                />
+                {isFreePlan ? (
+                    <UpgradeControl icon="credit-card" label={c('Label').t`Card number`} />
+                ) : (
+                    <MaskedValueControl
+                        clickToCopy
+                        hidden
+                        icon="credit-card"
+                        label={c('Label').t`Card number`}
+                        mask={cardNumberMask(number)}
+                        value={number}
+                    />
+                )}
                 <MaskedValueControl
                     clickToCopy
                     icon="calendar-today"
