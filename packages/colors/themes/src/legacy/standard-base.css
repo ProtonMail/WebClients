@@ -61,6 +61,8 @@
 
     --optional-main-border-color: transparent;
 
+    --optional-email-item-read-background-color: #F5F7FA;
+
     /* Reset because prominent part overrides those colors */
     --optional-mini-calendar-today-color: initial;
     --optional-logo-text-proton-color: initial;
