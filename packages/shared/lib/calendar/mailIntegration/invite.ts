@@ -48,7 +48,7 @@ import {
     getPropertyTzid,
     getSequence,
 } from '../vcalHelper';
-import { getIsEventCancelled, withDtstamp, withSummary } from '../veventHelper';
+import { getIsEventCancelled, withDtstamp, withSummary, withoutRedundantDtEnd } from '../veventHelper';
 
 export const getParticipantHasAddressID = (
     participant: Participant
@@ -167,11 +167,13 @@ export const createInviteVevent = ({ method, attendeesTo, vevent, keepDtstamp }:
             }
             return { value };
         });
-        return withDtstamp({
-            ...pick(vevent, propertiesToKeep),
-            component: 'vevent',
-            attendee,
-        });
+        return withoutRedundantDtEnd(
+            withDtstamp({
+                ...pick(vevent, propertiesToKeep),
+                component: 'vevent',
+                attendee,
+            })
+        );
     }
     if (method === ICAL_METHOD.REQUEST) {
         // strip alarms
@@ -182,7 +184,7 @@ export const createInviteVevent = ({ method, attendeesTo, vevent, keepDtstamp }:
         }
         // SUMMARY is mandatory in a REQUEST ics
         const veventWithSummary = withSummary(vevent);
-        return withDtstamp(omit(veventWithSummary, propertiesToOmit) as VcalVeventComponent);
+        return withoutRedundantDtEnd(withDtstamp(omit(veventWithSummary, propertiesToOmit) as VcalVeventComponent));
     }
 };
 
