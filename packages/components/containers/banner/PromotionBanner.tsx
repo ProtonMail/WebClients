@@ -65,7 +65,7 @@ const PromotionBanner = ({
                                 {description}
                             </div>
                         )}
-                        {cta && <div className="flex-item-noshrink ml-2">{cta}</div>}
+                        {cta && <div className="flex-item-noshrink ml-2 max-w50 text-right">{cta}</div>}
                     </>
                 )}
             </div>
