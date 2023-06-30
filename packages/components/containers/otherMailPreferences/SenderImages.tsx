@@ -9,7 +9,7 @@ export const SenderImages = () => {
         <SettingsLayout>
             <SettingsLayoutLeft>
                 <label htmlFor="senderImagesToggle">
-                    <span className="mr-2">{c('Label').t`Show sender images`}</span>
+                    <span className="text-semibold mr-2">{c('Label').t`Show sender images`}</span>
                     <Info
                         title={c('Tooltip')
                             .t`Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.`}
