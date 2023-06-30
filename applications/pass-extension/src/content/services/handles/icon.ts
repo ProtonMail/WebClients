@@ -85,6 +85,7 @@ export const createFieldIconHandle = ({ field }: CreateIconOptions): FieldIconHa
         wrapper.parentElement!.removeChild(wrapper);
     });
 
+    icon.addEventListener('animationend', () => icon.classList.add(`${ICON_CLASSNAME}--ready`), { once: true });
     listeners.addListener(icon, 'mousedown', onClick);
 
     /* repositioning the icon can happen either :
