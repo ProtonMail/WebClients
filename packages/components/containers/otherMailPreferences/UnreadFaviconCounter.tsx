@@ -9,7 +9,7 @@ export const UnreadFaviconCounter = () => {
         <SettingsLayout>
             <SettingsLayoutLeft>
                 <label htmlFor="unreadFaviconCounterToggle">
-                    <span className="mr-2">{c('Label').t`Show unread count in Favicon`}</span>
+                    <span className="text-semibold mr-2">{c('Label').t`Show unread count in Favicon`}</span>
                     <Info title={c('Tooltip').t`See number of unread messages in the tab icon`} />
                 </label>
             </SettingsLayoutLeft>
