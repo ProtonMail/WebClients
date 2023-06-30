@@ -84,10 +84,14 @@ export type TelemetryMeasurementData =
           };
       }
     | {
-          event: TelemetryAccountSignupEvents.userSignInSuccess;
+          event: TelemetryAccountSignupEvents.beSignInSuccess;
           dimensions: {
               plan: PLANS;
           };
+      }
+    | {
+          event: TelemetryAccountSignupEvents.beSignOutSuccess;
+          dimensions: {};
       }
     | {
           event: TelemetryAccountSignupEvents.bePaymentMethods;
