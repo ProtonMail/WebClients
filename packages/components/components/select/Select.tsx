@@ -12,11 +12,12 @@ export interface OptionProps extends DetailedHTMLProps<OptionHTMLAttributes<HTML
     text: string | number;
     group?: string;
     disabled?: boolean;
+    key?: string;
 }
 
 const buildOptions = (options: OptionProps[] = [], keyPrefix = 'option') => {
-    return options.map(({ text, ...rest }, index) => (
-        <option key={`${keyPrefix}_${index}`} {...rest}>
+    return options.map(({ key, text, ...rest }, index) => (
+        <option key={key || `${keyPrefix}_${index}`} {...rest}>
             {text}
         </option>
     ));
