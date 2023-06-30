@@ -7,19 +7,6 @@ import { Currency } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
 import { ButtonGroup, Option, SelectTwo } from '../../components';
-import LegacySelect, { Props as LegacySelectBaseProps } from '../../components/select/Select';
-
-const addSymbol = (currency: Currency) => {
-    if (currency === 'EUR') {
-        return `€ ${currency}`;
-    }
-
-    if (currency === 'USD') {
-        return `$ ${currency}`;
-    }
-
-    return currency;
-};
 
 interface SelectTwoProps extends Omit<SelectProps<Currency>, 'onSelect' | 'children'> {
     mode: 'select-two';
@@ -37,14 +24,7 @@ interface ButtonGroupProps {
     disabled?: boolean;
 }
 
-interface LegacySelectProps extends Omit<LegacySelectBaseProps, 'onSelect' | 'children' | 'options'> {
-    mode: 'select';
-    currency?: Currency;
-    onSelect: (newCurrency: Currency) => void;
-    loading?: boolean;
-}
-
-type Props = ButtonGroupProps | SelectTwoProps | LegacySelectProps;
+type Props = ButtonGroupProps | SelectTwoProps;
 
 const CurrencySelector = (props: Props) => {
     const options = CURRENCIES.map((c) => ({ text: c, value: c }));
@@ -66,21 +46,6 @@ const CurrencySelector = (props: Props) => {
                     );
                 })}
             </ButtonGroup>
-        );
-    }
-
-    if (props.mode === 'select') {
-        const { currency = DEFAULT_CURRENCY, onSelect, loading, ...rest } = props;
-
-        return (
-            <LegacySelect
-                title={c('Title').t`Currency`}
-                value={currency}
-                options={options.map((option) => ({ ...option, text: addSymbol(option.text as Currency) }))}
-                onChange={({ target }) => onSelect(target.value as Currency)}
-                loading={loading}
-                {...rest}
-            />
         );
     }
 
