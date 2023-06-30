@@ -6,6 +6,7 @@ import { getHasSharedEventContent, getHasSharedKeyPacket } from '@proton/shared/
 import { DEFAULT_ATTENDEE_PERMISSIONS } from '@proton/shared/lib/calendar/constants';
 import { getCreationKeys } from '@proton/shared/lib/calendar/crypto/keys/helpers';
 import { createCalendarEvent } from '@proton/shared/lib/calendar/serialize';
+import { withoutRedundantDtEnd } from '@proton/shared/lib/calendar/veventHelper';
 import { booleanToNumber } from '@proton/shared/lib/helpers/boolean';
 import { SimpleMap } from '@proton/shared/lib/interfaces';
 import { CalendarEvent } from '@proton/shared/lib/interfaces/calendar';
@@ -85,7 +86,10 @@ export const getCreateSyncOperation = (data: {
     addedAttendeesPublicKeysMap?: SimpleMap<PublicKeyReference>;
 }): CreateEventActionOperation => ({
     type: SyncOperationTypes.CREATE,
-    data,
+    data: {
+        ...data,
+        veventComponent: withoutRedundantDtEnd(data.veventComponent),
+    },
 });
 export const getUpdateSyncOperation = (data: {
     veventComponent: VcalVeventComponent;
@@ -96,7 +100,10 @@ export const getUpdateSyncOperation = (data: {
     addedAttendeesPublicKeysMap?: SimpleMap<PublicKeyReference>;
 }): UpdateEventActionOperation => ({
     type: SyncOperationTypes.UPDATE,
-    data,
+    data: {
+        ...data,
+        veventComponent: withoutRedundantDtEnd(data.veventComponent),
+    },
 });
 
 export const getDeleteSyncOperation = (
