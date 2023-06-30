@@ -34,7 +34,7 @@ export const getNAddressesFeature = ({
 
     if (family) {
         tooltip = c('new_plans: tooltip')
-            .t`Create up to ${n} email addresses/aliases for the whole family. Use them for your online identities, e.g., MyFamilySubs@${domain} for online subscriptions.`;
+            .t`Create up to ${n} email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${domain} for shopping accounts.`;
     }
 
     return {
