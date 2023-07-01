@@ -85,7 +85,7 @@ export const createFieldIconHandle = ({ field }: CreateIconOptions): FieldIconHa
         wrapper.parentElement!.removeChild(wrapper);
     });
 
-    listeners.addListener(icon, 'mousedown', onClick);
+    icon.addEventListener('animationend', () => icon.classList.add(`${ICON_CLASSNAME}--ready`), { once: true });
 
     /* repositioning the icon can happen either :
      * · on window resize
@@ -93,6 +93,7 @@ export const createFieldIconHandle = ({ field }: CreateIconOptions): FieldIconHa
      * · on new elements added to the field box (ie: icons) */
     const target = field.element === field.boxElement ? field.element.parentElement! : field.boxElement;
 
+    listeners.addListener(icon, 'mousedown', onClick);
     listeners.addListener(window, 'resize', () => reposition(false));
     listeners.addResizeObserver(target, () => reposition(false));
     listeners.addObserver(

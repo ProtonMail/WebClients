@@ -13,7 +13,7 @@ export type DropdownItemIconProps = { url: string; icon: IconName } | { url?: ne
 export const DropdownItemIcon: VFC<DropdownItemIconProps> = ({ url, icon }) =>
     isPassIcon(icon) ? (
         <IconBox size={20} mode="transparent">
-            <PassIcon status={icon} size={22} className="absolute-center" />
+            <PassIcon status={icon} size={24} className="absolute-center" />
         </IconBox>
     ) : (
         <BaseItemIcon url={url} icon={icon} size={20} alt="" />
