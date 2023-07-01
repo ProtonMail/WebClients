@@ -17,6 +17,7 @@ export const ICON_PADDING = 8;
 export const DROPDOWN_WIDTH = 250;
 export const MIN_DROPDOWN_HEIGHT = 60;
 export const NOTIFICATION_HEIGHT = 335;
+export const NOTIFICATION_HEIGHT_SM = 220;
 export const NOTIFICATION_WIDTH = 320;
 
 export const ACTIVE_ICON_SRC = browser.runtime.getURL('/assets/protonpass-icon-active.svg');

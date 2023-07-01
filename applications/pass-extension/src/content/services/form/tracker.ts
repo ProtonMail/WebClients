@@ -7,11 +7,12 @@ import { createListenerStore } from '@proton/pass/utils/listener';
 import { logger } from '@proton/pass/utils/logger';
 import { isEmptyString } from '@proton/pass/utils/string';
 import lastItem from '@proton/utils/lastItem';
+import noop from '@proton/utils/noop';
 
 import { FORM_TRACKER_CONFIG } from '../../constants';
 import { withContext } from '../../context/context';
 import type { FieldHandle, FormHandle, FormTracker } from '../../types';
-import { DropdownAction, FieldInjectionRule } from '../../types';
+import { DropdownAction, FieldInjectionRule, NotificationAction } from '../../types';
 
 type FormTrackerState = { isSubmitting: boolean };
 
@@ -137,6 +138,24 @@ export const createFormTracker = (form: FormHandle): FormTracker => {
         return results;
     };
 
+    /* check if we should prompt for the OTP autofill notification */
+    const handleOTP = withContext(({ service: { iframe } }) => {
+        const otps = form.getFieldsFor(FormField.OTP);
+        if (otps.length === 0) return;
+
+        sendMessage
+            .onSuccess(contentScriptMessage({ type: WorkerMessageType.AUTOFILL_OTP_CHECK }), (res) => {
+                if (res.shouldPrompt) {
+                    iframe.attachNotification();
+                    iframe.notification?.open({
+                        action: NotificationAction.AUTOFILL_OTP_PROMPT,
+                        item: { shareId: res.shareId, itemId: res.itemId },
+                    });
+                }
+            })
+            .catch(noop);
+    });
+
     /* reconciliating the form trackers involves syncing
      * the form's trackable fields.*/
     const reconciliate = withContext(({ getSettings, getState }) => {
@@ -162,6 +181,8 @@ export const createFormTracker = (form: FormHandle): FormTracker => {
         form.getFields()
             .find((field) => field.element === document.activeElement)
             ?.focus();
+
+        if (form.formType === FormType.MFA) handleOTP();
     });
 
     /* when detaching the form tracker : remove every listener
