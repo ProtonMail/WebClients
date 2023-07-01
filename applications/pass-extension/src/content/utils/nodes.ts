@@ -11,8 +11,6 @@ import { FormField, FormType } from '@proton/pass/types';
 
 import { PROCESSED_FIELD_ATTR, PROCESSED_FORM_ATTR } from '../constants';
 
-export const isNodeOfInterest = (node: Node) => node instanceof HTMLInputElement || node instanceof HTMLFormElement;
-
 /* As a heuristic we can safely ignore forms of type `[role="search"]` as we are most
  * likely not interested in tracking those. Since we apply a clustering algorithm in
  * the detectors, we may have non-form elements  detected as forms - we can retrieve
@@ -69,3 +67,8 @@ export const formProcessed = (el: HTMLElement): boolean => el.getAttribute(PROCE
 
 export const fieldTrackable = isUserEditableField;
 export const fieldProcessable = (el: HTMLInputElement): boolean => !fieldProcessed(el) && fieldTrackable(el);
+
+export const isNodeOfInterest = (node: Node): node is HTMLElement =>
+    node instanceof HTMLInputElement ||
+    node instanceof HTMLFormElement ||
+    (node instanceof HTMLElement && hasUnprocessedFields(node));

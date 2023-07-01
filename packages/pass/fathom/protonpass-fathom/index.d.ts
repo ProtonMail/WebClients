@@ -29,7 +29,7 @@ declare const createInputIterator: (form: HTMLElement) => {
     next(input: HTMLElement): HTMLElement | null;
 };
 
-declare const isFieldOfInterest: (fnodeOrEl: Fnode | HTMLElement) => boolean;
+declare const isFieldOfInterest: (fnode: Fnode) => boolean;
 declare const isUserEditableField: (el: HTMLInputElement) => boolean;
 declare const splitFieldsByVisibility: (els: HTMLElement[]) => [HTMLElement[], HTMLElement[]];
 declare const maybeEmail: (fnode: Fnode) => boolean;
@@ -42,7 +42,7 @@ declare const isEmailCandidate: (el: HTMLElement) => boolean;
 declare const isOAuthCandidate: (el: HTMLElement) => boolean;
 declare const isSubmitBtnCandidate: (btn: HTMLElement) => boolean;
 
-declare const formOfInterestSelector = 'form:not([role="search"]):not(body > form:only-of-type)';
+declare const formOfInterestSelector = 'form:not([role="search"]):not(body > form:only-of-type):not(table td > form)';
 declare const headingSelector: string;
 declare const fieldSelector = 'input, select, textarea';
 declare const editableFieldSelector: string;
@@ -53,7 +53,7 @@ declare const anchorLinkSelector = 'a, span[role="button"]';
 declare const captchaSelector = '[class*="captcha"], [id*="captcha"], [name*="captcha"]';
 declare const socialSelector = '[class*=social],[aria-label*=with]';
 declare const clusterSelector =
-    '[role="dialog"], [role="group"], [role="form"], [id*="modal"], [class*="modal"], header, section, nav, footer, aside';
+    '[role="dialog"], [role="tabpanel"], [role="group"], [role="form"], [id*="modal"], [class*="modal"], header, section, nav, footer, aside';
 declare const layoutSelector = 'div, section, aside, main, nav';
 declare const usernameSelector: string;
 declare const passwordSelector: string;

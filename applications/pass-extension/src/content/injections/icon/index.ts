@@ -16,7 +16,6 @@ import {
     ICON_CLASSNAME,
     ICON_MAX_HEIGHT,
     ICON_MIN_HEIGHT,
-    ICON_PADDING,
     ICON_ROOT_CLASSNAME,
     ICON_WRAPPER_CLASSNAME,
     INPUT_STYLES_ATTR,
@@ -46,12 +45,28 @@ type InputInitialStyles = {
 const getOverlayedElement = (options: { x: number; y: number; parent: HTMLElement }): MaybeNull<HTMLElement> => {
     try {
         const { x, y, parent } = options;
-        if (Number.isNaN(x) || Number.isNaN(y)) return null;
-        const overlays = Array.from(document.elementsFromPoint(x, y) as HTMLElement[]);
-        const candidates = overlays.filter((el) => !el.matches(`.${ICON_CLASSNAME}`) && parent.contains(el));
+        const maxWidth = parent.offsetWidth;
 
-        return candidates?.[0] ?? null;
-    } catch (_) {
+        if (Number.isNaN(x) || Number.isNaN(y)) return null;
+        const overlays = Array.from(document.elementsFromPoint(x, y));
+
+        return (
+            overlays.find((el): el is HTMLElement => {
+                /* exclude non-html elements */
+                if (!(el instanceof HTMLElement)) return false;
+                /* exclude svg elements */
+                if (el.matches('svg *')) return false;
+                /* exclude our own injected elements */
+                if (el.matches(`.${ICON_CLASSNAME}`)) return false;
+                /* exclude elements not in the current stack */
+                if (!parent.contains(el)) return false;
+                /* exclude "placeholder" overlays */
+                if (el.innerText.length > 0 && el.offsetWidth >= maxWidth * 0.9) return false;
+
+                return true;
+            }) ?? null
+        );
+    } catch (e) {
         return null;
     }
 };
@@ -84,31 +99,28 @@ const computeIconInjectionStyles = (
     });
 
     const size = Math.max(Math.min(boxHeight - ICON_MIN_HEIGHT, ICON_MAX_HEIGHT), ICON_MIN_HEIGHT);
+    const iconPadding = size / 4; /* dynamic "responsive" padding */
     const pl = getInputStyle('padding-left', pixelParser);
     const pr = getInputStyle('padding-right', pixelParser);
-    const safePr = pr === 0 ? ICON_PADDING : pr;
 
-    /* `mt` represents the vertical offset needed to align the
-     * center of the injected icon with the top-most part of
-     * the bounding box :
-     * mt = boxTop - boxOffset.top - wrapperTop - size / 2
-     * top = mt + boxHeight / 2 */
-    const top = boxTop - wrapperTop + boxOffset.top + (boxHeight - size) / 2;
-
+    /* look for any overlayed elements if we were to inject
+     * the icon on the right hand-side of the input element
+     * accounting for icon size and padding  */
     const overlayEl = getOverlayedElement({
-        x: inputRight - pr - size / 2,
+        x: inputRight - (iconPadding + size / 2),
         y: inputTop + inputHeight / 2,
         parent: inputBox.parentElement!,
     });
 
     const overlayWidth = overlayEl?.clientWidth ?? 0;
-    const overlayDx = overlayEl !== input && overlayWidth !== 0 ? overlayWidth + 5 : 0;
+    const overlayDx = overlayEl !== input && overlayWidth !== 0 ? overlayWidth + iconPadding : 0;
 
     /* Compute the new input padding :
-     * Take into account the input element's current
-     * padding as we may be dealing with another
-     * input icon (ie: show password "eye") */
-    const newPaddingRight = pr + ICON_PADDING + size + overlayDx;
+     * Take into account the input element's current padding as it
+     * may already cover the necessary space to inject the icon without
+     * the need to mutate the input's padding style. Account for potential
+     * overlayed element offset */
+    const newPaddingRight = Math.max(pr, size + iconPadding * 2 + overlayDx);
 
     /* When dealing with input elements that are
      * of type box-sizing: content-box - updating
@@ -119,8 +131,19 @@ const computeIconInjectionStyles = (
     const isContentBox = getInputStyle('box-sizing', String) === 'content-box';
     const blw = getInputStyle('border-left-width', pixelParser);
     const brw = getInputStyle('border-right-width', pixelParser);
+    const ml = getInputStyle('margin-left', pixelParser);
+    const mr = getInputStyle('margin-right', pixelParser);
+    const offsetDx = ml + mr; /* account for input margins */
     const computedWidth = inputWidth - newPaddingRight - pl - (blw + brw);
     const newWidth = isContentBox ? computedWidth : getInputStyle('width', pixelParser);
+
+    /* `mt` represents the vertical offset needed to align the
+     * center of the injected icon with the top-most part of
+     * the bounding box :
+     * mt = boxTop - boxOffset.top - wrapperTop - size / 2
+     * top = mt + boxHeight / 2 */
+    const top = boxTop - wrapperTop + boxOffset.top + (boxHeight - size) / 2;
+    const right = wrapperRight - inputRight + iconPadding + overlayDx + offsetDx;
 
     return {
         input: {
@@ -129,7 +152,7 @@ const computeIconInjectionStyles = (
         },
         icon: {
             top: pixelEncoder(top),
-            right: pixelEncoder(wrapperRight - inputRight + safePr + overlayDx),
+            right: pixelEncoder(right),
             size: pixelEncoder(size),
         },
     };
@@ -170,7 +193,7 @@ const applyIconInjectionStyles = (elements: InjectionElements, shared: SharedInj
     icon.style.setProperty(`--${EXTENSION_PREFIX}-icon-lineheight`, styles.icon.size);
     icon.style.setProperty(
         `--${EXTENSION_PREFIX}-icon-fontsize`,
-        pixelTransformer(styles.icon.size, (size) => size / 2.2)
+        pixelTransformer(styles.icon.size, (size) => size / 2.5)
     );
 
     /* Content-script may be destroyed and re-injected
