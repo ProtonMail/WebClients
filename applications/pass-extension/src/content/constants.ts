@@ -13,9 +13,8 @@ export const ICON_ROOT_CLASSNAME = `${EXTENSION_PREFIX}-input`;
 export const ICON_WRAPPER_CLASSNAME = `${ICON_ROOT_CLASSNAME}--wrapper`;
 export const ICON_CLASSNAME = `${ICON_ROOT_CLASSNAME}--icon`;
 
-export const ICON_PADDING = 8;
 export const ICON_MAX_HEIGHT = 25;
-export const ICON_MIN_HEIGHT = 18;
+export const ICON_MIN_HEIGHT = 16;
 export const DROPDOWN_WIDTH = 250;
 export const MIN_DROPDOWN_HEIGHT = 60;
 export const NOTIFICATION_HEIGHT = 335;

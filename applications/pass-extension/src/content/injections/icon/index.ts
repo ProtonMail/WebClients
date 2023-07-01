@@ -16,7 +16,6 @@ import {
     ICON_CLASSNAME,
     ICON_MAX_HEIGHT,
     ICON_MIN_HEIGHT,
-    ICON_PADDING,
     ICON_ROOT_CLASSNAME,
     ICON_WRAPPER_CLASSNAME,
     INPUT_STYLES_ATTR,
@@ -53,8 +52,10 @@ const getOverlayedElement = (options: { x: number; y: number; parent: HTMLElemen
 
         return (
             overlays.find((el): el is HTMLElement => {
+                /* exclude non-html elements */
                 if (!(el instanceof HTMLElement)) return false;
-                if (el.tagName === 'path') return false;
+                /* exclude svg elements */
+                if (el.matches('svg *')) return false;
                 /* exclude our own injected elements */
                 if (el.matches(`.${ICON_CLASSNAME}`)) return false;
                 /* exclude elements not in the current stack */
@@ -98,6 +99,7 @@ const computeIconInjectionStyles = (
     });
 
     const size = Math.max(Math.min(boxHeight - ICON_MIN_HEIGHT, ICON_MAX_HEIGHT), ICON_MIN_HEIGHT);
+    const iconPadding = size / 4; /* dynamic "responsive" padding */
     const pl = getInputStyle('padding-left', pixelParser);
     const pr = getInputStyle('padding-right', pixelParser);
 
@@ -105,20 +107,20 @@ const computeIconInjectionStyles = (
      * the icon on the right hand-side of the input element
      * accounting for icon size and padding  */
     const overlayEl = getOverlayedElement({
-        x: inputRight - (ICON_PADDING + size / 2),
+        x: inputRight - (iconPadding + size / 2),
         y: inputTop + inputHeight / 2,
         parent: inputBox.parentElement!,
     });
 
     const overlayWidth = overlayEl?.clientWidth ?? 0;
-    const overlayDx = overlayEl !== input && overlayWidth !== 0 ? overlayWidth + ICON_PADDING : 0;
+    const overlayDx = overlayEl !== input && overlayWidth !== 0 ? overlayWidth + iconPadding : 0;
 
     /* Compute the new input padding :
      * Take into account the input element's current padding as it
      * may already cover the necessary space to inject the icon without
      * the need to mutate the input's padding style. Account for potential
      * overlayed element offset */
-    const newPaddingRight = Math.max(pr, size + ICON_PADDING * 2 + overlayDx);
+    const newPaddingRight = Math.max(pr, size + iconPadding * 2 + overlayDx);
 
     /* When dealing with input elements that are
      * of type box-sizing: content-box - updating
@@ -129,6 +131,9 @@ const computeIconInjectionStyles = (
     const isContentBox = getInputStyle('box-sizing', String) === 'content-box';
     const blw = getInputStyle('border-left-width', pixelParser);
     const brw = getInputStyle('border-right-width', pixelParser);
+    const ml = getInputStyle('margin-left', pixelParser);
+    const mr = getInputStyle('margin-right', pixelParser);
+    const offsetDx = ml + mr; /* account for input margins */
     const computedWidth = inputWidth - newPaddingRight - pl - (blw + brw);
     const newWidth = isContentBox ? computedWidth : getInputStyle('width', pixelParser);
 
@@ -138,6 +143,7 @@ const computeIconInjectionStyles = (
      * mt = boxTop - boxOffset.top - wrapperTop - size / 2
      * top = mt + boxHeight / 2 */
     const top = boxTop - wrapperTop + boxOffset.top + (boxHeight - size) / 2;
+    const right = wrapperRight - inputRight + iconPadding + overlayDx + offsetDx;
 
     return {
         input: {
@@ -146,7 +152,7 @@ const computeIconInjectionStyles = (
         },
         icon: {
             top: pixelEncoder(top),
-            right: pixelEncoder(wrapperRight - inputRight + ICON_PADDING + overlayDx),
+            right: pixelEncoder(right),
             size: pixelEncoder(size),
         },
     };
