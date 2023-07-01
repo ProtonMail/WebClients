@@ -14,7 +14,7 @@ export const NotificationHeader: VFC<Props> = ({ title, onClose }) => {
     return (
         <div className="flex flex-nowrap flex-item-noshrink flex-align-items-center flex-justify-space-between">
             <h3 className="flex text-bold text-2xl flex-align-items-center gap-3">
-                <PassIcon status={PassIconStatus.ACTIVE} size={22} /> {title}
+                <PassIcon status={PassIconStatus.ACTIVE} size={24} /> {title}
             </h3>
 
             <Button
