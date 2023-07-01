@@ -13,15 +13,14 @@ export const ICON_ROOT_CLASSNAME = `${EXTENSION_PREFIX}-input`;
 export const ICON_WRAPPER_CLASSNAME = `${ICON_ROOT_CLASSNAME}--wrapper`;
 export const ICON_CLASSNAME = `${ICON_ROOT_CLASSNAME}--icon`;
 
-export const ICON_PADDING = 5;
-export const ICON_MAX_HEIGHT = 25;
-export const ICON_MIN_HEIGHT = 18;
+export const ICON_MAX_HEIGHT = 28;
+export const ICON_MIN_HEIGHT = 16;
 export const DROPDOWN_WIDTH = 250;
 export const MIN_DROPDOWN_HEIGHT = 60;
 export const NOTIFICATION_HEIGHT = 335;
 export const NOTIFICATION_WIDTH = 320;
 
-export const ACTIVE_ICON_SRC = browser.runtime.getURL('/assets/protonpass-icon.svg');
+export const ACTIVE_ICON_SRC = browser.runtime.getURL('/assets/protonpass-icon-active.svg');
 export const LOCKED_ICON_SRC = browser.runtime.getURL('/assets/protonpass-icon-locked.svg');
 export const DISABLED_ICON_SRC = browser.runtime.getURL('/assets/protonpass-icon-disabled.svg');
 export const COUNTER_ICON_SRC = browser.runtime.getURL('/assets/protonpass-icon-counter.svg');

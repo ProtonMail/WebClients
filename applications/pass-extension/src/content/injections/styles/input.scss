@@ -15,6 +15,7 @@
 		opacity: 1;
 		@include reset;
 
+		z-index: unset !important;
 		order: 0 !important;
 		block-size: 0 !important;
 		inline-size: 0 !important;
@@ -36,7 +37,6 @@
 		opacity: 0.9;
 		max-inline-size: 0;
 		animation: icon-fade-in 0.25s ease-in-out 0.05s both !important;
-		transition: opacity 0.2s ease-in-out;
 		@include reset;
 
 		margin-block-start: 0 !important;
@@ -77,28 +77,9 @@
 			text-shadow: 0 0.5px 3px #320dc5 !important;
 		}
 
-		&--disabled {
-			filter: grayscale(1);
-			opacity: 0.92 !important;
-
-			&::after {
-				content: none !important;
-			}
-
-			&:hover {
-				filter: none !important;
-				opacity: 1 !important;
-			}
-		}
-
-		&--loading {
-			cursor: progress !important;
-			opacity: 0.92;
-			transition: opacity 0.25s ease-in-out;
-
-			&::after {
-				content: none !important;
-			}
+		&--ready {
+			/* stylelint-disable-next-line */
+			transition: opacity 0.2s ease-in-out, right 0.12s;
 		}
 
 		&:hover {

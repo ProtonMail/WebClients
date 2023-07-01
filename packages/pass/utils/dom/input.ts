@@ -7,6 +7,7 @@ const containsTextNode = (el: HTMLElement) =>
 /* heuristic value for computing the best
  * bounding element - adapt as needed */
 const BOUNDING_ELEMENT_MAX_OFFSET = 10;
+const INVALID_BOUNDING_TAGS = ['TD', 'TR'];
 
 /* Recursively get the top-most "bounding" element
  * for an input element : each parent must only
@@ -20,13 +21,16 @@ export const findBoundingInputElement = (el: HTMLElement, minHeight?: number): H
 
     /* special case when an input is wrapped in its label :
      * often the label can be considered the container if
-     * all children overlap and has a border width */
-    const label = el.closest('label');
+     * all children overlap and current element is not bordered */
+    if (el instanceof HTMLInputElement) {
+        const isBorderedEl = pixelParser(getComputedStyle(el).borderBottomWidth) !== 0;
+        const label = isBorderedEl ? null : el.closest('label');
 
-    if (label) {
-        const labelHeightCheck = label.getBoundingClientRect().height >= minHeightRef;
-        const labelChildrenOverlap = allChildrenOverlap(label, BOUNDING_ELEMENT_MAX_OFFSET);
-        if (labelHeightCheck && labelChildrenOverlap) return label;
+        if (label) {
+            const labelHeightCheck = label.getBoundingClientRect().height >= minHeightRef;
+            const labelChildrenOverlap = allChildrenOverlap(label, BOUNDING_ELEMENT_MAX_OFFSET);
+            if (labelHeightCheck && labelChildrenOverlap) return label;
+        }
     }
 
     const mb = pixelParser(getComputedStyle(el).marginBottom);
@@ -35,6 +39,11 @@ export const findBoundingInputElement = (el: HTMLElement, minHeight?: number): H
     if (mb !== 0 || mt !== 0) return el;
 
     const parent = el.parentElement!;
+
+    /* early return if the parent element should not even
+     * be considered as a possible candidate. This is especially
+     * the case with table row/column elements */
+    if (INVALID_BOUNDING_TAGS.includes(parent.tagName)) return el;
 
     const parentHeight = parent.getBoundingClientRect().height;
     const hasTextNode = containsTextNode(parent);
