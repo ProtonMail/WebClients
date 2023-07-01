@@ -4,18 +4,20 @@ import { CircleLoader } from '@proton/atoms/CircleLoader';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import type { MaybeNull } from '@proton/pass/types';
 
-import type { NotificationSetActionPayload } from '../../../../types';
+import type { IFrameMessage, NotificationSetActionPayload } from '../../../../types';
 import { NotificationAction } from '../../../../types';
+import { AutofillOTP } from './AutofillOTP';
 import { Autosave } from './Autosave';
 
 type Props = {
     children?: ReactNode;
     settings: ProxiedSettings;
     state: MaybeNull<NotificationSetActionPayload>;
+    onMessage?: (message: IFrameMessage) => void;
     onClose?: () => void;
 };
 
-export const NotificationSwitch: VFC<Props> = ({ children, state, settings, onClose }) => {
+export const NotificationSwitch: VFC<Props> = ({ children, state, settings, onMessage, onClose }) => {
     return (
         <div className="h100 p-5 bg-norm relative">
             {children}
@@ -25,6 +27,9 @@ export const NotificationSwitch: VFC<Props> = ({ children, state, settings, onCl
                 switch (state.action) {
                     case NotificationAction.AUTOSAVE_PROMPT: {
                         return <Autosave submission={state.submission} settings={settings} onClose={onClose} />;
+                    }
+                    case NotificationAction.AUTOFILL_OTP_PROMPT: {
+                        return <AutofillOTP item={state.item} onMessage={onMessage} onClose={onClose} />;
                     }
                 }
             })()}
