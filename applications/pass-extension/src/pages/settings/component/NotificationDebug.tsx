@@ -1,6 +1,8 @@
 import type { ReactNode, VFC } from 'react';
+import { useSelector } from 'react-redux';
 
 import { Card } from '@proton/atoms/Card';
+import { selectItemsByType } from '@proton/pass/store';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import { AutoSaveType, FormEntryStatus, FormType } from '@proton/pass/types';
 
@@ -8,11 +10,14 @@ import { NOTIFICATION_HEIGHT, NOTIFICATION_WIDTH } from '../../../content/consta
 import { NotificationSwitch } from '../../../content/injections/apps/notification/components/NotificationSwitch';
 import { NotificationAction } from '../../../content/types';
 
-const MockIFrameContainer: VFC<{ children: ReactNode }> = ({ children }) => (
+const MockIFrameContainer: VFC<{ children: ReactNode; height?: number }> = ({
+    children,
+    height = NOTIFICATION_HEIGHT,
+}) => (
     <div
         style={{
             width: NOTIFICATION_WIDTH,
-            height: NOTIFICATION_HEIGHT,
+            height,
             overflow: 'hidden',
             background: '#191927',
             boxShadow: '0 2px 10px rgb(0 0 0 / 0.3)',
@@ -27,6 +32,8 @@ const MockIFrameContainer: VFC<{ children: ReactNode }> = ({ children }) => (
 const MockSettings = { loadDomainImages: true } as ProxiedSettings;
 
 export const NotificationDebug: VFC = () => {
+    const otpItem = useSelector(selectItemsByType('login')).find((item) => Boolean(item.data.content.totpUri));
+
     return (
         <Card rounded className="mb-4 p-3 relative">
             <strong className="color-norm block">Notification</strong>
@@ -91,13 +98,25 @@ export const NotificationDebug: VFC = () => {
                                 },
                                 data: {
                                     username: 'nobody@proton.me',
-                                    password: 'proton123',
+                                    password: 'password',
                                 },
                             },
                         }}
                         settings={MockSettings}
                     />
                 </MockIFrameContainer>
+
+                {otpItem && (
+                    <MockIFrameContainer height={220}>
+                        <NotificationSwitch
+                            state={{
+                                action: NotificationAction.AUTOFILL_OTP_PROMPT,
+                                item: { shareId: otpItem.shareId, itemId: otpItem.itemId },
+                            }}
+                            settings={MockSettings}
+                        />
+                    </MockIFrameContainer>
+                )}
             </div>
         </Card>
     );
