@@ -193,7 +193,7 @@ const applyIconInjectionStyles = (elements: InjectionElements, shared: SharedInj
     icon.style.setProperty(`--${EXTENSION_PREFIX}-icon-lineheight`, styles.icon.size);
     icon.style.setProperty(
         `--${EXTENSION_PREFIX}-icon-fontsize`,
-        pixelTransformer(styles.icon.size, (size) => size / 2.2)
+        pixelTransformer(styles.icon.size, (size) => size / 2.5)
     );
 
     /* Content-script may be destroyed and re-injected
