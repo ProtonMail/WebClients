@@ -48,7 +48,7 @@ export const createIFrameService = () => {
     const attachNotification = withContext(({ scriptId }) => {
         if (ctx.apps.notification === null) {
             logger.info(`[ContentScript::${scriptId}] attaching notification iframe`);
-            ctx.apps.notification = ctx.apps.notification ?? createNotification();
+            ctx.apps.notification = createNotification();
         }
 
         onAttached(ctx.apps.notification);

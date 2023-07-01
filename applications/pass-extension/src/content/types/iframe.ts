@@ -62,6 +62,7 @@ export enum IFrameMessageType {
     NOTIFICATION_AUTOSAVE_REQUEST = 'NOTIFICATION_AUTOSAVE_REQUEST',
     NOTIFICATION_AUTOSAVE_SUCCESS = 'NOTIFICATION_AUTOSAVE_SUCCESS',
     NOTIFICATION_AUTOSAVE_FAILURE = 'NOTIFICATION_AUTOSAVE_FAILURE',
+    NOTIFICATION_AUTOFILL_OTP = 'NOTIFICATION_AUTOFILL_OTP',
 }
 
 export type IFrameEndpoint = 'contentscript' | 'notification' | 'dropdown';
@@ -79,7 +80,8 @@ export type IFrameMessage<T extends IFrameMessageType = IFrameMessageType> = Ext
     | { type: IFrameMessageType.DROPDOWN_AUTOSUGGEST_PASSWORD; payload: { password: string } }
     | { type: IFrameMessageType.DROPDOWN_AUTOSUGGEST_ALIAS; payload: { aliasEmail: string } }
     | { type: IFrameMessageType.DROPDOWN_AUTOFILL_USER_EMAIL; payload: { userEmail: string } }
-    | { type: IFrameMessageType.NOTIFICATION_ACTION; payload: NotificationSetActionPayload },
+    | { type: IFrameMessageType.NOTIFICATION_ACTION; payload: NotificationSetActionPayload }
+    | { type: IFrameMessageType.NOTIFICATION_AUTOFILL_OTP; payload: { code: string } },
     { type: T }
 >;
 

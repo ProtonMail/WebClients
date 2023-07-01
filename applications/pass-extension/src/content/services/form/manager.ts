@@ -57,12 +57,11 @@ export const createFormManager = (options: FormManagerOptions) => {
     /* Reconciliation is responsible for syncing the service
      * worker state with our local detection in order to take
      * the appropriate action for auto-save */
-    const reconciliate: () => Promise<void> = withContext(async ({ getExtensionContext, service: { iframe } }) => {
+    const reconciliate: () => Promise<void> = withContext(async ({ getExtensionContext }) => {
         const submission = await sendMessage.on(
             contentScriptMessage({ type: WorkerMessageType.FORM_ENTRY_REQUEST }),
             (response) => (response.type === 'success' ? response.submission : undefined)
         );
-
         if (submission !== undefined) {
             const { status, partial, domain, type } = submission;
             const currentDomain = getExtensionContext().url.domain;
@@ -96,8 +95,6 @@ export const createFormManager = (options: FormManagerOptions) => {
                 );
             }
         }
-
-        iframe.detachNotification();
     });
 
     const detachTrackedForm = (formEl: HTMLElement) => {
