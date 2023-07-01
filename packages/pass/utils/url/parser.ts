@@ -58,7 +58,9 @@ export const parseUrl = (url?: string): ParsedUrl => {
     };
 };
 
-export const parseSender = (sender: Runtime.MessageSender): { tabId: TabId; url: ParsedUrl } => {
+export type ParsedSender = { tabId: TabId; url: ParsedUrl };
+
+export const parseSender = (sender: Runtime.MessageSender): ParsedSender => {
     const { url, tab } = sender;
     const parsedUrl = parseUrl(url ?? '');
     const tabId = tab?.id;
