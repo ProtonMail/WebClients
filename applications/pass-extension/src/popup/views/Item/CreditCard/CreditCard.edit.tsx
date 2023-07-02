@@ -46,6 +46,7 @@ export const CreditCardEdit: VFC<ItemEditProps<'creditCard'>> = ({ revision, onC
                     <Form id={FORM_ID}>
                         <FieldsetCluster>
                             <Field
+                                lengthLimiters
                                 name="name"
                                 label={c('Label').t`Title`}
                                 component={TitleField}
