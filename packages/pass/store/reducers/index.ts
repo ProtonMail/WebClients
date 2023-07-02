@@ -10,6 +10,7 @@ import alias from './alias';
 import importReducer from './import';
 import items from './items';
 import popup from './popup';
+import pwHistory from './pw-history';
 import request from './request';
 import settings from './settings';
 import shares from './shares';
@@ -19,11 +20,22 @@ export * from './alias';
 export * from './import';
 export * from './items';
 export * from './popup';
+export * from './pw-history';
 export * from './request';
 export * from './shares';
 export * from './user';
 
-export const reducerMap = { alias, items, import: importReducer, popup, request, settings, shares, user };
+export const reducerMap = {
+    alias,
+    items,
+    import: importReducer,
+    popup,
+    pwHistory,
+    request,
+    settings,
+    shares,
+    user,
+};
 export const rootReducer = combineReducers(reducerMap);
 
 const wrappedRootReducer: Reducer<State> = (previousState, action) => {
