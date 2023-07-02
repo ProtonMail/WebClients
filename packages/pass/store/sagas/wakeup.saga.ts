@@ -7,6 +7,7 @@ import { WorkerStatus } from '@proton/pass/types';
 import * as action from '../actions';
 import { boot, stateSync, wakeupSuccess } from '../actions';
 import { popupTabStateGarbageCollect } from '../actions/creators/popup';
+import { passwordHistoryGarbageCollect } from '../actions/creators/pw-history';
 import type { WithReceiverAction } from '../actions/with-receiver';
 import { selectPopupStateTabIds } from '../selectors';
 import type { State, WorkerRootSagaOptions } from '../types';
@@ -44,6 +45,8 @@ function* wakeupWorker(
      * state on each popup wakeup call */
     if (endpoint === 'popup') {
         yield fork(function* () {
+            yield put(passwordHistoryGarbageCollect());
+
             const tabIds: TabId[] = yield select(selectPopupStateTabIds);
             const deletedTabIds: TabId[] = yield filterDeletedTabIds(tabIds);
             yield put(popupTabStateGarbageCollect({ tabIds: deletedTabIds }));
