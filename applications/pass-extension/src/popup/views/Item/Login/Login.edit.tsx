@@ -177,6 +177,7 @@ export const LoginEdit: VFC<ItemEditProps<'login'>> = ({ vault, revision, onSubm
                         <Form id={FORM_ID}>
                             <FieldsetCluster>
                                 <Field
+                                    lengthLimiters
                                     name="name"
                                     label={c('Label').t`Title`}
                                     component={TitleField}
@@ -270,7 +271,7 @@ export const LoginEdit: VFC<ItemEditProps<'login'>> = ({ vault, revision, onSubm
                                         </ValueControl>
                                     ) : (
                                         <Field
-                                            masked
+                                            hidden
                                             name="totpUri"
                                             label={c('Label').t`2FA secret (TOTP)`}
                                             placeholder={c('Placeholder').t`Add 2FA secret`}
