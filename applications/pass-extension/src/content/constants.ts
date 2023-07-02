@@ -15,6 +15,7 @@ export const ICON_CLASSNAME = `${ICON_ROOT_CLASSNAME}--icon`;
 
 export const ICON_MAX_HEIGHT = 28;
 export const ICON_MIN_HEIGHT = 16;
+export const ICON_PADDING = 8;
 export const DROPDOWN_WIDTH = 250;
 export const MIN_DROPDOWN_HEIGHT = 60;
 export const NOTIFICATION_HEIGHT = 335;
