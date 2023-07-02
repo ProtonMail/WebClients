@@ -1,4 +1,5 @@
 import { contentScriptMessage, sendMessage } from '@proton/pass/extension/message';
+import { passwordSave } from '@proton/pass/store/actions/creators/pw-history';
 import { createTelemetryEvent } from '@proton/pass/telemetry/events';
 import type { MaybeNull } from '@proton/pass/types';
 import { FormField, WorkerMessageType } from '@proton/pass/types';
@@ -7,6 +8,8 @@ import { first } from '@proton/pass/utils/array';
 import { createStyleCompute, getComputedHeight } from '@proton/pass/utils/dom';
 import { pipe, truthy, waitUntil } from '@proton/pass/utils/fp';
 import { createListenerStore } from '@proton/pass/utils/listener';
+import { uniqueId } from '@proton/pass/utils/string';
+import { getEpoch } from '@proton/pass/utils/time';
 import { getScrollParent } from '@proton/shared/lib/helpers/dom';
 
 import { deriveAliasPrefix } from '../../../shared/items/alias';
@@ -187,15 +190,33 @@ export const createDropdown = (): InjectedDropdown => {
     /* For a password auto-suggestion - the password will have
      * been generated in the injected iframe and passed in clear
      * text through the secure extension port channel */
-    iframe.registerMessageHandler(IFrameMessageType.DROPDOWN_AUTOSUGGEST_PASSWORD, (message) => {
-        const { password } = message.payload;
-        const form = fieldRef.current?.getFormHandle();
+    iframe.registerMessageHandler(
+        IFrameMessageType.DROPDOWN_AUTOSUGGEST_PASSWORD,
+        withContext(({ getExtensionContext }, message) => {
+            const { password } = message.payload;
+            const form = fieldRef.current?.getFormHandle();
+            const { domain, subdomain, hostname } = getExtensionContext().url;
 
-        form?.getFieldsFor(FormField.PASSWORD_NEW).forEach((field) => field.autofill(password));
+            form?.getFieldsFor(FormField.PASSWORD_NEW).forEach((field) => field.autofill(password));
 
-        iframe.close();
-        fieldRef.current?.focus({ preventDefault: true });
-    });
+            void sendMessage(
+                contentScriptMessage({
+                    type: WorkerMessageType.STORE_ACTION,
+                    payload: {
+                        action: passwordSave({
+                            id: uniqueId(),
+                            value: password,
+                            origin: subdomain ?? domain ?? hostname,
+                            createTime: getEpoch(),
+                        }),
+                    },
+                })
+            );
+
+            iframe.close();
+            fieldRef.current?.focus({ preventDefault: true });
+        })
+    );
 
     /* When suggesting an alias on a register form, the alias will
      * only be created upon user action - this avoids creating
