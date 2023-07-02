@@ -43,6 +43,7 @@ export const CreditCardNew: VFC<ItemNewProps<'creditCard'>> = ({ onCancel }) => 
                     <Form id={FORM_ID}>
                         <FieldsetCluster>
                             <Field
+                                lengthLimiters
                                 name="name"
                                 label={c('Label').t`Title`}
                                 placeholder={c('Placeholder').t`Untitled`}

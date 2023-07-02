@@ -19,7 +19,6 @@ import { getFormattedDateFromTimestamp } from '@proton/pass/utils/time/format';
 import { ConfirmationModal } from '../../../../shared/components/confirmation';
 import type { ItemTypeViewProps } from '../../../../shared/items/types';
 import { MoreInfoDropdown } from '../../../components/Dropdown/MoreInfoDropdown';
-import { ClickToCopyValueControl } from '../../../components/Field/Control/ClickToCopyValueControl';
 import { ValueControl } from '../../../components/Field/Control/ValueControl';
 import { FieldsetCluster } from '../../../components/Field/Layout/FieldsetCluster';
 import { ItemViewPanel } from '../../../components/Panel/ItemViewPanel';
@@ -92,24 +91,21 @@ export const AliasView: VFC<ItemTypeViewProps<'alias'>> = ({ vault, revision, ..
             handleMoveToTrashClick={handleMoveToTrashClick}
         >
             <FieldsetCluster mode="read" as="div">
-                <ClickToCopyValueControl value={aliasEmail ?? ''}>
-                    <ValueControl
-                        interactive
-                        icon="alias"
-                        label={c('Label').t`Alias address`}
-                        {...(!trashed
-                            ? {
-                                  extra: (
-                                      <InlineLinkButton className="text-underline" onClick={createLoginFromAlias}>{c(
-                                          'Action'
-                                      ).t`Create login`}</InlineLinkButton>
-                                  ),
-                              }
-                            : {})}
-                    >
-                        {aliasEmail}
-                    </ValueControl>
-                </ClickToCopyValueControl>
+                <ValueControl
+                    clickToCopy
+                    icon="alias"
+                    label={c('Label').t`Alias address`}
+                    value={aliasEmail ?? undefined}
+                    {...(!trashed
+                        ? {
+                              extra: (
+                                  <InlineLinkButton className="text-underline" onClick={createLoginFromAlias}>{c(
+                                      'Action'
+                                  ).t`Create login`}</InlineLinkButton>
+                              ),
+                          }
+                        : {})}
+                />
 
                 <ValueControl as="ul" icon="arrow-up-and-right-big" label={c('Label').t`Forwards to`}>
                     {(!ready || requestFailure) && <div className="pass-skeleton pass-skeleton--select" />}
@@ -124,11 +120,7 @@ export const AliasView: VFC<ItemTypeViewProps<'alias'>> = ({ vault, revision, ..
 
             {note && (
                 <FieldsetCluster mode="read" as="div">
-                    <ClickToCopyValueControl value={note}>
-                        <ValueControl interactive as="pre" icon="note" label={c('Label').t`Note`}>
-                            {note}
-                        </ValueControl>
-                    </ClickToCopyValueControl>
+                    <ValueControl clickToCopy as="pre" icon="note" label={c('Label').t`Note`} value={note} />
                 </FieldsetCluster>
             )}
 

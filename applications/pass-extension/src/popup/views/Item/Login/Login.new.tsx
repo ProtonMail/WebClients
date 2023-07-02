@@ -272,7 +272,7 @@ export const LoginNew: VFC<ItemNewProps<'login'>> = ({ shareId, onSubmit, onCanc
                                         </ValueControl>
                                     ) : (
                                         <Field
-                                            masked
+                                            hidden
                                             name="totpUri"
                                             label={c('Label').t`2FA secret (TOTP)`}
                                             placeholder={c('Placeholder').t`Add 2FA secret`}
