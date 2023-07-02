@@ -1,5 +1,5 @@
 import { type ReactElement, type VFC, useMemo } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 
 import { Form, FormikProvider, useFormik } from 'formik';
@@ -8,13 +8,14 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { DropdownMenuButton, Icon } from '@proton/components';
 import { selectTOTPLimits, selectVaultLimits } from '@proton/pass/store';
+import { passwordSave } from '@proton/pass/store/actions/creators/pw-history';
 import { type LoginWithAliasCreationDTO } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
 import { merge } from '@proton/pass/utils/object';
 import { parseOTPValue } from '@proton/pass/utils/otp/otp';
 import { isEmptyString, uniqueId } from '@proton/pass/utils/string';
 import { getEpoch } from '@proton/pass/utils/time/get-epoch';
-import { isValidURL } from '@proton/pass/utils/url';
+import { isValidURL, parseUrl } from '@proton/pass/utils/url';
 
 import { UpgradeButton } from '../../../../shared/components/upgrade/UpgradeButton';
 import type { LoginItemFormValues, NewLoginItemFormValues } from '../../../../shared/form/types';
@@ -43,6 +44,7 @@ import { AliasModal } from '../Alias/Alias.modal';
 const FORM_ID = 'new-login';
 
 export const LoginNew: VFC<ItemNewProps<'login'>> = ({ shareId, onSubmit, onCancel }) => {
+    const dispatch = useDispatch();
     const { domain, subdomain } = usePopupContext().url;
     const { search } = useLocation();
 
@@ -261,6 +263,20 @@ export const LoginNew: VFC<ItemNewProps<'login'>> = ({ shareId, onSubmit, onCanc
                                     placeholder={c('Placeholder').t`Enter password`}
                                     icon="key"
                                     component={PasswordField}
+                                    onPasswordGenerated={(value: string) => {
+                                        const { urls, url } = form.values;
+                                        const baseUrl = urls?.[0].url ?? url;
+                                        const { subdomain, domain, hostname } = parseUrl(baseUrl);
+
+                                        dispatch(
+                                            passwordSave({
+                                                id: uniqueId(),
+                                                value,
+                                                origin: subdomain ?? domain ?? hostname,
+                                                createTime: getEpoch(),
+                                            })
+                                        );
+                                    }}
                                 />
 
                                 {
