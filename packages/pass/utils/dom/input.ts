@@ -13,18 +13,24 @@ const INVALID_BOUNDING_TAGS = ['TD', 'TR'];
  * for an input element : each parent must only
  * contain a single child or have all its children
  * overlap to be considered a correct bounding candidate */
-export const findBoundingInputElement = (el: HTMLElement, minHeight?: number): HTMLElement => {
+export const findBoundingInputElement = (
+    curr: HTMLElement,
+    input?: HTMLInputElement,
+    minHeight?: number
+): HTMLElement => {
     /* bounding element must be at least the size of the input
      * element we're trying to bound - it can happen that a parent
      * container is actually smaller then the nested target */
-    const minHeightRef = minHeight ?? el.getBoundingClientRect().height;
+    const minHeightRef = minHeight ?? curr.getBoundingClientRect().height;
+    const inputRef = (input ?? curr) as HTMLInputElement;
+    const isInput = curr === inputRef;
 
-    /* special case when an input is wrapped in its label :
-     * often the label can be considered the container if
-     * all children overlap and current element is not bordered */
-    if (el instanceof HTMLInputElement) {
-        const isBorderedEl = pixelParser(getComputedStyle(el).borderBottomWidth) !== 0;
-        const label = isBorderedEl ? null : el.closest('label');
+    if (isInput) {
+        /* special case when an input is wrapped in its label :
+         * often the label can be considered the container if
+         * all children overlap and current element is not bordered */
+        const isBorderedEl = pixelParser(getComputedStyle(inputRef).borderBottomWidth) !== 0;
+        const label = isBorderedEl ? null : inputRef.closest('label');
 
         if (label) {
             const labelHeightCheck = label.getBoundingClientRect().height >= minHeightRef;
@@ -33,17 +39,31 @@ export const findBoundingInputElement = (el: HTMLElement, minHeight?: number): H
         }
     }
 
-    const mb = pixelParser(getComputedStyle(el).marginBottom);
-    const mt = pixelParser(getComputedStyle(el).marginTop);
+    /* the following padding and margin checks constrain the
+     * bounding element not to have any offsets so that we do
+     * not lose positioning information when needing to align
+     * elements to the input relative to the bounding element
+     * By considering the paddings and margins of the element,
+     * we aims to select a bounding element that provides the
+     * necessary style information that does not introduce any
+     * unwanted offsets that could affect the injected icon's
+     * positioning */
+    if (!isInput) {
+        const pb = pixelParser(getComputedStyle(curr).paddingBottom);
+        const pt = pixelParser(getComputedStyle(curr).paddingTop);
+        if (pb > 1 || pt > 1) return curr;
+    }
 
-    if (mb !== 0 || mt !== 0) return el;
+    const mb = pixelParser(getComputedStyle(curr).marginBottom);
+    const mt = pixelParser(getComputedStyle(curr).marginTop);
+    if (mb > 1 || mt > 1) return curr;
 
-    const parent = el.parentElement!;
+    const parent = curr.parentElement!;
 
     /* early return if the parent element should not even
      * be considered as a possible candidate. This is especially
      * the case with table row/column elements */
-    if (INVALID_BOUNDING_TAGS.includes(parent.tagName)) return el;
+    if (INVALID_BOUNDING_TAGS.includes(parent.tagName)) return curr;
 
     const parentHeight = parent.getBoundingClientRect().height;
     const hasTextNode = containsTextNode(parent);
@@ -54,8 +74,8 @@ export const findBoundingInputElement = (el: HTMLElement, minHeight?: number): H
         /* if parent has margin break from recursion to avoid
          * resolving a bounding box that would not contain the
          * necessary styles information to account for the offsets */
-        return findBoundingInputElement(parent, minHeight);
+        return findBoundingInputElement(parent, inputRef, minHeight);
     }
 
-    return el;
+    return curr;
 };
