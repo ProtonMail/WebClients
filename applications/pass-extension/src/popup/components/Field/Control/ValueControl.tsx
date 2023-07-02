@@ -1,9 +1,13 @@
-import type { ReactNode, VFC } from 'react';
+import { type ReactNode, type VFC, useMemo, useState } from 'react';
 
+import { c } from 'ttag';
+
+import { Button } from '@proton/atoms';
 import { Icon, type IconName } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
 import { FieldBox, type FieldBoxProps } from '../Layout/FieldBox';
+import { ClickToCopy } from './ClickToCopy';
 
 import './ValueControl.scss';
 
@@ -11,13 +15,16 @@ type ContainerElement = 'div' | 'pre' | 'p' | 'ul';
 
 export type ValueControlProps = Omit<FieldBoxProps, 'icon'> & {
     as?: ContainerElement;
-    children: ReactNode;
-    icon?: IconName;
-    label: string;
-    interactive?: boolean;
-    invalid?: boolean;
-    loading?: boolean;
+    children?: ReactNode;
+    clickToCopy?: boolean;
+    error?: boolean;
     extra?: ReactNode;
+    hidden?: boolean;
+    hiddenValue?: string;
+    icon: IconName;
+    label: string;
+    loading?: boolean;
+    value?: string;
     valueClassName?: string;
 };
 
@@ -30,24 +37,63 @@ const getClassNameByElementType = (element: ContainerElement): string => {
     }
 };
 
+const HideButton = ({ hidden, onClick }: { hidden: boolean; onClick: () => void }) => (
+    <Button
+        icon
+        pill
+        color="weak"
+        onClick={onClick}
+        size="medium"
+        shape="solid"
+        title={hidden ? c('Action').t`Unmask password` : c('Action').t`Hide password`}
+    >
+        <Icon size={20} name={hidden ? 'eye' : 'eye-slash'} />
+    </Button>
+);
+
+/*
+ * When passed both children and a value prop:
+ * children will be rendered, value will be passed to ClickToCopy
+ */
 export const ValueControl: VFC<ValueControlProps> = ({
     actions,
     as = 'div',
     children,
+    clickToCopy = false,
+    error = false,
+    extra,
+    hidden = false,
+    hiddenValue,
     icon,
     label,
-    interactive = false,
-    invalid = false,
     loading = false,
-    extra,
+    value,
     valueClassName,
 }) => {
+    const [hide, setHide] = useState(hidden);
     const ValueContainer = as;
+    const defaultHiddenValue = value && value.length >= 6 ? '••••••••••••' : '••••••';
+
+    const displayValue = useMemo(() => {
+        if (hidden && hide) return hiddenValue ?? defaultHiddenValue;
+        if (children) return children;
+        if (!value) return <div className="color-weak">{c('Info').t`None`}</div>;
+        return value;
+    }, [children, hidden, hide, value]);
 
     return (
-        <div className={clsx(interactive && 'pass-value-control--interactive', !loading && invalid && 'border-danger')}>
+        <ClickToCopy
+            className={clsx(
+                clickToCopy && value && 'pass-value-control--interactive',
+                !loading && error && 'border-danger'
+            )}
+            enabled={clickToCopy}
+            value={value}
+        >
             <FieldBox
-                actions={actions}
+                actions={
+                    hidden && value ? [<HideButton hidden={hide} onClick={() => setHide((prev) => !prev)} />] : actions
+                }
                 icon={icon && <Icon name={icon} size={20} style={{ color: 'var(--fieldset-cluster-icon-color)' }} />}
             >
                 <div className="color-weak text-sm">{label}</div>
@@ -58,10 +104,10 @@ export const ValueControl: VFC<ValueControlProps> = ({
                         valueClassName
                     )}
                 >
-                    {loading ? <div className="pass-skeleton pass-skeleton--value" /> : children}
+                    {loading ? <div className="pass-skeleton pass-skeleton--value" /> : displayValue}
                 </ValueContainer>
                 {extra}
             </FieldBox>
-        </div>
+        </ClickToCopy>
     );
 };
