@@ -29,6 +29,7 @@ export const useSelectItemClick = () => {
                     tabId: popup.context!.tabId,
                     domain: popup.url.subdomain ?? popup.url.domain ?? null,
                     selectedItem: { shareId: item.shareId, itemId: item.itemId },
+                    search,
                 })
             );
 
