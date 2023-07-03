@@ -95,7 +95,7 @@ const CalendarSubpage = ({
                         type: 'error',
                         text,
                     });
-                    //we leave the user stuck with a loader screen
+                    // we leave the user stuck with a loader screen
                 }
             };
 

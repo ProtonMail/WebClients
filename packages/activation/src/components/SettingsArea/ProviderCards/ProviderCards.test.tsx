@@ -137,27 +137,27 @@ describe('Provider cards process testing', () => {
         expect(outlook).toBeEnabled();
         expect(imap).toBeEnabled();
 
-        //Open imap modal
+        // Open imap modal
         fireEvent.click(imap);
         await waitFor(() => screen.getByTestId('MailModal:ProductModal'));
         let productButtons = screen.getAllByTestId('MailModal:ProductButton');
         expect(productButtons).toHaveLength(3);
 
-        //Close imap modal
+        // Close imap modal
         let closeButton = screen.getByTestId('modal:close');
         fireEvent.click(closeButton);
         await waitFor(() => screen.queryAllByTestId('MailModal:ProductModal'));
         productButtons = screen.queryAllByTestId('MailModal:ProductButton');
         expect(productButtons).toStrictEqual([]);
 
-        //Open yahoo modal
+        // Open yahoo modal
         fireEvent.click(yahoo);
         await waitFor(() => screen.getByTestId('MailModal:ProductModal'));
         productButtons = screen.getAllByTestId('MailModal:ProductButton');
         expect(productButtons).toHaveLength(3);
         closeButton = screen.getByTestId('modal:close');
 
-        //Close yahoo modal
+        // Close yahoo modal
         closeButton = screen.getByTestId('modal:close');
         fireEvent.click(closeButton);
         await waitFor(() => screen.queryAllByTestId('MailModal:ProductModal'));
@@ -203,14 +203,14 @@ describe('Provider cards process testing', () => {
 
         const yahoo = screen.getByTestId('ProviderCard:yahooCard');
 
-        //Open imap product modal and click calendar
+        // Open imap product modal and click calendar
         fireEvent.click(yahoo);
         await waitFor(() => screen.getByTestId('MailModal:ProductModal'));
         const productButtons = screen.getAllByTestId('MailModal:ProductButton');
         expect(productButtons).toHaveLength(3);
         fireEvent.click(productButtons[0]);
 
-        //SKip instructions and expect to see calendar modal
+        // SKip instructions and expect to see calendar modal
         fireEvent.click(screen.getByTestId('Instruction:continue'));
 
         const emailInput = screen.getByTestId('StepForm:emailInput');
@@ -232,14 +232,14 @@ describe('Provider cards process testing', () => {
 
         const imap = screen.getByTestId('ProviderCard:imapCard');
 
-        //Open imap product modal and click calendar
+        // Open imap product modal and click calendar
         fireEvent.click(imap);
         await waitFor(() => screen.getByTestId('MailModal:ProductModal'));
         const productButtons = screen.getAllByTestId('MailModal:ProductButton');
         expect(productButtons).toHaveLength(3);
         fireEvent.click(productButtons[1]);
 
-        //SKip instructions and expect to see calendar modal
+        // SKip instructions and expect to see calendar modal
         fireEvent.click(screen.getByTestId('Instruction:continue'));
     });
 
@@ -249,7 +249,7 @@ describe('Provider cards process testing', () => {
 
         const imap = screen.getByTestId('ProviderCard:imapCard');
 
-        //Open imap modal and click on email
+        // Open imap modal and click on email
         fireEvent.click(imap);
         await waitFor(() => screen.getByTestId('MailModal:ProductModal'));
         let productButtons = screen.getAllByTestId('MailModal:ProductButton');
@@ -259,7 +259,7 @@ describe('Provider cards process testing', () => {
         await waitFor(() => screen.getByTestId('Instruction:defaultMailInstructions'));
         fireEvent.click(screen.getByTestId('Instruction:close'));
 
-        //Open imap modal and click on contact
+        // Open imap modal and click on contact
         fireEvent.click(imap);
         await waitFor(() => screen.getByTestId('MailModal:ProductModal'));
         productButtons = screen.getAllByTestId('MailModal:ProductButton');
@@ -269,7 +269,7 @@ describe('Provider cards process testing', () => {
         await waitFor(() => screen.getByTestId('Instruction:defaultCalendarInstructions'));
         fireEvent.click(screen.getByTestId('Instruction:close'));
 
-        //Open imap modal and click on contact
+        // Open imap modal and click on contact
         fireEvent.click(imap);
         await waitFor(() => screen.getByTestId('MailModal:ProductModal'));
         productButtons = screen.getAllByTestId('MailModal:ProductButton');
@@ -286,7 +286,7 @@ describe('Provider cards process testing', () => {
 
         const yahoo = screen.getByTestId('ProviderCard:yahooCard');
 
-        //Open yahoo modal and click on email
+        // Open yahoo modal and click on email
         fireEvent.click(yahoo);
         await waitFor(() => screen.getByTestId('MailModal:ProductModal'));
         let productButtons = screen.getAllByTestId('MailModal:ProductButton');
@@ -296,7 +296,7 @@ describe('Provider cards process testing', () => {
         await waitFor(() => screen.getByTestId('Instruction:yahooMailInstructions'));
         fireEvent.click(screen.getByTestId('Instruction:close'));
 
-        //Open yahoo modal and click on contact
+        // Open yahoo modal and click on contact
         fireEvent.click(yahoo);
         await waitFor(() => screen.getByTestId('MailModal:ProductModal'));
         productButtons = screen.getAllByTestId('MailModal:ProductButton');
@@ -306,7 +306,7 @@ describe('Provider cards process testing', () => {
         await waitFor(() => screen.getByTestId('Instruction:yahooCalendarInstructions'));
         fireEvent.click(screen.getByTestId('Instruction:close'));
 
-        //Open yahoo modal and click on contact
+        // Open yahoo modal and click on contact
         fireEvent.click(yahoo);
         await waitFor(() => screen.getByTestId('MailModal:ProductModal'));
         productButtons = screen.getAllByTestId('MailModal:ProductButton');

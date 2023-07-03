@@ -106,7 +106,7 @@ const ExperimentsProvider = ({ children }: Props) => {
                 }));
             })
             .then(() => {
-                //The timeout is here to make sure the cookie is set
+                // The timeout is here to make sure the cookie is set
                 setTimeout(() => {
                     const fetchUrl = new URL(window.location.href);
                     fetchUrl.searchParams.append('load', 'experiment');
