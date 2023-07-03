@@ -89,7 +89,7 @@ const SpamModal = ({ type, onAdd, modalProps }: Props) => {
             <ModalTwoContent>
                 <Row>
                     <Label id="descAddressType">{c('Label').t`Address type`}</Label>
-                    <Field>
+                    <Field className="mt-1 pt-0.5">
                         <Radio
                             id="email-mode"
                             checked={mode === 'email'}
