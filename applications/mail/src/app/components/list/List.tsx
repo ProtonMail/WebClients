@@ -1,33 +1,18 @@
-import { ChangeEvent, Fragment, Ref, RefObject, forwardRef, memo, useMemo } from 'react';
+import { ChangeEvent, Fragment, Ref, RefObject, forwardRef, memo, useEffect, useMemo } from 'react';
 import { useSelector } from 'react-redux';
 
 import { c, msgid } from 'ttag';
 
-import {
-    MnemonicPromptModal,
-    PaginationRow,
-    getCanReactiveMnemonic,
-    useConversationCounts,
-    useEventManager,
-    useIsMnemonicAvailable,
-    useItemsDraggable,
-    useMessageCounts,
-    useModalState,
-    useModals,
-    useSettingsLink,
-    useUser,
-} from '@proton/components';
+import { PaginationRow, useConversationCounts, useItemsDraggable, useMessageCounts } from '@proton/components';
 import { DENSITY } from '@proton/shared/lib/constants';
-import { ChecklistKey, MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
+import { CHECKLIST_DISPLAY_TYPE, MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
-import { MESSAGE_ACTIONS } from '../../constants';
-import { useOnCompose } from '../../containers/ComposeProvider';
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
-import { useGetStartedChecklist, usePaidUserChecklist } from '../../containers/checklists';
+import { useGetStartedChecklist } from '../../containers/onboardingChecklist/provider/GetStartedChecklistProvider';
 import { isMessage as testIsMessage } from '../../helpers/elements';
+import { isColumnMode } from '../../helpers/mailSettings';
 import { MARK_AS_STATUS } from '../../hooks/actions/useMarkAs';
-import { ComposeTypes } from '../../hooks/composer/useCompose';
 import { usePaging } from '../../hooks/usePaging';
 import { usePlaceholders } from '../../hooks/usePlaceholders';
 import useShowUpsellBanner from '../../hooks/useShowUpsellBanner';
@@ -35,11 +20,8 @@ import { showLabelTaskRunningBanner } from '../../logic/elements/elementsSelecto
 import { Element } from '../../models/element';
 import { Filter, Sort } from '../../models/tools';
 import { Breakpoints } from '../../models/utils';
-import GetStartedChecklist from '../checklist/GetStartedChecklist';
-import ModalGetMobileApp from '../checklist/ModalGetMobileApp';
-import ModalImportEmails from '../checklist/ModalImportEmails';
-import PaidUserGetStartedChecklist from '../checklist/PaidUserGetStartedChecklist';
-import EmptyView from '../view/EmptyView';
+import OnboardingChecklistWrapper from '../checklist/OnboardingChecklistWrapper';
+import EmptyListPlaceholder from '../view/EmptyListPlaceholder';
 import ESSlowToolbar from './ESSlowToolbar';
 import Item from './Item';
 import ListSettings from './ListSettings';
@@ -52,6 +34,8 @@ import { useItemContextMenu } from './useItemContextMenu';
 
 const defaultCheckedIDs: string[] = [];
 const defaultElements: Element[] = [];
+
+const { FULL, REDUCED } = CHECKLIST_DISPLAY_TYPE;
 
 interface Props {
     show: boolean;
@@ -133,28 +117,16 @@ const List = (
     const shouldOverrideCompactness = shouldHighlight() && contentIndexingDone && esEnabled;
     const isCompactView = userSettings.Density === DENSITY.COMPACT && !shouldOverrideCompactness;
 
-    const [user] = useUser();
-    const onCompose = useOnCompose();
-    const { createModal } = useModals();
-    const goToSettings = useSettingsLink();
+    const { displayState, changeChecklistDisplay } = useGetStartedChecklist();
 
     // We want to display placeholders only when we are currently loading elements AND we don't have elements already
     const displayPlaceholders = loading && inputElements?.length === 0;
 
     const elements = usePlaceholders(inputElements, displayPlaceholders, placeholderCount);
-    const { dismissed: isGetStartedChecklistDismissed, handleDismiss: dismissGetStartedChecklist } =
-        useGetStartedChecklist();
-    const { dismissed: isPaidUserChecklistDismissed, handleDismiss: dismissPaidUserChecklist } = usePaidUserChecklist();
     const pagingHandlers = usePaging(inputPage, inputTotal, onPage);
     const { total, page } = pagingHandlers;
 
-    const { call } = useEventManager();
-    const [mnemonicPromptModal, setMnemonicPromptModalOpen, render] = useModalState({ onExit: call });
     const showTaskRunningBanner = useSelector(showLabelTaskRunningBanner);
-
-    const [isMnemonicAvailable] = useIsMnemonicAvailable();
-    const canReactivateMnemonic = getCanReactiveMnemonic(user);
-    const displayMnemonicPrompt = isMnemonicAvailable && canReactivateMnemonic;
 
     const [messageCounts] = useMessageCounts();
     const [conversationCounts] = useConversationCounts();
@@ -163,6 +135,13 @@ const List = (
         labelID,
         showTaskRunningBanner
     );
+
+    // Reduce the checklist if there are more than 4 elements in the view
+    useEffect(() => {
+        if (inputElements.length >= 5 && displayState === FULL) {
+            changeChecklistDisplay(REDUCED);
+        }
+    }, [elements]);
 
     // ES options: offer users the option to turn off ES if it's taking too long, and
     // enable/disable UI elements for incremental partial searches
@@ -239,9 +218,11 @@ const List = (
                     )}
                     {showTaskRunningBanner && <TaskRunningBanner className={showESSlowToolbar ? '' : 'mt-4'} />}
                     <AutoDeleteBanner labelID={labelID} columnLayout={columnLayout} isCompactView={isCompactView} />
-                    {elements.length === 0 ? (
-                        <EmptyView labelID={labelID} isSearch={isSearch} isUnread={filter.Unread === 1} />
-                    ) : (
+                    {elements.length === 0 && displayState !== FULL && (
+                        <EmptyListPlaceholder labelID={labelID} isSearch={isSearch} isUnread={filter.Unread === 1} />
+                    )}
+                    {elements.length === 0 && displayState === FULL && <OnboardingChecklistWrapper />}
+                    {elements.length > 0 && (
                         <>
                             {/* div needed here for focus management */}
                             <div>
@@ -273,76 +254,9 @@ const List = (
 
                             {!loading && !(total > 1) && (
                                 <>
-                                    {render && <MnemonicPromptModal {...mnemonicPromptModal} />}
-                                    {userSettings.Checklists?.includes('get-started') &&
-                                        !isGetStartedChecklistDismissed && (
-                                            <GetStartedChecklist
-                                                onDismiss={dismissGetStartedChecklist}
-                                                onItemSelection={(key: ChecklistKey) => () => {
-                                                    switch (key) {
-                                                        case ChecklistKey.SendMessage: {
-                                                            onCompose({
-                                                                type: ComposeTypes.newMessage,
-                                                                action: MESSAGE_ACTIONS.NEW,
-                                                            });
-                                                            break;
-                                                        }
-
-                                                        case ChecklistKey.MobileApp: {
-                                                            createModal(<ModalGetMobileApp />);
-                                                            break;
-                                                        }
-
-                                                        case ChecklistKey.RecoveryMethod: {
-                                                            if (displayMnemonicPrompt) {
-                                                                setMnemonicPromptModalOpen(true);
-                                                            } else {
-                                                                goToSettings('/recovery', undefined, true);
-                                                            }
-                                                            break;
-                                                        }
-
-                                                        case ChecklistKey.Import: {
-                                                            createModal(<ModalImportEmails />);
-                                                            break;
-                                                        }
-                                                    }
-                                                }}
-                                            />
-                                        )}
-                                    {userSettings.Checklists?.includes('paying-user') &&
-                                        !isPaidUserChecklistDismissed && (
-                                            <PaidUserGetStartedChecklist
-                                                onDismiss={dismissPaidUserChecklist}
-                                                onItemSelection={(key: ChecklistKey) => () => {
-                                                    switch (key) {
-                                                        case ChecklistKey.SendMessage: {
-                                                            onCompose({
-                                                                type: ComposeTypes.newMessage,
-                                                                action: MESSAGE_ACTIONS.NEW,
-                                                            });
-                                                            break;
-                                                        }
-                                                        case ChecklistKey.MobileApp: {
-                                                            createModal(<ModalGetMobileApp />);
-                                                            break;
-                                                        }
-                                                        case ChecklistKey.RecoveryMethod: {
-                                                            if (displayMnemonicPrompt) {
-                                                                setMnemonicPromptModalOpen(true);
-                                                            } else {
-                                                                goToSettings('/recovery', undefined, true);
-                                                            }
-                                                            break;
-                                                        }
-                                                        case ChecklistKey.Import: {
-                                                            createModal(<ModalImportEmails />);
-                                                            break;
-                                                        }
-                                                    }
-                                                }}
-                                            />
-                                        )}
+                                    {displayState === FULL && (
+                                        <OnboardingChecklistWrapper displayOnMobile={isColumnMode(mailSettings)} />
+                                    )}
                                 </>
                             )}
 

@@ -49,7 +49,7 @@ describe('IMAP Start Step', () => {
         fireEvent.change(passwordInput, { target: { value: 'password' } });
         await waitFor(() => expect(submitButton).toBeEnabled());
 
-        //Change server and port if there is an issue
+        // Change server and port if there is an issue
         fireEvent.change(serverInput, { target: { value: 'imap.proton.me' } });
         expect(serverInput).toHaveValue('imap.proton.me');
 

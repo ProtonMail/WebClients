@@ -11,6 +11,12 @@ import '@proton/testing/lib/mockMatchMedia';
 global.TextEncoder = TextEncoder;
 global.TextDecoder = TextDecoder;
 
+window.ResizeObserver = jest.fn().mockImplementation(() => ({
+    observe: jest.fn(),
+    unobserve: jest.fn(),
+    disconnect: jest.fn(),
+}));
+
 // JSDom does not include a full implementation of webcrypto
 const crypto = require('crypto').webcrypto;
 global.crypto.subtle = crypto.subtle;

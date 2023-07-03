@@ -259,7 +259,7 @@ const MailSidebarList = ({ labelID: currentLabelID }: Props) => {
 
     return (
         <LabelActionsContextProvider>
-            <div ref={sidebarRef} tabIndex={-1} className="outline-none">
+            <div ref={sidebarRef} tabIndex={-1} className="outline-none flex-item-grow-2">
                 <SidebarList>
                     <MailSidebarSystemFolders
                         counterMap={counterMap}

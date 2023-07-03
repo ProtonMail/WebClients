@@ -105,7 +105,7 @@ export const formatPrepareStepPayload = ({
                     },
                 ];
 
-                //We delete the FolderPath if we're in folder mapping to avoid creating folders
+                // We delete the FolderPath if we're in folder mapping to avoid creating folders
                 delete Destinations.FolderPath;
             }
 

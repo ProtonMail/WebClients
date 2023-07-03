@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { c } from 'ttag';
 
 import { NotificationDot } from '@proton/atoms/NotificationDot';
@@ -22,9 +20,10 @@ import { KeyTransparencyActivation } from '@proton/shared/lib/interfaces';
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import ClearBrowserDataModal from './ClearBrowserDataModal';
 import MailDefaultHandlerModal from './MailDefaultHandlerModal';
+import OnboardingChecklistModal from './OnboardingChecklistModal';
 
 const MailHeaderSettingsButton = () => {
-    const [{ Density }] = useUserSettings();
+    const [{ Density, Checklists }] = useUserSettings();
     const [{ Shortcuts, ComposerMode, ViewLayout } = { Shortcuts: 0, ComposerMode: 0, ViewLayout: 0 }] =
         useMailSettings();
     const { getESDBStatus } = useEncryptedSearchContext();
@@ -36,6 +35,10 @@ const MailHeaderSettingsButton = () => {
     const [mailDensityProps, setMailDensityModalOpen] = useModalState();
     const [mailComposerModeProps, setMailComposerModeModalOpen] = useModalState();
     const [mailDefaultHandlerProps, setDefaultHandlerModalOpen] = useModalState();
+    const [onboardingChecklistProps, setOnboardingChecklistProps] = useModalState();
+
+    const hasFreeOnboardingChecklist = Checklists?.includes('get-started');
+
     const [keyTransparencyDetailsModalProps, setKeyTransparencyDetailsModalOpen] = useModalState();
     const { ktActivation } = useKeyTransparencyContext();
     const keyTransparencyNotification = useKeyTransparencyNotification();
@@ -115,6 +118,23 @@ const MailHeaderSettingsButton = () => {
                         <span className="flex-item-fluid text-left">{c('Action').t`Default email application`}</span>
                     </DropdownMenuButton>
                 )}
+                {hasFreeOnboardingChecklist && (
+                    <>
+                        <hr className="my-2" />
+                        <DropdownMenuButton
+                            onClick={() => setOnboardingChecklistProps(true)}
+                            className="flex flex-nowrap flex-justify-space-between flex-align-items-center"
+                        >
+                            <span className="flex-item-fluid text-left">
+                                {c('Get started checklist instructions').t`Open checklist`}
+                            </span>
+                            <span className="color-primary ml-2">
+                                {c('Get started checklist instructions').t`Get free storage`}
+                            </span>
+                        </DropdownMenuButton>
+                    </>
+                )}
+                {clearDataButton}
                 {showKT && (
                     <DropdownMenuButton
                         onClick={() => setKeyTransparencyDetailsModalOpen(true)}
@@ -139,6 +159,7 @@ const MailHeaderSettingsButton = () => {
             <MailDefaultHandlerModal {...mailDefaultHandlerProps} />
             <ClearBrowserDataModal {...clearBrowserDataProps} />
             <KeyTransparencyDetailsModal {...keyTransparencyDetailsModalProps} />
+            <OnboardingChecklistModal {...onboardingChecklistProps} />
         </>
     );
 };

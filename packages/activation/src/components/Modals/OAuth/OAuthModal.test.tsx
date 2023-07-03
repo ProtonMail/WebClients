@@ -114,25 +114,25 @@ describe('OAuth start step', () => {
     it('Should render the instruction modal if Google is selected', async () => {
         easySwitchRender(<ProviderCards />);
 
-        //Open the product modal
+        // Open the product modal
         const google = screen.getByTestId('ProviderCard:googleCard');
         expect(google).toBeEnabled();
         fireEvent.click(google);
 
         await waitFor(() => screen.getByTestId('StepProducts:modal'));
 
-        //Submit products modal
+        // Submit products modal
         const submitProducts = screen.getByTestId('StepProducts:submit');
         fireEvent.click(submitProducts);
 
-        //Wait for instructions modal
+        // Wait for instructions modal
         await waitFor(() => screen.getByTestId('StepInstruction:modal'));
 
-        //Press back button on instruction modal
+        // Press back button on instruction modal
         const backButton = screen.getByTestId('StepInstruction:back');
         fireEvent.click(backButton);
 
-        //Expect to see products modal again
+        // Expect to see products modal again
         await waitFor(() => screen.getByTestId('StepProducts:modal'));
     });
 
@@ -145,14 +145,14 @@ describe('OAuth start step', () => {
 
         easySwitchRender(<ProviderCards />);
 
-        //Open the product modal
+        // Open the product modal
         const outlook = screen.getByTestId('ProviderCard:outlookCard');
         expect(outlook).toBeEnabled();
         fireEvent.click(outlook);
 
         await waitFor(() => screen.getByTestId('StepProducts:modal'));
 
-        //Submit products modal
+        // Submit products modal
         const submitProducts = screen.getByTestId('StepProducts:submit');
         fireEvent.click(submitProducts);
     });
@@ -166,21 +166,21 @@ describe('OAuth start step', () => {
 
         easySwitchRender(<ProviderCards />);
 
-        //Open the product modal
+        // Open the product modal
         const google = screen.getByTestId('ProviderCard:googleCard');
         expect(google).toBeEnabled();
         fireEvent.click(google);
 
         await waitFor(() => screen.getByTestId('StepProducts:modal'));
 
-        //Submit products modal
+        // Submit products modal
         const submitProducts = screen.getByTestId('StepProducts:submit');
         fireEvent.click(submitProducts);
 
-        //Wait for instructions modal
+        // Wait for instructions modal
         await waitFor(() => screen.getByTestId('StepInstruction:modal'));
 
-        //Press submit button on instruction modal
+        // Press submit button on instruction modal
         const submitButton = screen.getByTestId('StepInstruction:submit');
         fireEvent.click(submitButton);
     });
