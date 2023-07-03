@@ -292,7 +292,13 @@ export const useMessageHotkeys = (
                 if (hotkeysEnabledAndMessageReady) {
                     e.stopPropagation();
                     e.preventDefault();
-                    labelDropdownToggleRef.current?.();
+
+                    // FF has an issue when we propagate custom events
+                    // adding a timeout there ensure event is done when
+                    // other components are rendered
+                    setTimeout(() => {
+                        labelDropdownToggleRef.current?.();
+                    }, 0);
                 }
             },
         ],
@@ -302,7 +308,13 @@ export const useMessageHotkeys = (
                 if (hotkeysEnabledAndMessageReady) {
                     e.stopPropagation();
                     e.preventDefault();
-                    moveDropdownToggleRef.current?.();
+
+                    // FF has an issue when we propagate custom events
+                    // adding a timeout there ensure event is done when
+                    // other components are rendered
+                    setTimeout(() => {
+                        moveDropdownToggleRef.current?.();
+                    });
                 }
             },
         ],
