@@ -1,9 +1,9 @@
-## Release 5.0.25.0 — July 12, 2023
+## Release 5.0.25.0 — July 19, 2023
 
 ### New features
 
 -   Message content search is now available to all Proton users
--   Links that directly contain UTM parameters are now cleaned if the Block email tracking setting is active. This will prevent advertisers to track your interactions with emails.
+-   Links that contain known tracking parameters are now cleaned if the Block email tracking setting is active. This will prevent advertisers to track your interactions with emails.
 -   Easily access important email actions using a command tool (CMD+K / Ctrl+K)
 -   New setting allows to view the number of unread messages directly in the browser tab icon
 
