@@ -1,5 +1,5 @@
 import { serverTime } from '@proton/crypto';
-import { commitSKLToLS, fetchSignedKeyLists, ktSentryReport } from '@proton/key-transparency';
+import { commitSKLToLS, fetchSignedKeyLists, ktSentryReport, ktSentryReportError } from '@proton/key-transparency';
 import {
     Address,
     Api,
@@ -71,9 +71,7 @@ const createPreAuthKTVerifier = (ktActivation: KeyTransparencyActivation, api: A
             }
             createdSKLs = [];
         } catch (error: any) {
-            const errorMessage = error instanceof Error ? error.message : 'unknown error';
-            const stack = error instanceof Error ? error.stack : undefined;
-            ktSentryReport(errorMessage, { context: 'preAuthKTCommit', stack });
+            ktSentryReportError(error, { context: 'preAuthKTCommit' });
         }
     };
 
