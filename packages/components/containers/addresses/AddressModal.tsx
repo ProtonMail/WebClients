@@ -159,7 +159,6 @@ const AddressModal = ({ member, members, organizationKey, ...rest }: Props) => {
                         password,
                         api,
                         keyTransparencyVerify,
-                        keyTransparencyCommit,
                     });
                 } else {
                     await missingKeysMemberProcess({
