@@ -15,9 +15,6 @@ import {
     ModalTwoFooter as ModalFooter,
     ModalTwoHeader as ModalHeader,
     ModalProps,
-    Table,
-    TableBody,
-    TableRow,
     useFormErrors,
 } from '../../components';
 import { useApi, useEventManager, useLoading, useMemberAddresses, useNotifications } from '../../hooks';
@@ -57,48 +54,41 @@ const SendEmailReminderTwoFAModal = ({ onClose, members, ...rest }: Props) => {
         >
             <ModalHeader title={c('Title').t`Send email reminders?`} />
             <ModalContent>
-                <span>{c('Info')
-                    .t`The following members will receive an email prompting them to enable two-factor authentication as soon as possible.`}</span>
-                <Table className="mt-1">
-                    <TableBody colSpan={1}>
-                        {members
-                            .filter(function (member) {
-                                const memberAddresses = memberAddressesMap?.[member.ID] || [];
-                                return memberAddresses.length > 0;
-                            })
-                            .map((member) => {
-                                const memberAddresses = memberAddressesMap?.[member.ID] || [];
-                                return (
-                                    <TableRow
-                                        key={member.ID}
-                                        className="py-1"
-                                        labels={['']}
-                                        cells={[
-                                            <div
-                                                className="on-desktop-py-1 flex flex-nowrap flex-align-items-center"
-                                                title={member.Name}
-                                            >
-                                                <Avatar className="mr-1 flex-item-noshrink">
-                                                    {getInitials(member.Name)}
-                                                </Avatar>
-                                                <div className="flex flex-column w100">
-                                                    <span className="flex-items-fluid text-left text-ellipsis">
-                                                        {member.Name}
-                                                    </span>
-                                                    <span className="flex flex-items-fluid flex-justify-space-between text-ellipsis">
-                                                        {memberAddresses[0].Email}
-                                                        {member.Role === MEMBER_ROLE.ORGANIZATION_ADMIN && (
-                                                            <Badge type="light">{c('Admin').t`admin`}</Badge>
-                                                        )}
-                                                    </span>
-                                                </div>
-                                            </div>,
-                                        ]}
-                                    />
-                                );
-                            })}
-                    </TableBody>
-                </Table>
+                <p>{c('Info')
+                    .t`The following members will receive an email prompting them to enable two-factor authentication as soon as possible.`}</p>
+                <ul className="unstyled">
+                    {members
+                        .filter(function (member) {
+                            const memberAddresses = memberAddressesMap?.[member.ID] || [];
+                            return memberAddresses.length > 0;
+                        })
+                        .map((member) => {
+                            const memberAddresses = memberAddressesMap?.[member.ID] || [];
+                            return (
+                                <li
+                                    className="py-2 flex flex-nowrap flex-align-items-center border-bottom"
+                                    title={member.Name}
+                                >
+                                    <Avatar className="mr-2 flex-item-noshrink">{getInitials(member.Name)}</Avatar>
+                                    <div className="flex-items-fluid">
+                                        <div className="text-ellipsis max-100" title={member.Name}>
+                                            {member.Name}
+                                        </div>
+                                        <div className="max-w100 flex flex-">
+                                            <span className="flex-item-fluid mr-2 text-ellipsis">
+                                                {memberAddresses[0].Email}
+                                            </span>
+                                            {member.Role === MEMBER_ROLE.ORGANIZATION_ADMIN && (
+                                                <span className="flex-item-noshrink">
+                                                    <Badge type="light">{c('Admin').t`admin`}</Badge>
+                                                </span>
+                                            )}
+                                        </div>
+                                    </div>
+                                </li>
+                            );
+                        })}
+                </ul>
             </ModalContent>
             <ModalFooter>
                 <Button onClick={handleClose} disabled={loading}>
