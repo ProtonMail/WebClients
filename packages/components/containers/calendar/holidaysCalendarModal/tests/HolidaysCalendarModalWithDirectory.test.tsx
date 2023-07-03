@@ -1,4 +1,4 @@
-import { fireEvent, render, screen } from '@testing-library/react';
+import { fireEvent, render, screen, waitFor, within } from '@testing-library/react';
 import { mocked } from 'jest-mock';
 
 import { useCalendarUserSettings, useNotifications } from '@proton/components/hooks';
@@ -235,8 +235,19 @@ describe('HolidaysCalendarModal - Subscribe to a holidays calendar', () => {
                 // Country is pre-selected
                 screen.getByText('France');
 
-                // Hint is displayed
+                // Hint is displayed before country select focus
                 screen.getByText('Based on your time zone');
+
+                const countrySelect = screen.getByTestId('country-select');
+                await fireEvent.click(countrySelect);
+
+                // Hint is displayed within country select
+                within(screen.getByTestId('select-list')).getByText('Based on your time zone');
+
+                // Preselected option is focused
+                const preselectedOption = await waitFor(() => screen.getByTestId('preselected-country-select-option'));
+                expect(preselectedOption).toHaveTextContent('France');
+                expect(preselectedOption).toHaveClass('dropdown-item--is-selected');
 
                 // Language is NOT shown because there's only one available for this country
                 const languageInput = screen.queryByTestId('holidays-calendar-modal:language-select');
@@ -253,7 +264,7 @@ describe('HolidaysCalendarModal - Subscribe to a holidays calendar', () => {
                 screen.getByTestId('add-notification');
             });
 
-            it('should pre-select the default holidays calendar based on time zone and user language', () => {
+            it('should pre-select the default holidays calendar based on time zone and user language', async () => {
                 // Mock user's time zone to Zurich
                 // @ts-ignore
                 useCalendarUserSettings.mockReturnValue([{ PrimaryTimezone: 'Europe/Zurich' }, false]);
@@ -267,8 +278,19 @@ describe('HolidaysCalendarModal - Subscribe to a holidays calendar', () => {
                 // Country is pre-selected
                 screen.getByText('Switzerland');
 
-                // Hint is displayed
+                // Hint is displayed before country select focus
                 screen.getByText('Based on your time zone');
+
+                const countrySelect = screen.getByTestId('country-select');
+                await fireEvent.click(countrySelect);
+
+                // Hint is displayed within country select
+                within(screen.getByTestId('select-list')).getByText('Based on your time zone');
+
+                // Preselected option is focused
+                const preselectedOption = await waitFor(() => screen.getByTestId('preselected-country-select-option'));
+                expect(preselectedOption).toHaveTextContent('Switzerland');
+                expect(preselectedOption).toHaveClass('dropdown-item--is-selected');
 
                 // Language is shown because there's several languages for this country
                 screen.getByText('English');
@@ -284,7 +306,7 @@ describe('HolidaysCalendarModal - Subscribe to a holidays calendar', () => {
                 screen.getByTestId('add-notification');
             });
 
-            it('should pre-select the default holidays calendar based on time zone and first language', () => {
+            it('should pre-select the default holidays calendar based on time zone and first language', async () => {
                 setLocales({ localeCode, languageCode: 'something' });
 
                 // Mock user's time zone to Spain
@@ -300,8 +322,19 @@ describe('HolidaysCalendarModal - Subscribe to a holidays calendar', () => {
                 // Country is pre-selected
                 screen.getByText('Spain');
 
-                // Hint is displayed
+                // Hint is displayed before country select focus
                 screen.getByText('Based on your time zone');
+
+                const countrySelect = screen.getByTestId('country-select');
+                await fireEvent.click(countrySelect);
+
+                // Hint is displayed within country select
+                within(screen.getByTestId('select-list')).getByText('Based on your time zone');
+
+                // Preselected option is focused
+                const preselectedOption = await waitFor(() => screen.getByTestId('preselected-country-select-option'));
+                expect(preselectedOption).toHaveTextContent('Spain');
+                expect(preselectedOption).toHaveClass('dropdown-item--is-selected');
 
                 // Language is shown because there's several languages for this country
                 screen.getByText('Català');
@@ -437,11 +470,12 @@ describe('HolidaysCalendarModal - Subscribe to a holidays calendar', () => {
             const subtitle = screen.queryByText("Get a country's official public holidays calendar.");
             expect(subtitle).toBeNull();
 
-            // Country is pre-selected
+            // Edited country is selected
             screen.getByText('France');
 
-            // Hint is displayed
-            screen.getByText('Based on your time zone');
+            // Hint should not be displayed on edition
+            const hint = screen.queryByText('Based on your time zone');
+            expect(hint).toBeNull();
 
             // Language is NOT shown because there's only one available for this country
             const languageInput = screen.queryByTestId('holidays-calendar-modal:language-select');

@@ -5,6 +5,7 @@ import {
     getAllDropdownOptions,
     getCleanCountryCode,
     groupCountriesByStartingLetter,
+    optionToPreselectedOption,
 } from '@proton/components/components/country/helpers';
 
 const countryOptions: CountryOption[] = [
@@ -86,6 +87,22 @@ describe('CountrySelect helpers', () => {
 
         it('returns the country code if no suffix is present', () => {
             expect(getCleanCountryCode('ch')).toEqual('ch');
+        });
+    });
+
+    describe('optionToPreselectedOption', () => {
+        it('should add `-preselected` suffix to option countryCode', () => {
+            expect(optionToPreselectedOption({ countryName: 'France', countryCode: 'fr' })).toEqual({
+                countryName: 'France',
+                countryCode: 'fr-preselected',
+            });
+        });
+
+        it('should return option as it is if already suffixed', () => {
+            expect(optionToPreselectedOption({ countryName: 'France', countryCode: 'fr-preselected' })).toEqual({
+                countryName: 'France',
+                countryCode: 'fr-preselected',
+            });
         });
     });
 });
