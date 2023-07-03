@@ -26,10 +26,32 @@ export const getIsCountryOption = (option: DropdownOption): option is DropdownCo
 
 export const PRESELECTED_COUNTRY_OPTION_SUFFIX = '-preselected';
 
+export const isPreselectedOption = (code: string) => code.endsWith(PRESELECTED_COUNTRY_OPTION_SUFFIX);
+
 export const getCleanCountryCode = (code: string) => {
-    return code.endsWith(PRESELECTED_COUNTRY_OPTION_SUFFIX)
-        ? code.slice(0, -PRESELECTED_COUNTRY_OPTION_SUFFIX.length)
-        : code;
+    return isPreselectedOption(code) ? code.slice(0, -PRESELECTED_COUNTRY_OPTION_SUFFIX.length) : code;
+};
+
+/**
+ * Transform a standard country option to a preselected option, suffixing it with `-preselected` to make it non searchable and focused on modal open.
+ * @param option Option to transform
+ *
+ * Example, given
+ * { countryName: 'France', countryCode: 'fr' },
+ *
+ * The function will return
+ * { countryName: 'France', countryCode: 'fr-preselected' },
+ */
+export const optionToPreselectedOption = (option: CountryOption): CountryOption => {
+    if (option.countryCode.endsWith(PRESELECTED_COUNTRY_OPTION_SUFFIX)) {
+        return option;
+    }
+
+    return {
+        // adding a suffix here to make this option non searchable. The ideal solution would be to have an object here
+        countryCode: `${option.countryCode}${PRESELECTED_COUNTRY_OPTION_SUFFIX}`,
+        countryName: option.countryName,
+    };
 };
 
 /**
@@ -157,9 +179,7 @@ export const getAllDropdownOptions = (
               { type: 'divider', text: preSelectedOptionDivider },
               {
                   type: 'country',
-                  // adding a suffix here to make this option non searchable. The ideal solution would be to have an object here
-                  countryCode: `${preSelectedOption.countryCode}${PRESELECTED_COUNTRY_OPTION_SUFFIX}`,
-                  countryName: preSelectedOption.countryName,
+                  ...optionToPreselectedOption(preSelectedOption),
               },
           ]
         : [];
