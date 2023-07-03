@@ -142,7 +142,6 @@ const CreateMissingKeysAddressModal = ({ member, addressesToGenerate, organizati
                     password,
                     api,
                     keyTransparencyVerify,
-                    keyTransparencyCommit,
                 });
                 addressesToGenerate.forEach((address) => handleUpdate(address.ID, { status: 'ok' }));
             } else {
