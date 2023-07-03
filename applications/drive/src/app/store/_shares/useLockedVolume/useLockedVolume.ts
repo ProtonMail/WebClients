@@ -40,7 +40,7 @@ export default function useLockedVolume() {
         getShareWithKey: useShare().getShareWithKey,
         getDefaultShare: useDefaultShare().getDefaultShare,
         addressesKeys: useAddressesKeys()[0],
-        getPrimaryAddressKey: useDriveCrypto().getPrimaryAddressKey,
+        getOwnAddressAndPrimaryKeys: useDriveCrypto().getOwnAddressAndPrimaryKeys,
         prepareVolumeForRestore,
         getLinkHashKey,
         getLinkPrivateKey,
@@ -52,7 +52,7 @@ type LockedVolumesCallbacks = {
     getShareWithKey: ReturnType<typeof useShare>['getShareWithKey'];
     addressesKeys: ReturnType<typeof useAddressesKeys>[0];
     getDefaultShare: ReturnType<typeof useDefaultShare>['getDefaultShare'];
-    getPrimaryAddressKey: ReturnType<typeof useDriveCrypto>['getPrimaryAddressKey'];
+    getOwnAddressAndPrimaryKeys: ReturnType<typeof useDriveCrypto>['getOwnAddressAndPrimaryKeys'];
     prepareVolumeForRestore: typeof prepareVolumeForRestore;
     getLinkPrivateKey: ReturnType<typeof useLink>['getLinkPrivateKey'];
     getLinkHashKey: ReturnType<typeof useLink>['getLinkHashKey'];
@@ -63,7 +63,7 @@ export function useLockedVolumeInner({
     sharesState,
     addressesKeys,
     getDefaultShare,
-    getPrimaryAddressKey,
+    getOwnAddressAndPrimaryKeys,
     prepareVolumeForRestore,
     getLinkPrivateKey,
     getLinkHashKey,
@@ -222,7 +222,7 @@ export function useLockedVolumeInner({
         const [privateKey, hashKey, { privateKey: addressKey, address }] = await Promise.all([
             getLinkPrivateKey(abortSignal, defaultShare.shareId, defaultShare.rootLinkId),
             getLinkHashKey(abortSignal, defaultShare.shareId, defaultShare.rootLinkId),
-            getPrimaryAddressKey(),
+            getOwnAddressAndPrimaryKeys(defaultShare.creator),
         ]);
 
         // Backend does not support restoring of multiple volumes at one time.
