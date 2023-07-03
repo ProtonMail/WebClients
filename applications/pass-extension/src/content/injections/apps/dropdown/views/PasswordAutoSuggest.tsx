@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { generatePassword } from '@proton/pass/password';
 
 import { DEFAULT_RANDOM_PW_OPTIONS, getCharsGroupedByColor } from '../../../../../shared/hooks/usePasswordGenerator';
+import { SubTheme } from '../../../../../shared/theme/sub-theme';
 import type { IFrameMessage } from '../../../../types';
 import { IFrameMessageType } from '../../../../types';
 import { DropdownItem } from '../components/DropdownItem';
@@ -15,7 +16,7 @@ export const PasswordAutoSuggest: VFC<{ onMessage?: (message: IFrameMessage) => 
     return (
         <DropdownItem
             icon="key"
-            className="ui-password"
+            subTheme={SubTheme.RED}
             title={c('Title').t`Use secure password`}
             subTitle={<span className="text-monospace">{getCharsGroupedByColor(password)}</span>}
             onClick={() =>

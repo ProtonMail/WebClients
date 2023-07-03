@@ -2,6 +2,7 @@ import type { Item, ItemRevision, ItemSortFilter, ItemType, MaybeNull } from '@p
 import type { ItemMatchFunc, ItemMatchFuncMap } from '@proton/pass/utils/search';
 
 import matchesAliasItem from './alias.match';
+import matchesCreditCardItem from './creditCard.match';
 import matchesLoginItem from './login.match';
 import matchesNoteItem from './note.match';
 
@@ -12,6 +13,7 @@ const itemMatchers: ItemMatchFuncMap = {
     login: matchesLoginItem,
     note: matchesNoteItem,
     alias: matchesAliasItem,
+    creditCard: matchesCreditCardItem,
 };
 
 export const matchItem: ItemMatchFunc = <T extends ItemType>(item: Item<T>) => itemMatchers[item.type](item);

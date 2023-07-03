@@ -113,7 +113,7 @@ export const Autosave: VFC<Props> = ({ submission, settings, onClose }) => {
 
     return (
         <FormikProvider value={form}>
-            <Form className="ui-login flex flex-column h100 flex-justify-space-between">
+            <Form className="ui-violet flex flex-column h100 flex-justify-space-between">
                 <NotificationHeader
                     title={(() => {
                         switch (submission.autosave.data.action) {
@@ -137,6 +137,7 @@ export const Autosave: VFC<Props> = ({ submission, settings, onClose }) => {
                         />
                         <div className="flex-item-fluid-auto">
                             <Field
+                                lengthLimiters
                                 name="name"
                                 component={TitleField}
                                 spellCheck={false}
@@ -151,7 +152,7 @@ export const Autosave: VFC<Props> = ({ submission, settings, onClose }) => {
 
                     <FieldsetCluster>
                         <Field name="username" component={TextField} label={c('Label').t`Username`} />
-                        <Field name="password" component={TextField} label={c('Label').t`Password`} masked />
+                        <Field hidden name="password" component={TextField} label={c('Label').t`Password`} />
                     </FieldsetCluster>
                 </div>
                 <div className="flex flex-justify-space-between gap-3">

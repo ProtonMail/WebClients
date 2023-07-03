@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { MiddleEllipsis } from '@proton/components/components';
 import clsx from '@proton/utils/clsx';
 
-import { itemTypeToItemClassName } from '../../../shared/items/className';
+import { SubTheme } from '../../../shared/theme/sub-theme';
 
 import './Alias.preview.scss';
 
@@ -25,7 +25,7 @@ export const AliasPreview: VFC<{
                     <div className="w100 pass-skeleton pass-skeleton--alias-preview" />
                 ) : (
                     <MiddleEllipsis
-                        className={`${itemTypeToItemClassName.login} pass-alias-preview--content text-lg`}
+                        className={`${SubTheme.VIOLET} pass-alias-preview--content text-lg`}
                         charsToDisplayEnd={suffixLastChars}
                         displayTitle
                         text={prefix + suffix}

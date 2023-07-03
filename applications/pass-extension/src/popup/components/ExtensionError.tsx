@@ -9,18 +9,18 @@ import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { FadeIn } from '../../shared/components/animation/FadeIn';
 import { LobbyLayout } from '../views/Lobby/LobbyLayout';
 
-/* This component uses buttons leveraging `ui-note` &
- * `ui-password` themes because we don't currently
+/* This component uses buttons leveraging `ui-orange` &
+ * `ui-red` themes because we don't currently
  * support weak & danger|warning buttons */
 export const PromptForReload: VFC<{ message: string }> = ({ message }) => (
     <FadeIn className="mt-12 w100 flex flex-column flex-align-items-center gap-2" key="prompt-for-reload">
         <span className="block text-sm text-weak">{message}</span>
 
-        <Button pill shape="solid" color="weak" className="ui-note w100" onClick={() => window.location.reload()}>
+        <Button pill shape="solid" color="weak" className="ui-orange w100" onClick={() => window.location.reload()}>
             {c('Action').t`Refresh extension`}
         </Button>
 
-        <Button pill shape="solid" color="weak" className="ui-password w100" onClick={() => browser.runtime.reload()}>
+        <Button pill shape="solid" color="weak" className="ui-red w100" onClick={() => browser.runtime.reload()}>
             {c('Action').t`Reload extension`}
         </Button>
     </FadeIn>

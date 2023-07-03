@@ -19,17 +19,17 @@ export type Props = Omit<ModalProps, 'onSubmit'>;
 
 const getFeatures = (): { className: string; icon: IconName; label: string }[] => [
     {
-        className: 'ui-note',
+        className: 'ui-orange',
         icon: 'pass-circles',
         label: c('Info').t`Multiple vaults`,
     },
     {
-        className: 'ui-login',
+        className: 'ui-violet',
         icon: 'lock',
         label: c('Info').t`Integrated 2FA authenticator`,
     },
     {
-        className: 'ui-alias',
+        className: 'ui-teal',
         icon: 'list-bullets',
         label: c('Info').t`Custom fields`,
     },
