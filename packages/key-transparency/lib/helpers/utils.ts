@@ -60,6 +60,15 @@ export const isTimestampOlderThanThreshold = (time: number) => time < +sub(serve
 export const ktSentryReport = (errorMessage: string, extra?: { [key: string]: any }) =>
     captureMessage(`[KeyTransparency] ${errorMessage}`, { extra });
 
+/**
+ * Helper to send KT-related sentry reports
+ */
+export const ktSentryReportError = (error: any, extra?: { [key: string]: any }) => {
+    const errorMessage = error instanceof Error ? `${error.name}: ${error.message}` : 'unknown error';
+    const stack = error instanceof Error ? error.stack : undefined;
+    ktSentryReport(errorMessage, { ...extra, stack });
+};
+
 export class KeyTransparencyError extends Error {}
 
 export const throwKTError = (errorMessage: string, extra?: { [key: string]: any }): never => {

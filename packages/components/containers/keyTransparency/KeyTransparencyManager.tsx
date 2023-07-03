@@ -10,6 +10,7 @@ import {
     getAuditResult,
     getKTLocalStorage,
     ktSentryReport,
+    ktSentryReportError,
     selfAudit,
     storeAuditResult,
     verifyPublicKeysAddressAndCatchall,
@@ -129,9 +130,7 @@ const KeyTransparencyManager = ({ children, appName }: Props) => {
             address,
             catchAll
         ).catch((error) => {
-            const errorMessage = error instanceof Error ? error.message : 'unknown error';
-            const stack = error instanceof Error ? error.stack : undefined;
-            ktSentryReport(errorMessage, { context: 'VerifyOutboundPublicKeys', stack });
+            ktSentryReportError(error, { context: 'VerifyOutboundPublicKeys' });
             return {};
         });
     };
@@ -253,9 +252,7 @@ const KeyTransparencyManager = ({ children, appName }: Props) => {
                     setKTState({ selfAuditResult });
                 }
             } catch (error: any) {
-                const errorMessage = error instanceof Error ? error.message : 'unknown error';
-                const stack = error instanceof Error ? error.stack : undefined;
-                ktSentryReport(errorMessage, { context: 'SelfAudit', stack });
+                ktSentryReportError(error, { context: 'SelfAudit' });
                 return;
             }
         } else {
@@ -271,7 +268,7 @@ const KeyTransparencyManager = ({ children, appName }: Props) => {
 
     useEffect(() => {
         runSelfAudit().catch((error) => {
-            const errorMessage = error instanceof Error ? error.message : 'unknown error';
+            const errorMessage = error instanceof Error ? `${error.name}: ${error.message}` : 'unknown error';
             const stack = error instanceof Error ? error.stack : undefined;
             ktSentryReport(errorMessage, { context: 'runSelfAudit', stack });
         });
