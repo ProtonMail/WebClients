@@ -7,6 +7,7 @@ const containsTextNode = (el: HTMLElement) =>
 /* heuristic value for computing the best
  * bounding element - adapt as needed */
 const BOUNDING_ELEMENT_MAX_OFFSET = 10;
+const BOUNDING_ELEMENT_MAX_WIDTH_RATIO = 1.2;
 const INVALID_BOUNDING_TAGS = ['TD', 'TR'];
 
 /* Recursively get the top-most "bounding" element
@@ -15,25 +16,38 @@ const INVALID_BOUNDING_TAGS = ['TD', 'TR'];
  * overlap to be considered a correct bounding candidate */
 export const findBoundingInputElement = (
     curr: HTMLElement,
-    input?: HTMLInputElement,
-    minHeight?: number
+    options?: {
+        input: HTMLInputElement;
+        minHeight: number;
+        maxWidth: number;
+    }
 ): HTMLElement => {
     /* bounding element must be at least the size of the input
      * element we're trying to bound - it can happen that a parent
      * container is actually smaller then the nested target */
-    const minHeightRef = minHeight ?? curr.getBoundingClientRect().height;
-    const inputRef = (input ?? curr) as HTMLInputElement;
-    const isInput = curr === inputRef;
+    const optionsRef =
+        options ??
+        (() => {
+            const { height, width } = curr.getBoundingClientRect();
+            return {
+                input: curr as HTMLInputElement,
+                minHeight: height,
+                maxWidth: width * BOUNDING_ELEMENT_MAX_WIDTH_RATIO,
+            };
+        })();
+
+    const { input, minHeight, maxWidth } = optionsRef;
+    const isInput = curr === input;
 
     if (isInput) {
         /* special case when an input is wrapped in its label :
          * often the label can be considered the container if
          * all children overlap and current element is not bordered */
-        const isBorderedEl = pixelParser(getComputedStyle(inputRef).borderBottomWidth) !== 0;
-        const label = isBorderedEl ? null : inputRef.closest('label');
+        const isBorderedEl = pixelParser(getComputedStyle(input).borderBottomWidth) !== 0;
+        const label = isBorderedEl ? null : input.closest('label');
 
         if (label) {
-            const labelHeightCheck = label.getBoundingClientRect().height >= minHeightRef;
+            const labelHeightCheck = label.getBoundingClientRect().height >= minHeight;
             const labelChildrenOverlap = allChildrenOverlap(label, BOUNDING_ELEMENT_MAX_OFFSET);
             if (labelHeightCheck && labelChildrenOverlap) return label;
         }
@@ -65,16 +79,22 @@ export const findBoundingInputElement = (
      * the case with table row/column elements */
     if (INVALID_BOUNDING_TAGS.includes(parent.tagName)) return curr;
 
-    const parentHeight = parent.getBoundingClientRect().height;
+    const { height: parentHeight, width: parentWidth } = parent.getBoundingClientRect();
     const hasTextNode = containsTextNode(parent);
     const hasOneChild = parent.childElementCount === 1;
     const childrenOverlap = allChildrenOverlap(parent, BOUNDING_ELEMENT_MAX_OFFSET);
 
-    if (parentHeight > 0 && parentHeight >= minHeightRef && !hasTextNode && (hasOneChild || childrenOverlap)) {
+    if (
+        parentHeight > 0 &&
+        parentHeight >= minHeight &&
+        parentWidth <= maxWidth &&
+        !hasTextNode &&
+        (hasOneChild || childrenOverlap)
+    ) {
         /* if parent has margin break from recursion to avoid
          * resolving a bounding box that would not contain the
          * necessary styles information to account for the offsets */
-        return findBoundingInputElement(parent, inputRef, minHeight);
+        return findBoundingInputElement(parent, optionsRef);
     }
 
     return curr;

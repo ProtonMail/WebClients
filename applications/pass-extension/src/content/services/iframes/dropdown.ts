@@ -33,21 +33,22 @@ export const createDropdown = (): InjectedDropdown => {
             const field = fieldRef.current;
             if (!field) return { top: 0, left: 0 };
 
+            const { boxElement, element, zIndex } = field;
+            const boxed = boxElement !== element;
+
             const bodyTop = iframeRoot.getBoundingClientRect().top;
-            const st = createStyleCompute(field.boxElement);
 
-            const boxed = field.boxElement !== field.element;
-            const {
-                value: height,
-                offset: { top: offsetTop },
-            } = getComputedHeight(st, { node: field.boxElement, mode: boxed ? 'inner' : 'outer' });
+            const { value: height, offset: offsetBox } = getComputedHeight(createStyleCompute(boxElement), {
+                node: boxElement,
+                mode: boxed ? 'inner' : 'outer',
+            });
 
-            const { left, top, width } = field.boxElement.getBoundingClientRect();
+            const { left: boxLeft, top, width } = boxElement.getBoundingClientRect();
 
             return {
-                top: top - bodyTop + offsetTop + height,
-                left: left + width - DROPDOWN_WIDTH,
-                zIndex: field.zIndex,
+                top: top - bodyTop + offsetBox.top + height,
+                left: boxLeft + width - DROPDOWN_WIDTH,
+                zIndex: zIndex,
             };
         },
         dimensions: () => ({ width: DROPDOWN_WIDTH, height: MIN_DROPDOWN_HEIGHT }),
