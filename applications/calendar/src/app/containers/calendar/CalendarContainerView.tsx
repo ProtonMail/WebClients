@@ -500,7 +500,7 @@ const CalendarContainerView = ({
         </AppLink>,
     ];
 
-    const bottom = isDrawerApp ? <DrawerAppFooter buttons={footerButtons} /> : undefined;
+    const bottom = isDrawerApp ? <DrawerAppFooter offsetNotifications buttons={footerButtons} /> : undefined;
 
     const sidebar = (
         <CalendarSidebar

@@ -33,6 +33,7 @@ export default {
 export const dialogRootClassName = 'modal-container';
 
 export const modalTwoRootClassName = 'modal-two';
+export const modalTwoBackdropRootClassName = 'modal-two-backdrop';
 
 export const dropdownRootClassName = 'dropdown';
 
@@ -44,6 +45,7 @@ const allTextInputsSelector = `input:not([type]), textarea, ${textInputSelectors
 
 export const isDialogOpen = () => document.querySelector(`.${dialogRootClassName}, [role="dialog"]`) !== null;
 export const isModalOpen = () => document.querySelector(`.${modalTwoRootClassName}`) !== null;
+export const isModalBackdropOpen = () => document.querySelector(`.${modalTwoBackdropRootClassName}`) !== null;
 export const isDropdownOpen = () => document.querySelector(`.${dropdownRootClassName}`) !== null;
 
 export const isEditing = () => {
