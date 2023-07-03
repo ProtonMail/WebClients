@@ -1,4 +1,4 @@
-import { screen } from '@testing-library/dom';
+import { screen } from '@testing-library/react';
 
 import { MAILBOX_LABEL_IDS as IDS } from '@proton/shared/lib/constants';
 

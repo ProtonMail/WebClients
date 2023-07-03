@@ -1,6 +1,6 @@
 import { MutableRefObject } from 'react';
 
-import { fireEvent } from '@testing-library/dom';
+import { fireEvent } from '@testing-library/react';
 import { getByText } from '@testing-library/react';
 
 import { Recipient } from '@proton/shared/lib/interfaces';

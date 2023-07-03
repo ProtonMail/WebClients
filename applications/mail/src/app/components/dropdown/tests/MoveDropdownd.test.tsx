@@ -1,4 +1,4 @@
-import { fireEvent } from '@testing-library/dom';
+import { fireEvent } from '@testing-library/react';
 import { act, getByTestId as getByTestIdDefault, screen } from '@testing-library/react';
 
 import { ACCENT_COLORS } from '@proton/shared/lib/colors';
@@ -115,7 +115,7 @@ describe('MoveDropdown', () => {
         const { getByTestId, queryAllByTestId } = await setup();
 
         // Search for a label which does not exist
-        const searchInput = await getByTestId('folder-dropdown:search-folder');
+        const searchInput = getByTestId('folder-dropdown:search-folder');
 
         await act(async () => {
             fireEvent.change(searchInput, { target: { value: search } });
@@ -124,7 +124,7 @@ describe('MoveDropdown', () => {
         });
 
         // No more option are displayed
-        const labels = (await queryAllByTestId(/label-dropdown:folder-radio-/)) as HTMLInputElement[];
+        const labels = queryAllByTestId(/label-dropdown:folder-radio-/) as HTMLInputElement[];
         expect(labels.length).toBe(0);
 
         // Click on the create label button
@@ -144,7 +144,7 @@ describe('MoveDropdown', () => {
         const { getByTestId, queryAllByTestId } = await setup();
 
         // Search for a label which does not exist
-        const searchInput = await getByTestId('folder-dropdown:search-folder');
+        const searchInput = getByTestId('folder-dropdown:search-folder');
 
         await act(async () => {
             fireEvent.change(searchInput, { target: { value: search } });
@@ -153,7 +153,7 @@ describe('MoveDropdown', () => {
         });
 
         // No more option are displayed
-        const labels = (await queryAllByTestId(/label-dropdown:folder-radio-/)) as HTMLInputElement[];
+        const labels = queryAllByTestId(/label-dropdown:folder-radio-/) as HTMLInputElement[];
         expect(labels.length).toBe(0);
 
         // Click on the create label option

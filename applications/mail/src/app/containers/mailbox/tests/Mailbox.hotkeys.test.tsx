@@ -229,7 +229,7 @@ describe('Mailbox hotkeys', () => {
         await tick();
 
         ctrlBackspace();
-        const button = await getByTestId('permanent-delete-modal:submit');
+        const button = getByTestId('permanent-delete-modal:submit');
         fireEvent.click(button as HTMLButtonElement);
         await tick();
 

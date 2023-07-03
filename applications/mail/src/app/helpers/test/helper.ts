@@ -1,4 +1,4 @@
-import { waitFor } from '@testing-library/dom';
+import { waitFor } from '@testing-library/react';
 import { act } from '@testing-library/react';
 
 import { useEventManager } from '@proton/components';
