@@ -8,13 +8,26 @@ import { Button } from '@proton/atoms/Button';
 import type { IconName } from '@proton/components/components';
 import { Icon } from '@proton/components/components';
 import { selectPrimaryVault, selectVaultLimits } from '@proton/pass/store';
+import type { ItemType } from '@proton/pass/types';
+import { PassFeature } from '@proton/pass/types/api/features';
+import clsx from '@proton/utils/clsx';
 
 import { UpgradeButton } from '../../../shared/components/upgrade/UpgradeButton';
+import { useFeatureFlag } from '../../../shared/hooks/useFeatureFlag';
 import { itemTypeToIconName } from '../../../shared/items/icons';
+import { SubTheme } from '../../../shared/theme/sub-theme';
 import { ItemCard } from '../../components/Item/ItemCard';
 import { useItems } from '../../hooks/useItems';
 import { useNavigationContext } from '../../hooks/useNavigationContext';
 import { useOpenSettingsTab } from '../../hooks/useOpenSettingsTab';
+
+type QuickAction = {
+    type: ItemType | 'import';
+    icon: IconName;
+    label: string;
+    onClick: (e: MouseEvent<HTMLElement>) => void;
+    subTheme?: SubTheme;
+};
 
 export const ItemsListPlaceholder: VFC = () => {
     const history = useHistory();
@@ -28,28 +41,37 @@ export const ItemsListPlaceholder: VFC = () => {
     const primaryVaultId = useSelector(selectPrimaryVault).shareId;
     const inNonPrimaryVault = Boolean(filtering.shareId) && filtering.shareId !== primaryVaultId;
     const { didDowngrade } = useSelector(selectVaultLimits);
+    const showCreditCards = useFeatureFlag<boolean>(PassFeature.PassCreditCardsV1);
 
-    const getQuickActions = useMemo<
-        { type: string; icon: IconName; label: string; onClick: (e: MouseEvent<HTMLElement>) => void }[]
-    >(
+    const quickActions = useMemo<QuickAction[]>(
         () => [
             {
                 type: 'login',
                 icon: itemTypeToIconName.login,
                 label: c('Label').t`Create a login`,
                 onClick: () => history.push(`/item/new/login`),
+                subTheme: SubTheme.VIOLET,
             },
             {
                 type: 'alias',
                 icon: itemTypeToIconName.alias,
                 label: c('Label').t`Create a hide-my-email alias`,
                 onClick: () => history.push(`/item/new/alias`),
+                subTheme: SubTheme.TEAL,
+            },
+            {
+                type: 'creditCard',
+                icon: itemTypeToIconName.creditCard,
+                label: c('Label').t`Create a credit card`,
+                onClick: () => history.push(`/item/new/creditCard`),
+                subTheme: SubTheme.LIME,
             },
             {
                 type: 'note',
                 icon: itemTypeToIconName.note,
                 label: c('Label').t`Create an encrypted note`,
                 onClick: () => history.push(`/item/new/note`),
+                subTheme: SubTheme.ORANGE,
             },
             {
                 type: 'import',
@@ -82,24 +104,28 @@ export const ItemsListPlaceholder: VFC = () => {
                     .t`Let's get you started by creating your first item`}</span>
 
                 {!isCreating &&
-                    getQuickActions.map(({ type, icon, label, onClick }) => (
-                        <Button
-                            pill
-                            shape="solid"
-                            color="weak"
-                            key={`quick-action-${type}`}
-                            className={`ui-${type} w100 relative`}
-                            onClick={onClick}
-                        >
-                            <Icon
-                                name={icon}
-                                color="var(--interaction-norm)"
-                                className="absolute left-custom top bottom my-auto"
-                                style={{ '--left-custom': '1rem' }}
-                            />
-                            <span>{label}</span>
-                        </Button>
-                    ))}
+                    quickActions.map(({ type, icon, label, onClick, subTheme }) => {
+                        if (type === 'creditCard' && !showCreditCards) return null;
+
+                        return (
+                            <Button
+                                pill
+                                shape="solid"
+                                color="weak"
+                                key={`quick-action-${type}`}
+                                className={clsx('w100 relative', subTheme)}
+                                onClick={onClick}
+                            >
+                                <Icon
+                                    name={icon}
+                                    color="var(--interaction-norm)"
+                                    className="absolute left-custom top bottom my-auto"
+                                    style={{ '--left-custom': '1rem' }}
+                                />
+                                <span>{label}</span>
+                            </Button>
+                        );
+                    })}
             </div>
         );
     }

@@ -8,7 +8,6 @@ import clsx from '@proton/utils/clsx';
 
 import type { Props as UsePeriodicOtpCodeProps } from '../../../hooks/usePeriodicOtpCode';
 import { usePeriodicOtpCode } from '../../../hooks/usePeriodicOtpCode';
-import { ClickToCopyValueControl } from './ClickToCopyValueControl';
 import { ValueControl } from './ValueControl';
 
 import './OTPValueControl.scss';
@@ -33,27 +32,26 @@ export const OTPValueControl: VFC<UsePeriodicOtpCodeProps & { label?: string }> 
     const [otp, percent] = usePeriodicOtpCode({ totpUri, ...request });
 
     return (
-        <ClickToCopyValueControl value={otp?.token ?? ''}>
-            <ValueControl
-                interactive
-                icon="lock"
-                label={label ?? c('Label').t`2FA token (TOTP)`}
-                actions={
-                    <div
-                        className={clsx('pass-otp--donut no-pointer-events')}
-                        style={{ '--countdown-value': `"${Math.round(percent * (otp?.period ?? 0))}"` }}
-                    >
-                        {otp !== null && (
-                            <Donut
-                                segments={[[percent * 100, ThemeColor.Success]]}
-                                backgroundSegmentColor="var(--text-hint)"
-                            />
-                        )}
-                    </div>
-                }
-            >
-                {renderOtpCodeDisplayValue(otp?.token ?? '')}
-            </ValueControl>
-        </ClickToCopyValueControl>
+        <ValueControl
+            clickToCopy
+            icon="lock"
+            label={label ?? c('Label').t`2FA token (TOTP)`}
+            actions={
+                <div
+                    className={clsx('pass-otp--donut no-pointer-events')}
+                    style={{ '--countdown-value': `"${Math.round(percent * (otp?.period ?? 0))}"` }}
+                >
+                    {otp !== null && (
+                        <Donut
+                            segments={[[percent * 100, ThemeColor.Success]]}
+                            backgroundSegmentColor="var(--text-hint)"
+                        />
+                    )}
+                </div>
+            }
+            value={otp?.token ?? ''}
+        >
+            {renderOtpCodeDisplayValue(otp?.token ?? '')}
+        </ValueControl>
     );
 };

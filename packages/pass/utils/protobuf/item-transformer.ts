@@ -34,6 +34,8 @@ const protobufToItem = (item: SafeProtobufItem): Item => {
             return { ...base, type: 'note', content: data.note };
         case 'alias':
             return { ...base, type: 'alias', content: data.alias };
+        case 'creditCard':
+            return { ...base, type: 'creditCard', content: data.creditCard };
         default:
             throw new Error('Unsupported item type');
     }
@@ -64,6 +66,8 @@ const itemToProtobuf = (item: Item): SafeProtobufItem => {
             return { ...base, content: { content: { oneofKind: 'note', note: item.content } } };
         case 'alias':
             return { ...base, content: { content: { oneofKind: 'alias', alias: item.content } } };
+        case 'creditCard':
+            return { ...base, content: { content: { oneofKind: 'creditCard', creditCard: item.content } } };
         default:
             throw new Error('Unsupported item type');
     }

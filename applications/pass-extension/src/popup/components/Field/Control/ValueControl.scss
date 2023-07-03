@@ -22,9 +22,7 @@
 		&:active {
 			background-color: #27273d;
 		}
-	}
 
-	&--interactive-focus {
 		&:focus-visible {
 			z-index: 1;
 			outline: 1px solid var(--interaction-norm);

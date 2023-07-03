@@ -99,6 +99,7 @@ export const AliasEdit: VFC<ItemEditProps<'alias'>> = ({ vault, revision, onCanc
                     <Form id={FORM_ID}>
                         <FieldsetCluster>
                             <Field
+                                lengthLimiters
                                 name="name"
                                 label={c('Label').t`Title`}
                                 placeholder={c('Label').t`Untitled`}

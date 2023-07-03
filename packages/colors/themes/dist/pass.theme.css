@@ -83,7 +83,7 @@
   }
 }
 
-.ui-login {
+.ui-violet {
   --interaction-norm-minor-2: #211833;
   --interaction-norm-minor-1: #32244d;
   --interaction-norm: #a779ff;
@@ -114,7 +114,7 @@
   }
 }
 
-.ui-alias {
+.ui-teal {
   --interaction-norm-minor-2: #152624;
   --interaction-norm-minor-1: #203936;
   --interaction-norm: #6abdb3;
@@ -145,7 +145,7 @@
   }
 }
 
-.ui-note {
+.ui-orange {
   --interaction-norm-minor-2: #332620;
   --interaction-norm-minor-1: #4c3930;
   --interaction-norm: #ffd5a1;
@@ -168,7 +168,7 @@
   --focus-ring: var(--interaction-norm-minor-1);
 }
 
-.ui-password {
+.ui-red {
   --interaction-norm-minor-2: #321f20;
   --interaction-norm-minor-1: #4c2f30;
   --interaction-norm: #fc9c9f;
@@ -189,4 +189,35 @@
   --interaction-weak-active: var(--interaction-weak-major-2);
   --focus-outline: var(--interaction-norm-major-2);
   --focus-ring: var(--interaction-norm-minor-1);
+}
+
+.ui-lime {
+  --interaction-norm-minor-2: #1d2c1f;
+  --interaction-norm-minor-1: #2c422f;
+  --interaction-norm: #91dc9c;
+  --interaction-norm-major-1: #9ce0a6;
+  --interaction-norm-major-2: #a7e3b0;
+  --interaction-norm-major-3: #b2e7ba;
+  --interaction-norm-contrast: #000000;
+  --interaction-weak-minor-2: #0c0e10;
+  --interaction-weak-minor-1: #14181b;
+  --interaction-weak: #273035;
+  --interaction-weak-major-1: #3d4549;
+  --interaction-weak-major-2: #52595d;
+  --interaction-weak-major-3: #686e72;
+  --interaction-weak-contrast: #ffffff;
+  --focus-outline: var(--interaction-norm-major-2);
+  --focus-ring: var(--interaction-norm-minor-1);
+  --interaction-norm-hover: var(--interaction-norm-major-1);
+  --interaction-norm-active: var(--interaction-norm-major-2);
+  --interaction-weak-hover: var(--interaction-weak-major-1);
+  --interaction-weak-active: var(--interaction-weak-major-2);
+  --link-norm: var(--interaction-norm);
+  --link-hover: var(--interaction-norm-hover);
+  --link-active: var(--interaction-norm-active);
+  .button-solid-norm {
+    --button-default-text-color: var(--text-invert);
+    --button-hover-text-color: var(--text-invert);
+    --button-active-text-color: var(--text-invert);
+  }
 }
