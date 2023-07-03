@@ -20,7 +20,6 @@ import { BaseMaskedTextAreaField, BaseTextAreaField } from '../TextareaField';
 type ExtraFieldOption = {
     icon: IconName;
     label: string;
-    masked?: boolean;
     placeholder: string;
 };
 
@@ -50,7 +49,6 @@ export const getExtraFieldOptions = (): Record<ExtraFieldType, ExtraFieldOption>
     hidden: {
         icon: 'eye-slash',
         label: c('Label').t`Hidden`,
-        masked: true,
         placeholder: c('Placeholder').t`Add hidden text`,
     },
 });
@@ -65,7 +63,7 @@ const DeleteButton: VFC<{ onDelete: () => void }> = ({ onDelete }) => (
 
 export const ExtraFieldComponent: VFC<ExtraFieldProps> = (props) => {
     const { className, field, onDelete, type, error, touched, autoFocus, ...rest } = props;
-    const { icon, masked, placeholder } = getExtraFieldOption(type);
+    const { icon, placeholder } = getExtraFieldOption(type);
 
     const onChangeHandler =
         (merge: (evt: ChangeEvent<HTMLInputElement>, field: ItemExtraField) => ItemExtraField) =>
@@ -97,7 +95,8 @@ export const ExtraFieldComponent: VFC<ExtraFieldProps> = (props) => {
                 switch (field.value.type) {
                     case 'text':
                     case 'hidden': {
-                        const FieldComponent = masked ? BaseMaskedTextAreaField : BaseTextAreaField;
+                        const FieldComponent =
+                            field.value.type === 'hidden' ? BaseMaskedTextAreaField : BaseTextAreaField;
                         const fieldError = error as ExtraFieldError<'text' | 'hidden'>;
                         return (
                             <FieldComponent
@@ -118,6 +117,7 @@ export const ExtraFieldComponent: VFC<ExtraFieldProps> = (props) => {
                         const fieldError = error as ExtraFieldError<'totp'>;
                         return (
                             <BaseTextField
+                                hidden
                                 placeholder={placeholder}
                                 error={touched && (error?.fieldName || fieldError?.data?.totpUri)}
                                 field={{

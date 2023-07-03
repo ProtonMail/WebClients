@@ -63,7 +63,7 @@ export const OnboardingPanel: VFC = () => {
             [OnboardingMessage.WELCOME]: {
                 title: c('Title').t`Why ${PASS_APP_NAME}?`,
                 message: c('Info').t`Privacy is a big concern for us. Learn why ${PASS_APP_NAME} is different.`,
-                className: 'ui-alias',
+                className: 'ui-teal',
                 icon: <OnboardingShieldIcon />,
                 action: {
                     label: c('Label').t`Learn more`,
@@ -75,7 +75,7 @@ export const OnboardingPanel: VFC = () => {
                 title: c('Title').t`Enjoy your free trial`,
                 message: c('Info')
                     .t`Check out all the exclusive features that are available to you for a limited time.`,
-                className: 'ui-note',
+                className: 'ui-orange',
                 action: {
                     label: c('Label').t`Learn more`,
                     type: 'link',
@@ -85,7 +85,7 @@ export const OnboardingPanel: VFC = () => {
             [OnboardingMessage.SECURE_EXTENSION]: {
                 title: c('Title').t`Secure your data`,
                 message: c('Info').t`Set up a PIN code to easily lock your data`,
-                className: 'ui-login',
+                className: 'ui-violet',
                 icon: <OnboardingShieldIcon />,
                 action: {
                     label: c('Label').t`Set PIN code`,
@@ -97,7 +97,7 @@ export const OnboardingPanel: VFC = () => {
                 title: c('Title').t`Update available`,
                 message: c('Info')
                     .t`A new version of ${PASS_APP_NAME} is available. Update it to enjoy the latest features and bug fixes.`,
-                className: 'ui-note',
+                className: 'ui-orange',
                 action: {
                     label: c('Label').t`Update`,
                     type: 'button',
@@ -108,7 +108,7 @@ export const OnboardingPanel: VFC = () => {
                 title: c('Title').t`Grant permissions`,
                 message: c('Info')
                     .t`In order to get the best experience out of ${PASS_APP_NAME}, please grant the necessary extension permissions`,
-                className: 'ui-note',
+                className: 'ui-orange',
                 action: {
                     label: c('Label').t`Grant`,
                     type: 'button',

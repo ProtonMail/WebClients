@@ -13,6 +13,7 @@ import { BRAND_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
 import passBrandText from '../../../../public/assets/protonpass-brand.svg';
 import { ExtensionHead } from '../../../shared/components/page/ExtensionHead';
 import { useNavigateToLogin } from '../../../shared/hooks';
+import { SubTheme } from '../../../shared/theme/sub-theme';
 
 import './InstallationSuccess.scss';
 
@@ -157,7 +158,7 @@ export const InstallationSuccess: VFC = () => {
 
                             {isPinned && (
                                 <>
-                                    <div className="ui-login flex flex-nowrap flex-column">
+                                    <div className={`${SubTheme.VIOLET} flex flex-nowrap flex-column`}>
                                         <h2 className="text-3xl pass-onboarding--white-text mb-4 text-bold">
                                             {c('Title').jt`Connect your ${BRAND_NAME} account`}
                                         </h2>

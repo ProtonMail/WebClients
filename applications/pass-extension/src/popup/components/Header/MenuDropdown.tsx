@@ -115,7 +115,7 @@ const MenuDropdownRaw: VFC<{ className?: string }> = ({ className }) => {
                             <span
                                 className={clsx(
                                     'flex flex-align-items-center',
-                                    passPlan === UserPassPlan.PLUS && 'ui-note'
+                                    passPlan === UserPassPlan.PLUS && 'ui-orange'
                                 )}
                             >
                                 <Icon name="star" className="mr-3" color="var(--interaction-norm)" />

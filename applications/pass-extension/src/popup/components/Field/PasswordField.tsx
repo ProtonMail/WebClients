@@ -16,5 +16,5 @@ export const PasswordField: VFC<TextFieldProps> = (props) => {
             <PasswordGeneratorButton key="password-generator-button" onSubmit={handlePasswordGeneratorDone} />
         ) : undefined;
 
-    return <TextField masked field={field} form={form} {...rest} actions={actions} />;
+    return <TextField hidden field={field} form={form} {...rest} actions={actions} />;
 };

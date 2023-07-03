@@ -13,7 +13,7 @@ import clsx from '@proton/utils/clsx';
 
 import { ItemIcon } from '../../../shared/components/icon/ItemIcon';
 import { presentListItem } from '../../../shared/items';
-import { itemTypeToItemClassName } from '../../../shared/items/className';
+import { itemTypeToSubThemeClassName } from '../../../shared/theme/sub-theme';
 import { VaultIcon } from '../Vault/VaultIcon';
 
 import './ItemsListItem.scss';
@@ -56,7 +56,7 @@ const ItemsListItemRaw: VFC<Props> = ({ item, search = '', active = false, ...re
                 <ItemIcon
                     item={item}
                     size={20}
-                    className={clsx('mr-3  flex-item-noshrink', itemTypeToItemClassName[data.type])}
+                    className={clsx('mr-3  flex-item-noshrink', itemTypeToSubThemeClassName[data.type])}
                 />
                 <div className="text-left">
                     <span className="flex flex-align-items-center">

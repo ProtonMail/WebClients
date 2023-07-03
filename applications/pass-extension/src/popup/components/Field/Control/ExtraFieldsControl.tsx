@@ -1,18 +1,14 @@
 import { type VFC, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 
-import { c } from 'ttag';
-
 import { selectExtraFieldLimits } from '@proton/pass/store';
 import type { ItemExtraField } from '@proton/pass/types';
 import { isEmptyString } from '@proton/pass/utils/string';
 
-import { UpgradeButton } from '../../../../shared/components/upgrade/UpgradeButton';
 import { getExtraFieldOption } from '../ExtraFieldGroup/ExtraField';
 import { FieldsetCluster } from '../Layout/FieldsetCluster';
-import { ClickToCopyValueControl } from './ClickToCopyValueControl';
-import { MaskedValueControl } from './MaskedValueControl';
 import { OTPValueControl } from './OTPValueControl';
+import { UpgradeControl } from './UpgradeControl';
 import { ValueControl } from './ValueControl';
 
 type ExtraFieldsControlProps = {
@@ -30,19 +26,13 @@ export const ExtraFieldsControl: VFC<ExtraFieldsControlProps> = ({ extraFields, 
             const key = `${index}-${fieldName}`;
 
             if (needsUpgrade) {
-                return (
-                    <ValueControl icon={icon} key={key} label={fieldName}>
-                        <UpgradeButton inline />
-                    </ValueControl>
-                );
+                return <UpgradeControl icon={icon} key={key} label={fieldName} />;
             }
 
             switch (type) {
                 case 'totp':
                     return isEmptyString(data.totpUri) ? (
-                        <ValueControl icon={icon} key={key} label={fieldName}>
-                            <span className="color-weak text-italic">{c('Info').t`None`}</span>
-                        </ValueControl>
+                        <ValueControl icon={icon} key={key} label={fieldName} value={undefined} />
                     ) : (
                         <OTPValueControl
                             key={key}
@@ -55,18 +45,17 @@ export const ExtraFieldsControl: VFC<ExtraFieldsControlProps> = ({ extraFields, 
                         />
                     );
                 case 'hidden':
-                    return <MaskedValueControl as="pre" key={key} icon={icon} label={fieldName} value={data.content} />;
                 case 'text':
                     return (
-                        <ClickToCopyValueControl key={key} value={data.content}>
-                            <ValueControl interactive as="pre" icon={icon} label={fieldName}>
-                                {!isEmptyString(data.content) ? (
-                                    data.content
-                                ) : (
-                                    <span className="color-weak text-italic">{c('Info').t`None`}</span>
-                                )}
-                            </ValueControl>
-                        </ClickToCopyValueControl>
+                        <ValueControl
+                            clickToCopy
+                            as="pre"
+                            key={key}
+                            hidden={type === 'hidden'}
+                            icon={icon}
+                            label={fieldName}
+                            value={data.content}
+                        />
                     );
             }
         },

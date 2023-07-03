@@ -5,15 +5,13 @@ import { c, msgid } from 'ttag';
 
 import { Href } from '@proton/atoms';
 import { selectAliasByAliasEmail, selectTOTPLimits } from '@proton/pass/store';
-import { isEmptyString } from '@proton/pass/utils/string';
 import { getFormattedDateFromTimestamp } from '@proton/pass/utils/time/format';
 
 import { UpgradeButton } from '../../../../shared/components/upgrade/UpgradeButton';
+import { getCharsGroupedByColor } from '../../../../shared/hooks/usePasswordGenerator';
 import type { ItemTypeViewProps } from '../../../../shared/items/types';
 import { MoreInfoDropdown } from '../../../components/Dropdown/MoreInfoDropdown';
-import { ClickToCopyValueControl } from '../../../components/Field/Control/ClickToCopyValueControl';
 import { ExtraFieldsControl } from '../../../components/Field/Control/ExtraFieldsControl';
-import { MaskedValueControl } from '../../../components/Field/Control/MaskedValueControl';
 import { OTPValueControl } from '../../../components/Field/Control/OTPValueControl';
 import { ValueControl } from '../../../components/Field/Control/ValueControl';
 import { FieldsetCluster } from '../../../components/Field/Layout/FieldsetCluster';
@@ -30,21 +28,16 @@ export const LoginView: VFC<ItemTypeViewProps<'login'>> = ({ vault, revision, ..
     return (
         <ItemViewPanel type="login" name={name} vault={vault} {...itemViewProps}>
             <FieldsetCluster mode="read" as="div">
-                <ClickToCopyValueControl value={username}>
-                    <ValueControl
-                        interactive
-                        icon={relatedAlias ? 'alias' : 'user'}
-                        label={relatedAlias ? c('Label').t`Username (alias)` : c('Label').t`Username`}
-                    >
-                        {!isEmptyString(username) ? (
-                            username
-                        ) : (
-                            <span className="color-weak text-italic">{c('Info').t`None`}</span>
-                        )}
-                    </ValueControl>
-                </ClickToCopyValueControl>
+                <ValueControl
+                    clickToCopy
+                    icon={relatedAlias ? 'alias' : 'user'}
+                    label={relatedAlias ? c('Label').t`Username (alias)` : c('Label').t`Username`}
+                    value={username}
+                />
 
-                <MaskedValueControl charsGroupedByColor label={c('Label').t`Password`} value={password} />
+                <ValueControl clickToCopy hidden icon="key" label={c('Label').t`Password`} value={password}>
+                    {password.length ? getCharsGroupedByColor(password) : undefined}
+                </ValueControl>
 
                 {totpUri && totpAllowed && (
                     <OTPValueControl shareId={shareId} itemId={itemId} totpUri={totpUri} type="item" />
@@ -59,7 +52,7 @@ export const LoginView: VFC<ItemTypeViewProps<'login'>> = ({ vault, revision, ..
 
             {urls.length > 0 && (
                 <FieldsetCluster mode="read" as="div">
-                    <ValueControl interactive icon="earth" label={c('Label').t`Websites`}>
+                    <ValueControl icon="earth" label={c('Label').t`Websites`}>
                         {urls.map((url) => (
                             <Href className="block text-ellipsis" href={url} key={url}>
                                 {url}
@@ -71,11 +64,7 @@ export const LoginView: VFC<ItemTypeViewProps<'login'>> = ({ vault, revision, ..
 
             {note && (
                 <FieldsetCluster mode="read" as="div">
-                    <ClickToCopyValueControl value={note}>
-                        <ValueControl interactive as="pre" icon="note" label={c('Label').t`Note`}>
-                            {note}
-                        </ValueControl>
-                    </ClickToCopyValueControl>
+                    <ValueControl clickToCopy as="pre" icon="note" label={c('Label').t`Note`} value={note} />
                 </FieldsetCluster>
             )}
 

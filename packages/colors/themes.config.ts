@@ -107,19 +107,23 @@ const config: ThemeConfig[] = [
                 type: 'dark',
             },
             {
-                path: './themes/src/pass/login-base.css',
+                path: './themes/src/pass/violet-base.css',
                 type: 'dark',
             },
             {
-                path: './themes/src/pass/alias-base.css',
+                path: './themes/src/pass/teal-base.css',
                 type: 'dark',
             },
             {
-                path: './themes/src/pass/note-base.css',
+                path: './themes/src/pass/orange-base.css',
                 type: 'dark',
             },
             {
-                path: './themes/src/pass/password-base.css',
+                path: './themes/src/pass/red-base.css',
+                type: 'dark',
+            },
+            {
+                path: './themes/src/pass/lime-base.css',
                 type: 'dark',
             },
         ],

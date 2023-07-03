@@ -17,6 +17,25 @@ message ItemLogin {
 message ItemAlias {
 }
 
+// Credit cards
+enum CardType {
+	Unspecified = 0;
+	Other = 1;
+	Visa = 2;
+	Mastercard = 3;
+	AmericanExpress = 4;
+}
+
+message ItemCreditCard {
+	string cardholder_name = 1;
+	CardType card_type = 2;
+	string number = 3;
+	string verification_number = 4;
+	// Expected format: YYYY-MM, always containing two numbers for the month, even if is 01
+	string expiration_date = 5;
+	string pin = 6;
+}
+
 // Client extras
 message AllowedAndroidApp {
 	string package_name = 1;
@@ -62,10 +81,12 @@ message Metadata {
 }
 
 message Content {
+	// No case 1 to avoid having a default
 	oneof content {
 		ItemNote note = 2;
 		ItemLogin login = 3;
 		ItemAlias alias = 4;
+		ItemCreditCard credit_card = 5;
 	}
 }
 
