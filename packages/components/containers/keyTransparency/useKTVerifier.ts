@@ -1,7 +1,13 @@
 import { useRef } from 'react';
 
 import { serverTime } from '@proton/crypto';
-import { commitSKLToLS, fetchSignedKeyLists, getKTLocalStorage, ktSentryReport } from '@proton/key-transparency';
+import {
+    commitSKLToLS,
+    fetchSignedKeyLists,
+    getKTLocalStorage,
+    ktSentryReport,
+    ktSentryReportError,
+} from '@proton/key-transparency';
 import {
     Address,
     Api,
@@ -80,9 +86,7 @@ const useKTVerifier = (api: Api, getUser: () => Promise<UserModel>) => {
             }
             createdSKLs.current = [];
         } catch (error: any) {
-            const errorMessage = error instanceof Error ? error.message : 'unknown error';
-            const stack = error instanceof Error ? error.stack : undefined;
-            ktSentryReport(errorMessage, { context: 'KeyTransparencyCommit', stack });
+            ktSentryReportError(error, { context: 'KeyTransparencyCommit' });
         }
     };
 
