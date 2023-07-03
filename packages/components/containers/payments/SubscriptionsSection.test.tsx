@@ -5,6 +5,7 @@ import {
     mockPlansCache,
     mockSubscriptionCache,
     mockUserCache,
+    plansDefaultResponse,
 } from '@proton/components/hooks/helpers/test';
 import { PLANS } from '@proton/shared/lib/constants';
 import { External, Renew, Subscription, SubscriptionModel } from '@proton/shared/lib/interfaces';
@@ -159,5 +160,84 @@ describe('SubscriptionsSection', () => {
         subscription.Renew = Renew.Disabled;
         const { queryByTestId } = render(<ContextSubscriptionSection />);
         expect(queryByTestId('periodEndWarning')).toBeInTheDocument();
+    });
+
+    /**
+     * Even if the current plan has an increased price, the user should see the price of the current subscription.
+     */
+    it('should display price based on the current subscription, not plans', () => {
+        const changedPricePlan = {
+            ID: 'tHdKCeJlgD7mv_W13BqEZeelMiptPIK6r8arzZFcQcLvBLNiogdGOGVyYOldyhzcnSzCPkvkWj-VtyDwSjIncg==',
+            ParentMetaPlanID:
+                'hUcV0_EeNwUmXA6EoyNrtO-ZTD8H8F6LvNaSjMaPxB5ecFkA7y-5kc3q38cGumJENGHjtSoUndkYFUx0_xlJeg==',
+            Type: 1,
+            Name: 'bundle2022',
+            Title: 'Proton Unlimited',
+            MaxDomains: 3,
+            MaxAddresses: 15,
+            MaxCalendars: 25,
+            MaxSpace: 536870912000,
+            MaxMembers: 1,
+            MaxVPN: 10,
+            MaxTier: 2,
+            Services: 15,
+            Features: 1,
+            State: 1,
+            Pricing: {
+                '1': 1299,
+                '12': 15588,
+                '24': 31176,
+            },
+            DefaultPricing: {
+                '1': 1299,
+                '12': 15588,
+                '24': 31176,
+            },
+            PeriodEnd: {
+                '1': 1691058163,
+                '12': 1720002163,
+                '24': 1751538163,
+            },
+            Currency: 'CHF',
+            Quantity: 1,
+            Offers: [
+                {
+                    Name: 'pricechange2023',
+                    StartTime: 1688385600,
+                    EndTime: null,
+                    Pricing: {
+                        '1': 1299,
+                        '12': 15588,
+                        '24': 31176,
+                    },
+                },
+            ],
+            Cycle: 1,
+            Amount: 1299,
+            Vendors: {
+                Google: {
+                    Plans: {
+                        '12': 'giapaccount_bundle2022_12_renewing',
+                    },
+                    CustomerID: 'cus_google_Ga0hQ_smHZjsi1F87zvm',
+                },
+                Apple: {
+                    Plans: {
+                        '12': 'iosaccount_bundle2022_12_usd_non_renewing',
+                    },
+                    CustomerID: '',
+                },
+            },
+        };
+
+        const plansCache = [...plansDefaultResponse.Plans].filter((it) => it.Name !== changedPricePlan.Name);
+        plansCache.push(changedPricePlan);
+
+        mockPlansCache(plansCache);
+
+        const { container } = render(<ContextSubscriptionSection />);
+        expect(container).toHaveTextContent('Proton Unlimited*');
+        expect(container).toHaveTextContent('119.88');
+        expect(container).not.toHaveTextContent('155.88'); // 12 month price from the Plan
     });
 });
