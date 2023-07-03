@@ -19,6 +19,7 @@ import { ValidationError } from '../../utils/errorHandling/ValidationError';
 import { useDebouncedRequest } from '../_api';
 import { useDriveCrypto } from '../_crypto';
 import { useDriveEventManager } from '../_events';
+import { useShare } from '../_shares';
 import { useVolumesState } from '../_volumes';
 import useLink from './useLink';
 import useLinks from './useLinks';
@@ -55,7 +56,8 @@ export function useLinksActions({
     const { getLink, getLinkPassphraseAndSessionKey, getLinkPrivateKey, getLinkHashKey } = useLink();
     const { getLinks } = useLinks();
     const { lockLinks, unlockLinks, lockTrash } = useLinksState();
-    const { getPrimaryAddressKey } = useDriveCrypto();
+    const { getOwnAddressAndPrimaryKeys } = useDriveCrypto();
+    const { getShare } = useShare();
     const volumeState = useVolumesState();
 
     /**
@@ -88,7 +90,7 @@ export function useLinksActions({
             getLinkPassphraseAndSessionKey(abortSignal, shareId, linkId),
             getLinkPrivateKey(abortSignal, shareId, newParentLinkId),
             getLinkHashKey(abortSignal, shareId, newParentLinkId),
-            getPrimaryAddressKey(),
+            getShare(abortSignal, shareId).then((share) => getOwnAddressAndPrimaryKeys(share.creator)),
         ]);
 
         const [currentParentPrivateKey, Hash, { NodePassphrase, NodePassphraseSignature }] = await Promise.all([

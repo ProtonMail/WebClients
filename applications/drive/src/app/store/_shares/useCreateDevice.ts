@@ -6,22 +6,21 @@ import { useDebouncedRequest } from '../_api';
 import { useDriveCrypto } from '../_crypto';
 import useDefaultShare from './useDefaultShare';
 
-// TODO: temp
 export function useCreateDevice() {
     const debouncedRequest = useDebouncedRequest();
-    const { getPrimaryAddressKey } = useDriveCrypto();
+    const { getOwnAddressAndPrimaryKeys } = useDriveCrypto();
     const { getDefaultShare } = useDefaultShare();
 
     const createDevice = async (): Promise<{ volumeId: string; shareId: string; linkId: string }> => {
-        const { address, privateKey } = await getPrimaryAddressKey();
+        const defaultShare = await getDefaultShare();
+        const { address, privateKey } = await getOwnAddressAndPrimaryKeys(defaultShare.creator);
         const { bootstrap, folderPrivateKey } = await generateDriveBootstrap(privateKey);
         const { NodeHashKey: FolderHashKey } = await generateNodeHashKey(folderPrivateKey, folderPrivateKey);
-        const { volumeId } = await getDefaultShare();
 
         const { Volume } = await debouncedRequest<CreatedDriveVolumeResult>(
             queryCreateDriveDevice({
                 Device: {
-                    VolumeID: volumeId,
+                    VolumeID: defaultShare.volumeId,
                     SyncState: 1,
                     Type: 1,
                 },

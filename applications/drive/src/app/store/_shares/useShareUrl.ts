@@ -130,28 +130,18 @@ export default function useShareUrl() {
         return uint8ArrayToBase64String(symmetric);
     };
 
-    const encryptShareUrlPassword = async (decryptedPassword: string) => {
+    const encryptShareUrlPassword = async (decryptedPassword: string, creatorEmail: string) => {
         const {
             address: { Email: email },
             publicKey,
-        } = await driveCrypto.getPrimaryAddressKey();
-        const password = await encryptUnsigned({
-            message: stringToUint8Array(encodeUtf8(decryptedPassword)),
-            publicKey,
-        });
-        return {
-            email,
-            password,
-        };
-    };
+        } = await driveCrypto.getOwnAddressAndPrimaryKeys(creatorEmail);
 
-    const reencryptShareUrlPassword = async (decryptedPassword: string, creatorEmail: string) => {
-        const { publicKey } = await driveCrypto.getPrivatePrimaryAddressKeys(creatorEmail);
         const password = await encryptUnsigned({
             message: stringToUint8Array(encodeUtf8(decryptedPassword)),
             publicKey,
         });
-        return password;
+
+        return { email, password };
     };
 
     const createShareUrl = async (
@@ -175,6 +165,8 @@ export default function useShareUrl() {
             return { salt, keyPacket };
         };
 
+        const share = await getShare(abortSignal, shareId);
+
         const [
             { salt: SharePasswordSalt, keyPacket: SharePassphraseKeyPacket },
             { email: CreatorEmail, password: Password },
@@ -183,7 +175,7 @@ export default function useShareUrl() {
             },
         ] = await Promise.all([
             getSharedLinkPassphraseSaltAndKeyPacket(),
-            encryptShareUrlPassword(password),
+            encryptShareUrlPassword(password, share.creator),
             srpGetVerify({
                 api,
                 credentials,
@@ -332,7 +324,7 @@ export default function useShareUrl() {
 
         const [
             sharePassphraseKeyPacket,
-            password,
+            { password },
             {
                 Auth: { Salt: urlPasswordSalt, Verifier: srpVerifier, ModulusID: srpModulusID },
             },
@@ -340,7 +332,7 @@ export default function useShareUrl() {
             computeKeyPassword(newPassword, sharePasswordSalt).then((sharedLinkPassword) =>
                 encryptSymmetricSessionKey(shareSessionKey, sharedLinkPassword)
             ),
-            reencryptShareUrlPassword(newPassword, creatorEmail),
+            encryptShareUrlPassword(newPassword, creatorEmail),
             srpGetVerify({
                 api,
                 credentials: { password: newPassword },

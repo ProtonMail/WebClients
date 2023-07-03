@@ -24,6 +24,7 @@ import { useDebouncedRequest } from '../../_api';
 import { useDriveCrypto } from '../../_crypto';
 import { useDriveEventManager } from '../../_events';
 import { DecryptedLink, useLink, useLinksActions, validateLinkName } from '../../_links';
+import { useShare } from '../../_shares';
 import { useVolumesState } from '../../_volumes';
 import { MAX_UPLOAD_BLOCKS_LOAD } from '../constants';
 import { initUploadFileWorker } from '../initUploadFileWorker';
@@ -57,7 +58,8 @@ export default function useUploadFile() {
     const queuedFunction = useQueuedFunction();
     const { getLinkPrivateKey, getLinkSessionKey, getLinkHashKey } = useLink();
     const { trashLinks, deleteChildrenLinks } = useLinksActions();
-    const { getPrimaryAddressKey } = useDriveCrypto();
+    const { getOwnAddressAndPrimaryKeys } = useDriveCrypto();
+    const { getShare } = useShare();
     const { findAvailableName, getLinkByName } = useUploadHelper();
     const driveEventManager = useDriveEventManager();
     const volumeState = useVolumesState();
@@ -68,8 +70,6 @@ export default function useUploadFile() {
         file: File,
         getFileConflictStrategy: ConflictStrategyHandler
     ): UploadFileControls => {
-        const addressKeyInfoPromise = getPrimaryAddressKey();
-
         const createFile = async (
             abortSignal: AbortSignal,
             filename: string,
@@ -84,7 +84,7 @@ export default function useUploadFile() {
             }
 
             const [addressKeyInfo, parentPrivateKey] = await Promise.all([
-                addressKeyInfoPromise,
+                getShare(abortSignal, shareId).then((share) => getOwnAddressAndPrimaryKeys(share.creator)),
                 getLinkPrivateKey(abortSignal, shareId, parentId),
             ]);
 
@@ -285,7 +285,7 @@ export default function useUploadFile() {
         return initUploadFileWorker(file, {
             initialize: async (abortSignal: AbortSignal) => {
                 const [addressKeyInfo, parentPrivateKey] = await Promise.all([
-                    addressKeyInfoPromise,
+                    getShare(abortSignal, shareId).then((share) => getOwnAddressAndPrimaryKeys(share.creator)),
                     getLinkPrivateKey(abortSignal, shareId, parentId),
                 ]);
                 return {
@@ -296,7 +296,9 @@ export default function useUploadFile() {
             createFileRevision: async (abortSignal: AbortSignal, mimeType: string, keys: FileKeys) => {
                 createdFileRevisionPromise = createFileRevision(abortSignal, mimeType, keys);
                 const createdFileRevision = await createdFileRevisionPromise;
-                const addressKeyInfo = await addressKeyInfoPromise;
+                const addressKeyInfo = await getShare(abortSignal, shareId).then((share) =>
+                    getOwnAddressAndPrimaryKeys(share.creator)
+                );
                 checkSignal(abortSignal, createdFileRevision.filename);
                 return {
                     fileName: createdFileRevision.filename,
@@ -317,7 +319,9 @@ export default function useUploadFile() {
                 if (!createdFileRevision) {
                     throw new Error(`Draft for "${file.name}" hasn't been created prior to uploading`);
                 }
-                const addressKeyInfo = await addressKeyInfoPromise;
+                const addressKeyInfo = await getShare(abortSignal, shareId).then((share) =>
+                    getOwnAddressAndPrimaryKeys(share.creator)
+                );
                 const thumbnailParams = thumbnailBlock
                     ? {
                           Thumbnail: 1,
