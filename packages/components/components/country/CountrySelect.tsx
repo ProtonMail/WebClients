@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -10,6 +10,8 @@ import {
     getAllDropdownOptions,
     getCleanCountryCode,
     getIsCountryOption,
+    isPreselectedOption,
+    optionToPreselectedOption,
 } from '@proton/components/components/country/helpers';
 import { Props as OptionProps } from '@proton/components/components/option/Option';
 import { getFlagSvg } from '@proton/components/components/v2/phone/flagSvgs';
@@ -61,7 +63,7 @@ const CountrySelect = ({
     disabled,
 }: Props) => {
     const [selectedCountryOption, setSelectedCountryOption] = useState<CountryOption | undefined>(
-        value || preSelectedOption
+        value || (preSelectedOption ? optionToPreselectedOption(preSelectedOption) : undefined)
     );
 
     const { dropdownOptions, countryOptions } = useMemo(() => {
@@ -71,13 +73,52 @@ const CountrySelect = ({
         return { dropdownOptions, countryOptions };
     }, [options, preSelectedOption, preSelectedOptionDivider]);
 
-    const handleSelectOption = ({ value }: { value: string }) => {
-        const selectedOption = countryOptions.find(({ countryCode }) => countryCode === value);
+    const handleSelectOption = useCallback(
+        ({ value }: { value: string }) => {
+            const selectedOption = countryOptions.find(({ countryCode }) => countryCode === value);
+            setSelectedCountryOption(selectedOption);
+            onSelectCountry?.(getCleanCountryCode(value));
+        },
+        [countryOptions, onSelectCountry]
+    );
 
-        setSelectedCountryOption(selectedOption);
-
-        onSelectCountry?.(getCleanCountryCode(value));
-    };
+    const optionsComponents = useMemo(
+        () =>
+            dropdownOptions.map((option) => {
+                if (option.type === 'country') {
+                    return (
+                        <Option
+                            key={generateUID(option.countryName)}
+                            value={option.countryCode}
+                            title={option.countryName}
+                            data-testid={
+                                isPreselectedOption(option.countryCode)
+                                    ? 'preselected-country-select-option'
+                                    : 'country-select-option'
+                            }
+                        >
+                            <span>
+                                <img
+                                    className="flex-item-noshrink mr-2"
+                                    alt=""
+                                    src={getFlagSvg(getCleanCountryCode(option.countryCode))}
+                                    width="30"
+                                    height="20"
+                                />
+                                <span>{option.countryName}</span>
+                            </span>
+                        </Option>
+                    );
+                } else {
+                    return (
+                        <Option key={generateUID('divider')} value={option.text} title={option.text} disabled>
+                            <span className="text-sm">{option.text}</span>
+                        </Option>
+                    );
+                }
+            }),
+        [dropdownOptions]
+    );
 
     return (
         <InputFieldTwo
@@ -102,34 +143,7 @@ const CountrySelect = ({
             data-testid="country-select"
             disabled={disabled}
         >
-            {dropdownOptions.map((option) => {
-                if (option.type === 'country') {
-                    return (
-                        <Option
-                            key={generateUID(option.countryName)}
-                            value={option.countryCode}
-                            title={option.countryName}
-                        >
-                            <span>
-                                <img
-                                    className="flex-item-noshrink mr-2"
-                                    alt=""
-                                    src={getFlagSvg(getCleanCountryCode(option.countryCode))}
-                                    width="30"
-                                    height="20"
-                                />
-                                <span>{option.countryName}</span>
-                            </span>
-                        </Option>
-                    );
-                } else {
-                    return (
-                        <Option key={generateUID('divider')} value={option.text} title={option.text} disabled>
-                            <span className="text-sm">{option.text}</span>
-                        </Option>
-                    );
-                }
-            })}
+            {optionsComponents}
         </InputFieldTwo>
     );
 };
