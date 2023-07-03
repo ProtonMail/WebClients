@@ -103,7 +103,7 @@ const computeIconInjectionStyles = (
     const pl = getInputStyle('padding-left', pixelParser);
     const pr = getInputStyle('padding-right', pixelParser);
     const iconPaddingLeft = size / 5; /* dynamic "responsive" padding */
-    const iconPaddingRight = Math.max(pl / 1.5, iconPaddingLeft);
+    const iconPaddingRight = Math.max(Math.min(pl, pr) / 1.5, iconPaddingLeft);
 
     /* look for any overlayed elements if we were to inject
      * the icon on the right hand-side of the input element
