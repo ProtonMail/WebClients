@@ -1,4 +1,4 @@
-import { fireEvent, getByText, screen } from '@testing-library/dom';
+import { fireEvent, getByText, screen } from '@testing-library/react';
 
 import { IMAGE_PROXY_FLAGS } from '@proton/shared/lib/constants';
 import { MessageUTMTracker } from '@proton/shared/lib/models/mailUtmTrackers';

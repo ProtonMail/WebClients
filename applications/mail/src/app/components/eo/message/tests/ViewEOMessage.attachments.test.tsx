@@ -1,4 +1,4 @@
-import { fireEvent, waitFor, within } from '@testing-library/dom';
+import { fireEvent, waitFor, within } from '@testing-library/react';
 
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
