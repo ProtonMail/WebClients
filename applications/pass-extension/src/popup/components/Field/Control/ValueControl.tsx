@@ -21,7 +21,7 @@ export type ValueControlProps = Omit<FieldBoxProps, 'icon'> & {
     extra?: ReactNode;
     hidden?: boolean;
     hiddenValue?: string;
-    icon: IconName;
+    icon?: IconName;
     label: string;
     loading?: boolean;
     value?: string;
@@ -51,12 +51,12 @@ const HideButton = ({ hidden, onClick }: { hidden: boolean; onClick: () => void 
     </Button>
 );
 
-/*
- * When passed both children and a value prop:
- * children will be rendered, value will be passed to ClickToCopy
- */
+/* When passed both children and a value prop:
+ * children will be rendered, value will be passed
+ * to ClickToCopy */
 export const ValueControl: VFC<ValueControlProps> = ({
     actions,
+    actionsContainerClassName,
     as = 'div',
     children,
     clickToCopy = false,
@@ -72,7 +72,7 @@ export const ValueControl: VFC<ValueControlProps> = ({
 }) => {
     const [hide, setHide] = useState(hidden);
     const ValueContainer = as;
-    const defaultHiddenValue = value && value.length >= 6 ? '••••••••••••' : '••••••';
+    const defaultHiddenValue = '••••••••••••';
 
     const displayValue = useMemo(() => {
         if (hidden && hide) return hiddenValue ?? defaultHiddenValue;
@@ -92,8 +92,11 @@ export const ValueControl: VFC<ValueControlProps> = ({
         >
             <FieldBox
                 actions={
-                    hidden && value ? [<HideButton hidden={hide} onClick={() => setHide((prev) => !prev)} />] : actions
+                    hidden && value
+                        ? [<HideButton hidden={hide} onClick={() => setHide((prev) => !prev)} />, actions ?? []].flat()
+                        : actions
                 }
+                actionsContainerClassName={actionsContainerClassName}
                 icon={icon && <Icon name={icon} size={20} style={{ color: 'var(--fieldset-cluster-icon-color)' }} />}
             >
                 <div className="color-weak text-sm">{label}</div>
