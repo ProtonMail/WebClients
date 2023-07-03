@@ -1,7 +1,7 @@
-import { format } from '@proton/shared/lib/date-fns-utc';
+import { format } from 'date-fns';
 
 export const getFormattedDateFromTimestamp = (timestamp: number) => {
-    return `${format(new Date(timestamp * 1000), 'dd MMM yyyy, HH:mmaaa')} UTC`;
+    return `${format(new Date(timestamp * 1000), 'dd MMM yyyy, HH:mmaaa')}`;
 };
 
 export const getFormattedDayFromTimestamp = (timestamp: number) => {
