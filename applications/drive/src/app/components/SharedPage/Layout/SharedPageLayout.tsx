@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { ButtonLike } from '@proton/atoms';
 import { Header, MainLogo, UnAuthenticated, useConfig } from '@proton/components';
 import Footer from '@proton/components/components/footer/Footer';
-import { IS_PROTON_USER_COOKIE_NAME } from '@proton/components/hooks/useIsProtonUser';
+import { IS_PROTON_USER_COOKIE_NAME } from '@proton/components/hooks/useIsProtonUserCookie';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
 import { DRIVE_PRICING_PAGE } from '@proton/shared/lib/drive/urls';

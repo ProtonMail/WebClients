@@ -1,16 +1,12 @@
 import { useEffect } from 'react';
 
-import { fromUnixTime, isAfter } from 'date-fns';
-
 import { getCookie, setCookie } from '@proton/shared/lib/helpers/cookies';
 import { getSecondLevelDomain } from '@proton/shared/lib/helpers/url';
 
-import useLastSubscriptionEnd from './useLastSubscriptionEnd';
 import { useUser } from './useUser';
 
-const COOKIE_NAME = 'no-bf-2022';
+const COOKIE_NAME = 'no-offer';
 const today = new Date();
-const FIRST_OCTOBER_2022 = new Date(2022, 9, 1);
 const lastDayOfTheYear = new Date(today.getFullYear(), 11, 31, 23, 59, 59);
 const cookieDomain = `.${getSecondLevelDomain(window.location.hostname)}`;
 
@@ -18,10 +14,9 @@ const cookieDomain = `.${getSecondLevelDomain(window.location.hostname)}`;
  * Set a cookie for non eligible user to BF offer
  * Used by proton.me website to hide BF banner
  */
-const useNoBFCookie = () => {
+const useIsPaidUserCookie = () => {
     const [user, loadingUser] = useUser();
-    const [lastSubscriptionEnd, loadingLastSubscriptionEnd] = useLastSubscriptionEnd();
-    const loading = loadingUser || loadingLastSubscriptionEnd;
+    const loading = loadingUser;
 
     useEffect(() => {
         if (loading) {
@@ -30,9 +25,9 @@ const useNoBFCookie = () => {
 
         const cookie = getCookie(COOKIE_NAME);
         const isPaid = user.isPaid;
-        const isInvalidFree = user.isFree && isAfter(fromUnixTime(lastSubscriptionEnd), FIRST_OCTOBER_2022);
+        const shouldSet = isPaid;
 
-        if ((isPaid || isInvalidFree) && cookie !== '1') {
+        if (shouldSet && cookie !== '1') {
             setCookie({
                 cookieName: COOKIE_NAME,
                 cookieValue: '1',
@@ -40,7 +35,7 @@ const useNoBFCookie = () => {
                 expirationDate: lastDayOfTheYear.toUTCString(),
                 path: '/',
             });
-        } else if (cookie === '1') {
+        } else if (!shouldSet && cookie === '1') {
             setCookie({
                 cookieName: COOKIE_NAME,
                 cookieValue: undefined,
@@ -49,7 +44,7 @@ const useNoBFCookie = () => {
                 path: '/',
             });
         }
-    }, [user, lastSubscriptionEnd, loading]);
+    }, [user, loading]);
 };
 
-export default useNoBFCookie;
+export default useIsPaidUserCookie;
