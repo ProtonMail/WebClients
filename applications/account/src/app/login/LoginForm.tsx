@@ -15,13 +15,11 @@ import {
     InputFieldTwo,
     Label,
     PasswordInputTwo,
-    useConfig,
     useFormErrors,
     useLoading,
     useLocalState,
 } from '@proton/components';
-import { getIsVPNApp } from '@proton/shared/lib/authentication/apps';
-import { APP_NAMES, BRAND_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
+import { BRAND_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import noop from '@proton/utils/noop';
@@ -37,7 +35,6 @@ interface Props {
         persistent: boolean;
         payload: ChallengeResult;
     }) => Promise<void>;
-    toApp?: APP_NAMES;
     signInText?: string;
     defaultUsername?: string;
     hasRemember?: boolean;
@@ -47,14 +44,12 @@ interface Props {
 
 const LoginForm = ({
     onSubmit,
-    toApp,
     defaultUsername = '',
     signInText = c('Action').t`Sign in`,
     hasRemember,
     trustedDeviceRecoveryFeature,
     signupUrl,
 }: Props) => {
-    const { APP_NAME } = useConfig();
     const [submitting, withSubmitting] = useLoading();
     const [username, setUsername] = useState(defaultUsername);
     const [password, setPassword] = useState('');
@@ -64,8 +59,6 @@ const LoginForm = ({
     const challengeRefLogin = useRef<ChallengeRef>();
     const [challengeLoading, setChallengeLoading] = useState(true);
     const [challengeError, setChallengeError] = useState(false);
-
-    const isVPN = getIsVPNApp(APP_NAME) || getIsVPNApp(toApp);
 
     const loading = Boolean(challengeLoading || trustedDeviceRecoveryFeature?.loading);
 
@@ -153,7 +146,7 @@ const LoginForm = ({
                 <InputFieldTwo
                     id="username"
                     bigger
-                    label={isVPN ? c('Label').t`${BRAND_NAME} email or username` : c('Label').t`Email or username`}
+                    label={c('Label').t`Email or username`}
                     error={validator([requiredValidator(username)])}
                     disableChange={submitting}
                     autoComplete="username"

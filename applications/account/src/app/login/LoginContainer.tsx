@@ -183,7 +183,6 @@ const LoginContainer = ({
                         onBack: handleBackStep,
                         content: (
                             <LoginForm
-                                toApp={toApp}
                                 signInText={showContinueTo ? `Continue to ${toAppName}` : undefined}
                                 signupUrl={signupUrl}
                                 defaultUsername={previousUsernameRef.current}
