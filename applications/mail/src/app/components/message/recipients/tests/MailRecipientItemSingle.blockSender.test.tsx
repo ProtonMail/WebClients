@@ -1,6 +1,6 @@
 import { act } from 'react-dom/test-utils';
 
-import { fireEvent } from '@testing-library/dom';
+import { fireEvent } from '@testing-library/react';
 import { RenderResult, queryByTestId } from '@testing-library/react';
 
 import { INCOMING_DEFAULTS_LOCATION, MIME_TYPES } from '@proton/shared/lib/constants';
@@ -53,7 +53,7 @@ const getTestMessageToBlock = (sender: Recipient) => {
 
 const openDropdown = async (container: RenderResult, sender: Recipient) => {
     const { getByTestId } = container;
-    const recipientItem = await getByTestId(`recipient:details-dropdown-${sender.Address}`);
+    const recipientItem = getByTestId(`recipient:details-dropdown-${sender.Address}`);
 
     fireEvent.click(recipientItem);
 

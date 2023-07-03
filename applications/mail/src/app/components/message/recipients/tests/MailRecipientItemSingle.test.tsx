@@ -1,4 +1,4 @@
-import { Matcher, fireEvent } from '@testing-library/dom';
+import { Matcher, fireEvent } from '@testing-library/react';
 
 import { Recipient } from '@proton/shared/lib/interfaces';
 

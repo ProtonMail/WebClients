@@ -1,4 +1,4 @@
-import { fireEvent, screen } from '@testing-library/dom';
+import { fireEvent, screen } from '@testing-library/react';
 
 import { IMAGE_PROXY_FLAGS, SHOW_IMAGES } from '@proton/shared/lib/constants';
 import { MailSettings } from '@proton/shared/lib/interfaces';

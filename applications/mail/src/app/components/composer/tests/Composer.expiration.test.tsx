@@ -1,4 +1,4 @@
-import { fireEvent } from '@testing-library/dom';
+import { fireEvent } from '@testing-library/react';
 import { act, getByTestId as getByTestIdDefault, getByText as getByTextDefault } from '@testing-library/react';
 import { format } from 'date-fns';
 import loudRejection from 'loud-rejection';

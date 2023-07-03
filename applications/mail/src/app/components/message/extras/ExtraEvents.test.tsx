@@ -1,4 +1,4 @@
-import { waitFor } from '@testing-library/dom';
+import { waitFor } from '@testing-library/react';
 import { screen, waitForElementToBeRemoved } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
@@ -1048,7 +1048,7 @@ END:VCALENDAR`;
 
             userEvent.click(await waitFor(() => screen.getByTitle(`Yes, I'll attend`)));
 
-            await waitForElementToBeRemoved(() => screen.getByText(/Loading/));
+            await waitForElementToBeRemoved(() => screen.queryByText(/Loading/));
 
             expect(screen.queryByTestId('ics-widget-summary')).not.toBeInTheDocument();
         });

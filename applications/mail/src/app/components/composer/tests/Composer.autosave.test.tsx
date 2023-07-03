@@ -1,4 +1,4 @@
-import { fireEvent, getByTestId, waitFor } from '@testing-library/dom';
+import { fireEvent, getByTestId, waitFor } from '@testing-library/react';
 import { act } from '@testing-library/react';
 
 import { ROOSTER_EDITOR_ID } from '@proton/components/components/editor/constants';

@@ -1,4 +1,4 @@
-import { fireEvent } from '@testing-library/dom';
+import { fireEvent } from '@testing-library/react';
 
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 
