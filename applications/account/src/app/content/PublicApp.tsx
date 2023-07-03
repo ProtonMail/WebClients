@@ -531,7 +531,7 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                                                         }
                                                     />
                                                 </Route>
-                                                <Route path="/pricing">
+                                                <Route path={SSO_PATHS.VPN_PRICING}>
                                                     <SingleSignupContainer
                                                         loader={loader}
                                                         productParam={APPS.PROTONVPN_SETTINGS}
