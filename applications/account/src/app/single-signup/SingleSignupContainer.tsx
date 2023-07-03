@@ -318,6 +318,9 @@ const SingleSignupContainer = ({ loader, onLogin, productParam }: Props) => {
                                     handleError(error);
                                 }
                             } else {
+                                metrics.core_vpn_single_signup_step3_complete_total.increment({
+                                    status: 'success',
+                                });
                                 setStep(Steps.Four);
                             }
                         }}
