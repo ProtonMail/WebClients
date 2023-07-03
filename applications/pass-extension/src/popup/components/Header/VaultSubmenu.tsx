@@ -173,7 +173,7 @@ export const VaultSubmenu: VFC<{
     return (
         <Collapsible>
             <CollapsibleHeader
-                className="py-2 pl-4 pr-2"
+                className="pl-4 pr-2"
                 suffix={
                     <CollapsibleHeaderIconButton className="p-0" pill>
                         <Icon name="chevron-down" />

@@ -1,5 +1,5 @@
 import { type VFC, useMemo } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
@@ -14,10 +14,13 @@ import {
     usePopperAnchor,
 } from '@proton/components';
 import { selectAliasLimits, selectPassPlan } from '@proton/pass/store';
+import { passwordSave } from '@proton/pass/store/actions/creators/pw-history';
 import type { ItemType } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { pipe } from '@proton/pass/utils/fp';
+import { uniqueId } from '@proton/pass/utils/string';
+import { getEpoch } from '@proton/pass/utils/time';
 import clsx from '@proton/utils/clsx';
 
 import { useFeatureFlag } from '../../../shared/hooks/useFeatureFlag';
@@ -35,7 +38,8 @@ type QuickAddAction = { label: string; type: ItemType };
 
 export const Header: VFC<{}> = () => {
     const history = useHistory();
-    const { ready } = usePopupContext();
+    const dispatch = useDispatch();
+    const { ready, context } = usePopupContext();
     const { search, setSearch } = useItemsFilteringContext();
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     const { generatePassword } = usePasswordGeneratorContext();
@@ -57,7 +61,21 @@ export const Header: VFC<{}> = () => {
         void generatePassword({
             actionLabel: c('Action').t`Copy and close`,
             className: 'ui-red',
-            onSubmit: (password) => copyToClipboard(password),
+            onSubmit: (password) => {
+                const { domain, subdomain, hostname } = context?.url ?? {};
+                const url = subdomain ?? domain ?? hostname ?? null;
+
+                dispatch(
+                    passwordSave({
+                        id: uniqueId(),
+                        value: password,
+                        origin: url,
+                        createTime: getEpoch(),
+                    })
+                );
+
+                void copyToClipboard(password);
+            },
         });
     };
 

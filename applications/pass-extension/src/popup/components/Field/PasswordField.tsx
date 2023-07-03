@@ -3,12 +3,17 @@ import { type VFC, useCallback } from 'react';
 import { PasswordGeneratorButton } from '../PasswordGenerator/PasswordGeneratorButton';
 import { TextField, type TextFieldProps } from './TextField';
 
-export const PasswordField: VFC<TextFieldProps> = (props) => {
-    const { field, form, ...rest } = props;
+type Props = { onPasswordGenerated: (password: string) => void } & TextFieldProps;
+
+export const PasswordField: VFC<Props> = (props) => {
+    const { field, form, onPasswordGenerated, ...rest } = props;
 
     const handlePasswordGeneratorDone = useCallback(
-        (password: string) => form.setFieldValue(field.name, password),
-        [form, field.name]
+        async (password: string) => {
+            onPasswordGenerated?.(password);
+            await form.setFieldValue(field.name, password);
+        },
+        [form, field.name, onPasswordGenerated]
     );
 
     const actions =
