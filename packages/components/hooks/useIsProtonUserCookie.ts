@@ -10,7 +10,7 @@ const cookieDomain = `.${getSecondLevelDomain(window.location.hostname)}`;
 
 // Set a cookie for Proton users, used by proton.me website
 // Also use in Drive download page to show/hide some marketing info
-const useIsProtonUser = () => {
+const useIsProtonUserCookie = () => {
     useEffect(() => {
         const cookie = getCookie(IS_PROTON_USER_COOKIE_NAME);
 
@@ -26,4 +26,4 @@ const useIsProtonUser = () => {
     }, []);
 };
 
-export default useIsProtonUser;
+export default useIsProtonUserCookie;
