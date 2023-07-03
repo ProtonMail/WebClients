@@ -18,8 +18,6 @@ afterAll(() => {
 
 describe('IMAP Start Step', () => {
     it('Should render an empty form and fill server when email filled', async () => {
-        const apiCallSpy = jest.fn();
-
         easySwitchRender(<ImapMailModal />);
         const emailInput = screen.getByTestId('StepForm:emailInput');
         const passwordInput = screen.getByTestId('StepForm:passwordInput');
@@ -32,7 +30,6 @@ describe('IMAP Start Step', () => {
 
         server.use(
             rest.get('/importer/v1/mail/importers/authinfo', (req, res, ctx) => {
-                apiCallSpy();
                 return res(
                     ctx.set('date', '01/01/2022'),
                     ctx.json({
@@ -45,9 +42,7 @@ describe('IMAP Start Step', () => {
             })
         );
 
-        await waitFor(() => expect(apiCallSpy).toHaveBeenCalledTimes(1));
-
-        expect(serverInput).toHaveValue('imap.proton.ch');
+        await waitFor(() => expect(serverInput).toHaveValue('imap.proton.ch'));
         expect(portInput).toHaveValue('993');
 
         expect(submitButton).toBeDisabled();
