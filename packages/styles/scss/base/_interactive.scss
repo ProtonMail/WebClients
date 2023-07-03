@@ -89,28 +89,8 @@
 		transition: 0.15s easing(ease-out-quad);
 	}
 
-	&.rounded::after {
-		border-radius: var(--border-radius-md);
-	}
-
-	&.rounded-lg::after {
-		border-radius: var(--border-radius-lg);
-	}
-
-	&.rounded-xl::after {
-		border-radius: var(--border-radius-xl);
-	}
-
-	&.rounded-full::after {
-		border-radius: var(--border-radius-full);
-	}
-
-	&.rounded-50::after {
-		border-radius: 50%;
-	}
-
-	&.rounded-none::after {
-		border-radius: 0;
+	&[class*='rounded']::after {
+		border-radius: inherit;
 	}
 
 	@supports not selector(:focus-visible:has(a, b)) {
