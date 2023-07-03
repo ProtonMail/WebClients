@@ -11,11 +11,10 @@ import { sign as signMessage } from '@proton/shared/lib/keys/driveKeys';
 import { ShareWithKey } from '../_shares';
 import {
     decryptSharePassphraseAsync,
+    getOwnAddressAndPrimaryKeysAsync,
     getOwnAddressKeysAsync,
-    getOwnAddressPrimaryKeyAsync,
     getPrimaryAddressAsync,
     getPrimaryAddressKeyAsync,
-    getPrimaryAddressKeysAsync,
 } from './driveCrypto';
 
 // Special case for drive to allow users with just an external address
@@ -37,15 +36,9 @@ function useDriveCrypto() {
     }, [getAddresses]);
 
     // getPrimaryAddressKey returns only currently primary key of the primary
-    // address. Use this only for encryption. getPrimaryAddressKeys needs to
-    // be used for decryption, because file could be encrypted with any key.
+    // address. Used for bootstrapping.
     const getPrimaryAddressKey = useCallback(async () => {
         return getPrimaryAddressKeyAsync(getPrimaryAddress, getAddressKeys);
-    }, [getPrimaryAddress, getAddressKeys]);
-
-    // getPrimaryAddressKeys returns all keys for primary address.
-    const getPrimaryAddressKeys = useCallback(async () => {
-        return getPrimaryAddressKeysAsync(getPrimaryAddress, getAddressKeys);
     }, [getPrimaryAddress, getAddressKeys]);
 
     const getOwnAddressKeys = useCallback(
@@ -53,8 +46,9 @@ function useDriveCrypto() {
         [getAddresses, getAddressKeys]
     );
 
-    const getPrivatePrimaryAddressKeys = useCallback(
-        async (email: string) => getOwnAddressPrimaryKeyAsync(email, getAddresses, getAddressKeys),
+    // This should be used for encryption and signing of any content.
+    const getOwnAddressAndPrimaryKeys = useCallback(
+        async (email: string) => getOwnAddressAndPrimaryKeysAsync(email, getAddresses, getAddressKeys),
         [getAddresses, getAddressKeys]
     );
 
@@ -108,8 +102,7 @@ function useDriveCrypto() {
 
     return {
         getPrimaryAddressKey,
-        getPrimaryAddressKeys,
-        getPrivatePrimaryAddressKeys,
+        getOwnAddressAndPrimaryKeys,
         getPrivateAddressKeys,
         getVerificationKey,
         getPrimaryAddress,
