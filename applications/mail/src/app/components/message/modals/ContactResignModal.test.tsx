@@ -1,4 +1,4 @@
-import { fireEvent, waitFor } from '@testing-library/dom';
+import { fireEvent, waitFor } from '@testing-library/react';
 
 import { Address } from '@proton/shared/lib/interfaces';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';

@@ -7884,7 +7884,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/utils@npm:5.60.1, @typescript-eslint/utils@npm:^5.45.0, @typescript-eslint/utils@npm:^5.57.0":
+"@typescript-eslint/utils@npm:5.60.1, @typescript-eslint/utils@npm:^5.45.0, @typescript-eslint/utils@npm:^5.57.0, @typescript-eslint/utils@npm:^5.58.0":
   version: 5.60.1
   resolution: "@typescript-eslint/utils@npm:5.60.1"
   dependencies:
@@ -15231,6 +15231,17 @@ __metadata:
   peerDependencies:
     eslint: ">=6"
   checksum: 8e0e160c71216019c291a5a03b797b5359076067d16ea03b3dec63594093d45398f028d15c47eb89f2ddb6e8db18cc7e376b02d921dacc4fb31bbc8da46363c8
+  languageName: node
+  linkType: hard
+
+"eslint-plugin-testing-library@npm:^5.11.0":
+  version: 5.11.0
+  resolution: "eslint-plugin-testing-library@npm:5.11.0"
+  dependencies:
+    "@typescript-eslint/utils": ^5.58.0
+  peerDependencies:
+    eslint: ^7.5.0 || ^8.0.0
+  checksum: 7f19d3dedd7788b411ca3d9045de682feb26025b9c26d97d4e2f0bf62f5eaa276147d946bd5d0cd967b822e546a954330fdb7ef80485301264f646143f011a02
   languageName: node
   linkType: hard
 
@@ -25947,6 +25958,7 @@ fsevents@^1.2.7:
     eslint: ^8.43.0
     eslint-config-airbnb-typescript: ^17.0.0
     eslint-config-prettier: ^8.8.0
+    eslint-plugin-testing-library: ^5.11.0
     idb: ^7.1.1
     jest: ^29.5.0
     jest-environment-jsdom: ^29.5.0

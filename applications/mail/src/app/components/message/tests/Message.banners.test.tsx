@@ -1,4 +1,4 @@
-import { waitFor } from '@testing-library/dom';
+import { waitFor } from '@testing-library/react';
 
 import { setBit } from '@proton/shared/lib/helpers/bitset';
 import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
