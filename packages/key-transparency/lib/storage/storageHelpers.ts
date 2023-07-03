@@ -1,7 +1,7 @@
 import { CryptoProxy, PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
 import { KTLocalStorageAPI } from '@proton/shared/lib/interfaces';
 
-import { ktSentryReport, throwKTError } from '../helpers/utils';
+import { ktSentryReportError, throwKTError } from '../helpers/utils';
 import { KTBlobContent, KTBlobValuesWithInfo, SelfAuditResult } from '../interfaces';
 
 /**
@@ -59,9 +59,7 @@ export const getAllKTBlobValuesWithInfo = async (
                 ktBlobsContent: newKTBlobs,
             });
         } catch (error: any) {
-            const errorMessage = error instanceof Error ? error.message : 'unknown error';
-            const stack = error instanceof Error ? error.stack : undefined;
-            ktSentryReport(errorMessage, { context: 'getAllKTBlobValuesWithInfo', armoredMessage, stack });
+            ktSentryReportError(error, { context: 'getAllKTBlobValuesWithInfo' });
         }
     }
 
@@ -130,9 +128,7 @@ export const commitSKLToLS = async (
             );
         }
     } catch (error: any) {
-        const errorMessage = error instanceof Error ? error.message : 'unknown error';
-        const stack = error instanceof Error ? error.stack : undefined;
-        ktSentryReport(errorMessage, { context: 'commitSKLToLS', stack });
+        ktSentryReportError(error, { context: 'commitSKLToLS' });
     }
 };
 
@@ -183,8 +179,6 @@ export const getAuditResult = async (
             return JSON.parse(decrypted.data);
         }
     } catch (error: any) {
-        const errorMessage = error instanceof Error ? error.message : 'unknown error';
-        const stack = error instanceof Error ? error.stack : undefined;
-        ktSentryReport(errorMessage, { context: 'getAuditResult', stack });
+        ktSentryReportError(error, { context: 'getAuditResult' });
     }
 };
