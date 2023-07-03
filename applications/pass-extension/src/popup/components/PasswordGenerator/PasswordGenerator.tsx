@@ -23,7 +23,7 @@ export const PasswordGenerator: VFC<UsePasswordGeneratorResult> = ({
 
     return (
         <div className="flex-column flex gap-y-2">
-            <div className="mb-4 px-4 py-2 flex flex-align-items-center">
+            <div className="my-4 px-4 py-2 flex flex-align-items-center">
                 <span
                     className="text-2xl text-center text-break-all text-monospace m-auto min-h-custom"
                     style={{ '--min-h-custom': '72px' }}
@@ -203,11 +203,13 @@ export const PasswordGenerator: VFC<UsePasswordGeneratorResult> = ({
                 </>
             )}
 
-            <div className="flex flex-justify-end mt-2">
+            <hr className="m-0" />
+
+            <div className="flex flex-justify-end">
                 <Button shape="ghost" onClick={() => setShowAdvanced((advanced) => !advanced)}>
                     <span className="flex flex-align-items-center color-weak text-sm">
                         <Icon name={showAdvanced ? 'cross' : 'cog-wheel'} className="mr-1" />
-                        {showAdvanced ? c('Action').t`Hide advanced options` : c('Action').t`Show advanced options`}
+                        {showAdvanced ? c('Action').t`Close advanced options` : c('Action').t`Advanced options`}
                     </span>
                 </Button>
             </div>
