@@ -15,6 +15,7 @@ import {
     useLocalState,
     useMyCountry,
     useNotifications,
+    useResetSelfAudit,
     useSearchParamsEffect,
 } from '@proton/components';
 import { startUnAuthFlow } from '@proton/components/containers/api/unAuthenticatedApi';
@@ -83,6 +84,7 @@ const ResetPasswordContainer = ({ onLogin, setupVPN }: Props) => {
             : originalTrustedDeviceRecoveryFeature;
     const hasTrustedDeviceRecovery = !!trustedDeviceRecoveryFeature.feature?.Value;
     const ktActivation = useKTActivation();
+    const resetSelfAudit = useResetSelfAudit();
 
     const [defaultCountry] = useMyCountry();
 
@@ -107,6 +109,7 @@ const ResetPasswordContainer = ({ onLogin, setupVPN }: Props) => {
             Methods: [],
             hasTrustedDeviceRecovery,
             ktActivation,
+            resetSelfAudit,
         };
         setStep(STEPS.REQUEST_RECOVERY_METHODS);
     };
@@ -188,6 +191,7 @@ const ResetPasswordContainer = ({ onLogin, setupVPN }: Props) => {
                     type: 'internal',
                     hasTrustedDeviceRecovery,
                     ktActivation,
+                    resetSelfAudit,
                 };
 
                 const validateFlow = createFlow();
@@ -243,6 +247,7 @@ const ResetPasswordContainer = ({ onLogin, setupVPN }: Props) => {
                                 persistent,
                                 hasTrustedDeviceRecovery,
                                 ktActivation,
+                                resetSelfAudit,
                             },
                             token,
                         });
@@ -320,6 +325,7 @@ const ResetPasswordContainer = ({ onLogin, setupVPN }: Props) => {
                                         username,
                                         persistent,
                                         api: silentApi,
+                                        resetSelfAudit,
                                     });
                                     if (validateFlow()) {
                                         return await handleResult(result);
