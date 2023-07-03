@@ -95,6 +95,7 @@ export interface LocalStorageAuditResult {
     email: string;
     success: boolean;
     error?: KeyTransparencyError;
+    primaryKeyFingerprint?: string;
 }
 
 export interface SelfAuditResult {
