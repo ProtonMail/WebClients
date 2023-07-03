@@ -40,7 +40,15 @@ import {
     Toggle,
     useFormErrors,
 } from '../../components';
-import { useApi, useEventManager, useGetAddresses, useGetUser, useLoading, useNotifications } from '../../hooks';
+import {
+    useApi,
+    useEventManager,
+    useGetAddresses,
+    useGetUser,
+    useGetUserKeys,
+    useLoading,
+    useNotifications,
+} from '../../hooks';
 import { useKTVerifier } from '../keyTransparency';
 import SelectEncryption from '../keys/addKey/SelectEncryption';
 import MemberStorageSelector, { getStorageRange, getTotalStorage } from './MemberStorageSelector';
@@ -56,6 +64,7 @@ const SubUserCreateModal = ({ organization, organizationKey, domains, onClose, .
     const { call } = useEventManager();
     const api = useApi();
     const getAddresses = useGetAddresses();
+    const getUserKeys = useGetUserKeys();
     const storageSizeUnit = GIGA;
     const storageRange = getStorageRange({}, organization);
 
@@ -92,6 +101,8 @@ const SubUserCreateModal = ({ organization, organizationKey, domains, onClose, .
             })
         );
 
+        const userKeys = await getUserKeys();
+
         const { Member } = await srpVerify<{ Member: Member }>({
             api,
             credentials: { password: model.password },
@@ -124,8 +135,8 @@ const SubUserCreateModal = ({ organization, organizationKey, domains, onClose, .
                 encryptionConfig: ENCRYPTION_CONFIGS[encryptionType],
                 password: model.password,
                 keyTransparencyVerify,
-                keyTransparencyCommit,
             });
+            await keyTransparencyCommit(userKeys);
         }
 
         if (model.admin) {
