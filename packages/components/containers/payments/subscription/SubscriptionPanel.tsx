@@ -329,9 +329,9 @@ const SubscriptionPanel = ({
             className="border rounded px-6 py-5 subscription-panel-container flex-align-self-start on-tablet-order-1 on-mobile-order-1"
             data-testid="current-plan"
         >
-            <h3 className="mb-1">
+            <h2 className="mb-1 h3">
                 <strong>{c('Title').t`Your Plan`}</strong>
-            </h3>
+            </h2>
             <div className="flex flex-wrap flex-align-items-center flex-justify-space-between color-weak">
                 <strong data-testid="plan-name">{planTitle}</strong>
                 {user.hasPaidMail && (
