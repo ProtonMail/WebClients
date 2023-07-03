@@ -28,7 +28,7 @@ const getButtonText = (expirationDate: Date, messageExpiresSoon: boolean) => {
         if (hoursDiff === 0) {
             const minutesDiff = differenceInMinutes(endOfMinute(expirationDate), startOfMinute(new Date()));
 
-            //translator: When message expires in less than one hour we display "Expires in 10 minutes"
+            // translator: When message expires in less than one hour we display "Expires in 10 minutes"
             return c('Info').ngettext(
                 msgid`Expires in ${minutesDiff} minute`,
                 `Expires in ${minutesDiff} minutes`,
@@ -36,7 +36,7 @@ const getButtonText = (expirationDate: Date, messageExpiresSoon: boolean) => {
             );
         }
 
-        //translator: When message expires in more than one hour we display "Expires in less than X hours"
+        // translator: When message expires in more than one hour we display "Expires in less than X hours"
         return c('Info').ngettext(
             msgid`Expires in less than ${hoursDiff} hour`,
             `Expires in less than ${hoursDiff} hours`,
