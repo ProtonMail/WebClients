@@ -22,6 +22,7 @@ import {
     useDomains,
     useEventManager,
     useGetAddresses,
+    useGetUserKeys,
     useKTVerifier,
     useLoading,
     useNotifications,
@@ -97,8 +98,7 @@ const CreateUserAccountsModal = ({ usersToImport, app, onClose, ...rest }: Props
     const [organizationKey, loadingOrganizationKey] = useOrganizationKey(organization);
     const [organizationCapacityError, setOrganizationCapacityError] = useState<OrganizationCapacityError>();
     const [user] = useUser();
-    // TODO: members SKLs should appear as others' SKLs to the admin, or self-audit will think these keys
-    // are the admin's and potentally fail
+    const getUserKeys = useGetUserKeys();
     const { keyTransparencyVerify, keyTransparencyCommit } = useKTVerifier(api, async () => user);
 
     const [domains, loadingDomains] = useDomains();
@@ -245,7 +245,6 @@ const CreateUserAccountsModal = ({ usersToImport, app, onClose, ...rest }: Props
                     getAddresses,
                     organizationKey: organizationKey.privateKey,
                     keyTransparencyVerify,
-                    keyTransparencyCommit,
                 });
 
                 localSuccessfullyCreatedUsers.push(user);
@@ -277,6 +276,9 @@ const CreateUserAccountsModal = ({ usersToImport, app, onClose, ...rest }: Props
 
             setCurrentProgress((currentProgress) => currentProgress + 1);
         }
+
+        const userKeys = await getUserKeys();
+        await keyTransparencyCommit(userKeys);
 
         syncState();
         await call();
