@@ -1,7 +1,6 @@
-.ui-alias {
-    --interaction-norm: #6ABDB3;
-
-    --interaction-weak: #26333D;
+.ui-lime {
+    --interaction-norm: #91DC9C;
+    --interaction-weak: #273035;
 
     --focus-outline: var(--interaction-norm-major-2);
     --focus-ring: var(--interaction-norm-minor-1);

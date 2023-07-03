@@ -1,4 +1,4 @@
-import type { VFC } from 'react';
+import { type VFC, useMemo } from 'react';
 import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
@@ -13,13 +13,16 @@ import {
     Icon,
     usePopperAnchor,
 } from '@proton/components';
-import { selectAliasLimits } from '@proton/pass/store';
+import { selectAliasLimits, selectPassPlan } from '@proton/pass/store';
 import type { ItemType } from '@proton/pass/types';
+import { PassFeature } from '@proton/pass/types/api/features';
+import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { pipe } from '@proton/pass/utils/fp';
 import clsx from '@proton/utils/clsx';
 
+import { useFeatureFlag } from '../../../shared/hooks/useFeatureFlag';
 import { itemTypeToIconName } from '../../../shared/items';
-import { itemTypeToItemClassName } from '../../../shared/items/className';
+import { itemTypeToSubThemeClassName } from '../../../shared/theme/sub-theme';
 import { useCopyToClipboard } from '../../hooks/useCopyToClipboard';
 import { useItemsFilteringContext } from '../../hooks/useItemsFilteringContext';
 import { usePopupContext } from '../../hooks/usePopupContext';
@@ -28,20 +31,7 @@ import { usePasswordGeneratorContext } from '../PasswordGenerator/PasswordGenera
 import { MenuDropdown } from './MenuDropdown';
 import { Searchbar } from './Searchbar';
 
-const ITEM_TYPE_DROPDOWN_BUTTONS = [
-    {
-        label: c('Label').t`Login`,
-        type: 'login' as const,
-    },
-    {
-        label: c('Label').t`Alias`,
-        type: 'alias' as const,
-    },
-    {
-        label: c('Label').t`Note`,
-        type: 'note' as const,
-    },
-];
+type QuickAddAction = { label: string; type: ItemType };
 
 export const Header: VFC<{}> = () => {
     const history = useHistory();
@@ -52,10 +42,13 @@ export const Header: VFC<{}> = () => {
     const withClose = <T extends (...args: any[]) => void>(action: T) => pipe(action, close) as T;
     const copyToClipboard = useCopyToClipboard();
     const { needsUpgrade, aliasLimit, aliasLimited, aliasTotalCount } = useSelector(selectAliasLimits);
+    const isFreePlan = useSelector(selectPassPlan) === UserPassPlan.FREE;
+    const showCreditCards = useFeatureFlag<boolean>(PassFeature.PassCreditCardsV1);
 
     const handleNewItemClick = (type: ItemType) => {
-        // Trick to be able to return to the initial route using history.goBack() if user switches
-        // from iteam creation routes for multiple subsequent item types.
+        /* Trick to be able to return to the initial route using
+         * history.goBack() if user switches from iteam creation
+         * routes for multiple subsequent item types. */
         const shouldReplace = history.location.pathname.includes('/item/new/');
         history[shouldReplace ? 'replace' : 'push'](`/item/new/${type}`);
     };
@@ -63,10 +56,20 @@ export const Header: VFC<{}> = () => {
     const handleNewPasswordClick = () => {
         void generatePassword({
             actionLabel: c('Action').t`Copy and close`,
-            className: 'ui-password',
+            className: 'ui-red',
             onSubmit: (password) => copyToClipboard(password),
         });
     };
+
+    const quickAddActions = useMemo<QuickAddAction[]>(
+        () => [
+            { label: c('Label').t`Login`, type: 'login' },
+            { label: c('Label').t`Alias`, type: 'alias' },
+            { label: c('Label').t`Credit Card`, type: 'creditCard' },
+            { label: c('Label').t`Note`, type: 'note' },
+        ],
+        []
+    );
 
     return (
         <>
@@ -101,12 +104,15 @@ export const Header: VFC<{}> = () => {
                     originalPlacement="bottom-start"
                 >
                     <DropdownMenu>
-                        {ITEM_TYPE_DROPDOWN_BUTTONS.map(({ type, label }) => (
-                            <span className={itemTypeToItemClassName[type]} key={`item-type-dropdown-button-${type}`}>
+                        {quickAddActions.map(({ type, label }) => {
+                            if (type === 'creditCard' && !showCreditCards) return null;
+
+                            return (
                                 <DropdownMenuButton
-                                    key={type}
-                                    className="flex flex-align-items-center py-2 px-4"
+                                    key={`item-type-dropdown-button-${type}`}
+                                    className={`${itemTypeToSubThemeClassName[type]} flex flex-align-items-center py-2 px-4`}
                                     onClick={withClose(() => handleNewItemClick(type))}
+                                    disabled={isFreePlan && type === 'creditCard'}
                                 >
                                     <span
                                         className="mr-2 w-custom h-custom rounded-lg overflow-hidden relative pass-item-icon"
@@ -131,11 +137,11 @@ export const Header: VFC<{}> = () => {
                                         )
                                     }
                                 </DropdownMenuButton>
-                            </span>
-                        ))}
+                            );
+                        })}
 
                         <DropdownMenuButton
-                            className="text-left flex flex-align-items-center ui-password"
+                            className="text-left flex flex-align-items-center ui-red"
                             onClick={withClose(handleNewPasswordClick)}
                         >
                             <span

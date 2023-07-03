@@ -65,7 +65,7 @@ export const AliasModal = <T extends AliasFormValues>({
     return (
         <SidebarModal {...modalProps} open={open}>
             <Panel
-                className="ui-login"
+                className="ui-violet"
                 header={
                     <PanelHeader
                         actions={[

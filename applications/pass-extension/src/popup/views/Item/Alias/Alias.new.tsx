@@ -167,6 +167,7 @@ export const AliasNew: VFC<ItemNewProps<'alias'>> = ({ shareId, onSubmit, onCanc
                                     <Field component={VaultSelectField} label={c('Label').t`Vault`} name="shareId" />
                                 )}
                                 <Field
+                                    lengthLimiters
                                     name="name"
                                     label={c('Label').t`Title`}
                                     placeholder={c('Label').t`Untitled`}
@@ -182,7 +183,7 @@ export const AliasNew: VFC<ItemNewProps<'alias'>> = ({ shareId, onSubmit, onCanc
                                     icon="alias"
                                     label={c('Label').t`You are about to create`}
                                     loading={aliasOptionsLoading}
-                                    invalid={Boolean(
+                                    error={Boolean(
                                         Object.keys(form.touched).length > 0 &&
                                             (form.errors.aliasPrefix || form.errors.aliasSuffix)
                                     )}

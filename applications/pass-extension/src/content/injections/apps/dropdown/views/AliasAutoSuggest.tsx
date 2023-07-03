@@ -15,6 +15,7 @@ import noop from '@proton/utils/noop';
 import { navigateToUpgrade } from '../../../../..//shared/components/upgrade/UpgradeButton';
 import { AliasPreview } from '../../../../../shared/components/alias/Alias.preview';
 import { useEnsureMounted } from '../../../../../shared/hooks/useEnsureMounted';
+import { SubTheme } from '../../../../../shared/theme/sub-theme';
 import { type IFrameMessage, IFrameMessageType } from '../../../../types';
 import { useIFrameContext } from '../../context/IFrameContextProvider';
 import { DropdownItem } from '../components/DropdownItem';
@@ -188,7 +189,7 @@ export const AliasAutoSuggest: VFC<Props> = ({ prefix, domain, onOptions, onMess
                     }
                 })()}
                 icon={needsUpgrade ? 'arrow-out-square' : 'alias'}
-                className="ui-alias"
+                subTheme={SubTheme.TEAL}
                 disabled={loadingText !== null}
                 onClick={(() => {
                     if (needsUpgrade) return navigateToUpgrade;
