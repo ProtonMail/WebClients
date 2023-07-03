@@ -1,5 +1,6 @@
 import { PrivateKeyReference } from '@proton/crypto';
 import { Api, KTLocalStorageAPI } from '@proton/shared/lib/interfaces';
+import { getParsedSignedKeyList } from '@proton/shared/lib/keys';
 
 import { fetchProof, fetchSignedKeyList } from '../../helpers/fetchHelpers';
 import {
@@ -35,6 +36,13 @@ const fetchSKLWithRevision = async (api: Api, email: string, revision: number, d
     }
 
     return includedSKL;
+};
+
+const getPrimaryKeyFingerprint = (blob: KTBlobContent) => {
+    const sklItems = getParsedSignedKeyList(blob.data);
+    if (sklItems?.length) {
+        return sklItems[0].Fingerprint;
+    }
 };
 
 /**
@@ -107,6 +115,7 @@ export const checkLSBlobs = async (
             } else {
                 results.push({
                     email: ktBlobContent.email,
+                    primaryKeyFingerprint: getPrimaryKeyFingerprint(ktBlobContent),
                     success: result === LocalStorageAuditStatus.Success,
                 });
             }
