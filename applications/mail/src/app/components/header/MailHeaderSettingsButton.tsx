@@ -115,13 +115,12 @@ const MailHeaderSettingsButton = () => {
                         <span className="flex-item-fluid text-left">{c('Action').t`Default email application`}</span>
                     </DropdownMenuButton>
                 )}
-                {clearDataButton}
                 {showKT && (
                     <DropdownMenuButton
                         onClick={() => setKeyTransparencyDetailsModalOpen(true)}
                         className="flex flex-nowrap flex-justify-space-between flex-align-items-center"
                     >
-                        {c('loc_nightly: Key transparency details').t`Key Transparency`}
+                        {c('loc_nightly: Key transparency details').t`Key verification`}
                         {keyTransparencyNotification && (
                             <NotificationDot
                                 className="ml-4"
@@ -131,6 +130,7 @@ const MailHeaderSettingsButton = () => {
                         )}
                     </DropdownMenuButton>
                 )}
+                {clearDataButton}
             </TopNavbarListItemSettingsDropdown>
             <MailShortcutsModal {...mailShortcutsProps} />
             <MailViewLayoutModal {...mailViewLayoutProps} />
