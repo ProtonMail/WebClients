@@ -7,12 +7,14 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { Icon } from '@proton/components';
 import { itemCreationIntent, selectTOTPLimits } from '@proton/pass/store';
+import { passwordSave } from '@proton/pass/store/actions/creators/pw-history';
 import { PassFeature } from '@proton/pass/types/api/features';
 import { prop } from '@proton/pass/utils/fp';
 import { merge } from '@proton/pass/utils/object';
 import { parseOTPValue } from '@proton/pass/utils/otp/otp';
 import { isEmptyString, uniqueId } from '@proton/pass/utils/string';
 import { getEpoch } from '@proton/pass/utils/time';
+import { parseUrl } from '@proton/pass/utils/url';
 
 import { UpgradeButton } from '../../../../shared/components/upgrade/UpgradeButton';
 import type { EditLoginItemFormValues } from '../../../../shared/form/types';
@@ -257,6 +259,20 @@ export const LoginEdit: VFC<ItemEditProps<'login'>> = ({ vault, revision, onSubm
                                     placeholder={c('Placeholder').t`Enter password`}
                                     component={PasswordField}
                                     icon="key"
+                                    onPasswordGenerated={(value: string) => {
+                                        const { urls, url } = form.values;
+                                        const baseUrl = urls?.[0].url ?? url;
+                                        const { subdomain, domain, hostname } = parseUrl(baseUrl);
+
+                                        dispatch(
+                                            passwordSave({
+                                                id: uniqueId(),
+                                                value,
+                                                origin: subdomain ?? domain ?? hostname,
+                                                createTime: getEpoch(),
+                                            })
+                                        );
+                                    }}
                                 />
 
                                 {
