@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 
 import { useModalTwo } from '@proton/components';
 import { useActiveBreakpoint } from '@proton/components/hooks';
-import { IS_PROTON_USER_COOKIE_NAME } from '@proton/components/hooks/useIsProtonUser';
+import { IS_PROTON_USER_COOKIE_NAME } from '@proton/components/hooks/useIsProtonUserCookie';
 import { getCookie } from '@proton/shared/lib/helpers/cookies';
 
 import { useDownload } from '../../../store';
