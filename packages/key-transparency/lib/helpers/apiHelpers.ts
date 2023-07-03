@@ -14,15 +14,17 @@ import { isTimestampTooOld, ktSentryReport, throwKTError } from './utils';
  * server will return the actual latest epoch. We can only check that what
  * is returned is no older than MAX_EPOCH_INTERVAL
  */
-export const fetchAndVerifyLatestEpoch = async (api: Api): Promise<Epoch> => {
+export const fetchLatestEpoch = async (api: Api, verify: boolean = true): Promise<Epoch> => {
     const { Epochs } = await api<{ Epochs: Epoch[] }>(getEpochsRoute({}));
     const [lastEpoch] = Epochs;
-    const certificateTimestamp = await verifyEpoch(lastEpoch);
-    if (isTimestampTooOld(certificateTimestamp)) {
-        return throwKTError('Certificate timestamp of alleged latest epoch is older than MAX_EPOCH_INTERVAL', {
-            lastEpoch: JSON.stringify(lastEpoch),
-            certificateTimestamp,
-        });
+    if (verify) {
+        const certificateTimestamp = await verifyEpoch(lastEpoch);
+        if (isTimestampTooOld(certificateTimestamp)) {
+            return throwKTError('Certificate timestamp of alleged latest epoch is older than MAX_EPOCH_INTERVAL', {
+                lastEpoch: JSON.stringify(lastEpoch),
+                certificateTimestamp,
+            });
+        }
     }
     return lastEpoch;
 };
@@ -87,26 +89,52 @@ export const fetchSignedKeyList = async (
  */
 export const fetchVerifiedEpoch = async (
     address: Address,
-    userVerificationKeys: PublicKeyReference[],
-    api: Api
+    api: Api,
+    userVerificationKeys?: PublicKeyReference[]
 ): Promise<VerifiedEpoch | null> => {
     try {
         const { Data, Signature } = await api<{ Data: string; Signature: string }>(
             getLatestVerifiedEpochRoute({ AddressID: address.ID })
         );
-        const { verified, errors } = await CryptoProxy.verifyMessage({
-            armoredSignature: Signature,
-            verificationKeys: userVerificationKeys,
-            textData: Data,
-            context: KT_VE_VERIFICATION_CONTEXT,
-        });
-        if (verified !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
-            ktSentryReport('Verified epoch signature verification failed', {
-                errors: JSON.stringify(errors),
-                email: address.Email,
+        if (userVerificationKeys?.length) {
+            const { verified, errors } = await CryptoProxy.verifyMessage({
+                armoredSignature: Signature,
+                verificationKeys: userVerificationKeys,
+                textData: Data,
+                context: KT_VE_VERIFICATION_CONTEXT,
             });
+            if (verified !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
+                ktSentryReport('Verified epoch signature verification failed', {
+                    errors: JSON.stringify(errors),
+                    email: address.Email,
+                });
+                return null;
+            }
+        }
+        const verifiedEpochData: VerifiedEpoch = JSON.parse(Data);
+        return verifiedEpochData;
+    } catch (error: any) {
+        // If the returned error is 422, it means that the verified
+        // epoch was never uploaded, e.g. because the address has just been created
+        if (error?.status === HTTP_STATUS_CODE.UNPROCESSABLE_ENTITY) {
             return null;
         }
+        throw error;
+    }
+};
+
+/**
+ * Fetch the latest verified epoch
+ */
+export const fetchVerifiedEpochWithoutVerification = async (
+    address: Address,
+    userVerificationKeys: PublicKeyReference[],
+    api: Api
+): Promise<VerifiedEpoch | null> => {
+    try {
+        const { Data } = await api<{ Data: string; Signature: string }>(
+            getLatestVerifiedEpochRoute({ AddressID: address.ID })
+        );
         const verifiedEpochData: VerifiedEpoch = JSON.parse(Data);
         return verifiedEpochData;
     } catch (error: any) {
