@@ -1,6 +1,6 @@
 import { AuthResponse } from '@proton/shared/lib/authentication/interface';
 import { APP_NAMES } from '@proton/shared/lib/constants';
-import { Address, Api, DecryptedKey, KeyTransparencyActivation } from '@proton/shared/lib/interfaces';
+import { Address, Api, DecryptedKey, KeyTransparencyActivation, ResetSelfAudit } from '@proton/shared/lib/interfaces';
 
 import { AuthSession } from '../login/interface';
 
@@ -44,6 +44,7 @@ export interface ResetCacheResult {
     hasTrustedDeviceRecovery: boolean;
     ktActivation: KeyTransparencyActivation;
     setupVPN: boolean;
+    resetSelfAudit: ResetSelfAudit;
 }
 
 export type ResetActionResponse =
