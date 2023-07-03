@@ -65,10 +65,10 @@ const UsagePanel = ({ addresses, calendars, organization, user, children }: Prop
     ];
 
     return (
-        <div className="border rounded px-6 pb-5 pt-2 your-account-usage-container">
-            <h3>
+        <div className="border rounded px-6 py-5 your-account-usage-container">
+            <h2 className="h3 mb-1">
                 <strong>{c('new_plans: Title').t`Your account's usage`}</strong>
-            </h3>
+            </h2>
             <StripedList>
                 <StripedItem left={<Icon className="color-success" name="storage" size={20} />}>
                     <span id="usedSpaceLabel" className="block">{c('new_plans: Label')
