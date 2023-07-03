@@ -7,7 +7,6 @@ import {
     Api,
     DecryptedKey,
     EncryptionConfig,
-    KeyTransparencyCommit,
     KeyTransparencyVerify,
     Address as tsAddress,
     Key as tsKey,
@@ -39,7 +38,6 @@ interface SetupMemberKeySharedArguments {
     organizationKey: PrivateKeyReference;
     encryptionConfig: EncryptionConfig;
     keyTransparencyVerify: KeyTransparencyVerify;
-    keyTransparencyCommit: KeyTransparencyCommit;
 }
 
 export const setupMemberKeyLegacy = async ({
@@ -50,7 +48,6 @@ export const setupMemberKeyLegacy = async ({
     organizationKey,
     encryptionConfig,
     keyTransparencyVerify,
-    keyTransparencyCommit,
 }: SetupMemberKeySharedArguments) => {
     const { salt: keySalt, passphrase: memberMailboxPassword } = await generateKeySaltAndPassphrase(password);
 
@@ -76,14 +73,6 @@ export const setupMemberKeyLegacy = async ({
             });
             const updatedActiveKeys = getNormalizedActiveKeys(address, [newActiveKey]);
             const SignedKeyList = await getSignedKeyList(updatedActiveKeys, address, keyTransparencyVerify);
-
-            await keyTransparencyCommit([
-                {
-                    ID: privateKey.getKeyID(),
-                    privateKey,
-                    publicKey: privateKey,
-                },
-            ]);
 
             return {
                 AddressID: address.ID,
@@ -121,7 +110,6 @@ export const setupMemberKeyV2 = async ({
     organizationKey,
     encryptionConfig,
     keyTransparencyVerify,
-    keyTransparencyCommit,
 }: SetupMemberKeySharedArguments) => {
     const { salt: keySalt, passphrase: memberKeyPassword } = await generateKeySaltAndPassphrase(password);
 
@@ -157,14 +145,6 @@ export const setupMemberKeyV2 = async ({
             });
             const updatedActiveKeys = getNormalizedActiveKeys(address, [newActiveKey]);
             const SignedKeyList = await getSignedKeyList(updatedActiveKeys, address, keyTransparencyVerify);
-
-            await keyTransparencyCommit([
-                {
-                    ID: addressPrivateKey.getKeyID(),
-                    privateKey: addressPrivateKey,
-                    publicKey: addressPrivateKey,
-                },
-            ]);
 
             return {
                 AddressID: address.ID,
