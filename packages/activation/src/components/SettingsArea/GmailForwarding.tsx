@@ -1,7 +1,4 @@
-import { GmailSyncModal, useModalState, useUser } from '@proton/components/index';
-
-import { ImportProvider } from '../../interface';
-import ProviderCard from './ProviderCards/ProviderCard';
+import { CheckListGmailForward, GmailSyncModal, useModalState, useUser } from '@proton/components';
 
 const GmailForwarding = () => {
     const [syncModalProps, setSyncModalProps, renderSyncModal] = useModalState();
@@ -17,13 +14,13 @@ const GmailForwarding = () => {
 
     return (
         <>
-            <ProviderCard
-                provider={ImportProvider.GOOGLE}
-                onClick={() => setSyncModalProps(true)}
-                disabled={disabled}
-                className="mb-4 mr-4"
-                data-testid="ProviderCard:googleCardForward"
-            />
+            <div className="inline-block">
+                <CheckListGmailForward
+                    onClick={() => setSyncModalProps(true)}
+                    disabled={disabled}
+                    data-testid="ProviderCard:googleCardForward"
+                />
+            </div>
             {renderSyncModal && <GmailSyncModal noSkip onSyncCallback={handleModalClose} {...syncModalProps} />}
         </>
     );

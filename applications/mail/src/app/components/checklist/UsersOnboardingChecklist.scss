@@ -1,0 +1,9 @@
+@import '~@proton/styles/scss/lib';
+
+.free-checklist--container {
+	display: none;
+
+	@include media('<=#{em(940, 16)}') {
+		display: flex;
+	}
+}

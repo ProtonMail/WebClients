@@ -16,7 +16,7 @@ import { MAIN_ROUTE_PATH } from './constants';
 import ComposerContainer from './containers/ComposerContainer';
 import EncryptedSearchProvider from './containers/EncryptedSearchProvider';
 import PageContainer from './containers/PageContainer';
-import { ChecklistsProvider } from './containers/checklists';
+import ChecklistsProvider from './containers/onboardingChecklist/provider/ChecklistsProvider';
 import { SimpleLoginExtensionProvider } from './hooks/simpleLogin/useSimpleLoginExtension';
 import { MailContentRefProvider } from './hooks/useClickMailContent';
 import { store, useSetReduxThunkExtraArgs } from './logic/store';

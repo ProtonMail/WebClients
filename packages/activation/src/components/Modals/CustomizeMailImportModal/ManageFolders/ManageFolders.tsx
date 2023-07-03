@@ -29,8 +29,8 @@ const ManageFolders = ({ toEmail, mapping, isLabelMapping, fromEmail, onChange, 
                 <div className="flex-item-fluid pt-2">
                     <ul className="unstyled m-0">
                         {items.map((item, index) => {
-                            //We don't display folder with categories since they are merged
-                            //We need them to keep the folder mapping intact so we return null instead of filtering the array
+                            // We don't display folder with categories since they are merged
+                            // We need them to keep the folder mapping intact so we return null instead of filtering the array
                             if (item.category) {
                                 return null;
                             }

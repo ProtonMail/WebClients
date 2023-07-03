@@ -11,7 +11,7 @@ import usePopper from './usePopper';
 jest.mock('@floating-ui/dom', () => {
     const originalModule = jest.requireActual('@floating-ui/dom');
 
-    //Mock the default export and named export 'foo'
+    // Mock the default export and named export 'foo'
     return {
         __esModule: true,
         ...originalModule,
