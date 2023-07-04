@@ -39,6 +39,11 @@ const processLoginItem = (item: DashlaneLoginItem): ItemImportIntent<'login'> =>
         password: item.password,
         urls: [item.url],
         totp: item.otpSecret,
+        extraFields: [item.username2, item.username3].filter(Boolean).map((username, index) => ({
+            fieldName: `username${index + 1}`,
+            type: 'text',
+            data: { content: username ?? '' },
+        })),
     });
 
 const processNoteItem = (item: DashlaneNoteItem): ItemImportIntent<'note'> =>
