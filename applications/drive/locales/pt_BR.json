@@ -1836,7 +1836,7 @@
         "Mesclando contatos... Isso pode levar alguns minutos. Quando o processo estiver concluído, você poderá fechar esta janela."
       ],
       "ProtonMail logo and a plus sign": [
-        "Logo ProtonMail e um sinal de mais"
+        "Logotipo do Proton Mail e um sinal de mais"
       ],
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "Ganhe tempo enviando e-mail ou convites para todo mundo de uma só vez, uma funcionalidade premium entre muitas outras. Faça o upgrade hoje."
@@ -2061,7 +2061,7 @@
         "Nenhum contato encontrado para importação"
       ],
       "No emails found to import - the account does not have an inbox": [
-        "Nenhum e-mail encontrado para importação — a conta não possui uma caixa de entrada."
+        "Nenhum e-mail encontrado para importação - a conta não possui uma caixa de entrada."
       ],
       "No valid address found": [
         "Nenhum endereço válido encontrado"
@@ -2577,7 +2577,7 @@
         "Você foi convidado a participar de ${ bannerOrganization }. ${ viewInviteButton }"
       ],
       "You have successfully joined the Family plan": [
-        "Você entrou no plano familiar"
+        "Você entrou no plano Family"
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "Você foi convidado a vincular sua conta da ${ BRAND_NAME } a este plano de grupo e aproveitar juntos de todos os recursos premium da ${ BRAND_NAME_TWO }."
@@ -3816,7 +3816,7 @@
         "Sessão expirada"
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
-        "Configurar o PGP permite o envio de e-mails com criptografia de ponta-a-ponta com um usuário não-${ BRAND_NAME } que usa um serviço compatível com PGP."
+        "Configurar o PGP permite o envio de e-mails com criptografia de ponta-a-ponta com um usuário que não usam o ${ BRAND_NAME } que usa um serviço compatível com PGP."
       ],
       "Share files with links": [
         "Compartilhar arquivos com links"
@@ -3864,7 +3864,7 @@
         "Sincronize pastas com facilidade usando nosso aplicativo de área de trabalho, garantindo que seus arquivos estejam sempre atualizados e acessíveis de qualquer lugar."
       ],
       "Temporarily unavailable. Please check back later.": [
-        "Temporariamente indisponível. Retorne mais tarde."
+        "Temporariamente indisponível. Tente mais tarde."
       ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "A conta pode ter uma chave nova, ou os seguintes podem ter sido adulterados: ${ items }. Abra apenas se você confiar."
@@ -4199,11 +4199,6 @@
       ],
       "Trusted": [
         "Confiável"
-      ]
-    },
-    "Key transparency details button": {
-      "Click here for more details.": [
-        "Clique aqui para mais detalhes."
       ]
     },
     "Label": {
@@ -4704,6 +4699,9 @@
       ]
     },
     "Link": {
+      "${ DRIVE_APP_NAME } Windows app": [
+        "Aplicativo do ${ DRIVE_APP_NAME } para Windows"
+      ],
       "clearing your browser cache": [
         "limpando o cache do seu navegador"
       ],
@@ -4718,6 +4716,9 @@
       ],
       "Request an invite": [
         "Solicitar um convite"
+      ],
+      "Seamlessly sync files and folders between your computer and ${ DRIVE_APP_NAME }.": [
+        "Sincronize arquivos e pastas perfeitamente entre seu computador e o ${ DRIVE_APP_NAME }."
       ],
       "Shared": [
         "Compartilhado"
@@ -5674,7 +5675,7 @@
         "Desfazer em andamento"
       ],
       "Verification successful": [
-        "Verificado"
+        "Verificado com sucesso"
       ]
     },
     "Success notification when user send feedback": {

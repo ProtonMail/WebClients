@@ -237,6 +237,9 @@
       "Download anyway": [
         "Download alligevel"
       ],
+      "Download apps": [
+        "Download apps"
+      ],
       "Drive Locked": [
         "Drev låst"
       ],
@@ -331,7 +334,7 @@
         "Jeg har et spørgsmål"
       ],
       "Image could not be loaded with tracker protection.": [
-        "Billede kunne ikke indlæses med tracker beskyttelse."
+        "Billede kunne ikke indlæses med sporingsbeskyttelse."
       ],
       "Image will be loaded without a proxy": [
         "Billede vil blive indlæst uden en proxy"
@@ -2583,6 +2586,14 @@
         "Dit nuværende abonnement kan ikke tilmelde sig et Visionary- eller familie-abonnement."
       ]
     },
+    "familyOffer_2023:Footer": {
+      "*Your subscription will automatically renew at the same rate at the end of your billing cycle.": [
+        "*Dit abonnement vil automatisk blive fornyet til samme pris ved slutningen af din faktureringscyklus."
+      ],
+      "Discounts are based on the standard monthly pricing.": [
+        "Rabatter er baseret på den månedlige standardpris."
+      ]
+    },
     "familyOffer_2023:Get Proton Family": {
       "Get ${ planName }": [
         "Få ${ planName }"
@@ -3349,7 +3360,7 @@
         "Træk fil hertil for at uploade"
       ],
       "Drop to import": [
-        "Drop for at importere"
+        "Slip for at importere"
       ],
       "Duplicate key updated": [
         "Duplikeret nøgle opdateret"
@@ -3814,6 +3825,12 @@
       "Swiss encrypted file storage": [
         "Schweizisk krypteret fillagring"
       ],
+      "Sync folders from your computer": [
+        "Synkroniser mapper fra din computer"
+      ],
+      "Sync folders with ease using our desktop app, ensuring your files are always up to date and accessible from anywhere.": [
+        "Synkroniser nemt mapper med vores desktop-app, så dine filer altid er opdaterede og tilgængelige overalt."
+      ],
       "Temporarily unavailable. Please check back later.": [
         "Midlertidigt utilgængelig. Tjek igen senere."
       ],
@@ -3877,6 +3894,9 @@
       ],
       "This will upload a new version of the file": [
         "Dette vil uploade en ny version af filen"
+      ],
+      "This will upload a new version of the folder": [
+        "Dette vil uploade en ny version af mappen"
       ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
         "For at aktivere ægte privat søgning skal ${ DRIVE_APP_NAME } indeksere dine filer lokalt."
@@ -4588,6 +4608,9 @@
       "Wonderful": [
         "Vidunderlig"
       ],
+      "Yes, I want to permanently delete my old files": [
+        "Ja, jeg vil slette mine gamle filer permanent"
+      ],
       "Your password (admin)": [
         "Din adgangskode (admin)"
       ]
@@ -4769,7 +4792,7 @@
     },
     "new_plans: feature": {
       "Auto-delete spam and trashed messages": [
-        "Fjern automatisk spam og slettede beskeder"
+        "Slet automatisk spam og beskeder i papirkurven"
       ],
       "Custom email domains": [
         "Brugerdefinerede e-maildomæner"
@@ -5355,7 +5378,15 @@
         "Støt privatliv online"
       ]
     },
+    "specialoffer: Footer": {
+      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
+        "Dette abonnement bliver automatisk fornyet hvert 2. år til samme pris, indtil det annulleres."
+      ]
+    },
     "specialoffer: Label": {
+      "Limited time only": [
+        "Kun i begrænset tid"
+      ],
       "Most popular": [
         "Mest populære"
       ],
@@ -5429,13 +5460,37 @@
       "Cyber Week Sale": [
         "Cyber Week-udsalg"
       ],
+      "End of Year Sale": [
+        "Udsalg ved årets afslutning"
+      ],
       "Get our premium bundle and save more": [
         "Få vores premium-pakke og spar mere"
+      ],
+      "Our discontinued Visionary plan is back for a limited time only": [
+        "Vores udfasede Visionary-abonnement er kun tilbage i en begrænset periode"
+      ],
+      "Save more with 2 years of ${ planName }": [
+        "Spar mere med 2 års ${ planName }"
+      ],
+      "Upgrade and save more with 2 years of ${ planName }": [
+        "Opgradér og spar mere med 2 års ${ planName }"
       ]
     },
     "specialoffer: Tooltip": {
+      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.": [
+        "Få adgang til blokeret indhold og browse privat. Inkluderer 1700 servere i 60+ lande, højeste VPN-hastighed, 10 VPN-forbindelser, verdensomspændende streamingtjenester, malware- og ad-blocker og mere."
+      ],
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
         "Få adgang til blokeret indhold, og browse privat. Inkluderer 1700 servere i mere end 60 lande, højeste VPN-hastighed, 10 VPN-forbindelser, verdensomspændende streamingtjenester, malware- og ad-blocker og meget mere."
+      ],
+      "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
+        "Få adgang til indhold på streamingtjenester, herunder Netflix, Disney+ og Prime Video, hvor som helst."
+      ],
+      "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
+        "Perfekt til familier eller små teams, hvor alle kan have deres egen indbakke og aliasser. Kræver et brugerdefineret domæne."
+      ],
+      "Receive at no extra cost the paid versions of all new privacy services we release in the future, along with early access to all future features and products.": [
+        "Modtag uden ekstra omkostninger betalingsversionerne af alle nye privatlivstjenester, vi lancerer i fremtiden, sammen med tidlig adgang til alle fremtidige funktioner og produkter."
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Beskyt dine filer med krypteret lagring i skyen. Inkluderer automatisk synkronisering, krypteret fildeling og meget mere."
