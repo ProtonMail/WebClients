@@ -17,8 +17,9 @@ interface ProcessArguments {
     cache: any;
     getAddresses: ReturnType<typeof useGetAddresses>;
     getAddressKeys: ReturnType<typeof useGetAddressKeys>;
-    calendarsToReset: VisualCalendar[];
-    calendarsToReactivate: VisualCalendar[];
+    calendarsToReset?: VisualCalendar[];
+    calendarsToReactivate?: VisualCalendar[];
+    calendarsToClean?: VisualCalendar[];
 }
 
 export const process = async ({
@@ -26,18 +27,20 @@ export const process = async ({
     cache,
     getAddresses,
     getAddressKeys,
-    calendarsToReset,
-    calendarsToReactivate,
+    calendarsToReset = [],
+    calendarsToReactivate = [],
+    calendarsToClean = [],
 }: ProcessArguments) => {
     const addresses = await getAddresses();
+
     if (!addresses.length) {
         throw new Error(c('Error').t`Please create an address first.`);
     }
 
     let hasSharedCalendars = false;
-
-    if (calendarsToReset.length > 0) {
+    if (calendarsToReset.length > 0 || calendarsToClean.length > 0) {
         // Non-owners can't reset calendar keys
+        // Even if calendarsToReset is empty, we want to call the reset endpoint in order to clean shared/holidays calendars
         const calendars = calendarsToReset.filter((calendar) => getIsOwnedCalendar(calendar));
         const [hasShared] = await Promise.all([
             getHasSharedCalendars({
