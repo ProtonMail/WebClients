@@ -91,7 +91,7 @@ const selectSortedItemsByType = createSelector(
         (_state: State, { sort }: SelectItemsOptions) => sort,
     ],
     (items, shareId, itemType, sort) =>
-        sortItems(pipe(filterItemsByShareId(shareId), filterItemsByType(itemType))(items), sort)
+        pipe(filterItemsByShareId(shareId), filterItemsByType(itemType), sortItems(sort))(items)
 );
 
 const itemsSearchResultSelector = createSelector(
