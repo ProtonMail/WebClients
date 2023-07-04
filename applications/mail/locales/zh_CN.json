@@ -124,6 +124,9 @@
       "Block": [
         "屏蔽"
       ],
+      "Block email tracking": [
+        "屏蔽邮件跟踪"
+      ],
       "Block messages from this sender": [
         "屏蔽来自此发件人的所有邮件"
       ],
@@ -360,9 +363,6 @@
       ],
       "Email settings": [
         "邮件设置"
-      ],
-      "Emoji": [
-        "表情符号"
       ],
       "Enable": [
         "启用"
@@ -645,6 +645,9 @@
       ],
       "Move all messages from this label": [
         "移动该标签中的所有邮件"
+      ],
+      "Move all to archive": [
+        "全部存档"
       ],
       "Move all to trash": [
         "全部移至废件箱"
@@ -1044,9 +1047,6 @@
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "保存失败，请重试。失败原因：${ saveError }"
-      ],
-      "Turn on tracker protection": [
-        "开启追踪保护"
       ],
       "Unblock": [
         "解除屏蔽"
@@ -2950,6 +2950,12 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "您可以选择稍后删除既不想合并也不想保留的联系人，点击合并按钮后他们就会被删除"
+      ],
+      "You can read the message and click on links without being tracked with email tracker protection.": [
+        "开启邮件跟踪防护后再点击邮件中的链接可避免广告跟踪。"
+      ],
+      "You can read the message and click on links without being tracked.": [
+        "您可以安全地点击邮件中的链接，免受广告跟踪。"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4583,8 +4589,14 @@
       "${ messagesNotAuthorizedToMove } messages could not be moved.": [
         "${ messagesNotAuthorizedToMove } 封邮件无法移动。"
       ],
-      "${ numberOfTrackers } email trackers blocked": [
-        "已屏蔽 ${ numberOfTrackers } 个电子邮件跟踪器"
+      "${ numberOfImageTrackers } email trackers blocked": [
+        "已屏蔽 ${ numberOfImageTrackers } 款邮件跟踪器"
+      ],
+      "${ numberOfImageTrackers } trackers blocked": [
+        "已屏蔽 ${ numberOfImageTrackers } 款跟踪器"
+      ],
+      "${ numberOfUTMTrackers } links cleaned": [
+        "已净化 ${ numberOfUTMTrackers } 个链接"
       ],
       "${ numContact } contacts": [
         "${ numContact } 位联系人"
@@ -4726,6 +4738,9 @@
       ],
       "Are you sure you want to discard your changes?": [
         "确定要放弃修改吗？"
+      ],
+      "Are you sure you want to move all messages in this location to Archive?": [
+        "确定要将此处所有邮件存档吗？"
       ],
       "Are you sure you want to move all messages in this location to Trash?": [
         "确定要将此处所有邮件移至废件箱吗？"
@@ -4913,15 +4928,6 @@
       "Email tracker protection is disabled": [
         "已禁用电子邮件跟踪保护"
       ],
-      "Email trackers can violate your privacy. ${ BRAND_NAME } did not find any trackers in this message.": [
-        "邮件跟踪器会侵害您的隐私，${ BRAND_NAME } 在此邮件中未发现跟踪器。"
-      ],
-      "Email trackers can violate your privacy. ${ BRAND_NAME } found and blocked ${ numberOfTrackers } trackers.": [
-        "邮件跟踪器会侵害您的隐私，${ BRAND_NAME } 已发现并屏蔽了 ${ numberOfTrackers } 个跟踪器。"
-      ],
-      "Email trackers can violate your privacy. Turn on tracker protection to prevent senders from knowing whether and when you have opened a message.": [
-        "邮件跟踪器会威胁到您的隐私，开启跟踪器防护可以避免发件人得知您在何时何地阅览了此邮件。"
-      ],
       "Emails are automatically signed": [
         "自动对邮件进行数字签名"
       ],
@@ -5093,6 +5099,9 @@
       "Link type": [
         "链接类型"
       ],
+      "Links cleaned:": [
+        "已净化的链接："
+      ],
       "Loading": [
         "加载中"
       ],
@@ -5174,9 +5183,6 @@
       "No email address": [
         "无邮箱地址"
       ],
-      "No email trackers found": [
-        "未发现电子邮件跟踪器"
-      ],
       "No folder found": [
         "未找到文件夹"
       ],
@@ -5192,14 +5198,17 @@
       "No label selected": [
         "未选择标签"
       ],
+      "No links cleaned": [
+        "无需净化链接"
+      ],
       "No more results found": [
         "到底了"
       ],
       "No results found": [
         "未找到结果"
       ],
-      "No trackers found, but some images could not be loaded with tracking protection": [
-        "没有检测到跟踪器，但跟踪器防护导致某些图像无法加载"
+      "No trackers found": [
+        "未发现跟踪器"
       ],
       "non-${ MAIL_APP_NAME }": [
         "非 ${ MAIL_APP_NAME }"
@@ -5415,7 +5424,7 @@
         "主题："
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
-        "订阅即将结束：在 ${ byDate } 之前重新激活以保留您的 ${ planName } 权益。${ reactivateLink }"
+        "您的账户等级即将失效：${ byDate } 前重新激活即可继续享受 ${ planName } 权益。${ reactivateLink }"
       ],
       "support team": [
         "客服团队"
@@ -5591,8 +5600,11 @@
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "待发送的邮件过多，请静待另一封邮件发送后陆续发送此邮件。"
       ],
-      "Turn off to only search by date, name, or email address. To disable search message content and delete downloaded messages, go to settings.": [
-        "关闭则仅搜索日期、姓名和邮箱地址。前往设置可关闭邮件全文搜索并删除已下载的邮件。"
+      "Trackers blocked:": [
+        "已屏蔽的跟踪器："
+      ],
+      "Turn off to only search by date, name, email address, or subject line. To disable search message content and delete downloaded messages, go to settings.": [
+        "关闭则仅搜索邮件主题、日期、姓名和邮箱地址。前往设置可关闭邮件全文搜索并删除已下载的邮件。"
       ],
       "Turn on to search the content of your messages": [
         "开启以搜索您的邮件全文"
@@ -5732,6 +5744,9 @@
       "You can check the progress ${ importProgressLink }.": [
         "您可以在${ importProgressLink } 查看导入进度"
       ],
+      "You can click links in this email without being profiled and leaking your online activity with advertisers.": [
+        "点击此邮件中的链接操作不会透露给广告投放者。"
+      ],
       "You can either update your search query or ${ button }": [
         "您可以更改或${ button }搜索条件。"
       ],
@@ -5740,6 +5755,9 @@
       ],
       "You can import one data type at a time.": [
         "您一次可以导入一种数据类型。"
+      ],
+      "You can read this email without revealing your interactions, location, or device to advertisers.": [
+        "您可以安全地阅读此邮件，浏览操作、地理位置、设备类型等信息不会透露给广告投放者。"
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "您可以开启通知功能，以便在新邮件到达此文件夹时获得提醒。"
@@ -6208,6 +6226,9 @@
       "City": [
         "城市"
       ],
+      "Cleaned": [
+        "净化后"
+      ],
       "Code is 6 digits without spaces": [
         "验证码是无空格的六位数"
       ],
@@ -6409,6 +6430,9 @@
       "OK": [
         "还行"
       ],
+      "Open in a new tab": [
+        "在新标签页中打开"
+      ],
       "Operating system": [
         "操作系统"
       ],
@@ -6423,6 +6447,9 @@
       ],
       "Or": [
         "或"
+      ],
+      "Original link": [
+        "原始链接"
       ],
       "Participants": [
         "参与者"
@@ -6912,11 +6939,6 @@
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
         "${ appName } 有新版本，请${ reloadButton }。"
-      ]
-    },
-    "Message has been sent to the user via a SimpleLogin alias": {
-      "Delivered via SimpleLogin by ${ BRAND_NAME }": [
-        "通过 ${ BRAND_NAME } 的 SimpleLogin 服务送达"
       ]
     },
     "Message image": {
@@ -7597,6 +7619,22 @@
       ],
       "We have detected some warnings. The following email addresses may not receive emails:": [
         "请注意，下列邮箱地址可能收不到邮件："
+      ]
+    },
+    "Sender verification details": {
+      "Sender verification": [
+        "发件人验证"
+      ],
+      "Sender verification failed: ${ icon.senderVerificationDetails.description }": [
+        "发件人验证失败：${ icon.senderVerificationDetails.description }"
+      ],
+      "Sender verified: ${ icon.senderVerificationDetails.description }": [
+        "发件人已验证：${ icon.senderVerificationDetails.description }"
+      ]
+    },
+    "Sender verification error": {
+      "Verification key is not in the list of trusted keys.": [
+        "验证密钥不在可信密钥列表中。"
       ]
     },
     "Sent email icon": {
@@ -8621,6 +8659,9 @@
       "More selections": [
         "更多选择"
       ],
+      "Move all messages to Archive": [
+        "全部存档"
+      ],
       "Move all messages to Trash": [
         "全部移至废件箱"
       ],
@@ -8657,6 +8698,9 @@
       "No attachment found": [
         "未找到附件"
       ],
+      "No trackers found": [
+        "未发现跟踪器"
+      ],
       "Open actions dropdown": [
         "展开操作菜单"
       ],
@@ -8683,6 +8727,9 @@
       ],
       "Previous message": [
         "上一封邮件"
+      ],
+      "Protect your email": [
+        "开启邮件防护"
       ],
       "Re-sign all contacts": [
         "重新签署所有联系人"
@@ -8794,6 +8841,9 @@
       ],
       "Subject missing": [
         "未填写主题"
+      ],
+      "This email is protected": [
+        "已对此邮件开启防护"
       ],
       "To": [
         "收件人"

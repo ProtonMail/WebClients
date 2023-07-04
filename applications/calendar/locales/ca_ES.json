@@ -17,7 +17,7 @@
         "El reenviament començarà aviat. Els correus electrònics nous apareixeran a la vostra safata d'entrada."
       ],
       "Mail forward stopped": [
-        "El reenviament de correu s'ha aturat."
+        "El reenviament de correu s'ha aturat"
       ]
     },
     "Action": {
@@ -67,7 +67,7 @@
         "Aplica"
       ],
       "At most 100 contacts are allowed per contact group": [
-        "El nombre màxim de contactes per grup de contactes és de 100."
+        "El nombre màxim de contactes per grup de contactes és de 100"
       ],
       "Attach screenshot(s)": [
         "Adjunta una o més captures de pantalla"
@@ -270,7 +270,7 @@
         "La imatge no s'ha pogut carregar amb la protecció contra el rastreig."
       ],
       "Image will be loaded without a proxy": [
-        "La imatge es carregarà sense proxy."
+        "La imatge es carregarà sense proxy"
       ],
       "Import": [
         "Importar"
@@ -321,7 +321,7 @@
         "Gestiona les etiquetes"
       ],
       "Mark for deletion": [
-        "Marca la supressió"
+        "Marca per a l'eliminació"
       ],
       "Maybe": [
         "Potser"
@@ -372,7 +372,7 @@
         "No, gràcies"
       ],
       "OK": [
-        "OK"
+        "D'acord"
       ],
       "Open navigation": [
         "Obre la navegació"
@@ -414,7 +414,7 @@
         "Refresca la pàgina"
       ],
       "refresh the page": [
-        "refrescar la pàgina"
+        "refresca la pàgina"
       ],
       "Remove": [
         "Suprimeix"
@@ -435,7 +435,7 @@
         "Demana un nou codi"
       ],
       "Resend code": [
-        "Reenvia codi"
+        "Reenvia el codi"
       ],
       "Reset to default": [
         "Restableix els valors per defecte"
@@ -486,7 +486,7 @@
         "Mostrar més"
       ],
       "Show side panel": [
-        "Mosta la subfinestra lateral"
+        "Mostra el panell lateral"
       ],
       "Show time zones": [
         "Mostrar el fus horari"
@@ -537,7 +537,7 @@
         "Desbloqueja les dades"
       ],
       "Unmark for deletion": [
-        "Desmarca la supressió"
+        "Desmarca per a l'eliminació"
       ],
       "Untrust": [
         "No confiable"
@@ -558,7 +558,7 @@
         "Actualitzar ara"
       ],
       "Upload picture": [
-        "Carrega imatge"
+        "Carrega la imatge"
       ],
       "Use ${ label } theme": [
         "Utilitzar el tema ${ label }"
@@ -679,7 +679,7 @@
         "Si sortiu ara, alguns contactes potser no es poden importar"
       ],
       "By leaving now, some events may not be imported": [
-        "Si surts ara alguns esdeveniments no podràn ser importats"
+        "Si sortiu ara, és possible que alguns esdeveniments no s'importin"
       ],
       "By leaving now, you will lose your event.": [
         "Si surts ara, perdreu el vostre esdeveniment."
@@ -687,7 +687,7 @@
     },
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
-        "Aplicacions ${ BRAND_NAME }"
+        "Aplicacions de ${ BRAND_NAME }"
       ]
     },
     "Attached ics file error": {
@@ -695,7 +695,7 @@
         "Fitxer ICS buit"
       ],
       "Invalid event": [
-        "Esdeveniment no vàlid"
+        "L'esdeveniment no és vàlid"
       ],
       "Invalid ICS file": [
         "Fitxer ICS invàlid"
@@ -1021,7 +1021,7 @@
         "verd bosc"
       ],
       "ocean": [
-        "blau marí"
+        "oceà"
       ],
       "olive": [
         "verd oliva"
@@ -1971,12 +1971,12 @@
     },
     "Default encryption scheme": {
       "Use global default (${ defaultValueText })": [
-        "Utilitzeu la configuració per defecte global (${ defaultValueText })."
+        "Utilitzeu la configuració global per defecte (${ defaultValueText })."
       ]
     },
     "Default signing preference": {
       "Use global default (${ globalDefaultText })": [
-        "Utilitzar la configuració per defecte global (${ globalDefaultText })"
+        "Utilitza la configuració global per defecte (${ globalDefaultText })"
       ]
     },
     "Delete event button tooltip": {
@@ -1991,7 +1991,7 @@
     },
     "Description": {
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
-        "Desxifrant contactes… Pot trigar uns minuts. Quan el procés s'hagi completat, podreu descarregar el fitxer amb tots els vostres contactes exportats."
+        "S'estan desxifrant els contactes… Això pot trigar uns minuts. Quan el procés s'hagi completat, podreu descarregar el fitxer amb tots els vostres contactes exportats."
       ],
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Eliminant contactes... Pot trigar uns minuts. Quan el procés s'hagi completat, podreu tancar aquest diàleg."
@@ -2006,10 +2006,10 @@
         "Combinant contactes... Pot trigar uns minuts. Quan el procés s'hagi completat, podreu tancar aquest diàleg."
       ],
       "ProtonMail logo and a plus sign": [
-        "Logo de Proton Mail i un signe de més"
+        "Logo de Proton Mail i un signe més"
       ],
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
-        "Estalvieu temps enviant correus electrònics o invitacions a tothom alhora, una característica prèmium entre moltes altres. Milloreu avui."
+        "Estalvieu temps enviant correus electrònics o invitacions a tothom alhora (una característica prèmium entre moltes altres). Milloreu avui."
       ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "El fitxer ha de tenir una mida màxima de ${ MAX_IMPORT_FILE_SIZE_STRING } i tenir ${ MAX_IMPORT_CONTACTS_STRING } contacte. Si el fitxer és més gran, dividiu-lo en fitxers més petits.",
@@ -2402,7 +2402,7 @@
         "Els noms d'algunes de les carpetes superen el límit màxim de caràcters de ${ MAIL_APP_NAME }. Personalitzeu la importació per a editar-ne els noms."
       ],
       "Some of your label names are reserved. Please customize the import to edit these names.": [
-        "Alguns dels vostres noms d'etiqueta estan reservats. Personalitzeu la importació per tal d'editar-ne els noms."
+        "Alguns dels vostres noms d'etiqueta estan reservats. Personalitzeu la importació per a editar-los."
       ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         "Alguns dels vostres noms d'etiqueta no estan disponibles. Personalitzeu la importació per tal d'editar-ne els noms."
@@ -2505,13 +2505,13 @@
     },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
-        "S'ha produït un error llegint el fitxer ${ formattedFilename }. Format de fitxer incorrecte."
+        "S'ha produït un error en llegir el fitxer ${ formattedFilename }. El format del fitxer és incorrecte."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "S'ha produït un error carregant el vostre fitxer ${ formattedFilename }. La mida màxima del fitxer és ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Only ICS file formats are allowed.": [
-        "S'ha produït un error carregant el vostre fitxer ${ formattedFilename }. Només es permet el format de fitxer ICS."
+        "S'ha produït un error en carregar el vostre fitxer ${ formattedFilename }. Només es permet el format de fitxer ICS."
       ],
       "An error occurred uploading your file. No file has been selected.": [
         "S'ha produït un error carregant el fitxer. No s'ha seleccionat cap fitxer."
@@ -2524,7 +2524,7 @@
         "El vostre fitxer ${ formattedFilename } conté més de ${ MAX_IMPORT_EVENTS_STRING } esdeveniments."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
-        "El fitxer ${ formattedFilename } conté un mètode invàlid i no pot ser importat."
+        "El fitxer ${ formattedFilename } conté un mètode invàlid i no es pot importar."
       ],
       "Your file ${ formattedFilename } has no events to be imported.": [
         "El vostre fitxer ${ formattedFilename } no conté esdeveniments per importar."
@@ -2538,15 +2538,15 @@
     },
     "Error importing contact": {
       "Encryption failed": [
-        "Error en el xifratge"
+        "S'ha produït un error en el xifratge"
       ],
       "vCard versions < 3.0 not supported": [
-        "Versions de vCard < 3.0 no suportades"
+        "Les versions de vCard < 3.0 no són compatibles"
       ]
     },
     "Error importing contacts": {
       "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
-        "S'ha produït un error llegint el fitxer ${ formattedFilename }. Format de fitxer incorrecte."
+        "S'ha produït un error en llegir el fitxer ${ formattedFilename }. El format del fitxer és incorrecte."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "S'ha produït un error carregant el vostre fitxer ${ formattedFilename }. La mida màxima del fitxer és ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -2575,13 +2575,13 @@
         "Calendari"
       ],
       "Calendar time zone not supported": [
-        "Fus horari del calendari no compatible"
+        "La zona horària del calendari no és compatible"
       ],
       "Component with wrong format": [
         "Component amb format erroni"
       ],
       "Custom time zone": [
-        "Fus horari personalitzat"
+        "Zona horària personalitzada"
       ],
       "Edited event not supported": [
         "Esdeveniment editat no compatible"
@@ -2653,7 +2653,7 @@
         "Fus horari"
       ],
       "Time zone not supported": [
-        "Fus horari no compatible"
+        "Zona horària no compatible"
       ],
       "To-do entry": [
         "Entrada de tasques"
@@ -2679,7 +2679,7 @@
         "Refresqueu la pàgina o proveu de nou més tard."
       ],
       "Something went wrong": [
-        "S'ha produït un error."
+        "S'ha produït un error"
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "No hem pogut carregar aquesta pàgina. Refresqueu la pàgina o comproveu la vostra connexió a Internet."
@@ -2799,12 +2799,12 @@
     },
     "familyOffer_2023: Tooltip": {
       "Storage space is shared between family members across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "L'espai d'emmagatzematge es comparteix entre membres de la família entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, i ${ DRIVE_APP_NAME }."
+        "L'espai d'emmagatzematge es comparteix entre membres de la família per a ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } i ${ DRIVE_APP_NAME }."
       ]
     },
     "familyOffer_2023:Action": {
       "Decline invitation": [
-        "Declina la invitació"
+        "Rebutja la invitació"
       ],
       "Got it": [
         "Entesos"
@@ -2813,7 +2813,7 @@
         "Canvia de pla"
       ],
       "View the invitation": [
-        "Mostra l'invitació"
+        "Mostra la invitació"
       ],
       "View the invitations": [
         "Mostra les invitacions"
@@ -2850,13 +2850,13 @@
         "Convidat per: ${ inviteEmail }"
       ],
       "Manage addresses.": [
-        "Gestionar adreces."
+        "Gestiona les adreces."
       ],
       "Owners of a plan with members cannot join another group plan.": [
         "Els propietaris d'un pla amb membres no poden unir-se a un altre pla de grup."
       ],
       "Sorry, you can't switch plans at this time.": [
-        "Ho sentim, no podeu canviar de pla en aquest moment."
+        "No podeu canviar de pla en aquest moment."
       ],
       "Storage assigned to you: ${ assignedStorage }": [
         "Emmagatzematge que se us ha assignat: ${ assignedStorage }"
@@ -2877,10 +2877,10 @@
         "Només podeu acceptar 3 invitacions en un període de 6 mesos. Poseu-vos en contacte amb ${ supportLink } si necessiteu una excepció."
       ],
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
-        "Heu estat convidat a unir-vos a ${ bannerOrganization }. ${ viewInviteButton }"
+        "Se us ha convidat a unir-vos a ${ bannerOrganization }. ${ viewInviteButton }"
       ],
       "You have successfully joined the Family plan": [
-        "Us heu unit correctament al pla familiar"
+        "Us heu unit al pla familiar"
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "Esteu convidats a enllaçar el vostre Compte de ${ BRAND_NAME } a aquest pla de grup i gaudir junts de totes les característiques prèmium de ${ BRAND_NAME_TWO }."
@@ -2931,7 +2931,7 @@
     },
     "familyOffer_2023:Tooltip": {
       "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
-        "Inclou 2700 servidors en més de 65 països, connecteu fins a 10 dispositius, accediu a serveis de transmissió en tot el món, bloquejador de programari maliciós i d'anuncis i més."
+        "Inclou 2700 servidors en més de 65 països, connecteu fins a 10 dispositius, accediu a serveis de retransmissió en tot el món, bloquejador de programari maliciós i d'anuncis i més."
       ],
       "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
         "Inclou suport per a 3 dominis de correu electrònic personalitzats, 90 adreces de correu electrònic, àlies il·limitats de Hide-my-email, compartició de calendari i més."
@@ -2952,7 +2952,7 @@
     },
     "fido2: Info": {
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Inseriu una clau de seguretat associada al vostre compte ${ BRAND_NAME }."
+        "Inseriu una clau de seguretat enllaçada al vostre compte ${ BRAND_NAME }."
       ],
       "Security key": [
         "Clau de seguretat"
@@ -3087,22 +3087,22 @@
         "S'ha produït un error xifrant i afegint els vostres esdeveniments. ${ totalImported } de ${ totalToImport } esdeveniments importats amb èxit."
       ],
       "An error occurred while encrypting and adding your event. No event could be imported.": [
-        "S'ha produït un error xifrant i afegint el teu esdeveniment. No s´ha pogut importar cap esdeveniment."
+        "S'ha produït un error en xifrar i afegir el vostre esdeveniment. No s'ha pogut importar cap esdeveniment."
       ],
       "An error occurred while encrypting and adding your events. No event could be imported.": [
-        "S'ha produït un error xifrant i afegint els teus esdeveniments. No s’ha pogut importar cap esdeveniment."
+        "S'ha produït un error en xifrar i afegir els vostres esdeveniments. No se n’ha pogut importar cap."
       ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "Xifrant i afegint contactes: ${ totalImported }/${ totalToImport }"
       ],
       "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
-        "Xifrant i afegint esdeveniments al calendari: ${ totalImported }/${ totalToImport }"
+        "S'estan xifrant i afegint esdeveniments al calendari: ${ totalImported }/${ totalToImport }"
       ],
       "Event successfully imported. The imported event will now appear in your calendar.": [
-        "Esdeveniment importat. L’esdeveniment importat ara apareixerà al vostre calendari."
+        "S'ha importat l'esdeveniment. Ara apareixerà al vostre calendari."
       ],
       "Events successfully imported. The imported events will now appear in your calendar.": [
-        "Esdeveniments importats. Els esdeveniments importats ara apareixeran al vostre calendari."
+        "S'han importat els esdeveniments. Ara apareixeran al vostre calendari."
       ],
       "Please don't close the tab before the importing process is finished.": [
         "No tanqueu la pestanya abans de finalitzar el procés d'importació."
@@ -3138,19 +3138,19 @@
         "${ totalImported }/${ totalToImport } contactes xifrats i afegits a la vostra llista de contactes"
       ],
       "An error occurred while encrypting and adding your contact. No contact could be imported.": [
-        "S'ha produït un error xifrant i afegint el vostre contacte. No s'ha pogut importar cap contacte."
+        "S'ha produït un error en xifrar i afegir els vostres contactes. No s'ha pogut importar cap contacte."
       ],
       "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
-        "S'ha produït un error xifrant i afegint els vostres contactes. ${ totalImported } de ${ totalToImport } contactes importats."
+        "S'ha produït un error en xifrar i afegir els vostres contactes. ${ totalImported } de ${ totalToImport } contactes importats."
       ],
       "An error occurred while encrypting and adding your contacts. No contact could be imported.": [
-        "S'ha produït un error xifrant i afegint els vostres contactes. No s'ha pogut importar cap contacte."
+        "S'ha produït un error en xifrar i afegir els vostres contactes. No s'ha pogut importar cap contacte."
       ],
       "Contact successfully imported. The imported contact will now appear in your contact list.": [
-        "Contacte importat. El contacte importat ja apareix a la vostra llista de contactes."
+        "S'ha importat el contacte. Ara apareixerà a la vostra llista de contactes."
       ],
       "Contacts successfully imported. The imported contacts will now appear in your contact list.": [
-        "Contactes importats. Els contactes importats ja apareixen a la vostra llista de contactes."
+        "S'han importat els contactes. Ara apareixeran a la vostra llista de contactes."
       ]
     },
     "Import contact error": {
@@ -3171,7 +3171,7 @@
     },
     "Import contacts warning": {
       "${ CONTACTS_APP_NAME } does not support ${ forNow }:": [
-        "El ${ CONTACTS_APP_NAME } no admet ${ forNow }:"
+        "${ CONTACTS_APP_NAME } no admet ${ forNow }:"
       ],
       "for now": [
         "per ara"
@@ -3191,10 +3191,10 @@
         "${ BRAND_NAME } no es pot connectar al vostre compte Yahoo. Assegureu-vos que l'adreça del servidor de correu i el número del port són correctes."
       ],
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
-        "${ BRAND_NAME } no es pot connectar al vostre compte Yahoo. Assegureu-vos que:"
+        "${ BRAND_NAME } no es pot connectar al vostre compte de Yahoo. Assegureu-vos que:"
       ],
       "2-step verification is enabled in your external account.": [
-        "La verificació en dos passos està activada al vostre compte extern."
+        "La verificació en dos passos està habilitada al vostre compte extern."
       ],
       "2-step verification is enabled in your external email account.": [
         "La verificació en dos passos està habilitada al vostre compte de correu electrònic extern."
@@ -3215,13 +3215,13 @@
         "Utilitzeu la contrasenya de l'aplicació en lloc de la contrasenya normal si:"
       ],
       "Your app password is correct. Do ${ boldNot } use your regular password.": [
-        "La contrasenya de l'aplicació és correcta.${ boldNot } utilitzeu la vostra contrasenya habitual."
+        "La contrasenya de l'aplicació és correcta. ${ boldNot } utilitzeu la vostra contrasenya habitual."
       ],
       "Your email account requires an app password to export your data.": [
-        "El vostre compte de correu electrònic requereix una contrasenya d'aplicació per exportar les vostres dades."
+        "El vostre compte de correu electrònic requereix una contrasenya d'aplicació per exportar les dades."
       ],
       "Your email account requires one to export your data.": [
-        "El vostre compte de correu electrònic en requereix una per exportar les vostres dades."
+        "El vostre compte de correu electrònic en requereix una per exportar les dades."
       ],
       "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
         "La vostra adreça de correu electrònic i la contrasenya de l'aplicació són correctes. ${ boldNot } utilitzi la contrasenya normal."
@@ -3341,10 +3341,10 @@
         "No s'ha pogut importar cap contacte. Cliqueu per obtenir més informació"
       ],
       "No event can be imported. Expand for details.": [
-        "No s’han pogut importar esdeveniments. Ampliar per obtenir més informació."
+        "No es pot importar cap esdeveniment. Desplegueu per a veure més detalls."
       ],
       "Part of your calendar content is not supported and will not be imported.": [
-        "Port del contingent del teu calendari no es compatible i no s'ha pogut importar."
+        "Part del contingut del vostre calendari no és compatible i no s'importarà."
       ]
     },
     "Info": {
@@ -3513,8 +3513,8 @@
         "Codi de país"
       ],
       "Create ${ calendarsToBeCreatedCount } new calendar": [
-        "Crea ${ calendarsToBeCreatedCount } nou calendari",
-        "Crea ${ calendarsToBeCreatedCount } nous calendaris"
+        "Crea ${ calendarsToBeCreatedCount } calendari",
+        "Crea ${ calendarsToBeCreatedCount } calendaris"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Creeu una etiqueta per als missatges importats, un interval de temps per a aquesta importació, i les carpetes que vulgueu importar."
@@ -4136,7 +4136,7 @@
     },
     "Label": {
       "${ BRAND_NAME } username": [
-        "Nom d'usuari ${ BRAND_NAME }"
+        "Nom d'usuari de ${ BRAND_NAME }"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(No disponible temporalment. Comproveu-ho de nou més tard.)"
@@ -4295,7 +4295,7 @@
         "Amaga la contrasenya"
       ],
       "How would you describe your experience with the new ${ BRAND_NAME }?": [
-        "Com descriuria la seva experiència amb el nou ${ BRAND_NAME }?"
+        "Com descriuríeu la vostra experiència amb ${ BRAND_NAME }?"
       ],
       "I understand the risk": [
         "Entenc el risc"
@@ -4431,10 +4431,10 @@
         "Informació del sistema"
       ],
       "To: ${ to }": [
-        "Per: ${ to }"
+        "Per a: ${ to }"
       ],
       "To: ${ toEmail }": [
-        "Per: ${ toEmail }"
+        "Per a: ${ toEmail }"
       ],
       "Toolbar": [
         "Barra d'eines"
@@ -4492,18 +4492,18 @@
     },
     "Landmarks": {
       "Side panel": [
-        "Subfinestra lateral"
+        "Panell lateral"
       ]
     },
     "Limit of calendars reached": {
       "To add a new calendar, remove an existing one.": [
-        "Per afegir un nou calendari, esborreu-ne un d'existent."
+        "Per afegir un nou calendari, suprimiu-ne un d'existent."
       ],
       "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
-        "Per afegir un nou calendari, cal eliminar un calendari existent, o actualitzar la vostra subscripció ${ BRAND_NAME } a una subscripció ${ MAIL_SHORT_APP_NAME } de pagament."
+        "Per afegir un nou calendari, suprimiu-ne un altre o milloreu el vostre pla de ${ BRAND_NAME } a un pla de pagament de ${ MAIL_SHORT_APP_NAME }."
       ],
       "You've reached the maximum number of calendars available in your plan.": [
-        "Heu assolit el nombre màxim de calendaris disponibles amb el vostre pla."
+        "Heu assolit el nombre màxim de calendaris disponibles en el vostre pla."
       ]
     },
     "Link": {
@@ -4592,7 +4592,7 @@
     },
     "Message": {
       "Fw:": [
-        "RV:"
+        "Rv:"
       ],
       "Re:": [
         "Re:"
@@ -4843,16 +4843,16 @@
         "Dominis de correu personalitzats"
       ],
       "Hide-my-email aliases": [
-        "Àlies Hide-my-email"
+        "Àlies hide-my-email"
       ],
       "Schedule messages at any time": [
-        "Programeu missatges en qualsevol moment."
+        "Programeu missatges en qualsevol moment"
       ],
       "Search message content": [
         "Cerca al contingut del missatge"
       ],
       "Unlimited folders, labels, and filters": [
-        "Carpetes, etiquetes i filtres sense límit"
+        "Carpetes, etiquetes, i filtres il·limitats"
       ],
       "Up to 15 email addresses": [
         "Fins a 15 adreces de correu electrònic"
@@ -4863,16 +4863,16 @@
     },
     "new_plans: feature info": {
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
-        "Creeu múltiples adreces de correu electrònic per a les vostres identitats en línia, p. ex. JohnShopper@${ domain } per a comptes de compres, JohnNews@${ domain2 } per a la subscripció a notícies"
+        "Creeu múltiples adreces de correu electrònic per a les vostres identitats en línia, p. ex. JoanComprador@${ domain } per a comptes de compres, JoanNoticies@${ domain2 } per a la subscripció a notícies"
       ],
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "Gaudiu d'àlies il·limitats amb SimpleLogin de ${ BRAND_NAME }"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
-        "L'emmagatzematge és compartit amb ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } i ${ DRIVE_APP_NAME }."
+        "L'espai d'emmagatzematge es comparteix entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } i ${ DRIVE_APP_NAME }"
       ],
       "Use your own custom email domain address, e.g., you@yourname.com": [
-        "Utilitzeu la vostra pròpia adreça de domini de correu electrònic personalitzat, per exemple, you@yourname.com"
+        "Utilitzeu la vostra pròpia adreça de domini de correu electrònic personalitzat, per exemple, vos@elvostrenom.com"
       ]
     },
     "new_plans: label": {
@@ -4899,6 +4899,9 @@
       ],
       "Calendar added": [
         "S'ha afegit el calendari"
+      ],
+      "Calendar updated": [
+        "Calendari actualitzat"
       ]
     },
     "Notification in share calendar modal": {
@@ -5153,7 +5156,7 @@
     },
     "Participant name": {
       "You": [
-        "Vostè"
+        "Vós"
       ]
     },
     "Participants collapse button label": {
@@ -5173,13 +5176,13 @@
     },
     "PGP Key info": {
       "${ emailAddress } has marked this key as compromised. This key cannot be used neither for encryption nor for signature verification.": [
-        "${ emailAddress } ha marcat aquesta clau com a compromesa. Aquesta clau no es pot fer servir ni per xifrar ni per verificar signatures."
+        "${ emailAddress } ha marcat aquesta clau com a compromesa. Aquesta clau no es pot fer servir ni per a xifrar ni per a verificar signatures."
       ],
       "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
-        "${ emailAddress } ha marcat aquesta clau com a obsoleta. Aquesta clau només es pot fer servir per verificar signatures."
+        "${ emailAddress } ha marcat aquesta clau com a obsoleta. Aquesta clau només es pot fer servir per a verificar signatures."
       ],
       "We recommend that you \"untrust\" this key.": [
-        "Et recomanem que marquis la clau com a \"no confiable\"."
+        "Us recomanem que marqueu la clau com a \"no confiable\"."
       ]
     },
     "PGP key warning": {
@@ -5261,8 +5264,8 @@
     },
     "Progress bar description": {
       "${ contactsExported.length } out of ${ countContacts } contact successfully exported.": [
-        "${ contactsExported.length } de ${ countContacts } contacte exportat.",
-        "${ contactsExported.length } de ${ countContacts } contactes exportats."
+        "${ contactsExported.length } contacte exportat de ${ countContacts }.",
+        "${ contactsExported.length } contactes exportats de ${ countContacts }."
       ],
       "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
         "${ model.deleted.length } de ${ totalBeDeleted } contacte eliminat satisfactòriament.",
@@ -5383,10 +5386,10 @@
     },
     "Side panel spotlight": {
       "Manage your contacts and view your calendar without leaving your app.": [
-        "Gestioneu els vostres contactes i vegeu el vostre calendari sense sortir de la vostra aplicació."
+        "Gestioneu els vostres contactes i vegeu el calendari sense sortir de l'aplicació."
       ],
       "Try the new side panel": [
-        "Proveu el nou panell lateral."
+        "Proveu el nou panell lateral"
       ]
     },
     "Sidebar calendar edit tooltip": {
@@ -5404,10 +5407,10 @@
     },
     "Signing preference for emails": {
       "Don't sign": [
-        "No signar"
+        "No signis"
       ],
       "Sign": [
-        "Signar"
+        "Signa"
       ]
     },
     "specialoffer: Action": {
@@ -5488,7 +5491,7 @@
         "Emmagatzematge al núvol segur"
       ],
       "Secure streaming": [
-        "Transmissió en línia segura"
+        "Retransmissió segura"
       ],
       "Support online privacy": [
         "Doneu suport a la privacitat en línia"
@@ -5507,7 +5510,7 @@
         "Oferta de per vida"
       ],
       "Limited time only": [
-        "Només per temps limitat"
+        "Per temps limitat"
       ],
       "Most popular": [
         "Més popular"
@@ -5532,10 +5535,10 @@
         "/ mes"
       ],
       "1 year": [
-        "Un any"
+        "1 any"
       ],
       "2 years": [
-        "Dos anys"
+        "2 anys"
       ],
       "Billed at ${ amount } for 1 month": [
         "Facturat a ${ amount } durant 1 mes"
@@ -5566,22 +5569,22 @@
         "Es renova al cap de 2 anys a un preu amb descompte de ${ discountedAmount } en lloc de ${ regularAmount } (${ discount }% de descompte)"
       ],
       "Save ${ discount }%": [
-        "Estalvia el ${ discount }%"
+        "Estalvieu el ${ discount }%"
       ],
       "Standard price ${ amount } for 1 month": [
-        "Preu estàndard ${ amount } durant 1 mes"
+        "El preu estàndard és ${ amount } durant 1 mes"
       ],
       "Standard price ${ amount } for 12 months": [
-        "Preu estàndard ${ amount } durant 12 mesos"
+        "El preu estàndard és ${ amount } durant 12 mesos"
       ],
       "Standard price ${ amount } for 15 months": [
-        "Preu estàndard ${ amount } durant 15 mesos"
+        "El preu estàndard és ${ amount } durant 15 mesos"
       ],
       "Standard price ${ amount } for 24 months": [
-        "Preu estàndard ${ amount } durant 24 mesos"
+        "El preu estàndard és ${ amount } durant 24 mesos"
       ],
       "Standard price ${ amount } for 30 months": [
-        "Preu estàndard ${ amount } durant 30 mesos"
+        "El preu estàndard és ${ amount } durant 30 mesos"
       ]
     },
     "specialoffer: Title": {
@@ -5601,36 +5604,36 @@
         "Aconsegueix el nostre paquet prèmium i estalvia més"
       ],
       "Our discontinued Visionary plan is back for a limited time only": [
-        "El nostre pla Visionary interromput ha tornat només per un temps limitat"
+        "El nostre pla Visionary torna per un temps limitat"
       ],
       "Save more with 2 years of ${ planName }": [
         "Estalvieu més amb 2 anys de ${ planName }"
       ],
       "Upgrade and save more with 2 years of ${ planName }": [
-        "Milloreu el vostre pla i estalvieu més amb 2 anys de ${ planName }"
+        "Milloreu i estalvieu més amb 2 anys de ${ planName }"
       ]
     },
     "specialoffer: Tooltip": {
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.": [
-        "Accediu al contingut bloquejat i navegueu de manera privada. Inclou 1700 servidors en més de 60 països, la màxima velocitat VPN, 10 connexions VPN per usuari, serveis de transmissió a tot el món, bloquejador de programari maliciós i anuncis i més."
+        "Accediu al contingut bloquejat i navegueu de manera privada. Inclou 1700 servidors en més de 60 països, la màxima velocitat VPN, 10 connexions VPN per usuari, serveis de retransmissió a tot el món, bloquejador de programari maliciós i anuncis i més."
       ],
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
-        "Accediu al contingut bloquejat i navegueu de manera privada. Inclou 1700 servidors en més de 60 països, la màxima velocitat VPN, 10 connexions VPN, serveis de transmissió a tot el món, bloquejador de programari maliciós i anuncis i més."
+        "Accediu al contingut bloquejat i navegueu de manera privada. Inclou 1700 servidors en més de 60 països, la màxima velocitat VPN, 10 connexions VPN, serveis de retransmissió a tot el món, bloquejador de programari maliciós i anuncis i més."
       ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
-        "Accediu al contingut dels serveis de transmissió, com ara Netflix, Disney+ i Prime Video, des de qualsevol lloc."
+        "Accediu al contingut dels serveis de retransmissió, com ara Netflix, Disney+ i Prime Video, des de qualsevol lloc."
       ],
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
-        "Tots els nostres serveis prèmium al seu límit màxim: 100 adreces de correu electrònic, suport per 10 dominis personalitzats, àlies Hide-my-email il·limitats, compartició de calendaris, emmagatzematge al núvol encriptat, compartició de fitxers, i més."
+        "Tots els nostres serveis prèmium al seu límit màxim: 100 adreces de correu electrònic, suport per a 10 dominis personalitzats, àlies hide-my-email il·limitats, compartició de calendaris, emmagatzematge al núvol encriptat, compartició de fitxers, i més."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Inclou suport per a 1 domini de correu electrònic personalitzat, 10 adreces de correu electrònic, 10 àlies Hide-my-email, compartició de calendari i més."
+        "Inclou suport per a 1 domini de correu electrònic personalitzat, 10 adreces de correu electrònic, 10 àlies hide-my-email, compartició de calendari i més."
       ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Inclou suport per a 3 dominis de correu electrònic personalitzats, 15 adreces de correu electrònic, àlies il·limitats de Hide-my-email, compartició de calendari i més."
+        "Inclou suport per a 3 dominis de correu electrònic personalitzats, 15 adreces de correu electrònic, àlies il·limitats de hide-my-email, compartició de calendari i més."
       ],
       "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
-        "Perfecte per famílies o equips petits, cadascú pot tenir la seva pròpia safata d'entrada i àlies. Requereix un domini personalitzat."
+        "Perfecte per a famílies o equips petits. Cadascú pot tenir la seva pròpia safata d'entrada i els seus propis àlies. Requereix un domini personalitzat."
       ],
       "Receive at no extra cost the paid versions of all new privacy services we release in the future, along with early access to all future features and products.": [
         "Rebeu sense cap cost addicional les versions de pagament de tots els nous serveis de privacitat que publicarem en el futur, juntament amb l'accés anticipat a totes les característiques i productes futurs."
@@ -5639,7 +5642,7 @@
         "Protegiu els vostres fitxers amb emmagatzematge al núvol xifrat. Inclou sincronització automàtica, compartició de fitxers xifrats i més."
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "L'espai d'emmagatzematge es comparteix entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, i ${ DRIVE_APP_NAME }."
+        "L'espai d'emmagatzematge es comparteix entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } i ${ DRIVE_APP_NAME }."
       ]
     },
     "Spotlight": {
@@ -5647,7 +5650,7 @@
         "Afegiu els dies festius del vostre país al vostre calendari."
       ],
       "Get up to ${ credits } in credits.": [
-        "Obtingui fins a ${ credits } en crèdits."
+        "Obteniu fins a ${ credits } en crèdits."
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Convida amistats a ${ BRAND_NAME }"
@@ -5696,7 +5699,7 @@
     "Success": {
       "${ countMergeableContacts } contact look identical.": [
         "${ countMergeableContacts } contacte sembla idèntic.",
-        "${ countMergeableContacts } contactes semblen idèntics"
+        "${ countMergeableContacts } contactes semblen idèntics."
       ],
       "A cancellation email will be sent to removed participants for all the events in this series.": [
         "Un correu de cancel·lació serà enviat als participants eliminats per a tots els esdeveniments d'aquesta sèrie."
@@ -5735,7 +5738,7 @@
         "Calendari actualitzat"
       ],
       "Canceling import": [
-        "Cancel·lant la importació"
+        "S'està cancel·lant la importació"
       ],
       "Cancellation sent and all events deleted": [
         "Cancel·lació enviada i tots els esdeveniments eliminats"
@@ -5827,13 +5830,13 @@
         "Número de telèfon copiat al porta-retalls"
       ],
       "Preference saved": [
-        "Preferència desada"
+        "S'ha desat la preferència"
       ],
       "Preferences saved": [
         "Preferències guardades"
       ],
       "Undo in progress": [
-        "Desfer en curs"
+        "S'està desfent"
       ],
       "Verification successful": [
         "Èxit de verificació"
@@ -5921,7 +5924,7 @@
         "${ hours } hores"
       ],
       "${ hoursInt }.5 hour": [
-        "${ hoursInt },5 hora",
+        "${ hoursInt },5 hores",
         "${ hoursInt },5 hores"
       ],
       "${ minutes } minute": [
@@ -5989,7 +5992,7 @@
         "Alarma de calendari"
       ],
       "Cannot add more addresses": [
-        "No es poden afegir més adreces."
+        "No es poden afegir més adreces"
       ],
       "Change my answer": [
         "Canviar la meva resposta"
@@ -6069,7 +6072,7 @@
         "Edita Grup de Contactes"
       ],
       "Edit email settings": [
-        "Edita la configuració del correu electrònic"
+        "Edita les preferències del correu electrònic"
       ],
       "Edit image": [
         "Editar imatge"
@@ -6376,25 +6379,25 @@
         "Dades xifrades amb signatura digital verificada"
       ],
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
-        "Gmail classifica automàticament alguns correus electrònics com ara Socials o Promocions. Podeu seleccionar on importar aquests correus electrònics."
+        "Gmail classifica automàticament alguns correus electrònics com ara Social o Promocions. Podeu seleccionar on importar aquests correus electrònics."
       ],
       "Hide side panel": [
-        "Amaga la subfinestra lateral"
+        "Amaga el panell lateral"
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Seleccioneu l'esquema PGP que s'utilitzarà en signar o xifrar a un usuari. Tingueu en compte que PGP/inline força missatges de text simples"
       ],
       "Show side panel": [
-        "Mostar la subfinestra lateral"
+        "Mostra el panell lateral"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Les subcarpetes del sistema es mostraran com a carpetes independents a ${ MAIL_APP_NAME }"
       ],
       "The image could not be loaded": [
-        "La imatge no s'ha pogut carregar."
+        "No s'ha pogut carregar la imatge"
       ],
       "The image could not be loaded using proxy": [
-        "No s'ha pogut carregar la imatge a través del proxy."
+        "No s'ha pogut carregar la imatge a través del proxy"
       ],
       "The import will start with the most recent messages.": [
         "La importació començarà amb els missatges més recents."
@@ -6426,8 +6429,8 @@
         "La contrasenya ha de tenir com a mínim ${ length } caràcters"
       ],
       "Try a shorter username (${ n } character max)": [
-        "Intenteu un nom d'usuari més curt (${ n } caràcter màx.)",
-        "Intenteu un nom d'usuari més curt (${ n } caràcters màx.)"
+        "Proveu amb un nom d'usuari més curt (${ n } caràcter màx.)",
+        "Proveu amb un nom d'usuari més curt (${ n } caràcters màx.)"
       ]
     },
     "Video control": {
@@ -6445,7 +6448,7 @@
     },
     "Warning": {
       "${ BRAND_NAME } will merge all folders with the same name. To avoid this, change the names before import.": [
-        "${ BRAND_NAME } combinarà totes les carpetes amb el mateix nom. Per evitar-ho, canvieu els noms abans d’importar-les."
+        "${ BRAND_NAME } combinarà totes les carpetes amb el mateix nom. Per evitar-ho, canvieu-ne els noms abans d’importar-les."
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } transferirà tantes dades com sigui possible, començant pels missatges més recents."
@@ -6474,10 +6477,10 @@
         "Si no recordeu la vostra contrasenya és impossible reactivar la vostra clau. Us podem ajudar a desactivar l'alerta però en el procés perdreu permanentment l'accés a totes les dades xifrades amb aquesta clau."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
-        "Els informes no estan xifrats d'extrem a extrem. No envieu informació sensible."
+        "Els informes no estan xifrats d'extrem a extrem. No envieu informació confidencial."
       ],
       "Skip verification?": [
-        "Ometre la verificació?"
+        "Voleu ometre la verificació?"
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "Alguns dels contactes que s'han de combinar tenen errors. Reviseu-los individualment"
@@ -6498,7 +6501,7 @@
         "La verificació de la signatura dels detalls del contacte ha fallat."
       ],
       "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
-        "Aquesta acció és irreversible. Introduïu la paraula ${ boldDanger } al camp per continuar."
+        "Aquesta acció és irreversible. Introduïu la paraula ${ boldDanger } al camp per a continuar."
       ],
       "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
         "Aquesta importació pot superar la capacitat d'emmagatzematge disponible actualment al vostre compte de ${ BRAND_NAME }. Considereu personalitzar la importació."
@@ -6507,7 +6510,7 @@
         "Lamentablement no estem en línia en aquest moment. Completeu el formulari de sota per descriure el vostre problema, i ho mirarem i ens posarem en contacte quan tornem a estar en línia."
       ],
       "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
-        "No s'ha pogut verificar el servidor de correu. Si confieu en el servidor, podeu ometre aquesta verificació."
+        "No s'ha pogut verificar el servidor de correu. Si hi confieu, podeu ometre aquesta verificació."
       ],
       "You will lose any customization you made so far.": [
         "Perdràs qualsevol personalització que hagis fet fins ara."

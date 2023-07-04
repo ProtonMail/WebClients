@@ -124,6 +124,9 @@
       "Block": [
         "Blocca"
       ],
+      "Block email tracking": [
+        "Blocca tracciamento email"
+      ],
       "Block messages from this sender": [
         "Blocca i messaggi da questo mittente"
       ],
@@ -362,9 +365,6 @@
       ],
       "Email settings": [
         "Impostazioni email"
-      ],
-      "Emoji": [
-        "Emoji"
       ],
       "Enable": [
         "Abilita"
@@ -1051,9 +1051,6 @@
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Salvataggio non riuscito a causa di: ${ saveError }. Prova a salvare di nuovo. "
-      ],
-      "Turn on tracker protection": [
-        "Attiva la protezione del tracker"
       ],
       "Unblock": [
         "Sblocca"
@@ -4637,9 +4634,17 @@
         "${ messagesNotAuthorizedToMove } messaggio non può essere spostato.",
         "${ messagesNotAuthorizedToMove } messaggi non possono essere spostati."
       ],
-      "${ numberOfTrackers } email tracker blocked": [
-        "${ numberOfTrackers } tracker email bloccato",
-        "${ numberOfTrackers } tracker email bloccati"
+      "${ numberOfImageTrackers } email tracker blocked": [
+        "${ numberOfImageTrackers } tracker email bloccato",
+        "${ numberOfImageTrackers } tracker email bloccati"
+      ],
+      "${ numberOfImageTrackers } tracker blocked": [
+        "${ numberOfImageTrackers } tracker bloccato",
+        "${ numberOfImageTrackers } tracker bloccati"
+      ],
+      "${ numberOfUTMTrackers } link cleaned": [
+        "${ numberOfUTMTrackers } link ripulito",
+        "${ numberOfUTMTrackers } link ripuliti"
       ],
       "${ numContact } contact": [
         "${ numContact } contatto",
@@ -5003,16 +5008,6 @@
       "Email tracker protection is disabled": [
         "La protezione del tracker email è disabilitata"
       ],
-      "Email trackers can violate your privacy. ${ BRAND_NAME } did not find any trackers in this message.": [
-        "I tracker email possono violare la tua privacy. ${ BRAND_NAME } non ha trovato tracker in questo messaggio."
-      ],
-      "Email trackers can violate your privacy. ${ BRAND_NAME } found and blocked ${ numberOfTrackers } tracker.": [
-        "I tracker di posta elettronica possono violare la tua privacy. ${ BRAND_NAME } ha trovato e bloccato ${ numberOfTrackers } tracker.",
-        "I tracker di posta elettronica possono violare la tua privacy. ${ BRAND_NAME } ha trovato e bloccato ${ numberOfTrackers } tracker."
-      ],
-      "Email trackers can violate your privacy. Turn on tracker protection to prevent senders from knowing whether and when you have opened a message.": [
-        "I tracker di posta elettronica possono violare la tua privacy. Attiva la protezione tracker per impedire ai mittenti di sapere se e quando hai aperto un messaggio."
-      ],
       "Emails are automatically signed": [
         "Le email sono firmate in automatico"
       ],
@@ -5191,6 +5186,9 @@
       "Link type": [
         "Tipo di link"
       ],
+      "Links cleaned:": [
+        "Link ripuliti:"
+      ],
       "Loading": [
         "Caricamento"
       ],
@@ -5273,9 +5271,6 @@
       "No email address": [
         "Nessun indirizzo email"
       ],
-      "No email trackers found": [
-        "Nessun tracker email trovato"
-      ],
       "No folder found": [
         "Nessuna cartella trovata"
       ],
@@ -5291,14 +5286,17 @@
       "No label selected": [
         "Nessuna etichetta selezionata"
       ],
+      "No links cleaned": [
+        "Nessun link ripulito"
+      ],
       "No more results found": [
         "Nessun altro risultato trovato"
       ],
       "No results found": [
         "Nessun risultato trovato"
       ],
-      "No trackers found, but some images could not be loaded with tracking protection": [
-        "Nessun tracker trovato, tuttavia alcune immagini non possono essere caricate con la protezione dal tracking attivata"
+      "No trackers found": [
+        "Nessun tracker trovato"
       ],
       "non-${ MAIL_APP_NAME }": [
         "non ${ MAIL_APP_NAME }"
@@ -5691,8 +5689,8 @@
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "Troppi messaggi sono in attesa di essere inviati. Per poter pianificare un altro messaggio, si prega di attendere finché un altro non verrà inviato."
       ],
-      "Turn off to only search by date, name, or email address. To disable search message content and delete downloaded messages, go to settings.": [
-        "Disattiva questa opzione per cercare solo per data, nome, o indirizzo email. Per disabilitare la ricerca del contenuto del messaggio ed eliminare i messaggi scaricati, vai alle impostazioni."
+      "Trackers blocked:": [
+        "Tracker bloccati:"
       ],
       "Turn on to search the content of your messages": [
         "Attiva per cercare il contenuto dei tuoi messaggi"
@@ -6320,6 +6318,9 @@
       "City": [
         "Città"
       ],
+      "Cleaned": [
+        "Ripulito"
+      ],
       "Code is 6 digits without spaces": [
         "Il codice è di 6 cifre senza spazi"
       ],
@@ -6521,6 +6522,9 @@
       "OK": [
         "OK"
       ],
+      "Open in a new tab": [
+        "Apri in una nuova scheda"
+      ],
       "Operating system": [
         "Sistema operativo"
       ],
@@ -6535,6 +6539,9 @@
       ],
       "Or": [
         "O"
+      ],
+      "Original link": [
+        "Link originale"
       ],
       "Participants": [
         "Partecipanti"
@@ -7029,11 +7036,6 @@
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
         "È disponibile una nuova versione di ${ appName } . ${ reloadButton }."
-      ]
-    },
-    "Message has been sent to the user via a SimpleLogin alias": {
-      "Delivered via SimpleLogin by ${ BRAND_NAME }": [
-        "Consegnato tramite SimpleLogin da ${ BRAND_NAME }"
       ]
     },
     "Message image": {
@@ -7728,6 +7730,17 @@
       "We have detected some warnings. The following email address may not receive emails:": [
         "Abbiamo rilevato alcuni errori. Il seguente indirizzo email potrebbe non ricevere email:",
         "Abbiamo rilevato alcuni errori. I seguenti indirizzi email potrebbero non ricevere email:"
+      ]
+    },
+    "Sender verification details": {
+      "Sender verification": [
+        "Verifica del mittente"
+      ],
+      "Sender verification failed: ${ icon.senderVerificationDetails.description }": [
+        "Verifica del mittente fallita: ${ icon.senderVerificationDetails.description }"
+      ],
+      "Sender verified: ${ icon.senderVerificationDetails.description }": [
+        "Mittente verificato: ${ icon.senderVerificationDetails.description }"
       ]
     },
     "Sent email icon": {
@@ -8900,6 +8913,9 @@
       "No attachment found": [
         "Nessun allegato trovato"
       ],
+      "No trackers found": [
+        "Nessun tracker trovato"
+      ],
       "Open actions dropdown": [
         "Apri menu a discesa delle azioni"
       ],
@@ -8926,6 +8942,9 @@
       ],
       "Previous message": [
         "Messaggio precedente"
+      ],
+      "Protect your email": [
+        "Proteggi la tua email"
       ],
       "Re-sign all contacts": [
         "Ri-firma tutti i contatti"
@@ -9037,6 +9056,9 @@
       ],
       "Subject missing": [
         "Soggetto mancante"
+      ],
+      "This email is protected": [
+        "Questa email è protetta"
       ],
       "To": [
         "A"

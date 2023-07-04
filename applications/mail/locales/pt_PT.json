@@ -119,10 +119,13 @@
         "Acesso Beta"
       ],
       "Blind Carbon Copy": [
-        "Cópia oculta"
+        "Cópia Oculta de Carbono (BCC)"
       ],
       "Block": [
         "Bloquear"
+      ],
+      "Block email tracking": [
+        "Bloquear o rastreamento de e-mails"
       ],
       "Block messages from this sender": [
         "Bloquear mensagens deste remetente"
@@ -140,7 +143,7 @@
         "Cancelar"
       ],
       "Carbon Copy": [
-        "Cópias de mensagem (CC)"
+        "Cópia Carbono (CC)"
       ],
       "Change page": [
         "Alterar página"
@@ -363,9 +366,6 @@
       "Email settings": [
         "Definições de e-mail"
       ],
-      "Emoji": [
-        "Emoji"
-      ],
       "Enable": [
         "Ativar"
       ],
@@ -385,7 +385,7 @@
         "Expandir URL"
       ],
       "Expiration time": [
-        "Tempo para expiração"
+        "Tempo de expiração"
       ],
       "Export": [
         "Exportar"
@@ -662,7 +662,7 @@
         "Mover para"
       ],
       "Move to archive": [
-        "Mover para o ficheiro"
+        "Mover para o arquivo"
       ],
       "Move to inbox": [
         "Mover para a caixa de entrada"
@@ -809,7 +809,7 @@
         "Remover a encriptação"
       ],
       "Remove expiration time": [
-        "Remover data de validade"
+        "Remover data de expiração"
       ],
       "Remove self-destruction": [
         "Remover auto-destruição"
@@ -929,7 +929,7 @@
         "Definir a encriptação"
       ],
       "Set expiration time": [
-        "Definir data de validade"
+        "Definir tempo de expiração"
       ],
       "Set recovery phrase": [
         "Definir frase de recuperação"
@@ -1051,9 +1051,6 @@
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Tente guardar novamente. Erro ao guardar devido a: ${ saveError }"
-      ],
-      "Turn on tracker protection": [
-        "Ligar proteção de rastreamento"
       ],
       "Unblock": [
         "Desbloquear"
@@ -1272,7 +1269,7 @@
         "E-mail recebido"
       ],
       "Encrypted": [
-        "Cifrado"
+        "Encriptado"
       ],
       "New email": [
         "Novo e-mail"
@@ -1421,7 +1418,7 @@
     },
     "Calendar invite info": {
       "${ participantName } accepted an invitation and proposed a new time for one occurrence of this event.": [
-        "${ participantName } aceitou oum convite e propôs um novo horário para uma ocorrência deste evento."
+        "${ participantName } aceitou um convite e propôs um novo horário para uma ocorrência deste evento."
       ],
       "${ participantName } accepted an invitation and proposed a new time for this event.": [
         "${ participantName } aceitou um convite e propôs um novo horário para este evento."
@@ -1658,7 +1655,7 @@
         "Já aceitou provisoriamente este convite."
       ],
       "Your email address is not in the participants list": [
-        "O seu endereço de e-mail  não está na lista de participantes"
+        "O seu endereço de e-mail não está na lista de participantes"
       ]
     },
     "Calendar widget banner": {
@@ -1726,7 +1723,7 @@
         "cerúleo escuro"
       ],
       "dark midnight blue": [
-        "azul escuro da meia-noite"
+        "azul-escuro da meia-noite"
       ],
       "dim gray": [
         "cinza escuro"
@@ -1744,7 +1741,7 @@
         "floresta"
       ],
       "gainsboro": [
-        "cinzento estanho"
+        "cinza médio"
       ],
       "japanese laurel": [
         "louro japonês"
@@ -1804,7 +1801,7 @@
         "prata filipina"
       ],
       "pickle": [
-        "pepininhos"
+        "pickle"
       ],
       "pine": [
         "pinho"
@@ -1813,7 +1810,7 @@
         "rosa"
       ],
       "pistachio": [
-        "pistache"
+        "pistácio"
       ],
       "plum": [
         "ameixa"
@@ -1822,7 +1819,7 @@
         "roxo"
       ],
       "raisin black": [
-        "passas pretas"
+        "passas de uva preta"
       ],
       "reef": [
         "recife"
@@ -1834,7 +1831,7 @@
         "saará"
       ],
       "satin sheen gold": [
-        "ouro de cetim"
+        "ouro acetinado"
       ],
       "slateblue": [
         "azul-ardósia"
@@ -1889,22 +1886,22 @@
     },
     "Composer email icon": {
       "End-to-end encrypted": [
-        "Cifrado de ponta a ponta"
+        "Encriptado de ponta a ponta"
       ],
       "End-to-end encrypted to verified recipient": [
-        "Cifrado ponta a ponta para um destinatário verificado"
+        "Encriptado ponta a ponta para um destinatário verificado"
       ],
       "End-to-end encrypted. ${ warningsText }": [
-        "Cifrado de ponta a ponta. ${ warningsText }"
+        "Encriptado de ponta a ponta. ${ warningsText }"
       ],
       "PGP-encrypted": [
-        "Cifrado com PGP"
+        "Encriptado com PGP"
       ],
       "PGP-encrypted to verified recipient": [
-        "Cifrado com PGP para um destinatário verificado"
+        "Encriptado com PGP para um destinatário verificado"
       ],
       "PGP-encrypted. ${ warningsText }": [
-        "Cifrado com PGP. ${ warningsText }"
+        "Encriptado com PGP. ${ warningsText }"
       ],
       "PGP-signed": [
         "Assinado com PGP"
@@ -2964,6 +2961,12 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Pode marcar para eliminação os contactos que não deseja unir nem manter. A eliminação só ocorrerá depois de clicar no botão de união"
+      ],
+      "You can read the message and click on links without being tracked with email tracker protection.": [
+        "Pode ler a mensagem e clicar nas ligações sem ser rastreado com a proteção do rastreador de e-mail."
+      ],
+      "You can read the message and click on links without being tracked.": [
+        "Pode ler a mensagem e clicar nas ligações sem ser rastreado."
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3059,7 +3062,7 @@
     },
     "Email reminder decryption error": {
       "Event details are encrypted. Sign in again to restore Calendar and decrypt your data. ${ learnMoreLink }": [
-        "Os detalhes do evento são encriptados. Conecte-se novamente para restaurar o calendário e desencriptar o seus dados. ${ learnMoreLink }"
+        "Os detalhes do evento são encriptados. Conecte-se novamente para restaurar o calendário e desencriptar os seus dados. ${ learnMoreLink }"
       ],
       "Event details cannot be decrypted. ${ whyNotLink }": [
         "Os detalhes do evento não podem ser desencriptados. ${ whyNotLink }"
@@ -3660,7 +3663,7 @@
         "Sem UID, título ou hora de início"
       ],
       "Non-Gregorian": [
-        "Não-gregoriano"
+        "Não gregoriano"
       ],
       "Notification out of bounds": [
         "Notificação fora dos limites"
@@ -3935,7 +3938,7 @@
         "Inclui 2700 servidores em mais de 65 países, ligue até 10 dispositivos, aceda a serviços de streaming em todo o mundo, malware e bloqueador de anúncios e muito mais."
       ],
       "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
-        "Inclui suporte para 3 domínios de e-mail personalizado, 90 endereços de e-mail, aliases ilimitados do Hide-my-email, partilhamento de calendário e muito mais."
+        "Inclui suporte para 3 domínios de e-mail personalizados, 90 endereços de e-mail, aliases ilimitados do Hide-my-email, partilha de calendário e muito mais."
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Proteja os seus ficheiros com armazenamento encriptado na nuvem. Inclui sincronização automática, partilha de ficheiros encriptados e muito mais."
@@ -4180,16 +4183,16 @@
         "Obter a aplicação móvel do ${ MAIL_APP_NAME }"
       ],
       "Import contacts or emails": [
-        "Importar contactos ou e-mail s"
+        "Importar contactos ou e-mails"
       ],
       "Import your contacts or messages": [
         "Importar contactos ou mensagens"
       ],
       "Quickly transfer your contacts or emails from any provider using our Easy Switch import assistant.": [
-        "Transfira rapidamente o seus contactos ou e-mails de qualquer provedor com o nosso assistente de importação Easy Switch."
+        "Transfira rapidamente os seus contactos ou e-mails de qualquer provedor com o nosso assistente de importação Easy Switch."
       ],
       "Sign into the mobile app to complete the action": [
-        "Inicie sessão na aplicação móvel para concluir a acção."
+        "Inicie sessão na aplicação móvel para concluir a ação."
       ],
       "Using your mobile device, scan this QR code or visit": [
         "Leia o código QR com o seu dispositivo móvel ou visite"
@@ -4200,7 +4203,7 @@
         "Obter a aplicação móvel"
       ],
       "Import contacts or emails": [
-        "Importar contactos ou correios electronicos"
+        "Importar contactos ou e-mails"
       ],
       "Send a message": [
         "Enviar uma mensagem"
@@ -4224,7 +4227,7 @@
         "Reencaminhamento automático"
       ],
       "Gmail messages to your inbox": [
-        "Mensagens Gmail para a Inbox"
+        "Mensagens do Gmail para a sua caixa de entrada"
       ],
       "Sign in with Google": [
         "Iniciar sessão com o Google"
@@ -4637,9 +4640,17 @@
         "Não é possível mover ${ messagesNotAuthorizedToMove } mensagem.",
         "Não é possível mover ${ messagesNotAuthorizedToMove } mensagens."
       ],
-      "${ numberOfTrackers } email tracker blocked": [
-        "${ numberOfTrackers } rastreador de e-mails encontrado",
-        "${ numberOfTrackers } rastreadores de e-mails encontrados"
+      "${ numberOfImageTrackers } email tracker blocked": [
+        "${ numberOfImageTrackers } rastreador de e-mail bloqueado",
+        "${ numberOfImageTrackers } rastreadores de e-mails bloqueados"
+      ],
+      "${ numberOfImageTrackers } tracker blocked": [
+        "${ numberOfImageTrackers } rastreador bloqueado",
+        "${ numberOfImageTrackers } rastreadores bloqueados"
+      ],
+      "${ numberOfUTMTrackers } link cleaned": [
+        "${ numberOfUTMTrackers } ligação limpa",
+        "${ numberOfUTMTrackers } ligações limpas"
       ],
       "${ numContact } contact": [
         "${ numContact } contacto",
@@ -4786,7 +4797,7 @@
         "Todas as suas alterações serão perdidas."
       ],
       "An unknown public key has been detected for this recipient.": [
-        "Foi detectada uma chave pública desconhecida para este destinatário."
+        "Foi detetada uma chave pública desconhecida para este destinatário."
       ],
       "and": [
         "e"
@@ -5003,16 +5014,6 @@
       "Email tracker protection is disabled": [
         "A proteção do rastreador de e-mail está desativada"
       ],
-      "Email trackers can violate your privacy. ${ BRAND_NAME } did not find any trackers in this message.": [
-        "Rastreadores de e-mail podem violar a sua privacidade. ${ BRAND_NAME } nenhum rastreador foi encontrado nesta mensagem."
-      ],
-      "Email trackers can violate your privacy. ${ BRAND_NAME } found and blocked ${ numberOfTrackers } tracker.": [
-        "Os rastreadores de e-mail podem violar a sua privacidade. ${ BRAND_NAME } encontrou e bloqueou ${ numberOfTrackers } rastreador.",
-        "Os rastreadores de e-mail podem violar a sua privacidade. ${ BRAND_NAME } encontrou e bloqueou ${ numberOfTrackers } os rastreadores."
-      ],
-      "Email trackers can violate your privacy. Turn on tracker protection to prevent senders from knowing whether and when you have opened a message.": [
-        "Os rastreadores de e-mail podem violar a sua privacidade. Ative a proteção contra rastreadores para evitar que os remetentes saibam se e quando abriu uma mensagem."
-      ],
       "Emails are automatically signed": [
         "Os e-mails são assinados automaticamente"
       ],
@@ -5191,6 +5192,9 @@
       "Link type": [
         "Tipo de ligação"
       ],
+      "Links cleaned:": [
+        "Ligações limpas:"
+      ],
       "Loading": [
         "A carregar"
       ],
@@ -5226,7 +5230,7 @@
         "Mensagens transferidas: ${ currentProgress } de ${ totalProgress }"
       ],
       "Message expiration works out-of-the-box when sending emails to other ${ MAIL_APP_NAME } users. To send expiring emails to non-${ BRAND_NAME } users, please cancel and add password protection to your email.": [
-        "A expiração da mensagem funciona imediatamente em e-mails enviados para outros utilizadores ${ MAIL_APP_NAME }. Para enviar e-mails com validade para utilizadores não-${ BRAND_NAME }, cancele e defina uma senha de proteção para o seu e-mails."
+        "A expiração da mensagem funciona imediatamente em e-mails enviados para outros utilizadores ${ MAIL_APP_NAME }. Para enviar e-mails com validade para utilizadores que não utilizam o ${ BRAND_NAME }, cancele e defina uma senha de proteção para o seu e-mails."
       ],
       "Message headers": [
         "Cabeçalhos da mensagem"
@@ -5273,9 +5277,6 @@
       "No email address": [
         "Sem endereço de e-mail"
       ],
-      "No email trackers found": [
-        "Nenhum rastreador de e-mail encontrado"
-      ],
       "No folder found": [
         "Nenhuma pasta encontrada"
       ],
@@ -5291,17 +5292,20 @@
       "No label selected": [
         "Nenhuma etiqueta selecionada"
       ],
+      "No links cleaned": [
+        "Nenhuma ligação limpa"
+      ],
       "No more results found": [
         "Não há mais resultados"
       ],
       "No results found": [
         "Nenhum resultado"
       ],
-      "No trackers found, but some images could not be loaded with tracking protection": [
-        "Não foram encontrados rastreadores, mas algumas imagens não puderam ser carregadas com proteção de rastreamento"
+      "No trackers found": [
+        "Nenhum rastreador encontrado"
       ],
       "non-${ MAIL_APP_NAME }": [
-        "não-${ MAIL_APP_NAME }"
+        "que não utilizam o ${ MAIL_APP_NAME }"
       ],
       "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
         "Nenhuma das chaves carregadas é válida para a encriptação. Para poder enviar mensagens para este endereço, carregue uma chave válida ou desative \"Encriptar os e-mails\"."
@@ -5322,7 +5326,7 @@
         "O nosso sistema sinalizou esta mensagem como uma tentativa de phishing. Verifique se é legítima."
       ],
       "Our system flagged this message as a suspicious email. Please check that it is legitimate before clicking any links or attachments.": [
-        "Nosso sistema detectou esta mensagem como um e-mail suspeito. Verifique se é legítimo antes de clicar em qualquer hiperligação ou anexo."
+        "O nosso sistema detetou esta mensagem como um e-mail suspeito. Verifique se é legítimo antes de clicar em qualquer hiperligação ou anexo."
       ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/Inline é apenas compatível com o formato Texto Simples."
@@ -5355,7 +5359,7 @@
         "Selecione as pastas que deseja importar:"
       ],
       "Please select the type of link you want to insert and fill in all the fields.": [
-        "Seleccione o tipo de ligação que deseja introduzir e preencha todos os campos."
+        "Selecione o tipo de ligação que deseja introduzir e preencha todos os campos."
       ],
       "Please select which email address or addresses to add to ${ groupCount } group.": [
         "Selecione os e-mails a adicionar ao grupo ${ groupCount }.",
@@ -5437,7 +5441,7 @@
         "Programação da mensagem..."
       ],
       "Search option that lets you securely search for keywords in the body of email messages.": [
-        "Opção de pesquisa que lhe permite pesquisar com segurança palavras-chave no corpo das mensagens de e-mail ."
+        "Opção de pesquisa que lhe permite pesquisar com segurança palavras-chave no corpo das mensagens de e-mail."
       ],
       "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
         "A pesquisa está a demorar muito? ${ dropdownButton } ou ${ toggleOffButton } desta sessão de pesquisa."
@@ -5494,7 +5498,7 @@
         "Mostrar mensagem original"
       ],
       "SimpleLogin is a ${ BRAND_NAME } service, and your ${ BRAND_NAME_TWO } Account includes hide-my-email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
-        "O SimpleLogin é um serviço da ${ BRAND_NAME }, e sua conta da ${ BRAND_NAME_TWO } inclui os aliases do Hide-my-email. Para começar a mascarar seu endereço de e-mail, aceda ao SimpleLogin e crie o seu primeiro alias."
+        "O SimpleLogin é um serviço da ${ BRAND_NAME }, e a sua conta da ${ BRAND_NAME_TWO } inclui os aliases do Hide-my-email. Para começar a mascarar o seu endereço de e-mail, aceda ao SimpleLogin e crie o seu primeiro alias."
       ],
       "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
         "SimpleLogin fornece um meio simples de criar logins em sites de terceiros não confiáveis, de forma a que o seu endereço de e-mail real não seja exposto."
@@ -5567,7 +5571,7 @@
         "Houve um erro com a assinatura utilizada para verificar os detalhes do contacto, que pode ser o resultado de uma reposição da palavra-passe."
       ],
       "They can't spam you if they don't know your email address. Protect your inbox with hide-my-email aliases.": [
-        "Não podem enviar-lhe spam se não souberem o seu endereço de e-mail. Proteja sua caixa de entrada com aliases do Hide-my-email."
+        "Não podem enviar-lhe spam se não souberem o seu endereço de e-mail. Proteja a sua caixa de entrada com aliases do Hide-my-email."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Esta conta foi suspensa devido a uma potencial violação da política."
@@ -5647,7 +5651,7 @@
         "Esta mensagem será enviada em breve."
       ],
       "This message will be sent today at ${ formattedTime }": [
-        "Esta mensagem será enviada hoje ás ${ formattedTime }"
+        "Esta mensagem será enviada hoje às ${ formattedTime }"
       ],
       "This message will be sent tomorrow at ${ formattedTime }": [
         "Esta mensagem será enviada amanhã às ${ formattedTime }"
@@ -5694,8 +5698,11 @@
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "Há demasiadas mensagens à espera de serem enviadas. Aguarde que seja enviada outra mensagem para agendar uma nova."
       ],
-      "Turn off to only search by date, name, or email address. To disable search message content and delete downloaded messages, go to settings.": [
-        "Desligue para pesquisar apenas por data, nome ou endereço de e-mail . Para desativar o conteúdo das mensagens de pesquisa e eliminar as mensagens transferidas, vá às definições."
+      "Trackers blocked:": [
+        "Rastreadores bloqueados:"
+      ],
+      "Turn off to only search by date, name, email address, or subject line. To disable search message content and delete downloaded messages, go to settings.": [
+        "Desative para pesquisar apenas por data, nome, endereço de e-mail ou linha de assunto. Para desativar o conteúdo das mensagens de pesquisa e eliminar as mensagens descarregadas, vá às definições."
       ],
       "Turn on to search the content of your messages": [
         "Ative para pesquisar o conteúdo das suas mensagens"
@@ -5713,7 +5720,7 @@
         "A atualizar pesquisa do conteúdo da mensagem..."
       ],
       "Updating your local messages, message content won't be searched during this update": [
-        "A atualizar as suas mensagens locais. O conteúdo dad mensagens não será pesquisado durante esta atualização."
+        "A atualizar as suas mensagens locais, o conteúdo da mensagem não será pesquisado durante esta atualização"
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Atualize agora para ter acesso a recursos, produtos e armazenamento premium por um preço especial."
@@ -5835,6 +5842,9 @@
       "You can check the progress ${ importProgressLink }.": [
         "Pode verificar o progresso ${ importProgressLink }."
       ],
+      "You can click links in this email without being profiled and leaking your online activity with advertisers.": [
+        "Pode clicar nas hiperligações desta mensagem de e-mail sem que lhe seja traçado um perfil e sem que a sua atividade online seja divulgada aos anunciantes."
+      ],
       "You can either update your search query or ${ button }": [
         "Pode atualizar a sua pesquisa ou ${ button }."
       ],
@@ -5843,6 +5853,9 @@
       ],
       "You can import one data type at a time.": [
         "Pode importar um tipo de dado por vez."
+      ],
+      "You can read this email without revealing your interactions, location, or device to advertisers.": [
+        "Pode ler este e-mail sem revelar as suas interações, localização ou dispositivo aos anunciantes."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Pode ativar as notificações para receber alertas quando novas mensagens chegarem a esta pasta."
@@ -5916,7 +5929,7 @@
         "Atingiu o número máximo de endereços no(s) grupo(s) de contactos:"
       ],
       "You've reached the maximum number of addresses in the contact group.": [
-        "Atingiu o número máximo de endereços no grupo de contactos."
+        "Atingiu o número máximo de endereços no grupo de contacto."
       ],
       "Your ${ BRAND_NAME } Account includes SimpleLogin. Install the browser extension with one click to get started.": [
         "A sua conta ${ BRAND_NAME } inclui SimpleLogin. Instale a extensão do navegador com um clique para começar."
@@ -6019,11 +6032,6 @@
       "You have enabled Address Verification with Trusted Keys for this email address,\nbut no active encryption key has been trusted.\nYou must trust a key valid for sending in order to send a message to this email address.": [
         "Ativou a verificação de endereço com chaves confiáveis para este endereço de e-mail, mas não confiou em nenhuma chave de encriptação ativa.\nTem de confiar numa chave válida para envio, de forma a enviar mensagens para este endereço.",
         "Ativou a verificação de endereço com chaves confiáveis para estes endereços de e-mail, mas não confiou em nenhuma chave de encriptação ativa.\nTem de confiar em chaves válidas para envio, de forma a enviar mensagens para estes endereços."
-      ]
-    },
-    "Key transparency details button": {
-      "Click here for more details.": [
-        "Clique aqui para mais detalhes."
       ]
     },
     "Key validation warning": {
@@ -6302,7 +6310,7 @@
         "BCC"
       ],
       "Blind Carbon Copy": [
-        "Cópia cega de mensagem (BCC)"
+        "Cópia Oculta de Carbono (BCC)"
       ],
       "Browser": [
         "Navegador"
@@ -6317,7 +6325,7 @@
         "Calendários"
       ],
       "Carbon Copy": [
-        "Cópias de mensagem (CC)"
+        "Cópia Carbono (CC)"
       ],
       "Category": [
         "Categoria"
@@ -6327,6 +6335,9 @@
       ],
       "City": [
         "Cidade"
+      ],
+      "Cleaned": [
+        "Limpo"
       ],
       "Code is 6 digits without spaces": [
         "O código tem 6 dígitos sem espaços"
@@ -6529,6 +6540,9 @@
       "OK": [
         "Aceitar"
       ],
+      "Open in a new tab": [
+        "Abrir num novo separador"
+      ],
       "Operating system": [
         "Sistema operativo"
       ],
@@ -6543,6 +6557,9 @@
       ],
       "Or": [
         "Ou"
+      ],
+      "Original link": [
+        "Ligação original"
       ],
       "Participants": [
         "Participantes"
@@ -7039,11 +7056,6 @@
         "Está disponível uma nova versão de ${ appName }. ${ reloadButton }."
       ]
     },
-    "Message has been sent to the user via a SimpleLogin alias": {
-      "Delivered via SimpleLogin by ${ BRAND_NAME }": [
-        "Entregue via SimpleLogin por ${ BRAND_NAME }"
-      ]
-    },
     "Message image": {
       "Image has not been loaded in order to protect your privacy.": [
         "A imagem não foi carregada para proteger a sua privacidade."
@@ -7405,7 +7417,7 @@
     },
     "Option group label": {
       "Create new calendar": [
-        "Criar um calendários"
+        "Criar um calendário"
       ],
       "Merge with calendar": [
         "Unir com o calendário"
@@ -7421,7 +7433,7 @@
         "Obter a aplicação móvel"
       ],
       "Import contacts or emails": [
-        "Importar contactos ou e-mail s"
+        "Importar contactos ou e-mails"
       ],
       "Send a message": [
         "Enviar uma mensagem"
@@ -7645,7 +7657,7 @@
         "Mensagem assinada por PGP. Erro ao verificar o remetente"
       ],
       "Sent by ${ MAIL_APP_NAME } with zero-access encryption": [
-        "Enviado por ${ MAIL_APP_NAME } com encriptagem de acesso zero"
+        "Enviado por ${ MAIL_APP_NAME } com encriptação de acesso zero"
       ],
       "Stored with zero-access encryption": [
         "Armazenado com encriptação de acesso zero"
@@ -7718,7 +7730,7 @@
         "Detetámos erros. O seu e-mail não pode ser enviado para nenhum dos endereços indicados devido aos seguintes motivos:"
       ],
       "We have detected some errors. Your email cannot be sent to one or more of the email addresses entered due to the following reasons:": [
-        "Detectámos erros. O seu e-mail não pode ser enviado para um ou mais dos endereços de e-mail  indicados devido aos seguintes motivos:"
+        "Detetámos erros. O seu e-mail não pode ser enviado para um ou mais dos endereços de e-mail indicados devido aos seguintes motivos:"
       ]
     },
     "Send email with warnings": {
@@ -7756,28 +7768,28 @@
     },
     "Sent email icon": {
       "Encrypted by ${ MAIL_APP_NAME }": [
-        "Cifrado por ${ MAIL_APP_NAME }"
+        "Encriptado por ${ MAIL_APP_NAME }"
       ],
       "Encrypted by ${ MAIL_APP_NAME } to PGP recipient": [
-        "Cifrado por ${ MAIL_APP_NAME } para destinatário PGP"
+        "Encriptado por ${ MAIL_APP_NAME } para destinatário PGP"
       ],
       "Encrypted by ${ MAIL_APP_NAME } to verified PGP recipient": [
-        "Cifrado pelo ${ MAIL_APP_NAME } para um destinatário verificado com PGP"
+        "Encriptado pelo ${ MAIL_APP_NAME } para um destinatário verificado com PGP"
       ],
       "Encrypted by ${ MAIL_APP_NAME } to verified recipient": [
-        "Cifrado pelo ${ MAIL_APP_NAME } para um destinatário verificado"
+        "Encriptado pelo ${ MAIL_APP_NAME } para um destinatário verificado"
       ],
       "End-to-end encrypted": [
-        "Cifrado de ponta a ponta"
+        "Encriptado de ponta a ponta"
       ],
       "End-to-end encrypted to PGP recipient": [
-        "Cifrado de ponta a ponta para um destinatário PGP"
+        "Encriptado de ponta a ponta para um destinatário PGP"
       ],
       "End-to-end encrypted to verified PGP recipient": [
-        "Cifrado de ponta a ponta para um destinatário PGP verificado"
+        "Encriptado de ponta a ponta para um destinatário PGP verificado"
       ],
       "End-to-end encrypted to verified recipient": [
-        "Cifrado ponta a ponta para um destinatário verificado"
+        "Encriptado ponta a ponta para um destinatário verificado"
       ],
       "PGP-signed": [
         "Assinado com PGP"
@@ -8061,13 +8073,13 @@
         "Aceda a conteúdos em serviços de streaming, incluindo Netflix, Disney+ e Prime Video, a partir de qualquer lugar."
       ],
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
-        "Todos os nossos serviços premium com os limites mais altos: 100 endereços de e-mail, suporte para 10 domínios personalizados, aliases ilimitados do Hide-my-email, partilhamento de calendário, armazenamento encriptado na nuvem e partilhamento de ficheiros e muito mais."
+        "Todos os nossos serviços premium com os limites mais altos: 100 endereços de e-mail, suporte para 10 domínios personalizados, aliases ilimitados do Hide-my-email, partilha de calendário, armazenamento encriptado na nuvem e partilha de ficheiros e muito mais."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Inclui o suporte para 1 domínio de e-mail personalizado, 10 endereços de e-mail, 10 aliases do Hide-my-email, partilhamento de calendário e muito mais."
+        "Inclui o suporte para 1 domínio de e-mail personalizado, 10 endereços de e-mail, 10 aliases Hide-my-email, partilha de calendário e muito mais."
       ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Inclui o suporte para 3 domínios de e-mail personalizado, 15 endereços de e-mail, aliases ilimitados do Hide-my-email, partilhamento de calendário e muito mais."
+        "Inclui o suporte para 3 domínios de e-mail personalizados, 15 endereços de e-mail, aliases ilimitados do Hide-my-email, partilha de calendário e muito mais."
       ],
       "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
         "Perfeito para famílias ou pequenas equipas, cada um pode ter a sua própria caixa de entrada e aliases. Requer um domínio personalizado."
@@ -8399,7 +8411,7 @@
     },
     "Success notification when user send feedback": {
       "Feedback sent": [
-        "Feedback enviado"
+        "Comentário enviado"
       ]
     },
     "Table header": {
@@ -8560,7 +8572,7 @@
         "Não é possível adicionar mais endereços"
       ],
       "Carbon Copy": [
-        "Cópia carbono (CC)"
+        "Cópia Carbono (CC)"
       ],
       "CC": [
         "CC"
@@ -8824,7 +8836,7 @@
         "Mais opções"
       ],
       "More selections": [
-        "Mais selecções"
+        "Mais seleções"
       ],
       "Move all messages to Archive": [
         "Mover todas as mensagens para o Arquivo"
@@ -8865,6 +8877,9 @@
       "No attachment found": [
         "Nenhum anexo encontrado"
       ],
+      "No trackers found": [
+        "Nenhum rastreador encontrado"
+      ],
       "Open actions dropdown": [
         "Abrir lista de ações"
       ],
@@ -8891,6 +8906,9 @@
       ],
       "Previous message": [
         "Mensagem anterior"
+      ],
+      "Protect your email": [
+        "Proteja o seu e-mail"
       ],
       "Re-sign all contacts": [
         "A re-assinar todos os contactos"
@@ -9003,6 +9021,9 @@
       "Subject missing": [
         "O assunto está em falta"
       ],
+      "This email is protected": [
+        "Este e-mail está protegido."
+      ],
       "To": [
         "Para"
       ],
@@ -9041,10 +9062,10 @@
         "Aviso: suspeita de sítio web falso"
       ],
       "Welcome": [
-        "Boas vindas"
+        "Bem-vindo"
       ],
       "Welcome ${ userName }": [
-        "Boas vindas ${ userName }"
+        "Boas-vindas ${ userName }"
       ],
       "What would you like to import?": [
         "O que gostaria de importar?"

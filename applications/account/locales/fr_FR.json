@@ -2840,7 +2840,7 @@
         "Utilisation d'un autre service"
       ],
       "Temporary need, may come back in the future": [
-        "Il s'agit d'un besoin ponctuel dont je pourrais avoir besoin à l'avenir."
+        "Besoin temporaire, qui pourrait revenir à l'avenir"
       ]
     },
     "Downgrade modal exit survey title": {
@@ -2864,7 +2864,7 @@
     },
     "Email": {
       "Email verified": [
-        "Email vérifié"
+        "Adresse e-mail validée"
       ],
       "Thank you for verifying your email address.": [
         "Merci de vérifier votre adresse e-mail."
@@ -2873,7 +2873,7 @@
         "Merci de nous en informer"
       ],
       "We've noted that this account doesn't belong to you. We'll investigate and act accordingly.": [
-        "Nous avons constaté que ce compte ne vous appartient pas. Nous allons enquêter et agir en conséquence."
+        "Nous avons constaté que ce compte ne vous appartient pas. Nous allons examiner la situation et prendre les mesures nécessaires."
       ],
       "You can safely close this tab.": [
         "Vous pouvez fermer cet onglet en toute sécurité."
@@ -4959,7 +4959,7 @@
         "${ boldWarning } si vous continuez, vous perdrez l'accès à toutes les données actuellement chiffrées de votre compte."
       ],
       "${ BRAND_NAME } is privacy you can trust, ensured by strong encryption, open-source code, and Swiss privacy laws. We believe nobody should be able to exploit your data, period. Our technology and business are based upon this fundamentally stronger definition of privacy.": [
-        "${ BRAND_NAME }, la confidentialité en laquelle vous pouvez avoir confiance, garantie par un chiffrement puissant, un code sopen source et les lois suisses sur la protection de la vie privée. Personne ne devrait pouvoir exploiter vos données. Notre technologie et notre activité reposent sur cette définition fondamentalement plus forte de la vie privée."
+        "Vous pouvez faire confiance à ${ BRAND_NAME } pour protéger votre vie privée, grâce à un chiffrement fort, un code open source et la législation suisse en matière de protection des données. Nous pensons que personne ne devrait pouvoir exploiter vos données. Notre technologie et notre activité reposent sur cette définition fondamentalement plus forte de la protection de la vie privée"
       ],
       "${ BRAND_NAME } paused an import because it lost the connection with your other email provider. Please reconnect.": [
         "${ BRAND_NAME } a suspendu une importation parce que la connexion avec votre autre fournisseur de messagerie a été perdue. Nous vous invitons à vous reconnecter."
@@ -6022,7 +6022,7 @@
         "La phrase de récupération est périmée : mettez-la à jour pour assurer l'accès à vos données."
       ],
       "Over 100 million people and businesses have signed up for ${ BRAND_NAME }.": [
-        "Plus de 100 millions de personnes et d'entreprises ont adhéré à ${ BRAND_NAME }."
+        "Plus de 100 millions de personnes et d'entreprises ont choisi ${ BRAND_NAME }."
       ],
       "Paid for a ${ rewardMonths } month plan": [
         "Payé pour un abonnement d'${ rewardMonths } mois",
@@ -6181,7 +6181,7 @@
         "Retirez un de vos calendriers pour rejoindre celui-ci."
       ],
       "Report link expired": [
-        "Signaler un lien périmé"
+        "Lien de signalement expiré"
       ],
       "Restore": [
         "Restauration"
@@ -6368,7 +6368,7 @@
         "L'application Import-Export permet d'exporter des messages pour des sauvegardes locales et de restaurer des sauvegardes précédentes sur votre compte."
       ],
       "The link to report that that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue.": [
-        "Le lien pour signaler que vous n'avez pas configuré un compte ${ BRAND_NAME } est arrivé à expiration. Veuillez contacter l'équipe support pour résoudre ce problème."
+        "Le lien pour signaler que vous n'avez pas configuré un compte ${ BRAND_NAME } a expiré. Nous vous invitons à prendre contact avec notre équipe support pour résoudre ce problème."
       ],
       "The name will be visible to your users while they are signed in.": [
         "Le nom sera visible par vos utilisateurs quand ils seront connectés."
@@ -6862,7 +6862,7 @@
         "Vous serez redirigé vers la page de téléchargement du VPN."
       ],
       "You will lose access to ${ vpnPlanNameShort } servers and features on this date.": [
-        "À cette date, vous n'aurez plus accès aux serveurs et fonctionnalités de ${ vpnPlanNameShort }."
+        "À cette date, vous n'aurez plus accès aux serveurs et aux fonctionnalités de ${ vpnPlanNameShort }."
       ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Vous avez besoin d'une adresse ${ BRAND_NAME } pour utiliser ${ MAIL_APP_NAME } et ${ CALENDAR_APP_NAME }."
@@ -7133,11 +7133,6 @@
       ],
       "Primary": [
         "Principale"
-      ]
-    },
-    "Key transparency details button": {
-      "Click here for more details.": [
-        "Cliquez ici pour plus de détails."
       ]
     },
     "Key type option": {
@@ -8092,7 +8087,7 @@
         "Afficher les images des expéditeurs"
       ],
       "Show unread count in Favicon": [
-        "Afficher le nombre de non lus dans la Favicon"
+        "Afficher le nombre de non lus sur l'icône de l'onglet"
       ],
       "Show week numbers": [
         "Afficher les numéros de semaine"
@@ -8446,6 +8441,9 @@
       "General": [
         "Général"
       ],
+      "Help translate": [
+        "Contribuez à la traduction"
+      ],
       "How to pay with Bitcoin?": [
         "Comment payer en bitcoins ?"
       ],
@@ -8471,7 +8469,7 @@
         "Payer la facture"
       ],
       "Paypal without credit card": [
-        "Paypal sans carte de crédit"
+        "PayPal sans carte bancaire"
       ],
       "Privacy policy": [
         "Politique de confidentialité"
@@ -9015,7 +9013,7 @@
         "Réponse automatique"
       ],
       "Autofill credit cards (coming soon)": [
-        "Remplissage automatique des cartes de crédit (à venir)"
+        "Remplissage automatique pour les cartes bancaires (prochainement)"
       ],
       "Available on all platforms": [
         "Disponible sur toutes les plateformes"
@@ -9036,7 +9034,7 @@
         "Gestion des groupes de contacts"
       ],
       "Custom domains for email aliases": [
-        "Domaines personnalisés pour les alias d'adresses e-mail"
+        "Domaines personnalisés pour les alias d'adresse e-mail"
       ],
       "Custom email domains": [
         "Domaines de messagerie personnalisés"
@@ -9124,7 +9122,7 @@
         "Politique de non-journalisation (no log)"
       ],
       "Organize items with multiple vaults": [
-        "Organiser les éléments avec plusieurs coffres"
+        "Plusieurs coffres-forts pour organiser vos mots de passe"
       ],
       "Password-protected Emails": [
         "Messages protégés par mot de passe"
@@ -9442,13 +9440,13 @@
     },
     "new_plans: tooltip": {
       "${ CALENDAR_APP_NAME }: end-to-end encrypted calendar": [
-        "${ CALENDAR_APP_NAME }: calendrier chiffré de bout-en-bout"
+        "${ CALENDAR_APP_NAME } : calendrier chiffré de bout en bout"
       ],
       "${ DRIVE_APP_NAME }: end-to-end encrypted cloud storage": [
-        "${ DRIVE_APP_NAME }: stockage cloud chiffré de bout-en-bout"
+        "${ DRIVE_APP_NAME } : stockage cloud chiffré de bout en bout"
       ],
       "${ MAIL_APP_NAME }: end-to-end encrypted email": [
-        "${ MAIL_APP_NAME }: messagerie chiffrée de bout-en-bout"
+        "${ MAIL_APP_NAME } : messagerie chiffrée de bout en bout"
       ],
       "${ VPN_APP_NAME }: unblock content, browse privately": [
         "${ VPN_APP_NAME } : débloquez des contenus et surfez de façon anonyme"
@@ -9536,7 +9534,7 @@
         "Les disques durs de nos serveurs sont entièrement chiffrés avec plusieurs couches de mots de passe pour protéger vos données même si notre matériel est compromis."
       ],
       "Password management and identity protection": [
-        "Gestionnaire de mots de passe et protection d'identité"
+        "Gestion des mots de passe et protection de l'identité"
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Personnalisez votre signature d'e-mail avec des logos, images, icônes de réseaux sociaux, liens vers vos coordonnées…"
@@ -9667,7 +9665,7 @@
         "Assistance prioritaire"
       ],
       "Secure your passwords and identity with an open-source and encrypted password manager.": [
-        "Sécurisez vos mots de passe et votre identité grâce à un gestionnaire de mots de passe chiffré et open-source."
+        "Sécurisez vos mots de passe et votre identité grâce à un gestionnaire de mots de passe open source et chiffré."
       ],
       "Support for 1 custom email domain": [
         "Prise en charge d'un nom de domaine personnalisé"
@@ -9714,6 +9712,9 @@
       ],
       "Calendar added": [
         "Le calendrier a été ajouté."
+      ],
+      "Calendar updated": [
+        "Le calendrier a été mis à jour."
       ]
     },
     "Notification in share calendar modal": {
@@ -10085,6 +10086,9 @@
       "create a new account": [
         "créer un nouveau compte"
       ],
+      "Create another account instead": [
+        "Créez un autre compte à la place"
+      ],
       "Download again ${ size }": [
         "Télécharger à nouveau ${ size }"
       ],
@@ -10150,6 +10154,12 @@
     "pass_signup_2023: Info": {
       "${ PASS_APP_NAME } benefits": [
         "Les avantages de ${ PASS_APP_NAME }"
+      ],
+      "${ PASS_APP_NAME } is available as a browser extension on Firefox Add-ons.": [
+        "${ PASS_APP_NAME } est disponible comme extension de navigateur dans les modules de Firefox."
+      ],
+      "${ PASS_APP_NAME } is available as a browser extension on the Chrome Web Store.": [
+        "${ PASS_APP_NAME } est disponible comme extension de navigateur dans Chrome Web Store."
       ],
       "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption.": [
         "${ PASS_APP_NAME } sécurise vos mots de passe et votre identité grâce à un chiffrement de bout en bout rigoureux."
@@ -10521,7 +10531,7 @@
         "L'adresse e-mail n'est pas vérifiée."
       ],
       "Email removed": [
-        "Addresse e-mail supprimée"
+        "Adresse e-mail supprimée"
       ],
       "sign in": [
         "se connecter"
@@ -11246,7 +11256,7 @@
         "Actif"
       ],
       "Expiring": [
-        "Expiration"
+        "Expiré"
       ],
       "Upcoming": [
         "À venir"
@@ -12726,7 +12736,7 @@
         "Les messages dans le dossier Envoyés ou Brouillons continueront à apparaître dans ce dossier, même si vous les déplacez vers un autre dossier."
       ],
       "See number of unread messages in the tab icon": [
-        "Voir le nombre de messages non lus dans l'icône de l'onglet"
+        "Voir le nombre de messages non lus sur l'icône dans l'onglet de navigation"
       ],
       "Set how your list of messages looks like by default.": [
         "Choisissez la façon dont se présente votre liste de messages."
@@ -12818,7 +12828,7 @@
     },
     "tooltip": {
       "${ PASS_APP_NAME }: end-to-end encrypted password manager": [
-        "${ PASS_APP_NAME }: gestionnaire de mots de passe chiffré de bout-en-bout"
+        "${ PASS_APP_NAME } : gestionnaire de mots de passe chiffré de bout en bout"
       ]
     },
     "Tooltip automatically attach public key": {
