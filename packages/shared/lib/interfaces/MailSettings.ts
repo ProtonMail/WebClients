@@ -79,4 +79,5 @@ export interface MailSettings {
     HideSenderImages: number;
     AutoDeleteSpamAndTrashDays: AutoDeleteSpamAndTrashDaysSetting;
     UnreadFavicon: number;
+    RecipientLimit: number;
 }
