@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { useSelector } from 'react-redux';
 
-import { selectMatchedAndFilteredItemsWithOptimistic, selectMatchedTrashItemsWithOptimistic } from '@proton/pass/store';
+import { selectItemsSearchResult, selectTrashedItemsSearchResults } from '@proton/pass/store';
 
 import { ItemsFilteringContext } from '../context/items/ItemsFilteringContext';
 
@@ -10,7 +10,7 @@ export const useItems = () => {
     const { debouncedSearch, sort, type, shareId } = filtering;
 
     const matchedAndFilteredItems = useSelector(
-        selectMatchedAndFilteredItemsWithOptimistic({
+        selectItemsSearchResult({
             itemType: type === '*' ? null : type,
             search: debouncedSearch,
             shareId,
@@ -25,7 +25,7 @@ export const useTrashItems = () => {
     const filtering = useContext(ItemsFilteringContext);
     const { debouncedSearch } = filtering;
 
-    const matched = useSelector(selectMatchedTrashItemsWithOptimistic(debouncedSearch));
+    const matched = useSelector(selectTrashedItemsSearchResults(debouncedSearch));
 
     return { filtering, ...matched };
 };
