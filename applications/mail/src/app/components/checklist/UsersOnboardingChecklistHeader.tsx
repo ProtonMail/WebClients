@@ -12,7 +12,7 @@ interface Props {
     smallVariant?: boolean;
 }
 
-const OnboardingChecklistHeader = ({ smallVariant }: Props) => {
+const UsersOnboardingChecklistHeader = ({ smallVariant }: Props) => {
     const { isUserPaid, isChecklistFinished, changeChecklistDisplay, userWasRewarded } = useGetStartedChecklist();
 
     const SubTitle = () => {
@@ -54,4 +54,4 @@ const OnboardingChecklistHeader = ({ smallVariant }: Props) => {
     );
 };
 
-export default OnboardingChecklistHeader;
+export default UsersOnboardingChecklistHeader;

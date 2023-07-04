@@ -108,7 +108,6 @@ export enum FeatureCode {
     UnreadFavicon = 'UnreadFavicon',
     PassSignup = 'PassSignup',
     OnboardingChecklist = 'OnboardingChecklist',
-    NewOnboardingChecklist = 'NewOnboardingChecklist',
     VpnB2bPlans = 'VpnB2bPlans',
     AlmostAllMail = 'AlmostAllMail',
     AlmostAllMailSpotlight = 'AlmostAllMailSpotlight',
