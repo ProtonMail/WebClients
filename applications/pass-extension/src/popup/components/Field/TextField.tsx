@@ -1,3 +1,4 @@
+import type { ForwardRefRenderFunction } from 'react';
 import { type VFC, forwardRef, useState } from 'react';
 
 import { type FieldProps } from 'formik';
@@ -22,56 +23,56 @@ export type BaseTextFieldProps = FieldProps &
         lengthLimiters?: boolean;
     };
 
-export const BaseTextField = forwardRef<HTMLInputElement, BaseTextFieldProps>(
-    (
-        {
-            field,
-            form,
-            meta,
-            hidden = false,
-            hiddenValue,
-            inputClassName,
-            labelContainerClassName,
-            lengthLimiters = false,
-            onKeyDown,
-            onFocus = identity,
-            onPaste,
-            ...props
-        },
-        ref
-    ) => {
-        const { onBlur, value } = field;
-        const { error } = useFieldControl({ field, form, meta });
-        const [focused, setFocused] = useState<boolean>(false);
-        const hide = hidden && !isEmptyString(value) && !focused;
-        const pasteLengthLimiter = usePasteLengthLimiter();
-        const maxLengthLimiter = useMaxLengthLimiter();
-        const defaultHiddenValue = value.length >= 6 ? '••••••••••••' : '••••••';
+const BaseTextFieldRender: ForwardRefRenderFunction<HTMLInputElement, BaseTextFieldProps> = (
+    {
+        field,
+        form,
+        meta,
+        hidden = false,
+        hiddenValue,
+        inputClassName,
+        labelContainerClassName,
+        lengthLimiters = false,
+        onKeyDown,
+        onFocus = identity,
+        onPaste,
+        ...props
+    },
+    ref
+) => {
+    const { onBlur, value } = field;
+    const { error } = useFieldControl({ field, form, meta });
+    const [focused, setFocused] = useState<boolean>(false);
+    const hide = hidden && !isEmptyString(value) && !focused;
+    const pasteLengthLimiter = usePasteLengthLimiter();
+    const maxLengthLimiter = useMaxLengthLimiter();
+    const defaultHiddenValue = value.length >= 6 ? '••••••••••••' : '••••••';
 
-        return (
-            <InputFieldTwo
-                unstyled
-                assistContainerClassName="hidden-empty"
-                error={error}
-                inputClassName={clsx('color-norm p-0 rounded-none', inputClassName, hide && 'text-monospace')}
-                labelContainerClassName={clsx(
-                    'm-0 text-normal text-sm',
-                    error ? 'color-danger' : 'color-weak',
-                    labelContainerClassName
-                )}
-                {...props}
-                {...field}
-                onBlur={pipe(onBlur, () => setFocused(false))}
-                onFocus={pipe(onFocus, () => setFocused(true))}
-                onKeyDown={lengthLimiters && props.maxLength ? maxLengthLimiter(props.maxLength, onKeyDown) : onKeyDown}
-                onPaste={lengthLimiters && props.maxLength ? pasteLengthLimiter(props.maxLength, onPaste) : onPaste}
-                ref={ref}
-                type="text"
-                value={hide ? hiddenValue ?? defaultHiddenValue : value}
-            />
-        );
-    }
-);
+    return (
+        <InputFieldTwo
+            unstyled
+            assistContainerClassName="hidden-empty"
+            error={error}
+            inputClassName={clsx('color-norm p-0 rounded-none', inputClassName, hide && 'text-monospace')}
+            labelContainerClassName={clsx(
+                'm-0 text-normal text-sm',
+                error ? 'color-danger' : 'color-weak',
+                labelContainerClassName
+            )}
+            {...props}
+            {...field}
+            onBlur={pipe(onBlur, () => setFocused(false))}
+            onFocus={pipe(onFocus, () => setFocused(true))}
+            onKeyDown={lengthLimiters && props.maxLength ? maxLengthLimiter(props.maxLength, onKeyDown) : onKeyDown}
+            onPaste={lengthLimiters && props.maxLength ? pasteLengthLimiter(props.maxLength, onPaste) : onPaste}
+            ref={ref}
+            type="text"
+            value={hide ? hiddenValue ?? defaultHiddenValue : value}
+        />
+    );
+};
+
+export const BaseTextField = forwardRef(BaseTextFieldRender);
 
 export type TextFieldProps = FieldBoxProps & BaseTextFieldProps;
 
