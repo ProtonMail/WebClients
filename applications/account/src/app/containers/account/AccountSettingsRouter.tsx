@@ -28,6 +28,7 @@ import {
     PrivateMainArea,
     PrivateMainSettingsArea,
     SentinelSection,
+    SessionRecoverySection,
     SessionsSection,
     SettingsMaintenanceLayoutWrapper,
     SettingsPageTitle,
@@ -105,6 +106,7 @@ const AccountSettingsRouter = ({
                         <OverviewSection ids={recoveryIds} />
                         <AccountRecoverySection />
                         <DataRecoverySection />
+                        <SessionRecoverySection />
                     </PrivateMainSettingsArea>
                 </Route>
             )}
