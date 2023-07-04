@@ -19,6 +19,7 @@ interface Arguments {
     isReferralProgramEnabled: boolean;
     isSmtpTokenEnabled: boolean;
     isDataRecoveryAvailable: boolean;
+    isSessionRecoveryAvailable: boolean;
     isGmailSyncEnabled: boolean;
     recoveryNotification?: ThemeColor;
     isOrgSpamBlockListEnabled: boolean;
@@ -35,6 +36,7 @@ export const getRoutes = ({
     addresses,
     subscription,
     isDataRecoveryAvailable,
+    isSessionRecoveryAvailable,
     isReferralProgramEnabled,
     isSmtpTokenEnabled,
     isGmailSyncEnabled,
@@ -51,6 +53,7 @@ export const getRoutes = ({
             user,
             subscription,
             isDataRecoveryAvailable,
+            isSessionRecoveryAvailable,
             isReferralProgramEnabled,
             recoveryNotification,
             isGmailSyncEnabled,
