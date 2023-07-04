@@ -1,6 +1,21 @@
 import { ContactGroupLimitReachedProps } from '@proton/components/containers/contacts/modals/ContactGroupLimitReachedModal';
 import { CONTACT_GROUP_MAX_MEMBERS } from '@proton/shared/lib/contacts/constants';
+import { MailSettings } from '@proton/shared/lib/interfaces';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
+
+/**
+ * Check that the user can add other contacts to a contact group.
+ */
+export const hasReachedContactGroupMembersLimit = (
+    numbersOfContacts: number,
+    mailSettings?: MailSettings,
+    strict = true
+) => {
+    const { RecipientLimit = CONTACT_GROUP_MAX_MEMBERS } = mailSettings || {};
+    const maximumMembersInGroup = RecipientLimit || CONTACT_GROUP_MAX_MEMBERS;
+
+    return strict ? numbersOfContacts < maximumMembersInGroup : numbersOfContacts <= maximumMembersInGroup;
+};
 
 /**
  * Contact groups are limited to 100 contacts. When editing a contact, we do not save directly since the contact might not exist.
@@ -13,12 +28,14 @@ export const getContactGroupsDelayedSaveChanges = ({
     initialModel,
     model,
     onLimitReached,
+    mailSettings,
 }: {
     userContactEmails: ContactEmail[];
     changes: { [groupID: string]: boolean };
     model: { [groupID: string]: number };
     initialModel: { [groupID: string]: number };
     onLimitReached?: (props: ContactGroupLimitReachedProps) => void;
+    mailSettings?: MailSettings;
 }) => {
     // Get number of contacts in saved contact groups
     const groupIDs = Object.keys(changes);
@@ -31,7 +48,7 @@ export const getContactGroupsDelayedSaveChanges = ({
             userContactEmails.filter(({ LabelIDs = [] }: { LabelIDs: string[] }) => LabelIDs.includes(groupID));
 
         // Check that adding the current contact would not exceed the limit
-        const canAddContact = groupExistingMembers.length < CONTACT_GROUP_MAX_MEMBERS;
+        const canAddContact = hasReachedContactGroupMembersLimit(groupExistingMembers.length, mailSettings);
 
         if (!canAddContact) {
             cannotAddContactInGroupIDs.push(groupID);
