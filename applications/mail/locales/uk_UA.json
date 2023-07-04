@@ -124,6 +124,9 @@
       "Block": [
         "Блокувати"
       ],
+      "Block email tracking": [
+        "Блокування відстеження електронної пошти"
+      ],
       "Block messages from this sender": [
         "Заблокувати повідомлення від цього відправника"
       ],
@@ -366,9 +369,6 @@
       ],
       "Email settings": [
         "Налаштування е-пошти"
-      ],
-      "Emoji": [
-        "Емоджі"
       ],
       "Enable": [
         "Увімкнути"
@@ -1059,9 +1059,6 @@
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Спробуйте зберегти ще раз. Не вдалося зберегти через: ${ saveError }"
-      ],
-      "Turn on tracker protection": [
-        "Увімкнути захист від стеження"
       ],
       "Unblock": [
         "Розблокувати"
@@ -2986,6 +2983,12 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Ви можете позначити ті контакти, які ви не хочете ані об'єднувати, ані зберігати. Видалення відбудеться лише після натискання кнопки об'єднання"
+      ],
+      "You can read the message and click on links without being tracked with email tracker protection.": [
+        "Ви можете прочитати повідомлення та натиснути на посилання без відстеження за допомогою захисту від відстеження електронної пошти."
+      ],
+      "You can read the message and click on links without being tracked.": [
+        "Ви можете прочитати повідомлення та натиснути на посилання без відстеження."
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4739,11 +4742,23 @@
         "${ messagesNotAuthorizedToMove } повідомлень не вдалося перемістити.",
         "${ messagesNotAuthorizedToMove } повідомлень не вдалося перемістити."
       ],
-      "${ numberOfTrackers } email tracker blocked": [
-        "Заблоковано ${ numberOfTrackers } елемент стеження",
-        "Заблоковано ${ numberOfTrackers } елементи стеження",
-        "Заблоковано ${ numberOfTrackers } елементів стеження",
-        "Заблоковано ${ numberOfTrackers } елементи стеження"
+      "${ numberOfImageTrackers } email tracker blocked": [
+        "${ numberOfImageTrackers } поштовий трекер заблоковано",
+        "${ numberOfImageTrackers } поштові трекери заблоковано",
+        "${ numberOfImageTrackers } поштових трекерів заблоковано",
+        "${ numberOfImageTrackers } поштових трекерів заблоковано"
+      ],
+      "${ numberOfImageTrackers } tracker blocked": [
+        "${ numberOfImageTrackers } трекер заблоковано",
+        "${ numberOfImageTrackers } трекери заблоковано",
+        "${ numberOfImageTrackers } трекерів заблоковано",
+        "${ numberOfImageTrackers } трекерів заблоковано"
+      ],
+      "${ numberOfUTMTrackers } link cleaned": [
+        "${ numberOfUTMTrackers } посилання очищено",
+        "${ numberOfUTMTrackers } посилання очищено",
+        "${ numberOfUTMTrackers } посилань очищено",
+        "${ numberOfUTMTrackers } посилань очищено"
       ],
       "${ numContact } contact": [
         "${ numContact } контакт",
@@ -5165,18 +5180,6 @@
       "Email tracker protection is disabled": [
         "Захист від стеження у пошті вимкнено"
       ],
-      "Email trackers can violate your privacy. ${ BRAND_NAME } did not find any trackers in this message.": [
-        "Елементи стеження в електронній пошті можуть порушити вашу приватність. ${ BRAND_NAME } не виявив елементів стеження у цьому повідомленні."
-      ],
-      "Email trackers can violate your privacy. ${ BRAND_NAME } found and blocked ${ numberOfTrackers } tracker.": [
-        "Елементи стеження в електронній пошті можуть порушувати вашу приватність. ${ BRAND_NAME } знайшов і заблокував ${ numberOfTrackers } елемент стеження.",
-        "Елементи стеження в електронній пошті можуть порушувати вашу приватність. ${ BRAND_NAME } знайшов і заблокував ${ numberOfTrackers } елементи стеження.",
-        "Елементи стеження в електронній пошті можуть порушувати вашу приватність. ${ BRAND_NAME } знайшов і заблокував ${ numberOfTrackers } елементів стеження.",
-        "Елементи стеження в електронній пошті можуть порушувати вашу приватність. ${ BRAND_NAME } знайшов і заблокував ${ numberOfTrackers } елементи стеження."
-      ],
-      "Email trackers can violate your privacy. Turn on tracker protection to prevent senders from knowing whether and when you have opened a message.": [
-        "Елементи стеження в електронній пошті можуть порушувати вашу приватність. Увімкніть захист від стеження, щоб відправники не могли довідатися, чи відкривали ви повідомлення і коли."
-      ],
       "Emails are automatically signed": [
         "Електронні листи підписуються автоматично"
       ],
@@ -5369,6 +5372,9 @@
       "Link type": [
         "Тип посилання"
       ],
+      "Links cleaned:": [
+        "Посилань очищено:"
+      ],
       "Loading": [
         "Завантаження"
       ],
@@ -5453,9 +5459,6 @@
       "No email address": [
         "Немає адреси е-пошти"
       ],
-      "No email trackers found": [
-        "Стеження не виявлено"
-      ],
       "No folder found": [
         "Теку не знайдено"
       ],
@@ -5471,14 +5474,17 @@
       "No label selected": [
         "Жодної мітки не вибрано"
       ],
+      "No links cleaned": [
+        "Посилання не очищено"
+      ],
       "No more results found": [
         "Більше нічого не знайдено"
       ],
       "No results found": [
         "Результатів не знайдено"
       ],
-      "No trackers found, but some images could not be loaded with tracking protection": [
-        "Елементів стеження не виявлено, але деякі зображення неможливо завантажити з активним захистом від стеження"
+      "No trackers found": [
+        "Трекерів не виявлено"
       ],
       "non-${ MAIL_APP_NAME }": [
         "користувачу поза ${ MAIL_APP_NAME }"
@@ -5882,8 +5888,8 @@
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "Забагато повідомлень очікують надсилання. Зачекайте, доки буде відправлено інше повідомлення, щоб запланувати це."
       ],
-      "Turn off to only search by date, name, or email address. To disable search message content and delete downloaded messages, go to settings.": [
-        "Вимкніть, щоб шукати лише за датою, іменем або адресою електронної пошти. Щоб вимкнути пошук вмісту повідомлень і видалити завантажені повідомлення, перейдіть до налаштувань."
+      "Trackers blocked:": [
+        "Трекерів заблоковано:"
       ],
       "Turn on to search the content of your messages": [
         "Увімкніть, щоб шукати вміст своїх повідомлень"
@@ -6023,6 +6029,9 @@
       "You can check the progress ${ importProgressLink }.": [
         "Ви можете переглянути поступ ${ importProgressLink }."
       ],
+      "You can click links in this email without being profiled and leaking your online activity with advertisers.": [
+        "Ви можете натискати посилання в цьому листі, не маючи профілю та не повідомляючи про свою онлайн-активність рекламодавцям."
+      ],
       "You can either update your search query or ${ button }": [
         "Ви можете оновити свій пошуковий запит, або ${ button }"
       ],
@@ -6031,6 +6040,9 @@
       ],
       "You can import one data type at a time.": [
         "Ви можете імпортувати один тип даних за один раз."
+      ],
+      "You can read this email without revealing your interactions, location, or device to advertisers.": [
+        "Ви можете прочитати цей лист, не розкриваючи рекламодавцям свою взаємодію, розташування або пристрій."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Ви можете увімкнути сповіщення про надходження нових повідомлень до цієї теки."
@@ -6535,6 +6547,9 @@
       "City": [
         "Місто"
       ],
+      "Cleaned": [
+        "Очищено"
+      ],
       "Code is 6 digits without spaces": [
         "Код складається з 6 цифр без пробілів"
       ],
@@ -6736,6 +6751,9 @@
       "OK": [
         "Нормально"
       ],
+      "Open in a new tab": [
+        "Відкрити у новій вкладці"
+      ],
       "Operating system": [
         "Операційна система"
       ],
@@ -6750,6 +6768,9 @@
       ],
       "Or": [
         "Або"
+      ],
+      "Original link": [
+        "Оригінальне посилання"
       ],
       "Participants": [
         "Учасники"
@@ -7254,11 +7275,6 @@
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
         "Доступна нова версія ${ appName }. ${ reloadButton }."
-      ]
-    },
-    "Message has been sent to the user via a SimpleLogin alias": {
-      "Delivered via SimpleLogin by ${ BRAND_NAME }": [
-        "Надіслано через SimpleLogin від ${ BRAND_NAME }"
       ]
     },
     "Message image": {
@@ -7975,6 +7991,22 @@
         "Ми виявили застереження. Вказані електронні адреси можуть не отримувати листи:",
         "Ми виявили застереження. Вказані електронні адреси можуть не отримувати листи:",
         "Ми виявили застереження. Вказані електронні адреси можуть не отримувати листи:"
+      ]
+    },
+    "Sender verification details": {
+      "Sender verification": [
+        "Перевірка відправника"
+      ],
+      "Sender verification failed: ${ icon.senderVerificationDetails.description }": [
+        "Помилка перевірки відправника: ${ icon.senderVerificationDetails.description }"
+      ],
+      "Sender verified: ${ icon.senderVerificationDetails.description }": [
+        "Відправника перевірено: ${ icon.senderVerificationDetails.description }"
+      ]
+    },
+    "Sender verification error": {
+      "Verification key is not in the list of trusted keys.": [
+        "Ключа підтвердження немає в списку довірених ключів."
       ]
     },
     "Sent email icon": {
@@ -9182,6 +9214,9 @@
       "No attachment found": [
         "Вкладення не знайдено"
       ],
+      "No trackers found": [
+        "Трекерів не знайдено"
+      ],
       "Open actions dropdown": [
         "Випадне меню дій"
       ],
@@ -9208,6 +9243,9 @@
       ],
       "Previous message": [
         "Попереднє повідомлення"
+      ],
+      "Protect your email": [
+        "Захистіть свою електронну пошту"
       ],
       "Re-sign all contacts": [
         "Повторно підписати всі контакти"
@@ -9319,6 +9357,9 @@
       ],
       "Subject missing": [
         "Немає теми"
+      ],
+      "This email is protected": [
+        "Ця електронна пошта захищена"
       ],
       "To": [
         "Кому"

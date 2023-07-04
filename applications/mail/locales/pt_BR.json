@@ -124,6 +124,9 @@
       "Block": [
         "Bloquear"
       ],
+      "Block email tracking": [
+        "Bloquear rastreamento de e-mail"
+      ],
       "Block messages from this sender": [
         "Bloquear mensagens deste remetente"
       ],
@@ -362,9 +365,6 @@
       ],
       "Email settings": [
         "Configurações do e-mail"
-      ],
-      "Emoji": [
-        "Emoji"
       ],
       "Enable": [
         "Ativar"
@@ -1051,9 +1051,6 @@
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Tente salvar novamente. Falha ao salvar devido a: ${ saveError }"
-      ],
-      "Turn on tracker protection": [
-        "Ative proteção contra rastreadores"
       ],
       "Unblock": [
         "Desbloquear"
@@ -2935,7 +2932,7 @@
         "Nenhum marcador"
       ],
       "ProtonMail logo and a plus sign": [
-        "Logo ProtonMail e um sinal de mais"
+        "Logotipo do Proton Mail e um sinal de mais"
       ],
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "Ganhe tempo enviando e-mail ou convites para todo mundo de uma só vez, uma funcionalidade premium entre muitas outras. Faça o upgrade hoje."
@@ -2964,6 +2961,12 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Você pode marcar para exclusão os contatos que não quer mesclar nem manter. A exclusão somente ocorrerá após o botão de mesclagem ser clicado"
+      ],
+      "You can read the message and click on links without being tracked with email tracker protection.": [
+        "Você pode ler a mensagem e clicar nos links sem ser rastreado com a proteção do rastreador de e-mail."
+      ],
+      "You can read the message and click on links without being tracked.": [
+        "Você pode ler a mensagem e clicar nos links sem ser rastreado."
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3289,7 +3292,7 @@
         "Nenhum contato encontrado para importação"
       ],
       "No emails found to import - the account does not have an inbox": [
-        "Nenhum e-mail encontrado para importação — a conta não possui uma caixa de entrada."
+        "Nenhum e-mail encontrado para importação - a conta não possui uma caixa de entrada."
       ],
       "No valid address found": [
         "Nenhum endereço válido encontrado"
@@ -3881,7 +3884,7 @@
         "Você foi convidado a participar de ${ bannerOrganization }. ${ viewInviteButton }"
       ],
       "You have successfully joined the Family plan": [
-        "Você entrou no plano familiar"
+        "Você entrou no plano Family"
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "Você foi convidado a vincular sua conta da ${ BRAND_NAME } a este plano de grupo e aproveitar juntos de todos os recursos premium da ${ BRAND_NAME_TWO }."
@@ -4072,7 +4075,7 @@
     },
     "Filter option": {
       "All": [
-        "Todas"
+        "Todos"
       ],
       "Hide moved message": [
         "Ocultar mensagens movidas"
@@ -4089,7 +4092,7 @@
     },
     "Filter option to only show message with attachments": {
       "Has file": [
-        "Possui anexo"
+        "Tem arquivos"
       ]
     },
     "Filter preview": {
@@ -4637,9 +4640,17 @@
         "Não foi possível mover ${ messagesNotAuthorizedToMove } mensagem.",
         "Não foi possível mover ${ messagesNotAuthorizedToMove } mensagens."
       ],
-      "${ numberOfTrackers } email tracker blocked": [
-        "${ numberOfTrackers } rastreador de e-mail bloqueado",
-        "${ numberOfTrackers } rastreadores de e-mail bloqueados"
+      "${ numberOfImageTrackers } email tracker blocked": [
+        "${ numberOfImageTrackers } rastreador de e-mail bloqueado",
+        "${ numberOfImageTrackers } rastreadores de e-mail bloqueados"
+      ],
+      "${ numberOfImageTrackers } tracker blocked": [
+        "${ numberOfImageTrackers } rastreador bloqueado",
+        "${ numberOfImageTrackers } rastreadores bloqueados"
+      ],
+      "${ numberOfUTMTrackers } link cleaned": [
+        "${ numberOfUTMTrackers } link limpo",
+        "${ numberOfUTMTrackers } links limpos"
       ],
       "${ numContact } contact": [
         "${ numContact } contato",
@@ -5003,16 +5014,6 @@
       "Email tracker protection is disabled": [
         "A proteção do rastreador de e-mail está desativada"
       ],
-      "Email trackers can violate your privacy. ${ BRAND_NAME } did not find any trackers in this message.": [
-        "Rastreadores de e-mail podem violar sua privacidade. ${ BRAND_NAME } não encontrou rastreadores nesta mensagem."
-      ],
-      "Email trackers can violate your privacy. ${ BRAND_NAME } found and blocked ${ numberOfTrackers } tracker.": [
-        "Rastreadores de e-mail podem violar sua privacidade. ${ BRAND_NAME } encontrou e bloqueou ${ numberOfTrackers } rastreador.",
-        "Rastreadores de e-mail podem violar sua privacidade. ${ BRAND_NAME } encontrou e bloqueou ${ numberOfTrackers } rastreadores."
-      ],
-      "Email trackers can violate your privacy. Turn on tracker protection to prevent senders from knowing whether and when you have opened a message.": [
-        "Rastreadores de e-mail podem violar sua privacidade. Ative a proteção do rastreador para evitar que os remetentes saibam se e quando você abriu uma mensagem."
-      ],
       "Emails are automatically signed": [
         "E-mails são assinados automaticamente"
       ],
@@ -5104,7 +5105,7 @@
         "Como funcionam os aliases do hide-my-email"
       ],
       "I'm sending this message to a non-${ MAIL_APP_NAME } user.": [
-        "Estou enviando essa mensagem para um não-usuário do ${ MAIL_APP_NAME }."
+        "Estou enviando essa mensagem para um usuário que não usam o ${ MAIL_APP_NAME }."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Se você estiver tendo problemas para criar sua conta, solicite um convite e nós responderemos no prazo de um dia útil."
@@ -5191,6 +5192,9 @@
       "Link type": [
         "Tipo de link"
       ],
+      "Links cleaned:": [
+        "Links limpos:"
+      ],
       "Loading": [
         "Carregando"
       ],
@@ -5273,9 +5277,6 @@
       "No email address": [
         "Nenhum endereço de e-mail"
       ],
-      "No email trackers found": [
-        "Nenhum rastreador de e-mail encontrado"
-      ],
       "No folder found": [
         "Nenhuma pasta encontrada"
       ],
@@ -5291,17 +5292,20 @@
       "No label selected": [
         "Nenhuma marcador selecionado"
       ],
+      "No links cleaned": [
+        "Nenhum link limpo"
+      ],
       "No more results found": [
         "Não foram encontrados mais resultados"
       ],
       "No results found": [
         "Nenhum resultado encontrado"
       ],
-      "No trackers found, but some images could not be loaded with tracking protection": [
-        "Nenhum rastreador encontrado, mas algumas imagens não puderam ser carregadas com proteção contra rastreamento"
+      "No trackers found": [
+        "Nenhum rastreador encontrado"
       ],
       "non-${ MAIL_APP_NAME }": [
-        "não-${ MAIL_APP_NAME }"
+        "que não usam ${ MAIL_APP_NAME }"
       ],
       "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
         "Nenhuma das chaves enviadas é válida para criptografia. Para poder enviar mensagens para este endereço, envie uma chave válida ou desligue \"Criptografar e-mails\"."
@@ -5488,7 +5492,7 @@
         "Definir uma frase de recuperação"
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
-        "Configurar o PGP permite o envio de e-mails com criptografia de ponta-a-ponta com um usuário não-${ BRAND_NAME } que usa um serviço compatível com PGP."
+        "Configurar o PGP permite o envio de e-mails com criptografia de ponta-a-ponta com um usuário que não usam o ${ BRAND_NAME } que usa um serviço compatível com PGP."
       ],
       "Show original message": [
         "Exibir mensagem original"
@@ -5521,7 +5525,7 @@
         "equipe de suporte"
       ],
       "Temporarily unavailable. Please check back later.": [
-        "Temporariamente indisponível. Retorne mais tarde."
+        "Temporariamente indisponível. Tente mais tarde."
       ],
       "Test link": [
         "Link de teste"
@@ -5694,8 +5698,11 @@
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "Muitas mensagens esperando para serem enviadas. Aguarde até que outra mensagem seja enviada para agendar esta."
       ],
-      "Turn off to only search by date, name, or email address. To disable search message content and delete downloaded messages, go to settings.": [
-        "Desative para pesquisar apenas por data, nome ou endereço de e-mail. Para desativar a pesquisa por conteúdo da mensagem e excluir as mensagens baixadas, vá para as configurações."
+      "Trackers blocked:": [
+        "Rastreadores bloqueados:"
+      ],
+      "Turn off to only search by date, name, email address, or subject line. To disable search message content and delete downloaded messages, go to settings.": [
+        "Desative para pesquisar apenas por data, nome, endereço de e-mail ou assunto. Para desativar a pesquisa pelo conteúdo da mensagem e excluir as mensagens baixadas, vá para as configurações."
       ],
       "Turn on to search the content of your messages": [
         "Ative para pesquisar o conteúdo de suas mensagens"
@@ -5835,6 +5842,9 @@
       "You can check the progress ${ importProgressLink }.": [
         "Você pode verificar o progresso ${ importProgressLink }."
       ],
+      "You can click links in this email without being profiled and leaking your online activity with advertisers.": [
+        "Você pode clicar nos links deste e-mail sem ser monitorado e vazar sua atividade online com anunciantes."
+      ],
       "You can either update your search query or ${ button }": [
         "Você pode atualizar sua pesquisa de consulta ou ${ button }"
       ],
@@ -5843,6 +5853,9 @@
       ],
       "You can import one data type at a time.": [
         "Você pode importar um tipo de dado por vez."
+      ],
+      "You can read this email without revealing your interactions, location, or device to advertisers.": [
+        "Você pode ler este e-mail sem revelar suas interações, localização ou dispositivo aos anunciantes."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Você pode ativar as notificações para receber alertas quando novas mensagens de e-mail chegarem nesta pasta."
@@ -6019,11 +6032,6 @@
       "You have enabled Address Verification with Trusted Keys for this email address,\nbut no active encryption key has been trusted.\nYou must trust a key valid for sending in order to send a message to this email address.": [
         "Você ativou a verificação de endereço com chaves confiáveis para este endereço de e-mail,\nmas nenhuma chave de criptografia ativa foi confiada.\nVocê deve confiar em uma chave válida para enviar uma mensagem para este endereço de e-mail.",
         "Você ativou a verificação de endereço com chaves confiáveis para estes endereços de e-mail,\nmas nenhuma chave de criptografia ativa foi confiada.\nVocê deve confiar nas chaves válidas para envio, para poder enviar uma mensagem a estes endereços de e-mail."
-      ]
-    },
-    "Key transparency details button": {
-      "Click here for more details.": [
-        "Clique aqui para mais detalhes."
       ]
     },
     "Key validation warning": {
@@ -6328,6 +6336,9 @@
       "City": [
         "Cidade"
       ],
+      "Cleaned": [
+        "Limpo"
+      ],
       "Code is 6 digits without spaces": [
         "O código é de 6 dígitos sem espaços"
       ],
@@ -6529,6 +6540,9 @@
       "OK": [
         "OK"
       ],
+      "Open in a new tab": [
+        "Abrir em uma nova guia"
+      ],
       "Operating system": [
         "Sistema operacional"
       ],
@@ -6543,6 +6557,9 @@
       ],
       "Or": [
         "Ou"
+      ],
+      "Original link": [
+        "Link original"
       ],
       "Participants": [
         "Participantes"
@@ -7037,11 +7054,6 @@
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
         "Uma nova versão do ${ appName } está disponível. ${ reloadButton }."
-      ]
-    },
-    "Message has been sent to the user via a SimpleLogin alias": {
-      "Delivered via SimpleLogin by ${ BRAND_NAME }": [
-        "Entregue via SimpleLogin por ${ BRAND_NAME }"
       ]
     },
     "Message image": {
@@ -8392,7 +8404,7 @@
         "Desfazer em andamento"
       ],
       "Verification successful": [
-        "Verificado"
+        "Verificado com sucesso"
       ]
     },
     "Success notification": {
@@ -8932,6 +8944,9 @@
       "No attachment found": [
         "Nenhum anexo encontrado"
       ],
+      "No trackers found": [
+        "Nenhum rastreador encontrado"
+      ],
       "Open actions dropdown": [
         "Abrir menu de ações"
       ],
@@ -8958,6 +8973,9 @@
       ],
       "Previous message": [
         "Mensagem anterior"
+      ],
+      "Protect your email": [
+        "Proteja seu e-mail"
       ],
       "Re-sign all contacts": [
         "Assinar novamente todos os contatos"
@@ -9069,6 +9087,9 @@
       ],
       "Subject missing": [
         "Faltando assunto"
+      ],
+      "This email is protected": [
+        "Esse e-mail está protegido"
       ],
       "To": [
         "Para"

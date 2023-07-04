@@ -363,9 +363,6 @@
       "Email settings": [
         "E-mailinstellingen"
       ],
-      "Emoji": [
-        "Emoji"
-      ],
       "Enable": [
         "Inschakelen"
       ],
@@ -1051,9 +1048,6 @@
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Probeer opnieuw op te slaan. Opslaan mislukt door: ${ saveError }"
-      ],
-      "Turn on tracker protection": [
-        "Zet tracker beveiliging aan"
       ],
       "Unblock": [
         "Deblokkeer"
@@ -4637,10 +4631,6 @@
         "${ messagesNotAuthorizedToMove } bericht kon niet verplaatst worden.",
         "${ messagesNotAuthorizedToMove } berichten konden niet worden verplaatst."
       ],
-      "${ numberOfTrackers } email tracker blocked": [
-        "Één e-mail tracker geblokkeerd",
-        "${ numberOfTrackers } e-mail trackers geblokkeerd"
-      ],
       "${ numContact } contact": [
         "${ numContact } contactpersoon",
         "${ numContact } contactpersonen"
@@ -5003,16 +4993,6 @@
       "Email tracker protection is disabled": [
         "E-mailtracker bescherming is uitgeschakeld"
       ],
-      "Email trackers can violate your privacy. ${ BRAND_NAME } did not find any trackers in this message.": [
-        "E-mailtrackers kunnen uw privacy schenden. ${ BRAND_NAME } vond geen trackers in dit bericht."
-      ],
-      "Email trackers can violate your privacy. ${ BRAND_NAME } found and blocked ${ numberOfTrackers } tracker.": [
-        "E-mailtrackers kunnen uw privacy schenden. ${ BRAND_NAME } heeft ${ numberOfTrackers } tracker gevonden en geblokkeerd.",
-        "E-mailtrackers kunnen uw privacy schenden. ${ BRAND_NAME } heeft ${ numberOfTrackers } trackers gevonden en geblokkeerd."
-      ],
-      "Email trackers can violate your privacy. Turn on tracker protection to prevent senders from knowing whether and when you have opened a message.": [
-        "E-mailtrackers kunnen uw privacy schenden. Schakel bescherming tegen trackers in om te voorkomen dat afzenders weten of en wanneer u een bericht hebt geopend."
-      ],
       "Emails are automatically signed": [
         "E-mails zijn automatisch ondertekend"
       ],
@@ -5273,9 +5253,6 @@
       "No email address": [
         "Geen e-mailadres"
       ],
-      "No email trackers found": [
-        "Geen e-mailtrackers gevonden"
-      ],
       "No folder found": [
         "Geen map gevonden"
       ],
@@ -5296,9 +5273,6 @@
       ],
       "No results found": [
         "Geen resultaten gevonden"
-      ],
-      "No trackers found, but some images could not be loaded with tracking protection": [
-        "Geen trackers gevonden, maar sommige afbeeldingen konden niet ingeladen worden met bescherming tegen tracking"
       ],
       "non-${ MAIL_APP_NAME }": [
         "niet-${ MAIL_APP_NAME }"
@@ -5693,9 +5667,6 @@
       ],
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "Te veel berichten die wachten om te worden verzonden. Wacht tot een ander bericht is verzonden om dit bericht te plannen."
-      ],
-      "Turn off to only search by date, name, or email address. To disable search message content and delete downloaded messages, go to settings.": [
-        "Schakel uit om enkel te zoeken op datum, naam, of e-mailadres. Ga naar instellingen om het doorzoeken van berichtinhoud en verwijderde berichten uit te schakelen."
       ],
       "Turn on to search the content of your messages": [
         "Zet aan om de inhoud van uw berichten te doorzoeken"
@@ -7032,11 +7003,6 @@
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
         "Er is een nieuwe versie van ${ appName } beschikbaar. ${ reloadButton }."
-      ]
-    },
-    "Message has been sent to the user via a SimpleLogin alias": {
-      "Delivered via SimpleLogin by ${ BRAND_NAME }": [
-        "Afgeleverd via SimpleLogin door ${ BRAND_NAME }"
       ]
     },
     "Message image": {

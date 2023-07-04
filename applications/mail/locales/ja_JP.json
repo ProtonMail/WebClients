@@ -124,6 +124,9 @@
       "Block": [
         "ブロック"
       ],
+      "Block email tracking": [
+        "メールのトラッキングをブロック"
+      ],
       "Block messages from this sender": [
         "この差出人のメッセージをブロック"
       ],
@@ -360,9 +363,6 @@
       ],
       "Email settings": [
         "メールの設定"
-      ],
-      "Emoji": [
-        "絵文字"
       ],
       "Enable": [
         "有効化"
@@ -645,6 +645,9 @@
       ],
       "Move all messages from this label": [
         "このラベルからすべてのメッセージを移動"
+      ],
+      "Move all to archive": [
+        "すべてアーカイブに移動"
       ],
       "Move all to trash": [
         "すべてをごみ箱に移動"
@@ -1015,6 +1018,9 @@
       "This message contains remote content.": [
         "このメッセージには外部コンテンツが含まれています。"
       ],
+      "To search your emails securely, we need to download a copy of your messages to your browser. The initial download may take a moment.": [
+        "メールを安全に検索するには、メッセージのコピーをブラウザにダウンロードする必要があります。初回のダウンロードには時間がかかることがあります。"
+      ],
       "Toggle Calendar app": [
         "カレンダーアプリを切り替え"
       ],
@@ -1041,9 +1047,6 @@
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "もう一度保存してみてください。保存に失敗しました: ${ saveError }"
-      ],
-      "Turn on tracker protection": [
-        "トラッカー防止を有効にする"
       ],
       "Unblock": [
         "ブロックを解除する"
@@ -4565,8 +4568,8 @@
       "${ messagesNotAuthorizedToMove } messages could not be moved.": [
         "${ messagesNotAuthorizedToMove } 件のメッセージを移動できませんでした。"
       ],
-      "${ numberOfTrackers } email trackers blocked": [
-        "${ numberOfTrackers } 件のメールトラッカーをブロックしました"
+      "${ numberOfImageTrackers } trackers blocked": [
+        "${ numberOfImageTrackers }個のトラッカーをブロックしました"
       ],
       "${ numContact } contacts": [
         "${ numContact } 件の連絡先"
@@ -4832,6 +4835,9 @@
       "Custom yearly": [
         "毎年 (カスタム)"
       ],
+      "Customize the look and feel of ${ BRAND_NAME } applications.": [
+        "${ BRAND_NAME }アプリの外観をカスタマイズ"
+      ],
       "Daily": [
         "毎日"
       ],
@@ -4862,6 +4868,12 @@
       "Draft saved.": [
         "下書きが保存されました。"
       ],
+      "Drop file here to upload": [
+        "アップロードするファイルをここにドロップ"
+      ],
+      "Drop to import": [
+        "ドロップしてインポート"
+      ],
       "Duplicate key updated": [
         "重複した鍵がアップデートされました"
       ],
@@ -4885,15 +4897,6 @@
       ],
       "Email tracker protection is disabled": [
         "メールトラッカー防止は無効です"
-      ],
-      "Email trackers can violate your privacy. ${ BRAND_NAME } did not find any trackers in this message.": [
-        "メールトラッカーはあなたのプライバシーを侵害します。${ BRAND_NAME } はこのメッセージのトラッカーを見つけることができませんでした。"
-      ],
-      "Email trackers can violate your privacy. ${ BRAND_NAME } found and blocked ${ numberOfTrackers } trackers.": [
-        "メールトラッカーはあなたのプライバシーを侵害します。${ BRAND_NAME } は ${ numberOfTrackers } 件のトラッカーを見つけてブロックしました。"
-      ],
-      "Email trackers can violate your privacy. Turn on tracker protection to prevent senders from knowing whether and when you have opened a message.": [
-        "メールトラッカーはあなたのプライバシーを侵害します。トラッカー防止を有効にすると、あなたがメッセージを閲覧したかどうか、いつ閲覧したかを差出人に知られるのを防ぐことができます。"
       ],
       "Emails are automatically signed": [
         "電子メールは自動的に署名されます"
@@ -5117,6 +5120,9 @@
       "Message will be sent tomorrow at ${ formattedTime }": [
         "メッセージは明日の ${ formattedTime } に送信されます"
       ],
+      "Messages downloaded: ${ currentProgress } out of ${ totalProgress }": [
+        "ダウンロード済みメッセージ: ${ currentProgress } / ${ totalProgress }"
+      ],
       "Messages that have been in trash and spam more than 30 days will be automatically deleted.": [
         "30日以上経過したごみ箱のメールと迷惑メールは自動的に削除されます。"
       ],
@@ -5141,9 +5147,6 @@
       "No email address": [
         "メールアドレスなし"
       ],
-      "No email trackers found": [
-        "メールトラッカーは見つかりませんでした"
-      ],
       "No folder found": [
         "フォルダーが見つかりませんでした"
       ],
@@ -5165,8 +5168,8 @@
       "No results found": [
         "該当する項目がありません"
       ],
-      "No trackers found, but some images could not be loaded with tracking protection": [
-        "トラッカーは見つかりませんでしたが、一部の画像はトラッキング防止により読み込まれませんでした"
+      "No trackers found": [
+        "トラッカーは見つかりませんでした"
       ],
       "non-${ MAIL_APP_NAME }": [
         "非 ${ MAIL_APP_NAME }"
@@ -5371,6 +5374,9 @@
       ],
       "Subject: ": [
         "件名: "
+      ],
+      "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
+        "サブスクリプションがもうすぐ終了します: ${ planName }の特典を維持するには${ byDate }までに更新してください。${ reactivateLink }"
       ],
       "support team": [
         "サポートチーム"
@@ -5774,6 +5780,9 @@
       "Your email will only be used for this one-time verification.": [
         "メールアドレスは、この一度限りの認証にのみ使用されます。"
       ],
+      "Your files will be encrypted and then saved": [
+        "ファイルは暗号化して保存されます"
+      ],
       "Your import will not be processed.": [
         "インポートできませんでした。"
       ],
@@ -5800,6 +5809,9 @@
       ]
     },
     "info": {
+      "${ filteredList.length } commands found.": [
+        "${ filteredList.length }個のコマンドが見つかりました。"
+      ],
       "Optional": [
         "任意"
       ]
@@ -6839,11 +6851,6 @@
         "${ appName } の新しいバージョンが利用可能です。 ${ reloadButton }"
       ]
     },
-    "Message has been sent to the user via a SimpleLogin alias": {
-      "Delivered via SimpleLogin by ${ BRAND_NAME }": [
-        "SimpleLogin by ${ BRAND_NAME } から配信されました"
-      ]
-    },
     "Message image": {
       "Image has not been loaded in order to protect your privacy.": [
         "プライバシーを保護するために画像は読み込まれませんでした。"
@@ -7051,6 +7058,9 @@
       ],
       "Custom email domains": [
         "独自メールドメイン"
+      ],
+      "Hide-my-email aliases": [
+        "Hide-my-email エイリアス"
       ],
       "Schedule messages at any time": [
         "いつでもメッセージを送信予約できます"
@@ -8258,6 +8268,9 @@
       "Block sender": [
         "差出人をブロック"
       ],
+      "Cannot add more addresses": [
+        "これ以上アドレスを追加できません"
+      ],
       "Carbon Copy": [
         "カーボンコピー (Carbon Copy)"
       ],
@@ -8519,6 +8532,9 @@
       "More selections": [
         "選択方法を指定"
       ],
+      "Move all messages to Archive": [
+        "すべてのメッセージをアーカイブへ移動"
+      ],
       "Move all messages to Trash": [
         "すべてのメッセージをごみ箱へ移動"
       ],
@@ -8555,6 +8571,9 @@
       "No attachment found": [
         "添付ファイルが見つかりませんでした"
       ],
+      "No trackers found": [
+        "トラッカーは見つかりませんでした"
+      ],
       "Open actions dropdown": [
         "アクションのドロップダウンを開く"
       ],
@@ -8581,6 +8600,9 @@
       ],
       "Previous message": [
         "前のメッセージ"
+      ],
+      "Protect your email": [
+        "メールを保護する"
       ],
       "Re-sign all contacts": [
         "すべての連絡先を再署名する"
@@ -8693,6 +8715,9 @@
       "Subject missing": [
         "件名が正しくありません"
       ],
+      "This email is protected": [
+        "このメールは保護されています"
+      ],
       "To": [
         "宛先"
       ],
@@ -8707,6 +8732,9 @@
       ],
       "Trust public key?": [
         "公開鍵を信頼しますか?"
+      ],
+      "Unlock contacts groups": [
+        "連絡先グループをアンロック"
       ],
       "Unsubscribe": [
         "退会"
