@@ -892,7 +892,7 @@
     },
     "Calendar sharing access option label": {
       "Edit (view, create and edit event details)": [
-        "編輯（檢視、建立與編輯事件詳細資訊）"
+        "編輯 (檢視、建立與編輯行程詳細資料)"
       ],
       "View (see all event details)": [
         "檢視（檢視所有事件的詳細資訊）"
@@ -3933,7 +3933,7 @@
         "您即將更新此一系列中全部事件。已移除的參與者將獲通知。"
       ],
       "You've reached the maximum number of addresses in the contact group(s):": [
-        "您已達到聯絡人群組郵件地址最高上限："
+        "您已達到通訊群組郵件地址最高上限:"
       ],
       "You've reached the maximum number of addresses in the contact group.": [
         "您以達到通訊群組郵件地址最高上限"
@@ -4102,7 +4102,7 @@
         "附加螢幕截圖"
       ],
       "Authenticator app": [
-        "驗證 APP"
+        "驗證 app"
       ],
       "Automatically save contacts": [
         "自動儲存聯絡人"
@@ -4773,7 +4773,7 @@
         "自訂電郵網域"
       ],
       "Hide-my-email aliases": [
-        "隱藏我的郵件別名"
+        "Hide-my-email 別名"
       ],
       "Schedule messages at any time": [
         "在任意時間排程訊息"
@@ -4829,6 +4829,9 @@
       ],
       "Calendar added": [
         "行事曆已新增"
+      ],
+      "Calendar updated": [
+        "已更新行事曆"
       ]
     },
     "Notification in share calendar modal": {
@@ -5822,7 +5825,7 @@
         "${ emailsCount }電子郵件位址"
       ],
       "(active)": [
-        "（啟用）"
+        "(啟用)"
       ],
       "Account suspended": [
         "帳號已被停用"

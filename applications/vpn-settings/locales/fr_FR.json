@@ -1472,7 +1472,7 @@
         "Utilisation d'un autre service"
       ],
       "Temporary need, may come back in the future": [
-        "Il s'agit d'un besoin ponctuel dont je pourrais avoir besoin à l'avenir."
+        "Besoin temporaire, qui pourrait revenir à l'avenir"
       ]
     },
     "Downgrade modal exit survey title": {
@@ -2898,7 +2898,7 @@
         "Vous serez redirigé vers la page de téléchargement du VPN."
       ],
       "You will lose access to ${ vpnPlanNameShort } servers and features on this date.": [
-        "À cette date, vous n'aurez plus accès aux serveurs et fonctionnalités de ${ vpnPlanNameShort }."
+        "À cette date, vous n'aurez plus accès aux serveurs et aux fonctionnalités de ${ vpnPlanNameShort }."
       ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Vous avez besoin d'une adresse ${ BRAND_NAME } pour utiliser ${ MAIL_APP_NAME } et ${ CALENDAR_APP_NAME }."
@@ -3029,11 +3029,6 @@
       ],
       "Subscription": [
         "Abonnement"
-      ]
-    },
-    "Key transparency details button": {
-      "Click here for more details.": [
-        "Cliquez ici pour plus de détails."
       ]
     },
     "Label": {
@@ -3426,6 +3421,9 @@
       "Forgot username?": [
         "Nom d'utilisateur oublié ?"
       ],
+      "Help translate": [
+        "Contribuez à la traduction"
+      ],
       "How to pay with Bitcoin?": [
         "Comment payer en bitcoins ?"
       ],
@@ -3683,7 +3681,7 @@
         "Réponse automatique"
       ],
       "Autofill credit cards (coming soon)": [
-        "Remplissage automatique des cartes de crédit (à venir)"
+        "Remplissage automatique pour les cartes bancaires (prochainement)"
       ],
       "Available on all platforms": [
         "Disponible sur toutes les plateformes"
@@ -3704,7 +3702,7 @@
         "Gestion des groupes de contacts"
       ],
       "Custom domains for email aliases": [
-        "Domaines personnalisés pour les alias d'adresses e-mail"
+        "Domaines personnalisés pour les alias d'adresse e-mail"
       ],
       "Custom email domains": [
         "Domaines de messagerie personnalisés"
@@ -3789,7 +3787,7 @@
         "Politique de non-journalisation (no log)"
       ],
       "Organize items with multiple vaults": [
-        "Organiser les éléments avec plusieurs coffres"
+        "Plusieurs coffres-forts pour organiser vos mots de passe"
       ],
       "Password-protected Emails": [
         "Messages protégés par mot de passe"
@@ -4072,13 +4070,13 @@
     },
     "new_plans: tooltip": {
       "${ CALENDAR_APP_NAME }: end-to-end encrypted calendar": [
-        "${ CALENDAR_APP_NAME }: calendrier chiffré de bout-en-bout"
+        "${ CALENDAR_APP_NAME } : calendrier chiffré de bout en bout"
       ],
       "${ DRIVE_APP_NAME }: end-to-end encrypted cloud storage": [
-        "${ DRIVE_APP_NAME }: stockage cloud chiffré de bout-en-bout"
+        "${ DRIVE_APP_NAME } : stockage cloud chiffré de bout en bout"
       ],
       "${ MAIL_APP_NAME }: end-to-end encrypted email": [
-        "${ MAIL_APP_NAME }: messagerie chiffrée de bout-en-bout"
+        "${ MAIL_APP_NAME } : messagerie chiffrée de bout en bout"
       ],
       "${ VPN_APP_NAME }: unblock content, browse privately": [
         "${ VPN_APP_NAME } : débloquez des contenus et surfez de façon anonyme"
@@ -4166,7 +4164,7 @@
         "Les disques durs de nos serveurs sont entièrement chiffrés avec plusieurs couches de mots de passe pour protéger vos données même si notre matériel est compromis."
       ],
       "Password management and identity protection": [
-        "Gestionnaire de mots de passe et protection d'identité"
+        "Gestion des mots de passe et protection de l'identité"
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Personnalisez votre signature d'e-mail avec des logos, images, icônes de réseaux sociaux, liens vers vos coordonnées…"
@@ -4289,7 +4287,7 @@
         "Assistance prioritaire"
       ],
       "Secure your passwords and identity with an open-source and encrypted password manager.": [
-        "Sécurisez vos mots de passe et votre identité grâce à un gestionnaire de mots de passe chiffré et open-source."
+        "Sécurisez vos mots de passe et votre identité grâce à un gestionnaire de mots de passe open source et chiffré."
       ],
       "Support for 1 custom email domain": [
         "Prise en charge d'un nom de domaine personnalisé"
@@ -4902,7 +4900,7 @@
         "Actif"
       ],
       "Expiring": [
-        "Expiration"
+        "Expiré"
       ],
       "Upcoming": [
         "À venir"
@@ -5547,7 +5545,7 @@
     },
     "tooltip": {
       "${ PASS_APP_NAME }: end-to-end encrypted password manager": [
-        "${ PASS_APP_NAME }: gestionnaire de mots de passe chiffré de bout-en-bout"
+        "${ PASS_APP_NAME } : gestionnaire de mots de passe chiffré de bout en bout"
       ]
     },
     "Tor out of date": {

@@ -124,6 +124,9 @@
       "Block": [
         "Заблокировать"
       ],
+      "Block email tracking": [
+        "Блокировать отслеживание электронной почты"
+      ],
       "Block messages from this sender": [
         "Заблокировать сообщения от этого отправителя"
       ],
@@ -366,9 +369,6 @@
       ],
       "Email settings": [
         "Настройки электронной почты"
-      ],
-      "Emoji": [
-        "Эмоджи"
       ],
       "Enable": [
         "Включить"
@@ -1059,9 +1059,6 @@
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Попробуйте сохранить еще раз. Не удалось сохранить из-за: ${ saveError }"
-      ],
-      "Turn on tracker protection": [
-        "Включите защиту от трекеров"
       ],
       "Unblock": [
         "Разблокировать"
@@ -2986,6 +2983,12 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Вы можете отметить для удаления те контакты, которые не хотите ни объединять, ни оставлять. Удаление будет происходить только после нажатия кнопки «Объединить»."
+      ],
+      "You can read the message and click on links without being tracked with email tracker protection.": [
+        "Вы можете читать сообщение и нажимать на ссылки без отслеживания с помощью защиты от трекеров электронной почты."
+      ],
+      "You can read the message and click on links without being tracked.": [
+        "Вы можете читать сообщение и переходить по ссылкам без риска быть отслеженным."
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4739,11 +4742,17 @@
         "Не удалось переместить ${ messagesNotAuthorizedToMove } сообщений.",
         "Не удалось переместить ${ messagesNotAuthorizedToMove } сообщений."
       ],
-      "${ numberOfTrackers } email tracker blocked": [
-        "${ numberOfTrackers } почтовый трекер заблокирован",
-        "${ numberOfTrackers } почтовых трекера заблокировано",
-        "${ numberOfTrackers } почтовых трекеров заблокировано",
-        "${ numberOfTrackers } почтовых трекеров заблокировано"
+      "${ numberOfImageTrackers } email tracker blocked": [
+        "${ numberOfImageTrackers } почтовый трекер заблокирован",
+        "${ numberOfImageTrackers } почтовых трекера заблокированы",
+        "${ numberOfImageTrackers } почтовых трекеров заблокированы",
+        "${ numberOfImageTrackers } почтовых трекеров заблокированы"
+      ],
+      "${ numberOfImageTrackers } tracker blocked": [
+        "${ numberOfImageTrackers } трекер заблокирован",
+        "${ numberOfImageTrackers } трекера заблокированы",
+        "${ numberOfImageTrackers } трекеров заблокированы",
+        "${ numberOfImageTrackers } трекеров заблокированы"
       ],
       "${ numContact } contact": [
         "${ numContact } контакт",
@@ -5165,18 +5174,6 @@
       "Email tracker protection is disabled": [
         "Защита от трекеров электронной почты отключена"
       ],
-      "Email trackers can violate your privacy. ${ BRAND_NAME } did not find any trackers in this message.": [
-        "Отслеживания электронной почты могут нарушить вашу конфиденциальность. ${ BRAND_NAME } не обнаружил отслеживание в этом сообщении."
-      ],
-      "Email trackers can violate your privacy. ${ BRAND_NAME } found and blocked ${ numberOfTrackers } tracker.": [
-        "Трекеры электронной почты могут нарушать вашу конфиденциальность. ${ BRAND_NAME } нашёл и заблокировал ${ numberOfTrackers } трекер.",
-        "Трекеры электронной почты могут нарушать вашу конфиденциальность. ${ BRAND_NAME } нашёл и заблокировал ${ numberOfTrackers } трекера.",
-        "Трекеры электронной почты могут нарушать вашу конфиденциальность. ${ BRAND_NAME } нашёл и заблокировал ${ numberOfTrackers } трекеров.",
-        "Трекеры электронной почты могут нарушать вашу конфиденциальность. ${ BRAND_NAME } нашёл и заблокировал ${ numberOfTrackers } трекеров."
-      ],
-      "Email trackers can violate your privacy. Turn on tracker protection to prevent senders from knowing whether and when you have opened a message.": [
-        "Трекеры электронной почты могут нарушать вашу конфиденциальность. Включите защиту от трекеров, чтобы отправители не могли узнать, открывали ли вы сообщение и когда."
-      ],
       "Emails are automatically signed": [
         "Электронные письма подписываются автоматически"
       ],
@@ -5453,9 +5450,6 @@
       "No email address": [
         "Нет адреса электронной почты"
       ],
-      "No email trackers found": [
-        "Трекеры электронной почты не найдены"
-      ],
       "No folder found": [
         "Папки не найдены"
       ],
@@ -5477,8 +5471,8 @@
       "No results found": [
         "Результаты не найдены"
       ],
-      "No trackers found, but some images could not be loaded with tracking protection": [
-        "Трекеры не найдены, но некоторые изображения не могут быть загружены при использовании защиты от отслеживания"
+      "No trackers found": [
+        "Трекеров не обнаружено"
       ],
       "non-${ MAIL_APP_NAME }": [
         "не ${ MAIL_APP_NAME }"
@@ -5882,8 +5876,8 @@
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "Слишком много сообщений, ожидающих отправки. Пожалуйста, подождите, пока не будет отправлено другое сообщение, чтобы запланировать это."
       ],
-      "Turn off to only search by date, name, or email address. To disable search message content and delete downloaded messages, go to settings.": [
-        "Выключите, чтобы искать только по дате, имени или адресу электронной почты. Чтобы выключить поиск по содержимому сообщений, и удалить загруженную копию сообщений, перейдите в настройки."
+      "Trackers blocked:": [
+        "Заблокировано трекеров:"
       ],
       "Turn on to search the content of your messages": [
         "Включите поиск по содержимому ваших сообщений"
@@ -6023,6 +6017,9 @@
       "You can check the progress ${ importProgressLink }.": [
         "Вы можете проверить ход выполнения ${ importProgressLink }."
       ],
+      "You can click links in this email without being profiled and leaking your online activity with advertisers.": [
+        "Вы можете переходить по ссылкам в этом письме, не подвергаясь профилированию и не раскрывая рекламодателям информацию о своей онлайн-активности."
+      ],
       "You can either update your search query or ${ button }": [
         "Вы можете изменить ваш поисковый запрос или ${ button }"
       ],
@@ -6031,6 +6028,9 @@
       ],
       "You can import one data type at a time.": [
         "Вы можете импортировать один тип данных за один раз."
+      ],
+      "You can read this email without revealing your interactions, location, or device to advertisers.": [
+        "Вы можете прочитать это письмо не сообщая рекламодателям о своих взаимодействиях, местоположении или устройстве."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Вы можете включить уведомления, чтобы получать оповещения при появлении новых сообщений электронной почты в этой папке."
@@ -6535,6 +6535,9 @@
       "City": [
         "Город"
       ],
+      "Cleaned": [
+        "Очищено"
+      ],
       "Code is 6 digits without spaces": [
         "Код состоит из 6 цифр без пробелов"
       ],
@@ -6736,6 +6739,9 @@
       "OK": [
         "OK"
       ],
+      "Open in a new tab": [
+        "Открыть в новой вкладке"
+      ],
       "Operating system": [
         "Операционная система"
       ],
@@ -6750,6 +6756,9 @@
       ],
       "Or": [
         "Или"
+      ],
+      "Original link": [
+        "Оригинальная ссылка"
       ],
       "Participants": [
         "Участники"
@@ -7254,11 +7263,6 @@
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
         "Доступна новая версия ${ appName } . ${ reloadButton }."
-      ]
-    },
-    "Message has been sent to the user via a SimpleLogin alias": {
-      "Delivered via SimpleLogin by ${ BRAND_NAME }": [
-        "Доставляется через SimpleLogin от ${ BRAND_NAME }"
       ]
     },
     "Message image": {
@@ -7975,6 +7979,22 @@
         "Для этого действия есть предупреждения. Получатели со следующими адресами могут не получить ваше письмо:",
         "Для этого действия есть предупреждения. Получатели со следующими адресами могут не получить ваше письмо:",
         "Для этого действия есть предупреждения. Получатели со следующими адресами могут не получить ваше письмо:"
+      ]
+    },
+    "Sender verification details": {
+      "Sender verification": [
+        "Проверка отправителя"
+      ],
+      "Sender verification failed: ${ icon.senderVerificationDetails.description }": [
+        "Не удалось проверить отправителя: ${ icon.senderVerificationDetails.description }"
+      ],
+      "Sender verified: ${ icon.senderVerificationDetails.description }": [
+        "Отправитель проверен: ${ icon.senderVerificationDetails.description }"
+      ]
+    },
+    "Sender verification error": {
+      "Verification key is not in the list of trusted keys.": [
+        "Ключ верификации не входит в список доверенных ключей."
       ]
     },
     "Sent email icon": {
@@ -9246,6 +9266,9 @@
       "No attachment found": [
         "Вложение не найдено"
       ],
+      "No trackers found": [
+        "Трекеров не обнаружено"
+      ],
       "Open actions dropdown": [
         "Показать список доступных действий"
       ],
@@ -9272,6 +9295,9 @@
       ],
       "Previous message": [
         "Предыдущее сообщение"
+      ],
+      "Protect your email": [
+        "Защитите ваши электронные письма"
       ],
       "Re-sign all contacts": [
         "Переподписать все контакты"
@@ -9383,6 +9409,9 @@
       ],
       "Subject missing": [
         "Тема отсутствует"
+      ],
+      "This email is protected": [
+        "Это письмо защищено"
       ],
       "To": [
         "Кому"
