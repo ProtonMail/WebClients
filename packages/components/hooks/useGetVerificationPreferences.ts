@@ -70,6 +70,7 @@ const useGetVerificationPreferences = () => {
                 RecipientType,
                 publicKeys: apiKeys,
                 ktVerificationResult,
+                Errors,
             }: ApiKeysConfig = await getPublicKeys(emailAddress, lifetime);
             const isInternal = RecipientType === RECIPIENT_TYPES.TYPE_INTERNAL;
             const { publicKeys } = splitKeys(await getUserKeys());
@@ -102,6 +103,7 @@ const useGetVerificationPreferences = () => {
                 pinnedKeysFingerprints,
                 compromisedKeysFingerprints,
                 pinnedKeysVerified,
+                apiKeysErrors: Errors,
             };
         },
         [api, getAddressKeys, getAddresses, getPublicKeys, getMailSettings]

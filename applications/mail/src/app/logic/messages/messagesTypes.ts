@@ -89,6 +89,11 @@ export interface MessageVerification {
      * Key transparency verification status
      */
     ktVerificationResult: KeyTransparencyVerificationResult | undefined;
+
+    /**
+     * Errors occuring while retrieving public keys
+     */
+    apiKeysErrors: string[] | undefined;
 }
 
 export interface AbstractMessageImage {

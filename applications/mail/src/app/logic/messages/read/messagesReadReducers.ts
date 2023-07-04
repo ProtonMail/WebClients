@@ -190,6 +190,7 @@ export const verificationComplete = (
             ktVerificationResult: verificationPreferences?.ktVerificationResult,
             signingPublicKeyIsPinned,
             signingPublicKeyIsCompromised,
+            apiKeysErrors: verificationPreferences?.apiKeysErrors,
         };
         messageState.errors = { ...messageState.errors, ...errors };
     }
