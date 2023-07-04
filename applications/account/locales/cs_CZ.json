@@ -1092,11 +1092,6 @@
         "Sirotek"
       ]
     },
-    "Admin": {
-      "admin": [
-        "administrátor"
-      ]
-    },
     "Alert": {
       "By leaving now, some contacts may not be imported": [
         "Pokud teď odejdete, některé kontakty nebudou importovány"
@@ -2815,9 +2810,6 @@
       ],
       "${ name } failed to move to spam list": [
         "Doménu ${ name } se nepodařilo přesunout na Seznam spamů"
-      ],
-      "${ name } moved to block list": [
-        "${ name } byl přesunut na seznam blokovaných"
       ],
       "${ name } moved to spam list": [
         "Doména ${ name } byla přesunuta na seznam spamů"
@@ -5335,6 +5327,9 @@
       ],
       "Attention required": [
         "Vyžadována pozornost"
+      ],
+      "Auto-renewal: ": [
+        "Automatické obnovení: "
       ],
       "Auto-reply is active each month between the selected start and end time.": [
         "Automatická odpověď je aktivní každý měsíc ve vybraném časovém rozsahu."
@@ -8463,6 +8458,9 @@
       "General": [
         "Obecné"
       ],
+      "Help translate": [
+        "Pomoc s překladem"
+      ],
       "How to pay with Bitcoin?": [
         "Jak platit pomocí Bitcoinu?"
       ],
@@ -8533,7 +8531,6 @@
     "Loading info": {
       "${ twoFAMembers.length }/${ members.length } of your organization member use two-factor authentication.": [
         "${ twoFAMembers.length }/${ members.length } člena vaší organizace používat dvoufaktorové ověřování.",
-        "${ twoFAMembers.length }/${ members.length } členy vaší organizace používat dvoufaktorové ověřování.",
         "${ twoFAMembers.length }/${ members.length } členů vaší organizace používat dvoufaktorové ověřování.",
         "${ twoFAMembers.length }/${ members.length } členů vaší organizace používat dvoufaktorové ověřování."
       ],
@@ -9750,6 +9747,9 @@
       ],
       "Calendar added": [
         "Kalendář přidán"
+      ],
+      "Calendar updated": [
+        "Kalendář aktualizován"
       ]
     },
     "Notification in share calendar modal": {
