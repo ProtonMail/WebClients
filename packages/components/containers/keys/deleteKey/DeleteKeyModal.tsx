@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import { BRAND_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 
 import { Prompt, PromptProps } from '../../../components';
@@ -84,7 +85,7 @@ const DeleteKeyModal = ({ onClose, fingerprint, onDelete, onExport, ...rest }: P
                     <>
                         <div className="mb-4">
                             {c('Info')
-                                .t`You will NOT be able to decrypt any messages, files, and other data encrypted with this key.`}
+                                .t`You will NOT be able to decrypt any messages, files, and other data encrypted with this key. All data signed with this key will no longer be verified by ${BRAND_NAME} applications.`}
                         </div>
                         <div>
                             {c('Info')
