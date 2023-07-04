@@ -89,6 +89,8 @@ export enum FeatureCode {
     TrustedDeviceRecovery = 'TrustedDeviceRecovery',
     DriveMyDevices = 'DriveWebMyDevices',
     DriveWindowsGA = 'DriveWindowsGA',
+    DriveWindowsGAMailSpotlight = 'DriveWindowsGAMailSpotlight',
+    DriveWindowsGAMailSpotlightShown = 'DriveWindowsGAMailSpotlightShown',
     LegacyMessageMigrationEnabled = 'LegacyMessageMigrationEnabled',
     ProtonBadge = 'ProtonBadge',
     QuickReply = 'QuickReply',
