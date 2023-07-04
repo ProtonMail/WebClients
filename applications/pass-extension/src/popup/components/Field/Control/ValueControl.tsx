@@ -75,9 +75,9 @@ export const ValueControl: VFC<ValueControlProps> = ({
     const defaultHiddenValue = '••••••••••••';
 
     const displayValue = useMemo(() => {
+        if (!value && !children) return <div className="color-weak">{c('Info').t`None`}</div>;
         if (hidden && hide) return hiddenValue ?? defaultHiddenValue;
         if (children) return children;
-        if (!value) return <div className="color-weak">{c('Info').t`None`}</div>;
         return value;
     }, [children, hidden, hide, value]);
 
