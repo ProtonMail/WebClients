@@ -57,7 +57,7 @@ const PaymentMethodDetails = ({ type, details = {} }) => {
                         viewBox={`0 0 ${textWidth} 50`}
                         xmlSpace="preserve"
                     >
-                        <text x="0px" y="40px" className="text-40 text-strong" ref={textRef}>
+                        <text x="0px" y="40px" className="text-40 text-strong text-monospace" ref={textRef}>
                             {cardNumberText}
                         </text>
                     </svg>
