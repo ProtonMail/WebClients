@@ -8,7 +8,7 @@ import type {
     MaybeNull,
     UniqueItem,
 } from '@proton/pass/types';
-import { invert, prop } from '@proton/pass/utils/fp';
+import { invert, pipe, prop } from '@proton/pass/utils/fp';
 import { flattenItemsByShareId, isLoginItem } from '@proton/pass/utils/pass/items';
 import { isTrashed } from '@proton/pass/utils/pass/trash';
 import type {
@@ -83,32 +83,29 @@ export const selectTrashItemsWithOptimistic = selectItemsWithOptimisticFactory({
 /* Selectors organized to separate sort from search, as sorting can be computationally
  * expensive when the number of items is high. The search is expected to change more
  * frequently than the shareId / sortOption */
-const selectShareItemsWithOptimistic = createSelector(
+const selectSortedItemsByType = createSelector(
     [
         selectItemsWithOptimistic,
         (_state: State, { shareId }: SelectItemsOptions) => shareId,
+        (_state: State, { itemType }: SelectItemsOptions) => itemType,
         (_state: State, { sort }: SelectItemsOptions) => sort,
     ],
-    (items, shareId, sort) => sortItems(filterItemsByShareId(items, shareId), sort)
+    (items, shareId, itemType, sort) =>
+        sortItems(pipe(filterItemsByShareId(shareId), filterItemsByType(itemType))(items), sort)
 );
 
-const matchedAndFilteredItemsWithOptimisticSelector = createSelector(
-    [
-        selectShareItemsWithOptimistic,
-        (_state: State, { search }: SelectItemsOptions) => search,
-        (_state: State, { itemType }: SelectItemsOptions) => itemType,
-    ],
-    (items, search, itemType) => {
+const itemsSearchResultSelector = createSelector(
+    [selectSortedItemsByType, (_state: State, { search }: SelectItemsOptions) => search],
+    (items, search) => {
         const matched = matchItems(items, search);
-        const filtered = filterItemsByType(matched, itemType);
-        return { matched, filtered, totalCount: items.length };
+        return { matched, filtered: items, totalCount: items.length };
     }
 );
 
-export const selectMatchedAndFilteredItemsWithOptimistic = (options: SelectItemsOptions) => (state: State) =>
-    matchedAndFilteredItemsWithOptimisticSelector(state, options);
+export const selectItemsSearchResult = (options: SelectItemsOptions) => (state: State) =>
+    itemsSearchResultSelector(state, options);
 
-const matchedTrashItemsWithOptimisticSelector = createSelector(
+const trashedItemsSearchResultSelector = createSelector(
     [selectTrashItemsWithOptimistic, (_state: State, search?: string) => search],
     (items, search) => {
         const matched = matchItems(items, search);
@@ -116,8 +113,8 @@ const matchedTrashItemsWithOptimisticSelector = createSelector(
     }
 );
 
-export const selectMatchedTrashItemsWithOptimistic = (search?: string) => (state: State) =>
-    matchedTrashItemsWithOptimisticSelector(state, search);
+export const selectTrashedItemsSearchResults = (search?: string) => (state: State) =>
+    trashedItemsSearchResultSelector(state, search);
 
 export const selectItemWithOptimistic = (shareId: string, itemId: string) =>
     createSelector(
