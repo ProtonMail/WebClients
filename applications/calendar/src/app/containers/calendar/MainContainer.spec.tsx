@@ -267,6 +267,7 @@ const mockedCreatableCalendar = {
             CalendarID: 'id3',
             Name: 'calendar3',
             Description: 'description3',
+            Priority: 3,
         },
     ],
 };
@@ -298,6 +299,7 @@ describe.skip('MainContainer', () => {
                         CalendarID: 'id1',
                         Name: 'calendar1',
                         Description: 'description1',
+                        Priority: 1,
                     },
                 ],
             },
@@ -321,6 +323,7 @@ describe.skip('MainContainer', () => {
                         CalendarID: 'id2',
                         Name: 'calendar2',
                         Description: 'description2',
+                        Priority: 2,
                     },
                 ],
             },
