@@ -3262,6 +3262,9 @@
       "Current version": [
         "現在のバージョン"
       ],
+      "Customize the look and feel of ${ BRAND_NAME } applications.": [
+        "${ BRAND_NAME }アプリの外観をカスタマイズ"
+      ],
       "Decrypting files": [
         "ファイルを復号中"
       ],
@@ -3300,6 +3303,12 @@
       ],
       "Downloading": [
         "ダウンロード中"
+      ],
+      "Drop file here to upload": [
+        "アップロードするファイルをここにドロップ"
+      ],
+      "Drop to import": [
+        "ドロップしてインポート"
       ],
       "Duplicate key updated": [
         "重複した鍵がアップデートされました"
@@ -3751,6 +3760,9 @@
       "Something went wrong, please try again later.": [
         "問題が発生しました。後ほど再度お試しください。"
       ],
+      "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
+        "サブスクリプションがもうすぐ終了します: ${ planName }の特典を維持するには${ byDate }までに更新してください。${ reactivateLink }"
+      ],
       "support team": [
         "サポートチーム"
       ],
@@ -4011,6 +4023,9 @@
       ],
       "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ KeyReactivationButton }": [
         "パスワードを変更したためファイルにアクセスできません。古い暗号鍵を再度アップロードすることでアクセス可能になります。${ KeyReactivationButton }"
+      ],
+      "Your files will be encrypted and then saved": [
+        "ファイルは暗号化して保存されます"
       ],
       "Your files will be encrypted and then saved.": [
         "あなたのファイルは暗号化して保存されます。"
@@ -4701,6 +4716,9 @@
       ],
       "Custom email domains": [
         "独自メールドメイン"
+      ],
+      "Hide-my-email aliases": [
+        "Hide-my-email エイリアス"
       ],
       "Schedule messages at any time": [
         "いつでもメッセージを送信予約できます"
@@ -5615,6 +5633,9 @@
       "Browser might run out of memory": [
         "ブラウザーのメモリが不足する可能性があります。"
       ],
+      "Cannot add more addresses": [
+        "これ以上アドレスを追加できません"
+      ],
       "Cannot load link": [
         "リンクの読み込みに失敗しました"
       ],
@@ -5989,6 +6010,9 @@
       ],
       "Type": [
         "種類"
+      ],
+      "Unlock contacts groups": [
+        "連絡先グループをアンロック"
       ],
       "Uploaded": [
         "アップロード日時"

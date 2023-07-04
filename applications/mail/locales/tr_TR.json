@@ -124,6 +124,9 @@
       "Block": [
         "Engelle"
       ],
+      "Block email tracking": [
+        "E-postanın izlenmesi engellensin"
+      ],
       "Block messages from this sender": [
         "Bu göndericiden gelen iletileri engelle"
       ],
@@ -362,9 +365,6 @@
       ],
       "Email settings": [
         "E-posta ayarları"
-      ],
-      "Emoji": [
-        "Emoji"
       ],
       "Enable": [
         "Etkinleştir"
@@ -1051,9 +1051,6 @@
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Yeniden kaydetmeyi deneyin. Şu sorun nedeniyle kaydedilemedi: ${ saveError }"
-      ],
-      "Turn on tracker protection": [
-        "İzleme korumasını aç"
       ],
       "Unblock": [
         "Engellemeyi kaldır"
@@ -2964,6 +2961,12 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Birleştirmek veya tutmak istemediğiniz kişileri silinmek üzere işaretleyebilirsiniz. Silme işlemi yalnızca birleştirme düğmesine tıkladıktan sonra yapılır"
+      ],
+      "You can read the message and click on links without being tracked with email tracker protection.": [
+        "E-posta izleme koruması ile izlenmeden iletiyi okuyabilir ve bağlantılara tıklayabilirsiniz."
+      ],
+      "You can read the message and click on links without being tracked.": [
+        "İzlenmeden iletiyi okuyabilir ve bağlantılara tıklayabilirsiniz."
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4637,9 +4640,17 @@
         "${ messagesNotAuthorizedToMove } ileti taşınamadı.",
         "${ messagesNotAuthorizedToMove } ileti taşınamadı."
       ],
-      "${ numberOfTrackers } email tracker blocked": [
-        "${ numberOfTrackers } e-posta izleyici engellendi",
-        "${ numberOfTrackers } e-posta izleyici engellendi"
+      "${ numberOfImageTrackers } email tracker blocked": [
+        "${ numberOfImageTrackers } e-posta izleyici engellendi",
+        "${ numberOfImageTrackers } e-posta izleyici engellendi"
+      ],
+      "${ numberOfImageTrackers } tracker blocked": [
+        "${ numberOfImageTrackers } izleyici engellendi",
+        "${ numberOfImageTrackers } izleyici engellendi"
+      ],
+      "${ numberOfUTMTrackers } link cleaned": [
+        "${ numberOfUTMTrackers } bağlantı temizlendi",
+        "${ numberOfUTMTrackers } bağlantı temizlendi"
       ],
       "${ numContact } contact": [
         "${ numContact } kişi",
@@ -5003,16 +5014,6 @@
       "Email tracker protection is disabled": [
         "E-posta izleme koruması devre dışı"
       ],
-      "Email trackers can violate your privacy. ${ BRAND_NAME } did not find any trackers in this message.": [
-        "E-posta izleyicileri gizliliğinizi ihlal edebilir. ${ BRAND_NAME }, bu iletide herhangi bir izleyici bulamadı."
-      ],
-      "Email trackers can violate your privacy. ${ BRAND_NAME } found and blocked ${ numberOfTrackers } tracker.": [
-        "E-posta izleyiciler gizliliğinizi ihlal edebilir. ${ BRAND_NAME } ${ numberOfTrackers } izleyici buldu ve engelledi.",
-        "E-posta izleyiciler gizliliğinizi ihlal edebilir. ${ BRAND_NAME } ${ numberOfTrackers } izleyici buldu ve engelledi."
-      ],
-      "Email trackers can violate your privacy. Turn on tracker protection to prevent senders from knowing whether and when you have opened a message.": [
-        "E-posta izleyiciler gizliliğinizi ihlal edebilir. Göndericinin iletileri açıp açmadığınızı bilmesini önlemek için izleme koruma özelliğini açın."
-      ],
       "Emails are automatically signed": [
         "E-postalar otomatik olarak imzalanıyor"
       ],
@@ -5191,6 +5192,9 @@
       "Link type": [
         "Bağlantı türü"
       ],
+      "Links cleaned:": [
+        "Temizlenen bağlantılar:"
+      ],
       "Loading": [
         "Yükleniyor"
       ],
@@ -5273,9 +5277,6 @@
       "No email address": [
         "E-posta adresi yok"
       ],
-      "No email trackers found": [
-        "Herhangi bir e-posta izleyici bulunamadı"
-      ],
       "No folder found": [
         "Herhangi bir klasör bulunamadı"
       ],
@@ -5291,14 +5292,17 @@
       "No label selected": [
         "Herhangi bir etiket seçilmemiş"
       ],
+      "No links cleaned": [
+        "Herhangi bir bağlantı temizlenmedi"
+      ],
       "No more results found": [
         "Başka bir sonuç bulunamadı"
       ],
       "No results found": [
         "Herhangi bir sonuç bulunamadı"
       ],
-      "No trackers found, but some images could not be loaded with tracking protection": [
-        "Herhangi bir izleyici bulunamadı. Ancak bazı görseller izleme koruması nedeniyle yüklenmeyebilir"
+      "No trackers found": [
+        "Herhangi bir izleyici bulunamadı"
       ],
       "non-${ MAIL_APP_NAME }": [
         "${ MAIL_APP_NAME } kullanmayan"
@@ -5694,8 +5698,11 @@
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "Gönderilecek çok fazla ileti var. Lütfen, bunun zamanlanması için başka bir ileti gönderilene kadar bekleyin."
       ],
-      "Turn off to only search by date, name, or email address. To disable search message content and delete downloaded messages, go to settings.": [
-        "Yalnızca tarihe, ada veya e-posta adresine göre arama yapmak için bu seçeneği kapatın. İleti içeriği aramayı devre dışı bırakmak ve indirilen iletileri silmek için ayarlara gidin."
+      "Trackers blocked:": [
+        "Engellenen izleyiciler:"
+      ],
+      "Turn off to only search by date, name, email address, or subject line. To disable search message content and delete downloaded messages, go to settings.": [
+        "Yalnızca tarihe, ada, e-posta adresine veya konu satırına göre arama yapmak için bu seçeneği kapatın. İleti içeriği aramayı devre dışı bırakmak ve indirilen iletileri silmek için ayarlara gidin."
       ],
       "Turn on to search the content of your messages": [
         "İletilerinizin içeriklerini arayabilmek için açın"
@@ -5835,6 +5842,9 @@
       "You can check the progress ${ importProgressLink }.": [
         "İlerlemeye bakabilirsiniz ${ importProgressLink }."
       ],
+      "You can click links in this email without being profiled and leaking your online activity with advertisers.": [
+        "Profilinizle ilgili bilgiler vermeden ve çevrim içi etkinliğinizi reklam verenlere sızdırmadan bu e-postadaki bağlantılara tıklayabilirsiniz."
+      ],
       "You can either update your search query or ${ button }": [
         "Arama sorgusunu güncelle ya da ${ button }"
       ],
@@ -5843,6 +5853,9 @@
       ],
       "You can import one data type at a time.": [
         "Bir seferde bir veri türünü içe aktarabilirsiniz."
+      ],
+      "You can read this email without revealing your interactions, location, or device to advertisers.": [
+        "Bu e-postayı, etkileşiminizi, konumunuzu veya aygıtınızı reklam verenlere açıklamadan okuyabilirsiniz."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Bu klasöre yeni e-posta iletileri geldiğinde uyarı almak için bildirimleri açabilirsiniz."
@@ -6323,6 +6336,9 @@
       "City": [
         "İl"
       ],
+      "Cleaned": [
+        "Temizlendi"
+      ],
       "Code is 6 digits without spaces": [
         "Doğrulama kodu boşluk içermeyen 6 rakamdan oluşur"
       ],
@@ -6524,6 +6540,9 @@
       "OK": [
         "İdare eder"
       ],
+      "Open in a new tab": [
+        "Yeni sekmede aç"
+      ],
       "Operating system": [
         "İşletim sistemi"
       ],
@@ -6538,6 +6557,9 @@
       ],
       "Or": [
         "Veya"
+      ],
+      "Original link": [
+        "Özgün bağlantı"
       ],
       "Participants": [
         "Katılımcılar"
@@ -7032,11 +7054,6 @@
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
         "${ appName } uygulamasının yeni bir sürümü yayınlanmış ${ reloadButton }."
-      ]
-    },
-    "Message has been sent to the user via a SimpleLogin alias": {
-      "Delivered via SimpleLogin by ${ BRAND_NAME }": [
-        "SimpleLogin ile ${ BRAND_NAME } üzerine gönderildi"
       ]
     },
     "Message image": {
@@ -7731,6 +7748,22 @@
       "We have detected some warnings. The following email address may not receive emails:": [
         "Bazı uyarılarla karşılaştık. Şu e-posta adresi, e-postaları alamayabilir:",
         "Bazı uyarılarla karşılaştık. Şu e-posta adresleri, e-postaları alamayabilir:"
+      ]
+    },
+    "Sender verification details": {
+      "Sender verification": [
+        "Gönderici doğrulama"
+      ],
+      "Sender verification failed: ${ icon.senderVerificationDetails.description }": [
+        "Gönderici doğrulanamadı: ${ icon.senderVerificationDetails.description }"
+      ],
+      "Sender verified: ${ icon.senderVerificationDetails.description }": [
+        "Gönderici doğrulandı: ${ icon.senderVerificationDetails.description }"
+      ]
+    },
+    "Sender verification error": {
+      "Verification key is not in the list of trusted keys.": [
+        "Doğrulama anahtarı, güvenilen anahtarlar listesinde bulunmuyor."
       ]
     },
     "Sent email icon": {
@@ -8908,6 +8941,9 @@
       "No attachment found": [
         "Herhangi bir ek dosya bulunamadı"
       ],
+      "No trackers found": [
+        "Herhangi bir izleyici bulunamadı"
+      ],
       "Open actions dropdown": [
         "İşlemler menüsünü aç"
       ],
@@ -8934,6 +8970,9 @@
       ],
       "Previous message": [
         "Önceki ileti"
+      ],
+      "Protect your email": [
+        "E-postanızı koruyun"
       ],
       "Re-sign all contacts": [
         "Tüm kişileri yeniden imzala"
@@ -9045,6 +9084,9 @@
       ],
       "Subject missing": [
         "Konu eksik"
+      ],
+      "This email is protected": [
+        "Bu e-posta korunuyor"
       ],
       "To": [
         "Kime"

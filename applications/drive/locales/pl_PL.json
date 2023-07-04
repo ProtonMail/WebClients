@@ -3961,6 +3961,9 @@
       "Something went wrong, please try again later.": [
         "Coś poszło nie tak. Spróbuj ponownie później."
       ],
+      "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
+        "Subskrypcja wkrótce się zakończy. Reaktywuj ją do ${ byDate }, aby zachować bonusy planu ${ planName }. ${ reactivateLink }"
+      ],
       "support team": [
         "pomocą techniczną"
       ],
@@ -4817,6 +4820,9 @@
       ]
     },
     "Link": {
+      "${ DRIVE_APP_NAME } Windows app": [
+        "Aplikacja ${ DRIVE_APP_NAME } na Windowsa"
+      ],
       "clearing your browser cache": [
         "wyczyszczenie pamięci podręcznej przeglądarki"
       ],
@@ -4831,6 +4837,9 @@
       ],
       "Request an invite": [
         "Poproś o zaproszenie"
+      ],
+      "Seamlessly sync files and folders between your computer and ${ DRIVE_APP_NAME }.": [
+        "Synchronizuj pliki oraz foldery między urządzeniem i ${ DRIVE_APP_NAME }."
       ],
       "Shared": [
         "Udostępnione"
@@ -6610,10 +6619,10 @@
         "Proces importowania rozpocznie się od najnowszych wiadomości."
       ],
       "The selected theme will be active when your system is set to \"dark mode\"": [
-        "Wybrany motyw będzie aktywny, gdy w systemie jest ustawiony ciemny motyw"
+        "Wybrany motyw będzie aktywny, kiedy w systemie będzie ustawiony ciemny motyw"
       ],
       "The selected theme will be active when your system is set to \"light mode\"": [
-        "Wybrany motyw będzie aktywny, gdy w systemie jest ustawiony jasny motyw"
+        "Wybrany motyw będzie aktywny, kiedy w systemie będzie ustawiony jasny motyw"
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Prześlij klucz publiczny, aby włączyć wysyłanie wiadomości zaszyfrowanych end-to-end dla tego adresu e-mail"

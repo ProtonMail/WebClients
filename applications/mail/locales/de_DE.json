@@ -124,6 +124,9 @@
       "Block": [
         "Sperren"
       ],
+      "Block email tracking": [
+        "E-Mail-Tracking blockieren"
+      ],
       "Block messages from this sender": [
         "Nachrichten von diesem Absender sperren"
       ],
@@ -362,9 +365,6 @@
       ],
       "Email settings": [
         "E-Mail-Einstellungen"
-      ],
-      "Emoji": [
-        "Emoji"
       ],
       "Enable": [
         "Aktivieren"
@@ -1051,9 +1051,6 @@
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Versuche erneut zu speichern. Das Speichern ist fehlgeschlagen aufgrund von: ${ saveError }"
-      ],
-      "Turn on tracker protection": [
-        "Tracker-Schutz aktivieren"
       ],
       "Unblock": [
         "Als kein Spam markieren"
@@ -2964,6 +2961,12 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Du kannst Kontakte, die du weder zusammenführen noch behalten willst, zum Löschen vormerken. Das Löschen erfolgt erst, wenn du auf die Schaltfläche „Zusammenführen“ klickst."
+      ],
+      "You can read the message and click on links without being tracked with email tracker protection.": [
+        "Mit dem E-Mail-Tracker-Schutz kannst du die Nachricht lesen und auf Links klicken, ohne verfolgt zu werden."
+      ],
+      "You can read the message and click on links without being tracked.": [
+        "Du kannst die Nachricht lesen und auf Links klicken, ohne verfolgt zu werden."
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4637,9 +4640,17 @@
         "${ messagesNotAuthorizedToMove } Nachricht konnte nicht verschoben werden.",
         "${ messagesNotAuthorizedToMove } Nachrichten konnten nicht verschoben werden."
       ],
-      "${ numberOfTrackers } email tracker blocked": [
-        "${ numberOfTrackers } E-Mail-Tracker gesperrt",
-        "${ numberOfTrackers } E-Mail-Tracker gesperrt"
+      "${ numberOfImageTrackers } email tracker blocked": [
+        "${ numberOfImageTrackers } E-Mail-Tracker gesperrt",
+        "${ numberOfImageTrackers } E-Mail-Tracker gesperrt"
+      ],
+      "${ numberOfImageTrackers } tracker blocked": [
+        "${ numberOfImageTrackers } E-Mail-Tracker gesperrt",
+        "${ numberOfImageTrackers } E-Mail-Tracker gesperrt"
+      ],
+      "${ numberOfUTMTrackers } link cleaned": [
+        "${ numberOfUTMTrackers } Link bereinigt",
+        "${ numberOfUTMTrackers } Links bereinigt"
       ],
       "${ numContact } contact": [
         "${ numContact } Kontakt",
@@ -5003,16 +5014,6 @@
       "Email tracker protection is disabled": [
         "E-Mail-Nachverfolgungsschutz ist deaktiviert"
       ],
-      "Email trackers can violate your privacy. ${ BRAND_NAME } did not find any trackers in this message.": [
-        "E-Mail-Tracker können deine Privatsphäre gefährden. ${ BRAND_NAME } hat keine Tracker in dieser Nachricht gefunden."
-      ],
-      "Email trackers can violate your privacy. ${ BRAND_NAME } found and blocked ${ numberOfTrackers } tracker.": [
-        "E-Mail-Tracker können deine Privatsphäre gefährden. ${ BRAND_NAME } hat ${ numberOfTrackers } Tracker gefunden und blockiert.",
-        "E-Mail-Tracker können deine Privatsphäre gefährden. ${ BRAND_NAME } hat ${ numberOfTrackers } Tracker gefunden und blockiert."
-      ],
-      "Email trackers can violate your privacy. Turn on tracker protection to prevent senders from knowing whether and when you have opened a message.": [
-        "E-Mail-Tracker können deine Privatsphäre verletzen. Aktiviere den Tracker-Schutz, damit Absender nicht wissen, ob und wann du eine Nachricht geöffnet hast."
-      ],
       "Emails are automatically signed": [
         "E-Mails werden automatisch signiert."
       ],
@@ -5191,6 +5192,9 @@
       "Link type": [
         "Linktyp"
       ],
+      "Links cleaned:": [
+        "Links bereinigt:"
+      ],
       "Loading": [
         "Wird geladen"
       ],
@@ -5273,9 +5277,6 @@
       "No email address": [
         "Keine E-Mail-Adresse"
       ],
-      "No email trackers found": [
-        "Keine E-Mail-Tracker gefunden"
-      ],
       "No folder found": [
         "Keine Ordner gefunden"
       ],
@@ -5291,14 +5292,17 @@
       "No label selected": [
         "Keine Kategorie ausgewählt"
       ],
+      "No links cleaned": [
+        "Keine Links bereinigt"
+      ],
       "No more results found": [
         "Keine weiteren Ergebnisse gefunden"
       ],
       "No results found": [
         "Keine Ergebnisse gefunden"
       ],
-      "No trackers found, but some images could not be loaded with tracking protection": [
-        "Keine Tracker gefunden, aber einige Bilder konnten nicht mit Tracking-Schutz geladen werden"
+      "No trackers found": [
+        "Kein E-Mail-Tracker gefunden"
       ],
       "non-${ MAIL_APP_NAME }": [
         "Nicht-${ MAIL_APP_NAME }"
@@ -5694,8 +5698,11 @@
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "Es befinden sich zu viele Nachrichten für den Versand in der Warteschlange. Bitte warte, bis eine andere Nachricht gesendet wurde, um diese Nachricht planen zu können."
       ],
-      "Turn off to only search by date, name, or email address. To disable search message content and delete downloaded messages, go to settings.": [
-        "Schalte diese Option aus, um nur nach Datum, Name oder E-Mail-Adresse zu suchen. Um die Suche nach Nachrichteninhalten zu deaktivieren und heruntergeladene Nachrichten zu löschen, gehe zu den Einstellungen."
+      "Trackers blocked:": [
+        "Tracker blockiert:"
+      ],
+      "Turn off to only search by date, name, email address, or subject line. To disable search message content and delete downloaded messages, go to settings.": [
+        "Schalte diese Option aus, um nur nach Datum, Name, E-Mail-Adresse oder Betreff zu suchen. Um die Suche nach Nachrichteninhalten zu deaktivieren und heruntergeladene Nachrichten zu löschen, gehe zu den Einstellungen."
       ],
       "Turn on to search the content of your messages": [
         "Aktivieren, um den Inhalt deiner Nachrichten durchsuchen zu können"
@@ -5835,6 +5842,9 @@
       "You can check the progress ${ importProgressLink }.": [
         "Du kannst den Fortschritt hier ${ importProgressLink } überprüfen."
       ],
+      "You can click links in this email without being profiled and leaking your online activity with advertisers.": [
+        "Du kannst auf Links in dieser E-Mail klicken, ohne dass ein Profil erstellt wird, und die Online-Aktivitäten an Werbetreibende weitergegeben werden."
+      ],
       "You can either update your search query or ${ button }": [
         "Du kannst deine Suchanfrage entweder aktualisieren oder ${ button }"
       ],
@@ -5843,6 +5853,9 @@
       ],
       "You can import one data type at a time.": [
         "Du kannst jeweils nur einen Datentyp importieren."
+      ],
+      "You can read this email without revealing your interactions, location, or device to advertisers.": [
+        "E-Mail kann gelesen werden, ohne dass Interaktionen, der Standort oder die Gerätekennung an Werbetreibende weitergegeben wird."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Du kannst Mitteilungen aktivieren, um Benachrichtigungen zu erhalten, sobald neue E-Mail-Nachrichten in diesem Ordner eingehen."
@@ -6019,11 +6032,6 @@
       "You have enabled Address Verification with Trusted Keys for this email address,\nbut no active encryption key has been trusted.\nYou must trust a key valid for sending in order to send a message to this email address.": [
         "Du hast die Adressüberprüfung mit vertrauenswürdigen Schlüsseln für diese E-Mail-Adresse aktiviert, aber es wurde kein aktiver Verschlüsselungsschlüssel als vertrauenswürdig eingestuft.\nDu musst einem für den Versand gültigen Schlüssel vertrauen, um eine Nachricht an diese E-Mail-Adresse senden zu können.",
         "Du hast die Adressüberprüfung mit vertrauenswürdigen Schlüsseln für diese E-Mail-Adressen aktiviert, aber es wurde kein aktiver Verschlüsselungsschlüssel als vertrauenswürdig eingestuft.\nDu musst den für den Versand gültigen Schlüsseln vertrauen, um eine Nachricht an diese E-Mail-Adressen senden zu können."
-      ]
-    },
-    "Key transparency details button": {
-      "Click here for more details.": [
-        "Klicke hier für weitere Details."
       ]
     },
     "Key validation warning": {
@@ -6328,6 +6336,9 @@
       "City": [
         "Stadt"
       ],
+      "Cleaned": [
+        "Bereinigt"
+      ],
       "Code is 6 digits without spaces": [
         "Der Code ist 6-stellig ohne Leerzeichen"
       ],
@@ -6529,6 +6540,9 @@
       "OK": [
         "OK"
       ],
+      "Open in a new tab": [
+        "In einem neuen Tab öffnen"
+      ],
       "Operating system": [
         "Betriebssystem"
       ],
@@ -6543,6 +6557,9 @@
       ],
       "Or": [
         "Oder"
+      ],
+      "Original link": [
+        "Original-Link"
       ],
       "Participants": [
         "Teilnehmer"
@@ -7037,11 +7054,6 @@
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
         "Eine neue Version von ${ appName } ist verfügbar. ${ reloadButton }."
-      ]
-    },
-    "Message has been sent to the user via a SimpleLogin alias": {
-      "Delivered via SimpleLogin by ${ BRAND_NAME }": [
-        "Zugestellt über SimpleLogin von ${ BRAND_NAME }"
       ]
     },
     "Message image": {
@@ -8929,6 +8941,9 @@
       "No attachment found": [
         "Kein Anhang gefunden"
       ],
+      "No trackers found": [
+        "Kein E-Mail-Tracker gefunden"
+      ],
       "Open actions dropdown": [
         "Auswahlliste „Aktionen“ öffnen"
       ],
@@ -8955,6 +8970,9 @@
       ],
       "Previous message": [
         "Vorherige Nachricht"
+      ],
+      "Protect your email": [
+        "Schütze deine E-Mail-Adresse"
       ],
       "Re-sign all contacts": [
         "Alle Kontakte neu signieren"
@@ -9066,6 +9084,9 @@
       ],
       "Subject missing": [
         "Betreff fehlt"
+      ],
+      "This email is protected": [
+        "Diese Nachricht ist geschützt."
       ],
       "To": [
         "An"

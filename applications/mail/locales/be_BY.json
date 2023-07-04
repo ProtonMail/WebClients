@@ -124,6 +124,9 @@
       "Block": [
         "Блакіраваць"
       ],
+      "Block email tracking": [
+        "Блакіраваць адсочванне электроннай пошты"
+      ],
       "Block messages from this sender": [
         "Блакіраваць паведамленні ад гэтага адпраўніка"
       ],
@@ -366,9 +369,6 @@
       ],
       "Email settings": [
         "Налады электроннай пошты"
-      ],
-      "Emoji": [
-        "Эмодзі"
       ],
       "Enable": [
         "Уключыць"
@@ -1059,9 +1059,6 @@
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Паспрабуйце захаваць яшчэ раз пазней. Не ўдалося выканаць аперацыю па прычыне: ${ saveError }"
-      ],
-      "Turn on tracker protection": [
-        "Уключыць абарону ад праграм сачэння"
       ],
       "Unblock": [
         "Разблакіраваць"
@@ -2986,6 +2983,12 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Вы можаце пазначыць тыя кантакты, якія вы не хочаце аб'яднаць і пакідаць. Выдаленне адбываецца толькі пасля націску кнопкі аб'яднання"
+      ],
+      "You can read the message and click on links without being tracked with email tracker protection.": [
+        "Вы можаце прачытаць паведамленне і націснуць на спасылку не хвалюючыся пра адсочванне дзякуючы абароне ад праграм сачэння электроннай пошты."
+      ],
+      "You can read the message and click on links without being tracked.": [
+        "Вы можаце прачытаць паведамленне і націснуць на спасылку не хвалюючыся пра адсочванне."
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4739,11 +4742,23 @@
         "Не атрымалася перамясціць ${ messagesNotAuthorizedToMove } паведамленняў.",
         "Не атрымалася перамясціць ${ messagesNotAuthorizedToMove } паведамленні."
       ],
-      "${ numberOfTrackers } email tracker blocked": [
-        "Заблакіравана ${ numberOfTrackers } праграма сачэння",
-        "Заблакіраваны ${ numberOfTrackers } праграмы сачэння",
-        "Заблакіраваны ${ numberOfTrackers } праграм сачэння",
-        "Заблакіраваны ${ numberOfTrackers } праграмы сачэння"
+      "${ numberOfImageTrackers } email tracker blocked": [
+        "Заблакіравана ${ numberOfImageTrackers } праграма сачэння электроннай пошты",
+        "Заблакіраваны ${ numberOfImageTrackers } праграмы сачэння электроннай пошты",
+        "Заблакіраваны ${ numberOfImageTrackers } праграм сачэння электроннай пошты",
+        "Заблакіраваны ${ numberOfImageTrackers } праграм сачэння электроннай пошты"
+      ],
+      "${ numberOfImageTrackers } tracker blocked": [
+        "Заблакіравана ${ numberOfImageTrackers } праграма сачэння",
+        "Заблакіраваны ${ numberOfImageTrackers } праграмы сачэння",
+        "Заблакіраваны ${ numberOfImageTrackers } праграм сачэння",
+        "Заблакіраваны ${ numberOfImageTrackers } праграм сачэння"
+      ],
+      "${ numberOfUTMTrackers } link cleaned": [
+        "${ numberOfUTMTrackers } спасылка ачышчана",
+        "${ numberOfUTMTrackers } спасылкі ачышчаны",
+        "${ numberOfUTMTrackers } спасылак ачышчаны",
+        "${ numberOfUTMTrackers } спасылак ачышчаны"
       ],
       "${ numContact } contact": [
         "${ numContact } кантакт",
@@ -5165,18 +5180,6 @@
       "Email tracker protection is disabled": [
         "Абарона электроннай пошты ад праграм сачэння адключана"
       ],
-      "Email trackers can violate your privacy. ${ BRAND_NAME } did not find any trackers in this message.": [
-        "Праграмы сачэння электроннай пошты могуць парушыць вашу прыватнасць. ${ BRAND_NAME } не выявіў ніякіх праграм сачэння ў гэтым паведамленні."
-      ],
-      "Email trackers can violate your privacy. ${ BRAND_NAME } found and blocked ${ numberOfTrackers } tracker.": [
-        "Праграмы сачэння электроннай пошты могуць парушыць вашу прыватнасць. ${ BRAND_NAME } знайшоў і заблакіраваў ${ numberOfTrackers } праграму сачэння.",
-        "Праграмы сачэння электроннай пошты могуць парушыць вашу прыватнасць. ${ BRAND_NAME } знайшоў і заблакіраваў ${ numberOfTrackers } праграмы сачэння.",
-        "Праграмы сачэння электроннай пошты могуць парушыць вашу прыватнасць. ${ BRAND_NAME } знайшоў і заблакіраваў ${ numberOfTrackers } праграм сачэння.",
-        "Праграмы сачэння электроннай пошты могуць парушыць вашу прыватнасць. ${ BRAND_NAME } знайшоў і заблакіраваў ${ numberOfTrackers } праграмы сачэння."
-      ],
-      "Email trackers can violate your privacy. Turn on tracker protection to prevent senders from knowing whether and when you have opened a message.": [
-        "Праграмы сачэння электроннай пошты могуць парушыць вашу прыватнасць. Уключыце абарону ад іх, каб адпраўнікі не маглі даведацца, ці адкрывалі вы паведамленне."
-      ],
       "Emails are automatically signed": [
         "Лісты падпісваюцца аўтаматычна"
       ],
@@ -5369,6 +5372,9 @@
       "Link type": [
         "Тып спасылкі"
       ],
+      "Links cleaned:": [
+        "Спасылак ачышчана:"
+      ],
       "Loading": [
         "Загрузка"
       ],
@@ -5453,9 +5459,6 @@
       "No email address": [
         "Няма адраса электроннай пошты"
       ],
-      "No email trackers found": [
-        "Праграмы сачэння не знойдзены"
-      ],
       "No folder found": [
         "Папка не знойдзена"
       ],
@@ -5471,14 +5474,17 @@
       "No label selected": [
         "Метка не выбрана"
       ],
+      "No links cleaned": [
+        "Спасылкі не ачышчаны"
+      ],
       "No more results found": [
         "Больш нічога не знойдзена"
       ],
       "No results found": [
         "Нічога не знойдзена"
       ],
-      "No trackers found, but some images could not be loaded with tracking protection": [
-        "Праграмы сачэння не знойдзены, але некаторыя відарысы не былі загружаны з актыўнай абаронай ад праграм сачэння"
+      "No trackers found": [
+        "Праграмы сачэння не знойдзены"
       ],
       "non-${ MAIL_APP_NAME }": [
         "па-за сэрвісам ${ MAIL_APP_NAME }"
@@ -5882,8 +5888,11 @@
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "Занадта шмат паведамленняў чакаюць адпраўкі. Пачакайце, пакуль адправіцца іншае паведамленне, каб запланаваць гэта."
       ],
-      "Turn off to only search by date, name, or email address. To disable search message content and delete downloaded messages, go to settings.": [
-        "Выключыце, каб шукаць толькі па даце, імі або адрасе электроннай пошты. Каб выключыць пошук па змесціве паведамлення, і выдаліць спампаваныя паведамленні, перайдзіце ў налады."
+      "Trackers blocked:": [
+        "Праграм сачэння заблакіравана:"
+      ],
+      "Turn off to only search by date, name, email address, or subject line. To disable search message content and delete downloaded messages, go to settings.": [
+        "Выключыце, каб шукаць толькі па даце, імі або адрасе электроннай пошты або радку тэмы. Каб выключыць пошук па змесціве паведамлення, і выдаліць спампаваныя паведамленні, перайдзіце ў налады."
       ],
       "Turn on to search the content of your messages": [
         "Уключыце, каб шукаць змесціва вашых паведамленняў"
@@ -6023,6 +6032,9 @@
       "You can check the progress ${ importProgressLink }.": [
         "Вы можаце праверыць ход выканання ${ importProgressLink }."
       ],
+      "You can click links in this email without being profiled and leaking your online activity with advertisers.": [
+        "Вы можаце націснуць на спасылку ў гэтым лісце без профілю і без рызыкі раскрыцця рэкламадаўцам сваёй актыўнасці ў інтэрнэце."
+      ],
       "You can either update your search query or ${ button }": [
         "Вы можаце змяніць ваш пошукавы запыт або ${ button }"
       ],
@@ -6031,6 +6043,9 @@
       ],
       "You can import one data type at a time.": [
         "Вы можаце імпартаваць адзін тып даных за раз."
+      ],
+      "You can read this email without revealing your interactions, location, or device to advertisers.": [
+        "Вы можаце прачытаць гэты ліст не раскрываючы рэкламадаўцам сваю ўзаемасувязь, месцазнаходжанне або прыладу."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Вы можаце ўключыць апавяшчэнні, каб атрымліваць абвесткі пра новыя паведамленні электроннай пошты ў гэтай папцы."
@@ -6535,6 +6550,9 @@
       "City": [
         "Горад"
       ],
+      "Cleaned": [
+        "Ачышчана"
+      ],
       "Code is 6 digits without spaces": [
         "Код складаецца з 6 лічбаў без прабелаў"
       ],
@@ -6736,6 +6754,9 @@
       "OK": [
         "Добра"
       ],
+      "Open in a new tab": [
+        "Адкрыць у новай укладцы"
+      ],
       "Operating system": [
         "Аперацыйная сістэма"
       ],
@@ -6750,6 +6771,9 @@
       ],
       "Or": [
         "Або"
+      ],
+      "Original link": [
+        "Арыгінальная спасылка"
       ],
       "Participants": [
         "Удзельнікі"
@@ -7254,11 +7278,6 @@
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
         "Даступна новая версія ${ appName }. ${ reloadButton }."
-      ]
-    },
-    "Message has been sent to the user via a SimpleLogin alias": {
-      "Delivered via SimpleLogin by ${ BRAND_NAME }": [
-        "Дастаўлена праз SimpleLogin з дапамогай ${ BRAND_NAME }"
       ]
     },
     "Message image": {
@@ -7975,6 +7994,22 @@
         "Мы выявілі некаторыя папярэджанні. Атрымальнікі з наступнымі адрасамі могуць не атрымаць ваш ліст:",
         "Мы выявілі некаторыя папярэджанні. Атрымальнікі з наступнымі адрасамі могуць не атрымаць ваш ліст:",
         "Мы выявілі некаторыя папярэджанні. Атрымальнікі з наступнымі адрасамі могуць не атрымаць ваш ліст:"
+      ]
+    },
+    "Sender verification details": {
+      "Sender verification": [
+        "Праверка адпраўніка"
+      ],
+      "Sender verification failed: ${ icon.senderVerificationDetails.description }": [
+        "Не ўдалося праверыць адпраўніка: ${ icon.senderVerificationDetails.description }"
+      ],
+      "Sender verified: ${ icon.senderVerificationDetails.description }": [
+        "Адпраўнік правераны: ${ icon.senderVerificationDetails.description }"
+      ]
+    },
+    "Sender verification error": {
+      "Verification key is not in the list of trusted keys.": [
+        "Ключ праверкі не знаходзіцца ў спісе давераных ключоў."
       ]
     },
     "Sent email icon": {
@@ -9182,6 +9217,9 @@
       "No attachment found": [
         "Далучэнні не знойдзены"
       ],
+      "No trackers found": [
+        "Праграмы сачэння не знойдзены"
+      ],
       "Open actions dropdown": [
         "Адкрыць спіс даступных дзеянняў"
       ],
@@ -9208,6 +9246,9 @@
       ],
       "Previous message": [
         "Папярэдняе паведамленне"
+      ],
+      "Protect your email": [
+        "Абараніць сваю электронную пошту"
       ],
       "Re-sign all contacts": [
         "Паўторна падпісаць усе кантакты"
@@ -9319,6 +9360,9 @@
       ],
       "Subject missing": [
         "Няма тэмы"
+      ],
+      "This email is protected": [
+        "Гэта электронная пошта абаронена"
       ],
       "To": [
         "Каму"

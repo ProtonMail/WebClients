@@ -124,6 +124,9 @@
       "Block": [
         "Tiltás"
       ],
+      "Block email tracking": [
+        "E-mail követés megakadályozása"
+      ],
       "Block messages from this sender": [
         "Üzenetek tiltása ettől a feladótól"
       ],
@@ -362,9 +365,6 @@
       ],
       "Email settings": [
         "E-mail beállítások"
-      ],
-      "Emoji": [
-        "Hangulatjel"
       ],
       "Enable": [
         "Engedélyezés"
@@ -648,6 +648,9 @@
       ],
       "Move all messages from this label": [
         "Helyezzen át minden üzenetet ebből a címkéből"
+      ],
+      "Move all to archive": [
+        "Összes áthelyezése az archívumba"
       ],
       "Move all to trash": [
         "Az összes áthelyezése a lomtárba"
@@ -1048,9 +1051,6 @@
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Próbálja újra. Sikertelen mentés oka: ${ saveError }"
-      ],
-      "Turn on tracker protection": [
-        "Követés védelem bekapcsolása"
       ],
       "Unblock": [
         "Feloldás"
@@ -2961,6 +2961,12 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Amelyekből egyiket sem szeretné megtartani, azokat törlésre jelölheti. A törlés az egyesítés gomb megnyomása után fog megtörténni"
+      ],
+      "You can read the message and click on links without being tracked with email tracker protection.": [
+        "Email követési védelemmel el tudja olvasni ezt az üzenetet és rákattinthat a hivatkozásokra anélkül, hogy követnék."
+      ],
+      "You can read the message and click on links without being tracked.": [
+        "El tudja olvasni ezt az üzenetet és rákattinthat a hivatkozásokra anélkül, hogy követnék."
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4634,9 +4640,17 @@
         "${ messagesNotAuthorizedToMove } üzenet nem helyezhető át.",
         "${ messagesNotAuthorizedToMove } üzenet nem helyezhető át."
       ],
-      "${ numberOfTrackers } email tracker blocked": [
-        "${ numberOfTrackers } e-mail követő blokkolva",
-        "${ numberOfTrackers } e-mail követő blokkolva"
+      "${ numberOfImageTrackers } email tracker blocked": [
+        "${ numberOfImageTrackers } e-mail követő blokkolva",
+        "${ numberOfImageTrackers } e-mail követő blokkolva"
+      ],
+      "${ numberOfImageTrackers } tracker blocked": [
+        "${ numberOfImageTrackers } követő blokkolva",
+        "${ numberOfImageTrackers } követő blokkolva"
+      ],
+      "${ numberOfUTMTrackers } link cleaned": [
+        "${ numberOfUTMTrackers } link kitisztítva",
+        "${ numberOfUTMTrackers } link kitisztítva"
       ],
       "${ numContact } contact": [
         "${ numContact } névjegy",
@@ -4802,6 +4816,9 @@
       ],
       "Are you sure you want to discard your changes?": [
         "Biztos abban, hogy elveti a módosításokat?"
+      ],
+      "Are you sure you want to move all messages in this location to Archive?": [
+        "Biztosan áthelyezi az összes üzenetet ebben az Archívumba?"
       ],
       "Are you sure you want to move all messages in this location to Trash?": [
         "Biztosan áthelyezi az összes üzenetet ebben a Kukába?"
@@ -4994,16 +5011,6 @@
       "Email tracker protection is disabled": [
         "E-mail követő védelem ki van kapcsolva"
       ],
-      "Email trackers can violate your privacy. ${ BRAND_NAME } did not find any trackers in this message.": [
-        "Ez e-mail nyomkövetők megsérthetik a magánszféráját. A ${ BRAND_NAME } egyetlen követőt sem talált ebben az üzenetben."
-      ],
-      "Email trackers can violate your privacy. ${ BRAND_NAME } found and blocked ${ numberOfTrackers } tracker.": [
-        "Az e-mail követők megsérthetik a magánszféráját. A ${ BRAND_NAME } ${ numberOfTrackers } követőt talált és tiltott le.",
-        "Az e-mail követők megsérthetik a magánszféráját. A ${ BRAND_NAME } ${ numberOfTrackers } követőt talált és tiltott le."
-      ],
-      "Email trackers can violate your privacy. Turn on tracker protection to prevent senders from knowing whether and when you have opened a message.": [
-        "Az e-mail követők megsérthetik a magánszféráját. Kapcsolja be a követés elleni védelmet, hogy a feladók ne értesülhessenek arról, ha és amikor megnyitja az üzenetet."
-      ],
       "Emails are automatically signed": [
         "Az e-mailek automatikusan aláírásra kerülnek"
       ],
@@ -5182,6 +5189,9 @@
       "Link type": [
         "Hivatkozás típusa"
       ],
+      "Links cleaned:": [
+        "Hivatkozások kitisztítva:"
+      ],
       "Loading": [
         "Betöltés"
       ],
@@ -5264,9 +5274,6 @@
       "No email address": [
         "Nincs e-mail cím"
       ],
-      "No email trackers found": [
-        "Nincs e-mail követő"
-      ],
       "No folder found": [
         "Nem található mappa"
       ],
@@ -5282,14 +5289,17 @@
       "No label selected": [
         "Nincs kiválasztva címke"
       ],
+      "No links cleaned": [
+        "Nincs hivatkozás kitisztítva"
+      ],
       "No more results found": [
         "Nincs több találat"
       ],
       "No results found": [
         "Nincs találat"
       ],
-      "No trackers found, but some images could not be loaded with tracking protection": [
-        "Egy követőt se találtunk, de néhány képet nem lehetett betölteni követő-védelem mellett"
+      "No trackers found": [
+        "Nem található követő"
       ],
       "non-${ MAIL_APP_NAME }": [
         "nem-${ MAIL_APP_NAME }"
@@ -5685,8 +5695,11 @@
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "Túl sok üzenet vár elküldésre. Várjon amíg elküldődik egy üzenet, mielőtt ezt ütemezné."
       ],
-      "Turn off to only search by date, name, or email address. To disable search message content and delete downloaded messages, go to settings.": [
-        "Kikapcsolásával csak dátum alapján, a nevekben és az e-mail címekben történik keresés. Az üzenetek tartalmában való keresés kikapcsolásához és a letöltött üzenetek törléséhez nyissa meg a beállításokat."
+      "Trackers blocked:": [
+        "Követők blokkolva:"
+      ],
+      "Turn off to only search by date, name, email address, or subject line. To disable search message content and delete downloaded messages, go to settings.": [
+        "Kikapcsolásával csak dátum alapján, a nevekben, email címekben vagy tárgynevekben történik keresés. Az üzenetek tartalmában való keresés kikapcsolásához és a letöltött üzenetek törléséhez nyissa meg a beállításokat."
       ],
       "Turn on to search the content of your messages": [
         "Kapcsolja be, hogy az üzenetek szövegében is kereshessen"
@@ -5826,6 +5839,9 @@
       "You can check the progress ${ importProgressLink }.": [
         "Figyelemmel kísérheti a folyamatot: ${ importProgressLink }."
       ],
+      "You can click links in this email without being profiled and leaking your online activity with advertisers.": [
+        "Rá tud kattintani a hivatkozásokra ebben az emailben anélkül, hogy profil készülne magáról és kiszivárogna online tevékenysége a hirdetőknek."
+      ],
       "You can either update your search query or ${ button }": [
         "Próbálkozzon másik kereséssel vagy ${ button }"
       ],
@@ -5834,6 +5850,9 @@
       ],
       "You can import one data type at a time.": [
         "Egyszerre egyféle adat importálható."
+      ],
+      "You can read this email without revealing your interactions, location, or device to advertisers.": [
+        "El tudja olvasni ezt az emailt anélkül, hogy tevékenységét, tartózkodási helyét vagy eszközét felfedné hirdetők elől"
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Bekapcsolhatja az értesítéseket az ebbe a mappába érkező új üzenetekhez."
@@ -6129,6 +6148,9 @@
       "New message": [
         "Új üzenet"
       ],
+      "Open command panel": [
+        "Parancspanel megnyitása"
+      ],
       "Open next message": [
         "Következő üzenet megnyitása"
       ],
@@ -6310,6 +6332,9 @@
       ],
       "City": [
         "Település"
+      ],
+      "Cleaned": [
+        "Kitisztítva"
       ],
       "Code is 6 digits without spaces": [
         "A kód hatjegyű, szóközök nélkül"
@@ -6512,6 +6537,9 @@
       "OK": [
         "Megfelelő"
       ],
+      "Open in a new tab": [
+        "Megnyitás új lapon"
+      ],
       "Operating system": [
         "Operációs rendszer"
       ],
@@ -6526,6 +6554,9 @@
       ],
       "Or": [
         "Vagy"
+      ],
+      "Original link": [
+        "Eredeti hivatkozás"
       ],
       "Participants": [
         "Résztvevők"
@@ -7020,11 +7051,6 @@
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
         "A ${ appName } új verziója érhető el. ${ reloadButton }."
-      ]
-    },
-    "Message has been sent to the user via a SimpleLogin alias": {
-      "Delivered via SimpleLogin by ${ BRAND_NAME }": [
-        "A ${ BRAND_NAME } SimpleLogin szolgáltatásából"
       ]
     },
     "Message image": {
@@ -7719,6 +7745,22 @@
       "We have detected some warnings. The following email address may not receive emails:": [
         "Hiba történhetett. A következő címzett nem biztos, hogy megkapja az üzenetet:",
         "Hiba történhetett. A következő címzettek nem biztos, hogy megkapják az üzenetet:"
+      ]
+    },
+    "Sender verification details": {
+      "Sender verification": [
+        "Feladó ellenőrzése"
+      ],
+      "Sender verification failed: ${ icon.senderVerificationDetails.description }": [
+        "A feladó ellenőrzése sikertelen: ${ icon.senderVerificationDetails.description }"
+      ],
+      "Sender verified: ${ icon.senderVerificationDetails.description }": [
+        "A feladó ellenőrzése sikeres: ${ icon.senderVerificationDetails.description }"
+      ]
+    },
+    "Sender verification error": {
+      "Verification key is not in the list of trusted keys.": [
+        "A hitelesítési kulcs nincs rajta a megbízható kulcsok listáján."
       ]
     },
     "Sent email icon": {
@@ -8793,6 +8835,9 @@
       "More selections": [
         "További kijelölési lehetőségek"
       ],
+      "Move all messages to Archive": [
+        "Áthelyezi az összes üzenetet az Archívumba"
+      ],
       "Move all messages to Trash": [
         "Áthelyezi az összes üzenetet a lomtárba"
       ],
@@ -8829,6 +8874,9 @@
       "No attachment found": [
         "Nincs melléklet"
       ],
+      "No trackers found": [
+        "Nem található követő"
+      ],
       "Open actions dropdown": [
         "Műveletek menü megnyitása"
       ],
@@ -8855,6 +8903,9 @@
       ],
       "Previous message": [
         "Előző üzenet"
+      ],
+      "Protect your email": [
+        "Óvja meg emailjeit"
       ],
       "Re-sign all contacts": [
         "Az összes névjegy ismételt aláírása"
@@ -8966,6 +9017,9 @@
       ],
       "Subject missing": [
         "Tárgy hiányzik"
+      ],
+      "This email is protected": [
+        "Ez az email védett."
       ],
       "To": [
         "Címzett"

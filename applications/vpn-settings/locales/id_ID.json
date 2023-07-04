@@ -81,7 +81,7 @@
         "Salin"
       ],
       "Copy email to clipboard": [
-        "Salin email ke clipboard"
+        "Salin email ke papan klip"
       ],
       "Create": [
         "Buat"
@@ -1603,6 +1603,9 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Kolom ini harus diisi dengan minimal ${ minimumLength } karakter."
       ],
+      "Try again later": [
+        "Coba lagi nanti"
+      ],
       "Try using only letters, numerals, and _.-": [
         "Cobalah untuk hanya menggunakan huruf, angka, dan tanda _.-"
       ],
@@ -2421,7 +2424,7 @@
         "Pelajari lebih lanjut"
       ],
       "Link copied to clipboard": [
-        "Tautan disalin ke clipboard"
+        "Tautan disalin ke papan klip"
       ],
       "Loading": [
         "Memuat"
@@ -3399,6 +3402,9 @@
       "Forgot username?": [
         "Lupa nama pengguna?"
       ],
+      "Help translate": [
+        "Bantu terjemahkan"
+      ],
       "How to pay with Bitcoin?": [
         "Bagaimana cara membayar dengan Bitcoin?"
       ],
@@ -3591,6 +3597,9 @@
       "${ n } folders and labels": [
         "${ n } folder and label"
       ],
+      "${ n } hide-my-email aliases": [
+        "${ n } alias hide-my-email"
+      ],
       "${ n } labels": [
         "${ n } label"
       ],
@@ -3636,6 +3645,9 @@
       "Auto-reply": [
         "Pesan balasan otomatis"
       ],
+      "Autofill credit cards (coming soon)": [
+        "Isi nomor kartu kredit secara otomatis (segera hadir)"
+      ],
       "Available on all platforms": [
         "Tersedia di semua platform"
       ],
@@ -3653,6 +3665,9 @@
       ],
       "Contact groups management": [
         "Pengelolaan grup kontak"
+      ],
+      "Custom domains for email aliases": [
+        "Domain khusus untuk alias email"
       ],
       "Custom email domains": [
         "Domain email khusus"
@@ -3734,6 +3749,9 @@
       ],
       "No-logs policy": [
         "Kebijakan tanpa log"
+      ],
+      "Organize items with multiple vaults": [
+        "Kelola item yang memiliki berbagai brankas"
       ],
       "Password-protected Emails": [
         "Email yang terlindung oleh kata sandi"
@@ -4013,6 +4031,18 @@
       ]
     },
     "new_plans: tooltip": {
+      "${ CALENDAR_APP_NAME }: end-to-end encrypted calendar": [
+        "${ CALENDAR_APP_NAME }: kalender yang terenkripsi end-to-end"
+      ],
+      "${ DRIVE_APP_NAME }: end-to-end encrypted cloud storage": [
+        "${ DRIVE_APP_NAME }: ruang penyimpanan cloud yang terenkripsi end-to-end"
+      ],
+      "${ MAIL_APP_NAME }: end-to-end encrypted email": [
+        "${ MAIL_APP_NAME }: email yang terenkripsi end-to-end"
+      ],
+      "${ VPN_APP_NAME }: unblock content, browse privately": [
+        "${ VPN_APP_NAME }: buka blokir konten, jelajahi internet secara privat"
+      ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
         "Akses berbagai konten streaming seperti Netflix, Disney+, dan Prime Video di mana pun Anda berada"
       ],
@@ -4093,6 +4123,9 @@
       ],
       "Our servers’ hard disks are fully encrypted with multiple password layers so your data is protected even if our hardware is compromised": [
         "Seluruh cakram penyimpanan data yang ada di server kami terenkripsi dengan kata sandi yang berlapis, sehingga data Anda akan tetap aman bahkan apabila aset dan perangkat kami disita"
+      ],
+      "Password management and identity protection": [
+        "Pengelolaan kata sandi dan perlindungan identitas"
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Buat tanda tangan email Anda lebih personal dengan tambahan logo, ikon media sosial, rincian tautan kontak, dan lain sebagainya"
@@ -4212,6 +4245,9 @@
       ],
       "Priority support": [
         "Dukungan prioritas"
+      ],
+      "Secure your passwords and identity with an open-source and encrypted password manager.": [
+        "Amankan kata sandi dan identitas Anda dengan pengelola kata sandi open-source yang terenkripsi."
       ],
       "Support for 1 custom email domain": [
         "Dukungan 1 alamat email dengan domain khusus"
@@ -4402,7 +4438,7 @@
     },
     "Signup label": {
       "Confirm email address": [
-        "Konfirmasi alamat surel"
+        "Konfirmasi alamat email"
       ],
       "Display name": [
         "Nama tampilan"
@@ -4411,7 +4447,7 @@
         "Email"
       ],
       "Email address": [
-        "Alamat surel"
+        "Alamat email"
       ],
       "Username": [
         "Nama pengguna"
@@ -4812,7 +4848,7 @@
     },
     "Success": {
       "${ server.Domain } copied to your clipboard": [
-        "${ server.Domain } disalin ke clipboard Anda"
+        "${ server.Domain } disalin ke papan klip Anda"
       ],
       "Account deleted. Signing out...": [
         "Akun dihapus. Mengeluarkan Anda dari akun..."
@@ -5381,6 +5417,11 @@
       ],
       "The selected theme will be active when your system is set to \"light mode\"": [
         "Tema yang dipilih akan aktif pada saat sistem Anda diatur ke \"mode terang\""
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: end-to-end encrypted password manager": [
+        "${ PASS_APP_NAME }: pengelola kata sandi yang terenkripsi end-to-end"
       ]
     },
     "Tor out of date": {
