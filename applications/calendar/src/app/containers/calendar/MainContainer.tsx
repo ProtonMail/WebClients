@@ -64,7 +64,11 @@ const MainContainer = () => {
 
     const [calendarsToUnlock, setCalendarsToUnlock] = useState(() => {
         return memoedCalendars.filter(({ Flags }) => {
-            return hasBit(Flags, CALENDAR_FLAGS.RESET_NEEDED) || hasBit(Flags, CALENDAR_FLAGS.UPDATE_PASSPHRASE);
+            return (
+                hasBit(Flags, CALENDAR_FLAGS.RESET_NEEDED) ||
+                hasBit(Flags, CALENDAR_FLAGS.UPDATE_PASSPHRASE) ||
+                hasBit(Flags, CALENDAR_FLAGS.LOST_ACCESS)
+            );
         });
     });
 
