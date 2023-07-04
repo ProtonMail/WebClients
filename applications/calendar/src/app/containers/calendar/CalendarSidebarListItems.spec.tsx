@@ -107,6 +107,7 @@ const mockCalendar: VisualCalendar = {
     Flags: CALENDAR_FLAGS.ACTIVE,
     Type: CALENDAR_TYPE.PERSONAL,
     Owner: { Email: 'email1' },
+    Priority: 1,
     Members: [
         {
             Email: 'email1',
@@ -119,6 +120,7 @@ const mockCalendar: VisualCalendar = {
             CalendarID: 'id1',
             Name: 'calendar1',
             Description: 'description1',
+            Priority: 1,
         },
     ],
 };
@@ -134,6 +136,7 @@ const mockCalendar2: VisualCalendar = {
     Flags: CALENDAR_FLAGS.ACTIVE,
     Type: CALENDAR_TYPE.PERSONAL,
     Owner: { Email: 'email2' },
+    Priority: 2,
     Members: [
         {
             Email: 'email2',
@@ -146,6 +149,7 @@ const mockCalendar2: VisualCalendar = {
             CalendarID: 'id2',
             Name: 'calendar2',
             Description: 'description2',
+            Priority: 2,
         },
     ],
 };
@@ -161,6 +165,7 @@ const mockSharedCalendar: VisualCalendar = {
     Flags: CALENDAR_FLAGS.ACTIVE,
     Type: CALENDAR_TYPE.PERSONAL,
     Owner: { Email: 'email1' },
+    Priority: 3,
     Members: [
         {
             Email: 'email3',
@@ -173,6 +178,7 @@ const mockSharedCalendar: VisualCalendar = {
             CalendarID: 'id3',
             Name: 'calendar3',
             Description: 'description3',
+            Priority: 3,
         },
     ],
 };
@@ -188,6 +194,7 @@ const mockSubscribedCalendar: VisualCalendar = {
     Flags: CALENDAR_FLAGS.ACTIVE,
     Type: CALENDAR_TYPE.SUBSCRIPTION,
     Owner: { Email: 'email4' },
+    Priority: 4,
     Members: [
         {
             Email: 'email4',
@@ -200,6 +207,7 @@ const mockSubscribedCalendar: VisualCalendar = {
             CalendarID: 'id4',
             Name: 'calendar4',
             Description: 'description4',
+            Priority: 4,
         },
     ],
 };
