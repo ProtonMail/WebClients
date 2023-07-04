@@ -124,6 +124,9 @@
       "Block": [
         "Blokovat"
       ],
+      "Block email tracking": [
+        "Blokovat sledovací prvky v e-mailech"
+      ],
       "Block messages from this sender": [
         "Blokovat zprávy tohoto odesílatele"
       ],
@@ -366,9 +369,6 @@
       ],
       "Email settings": [
         "Nastavení e-mailu"
-      ],
-      "Emoji": [
-        "Emoji"
       ],
       "Enable": [
         "Zapnout"
@@ -654,6 +654,9 @@
       ],
       "Move all messages from this label": [
         "Přesun všech zpráv tohoto štítku"
+      ],
+      "Move all to archive": [
+        "Přesunout vše do archivu"
       ],
       "Move all to trash": [
         "Přesunout vše do koše"
@@ -1056,9 +1059,6 @@
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Pokuste se znovu uložit. Uložení se nezdařilo z důvodu: ${ saveError }"
-      ],
-      "Turn on tracker protection": [
-        "Zapnout ochranu proti sledování"
       ],
       "Unblock": [
         "Odblokovat"
@@ -4736,11 +4736,17 @@
         "${ messagesNotAuthorizedToMove } zpráv nemohlo být přesunuto.",
         "${ messagesNotAuthorizedToMove } zpráv nemohlo být přesunuto."
       ],
-      "${ numberOfTrackers } email tracker blocked": [
-        "${ numberOfTrackers } e-mailový sledovací prvek zablokován",
-        "${ numberOfTrackers } e-mailové sledovací prvky zablokovány",
-        "${ numberOfTrackers } e-mailových sledovacích prvků zablokováno",
-        "${ numberOfTrackers } e-mailových sledovacích prvků zablokováno"
+      "${ numberOfImageTrackers } email tracker blocked": [
+        "${ numberOfImageTrackers } e-mailový sledovací prvek zablokován",
+        "${ numberOfImageTrackers } e-mailové sledovací prvky zablokovány",
+        "${ numberOfImageTrackers } e-mailových sledovacích prvků zablokováno",
+        "${ numberOfImageTrackers } e-mailových sledovacích prvků zablokováno"
+      ],
+      "${ numberOfImageTrackers } tracker blocked": [
+        "${ numberOfImageTrackers } sledovací prvek zablokován",
+        "${ numberOfImageTrackers } sledovací prvky zablokovány",
+        "${ numberOfImageTrackers } sledovacích prvků zablokováno",
+        "${ numberOfImageTrackers } sledovacích prvků zablokováno"
       ],
       "${ numContact } contact": [
         "${ numContact } kontakt",
@@ -4955,6 +4961,9 @@
       "Are you sure you want to discard your changes?": [
         "Určitě chcete zahodit všechny provedené změny?"
       ],
+      "Are you sure you want to move all messages in this location to Archive?": [
+        "Jste si jisti, že chcete přesunout všechny zprávy odtud do Archivu?"
+      ],
       "Are you sure you want to move all messages in this location to Trash?": [
         "Jste si jisti, že chcete přesunout všechny zprávy odtud do Koše?"
       ],
@@ -5158,18 +5167,6 @@
       ],
       "Email tracker protection is disabled": [
         "Ochrana před sledovacími prvky v e-mailech je vypnutá"
-      ],
-      "Email trackers can violate your privacy. ${ BRAND_NAME } did not find any trackers in this message.": [
-        "Sledovací prvky v e-mailech mohou narušit vaše soukromí. ${ BRAND_NAME } nenalezl žádné sledovací prvky v této zprávě."
-      ],
-      "Email trackers can violate your privacy. ${ BRAND_NAME } found and blocked ${ numberOfTrackers } tracker.": [
-        "Sledovací prvky e-mailů můžou narušit vaše soukromí. ${ BRAND_NAME } nalezl a zablokoval ${ numberOfTrackers } sledovací prvek.",
-        "Sledovací prvky e-mailů můžou narušit vaše soukromí. ${ BRAND_NAME } nalezl a zablokoval ${ numberOfTrackers } sledovací prvky.",
-        "Sledovací prvky e-mailů můžou narušit vaše soukromí. ${ BRAND_NAME } nalezl a zablokoval ${ numberOfTrackers } sledovacích prvků.",
-        "Sledovací prvky e-mailů můžou narušit vaše soukromí. ${ BRAND_NAME } nalezl a zablokoval ${ numberOfTrackers } sledovacích prvků."
-      ],
-      "Email trackers can violate your privacy. Turn on tracker protection to prevent senders from knowing whether and when you have opened a message.": [
-        "Sledovací prvky v e-mailech mohou narušit vaše soukromí. Zapnutím ochrany proti sledování zabráníte odesílatelům zjistit, zda a kdy jste zprávu otevřeli."
       ],
       "Emails are automatically signed": [
         "E-maily jsou automaticky podepsány"
@@ -5447,9 +5444,6 @@
       "No email address": [
         "Žádná e-mailová adresa"
       ],
-      "No email trackers found": [
-        "Bez sledovacích prvků"
-      ],
       "No folder found": [
         "Nenalezena žádná složka"
       ],
@@ -5471,8 +5465,8 @@
       "No results found": [
         "Nebyly nalezeny žádné výsledky"
       ],
-      "No trackers found, but some images could not be loaded with tracking protection": [
-        "Nebyly nalezeny žádné sledovací prvky, ale některé obrázky nebylo možné načíst s ochranou proti sledování"
+      "No trackers found": [
+        "Bez sledovacích prvků"
       ],
       "non-${ MAIL_APP_NAME }": [
         "mimo ${ MAIL_APP_NAME }"
@@ -5875,9 +5869,6 @@
       ],
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "Příliš mnoho zpráv čeká na odeslání. Prosím počkejte až bude další zpráva odeslána k naplánování této zprávy."
-      ],
-      "Turn off to only search by date, name, or email address. To disable search message content and delete downloaded messages, go to settings.": [
-        "Vypněte vyhledávání pouze podle data, jména nebo e-mailové adresy. Chcete-li zakázat vyhledávání obsahu zpráv a odstranit stažené zprávy, přejděte do Nastavení."
       ],
       "Turn on to search the content of your messages": [
         "Zapněte pro možnost vyhledávat v obsahu vašich zpráv"
@@ -6730,6 +6721,9 @@
       "OK": [
         "OK"
       ],
+      "Open in a new tab": [
+        "Otevřít na nové kartě"
+      ],
       "Operating system": [
         "Operační systém"
       ],
@@ -7248,11 +7242,6 @@
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
         "K dispozici je nová verze aplikace ${ appName }. ${ reloadButton }."
-      ]
-    },
-    "Message has been sent to the user via a SimpleLogin alias": {
-      "Delivered via SimpleLogin by ${ BRAND_NAME }": [
-        "Doručeno pomocí SimpleLogin od ${ BRAND_NAME }"
       ]
     },
     "Message image": {
@@ -7969,6 +7958,11 @@
         "Zjistili jsme několik varování. Následující e-mailové adresy nemusí obdržet e-maily:",
         "Zjistili jsme několik varování. Následující e-mailové adresy nemusí obdržet e-maily:",
         "Zjistili jsme několik varování. Následující e-mailové adresy nemusí obdržet e-maily:"
+      ]
+    },
+    "Sender verification details": {
+      "Sender verification failed: ${ icon.senderVerificationDetails.description }": [
+        "Ověření odesílatele selhalo: ${ icon.senderVerificationDetails.description }"
       ]
     },
     "Sent email icon": {
@@ -9137,6 +9131,9 @@
       "More selections": [
         "Další výběry"
       ],
+      "Move all messages to Archive": [
+        "Přesunout všechny zprávy do Archivu"
+      ],
       "Move all messages to Trash": [
         "Přesun všech zpráv do Koše"
       ],
@@ -9173,6 +9170,9 @@
       "No attachment found": [
         "Žádná příloha nenalezena"
       ],
+      "No trackers found": [
+        "Bez sledovacích prvků"
+      ],
       "Open actions dropdown": [
         "Otevřít seznam akcí"
       ],
@@ -9199,6 +9199,9 @@
       ],
       "Previous message": [
         "Předchozí zpráva"
+      ],
+      "Protect your email": [
+        "Chraňte váš e-mail"
       ],
       "Re-sign all contacts": [
         "Znovu podepsat všechny kontakty"
@@ -9310,6 +9313,9 @@
       ],
       "Subject missing": [
         "Chybí předmět"
+      ],
+      "This email is protected": [
+        "Tento e-mail je chráněný"
       ],
       "To": [
         "Komu"
