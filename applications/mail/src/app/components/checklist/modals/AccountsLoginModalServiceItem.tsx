@@ -11,10 +11,11 @@ import './AccountsLoginModalServiceItem.scss';
 interface ServiceDetailsProps {
     service: ServiceDetails;
     isServiceDone?: boolean;
+    serviceMarkedAsDone?: boolean;
     onServiceDone: (serviceKey: string, hideItem: boolean) => void;
 }
 
-const ServiceItemAction = ({ service, onServiceDone }: ServiceDetailsProps) => {
+const ServiceItemAction = ({ service, onServiceDone, serviceMarkedAsDone }: ServiceDetailsProps) => {
     return (
         <div className="flex flex-align-items-center gap-2 account-login--actions">
             <ButtonLike
@@ -25,12 +26,19 @@ const ServiceItemAction = ({ service, onServiceDone }: ServiceDetailsProps) => {
                 size="small"
                 rel="noopener noreferrer"
             >{c('Action').t`Change email`}</ButtonLike>
-            <Button size="small" onClick={() => onServiceDone(service.key, true)}>{c('Action').t`Done`}</Button>
+            {!serviceMarkedAsDone && (
+                <Button size="small" onClick={() => onServiceDone(service.key, true)}>{c('Action').t`Done`}</Button>
+            )}
         </div>
     );
 };
 
-const AccountsLoginModalServiceItem = ({ service, onServiceDone, isServiceDone }: ServiceDetailsProps) => {
+const AccountsLoginModalServiceItem = ({
+    service,
+    onServiceDone,
+    isServiceDone,
+    serviceMarkedAsDone,
+}: ServiceDetailsProps) => {
     const { isNarrow } = useActiveBreakpoint();
 
     return (
@@ -38,7 +46,8 @@ const AccountsLoginModalServiceItem = ({ service, onServiceDone, isServiceDone }
             className={clsx(
                 'h-custom border-bottom flex gap-2 account-login--item',
                 isNarrow && 'pb-2',
-                isServiceDone && 'invisible'
+                isServiceDone && 'invisible',
+                serviceMarkedAsDone && 'color-weak'
             )}
             data-testid="accounts-login-modal-service-item"
             style={{ '--h-custom': isNarrow ? 'auto' : '3rem' }}
@@ -52,7 +61,10 @@ const AccountsLoginModalServiceItem = ({ service, onServiceDone, isServiceDone }
                     )}
                     style={{ '--w-custom': isNarrow ? '2.25rem' : '3rem', '--h-custom': isNarrow ? '2.25rem' : '3rem' }}
                 >
-                    <div className="p-0.5 rounded" style={{ backgroundColor: '#fff' }}>
+                    <div
+                        className={clsx('p-0.5 rounded', serviceMarkedAsDone && 'opacity-50')}
+                        style={{ backgroundColor: '#fff' }}
+                    >
                         <img
                             alt=""
                             src={service.img}
@@ -64,12 +76,18 @@ const AccountsLoginModalServiceItem = ({ service, onServiceDone, isServiceDone }
                         />
                     </div>
                 </div>
-                <div className={clsx(isNarrow && 'flex flex-column gap-2')}>
+                <div className={clsx(isNarrow && 'flex flex-column gap-2', serviceMarkedAsDone && 'opacity-50')}>
                     {service.name}
                     {isNarrow && <ServiceItemAction service={service} onServiceDone={onServiceDone} />}
                 </div>
             </div>
-            {!isNarrow && <ServiceItemAction service={service} onServiceDone={onServiceDone} />}
+            {!isNarrow && (
+                <ServiceItemAction
+                    service={service}
+                    onServiceDone={onServiceDone}
+                    serviceMarkedAsDone={serviceMarkedAsDone}
+                />
+            )}
         </div>
     );
 };

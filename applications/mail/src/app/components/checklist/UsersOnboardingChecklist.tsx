@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-import { isAfter } from 'date-fns';
+import isAfter from 'date-fns/isAfter';
 import { c } from 'ttag';
 
 import { EasySwitchProvider } from '@proton/activation/index';
@@ -12,8 +12,8 @@ import {
     CheckListProtectInbox,
     useModalState,
 } from '@proton/components/components';
-import { FeatureCode, GmailSyncModal } from '@proton/components/containers';
-import { useActiveBreakpoint, useFeature, useLocalState, useMailSettings, useUser } from '@proton/components/hooks';
+import { GmailSyncModal } from '@proton/components/containers';
+import { useActiveBreakpoint, useLocalState, useMailSettings, useUser } from '@proton/components/hooks';
 import { CHECKLIST_DISPLAY_TYPE, ChecklistKey } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
@@ -21,12 +21,11 @@ import { useGetStartedChecklist } from 'proton-mail/containers/onboardingCheckli
 import { deleteCheckedItemsForUser } from 'proton-mail/helpers/checklist/checkedItemsStorage';
 import { isColumnMode } from 'proton-mail/helpers/mailSettings';
 
-import OnboardingChecklistHeader from './OnboardingChecklistHeader';
+import UsersOnboardingChecklistHeader from './UsersOnboardingChecklistHeader';
 import AccountsLoginModal from './modals/AccountsLoginModal';
 import MobileAppModal from './modals/MobileAppModal';
 import ProtectInboxModal from './modals/ProtectInboxModal';
 import StorageRewardModal from './modals/StorageRewardModal';
-import OldChecklist from './old/OldChecklist';
 
 import './UsersOnboardingChecklist.scss';
 
@@ -53,7 +52,7 @@ const UsersOnboardingChecklist = ({
     const [mobileAppsProps, setMobileAppsOpen, renderMobileApps] = useModalState();
     const [storageRewardProps, setStorageRewardOpen, renderStorageReward] = useModalState();
 
-    const { items, changeChecklistDisplay, isChecklistFinished, userWasRewarded } = useGetStartedChecklist();
+    const { items, changeChecklistDisplay, isChecklistFinished, userWasRewarded, expiresAt } = useGetStartedChecklist();
 
     // This is used to display the reward modal, can only be opened when user is finished and all modals are closed
     const areAllModalsClosed =
@@ -84,6 +83,10 @@ const UsersOnboardingChecklist = ({
         changeChecklistDisplay(newState);
     };
 
+    if (isAfter(new Date(), expiresAt)) {
+        return null;
+    }
+
     return (
         <EasySwitchProvider>
             <>
@@ -101,7 +104,7 @@ const UsersOnboardingChecklist = ({
                             : 'on-mobile-max-w100 max-w30e px-4 md:px-0 my-3 md:my-auto gap-6'
                     )}
                 >
-                    <OnboardingChecklistHeader smallVariant={smallVariant} />
+                    <UsersOnboardingChecklistHeader smallVariant={smallVariant} />
                     <ul className={clsx('flex flex-column unstyled my-0', !smallVariant && 'gap-2 md:px-3')}>
                         <li>
                             <CheckListProtectInbox
@@ -156,14 +159,4 @@ const UsersOnboardingChecklist = ({
     );
 };
 
-const OnboardingChecklistWrapper = (props: Props) => {
-    const { feature, loading } = useFeature<boolean>(FeatureCode.NewOnboardingChecklist);
-    const { expiresAt } = useGetStartedChecklist();
-    if (loading || !feature || isAfter(new Date(), expiresAt)) {
-        return null;
-    }
-
-    return feature.Value ? <UsersOnboardingChecklist {...props} /> : <OldChecklist {...props} />;
-};
-
-export default OnboardingChecklistWrapper;
+export default UsersOnboardingChecklist;
