@@ -1,17 +1,10 @@
 import { memo, useCallback } from 'react';
 
-import {
-    AppsDropdown,
-    MainLogo,
-    Sidebar,
-    SidebarContactItem,
-    SidebarNav,
-    useDrawer,
-} from '@proton/components';
+import { AppsDropdown, MainLogo, Sidebar, SidebarContactItem, SidebarNav, useDrawer } from '@proton/components';
 import useDisplayContactsWidget from '@proton/components/hooks/useDisplayContactsWidget';
 import { APPS } from '@proton/shared/lib/constants';
-import { CHECKLIST_DISPLAY_TYPE } from '@proton/shared/lib/interfaces';
 import { DRAWER_NATIVE_APPS } from '@proton/shared/lib/drawer/interfaces';
+import { CHECKLIST_DISPLAY_TYPE } from '@proton/shared/lib/interfaces';
 
 import { MESSAGE_ACTIONS } from '../../constants';
 import { useOnCompose } from '../../containers/ComposeProvider';
@@ -20,7 +13,7 @@ import { ComposeTypes } from '../../hooks/composer/useCompose';
 import { layoutActions } from '../../logic/layout/layoutSlice';
 import { selectLayoutIsExpanded } from '../../logic/layout/layoutSliceSelectors';
 import { useAppDispatch, useAppSelector } from '../../logic/store';
-import OnboardingChecklistWrapper from '../checklist/OnboardingChecklistWrapper';
+import UsersOnboardingChecklist from '../checklist/UsersOnboardingChecklist';
 import MailSidebarDriveSpotlight from './MailSidebarDriveSpotlight';
 import MailSidebarList from './MailSidebarList';
 import MailSidebarPrimaryButton from './MailSidebarPrimaryButton';
@@ -74,7 +67,7 @@ const MailSidebar = ({ labelID }: Props) => {
             >
                 <SidebarNav className="flex">
                     <MailSidebarList labelID={labelID} />
-                    {displayState === CHECKLIST_DISPLAY_TYPE.REDUCED && <OnboardingChecklistWrapper smallVariant />}
+                    {displayState === CHECKLIST_DISPLAY_TYPE.REDUCED && <UsersOnboardingChecklist smallVariant />}
                 </SidebarNav>
             </Sidebar>
         </>
