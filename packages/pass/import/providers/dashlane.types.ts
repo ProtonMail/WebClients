@@ -2,6 +2,8 @@ import type { Maybe } from '@proton/pass/types';
 
 export type DashlaneLoginItem = {
     username: Maybe<string>;
+    username2: Maybe<string>;
+    username3: Maybe<string>;
     title: Maybe<string>;
     password: Maybe<string>;
     note: Maybe<string>;
