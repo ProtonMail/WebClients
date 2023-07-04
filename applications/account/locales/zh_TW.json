@@ -1413,7 +1413,7 @@
     },
     "Calendar sharing access option label": {
       "Edit (view, create and edit event details)": [
-        "編輯（檢視、建立與編輯事件詳細資訊）"
+        "編輯 (檢視、建立與編輯行程詳細資料)"
       ],
       "View (see all event details)": [
         "檢視（檢視所有事件的詳細資訊）"
@@ -1525,7 +1525,7 @@
     },
     "color": {
       "apple": [
-        "Apple"
+        "apple"
       ],
       "azureish white": [
         "天藍白"
@@ -2863,6 +2863,9 @@
       "Thanks for letting us know": [
         "感謝您讓我們知道"
       ],
+      "We've noted that this account doesn't belong to you. We'll investigate and act accordingly.": [
+        "我們注意到此帳號並不屬於您。我們將會進行調查並採取相應措施。"
+      ],
       "You can safely close this tab.": [
         "您可以安全地關閉此分頁。"
       ]
@@ -3358,6 +3361,9 @@
       ],
       "Trusted keys are not valid for sending": [
         "已信任的密鑰用於寄送時無效"
+      ],
+      "Try again later": [
+        "請稍後再試"
       ],
       "Try using only letters, numerals, and _.-": [
         "嘗試僅使用字母、數字與 _.-"
@@ -5726,7 +5732,7 @@
         "增加您${ BRAND_NAME }的使用體驗，使用應用程式以滿足需求"
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
-        "於下一步驟，您可以比特幣匯款"
+        "於下一步驟，您可以使用比特幣提交存款。"
       ],
       "Inherited from parent folder": [
         "繼承自上層資料夾"
@@ -6230,7 +6236,7 @@
         "將此密碼以及檔案存放在另一處安全的地方。日後匯入金鑰時，就得派上用場。"
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
-        "透過以下地址或條碼傳送金額。經確認將會顯示於帳號上"
+        "透過以下地址或掃描條碼提交存款。經確認後存款將會顯示於帳號上。"
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "訂閱即將結束:於${ byDate }重新啟用以維持${ planName }的福利。${ reactivateLink }"
@@ -6297,6 +6303,9 @@
       ],
       "The Import-Export app allows you to export messages for local backups and to restore previous backups to your account.": [
         "Import-Export 應用程式讓您能夠匯出訊息到您本機儲存，也可以讓您匯入先前的備份到您的帳號。"
+      ],
+      "The link to report that that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue.": [
+        "您回報未設定${ BRAND_NAME }帳號的訊息已過期。請與我們聯絡以解決問題。"
       ],
       "The name will be visible to your users while they are signed in.": [
         "您的使用者在登入後會看見此名稱。"
@@ -6404,7 +6413,7 @@
         "為避免資料遺失，最好只刪除您知道的檔案，或是匯出複本。"
       ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
-        "欲完成您的繳款，請傳送 ${ btcAmountBold } 至以下位址。"
+        "為完成付款，請傳送${ btcAmountBold }至以下地址"
       ],
       "To confirm, please enter the name of the user you wish to delete.": [
         "要確認，請輸入您想要刪除的使用者名稱。"
@@ -7402,7 +7411,7 @@
         "附加螢幕截圖"
       ],
       "Authenticator app": [
-        "驗證 APP"
+        "驗證 app"
       ],
       "Auto show embedded images": [
         "自動載入內嵌圖片"
@@ -7447,7 +7456,7 @@
         "瀏覽器版本"
       ],
       "BTC address": [
-        "比特幣地址"
+        "BTC 位址"
       ],
       "BTC amount": [
         "比特幣數量"
@@ -8359,6 +8368,9 @@
       "General": [
         "一般"
       ],
+      "Help translate": [
+        "協助翻譯"
+      ],
       "How to pay with Bitcoin?": [
         "如何以比特幣繳款？"
       ],
@@ -8979,7 +8991,7 @@
         "GDRP資料處理協議"
       ],
       "Hide-my-email aliases": [
-        "隱藏我的郵件別名"
+        "Hide-my-email 別名"
       ],
       "High-speed streaming": [
         "高速串流"
@@ -9595,6 +9607,9 @@
       ],
       "Calendar added": [
         "行事曆已新增"
+      ],
+      "Calendar updated": [
+        "已更新行事曆"
       ]
     },
     "Notification in share calendar modal": {
@@ -11207,7 +11222,7 @@
         "${ MAIL_APP_NAME }鍵盤快捷鍵"
       ],
       "(active)": [
-        "（啟用）"
+        "(啟用)"
       ],
       "1. Give a name to the config to be generated": [
         "1. 為生成的設定檔取一個名稱"

@@ -5621,7 +5621,7 @@
         "Ληγμένο"
       ],
       "expires ${ expirationDate }": [
-        "λήγει στις ${ expirationDate }"
+        "λήγει ${ expirationDate }"
       ],
       "Failed to fetch logs.": [
         "Αποτυχία ανάκτησης αρχείων καταγραφής."
@@ -6013,13 +6013,13 @@
         "Υπάρχουν και άλλοι διαχειριστές στον οργανισμό σας, είστε υπεύθυνοι για την ενημέρωση τους σχετικά με τον νέο κωδικό πρόσβασης."
       ],
       "Outdated recovery file; update to ensure access to your data": [
-        "Παρωχημένο αρχείο ανάκτησης. Για εξασφαλισμένη πρόσβαση στα δεδομένα σας, ενημερώστε το."
+        "Ληγμένο αρχείο ανάκτησης. Για εξασφαλισμένη πρόσβαση στα δεδομένα σας, ενημερώστε το."
       ],
       "Outdated recovery methods; update to ensure access to your data": [
-        "Παρωχημένες μέθοδοι ανάκτησης. Για εξασφαλισμένη πρόσβαση στα δεδομένα σας, ενημερώστε τες."
+        "Ληγμένες μέθοδοι ανάκτησης. Για εξασφαλισμένη πρόσβαση στα δεδομένα σας, ενημερώστε τες."
       ],
       "Outdated recovery phrase; update to ensure access to your data": [
-        "Παρωχημένη φράση ανάκτησης. Για εξασφαλισμένη πρόσβαση στα δεδομένα σας, ενημερώστε τη."
+        "Ληγμένη φράση ανάκτησης. Για εξασφαλισμένη πρόσβαση στα δεδομένα σας, ενημερώστε τη."
       ],
       "Over 100 million people and businesses have signed up for ${ BRAND_NAME }.": [
         "Πάνω από 100 εκατομμύρια άνθρωποι και επιχειρήσεις έχουν εγγραφεί στο ${ BRAND_NAME }."
@@ -6374,7 +6374,7 @@
         "Το όνομα θα είναι ορατό στους χρήστες σας ενώ είναι συνδεδεμένοι."
       ],
       "The securest way to browse, stream, and be online.": [
-        "Ο πιο διασφαλισμένος τρόπος περιήγησης και μετάδοσης."
+        "Ο πιο ασφαλής τρόπος περιήγησης, streaming και να είσαι online"
       ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Η διαδικασία επαλήθευσης θα ανοίξει μια νέα καρτέλα του προγράμματος περιήγησης. Απενεργοποιήστε τυχόν ενεργά προγράμματα αποκλεισμού αναδυόμενων παραθύρων."
@@ -6518,7 +6518,7 @@
         "Για να χρησιμοποιήσετε ${ toAppName }, χρειάζεστε μια ${ MAIL_APP_NAME } διεύθυνση."
       ],
       "To work properly, each filter must contain at least a name and a valid Sieve script. You can ${ link }.": [
-        "Για να δουλέψει σωστά, κάθε φίλτρο πρέπει να περιέχει τουλάχιστον ένα όνομα και ένα έγκυρο σενάριο Sieve. Μπορείτε να ${ link }."
+        "Για να δουλέψει σωστά, κάθε φίλτρο πρέπει να περιέχει τουλάχιστον ένα όνομα και ένα έγκυρο script Sieve. Μπορείτε να ${ link }."
       ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Προσθέστε στο λογαριασμό πιστωτικές μονάδες, τις οποίες μπορείτε να χρησιμοποιήσετε για να έχετε μια νέα συνδρομή πακέτου/πλάνου ή να ανανεώσετε το τρέχον πακέτο σας. Λαμβάνετε μία πιστωτική μονάδα για κάθε ${ i18nCurrency } που ξοδεύτηκε."
@@ -6656,7 +6656,7 @@
         "Προειδοποίηση: Η διαγραφή είναι μόνιμη. Αυτό επίσης αφαιρεί την πρόσβαση σε όλες τις συνδεδεμένες υπηρεσίες και διαγράφει όλες τις επαφές σας."
       ],
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
-        "Σας συμβουλεύουμε να χρησιμοποιείτε ει δυνατόν επίσημες εφαρμογές ${ VPN_APP_NAME }."
+        "Σας συμβουλεύουμε να χρησιμοποιείτε τις επίσημες εφαρμογές όταν είναι δυνατόν ${ VPN_APP_NAME }."
       ],
       "We couldn’t process your payment.": [
         "Δεν ήταν δυνατή η επεξεργασία της πληρωμής σας."
@@ -6805,7 +6805,7 @@
       ],
       "You can't send more than ${ emailSendLimitNumber } email invite for the next 24 hours": [
         "Δεν μπορείτε να αποστέλλετε περισσότερη από ${ emailSendLimitNumber } πρόσκληση email για τις επόμενες 24 ώρες",
-        "Δεν μπορείτε να αποστέλλετε περισσότερα από ${ emailSendLimitNumber } προσκλήσεις email για τις επόμενες 24 ώρες"
+        "Δεν μπορείτε να αποστέλλετε περισσότερες από ${ emailSendLimitNumber } προσκλήσεις email για τις επόμενες 24 ώρες"
       ],
       "You cannot refer ${ MAIL_APP_NAME } users": [
         "Δεν μπορείτε να προτείνετε χρήστες του ${ MAIL_APP_NAME }."
@@ -6938,7 +6938,7 @@
       ],
       "Your import from ${ accounts } is temporarily delayed.": [
         "Η εισαγωγή σας από το ${ accounts } καθυστερεί προσωρινά.",
-        "Η εισαγωγή σας από τα ${ accounts } καθυστερούν προσωρινά."
+        "Οι εισαγωγές σας από τα ${ accounts } καθυστερούν προσωρινά."
       ],
       "Your import will not be processed.": [
         "Η εισαγωγή σας δεν θα υποβληθεί σε επεξεργασία."
@@ -7133,11 +7133,6 @@
       ],
       "Primary": [
         "Κύριο"
-      ]
-    },
-    "Key transparency details button": {
-      "Click here for more details.": [
-        "Κάντε κλικ εδώ για περισσότερες λεπτομέρειες."
       ]
     },
     "Key type option": {
@@ -8446,6 +8441,9 @@
       "General": [
         "Γενικά"
       ],
+      "Help translate": [
+        "Βοηθήστε στη μετάφραση"
+      ],
       "How to pay with Bitcoin?": [
         "Πώς να πληρώσετε με Bitcoin;"
       ],
@@ -9714,6 +9712,9 @@
       ],
       "Calendar added": [
         "Το ημερολόγιο προστέθηκε"
+      ],
+      "Calendar updated": [
+        "Το ημερολόγιο ενημερώθηκε"
       ]
     },
     "Notification in share calendar modal": {
@@ -10039,8 +10040,8 @@
         "Το σχέδιό σας περιλαμβάνει το μέγιστο ${ availableAddresses } παραπανίσιες διευθύνσεις."
       ],
       "Your plan includes a maximum of ${ availableNumberOfMembers } more organizational user.": [
-        "Το σχέδιό σας περιλαμβάνει το μέγιστο ${ availableNumberOfMembers } παραπανίσιο εταιρικό χρήστη.",
-        "Το σχέδιό σας περιλαμβάνει το μέγιστο ${ availableNumberOfMembers } παραπανίσιους εταιρικούς χρήστες."
+        "Το πρόγραμμά σας περιλαμβάνει το μέγιστο ${ availableNumberOfMembers } παραπανίσιο εταιρικό χρήστη.",
+        "Το πρόγραμμά σας περιλαμβάνει το μέγιστο ${ availableNumberOfMembers } παραπανίσιους εταιρικούς χρήστες."
       ],
       "Your plan includes a maximum of ${ availableVPNAccess } more VPN account.": [
         "Το σχέδιό σας περιλαμβάνει το μέγιστο ${ availableVPNAccess } παραπανίσιο λογαριασμό VPN.",
@@ -12200,7 +12201,7 @@
         "Προειδοποίηση"
       ],
       "Warning: suspected fake website": [
-        "Προειδοποίηση: υποψία κίβδηλης ιστοσελίδας"
+        "Προειδοποίηση: υποψία ψεύτικης ιστοσελίδας"
       ],
       "What would you like to import?": [
         "Τι θα θέλατε να εισάγετε;"
