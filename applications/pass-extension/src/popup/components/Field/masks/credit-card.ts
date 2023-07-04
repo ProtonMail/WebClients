@@ -22,8 +22,8 @@ export const expDateMask = {
         },
         YYYY: {
             mask: MaskedRange,
-            from: 1000,
-            to: 2999,
+            from: 1900,
+            to: 2100,
         },
     },
 } as FactoryOpts;
