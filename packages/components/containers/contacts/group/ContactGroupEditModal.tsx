@@ -4,7 +4,7 @@ import { c, msgid } from 'ttag';
 
 import { Button, Input } from '@proton/atoms';
 import { getRandomAccentColor } from '@proton/shared/lib/colors';
-import { CONTACT_GROUP_MAX_MEMBERS } from '@proton/shared/lib/contacts/constants';
+import { hasReachedContactGroupMembersLimit } from '@proton/shared/lib/contacts/helpers/contactGroup';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contact';
 import diff from '@proton/utils/diff';
@@ -25,7 +25,7 @@ import {
     Row,
     getContactsAutocompleteItems,
 } from '../../../components';
-import { useContactEmails, useContactGroups } from '../../../hooks';
+import { useContactEmails, useContactGroups, useMailSettings } from '../../../hooks';
 import useUpdateGroup from '../hooks/useUpdateGroup';
 import ContactGroupTable from './ContactGroupTable';
 
@@ -38,6 +38,7 @@ export interface ContactGroupEditProps {
 type Props = ContactGroupEditProps & ModalProps;
 
 const ContactGroupEditModal = ({ contactGroupID, selectedContactEmails = [], onDelayedSave, ...rest }: Props) => {
+    const [mailSettings] = useMailSettings();
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(false);
     const [contactGroups = []] = useContactGroups();
@@ -59,7 +60,7 @@ const ContactGroupEditModal = ({ contactGroupID, selectedContactEmails = [], onD
     });
     const contactEmailIDs = model.contactEmails.map(({ ID }: ContactEmail) => ID);
 
-    const canAddMoreContacts = model.contactEmails.length < CONTACT_GROUP_MAX_MEMBERS;
+    const canAddMoreContacts = hasReachedContactGroupMembersLimit(model.contactEmails.length, mailSettings);
 
     const contactsAutocompleteItems = useMemo(() => {
         return [...getContactsAutocompleteItems(contactEmails, ({ ID }) => !contactEmailIDs.includes(ID))];
