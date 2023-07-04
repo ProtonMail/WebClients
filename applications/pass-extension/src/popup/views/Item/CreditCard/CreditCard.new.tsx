@@ -1,4 +1,4 @@
-import { type VFC, useMemo } from 'react';
+import { type VFC, useMemo, useState } from 'react';
 import { useSelector } from 'react-redux';
 
 import { Form, FormikProvider, useFormik } from 'formik';
@@ -24,6 +24,7 @@ import { TitleField } from '../../../components/Field/TitleField';
 import { VaultSelectField } from '../../../components/Field/VaultSelectField';
 import { cardNumberMask, expDateMask } from '../../../components/Field/masks/credit-card';
 import { ItemCreatePanel } from '../../../components/Panel/ItemCreatePanel';
+import { useDraftSync } from '../../../hooks/useItemDraft';
 
 const FORM_ID = 'new-creditCard';
 
@@ -66,6 +67,18 @@ export const CreditCardNew: VFC<ItemNewProps<'creditCard'>> = ({ shareId, onSubm
         validateOnBlur: true,
     });
 
+    /* masks need to be refreshed accordingly when resetting
+     * their default values from a draft */
+    const [refreshMasks, setRefreshMasks] = useState(false);
+
+    useDraftSync<CreditCardItemFormValues>(form, {
+        type: 'creditCard',
+        mode: 'new',
+        shareId: form.values.shareId,
+        itemId: 'draft-cc',
+        onHydrated: () => setRefreshMasks(true),
+    });
+
     return (
         <ItemCreatePanel
             type="creditCard"
@@ -105,6 +118,7 @@ export const CreditCardNew: VFC<ItemNewProps<'creditCard'>> = ({ shareId, onSubm
                                 hidden
                                 name="number"
                                 component={MaskedTextField}
+                                key={`cc-num-${refreshMasks}`}
                                 icon="credit-card"
                                 label={c('Label').t`Card number`}
                                 mask={cardNumberMask(form.values.number)}
@@ -113,6 +127,7 @@ export const CreditCardNew: VFC<ItemNewProps<'creditCard'>> = ({ shareId, onSubm
                             <Field
                                 name="expirationDate"
                                 component={MaskedTextField}
+                                key={`cc-exp-${refreshMasks}`}
                                 icon="calendar-today"
                                 label={c('Label').t`Expires on`}
                                 mask={expDateMask}
@@ -122,6 +137,7 @@ export const CreditCardNew: VFC<ItemNewProps<'creditCard'>> = ({ shareId, onSubm
                                 hidden
                                 name="verificationNumber"
                                 component={MaskedTextField}
+                                key={`cc-verif-${refreshMasks}`}
                                 icon="credit-card"
                                 label={c('Label').t`Verification number`}
                                 mask={{ mask: '0000' }}
@@ -131,6 +147,7 @@ export const CreditCardNew: VFC<ItemNewProps<'creditCard'>> = ({ shareId, onSubm
                                 hidden
                                 name="pin"
                                 component={MaskedTextField}
+                                key={`cc-pin-${refreshMasks}`}
                                 icon="grid-3"
                                 label={c('Label').t`PIN`}
                                 mask={{ mask: '000000000000' }}
