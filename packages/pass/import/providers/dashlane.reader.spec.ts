@@ -41,7 +41,15 @@ describe('Import Dashlane ZIP', () => {
             'otpauth://totp/login%20with%202fa%20scanned%20from%20qr%20code?secret=RL3FRZ5V3EBM7T4ZMGJWGO43MQSTTMIT&algorithm=SHA1&digits=6&period=30'
         );
         expect(loginItem1.trashed).toEqual(false);
-        expect(loginItem1.extraFields).toEqual([]);
+        expect(loginItem1.extraFields).toEqual([
+            {
+                fieldName: 'username1',
+                type: 'text',
+                data: {
+                    content: 'john2',
+                },
+            },
+        ]);
 
         /* Login item with multiple lines */
         const loginItem2 = items[1] as ItemImportIntent<'login'>;
