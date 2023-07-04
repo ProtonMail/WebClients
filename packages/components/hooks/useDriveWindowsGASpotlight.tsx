@@ -6,7 +6,13 @@ import { SpotlightProps } from '@proton/components/components';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 import devicesSpotlightIcon from '@proton/styles/assets/img/drive/computers-spotlight.png';
 
-export const useDriveMyDevicesSpotlight = (): [SpotlightProps, (show: boolean) => void] => {
+type DriveWindowsGASpotlightConfig = {
+    placement?: SpotlightProps['originalPlacement'];
+};
+
+export const useDriveWindowsGASpotlight = (
+    config: DriveWindowsGASpotlightConfig = {}
+): [SpotlightProps, (show: boolean) => void] => {
     const [show, setShow] = useState<boolean>(true);
 
     const stopPropagationOnClose: MouseEventHandler = (e) => {
@@ -33,7 +39,7 @@ export const useDriveMyDevicesSpotlight = (): [SpotlightProps, (show: boolean) =
         {
             show,
             content,
-            originalPlacement: 'right',
+            originalPlacement: config.placement || 'right',
             size: 'large',
             onClose: stopPropagationOnClose,
         },

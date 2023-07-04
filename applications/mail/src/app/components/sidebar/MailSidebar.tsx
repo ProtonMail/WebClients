@@ -9,6 +9,7 @@ import { useOnCompose } from '../../containers/ComposeProvider';
 import { useGetStartedChecklist } from '../../containers/onboardingChecklist/provider/GetStartedChecklistProvider';
 import { ComposeTypes } from '../../hooks/composer/useCompose';
 import OnboardingChecklistWrapper from '../checklist/OnboardingChecklistWrapper';
+import MailSidebarDriveSpotlight from './MailSidebarDriveSpotlight';
 import MailSidebarList from './MailSidebarList';
 import MailSidebarPrimaryButton from './MailSidebarPrimaryButton';
 import SidebarVersion from './SidebarVersion';
@@ -31,7 +32,13 @@ const MailSidebar = ({ labelID, expanded = false, onToggleExpand }: Props) => {
     return (
         <>
             <Sidebar
-                appsDropdown={<AppsDropdown app={APPS.PROTONMAIL} />}
+                appsDropdown={
+                    <MailSidebarDriveSpotlight
+                        renderDropdown={(hideSpotlight) => (
+                            <AppsDropdown app={APPS.PROTONMAIL} onDropdownClick={hideSpotlight} />
+                        )}
+                    />
+                }
                 expanded={expanded}
                 onToggleExpand={onToggleExpand}
                 primary={<MailSidebarPrimaryButton handleCompose={handleCompose} />}
