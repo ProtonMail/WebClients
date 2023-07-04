@@ -16,6 +16,20 @@ export enum UserType {
     EXTERNAL = 3,
 }
 
+export enum SessionRecoveryState {
+    NONE = 0,
+    GRACE_PERIOD = 1,
+    CANCELLED = 2,
+    INSECURE = 3,
+    EXPIRED = 4,
+}
+
+export enum SessionRecoveryReason {
+    NONE = 0,
+    CANCELLED = 1,
+    AUTHENTICATION = 2,
+}
+
 export interface User {
     ID: string;
     Name: string;
@@ -39,6 +53,13 @@ export interface User {
     MnemonicStatus: MNEMONIC_STATUS;
     Idle: 0 | 1;
     CreateTime: number;
+    AccountRecovery: {
+        State: SessionRecoveryState;
+        StartTime: number;
+        EndTime: number;
+        Reason: SessionRecoveryReason | null;
+        UID: string;
+    } | null;
 }
 
 export interface UserModel extends User {
