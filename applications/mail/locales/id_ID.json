@@ -124,6 +124,9 @@
       "Block": [
         "Blokir"
       ],
+      "Block email tracking": [
+        "Blokir pelacakan email"
+      ],
       "Block messages from this sender": [
         "Blokir pesan dari pengirim ini"
       ],
@@ -233,10 +236,10 @@
         "Salin alamat"
       ],
       "Copy email to clipboard": [
-        "Salin email ke clipboard"
+        "Salin email ke papan klip"
       ],
       "Copy password to clipboard": [
-        "Salin kata sandi ke clipboard"
+        "Salin kata sandi ke papan klip"
       ],
       "Create a new contact group": [
         "Buat grup kontak baru"
@@ -360,9 +363,6 @@
       ],
       "Email settings": [
         "Pengaturan email"
-      ],
-      "Emoji": [
-        "Emoji"
       ],
       "Enable": [
         "Aktifkan"
@@ -645,6 +645,9 @@
       ],
       "Move all messages from this label": [
         "Pindahkan seluruh pesan dari label ini"
+      ],
+      "Move all to archive": [
+        "Pindahkan semuanya ke arsip"
       ],
       "Move all to trash": [
         "Pindahkan semua ke sampah"
@@ -1044,9 +1047,6 @@
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Cobalah untuk menyimpan kembali. Penyimpanan gagal karena: ${ saveError }"
-      ],
-      "Turn on tracker protection": [
-        "Aktifkan perlindungan pelacak"
       ],
       "Unblock": [
         "Buka blokir"
@@ -2950,6 +2950,12 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Anda dapat menandai kontak-kontak yang tidak ingin digabung atau disimpan. Penghapusan akan dilakukan setelah Anda menekan tombol gabung"
+      ],
+      "You can read the message and click on links without being tracked with email tracker protection.": [
+        "Anda dapat membaca pesan dan mengklik tautan tanpa terlacak dengan perlindungan pelacak email."
+      ],
+      "You can read the message and click on links without being tracked.": [
+        "Anda dapat membaca pesan dan mengklik tautan tanpa terlacak."
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4583,8 +4589,14 @@
       "${ messagesNotAuthorizedToMove } messages could not be moved.": [
         "${ messagesNotAuthorizedToMove } pesan tidak dapat dipindahkan."
       ],
-      "${ numberOfTrackers } email trackers blocked": [
-        "${ numberOfTrackers } pelacak email telah diblokir"
+      "${ numberOfImageTrackers } email trackers blocked": [
+        "${ numberOfImageTrackers } pelacak email diblokir"
+      ],
+      "${ numberOfImageTrackers } trackers blocked": [
+        "${ numberOfImageTrackers } pelacak diblokir"
+      ],
+      "${ numberOfUTMTrackers } links cleaned": [
+        "${ numberOfUTMTrackers } tautan dibersihkan"
       ],
       "${ numContact } contacts": [
         "${ numContact } kontak"
@@ -4727,6 +4739,9 @@
       "Are you sure you want to discard your changes?": [
         "Apakah Anda yakin untuk membatalkan perubahan Anda?"
       ],
+      "Are you sure you want to move all messages in this location to Archive?": [
+        "Apakah Anda yakin untuk memindahkan seluruh pesan pada lokasi ini ke Arsip?"
+      ],
       "Are you sure you want to move all messages in this location to Trash?": [
         "Apakah Anda yakin untuk memindahkan seluruh pesan yang ada pada lokasi ini ke Sampah?"
       ],
@@ -4776,7 +4791,7 @@
         "Panel samping kalender"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
-        "Tidak mengingat kata sandi Anda? Kami dapat membantu Anda untuk membersihkan data terenkripsi semua kontak yang dienkripsi dengan kunci ini dan dalam prosesnya mengabaikan peringatan."
+        "Tidak dapat mengingat kata sandi Anda? Kami dapat membantu Anda untuk membersihkan data terenkripsi milik seluruh kontak yang dienkripsi dengan kunci ini terlepas dari peringatan yang ada."
       ],
       "Center": [
         "Rata tengah"
@@ -4812,7 +4827,7 @@
         "Kontak tidak lagi ditetapkan ke grup ${ contactGroupName }"
       ],
       "Copied to clipboard": [
-        "Disalin ke clipboard"
+        "Disalin ke papan klip"
       ],
       "Country code": [
         "Kode negara"
@@ -4893,7 +4908,7 @@
         "Lepaskan untuk mengimpor"
       ],
       "Duplicate key updated": [
-        "Kunci ganda diperbarui"
+        "Kunci duplikat diperbarui"
       ],
       "Each code can only be used once": [
         "Masing-masing kode hanya dapat digunakan sekali"
@@ -4915,15 +4930,6 @@
       ],
       "Email tracker protection is disabled": [
         "Perlindungan pelacak email dinonakifkan"
-      ],
-      "Email trackers can violate your privacy. ${ BRAND_NAME } did not find any trackers in this message.": [
-        "Pelacak email dapat mengusik privasi Anda. ${ BRAND_NAME } tidak menemukan pelacak apa pun pada pesan ini."
-      ],
-      "Email trackers can violate your privacy. ${ BRAND_NAME } found and blocked ${ numberOfTrackers } trackers.": [
-        "Pelacak email dapat mengusik privasi Anda. ${ BRAND_NAME } telah menemukan dan memblokir ${ numberOfTrackers } pelacak yang terdapat pada email ini."
-      ],
-      "Email trackers can violate your privacy. Turn on tracker protection to prevent senders from knowing whether and when you have opened a message.": [
-        "Pelacak email dapat mengusik privasi Anda. Aktifkan perlindungan pelacak agar para pengirim pesan tidak dapat mengetahui apakah Anda telah membuka pesan yang Anda terima atau belum."
       ],
       "Emails are automatically signed": [
         "Email ditandatangani secara otomatis"
@@ -5096,6 +5102,9 @@
       "Link type": [
         "Jenis tautan"
       ],
+      "Links cleaned:": [
+        "Tautan yang dibersihkan:"
+      ],
       "Loading": [
         "Memuat"
       ],
@@ -5177,9 +5186,6 @@
       "No email address": [
         "Tidak ada alamat email"
       ],
-      "No email trackers found": [
-        "Tidak ada pelacak email yang ditemukan"
-      ],
       "No folder found": [
         "Tidak ada folder yang ditemukan"
       ],
@@ -5195,14 +5201,17 @@
       "No label selected": [
         "Tidak ada label yang dipilih"
       ],
+      "No links cleaned": [
+        "Tidak ada tautan untuk dibersihkan"
+      ],
       "No more results found": [
         "Tidak ada hasil lainnya yang ditemukan"
       ],
       "No results found": [
         "Tidak ada hasil yang ditemukan"
       ],
-      "No trackers found, but some images could not be loaded with tracking protection": [
-        "Tidak ada pelacak yang ditemukan, namun beberapa gambar tidak dapat dimuat dengan perlindungan pelacak yang aktif"
+      "No trackers found": [
+        "Tidak ada pelacak yang ditemukan"
       ],
       "non-${ MAIL_APP_NAME }": [
         "non-${ MAIL_APP_NAME }"
@@ -5253,7 +5262,7 @@
         "Harap diperhatikan, alamat yang ditugaskan di grup ini TIDAK akan dihapus."
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
-        "Mohon dicatat proses ini memerlukan waktu, tergantung pada ukuran buku alamat Anda."
+        "Mohon dicatat bahwa proses ini dapat memakan waktu sejenak tergantung pada ukuran buku alamat Anda."
       ],
       "Please select the folders you would like to import:": [
         "Harap pilih folder-folder yang hendak Anda impor:"
@@ -5298,7 +5307,7 @@
         "Informasi pemulihan akan tetap terdapat pada perangkat ini kecuali Anda memilih untuk menghapusnya."
       ],
       "Recovery phrase copied to clipboard": [
-        "Frasa pemulihan disalin ke clipboard"
+        "Frasa pemulihan disalin ke papan klip"
       ],
       "Recovery phrase downloaded": [
         "Frasa pemulihan diunduh"
@@ -5594,8 +5603,11 @@
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "Pesan yang akan dikirim sudah terlalu banyak. Mohon tunggu sejenak sebelum Anda menjadwalkan pengiriman pesan ini."
       ],
-      "Turn off to only search by date, name, or email address. To disable search message content and delete downloaded messages, go to settings.": [
-        "Matikan untuk hanya mencari berdasarkan tanggal, nama, atau alamat surel. Untuk menonaktifkan pencarian konten pesan dan penghapusan pesan terunduh, pergi ke pengaturan."
+      "Trackers blocked:": [
+        "Pelacak yang diblokir:"
+      ],
+      "Turn off to only search by date, name, email address, or subject line. To disable search message content and delete downloaded messages, go to settings.": [
+        "Nonaktifkan pilihan ini agar pencarian pesan hanya didasarkan pada tanggal, nama, alamat email, atau baris subjek. Untuk menonaktifkan pencarian konten pesan dan menghapus pesan yang telah diunduh, tuju menu pengaturan."
       ],
       "Turn on to search the content of your messages": [
         "Aktifkan untuk dapat mencari isi konten pesan Anda"
@@ -5735,6 +5747,9 @@
       "You can check the progress ${ importProgressLink }.": [
         "Anda dapat mengecek status proses impor Anda ${ importProgressLink }."
       ],
+      "You can click links in this email without being profiled and leaking your online activity with advertisers.": [
+        "Anda dapat membuka tautan pada email ini tanpa teridentifikasi dan tanpa membocorkan aktivitas online Anda kepada para pengiklan."
+      ],
       "You can either update your search query or ${ button }": [
         "Anda dapat memperbarui kueri pencarian atau ${ button }"
       ],
@@ -5743,6 +5758,9 @@
       ],
       "You can import one data type at a time.": [
         "Anda hanya dapat mengimpor satu tipe data dalam satu waktu."
+      ],
+      "You can read this email without revealing your interactions, location, or device to advertisers.": [
+        "Anda dapat membaca email ini tanpa menyingkap interaksi, lokasi, atau perangkat Anda kepada para pengiklan."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Anda dapat mengaktifkan notifikasi untuk menerima pemberitahuan setiap kali terdapat email baru yang masuk ke folder ini."
@@ -6211,6 +6229,9 @@
       "City": [
         "Kota"
       ],
+      "Cleaned": [
+        "Dibersihkan"
+      ],
       "Code is 6 digits without spaces": [
         "Kode tersusun atas 6 digit angka tanpa spasi"
       ],
@@ -6412,6 +6433,9 @@
       "OK": [
         "OK"
       ],
+      "Open in a new tab": [
+        "Buka di tab baru"
+      ],
       "Operating system": [
         "Sistem operasi"
       ],
@@ -6426,6 +6450,9 @@
       ],
       "Or": [
         "Atau"
+      ],
+      "Original link": [
+        "Tautan asli"
       ],
       "Participants": [
         "Peserta"
@@ -6915,11 +6942,6 @@
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
         "Versi baru ${ appName } telah tersedia. ${ reloadButton }."
-      ]
-    },
-    "Message has been sent to the user via a SimpleLogin alias": {
-      "Delivered via SimpleLogin by ${ BRAND_NAME }": [
-        "Disampaikan via SimpleLogin oleh ${ BRAND_NAME }"
       ]
     },
     "Message image": {
@@ -7605,6 +7627,22 @@
         "Kami mendeteksi beberapa ketidakwajaran pada alamat email yang hendak Anda tuju. Alamat berikut mungkin tidak akan dapat menerima pesan Anda:"
       ]
     },
+    "Sender verification details": {
+      "Sender verification": [
+        "Verifikasi pengirim"
+      ],
+      "Sender verification failed: ${ icon.senderVerificationDetails.description }": [
+        "Verifikasi pengirim gagal: ${ icon.senderVerificationDetails.description }"
+      ],
+      "Sender verified: ${ icon.senderVerificationDetails.description }": [
+        "Pengirim terverifikasi: ${ icon.senderVerificationDetails.description }"
+      ]
+    },
+    "Sender verification error": {
+      "Verification key is not in the list of trusted keys.": [
+        "Kunci verifikasi tidak terliput dalam daftar kunci yang dipercaya."
+      ]
+    },
     "Sent email icon": {
       "Encrypted by ${ MAIL_APP_NAME }": [
         "Dienkripsi oleh ${ MAIL_APP_NAME }"
@@ -8112,7 +8150,7 @@
         "Alamat email disalin ke clipboard"
       ],
       "Fingerprint copied to clipboard": [
-        "Sidik jari disalin ke clipboard"
+        "Sidik jari disalin ke papan klip"
       ],
       "Import record deleted": [
         "Rekaman impor dihapus"
@@ -8175,7 +8213,7 @@
         "Pindahkan ${ selectionCount } pesan"
       ],
       "Password copied to clipboard": [
-        "Kata sandi disalin ke clipboard"
+        "Kata sandi disalin ke papan klip"
       ],
       "Phishing reported": [
         "Phishing berhasil dilaporkan"
@@ -8627,6 +8665,9 @@
       "More selections": [
         "Pilihan lainnya"
       ],
+      "Move all messages to Archive": [
+        "Pindahkan seluruh pesan ke Arsip"
+      ],
       "Move all messages to Trash": [
         "Pindahkan seluruh pesan ke Sampah"
       ],
@@ -8663,6 +8704,9 @@
       "No attachment found": [
         "Tidak ada sisipan yang ditemukan"
       ],
+      "No trackers found": [
+        "Tidak ada pelacak yang ditemukan"
+      ],
       "Open actions dropdown": [
         "Buka menu tindakan"
       ],
@@ -8689,6 +8733,9 @@
       ],
       "Previous message": [
         "Pesan sebelumnya"
+      ],
+      "Protect your email": [
+        "Lindungi email Anda"
       ],
       "Re-sign all contacts": [
         "Menandatangani ulang semua kontak"
@@ -8800,6 +8847,9 @@
       ],
       "Subject missing": [
         "Subjek hilang"
+      ],
+      "This email is protected": [
+        "Email ini terlindungi"
       ],
       "To": [
         "Kepada"

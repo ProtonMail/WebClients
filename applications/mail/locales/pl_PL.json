@@ -124,6 +124,9 @@
       "Block": [
         "Zablokuj"
       ],
+      "Block email tracking": [
+        "Zablokuj śledzenie wiadomości"
+      ],
       "Block messages from this sender": [
         "Zablokuj wiadomości od tego nadawcy"
       ],
@@ -366,9 +369,6 @@
       ],
       "Email settings": [
         "Ustawienia adresu e-mail"
-      ],
-      "Emoji": [
-        "Emoji"
       ],
       "Enable": [
         "Włącz"
@@ -1060,9 +1060,6 @@
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Spróbuj zapisać ponownie. Zapisanie nie powiodło się: ${ saveError }"
       ],
-      "Turn on tracker protection": [
-        "Włącz ochronę przed śledzeniem"
-      ],
       "Unblock": [
         "Odblokuj"
       ],
@@ -1273,7 +1270,7 @@
         "Poczta ${ nameToDisplay }"
       ],
       "5 trackers removed": [
-        "Usunięto 5 skryptów śledzących"
+        "Usunięto 5 elementów śledzących"
       ],
       "Auto forwarded": [
         "Automatycznie przekierowane"
@@ -2986,6 +2983,12 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Możesz oznaczyć do usunięcia te kontakty, których nie chcesz scalić ani zachować. Usunięcie nastąpi dopiero po kliknięciu przycisku Scal"
+      ],
+      "You can read the message and click on links without being tracked with email tracker protection.": [
+        "Dzięki ochronie przed śledzeniem możesz otworzyć wiadomość i jej linki bez utraty prywatności."
+      ],
+      "You can read the message and click on links without being tracked.": [
+        "Możesz otworzyć wiadomość i jej linki bez śledzenia Cię."
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4739,11 +4742,23 @@
         "${ messagesNotAuthorizedToMove } wiadomości nie mogło zostać przeniesionych.",
         "${ messagesNotAuthorizedToMove } wiadomości nie mogło zostać przeniesionych."
       ],
-      "${ numberOfTrackers } email tracker blocked": [
-        "Zablokowano ${ numberOfTrackers } element śledzący",
-        "Zablokowano ${ numberOfTrackers } elementy śledzące",
-        "Zablokowano ${ numberOfTrackers } elementów śledzących",
-        "Zablokowano ${ numberOfTrackers } elementów śledzących"
+      "${ numberOfImageTrackers } email tracker blocked": [
+        "Zablokowano ${ numberOfImageTrackers } element śledzący",
+        "Zablokowano ${ numberOfImageTrackers } elementy śledzące",
+        "Zablokowano ${ numberOfImageTrackers } elementów śledzących",
+        "Zablokowano ${ numberOfImageTrackers } elementów śledzących"
+      ],
+      "${ numberOfImageTrackers } tracker blocked": [
+        "Zablokowano ${ numberOfImageTrackers } element śledzący",
+        "Zablokowano ${ numberOfImageTrackers } elementy śledzące",
+        "Zablokowano ${ numberOfImageTrackers } elementów śledzących",
+        "Zablokowano ${ numberOfImageTrackers } elementów śledzących"
+      ],
+      "${ numberOfUTMTrackers } link cleaned": [
+        "Wyczyszczono ${ numberOfUTMTrackers } link",
+        "Wyczyszczono ${ numberOfUTMTrackers } linki",
+        "Wyczyszczono ${ numberOfUTMTrackers } linków",
+        "Wyczyszczono ${ numberOfUTMTrackers } linków"
       ],
       "${ numContact } contact": [
         "${ numContact } kontakt",
@@ -4958,8 +4973,11 @@
       "Are you sure you want to discard your changes?": [
         "Czy na pewno chcesz odrzucić wprowadzone zmiany?"
       ],
+      "Are you sure you want to move all messages in this location to Archive?": [
+        "Czy na pewno chcesz przenieść wszystkie wiadomości do Archiwum?"
+      ],
       "Are you sure you want to move all messages in this location to Trash?": [
-        "Czy na pewno chcesz przenieść wszystkie te wiadomości do Kosza?"
+        "Czy na pewno chcesz przenieść wszystkie wiadomości do Kosza?"
       ],
       "Are you sure you want to permanently delete ${ count } conversation?": [
         "Czy na pewno chcesz trwale usunąć ${ count } wątek?",
@@ -5162,18 +5180,6 @@
       "Email tracker protection is disabled": [
         "Ochrona przed śledzeniem wiadomości jest wyłączona"
       ],
-      "Email trackers can violate your privacy. ${ BRAND_NAME } did not find any trackers in this message.": [
-        "Elementy śledzące w wiadomości mogą naruszyć Twoją prywatność. ${ BRAND_NAME } nie znalazł żadnych takich elementów."
-      ],
-      "Email trackers can violate your privacy. ${ BRAND_NAME } found and blocked ${ numberOfTrackers } tracker.": [
-        "Elementy śledzące w wiadomości mogą naruszyć Twoją prywatność. ${ BRAND_NAME } znalazł i zablokował ${ numberOfTrackers } element śledzący w wiadomości.",
-        "Elementy śledzące w wiadomości mogą naruszyć Twoją prywatność. ${ BRAND_NAME } znalazł i zablokował ${ numberOfTrackers } elementy śledzące w wiadomości.",
-        "Elementy śledzące w wiadomości mogą naruszyć Twoją prywatność. ${ BRAND_NAME } znalazł i zablokował ${ numberOfTrackers } elementów śledzących w wiadomości.",
-        "Elementy śledzące w wiadomości mogą naruszyć Twoją prywatność. ${ BRAND_NAME } znalazł i zablokował ${ numberOfTrackers } elementów śledzących w wiadomości."
-      ],
-      "Email trackers can violate your privacy. Turn on tracker protection to prevent senders from knowing whether and when you have opened a message.": [
-        "Elementy śledzące w wiadomości mogą naruszyć Twoją prywatność. Włącz ochronę przed śledzeniem, aby nadawca nie wiedział, czy i kiedy otwierasz wiadomość."
-      ],
       "Emails are automatically signed": [
         "Wiadomości są automatyczne podpisywane"
       ],
@@ -5366,6 +5372,9 @@
       "Link type": [
         "Typ linku"
       ],
+      "Links cleaned:": [
+        "Wyczyszczone linki:"
+      ],
       "Loading": [
         "Ładowanie"
       ],
@@ -5450,9 +5459,6 @@
       "No email address": [
         "Brak adresu e-mail"
       ],
-      "No email trackers found": [
-        "Brak elementów śledzących"
-      ],
       "No folder found": [
         "Nie znaleziono folderu"
       ],
@@ -5468,14 +5474,17 @@
       "No label selected": [
         "Nie wybrano etykiety"
       ],
+      "No links cleaned": [
+        "Brak wyczyszczonych linków"
+      ],
       "No more results found": [
         "Nie znaleziono więcej wyników"
       ],
       "No results found": [
         "Nie znaleziono żadnych wyników"
       ],
-      "No trackers found, but some images could not be loaded with tracking protection": [
-        "Brak elementów śledzących, ale niektóre obrazy nie mogły zostać załadowane z ochroną przed śledzeniem"
+      "No trackers found": [
+        "Nie znaleziono elementów śledzących"
       ],
       "non-${ MAIL_APP_NAME }": [
         "użytkownika spoza ${ MAIL_APP_NAME }"
@@ -5619,7 +5628,7 @@
         "Wyszukiwanie trwa zbyt długo? ${ dropdownButton } lub ${ toggleOffButton }."
       ],
       "Secure your files with encrypted cloud storage for free, today.": [
-        "Zabezpiecz pliki za darmo, za pomocą zaszyfrowanej przestrzeni dyskowej w chmurze."
+        "Zabezpiecz pliki za darmo, za pomocą szyfrowanej przestrzeni dyskowej w chmurze."
       ],
       "Seems like you are all caught up for now": [
         "Wygląda na to, że jesteś już na bieżąco z wiadomościami"
@@ -5689,6 +5698,9 @@
       ],
       "Subject: ": [
         "Temat: "
+      ],
+      "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
+        "Subskrypcja wkrótce się zakończy. Reaktywuj ją do ${ byDate }, aby zachować bonusy planu ${ planName }. ${ reactivateLink }"
       ],
       "support team": [
         "pomocą techniczną"
@@ -5873,8 +5885,11 @@
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "Zbyt wiele wiadomości czeka na wysłanie. Poczekaj na wysłanie innej zaplanowanej lub zaplanuj tę wiadomość."
       ],
-      "Turn off to only search by date, name, or email address. To disable search message content and delete downloaded messages, go to settings.": [
-        "Wyłącz, aby wyszukiwać tylko według daty, nazwy lub adresu e-mail. Aby wyłączyć wyszukiwanie zawartości wiadomości i usunąć pobrane wiadomości, przejdź do ustawień."
+      "Trackers blocked:": [
+        "Zablokowane elementy śledzące:"
+      ],
+      "Turn off to only search by date, name, email address, or subject line. To disable search message content and delete downloaded messages, go to settings.": [
+        "Wyłącz, aby wyszukiwać tylko według daty, nazwy, adresu e-mail lub tematu. Aby wyłączyć wyszukiwanie zawartości wiadomości i usunąć pobrane wiadomości, przejdź do ustawień."
       ],
       "Turn on to search the content of your messages": [
         "Włącz, aby wyszukiwać zawartość wiadomości"
@@ -6014,6 +6029,9 @@
       "You can check the progress ${ importProgressLink }.": [
         "Możesz sprawdzić postęp ${ importProgressLink }."
       ],
+      "You can click links in this email without being profiled and leaking your online activity with advertisers.": [
+        "Możesz otworzyć linki w tej wiadomości bez narażania się na śledzenie ze strony reklamodawców."
+      ],
       "You can either update your search query or ${ button }": [
         "Możesz zaktualizować zapytanie lub ${ button }"
       ],
@@ -6022,6 +6040,9 @@
       ],
       "You can import one data type at a time.": [
         "Możesz importować jeden typ danych jednocześnie."
+      ],
+      "You can read this email without revealing your interactions, location, or device to advertisers.": [
+        "Możesz otworzyć tę wiadomość bez narażania się na śledzenie ze strony reklamodawców."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Możesz włączyć powiadomienia, aby otrzymywać informacje o nowych wiadomościach w tym folderze."
@@ -6526,6 +6547,9 @@
       "City": [
         "Miasto"
       ],
+      "Cleaned": [
+        "Wyczyszczony"
+      ],
       "Code is 6 digits without spaces": [
         "Kod to 6 cyfr bez spacji"
       ],
@@ -6727,6 +6751,9 @@
       "OK": [
         "OK"
       ],
+      "Open in a new tab": [
+        "Otwórz w nowej karcie"
+      ],
       "Operating system": [
         "System operacyjny"
       ],
@@ -6741,6 +6768,9 @@
       ],
       "Or": [
         "lub"
+      ],
+      "Original link": [
+        "Oryginalny link"
       ],
       "Participants": [
         "Uczestnicy"
@@ -7245,11 +7275,6 @@
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
         "Dostępna jest nowa wersja aplikacji ${ appName }. ${ reloadButton }."
-      ]
-    },
-    "Message has been sent to the user via a SimpleLogin alias": {
-      "Delivered via SimpleLogin by ${ BRAND_NAME }": [
-        "Dostarczono za pomocą SimpleLogin przez ${ BRAND_NAME }"
       ]
     },
     "Message image": {
@@ -7966,6 +7991,22 @@
         "Wykryliśmy niektóre ostrzeżenia. Następujące adresy e-mail mogą nie otrzymać wiadomości:",
         "Wykryliśmy ostrzeżenia. Następujące adresy e-mail mogą nie otrzymać wiadomości:",
         "Wykryliśmy ostrzeżenia. Następujące adresy e-mail mogą nie otrzymać wiadomości:"
+      ]
+    },
+    "Sender verification details": {
+      "Sender verification": [
+        "Weryfikacja nadawcy"
+      ],
+      "Sender verification failed: ${ icon.senderVerificationDetails.description }": [
+        "Weryfikacja nadawcy nie powiodła się: ${ icon.senderVerificationDetails.description }"
+      ],
+      "Sender verified: ${ icon.senderVerificationDetails.description }": [
+        "Nadawca został zweryfikowany: ${ icon.senderVerificationDetails.description }"
+      ]
+    },
+    "Sender verification error": {
+      "Verification key is not in the list of trusted keys.": [
+        "Klucz weryfikacyjny nie znajduje się na liście zaufanych kluczy."
       ]
     },
     "Sent email icon": {
@@ -9240,6 +9281,9 @@
       "No attachment found": [
         "Nie znaleziono załącznika"
       ],
+      "No trackers found": [
+        "Nie znaleziono elementów śledzących"
+      ],
       "Open actions dropdown": [
         "Otwórz listę akcji"
       ],
@@ -9266,6 +9310,9 @@
       ],
       "Previous message": [
         "Poprzednia wiadomość"
+      ],
+      "Protect your email": [
+        "Chroń swoje wiadomości"
       ],
       "Re-sign all contacts": [
         "Podpisz ponownie wszystkie kontakty"
@@ -9377,6 +9424,9 @@
       ],
       "Subject missing": [
         "Brak tematu"
+      ],
+      "This email is protected": [
+        "Ta wiadomość jest chroniona"
       ],
       "To": [
         "Do"
@@ -9500,10 +9550,10 @@
         "Proces importowania rozpocznie się od najnowszych wiadomości."
       ],
       "The selected theme will be active when your system is set to \"dark mode\"": [
-        "Wybrany motyw będzie aktywny, gdy w systemie jest ustawiony ciemny motyw"
+        "Wybrany motyw będzie aktywny, kiedy w systemie będzie ustawiony ciemny motyw"
       ],
       "The selected theme will be active when your system is set to \"light mode\"": [
-        "Wybrany motyw będzie aktywny, gdy w systemie jest ustawiony jasny motyw"
+        "Wybrany motyw będzie aktywny, kiedy w systemie będzie ustawiony jasny motyw"
       ],
       "This feature is only available for paid users": [
         "Ta funkcja jest dostępna tylko dla użytkowników płatnego planu"
