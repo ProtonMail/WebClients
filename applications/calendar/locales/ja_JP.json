@@ -3479,11 +3479,20 @@
       "Custom yearly": [
         "毎年 (カスタム)"
       ],
+      "Customize the look and feel of ${ BRAND_NAME } applications.": [
+        "${ BRAND_NAME }アプリの外観をカスタマイズ"
+      ],
       "Daily": [
         "毎日"
       ],
       "Discard changes?": [
         "変更を破棄してよろしいですか？"
+      ],
+      "Drop file here to upload": [
+        "アップロードするファイルをここにドロップ"
+      ],
+      "Drop to import": [
+        "ドロップしてインポート"
       ],
       "Duplicate key updated": [
         "重複した鍵がアップデートされました"
@@ -3725,6 +3734,9 @@
       "Some of your answers to occurrences previously updated by the organizer will be lost.": [
         "主催者が一度変更した行事に対する回答は失われます。"
       ],
+      "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
+        "サブスクリプションがもうすぐ終了します: ${ planName }の特典を維持するには${ byDate }までに更新してください。${ reactivateLink }"
+      ],
       "support team": [
         "サポートチーム"
       ],
@@ -3946,6 +3958,9 @@
       ],
       "Your events will be encrypted and then saved.": [
         "予定はすべて暗号化された上で保存されます。"
+      ],
+      "Your files will be encrypted and then saved": [
+        "ファイルは暗号化して保存されます"
       ],
       "Your import will not be processed.": [
         "インポートできませんでした。"
@@ -4741,6 +4756,9 @@
       ],
       "Custom email domains": [
         "独自メールドメイン"
+      ],
+      "Hide-my-email aliases": [
+        "Hide-my-email エイリアス"
       ],
       "Schedule messages at any time": [
         "いつでもメッセージを送信予約できます"
@@ -5818,6 +5836,9 @@
       "Calendar alarm": [
         "カレンダーアラーム"
       ],
+      "Cannot add more addresses": [
+        "これ以上アドレスを追加できません"
+      ],
       "Change my answer": [
         "回答を変更"
       ],
@@ -6099,6 +6120,9 @@
       ],
       "Start import process": [
         "インポートを開始"
+      ],
+      "Unlock contacts groups": [
+        "連絡先グループをアンロック"
       ],
       "Update event": [
         "予定の更新"

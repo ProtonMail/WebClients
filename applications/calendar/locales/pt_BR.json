@@ -2006,7 +2006,7 @@
         "Mesclando contatos... Isso pode levar alguns minutos. Quando o processo estiver concluído, você poderá fechar esta janela."
       ],
       "ProtonMail logo and a plus sign": [
-        "Logo ProtonMail e um sinal de mais"
+        "Logotipo do Proton Mail e um sinal de mais"
       ],
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "Ganhe tempo enviando e-mail ou convites para todo mundo de uma só vez, uma funcionalidade premium entre muitas outras. Faça o upgrade hoje."
@@ -2320,7 +2320,7 @@
         "Nenhum contato encontrado para importação"
       ],
       "No emails found to import - the account does not have an inbox": [
-        "Nenhum e-mail encontrado para importação — a conta não possui uma caixa de entrada."
+        "Nenhum e-mail encontrado para importação - a conta não possui uma caixa de entrada."
       ],
       "No valid address found": [
         "Nenhum endereço válido encontrado"
@@ -2880,7 +2880,7 @@
         "Você foi convidado a participar de ${ bannerOrganization }. ${ viewInviteButton }"
       ],
       "You have successfully joined the Family plan": [
-        "Você entrou no plano familiar"
+        "Você entrou no plano Family"
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "Você foi convidado a vincular sua conta da ${ BRAND_NAME } a este plano de grupo e aproveitar juntos de todos os recursos premium da ${ BRAND_NAME_TWO }."
@@ -3798,7 +3798,7 @@
         "Sessão expirada"
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
-        "Configurar o PGP permite o envio de e-mails com criptografia de ponta-a-ponta com um usuário não-${ BRAND_NAME } que usa um serviço compatível com PGP."
+        "Configurar o PGP permite o envio de e-mails com criptografia de ponta-a-ponta com um usuário que não usam o ${ BRAND_NAME } que usa um serviço compatível com PGP."
       ],
       "Some of your answers to occurrences previously updated by the organizer will be lost.": [
         "Algumas das suas respostas a ocorrências previamente atualizadas pelo organizador serão perdidas."
@@ -3810,7 +3810,7 @@
         "equipe de suporte"
       ],
       "Temporarily unavailable. Please check back later.": [
-        "Temporariamente indisponível. Retorne mais tarde."
+        "Temporariamente indisponível. Tente mais tarde."
       ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "O aplicativo precisa descriptografar localmente seus contatos antes que eles possam ser exportados. Ao final do processo, um arquivo VCF será gerado e você poderá baixá-lo."
@@ -4127,11 +4127,6 @@
       ],
       "Trusted": [
         "Confiável"
-      ]
-    },
-    "Key transparency details button": {
-      "Click here for more details.": [
-        "Clique aqui para mais detalhes."
       ]
     },
     "Knowledge base link label": {
@@ -4904,6 +4899,9 @@
       ],
       "Calendar added": [
         "Calendário adicionado"
+      ],
+      "Calendar updated": [
+        "Calendário atualizado"
       ]
     },
     "Notification in share calendar modal": {
@@ -5844,7 +5842,7 @@
         "Desfazer em andamento"
       ],
       "Verification successful": [
-        "Verificado"
+        "Verificado com sucesso"
       ]
     },
     "Success notification when user send feedback": {
