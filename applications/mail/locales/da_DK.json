@@ -124,6 +124,9 @@
       "Block": [
         "Blokér"
       ],
+      "Block email tracking": [
+        "Blokér sporing af e-mail"
+      ],
       "Block messages from this sender": [
         "Blokér beskeder fra denne afsender"
       ],
@@ -363,9 +366,6 @@
       "Email settings": [
         "E-mailindstillinger"
       ],
-      "Emoji": [
-        "Emoji"
-      ],
       "Enable": [
         "Aktivér"
       ],
@@ -484,7 +484,7 @@
         "Jeg har et spørgsmål"
       ],
       "Image could not be loaded with tracker protection.": [
-        "Billede kunne ikke indlæses med tracker beskyttelse."
+        "Billede kunne ikke indlæses med sporingsbeskyttelse."
       ],
       "Image will be loaded without a proxy": [
         "Billede vil blive indlæst uden en proxy"
@@ -1051,9 +1051,6 @@
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Prøv at gemme igen. Det lykkedes ikke at gemme på grund af: ${ saveError }"
-      ],
-      "Turn on tracker protection": [
-        "Slå beskyttelse mod sporing til"
       ],
       "Unblock": [
         "Fjern blokering"
@@ -2964,6 +2961,12 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Du kan markere de kontakter til sletning, som du hverken ønsker at flette eller beholde.\nSletning vil kun ske, når der er klikket på fletningsknappen"
+      ],
+      "You can read the message and click on links without being tracked with email tracker protection.": [
+        "Med email tracker-beskyttelse kan du læse beskeden og klikke på links uden at blive sporet."
+      ],
+      "You can read the message and click on links without being tracked.": [
+        "Du kan læse beskeden og klikke på links uden at blive sporet."
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3896,6 +3899,14 @@
         "Dit nuværende abonnement kan ikke tilmelde sig et Visionary- eller familie-abonnement."
       ]
     },
+    "familyOffer_2023:Footer": {
+      "*Your subscription will automatically renew at the same rate at the end of your billing cycle.": [
+        "*Dit abonnement vil automatisk blive fornyet til samme pris ved slutningen af din faktureringscyklus."
+      ],
+      "Discounts are based on the standard monthly pricing.": [
+        "Rabatter er baseret på den månedlige standardpris."
+      ]
+    },
     "familyOffer_2023:Get Proton Family": {
       "Get ${ planName }": [
         "Få ${ planName }"
@@ -4615,9 +4626,17 @@
         "${ messagesNotAuthorizedToMove } besked kunne ikke flyttes.",
         "${ messagesNotAuthorizedToMove } beskeder kunne ikke flyttes."
       ],
-      "${ numberOfTrackers } email tracker blocked": [
-        "${ numberOfTrackers } e-mail-tracker blokeret",
-        "${ numberOfTrackers } e-mail-trackere blokeret"
+      "${ numberOfImageTrackers } email tracker blocked": [
+        "${ numberOfImageTrackers } e-mail-tracker blokeret",
+        "${ numberOfImageTrackers } e-mail-trackere blokeret"
+      ],
+      "${ numberOfImageTrackers } tracker blocked": [
+        "${ numberOfImageTrackers } tracker blokeret",
+        "${ numberOfImageTrackers } trackere blokeret"
+      ],
+      "${ numberOfUTMTrackers } link cleaned": [
+        "${ numberOfUTMTrackers } link renset",
+        "${ numberOfUTMTrackers } links renset"
       ],
       "${ numContact } contact": [
         "${ numContact } kontakt",
@@ -4955,7 +4974,7 @@
         "Træk fil hertil for at uploade"
       ],
       "Drop to import": [
-        "Drop for at importere"
+        "Slip for at importere"
       ],
       "Duplicate key updated": [
         "Duplikeret nøgle opdateret"
@@ -4980,16 +4999,6 @@
       ],
       "Email tracker protection is disabled": [
         "Beskyttelse mod sporing af e-mail er deaktiveret"
-      ],
-      "Email trackers can violate your privacy. ${ BRAND_NAME } did not find any trackers in this message.": [
-        "Sporing af e-mails kan krænke dit privatliv. ${ BRAND_NAME } fandt ingen sporing af denne besked."
-      ],
-      "Email trackers can violate your privacy. ${ BRAND_NAME } found and blocked ${ numberOfTrackers } tracker.": [
-        "Sporing af e-mails kan krænke dit privatliv. ${ BRAND_NAME } fandt og blokerede ${ numberOfTrackers } tracker.",
-        "Sporing af e-mails kan krænke dit privatliv. ${ BRAND_NAME } fandt og blokerede ${ numberOfTrackers } trackere."
-      ],
-      "Email trackers can violate your privacy. Turn on tracker protection to prevent senders from knowing whether and when you have opened a message.": [
-        "Sporing af e-mails kan krænke dit privatliv. Slå beskyttelse mod sporing til for at forhindre afsendere i at vide, om og hvornår du har åbnet en besked."
       ],
       "Emails are automatically signed": [
         "E-mails er automatisk signeret"
@@ -5169,6 +5178,9 @@
       "Link type": [
         "Link-type"
       ],
+      "Links cleaned:": [
+        "Links renset:"
+      ],
       "Loading": [
         "Indlæser"
       ],
@@ -5251,9 +5263,6 @@
       "No email address": [
         "Ingen e-mailadresse"
       ],
-      "No email trackers found": [
-        "Ingen e-mail-trackere fundet"
-      ],
       "No folder found": [
         "Ingen mappe fundet"
       ],
@@ -5269,14 +5278,17 @@
       "No label selected": [
         "Ingen etiket valgt"
       ],
+      "No links cleaned": [
+        "Ingen links renset"
+      ],
       "No more results found": [
         "Der er ikke flere resultater"
       ],
       "No results found": [
         "Ingen resultater fundet"
       ],
-      "No trackers found, but some images could not be loaded with tracking protection": [
-        "Ingen trackere fundet, men nogle billeder kunne ikke indlæses med sporingsbeskyttelse"
+      "No trackers found": [
+        "Ingen e-mail-trackere fundet"
       ],
       "non-${ MAIL_APP_NAME }": [
         "ikke-${ MAIL_APP_NAME }"
@@ -5672,8 +5684,8 @@
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "Der er for mange meddelelser, der venter på at blive afsendt. Vent med at planlægge denne meddelelse, indtil en anden er blevet sendt."
       ],
-      "Turn off to only search by date, name, or email address. To disable search message content and delete downloaded messages, go to settings.": [
-        "Slå fra for kun at søge efter dato, navn og e-mailadresse. For at deaktivere søgning i beskedindhold og slette downloadede beskeder, skal du gå til indstillinger."
+      "Trackers blocked:": [
+        "Trackere blokeret:"
       ],
       "Turn on to search the content of your messages": [
         "Slå til for at søge i indholdet af dine beskeder"
@@ -5813,6 +5825,9 @@
       "You can check the progress ${ importProgressLink }.": [
         "Du kan tjekke fremskridtet ${ importProgressLink }."
       ],
+      "You can click links in this email without being profiled and leaking your online activity with advertisers.": [
+        "Du kan klikke på links i denne e-mail uden at blive profileret og lække din onlineaktivitet til annoncører."
+      ],
       "You can either update your search query or ${ button }": [
         "Du kan enten opdatere din søgeforespørgsel eller ${ button }"
       ],
@@ -5821,6 +5836,9 @@
       ],
       "You can import one data type at a time.": [
         "Du kan importere én datatype ad gangen."
+      ],
+      "You can read this email without revealing your interactions, location, or device to advertisers.": [
+        "Du kan læse denne e-mail uden at afsløre dine interaktioner, placering eller enhed for annoncører."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Du kan aktivere notifikationer for at få alarmer, når nye e-mails ankommer i denne mappe."
@@ -6301,6 +6319,9 @@
       "City": [
         "By"
       ],
+      "Cleaned": [
+        "Renset"
+      ],
       "Code is 6 digits without spaces": [
         "Koden er på 6 cifre uden mellemrum"
       ],
@@ -6502,6 +6523,9 @@
       "OK": [
         "OK"
       ],
+      "Open in a new tab": [
+        "Åbn i en ny fane"
+      ],
       "Operating system": [
         "Operativsystem"
       ],
@@ -6516,6 +6540,9 @@
       ],
       "Or": [
         "Eller"
+      ],
+      "Original link": [
+        "Oprindeligt link"
       ],
       "Participants": [
         "Deltagere"
@@ -7012,11 +7039,6 @@
         "En ny version af ${ appName } er tilgængelig. ${ reloadButton }."
       ]
     },
-    "Message has been sent to the user via a SimpleLogin alias": {
-      "Delivered via SimpleLogin by ${ BRAND_NAME }": [
-        "Leveret via SimpleLogin fra ${ BRAND_NAME }"
-      ]
-    },
     "Message image": {
       "Image has not been loaded in order to protect your privacy.": [
         "Billede er ikke blevet indlæst for at beskytte dit privatliv."
@@ -7223,7 +7245,7 @@
     },
     "new_plans: feature": {
       "Auto-delete spam and trashed messages": [
-        "Fjern automatisk spam og slettede beskeder"
+        "Slet automatisk spam og beskeder i papirkurven"
       ],
       "Custom email domains": [
         "Brugerdefinerede e-maildomæner"
@@ -7703,6 +7725,22 @@
         "Vi har registreret nogle advarsler. Følgende e-mailadresser modtager muligvis ikke e-mails:"
       ]
     },
+    "Sender verification details": {
+      "Sender verification": [
+        "Afsenderbekræftelse"
+      ],
+      "Sender verification failed: ${ icon.senderVerificationDetails.description }": [
+        "Afsenderverifikation fejlede: ${ icon.senderVerificationDetails.description }"
+      ],
+      "Sender verified: ${ icon.senderVerificationDetails.description }": [
+        "Afsender verificeret: ${ icon.senderVerificationDetails.description }"
+      ]
+    },
+    "Sender verification error": {
+      "Verification key is not in the list of trusted keys.": [
+        "Verifikationsnøglen er ikke på listen over betroede nøgler."
+      ]
+    },
     "Sent email icon": {
       "Encrypted by ${ MAIL_APP_NAME }": [
         "Krypteret af ${ MAIL_APP_NAME }"
@@ -7878,7 +7916,15 @@
         "Støt privatliv online"
       ]
     },
+    "specialoffer: Footer": {
+      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
+        "Dette abonnement bliver automatisk fornyet hvert 2. år til samme pris, indtil det annulleres."
+      ]
+    },
     "specialoffer: Label": {
+      "Limited time only": [
+        "Kun i begrænset tid"
+      ],
       "Most popular": [
         "Mest populære"
       ],
@@ -7952,13 +7998,37 @@
       "Cyber Week Sale": [
         "Cyber Week-udsalg"
       ],
+      "End of Year Sale": [
+        "Udsalg ved årets afslutning"
+      ],
       "Get our premium bundle and save more": [
         "Få vores premium-pakke og spar mere"
+      ],
+      "Our discontinued Visionary plan is back for a limited time only": [
+        "Vores udfasede Visionary-abonnement er kun tilbage i en begrænset periode"
+      ],
+      "Save more with 2 years of ${ planName }": [
+        "Spar mere med 2 års ${ planName }"
+      ],
+      "Upgrade and save more with 2 years of ${ planName }": [
+        "Opgradér og spar mere med 2 års ${ planName }"
       ]
     },
     "specialoffer: Tooltip": {
+      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.": [
+        "Få adgang til blokeret indhold og browse privat. Inkluderer 1700 servere i 60+ lande, højeste VPN-hastighed, 10 VPN-forbindelser, verdensomspændende streamingtjenester, malware- og ad-blocker og mere."
+      ],
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
         "Få adgang til blokeret indhold, og browse privat. Inkluderer 1700 servere i mere end 60 lande, højeste VPN-hastighed, 10 VPN-forbindelser, verdensomspændende streamingtjenester, malware- og ad-blocker og meget mere."
+      ],
+      "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
+        "Få adgang til indhold på streamingtjenester, herunder Netflix, Disney+ og Prime Video, hvor som helst."
+      ],
+      "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
+        "Perfekt til familier eller små teams, hvor alle kan have deres egen indbakke og aliasser. Kræver et brugerdefineret domæne."
+      ],
+      "Receive at no extra cost the paid versions of all new privacy services we release in the future, along with early access to all future features and products.": [
+        "Modtag uden ekstra omkostninger betalingsversionerne af alle nye privatlivstjenester, vi lancerer i fremtiden, sammen med tidlig adgang til alle fremtidige funktioner og produkter."
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Beskyt dine filer med krypteret lagring i skyen. Inkluderer automatisk synkronisering, krypteret fildeling og meget mere."
@@ -8747,6 +8817,9 @@
       "No attachment found": [
         "Ingen vedhæftning fundet"
       ],
+      "No trackers found": [
+        "Ingen trackere fundet"
+      ],
       "Open actions dropdown": [
         "Åbn handlingsrullemenu"
       ],
@@ -8773,6 +8846,9 @@
       ],
       "Previous message": [
         "Forrige besked"
+      ],
+      "Protect your email": [
+        "Beskyt din e-mail"
       ],
       "Re-sign all contacts": [
         "Gensignér alle kontakter"
@@ -8884,6 +8960,9 @@
       ],
       "Subject missing": [
         "Emne mangler"
+      ],
+      "This email is protected": [
+        "Denne e-mail er beskyttet"
       ],
       "To": [
         "Til"

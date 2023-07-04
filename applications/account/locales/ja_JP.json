@@ -4669,6 +4669,9 @@
       "A user is an account associated with a single username, mailbox, and person": [
         "ユーザーとは、1つのユーザー名、メールボックス、人物に関連するアカウントのことです"
       ],
+      "Access your passwords and protect your online identities seamlessly across your devices. Download and install the relevant ${ PASS_APP_NAME } apps and extensions.": [
+        "デバイス間でシームレスにパスワードにアクセスし、オンラインでのあなたを守ります。適切な ${ PASS_APP_NAME } アプリと拡張機能をダウンロードしてインストールします。"
+      ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "未払いの請求があるためアクセスが制限されています。管理者に問い合わせてください。"
       ],
@@ -4960,6 +4963,9 @@
       "Custom yearly": [
         "毎年 (カスタム)"
       ],
+      "Customize the look and feel of ${ BRAND_NAME } applications.": [
+        "${ BRAND_NAME }アプリの外観をカスタマイズ"
+      ],
       "Daily": [
         "毎日"
       ],
@@ -5010,6 +5016,12 @@
       ],
       "Download your PGP keys for use with other PGP-compatible services.": [
         "ほかの PGP 互換サービスで使用するためには PGP 鍵をダウンロードしてください。"
+      ],
+      "Drop file here to upload": [
+        "アップロードするファイルをここにドロップ"
+      ],
+      "Drop to import": [
+        "ドロップしてインポート"
       ],
       "Each code can only be used once": [
         "各コードは 1 回のみ使用可能です"
@@ -5695,6 +5707,9 @@
       "Store this password and file in a safe place. You’ll need them again to import your key.": [
         "このパスワードとファイルは安全な場所に保管してください。パスワードとファイルは鍵をインポートするときにもう一度必要になります。"
       ],
+      "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
+        "サブスクリプションがもうすぐ終了します: ${ planName }の特典を維持するには${ byDate }までに更新してください。${ reactivateLink }"
+      ],
       "Support for 1 custom email domain": [
         "1 つの独自メールドメインをサポート"
       ],
@@ -6210,6 +6225,9 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "メールアドレスは、この一度限りの認証にのみ使用されます。"
+      ],
+      "Your files will be encrypted and then saved": [
+        "ファイルは暗号化して保存されます"
       ],
       "Your import will not be processed.": [
         "インポートできませんでした。"
@@ -8234,6 +8252,9 @@
       ],
       "GDPR data processing agreement": [
         "GDPR データ処理契約"
+      ],
+      "Hide-my-email aliases": [
+        "Hide-my-email エイリアス"
       ],
       "High-speed VPN on ${ n } devices": [
         "${ n } 台のデバイスで高速 VPN"

@@ -124,6 +124,9 @@
       "Block": [
         "封鎖"
       ],
+      "Block email tracking": [
+        "封鎖郵件追蹤"
+      ],
       "Block messages from this sender": [
         "攔截此寄件者的所有來信"
       ],
@@ -361,9 +364,6 @@
       "Email settings": [
         "電郵設定"
       ],
-      "Emoji": [
-        "表情符號"
-      ],
       "Enable": [
         "啟用"
       ],
@@ -476,7 +476,7 @@
         "隱藏郵件"
       ],
       "hide-my-email aliases": [
-        "隱藏我的郵件別名"
+        "hide-my-email 別名"
       ],
       "I have a question": [
         "我要發問"
@@ -1047,9 +1047,6 @@
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "嘗試再次儲存。儲存失敗原因：${ saveError }"
-      ],
-      "Turn on tracker protection": [
-        "開啟追蹤保護"
       ],
       "Unblock": [
         "解除攔截"
@@ -1682,7 +1679,7 @@
     },
     "color": {
       "apple": [
-        "Apple"
+        "apple"
       ],
       "azureish white": [
         "天藍白"
@@ -2953,6 +2950,12 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "您可以把既不合併也不保留的聯絡人標記為刪除。唯有在點擊「合併」按鈕時，才會執行刪除"
+      ],
+      "You can read the message and click on links without being tracked with email tracker protection.": [
+        "您可開啟電子郵件追蹤程式防護並在不被追蹤之情況讀訊息及點及連結"
+      ],
+      "You can read the message and click on links without being tracked.": [
+        "您可在讀訊息和按連時不被追縱"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4586,8 +4589,14 @@
       "${ messagesNotAuthorizedToMove } messages could not be moved.": [
         "${ messagesNotAuthorizedToMove } 封郵件無法進行移動。"
       ],
-      "${ numberOfTrackers } email trackers blocked": [
-        "已攔截 ${ numberOfTrackers } 個電郵追蹤程式"
+      "${ numberOfImageTrackers } email trackers blocked": [
+        "${ numberOfImageTrackers } 電郵追蹤程式已攔截"
+      ],
+      "${ numberOfImageTrackers } trackers blocked": [
+        "${ numberOfImageTrackers } 個追蹤程式已攔截"
+      ],
+      "${ numberOfUTMTrackers } links cleaned": [
+        "${ numberOfUTMTrackers } 個連結已清理"
       ],
       "${ numContact } contacts": [
         "${ numContact } 位聯絡人"
@@ -4596,13 +4605,13 @@
         "${ numGroups } 個聯絡人群組"
       ],
       "${ NumMessages } messages in conversation": [
-        "對話中有 ${ NumMessages } 則訊息"
+        "${ NumMessages } 封郵件在交談對話中"
       ],
       "${ numOccurrences } occurrences found": [
-        "${ numOccurrences } 件事故已找到"
+        "${ numOccurrences } 個事件已找到"
       ],
       "${ numOccurrences } occurrences found in the mail content": [
-        "${ numOccurrences } 件事故在郵件內容中找到"
+        "${ numOccurrences } 個事件在郵件內容中找到"
       ],
       "${ providerFoldersNumLocalized } folders found": [
         "找到 ${ providerFoldersNumLocalized } 個資料夾"
@@ -4611,7 +4620,7 @@
         "在 Gmail 中找到 ${ providerFoldersNumLocalized } 種標籤"
       ],
       "${ pureAttachmentsCount } files attached": [
-        "${ pureAttachmentsCount } 個附件"
+        "${ pureAttachmentsCount } 個附加檔案"
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendars": [
         "${ selectedCalendarsTotal } 個，共 ${ providerCalendars.length } 個行事曆"
@@ -4641,10 +4650,10 @@
         "${ unread } 封未讀郵件"
       ],
       "${ unreadCount } scheduled messages": [
-        "${ unreadCount } 排程訊息"
+        "${ unreadCount } 封已排程訊息"
       ],
       "${ unreadCount } unread conversations": [
-        "${ unreadCount } 個未讀交談"
+        "${ unreadCount } 則未讀交談對話"
       ],
       "${ unreadCount } unread messages": [
         "${ unreadCount } 封未讀郵件"
@@ -4737,10 +4746,10 @@
         "您確定您要把所有郵件移動至此位置進行刪除嗎？"
       ],
       "Are you sure you want to permanently delete ${ count } conversations?": [
-        "您確定要永久刪除 ${ count } 個交談嗎？"
+        "您確定要永久刪除 ${ count } 則交談對話？"
       ],
       "Are you sure you want to permanently delete ${ count } drafts?": [
-        "您確定要永久刪除這 ${ count } 個草稿嗎？"
+        "您確定要永久刪除這 ${ count } 封草稿嗎？"
       ],
       "Are you sure you want to permanently delete ${ count } messages?": [
         "您確定要永久刪除 ${ count } 封郵件嗎？"
@@ -4922,15 +4931,6 @@
       "Email tracker protection is disabled": [
         "電郵追蹤保護已停用"
       ],
-      "Email trackers can violate your privacy. ${ BRAND_NAME } did not find any trackers in this message.": [
-        "電郵追蹤程式會侵犯您的隱私。 ${ BRAND_NAME } 在此訊息中並未發現任何電郵追蹤程式。"
-      ],
-      "Email trackers can violate your privacy. ${ BRAND_NAME } found and blocked ${ numberOfTrackers } trackers.": [
-        "電郵追蹤程式會侵犯您的私隱。 已發現 ${ BRAND_NAME } 並且攔截 ${ numberOfTrackers } 個追踪程式。"
-      ],
-      "Email trackers can violate your privacy. Turn on tracker protection to prevent senders from knowing whether and when you have opened a message.": [
-        "電郵追蹤器會侵犯您的隱私。開啟電郵追蹤保護防止寄件者得知您是否開啟過此訊息。"
-      ],
       "Emails are automatically signed": [
         "電子郵件已自動簽章"
       ],
@@ -5102,6 +5102,9 @@
       "Link type": [
         "連結類型"
       ],
+      "Links cleaned:": [
+        "連結已清理:"
+      ],
       "Loading": [
         "正在載入"
       ],
@@ -5183,9 +5186,6 @@
       "No email address": [
         "沒有電郵位址"
       ],
-      "No email trackers found": [
-        "未找到電郵追蹤器"
-      ],
       "No folder found": [
         "找不到資料夾"
       ],
@@ -5201,14 +5201,17 @@
       "No label selected": [
         "未選取任何標籤"
       ],
+      "No links cleaned": [
+        "無需清理的連結"
+      ],
       "No more results found": [
         "找不到更多結果"
       ],
       "No results found": [
         "找不到相符的結果"
       ],
-      "No trackers found, but some images could not be loaded with tracking protection": [
-        "沒有發現追蹤程式，但追蹤保護啟用時即無法載入某些圖像"
+      "No trackers found": [
+        "未發現追蹤程式"
       ],
       "non-${ MAIL_APP_NAME }": [
         "非 ${ MAIL_APP_NAME }"
@@ -5475,10 +5478,10 @@
         "用來驗證連絡人詳細資料的簽章發生錯誤，可能是重設密碼所導致。"
       ],
       "These conversations will be marked as spam. Would you also like to unsubscribe from future emails?": [
-        "交談將會標記為垃圾信件。請問您也想退訂往後相關的電郵信件嗎？"
+        "交談對話會標記為垃圾信件。請問您也想退訂日後相關的電郵嗎？"
       ],
       "These messages will be marked as spam. Would you also like to unsubscribe from future emails?": [
-        "這些信件將會標記為垃圾信件。請問您也想退訂往後相關的電郵信件嗎？"
+        "這些信件會標記為垃圾信件。請問您也想退訂日後相關的電郵嗎？"
       ],
       "They can't spam you if they don't know your email address. Protect your inbox with hide-my-email aliases.": [
         "如果他們不知道您的電子郵件位址，他們就無法向您傳送垃圾郵件。使用 hide-my-email 別名保護您的收件匣。"
@@ -5600,8 +5603,11 @@
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "等待傳送的訊息太多了。請等其它訊息傳送後再安排此訊息。"
       ],
-      "Turn off to only search by date, name, or email address. To disable search message content and delete downloaded messages, go to settings.": [
-        "關閉搜尋日期、名稱、電子郵件位址。於設定中停用搜尋訊息並刪除下載的訊息。"
+      "Trackers blocked:": [
+        "追蹤器已封鎖:"
+      ],
+      "Turn off to only search by date, name, email address, or subject line. To disable search message content and delete downloaded messages, go to settings.": [
+        "關閉搜尋日期、名稱、電子郵件位址及主旨。於設定中停用搜尋訊息並刪除下載的訊息。"
       ],
       "Turn on to search the content of your messages": [
         "啟用以搜尋您的郵件內容"
@@ -5741,6 +5747,9 @@
       "You can check the progress ${ importProgressLink }.": [
         "您可以檢查進度 ${ importProgressLink }。"
       ],
+      "You can click links in this email without being profiled and leaking your online activity with advertisers.": [
+        "您在不洩漏您電子活動給廣告商之情況按於電子郵件中的連結"
+      ],
       "You can either update your search query or ${ button }": [
         "您可以更新您的搜尋查詢，又或者${ button }。"
       ],
@@ -5749,6 +5758,9 @@
       ],
       "You can import one data type at a time.": [
         "您可以一次匯入一種資料類型。"
+      ],
+      "You can read this email without revealing your interactions, location, or device to advertisers.": [
+        "您可在不提供您的互動、地點及裝置給廣告商使用"
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "您可以啟用通知功能，以便在新的電郵訊息送達此資料夾時收到通知。"
@@ -5769,7 +5781,7 @@
         "您有 ${ unreadsLabel } 在收件匣中。"
       ],
       "You have **${ count } conversations** stored in this folder": [
-        "您有 **${ count } 個交談** 儲存於此資料夾"
+        "您有 **${ count } 則交談對話** 儲存於此資料夾"
       ],
       "You have **${ count } conversations** tagged with this label": [
         "您選取了有此標籤的 **${ count } 個交談**"
@@ -5802,7 +5814,7 @@
         "您選取了有此標籤的 **${ count } 個交談**"
       ],
       "You selected **${ count } messages** from this folder": [
-        "您從此資料夾選取了 **${ count } 則訊息**"
+        "您已在此資料夾選取 **${ count } 則訊息**"
       ],
       "You selected **${ count } messages** with this label": [
         "您選取了有此標籤的 **${ count } 則訊息**"
@@ -5811,7 +5823,7 @@
         "您編寫了「${ attachmentsFoundKeyword }」，但沒有加入對應的附件。無論如何寄出此封郵件？"
       ],
       "You've reached the maximum number of addresses in the contact group(s):": [
-        "您已達到聯絡人群組郵件地址最高上限："
+        "您已達到通訊群組郵件地址最高上限:"
       ],
       "You've reached the maximum number of addresses in the contact group.": [
         "您以達到通訊群組郵件地址最高上限"
@@ -6176,7 +6188,7 @@
         "附加螢幕截圖"
       ],
       "Authenticator app": [
-        "驗證 APP"
+        "驗證 app"
       ],
       "Automatically save contacts": [
         "自動儲存聯絡人"
@@ -6216,6 +6228,9 @@
       ],
       "City": [
         "縣市"
+      ],
+      "Cleaned": [
+        "已清理"
       ],
       "Code is 6 digits without spaces": [
         "驗證碼為六位數且無空格"
@@ -6418,6 +6433,9 @@
       "OK": [
         "還不錯"
       ],
+      "Open in a new tab": [
+        "於新分頁開啟"
+      ],
       "Operating system": [
         "作業系統"
       ],
@@ -6432,6 +6450,9 @@
       ],
       "Or": [
         "或"
+      ],
+      "Original link": [
+        "原始鏈接"
       ],
       "Participants": [
         "參與者"
@@ -6923,11 +6944,6 @@
         "${ appName } 的新版本可供使用。${ reloadButton }。"
       ]
     },
-    "Message has been sent to the user via a SimpleLogin alias": {
-      "Delivered via SimpleLogin by ${ BRAND_NAME }": [
-        "此遞送採用 ${ BRAND_NAME }  SimpleLogin 服務"
-      ]
-    },
     "Message image": {
       "Image has not been loaded in order to protect your privacy.": [
         "為了保護您的隱私，不會載入圖像."
@@ -7137,7 +7153,7 @@
         "自訂電郵網域"
       ],
       "Hide-my-email aliases": [
-        "隱藏我的郵件別名"
+        "Hide-my-email 別名"
       ],
       "Schedule messages at any time": [
         "在任意時間排程訊息"
@@ -7609,6 +7625,22 @@
       ],
       "We have detected some warnings. The following email addresses may not receive emails:": [
         "偵測到一些警告。下列電郵位址或者無法接收電郵："
+      ]
+    },
+    "Sender verification details": {
+      "Sender verification": [
+        "驗證的寄件人"
+      ],
+      "Sender verification failed: ${ icon.senderVerificationDetails.description }": [
+        "寄件人驗證失敗: ${ icon.senderVerificationDetails.description }"
+      ],
+      "Sender verified: ${ icon.senderVerificationDetails.description }": [
+        "驗證的寄件者:${ icon.senderVerificationDetails.description }"
+      ]
+    },
+    "Sender verification error": {
+      "Verification key is not in the list of trusted keys.": [
+        "驗證金鑰不在信任金鑰清單裡"
       ]
     },
     "Sent email icon": {
@@ -8319,7 +8351,7 @@
         "${ unreads } 封未讀郵件"
       ],
       "(active)": [
-        "（啟用）"
+        "(啟用)"
       ],
       "Account suspended": [
         "帳號已被停用"
@@ -8484,7 +8516,7 @@
         "正在刪除聯絡人"
       ],
       "Don't give spam a chance": [
-        "垃圾郵件沒有存在的空間"
+        "垃圾郵件別拜託、拜拜就好"
       ],
       "Edit contact": [
         "編輯聯絡人"
@@ -8672,6 +8704,9 @@
       "No attachment found": [
         "找不到附件"
       ],
+      "No trackers found": [
+        "未發現追蹤程式"
+      ],
       "Open actions dropdown": [
         "展開操作下拉選單"
       ],
@@ -8698,6 +8733,9 @@
       ],
       "Previous message": [
         "上一封郵件"
+      ],
+      "Protect your email": [
+        "保護您的電子郵件"
       ],
       "Re-sign all contacts": [
         "重新簽署所有聯絡人"
@@ -8809,6 +8847,9 @@
       ],
       "Subject missing": [
         "缺少主旨"
+      ],
+      "This email is protected": [
+        "此電子郵件受保護。"
       ],
       "To": [
         "收件者"

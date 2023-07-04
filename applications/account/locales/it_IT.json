@@ -521,6 +521,9 @@
       "Keep": [
         "Mantieni"
       ],
+      "Keep my ${ vpnPlanNameShort } subscription": [
+        "Mantieni il mio abbonamento ${ vpnPlanNameShort }"
+      ],
       "label emails as": [
         "etichetta l'email come"
       ],
@@ -3370,6 +3373,9 @@
       "Trusted keys are not valid for sending": [
         "Le chiavi attendibili non sono valide per l'invio"
       ],
+      "Try again later": [
+        "Riprova più tardi"
+      ],
       "Try using only letters, numerals, and _.-": [
         "Prova ad usare solo lettere, numeri e _.-"
       ],
@@ -5741,6 +5747,9 @@
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Importazione dei tuoi dati da ${ importedEmailAddress } a ${ toEmail }."
       ],
+      "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
+        "Nel passaggio successivo, sarai in grado di inviare un deposito utilizzando un indirizzo Bitcoin."
+      ],
       "Inherited from parent folder": [
         "Ereditato dalla cartella superiore"
       ],
@@ -7966,6 +7975,12 @@
       "Repeat password": [
         "Ripeti la password"
       ],
+      "Require 2FA for administrators": [
+        "Richiedi 2FA per gli amministratori"
+      ],
+      "Require 2FA for everyone": [
+        "Richiedi 2FA per tutti"
+      ],
       "Reveal password": [
         "Mostra la password"
       ],
@@ -8344,6 +8359,9 @@
       ],
       "General": [
         "Generale"
+      ],
+      "Help translate": [
+        "Partecipa alla traduzione"
       ],
       "How to pay with Bitcoin?": [
         "Come pagare con Bitcoin?"
@@ -8852,6 +8870,10 @@
         "${ n } cartella ed etichetta",
         "${ n } cartelle ed etichette"
       ],
+      "${ n } hide-my-email alias": [
+        "${ n } alias hide-my-email",
+        "${ n } alias hide-my-email"
+      ],
       "${ n } label": [
         "${ n } etichetta",
         "${ n } etichette"
@@ -8904,6 +8926,9 @@
       ],
       "Auto-reply": [
         "Risposta automatica"
+      ],
+      "Autofill credit cards (coming soon)": [
+        "Compilazione automatica carte di credito (prossimamente)"
       ],
       "Available on all platforms": [
         "Disponibile su tutte le piattaforme"
@@ -9010,6 +9035,9 @@
       ],
       "No-logs policy": [
         "Politica di non conservazione dei log"
+      ],
+      "Organize items with multiple vaults": [
+        "Organizza gli elementi con più casseforti"
       ],
       "Password-protected Emails": [
         "Email protette da password"
@@ -9578,6 +9606,9 @@
       ],
       "Calendar added": [
         "Calendario aggiunto"
+      ],
+      "Calendar updated": [
+        "Calendario aggiornato"
       ]
     },
     "Notification in share calendar modal": {
@@ -12024,6 +12055,9 @@
       "PayPal verification failed": [
         "Verifica PayPal fallita"
       ],
+      "Personalise your e-mail footer": [
+        "Personalizza il piè di pagina della tua email"
+      ],
       "Phone": [
         "Telefono"
       ],
@@ -12473,6 +12507,9 @@
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "I messaggi nella cartella Inviati o Bozze continueranno a comparire in quella cartella, anche se li sposti in un'altra cartella."
       ],
+      "See number of unread messages in the tab icon": [
+        "Visualizza il numero di messaggi non letti nell'icona della scheda"
+      ],
       "Set how your list of messages looks like by default.": [
         "Seleziona come far apparire il tuo elenco di messaggi per impostazione predefinita."
       ],
@@ -12529,6 +12566,9 @@
       ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "Abbiamo interrotto la firma DKIM a causa di problemi con i tuoi DNS. Per favore segui le istruzioni di seguito per riprendere la firma."
+      ],
+      "When enabled, animations and transitions will not show": [
+        "Se abilitato, le animazioni e le transizioni non verranno visualizzate"
       ],
       "When you add a label to a message in a conversation, it will automatically be applied to all future messages you send or receive in that conversation.": [
         "Quando si aggiunge un'etichetta a un messaggio in una conversazione, verrà automaticamente applicato a tutti i messaggi futuri che invii o ricevi in quella conversazione."

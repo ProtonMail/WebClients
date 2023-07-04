@@ -237,7 +237,7 @@
         "Salin"
       ],
       "Copy email to clipboard": [
-        "Salin email ke clipboard"
+        "Salin email ke papan klip"
       ],
       "Copy link": [
         "Salin tautan"
@@ -2731,7 +2731,7 @@
         "Logo Proton Mail dan tanda plus"
       ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
-        "Pisahkan aspek-aspek berbeda di kehidupan Anda dengan beberapa alamat surel dan buka lebih banyak fitur premium saat Anda tingkatkan."
+        "Pisahkan berbagai aspek kehidupan Anda dengan alamat emailnya masing-masing dan dapatkan lebih banyak fitur premium pada saat Anda meningkatkan akun."
       ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files.": [
         "Berkas hanya dapat berukuran maksimal ${ MAX_IMPORT_FILE_SIZE_STRING } dan mengandung hingga ${ MAX_IMPORT_CONTACTS_STRING } kontak. Apabila berkas Anda lebih besar, silakan bagi dan pisahkan ke dalam beberapa berkas yang lebih kecil."
@@ -2853,6 +2853,23 @@
         "90 menit"
       ]
     },
+    "Email": {
+      "Email verified": [
+        "Email terverifikasi"
+      ],
+      "Thank you for verifying your email address.": [
+        "Terima kasih telah memverifikasi email Anda."
+      ],
+      "Thanks for letting us know": [
+        "Terima kasih telah memberi tahu kami"
+      ],
+      "We've noted that this account doesn't belong to you. We'll investigate and act accordingly.": [
+        "Kami menemukan bahwa akun ini bukan milik Anda. Kami akan menelusuri dan menindaklanjuti hal ini sesuai dengan ketentuan yang berlaku."
+      ],
+      "You can safely close this tab.": [
+        "Anda kini dapat menutup tab ini."
+      ]
+    },
     "Email body for description (description part)": {
       "Description: ${ eventDescription }": [
         "Deskripsi: ${ eventDescription }"
@@ -2946,6 +2963,9 @@
       ]
     },
     "Email Unsubscribe": {
+      "Email subscriptions": [
+        "Langganan email"
+      ],
       "Which emails do you want to receive from ${ BRAND_NAME }?": [
         "Email mana saja yang ingin Anda terima dari ${ BRAND_NAME }?"
       ],
@@ -3342,6 +3362,9 @@
       "Trusted keys are not valid for sending": [
         "Kunci terpercaya tidak valid untuk mengirim"
       ],
+      "Try again later": [
+        "Coba lagi nanti"
+      ],
       "Try using only letters, numerals, and _.-": [
         "Cobalah untuk hanya menggunakan huruf, angka, dan tanda _.-"
       ],
@@ -3623,6 +3646,9 @@
       ]
     },
     "Error message, recovery": {
+      "Contact ${ BRAND_NAME }": [
+        "Kontak ${ BRAND_NAME }"
+      ],
       "Please ${ signIn } to resend a recovery email verification request.": [
         "Mohon ${ signIn } untuk mengirimkan ulang permintaan email verifikasi."
       ],
@@ -4901,6 +4927,9 @@
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Apabila Anda melanjutkan, Anda akan kehilangan akses menuju seluruh data yang terenkripsi pada akun Anda."
       ],
+      "${ BRAND_NAME } is privacy you can trust, ensured by strong encryption, open-source code, and Swiss privacy laws. We believe nobody should be able to exploit your data, period. Our technology and business are based upon this fundamentally stronger definition of privacy.": [
+        "${ BRAND_NAME } merupakan privasi yang dapat Anda percayai, yang terjamin oleh enkripsi yang kuat, kode open-source, dan undang-undang privasi Swiss. Kami percaya bahwa tidak ada siapa pun yang berhak untuk mengeksploitasi data Anda, titik. Teknologi dan bisnis kami dilandaskan pada definisi privasi ini yang secara prinsip lebih berdasar."
+      ],
       "${ BRAND_NAME } paused an import because it lost the connection with your other email provider. Please reconnect.": [
         "${ BRAND_NAME } menghentikan sementara proses impor karena sambungan dengan layanan email Anda terputus. Mohon sambungkan ulang."
       ],
@@ -4908,7 +4937,7 @@
         "${ BRAND_NAME } menghentikan sementara proses impor karena ruang penyimpanan Anda hampir habis. Anda dapat:"
       ],
       "${ BRAND_NAME } will try to resume the import as soon as your email provider resets your account’s ${ bandwidthLimitLink }. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over.": [
-        "${ BRAND_NAME } akan mencoba untuk melanjutkan pengimporan ketika penyedia surel Anda mengatur ulang ${ bandwidthLimitLink } akun Anda. Anda tidak harus melakukan apa pun. Jika Anda membatalkan pengimporan Anda, Anda tidak akan dapat melanjutkannya dan Anda harus memulai dari awal."
+        "${ BRAND_NAME } akan mencoba untuk melanjutkan proses impor segera setelah layanan penyedia email Anda mengatur ulang ${ bandwidthLimitLink } akun Anda. Anda tidak harus melakukan apa pun. Apabila Anda membatalkan proses impor Anda, impor Anda tidak akan dapat dilanjut dan Anda harus mengulang kembali segala sesuatunya dari awal."
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Teknologi enkripsi ${ BRAND_NAME } memastikan bahwa tidak ada siapa pun yang dapat mengakses kata sandi Anda — termasuk kami sendiri."
@@ -5546,6 +5575,9 @@
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Filter dapat diterapkan pada seluruh pesan yang ada, termasuk pesan yang masuk dan terkirim. Setiap filter harus memuat minimal nama, kondisi, dan tindakan."
       ],
+      "for choosing ${ product }": [
+        "telah memilih ${ product }"
+      ],
       "For choosing ${ product }": [
         "Telah memilih ${ product }"
       ],
@@ -5781,7 +5813,7 @@
         "Beri tahu kontak Anda bahwa Anda peduli dengan privasi mereka."
       ],
       "Link copied to clipboard": [
-        "Tautan disalin ke clipboard"
+        "Tautan disalin ke papan klip"
       ],
       "Link created": [
         "Tautan dibuat"
@@ -5933,6 +5965,9 @@
       "Outdated recovery phrase; update to ensure access to your data": [
         "Frasa pemulihan telah kedaluwarsa; harap perbarui agar data-data Anda selalu dapat diakses"
       ],
+      "Over 100 million people and businesses have signed up for ${ BRAND_NAME }.": [
+        "Lebih dari 100 juta orang dan bisnis telah mendaftar ke ${ BRAND_NAME }."
+      ],
       "Paid for a ${ rewardMonths } months plan": [
         "Telah dibayar untuk paket ${ rewardMonths } bulan"
       ],
@@ -6059,8 +6094,11 @@
       "Recovery information will remain on this device unless you select to delete it.": [
         "Informasi pemulihan akan tetap terdapat pada perangkat ini kecuali Anda memilih untuk menghapusnya."
       ],
+      "Recovery kit copied to clipboard": [
+        "Kit pemulihan disalin ke papan klip"
+      ],
       "Recovery phrase copied to clipboard": [
-        "Frasa pemulihan disalin ke clipboard"
+        "Frasa pemulihan disalin ke papan klip"
       ],
       "Recovery phrase downloaded": [
         "Frasa pemulihan diunduh"
@@ -6075,13 +6113,16 @@
         "Frasa pemulihan tidak terhubung dengan kunci yang telah kedaluwarsa."
       ],
       "Referral link copied to your clipboard": [
-        "Tautan rujukan disalin ke clipboard"
+        "Tautan rujukan disalin ke papan klip"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Memuat ulang halaman atau ${ link } akan secara otomatis mengatasi sebagian besar masalah."
       ],
       "Remove one of your calendars to join this one": [
         "Hapus salah satu kalender Anda untuk dapat bergabung ke kalender ini"
+      ],
+      "Report link expired": [
+        "Tautan laporan kedaluwarsa"
       ],
       "Restore": [
         "Pulihkan"
@@ -6199,6 +6240,9 @@
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Langganan akan segera berakhir: Aktifkan kembali paket Anda sebelum tanggal ${ byDate } untuk tetap memperoleh manfaat ${ planName } Anda. ${ reactivateLink }"
+      ],
+      "Summary": [
+        "Rangkuman"
       ],
       "Support for 1 custom email domain": [
         "Dukungan 1 alamat email dengan domain khusus"
@@ -7966,6 +8010,9 @@
       "Show sender images": [
         "Tampilkan gambar pengirim"
       ],
+      "Show unread count in Favicon": [
+        "Tampilkan jumlah yang belum dibaca pada Favicon"
+      ],
       "Show week numbers": [
         "Tampilkan nomor pekan"
       ],
@@ -8318,6 +8365,9 @@
       "General": [
         "Umum"
       ],
+      "Help translate": [
+        "Bantu terjemahkan"
+      ],
       "How to pay with Bitcoin?": [
         "Bagaimana cara membayar dengan Bitcoin?"
       ],
@@ -8341,6 +8391,9 @@
       ],
       "Pay invoice": [
         "Bayar tagihan"
+      ],
+      "Paypal without credit card": [
+        "PayPal tanpa kartu kredit"
       ],
       "Privacy policy": [
         "Kebijakan privasi"
@@ -8805,6 +8858,9 @@
       "${ n } folders and labels": [
         "${ n } folder and label"
       ],
+      "${ n } hide-my-email aliases": [
+        "${ n } alias hide-my-email"
+      ],
       "${ n } labels": [
         "${ n } label"
       ],
@@ -8853,6 +8909,9 @@
       "Auto-reply": [
         "Pesan balasan otomatis"
       ],
+      "Autofill credit cards (coming soon)": [
+        "Isi nomor kartu kredit secara otomatis (segera hadir)"
+      ],
       "Available on all platforms": [
         "Tersedia di semua platform"
       ],
@@ -8870,6 +8929,9 @@
       ],
       "Contact groups management": [
         "Pengelolaan grup kontak"
+      ],
+      "Custom domains for email aliases": [
+        "Domain khusus untuk alias email"
       ],
       "Custom email domains": [
         "Domain email khusus"
@@ -8954,6 +9016,9 @@
       ],
       "No-logs policy": [
         "Kebijakan tanpa log"
+      ],
+      "Organize items with multiple vaults": [
+        "Kelola item yang memiliki berbagai brankas"
       ],
       "Password-protected Emails": [
         "Email yang terlindung oleh kata sandi"
@@ -9268,6 +9333,18 @@
       ]
     },
     "new_plans: tooltip": {
+      "${ CALENDAR_APP_NAME }: end-to-end encrypted calendar": [
+        "${ CALENDAR_APP_NAME }: kalender yang terenkripsi end-to-end"
+      ],
+      "${ DRIVE_APP_NAME }: end-to-end encrypted cloud storage": [
+        "${ DRIVE_APP_NAME }: ruang penyimpanan cloud yang terenkripsi end-to-end"
+      ],
+      "${ MAIL_APP_NAME }: end-to-end encrypted email": [
+        "${ MAIL_APP_NAME }: email yang terenkripsi end-to-end"
+      ],
+      "${ VPN_APP_NAME }: unblock content, browse privately": [
+        "${ VPN_APP_NAME }: buka blokir konten, jelajahi internet secara privat"
+      ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
         "Akses berbagai konten streaming seperti Netflix, Disney+, dan Prime Video di mana pun Anda berada"
       ],
@@ -9348,6 +9425,9 @@
       ],
       "Our servers’ hard disks are fully encrypted with multiple password layers so your data is protected even if our hardware is compromised": [
         "Seluruh cakram penyimpanan data yang ada di server kami terenkripsi dengan kata sandi yang berlapis, sehingga data Anda akan tetap aman bahkan apabila aset dan perangkat kami disita"
+      ],
+      "Password management and identity protection": [
+        "Pengelolaan kata sandi dan perlindungan identitas"
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Buat tanda tangan email Anda lebih personal dengan tambahan logo, ikon media sosial, rincian tautan kontak, dan lain sebagainya"
@@ -9476,6 +9556,9 @@
       "Priority support": [
         "Dukungan prioritas"
       ],
+      "Secure your passwords and identity with an open-source and encrypted password manager.": [
+        "Amankan kata sandi dan identitas Anda dengan pengelola kata sandi open-source yang terenkripsi."
+      ],
       "Support for 1 custom email domain": [
         "Dukungan 1 alamat email dengan domain khusus"
       ],
@@ -9521,6 +9604,9 @@
       ],
       "Calendar added": [
         "Kalender ditambahkan"
+      ],
+      "Calendar updated": [
+        "Kalender diperbarui"
       ]
     },
     "Notification in share calendar modal": {
@@ -10066,6 +10152,9 @@
       "Email address not yet verified.": [
         "Alamat email belum diverifikasi."
       ],
+      "Email removed": [
+        "Email dihapus"
+      ],
       "sign in": [
         "masuk"
       ],
@@ -10308,7 +10397,10 @@
     },
     "Signup label": {
       "Confirm email address": [
-        "Konfirmasi alamat surel"
+        "Konfirmasi alamat email"
+      ],
+      "Confirm password": [
+        "Konfirmasi kata sandi"
       ],
       "Display name": [
         "Nama tampilan"
@@ -10317,7 +10409,10 @@
         "Email"
       ],
       "Email address": [
-        "Alamat surel"
+        "Alamat email"
+      ],
+      "Password": [
+        "Kata sandi"
       ],
       "Username": [
         "Nama pengguna"
@@ -10771,7 +10866,7 @@
     },
     "Success": {
       "${ server.Domain } copied to your clipboard": [
-        "${ server.Domain } disalin ke clipboard Anda"
+        "${ server.Domain } disalin ke papan klip Anda"
       ],
       "Account deleted. Signing out...": [
         "Akun dihapus. Mengeluarkan Anda dari akun..."
@@ -10825,7 +10920,7 @@
         "Nama tampilan diperbarui"
       ],
       "DMARC value copied to clipboard": [
-        "Nilai DMARC disalin ke clipboard"
+        "Nilai DMARC disalin ke papan klip"
       ],
       "Domain verified": [
         "Domain berhasil diverifikasi"
@@ -10909,10 +11004,10 @@
         "Token SMTP dihapus"
       ],
       "SPF value copied to clipboard": [
-        "Nilai SPF disalin ke clipboard"
+        "Nilai SPF disalin ke papan klip"
       ],
       "Token copied to clipboard": [
-        "Token disalin ke clipboard"
+        "Token disalin ke papan klip"
       ],
       "Undo in progress": [
         "Pengurungan sedang berlangsung"
@@ -10924,10 +11019,10 @@
         "Pengguna berhasil diperbarui"
       ],
       "Value copied to clipboard": [
-        "Nilai disalin ke clipboard"
+        "Nilai disalin ke papan klip"
       ],
       "Verification code copied to clipboard": [
-        "Kode verifikasi disalin ke clipboard"
+        "Kode verifikasi disalin ke papan klip"
       ],
       "Verification successful": [
         "Verifikasi berhasil"
@@ -11117,6 +11212,9 @@
       ]
     },
     "Title": {
+      "${ appName } Free": [
+        "${ appName } Free"
+      ],
       "${ MAIL_APP_NAME } Keyboard Shortcuts": [
         "Pintasan Keyboard ${ MAIL_APP_NAME }"
       ],
@@ -11684,6 +11782,9 @@
       "Other calendars": [
         "Kalender lainnya"
       ],
+      "Other preferences": [
+        "Preferensi lainnya"
+      ],
       "Password": [
         "Kata sandi"
       ],
@@ -11704,6 +11805,9 @@
       ],
       "PayPal verification failed": [
         "Verifikasi PayPal gagal"
+      ],
+      "Personalise your e-mail footer": [
+        "Sesuaikan footer email Anda"
       ],
       "Phone": [
         "Telepon"
@@ -12158,6 +12262,9 @@
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "Pesan di folder Terkirim atau Draf akan selalu muncul di folder tersebut, walaupun Anda memindahkannya ke folder lain."
       ],
+      "See number of unread messages in the tab icon": [
+        "Tampilkan jumlah pesan yang belum dibaca pada ikon tab"
+      ],
       "Set how your list of messages looks like by default.": [
         "Tentukan bagaimana daftar pesan Anda akan terlihat secara default."
       ],
@@ -12244,6 +12351,11 @@
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
         "Akun eksternal Anda ditenggarai telah mencapai batas bandwidth yang diizinkan dalam 24 jam terakhir. ${ BRAND_NAME } akan mencoba untuk melanjutkan proses impor sesegera mungkin."
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: end-to-end encrypted password manager": [
+        "${ PASS_APP_NAME }: pengelola kata sandi yang terenkripsi end-to-end"
       ]
     },
     "Tooltip automatically attach public key": {

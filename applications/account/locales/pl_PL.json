@@ -1115,7 +1115,7 @@
         "Skrzynka odbiorcza ${ nameToDisplay }"
       ],
       "5 trackers removed": [
-        "Usunięto 5 skryptów śledzących"
+        "Usunięto 5 elementów śledzących"
       ],
       "Auto forwarded": [
         "Automatycznie przekierowane"
@@ -2875,6 +2875,18 @@
       ]
     },
     "Email": {
+      "Email verified": [
+        "Adres został zweryfikowany"
+      ],
+      "Thank you for verifying your email address.": [
+        "Dziękujemy za zweryfikowanie adresu e-mail."
+      ],
+      "Thanks for letting us know": [
+        "Dziękujemy za potwierdzenie"
+      ],
+      "We've noted that this account doesn't belong to you. We'll investigate and act accordingly.": [
+        "Zauważyliśmy, że to konto nie należy do Ciebie. Zbadamy sprawę i podejmiemy odpowiednie działania."
+      ],
       "You can safely close this tab.": [
         "Możesz zamknąć tę kartę."
       ]
@@ -3385,6 +3397,9 @@
       ],
       "Trusted keys are not valid for sending": [
         "Zaufane klucze nie są przeznaczone do wysyłania wiadomości"
+      ],
+      "Try again later": [
+        "Spróbuj ponownie później"
       ],
       "Try using only letters, numerals, and _.-": [
         "Użyj tylko liter, cyfr i znaków _.-"
@@ -4993,8 +5008,14 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Aplikacja ${ appName } potrzebuje Twojej zgody, aby ${ enableDesktopNotifications }."
       ],
+      "${ autoRenewal } your subscription will renew automatically on ${ renewalTime }.": [
+        "${ autoRenewal } Twoja subskrypcja zostanie automatycznie odnowiona ${ renewalTime }."
+      ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Jeśli to zrobisz, stracisz dostęp do wszystkich obecnie zaszyfrowanych danych."
+      ],
+      "${ BRAND_NAME } is privacy you can trust, ensured by strong encryption, open-source code, and Swiss privacy laws. We believe nobody should be able to exploit your data, period. Our technology and business are based upon this fundamentally stronger definition of privacy.": [
+        "${ BRAND_NAME } to prywatność, której możesz zaufać, zapewniona przez silne szyfrowanie, otwarty kod źródłowy i szwajcarskie prawa ochrony danych. Wierzymy, że nikt nie powinien być w stanie wykorzystać Twoich danych i tyle. Nasza technologia i działalność opierają się na tej fundamentalnie silniejszej definicji prywatności."
       ],
       "${ BRAND_NAME } paused an import because it lost the connection with your other email provider. Please reconnect.": [
         "${ BRAND_NAME } wstrzymał proces importowania, ponieważ utracił połączenie z drugim dostawcą poczty e-mail. Połącz się ponownie."
@@ -5710,6 +5731,9 @@
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Filtry działają na wszystkie wiadomości przychodzące oraz wysyłane. Każdy filtr musi zawierać nazwę, warunek i akcję."
       ],
+      "for choosing ${ product }": [
+        "za wybranie ${ product }"
+      ],
       "For choosing ${ product }": [
         "za wybranie ${ product }"
       ],
@@ -5865,6 +5889,9 @@
       ],
       "Improve your ${ BRAND_NAME } experience by adapting the application to your needs.": [
         "Popraw wrażenia z użytkowania ${ BRAND_NAME }, dostosowując aplikację do swoich potrzeb."
+      ],
+      "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
+        "W następnym kroku wyślesz środki za pomocą adresu Bitcoin."
       ],
       "Inherited from parent folder": [
         "Zastosowano z folderu nadrzędnego"
@@ -6100,6 +6127,9 @@
       "Outdated recovery phrase; update to ensure access to your data": [
         "Hasło odzyskiwania jest nieaktualne. Zaktualizuj je, aby uzyskać dostęp do danych"
       ],
+      "Over 100 million people and businesses have signed up for ${ BRAND_NAME }.": [
+        "Ponad 100 milionów osób i firm zarejestrowało się w ${ BRAND_NAME }."
+      ],
       "Paid for a ${ rewardMonths } month plan": [
         "Opłacony plan miesięczny",
         "Opłacony plan ${ rewardMonths }-miesięczny",
@@ -6235,6 +6265,9 @@
       "Recovery information will remain on this device unless you select to delete it.": [
         "Informacje o odzyskiwaniu pozostaną na urządzeniu, chyba że usuniesz te dane."
       ],
+      "Recovery kit copied to clipboard": [
+        "Zestaw odzyskiwania został skopiowany do schowka"
+      ],
       "Recovery phrase copied to clipboard": [
         "Hasło odzyskiwania zostało skopiowane do schowka"
       ],
@@ -6258,6 +6291,9 @@
       ],
       "Remove one of your calendars to join this one": [
         "Usuń co najmniej jeden kalendarz, aby dołączyć do tego kalendarza"
+      ],
+      "Report link expired": [
+        "Link wygasł"
       ],
       "Restore": [
         "Przywróć"
@@ -6372,6 +6408,12 @@
       ],
       "Store this password and file in a safe place. You’ll need them again to import your key.": [
         "Zachowaj to hasło i plik w bezpiecznym miejscu. Będą one potrzebne do zaimportowania klucza."
+      ],
+      "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
+        "Wyślij środki na poniższy adres lub zeskanuj kod QR. Wpłata zostanie zaksięgowana na koncie po potwierdzeniu."
+      ],
+      "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
+        "Subskrypcja wkrótce się zakończy. Reaktywuj ją do ${ byDate }, aby zachować bonusy planu ${ planName }. ${ reactivateLink }"
       ],
       "Summary": [
         "Podsumowanie"
@@ -6549,6 +6591,9 @@
       ],
       "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
         "Aby uniknąć utraty danych, usuń klucz tylko wtedy, kiedy wiesz co robisz lub posiadasz kopię zapasową klucza."
+      ],
+      "To complete your payment, please send ${ btcAmountBold } to the address below.": [
+        "Wyślij ${ btcAmountBold } na poniższy adres, aby zakończyć płatność."
       ],
       "To confirm, please enter the name of the user you wish to delete.": [
         "Wpisz nazwę użytkownika, którego chcesz usunąć."
@@ -6951,6 +6996,9 @@
       ],
       "You will NOT be able to decrypt any messages, files, and other data encrypted with this key.": [
         "NIE będziesz mógł odszyfrować wiadomości, plików i innych danych zaszyfrowanych za pomocą tego klucza."
+      ],
+      "You will receive priority support from specialists trained in account protection. For any account security concerns, please ${ hereLink }.": [
+        "Otrzymasz priorytetowe wsparcie od specjalistów przeszkolonych w zakresie ochrony konta. W przypadku jakichkolwiek obaw ${ hereLink }."
       ],
       "You will see more details in the Security logs below for important events such as sign in attempts.": [
         "Zobaczysz w logach bezpieczeństwa więcej szczegółów zdarzeń, np. próby logowania."
@@ -7609,7 +7657,7 @@
         "Zablokuj złośliwe oprogramowanie"
       ],
       "Block malware, ads and trackers": [
-        "Zablokuj złośliwe oprogramowanie, reklamy i skrypty śledzące"
+        "Zablokuj złośliwe oprogramowanie, reklamy i elementy śledzące"
       ],
       "Browser": [
         "Przeglądarka"
@@ -8515,6 +8563,9 @@
       "Common sign up issues": [
         "Typowe problemy z rejestracją"
       ],
+      "contact us": [
+        "skontaktuj się z nami"
+      ],
       "Create account": [
         "Utwórz konto"
       ],
@@ -8526,6 +8577,12 @@
       ],
       "General": [
         "Ogólne"
+      ],
+      "Help translate": [
+        "Pomóż w tłumaczeniu"
+      ],
+      "How to pay with Bitcoin?": [
+        "Jak zapłacić Bitcoinami?"
       ],
       "How to unlock data": [
         "Jak odblokować dane"
@@ -8547,6 +8604,9 @@
       ],
       "Pay invoice": [
         "Zapłać fakturę"
+      ],
+      "Paypal without credit card": [
+        "PayPal bez karty płatniczej"
       ],
       "Privacy policy": [
         "Polityka prywatności"
@@ -9143,6 +9203,9 @@
       "Auto-reply": [
         "Autoresponder"
       ],
+      "Autofill credit cards (coming soon)": [
+        "Autouzupełnianie kart płatniczych (wkrótce)"
+      ],
       "Available on all platforms": [
         "Dostępny na wszystkie platformy"
       ],
@@ -9573,6 +9636,18 @@
       ]
     },
     "new_plans: tooltip": {
+      "${ CALENDAR_APP_NAME }: end-to-end encrypted calendar": [
+        "${ CALENDAR_APP_NAME }: kalendarz szyfrowany end-to-end"
+      ],
+      "${ DRIVE_APP_NAME }: end-to-end encrypted cloud storage": [
+        "${ DRIVE_APP_NAME }: przestrzeń dyskowa w chmurze szyfrowana end-to-end"
+      ],
+      "${ MAIL_APP_NAME }: end-to-end encrypted email": [
+        "${ MAIL_APP_NAME }: poczta szyfrowana end-to-end"
+      ],
+      "${ VPN_APP_NAME }: unblock content, browse privately": [
+        "${ VPN_APP_NAME }: odblokuj zawartość, przeglądaj Internet prywatnie"
+      ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
         "Uzyskaj dostęp do usług streamingu, takich jak Netflix, Disney+ i Prime Video, gdziekolwiek jesteś"
       ],
@@ -9657,6 +9732,9 @@
       "Our servers’ hard disks are fully encrypted with multiple password layers so your data is protected even if our hardware is compromised": [
         "Dyski twarde naszych serwerów są w pełni zaszyfrowane za pomocą wielu warstw haseł, dzięki czemu dane są chronione nawet w przypadku uszkodzenia sprzętu"
       ],
+      "Password management and identity protection": [
+        "Zarządzanie hasłami i ochrona tożsamości"
+      ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Personalizuj swój podpis za pomocą logo, obrazów, ikon mediów społecznościowych, linków do szczegółów kontaktu i innych elementów"
       ],
@@ -9688,7 +9766,7 @@
         "Przekieruj swój ruch internetowy przez sieć Tor za pomocą jednego kliknięcia"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
-        "Zabezpiecz swoje pliki za pomocą zaszyfrowanej przestrzeni dyskowej w chmurze. Zawiera automatyczną synchronizację, szyfrowane udostępnianie plików i wiele więcej."
+        "Zabezpiecz swoje pliki za pomocą szyfrowanej przestrzeni dyskowej w chmurze. Zawiera automatyczną synchronizację, szyfrowane udostępnianie plików i wiele więcej."
       ],
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
         "Bezpiecznie przechowuj szczegóły kontaktów, takie jak numer telefonu, adres, datę urodzin i osobiste notatki. Szyfrowanie po stronie klienta zapewnia, że nawet ${ BRAND_NAME } nie ma do nich dostępu."
@@ -9703,7 +9781,7 @@
         "Udostępniaj pliki lub foldery innym osobom, używając bezpiecznych linków z możliwością udostępniania"
       ],
       "Specially designed NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware": [
-        "Specjalnie zaprojektowana funkcja NetShield chroni Twoje urządzenie oraz przyśpiesza przeglądanie Internetu poprzez blokowanie reklam, skryptów śledzących i złośliwego oprogramowania"
+        "Specjalnie zaprojektowana funkcja NetShield chroni Twoje urządzenie oraz przyśpiesza przeglądanie Internetu poprzez blokowanie reklam, elementów śledzących i złośliwego oprogramowania"
       ],
       "Start with ${ freeStorageSize } and unlock more storage along the way. Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
         "Zacznij od ${ freeStorageSize } i odblokuj więcej miejsca. Przestrzeń dyskowa jest dzielona pomiędzy usługami ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } i ${ DRIVE_APP_NAME }."
@@ -9787,6 +9865,9 @@
       "Priority support": [
         "Priorytetowe wsparcie"
       ],
+      "Secure your passwords and identity with an open-source and encrypted password manager.": [
+        "Zabezpiecz swoje hasła i tożsamość za pomocą szyfrowanego menedżera haseł z otwartym kodem źródłowym."
+      ],
       "Support for 1 custom email domain": [
         "Wsparcie dla 1 niestandardowej domeny"
       ],
@@ -9832,6 +9913,9 @@
       ],
       "Calendar added": [
         "Kalendarz został dodany"
+      ],
+      "Calendar updated": [
+        "Kalendarz został zaktualizowany"
       ]
     },
     "Notification in share calendar modal": {
@@ -11117,7 +11201,7 @@
         "Subskrypcja jest zarządzana przez ${ subscriptionManager }"
       ],
       "Subscription of user ID-${ userId } has been done via an in-app purchase. To manage the subscription user needs to navigate to the Subscription section of their ${ subscriptionManager } account.": [
-        "Subskrypcja użytkownika z identyfikatorem ${ userId } została zakupiona w aplikacji. Aby zarządzać nią, przejdź do sekcji Subskrypcja w koncie ${ subscriptionManager }."
+        "Subskrypcja użytkownika z identyfikatorem ${ userId } została zakupiona w aplikacji. Aby zarządzać nią, przejdź do sekcji Subskrypcja na koncie ${ subscriptionManager }."
       ],
       "Subscriptions": [
         "Subskrypcje"
@@ -11171,6 +11255,9 @@
     "Subscription status": {
       "Active": [
         "Aktywna"
+      ],
+      "Expiring": [
+        "Wygasająca"
       ],
       "Upcoming": [
         "Nadchodząca"
@@ -12705,10 +12792,10 @@
         "Redukcja ruchu jest włączona na tym urządzeniu"
       ],
       "The selected theme will be active when your system is set to \"dark mode\"": [
-        "Wybrany motyw będzie aktywny, gdy w systemie jest ustawiony ciemny motyw"
+        "Wybrany motyw będzie aktywny, kiedy w systemie będzie ustawiony ciemny motyw"
       ],
       "The selected theme will be active when your system is set to \"light mode\"": [
-        "Wybrany motyw będzie aktywny, gdy w systemie jest ustawiony jasny motyw"
+        "Wybrany motyw będzie aktywny, kiedy w systemie będzie ustawiony jasny motyw"
       ],
       "This address has been disabled": [
         "Ten adres został wyłączony"
@@ -12760,6 +12847,11 @@
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
         "Limit dobowy przepustowości konta zewnętrznego mógł zostać osiągnięty. ${ BRAND_NAME } spróbuje wznowić proces importowania najszybciej, jak będzie to możliwe."
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: end-to-end encrypted password manager": [
+        "${ PASS_APP_NAME }: menadżer haseł szyfrowany end-to-end"
       ]
     },
     "Tooltip automatically attach public key": {

@@ -934,6 +934,11 @@
         "Prøv gratis i 30 dage"
       ]
     },
+    "Action subscription": {
+      "Manage": [
+        "Administrer"
+      ]
+    },
     "Action; accept invitation to share calendar": {
       "Accept": [
         "Acceptér"
@@ -3681,6 +3686,9 @@
       "Owners of a plan with members cannot join another group plan.": [
         "Ejere af et abonnement med medlemmer kan ikke blive medlem af et andet gruppe-abonnement."
       ],
+      "Pending": [
+        "Afventer"
+      ],
       "Sorry, you can't switch plans at this time.": [
         "Beklager, du kan i øjeblikket ikke ændre abonnement."
       ],
@@ -3719,6 +3727,14 @@
       ],
       "Your current plan cannot join a Visionary or family plan.": [
         "Dit nuværende abonnement kan ikke tilmelde sig et Visionary- eller familie-abonnement."
+      ]
+    },
+    "familyOffer_2023:Footer": {
+      "*Your subscription will automatically renew at the same rate at the end of your billing cycle.": [
+        "*Dit abonnement vil automatisk blive fornyet til samme pris ved slutningen af din faktureringscyklus."
+      ],
+      "Discounts are based on the standard monthly pricing.": [
+        "Rabatter er baseret på den månedlige standardpris."
       ]
     },
     "familyOffer_2023:Get Proton Family": {
@@ -4592,6 +4608,10 @@
       "${ storageSize } storage": [
         "${ storageSize } lagerplads"
       ],
+      "${ userFound } user found": [
+        "${ userFound } bruger fundet",
+        "${ userFound } brugere fundet"
+      ],
       "${ vpnPlus } required for Country level connection.": [
         "${ vpnPlus } påkrævet for forbindelse på landniveau."
       ],
@@ -4647,6 +4667,9 @@
       ],
       "A user is an account associated with a single username, mailbox, and person": [
         "En bruger er en konto, der er knyttet til et enkelt brugernavn, en enkelt postkasse og en enkelt person"
+      ],
+      "Access your passwords and protect your online identities seamlessly across your devices. Download and install the relevant ${ PASS_APP_NAME } apps and extensions.": [
+        "Få adgang til dine adgangskoder og beskyt dine online-identiteter problemfrit på tværs af dine enheder. Download og installer de relevante ${ PASS_APP_NAME } apps og udvidelser."
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Kontoadgang begrænset grundet manglende betaling. Kontakt din administrator."
@@ -4990,7 +5013,7 @@
         "Træk fil hertil for at uploade"
       ],
       "Drop to import": [
-        "Drop for at importere"
+        "Slip for at importere"
       ],
       "Each code can only be used once": [
         "Hver kode kan kun bruges én gang"
@@ -5633,6 +5656,10 @@
       "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ${ MAIL_APP_NAME } in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
         "SPF benyttes til at angive, hvem der må sende e-mail fra domænet, så det anbefales kraftigt at inkludere ${ MAIL_APP_NAME } i din SPF-post. Tilføj følgende TXT-post i din DNS. Dette kan typisk gøres i webkontrolpanelet hos din domæneudbyder."
       ],
+      "Step ${ step }": [
+        "Trin ${ step }",
+        "Trin ${ step }"
+      ],
       "Storage allocated to other users in this organisation": [
         "Lagerplads tildelt andre brugere i denne organisation"
       ],
@@ -5873,6 +5900,9 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Opgrader nu for at få premium-funktioner, produkter og lagerplads til en speciel pris"
       ],
+      "Upgrade to unlock": [
+        "Opgradér for at låse op"
+      ],
       "Upload picture": [
         "Upload billede"
       ],
@@ -5908,6 +5938,9 @@
       ],
       "Version ${ version }": [
         "Version ${ version }"
+      ],
+      "Version history": [
+        "Versionshistorik"
       ],
       "Visa Secure logo": [
         "Visa Secure logo"
@@ -6046,6 +6079,9 @@
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Du har ikke angivet en metode til gendannelse, derfor er kontogendannelse umulig, hvis du glemmer din adgangskode. Fortsæt uden en metode til gendannelse?"
+      ],
+      "You have no calendars to export.": [
+        "Du har ingen kalendere at eksportere."
       ],
       "You have no saved payment methods.": [
         "Du har ingen gemte betalingsmetoder."
@@ -7547,6 +7583,9 @@
       "Add a gift code": [
         "Tilføj en gavekode"
       ],
+      "Apps and extensions": [
+        "Apps og udvidelser"
+      ],
       "Calendars": [
         "Kalendere"
       ],
@@ -7573,6 +7612,9 @@
       ],
       "General": [
         "Generelt"
+      ],
+      "Help translate": [
+        "Hjælp med at oversætte"
       ],
       "How to unlock data": [
         "Sådan oplåses data"
@@ -7706,6 +7748,9 @@
       ],
       "Edit": [
         "Redigér"
+      ],
+      "Remove": [
+        "Fjern"
       ],
       "Revoke sessions": [
         "Tilbagekald sessioner"
@@ -8068,6 +8113,10 @@
         "${ n } daglig besked",
         "${ n } daglige beskeder"
       ],
+      "${ n } vault": [
+        "${ n } boks",
+        "${ n } bokse"
+      ],
       "${ n } VPN connection": [
         "${ n } VPN-forbindelse",
         "${ n } VPN-forbindelser"
@@ -8095,7 +8144,7 @@
         "Avanceret delingssikkerhed"
       ],
       "Auto-delete spam and trashed messages": [
-        "Fjern automatisk spam og slettede beskeder"
+        "Slet automatisk spam og beskeder i papirkurven"
       ],
       "Auto-reply": [
         "Autosvar"
@@ -8114,6 +8163,15 @@
       ],
       "Custom email domains": [
         "Brugerdefinerede e-maildomæner"
+      ],
+      "Custom fields": [
+        "Brugerdefinerede felter"
+      ],
+      "Data breach monitoring": [
+        "Overvågning af databrud"
+      ],
+      "Data breach monitoring (coming soon)": [
+        "Overvågning af databrud (kommer snart)"
       ],
       "DNS leak prevention": [
         "Forebyggelse af DNS-lækage"
@@ -8149,6 +8207,9 @@
       "HTML signatures": [
         "HTML signatur"
       ],
+      "Integrated 2FA authenticator": [
+        "Integreret 2FA-godkendelse"
+      ],
       "Limited support": [
         "Begrænset support"
       ],
@@ -8166,6 +8227,10 @@
       ],
       "Priority support": [
         "Prioriteret support"
+      ],
+      "Protect ${ n } device at a time": [
+        "Beskyt ${ n } enhed ad gangen",
+        "Beskyt ${ n } enheder ad gangen"
       ],
       "Schedule messages at any time": [
         "Planlæg beskeder til ethvert tidspunkt"
@@ -8200,6 +8265,9 @@
       "Two-factor authentication": [
         "To-faktor-godkendelse"
       ],
+      "Unlimited devices": [
+        "Ubegrænset antal enheder"
+      ],
       "Unlimited filters": [
         "Ubegrænsede filtre"
       ],
@@ -8211,6 +8279,9 @@
       ],
       "Unlimited labels": [
         "Ubegrænsede etiketter"
+      ],
+      "Unlimited logins and notes": [
+        "Ubegrænset antal logins og noter"
       ],
       "Unlimited messages per day": [
         "Ubegrænset beskedafsendelse pr. dag"
@@ -8232,6 +8303,9 @@
       ],
       "User session management": [
         "Administration af brugersessioner"
+      ],
+      "Vault and Item sharing": [
+        "Boks- og elementdeling"
       ]
     },
     "new_plans: feature info": {
@@ -8312,6 +8386,9 @@
       ],
       "If you switch to a different plan, you lose all ${ visionary } plan benefits and won’t be able to switch back to ${ visionary }.": [
         "Hvis du skifter til et andet abonnement mister du alle fordelene ved ${ visionary }-abonnementet og kan ikke skifte tilbage til ${ visionary }."
+      ],
+      "Most popular": [
+        "Mest populær"
       ],
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
         "Vores ${ visionary }-abonnement er ikke længere tilgængeligt for nye abonnenter, da det er et særligt abonnement for oprindelige ${ BRAND_NAME }-brugere med særlige funktioner og fordele."
@@ -8533,6 +8610,9 @@
       ],
       "Priority support": [
         "Prioriteret support"
+      ],
+      "Secure your passwords and identity with an open-source and encrypted password manager.": [
+        "Beskyt dine adgangskoder og din identitet med en open source og krypteret adgangskodeadministrator."
       ],
       "Support for 1 custom email domain": [
         "Understøttelse af 1 brugerdefineret e-mail-domæne"
@@ -9431,7 +9511,15 @@
         "Støt privatliv online"
       ]
     },
+    "specialoffer: Footer": {
+      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
+        "Dette abonnement bliver automatisk fornyet hvert 2. år til samme pris, indtil det annulleres."
+      ]
+    },
     "specialoffer: Label": {
+      "Limited time only": [
+        "Kun i begrænset tid"
+      ],
       "Most popular": [
         "Mest populære"
       ],
@@ -9505,13 +9593,37 @@
       "Cyber Week Sale": [
         "Cyber Week-udsalg"
       ],
+      "End of Year Sale": [
+        "Udsalg ved årets afslutning"
+      ],
       "Get our premium bundle and save more": [
         "Få vores premium-pakke og spar mere"
+      ],
+      "Our discontinued Visionary plan is back for a limited time only": [
+        "Vores udfasede Visionary-abonnement er kun tilbage i en begrænset periode"
+      ],
+      "Save more with 2 years of ${ planName }": [
+        "Spar mere med 2 års ${ planName }"
+      ],
+      "Upgrade and save more with 2 years of ${ planName }": [
+        "Opgradér og spar mere med 2 års ${ planName }"
       ]
     },
     "specialoffer: Tooltip": {
+      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.": [
+        "Få adgang til blokeret indhold og browse privat. Inkluderer 1700 servere i 60+ lande, højeste VPN-hastighed, 10 VPN-forbindelser, verdensomspændende streamingtjenester, malware- og ad-blocker og mere."
+      ],
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
         "Få adgang til blokeret indhold, og browse privat. Inkluderer 1700 servere i mere end 60 lande, højeste VPN-hastighed, 10 VPN-forbindelser, verdensomspændende streamingtjenester, malware- og ad-blocker og meget mere."
+      ],
+      "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
+        "Få adgang til indhold på streamingtjenester, herunder Netflix, Disney+ og Prime Video, hvor som helst."
+      ],
+      "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
+        "Perfekt til familier eller små teams, hvor alle kan have deres egen indbakke og aliasser. Kræver et brugerdefineret domæne."
+      ],
+      "Receive at no extra cost the paid versions of all new privacy services we release in the future, along with early access to all future features and products.": [
+        "Modtag uden ekstra omkostninger betalingsversionerne af alle nye privatlivstjenester, vi lancerer i fremtiden, sammen med tidlig adgang til alle fremtidige funktioner og produkter."
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Beskyt dine filer med krypteret lagring i skyen. Inkluderer automatisk synkronisering, krypteret fildeling og meget mere."
@@ -10805,6 +10917,9 @@
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Din Mail Plus prøveperiode slutter ${ textDate }"
       ],
+      "Your Plan": [
+        "Dit abonnement"
+      ],
       "Your plan": [
         "Dit abonnement"
       ],
@@ -10896,6 +11011,26 @@
       ],
       "Role": [
         "Rolle"
+      ]
+    },
+    "Title subscription": {
+      "Actions": [
+        "Handlinger"
+      ],
+      "Duration": [
+        "Varighed"
+      ],
+      "End date": [
+        "Slutdato"
+      ],
+      "Plan": [
+        "Abonnement"
+      ],
+      "Start date": [
+        "Startdato"
+      ],
+      "Users": [
+        "Brugere"
       ]
     },
     "Title; create calendar modal": {
