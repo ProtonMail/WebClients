@@ -70,6 +70,7 @@ const KeyOptionsSerializer = {
         'recipientKeys',
         'targetKey',
         'sourceKey',
+        'forwarderKey',
     ],
     canHandle: (options: any): options is KeyReference | KeyReference[] => {
         if (typeof options !== 'object') {
