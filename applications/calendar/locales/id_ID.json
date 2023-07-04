@@ -142,7 +142,7 @@
         "Lanjutkan dengan Google"
       ],
       "Copy email to clipboard": [
-        "Salin email ke clipboard"
+        "Salin email ke papan klip"
       ],
       "Copy link": [
         "Salin tautan"
@@ -3435,7 +3435,7 @@
         "Panel samping kalender"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
-        "Tidak mengingat kata sandi Anda? Kami dapat membantu Anda untuk membersihkan data terenkripsi semua kontak yang dienkripsi dengan kunci ini dan dalam prosesnya mengabaikan peringatan."
+        "Tidak dapat mengingat kata sandi Anda? Kami dapat membantu Anda untuk membersihkan data terenkripsi milik seluruh kontak yang dienkripsi dengan kunci ini terlepas dari peringatan yang ada."
       ],
       "Checking contact ${ progress } of ${ max }...": [
         "Memeriksa kontak ${ progress } dari ${ max }..."
@@ -3504,7 +3504,7 @@
         "Lepaskan untuk mengimpor"
       ],
       "Duplicate key updated": [
-        "Kunci ganda diperbarui"
+        "Kunci duplikat diperbarui"
       ],
       "Each code can only be used once": [
         "Masing-masing kode hanya dapat digunakan sekali"
@@ -3615,7 +3615,7 @@
         "Pelajari lebih lanjut"
       ],
       "Link copied to clipboard": [
-        "Tautan disalin ke clipboard"
+        "Tautan disalin ke papan klip"
       ],
       "Link created": [
         "Tautan dibuat"
@@ -3687,7 +3687,7 @@
         "Harap diperhatikan, alamat yang ditugaskan di grup ini TIDAK akan dihapus."
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
-        "Mohon dicatat proses ini memerlukan waktu, tergantung pada ukuran buku alamat Anda."
+        "Mohon dicatat bahwa proses ini dapat memakan waktu sejenak tergantung pada ukuran buku alamat Anda."
       ],
       "Please remove the duplicates and try again.": [
         "Silakan hapus yang ganda dan coba lagi."
@@ -4829,6 +4829,9 @@
       ],
       "Calendar added": [
         "Kalender ditambahkan"
+      ],
+      "Calendar updated": [
+        "Kalender diperbarui"
       ]
     },
     "Notification in share calendar modal": {
@@ -5671,7 +5674,7 @@
         "Acara berhasil dibuat"
       ],
       "Fingerprint copied to clipboard": [
-        "Sidik jari disalin ke clipboard"
+        "Sidik jari disalin ke papan klip"
       ],
       "Future events deleted": [
         "Acara mendatang berhasil dihapus"
