@@ -4034,7 +4034,7 @@
         "您所有未儲存的變更將會消失。"
       ],
       "You've reached the maximum number of addresses in the contact group(s):": [
-        "您已達到聯絡人群組郵件地址最高上限："
+        "您已達到通訊群組郵件地址最高上限:"
       ],
       "You've reached the maximum number of addresses in the contact group.": [
         "您以達到通訊群組郵件地址最高上限"
@@ -4189,7 +4189,7 @@
         "音訊檔"
       ],
       "Authenticator app": [
-        "驗證 APP"
+        "驗證 app"
       ],
       "Automatically save contacts": [
         "自動儲存聯絡人"
@@ -4637,6 +4637,9 @@
       ]
     },
     "Link": {
+      "${ DRIVE_APP_NAME } Windows app": [
+        "${ DRIVE_APP_NAME } Windows 應用程式"
+      ],
       "clearing your browser cache": [
         "清除瀏覽器快取"
       ],
@@ -4651,6 +4654,9 @@
       ],
       "Request an invite": [
         "請求邀請"
+      ],
+      "Seamlessly sync files and folders between your computer and ${ DRIVE_APP_NAME }.": [
+        "完美無縫地同步檔案和資料夾，可真正實現在您的電腦與 ${ DRIVE_APP_NAME }。"
       ],
       "Shared": [
         "已分享"
@@ -4769,7 +4775,7 @@
         "自訂電郵網域"
       ],
       "Hide-my-email aliases": [
-        "隱藏我的郵件別名"
+        "Hide-my-email 別名"
       ],
       "Schedule messages at any time": [
         "在任意時間排程訊息"
@@ -5669,7 +5675,7 @@
         "${ numberOfFailedTransfer.total } 個檔案上載失敗"
       ],
       "(active)": [
-        "（啟用）"
+        "(啟用)"
       ],
       "Account suspended": [
         "帳號已被停用"
