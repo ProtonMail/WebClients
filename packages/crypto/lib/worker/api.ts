@@ -16,6 +16,7 @@ import {
     encryptKey,
     encryptMessage,
     encryptSessionKey,
+    generateForwardingMaterial,
     generateKey,
     generateSessionKey,
     generateSessionKeyForAlgorithm,
@@ -38,7 +39,7 @@ import {
     verifyMessage,
 } from 'pmcrypto';
 import type { Data, Key, PrivateKey, PublicKey } from 'pmcrypto';
-import { enums } from 'pmcrypto/lib/openpgp';
+import { UserID, enums } from 'pmcrypto/lib/openpgp';
 
 import { arrayToHexString } from '../utils';
 import {
@@ -296,6 +297,36 @@ class KeyManagementApi {
         const keyStoreID = this.keyStore.add(privateKey);
 
         return getPrivateKeyReference(privateKey, keyStoreID);
+    }
+
+    /**
+     * Generate forwardee key and proxy parameter needed to setup end-to-end encrypted forwarding for the given
+     * privateKey.
+     * @param options.forwarderPrivateKey - private key of original recipient, initiating the forwarding
+     * @param options.userIDsForForwardeeKey - userIDs to attach to forwardee key
+     * @param options.passphrase - passphrase to encrypt the generated forwardee key with
+     */
+    async generateE2EEForwardingMaterial({
+        forwarderKey,
+        userIDsForForwardeeKey,
+        passphrase,
+    }: {
+        forwarderKey: PrivateKeyReference;
+        userIDsForForwardeeKey: MaybeArray<UserID>;
+        passphrase: string | null;
+    }) {
+        const originalKey = this.keyStore.get(forwarderKey._idx) as PrivateKey;
+
+        const { proxyParameter, forwardeeKey } = await generateForwardingMaterial(originalKey, userIDsForForwardeeKey);
+
+        const maybeEncryptedKey = passphrase
+            ? await encryptKey({ privateKey: forwardeeKey, passphrase })
+            : forwardeeKey;
+
+        return {
+            forwardeeKey: maybeEncryptedKey.armor(),
+            proxyParameter,
+        };
     }
 
     /**
