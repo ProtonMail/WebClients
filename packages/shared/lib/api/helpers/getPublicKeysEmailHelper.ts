@@ -1,4 +1,14 @@
-import { Api, ApiKeysConfig, KeyTransparencyActivation, VerifyOutboundPublicKeys } from '../../interfaces';
+import { c } from 'ttag';
+
+import { ktSentryReport } from '@proton/key-transparency/lib';
+
+import {
+    Api,
+    ApiKeysConfig,
+    KT_VERIFICATION_STATUS,
+    KeyTransparencyActivation,
+    VerifyOutboundPublicKeys,
+} from '../../interfaces';
 import getPublicKeysEmailHelperLegacy from './getPublicKeysEmailHelperLegacy';
 import getPublicKeysEmailHelperWithKT from './getPublicKeysEmailHelperWithKT';
 
@@ -18,6 +28,15 @@ const getPublicKeysEmailHelper = async (
         return getPublicKeysEmailHelperLegacy(api, Email, silence, noCache);
     }
     const result = await getPublicKeysEmailHelperWithKT(api, Email, verifyOutboundPublicKeys, silence, noCache);
+    if (result.ktVerificationResult?.status === KT_VERIFICATION_STATUS.VERIFICATION_FAILED) {
+        ktSentryReport('Key verification error', { email: Email });
+        if (ktActivation === KeyTransparencyActivation.SHOW_UI) {
+            return {
+                publicKeys: [],
+                Errors: [c('loc_nightly: Key verification error').t`Key verification error`],
+            };
+        }
+    }
     if (ktActivation === KeyTransparencyActivation.LOG_ONLY) {
         return {
             ...result,
