@@ -1,3 +1,17 @@
+## Release 5.0.12.0 — July 12, 2023
+
+### Improvements
+
+-   Add app languages: Finnish, Hindi and Swedish
+
+### Fixes
+
+-   Minor bug fixes
+
+### Other
+
+-   Our Terms and Conditions have been updated https://proton.me/legal/terms
+
 ## Release 5.0.11.0 — June 14, 2023
 
 ### Improvements
