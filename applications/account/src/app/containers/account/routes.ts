@@ -23,6 +23,7 @@ export const getAccountAppRoutes = ({
     user,
     subscription,
     isDataRecoveryAvailable,
+    isSessionRecoveryAvailable,
     isReferralProgramEnabled,
     recoveryNotification,
     isGmailSyncEnabled,
@@ -35,6 +36,7 @@ export const getAccountAppRoutes = ({
     user: UserModel;
     subscription?: Subscription;
     isDataRecoveryAvailable: boolean;
+    isSessionRecoveryAvailable: boolean;
     isReferralProgramEnabled: boolean;
     isGmailSyncEnabled: boolean;
     recoveryNotification?: ThemeColor;
@@ -150,6 +152,11 @@ export const getAccountAppRoutes = ({
                         text: c('Title').t`Data recovery`,
                         id: recoveryIds.data,
                         available: isDataRecoveryAvailable,
+                    },
+                    {
+                        text: c('Title').t`Password reset`,
+                        id: 'password-reset',
+                        available: isSessionRecoveryAvailable,
                     },
                 ],
             },
