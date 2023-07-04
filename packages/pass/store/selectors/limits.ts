@@ -43,7 +43,7 @@ export const selectTOTPLimits = createSelector([selectItemsByType('login'), sele
         needsUpgrade = totpTotalCount >= totpLimit;
         didDowngrade = totpTotalCount > totpLimit;
         totpAllowed = (itemId: string) =>
-            sortItems(totpItems, 'createTimeASC')
+            sortItems('createTimeASC')(totpItems)
                 .slice(0, totpLimit)
                 .some((item) => item.itemId === itemId);
     }
