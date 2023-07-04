@@ -1,10 +1,7 @@
-@use 'sass:meta';
+@use "sass:meta";
+@import "@proton/styles/scss/lib/em";
 
-@import '@proton/styles/scss/lib';
-@import '@proton/styles/scss/utilities/shadow';
-@import '@proton/styles/scss/base/custom-properties/';
-
-@import './reset';
+@import "./reset";
 
 .protonpass-input {
 	&--wrapper {
@@ -75,11 +72,6 @@
 			display: block !important;
 			font-weight: bold !important;
 			text-shadow: 0 0.5px 3px #320dc5 !important;
-		}
-
-		&--ready {
-			/* stylelint-disable-next-line */
-			transition: opacity 0.2s ease-in-out, right 0.12s;
 		}
 
 		&:hover {
