@@ -130,7 +130,6 @@ export const MAX_CHARS_API = {
     TITLE: 255,
     EVENT_DESCRIPTION: 3000,
     LOCATION: 255,
-    CALENDAR_URL: 10000,
 };
 
 export const MAX_CHARS_CLEARTEXT = {
