@@ -124,6 +124,9 @@
       "Block": [
         "Blocare"
       ],
+      "Block email tracking": [
+        "Blocare urmărire mesaje"
+      ],
       "Block messages from this sender": [
         "Blocare mesaje de la acest expeditor"
       ],
@@ -364,9 +367,6 @@
       ],
       "Email settings": [
         "Setări e-mail"
-      ],
-      "Emoji": [
-        "Emoticon"
       ],
       "Enable": [
         "Activare"
@@ -1055,9 +1055,6 @@
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Reîncercați salvarea. Aceasta a eșuat deoarece: ${ saveError }"
-      ],
-      "Turn on tracker protection": [
-        "Activare protecție împotriva urmăririi"
       ],
       "Unblock": [
         "Deblocare"
@@ -2773,7 +2770,7 @@
         "Regatul Unit"
       ],
       "United States": [
-        "Statele Unite"
+        "SUA"
       ],
       "United States Minor Outlying Islands": [
         "Insulele Minore Îndepărtate ale Statelor Unite"
@@ -2975,6 +2972,12 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Puteți marca pentru ștergere contactele pe care nu doriți nici să le îmbinați, nici să le păstrați. Ștergerea va fi efectuată doar după apăsarea butonului de îmbinare."
+      ],
+      "You can read the message and click on links without being tracked with email tracker protection.": [
+        "Cu protecția împotriva funcțiilor de urmărire din mesaje, puteți citi mesajul și folosi legăturile din el fără a riscul monitorizării."
+      ],
+      "You can read the message and click on links without being tracked.": [
+        "Puteți citi mesajul și accesa legăturile din el fără riscul monitorizării."
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4688,10 +4691,20 @@
         "Nu au putut fi mutate ${ messagesNotAuthorizedToMove } mesaje.",
         "Nu au putut fi mutate ${ messagesNotAuthorizedToMove } de mesaje."
       ],
-      "${ numberOfTrackers } email tracker blocked": [
-        "S-a blocat o funcție de monitorizare prin e-mail",
-        "S-au blocat ${ numberOfTrackers } funcții de monitorizare prin e-mail",
-        "S-au blocat ${ numberOfTrackers } de funcții de monitorizare prin e-mail"
+      "${ numberOfImageTrackers } email tracker blocked": [
+        "A fost blocată ${ numberOfImageTrackers } funcție de urmărire din e-mail.",
+        "S-au blocat ${ numberOfImageTrackers } funcții de urmărire din e-mail.",
+        "S-au blocat ${ numberOfImageTrackers } de funcții de monitorizare din e-mail."
+      ],
+      "${ numberOfImageTrackers } tracker blocked": [
+        "S-a blocat ${ numberOfImageTrackers } funcție de urmărire.",
+        "S-au blocat ${ numberOfImageTrackers } funcții de urmărire.",
+        "S-au blocat ${ numberOfImageTrackers } de funcții de urmărire."
+      ],
+      "${ numberOfUTMTrackers } link cleaned": [
+        "S-a curățat ${ numberOfUTMTrackers } legătură.",
+        "S-au curățat ${ numberOfUTMTrackers } legături.",
+        "S-au curățat ${ numberOfUTMTrackers } de legături."
       ],
       "${ numContact } contact": [
         "Un contact",
@@ -5084,17 +5097,6 @@
       "Email tracker protection is disabled": [
         "Protecția de urmărire a e-mailurilor este dezactivată"
       ],
-      "Email trackers can violate your privacy. ${ BRAND_NAME } did not find any trackers in this message.": [
-        "Monitorizarea mesajelor vă poate încălca intimitatea. ${ BRAND_NAME } nu a găsit monitorizări în acest mesaj."
-      ],
-      "Email trackers can violate your privacy. ${ BRAND_NAME } found and blocked ${ numberOfTrackers } tracker.": [
-        "Monitorizarea mesajelor vă poate încălca intimitatea. ${ BRAND_NAME } a găsit și a blocat o monitorizare.",
-        "Monitorizarea mesajelor vă poate încălca intimitatea. ${ BRAND_NAME } a găsit și a blocat ${ numberOfTrackers } monitorizări.",
-        "Monitorizarea mesajelor vă poate încălca intimitatea. ${ BRAND_NAME } a găsit și a blocat ${ numberOfTrackers } de monitorizări."
-      ],
-      "Email trackers can violate your privacy. Turn on tracker protection to prevent senders from knowing whether and when you have opened a message.": [
-        "Monitorizarea prin e-mail vă pot încălca intimitatea. Activați protecția împotriva urmăririi pentru a împiedica expeditorii să știe dacă și când ați deschis un mesaj."
-      ],
       "Emails are automatically signed": [
         "Mesajele sunt semnate automat"
       ],
@@ -5280,6 +5282,9 @@
       "Link type": [
         "Tip legătură"
       ],
+      "Links cleaned:": [
+        "Legături curățate:"
+      ],
       "Loading": [
         "Se încarcă"
       ],
@@ -5363,9 +5368,6 @@
       "No email address": [
         "Lipsă adresă de e-mail"
       ],
-      "No email trackers found": [
-        "Nu s-au găsit funcții de monitorizare prin e-mail"
-      ],
       "No folder found": [
         "Nu există folder"
       ],
@@ -5381,14 +5383,17 @@
       "No label selected": [
         "Nicio etichetă selectată"
       ],
+      "No links cleaned": [
+        "Nu au fost curățate legături"
+      ],
       "No more results found": [
         "Nu s-au mai găsit rezultate"
       ],
       "No results found": [
         "Nu s-au găsit rezultate"
       ],
-      "No trackers found, but some images could not be loaded with tracking protection": [
-        "Nu s-au găsit funcții de monitorizare, dar unele imagini nu au putut fi încărcare cu protecția la monitorizare activată."
+      "No trackers found": [
+        "Nu s-au găsit funcții de urmărire"
       ],
       "non-${ MAIL_APP_NAME }": [
         "non-${ MAIL_APP_NAME }"
@@ -5788,8 +5793,11 @@
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "Prea multe mesaje așteaptă să fie trimise. Așteptați până când un alt mesaj va fi trimis pentru a-l programa pe acesta."
       ],
-      "Turn off to only search by date, name, or email address. To disable search message content and delete downloaded messages, go to settings.": [
-        "Dezactivați pentru a căuta numai după dată, nume sau adresă de e-mail. Pentru a dezactiva căutarea în conținutul mesajelor și a șterge mesajele descărcate, accesați setările."
+      "Trackers blocked:": [
+        "Urmăritori blocați:"
+      ],
+      "Turn off to only search by date, name, email address, or subject line. To disable search message content and delete downloaded messages, go to settings.": [
+        "Dezactivați opțiunea pentru a căuta numai după dată, nume, adresă de e-mail sau subiect. Pentru a dezactiva căutarea în conținutul mesajelor și a șterge mesajele descărcate, accesați setările."
       ],
       "Turn on to search the content of your messages": [
         "Activare căutarea în conținutul mesajelor."
@@ -5929,6 +5937,9 @@
       "You can check the progress ${ importProgressLink }.": [
         "Puteți verifica progresul ${ importProgressLink }."
       ],
+      "You can click links in this email without being profiled and leaking your online activity with advertisers.": [
+        "Puteți accesa legăturile din acest mesaj fără a vi se putea face un profil și urmări activitatea online de către agențiile de publicitate."
+      ],
       "You can either update your search query or ${ button }": [
         "Puteți să actualizați căutarea sau să ${ button }"
       ],
@@ -5937,6 +5948,9 @@
       ],
       "You can import one data type at a time.": [
         "Puteți importa un singur tip de date la un moment dat."
+      ],
+      "You can read this email without revealing your interactions, location, or device to advertisers.": [
+        "Puteți citi acest mesaj fără a vă dezvălui agențiilor de publicitate acțiunile, locul sau tipul de dispozitiv folosit."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Puteți activa notificările pentru a primi alerte atunci când apar mesaje noi în acest folder."
@@ -6429,6 +6443,9 @@
       "City": [
         "Oraş"
       ],
+      "Cleaned": [
+        "Curățat"
+      ],
       "Code is 6 digits without spaces": [
         "Codul este format din 6 cifre fără spații"
       ],
@@ -6630,6 +6647,9 @@
       "OK": [
         "OK"
       ],
+      "Open in a new tab": [
+        "Deschidere într-o filă nouă"
+      ],
       "Operating system": [
         "Sistem de operare"
       ],
@@ -6644,6 +6664,9 @@
       ],
       "Or": [
         "Sau"
+      ],
+      "Original link": [
+        "Legătura originală"
       ],
       "Participants": [
         "Participanți"
@@ -7143,11 +7166,6 @@
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
         "O versiune nouă a ${ appName } este disponibilă. ${ reloadButton }."
-      ]
-    },
-    "Message has been sent to the user via a SimpleLogin alias": {
-      "Delivered via SimpleLogin by ${ BRAND_NAME }": [
-        "Livrat prin SimpleLogin de la ${ BRAND_NAME }"
       ]
     },
     "Message image": {
@@ -7853,6 +7871,22 @@
         "S-au detectat unele avertismente. Este posibil ca următoarea adresă de e-mail să nu primească mesaje:",
         "S-au detectat unele avertismente. Este posibil ca următoarele adrese de e-mail să nu primească mesaje:",
         "S-au detectat unele avertismente. Este posibil ca următoarele adrese de e-mail să nu primească mesaje:"
+      ]
+    },
+    "Sender verification details": {
+      "Sender verification": [
+        "Verificare expeditor"
+      ],
+      "Sender verification failed: ${ icon.senderVerificationDetails.description }": [
+        "Verificarea expeditorului a eșuat: ${ icon.senderVerificationDetails.description }"
+      ],
+      "Sender verified: ${ icon.senderVerificationDetails.description }": [
+        "Expeditor verificat: ${ icon.senderVerificationDetails.description }"
+      ]
+    },
+    "Sender verification error": {
+      "Verification key is not in the list of trusted keys.": [
+        "Cheia de verificare nu este în lista de chei de încredere."
       ]
     },
     "Sent email icon": {
@@ -9013,6 +9047,9 @@
       "No attachment found": [
         "Nu s-a găsit niciun atașament"
       ],
+      "No trackers found": [
+        "Nu s-au găsit funcții de urmărire"
+      ],
       "Open actions dropdown": [
         "Deschidere meniu acțiuni"
       ],
@@ -9039,6 +9076,9 @@
       ],
       "Previous message": [
         "Mesajul anterior"
+      ],
+      "Protect your email": [
+        "Protejați-vă mesajele"
       ],
       "Re-sign all contacts": [
         "Resemnare toate contactele"
@@ -9150,6 +9190,9 @@
       ],
       "Subject missing": [
         "Subiect lipsă"
+      ],
+      "This email is protected": [
+        "Acest mesaj este protejat"
       ],
       "To": [
         "Către"

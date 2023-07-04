@@ -124,6 +124,9 @@
       "Block": [
         "Αποκλεισμός"
       ],
+      "Block email tracking": [
+        "Φραγή ιχνηλάτησης μηνυμάτων"
+      ],
       "Block messages from this sender": [
         "Αποκλεισμός μηνυμάτων από αυτόν τον αποστολέα"
       ],
@@ -362,9 +365,6 @@
       ],
       "Email settings": [
         "Ρυθμίσεις Email"
-      ],
-      "Emoji": [
-        "Εικονίδια"
       ],
       "Enable": [
         "Ενεργοποίηση"
@@ -824,7 +824,7 @@
         "Απάντηση σε όλους"
       ],
       "Reply securely": [
-        "Απάντηση με διασφάλιση"
+        "Απάντηση με ασφάλεια"
       ],
       "Report a problem": [
         "Αναφορά προβλήματος"
@@ -881,7 +881,7 @@
         "Αναζήτηση εντός περιεχομένου μηνυμάτων"
       ],
       "See business plans": [
-        "Δείτε επιχειρηματικά Προγράμματα\n*.*, add translation *.*"
+        "Δείτε τα προγράμματα για επιχειρήσεις"
       ],
       "See plan features": [
         "Προβολή δυνατοτήτων προγράμματος"
@@ -1051,9 +1051,6 @@
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Παρακαλώ προσπαθήστε να αποθηκεύσετε ξανά. Η αποθήκευση απέτυχε λόγω: ${ saveError }"
-      ],
-      "Turn on tracker protection": [
-        "Ενεργοποίηση προστασίας από ιχνηλάτες"
       ],
       "Unblock": [
         "Κατάργηση από αποκλεισμό"
@@ -2964,6 +2961,12 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Μπορείτε να επισημάνετε για διαγραφή τις επαφές που δεν θέλετε να συγχωνεύσετε ούτε να διατηρήσετε. Η διαγραφή θα πραγματοποιηθεί μόνο αφού πατηθεί το κουμπί συγχώνευσης"
+      ],
+      "You can read the message and click on links without being tracked with email tracker protection.": [
+        "Μπορείτε να διαβάσετε το μήνυμα και να κάνετε κλικ σε συνδέσμους χωρίς να παρακολουθείτε με προστασία παρακολούθησης email."
+      ],
+      "You can read the message and click on links without being tracked.": [
+        "Μπορείτε να διαβάσετε το μήνυμα και να κάνετε κλικ σε συνδέσμους χωρίς να παρακολουθείτε."
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4637,9 +4640,17 @@
         "${ messagesNotAuthorizedToMove } μήνυμα δεν μπόρεσε να μετακινηθεί.",
         "${ messagesNotAuthorizedToMove } μηνύματα δεν μπόρεσαν να μετακινηθούν."
       ],
-      "${ numberOfTrackers } email tracker blocked": [
-        "${ numberOfTrackers } ιχνηλάτης μηνυμάτων εμποδίστηκε",
-        "${ numberOfTrackers } ιχνηλάτες μηνυμάτων εμποδίστηκαν"
+      "${ numberOfImageTrackers } email tracker blocked": [
+        "${ numberOfImageTrackers } ιχνηλάτης μηνυμάτων εμποδίστηκε",
+        "${ numberOfImageTrackers } ιχνηλάτες μηνυμάτων εμποδίστηκαν"
+      ],
+      "${ numberOfImageTrackers } tracker blocked": [
+        "${ numberOfImageTrackers } ιχνηλάτης εμποδίστηκε",
+        "${ numberOfImageTrackers } ιχνηλάτες εμποδίστηκαν"
+      ],
+      "${ numberOfUTMTrackers } link cleaned": [
+        "${ numberOfUTMTrackers } σύνδεσμος καθαρίστηκε",
+        "${ numberOfUTMTrackers } σύνδεσμοι καθαρίστηκαν"
       ],
       "${ numContact } contact": [
         "${ numContact } επαφή",
@@ -5003,16 +5014,6 @@
       "Email tracker protection is disabled": [
         "Η προστασία από ιχνηλάτες είναι απενεργοποιημένη"
       ],
-      "Email trackers can violate your privacy. ${ BRAND_NAME } did not find any trackers in this message.": [
-        "Οι ιχνηλάτες μηνυμάτων μπορούν να παραβιάσουν το απόρρητό σας. Το ${ BRAND_NAME } δεν βρήκε κανέναν ιχνηλάτη σε αυτό το μήνυμα."
-      ],
-      "Email trackers can violate your privacy. ${ BRAND_NAME } found and blocked ${ numberOfTrackers } tracker.": [
-        "Οι ιχνηλάτες μηνυμάτων μπορούν να παραβιάσουν το απόρρητό σας. Το ${ BRAND_NAME } βρήκε και απέκλεισε ${ numberOfTrackers } ιχνηλάτη.",
-        "Οι ιχνηλάτες μηνυμάτων μπορούν να παραβιάσουν το απόρρητό σας. Το ${ BRAND_NAME } βρήκε και απέκλεισε ${ numberOfTrackers } ιχνηλάτες."
-      ],
-      "Email trackers can violate your privacy. Turn on tracker protection to prevent senders from knowing whether and when you have opened a message.": [
-        "Οι ιχνηλάτες μηνυμάτων μπορούν να παραβιάσουν το απόρρητό σας. Ενεργοποιείστε την προστασία από ιχνηλάτες, στερώντας στους αποστολείς τη γνώση του αν και πότε ανοίξατε ένα μήνυμα."
-      ],
       "Emails are automatically signed": [
         "Τα μηνύματα υπογράφονται αυτόματα"
       ],
@@ -5191,6 +5192,9 @@
       "Link type": [
         "Τύπος σύνδεσης"
       ],
+      "Links cleaned:": [
+        "Σύνδεσμοι που καθαρίστηκαν:"
+      ],
       "Loading": [
         "Φόρτωση"
       ],
@@ -5273,9 +5277,6 @@
       "No email address": [
         "Δεν υπάρχει διεύθυνση E-mail"
       ],
-      "No email trackers found": [
-        "Κανένας ιχνηλάτης μηνυμάτων"
-      ],
       "No folder found": [
         "Δε βρέθηκε φάκελος"
       ],
@@ -5291,14 +5292,17 @@
       "No label selected": [
         "Δεν επιλέχθηκε ετικέτα"
       ],
+      "No links cleaned": [
+        "Κανένας σύνδεσμος δεν καθαρίστηκε"
+      ],
       "No more results found": [
         "Δεν βρέθηκαν άλλα αποτελέσματα"
       ],
       "No results found": [
         "Δεν βρέθηκαν αποτελέσματα"
       ],
-      "No trackers found, but some images could not be loaded with tracking protection": [
-        "Δεν βρέθηκαν ιχνηλάτες, όμως κάποιες εικόνες δεν μπόρεσαν να φορτωθούν με προστασία ιχνηλασίας"
+      "No trackers found": [
+        "Δε βρέθηκαν ιχνηλάτες"
       ],
       "non-${ MAIL_APP_NAME }": [
         "μη-${ MAIL_APP_NAME }"
@@ -5694,8 +5698,11 @@
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "Υπερβολικός αριθμός μηνυμάτων σε αναμονή αποστολής. Για προγραμματισμό αυτού του μηνύματος, παρακαλούμε περιμένετε μέχρι την αποστολή ενός άλλου."
       ],
-      "Turn off to only search by date, name, or email address. To disable search message content and delete downloaded messages, go to settings.": [
-        "Απενεργοποιήστε την επιλογή για αναζήτηση μόνο κατά ημερομηνία, όνομα ή διεύθυνση ηλεκτρονικού ταχυδρομείου. Για να απενεργοποιήσετε το περιεχόμενο μηνυμάτων αναζήτησης και να διαγράψετε τα ληφθέντα μηνύματα, μεταβείτε στις ρυθμίσεις."
+      "Trackers blocked:": [
+        "Αποκλεισμένοι ιχνηλάτες:"
+      ],
+      "Turn off to only search by date, name, email address, or subject line. To disable search message content and delete downloaded messages, go to settings.": [
+        "Απενεργοποιήστε την επιλογή για αναζήτηση μόνο κατά ημερομηνία, όνομα, διεύθυνση ηλεκτρονικού ταχυδρομείου ή θέμα. Για να απενεργοποιήσετε το περιεχόμενο μηνυμάτων αναζήτησης και να διαγράψετε τα ληφθέντα μηνύματα, μεταβείτε στις ρυθμίσεις."
       ],
       "Turn on to search the content of your messages": [
         "Ενεργοποιήστε για αναζήτηση στο περιεχόμενο των μηνυμάτων σας"
@@ -5835,6 +5842,9 @@
       "You can check the progress ${ importProgressLink }.": [
         "Μπορείτε να δείτε την πρόοδο ${ importProgressLink }."
       ],
+      "You can click links in this email without being profiled and leaking your online activity with advertisers.": [
+        "Μπορείτε να κάνετε κλικ σε συνδέσμους σε αυτό το μήνυμα ηλεκτρονικού ταχυδρομείου χωρίς να έχετε προφίλ και να διαρρεύσετε τη δραστηριότητά σας στο διαδίκτυο με διαφημιστές."
+      ],
       "You can either update your search query or ${ button }": [
         "Μπορείτε είτε να ενημερώσετε τα κριτήρια αναζήτησης είτε ${ button }"
       ],
@@ -5843,6 +5853,9 @@
       ],
       "You can import one data type at a time.": [
         "Μπορεί να εισαχθεί ένας τύπος δεδομένων τη φορά."
+      ],
+      "You can read this email without revealing your interactions, location, or device to advertisers.": [
+        "Μπορείτε να διαβάσετε αυτό το μήνυμα ηλεκτρονικού ταχυδρομείου χωρίς να αποκαλύψετε τις αλληλεπιδράσεις, την τοποθεσία ή τη συσκευή σας στους διαφημιζόμενους."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Μπορείτε να ενεργοποιήσετε τις ειδοποιήσεις, για να λαμβάνετε ειδοποιήσεις όταν φτάνουν νέα email σε αυτόν το φάκελο."
@@ -6019,11 +6032,6 @@
       "You have enabled Address Verification with Trusted Keys for this email address,\nbut no active encryption key has been trusted.\nYou must trust a key valid for sending in order to send a message to this email address.": [
         "Έχετε ενεργοποιήσει την επαλήθευση διεύθυνσης με αξιόπιστα κλειδιά για αυτή τη διεύθυνση ηλεκτρονικού ταχυδρομείου,\nαλλά δεν έχει εμπιστευτεί κανένα ενεργό κλειδί κρυπτογράφησης.\nΠρέπει να εμπιστευτείτε ένα έγκυρο κλειδί για την αποστολή για να στείλετε ένα μήνυμα σε αυτή τη διεύθυνση ηλεκτρονικού ταχυδρομείου.",
         "Έχετε ενεργοποιήσει την επαλήθευση διεύθυνσης με αξιόπιστα κλειδιά για αυτές τις διευθύνσεις email,\nαλλά δεν έχουν εμπιστευτεί ενεργά κλειδιά κρυπτογράφησης.\nΠρέπει να εμπιστεύεστε τα κλειδιά που είναι έγκυρα για να στείλετε ένα μήνυμα σε αυτές τις διευθύνσεις email."
-      ]
-    },
-    "Key transparency details button": {
-      "Click here for more details.": [
-        "Κάντε κλικ εδώ για περισσότερες λεπτομέρειες."
       ]
     },
     "Key validation warning": {
@@ -6328,6 +6336,9 @@
       "City": [
         "Πόλη"
       ],
+      "Cleaned": [
+        "Καθαρίστηκαν"
+      ],
       "Code is 6 digits without spaces": [
         "Ο κωδικός είναι 6 ψηφία χωρίς κενά"
       ],
@@ -6529,6 +6540,9 @@
       "OK": [
         "Αποδεκτή"
       ],
+      "Open in a new tab": [
+        "Άνοιγμα σε νέα καρτέλα"
+      ],
       "Operating system": [
         "Λειτουργικό σύστημα (OS)"
       ],
@@ -6543,6 +6557,9 @@
       ],
       "Or": [
         "Ή"
+      ],
+      "Original link": [
+        "Αρχικός σύνδεσμος"
       ],
       "Participants": [
         "Συμμετέχοντες"
@@ -7037,11 +7054,6 @@
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
         "Μια νέα έκδοση του ${ appName } είναι διαθέσιμη. ${ reloadButton }."
-      ]
-    },
-    "Message has been sent to the user via a SimpleLogin alias": {
-      "Delivered via SimpleLogin by ${ BRAND_NAME }": [
-        "Παραδόθηκε μέσω SimpleLogin από ${ BRAND_NAME }"
       ]
     },
     "Message image": {
@@ -8839,7 +8851,7 @@
         "Μετακίνηση στα Εισερχόμενα"
       ],
       "Move to inbox (not spam)": [
-        "Μετακίνηση στα εισερχόμενα (μη ενοχλητικό)"
+        "Μετακίνηση στα εισερχόμενα (μη ανεπιθύμητο)"
       ],
       "Move to spam": [
         "Μετακίνηση στα ενοχλητικά"
@@ -8864,6 +8876,9 @@
       ],
       "No attachment found": [
         "Κανένα συνημμένο"
+      ],
+      "No trackers found": [
+        "Δε βρέθηκαν ιχνηλάτες"
       ],
       "Open actions dropdown": [
         "Άνοιγμα αναπτυσσόμενων επιλογών"
@@ -8891,6 +8906,9 @@
       ],
       "Previous message": [
         "Προηγούμενο Μήνυμα"
+      ],
+      "Protect your email": [
+        "Προστατέψτε το ηλεκτρονικό ταχυδρομείο σας"
       ],
       "Re-sign all contacts": [
         "Επανυπογραφή όλων των επαφών"
@@ -9003,6 +9021,9 @@
       "Subject missing": [
         "Λείπει το θέμα"
       ],
+      "This email is protected": [
+        "Αυτό το email προστατεύεται"
+      ],
       "To": [
         "Προς"
       ],
@@ -9038,7 +9059,7 @@
         "Προειδοποίηση"
       ],
       "Warning: suspected fake website": [
-        "Προειδοποίηση: υποψία κίβδηλης ιστοσελίδας"
+        "Προειδοποίηση: υποψία ψεύτικης ιστοσελίδας"
       ],
       "Welcome": [
         "Καλώς ήρθατε"

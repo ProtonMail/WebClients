@@ -124,6 +124,9 @@
       "Block": [
         "Bloquer"
       ],
+      "Block email tracking": [
+        "Bloquer le suivi des messages"
+      ],
       "Block messages from this sender": [
         "Bloquer les messages de cet expéditeur"
       ],
@@ -362,9 +365,6 @@
       ],
       "Email settings": [
         "Paramètres du message"
-      ],
-      "Emoji": [
-        "Emoji"
       ],
       "Enable": [
         "Activer"
@@ -650,7 +650,7 @@
         "Déplacer tous les messages de ce label"
       ],
       "Move all to archive": [
-        "Tout déplacer vers les archives"
+        "Tout déplacer dans le dossier Archives"
       ],
       "Move all to trash": [
         "Tout déplacer dans le dossier Corbeille"
@@ -1051,9 +1051,6 @@
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Réessayez d'enregistrer. L'enregistrement n'a pas abouti pour la raison suivante : ${ saveError }"
-      ],
-      "Turn on tracker protection": [
-        "Activer la protection contre les traqueurs"
       ],
       "Unblock": [
         "Marquer comme non indésirable/spam"
@@ -2964,6 +2961,12 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Vous pouvez marquer pour suppression les contacts que vous ne voulez ni fusionner ni conserver. Leur suppression n'aura lieu qu'après avoir cliqué sur le bouton de fusion."
+      ],
+      "You can read the message and click on links without being tracked with email tracker protection.": [
+        "Vous pouvez lire le message et cliquer sur les liens sans être suivi grâce à la protection contre le suivi dans les messages."
+      ],
+      "You can read the message and click on links without being tracked.": [
+        "Vous pouvez lire le message et cliquer sur les liens sans être suivi."
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4637,9 +4640,17 @@
         "${ messagesNotAuthorizedToMove } message n’a pas pu être déplacé.",
         "${ messagesNotAuthorizedToMove } messages n’ont pas pu être déplacés."
       ],
-      "${ numberOfTrackers } email tracker blocked": [
-        "${ numberOfTrackers } traqueur d'e-mail bloqué",
-        "${ numberOfTrackers } traqueurs d'e-mail bloqués"
+      "${ numberOfImageTrackers } email tracker blocked": [
+        "${ numberOfImageTrackers } traqueur d'e-mail bloqué",
+        "${ numberOfImageTrackers } traqueurs d'e-mail bloqués"
+      ],
+      "${ numberOfImageTrackers } tracker blocked": [
+        "${ numberOfImageTrackers } traqueur bloqué",
+        "${ numberOfImageTrackers } traqueurs bloqués"
+      ],
+      "${ numberOfUTMTrackers } link cleaned": [
+        "${ numberOfUTMTrackers } lien nettoyé",
+        "${ numberOfUTMTrackers } liens nettoyés"
       ],
       "${ numContact } contact": [
         "${ numContact } contact",
@@ -4807,7 +4818,7 @@
         "Voulez-vous vraiment abandonner vos modifications ?"
       ],
       "Are you sure you want to move all messages in this location to Archive?": [
-        "Voulez-vous vraiment archiver tous les messages de cet emplacement ?"
+        "Voulez-vous vraiment déplacer tous les messages de cet emplacement dans le dossier Archives ?"
       ],
       "Are you sure you want to move all messages in this location to Trash?": [
         "Voulez-vous vraiment déplacer tous les messages de cet emplacement dans le dossier Corbeille ?"
@@ -5003,16 +5014,6 @@
       "Email tracker protection is disabled": [
         "La protection contre les traqueurs dans les messages est désactivée."
       ],
-      "Email trackers can violate your privacy. ${ BRAND_NAME } did not find any trackers in this message.": [
-        "Les traqueurs dans les e-mails peuvent porter atteinte à votre vie privée. ${ BRAND_NAME } n'en a pas trouvé dans ce message."
-      ],
-      "Email trackers can violate your privacy. ${ BRAND_NAME } found and blocked ${ numberOfTrackers } tracker.": [
-        "Les traqueurs dans les e-mails peuvent porter atteinte à votre vie privée. ${ BRAND_NAME } a trouvé et bloqué ${ numberOfTrackers } traqueur.",
-        "Les traqueurs dans les e-mails peuvent porter atteinte à votre vie privée. ${ BRAND_NAME } a trouvé et bloqué ${ numberOfTrackers } traqueurs."
-      ],
-      "Email trackers can violate your privacy. Turn on tracker protection to prevent senders from knowing whether and when you have opened a message.": [
-        "Les traqueurs dans les messages peuvent porter atteinte à votre vie privée. Activez la protection contre les traqueurs pour empêcher les expéditeurs de savoir si et quand vous avez ouvert un message."
-      ],
       "Emails are automatically signed": [
         "Les messages sont automatiquement signés."
       ],
@@ -5191,6 +5192,9 @@
       "Link type": [
         "Type de lien"
       ],
+      "Links cleaned:": [
+        "Liens nettoyés :"
+      ],
       "Loading": [
         "Chargement"
       ],
@@ -5273,9 +5277,6 @@
       "No email address": [
         "Aucune adresse e-mail"
       ],
-      "No email trackers found": [
-        "Aucun traqueur d'e-mail n'a été trouvé."
-      ],
       "No folder found": [
         "Aucun dossier n'a été trouvé."
       ],
@@ -5291,14 +5292,17 @@
       "No label selected": [
         "Aucun label n'est sélectionné."
       ],
+      "No links cleaned": [
+        "Aucun lien n'a été nettoyé."
+      ],
       "No more results found": [
         "Aucun autre résultat n'a été trouvé."
       ],
       "No results found": [
         "Aucun résultat n'a été trouvé."
       ],
-      "No trackers found, but some images could not be loaded with tracking protection": [
-        "Aucun traqueur trouvé, mais certaines images n'ont pas pu être chargées à cause de la protection contre les traqueurs."
+      "No trackers found": [
+        "Aucun traqueur n'a été trouvé."
       ],
       "non-${ MAIL_APP_NAME }": [
         "autre que ${ MAIL_APP_NAME }"
@@ -5694,8 +5698,11 @@
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "Trop de messages sont en attente d'être envoyés. Vous devez attendre qu'un autre message ait été envoyé pour programmer celui-ci."
       ],
-      "Turn off to only search by date, name, or email address. To disable search message content and delete downloaded messages, go to settings.": [
-        "Désactivez cette option pour rechercher uniquement par date, nom ou adresse e-mail. Pour désactiver la recherche dans le contenu des messages et supprimer les messages téléchargés, rendez-vous dans les paramètres."
+      "Trackers blocked:": [
+        "Traqueurs bloqués :"
+      ],
+      "Turn off to only search by date, name, email address, or subject line. To disable search message content and delete downloaded messages, go to settings.": [
+        "Désactivez cette option pour faire des recherches uniquement par date, nom, adresse e-mail ou objet du message. Pour désactiver la recherche dans le contenu des messages (et supprimer les messages qui ont été téléchargés pour permettre cette fonctionnalité), accédez aux paramètres."
       ],
       "Turn on to search the content of your messages": [
         "Activer pour rechercher dans le contenu de vos messages"
@@ -5835,6 +5842,9 @@
       "You can check the progress ${ importProgressLink }.": [
         "Vous pouvez suivre la progression ${ importProgressLink }."
       ],
+      "You can click links in this email without being profiled and leaking your online activity with advertisers.": [
+        "Vous pouvez cliquer sur les liens contenus dans ce message sans que les annonceurs puissent établir votre profil et connaître vos activités en ligne."
+      ],
       "You can either update your search query or ${ button }": [
         "Vous pouvez mettre à jour votre requête de recherche ou ${ button }."
       ],
@@ -5843,6 +5853,9 @@
       ],
       "You can import one data type at a time.": [
         "Vous pouvez importer un type de données à la fois."
+      ],
+      "You can read this email without revealing your interactions, location, or device to advertisers.": [
+        "Vous pouvez lire ce message sans indiquer aux annonceurs vos interactions, votre localisation ou votre appareil."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Vous pouvez activer les notifications pour recevoir des alertes quand de nouveaux messages arrivent dans ce dossier."
@@ -6019,11 +6032,6 @@
       "You have enabled Address Verification with Trusted Keys for this email address,\nbut no active encryption key has been trusted.\nYou must trust a key valid for sending in order to send a message to this email address.": [
         "Vous avez activé la vérification d'adresse avec des clés de confiance pour cette adresse e-mail, mais aucune clé de chiffrement active n'a été approuvée.\nVous devez faire confiance à une clé valide pour envoyer un message à cette adresse e-mail.",
         "Vous avez activé la vérification d'adresse avec des clés de confiance pour ces adresses e-mail, mais aucune clé de chiffrement active n'a été approuvée.\nVous devez avoir des clés de confiance valides pour envoyer un message à ces adresses e-mail."
-      ]
-    },
-    "Key transparency details button": {
-      "Click here for more details.": [
-        "Cliquez ici pour plus de détails."
       ]
     },
     "Key validation warning": {
@@ -6328,6 +6336,9 @@
       "City": [
         "Ville"
       ],
+      "Cleaned": [
+        "Nettoyé"
+      ],
       "Code is 6 digits without spaces": [
         "Le code est composé de 6 chiffres sans espaces."
       ],
@@ -6529,6 +6540,9 @@
       "OK": [
         "OK"
       ],
+      "Open in a new tab": [
+        "Ouvrir dans un nouvel onglet"
+      ],
       "Operating system": [
         "Système d'exploitation"
       ],
@@ -6543,6 +6557,9 @@
       ],
       "Or": [
         "Ou"
+      ],
+      "Original link": [
+        "Lien d'origine"
       ],
       "Participants": [
         "Participants"
@@ -7037,11 +7054,6 @@
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
         "Une nouvelle version de ${ appName } est disponible. ${ reloadButton }."
-      ]
-    },
-    "Message has been sent to the user via a SimpleLogin alias": {
-      "Delivered via SimpleLogin by ${ BRAND_NAME }": [
-        "Délivré via SimpleLogin par ${ BRAND_NAME }"
       ]
     },
     "Message image": {
@@ -7743,7 +7755,7 @@
         "Vérification de l'expéditeur"
       ],
       "Sender verification failed: ${ icon.senderVerificationDetails.description }": [
-        "Erreur lors de la vérification de l'expéditeur : ${ icon.senderVerificationDetails.description }"
+        "La vérification de l'expéditeur n'a pas abouti : ${ icon.senderVerificationDetails.description }"
       ],
       "Sender verified: ${ icon.senderVerificationDetails.description }": [
         "L'expéditeur est vérifié : ${ icon.senderVerificationDetails.description }"
@@ -8891,7 +8903,7 @@
         "Plus de sélections"
       ],
       "Move all messages to Archive": [
-        "Déplacer tous les messages vers les archives"
+        "Déplacer tous les messages dans le dossier Archives"
       ],
       "Move all messages to Trash": [
         "Déplacer tous les messages dans le dossier Corbeille"
@@ -8929,6 +8941,9 @@
       "No attachment found": [
         "Il n'y a pas de pièce jointe."
       ],
+      "No trackers found": [
+        "Aucun traqueur n'a été trouvé."
+      ],
       "Open actions dropdown": [
         "Ouvrir le menu déroulant des actions"
       ],
@@ -8955,6 +8970,9 @@
       ],
       "Previous message": [
         "Message précédent"
+      ],
+      "Protect your email": [
+        "Protégez votre message"
       ],
       "Re-sign all contacts": [
         "Signer à nouveau tous les contacts"
@@ -9066,6 +9084,9 @@
       ],
       "Subject missing": [
         "Il manque l'objet."
+      ],
+      "This email is protected": [
+        "Ce message est protégé."
       ],
       "To": [
         "À"
