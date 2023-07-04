@@ -102,6 +102,7 @@ const dummyCalendar = {
             Display: CALENDAR_DISPLAY.HIDDEN,
             Name: dummyCalendarName,
             Description: '',
+            Priority: 1,
         },
     ],
 };
@@ -904,6 +905,7 @@ END:VCALENDAR`;
                         Display: CALENDAR_DISPLAY.HIDDEN,
                         Name: dummyCalendarName,
                         Description: '',
+                        Priority: 1,
                     },
                 ],
             };

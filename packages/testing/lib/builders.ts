@@ -64,6 +64,7 @@ export const calendarBuilder = build<VisualCalendar>('Calendar', {
         Display: 1,
         Permissions: 127,
         Owner: { Email: testEmail },
+        Priority: 1,
         Members: [
             {
                 ID: 'otkpEZzG--8dMXvwyLXLQWB72hhBhNGzINjH14rUDfywvOyeN01cDxDrS3Koifxf6asA7Xcwtldm0r_MCmWiAQ==',
@@ -76,6 +77,7 @@ export const calendarBuilder = build<VisualCalendar>('Calendar', {
                 CalendarID: testCalendarId,
                 Name: 'My calendar',
                 Description: '',
+                Priority: 1,
             },
         ],
     },
@@ -94,6 +96,7 @@ export const calendarBuilder = build<VisualCalendar>('Calendar', {
                         CalendarID: testCalendarId,
                         Name: 'My calendar',
                         Description: '',
+                        Priority: 1,
                     },
                 ],
             },
@@ -112,6 +115,7 @@ export const calendarBuilder = build<VisualCalendar>('Calendar', {
                         CalendarID: testCalendarId,
                         Name: 'My calendar',
                         Description: '',
+                        Priority: 1,
                     },
                 ],
             },
@@ -436,6 +440,7 @@ export const generateSimpleCalendar = (
     Color: color,
     Display: display,
     Permissions: permissions,
+    Priority: 1,
     Owner: { Email: ownerEmail },
     Members: [
         {
@@ -449,6 +454,7 @@ export const generateSimpleCalendar = (
             CalendarID: `id-${i}`,
             Name: `name-${i}`,
             Description: `description-${i}`,
+            Priority: 1,
         },
     ],
 });
