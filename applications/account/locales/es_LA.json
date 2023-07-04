@@ -7135,11 +7135,6 @@
         "Principal"
       ]
     },
-    "Key transparency details button": {
-      "Click here for more details.": [
-        "Haga clic aquí para obtener más información."
-      ]
-    },
     "Key type option": {
       "${ compatibility } RSA 4096-bit (Slower, but increased compatibility with legacy software)": [
         "${ compatibility } RSA 4096-bit (Lenta, pero mayor compatibilidad con software heredado)"
@@ -8446,6 +8441,9 @@
       "General": [
         "General"
       ],
+      "Help translate": [
+        "Ayúdenos a traducir"
+      ],
       "How to pay with Bitcoin?": [
         "¿Cómo pagar con Bitcoin?"
       ],
@@ -9078,7 +9076,7 @@
         "Cifrado de extremo a extremo"
       ],
       "Fast P2P/BitTorrent downloads": [
-        "Descaras rápidas de P2P/BitTorrent"
+        "Descargas rápidas de P2P/BitTorrent"
       ],
       "Free features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and ${ DRIVE_SHORT_APP_NAME }": [
         "Funciones gratuitas de ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } y ${ DRIVE_SHORT_APP_NAME }"
@@ -9602,7 +9600,7 @@
         "Compatibilidad con protocolos de intercambio de archivos como BitTorrent"
       ],
       "Unique, on-the-fly email addresses that protect your online identity and let you control what lands in your inbox. From SimpleLogin by ${ BRAND_NAME }.": [
-        "Direcciones de correo únicas y sobre la marcha que protegen su identidad en línea y le permiten controlar lo que llega a su buzón. Desde SimpleLogin por ${ BRAND_NAME }."
+        "Direcciones de correo únicas y sobre la marcha que protegen su identidad en línea y le permiten controlar lo que llega a su buzón. De SimpleLogin por ${ BRAND_NAME }."
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Use sus propias direcciones de dominio de correo personalizadas, por ejemplo, usted@sunombre.com"
@@ -9714,6 +9712,9 @@
       ],
       "Calendar added": [
         "Calendario añadido"
+      ],
+      "Calendar updated": [
+        "Calendario actualizado"
       ]
     },
     "Notification in share calendar modal": {
@@ -11159,7 +11160,7 @@
         "Activa"
       ],
       "Expiring": [
-        "Expirando"
+        "Expira"
       ],
       "Upcoming": [
         "Próxima"

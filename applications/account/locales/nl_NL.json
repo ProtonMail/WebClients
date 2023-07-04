@@ -158,6 +158,9 @@
       "Cancel": [
         "Annuleren"
       ],
+      "Cancel subscription": [
+        "Abonnement opzeggen"
+      ],
       "Change mailbox password": [
         "Mailboxwachtwoord wijzigen"
       ],
@@ -518,6 +521,9 @@
       "Keep": [
         "Behouden"
       ],
+      "Keep my ${ vpnPlanNameShort } subscription": [
+        "Behoud mijn ${ vpnPlanNameShort }-abonnement"
+      ],
       "label emails as": [
         "e-mail labellen als"
       ],
@@ -764,11 +770,17 @@
       "Send code": [
         "Code versturen"
       ],
+      "Send email reminder": [
+        "Stuur een e-mailherinnering"
+      ],
       "Send messages with @pm.me": [
         "Stuur berichten met @pm.be"
       ],
       "Send my username": [
         "Stuur mijn gebruikersnaam"
+      ],
+      "Send reminder": [
+        "Herinnering versturen"
       ],
       "Set as default": [
         "Als standaard instellen"
@@ -996,6 +1008,14 @@
         "Probeer 30 dagen gratis"
       ]
     },
+    "Action subscription": {
+      "Manage": [
+        "Beheren"
+      ],
+      "Reactivate": [
+        "Opnieuw activeren"
+      ]
+    },
     "Action; accept invitation to share calendar": {
       "Accept": [
         "Accepteren"
@@ -1072,6 +1092,11 @@
       ],
       "Orphan": [
         "Wees"
+      ]
+    },
+    "Admin": {
+      "admin": [
+        "beheerder"
       ]
     },
     "Alert": {
@@ -2827,7 +2852,7 @@
     },
     "Email": {
       "Thank you for verifying your email address.": [
-        "Bedankt voor het bevestigen van jouw e-mailadres."
+        "Bedankt voor het bevestigen van uw e-mailadres."
       ],
       "You can safely close this tab.": [
         "U kan dit tabblad veilig sluiten."
@@ -5194,6 +5219,9 @@
       "Attention required": [
         "Aandacht vereist"
       ],
+      "Auto-renewal: ": [
+        "Automatische verlenging: "
+      ],
       "Auto-reply is active each month between the selected start and end time.": [
         "Automatisch antwoord is elke maand tussen de geselecteerde begin- en eindtijd actief."
       ],
@@ -6092,6 +6120,9 @@
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Selecteer welke agenda's u wilt importeren. Voor elke geïmporteerde agenda wordt een nieuwe agenda aangemaakt afhankelijk van het aantal beschikbare agenda's binnen uw abonnement."
       ],
+      "Send emails to encourage your members to protect their accounts with 2FA.": [
+        "E-mails verzenden om uw leden aan te moedigen om hun accounts te beschermen met 2FA."
+      ],
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "Verzonden met <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> beveiligde e-mail."
       ],
@@ -6225,6 +6256,9 @@
         "Het volgende adres werd niet aangemaakt.",
         "De volgende adressen werden niet aangemaakt."
       ],
+      "The following members will receive an email prompting them to enable two-factor authentication as soon as possible.": [
+        "De volgende leden zullen een e-mail ontvangen met een uitnodiging om zo snel mogelijk tweestapsverificatie in te schakelen."
+      ],
       "The format of your CSV file is incorrect.": [
         "Het formaat van uw CSV-bestand is onjuist."
       ],
@@ -6290,6 +6324,9 @@
       ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Deze gebruiker is momenteel verantwoordelijk voor de betalingen voor uw organisatie. Door degradatie van dit lid, word u verantwoordelijk voor de betalingen voor uw organisatie."
+      ],
+      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
+        "Dit zal uw huidig betalend abonnement annuleren en u zult al uw opgebouwde loyaliteitsvoordelen verliezen."
       ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
         "Dit zal uw huidige betaalde abonnement annuleren en u verliest alle voordelen van loyaliteit die u heeft verzameld. Het resterende saldo van uw abonnement zal worden teruggestuurd als accountcredits."
@@ -6522,6 +6559,9 @@
       "We need to authenticate your payment with your bank.": [
         "We moeten uw betaling authenticeren met uw bank."
       ],
+      "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
+        "We raden aan om de organisatieleden op de hoogte te brengen en ze te vragen om 2FA in te stellen voor hun account voordat u het gebruik van 2FA forceert."
+      ],
       "We recommend using your recovery phrase instead.": [
         "Wij raden u aan in plaats daarvan uw herstelzin te gebruiken."
       ],
@@ -6713,6 +6753,9 @@
       "You will be redirected to the VPN download page": [
         "U wordt doorgestuurd naar de VPN-downloadpagina"
       ],
+      "You will lose access to ${ vpnPlanNameShort } servers and features on this date.": [
+        "U verliest toegang tot ${ vpnPlanNameShort }-servers en functies op deze datum."
+      ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "U heeft een ${ BRAND_NAME }-adres nodig om ${ MAIL_APP_NAME } en ${ CALENDAR_APP_NAME } te gebruiken"
       ],
@@ -6859,6 +6902,11 @@
     "Info on errors": {
       "Click for details": [
         "Klik voor details"
+      ]
+    },
+    "Info subscription": {
+      "You can prevent expiry by reactivating the subscription": [
+        "U kunt het vervallen voorkomen door uw abonnement opnieuw te activeren"
       ]
     },
     "Info when deleting payment method": {
@@ -7867,6 +7915,12 @@
       "Repeat password": [
         "Wachtwoord herhalen"
       ],
+      "Require 2FA for administrators": [
+        "2FA vereisen voor beheerders"
+      ],
+      "Require 2FA for everyone": [
+        "2FA vereisejn voor iedereen"
+      ],
       "Reveal password": [
         "Wachtwoord tonen"
       ],
@@ -8243,6 +8297,9 @@
       "General": [
         "Algemeen"
       ],
+      "Help translate": [
+        "Help met vertalen"
+      ],
       "How to unlock data": [
         "Hoe gegevens ontgrendelen"
       ],
@@ -8311,6 +8368,10 @@
       ]
     },
     "Loading info": {
+      "${ twoFAMembers.length }/${ members.length } of your organization member use two-factor authentication.": [
+        "${ twoFAMembers.length }/${ members.length } organisatielid gebruikt tweestapsverificatie",
+        "${ twoFAMembers.length }/${ members.length } organisatieleden gebruiken tweestapsverificatie"
+      ],
       "Almost there": [
         "Bijna daar"
       ],
@@ -9453,6 +9514,18 @@
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "OpenVPN / IKEv2 inloggegevens opnieuw gegenereerd"
+      ],
+      "Reminder has been sent": [
+        "Herinnering is verstuurd"
+      ],
+      "Two-factor authentication has been enforced for administrators": [
+        "Tweestapsverificatie werd vereist voor beheerders"
+      ],
+      "Two-factor authentication has been enforced for all members": [
+        "Tweestapsverificatie werd vereist voor alle leden"
+      ],
+      "Two-factor authentication is not required anymore": [
+        "Tweestapsverificatie is niet langer vereist"
       ]
     },
     "Notification in holidays calendar modal": {
@@ -10907,6 +10980,9 @@
       "Verification successful": [
         "Verificatie gelukt"
       ],
+      "You have successfully cancelled your subscription.": [
+        "U hebt met succes uw abonnement opgezegd."
+      ],
       "You have successfully unsubscribed": [
         "U bent succesvol afgemeld"
       ]
@@ -11270,6 +11346,9 @@
       "Are you sure you want to close?": [
         "Weet u zeker dat u wil afsluiten?"
       ],
+      "Authentication security": [
+        "Authenticatiebeveiliging"
+      ],
       "Auto-reply": [
         "Automatisch antwoord"
       ],
@@ -11290,6 +11369,12 @@
       ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "${ MAIL_SHORT_APP_NAME }-abonnement annuleren"
+      ],
+      "Cancel subscription": [
+        "Abonnement opzeggen"
+      ],
+      "Cancel subscription?": [
+        "Abonnement opzeggen?"
       ],
       "Card verification": [
         "Kaartverificatie"
@@ -11729,6 +11814,9 @@
       "PayPal verification failed": [
         "PayPal verificatie mislukt"
       ],
+      "Personalise your e-mail footer": [
+        "De voettekst van uw e-mail personaliseren"
+      ],
       "Phone": [
         "Telefoon"
       ],
@@ -11824,6 +11912,9 @@
       ],
       "Select when you want this notification to be sent": [
         "Selecteer wanneer u wilt dat deze melding wordt verzonden"
+      ],
+      "Send email reminders?": [
+        "E-mailherinneringen versturen?"
       ],
       "Session management": [
         "Sessiebeheer"
@@ -11922,6 +12013,12 @@
       ],
       "Two-factor authentication": [
         "Tweestapsverificatie"
+      ],
+      "Two-factor authentication enforcement": [
+        "Handhaving tweestapsverificatie"
+      ],
+      "Two-factor authentication reminders": [
+        "Tweestapsverificatie herinneringen"
       ],
       "Type": [
         "Soort"
@@ -12079,6 +12176,35 @@
         "Rol"
       ]
     },
+    "Title subscription": {
+      "Actions": [
+        "Acties"
+      ],
+      "Duration": [
+        "Duur"
+      ],
+      "End date": [
+        "Einddatum"
+      ],
+      "Plan": [
+        "Abonnement"
+      ],
+      "Start date": [
+        "Begindatum"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "Total": [
+        "Totaal"
+      ],
+      "Total paid": [
+        "Totaal betaald"
+      ],
+      "Users": [
+        "Gebruikers"
+      ]
+    },
     "Title; create calendar modal": {
       "Create calendar": [
         "Agenda aanmaken"
@@ -12136,6 +12262,9 @@
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Als u een geschenkcode heeft gekocht of een heeft ontvangen van ons supportteam, kunt u deze hier invoeren."
+      ],
+      "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
+        "Leden die geen 2FA gebruiken zullen een e-mail ontvangen met de vraag om het zo snel mogelijk in te schakelen."
       ],
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "Berichten in de map Verzonden of Concepten blijven in die map verschijnen, zelfs als u ze naar een andere map verplaatst."
