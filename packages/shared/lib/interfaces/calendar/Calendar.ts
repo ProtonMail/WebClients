@@ -23,6 +23,7 @@ export interface VisualCalendar extends CalendarWithOwnMembers {
     Email: string;
     Flags: number;
     Permissions: number;
+    Priority: number;
 }
 
 export interface CalendarUserSettings {
