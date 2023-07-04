@@ -36,6 +36,7 @@ import CalendarResetSection from './CalendarResetSection';
 interface FilteredCalendars {
     calendarsToReset: VisualCalendar[];
     calendarsToReactivate: VisualCalendar[];
+    calendarsToClean: VisualCalendar[];
 }
 
 interface Props {
@@ -51,24 +52,29 @@ const UnlockCalendarsModal = ({ calendars, unlockAll, onDone, ...rest }: Props) 
     const { parentApp } = useDrawer();
     const { APP_NAME: currentApp } = useConfig();
 
-    const { calendarsToReset, calendarsToReactivate } = calendars.reduce<FilteredCalendars>(
+    const { calendarsToReset, calendarsToReactivate, calendarsToClean } = calendars.reduce<FilteredCalendars>(
         (acc, calendar) => {
             const { Flags } = calendar;
             if (hasBit(Flags, CALENDAR_FLAGS.RESET_NEEDED)) {
                 acc.calendarsToReset.push(calendar);
             } else if (hasBit(Flags, CALENDAR_FLAGS.UPDATE_PASSPHRASE)) {
                 acc.calendarsToReactivate.push(calendar);
+            } else if (hasBit(Flags, CALENDAR_FLAGS.LOST_ACCESS)) {
+                acc.calendarsToClean.push(calendar);
             }
+
             return acc;
         },
         {
             calendarsToReset: [],
             calendarsToReactivate: [],
+            calendarsToClean: [],
         }
     );
 
     const hasCalendarsToReset = calendarsToReset.length > 0;
     const hasCalendarsToReactivate = calendarsToReactivate.length > 0;
+    const hasCalendarsToClean = calendarsToClean.length > 0;
 
     const [errorModal, setErrorModalOpen, renderErrorModal] = useModalState();
     const [resetModal, setResetModalOpen, renderResetModal] = useModalState();
@@ -76,14 +82,6 @@ const UnlockCalendarsModal = ({ calendars, unlockAll, onDone, ...rest }: Props) 
     const [reactivateModal, setReactivateModalOpen, renderReactivateModal] = useModalState();
 
     const [isLoading, withLoading] = useLoading(false);
-
-    useEffect(() => {
-        if (hasCalendarsToReactivate) {
-            setReactivateModalOpen(true);
-        } else if (hasCalendarsToReset) {
-            setResetModalOpen(true);
-        }
-    }, []);
 
     const handleProcess = () => {
         return withLoading(
@@ -94,9 +92,23 @@ const UnlockCalendarsModal = ({ calendars, unlockAll, onDone, ...rest }: Props) 
                 getAddresses,
                 calendarsToReset,
                 calendarsToReactivate,
+                calendarsToClean,
             })
         );
     };
+
+    useEffect(() => {
+        if (hasCalendarsToReactivate) {
+            setReactivateModalOpen(true);
+        } else if (hasCalendarsToReset) {
+            setResetModalOpen(true);
+        } else if (hasCalendarsToClean) {
+            // When user has only calendars to clean (e.g: holidays/shared), we want to do the process in the background
+            void handleProcess().then(() => {
+                onDone();
+            });
+        }
+    }, []);
 
     const handleError = () => window.location.reload();
     const handleReset = () => {
