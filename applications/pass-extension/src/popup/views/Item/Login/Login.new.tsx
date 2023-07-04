@@ -265,7 +265,7 @@ export const LoginNew: VFC<ItemNewProps<'login'>> = ({ shareId, onSubmit, onCanc
                                     component={PasswordField}
                                     onPasswordGenerated={(value: string) => {
                                         const { urls, url } = form.values;
-                                        const baseUrl = urls?.[0].url ?? url;
+                                        const baseUrl = urls?.[0]?.url ?? url;
                                         const { subdomain, domain, hostname } = parseUrl(baseUrl);
 
                                         dispatch(
