@@ -23,15 +23,19 @@ export const matchItems = <T extends ItemRevision>(items: T[], search?: string) 
     return items.filter((item) => matchItem(item.data)(search));
 };
 
-export const filterItemsByShareId = <T extends ItemRevision>(items: T[], shareId?: MaybeNull<string>) => {
-    if (!shareId) return items;
-    return items.filter((item) => shareId === item.shareId);
-};
+export const filterItemsByShareId =
+    (shareId?: MaybeNull<string>) =>
+    <T extends ItemRevision>(items: T[]) => {
+        if (!shareId) return items;
+        return items.filter((item) => shareId === item.shareId);
+    };
 
-export const filterItemsByType = <T extends ItemRevision>(items: T[], itemType?: MaybeNull<ItemType>) => {
-    if (!itemType) return items;
-    return items.filter((item) => !itemType || itemType === item.data.type);
-};
+export const filterItemsByType =
+    (itemType?: MaybeNull<ItemType>) =>
+    <T extends ItemRevision>(items: T[]) => {
+        if (!itemType) return items;
+        return items.filter((item) => !itemType || itemType === item.data.type);
+    };
 
 export const sortItems = <T extends ItemRevision>(items: T[], sort?: MaybeNull<ItemSortFilter>) => {
     if (!sort) return items;
