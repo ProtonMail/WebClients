@@ -18,13 +18,13 @@ export const TrashItemsList: FC = () => {
 
     const {
         filtering: { search },
-        matched,
+        searched,
         totalCount,
     } = useTrashItems();
 
     const listRef = useRef<List>(null);
 
-    return matched.length === 0 ? (
+    return searched.length === 0 ? (
         <div className="absolute-center flex flex-justify-center flex-align-items-center w70">
             <span className="block text-break color-weak text-sm p-2 text-center text-break">
                 {totalCount === 0 ? (
@@ -43,9 +43,9 @@ export const TrashItemsList: FC = () => {
     ) : (
         <VirtualList
             ref={listRef}
-            rowCount={matched.length}
+            rowCount={searched.length}
             rowRenderer={({ style, index }) => {
-                const item = matched[index];
+                const item = searched[index];
                 return (
                     <div style={style} key={item.itemId}>
                         <ItemsListItem
