@@ -37,22 +37,24 @@ export const filterItemsByType =
         return items.filter((item) => !itemType || itemType === item.data.type);
     };
 
-export const sortItems = <T extends ItemRevision>(items: T[], sort?: MaybeNull<ItemSortFilter>) => {
-    if (!sort) return items;
+export const sortItems =
+    (sort?: MaybeNull<ItemSortFilter>) =>
+    <T extends ItemRevision>(items: T[]) => {
+        if (!sort) return items;
 
-    return items.sort((a, b) => {
-        switch (sort) {
-            case 'createTimeASC':
-                return a.createTime - b.createTime;
-            case 'createTimeDESC':
-                return b.createTime - a.createTime;
-            case 'recent':
-                return (
-                    Math.max(b.lastUseTime ?? b.modifyTime, b.modifyTime) -
-                    Math.max(a.lastUseTime ?? a.modifyTime, a.modifyTime)
-                );
-            case 'titleASC':
-                return a.data.metadata.name.localeCompare(b.data.metadata.name);
-        }
-    });
-};
+        return items.sort((a, b) => {
+            switch (sort) {
+                case 'createTimeASC':
+                    return a.createTime - b.createTime;
+                case 'createTimeDESC':
+                    return b.createTime - a.createTime;
+                case 'recent':
+                    return (
+                        Math.max(b.lastUseTime ?? b.modifyTime, b.modifyTime) -
+                        Math.max(a.lastUseTime ?? a.modifyTime, a.modifyTime)
+                    );
+                case 'titleASC':
+                    return a.data.metadata.name.localeCompare(b.data.metadata.name);
+            }
+        });
+    };
