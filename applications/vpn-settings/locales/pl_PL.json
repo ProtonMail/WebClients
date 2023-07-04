@@ -1615,6 +1615,9 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Pole musi zawierać co najmniej ${ minimumLength } znaków."
       ],
+      "Try again later": [
+        "Spróbuj ponownie później"
+      ],
       "Try using only letters, numerals, and _.-": [
         "Użyj tylko liter, cyfr i znaków _.-"
       ],
@@ -2108,6 +2111,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Aplikacja ${ appName } potrzebuje Twojej zgody, aby ${ enableDesktopNotifications }."
       ],
+      "${ autoRenewal } your subscription will renew automatically on ${ renewalTime }.": [
+        "${ autoRenewal } Twoja subskrypcja zostanie automatycznie odnowiona ${ renewalTime }."
+      ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Jeśli to zrobisz, stracisz dostęp do wszystkich obecnie zaszyfrowanych danych."
       ],
@@ -2426,6 +2432,9 @@
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Ważne: Upewnij się, że zapisałeś kody odzyskiwania. W przeciwnym razie, w przypadku zgubienia urządzenia z przypisanym uwierzytelnianiem dwustopniowym, możesz trwale stracić dostęp do konta."
       ],
+      "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
+        "W następnym kroku wyślesz środki za pomocą adresu Bitcoin."
+      ],
       "Install a Country configuration file to connect to a random server in the country of your choice.": [
         "Zainstaluj plik konfiguracyjny kraju, aby połączyć się z losowym serwerem w wybranym przez Ciebie kraju."
       ],
@@ -2627,6 +2636,12 @@
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
         "Przestrzeń dyskowa jest dzielona pomiędzy usługami ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } i ${ DRIVE_APP_NAME }."
       ],
+      "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
+        "Wyślij środki na poniższy adres lub zeskanuj kod QR. Wpłata zostanie zaksięgowana na koncie po potwierdzeniu."
+      ],
+      "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
+        "Subskrypcja wkrótce się zakończy. Reaktywuj ją do ${ byDate }, aby zachować bonusy planu ${ planName }. ${ reactivateLink }"
+      ],
       "Support for 1 custom email domain": [
         "Wsparcie dla 1 niestandardowej domeny"
       ],
@@ -2686,6 +2701,9 @@
       ],
       "To ${ planName }": [
         "w planie ${ planName }"
+      ],
+      "To complete your payment, please send ${ btcAmountBold } to the address below.": [
+        "Wyślij ${ btcAmountBold } na poniższy adres, aby zakończyć płatność."
       ],
       "to continue to ${ toAppName }": [
         "i przejdź do ${ toAppName }"
@@ -3093,7 +3111,7 @@
         "Zablokuj złośliwe oprogramowanie"
       ],
       "Block malware, ads and trackers": [
-        "Zablokuj złośliwe oprogramowanie, reklamy i skrypty śledzące"
+        "Zablokuj złośliwe oprogramowanie, reklamy i elementy śledzące"
       ],
       "Browser": [
         "Przeglądarka"
@@ -3441,6 +3459,12 @@
       "Forgot username?": [
         "Nie pamiętasz nazwy użytkownika?"
       ],
+      "Help translate": [
+        "Pomóż w tłumaczeniu"
+      ],
+      "How to pay with Bitcoin?": [
+        "Jak zapłacić Bitcoinami?"
+      ],
       "Learn more": [
         "Dowiedz się więcej"
       ],
@@ -3725,6 +3749,9 @@
       ],
       "Auto-reply": [
         "Autoresponder"
+      ],
+      "Autofill credit cards (coming soon)": [
+        "Autouzupełnianie kart płatniczych (wkrótce)"
       ],
       "Available on all platforms": [
         "Dostępny na wszystkie platformy"
@@ -4118,6 +4145,18 @@
       ]
     },
     "new_plans: tooltip": {
+      "${ CALENDAR_APP_NAME }: end-to-end encrypted calendar": [
+        "${ CALENDAR_APP_NAME }: kalendarz szyfrowany end-to-end"
+      ],
+      "${ DRIVE_APP_NAME }: end-to-end encrypted cloud storage": [
+        "${ DRIVE_APP_NAME }: przestrzeń dyskowa w chmurze szyfrowana end-to-end"
+      ],
+      "${ MAIL_APP_NAME }: end-to-end encrypted email": [
+        "${ MAIL_APP_NAME }: poczta szyfrowana end-to-end"
+      ],
+      "${ VPN_APP_NAME }: unblock content, browse privately": [
+        "${ VPN_APP_NAME }: odblokuj zawartość, przeglądaj Internet prywatnie"
+      ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
         "Uzyskaj dostęp do usług streamingu, takich jak Netflix, Disney+ i Prime Video, gdziekolwiek jesteś"
       ],
@@ -4202,6 +4241,9 @@
       "Our servers’ hard disks are fully encrypted with multiple password layers so your data is protected even if our hardware is compromised": [
         "Dyski twarde naszych serwerów są w pełni zaszyfrowane za pomocą wielu warstw haseł, dzięki czemu dane są chronione nawet w przypadku uszkodzenia sprzętu"
       ],
+      "Password management and identity protection": [
+        "Zarządzanie hasłami i ochrona tożsamości"
+      ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Personalizuj swój podpis za pomocą logo, obrazów, ikon mediów społecznościowych, linków do szczegółów kontaktu i innych elementów"
       ],
@@ -4233,7 +4275,7 @@
         "Przekieruj swój ruch internetowy przez sieć Tor za pomocą jednego kliknięcia"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
-        "Zabezpiecz swoje pliki za pomocą zaszyfrowanej przestrzeni dyskowej w chmurze. Zawiera automatyczną synchronizację, szyfrowane udostępnianie plików i wiele więcej."
+        "Zabezpiecz swoje pliki za pomocą szyfrowanej przestrzeni dyskowej w chmurze. Zawiera automatyczną synchronizację, szyfrowane udostępnianie plików i wiele więcej."
       ],
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
         "Bezpiecznie przechowuj szczegóły kontaktów, takie jak numer telefonu, adres, datę urodzin i osobiste notatki. Szyfrowanie po stronie klienta zapewnia, że nawet ${ BRAND_NAME } nie ma do nich dostępu."
@@ -4248,7 +4290,7 @@
         "Udostępniaj pliki lub foldery innym osobom, używając bezpiecznych linków z możliwością udostępniania"
       ],
       "Specially designed NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware": [
-        "Specjalnie zaprojektowana funkcja NetShield chroni Twoje urządzenie oraz przyśpiesza przeglądanie Internetu poprzez blokowanie reklam, skryptów śledzących i złośliwego oprogramowania"
+        "Specjalnie zaprojektowana funkcja NetShield chroni Twoje urządzenie oraz przyśpiesza przeglądanie Internetu poprzez blokowanie reklam, elementów śledzących i złośliwego oprogramowania"
       ],
       "Start with ${ freeStorageSize } and unlock more storage along the way. Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
         "Zacznij od ${ freeStorageSize } i odblokuj więcej miejsca. Przestrzeń dyskowa jest dzielona pomiędzy usługami ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } i ${ DRIVE_APP_NAME }."
@@ -4323,6 +4365,9 @@
       ],
       "Priority support": [
         "Priorytetowe wsparcie"
+      ],
+      "Secure your passwords and identity with an open-source and encrypted password manager.": [
+        "Zabezpiecz swoje hasła i tożsamość za pomocą szyfrowanego menedżera haseł z otwartym kodem źródłowym."
       ],
       "Support for 1 custom email domain": [
         "Wsparcie dla 1 niestandardowej domeny"
@@ -4922,7 +4967,7 @@
         "Subskrypcja jest zarządzana przez ${ subscriptionManager }"
       ],
       "Subscription of user ID-${ userId } has been done via an in-app purchase. To manage the subscription user needs to navigate to the Subscription section of their ${ subscriptionManager } account.": [
-        "Subskrypcja użytkownika z identyfikatorem ${ userId } została zakupiona w aplikacji. Aby zarządzać nią, przejdź do sekcji Subskrypcja w koncie ${ subscriptionManager }."
+        "Subskrypcja użytkownika z identyfikatorem ${ userId } została zakupiona w aplikacji. Aby zarządzać nią, przejdź do sekcji Subskrypcja na koncie ${ subscriptionManager }."
       ],
       "Subscriptions": [
         "Subskrypcje"
@@ -4976,6 +5021,9 @@
     "Subscription status": {
       "Active": [
         "Aktywna"
+      ],
+      "Expiring": [
+        "Wygasająca"
       ],
       "Upcoming": [
         "Nadchodząca"
@@ -5612,10 +5660,15 @@
         "Nowa subskrypcja rozpocznie się ${ formattedTime }"
       ],
       "The selected theme will be active when your system is set to \"dark mode\"": [
-        "Wybrany motyw będzie aktywny, gdy w systemie jest ustawiony ciemny motyw"
+        "Wybrany motyw będzie aktywny, kiedy w systemie będzie ustawiony ciemny motyw"
       ],
       "The selected theme will be active when your system is set to \"light mode\"": [
-        "Wybrany motyw będzie aktywny, gdy w systemie jest ustawiony jasny motyw"
+        "Wybrany motyw będzie aktywny, kiedy w systemie będzie ustawiony jasny motyw"
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: end-to-end encrypted password manager": [
+        "${ PASS_APP_NAME }: menadżer haseł szyfrowany end-to-end"
       ]
     },
     "Tor out of date": {

@@ -41,6 +41,9 @@
       "Cancel": [
         "Annuleren"
       ],
+      "Cancel subscription": [
+        "Abonnement opzeggen"
+      ],
       "Change mailbox password": [
         "Mailboxwachtwoord wijzigen"
       ],
@@ -190,6 +193,9 @@
       ],
       "Increase": [
         "Verhogen"
+      ],
+      "Keep my ${ vpnPlanNameShort } subscription": [
+        "Behoud mijn ${ vpnPlanNameShort }-abonnement"
       ],
       "Load more": [
         "Laad meer"
@@ -429,6 +435,14 @@
       ],
       "Try free for 30 days": [
         "Probeer 30 dagen gratis"
+      ]
+    },
+    "Action subscription": {
+      "Manage": [
+        "Beheren"
+      ],
+      "Reactivate": [
+        "Opnieuw activeren"
       ]
     },
     "Addon": {
@@ -2179,6 +2193,9 @@
       "Attention required": [
         "Aandacht vereist"
       ],
+      "Auto-renewal: ": [
+        "Automatische verlenging: "
+      ],
       "Balance from your previous subscription": [
         "Balans van uw vorige abonnement"
       ],
@@ -2615,6 +2632,9 @@
       "This can take a few seconds or a few minutes depending on your device": [
         "Afhankelijk van uw apparaat kan dit enkele seconden tot enkele minuten duren"
       ],
+      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
+        "Dit zal uw huidig betalend abonnement annuleren en u zult al uw opgebouwde loyaliteitsvoordelen verliezen."
+      ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
         "Dit zal uw huidige betaalde abonnement annuleren en u verliest alle voordelen van loyaliteit die u heeft verzameld. Het resterende saldo van uw abonnement zal worden teruggestuurd als accountcredits."
       ],
@@ -2856,6 +2876,9 @@
       "You will be redirected to the VPN download page": [
         "U wordt doorgestuurd naar de VPN-downloadpagina"
       ],
+      "You will lose access to ${ vpnPlanNameShort } servers and features on this date.": [
+        "U verliest toegang tot ${ vpnPlanNameShort }-servers en functies op deze datum."
+      ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "U heeft een ${ BRAND_NAME }-adres nodig om ${ MAIL_APP_NAME } en ${ CALENDAR_APP_NAME } te gebruiken"
       ],
@@ -2921,6 +2944,11 @@
     "Info message for custom invoice modal": {
       "Add your name (or company name) and address to your invoices.": [
         "Voeg uw naam (of bedrijfsnaam) en adres toe aan uw facturen."
+      ]
+    },
+    "Info subscription": {
+      "You can prevent expiry by reactivating the subscription": [
+        "U kunt het vervallen voorkomen door uw abonnement opnieuw te activeren"
       ]
     },
     "Info when deleting payment method": {
@@ -3359,6 +3387,9 @@
       ],
       "Forgot username?": [
         "Gebruikersnaam vergeten?"
+      ],
+      "Help translate": [
+        "Help met vertalen"
       ],
       "Learn more": [
         "Meer informatie"
@@ -4875,6 +4906,9 @@
       "Verification successful": [
         "Verificatie gelukt"
       ],
+      "You have successfully cancelled your subscription.": [
+        "U hebt met succes uw abonnement opgezegd."
+      ],
       "You have successfully unsubscribed": [
         "U bent succesvol afgemeld"
       ]
@@ -5069,6 +5103,12 @@
       ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "${ MAIL_SHORT_APP_NAME }-abonnement annuleren"
+      ],
+      "Cancel subscription": [
+        "Abonnement opzeggen"
+      ],
+      "Cancel subscription?": [
+        "Abonnement opzeggen?"
       ],
       "Card verification": [
         "Kaartverificatie"
@@ -5388,6 +5428,35 @@
     "Title for PDF file": {
       "${ MAIL_APP_NAME } invoice": [
         "${ MAIL_APP_NAME } factuur"
+      ]
+    },
+    "Title subscription": {
+      "Actions": [
+        "Acties"
+      ],
+      "Duration": [
+        "Duur"
+      ],
+      "End date": [
+        "Einddatum"
+      ],
+      "Plan": [
+        "Abonnement"
+      ],
+      "Start date": [
+        "Begindatum"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "Total": [
+        "Totaal"
+      ],
+      "Total paid": [
+        "Totaal betaald"
+      ],
+      "Users": [
+        "Gebruikers"
       ]
     },
     "Tooltip": {
