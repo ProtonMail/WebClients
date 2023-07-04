@@ -37,6 +37,7 @@ import { useOpenSettingsTab } from '../../hooks/useOpenSettingsTab';
 import { usePopupContext } from '../../hooks/usePopupContext';
 import { VaultModal, type Props as VaultModalProps } from '../../views/Vault/Vault.modal';
 import { VaultDeleteModal } from '../Vault/VaultDeleteModal';
+import { FeedbackSubmenu } from './FeedbackSubmenu';
 import { VaultSubmenu } from './VaultSubmenu';
 
 const DROPDOWN_SIZE: NonNullable<DropdownProps['size']> = {
@@ -179,15 +180,7 @@ const MenuDropdownRaw: VFC<{ className?: string }> = ({ className }) => {
                                 <Icon name="arrow-out-square" className="ml-3 color-weak" />
                             </DropdownMenuButton>
                         )}
-
-                        <DropdownMenuButton
-                            className="flex flex-align-items-center py-2 px-4"
-                            onClick={() => openSettings('support')}
-                        >
-                            <Icon name="bug" className="mr-3 color-weak" />
-                            {c('Action').t`Report a problem`}
-                        </DropdownMenuButton>
-
+                        <FeedbackSubmenu />
                         <DropdownMenuButton
                             className="flex flex-align-items-center py-2 px-4"
                             onClick={withClose(sync)}
