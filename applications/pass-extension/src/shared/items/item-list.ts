@@ -3,6 +3,8 @@ import { c } from 'ttag';
 import type { ItemRevision, ItemType } from '@proton/pass/types';
 import { isEmptyString } from '@proton/pass/utils/string';
 
+import { cardNumberHiddenValue } from '../../popup/components/Field/masks/credit-card';
+
 type PresentedListItem = { heading: string; subheading: string };
 type ItemListPresenterMap = { [T in ItemType]: (revision: ItemRevision<T>) => PresentedListItem };
 
@@ -21,7 +23,7 @@ const itemListPresenter: ItemListPresenterMap = {
     }),
     creditCard: ({ data }) => ({
         heading: data.metadata.name,
-        subheading: data.content.cardholderName,
+        subheading: cardNumberHiddenValue(data.content.number),
     }),
 };
 
