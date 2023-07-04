@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { useModalTwo } from '@proton/components/components';
 import { labelContactEmails, unLabelContactEmails } from '@proton/shared/lib/api/contacts';
-import { CONTACT_GROUP_MAX_MEMBERS } from '@proton/shared/lib/contacts/constants';
+import { hasReachedContactGroupMembersLimit } from '@proton/shared/lib/contacts/helpers/contactGroup';
 import { Contact, ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 
 import {
@@ -13,6 +13,7 @@ import {
     useContactGroups,
     useContacts,
     useEventManager,
+    useMailSettings,
     useNotifications,
 } from '../../../hooks';
 import ContactGroupLimitReachedModal, { ContactGroupLimitReachedProps } from '../modals/ContactGroupLimitReachedModal';
@@ -51,6 +52,7 @@ const useApplyGroups = (
     setLoading?: (loading: boolean) => void,
     onSelectEmails?: (props: SelectEmailsProps) => Promise<ContactEmail[]>
 ) => {
+    const [mailSettings] = useMailSettings();
     const { createNotification } = useNotifications();
     const { call } = useEventManager();
     const api = useApi();
@@ -118,7 +120,11 @@ const useApplyGroups = (
                         }
 
                         // Cannot add more than 100 contacts in a contact group
-                        const canAddContact = groupExistingMembers.length + toLabel.length <= CONTACT_GROUP_MAX_MEMBERS;
+                        const canAddContact = hasReachedContactGroupMembersLimit(
+                            groupExistingMembers.length + toLabel.length,
+                            mailSettings,
+                            false
+                        );
 
                         if (!canAddContact) {
                             cannotAddContactInGroupIDs.push(groupID);

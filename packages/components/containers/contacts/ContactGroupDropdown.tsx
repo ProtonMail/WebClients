@@ -3,8 +3,10 @@ import { ChangeEvent, FormEvent, ReactNode, useEffect, useMemo, useState } from 
 import { c } from 'ttag';
 
 import { Button, ButtonProps } from '@proton/atoms';
-import { CONTACT_GROUP_MAX_MEMBERS } from '@proton/shared/lib/contacts/constants';
-import { getContactGroupsDelayedSaveChanges } from '@proton/shared/lib/contacts/helpers/contactGroup';
+import {
+    getContactGroupsDelayedSaveChanges,
+    hasReachedContactGroupMembersLimit,
+} from '@proton/shared/lib/contacts/helpers/contactGroup';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { normalize } from '@proton/shared/lib/helpers/string';
 import { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts/Contact';
@@ -19,7 +21,7 @@ import { usePopperAnchor } from '../../components/popper';
 import Mark from '../../components/text/Mark';
 import Tooltip from '../../components/tooltip/Tooltip';
 import { generateUID } from '../../helpers';
-import { useContactEmails, useContactGroups, useUser } from '../../hooks';
+import { useContactEmails, useContactGroups, useMailSettings, useUser } from '../../hooks';
 import { ContactGroupEditProps } from './group/ContactGroupEditModal';
 import useApplyGroups from './hooks/useApplyGroups';
 import { ContactGroupLimitReachedProps } from './modals/ContactGroupLimitReachedModal';
@@ -85,6 +87,7 @@ const ContactGroupDropdown = ({
     onSelectEmails,
     ...rest
 }: Props) => {
+    const [mailSettings] = useMailSettings();
     const [{ hasPaidMail }] = useUser();
     const [keyword, setKeyword] = useState('');
     const [loading, setLoading] = useState(false);
@@ -105,7 +108,7 @@ const ContactGroupDropdown = ({
 
     const handleClick = () => {
         if (hasPaidMail) {
-            if (contactEmails.length <= CONTACT_GROUP_MAX_MEMBERS) {
+            if (hasReachedContactGroupMembersLimit(contactEmails.length, mailSettings, false)) {
                 toggle();
             } else {
                 onLimitReached?.({});
@@ -155,6 +158,7 @@ const ContactGroupDropdown = ({
                 onLimitReached,
                 model,
                 initialModel,
+                mailSettings,
             });
 
             onDelayedSave(updatedChanges);

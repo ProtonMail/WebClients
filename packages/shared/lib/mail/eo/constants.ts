@@ -62,6 +62,7 @@ export const eoDefaultMailSettings: MailSettings = {
     HideSenderImages: 0,
     AutoDeleteSpamAndTrashDays: 0,
     UnreadFavicon: 0,
+    RecipientLimit: 100,
 };
 
 export const eoDefaultAddress = {} as Address[];

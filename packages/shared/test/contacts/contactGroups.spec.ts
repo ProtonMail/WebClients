@@ -1,4 +1,5 @@
 import { getContactGroupsDelayedSaveChanges } from '@proton/shared/lib/contacts/helpers/contactGroup';
+import { MailSettings } from '@proton/shared/lib/interfaces';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 
 const group1 = 'group1';
@@ -39,6 +40,7 @@ describe('contactGroups', () => {
                 initialModel,
                 model,
                 onLimitReached,
+                mailSettings: {} as MailSettings,
             });
 
             expect(updatedChanges).toEqual(changes);
@@ -55,6 +57,7 @@ describe('contactGroups', () => {
                 initialModel,
                 model,
                 onLimitReached,
+                mailSettings: {} as MailSettings,
             });
 
             expect(updatedChanges).toEqual({});
