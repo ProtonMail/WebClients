@@ -159,10 +159,16 @@ const getCalendarWeight = (calendar: VisualCalendar) => {
     }
     return CALENDAR_WEIGHT.UNKNOWN;
 };
+
+/**
+ * Returns calendars sorted by weight and first member priority
+ *
+ * @param calendars calendars to sort
+ * @returns sorted calendars
+ */
 export const sortCalendars = (calendars: VisualCalendar[]) => {
     return [...calendars].sort((cal1, cal2) => {
-        // personal owned calendars go first, shared second, and subscribed last
-        return getCalendarWeight(cal1) - getCalendarWeight(cal2);
+        return getCalendarWeight(cal1) - getCalendarWeight(cal2) || cal1.Priority - cal2.Priority;
     });
 };
 
@@ -197,6 +203,7 @@ export const getVisualCalendar = <T>(calendar: CalendarWithOwnMembers & T): Visu
         Email: member.Email,
         Flags: member.Flags,
         Permissions: member.Permissions,
+        Priority: member.Priority,
     };
 };
 

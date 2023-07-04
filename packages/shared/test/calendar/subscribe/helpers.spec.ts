@@ -61,6 +61,7 @@ describe('getCalendarIsNotSyncedInfo', () => {
             Permissions: 127,
             Type: CALENDAR_TYPE.SUBSCRIPTION,
             Owner: { Email: 'calendarEmail' },
+            Priority: 1,
             Members: [],
         };
 
