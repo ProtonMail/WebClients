@@ -26,7 +26,7 @@ import { showLabelTaskRunningBanner } from '../../logic/elements/elementsSelecto
 import { Element } from '../../models/element';
 import { Filter } from '../../models/tools';
 import { Breakpoints } from '../../models/utils';
-import OnboardingChecklistWrapper from '../checklist/OnboardingChecklistWrapper';
+import UsersOnboardingChecklist from '../checklist/UsersOnboardingChecklist';
 import EmptyListPlaceholder from '../view/EmptyListPlaceholder';
 import AlmostAllMailBanner from './AlmostAllMailBanner';
 import ESSlowToolbar from './ESSlowToolbar';
@@ -269,7 +269,7 @@ const List = (
                                 {!loading && !(total > 1) && (
                                     <>
                                         {displayState === FULL && (
-                                            <OnboardingChecklistWrapper displayOnMobile={isColumnMode(mailSettings)} />
+                                            <UsersOnboardingChecklist displayOnMobile={isColumnMode(mailSettings)} />
                                         )}
                                     </>
                                 )}
