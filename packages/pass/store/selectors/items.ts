@@ -90,15 +90,18 @@ const selectSortedItemsByType = createSelector(
         (_state: State, { itemType }: SelectItemsOptions) => itemType,
         (_state: State, { sort }: SelectItemsOptions) => sort,
     ],
-    (items, shareId, itemType, sort) =>
-        pipe(filterItemsByShareId(shareId), filterItemsByType(itemType), sortItems(sort))(items)
+    (items, shareId, itemType, sort) => {
+        const byShareId = pipe(filterItemsByShareId(shareId), sortItems(sort))(items);
+        const byShareIdAndType = filterItemsByType(itemType)(byShareId);
+        return { byShareId, byShareIdAndType };
+    }
 );
 
 const itemsSearchResultSelector = createSelector(
     [selectSortedItemsByType, (_state: State, { search }: SelectItemsOptions) => search],
-    (items, search) => {
-        const matched = matchItems(items, search);
-        return { matched, filtered: items, totalCount: items.length };
+    ({ byShareId, byShareIdAndType }, search) => {
+        const matched = matchItems(byShareId, search);
+        return { matched, filtered: byShareIdAndType, totalCount: byShareId.length };
     }
 );
 
