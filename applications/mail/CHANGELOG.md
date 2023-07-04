@@ -7,10 +7,6 @@
 -   Easily access important email actions using a command tool (CMD+K / Ctrl+K)
 -   New setting allows to view the number of unread messages directly in the browser tab icon
 
-### Improvements
-
--   Add the ability to archive all messages from a folder
-
 ### Fixes
 
 -   Fix some email content that was not displaying correctly in dark mode
