@@ -18,7 +18,7 @@ const itemMatchers: ItemMatchFuncMap = {
 
 export const matchItem: ItemMatchFunc = <T extends ItemType>(item: Item<T>) => itemMatchers[item.type](item);
 
-export const matchItems = <T extends ItemRevision>(items: T[], search?: string) => {
+export const searchItems = <T extends ItemRevision>(items: T[], search?: string) => {
     if (!search || search.trim() === '') return items;
     return items.filter((item) => matchItem(item.data)(search));
 };
@@ -42,7 +42,7 @@ export const sortItems =
     <T extends ItemRevision>(items: T[]) => {
         if (!sort) return items;
 
-        return items.sort((a, b) => {
+        return items.slice().sort((a, b) => {
             switch (sort) {
                 case 'createTimeASC':
                     return a.createTime - b.createTime;
