@@ -50,7 +50,7 @@ export const ItemEffects = () => {
         filtering: { shareId, shareBeingDeleted, setShareId, setShareBeingDeleted },
         filtered: filteredItems,
     } = useItems();
-    const { matched: trashedItems } = useTrashItems();
+    const { searched: trashedItems } = useTrashItems();
 
     const itemFromSelectedOptimisticId = useSelector(selectItemIdByOptimisticId(selectedItem?.itemId));
     const autoselect = !(isEditing || isCreating) && ready;
