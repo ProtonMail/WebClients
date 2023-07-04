@@ -261,7 +261,7 @@ export const LoginEdit: VFC<ItemEditProps<'login'>> = ({ vault, revision, onSubm
                                     icon="key"
                                     onPasswordGenerated={(value: string) => {
                                         const { urls, url } = form.values;
-                                        const baseUrl = urls?.[0].url ?? url;
+                                        const baseUrl = urls?.[0]?.url ?? url;
                                         const { subdomain, domain, hostname } = parseUrl(baseUrl);
 
                                         dispatch(
