@@ -21,6 +21,7 @@ export interface CalendarMember {
     Permissions: number;
     Color: string;
     Display: CALENDAR_DISPLAY;
+    Priority: number;
 }
 
 export interface CalendarMemberInvitation {
