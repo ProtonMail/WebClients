@@ -1,14 +1,24 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 
-import { useOnline } from '@proton/components/hooks';
 import { HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
 
+import useApiStatus from './useApiStatus';
+
 const useDynamicFavicon = (faviconSrc: string) => {
-    const onlineStatus = useOnline();
+    const faviconRef = useRef<string>('');
+    const { offline, apiUnreachable } = useApiStatus();
+
+    // We can't rely solely on the Boolean offline because browsers may not catch all offline instances properly.
+    // We will get some false positives with the condition below, but that's ok
+    const isPossiblyOffline = offline || !!apiUnreachable;
 
     useEffect(
         () => {
             const run = async () => {
+                if (faviconSrc === faviconRef.current) {
+                    // no need to update the favicon
+                    return;
+                }
                 // Add random param to force refresh
                 const randomParameter = Math.random().toString(36).substring(2);
                 const href = `${faviconSrc}?v=${randomParameter}`;
@@ -47,12 +57,13 @@ const useDynamicFavicon = (faviconSrc: string) => {
                     link.setAttribute('href', href);
                     document.head.appendChild(link);
                 }
+                faviconRef.current = faviconSrc;
             };
 
             run();
         },
-        // onlineStatus is a dependency so that we re-try to update the favicon when back online
-        [faviconSrc, onlineStatus]
+        // isPossiblyOffline is a dependency so that we re-try to update the favicon when going offline and back online
+        [faviconSrc, isPossiblyOffline]
     );
 };
 
