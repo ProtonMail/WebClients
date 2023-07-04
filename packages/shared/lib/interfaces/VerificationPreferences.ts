@@ -11,4 +11,5 @@ export interface VerificationPreferences {
     pinnedKeysFingerprints?: Set<string>;
     ktVerificationResult?: KeyTransparencyVerificationResult;
     pinnedKeysVerified?: boolean;
+    apiKeysErrors?: string[];
 }
