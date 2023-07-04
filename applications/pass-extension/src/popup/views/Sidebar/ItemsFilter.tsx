@@ -44,7 +44,7 @@ const getOptionsWithoutCount = (): { [key in ItemTypeFilter]: { label: string; i
 
 export const ItemsFilter: VFC<ItemsFilterProps> = ({ value, onChange }) => {
     const { anchorRef, isOpen, close, toggle } = usePopperAnchor<HTMLButtonElement>();
-    const { matched } = useItems();
+    const { searched } = useItems();
     const showCreditCards = useFeatureFlag<boolean>(PassFeature.PassCreditCardsV1);
 
     const options = useMemo(
@@ -53,9 +53,9 @@ export const ItemsFilter: VFC<ItemsFilterProps> = ({ value, onChange }) => {
                 type: type as ItemTypeFilter,
                 label,
                 icon,
-                count: type === '*' ? matched.length : matched.filter((item) => item.data.type === type).length,
+                count: type === '*' ? searched.length : searched.filter((item) => item.data.type === type).length,
             })),
-        [matched]
+        [searched]
     );
 
     const selectedOption = options.find(({ type }) => type === value)!;

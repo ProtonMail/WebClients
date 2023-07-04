@@ -23,7 +23,7 @@ import {
     filterItemsByType,
     getItemPriorityForUrl,
     matchAny,
-    matchItems,
+    searchItems,
     sortItems,
 } from '@proton/pass/utils/search';
 import { isEmptyString } from '@proton/pass/utils/string';
@@ -87,21 +87,21 @@ const selectSortedItemsByType = createSelector(
     [
         selectItemsWithOptimistic,
         (_state: State, { shareId }: SelectItemsOptions) => shareId,
-        (_state: State, { itemType }: SelectItemsOptions) => itemType,
         (_state: State, { sort }: SelectItemsOptions) => sort,
     ],
-    (items, shareId, itemType, sort) => {
-        const byShareId = pipe(filterItemsByShareId(shareId), sortItems(sort))(items);
-        const byShareIdAndType = filterItemsByType(itemType)(byShareId);
-        return { byShareId, byShareIdAndType };
-    }
+    (items, shareId, sort) => pipe(filterItemsByShareId(shareId), sortItems(sort))(items)
 );
 
 const itemsSearchResultSelector = createSelector(
-    [selectSortedItemsByType, (_state: State, { search }: SelectItemsOptions) => search],
-    ({ byShareId, byShareIdAndType }, search) => {
-        const matched = matchItems(byShareId, search);
-        return { matched, filtered: byShareIdAndType, totalCount: byShareId.length };
+    [
+        selectSortedItemsByType,
+        (_state: State, { search }: SelectItemsOptions) => search,
+        (_state: State, { itemType }: SelectItemsOptions) => itemType,
+    ],
+    (byShareId, search, itemType) => {
+        const searched = searchItems(byShareId, search);
+        const filtered = filterItemsByType(itemType)(searched);
+        return { filtered, searched, totalCount: byShareId.length };
     }
 );
 
@@ -111,8 +111,8 @@ export const selectItemsSearchResult = (options: SelectItemsOptions) => (state: 
 const trashedItemsSearchResultSelector = createSelector(
     [selectTrashItemsWithOptimistic, (_state: State, search?: string) => search],
     (items, search) => {
-        const matched = matchItems(items, search);
-        return { matched, totalCount: items.length };
+        const searched = searchItems(items, search);
+        return { searched, totalCount: items.length };
     }
 );
 
