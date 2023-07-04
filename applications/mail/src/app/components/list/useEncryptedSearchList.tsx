@@ -21,7 +21,11 @@ const useEncryptedSearchList = (isSearch: boolean, loading: boolean, page: numbe
     const searchLimitedMode = isSearch && !loading && dbExists && esEnabled && isCacheLimited;
     const disableGoToLast = searchLimitedMode && isSearchPartial;
     const useLoadingElement =
-        esEnabled && isLastPage && (!isCacheReady || searchLimitedMode) && (isSearching || !isSearchPartial);
+        isSearch &&
+        esEnabled &&
+        isLastPage &&
+        (!isCacheReady || searchLimitedMode) &&
+        (isSearching || !isSearchPartial);
 
     const loadingText = isSearching ? c('Info').t`Loading` : c('Info').t`No more results found`;
     const loadingElement = (
