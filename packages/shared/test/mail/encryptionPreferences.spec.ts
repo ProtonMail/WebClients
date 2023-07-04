@@ -299,6 +299,29 @@ describe('extractEncryptionPreferences for an internal user', () => {
 
         expect(result?.error?.type).toEqual(ENCRYPTION_PREFERENCES_ERROR_TYPES.CONTACT_SIGNATURE_NOT_VERIFIED);
     });
+
+    it('should give an error if key transparency returned an error', () => {
+        const publicKeyModel = {
+            ...model,
+            publicKeys: { apiKeys: [], pinnedKeys: [], verifyingPinnedKeys: [] },
+            emailAddressErrors: ['Key verification error'],
+        };
+        const result = extractEncryptionPreferences(publicKeyModel, mailSettings);
+        expect(result?.error?.type).toEqual(ENCRYPTION_PREFERENCES_ERROR_TYPES.EMAIL_ADDRESS_ERROR);
+    });
+
+    it('should give an error if key transparency returned an error, and ignore pinned keys', () => {
+        const pinnedKeys = [pinnedFakeKey2, pinnedFakeKey1];
+        const verifyingPinnedKeys = [pinnedFakeKey2];
+        const publicKeyModel = {
+            ...model,
+            publicKeys: { apiKeys: [], pinnedKeys, verifyingPinnedKeys },
+            trustedFingerprints: new Set(['fakeKey1', 'fakeKey2']),
+            emailAddressErrors: ['Key verification error'],
+        };
+        const result = extractEncryptionPreferences(publicKeyModel, mailSettings);
+        expect(result?.error?.type).toEqual(ENCRYPTION_PREFERENCES_ERROR_TYPES.EMAIL_ADDRESS_ERROR);
+    });
 });
 
 const testExtractEncryptionPreferencesWithWKD = (encrypt: boolean) =>

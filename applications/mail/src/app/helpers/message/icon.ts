@@ -368,6 +368,7 @@ const getReceivedStatusIconInternalWithKT = (
         signingPublicKeyIsPinned,
         signingPublicKeyIsCompromised,
         ktVerificationResult,
+        apiKeysErrors,
     } = verification;
 
     const ktVerificationStatus = ktVerificationResult?.status;
@@ -386,30 +387,12 @@ const getReceivedStatusIconInternalWithKT = (
         fill: WARNING,
     };
 
-    const supressedWarningResult = {
-        // Only show the warning in the details
-        ...warningResult,
-        fill: PLAIN,
-    };
-
-    const warningOnPinnedKeysResult = hasPinnedKeys ? warningResult : supressedWarningResult;
-
     if (verificationErrorsMessage) {
-        return {
-            ...warningOnPinnedKeysResult,
-            senderVerificationDetails: {
-                success: false,
-                description: verificationErrorsMessage,
-            },
-        };
-    }
-
-    if (ktVerificationStatus === KT_VERIFICATION_STATUS.VERIFICATION_FAILED) {
         return {
             ...warningResult,
             senderVerificationDetails: {
                 success: false,
-                description: c('loc_nightly: Sender verification error').t`Key Transparency detected an error`,
+                description: verificationErrorsMessage,
             },
         };
     }
@@ -418,7 +401,9 @@ const getReceivedStatusIconInternalWithKT = (
         if (!message.Sender.IsProton && message.Time < SIGNATURE_START.USER) {
             const formattedDate = formatSimpleDate(new Date(SIGNATURE_START.USER * 1000));
             return {
-                ...warningOnPinnedKeysResult,
+                ...result,
+                text: messageEncryptionDetails,
+                fill: PLAIN,
                 senderVerificationDetails: {
                     success: false,
                     description: c('loc_nightly: Sender verification error')
@@ -435,7 +420,7 @@ const getReceivedStatusIconInternalWithKT = (
             };
         }
         return {
-            ...warningOnPinnedKeysResult,
+            ...warningResult,
             senderVerificationDetails: {
                 success: false,
                 description: c('loc_nightly: Sender verification error').t`Message is not signed`,
@@ -444,8 +429,19 @@ const getReceivedStatusIconInternalWithKT = (
     }
 
     if (!signingPublicKey) {
+        if (apiKeysErrors?.length) {
+            const keyErrorMessages = apiKeysErrors.join(', ');
+            return {
+                ...warningResult,
+                senderVerificationDetails: {
+                    success: false,
+                    description: c('loc_nightly: Sender verification error')
+                        .t`Error while retrieving the sender's public keys: ${keyErrorMessages}`,
+                },
+            };
+        }
         return {
-            ...warningOnPinnedKeysResult,
+            ...warningResult,
             senderVerificationDetails: {
                 success: false,
                 description: c('loc_nightly: Sender verification error')
@@ -477,7 +473,7 @@ const getReceivedStatusIconInternalWithKT = (
 
     if (signingPublicKeyIsCompromised) {
         return {
-            ...warningOnPinnedKeysResult,
+            ...warningResult,
             senderVerificationDetails: {
                 success: false,
                 description: c('loc_nightly: Sender verification error')
