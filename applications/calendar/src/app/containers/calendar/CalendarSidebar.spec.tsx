@@ -123,6 +123,7 @@ const mockCalendar: VisualCalendar = {
     Flags: CALENDAR_FLAGS.ACTIVE,
     Type: CALENDAR_TYPE.PERSONAL,
     Owner: { Email: 'email3' },
+    Priority: 1,
     Members: [
         {
             CalendarID: 'id3',
@@ -135,6 +136,7 @@ const mockCalendar: VisualCalendar = {
             Permissions: 127,
             Name: 'calendar3',
             Description: 'description3',
+            Priority: 1,
         },
     ],
 };
