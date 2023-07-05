@@ -34,7 +34,8 @@ const DrawerAppFooter = ({ buttons, offsetNotifications }: Props) => {
                 // Any element inside the drawer footer
                 ref.current?.contains(element)
             ) {
-                setOffset({ y: rect.height });
+                const padding = 4;
+                setOffset({ y: rect.height + padding });
             } else {
                 setOffset(undefined);
             }
