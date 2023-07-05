@@ -3361,6 +3361,9 @@
       "Trusted keys are not valid for sending": [
         "Důvěryhodné klíče nejsou použitelné pro odesílání"
       ],
+      "Try again later": [
+        "Zkuste to znovu později"
+      ],
       "Try using only letters, numerals, and _.-": [
         "Zkuste používat pouze písmena, číslice a _.-"
       ],
@@ -4941,8 +4944,14 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Aplikace ${ appName } potřebuje Váš souhlas, aby mohla ${ enableDesktopNotifications }."
       ],
+      "${ autoRenewal } your subscription will renew automatically on ${ renewalTime }.": [
+        "${ autoRenewal } vaše předplatné se automaticky obnoví v ${ renewalTime }."
+      ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Pokud budete pokračovat, ztratíte přístup ke všem aktuálním zašifrovaným datům na svém účtu."
+      ],
+      "${ BRAND_NAME } is privacy you can trust, ensured by strong encryption, open-source code, and Swiss privacy laws. We believe nobody should be able to exploit your data, period. Our technology and business are based upon this fundamentally stronger definition of privacy.": [
+        "${ BRAND_NAME } je soukromí, kterému můžete důvěřovat, zajištěné silným šifrováním, kódem s otevřeným zdrojovým kódem a švýcarskými zákony o ochraně osobních údajů. Věříme, že nikdo by neměl mít možnost zneužít vaše data, tečka. Naše technologie a podnikání jsou založeny na této zásadně silnější definici soukromí."
       ],
       "${ BRAND_NAME } paused an import because it lost the connection with your other email provider. Please reconnect.": [
         "${ BRAND_NAME } pozastavil import, protože ztratil spojení se vzdáleným e-mailovým serverem. Prosím znovu se připojte."
@@ -5658,6 +5667,9 @@
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Filtry fungují na všech e-mailech, včetně příchozích i odeslaných e-mailů. Každý filtr musí obsahovat alespoň jméno, podmínku a činnost k vykonání."
       ],
+      "for choosing ${ product }": [
+        "pro výběr ${ product }"
+      ],
       "For choosing ${ product }": [
         "Za výběr ${ product }"
       ],
@@ -5723,6 +5735,9 @@
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Pokud si myslíte, že jde o chybu, kontaktujte nás ${ contactLink }."
+      ],
+      "If you cancel, your ${ vpnPlanName } subscription will not be renewed when it expires on ${ expiryDate }.": [
+        "Pokud předplatné ${ vpnPlanName } zrušíte, nebude po vypršení jeho platnosti v den ${ expiryDate } obnoveno."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Pokud jste nenašli e-mail ve vaší schránce, zkontrolujte prosím složku se spamem."
@@ -5807,6 +5822,9 @@
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Importujeme Vaše data z ${ importedEmailAddress } do ${ toEmail }."
+      ],
+      "Improve your ${ BRAND_NAME } experience by adapting the application to your needs.": [
+        "Zlepšete své ${ BRAND_NAME } zkušenosti přizpůsobením aplikace svým potřebám."
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "V dalším kroku budete moci odeslat vklad pomocí adresy Bitcoin."
@@ -6045,6 +6063,9 @@
       "Outdated recovery phrase; update to ensure access to your data": [
         "Zastaralá obnovovací fráze; aktualizujte, abyste zajistili přístup k vašim údajům"
       ],
+      "Over 100 million people and businesses have signed up for ${ BRAND_NAME }.": [
+        "Do služby ${ BRAND_NAME } se zaregistrovalo více než 100 milionů lidí a firem."
+      ],
       "Paid for a ${ rewardMonths } month plan": [
         "Zaplaceno za ${ rewardMonths } měsíční tarif",
         "Zaplaceno za ${ rewardMonths } měsíční tarif",
@@ -6180,6 +6201,9 @@
       "Recovery information will remain on this device unless you select to delete it.": [
         "Informace o obnovení zůstanou v tomto zařízení, pokud nezvolíte jejich odstranění."
       ],
+      "Recovery kit copied to clipboard": [
+        "Sada pro obnovu zkopírovaná do schránky"
+      ],
       "Recovery phrase copied to clipboard": [
         "Obnovovací fráze byla zkopírovaná do schránky"
       ],
@@ -6203,6 +6227,9 @@
       ],
       "Remove one of your calendars to join this one": [
         "Odstraňte jeden ze svých kalendářů a připojte se k tomuto"
+      ],
+      "Report link expired": [
+        "Odkaz na obnovení vypršel"
       ],
       "Restore": [
         "Obnovit"
@@ -6239,6 +6266,9 @@
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Vyberte kalendáře, které chcete importovat. Pro každý importovaný kalendář bude vytvořen nový kalendář podle počtu kalendářů dostupných v tarifu."
+      ],
+      "Send emails to encourage your members to protect their accounts with 2FA.": [
+        "Odesílejte e-maily, abyste své členy vyzvali k ochraně jejich účtů pomocí 2FA."
       ],
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "Odesláno z bezpečného <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }u</a>."
@@ -6384,11 +6414,17 @@
         "Následující adresy nebyly vytvořeny.",
         "Následující adresy nebyly vytvořeny."
       ],
+      "The following members will receive an email prompting them to enable two-factor authentication as soon as possible.": [
+        "Následující členové obdrží e-mail s výzvou, aby co nejdříve aktivovali dvoufaktorové ověřování."
+      ],
       "The format of your CSV file is incorrect.": [
         "Formát vašeho souboru CSV je nesprávný."
       ],
       "The Import-Export app allows you to export messages for local backups and to restore previous backups to your account.": [
         "Aplikace Import-Export umožňuje exportovat zprávy pro místní zálohy a obnovit předchozí zálohy do účtu."
+      ],
+      "The link to report that that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue.": [
+        "Odkaz na hlášení, že jste nenastavili ${ BRAND_NAME }. Účet vypršel. Kontaktujte prosím náš tým podpory a vyřešte tento problém."
       ],
       "The name will be visible to your users while they are signed in.": [
         "Jméno bude viditelné vašim uživatelům, když budou přihlášeni."
@@ -6449,6 +6485,9 @@
       ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Tento uživatel je aktuálně zodpovědný za platby za Vaši organizaci. Snížením úrovně toho uživatele, se stanete zodpovědní za platby za Vaši organizaci právě vy."
+      ],
+      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
+        "Tím se zruší vaše stávající placené předplatné a ztratíte veškeré věrnostní výhody, které jste nashromáždili."
       ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
         "Tímto úkonem zrušíte aktuální placené předplatné a ztratíte všechny věrnostní výhody, které jste nashromáždili. Zbývající zůstatek předplatného bude vrácen jako kredit na účet."
@@ -6684,6 +6723,9 @@
       "We need to authenticate your payment with your bank.": [
         "Potřebujeme ověřit vaši platbu u vaší banky."
       ],
+      "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
+        "Před vynucením používání 2FA doporučujeme informovat členy organizace a požádat je o nastavení 2FA pro jejich účty."
+      ],
       "We recommend using your recovery phrase instead.": [
         "Místo toho doporučujeme použít frázi pro obnovení."
       ],
@@ -6885,11 +6927,17 @@
       "You will be redirected to the VPN download page": [
         "Budete přesměrováni na stránku stažení VPN"
       ],
+      "You will lose access to ${ vpnPlanNameShort } servers and features on this date.": [
+        "K tomuto datu ztratíte přístup k serverům a funkcím ${ vpnPlanNameShort }."
+      ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Potřebujete ${ BRAND_NAME } adresu pro používání ${ MAIL_APP_NAME } a ${ CALENDAR_APP_NAME }"
       ],
       "You will NOT be able to decrypt any messages, files, and other data encrypted with this key.": [
         "NEBUDETE moci dešifrovat zprávy, soubory a další data zašifrovaná tímto klíčem."
+      ],
+      "You will receive priority support from specialists trained in account protection. For any account security concerns, please ${ hereLink }.": [
+        "Přednostní podporu vám poskytnou specialisté vyškolení v oblasti ochrany účtů. V případě jakýchkoli obav o zabezpečení účtu nás prosím kontaktujte zde ${ hereLink }."
       ],
       "You will see more details in the Security logs below for important events such as sign in attempts.": [
         "Podrobnější informace o důležitých událostech, např. o pokusech o přihlášení, najdete v níže uvedených bezpečnostních protokolech."
@@ -8109,6 +8157,9 @@
       "Show sender images": [
         "Zobrazit obrázky odesílatele"
       ],
+      "Show unread count in Favicon": [
+        "Zobrazení počtu nepřečtených v ikoně Favicon"
+      ],
       "Show week numbers": [
         "Zobrazovat číslo týdne"
       ],
@@ -8446,6 +8497,9 @@
       "Common sign up issues": [
         "Běžné problémy s registrací"
       ],
+      "contact us": [
+        "kontaktujte nás"
+      ],
       "Create account": [
         "Vytvořit účet"
       ],
@@ -8484,6 +8538,9 @@
       ],
       "Pay invoice": [
         "Zaplatit fakturu"
+      ],
+      "Paypal without credit card": [
+        "Paypal bez kreditní karty"
       ],
       "Privacy policy": [
         "Zásady ochrany osobních údajů"
@@ -9010,6 +9067,12 @@
         "${ n } složek a štítků",
         "${ n } složek a štítků"
       ],
+      "${ n } hide-my-email alias": [
+        "${ n } hide-my-email alias",
+        "${ n } hide-my-email aliasy",
+        "${ n } hide-my-email aliasů",
+        "${ n } hide-my-email aliasů"
+      ],
       "${ n } label": [
         "${ n } štítek",
         "${ n } štítky",
@@ -9073,6 +9136,9 @@
       "Auto-reply": [
         "Automatická odpověď"
       ],
+      "Autofill credit cards (coming soon)": [
+        "Automatické vyplňování kreditních karet (již brzy)"
+      ],
       "Available on all platforms": [
         "Dostupné na všech platformách"
       ],
@@ -9090,6 +9156,9 @@
       ],
       "Contact groups management": [
         "Správa skupin kontaktů"
+      ],
+      "Custom domains for email aliases": [
+        "Vlastní domény pro e-mailové aliasy"
       ],
       "Custom email domains": [
         "Vlastní e-mailové domény"
@@ -9177,6 +9246,9 @@
       ],
       "No-logs policy": [
         "Politika žádných logů"
+      ],
+      "Organize items with multiple vaults": [
+        "Uspořádání položek pomocí více trezorů"
       ],
       "Password-protected Emails": [
         "Zprávy chráněné heslem"
@@ -9739,6 +9811,15 @@
       ],
       "Reminder has been sent": [
         "Připomenutí bylo odesláno"
+      ],
+      "Two-factor authentication has been enforced for administrators": [
+        "Pro správce bylo zavedeno dvoufaktorové ověřování."
+      ],
+      "Two-factor authentication has been enforced for all members": [
+        "Pro všechny členy bylo zavedeno dvoufaktorové ověřování."
+      ],
+      "Two-factor authentication is not required anymore": [
+        "Dvoufaktorové ověřování již není vyžadováno"
       ]
     },
     "Notification in holidays calendar modal": {
@@ -11245,6 +11326,9 @@
       "Verification successful": [
         "Ověření proběhlo úspěšně"
       ],
+      "You have successfully cancelled your subscription.": [
+        "Úspěšně jste zrušili své předplatné."
+      ],
       "You have successfully unsubscribed": [
         "Předplatné bylo úspěšně zrušeno"
       ]
@@ -11445,6 +11529,9 @@
       ]
     },
     "Title": {
+      "${ appName } Free": [
+        "${ appName } zdarma"
+      ],
       "${ MAIL_APP_NAME } Keyboard Shortcuts": [
         "${ MAIL_APP_NAME } klávesové zkratky"
       ],
@@ -12021,6 +12108,9 @@
       "Other calendars": [
         "Ostatní kalendáře"
       ],
+      "Other preferences": [
+        "Další předvolby"
+      ],
       "Password": [
         "Heslo"
       ],
@@ -12200,6 +12290,9 @@
       ],
       "Sort labels alphabetically": [
         "Řadit štítky abecedně"
+      ],
+      "Spam, block, and allow lists": [
+        "Seznamy spamu, blokování a povolení"
       ],
       "Start a new import": [
         "Zahájit nový import"

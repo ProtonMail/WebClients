@@ -2602,14 +2602,14 @@
     },
     "Daily recurring event, frequency": {
       "${ count } time": [
-        "$ { count } समय",
-        "$ { count } बार"
+        "${ count } समय",
+        "${ count } बार"
       ],
       "Daily": [
         "रोज़"
       ],
       "Daily, ${ timesString }": [
-        "दैनिक, $ { timesString }"
+        "दैनिक, ${ timesString }"
       ],
       "Daily, ${ untilString }": [
         "दैनिक, ${ untilString }"
@@ -2619,15 +2619,15 @@
         "हर ${ interval } दिन"
       ],
       "Every ${ interval } day, ${ timesString }": [
-        "हर ${ interval } दिन, $ { timesString }",
-        "हर ${ interval } दिन, $ { timesString }"
+        "हर ${ interval } दिन, ${ timesString }",
+        "हर ${ interval } दिन, ${ timesString }"
       ],
       "Every ${ interval } day, ${ untilString }": [
-        "हर ${ interval } दिन, $ { untilString }",
-        "हर $ { interval } दिन, $ { untilString }"
+        "हर ${ interval } दिन, ${ untilString }",
+        "हर ${ interval } दिन, ${ untilString }"
       ],
       "until ${ dateString }": [
-        "$ { dateString } तक"
+        "${ dateString } तक"
       ]
     },
     "Day": {
@@ -2874,10 +2874,10 @@
         "आप ${ BRAND_NAME } से कौन सा ईमेल प्राप्त करना चाहते हैं?"
       ],
       "You resubscribed to ${ categoriesJsx } emails.": [
-        "आपने $ { categoriesJsx } ईमेल पर फिर से भेज दिया।"
+        "आपने ${ categoriesJsx } ईमेल पर फिर से भेज दिया।"
       ],
       "You unsubscribed from ${ categoriesJsx } emails.": [
-        "आपने $ { categoriesJsx } ईमेल से सदस्यता समाप्त कर ली है।"
+        "आपने ${ categoriesJsx } ईमेल से सदस्यता समाप्त कर ली है।"
       ]
     },
     "Email Unsubscribe Categories": {
@@ -3230,7 +3230,7 @@
         "जोड़ने के लिए क्रेडिट रकम कम-से-कम ${ price } होना चाहिए"
       ],
       "The minimum amount that can be donated is ${ price }": [
-        "दान की जाने वाली न्यूनतम राशि $ { price } है"
+        "दान की जाने वाली न्यूनतम राशि ${ price } है"
       ],
       "The minimum payment we accept is ${ price }": [
         "हम ${ price } से कम रकम नहीं लेते"
@@ -3531,7 +3531,7 @@
     },
     "Error message": {
       "Error: ${ errorMessage }": [
-        "त्रुटि: { errorMessage }"
+        "त्रुटि: ${ errorMessage }"
       ],
       "Invalid URL": [
         "अमान्य URL"
@@ -4073,7 +4073,7 @@
     },
     "Filter notification": {
       "${ Label.Name } updated": [
-        "{ Label.Name } अपडेट किया गया"
+        "${ Label.Name } अपडेट किया गया"
       ],
       "Filter ${ Filter.Name } updated": [
         "फ़िल्टर ${ Filter.Name } अपडेट किया गया"
@@ -4095,6 +4095,11 @@
     "Font Face Default": {
       "Default": [
         "डिफॉल्ट"
+      ]
+    },
+    "Font face option": {
+      "System default": [
+        "सिस्टम डिफॉल्ट"
       ]
     },
     "Font Size Default": {
@@ -4895,7 +4900,7 @@
         "American Express SafeKey लोगो"
       ],
       "Amount below minimum (${ amount }).": [
-        "न्यूनतम से कम राशि ($ { amount })।"
+        "न्यूनतम से कम राशि (${ amount })।"
       ],
       "An error occurred while communicating with the extension": [
         "एक्सटेंशन से बात करने में एक गड़बड़ हुई"
@@ -5212,10 +5217,10 @@
         "अपने प्रमाणीकरण अनुप्रयोग में से कूटक लिखें"
       ],
       "Enter the code sent to your phone number ${ phone }.": [
-        "अपने फ़ोन नंबर $ { phone } पर भेजे गए कोड को दर्ज करें।"
+        "अपने फ़ोन नंबर ${ phone } पर भेजे गए कोड को दर्ज करें।"
       ],
       "Enter the code that was sent to ${ email }. If you can't find the message in your inbox, please check your spam folder.": [
-        "वह कोड दर्ज करें जो $ { email } को भेजा गया था। यदि आपको अपने इनबॉक्स में संदेश नहीं मिल रहा है, तो कृपया अपना स्पैम फ़ोल्डर देखें।"
+        "वह कोड दर्ज करें जो ${ email } को भेजा गया था। यदि आपको अपने इनबॉक्स में संदेश नहीं मिल रहा है, तो कृपया अपना स्पैम फ़ोल्डर देखें।"
       ],
       "Enter the credentials of the email account you want to import from.": [
         "आप जिस ईमेल खाते से आयात करना चाहते हैं, उसके क्रेडेंशियल दर्ज करें।"
@@ -5332,7 +5337,7 @@
         "यदि आपके पास कोई उपहार कोड है, तो अपनी छूट लागू करने के लिए उसे नीचे दर्ज करें।"
       ],
       "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
-        "यदि आपने पहले कभी दो-कारक प्रमाणीकरण का उपयोग नहीं किया है, तो हम आपको दृढ़ता से $ { guideButton } की सलाह देते हैं।"
+        "यदि आपने पहले कभी दो-कारक प्रमाणीकरण का उपयोग नहीं किया है, तो हम आपको दृढ़ता से ${ guideButton } की सलाह देते हैं।"
       ],
       "If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly.": [
         "यदि आपने एसपीएफ और डीकेआईएम दोनों निर्धारित किए हैं, तो डीएमएआरसी आपको यह निर्दिष्ट करने की अनुमति देता है कि यदि एसपीएफ और डीकेआईएम दोनों चेक विफल हो गए हों तो अन्य ईमेल सेवाओं को आपके डोमेन के लिए ईमेल कैसे वितरित करना चाहिए। यह आपके होने का दिखावा करने वाले स्पैमर के लिए कठिन बना सकता है, लेकिन अगर ठीक से नहीं किया गया तो डिलीवरी के मुद्दे भी हो सकते हैं।"
@@ -5509,6 +5514,9 @@
       ],
       "Loading...": [
         "लोड हो रहा..."
+      ],
+      "Logs include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
+        "लॉग में आपके ${ BRAND_NAME } प्रमाण इस्तेमाल करते सारे ${ BRAND_NAME_TWO } सेवाओं पे सत्यापन की कोशिशे होती है"
       ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "ध्यान रखें की आप ${ addARecoveryMethod } कर लें ताकि अगर आप पासवर्ड भूल जाए तो आप अपने खाते पे वापिस जा सके।"
@@ -5694,7 +5702,7 @@
         "कृपया ध्यान दें कि यदि आप इस फ़िल्टर को हटाते हैं, तो हम ट्रिगर होने वाली सभी स्वचालित क्रियाओं को संसाधित करना बंद कर देंगे।"
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
-        "कृपया ध्यान दें कि कन्फर्म बटन पर क्लिक करने पर, आपके खाते में $ { creditsRemaining } क्रेडिट शेष रह जाएंगे।"
+        "कृपया ध्यान दें कि कन्फर्म बटन पर क्लिक करने पर, आपके खाते में ${ creditsRemaining } क्रेडिट शेष रह जाएंगे।"
       ],
       "Please provide an email address in case we need to contact you.": [
         "यदि हमें आपसे संपर्क करने की आवश्यकता हो तो कृपया एक ईमेल पता प्रदान करें।"
@@ -5778,7 +5786,7 @@
         "रेफ़रल लिंक आपके क्लिपबोर्ड पर कॉपी किया गया"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
-        "पृष्ठ को ताज़ा करने या $ { link } स्वचालित रूप से अधिकांश मुद्दों को हल करेगा।"
+        "पृष्ठ को ताज़ा करने या ${ link } स्वचालित रूप से अधिकांश मुद्दों को हल करेगा।"
       ],
       "Remove one of your calendars to join this one": [
         "इस कैलेंडर से जुड़ने के लिए अपना एक मौजूदा कैलेंडर हटाएं"
@@ -5805,7 +5813,7 @@
         "इसके बजाय QR कोड स्कैन करें"
       ],
       "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "अपना खाता सेट करने के लिए अपने दो-कारक प्रमाणीकरण उपकरण के साथ इस कोड को स्कैन करें। $ { switchButton }।"
+        "अपना खाता सेट करने के लिए अपने दो-कारक प्रमाणीकरण उपकरण के साथ इस कोड को स्कैन करें। ${ switchButton }।"
       ],
       "Securing your account": [
         "आपका खाता सुरक्षित कर रहे"
@@ -6046,7 +6054,7 @@
         "पुष्टि करने के लिए, कृपया उस उपयोगकर्ता का नाम दर्ज करें जिसे आप हटाना चाहते हैं।"
       ],
       "to continue to ${ toAppName }": [
-        "$ { toAppName } को जारी रखने के लिए"
+        "${ toAppName } को जारी रखने के लिए"
       ],
       "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
         "हमारी सेवाओं को लगातार बेहतर करने के लिए, हम कभी-कभी डाटा लेते है ये देखने के लिए की हमारे ऐप सही चल रहे है या नहीं। हम ये डाटा किसी और के साथ शेयर नहीं करते।"
@@ -6387,10 +6395,10 @@
         "ICS से अपने इवेंट आयात करने के लिए आपके पास एक सक्रिय कैलेंडर होना चाहिए।"
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
-        "आप अपनी संग्रहण क्षमता का $ { spaceDisplayed }% तक पहुँच गए। $ { freeUpMessage } $ { upgradeLink }"
+        "आप अपनी संग्रहण क्षमता का ${ spaceDisplayed }% तक पहुँच गए। ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
-        "आप अपनी भंडारण क्षमता के 100% तक पहुंच गए। आप नए ईमेल भेज या प्राप्त नहीं कर सकते। $ { freeUpMessage } ${ upgradeLink }"
+        "आप अपनी भंडारण क्षमता के 100% तक पहुंच गए। आप नए ईमेल भेज या प्राप्त नहीं कर सकते। ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You should export a backup of this key in case you need to restore data it encrypted.": [
         "यदि आपको इसे एन्क्रिप्ट किए गए डेटा को पुनर्स्थापित करने की आवश्यकता है तो आपको इस कुंजी का बैकअप निर्यात करना चाहिए।"
@@ -6432,7 +6440,7 @@
         "आपके ${ VPN_APP_NAME } और ${ MAIL_APP_NAME } खाते जुड़े हुए है। उन दोनों को मिटाने के लिए, कृपया ${ loginLink } पे साइन इन करें और वहां अपना खाता मिटाएं।"
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
-        "आपके खाते में कम से कम एक अतिदेय चालान है। जल्द ही आपकी पहुँच प्रतिबंधित हो जाएगी। $ { payInvoiceLink }"
+        "आपके खाते में कम से कम एक अतिदेय चालान है। जल्द ही आपकी पहुँच प्रतिबंधित हो जाएगी। ${ payInvoiceLink }"
       ],
       "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
         "आपके खाते में कम से कम एक अतिदेय चालान है। आपका खाता प्रतिबंधित है, और भुगतान तक सभी सेवाएं अब अवरुद्ध हैं। ${ payInvoiceLink }"
@@ -6502,7 +6510,7 @@
     },
     "Info for cash payment method": {
       "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "कृपया हमें नकद के साथ भुगतान करने के निर्देशों के लिए $ { email } पर संपर्क करें।"
+        "कृपया हमें नकद के साथ भुगतान करने के निर्देशों के लिए ${ email } पर संपर्क करें।"
       ]
     },
     "Info for domain modal": {
@@ -6513,7 +6521,7 @@
         "अपने संगठन में एक नया उपयोगकर्ता जोड़ें और इसके लिए एक पता बनाएँ।"
       ],
       "For security reasons, we need to verify that you are the owner of ${ domainName }. Please add the following DNS TXT record to your domain. This can typically be done in the control panel of your domain name registrar.": [
-        "सुरक्षा कारणों से, हमें यह सत्यापित करने की आवश्यकता है कि आप $ { domainName } के मालिक हैं। कृपया अपने डोमेन में निम्नलिखित DNS TXT रिकॉर्ड जोड़ें। यह आमतौर पर आपके डोमेन नाम रजिस्ट्रार के नियंत्रण कक्ष में किया जा सकता है।"
+        "सुरक्षा कारणों से, हमें यह सत्यापित करने की आवश्यकता है कि आप ${ domainName } के मालिक हैं। कृपया अपने डोमेन में निम्नलिखित DNS TXT रिकॉर्ड जोड़ें। यह आमतौर पर आपके डोमेन नाम रजिस्ट्रार के नियंत्रण कक्ष में किया जा सकता है।"
       ]
     },
     "Info for payment methods": {
@@ -6614,7 +6622,7 @@
         "कुंजी उत्पन्न करें"
       ],
       "Key with fingerprint ${ fp } successfully created.": [
-        "फ़िंगरप्रिंट $ { fp } के साथ कुंजी सफलतापूर्वक बनाई गई।"
+        "फ़िंगरप्रिंट ${ fp } के साथ कुंजी सफलतापूर्वक बनाई गई।"
       ],
       "The encryption keys are being generated. This may take several minutes and temporarily freeze your browser.": [
         "एन्क्रिप्शन कुंजी उत्पन्न की जा रही हैं। इसमें कई मिनट लग सकते हैं और आपका ब्राउज़र अस्थायी रूप से फ़्रीज़ हो सकता है।"
@@ -7607,7 +7615,7 @@
         "प्रणाली की जानकारी"
       ],
       "The email was sent ${ attachment }": [
-        "ईमेल भेजा गया था { attachment }"
+        "ईमेल भेजा गया था ${ attachment }"
       ],
       "the email was sent ${ attachment }": [
         "ईमेल भेजा गया था ${ attachment }"
@@ -7850,7 +7858,7 @@
         "${ Label.Name } बनाया गया"
       ],
       "${ label.Name } updated": [
-        "{ label.Name } अपडेट किया गया"
+        "${ label.Name } अपडेट किया गया"
       ],
       "Preference saved": [
         "वरीयता बचाई गई"
@@ -8054,7 +8062,7 @@
     },
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
-        "$ { appName } का एक नया संस्करण उपलब्ध है। $ { reloadButton }।"
+        "${ appName } का एक नया संस्करण उपलब्ध है। ${ reloadButton }।"
       ]
     },
     "Modal title": {
@@ -8505,6 +8513,9 @@
       ],
       "GDPR data processing agreement": [
         "जीडीपीआर डाटा प्रोसेस समझोता"
+      ],
+      "Hide-my-email aliases": [
+        "Hide-my-email नकलीनाम"
       ],
       "High-speed streaming": [
         "तेज़ स्ट्रीमिंग"
@@ -9226,10 +9237,10 @@
         "हर बार पूछें"
       ],
       "Automatic (${ defaultDay })": [
-        "स्वचालित ($ { defaultDay })"
+        "स्वचालित (${ defaultDay })"
       ],
       "Automatic (${ defaultFormat })": [
-        "स्वचालित ($ { defaultFormat })"
+        "स्वचालित (${ defaultFormat })"
       ],
       "Country configs": [
         "देश विन्यास"
@@ -10292,7 +10303,7 @@
         "कैच-सभी पता अपडेट किया गया"
       ],
       "Code sent to ${ methodTo }": [
-        "$ { methodTo } को कोड भेजा गया"
+        "${ methodTo } को कोड भेजा गया"
       ],
       "Credits added": [
         "क्रेडिट जोड़े गए"
@@ -10438,7 +10449,7 @@
     },
     "Success notification": {
       "${ label.Name } removed": [
-        "{ label.Name } हटाया गया"
+        "${ label.Name } हटाया गया"
       ],
       "Address deleted": [
         "पता हटा दिया गया"
@@ -10595,6 +10606,9 @@
     "Title": {
       "${ MAIL_APP_NAME } Keyboard Shortcuts": [
         "${ MAIL_APP_NAME } कीबोर्ड शोर्टकट"
+      ],
+      "(active)": [
+        "(सक्रिय)"
       ],
       "1. Give a name to the config to be generated": [
         "1. बनने वाले संरचना को नाम दें"
@@ -10853,7 +10867,7 @@
         "डिक्रिप्ट कुंजी"
       ],
       "Delete ${ domain.DomainName }": [
-        "$ { domain.DomainName }हटाएं"
+        "${ domain.DomainName } हटाएं"
       ],
       "Delete ${ email }": [
         "${ email } हटाएं"
@@ -11819,7 +11833,7 @@
         "हमें आपके DNS कॉन्फ़िगरेशन में समस्या का पता चला है। कृपया सुनिश्चित करें कि आपके रिकॉर्ड नीचे दिए गए निर्देशों से मेल खाते हैं। यदि समस्या बनी रहती है, तो हमें डीकेआईएम को बंद करना होगा।"
       ],
       "You must ${ activateLink } organization keys before adding an email address to a non-private member.": [
-        "गैर-निजी सदस्य को ईमेल पता जोड़ने से पहले आपको $ { activateLink } संगठन कुंजियाँ होनी चाहिए।"
+        "गैर-निजी सदस्य को ईमेल पता जोड़ने से पहले आपको ${ activateLink } संगठन कुंजियाँ होनी चाहिए।"
       ],
       "You will lose any customization you made so far.": [
         "आप अब तक किए गए किसी भी अनुकूलन को खो देंगे।"
@@ -11853,7 +11867,7 @@
     "Weekly recurring event, frequency": {
       "Every ${ interval } week on ${ multipleDaysString }": [
         "${ multipleDaysString } पर हर ${ interval } सप्ताह",
-        "$ { multipleDaysString } पर हर ${ interval } सप्ताह"
+        "${ multipleDaysString } पर हर ${ interval } सप्ताह"
       ],
       "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
         "प्रत्येक ${ interval } सप्ताह ${ multipleDaysString }, ${ timesString } पर",
@@ -11864,16 +11878,16 @@
         "प्रत्येक ${ interval } सप्ताह ${ multipleDaysString }, ${ untilString } पर"
       ],
       "Every ${ interval } week on all days": [
-        "सभी दिनों पर हर $ { interval } सप्ताह",
-        "सभी दिनों पर हर $ { interval } सप्ताह"
+        "सभी दिनों पर हर ${ interval } सप्ताह",
+        "सभी दिनों पर हर ${ interval } सप्ताह"
       ],
       "Every ${ interval } week on all days, ${ timesString }": [
         "प्रतिसप्ताह, ${ timesString }",
         "प्रति ${ interval } सप्ताह, प्रतिदिन, ${ timesString }"
       ],
       "Every ${ interval } week on all days, ${ untilString }": [
-        "सभी दिनों पर हर $ { interval } सप्ताह, $ { untilString }",
-        "सभी दिनों पर हर ${ interval } सप्ताह, $ { untilString }"
+        "सभी दिनों पर हर ${ interval } सप्ताह, ${ untilString }",
+        "सभी दिनों पर हर ${ interval } सप्ताह, ${ untilString }"
       ],
       "Every ${ interval } week on Friday": [
         "प्रत्येक ${ interval } सप्ताह शुक्रवार को",
@@ -11896,8 +11910,8 @@
         "प्रत्येक ${ interval } सप्ताह सोमवार को, ${ timesString }"
       ],
       "Every ${ interval } week on Monday, ${ untilString }": [
-        "प्रत्येक $ { interval } सप्ताह सोमवार को, $ { untilString }",
-        "प्रत्येक $ { interval } सप्ताह सोमवार को, $ { untilString }"
+        "प्रत्येक ${ interval } सप्ताह सोमवार को, ${ untilString }",
+        "प्रत्येक ${ interval } सप्ताह सोमवार को, ${ untilString }"
       ],
       "Every ${ interval } week on Saturday": [
         "शनिवार को प्रत्येक ${ interval } सप्ताह",
@@ -11913,27 +11927,27 @@
       ],
       "Every ${ interval } week on Sunday": [
         "प्रत्येक ${ interval } सप्ताह रविवार को",
-        "रविवार को हर $ { interval } सप्ताह"
+        "रविवार को हर ${ interval } सप्ताह"
       ],
       "Every ${ interval } week on Sunday, ${ timesString }": [
         "प्रत्येक ${ interval } सप्ताह रविवार को, ${ timesString }",
         "प्रत्येक ${ interval } सप्ताह रविवार को, ${ timesString }"
       ],
       "Every ${ interval } week on Sunday, ${ untilString }": [
-        "प्रत्येक $ { interval } सप्ताह रविवार को, $ { untilString }",
-        "प्रत्येक $ { interval } सप्ताह रविवार को, $ { untilString }"
+        "प्रत्येक ${ interval } सप्ताह रविवार को, ${ untilString }",
+        "प्रत्येक ${ interval } सप्ताह रविवार को, ${ untilString }"
       ],
       "Every ${ interval } week on Thursday": [
         "प्रत्येक ${ interval } सप्ताह गुरुवार को",
         "प्रत्येक ${ interval } सप्ताह गुरुवार को"
       ],
       "Every ${ interval } week on Thursday, ${ timesString }": [
-        "प्रत्येक $ { interval } सप्ताह गुरुवार को, $ { timesString }",
+        "प्रत्येक ${ interval } सप्ताह गुरुवार को, ${ timesString }",
         "प्रत्येक ${ interval } सप्ताह गुरुवार को, ${ timesString }"
       ],
       "Every ${ interval } week on Thursday, ${ untilString }": [
-        "प्रत्येक $ { interval } सप्ताह गुरुवार को, $ { untilString }",
-        "प्रत्येक $ { interval } सप्ताह गुरुवार को, $ { untilString }"
+        "प्रत्येक ${ interval } सप्ताह गुरुवार को, ${ untilString }",
+        "प्रत्येक ${ interval } सप्ताह गुरुवार को, ${ untilString }"
       ],
       "Every ${ interval } week on Tuesday": [
         "प्रत्येक ${ interval }} सप्ताह के मंगलवार को",
@@ -11944,8 +11958,8 @@
         "प्रत्येक ${ interval } सप्ताह मंगलवार को, ${ timesString }"
       ],
       "Every ${ interval } week on Tuesday, ${ untilString }": [
-        "प्रत्येक $ { interval } सप्ताह मंगलवार को, $ { untilString }",
-        "प्रत्येक $ { interval } सप्ताह मंगलवार को, $ { untilString }"
+        "प्रत्येक ${ interval } सप्ताह मंगलवार को, ${ untilString }",
+        "प्रत्येक ${ interval } सप्ताह मंगलवार को, ${ untilString }"
       ],
       "Every ${ interval } week on Wednesday": [
         "बुधवार को हर ${ interval } सप्ताह",
@@ -11956,8 +11970,8 @@
         "बुधवार को हर ${ interval } सप्ताह, ${ timesString }"
       ],
       "Every ${ interval } week on Wednesday, ${ untilString }": [
-        "बुधवार को हर $ { interval } सप्ताह, $ { untilString }",
-        "बुधवार को हर $ { interval } सप्ताह, $ { untilString }"
+        "बुधवार को हर ${ interval } सप्ताह, ${ untilString }",
+        "बुधवार को हर ${ interval } सप्ताह, ${ untilString }"
       ],
       "Weekly on ${ multipleDaysString }": [
         "प्रतिसप्ताह ${ multipleDaysString } को"
@@ -11972,10 +11986,10 @@
         "साप्ताहिक सभी दिनों पर"
       ],
       "Weekly on all days, ${ timesString }": [
-        "साप्ताहिक रूप से सभी दिन, $ { timesString }"
+        "साप्ताहिक रूप से सभी दिन, ${ timesString }"
       ],
       "Weekly on all days, ${ untilString }": [
-        "साप्ताहिक रूप से सभी दिन, $ { untilString }"
+        "साप्ताहिक रूप से सभी दिन, ${ untilString }"
       ],
       "Weekly on Friday": [
         "शुक्रवार को साप्ताहिक"
@@ -11984,7 +11998,7 @@
         "शुक्रवार को साप्ताहिक, ${ timesString }"
       ],
       "Weekly on Friday, ${ untilString }": [
-        "शुक्रवार को साप्ताहिक, $ { untilString }"
+        "शुक्रवार को साप्ताहिक, ${ untilString }"
       ],
       "Weekly on Monday": [
         "साप्ताहिक सोमवार को"
@@ -11993,7 +12007,7 @@
         "सोमवार को साप्ताहिक, ${ timesString }"
       ],
       "Weekly on Monday, ${ untilString }": [
-        "सोमवार को साप्ताहिक, $ { untilString }"
+        "सोमवार को साप्ताहिक, ${ untilString }"
       ],
       "Weekly on Saturday": [
         "शनिवार को साप्ताहिक"
@@ -12011,16 +12025,16 @@
         "रविवार को साप्ताहिक, ${ timesString }"
       ],
       "Weekly on Sunday, ${ untilString }": [
-        "रविवार को साप्ताहिक, $ { untilString }"
+        "रविवार को साप्ताहिक, ${ untilString }"
       ],
       "Weekly on Thursday": [
         "गुरुवार को साप्ताहिक"
       ],
       "Weekly on Thursday, ${ timesString }": [
-        "गुरुवार को साप्ताहिक, $ { timesString }"
+        "गुरुवार को साप्ताहिक, ${ timesString }"
       ],
       "Weekly on Thursday, ${ untilString }": [
-        "गुरुवार को साप्ताहिक, $ { untilString }"
+        "गुरुवार को साप्ताहिक, ${ untilString }"
       ],
       "Weekly on Tuesday": [
         "साप्ताहिक मंगलवार को"
@@ -12029,7 +12043,7 @@
         "साप्ताहिक रूप से मंगलवार को, ${ timesString }"
       ],
       "Weekly on Tuesday, ${ untilString }": [
-        "साप्ताहिक रूप से मंगलवार को, $ { untilString }"
+        "साप्ताहिक रूप से मंगलवार को, ${ untilString }"
       ],
       "Weekly on Wednesday": [
         "बुधवार को साप्ताहिक"
@@ -12038,7 +12052,7 @@
         "बुधवार को साप्ताहिक, ${ timesString }"
       ],
       "Weekly on Wednesday, ${ untilString }": [
-        "बुधवार को साप्ताहिक, $ { untilString }"
+        "बुधवार को साप्ताहिक, ${ untilString }"
       ]
     },
     "Weekly recurring event, repeats on (multiple days), frequency": {
@@ -12066,25 +12080,25 @@
     },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
-        "हर $ { interval } साल",
-        "हर $ { interval } साल"
+        "हर ${ interval } साल",
+        "हर ${ interval } साल"
       ],
       "Every ${ interval } year, ${ timesString }": [
-        "हर ${ interval } साल, $ { timesString }",
-        "हर ${ interval } वर्षों, $ { timesString }"
+        "हर ${ interval } साल, ${ timesString }",
+        "हर ${ interval } वर्षों, ${ timesString }"
       ],
       "Every ${ interval } year, ${ untilString }": [
-        "हर ${ interval } साल, $ { untilString }",
-        "हर ${ interval } वर्षों, $ { untilString }"
+        "हर ${ interval } साल, ${ untilString }",
+        "हर ${ interval } वर्षों, ${ untilString }"
       ],
       "Yearly": [
         "सालाना"
       ],
       "Yearly, ${ timesString }": [
-        "वार्षिक, $ { timesString }"
+        "वार्षिक, ${ timesString }"
       ],
       "Yearly, ${ untilString }": [
-        "वार्षिक, $ { untilString }"
+        "वार्षिक, ${ untilString }"
       ]
     }
   }
