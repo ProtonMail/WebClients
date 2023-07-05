@@ -47,7 +47,9 @@ const verifyNeighbors = async (
     Neighbors: (string | null)[],
     TreeHash: string,
     vrfHash: Uint8Array,
+    email: string,
     revision: number,
+    proofType: KTPROOF_TYPE,
     leafValue: Uint8Array = new Uint8Array(KT_LEN).fill(0),
     incompleteHashing: boolean = true
 ) => {
@@ -91,6 +93,9 @@ const verifyNeighbors = async (
             vrfHash: arrayToHexString(vrfHash),
             leafValue: arrayToHexString(leafValue),
             incompleteHashing,
+            email,
+            proofType,
+            revision,
         });
     }
 };
@@ -112,7 +117,7 @@ export const verifyProofOfAbscenceForRevision = async (
         });
     }
     const vrfHash = await verifyVRFProof(proof, email);
-    return verifyNeighbors(proof.Neighbors, TreeHash, vrfHash, Revision);
+    return verifyNeighbors(proof.Neighbors, TreeHash, vrfHash, email, Revision, proof.Type);
 };
 
 /**
@@ -181,7 +186,7 @@ export const verifyProofOfObsolescence = async (
     const vrfHash = await verifyVRFProof(proof, email);
     const leafValue = await computeLeafValue(binaryStringToArray(ObsolescenceToken), MinEpochID);
 
-    await verifyNeighbors(proof.Neighbors, TreeHash, vrfHash, Revision, leafValue, false);
+    await verifyNeighbors(proof.Neighbors, TreeHash, vrfHash, email, Revision, proof.Type, leafValue, false);
 };
 
 /**
@@ -210,7 +215,7 @@ export const verifyProofOfExistence = async (
     const vrfHash = await verifyVRFProof(proof, email);
     const leafValue = await computeLeafValue(binaryStringToArray(Data), MinEpochID);
 
-    await verifyNeighbors(proof.Neighbors, TreeHash, vrfHash, Revision, leafValue, false);
+    await verifyNeighbors(proof.Neighbors, TreeHash, vrfHash, email, Revision, proof.Type, leafValue, false);
 };
 
 export const verifyProofOfExistenceOrObsolescence = async (
