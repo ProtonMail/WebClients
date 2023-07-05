@@ -606,7 +606,7 @@
     },
     "Actions message": {
       "${ addContact } or ${ importContact }.": [
-        "${ addContact } eller { importContact }."
+        "${ addContact } eller ${ importContact }."
       ],
       "No results found.": [
         "Inga resultat hittades."
@@ -4280,7 +4280,7 @@
         "Dölj lösenord"
       ],
       "How would you describe your experience with the new ${ BRAND_NAME }?": [
-        "Hur skulle du beskriva din upplevelse med nya { BRAND_NAME }?"
+        "Hur skulle du beskriva din upplevelse med nya ${ BRAND_NAME }?"
       ],
       "I understand the risk": [
         "Jag förstår risken"
@@ -5254,7 +5254,7 @@
       ],
       "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
         "${ model.deleted.length } av ${ totalBeDeleted } kontakt har raderats.",
-        "${ model.deleted.length } av { totalBeDeleted } kontakter har raderats."
+        "${ model.deleted.length } av ${ totalBeDeleted }kontakter har raderats."
       ],
       "${ model.submitted.length } out of ${ totalBeMerged } contact successfully merged.": [
         "${ model.submitted.length } av ${ totalBeMerged } kontakt har slagits samman.",
