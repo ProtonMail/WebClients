@@ -136,7 +136,7 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, ...rest }: Props) => {
                             />
                         </Field>
                     </Row>
-                    {AmountDue && AmountDue > 0 && (
+                    {AmountDue && AmountDue > 0 ? (
                         <Payment
                             api={api}
                             type="invoice"
@@ -150,7 +150,7 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, ...rest }: Props) => {
                             onCard={setCard}
                             cardErrors={cardErrors}
                         />
-                    )}
+                    ) : null}
                 </>
             )}
         </FormModal>
