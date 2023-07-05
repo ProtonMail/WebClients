@@ -2,23 +2,32 @@ import { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-
-
 import { APPS, PLANS } from '@proton/shared/lib/constants';
-import { Included, RequiredCheckResponse, getCheckout, getDiscountText, getWhatsIncluded } from '@proton/shared/lib/helpers/checkout';
+import {
+    Included,
+    RequiredCheckResponse,
+    getCheckout,
+    getDiscountText,
+    getWhatsIncluded,
+} from '@proton/shared/lib/helpers/checkout';
 import { hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { Currency, Cycle, PlanIDs, PlansMap, VPNServersCountData } from '@proton/shared/lib/interfaces';
 
-
-
-import { Badge, Collapsible, CollapsibleContent, CollapsibleHeader, CollapsibleHeaderIconButton, Icon, Info } from '../../../../components';
+import {
+    Badge,
+    Collapsible,
+    CollapsibleContent,
+    CollapsibleHeader,
+    CollapsibleHeaderIconButton,
+    Icon,
+    Info,
+} from '../../../../components';
 import { useConfig } from '../../../../hooks';
 import Checkout from '../../Checkout';
 import StartDateCheckoutRow from '../../StartDateCheckoutRow';
 import { getTotalBillingText } from '../../helper';
 import CheckoutRow from './CheckoutRow';
-
 
 const PlanDescription = ({ list }: { list: Included[] }) => {
     return (
@@ -204,6 +213,7 @@ const SubscriptionCheckout = ({
                         amount={amountDue}
                         currency={currency}
                         className="text-bold m-0 text-2xl"
+                        data-testid="subscription-amout-due"
                     />
                 </>
             )}
