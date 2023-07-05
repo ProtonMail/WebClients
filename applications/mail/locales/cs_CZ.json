@@ -2983,6 +2983,12 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Kontakty, které nechcete sloučit ani zachovat, označte pro smazání. Ke smazání dojde po kliknutí na tlačítko pro sloučení"
+      ],
+      "You can read the message and click on links without being tracked with email tracker protection.": [
+        "Zprávu si můžete přečíst a kliknout na odkazy, aniž byste byli sledováni pomocí ochrany proti sledování e-mailů."
+      ],
+      "You can read the message and click on links without being tracked.": [
+        "Zprávu si můžete přečíst a klikat na odkazy, aniž byste byli sledováni."
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4748,6 +4754,12 @@
         "${ numberOfImageTrackers } sledovacích prvků zablokováno",
         "${ numberOfImageTrackers } sledovacích prvků zablokováno"
       ],
+      "${ numberOfUTMTrackers } link cleaned": [
+        "${ numberOfUTMTrackers } vyčištěný odkaz",
+        "${ numberOfUTMTrackers } vyčištěné odkazy",
+        "${ numberOfUTMTrackers } vyčištěných odkazů",
+        "${ numberOfUTMTrackers } vyčištěných odkazů"
+      ],
       "${ numContact } contact": [
         "${ numContact } kontakt",
         "${ numContact } kontakty",
@@ -5360,6 +5372,9 @@
       "Link type": [
         "Typ odkazu"
       ],
+      "Links cleaned:": [
+        "Vyčištěno odkazů:"
+      ],
       "Loading": [
         "Načítání"
       ],
@@ -5458,6 +5473,9 @@
       ],
       "No label selected": [
         "Není vybrán žádný štítek"
+      ],
+      "No links cleaned": [
+        "Nebyl vyčištěn žádný odkaz"
       ],
       "No more results found": [
         "Nebylo nalezeno více výsledků"
@@ -5870,6 +5888,12 @@
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "Příliš mnoho zpráv čeká na odeslání. Prosím počkejte až bude další zpráva odeslána k naplánování této zprávy."
       ],
+      "Trackers blocked:": [
+        "Zablokováno sledování:"
+      ],
+      "Turn off to only search by date, name, email address, or subject line. To disable search message content and delete downloaded messages, go to settings.": [
+        "Vypněte vyhledávání pouze podle data, jména nebo e-mailové adresy. Chcete-li zakázat vyhledávání obsahu zpráv a odstranit stažené zprávy, přejděte do Nastavení."
+      ],
       "Turn on to search the content of your messages": [
         "Zapněte pro možnost vyhledávat v obsahu vašich zpráv"
       ],
@@ -6008,6 +6032,9 @@
       "You can check the progress ${ importProgressLink }.": [
         "Zde můžete zkontrolovat průběh ${ importProgressLink }."
       ],
+      "You can click links in this email without being profiled and leaking your online activity with advertisers.": [
+        "V tomto e-mailu můžete klikat na odkazy, aniž by došlo k profilování a úniku informací o vaší online aktivitě k inzerentům."
+      ],
       "You can either update your search query or ${ button }": [
         "Můžete buď aktualizovat hledaný dotaz nebo ${ button }"
       ],
@@ -6016,6 +6043,9 @@
       ],
       "You can import one data type at a time.": [
         "Importovat můžete vždy jeden typ dat."
+      ],
+      "You can read this email without revealing your interactions, location, or device to advertisers.": [
+        "Tento e-mail si můžete přečíst, aniž byste inzerentům prozradili své interakce, polohu nebo zařízení."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Můžete zapnout upozornění abyste obdrželi oznámení v případě, že do této složky přijde nový e-mail."
@@ -6520,6 +6550,9 @@
       "City": [
         "Město"
       ],
+      "Cleaned": [
+        "Vyčištěno"
+      ],
       "Code is 6 digits without spaces": [
         "Kód má 6 číslic bez mezer"
       ],
@@ -6738,6 +6771,9 @@
       ],
       "Or": [
         "Nebo"
+      ],
+      "Original link": [
+        "Původní odkaz"
       ],
       "Participants": [
         "Účastníci"
@@ -7961,8 +7997,19 @@
       ]
     },
     "Sender verification details": {
+      "Sender verification": [
+        "Ověření odesílatele"
+      ],
       "Sender verification failed: ${ icon.senderVerificationDetails.description }": [
         "Ověření odesílatele selhalo: ${ icon.senderVerificationDetails.description }"
+      ],
+      "Sender verified: ${ icon.senderVerificationDetails.description }": [
+        "Odesílatel ověřen: ${ icon.senderVerificationDetails.description }"
+      ]
+    },
+    "Sender verification error": {
+      "Verification key is not in the list of trusted keys.": [
+        "Ověřovací klíč není v seznamu důvěryhodných klíčů."
       ]
     },
     "Sent email icon": {
