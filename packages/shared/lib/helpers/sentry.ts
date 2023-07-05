@@ -195,6 +195,7 @@ function main({
             'EBCallBackMessageReceived',
             // Avast extension error
             '_avast_submit',
+            'AbortError',
         ],
         denyUrls: [
             // Google Adsense
