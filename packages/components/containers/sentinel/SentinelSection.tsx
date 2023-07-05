@@ -33,11 +33,12 @@ const SentinelSection = () => {
         await call();
     };
 
+    const params = {
+        topic: 'account+security',
+        username: user.Email,
+    };
     // translator: full sentence is: You will receive priority support from specialists trained in account protection. For any account security concerns, please <contact us>.
-    const hereLink = (
-        <Href href={getSupportContactURL(`topic=account+security&username=${user.Email}`)}>{c('Link')
-            .t`contact us`}</Href>
-    );
+    const hereLink = <Href href={getSupportContactURL(params)}>{c('Link').t`contact us`}</Href>;
 
     return (
         <SettingsSectionWide>

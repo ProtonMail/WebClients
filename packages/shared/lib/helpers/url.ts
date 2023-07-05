@@ -276,8 +276,8 @@ export const getDownloadUrl = (path: string) => {
     return `https://proton.me/downloads${path}`;
 };
 
-export const getSupportContactURL = (params: string) => {
-    return getStaticURL(`/support/contact?${params}`);
+export const getSupportContactURL = (params: { [key: string]: string | string[] | undefined }) => {
+    return getStaticURL(`/support/contact${stringifySearchParams(params, '?')}`);
 };
 
 export const getPrivacyPolicyURL = (app?: APP_NAMES) => {
