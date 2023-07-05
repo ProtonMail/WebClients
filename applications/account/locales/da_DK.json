@@ -4605,6 +4605,9 @@
         "${ selectedFoldersCountLocalized } etiket valgt",
         "${ selectedFoldersCountLocalized } etiketter valgt"
       ],
+      "${ storage } storage": [
+        "${ storage } lagerplads"
+      ],
       "${ storageSize } storage": [
         "${ storageSize } lagerplads"
       ],
@@ -4732,6 +4735,9 @@
       "Align right": [
         "Højerstil"
       ],
+      "All ${ BRAND_NAME } apps and their premium features": [
+        "Alle ${ BRAND_NAME }-apps og deres premium-funktioner"
+      ],
       "All (${ totalFoldersCount } folder)": [
         "Alle (${ totalFoldersCount } mappe)",
         "Alle (${ totalFoldersCount } mapper)"
@@ -4793,6 +4799,9 @@
       ],
       "Are you sure you want to delete this calendar? All events in it will be deleted.": [
         "Er du sikker på, at du vil slette denne kalender? Alle begivenheder i den slettes også."
+      ],
+      "Are you sure you want to delete this calendar? You can add the holidays calendar back later.": [
+        "Er du sikker på at du vil slette denne kalender? Du kan tilføje helligdagskalenderen igen senere."
       ],
       "Are you sure you want to delete this domain?": [
         "Er du sikker på, at du vil slette dette domæne?"
@@ -5180,6 +5189,12 @@
       "If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly.": [
         "Har du indstillet både SPF og DKIM, giver DMARC dig mulighed for at specificere, hvordan andre e-mail-tjenester skal levere e-mail til dit domæne, hvis både SPF- og DKIM-tjeks er fejlet. Dette kan gøre det sværere for spammere at foregive at være dig, men kan også forårsage leveringsproblemer, hvis det ikke er korrekt udført."
       ],
+      "If you lose your password and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
+        "Hvis du mister din adgangskode og har brug for at nulstille din konto, ${ boldImperative } at du har en ${ boldAccountRecovery } indstillet."
+      ],
+      "If you lose your password and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
+        "Hvis du mister din adgangskode og har brug for at nulstille din konto, ${ boldImperative } at du har både en ${ boldAccountAndRecovery } indstillet. Ellers kan du måske ikke få adgang til dine e-mails, kontakter eller filer."
+      ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Hvis du fortsætter med nedgraderingen, vil du miste adgang til betalte funktioner i ${ MAIL_APP_NAME } og ${ VPN_APP_NAME }."
       ],
@@ -5298,6 +5313,9 @@
       ],
       "Large imports can take several days.": [
         "Store importer kan tage adskillige dage."
+      ],
+      "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
+        "Lær, hvordan du logger på ${ VPN_APP_NAME } med tredjeparts VPN-applikationer."
       ],
       "Learn more": [
         "Få mere at vide"
@@ -5891,6 +5909,9 @@
       "Unsupported file": [
         "Ikke-understøttet fil"
       ],
+      "Up to ${ FAMILY_MAX_USERS } users": [
+        "Op til ${ FAMILY_MAX_USERS } brugere"
+      ],
       "Update recovery file": [
         "Opdater gendannelsesfil"
       ],
@@ -6052,6 +6073,14 @@
         "Du kan beholde op til ${ MAX_CALENDARS_FREE } kalender. Fjern venligst delte kalenderlinks og enhver ${ BRAND_NAME } bruger, som du har delt dine kalendere med, før du annullerer dit abonnement.",
         "Du kan beholde op til ${ MAX_CALENDARS_FREE } kalendere. Fjern venligst delte kalenderlinks og enhver ${ BRAND_NAME } bruger, som du har delt dine kalendere med, før du annullerer dit abonnement."
       ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
+        "Du kan beholde op til ${ MAX_CALENDARS_FREE } kalender. Fjern venligst delte kalenderlinks før du annullerer dit ${ MAIL_SHORT_APP_NAME }-abonnement.",
+        "Du kan beholde op til ${ MAX_CALENDARS_FREE } kalendere. Fjern venligst delte kalenderlinks før du annullerer dit ${ MAIL_SHORT_APP_NAME }-abonnement."
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your subscription.": [
+        "Du kan beholde op til ${ MAX_CALENDARS_FREE } kalender. Fjern venligst delte kalenderlinks før du annullerer dit abonnement.",
+        "Du kan beholde op til ${ MAX_CALENDARS_FREE } kalendere. Fjern venligst delte kalenderlinks før du annullerer dit abonnement."
+      ],
       "You can now access and manage the account as an administrator.": [
         "Du kan nu få adgang til og administrere kontoen som administrator."
       ],
@@ -6076,6 +6105,9 @@
       ],
       "You cannot undo this action.": [
         "Du kan ikke fortryde denne handling."
+      ],
+      "You cannot use the OpenVPN / IKEv2 credentials to sign in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
+        "Du kan ikke bruge OpenVPN / IKEv2 legitimationsoplysninger til at logge på ${ VPN_APP_NAME }-applikationer eller på ${ VPN_APP_NAME }-kontrolpanelet. ${ learnMore }"
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Du har ikke angivet en metode til gendannelse, derfor er kontogendannelse umulig, hvis du glemmer din adgangskode. Fortsæt uden en metode til gendannelse?"
@@ -8105,6 +8137,10 @@
         "${ n } mappe og etikette",
         "${ n } mapper og etiketter"
       ],
+      "${ n } hide-my-email alias": [
+        "${ n } Hide-my-email-alias",
+        "${ n } Hide-my-email-aliasser"
+      ],
       "${ n } label": [
         "${ n } etiket",
         "${ n } etiketter"
@@ -8500,6 +8536,10 @@
       ],
       "Control access to your shared files by adding password protection and link expiration dates": [
         "Kontroller adgang til dine delte filer ved at tilføje adgangskodebeskyttelse og link-udløbsdatoer"
+      ],
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
+        "Opret op til ${ n } kalender eller tilføj kalendere fra venner, familie, kollegaer og organisationer",
+        "Opret op til ${ n } kalendere eller tilføj kalendere fra venner, familie, kollegaer og organisationer"
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Afværger trussel mod VPN-privatliv ved at sende din internettrafik gennem flere servere"
