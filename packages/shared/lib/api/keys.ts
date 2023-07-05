@@ -275,7 +275,7 @@ export const migrateAddressKeysRoute = (data: MigrateAddressKeysPayload) => ({
 
 export interface GetSignedKeyListsParams {
     AfterRevision?: number;
-    Email: string;
+    Identifier: string;
 }
 
 export const getSignedKeyListsRoute = (params: GetSignedKeyListsParams) => ({
@@ -286,7 +286,7 @@ export const getSignedKeyListsRoute = (params: GetSignedKeyListsParams) => ({
 
 export interface GetSignedKeyListParams {
     Revision: number;
-    Email: string;
+    Identifier: string;
 }
 
 export const getSignedKeyListRoute = (params: GetSignedKeyListParams) => ({
