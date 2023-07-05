@@ -32,7 +32,7 @@ interface OwnProps<E extends ElementType> {
     originalPlacement?: DropdownProps['originalPlacement'];
     dropdownClassName?: DropdownProps['className'];
     dropdownStyle?: DropdownProps['style'];
-    size?: DropdownProps['size'];
+    dropdownSize?: DropdownProps['size'];
 }
 
 export type Props<T extends ElementType> = DropdownButtonProps<T> & OwnProps<T>;
@@ -51,7 +51,7 @@ const SimpleDropdownBase = <E extends ElementType>(
         onClick,
         onToggle,
         as,
-        size,
+        dropdownSize,
         ...rest
     }: Props<E>,
     ref: ForwardedRef<Element>
@@ -92,7 +92,7 @@ const SimpleDropdownBase = <E extends ElementType>(
                 style={dropdownStyle}
                 disableDefaultArrowNavigation={disableDefaultArrowNavigation}
                 contentProps={contentProps}
-                size={size}
+                size={dropdownSize}
             >
                 {children}
             </Dropdown>
