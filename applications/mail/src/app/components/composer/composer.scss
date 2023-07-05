@@ -76,11 +76,19 @@
 		&.label {
 			max-inline-size: 8em;
 			inline-size: 15%;
+
+			[lang='fi'] & {
+				max-inline-size: 10em;
+				inline-size: 18%;
+			}
+
 			@include media('<=small') {
-				// temporary workaround
-				inline-size: 100%;
-				max-inline-size: 100%;
-				padding-block-start: 0.85em;
+				&#{&} {
+					// temporary workaround
+					inline-size: 100%;
+					max-inline-size: 100%;
+					padding-block-start: 0.85em;
+				}
 			}
 		}
 
