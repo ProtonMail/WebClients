@@ -42,6 +42,7 @@ const brandNameJSX = (
 export const InstallationSuccess: VFC = () => {
     const login = useNavigateToLogin({ replace: true });
     const [isPinned, setIsPinned] = useState<MaybeNull<boolean>>(null);
+    const [showSkipButton, setShowSkipButton] = useState(false);
 
     const { createNotification } = useNotifications();
 
@@ -64,6 +65,7 @@ export const InstallationSuccess: VFC = () => {
     }, [isPinned]);
 
     const handleNextStepClick = async () => {
+        setShowSkipButton(true);
         setIsPinned(null);
         setIsPinned(await nextStep());
     };
@@ -139,7 +141,7 @@ export const InstallationSuccess: VFC = () => {
                                             size="large"
                                             shape="solid"
                                             color="norm"
-                                            className="mt-5"
+                                            className="mt-5 mb-2"
                                             onClick={handleNextStepClick}
                                             aria-label={c('Action').t`Done`}
                                         >
@@ -148,6 +150,16 @@ export const InstallationSuccess: VFC = () => {
                                                 {c('Action').t`Done`}
                                             </span>
                                         </Button>
+                                        {showSkipButton && (
+                                            <Button
+                                                onClick={() => setIsPinned(true)}
+                                                shape="ghost"
+                                                aria-label={c('Action').t`Skip this step`}
+                                                color="norm"
+                                            >
+                                                {c('Action').t`Skip this step`}
+                                            </Button>
+                                        )}
                                     </div>
 
                                     <div className="flex">
