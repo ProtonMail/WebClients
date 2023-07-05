@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { ThemeColor } from '@proton/colors/types';
 
-import { AppLink, DropdownMenu, DropdownMenuButton, DropdownMenuLink, Icon } from '../../components';
+import { AppLink, DropdownMenu, DropdownMenuButton, DropdownMenuLink, DropdownSizeUnit, Icon } from '../../components';
 import SimpleDropdown from '../../components/dropdown/SimpleDropdown';
 import TopNavbarListItemButton, {
     TopNavbarListItemButtonProps,
@@ -61,6 +61,7 @@ const TopNavbarListItemSettingsDropdown = (props: Props) => {
             hasCaret={false}
             dropdownStyle={{ '--min-width': '18em' }}
             notificationDotColor={notificationDotColor}
+            size={{ maxHeight: DropdownSizeUnit.Viewport }}
         >
             <DropdownMenu>
                 <DropdownMenuLink as={AppLink} to={to} toApp={toApp} target="_self">
