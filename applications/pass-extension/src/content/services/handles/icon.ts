@@ -85,8 +85,6 @@ export const createFieldIconHandle = ({ field }: CreateIconOptions): FieldIconHa
         wrapper.parentElement!.removeChild(wrapper);
     });
 
-    icon.addEventListener('animationend', () => icon.classList.add(`${ICON_CLASSNAME}--ready`), { once: true });
-
     /* repositioning the icon can happen either :
      * · on window resize
      * · on form resize (handled in `FormHandles`)
