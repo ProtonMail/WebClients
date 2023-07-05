@@ -107,7 +107,6 @@ export enum FeatureCode {
     OrgTwoFactor = 'OrgTwoFactor',
     UnreadFavicon = 'UnreadFavicon',
     PassSignup = 'PassSignup',
-    OnboardingChecklist = 'OnboardingChecklist',
     VpnB2bPlans = 'VpnB2bPlans',
     AlmostAllMail = 'AlmostAllMail',
     AlmostAllMailSpotlight = 'AlmostAllMailSpotlight',
