@@ -150,7 +150,6 @@ const MailHeaderSettingsButton = () => {
                         )}
                     </DropdownMenuButton>
                 )}
-                {clearDataButton}
             </TopNavbarListItemSettingsDropdown>
             <MailShortcutsModal {...mailShortcutsProps} />
             <MailViewLayoutModal {...mailViewLayoutProps} />
