@@ -2,26 +2,40 @@ import { ReactElement, cloneElement, useEffect, useRef } from 'react';
 
 import Footer from '@proton/components/components/footer/Footer';
 import { useElementRect, useNotifications } from '@proton/components/hooks';
+import { modalTwoBackdropRootClassName } from '@proton/shared/lib/busy';
 import throttle from '@proton/utils/throttle';
 
 interface Props {
     buttons: ReactElement[];
+    offsetNotifications?: boolean;
 }
 
-const DrawerAppFooter = ({ buttons }: Props) => {
+const DrawerAppFooter = ({ buttons, offsetNotifications }: Props) => {
     const { setOffset } = useNotifications();
     const ref = useRef<HTMLDivElement>(null);
     const rect = useElementRect(ref);
     const hasFooter = buttons.length > 0;
 
     useEffect(() => {
-        if (!hasFooter || !rect || !ref.current) {
+        if (!offsetNotifications || !hasFooter || !rect || !ref.current) {
+            setOffset(undefined);
             return;
         }
         const handler = throttle(() => {
-            const element = document.elementFromPoint(rect.x, rect.y);
-            if (element === ref.current || ref.current?.contains(element)) {
-                setOffset({ y: rect.height });
+            const elements = document.elementsFromPoint(rect.x, rect.y);
+            // Ignore the modal backdrop element, assume it's from the modal animation closing out
+            const filteredElements = [...elements].filter(
+                (element) => !element.classList.contains(modalTwoBackdropRootClassName)
+            );
+            const element = filteredElements[0];
+            if (
+                // The drawer footer itself
+                element === ref.current ||
+                // Any element inside the drawer footer
+                ref.current?.contains(element)
+            ) {
+                const padding = 4;
+                setOffset({ y: rect.height + padding });
             } else {
                 setOffset(undefined);
             }
@@ -33,7 +47,7 @@ const DrawerAppFooter = ({ buttons }: Props) => {
         return () => {
             observer.disconnect();
         };
-    }, [hasFooter, rect?.height]);
+    }, [offsetNotifications, hasFooter, rect?.height]);
 
     if (!hasFooter) {
         return null;
