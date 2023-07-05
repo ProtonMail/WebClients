@@ -157,7 +157,7 @@ export const useCompose = ({ openedComposerIDs, openComposer, focusComposer, max
             const { existingDraft, fromUndo, returnFocusTo } = compose;
             const localID = getLocalID(existingDraft.localID);
 
-            const composer = Object.values(store.getState().composers.composers).find(
+            let composer = Object.values(store.getState().composers.composers).find(
                 ({ messageID }) => messageID === localID
             );
 
@@ -175,7 +175,15 @@ export const useCompose = ({ openedComposerIDs, openComposer, focusComposer, max
             dispatch(openDraft({ ID: localID, fromUndo }));
 
             openComposer(localID, returnFocusTo);
-            focusComposer(localID);
+
+            composer = Object.values(store.getState().composers.composers).find(
+                ({ messageID }) => messageID === localID
+            );
+
+            if (composer) {
+                focusComposer(composer.ID);
+            }
+
             return;
         }
 
