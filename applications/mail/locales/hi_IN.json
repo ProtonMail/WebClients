@@ -468,6 +468,9 @@
       "Hide messages": [
         "संदेश छुपाएं"
       ],
+      "hide-my-email aliases": [
+        "hide-my-email नकलीनाम"
+      ],
       "I have a question": [
         "हमारा एक सवाल है"
       ],
@@ -1822,6 +1825,29 @@
         "सफेद"
       ]
     },
+    "Commander action": {
+      "Go to Archive": [
+        "संग्रह पर जाएं"
+      ],
+      "Go to Drafts": [
+        "ड्राफ्ट पर जाएं"
+      ],
+      "Go to Inbox": [
+        "इनबॉक्स में जाएं"
+      ],
+      "Go to Starred": [
+        "तारांकित पर जाएं"
+      ],
+      "Go to Trash": [
+        "ट्रैश पर जाएं"
+      ],
+      "New message": [
+        "नया संदेश"
+      ],
+      "Search": [
+        "खोजें"
+      ]
+    },
     "Composer email icon": {
       "End-to-end encrypted": [
         "एंड-टू-एंड एन्क्रिप्टेड"
@@ -2770,14 +2796,14 @@
     },
     "Daily recurring event, frequency": {
       "${ count } time": [
-        "$ { count } समय",
-        "$ { count } बार"
+        "${ count } समय",
+        "${ count } बार"
       ],
       "Daily": [
         "रोज़"
       ],
       "Daily, ${ timesString }": [
-        "दैनिक, $ { timesString }"
+        "दैनिक, ${ timesString }"
       ],
       "Daily, ${ untilString }": [
         "दैनिक, ${ untilString }"
@@ -2787,15 +2813,15 @@
         "हर ${ interval } दिन"
       ],
       "Every ${ interval } day, ${ timesString }": [
-        "हर ${ interval } दिन, $ { timesString }",
-        "हर ${ interval } दिन, $ { timesString }"
+        "हर ${ interval } दिन, ${ timesString }",
+        "हर ${ interval } दिन, ${ timesString }"
       ],
       "Every ${ interval } day, ${ untilString }": [
-        "हर ${ interval } दिन, $ { untilString }",
-        "हर $ { interval } दिन, $ { untilString }"
+        "हर ${ interval } दिन, ${ untilString }",
+        "हर ${ interval } दिन, ${ untilString }"
       ],
       "until ${ dateString }": [
-        "$ { dateString } तक"
+        "${ dateString } तक"
       ]
     },
     "Date label": {
@@ -3331,7 +3357,7 @@
         "फ़ोल्डर का नाम बहुत लंबा है। कृपया कोई दूसरा नाम चुनें।"
       ],
       "The key properties for ${ emailAddress } could not be extracted": [
-        "$ { emailAddress } के लिए मुख्य गुण निकाले नहीं जा सके"
+        "${ emailAddress } के लिए मुख्य गुण निकाले नहीं जा सके"
       ],
       "The label name is invalid. Please choose a different name.": [
         "लेबल नाम अमान्य है. कृपया कोई दूसरा नाम चुनें |"
@@ -3409,8 +3435,8 @@
         "आप 10 से अधिक संपर्को के vCard नहीं भेज सकते"
       ],
       "You cannot open more than ${ maxActiveComposer } composer window at a time": [
-        "आप एक समय में $ { maxActiveComposer } संगीतकार विंडो से अधिक नहीं खोल सकते हैं",
-        "आप एक समय में $ { maxActiveComposer } संगीतकार विंडो से अधिक नहीं खोल सकते हैं"
+        "आप एक समय में ${ maxActiveComposer } संगीतकार विंडो से अधिक नहीं खोल सकते हैं",
+        "आप एक समय में ${ maxActiveComposer } संगीतकार विंडो से अधिक नहीं खोल सकते हैं"
       ],
       "You did not provide a file.": [
         "आपने कोई फ़ाइल प्रदान नहीं की है।"
@@ -3621,7 +3647,7 @@
     },
     "Error message": {
       "Error: ${ errorMessage }": [
-        "त्रुटि: { errorMessage }"
+        "त्रुटि: ${ errorMessage }"
       ],
       "No results found": [
         "कोई परिणाम नहीं मिला"
@@ -3918,7 +3944,7 @@
     },
     "Filter notification": {
       "${ Label.Name } updated": [
-        "{ Label.Name } अपडेट किया गया"
+        "${ Label.Name } अपडेट किया गया"
       ],
       "Filter ${ Filter.Name } updated": [
         "फ़िल्टर ${ Filter.Name } अपडेट किया गया"
@@ -3957,6 +3983,11 @@
     "Font Face Default": {
       "Default": [
         "डिफॉल्ट"
+      ]
+    },
+    "Font face option": {
+      "System default": [
+        "सिस्टम डिफॉल्ट"
       ]
     },
     "Font Size Default": {
@@ -4436,8 +4467,8 @@
         "${ contactsCount } संपर्क मिले"
       ],
       "${ count } unread message": [
-        "$ { count } अपठित संदेश",
-        "$ { count } अपठित संदेश"
+        "${ count } अपठित संदेश",
+        "${ count } अपठित संदेश"
       ],
       "${ embeddedAttachmentsCount } embedded image": [
         "${ embeddedAttachmentsCount } एम्बेडेड छवि",
@@ -4513,20 +4544,20 @@
         "${ selectedFoldersCountLocalized } लेबल चयनित"
       ],
       "${ total } conversation": [
-        "$ { total } बातचीत",
-        "$ { total } वार्तालाप"
+        "${ total } बातचीत",
+        "${ total } वार्तालाप"
       ],
       "${ total } message": [
-        "$ { total } संदेश",
-        "$ { total } संदेश"
+        "${ total } संदेश",
+        "${ total } संदेश"
       ],
       "${ unread } unread conversation": [
-        "$ { unread } अपठित वार्तालाप",
-        "$ { unread } अपठित वार्तालाप"
+        "${ unread } अपठित वार्तालाप",
+        "${ unread } अपठित वार्तालाप"
       ],
       "${ unread } unread message": [
-        "$ { unread } अपठित संदेश",
-        "$ { unread } अपठित संदेश"
+        "${ unread } अपठित संदेश",
+        "${ unread } अपठित संदेश"
       ],
       "${ unreadCount } scheduled message": [
         "${ unreadCount } शेड्यूल संदेश",
@@ -4629,16 +4660,16 @@
         "पक्का इन सारे संदेशों को कचरे में डालना चाहते हैं?"
       ],
       "Are you sure you want to permanently delete ${ count } conversation?": [
-        "क्या आप वाकई $ { count } वार्तालाप को स्थायी रूप से हटाना चाहते हैं?",
-        "क्या आप वाकई $ { count } वार्तालापों को स्थायी रूप से हटाना चाहते हैं?"
+        "क्या आप वाकई ${ count } वार्तालाप को स्थायी रूप से हटाना चाहते हैं?",
+        "क्या आप वाकई ${ count } वार्तालापों को स्थायी रूप से हटाना चाहते हैं?"
       ],
       "Are you sure you want to permanently delete ${ count } draft?": [
-        "क्या आप वाकई $ { count } ड्राफ्ट को स्थायी रूप से हटाना चाहते हैं?",
-        "क्या आप वाकई $ { count } ड्राफ्ट को स्थायी रूप से हटाना चाहते हैं?"
+        "क्या आप वाकई ${ count } ड्राफ्ट को स्थायी रूप से हटाना चाहते हैं?",
+        "क्या आप वाकई ${ count } ड्राफ्ट को स्थायी रूप से हटाना चाहते हैं?"
       ],
       "Are you sure you want to permanently delete ${ count } message?": [
-        "क्या आप वाकई $ { count } संदेश को स्थायी रूप से हटाना चाहते हैं?",
-        "क्या आप वाकई $ { count } संदेशों को स्थायी रूप से हटाना चाहते हैं?"
+        "क्या आप वाकई ${ count } संदेश को स्थायी रूप से हटाना चाहते हैं?",
+        "क्या आप वाकई ${ count } संदेशों को स्थायी रूप से हटाना चाहते हैं?"
       ],
       "Are you sure you want to permanently delete this conversation?": [
         "क्या आप वाकई इस वार्तालाप को स्थायी रूप से हटाना चाहते हैं?"
@@ -5167,7 +5198,7 @@
         "पुनर्प्राप्ति वाक्यांश डाउनलोड किया गया"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
-        "पृष्ठ को ताज़ा करने या $ { link } स्वचालित रूप से अधिकांश मुद्दों को हल करेगा।"
+        "पृष्ठ को ताज़ा करने या ${ link } स्वचालित रूप से अधिकांश मुद्दों को हल करेगा।"
       ],
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "संदेश को फ़िशिंग प्रयास के रूप में रिपोर्ट करने से हमें संदेश भेजा जाएगा, इसलिए हम इसका विश्लेषण कर सकते हैं और अपने फ़िल्टर सुधार सकते हैं। इसका अर्थ है कि हम संदेश की सामग्री को पूर्ण रूप से देख पाएंगे।"
@@ -5185,10 +5216,10 @@
         "विकल्पों के लिए राइट-क्लिक करें"
       ],
       "Saved at ${ dateString }": [
-        "$ { dateString } पर सहेजा गया"
+        "${ dateString } पर सहेजा गया"
       ],
       "Saved on ${ dateString }": [
-        "$ { dateString } पर सहेजा गया"
+        "${ dateString } पर सहेजा गया"
       ],
       "Saved yesterday": [
         "कल सहेजा गया"
@@ -5233,7 +5264,7 @@
         "सन्देश भेजे जा रहे हैं...."
       ],
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
-        "@ Pm.me पते से संदेश भेजना एक पेड फीचर है। आपका संदेश आपके डिफ़ॉल्ट पते $ { email } से भेजा जाएगा"
+        "@ Pm.me पते से संदेश भेजना एक पेड फीचर है। आपका संदेश आपके डिफ़ॉल्ट पते ${ email } से भेजा जाएगा"
       ],
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "<a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> सुरक्षित ईमेल से भेजा गया।"
@@ -5311,11 +5342,11 @@
         "प्रेषक ने एक पावती रसीद का अनुरोध किया है।"
       ],
       "The verification of ${ contactName } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddress } or edit the contact.": [
-        "$ { contactName } का सत्यापन विफल हो गया है: संपर्क सही तरीके से हस्ताक्षरित नहीं है।\nयह पासवर्ड रीसेट का परिणाम हो सकता है।\n$ { contactAddress } को संदेश भेजने के लिए या संपर्क संपादित करने के लिए आपको संपर्क पुनः साइन करना होगा।"
+        "${ contactName } का सत्यापन विफल हो गया है: संपर्क सही तरीके से हस्ताक्षरित नहीं है।\nयह पासवर्ड रीसेट का परिणाम हो सकता है।\n${ contactAddress } को संदेश भेजने के लिए या संपर्क संपादित करने के लिए आपको संपर्क पुनः साइन करना होगा।"
       ],
       "The verification of ${ contactNames } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddresses } or edit the contact.": [
-        "$ { contactNames } का सत्यापन विफल हो गया है: संपर्क सही तरीके से हस्ताक्षरित नहीं है।\nयह पासवर्ड रीसेट का परिणाम हो सकता है।\n$ { contactAddresses } को संदेश भेजने के लिए या संपर्क संपादित करने के लिए आपको संपर्क पुनः साइन करना होगा।",
-        "$ { contactNames } का सत्यापन विफल हो गया है: संपर्कों पर सही हस्ताक्षर नहीं किए गए हैं।\nयह पासवर्ड रीसेट का परिणाम हो सकता है।\n$ { contactAddresses } को संदेश भेजने या संपर्कों को संपादित करने के लिए आपको संपर्कों पर फिर से हस्ताक्षर करना होगा।"
+        "${ contactNames } का सत्यापन विफल हो गया है: संपर्क सही तरीके से हस्ताक्षरित नहीं है।\nयह पासवर्ड रीसेट का परिणाम हो सकता है।\n${ contactAddresses } को संदेश भेजने के लिए या संपर्क संपादित करने के लिए आपको संपर्क पुनः साइन करना होगा।",
+        "${ contactNames } का सत्यापन विफल हो गया है: संपर्कों पर सही हस्ताक्षर नहीं किए गए हैं।\nयह पासवर्ड रीसेट का परिणाम हो सकता है।\n${ contactAddresses } को संदेश भेजने या संपर्कों को संपादित करने के लिए आपको संपर्कों पर फिर से हस्ताक्षर करना होगा।"
       ],
       "Themes can give your inbox a new look.": [
         "थीम्स आपके इनबॉक्स को एक नया रूप दे सकते हैं।"
@@ -5404,7 +5435,7 @@
         "यह संदेश कल ${ formattedTime } को भेजा जाएगा"
       ],
       "This message will expire ${ formattedDate }": [
-        "यह संदेश $ { formattedDate } समाप्त हो जाएगा"
+        "यह संदेश ${ formattedDate } समाप्त हो जाएगा"
       ],
       "This message will expire on ${ longDateMEssage }": [
         "ये संदेश ${ longDateMEssage } को खत्म होगा"
@@ -5431,7 +5462,7 @@
         "अपने संपर्कों को फिर से हस्ताक्षर करने के लिए, हमें आपके खाते में उपलब्ध एन्क्रिप्शन कुंजी की सूची के विरुद्ध प्रत्येक संपर्क की जांच करने की आवश्यकता है। यदि कोई मिलान नहीं मिलता है, तो आपके संपर्क को प्राथमिक एन्क्रिप्शन कुंजी के साथ फिर से हस्ताक्षरित किया जाएगा।"
       ],
       "To unsubscribe from this mailing list, an email will be sent from ${ boldFrom } with following details as defined by the sender of the newsletter:": [
-        "इस मेलिंग सूची से सदस्यता समाप्त करने के लिए, समाचार पत्र के प्रेषक द्वारा परिभाषित विवरण के साथ एक ईमेल $ { boldFrom } से भेजा जाएगा:"
+        "इस मेलिंग सूची से सदस्यता समाप्त करने के लिए, समाचार पत्र के प्रेषक द्वारा परिभाषित विवरण के साथ एक ईमेल ${ boldFrom } से भेजा जाएगा:"
       ],
       "To unsubscribe from this mailing list, you will be taken to the following URL where instructions will be provided by the sender of the newsletter:": [
         "इस मेलिंग सूची से सदस्यता समाप्त करने के लिए, आपको निम्नलिखित URL पर ले जाया जाएगा जहां समाचार पत्र भेजने वाले द्वारा निर्देश दिए जाएंगे:"
@@ -5515,7 +5546,7 @@
         "सरल सम्प्रवेश का उपयोग करना सरल है"
       ],
       "Version ${ appVersion }": [
-        "संस्करण $ { appVersion }"
+        "संस्करण ${ appVersion }"
       ],
       "We apologize. This might have been a mistake from our side. Can you please confirm that you want to mark this email as a legitimate one?": [
         "हम माफी चाहते हैं। यह हमारी तरफ से हुई गलती हो सकती है। क्या आप इस बात की पुष्टि कर सकते हैं कि आप इस ईमेल को एक वैध के रूप में चिह्नित करना चाहते हैं?"
@@ -5545,7 +5576,7 @@
         "आप कब अपने संदेश को अपनेआप खत्म करना चाहते हैं?"
       ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
-        "जब आपने $ { senderName } के लिए विश्वसनीय कुंजियाँ सक्षम कीं, तो सार्वजनिक कुंजी संपर्क विवरणों में जोड़ दी गई।"
+        "जब आपने ${ senderName } के लिए विश्वसनीय कुंजियाँ सक्षम कीं, तो सार्वजनिक कुंजी संपर्क विवरणों में जोड़ दी गई।"
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "जब आप टू-फैक्टर ऑथेंटिकेशन सेट करते हैं, तो हम रिकवरी कोड प्रदान करते हैं जिनका उपयोग आप अपने ऑथेंटिकेटर ऐप का एक्सेस खो देने पर साइन इन करने के लिए कर सकते हैं।"
@@ -5575,7 +5606,7 @@
         "आप प्रगति की जांच कर सकते हैं ${ importProgressLink }।"
       ],
       "You can either update your search query or ${ button }": [
-        "आप अपनी खोज क्वेरी या $ { button } को अपडेट कर सकते हैं"
+        "आप अपनी खोज क्वेरी या ${ button } को अपडेट कर सकते हैं"
       ],
       "You can either update your search query or clear it": [
         "आप अपनी खोज क्वेरी को अपडेट कर सकते हैं या उसे साफ़ कर सकते हैं"
@@ -5596,10 +5627,10 @@
         "आपके पास यहां कोई संदेश नहीं है"
       ],
       "You have ${ totalLabel } in your inbox.": [
-        "आपके इनबॉक्स में $ { totalLabel } है।"
+        "आपके इनबॉक्स में ${ totalLabel } है।"
       ],
       "You have ${ unreadsLabel } in your inbox.": [
-        "आपके इनबॉक्स में $ { unreadsLabel } है।"
+        "आपके इनबॉक्स में ${ unreadsLabel } है।"
       ],
       "You have **${ count } conversation** stored in this folder": [
         "आपके पास **${ count } वार्तालाप** इस फ़ोल्डर में संग्रहीत है",
@@ -5627,10 +5658,10 @@
         "आप अधिकतम 5 उत्तरों तक पहुँच चुके हैं।"
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
-        "आप अपनी संग्रहण क्षमता का $ { spaceDisplayed }% तक पहुँच गए। $ { freeUpMessage } $ { upgradeLink }"
+        "आप अपनी संग्रहण क्षमता का ${ spaceDisplayed }% तक पहुँच गए। ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
-        "आप अपनी भंडारण क्षमता के 100% तक पहुंच गए। आप नए ईमेल भेज या प्राप्त नहीं कर सकते। $ { freeUpMessage } ${ upgradeLink }"
+        "आप अपनी भंडारण क्षमता के 100% तक पहुंच गए। आप नए ईमेल भेज या प्राप्त नहीं कर सकते। ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You selected **${ count } conversation** from this folder": [
         "आपने इस फ़ोल्डर से **${ count } वार्तालाप** का चयन किया",
@@ -5667,7 +5698,7 @@
         "आपका ${ BRAND_NAME } खाता वर्तमान में निलंबित है। ईमेल अब आपके इनबॉक्स में वितरित नहीं किए जा रहे हैं। आपके ड्राइव साझाकरण लिंक अब सक्रिय नहीं हैं, और आप नई फ़ाइलें अपलोड नहीं कर सकते। अपने खाते का उपयोग जारी रखने के लिए, कृपया किसी अतिदेय चालान का भुगतान करें।"
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
-        "आपके खाते में कम से कम एक अतिदेय चालान है। जल्द ही आपकी पहुँच प्रतिबंधित हो जाएगी। $ { payInvoiceLink }"
+        "आपके खाते में कम से कम एक अतिदेय चालान है। जल्द ही आपकी पहुँच प्रतिबंधित हो जाएगी। ${ payInvoiceLink }"
       ],
       "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
         "आपके खाते में कम से कम एक अतिदेय चालान है। आपका खाता प्रतिबंधित है, और भुगतान तक सभी सेवाएं अब अवरुद्ध हैं। ${ payInvoiceLink }"
@@ -6344,7 +6375,7 @@
         "प्रणाली की जानकारी"
       ],
       "The email was sent ${ attachment }": [
-        "ईमेल भेजा गया था { attachment }"
+        "ईमेल भेजा गया था ${ attachment }"
       ],
       "the email was sent ${ attachment }": [
         "ईमेल भेजा गया था ${ attachment }"
@@ -6745,7 +6776,7 @@
     },
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
-        "$ { appName } का एक नया संस्करण उपलब्ध है। $ { reloadButton }।"
+        "${ appName } का एक नया संस्करण उपलब्ध है। ${ reloadButton }।"
       ]
     },
     "Message image": {
@@ -6958,6 +6989,9 @@
       ],
       "Custom email domains": [
         "कस्टम ईमेल डोमेन"
+      ],
+      "Hide-my-email aliases": [
+        "Hide-my-email नकलीनाम"
       ],
       "Schedule messages at any time": [
         "संदेश कभी भी शेड्यूल करें"
@@ -7223,6 +7257,9 @@
       ],
       "Text": [
         "लिखा हुआ"
+      ],
+      "Type a command…": [
+        "एक कमांड टाइप करें…"
       ],
       "Type text or keyword": [
         "टेक्स्ट या कीवर्ड टाइप करें"
@@ -7844,7 +7881,7 @@
         "आयात रद्द कर रहे"
       ],
       "Code sent to ${ methodTo }": [
-        "$ { methodTo } को कोड भेजा गया"
+        "${ methodTo } को कोड भेजा गया"
       ],
       "Contact deleted": [
         "संपर्क हटाया गया",
@@ -7997,7 +8034,7 @@
     },
     "Success notification": {
       "${ label.Name } removed": [
-        "{ label.Name } हटाया गया"
+        "${ label.Name } हटाया गया"
       ]
     },
     "Success notification when user send feedback": {
@@ -8104,8 +8141,11 @@
         "${ MAIL_APP_NAME } कीबोर्ड शोर्टकट"
       ],
       "${ unreads } unread message": [
-        "$ { unreads } अपठित संदेश",
-        "$ { unreads } अपठित संदेश"
+        "${ unreads } अपठित संदेश",
+        "${ unreads } अपठित संदेश"
+      ],
+      "(active)": [
+        "(सक्रिय)"
       ],
       "Account suspended": [
         "खाता निलंबित"
@@ -8825,7 +8865,7 @@
     "Weekly recurring event, frequency": {
       "Every ${ interval } week on ${ multipleDaysString }": [
         "${ multipleDaysString } पर हर ${ interval } सप्ताह",
-        "$ { multipleDaysString } पर हर ${ interval } सप्ताह"
+        "${ multipleDaysString } पर हर ${ interval } सप्ताह"
       ],
       "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
         "प्रत्येक ${ interval } सप्ताह ${ multipleDaysString }, ${ timesString } पर",
@@ -8836,16 +8876,16 @@
         "प्रत्येक ${ interval } सप्ताह ${ multipleDaysString }, ${ untilString } पर"
       ],
       "Every ${ interval } week on all days": [
-        "सभी दिनों पर हर $ { interval } सप्ताह",
-        "सभी दिनों पर हर $ { interval } सप्ताह"
+        "सभी दिनों पर हर ${ interval } सप्ताह",
+        "सभी दिनों पर हर ${ interval } सप्ताह"
       ],
       "Every ${ interval } week on all days, ${ timesString }": [
         "प्रतिसप्ताह, ${ timesString }",
         "प्रति ${ interval } सप्ताह, प्रतिदिन, ${ timesString }"
       ],
       "Every ${ interval } week on all days, ${ untilString }": [
-        "सभी दिनों पर हर $ { interval } सप्ताह, $ { untilString }",
-        "सभी दिनों पर हर ${ interval } सप्ताह, $ { untilString }"
+        "सभी दिनों पर हर ${ interval } सप्ताह, ${ untilString }",
+        "सभी दिनों पर हर ${ interval } सप्ताह, ${ untilString }"
       ],
       "Every ${ interval } week on Friday": [
         "प्रत्येक ${ interval } सप्ताह शुक्रवार को",
@@ -8868,8 +8908,8 @@
         "प्रत्येक ${ interval } सप्ताह सोमवार को, ${ timesString }"
       ],
       "Every ${ interval } week on Monday, ${ untilString }": [
-        "प्रत्येक $ { interval } सप्ताह सोमवार को, $ { untilString }",
-        "प्रत्येक $ { interval } सप्ताह सोमवार को, $ { untilString }"
+        "प्रत्येक ${ interval } सप्ताह सोमवार को, ${ untilString }",
+        "प्रत्येक ${ interval } सप्ताह सोमवार को, ${ untilString }"
       ],
       "Every ${ interval } week on Saturday": [
         "शनिवार को प्रत्येक ${ interval } सप्ताह",
@@ -8885,27 +8925,27 @@
       ],
       "Every ${ interval } week on Sunday": [
         "प्रत्येक ${ interval } सप्ताह रविवार को",
-        "रविवार को हर $ { interval } सप्ताह"
+        "रविवार को हर ${ interval } सप्ताह"
       ],
       "Every ${ interval } week on Sunday, ${ timesString }": [
         "प्रत्येक ${ interval } सप्ताह रविवार को, ${ timesString }",
         "प्रत्येक ${ interval } सप्ताह रविवार को, ${ timesString }"
       ],
       "Every ${ interval } week on Sunday, ${ untilString }": [
-        "प्रत्येक $ { interval } सप्ताह रविवार को, $ { untilString }",
-        "प्रत्येक $ { interval } सप्ताह रविवार को, $ { untilString }"
+        "प्रत्येक ${ interval } सप्ताह रविवार को, ${ untilString }",
+        "प्रत्येक ${ interval } सप्ताह रविवार को, ${ untilString }"
       ],
       "Every ${ interval } week on Thursday": [
         "प्रत्येक ${ interval } सप्ताह गुरुवार को",
         "प्रत्येक ${ interval } सप्ताह गुरुवार को"
       ],
       "Every ${ interval } week on Thursday, ${ timesString }": [
-        "प्रत्येक $ { interval } सप्ताह गुरुवार को, $ { timesString }",
+        "प्रत्येक ${ interval } सप्ताह गुरुवार को, ${ timesString }",
         "प्रत्येक ${ interval } सप्ताह गुरुवार को, ${ timesString }"
       ],
       "Every ${ interval } week on Thursday, ${ untilString }": [
-        "प्रत्येक $ { interval } सप्ताह गुरुवार को, $ { untilString }",
-        "प्रत्येक $ { interval } सप्ताह गुरुवार को, $ { untilString }"
+        "प्रत्येक ${ interval } सप्ताह गुरुवार को, ${ untilString }",
+        "प्रत्येक ${ interval } सप्ताह गुरुवार को, ${ untilString }"
       ],
       "Every ${ interval } week on Tuesday": [
         "प्रत्येक ${ interval }} सप्ताह के मंगलवार को",
@@ -8916,8 +8956,8 @@
         "प्रत्येक ${ interval } सप्ताह मंगलवार को, ${ timesString }"
       ],
       "Every ${ interval } week on Tuesday, ${ untilString }": [
-        "प्रत्येक $ { interval } सप्ताह मंगलवार को, $ { untilString }",
-        "प्रत्येक $ { interval } सप्ताह मंगलवार को, $ { untilString }"
+        "प्रत्येक ${ interval } सप्ताह मंगलवार को, ${ untilString }",
+        "प्रत्येक ${ interval } सप्ताह मंगलवार को, ${ untilString }"
       ],
       "Every ${ interval } week on Wednesday": [
         "बुधवार को हर ${ interval } सप्ताह",
@@ -8928,8 +8968,8 @@
         "बुधवार को हर ${ interval } सप्ताह, ${ timesString }"
       ],
       "Every ${ interval } week on Wednesday, ${ untilString }": [
-        "बुधवार को हर $ { interval } सप्ताह, $ { untilString }",
-        "बुधवार को हर $ { interval } सप्ताह, $ { untilString }"
+        "बुधवार को हर ${ interval } सप्ताह, ${ untilString }",
+        "बुधवार को हर ${ interval } सप्ताह, ${ untilString }"
       ],
       "Weekly on ${ multipleDaysString }": [
         "प्रतिसप्ताह ${ multipleDaysString } को"
@@ -8944,10 +8984,10 @@
         "साप्ताहिक सभी दिनों पर"
       ],
       "Weekly on all days, ${ timesString }": [
-        "साप्ताहिक रूप से सभी दिन, $ { timesString }"
+        "साप्ताहिक रूप से सभी दिन, ${ timesString }"
       ],
       "Weekly on all days, ${ untilString }": [
-        "साप्ताहिक रूप से सभी दिन, $ { untilString }"
+        "साप्ताहिक रूप से सभी दिन, ${ untilString }"
       ],
       "Weekly on Friday": [
         "शुक्रवार को साप्ताहिक"
@@ -8956,7 +8996,7 @@
         "शुक्रवार को साप्ताहिक, ${ timesString }"
       ],
       "Weekly on Friday, ${ untilString }": [
-        "शुक्रवार को साप्ताहिक, $ { untilString }"
+        "शुक्रवार को साप्ताहिक, ${ untilString }"
       ],
       "Weekly on Monday": [
         "साप्ताहिक सोमवार को"
@@ -8965,7 +9005,7 @@
         "सोमवार को साप्ताहिक, ${ timesString }"
       ],
       "Weekly on Monday, ${ untilString }": [
-        "सोमवार को साप्ताहिक, $ { untilString }"
+        "सोमवार को साप्ताहिक, ${ untilString }"
       ],
       "Weekly on Saturday": [
         "शनिवार को साप्ताहिक"
@@ -8983,16 +9023,16 @@
         "रविवार को साप्ताहिक, ${ timesString }"
       ],
       "Weekly on Sunday, ${ untilString }": [
-        "रविवार को साप्ताहिक, $ { untilString }"
+        "रविवार को साप्ताहिक, ${ untilString }"
       ],
       "Weekly on Thursday": [
         "गुरुवार को साप्ताहिक"
       ],
       "Weekly on Thursday, ${ timesString }": [
-        "गुरुवार को साप्ताहिक, $ { timesString }"
+        "गुरुवार को साप्ताहिक, ${ timesString }"
       ],
       "Weekly on Thursday, ${ untilString }": [
-        "गुरुवार को साप्ताहिक, $ { untilString }"
+        "गुरुवार को साप्ताहिक, ${ untilString }"
       ],
       "Weekly on Tuesday": [
         "साप्ताहिक मंगलवार को"
@@ -9001,7 +9041,7 @@
         "साप्ताहिक रूप से मंगलवार को, ${ timesString }"
       ],
       "Weekly on Tuesday, ${ untilString }": [
-        "साप्ताहिक रूप से मंगलवार को, $ { untilString }"
+        "साप्ताहिक रूप से मंगलवार को, ${ untilString }"
       ],
       "Weekly on Wednesday": [
         "बुधवार को साप्ताहिक"
@@ -9010,7 +9050,7 @@
         "बुधवार को साप्ताहिक, ${ timesString }"
       ],
       "Weekly on Wednesday, ${ untilString }": [
-        "बुधवार को साप्ताहिक, $ { untilString }"
+        "बुधवार को साप्ताहिक, ${ untilString }"
       ]
     },
     "Weekly recurring event, repeats on (multiple days), frequency": {
@@ -9038,25 +9078,25 @@
     },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
-        "हर $ { interval } साल",
-        "हर $ { interval } साल"
+        "हर ${ interval } साल",
+        "हर ${ interval } साल"
       ],
       "Every ${ interval } year, ${ timesString }": [
-        "हर ${ interval } साल, $ { timesString }",
-        "हर ${ interval } वर्षों, $ { timesString }"
+        "हर ${ interval } साल, ${ timesString }",
+        "हर ${ interval } वर्षों, ${ timesString }"
       ],
       "Every ${ interval } year, ${ untilString }": [
-        "हर ${ interval } साल, $ { untilString }",
-        "हर ${ interval } वर्षों, $ { untilString }"
+        "हर ${ interval } साल, ${ untilString }",
+        "हर ${ interval } वर्षों, ${ untilString }"
       ],
       "Yearly": [
         "सालाना"
       ],
       "Yearly, ${ timesString }": [
-        "वार्षिक, $ { timesString }"
+        "वार्षिक, ${ timesString }"
       ],
       "Yearly, ${ untilString }": [
-        "वार्षिक, $ { untilString }"
+        "वार्षिक, ${ untilString }"
       ]
     }
   }
