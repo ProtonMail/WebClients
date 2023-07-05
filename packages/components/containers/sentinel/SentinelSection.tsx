@@ -34,7 +34,7 @@ const SentinelSection = () => {
     };
 
     const params = {
-        topic: 'account+security',
+        topic: 'account security',
         username: user.Email,
     };
     // translator: full sentence is: You will receive priority support from specialists trained in account protection. For any account security concerns, please <contact us>.
