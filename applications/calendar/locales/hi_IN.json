@@ -1927,14 +1927,14 @@
     },
     "Daily recurring event, frequency": {
       "${ count } time": [
-        "$ { count } समय",
-        "$ { count } बार"
+        "${ count } समय",
+        "${ count } बार"
       ],
       "Daily": [
         "रोज़"
       ],
       "Daily, ${ timesString }": [
-        "दैनिक, $ { timesString }"
+        "दैनिक, ${ timesString }"
       ],
       "Daily, ${ untilString }": [
         "दैनिक, ${ untilString }"
@@ -1944,15 +1944,15 @@
         "हर ${ interval } दिन"
       ],
       "Every ${ interval } day, ${ timesString }": [
-        "हर ${ interval } दिन, $ { timesString }",
-        "हर ${ interval } दिन, $ { timesString }"
+        "हर ${ interval } दिन, ${ timesString }",
+        "हर ${ interval } दिन, ${ timesString }"
       ],
       "Every ${ interval } day, ${ untilString }": [
-        "हर ${ interval } दिन, $ { untilString }",
-        "हर $ { interval } दिन, $ { untilString }"
+        "हर ${ interval } दिन, ${ untilString }",
+        "हर ${ interval } दिन, ${ untilString }"
       ],
       "until ${ dateString }": [
-        "$ { dateString } तक"
+        "${ dateString } तक"
       ]
     },
     "Default display name vcard": {
@@ -2238,7 +2238,7 @@
         "गड़बड़"
       ],
       "Error: ${ errorMessage }": [
-        "त्रुटि: { errorMessage }"
+        "त्रुटि: ${ errorMessage }"
       ],
       "Failed to get original occurrence in series": [
         "सीरीज़ से असली घटना लाने में असफल"
@@ -2655,7 +2655,7 @@
     },
     "Error message": {
       "Error: ${ errorMessage }": [
-        "त्रुटि: { errorMessage }"
+        "त्रुटि: ${ errorMessage }"
       ],
       "Invalid URL": [
         "अमान्य URL"
@@ -2914,7 +2914,12 @@
     },
     "Filter notification": {
       "${ Label.Name } updated": [
-        "{ Label.Name } अपडेट किया गया"
+        "${ Label.Name } अपडेट किया गया"
+      ]
+    },
+    "Font face option": {
+      "System default": [
+        "सिस्टम डिफॉल्ट"
       ]
     },
     "Group": {
@@ -3650,7 +3655,7 @@
         "पुनर्प्राप्ति जानकारी इस उपकरण पर तब तक बनी रहेगी जब तक कि आप इसे हटाना नहीं चुनते."
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
-        "पृष्ठ को ताज़ा करने या $ { link } स्वचालित रूप से अधिकांश मुद्दों को हल करेगा।"
+        "पृष्ठ को ताज़ा करने या ${ link } स्वचालित रूप से अधिकांश मुद्दों को हल करेगा।"
       ],
       "Removed participants will be notified.": [
         "हटाए गए प्रतिभागियों को सूचित किया जाएगा।"
@@ -3833,10 +3838,10 @@
         "आपने पहले इस न्योते को ठुकरा दिया था। मालिक से नए न्योते के बारे में पूछे"
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
-        "आप अपनी संग्रहण क्षमता का $ { spaceDisplayed }% तक पहुँच गए। $ { freeUpMessage } $ { upgradeLink }"
+        "आप अपनी संग्रहण क्षमता का ${ spaceDisplayed }% तक पहुँच गए। ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
-        "आप अपनी भंडारण क्षमता के 100% तक पहुंच गए। आप नए ईमेल भेज या प्राप्त नहीं कर सकते। $ { freeUpMessage } ${ upgradeLink }"
+        "आप अपनी भंडारण क्षमता के 100% तक पहुंच गए। आप नए ईमेल भेज या प्राप्त नहीं कर सकते। ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You will lose all unsaved changes.": [
         "आप सभी सहेजे गए परिवर्तनों को खो देंगे।"
@@ -3872,7 +3877,7 @@
         "आपका ${ BRAND_NAME } खाता वर्तमान में निलंबित है। ईमेल अब आपके इनबॉक्स में वितरित नहीं किए जा रहे हैं। आपके ड्राइव साझाकरण लिंक अब सक्रिय नहीं हैं, और आप नई फ़ाइलें अपलोड नहीं कर सकते। अपने खाते का उपयोग जारी रखने के लिए, कृपया किसी अतिदेय चालान का भुगतान करें।"
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
-        "आपके खाते में कम से कम एक अतिदेय चालान है। जल्द ही आपकी पहुँच प्रतिबंधित हो जाएगी। $ { payInvoiceLink }"
+        "आपके खाते में कम से कम एक अतिदेय चालान है। जल्द ही आपकी पहुँच प्रतिबंधित हो जाएगी। ${ payInvoiceLink }"
       ],
       "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
         "आपके खाते में कम से कम एक अतिदेय चालान है। आपका खाता प्रतिबंधित है, और भुगतान तक सभी सेवाएं अब अवरुद्ध हैं। ${ payInvoiceLink }"
@@ -4461,7 +4466,7 @@
     },
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
-        "$ { appName } का एक नया संस्करण उपलब्ध है। $ { reloadButton }।"
+        "${ appName } का एक नया संस्करण उपलब्ध है। ${ reloadButton }।"
       ]
     },
     "MIME type": {
@@ -4696,6 +4701,9 @@
       ],
       "Custom email domains": [
         "कस्टम ईमेल डोमेन"
+      ],
+      "Hide-my-email aliases": [
+        "Hide-my-email नकलीनाम"
       ],
       "Schedule messages at any time": [
         "संदेश कभी भी शेड्यूल करें"
@@ -5523,7 +5531,7 @@
         "रद्द किया भेजा गया और प्रतिभागी सारे इवेंट से हटाए गए"
       ],
       "Code sent to ${ methodTo }": [
-        "$ { methodTo } को कोड भेजा गया"
+        "${ methodTo } को कोड भेजा गया"
       ],
       "Contact deleted": [
         "संपर्क हटाया गया",
@@ -5711,6 +5719,9 @@
       "${ emailsCount } email address": [
         "${ emailsCount } ईमेल पता",
         "${ emailsCount } ईमेल पते"
+      ],
+      "(active)": [
+        "(सक्रिय)"
       ],
       "Account suspended": [
         "खाता निलंबित"
@@ -6270,7 +6281,7 @@
     "Weekly recurring event, frequency": {
       "Every ${ interval } week on ${ multipleDaysString }": [
         "${ multipleDaysString } पर हर ${ interval } सप्ताह",
-        "$ { multipleDaysString } पर हर ${ interval } सप्ताह"
+        "${ multipleDaysString } पर हर ${ interval } सप्ताह"
       ],
       "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
         "प्रत्येक ${ interval } सप्ताह ${ multipleDaysString }, ${ timesString } पर",
@@ -6281,16 +6292,16 @@
         "प्रत्येक ${ interval } सप्ताह ${ multipleDaysString }, ${ untilString } पर"
       ],
       "Every ${ interval } week on all days": [
-        "सभी दिनों पर हर $ { interval } सप्ताह",
-        "सभी दिनों पर हर $ { interval } सप्ताह"
+        "सभी दिनों पर हर ${ interval } सप्ताह",
+        "सभी दिनों पर हर ${ interval } सप्ताह"
       ],
       "Every ${ interval } week on all days, ${ timesString }": [
         "प्रतिसप्ताह, ${ timesString }",
         "प्रति ${ interval } सप्ताह, प्रतिदिन, ${ timesString }"
       ],
       "Every ${ interval } week on all days, ${ untilString }": [
-        "सभी दिनों पर हर $ { interval } सप्ताह, $ { untilString }",
-        "सभी दिनों पर हर ${ interval } सप्ताह, $ { untilString }"
+        "सभी दिनों पर हर ${ interval } सप्ताह, ${ untilString }",
+        "सभी दिनों पर हर ${ interval } सप्ताह, ${ untilString }"
       ],
       "Every ${ interval } week on Friday": [
         "प्रत्येक ${ interval } सप्ताह शुक्रवार को",
@@ -6313,8 +6324,8 @@
         "प्रत्येक ${ interval } सप्ताह सोमवार को, ${ timesString }"
       ],
       "Every ${ interval } week on Monday, ${ untilString }": [
-        "प्रत्येक $ { interval } सप्ताह सोमवार को, $ { untilString }",
-        "प्रत्येक $ { interval } सप्ताह सोमवार को, $ { untilString }"
+        "प्रत्येक ${ interval } सप्ताह सोमवार को, ${ untilString }",
+        "प्रत्येक ${ interval } सप्ताह सोमवार को, ${ untilString }"
       ],
       "Every ${ interval } week on Saturday": [
         "शनिवार को प्रत्येक ${ interval } सप्ताह",
@@ -6330,27 +6341,27 @@
       ],
       "Every ${ interval } week on Sunday": [
         "प्रत्येक ${ interval } सप्ताह रविवार को",
-        "रविवार को हर $ { interval } सप्ताह"
+        "रविवार को हर ${ interval } सप्ताह"
       ],
       "Every ${ interval } week on Sunday, ${ timesString }": [
         "प्रत्येक ${ interval } सप्ताह रविवार को, ${ timesString }",
         "प्रत्येक ${ interval } सप्ताह रविवार को, ${ timesString }"
       ],
       "Every ${ interval } week on Sunday, ${ untilString }": [
-        "प्रत्येक $ { interval } सप्ताह रविवार को, $ { untilString }",
-        "प्रत्येक $ { interval } सप्ताह रविवार को, $ { untilString }"
+        "प्रत्येक ${ interval } सप्ताह रविवार को, ${ untilString }",
+        "प्रत्येक ${ interval } सप्ताह रविवार को, ${ untilString }"
       ],
       "Every ${ interval } week on Thursday": [
         "प्रत्येक ${ interval } सप्ताह गुरुवार को",
         "प्रत्येक ${ interval } सप्ताह गुरुवार को"
       ],
       "Every ${ interval } week on Thursday, ${ timesString }": [
-        "प्रत्येक $ { interval } सप्ताह गुरुवार को, $ { timesString }",
+        "प्रत्येक ${ interval } सप्ताह गुरुवार को, ${ timesString }",
         "प्रत्येक ${ interval } सप्ताह गुरुवार को, ${ timesString }"
       ],
       "Every ${ interval } week on Thursday, ${ untilString }": [
-        "प्रत्येक $ { interval } सप्ताह गुरुवार को, $ { untilString }",
-        "प्रत्येक $ { interval } सप्ताह गुरुवार को, $ { untilString }"
+        "प्रत्येक ${ interval } सप्ताह गुरुवार को, ${ untilString }",
+        "प्रत्येक ${ interval } सप्ताह गुरुवार को, ${ untilString }"
       ],
       "Every ${ interval } week on Tuesday": [
         "प्रत्येक ${ interval }} सप्ताह के मंगलवार को",
@@ -6361,8 +6372,8 @@
         "प्रत्येक ${ interval } सप्ताह मंगलवार को, ${ timesString }"
       ],
       "Every ${ interval } week on Tuesday, ${ untilString }": [
-        "प्रत्येक $ { interval } सप्ताह मंगलवार को, $ { untilString }",
-        "प्रत्येक $ { interval } सप्ताह मंगलवार को, $ { untilString }"
+        "प्रत्येक ${ interval } सप्ताह मंगलवार को, ${ untilString }",
+        "प्रत्येक ${ interval } सप्ताह मंगलवार को, ${ untilString }"
       ],
       "Every ${ interval } week on Wednesday": [
         "बुधवार को हर ${ interval } सप्ताह",
@@ -6373,8 +6384,8 @@
         "बुधवार को हर ${ interval } सप्ताह, ${ timesString }"
       ],
       "Every ${ interval } week on Wednesday, ${ untilString }": [
-        "बुधवार को हर $ { interval } सप्ताह, $ { untilString }",
-        "बुधवार को हर $ { interval } सप्ताह, $ { untilString }"
+        "बुधवार को हर ${ interval } सप्ताह, ${ untilString }",
+        "बुधवार को हर ${ interval } सप्ताह, ${ untilString }"
       ],
       "Weekly on ${ multipleDaysString }": [
         "प्रतिसप्ताह ${ multipleDaysString } को"
@@ -6389,10 +6400,10 @@
         "साप्ताहिक सभी दिनों पर"
       ],
       "Weekly on all days, ${ timesString }": [
-        "साप्ताहिक रूप से सभी दिन, $ { timesString }"
+        "साप्ताहिक रूप से सभी दिन, ${ timesString }"
       ],
       "Weekly on all days, ${ untilString }": [
-        "साप्ताहिक रूप से सभी दिन, $ { untilString }"
+        "साप्ताहिक रूप से सभी दिन, ${ untilString }"
       ],
       "Weekly on Friday": [
         "शुक्रवार को साप्ताहिक"
@@ -6401,7 +6412,7 @@
         "शुक्रवार को साप्ताहिक, ${ timesString }"
       ],
       "Weekly on Friday, ${ untilString }": [
-        "शुक्रवार को साप्ताहिक, $ { untilString }"
+        "शुक्रवार को साप्ताहिक, ${ untilString }"
       ],
       "Weekly on Monday": [
         "साप्ताहिक सोमवार को"
@@ -6410,7 +6421,7 @@
         "सोमवार को साप्ताहिक, ${ timesString }"
       ],
       "Weekly on Monday, ${ untilString }": [
-        "सोमवार को साप्ताहिक, $ { untilString }"
+        "सोमवार को साप्ताहिक, ${ untilString }"
       ],
       "Weekly on Saturday": [
         "शनिवार को साप्ताहिक"
@@ -6428,16 +6439,16 @@
         "रविवार को साप्ताहिक, ${ timesString }"
       ],
       "Weekly on Sunday, ${ untilString }": [
-        "रविवार को साप्ताहिक, $ { untilString }"
+        "रविवार को साप्ताहिक, ${ untilString }"
       ],
       "Weekly on Thursday": [
         "गुरुवार को साप्ताहिक"
       ],
       "Weekly on Thursday, ${ timesString }": [
-        "गुरुवार को साप्ताहिक, $ { timesString }"
+        "गुरुवार को साप्ताहिक, ${ timesString }"
       ],
       "Weekly on Thursday, ${ untilString }": [
-        "गुरुवार को साप्ताहिक, $ { untilString }"
+        "गुरुवार को साप्ताहिक, ${ untilString }"
       ],
       "Weekly on Tuesday": [
         "साप्ताहिक मंगलवार को"
@@ -6446,7 +6457,7 @@
         "साप्ताहिक रूप से मंगलवार को, ${ timesString }"
       ],
       "Weekly on Tuesday, ${ untilString }": [
-        "साप्ताहिक रूप से मंगलवार को, $ { untilString }"
+        "साप्ताहिक रूप से मंगलवार को, ${ untilString }"
       ],
       "Weekly on Wednesday": [
         "बुधवार को साप्ताहिक"
@@ -6455,7 +6466,7 @@
         "बुधवार को साप्ताहिक, ${ timesString }"
       ],
       "Weekly on Wednesday, ${ untilString }": [
-        "बुधवार को साप्ताहिक, $ { untilString }"
+        "बुधवार को साप्ताहिक, ${ untilString }"
       ]
     },
     "Weekly recurring event, repeats on (multiple days), frequency": {
@@ -6483,25 +6494,25 @@
     },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
-        "हर $ { interval } साल",
-        "हर $ { interval } साल"
+        "हर ${ interval } साल",
+        "हर ${ interval } साल"
       ],
       "Every ${ interval } year, ${ timesString }": [
-        "हर ${ interval } साल, $ { timesString }",
-        "हर ${ interval } वर्षों, $ { timesString }"
+        "हर ${ interval } साल, ${ timesString }",
+        "हर ${ interval } वर्षों, ${ timesString }"
       ],
       "Every ${ interval } year, ${ untilString }": [
-        "हर ${ interval } साल, $ { untilString }",
-        "हर ${ interval } वर्षों, $ { untilString }"
+        "हर ${ interval } साल, ${ untilString }",
+        "हर ${ interval } वर्षों, ${ untilString }"
       ],
       "Yearly": [
         "सालाना"
       ],
       "Yearly, ${ timesString }": [
-        "वार्षिक, $ { timesString }"
+        "वार्षिक, ${ timesString }"
       ],
       "Yearly, ${ untilString }": [
-        "वार्षिक, $ { untilString }"
+        "वार्षिक, ${ untilString }"
       ]
     }
   }
