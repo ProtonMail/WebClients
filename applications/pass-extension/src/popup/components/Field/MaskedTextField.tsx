@@ -25,7 +25,6 @@ export const MaskedTextField: VFC<MaskedTextFieldProps> = (props) => {
             icon={icon}
         >
             <BaseTextField
-                hiddenValue={maskedValue.replace(/[^\s]/g, '•')}
                 {...rest}
                 field={{
                     ...props.field,
