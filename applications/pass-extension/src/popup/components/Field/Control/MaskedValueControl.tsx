@@ -13,5 +13,5 @@ export const MaskedValueControl: VFC<MaskedValueControlProps> = ({ mask, ...prop
     const { value } = props;
     const maskedValue = value ? pipe(value, mask) : '';
 
-    return <ValueControl {...props} hiddenValue={maskedValue.replace(/[^\s]/g, '•')} value={maskedValue} />;
+    return <ValueControl {...props} value={maskedValue} />;
 };
