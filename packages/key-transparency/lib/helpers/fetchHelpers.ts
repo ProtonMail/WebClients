@@ -41,10 +41,10 @@ export const fetchProof = async (EpochID: number, Email: string, Revision: numbe
 export const fetchSignedKeyLists = async (
     api: Api,
     AfterRevision: number,
-    Email: string
+    Identifier: string
 ): Promise<FetchedSignedKeyList[]> => {
     const { SignedKeyLists } = await api<{ SignedKeyLists: FetchedSignedKeyList[] }>(
-        getSignedKeyListsRoute({ AfterRevision, Email })
+        getSignedKeyListsRoute({ AfterRevision, Identifier })
     );
     return SignedKeyLists;
 };
@@ -55,11 +55,11 @@ export const fetchSignedKeyLists = async (
 export const fetchSignedKeyList = async (
     api: Api,
     Revision: number,
-    Email: string
+    Identifier: string
 ): Promise<FetchedSignedKeyList | null> => {
     try {
         const { SignedKeyList } = await api<{ SignedKeyList: FetchedSignedKeyList }>(
-            getSignedKeyListRoute({ Revision, Email })
+            getSignedKeyListRoute({ Revision, Identifier })
         );
         return SignedKeyList;
     } catch (error: any) {
