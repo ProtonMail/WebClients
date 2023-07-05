@@ -77,7 +77,7 @@ const CycleItemView = ({
                     </div>
                     <strong className="text-lg flex-item-noshrink color-primary">
                         {c('Subscription price').t`For`}
-                        <Price className="ml-1" currency={currency}>
+                        <Price className="ml-1" currency={currency} data-testid="subscription-total-price">
                             {total}
                         </Price>
                     </strong>
