@@ -2375,7 +2375,7 @@
         "अपने आप को तब तक ब्रेस करें जब तक हम त्रुटि को ठीक नहीं कर लेते।"
       ],
       "Error: ${ errorMessage }": [
-        "त्रुटि: { errorMessage }"
+        "त्रुटि: ${ errorMessage }"
       ],
       "Internal server error": [
         "आंतरिक सर्वर त्रुटि"
@@ -2602,7 +2602,12 @@
     },
     "Filter notification": {
       "${ Label.Name } updated": [
-        "{ Label.Name } अपडेट किया गया"
+        "${ Label.Name } अपडेट किया गया"
+      ]
+    },
+    "Font face option": {
+      "System default": [
+        "सिस्टम डिफॉल्ट"
       ]
     },
     "Group": {
@@ -3635,7 +3640,7 @@
         "पुनर्प्राप्ति प्रक्रिया में कुछ समय लग सकता है।"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
-        "पृष्ठ को ताज़ा करने या $ { link } स्वचालित रूप से अधिकांश मुद्दों को हल करेगा।"
+        "पृष्ठ को ताज़ा करने या ${ link } स्वचालित रूप से अधिकांश मुद्दों को हल करेगा।"
       ],
       "Report has been sent": [
         "रिपोर्ट भेजा गया"
@@ -3912,10 +3917,10 @@
         "आपके पास ${ expiresInDays } दिन बचे हैं अपना 500 एमबी का शुरुआती बोनस लेने के लिए और"
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
-        "आप अपनी संग्रहण क्षमता का $ { spaceDisplayed }% तक पहुँच गए। $ { freeUpMessage } $ { upgradeLink }"
+        "आप अपनी संग्रहण क्षमता का ${ spaceDisplayed }% तक पहुँच गए। ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
-        "आप अपनी भंडारण क्षमता के 100% तक पहुंच गए। आप नए ईमेल भेज या प्राप्त नहीं कर सकते। $ { freeUpMessage } ${ upgradeLink }"
+        "आप अपनी भंडारण क्षमता के 100% तक पहुंच गए। आप नए ईमेल भेज या प्राप्त नहीं कर सकते। ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You will lose all unsaved changes.": [
         "आप सभी सहेजे गए परिवर्तनों को खो देंगे।"
@@ -3933,7 +3938,7 @@
         "आपका ${ BRAND_NAME } खाता वर्तमान में निलंबित है। ईमेल अब आपके इनबॉक्स में वितरित नहीं किए जा रहे हैं। आपके ड्राइव साझाकरण लिंक अब सक्रिय नहीं हैं, और आप नई फ़ाइलें अपलोड नहीं कर सकते। अपने खाते का उपयोग जारी रखने के लिए, कृपया किसी अतिदेय चालान का भुगतान करें।"
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
-        "आपके खाते में कम से कम एक अतिदेय चालान है। जल्द ही आपकी पहुँच प्रतिबंधित हो जाएगी। $ { payInvoiceLink }"
+        "आपके खाते में कम से कम एक अतिदेय चालान है। जल्द ही आपकी पहुँच प्रतिबंधित हो जाएगी। ${ payInvoiceLink }"
       ],
       "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
         "आपके खाते में कम से कम एक अतिदेय चालान है। आपका खाता प्रतिबंधित है, और भुगतान तक सभी सेवाएं अब अवरुद्ध हैं। ${ payInvoiceLink }"
@@ -4586,7 +4591,7 @@
     },
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
-        "$ { appName } का एक नया संस्करण उपलब्ध है। $ { reloadButton }।"
+        "${ appName } का एक नया संस्करण उपलब्ध है। ${ reloadButton }।"
       ]
     },
     "MIME type": {
@@ -4644,6 +4649,9 @@
       ],
       "Custom email domains": [
         "कस्टम ईमेल डोमेन"
+      ],
+      "Hide-my-email aliases": [
+        "Hide-my-email नकलीनाम"
       ],
       "Schedule messages at any time": [
         "संदेश कभी भी शेड्यूल करें"
@@ -5357,7 +5365,7 @@
         "आयात रद्द कर रहे"
       ],
       "Code sent to ${ methodTo }": [
-        "$ { methodTo } को कोड भेजा गया"
+        "${ methodTo } को कोड भेजा गया"
       ],
       "Contact deleted": [
         "संपर्क हटाया गया",
@@ -5513,6 +5521,9 @@
       "${ numberOfFailedTransfer.total } failed upload": [
         "${ numberOfFailedTransfer.total } असफल अपलोड",
         "${ numberOfFailedTransfer.total } असफल अपलोड"
+      ],
+      "(active)": [
+        "(सक्रिय)"
       ],
       "Account suspended": [
         "खाता निलंबित"
