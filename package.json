@@ -26,7 +26,8 @@
         "memfs": "^3.5.3",
         "nwsapi": "2.2.2",
         "rfc2047@^2.0.1": "patch:rfc2047@npm%3A2.0.1#./.yarn/patches/rfc2047-npm-2.0.1-60a2a07c99.patch",
-        "safe-buffer": "^5.2.1"
+        "safe-buffer": "^5.2.1",
+        "ttag": "npm:@protontech/ttag@~1.7.25"
     },
     "dependencies": {
         "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton",
