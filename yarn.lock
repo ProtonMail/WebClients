@@ -26020,12 +26020,12 @@ fsevents@^1.2.7:
     cross-env: ^7.0.3
     eslint: ^8.43.0
     formik: ^2.4.2
+    imask: ^7.0.1
     jest: ^29.5.0
     prettier: ^2.8.8
     react: ^17.0.2
     react-dom: ^17.0.2
     react-helmet: ^6.1.0
-    react-imask: ^7.0.1
     react-redux: ^8.1.1
     react-router-dom: ^5.3.4
     redux: ^4.2.1
@@ -26657,18 +26657,6 @@ fsevents@^1.2.7:
     react: ^16.8.0
     react-test-renderer: ^16.8.0
   checksum: 01ef520cf816f625ad332c5832c2b9bd66ce21c8891d626335206cd4d49655202029badc79c7926df8a3a9f31a76c9938ddb908ded8f85a80d30d682eefa04eb
-  languageName: node
-  linkType: hard
-
-"react-imask@npm:^7.0.1":
-  version: 7.0.1
-  resolution: "react-imask@npm:7.0.1"
-  dependencies:
-    imask: ^7.0.1
-    prop-types: ^15.8.1
-  peerDependencies:
-    react: ">=0.14.0"
-  checksum: 1f97ab2beece15b11b31f4fa0816a07c6cf09ba020d3c0183385ce6d96c0f9fc8c33eea58b6ff3c53c182e7dec105384641aaf66095a9d411ee005d3d9155fae
   languageName: node
   linkType: hard
 
