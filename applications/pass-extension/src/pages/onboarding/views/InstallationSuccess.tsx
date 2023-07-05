@@ -139,7 +139,7 @@ export const InstallationSuccess: VFC = () => {
                                             size="large"
                                             shape="solid"
                                             color="norm"
-                                            className="mt-5"
+                                            className="mt-5 mb-2"
                                             onClick={handleNextStepClick}
                                             aria-label={c('Action').t`Done`}
                                         >
@@ -147,6 +147,14 @@ export const InstallationSuccess: VFC = () => {
                                                 {' '}
                                                 {c('Action').t`Done`}
                                             </span>
+                                        </Button>
+                                        <Button
+                                            onClick={() => setIsPinned(true)}
+                                            shape="ghost"
+                                            aria-label={c('Action').t`Skip this step`}
+                                            color="norm"
+                                        >
+                                            {c('Action').t`Skip this step`}
                                         </Button>
                                     </div>
 
