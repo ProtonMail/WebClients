@@ -132,6 +132,19 @@ export const withoutRedundantDtEnd = <T>(
     return properties;
 };
 
+/**
+ * Used to removed `rrule` field in Reply ICS for invite single edit when recurrence-id is filled
+ */
+export const withoutRedundantRrule = <T>(
+    properties: VcalVeventComponent & T
+): (VcalVeventComponent & T) | Omit<VcalVeventComponent & T, 'rrule'> => {
+    if (Boolean(properties['recurrence-id']) && Boolean(properties.rrule)) {
+        return omit(properties, ['rrule']);
+    }
+
+    return properties;
+};
+
 export const withRequiredProperties = <T>(properties: VcalVeventComponent & T): VcalVeventComponent & T => {
     return withDtstamp(withUid(properties));
 };
