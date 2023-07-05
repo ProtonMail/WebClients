@@ -17,7 +17,7 @@ import { MaskedTextField } from '../../../components/Field/MaskedTextField';
 import { TextField } from '../../../components/Field/TextField';
 import { TextAreaField } from '../../../components/Field/TextareaField';
 import { TitleField } from '../../../components/Field/TitleField';
-import { cardNumberMask, expDateMask } from '../../../components/Field/masks/credit-card';
+import { cardNumberHiddenValue, cardNumberMask, expDateMask } from '../../../components/Field/masks/credit-card';
 import { ItemEditPanel } from '../../../components/Panel/ItemEditPanel';
 import { useDraftSync } from '../../../hooks/useItemDraft';
 
@@ -100,6 +100,7 @@ export const CreditCardEdit: VFC<ItemEditProps<'creditCard'>> = ({ vault, revisi
                                 hidden
                                 name="number"
                                 component={MaskedTextField}
+                                hiddenValue={cardNumberHiddenValue(form.values.number)}
                                 icon="credit-card"
                                 label={c('Label').t`Card number`}
                                 mask={cardNumberMask(form.values.number)}
@@ -117,6 +118,7 @@ export const CreditCardEdit: VFC<ItemEditProps<'creditCard'>> = ({ vault, revisi
                                 hidden
                                 name="verificationNumber"
                                 component={MaskedTextField}
+                                hiddenValue="••••"
                                 icon="credit-card"
                                 label={c('Label').t`Verification number`}
                                 mask={{ mask: '0000' }}
@@ -126,6 +128,7 @@ export const CreditCardEdit: VFC<ItemEditProps<'creditCard'>> = ({ vault, revisi
                                 hidden
                                 name="pin"
                                 component={MaskedTextField}
+                                hiddenValue="••••"
                                 icon="grid-3"
                                 label={c('Label').t`PIN`}
                                 mask={{ mask: '000000000000' }}

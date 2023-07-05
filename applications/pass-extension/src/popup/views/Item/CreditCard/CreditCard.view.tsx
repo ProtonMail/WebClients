@@ -11,7 +11,7 @@ import { MaskedValueControl } from '../../../components/Field/Control/MaskedValu
 import { UpgradeControl } from '../../../components/Field/Control/UpgradeControl';
 import { ValueControl } from '../../../components/Field/Control/ValueControl';
 import { FieldsetCluster } from '../../../components/Field/Layout/FieldsetCluster';
-import { cardNumberMask, expDateMask } from '../../../components/Field/masks/credit-card';
+import { cardNumberHiddenValue, cardNumberMask, expDateMask } from '../../../components/Field/masks/credit-card';
 import { ItemViewPanel } from '../../../components/Panel/ItemViewPanel';
 
 export const CreditCardView: VFC<ItemTypeViewProps<'creditCard'>> = ({ vault, revision, ...itemViewProps }) => {
@@ -33,6 +33,7 @@ export const CreditCardView: VFC<ItemTypeViewProps<'creditCard'>> = ({ vault, re
                     <MaskedValueControl
                         clickToCopy
                         hidden
+                        hiddenValue={cardNumberHiddenValue(number)}
                         icon="credit-card"
                         label={c('Label').t`Card number`}
                         mask={cardNumberMask(number)}
@@ -49,11 +50,12 @@ export const CreditCardView: VFC<ItemTypeViewProps<'creditCard'>> = ({ vault, re
                 <ValueControl
                     clickToCopy
                     hidden
+                    hiddenValue="••••"
                     icon="shield"
                     label={c('Label').t`Verification number`}
                     value={verificationNumber}
                 />
-                <ValueControl hidden icon="grid-3" label={c('Label').t`PIN`} value={pin} />
+                <ValueControl hidden hiddenValue="••••" icon="grid-3" label={c('Label').t`PIN`} value={pin} />
             </FieldsetCluster>
 
             {note && (
