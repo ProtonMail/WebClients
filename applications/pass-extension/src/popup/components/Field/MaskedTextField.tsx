@@ -1,51 +1,21 @@
-import { type RefObject, type VFC, useEffect } from 'react';
-import useIMask from 'react-imask/esm/hook';
+import { type RefObject, type VFC } from 'react';
 
 import { type FactoryOpts } from 'imask/esm/masked/factory';
 
 import noop from '@proton/utils/noop';
 
+import { useFieldMask } from '../../hooks/useFieldMask';
 import { FieldBox, type FieldBoxProps } from './Layout/FieldBox';
 import { BaseTextField, type BaseTextFieldProps } from './TextField';
 
-export type BaseMaskedTextFieldProps = BaseTextFieldProps & {
-    mask: FactoryOpts;
-};
-
-export const BaseMaskedTextField: VFC<BaseMaskedTextFieldProps> = ({ mask, ...props }) => {
-    const { name } = props.field;
-    const { setFieldValue } = props.form;
-    const { ref, value, unmaskedValue, setTypedValue, setUnmaskedValue } = useIMask(mask);
-
-    const setInputValue = (value: string) => {
-        setTypedValue(value);
-        setUnmaskedValue(value);
+export type MaskedTextFieldProps = FieldBoxProps &
+    BaseTextFieldProps & {
+        mask: FactoryOpts;
     };
 
-    useEffect(() => setInputValue(props.field.value), []);
-
-    useEffect(() => {
-        setFieldValue(name, unmaskedValue).catch(noop);
-    }, [unmaskedValue]);
-
-    return (
-        <BaseTextField
-            hiddenValue={value.replace(/[^\s]/g, '•')}
-            {...props}
-            field={{
-                ...props.field,
-                onChange: noop,
-                value,
-            }}
-            ref={ref as RefObject<HTMLInputElement>}
-        />
-    );
-};
-
-export type MaskedTextFieldProps = FieldBoxProps & BaseMaskedTextFieldProps;
-
 export const MaskedTextField: VFC<MaskedTextFieldProps> = (props) => {
-    const { actions, actionsContainerClassName, className, icon, ...rest } = props;
+    const { actions, actionsContainerClassName, className, icon, mask, ...rest } = props;
+    const { inputRef, maskedValue } = useFieldMask(props, mask);
 
     return (
         <FieldBox
@@ -54,7 +24,16 @@ export const MaskedTextField: VFC<MaskedTextFieldProps> = (props) => {
             className={className}
             icon={icon}
         >
-            <BaseMaskedTextField {...rest} />
+            <BaseTextField
+                hiddenValue={maskedValue.replace(/[^\s]/g, '•')}
+                {...rest}
+                field={{
+                    ...props.field,
+                    onChange: noop,
+                    value: maskedValue,
+                }}
+                ref={inputRef as RefObject<HTMLInputElement>}
+            />
         </FieldBox>
     );
 };
