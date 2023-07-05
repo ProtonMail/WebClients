@@ -89,9 +89,8 @@ const AccountsLoginModal = (props: ModalStateProps) => {
                     })}
                     {checkedItems.length > 0 && (
                         <>
-                            <h2 className="text-semibold color-weak text-rg mb-2 mt-8">{c(
-                                'Get started checklist instructions'
-                            ).t`Changed accounts`}</h2>
+                            <h2 className="text-semibold text-rg mb-2 mt-8">{c('Get started checklist instructions')
+                                .t`Changed accounts`}</h2>
                             <div>
                                 <div className="mb-6 flex flex-column gap-2">
                                     {checkedItems.map((item) => {

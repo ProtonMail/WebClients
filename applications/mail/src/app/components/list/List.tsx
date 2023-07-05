@@ -230,7 +230,7 @@ const List = (
                                 isUnread={filter.Unread === 1}
                             />
                         )}
-                        {elements.length === 0 && displayState === FULL && <OnboardingChecklistWrapper />}
+                        {elements.length === 0 && displayState === FULL && <UsersOnboardingChecklist />}
                         {elements.length > 0 && (
                             <>
                                 {/* div needed here for focus management */}

@@ -2,7 +2,8 @@ import { ReactNode, createContext, useContext, useEffect, useState } from 'react
 
 import { fromUnixTime } from 'date-fns';
 
-import { useApi, useEventManager, useLoading } from '@proton/components/hooks';
+import { useApi, useEventManager } from '@proton/components/hooks';
+import useLoading from '@proton/hooks/useLoading';
 import {
     hidePaidUserChecklist,
     seenCompletedChecklist,
