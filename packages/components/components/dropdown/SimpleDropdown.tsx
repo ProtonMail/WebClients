@@ -1,5 +1,4 @@
 import {
-    CSSProperties,
     ElementType,
     ForwardedRef,
     HTMLAttributes,
@@ -13,8 +12,8 @@ import {
 import { useCombinedRefs } from '@proton/hooks';
 
 import { generateUID } from '../../helpers';
-import { PopperPlacement, usePopperAnchor } from '../popper';
-import Dropdown from './Dropdown';
+import { usePopperAnchor } from '../popper';
+import Dropdown, { DropdownProps } from './Dropdown';
 import DropdownButton, { DropdownButtonProps } from './DropdownButton';
 
 interface ContentProps extends HTMLAttributes<HTMLDivElement> {
@@ -25,14 +24,15 @@ interface OwnProps<E extends ElementType> {
     hasCaret?: boolean;
     content?: ReactNode;
     children?: ReactNode;
-    originalPlacement?: PopperPlacement;
-    autoClose?: boolean;
-    dropdownClassName?: string;
-    dropdownStyle?: CSSProperties;
     disableDefaultArrowNavigation?: boolean;
     onClick?: MouseEventHandler<E>;
     onToggle?: (isOpen: boolean) => void;
     contentProps?: ContentProps;
+    autoClose?: DropdownProps['autoClose'];
+    originalPlacement?: DropdownProps['originalPlacement'];
+    dropdownClassName?: DropdownProps['className'];
+    dropdownStyle?: DropdownProps['style'];
+    size?: DropdownProps['size'];
 }
 
 export type Props<T extends ElementType> = DropdownButtonProps<T> & OwnProps<T>;
@@ -51,6 +51,7 @@ const SimpleDropdownBase = <E extends ElementType>(
         onClick,
         onToggle,
         as,
+        size,
         ...rest
     }: Props<E>,
     ref: ForwardedRef<Element>
@@ -91,6 +92,7 @@ const SimpleDropdownBase = <E extends ElementType>(
                 style={dropdownStyle}
                 disableDefaultArrowNavigation={disableDefaultArrowNavigation}
                 contentProps={contentProps}
+                size={size}
             >
                 {children}
             </Dropdown>
