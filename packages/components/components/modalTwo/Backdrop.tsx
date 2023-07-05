@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import { isDialogOpen, isModalOpen } from '@proton/shared/lib/busy';
+import { isDialogOpen, isModalOpen, modalTwoBackdropRootClassName } from '@proton/shared/lib/busy';
 import clsx from '@proton/utils/clsx';
 
 import './Backdrop.scss';
@@ -37,7 +37,7 @@ const Backdrop = ({ entering, exiting }: Props) => {
     }, []);
 
     const backdropClassName = clsx([
-        'modal-two-backdrop',
+        modalTwoBackdropRootClassName,
         entering && 'modal-two-backdrop--in',
         exiting && 'modal-two-backdrop--out',
         !entering && hidden && 'hidden',
