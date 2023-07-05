@@ -1165,7 +1165,7 @@
     },
     "Actions message": {
       "${ addContact } or ${ importContact }.": [
-        "${ addContact } eller { importContact }."
+        "${ addContact } eller ${ importContact }."
       ],
       "No results found.": [
         "Inga resultat hittades."
@@ -3383,7 +3383,7 @@
         "Något gick fel, ${ refresh } för att fortsätta. Om du fortfarande ser detta felmeddelande, kontakta vårt ${ supportTeam }."
       ],
       "Sorry, ${ BRAND_NAME } can't decrypt your message. Please check that all your keys are active.": [
-        "{ BRAND_NAME } kan inte dekryptera ditt meddelande. Kontrollera att alla dina nycklar är aktiva."
+        "${ BRAND_NAME } kan inte dekryptera ditt meddelande. Kontrollera att alla dina nycklar är aktiva."
       ],
       "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
         "Bilagan kunde inte dekrypteras.\nOm du har motsvarande privat nyckel kommer du fortfarande att kunna dekryptera\nfilen med ett program som exempelvis GnuPG.",
@@ -5440,7 +5440,7 @@
         "Välj vilka kalendrar som ska importeras. En ny kalender skapas för varje importerad kalender enligt antalet tillgängliga kalendrar i ditt paket."
       ],
       "Send an encrypted, password protected message to a ${ boldText } email address.": [
-        "Skicka ett krypterat och lösenordsskyddat meddelande till en { boldText } e-postadress."
+        "Skicka ett krypterat och lösenordsskyddat meddelande till en ${ boldText }e-postadress."
       ],
       "Sender has been blocked.": [
         "Avsändaren har blockerats."
@@ -6408,7 +6408,7 @@
         "Dölj lösenord"
       ],
       "How would you describe your experience with the new ${ BRAND_NAME }?": [
-        "Hur skulle du beskriva din upplevelse med nya { BRAND_NAME }?"
+        "Hur skulle du beskriva din upplevelse med nya ${ BRAND_NAME }?"
       ],
       "I understand the risk": [
         "Jag förstår risken"
@@ -7538,7 +7538,7 @@
       ],
       "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
         "${ model.deleted.length } av ${ totalBeDeleted } kontakt har raderats.",
-        "${ model.deleted.length } av { totalBeDeleted } kontakter har raderats."
+        "${ model.deleted.length } av ${ totalBeDeleted }kontakter har raderats."
       ],
       "${ model.submitted.length } out of ${ totalBeMerged } contact successfully merged.": [
         "${ model.submitted.length } av ${ totalBeMerged } kontakt har slagits samman.",
@@ -8705,7 +8705,7 @@
         "Grupper"
       ],
       "Hide your email with SimpleLogin by ${ BRAND_NAME }": [
-        "Dölj din e-post med SimpleLogin av { BRAND_NAME }"
+        "Dölj din e-post med SimpleLogin av ${ BRAND_NAME }"
       ],
       "Human verification": [
         "Mänsklig verifiering"
