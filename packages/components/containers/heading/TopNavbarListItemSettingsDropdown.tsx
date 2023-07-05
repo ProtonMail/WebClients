@@ -61,7 +61,7 @@ const TopNavbarListItemSettingsDropdown = (props: Props) => {
             hasCaret={false}
             dropdownStyle={{ '--min-width': '18em' }}
             notificationDotColor={notificationDotColor}
-            size={{ maxHeight: DropdownSizeUnit.Viewport }}
+            dropdownSize={{ maxHeight: DropdownSizeUnit.Viewport }}
         >
             <DropdownMenu>
                 <DropdownMenuLink as={AppLink} to={to} toApp={toApp} target="_self">
