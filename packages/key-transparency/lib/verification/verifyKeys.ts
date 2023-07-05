@@ -229,12 +229,17 @@ const verifyPublicKeys = async (
             }
         }
 
-        const epoch = await getLatestEpoch();
+        let epoch = await getLatestEpoch();
 
         if (!signedKeyList) {
             const proof = await fetchProof(epoch.EpochID, identifier, 1, api);
             await verifyProofOfAbscenceForAllRevision(proof, identifier, epoch.TreeHash);
             return { status: KT_VERIFICATION_STATUS.UNVERIFIED_KEYS };
+        }
+
+        if (epoch.EpochID < signedKeyList.MinEpochID!) {
+            // Cache is too old, refetch the last epoch
+            epoch = await getLatestEpoch(true);
         }
 
         const [proof, nextRevisionProof] = await Promise.all([
