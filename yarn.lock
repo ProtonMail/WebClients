@@ -4535,7 +4535,7 @@ __metadata:
     karma-webpack: ^5.0.0
     mocha: ^10.2.0
     playwright: ^1.35.1
-    pmcrypto: "npm:@protontech/pmcrypto@^7.9.1"
+    pmcrypto: "npm:@protontech/pmcrypto@^7.9.2"
     prettier: ^2.8.8
     ts-loader: ^9.4.4
     typescript: ^5.1.6
@@ -20479,10 +20479,10 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"jsmimeparser@npm:@protontech/jsmimeparser@^2.0.1":
-  version: 2.0.1
-  resolution: "@protontech/jsmimeparser@npm:2.0.1"
-  checksum: 9aeb53b7dd8464ae07d8493c878ca7e636a4db2ba27acdc177bd544c9ab7a61fa5375b52c74f6646aa4be9302a60c43a5d87e6e2bd790c778a67319bad10d0c6
+"jsmimeparser@npm:@protontech/jsmimeparser@^2.1.0":
+  version: 2.1.0
+  resolution: "@protontech/jsmimeparser@npm:2.1.0"
+  checksum: 1f71ccdf21a2a947dd99dfc0be0e734e4273a39f57d56d9fc75642d9e5496a1c38b2633790d460fdead5f0b6f48ea470ad22b0d9ee8d8cf8cefe3da8366e000b
   languageName: node
   linkType: hard
 
@@ -24836,17 +24836,17 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"pmcrypto@npm:@protontech/pmcrypto@^7.9.1":
-  version: 7.9.1
-  resolution: "@protontech/pmcrypto@npm:7.9.1"
+"pmcrypto@npm:@protontech/pmcrypto@^7.9.2":
+  version: 7.9.2
+  resolution: "@protontech/pmcrypto@npm:7.9.2"
   dependencies:
     "@openpgp/asmcrypto.js": ^2.3.3-0
     "@openpgp/noble-hashes": ^1.3.2-1
     "@openpgp/tweetnacl": ^1.0.3
     "@openpgp/web-stream-tools": ^0.0.13
-    jsmimeparser: "npm:@protontech/jsmimeparser@^2.0.1"
+    jsmimeparser: "npm:@protontech/jsmimeparser@^2.1.0"
     openpgp: "npm:@protontech/openpgp@~5.9.0"
-  checksum: d30075264c73f75c6b8670e863e4cf24a389ecc2faa23403824d8d2b9de9d3b3b6bd7484bb1f992e9849009ae393e09747cb94c2f91bc404ba554aedaf2328fb
+  checksum: 64d34e4ed2a96c3644b5ba7908f37f1b6355c80ed4366fd00a6aa3027fad42327ef710e5a95fc950d85f842d5e1421435e5e36190a170d2189574da3cd56c5b4
   languageName: node
   linkType: hard
 
