@@ -31011,13 +31011,13 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"ttag@npm:^1.7.24":
-  version: 1.7.24
-  resolution: "ttag@npm:1.7.24"
+"ttag@npm:@protontech/ttag@~1.7.25":
+  version: 1.7.25
+  resolution: "@protontech/ttag@npm:1.7.25"
   dependencies:
     dedent: ^0.7.0
     plural-forms: ^0.5.3
-  checksum: e3555a0c4ed8e86f35f8cd4d496e7b8b204f449d9188e2c73b888ec4dc3e0581b3a77d4244154b88116aca7eb4797955bc688bc9983df6672c18bca35f99e5ee
+  checksum: 21aaf9f16ed08a0278194077d816e4c85586323d8d3e0f27db9f198f3d1c83154e651ae21c3dc1960a5c397f3ee2a86d5699d7b4043f8acf99bc6d958a603a92
   languageName: node
   linkType: hard
 
