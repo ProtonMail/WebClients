@@ -1,4 +1,5 @@
 import {
+    DETECTED_FORM_TYPE_ATTR,
     type FNode,
     clearVisibilityCache,
     fieldOfInterestSelector,
@@ -60,12 +61,17 @@ const shouldRunDetection = (): Promise<boolean> =>
                     const fields = Array.from(form.querySelectorAll<HTMLInputElement>(fieldOfInterestSelector));
                     const unprocessedFields = fields.some(fieldProcessable);
 
-                    if (unprocessedFields) logger.debug('[Detector::assess] new tracked form fields detected');
+                    if (unprocessedFields) {
+                        logger.info('[Detector::assess] new tracked form fields detected');
+                        /* in case the form type should change due to field updates :
+                         * remove the current cached detection result */
+                        form.removeAttribute(DETECTED_FORM_TYPE_ATTR);
+                    }
                     return runDetection || unprocessedFields;
                 }
 
                 if (isFormOfInterest(form)) {
-                    logger.debug('[Detector::assess] new form of interest');
+                    logger.info('[Detector::assess] new form of interest');
                     return true;
                 }
 
