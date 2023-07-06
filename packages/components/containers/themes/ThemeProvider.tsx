@@ -7,7 +7,6 @@ import createListeners from '@proton/shared/lib/helpers/listeners';
 import { getSecondLevelDomain } from '@proton/shared/lib/helpers/url';
 import {
     ColorScheme,
-    DARK_THEMES,
     MotionModeSetting,
     PROTON_DEFAULT_THEME,
     PROTON_THEMES_MAP,
@@ -19,6 +18,7 @@ import {
     ThemeModeSetting,
     ThemeSetting,
     ThemeTypes,
+    getDarkThemes,
     getDefaultThemeSetting,
     getParsedThemeSetting,
     getThemeType,
@@ -141,6 +141,8 @@ const getMotionMode = (matches: boolean): MotionModeSetting => {
 
 const listeners = createListeners<[ThemeSetting]>();
 
+const darkThemes = getDarkThemes();
+
 const ThemeProvider = ({ children }: Props) => {
     const isAccessbilitySettingsEnabledRef = useRef(false);
     const [themeSetting, setThemeSettingDefault] = useState(() => {
@@ -200,7 +202,7 @@ const ThemeProvider = ({ children }: Props) => {
             return;
         }
 
-        if (DARK_THEMES.includes(themeType) && isAccessbilitySettingsEnabledRef.current) {
+        if (darkThemes.includes(themeType) && isAccessbilitySettingsEnabledRef.current) {
             syncThemeSettingValue({ ...themeSetting, Mode: ThemeModeSetting.Dark, DarkTheme: themeType });
         } else {
             syncThemeSettingValue({ ...themeSetting, Mode: ThemeModeSetting.Light, LightTheme: themeType });
@@ -239,10 +241,10 @@ const ThemeProvider = ({ children }: Props) => {
 
     const information: ThemeInformation = {
         theme,
-        dark: DARK_THEMES.includes(theme),
+        dark: darkThemes.includes(theme),
         default: PROTON_DEFAULT_THEME === theme,
         style,
-        label: PROTON_THEMES_MAP[theme].label,
+        label: PROTON_THEMES_MAP[theme]?.label || '',
         colorScheme,
         motionMode,
         features: {
