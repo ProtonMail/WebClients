@@ -104,7 +104,7 @@ export const CreditCardEdit: VFC<ItemEditProps<'creditCard'>> = ({ vault, revisi
                                 icon="credit-card"
                                 label={c('Label').t`Card number`}
                                 mask={cardNumberMask(form.values.number)}
-                                placeholder={c('Placeholder').t`1234 1234 1234 1234`}
+                                placeholder="1234 1234 1234 1234"
                             />
                             <Field
                                 name="expirationDate"
@@ -122,7 +122,7 @@ export const CreditCardEdit: VFC<ItemEditProps<'creditCard'>> = ({ vault, revisi
                                 icon="credit-card"
                                 label={c('Label').t`Verification number`}
                                 mask={{ mask: '0000' }}
-                                placeholder={c('Placeholder').t`123`}
+                                placeholder="123"
                             />
                             <Field
                                 hidden
@@ -132,7 +132,7 @@ export const CreditCardEdit: VFC<ItemEditProps<'creditCard'>> = ({ vault, revisi
                                 icon="grid-3"
                                 label={c('Label').t`PIN`}
                                 mask={{ mask: '000000000000' }}
-                                placeholder={c('Placeholder').t`1234`}
+                                placeholder="1234"
                             />
                         </FieldsetCluster>
 
