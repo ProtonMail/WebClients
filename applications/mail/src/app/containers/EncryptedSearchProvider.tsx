@@ -156,7 +156,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
             if (featureES !== undefined) {
                 await updateSpotlightES(false);
             }
-            return esLibraryFunctions.enableEncryptedSearch().then((success) => {
+            return esLibraryFunctions.enableEncryptedSearch({ showErrorNotification: false }).then((success) => {
                 if (success) {
                     return esLibraryFunctions.enableContentSearch({ notify: false });
                 }
