@@ -325,9 +325,6 @@
       "Discard": [
         "Відхилити"
       ],
-      "Dismiss get started checklist": [
-        "Відмовитися від контрольного списку початку роботи"
-      ],
       "Done": [
         "Готово"
       ],
@@ -369,6 +366,9 @@
       ],
       "Email settings": [
         "Налаштування е-пошти"
+      ],
+      "Emoji": [
+        "Емоджі"
       ],
       "Enable": [
         "Увімкнути"
@@ -729,9 +729,6 @@
       ],
       "Open composer": [
         "Відкрити редактор"
-      ],
-      "Open get started checklist modal": [
-        "Відкрити модальний контрольний список початку роботи"
       ],
       "Open navigation": [
         "Відкрити панель навігації"
@@ -1255,14 +1252,6 @@
     "Alternative text for welcome image": {
       "Welcome": [
         "Вітаємо"
-      ]
-    },
-    "Amount of completed get started checklist items": {
-      "${ numberOfCompletedItems }/${ totalNumberOfItems } complete": [
-        "${ numberOfCompletedItems }/${ totalNumberOfItems } виконано",
-        "${ numberOfCompletedItems }/${ totalNumberOfItems } виконано",
-        "${ numberOfCompletedItems }/${ totalNumberOfItems } виконано",
-        "${ numberOfCompletedItems }/${ totalNumberOfItems } виконано"
       ]
     },
     "Animation": {
@@ -4212,35 +4201,7 @@
         "Кому: ${ toString }"
       ]
     },
-    "Get started checklist completion": {
-      "We've increased the total storage of your account to ${ rewardInGb } GB. Get additional storage and unlock premium features today.": [
-        "Ми збільшили загальний обсяг сховища вашого облікового запису до ${ rewardInGb } ГБ. Отримайте додатковий обсяг та доступ до можливостей преміум."
-      ],
-      "You're all set!": [
-        "Все готово!"
-      ]
-    },
-    "Get started checklist incentive": {
-      "Complete all steps and get a total of ${ rewardInGb } GB on your account": [
-        "Завершіть усі кроки та отримайте всього ${ rewardInGb } ГБ для свого облікового запису"
-      ],
-      "Expires soon": [
-        "Скоро завершується"
-      ],
-      "Expires today": [
-        "Завершується сьогодні"
-      ],
-      "Only ${ days } day left": [
-        "Лишився всього ${ days } день",
-        "Лишилося всього ${ days } дні",
-        "Лишилося всього ${ days } днів",
-        "Лишилося всього ${ days } дні"
-      ]
-    },
     "Get started checklist instructions": {
-      "Available on iOS and Android.": [
-        "Доступний на iOS та Android."
-      ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "Отримайте мобільний застосунок ${ MAIL_APP_NAME }"
       ],
@@ -4252,36 +4213,6 @@
       ],
       "Quickly transfer your contacts or emails from any provider using our Easy Switch import assistant.": [
         "Швидко передавайте свої контакти або електронні листи від будь-якого постачальника послуг за допомогою нашого помічника для імпорту Easy Switch."
-      ],
-      "Sign into the mobile app to complete the action": [
-        "Увійдіть у мобільний застосунок, щоб завершити дію"
-      ],
-      "Using your mobile device, scan this QR code or visit": [
-        "Скануйте цей QR-код за допомогою свого мобільного пристрою, або відвідайте"
-      ]
-    },
-    "Get started checklist item": {
-      "Get mobile app": [
-        "Отримати мобільний застосунок"
-      ],
-      "Import contacts or emails": [
-        "Імпорт контактів чи е-пошти"
-      ],
-      "Send a message": [
-        "Надіслати повідомлення"
-      ],
-      "Set up a recovery method": [
-        "Встановити спосіб відновлення"
-      ]
-    },
-    "Get started checklist spotlight": {
-      "You can access the checklist anytime from here": [
-        "Ви можете повернутися до контрольного списку в будь-який час звідси"
-      ]
-    },
-    "Get started checklist title": {
-      "Get started": [
-        "Розпочнімо"
       ]
     },
     "Gmail forwarding": {
@@ -7658,20 +7589,6 @@
         "${ page } з ${ totalText }"
       ]
     },
-    "Paid user checklist item": {
-      "Get mobile app": [
-        "Отримати мобільну програму"
-      ],
-      "Import contacts or emails": [
-        "Імпорт контактів чи е-пошти"
-      ],
-      "Send a message": [
-        "Надіслати повідомлення"
-      ],
-      "Set up a recovery method": [
-        "Встановити спосіб відновлення"
-      ]
-    },
     "Participant name": {
       "You": [
         "Ви"
@@ -8405,9 +8322,6 @@
       ]
     },
     "Storage": {
-      "Get extra storage for free": [
-        "Отримайте додаткове сховище безплатно"
-      ],
       "Release notes": [
         "Примітки до випуску"
       ],

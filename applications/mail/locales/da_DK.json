@@ -321,9 +321,6 @@
       "Discard": [
         "Kassér"
       ],
-      "Dismiss get started checklist": [
-        "Afvis tjekliste for at komme i gang"
-      ],
       "Done": [
         "Udført"
       ],
@@ -365,6 +362,9 @@
       ],
       "Email settings": [
         "E-mailindstillinger"
+      ],
+      "Emoji": [
+        "Emoji"
       ],
       "Enable": [
         "Aktivér"
@@ -723,9 +723,6 @@
       ],
       "Open composer": [
         "Åbn skriveværktøj"
-      ],
-      "Open get started checklist modal": [
-        "Åbn vindue med tjekliste for at komme i gang"
       ],
       "Open navigation": [
         "Åbn navigation"
@@ -1247,12 +1244,6 @@
     "Alternative text for welcome image": {
       "Welcome": [
         "Velkommen"
-      ]
-    },
-    "Amount of completed get started checklist items": {
-      "${ numberOfCompletedItems }/${ totalNumberOfItems } complete": [
-        "${ numberOfCompletedItems }/${ totalNumberOfItems } færdig",
-        "${ numberOfCompletedItems }/${ totalNumberOfItems } færdige"
       ]
     },
     "Animation": {
@@ -2963,7 +2954,7 @@
         "Du kan markere de kontakter til sletning, som du hverken ønsker at flette eller beholde.\nSletning vil kun ske, når der er klikket på fletningsknappen"
       ],
       "You can read the message and click on links without being tracked with email tracker protection.": [
-        "Med email tracker-beskyttelse kan du læse beskeden og klikke på links uden at blive sporet."
+        "Med beskyttelse mod e-mail-trackere kan du læse beskeden og klikke på links uden at blive sporet."
       ],
       "You can read the message and click on links without being tracked.": [
         "Du kan læse beskeden og klikke på links uden at blive sporet."
@@ -4138,33 +4129,7 @@
         "Til: ${ toString }"
       ]
     },
-    "Get started checklist completion": {
-      "We've increased the total storage of your account to ${ rewardInGb } GB. Get additional storage and unlock premium features today.": [
-        "Vi har øget den samlede lagerplads for din konto til ${ rewardInGb } GB. Få ekstra lagerplads, og lås op for premium-funktioner i dag."
-      ],
-      "You're all set!": [
-        "Så er du klar!"
-      ]
-    },
-    "Get started checklist incentive": {
-      "Complete all steps and get a total of ${ rewardInGb } GB on your account": [
-        "Gennemfør alle trin og få i alt ${ rewardInGb } GB på din konto"
-      ],
-      "Expires soon": [
-        "Udløber snart"
-      ],
-      "Expires today": [
-        "Udløber i dag"
-      ],
-      "Only ${ days } day left": [
-        "Kun ${ days } dag tilbage",
-        "Kun ${ days } dage tilbage"
-      ]
-    },
     "Get started checklist instructions": {
-      "Available on iOS and Android.": [
-        "Tilgængelig på iOS og Android."
-      ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "Hent mobilappen til ${ MAIL_APP_NAME }"
       ],
@@ -4176,36 +4141,6 @@
       ],
       "Quickly transfer your contacts or emails from any provider using our Easy Switch import assistant.": [
         "Overfør hurtigt dine kontakter eller e-mails fra en hvilken som helst udbyder ved hjælp af vores Easy Switch-importassistent."
-      ],
-      "Sign into the mobile app to complete the action": [
-        "Log på mobilappen for at fuldføre handlingen"
-      ],
-      "Using your mobile device, scan this QR code or visit": [
-        "Brug din mobilenhed til at scanne denne QR-kode eller besøg"
-      ]
-    },
-    "Get started checklist item": {
-      "Get mobile app": [
-        "Hent mobilapp"
-      ],
-      "Import contacts or emails": [
-        "Importer kontakter eller e-mails"
-      ],
-      "Send a message": [
-        "Send en besked"
-      ],
-      "Set up a recovery method": [
-        "Indstil gendannelsesmetode"
-      ]
-    },
-    "Get started checklist spotlight": {
-      "You can access the checklist anytime from here": [
-        "Du kan til enhver tid få adgang til tjeklisten her"
-      ]
-    },
-    "Get started checklist title": {
-      "Get started": [
-        "Kom godt i gang"
       ]
     },
     "Gmail forwarding": {
@@ -5736,7 +5671,7 @@
         "Opgrader for at støtte vores mission om privatliv for alle."
       ],
       "Upgrade to support privacy and get more features.": [
-        "Opgrader for at støtte privatlivets fred og for at få flere funktioner."
+        "Opgrader for at støtte online privatlivsbeskyttelse og for at få flere funktioner."
       ],
       "Upgrade to unlock premium features.": [
         "Opgradér for at låse op for premium-funktioner."
@@ -7403,20 +7338,6 @@
         "${ page } af ${ totalText }"
       ]
     },
-    "Paid user checklist item": {
-      "Get mobile app": [
-        "Hent mobilapp"
-      ],
-      "Import contacts or emails": [
-        "Importer kontakter eller e-mails"
-      ],
-      "Send a message": [
-        "Send en besked"
-      ],
-      "Set up a recovery method": [
-        "Indstil gendannelsesmetode"
-      ]
-    },
     "Participant name": {
       "You": [
         "Dig"
@@ -7913,7 +7834,7 @@
         "Sikker streaming"
       ],
       "Support online privacy": [
-        "Støt privatliv online"
+        "Støt online privatlivsbeskyttelse"
       ]
     },
     "specialoffer: Footer": {
@@ -8028,7 +7949,7 @@
         "Perfekt til familier eller små teams, hvor alle kan have deres egen indbakke og aliasser. Kræver et brugerdefineret domæne."
       ],
       "Receive at no extra cost the paid versions of all new privacy services we release in the future, along with early access to all future features and products.": [
-        "Modtag uden ekstra omkostninger betalingsversionerne af alle nye privatlivstjenester, vi lancerer i fremtiden, sammen med tidlig adgang til alle fremtidige funktioner og produkter."
+        "Modtag uden ekstra omkostninger betalingsversionerne af alle nye privatlivstjenester, vi lancerer i fremtiden, samt tidlig adgang til alle fremtidige funktioner og produkter."
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Beskyt dine filer med krypteret lagring i skyen. Inkluderer automatisk synkronisering, krypteret fildeling og meget mere."
@@ -8083,9 +8004,6 @@
       ]
     },
     "Storage": {
-      "Get extra storage for free": [
-        "Få ekstra lagerplads gratis"
-      ],
       "Release notes": [
         "Udgivelsesnoter"
       ],
