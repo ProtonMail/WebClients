@@ -4,6 +4,21 @@
 -   [Service Worker Lifecycle Reference](https://developer.chrome.com/docs/workbox/service-worker-lifecycle/)
 -   [⚠️ Chrome Extension SW discussion](https://stackoverflow.com/questions/66618136/persistent-service-worker-in-chrome-extension/66618269#66618269)
 
+## How to run the extension
+
+Please note that all commands should be run from this directory, i.e. `applications/pass-extension`
+
+On Mac, please first install `mkcert` with `brew install mkcert` (brew can be installed on https://brew.sh/) then:
+
+```bash
+yarn install
+yarn install:devtools
+```
+
+If you want to create a build that targets the production environment, run `yarn start:prod`. `yarn start` targets the black environment by default.
+
+After that, the build is available in `dist/` directory that you can install in Chromium by going to [extension page](chrome://extensions/), enable the developer mode, click on "Load Unpacked" and choose the `dist/` directory here.
+
 ## How to run the extension against localhost BE
 
 As a prerequisite you need to have the backend running locally.
