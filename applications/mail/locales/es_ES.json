@@ -321,9 +321,6 @@
       "Discard": [
         "Descartar"
       ],
-      "Dismiss get started checklist": [
-        "Descartar lista de primeros pasos"
-      ],
       "Done": [
         "Hecho"
       ],
@@ -365,6 +362,9 @@
       ],
       "Email settings": [
         "Configuración del correo electrónico"
+      ],
+      "Emoji": [
+        "Emoji"
       ],
       "Enable": [
         "Habilitar"
@@ -723,9 +723,6 @@
       ],
       "Open composer": [
         "Abrir editor"
-      ],
-      "Open get started checklist modal": [
-        "Abrir la lista de comprobación de inicio"
       ],
       "Open navigation": [
         "Abrir la navegación"
@@ -1247,12 +1244,6 @@
     "Alternative text for welcome image": {
       "Welcome": [
         "¡Te damos la bienvenida!"
-      ]
-    },
-    "Amount of completed get started checklist items": {
-      "${ numberOfCompletedItems }/${ totalNumberOfItems } complete": [
-        "${ numberOfCompletedItems }/${ totalNumberOfItems } completo",
-        "${ numberOfCompletedItems }/${ totalNumberOfItems } completos"
       ]
     },
     "Animation": {
@@ -4152,33 +4143,7 @@
         "Para: ${ toString }"
       ]
     },
-    "Get started checklist completion": {
-      "We've increased the total storage of your account to ${ rewardInGb } GB. Get additional storage and unlock premium features today.": [
-        "Se ha aumentado el almacenamiento total de tu cuenta a ${ rewardInGb } GB. Consigue almacenamiento adicional y desbloquea las funciones prémium hoy."
-      ],
-      "You're all set!": [
-        "¡Ya está todo listo!"
-      ]
-    },
-    "Get started checklist incentive": {
-      "Complete all steps and get a total of ${ rewardInGb } GB on your account": [
-        "Completa todos los pasos y consigue un total de ${ rewardInGb } GB en tu cuenta."
-      ],
-      "Expires soon": [
-        "Expira pronto"
-      ],
-      "Expires today": [
-        "Expira hoy."
-      ],
-      "Only ${ days } day left": [
-        "Solo queda ${ days } día",
-        "Solo quedan ${ days } días"
-      ]
-    },
     "Get started checklist instructions": {
-      "Available on iOS and Android.": [
-        "Disponible en iOS y Android."
-      ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "Obtén la aplicación móvil de ${ MAIL_APP_NAME }."
       ],
@@ -4190,36 +4155,6 @@
       ],
       "Quickly transfer your contacts or emails from any provider using our Easy Switch import assistant.": [
         "Transfiere rápidamente tus contactos o correos electrónicos de cualquier proveedor usando el asistente de importación Easy Switch."
-      ],
-      "Sign into the mobile app to complete the action": [
-        "Inicia sesión en la aplicación móvil para completar la acción."
-      ],
-      "Using your mobile device, scan this QR code or visit": [
-        "Con tu dispositivo móvil, escanea este código QR o visita"
-      ]
-    },
-    "Get started checklist item": {
-      "Get mobile app": [
-        "Descargar la aplicación móvil"
-      ],
-      "Import contacts or emails": [
-        "Importar contactos o correos electrónicos"
-      ],
-      "Send a message": [
-        "Enviar un mensaje"
-      ],
-      "Set up a recovery method": [
-        "Establecer un método de recuperación"
-      ]
-    },
-    "Get started checklist spotlight": {
-      "You can access the checklist anytime from here": [
-        "Puedes acceder a la lista de verificación en cualquier momento desde aquí."
-      ]
-    },
-    "Get started checklist title": {
-      "Get started": [
-        "Comenzar"
       ]
     },
     "Gmail forwarding": {
@@ -7428,20 +7363,6 @@
         "${ page } de ${ totalText }"
       ]
     },
-    "Paid user checklist item": {
-      "Get mobile app": [
-        "Descargar la aplicación móvil"
-      ],
-      "Import contacts or emails": [
-        "Importar contactos o correos electrónicos"
-      ],
-      "Send a message": [
-        "Enviar un mensaje"
-      ],
-      "Set up a recovery method": [
-        "Establecer un método de recuperación"
-      ]
-    },
     "Participant name": {
       "You": [
         "Tú"
@@ -8143,9 +8064,6 @@
       ]
     },
     "Storage": {
-      "Get extra storage for free": [
-        "Obtén almacenamiento adicional gratis"
-      ],
       "Release notes": [
         "Notas de la versión"
       ],
