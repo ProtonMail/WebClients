@@ -43,6 +43,7 @@ import { removeKTBlobs } from './ktStatus';
 import useGetLatestEpoch from './useGetLatestEpoch';
 import useKTActivation from './useKTActivation';
 import { KeyTransparencyContext } from './useKeyTransparencyContext';
+import useUploadMissingSKL from './useUploadMissingSKL';
 
 /**
  * Generate a unique fake ID from an email address
@@ -69,6 +70,7 @@ const KeyTransparencyManager = ({ children, appName }: Props) => {
     const normalApi = useApi();
     const silentApi = getSilentApi(normalApi);
     const ktLSAPI = getKTLocalStorage(appName);
+    const uploadMissingSKL = useUploadMissingSKL();
 
     const [ktState, setKTState] = useState<KeyTransparencyState>({ selfAuditResult: undefined });
 
@@ -244,7 +246,8 @@ const KeyTransparencyManager = ({ children, appName }: Props) => {
                     userKeys,
                     ktLSAPI,
                     saveSKLToLS,
-                    getLatestEpoch
+                    getLatestEpoch,
+                    uploadMissingSKL
                 );
                 await reportSelfAuditErrors(selfAuditResult);
                 if (selfAuditResult) {

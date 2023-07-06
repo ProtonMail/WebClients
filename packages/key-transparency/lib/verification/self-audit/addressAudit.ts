@@ -8,6 +8,7 @@ import {
     DecryptedKey,
     FetchedSignedKeyList,
     SaveSKLToLS,
+    UploadMissingSKL,
 } from '@proton/shared/lib/interfaces';
 
 import { fetchProof, fetchSignedKeyLists, fetchVerifiedEpoch, uploadVerifiedEpoch } from '../../helpers/fetchHelpers';
@@ -134,15 +135,16 @@ const auditAddressImplementation = async (
     userKeys: DecryptedKey[],
     epoch: Epoch,
     saveSKLToLS: SaveSKLToLS,
-    api: Api
+    api: Api,
+    uploadMissingSKL: UploadMissingSKL
 ): Promise<AddressAuditResult> => {
     const inputSKL = address.SignedKeyList;
     const email = address.Email;
     if (inputSKL === null) {
+        await uploadMissingSKL(address, epoch, saveSKLToLS);
         return {
             email,
-            status: AddressAuditStatus.Warning,
-            warningDetails: { reason: AddressAuditWarningReason.NullSKL },
+            status: AddressAuditStatus.Success,
         };
     }
     if (!inputSKL.Revision) {
@@ -244,10 +246,11 @@ export const auditAddress = async (
     userKeys: DecryptedKey[],
     epoch: Epoch,
     saveSKLToLS: SaveSKLToLS,
-    api: Api
+    api: Api,
+    uploadMissingSKL: UploadMissingSKL
 ): Promise<AddressAuditResult> => {
     try {
-        return await auditAddressImplementation(address, userKeys, epoch, saveSKLToLS, api);
+        return await auditAddressImplementation(address, userKeys, epoch, saveSKLToLS, api, uploadMissingSKL);
     } catch (error: any) {
         if (error instanceof KeyTransparencyError) {
             return { email: address.Email, status: AddressAuditStatus.Failure, error };
