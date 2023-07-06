@@ -7,6 +7,7 @@ import {
     GetLatestEpoch,
     KTLocalStorageAPI,
     SaveSKLToLS,
+    UploadMissingSKL,
 } from '@proton/shared/lib/interfaces';
 
 import { SelfAuditResult } from '../../interfaces';
@@ -24,7 +25,8 @@ export const selfAudit = async (
     userKeys: DecryptedKey[],
     ktLSAPI: KTLocalStorageAPI,
     saveSKLToLS: SaveSKLToLS,
-    getLatestEpoch: GetLatestEpoch
+    getLatestEpoch: GetLatestEpoch,
+    uploadMissingSKL: UploadMissingSKL
 ): Promise<SelfAuditResult> => {
     const userPrivateKeys = userKeys.map(({ privateKey }) => privateKey);
 
@@ -44,7 +46,7 @@ export const selfAudit = async (
         addresses
             .filter((address) => !getIsAddressDisabled(address))
             .map((address) => {
-                return auditAddress(address, userKeys, epoch, saveSKLToLS, api);
+                return auditAddress(address, userKeys, epoch, saveSKLToLS, api, uploadMissingSKL);
             })
     );
 
