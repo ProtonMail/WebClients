@@ -22,6 +22,7 @@
         "lint": "eslint src --ext .js,.ts,.tsx --quiet --cache",
         "pretty": "prettier --write  $(find src/app -type f -name '*.js' -o -name '*.ts' -o -name '*.tsx')",
         "start": "yarn clean && yarn config:dev && WEBPACK_DEV_PORT=8090 RESUME_FALLBACK=true ./tools/run:dev-server.sh",
+        "start:prod": "yarn clean && yarn run config && WEBPACK_DEV_PORT=8090 RESUME_FALLBACK=true ./tools/run:dev-server.sh",
         "start:reload": "RUNTIME_RELOAD=true yarn start",
         "test": "NODE_NO_WARNINGS=1 jest --runInBand --ci --verbose"
     },
