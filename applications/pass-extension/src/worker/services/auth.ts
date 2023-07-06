@@ -31,6 +31,7 @@ import createAuthenticationStore from '@proton/shared/lib/authentication/createA
 import { MAIL_APP_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
 import createStore from '@proton/shared/lib/helpers/store';
 
+import { SSO_URL } from '../../app/config';
 import WorkerMessageBroker from '../channel';
 import { withContext } from '../context';
 import store from '../store';
@@ -134,13 +135,23 @@ export const createAuthService = ({
          * Reset api in case it was in an invalid session state.
          * to see full data flow : `applications/account/src/app/content/PublicApp.tsx` */
         consumeFork: withContext(async (ctx, data) => {
+            if (ctx.getState().loggedIn) {
+                throw {
+                    payload: {
+                        title: c('Error').t`Authentication error`,
+                        message: c('Info')
+                            .t`It seems you are already logged in to ${PASS_APP_NAME}. If you're trying to login with a different account, please logout from the extension first.`,
+                    },
+                };
+            }
+
             await authService.logout();
 
             try {
                 ctx.setStatus(WorkerStatus.AUTHORIZING);
 
                 const { keyPassword } = data;
-                const result = await consumeFork({ api, ...data });
+                const result = await consumeFork({ api, apiUrl: `${SSO_URL}/api`, ...data });
 
                 const { AccessToken, RefreshToken } = result;
 
@@ -151,15 +162,6 @@ export const createAuthService = ({
                 if (loggedIn || api.getStatus().sessionLocked) {
                     logger.info('[Worker::Auth] Persisting session...');
                     void persistSession(api, result);
-                }
-
-                /* the `/pass/v1/user/session/lock/check` may have failed during
-                 * the login call : this indicates that the user is not white-listed */
-                if (!loggedIn && !api.getStatus().sessionLocked) {
-                    throw {
-                        title: c('Title').t`Unauthorized access`,
-                        message: c('Info').t`${PASS_APP_NAME} is currently under a closed beta. Come back later.`,
-                    };
                 }
 
                 /* if we get a locked session error on user/access we should not
