@@ -4,7 +4,7 @@ import { Vr } from '@proton/atoms/Vr';
 import { DropdownMenu, DropdownMenuButton, Icon } from '@proton/components';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
-import { labelIncludes } from '../../helpers/labels';
+import { canMoveAll, labelIncludes } from '../../helpers/labels';
 import { useEmptyLabel } from '../../hooks/actions/useEmptyLabel';
 import { useMoveAll } from '../../hooks/actions/useMoveAll';
 import { useLabelActions } from '../../hooks/useLabelActions';
@@ -16,21 +16,6 @@ import ToolbarDropdown from './ToolbarDropdown';
 
 const { DRAFTS, ALL_DRAFTS, ALL_MAIL, INBOX, SENT, ALL_SENT, ARCHIVE, STARRED, SCHEDULED, TRASH, SPAM } =
     MAILBOX_LABEL_IDS;
-
-const canMoveAll = (
-    currentLabelID: string,
-    targetLabelID: string,
-    elementIDs: string[],
-    selectedIDs: string[],
-    isSearch: boolean
-) => {
-    return (
-        !labelIncludes(currentLabelID, targetLabelID, ALL_MAIL, SCHEDULED) &&
-        elementIDs.length > 0 &&
-        selectedIDs.length === 0 &&
-        !isSearch
-    );
-};
 
 const canEmpty = (labelID: string, elementIDs: string[], selectedIDs: string[], isSearch: boolean) => {
     return (

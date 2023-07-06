@@ -14,7 +14,7 @@ import { Conversation } from '../models/conversation';
 import { Element } from '../models/element';
 import { getLabelIDs } from './elements';
 
-const { INBOX, TRASH, SPAM, ARCHIVE, SENT, DRAFTS, ALL_SENT, ALL_DRAFTS, SCHEDULED, OUTBOX, STARRED } =
+const { INBOX, TRASH, SPAM, ARCHIVE, SENT, DRAFTS, ALL_SENT, ALL_DRAFTS, SCHEDULED, OUTBOX, STARRED, ALL_MAIL } =
     MAILBOX_LABEL_IDS;
 const DEFAULT_FOLDERS = [INBOX, TRASH, SPAM, ARCHIVE, SENT, DRAFTS, SCHEDULED, OUTBOX];
 
@@ -308,4 +308,21 @@ export const shouldDisplayTotal = (labelID: string) => {
     const needsDisplayTotalLabels = [SCHEDULED];
 
     return needsDisplayTotalLabels.includes(labelID as MAILBOX_LABEL_IDS);
+};
+
+export const canMoveAll = (
+    currentLabelID: string,
+    targetLabelID: string,
+    elementIDs: string[],
+    selectedIDs: string[],
+    isSearch: boolean
+) => {
+    // We also need to hide move all actions in ALL_DRAFTS and ALL_SENT location because the goal of this setting
+    // is to keep the message in DRAFTS and SENT locations all the time.
+    return (
+        !labelIncludes(currentLabelID, targetLabelID, ALL_MAIL, SCHEDULED, ALL_DRAFTS, ALL_SENT) &&
+        elementIDs.length > 0 &&
+        selectedIDs.length === 0 &&
+        !isSearch
+    );
 };
