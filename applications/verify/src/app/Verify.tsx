@@ -20,7 +20,7 @@ import { getBrowserLocale, getClosestLocaleCode, getClosestLocaleMatch } from '@
 import { loadDateLocale, loadLocale } from '@proton/shared/lib/i18n/loadLocale';
 import { setTtagLocales } from '@proton/shared/lib/i18n/locales';
 import { HumanVerificationMethodType } from '@proton/shared/lib/interfaces';
-import { DARK_THEMES } from '@proton/shared/lib/themes/themes';
+import { getDarkThemes } from '@proton/shared/lib/themes/themes';
 
 import broadcast, { MessageType } from './broadcast';
 import locales from './locales';
@@ -31,6 +31,7 @@ import './Verify.scss';
 setTtagLocales(locales);
 
 const windowIsEmbedded = window.location !== window.parent.location;
+const darkThemes = getDarkThemes();
 
 const parseSearch = (search: string) =>
     Object.fromEntries(
@@ -179,7 +180,7 @@ const Verify = () => {
 
     const hv = (
         <HumanVerificationForm
-            theme={theme && DARK_THEMES.includes(theme) ? 'dark' : 'light'}
+            theme={theme && darkThemes.includes(theme) ? 'dark' : 'light'}
             step={step}
             onChangeStep={setStep}
             onSubmit={handleSubmit}

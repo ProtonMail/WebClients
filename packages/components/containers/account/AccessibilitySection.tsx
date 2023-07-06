@@ -6,14 +6,17 @@ import {
     ThemeFeatureSetting,
     ThemeFontFaceSetting,
     ThemeFontSizeSettingMap,
-    themeFontFaceEntries,
-    themeFontSizeEntries,
+    getThemeFontFaceEntries,
+    getThemeFontSizeEntries,
 } from '@proton/shared/lib/themes/themes';
 import clsx from '@proton/utils/clsx';
 
 import { Info, Option, SelectTwo, Toggle, Tooltip, useNotifications } from '../..';
 import { useTheme } from '../themes/ThemeProvider';
 import { SettingsLayout, SettingsLayoutLeft, SettingsLayoutRight, SettingsParagraph, SettingsSection } from './index';
+
+const themeFontFaceEntries = getThemeFontFaceEntries();
+const themeFontSizeEntries = getThemeFontSizeEntries();
 
 const AccessibilitySection = () => {
     const { information, settings, setFeature, setFontSize, setFontFace } = useTheme();
@@ -36,9 +39,9 @@ const AccessibilitySection = () => {
                 <SettingsLayoutRight>
                     <SelectTwo
                         id="fontFaceSelect"
-                        value={`${settings.FontFace}`}
+                        value={settings.FontFace}
                         onValue={(value) => {
-                            setFontFace(Number(value));
+                            setFontFace(value);
                             notifyPreferenceSaved();
                         }}
                     >
@@ -81,16 +84,16 @@ const AccessibilitySection = () => {
                 <SettingsLayoutRight>
                     <SelectTwo
                         id="fontSizeSelect"
-                        value={`${settings.FontSize}`}
+                        value={settings.FontSize}
                         onValue={(value) => {
-                            setFontSize(Number(value));
+                            setFontSize(value);
                             notifyPreferenceSaved();
                         }}
                         renderSelected={(selected) => {
-                            const label =
-                                ThemeFontSizeSettingMap[
-                                    Number(selected) as keyof typeof ThemeFontSizeSettingMap
-                                ]?.label();
+                            if (selected === undefined) {
+                                return null;
+                            }
+                            const label = ThemeFontSizeSettingMap[selected]?.label() || '';
                             return <>{label}</>;
                         }}
                     >
