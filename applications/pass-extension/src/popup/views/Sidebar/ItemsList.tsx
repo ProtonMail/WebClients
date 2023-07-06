@@ -34,7 +34,7 @@ export const ItemsList: VFC = () => {
     return (
         <>
             {totalCount > 0 && (
-                <div className="flex p-3 gap-1">
+                <div className="flex flex-row flex-item-nogrow flex-item-noshrink flex-nowrap p-3 gap-1 scroll-horizontal-if-needed">
                     <ItemsFilter value={type} onChange={setType} />
                     <ItemsSort sort={sort} onSortChange={setSort} />
                 </div>
