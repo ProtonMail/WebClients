@@ -6,11 +6,11 @@ import { useApi, useGetUserKeys, useUser } from '@proton/components';
 import {
     INDEXING_STATUS,
     checkVersionedESDB,
-    readMetadataProgress,
+    metadataIndexingProgress,
     useEncryptedSearch,
 } from '@proton/encrypted-search';
-import { isPaid } from '@proton/shared/lib/user/helpers';
 import { EVENT_TYPES } from '@proton/shared/lib/drive/constants';
+import { isPaid } from '@proton/shared/lib/user/helpers';
 
 import { useDriveEventManager } from '../_events';
 import { useLink } from '../_links';
@@ -73,7 +73,7 @@ export const SearchLibraryProvider = ({ children }: Props) => {
 
         // In case an interrupted indexing process is found, we remove anything ES
         // has built so far since drive needs to finish indexing in one go
-        const progress = await readMetadataProgress(user.ID);
+        const progress = await metadataIndexingProgress.read(user.ID);
         if (!!progress && progress.status !== INDEXING_STATUS.ACTIVE) {
             await esFunctions.esDelete();
         }
