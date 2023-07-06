@@ -319,9 +319,6 @@
       "Discard": [
         "放弃"
       ],
-      "Dismiss get started checklist": [
-        "忽略入门清单"
-      ],
       "Done": [
         "完成"
       ],
@@ -363,6 +360,9 @@
       ],
       "Email settings": [
         "邮件设置"
+      ],
+      "Emoji": [
+        "表情符号"
       ],
       "Enable": [
         "启用"
@@ -720,9 +720,6 @@
       ],
       "Open composer": [
         "打开邮件编辑区"
-      ],
-      "Open get started checklist modal": [
-        "打开入门清单"
       ],
       "Open navigation": [
         "打开导航栏"
@@ -1243,11 +1240,6 @@
     "Alternative text for welcome image": {
       "Welcome": [
         "欢迎"
-      ]
-    },
-    "Amount of completed get started checklist items": {
-      "${ numberOfCompletedItems }/${ totalNumberOfItems } complete": [
-        "已完成 ${ numberOfCompletedItems }/${ totalNumberOfItems }"
       ]
     },
     "Animation": {
@@ -4122,32 +4114,7 @@
         "收件人：${ toString }"
       ]
     },
-    "Get started checklist completion": {
-      "We've increased the total storage of your account to ${ rewardInGb } GB. Get additional storage and unlock premium features today.": [
-        "我们已将您的存储空间升至 ${ rewardInGb } GB。您还可以升级账户，从而获得更大的存储空间和更高级的功能。"
-      ],
-      "You're all set!": [
-        "一切就绪！"
-      ]
-    },
-    "Get started checklist incentive": {
-      "Complete all steps and get a total of ${ rewardInGb } GB on your account": [
-        "完成所有步骤即可将存储空间升至 ${ rewardInGb } GB"
-      ],
-      "Expires soon": [
-        "即将过期"
-      ],
-      "Expires today": [
-        "今天过期"
-      ],
-      "Only ${ days } days left": [
-        "仅剩 ${ days } 天"
-      ]
-    },
     "Get started checklist instructions": {
-      "Available on iOS and Android.": [
-        "支持 iOS 与安卓设备。"
-      ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "下载 ${ MAIL_APP_NAME } 移动应用"
       ],
@@ -4159,36 +4126,6 @@
       ],
       "Quickly transfer your contacts or emails from any provider using our Easy Switch import assistant.": [
         "通过简单转换助手以快速地将您之前的联系人和电子邮件从任何服务提供商转移"
-      ],
-      "Sign into the mobile app to complete the action": [
-        "打开手机APP完成后续操作。"
-      ],
-      "Using your mobile device, scan this QR code or visit": [
-        "使用您的移动设备扫描此二维码或只读打开"
-      ]
-    },
-    "Get started checklist item": {
-      "Get mobile app": [
-        "下载移动端应用"
-      ],
-      "Import contacts or emails": [
-        "导入通讯录或邮件"
-      ],
-      "Send a message": [
-        "发送邮件"
-      ],
-      "Set up a recovery method": [
-        "设置恢复方法"
-      ]
-    },
-    "Get started checklist spotlight": {
-      "You can access the checklist anytime from here": [
-        "您可以在任何时候通过这里查看任务进度"
-      ]
-    },
-    "Get started checklist title": {
-      "Get started": [
-        "入门步骤"
       ]
     },
     "Gmail forwarding": {
@@ -7307,20 +7244,6 @@
         "${ page } / ${ totalText }"
       ]
     },
-    "Paid user checklist item": {
-      "Get mobile app": [
-        "下载移动端应用"
-      ],
-      "Import contacts or emails": [
-        "导入通讯录或邮件"
-      ],
-      "Send a message": [
-        "发送邮件"
-      ],
-      "Set up a recovery method": [
-        "设置恢复方法"
-      ]
-    },
     "Participant name": {
       "You": [
         "你"
@@ -8006,9 +7929,6 @@
       ]
     },
     "Storage": {
-      "Get extra storage for free": [
-        "免费获取额外的存储空间"
-      ],
       "Release notes": [
         "版本说明"
       ],

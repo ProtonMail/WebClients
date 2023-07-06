@@ -6799,9 +6799,6 @@
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "您將需要一個 ${ BRAND_NAME } 電子郵件位址，方可使用 ${ MAIL_APP_NAME } 和 ${ CALENDAR_APP_NAME }"
       ],
-      "You will NOT be able to decrypt any messages, files, and other data encrypted with this key.": [
-        "您無法使用此金鑰解密任何郵件、檔案以及其它加密的資料。"
-      ],
       "You will receive priority support from specialists trained in account protection. For any account security concerns, please ${ hereLink }.": [
         "您將獲得受過帳號保護訓練的專家的優先支援。若任何帳號安全問題，請聯絡我們 ${ hereLink }"
       ],
@@ -7307,9 +7304,6 @@
       ],
       " and ${ l }": [
         " 且 ${ l }"
-      ],
-      "${ BRAND_NAME } email or username": [
-        "${ BRAND_NAME } 電郵或使用者名稱"
       ],
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } 使用者名稱"
@@ -9372,9 +9366,6 @@
       "Create up to ${ n } calendars or add calendars from friends, family, colleagues, and organizations": [
         "建立多達 ${ n } 個行事曆或新增好友、家人、同事和組織的行事曆"
       ],
-      "Create up to ${ n } email addresses/aliases for the whole family. Use them for your online identities, e.g., MyFamilySubs@${ domain } for online subscriptions.": [
-        "為整個家庭建立最多 ${ n } 組電子郵件位址/別名。將其用於您的線上身分，例如，MyFamilySubs@${ domain } 用於線上訂閱。"
-      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "透過將您的網際網路流量傳遞給多個伺服器來對抗針對 VPN 隱私的威脅"
       ],
@@ -10714,25 +10705,12 @@
         "瞭解如何取得私密行事曆連結。"
       ]
     },
-    "Subscribed calendar extension warning": {
-      "By using this link, Google will make the calendar you are subscribing to public": [
-        "使用此連結的話，Google 將會把您訂購授權的行事曆設為公開"
-      ],
-      "This link might be wrong": [
-        "此連結或有誤"
-      ]
-    },
     "Subscribed calendar section description": {
       "Add public, external, or shared calendars using a URL.": [
         "使用 URL 加入公用、外部或共享行事曆。"
       ],
       "Add public, external, or shared calendars.": [
         "新增公用、外部或已分享行事曆。"
-      ]
-    },
-    "Subscribed calendar URL length warning": {
-      "URL is too long": [
-        "URL 過長"
       ]
     },
     "Subscription attribute": {

@@ -6175,9 +6175,6 @@
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "${ MAIL_APP_NAME } と ${ CALENDAR_APP_NAME } を使うには ${ BRAND_NAME } アドレスが必要です"
       ],
-      "You will NOT be able to decrypt any messages, files, and other data encrypted with this key.": [
-        "この鍵で暗号化されたすべてのメッセージ、ファイル、その他のデータは復号できなくなります。"
-      ],
       "You will see more details in the Security logs below for important events such as sign in attempts.": [
         "サインイン試行などの重要なイベントについては、以下のセキュリティログで詳細を確認することができます。"
       ],
@@ -6666,9 +6663,6 @@
       ],
       " and ${ l }": [
         " と ${ l }"
-      ],
-      "${ BRAND_NAME } email or username": [
-        "${ BRAND_NAME } メールまたはユーザー名"
       ],
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } ユーザー名"
@@ -9726,25 +9720,12 @@
         "プライベートなカレンダーリンクの取得方法の詳細"
       ]
     },
-    "Subscribed calendar extension warning": {
-      "By using this link, Google will make the calendar you are subscribing to public": [
-        "このリンクを使うことで、登録しているカレンダーがGoogleで公開されます"
-      ],
-      "This link might be wrong": [
-        "リンクが間違っています"
-      ]
-    },
     "Subscribed calendar section description": {
       "Add public, external, or shared calendars using a URL.": [
         "URL を使用して公開、外部、共有カレンダーを追加できます。"
       ],
       "Add public, external, or shared calendars.": [
         "公開、外部、共有カレンダーを追加できます。"
-      ]
-    },
-    "Subscribed calendar URL length warning": {
-      "URL is too long": [
-        "URLが長すぎます"
       ]
     },
     "Subscription attribute": {

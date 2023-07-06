@@ -6867,9 +6867,6 @@
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Θα χρειαστείτε μια διεύθυνση ${ BRAND_NAME } για να χρησιμοποιήσετε ${ MAIL_APP_NAME } και ${ CALENDAR_APP_NAME }"
       ],
-      "You will NOT be able to decrypt any messages, files, and other data encrypted with this key.": [
-        "ΔΕΝ θα μπορείτε να αποκρυπτογραφήσετε τυχόν μηνύματα, αρχεία και άλλα δεδομένα κρυπτογραφημένα με αυτό το κλειδί."
-      ],
       "You will receive priority support from specialists trained in account protection. For any account security concerns, please ${ hereLink }.": [
         "Θα λάβετε υποστήριξη προτεραιότητας από ειδικούς εκπαιδευμένους στην προστασία λογαριασμού. Για οποιεσδήποτε ανησυχίες σχετικά με την ασφάλεια του λογαριασμού, παρακαλούμε ${ hereLink }."
       ],
@@ -7376,9 +7373,6 @@
       ],
       " and ${ l }": [
         " και ${ l }"
-      ],
-      "${ BRAND_NAME } email or username": [
-        "${ BRAND_NAME } email ή όνομα χρήστη"
       ],
       "${ BRAND_NAME } username": [
         "όνομα χρήστη ${ BRAND_NAME }"
@@ -9476,9 +9470,6 @@
         "Δημιουργήστε έως και ${ n } ημερολόγιο ή προσθέστε ημερολόγια από φίλους, συγγενείς, συναδέλφους και οργανισμούς",
         "Δημιουργήστε έως και ${ n } ημερολόγια ή προσθέστε ημερολόγια από φίλους, συγγενείς, συναδέλφους και οργανισμούς"
       ],
-      "Create up to ${ n } email addresses/aliases for the whole family. Use them for your online identities, e.g., MyFamilySubs@${ domain } for online subscriptions.": [
-        "Δημιουργήστε έως και ${ n } διευθύνσεις ηλεκτρονικού ταχυδρομείου/ψευδώνυμα για όλη την οικογένεια. Χρησιμοποιήστε τα για τις διαδικτυακές σας ταυτότητες, π.χ. MyFamilySubs@${ domain } για διαδικτυακές συνδρομές."
-      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Προστατεύει από την απειλή για το απόρρητο του VPN μεταβιβάζοντας την κυκλοφορία στο διαδίκτυο μέσω πολλών διακομιστών"
       ],
@@ -10835,25 +10826,12 @@
         "Μάθετε πώς μπορείτε να αποκτήσετε ένα σύνδεσμο ιδιωτικού ημερολογίου."
       ]
     },
-    "Subscribed calendar extension warning": {
-      "By using this link, Google will make the calendar you are subscribing to public": [
-        "Χρησιμοποιώντας αυτόν τον σύνδεσμο, η Google θα αλλάξει το ημερολόγιο που εγγράφεστε σε κοινό"
-      ],
-      "This link might be wrong": [
-        "Αυτός ο σύνδεσμος ενδέχεται να είναι λανθασμένος"
-      ]
-    },
     "Subscribed calendar section description": {
       "Add public, external, or shared calendars using a URL.": [
         "Προσθέστε δημόσια, εξωτερικά ή κοινόχρηστα ημερολόγια χρησιμοποιώντας μια διεύθυνση URL."
       ],
       "Add public, external, or shared calendars.": [
         "Προσθέστε δημόσια, εξωτερικά ή κοινόχρηστα ημερολόγια."
-      ]
-    },
-    "Subscribed calendar URL length warning": {
-      "URL is too long": [
-        "Υπερβολικά μεγάλο URL"
       ]
     },
     "Subscription attribute": {

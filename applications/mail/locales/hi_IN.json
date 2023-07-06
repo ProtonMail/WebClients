@@ -315,9 +315,6 @@
       "Discard": [
         "रद्द करें"
       ],
-      "Dismiss get started checklist": [
-        "विघटित चेकलिस्ट शुरू करें"
-      ],
       "Done": [
         "पूरा हुआ"
       ],
@@ -356,6 +353,9 @@
       ],
       "Email settings": [
         "ईमेल सेटिंग"
+      ],
+      "Emoji": [
+        "इमोजी"
       ],
       "Enable": [
         "सक्षम करें"
@@ -705,9 +705,6 @@
       ],
       "Open composer": [
         "रचना-जगह खोलें"
-      ],
-      "Open get started checklist modal": [
-        "चेकलिस्ट मोडल खोलें"
       ],
       "Open navigation": [
         "नेविगेशन खोलें"
@@ -1226,12 +1223,6 @@
     "Alternative text for welcome image": {
       "Welcome": [
         "स्वागत"
-      ]
-    },
-    "Amount of completed get started checklist items": {
-      "${ numberOfCompletedItems }/${ totalNumberOfItems } complete": [
-        "${ numberOfCompletedItems }/${ totalNumberOfItems } पूर्ण",
-        "${ numberOfCompletedItems }/${ totalNumberOfItems } पूर्ण"
       ]
     },
     "Animation": {
@@ -4009,33 +4000,7 @@
         "को: ${ toString }"
       ]
     },
-    "Get started checklist completion": {
-      "We've increased the total storage of your account to ${ rewardInGb } GB. Get additional storage and unlock premium features today.": [
-        "हमने आपके खाते के कुल संग्रहण को बढ़ाकर ${ rewardInGb } GB कर दिया है। आज ही अतिरिक्त मेमोरी प्राप्त करें और प्रीमियम सुविधाओं को अनलॉक करें।"
-      ],
-      "You're all set!": [
-        "तुम पूरी तरह से सेट हो"
-      ]
-    },
-    "Get started checklist incentive": {
-      "Complete all steps and get a total of ${ rewardInGb } GB on your account": [
-        "सभी चरणों को पूरा करें और अपने खाते पर कुल ${ rewardInGb } GB प्राप्त करें"
-      ],
-      "Expires soon": [
-        "जल्द एक्सपायर होगा"
-      ],
-      "Expires today": [
-        "आज समाप्त हो रहा है"
-      ],
-      "Only ${ days } day left": [
-        "केवल ${ days } दिन शेष है",
-        "केवल ${ days } दिन शेष हैं"
-      ]
-    },
     "Get started checklist instructions": {
-      "Available on iOS and Android.": [
-        "iOS और Android पर उपलब्ध है।"
-      ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "${ MAIL_APP_NAME } का मोबाइल ऐप लें"
       ],
@@ -4047,36 +4012,6 @@
       ],
       "Quickly transfer your contacts or emails from any provider using our Easy Switch import assistant.": [
         "हमारे आसान स्विच Import assistant का उपयोग करके किसी भी प्रदाता से अपने संपर्क या ईमेल तुरंत स्थानांतरित करें।"
-      ],
-      "Sign into the mobile app to complete the action": [
-        "कार्रवाई पूरी करने के लिए मोबाइल ऐप में साइन इन करें"
-      ],
-      "Using your mobile device, scan this QR code or visit": [
-        "अपने मोबाइल डिवाइस का उपयोग करके, इस QR कोड को स्कैन करें या यहां जाएं"
-      ]
-    },
-    "Get started checklist item": {
-      "Get mobile app": [
-        "मोबाइल ऐप प्राप्त करें"
-      ],
-      "Import contacts or emails": [
-        "संपर्क या ईमेल आयात करें"
-      ],
-      "Send a message": [
-        "एक संदेश भेजो"
-      ],
-      "Set up a recovery method": [
-        "पुनर्प्राप्ति विधि सेट करें"
-      ]
-    },
-    "Get started checklist spotlight": {
-      "You can access the checklist anytime from here": [
-        "आप यहां से कभी भी चेकलिस्ट एक्सेस कर सकते हैं"
-      ]
-    },
-    "Get started checklist title": {
-      "Get started": [
-        "शुरू करें"
       ]
     },
     "Gmail forwarding": {
@@ -7139,20 +7074,6 @@
         "${ totalText } में से ${ page }"
       ]
     },
-    "Paid user checklist item": {
-      "Get mobile app": [
-        "मोबाइल ऐप लें"
-      ],
-      "Import contacts or emails": [
-        "संपर्क या ईमेल आयात करें"
-      ],
-      "Send a message": [
-        "एक संदेश भेजो"
-      ],
-      "Set up a recovery method": [
-        "रिकवरी तरीका सेट करें"
-      ]
-    },
     "Participant name": {
       "You": [
         "आप"
@@ -7774,9 +7695,6 @@
       ]
     },
     "Storage": {
-      "Get extra storage for free": [
-        "अतिरिक्त संग्रहण निःशुल्क प्राप्त करें"
-      ],
       "Release notes": [
         "रिलीज नोट्स"
       ],
