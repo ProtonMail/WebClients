@@ -6,14 +6,17 @@ import {
     ThemeFeatureSetting,
     ThemeFontFaceSetting,
     ThemeFontSizeSettingMap,
-    themeFontFaceEntries,
-    themeFontSizeEntries,
+    getThemeFontFaceEntries,
+    getThemeFontSizeEntries,
 } from '@proton/shared/lib/themes/themes';
 import clsx from '@proton/utils/clsx';
 
 import { Info, Option, SelectTwo, Toggle, Tooltip, useNotifications } from '../..';
 import { useTheme } from '../themes/ThemeProvider';
 import { SettingsLayout, SettingsLayoutLeft, SettingsLayoutRight, SettingsParagraph, SettingsSection } from './index';
+
+const themeFontFaceEntries = getThemeFontFaceEntries();
+const themeFontSizeEntries = getThemeFontSizeEntries();
 
 const AccessibilitySection = () => {
     const { information, settings, setFeature, setFontSize, setFontFace } = useTheme();
