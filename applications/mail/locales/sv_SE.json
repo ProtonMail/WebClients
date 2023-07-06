@@ -318,9 +318,6 @@
       "Discard": [
         "Avfärda"
       ],
-      "Dismiss get started checklist": [
-        "Avfärda listan för att komma igång"
-      ],
       "Done": [
         "Klar"
       ],
@@ -362,6 +359,9 @@
       ],
       "Email settings": [
         "E-postinställningar"
+      ],
+      "Emoji": [
+        "Emoji"
       ],
       "Enable": [
         "Aktivera"
@@ -720,9 +720,6 @@
       ],
       "Open composer": [
         "Öppna skrivverktyget"
-      ],
-      "Open get started checklist modal": [
-        "Öppna fönster med checklista för att komma igång"
       ],
       "Open navigation": [
         "Öppna navigering"
@@ -1238,12 +1235,6 @@
     "Alternative text for welcome image": {
       "Welcome": [
         "Välkommen"
-      ]
-    },
-    "Amount of completed get started checklist items": {
-      "${ numberOfCompletedItems }/${ totalNumberOfItems } complete": [
-        "${ numberOfCompletedItems }/${ totalNumberOfItems } avklarad",
-        "${ numberOfCompletedItems }/${ totalNumberOfItems } avklarade"
       ]
     },
     "Animation": {
@@ -4137,33 +4128,7 @@
         "Till: ${ toString }"
       ]
     },
-    "Get started checklist completion": {
-      "We've increased the total storage of your account to ${ rewardInGb } GB. Get additional storage and unlock premium features today.": [
-        "Vi har utökat lagringsutrymmet på ditt konto till ${ rewardInGb } GB. Skaffa ytterligare lagringsutrymme och lås upp premiumfunktioner idag."
-      ],
-      "You're all set!": [
-        "Du är helt klar!"
-      ]
-    },
-    "Get started checklist incentive": {
-      "Complete all steps and get a total of ${ rewardInGb } GB on your account": [
-        "Slutför alla stegen och få totalt ${ rewardInGb } GB på ditt konto"
-      ],
-      "Expires soon": [
-        "Löper ut snart"
-      ],
-      "Expires today": [
-        "Löper ut idag"
-      ],
-      "Only ${ days } day left": [
-        "Endast ${ days } dag kvar",
-        "Endast ${ days } dagar kvar"
-      ]
-    },
     "Get started checklist instructions": {
-      "Available on iOS and Android.": [
-        "Tillgänglig på iOS och Android."
-      ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "Skaffa mobilappen för ${ MAIL_APP_NAME }"
       ],
@@ -4175,36 +4140,6 @@
       ],
       "Quickly transfer your contacts or emails from any provider using our Easy Switch import assistant.": [
         "Överför dina kontakter eller e-post snabbt från vilken leverantör som helst med vår Easy Switch Import Assistant"
-      ],
-      "Sign into the mobile app to complete the action": [
-        "Logga in på mobilappen för att slutföra åtgärden"
-      ],
-      "Using your mobile device, scan this QR code or visit": [
-        "Använd din mobila enhet, skanna denna QR-kod eller besök"
-      ]
-    },
-    "Get started checklist item": {
-      "Get mobile app": [
-        "Skaffa mobilapp"
-      ],
-      "Import contacts or emails": [
-        "Importera kontakter eller e-post"
-      ],
-      "Send a message": [
-        "Skicka ett meddelande"
-      ],
-      "Set up a recovery method": [
-        "Ställ in en återställningsmetod"
-      ]
-    },
-    "Get started checklist spotlight": {
-      "You can access the checklist anytime from here": [
-        "Du kan komma åt checklistan när som helst härifrån"
-      ]
-    },
-    "Get started checklist title": {
-      "Get started": [
-        "Kom igång"
       ]
     },
     "Gmail forwarding": {
@@ -7394,20 +7329,6 @@
         "${ page } av ${ totalText }"
       ]
     },
-    "Paid user checklist item": {
-      "Get mobile app": [
-        "Skaffa mobilapp"
-      ],
-      "Import contacts or emails": [
-        "Importera kontakter eller e-post"
-      ],
-      "Send a message": [
-        "Skicka ett meddelande"
-      ],
-      "Set up a recovery method": [
-        "Ställ in en återställningsmetod"
-      ]
-    },
     "Participant name": {
       "You": [
         "Du"
@@ -8100,9 +8021,6 @@
       ]
     },
     "Storage": {
-      "Get extra storage for free": [
-        "Få extra lagringsutrymme gratis"
-      ],
       "Release notes": [
         "Utgivningsnoteringar"
       ],

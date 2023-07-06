@@ -321,9 +321,6 @@
       "Discard": [
         "Απόρριψη"
       ],
-      "Dismiss get started checklist": [
-        "Παράβλεψη λίστας ελέγχου εκκίνησης"
-      ],
       "Done": [
         "Ολοκληρώθηκε"
       ],
@@ -365,6 +362,9 @@
       ],
       "Email settings": [
         "Ρυθμίσεις Email"
+      ],
+      "Emoji": [
+        "Εικονίδια"
       ],
       "Enable": [
         "Ενεργοποίηση"
@@ -723,9 +723,6 @@
       ],
       "Open composer": [
         "Άνοιγμα συντάκτη"
-      ],
-      "Open get started checklist modal": [
-        "Άνοιγμα παραθύρου λίστας ελέγχου εκκίνησης"
       ],
       "Open navigation": [
         "Άνοιγμα μενού πλοήγησης"
@@ -1247,12 +1244,6 @@
     "Alternative text for welcome image": {
       "Welcome": [
         "Καλώς ήρθατε"
-      ]
-    },
-    "Amount of completed get started checklist items": {
-      "${ numberOfCompletedItems }/${ totalNumberOfItems } complete": [
-        "${ numberOfCompletedItems }/${ totalNumberOfItems } ολοκληρώθηκε",
-        "${ numberOfCompletedItems }/${ totalNumberOfItems } ολοκληρώθηκαν"
       ]
     },
     "Animation": {
@@ -4152,33 +4143,7 @@
         "Προς: ${ toString }"
       ]
     },
-    "Get started checklist completion": {
-      "We've increased the total storage of your account to ${ rewardInGb } GB. Get additional storage and unlock premium features today.": [
-        "Αυξήσαμε τον συνολικό αποθηκευτικό χώρο του λογαριασμού σας στα ${ rewardInGb } GB. Αποκτήστε πρόσθετο χώρο και ξεκλειδώστε προνομιακά χαρακτηριστικά σήμερα."
-      ],
-      "You're all set!": [
-        "Είστε έτοιμοι!"
-      ]
-    },
-    "Get started checklist incentive": {
-      "Complete all steps and get a total of ${ rewardInGb } GB on your account": [
-        "Ολοκληρώστε όλα τα βήματα και αποκτήστε συνολικά ${ rewardInGb } GB στον λογαριασμό σας"
-      ],
-      "Expires soon": [
-        "Λήγει σύντομα"
-      ],
-      "Expires today": [
-        "Λήγει σήμερα"
-      ],
-      "Only ${ days } day left": [
-        "Απομένει μόνο ${ days } ημέρα",
-        "Απομένουν μόνο ${ days } ημέρες"
-      ]
-    },
     "Get started checklist instructions": {
-      "Available on iOS and Android.": [
-        "Διατίθεται σε iOS και Android."
-      ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "Αποκτήστε την εφαρμογή ${ MAIL_APP_NAME } για κινητά"
       ],
@@ -4190,36 +4155,6 @@
       ],
       "Quickly transfer your contacts or emails from any provider using our Easy Switch import assistant.": [
         "Μεταφέρετε γρήγορα τις επαφές ή τα μηνύματα ηλεκτρονικού ταχυδρομείου σας από οποιονδήποτε πάροχο χρησιμοποιώντας τον βοηθό εισαγωγής μας Easy Switch."
-      ],
-      "Sign into the mobile app to complete the action": [
-        "Συνδεθείτε στην εφαρμογή για κινητά για να ολοκληρώσετε την ενέργεια"
-      ],
-      "Using your mobile device, scan this QR code or visit": [
-        "Χρησιμοποιώντας την κινητή συσκευή σας, σαρώστε αυτόν τον κωδικό QR ή επισκεφθείτε το σύνδεσμο"
-      ]
-    },
-    "Get started checklist item": {
-      "Get mobile app": [
-        "Αποκτήστε την εφαρμογή για κινητά"
-      ],
-      "Import contacts or emails": [
-        "Εισαγωγή επαφών ή μηνυμάτων"
-      ],
-      "Send a message": [
-        "Αποστολή μηνύματος"
-      ],
-      "Set up a recovery method": [
-        "Ορισμός μεθόδου ανάκτησης"
-      ]
-    },
-    "Get started checklist spotlight": {
-      "You can access the checklist anytime from here": [
-        "Μπορείτε να έχετε πρόσβαση στη λίστα ελέγχου οποιαδήποτε στιγμή από εδώ"
-      ]
-    },
-    "Get started checklist title": {
-      "Get started": [
-        "Εκκίνηση"
       ]
     },
     "Gmail forwarding": {
@@ -7428,20 +7363,6 @@
         "${ page } από ${ totalText }"
       ]
     },
-    "Paid user checklist item": {
-      "Get mobile app": [
-        "Λήψη εφαρμογής για κινητά"
-      ],
-      "Import contacts or emails": [
-        "Εισαγωγή επαφών ή μηνυμάτων"
-      ],
-      "Send a message": [
-        "Αποστολή μηνύματος"
-      ],
-      "Set up a recovery method": [
-        "Ορισμός μεθόδου ανάκτησης"
-      ]
-    },
     "Participant name": {
       "You": [
         "Εσείς"
@@ -8143,9 +8064,6 @@
       ]
     },
     "Storage": {
-      "Get extra storage for free": [
-        "Αποκτήστε επιπλέον αποθηκευτικό χώρο δωρεάν"
-      ],
       "Release notes": [
         "Σημειώσεις έκδοσης"
       ],

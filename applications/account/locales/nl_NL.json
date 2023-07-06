@@ -6759,9 +6759,6 @@
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "U heeft een ${ BRAND_NAME }-adres nodig om ${ MAIL_APP_NAME } en ${ CALENDAR_APP_NAME } te gebruiken"
       ],
-      "You will NOT be able to decrypt any messages, files, and other data encrypted with this key.": [
-        "U zal berichten, bestanden en andere gegevens versleuteld met deze sleutel, niet langer kunnen ontsleutelen."
-      ],
       "You will see more details in the Security logs below for important events such as sign in attempts.": [
         "U zult meer details zien in de beveiligingslogboeken hieronder voor belangrijke gebeurtenissen zoals aanmeldpogingen."
       ],
@@ -7265,9 +7262,6 @@
       ],
       " and ${ l }": [
         " en ${ l }"
-      ],
-      "${ BRAND_NAME } email or username": [
-        "${ BRAND_NAME } e-mail of gebruikersnaam"
       ],
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } gebruikersnaam"
@@ -9304,9 +9298,6 @@
         "Maak tot ${ n } agenda of voeg agenda's van vrienden, familie, collega's of andere organisaties toe",
         "Maak tot ${ n } agenda's of voeg agenda's van vrienden, familie, collega's of andere organisaties toe"
       ],
-      "Create up to ${ n } email addresses/aliases for the whole family. Use them for your online identities, e.g., MyFamilySubs@${ domain } for online subscriptions.": [
-        "Maak maximaal ${ n } e-mailadressen/aliassen aan voor het hele gezin. Gebruik ze voor uw online-identiteiten, bijvoorbeeld MijnFamilie@${ domain } voor online-abonnementen."
-      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Beschermt tegen bedreigingen van de VPN-privacy door uw internetverkeer door meerdere servers te leiden"
       ],
@@ -10654,25 +10645,12 @@
         "Leer hoe je een persoonlijkge agenda link krijgt."
       ]
     },
-    "Subscribed calendar extension warning": {
-      "By using this link, Google will make the calendar you are subscribing to public": [
-        "Door deze link te gebruiken, maakt Google de agenda waarop u zich abonneert openbaar"
-      ],
-      "This link might be wrong": [
-        "Deze link kan fout zijn"
-      ]
-    },
     "Subscribed calendar section description": {
       "Add public, external, or shared calendars using a URL.": [
         "Voeg openbare, externe of gedeelde agenda's toe met behulp van een URL."
       ],
       "Add public, external, or shared calendars.": [
         "Voeg openbare, externe of gedeelde agenda's toe."
-      ]
-    },
-    "Subscribed calendar URL length warning": {
-      "URL is too long": [
-        "URL is te lang"
       ]
     },
     "Subscription attribute": {

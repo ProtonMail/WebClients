@@ -325,9 +325,6 @@
       "Discard": [
         "Zahodit"
       ],
-      "Dismiss get started checklist": [
-        "Odmítnout průvodce pro začátečníky"
-      ],
       "Done": [
         "Hotovo"
       ],
@@ -369,6 +366,9 @@
       ],
       "Email settings": [
         "Nastavení e-mailu"
+      ],
+      "Emoji": [
+        "Emoji"
       ],
       "Enable": [
         "Zapnout"
@@ -729,9 +729,6 @@
       ],
       "Open composer": [
         "Otevřít editor"
-      ],
-      "Open get started checklist modal": [
-        "Otevřít průvodce pro začátečníky"
       ],
       "Open navigation": [
         "Otevřít menu"
@@ -1255,14 +1252,6 @@
     "Alternative text for welcome image": {
       "Welcome": [
         "Vítejte"
-      ]
-    },
-    "Amount of completed get started checklist items": {
-      "${ numberOfCompletedItems }/${ totalNumberOfItems } complete": [
-        "${ numberOfCompletedItems }/${ totalNumberOfItems } dokončena",
-        "${ numberOfCompletedItems }/${ totalNumberOfItems } dokončeno",
-        "${ numberOfCompletedItems }/${ totalNumberOfItems } dokončeno",
-        "${ numberOfCompletedItems }/${ totalNumberOfItems } dokončeno"
       ]
     },
     "Animation": {
@@ -4212,35 +4201,7 @@
         "Komu: ${ toString }"
       ]
     },
-    "Get started checklist completion": {
-      "We've increased the total storage of your account to ${ rewardInGb } GB. Get additional storage and unlock premium features today.": [
-        "Zvýšili jsme celkové úložiště vašeho účtu na ${ rewardInGb }. GB. Získejte další úložiště a odemkněte prémiové funkce ještě dnes."
-      ],
-      "You're all set!": [
-        "Vše je připraveno!"
-      ]
-    },
-    "Get started checklist incentive": {
-      "Complete all steps and get a total of ${ rewardInGb } GB on your account": [
-        "Dokončete všechny kroky a získejte celkem ${ rewardInGb } GB na svém účtu"
-      ],
-      "Expires soon": [
-        "Brzy vyprší"
-      ],
-      "Expires today": [
-        "Platnost končí dnes"
-      ],
-      "Only ${ days } day left": [
-        "Zbývá už jen ${ days } den",
-        "Zbývá už jen ${ days } dny",
-        "Zbývá už jen ${ days } dní",
-        "Zbývá už jen ${ days } dní"
-      ]
-    },
     "Get started checklist instructions": {
-      "Available on iOS and Android.": [
-        "K dispozici pro iOS a Android."
-      ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "Získat mobilní aplikaci ${ MAIL_APP_NAME }"
       ],
@@ -4252,36 +4213,6 @@
       ],
       "Quickly transfer your contacts or emails from any provider using our Easy Switch import assistant.": [
         "Rychle přeneste kontakty nebo e-maily od jakéhokoli poskytovatele pomocí našeho Easy Switch asistenta pro snadný import."
-      ],
-      "Sign into the mobile app to complete the action": [
-        "Přihlaste se do mobilní aplikace a dokončete akci"
-      ],
-      "Using your mobile device, scan this QR code or visit": [
-        "Pomocí mobilního zařízení naskenujte tento QR kód nebo navštivte stránku"
-      ]
-    },
-    "Get started checklist item": {
-      "Get mobile app": [
-        "Získat mobilní aplikaci"
-      ],
-      "Import contacts or emails": [
-        "Import kontaktů nebo e-mailů"
-      ],
-      "Send a message": [
-        "Odeslat zprávu"
-      ],
-      "Set up a recovery method": [
-        "Nastavit metodu obnovení"
-      ]
-    },
-    "Get started checklist spotlight": {
-      "You can access the checklist anytime from here": [
-        "Kontrolní seznam je kdykoli k dispozici zde"
-      ]
-    },
-    "Get started checklist title": {
-      "Get started": [
-        "Začínáme"
       ]
     },
     "Gmail forwarding": {
@@ -7658,20 +7589,6 @@
         "${ page } z ${ totalText }"
       ]
     },
-    "Paid user checklist item": {
-      "Get mobile app": [
-        "Získat mobilní aplikaci"
-      ],
-      "Import contacts or emails": [
-        "Import kontaktů nebo emailů"
-      ],
-      "Send a message": [
-        "Odeslat zprávu"
-      ],
-      "Set up a recovery method": [
-        "Nastavit metodu obnovení"
-      ]
-    },
     "Participant name": {
       "You": [
         "Vy"
@@ -8405,9 +8322,6 @@
       ]
     },
     "Storage": {
-      "Get extra storage for free": [
-        "Získat další úložiště zdarma"
-      ],
       "Release notes": [
         "Seznam změn"
       ],

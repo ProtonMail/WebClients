@@ -145,6 +145,9 @@
       "Carbon Copy": [
         "Cópia Carbono (CC)"
       ],
+      "Change email": [
+        "Alterar o e-mail"
+      ],
       "Change page": [
         "Alterar página"
       ],
@@ -321,9 +324,6 @@
       "Discard": [
         "Descartar"
       ],
-      "Dismiss get started checklist": [
-        "Ignorar a lista de verificação inicial"
-      ],
       "Done": [
         "Concluído"
       ],
@@ -365,6 +365,9 @@
       ],
       "Email settings": [
         "Definições de e-mail"
+      ],
+      "Emoji": [
+        "Emoji"
       ],
       "Enable": [
         "Ativar"
@@ -723,9 +726,6 @@
       ],
       "Open composer": [
         "Abrir compositor"
-      ],
-      "Open get started checklist modal": [
-        "Abrir o modal da lista de verificação inicial"
       ],
       "Open navigation": [
         "Abrir navegação"
@@ -1247,12 +1247,6 @@
     "Alternative text for welcome image": {
       "Welcome": [
         "Boas vindas"
-      ]
-    },
-    "Amount of completed get started checklist items": {
-      "${ numberOfCompletedItems }/${ totalNumberOfItems } complete": [
-        "${ numberOfCompletedItems }/${ totalNumberOfItems } completo",
-        "${ numberOfCompletedItems }/${ totalNumberOfItems } completo"
       ]
     },
     "Animation": {
@@ -4152,32 +4146,12 @@
         "Para: ${ toString }"
       ]
     },
-    "Get started checklist completion": {
-      "We've increased the total storage of your account to ${ rewardInGb } GB. Get additional storage and unlock premium features today.": [
-        "Aumentamos o espaço de armazenamento total da sua conta para ${ rewardInGb } GB. Obtenha espaço de armazenamento adicional e descubra recursos premium hoje."
-      ],
-      "You're all set!": [
-        "Está tudo pronto!"
-      ]
-    },
-    "Get started checklist incentive": {
-      "Complete all steps and get a total of ${ rewardInGb } GB on your account": [
-        "Complete todos os passos para obter um total de ${ rewardInGb } GB na sua conta."
-      ],
-      "Expires soon": [
-        "Expira em breve"
-      ],
-      "Expires today": [
-        "Expira hoje"
-      ],
-      "Only ${ days } day left": [
-        "Restam apenas ${ days } dia",
-        "Restam apenas ${ days } dias"
-      ]
-    },
     "Get started checklist instructions": {
-      "Available on iOS and Android.": [
-        "Disponível em iOS e Android."
+      "Close": [
+        "Fechar"
+      ],
+      "Get mobile app": [
+        "Obtenha a aplicação móvel"
       ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "Obter a aplicação móvel do ${ MAIL_APP_NAME }"
@@ -4185,41 +4159,23 @@
       "Import contacts or emails": [
         "Importar contactos ou e-mails"
       ],
+      "Import data": [
+        "Importar os dados"
+      ],
       "Import your contacts or messages": [
         "Importar contactos ou mensagens"
+      ],
+      "Learn more": [
+        "Saiba mais"
+      ],
+      "Maybe later": [
+        "Talvez mais tarde"
       ],
       "Quickly transfer your contacts or emails from any provider using our Easy Switch import assistant.": [
         "Transfira rapidamente os seus contactos ou e-mails de qualquer provedor com o nosso assistente de importação Easy Switch."
       ],
-      "Sign into the mobile app to complete the action": [
-        "Inicie sessão na aplicação móvel para concluir a ação."
-      ],
-      "Using your mobile device, scan this QR code or visit": [
-        "Leia o código QR com o seu dispositivo móvel ou visite"
-      ]
-    },
-    "Get started checklist item": {
-      "Get mobile app": [
-        "Obter a aplicação móvel"
-      ],
-      "Import contacts or emails": [
-        "Importar contactos ou e-mails"
-      ],
       "Send a message": [
         "Enviar uma mensagem"
-      ],
-      "Set up a recovery method": [
-        "Definir um método de recuperação"
-      ]
-    },
-    "Get started checklist spotlight": {
-      "You can access the checklist anytime from here": [
-        "Pode aceder à lista de verificação a qualquer momento a partir daqui."
-      ]
-    },
-    "Get started checklist title": {
-      "Get started": [
-        "Começar"
       ]
     },
     "Gmail forwarding": {
@@ -7387,6 +7343,32 @@
         "Utilize o seletor de aplicações no canto superior esquerdo para aceder a todos os serviços ${ BRAND_NAME }: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } e ${ DRIVE_SHORT_APP_NAME }."
       ]
     },
+    "Online Accounts Name": {
+      "Banking": [
+        "Transações bancárias"
+      ],
+      "Crypto": [
+        "Cripto"
+      ],
+      "Entertainment": [
+        "Entretenimento"
+      ],
+      "Food and beverage": [
+        "Alimentação e bebidas"
+      ],
+      "Gaming": [
+        "Jogos"
+      ],
+      "Most popular": [
+        "Mais popular"
+      ],
+      "Travel": [
+        "Viagens"
+      ],
+      "Utilities": [
+        "Utilitários"
+      ]
+    },
     "Option": {
       "Add to existing group": [
         "Adicionar a um grupo existente"
@@ -7426,20 +7408,6 @@
     "Pagination": {
       "${ page } of ${ totalText }": [
         "${ page } de ${ totalText }"
-      ]
-    },
-    "Paid user checklist item": {
-      "Get mobile app": [
-        "Obter a aplicação móvel"
-      ],
-      "Import contacts or emails": [
-        "Importar contactos ou e-mails"
-      ],
-      "Send a message": [
-        "Enviar uma mensagem"
-      ],
-      "Set up a recovery method": [
-        "Definir um método de recuperação"
       ]
     },
     "Participant name": {
@@ -8143,9 +8111,6 @@
       ]
     },
     "Storage": {
-      "Get extra storage for free": [
-        "Obtenha armazenamento extra gratuitamente"
-      ],
       "Release notes": [
         "Notas de lançamento"
       ],

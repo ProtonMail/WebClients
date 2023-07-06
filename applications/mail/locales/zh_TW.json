@@ -145,6 +145,9 @@
       "Carbon Copy": [
         "副本"
       ],
+      "Change email": [
+        "更換電子郵件"
+      ],
       "Change page": [
         "跳至頁"
       ],
@@ -319,9 +322,6 @@
       "Discard": [
         "放棄"
       ],
-      "Dismiss get started checklist": [
-        "忽略入門清單"
-      ],
       "Done": [
         "完成"
       ],
@@ -363,6 +363,9 @@
       ],
       "Email settings": [
         "電郵設定"
+      ],
+      "Emoji": [
+        "表情符號"
       ],
       "Enable": [
         "啟用"
@@ -720,9 +723,6 @@
       ],
       "Open composer": [
         "打開撰寫器"
-      ],
-      "Open get started checklist modal": [
-        "開啟新手教學清單視窗"
       ],
       "Open navigation": [
         "開啟導覽"
@@ -1243,11 +1243,6 @@
     "Alternative text for welcome image": {
       "Welcome": [
         "歡迎"
-      ]
-    },
-    "Amount of completed get started checklist items": {
-      "${ numberOfCompletedItems }/${ totalNumberOfItems } complete": [
-        "${ totalNumberOfItems } 中的 ${ numberOfCompletedItems } 已完成"
       ]
     },
     "Animation": {
@@ -4122,31 +4117,9 @@
         "收件人：${ toString }"
       ]
     },
-    "Get started checklist completion": {
-      "We've increased the total storage of your account to ${ rewardInGb } GB. Get additional storage and unlock premium features today.": [
-        "我們已將您帳號的儲存空間調高至 ${ rewardInGb } GB。今天就解鎖付費加值功能，同時獲得更多儲存空間！"
-      ],
-      "You're all set!": [
-        "完工！"
-      ]
-    },
-    "Get started checklist incentive": {
-      "Complete all steps and get a total of ${ rewardInGb } GB on your account": [
-        "完成所有步驟，您的帳號即可獲得總數 ${ rewardInGb } GB 儲存空間"
-      ],
-      "Expires soon": [
-        "即將到期"
-      ],
-      "Expires today": [
-        "今日過期"
-      ],
-      "Only ${ days } days left": [
-        "只剩下 ${ days } 天了"
-      ]
-    },
     "Get started checklist instructions": {
-      "Available on iOS and Android.": [
-        "IOS 和 Android 皆適用。"
+      "Get mobile app": [
+        "取得行動裝置應用程式"
       ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "免費下載 ${ MAIL_APP_NAME } 行動裝置程式"
@@ -4154,41 +4127,17 @@
       "Import contacts or emails": [
         "匯入聯絡人或郵件"
       ],
+      "Import data": [
+        "匯入資料"
+      ],
       "Import your contacts or messages": [
         "匯入您的通訊錄或郵件"
       ],
       "Quickly transfer your contacts or emails from any provider using our Easy Switch import assistant.": [
         "使用我們的 Easy Switch 匯入助理從任何提供商快速移轉您的通訊錄或電郵。"
       ],
-      "Sign into the mobile app to complete the action": [
-        "登入行動APP以完成此操作"
-      ],
-      "Using your mobile device, scan this QR code or visit": [
-        "使用您的行動裝置掃描此QR碼或訪問"
-      ]
-    },
-    "Get started checklist item": {
-      "Get mobile app": [
-        "取得手機 App"
-      ],
-      "Import contacts or emails": [
-        "匯入聯絡人或郵件"
-      ],
       "Send a message": [
-        "傳送郵件"
-      ],
-      "Set up a recovery method": [
-        "設定復原方法"
-      ]
-    },
-    "Get started checklist spotlight": {
-      "You can access the checklist anytime from here": [
-        "您可以隨時從這裡存取檢查清單"
-      ]
-    },
-    "Get started checklist title": {
-      "Get started": [
-        "入門指南"
+        "傳送訊息"
       ]
     },
     "Gmail forwarding": {
@@ -7313,20 +7262,6 @@
         "第 ${ page } 頁，共 ${ totalText } 頁"
       ]
     },
-    "Paid user checklist item": {
-      "Get mobile app": [
-        "取得手機 App"
-      ],
-      "Import contacts or emails": [
-        "匯入聯絡人或郵件"
-      ],
-      "Send a message": [
-        "傳送郵件"
-      ],
-      "Set up a recovery method": [
-        "設定復原方法"
-      ]
-    },
     "Participant name": {
       "You": [
         "您"
@@ -8012,9 +7947,6 @@
       ]
     },
     "Storage": {
-      "Get extra storage for free": [
-        "免費獲得額外的空間"
-      ],
       "Release notes": [
         "版本資訊"
       ],

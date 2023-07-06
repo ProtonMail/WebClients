@@ -869,7 +869,7 @@
     },
     "Calendar self sharing error": {
       "You already have access to this calendar": [
-        "Ja teniu accés a aquest calendari."
+        "Ja teniu accés a aquest calendari"
       ]
     },
     "Calendar share limit modal": {
@@ -896,15 +896,15 @@
     },
     "Calendar sharing access option label": {
       "Edit (view, create and edit event details)": [
-        "Edita (veu, crea i edita els detalls de l'esdeveniment)"
+        "Edita (mostra, crea i edita els detalls de l'esdeveniment)"
       ],
       "View (see all event details)": [
-        "Mostra (veu tots els detalls de l'esdeveniment)"
+        "Mostra (tots els detalls de l'esdeveniment)"
       ]
     },
     "Calendar sharing error": {
       "Failed to retrieve contact information for ${ address }": [
-        "No s'ha pogut recuperar la informació de contacte per ${ address }."
+        "No s'ha pogut recuperar la informació de contacte per a ${ address }."
       ]
     },
     "Calendar sidebar dropdown item": {
@@ -2176,16 +2176,16 @@
         "Ja existeix un grup amb aquest nom"
       ],
       "Account does not exist": [
-        "El compte no existeix."
+        "El compte no existeix"
       ],
       "Address primary private key not found": [
         "No s'ha trobat la clau privada primària de l'adreça"
       ],
       "Already a member of this calendar": [
-        "Ja és membre del calendari."
+        "Ja sou membre d'aquest calendari"
       ],
       "Answer failed to be sent": [
-        "No s'ha pogut enviar la resposta."
+        "No s'ha pogut enviar la resposta"
       ],
       "Authentication canceled.": [
         "S'ha cancel·lat l'autenticació."
@@ -2197,7 +2197,7 @@
         "Límit de calendari assolit"
       ],
       "Cancellation failed to be sent": [
-        "No s'ha pogut enviar la cancel·lació."
+        "No s'ha pogut enviar la cancel·lació"
       ],
       "Cannot export this contact": [
         "No es pot exportar aquest contacte."
@@ -2215,7 +2215,7 @@
         "Signatura del contacte no verificada"
       ],
       "Decryption error: Decryption of this event's content failed.": [
-        "Error de desxifratge: no s'ha pogut desxifrar el contingut d'aquest esdeveniment."
+        "S'ha produït un error de desxifratge: no s'ha pogut desxifrar el contingut d'aquest esdeveniment."
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Desseleccioneu almenys ${ calendarsToFixCount } calendari",
@@ -2238,10 +2238,10 @@
         "El correu electrònic no és vàlid"
       ],
       "Ends on date cannot be empty": [
-        "La data final no pot estar buida."
+        "La data final no pot estar buida"
       ],
       "Ends on date must be after start time": [
-        "La data final ha de ser posterior a la data d'inici."
+        "La data final ha de ser posterior a la data d'inici"
       ],
       "Enter 6 digits": [
         "Introduïu 6 dígits"
@@ -2253,7 +2253,7 @@
         "Error: ${ errorMessage }"
       ],
       "Failed to get original occurrence in series": [
-        "No s'ha pogut obtenir l'ocurrència d'origen de la sèrie."
+        "No s'ha pogut obtenir l'ocurrència d'origen de la sèrie"
       ],
       "Folder name cannot be empty.": [
         "El nom de la carpeta no pot estar buit."
@@ -2271,13 +2271,13 @@
         "Contrasenya de bústia incorrecta. Torneu a provar-ho."
       ],
       "Interval cannot be empty": [
-        "L'interval no pot estar buit."
+        "L'interval no pot estar buit"
       ],
       "Invalid email address": [
-        "Adreça de correu electrònic no vàlida"
+        "L'adreça de correu electrònic no és vàlida"
       ],
       "Invalid link to the event": [
-        "Enllaç a esdeveniment no vàlid"
+        "L'enllaç a l'esdeveniment no és vàlid"
       ],
       "Invalid name": [
         "Nom no vàlid"
@@ -2289,13 +2289,13 @@
         "Codi de verificació no vàlid"
       ],
       "Invitation failed to be sent": [
-        "No s'ha pogut enviar la invitació."
+        "No s'ha pogut enviar la invitació"
       ],
       "It is only possible to create events between ${ minDateString } - ${ maxDateString }": [
-        "Només és possible crear esdeveniments entre ${ minDateString } i ${ maxDateString }."
+        "Només és possible crear esdeveniments entre ${ minDateString } i ${ maxDateString }"
       ],
       "It is only possible to move events between ${ minDateString } - ${ maxDateString }": [
-        "Només és possible moure esdeveniments entre ${ minDateString } i ${ maxDateString }."
+        "Només és possible moure esdeveniments entre ${ minDateString } i ${ maxDateString }"
       ],
       "Label name cannot be empty.": [
         "El nom de l'etiqueta no pot estar buit."
@@ -2329,13 +2329,13 @@
         "No hi ha cap clau WKD per a l'usuari vàlida per a l'enviament"
       ],
       "Not a ${ BRAND_NAME } account": [
-        "No és un compte ${ BRAND_NAME }."
+        "No és un compte de ${ BRAND_NAME }"
       ],
       "Not a valid number": [
         "Número no vàlid"
       ],
       "Number of occurrences cannot be empty": [
-        "El nombre d’ocurrències no pot estar buit."
+        "El nombre d’ocurrències no pot estar buit"
       ],
       "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
         "Un dels contactes no té adreça de correu electrònic: ${ noEmailsContactNamesList }",
@@ -2352,7 +2352,7 @@
         "Les contrasenyes no coincideixen"
       ],
       "Please create an address first.": [
-        "Creeu la vostra adreça primer."
+        "Creeu una adreça primer."
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Arregleu el conflicte ressaltat per continuar.",
@@ -2414,10 +2414,10 @@
         "S'ha produït un error, ${ refresh } per continuar. Si continueu veient aquest missatge d'error, poseu-vos en contacte amb el nostre ${ supportTeam }."
       ],
       "Start time must be before end time": [
-        "L’hora d’inici ha de ser abans de l’hora de finalització."
+        "L’hora d’inici ha de ser abans de l’hora de finalització"
       ],
       "The address might be misspelled": [
-        "És possible que l'adreça estigui mal escrita."
+        "És possible que l'adreça estigui mal escrita"
       ],
       "The email addresses do not match": [
         "Les adreces de correu electrònic no coincideixen"
@@ -2477,7 +2477,7 @@
         "El nom d'usuari ha d'acabar amb una lletra o un dígit"
       ],
       "Validation error": [
-        "Error de validació"
+        "S'ha produït un error de validació"
       ],
       "You already added this holidays calendar": [
         "Ja heu afegit aquest calendari de festius"
@@ -4643,7 +4643,7 @@
         "Afegeix dies festius"
       ],
       "Cannot add more calendars": [
-        "No es poden afegir més calendaris."
+        "No es poden afegir més calendaris"
       ],
       "Edit calendar": [
         "Edita el calendari"
@@ -4895,13 +4895,13 @@
     },
     "Notification in holidays calendar modal": {
       "Adding holidays calendar failed": [
-        "Ha fallat l'addició del calendari de festius"
+        "No s'ha pogut afegir el calendari de festius"
       ],
       "Calendar added": [
         "S'ha afegit el calendari"
       ],
       "Calendar updated": [
-        "Calendari actualitzat"
+        "S'ha actualitzat el calendari"
       ]
     },
     "Notification in share calendar modal": {
@@ -5195,7 +5195,7 @@
         "Una manera de contactar amb tu"
       ],
       "Add a calendar description": [
-        "Afegeix una descripció de calendari"
+        "Afegeix una descripció al calendari"
       ],
       "Add a calendar name": [
         "Afegeix un nom al calendari"
@@ -5210,7 +5210,7 @@
         "Afegeix participants"
       ],
       "Add title": [
-        "Afegeix títol"
+        "Afegeix un títol"
       ],
       "E.g., ": [
         "Ex., "
@@ -5350,12 +5350,12 @@
     },
     "Settings update growler warning": {
       "Failed to update settings": [
-        "No s'han pogut actualitzar les preferències."
+        "No s'han pogut actualitzar les preferències"
       ]
     },
     "Share calendar assistive text": {
       "To invite non-${ BRAND_NAME } users, share your calendar with a link.": [
-        "Per convidar usuaris fora de ${ BRAND_NAME }, compartiu el vostre calendari amb un enllaç."
+        "Per convidar usuaris de fora de ${ BRAND_NAME }, compartiu el vostre calendari amb un enllaç."
       ]
     },
     "Share calendar max shares reached error": {
@@ -5371,7 +5371,7 @@
     },
     "Share calendar modal input placeholder": {
       "Enter an email address or group name": [
-        "Introduïu una adreça de correu o un nom de grup."
+        "Introduïu una adreça de correu electrònic o un nom de grup"
       ]
     },
     "Share calendar modal title": {
@@ -5675,25 +5675,12 @@
         "URL del calendari"
       ],
       "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Other calendars.\n${ kbLink }": [
-        "Per subscriure-us a un calendari extern o públic i a les seves actualitzacions, introduïu-ne la URL. Una versió de només lectura del calendari s'afegirà als vostres Altres calendaris.\n${ kbLink }"
+        "Per subscriure-us a un calendari extern o públic i a les seves actualitzacions, introduïu-ne l'URL. Una versió de només lectura del calendari s'afegirà als vostres Altres calendaris.\n${ kbLink }"
       ]
     },
     "Subscribe to calendar modal description": {
       "Learn how to get a private calendar link.": [
         "Apreneu com obtenir un enllaç de calendari privat."
-      ]
-    },
-    "Subscribed calendar extension warning": {
-      "By using this link, Google will make the calendar you are subscribing to public": [
-        "Usant aquest enllaç, Google farà que el calendari al qual us esteu subscrivint sigui públic."
-      ],
-      "This link might be wrong": [
-        "Aquest enllaç podria ser incorrecte."
-      ]
-    },
-    "Subscribed calendar URL length warning": {
-      "URL is too long": [
-        "L'adreça és massa llarga."
       ]
     },
     "Success": {
@@ -6420,7 +6407,7 @@
         "Compartit amb xifratge d'extrem a extrem"
       ],
       "Shared end-to-end encrypted with verified contact": [
-        "Compartit amb xifratge d'extrem a extrem amb contacte verificat"
+        "Compartit amb xifratge d'extrem a extrem amb un contacte verificat"
       ]
     },
     "Validation": {
