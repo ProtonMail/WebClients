@@ -1,3 +1,3 @@
 export * from './api';
-export * from './fetchHelpers';
+export * from './apiHelpers';
 export * from './utils';
