@@ -4447,6 +4447,44 @@
         "(pe durata primei luni)"
       ]
     },
+    "Get started checklist instructions": {
+      "${ MAIL_APP_NAME } app": [
+        "Aplicația ${ MAIL_APP_NAME }"
+      ],
+      "account logins": [
+        "autentificarea în cont"
+      ],
+      "Auto-forward Gmail": [
+        "Redirecționare automată Gmail"
+      ],
+      "auto-forwarding": [
+        "redirecționarea automată"
+      ],
+      "Change ${ strongText } to your ${ BRAND_NAME } address": [
+        "Schimbă ${ strongText } la adresa ta ${ BRAND_NAME }"
+      ],
+      "Discover how our ${ strongText } protect you": [
+        "Descoperă cum ${ strongText } te protejează"
+      ],
+      "Discover privacy features": [
+        "Descoperă caracteristicile de confidențialitate"
+      ],
+      "Get the ${ strongText } on Android or iOS": [
+        "Obține ${ strongText } pentru Android sau iOS"
+      ],
+      "Get the App": [
+        "Obține aplicația"
+      ],
+      "privacy features": [
+        "caracteristici de confidențialitate"
+      ],
+      "Set up ${ strongText } from Gmail": [
+        "Setează ${ strongText } de la Gmail"
+      ],
+      "Update your logins": [
+        "Actualizează autentificarea"
+      ]
+    },
     "Gmail forwarding": {
       "Automatically forward": [
         "Redirecționare automată"
@@ -6935,8 +6973,8 @@
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Veți avea nevoie de o adresă ${ BRAND_NAME } pentru a utiliza ${ MAIL_APP_NAME } și ${ CALENDAR_APP_NAME }"
       ],
-      "You will NOT be able to decrypt any messages, files, and other data encrypted with this key.": [
-        "NU veți putea decripta niciun mesaj, fișier sau alte date criptate cu această cheie."
+      "You will NOT be able to decrypt any messages, files, and other data encrypted with this key. All data signed with this key will no longer be verified by ${ BRAND_NAME } applications.": [
+        "NU veți putea decripta niciun mesaj, fișier sau alte date criptate cu acestă cheie. Toate datele semnate cu acestă cheie nu vor mai fi verificate de aplicațiile ${ BRAND_NAME }."
       ],
       "You will receive priority support from specialists trained in account protection. For any account security concerns, please ${ hereLink }.": [
         "Veți primi asistență prioritară de la specialiști instruiți în protecția conturilor. Pentru orice probleme legate de securitatea contului, ${ hereLink }."
@@ -7445,9 +7483,6 @@
       ],
       " and ${ l }": [
         " și ${ l }"
-      ],
-      "${ BRAND_NAME } email or username": [
-        "${ BRAND_NAME } e-mail sau utilizator"
       ],
       "${ BRAND_NAME } username": [
         "Nnume de utilizator ${ BRAND_NAME }"
@@ -9580,8 +9615,8 @@
         "Creați până la ${ n } calendare sau adăugați calendare de la prieteni, familie, colegi și organizații",
         "Creați până la ${ n } de calendare sau adăugați calendare de la prieteni, familie, colegi și organizații"
       ],
-      "Create up to ${ n } email addresses/aliases for the whole family. Use them for your online identities, e.g., MyFamilySubs@${ domain } for online subscriptions.": [
-        "Creați până la ${ n } adrese de e-mail/alias pentru întreaga familie. Folosiți-le pentru identitățile personale online, de exemplu, abonamente@${ domain } pentru abonamente online."
+      "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
+        "Creează până la ${ n } adrese/aliasuri ce pot fi atribuite membrilor familiei. Folosește-le pentru identitățile on-line, de exemplu JohnShopper@${ domain } pentru conturi de cumpărături."
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Vă apără împotriva pierderii confidențialității din VPN prin transmiterea traficului pe Internet prin mai multe servere."
@@ -10956,25 +10991,12 @@
         "Aflați cum să obțineți o legătură la un calendar privat."
       ]
     },
-    "Subscribed calendar extension warning": {
-      "By using this link, Google will make the calendar you are subscribing to public": [
-        "Utilizând această legătură, Google va face public calendarul la care vă abonați."
-      ],
-      "This link might be wrong": [
-        "Această legătură ar putea fi greșită"
-      ]
-    },
     "Subscribed calendar section description": {
       "Add public, external, or shared calendars using a URL.": [
         "Adăugare calendare publice, externe sau partajate folosind o adresă URL."
       ],
       "Add public, external, or shared calendars.": [
         "Adăugare calendare publice, externe sau partajate."
-      ]
-    },
-    "Subscribed calendar URL length warning": {
-      "URL is too long": [
-        "Adresa URL este prea lungă"
       ]
     },
     "Subscription attribute": {

@@ -1373,7 +1373,7 @@
     },
     "Calendar self sharing error": {
       "You already have access to this calendar": [
-        "Ja teniu accés a aquest calendari."
+        "Ja teniu accés a aquest calendari"
       ]
     },
     "Calendar settings link share description": {
@@ -1415,15 +1415,15 @@
     },
     "Calendar sharing access option label": {
       "Edit (view, create and edit event details)": [
-        "Edita (veu, crea i edita els detalls de l'esdeveniment)"
+        "Edita (mostra, crea i edita els detalls de l'esdeveniment)"
       ],
       "View (see all event details)": [
-        "Mostra (veu tots els detalls de l'esdeveniment)"
+        "Mostra (tots els detalls de l'esdeveniment)"
       ]
     },
     "Calendar sharing error": {
       "Failed to retrieve contact information for ${ address }": [
-        "No s'ha pogut recuperar la informació de contacte per ${ address }."
+        "No s'ha pogut recuperar la informació de contacte per a ${ address }."
       ]
     },
     "Calendar sharing permission change notification": {
@@ -3003,7 +3003,7 @@
         "Ja existeix un grup amb aquest nom"
       ],
       "Account does not exist": [
-        "El compte no existeix."
+        "El compte no existeix"
       ],
       "Address primary private key not found": [
         "No s'ha trobat la clau privada primària de l'adreça"
@@ -3012,7 +3012,7 @@
         "Tot l'espai d'emmagatzematge s'ha assignat. Reduïu l'emmagatzematge assignat a altres usuaris."
       ],
       "Already a member of this calendar": [
-        "Ja és membre del calendari."
+        "Ja sou membre d'aquest calendari"
       ],
       "Amount above the maximum.": [
         "Quantitat per sobre del màxim."
@@ -3119,7 +3119,7 @@
         "Domini invàlid"
       ],
       "Invalid email address": [
-        "Adreça de correu electrònic no vàlida"
+        "L'adreça de correu electrònic no és vàlida"
       ],
       "Invalid expiration date": [
         "Data de caducitat invàlida"
@@ -3183,7 +3183,7 @@
         "No hi ha cap clau WKD per a l'usuari vàlida per a l'enviament"
       ],
       "Not a ${ BRAND_NAME } account": [
-        "No és un compte ${ BRAND_NAME }."
+        "No és un compte de ${ BRAND_NAME }"
       ],
       "Not a valid number": [
         "Número no vàlid"
@@ -3305,7 +3305,7 @@
         "Pestanya tancada"
       ],
       "The address might be misspelled": [
-        "És possible que l'adreça estigui mal escrita."
+        "És possible que l'adreça estigui mal escrita"
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or sign in via a computer.": [
         "El navegador que esteu utilitzant no permet que el pagament estigui totalment autoritzat. Utilitzeu un navegador diferent o inicieu la sessió mitjançant un ordinador."
@@ -3401,7 +3401,7 @@
         "El nom d'usuari ha d'acabar amb una lletra o un dígit"
       ],
       "Validation error": [
-        "Error de validació"
+        "S'ha produït un error de validació"
       ],
       "Verification did not succeed, please try again in an hour.": [
         "La verificació no s'ha pogut realitzar. Intenteu-ho de nou d'aquí a una hora."
@@ -6867,9 +6867,6 @@
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Necessitareu una adreça ${ BRAND_NAME } per utilitzar ${ MAIL_APP_NAME } i ${ CALENDAR_APP_NAME }"
       ],
-      "You will NOT be able to decrypt any messages, files, and other data encrypted with this key.": [
-        "NO podreu desxifrar cap missatge, fitxer i altres dades xifrades amb aquesta clau."
-      ],
       "You will receive priority support from specialists trained in account protection. For any account security concerns, please ${ hereLink }.": [
         "Rebreu suport prioritari d'especialistes formats en protecció de comptes. Per qualsevol problema de seguretat del compte, ${ hereLink }."
       ],
@@ -7376,9 +7373,6 @@
       ],
       " and ${ l }": [
         " i ${ l }"
-      ],
-      "${ BRAND_NAME } email or username": [
-        "Correu electrònic o nom d'usuari ${ BRAND_NAME }"
       ],
       "${ BRAND_NAME } username": [
         "Nom d'usuari de ${ BRAND_NAME }"
@@ -9476,9 +9470,6 @@
         "Creeu ${ n } calendari o afegiu calendaris d'amics, família, col·legues i organitzacions",
         "Creeu fins a ${ n } calendaris o afegiu calendaris d'amics, família, col·legues i organitzacions"
       ],
-      "Create up to ${ n } email addresses/aliases for the whole family. Use them for your online identities, e.g., MyFamilySubs@${ domain } for online subscriptions.": [
-        "Creeu fins a ${ n } adreces de correu electrònic/àlies per a tota la família. Utilitzeu-les per a les vostres identitats en línia, p. ex., MyFamilySubs@${ domain } per a les subscripcions en línia."
-      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Defensa contra les amenaces a la privacitat de la VPN passant el vostre trànsit d'internet a través de múltiples servidors"
       ],
@@ -9708,13 +9699,13 @@
     },
     "Notification in holidays calendar modal": {
       "Adding holidays calendar failed": [
-        "Ha fallat l'addició del calendari de festius"
+        "No s'ha pogut afegir el calendari de festius"
       ],
       "Calendar added": [
         "S'ha afegit el calendari"
       ],
       "Calendar updated": [
-        "Calendari actualitzat"
+        "S'ha actualitzat el calendari"
       ]
     },
     "Notification in share calendar modal": {
@@ -10093,7 +10084,7 @@
         "Una manera de contactar amb tu"
       ],
       "Add a calendar description": [
-        "Afegeix una descripció de calendari"
+        "Afegeix una descripció al calendari"
       ],
       "Add a calendar name": [
         "Afegeix un nom al calendari"
@@ -10434,7 +10425,7 @@
     },
     "Settings update growler warning": {
       "Failed to update settings": [
-        "No s'han pogut actualitzar les preferències."
+        "No s'han pogut actualitzar les preferències"
       ]
     },
     "Settings/filters": {
@@ -10471,7 +10462,7 @@
     },
     "Share calendar assistive text": {
       "To invite non-${ BRAND_NAME } users, share your calendar with a link.": [
-        "Per convidar usuaris fora de ${ BRAND_NAME }, compartiu el vostre calendari amb un enllaç."
+        "Per convidar usuaris de fora de ${ BRAND_NAME }, compartiu el vostre calendari amb un enllaç."
       ]
     },
     "Share calendar max shares reached error": {
@@ -10487,7 +10478,7 @@
     },
     "Share calendar modal input placeholder": {
       "Enter an email address or group name": [
-        "Introduïu una adreça de correu o un nom de grup."
+        "Introduïu una adreça de correu electrònic o un nom de grup"
       ]
     },
     "Share calendar modal title": {
@@ -10827,20 +10818,12 @@
         "URL del calendari"
       ],
       "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Other calendars.\n${ kbLink }": [
-        "Per subscriure-us a un calendari extern o públic i a les seves actualitzacions, introduïu-ne la URL. Una versió de només lectura del calendari s'afegirà als vostres Altres calendaris.\n${ kbLink }"
+        "Per subscriure-us a un calendari extern o públic i a les seves actualitzacions, introduïu-ne l'URL. Una versió de només lectura del calendari s'afegirà als vostres Altres calendaris.\n${ kbLink }"
       ]
     },
     "Subscribe to calendar modal description": {
       "Learn how to get a private calendar link.": [
         "Apreneu com obtenir un enllaç de calendari privat."
-      ]
-    },
-    "Subscribed calendar extension warning": {
-      "By using this link, Google will make the calendar you are subscribing to public": [
-        "Usant aquest enllaç, Google farà que el calendari al qual us esteu subscrivint sigui públic."
-      ],
-      "This link might be wrong": [
-        "Aquest enllaç podria ser incorrecte."
       ]
     },
     "Subscribed calendar section description": {
@@ -10849,11 +10832,6 @@
       ],
       "Add public, external, or shared calendars.": [
         "Afegiu calendaris públics, externs o compartits."
-      ]
-    },
-    "Subscribed calendar URL length warning": {
-      "URL is too long": [
-        "L'adreça és massa llarga."
       ]
     },
     "Subscription attribute": {
@@ -12531,7 +12509,7 @@
         "Compartit amb xifratge d'extrem a extrem"
       ],
       "Shared end-to-end encrypted with verified contact": [
-        "Compartit amb xifratge d'extrem a extrem amb contacte verificat"
+        "Compartit amb xifratge d'extrem a extrem amb un contacte verificat"
       ]
     },
     "Tor out of date": {
