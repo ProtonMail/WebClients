@@ -56,7 +56,7 @@ export const InstallationSuccess: VFC = () => {
     useEffect(() => {
         if (isPinned === false) {
             createNotification({
-                text: c('Error').t`Please pin the extension to continue.`,
+                text: c('Error').t`Please pin the extension or select "Continue without pinning".`,
                 type: 'error',
                 showCloseButton: false,
             });
@@ -148,14 +148,16 @@ export const InstallationSuccess: VFC = () => {
                                                 {c('Action').t`Done`}
                                             </span>
                                         </Button>
-                                        <Button
-                                            onClick={() => setIsPinned(true)}
-                                            shape="ghost"
-                                            aria-label={c('Action').t`Skip this step`}
-                                            color="norm"
-                                        >
-                                            {c('Action').t`Skip this step`}
-                                        </Button>
+                                        {BUILD_TARGET === 'chrome' && (
+                                            <Button
+                                                onClick={() => setIsPinned(true)}
+                                                shape="ghost"
+                                                aria-label={c('Action').t`Continue without pinning`}
+                                                color="norm"
+                                            >
+                                                {c('Action').t`Continue without pinning`}
+                                            </Button>
+                                        )}
                                     </div>
 
                                     <div className="flex">
