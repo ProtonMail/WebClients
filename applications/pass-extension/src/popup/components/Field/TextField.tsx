@@ -46,14 +46,14 @@ const BaseTextFieldRender: ForwardRefRenderFunction<HTMLInputElement, BaseTextFi
     const hide = hidden && !isEmptyString(value) && !focused;
     const pasteLengthLimiter = usePasteLengthLimiter();
     const maxLengthLimiter = useMaxLengthLimiter();
-    const defaultHiddenValue = value.length >= 6 ? '••••••••••••' : '••••••';
+    const defaultHiddenValue = '••••••••••••';
 
     return (
         <InputFieldTwo
             unstyled
             assistContainerClassName="hidden-empty"
             error={error}
-            inputClassName={clsx('color-norm p-0 rounded-none', inputClassName, hide && 'text-monospace')}
+            inputClassName={clsx('color-norm p-0 rounded-none', inputClassName, hide && 'letter-spacing-hidden')}
             labelContainerClassName={clsx(
                 'm-0 text-normal text-sm',
                 error ? 'color-danger' : 'color-weak',

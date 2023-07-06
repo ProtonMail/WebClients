@@ -12,6 +12,26 @@ export const cardNumberMask = (value: string): FactoryOpts => {
     }
 };
 
+export const cardNumberHiddenValue = (value: string): string => {
+    if (!value.length) {
+        return '';
+    }
+    if (value.length < 12) {
+        return '•••• •••• •••• ••••';
+    }
+
+    const firstFour = value.slice(0, 4);
+    const lastFour = value.slice(-4);
+
+    switch (Number(value.slice(0, 2))) {
+        case 34:
+        case 37:
+            return `${firstFour} •••••• •${lastFour}`;
+        default:
+            return `${firstFour} •••• •••• ${lastFour}`;
+    }
+};
+
 export const expDateMask = {
     mask: 'MM/YYYY',
     blocks: {
