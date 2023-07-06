@@ -136,7 +136,7 @@ export const PROTON_THEMES_MAP = {
     },
 } as const;
 
-export const DARK_THEMES = [ThemeTypes.Carbon, ThemeTypes.Monokai, ThemeTypes.ContrastDark, ThemeTypes.Pass];
+export const getDarkThemes = () => [ThemeTypes.Carbon, ThemeTypes.Monokai, ThemeTypes.ContrastDark, ThemeTypes.Pass];
 
 export const getThemes = (accessibilitySettings: boolean) => {
     const result = [
@@ -205,9 +205,14 @@ export const ThemeFontSizeSettingMap: { [key in ThemeFontSizeSetting]: ThemeFont
         value: 18,
     },
 };
-export const themeFontSizeEntries = (
-    Object.entries(ThemeFontSizeSettingMap) as unknown as [ThemeFontSizeSetting, ThemeFontSizeSettingValue][]
-).sort((a, b) => a[1].value - b[1].value);
+export const getThemeFontSizeEntries = () => {
+    return Object.entries(ThemeFontSizeSettingMap)
+        .map(([key, value]): [ThemeFontSizeSetting, ThemeFontSizeSettingValue] => {
+            const themeFontSizeSettingKey: ThemeFontSizeSetting = Number(key);
+            return [themeFontSizeSettingKey, value];
+        })
+        .sort((a, b) => a[1].value - b[1].value);
+};
 
 export enum ThemeFontFaceSetting {
     DEFAULT,
@@ -222,7 +227,7 @@ interface ThemeFontFaceSettingValue {
     value: string | null;
 }
 
-export const ThemeFontFaceSettingMap = {
+export const ThemeFontFaceSettingMap: { [key in ThemeFontFaceSetting]: ThemeFontFaceSettingValue } = {
     [ThemeFontFaceSetting.DEFAULT]: {
         label: () => c('Font face option').t`Theme default`,
         value: null,
@@ -244,10 +249,14 @@ export const ThemeFontFaceSettingMap = {
         value: 'OpenDyslexic, cursive',
     },
 };
-export const themeFontFaceEntries = Object.entries(ThemeFontFaceSettingMap) as unknown as [
-    ThemeFontFaceSetting,
-    ThemeFontFaceSettingValue
-][];
+export const getThemeFontFaceEntries = () => {
+    return Object.entries(ThemeFontFaceSettingMap).map(
+        ([key, value]): [ThemeFontFaceSetting, ThemeFontFaceSettingValue] => {
+            const themeFontFaceSettingKey: ThemeFontFaceSetting = Number(key);
+            return [themeFontFaceSettingKey, value];
+        }
+    );
+};
 
 export enum ThemeFeatureSetting {
     DEFAULT,
