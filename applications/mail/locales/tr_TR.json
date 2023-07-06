@@ -321,9 +321,6 @@
       "Discard": [
         "Sil"
       ],
-      "Dismiss get started checklist": [
-        "Başlarken kontrol listesini kaldır"
-      ],
       "Done": [
         "Tamam"
       ],
@@ -365,6 +362,9 @@
       ],
       "Email settings": [
         "E-posta ayarları"
+      ],
+      "Emoji": [
+        "Emoji"
       ],
       "Enable": [
         "Etkinleştir"
@@ -723,9 +723,6 @@
       ],
       "Open composer": [
         "Oluşturucuyu aç"
-      ],
-      "Open get started checklist modal": [
-        "Başlarken kontrol listesi penceresini aç"
       ],
       "Open navigation": [
         "Gezinmeyi aç"
@@ -1247,12 +1244,6 @@
     "Alternative text for welcome image": {
       "Welcome": [
         "Hoş geldiniz"
-      ]
-    },
-    "Amount of completed get started checklist items": {
-      "${ numberOfCompletedItems }/${ totalNumberOfItems } complete": [
-        "${ numberOfCompletedItems }/${ totalNumberOfItems } tamamlandı",
-        "${ numberOfCompletedItems }/${ totalNumberOfItems } tamamlandı"
       ]
     },
     "Animation": {
@@ -4152,33 +4143,7 @@
         "Kime: ${ toString }"
       ]
     },
-    "Get started checklist completion": {
-      "We've increased the total storage of your account to ${ rewardInGb } GB. Get additional storage and unlock premium features today.": [
-        "Hesabınızın toplam depolama alanını ${ rewardInGb } GB yaptık. Bugün ek depolama alanı alın ve ücretli özelliklere erişin."
-      ],
-      "You're all set!": [
-        "Her şey tamam!"
-      ]
-    },
-    "Get started checklist incentive": {
-      "Complete all steps and get a total of ${ rewardInGb } GB on your account": [
-        "Tüm adımları tamamlayın ve hesabınızın depolama alanınızı ${ rewardInGb } GB yapın"
-      ],
-      "Expires soon": [
-        "Yakında geçersiz olacak"
-      ],
-      "Expires today": [
-        "Bugün geçersiz olacak"
-      ],
-      "Only ${ days } day left": [
-        "Yalnız ${ days } gün kaldı",
-        "Yalnız ${ days } gün kaldı"
-      ]
-    },
     "Get started checklist instructions": {
-      "Available on iOS and Android.": [
-        "iOS ve Android ile kullanılabilir."
-      ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "${ MAIL_APP_NAME } mobil uygulamasını edinin"
       ],
@@ -4190,36 +4155,6 @@
       ],
       "Quickly transfer your contacts or emails from any provider using our Easy Switch import assistant.": [
         "Easy Switch içe aktarma yardımcısı ile herhangi bir hizmet sağlayıcı üzerinde bulunan kişi ve e-postalarınızı kolayca aktarın."
-      ],
-      "Sign into the mobile app to complete the action": [
-        "İşlemi tamamlamak için mobil uygulama üzerinde oturum açın"
-      ],
-      "Using your mobile device, scan this QR code or visit": [
-        "Mobil aygıtınızı kullanarak bu kare kodu tarayın ya da şuraya gidin"
-      ]
-    },
-    "Get started checklist item": {
-      "Get mobile app": [
-        "Mobil uygulamayı edinin"
-      ],
-      "Import contacts or emails": [
-        "Kişileri veya e-postaları içe aktarın"
-      ],
-      "Send a message": [
-        "Bir ileti gönderin"
-      ],
-      "Set up a recovery method": [
-        "Bir kurtarma yöntemi ayarlayın"
-      ]
-    },
-    "Get started checklist spotlight": {
-      "You can access the checklist anytime from here": [
-        "Kontrol listesine istediğiniz zaman buradan erişebilirsiniz"
-      ]
-    },
-    "Get started checklist title": {
-      "Get started": [
-        "Başlayalım"
       ]
     },
     "Gmail forwarding": {
@@ -7428,20 +7363,6 @@
         "${ page } / ${ totalText }"
       ]
     },
-    "Paid user checklist item": {
-      "Get mobile app": [
-        "Mobil uygulamayı edinin"
-      ],
-      "Import contacts or emails": [
-        "Kişileri veya e-postaları içe aktarın"
-      ],
-      "Send a message": [
-        "Bir ileti gönderin"
-      ],
-      "Set up a recovery method": [
-        "Bir kurtarma yöntemi ayarlayın"
-      ]
-    },
     "Participant name": {
       "You": [
         "Siz"
@@ -8143,9 +8064,6 @@
       ]
     },
     "Storage": {
-      "Get extra storage for free": [
-        "Ücretsiz ek depolama alanı kazanın"
-      ],
       "Release notes": [
         "Sürüm notları"
       ],
