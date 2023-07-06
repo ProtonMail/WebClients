@@ -303,7 +303,7 @@ END:VEVENT
     });
 });
 
-fdescribe('withoutRedundantDtEnd', () => {
+describe('withoutRedundantDtEnd', () => {
     describe('full day', () => {
         it('should remove redundant dtend', () => {
             const ALL_DAY_COMPONENT = parse(`BEGIN:VEVENT
