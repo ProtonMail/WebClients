@@ -7003,9 +7003,6 @@
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Вам будзе неабходны адрас ${ BRAND_NAME } для выкарыстання ${ MAIL_APP_NAME } і ${ CALENDAR_APP_NAME }"
       ],
-      "You will NOT be able to decrypt any messages, files, and other data encrypted with this key.": [
-        "Вы НЕ зможаце расшыфраваць паведамленні, файлы і іншыя даныя, якія зашыфраваны гэтым ключом."
-      ],
       "You will receive priority support from specialists trained in account protection. For any account security concerns, please ${ hereLink }.": [
         "Вы атрымаеце прыярытэтную падтрымку ад спецыялістаў, якія маюць досвед у абароне ўліковых запісаў. У выпадку пытанняў звязаных з бяспекай уліковага запісу, перайдзіце па спасылцы ${ hereLink }"
       ],
@@ -7514,9 +7511,6 @@
       ],
       " and ${ l }": [
         " і ${ l }"
-      ],
-      "${ BRAND_NAME } email or username": [
-        "Электронная пошта або імя карыстальніка ${ BRAND_NAME }"
       ],
       "${ BRAND_NAME } username": [
         "Імя карыстальніка ${ BRAND_NAME }"
@@ -9684,9 +9678,6 @@
         "Стварайце да ${ n } календароў або дадавайце календары ад сяброў, сям'і, калег і арганізацый",
         "Стварайце да ${ n } календароў або дадавайце календары ад сяброў, сям'і, калег і арганізацый"
       ],
-      "Create up to ${ n } email addresses/aliases for the whole family. Use them for your online identities, e.g., MyFamilySubs@${ domain } for online subscriptions.": [
-        "Стварайце да ${ n } адрасоў электроннай пошты/псеўданімаў для ўсёй сям'і. Выкарыстоўвайце іх для свайго сеткавага пасведчання. Напрыклад, MyFamilySubs@${ domain } для падпісак у сетцы."
-      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Абараняе прыватнасць VPN ад пагроз, перадаючы ваш трафік праз некалькі сервераў"
       ],
@@ -11077,25 +11068,12 @@
         "Даведайцеся, як атрымаць прыватную спасылку на каляндар."
       ]
     },
-    "Subscribed calendar extension warning": {
-      "By using this link, Google will make the calendar you are subscribing to public": [
-        "Гэта спасылка дазволіць Google зрабіць каляндар на які вы падпісваецеся публічным"
-      ],
-      "This link might be wrong": [
-        "Гэта спасылка можа быць няправільнай"
-      ]
-    },
     "Subscribed calendar section description": {
       "Add public, external, or shared calendars using a URL.": [
         "Дадавайце публічныя, знешнія або абагуленыя календары, выкарыстоўваючы URL-адрасы."
       ],
       "Add public, external, or shared calendars.": [
         "Дадавайце публічныя, знешнія або абагуленыя календары."
-      ]
-    },
-    "Subscribed calendar URL length warning": {
-      "URL is too long": [
-        "Занадта доўгі URL-адрас"
       ]
     },
     "Subscription attribute": {

@@ -4424,6 +4424,17 @@
         "(au cours de votre premier mois)"
       ]
     },
+    "Get started checklist instructions": {
+      "${ MAIL_APP_NAME } app": [
+        "Application ${ MAIL_APP_NAME }"
+      ],
+      "Auto-forward Gmail": [
+        "Transfert automatique depuis Gmail"
+      ],
+      "Get the App": [
+        "Téléchargez l'application"
+      ]
+    },
     "Gmail forwarding": {
       "Automatically forward": [
         "Transférez automatiquement"
@@ -6867,9 +6878,6 @@
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Vous avez besoin d'une adresse ${ BRAND_NAME } pour utiliser ${ MAIL_APP_NAME } et ${ CALENDAR_APP_NAME }."
       ],
-      "You will NOT be able to decrypt any messages, files, and other data encrypted with this key.": [
-        "Vous ne pourrez PAS déchiffrer les messages, fichiers et autres données chiffrés avec cette clé."
-      ],
       "You will receive priority support from specialists trained in account protection. For any account security concerns, please ${ hereLink }.": [
         "Vous bénéficierez d'une assistance prioritaire par des spécialistes formés à la protection des comptes. Pour toute question concernant la sécurité de votre compte, ${ hereLink }."
       ],
@@ -7376,9 +7384,6 @@
       ],
       " and ${ l }": [
         " et ${ l }"
-      ],
-      "${ BRAND_NAME } email or username": [
-        "Adresse e-mail ou nom d'utilisateur ${ BRAND_NAME }"
       ],
       "${ BRAND_NAME } username": [
         "Nom d'utilisateur ${ BRAND_NAME }"
@@ -9476,9 +9481,6 @@
         "Créez jusqu'à ${ n } calendrier ou ajoutez les calendriers d'amis, de la famille, de collègues et d'organisations.",
         "Créez jusqu'à ${ n } calendriers ou ajoutez les calendriers d'amis, de la famille, de collègues et d'organisations."
       ],
-      "Create up to ${ n } email addresses/aliases for the whole family. Use them for your online identities, e.g., MyFamilySubs@${ domain } for online subscriptions.": [
-        "Créez jusqu'à ${ n } adresses e-mail/alias pour toute la famille. Utilisez-les pour vos identités en ligne, comme AbonnementFamille@${ domain } pour les abonnements en ligne par exemple."
-      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Cette fonctionnalité vous protège des menaces sur la confidentialité du VPN en acheminant votre trafic internet à travers plusieurs serveurs."
       ],
@@ -11096,25 +11098,12 @@
         "Découvrez comment obtenir un lien de calendrier privé."
       ]
     },
-    "Subscribed calendar extension warning": {
-      "By using this link, Google will make the calendar you are subscribing to public": [
-        "En utilisant ce lien, Google rendra public le calendrier auquel vous vous inscrivez."
-      ],
-      "This link might be wrong": [
-        "Ce lien n'est peut-être pas correct."
-      ]
-    },
     "Subscribed calendar section description": {
       "Add public, external, or shared calendars using a URL.": [
         "Ajouter des calendriers publics, externes ou partagés en utilisant une URL."
       ],
       "Add public, external, or shared calendars.": [
         "Ajoutez des calendriers publics, externes ou partagés."
-      ]
-    },
-    "Subscribed calendar URL length warning": {
-      "URL is too long": [
-        "L'URL est trop longue."
       ]
     },
     "Subscription attribute": {

@@ -6110,9 +6110,6 @@
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Szüksége lesz egy ${ BRAND_NAME } címre, hogy használni tudja a ${ MAIL_APP_NAME } és ${ CALENDAR_APP_NAME } szolgáltatásokat"
       ],
-      "You will NOT be able to decrypt any messages, files, and other data encrypted with this key.": [
-        "NEM fogja tudni visszafejteni az üzeneteteket, fájlokat vagy akármilyen más adatot, amit ezzel a kulccsal titkosított."
-      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "A kifizetés ellenőrzéséhez hamarosan átirányítunk a PayPal oldalára."
       ],
@@ -6593,9 +6590,6 @@
       ],
       " and ${ l }": [
         " és ${ l }"
-      ],
-      "${ BRAND_NAME } email or username": [
-        "${ BRAND_NAME } e-mail vagy felhasználónév"
       ],
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } felhasználónév"
@@ -9714,22 +9708,9 @@
         "Olvassa el hogyan kaphat személyes naptár hivatkozást."
       ]
     },
-    "Subscribed calendar extension warning": {
-      "By using this link, Google will make the calendar you are subscribing to public": [
-        "Ezzel a hivatkozással, a Google nyilvánossá fogja tenni azt a naptárat amelyre fel van iratkozva"
-      ],
-      "This link might be wrong": [
-        "Ez a hivatkozás valószínűleg hibás"
-      ]
-    },
     "Subscribed calendar section description": {
       "Add public, external, or shared calendars using a URL.": [
         "Vegyen fel nyilvános, külső vagy megosztott naptárat URL megadásával."
-      ]
-    },
-    "Subscribed calendar URL length warning": {
-      "URL is too long": [
-        "Az URL túl hosszú"
       ]
     },
     "Subscription attribute": {
