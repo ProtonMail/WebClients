@@ -657,7 +657,7 @@
         "Poista tämä jäsen"
       ],
       "Remove this notification": [
-        "Poista tämä ilmoitus"
+        "Poista ilmoitus"
       ],
       "Report a problem": [
         "Ilmoita ongelmasta"
@@ -837,7 +837,7 @@
         "Rekisteröidy ilmaiseksi"
       ],
       "Signing in": [
-        "Kirjaudutaan sisään"
+        "Kirjaudutaan"
       ],
       "Signing out": [
         "Kirjaudutaan ulos"
@@ -900,7 +900,7 @@
         "Järjestämätön lista"
       ],
       "Unsubscribe": [
-        "Lopeta tilaus"
+        "Peru tilaus"
       ],
       "Update": [
         "Päivitä"
@@ -2640,12 +2640,12 @@
         "/kuukausi"
       ],
       "/user per month": [
-        "/käyttäjä/kuukausi"
+        "/käyttäjä per kuukausi"
       ]
     },
     "Daily recurring event, frequency": {
       "${ count } time": [
-        "${ count } kerta",
+        "${ count } kerran",
         "${ count } kertaa"
       ],
       "Daily": [
@@ -3265,8 +3265,8 @@
         "Tapahtuma keskeytettiin"
       ],
       "Removed duplicate recipient: ${ joinedRecipients }": [
-        "Poistettiin vastaanottajan kaksoiskappale: ${ joinedRecipients }",
-        "Poistettiin vastaanottajien kaksoiskappaleet: ${ joinedRecipients }"
+        "Vastaanottajan kaksoiskappale poistettiin: ${ joinedRecipients }",
+        "Vastaanottajien kaksoiskappaleet poistettiin: ${ joinedRecipients }"
       ],
       "Request timed out": [
         "Pyyntö aikakatkaistiin"
@@ -3738,7 +3738,7 @@
         "Kutsua ei tueta"
       ],
       "Unsupported response": [
-        "Vastausta ei tueta"
+        "Ei tuettu vastaustyyppi"
       ],
       "We could not cancel the event in your calendar": [
         "Tapahtumaa ei voitu perua kalenteristasi"
@@ -4424,6 +4424,44 @@
         "(ensimmäisen kuukautesi aikana)"
       ]
     },
+    "Get started checklist instructions": {
+      "${ MAIL_APP_NAME } app": [
+        "${ MAIL_APP_NAME } -sovellus"
+      ],
+      "account logins": [
+        "tilin kirjautumiset"
+      ],
+      "Auto-forward Gmail": [
+        "Automaattinen edelleenlähetys Gmailiin"
+      ],
+      "auto-forwarding": [
+        "automaattinen edelleenlähetys"
+      ],
+      "Change ${ strongText } to your ${ BRAND_NAME } address": [
+        "Muuta ${ strongText } ${ BRAND_NAME } -osoitteeksi"
+      ],
+      "Discover how our ${ strongText } protect you": [
+        "Tutustu, kuinka ${ strongText } suojaa sinua"
+      ],
+      "Discover privacy features": [
+        "Tutustu tietosuojaominaisuuksiin"
+      ],
+      "Get the ${ strongText } on Android or iOS": [
+        "Hanki ${ strongText } Androidille tai iOS:lle"
+      ],
+      "Get the App": [
+        "Hanki sovellus"
+      ],
+      "privacy features": [
+        "Yksityisyysominaisuudet"
+      ],
+      "Set up ${ strongText } from Gmail": [
+        "Määritä ${ strongText } Gmailista"
+      ],
+      "Update your logins": [
+        "Päivitä kirjautumistunnuksesi"
+      ]
+    },
     "Gmail forwarding": {
       "Automatically forward": [
         "Edelleenlähetä automaattisesti"
@@ -5042,8 +5080,8 @@
         "${ PROTON_SENTINEL_NAME } toimii kehittyneillä tekoälyjärjestelmillä ja asiantuntijatiimeillä, jotka työskentelevät 24/7 torjuakseen haitallisia toimijoita ja tietoturvauhkia"
       ],
       "${ providerFoldersNumLocalized } folder found": [
-        "Löytyi ${ providerFoldersNumLocalized } kansio",
-        "Löytyi ${ providerFoldersNumLocalized } kansiota"
+        "${ providerFoldersNumLocalized } kansio löytyi",
+        "${ providerFoldersNumLocalized } kansiota löytyi"
       ],
       "${ providerFoldersNumLocalized } label found in Gmail": [
         "Gmailista löytyi ${ providerFoldersNumLocalized } tunniste",
@@ -6722,7 +6760,7 @@
         "Määrittäessäsi kaksivaiheisen todennuksen saat myös palautuskoodit, joiden avulla voit kirjautua sisään vaikka menettäisit pääsyn todennussovellukseesi."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
-        "Kun tilauksesi uudistetaan, käytämme ensin käytettävissä olevia krediittejä ennen yllämainitun maksutavan veloitusta."
+        "Kun tilauksesi uudistetaan, käytetään ensin kaikki tilillä olevat krediitit ennen yllä määritetyn maksutavan veloitusta."
       ],
       "Why?": [
         "Miksi?"
@@ -6814,7 +6852,7 @@
         "Et voi kumota toimintoa."
       ],
       "You cannot use the OpenVPN / IKEv2 credentials to sign in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
-        "Et voi käyttää OpenVPN-/IKEv2-kirjautumistietoka ${ VPN_APP_NAME } -sovelluksiin tai ${ VPN_APP_NAME } -hallintapaneeliin kirjautumiseen. ${ learnMore }"
+        "Et voi käyttää OpenVPN-/IKEv2-kirjautumistietoja ${ VPN_APP_NAME } -sovelluksiin tai ${ VPN_APP_NAME } -hallintapaneeliin kirjautumiseen. ${ learnMore }"
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Varoitus: Et määrittänyt palautustapaa, joten tilin palautus on mahdotonta mikäli kadotat salasanasi. Jatketaanko ilman palautustapaa?"
@@ -6867,8 +6905,8 @@
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Tarvitset ${ BRAND_NAME }-osoitteen käyttääksesi ${ MAIL_APP_NAME } ja ${ CALENDAR_APP_NAME } -palveluita"
       ],
-      "You will NOT be able to decrypt any messages, files, and other data encrypted with this key.": [
-        "ET voi purkaa tällä avaimella salattuja viestejä, tiedostoja ja muuta tietoa."
+      "You will NOT be able to decrypt any messages, files, and other data encrypted with this key. All data signed with this key will no longer be verified by ${ BRAND_NAME } applications.": [
+        "Et voi purkaa tällä avaimella salattujen viestien, tiedostojen ja muiden tietojen salausta. ${ BRAND_NAME } -sovellukset eivät enää vahvista kaikkia tällä avaimella allekirjoitettuja tietoja."
       ],
       "You will receive priority support from specialists trained in account protection. For any account security concerns, please ${ hereLink }.": [
         "Saat ensisijaisesti tukea tilin suojaamiseen koulutetuilta asiantuntijoilta. Jos sinulla on tilin turvallisuuteen liittyviä kysymyksiä, ${ hereLink }."
@@ -7376,9 +7414,6 @@
       ],
       " and ${ l }": [
         " ja ${ l }"
-      ],
-      "${ BRAND_NAME } email or username": [
-        "${ BRAND_NAME }-sähköpostiosoite tai käyttäjätunnus"
       ],
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME }-käyttäjätunnus"
@@ -8539,7 +8574,7 @@
         "Tietojasi kerätään palveluntarjoajalta"
       ],
       "Your import is starting": [
-        "Tuonti alkaa"
+        "Tuontisi alkaa"
       ]
     },
     "Log preference": {
@@ -9366,7 +9401,7 @@
     },
     "new_plans: Plan frequency": {
       "/month": [
-        "kuukaudessa"
+        "/kuukausi"
       ]
     },
     "new_plans: Plan time remaining": {
@@ -9476,8 +9511,8 @@
         "Luo jopa ${ n } kalenteri, tai lisää kalentereita kavereilta, perheeltä, kollegoilta tai organisaatioilta",
         "Luo jopa ${ n } kalenteria, tai lisää kalentereita kavereilta, perheeltä, kollegoilta tai organisaatioilta"
       ],
-      "Create up to ${ n } email addresses/aliases for the whole family. Use them for your online identities, e.g., MyFamilySubs@${ domain } for online subscriptions.": [
-        "Luo jopa ${ n } sähköpostiosoitetta/aliasta koko perheelle. Käytä niitä online-identiteeteillesi, esim. PerheeniTilaukset@${ domain } verkkotilauksiin."
+      "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
+        "Luo jopa ${ n } sähköpostiosoitetta/aliasta, jotka voit määrittää perheenjäsenille. Käytä niitä online-identiteeteille, esim. JaakkoOstaja@${ domain } ostostileille."
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Suojaa VPN-yksityisyyden uhkilta ohjaamalla Internet-tietoliikenteesi useiden palvelinten kautta"
@@ -10835,25 +10870,12 @@
         "Lue miten saat yksityisen kalenterilinkin."
       ]
     },
-    "Subscribed calendar extension warning": {
-      "By using this link, Google will make the calendar you are subscribing to public": [
-        "Tätä linkkiä käytettäessä Google muuttaa tilaamasi kalenterin julkiseksi"
-      ],
-      "This link might be wrong": [
-        "Linkki voi olla virheellinen"
-      ]
-    },
     "Subscribed calendar section description": {
       "Add public, external, or shared calendars using a URL.": [
         "Lisää julkisia, ulkoisia tai jaettuja kalentereita URL-osoiteella."
       ],
       "Add public, external, or shared calendars.": [
         "Lisää julkisia, ulkoisia tai jaettuja kalentereita."
-      ]
-    },
-    "Subscribed calendar URL length warning": {
-      "URL is too long": [
-        "URL-osoite on liian pitkä"
       ]
     },
     "Subscription attribute": {
@@ -11232,7 +11254,7 @@
         "/kuukausi"
       ],
       "/user per month": [
-        "/käyttäjä/kuukausi"
+        "/käyttäjä per kuukausi"
       ]
     },
     "Suffix for price": {

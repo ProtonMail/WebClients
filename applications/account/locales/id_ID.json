@@ -5090,7 +5090,7 @@
         "Pengguna di sini didefinisikan sebagai akun yang terhubung dengan nama pengguna, kotak surat, dan individu tunggal"
       ],
       "Access your passwords and protect your online identities seamlessly across your devices. Download and install the relevant ${ PASS_APP_NAME } apps and extensions.": [
-        "Akses kata sandi Anda dan lindungi identitas online Anda dengan mudah pada seluruh perangkat Anda. Unduh dan pasang aplikasi dan ekstensi ${ PASS_APP_NAME } yang sesuai dengan kebutuhan Anda."
+        "Akses kata sandi Anda dan lindungi identitas online Anda pada seluruh perangkat Anda secara terpadu. Unduh dan pasang aplikasi dan ekstensi ${ PASS_APP_NAME } yang sesuai dengan kebutuhan Anda."
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Akses akun dibatasi karena tagihan yang tertunggak. Silakan hubungi administrator Anda."
@@ -6796,9 +6796,6 @@
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Anda akan butuh alamat ${ BRAND_NAME } untuk dapat menggunakan ${ MAIL_APP_NAME } dan ${ CALENDAR_APP_NAME }"
       ],
-      "You will NOT be able to decrypt any messages, files, and other data encrypted with this key.": [
-        "Anda TIDAK akan dapat mendekripsi pesan, berkas, atau data apa pun yang terenkripsi dengan kunci ini."
-      ],
       "You will receive priority support from specialists trained in account protection. For any account security concerns, please ${ hereLink }.": [
         "Anda akan memperoleh dukungan prioritas dari para ahli yang terlatih dalam hal perlindungan akun. Untuk pertanyaan apa pun seputar keamanan akun, silakan ${ hereLink }"
       ],
@@ -7304,9 +7301,6 @@
       ],
       " and ${ l }": [
         " dan ${ l }"
-      ],
-      "${ BRAND_NAME } email or username": [
-        "Email atau nama pengguna ${ BRAND_NAME }"
       ],
       "${ BRAND_NAME } username": [
         "Pengguna ${ BRAND_NAME }"
@@ -9369,9 +9363,6 @@
       "Create up to ${ n } calendars or add calendars from friends, family, colleagues, and organizations": [
         "Buat hingga ${ n } kalender atau tambahkan kalender dari teman, keluarga, rekan kerja, dan organisasi Anda"
       ],
-      "Create up to ${ n } email addresses/aliases for the whole family. Use them for your online identities, e.g., MyFamilySubs@${ domain } for online subscriptions.": [
-        "Buat hingga ${ n } alamat/alias email untuk seluruh keluarga Anda. Gunakan masing-masing alamat ini untuk berbagai identitas dan keperluan online Anda, mis. MyFamilySubs@${ domain } untuk mengelola langganan online."
-      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Melindungi Anda dari ancaman terhadap privasi VPN dengan mengalihkan lalu lintas internet Anda melalui berbagai server"
       ],
@@ -10711,25 +10702,12 @@
         "Pelajari cara untuk mendapatkan tautan kalender pribadi."
       ]
     },
-    "Subscribed calendar extension warning": {
-      "By using this link, Google will make the calendar you are subscribing to public": [
-        "Dengan menggunakan tautan ini, Google akan membuat daftar kalender yang Anda langgan menjadi publik"
-      ],
-      "This link might be wrong": [
-        "Tautan ini mungkin salah"
-      ]
-    },
     "Subscribed calendar section description": {
       "Add public, external, or shared calendars using a URL.": [
         "Tambahkan kalender publik, eksternal, atau bersama melalui URL."
       ],
       "Add public, external, or shared calendars.": [
         "Tambahkan kalender publik, eksternal, atau bersama."
-      ]
-    },
-    "Subscribed calendar URL length warning": {
-      "URL is too long": [
-        "URL terlalu panjang"
       ]
     },
     "Subscription attribute": {
