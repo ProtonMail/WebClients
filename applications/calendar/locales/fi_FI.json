@@ -420,7 +420,7 @@
         "Poista"
       ],
       "Remove this notification": [
-        "Poista tämä ilmoitus"
+        "Poista ilmoitus"
       ],
       "Remove this participant": [
         "Poista tämä osallistuja"
@@ -1930,13 +1930,13 @@
         "Päivänä…"
       ],
       "time": [
-        "aika",
-        "ajat"
+        "kerran",
+        "kertaa"
       ]
     },
     "Daily recurring event, frequency": {
       "${ count } time": [
-        "${ count } kerta",
+        "${ count } kerran",
         "${ count } kertaa"
       ],
       "Daily": [
@@ -2060,7 +2060,7 @@
     },
     "Duplicate event button tooltip": {
       "Duplicate event": [
-        "Tapahtuman kaksoiskappale"
+        "Monista tapahtuma"
       ]
     },
     "Duration": {
@@ -2374,8 +2374,8 @@
         "${ BRAND_NAME }-käyttäjälle noudettu ensisijainen avain ei kelpaa lähetykseen"
       ],
       "Removed duplicate recipient: ${ joinedRecipients }": [
-        "Poistettiin vastaanottajan kaksoiskappale: ${ joinedRecipients }",
-        "Poistettiin vastaanottajien kaksoiskappaleet: ${ joinedRecipients }"
+        "Vastaanottajan kaksoiskappale poistettiin: ${ joinedRecipients }",
+        "Vastaanottajien kaksoiskappaleet poistettiin: ${ joinedRecipients }"
       ],
       "Request timed out": [
         "Pyyntö aikakatkaistiin"
@@ -2745,7 +2745,7 @@
         "Kutsua ei tueta"
       ],
       "Unsupported response": [
-        "Vastausta ei tueta"
+        "Ei tuettu vastaustyyppi"
       ],
       "We could not cancel the event in your calendar": [
         "Tapahtumaa ei voitu perua kalenteristasi"
@@ -3379,8 +3379,8 @@
         "${ contactsCount } yhteystietoa löytyi"
       ],
       "${ groupCounts } group found": [
-        "${ groupCounts } yhteystietoryhmä löytyi",
-        "${ groupCounts } yhteystietoryhmää löytyi"
+        "${ groupCounts } ryhmä löytyi",
+        "${ groupCounts } ryhmää löytyi"
       ],
       "${ numContact } contact": [
         "${ numContact } yhteystieto",
@@ -3391,8 +3391,8 @@
         "${ numGroups } yhteystietoryhmää"
       ],
       "${ providerFoldersNumLocalized } folder found": [
-        "Löytyi ${ providerFoldersNumLocalized } kansio",
-        "Löytyi ${ providerFoldersNumLocalized } kansiota"
+        "${ providerFoldersNumLocalized } kansio löytyi",
+        "${ providerFoldersNumLocalized } kansiota löytyi"
       ],
       "${ providerFoldersNumLocalized } label found in Gmail": [
         "Gmailista löytyi ${ providerFoldersNumLocalized } tunniste",
@@ -3903,10 +3903,10 @@
         "Määrittäessäsi kaksivaiheisen todennuksen saat myös palautuskoodit, joiden avulla voit kirjautua sisään vaikka menettäisit pääsyn todennussovellukseesi."
       ],
       "Which event would you like to delete?": [
-        "Minkä tapahtumakerran haluat poistaa?"
+        "Mitkä tapahtumakerrat haluat poistaa?"
       ],
       "Which event would you like to update?": [
-        "Minkä ketjun tapahtumista haluat päivittää?"
+        "Mitkä tapahtumakerrat haluat päivittää?"
       ],
       "Would you like to change your answer for all the events in this series?": [
         "Haluatko vaihtaa vastauksesi ketjun kaikille tapahtumille?"
@@ -4569,7 +4569,7 @@
         "Tietojasi kerätään palveluntarjoajalta"
       ],
       "Your import is starting": [
-        "Tuonti alkaa"
+        "Tuontisi alkaa"
       ]
     },
     "Mail import summary": {
@@ -5094,7 +5094,7 @@
         "Lisää olemassa olevaan ryhmään"
       ],
       "All events": [
-        "Ketjun kaikki tapahtumat"
+        "Kaikki tapahtumakerrat"
       ],
       "Create new group": [
         "Luo uusi ryhmä"
@@ -5135,7 +5135,7 @@
         "Ketjun tämä ja tulevat tapahtumat"
       ],
       "This event": [
-        "Ketjun tämä tapahtuma"
+        "Vain tämän tapahtumakerran"
       ],
       "Week": [
         "Viikko",
@@ -5683,19 +5683,6 @@
         "Lue miten saat yksityisen kalenterilinkin."
       ]
     },
-    "Subscribed calendar extension warning": {
-      "By using this link, Google will make the calendar you are subscribing to public": [
-        "Tätä linkkiä käytettäessä Google muuttaa tilaamasi kalenterin julkiseksi"
-      ],
-      "This link might be wrong": [
-        "Linkki voi olla virheellinen"
-      ]
-    },
-    "Subscribed calendar URL length warning": {
-      "URL is too long": [
-        "URL-osoite on liian pitkä"
-      ]
-    },
     "Success": {
       "${ countMergeableContacts } contact look identical.": [
         "${ countMergeableContacts } yhteystieto näyttää identtiseltä.",
@@ -6184,7 +6171,7 @@
         "Palauta tiedot"
       ],
       "Remove participants": [
-        "Poista osallistuja"
+        "Poista osallistujia"
       ],
       "Report a problem": [
         "Ilmoita ongelmasta"
