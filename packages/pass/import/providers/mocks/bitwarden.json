@@ -47,25 +47,6 @@
             "collectionIds": null
         },
         {
-            "id": "a8fcc18c-613f-4586-b1fc-afa200d06f5f",
-            "organizationId": null,
-            "folderId": null,
-            "type": 3,
-            "reprompt": 0,
-            "name": "CreditCardItem",
-            "notes": null,
-            "favorite": false,
-            "card": {
-                "cardholderName": "Mr John DOE",
-                "brand": "Visa",
-                "number": "42424242424242424242",
-                "expMonth": "4",
-                "expYear": "2042",
-                "code": "007"
-            },
-            "collectionIds": null
-        },
-        {
             "id": "122b4201-6b60-495e-ae2d-afa200d0b79b",
             "organizationId": null,
             "folderId": null,
@@ -146,6 +127,25 @@
                 "username": null,
                 "password": null,
                 "totp": null
+            },
+            "collectionIds": null
+        },
+        {
+            "id": "59a92880-bf32-4da2-83a3-b037008f99ad",
+            "organizationId": null,
+            "folderId": null,
+            "type": 3,
+            "reprompt": 0,
+            "name": "Credit Card Y",
+            "notes": "Credit Card Y AMEX note",
+            "favorite": false,
+            "card": {
+                "cardholderName": "A B",
+                "brand": "Amex",
+                "number": "374242424242424",
+                "expMonth": "1",
+                "expYear": "2025",
+                "code": "123"
             },
             "collectionIds": null
         }
