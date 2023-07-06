@@ -318,9 +318,6 @@
       "Discard": [
         "Verwijderen"
       ],
-      "Dismiss get started checklist": [
-        "Checklist voor vertrek afbreken"
-      ],
       "Done": [
         "Klaar"
       ],
@@ -362,6 +359,9 @@
       ],
       "Email settings": [
         "E-mailinstellingen"
+      ],
+      "Emoji": [
+        "Emoji"
       ],
       "Enable": [
         "Inschakelen"
@@ -720,9 +720,6 @@
       ],
       "Open composer": [
         "Open het opstelvenster"
-      ],
-      "Open get started checklist modal": [
-        "Open ga aan de slag checklist modal"
       ],
       "Open navigation": [
         "Navigatie openen"
@@ -1244,12 +1241,6 @@
     "Alternative text for welcome image": {
       "Welcome": [
         "Welkom"
-      ]
-    },
-    "Amount of completed get started checklist items": {
-      "${ numberOfCompletedItems }/${ totalNumberOfItems } complete": [
-        "${ numberOfCompletedItems }/${ totalNumberOfItems } voltooid",
-        "${ numberOfCompletedItems }/${ totalNumberOfItems } voltooid"
       ]
     },
     "Animation": {
@@ -4143,33 +4134,7 @@
         "Aan: ${ toString }"
       ]
     },
-    "Get started checklist completion": {
-      "We've increased the total storage of your account to ${ rewardInGb } GB. Get additional storage and unlock premium features today.": [
-        "We hebben de totale opslagruimte van uw account verhoogd naar ${ rewardInGb } GB. Krijg vandaag nog extra opslagruimte en ontgrendel premium functies."
-      ],
-      "You're all set!": [
-        "U bent er helemaal klaar voor!"
-      ]
-    },
-    "Get started checklist incentive": {
-      "Complete all steps and get a total of ${ rewardInGb } GB on your account": [
-        "Voltooi alle stappen en krijg een totaal van ${ rewardInGb } GB op uw account"
-      ],
-      "Expires soon": [
-        "Verloopt binnenkort"
-      ],
-      "Expires today": [
-        "Verloopt vandaag"
-      ],
-      "Only ${ days } day left": [
-        "Nog maar één dag",
-        "Nog maar ${ days } dagen"
-      ]
-    },
     "Get started checklist instructions": {
-      "Available on iOS and Android.": [
-        "Beschikbaar op iOS en Android."
-      ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "Download de ${ MAIL_APP_NAME } mobiele app"
       ],
@@ -4181,36 +4146,6 @@
       ],
       "Quickly transfer your contacts or emails from any provider using our Easy Switch import assistant.": [
         "Breng snel uw contacten of e-mails over van eender welke provider met onze Easy Switch importassistent."
-      ],
-      "Sign into the mobile app to complete the action": [
-        "Log in op de mobiele app om de actie te voltooien"
-      ],
-      "Using your mobile device, scan this QR code or visit": [
-        "Met uw mobiele apparaat, scan deze QR-code of bezoek"
-      ]
-    },
-    "Get started checklist item": {
-      "Get mobile app": [
-        "Download de mobiele app"
-      ],
-      "Import contacts or emails": [
-        "Contacten of e-mails importeren"
-      ],
-      "Send a message": [
-        "Verstuur een bericht"
-      ],
-      "Set up a recovery method": [
-        "Een herstelmethode instellen"
-      ]
-    },
-    "Get started checklist spotlight": {
-      "You can access the checklist anytime from here": [
-        "U kunt de checklist hier op elk moment raadplegen"
-      ]
-    },
-    "Get started checklist title": {
-      "Get started": [
-        "Aan de slag"
       ]
     },
     "Gmail forwarding": {
@@ -7377,20 +7312,6 @@
         "${ page } van ${ totalText }"
       ]
     },
-    "Paid user checklist item": {
-      "Get mobile app": [
-        "Download de mobiele app"
-      ],
-      "Import contacts or emails": [
-        "Contacten of e-mails importeren"
-      ],
-      "Send a message": [
-        "Verzend een bericht"
-      ],
-      "Set up a recovery method": [
-        "Een herstelmethode instellen"
-      ]
-    },
     "Participant name": {
       "You": [
         "U"
@@ -8076,9 +7997,6 @@
       ]
     },
     "Storage": {
-      "Get extra storage for free": [
-        "Krijg gratis extra opslag"
-      ],
       "Release notes": [
         "Belangrijkste wijzigingen"
       ],

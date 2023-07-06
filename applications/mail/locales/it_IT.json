@@ -321,9 +321,6 @@
       "Discard": [
         "Elimina"
       ],
-      "Dismiss get started checklist": [
-        "Ignora la lista di controllo per iniziare"
-      ],
       "Done": [
         "Fatto"
       ],
@@ -365,6 +362,9 @@
       ],
       "Email settings": [
         "Impostazioni email"
+      ],
+      "Emoji": [
+        "Emoji"
       ],
       "Enable": [
         "Abilita"
@@ -723,9 +723,6 @@
       ],
       "Open composer": [
         "Apri il compositore"
-      ],
-      "Open get started checklist modal": [
-        "Apri la modalità elenco di controllo per iniziare"
       ],
       "Open navigation": [
         "Apri navigazione"
@@ -1247,12 +1244,6 @@
     "Alternative text for welcome image": {
       "Welcome": [
         "Ti diamo il benvenuto"
-      ]
-    },
-    "Amount of completed get started checklist items": {
-      "${ numberOfCompletedItems }/${ totalNumberOfItems } complete": [
-        "${ numberOfCompletedItems }/${ totalNumberOfItems } completo",
-        "${ numberOfCompletedItems }/${ totalNumberOfItems } completi"
       ]
     },
     "Animation": {
@@ -4146,33 +4137,7 @@
         "A: ${ toString }"
       ]
     },
-    "Get started checklist completion": {
-      "We've increased the total storage of your account to ${ rewardInGb } GB. Get additional storage and unlock premium features today.": [
-        "Abbiamo aumentato lo spazio di archiviazione totale del tuo account a ${ rewardInGb } GB. Ottieni spazio di archiviazione aggiuntivo e sblocca le funzionalità premium oggi stesso."
-      ],
-      "You're all set!": [
-        "Tutto impostato!"
-      ]
-    },
-    "Get started checklist incentive": {
-      "Complete all steps and get a total of ${ rewardInGb } GB on your account": [
-        "Completa tutti i passaggi e ottieni un totale di ${ rewardInGb } GB sul tuo account"
-      ],
-      "Expires soon": [
-        "Scade a breve"
-      ],
-      "Expires today": [
-        "Scade oggi"
-      ],
-      "Only ${ days } day left": [
-        "Solo ${ days } giorno rimasto",
-        "Solo ${ days } giorni rimasti"
-      ]
-    },
     "Get started checklist instructions": {
-      "Available on iOS and Android.": [
-        "Disponibile su iOS e Android."
-      ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "Ottieni l'app mobile ${ MAIL_APP_NAME }"
       ],
@@ -4184,36 +4149,6 @@
       ],
       "Quickly transfer your contacts or emails from any provider using our Easy Switch import assistant.": [
         "Trasferisci rapidamente i tuoi contatti o e-mail da qualsiasi provider utilizzando il nostro assistente di importazione Easy Switch."
-      ],
-      "Sign into the mobile app to complete the action": [
-        "Accedi all'app mobile per completare l'azione"
-      ],
-      "Using your mobile device, scan this QR code or visit": [
-        "Utilizzando il tuo dispositivo mobile, scansiona questo codice QR o visita"
-      ]
-    },
-    "Get started checklist item": {
-      "Get mobile app": [
-        "Ottieni l'app mobile"
-      ],
-      "Import contacts or emails": [
-        "Importa contatti o email"
-      ],
-      "Send a message": [
-        "Invio un messaggio"
-      ],
-      "Set up a recovery method": [
-        "Impostare un metodo di recupero"
-      ]
-    },
-    "Get started checklist spotlight": {
-      "You can access the checklist anytime from here": [
-        "Puoi accedere alla lista di controllo in qualsiasi momento da qui"
-      ]
-    },
-    "Get started checklist title": {
-      "Get started": [
-        "Per iniziare"
       ]
     },
     "Gmail forwarding": {
@@ -7410,20 +7345,6 @@
         "${ page } di ${ totalText }"
       ]
     },
-    "Paid user checklist item": {
-      "Get mobile app": [
-        "Ottieni l'app mobile"
-      ],
-      "Import contacts or emails": [
-        "Importa contatti o email"
-      ],
-      "Send a message": [
-        "Invio un messaggio"
-      ],
-      "Set up a recovery method": [
-        "Impostare un metodo di recupero"
-      ]
-    },
     "Participant name": {
       "You": [
         "Tu"
@@ -8120,9 +8041,6 @@
       ]
     },
     "Storage": {
-      "Get extra storage for free": [
-        "Ottieni spazio aggiuntivo gratis"
-      ],
       "Release notes": [
         "Note di rilascio"
       ],

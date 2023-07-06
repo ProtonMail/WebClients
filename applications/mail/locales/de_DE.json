@@ -145,6 +145,9 @@
       "Carbon Copy": [
         "Kopie"
       ],
+      "Change email": [
+        "E-Mail-Adresse ändern"
+      ],
       "Change page": [
         "Seite wechseln"
       ],
@@ -321,9 +324,6 @@
       "Discard": [
         "Verwerfen"
       ],
-      "Dismiss get started checklist": [
-        "Checkliste „Erste Schritte“ verwerfen"
-      ],
       "Done": [
         "Fertig"
       ],
@@ -365,6 +365,9 @@
       ],
       "Email settings": [
         "E-Mail-Einstellungen"
+      ],
+      "Emoji": [
+        "Emoji"
       ],
       "Enable": [
         "Aktivieren"
@@ -723,9 +726,6 @@
       ],
       "Open composer": [
         "Verfassen-Fenster öffnen"
-      ],
-      "Open get started checklist modal": [
-        "Checkliste „Erste Schritte“ als Fenster öffnen"
       ],
       "Open navigation": [
         "Navigation öffnen"
@@ -1247,12 +1247,6 @@
     "Alternative text for welcome image": {
       "Welcome": [
         "Willkommen"
-      ]
-    },
-    "Amount of completed get started checklist items": {
-      "${ numberOfCompletedItems }/${ totalNumberOfItems } complete": [
-        "${ numberOfCompletedItems }/${ totalNumberOfItems } abgeschlossen",
-        "${ numberOfCompletedItems }/${ totalNumberOfItems } abgeschlossen"
       ]
     },
     "Animation": {
@@ -4152,32 +4146,24 @@
         "An: ${ toString }"
       ]
     },
-    "Get started checklist completion": {
-      "We've increased the total storage of your account to ${ rewardInGb } GB. Get additional storage and unlock premium features today.": [
-        "Wir haben den Gesamtspeicher deines Kontos auf ${ rewardInGb } GB erhöht. Hole dir zusätzlichen Speicherplatz und schalte noch heute Premium-Funktionen frei."
-      ],
-      "You're all set!": [
-        "Du kannst loslegen!"
-      ]
-    },
-    "Get started checklist incentive": {
-      "Complete all steps and get a total of ${ rewardInGb } GB on your account": [
-        "Schließe alle Schritte ab und erhalte insgesamt ${ rewardInGb } GB auf dein Konto"
-      ],
-      "Expires soon": [
-        "Verfällt demnächst"
-      ],
-      "Expires today": [
-        "Verfällt heute"
-      ],
-      "Only ${ days } day left": [
-        "Nur noch ${ days } Tag verbleibend",
-        "Nur noch ${ days } Tage verbleibend"
-      ]
-    },
     "Get started checklist instructions": {
-      "Available on iOS and Android.": [
-        "Verfügbar für iOS und Android."
+      "${ MAIL_APP_NAME } on App Store": [
+        "${ MAIL_APP_NAME } im App Store"
+      ],
+      "${ MAIL_APP_NAME } on Play Store": [
+        "${ MAIL_APP_NAME } im Play Store"
+      ],
+      "Close": [
+        "Schließen"
+      ],
+      "Congratulation, you completed all the steps!": [
+        "Herzlichen Glückwunsch, du hast alle Schritte abgeschlossen!"
+      ],
+      "Continue setting up your email": [
+        "Fahre mit dem Einrichten deiner E-Mail-Adresse fort"
+      ],
+      "Get mobile app": [
+        "Mobile App holen"
       ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "Hol dir die Mobile-App von ${ MAIL_APP_NAME }"
@@ -4185,41 +4171,50 @@
       "Import contacts or emails": [
         "Kontakte oder E-Mails importieren"
       ],
+      "Import data": [
+        "Daten importieren"
+      ],
       "Import your contacts or messages": [
         "Importiere deine Kontakte oder Nachrichten"
+      ],
+      "Learn more": [
+        "Mehr erfahren"
+      ],
+      "Maybe later": [
+        "Vielleicht später"
+      ],
+      "Nice! You've updated all services in this category.": [
+        "Sehr schön! Du hast alle Dienste in dieser Kategorie aktualisiert."
+      ],
+      "Popular online services": [
+        "Beliebte Online-Dienste"
+      ],
+      "Protect and simplify your email": [
+        "Schütze und vereinfache deine E-Mail-Adresse"
+      ],
+      "Protection from trackers": [
+        "Schutz vor Trackern"
       ],
       "Quickly transfer your contacts or emails from any provider using our Easy Switch import assistant.": [
         "Übertrage deine Kontakte oder E-Mails im Handumdrehen von jedem beliebigen Anbieter mit unserem Easy Switch Import-Assistenten."
       ],
-      "Sign into the mobile app to complete the action": [
-        "Melde dich bei der mobilen App an, um die Aktion abzuschließen"
-      ],
-      "Using your mobile device, scan this QR code or visit": [
-        "Scanne mit deinem mobilen Gerät diesen QR-Code oder besuche"
-      ]
-    },
-    "Get started checklist item": {
-      "Get mobile app": [
-        "Hol dir die Mobile-App"
-      ],
-      "Import contacts or emails": [
-        "Kontakte oder E-Mails importieren"
-      ],
       "Send a message": [
         "Nachricht senden"
       ],
-      "Set up a recovery method": [
-        "Wiederherstellungsmethode einrichten"
-      ]
-    },
-    "Get started checklist spotlight": {
-      "You can access the checklist anytime from here": [
-        "Du kannst die Checkliste jederzeit hier abrufen"
-      ]
-    },
-    "Get started checklist title": {
-      "Get started": [
-        "Los geht's"
+      "Set recovery method": [
+        "Wiederherstellungsmethode festlegen"
+      ],
+      "Sign in to the mobile app to complete this step": [
+        "Melde dich bei der mobilen App an, um diesen Schritt abzuschließen."
+      ],
+      "Using your mobile device, scan this QR code or visit the iOS or Android store.": [
+        "Scanne mit deinem Mobilgerät diesen QR-Code oder besuche den iOS- oder Android-Store."
+      ],
+      "We stop advertisers and data collectors from profiling you.": [
+        "Wir hindern Werbetreibende und Datensammler daran, ein Profil von dir zu erstellen."
+      ],
+      "You've unlocked 1 GB": [
+        "Du hast 1 GB freigeschaltet."
       ]
     },
     "Gmail forwarding": {
@@ -7387,6 +7382,37 @@
         "Verwende die App-Auswahl oben links, um auf alle ${ BRAND_NAME }-Dienste zuzugreifen: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } und ${ DRIVE_SHORT_APP_NAME }."
       ]
     },
+    "Online accounts": {
+      "Have an account with one of these services? Just click to change the email address to your ${ MAIL_APP_NAME } address.": [
+        "Du hast ein Konto bei einem dieser Dienste? Klicke einfach, um die E-Mail-Adresse zu deiner ${ MAIL_APP_NAME }-Adresse zu ändern."
+      ]
+    },
+    "Online Accounts Name": {
+      "Banking": [
+        "Banking"
+      ],
+      "Crypto": [
+        "Krypto"
+      ],
+      "E-commerce and Retail": [
+        "E-Commerce und Einzelhandel"
+      ],
+      "Entertainment": [
+        "Unterhaltung"
+      ],
+      "Food and beverage": [
+        "Nahrungsmittel und Getränke"
+      ],
+      "Gaming": [
+        "Gaming"
+      ],
+      "Most popular": [
+        "Am beliebtesten"
+      ],
+      "Travel": [
+        "Reisen"
+      ]
+    },
     "Option": {
       "Add to existing group": [
         "Zu bestehender Gruppe hinzufügen"
@@ -7426,20 +7452,6 @@
     "Pagination": {
       "${ page } of ${ totalText }": [
         "${ page } von ${ totalText }"
-      ]
-    },
-    "Paid user checklist item": {
-      "Get mobile app": [
-        "Hol dir die Mobile-App"
-      ],
-      "Import contacts or emails": [
-        "Kontakte oder E-Mails importieren"
-      ],
-      "Send a message": [
-        "Nachricht senden"
-      ],
-      "Set up a recovery method": [
-        "Wiederherstellungsmethode einrichten"
       ]
     },
     "Participant name": {
@@ -8143,9 +8155,6 @@
       ]
     },
     "Storage": {
-      "Get extra storage for free": [
-        "Hol dir kostenlos zusätzlichen Speicherplatz"
-      ],
       "Release notes": [
         "Versionshinweise"
       ],

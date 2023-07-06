@@ -319,9 +319,6 @@
       "Discard": [
         "破棄"
       ],
-      "Dismiss get started checklist": [
-        "“始めましょう” チェックリストを無視"
-      ],
       "Done": [
         "完了"
       ],
@@ -363,6 +360,9 @@
       ],
       "Email settings": [
         "メールの設定"
+      ],
+      "Emoji": [
+        "絵文字"
       ],
       "Enable": [
         "有効化"
@@ -720,9 +720,6 @@
       ],
       "Open composer": [
         "作成画面を開く"
-      ],
-      "Open get started checklist modal": [
-        "“始めましょう” チェックリストモーダルを開く"
       ],
       "Open navigation": [
         "ナビゲーションを開く"
@@ -1243,11 +1240,6 @@
     "Alternative text for welcome image": {
       "Welcome": [
         "ようこそ"
-      ]
-    },
-    "Amount of completed get started checklist items": {
-      "${ numberOfCompletedItems }/${ totalNumberOfItems } complete": [
-        "${ numberOfCompletedItems }/${ totalNumberOfItems } 完了"
       ]
     },
     "Animation": {
@@ -4107,32 +4099,7 @@
         "宛先: ${ toString }"
       ]
     },
-    "Get started checklist completion": {
-      "We've increased the total storage of your account to ${ rewardInGb } GB. Get additional storage and unlock premium features today.": [
-        "アカウントの合計ストレージ容量が ${ rewardInGb } GB に増加しました。いますぐ追加のストレージとプレミアム機能を手に入れましょう。"
-      ],
-      "You're all set!": [
-        "すべて成し遂げました!"
-      ]
-    },
-    "Get started checklist incentive": {
-      "Complete all steps and get a total of ${ rewardInGb } GB on your account": [
-        "すべてのステップを達成すると、合計 ${ rewardInGb } GB がアカウントに追加されます"
-      ],
-      "Expires soon": [
-        "もうすぐ期限切れになります"
-      ],
-      "Expires today": [
-        "今日で期限切れになります"
-      ],
-      "Only ${ days } days left": [
-        "残り ${ days } 日"
-      ]
-    },
     "Get started checklist instructions": {
-      "Available on iOS and Android.": [
-        "iOS または Android で利用可能です。"
-      ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "${ MAIL_APP_NAME } のモバイルアプリを入手"
       ],
@@ -4144,36 +4111,6 @@
       ],
       "Quickly transfer your contacts or emails from any provider using our Easy Switch import assistant.": [
         "Easy Switch インポートアシスタントを使用すると簡単に連絡先やメールを転送することができます。"
-      ],
-      "Sign into the mobile app to complete the action": [
-        "モバイルアプリでサインインすることでアクションが完了します"
-      ],
-      "Using your mobile device, scan this QR code or visit": [
-        "モバイル端末で利用するには、この QR コードを使うか、サイトにアクセスします"
-      ]
-    },
-    "Get started checklist item": {
-      "Get mobile app": [
-        "モバイルアプリを手に入れる"
-      ],
-      "Import contacts or emails": [
-        "連絡先とメールをインポート"
-      ],
-      "Send a message": [
-        "メッセージを送信する"
-      ],
-      "Set up a recovery method": [
-        "回復手段を設定する"
-      ]
-    },
-    "Get started checklist spotlight": {
-      "You can access the checklist anytime from here": [
-        "ここからいつでもチェックリストにアクセスできます"
-      ]
-    },
-    "Get started checklist title": {
-      "Get started": [
-        "利用開始"
       ]
     },
     "Gmail forwarding": {
@@ -7223,20 +7160,6 @@
         "${ page } / ${ totalText }"
       ]
     },
-    "Paid user checklist item": {
-      "Get mobile app": [
-        "モバイルアプリを入手する"
-      ],
-      "Import contacts or emails": [
-        "連絡先とメールをインポート"
-      ],
-      "Send a message": [
-        "メッセージを送信する"
-      ],
-      "Set up a recovery method": [
-        "回復手段を設定する"
-      ]
-    },
     "Participant name": {
       "You": [
         "あなた"
@@ -7896,9 +7819,6 @@
       ]
     },
     "Storage": {
-      "Get extra storage for free": [
-        "無料で追加ストレージを入手"
-      ],
       "Release notes": [
         "更新情報"
       ],

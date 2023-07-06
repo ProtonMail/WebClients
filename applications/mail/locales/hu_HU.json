@@ -321,9 +321,6 @@
       "Discard": [
         "Elvetés"
       ],
-      "Dismiss get started checklist": [
-        "Kezdési tevékenységlista bezárásra"
-      ],
       "Done": [
         "Kész"
       ],
@@ -365,6 +362,9 @@
       ],
       "Email settings": [
         "E-mail beállítások"
+      ],
+      "Emoji": [
+        "Hangulatjel"
       ],
       "Enable": [
         "Engedélyezés"
@@ -723,9 +723,6 @@
       ],
       "Open composer": [
         "Szerkesztő megnyitása"
-      ],
-      "Open get started checklist modal": [
-        "Kezdési tevékenységlista megnyitása"
       ],
       "Open navigation": [
         "Navigáció megnyitása"
@@ -1247,12 +1244,6 @@
     "Alternative text for welcome image": {
       "Welcome": [
         "Üdvözöljük"
-      ]
-    },
-    "Amount of completed get started checklist items": {
-      "${ numberOfCompletedItems }/${ totalNumberOfItems } complete": [
-        "${ numberOfCompletedItems }/${ totalNumberOfItems } kész",
-        "${ numberOfCompletedItems }/${ totalNumberOfItems } kész"
       ]
     },
     "Animation": {
@@ -4152,33 +4143,7 @@
         "Címzett: ${ toString }"
       ]
     },
-    "Get started checklist completion": {
-      "We've increased the total storage of your account to ${ rewardInGb } GB. Get additional storage and unlock premium features today.": [
-        "Megnöveltük fiókjának teljes tárhelyét ${ rewardInGb } GB-ra. Szerezzen további tárhelyet és oldjon fel prémium funkciókat még ma."
-      ],
-      "You're all set!": [
-        "Minden beállítva!"
-      ]
-    },
-    "Get started checklist incentive": {
-      "Complete all steps and get a total of ${ rewardInGb } GB on your account": [
-        "Teljesítse az összes lépést és szerezzen összesen ${ rewardInGb } GB-ot a fiókjába"
-      ],
-      "Expires soon": [
-        "Hamarosan lejár"
-      ],
-      "Expires today": [
-        "Ma jár le"
-      ],
-      "Only ${ days } day left": [
-        "Már csak ${ days } nap van hátra",
-        "Már csak ${ days } nap van hátra"
-      ]
-    },
     "Get started checklist instructions": {
-      "Available on iOS and Android.": [
-        "Android és iOS változatokban érhető el."
-      ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "Töltse le a ${ MAIL_APP_NAME } mobil alkalmazást"
       ],
@@ -4190,36 +4155,6 @@
       ],
       "Quickly transfer your contacts or emails from any provider using our Easy Switch import assistant.": [
         "Töltse át a névjegyeit vagy az e-mailjeit bármelyik másik szolgáltatótól az Easy Switch importáló segítségével."
-      ],
-      "Sign into the mobile app to complete the action": [
-        "Jelentkezzen be a mobil alkalmazásba a befejezéshez"
-      ],
-      "Using your mobile device, scan this QR code or visit": [
-        "A mobil eszközével olvassa be a QR kódot vagy nyissa meg a címet:"
-      ]
-    },
-    "Get started checklist item": {
-      "Get mobile app": [
-        "Töltse le a mobil alkalmazást"
-      ],
-      "Import contacts or emails": [
-        "Importálja névjegyeit vagy üzeneteit"
-      ],
-      "Send a message": [
-        "Küldjön egy üzenetet"
-      ],
-      "Set up a recovery method": [
-        "Állítson be egy helyreállítási módszert"
-      ]
-    },
-    "Get started checklist spotlight": {
-      "You can access the checklist anytime from here": [
-        "Innen érheti el ezt a tennivalólistát"
-      ]
-    },
-    "Get started checklist title": {
-      "Get started": [
-        "Kezdés"
       ]
     },
     "Gmail forwarding": {
@@ -7425,20 +7360,6 @@
         "${ page } (összesen: ${ totalText })"
       ]
     },
-    "Paid user checklist item": {
-      "Get mobile app": [
-        "Mobil alkalmazás beszerzése"
-      ],
-      "Import contacts or emails": [
-        "Importája névjegyeit vagy üzeneteit"
-      ],
-      "Send a message": [
-        "Üzenet küldése"
-      ],
-      "Set up a recovery method": [
-        "Helyreállítási módszer hozzáadása"
-      ]
-    },
     "Participant name": {
       "You": [
         "Ön"
@@ -8140,9 +8061,6 @@
       ]
     },
     "Storage": {
-      "Get extra storage for free": [
-        "Szerezzen további tárhelyet ingyen"
-      ],
       "Release notes": [
         "Kiadási megjegyzések"
       ],

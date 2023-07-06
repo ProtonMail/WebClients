@@ -29,10 +29,10 @@
         "Lisää osoite"
       ],
       "Add Bcc recipients": [
-        "Lisää piilokopioiden vastaanottajia"
+        "Lisää piilokopioiden vastaanottajat"
       ],
       "Add Cc recipients": [
-        "Lisää kopioiden vastaanottajia"
+        "Lisää kopioiden vastaanottajat"
       ],
       "Add condition": [
         "Lisää ehto"
@@ -144,6 +144,9 @@
       ],
       "Carbon Copy": [
         "Kopio"
+      ],
+      "Change email": [
+        "Vaihda sähköpostiosoitteesi"
       ],
       "Change page": [
         "Vaihda sivua"
@@ -321,9 +324,6 @@
       "Discard": [
         "Hylkää"
       ],
-      "Dismiss get started checklist": [
-        "Ohita uuden käyttäjän tarkistuslista"
-      ],
       "Done": [
         "Valmis"
       ],
@@ -365,6 +365,9 @@
       ],
       "Email settings": [
         "Osoitteen asetukset"
+      ],
+      "Emoji": [
+        "Emoji"
       ],
       "Enable": [
         "Ota käyttöön"
@@ -674,7 +677,7 @@
         "Siirrä roskapostiin"
       ],
       "Move to spam and unsubscribe": [
-        "Sirrä roskapostiin ja irtisano tilaus"
+        "Sirrä roskapostiin ja peru tilaus"
       ],
       "Move to trash": [
         "Siirrä roskakoriin"
@@ -723,9 +726,6 @@
       ],
       "Open composer": [
         "Avaa viestin kirjoitus"
-      ],
-      "Open get started checklist modal": [
-        "Avaa uuden käyttäjän tarkistuslista"
       ],
       "Open navigation": [
         "Avaa navigaatio"
@@ -1074,10 +1074,10 @@
         "Poista tähti"
       ],
       "Unsubscribe": [
-        "Lopeta tilaus"
+        "Peru tilaus"
       ],
       "Unsubscribing": [
-        "Tilauksen irtisanominen"
+        "Tilausta perutaan"
       ],
       "Untrust": [
         "Älä luota"
@@ -1247,12 +1247,6 @@
     "Alternative text for welcome image": {
       "Welcome": [
         "Tervetuloa"
-      ]
-    },
-    "Amount of completed get started checklist items": {
-      "${ numberOfCompletedItems }/${ totalNumberOfItems } complete": [
-        "${ numberOfCompletedItems }/${ totalNumberOfItems } suoritettu",
-        "${ numberOfCompletedItems }/${ totalNumberOfItems } suoritettu"
       ]
     },
     "Animation": {
@@ -2832,7 +2826,7 @@
     },
     "Daily recurring event, frequency": {
       "${ count } time": [
-        "${ count } kerta",
+        "${ count } kerran",
         "${ count } kertaa"
       ],
       "Daily": [
@@ -3219,7 +3213,7 @@
         "Virhe lähetettäessä viestiä. Viestiä ei lähetetty."
       ],
       "Error while uploading attachments. Message is not sent.": [
-        "Virhe ladattaessa liitteitä. Viestiä ei lähetetty."
+        "Virhe tallennettaessa liitteitä. Viestiä ei lähetetty."
       ],
       "Failed to encrypt attachment. Please try again.": [
         "Liitteen salaus epäonnistui. Yritä uudelleen."
@@ -3346,8 +3340,8 @@
         "aktivoida edellisen avaimen uudelleen"
       ],
       "Removed duplicate recipient: ${ recipents }": [
-        "Poistettiin vastaanottajan kaksoiskappale: ${ recipents }",
-        "Poistettiin vastaanottajien kaksoiskappaleet: ${ recipents }"
+        "Vastaanottajan kaksoiskappale poistettiin: ${ recipents }",
+        "Vastaanottajien kaksoiskappaleet poistettiin: ${ recipents }"
       ],
       "Request timed out": [
         "Pyyntö aikakatkaistiin"
@@ -3768,7 +3762,7 @@
         "Kutsua ei tueta"
       ],
       "Unsupported response": [
-        "Vastausta ei tueta"
+        "Ei tuettu vastaustyyppi"
       ],
       "We could not cancel the event in your calendar": [
         "Tapahtumaa ei voitu perua kalenteristasi"
@@ -4092,7 +4086,7 @@
     },
     "Filter option to only show message with attachments": {
       "Has file": [
-        "Sisältää liitteitä"
+        "Liitteelliset"
       ]
     },
     "Filter preview": {
@@ -4152,74 +4146,144 @@
         "Vastaanottaja: ${ toString }"
       ]
     },
-    "Get started checklist completion": {
-      "We've increased the total storage of your account to ${ rewardInGb } GB. Get additional storage and unlock premium features today.": [
-        "Olemme kasvattaneet tilisi tallennustilaksi yhteensä ${ rewardInGb } Gt. Hanki vielä enemmän tilaa ja avaa premium-ominaisuudet tänään."
-      ],
-      "You're all set!": [
-        "Kaikki on kunnossa!"
-      ]
-    },
-    "Get started checklist incentive": {
-      "Complete all steps and get a total of ${ rewardInGb } GB on your account": [
-        "Suorita kaikki vaiheet, niin saat tilillesi yhteensä ${ rewardInGb } Gt"
-      ],
-      "Expires soon": [
-        "Erääntyy pian"
-      ],
-      "Expires today": [
-        "Erääntyy tänään"
-      ],
-      "Only ${ days } day left": [
-        "Vain ${ days } päivä jäljellä",
-        "Vain ${ days } päivää jäljellä"
-      ]
-    },
     "Get started checklist instructions": {
-      "Available on iOS and Android.": [
-        "Saatavilla iOS:lle ja Androidille."
+      "${ MAIL_APP_NAME } app": [
+        "${ MAIL_APP_NAME } -sovellus"
+      ],
+      "${ MAIL_APP_NAME } on App Store": [
+        "${ MAIL_APP_NAME } App Storessa"
+      ],
+      "${ MAIL_APP_NAME } on Play Store": [
+        "${ MAIL_APP_NAME } Play Kaupassa"
+      ],
+      "account logins": [
+        "tilin kirjautumiset"
+      ],
+      "Auto-forward Gmail": [
+        "Automaattinen edelleenlähetys Gmailiin"
+      ],
+      "auto-forwarding": [
+        "automaattinen edelleenlähetys"
+      ],
+      "Block email communications from scammers permanently.": [
+        "Estä huijareiden sähköpostiviestintä pysyvästi."
+      ],
+      "Block unsavory senders": [
+        "Estä epämiellyttävät lähettäjät"
+      ],
+      "Bravo for making your email even more secure, convenient, and relevant! We've upped your free storage to a total of 1 GB.": [
+        "Hienoa, että olet tehnyt sähköpostistasi entistä turvallisemman, kätevämmän ja osuvamman! Olemme lisänneet ilmaisen tallennustilasi yhteensä 1 Gt."
+      ],
+      "Change ${ strongText } to your ${ BRAND_NAME } address": [
+        "Muuta ${ strongText } ${ BRAND_NAME } -osoitteeksi"
+      ],
+      "Checklist complete": [
+        "Tarkistuslista on valmis"
+      ],
+      "Close": [
+        "Sulje"
+      ],
+      "Congratulation, you completed all the steps!": [
+        "Onnittelut, olet suorittanut kaikki vaiheet!"
+      ],
+      "Continue setting up your email": [
+        "Jatka sähköpostisi määrittämistä"
+      ],
+      "Discover how our ${ strongText } protect you": [
+        "Tutustu, kuinka ${ strongText } suojaa sinua"
+      ],
+      "Discover privacy features": [
+        "Tutustu tietosuojaominaisuuksiin"
+      ],
+      "Double your free storage to 1 GB when you complete the following:": [
+        "Tuplaa ilmainen tallennustila 1 Gt:ksi, kun teet seuraavat:"
+      ],
+      "Encryption so strong, only you and intended recipients can view your emails.": [
+        "Salaus on niin vahva, että vain sinä ja aiotut vastaanottajat näet sähköpostisi."
+      ],
+      "For your eyes only": [
+        "Vain silmillesi"
+      ],
+      "Get free storage": [
+        "Hanki ilmaista tallennustilaa"
+      ],
+      "Get mobile app": [
+        "Hanki mobiilisovellus"
       ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "Hanki ${ MAIL_APP_NAME } -mobiilisovellus"
       ],
+      "Get the ${ strongText } on Android or iOS": [
+        "Hanki ${ strongText } Androidille tai iOS:lle"
+      ],
+      "Get the App": [
+        "Hanki sovellus"
+      ],
       "Import contacts or emails": [
         "Tuo yhteystietoja tai viestejä"
+      ],
+      "Import data": [
+        "Tuo tietoja"
       ],
       "Import your contacts or messages": [
         "Tuo yhteystietosi tai viestisi"
       ],
+      "Keep using ${ MAIL_APP_NAME } to discover more ways ${ BRAND_NAME } protects your privacy and simplifies emailing.": [
+        "Jatka ${ MAIL_APP_NAME } käyttöä löytääksesi lisää tapoja, joilla ${ BRAND_NAME } suojaa yksityisyyttäsi ja yksinkertaistaa sähköpostien lähettämistä."
+      ],
+      "Learn more": [
+        "Lisätietoja"
+      ],
+      "Make ${ BRAND_NAME } your go-to inbox": [
+        "Tee ${ BRAND_NAME } mene-postilaatikoksesi"
+      ],
+      "Maybe later": [
+        "Ehkä myöhemmin"
+      ],
+      "Nice! You've updated all services in this category.": [
+        "Hienoa! Olet päivittänyt kaikki tämän luokan palvelut."
+      ],
+      "Open checklist": [
+        "Avaa tarkistuslista"
+      ],
+      "Popular online services": [
+        "Suosittuja verkkopalveluita"
+      ],
+      "privacy features": [
+        "Yksityisyysominaisuudet"
+      ],
+      "Protect and simplify your email": [
+        "Suojaa ja yksinkertaista sähköpostisi"
+      ],
+      "Protection from trackers": [
+        "Suojaus jäljittäjiltä"
+      ],
       "Quickly transfer your contacts or emails from any provider using our Easy Switch import assistant.": [
         "Siirrä yhteystietosi tai sähköpostisi nopeasti muista palveluista Easy Switch Import Assistant -työkalullamme."
-      ],
-      "Sign into the mobile app to complete the action": [
-        "Viimeistele toiminto kirjautumalla mobiilisovellukseen"
-      ],
-      "Using your mobile device, scan this QR code or visit": [
-        "Käyttäen mobiililaitettasi, skannaa tämä QR-koodi tai avaa osoite"
-      ]
-    },
-    "Get started checklist item": {
-      "Get mobile app": [
-        "Hanki mobiilisovellus"
-      ],
-      "Import contacts or emails": [
-        "Tuo yhteystietoja tai viestejä"
       ],
       "Send a message": [
         "Lähetä viesti"
       ],
-      "Set up a recovery method": [
+      "Set recovery method": [
         "Määritä palautustapa"
-      ]
-    },
-    "Get started checklist spotlight": {
-      "You can access the checklist anytime from here": [
-        "Löydät tarkistuslistan aina täältä"
-      ]
-    },
-    "Get started checklist title": {
-      "Get started": [
-        "Aloita"
+      ],
+      "Set up ${ strongText } from Gmail": [
+        "Määritä ${ strongText } Gmailista"
+      ],
+      "Sign in to the mobile app to complete this step": [
+        "Suorita tämä vaihe kirjautumalla mobiilisovellukseen"
+      ],
+      "Update your logins": [
+        "Päivitä kirjautumistunnuksesi"
+      ],
+      "Using your mobile device, scan this QR code or visit the iOS or Android store.": [
+        "Skannaa tämä QR-koodi mobiililaitteellasi tai käy iOS- tai Android-kaupassa."
+      ],
+      "We stop advertisers and data collectors from profiling you.": [
+        "Estämme mainostajia ja tiedonkerääjiä profiloimasta sinua."
+      ],
+      "You've unlocked 1 GB": [
+        "Olet vapauttanut 1 Gt"
       ]
     },
     "Gmail forwarding": {
@@ -4630,15 +4694,15 @@
         "${ fileName }: matalatarkkuuksinen esikatselu"
       ],
       "${ groupCounts } group found": [
-        "${ groupCounts } yhteystietoryhmä löytyi",
-        "${ groupCounts } yhteystietoryhmää löytyi"
+        "${ groupCounts } ryhmä löytyi",
+        "${ groupCounts } ryhmää löytyi"
       ],
       "${ MAIL_APP_NAME } can protect your business as well.": [
         "${ MAIL_APP_NAME } voi suojata myös yritystoimintaasi."
       ],
       "${ messagesNotAuthorizedToMove } message could not be moved.": [
         "${ messagesNotAuthorizedToMove } viestiä ei voitu siirtää.",
-        "${ messagesNotAuthorizedToMove } viestejä ei voitu siirtää."
+        "${ messagesNotAuthorizedToMove } viestiä ei voitu siirtää."
       ],
       "${ numberOfImageTrackers } email tracker blocked": [
         "${ numberOfImageTrackers } sähköpostiseuranta estettiin",
@@ -4669,12 +4733,12 @@
         "Löytyi ${ numOccurrences } tapahtumakertaa"
       ],
       "${ numOccurrences } occurrence found in the mail content": [
-        "Viestin sisällöstä löytyi ${ numOccurrences } esiintymä",
+        "Viestin sisällöstä löytyi ${ numOccurrences } tapahtumakerta",
         "Viestin sisällöstä löytyi ${ numOccurrences } esiintymää"
       ],
       "${ providerFoldersNumLocalized } folder found": [
-        "Löytyi ${ providerFoldersNumLocalized } kansio",
-        "Löytyi ${ providerFoldersNumLocalized } kansiota"
+        "${ providerFoldersNumLocalized } kansio löytyi",
+        "${ providerFoldersNumLocalized } kansiota löytyi"
       ],
       "${ providerFoldersNumLocalized } label found in Gmail": [
         "Gmailista löytyi ${ providerFoldersNumLocalized } tunniste",
@@ -4756,7 +4820,7 @@
         "Palautuslauseke on yksi turvallisimpia tilisi suojaustapoja. Sen avulla pääset tililesi ja voit palauttaa salatut tietosi, jos joskus unohdat salasanasi."
       ],
       "A request to unsubscribe from this mailing list will be sent to the sender of the newsletter and automatically processed.": [
-        "Postituslistatilauksen irtisanomispyyntö lähetetään uutiskirjeen lähettäjälle ja käsitellään automaattisesti."
+        "Postituslistatilauksen perumispyyntö lähetetään uutiskirjeen lähettäjälle ja käsitellään automaattisesti."
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Tiliä on rajoitettu maksamattomien laskujen vuoksi. Ota yhteyttä ylläpitoosi."
@@ -4866,7 +4930,7 @@
         "Laskutusjakso: ${ text }"
       ],
       "Body: ": [
-        "Runko: "
+        "Sisältö: "
       ],
       "Calendar side panel": [
         "Calendar-sivupaneeli"
@@ -5595,8 +5659,8 @@
         "Keskustelu sisältää roskakorissa olevia viestejä."
       ],
       "This conversation will be marked as spam. Would you also like to unsubscribe from future emails?": [
-        "Keskustelu merkitään roskapostiksi. Haluatko myös irtisanoa uusien viestien tilauksen?",
-        "Keskustelut merkitään roskapostiksi. Haluatko myös irtisanoa uusien viestien tilauksen?"
+        "Keskustelu merkitään roskapostiksi. Haluatko myös perua uusien viestien tilauksen?",
+        "Keskustelut merkitään roskapostiksi. Haluatko myös perua uusien viestien tilauksen?"
       ],
       "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded.": [
         "Tämä sähköposti ei ole täyttänyt verkkotunnuksensa todennusvaatimuksia. Se voi olla väärennetty tai edelleenlähetetty väärin."
@@ -5635,8 +5699,8 @@
         "Viesti poistetaan automaattisesti klo ${ shortDateMessage }"
       ],
       "This message will be marked as spam. Would you also like to unsubscribe from future emails?": [
-        "Viesti merkitään roskapostiksi. Haluatko myös irtisanoa uusien viestien tilauksen?",
-        "Viestit merkitään roskapostiksi. Haluatko myös irtisanoa uusien viestien tilauksen?"
+        "Viesti merkitään roskapostiksi. Haluatko myös perua uusien viestien tilauksen?",
+        "Viestit merkitään roskapostiksi. Haluatko myös perua uusien viestien tilauksen?"
       ],
       "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
         "Viesti siirretään luonnoksiin, jotta voit muokata sitä. Sinun on ajoitettava sen lähetys uudelleen."
@@ -5687,10 +5751,10 @@
         "Tietojesi palauttamiseksi, sinun on aktivoitava uudelleen se tiliavain, joka oli käytössä kun tiedot luotiin. Sinun on myös muistettava avaimen luontihetkellä käytetty salasana."
       ],
       "To unsubscribe from this mailing list, an email will be sent from ${ boldFrom } with following details as defined by the sender of the newsletter:": [
-        "Postituslistatilauksen irtisanomiseksi osoitteesta ${ boldFrom } lähetetään viesti, joka sisältää seuraavat uutiskirjeen lähettäjän määrittämät tiedot:"
+        "Postituslistatilauksen perumiseksi osoitteesta ${ boldFrom } lähetetään viesti, joka sisältää seuraavat uutiskirjeen lähettäjän määrittämät tiedot:"
       ],
       "To unsubscribe from this mailing list, you will be taken to the following URL where instructions will be provided by the sender of the newsletter:": [
-        "Postituslistatilauksen irtisanomiseksi sinut ohjataan seuraavaan URL-osoitteeseen, joka sisältää uutiskirjeen lähettäjän ohjeet:"
+        "Postituslistatilauksen perumiseksi sinut ohjataan seuraavaan URL-osoitteeseen, joka sisältää uutiskirjeen lähettäjän ohjeet:"
       ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Käyttääksesi osoitteen vahvistusta, sinun on luotettava yhteen tai useampaan käytettävissä olevaan julkiseen avaimeen, mukaan lukien se, jota haluat käyttää lähetykseen. Tämä estää salausavainten väärennyksen."
@@ -6993,7 +7057,7 @@
         "Tietojasi kerätään palveluntarjoajalta"
       ],
       "Your import is starting": [
-        "Tuonti alkaa"
+        "Tuontisi alkaa"
       ]
     },
     "Mail import summary": {
@@ -7387,6 +7451,40 @@
         "Vasemman yläkulman sovellusvalitsimesta pääset kaikkiin ${ BRAND_NAME }-palveluihin: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } ja ${ DRIVE_SHORT_APP_NAME }."
       ]
     },
+    "Online accounts": {
+      "Have an account with one of these services? Just click to change the email address to your ${ MAIL_APP_NAME } address.": [
+        "Onko sinulla tili johonkin näistä palveluista? Napsauta vain vaihtaaksesi sähköpostiosoitteesi ${ MAIL_APP_NAME } -osoitteeksi."
+      ]
+    },
+    "Online Accounts Name": {
+      "Banking": [
+        "Pankkijärjestelmä"
+      ],
+      "Crypto": [
+        "Krypto"
+      ],
+      "E-commerce and Retail": [
+        "Verkkokauppa ja vähittäiskauppa"
+      ],
+      "Entertainment": [
+        "Viihde"
+      ],
+      "Food and beverage": [
+        "Ruoka ja Juoma"
+      ],
+      "Gaming": [
+        "Pelaaminen"
+      ],
+      "Most popular": [
+        "Suosituin"
+      ],
+      "Travel": [
+        "Matkustaminen"
+      ],
+      "Utilities": [
+        "Apuohjelmat"
+      ]
+    },
     "Option": {
       "Add to existing group": [
         "Lisää olemassa olevaan ryhmään"
@@ -7426,20 +7524,6 @@
     "Pagination": {
       "${ page } of ${ totalText }": [
         "${ page } / ${ totalText }"
-      ]
-    },
-    "Paid user checklist item": {
-      "Get mobile app": [
-        "Hanki mobiilisovellus"
-      ],
-      "Import contacts or emails": [
-        "Tuo yhteystietoja tai viestejä"
-      ],
-      "Send a message": [
-        "Lähetä viesti"
-      ],
-      "Set up a recovery method": [
-        "Määritä palautustapa"
       ]
     },
     "Participant name": {
@@ -8125,7 +8209,7 @@
         "Viesti on postituslistan lähettämä."
       ],
       "Unsubscribed": [
-        "Tilaus on irtisanottu"
+        "Tilaus on peruttu"
       ]
     },
     "Step in filter modal": {
@@ -8143,9 +8227,6 @@
       ]
     },
     "Storage": {
-      "Get extra storage for free": [
-        "Hanki lisää tallennustilaa ilmaiseksi"
-      ],
       "Release notes": [
         "Julkaisutiedot"
       ],
@@ -8318,7 +8399,7 @@
         "Tunnisteet määritettiin."
       ],
       "Mail list unsubscribed": [
-        "Postituslistan tilaus on irtisanottu"
+        "Postituslistatilaus on peruttu"
       ],
       "Message added to ${ labelName }.": [
         "Viesti merkittiin tunnisteella ${ labelName }."
@@ -8932,7 +9013,7 @@
         "Palauta tiedot"
       ],
       "Reply": [
-        "Vastaus"
+        "Vastaa"
       ],
       "Reply all": [
         "Vastaa kaikille"
@@ -9044,10 +9125,10 @@
         "Avaa yhteystietoryhmät"
       ],
       "Unsubscribe": [
-        "Lopeta tilaus"
+        "Peru tilaus"
       ],
       "Unsubscribe request sent": [
-        "Tilauksen irtisanomispyyntö lähetettiin"
+        "Tilauksen perumispyyntö lähetettiin"
       ],
       "Verification error": [
         "Vahvistusvirhe"
