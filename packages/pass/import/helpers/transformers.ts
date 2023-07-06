@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import type { ItemExtraField, ItemImportIntent, Maybe, MaybeNull } from '@proton/pass/types';
+import { CardType } from '@proton/pass/types/protobuf/item-v1';
 import { prop, truthy } from '@proton/pass/utils/fp';
 import { parseOTPValue } from '@proton/pass/utils/otp/otp';
 import { uniqueId } from '@proton/pass/utils/string';
@@ -98,6 +99,41 @@ export const importNoteItem = (options: {
             itemUuid: uniqueId(),
         },
         content: {},
+        extraFields: [],
+        trashed: options.trashed ?? false,
+        createTime: options.createTime,
+        modifyTime: options.modifyTime,
+    };
+};
+
+export const importCreditCardItem = (options: {
+    name?: MaybeNull<string>;
+    note?: MaybeNull<string>;
+    cardholderName?: MaybeNull<string>;
+    number?: MaybeNull<string>;
+    verificationNumber?: MaybeNull<string>;
+    expirationDate?: MaybeNull<string>;
+    pin?: MaybeNull<string>;
+    trashed?: boolean;
+    createTime?: number;
+    modifyTime?: number;
+}): ItemImportIntent<'creditCard'> => {
+    return {
+        type: 'creditCard',
+        metadata: {
+            name: options.name || c('Label').t`Unnamed Credit Card`,
+            note: options.note || '',
+            itemUuid: uniqueId(),
+        },
+        content: {
+            cardType: CardType.Unspecified,
+            cardholderName: options.cardholderName || '',
+            number: options.number || '',
+            verificationNumber: options.verificationNumber || '',
+            expirationDate: options.expirationDate || '',
+            pin: options.pin || '',
+        },
+        extraData: [],
         extraFields: [],
         trashed: options.trashed ?? false,
         createTime: options.createTime,
