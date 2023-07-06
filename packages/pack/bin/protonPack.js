@@ -53,6 +53,7 @@ const getWebpackArgs = (options, env, { appData, buildData }) => {
         errorLogs: options.errorLogs,
         overlayWarnings: options.overlayWarnings,
         overlayErrors: options.overlayErrors,
+        overlayRuntimeErrors: options.overlayRuntimeErrors,
         logical: Boolean(options.logical),
         ...buildData,
     };
@@ -106,6 +107,7 @@ addGlobalOptions(program.command('dev-server').description('run locally'))
     .option('--warning-logs', 'emit typescript and eslint warnings')
     .option('--no-error-logs', 'do not emit typescript and eslint errors')
     .option('--overlay-warnings', 'show a full screen overlay when there are compiler warnings')
+    .option('--overlay-runtime-errors', 'show a full screen overlay when there are runtime errors')
     .option('--overlay-errors', 'show a full screen overlay when there are compiler errors')
     .action(async (options, env) => {
         console.log(chalk.magenta('Starting development server...\n'));
