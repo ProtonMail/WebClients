@@ -2,7 +2,7 @@ import type { VFC } from 'react';
 
 import { c } from 'ttag';
 
-import type { DropdownProps } from '@proton/components';
+import type { DropdownProps, IconName } from '@proton/components';
 import { Dropdown, DropdownButton, DropdownMenu, Icon, usePopperAnchor } from '@proton/components';
 import { type ItemSortFilter } from '@proton/pass/types';
 
@@ -13,12 +13,20 @@ interface ItemsSortProps {
     sort: ItemSortFilter;
 }
 
-function getSortOptionLabel(option: ItemSortFilter) {
+function getSortOptionDetails(option: ItemSortFilter) {
     return {
-        createTimeASC: c('Label').t`Oldest to newest`,
-        createTimeDESC: c('Label').t`Newest to oldest`,
-        recent: c('Label').t`Most recent`,
-        titleASC: c('Label').t`Alphabetical`,
+        createTimeASC: {
+            label: c('Label').t`Oldest to newest`,
+            shortLabel: c('Label').t`Old-New`,
+            icon: 'arrow-down-arrow-up',
+        },
+        createTimeDESC: {
+            label: c('Label').t`Newest to oldest`,
+            shortLabel: c('Label').t`New-Old`,
+            icon: 'arrow-down-arrow-up',
+        },
+        recent: { label: c('Label').t`Most recent`, shortLabel: c('Label').t`Recent`, icon: 'clock' },
+        titleASC: { label: c('Label').t`Alphabetical`, shortLabel: c('Label').t`A-Z`, icon: 'arrow-down-arrow-up' },
     }[option];
 }
 
@@ -31,16 +39,17 @@ export const ItemsSort: VFC<ItemsSortProps> = ({ sort, onSortChange }) => {
     return (
         <>
             <DropdownButton
-                hasCaret
                 onClick={toggle}
                 ref={anchorRef}
                 color="weak"
                 shape="solid"
                 size="small"
                 title={c('Action').t`Sort vault items`}
+                className="text-sm text-semibold flex-item-fluid-auto flex-item-nogrow flex-item-noshrink"
             >
-                <span className="sr-only">{getSortOptionLabel(sort)}</span>
-                <Icon name="arrow-down-arrow-up" className="inline" />
+                <span className="sr-only">{getSortOptionDetails(sort).label}</span>
+                <Icon name={getSortOptionDetails(sort).icon as IconName} className="inline mr-2" />
+                {getSortOptionDetails(sort).shortLabel}
             </DropdownButton>
 
             <Dropdown
@@ -59,7 +68,7 @@ export const ItemsSort: VFC<ItemsSortProps> = ({ sort, onSortChange }) => {
                             isSelected={sort === type}
                             size="small"
                         >
-                            {getSortOptionLabel(type)}
+                            {getSortOptionDetails(type).label}
                         </DropdownMenuButton>
                     ))}
                 </DropdownMenu>
