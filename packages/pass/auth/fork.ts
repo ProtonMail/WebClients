@@ -28,24 +28,24 @@ export const requestFork = async (host: string, type?: FORK_TYPE) => {
 
 export const consumeFork = async ({
     api,
-    state,
+    apiUrl,
     selector,
     keyPassword,
     persistent,
     trusted,
 }: {
     api: Api;
+    apiUrl?: string;
     state: string;
     selector: string;
     keyPassword: string;
     persistent: boolean;
     trusted: boolean;
 }) => {
-    const stateKey = `f${state}`;
-    const maybeStoredState = await browserSessionStorage.getItem<StorageData>(stateKey);
-    if (!maybeStoredState) throw new Error('Invalid state');
+    const pullForkParams = pullForkSession(selector);
+    pullForkParams.url = apiUrl ? `${apiUrl}/${pullForkParams.url}` : pullForkParams.url;
 
-    const { UID, RefreshToken, LocalID } = await api<PullForkResponse>(pullForkSession(selector));
+    const { UID, RefreshToken, LocalID } = await api<PullForkResponse>(pullForkParams);
 
     const { AccessToken: newAccessToken, RefreshToken: newRefreshToken } = await api<RefreshSessionResponse>({
         ...withUIDHeaders(UID, refreshTokens({ RefreshToken })),
