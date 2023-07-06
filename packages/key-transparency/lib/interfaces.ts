@@ -74,7 +74,6 @@ export enum AddressAuditStatus {
 }
 
 export enum AddressAuditWarningReason {
-    NullSKL,
     UnverifiableHistory,
 }
 

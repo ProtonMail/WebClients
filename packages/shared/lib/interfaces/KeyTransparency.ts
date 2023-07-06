@@ -86,3 +86,5 @@ export interface KeyTransparencyVerificationResult {
     status: KT_VERIFICATION_STATUS;
     keysChangedRecently?: boolean;
 }
+
+export type UploadMissingSKL = (address: Address, epoch: Epoch, saveSKLToLS: SaveSKLToLS) => Promise<void>;
