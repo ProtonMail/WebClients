@@ -33,7 +33,7 @@ const getOptionsWithoutCount = (): { [key in ItemTypeFilter]: { label: string; i
         icon: itemTypeToIconName.alias,
     },
     creditCard: {
-        label: c('Label').t`Credit Cards`,
+        label: c('Label').t`Cards`,
         icon: itemTypeToIconName.creditCard,
     },
     note: {

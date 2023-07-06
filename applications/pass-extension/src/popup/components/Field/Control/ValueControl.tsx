@@ -104,7 +104,8 @@ export const ValueControl: VFC<ValueControlProps> = ({
                     className={clsx(
                         'pass-value-control--value m-0 p-0 user-select-none',
                         getClassNameByElementType(as),
-                        valueClassName
+                        valueClassName,
+                        value && hide && 'letter-spacing-hidden'
                     )}
                 >
                     {loading ? <div className="pass-skeleton pass-skeleton--value" /> : displayValue}
