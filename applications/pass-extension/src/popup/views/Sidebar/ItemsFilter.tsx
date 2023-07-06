@@ -63,8 +63,7 @@ export const ItemsFilter: VFC<ItemsFilterProps> = ({ value, onChange }) => {
     return (
         <>
             <DropdownButton
-                hasCaret
-                className="flex text-sm text-semibold"
+                className="flex text-sm text-semibold flex-item-fluid-auto flex-item-nogrow flex-item-noshrink"
                 onClick={toggle}
                 ref={anchorRef}
                 color="weak"
