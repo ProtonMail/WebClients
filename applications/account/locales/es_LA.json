@@ -6867,9 +6867,6 @@
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Necesitará una dirección de ${ BRAND_NAME } para usar ${ MAIL_APP_NAME } y ${ CALENDAR_APP_NAME }"
       ],
-      "You will NOT be able to decrypt any messages, files, and other data encrypted with this key.": [
-        "NO podrá descifrar ningún mensaje, archivo y otros datos cifrados con esta clave."
-      ],
       "You will receive priority support from specialists trained in account protection. For any account security concerns, please ${ hereLink }.": [
         "Recibirá soporte prioritario de especialistas capacitados en protección de cuentas. Para cualquier problema de seguridad de la cuenta, ${ hereLink }."
       ],
@@ -7376,9 +7373,6 @@
       ],
       " and ${ l }": [
         " y ${ l }"
-      ],
-      "${ BRAND_NAME } email or username": [
-        "Correo o nombre de usuario de ${ BRAND_NAME }"
       ],
       "${ BRAND_NAME } username": [
         "Nombre de usuario de ${ BRAND_NAME }"
@@ -9476,9 +9470,6 @@
         "Cree ${ n } calendario o añada calendarios de amistades, familiares, colegas y organizaciones.",
         "Cree hasta ${ n } calendarios o añada calendarios de amistades, familiares, colegas y organizaciones."
       ],
-      "Create up to ${ n } email addresses/aliases for the whole family. Use them for your online identities, e.g., MyFamilySubs@${ domain } for online subscriptions.": [
-        "Cree hasta ${ n } direcciones de correo/alias para toda la familia. Úselas para sus identidades en línea, p.ej., SubsDeFamilia@${ domain } para suscripciones en línea."
-      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Defiende de ataques que amenazan la privacidad de la VPN dirigiendo el tráfico de Internet por varios servidores"
       ],
@@ -11000,25 +10991,12 @@
         "Aprenda cómo obtener un enlace de calendario privado."
       ]
     },
-    "Subscribed calendar extension warning": {
-      "By using this link, Google will make the calendar you are subscribing to public": [
-        "Al usar este enlace, Google hará público el calendario al que se suscribe"
-      ],
-      "This link might be wrong": [
-        "Este enlace puede ser erróneo"
-      ]
-    },
     "Subscribed calendar section description": {
       "Add public, external, or shared calendars using a URL.": [
         "Añadir calendario compartido, público o externo mediante URL."
       ],
       "Add public, external, or shared calendars.": [
         "Añadir calendario compartido, público o externo."
-      ]
-    },
-    "Subscribed calendar URL length warning": {
-      "URL is too long": [
-        "La URL es demasiado larga"
       ]
     },
     "Subscription attribute": {

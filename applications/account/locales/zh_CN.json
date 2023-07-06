@@ -5977,9 +5977,6 @@
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "使用 ${ MAIL_APP_NAME } 和 ${ CALENDAR_APP_NAME } 还需注册 ${ BRAND_NAME } 邮箱地址"
       ],
-      "You will NOT be able to decrypt any messages, files, and other data encrypted with this key.": [
-        "您将不能解密使用此密钥加密的任何信件、文件及任何其他数据。"
-      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "即将为您转至 PayPal 确认支付。"
       ],
@@ -6459,9 +6456,6 @@
       ],
       " and ${ l }": [
         "、${ l }"
-      ],
-      "${ BRAND_NAME } email or username": [
-        "${ BRAND_NAME } 邮箱地址或用户名"
       ],
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } 用户名"
@@ -8300,9 +8294,6 @@
       "Create up to ${ n } calendars or add calendars from friends, family, colleagues, and organizations": [
         "创建多达 ${ n } 份日历或添加朋友、家人、同事、企业分享的日历"
       ],
-      "Create up to ${ n } email addresses/aliases for the whole family. Use them for your online identities, e.g., MyFamilySubs@${ domain } for online subscriptions.": [
-        "为全家创建多达 ${ n } 个邮箱地址/别名，用于不同的网络服务。例如 dingyue@${ domain } 用于订阅在线刊物。"
-      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "通过多台服务器中转流量，增强 VPN 安全性"
       ],
@@ -9534,22 +9525,9 @@
         "了解如何获取私人日历链接。"
       ]
     },
-    "Subscribed calendar extension warning": {
-      "By using this link, Google will make the calendar you are subscribing to public": [
-        "通过使用此链接，Google 会将您订阅的日历设为公开"
-      ],
-      "This link might be wrong": [
-        "此链接可能有误"
-      ]
-    },
     "Subscribed calendar section description": {
       "Add public, external, or shared calendars using a URL.": [
         "新增使用 URL公开、外部或共享的日历。"
-      ]
-    },
-    "Subscribed calendar URL length warning": {
-      "URL is too long": [
-        "URL 太长"
       ]
     },
     "Subscription attribute": {

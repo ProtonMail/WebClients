@@ -7003,9 +7003,6 @@
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Для користування ${ MAIL_APP_NAME } і ${ CALENDAR_APP_NAME } потрібна адреса ${ BRAND_NAME }"
       ],
-      "You will NOT be able to decrypt any messages, files, and other data encrypted with this key.": [
-        "Ви не зможете розшифрувати будь-які повідомлення, файли та інші дані, зашифровані цим ключем."
-      ],
       "You will receive priority support from specialists trained in account protection. For any account security concerns, please ${ hereLink }.": [
         "Ви отримаєте першочергову підтримку від спеціалістів, які пройшли навчання захисту облікових записів. З питань безпеки облікового запису, будь ласка, ${ hereLink }."
       ],
@@ -7514,9 +7511,6 @@
       ],
       " and ${ l }": [
         " та ${ l }"
-      ],
-      "${ BRAND_NAME } email or username": [
-        "Е-пошта або ім'я користувача ${ BRAND_NAME }"
       ],
       "${ BRAND_NAME } username": [
         "Ім'я користувача ${ BRAND_NAME }"
@@ -9684,9 +9678,6 @@
         "Створіть максимум ${ n } календарів або додайте календарі друзів, рідних, колег та організацій",
         "Створіть максимум ${ n } календарів або додайте календарі друзів, рідних, колег та організацій"
       ],
-      "Create up to ${ n } email addresses/aliases for the whole family. Use them for your online identities, e.g., MyFamilySubs@${ domain } for online subscriptions.": [
-        "Створюйте до ${ n } адрес електронної пошти/псевдонімів для всієї родини. Використовуйте їх для мережевих облікових записів, наприклад, MyFamilySubs@${ domain } для сімейних передплат."
-      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Захист від загроз приватності VPN завдяки спрямуванню інтернет-трафіку через кілька серверів"
       ],
@@ -11077,25 +11068,12 @@
         "Дізнайтеся, як отримати приватне посилання для календаря."
       ]
     },
-    "Subscribed calendar extension warning": {
-      "By using this link, Google will make the calendar you are subscribing to public": [
-        "Використовуючи це посилання, Google зробить календар, на який ви підписуєтесь, загальнодоступним"
-      ],
-      "This link might be wrong": [
-        "Це посилання може бути помилковим"
-      ]
-    },
     "Subscribed calendar section description": {
       "Add public, external, or shared calendars using a URL.": [
         "Додайте загальнодоступні, зовнішні чи спільні календарі за URL-адресою."
       ],
       "Add public, external, or shared calendars.": [
         "Додайте загальнодоступні, зовнішні чи спільні календарі."
-      ]
-    },
-    "Subscribed calendar URL length warning": {
-      "URL is too long": [
-        "URL задовга"
       ]
     },
     "Subscription attribute": {
