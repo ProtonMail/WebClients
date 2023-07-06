@@ -1,7 +1,7 @@
 import { CryptoProxy, PrivateKeyReference, PublicKeyReference, VERIFICATION_STATUS } from '@proton/crypto';
-import { getSignedKeyListRoute, getSignedKeyListsRoute } from '@proton/shared/lib/api/keys';
+import { getSignedKeyListRoute, getSignedKeyListsRoute, updateSignedKeyListRoute } from '@proton/shared/lib/api/keys';
 import { HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
-import { Address, Api, FetchedSignedKeyList } from '@proton/shared/lib/interfaces';
+import { Address, Api, FetchedSignedKeyList, SignedKeyList } from '@proton/shared/lib/interfaces';
 
 import { KT_VE_SIGNING_CONTEXT, KT_VE_VERIFICATION_CONTEXT } from '../constants';
 import { Epoch, Proof, VerifiedEpoch } from '../interfaces';
@@ -47,6 +47,17 @@ export const fetchSignedKeyLists = async (
         getSignedKeyListsRoute({ AfterRevision, Identifier })
     );
     return SignedKeyLists;
+};
+
+export const updateSignedKeyList = async (
+    api: Api,
+    addressID: string,
+    signedKeyList: SignedKeyList
+): Promise<FetchedSignedKeyList> => {
+    const { SignedKeyList } = await api<{ SignedKeyList: FetchedSignedKeyList }>(
+        updateSignedKeyListRoute({ AddressID: addressID }, { SignedKeyList: signedKeyList })
+    );
+    return SignedKeyList;
 };
 
 /**
