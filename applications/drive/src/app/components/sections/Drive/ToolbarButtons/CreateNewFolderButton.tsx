@@ -10,7 +10,7 @@ const CreateNewFolderButton = () => {
     return (
         <>
             <ToolbarButton
-                icon={<Icon name="folder-plus" />}
+                icon={<Icon name="folder-plus" alt={c('Action').t`Create new folder`} />}
                 title={c('Action').t`Create new folder`}
                 onClick={() => showCreateFolderModal()}
                 data-testid="toolbar-new-folder"
