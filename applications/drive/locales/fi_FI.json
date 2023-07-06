@@ -2461,7 +2461,7 @@
         "Kutsua ei tueta"
       ],
       "Unsupported response": [
-        "Vastausta ei tueta"
+        "Ei tuettu vastaustyyppi"
       ],
       "We could not cancel the event in your calendar": [
         "Tapahtumaa ei voitu perua kalenteristasi"
@@ -3111,8 +3111,8 @@
         "${ fileName }: matalatarkkuuksinen esikatselu"
       ],
       "${ groupCounts } group found": [
-        "${ groupCounts } yhteystietoryhmä löytyi",
-        "${ groupCounts } yhteystietoryhmää löytyi"
+        "${ groupCounts } ryhmä löytyi",
+        "${ groupCounts } ryhmää löytyi"
       ],
       "${ numContact } contact": [
         "${ numContact } yhteystieto",
@@ -3127,8 +3127,8 @@
         "${ pausedCount } pysäytettiin"
       ],
       "${ providerFoldersNumLocalized } folder found": [
-        "Löytyi ${ providerFoldersNumLocalized } kansio",
-        "Löytyi ${ providerFoldersNumLocalized } kansiota"
+        "${ providerFoldersNumLocalized } kansio löytyi",
+        "${ providerFoldersNumLocalized } kansiota löytyi"
       ],
       "${ providerFoldersNumLocalized } label found in Gmail": [
         "Gmailista löytyi ${ providerFoldersNumLocalized } tunniste",
@@ -3607,10 +3607,10 @@
         "Ladataan ${ appName }"
       ],
       "Loading link": [
-        "Linkkiä ladataan"
+        "Ladataan linkkiä"
       ],
       "Loading links": [
-        "Linkkejä ladataan"
+        "Ladataan linkkejä"
       ],
       "Loading preview": [
         "Ladataan esikatselua"
@@ -4235,10 +4235,10 @@
         "Sovellussalasana"
       ],
       "Apply to all duplicated files": [
-        "Käytä kaikille tiedostojen kaksoiskappaleille"
+        "Suorita kaikille tiedostojen kaksoiskappaleille"
       ],
       "Apply to all duplicated folders": [
-        "Käytä kaikille kansioiden kaksoiskappaleille"
+        "Suorita kaikille kansioiden kaksoiskappaleille"
       ],
       "Apply to all unverified items": [
         "Käytä kaikille vahvistamattomille kohteille"
@@ -4754,7 +4754,7 @@
         "Tietojasi kerätään palveluntarjoajalta"
       ],
       "Your import is starting": [
-        "Tuonti alkaa"
+        "Tuontisi alkaa"
       ]
     },
     "Mail import summary": {

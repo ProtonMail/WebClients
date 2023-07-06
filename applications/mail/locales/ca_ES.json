@@ -321,9 +321,6 @@
       "Discard": [
         "Descarta"
       ],
-      "Dismiss get started checklist": [
-        "Descarta la llista de primers passos"
-      ],
       "Done": [
         "Fet"
       ],
@@ -365,6 +362,9 @@
       ],
       "Email settings": [
         "Configuració del correu"
+      ],
+      "Emoji": [
+        "Emoji"
       ],
       "Enable": [
         "Habilitar"
@@ -723,9 +723,6 @@
       ],
       "Open composer": [
         "Obrir el redactor"
-      ],
-      "Open get started checklist modal": [
-        "Obrir la finestra de llista de comprovació per a començar"
       ],
       "Open navigation": [
         "Obre la navegació"
@@ -1247,12 +1244,6 @@
     "Alternative text for welcome image": {
       "Welcome": [
         "Benvingut"
-      ]
-    },
-    "Amount of completed get started checklist items": {
-      "${ numberOfCompletedItems }/${ totalNumberOfItems } complete": [
-        "${ numberOfCompletedItems }/${ totalNumberOfItems } completat",
-        "${ numberOfCompletedItems }/${ totalNumberOfItems } completats"
       ]
     },
     "Animation": {
@@ -3243,7 +3234,7 @@
         "Contrasenya de bústia incorrecta. Torneu a provar-ho."
       ],
       "Invalid email address": [
-        "Adreça de correu electrònic no vàlida"
+        "L'adreça de correu electrònic no és vàlida"
       ],
       "Invalid expiration time": [
         "Data de caducitat no vàlida"
@@ -4152,33 +4143,7 @@
         "Per: ${ toString }"
       ]
     },
-    "Get started checklist completion": {
-      "We've increased the total storage of your account to ${ rewardInGb } GB. Get additional storage and unlock premium features today.": [
-        "Hem augmentat l'emmagatzematge del compte a ${ rewardInGb } GB. Obteniu espai addicional i desbloquegeu característiques prèmium ara."
-      ],
-      "You're all set!": [
-        "Ja ho teniu tot llest!"
-      ]
-    },
-    "Get started checklist incentive": {
-      "Complete all steps and get a total of ${ rewardInGb } GB on your account": [
-        "Completeu tots els passos i obtingueu un total de ${ rewardInGb } GB al vostre compte"
-      ],
-      "Expires soon": [
-        "Caduca aviat"
-      ],
-      "Expires today": [
-        "Caduca avui"
-      ],
-      "Only ${ days } day left": [
-        "Només queda ${ days } dia",
-        "Només queden ${ days } dies"
-      ]
-    },
     "Get started checklist instructions": {
-      "Available on iOS and Android.": [
-        "Disponible per iOS i Android."
-      ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "Obteniu l'aplicació mòbil de ${ MAIL_APP_NAME }"
       ],
@@ -4190,36 +4155,6 @@
       ],
       "Quickly transfer your contacts or emails from any provider using our Easy Switch import assistant.": [
         "Transferiu ràpidament els vostres contactes o correus electrònics de qualsevol proveïdor utilitzant el nostre assistent d'importació Easy Switch."
-      ],
-      "Sign into the mobile app to complete the action": [
-        "Inicieu sessió a l'aplicació mòbil per completar aquesta acció"
-      ],
-      "Using your mobile device, scan this QR code or visit": [
-        "Utilitzant el vostre dispositiu mòbil, escanegeu aquest codi QR o visiteu"
-      ]
-    },
-    "Get started checklist item": {
-      "Get mobile app": [
-        "Obteniu l'aplicació mòbil"
-      ],
-      "Import contacts or emails": [
-        "Importeu contactes o correus electrònics"
-      ],
-      "Send a message": [
-        "Envieu un missatge"
-      ],
-      "Set up a recovery method": [
-        "Configureu un mètode de recuperació"
-      ]
-    },
-    "Get started checklist spotlight": {
-      "You can access the checklist anytime from here": [
-        "Podeu accedir a la llista de comprovació en qualsevol moment des d'aquí"
-      ]
-    },
-    "Get started checklist title": {
-      "Get started": [
-        "Començar"
       ]
     },
     "Gmail forwarding": {
@@ -7428,20 +7363,6 @@
         "${ page } de ${ totalText }"
       ]
     },
-    "Paid user checklist item": {
-      "Get mobile app": [
-        "Obtenir l'aplicació mòbil"
-      ],
-      "Import contacts or emails": [
-        "Importar contactes o correus electrònics"
-      ],
-      "Send a message": [
-        "Enviar un missatge"
-      ],
-      "Set up a recovery method": [
-        "Configurar un mètode de recuperació"
-      ]
-    },
     "Participant name": {
       "You": [
         "Vós"
@@ -8143,9 +8064,6 @@
       ]
     },
     "Storage": {
-      "Get extra storage for free": [
-        "Obteniu emmagatzematge extra gratuïtament"
-      ],
       "Release notes": [
         "Notes de la versió"
       ],
