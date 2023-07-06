@@ -318,6 +318,15 @@ $container-to-width: 4em !default;
 .container-to {
 	min-inline-size: $container-to-width;
 
+	[lang='hu'] &,
+	[lang='tr'] & {
+		min-inline-size: 5em;
+	}
+
+	[lang='fi'] & {
+		min-inline-size: 8em;
+	}
+
 	.item-icon {
 		&:focus,
 		&:hover {
