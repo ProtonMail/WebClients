@@ -325,9 +325,6 @@
       "Discard": [
         "Сбросить"
       ],
-      "Dismiss get started checklist": [
-        "Отклонить контрольный список начала работы"
-      ],
       "Done": [
         "Готово"
       ],
@@ -369,6 +366,9 @@
       ],
       "Email settings": [
         "Настройки электронной почты"
+      ],
+      "Emoji": [
+        "Эмоджи"
       ],
       "Enable": [
         "Включить"
@@ -729,9 +729,6 @@
       ],
       "Open composer": [
         "Открыть редактор писем"
-      ],
-      "Open get started checklist modal": [
-        "Открыть модальное окно с контрольным списком для начала работы"
       ],
       "Open navigation": [
         "Открыть панель навигации"
@@ -1255,14 +1252,6 @@
     "Alternative text for welcome image": {
       "Welcome": [
         "Добро пожаловать"
-      ]
-    },
-    "Amount of completed get started checklist items": {
-      "${ numberOfCompletedItems }/${ totalNumberOfItems } complete": [
-        "${ numberOfCompletedItems }/${ totalNumberOfItems } завершён",
-        "${ numberOfCompletedItems }/${ totalNumberOfItems } завершены",
-        "${ numberOfCompletedItems }/${ totalNumberOfItems } завершены",
-        "${ numberOfCompletedItems }/${ totalNumberOfItems } завершены"
       ]
     },
     "Animation": {
@@ -4212,35 +4201,7 @@
         "Кому: ${ toString }"
       ]
     },
-    "Get started checklist completion": {
-      "We've increased the total storage of your account to ${ rewardInGb } GB. Get additional storage and unlock premium features today.": [
-        "Мы увеличили общее хранилище вашего аккаунта до ${ rewardInGb } ГБ. Получите дополнительное хранилище и откройте платные функции уже сегодня."
-      ],
-      "You're all set!": [
-        "Все готово!"
-      ]
-    },
-    "Get started checklist incentive": {
-      "Complete all steps and get a total of ${ rewardInGb } GB on your account": [
-        "Выполните все шаги и получите в общей сложности ${ rewardInGb } ГБ для вашего аккаунта"
-      ],
-      "Expires soon": [
-        "Скоро истекает"
-      ],
-      "Expires today": [
-        "Истекает сегодня"
-      ],
-      "Only ${ days } day left": [
-        "Остался только ${ days } день",
-        "Осталось только ${ days } дня",
-        "Осталось только ${ days } дней",
-        "Осталось только ${ days } дней"
-      ]
-    },
     "Get started checklist instructions": {
-      "Available on iOS and Android.": [
-        "Доступно для iOS и Android."
-      ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "Получить мобильное приложение ${ MAIL_APP_NAME }"
       ],
@@ -4252,36 +4213,6 @@
       ],
       "Quickly transfer your contacts or emails from any provider using our Easy Switch import assistant.": [
         "Быстро перенесите контакты или электронную почту от любого провайдера с помощью нашего помощника по импорту Easy Switch."
-      ],
-      "Sign into the mobile app to complete the action": [
-        "Войдите в мобильное приложение и закончите действие"
-      ],
-      "Using your mobile device, scan this QR code or visit": [
-        "Используя мобильное устройство, отсканируйте этот QR-код или посетите"
-      ]
-    },
-    "Get started checklist item": {
-      "Get mobile app": [
-        "Получить мобильное приложение"
-      ],
-      "Import contacts or emails": [
-        "Импортируйте контакты или электронные письма"
-      ],
-      "Send a message": [
-        "Отправить сообщение"
-      ],
-      "Set up a recovery method": [
-        "Настроить метод восстановления"
-      ]
-    },
-    "Get started checklist spotlight": {
-      "You can access the checklist anytime from here": [
-        "Вы можете получить доступ к контрольному списку в любое время отсюда"
-      ]
-    },
-    "Get started checklist title": {
-      "Get started": [
-        "Начать"
       ]
     },
     "Gmail forwarding": {
@@ -7643,20 +7574,6 @@
         "${ page } из ${ totalText }"
       ]
     },
-    "Paid user checklist item": {
-      "Get mobile app": [
-        "Получить мобильное приложение"
-      ],
-      "Import contacts or emails": [
-        "Импортируйте контакты или электронные письма"
-      ],
-      "Send a message": [
-        "Отправить сообщение"
-      ],
-      "Set up a recovery method": [
-        "Настроить способ восстановления"
-      ]
-    },
     "Participant name": {
       "You": [
         "Вы"
@@ -8390,9 +8307,6 @@
       ]
     },
     "Storage": {
-      "Get extra storage for free": [
-        "Получите дополнительное хранилище бесплатно"
-      ],
       "Release notes": [
         "Примечания к выпуску"
       ],

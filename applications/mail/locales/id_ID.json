@@ -319,9 +319,6 @@
       "Discard": [
         "Buang"
       ],
-      "Dismiss get started checklist": [
-        "Tutup daftar orientasi pengguna baru"
-      ],
       "Done": [
         "Selesai"
       ],
@@ -363,6 +360,9 @@
       ],
       "Email settings": [
         "Pengaturan email"
+      ],
+      "Emoji": [
+        "Emoji"
       ],
       "Enable": [
         "Aktifkan"
@@ -720,9 +720,6 @@
       ],
       "Open composer": [
         "Buka komposer"
-      ],
-      "Open get started checklist modal": [
-        "Tampilkan daftar orientasi pengguna baru"
       ],
       "Open navigation": [
         "Buka navigasi"
@@ -1243,11 +1240,6 @@
     "Alternative text for welcome image": {
       "Welcome": [
         "Selamat Datang"
-      ]
-    },
-    "Amount of completed get started checklist items": {
-      "${ numberOfCompletedItems }/${ totalNumberOfItems } complete": [
-        "${ numberOfCompletedItems }/${ totalNumberOfItems } telah dituntaskan"
       ]
     },
     "Animation": {
@@ -4122,32 +4114,7 @@
         "Kepada: ${ toString }"
       ]
     },
-    "Get started checklist completion": {
-      "We've increased the total storage of your account to ${ rewardInGb } GB. Get additional storage and unlock premium features today.": [
-        "Kami telah meningkatkan kuota penyimpanan Anda menjadi ${ rewardInGb } GB. Dapatkan kuota penyimpanan yang jauh lebih besar dan berbagai fitur premium lainnya sekarang juga."
-      ],
-      "You're all set!": [
-        "Anda kini telah siap!"
-      ]
-    },
-    "Get started checklist incentive": {
-      "Complete all steps and get a total of ${ rewardInGb } GB on your account": [
-        "Tuntaskan seluruh langkah yang tertera di atas dan dapatkan total kuota penyimpanan ${ rewardInGb } GB bagi akun Anda"
-      ],
-      "Expires soon": [
-        "Akan segera kedaluwarsa"
-      ],
-      "Expires today": [
-        "Akan kedaluwarsa hari ini"
-      ],
-      "Only ${ days } days left": [
-        "Hanya ${ days } hari tersisa"
-      ]
-    },
     "Get started checklist instructions": {
-      "Available on iOS and Android.": [
-        "Tersedia di iOS dan Android."
-      ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "Dapatkan aplikasi mobile ${ MAIL_APP_NAME }"
       ],
@@ -4159,36 +4126,6 @@
       ],
       "Quickly transfer your contacts or emails from any provider using our Easy Switch import assistant.": [
         "Pindahkan kontak dan email Anda dari layanan penyedia email lainnya secara mudah dan cepat dengan alat bantu impor Easy Switch kami."
-      ],
-      "Sign into the mobile app to complete the action": [
-        "Masuk ke aplikasi mobile Anda untuk merampungkan tindakan ini"
-      ],
-      "Using your mobile device, scan this QR code or visit": [
-        "Dengan menggunakan perangkat mobile Anda, pindai QR code di atas atau kunjungi"
-      ]
-    },
-    "Get started checklist item": {
-      "Get mobile app": [
-        "Dapatkan aplikasi seluler"
-      ],
-      "Import contacts or emails": [
-        "Impor kontak atau email"
-      ],
-      "Send a message": [
-        "Kirim pesan"
-      ],
-      "Set up a recovery method": [
-        "Tentukan metode pemulihan"
-      ]
-    },
-    "Get started checklist spotlight": {
-      "You can access the checklist anytime from here": [
-        "Anda dapat mengakses kembali daftar ini di sini"
-      ]
-    },
-    "Get started checklist title": {
-      "Get started": [
-        "Mulai"
       ]
     },
     "Gmail forwarding": {
@@ -7313,20 +7250,6 @@
         "Halaman ${ page } dari ${ totalText }"
       ]
     },
-    "Paid user checklist item": {
-      "Get mobile app": [
-        "Dapatkan aplikasi seluler"
-      ],
-      "Import contacts or emails": [
-        "Impor kontak atau email"
-      ],
-      "Send a message": [
-        "Kirim pesan"
-      ],
-      "Set up a recovery method": [
-        "Tentukan metode pemulihan"
-      ]
-    },
     "Participant name": {
       "You": [
         "Anda"
@@ -8012,9 +7935,6 @@
       ]
     },
     "Storage": {
-      "Get extra storage for free": [
-        "Dapatkan kapasitas penyimpanan tambahan secara gratis"
-      ],
       "Release notes": [
         "Catatan rilis"
       ],

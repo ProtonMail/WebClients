@@ -323,9 +323,6 @@
       "Discard": [
         "Renunțare"
       ],
-      "Dismiss get started checklist": [
-        "Ignorare listă de opțiuni de la pornire"
-      ],
       "Done": [
         "Gata"
       ],
@@ -367,6 +364,9 @@
       ],
       "Email settings": [
         "Setări e-mail"
+      ],
+      "Emoji": [
+        "Emoticon"
       ],
       "Enable": [
         "Activare"
@@ -726,9 +726,6 @@
       ],
       "Open composer": [
         "Deschidere editor mesaje"
-      ],
-      "Open get started checklist modal": [
-        "Deschidere panou listă de opțiuni de la pornire"
       ],
       "Open navigation": [
         "Deschidere navigare"
@@ -1251,13 +1248,6 @@
     "Alternative text for welcome image": {
       "Welcome": [
         "Bun venit"
-      ]
-    },
-    "Amount of completed get started checklist items": {
-      "${ numberOfCompletedItems }/${ totalNumberOfItems } complete": [
-        "${ numberOfCompletedItems }/${ totalNumberOfItems } finalizată",
-        "${ numberOfCompletedItems }/${ totalNumberOfItems } finalizate",
-        "${ numberOfCompletedItems }/${ totalNumberOfItems } finalizate"
       ]
     },
     "Animation": {
@@ -4182,36 +4172,36 @@
         "Către: ${ toString }"
       ]
     },
-    "Get started checklist completion": {
-      "We've increased the total storage of your account to ${ rewardInGb } GB. Get additional storage and unlock premium features today.": [
-        "V-am mărit spațiul de stocare total al contului la ${ rewardInGb } GB. Obțineți spațiu de stocare suplimentar și deblocați caracteristici premium astăzi."
-      ],
-      "You're all set!": [
-        "Sunteți gata!"
-      ]
-    },
-    "Get started checklist incentive": {
-      "Complete all steps and get a total of ${ rewardInGb } GB on your account": [
-        "Completați toți pașii și primiți un total de ${ rewardInGb } GB în contul personal."
-      ],
-      "Expires soon": [
-        "Expiră în curând"
-      ],
-      "Expires today": [
-        "Expiră astăzi"
-      ],
-      "Only ${ days } day left": [
-        "A mai rămas doar o zi",
-        "A mai rămas doar ${ days } zile",
-        "A mai rămas doar ${ days } de zile"
-      ]
-    },
     "Get started checklist instructions": {
-      "Available on iOS and Android.": [
-        "Disponibilă pe iOS și Android."
+      "${ MAIL_APP_NAME } app": [
+        "Aplicația ${ MAIL_APP_NAME }"
+      ],
+      "account logins": [
+        "autentificarea în cont"
+      ],
+      "Auto-forward Gmail": [
+        "Redirecționare automată Gmail"
+      ],
+      "auto-forwarding": [
+        "redirecționarea automată"
+      ],
+      "Change ${ strongText } to your ${ BRAND_NAME } address": [
+        "Schimbă ${ strongText } la adresa ta ${ BRAND_NAME }"
+      ],
+      "Discover how our ${ strongText } protect you": [
+        "Descoperă cum ${ strongText } te protejează"
+      ],
+      "Discover privacy features": [
+        "Descoperă caracteristicile de confidențialitate"
       ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "Obțineți aplicația mobilă ${ MAIL_APP_NAME }"
+      ],
+      "Get the ${ strongText } on Android or iOS": [
+        "Obține ${ strongText } pentru Android sau iOS"
+      ],
+      "Get the App": [
+        "Obține aplicația"
       ],
       "Import contacts or emails": [
         "Importați contacte sau e-mailuri"
@@ -4219,38 +4209,17 @@
       "Import your contacts or messages": [
         "Importați contactele sau mesajele personale"
       ],
+      "privacy features": [
+        "caracteristici de confidențialitate"
+      ],
       "Quickly transfer your contacts or emails from any provider using our Easy Switch import assistant.": [
         "Transferați-vă rapid contactele sau e-mailurile de la orice furnizor cu ajutorul asistentului de importare Easy Switch."
       ],
-      "Sign into the mobile app to complete the action": [
-        "Conectați-vă la aplicația mobilă pentru a finaliza acțiunea"
+      "Set up ${ strongText } from Gmail": [
+        "Setează ${ strongText } de la Gmail"
       ],
-      "Using your mobile device, scan this QR code or visit": [
-        "Folosind un dispozitiv mobil, scanați codul QR sau vizitați"
-      ]
-    },
-    "Get started checklist item": {
-      "Get mobile app": [
-        "Obțineți aplicația mobilă"
-      ],
-      "Import contacts or emails": [
-        "Importați contacte sau e-mailuri"
-      ],
-      "Send a message": [
-        "Trimiteți un mesaj"
-      ],
-      "Set up a recovery method": [
-        "Configurați o metodă de recuperare"
-      ]
-    },
-    "Get started checklist spotlight": {
-      "You can access the checklist anytime from here": [
-        "Puteți accesa oricând lista de opțiuni de aici"
-      ]
-    },
-    "Get started checklist title": {
-      "Get started": [
-        "Să începem"
+      "Update your logins": [
+        "Actualizează autentificarea"
       ]
     },
     "Gmail forwarding": {
@@ -7543,20 +7512,6 @@
         "${ page } din ${ totalText }"
       ]
     },
-    "Paid user checklist item": {
-      "Get mobile app": [
-        "Descărcați aplicația mobilă"
-      ],
-      "Import contacts or emails": [
-        "Importați contacte sau e-mailuri"
-      ],
-      "Send a message": [
-        "Trimiteți un mesaj"
-      ],
-      "Set up a recovery method": [
-        "Configurați o metodă de recuperare"
-      ]
-    },
     "Participant name": {
       "You": [
         "Dvs."
@@ -8274,9 +8229,6 @@
       ]
     },
     "Storage": {
-      "Get extra storage for free": [
-        "Obțineți gratuit spațiu de stocare"
-      ],
       "Release notes": [
         "Note de lansare"
       ],
