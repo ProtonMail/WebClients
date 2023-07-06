@@ -48,10 +48,16 @@ export const PasswordHistoryModal: VFC<ModalProps> = (props) => {
                 }
             >
                 {pwHistory.length > 0 ? (
-                    <div className={'flex flex-nowrap flex-column gap-1'}>
-                        {pwHistory.map((entry) => (
-                            <PasswordHistoryItem key={entry.id} {...entry} />
-                        ))}
+                    <div>
+                        <div className={'flex flex-nowrap flex-column gap-1'}>
+                            {pwHistory.map((entry) => (
+                                <PasswordHistoryItem key={entry.id} {...entry} />
+                            ))}
+                        </div>
+                        <div className="color-weak text-center px-8 mt-12">
+                            <div className="color-weak text-sm">{c('Info')
+                                .t`Passwords older than 1 day are automatically deleted from history.`}</div>
+                        </div>
                     </div>
                 ) : (
                     <div className="color-weak text-center px-8 mt-12">
