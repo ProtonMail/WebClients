@@ -18,7 +18,7 @@
         "i18n:validate": "proton-i18n validate lint-functions",
         "i18n:validate:context": "proton-i18n extract && proton-i18n validate",
         "postinstall": "yarn run config",
-        "install:devtools": "npm install -g @redux-devtools/cli",
+        "install:devtools": "npm install -g @redux-devtools/cli@1.0.7",
         "lint": "eslint src --ext .js,.ts,.tsx --quiet --cache",
         "pretty": "prettier --write  $(find src/app -type f -name '*.js' -o -name '*.ts' -o -name '*.tsx')",
         "start": "yarn clean && yarn config:dev && WEBPACK_DEV_PORT=8090 RESUME_FALLBACK=true ./tools/run:dev-server.sh",
