@@ -1,6 +1,7 @@
 import { CryptoProxy, PrivateKeyReference } from '@proton/crypto';
 import { KT_SKL_SIGNING_CONTEXT } from '@proton/key-transparency/lib';
 
+import { getIsAddressDisabled } from '../helpers/address';
 import {
     ActiveKey,
     Address,
@@ -53,7 +54,9 @@ export const getSignedKeyList = async (
         Signature: await getSignedKeyListSignature(data, signingKey),
     };
 
-    await keyTransparencyVerify(address, signedKeyList, publicKeys);
+    if (!getIsAddressDisabled(address)) {
+        await keyTransparencyVerify(address, signedKeyList, publicKeys);
+    }
 
     return signedKeyList;
 };
