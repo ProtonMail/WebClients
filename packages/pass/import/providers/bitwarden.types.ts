@@ -35,16 +35,20 @@ export type BitwardenCCItem = BitwardenBaseItem & {
     card: {
         cardholderName: MaybeNull<string>;
         brand: MaybeNull<string>;
-        number: MaybeNull<number>;
-        expMonth: MaybeNull<number>;
-        expYear: MaybeNull<number>;
-        code: MaybeNull<number>;
+        number: MaybeNull<string>;
+        expMonth: MaybeNull<string>;
+        expYear: MaybeNull<string>;
+        code: MaybeNull<string>;
     };
+};
+
+export type BitwardenIdentityItem = BitwardenBaseItem & {
+    type: BitwardenType.IDENTITY;
 };
 
 export type BitwardenNoteItem = BitwardenBaseItem & { type: BitwardenType.NOTE };
 
-type BitwardenItem = BitwardenLoginItem | BitwardenNoteItem | BitwardenCCItem;
+type BitwardenItem = BitwardenLoginItem | BitwardenNoteItem | BitwardenCCItem | BitwardenIdentityItem;
 
 export type BitwardenData = {
     encrypted: boolean;
