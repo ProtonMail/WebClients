@@ -119,6 +119,11 @@ async function* errorIterator(source = 'src', options = { isVerbose: false }) {
         if (errorsNewLinesT.match) {
             yield* errorsNewLinesT.errors(file);
         }
+
+        const errorsNumbers = testRule(/[\s|\)]\.t\x60(\d+|\d+\s)*\x60/, content, 'numbers');
+        if (errorsNumbers.match) {
+            yield* errorsNumbers.errors(file);
+        }
     }
 }
 
@@ -165,6 +170,14 @@ function formatErrors(error) {
     match: ${error.match}
      line: ${error.line}
       fix: Unexpected newline inside the string.
+`;
+    }
+
+    if (error.type === 'numbers') {
+        return `🚨 [Error] ${error.file}:${error.index}
+    match: ${error.match}
+     line: ${error.line}
+      fix: Do not translate a string without anything else than numbers and/or spaces.
 `;
     }
 }
