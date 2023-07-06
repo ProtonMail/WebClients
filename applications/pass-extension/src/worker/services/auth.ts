@@ -31,6 +31,7 @@ import createAuthenticationStore from '@proton/shared/lib/authentication/createA
 import { MAIL_APP_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
 import createStore from '@proton/shared/lib/helpers/store';
 
+import { SSO_URL } from '../../app/config';
 import WorkerMessageBroker from '../channel';
 import { withContext } from '../context';
 import store from '../store';
@@ -140,7 +141,7 @@ export const createAuthService = ({
                 ctx.setStatus(WorkerStatus.AUTHORIZING);
 
                 const { keyPassword } = data;
-                const result = await consumeFork({ api, ...data });
+                const result = await consumeFork({ api, apiUrl: `${SSO_URL}/api`, ...data });
 
                 const { AccessToken, RefreshToken } = result;
 
