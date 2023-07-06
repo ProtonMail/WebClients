@@ -3,7 +3,7 @@ import {
     fetchProof,
     throwKTError,
     updateSignedKeyList,
-    verifyProofOfAbscenceForAllRevision,
+    verifyProofOfAbsenceForAllRevision,
 } from '@proton/key-transparency/lib';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { Address, SaveSKLToLS, UploadMissingSKL } from '@proton/shared/lib/interfaces';
@@ -17,7 +17,7 @@ const useUploadMissingSKL = (): UploadMissingSKL => {
     const getAddressKeys = useGetAddressKeys();
     const uploadMissingSKL: UploadMissingSKL = async (address: Address, epoch: Epoch, saveSKLToLS: SaveSKLToLS) => {
         const proof = await fetchProof(epoch.EpochID, address.Email, 1, api);
-        verifyProofOfAbscenceForAllRevision(proof, address.Email, epoch.TreeHash);
+        verifyProofOfAbsenceForAllRevision(proof, address.Email, epoch.TreeHash);
         const decryptedKeys = await getAddressKeys(address.ID);
         const activeKeys = getNormalizedActiveKeys(
             address,
