@@ -7,9 +7,9 @@ import { uniqueId } from '@proton/pass/utils/string';
 import { BITWARDEN_ANDROID_APP_FLAG, isBitwardenLinkedAndroidAppUrl } from '@proton/pass/utils/url';
 
 import { ImportReaderError } from '../helpers/reader.error';
-import { getImportedVaultName, importLoginItem, importNoteItem } from '../helpers/transformers';
+import { getImportedVaultName, importCreditCardItem, importLoginItem, importNoteItem } from '../helpers/transformers';
 import type { ImportPayload, ImportVault } from '../types';
-import { BitwardenCustomFieldType, type BitwardenLoginItem } from './bitwarden.types';
+import { type BitwardenCCItem, BitwardenCustomFieldType, type BitwardenLoginItem } from './bitwarden.types';
 import { type BitwardenData, BitwardenType } from './bitwarden.types';
 
 const BitwardenTypeMap: Record<number, string> = {
@@ -55,6 +55,18 @@ const extractExtraFields = (item: BitwardenLoginItem) => {
         });
 };
 
+const formatCCExpirationDate = (item: BitwardenCCItem) => {
+    const { expMonth, expYear } = item.card;
+    if (!expMonth || !expYear) return '';
+
+    const month = Number(expMonth).toLocaleString('en-US', {
+        minimumIntegerDigits: 2,
+        useGrouping: false,
+    });
+
+    return `${month}${expYear}`;
+};
+
 export const readBitwardenData = (data: string): ImportPayload => {
     try {
         const { items, encrypted } = JSON.parse(data) as BitwardenData;
@@ -86,6 +98,15 @@ export const readBitwardenData = (data: string): ImportPayload => {
                                 return importNoteItem({
                                     name: item.name,
                                     note: item.notes,
+                                });
+                            case BitwardenType.CREDIT_CARD:
+                                return importCreditCardItem({
+                                    name: item.name,
+                                    note: item.notes,
+                                    cardholderName: item.card.cardholderName,
+                                    number: item.card.number,
+                                    verificationNumber: item.card.code,
+                                    expirationDate: formatCCExpirationDate(item),
                                 });
                             default:
                                 ignored.push(`[${BitwardenTypeMap[item.type] ?? 'Other'}] ${item.name}`);

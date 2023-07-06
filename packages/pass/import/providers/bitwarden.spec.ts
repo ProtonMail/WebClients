@@ -81,11 +81,20 @@ describe('Import bitwarden json', () => {
         expect(loginItem3.content.password).toStrictEqual('');
         expect(loginItem3.content.urls).toStrictEqual([]);
         expect(loginItem3.content.totpUri).toStrictEqual('');
+
+        /* Credit Card */
+        const ccItem1 = items[4] as ItemImportIntent<'creditCard'>;
+        expect(ccItem1.type).toBe('creditCard');
+        expect(ccItem1.metadata.name).toBe('Credit Card Y');
+        expect(ccItem1.metadata.note).toBe('Credit Card Y AMEX note');
+        expect(ccItem1.content.cardholderName).toBe('A B');
+        expect(ccItem1.content.number).toBe('374242424242424');
+        expect(ccItem1.content.verificationNumber).toBe('123');
+        expect(ccItem1.content.expirationDate).toBe('012025');
     });
 
     test('correctly keeps a reference to ignored items', () => {
         expect(payload.ignored).not.toEqual([]);
-        expect(payload.ignored[0]).toEqual('[Credit Card] CreditCardItem');
-        expect(payload.ignored[1]).toEqual('[Identification] IdentityItem');
+        expect(payload.ignored[0]).toEqual('[Identification] IdentityItem');
     });
 });
