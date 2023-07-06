@@ -33,6 +33,7 @@ const getConfig = (env) => {
         errorLogs: env.errorLogs || false,
         overlayWarnings: env.overlayWarnings || false,
         overlayErrors: env.overlayErrors || false,
+        overlayRuntimeErrors: env.overlayRuntimeErrors || false,
         logical: env.logical || false,
     };
 
@@ -117,6 +118,7 @@ const getConfig = (env) => {
                 overlay: {
                     warnings: options.overlayWarnings,
                     errors: options.overlayErrors,
+                    runtimeErrors: options.overlayRuntimeErrors,
                 },
             },
             webSocketServer: 'ws',
