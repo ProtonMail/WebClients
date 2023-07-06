@@ -73,7 +73,7 @@ const AuthExtension = () => {
         /* notify the extension that we have reached the `/auth-ext`
          * page - it may want to intercept this and redirect to an
          * extension specific page */
-        if (extension !== undefined) {
+        if (extension !== undefined && type === 'success') {
             sendExtensionMessage<ExtensionAuthenticatedMessage>(
                 { type: 'auth-ext' },
                 { extensionId: extension.ID }
