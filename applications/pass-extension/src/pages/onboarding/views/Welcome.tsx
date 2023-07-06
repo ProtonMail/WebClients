@@ -80,7 +80,8 @@ export const Welcome: VFC = () => {
                                             className={`w100 ${SubTheme.VIOLET} pass-welcome--import-btn`}
                                             pill
                                             size="large"
-                                            shape="ghost"
+                                            shape="solid"
+                                            color="norm"
                                             aria-label={c('Action').t`Import your passwords`}
                                         >
                                             {c('Action').t`Import your passwords`}
