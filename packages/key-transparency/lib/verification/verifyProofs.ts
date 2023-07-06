@@ -40,7 +40,7 @@ const getMerkleTreePath = (vrfHash: Uint8Array, revision: number): Uint8Array =>
 /**
  * Verify the given leafValue exists in the provided chain of the Merkle Tree.
  * The leafValue defaults to the empty node if not provided, which is used in
- * Proofs of Abscence. The incompleteHashing parameter informs whether to start
+ * Proofs of Absence. The incompleteHashing parameter informs whether to start
  * hashing only after the first non-null neighbor or from the very beginning
  */
 const verifyNeighbors = async (
@@ -104,7 +104,7 @@ const verifyNeighbors = async (
  * Verify an address is not in KT by checking the Merkle Tree from the leaf 00...000. It only
  * starts hashing from the first non-null neighbour from the bottom of the tree
  */
-export const verifyProofOfAbscenceForRevision = async (
+export const verifyProofOfAbsenceForRevision = async (
     proof: Proof,
     email: string,
     TreeHash: string,
@@ -125,8 +125,8 @@ export const verifyProofOfAbscenceForRevision = async (
  * starts hashing from the first non-null neighbour from the bottom of the tree
  *
  */
-export const verifyProofOfAbscenceForAllRevision = async (proof: Proof, email: string, TreeHash: string) => {
-    await verifyProofOfAbscenceForRevision(proof, email, TreeHash, 0);
+export const verifyProofOfAbsenceForAllRevision = async (proof: Proof, email: string, TreeHash: string) => {
+    await verifyProofOfAbsenceForRevision(proof, email, TreeHash, 0);
     proof.Neighbors.slice(224).forEach((neighbor) => {
         if (neighbor != null) {
             return throwKTError('Revision subtree is not empty', {
