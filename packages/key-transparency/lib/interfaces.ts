@@ -106,6 +106,6 @@ export interface SelfAuditResult {
 
 export interface SelfAuditError {
     error: Error;
-    numberOfRetries: number;
+    failedTrials: number;
     tooManyRetries: boolean;
 }

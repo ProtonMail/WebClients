@@ -9,7 +9,7 @@ import { sendMultipleTelemetryReports } from '@proton/shared/lib/helpers/metrics
 import { SimpleMap } from '@proton/shared/lib/interfaces';
 import { getWarningReason } from '@proton/shared/lib/keyTransparency/telemetry';
 
-import { useApi } from '../..';
+import { useApi } from '../../hooks';
 
 const useReportSelfAuditErrors = () => {
     const api = getSilentApi(useApi());
