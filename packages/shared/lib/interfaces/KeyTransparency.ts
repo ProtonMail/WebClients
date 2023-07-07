@@ -27,7 +27,7 @@ export interface KTLocalStorageAPI {
 
 export interface KeyTransparencyState {
     selfAuditResult?: SelfAuditResult;
-    seflAuditError?: SelfAuditError;
+    selfAuditError?: SelfAuditError;
 }
 
 export type KeyTransparencyVerify = (
