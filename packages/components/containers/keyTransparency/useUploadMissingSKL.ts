@@ -10,7 +10,7 @@ import { Address, SaveSKLToLS, UploadMissingSKL } from '@proton/shared/lib/inter
 import { getSignedKeyList } from '@proton/shared/lib/keys';
 import { getActiveKeys, getNormalizedActiveKeys } from '@proton/shared/lib/keys/getActiveKeys';
 
-import { useApi, useGetAddressKeys } from '../..';
+import { useApi, useGetAddressKeys } from '../../hooks';
 
 const useUploadMissingSKL = (): UploadMissingSKL => {
     const api = getSilentApi(useApi());
