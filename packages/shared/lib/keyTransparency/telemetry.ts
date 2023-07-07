@@ -5,11 +5,6 @@ export const getWarningReason = (warningDetails?: AddressAuditWarningDetails) =>
         return 'undefined';
     }
     const { reason, sklVerificationFailed, addressWasDisabled } = warningDetails;
-
-    if (reason === AddressAuditWarningReason.NullSKL) {
-        return 'no_skl';
-    }
-
     if (reason === AddressAuditWarningReason.UnverifiableHistory) {
         if (addressWasDisabled) {
             return 'disabled_address';

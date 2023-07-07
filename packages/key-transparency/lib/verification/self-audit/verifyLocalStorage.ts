@@ -2,7 +2,7 @@ import { PrivateKeyReference } from '@proton/crypto';
 import { Api, KTLocalStorageAPI } from '@proton/shared/lib/interfaces';
 import { getParsedSignedKeyList } from '@proton/shared/lib/keys';
 
-import { fetchProof, fetchSignedKeyList } from '../../helpers/fetchHelpers';
+import { fetchProof, fetchSignedKeyList } from '../../helpers/apiHelpers';
 import {
     KeyTransparencyError,
     getEmailDomain,

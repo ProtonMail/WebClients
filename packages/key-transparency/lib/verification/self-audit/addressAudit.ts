@@ -8,9 +8,10 @@ import {
     DecryptedKey,
     FetchedSignedKeyList,
     SaveSKLToLS,
+    UploadMissingSKL,
 } from '@proton/shared/lib/interfaces';
 
-import { fetchProof, fetchSignedKeyLists, fetchVerifiedEpoch, uploadVerifiedEpoch } from '../../helpers/fetchHelpers';
+import { fetchProof, fetchSignedKeyLists, fetchVerifiedEpoch, uploadVerifiedEpoch } from '../../helpers/apiHelpers';
 import { KeyTransparencyError, throwKTError } from '../../helpers/utils';
 import {
     AddressAuditResult,
@@ -20,7 +21,7 @@ import {
     VerifiedEpoch,
 } from '../../interfaces';
 import { checkKeysInSKL, importKeys, verifySKLSignature } from '../verifyKeys';
-import { verifyProofOfAbscenceForRevision } from '../verifyProofs';
+import { verifyProofOfAbsenceForRevision } from '../verifyProofs';
 import { SKLAuditResult, SKLAuditStatus, auditSKL } from './sklAudit';
 
 const millisecondsToSeconds = (milliseconds: number) => Math.floor(milliseconds / 1000);
@@ -95,7 +96,7 @@ const earlyTermination = async (
     }
     if (verifiedEpoch.Revision === inputSKL.Revision) {
         const proof = await fetchProof(epoch.EpochID, address.Email, inputSKL.Revision + 1, api);
-        await verifyProofOfAbscenceForRevision(proof, address.Email, epoch.TreeHash, inputSKL.Revision + 1);
+        await verifyProofOfAbsenceForRevision(proof, address.Email, epoch.TreeHash, inputSKL.Revision + 1);
         await uploadVerifiedEpoch(
             {
                 EpochID: epoch.EpochID,
@@ -134,15 +135,16 @@ const auditAddressImplementation = async (
     userKeys: DecryptedKey[],
     epoch: Epoch,
     saveSKLToLS: SaveSKLToLS,
-    api: Api
+    api: Api,
+    uploadMissingSKL: UploadMissingSKL
 ): Promise<AddressAuditResult> => {
     const inputSKL = address.SignedKeyList;
     const email = address.Email;
     if (inputSKL === null) {
+        await uploadMissingSKL(address, epoch, saveSKLToLS);
         return {
             email,
-            status: AddressAuditStatus.Warning,
-            warningDetails: { reason: AddressAuditWarningReason.NullSKL },
+            status: AddressAuditStatus.Success,
         };
     }
     if (!inputSKL.Revision) {
@@ -206,7 +208,7 @@ const auditAddressImplementation = async (
     }
 
     const nextRevisionProof = proofs.find(({ revision }) => revision === lastIncludedRevision + 1)?.proof!;
-    await verifyProofOfAbscenceForRevision(nextRevisionProof, email, epoch.TreeHash, lastIncludedRevision + 1);
+    await verifyProofOfAbsenceForRevision(nextRevisionProof, email, epoch.TreeHash, lastIncludedRevision + 1);
 
     const audit = sklAudits.find(({ revision }) => revision === inputSKL.Revision);
     if (audit) {
@@ -244,10 +246,11 @@ export const auditAddress = async (
     userKeys: DecryptedKey[],
     epoch: Epoch,
     saveSKLToLS: SaveSKLToLS,
-    api: Api
+    api: Api,
+    uploadMissingSKL: UploadMissingSKL
 ): Promise<AddressAuditResult> => {
     try {
-        return await auditAddressImplementation(address, userKeys, epoch, saveSKLToLS, api);
+        return await auditAddressImplementation(address, userKeys, epoch, saveSKLToLS, api, uploadMissingSKL);
     } catch (error: any) {
         if (error instanceof KeyTransparencyError) {
             return { email: address.Email, status: AddressAuditStatus.Failure, error };
