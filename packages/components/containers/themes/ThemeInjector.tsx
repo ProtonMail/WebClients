@@ -1,7 +1,7 @@
 import { useEffect, useLayoutEffect, useMemo } from 'react';
 
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
-import { updateTheme, updateThemeType } from '@proton/shared/lib/api/settings';
+import { updateTheme } from '@proton/shared/lib/api/settings';
 import { postMessageToIframe } from '@proton/shared/lib/drawer/helpers';
 import { DRAWER_APPS, DRAWER_EVENTS } from '@proton/shared/lib/drawer/interfaces';
 import { rootFontSize } from '@proton/shared/lib/helpers/dom';
@@ -9,30 +9,20 @@ import { ThemeSetting, getDefaultThemeSetting } from '@proton/shared/lib/themes/
 import debounce from '@proton/utils/debounce';
 import noop from '@proton/utils/noop';
 
-import { FeatureCode } from '../../containers/features/FeaturesContext';
-import { useApi, useDrawer, useFeature, useUserSettings } from '../../hooks';
+import { useApi, useDrawer, useUserSettings } from '../../hooks';
 import { useTheme } from './ThemeProvider';
 
 const ThemeInjector = () => {
     const [userSettings] = useUserSettings();
-    const { addListener, settings, setThemeSetting, setAccessibilitySettingsEnabled } = useTheme();
+    const { addListener, settings, setThemeSetting } = useTheme();
     const api = useApi();
     const silentApi = getSilentApi(api);
-    const isAccessibilitySettingsEnabled =
-        useFeature<boolean>(FeatureCode.AccessibilitySettings)?.feature?.Value === true;
 
     const { iframeSrcMap } = useDrawer();
 
     const legacyThemeType = userSettings.ThemeType;
     const legacyThemeSettings = useMemo(() => getDefaultThemeSetting(legacyThemeType), [legacyThemeType]);
-    const themeSetting =
-        isAccessibilitySettingsEnabled && userSettings.Theme && 'Mode' in userSettings.Theme
-            ? userSettings.Theme
-            : legacyThemeSettings;
-
-    useLayoutEffect(() => {
-        setAccessibilitySettingsEnabled(isAccessibilitySettingsEnabled);
-    }, [isAccessibilitySettingsEnabled]);
+    const themeSetting = userSettings.Theme && 'Mode' in userSettings.Theme ? userSettings.Theme : legacyThemeSettings;
 
     useLayoutEffect(() => {
         setThemeSetting(themeSetting);
@@ -56,11 +46,7 @@ const ThemeInjector = () => {
 
     useEffect(() => {
         const cb = debounce((settings: ThemeSetting) => {
-            if (isAccessibilitySettingsEnabled) {
-                silentApi(updateTheme(settings)).catch(noop);
-            } else {
-                silentApi(updateThemeType(settings.LightTheme)).catch(noop);
-            }
+            silentApi(updateTheme(settings)).catch(noop);
         }, 500);
 
         const removeListener = addListener(cb);

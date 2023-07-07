@@ -115,7 +115,6 @@ const MainContainer = () => {
         FeatureCode.EasySwitch,
         FeatureCode.OrgSpamBlockList,
         FeatureCode.ProtonSentinel,
-        FeatureCode.AccessibilitySettings,
         FeatureCode.OrgTwoFactor,
     ]);
 
@@ -125,7 +124,6 @@ const MainContainer = () => {
     const isGmailSyncEnabled = getFeature(FeatureCode.EasySwitch).feature?.Value.GoogleMailSync === true;
     const isOrgSpamBlockListEnabled = getFeature(FeatureCode.OrgSpamBlockList).feature?.Value === true;
     const isProtonSentinelFeatureEnabled = getFeature(FeatureCode.ProtonSentinel).feature?.Value === true;
-    const isAccessibilitySettingsEnabled = getFeature(FeatureCode.AccessibilitySettings).feature?.Value === true;
     const isOrgTwoFactorEnabled = getFeature(FeatureCode.OrgTwoFactor).feature?.Value === true;
 
     const [isDataRecoveryAvailable, loadingDataRecovery] = useIsDataRecoveryAvailable();
@@ -152,7 +150,6 @@ const MainContainer = () => {
             !!userSettings.HighSecurity.Eligible ||
             userSettings.HighSecurity.Value === SETTINGS_PROTON_SENTINEL_STATE.ENABLED,
         isProtonSentinelFeatureEnabled,
-        isAccessibilitySettingsEnabled,
         isOrgTwoFactorEnabled,
     });
 
