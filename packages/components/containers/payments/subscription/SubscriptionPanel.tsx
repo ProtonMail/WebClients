@@ -1,10 +1,9 @@
 import { c, msgid } from 'ttag';
 
-import { Button, ButtonLike } from '@proton/atoms';
+import { Button } from '@proton/atoms';
 import { MAX_CALENDARS_FREE, MAX_CALENDARS_PAID } from '@proton/shared/lib/calendar/constants';
 import { APPS, APP_NAMES, BRAND_NAME, CYCLE, PLANS, PLAN_NAMES, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
-import { hasOrganizationSetup, hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
 import { getHasB2BPlan, getPrimaryPlan, hasPassPlus, hasVPN, isTrial } from '@proton/shared/lib/helpers/subscription';
 import {
     Address,
@@ -12,7 +11,6 @@ import {
     Organization,
     Subscription,
     UserModel,
-    UserType,
     VPNServersCountData,
 } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
@@ -21,7 +19,7 @@ import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 import percentage from '@proton/utils/percentage';
 
-import { Icon, Meter, Price, SettingsLink, StripedItem, StripedList } from '../../../components';
+import { Icon, Meter, Price, StripedItem, StripedList } from '../../../components';
 import { PlanCardFeatureDefinition } from '../features/interface';
 import {
     FREE_PASS_ALIASES,
@@ -40,6 +38,7 @@ import {
     getVPNConnectionsText,
 } from '../features/vpn';
 import { OpenSubscriptionModalCallback } from './SubscriptionModalProvider';
+import SubscriptionPanelManageUserButton from './SubscriptionPanelManageUserButton';
 import { SUBSCRIPTION_STEPS } from './constants';
 
 interface Item extends Omit<PlanCardFeatureDefinition, 'status' | 'highlight' | 'included'> {
@@ -98,8 +97,6 @@ const SubscriptionPanel = ({
 }: Props) => {
     const primaryPlan = getPrimaryPlan(subscription, app);
     const planTitle = primaryPlan?.Title || PLAN_NAMES[FREE_PLAN.Name as PLANS];
-
-    const isAdmin = user.isAdmin && !user.isSubUser && user.Type !== UserType.EXTERNAL;
 
     const cycle = subscription?.Cycle ?? CYCLE.MONTHLY;
     const amount = (subscription?.Amount ?? 0) / cycle;
@@ -360,17 +357,7 @@ const SubscriptionPanel = ({
                 }
                 return getDefault();
             })()}
-            {isAdmin && (hasOrganizationSetup(organization) || hasOrganizationSetupWithKeys(organization)) && (
-                <ButtonLike
-                    as={SettingsLink}
-                    className="mb-2"
-                    color="norm"
-                    path="/users-addresses"
-                    size="large"
-                    app={APPS.PROTONMAIL}
-                    fullWidth
-                >{c('familyOffer_2023:Family plan').t`Manage user accounts`}</ButtonLike>
-            )}
+            <SubscriptionPanelManageUserButton />
             {
                 // translator: Edit billing details is a button when you want to edit the billing details of your current plan, in the dashboard.
                 user.isPaid && user.canPay ? (
