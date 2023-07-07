@@ -1,6 +1,4 @@
 import { CryptoProxy, PublicKeyReference, VERIFICATION_STATUS } from '@proton/crypto';
-import { KEY_FLAG } from '@proton/shared/lib/constants';
-import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import {
     Api,
     ArmoredKeyWithFlags,
@@ -173,27 +171,7 @@ const verifyPublicKeys = async (
         const verifySKL = async () => {
             if (signedKeyList?.Data) {
                 const importedKeysWithFlags = await importKeys(armoredKeysWithFlags);
-
-                const verificationKeys = importedKeysWithFlags
-                    .filter(({ Flags }) => hasBit(Flags, KEY_FLAG.FLAG_NOT_COMPROMISED))
-                    .map(({ PublicKey }) => PublicKey);
-
-                if (!signedKeyList?.Signature) {
-                    return throwKTError('Signed key list has no signature', { email, signedKeyList });
-                }
-
-                // Verify signature
-                const verified = await verifySKLSignature(
-                    verificationKeys,
-                    signedKeyList.Data!,
-                    signedKeyList.Signature
-                );
-
-                if (!verified) {
-                    return throwKTError('Signed key list signature could not be verified', { email });
-                }
-
-                // Verify key list and signed key list
+                // Verify key list matches the signed key list
                 await checkKeysInSKL(email, importedKeysWithFlags, signedKeyList.Data!);
             }
         };
