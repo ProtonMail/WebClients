@@ -155,7 +155,10 @@ export const createFormTrackerService = () => {
 
                         return promptOptions.shouldPrompt
                             ? { committed: merge(committed, { autosave: promptOptions }) }
-                            : { committed: undefined };
+                            : (() => {
+                                  stash(tabId, url.domain, 'PROMPT_IGNORE');
+                                  return { committed: undefined };
+                              })();
                     }
 
                     throw new Error(`Cannot commit form submission for tab#${tabId} on domain "${url.domain}"`);
