@@ -28,15 +28,6 @@ export type ValueControlProps = Omit<FieldBoxProps, 'icon'> & {
     valueClassName?: string;
 };
 
-const getClassNameByElementType = (element: ContainerElement): string => {
-    switch (element) {
-        case 'pre':
-            return 'text-break';
-        default:
-            return 'text-ellipsis';
-    }
-};
-
 const HideButton = ({ hidden, onClick }: { hidden: boolean; onClick: () => void }) => (
     <Button
         icon
@@ -103,7 +94,7 @@ export const ValueControl: VFC<ValueControlProps> = ({
                 <ValueContainer
                     className={clsx(
                         'pass-value-control--value m-0 p-0 user-select-none',
-                        getClassNameByElementType(as),
+                        as === 'pre' ? 'text-break' : 'text-ellipsis',
                         valueClassName
                     )}
                 >
