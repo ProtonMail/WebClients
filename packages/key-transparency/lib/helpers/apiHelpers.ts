@@ -55,7 +55,7 @@ export const updateSignedKeyList = async (
     signedKeyList: SignedKeyList
 ): Promise<FetchedSignedKeyList> => {
     const { SignedKeyList } = await api<{ SignedKeyList: FetchedSignedKeyList }>(
-        updateSignedKeyListRoute({ AddressID: addressID }, { SignedKeyList: signedKeyList })
+        updateSignedKeyListRoute({ AddressID: addressID, SignedKeyList: signedKeyList })
     );
     return SignedKeyList;
 };
