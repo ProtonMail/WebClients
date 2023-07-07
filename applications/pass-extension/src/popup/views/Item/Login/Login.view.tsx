@@ -35,7 +35,14 @@ export const LoginView: VFC<ItemTypeViewProps<'login'>> = ({ vault, revision, ..
                     value={username}
                 />
 
-                <ValueControl clickToCopy hidden icon="key" label={c('Label').t`Password`} value={password}>
+                <ValueControl
+                    clickToCopy
+                    hidden
+                    icon="key"
+                    label={c('Label').t`Password`}
+                    value={password}
+                    valueClassName="flex"
+                >
                     {password.length ? getCharsGroupedByColor(password) : undefined}
                 </ValueControl>
 
