@@ -8,6 +8,7 @@ import partition from '@proton/utils/partition';
 import unique from '@proton/utils/unique';
 
 import { getEvent, queryEventIDs } from '../../api/calendars';
+import { getSilentApi } from '../../api/helpers/customConfig';
 import { SECOND } from '../../constants';
 import formatUTC from '../../date-fns-utc/format';
 import { WeekStartsOn } from '../../date-fns-utc/interface';
@@ -224,7 +225,7 @@ const fetchAndTryDecryptEvent = async ({
     weekStartsOn: WeekStartsOn;
     defaultTzid: string;
 }) => {
-    const event = (await api<{ Event: CalendarEvent }>({ ...getEvent(calendar.ID, eventID), silence: true })).Event;
+    const { Event: event } = await getSilentApi(api)<{ Event: CalendarEvent }>(getEvent(calendar.ID, eventID));
     return tryDecryptEvent({
         event,
         calendar,
