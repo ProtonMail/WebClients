@@ -54,19 +54,6 @@ const getMapEmailHeaders = (headers?: string): { [key: string]: X_PM_HEADERS } =
     }, {});
 };
 
-const getLockColor = (pgpScheme: PACKAGE_TYPE) => {
-    switch (pgpScheme) {
-        case SEND_PM:
-        case SEND_EO:
-            return 'color-info';
-        case SEND_PGP_MIME:
-        case SEND_PGP_INLINE:
-            return 'color-success';
-        default:
-            return 'color-norm';
-    }
-};
-
 export const getSendStatusIcon = (
     sendPreferences: SendPreferences,
     ktActivation: KeyTransparencyActivation
@@ -82,22 +69,13 @@ export const getSendStatusIcon = (
         return { colorClassName: 'color-danger', isEncrypted: false, fill: FAIL, text: error.message };
     }
     const ktVerificationStatus = ktVerificationResult?.status;
-    if (ktActivated && ktVerificationStatus === KT_VERIFICATION_STATUS.VERIFICATION_FAILED) {
-        return {
-            colorClassName: getLockColor(pgpScheme),
-            isEncrypted: encrypt,
-            fill: WARNING,
-            text: c('loc_nightly: Composer email icon').t`Failed to verify keys with Key Transparency`,
-        };
-    }
     if (pgpScheme === SEND_PM) {
         const result = { colorClassName: 'color-info', isEncrypted: true };
         if (ktActivated && ktVerificationStatus === KT_VERIFICATION_STATUS.UNVERIFIED_KEYS) {
             return {
                 ...result,
                 fill: WARNING,
-                text: c('loc_nightly: Composer email icon')
-                    .t`End-to-end encrypted to recipient without Key Transparency`,
+                text: c('loc_nightly: Composer email icon').t`End-to-end encrypted without Key Transparency`,
             };
         }
         if (isPublicKeyPinned) {
@@ -115,7 +93,7 @@ export const getSendStatusIcon = (
             return {
                 ...result,
                 fill: PLAIN,
-                text: c('loc_nightly: Composer email icon').t`End-to-end encrypted to recipient with Key Transparency`,
+                text: c('loc_nightly: Composer email icon').t`End-to-end encrypted with Key Transparency`,
             };
         }
         return {
