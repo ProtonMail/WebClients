@@ -141,11 +141,17 @@ const MailboxContainer = ({
         }
     }, [location.hash, isSearch]);
 
-    const handlePage = useCallback((pageNumber: number) => {
-        history.push(setPageInUrl(history.location, pageNumber));
-    }, []);
-    const handleSort = useCallback((sort: Sort) => history.push(setSortInUrl(history.location, sort)), []);
-    const handleFilter = useCallback((filter: Filter) => history.push(setFilterInUrl(history.location, filter)), []);
+    const handlePage = useCallback(
+        (pageNumber: number) => {
+            history.push(setPageInUrl(history.location, pageNumber));
+        },
+        [history]
+    );
+    const handleSort = useCallback((sort: Sort) => history.push(setSortInUrl(history.location, sort)), [history]);
+    const handleFilter = useCallback(
+        (filter: Filter) => history.push(setFilterInUrl(history.location, filter)),
+        [history]
+    );
 
     const [isMessageOpening, setIsMessageOpening] = useState(false);
 
@@ -166,7 +172,10 @@ const MailboxContainer = ({
     const { handleDelete: permanentDelete, modal: deleteModal } = usePermanentDelete(labelID);
     useApplyEncryptedSearch(elementsParams);
 
-    const handleBack = useCallback(() => history.push(setParamsInLocation(history.location, { labelID })), [labelID]);
+    const handleBack = useCallback(
+        () => history.push(setParamsInLocation(history.location, { labelID })),
+        [history, labelID]
+    );
 
     const onCompose = useOnCompose();
 
@@ -238,7 +247,7 @@ const MailboxContainer = ({
             }
             handleCheckAll(false);
         },
-        [onCompose, isConversationContentView, labelID]
+        [onCompose, isConversationContentView, labelID, history]
     );
 
     const handleMarkAs = useCallback(
