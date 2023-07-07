@@ -1,4 +1,4 @@
-import { ChangeEvent, MouseEvent } from 'react';
+import { ChangeEvent, FocusEventHandler, MouseEventHandler } from 'react';
 
 import { DENSITY } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
@@ -33,9 +33,13 @@ const ItemCheckbox = ({
     const [userSettings] = useUserSettings();
     const isCompactView = userSettings.Density === DENSITY.COMPACT;
 
-    const handleClick = (event: MouseEvent) => {
-        event.stopPropagation();
-    };
+    /**
+     * Due to the way we handle focus of parent elements
+     * we need to stop propagation of click and focus
+     * on checkbox label.
+     */
+    const handleClick: MouseEventHandler<HTMLLabelElement> = (event) => event.stopPropagation();
+    const handleFocus: FocusEventHandler<HTMLLabelElement> = (event) => event.stopPropagation();
 
     return isCompactView ? (
         <Checkbox
@@ -48,7 +52,11 @@ const ItemCheckbox = ({
             data-testid="item-checkbox"
         />
     ) : (
-        <label className={clsx(['item-checkbox-label relative', normalClassName])} onClick={handleClick}>
+        <label
+            className={clsx(['item-checkbox-label relative', normalClassName])}
+            onClick={handleClick}
+            onFocus={handleFocus}
+        >
             <input
                 type="checkbox"
                 className="item-checkbox inner-ratio-container cursor-pointer m-0"
