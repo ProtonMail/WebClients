@@ -91,7 +91,7 @@ export interface CalendarEventsQuery extends PaginationParams {
 
 export interface CalendarEventIDsQuery {
     AfterID?: string;
-    Limit: number;
+    Limit?: number;
 }
 
 export interface CalendarExportEventsQuery extends PaginationParams {
