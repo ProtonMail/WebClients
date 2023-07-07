@@ -53,7 +53,7 @@ const BaseTextFieldRender: ForwardRefRenderFunction<HTMLInputElement, BaseTextFi
             unstyled
             assistContainerClassName="hidden-empty"
             error={error}
-            inputClassName={clsx('color-norm p-0 rounded-none', inputClassName, hide && 'letter-spacing-hidden')}
+            inputClassName={clsx('color-norm p-0 rounded-none', inputClassName)}
             labelContainerClassName={clsx(
                 'm-0 text-normal text-sm',
                 error ? 'color-danger' : 'color-weak',
