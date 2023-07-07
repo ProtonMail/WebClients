@@ -23,22 +23,14 @@ export const createAutoSaveService = () => {
             username: submission.data.username,
         })(store.getState());
 
-        /**
-         * If no login items found for the current
-         * domain & the current username - prompt for
-         * autosaving a new entry
-         */
-        if (candidates.length === 0) {
-            return { shouldPrompt: true, data: { action: AutoSaveType.NEW } };
-        }
+        /* If no login items found for the current domain & the current
+         * username - prompt for autosaving a new entry */
+        if (candidates.length === 0) return { shouldPrompt: true, data: { action: AutoSaveType.NEW } };
 
+        /* If we cannot find an entry which also matches the current submission's
+         * password then we should prompt for update */
         const match = candidates.filter((item) => item.data.content.password === submission.data.password);
 
-        /**
-         * If we cannot find an entry which also
-         * matches the current submission's password
-         * then we should prompt for update
-         */
         return match.length > 0
             ? { shouldPrompt: false }
             : {

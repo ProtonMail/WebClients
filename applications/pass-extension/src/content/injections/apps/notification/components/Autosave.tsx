@@ -10,7 +10,7 @@ import { contentScriptMessage, sendMessage } from '@proton/pass/extension/messag
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import { createTelemetryEvent } from '@proton/pass/telemetry/events';
 import type { Item } from '@proton/pass/types';
-import { AutoSaveType, type PromptedFormEntry, WorkerMessageType } from '@proton/pass/types';
+import { AutoSaveType, type FormEntryPrompt, WorkerMessageType } from '@proton/pass/types';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import { partialMerge } from '@proton/pass/utils/object';
 import { uniqueId } from '@proton/pass/utils/string';
@@ -27,7 +27,7 @@ import { NotificationHeader } from './NotificationHeader';
 
 import './Autosave.scss';
 
-type Props = { submission: PromptedFormEntry; onClose?: () => void; settings: ProxiedSettings };
+type Props = { submission: FormEntryPrompt; onClose?: () => void; settings: ProxiedSettings };
 type AutosaveFormValues = { name: string; username: string; password: string };
 
 export const Autosave: VFC<Props> = ({ submission, settings, onClose }) => {

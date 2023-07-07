@@ -22,9 +22,7 @@ export const createFormTrackerService = () => {
 
     const get = (tabId: TabId, domain: string): Maybe<FormEntry> => {
         const submission = submissions.get(getFormId(tabId, domain));
-        if (submission && submission.domain === domain) {
-            return submission;
-        }
+        if (submission && submission.domain === domain) return submission;
     };
 
     const stash = (tabId: TabId, domain: string, reason: string): void => {
