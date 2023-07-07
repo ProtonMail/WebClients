@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 
 import { Href } from '@proton/atoms/Href';
 import { Dropdown, Icon, useModalState, usePopperAnchor } from '@proton/components/components';
@@ -21,12 +21,17 @@ import SpyTrackerIcon from './SpyTrackerIcon';
 import SpyTrackerModal from './SpyTrackerModal';
 import UTMTrackerModal from './UTMTrackerModal';
 
-const getTitle = (needsMoreProtection: boolean, hasTrackers: boolean) => {
+const getTitle = (needsMoreProtection: boolean, trackersCount: number) => {
     if (needsMoreProtection) {
         return c('Title').t`Protect your email`;
     } else {
-        if (hasTrackers) {
-            return c('Title').t`This email is protected`;
+        if (trackersCount > 0) {
+            // translator: trackersCount refers to the number of image trackers + utm trackers found in the message
+            return c('Title').ngettext(
+                msgid`We protected you from ${trackersCount} tracker`,
+                `We protected you from ${trackersCount} trackers`,
+                trackersCount
+            );
         } else {
             return c('Title').t`No trackers found`;
         }
@@ -68,11 +73,7 @@ const PrivacyDropdown = ({ message }: Props) => {
         }
     }, [showSpotlight]);
 
-    const title = getTitle(needsMoreProtection, hasTrackers);
-    const description = needsMoreProtection
-        ? c('Description')
-              .t`You can read the message and click on links without being tracked with email tracker protection.`
-        : c('Description').t`You can read the message and click on links without being tracked.`;
+    const title = getTitle(needsMoreProtection, numberOfImageTrackers + numberOfUTMTrackers);
 
     const handleShowImageTrackersDetails = () => {
         if (numberOfImageTrackers > 0) {
@@ -141,13 +142,12 @@ const PrivacyDropdown = ({ message }: Props) => {
             />
             <Dropdown anchorRef={anchorRef} isOpen={isOpen} onClose={close} originalPlacement="bottom-end">
                 <div className="p-4">
+                    <img src={hasTrackers ? trackersImage : noTrackersImage} alt={title} className="block m-auto" />
                     <div className="flex text-center flex-justify-center">
-                        <img src={hasTrackers ? trackersImage : noTrackersImage} alt={title} className="hauto" />
                         <span className="my-4">
                             <h5 className="text-bold mb-2" tabIndex={-2} data-testid="privacy:title">
                                 {title}
                             </h5>
-                            <span data-testid="privacy:description">{description}</span>
                             <br />
                             <Href className="ml-1" href={emailTrackerProtectionURL} data-testid="privacy:learnmore">{c(
                                 'Info'
