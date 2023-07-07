@@ -1,11 +1,13 @@
 import { usePaymentFacade } from '@proton/components/payments/client-extensions';
 
 import { useAuthentication } from '../..';
-import { PaymentsNoApi } from './Payment';
+import { Props as PaymentProps, PaymentsNoApi } from './Payment';
 
 export type Props = ReturnType<typeof usePaymentFacade> & {
     onPaypalCreditClick?: () => void;
     noMaxWidth?: boolean;
+    onBitcoinTokenValidated?: PaymentProps['onBitcoinTokenValidated'];
+    onAwaitingBitcoinPayment?: PaymentProps['onAwaitingBitcoinPayment'];
 };
 
 const PaymentWrapper = ({
@@ -19,6 +21,8 @@ const PaymentWrapper = ({
     paypalCredit,
     noMaxWidth,
     onPaypalCreditClick,
+    onBitcoinTokenValidated,
+    onAwaitingBitcoinPayment,
 }: Props) => {
     const { UID } = useAuthentication();
     const isAuthenticated = !!UID;
@@ -43,6 +47,8 @@ const PaymentWrapper = ({
             isAuthenticated={isAuthenticated}
             noMaxWidth={noMaxWidth}
             onPaypalCreditClick={onPaypalCreditClick}
+            onBitcoinTokenValidated={onBitcoinTokenValidated}
+            onAwaitingBitcoinPayment={onAwaitingBitcoinPayment}
         />
     );
 };
