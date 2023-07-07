@@ -15,12 +15,12 @@ import { getParsedSignedKeyList } from '@proton/shared/lib/keys';
 
 import { KT_SKL_VERIFICATION_CONTEXT } from '../constants';
 import { NO_KT_DOMAINS } from '../constants/domains';
-import { fetchProof } from '../helpers/fetchHelpers';
+import { fetchProof } from '../helpers/apiHelpers';
 import { KeyTransparencyError, getEmailDomain, throwKTError } from '../helpers/utils';
 import { KeyWithFlags } from '../interfaces';
 import {
-    verifyProofOfAbscenceForAllRevision,
-    verifyProofOfAbscenceForRevision,
+    verifyProofOfAbsenceForAllRevision,
+    verifyProofOfAbsenceForRevision,
     verifyProofOfExistence,
     verifyProofOfObsolescence,
 } from './verifyProofs';
@@ -233,7 +233,7 @@ const verifyPublicKeys = async (
 
         if (!signedKeyList) {
             const proof = await fetchProof(epoch.EpochID, identifier, 1, api);
-            await verifyProofOfAbscenceForAllRevision(proof, identifier, epoch.TreeHash);
+            await verifyProofOfAbsenceForAllRevision(proof, identifier, epoch.TreeHash);
             return { status: KT_VERIFICATION_STATUS.UNVERIFIED_KEYS };
         }
 
@@ -247,7 +247,7 @@ const verifyPublicKeys = async (
             fetchProof(epoch.EpochID, identifier, signedKeyList.Revision + 1, api),
         ]);
 
-        const nextProofVerification = verifyProofOfAbscenceForRevision(
+        const nextProofVerification = verifyProofOfAbsenceForRevision(
             nextRevisionProof,
             identifier,
             epoch.TreeHash,

@@ -3,7 +3,7 @@ import { FetchedSignedKeyList } from '@proton/shared/lib/interfaces';
 
 import { Epoch, Proof } from '../../interfaces';
 import { verifySKLSignature } from '../verifyKeys';
-import { verifyProofOfAbscenceForRevision, verifyProofOfExistenceOrObsolescence } from '../verifyProofs';
+import { verifyProofOfAbsenceForRevision, verifyProofOfExistenceOrObsolescence } from '../verifyProofs';
 
 export enum SKLAuditStatus {
     Deleted,
@@ -28,7 +28,7 @@ export const auditSKL = async (
     proof: Proof
 ): Promise<SKLAuditResult> => {
     if (!signedKeyList) {
-        await verifyProofOfAbscenceForRevision(proof, email, epoch.TreeHash, revision);
+        await verifyProofOfAbsenceForRevision(proof, email, epoch.TreeHash, revision);
         return { revision, status: SKLAuditStatus.Deleted, signedKeyList };
     }
     await verifyProofOfExistenceOrObsolescence(proof, email, epoch.TreeHash, signedKeyList);
@@ -41,7 +41,7 @@ export const auditSKL = async (
         if (sklCreationTimestamp === null) {
             return { revision, status: SKLAuditStatus.ExistentUnverified, signedKeyList };
         } else {
-            return { revision, status: SKLAuditStatus.ExistentVerified, sklCreationTimestamp, signedKeyList};
+            return { revision, status: SKLAuditStatus.ExistentVerified, sklCreationTimestamp, signedKeyList };
         }
     } else {
         return { revision, status: SKLAuditStatus.Obsolete, signedKeyList };
