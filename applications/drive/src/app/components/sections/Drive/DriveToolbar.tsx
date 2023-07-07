@@ -88,8 +88,12 @@ const DriveToolbar = ({ shareId, items, showOptionsForNoSelection = true, isLink
                             </>
                         ) : null}
                         <DetailsButton selectedLinks={selectedItems} />
-                        <Vr />
-                        <MoveToTrashButton selectedLinks={selectedItems} />
+                        {!isLinkReadOnly ? (
+                            <>
+                                <Vr />
+                                <MoveToTrashButton selectedLinks={selectedItems} />
+                            </>
+                        ) : null}
                     </>
                 )}
             </>
