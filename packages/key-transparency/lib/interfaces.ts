@@ -103,3 +103,9 @@ export interface SelfAuditResult {
     localStorageAuditResultsOwnAddress: LocalStorageAuditResult[];
     localStorageAuditResultsOtherAddress: LocalStorageAuditResult[];
 }
+
+export interface SelfAuditError {
+    error: Error;
+    numberOfRetries: number;
+    tooManyRetries: boolean;
+}
