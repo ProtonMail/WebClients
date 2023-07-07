@@ -45,7 +45,7 @@ const HideButton = ({ hidden, onClick }: { hidden: boolean; onClick: () => void 
         onClick={onClick}
         size="medium"
         shape="solid"
-        title={hidden ? c('Action').t`Unmask password` : c('Action').t`Hide password`}
+        title={hidden ? c('Action').t`Show` : c('Action').t`Hide`}
     >
         <Icon size={20} name={hidden ? 'eye' : 'eye-slash'} />
     </Button>
@@ -104,8 +104,7 @@ export const ValueControl: VFC<ValueControlProps> = ({
                     className={clsx(
                         'pass-value-control--value m-0 p-0 user-select-none',
                         getClassNameByElementType(as),
-                        valueClassName,
-                        value && hide && 'letter-spacing-hidden'
+                        valueClassName
                     )}
                 >
                     {loading ? <div className="pass-skeleton pass-skeleton--value" /> : displayValue}
