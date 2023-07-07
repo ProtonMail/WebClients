@@ -104,11 +104,7 @@ const StandardPrivateApp = <T, M extends Model<T>, E, EvtM extends Model<E>>({
             cache,
         };
 
-        const featuresPromise = getFeature([
-            FeatureCode.EarlyAccessScope,
-            FeatureCode.AccessibilitySettings,
-            ...preloadFeatures,
-        ]);
+        const featuresPromise = getFeature([FeatureCode.EarlyAccessScope, ...preloadFeatures]);
 
         let earlyAccessRefresher: undefined | (() => void);
         let shouldSetupAddress = false;
