@@ -294,18 +294,13 @@ export const getSignedKeyListRoute = (params: GetSignedKeyListParams) => ({
     method: 'get',
     params,
 });
-
-export interface UpdateSignedKeyListParams {
-    AddressID: string;
-}
-
 export interface UpdateSignedKeyListPayload {
+    AddressID: string;
     SignedKeyList: SignedKeyList;
 }
 
-export const updateSignedKeyListRoute = (params: UpdateSignedKeyListParams, data: UpdateSignedKeyListPayload) => ({
+export const updateSignedKeyListRoute = (data: UpdateSignedKeyListPayload) => ({
     url: 'core/v4/keys/signedkeylists',
     method: 'post',
-    params,
     data,
 });
