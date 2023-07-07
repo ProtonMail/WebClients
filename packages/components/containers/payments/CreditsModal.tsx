@@ -4,9 +4,19 @@ import { c } from 'ttag';
 
 import { Button, Href } from '@proton/atoms';
 import { usePaymentFacade } from '@proton/components/payments/client-extensions';
+import { AmountAndCurrency, PAYMENT_METHOD_TYPES, TokenPaymentMethod } from '@proton/components/payments/core';
 import { PaymentProcessorHook } from '@proton/components/payments/react-extensions/interface';
 import { useLoading } from '@proton/hooks';
-import { APPS, DEFAULT_CREDITS_AMOUNT, DEFAULT_CURRENCY, MIN_CREDIT_AMOUNT } from '@proton/shared/lib/constants';
+import { buyCredit } from '@proton/shared/lib/api/payments';
+import {
+    APPS,
+    DEFAULT_CREDITS_AMOUNT,
+    DEFAULT_CURRENCY,
+    MAX_BITCOIN_AMOUNT,
+    MIN_BITCOIN_AMOUNT,
+    MIN_CREDIT_AMOUNT,
+} from '@proton/shared/lib/constants';
+import { wait } from '@proton/shared/lib/helpers/promise';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { Currency } from '@proton/shared/lib/interfaces';
 
@@ -20,7 +30,7 @@ import {
     PrimaryButton,
     useDebounceInput,
 } from '../../components';
-import { useConfig, useEventManager, useNotifications } from '../../hooks';
+import { useApi, useConfig, useEventManager, useNotifications } from '../../hooks';
 import AmountRow from './AmountRow';
 import PaymentInfo from './PaymentInfo';
 import PaymentWrapper from './PaymentWrapper';
@@ -43,6 +53,7 @@ const CreditsModal = (props: ModalProps) => {
     const debouncedAmount = useDebounceInput(amount);
     const i18n = getCurrenciesI18N();
     const i18nCurrency = i18n[currency];
+    const api = useApi();
 
     const paymentFacade = usePaymentFacade({
         amount: debouncedAmount,
@@ -58,10 +69,29 @@ const CreditsModal = (props: ModalProps) => {
         flow: 'credit',
     });
 
+    const [bitcoinValidated, setBitcoinValidated] = useState(false);
+    const [awaitingBitcoinPayment, setAwaitingBitcoinPayment] = useState(false);
+
+    const exitSuccess = async () => {
+        props.onClose?.();
+        createNotification({ text: c('Success').t`Credits added` });
+    };
+
+    const handleChargableToken = async (tokenPaymentMethod: TokenPaymentMethod) => {
+        const amountAndCurrency: AmountAndCurrency = { Amount: debouncedAmount, Currency: currency };
+        await api(buyCredit({ ...tokenPaymentMethod, ...amountAndCurrency }));
+        await call();
+    };
+
     const selectedMethodType = paymentFacade.methods.selectedMethod?.type;
+    const method = paymentFacade.methods.selectedMethod?.value;
+
+    const bitcoinAmountInRange =
+        (debouncedAmount >= MIN_BITCOIN_AMOUNT && debouncedAmount <= MAX_BITCOIN_AMOUNT) ||
+        method !== PAYMENT_METHOD_TYPES.BITCOIN;
 
     const submit =
-        debouncedAmount >= MIN_CREDIT_AMOUNT ? (
+        debouncedAmount >= MIN_CREDIT_AMOUNT && bitcoinAmountInRange ? (
             paymentFacade.methods.isNewPaypal ? (
                 <StyledPayPalButton
                     type="submit"
@@ -71,6 +101,12 @@ const CreditsModal = (props: ModalProps) => {
                     loading={loading}
                     data-testid="paypal-button"
                 />
+            ) : method === PAYMENT_METHOD_TYPES.BITCOIN ? (
+                <PrimaryButton
+                    loading={!bitcoinValidated && awaitingBitcoinPayment}
+                    disabled={true}
+                    data-testid="top-up-button"
+                >{c('Info').t`Awaiting transaction`}</PrimaryButton>
             ) : (
                 <PrimaryButton
                     loading={loading}
@@ -129,6 +165,12 @@ const CreditsModal = (props: ModalProps) => {
                     {...paymentFacade}
                     onPaypalCreditClick={() => process(paymentFacade.paypalCredit)}
                     noMaxWidth
+                    onBitcoinTokenValidated={async (data) => {
+                        setBitcoinValidated(true);
+                        await handleChargableToken(data);
+                        wait(2000).then(() => exitSuccess());
+                    }}
+                    onAwaitingBitcoinPayment={setAwaitingBitcoinPayment}
                 />
             </ModalTwoContent>
 

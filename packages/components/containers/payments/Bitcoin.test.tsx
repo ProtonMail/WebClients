@@ -1,7 +1,7 @@
 import { render, waitFor } from '@testing-library/react';
 
 import { PAYMENT_TOKEN_STATUS } from '@proton/components/payments/core';
-import { createBitcoinPayment, createToken, getTokenStatus } from '@proton/shared/lib/api/payments';
+import { createToken, getTokenStatus } from '@proton/shared/lib/api/payments';
 import { addApiMock, apiMock, applyHOCs, flushPromises, withApi, withConfig } from '@proton/testing';
 
 import Bitcoin from './Bitcoin';
@@ -26,17 +26,10 @@ const defaultTokenResponse = {
     },
 };
 
-const createBitcoinPaymentUrl = createBitcoinPayment(500, 'USD').url;
-const defaultBitcoinPaymentResponse = {
-    AmountBitcoin: 0.00975,
-    Address: 'address-987',
-};
-
 beforeEach(() => {
     jest.clearAllMocks();
 
     addApiMock(createTokenUrl, () => defaultTokenResponse);
-    addApiMock(createBitcoinPaymentUrl, () => defaultBitcoinPaymentResponse);
 });
 
 it('should render', async () => {
@@ -45,17 +38,16 @@ it('should render', async () => {
             api={apiMock}
             amount={1000}
             currency="USD"
-            type="signup"
             onTokenValidated={onTokenValidated}
-            awaitingPayment={false}
+            processingToken={false}
         />
     );
     await waitFor(() => {
         expect(container).not.toBeEmptyDOMElement();
     });
 
-    expect(container).toHaveTextContent('address-987');
-    expect(container).toHaveTextContent('0.00975');
+    expect(container).toHaveTextContent('address-123');
+    expect(container).toHaveTextContent('0.00135');
 });
 
 it('should render for signup-pass', async () => {
@@ -64,9 +56,8 @@ it('should render for signup-pass', async () => {
             api={apiMock}
             amount={1000}
             currency="USD"
-            type="signup-pass"
             onTokenValidated={onTokenValidated}
-            awaitingPayment={false}
+            processingToken={false}
         />
     );
     await waitFor(() => {
@@ -83,9 +74,8 @@ it('should show loading during the initial fetching', async () => {
             api={apiMock}
             amount={1000}
             currency="USD"
-            type="signup"
             onTokenValidated={onTokenValidated}
-            awaitingPayment={false}
+            processingToken={false}
         />
     );
 
@@ -102,10 +92,8 @@ it('should check the token every 10 seconds', async () => {
             api={apiMock}
             amount={1000}
             currency="USD"
-            type="signup-pass"
             onTokenValidated={onTokenValidated}
-            awaitingPayment={false}
-            enableValidation={true}
+            processingToken={false}
         />
     );
 
@@ -127,37 +115,63 @@ it('should check the token every 10 seconds', async () => {
     expect(onTokenValidated).toHaveBeenCalledTimes(1); // check that it's called only once
 });
 
-it('should not poll the token for the old flows', async () => {
-    addApiMock(getTokenStatus('token-123').url, () => {
-        return { Status: PAYMENT_TOKEN_STATUS.STATUS_PENDING };
+it('should render Try again button in case of error', async () => {
+    addApiMock(createTokenUrl, () => {
+        return Promise.reject('error');
     });
 
-    render(
+    const { queryByTestId, container } = render(
         <BitcoinContext
             api={apiMock}
             amount={1000}
             currency="USD"
-            type="signup"
             onTokenValidated={onTokenValidated}
-            awaitingPayment={false}
-            enableValidation={true}
+            processingToken={false}
         />
     );
 
-    jest.advanceTimersByTime(11000);
-    await flushPromises();
-
-    addApiMock(getTokenStatus('token-123').url, function second() {
-        return { Status: PAYMENT_TOKEN_STATUS.STATUS_CHARGEABLE };
+    await waitFor(() => {
+        expect(queryByTestId('bitcoin-try-again')).toBeInTheDocument();
     });
 
-    jest.advanceTimersByTime(11000);
-    await flushPromises();
+    addApiMock(createTokenUrl, () => defaultTokenResponse);
 
-    expect(onTokenValidated).toHaveBeenCalledTimes(0);
+    queryByTestId('bitcoin-try-again')?.click();
 
-    jest.advanceTimersByTime(11000);
-    await flushPromises();
+    await waitFor(() => {
+        expect(container).toHaveTextContent('address-123');
+        expect(container).toHaveTextContent('0.00135');
+    });
+});
 
-    expect(onTokenValidated).toHaveBeenCalledTimes(0);
+it('should render warning if the amount is too low', async () => {
+    const { container } = render(
+        <BitcoinContext
+            api={apiMock}
+            amount={100}
+            currency="USD"
+            onTokenValidated={onTokenValidated}
+            processingToken={false}
+        />
+    );
+
+    await waitFor(() => {
+        expect(container).toHaveTextContent('Amount below minimum');
+    });
+});
+
+it('should render warning if the amount is too high', async () => {
+    const { container } = render(
+        <BitcoinContext
+            api={apiMock}
+            amount={4000100}
+            currency="USD"
+            onTokenValidated={onTokenValidated}
+            processingToken={false}
+        />
+    );
+
+    await waitFor(() => {
+        expect(container).toHaveTextContent('Amount above maximum');
+    });
 });
