@@ -8,7 +8,7 @@ import {
     VerifyOutboundPublicKeys,
 } from '@proton/shared/lib/interfaces';
 
-import { useApi } from '../..';
+import { useApi } from '../../hooks';
 import useGetLatestEpoch from './useGetLatestEpoch';
 import useKTActivation from './useKTActivation';
 import useSaveSKLToLS from './useSaveSKLToLS';
