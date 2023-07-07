@@ -10,6 +10,10 @@
 
 ## Release 5.0.12.0 — July 12, 2023
 
+### New features
+
+-   Public holidays are here!
+
 ### Improvements
 
 -   Add app languages: Finnish, Hindi and Swedish
