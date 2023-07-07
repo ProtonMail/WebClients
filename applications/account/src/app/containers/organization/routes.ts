@@ -1,11 +1,13 @@
 import { c } from 'ttag';
 
 import { SectionConfig } from '@proton/components';
+import { APPS, APP_NAMES } from '@proton/shared/lib/constants';
 import { hasOrganizationSetup, hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
 import { hasFamily } from '@proton/shared/lib/helpers/subscription';
 import { Organization, Subscription, UserModel, UserType } from '@proton/shared/lib/interfaces';
 
 interface Props {
+    app: APP_NAMES;
     user: UserModel;
     organization?: Organization;
     subscription: Subscription;
@@ -13,7 +15,10 @@ interface Props {
     isOrgTwoFactorEnabled: boolean;
 }
 
+const hiddenApps: APP_NAMES[] = [APPS.PROTONPASS];
+
 export const getOrganizationAppRoutes = ({
+    app,
     user,
     organization,
     subscription,
@@ -39,7 +44,7 @@ export const getOrganizationAppRoutes = ({
     const subSectionTitle = isPartOfFamily ? '' : c('Title').t`Multi-user support`;
 
     return {
-        available: Boolean(isAdmin && organization),
+        available: Boolean(isAdmin && organization && !hiddenApps.includes(app)),
         header: sectionTitle,
         routes: {
             users: <SectionConfig>{
