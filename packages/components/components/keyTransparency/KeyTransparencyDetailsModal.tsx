@@ -43,11 +43,6 @@ const SelfAuditResults = ({ selfAuditResult }: { selfAuditResult: SelfAuditResul
 
     const addressAuditWarningMessage = (details: AddressAuditWarningDetails) => {
         switch (details.reason) {
-            case AddressAuditWarningReason.NullSKL:
-                return (
-                    <span>{c('loc_nightly: Key transparency details')
-                        .t`${appName} is not able to verify the keys of this address with Key Transparency. Please contact our Customer Support.`}</span>
-                );
             case AddressAuditWarningReason.UnverifiableHistory:
                 if (details.addressWasDisabled) {
                     return (
