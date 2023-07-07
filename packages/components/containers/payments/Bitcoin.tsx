@@ -4,9 +4,8 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { PAYMENT_METHOD_TYPES, PAYMENT_TOKEN_STATUS, TokenPaymentMethod } from '@proton/components/payments/core';
-import { useLoading } from '@proton/hooks';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
-import { CreateBitcoinTokenData, createToken, getTokenStatus } from '@proton/shared/lib/api/payments';
+import { getTokenStatus } from '@proton/shared/lib/api/payments';
 import { MAX_BITCOIN_AMOUNT, MIN_BITCOIN_AMOUNT } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { Api, Currency } from '@proton/shared/lib/interfaces';
@@ -14,6 +13,7 @@ import { Api, Currency } from '@proton/shared/lib/interfaces';
 import { Alert, Bordered, Loader, Price } from '../../components';
 import BitcoinDetails from './BitcoinDetails';
 import BitcoinQRCode, { OwnProps as BitcoinQRCodeProps } from './BitcoinQRCode';
+import { BitcoinTokenModel } from './useBitcoin';
 
 function pause() {
     return wait(10000);
@@ -78,21 +78,32 @@ export interface ValidatedBitcoinToken extends TokenPaymentMethod {
     cryptoAddress: string;
 }
 
-interface Props {
+export interface Props {
     api: Api;
     amount: number;
     currency: Currency;
     onTokenValidated?: (data: ValidatedBitcoinToken) => void;
     onAwaitingPayment?: (awaitingPayment: boolean) => void;
     processingToken?: boolean;
+    model: BitcoinTokenModel;
+    loading: boolean;
+    error: boolean;
+    request: () => Promise<void>;
 }
 
-const Bitcoin = ({ api, amount, currency, onTokenValidated, onAwaitingPayment, processingToken }: Props) => {
+const Bitcoin = ({
+    api,
+    amount,
+    currency,
+    onTokenValidated,
+    onAwaitingPayment,
+    processingToken,
+    model,
+    loading,
+    error,
+    request,
+}: Props) => {
     const silentApi = getSilentApi(api);
-    const [loading, withLoading] = useLoading();
-    const [error, setError] = useState(false);
-    const INITIAL_STATE = { amountBitcoin: 0, address: '', token: null };
-    const [model, setModel] = useState(INITIAL_STATE);
 
     const { paymentValidated, awaitingPayment } = useCheckStatus(silentApi, model.token, (token) =>
         onTokenValidated?.({
@@ -108,43 +119,8 @@ const Bitcoin = ({ api, amount, currency, onTokenValidated, onAwaitingPayment, p
     );
 
     useEffect(() => {
-        onAwaitingPayment?.(awaitingPayment);
-    }, [awaitingPayment]);
-
-    const fetchAsToken = async () => {
-        try {
-            const data: CreateBitcoinTokenData = {
-                Amount: amount,
-                Currency: currency,
-                Payment: {
-                    Type: 'cryptocurrency',
-                    Details: {
-                        Coin: 'bitcoin',
-                    },
-                },
-            };
-            const { Token, Data } = await silentApi<any>(createToken(data));
-            setModel({ amountBitcoin: Data.CoinAmount, address: Data.CoinAddress, token: Token });
-        } catch (error) {
-            setModel(INITIAL_STATE);
-            throw error;
-        }
-    };
-
-    const request = async () => {
-        setError(false);
-        try {
-            await fetchAsToken();
-        } catch {
-            setError(true);
-        }
-    };
-
-    useEffect(() => {
-        if (amount >= MIN_BITCOIN_AMOUNT && amount <= MAX_BITCOIN_AMOUNT) {
-            withLoading(request());
-        }
-    }, [amount, currency]);
+        onAwaitingPayment?.(awaitingPayment && !loading);
+    }, [awaitingPayment, loading]);
 
     if (amount < MIN_BITCOIN_AMOUNT) {
         const i18n = (amount: ReactNode) => c('Info').jt`Amount below minimum (${amount}).`;
@@ -179,8 +155,7 @@ const Bitcoin = ({ api, amount, currency, onTokenValidated, onAwaitingPayment, p
         return (
             <>
                 <Alert className="mb-4" type="error">{c('Error').t`Error connecting to the Bitcoin API.`}</Alert>
-                <Button onClick={() => withLoading(request())} data-testid="bitcoin-try-again">{c('Action')
-                    .t`Try again`}</Button>
+                <Button onClick={request} data-testid="bitcoin-try-again">{c('Action').t`Try again`}</Button>
             </>
         );
     }
