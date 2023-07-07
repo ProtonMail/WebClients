@@ -29,6 +29,7 @@ import CreditCard from './CreditCard';
 import CreditCardNewDesign from './CreditCardNewDesign';
 import PayPalInfoMessage from './PayPalInfoMessage';
 import PayPalView from './PayPalView';
+import useBitcoin from './useBitcoin';
 import { CardFieldStatus } from './useCard';
 
 export interface Props {
@@ -96,6 +97,8 @@ export const PaymentsNoApi = ({
     onAwaitingBitcoinPayment,
 }: NoApiProps) => {
     const [handlingBitcoinPayment, withHandlingBitcoinPayment] = useLoading();
+
+    const bitcoinHook = useBitcoin(api, { Amount: amount, Currency: currency });
 
     useEffect(() => {
         if (loading) {
@@ -199,13 +202,12 @@ export const PaymentsNoApi = ({
                                     <BitcoinInfoMessage />
                                     <Bitcoin
                                         api={api}
-                                        amount={amount}
-                                        currency={currency}
                                         processingToken={handlingBitcoinPayment}
                                         onTokenValidated={(data) =>
                                             withHandlingBitcoinPayment(async () => onBitcoinTokenValidated?.(data))
                                         }
                                         onAwaitingPayment={onAwaitingBitcoinPayment}
+                                        {...bitcoinHook}
                                     />
                                 </>
                             )}
