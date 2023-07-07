@@ -17,7 +17,6 @@ import {
     fromUTCDateToLocalFakeUTCDate,
     getTimezoneOffset,
 } from '../../date/timezone';
-import { wait } from '../../helpers/promise';
 import { dateLocale } from '../../i18n';
 import { Address, Api, Key } from '../../interfaces';
 import {
@@ -270,7 +269,6 @@ export const processInBatches = async ({
     defaultTzid,
 }: ProcessData): Promise<[VcalVeventComponent[], ExportError[], number]> => {
     const PAGE_SIZE = 100;
-    const DELAY = 100;
     const batchesLength = Math.ceil(totalToProcess / PAGE_SIZE);
     const processed: VcalVeventComponent[] = [];
     const errors: ExportError[] = [];
@@ -289,7 +287,7 @@ export const processInBatches = async ({
             AfterID: lastId,
         };
 
-        const [{ IDs }] = await Promise.all([api<{ IDs: string[] }>(queryEventIDs(calendar.ID, params)), wait(DELAY)]);
+        const IDs = (await api<{ IDs: string[] }>(queryEventIDs(calendar.ID, params))).IDs;
 
         if (signal.aborted) {
             return [[], [], totalToProcess];
