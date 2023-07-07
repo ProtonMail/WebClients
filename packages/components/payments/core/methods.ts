@@ -132,11 +132,13 @@ export class PaymentMethods {
     private isBitcoinAvailable() {
         const isSignup = this.flow === 'signup';
         const isHumanVerification = this.flow === 'human-verification';
+        const isInvoice = this.flow === 'invoice';
 
         return (
             this.paymentMethodStatus.Bitcoin &&
             !isSignup &&
             !isHumanVerification &&
+            !isInvoice &&
             this.coupon !== BLACK_FRIDAY.COUPON_CODE &&
             this.amount >= MIN_BITCOIN_AMOUNT
         );
