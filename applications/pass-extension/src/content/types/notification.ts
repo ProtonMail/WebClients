@@ -1,4 +1,4 @@
-import type { Item, PromptedFormEntry } from '@proton/pass/types';
+import type { FormEntryPrompt, Item } from '@proton/pass/types';
 
 import type { IFrameAppService } from './iframe';
 
@@ -8,14 +8,14 @@ export enum NotificationAction {
 
 export type NotificationSetActionPayload = {
     action: NotificationAction.AUTOSAVE_PROMPT;
-    submission: PromptedFormEntry;
+    submission: FormEntryPrompt;
 };
 
-export type NotificationAutosaveRequestPayload = { item: Item<'login'>; submission: PromptedFormEntry };
+export type NotificationAutosaveRequestPayload = { item: Item<'login'>; submission: FormEntryPrompt };
 
 export type OpenNotificationOptions = {
     action: NotificationAction;
-    submission: PromptedFormEntry;
+    submission: FormEntryPrompt;
 };
 
 export interface InjectedNotification extends IFrameAppService<OpenNotificationOptions> {}

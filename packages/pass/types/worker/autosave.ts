@@ -1,5 +1,5 @@
 import type { Item, ItemRevision } from '../data';
-import type { PromptedFormEntry } from './form';
+import type { FormEntryPrompt } from './form';
 
 export enum AutoSaveType {
     NEW,
@@ -17,4 +17,4 @@ export type WithAutoSavePromptOptions<T, U = boolean> = T & {
     autosave: Extract<AutoSavePromptOptions, { shouldPrompt: U }>;
 };
 
-export type AutosavePayload = { item: Item<'login'>; submission: PromptedFormEntry };
+export type AutosavePayload = { item: Item<'login'>; submission: FormEntryPrompt };
