@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { FeatureCode } from '@proton/components/containers';
 import usePaymentToken from '@proton/components/containers/payments/usePaymentToken';
+import { PAYMENT_METHOD_TYPES } from '@proton/components/payments/core';
 import {
     AmountAndCurrency,
     ExistingPayment,
@@ -198,6 +199,8 @@ const SubscriptionModal = ({
         coupon,
         planIDs,
     });
+    const [bitcoinValidated, setBitcoinValidated] = useState(false);
+    const [awaitingBitcoinPayment, setAwaitingBitcoinPayment] = useState(false);
 
     const { showProration } = useProration(model, subscription, plansMap, checkResult);
 
@@ -359,6 +362,7 @@ const SubscriptionModal = ({
             },
         });
     const creditCardTopRef = useRef<HTMLDivElement>(null);
+    const bitcoinLoading = method === PAYMENT_METHOD_TYPES.BITCOIN && !bitcoinValidated && awaitingBitcoinPayment;
 
     const check = async (newModel: Model = model, wantToApplyNewGiftCode: boolean = false): Promise<boolean> => {
         const copyNewModel = { ...newModel };
@@ -661,6 +665,15 @@ const SubscriptionModal = ({
                                         onCard={setCard}
                                         cardErrors={cardErrors}
                                         creditCardTopRef={creditCardTopRef}
+                                        onBitcoinTokenValidated={async (data) => {
+                                            setBitcoinValidated(true);
+                                            await handleSubscribe({
+                                                ...data,
+                                                Amount: amountDue,
+                                                Currency: checkResult?.Currency as Currency,
+                                            });
+                                        }}
+                                        onAwaitingBitcoinPayment={setAwaitingBitcoinPayment}
                                     />
                                 </div>
                                 <div className={amountDue || !checkResult ? 'hidden' : undefined}>
@@ -682,7 +695,7 @@ const SubscriptionModal = ({
                                             onClose={onClose}
                                             paypal={paypal}
                                             step={model.step}
-                                            loading={loading}
+                                            loading={loading || bitcoinLoading}
                                             method={method}
                                             checkResult={checkResult}
                                             className="w100"

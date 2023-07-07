@@ -53,6 +53,7 @@ export interface Props {
     cardFieldStatus?: CardFieldStatus;
     paypalPrefetchToken?: boolean;
     onBitcoinTokenValidated?: (data: ValidatedBitcoinToken) => Promise<void>;
+    onAwaitingBitcoinPayment?: (awaiting: boolean) => void;
     isAuthenticated?: boolean;
 }
 
@@ -92,6 +93,7 @@ export const PaymentsNoApi = ({
     customPaymentMethod,
     api,
     onPaypalCreditClick,
+    onAwaitingBitcoinPayment,
 }: NoApiProps) => {
     const [handlingBitcoinPayment, withHandlingBitcoinPayment] = useLoading();
 
@@ -199,12 +201,11 @@ export const PaymentsNoApi = ({
                                         api={api}
                                         amount={amount}
                                         currency={currency}
-                                        type={type}
-                                        awaitingPayment={handlingBitcoinPayment}
+                                        processingToken={handlingBitcoinPayment}
                                         onTokenValidated={(data) =>
                                             withHandlingBitcoinPayment(async () => onBitcoinTokenValidated?.(data))
                                         }
-                                        enableValidation={!!onBitcoinTokenValidated}
+                                        onAwaitingPayment={onAwaitingBitcoinPayment}
                                     />
                                 </>
                             )}
@@ -235,9 +236,7 @@ export const PaymentsNoApi = ({
                     {children}
                 </div>
             </div>
-            {type === 'subscription' &&
-            method &&
-            [PAYMENT_METHOD_TYPES.CASH, PAYMENT_METHOD_TYPES.BITCOIN].includes(method as any) ? (
+            {type === 'subscription' && method && method === PAYMENT_METHOD_TYPES.CASH ? (
                 <Alert className="mb-4" type="warning">{c('Warning')
                     .t`Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.`}</Alert>
             ) : null}
