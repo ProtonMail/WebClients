@@ -5,7 +5,6 @@ import { defaultFontStyle } from '@proton/components/components/editor/helpers';
 import { WorkerDecryptionResult } from '@proton/crypto';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import { setBit } from '@proton/shared/lib/helpers/bitset';
-import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import { Address, MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
 import { Recipient } from '@proton/shared/lib/interfaces/Address';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
@@ -91,11 +90,7 @@ export const reply = (referenceMessage: PartialMessageState, useEncrypted = fals
 /**
  * Format and build a replyAll
  */
-export const replyAll = (
-    referenceMessage: PartialMessageState,
-    useEncrypted = false,
-    addresses: Address[]
-): PartialMessageState => {
+export const replyAll = (referenceMessage: PartialMessageState, useEncrypted = false): PartialMessageState => {
     const { data = {}, decryption: { decryptedSubject = '' } = {} } = referenceMessage;
 
     const Subject = formatSubject(useEncrypted ? decryptedSubject : data.Subject, RE_PREFIX);
@@ -111,10 +106,7 @@ export const replyAll = (
 
     const ToList = data.ReplyTos;
 
-    // Remove user address in CCList and ToList
-    const userAddresses = addresses.map(({ Email = '' }) => canonicalizeInternalEmail(Email));
-    const CCListAll: Recipient[] = unique([...(data.ToList || []), ...(data.CCList || [])]);
-    const CCList = CCListAll.filter(({ Address = '' }) => !userAddresses.includes(canonicalizeInternalEmail(Address)));
+    const CCList: Recipient[] = unique([...(data.ToList || []), ...(data.CCList || [])]);
 
     return { data: { Subject, ToList, CCList, Attachments }, messageImages };
 };
@@ -134,8 +126,7 @@ const forward = (referenceMessage: PartialMessageState, useEncrypted = false): P
 
 export const handleActions = (
     action: MESSAGE_ACTIONS,
-    referenceMessage: PartialMessageState = {},
-    addresses: Address[] = []
+    referenceMessage: PartialMessageState = {}
 ): PartialMessageState => {
     // TODO: I would prefere manage a confirm modal from elsewhere
     // const useEncrypted = !!referenceMessage.encryptedSubject && (await promptEncryptedSubject(currentMsg));
@@ -145,7 +136,7 @@ export const handleActions = (
         case MESSAGE_ACTIONS.REPLY:
             return reply(referenceMessage, useEncrypted);
         case MESSAGE_ACTIONS.REPLY_ALL:
-            return replyAll(referenceMessage, useEncrypted, addresses);
+            return replyAll(referenceMessage, useEncrypted);
         case MESSAGE_ACTIONS.FORWARD:
             return forward(referenceMessage, useEncrypted);
         case MESSAGE_ACTIONS.NEW:
@@ -271,7 +262,7 @@ export const createNewDraft = (
     const {
         data: { Subject = '', ToList = [], CCList = [], BCCList = [], Attachments: reusedAttachments = [] } = {},
         messageImages,
-    } = handleActions(action, referenceMessage, addresses);
+    } = handleActions(action, referenceMessage);
 
     // If there were some pgp attachments, need to upload them as "initialAttachments"
     const [Attachments, pgpAttachments] = convertToFile(reusedAttachments, getAttachment);
