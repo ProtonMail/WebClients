@@ -69,6 +69,7 @@ export const getRoutes = ({
         drive: getDriveAppRoutes(),
         pass: getPassAppRoutes(),
         organization: getOrganizationAppRoutes({
+            app,
             user,
             organization,
             subscription,
