@@ -61,4 +61,4 @@ export type FormEntry<T extends FormEntryStatus = FormEntryStatus> = Extract<
     { status: T }
 >;
 
-export type PromptedFormEntry = WithAutoSavePromptOptions<FormEntry<FormEntryStatus.COMMITTED>, true>;
+export type FormEntryPrompt = WithAutoSavePromptOptions<FormEntry<FormEntryStatus.COMMITTED>, true>;

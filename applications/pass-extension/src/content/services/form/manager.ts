@@ -1,13 +1,13 @@
 import { contentScriptMessage, sendMessage } from '@proton/pass/extension/message';
 import { clearVisibilityCache } from '@proton/pass/fathom';
-import type { FormEntry, PromptedFormEntry, WithAutoSavePromptOptions } from '@proton/pass/types';
+import type { FormEntryPrompt } from '@proton/pass/types';
 import { FormEntryStatus, WorkerMessageType } from '@proton/pass/types';
 import { createListenerStore } from '@proton/pass/utils/listener';
 import { logger } from '@proton/pass/utils/logger';
 import debounce from '@proton/utils/debounce';
 import noop from '@proton/utils/noop';
 
-import { isSubmissionCommitted } from '../../../shared/form';
+import { isSubmissionPromptable } from '../../../shared/form';
 import { withContext } from '../../context/context';
 import type { FormHandle } from '../../types';
 import { NotificationAction } from '../../types';
@@ -40,18 +40,19 @@ export const createFormManager = (options: FormManagerOptions) => {
 
     /* FIXME: if no autosave.prompt setting we should avoid
      * setting any listeners at all for form submissions */
-    const onCommittedSubmission: (submission: WithAutoSavePromptOptions<FormEntry<FormEntryStatus.COMMITTED>>) => void =
-        withContext(({ getSettings, service: { iframe } }, submission) => {
-            const shouldPrompt = getSettings().autosave.prompt && submission.autosave.shouldPrompt;
+    const promptAutoSave: (submission: FormEntryPrompt) => void = withContext(
+        ({ getSettings, service: { iframe } }, submission) => {
+            const shouldPrompt = getSettings().autosave.prompt;
 
             if (shouldPrompt) {
                 iframe.attachNotification();
                 iframe.notification?.open({
                     action: NotificationAction.AUTOSAVE_PROMPT,
-                    submission: submission as PromptedFormEntry,
+                    submission,
                 });
             }
-        });
+        }
+    );
 
     /* Reconciliation is responsible for syncing the service
      * worker state with our local detection in order to take
@@ -80,11 +81,11 @@ export const createFormManager = (options: FormManagerOptions) => {
                         type: WorkerMessageType.FORM_ENTRY_COMMIT,
                         payload: { reason: 'FORM_TYPE_REMOVED' },
                     }),
-                    ({ committed }) => committed !== undefined && onCommittedSubmission(committed)
+                    ({ committed }) => committed && promptAutoSave(committed)
                 );
             }
 
-            if (isSubmissionCommitted(submission) && formRemoved) return onCommittedSubmission(submission);
+            if (isSubmissionPromptable(submission) && formRemoved) return promptAutoSave(submission);
 
             if (!formRemoved) {
                 void sendMessage(
