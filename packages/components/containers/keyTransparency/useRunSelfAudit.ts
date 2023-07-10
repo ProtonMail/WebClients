@@ -1,5 +1,4 @@
-import { serverTime } from 'pmcrypto';
-
+import { serverTime } from '@proton/crypto';
 import {
     SelfAuditResult,
     getAuditResult,
