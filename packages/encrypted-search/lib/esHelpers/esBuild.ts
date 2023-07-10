@@ -17,22 +17,20 @@ import {
     defaultESProgress,
 } from '../constants';
 import {
-    addTimestamp,
+    contentIndexingProgress,
     createESDB,
     executeContentOperations,
     executeMetadataOperations,
     initializeConfig,
+    metadataIndexingProgress,
     openESDB,
     readIndexKey,
     readLimited,
     readMetadataBatch,
     readSortedIDs,
-    setContentRecoveryPoint,
     setLimited,
-    setOriginalEstimate,
     wrappedGetOldestInfo,
     writeAllEvents,
-    writeMetadataProgress,
 } from '../esIDB';
 import {
     AesGcmCiphertext,
@@ -94,7 +92,7 @@ export const initializeEncryptedSearch = async (
 
     await initializeConfig(userID, encryptedKey);
     await writeAllEvents(userID, previousEventIDs);
-    await writeMetadataProgress(userID, initialProgress);
+    await metadataIndexingProgress.write(userID, initialProgress);
 
     return { indexKey, esDB };
 };
@@ -281,7 +279,7 @@ export const buildContentDB = async <ESItemContent>(
     let counter = 0;
 
     if (isInitialIndexing) {
-        await addTimestamp(userID, TIMESTAMP_TYPE.START);
+        await contentIndexingProgress.addTimestamp(userID, TIMESTAMP_TYPE.START);
     }
 
     let abortFetching = new AbortController();
@@ -399,7 +397,7 @@ export const buildContentDB = async <ESItemContent>(
             if (storingOutcome === STORING_OUTCOME.SUCCESS) {
                 // In case the batch was successfully stored, we keep on with the following batch
                 if (isInitialIndexing) {
-                    await setContentRecoveryPoint(userID, recoveryPoint.timepoint);
+                    await contentIndexingProgress.setRecoveryPoint(userID, recoveryPoint.timepoint);
                 }
             } else if (storingOutcome === STORING_OUTCOME.QUOTA) {
                 // If we have reached the quota, we need to stop indexing
@@ -414,7 +412,7 @@ export const buildContentDB = async <ESItemContent>(
 
         abortFetching = new AbortController();
         if (isInitialIndexing) {
-            await addTimestamp(userID);
+            await contentIndexingProgress.addTimestamp(userID);
         }
 
         const index = !!recoveryPoint ? sortedIDs.indexOf(recoveryPoint.ID) + 1 : 0;
@@ -518,7 +516,7 @@ export const estimateIndexingProgress = async (
         const remainingItems = esTotal - esProgress;
 
         if (setEstimate) {
-            await setOriginalEstimate(
+            await contentIndexingProgress.setOriginalEstimate(
                 userID,
                 Math.floor(
                     (((endTime - esState.startTime) / (esProgress - esState.esPrevProgress)) * remainingItems) / SECOND

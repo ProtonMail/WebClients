@@ -3,10 +3,12 @@ import { roundMilliseconds } from '../esHelpers';
 import { ESProgress } from '../models';
 import { openESDB, safelyWriteToIDBAbsolutely } from './indexedDB';
 
+type IndexedDBRow = 'metadata' | 'content';
+
 /**
  * Read the indexing progress of the given type from the indexingProgress table
  */
-const readProgress = async (userID: string, row: 'metadata' | 'content') => {
+const read = async (userID: string, row: IndexedDBRow) => {
     const esDB = await openESDB(userID);
     if (!esDB) {
         return;
@@ -18,26 +20,10 @@ const readProgress = async (userID: string, row: 'metadata' | 'content') => {
 };
 
 /**
- * Read the indexing progress of metadata from the indexingProgress table
- */
-export const readMetadataProgress = async (userID: string) => readProgress(userID, 'metadata');
-
-/**
- * Read the indexing progress of content from the indexingProgress table
- */
-export const readContentProgress = async (userID: string) => readProgress(userID, 'content');
-
-/**
- * Check whether content indexing is completed
- */
-export const isContentIndexingDone = async (userID: string) =>
-    readContentProgress(userID).then((progress) => progress?.status === INDEXING_STATUS.ACTIVE);
-
-/**
  * Read the recovery point of the given type from the indexingProgress table
  */
-const readRecoveryPoint = async (userID: string, row: 'metadata' | 'content') => {
-    const progress = await readProgress(userID, row);
+const readRecoveryPoint = async (userID: string, row: IndexedDBRow) => {
+    const progress = await read(userID, row);
     if (!progress) {
         return;
     }
@@ -45,34 +31,15 @@ const readRecoveryPoint = async (userID: string, row: 'metadata' | 'content') =>
 };
 
 /**
- * Read the recovery point for metadata from the indexingProgress table
- */
-export const readMetadataRecoveryPoint = async (userID: string) => readRecoveryPoint(userID, 'metadata');
-
-/**
  * Write the indexing progress for metadata to the indexingProgress table
  */
-export const writeMetadataProgress = async (userID: string, progress: ESProgress) => {
+const write = async (userID: string, progress: ESProgress, row: IndexedDBRow) => {
     const esDB = await openESDB(userID);
     if (!esDB || !esDB.objectStoreNames.contains('indexingProgress')) {
         return;
     }
 
-    await safelyWriteToIDBAbsolutely(progress, 'metadata', 'indexingProgress', esDB);
-
-    esDB.close();
-};
-
-/**
- * Write the indexing progress for content to the indexingProgress table
- */
-export const writeContentProgress = async (userID: string, progress: ESProgress) => {
-    const esDB = await openESDB(userID);
-    if (!esDB || !esDB.objectStoreNames.contains('indexingProgress')) {
-        return;
-    }
-
-    await safelyWriteToIDBAbsolutely(progress, 'content', 'indexingProgress', esDB);
+    await safelyWriteToIDBAbsolutely(progress, row, 'indexingProgress', esDB);
 
     esDB.close();
 };
@@ -80,20 +47,20 @@ export const writeContentProgress = async (userID: string, progress: ESProgress)
 /**
  * Increment by one the number of times the user has paused content indexing
  */
-export const incrementNumPauses = async (userID: string) => {
+const incrementNumPauses = async (userID: string, row: IndexedDBRow) => {
     const esDB = await openESDB(userID);
     if (!esDB || !esDB.objectStoreNames.contains('indexingProgress')) {
         return;
     }
 
-    const progress = await esDB.get('indexingProgress', 'content');
+    const progress = await esDB.get('indexingProgress', row);
     if (!progress) {
         return;
     }
 
     progress.numPauses += 1;
 
-    await safelyWriteToIDBAbsolutely(progress, 'content', 'indexingProgress', esDB);
+    await safelyWriteToIDBAbsolutely(progress, row, 'indexingProgress', esDB);
 
     esDB.close();
 };
@@ -101,13 +68,13 @@ export const incrementNumPauses = async (userID: string) => {
 /**
  * Add a timestamp to the set of indexing timestamps for content indexing
  */
-export const addTimestamp = async (userID: string, type: TIMESTAMP_TYPE = TIMESTAMP_TYPE.STEP) => {
+const addTimestamp = async (userID: string, type: TIMESTAMP_TYPE = TIMESTAMP_TYPE.STEP, row: IndexedDBRow) => {
     const esDB = await openESDB(userID);
     if (!esDB || !esDB.objectStoreNames.contains('indexingProgress')) {
         return;
     }
 
-    const progress = await esDB.get('indexingProgress', 'content');
+    const progress = await esDB.get('indexingProgress', row);
     if (!progress) {
         return;
     }
@@ -115,7 +82,7 @@ export const addTimestamp = async (userID: string, type: TIMESTAMP_TYPE = TIMEST
     const { timestamps } = progress;
     timestamps.push({ type, time: roundMilliseconds(Date.now()) });
 
-    await safelyWriteToIDBAbsolutely({ ...progress, timestamps }, 'content', 'indexingProgress', esDB);
+    await safelyWriteToIDBAbsolutely({ ...progress, timestamps }, row, 'indexingProgress', esDB);
 
     esDB.close();
 };
@@ -124,13 +91,13 @@ export const addTimestamp = async (userID: string, type: TIMESTAMP_TYPE = TIMEST
  * Set the initial estimate in seconds, but only if it's the first of such predictions,
  * for the content indexing process
  */
-export const setOriginalEstimate = async (userID: string, inputEstimate: number) => {
+const setOriginalEstimate = async (userID: string, inputEstimate: number, row: IndexedDBRow) => {
     const esDB = await openESDB(userID);
     if (!esDB || !esDB.objectStoreNames.contains('indexingProgress')) {
         return;
     }
 
-    const progress = await esDB.get('indexingProgress', 'content');
+    const progress = await esDB.get('indexingProgress', row);
     if (!progress) {
         return;
     }
@@ -139,29 +106,30 @@ export const setOriginalEstimate = async (userID: string, inputEstimate: number)
     if (originalEstimate === 0) {
         await safelyWriteToIDBAbsolutely(
             { ...progress, originalEstimate: inputEstimate },
-            'content',
+            row,
             'indexingProgress',
             esDB
         );
     }
+
     esDB.close();
 };
 
 /**
  * Overwrite the content indexing process data with the given properties
  */
-const setContentProgress = async (userID: string, newProperties: Partial<ESProgress>) => {
+const set = async (userID: string, newProperties: Partial<ESProgress>, row: IndexedDBRow) => {
     const esDB = await openESDB(userID);
     if (!esDB || !esDB.objectStoreNames.contains('indexingProgress')) {
         return;
     }
 
-    const progress = await esDB.get('indexingProgress', 'content');
+    const progress = await esDB.get('indexingProgress', row);
     if (!progress) {
         return;
     }
 
-    await safelyWriteToIDBAbsolutely({ ...progress, ...newProperties }, 'content', 'indexingProgress', esDB);
+    await safelyWriteToIDBAbsolutely({ ...progress, ...newProperties }, row, 'indexingProgress', esDB);
 
     esDB.close();
 };
@@ -169,62 +137,20 @@ const setContentProgress = async (userID: string, newProperties: Partial<ESProgr
 /**
  * Set the recovery point of the content indexing process
  */
-export const setContentRecoveryPoint = async (userID: string, recoveryPoint: any) =>
-    setContentProgress(userID, { recoveryPoint });
-
-/**
- * Set the recovery point of the metadata indexing process, which is allowed to have
- * any type, as it's specified by each product
- */
-export const setMetadataRecoveryPoint = async (userID: string, recoveryPoint: any) => {
-    const esDB = await openESDB(userID);
-    if (!esDB || !esDB.objectStoreNames.contains('indexingProgress')) {
-        return;
-    }
-
-    const progress = await esDB.get('indexingProgress', 'metadata');
-    if (!progress) {
-        return;
-    }
-
-    await safelyWriteToIDBAbsolutely({ ...progress, recoveryPoint }, 'metadata', 'indexingProgress', esDB);
-
-    esDB.close();
-};
+const setRecoveryPoint = (userID: string, recoveryPoint: unknown, row: IndexedDBRow) =>
+    set(userID, { recoveryPoint }, row);
 
 /**
  * Set the status of the content indexing process
  */
-export const setProgressStatus = async (userID: string, status: INDEXING_STATUS) =>
-    setContentProgress(userID, { status });
-
-/**
- * Set the status of the indexing process for metadata
- * to ACTIVE, i.e. for when indexing is done, and reset to default
- * all other properties since they are no longer relevant
- */
-export const setMetadataActiveProgressStatus = async (userID: string) => {
-    const esDB = await openESDB(userID);
-    if (!esDB || !esDB.objectStoreNames.contains('indexingProgress')) {
-        return;
-    }
-
-    await safelyWriteToIDBAbsolutely(
-        { ...defaultESProgress, status: INDEXING_STATUS.ACTIVE },
-        'metadata',
-        'indexingProgress',
-        esDB
-    );
-
-    esDB.close();
-};
+const setStatus = (userID: string, status: INDEXING_STATUS, row: IndexedDBRow) => set(userID, { status }, row);
 
 /**
  * Set the status of the indexing process for content
  * to ACTIVE, i.e. for when indexing is done, and reset to default
  * all other properties since they are no longer relevant
  */
-export const setContentActiveProgressStatus = async (userID: string) => {
+const setActiveStatus = async (userID: string, row: IndexedDBRow) => {
     const esDB = await openESDB(userID);
     if (!esDB || !esDB.objectStoreNames.contains('indexingProgress')) {
         return;
@@ -235,10 +161,30 @@ export const setContentActiveProgressStatus = async (userID: string) => {
             ...defaultESProgress,
             status: INDEXING_STATUS.ACTIVE,
         },
-        'content',
+        row,
         'indexingProgress',
         esDB
     );
 
     esDB.close();
 };
+
+const getIndexingProgressQueryHelpers = (row: IndexedDBRow) => {
+    return {
+        read: (userID: string) => read(userID, row),
+        readRecoveryPoint: (userID: string) => readRecoveryPoint(userID, row),
+        write: (userID: string, progress: ESProgress) => write(userID, progress, row),
+        incrementNumPauses: (userID: string) => incrementNumPauses(userID, row),
+        addTimestamp: (userID: string, type?: TIMESTAMP_TYPE) => addTimestamp(userID, type, row),
+        setOriginalEstimate: (userID: string, inputEstimate: number) => setOriginalEstimate(userID, inputEstimate, row),
+        set: (userID: string, newProperties: Partial<ESProgress>) => set(userID, newProperties, row),
+        setRecoveryPoint: (userID: string, recoveryPoint: unknown) => setRecoveryPoint(userID, recoveryPoint, row),
+        setStatus: (userID: string, status: INDEXING_STATUS) => setStatus(userID, status, row),
+        setActiveStatus: (userID: string) => setActiveStatus(userID, row),
+        isIndexingDone: (userID: string) =>
+            read(userID, row).then((progress) => progress?.status === INDEXING_STATUS.ACTIVE),
+    };
+};
+
+export const metadataIndexingProgress = getIndexingProgressQueryHelpers('metadata');
+export const contentIndexingProgress = getIndexingProgressQueryHelpers('content');

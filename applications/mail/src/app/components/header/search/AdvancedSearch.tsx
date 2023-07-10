@@ -7,7 +7,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { DateInput, Label, Option, PrimaryButton, SelectTwo, useAddresses, useUser } from '@proton/components';
-import { ESIndexingState, isContentIndexingDone } from '@proton/encrypted-search';
+import { ESIndexingState, contentIndexingProgress } from '@proton/encrypted-search';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
@@ -222,7 +222,9 @@ const AdvancedSearch = ({
                                     onChange={async (begin) => {
                                         if (begin) {
                                             let oldestTime = -1;
-                                            const wasIndexingDone = await isContentIndexingDone(user.ID);
+                                            const wasIndexingDone = await contentIndexingProgress.isIndexingDone(
+                                                user.ID
+                                            );
                                             if (wasIndexingDone && isDBLimited) {
                                                 oldestTime = lastContentTime;
                                             }
