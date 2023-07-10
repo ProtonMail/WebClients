@@ -254,8 +254,8 @@ describe('CalendarSidebar', () => {
 
         await waitFor(() => {
             expect(getCalendarModal()).toBeInTheDocument();
-            expect(getSubscribedCalendarModal()).not.toBeInTheDocument();
         });
+        expect(getSubscribedCalendarModal()).not.toBeInTheDocument();
     });
 
     it('displays add subscribed calendar modal', async () => {
@@ -273,9 +273,9 @@ describe('CalendarSidebar', () => {
 
         await waitFor(() => {
             expect(getSubscribedCalendarModal()).toBeInTheDocument();
-            expect(getCalendarModal()).not.toBeInTheDocument();
-            expect(getCalendarLimitReachedModal()).not.toBeInTheDocument();
         });
+        expect(getCalendarModal()).not.toBeInTheDocument();
+        expect(getCalendarLimitReachedModal()).not.toBeInTheDocument();
     });
 
     it('displays calendars limit reached modal with the max of personal calendars', async () => {
@@ -293,9 +293,9 @@ describe('CalendarSidebar', () => {
 
         await waitFor(() => {
             expect(getCalendarLimitReachedModal()).toBeInTheDocument();
-            expect(getCalendarModal()).not.toBeInTheDocument();
-            expect(getSubscribedCalendarModal()).not.toBeInTheDocument();
         });
+        expect(getCalendarModal()).not.toBeInTheDocument();
+        expect(getSubscribedCalendarModal()).not.toBeInTheDocument();
     });
 
     it('allows to create personal calendar when the user is at the max of subscribed calendars', async () => {
@@ -313,8 +313,8 @@ describe('CalendarSidebar', () => {
 
         await waitFor(() => {
             expect(getCalendarModal()).toBeInTheDocument();
-            expect(getCalendarLimitReachedModal()).not.toBeInTheDocument();
-            expect(getSubscribedCalendarModal()).not.toBeInTheDocument();
         });
+        expect(getCalendarLimitReachedModal()).not.toBeInTheDocument();
+        expect(getSubscribedCalendarModal()).not.toBeInTheDocument();
     });
 });
