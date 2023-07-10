@@ -10,6 +10,7 @@ import {
     UploadMissingSKL,
 } from '@proton/shared/lib/interfaces';
 
+import { getSelfAuditInterval } from '../../helpers';
 import { SelfAuditResult } from '../../interfaces';
 import { auditAddress } from './addressAudit';
 import { checkLSBlobs } from './verifyLocalStorage';
@@ -49,9 +50,10 @@ export const selfAudit = async (
                 return auditAddress(address, userKeys, epoch, saveSKLToLS, api, uploadMissingSKL);
             })
     );
-
+    const currentTime = +serverTime();
     return {
-        auditTime: +serverTime(),
+        auditTime: currentTime,
+        nextAuditTime: currentTime + getSelfAuditInterval(),
         addressAuditResults,
         localStorageAuditResultsOwnAddress,
         localStorageAuditResultsOtherAddress,

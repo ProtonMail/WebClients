@@ -1,5 +1,5 @@
 import { PublicKeyReference } from '@proton/crypto';
-import { Epoch, SelfAuditError, SelfAuditResult } from '@proton/key-transparency/lib';
+import { Epoch, SelfAuditResult } from '@proton/key-transparency/lib';
 
 import { Address } from './Address';
 import { DecryptedKey } from './Key';
@@ -27,7 +27,6 @@ export interface KTLocalStorageAPI {
 
 export interface KeyTransparencyState {
     selfAuditResult?: SelfAuditResult;
-    selfAuditError?: SelfAuditError;
 }
 
 export type KeyTransparencyVerify = (
