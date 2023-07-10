@@ -16,10 +16,9 @@ import {
     encryptItem,
     esSentryReport,
     executeContentOperations,
+    metadataIndexingProgress,
     readLastEvent,
     readMetadataItem,
-    readMetadataRecoveryPoint,
-    setMetadataRecoveryPoint,
     testKeywords,
 } from '@proton/encrypted-search';
 import { queryMessageMetadata } from '@proton/shared/lib/api/messages';
@@ -101,7 +100,7 @@ export const getESHelpers = ({
         // Therefore, we have to check if an IDB exists before querying it
         const esdbExists = await checkVersionedESDB(userID);
         if (!recoveryPoint && esdbExists) {
-            recoveryPoint = await readMetadataRecoveryPoint(userID);
+            recoveryPoint = await metadataIndexingProgress.readRecoveryPoint(userID);
         }
 
         const total = await getTotal(getMessageCounts)();
@@ -166,7 +165,7 @@ export const getESHelpers = ({
                 ? async (setIDB: boolean = true) => {
                       metadataRecoveryPoint = newRecoveryPoint;
                       if (setIDB) {
-                          await setMetadataRecoveryPoint(userID, newRecoveryPoint);
+                          await metadataIndexingProgress.setRecoveryPoint(userID, newRecoveryPoint);
                       }
                   }
                 : undefined,
