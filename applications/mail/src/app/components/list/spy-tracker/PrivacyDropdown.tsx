@@ -125,7 +125,7 @@ const PrivacyDropdown = ({ message }: Props) => {
 
         void sendTelemetryReport({
             api,
-            measurementGroup: TelemetryMeasurementGroups.mailSimpleLogin,
+            measurementGroup: TelemetryMeasurementGroups.mailPrivacyDropdown,
             event: TelemetryMailEvents.privacy_dropdown_opened,
         });
     };
