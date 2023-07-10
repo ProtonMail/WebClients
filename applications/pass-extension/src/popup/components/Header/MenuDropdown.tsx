@@ -37,7 +37,7 @@ import { useOpenSettingsTab } from '../../hooks/useOpenSettingsTab';
 import { usePopupContext } from '../../hooks/usePopupContext';
 import { VaultModal, type Props as VaultModalProps } from '../../views/Vault/Vault.modal';
 import { VaultDeleteModal } from '../Vault/VaultDeleteModal';
-import { FeedbackSubmenu } from './FeedbackSubmenu';
+import { Submenu, type SubmenuLinkItem } from './Submenu';
 import { VaultSubmenu } from './VaultSubmenu';
 
 const DROPDOWN_SIZE: NonNullable<DropdownProps['size']> = {
@@ -86,6 +86,47 @@ const MenuDropdownRaw: VFC<{ className?: string }> = ({ className }) => {
 
     const handleRestoreTrash = () => dispatch(restoreTrashIntent());
     const handleDeleteAllItemsInTrash = () => dispatch(emptyTrashIntent());
+
+    const feedbackLinks: SubmenuLinkItem[] = [
+        {
+            icon: 'paper-plane',
+            label: c('Action').t`Send us a message`,
+            actionTab: () => openSettings('support'),
+        },
+        {
+            url: 'https://twitter.com/Proton_Pass',
+            icon: 'brand-twitter',
+            label: c('Action').t`Write us on Twitter`,
+        },
+        {
+            url: 'https://www.reddit.com/r/ProtonPass/',
+            icon: 'brand-reddit',
+            label: c('Action').t`Write us on Reddit`,
+        },
+        {
+            url: 'https://github.com/ProtonMail/WebClients/tree/main/applications/pass-extension',
+            icon: 'brand-github',
+            label: c('Action').t`Help us improve`,
+        },
+        {
+            url: 'https://protonmail.uservoice.com/forums/953584-proton-pass',
+            icon: 'rocket',
+            label: c('Action').t`Request a feature`,
+        },
+    ];
+
+    const downloadLinks: SubmenuLinkItem[] = [
+        {
+            url: 'https://play.google.com/store/apps/details?id=proton.android.pass',
+            icon: 'brand-android',
+            label: c('Action').t`Pass for Android`,
+        },
+        {
+            url: 'https://apps.apple.com/us/app/proton-pass-password-manager/id6443490629',
+            icon: 'brand-apple',
+            label: c('Action').t`Pass for iOS`,
+        },
+    ];
 
     return (
         <>
@@ -180,7 +221,12 @@ const MenuDropdownRaw: VFC<{ className?: string }> = ({ className }) => {
                                 <Icon name="arrow-out-square" className="ml-3 color-weak" />
                             </DropdownMenuButton>
                         )}
-                        <FeedbackSubmenu />
+                        <Submenu submenuIcon="bug" submenuLabel={c('Action').t`Feedback`} linkItems={feedbackLinks} />
+                        <Submenu
+                            submenuIcon="mobile"
+                            submenuLabel={c('Action').t`Get mobile apps`}
+                            linkItems={downloadLinks}
+                        />
                         <DropdownMenuButton
                             className="flex flex-align-items-center py-2 px-4"
                             onClick={withClose(sync)}
