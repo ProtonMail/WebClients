@@ -127,10 +127,7 @@ describe('ItemSpyTrackerIcon', () => {
 
         // Dropdown title
         const title = screen.getByTestId('privacy:title');
-        getByText(title, 'This email is protected');
-        // Dropdown description
-        const description = screen.getByTestId('privacy:description');
-        getByText(description, 'You can read the message and click on links without being tracked.');
+        getByText(title, 'We protected you from 3 trackers');
 
         const imageTrackerRow = screen.getByTestId('privacy:image-row');
         const utmTrackerRow = screen.getByTestId('privacy:utm-row');
@@ -151,9 +148,6 @@ describe('ItemSpyTrackerIcon', () => {
         // Dropdown title
         const title = screen.getByTestId('privacy:title');
         getByText(title, 'No trackers found');
-        // Dropdown description
-        const description = screen.getByTestId('privacy:description');
-        getByText(description, 'You can read the message and click on links without being tracked.');
 
         const imageTrackerRow = screen.getByTestId('privacy:image-row');
         const utmTrackerRow = screen.getByTestId('privacy:utm-row');
@@ -174,12 +168,6 @@ describe('ItemSpyTrackerIcon', () => {
         // Dropdown title
         const title = screen.getByTestId('privacy:title');
         getByText(title, 'Protect your email');
-        // Dropdown description
-        const description = screen.getByTestId('privacy:description');
-        getByText(
-            description,
-            'You can read the message and click on links without being tracked with email tracker protection.'
-        );
 
         screen.getByTestId('privacy:prevent-tracking-toggle');
     });
