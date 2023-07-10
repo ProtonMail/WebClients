@@ -226,8 +226,9 @@ export interface ApiStartImportResponse extends ApiResponse {}
  */
 
 export enum ApiSyncState {
-    STOPPED = 0,
+    OFFLINE = 0,
     ACTIVE = 1,
+    EXPIRED = 2,
 }
 export interface ApiSync {
     Account: string;
