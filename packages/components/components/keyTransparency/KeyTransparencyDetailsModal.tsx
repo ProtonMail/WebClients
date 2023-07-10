@@ -47,7 +47,7 @@ const SelfAuditResults = ({ selfAuditResult }: { selfAuditResult: SelfAuditResul
                 <div className="flex flex-nowrap">
                     <Icon name="exclamation-circle" className="flex-item-noshrink mr-2 mt-0.5 color-warning" />
                     <span className="flex-item-fluid text-break">{c('loc_nightly: Key transparency details')
-                        .t`Key verification was interrupted too many times, there might be a technical issue preventing from verifying your keys.`}</span>
+                        .t`Key verification was interrupted too many times, there might be a technical issue preventing ${appName} from verifying your keys.`}</span>
                 </div>
             );
         } else {
