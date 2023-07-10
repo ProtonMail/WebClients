@@ -1,7 +1,7 @@
 import { useCallback } from 'react';
 
 import { getPromiseValue } from '@proton/components/hooks/useCachedModelResult';
-import { fetchAndVerifyLatestEpoch } from '@proton/key-transparency/lib';
+import { fetchLatestEpoch } from '@proton/key-transparency/lib';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { HOUR } from '@proton/shared/lib/constants';
 import { GetLatestEpoch } from '@proton/shared/lib/interfaces';
@@ -16,7 +16,7 @@ const useGetLatestEpoch = (): GetLatestEpoch => {
     const cache = useCache();
     const normalApi = useApi();
     const silentApi = getSilentApi(normalApi);
-    const miss = useCallback(() => fetchAndVerifyLatestEpoch(silentApi), [silentApi]);
+    const miss = useCallback(() => fetchLatestEpoch(silentApi), [silentApi]);
     return useCallback(
         (forceRefresh?: boolean) => {
             if (forceRefresh) {

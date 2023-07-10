@@ -1,6 +1,6 @@
 import {
     KeyTransparencyError,
-    fetchAndVerifyLatestEpoch,
+    fetchLatestEpoch,
     fetchProof,
     ktSentryReport,
     ktSentryReportError,
@@ -14,7 +14,7 @@ const createKeyMigrationKTVerifier = (ktActivation: KeyTransparencyActivation, a
             return;
         }
         try {
-            const epoch = await fetchAndVerifyLatestEpoch(api);
+            const epoch = await fetchLatestEpoch(api);
             const proof = await fetchProof(epoch.EpochID, email, 1, api);
             await verifyProofOfAbsenceForAllRevision(proof, email, epoch.TreeHash);
         } catch (error: any) {
