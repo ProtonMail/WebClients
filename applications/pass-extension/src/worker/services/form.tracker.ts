@@ -22,9 +22,7 @@ export const createFormTrackerService = () => {
 
     const get = (tabId: TabId, domain: string): Maybe<FormEntry> => {
         const submission = submissions.get(getFormId(tabId, domain));
-        if (submission && submission.domain === domain) {
-            return submission;
-        }
+        if (submission && submission.domain === domain) return submission;
     };
 
     const stash = (tabId: TabId, domain: string, reason: string): void => {
@@ -157,7 +155,10 @@ export const createFormTrackerService = () => {
 
                         return promptOptions.shouldPrompt
                             ? { committed: merge(committed, { autosave: promptOptions }) }
-                            : { committed: undefined };
+                            : (() => {
+                                  stash(tabId, url.domain, 'PROMPT_IGNORE');
+                                  return { committed: undefined };
+                              })();
                     }
 
                     throw new Error(`Cannot commit form submission for tab#${tabId} on domain "${url.domain}"`);
