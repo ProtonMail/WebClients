@@ -4,6 +4,7 @@ import { Epoch, SelfAuditResult } from '@proton/key-transparency/lib';
 import { Address } from './Address';
 import { DecryptedKey } from './Key';
 import { FetchedSignedKeyList, SignedKeyList } from './SignedKeyList';
+import { User } from './User';
 
 export enum IGNORE_KT {
     NORMAL,
@@ -88,3 +89,5 @@ export interface KeyTransparencyVerificationResult {
 }
 
 export type UploadMissingSKL = (address: Address, epoch: Epoch, saveSKLToLS: SaveSKLToLS) => Promise<void>;
+
+export type ResetSelfAudit = (user: User, keyPassword: string, addressesBeforeReset: Address[]) => Promise<void>;
