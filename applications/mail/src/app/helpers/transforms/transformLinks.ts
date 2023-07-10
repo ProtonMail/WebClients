@@ -62,11 +62,12 @@ const removeTrackingTokens = (link: HTMLLinkElement) => {
         const href = link.getAttribute('href');
 
         if (href) {
-            const { url, utmTracker } = getUTMTrackersFromURL(href);
+            const result = getUTMTrackersFromURL(href);
 
-            link.setAttribute('href', url);
-
-            return utmTracker;
+            if (result) {
+                link.setAttribute('href', result.url);
+                return result?.utmTracker;
+            }
         }
     }
 };
