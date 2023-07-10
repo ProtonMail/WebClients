@@ -6,30 +6,33 @@ import { unwrapResult } from '@reduxjs/toolkit';
 import { FeatureCode } from '@proton/components/containers';
 import { useFeature } from '@proton/components/hooks';
 
+import { isConversation } from 'proton-mail/helpers/elements';
+import { Element } from 'proton-mail/models/element';
+
 import { findMessageToExpand } from '../../helpers/message/messageExpandable';
 import { load } from '../../logic/conversations/conversationsActions';
 import { initialize } from '../../logic/messages/read/messagesReadActions';
 import { RootState, useAppDispatch } from '../../logic/store';
 
 interface Props {
-    elementIDs: string[];
-    isConversation: boolean;
+    elements: Element[];
     labelID: string;
     loading: boolean;
 }
 
-const usePreLoadElements = ({ elementIDs, isConversation, labelID, loading }: Props) => {
+const usePreLoadElements = ({ elements, labelID, loading }: Props) => {
     const dispatch = useAppDispatch();
     const { feature } = useFeature(FeatureCode.NumberOfPreloadedConversations);
     const numberOfPreloadedConversations = feature?.Value || 0;
-    const firstElementIDs = elementIDs.slice(0, numberOfPreloadedConversations);
+    const firstElements = elements.slice(0, numberOfPreloadedConversations);
     const conversationIDs = useSelector((state: RootState) => Object.keys(state.conversations));
+    const isAllConversation = elements.every((element) => isConversation(element));
 
     useEffect(() => {
         const preload = async () => {
             try {
                 await Promise.all(
-                    firstElementIDs.map(async (ID) => {
+                    firstElements.map(async ({ ID }) => {
                         const conversationAlreadyCached = conversationIDs.includes(ID);
 
                         if (!conversationAlreadyCached) {
@@ -51,10 +54,11 @@ const usePreLoadElements = ({ elementIDs, isConversation, labelID, loading }: Pr
             }
         };
 
-        if (!loading && isConversation && firstElementIDs.length > 0) {
+        if (!loading && firstElements.length > 0 && isAllConversation) {
+            console.log('preload');
             void preload();
         }
-    }, [firstElementIDs.join(), isConversation, labelID, loading]); // "firstElementIDs.join()" makes firstElementIDs dependency stable
+    }, [firstElements.join(), labelID, loading]); // "firstElementIDs.join()" makes firstElementIDs dependency stable
 };
 
 export default usePreLoadElements;
