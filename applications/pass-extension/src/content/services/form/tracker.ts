@@ -101,7 +101,7 @@ export const createFormTracker = (form: FormHandle): FormTracker => {
         const results: FieldsForFormResults = new WeakMap();
         const status = { injections: new Map<FormField, boolean>(), injected: false };
 
-        FORM_TRACKER_CONFIG[form.formType].forEach(({ type, injection, action }) => {
+        FORM_TRACKER_CONFIG[form.formType].forEach(({ type, injection, action: fieldAction }) => {
             form.getFieldsFor(type).forEach((field) => {
                 let attachIcon = false;
 
@@ -124,10 +124,12 @@ export const createFormTracker = (form: FormHandle): FormTracker => {
                 status.injections.set(type, status.injections.get(type) || attachIcon);
                 status.injected = status.injected || attachIcon;
 
+                const action = fieldAction ? withAction(fieldAction, settings) : null;
+
                 results.set(field, {
                     field,
                     action: action ? withAction(action, settings) : null,
-                    attachIcon,
+                    attachIcon: action !== null && attachIcon,
                 });
             });
         });
