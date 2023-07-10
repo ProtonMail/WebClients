@@ -33,14 +33,34 @@ const useReportSelfAuditErrors = () => {
         const failedLSAuditsOwn = failedLocalStorageAuditsOwn.map(({ email }) => email);
         const failedLSAuditsOther = failedLocalStorageAuditsOther.map(({ email }) => email);
 
-        if (failedAddressAudits.length || failedLSAuditsOwn.length || failedLSAuditsOther.length) {
+        const tooManyRetries = selfAuditResult.error?.tooManyRetries;
+
+        if (failedAddressAudits.length || failedLSAuditsOwn.length || failedLSAuditsOther.length || tooManyRetries) {
             ktSentryReport('Self audit would display an error', {
                 failedAddressAudits,
                 failedLSAuditsOwn,
                 failedLSAuditsOther,
+                tooManyRetries: selfAuditResult.error?.tooManyRetries,
             });
 
             const reports: TelemetryReport[] = [];
+
+            const group = {
+                measurementGroup: TelemetryMeasurementGroups.keyTransparency,
+                event: TelemetryKeyTransparencySelfAuditErrorEvents.self_audit_error,
+            };
+
+            if (tooManyRetries) {
+                const dimensions: SimpleMap<string> = {
+                    type: 'too_many_retries',
+                    result: 'warning',
+                    reason: 'too_many_retries',
+                };
+                reports.push({
+                    ...group,
+                    dimensions,
+                });
+            }
 
             failedAddressAuditsResults.forEach(({ status, warningDetails }) => {
                 const dimensions: SimpleMap<string> = {
@@ -50,8 +70,7 @@ const useReportSelfAuditErrors = () => {
                 };
 
                 reports.push({
-                    measurementGroup: TelemetryMeasurementGroups.keyTransparency,
-                    event: TelemetryKeyTransparencySelfAuditErrorEvents.self_audit_error,
+                    ...group,
                     dimensions,
                 });
             });
@@ -63,8 +82,7 @@ const useReportSelfAuditErrors = () => {
                 };
 
                 reports.push({
-                    measurementGroup: TelemetryMeasurementGroups.keyTransparency,
-                    event: TelemetryKeyTransparencySelfAuditErrorEvents.self_audit_error,
+                    ...group,
                     dimensions,
                 });
             });
@@ -76,8 +94,7 @@ const useReportSelfAuditErrors = () => {
                 };
 
                 reports.push({
-                    measurementGroup: TelemetryMeasurementGroups.keyTransparency,
-                    event: TelemetryKeyTransparencySelfAuditErrorEvents.self_audit_error,
+                    ...group,
                     dimensions,
                 });
             });
