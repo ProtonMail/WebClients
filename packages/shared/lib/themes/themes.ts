@@ -229,11 +229,25 @@ interface ThemeFontFaceSettingValue {
 
 export const ThemeFontFaceSettingMap: { [key in ThemeFontFaceSetting]: ThemeFontFaceSettingValue } = {
     [ThemeFontFaceSetting.DEFAULT]: {
-        label: () => c('Font face option').t`Theme default`,
+        label: () => {
+            /* translator:
+                This is the text proposed in a dropdown menu in the Accessibility settings.
+                Here the user can choose the "Font family", and this string proposes the choice of
+                "Theme font", the font of the chosen theme.
+            */
+            return c('Font face option').t`Theme font`;
+        },
         value: null,
     },
     [ThemeFontFaceSetting.SYSTEM]: {
-        label: () => c('Font face option').t`System default`,
+        label: () => {
+            /* translator:
+                This is the text proposed in a dropdown menu in the Accessibility settings.
+                Here the user can choose the "Font family", and this string proposes the choice of
+                "System default", the default font of the user's operating system.
+            */
+            return c('Font face option').t`System default`;
+        },
         value: 'system-ui, sans-serif',
     },
     [ThemeFontFaceSetting.ARIAL]: {
