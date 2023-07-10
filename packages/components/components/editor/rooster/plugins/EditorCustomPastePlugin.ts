@@ -1,10 +1,11 @@
 /* eslint-disable class-methods-use-this */
-import { wrap } from 'roosterjs-editor-dom';
+import { getPasteSource, wrap } from 'roosterjs-editor-dom';
 import {
     AttributeCallbackMap,
     BeforePasteEvent,
     EditorPlugin,
     IEditor,
+    KnownPasteSourceType,
     PluginEvent,
     PluginEventType,
 } from 'roosterjs-editor-types';
@@ -76,18 +77,24 @@ class EditorCustomPastePlugin implements EditorPlugin {
     }
 
     private handlePasteImage(event: BeforePasteEvent) {
-        const { image, rawHtml } = event.clipboardData;
+        const {
+            clipboardData: { image, rawHtml },
+        } = event;
 
         /**
          * When pasting content from Word or OneNote, there are multiple clipboardDate.types and an image inside the event.
-         * So be carefull if you want to base yourself on those ones
+         * So be careful if you want to base yourself on those ones
          *
-         * Be carefull to check those 3 points:
+         * Be careful to check those 3 points:
          * - Image should exist
-         * - RawHTML should be null
+         * - RawHTML should be null or contain a single image
          * - Image type should contain an allowed type
          */
-        if (image && rawHtml === null && EMBEDDABLE_TYPES.includes(image.type)) {
+        if (
+            image &&
+            (rawHtml === null || getPasteSource(event, true) === KnownPasteSourceType.SingleImage) &&
+            EMBEDDABLE_TYPES.includes(image.type)
+        ) {
             // we replace pasted content by empty string
             event.fragment.textContent = '';
             const pasteImage = this.onPasteImage;
