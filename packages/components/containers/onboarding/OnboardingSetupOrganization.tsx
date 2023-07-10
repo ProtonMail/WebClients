@@ -13,7 +13,7 @@ const OnboardingSetupOrganization = (props: Omit<OnboardingContentProps, 'descri
 
     const title = hasFamilyPlan
         ? c('familyOffer_2023:Onboarding Proton').t`Set up your family account`
-        : c('Onboarding Proton').t`Set up your organization testing`;
+        : c('Onboarding Proton').t`Set up your organization`;
 
     const description = hasFamilyPlan
         ? c('familyOffer_2023:Onboarding Proton').t`Configure your family account and invite users `
