@@ -79,7 +79,7 @@ const RecoveryPhone = ({ phone, hasReset, defaultCountry, className }: Props) =>
                         aria-label={c('label').t`Recovery phone number`}
                         assistiveText={
                             phone.Value &&
-                            (phone.Status === SETTINGS_STATUS.UNVERIFIED ? (
+                            (phone.Status !== SETTINGS_STATUS.VERIFIED ? (
                                 <>
                                     <Icon
                                         className="color-danger flex-item-noshrink aligntop mr-1"
