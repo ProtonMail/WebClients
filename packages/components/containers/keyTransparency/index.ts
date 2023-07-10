@@ -4,3 +4,4 @@ export { default as useKTVerifier } from './useKTVerifier';
 export { default as useKeyMigrationKTVerifier } from './useKeyMigrationKTVerifier';
 export { default as createKeyMigrationKTVerifier } from './createKeyMigrationKTVerifier';
 export * from './useKeyTransparencyContext';
+export { default as useResetSelfAudit } from './useResetSelfAudit';
