@@ -83,7 +83,7 @@ const RecoveryEmail = ({ email, hasReset, hasNotify, className }: Props) => {
                         onValue={setInput}
                         assistiveText={
                             email.Value &&
-                            (email.Status === SETTINGS_STATUS.UNVERIFIED ? (
+                            (email.Status !== SETTINGS_STATUS.VERIFIED ? (
                                 <>
                                     <Icon
                                         className="color-danger flex-item-noshrink aligntop mr-1"
