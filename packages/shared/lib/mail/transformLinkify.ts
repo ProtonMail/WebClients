@@ -41,14 +41,12 @@ export const transformLinkify = ({
         }
         result.push(`<a target="${target}" rel="${rel}" href="`);
 
+        const UTMTrackersResult = canCleanUTMTrackers ? getUTMTrackersFromURL(match.url) : undefined;
         // Clean trackers in plaintext messages
-        if (canCleanUTMTrackers) {
-            const { url, utmTracker } = getUTMTrackersFromURL(match.url);
-
-            result.push(url);
-
-            if (utmTracker) {
-                utmTrackers.push(utmTracker);
+        if (UTMTrackersResult) {
+            result.push(UTMTrackersResult.url);
+            if (UTMTrackersResult.utmTracker) {
+                utmTrackers.push(UTMTrackersResult.utmTracker);
             }
         } else {
             result.push(match.url);
