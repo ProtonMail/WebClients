@@ -21,26 +21,32 @@ describe('trackers', () => {
                 removed: [{ key: 'utm_source', value: 'tracker' }],
             };
 
-            const { url, utmTracker } = getUTMTrackersFromURL(originalURL);
+            const result = getUTMTrackersFromURL(originalURL);
 
-            expect(url).toEqual(cleanedURL);
-            expect(utmTracker).toEqual(expectedUTMTracker);
+            expect(result!.url).toEqual(cleanedURL);
+            expect(result!.utmTracker).toEqual(expectedUTMTracker);
         });
 
         it('should not clean utm trackers', () => {
             const originalURL = 'https://ads.com?whatever=something';
 
-            const { url, utmTracker } = getUTMTrackersFromURL(originalURL);
+            const result = getUTMTrackersFromURL(originalURL);
 
-            expect(url).toEqual(originalURL);
-            expect(utmTracker).toEqual(undefined);
+            expect(result!.url).toEqual(originalURL);
+            expect(result!.utmTracker).toEqual(undefined);
         });
 
         it('should clean all links as expected', () => {
             links.map((link) => {
-                const { url } = getUTMTrackersFromURL(link.originalLink);
-                expect(url).toEqual(link.cleanedLink);
+                const result = getUTMTrackersFromURL(link.originalLink);
+                expect(result!.url).toEqual(link.cleanedLink);
             });
+        });
+
+        it('should return undefined when it throws or URL is not valid', () => {
+            expect(getUTMTrackersFromURL(`<html>dude <a href="dude sd;lkfjads;lkfj !+@#%$^&*()"<html>`)).toBe(
+                undefined
+            );
         });
     });
 });
