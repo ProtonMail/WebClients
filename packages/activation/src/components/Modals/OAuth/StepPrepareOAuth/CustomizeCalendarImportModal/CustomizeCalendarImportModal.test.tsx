@@ -31,6 +31,7 @@ const calendarMember: CalendarMember = {
     Permissions: 1,
     Color: 'Color',
     Display: CALENDAR_DISPLAY.VISIBLE,
+    Priority: 1,
 };
 
 const visualCalendar: VisualCalendar = {
@@ -45,6 +46,7 @@ const visualCalendar: VisualCalendar = {
     Email: 'testing@proton.ch',
     Flags: 1,
     Permissions: 1,
+    Priority: 1,
 };
 
 const importerCalendar: ImporterCalendar = {
