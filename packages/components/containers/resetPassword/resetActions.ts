@@ -11,7 +11,13 @@ import { AuthResponse, InfoResponse } from '@proton/shared/lib/authentication/in
 import { persistSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { APP_NAMES } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
-import { Api, KeyTransparencyActivation, UserSettings, User as tsUser } from '@proton/shared/lib/interfaces';
+import {
+    Api,
+    KeyTransparencyActivation,
+    ResetSelfAudit,
+    UserSettings,
+    User as tsUser,
+} from '@proton/shared/lib/interfaces';
 import {
     generateKeySaltAndPassphrase,
     getDecryptedUserKeysHelper,
@@ -50,7 +56,16 @@ export const handleNewPassword = async ({
     cache: ResetCacheResult;
     api: Api;
 }): Promise<ResetActionResponse> => {
-    const { username, token, resetResponse, persistent, appName, ktActivation, hasTrustedDeviceRecovery } = cache;
+    const {
+        username,
+        token,
+        resetResponse,
+        persistent,
+        appName,
+        ktActivation,
+        hasTrustedDeviceRecovery,
+        resetSelfAudit,
+    } = cache;
     if (!resetResponse || !token) {
         throw new Error('Missing response');
     }
@@ -149,6 +164,7 @@ export const handleNewPassword = async ({
     await persistSession({ ...authResponse, persistent, trusted, User: user, keyPassword, api });
 
     await preAuthKTCommit(user.ID);
+    await resetSelfAudit(user, keyPassword, addresses);
 
     return {
         to: STEPS.DONE,
@@ -352,6 +368,7 @@ export const handleRequestRecoveryMethods = async ({
     api,
     hasTrustedDeviceRecovery,
     ktActivation,
+    resetSelfAudit,
 }: {
     setupVPN: boolean;
     appName: APP_NAMES;
@@ -360,6 +377,7 @@ export const handleRequestRecoveryMethods = async ({
     api: Api;
     hasTrustedDeviceRecovery: boolean;
     ktActivation: KeyTransparencyActivation;
+    resetSelfAudit: ResetSelfAudit;
 }): Promise<ResetActionResponse> => {
     try {
         const { Type, Methods }: { Type: AccountType; Methods: RecoveryMethod[] } = await api(
@@ -379,6 +397,7 @@ export const handleRequestRecoveryMethods = async ({
                     type: Type,
                     hasTrustedDeviceRecovery,
                     ktActivation,
+                    resetSelfAudit,
                 },
                 to: STEPS.VALIDATE_RESET_TOKEN,
             };
@@ -401,6 +420,7 @@ export const handleRequestRecoveryMethods = async ({
                 type: Type,
                 hasTrustedDeviceRecovery,
                 ktActivation,
+                resetSelfAudit,
             },
             to: STEPS.REQUEST_RESET_TOKEN,
         };

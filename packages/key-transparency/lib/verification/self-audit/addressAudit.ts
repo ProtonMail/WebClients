@@ -155,7 +155,7 @@ const auditAddressImplementation = async (
     }
     const userPrimaryKey = userKeys[0].privateKey;
     const userVerificationKeys = userKeys.map(({ publicKey }) => publicKey);
-    const verifiedEpoch = await fetchVerifiedEpoch(address, userVerificationKeys, api);
+    const verifiedEpoch = await fetchVerifiedEpoch(address, api, userVerificationKeys);
 
     if (verifiedEpoch && (await earlyTermination(verifiedEpoch, epoch, address, inputSKL, userPrimaryKey, api))) {
         return { email, status: AddressAuditStatus.Success };
