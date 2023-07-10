@@ -21,18 +21,16 @@ import {
     INDEXING_STATUS,
     TIMESTAMP_TYPE,
     ciphertextSize,
+    contentIndexingProgress,
     decryptFromDB,
     defaultESProgress,
     encryptItem,
     esSentryReport,
     getIndexKey,
+    metadataIndexingProgress,
     openESDB,
-    readMetadataRecoveryPoint,
     readMigrated,
     removeESFlags,
-    setContentActiveProgressStatus,
-    setMetadataActiveProgressStatus,
-    setMetadataRecoveryPoint,
     setMigrated,
     updateSize,
 } from '@proton/encrypted-search';
@@ -223,7 +221,7 @@ const completeMetadataIndexing = async (
 
     // Finally we set the metadata indexing as completed and the content
     // indexing where it left off in the old version
-    await setMetadataActiveProgressStatus(userID);
+    await metadataIndexingProgress.setActiveStatus(userID);
 
     const { progressBlob, isPaused } = getESBlobs(userID);
 
@@ -282,8 +280,8 @@ const checkPreviousIndexing = async (userID: string) => {
 
     if (!progressBlob) {
         // ES was fully activated
-        await setMetadataActiveProgressStatus(userID);
-        await setContentActiveProgressStatus(userID);
+        await metadataIndexingProgress.setActiveStatus(userID);
+        await contentIndexingProgress.setActiveStatus(userID);
 
         return false;
     }
@@ -293,13 +291,13 @@ const checkPreviousIndexing = async (userID: string) => {
     // from there. The starting point of metadata indexing should be the recovery point
     // in its progress row, if it's in the right format, or the one from the migrated
     // row of the config table
-    const metadataRP = await readMetadataRecoveryPoint(userID);
+    const metadataRP = await metadataIndexingProgress.readRecoveryPoint(userID);
     if (!metadataRP.End || !metadataRP.EndID) {
         // Read reacovery point from the config table
         const {
             oldestMessage: { ID, Time },
         } = await readMigrated(userID);
-        await setMetadataRecoveryPoint(userID, { End: Time, EndID: ID });
+        await metadataIndexingProgress.setRecoveryPoint(userID, { End: Time, EndID: ID });
     }
 
     return true;

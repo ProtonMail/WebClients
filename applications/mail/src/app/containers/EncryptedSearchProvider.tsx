@@ -17,9 +17,9 @@ import {
 } from '@proton/components';
 import {
     checkVersionedESDB,
+    contentIndexingProgress,
     esSentryReport,
     getIndexKey,
-    readContentProgress,
     useEncryptedSearch,
     wrappedGetOldestInfo,
 } from '@proton/encrypted-search';
@@ -212,7 +212,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
             return;
         }
 
-        let contentProgress = await readContentProgress(user.ID);
+        let contentProgress = await contentIndexingProgress.read(user.ID);
         if (!contentProgress) {
             return esLibraryFunctions.initializeES();
         }

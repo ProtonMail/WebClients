@@ -6,7 +6,7 @@ import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { Api } from '@proton/shared/lib/interfaces';
 
 import { ES_MAX_RETRIES, ES_TEMPORARY_ERRORS } from '../constants';
-import { readContentProgress, readNumMetadata, readSize } from '../esIDB';
+import { contentIndexingProgress, readNumMetadata, readSize } from '../esIDB';
 import { ESIndexMetrics, ESSearchMetrics } from '../models';
 import { estimateIndexingDuration } from './esBuild';
 
@@ -97,7 +97,7 @@ const sendESMetrics: SendESMetrics = async (api, Title, Data) =>
  * Send metrics about the indexing process
  */
 export const sendIndexingMetrics = async (api: Api, userID: string) => {
-    const progressBlob = await readContentProgress(userID);
+    const progressBlob = await contentIndexingProgress.read(userID);
     if (!progressBlob) {
         return;
     }
