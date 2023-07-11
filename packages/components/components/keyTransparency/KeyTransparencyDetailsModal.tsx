@@ -41,6 +41,23 @@ const SelfAuditResults = ({ selfAuditResult }: { selfAuditResult: SelfAuditResul
     const { APP_NAME } = useConfig();
     const appName = getAppName(APP_NAME);
 
+    if (selfAuditResult?.error) {
+        if (selfAuditResult.error.tooManyRetries) {
+            return (
+                <div className="flex flex-nowrap">
+                    <Icon name="exclamation-circle" className="flex-item-noshrink mr-2 mt-0.5 color-warning" />
+                    <span className="flex-item-fluid text-break">{c('loc_nightly: Key transparency details')
+                        .t`Key verification was interrupted too many times, there might be a technical issue preventing ${appName} from verifying your keys.`}</span>
+                </div>
+            );
+        } else {
+            return (
+                <span>{c('loc_nightly: Key transparency details')
+                    .t`Key verification was interrupted, it will be restarted automatically.`}</span>
+            );
+        }
+    }
+
     const addressAuditWarningMessage = (details: AddressAuditWarningDetails) => {
         switch (details.reason) {
             case AddressAuditWarningReason.UnverifiableHistory:

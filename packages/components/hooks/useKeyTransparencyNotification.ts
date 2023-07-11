@@ -20,6 +20,9 @@ const getHasSelfAuditFailure = (selfAuditResult: SelfAuditResult) => {
 };
 
 const getHasSelfAuditWarning = (selfAuditResult: SelfAuditResult) => {
+    if (selfAuditResult?.error?.tooManyRetries) {
+        return true;
+    }
     const addressAuditWarning = selfAuditResult.addressAuditResults.some(
         ({ status }) => status === AddressAuditStatus.Warning
     );
