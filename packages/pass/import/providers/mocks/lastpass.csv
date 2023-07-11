@@ -17,15 +17,6 @@ Pin:
 Branch Address:
 Branch Phone:
 Notes:",test,,0
-http://sn,,,,"NoteType:Credit Card
-Language:en-GB
-Name on Card:Mr Test
-Type:Test
-Number:42424242
-Security Code:
-Start Date:,
-Expiration Date:,
-Notes:",TestCC,,0
 http://sn,,,,"NoteType:Address
 Language:en-GB
 Title:mrs
@@ -51,3 +42,12 @@ Evening Phone:
 Mobile Phone:
 Fax:
 Notes:",TestID,,0
+http://sn,,,,"NoteType:Credit Card
+Language:en-GB
+Name on Card:A B
+Type:Visa
+Number:4242424242424242
+Security Code:123
+Start Date:,
+Expiration Date:January,2025
+Notes:this is a note for the credit card",Credit Card Item with note,,0

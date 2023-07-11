@@ -1,5 +1,9 @@
 import type { Maybe } from '@proton/pass/types';
 
+export enum LastPassNoteType {
+    CREDIT_CARD = 'Credit Card',
+}
+
 export type LastPassItem = {
     url: Maybe<string>;
     username: Maybe<string>;
