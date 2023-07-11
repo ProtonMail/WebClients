@@ -2702,8 +2702,8 @@
       "System default": [
         "Προεπιλογή συστήματος"
       ],
-      "Theme default": [
-        "Προεπιλεγμένο θέμα"
+      "Theme font": [
+        "Γραμματοσειρά εμφάνισης"
       ]
     },
     "Font size option": {
@@ -4730,7 +4730,7 @@
         "Αναβάθμιση λογαριασμού"
       ],
       "What’s this?": [
-        "Τι είναι αυτό?"
+        "Τι είναι αυτό;"
       ]
     },
     "Loading info": {
@@ -5137,9 +5137,6 @@
       ],
       "Set up your organization": [
         "Ρυθμίστε τον οργανισμό σας"
-      ],
-      "Set up your organization testing": [
-        "Ρύθμιση των δοκιμών του οργανισμού σας"
       ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
         "Χρησιμοποιήστε τον επιλογέα εφαρμογών επάνω αριστερά για να αποκτήσετε πρόσβαση σε όλες τις υπηρεσίες του ${ BRAND_NAME }: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } και ${ DRIVE_SHORT_APP_NAME }."
@@ -5678,6 +5675,70 @@
     "Success notification when user send feedback": {
       "Feedback sent": [
         "Τα σχόλια απεστάλησαν"
+      ]
+    },
+    "summer2023: Billing cycle option": {
+      "1 year": [
+        "1 έτος"
+      ],
+      "2 years": [
+        "2 έτη"
+      ]
+    },
+    "summer2023: Deal details": {
+      "Premium Drive": [
+        "Premium Μονάδα Αποθήκευσης"
+      ],
+      "Premium Mail and Calendar": [
+        "Premium Αλληλογραφία και Ημερολόγιο"
+      ],
+      "Premium Password Manager": [
+        "Premium Διαχειριστής Κωδικών Πρόσβασης"
+      ]
+    },
+    "summer2023: Describe Proton Pass": {
+      "Securely store your passwords and autofill them on websites. Includes unlimited passwords, autofill, password generator, and more.": [
+        "Αποθηκεύστε με ασφάλεια τους κωδικούς πρόσβασής σας και συμπληρώστε τους αυτόματα σε ιστότοπους. Περιλαμβάνει απεριόριστους κωδικούς πρόσβασης, αυτόματη συμπλήρωση, γεννήτρια κωδικών πρόσβασης και πολλά άλλα."
+      ]
+    },
+    "summer2023: Short tool name to present Proton Pass": {
+      "Password manager": [
+        "Διαχειριστής κωδικού"
+      ]
+    },
+    "summer2023: Tooltip": {
+      "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
+        "Δημιουργήστε ασφαλή στοιχεία σύνδεσης σε όλες τις συσκευές σας. Περιλαμβάνει απεριόριστα ψευδώνυμα, 20 κρύπτες, ενσωματωμένο έλεγχο ταυτότητας δύο παραγόντων (2FA), αυτόματη συμπλήρωση πιστωτικών καρτών και πολλά άλλα."
+      ],
+      "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "Περιλαμβάνει 2950+ διακομιστές σε 65+ χώρες, σύνδεση έως και 10 συσκευών, πρόσβαση σε παγκόσμιες υπηρεσίες ροής, προστασία κακόβουλου λογισμικού και αποκλεισμό διαφημίσεων και πολλά άλλα."
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Περιλαμβάνει υποστήριξη για 1 προσαρμοσμένο τομέα ηλεκτρονικού ταχυδρομείου, 10 διευθύνσεις ηλεκτρονικού ταχυδρομείου, 10 hide-my-email ψευδώνυμα, κοινή χρήση ημερολογίου και πολλά άλλα."
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "Ασφαλίστε τα αρχεία σας με κρυπτογραφημένο χώρο αποθήκευσης cloud. Περιλαμβάνει ιστορικό εκδόσεων, κρυπτογραφημένη κοινή χρήση αρχείων και πολλά άλλα."
+      ]
+    },
+    "summer2023:Footer": {
+      "*Your subscription will automatically renew at the standard discounted rate at the end of your billing cycle.": [
+        "*Η συνδρομή σας θα ανανεωθεί αυτόματα με την τυπική μειωμένη τιμή στο τέλος του κύκλου χρέωσης σας."
+      ],
+      "Discounts are based on the standard monthly pricing. This offer is only available to first-time subscribers.": [
+        "Οι εκπτώσεις βασίζονται στην τυπική μηνιαία τιμολόγηση. Αυτή η προσφορά είναι διαθέσιμη μόνο σε νέους συνδρομητές."
+      ]
+    },
+    "summer2023:Info": {
+      "For a limited time, get the best ${ BRAND_NAME } has to offer at an exclusive discount.": [
+        "Για περιορισμένο χρονικό διάστημα, αποκτήστε τα καλύτερα ${ BRAND_NAME } που έχει να προσφέρει με αποκλειστική έκπτωση."
+      ],
+      "We’re celebrating the nine-year anniversary of our crowdfunding!": [
+        "Γιορτάζουμε την εννιάχρονη επέτειο του crowdfunding μας!"
+      ]
+    },
+    "summer2023:Offer title": {
+      "${ BRAND_NAME } Anniversary Sale": [
+        "${ BRAND_NAME } Επετειακή Πώληση"
       ]
     },
     "Table header": {

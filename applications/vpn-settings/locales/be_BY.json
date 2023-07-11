@@ -1485,7 +1485,7 @@
     },
     "Downgrade modal exit survey title": {
       "Help us improve!": [
-        "Дапамажыце нам стаць яшчэ лепш!"
+        "Дапамажыце нам палепшыць наш сэрвіс!"
       ]
     },
     "Error": {
@@ -2011,9 +2011,6 @@
     "Font face option": {
       "System default": [
         "Адпаведна сістэме"
-      ],
-      "Theme default": [
-        "Прадвызначаная тэма"
       ]
     },
     "Font size option": {
@@ -3375,7 +3372,7 @@
         "Праверачны код"
       ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
-        "Шкада, што вы пакідаеце нас. Патлумачце, чаму вы вырашылі так зрабіць. Гэта дапаможа палепшыць наш сэрвіс."
+        "Шкада, што вы пакідаеце нас. Патлумачце, чаму вы вырашылі так зрабіць. Гэта дапаможа нам палепшыць наш сэрвіс"
       ],
       "What happened?": [
         "Што здарылася?"
@@ -4181,6 +4178,9 @@
         "Стварайце да ${ n } календароў або дадавайце календары ад сяброў, сям'і, калег і арганізацый",
         "Стварайце да ${ n } календароў або дадавайце календары ад сяброў, сям'і, калег і арганізацый"
       ],
+      "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
+        "Стварыце да ${ n } адрасоў электроннай пошты/псеўданімаў, якія вы можаце прызначыць членам сям'і. Выкарыстоўвайце іх для ідэнтыфікацыі ў інтэрнэце, напрыклад, JankaPakupnik@${ domain } для ўліковых запісаў пакупак."
+      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Абараняе прыватнасць VPN ад пагроз, перадаючы ваш трафік праз некалькі сервераў"
       ],
@@ -4334,7 +4334,7 @@
         "Доступ да пашыраных функцый VPN"
       ],
       "Add more personalization with 15 email addresses and support for 3 custom email domains": [
-        "Дадайце больш персаналізацыі з 15 электроннымі адрасамі і падтрымкай трох карыстальніцкіх даменаў"
+        "Дадайце больш персаналізацыі з 15 электроннымі адрасамі і падтрымкай 3 карыстальніцкіх даменаў"
       ],
       "Boost your storage space to ${ bundleStorage } total": [
         "Палепшыце агульны аб'ём свайго сховішча да ${ bundleStorage }"
@@ -4691,7 +4691,7 @@
         "Прапанова абмежавана па часе"
       ],
       "Most popular": [
-        "Самы папулярны"
+        "Найбольш папулярны"
       ],
       "Offer ends soon": [
         "Прапанова неўзабаве скончыцца"
@@ -5116,6 +5116,70 @@
     "Suffix for price": {
       "per month": [
         "у месяц"
+      ]
+    },
+    "summer2023: Billing cycle option": {
+      "1 year": [
+        "1 год"
+      ],
+      "2 years": [
+        "2 гады"
+      ]
+    },
+    "summer2023: Deal details": {
+      "Premium Drive": [
+        "Прэміяльныя функцыі Drive"
+      ],
+      "Premium Mail and Calendar": [
+        "Прэміяльныя функцыі Mail і Calendar"
+      ],
+      "Premium Password Manager": [
+        "Прэміяльныя функцыі менеджара пароляў"
+      ]
+    },
+    "summer2023: Describe Proton Pass": {
+      "Securely store your passwords and autofill them on websites. Includes unlimited passwords, autofill, password generator, and more.": [
+        "Бяспечна захоўвайце свае паролі і аўтаматычна запаўняйце іх на вэб-сайтах. Уключае неабмежаваную колькасць пароляў, аўтаматычнае запаўненне, генератар пароляў і іншыя функцыі."
+      ]
+    },
+    "summer2023: Short tool name to present Proton Pass": {
+      "Password manager": [
+        "Менеджар пароляў"
+      ]
+    },
+    "summer2023: Tooltip": {
+      "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
+        "Стварайце бяспечныя даныя для ўваходу на ўсіх сваіх прыладах. Уключае неабмежаваную колькасць псеўданімаў, 20 сховішчаў, інтэграваную 2ФА, аўтаматычнае запаўненне крэдытных картак і іншыя функцыі."
+      ],
+      "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "Уключае больш за 2950 сервераў у больш чым 65 краінах, магчымасць падключаць да 10 прылад, сэрвісы з трансляцыямі па ўсім свеце, блакіроўку шкодных праграм і рэкламы, а таксама іншыя функцыі."
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Уключае падтрымку 1 карыстальніцкага дамена электроннай пошты, 10 адрасоў электроннай пошты, 10 псеўданімаў hide-my-email, абагульванне календара і іншыя функцыі."
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "Абараніце свае файлы з дапамогай зашыфраванага воблачнага сховішча. Уключае гісторыю версій, абагулены доступ да зашыфраваных файлаў і іншыя функцыі."
+      ]
+    },
+    "summer2023:Footer": {
+      "*Your subscription will automatically renew at the standard discounted rate at the end of your billing cycle.": [
+        "*Ваша падпіска будзе аўтаматычна падаўжацца са стандартнай скідкай у канцы перыяду аплаты."
+      ],
+      "Discounts are based on the standard monthly pricing. This offer is only available to first-time subscribers.": [
+        "Скідкі разлічваюцца на падставе стандартнай платы за месяц. Гэтай прапановай могуць скарыстацца толькі тыя падпісчыкі, якія ўпершыню зарэгістраваліся."
+      ]
+    },
+    "summer2023:Info": {
+      "For a limited time, get the best ${ BRAND_NAME } has to offer at an exclusive discount.": [
+        "Атрымайце эксклюзіўную скідку ад ${ BRAND_NAME }. Прапанова абмежавана па часе."
+      ],
+      "We’re celebrating the nine-year anniversary of our crowdfunding!": [
+        "Мы святкуем дзявятую гадавіну нашага краўдфандзінга!"
+      ]
+    },
+    "summer2023:Offer title": {
+      "${ BRAND_NAME } Anniversary Sale": [
+        "Святочны распродаж ${ BRAND_NAME }"
       ]
     },
     "Tab subscription modal": {

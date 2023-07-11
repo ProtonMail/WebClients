@@ -145,6 +145,9 @@
       "Carbon Copy": [
         "Kopie"
       ],
+      "Change email": [
+        "Změnit e-mail"
+      ],
       "Change page": [
         "Změnit stránku"
       ],
@@ -2972,12 +2975,6 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Kontakty, které nechcete sloučit ani zachovat, označte pro smazání. Ke smazání dojde po kliknutí na tlačítko pro sloučení"
-      ],
-      "You can read the message and click on links without being tracked with email tracker protection.": [
-        "Zprávu si můžete přečíst a kliknout na odkazy, aniž byste byli sledováni pomocí ochrany proti sledování e-mailů."
-      ],
-      "You can read the message and click on links without being tracked.": [
-        "Zprávu si můžete přečíst a klikat na odkazy, aniž byste byli sledováni."
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4160,9 +4157,6 @@
     "Font face option": {
       "System default": [
         "Systémové výchozí"
-      ],
-      "Theme default": [
-        "Výchozí téma"
       ]
     },
     "Font Size Default": {
@@ -4202,17 +4196,50 @@
       ]
     },
     "Get started checklist instructions": {
+      "${ MAIL_APP_NAME } on App Store": [
+        "${ MAIL_APP_NAME } v App Store"
+      ],
+      "${ MAIL_APP_NAME } on Play Store": [
+        "${ MAIL_APP_NAME } v Obchodu Play"
+      ],
+      "Close": [
+        "Zavřít"
+      ],
+      "Congratulation, you completed all the steps!": [
+        "Gratulujeme, dokončili jste všechny kroky!"
+      ],
+      "Get free storage": [
+        "Získat bezplatné úložiště"
+      ],
+      "Get mobile app": [
+        "Získat mobilní aplikaci"
+      ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "Získat mobilní aplikaci ${ MAIL_APP_NAME }"
       ],
       "Import contacts or emails": [
         "Import kontaktů nebo emailů"
       ],
+      "Import data": [
+        "Importovat data"
+      ],
       "Import your contacts or messages": [
         "Import kontaktů nebo zpráv"
       ],
+      "Maybe later": [
+        "Možná později"
+      ],
+      "Open checklist": [
+        "Otevřít kontrolní seznam"
+      ],
       "Quickly transfer your contacts or emails from any provider using our Easy Switch import assistant.": [
         "Rychle přeneste kontakty nebo e-maily od jakéhokoli poskytovatele pomocí našeho Easy Switch asistenta pro snadný import."
+      ],
+      "Send a message": [
+        "Odeslat zprávu"
+      ],
+      "Set recovery method": [
+        "Nastavit metodu obnovení"
       ]
     },
     "Gmail forwarding": {
@@ -5724,7 +5751,7 @@
         "Tato pozvánka je uložena v zakázaném kalendáři."
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
-        "Tento odkaz vede na webovou stránku, která se může pokoušet ukrást vaše údaje, například hesla a údaje o kreditní kartě."
+        "Tento odkaz vede na webovou stránku, která se může pokoušet ukrást vaše údaje, například hesla a údaje o platební kartě."
       ],
       "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Tento odkaz může být homografickým útokem a prohlížeč Edge jej nemůže otevřít. Pokud jste si jisti, že je odkaz legitimní, použijte k jeho otevření jiný prohlížeč."
@@ -5820,10 +5847,10 @@
         "Příliš mnoho zpráv čeká na odeslání. Prosím počkejte až bude další zpráva odeslána k naplánování této zprávy."
       ],
       "Trackers blocked:": [
-        "Zablokováno sledování:"
+        "Zablokováno sledovacích prvků:"
       ],
       "Turn off to only search by date, name, email address, or subject line. To disable search message content and delete downloaded messages, go to settings.": [
-        "Vypněte vyhledávání pouze podle data, jména nebo e-mailové adresy. Chcete-li zakázat vyhledávání obsahu zpráv a odstranit stažené zprávy, přejděte do Nastavení."
+        "Vypněte pro vyhledávání pouze podle data, jména, e-mailové adresy nebo předmětu. Chcete-li zakázat vyhledávání v obsahu zpráv a smazat stažené zprávy, přejděte do nastavení."
       ],
       "Turn on to search the content of your messages": [
         "Zapněte pro možnost vyhledávat v obsahu vašich zpráv"
@@ -5976,7 +6003,7 @@
         "Importovat můžete vždy jeden typ dat."
       ],
       "You can read this email without revealing your interactions, location, or device to advertisers.": [
-        "Tento e-mail si můžete přečíst, aniž byste inzerentům prozradili své interakce, polohu nebo zařízení."
+        "Tento e-mail můžete číst, aniž byste inzerentům odhalili své interakce, polohu nebo zařízení."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Můžete zapnout upozornění abyste obdrželi oznámení v případě, že do této složky přijde nový e-mail."
@@ -7541,11 +7568,34 @@
       "Set up your organization": [
         "Nastavení organizace"
       ],
-      "Set up your organization testing": [
-        "Nastavte testování Vaší organizace"
-      ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
         "Pomocí výběru aplikací v levém horním rohu získáte přístup ke všem službám ${ BRAND_NAME }: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } a ${ DRIVE_SHORT_APP_NAME }."
+      ]
+    },
+    "Online Accounts Name": {
+      "Banking": [
+        "Bankovnictví"
+      ],
+      "Crypto": [
+        "Krypto"
+      ],
+      "E-commerce and Retail": [
+        "Internetový obchod a maloobchod"
+      ],
+      "Entertainment": [
+        "Zábava"
+      ],
+      "Food and beverage": [
+        "Potraviny a nápoje"
+      ],
+      "Gaming": [
+        "Hry"
+      ],
+      "Travel": [
+        "Cestování"
+      ],
+      "Utilities": [
+        "Nástroje"
       ]
     },
     "Option": {
@@ -8638,6 +8688,19 @@
         "Zpětná vazba byla odeslána"
       ]
     },
+    "summer2023: Billing cycle option": {
+      "1 year": [
+        "1 rok"
+      ],
+      "2 years": [
+        "2 roky"
+      ]
+    },
+    "summer2023: Short tool name to present Proton Pass": {
+      "Password manager": [
+        "Správce hesel"
+      ]
+    },
     "Table header": {
       "Action": [
         "Akce"
@@ -9274,9 +9337,6 @@
       ],
       "Subject missing": [
         "Chybí předmět"
-      ],
-      "This email is protected": [
-        "Tento e-mail je chráněný"
       ],
       "To": [
         "Komu"

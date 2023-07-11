@@ -145,6 +145,9 @@
       "Carbon Copy": [
         "Copie"
       ],
+      "Change email": [
+        "Modificare e-mail"
+      ],
       "Change page": [
         "Schimbare pagină"
       ],
@@ -2962,12 +2965,6 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Puteți marca pentru ștergere contactele pe care nu doriți nici să le îmbinați, nici să le păstrați. Ștergerea va fi efectuată doar după apăsarea butonului de îmbinare."
-      ],
-      "You can read the message and click on links without being tracked with email tracker protection.": [
-        "Cu protecția împotriva funcțiilor de urmărire din mesaje, puteți citi mesajul și folosi legăturile din el fără a riscul monitorizării."
-      ],
-      "You can read the message and click on links without being tracked.": [
-        "Puteți citi mesajul și accesa legăturile din el fără riscul monitorizării."
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4131,9 +4128,6 @@
     "Font face option": {
       "System default": [
         "Implicit din sistem"
-      ],
-      "Theme default": [
-        "Temă implicită"
       ]
     },
     "Font Size Default": {
@@ -4174,52 +4168,142 @@
     },
     "Get started checklist instructions": {
       "${ MAIL_APP_NAME } app": [
-        "Aplicația ${ MAIL_APP_NAME }"
+        "aplicația ${ MAIL_APP_NAME }"
+      ],
+      "${ MAIL_APP_NAME } on App Store": [
+        "${ MAIL_APP_NAME } din App Store"
+      ],
+      "${ MAIL_APP_NAME } on Play Store": [
+        "${ MAIL_APP_NAME } din Magazinul Play"
       ],
       "account logins": [
         "autentificarea în cont"
       ],
       "Auto-forward Gmail": [
-        "Redirecționare automată Gmail"
+        "Redirecționare automată din Gmail"
       ],
       "auto-forwarding": [
         "redirecționarea automată"
       ],
+      "Block email communications from scammers permanently.": [
+        "Blocați permanent comunicațiile prin e-mail de la escroci."
+      ],
+      "Block unsavory senders": [
+        "Blocați expeditorii nesăbuiți"
+      ],
+      "Bravo for making your email even more secure, convenient, and relevant! We've upped your free storage to a total of 1 GB.": [
+        "Felicitări că v-ați vă face e-mailul și mai sigur, mai convenabil și mai relevant! Am ridicat stocarea gratuită la un total de 1 GB."
+      ],
       "Change ${ strongText } to your ${ BRAND_NAME } address": [
-        "Schimbă ${ strongText } la adresa ta ${ BRAND_NAME }"
+        "Schimbați ${ strongText } cu adresa personală ${ BRAND_NAME }"
+      ],
+      "Checklist complete": [
+        "Listă completată"
+      ],
+      "Close": [
+        "Închidere"
+      ],
+      "Congratulation, you completed all the steps!": [
+        "Felicitări, ați completat toți pașii!"
+      ],
+      "Continue setting up your email": [
+        "Continuați să vă setați contul de e-mail"
       ],
       "Discover how our ${ strongText } protect you": [
-        "Descoperă cum ${ strongText } te protejează"
+        "Descoperiți cum ${ strongText } vă protejează"
       ],
       "Discover privacy features": [
-        "Descoperă caracteristicile de confidențialitate"
+        "Descoperiți funcțiile de confidențialitate"
+      ],
+      "Double your free storage to 1 GB when you complete the following:": [
+        "Dublați-vă stocarea gratuită la 1 GB după ce executați următoarele:"
+      ],
+      "Encryption so strong, only you and intended recipients can view your emails.": [
+        "Criptarea atât de puternică, încât doar dvs. și destinatarii doriți vă puteți vedea mesajele."
+      ],
+      "For your eyes only": [
+        "Doar pentru dumneavoastră"
+      ],
+      "Get free storage": [
+        "Obțineți spațiu gratuit"
+      ],
+      "Get mobile app": [
+        "Luați aplicația mobilă"
       ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "Obțineți aplicația mobilă ${ MAIL_APP_NAME }"
       ],
       "Get the ${ strongText } on Android or iOS": [
-        "Obține ${ strongText } pentru Android sau iOS"
+        "Luați ${ strongText } pentru Android sau iOS"
       ],
       "Get the App": [
-        "Obține aplicația"
+        "Luați aplicația"
       ],
       "Import contacts or emails": [
         "Importați contacte sau e-mailuri"
       ],
+      "Import data": [
+        "Importare date"
+      ],
       "Import your contacts or messages": [
         "Importați contactele sau mesajele personale"
       ],
+      "Keep using ${ MAIL_APP_NAME } to discover more ways ${ BRAND_NAME } protects your privacy and simplifies emailing.": [
+        "Utilizați în continuare ${ MAIL_APP_NAME } pentru a descoperi mai multe moduri în care ${ BRAND_NAME } vă protejează confidențialitatea și vă simplifică mesageria."
+      ],
+      "Learn more": [
+        "Detalii"
+      ],
+      "Make ${ BRAND_NAME } your go-to inbox": [
+        "Faceți din ${ BRAND_NAME } mesageria de zi cu zi"
+      ],
+      "Maybe later": [
+        "Poate mai târziu"
+      ],
+      "Nice! You've updated all services in this category.": [
+        "Minunat! Ați actualizat toate serviciile din această categorie."
+      ],
+      "Open checklist": [
+        "Deschidere listă de sarcini"
+      ],
+      "Popular online services": [
+        "Servicii populare online"
+      ],
       "privacy features": [
-        "caracteristici de confidențialitate"
+        "funcțiile de confidențialitate"
+      ],
+      "Protect and simplify your email": [
+        "Protejați-vă și simplificați-vă contul de e-mail"
+      ],
+      "Protection from trackers": [
+        "Protecție împotriva monitorizării"
       ],
       "Quickly transfer your contacts or emails from any provider using our Easy Switch import assistant.": [
         "Transferați-vă rapid contactele sau e-mailurile de la orice furnizor cu ajutorul asistentului de importare Easy Switch."
       ],
+      "Send a message": [
+        "Trimitere mesaj"
+      ],
+      "Set recovery method": [
+        "Setare metodă de recuperare"
+      ],
       "Set up ${ strongText } from Gmail": [
-        "Setează ${ strongText } de la Gmail"
+        "Setați ${ strongText } de la Gmail"
+      ],
+      "Sign in to the mobile app to complete this step": [
+        "Conectați-vă la aplicația mobilă pentru a finaliza acest pas"
       ],
       "Update your logins": [
-        "Actualizează autentificarea"
+        "Actualizați-vă autentificarea"
+      ],
+      "Using your mobile device, scan this QR code or visit the iOS or Android store.": [
+        "Folosind dispozitivul mobil, scanați acest cod QR sau vizitați magazinul iOS sau Android."
+      ],
+      "We stop advertisers and data collectors from profiling you.": [
+        "Oprim agenții de publicitate și colectorii de date să vă urmărească activitatea."
+      ],
+      "You've unlocked 1 GB": [
+        "Ați deblocat 1 GB de spațiu"
       ]
     },
     "Gmail forwarding": {
@@ -7464,11 +7548,42 @@
       "Set up your organization": [
         "Setați organizația"
       ],
-      "Set up your organization testing": [
-        "Configurare testare organizație"
-      ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
         "Folosiți meniul de selectare al aplicațiilor din stânga sus pentru a accesa toate serviciile ${ BRAND_NAME }: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } și ${ DRIVE_SHORT_APP_NAME }."
+      ]
+    },
+    "Online accounts": {
+      "Have an account with one of these services? Just click to change the email address to your ${ MAIL_APP_NAME } address.": [
+        "Aveți un cont cu unul dintre aceste servicii? Doar faceți clic pentru a schimba adresa de e-mail cu adresa ${ MAIL_APP_NAME }."
+      ]
+    },
+    "Online Accounts Name": {
+      "Banking": [
+        "Bancar"
+      ],
+      "Crypto": [
+        "Criptomonede"
+      ],
+      "E-commerce and Retail": [
+        "Comerț electronic și vânzare cu amănuntul"
+      ],
+      "Entertainment": [
+        "Divertisment"
+      ],
+      "Food and beverage": [
+        "Mâncare și băutură"
+      ],
+      "Gaming": [
+        "Jocuri"
+      ],
+      "Most popular": [
+        "Cele mai populare"
+      ],
+      "Travel": [
+        "Turism"
+      ],
+      "Utilities": [
+        "Utilități"
       ]
     },
     "Option": {
@@ -7576,7 +7691,7 @@
         "Nume"
       ],
       "Name or email address": [
-        "Numele de utilizator sau adresa de e-mail"
+        "Nume utilizator / adresa de e-mail"
       ],
       "Password": [
         "Parola"
@@ -8521,6 +8636,70 @@
         "Mesajul a fost trimis"
       ]
     },
+    "summer2023: Billing cycle option": {
+      "1 year": [
+        "Un an"
+      ],
+      "2 years": [
+        "2 ani"
+      ]
+    },
+    "summer2023: Deal details": {
+      "Premium Drive": [
+        "Drive premium"
+      ],
+      "Premium Mail and Calendar": [
+        "Mail Premium și Calendar"
+      ],
+      "Premium Password Manager": [
+        "Gestionare parole premium"
+      ]
+    },
+    "summer2023: Describe Proton Pass": {
+      "Securely store your passwords and autofill them on websites. Includes unlimited passwords, autofill, password generator, and more.": [
+        "Stocați-vă parolele și completați-le automat pe paginile web. Include parole nelimitate, completare automată, generator de parole și multe altele."
+      ]
+    },
+    "summer2023: Short tool name to present Proton Pass": {
+      "Password manager": [
+        "Manager de parole"
+      ]
+    },
+    "summer2023: Tooltip": {
+      "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
+        "Creați detalii de conectare sigure pe toate dispozitivele. Include aliasuri nelimitate, 20 de seifuri, integrare autentificare cu doi factori, autocompletare date card de credit și multe altele."
+      ],
+      "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "Include 2950+ servere în peste 65 de țări, conectați până la 10 dispozitive, accesați servicii de transmisii în flux la nivel mondial, programe malițioase, blocare de reclame și multe altele."
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Include suport pentru un domeniu de e-mail personal, 10 adrese de e-mail, 10 aliasuri hide-my-email, partajare calendar și altele."
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "Protejați-vă fișierele cu stocarea criptată în cloud. Include sincronizare automată, partajare criptată a fișierelor și multe altele."
+      ]
+    },
+    "summer2023:Footer": {
+      "*Your subscription will automatically renew at the standard discounted rate at the end of your billing cycle.": [
+        "* Abonamentul se va reînnoi automat la aceeași sumă la sfârșitul ciclului de facturare."
+      ],
+      "Discounts are based on the standard monthly pricing. This offer is only available to first-time subscribers.": [
+        "Reducerile se bazează pe prețurile lunare standard. Această ofertă este disponibilă doar pentru abonații pentru prima dată."
+      ]
+    },
+    "summer2023:Info": {
+      "For a limited time, get the best ${ BRAND_NAME } has to offer at an exclusive discount.": [
+        "Pentru o perioadă limitată de timp, obțineți cel mai bun ${ BRAND_NAME } disponibil cu o reducere exclusivă."
+      ],
+      "We’re celebrating the nine-year anniversary of our crowdfunding!": [
+        "Sărbătorim aniversarea de nouă ani a finanțării noastre de la public!"
+      ]
+    },
+    "summer2023:Offer title": {
+      "${ BRAND_NAME } Anniversary Sale": [
+        "Reducere aniversară ${ BRAND_NAME }"
+      ]
+    },
     "Table header": {
       "Action": [
         "Acțiune"
@@ -9142,9 +9321,6 @@
       ],
       "Subject missing": [
         "Subiect lipsă"
-      ],
-      "This email is protected": [
-        "Acest mesaj este protejat"
       ],
       "To": [
         "Către"

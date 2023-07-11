@@ -145,6 +145,9 @@
       "Carbon Copy": [
         "抄送"
       ],
+      "Change email": [
+        "更换邮箱"
+      ],
       "Change page": [
         "页面跳转"
       ],
@@ -2942,12 +2945,6 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "您可以选择稍后删除既不想合并也不想保留的联系人，点击合并按钮后他们就会被删除"
-      ],
-      "You can read the message and click on links without being tracked with email tracker protection.": [
-        "开启邮件跟踪防护后再点击邮件中的链接可避免广告跟踪。"
-      ],
-      "You can read the message and click on links without being tracked.": [
-        "您可以安全地点击邮件中的链接，免受广告跟踪。"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4073,9 +4070,6 @@
     "Font face option": {
       "System default": [
         "跟随系统"
-      ],
-      "Theme default": [
-        "跟随配色方案"
       ]
     },
     "Font Size Default": {
@@ -4115,17 +4109,107 @@
       ]
     },
     "Get started checklist instructions": {
+      "${ MAIL_APP_NAME } on App Store": [
+        "App Store 上的${ MAIL_APP_NAME }"
+      ],
+      "${ MAIL_APP_NAME } on Play Store": [
+        "Play Store 上的${ MAIL_APP_NAME }"
+      ],
+      "Block email communications from scammers permanently.": [
+        "永久阻止诈骗者的电子邮件通信。"
+      ],
+      "Block unsavory senders": [
+        "阻止不良发件人"
+      ],
+      "Bravo for making your email even more secure, convenient, and relevant! We've upped your free storage to a total of 1 GB.": [
+        "太棒了，让您的电子邮件变得更加安全、方便和相关！我们已将您的免费存储空间增加到总计 1 GB。"
+      ],
+      "Checklist complete": [
+        "清单已完成"
+      ],
+      "Close": [
+        "关闭"
+      ],
+      "Congratulation, you completed all the steps!": [
+        "恭喜，您已完成所有步骤！"
+      ],
+      "Continue setting up your email": [
+        "继续设置您的电子邮件"
+      ],
+      "Double your free storage to 1 GB when you complete the following:": [
+        "完成以下操作后，您的免费存储空间将翻倍至 1 GB："
+      ],
+      "Encryption so strong, only you and intended recipients can view your emails.": [
+        "加密如此强大，只有您和目标收件人才能查看您的电子邮件。"
+      ],
+      "For your eyes only": [
+        "只为你的眼睛"
+      ],
+      "Get free storage": [
+        "获得免费存储空间"
+      ],
+      "Get mobile app": [
+        "下载移动端应用"
+      ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "下载 ${ MAIL_APP_NAME } 移动应用"
       ],
       "Import contacts or emails": [
         "导入您的通讯录或信息"
       ],
+      "Import data": [
+        "导入数据"
+      ],
       "Import your contacts or messages": [
         "导入您的通讯录或信息"
       ],
+      "Keep using ${ MAIL_APP_NAME } to discover more ways ${ BRAND_NAME } protects your privacy and simplifies emailing.": [
+        "继续使用 ${ MAIL_APP_NAME } 来发现 ${ BRAND_NAME } 保护您的隐私和简化电子邮件发送的更多方法。"
+      ],
+      "Learn more": [
+        "了解更多"
+      ],
+      "Make ${ BRAND_NAME } your go-to inbox": [
+        "将 ${ BRAND_NAME } 设置为您的首选收件箱"
+      ],
+      "Maybe later": [
+        "以后再说"
+      ],
+      "Nice! You've updated all services in this category.": [
+        "好的！您已更新此类别中的所有服务。"
+      ],
+      "Open checklist": [
+        "打开清单"
+      ],
+      "Popular online services": [
+        "热门在线服务"
+      ],
+      "Protect and simplify your email": [
+        "保护并简化您的电子邮件"
+      ],
+      "Protection from trackers": [
+        "防止追踪器"
+      ],
       "Quickly transfer your contacts or emails from any provider using our Easy Switch import assistant.": [
         "通过简单转换助手以快速地将您之前的联系人和电子邮件从任何服务提供商转移"
+      ],
+      "Send a message": [
+        "发送邮件"
+      ],
+      "Set recovery method": [
+        "设置恢复方式"
+      ],
+      "Sign in to the mobile app to complete this step": [
+        "登录移动应用程序以完成此步骤"
+      ],
+      "Using your mobile device, scan this QR code or visit the iOS or Android store.": [
+        "使用您的移动设备扫描此二维码或访问 iOS 或 Android 商店。"
+      ],
+      "We stop advertisers and data collectors from profiling you.": [
+        "我们阻止广告商和数据收集者对您进行分析。"
+      ],
+      "You've unlocked 1 GB": [
+        "您已解锁 1 GB"
       ]
     },
     "Gmail forwarding": {
@@ -7203,6 +7287,16 @@
         "通过左上角的切换按钮可以前往所有 ${ BRAND_NAME } 服务：${ MAIL_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME } 和 ${ DRIVE_SHORT_APP_NAME }。"
       ]
     },
+    "Online accounts": {
+      "Have an account with one of these services? Just click to change the email address to your ${ MAIL_APP_NAME } address.": [
+        "拥有这些服务之一的账户吗？只需点击即可将电子邮件地址更改为您的 ${ MAIL_APP_NAME } 地址。"
+      ]
+    },
+    "Online Accounts Name": {
+      "Banking": [
+        "银行"
+      ]
+    },
     "Option": {
       "Add to existing group": [
         "添加到已有队列"
@@ -8170,6 +8264,70 @@
         "反馈已发送"
       ]
     },
+    "summer2023: Billing cycle option": {
+      "1 year": [
+        "一年"
+      ],
+      "2 years": [
+        "两年"
+      ]
+    },
+    "summer2023: Deal details": {
+      "Premium Drive": [
+        "高级云盘"
+      ],
+      "Premium Mail and Calendar": [
+        "高级邮件和日历"
+      ],
+      "Premium Password Manager": [
+        "高级密码管理器"
+      ]
+    },
+    "summer2023: Describe Proton Pass": {
+      "Securely store your passwords and autofill them on websites. Includes unlimited passwords, autofill, password generator, and more.": [
+        "安全地存储您的密码并在网站上自动填充它们。包括无限密码、自动填充、密码生成器等。"
+      ]
+    },
+    "summer2023: Short tool name to present Proton Pass": {
+      "Password manager": [
+        "密码管理器"
+      ]
+    },
+    "summer2023: Tooltip": {
+      "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
+        "在您的所有设备上创建安全的登录详细信息。包括无限别名、20 个保管库、集成 2FA、信用卡自动填充等。"
+      ],
+      "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "连接全球逾 65 个国家的 2950 + 台服务器，多达 10 台设备同时在线，畅享全球流媒体服务，拦截恶意软件和广告，还有更多功能等您体验。"
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "包括对 1 个自定义电子邮件域、10 个电子邮件地址、10 个hide-my-email别名、日历共享等的支持。"
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "使用加密的云存储保护您的文件。包括版本历史记录、加密文件共享等。"
+      ]
+    },
+    "summer2023:Footer": {
+      "*Your subscription will automatically renew at the standard discounted rate at the end of your billing cycle.": [
+        "*您的订阅将在计费周期结束时以标准折扣费率自动续订。"
+      ],
+      "Discounts are based on the standard monthly pricing. This offer is only available to first-time subscribers.": [
+        "折扣基于标准每月定价。此优惠仅适用于首次订阅者。"
+      ]
+    },
+    "summer2023:Info": {
+      "For a limited time, get the best ${ BRAND_NAME } has to offer at an exclusive discount.": [
+        "在有限的时间内，以独家折扣获得 ${ BRAND_NAME } 的最佳优惠。"
+      ],
+      "We’re celebrating the nine-year anniversary of our crowdfunding!": [
+        "我们正在庆祝众筹九周年！"
+      ]
+    },
+    "summer2023:Offer title": {
+      "${ BRAND_NAME } Anniversary Sale": [
+        "${ BRAND_NAME } 周年纪念促销"
+      ]
+    },
     "Table header": {
       "Action": [
         "操作"
@@ -8761,9 +8919,6 @@
       ],
       "Subject missing": [
         "未填写主题"
-      ],
-      "This email is protected": [
-        "已对此邮件开启防护"
       ],
       "To": [
         "收件人"
