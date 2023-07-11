@@ -19,7 +19,7 @@ import {
     useVPNServersCount,
 } from '@proton/components/hooks';
 import { PaymentMethodStatus } from '@proton/components/payments/core';
-import metrics from '@proton/metrics';
+import metrics, { observeApiError } from '@proton/metrics';
 import { WebCoreSignupBackButtonTotal } from '@proton/metrics/types/web_core_signup_backButton_total_v1.schema';
 import { checkReferrer } from '@proton/shared/lib/api/core/referrals';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
@@ -651,12 +651,13 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
                             ) {
                                 return;
                             }
-
-                            metrics.core_signup_accountStep_accountCreation_total.increment({
-                                account_type: accountType,
-                                status: 'failure',
-                                application: getSignupApplication(APP_NAME),
-                            });
+                            observeApiError(error, (status) =>
+                                metrics.core_signup_accountStep_accountCreation_total.increment({
+                                    account_type: accountType,
+                                    status,
+                                    application: getSignupApplication(APP_NAME),
+                                })
+                            );
                         }
                     }}
                     hasChallenge={!accountData?.payload || !Object.keys(accountData.payload).length}
@@ -726,10 +727,12 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
                             });
                         } catch (error) {
                             handleError(error);
-                            metrics.core_signup_referralStep_planSelection_total.increment({
-                                status: 'failure',
-                                application: getSignupApplication(APP_NAME),
-                            });
+                            observeApiError(error, (status) =>
+                                metrics.core_signup_referralStep_planSelection_total.increment({
+                                    status,
+                                    application: getSignupApplication(APP_NAME),
+                                })
+                            );
                         }
                     }}
                 />
@@ -768,10 +771,12 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
                             });
                         } catch (error) {
                             handleError(error);
-                            metrics.core_signup_upsellStep_planSelection_total.increment({
-                                status: 'failure',
-                                application: getSignupApplication(APP_NAME),
-                            });
+                            observeApiError(error, (status) =>
+                                metrics.core_signup_upsellStep_planSelection_total.increment({
+                                    status,
+                                    application: getSignupApplication(APP_NAME),
+                                })
+                            );
                         }
                     }}
                 />
@@ -814,10 +819,13 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
                             });
                         } catch (error) {
                             handleError(error);
-                            metrics.core_signup_paymentStep_payment_total.increment({
-                                status: 'failure',
-                                application: getSignupApplication(APP_NAME),
-                            });
+
+                            observeApiError(error, (status) =>
+                                metrics.core_signup_paymentStep_payment_total.increment({
+                                    status,
+                                    application: getSignupApplication(APP_NAME),
+                                })
+                            );
                         }
                     }}
                 />
@@ -861,10 +869,12 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
                             handleError(error);
 
                             metrics.startBatchingProcess();
-                            metrics.core_signup_loadingStep_accountSetup_total.increment({
-                                status: 'failure',
-                                application: getSignupApplication(APP_NAME),
-                            });
+                            observeApiError(error, (status) =>
+                                metrics.core_signup_loadingStep_accountSetup_total.increment({
+                                    status,
+                                    application: getSignupApplication(APP_NAME),
+                                })
+                            );
                         }
                     }}
                 />
@@ -898,10 +908,12 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
                             });
                         } catch (error) {
                             handleError(error);
-                            metrics.core_signup_congratulationsStep_displayNameChoice_total.increment({
-                                status: 'failure',
-                                application: getSignupApplication(APP_NAME),
-                            });
+                            observeApiError(error, (status) =>
+                                metrics.core_signup_congratulationsStep_displayNameChoice_total.increment({
+                                    status,
+                                    application: getSignupApplication(APP_NAME),
+                                })
+                            );
                         }
                     }}
                 />
@@ -945,10 +957,12 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
                             }
                         } catch (error) {
                             handleError(error);
-                            metrics.core_signup_recoveryStep_setRecoveryMethod_total.increment({
-                                status: 'failure',
-                                application: getSignupApplication(APP_NAME),
-                            });
+                            observeApiError(error, (status) =>
+                                metrics.core_signup_recoveryStep_setRecoveryMethod_total.increment({
+                                    status,
+                                    application: getSignupApplication(APP_NAME),
+                                })
+                            );
                         }
                     }}
                 />
@@ -975,10 +989,12 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
                             });
                         } catch (error) {
                             handleError(error);
-                            metrics.core_signup_exploreStep_login_total.increment({
-                                status: 'failure',
-                                application: getSignupApplication(APP_NAME),
-                            });
+                            observeApiError(error, (status) =>
+                                metrics.core_signup_exploreStep_login_total.increment({
+                                    status,
+                                    application: getSignupApplication(APP_NAME),
+                                })
+                            );
                         }
                     }}
                 />
