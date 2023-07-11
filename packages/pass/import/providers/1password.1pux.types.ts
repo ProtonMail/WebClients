@@ -23,6 +23,7 @@ export enum OnePassLoginDesignation {
 
 export enum OnePassCategory {
     LOGIN = '001',
+    CREDIT_CARD = '002',
     NOTE = '003',
     PASSWORD = '005',
     OTHER = '006',
@@ -36,21 +37,39 @@ export enum OnePassVaultType {
 
 export enum OnePassFieldValueKey {
     CONCEALED = 'concealed',
+    CREDIT_CARD_NUMBER = 'creditCardNumber',
+    MONTH_YEAR = 'monthYear',
     STRING = 'string',
     TOTP = 'totp',
     URL = 'url',
 }
 
+export type OnePassFieldValue = Record<
+    Exclude<OnePassFieldValueKey, OnePassFieldValueKey.MONTH_YEAR>,
+    Maybe<string>
+> & {
+    [OnePassFieldValueKey.MONTH_YEAR]: Maybe<number>;
+};
+
+export enum OnePassFieldIdCreditCard {
+    CARDHOLDER = 'cardholder',
+    CVV = 'cvv',
+    EXPIRY = 'expiry',
+    NUMBER = 'ccnum',
+    TYPE = 'type',
+    VALID_FROM = 'validFrom',
+}
+
+export type OnePassField = {
+    title: string;
+    id: string | OnePassFieldIdCreditCard;
+    value: OnePassFieldValue;
+};
+
 export type ItemSection = {
     title: string;
     name: string;
-    fields: {
-        title: string;
-        id: string;
-        value: {
-            [key in OnePassFieldValueKey]?: Maybe<string>;
-        };
-    }[];
+    fields: OnePassField[];
 };
 
 export type OnePassItemDetails = {
@@ -70,6 +89,7 @@ export type OnePassLogin = OnePassItemDetails & {
         sections: ItemSection[];
     }[];
 };
+export type OnePassCreditCard = OnePassItemDetails;
 
 export type OnePassBaseItem = {
     uuid: string;
@@ -105,6 +125,10 @@ export type OnePassItem = OnePassBaseItem &
         | {
               categoryUuid: OnePassCategory.PASSWORD;
               details: OnePassPassword;
+          }
+        | {
+              categoryUuid: OnePassCategory.CREDIT_CARD;
+              details: OnePassCreditCard;
           }
     );
 
