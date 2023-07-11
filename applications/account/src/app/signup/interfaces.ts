@@ -3,7 +3,7 @@ import { VerificationModel } from '@proton/components/containers/api/humanVerifi
 import { AddressGeneration, AppIntent, AuthSession } from '@proton/components/containers/login/interface';
 import { SelectedProductPlans } from '@proton/components/containers/payments/subscription/PlanSelection';
 import { PayPalHook } from '@proton/components/containers/payments/usePayPal';
-import { PAYMENT_METHOD_TYPES, PaymentMethod, PaymentMethodStatus } from '@proton/components/payments/core';
+import { PAYMENT_METHOD_TYPES, PaymentMethodStatus, SavedPaymentMethod } from '@proton/components/payments/core';
 import { CardPayment, PaypalPayment, TokenPayment } from '@proton/components/payments/core/interface';
 import { ProductParam } from '@proton/shared/lib/apps/product';
 import { AuthResponse } from '@proton/shared/lib/authentication/interface';
@@ -56,7 +56,7 @@ export interface SessionData {
     keyPassword?: string;
     persistent: boolean;
     trusted: boolean;
-    paymentMethods: PaymentMethod[] | undefined;
+    paymentMethods: SavedPaymentMethod[] | undefined;
     defaultPaymentMethod: PAYMENT_METHOD_TYPES | undefined;
     subscription: Subscription | undefined;
     organization: Organization | undefined;

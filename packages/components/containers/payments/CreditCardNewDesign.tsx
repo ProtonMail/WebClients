@@ -11,7 +11,7 @@ import clsx from '@proton/utils/clsx';
 import { Icon, Label, Option, SelectTwo } from '../../components';
 import { DEFAULT_SEPARATOR, getFullList } from '../../helpers/countries';
 import { useElementRect } from '../../hooks';
-import { CardModel } from '../../payments/core/interface';
+import { CardModel } from '../../payments/core';
 import { formatCreditCardNumber, isValidNumber } from './CardNumberInput';
 import { handleExpOnChange } from './ExpInput';
 import { isPotentiallyCVV } from './cardValidator';
@@ -29,13 +29,14 @@ const WarningIcon = ({ className }: { className?: string }) => {
     );
 };
 
-interface Props {
+export interface Props {
     onChange: (key: keyof CardModel, value: string) => void;
     loading?: boolean;
     card: CardModel;
     errors: Partial<CardModel>;
-    fieldStatus?: CardFieldStatus;
+    fieldsStatus?: CardFieldStatus;
     bigger?: boolean;
+    forceNarrow?: boolean;
 }
 
 /**
@@ -59,7 +60,15 @@ const useAdvancer = (
     }, [currentFieldState, condition]);
 };
 
-const CreditCardNewDesign = ({ card, errors, onChange, loading = false, fieldStatus, bigger = false }: Props) => {
+const CreditCardNewDesign = ({
+    card,
+    errors,
+    onChange,
+    loading = false,
+    fieldsStatus,
+    bigger = false,
+    forceNarrow = false,
+}: Props) => {
     const narrowNumberRef = useRef<HTMLInputElement>(null);
     const narrowExpRef = useRef<HTMLInputElement>(null);
     const narrowCvcRef = useRef<HTMLInputElement>(null);
@@ -70,13 +79,13 @@ const CreditCardNewDesign = ({ card, errors, onChange, loading = false, fieldSta
 
     const zipRef = useRef<HTMLInputElement>(null);
 
-    useAdvancer(narrowNumberRef, narrowExpRef, card.number, fieldStatus?.number ?? false);
-    useAdvancer(narrowExpRef, narrowCvcRef, card.month, fieldStatus?.month ?? false);
-    useAdvancer(narrowCvcRef, zipRef, card.cvc, fieldStatus?.cvc ?? false);
+    useAdvancer(narrowNumberRef, narrowExpRef, card.number, fieldsStatus?.number ?? false);
+    useAdvancer(narrowExpRef, narrowCvcRef, card.month, fieldsStatus?.month ?? false);
+    useAdvancer(narrowCvcRef, zipRef, card.cvc, fieldsStatus?.cvc ?? false);
 
-    useAdvancer(wideNumberRef, wideExpRef, card.number, fieldStatus?.number ?? false);
-    useAdvancer(wideExpRef, wideCvcRef, card.month, fieldStatus?.month ?? false);
-    useAdvancer(wideCvcRef, zipRef, card.cvc, fieldStatus?.cvc ?? false);
+    useAdvancer(wideNumberRef, wideExpRef, card.number, fieldsStatus?.number ?? false);
+    useAdvancer(wideExpRef, wideCvcRef, card.month, fieldsStatus?.month ?? false);
+    useAdvancer(wideCvcRef, zipRef, card.cvc, fieldsStatus?.cvc ?? false);
 
     const formContainer = useRef<HTMLDivElement>(null);
     const formRect = useElementRect(formContainer, requestAnimationFrameRateLimiter);
@@ -140,7 +149,7 @@ const CreditCardNewDesign = ({ card, errors, onChange, loading = false, fieldSta
 
     // 25 x 16 = we want eq 400px width to trigger the adaptation being zoom-friendly
     const narrowWidth = rootFontSize() * 25;
-    const isNarrow = formRect ? formRect.width < narrowWidth : false;
+    const isNarrow = forceNarrow || (formRect ? formRect.width < narrowWidth : false);
 
     let error = null;
     if (errors.number) {
@@ -304,7 +313,15 @@ const CreditCardNewDesign = ({ card, errors, onChange, loading = false, fieldSta
     }
 
     return (
-        <div ref={formContainer} className={clsx(['field-two-container', bigger && 'field-two--bigger'])}>
+        <div
+            ref={formContainer}
+            data-testid="credit-card-form-container"
+            className={clsx([
+                'field-two-container',
+                bigger && 'field-two--bigger',
+                isNarrow && 'credit-card-form--narrow',
+            ])}
+        >
             {creditCardForm}
             <div className="error-container mt-1 text-semibold text-sm flex gap-2">
                 {error && (

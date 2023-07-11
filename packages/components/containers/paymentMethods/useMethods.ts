@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import { PaymentMethod, PaymentMethodStatus } from '@proton/components/payments/core';
+import { PaymentMethodStatus, SavedPaymentMethod } from '@proton/components/payments/core';
 import { queryPaymentMethodStatus, queryPaymentMethods } from '@proton/shared/lib/api/payments';
 import { Api } from '@proton/shared/lib/interfaces';
 
@@ -8,8 +8,8 @@ import { useLoading } from '../../hooks';
 import { getPaymentMethodOptions } from './getPaymentMethodOptions';
 import { PaymentMethodFlows } from './interface';
 
-async function getPaymentMethods(api: Api): Promise<PaymentMethod[]> {
-    const response = await api<{ PaymentMethods: PaymentMethod[] }>(queryPaymentMethods());
+async function getPaymentMethods(api: Api): Promise<SavedPaymentMethod[]> {
+    const response = await api<{ PaymentMethods: SavedPaymentMethod[] }>(queryPaymentMethods());
     return response.PaymentMethods ?? [];
 }
 
@@ -23,7 +23,7 @@ interface Props {
     coupon: string;
     flow: PaymentMethodFlows;
     paymentMethodStatus?: PaymentMethodStatus;
-    paymentMethods?: PaymentMethod[];
+    paymentMethods?: SavedPaymentMethod[];
     isAuthenticated: boolean;
 }
 
@@ -37,7 +37,7 @@ const useMethods = ({
     isAuthenticated,
 }: Props) => {
     const [result, setResult] = useState<{
-        paymentMethods: PaymentMethod[];
+        paymentMethods: SavedPaymentMethod[];
         paymentMethodsStatus: Partial<PaymentMethodStatus>;
     }>({
         paymentMethods: maybePaymentMethods || [],

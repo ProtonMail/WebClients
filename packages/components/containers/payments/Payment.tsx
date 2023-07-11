@@ -2,11 +2,12 @@ import { ReactNode, Ref, useEffect } from 'react';
 
 import { c } from 'ttag';
 
+import { ViewPaymentMethod } from '@proton/components/payments/client-extensions';
 import {
     PAYMENT_METHOD_TYPES,
-    PaymentMethod,
     PaymentMethodStatus,
     PaymentMethodType,
+    SavedPaymentMethod,
 } from '@proton/components/payments/core';
 import { DEFAULT_CURRENCY, MIN_CREDIT_AMOUNT, MIN_DONATION_AMOUNT } from '@proton/shared/lib/constants';
 import { Api, Currency } from '@proton/shared/lib/interfaces';
@@ -14,11 +15,11 @@ import clsx from '@proton/utils/clsx';
 
 import { Alert, Loader, Price } from '../../components';
 import { useAuthentication, useLoading } from '../../hooks';
-import { CardModel } from '../../payments/core/interface';
+import { CardModel } from '../../payments/core';
 import { useMethods } from '../paymentMethods';
 import PaymentMethodDetails from '../paymentMethods/PaymentMethodDetails';
 import PaymentMethodSelector from '../paymentMethods/PaymentMethodSelector';
-import { PaymentMethodFlows } from '../paymentMethods/interface';
+import { PaymentMethodData, PaymentMethodFlows } from '../paymentMethods/interface';
 import Alert3DS from './Alert3ds';
 import Bitcoin, { ValidatedBitcoinToken } from './Bitcoin';
 import BitcoinInfoMessage from './BitcoinInfoMessage';
@@ -29,7 +30,7 @@ import PayPalInfoMessage from './PayPalInfoMessage';
 import PayPalView from './PayPalView';
 import { CardFieldStatus } from './useCard';
 
-interface Props {
+export interface Props {
     api: Api;
     children?: ReactNode;
     type: PaymentMethodFlows;
@@ -45,7 +46,7 @@ interface Props {
     cardErrors: Partial<CardModel>;
     noMaxWidth?: boolean;
     paymentMethodStatus?: PaymentMethodStatus;
-    paymentMethods?: PaymentMethod[];
+    paymentMethods?: SavedPaymentMethod[];
     creditCardTopRef?: Ref<HTMLDivElement>;
     disabled?: boolean;
     cardFieldStatus?: CardFieldStatus;
@@ -54,17 +55,24 @@ interface Props {
     isAuthenticated?: boolean;
 }
 
-const Payment = ({
-    api,
+export interface NoApiProps extends Props {
+    lastUsedMethod?: PaymentMethodData | ViewPaymentMethod;
+    allMethods: PaymentMethodData[];
+    isAuthenticated: boolean;
+    loading: boolean;
+    customPaymentMethod?: SavedPaymentMethod;
+    currency: Currency;
+    amount: number;
+    onPaypalCreditClick?: () => void;
+}
+
+export const PaymentsNoApi = ({
     children,
     type,
-    amount = 0,
-    currency = DEFAULT_CURRENCY,
-    coupon = '',
+    amount,
+    currency,
     paypal,
     paypalCredit,
-    paymentMethodStatus: maybePaymentMethodStatus,
-    paymentMethods: maybePaymentMethods,
     method,
     onMethod,
     card,
@@ -76,24 +84,14 @@ const Payment = ({
     disabled,
     paypalPrefetchToken,
     onBitcoinTokenValidated,
-    isAuthenticated: maybeIsAuthenticated,
-}: Props) => {
-    const { UID } = useAuthentication();
-    const isAuthenticated = !!UID || !!maybeIsAuthenticated;
-
-    const { paymentMethods, options, loading } = useMethods({
-        api,
-        amount,
-        paymentMethodStatus: maybePaymentMethodStatus,
-        paymentMethods: maybePaymentMethods,
-        coupon,
-        flow: type,
-        isAuthenticated,
-    });
-    const lastUsedMethod = options.usedMethods[options.usedMethods.length - 1];
-
-    const allMethods = [...options.usedMethods, ...options.methods];
-
+    lastUsedMethod,
+    allMethods,
+    isAuthenticated,
+    loading,
+    customPaymentMethod,
+    api,
+    onPaypalCreditClick,
+}: NoApiProps) => {
     const [handlingBitcoinPayment, withHandlingBitcoinPayment] = useLoading();
 
     useEffect(() => {
@@ -145,8 +143,6 @@ const Payment = ({
         return <Loader />;
     }
 
-    const customPaymentMethod = paymentMethods.find(({ ID }) => method === ID);
-
     const isSignupPass = type === 'signup-pass';
     const isSignup = type === 'signup' || type === 'signup-pass';
 
@@ -177,7 +173,7 @@ const Payment = ({
                                     card={card}
                                     errors={cardErrors}
                                     onChange={onCard}
-                                    fieldStatus={cardFieldStatus}
+                                    fieldsStatus={cardFieldStatus}
                                 />
                             ) : (
                                 <CreditCard card={card} errors={cardErrors} onChange={onCard} />
@@ -222,6 +218,7 @@ const Payment = ({
                             type={type}
                             disabled={disabled}
                             prefetchToken={paypalPrefetchToken}
+                            onClick={onPaypalCreditClick}
                         />
                     )}
                     {method === PAYMENT_METHOD_TYPES.PAYPAL && isSignupPass && <PayPalInfoMessage />}
@@ -244,6 +241,40 @@ const Payment = ({
                     .t`Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.`}</Alert>
             ) : null}
         </>
+    );
+};
+
+const Payment = (props: Props) => {
+    const { UID } = useAuthentication();
+    const isAuthenticated = !!UID || !!props.isAuthenticated;
+
+    const { paymentMethods, options, loading } = useMethods({
+        api: props.api,
+        amount: props.amount ?? 0,
+        paymentMethodStatus: props.paymentMethodStatus,
+        paymentMethods: props.paymentMethods,
+        coupon: props.coupon ?? '',
+        flow: props.type,
+        isAuthenticated,
+    });
+    const lastUsedMethod = options.usedMethods[options.usedMethods.length - 1];
+
+    const allMethods = [...options.usedMethods, ...options.methods];
+
+    const customPaymentMethod = paymentMethods.find(({ ID }) => props.method === ID);
+
+    return (
+        <PaymentsNoApi
+            {...props}
+            paymentMethods={paymentMethods}
+            lastUsedMethod={lastUsedMethod}
+            allMethods={allMethods}
+            loading={loading}
+            isAuthenticated={isAuthenticated}
+            currency={props.currency ?? DEFAULT_CURRENCY}
+            amount={props.amount ?? 0}
+            customPaymentMethod={customPaymentMethod}
+        />
     );
 };
 
