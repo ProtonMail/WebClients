@@ -2259,7 +2259,7 @@
         "Il nome della cartella non può essere vuoto."
       ],
       "Image upload failed": [
-        "Caricamento dell'immagine fallito"
+        "Caricamento dell'immagine non riuscito"
       ],
       "IMAP server is required": [
         "È richiesto il server IMAP"
@@ -2387,7 +2387,7 @@
         "Firma non verificata"
       ],
       "Signature verification failed": [
-        "Verifica della firma fallita"
+        "Verifica della firma non riuscita"
       ],
       "Some contacts could not be deleted": [
         "Alcuni contatti non possono essere eliminati"
@@ -2538,7 +2538,7 @@
     },
     "Error importing contact": {
       "Encryption failed": [
-        "Criptaggio fallito"
+        "Crittografia non riuscita"
       ],
       "vCard versions < 3.0 not supported": [
         "versioni di vCard < 3.0 non supportate"
@@ -2590,7 +2590,7 @@
         "Elemento"
       ],
       "Encryption failed": [
-        "Crittografia fallita"
+        "Crittografia non riuscita"
       ],
       "End time out of bounds": [
         "Ora di fine fuori dai limiti"
@@ -2599,7 +2599,7 @@
         "Evento"
       ],
       "Event validation failed": [
-        "Convalida dell'evento fallita"
+        "Convalida dell'evento non riuscita"
       ],
       "Floating times not supported": [
         "Tempi mobili non supportati"
@@ -3004,9 +3004,6 @@
     "Font face option": {
       "System default": [
         "Predefinito di sistema"
-      ],
-      "Theme default": [
-        "Tema predefinito"
       ]
     },
     "Font size option": {
@@ -3802,6 +3799,9 @@
       ],
       "Some of your answers to occurrences previously updated by the organizer will be lost.": [
         "Alcune delle risposte alle occorrenze precedentemente aggiornate dall'organizzatore andranno perse."
+      ],
+      "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
+        "Termine dell'abbonamento: riattivalo entro ${ byDate } per mantenere i vantaggi del tuo piano${ planName }${ reactivateLink }"
       ],
       "support team": [
         "team di supporto"
@@ -5079,9 +5079,6 @@
       "Set up your organization": [
         "Configura la tua organizzazione"
       ],
-      "Set up your organization testing": [
-        "Configura la tua organizzazione"
-      ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
         "Utilizza il raccoglitore delle app in alto a sinistra per accedere a tutti i servizi ${ BRAND_NAME }: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } e ${ DRIVE_SHORT_APP_NAME }."
       ]
@@ -5853,6 +5850,11 @@
     "summer2023: Describe Proton Pass": {
       "Securely store your passwords and autofill them on websites. Includes unlimited passwords, autofill, password generator, and more.": [
         "Memorizza in modo sicuro le tue password e inseriscile automaticamente nei siti web. Sono incluse password illimitate, generatore di password e altro ancora."
+      ]
+    },
+    "summer2023: Short tool name to present Proton Pass": {
+      "Password manager": [
+        "Password manager"
       ]
     },
     "summer2023: Tooltip": {
