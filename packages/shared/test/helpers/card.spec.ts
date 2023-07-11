@@ -1,12 +1,11 @@
-import { CardDetails } from '@proton/components/payments/core';
-import { isExpired } from '@proton/shared/lib/helpers/card';
+import { SavedCardDetails, isExpired } from '@proton/components/payments/core';
 
 describe('card helpers', () => {
     it('should return false if card not expired', () => {
         const currentYear = new Date().getFullYear();
         const ExpYear = '' + (currentYear + 10);
 
-        const cardDetails: CardDetails = {
+        const cardDetails: SavedCardDetails = {
             Name: 'Arthur Morgan',
             ExpMonth: '01',
             ExpYear,
@@ -23,7 +22,7 @@ describe('card helpers', () => {
         const currentYear = new Date().getFullYear();
         const ExpYear = '' + (currentYear - 1);
 
-        const cardDetails: CardDetails = {
+        const cardDetails: SavedCardDetails = {
             Name: 'Arthur Morgan',
             ExpMonth: '01',
             ExpYear,
