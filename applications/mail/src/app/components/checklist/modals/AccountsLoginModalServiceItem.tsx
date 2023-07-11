@@ -52,15 +52,17 @@ const AccountsLoginModalServiceItem = ({ service, onServiceDone, isServiceDone }
                     )}
                     style={{ '--w-custom': isNarrow ? '2.25rem' : '3rem', '--h-custom': isNarrow ? '2.25rem' : '3rem' }}
                 >
-                    <img
-                        alt=""
-                        src={service.img}
-                        className="w-custom h-custom"
-                        style={{
-                            '--w-custom': isNarrow ? '1.5rem' : '2rem',
-                            '--h-custom': isNarrow ? '1.5rem' : '2rem',
-                        }}
-                    />
+                    <div className="p-0.5 rounded" style={{ backgroundColor: '#fff' }}>
+                        <img
+                            alt=""
+                            src={service.img}
+                            className="w-custom h-custom"
+                            style={{
+                                '--w-custom': isNarrow ? '1.5rem' : '2rem',
+                                '--h-custom': isNarrow ? '1.5rem' : '2rem',
+                            }}
+                        />
+                    </div>
                 </div>
                 <div className={clsx(isNarrow && 'flex flex-column gap-2')}>
                     {service.name}
