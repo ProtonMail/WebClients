@@ -4429,9 +4429,6 @@
     "Font face option": {
       "System default": [
         "Системна"
-      ],
-      "Theme default": [
-        "Стандартна тема"
       ]
     },
     "Font Size Default": {
@@ -4468,6 +4465,44 @@
       ],
       "(during your first month)": [
         "(упродовж першого місяця)"
+      ]
+    },
+    "Get started checklist instructions": {
+      "${ MAIL_APP_NAME } app": [
+        "Застосунок ${ MAIL_APP_NAME }"
+      ],
+      "account logins": [
+        "облікові записи"
+      ],
+      "Auto-forward Gmail": [
+        "Автопересилання Gmail"
+      ],
+      "auto-forwarding": [
+        "автопересилання"
+      ],
+      "Change ${ strongText } to your ${ BRAND_NAME } address": [
+        "Змініть ${ strongText } на адресу ${ BRAND_NAME }"
+      ],
+      "Discover how our ${ strongText } protect you": [
+        "Дізнайтеся, як наш ${ strongText } захищає вас"
+      ],
+      "Discover privacy features": [
+        "Відкрийте для себе функції приватності"
+      ],
+      "Get the ${ strongText } on Android or iOS": [
+        "Отримайте ${ strongText } на Android або iOS"
+      ],
+      "Get the App": [
+        "Отримати застосунок"
+      ],
+      "privacy features": [
+        "функції приватності"
+      ],
+      "Set up ${ strongText } from Gmail": [
+        "Налаштуйте ${ strongText } із Gmail"
+      ],
+      "Update your logins": [
+        "Оновіть свої логіни"
       ]
     },
     "Gmail forwarding": {
@@ -7002,6 +7037,9 @@
       ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Для користування ${ MAIL_APP_NAME } і ${ CALENDAR_APP_NAME } потрібна адреса ${ BRAND_NAME }"
+      ],
+      "You will NOT be able to decrypt any messages, files, and other data encrypted with this key. All data signed with this key will no longer be verified by ${ BRAND_NAME } applications.": [
+        "Ви НЕ зможете розшифрувати будь-які повідомлення, файли та інші дані, зашифровані цим ключем. Всі дані, підписані цим ключем, більше не будуть перевірятися застосунками ${ BRAND_NAME }."
       ],
       "You will receive priority support from specialists trained in account protection. For any account security concerns, please ${ hereLink }.": [
         "Ви отримаєте першочергову підтримку від спеціалістів, які пройшли навчання захисту облікових записів. З питань безпеки облікового запису, будь ласка, ${ hereLink }."
@@ -9678,6 +9716,9 @@
         "Створіть максимум ${ n } календарів або додайте календарі друзів, рідних, колег та організацій",
         "Створіть максимум ${ n } календарів або додайте календарі друзів, рідних, колег та організацій"
       ],
+      "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
+        "Створіть до ${ n } адрес електронної пошти/псевдонімів, які можна призначити членам сім'ї. Використовуйте їх для ідентифікації в Інтернеті, наприклад, JohnShopper@${ domain } для облікових записів покупок."
+      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Захист від загроз приватності VPN завдяки спрямуванню інтернет-трафіку через кілька серверів"
       ],
@@ -10285,6 +10326,267 @@
     "Participant name": {
       "You": [
         "Ви"
+      ]
+    },
+    "pass_signup_2023: Action": {
+      "Check out ${ appName } features": [
+        "Перегляньте функції ${ appName }"
+      ],
+      "Continue": [
+        "Продовжити"
+      ],
+      "Continue to ${ free }": [
+        "Продовжити з ${ free }"
+      ],
+      "Continue with Bitcoin": [
+        "Продовжити з Bitcoin"
+      ],
+      "create a new account": [
+        "створити новий обліковий запис"
+      ],
+      "Create another account instead": [
+        "Створити інший обліковий запис"
+      ],
+      "Download again ${ size }": [
+        "Завантажити знову ${ size }"
+      ],
+      "Download to continue ${ size }": [
+        "Завантажте для продовження ${ size }"
+      ],
+      "Keep this plan and use ${ appName }": [
+        "Збережіть цей план і використовуйте ${ appName }"
+      ],
+      "Or ${ createANewAccount }": [
+        "Або ${ createANewAccount }"
+      ],
+      "Start using ${ appName }": [
+        "Почати використовувати ${ appName }"
+      ],
+      "Start using ${ appName } now": [
+        "Почніть використовувати ${ appName } зараз"
+      ],
+      "Upgrade for only ${ relativePrice } extra per month": [
+        "Поліпшіть тарифний план лише за ${ relativePrice } на місяць"
+      ],
+      "Upgrade my plan": [
+        "Поліпшити тарифний план"
+      ],
+      "Use ${ free } instead": [
+        "Натомість використовувати ${ free }"
+      ]
+    },
+    "pass_signup_2023: Feature": {
+      "End-to-end encrypted": [
+        "Наскрізно зашифровано"
+      ],
+      "Open source": [
+        "Відкритий програмний код"
+      ],
+      "Protected by Swiss privacy laws": [
+        "Захищено швейцарськими законами про приватність"
+      ],
+      "Swiss based": [
+        "Розташовано у Швейцарії"
+      ]
+    },
+    "pass_signup_2023: Header": {
+      "Checkout": [
+        "Оплата"
+      ],
+      "Continue with your ${ BRAND_NAME } account": [
+        "Продовжити з вашим обліковим записом ${ BRAND_NAME }"
+      ],
+      "Limited time offer": [
+        "Пропозиція обмежена"
+      ],
+      "Recommended": [
+        "Рекомендовано"
+      ],
+      "Select your plan": [
+        "Оберіть тарифний план"
+      ],
+      "Upgrade your plan": [
+        "Поліпшити тарифний план"
+      ]
+    },
+    "pass_signup_2023: Info": {
+      "${ PASS_APP_NAME } benefits": [
+        "Переваги ${ PASS_APP_NAME }"
+      ],
+      "${ PASS_APP_NAME } is available as a browser extension on Firefox Add-ons.": [
+        "${ PASS_APP_NAME } доступний у вигляді розширення для браузера в Додатках Firefox."
+      ],
+      "${ PASS_APP_NAME } is available as a browser extension on the Chrome Web Store.": [
+        "${ PASS_APP_NAME } доступний як розширення для браузера в вебмагазині Chrome."
+      ],
+      "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption.": [
+        "${ PASS_APP_NAME } зберігає ваші паролі та особисті дані в безпеці завдяки суворому наскрізному шифруванню."
+      ],
+      "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption. To add premium features of ${ PASS_APP_NAME_2 } to your current subscription, we suggest upgrading to the ${ upsellPlanName } plan.": [
+        "${ PASS_APP_NAME } зберігає ваші паролі та особисті дані в безпеці завдяки суворому наскрізному шифруванню. Щоб додати преміум функції ${ PASS_APP_NAME_2 } до поточної підписки, радимо перейти на тарифний план ${ upsellPlanName }."
+      ],
+      "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption. Your current plan already gives you access to premium ${ PASS_APP_NAME_2 } features — no need to purchase again.": [
+        "${ PASS_APP_NAME } зберігає ваші паролі та особисті дані в безпеці завдяки суворому наскрізному шифруванню. Ваш поточний тарифний план вже надає вам доступ до преміум функцій ${ PASS_APP_NAME_2 } — не потрібно купувати знову."
+      ],
+      "+ ${ relativePrice } per month": [
+        "+ ${ relativePrice } на місяць"
+      ],
+      "All premium ${ BRAND_NAME } services.": [
+        "Всі преміум сервіси ${ BRAND_NAME }."
+      ],
+      "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
+        "Але ви можете розблокувати **${ unlockPlanTitle }** та всі преміум сервіси ${ BRAND_NAME }, перейшовши на **${ upsellPlanTitle }** — це лише додатково ${ relativePrice } на місяць."
+      ],
+      "By continuing, you agree to our ${ termsAndConditions }": [
+        "Продовжуючи, ви погоджуєтеся з нашими ${ termsAndConditions }"
+      ],
+      "Creating your account": [
+        "Створення облікового запису"
+      ],
+      "Discover ${ PASS_APP_NAME },${ br }our new encrypted password manager": [
+        "Відкрийте для себе ${ PASS_APP_NAME }, ${ br } наш новий зашифрований менеджер паролів"
+      ],
+      "Download and install the relevant apps and extensions to start using ${ PASS_APP_NAME }": [
+        "Завантажте та встановіть відповідні застосунки та розширення, щоб почати використовувати ${ PASS_APP_NAME }"
+      ],
+      "Download the ${ PASS_APP_NAME } app from Google Play and install it to start using ${ PASS_APP_NAME2 } on your phone.": [
+        "Завантажте застосунок ${ PASS_APP_NAME } з Google Play і встановіть його, щоб почати використовувати ${ PASS_APP_NAME2 } на своєму телефоні."
+      ],
+      "Download the ${ PASS_APP_NAME } app from the App Store and install it to start using ${ PASS_APP_NAME2 } on your phone.": [
+        "Завантажте застосунок ${ PASS_APP_NAME } з App Store та встановіть його, щоб почати використовувати ${ PASS_APP_NAME2 } на своєму телефоні."
+      ],
+      "Encrypted password manager${ breakToken }that also protects your identity": [
+        "Зашифрований менеджер паролів ${ breakToken }, який також захищає ваші особисті дані"
+      ],
+      "End-to-end encrypted notes": [
+        "Нотатки з наскрізним шифруванням"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
+        "Лише за **${ relativePrice } на місяць** ви отримуєте доступ до всіх преміум сервісів ${ BRAND_NAME }!"
+      ],
+      "Free forever": [
+        "Безплатно назавжди"
+      ],
+      "Get ${ appName } for ${ browserName }": [
+        "Отримайте ${ appName } для ${ browserName }"
+      ],
+      "Get ${ appName } for ${ browserName } soon": [
+        "Незабаром отримайте ${ appName } для ${ browserName }"
+      ],
+      "Hide-my-email aliases protect your email from data breaches": [
+        "Псевдоніми Hide-my-email захищають вашу електронну пошту від витоку даних"
+      ],
+      "If you get locked out of your ${ BRAND_NAME } Account, your **recovery kit** will allow you to sign in and recover your data.": [
+        "Якщо ваш обліковий запис ${ BRAND_NAME } буде заблоковано, ваш ** комплект для відновлення ** дозволить вам увійти в обліковий запис і відновити свої дані."
+      ],
+      "Includes basic ${ appName } features:": [
+        "Включає основні функції ${ appName }:"
+      ],
+      "Install ${ PASS_APP_NAME }": [
+        "Встановити ${ PASS_APP_NAME }"
+      ],
+      "Install app": [
+        "Встановіть застосунок,"
+      ],
+      "Install app and extension": [
+        "Встановити застосунок і розширення"
+      ],
+      "It’s the only way to fully restore your account, so make sure you keep this **recovery kit** somewhere safe.": [
+        "Це єдиний спосіб повністю відновити свій обліковий запис, тому переконайтеся, що ви зберігаєте цей ** комплект відновлення ** десь у безпеці."
+      ],
+      "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
+        "Приєднуйтеся до понад 100 мільйонів людей, які вибрали ${ BRAND_NAME }, щоб залишатися в безпеці в Інтернеті"
+      ],
+      "Launching ${ PASS_APP_NAME }": [
+        "Запуск ${ PASS_APP_NAME }"
+      ],
+      "One easy subscription.": [
+        "Одна проста підписка."
+      ],
+      "Open-source and audited": [
+        "Відкритий вихідний код та аудит"
+      ],
+      "per month, billed annually": [
+        "на місяць, виставляється щорічно"
+      ],
+      "per month, billed every 15 months": [
+        "на місяць, рахунок виставляється кожні 15 місяців"
+      ],
+      "per month, billed every 30 months": [
+        "на місяць, рахунок виставляється кожні 30 місяців"
+      ],
+      "per month, billed every month": [
+        "на місяць, рахунок виставляється щомісяця"
+      ],
+      "per month, billed every two years": [
+        "на місяць, виставляється рахунок кожні два роки"
+      ],
+      "Preparing your Recovery Kit": [
+        "Підготовка комплекту відновлення"
+      ],
+      "Protected by Swiss privacy laws": [
+        "Захищені швейцарськими законами про приватність"
+      ],
+      "Save your recovery kit to continue": [
+        "Збережіть комплект для відновлення, щоб продовжити"
+      ],
+      "Signing in to ${ PASS_APP_NAME }": [
+        "Вхід у ${ PASS_APP_NAME }"
+      ],
+      "Special launch offer: Get ${ title } for ${ price } forever!": [
+        "Спеціальна пропозиція запуску: отримайте ${ title } за ${ price } назавжди!"
+      ],
+      "The offer you selected is not available for ${ currentPlanTitle } subscribers.": [
+        "Вибрана пропозиція недоступна для ${ currentPlanTitle } підписників."
+      ],
+      "to start using ${ PASS_APP_NAME } on your phone": [
+        "щоб почати використовувати ${ PASS_APP_NAME } на телефоні"
+      ],
+      "Unlock ${ PASS_APP_NAME } premium features by upgrading": [
+        "Розблокуйте преміум функції ${ PASS_APP_NAME }, поліпшивши підписку"
+      ],
+      "Updating your account": [
+        "Оновлення облікового запису"
+      ],
+      "Verifying your payment": [
+        "Перевірка оплати"
+      ],
+      "Welcome to ${ plan }": [
+        "Вітаємо у ${ plan }"
+      ],
+      "Works on all devices": [
+        "Працює на всіх пристроях"
+      ],
+      "You already have access to premium ${ appName } features — no need to purchase again.": [
+        "Ви вже маєте доступ до преміум функцій ${ appName } — не потрібно купувати знову."
+      ],
+      "You currently have": [
+        "Наразі у вас є"
+      ],
+      "Your organization has access to ${ free }. If you want to access premium ${ appName } features, please ask your organization's administrator to upgrade.": [
+        "Ваша організація має доступ до ${ free }. Якщо ви хочете отримати доступ до преміум функцій ${ appName }, попросіть адміністратора вашої організації поліпшити підписку."
+      ]
+    },
+    "pass_signup_2023: Onboarding": {
+      "Welcome to ${ PASS_APP_NAME }": [
+        "Вітаємо у ${ PASS_APP_NAME }"
+      ]
+    },
+    "pass_signup_2023: Title": {
+      "${ upsellPlanTitle } plan": [
+        "Тарифний план ${ upsellPlanTitle }"
+      ],
+      "All ${ BRAND_NAME } Plus services.${ br }One easy subscription.": [
+        "Всі сервіси ${ BRAND_NAME } Plus. ${ br } Одна проста підписка."
+      ],
+      "Create your ${ BRAND_NAME } account": [
+        "Створити обліковий запис ${ BRAND_NAME }"
+      ],
+      "Request your organization administrator to upgrade": [
+        "Попросіть адміністратора вашої організації змінити вашу підписку"
+      ],
+      "Secure your account": [
+        "Захистіть свій обліковий запис"
       ]
     },
     "Payment method option": {
@@ -10996,7 +11298,7 @@
         "Доступ звідусіль до стримінгових сервісів, включно з Netflix, Disney+ та Prime Video."
       ],
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
-        "Всі найкращі можливості наших преміум функцій: 100 адрес пошти, підтримка 10 власних доменів, необмежена кількість псевдонімів Hide-my-email, спільний доступ до календаря, зашифроване хмарне сховище, спільний доступ до файлів і багато іншого."
+        "Усі найкращі можливості наших преміумфункцій: 100 адрес пошти, підтримка 10 власних доменів, необмежена кількість псевдонімів Hide-my-email, спільний доступ до календаря, зашифроване хмарне сховище, спільний доступ до файлів і багато іншого."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Включає підтримку 1 власного домену, 10 адрес пошти, 10 псевдонімів Hide-my-email, спільний доступ до календаря та інші можливості."
@@ -11489,6 +11791,70 @@
     "Summary of errors during export calendar": {
       "Details about events that couldn't be exported": [
         "Подробиці про події, які не вдалося експортувати"
+      ]
+    },
+    "summer2023: Billing cycle option": {
+      "1 year": [
+        "1 рік"
+      ],
+      "2 years": [
+        "2 роки"
+      ]
+    },
+    "summer2023: Deal details": {
+      "Premium Drive": [
+        "Premium Drive"
+      ],
+      "Premium Mail and Calendar": [
+        "Premium Mail і Calendar"
+      ],
+      "Premium Password Manager": [
+        "Premium Менеджер паролів"
+      ]
+    },
+    "summer2023: Describe Proton Pass": {
+      "Securely store your passwords and autofill them on websites. Includes unlimited passwords, autofill, password generator, and more.": [
+        "Надійно зберігайте свої паролі та автоматично заповнюйте їх на вебсайтах. Включає необмежену кількість паролів, автозаповнення, генератор паролів тощо."
+      ]
+    },
+    "summer2023: Short tool name to present Proton Pass": {
+      "Password manager": [
+        "Менеджер паролів"
+      ]
+    },
+    "summer2023: Tooltip": {
+      "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
+        "Створюйте захищені дані для входу на всіх своїх пристроях. Включає необмежену кількість псевдонімів, 20 сховищ, інтегровану 2FA, автоматичне заповнення кредитної картки тощо."
+      ],
+      "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "Включає понад 2950 серверів у 65 країнах, підключення до 10 пристроїв, доступ до стримінгових сервісів у всьому світі, шкідливого програмного забезпечення та блокування реклами тощо."
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Включає підтримку 1 власного домену електронної пошти, 10 адрес електронної пошти, 10 псевдонімів hide-my-email, спільний доступ до календаря тощо."
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "Захистіть свої файли за допомогою зашифрованого хмарного сховища. Включає історію версій, спільний доступ до зашифрованих файлів тощо."
+      ]
+    },
+    "summer2023:Footer": {
+      "*Your subscription will automatically renew at the standard discounted rate at the end of your billing cycle.": [
+        "*Ваша підписка буде автоматично поновлюватися за стандартною зниженою ставкою в кінці вашого розрахункового циклу."
+      ],
+      "Discounts are based on the standard monthly pricing. This offer is only available to first-time subscribers.": [
+        "Знижки розраховуються на основі стандартної місячної ціни. Ця пропозиція доступна лише тим, хто підписався вперше."
+      ]
+    },
+    "summer2023:Info": {
+      "For a limited time, get the best ${ BRAND_NAME } has to offer at an exclusive discount.": [
+        "Протягом обмеженого часу отримуйте найліпші пропозиції від ${ BRAND_NAME } з ексклюзивною знижкою."
+      ],
+      "We’re celebrating the nine-year anniversary of our crowdfunding!": [
+        "Ми святкуємо дев'ятирічну річницю нашого краудфандингу!"
+      ]
+    },
+    "summer2023:Offer title": {
+      "${ BRAND_NAME } Anniversary Sale": [
+        "${ BRAND_NAME } Святковий розпродаж"
       ]
     },
     "Tab in domain modal": {

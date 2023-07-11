@@ -47,6 +47,9 @@
       "activate": [
         "aktivér"
       ],
+      "Activate ${ Name }@pm.me": [
+        "Aktivér ${ Name }@pm.me"
+      ],
       "Activate ${ user.Name }@pm.me": [
         "Aktiver ${ user.Name }@pm.me"
       ],
@@ -64,6 +67,12 @@
       ],
       "Add address": [
         "Tilføj adresse"
+      ],
+      "Add address or domain": [
+        "Tilføj adresse eller domæne"
+      ],
+      "Add calendar from URL": [
+        "Tilføj kalender fra URL"
       ],
       "Add condition": [
         "Tilføj betingelse"
@@ -113,6 +122,9 @@
       "Alignment": [
         "Justering"
       ],
+      "Allow": [
+        "Tillad"
+      ],
       "Apply": [
         "Anvend"
       ],
@@ -140,6 +152,9 @@
       "Cancel": [
         "Annullér"
       ],
+      "Cancel subscription": [
+        "Opsig abonnement"
+      ],
       "Change mailbox password": [
         "Skift postkasseadgangskode"
       ],
@@ -160,6 +175,9 @@
       ],
       "Choose a file or drag it here": [
         "Vælg en fil eller træk den hertil"
+      ],
+      "Choose my own password": [
+        "Vælg min egen adgangskode"
       ],
       "Claim it": [
         "Gør krav på den"
@@ -191,6 +209,9 @@
       "Continue": [
         "Fortsæt"
       ],
+      "Continue anyway": [
+        "Fortsæt alligevel"
+      ],
       "Continue import": [
         "Fortsæt import"
       ],
@@ -202,6 +223,9 @@
       ],
       "Continue with Google": [
         "Fortsæt med Google"
+      ],
+      "Continue with this password": [
+        "Fortsæt med denne adgangskode"
       ],
       "Copy": [
         "Kopiér"
@@ -256,6 +280,9 @@
       ],
       "Delete": [
         "Slet"
+      ],
+      "Delete and confirm": [
+        "Slet og bekræft"
       ],
       "Delete link": [
         "Slet link"
@@ -335,6 +362,9 @@
       "Edit label": [
         "Redigér etikette"
       ],
+      "Edit password": [
+        "Redigér adgangskode"
+      ],
       "Edit phone number": [
         "Rediger telefonnummer"
       ],
@@ -398,6 +428,9 @@
       "Generate token": [
         "Generér token"
       ],
+      "Get ${ discountPercentage } off with 24 months": [
+        "Få ${ discountPercentage } rabat med 24 måneder"
+      ],
       "Get ${ vpnPlus }": [
         "Få ${ vpnPlus }"
       ],
@@ -415,6 +448,9 @@
       ],
       "Get more labels": [
         "Få flere etiketter"
+      ],
+      "Get the deal": [
+        "Gør brug af tilbuddet"
       ],
       "Get verification code": [
         "Få bekræftelseskode"
@@ -467,11 +503,20 @@
       "Insert link": [
         "Indsæt link"
       ],
+      "Invite": [
+        "Invitér"
+      ],
+      "Invite user": [
+        "Invitér bruger"
+      ],
       "Italic": [
         "Kursiv"
       ],
       "Keep": [
         "Behold"
+      ],
+      "Keep my ${ vpnPlanNameShort } subscription": [
+        "Behold mit ${ vpnPlanNameShort } abonnement"
       ],
       "label emails as": [
         "giv e-mails etiketten"
@@ -677,6 +722,9 @@
       "Save address": [
         "Gem adresse"
       ],
+      "Save changes": [
+        "Gem ændringer"
+      ],
       "Save ICS file": [
         "Gem ICS-fil"
       ],
@@ -716,14 +764,26 @@
       "Send code": [
         "Send kode"
       ],
+      "Send email reminder": [
+        "Send e-mail-påmindelse"
+      ],
+      "Send messages with @pm.me": [
+        "Send beskeder med @pm.me"
+      ],
       "Send my username": [
         "Send mit brugernavn"
+      ],
+      "Send reminder": [
+        "Send påmindelse"
       ],
       "Set as default": [
         "Angiv som standard"
       ],
       "Set catch-all": [
         "Indstil fang-alle"
+      ],
+      "Set new password": [
+        "Angiv ny adgangskode"
       ],
       "Set recovery phrase": [
         "Opsæt gendannelsessætning"
@@ -766,6 +826,9 @@
       ],
       "Sign out of all accounts": [
         "Log ud alle konti"
+      ],
+      "Sign up for free": [
+        "Tilmeld gratis"
       ],
       "Signing in": [
         "Logger ind"
@@ -3046,7 +3109,7 @@
         "Tilladelse nægtet, administratorrettigheder er blevet begrænset."
       ],
       "Please configure a custom domain before adding users to your organization.": [
-        "Opsæt et brugerdefineret domæne, inden du tilføjer brugere til din organisation."
+        "Opsæt et brugerdomæne, inden du tilføjer brugere til din organisation."
       ],
       "Please enable multi-user support before adding users to your organization.": [
         "Aktivér flerbrugerunderstøttelse inden du tilføjer brugere til din organisation."
@@ -3264,7 +3327,7 @@
         "Du skal angive et navn"
       ],
       "You need to have a custom domain address in order to generate an SMTP submission token.": [
-        "Du skal have en brugerdefineret domæneadresse for at kunne generere et SMTP-indsendelses-token."
+        "Du skal have en brugerdomæneadresse for at kunne generere et SMTP-indsendelses-token."
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Din konto eller organisation har en forfalden faktura. Betal venligst alle udestående fakturaer."
@@ -3669,7 +3732,7 @@
         "${ BRAND_NAME } grupper"
       ],
       "Accounts with custom domains cannot join a Visionary or family plan.": [
-        "Konti med brugerdefinerede domæner kan ikke blive medlem af et Visionary eller familie-abonnement."
+        "Konti med brugerdomæner kan ikke blive medlem af et Visionary eller familie-abonnement."
       ],
       "customer support": [
         "kundeservice"
@@ -3750,6 +3813,14 @@
     "familyOffer_2023:Title": {
       "Introducing ${ planName }": [
         "Introducerer ${ planName }"
+      ]
+    },
+    "familyOffer_2023:Tooltip": {
+      "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "Inkluderer 2700 servere i 65+ lande, forbind op til 10 enheder, tilgå verdensomspændende streamingtjenester, malware- og ad-blocker og meget mere."
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "Beskyt dine filer med krypteret lagring i skyen. Inkluderer automatisk synkronisering, krypteret fildeling og meget mere."
       ]
     },
     "Feature": {
@@ -3952,10 +4023,37 @@
     },
     "FilterSettings": {
       "Add a custom filter to automatically perform certain actions, like labeling or archiving messages.": [
-        "Brug et tilpasset filter til at udføre visse handlinger automatisk, så som at tilføje etiketter eller arkivere beskeder."
+        "Brug et brugerdefineret filter til at udføre visse handlinger automatisk, så som at tilføje etiketter eller arkivere beskeder."
+      ],
+      "Allow:": [
+        "Tillad:"
+      ],
+      "Block:": [
+        "Blokér:"
       ],
       "Search list": [
         "Søgeliste"
+      ],
+      "Spam:": [
+        "Spam:"
+      ],
+      "Take control over what lands in your inbox by creating the following lists:": [
+        "Tag kontrol over, hvad der lander i din indbakke, ved at oprette følgende lister:"
+      ],
+      "Take control over what lands in your organization members' inboxes by creating the following lists:": [
+        "Tag kontrol over, hvad der lander i dine organisationsmedlemmers indbakker ved at oprette følgende lister:"
+      ],
+      "To ensure critical messages don't end up in spam and getting missed": [
+        "For at sikre, at vigtige beskeder ikke ender i spam og bliver overset."
+      ],
+      "To prevent junk mail from clogging up your inbox": [
+        "For at forhindre junkmail i at fylde din indbakke."
+      ],
+      "To stop phishing or suspicious emails from entering your email system": [
+        "For at forhindre phishing eller mistænkelige e-mails i at komme ind i dit e-mailsystem"
+      ],
+      "To stop phishing or suspicious emails from entering your organization's email system": [
+        "For at forhindre phishing eller mistænkelige e-mails i at komme ind i din organisations e-mailsystem"
       ]
     },
     "Font Face Default": {
@@ -3966,9 +4064,6 @@
     "Font face option": {
       "System default": [
         "Systemstandard"
-      ],
-      "Theme default": [
-        "Temastandard"
       ]
     },
     "Font Size Default": {
@@ -4503,6 +4598,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } har brug for din tilladelse til ${ enableDesktopNotifications }."
       ],
+      "${ autoRenewal } your subscription will renew automatically on ${ renewalTime }.": [
+        "${ autoRenewal } vil dit abonnement automatisk blive fornyet ${ renewalTime }."
+      ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Du mister adgangen til alle nuværende krypterede data på din konto, hvis du fortsætter."
       ],
@@ -4548,7 +4646,7 @@
         "${ MAIL_APP_NAME } kan også benyttes med én enkelt adgangskode, der erstatter både log ind- og postkasseadgangskoden. Skift til enkeltadgangskodetilstand ved at angive den ønskede enkelte adgangskode, og tryk Gem."
       ],
       "${ MAIL_APP_NAME } supports DKIM signing for custom domains. To use DKIM authentication, please add the following CNAME record into your DNS settings for this domain. This can typically be done in the control panel of your domain name registrar.": [
-        "${ MAIL_APP_NAME } understøtter DKIM signatur for egne domæner. For at anvende DKIM autentificering, tilføj følgende CNAME optegnelse i dine DNS indstillinger for eget domæne. Det gøres normalt via kontrolpanelet hos din domæne udbyder."
+        "${ MAIL_APP_NAME } understøtter DKIM signatur for brugerdomæner. For at anvende DKIM autentificering, tilføj følgende CNAME optegnelse i dine DNS indstillinger for domæne. Det gøres normalt via kontrolpanelet hos din domæneudbyder."
       ],
       "${ n } address": [
         "${ n } adresse",
@@ -4576,6 +4674,9 @@
       "${ numGroups } contact group": [
         "${ numGroups } kontaktgruppe",
         "${ numGroups } kontaktgrupper"
+      ],
+      "${ PROTON_SENTINEL_NAME } is an account protection program developed at ${ BRAND_NAME } for users who need maximum security.": [
+        "${ PROTON_SENTINEL_NAME } er et kontobeskyttelsesprogram udviklet af ${ BRAND_NAME } til brugere, der har brug for maksimal sikkerhed."
       ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } mappe fundet",
@@ -4652,6 +4753,9 @@
       ],
       "3. You earn credits": [
         "3. Du optjener kreditter"
+      ],
+      "30-day money-back guarantee": [
+        "30 dages tilbagebetalingsgaranti"
       ],
       "30-day money-back guarantee.": [
         "30 dages tilbagebetalingsgaranti."
@@ -4770,6 +4874,9 @@
       "American Express SafeKey logo": [
         "American Express SafeKey logo"
       ],
+      "Amount above maximum (${ amount }).": [
+        "Beløb over maksimum (${ amount })."
+      ],
       "Amount below minimum (${ amount }).": [
         "Beløb under minimum (${ amount })."
       ],
@@ -4830,6 +4937,9 @@
       "Attention required": [
         "Opmærksomhed påkrævet"
       ],
+      "Auto-renewal: ": [
+        "Auto-fornyelse: "
+      ],
       "Auto-reply is active each month between the selected start and end time.": [
         "Autosvar er aktivt hver måned i det valgte tidsrum."
       ],
@@ -4851,6 +4961,9 @@
       "Background color": [
         "Baggrundsfarve"
       ],
+      "Balance from your previous subscription": [
+        "Saldo fra dit tidligere abonnement"
+      ],
       "Based on your time zone": [
         "Baseret på din tidszone"
       ],
@@ -4870,7 +4983,7 @@
         "Før du anmoder om en ny bekræftelseskode, bør du tjekke din spam-mappe samt kontrollere, at ${ strong } er den korrekte adresse."
       ],
       "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following MX records to your DNS. This can typically be done in the control panel of your domain name registrar.": [
-        "Inden du kan modtage e-mails til dine tilpassede domæneadresser i ${ MAIL_APP_NAME }, skal du tilføje følgende MX-poster til din DNS. Dette kan typisk gøres via et webkontrolpanel hos din domæneudbyder."
+        "Inden du kan modtage e-mails til dine brugerdomæneadresser i ${ MAIL_APP_NAME }, skal du tilføje følgende MX-poster til din DNS. Dette kan typisk gøres via et webkontrolpanel hos din domæneudbyder."
       ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Inden du kan begynde at sende og modtage e-mails fra dine nye adresser, skal du oprette krypteringsnøgler til dem."
@@ -4934,7 +5047,7 @@
         "Opret og administrer underkonti og tildel dem e-mailadresser på dit brugerdomæne."
       ],
       "Create email addresses for other people, manage ${ MAIL_APP_NAME } for a business, school, or group. Get started by adding your organization name and custom domain (e.g. @yourcompany.com). ": [
-        "Opret e-mailadresser til andre personer, administrer ${ MAIL_APP_NAME } for en virksomhed, skole eller gruppe. Kom i gang med at tilføje dit organisationsnavn og brugerdefinerede domæne (f.eks. @ditfirma.com). "
+        "Opret e-mailadresser til andre personer, administrer ${ MAIL_APP_NAME } for en virksomhed, skole eller gruppe. Kom i gang med at tilføje dit organisationsnavn og brugerdomæne (f.eks. @ditfirma.com). "
       ],
       "Create in": [
         "Opret i"
@@ -4949,22 +5062,22 @@
         "Kreditter optjent"
       ],
       "Custom": [
-        "Tilpasset"
+        "Brugerdefineret"
       ],
       "Custom daily": [
-        "Tilpasset daglig"
+        "Brugerdefineret daglig"
       ],
       "Custom email domains": [
         "Brugerdefinerede e-maildomæner"
       ],
       "Custom monthly": [
-        "Tilpasset månedlig"
+        "Brugerdefineret månedlig"
       ],
       "Custom weekly": [
-        "Tilpasset ugentlig"
+        "Brugerdefineret ugentlig"
       ],
       "Custom yearly": [
-        "Tilpasset årlig"
+        "Brugerdefineret årlig"
       ],
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Tilpas udseendes og fornemmelsen af ${ BRAND_NAME }-applikationer."
@@ -5002,6 +5115,9 @@
       ],
       "Done! We sent a code to ${ destination }.": [
         "Færdig! Vi sendte en kode til ${ destination }."
+      ],
+      "Don’t see anything? Remember to turn off pop-up blockers.": [
+        "Ser du ikke noget? Husk at slå pop-up-blokkere fra."
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Nedgradering vil afslutte alle forbindelser til betalte ${ VPN_APP_NAME }-servere."
@@ -5120,6 +5236,9 @@
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Filtre virker på alle e-mails, herunder indgående samt sendte e-mails. Hvert filter skal indeholde mindst et navn, en betingelse og en handling."
       ],
+      "for choosing ${ product }": [
+        "for at vælge ${ product }"
+      ],
       "For Visa, MasterCard and Discover, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
         "For Visa, MasterCard og Discover, de 3 cifre på bagsiden af dit kort. For American Express, de 4 cifre på forsiden af dit kort."
       ],
@@ -5141,11 +5260,14 @@
       "Generating a new recovery phrase will deactivate your old one.": [
         "Oprettelse af en ny gendannelsessætning vil deaktivere din gamle."
       ],
+      "Get a ${ BRAND_NAME } address to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
+        "Få en ${ BRAND_NAME }-adresse for at bruge alle ${ BRAND_NAME_TWO }-tjenester, herunder ${ MAIL_SHORT_APP_NAME } og ${ CALENDAR_SHORT_APP_NAME }."
+      ],
       "Get my ${ BRAND_NAME } address": [
         "FÅ min ${ BRAND_NAME }-adresse"
       ],
       "Give the token a descriptive name, such as the service you plan to use it with, and select one of your active custom domain addresses. Only this address will be able to send emails with this token.": [
-        "Giv tokenet et beskrivende navn, såsom den tjeneste, du planlægger at bruge det til, og vælg en af dine aktive brugerdefinerede domæneadresser. Kun denne adresse vil kunne sende e-mails med dette token."
+        "Giv tokenet et beskrivende navn, såsom den tjeneste, du planlægger at bruge det til, og vælg en af dine aktive brugerdomæneadresser. Kun denne adresse vil kunne sende e-mails med dette token."
       ],
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
         "Giv din offentlige nøgle til dine venner, eller offentliggør den online, så alle kan sende dig end-to-end krypterede e-mails!"
@@ -5174,11 +5296,14 @@
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Hvis du mener dette er en fejltagelse, bedes du kontakte os ${ contactLink }."
       ],
+      "If you cancel, your ${ vpnPlanName } subscription will not be renewed when it expires on ${ expiryDate }.": [
+        "Hvis du annullerer, vil dit ${ vpnPlanName }-abonnement ikke blive fornyet, når det udløber ${ expiryDate }."
+      ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Hvis du ikke kan se mailen i din indbakke, bedes du tjekke din spammappe."
       ],
       "If you have a custom domain with ${ MAIL_APP_NAME }, you can set a catch-all email address to receive messages sent to your domain but to an invalid email address (e.g., because of typos).": [
-        "Hvis du har et brugerdefineret domæne med ${ MAIL_APP_NAME }, kan du angive en catch-all (fang-alle) e- mailadresse, der vil modtage beskeder sendt til dit domæne med en ugyldig e-mailadresse (f.eks. pga. stavefejl)."
+        "Hvis du har et brugerdomæne med ${ MAIL_APP_NAME }, kan du angive en catch-all (fang-alle) e-mailadresse, der vil modtage beskeder sendt til dit domæne med en ugyldig e-mailadresse (f.eks. pga. stavefejl)."
       ],
       "If you have a gift code, enter it below to apply your discount.": [
         "Hvis du har en gavekode, skal du indtaste den nedenfor for at anvende din rabat."
@@ -5194,6 +5319,9 @@
       ],
       "If you lose your password and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
         "Hvis du mister din adgangskode og har brug for at nulstille din konto, ${ boldImperative } at du har både en ${ boldAccountAndRecovery } indstillet. Ellers kan du måske ikke få adgang til dine e-mails, kontakter eller filer."
+      ],
+      "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
+        "Mister du din to-faktor-aktiverede enhed, kan disse koder benyttes i stedet for den 6-cifrede to-faktor-godkendelseskode til at logge ind på din konto. Hver kode kan kun benyttes én gang."
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Hvis du fortsætter med nedgraderingen, vil du miste adgang til betalte funktioner i ${ MAIL_APP_NAME } og ${ VPN_APP_NAME }."
@@ -5253,6 +5381,12 @@
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Importerer dine data fra ${ importedEmailAddress } til ${ toEmail }."
       ],
+      "Improve your ${ BRAND_NAME } experience by adapting the application to your needs.": [
+        "Forbedr din ${ BRAND_NAME } oplevelse ved at tilpasse applikationen til dine behov."
+      ],
+      "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
+        "I det næste trin kan du foretage en indbetaling ved hjælp af en Bitcoin-adresse."
+      ],
       "Inherited from parent folder": [
         "Nedarvet fra overordnet mappe"
       ],
@@ -5292,6 +5426,9 @@
       ],
       "it’s imperative": [
         "er det afgørende"
+      ],
+      "I’ve been using @ProtonMail and thought you might like it. It’s a secure email service that protects your privacy. Sign up with my referral link to get 1 month of premium features for free: ${ referrerLink }": [
+        "Jeg har gennem noget tid brugt @ProtonMail og tænkte, at du måske også vil kunne lide den. Det er en sikker e-mailtjeneste, der beskytter dit privatliv. Tilmeld dig med mit henvisningslink for at få 1 måneds premium-funktioner gratis: ${ referrerLink }"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Du skal blot bekræfte dit valg, og så klarer vi resten."
@@ -5389,6 +5526,9 @@
       "New": [
         "Ny"
       ],
+      "No account keys exist": [
+        "Der findes ingen kontonøgler"
+      ],
       "No account recovery method set; you are at risk of losing access to your account": [
         "Ingen metode til gendannelse indstillet. Du risikerer at miste adgang til din konto"
       ],
@@ -5430,6 +5570,12 @@
       ],
       "of": [
         "af"
+      ],
+      "old password": [
+        "gammel adgangskode"
+      ],
+      "Once you reset your password:": [
+        "Når du nulstiller din adgangskode:"
       ],
       "One account. All ${ BRAND_NAME } services.": [
         "Én konto. Alle ${ BRAND_NAME }-tjenester."
@@ -5488,6 +5634,12 @@
         "Tilføj venligst en e-mailadresse til brugeren på række",
         "Tilføj venligst e-mailadresser til brugerne på rækker"
       ],
+      "Please authenticate your card in the verification tab.": [
+        "Bekræft dit kort i verifikationsfanen."
+      ],
+      "Please authenticate your payment in the verification tab.": [
+        "Bekræft din betaling i verifikationsfanen."
+      ],
       "Please check your file for errors, or contact customer support for more information.": [
         "Tjek venligst din fil for fejl, eller kontakt kundeservice for at få flere oplysninger."
       ],
@@ -5526,6 +5678,9 @@
       ],
       "Please select the type of link you want to insert and fill in all the fields.": [
         "Vælg venligst den type link du ønsker at indsætte og udfyld alle felterne."
+      ],
+      "Please try again using a different payment method, or contact your bank.": [
+        "Prøv igen med en anden betalingsmetode, eller kontakt din bank."
       ],
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "Forsøg venligst igen, benyt en anden betalingsmetode eller kontakt PayPal for hjælp."
@@ -5653,8 +5808,17 @@
       "Setting up your Drive": [
         "Opsætter dit drev"
       ],
+      "Settings update failed": [
+        "Opdatering af indstillinger mislykkedes"
+      ],
+      "Settings updated": [
+        "Indstillinger opdateret"
+      ],
       "Show original message": [
         "Vis oprindelig besked"
+      ],
+      "Sign in to ${ MAIL_APP_NAME } to activate your address": [
+        "Log ind på ${ MAIL_APP_NAME } for at aktivere din adresse"
       ],
       "Signed up": [
         "Tilmelde sig"
@@ -5696,8 +5860,14 @@
       "Store this password and file in a safe place. You’ll need them again to import your key.": [
         "Gem denne adgangskode og fil på et sikkert sted. Du skal bruge dem igen for at importere din nøgle."
       ],
+      "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
+        "Indsend et depositum ved hjælp af følgende adresse eller scan QR-koden. Din indbetaling vil blive afspejlet på din konto efter bekræftelse."
+      ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Abonnement er ved at udløbe: Genaktiver inden ${ byDate } for at beholde dine ${ planName }-fordele. ${ reactivateLink }"
+      ],
+      "Summary": [
+        "Sammenfatning"
       ],
       "Support for 1 custom email domain": [
         "Understøttelse af 1 brugerdefineret e-mail-domæne"
@@ -5716,6 +5886,9 @@
       ],
       "Text to display": [
         "Tekst at vise"
+      ],
+      "Thank you": [
+        "Tak"
       ],
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
         "Den ${ boldDataLocked } besked vil ikke længere blive vist, men du kan stadig låse dine data op under ${ encryptionAndKeysLink }."
@@ -5746,6 +5919,9 @@
       ],
       "The securest way to browse, stream, and be online.": [
         "Den sikreste måde at surfe, streame og være online på."
+      ],
+      "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
+        "Bekræftelsesprocessen åbner en ny browserfane. Deaktivér venligst alle aktive pop-up-blokkere."
       ],
       "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         "Disse konfigurationsfiler lader dig vælge, hvilken ${ VPN_APP_NAME }-server du opretter forbindelse til, når du bruger en tredjeparts-VPN-app eller opsætter en VPN-forbindelse på en router."
@@ -5795,6 +5971,9 @@
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Denne bruger er pt. ansvarlig for betalinger for din organisation. Ved at degradere dette medlem, bliver du ansvarlig for betalinger for din organisation."
       ],
+      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
+        "Dette vil annullere dit nuværende betalte abonnement, og du vil miste eventuelle loyalitetsfordele, du har akkumuleret."
+      ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
         "Dette vil annullere dit nuværende betalte abonnement, og du vil miste alle loyalitetsfordele, du har akkumuleret. Den resterende saldo for dit abonnement vil blive returneret som kontokreditter."
       ],
@@ -5822,8 +6001,14 @@
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "Dette vil logge dig ud af alle aktive sessioner og deaktivere to-faktor-godkendelse."
       ],
+      "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
+        "Denne guide aktiverer to-faktor-godkendelse (2FA) på din ${ BRAND_NAME }-konto. To-faktor-godkendelse vil gøre din ${ BRAND_NAME_TWO }-konto mere sikker, så vi anbefaler, at du aktiverer det."
+      ],
       "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
         "For at undgå tab af data skal du kun slette den, hvis du ved, hvad du gør, eller hvis du har eksporteret en kopi."
+      ],
+      "To complete your payment, please send ${ btcAmountBold } to the address below.": [
+        "For at gennemføre din betaling skal du sende ${ btcAmountBold } til nedenstående adresse."
       ],
       "To confirm, please enter the name of the user you wish to delete.": [
         "For at bekræfte, skal du indtaste navnet på den bruger, du ønsker at slette."
@@ -5879,11 +6064,17 @@
       "Total VPN connections": [
         "Samlet antal VPN-forbindelser"
       ],
+      "two-factor authentication (2FA)": [
+        "to-faktor-godkendelse (2FA)"
+      ],
       "Two-factor authentication disabled": [
         "To-faktor-godkendelse deaktiveret"
       ],
       "Two-factor authentication enabled": [
         "To-faktor-godkendelse aktiveret"
+      ],
+      "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your mailbox. (Advanced)": [
+        "To-adgangskodetilstand kræver to adgangskoder: en til at logge ind på din konto og en til at dekryptere din postkasse. (Avanceret)"
       ],
       "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
         "To-adgangskodetilstand benytter separate adgangskoder til indlogning og postkassedekryptering. Dette giver en lille sikkerhedsfordel i visse situationer, men brug af en-adgangskodetilstand anbefales til de fleste brugere. Angiv først én adgangskode til indlogning og dernæst én til postkassen for at skifte til to-adgangskodtilstand."
@@ -5921,6 +6112,9 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Opgrader nu for at få premium-funktioner, produkter og lagerplads til en speciel pris"
       ],
+      "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
+        "Opgradér for at tilføje en kortere @pm.me-adresse til din konto, som er nemmere at dele. Det står for \"${ MAIL_APP_NAME } me\" eller \"Private Message me\"."
+      ],
       "Upgrade to unlock": [
         "Opgradér for at låse op"
       ],
@@ -5948,6 +6142,9 @@
       "Verification can take a few minutes.": [
         "Bekærftelsen kan tage et par minutter."
       ],
+      "Verification may take a few minutes.": [
+        "Bekræftelsen kan tage et par minutter."
+      ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "Bekræftelsesprocessen åbner en ny fane. Deaktivér derfor pop-up blockere. Du vil ikke blive debiteret. Ethvert beløb anvendt til bekræftelse af kortet refunderes straks."
       ],
@@ -5974,6 +6171,15 @@
       ],
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "Vi råder dig til at bruge officielle ${ VPN_APP_NAME }-applikationer, når det er muligt."
+      ],
+      "We couldn’t process your payment.": [
+        "Vi kunne ikke gennemføre din betaling."
+      ],
+      "We need to authenticate your payment method with your bank.": [
+        "Vi skal have bekræftet din betalingsmetode hos din bank."
+      ],
+      "We need to authenticate your payment with your bank.": [
+        "Vi skal have bekræftet din betaling hos din bank."
       ],
       "We recommend using your recovery phrase instead.": [
         "Vi anbefaler, at du i stedet bruger din gendannelsessætning."
@@ -6028,6 +6234,9 @@
       ],
       "Why?": [
         "Hvorfor?"
+      ],
+      "With your current plan, you can only receive messages with your @pm.me address. Upgrade to send messages and create additional addresses using @pm.me.": [
+        "Med dit nuværende abonnement kan du kun modtage beskeder med din @pm.me-adresse. Opgradér for at sende beskeder og oprette yderligere adresser med @pm.me."
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Uden aktivering kan du ikke oprette nye brugere, føje adresser til eksisterende brugere eller få adgang til ikke-private brugerkonti."
@@ -6118,6 +6327,9 @@
       "You have no saved payment methods.": [
         "Du har ingen gemte betalingsmetoder."
       ],
+      "You may be redirected to your bank’s website.": [
+        "Du vil muligvis blive omdirigeret til din banks hjemmeside."
+      ],
       "You may now start using the extension": [
         "Du kan nu bruge udvidelsen"
       ],
@@ -6125,7 +6337,7 @@
         "Du skal aktivere din organisations private nøgle med den backup-organisationsnøgleadgangskode, som din organisationsadministrator har givet dig."
       ],
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
-        "Du skal deaktivere eller fjerne eventuelle yderligere ${ MAIL_APP_NAME }-brugere, adresser og brugerdefinerede domæner, før du kan nedgradere."
+        "Du skal deaktivere eller fjerne eventuelle yderligere ${ MAIL_APP_NAME }-brugere, adresser og brugerdomæner, før du kan nedgradere."
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "Du skal have et kreditkort eller en bankkonto tilknyttet din PayPal-konto for at tilføje den som en betalingsmetode."
@@ -6148,8 +6360,14 @@
       "You still need to reply to invitations for the host to see your response.": [
         "Du skal stadig svare på invitationer for at værten kan se dit svar."
       ],
+      "You will lose access to ${ vpnPlanNameShort } servers and features on this date.": [
+        "Du vil miste adgang til ${ vpnPlanNameShort }-servere og funktioner på denne dato."
+      ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Du skal bruge en ${ BRAND_NAME }-adresse for at bruge ${ MAIL_APP_NAME } og ${ CALENDAR_APP_NAME }"
+      ],
+      "You will NOT be able to decrypt any messages, files, and other data encrypted with this key. All data signed with this key will no longer be verified by ${ BRAND_NAME } applications.": [
+        "Du vil IKKE kunne dekryptere meddelelser, filer og andre data, der er krypteret med denne nøgle. Alle data, der er signeret med denne nøgle, vil ikke længere være verificeret af ${ BRAND_NAME }-applikationer."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Du omdirigeres snart til PayPal for at bekræfte din betaling."
@@ -6171,6 +6389,9 @@
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "Din ${ BRAND_NAME }-konto er i øjeblikket suspenderet. Der leveres ikke længere e-mails til din indbakke. Dine Drive-links til deling er ikke længere aktive, og du kan ikke uploade nye filer. Hvis du fortsat vil bruge din konto, skal du betale eventuelle forfaldne fakturaer."
+      ],
+      "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there.": [
+        "Dine ${ VPN_APP_NAME } og ${ MAIL_APP_NAME } konti er forbundet. Hvis du vil slette dem begge, skal du logge ind på ${ loginLink } og slette din konto der."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Din konto har mindst én forfalden faktura. Din adgang vil snart blive begrænset. ${ payInvoiceLink }"
@@ -6687,6 +6908,9 @@
       "All-day event notifications": [
         "Notifikationer for heldagsbegivenheder"
       ],
+      "Allow": [
+        "Tillad"
+      ],
       "Allow notifications by email": [
         "Tillad notifikationer via e-mail"
       ],
@@ -6755,6 +6979,9 @@
       ],
       "Billing cycle": [
         "Faktureringsperiode"
+      ],
+      "Block": [
+        "Blokér"
       ],
       "Block email tracking": [
         "Bloker sporing af e-mail"
@@ -7001,6 +7228,9 @@
       ],
       "Folder location": [
         "Mappeplacering"
+      ],
+      "Font size": [
+        "Skriftstørrelse"
       ],
       "From: ${ from }": [
         "Fra: ${ from }"
@@ -7707,6 +7937,10 @@
       ]
     },
     "Loading info": {
+      "${ twoFAMembers.length }/${ members.length } of your organization member use two-factor authentication.": [
+        "${ twoFAMembers.length }/${ members.length } af din organisations medlem bruger to-faktor-godkendelse.",
+        "${ twoFAMembers.length }/${ members.length } af din organisations medlemmer bruger to-faktor-godkendelse."
+      ],
       "Almost there": [
         "Næsten færdig"
       ],
@@ -7790,7 +8024,7 @@
         "Alle filterhandlinger vil blive anvendt på alle meddelelser i din ${ MAIL_APP_NAME }-konto. Der vil ikke blive sendt nogen auto-svar mails."
       ],
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
-        "Forbind dit brugerdefineret domæne til ${ BRAND_NAME } for at oprette brugerdefinerede e-mailadresser (f.eks. dig@ditfirma.com). Vores guide leder dig gennem processen."
+        "Forbind dit brugerdomæne til ${ BRAND_NAME } for at oprette brugerdefinerede e-mailadresser (f.eks. dig@ditfirma.com). Vores guide leder dig gennem processen."
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Din gratis prøveperiode er afsluttet. Adgang til din konto vil snart blive deaktiveret. ${ action }"
@@ -7983,6 +8217,9 @@
       "All": [
         "Alle"
       ],
+      "Allow": [
+        "Tillad"
+      ],
       "Back": [
         "Tilbage"
       ],
@@ -7994,6 +8231,9 @@
       ],
       "Back to inbox": [
         "Tilbage til indbakke"
+      ],
+      "Block": [
+        "Blokér"
       ],
       "Calendar": [
         "Kalender"
@@ -8531,6 +8771,9 @@
       "Control access to your shared files by adding password protection and link expiration dates": [
         "Kontroller adgang til dine delte filer ved at tilføje adgangskodebeskyttelse og link-udløbsdatoer"
       ],
+      "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
+        "Opret flere e-mailadresser til dine onlineidentiteter, f.eks. JensShopper@${ domain } til shoppingkonti, JensNews@${ domain } til nyhedsabonnementer."
+      ],
       "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
         "Opret op til ${ n } kalender eller tilføj kalendere fra venner, familie, kollegaer og organisationer",
         "Opret op til ${ n } kalendere eller tilføj kalendere fra venner, familie, kollegaer og organisationer"
@@ -8681,6 +8924,9 @@
       ],
       "Calendar added": [
         "Kalender tilføjet"
+      ],
+      "Calendar updated": [
+        "Kalender opdateret"
       ]
     },
     "Notification in share calendar modal": {
@@ -8756,6 +9002,11 @@
     "Oauth instructions video": {
       "For the import to work, you must select all requested items as shown in the GIF.": [
         "For at importen kan fungere, skal du vælge alle de ønskede elementer som vist i GIF-illustrationen."
+      ]
+    },
+    "Oauth instructions video alternative": {
+      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
+        "Vælg, hvad ${ BRAND_NAME } kan få adgang til: se dine e-mailbeskeder og indstillinger, se og downloade dine kontakter, se og downloade alle kalendere, du har adgang til fra Google Kalender."
       ]
     },
     "Onboarding": {
@@ -9112,6 +9363,9 @@
       ],
       "Search": [
         "Søg"
+      ],
+      "Search for a user or address": [
+        "Søg efter en bruger eller adresse"
       ],
       "Search settings": [
         "Søg indstillinger"
@@ -9546,6 +9800,9 @@
       ]
     },
     "specialoffer: Footer": {
+      "Discounts are based on the standard monthly pricing.": [
+        "Rabatter er baseret på den månedlige standardpris."
+      ],
       "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
         "Dette abonnement bliver automatisk fornyet hvert 2. år til samme pris, indtil det annulleres."
       ]
@@ -9559,6 +9816,9 @@
       ],
       "Offer ends soon": [
         "Tilbuddet slutter snart"
+      ],
+      "The discount will continue to apply upon renewal until the subscription is canceled or modified": [
+        "Rabatten vil fortsat gælde ved fornyelse, indtil abonnementet opsiges eller ændres"
       ]
     },
     "specialoffer: Link": {
@@ -9600,6 +9860,12 @@
       ],
       "Get the deal": [
         "Få tilbuddet"
+      ],
+      "Renews after 1 year at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
+        "Fornyes efter 1 år til en nedsat pris på ${ discountedAmount } i stedet for ${ regularAmount } (${ discount }% rabat)"
+      ],
+      "Renews after 2 years at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
+        "Fornyes efter 2 år til en nedsat pris på ${ discountedAmount } i stedet for ${ regularAmount } (${ discount }% rabat)"
       ],
       "Save ${ discount }%": [
         "Spar ${ discount }%"
@@ -9653,8 +9919,17 @@
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
         "Få adgang til indhold på streamingtjenester, herunder Netflix, Disney+ og Prime Video, hvor som helst."
       ],
+      "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
+        "Alle vores premium-tjenester med deres højeste grænser: 100 e-mailadresser, mulighed for 10 brugerdomæner, ubegrænsede Hide-my-email-aliasser, kalenderdeling, krypteret cloud-lagring og fildeling og meget mere."
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Inkluderer support for 1 tilpasset e-maildomæne, 10 e-mailadresser, 10 Hide-my-email-aliasser, kalenderdeling med mere."
+      ],
+      "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Inkluderer support til 3 tilpassede e-maildomæner, 15 e-mailadresser, ubegrænsede Hide-my-email-aliasser, kalenderdeling med mere."
+      ],
       "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
-        "Perfekt til familier eller små teams, hvor alle kan have deres egen indbakke og aliasser. Kræver et brugerdefineret domæne."
+        "Perfekt til familier eller små teams, hvor alle kan have deres egen indbakke og aliasser. Kræver et brugerdomæne."
       ],
       "Receive at no extra cost the paid versions of all new privacy services we release in the future, along with early access to all future features and products.": [
         "Modtag uden ekstra omkostninger betalingsversionerne af alle nye privatlivstjenester, vi lancerer i fremtiden, samt tidlig adgang til alle fremtidige funktioner og produkter."
@@ -9815,6 +10090,9 @@
       "${ server.Domain } copied to your clipboard": [
         "${ server.Domain } kopieret til din udklipsholder"
       ],
+      "Account deleted. Signing out...": [
+        "Konto slettet, logger ud..."
+      ],
       "Address added": [
         "Adresse tilføjet"
       ],
@@ -9887,8 +10165,11 @@
       "Import record deleted": [
         "Importpost slettet"
       ],
+      "Invitation sent": [
+        "Invitation sendt"
+      ],
       "Invoice customized": [
-        "Faktura tilrettet"
+        "Faktura tilpasset"
       ],
       "Invoice paid": [
         "Faktura betalt"
@@ -9968,6 +10249,9 @@
       "Verification successful": [
         "Bekræftelse gennemført"
       ],
+      "You have successfully cancelled your subscription.": [
+        "Du har opsagt dit abonnement."
+      ],
       "You have successfully unsubscribed": [
         "Du har afmeldt dig"
       ]
@@ -10043,6 +10327,16 @@
         "Detaljer om begivenheder, der ikke kunne eksporteres"
       ]
     },
+    "summer2023: Describe Proton Pass": {
+      "Securely store your passwords and autofill them on websites. Includes unlimited passwords, autofill, password generator, and more.": [
+        "Gem sikkert dine adgangskoder og udfyld dem automatisk på hjemmesider. Indeholder ubegrænsede adgangskoder, autofyld, adgangskodegenerator og meget mere."
+      ]
+    },
+    "summer2023: Short tool name to present Proton Pass": {
+      "Password manager": [
+        "Adgangskodeadministrator"
+      ]
+    },
     "Tab in domain modal": {
       "Addresses": [
         "Adresser"
@@ -10079,6 +10373,9 @@
       ],
       "Edit": [
         "Redigér"
+      ],
+      "Email address or domain": [
+        "E-mailadresse eller domæne"
       ],
       "Email addresses": [
         "E-mailadresser"
@@ -10171,8 +10468,14 @@
       "4. Select a server to connect to": [
         "4. Vælg en server at oprette forbindelse til"
       ],
+      "Accessibility": [
+        "Tilgængelighed"
+      ],
       "Account and password": [
         "Konto og adgangskode"
+      ],
+      "Account keys": [
+        "Kontonøgler"
       ],
       "Account recovery": [
         "Kontogendannelse"
@@ -10219,6 +10522,9 @@
       "Add Sieve filter": [
         "Tilføj Sieve-filter"
       ],
+      "Add to block list": [
+        "Føj til blokeringsliste"
+      ],
       "Add to spam list": [
         "Føj til spam-liste"
       ],
@@ -10255,6 +10561,9 @@
       "Are you sure you want to close?": [
         "Er du sikker på, at du vil lukke?"
       ],
+      "Authentication security": [
+        "Godkendelses-sikkerhed"
+      ],
       "Auto-reply": [
         "Autosvar"
       ],
@@ -10272,6 +10581,9 @@
       ],
       "Bridge for ${ platform }": [
         "Bridge til ${ platform }"
+      ],
+      "Cancel subscription": [
+        "Opsig abonnement"
       ],
       "Card verification": [
         "Kortbekræftelse"
@@ -10371,7 +10683,7 @@
         "Valuta"
       ],
       "Custom filters": [
-        "Tilpassede filtre"
+        "Brugerdefinerede filtre"
       ],
       "Customize and confirm": [
         "Tilpas og bekræft"
@@ -10435,6 +10747,9 @@
       ],
       "Delete user": [
         "Slet bruger"
+      ],
+      "Delete version history?": [
+        "Slet versionshistorik?"
       ],
       "Disable ${ email }": [
         "Deaktiver ${ email }"
@@ -10672,8 +10987,14 @@
       "OpenVPN configuration files": [
         "OpenVPN-opsætningsfiler"
       ],
+      "Organization filters": [
+        "Organisationsfiltre"
+      ],
       "Other calendars": [
         "Andre kalendere"
+      ],
+      "Other preferences": [
+        "Andre præferencer"
       ],
       "Password": [
         "Adgangskode"
@@ -10734,6 +11055,9 @@
       ],
       "Remove calendar": [
         "Fjern kalender"
+      ],
+      "Remove user?": [
+        "Fjern bruger?"
       ],
       "Report a problem": [
         "Anmeld et problem"
@@ -10843,6 +11167,9 @@
       "Sort labels alphabetically": [
         "Sortér etiketter alfabetisk"
       ],
+      "Spam, block, and allow lists": [
+        "Spam-, blokerings- og tillad-lister"
+      ],
       "Start a new import": [
         "Start en ny import"
       ],
@@ -10883,6 +11210,9 @@
       ],
       "Two-factor authentication": [
         "To-faktor-godkendelse"
+      ],
+      "Two-factor authentication reminders": [
+        "Påmindelser om to-faktor-godkendelse"
       ],
       "Type": [
         "Type"
@@ -11296,6 +11626,10 @@
       "${ n } VPN connection": [
         "${ n } VPN-forbindelse",
         "${ n } VPN-forbindelser"
+      ],
+      "${ numberOfServers } across ${ numberOfCountries } country": [
+        "${ numberOfServers } i ${ numberOfCountries } land",
+        "${ numberOfServers } fordelt på ${ numberOfCountries }+ lande"
       ],
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } i ${ numberOfCountries } land",

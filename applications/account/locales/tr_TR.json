@@ -4383,9 +4383,6 @@
     "Font face option": {
       "System default": [
         "Sistem varsayılanı"
-      ],
-      "Theme default": [
-        "Tema varsayılanı"
       ]
     },
     "Font Size Default": {
@@ -4422,6 +4419,44 @@
       ],
       "(during your first month)": [
         "(ilk ayınız boyunca)"
+      ]
+    },
+    "Get started checklist instructions": {
+      "${ MAIL_APP_NAME } app": [
+        "${ MAIL_APP_NAME } uygulaması"
+      ],
+      "account logins": [
+        "Oturum açma bilgileri"
+      ],
+      "Auto-forward Gmail": [
+        "Gmail otomatik iletme"
+      ],
+      "auto-forwarding": [
+        "otomatik iletme"
+      ],
+      "Change ${ strongText } to your ${ BRAND_NAME } address": [
+        "${ strongText }ni ${ BRAND_NAME } adresiniz ile değiştirin"
+      ],
+      "Discover how our ${ strongText } protect you": [
+        "${ strongText } hizmetimizin sizi nasıl koruduğunu öğrenin"
+      ],
+      "Discover privacy features": [
+        "Gizlilik özelliklerini keşfedin"
+      ],
+      "Get the ${ strongText } on Android or iOS": [
+        "Andorid ya da iOS için ${ strongText } edinin"
+      ],
+      "Get the App": [
+        "Uygulamayı edinin"
+      ],
+      "privacy features": [
+        "gizlilik özellikleri"
+      ],
+      "Set up ${ strongText } from Gmail": [
+        "Gmail için ${ strongText } özelliğini ayarlayın"
+      ],
+      "Update your logins": [
+        "Oturum açma bilgilerinizi güncelleyin"
       ]
     },
     "Gmail forwarding": {
@@ -6154,7 +6189,7 @@
         "Siz silmeyi seçmedikçe kurtarma bilgileri bu aygıt üzerinde kalacak."
       ],
       "Recovery kit copied to clipboard": [
-        "Kurtarma anahtarı panoya kopyalandı"
+        "Kurtarma paketi panoya kopyalandı"
       ],
       "Recovery phrase copied to clipboard": [
         "Kurtarma ifadesi panoya kopyalandı"
@@ -6866,6 +6901,9 @@
       ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "${ MAIL_APP_NAME } ve ${ CALENDAR_APP_NAME } kullanmak için bir ${ BRAND_NAME } adresiniz olmalıdır"
+      ],
+      "You will NOT be able to decrypt any messages, files, and other data encrypted with this key. All data signed with this key will no longer be verified by ${ BRAND_NAME } applications.": [
+        "Bu anahtarla şifrelenmiş hiçbir iletinin, dosyanın ve diğer verilerin şifresini çözemezsiniz. Bu anahtarla imzalanan hiçbir veri artık ${ BRAND_NAME } uygulamaları tarafından doğrulanamaz."
       ],
       "You will receive priority support from specialists trained in account protection. For any account security concerns, please ${ hereLink }.": [
         "Hesap koruma konusunda eğitim almış uzmanlardan öncelikli destek alacaksınız. Herhangi bir hesap güvenliği sorunu için lütfen ${ hereLink }."
@@ -9314,7 +9352,7 @@
         "Farklı bir tarifeye geçerseniz tüm ${ visionary } tarifesi ek faydalarını kaybedersiniz ve daha sonra ${ visionary } tarifesine yeniden abone olamazsınız."
       ],
       "Most popular": [
-        "En beğenilen"
+        "En çok kullanılan"
       ],
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
         "Özgün ${ BRAND_NAME } kullanıcıları için sunulan bazı özellikler ve ek faydalar bulunduran özel bir tarife olduğundan, artık yeni abonelere ${ visionary } tarifesini sunmuyoruz."
@@ -9469,6 +9507,9 @@
       "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
         "${ n } taneye kadar takvim oluşturun ya da arkadaşlarınızın, ailenizin, iş arkadaşlarınızın ve kuruluşların takvimlerini ekleyin",
         "${ n } taneye kadar takvim oluşturun ya da arkadaşlarınızın, ailenizin, iş arkadaşlarınızın ve kuruluşların takvimlerini ekleyin"
+      ],
+      "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
+        "Aile üyelerine atayabileceğiniz en fazla ${ n } e-posta adresi/takma ad oluşturabilirsiniz. Bunları çevrim içi kimlikler için kullanabilirsiniz. Örneğin alışveriş hesapları için AliSiparis@${ domain }."
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "İnternet trafiğinizi birden çok sunucudan geçirerek VPN gizliliğine yönelik tehditlere karşı koruma sağlar"
@@ -10061,6 +10102,267 @@
         "Siz"
       ]
     },
+    "pass_signup_2023: Action": {
+      "Check out ${ appName } features": [
+        "${ appName } özelliklerine bakın"
+      ],
+      "Continue": [
+        "İlerle"
+      ],
+      "Continue to ${ free }": [
+        "${ free } ile ilerle"
+      ],
+      "Continue with Bitcoin": [
+        "Bitcoin ile ilerle"
+      ],
+      "create a new account": [
+        "yeni bir hesap oluştur"
+      ],
+      "Create another account instead": [
+        "Bunun yerine başka bir hesap oluşturun"
+      ],
+      "Download again ${ size }": [
+        "Yeniden ${ size } indirin"
+      ],
+      "Download to continue ${ size }": [
+        "İlerlemek için ${ size } indirin"
+      ],
+      "Keep this plan and use ${ appName }": [
+        "Bu tarifeyi koruyun ve ${ appName } kullanın"
+      ],
+      "Or ${ createANewAccount }": [
+        "Ya da ${ createANewAccount }un"
+      ],
+      "Start using ${ appName }": [
+        "${ appName } kullanmaya başlayın"
+      ],
+      "Start using ${ appName } now": [
+        "${ appName } kullanmaya başlayın"
+      ],
+      "Upgrade for only ${ relativePrice } extra per month": [
+        "Ayda yalnızca ek ${ relativePrice } karşılığında yükseltin"
+      ],
+      "Upgrade my plan": [
+        "Tarifemi yükselt"
+      ],
+      "Use ${ free } instead": [
+        "Bunun yerine ${ free } kullanın"
+      ]
+    },
+    "pass_signup_2023: Feature": {
+      "End-to-end encrypted": [
+        "Uçtan uca şifrelenmiş"
+      ],
+      "Open source": [
+        "Açık kaynaklı"
+      ],
+      "Protected by Swiss privacy laws": [
+        "İsviçre gizlilik yasaları tarafından korunur"
+      ],
+      "Swiss based": [
+        "İsviçre merkezli"
+      ]
+    },
+    "pass_signup_2023: Header": {
+      "Checkout": [
+        "Ödeme"
+      ],
+      "Continue with your ${ BRAND_NAME } account": [
+        "${ BRAND_NAME } hesabınızla ilerleyin"
+      ],
+      "Limited time offer": [
+        "Sınırlı süreli teklif"
+      ],
+      "Recommended": [
+        "Önerilen"
+      ],
+      "Select your plan": [
+        "Tarifenizi seçin"
+      ],
+      "Upgrade your plan": [
+        "Tarifenizi yükseltin"
+      ]
+    },
+    "pass_signup_2023: Info": {
+      "${ PASS_APP_NAME } benefits": [
+        "${ PASS_APP_NAME } yararları"
+      ],
+      "${ PASS_APP_NAME } is available as a browser extension on Firefox Add-ons.": [
+        "${ PASS_APP_NAME } Firefox Add-ons üzerinde bir tarayıcı eklentisi olarak bulunabilir."
+      ],
+      "${ PASS_APP_NAME } is available as a browser extension on the Chrome Web Store.": [
+        "${ PASS_APP_NAME } Chrome Web Store üzerinde bir tarayıcı eklentisi olarak bulunabilir."
+      ],
+      "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption.": [
+        "${ PASS_APP_NAME }, titiz uçtan uca şifreleme ile parolalarınızı ve kimliğinizi güvende tutar."
+      ],
+      "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption. To add premium features of ${ PASS_APP_NAME_2 } to your current subscription, we suggest upgrading to the ${ upsellPlanName } plan.": [
+        "${ PASS_APP_NAME }, titiz uçtan uca şifreleme ile parolalarınızı ve kimliğinizi güvende tutar. Ücretli ${ PASS_APP_NAME_2 } özelliklerini geçerli aboneliğinize eklemek için ${ upsellPlanName } tarifesine geçmenizi öneririz."
+      ],
+      "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption. Your current plan already gives you access to premium ${ PASS_APP_NAME_2 } features — no need to purchase again.": [
+        "${ PASS_APP_NAME }, titiz uçtan uca şifreleme ile parolalarınızı ve kimliğinizi güvende tutar. Geçerli tarifeniz zaten ücretli ${ PASS_APP_NAME_2 } özelliklerine erişmenizi sağlıyor. Yeniden satın almanıza gerek yok."
+      ],
+      "+ ${ relativePrice } per month": [
+        "+ ${ relativePrice } aylık"
+      ],
+      "All premium ${ BRAND_NAME } services.": [
+        "Tüm ücretli ${ BRAND_NAME } hizmetleri."
+      ],
+      "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
+        "Ancak ayda yalnızca ${ relativePrice } ek ödeme ile **${ unlockPlanTitle }** ve tüm ücretli ${ BRAND_NAME } hizmetlerine erişmek için **${ upsellPlanTitle }** tarifesine yükseltebilirsiniz."
+      ],
+      "By continuing, you agree to our ${ termsAndConditions }": [
+        "İlerleyerek ${ termsAndConditions } metnini kabul etmiş olursunuz"
+      ],
+      "Creating your account": [
+        "Hesabınız oluşturuluyor"
+      ],
+      "Discover ${ PASS_APP_NAME },${ br }our new encrypted password manager": [
+        "${ PASS_APP_NAME },${ br }yeni şifrelenmiş parola yöneticimiz"
+      ],
+      "Download and install the relevant apps and extensions to start using ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } kullanmaya başlamak için ilgili uygulamaları ve eklentileri indirip kurun"
+      ],
+      "Download the ${ PASS_APP_NAME } app from Google Play and install it to start using ${ PASS_APP_NAME2 } on your phone.": [
+        "${ PASS_APP_NAME } uygulamasını Google Play üzerinden indirip kurun ve ${ PASS_APP_NAME2 } uygulamasını telefonunuzda kullanmaya başlayın."
+      ],
+      "Download the ${ PASS_APP_NAME } app from the App Store and install it to start using ${ PASS_APP_NAME2 } on your phone.": [
+        "${ PASS_APP_NAME } uygulamasını App Store üzerinden indirip kurun ve ${ PASS_APP_NAME2 } uygulamasını telefonunuzda kullanmaya başlayın."
+      ],
+      "Encrypted password manager${ breakToken }that also protects your identity": [
+        "Şifrelenmiş parola yöneticisi${ breakToken }kimliğinizi de korur"
+      ],
+      "End-to-end encrypted notes": [
+        "Uçtan uca şifrelenmiş notlar"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
+        "Ayda yalnızca **${ relativePrice }** daha ödeyerek tüm ücretli ${ BRAND_NAME } hizmetlerine erişebilirsiniz!"
+      ],
+      "Free forever": [
+        "Sonsuza kadar ücretsiz"
+      ],
+      "Get ${ appName } for ${ browserName }": [
+        "${ browserName } için ${ appName } edinin"
+      ],
+      "Get ${ appName } for ${ browserName } soon": [
+        "Yakında ${ browserName } için ${ appName } yayınlanacak"
+      ],
+      "Hide-my-email aliases protect your email from data breaches": [
+        "Hide-my-email takma adları, e-postanızı verilerinizin ele geçirilmesinden korur"
+      ],
+      "If you get locked out of your ${ BRAND_NAME } Account, your **recovery kit** will allow you to sign in and recover your data.": [
+        "${ BRAND_NAME } hesabınıza erişiminizi kaybederseniz, **kurtarma paketiniz** oturum açmanızı ve verilerinizi kurtarmanızı sağlar."
+      ],
+      "Includes basic ${ appName } features:": [
+        "Temel ${ appName } özellikleri bulunur:"
+      ],
+      "Install ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } uygulamasını kurun"
+      ],
+      "Install app": [
+        "Uygulamayı kurun"
+      ],
+      "Install app and extension": [
+        "Uygulamayı ve eklentiyi kurun"
+      ],
+      "It’s the only way to fully restore your account, so make sure you keep this **recovery kit** somewhere safe.": [
+        "Hesabınızı tam olarak kurtarmanın tek yolu bu olduğundan bu **kurtarma paketini** güvenli bir yerde sakladığınızdan emin olun."
+      ],
+      "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
+        "İnternette güvende kalmak için ${ BRAND_NAME } kullanan 100 milyondan fazla kişiye katılın"
+      ],
+      "Launching ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } uygulaması başlatılıyor"
+      ],
+      "One easy subscription.": [
+        "Tek bir kolay abonelik."
+      ],
+      "Open-source and audited": [
+        "Açık kaynaklı ve denetlenmiş"
+      ],
+      "per month, billed annually": [
+        "aylık, yılda bir faturalanır"
+      ],
+      "per month, billed every 15 months": [
+        "aylık, 15 ayda bir faturalanır"
+      ],
+      "per month, billed every 30 months": [
+        "aylık, 30 ayda bir faturalanır"
+      ],
+      "per month, billed every month": [
+        "aylık, ayda bir faturalanır"
+      ],
+      "per month, billed every two years": [
+        "aylık, iki yılda bir faturalanır"
+      ],
+      "Preparing your Recovery Kit": [
+        "Kurtarma paketiniz hazırlanıyor"
+      ],
+      "Protected by Swiss privacy laws": [
+        "İsviçre gizlilik yasaları tarafından korunur"
+      ],
+      "Save your recovery kit to continue": [
+        "İlerlemek için kurtarma paketinizi kaydedin"
+      ],
+      "Signing in to ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } uygulamasında oturum açılıyor"
+      ],
+      "Special launch offer: Get ${ title } for ${ price } forever!": [
+        "Özel açılış teklifi: Sonsuza dek ${ title } için ${ price } ödeyin!"
+      ],
+      "The offer you selected is not available for ${ currentPlanTitle } subscribers.": [
+        "Seçtiğiniz teklif, ${ currentPlanTitle } abonelerine sunulmuyor."
+      ],
+      "to start using ${ PASS_APP_NAME } on your phone": [
+        "telefonunuzda ${ PASS_APP_NAME } kullanmaya başlayın"
+      ],
+      "Unlock ${ PASS_APP_NAME } premium features by upgrading": [
+        "Tarifenizi yükselterek ücretli ${ PASS_APP_NAME } özelliklerine erişin"
+      ],
+      "Updating your account": [
+        "Hesabınız güncelleniyor"
+      ],
+      "Verifying your payment": [
+        "Ödemeniz doğrulanıyor"
+      ],
+      "Welcome to ${ plan }": [
+        "${ plan } tarifesine hoş geldiniz"
+      ],
+      "Works on all devices": [
+        "Tüm aygıtlarda çalışır"
+      ],
+      "You already have access to premium ${ appName } features — no need to purchase again.": [
+        "Ücretli ${ appName } özelliklerine zaten erişiminiz var. Yeniden satın almanıza gerek yok."
+      ],
+      "You currently have": [
+        "Şu anda kullanabilecekleriniz"
+      ],
+      "Your organization has access to ${ free }. If you want to access premium ${ appName } features, please ask your organization's administrator to upgrade.": [
+        "Kuruluşunuzun ${ free } erişimi var. Ücretli ${ appName } özelliklerine erişmek istiyorsanız, lütfen kuruluşunuzun yöneticisinden tarifeyi yükseltmesini isteyin."
+      ]
+    },
+    "pass_signup_2023: Onboarding": {
+      "Welcome to ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } uygulamasına hoş geldiniz"
+      ]
+    },
+    "pass_signup_2023: Title": {
+      "${ upsellPlanTitle } plan": [
+        "${ upsellPlanTitle } tarifesi"
+      ],
+      "All ${ BRAND_NAME } Plus services.${ br }One easy subscription.": [
+        "Tüm ${ BRAND_NAME } Plus hizmetleri.${ br }Tek bir kolay abonelik."
+      ],
+      "Create your ${ BRAND_NAME } account": [
+        "${ BRAND_NAME } hesabınızı açın"
+      ],
+      "Request your organization administrator to upgrade": [
+        "Kuruluş yöneticinizden tasrifeyi yükseltmesini isteyin"
+      ],
+      "Secure your account": [
+        "Hesabınızı koruyun"
+      ]
+    },
     "Payment method option": {
       "Credit/debit card": [
         "Kredi ya da banka kartı"
@@ -10643,7 +10945,7 @@
         "Yalnızca sınırlı bir süre için"
       ],
       "Most popular": [
-        "En beğenilen"
+        "En çok kullanılan"
       ],
       "Offer ends soon": [
         "Teklifin süresi yakında dolacak"

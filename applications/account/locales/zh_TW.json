@@ -4360,9 +4360,6 @@
     "Font face option": {
       "System default": [
         "系統預設值"
-      ],
-      "Theme default": [
-        "佈景主題預設值"
       ]
     },
     "Font Size Default": {
@@ -4399,6 +4396,44 @@
       ],
       "(during your first month)": [
         "(您初來首個月內)"
+      ]
+    },
+    "Get started checklist instructions": {
+      "${ MAIL_APP_NAME } app": [
+        "${ MAIL_APP_NAME }應用程式"
+      ],
+      "account logins": [
+        "帳號登錄"
+      ],
+      "Auto-forward Gmail": [
+        "自動轉寄至Gmail"
+      ],
+      "auto-forwarding": [
+        "自動轉寄"
+      ],
+      "Change ${ strongText } to your ${ BRAND_NAME } address": [
+        "變更${ strongText }至${ BRAND_NAME }地址"
+      ],
+      "Discover how our ${ strongText } protect you": [
+        "了解${ strongText }如何保護您。"
+      ],
+      "Discover privacy features": [
+        "發現隱私功能"
+      ],
+      "Get the ${ strongText } on Android or iOS": [
+        "於Android或iOS取得${ strongText }"
+      ],
+      "Get the App": [
+        "取得應用程式"
+      ],
+      "privacy features": [
+        "隱私功能"
+      ],
+      "Set up ${ strongText } from Gmail": [
+        "設定${ strongText }至Gmail"
+      ],
+      "Update your logins": [
+        "更新您的登入"
       ]
     },
     "Gmail forwarding": {
@@ -5186,7 +5221,7 @@
         "American Express SafeKey 標誌"
       ],
       "Amount above maximum (${ amount }).": [
-        "金額超過上限 (${ amount })。"
+        "金額不得高於 (${ amount })。"
       ],
       "Amount below minimum (${ amount }).": [
         "金額低於下限 (${ amount })。"
@@ -5732,7 +5767,7 @@
         "增加您${ BRAND_NAME }的使用體驗，使用應用程式以滿足需求"
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
-        "於下一步驟，您可以使用比特幣提交存款。"
+        "在下一步驟裡，您將可以使用比特幣數位錢包，提交單筆存款。"
       ],
       "Inherited from parent folder": [
         "繼承自上層資料夾"
@@ -6236,7 +6271,7 @@
         "將此密碼以及檔案存放在另一處安全的地方。日後匯入金鑰時，就得派上用場。"
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
-        "透過以下地址或掃描條碼提交存款。經確認後存款將會顯示於帳號上。"
+        "提交單筆存款時，可使用以下位址或者掃描 QR 代碼。該筆存入款項在確認後，就會顯示在您的帳號裡。"
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "訂閱即將結束:於${ byDate }重新啟用以維持${ planName }的福利。${ reactivateLink }"
@@ -6413,7 +6448,7 @@
         "為避免資料遺失，最好只刪除您知道的檔案，或是匯出複本。"
       ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
-        "為完成付款，請傳送${ btcAmountBold }至以下地址"
+        "欲完成您的繳款，請傳送 ${ btcAmountBold } 至以下位址。"
       ],
       "To confirm, please enter the name of the user you wish to delete.": [
         "要確認，請輸入您想要刪除的使用者名稱。"
@@ -6798,6 +6833,9 @@
       ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "您將需要一個 ${ BRAND_NAME } 電子郵件位址，方可使用 ${ MAIL_APP_NAME } 和 ${ CALENDAR_APP_NAME }"
+      ],
+      "You will NOT be able to decrypt any messages, files, and other data encrypted with this key. All data signed with this key will no longer be verified by ${ BRAND_NAME } applications.": [
+        "您無法透過此金鑰解密訊息、檔案、及其他資料。所有透過此金鑰簽署的資料將不在被${ BRAND_NAME }驗證應用程式承認。"
       ],
       "You will receive priority support from specialists trained in account protection. For any account security concerns, please ${ hereLink }.": [
         "您將獲得受過帳號保護訓練的專家的優先支援。若任何帳號安全問題，請聯絡我們 ${ hereLink }"
@@ -7450,7 +7488,7 @@
         "瀏覽器版本"
       ],
       "BTC address": [
-        "BTC 位址"
+        "比特幣地址"
       ],
       "BTC amount": [
         "比特幣金額"
@@ -9366,6 +9404,9 @@
       "Create up to ${ n } calendars or add calendars from friends, family, colleagues, and organizations": [
         "建立多達 ${ n } 個行事曆或新增好友、家人、同事和組織的行事曆"
       ],
+      "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
+        "創建${ n }個電子郵件地址/別名分配至家庭成員。包含線上身分，如，JohnShopper@${ domain }給購物帳號。"
+      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "透過將您的網際網路流量傳遞給多個伺服器來對抗針對 VPN 隱私的威脅"
       ],
@@ -9946,6 +9987,267 @@
     "Participant name": {
       "You": [
         "您"
+      ]
+    },
+    "pass_signup_2023: Action": {
+      "Check out ${ appName } features": [
+        "查看${ appName }功能"
+      ],
+      "Continue": [
+        "繼續"
+      ],
+      "Continue to ${ free }": [
+        "繼續使用 ${ free }"
+      ],
+      "Continue with Bitcoin": [
+        "使用Bitcoin以繼續"
+      ],
+      "create a new account": [
+        "創建一個新的帳號"
+      ],
+      "Create another account instead": [
+        "建立另一個帳號"
+      ],
+      "Download again ${ size }": [
+        "重新下載 ${ size }"
+      ],
+      "Download to continue ${ size }": [
+        "下載已繼續${ size }"
+      ],
+      "Keep this plan and use ${ appName }": [
+        "保持此方案及使用${ appName }"
+      ],
+      "Or ${ createANewAccount }": [
+        "或${ createANewAccount }"
+      ],
+      "Start using ${ appName }": [
+        "開始使用 ${ appName }"
+      ],
+      "Start using ${ appName } now": [
+        "現在開始使用 ${ appName }"
+      ],
+      "Upgrade for only ${ relativePrice } extra per month": [
+        "升級只要每月${ relativePrice }"
+      ],
+      "Upgrade my plan": [
+        "升級我的方案"
+      ],
+      "Use ${ free } instead": [
+        "使用${ free }取代"
+      ]
+    },
+    "pass_signup_2023: Feature": {
+      "End-to-end encrypted": [
+        "點對點加密"
+      ],
+      "Open source": [
+        "開原"
+      ],
+      "Protected by Swiss privacy laws": [
+        "受瑞士隱私法律保障"
+      ],
+      "Swiss based": [
+        "瑞士為基礎"
+      ]
+    },
+    "pass_signup_2023: Header": {
+      "Checkout": [
+        "結帳"
+      ],
+      "Continue with your ${ BRAND_NAME } account": [
+        "以您的${ BRAND_NAME }帳號繼續"
+      ],
+      "Limited time offer": [
+        "限時優惠"
+      ],
+      "Recommended": [
+        "建議"
+      ],
+      "Select your plan": [
+        "選擇你的方案"
+      ],
+      "Upgrade your plan": [
+        "升級您的方案"
+      ]
+    },
+    "pass_signup_2023: Info": {
+      "${ PASS_APP_NAME } benefits": [
+        "${ PASS_APP_NAME }福利"
+      ],
+      "${ PASS_APP_NAME } is available as a browser extension on Firefox Add-ons.": [
+        "${ PASS_APP_NAME }於Firefox瀏覽器擴充提供。"
+      ],
+      "${ PASS_APP_NAME } is available as a browser extension on the Chrome Web Store.": [
+        "${ PASS_APP_NAME }於Chrome網頁商店瀏覽器擴充提供。"
+      ],
+      "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption.": [
+        "${ PASS_APP_NAME } 採用嚴格的端對端加密，保護您的密碼和身分安全。"
+      ],
+      "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption. To add premium features of ${ PASS_APP_NAME_2 } to your current subscription, we suggest upgrading to the ${ upsellPlanName } plan.": [
+        "${ PASS_APP_NAME }透過點對點加密保護密碼及身分。添加付費版${ PASS_APP_NAME_2 }至目前的訂閱，我們建議您升級至${ upsellPlanName }方案。"
+      ],
+      "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption. Your current plan already gives you access to premium ${ PASS_APP_NAME_2 } features — no need to purchase again.": [
+        "${ PASS_APP_NAME }透過點對點加密保護您的密碼和身分。您目前付費方案包含${ PASS_APP_NAME_2 }功能 —無須再購買一次"
+      ],
+      "+ ${ relativePrice } per month": [
+        "+ ${ relativePrice }每月"
+      ],
+      "All premium ${ BRAND_NAME } services.": [
+        "全部付費版${ BRAND_NAME }服務。"
+      ],
+      "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
+        "但您可以透過升級到 **${ upsellPlanTitle }** 解鎖 **${ unlockPlanTitle }** 與所有進階 ${ BRAND_NAME } 服務 — 僅需每月額外 ${ relativePrice }。"
+      ],
+      "By continuing, you agree to our ${ termsAndConditions }": [
+        "繼續代表您同意我們的${ termsAndConditions }"
+      ],
+      "Creating your account": [
+        "創建您的帳號"
+      ],
+      "Discover ${ PASS_APP_NAME },${ br }our new encrypted password manager": [
+        "探索發掘 ${ PASS_APP_NAME },${ br }全新推出的加密安全密碼管理程式"
+      ],
+      "Download and install the relevant apps and extensions to start using ${ PASS_APP_NAME }": [
+        "下載及安裝新版應用程式及擴充以開始使用${ PASS_APP_NAME }"
+      ],
+      "Download the ${ PASS_APP_NAME } app from Google Play and install it to start using ${ PASS_APP_NAME2 } on your phone.": [
+        "從Google Play下載${ PASS_APP_NAME }應用程式並安裝以於手機啟用${ PASS_APP_NAME2 }。"
+      ],
+      "Download the ${ PASS_APP_NAME } app from the App Store and install it to start using ${ PASS_APP_NAME2 } on your phone.": [
+        "從App Store下載${ PASS_APP_NAME }應用程式並安裝以於手機啟用${ PASS_APP_NAME2 }。"
+      ],
+      "Encrypted password manager${ breakToken }that also protects your identity": [
+        "加密的密碼字元管理器${ breakToken }也保護您的身分"
+      ],
+      "End-to-end encrypted notes": [
+        "點對點加密附註"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
+        "**每月${ relativePrice }及更多**，讓您存取付費版${ BRAND_NAME }功能!"
+      ],
+      "Free forever": [
+        "永久免費"
+      ],
+      "Get ${ appName } for ${ browserName }": [
+        "盡快為${ browserName }取得${ appName }。"
+      ],
+      "Get ${ appName } for ${ browserName } soon": [
+        "盡快為${ browserName }取得${ appName }。"
+      ],
+      "Hide-my-email aliases protect your email from data breaches": [
+        "Hide-my-email 別名保護您免於資料外洩的威脅"
+      ],
+      "If you get locked out of your ${ BRAND_NAME } Account, your **recovery kit** will allow you to sign in and recover your data.": [
+        "若您無法解鎖${ BRAND_NAME }帳號，您的**復原包**將允許您登入及復原您的資料。"
+      ],
+      "Includes basic ${ appName } features:": [
+        "包含基礎${ appName }功能:"
+      ],
+      "Install ${ PASS_APP_NAME }": [
+        "安裝${ PASS_APP_NAME }"
+      ],
+      "Install app": [
+        "安裝應用程式"
+      ],
+      "Install app and extension": [
+        "安裝應用程式及擴充功能"
+      ],
+      "It’s the only way to fully restore your account, so make sure you keep this **recovery kit** somewhere safe.": [
+        "此是唯一還原帳號的方法，確保您的**復原包**安全的存放。"
+      ],
+      "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
+        "加入超過一億人的行列，選擇 ${ BRAND_NAME } 確保上網安全"
+      ],
+      "Launching ${ PASS_APP_NAME }": [
+        "切換至 ${ PASS_APP_NAME }"
+      ],
+      "One easy subscription.": [
+        "一個簡單的訂閱。"
+      ],
+      "Open-source and audited": [
+        "經過審核開放原始碼"
+      ],
+      "per month, billed annually": [
+        "每年，每年收費"
+      ],
+      "per month, billed every 15 months": [
+        "每月，每15個月收費"
+      ],
+      "per month, billed every 30 months": [
+        "每月，每30個月收費"
+      ],
+      "per month, billed every month": [
+        "每月，每月收費"
+      ],
+      "per month, billed every two years": [
+        "每月，每兩年收費"
+      ],
+      "Preparing your Recovery Kit": [
+        "準備復原包"
+      ],
+      "Protected by Swiss privacy laws": [
+        "受瑞士隱私法律保障"
+      ],
+      "Save your recovery kit to continue": [
+        "儲存您的復原包並繼續"
+      ],
+      "Signing in to ${ PASS_APP_NAME }": [
+        "登入至${ PASS_APP_NAME }"
+      ],
+      "Special launch offer: Get ${ title } for ${ price } forever!": [
+        "特殊優惠: 永久取得${ price }的${ title }"
+      ],
+      "The offer you selected is not available for ${ currentPlanTitle } subscribers.": [
+        "您選擇的方案不支援${ currentPlanTitle }訂閱者。"
+      ],
+      "to start using ${ PASS_APP_NAME } on your phone": [
+        "於手機啟用${ PASS_APP_NAME }"
+      ],
+      "Unlock ${ PASS_APP_NAME } premium features by upgrading": [
+        "升級以解鎖${ PASS_APP_NAME }付費版功能"
+      ],
+      "Updating your account": [
+        "更新您的帳號"
+      ],
+      "Verifying your payment": [
+        "驗證您的付帳款"
+      ],
+      "Welcome to ${ plan }": [
+        "歡迎使用 ${ plan }"
+      ],
+      "Works on all devices": [
+        "於所有裝置皆可使用"
+      ],
+      "You already have access to premium ${ appName } features — no need to purchase again.": [
+        "您已可存取付費版${ appName }功能 — 無須再次購買。"
+      ],
+      "You currently have": [
+        "您目前有"
+      ],
+      "Your organization has access to ${ free }. If you want to access premium ${ appName } features, please ask your organization's administrator to upgrade.": [
+        "貴機構已可存取${ free }。若需使用進階版${ appName }功能，請洽詢組織管理員升級。"
+      ]
+    },
+    "pass_signup_2023: Onboarding": {
+      "Welcome to ${ PASS_APP_NAME }": [
+        "歡迎來到 ${ PASS_APP_NAME }"
+      ]
+    },
+    "pass_signup_2023: Title": {
+      "${ upsellPlanTitle } plan": [
+        "${ upsellPlanTitle }方案"
+      ],
+      "All ${ BRAND_NAME } Plus services.${ br }One easy subscription.": [
+        "全部${ BRAND_NAME }升級服務。${ br }一個簡單的訂閱。"
+      ],
+      "Create your ${ BRAND_NAME } account": [
+        "創建您的 ${ BRAND_NAME } 帳號"
+      ],
+      "Request your organization administrator to upgrade": [
+        "要求貴組織管理員升級"
+      ],
+      "Secure your account": [
+        "安全您的帳號"
       ]
     },
     "Payment method option": {
@@ -11087,6 +11389,70 @@
     "Summary of errors during export calendar": {
       "Details about events that couldn't be exported": [
         "無法匯出行程的詳細資訊"
+      ]
+    },
+    "summer2023: Billing cycle option": {
+      "1 year": [
+        "1 年"
+      ],
+      "2 years": [
+        "2年"
+      ]
+    },
+    "summer2023: Deal details": {
+      "Premium Drive": [
+        "付費版雲端硬碟"
+      ],
+      "Premium Mail and Calendar": [
+        "付費版信件和行事曆"
+      ],
+      "Premium Password Manager": [
+        "付費版密碼管理器"
+      ]
+    },
+    "summer2023: Describe Proton Pass": {
+      "Securely store your passwords and autofill them on websites. Includes unlimited passwords, autofill, password generator, and more.": [
+        "安全處存密碼和自動填入網站。包含無限密碼、自動填入、密碼生成、和更多。"
+      ]
+    },
+    "summer2023: Short tool name to present Proton Pass": {
+      "Password manager": [
+        "密碼管理員"
+      ]
+    },
+    "summer2023: Tooltip": {
+      "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
+        "於您全部的裝置創建安全登入的詳細資料。包含無限別名、20個保管庫、組合雙重驗證、信用卡自動填入及更多。"
+      ],
+      "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "包含於65+國家的2950+伺服器，連接最多10臺裝置，存取全球影音串流服務和惡意軟體、廣告攔截程式，及更多。"
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "包含對 1 個自訂電子郵件網域、10 組電子郵件位址、10 組 hide-my-email 別名、行事曆分享與更多功能的支援。"
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "透過加密的雲端儲存保護檔案。包含版本紀錄、加密的檔案共享、及更多。"
+      ]
+    },
+    "summer2023:Footer": {
+      "*Your subscription will automatically renew at the standard discounted rate at the end of your billing cycle.": [
+        "*您的訂閱將自動續約採用起始繳款單週期的折扣。"
+      ],
+      "Discounts are based on the standard monthly pricing. This offer is only available to first-time subscribers.": [
+        "折扣於每月基本價格。此優惠只提供給第一次訂閱者。"
+      ]
+    },
+    "summer2023:Info": {
+      "For a limited time, get the best ${ BRAND_NAME } has to offer at an exclusive discount.": [
+        "於限定時間，取得最佳的${ BRAND_NAME }折扣。"
+      ],
+      "We’re celebrating the nine-year anniversary of our crowdfunding!": [
+        "我們正在慶祝九年群眾募資!"
+      ]
+    },
+    "summer2023:Offer title": {
+      "${ BRAND_NAME } Anniversary Sale": [
+        "${ BRAND_NAME }年度銷售"
       ]
     },
     "Tab in domain modal": {

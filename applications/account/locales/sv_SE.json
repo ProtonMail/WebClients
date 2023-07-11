@@ -2740,6 +2740,9 @@
         "Filen ska ha en maximal storlek på ${ MAX_IMPORT_FILE_SIZE_STRING } och ha upp till ${ MAX_IMPORT_CONTACTS_STRING } kontakt. Om din fil är större, dela upp den i mindre filer.",
         "Filen ska ha en maximal storlek på ${ MAX_IMPORT_FILE_SIZE_STRING } och ha upp till ${ MAX_IMPORT_CONTACTS_STRING } kontakter. Om din fil är större, dela upp den i mindre filer."
       ],
+      "To remove the ${ MAIL_APP_NAME } footer, upgrade and unlock even more premium features.": [
+        "För att ta bort ${ MAIL_APP_NAME } i sidfoten, uppgradera och lås upp ännu fler premiumfunktioner."
+      ],
       "Track the status and activity of your referrals.": [
         "Spåra status och aktivitet för dina hänvisningar."
       ],
@@ -4349,8 +4352,8 @@
       "System default": [
         "Systemstandard"
       ],
-      "Theme default": [
-        "Temastandard"
+      "Theme font": [
+        "Temats typsnitt"
       ]
     },
     "Font Size Default": {
@@ -4387,6 +4390,44 @@
       ],
       "(during your first month)": [
         "(under din första månad)"
+      ]
+    },
+    "Get started checklist instructions": {
+      "${ MAIL_APP_NAME } app": [
+        "${ MAIL_APP_NAME }-app"
+      ],
+      "account logins": [
+        "kontoinloggningar"
+      ],
+      "Auto-forward Gmail": [
+        "Automatisk vidarebefordran av Gmail"
+      ],
+      "auto-forwarding": [
+        "automatisk vidarebefordran"
+      ],
+      "Change ${ strongText } to your ${ BRAND_NAME } address": [
+        "Ändra ${ strongText } till din ${ BRAND_NAME }-adress"
+      ],
+      "Discover how our ${ strongText } protect you": [
+        "Upptäck hur vår ${ strongText } skyddar dig"
+      ],
+      "Discover privacy features": [
+        "Upptäck integritetsfunktioner"
+      ],
+      "Get the ${ strongText } on Android or iOS": [
+        "Skaffa ${ strongText } på Android eller iOS"
+      ],
+      "Get the App": [
+        "Skaffa appen"
+      ],
+      "privacy features": [
+        "integritetsfunktioner"
+      ],
+      "Set up ${ strongText } from Gmail": [
+        "Ställ in ${ strongText } från Gmail"
+      ],
+      "Update your logins": [
+        "Uppdatera dina inloggningar"
       ]
     },
     "Gmail forwarding": {
@@ -5198,6 +5239,9 @@
       ],
       "American Express SafeKey logo": [
         "Logga för American Express SafeKey"
+      ],
+      "Amount above maximum (${ amount }).": [
+        "Belopp över maximum (${ amount })."
       ],
       "Amount below minimum (${ amount }).": [
         "Belopp under minimum (${ amount })."
@@ -6103,6 +6147,9 @@
       "Recovery information will remain on this device unless you select to delete it.": [
         "Återställningsinformation kommer finnas kvar på denna enhet om du inte väljer att ta bort den."
       ],
+      "Recovery kit copied to clipboard": [
+        "Återställningskit kopierat till urklipp"
+      ],
       "Recovery phrase copied to clipboard": [
         "Återställningsfras kopierad till urklipp"
       ],
@@ -6304,6 +6351,9 @@
       "The following address was not created.": [
         "Följande adress skapades inte.",
         "Följande adresser skapades inte."
+      ],
+      "The following members will receive an email prompting them to enable two-factor authentication as soon as possible.": [
+        "Följande medlemmar kommer att få ett e-postmeddelande som uppmanar dem att aktivera tvåfaktorsautentisering så snart som möjligt."
       ],
       "The format of your CSV file is incorrect.": [
         "Formatet på din CSV-fil är felaktigt."
@@ -6798,6 +6848,9 @@
       ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Du behöver en ${ BRAND_NAME }-adress för att använda ${ MAIL_APP_NAME } och ${ CALENDAR_APP_NAME }"
+      ],
+      "You will NOT be able to decrypt any messages, files, and other data encrypted with this key. All data signed with this key will no longer be verified by ${ BRAND_NAME } applications.": [
+        "Du kommer INTE att kunna dekryptera några meddelanden, filer och annan data krypterad med denna nyckel. All data signerad med denna nyckel kommer inte längre att verifieras av ${ BRAND_NAME }-applikationer."
       ],
       "You will receive priority support from specialists trained in account protection. For any account security concerns, please ${ hereLink }.": [
         "Du kommer få prioriterad support från specialister utbildade i kontoskydd. För alla problem med kontosäkerhet, ${ hereLink }."
@@ -8000,6 +8053,9 @@
       "Show sender images": [
         "Visa avsändarbilder"
       ],
+      "Show unread count in Favicon": [
+        "Visa antal oläst i Favicon"
+      ],
       "Show week numbers": [
         "Visa veckonummer"
       ],
@@ -8916,6 +8972,9 @@
       "Auto-reply": [
         "Automatiskt svar"
       ],
+      "Autofill credit cards (coming soon)": [
+        "Autofyll kreditkort (kommer snart)"
+      ],
       "Available on all platforms": [
         "Tillgängligt på alla plattformar"
       ],
@@ -8985,6 +9044,9 @@
       "Free VPN on a single device": [
         "Gratis VPN på en enhet"
       ],
+      "Fully refundable for 30 days": [
+        "Återbetalas till fullo i 30 dagar"
+      ],
       "GDPR data processing agreement": [
         "GDPR databehandlingsavtal"
       ],
@@ -8993,6 +9055,9 @@
       ],
       "High-speed streaming": [
         "Höghastighetsstreaming"
+      ],
+      "High-speed Swiss VPN that protects your privacy": [
+        "Höghastighets schweizisk VPN som skyddar din integritet"
       ],
       "High-speed VPN on ${ n } device": [
         "Höghastighets-VPN på ${ n } enhet",
@@ -9370,6 +9435,9 @@
       "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
         "Skapa upp till ${ n } kalender eller lägg till kalendrar från vänner, familj, kollegor och organisationer",
         "Skapa upp till ${ n } kalendrar eller lägg till kalendrar från vänner, familj, kollegor och organisationer"
+      ],
+      "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
+        "Skapa upp till ${ n } e-postadresser/alias som du kan tilldela familjemedlemmar. Använd dem för onlineidentiteter, t.ex. JohnShopper@${ domain } för shoppingkonton."
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Försvarar mot hot mot VPN-integriteten genom att skicka din Internet-trafik via flera servrar"
@@ -9957,6 +10025,258 @@
     "Participant name": {
       "You": [
         "Du"
+      ]
+    },
+    "pass_signup_2023: Action": {
+      "Check out ${ appName } features": [
+        "Kolla in ${ appName }-funktioner"
+      ],
+      "Continue": [
+        "Fortsätt"
+      ],
+      "Continue to ${ free }": [
+        "Fortsätt till ${ free }"
+      ],
+      "Continue with Bitcoin": [
+        "Fortsätt med Bitcoin"
+      ],
+      "create a new account": [
+        "skapa ett nytt konto"
+      ],
+      "Create another account instead": [
+        "Skapa ett annat konto istället"
+      ],
+      "Download again ${ size }": [
+        "Ladda ner igen ${ size }"
+      ],
+      "Download to continue ${ size }": [
+        "Ladda ner för att fortsätta ${ size }"
+      ],
+      "Keep this plan and use ${ appName }": [
+        "Behåll detta paket och använd ${ appName }"
+      ],
+      "Or ${ createANewAccount }": [
+        "Eller ${ createANewAccount }"
+      ],
+      "Start using ${ appName }": [
+        "Börja använda ${ appName }"
+      ],
+      "Start using ${ appName } now": [
+        "Börja använda ${ appName } nu"
+      ],
+      "Upgrade for only ${ relativePrice } extra per month": [
+        "Uppgradera för endast ${ relativePrice } extra per månad"
+      ],
+      "Upgrade my plan": [
+        "Uppgradera mitt paket"
+      ],
+      "Use ${ free } instead": [
+        "Använd ${ free } istället"
+      ]
+    },
+    "pass_signup_2023: Feature": {
+      "End-to-end encrypted": [
+        "End-to-end-krypterad"
+      ],
+      "Open source": [
+        "Öppen källkod"
+      ],
+      "Protected by Swiss privacy laws": [
+        "Skyddad av schweiziska integritetslagar"
+      ],
+      "Swiss based": [
+        "Baserat i Schweiz"
+      ]
+    },
+    "pass_signup_2023: Header": {
+      "Continue with your ${ BRAND_NAME } account": [
+        "Fortsätt med ditt ${ BRAND_NAME }-konto"
+      ],
+      "Limited time offer": [
+        "Tidsbegränsat erbjudande"
+      ],
+      "Recommended": [
+        "Rekommenderad"
+      ],
+      "Select your plan": [
+        "Välj ditt paket"
+      ],
+      "Upgrade your plan": [
+        "Uppgradera ditt paket"
+      ]
+    },
+    "pass_signup_2023: Info": {
+      "${ PASS_APP_NAME } is available as a browser extension on the Chrome Web Store.": [
+        "${ PASS_APP_NAME } är tillgängligt som ett webbläsartillägg på Chrome Web Store."
+      ],
+      "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption.": [
+        "${ PASS_APP_NAME } håller dina lösenord och identitet säkra med rigorös end-to-end-kryptering."
+      ],
+      "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption. To add premium features of ${ PASS_APP_NAME_2 } to your current subscription, we suggest upgrading to the ${ upsellPlanName } plan.": [
+        "${ PASS_APP_NAME } håller dina lösenord och identitet säkra med rigorös end-to-end-kryptering. För att lägga till premiumfunktioner för ${ PASS_APP_NAME_2 } till din nuvarande prenumeration, föreslår vi att du uppgraderar till ${ upsellPlanName }-paketet."
+      ],
+      "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption. Your current plan already gives you access to premium ${ PASS_APP_NAME_2 } features — no need to purchase again.": [
+        "${ PASS_APP_NAME } håller dina lösenord och identitet säkra med rigorös end-to-end-kryptering. Ditt nuvarande paket ger dig redan åtkomst till premiumfunktioner för ${ PASS_APP_NAME_2 } – du behöver inte köpa igen."
+      ],
+      "+ ${ relativePrice } per month": [
+        "+ ${ relativePrice } per månad"
+      ],
+      "All premium ${ BRAND_NAME } services.": [
+        "Alla premiumtjänster för ${ BRAND_NAME }."
+      ],
+      "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
+        "Men du kan låsa upp **${ unlockPlanTitle }** och alla premiumtjänster för ${ BRAND_NAME } genom att uppgradera till **${ upsellPlanTitle }** – det kostar endast ${ relativePrice } extra per månad."
+      ],
+      "By continuing, you agree to our ${ termsAndConditions }": [
+        "Genom att fortsätta godkänner du våra ${ termsAndConditions }"
+      ],
+      "Creating your account": [
+        "Skapar ditt konto"
+      ],
+      "Discover ${ PASS_APP_NAME },${ br }our new encrypted password manager": [
+        "Upptäck ${ PASS_APP_NAME },${ br }vår nya krypterade lösenordshanterare"
+      ],
+      "Download and install the relevant apps and extensions to start using ${ PASS_APP_NAME }": [
+        "Ladda ner och installera relevanta appar och tillägg för att börja använda ${ PASS_APP_NAME }"
+      ],
+      "Download the ${ PASS_APP_NAME } app from Google Play and install it to start using ${ PASS_APP_NAME2 } on your phone.": [
+        "Ladda ner appen ${ PASS_APP_NAME } från Google Play och installera den för att börja använda ${ PASS_APP_NAME2 } på din telefon."
+      ],
+      "Download the ${ PASS_APP_NAME } app from the App Store and install it to start using ${ PASS_APP_NAME2 } on your phone.": [
+        "Ladda ner appen ${ PASS_APP_NAME } från App Store och installera den för att börja använda ${ PASS_APP_NAME2 } på din telefon."
+      ],
+      "Encrypted password manager${ breakToken }that also protects your identity": [
+        "Krypterad lösenordshanterare${ breakToken }som också skyddar din identitet"
+      ],
+      "End-to-end encrypted notes": [
+        "End-to-end-krypterade anteckningar"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
+        "För endast **${ relativePrice } per månad** mer får du åtkomst till alla premiumtjänster för ${ BRAND_NAME }!"
+      ],
+      "Free forever": [
+        "Gratis för alltid"
+      ],
+      "Get ${ appName } for ${ browserName }": [
+        "Skaffa ${ appName } för ${ browserName }"
+      ],
+      "Get ${ appName } for ${ browserName } soon": [
+        "Skaffa ${ appName } för ${ browserName } snart"
+      ],
+      "Hide-my-email aliases protect your email from data breaches": [
+        "Hide-my-email-alias skyddar din e-post från dataintrång"
+      ],
+      "If you get locked out of your ${ BRAND_NAME } Account, your **recovery kit** will allow you to sign in and recover your data.": [
+        "Om du blir utelåst från ditt ${ BRAND_NAME }-konto kommer ditt **återställningskit** att låta dig logga in och återställa dina data."
+      ],
+      "Includes basic ${ appName } features:": [
+        "Inkluderar grundläggande ${ appName }-funktioner:"
+      ],
+      "Install ${ PASS_APP_NAME }": [
+        "Installera ${ PASS_APP_NAME }"
+      ],
+      "Install app": [
+        "Installera app"
+      ],
+      "Install app and extension": [
+        "Installera appar och tillägg"
+      ],
+      "It’s the only way to fully restore your account, so make sure you keep this **recovery kit** somewhere safe.": [
+        "Det är det enda sättet att helt återställa ditt konto, så se till att förvara detta **återställningskit** någonstans på ett säkert sätt."
+      ],
+      "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
+        "Bli en del av över 100 miljoner människor som har valt ${ BRAND_NAME } för att hålla sig säkra online"
+      ],
+      "Launching ${ PASS_APP_NAME }": [
+        "Lanserar ${ PASS_APP_NAME }"
+      ],
+      "One easy subscription.": [
+        "En enkel prenumeration."
+      ],
+      "Open-source and audited": [
+        "Öppen källkod och granskad"
+      ],
+      "per month, billed annually": [
+        "per månad, faktureras årligen"
+      ],
+      "per month, billed every 15 months": [
+        "per månad, faktureras var 15:e månad"
+      ],
+      "per month, billed every 30 months": [
+        "per månad, faktureras var 30:e månad"
+      ],
+      "per month, billed every month": [
+        "per månad, faktureras varje månad"
+      ],
+      "per month, billed every two years": [
+        "per månad, faktureras vartannat år"
+      ],
+      "Preparing your Recovery Kit": [
+        "Förbereder ditt återställningskit"
+      ],
+      "Protected by Swiss privacy laws": [
+        "Skyddad av schweiziska integritetslagar"
+      ],
+      "Save your recovery kit to continue": [
+        "Spara ditt återställningskit för att fortsätta"
+      ],
+      "Signing in to ${ PASS_APP_NAME }": [
+        "Loggar in på ${ PASS_APP_NAME }"
+      ],
+      "Special launch offer: Get ${ title } for ${ price } forever!": [
+        "Speciallanseringserbjudande: Få ${ title } för ${ price } för alltid!"
+      ],
+      "The offer you selected is not available for ${ currentPlanTitle } subscribers.": [
+        "Erbjudandet du valde är inte tillgängligt för ${ currentPlanTitle }-prenumeranter."
+      ],
+      "to start using ${ PASS_APP_NAME } on your phone": [
+        "för att börja använda ${ PASS_APP_NAME } på din telefon"
+      ],
+      "Unlock ${ PASS_APP_NAME } premium features by upgrading": [
+        "Lås upp premiumfunktioner för ${ PASS_APP_NAME } genom att uppgradera"
+      ],
+      "Updating your account": [
+        "Uppdaterar ditt konto"
+      ],
+      "Verifying your payment": [
+        "Verifierar din betalning"
+      ],
+      "Welcome to ${ plan }": [
+        "Välkommen till ${ plan }"
+      ],
+      "Works on all devices": [
+        "Fungerar på alla enheter"
+      ],
+      "You already have access to premium ${ appName } features — no need to purchase again.": [
+        "Du har redan åtkomst till premiumfunktioner för ${ appName } – du behöver inte köpa igen."
+      ],
+      "You currently have": [
+        "Du har för närvarande"
+      ],
+      "Your organization has access to ${ free }. If you want to access premium ${ appName } features, please ask your organization's administrator to upgrade.": [
+        "Din organisation har åtkomst till ${ free }. Om du vill komma åt premiumfunktioner för ${ appName }, be din organisations administratör att uppgradera."
+      ]
+    },
+    "pass_signup_2023: Onboarding": {
+      "Welcome to ${ PASS_APP_NAME }": [
+        "Välkommen till ${ PASS_APP_NAME }"
+      ]
+    },
+    "pass_signup_2023: Title": {
+      "${ upsellPlanTitle } plan": [
+        "${ upsellPlanTitle }-paket"
+      ],
+      "All ${ BRAND_NAME } Plus services.${ br }One easy subscription.": [
+        "Alla ${ BRAND_NAME } Plus-tjänster.${ br }En enkel prenumeration."
+      ],
+      "Create your ${ BRAND_NAME } account": [
+        "Skapa ditt ${ BRAND_NAME }-konto"
+      ],
+      "Request your organization administrator to upgrade": [
+        "Be din organisationsadministratör att uppgradera"
+      ],
+      "Secure your account": [
+        "Säkra ditt konto"
       ]
     },
     "Payment method option": {
@@ -11109,6 +11429,56 @@
         "Detaljer om händelser som inte kunde exporteras"
       ]
     },
+    "summer2023: Billing cycle option": {
+      "1 year": [
+        "1 år"
+      ],
+      "2 years": [
+        "2 år"
+      ]
+    },
+    "summer2023: Deal details": {
+      "Premium Drive": [
+        "Premium Drive"
+      ],
+      "Premium Mail and Calendar": [
+        "Premium Mail och Calendar"
+      ]
+    },
+    "summer2023: Describe Proton Pass": {
+      "Securely store your passwords and autofill them on websites. Includes unlimited passwords, autofill, password generator, and more.": [
+        "Lagra dina lösenord på ett säkert sätt och autofyll dem på webbplatser. Inkluderar obegränsade lösenord, autofyll, lösenordsgenerator och mer."
+      ]
+    },
+    "summer2023: Short tool name to present Proton Pass": {
+      "Password manager": [
+        "Lösenordshanterare"
+      ]
+    },
+    "summer2023: Tooltip": {
+      "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "Inkluderar 2950+ servrar i 65+ länder, anslut upp till 10 enheter, få åtkomst till världsomspännande streamingtjänster, blockerare mot skadlig programvara och annonser och mer."
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Inkluderar stöd för 1 anpassad e-postdomän, 10 e-postadresser, 10 hide-my-email-alias, kalenderdelning och mer."
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "Säkra dina filer med krypterad molnlagring. Inkluderar versionshistorik, krypterad fildelning och mer."
+      ]
+    },
+    "summer2023:Info": {
+      "For a limited time, get the best ${ BRAND_NAME } has to offer at an exclusive discount.": [
+        "Under en begränsad tid får du det bästa ${ BRAND_NAME } har att erbjuda till en exklusiv rabatt."
+      ],
+      "We’re celebrating the nine-year anniversary of our crowdfunding!": [
+        "Vi firar nioårsjubileet av vår crowdfunding!"
+      ]
+    },
+    "summer2023:Offer title": {
+      "${ BRAND_NAME } Anniversary Sale": [
+        "${ BRAND_NAME } Jubileumsrea"
+      ]
+    },
     "Tab in domain modal": {
       "Addresses": [
         "Adresser"
@@ -11777,11 +12147,17 @@
       "OpenVPN configuration files": [
         "OpenVPN-konfigurationsfiler"
       ],
+      "Organization filters": [
+        "Organisationsfilter"
+      ],
       "Organization name": [
         "Organisationsnamn"
       ],
       "Other calendars": [
         "Andra kalendrar"
+      ],
+      "Other preferences": [
+        "Andra preferenser"
       ],
       "Password": [
         "Lösenord"
@@ -11803,6 +12179,9 @@
       ],
       "PayPal verification failed": [
         "Verifiering av PayPal misslyckades"
+      ],
+      "Personalise your e-mail footer": [
+        "Personifiera sidfoten för din e-post"
       ],
       "Phone": [
         "Telefon"
