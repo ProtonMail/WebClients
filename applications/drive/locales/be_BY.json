@@ -2731,9 +2731,6 @@
     "Font face option": {
       "System default": [
         "Адпаведна сістэме"
-      ],
-      "Theme default": [
-        "Прадвызначаная тэма"
       ]
     },
     "Font size option": {
@@ -3755,7 +3752,7 @@
         "Праблема з сеткай"
       ],
       "New": [
-        "Новы"
+        "Новае"
       ],
       "No": [
         "Не"
@@ -4842,7 +4839,7 @@
         "Запытаць запрашэнне"
       ],
       "Seamlessly sync files and folders between your computer and ${ DRIVE_APP_NAME }.": [
-        "Бясшвовая сінхранізацыя файлаў і папак паміж вашым камп'ютарам і ${ DRIVE_APP_NAME }."
+        "Бесперабойная сінхранізацыя файлаў і папак паміж вашым камп'ютарам і ${ DRIVE_APP_NAME }."
       ],
       "Shared": [
         "Абагулены"
@@ -5310,9 +5307,6 @@
       "Set up your organization": [
         "Наладзьце сваю арганізацыю"
       ],
-      "Set up your organization testing": [
-        "Наладзьце сваю арганізацыю"
-      ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
         "Скарыстайцеся выбарам праграм злева ўверсе для атрымання доступу да ўсіх сэрвісаў ${ BRAND_NAME }: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } і ${ DRIVE_SHORT_APP_NAME }."
       ]
@@ -5644,7 +5638,7 @@
         "Прапанова абмежавана па часе"
       ],
       "Most popular": [
-        "Самы папулярны"
+        "Найбольш папулярны"
       ],
       "Offer ends soon": [
         "Прапанова неўзабаве скончыцца"
@@ -5876,6 +5870,70 @@
         "Водгук адпраўлены"
       ]
     },
+    "summer2023: Billing cycle option": {
+      "1 year": [
+        "1 год"
+      ],
+      "2 years": [
+        "2 гады"
+      ]
+    },
+    "summer2023: Deal details": {
+      "Premium Drive": [
+        "Прэміяльныя функцыі Drive"
+      ],
+      "Premium Mail and Calendar": [
+        "Прэміяльныя функцыі Mail і Calendar"
+      ],
+      "Premium Password Manager": [
+        "Прэміяльныя функцыі менеджара пароляў"
+      ]
+    },
+    "summer2023: Describe Proton Pass": {
+      "Securely store your passwords and autofill them on websites. Includes unlimited passwords, autofill, password generator, and more.": [
+        "Бяспечна захоўвайце свае паролі і аўтаматычна запаўняйце іх на вэб-сайтах. Уключае неабмежаваную колькасць пароляў, аўтаматычнае запаўненне, генератар пароляў і іншыя функцыі."
+      ]
+    },
+    "summer2023: Short tool name to present Proton Pass": {
+      "Password manager": [
+        "Менеджар пароляў"
+      ]
+    },
+    "summer2023: Tooltip": {
+      "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
+        "Стварайце бяспечныя даныя для ўваходу на ўсіх сваіх прыладах. Уключае неабмежаваную колькасць псеўданімаў, 20 сховішчаў, інтэграваную 2ФА, аўтаматычнае запаўненне крэдытных картак і іншыя функцыі."
+      ],
+      "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "Уключае больш за 2950 сервераў у больш чым 65 краінах, магчымасць падключаць да 10 прылад, сэрвісы з трансляцыямі па ўсім свеце, блакіроўку шкодных праграм і рэкламы, а таксама іншыя функцыі."
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Уключае падтрымку 1 карыстальніцкага дамена электроннай пошты, 10 адрасоў электроннай пошты, 10 псеўданімаў hide-my-email, абагульванне календара і іншыя функцыі."
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "Абараніце свае файлы з дапамогай зашыфраванага воблачнага сховішча. Уключае гісторыю версій, абагулены доступ да зашыфраваных файлаў і іншыя функцыі."
+      ]
+    },
+    "summer2023:Footer": {
+      "*Your subscription will automatically renew at the standard discounted rate at the end of your billing cycle.": [
+        "*Ваша падпіска будзе аўтаматычна падаўжацца са стандартнай скідкай у канцы перыяду аплаты."
+      ],
+      "Discounts are based on the standard monthly pricing. This offer is only available to first-time subscribers.": [
+        "Скідкі разлічваюцца на падставе стандартнай платы за месяц. Гэтай прапановай могуць скарыстацца толькі тыя падпісчыкі, якія ўпершыню зарэгістраваліся."
+      ]
+    },
+    "summer2023:Info": {
+      "For a limited time, get the best ${ BRAND_NAME } has to offer at an exclusive discount.": [
+        "Атрымайце эксклюзіўную скідку ад ${ BRAND_NAME }. Прапанова абмежавана па часе."
+      ],
+      "We’re celebrating the nine-year anniversary of our crowdfunding!": [
+        "Мы святкуем дзявятую гадавіну нашага краўдфандзінга!"
+      ]
+    },
+    "summer2023:Offer title": {
+      "${ BRAND_NAME } Anniversary Sale": [
+        "Святочны распродаж ${ BRAND_NAME }"
+      ]
+    },
     "Table header": {
       "Action": [
         "Дзеянне"
@@ -6008,7 +6066,7 @@
         "Уліковы запіс прыпынены"
       ],
       "Active": [
-        "Актыўныя"
+        "Актыўна"
       ],
       "Add contact group name": [
         "Дадаць назву групы кантактаў"
@@ -6017,7 +6075,7 @@
         "Дадаць у ${ groupCount } групу",
         "Дадаць у ${ groupCount } групы",
         "Дадаць у ${ groupCount } груп",
-        "Дадаць у ${ groupCount } групы"
+        "Дадаць у ${ groupCount } груп"
       ],
       "Add to ${ groupName }": [
         "Дадаць у ${ groupName }"

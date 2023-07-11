@@ -145,6 +145,9 @@
       "Carbon Copy": [
         "Tembusan"
       ],
+      "Change email": [
+        "Ubah email"
+      ],
       "Change page": [
         "Ubah halaman"
       ],
@@ -2015,7 +2018,7 @@
         "Utama"
       ],
       "Mobile": [
-        "Seluler"
+        "Mobile"
       ],
       "Other": [
         "Lainnya"
@@ -2942,12 +2945,6 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Anda dapat menandai kontak-kontak yang tidak ingin digabung atau disimpan. Penghapusan akan dilakukan setelah Anda menekan tombol gabung"
-      ],
-      "You can read the message and click on links without being tracked with email tracker protection.": [
-        "Anda dapat membaca pesan dan mengklik tautan tanpa terlacak dengan perlindungan pelacak email."
-      ],
-      "You can read the message and click on links without being tracked.": [
-        "Anda dapat membaca pesan dan mengklik tautan tanpa terlacak."
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4073,9 +4070,6 @@
     "Font face option": {
       "System default": [
         "Bawaan sistem"
-      ],
-      "Theme default": [
-        "Tema bawaan"
       ]
     },
     "Font Size Default": {
@@ -4115,17 +4109,47 @@
       ]
     },
     "Get started checklist instructions": {
+      "${ MAIL_APP_NAME } on App Store": [
+        "${ MAIL_APP_NAME } di App Store"
+      ],
+      "${ MAIL_APP_NAME } on Play Store": [
+        "${ MAIL_APP_NAME } di Play Store"
+      ],
+      "Close": [
+        "Tutup"
+      ],
+      "Get mobile app": [
+        "Dapatkan aplikasi mobile"
+      ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "Dapatkan aplikasi mobile ${ MAIL_APP_NAME }"
       ],
       "Import contacts or emails": [
         "Impor kontak atau email"
       ],
+      "Import data": [
+        "Impor data"
+      ],
       "Import your contacts or messages": [
         "Impor kontak atau pesan Anda"
       ],
+      "Protection from trackers": [
+        "Perlindungan pelacak"
+      ],
       "Quickly transfer your contacts or emails from any provider using our Easy Switch import assistant.": [
         "Pindahkan kontak dan email Anda dari layanan penyedia email lainnya secara mudah dan cepat dengan alat bantu impor Easy Switch kami."
+      ],
+      "Send a message": [
+        "Kirim pesan"
+      ],
+      "Set recovery method": [
+        "Atur metode pemulihan"
+      ],
+      "Sign in to the mobile app to complete this step": [
+        "Masuk ke aplikasi mobile untuk menuntaskan langkah ini"
+      ],
+      "Using your mobile device, scan this QR code or visit the iOS or Android store.": [
+        "Dengan perangkat mobile Anda, pindai kode QR berikut atau kunjungi toko aplikasi iOS atau Android."
       ]
     },
     "Gmail forwarding": {
@@ -7202,11 +7226,22 @@
       "Set up your organization": [
         "Siapkan organisasi Anda"
       ],
-      "Set up your organization testing": [
-        "Siapkan pengujian organisasi Anda"
-      ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
         "Gunakan pemindah aplikasi yang terdapat pada pojok kiri atas layar untuk mengakses seluruh layanan ${ BRAND_NAME } : ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, dan ${ DRIVE_SHORT_APP_NAME }."
+      ]
+    },
+    "Online Accounts Name": {
+      "Banking": [
+        "Perbankan"
+      ],
+      "Crypto": [
+        "Kripto"
+      ],
+      "Gaming": [
+        "Bermain Game"
+      ],
+      "Travel": [
+        "Wisata"
       ]
     },
     "Option": {
@@ -7410,7 +7445,7 @@
         "Utama"
       ],
       "Mobile": [
-        "Seluler"
+        "Mobile"
       ],
       "Other": [
         "Lainnya"
@@ -8176,6 +8211,14 @@
         "Tanggapan telah dikirim"
       ]
     },
+    "summer2023: Billing cycle option": {
+      "1 year": [
+        "1 tahun"
+      ],
+      "2 years": [
+        "2 tahun"
+      ]
+    },
     "Table header": {
       "Action": [
         "Tindakan"
@@ -8767,9 +8810,6 @@
       ],
       "Subject missing": [
         "Subjek hilang"
-      ],
-      "This email is protected": [
-        "Email ini terlindungi"
       ],
       "To": [
         "Kepada"

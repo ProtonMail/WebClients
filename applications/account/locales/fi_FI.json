@@ -108,7 +108,7 @@
         "Lisää PayPal"
       ],
       "Add public holidays": [
-        "Lisää arkipyhät"
+        "Lisää arkivapaat"
       ],
       "Add sieve filter": [
         "Lisää Sieve-suodatin"
@@ -183,7 +183,7 @@
         "Valitse tiedosto tai pudota se tähän"
       ],
       "Choose my own password": [
-        "Valitse oma salasanasi"
+        "Valitse oma salasana"
       ],
       "Claim it": [
         "Lunasta se"
@@ -369,7 +369,7 @@
         "Muokkaa tunnistetta"
       ],
       "Edit password": [
-        "Vaihda salasana"
+        "Muokkaa salasanaa"
       ],
       "Edit phone number": [
         "Muokkaa puhelinnumeroa"
@@ -597,7 +597,7 @@
         "Maksa"
       ],
       "Pay ${ price } now": [
-        "Maksa ${ price }"
+        "Maksa ${ price } nyt"
       ],
       "Preview": [
         "Esikatsele"
@@ -675,7 +675,7 @@
         "Lähetä koodi uudelleen"
       ],
       "Reset credentials": [
-        "Palauta kirjautumistiedot"
+        "Nollaa kirjautumistiedot"
       ],
       "Reset keys": [
         "Tyhjennä avaimet"
@@ -684,7 +684,7 @@
         "Tyhjennä organisaation avaimet"
       ],
       "Reset password": [
-        "Palauta salasana"
+        "Nollaa salasana"
       ],
       "Reset to default": [
         "Palauta oletukset"
@@ -708,7 +708,7 @@
         "Palaa kirjautumiseen"
       ],
       "Review": [
-        "Tarkastele"
+        "Tarkasta"
       ],
       "Revoke": [
         "Mitätöi"
@@ -771,7 +771,7 @@
         "Lähetä koodi"
       ],
       "Send email reminder": [
-        "Lähetä sähköpostimuistutus"
+        "Lähetä muistutus sähköpostitse"
       ],
       "Send messages with @pm.me": [
         "Lähetä viestejä @pm.me-osoitteella"
@@ -831,7 +831,7 @@
         "Kirjaudu ulos tililtä ${ nameToDisplay } ${ maybeEmailInBrackets }"
       ],
       "Sign out of all accounts": [
-        "Kirjaudu ulos kaikilta tileiltä"
+        "Kirjaa kaikki tilit ulos"
       ],
       "Sign up for free": [
         "Rekisteröidy ilmaiseksi"
@@ -2775,7 +2775,7 @@
         "Lisäksi CSV- ja vCard-kentät on automaattisesti kohdistettu. Voit tarkistaa ja muuttaa näitä parituksia manuaalisesti."
       ],
       "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
-        "Ladattavassa CSV-tiedostossa havaittiin seuraavat kentät. Valitse ne, jotka haluat tuoda."
+        "Lataamassasi CSV-tiedostossa havaittiin seuraavat kentät. Valitse ne, jotka haluat tuoda."
       ]
     },
     "Domain label": {
@@ -2867,7 +2867,7 @@
         "Sähköpostiosoite vahvistettu"
       ],
       "Thank you for verifying your email address.": [
-        "Kiitos, että vahvistit sähköpostiosoitteesi."
+        "Kiitos sähköpostiosoitteesi vahvistuksesta."
       ],
       "Thanks for letting us know": [
         "Kiitos tiedosta"
@@ -3015,7 +3015,7 @@
         "On jo tämän kalenterin jäsen"
       ],
       "Amount above the maximum.": [
-        "Summa ylittää enimmäismäärän."
+        "Summa on enimmäismäärää suurempi."
       ],
       "Amount below minimum.": [
         "Summa on vähimmäismäärää pienempi."
@@ -3122,7 +3122,7 @@
         "Virheellinen sähköpostiosoite"
       ],
       "Invalid expiration date": [
-        "Virheellinen erääntymisaika"
+        "Virheellinen erääntymispäivä"
       ],
       "Invalid invitation link": [
         "Virheellinen kutsulinkki"
@@ -3320,10 +3320,10 @@
         "Kansion nimi on liian pitkä. Valitse eri nimi."
       ],
       "The keys in your recovery file can't be validated. Please contact support.": [
-        "Palautustiedostosi avaimia ei voida vahvistaa. Ota yhteyttä tukeen."
+        "Palautustiedostosi avaimia ei voida vahvistaa. Ota yhteyttä asiakaspalveluun."
       ],
       "The keys in your recovery files can't be validated. Please upload individually for more information.": [
-        "Palautustiedostosi avaimia ei voida vahvistaa. Lataa yksi kerrallaan saadaksesi lisätietoja."
+        "Palautustiedostojesi avaimia ei voida vahvistaa. Lataa yksitellen nähdäksesi lisätietoja."
       ],
       "The label name is invalid. Please choose a different name.": [
         "Tunnisteen nimi on virheellinen. Valitse eri nimi."
@@ -3389,10 +3389,10 @@
         "Tuntematon maksutunnisteen tila"
       ],
       "Uploaded file is not a valid private key. Please verify and try again.": [
-        "Ladattu tiedosto ei ole kelvollinen julkinen avain. Varmista se ja yritä uudelleen."
+        "Ladattu tiedosto ei ole kelvollinen yksityinen avain. Tarkista ja yritä uudelleen."
       ],
       "Uploaded files are not valid private keys. Please verify and try again.": [
-        "Ladatut tiedostot eivät ole kelvollisia julkisia avaimia. Varmista ne ja yritä uudelleen."
+        "Ladatut tiedostot eivät ole kelvollisia yksityisiä avaimia. Tarkista ja yritä uudelleen."
       ],
       "Username must begin with a letter or digit": [
         "Käyttäjätunnuksen on alettava kirjaimella tai numerolla"
@@ -3407,7 +3407,7 @@
         "Vahvistus ei onnistunut, yritä tunnin kuluttua uudelleen."
       ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
-        "Pysäytimme DKIM-allekirjoituksen DNS-astuksissasi ilmenneen ongelman vuoksi. Seuraa alla olevia ohjeita jatkaaksesi allekirjoitusta."
+        "DKIM-allekirjoitus keskeytettiin DNS-määrityksissäsi ilmenneen ongelman vuoksi. Jatka allekirjoitusta seuraamalla alla olevia ohjeita."
       ],
       "Wrong recovery phrase. Try again or use another recovery method.": [
         "Väärä palautuslauseke. Yritä uudelleen tai kokeile toista palautustapaa."
@@ -3416,7 +3416,7 @@
         "Virheellinen vahvistuskoodi. Varmista, että kopioit vahvistuskoodin oikein ja yritä uudelleen. Muutosten voimaantulo saattaa kestää jopa 24 tuntia."
       ],
       "You already added this holidays calendar": [
-        "Olet jo lisännyt tämän arkipyhäkalenterin"
+        "Olet jo lisännyt tämän juhlapäiväkalenterin"
       ],
       "You have lost access to your organization keys. Without restoration you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Olet menettänyt pääsyn organisaatiosi avaimiin. Ilman palautusta et voi luoda uusia käyttäjiä, lisätä osoitteita nykyisille käyttäjille tai käyttää ei-yksityisiä käyttäjätilejä."
@@ -3455,7 +3455,7 @@
         "Tuontiasi ei käsitellä."
       ],
       "Zero keys reactivated": [
-        "Avaimia ei aktivoitu uudelleen"
+        "Yhtään avainta ei aktivoitu uudelleen"
       ]
     },
     "Error importing calendar": {
@@ -3463,13 +3463,13 @@
         "Tiedostoa \"${ formattedFilename }\" luettaessa tapahtui virhe. Väärä tiedostomuoto."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
-        "Ladattaessa tiedostoa ${ formattedFilename } tapahtui virhe. Tiedoston enimmäiskoko on ${ MAX_IMPORT_FILE_SIZE_STRING }."
+        "Virhe siirrettäessä tiedostoa ${ formattedFilename }. Tiedoston enimmäiskoko on ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Only ICS file formats are allowed.": [
-        "Tiedostoa ${ formattedFilename } tallennettaessa tapahtui virhe. Vain ICS-muotoiset tiedostot sallitaan."
+        "Virhe siirrettäessä tiedostoa ${ formattedFilename }. Vain ICS-muotoiset tiedostot sallitaan."
       ],
       "An error occurred uploading your file. No file has been selected.": [
-        "Virhe tallennettaessa tiedostoa. Tiedostoa ei ole valittu."
+        "Virhe siirrettäessä tiedostoa. Tiedostoa ei ole valittu."
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "Tapahtui odottamaton virhe. Tuonti on aloitettava uudelleen."
@@ -3504,13 +3504,13 @@
         "Tiedostoa \"${ formattedFilename }\" luettaessa tapahtui virhe. Väärä tiedostomuoto."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
-        "Tiedostoa ${ formattedFilename } tallennettaessa tapahtui virhe. Suurin sallittu tiedostokoko on ${ MAX_IMPORT_FILE_SIZE_STRING }."
+        "Virhe siirrettäessä tiedostoa ${ formattedFilename }. Suurin sallittu tiedostokoko on ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
       "An error occurred uploading your file ${ formattedFilename }. No .csv or .vcf file selected": [
-        "Tiedostoa ${ formattedFilename } tallennettaessa tapahtui virhe. Ei valittua .csv- tai .vcf-tiedostoa"
+        "Virhe siirrettäessä tiedostoa ${ formattedFilename }. Ei valittua .csv- tai .vcf-tiedostoa"
       ],
       "An error occurred uploading your file. No file has been selected.": [
-        "Virhe tallennettaessa tiedostoa. Tiedostoa ei ole valittu."
+        "Virhe siirrettäessä tiedostoa. Tiedostoa ei ole valittu."
       ],
       "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
         "Tiedosto ${ formattedFilename } sisältää yli ${ MAX_IMPORT_CONTACTS_STRING } yhteystietoa."
@@ -3625,10 +3625,10 @@
         "Tiedostoa \"${ formattedFilename }\" luettaessa tapahtui virhe. Väärä tiedostomuoto."
       ],
       "An error occurred uploading your file \"${ formattedFilename }\". Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
-        "Tiedostoa \"${ formattedFilename }\" tallennettaessa tapahtui virhe. Suurin sallittu tiedostokoko on ${ MAX_IMPORT_FILE_SIZE_STRING }."
+        "Virhe ladattaessa tiedostoa \"${ formattedFilename }\". Suurin sallittu tiedostokoko on ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
       "An error occurred uploading your file. No file has been selected.": [
-        "Ladattaessa tiedostoa tapahtui virhe. Tiedostoa ei ole valittu."
+        "Virhe ladattaessa tiedostoa. Tiedostoa ei valittu."
       ],
       "Upload a CSV file with ${ MAX_NUMBER_OF_USER_ROWS } user accounts or less.": [
         "Tallenna CSV-tiedosto, joka sisältää enintään ${ MAX_NUMBER_OF_USER_ROWS } käyttäjätiliä."
@@ -3773,10 +3773,10 @@
         "Puretaan kalenterisi tapahtumien salausta: ${ totalProcessed }/${ totalToProcess }"
       ],
       "Due to a password reset, none of your events could be decrypted and exported.": [
-        "Salasanan palautuksen vuoksi tapahtumiesi salausta ei voitu purkaa, eikä tapahtumia viedä."
+        "Salasanan nollauksen vuoksi tapahtumiesi salausta ei voitu purkaa, eikä tapahtumia viedä."
       ],
       "Due to a password reset, some of your events could not be decrypted and exported.": [
-        "Salasanan palautuksen vuoksi joidenkin tapahtumiesi salausta ei voitu purkaa, eikä tapahtumia viedä."
+        "Salasanan nollauksen vuoksi joidenkin tapahtumiesi salausta ei voitu purkaa, eikä tapahtumia viedä."
       ],
       "Error decrypting event": [
         "Virhe purettaessa tapahtuman salausta"
@@ -3791,10 +3791,10 @@
         "Yhtään tapahtumaa ei voitu viedä."
       ],
       "Password reset - event cannot be decrypted": [
-        "Salasanan palautus - tapahtuman salausta ei voida purkaa"
+        "Salasanan nollaus - tapahtuman salausta ei voida purkaa"
       ],
       "Password reset - multiple events cannot be decrypted": [
-        "Salasanan palautus - useiden tapahtumien salausta ei voida purkaa"
+        "Salasanan nollaus - useiden tapahtumien salausta ei voida purkaa"
       ],
       "Please don't close the tab before the exporting process is finished.": [
         "Älä sulje välilehteä ennen tuonnin valmistumista."
@@ -4083,7 +4083,7 @@
     },
     "familyOffer_2023:Title": {
       "Add a user to your ${ PLAN_NAMES.visionary2022 } account": [
-        "Lisää käyttäjä sinun ${ PLAN_NAMES.visionary2022 }-tiliisi"
+        "Lisää käyttäjä ${ PLAN_NAMES.visionary2022 }-tilillesi"
       ],
       "Change family name": [
         "Muuta perheen nimeä"
@@ -4384,8 +4384,8 @@
       "System default": [
         "Seuraa järjestelmää"
       ],
-      "Theme default": [
-        "Teeman oletus"
+      "Theme font": [
+        "Teeman fontti"
       ]
     },
     "Font Size Default": {
@@ -4459,7 +4459,7 @@
         "Määritä ${ strongText } Gmailista"
       ],
       "Update your logins": [
-        "Päivitä kirjautumistunnuksesi"
+        "Päivitä kirjautumistietosi"
       ]
     },
     "Gmail forwarding": {
@@ -4494,7 +4494,7 @@
         "Verkko"
       ],
       "Other category": [
-        "Muu kategoria"
+        "Muut aiheet"
       ],
       "Services": [
         "Palvelut"
@@ -5054,16 +5054,16 @@
         "${ none } ei vaikuta sähköpostien toimitukseen, mutta suosittelemme ${ quarantine } parempaa suojausta varten."
       ],
       "${ number } city": [
-        "${ number } kaupunki",
-        "${ number } kaupunkia"
+        "${ number } kaupungissa",
+        "${ number } kaupungissa"
       ],
       "${ number } server": [
         "${ number } palvelin",
         "${ number } palvelinta"
       ],
       "${ numberOfNonPrivateKeys } uploaded file is not a valid private key. Please verify and try again.": [
-        "${ numberOfNonPrivateKeys } ladattu tiedosto ei ole kelvollinen yksityinen avain. Vahvista se ja yritä uudelleen.",
-        "${ numberOfNonPrivateKeys } ladattua tiedostoa eivät ole kelvollisia yksityisiä avaimia. Vahvista ne ja yritä uudelleen."
+        "${ numberOfNonPrivateKeys } ladattu tiedosto ei ole kelvollinen yksityinen avain. Tarkista ja yritä uudelleen.",
+        "${ numberOfNonPrivateKeys } ladattua tiedostoa eivät ole kelvollisia yksityisiä avaimia. Tarkista ja yritä uudelleen."
       ],
       "${ numContact } contact": [
         "${ numContact } yhteystieto",
@@ -5168,7 +5168,7 @@
         "Yksittäisellä puhelinnumerolla voidaan vahvistaa ainoastaan yksi ${ BRAND_NAME }-tili"
       ],
       "A recovery file lets you unlock and view your data after an account reset": [
-        "Palautustiedosto mahdollistaa tietojen avauksen ja katselun tilin palautuksen jälkeen"
+        "Palautustiedosto mahdollistaa tietojen avauksen ja tarkastelun tilin palautuksen jälkeen"
       ],
       "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password": [
         "Palautuslauseke mahdollistaa pääsyn tilillesi ja salattujen viestiesi palautuksen mikäli unohdat salasanasi"
@@ -5186,7 +5186,7 @@
         "tilin ja tietojen palautustavat"
       ],
       "account recovery method": [
-        "tilillesi palautustavan"
+        "tilin palautustapa"
       ],
       "Account size": [
         "Tilin koko"
@@ -5210,7 +5210,7 @@
         "Lisää palautuksen puhelinnumero"
       ],
       "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
-        "Lisää tilillesi yksi suojauskerros. Sinun on suoritettava kaksivaiheinen todennus jokaisen kirjautumisen yhteydessä."
+        "Lisää tilillesi yksi suojauskerros lisää. Sinun on tunnistauduttava kaksivaiheisella todennuksella jokaisen kirjautumisen yhteydessä."
       ],
       "Add image URL": [
         "Lisää kuvan URL"
@@ -5291,10 +5291,10 @@
         "Kaikki tilillesi määritetyt ${ twoFa } poistetaan käytöstä."
       ],
       "Anyone with this link can see all the event details of this calendar such as title, location or participants.": [
-        "Tämän linkin välityksellä kuka tahansa voi nähdä tämän kalenterin tapahtumanimikkeiden, sijaintien ja osallistujien kaltaisia tietoja."
+        "Linkin välityksellä kuka tahansa voi nähdä kalenterin tapahtumien nimien, sijaintien ja osallistujien kaltaisia tietoja."
       ],
       "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
-        "Tämän linkin välityksellä kuka tahansa voi nähdä oletko kalenterissasi vapaana vai varattuna. He eivät näe tapahtumanimikkeiden, sijaintien tai osallistujien kaltaisia tietoja."
+        "Linkin välityksellä kuka tahansa voi nähdä oletko kalenterissasi vapaana vai varattuna. He eivät näe tapahtumien nimien, sijaintien ja osallistujien kaltaisia tietoja."
       ],
       "Anyone with this link won't be able to sync or get future updates for your calendar. If you want to give them access again, you will have to create a new link.": [
         "Kukaan ei voi enää synkronoida tai nähdä tämän kalenterin uusia päivityksiä tämän linkin välityksellä. Jos haluat myöntää heille käyttöoikeuden uudestaan, sinun on luotava uusi linkki."
@@ -5554,7 +5554,7 @@
         "Tilin alennus katkaisee kaikki yhteydet maksullisiin ${ VPN_APP_NAME } -palvelimiin."
       ],
       "Download our CSV template, fill in the user details, and then upload your completed CSV file to create accounts for these users.": [
-        "Lataa CSV-mallimme, täytä käyttäjien tiedot ja tallenna täytetty CSV-tiedosto luodaksesi käyttäjille tilit."
+        "Lataa CSV-mallimme ja täytä käyttäjien tiedot, ja luo käyttäjille tilit käyttämällä täytettämääsi CSV-tiedostoa."
       ],
       "Download recovery file": [
         "Lataa palautustiedosto"
@@ -5566,7 +5566,7 @@
         "Lataa PGP-avaimesi käyttääksesi niitä muissa PGP-yhteensopivissa palveluissa."
       ],
       "Drop file here to upload": [
-        "Pudota tallennettava tiedosto tähän"
+        "Pudota ladattava tiedosto tähän"
       ],
       "Drop to import": [
         "Tuo pudottamalla"
@@ -5728,7 +5728,7 @@
         "Jos tätä verkkotunnusta käytetään tällä hetkellä sähköpostien vastaanottoon, valitse ${ boldAddresses }-välilehti ja lisää kaikki aktiiviset sähköpostiosoitteet ennen kuin muutat MX-tietueita varmistaaksesi sulavan siirtymän."
       ],
       "If this is due to an old password reset, you can stop the message from showing again": [
-        "Jos tämä johtuu vanhasta salasanan palautuksesta, voit estää viestiä näkymästä uudelleen"
+        "Jos tämä johtuu vanhasta salasanan nollauksesta, voit estää viestiä näkymästä uudelleen"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Jos kohtaat tilin luonnissa ongelmia, pyydä kutsu, niin vastaamme yhden työpäivän kuluessa."
@@ -5737,7 +5737,7 @@
         "Jos uskot tämän olevan virhe, ota yhteyttä ${ contactLink }."
       ],
       "If you cancel, your ${ vpnPlanName } subscription will not be renewed when it expires on ${ expiryDate }.": [
-        "Jos peruutat ${ vpnPlanName } -tilauksesi, sitä ei uusita, kun sen voimassaolo päättyy ${ expiryDate }."
+        "Jos perut ${ vpnPlanName } -tilauksesi, sitä ei uudisteta kun se ${ expiryDate } päättyy."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Jos et löydä viestiä saapuneista viesteistäsi, tarkista roskapostikansiosi."
@@ -5755,13 +5755,13 @@
         "Mikäli olet asettanut SPF- ja DKIM-tietueet, voit DMARC-tietueen avulla määrittää miten muiden sähköpostipalveluiden tulee toimittaa sähköpostit verkkotunnukseesi, jos SPF- ja DKIM-tarkastukset epäonnistuvat. Tämä voi hankaloittaa roskapostittajien esittäytymistä sinuna, mutta saattaa aiheuttaa myös toimitusongelmia, jos määrityksiä ei ole tehty oikein."
       ],
       "If you lose your password and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
-        "Jos salasanasi häviää ja tili täytyy resetoida, ${ boldImperative }, että olet valinnut ${ boldAccountRecovery }."
+        "Jos kadotat salasanasi ja joudut palauttamaan tilisi, ${ boldImperative } määrittää ${ boldAccountRecovery }."
       ],
       "If you lose your password and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
-        "Mikäli menetät salasanan kirjautumistietosi ja joudut palauttamaan tilisi käyttöoikeuden, ${ boldImperative }, että olet määrittänyt ${ boldAccountAndRecovery } tai saatat menettää sähköpostiesi, yhteystietojesi tai tiedostoidesi käyttöoikeuden."
+        "Jos kadotat salasanasi ja joudut palauttamaan tilisi, ${ boldImperative } määrittää ${ boldAccountAndRecovery } tai saatat menettää viestiesi, yhteystietojesi tai tiedostojesi käyttöoikeuden."
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
-        "Jos menetät todennuslaitteesi, voit kirjautua tilillesi käyttäen näitä koodeja 6-numeroisen todennuskoodin sijaan. Jokaista koodia voidaan käyttää vain kerran."
+        "Jos menetät todennuslaitteesi, voit kirjautua tilillesi käyttäen näitä koodeja 6-numeroisen kaksivaiheisen todennuskoodin sijaan. Yksittäistä koodia voidaan käyttää vain kerran."
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Jos jatkat alennusta, menetät maksullisten ${ MAIL_APP_NAME } ja ${ VPN_APP_NAME } -ominaisuuksien käyttöoikeuden."
@@ -5773,7 +5773,7 @@
         "Jos jatkat alennusta, menetät maksullisten ${ VPN_APP_NAME } -ominaisuuksien käyttöoikeuden."
       ],
       "If you recently reset your password, you can use a data recovery method to unlock your data": [
-        "Jos olet hiljattain palauttanut salasanasi, voit käyttää tietojenpalautusmenetelmää tietojesi avaukseen"
+        "Jos olet hiljattain nollannut salasanasi, voit avata tietosi tilisi tietojenpalautustapojen avulla"
       ],
       "If you want to keep an existing SPF record, you can just add ${ spf } to it after the ${ spfValue }. Do not create multiple SPF records.": [
         "Jos haluat säilyttää olemassa olevan SPF-tietueen, lisää siihen ${ spfValue } jälkeen ${ spf }. Älä luo useita SPF-tietueita."
@@ -5973,7 +5973,7 @@
         "Tiliavaimia ei ole olemassa"
       ],
       "No account recovery method set; you are at risk of losing access to your account": [
-        "Tilillesi ei ole määritetty palautustapaa ja se on altistunut käyttöoikeuden menetykselle"
+        "Tilin palautustapaa ei ole määritetty, jonka vuoksi pääsy tilillesi on vaarantunut"
       ],
       "No action selected": [
         "Toimintoa ei valittu"
@@ -5985,7 +5985,7 @@
         "Luottokorttia ei tarvita"
       ],
       "No data recovery method set; you are at risk of losing access to your data": [
-        "Tilillesi ei ole määritetty tietojen palautustapaa ja se on altistunut tietojen menetykselle"
+        "Tietojen palautustapaa ei ole määritetty, jonka vuoksi pääsy tietoihisi on vaarantunut"
       ],
       "No folder selected": [
         "Kansiota ei valittu"
@@ -6009,7 +6009,7 @@
         "Virheellinen URL"
       ],
       "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
-        "Eikö laite ole sinun? Kirjaudu selaimen yksityisen selauksen ikkunassa ja sulje se kun lopetat käytön. ${ learnMore }"
+        "Eikö laite ole sinun? Käytä selaimesi yksityistä selaustilaa ja sulje se kun lopetat. ${ learnMore }"
       ],
       "Number of users": [
         "Käyttäjien määrä"
@@ -6030,7 +6030,7 @@
         "Yksi tili. Kaikki ${ BRAND_NAME }-palvelut."
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
-        "Muuta näitä asetuksia vain, jos käytät PGP:tä ${ BRAND_NAME }n ulkopuolisille vastaanottajille."
+        "Muuta näitä asetuksia vain, jos käytät PGP:tä ${ BRAND_NAME }in ulkopuolisille vastaanottajille."
       ],
       "Only you can see the labels.": [
         "Vain sinä näet tunnisteet."
@@ -6051,13 +6051,13 @@
         "Organisaatiossasi on muita ylläpitäjiä ja olet vastuussa uuden salasanan välityksestä heille."
       ],
       "Outdated recovery file; update to ensure access to your data": [
-        "Vanhentunut palautustiedosto; päivitä se varmistaaksesi pääsyn tietoihisi"
+        "Vanhentunut palautustiedosto, joka tulee päivittää varmistaaksesi pääsyn tietoihisi"
       ],
       "Outdated recovery methods; update to ensure access to your data": [
-        "Vanhentuneita palautustapoja; päivitä ne varmistaaksesi pääsyn tietoihisi"
+        "Vanhentuneita palautustapoja, jotka tulee päivittää varmistaaksesi pääsyn tietoihisi"
       ],
       "Outdated recovery phrase; update to ensure access to your data": [
-        "Vanhentunut palautuslauseke; päivitä se varmistaaksesi pääsyn tietoihisi"
+        "Vanhentunut palautuslauseke, joka tulee päivittää varmistaaksesi pääsyn tietoihisi"
       ],
       "Over 100 million people and businesses have signed up for ${ BRAND_NAME }.": [
         "Yli 100 miljoonaa ihmistä ja yritystä on rekisteröitynyt ${ BRAND_NAME }-palveluun."
@@ -6108,13 +6108,13 @@
         "Ota yhteyttä organisaation ylläpitoon hallitaksesi tilausta."
       ],
       "Please enter the 12-word recovery phrase associated with your account.": [
-        "Syötä tiliisi liitetty 12-sanainen palautuslauseke."
+        "Syötä tilillesi kuuluva 12-sanainen palautuslauseke."
       ],
       "Please fill out this field.": [
         "Täytä tämä kenttä."
       ],
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
-        "Pidä se turvassa. Tarvitset sitä päästäksesi tilillesi ja purkaaksesi tietojesi salauksen salasanan palautuksen varalta."
+        "Pidä se turvassa, koska tarvitset sitä päästäksesi tilillesi ja purkaaksesi tietojesi salauksen, jos joudut joskus nollaamaan salasanasi."
       ],
       "Please note that if you delete this address, you will no longer be able to send or receive emails using this address.": [
         "Huomioithan, ettet voi osoitteen poiston jälkeen lähettää tai vastaanottaa viestejä sitä käyttäen."
@@ -6264,7 +6264,7 @@
         "Lähetetty turvallisella <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> -sähköpostilla."
       ],
       "Server is currently down": [
-        "Palvelinta ei juuri nyt tavoiteta"
+        "Palvelinta ei tällä hetkellä tavoiteta"
       ],
       "Server load": [
         "Palvelimen kuormitus"
@@ -6312,8 +6312,8 @@
         "SPF:n avulla määritetään kuka voit lähettää sähköposteja verkkotunnuksestasi, joten suosittelemme vahvasti, että lisäät ${ MAIL_APP_NAME }in SFP-tietueeseesi. Lisää seuraavat TXT-tietueet DNS-toimittajallesi. Tämä onnistuu yleensä verkkotunnuksesi toimittajan hallintapaneelista."
       ],
       "Step ${ step }": [
-        "Vaihe ${ step }",
-        "Vaihe ${ step }"
+        "${ step }. vaihe",
+        "${ step }. vaihe"
       ],
       "Storage allocated to other users in this organisation": [
         "Organisaation käyttäjille varattu tallennustila"
@@ -6433,7 +6433,7 @@
         "Selain ei tue PDF-tiedostojen esikatselua. Lataa tiedosto."
       ],
       "This can take a few seconds or a few minutes depending on your device": [
-        "Tämä saattaa kestää muutamia sekunteja tai minuutteja laitteestasi riippuen"
+        "Tämä saattaa laitteesta riippuen kestää muutamasta sekunnista muutamaan minuuttiin"
       ],
       "This could take up to 15 minutes. Please do not close this page or disconnect from the internet.": [
         "Tämä sattaa kestää jopa 15 minuuttia. Älä sulje tätä sivua tai katkaise Internet-yhteyttä."
@@ -6448,7 +6448,7 @@
         "Tämä on salausavain, jonka olet saattanut tallentaa aiemmin."
       ],
       "This is the password you used before the password reset.": [
-        "Tämä on ennen salasanan palautusta käyttämäsi salasana."
+        "Tämä on ennen salasanan nollausta käyttämäsi salasana."
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Tämä linkki johtaa sivustolle, joka voi pyrkiä varastamaan salasanojen ja maksukorttien tietojen kaltaisia tietoja. Älä jatka oman turvallisuutesi vuoksi."
@@ -6502,7 +6502,7 @@
         "Tämä korvaa väliaikaisen salasanasi. Käytät jatkossa sitä ${ BRAND_NAME } -tilisi käyttöön."
       ],
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
-        "Tämä kirjaa kaikki akriiviset istuntosi ulos ja poistaa kaksivaiheisen todennuksen käytöstä."
+        "Tämä kirjaa ulos kaikki aktiiviset istuntosi ja poistaa kaksivaiheisen todennuksen käytöstä."
       ],
       "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
         "Tämä ohjattu toiminto ottaa käyttöön kaksivaiheisen todennuksen (2FA) ${ BRAND_NAME } -tililläsi. Kaksivaiheinen todennus tekee ${ BRAND_NAME_TWO } -tilisi turvallisemmaksi, joten suosittelemme sen ottamista käyttöön."
@@ -6520,16 +6520,16 @@
         "Vahvistaaksesi, syötä sen käyttäjän nimi, jonka haluat poistaa."
       ],
       "to continue to ${ toAppName }": [
-        "jatkaaksesi ${ toAppName } -palveluun"
+        "jatkaaksesi ${ toAppName }iin"
       ],
       "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
         "Palveluidemme jatkuvaa kehitystä varten keräämme ajoittain tietoja niiden kunnollisen toiminnan seuraamiseksi. Näitä tietoja ei jaeta minkään ulkopuolisien tahojen kanssa."
       ],
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
-        "Purkaaksesi lukittujen tietojen salauksen ja avataksesi ne salasanan palautuksen jälkeen, valitse palautustapa."
+        "Purkaaksesi lukittujen tietojesi salauksen ja avataksesi ne salasanan nollauksen jälkeen, valitse palautustapa."
       ],
       "To ensure continuous access to your account, set an account recovery method": [
-        "Varmistaaksesi pääsyn tilillesi pysyvästi, määritä tilin palautustapa"
+        "Varmista pääsy tilillesi aina määrittämällä tilin palautustapa"
       ],
       "To ensure you don’t lose important data, ${ DRIVE_APP_NAME } saves older versions of your files as you and your collaborators make changes. Select how long ${ BRAND_NAME } should keep previous versions.": [
         "Jotta et menetä tärkeitä tietoja, ${ DRIVE_APP_NAME } säilyttää tiedostojesi vanhempia versioita, samalla kun sinä ja työtoverisi teette muutoksia. Valitse, kuinka kauan ${ BRAND_NAME } säilyttää aiemmat versiot."
@@ -6544,7 +6544,7 @@
         "Pysyäksesi ajan tasalla ${ BRAND_NAME }-tuotteiden viimeisimmistä muutoksista, voit tilata meiltä erilaisia sähköpostiuutiskirjeitä ja seurata blogiamme."
       ],
       "To proceed, select an account recovery method so we can verify the request.": [
-        "Jatka valitsemalla tilin palautustapa, jotta pyyntösi voidaan vahvistaa."
+        "Jatka valitsemalla tilin palautustapa, jolla pyyntö voidaan vahvistaa."
       ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "Suojataksesi Internet-yhteytesi, lataa ja asenna ${ VPN_APP_NAME } -sovellus laitteellesi ja yhdistä palvelimeen."
@@ -6586,7 +6586,7 @@
         "Kaksivaiheinen todennus otettiin käyttöön"
       ],
       "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your mailbox. (Advanced)": [
-        "Kahden salasanan tila vaatii kaksi salsanaa: yhden tilillesi kirjautumiseen ja toisen postilaatikkosi salauksen purkuun (edistynyt)"
+        "Kahden salasanan tila vaatii kaksi salasanaa: Yhden tilillesi kirjautumiseen ja toisen postilaatikkosi salauksen purkuun. (Edistynyt)"
       ],
       "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
         "Kahden salasanan tila käyttää erillisiä salasanoja kirjautumiseen ja postilaatikon salauksen purkuun. Tämä tarjoaa pienen suojausedun joissakin tilanteissa, mutta suosittelemme yhden salasanan tilaa useimmille käyttäjille. Vaihtaaksesi kahden salasanan tilaan, aseta ensin kirjautumissalasana ja sitten postilaatikon salasana."
@@ -6595,7 +6595,7 @@
         "Palautustiedoston allekirjoitusta ei voitu vahvistaa. Ota yhteyttä tukeen."
       ],
       "Unfortunately there is no recovery method saved for this account.": [
-        "Valitettavasti tilille ei ole tallennettu palautustapoja."
+        "Valitettavasti tilille ei ole määritetty palautustapoja."
       ],
       "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
         "Jollet kirjaudu tililtäsi ulos tai vaihda salasanaasi, istuntosi pysyy aktiivisena. Istunnot erääntyvät niiden oltua toimettomana 60 päivää."
@@ -6640,7 +6640,7 @@
         "Lataa kuva"
       ],
       "Uploaded file is not a valid private key. Please verify and try again.": [
-        "Ladattu tiedosto ei ole kelvollinen ykisityinen avain. Varmista se ja yritä uudelleen."
+        "Ladattu tiedosto ei ole kelvollinen ykisityinen avain. Tarkista ja yritä uudelleen."
       ],
       "URL link": [
         "URL-linkki"
@@ -6757,7 +6757,7 @@
         "Kun he tilaavat palvelun, saat omaan tilaukseesi käytettäviä krediittejä."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Määrittäessäsi kaksivaiheisen todennuksen saat myös palautuskoodit, joiden avulla voit kirjautua sisään vaikka menettäisit pääsyn todennussovellukseesi."
+        "Määrittäessäsi kaksivaiheisen todennuksen saat myös palautuskoodit, joiden avulla voit kirjautua vaikka menettäisit pääsyn todennussovellukseesi."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Kun tilauksesi uudistetaan, käytetään ensin kaikki tilillä olevat krediitit ennen yllä määritetyn maksutavan veloitusta."
@@ -6787,7 +6787,7 @@
         "Sinulla on jo ilmainen tili"
       ],
       "You are about to open another browser tab and visit:": [
-        "Olet avaamassa selaimeen uutta välilehteä sivustolle:"
+        "Olet avaamassa uutta selaimen välilehteä sivustolle:"
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Olet kirjautuneena ${ user.Name } (${ user.Email })."
@@ -6930,10 +6930,10 @@
         "${ BRAND_NAME }-tilisi liittyy osoitteeseen ${ externalEmailAddress }."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
-        "${ BRAND_NAME }-tilisi on tällä hetkellä jäädytetty. 28 päivän kuluttua postilaatikkoosi ei enää toimiteta sähköpostiviestejä ja Drive-jakolinkkisi estetään etkä voi tallentaa uusia tiedostoja. Palauttaaksesi normaalin toiminnan, maksa maksamattomat laskut."
+        "${ BRAND_NAME }-tilisi on tällä hetkellä jäädytetty. 28 päivän kuluttua postilaatikkosi ei enää vastaanota viestejä, Drive-jakolinkkisi ja uusien tiedostojen tallennus estetään. Palauttaaksesi normaalin toiminnan, maksa maksamattomat laskut."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "${ BRAND_NAME }-tilisi on tällä hetkellä jäädytetty. Postilaatikkoosi ei enää toimiteta sähköpostiviestejä ja Drive-jakolinkkisi estetään etkä voi tallentaa uusia tiedostoja. Palauttaaksesi normaalin toiminnan, maksa maksamattomat laskut."
+        "${ BRAND_NAME }-tilisi on tällä hetkellä jäädytetty. Postilaatikkosi ei enää vastaanota viestejä, Drive-jakolinkkisi ja uusien tiedostojen tallennus estetään. Palauttaaksesi normaalin toiminnan, maksa maksamattomat laskut."
       ],
       "Your ${ BRAND_NAME } password": [
         "Sinun ${ BRAND_NAME } -salasanasi"
@@ -6951,7 +6951,7 @@
         "Tililläsi on ainakin yksi erääntynyt lasku ja sen toimintaa on rajoitettu. Jatkuvasta maksujen laiminlyönistä seuraa sähköpostiviestien ja jakolinkkien esto. ${ payInvoiceLink }"
       ],
       "Your account recovery method is set": [
-        "Tilillesi on määritetty palautustapa"
+        "Tilin palautustapa on määritetty"
       ],
       "Your account will be updated once the payment is cleared.": [
         "Tilisi päivitetään kun maksu on käsitelty."
@@ -6960,7 +6960,7 @@
         "Tietosi lähteestä ${ importedEmailAddressStrong } ovat valmiina ${ BRAND_NAME }-tilillesi tuontia varten."
       ],
       "Your data recovery method is set": [
-        "Tiedoillesi on määritetty palautustapa"
+        "Tietojen palautustapa on määritetty"
       ],
       "Your email will only be used for this one-time verification.": [
         "Sähköpostiosoitettasi käytetään vain tähän kertaluontoiseen vahvistukseen."
@@ -7011,7 +7011,7 @@
     },
     "info": {
       "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Havaittiin lisää avainten kaksoiskappaleita. Lataa yksitellen saadaksesi lisätietoja."
+        "Havaittiin lisää avainten kaksoiskappaleita. Lataa yksitellen nähdäksesi lisätietoja."
       ],
       "Key ${ fingerprint } has already been uploaded": [
         "Avain ${ fingerprint } on jo ladattu"
@@ -7588,7 +7588,7 @@
         "Käteinen"
       ],
       "Category": [
-        "Kategoria"
+        "Aihe"
       ],
       "Choose a name for the generated certificate file": [
         "Valitse luodulle varmennetiedostolle nimi"
@@ -7612,7 +7612,7 @@
         "Kirjoitus"
       ],
       "Composer default font/size": [
-        "Kirjoituksen tekstin oletusfontti/-koko"
+        "Viestin kirjoituksen tekstin oletusfontti/-koko"
       ],
       "Composer mode": [
         "Kirjoituksen tila"
@@ -7816,10 +7816,10 @@
         "Kansion sijainti"
       ],
       "Font family": [
-        "Fontti"
+        "Tekstin fontti"
       ],
       "Font size": [
-        "Fonttikoko"
+        "Tekstin koko"
       ],
       "From: ${ from }": [
         "Lähettäjä: ${ from }"
@@ -8215,10 +8215,10 @@
         "Lähetyksen kumoaminen"
       ],
       "Upload 1 or more encryption keys": [
-        "Lataa 1 tai useampia salausavaimia"
+        "Lataa yksi tai useita salausavaimia"
       ],
       "Upload 1 or more recovery files or encryption keys": [
-        "Lataa 1 tai useampia palautustiedostoja tai salausavaimia"
+        "Lataa yksi tai useita palautustiedostoja tai salausavaimia"
       ],
       "URL": [
         "URL"
@@ -8516,7 +8516,7 @@
         "Pyydä kutsu"
       ],
       "Reset password": [
-        "Vaihda salasana"
+        "Nollaa salasana"
       ],
       "Set email address": [
         "Aseta sähköpostiosoite"
@@ -8546,13 +8546,13 @@
         "Mikä tämä on?"
       ],
       "Why set recovery methods?": [
-        "Miksi määrittää palautustapoja?"
+        "Miksi palautustapoja kannattaa määrittää?"
       ]
     },
     "Loading info": {
       "${ twoFAMembers.length }/${ members.length } of your organization member use two-factor authentication.": [
-        "${ twoFAMembers.length }/${ members.length } organisaatiosi jäsenestä käyttää kaksivaiheista todennusta.",
-        "${ twoFAMembers.length }/${ members.length } organisaatiosi jäsenestä käyttää kaksivaiheista todennusta."
+        "${ twoFAMembers.length }/${ members.length } organisaatiosi jäsen käyttää kaksivaiheista todennusta.",
+        "${ twoFAMembers.length }/${ members.length } organisaatiosi jäsentä käyttää kaksivaiheista todennusta."
       ],
       "Almost there": [
         "Melkein valmis"
@@ -8653,13 +8653,13 @@
     },
     "Modal title": {
       "Add public holidays": [
-        "Lisää arkipyhät"
+        "Lisää juhlapäivät"
       ],
       "Edit calendar": [
         "Muokkaa kalenteria"
       ],
       "Get a country's official public holidays calendar.": [
-        "Hanki maan virallinen arkipyhäkalenteri."
+        "Hanki maan virallinen juhlapäiväkalenteri."
       ],
       "How to import calendars from another service": [
         "Miten kalenterit tuodaan muista palveluista"
@@ -9039,7 +9039,7 @@
         "Hallintapaneeli"
       ],
       "Advanced sharing security": [
-        "Edistynyt jakosuojaus"
+        "Edistynyt jakojen suojaus"
       ],
       "Auto-delete spam and trashed messages": [
         "Poista roskakorin ja roskapostin viestit automaattisesti"
@@ -9421,7 +9421,7 @@
         "Maksutiedot"
       ],
       "Save your email address or phone number to use for verification if you need to reset your account.": [
-        "Tallenna sähköpostiosoite tai puhelinnumero, jolla voidaan tarvittaessa vahvistaa tilisi palautus."
+        "Tallenna sähköpostiosoite tai puhelinnumero, jolla tilisi palautus voidaan tarvittaessa vahvistaa."
       ],
       "Subscription": [
         "Tilaus"
@@ -9596,7 +9596,7 @@
         "Kirjautumiseen tarvitaan matkapuhelimeen lähetetty koodi. Tällä varmistetaan tilin suojaus vaikka salasana olisi vaarantunut."
       ],
       "Reset user passwords and reset two-factor authentication on users": [
-        "Palauta käyttäjien salasanat ja kaksivaiheinen todennus"
+        "Nollaa käyttäjien salasanat ja palauta kaksivaiheinen todennus oletustilaan"
       ],
       "Route your internet traffic through the Tor network with a single click": [
         "Ohjaa Internet-tietoliikenteesi Tor-verkon kautta yhdellä painalluksella"
@@ -9605,7 +9605,7 @@
         "Suojaa tiedostosi salatulla pilvitallennustilalla. Sisältää automaattisen synkronoinnin, salatun tiedostojen jakamisen ja paljon muuta."
       ],
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
-        "Säilytä yhteystietojesi puhelinnumeroiden, osoitteiden, syntymäpäivien ja henkilökohtaisten muistiinpanojen kaltaiset tiedot turvallisesti. Nollakäyttö-salaus varmistaa, ettei edes ${ BRAND_NAME } näe niitä."
+        "Säilytä yhteystietojesi puhelinnumeroiden, osoitteiden, syntymäpäivien ja henkilökohtaisten muistiinpanojen kaltaiset tiedot turvallisesti. Zero Access -salaus varmistaa, ettei edes ${ BRAND_NAME } näe niitä."
       ],
       "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
         "Lähetä sähköposteja suurille ryhmille nopeasti ja helposti luomalla tarvitsemasi määrä yhteystietoryhmiä (jopa 100 yhteystietoa/ryhmä)"
@@ -9743,7 +9743,7 @@
     },
     "Notification in holidays calendar modal": {
       "Adding holidays calendar failed": [
-        "Arkipyhäkalenterin lisäys epäonnistui"
+        "Juhlapäiväkalenterin lisääminen epäonnistui"
       ],
       "Calendar added": [
         "Kalenteri lisättiin"
@@ -10105,6 +10105,267 @@
         "Sinä"
       ]
     },
+    "pass_signup_2023: Action": {
+      "Check out ${ appName } features": [
+        "Tutustu ${ appName } -ominaisuuksiin"
+      ],
+      "Continue": [
+        "Jatka"
+      ],
+      "Continue to ${ free }": [
+        "Jatka palveluun ${ free }"
+      ],
+      "Continue with Bitcoin": [
+        "Jatka Bitcoinia käyttämällä"
+      ],
+      "create a new account": [
+        "luo uusi tili"
+      ],
+      "Create another account instead": [
+        "Luo sen sijaan toinen tili"
+      ],
+      "Download again ${ size }": [
+        "Lataa uudelleen ${ size }"
+      ],
+      "Download to continue ${ size }": [
+        "Lataa jatkaaksesi ${ size }"
+      ],
+      "Keep this plan and use ${ appName }": [
+        "Pidä tämä tilaus ja käytä ${ appName }"
+      ],
+      "Or ${ createANewAccount }": [
+        "Tai ${ createANewAccount }"
+      ],
+      "Start using ${ appName }": [
+        "Aloita ${ appName } -sovelluksen käyttö"
+      ],
+      "Start using ${ appName } now": [
+        "Aloita ${ appName } -sovelluksen käyttö nyt"
+      ],
+      "Upgrade for only ${ relativePrice } extra per month": [
+        "Päivitä vain ${ relativePrice } lisähintaan kuukaudessa."
+      ],
+      "Upgrade my plan": [
+        "Päivitä tilaukseni"
+      ],
+      "Use ${ free } instead": [
+        "Käytä sen sijaan ${ free }"
+      ]
+    },
+    "pass_signup_2023: Feature": {
+      "End-to-end encrypted": [
+        "Päästä päähän -salattu"
+      ],
+      "Open source": [
+        "Avoin lähdekoodi"
+      ],
+      "Protected by Swiss privacy laws": [
+        "Sveitsin tietosuojalakien suojaama"
+      ],
+      "Swiss based": [
+        "Sveitsiläinen"
+      ]
+    },
+    "pass_signup_2023: Header": {
+      "Checkout": [
+        "Kassa"
+      ],
+      "Continue with your ${ BRAND_NAME } account": [
+        "Jatka ${ BRAND_NAME }-tililläsi"
+      ],
+      "Limited time offer": [
+        "Vain rajoitetun ajan"
+      ],
+      "Recommended": [
+        "Suositus"
+      ],
+      "Select your plan": [
+        "Valitse tilauksesi"
+      ],
+      "Upgrade your plan": [
+        "Päivitä tilauksesi"
+      ]
+    },
+    "pass_signup_2023: Info": {
+      "${ PASS_APP_NAME } benefits": [
+        "${ PASS_APP_NAME } -edut"
+      ],
+      "${ PASS_APP_NAME } is available as a browser extension on Firefox Add-ons.": [
+        "${ PASS_APP_NAME } on saatavilla selaimen laajennuksena Firefox Add-ons -sivustolla"
+      ],
+      "${ PASS_APP_NAME } is available as a browser extension on the Chrome Web Store.": [
+        "${ PASS_APP_NAME } on saatavilla selaimen laajennuksena Chrome Web Storessa."
+      ],
+      "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption.": [
+        "${ PASS_APP_NAME } pitää salasanasi ja henkilöllisyytesi turvassa tiukalla päästä päähän -salauksella."
+      ],
+      "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption. To add premium features of ${ PASS_APP_NAME_2 } to your current subscription, we suggest upgrading to the ${ upsellPlanName } plan.": [
+        "${ PASS_APP_NAME } pitää salasanasi ja henkilöllisyytesi turvassa tiukalla päästä päähän -salauksella. Jos haluat lisätä ${ PASS_APP_NAME_2 }:n premium-ominaisuudet nykyiseen tilaukseesi, suosittelemme päivitystä ${ upsellPlanName } -tilaukseen."
+      ],
+      "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption. Your current plan already gives you access to premium ${ PASS_APP_NAME_2 } features — no need to purchase again.": [
+        "${ PASS_APP_NAME } pitää salasanasi ja henkilöllisyytesi turvassa tiukalla päästä päähän -salauksella. Nykyinen tilauksesi antaa sinulle jo pääsyn ${ PASS_APP_NAME_2 } -premium-ominaisuuksiin - sinun ei tarvitse ostaa sitä uudelleen."
+      ],
+      "+ ${ relativePrice } per month": [
+        "+ ${ relativePrice } per kuukausi"
+      ],
+      "All premium ${ BRAND_NAME } services.": [
+        "Kaikki premium ${ BRAND_NAME } -palvelut."
+      ],
+      "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
+        "Mutta voit avata **${ unlockPlanTitle }** ja kaikki premium-${ BRAND_NAME } -palvelut päivittämällä palveluun **${ upsellPlanTitle }** – se on vain ${ relativePrice } ylimääräistä kuukaudessa."
+      ],
+      "By continuing, you agree to our ${ termsAndConditions }": [
+        "Jatkamalla hyväksyt ${ termsAndConditions }"
+      ],
+      "Creating your account": [
+        "Luodaan tiliä"
+      ],
+      "Discover ${ PASS_APP_NAME },${ br }our new encrypted password manager": [
+        "Tutustu ${ PASS_APP_NAME },${ br } uuteen salattuun salasananhallintaohjelmaamme"
+      ],
+      "Download and install the relevant apps and extensions to start using ${ PASS_APP_NAME }": [
+        "Lataa ja asenna tarvittavat sovellukset ja laajennukset, aloittaaksesi ${ PASS_APP_NAME } käytön"
+      ],
+      "Download the ${ PASS_APP_NAME } app from Google Play and install it to start using ${ PASS_APP_NAME2 } on your phone.": [
+        "Lataa ${ PASS_APP_NAME } -sovellus Google Playsta ja asenna se, aloittaaksesi ${ PASS_APP_NAME2 } -sovelluksen käytön puhelimellasi."
+      ],
+      "Download the ${ PASS_APP_NAME } app from the App Store and install it to start using ${ PASS_APP_NAME2 } on your phone.": [
+        "Lataa ${ PASS_APP_NAME } -sovellus App Storesta ja asenna se, aloittaaksesi ${ PASS_APP_NAME2 } -sovelluksen käytön puhelimellasi."
+      ],
+      "Encrypted password manager${ breakToken }that also protects your identity": [
+        "Salattu salasananhallinta${ breakToken }, joka suojaa myös henkilöllisyytesi"
+      ],
+      "End-to-end encrypted notes": [
+        "Päästä päähän -salatut muistiinpanot"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
+        "Saat käyttöösi kaikki ${ BRAND_NAME } premium-palvelut vain **${ relativePrice } kuukaudessa** lisää!"
+      ],
+      "Free forever": [
+        "Ikuisesti ilmainen"
+      ],
+      "Get ${ appName } for ${ browserName }": [
+        "Hanki ${ appName } selaimelle ${ browserName }"
+      ],
+      "Get ${ appName } for ${ browserName } soon": [
+        "Hanki ${ appName } selaimelle ${ browserName } pian"
+      ],
+      "Hide-my-email aliases protect your email from data breaches": [
+        "Hide-my-email-aliakset suojaavat sähköpostiasi tietomurroilta"
+      ],
+      "If you get locked out of your ${ BRAND_NAME } Account, your **recovery kit** will allow you to sign in and recover your data.": [
+        "Jos sinut lukitaan ulos ${ BRAND_NAME }-tililtäsi, voit kirjautua sisään ja palauttaa tietosi **palautuspaketin** avulla."
+      ],
+      "Includes basic ${ appName } features:": [
+        "Sisältää ${ appName } -perusominaisuudet:"
+      ],
+      "Install ${ PASS_APP_NAME }": [
+        "Asenna ${ PASS_APP_NAME }"
+      ],
+      "Install app": [
+        "Asenna sovellus"
+      ],
+      "Install app and extension": [
+        "Asenna sovellus ja lisäosa"
+      ],
+      "It’s the only way to fully restore your account, so make sure you keep this **recovery kit** somewhere safe.": [
+        "Se on ainoa tapa palauttaa tilisi kokonaan, joten varmista, että säilytät tämän **palautuspakkauksen** jossakin turvallisessa paikassa."
+      ],
+      "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
+        "Liity yli 100 miljoonaan ihmiseen, jotka ovat valinneet ${ BRAND_NAME }:n pysyäkseen turvassa verkossa"
+      ],
+      "Launching ${ PASS_APP_NAME }": [
+        "Käynnistetään ${ PASS_APP_NAME }"
+      ],
+      "One easy subscription.": [
+        "Yksi helppo tilaus."
+      ],
+      "Open-source and audited": [
+        "Avoin lähdekoodi ja auditoitu"
+      ],
+      "per month, billed annually": [
+        "per kuukausi, laskutetaan vuosittain"
+      ],
+      "per month, billed every 15 months": [
+        "per kuukausi, laskutetaan 15 kuukauden välein"
+      ],
+      "per month, billed every 30 months": [
+        "per kuukausi, laskutetaan 30 kuukauden välein"
+      ],
+      "per month, billed every month": [
+        "per kuukausi, laskutetaan joka kuukausi"
+      ],
+      "per month, billed every two years": [
+        "per kuukausi, laskutetaan kahden vuoden välein"
+      ],
+      "Preparing your Recovery Kit": [
+        "Valmistellaan palautuspakettiasi"
+      ],
+      "Protected by Swiss privacy laws": [
+        "Sveitsin tietosuojalakien suojaama"
+      ],
+      "Save your recovery kit to continue": [
+        "Tallenna palautuspakettisi jatkaaksesi"
+      ],
+      "Signing in to ${ PASS_APP_NAME }": [
+        "Kirjaudutaan ${ PASS_APP_NAME }"
+      ],
+      "Special launch offer: Get ${ title } for ${ price } forever!": [
+        "Erikoistarjous: Hanki ${ title } hintaan ${ price } ikuisesti!"
+      ],
+      "The offer you selected is not available for ${ currentPlanTitle } subscribers.": [
+        "Valitsemasi tarjous ei ole saatavilla ${ currentPlanTitle } -tilaajille."
+      ],
+      "to start using ${ PASS_APP_NAME } on your phone": [
+        "aloittaaksesi ${ PASS_APP_NAME }:n käytön puhelimellasi."
+      ],
+      "Unlock ${ PASS_APP_NAME } premium features by upgrading": [
+        "Avaa ${ PASS_APP_NAME } -premium-ominaisuudet päivittämällä"
+      ],
+      "Updating your account": [
+        "Päivitetään tiliäsi"
+      ],
+      "Verifying your payment": [
+        "Vahvistetaan maksuasi"
+      ],
+      "Welcome to ${ plan }": [
+        "Tervetuloa ${ plan }iin"
+      ],
+      "Works on all devices": [
+        "Toimii kaikilla laitteilla"
+      ],
+      "You already have access to premium ${ appName } features — no need to purchase again.": [
+        "Sinulla on jo käytössäsi ${ appName } -premium-ominaisuudet - sinun ei tarvitse ostaa niitä uudelleen."
+      ],
+      "You currently have": [
+        "Sinulla on tällä hetkellä"
+      ],
+      "Your organization has access to ${ free }. If you want to access premium ${ appName } features, please ask your organization's administrator to upgrade.": [
+        "Organisaatiollasi on käytössä ${ free }. Jos haluat käyttää ${ appName } -premium-ominaisuuksia, pyydä organisaatiosi ylläpitäjää päivittämään."
+      ]
+    },
+    "pass_signup_2023: Onboarding": {
+      "Welcome to ${ PASS_APP_NAME }": [
+        "Tervetuloa palveluun ${ PASS_APP_NAME }"
+      ]
+    },
+    "pass_signup_2023: Title": {
+      "${ upsellPlanTitle } plan": [
+        "${ upsellPlanTitle } -tilaus"
+      ],
+      "All ${ BRAND_NAME } Plus services.${ br }One easy subscription.": [
+        "Kaikki ${ BRAND_NAME } Plus-palvelut.${ br }Yksi helppo tilaus."
+      ],
+      "Create your ${ BRAND_NAME } account": [
+        "Luo ${ BRAND_NAME } -tilisi"
+      ],
+      "Request your organization administrator to upgrade": [
+        "Pyydä organisaatiosi ylläpitäjää päivittämään"
+      ],
+      "Secure your account": [
+        "Suojaa tilisi"
+      ]
+    },
     "Payment method option": {
       "Credit/debit card": [
         "Maksukortti"
@@ -10125,7 +10386,7 @@
     },
     "Placeholder": {
       "A way to contact you": [
-        "Miten tavoitamme sinut"
+        "Tapa, jolla tavoitamme sinut"
       ],
       "Add a calendar description": [
         "Lisää kalenterille kuvaus"
@@ -10185,7 +10446,7 @@
         "Puhelinnumero"
       ],
       "Please describe the problem and include any error messages": [
-        "Kuvaile ongelmaa ja sisällytä mahdolliset virheviestit"
+        "Kuvaile ongelmaa ja sisällytä mahdolliset virheilmoitukset"
       ],
       "Please insert link first": [
         "Lisää linkin osoite ensin"
@@ -10203,7 +10464,7 @@
         "Hae käyttäjää tai osoitetta"
       ],
       "Search settings": [
-        "Etsi asetuksia"
+        "Etsi asetuksista"
       ],
       "Search users": [
         "Etsi käyttäjiä"
@@ -10311,7 +10572,7 @@
         "Kirjaudu sisään"
       ],
       "Verification email sent to ${ email.Value }": [
-        "Vahvistussähköposti lähetettiin osoitteeseen ${ email.Value }"
+        "Vahvistusviesti lähetettiin osoitteeseen ${ email.Value }"
       ],
       "Verify now": [
         "Vahvista nyt"
@@ -10426,7 +10687,7 @@
     },
     "Select file": {
       "Upload CSV file": [
-        "Lähetä CSV-tiedosto"
+        "Lataa CSV-tiedosto"
       ]
     },
     "Select files": {
@@ -10434,7 +10695,7 @@
         "Selaa"
       ],
       "Upload": [
-        "Tallenna"
+        "Lataa"
       ],
       "Upload additional files": [
         "Lataa lisää tiedostoja"
@@ -11267,6 +11528,70 @@
         "Tietoja tapahtumista, joita ei voitu viedä"
       ]
     },
+    "summer2023: Billing cycle option": {
+      "1 year": [
+        "1 vuosi"
+      ],
+      "2 years": [
+        "2 vuotta"
+      ]
+    },
+    "summer2023: Deal details": {
+      "Premium Drive": [
+        "Premium Drive"
+      ],
+      "Premium Mail and Calendar": [
+        "Premium Mail ja Calendar"
+      ],
+      "Premium Password Manager": [
+        "Premium salasananhallinta"
+      ]
+    },
+    "summer2023: Describe Proton Pass": {
+      "Securely store your passwords and autofill them on websites. Includes unlimited passwords, autofill, password generator, and more.": [
+        "Tallenna salasanasi turvallisesti ja täytä ne automaattisesti verkkosivustoilla. Sisältää rajattomasti salasanoja, automaattisen täytön, salasanageneraattorin ja paljon muuta."
+      ]
+    },
+    "summer2023: Short tool name to present Proton Pass": {
+      "Password manager": [
+        "Salasananhallinta"
+      ]
+    },
+    "summer2023: Tooltip": {
+      "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
+        "Luo turvallisia kirjautumistietoja kaikilla laitteillasi. Sisältää rajattomasti aliaksia, 20 holvia, sisäänrakennetun 2FA:n, luottokorttitietojen automaattisen täytön ja paljon muuta."
+      ],
+      "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "Sisältää 2950+ palvelinta yli 65+ maassa, 10 samanaikaista laitetta, tuen suoratoistopalveluille eri puolilta maailmaa, haittaohjelma- ja mainoseston sekä paljon muuta."
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Sisältää tuen yhdelle omalle sähköpostin verkkotunnukselle, 10 sähköpostiosoitteelle, 10 hide-my-email-aliakselle, kalenterijaolle sekä paljon muuta."
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "Suojaa tiedostosi salatulla pilvitallennustilalla. Sisältää versiohistorian, salatun tiedostojen jakamisen ja paljon muuta."
+      ]
+    },
+    "summer2023:Footer": {
+      "*Your subscription will automatically renew at the standard discounted rate at the end of your billing cycle.": [
+        "*Tilauksesi uudistetaan automaattisesti samalla alennetulla hinnalla laskutuskautesi lopussa."
+      ],
+      "Discounts are based on the standard monthly pricing. This offer is only available to first-time subscribers.": [
+        "Alennukset perustuvat tavalliseen kuukausihinnoitteluun. Tämä tarjous on saatavilla vain ensitilaajille."
+      ]
+    },
+    "summer2023:Info": {
+      "For a limited time, get the best ${ BRAND_NAME } has to offer at an exclusive discount.": [
+        "Vain rajoitetun ajan saat parasta, mitä ${ BRAND_NAME } tarjoaa, erinomaiseen hintaan."
+      ],
+      "We’re celebrating the nine-year anniversary of our crowdfunding!": [
+        "Juhlimme joukkorahoituksemme yhdeksänvuotisjuhlaa!"
+      ]
+    },
+    "summer2023:Offer title": {
+      "${ BRAND_NAME } Anniversary Sale": [
+        "${ BRAND_NAME } Vuosipäivän alennusmyynti"
+      ]
+    },
     "Tab in domain modal": {
       "Addresses": [
         "Osoitteet"
@@ -11438,7 +11763,7 @@
         "Lisää osoite"
       ],
       "Add another notification to remind you of this event": [
-        "Lisää uusi ilmoitus muistuttamaan sinua tapahtumasta"
+        "Lisää uusi ilmoitus muistuttamaan tapahtumasta"
       ],
       "Add contact group name": [
         "Lisää yhteystietoryhmän nimi"
@@ -11531,7 +11856,7 @@
         "Peruuta ${ MAIL_SHORT_APP_NAME } -tilaus"
       ],
       "Cancel subscription": [
-        "Peruuta tilaus"
+        "Peru tilaus"
       ],
       "Cancel subscription?": [
         "Peruuta tilaus?"
@@ -11700,7 +12025,7 @@
         "Poista käyttäjä"
       ],
       "Delete version history?": [
-        "Poista versiohistoria?"
+        "Poistetaanko versiohistoria?"
       ],
       "Disable ${ email }": [
         "Poista ${ email } käytöstä"
@@ -11778,7 +12103,7 @@
         "Vie julkinen avain"
       ],
       "External PGP settings": [
-        "Ulkoiset PGP-asetukset"
+        "Ulkoisen PGP-järjestelmän asetukset"
       ],
       "Failed to create ${ failedUsers.length } user\naccount.": [
         "${ failedUsers.length } käyttäjätilin luonti epäonnistui.",
@@ -11788,7 +12113,7 @@
         "Suodattimet"
       ],
       "Find email or username": [
-        "Etsi sähköpostiosoitetta tai käyttäjätunnusta"
+        "Etsi osoite tai tunnus"
       ],
       "Folders": [
         "Kansiot"
@@ -11891,13 +12216,13 @@
         "Asettelu"
       ],
       "Leave ${ organisationName }?": [
-        "Jätä ${ organisationName }?"
+        "Poistutaanko organisaatiosta ${ organisationName }?"
       ],
       "Link confirmation": [
         "Linkin vahvistus"
       ],
       "Login password": [
-        "Kirjautumissalasana"
+        "Kirjautumisen salasana"
       ],
       "Messages": [
         "Viestit"
@@ -11939,7 +12264,7 @@
         "Avaa sivunavigaatio"
       ],
       "OpenVPN configuration files": [
-        "OpenVPN-asetustiedostot"
+        "OpenVPN-määritystiedostot"
       ],
       "Organization filters": [
         "Organisaation suodattimet"
@@ -12029,10 +12354,10 @@
         "Tyhjennä organisaation avaimet"
       ],
       "Reset password": [
-        "Palauta salasana"
+        "Nollaa salasana"
       ],
       "Reset password?": [
-        "Palautetaanko salasana?"
+        "Nollataanko salasana?"
       ],
       "Restore administrator privileges": [
         "Palauta ylläpito-oikeudet"
@@ -12050,7 +12375,7 @@
         "Turvallinen sähköposti Sveitsissä"
       ],
       "Security and privacy": [
-        "Suojausta ja yksityisyyttä"
+        "Suojaus ja yksityisyys"
       ],
       "Security logs": [
         "Tietoturvalokit"
@@ -12065,16 +12390,16 @@
         "Valitse yhteystietoryhmä"
       ],
       "Select the time to send this notification": [
-        "Valitse mihin aikaan haluat ilmoituksen tapahtuvan"
+        "Valitse ilmoituksen lähetysaika"
       ],
       "Select the way to send this notification": [
         "Valitse ilmoituksen lähetystapa"
       ],
       "Select when you want this notification to be sent": [
-        "Valitse milloin haluat ilmoituksen tapahtuvan"
+        "Valitse ilmoituksen lähetyspäivä"
       ],
       "Send email reminders?": [
-        "Lähetä sähköpostimuistutuksia?"
+        "Lähetetäänkö muistutuksia sähköpostitse?"
       ],
       "Session management": [
         "Istuntojen hallinta"
@@ -12092,7 +12417,7 @@
         "Aseta organisaation salasana"
       ],
       "Set up forwarding": [
-        "Määritä edelleenlähetys"
+        "Määritä ohjaus"
       ],
       "Set up two-factor authentication": [
         "Määritä kaksivaiheinen todennus"
@@ -12122,10 +12447,10 @@
         "Kirjautuminen onnistui!"
       ],
       "Signed in to member account": [
-        "Kirjaudu toiselle tilille"
+        "Kirjaudu jäsentilille"
       ],
       "SMTP tokens": [
-        "SMTP avaimet"
+        "SMTP-tunnisteet"
       ],
       "Sort folders alphabetically": [
         "Jätjestä kansiot aakkosellisesti"
@@ -12149,7 +12474,7 @@
         "Onnistui"
       ],
       "Successfully created ${ localSuccessfullyCreatedUsers.length } user account": [
-        "Luotiin ${ localSuccessfullyCreatedUsers.length } käyttäjätili",
+        "${ localSuccessfullyCreatedUsers.length } käyttäjätili luotiin",
         "${ localSuccessfullyCreatedUsers.length } käyttäjätiliä luotiin"
       ],
       "Successfully created ${ successfullyCreatedUsers.length } user account": [
@@ -12163,7 +12488,7 @@
         "Vaihda kahden salasanan tilaan"
       ],
       "Take precautions to avoid data loss!": [
-        "Tee toimenpiteitä tietojen menetyksen varalta!"
+        "Välty tietojen menetykseltä varautumalla!"
       ],
       "Theme": [
         "Teema"
@@ -12250,7 +12575,7 @@
         "Tilauksesi"
       ],
       "Your recovery status": [
-        "Palautustilanteesi"
+        "Palautustilasi"
       ],
       "Your SMTP token": [
         "SMTP-tunnisteesi"
@@ -12391,7 +12716,7 @@
         "Yhteys tiliin on katkaistu"
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
-        "Vaihda valitsemiasi päivä- ja yöteemoja järjestelmäsi päivä- ja yötilojen mukana automaattisesti"
+        "Vaihda määrittämiesi päivä-/yöteemojen välillä automaattisesti järjestelmäsi päivä-/yötilan vaihtuessa"
       ],
       "Customize import to reduce the number of folders": [
         "Vähennä kansioiden määrää mukauttamalla tuontia"
@@ -12566,7 +12891,7 @@
     },
     "Update font modal": {
       "Today is a good day to write an email": [
-        "Tänään on hyvä päivä kirjoittaa sähköpostiviesti"
+        "Tänään on hyvä päivä naputella sähköposteja"
       ],
       "Update default font and size": [
         "Muuta tekstin oletusfonttia ja kokoa"
@@ -12644,7 +12969,7 @@
       ],
       "${ numberOfServers } across ${ numberOfCountries } country": [
         "${ numberOfServers } palvelin ${ numberOfCountries } maassa",
-        "${ numberOfServers } palvelinta ${ numberOfCountries } maassa"
+        "${ numberOfServers } palvelinta ${ numberOfCountries }+ maassa"
       ],
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } ${ numberOfCountries } maassa",
@@ -12713,7 +13038,7 @@
         "Tämä poistaa kaikki tuonnin yhteydessä luodut viestit, kansiot ja tunnisteet."
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
-        "Valitettavasti emme ole juuri nyt tavoitettavissa. Täytä alla oleva lomake ja kuvaile ongelmaasi, niin perehdymme siihen ja otamme yhteyttä kun olemme taas paikalla."
+        "Valitettavasti emme ole juuri nyt tavoitettavissa. Kuvaile ongelmasi täyttämällä alla oleva lomake, niin tutustumme siihen ja otamme yhteyttä kun olemme taas paikalla."
       ],
       "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
         "Sähköpostipalvelinta ei voitu vahvistaa. Jos luotat siihen, voit ohittaa tämän vahvistuksen."
@@ -12734,10 +13059,10 @@
         "Ilmainen kokeilusi päättyy ${ textDate }. ${ action }"
       ],
       "Your recovery file is outdated. It can't recover new data if you reset your account again.": [
-        "Palautustiedostosi on vanhentunut, eikä sitä voida käyttää uusien tietojen palautukseen tulevaisuudessa."
+        "Palautustiedostosi on vanhentunut, eikä sillä voida enää jatkossa palauttaa tietojasi, jos palautat tilisi uudelleen."
       ],
       "Your recovery phrase is outdated. It can't recover new data if you reset your account again.": [
-        "Palautuslausekkeesi on vanhentunut, eikä sitä voida käyttää uusien tietojen palautukseen tulevaisuudessa."
+        "Palautuslausekkeesi on vanhentunut, eikä sillä voida enää jatkossa palauttaa tietojasi, jos palautat tilisi uudelleen."
       ]
     },
     "Warning for domain modal": {
@@ -12755,8 +13080,8 @@
     },
     "Weekly recurring event, frequency": {
       "Every ${ interval } week on ${ multipleDaysString }": [
-        "Joka ${ interval } viikko ${ multipleDaysString }",
-        "Joka ${ interval } viikko ${ multipleDaysString }"
+        "${ interval } viikon välein ${ multipleDaysString }",
+        "${ interval } viikon välein ${ multipleDaysString }"
       ],
       "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
         "${ interval } viikon välein ${ multipleDaysString }, ${ timesString }",
@@ -12767,16 +13092,16 @@
         "${ interval } viikon välein ${ multipleDaysString }, ${ untilString }"
       ],
       "Every ${ interval } week on all days": [
-        "${ interval } viikon välein joka päivä",
-        "${ interval } viikon välein joka päivä"
+        "${ interval } viikon välein kaikkina päivinä",
+        "${ interval } viikon välein kaikkina päivinä"
       ],
       "Every ${ interval } week on all days, ${ timesString }": [
-        "Joka ${ interval } viikko kaikkina päivinä, ${ timesString }",
-        "Joka ${ interval } viikko kaikkina päivinä, ${ timesString }"
+        "${ interval } viikon välein kaikkina päivinä, ${ timesString }",
+        "${ interval } viikon välein kaikkina päivinä, ${ timesString }"
       ],
       "Every ${ interval } week on all days, ${ untilString }": [
-        "Joka ${ interval } viikko kaikkina päivinä, ${ untilString }",
-        "Joka ${ interval } viikko kaikkina päivinä, ${ untilString }"
+        "${ interval } viikon välein kaikkina päivinä, ${ untilString }",
+        "${ interval } viikon välein kaikkina päivinä, ${ untilString }"
       ],
       "Every ${ interval } week on Friday": [
         "Joka ${ interval }. viikko perjantaisin",
@@ -12872,13 +13197,13 @@
         "Viikottain ${ multipleDaysString }, ${ untilString }"
       ],
       "Weekly on all days": [
-        "Viikottain joka päivä"
+        "Viikottain kaikkina päivinä"
       ],
       "Weekly on all days, ${ timesString }": [
-        "Viikottain joka päivä, ${ timesString }"
+        "Viikottain kaikkina päivinä, ${ timesString }"
       ],
       "Weekly on all days, ${ untilString }": [
-        "Viikottain joka päivä, ${ untilString }"
+        "Viikottain kaikkina päivinä, ${ untilString }"
       ],
       "Weekly on Friday": [
         "Viikottain perjantaisin"

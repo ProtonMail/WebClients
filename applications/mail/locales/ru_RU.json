@@ -145,6 +145,9 @@
       "Carbon Copy": [
         "Копия"
       ],
+      "Change email": [
+        "Изменить e-mail"
+      ],
       "Change page": [
         "Изменить страницу"
       ],
@@ -2972,12 +2975,6 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Вы можете отметить для удаления те контакты, которые не хотите ни объединять, ни оставлять. Удаление будет происходить только после нажатия кнопки «Объединить»."
-      ],
-      "You can read the message and click on links without being tracked with email tracker protection.": [
-        "Вы можете читать сообщение и нажимать на ссылки без отслеживания с помощью защиты от трекеров электронной почты."
-      ],
-      "You can read the message and click on links without being tracked.": [
-        "Вы можете читать сообщение и переходить по ссылкам без риска быть отслеженным."
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4160,9 +4157,6 @@
     "Font face option": {
       "System default": [
         "Системный по умолчанию"
-      ],
-      "Theme default": [
-        "Из темы по умолчанию"
       ]
     },
     "Font Size Default": {
@@ -4202,17 +4196,41 @@
       ]
     },
     "Get started checklist instructions": {
+      "Checklist complete": [
+        "Контрольный список завершен"
+      ],
+      "Close": [
+        "Закрыть"
+      ],
+      "Get mobile app": [
+        "Получить мобильное приложение"
+      ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "Получить мобильное приложение ${ MAIL_APP_NAME }"
       ],
       "Import contacts or emails": [
         "Импортируйте контакты или электронные письма"
       ],
+      "Import data": [
+        "Импортировать данные"
+      ],
       "Import your contacts or messages": [
         "Импортируйте свои контакты или сообщения"
       ],
+      "Maybe later": [
+        "Может быть позже"
+      ],
       "Quickly transfer your contacts or emails from any provider using our Easy Switch import assistant.": [
         "Быстро перенесите контакты или электронную почту от любого провайдера с помощью нашего помощника по импорту Easy Switch."
+      ],
+      "Send a message": [
+        "Отправить сообщение"
+      ],
+      "Set recovery method": [
+        "Установить метод восстановления"
+      ],
+      "You've unlocked 1 GB": [
+        "Вы разблокировали 1 ГБ"
       ]
     },
     "Gmail forwarding": {
@@ -4684,6 +4702,12 @@
         "${ numberOfImageTrackers } трекера заблокированы",
         "${ numberOfImageTrackers } трекеров заблокированы",
         "${ numberOfImageTrackers } трекеров заблокированы"
+      ],
+      "${ numberOfUTMTrackers } link cleaned": [
+        "${ numberOfUTMTrackers } ссылка очищена",
+        "${ numberOfUTMTrackers } ссылки очищены",
+        "${ numberOfUTMTrackers } ссылок очищены",
+        "${ numberOfUTMTrackers } ссылки очищены"
       ],
       "${ numContact } contact": [
         "${ numContact } контакт",
@@ -5297,6 +5321,9 @@
       "Link type": [
         "Тип ссылки"
       ],
+      "Links cleaned:": [
+        "Ссылки очищены:"
+      ],
       "Loading": [
         "Загрузка"
       ],
@@ -5395,6 +5422,9 @@
       ],
       "No label selected": [
         "Ярлык не выбран"
+      ],
+      "No links cleaned": [
+        "Ни одной ссылки не очищено"
       ],
       "No more results found": [
         "Больше результатов не найдено"
@@ -5809,6 +5839,9 @@
       ],
       "Trackers blocked:": [
         "Заблокировано трекеров:"
+      ],
+      "Turn off to only search by date, name, email address, or subject line. To disable search message content and delete downloaded messages, go to settings.": [
+        "Выключите, чтобы искать только по дате, имени, адресу электронной почты или теме. Чтобы выключить поиск по содержимому сообщений и удалить загруженную копию сообщений перейдите в настройки."
       ],
       "Turn on to search the content of your messages": [
         "Включите поиск по содержимому ваших сообщений"
@@ -7526,11 +7559,22 @@
       "Set up your organization": [
         "Настройка организации"
       ],
-      "Set up your organization testing": [
-        "Настройте тестирование вашей организации"
-      ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
         "Используйте переключатель приложений в левом верхнем углу, чтобы получить доступ ко всем сервисам ${ BRAND_NAME }: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } и ${ DRIVE_SHORT_APP_NAME }."
+      ]
+    },
+    "Online Accounts Name": {
+      "Banking": [
+        "Банковское дело"
+      ],
+      "E-commerce and Retail": [
+        "Электронная коммерция и розничная торговля"
+      ],
+      "Entertainment": [
+        "Развлечения"
+      ],
+      "Food and beverage": [
+        "Продукты питания и напитки"
       ]
     },
     "Option": {
@@ -9323,9 +9367,6 @@
       ],
       "Subject missing": [
         "Тема отсутствует"
-      ],
-      "This email is protected": [
-        "Это письмо защищено"
       ],
       "To": [
         "Кому"

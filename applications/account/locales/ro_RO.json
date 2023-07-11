@@ -4406,9 +4406,6 @@
     "Font face option": {
       "System default": [
         "Implicit din sistem"
-      ],
-      "Theme default": [
-        "Temă implicită"
       ]
     },
     "Font Size Default": {
@@ -4449,40 +4446,40 @@
     },
     "Get started checklist instructions": {
       "${ MAIL_APP_NAME } app": [
-        "Aplicația ${ MAIL_APP_NAME }"
+        "aplicația ${ MAIL_APP_NAME }"
       ],
       "account logins": [
         "autentificarea în cont"
       ],
       "Auto-forward Gmail": [
-        "Redirecționare automată Gmail"
+        "Redirecționare automată din Gmail"
       ],
       "auto-forwarding": [
         "redirecționarea automată"
       ],
       "Change ${ strongText } to your ${ BRAND_NAME } address": [
-        "Schimbă ${ strongText } la adresa ta ${ BRAND_NAME }"
+        "Schimbați ${ strongText } cu adresa personală ${ BRAND_NAME }"
       ],
       "Discover how our ${ strongText } protect you": [
-        "Descoperă cum ${ strongText } te protejează"
+        "Descoperiți cum ${ strongText } vă protejează"
       ],
       "Discover privacy features": [
-        "Descoperă caracteristicile de confidențialitate"
+        "Descoperiți funcțiile de confidențialitate"
       ],
       "Get the ${ strongText } on Android or iOS": [
-        "Obține ${ strongText } pentru Android sau iOS"
+        "Luați ${ strongText } pentru Android sau iOS"
       ],
       "Get the App": [
-        "Obține aplicația"
+        "Luați aplicația"
       ],
       "privacy features": [
-        "caracteristici de confidențialitate"
+        "funcțiile de confidențialitate"
       ],
       "Set up ${ strongText } from Gmail": [
-        "Setează ${ strongText } de la Gmail"
+        "Setați ${ strongText } de la Gmail"
       ],
       "Update your logins": [
-        "Actualizează autentificarea"
+        "Actualizați-vă autentificarea"
       ]
     },
     "Gmail forwarding": {
@@ -5704,7 +5701,7 @@
         "Introduceți adresa de e-mail de recuperare și veți primi numele de utilizator sau adresa de e-mail."
       ],
       "Enter your recovery phone number and we will send you your username or email address.": [
-        "Introduceți num[rul de telefon de recuperare și veți primi numele de utilizator sau adresa de e-mail."
+        "Introduceți numărul de telefon de recuperare și veți primi numele de utilizator sau adresa de e-mail."
       ],
       "Event invitations and RSVPs will be sent in this language.": [
         "Invitațiile la evenimente și RSVP vor fi trimise în această limbă."
@@ -6974,7 +6971,7 @@
         "Veți avea nevoie de o adresă ${ BRAND_NAME } pentru a utiliza ${ MAIL_APP_NAME } și ${ CALENDAR_APP_NAME }"
       ],
       "You will NOT be able to decrypt any messages, files, and other data encrypted with this key. All data signed with this key will no longer be verified by ${ BRAND_NAME } applications.": [
-        "NU veți putea decripta niciun mesaj, fișier sau alte date criptate cu acestă cheie. Toate datele semnate cu acestă cheie nu vor mai fi verificate de aplicațiile ${ BRAND_NAME }."
+        "NU veți putea decripta niciun mesaj, fișier sau alte date criptate cu această cheie. Toate datele semnate cu acestă cheie nu vor mai fi verificate de aplicațiile ${ BRAND_NAME }."
       ],
       "You will receive priority support from specialists trained in account protection. For any account security concerns, please ${ hereLink }.": [
         "Veți primi asistență prioritară de la specialiști instruiți în protecția conturilor. Pentru orice probleme legate de securitatea contului, ${ hereLink }."
@@ -9616,7 +9613,7 @@
         "Creați până la ${ n } de calendare sau adăugați calendare de la prieteni, familie, colegi și organizații"
       ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
-        "Creează până la ${ n } adrese/aliasuri ce pot fi atribuite membrilor familiei. Folosește-le pentru identitățile on-line, de exemplu JohnShopper@${ domain } pentru conturi de cumpărături."
+        "Creați până la ${ n } adrese / aliasuri ce pot fi atribuite membrilor familiei. Folosiți-le pentru autentificările online, de exemplu ioncumparaturi@${ domain } pentru conturi de cumpărături."
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Vă apără împotriva pierderii confidențialității din VPN prin transmiterea traficului pe Internet prin mai multe servere."
@@ -10216,6 +10213,267 @@
     "Participant name": {
       "You": [
         "Dvs."
+      ]
+    },
+    "pass_signup_2023: Action": {
+      "Check out ${ appName } features": [
+        "Consultați funcțiile ${ appName }"
+      ],
+      "Continue": [
+        "Continuare"
+      ],
+      "Continue to ${ free }": [
+        "Continuare cu ${ free }"
+      ],
+      "Continue with Bitcoin": [
+        "Continuare cu Bitcoin"
+      ],
+      "create a new account": [
+        "creați un cont"
+      ],
+      "Create another account instead": [
+        "Creare alt cont"
+      ],
+      "Download again ${ size }": [
+        "Descărcare din nou ${ size }"
+      ],
+      "Download to continue ${ size }": [
+        "Descărcare pentru a continua ${ size }"
+      ],
+      "Keep this plan and use ${ appName }": [
+        "Păstrez acest plan și utilizez ${ appName }"
+      ],
+      "Or ${ createANewAccount }": [
+        "Sau ${ createANewAccount }"
+      ],
+      "Start using ${ appName }": [
+        "Începeți să utilizați ${ appName }"
+      ],
+      "Start using ${ appName } now": [
+        "Începeți să utilizați ${ appName } acum"
+      ],
+      "Upgrade for only ${ relativePrice } extra per month": [
+        "Modernizați contul cu doar ${ relativePrice } în plus pe lună"
+      ],
+      "Upgrade my plan": [
+        "Modificare plan"
+      ],
+      "Use ${ free } instead": [
+        "Folosesc ${ free }"
+      ]
+    },
+    "pass_signup_2023: Feature": {
+      "End-to-end encrypted": [
+        "Criptat în ambele părți"
+      ],
+      "Open source": [
+        "Cod sursă public"
+      ],
+      "Protected by Swiss privacy laws": [
+        "Protejat de legile elvețiene privind confidențialitatea"
+      ],
+      "Swiss based": [
+        "Situat în Elveția"
+      ]
+    },
+    "pass_signup_2023: Header": {
+      "Checkout": [
+        "Finalizare comandă"
+      ],
+      "Continue with your ${ BRAND_NAME } account": [
+        "Continuare cu contul ${ BRAND_NAME }"
+      ],
+      "Limited time offer": [
+        "Ofertă limitată"
+      ],
+      "Recommended": [
+        "Recomandat"
+      ],
+      "Select your plan": [
+        "Selectați planul"
+      ],
+      "Upgrade your plan": [
+        "Modificare plan"
+      ]
+    },
+    "pass_signup_2023: Info": {
+      "${ PASS_APP_NAME } benefits": [
+        "Beneficii ${ PASS_APP_NAME }"
+      ],
+      "${ PASS_APP_NAME } is available as a browser extension on Firefox Add-ons.": [
+        "${ PASS_APP_NAME } este disponibil ca extensie de navigator pe pagina de suplimente Firefox."
+      ],
+      "${ PASS_APP_NAME } is available as a browser extension on the Chrome Web Store.": [
+        "${ PASS_APP_NAME } este disponibil ca o extensie de navigator pe magazinul Chrome Web."
+      ],
+      "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption.": [
+        "${ PASS_APP_NAME } vă păstrează parolele și identitatea în siguranță cu criptare riguroasă la ambele capete."
+      ],
+      "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption. To add premium features of ${ PASS_APP_NAME_2 } to your current subscription, we suggest upgrading to the ${ upsellPlanName } plan.": [
+        "${ PASS_APP_NAME } vă păstrează parolele și identitatea în siguranță cu criptare riguroasă la ambele capete. Pentru a adăuga funcții premium de la ${ PASS_APP_NAME_2 } la abonamentul actual, vă recomandăm să faceți treceți la planul ${ upsellPlanName }."
+      ],
+      "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption. Your current plan already gives you access to premium ${ PASS_APP_NAME_2 } features — no need to purchase again.": [
+        "${ PASS_APP_NAME } vă păstrează parolele și identitatea în siguranță cu criptare riguroasă la ambele capete. Planul actual vă oferă deja acces la funcțiile premium ${ PASS_APP_NAME_2 } - nu este nevoie să cumpărați din nou."
+      ],
+      "+ ${ relativePrice } per month": [
+        "+ ${ relativePrice } pe lună"
+      ],
+      "All premium ${ BRAND_NAME } services.": [
+        "Toate serviciile premium ${ BRAND_NAME }."
+      ],
+      "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
+        "Dar puteți debloca **${ unlockPlanTitle }** și toate serviciile premium ${ BRAND_NAME } prin trecerea la **${ upsellPlanTitle }** - este doar ${ relativePrice } în plus pe lună."
+      ],
+      "By continuing, you agree to our ${ termsAndConditions }": [
+        "Continuând, sunteți de acord cu acești ${ termsAndConditions }"
+      ],
+      "Creating your account": [
+        "Se creează contul"
+      ],
+      "Discover ${ PASS_APP_NAME },${ br }our new encrypted password manager": [
+        "Descoperiți ${ PASS_APP_NAME },${ br }noul nostru manager de parole criptate"
+      ],
+      "Download and install the relevant apps and extensions to start using ${ PASS_APP_NAME }": [
+        "Descărcați și instalați aplicațiile și extensiile relevante pentru a începe să utilizați ${ PASS_APP_NAME }"
+      ],
+      "Download the ${ PASS_APP_NAME } app from Google Play and install it to start using ${ PASS_APP_NAME2 } on your phone.": [
+        "Descărcați aplicația ${ PASS_APP_NAME } din Magazinul Play și instalați-o pentru a începe să utilizați ${ PASS_APP_NAME2 } pe telefon."
+      ],
+      "Download the ${ PASS_APP_NAME } app from the App Store and install it to start using ${ PASS_APP_NAME2 } on your phone.": [
+        "Descărcați aplicația ${ PASS_APP_NAME } din App Store și instalați-o pentru a începe să utilizați ${ PASS_APP_NAME2 } pe telefon."
+      ],
+      "Encrypted password manager${ breakToken }that also protects your identity": [
+        "Manager de parole criptate${ breakToken }care vă protejează identitatea"
+      ],
+      "End-to-end encrypted notes": [
+        "Note criptate la ambele capete"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
+        "Pentru doar încă **${ relativePrice } pe lună**, veți avea acces la toate serviciile premium ${ BRAND_NAME }!"
+      ],
+      "Free forever": [
+        "Gratuit întotdeauna"
+      ],
+      "Get ${ appName } for ${ browserName }": [
+        "Luați ${ appName } pentru ${ browserName }"
+      ],
+      "Get ${ appName } for ${ browserName } soon": [
+        "Luați ${ appName } pentru ${ browserName } în curând"
+      ],
+      "Hide-my-email aliases protect your email from data breaches": [
+        "Aliasurile hide-my-email vă protejează adresa de e-mail împotriva divulgării datelor personale."
+      ],
+      "If you get locked out of your ${ BRAND_NAME } Account, your **recovery kit** will allow you to sign in and recover your data.": [
+        "Dacă sunteți blocat din contul ${ BRAND_NAME }, **pachetul de recuperare** vă va permite să vă conectați și să recuperați datele."
+      ],
+      "Includes basic ${ appName } features:": [
+        "Include funcții de bază ${ appName }:"
+      ],
+      "Install ${ PASS_APP_NAME }": [
+        "Instalați ${ PASS_APP_NAME }"
+      ],
+      "Install app": [
+        "Instalați aplicația"
+      ],
+      "Install app and extension": [
+        "Instalați aplicația și extensia"
+      ],
+      "It’s the only way to fully restore your account, so make sure you keep this **recovery kit** somewhere safe.": [
+        "Este singura modalitate de a vă restabili complet contul, așa că asigurați-vă că păstrați acest **pachet de recuperare** undeva în siguranță."
+      ],
+      "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
+        "Alăturați-vă celor peste 100 de milioane de oameni care au ales ${ BRAND_NAME } pentru a rămâne în siguranță online."
+      ],
+      "Launching ${ PASS_APP_NAME }": [
+        "Se lansează ${ PASS_APP_NAME }"
+      ],
+      "One easy subscription.": [
+        "Un singur abonament."
+      ],
+      "Open-source and audited": [
+        "Sursă publică și auditată"
+      ],
+      "per month, billed annually": [
+        "pe lună, facturat anual"
+      ],
+      "per month, billed every 15 months": [
+        "pe lună, facturat la fiecare 15 luni"
+      ],
+      "per month, billed every 30 months": [
+        "pe lună, facturat la fiecare 30 de luni"
+      ],
+      "per month, billed every month": [
+        "pe lună, facturat în fiecare lună"
+      ],
+      "per month, billed every two years": [
+        "pe lună, facturat la fiecare doi ani"
+      ],
+      "Preparing your Recovery Kit": [
+        "Se pregătește pachetul de recuperare"
+      ],
+      "Protected by Swiss privacy laws": [
+        "Protejat de legile elvețiene privind confidențialitatea"
+      ],
+      "Save your recovery kit to continue": [
+        "Salvați-vă pachetul de recuperare pentru a continua"
+      ],
+      "Signing in to ${ PASS_APP_NAME }": [
+        "Se conectează la ${ PASS_APP_NAME }"
+      ],
+      "Special launch offer: Get ${ title } for ${ price } forever!": [
+        "Ofertă specială de lansare: Obțineți ${ title } cu ${ price } pentru totdeauna!"
+      ],
+      "The offer you selected is not available for ${ currentPlanTitle } subscribers.": [
+        "Oferta selectată nu este disponibilă pentru cei abonați la ${ currentPlanTitle }."
+      ],
+      "to start using ${ PASS_APP_NAME } on your phone": [
+        "pentru a începe să utilizați ${ PASS_APP_NAME } pe telefon"
+      ],
+      "Unlock ${ PASS_APP_NAME } premium features by upgrading": [
+        "Deblocați funcțiile premium ${ PASS_APP_NAME } modificând abonamentul"
+      ],
+      "Updating your account": [
+        "Se actualizează contul"
+      ],
+      "Verifying your payment": [
+        "Verificare plată"
+      ],
+      "Welcome to ${ plan }": [
+        "Bun venit la ${ plan }"
+      ],
+      "Works on all devices": [
+        "Funcționează pe orice dispozitiv"
+      ],
+      "You already have access to premium ${ appName } features — no need to purchase again.": [
+        "Aveți deja acces la funcțiile premium din ${ appName } - nu este nevoie să cumpărați din nou."
+      ],
+      "You currently have": [
+        "În prezent aveți"
+      ],
+      "Your organization has access to ${ free }. If you want to access premium ${ appName } features, please ask your organization's administrator to upgrade.": [
+        "Organizația are acces la ${ free }. Dacă doriți să accesați funcțiile premium ale ${ appName }, vă rugăm să solicitați administratorului organizației să modifice contul."
+      ]
+    },
+    "pass_signup_2023: Onboarding": {
+      "Welcome to ${ PASS_APP_NAME }": [
+        "Bun venit la ${ PASS_APP_NAME }"
+      ]
+    },
+    "pass_signup_2023: Title": {
+      "${ upsellPlanTitle } plan": [
+        "Abonament ${ upsellPlanTitle }"
+      ],
+      "All ${ BRAND_NAME } Plus services.${ br }One easy subscription.": [
+        "Toate serviciile ${ BRAND_NAME } Plus.${ br } Un singur abonament."
+      ],
+      "Create your ${ BRAND_NAME } account": [
+        "Creați-vă contul ${ BRAND_NAME }"
+      ],
+      "Request your organization administrator to upgrade": [
+        "Solicitați administratorului organizației să modifice abonamentul"
+      ],
+      "Secure your account": [
+        "Securizați-vă contul"
       ]
     },
     "Payment method option": {
@@ -11399,6 +11657,70 @@
     "Summary of errors during export calendar": {
       "Details about events that couldn't be exported": [
         "Detalii despre evenimentele care nu au putut fi exportate"
+      ]
+    },
+    "summer2023: Billing cycle option": {
+      "1 year": [
+        "Un an"
+      ],
+      "2 years": [
+        "2 ani"
+      ]
+    },
+    "summer2023: Deal details": {
+      "Premium Drive": [
+        "Drive premium"
+      ],
+      "Premium Mail and Calendar": [
+        "Mail Premium și Calendar"
+      ],
+      "Premium Password Manager": [
+        "Gestionare parole premium"
+      ]
+    },
+    "summer2023: Describe Proton Pass": {
+      "Securely store your passwords and autofill them on websites. Includes unlimited passwords, autofill, password generator, and more.": [
+        "Stocați-vă parolele și completați-le automat pe paginile web. Include parole nelimitate, completare automată, generator de parole și multe altele."
+      ]
+    },
+    "summer2023: Short tool name to present Proton Pass": {
+      "Password manager": [
+        "Manager de parole"
+      ]
+    },
+    "summer2023: Tooltip": {
+      "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
+        "Creați detalii de conectare sigure pe toate dispozitivele. Include aliasuri nelimitate, 20 de seifuri, integrare autentificare cu doi factori, autocompletare date card de credit și multe altele."
+      ],
+      "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "Include 2950+ servere în peste 65 de țări, conectați până la 10 dispozitive, accesați servicii de transmisii în flux la nivel mondial, programe malițioase, blocare de reclame și multe altele."
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Include suport pentru un domeniu de e-mail personal, 10 adrese de e-mail, 10 aliasuri hide-my-email, partajare calendar și altele."
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "Protejați-vă fișierele cu stocarea criptată în cloud. Include sincronizare automată, partajare criptată a fișierelor și multe altele."
+      ]
+    },
+    "summer2023:Footer": {
+      "*Your subscription will automatically renew at the standard discounted rate at the end of your billing cycle.": [
+        "* Abonamentul se va reînnoi automat la aceeași sumă la sfârșitul ciclului de facturare."
+      ],
+      "Discounts are based on the standard monthly pricing. This offer is only available to first-time subscribers.": [
+        "Reducerile se bazează pe prețurile lunare standard. Această ofertă este disponibilă doar pentru abonații pentru prima dată."
+      ]
+    },
+    "summer2023:Info": {
+      "For a limited time, get the best ${ BRAND_NAME } has to offer at an exclusive discount.": [
+        "Pentru o perioadă limitată de timp, obțineți cel mai bun ${ BRAND_NAME } disponibil cu o reducere exclusivă."
+      ],
+      "We’re celebrating the nine-year anniversary of our crowdfunding!": [
+        "Sărbătorim aniversarea de nouă ani a finanțării noastre de la public!"
+      ]
+    },
+    "summer2023:Offer title": {
+      "${ BRAND_NAME } Anniversary Sale": [
+        "Reducere aniversară ${ BRAND_NAME }"
       ]
     },
     "Tab in domain modal": {

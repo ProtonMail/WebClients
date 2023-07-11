@@ -2731,9 +2731,6 @@
     "Font face option": {
       "System default": [
         "Системный по умолчанию"
-      ],
-      "Theme default": [
-        "Из темы по умолчанию"
       ]
     },
     "Font size option": {
@@ -4823,6 +4820,9 @@
       ]
     },
     "Link": {
+      "${ DRIVE_APP_NAME } Windows app": [
+        "Приложение ${ DRIVE_APP_NAME } для Windows"
+      ],
       "clearing your browser cache": [
         "очистка кеша браузера"
       ],
@@ -4837,6 +4837,9 @@
       ],
       "Request an invite": [
         "Запросить приглашение"
+      ],
+      "Seamlessly sync files and folders between your computer and ${ DRIVE_APP_NAME }.": [
+        "Бесшовно синхронизируйте файлы и папки своего компьютера с ${ DRIVE_APP_NAME }."
       ],
       "Shared": [
         "В общем доступе"
@@ -5302,9 +5305,6 @@
         "Выберите тему"
       ],
       "Set up your organization": [
-        "Настройка организации"
-      ],
-      "Set up your organization testing": [
         "Настройка организации"
       ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [

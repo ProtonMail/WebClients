@@ -2702,8 +2702,8 @@
       "System default": [
         "Del sistema"
       ],
-      "Theme default": [
-        "Tema por defecto"
+      "Theme font": [
+        "Fuente del tema"
       ]
     },
     "Font size option": {
@@ -4898,7 +4898,7 @@
         "Error al eliminar \"${ name }\" permanentemente de la papelera"
       ],
       "\"${ name }\" failed to be moved": [
-        "No se pudo mover \"${ name }\""
+        "Error al mover \"${ name }\""
       ],
       "\"${ name }\" failed to be moved to trash": [
         "Error al mover \"${ name }\" a la papelera"
@@ -4910,7 +4910,7 @@
         "Error al guardar \"${ name }\""
       ],
       "\"${ name }\" moved to trash": [
-        "\"${ name }\" movido a la papelera"
+        "\"${ name }\" fue movido a la papelera."
       ],
       "\"${ name }\" restored from trash": [
         "\"${ name }\" restaurado de la papelera"
@@ -5136,9 +5136,6 @@
         "Seleccionar un tema"
       ],
       "Set up your organization": [
-        "Configure su organización"
-      ],
-      "Set up your organization testing": [
         "Configure su organización"
       ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [

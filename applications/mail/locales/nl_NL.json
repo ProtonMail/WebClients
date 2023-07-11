@@ -142,6 +142,9 @@
       "Carbon Copy": [
         "CC"
       ],
+      "Change email": [
+        "E-mailadres wijzigen"
+      ],
       "Change page": [
         "Pagina veranderen"
       ],
@@ -4093,9 +4096,6 @@
     "Font face option": {
       "System default": [
         "Systeem standaard"
-      ],
-      "Theme default": [
-        "Thema standaard"
       ]
     },
     "Font Size Default": {
@@ -4135,6 +4135,12 @@
       ]
     },
     "Get started checklist instructions": {
+      "Close": [
+        "Sluiten"
+      ],
+      "Get mobile app": [
+        "Download de mobiele app"
+      ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "Download de ${ MAIL_APP_NAME } mobiele app"
       ],
@@ -4144,8 +4150,17 @@
       "Import your contacts or messages": [
         "Importeer uw contacten of berichten"
       ],
+      "Learn more": [
+        "Meer informatie"
+      ],
+      "Maybe later": [
+        "Misschien later"
+      ],
       "Quickly transfer your contacts or emails from any provider using our Easy Switch import assistant.": [
         "Breng snel uw contacten of e-mails over van eender welke provider met onze Easy Switch importassistent."
+      ],
+      "Send a message": [
+        "Verstuur een bericht"
       ]
     },
     "Gmail forwarding": {
@@ -5208,6 +5223,9 @@
       ],
       "No results found": [
         "Geen resultaten gevonden"
+      ],
+      "No trackers found": [
+        "Geen trackers gevonden"
       ],
       "non-${ MAIL_APP_NAME }": [
         "niet-${ MAIL_APP_NAME }"
@@ -7264,11 +7282,22 @@
       "Set up your organization": [
         "Stel uw organisatie in"
       ],
-      "Set up your organization testing": [
-        "Stel uw organisatie in"
-      ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
         "Gebruik de app-kiezer linksboven voor de toegang tot alle ${ BRAND_NAME }-diensten: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } en ${ DRIVE_SHORT_APP_NAME }."
+      ]
+    },
+    "Online Accounts Name": {
+      "Banking": [
+        "Bankdiensten"
+      ],
+      "Crypto": [
+        "Crypto"
+      ],
+      "Gaming": [
+        "Spellen"
+      ],
+      "Travel": [
+        "Reizen"
       ]
     },
     "Option": {
@@ -8274,6 +8303,9 @@
       ]
     },
     "summer2023: Deal details": {
+      "Premium Drive": [
+        "Premium Drive"
+      ],
       "Premium Mail and Calendar": [
         "Premium Mail en Calendar"
       ],
@@ -8789,6 +8821,9 @@
       "No attachment found": [
         "Geen bijlage gevonden"
       ],
+      "No trackers found": [
+        "Geen trackers gevonden"
+      ],
       "Open actions dropdown": [
         "Open dropdown-menu voor acties"
       ],
@@ -8815,6 +8850,9 @@
       ],
       "Previous message": [
         "Vorig bericht"
+      ],
+      "Protect your email": [
+        "Bescherm uw e-mail"
       ],
       "Re-sign all contacts": [
         "Alle contacten opnieuw ondertekenen"
