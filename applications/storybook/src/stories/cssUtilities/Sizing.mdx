@@ -1,42 +1,184 @@
 import { Canvas, Primary, Source, Story } from '@storybook/addon-docs';
 
-import { Table, TableBody, TableCell, TableHeader, TableRow } from '@proton/components';
+import { Alert, Table, TableBody, TableCell, TableHeader, TableRow } from '@proton/components';
+
+import Resizeme from './Resizeme';
 
 # Sizing
 
-## Width in percent
+<Alert type="info">
+    All the sizing utilities listed here exist{' '}
+    <b>
+        <a href="?path=/docs/css-utilities-responsive--responsive">with responsive prefixes</a>
+    </b>
+    .
+</Alert>
 
-<Story id="css-utilities-sizing--width-percents" />
+## Fractions
 
-## Widths in pixels
+Here all the fractions sizing utilities we have:
 
-<Story id="css-utilities-sizing--width-pixels" />
+<Story id="css-utilities-sizing--fractions" />
 
-## Widths in EM
+### Example
 
-<Story id="css-utilities-sizing--width-em" />
+```html
+<div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4">item</div>
+<div className="w-full sm:w-1/2 md:w-2/3 lg:w-1/4">item</div>
+<div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4">item</div>
+<div className="w-full sm:w-1/2 md:w-2/3 lg:w-1/4">item</div>
+```
 
-## Max width in percent
+<Resizeme />
+<div className="border p-4 rounded bg-weak mb-4" style={{ width: '320px', resize: 'horizontal', overflow: 'auto' }}>
+    <Story id="css-utilities-sizing--responsive" />
+</div>
 
-<Story id="css-utilities-sizing--max-width-percent" />
+## Framework
 
-## Custom classes to use with CSS variables
+In addition of the fraction utilities, we have a small sizing framework with the most common values:
 
-Use these classes together with inline styles
+<div className="flex">
+    <Table className="color-norm w-1/2">
+        <TableHeader>
+            <TableRow>
+                <TableCell type="header" className="w-1/3">
+                    Class prefix
+                </TableCell>
+                <TableCell type="header">Property</TableCell>
+            </TableRow>
+        </TableHeader>
+        <TableBody>
+            <TableRow>
+                <TableCell>w-</TableCell>
+                <TableCell>
+                    <code>inline-size</code>
+                </TableCell>
+            </TableRow>
+            <TableRow>
+                <TableCell>min-w-</TableCell>
+                <TableCell>
+                    <code>min-inline-size</code>
+                </TableCell>
+            </TableRow>
+            <TableRow>
+                <TableCell>max-w-</TableCell>
+                <TableCell>
+                    <code>max-inline-size</code>
+                </TableCell>
+            </TableRow>
+            <TableRow>
+                <TableCell>h-</TableCell>
+                <TableCell>
+                    <code>block-size</code>
+                </TableCell>
+            </TableRow>
+            <TableRow>
+                <TableCell>min-h-</TableCell>
+                <TableCell>
+                    <code>min-block-size</code>
+                </TableCell>
+            </TableRow>
+            <TableRow>
+                <TableCell>max-h-</TableCell>
+                <TableCell>
+                    <code>max-block-size</code>
+                </TableCell>
+            </TableRow>
+        </TableBody>
+    </Table>
+    <Table className="color-norm w-1/2">
+        <TableHeader>
+            <TableRow>
+                <TableCell type="header" className="w-1/3">
+                    Class suffix
+                </TableCell>
+                <TableCell type="header">Value</TableCell>
+            </TableRow>
+        </TableHeader>
+        <TableBody>
+            <TableRow>
+                <TableCell>0</TableCell>
+                <TableCell>
+                    <code>0</code>
+                </TableCell>
+            </TableRow>
+            <TableRow>
+                <TableCell>px</TableCell>
+                <TableCell>
+                    <code>1px</code>
+                </TableCell>
+            </TableRow>
+            <TableRow>
+                <TableCell>2</TableCell>
+                <TableCell>
+                    <code>0.5rem</code>
+                </TableCell>
+            </TableRow>
+            <TableRow>
+                <TableCell>4</TableCell>
+                <TableCell>
+                    <code>1rem</code>
+                </TableCell>
+            </TableRow>
+            <TableRow>
+                <TableCell>full</TableCell>
+                <TableCell>
+                    <code>100%</code>
+                </TableCell>
+            </TableRow>
+            <TableRow>
+                <TableCell>auto</TableCell>
+                <TableCell>
+                    <code>auto</code>
+                </TableCell>
+            </TableRow>
+        </TableBody>
+    </Table>
+</div>
+
+<Story id="css-utilities-sizing--framework" />
+
+### Examples
+
+```css
+.max-h-2 {
+    max-block-size: 0.5rem;
+}
+.sm:w-full {
+    inline-size: 100%;
+}
+.xl:min-w-4 {
+    min-inline-size: 1rem;
+}
+.xl:w-px {
+    width: 1px;
+}
+```
+
+## Custom
+
+If you need a **specific size** for your component, you can use the `custom` classes together with their dedicated css variables, in inline styles:
 
 <Table className="color-norm">
     <TableHeader>
         <TableRow>
-            <TableCell type="header" className="w20">
+            <TableCell type="header" className="w-1/5">
                 Class
             </TableCell>
-            <TableCell type="header">Variable</TableCell>
+            <TableCell type="header" className="w-1/5">
+                Property
+            </TableCell>
+            <TableCell type="header">Dedicated variable</TableCell>
         </TableRow>
     </TableHeader>
     <TableBody>
         <TableRow>
             <TableCell>
                 <code>.w-custom</code>
+            </TableCell>
+            <TableCell>
+                <code>inline-size</code>
             </TableCell>
             <TableCell>
                 <code>--w-custom</code>
@@ -47,12 +189,18 @@ Use these classes together with inline styles
                 <code>.min-w-custom</code>
             </TableCell>
             <TableCell>
+                <code>min-inline-size</code>
+            </TableCell>
+            <TableCell>
                 <code>--min-w-custom</code>
             </TableCell>
         </TableRow>
         <TableRow>
             <TableCell>
                 <code>.max-w-custom</code>
+            </TableCell>
+            <TableCell>
+                <code>max-inline-size</code>
             </TableCell>
             <TableCell>
                 <code>--max-w-custom</code>
@@ -63,6 +211,9 @@ Use these classes together with inline styles
                 <code>.h-custom</code>
             </TableCell>
             <TableCell>
+                <code>block-size</code>
+            </TableCell>
+            <TableCell>
                 <code>--h-custom</code>
             </TableCell>
         </TableRow>
@@ -71,12 +222,18 @@ Use these classes together with inline styles
                 <code>.min-h-custom</code>
             </TableCell>
             <TableCell>
+                <code>min-block-size</code>
+            </TableCell>
+            <TableCell>
                 <code>--min-h-custom</code>
             </TableCell>
         </TableRow>
         <TableRow>
             <TableCell>
                 <code>.max-h-custom</code>
+            </TableCell>
+            <TableCell>
+                <code>max-block-size</code>
             </TableCell>
             <TableCell>
                 <code>--max-h-custom</code>
@@ -88,44 +245,42 @@ Use these classes together with inline styles
 ### Example
 
 ```html
-<div className="h-custom w-custom" style={{ '--w-custom': '200px', '--h-custom': '200px', }} />
+<div className="w-custom h-custom" style={{ '--w-custom': '22%', '--h-custom': '5rem', }} />
 ```
 
-## Height helpers
+### Responsive
 
-<div class="flex flex-justify-space-between mb-8 on-mobile-flex-column">
-  <div class="w49 flex-align-self-center">
-    Applies <code>height: 100%</code> to element.
-  </div>
-  <div class="w49">
-<Source
-  language='html'
-  light
-  format
-  code={`
-<div className="h100">
-`}
+Every custom sizing utilities exist with responsive prefixes, as well as their dedicated variable. This way, you can use several custom sizing responsive utilities together.
+
+Where responsive prefixes are separated by colons (:) in a class name, they are separated by a dash (-) in the name of a dedicated variable.
+
+<!--- prettier-ignore-start --->
+```html
+<div
+    className="
+        min-w-custom
+        max-w-custom
+        md:min-w-custom
+        md:max-w-custom
+        w-custom
+        sm:w-custom
+        md:w-custom
+        lg:w-custom
+        h-custom
+        lg:h-custom
+    "
+    style={{
+        '--min-w-custom: '2rem',
+        '--max-w-custom: '40rem',
+        '--md-min-w-custom: '5rem',
+        '--md-max-w-custom: '60rem',
+        '--w-custom': '22%',
+        '--sm-w-custom': '37%',
+        '--md-w-custom': '53%',
+        '--lg-w-custom': '82%',
+        '--h-custom': '5rem',
+        '--lg-h-custom': '15rem',
+    }}
 />
-
-  </div>
-</div>
-
-<div class="flex flex-justify-space-between mb-8 on-mobile-flex-column">
-    <div class="w49 flex-align-self-center">
-        Applies <code>height: auto</code> to element. Make sure this is really needed.
-    </div>
-    <div class="w49">
-        <Source
-            language="html"
-            light
-            format
-            code={`
-<div className="hauto">
-`}
-        />
-    </div>
-</div>
-
-<div class="hidden">
-    <Primary />
-</div>
+```
+<!--- prettier-ignore-end --->
