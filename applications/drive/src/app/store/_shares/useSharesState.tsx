@@ -60,10 +60,7 @@ export function useSharesStateProvider() {
     }, [state]);
 
     const getDefaultShareId = useCallback((): string | undefined => {
-        const share = Object.entries(state)
-            .map(([, share]) => share)
-            .find((share) => share.isDefault && !share.isLocked && !share.isVolumeSoftDeleted);
-        return share ? share.shareId : undefined;
+        return findDefaultShareId(Object.entries(state).map(([, share]) => share));
     }, [state]);
 
     return {
@@ -75,6 +72,11 @@ export function useSharesStateProvider() {
         setLockedVolumesForRestore,
         lockedVolumesForRestore,
     };
+}
+
+export function findDefaultShareId(shares: (Share | ShareWithKey)[]) {
+    const share = shares.find((share) => share.isDefault && !share.isLocked && !share.isVolumeSoftDeleted);
+    return share ? share.shareId : undefined;
 }
 
 const SharesStateContext = createContext<ReturnType<typeof useSharesStateProvider> | null>(null);
