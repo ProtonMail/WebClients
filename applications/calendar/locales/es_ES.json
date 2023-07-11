@@ -3003,10 +3003,10 @@
     },
     "Font face option": {
       "System default": [
-        "Igual que el sistema"
+        "Valor por defecto"
       ],
-      "Theme default": [
-        "Tema por defecto"
+      "Theme font": [
+        "Fuente del tema"
       ]
     },
     "Font size option": {
@@ -3547,7 +3547,7 @@
         "Personalización anual"
       ],
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
-        "Personalza el aspecto y la sensación de las aplicaciones de ${ BRAND_NAME }"
+        "Personaliza el aspecto y la sensación de las aplicaciones de ${ BRAND_NAME }"
       ],
       "Daily": [
         "Diariamente"
@@ -5074,15 +5074,12 @@
         "Descubre todos los servicios de ${ BRAND_NAME }"
       ],
       "More theming options are available in your account Settings > Appearance.": [
-        "Más opciones de temas están disponibles en tu ajustes de cuenta en la sección Apariencia."
+        "Hay disponibles más opciones de temas en tus ajustes de cuenta, en la sección Apariencia."
       ],
       "Select a theme": [
         "Seleccionar un tema"
       ],
       "Set up your organization": [
-        "Configura tu organización"
-      ],
-      "Set up your organization testing": [
         "Configura tu organización"
       ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
@@ -5675,7 +5672,7 @@
         "URL del calendario"
       ],
       "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Other calendars.\n${ kbLink }": [
-        "Para suscribirte a un calendario externo o público y sus actualizaciones, introduce la URL. Se añadirá una versión de solo lectura del calendario a t us otros calendarios.\n${ kbLink }"
+        "Para suscribirte a un calendario externo o público y sus actualizaciones, introduce su URL. Se añadirá una versión de solo lectura del calendario a tus otros calendarios.\n${ kbLink }"
       ]
     },
     "Subscribe to calendar modal description": {
@@ -6377,7 +6374,7 @@
     },
     "Title; calendar sharing pop-up": {
       "Planning just got easier!": [
-        "¡La planificación ahora es más fácil!"
+        "¡Planificar es ahora más fácil!"
       ]
     },
     "Title; create calendar modal": {
@@ -6596,8 +6593,8 @@
         "Cada ${ interval } semanas todos los días"
       ],
       "Every ${ interval } week on all days, ${ timesString }": [
-        "Cada semana todos los días, ${ timesString } ${ interval }",
-        "Cada ${ interval } semanas todos los días a las ${ timesString }"
+        "Todos los días cada ${ interval } semana, ${ timesString }",
+        "Todos los días cada ${ interval } semanas, ${ timesString }"
       ],
       "Every ${ interval } week on all days, ${ untilString }": [
         "Cada semana todos los días, ${ untilString } ${ interval }",
@@ -6620,8 +6617,8 @@
         "Cada ${ interval } semanas los lunes"
       ],
       "Every ${ interval } week on Monday, ${ timesString }": [
-        "Cada semana los lunes a las ${ timesString } ${ interval }",
-        "Cada ${ interval } semanas los lunes a las ${ timesString }"
+        "Los lunes de cada ${ interval } semana, a las ${ timesString }",
+        "Los lunes cada ${ interval } semanas, a las ${ timesString }"
       ],
       "Every ${ interval } week on Monday, ${ untilString }": [
         "Cada semana los lunes, ${ untilString } ${ interval }",
@@ -6644,8 +6641,8 @@
         "Cada ${ interval } semanas los domingos"
       ],
       "Every ${ interval } week on Sunday, ${ timesString }": [
-        "Cada semana los domingos a las ${ timesString } ${ interval }",
-        "Cada ${ interval } semanas los domingos a las ${ timesString }"
+        "Los domingos de cada ${ interval } semana, a las ${ timesString }",
+        "Los domingos cada ${ interval } semanas, a las ${ timesString }"
       ],
       "Every ${ interval } week on Sunday, ${ untilString }": [
         "Cada semana los domingos, ${ untilString } ${ interval }",

@@ -58,7 +58,7 @@
         "Lisää puhelinnumero"
       ],
       "Add public holidays": [
-        "Lisää arkipyhät"
+        "Lisää arkivapaat"
       ],
       "Add to group": [
         "Lisää ryhmään"
@@ -252,7 +252,7 @@
         "Piilota PGP-lisäasetukset"
       ],
       "Hide affected calendars": [
-        "Piilota vaikuttuneet kalenterit"
+        "Piilota kalenterit, joita tämä koskee"
       ],
       "Hide folders": [
         "Piilota kansiot"
@@ -471,7 +471,7 @@
         "Näytä PGP-lisäasetukset"
       ],
       "Show affected calendars": [
-        "Näytä vaikuttuneet kalenterit"
+        "Näytä kalenterit, joita tämä koskee"
       ],
       "Show folders": [
         "Näytä kansiot"
@@ -2030,7 +2030,7 @@
         "Lisäksi CSV- ja vCard-kentät on automaattisesti kohdistettu. Voit tarkistaa ja muuttaa näitä parituksia manuaalisesti."
       ],
       "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
-        "Ladattavassa CSV-tiedostossa havaittiin seuraavat kentät. Valitse ne, jotka haluat tuoda."
+        "Lataamassasi CSV-tiedostossa havaittiin seuraavat kentät. Valitse ne, jotka haluat tuoda."
       ]
     },
     "Disabled calendar": {
@@ -2259,7 +2259,7 @@
         "Kansion nimi ei voi olla tyhjä."
       ],
       "Image upload failed": [
-        "Kuvan tallennus epäonnistui"
+        "Kuvan lataus epäonnistui"
       ],
       "IMAP server is required": [
         "IMAP-palvelin vaaditaan"
@@ -2480,7 +2480,7 @@
         "Vahvistusvirhe"
       ],
       "You already added this holidays calendar": [
-        "Olet jo lisännyt tämän arkipyhäkalenterin"
+        "Olet jo lisännyt tämän juhlapäiväkalenterin"
       ],
       "You can't send a mail to more than 100 recipients": [
         "Voit lähettää viestin enintään 100 vastaanottajalle"
@@ -2508,13 +2508,13 @@
         "Tiedostoa \"${ formattedFilename }\" luettaessa tapahtui virhe. Väärä tiedostomuoto."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
-        "Ladattaessa tiedostoa ${ formattedFilename } tapahtui virhe. Tiedoston enimmäiskoko on ${ MAX_IMPORT_FILE_SIZE_STRING }."
+        "Virhe siirrettäessä tiedostoa ${ formattedFilename }. Tiedoston enimmäiskoko on ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Only ICS file formats are allowed.": [
-        "Tiedostoa ${ formattedFilename } tallennettaessa tapahtui virhe. Vain ICS-muotoiset tiedostot sallitaan."
+        "Virhe siirrettäessä tiedostoa ${ formattedFilename }. Vain ICS-muotoiset tiedostot sallitaan."
       ],
       "An error occurred uploading your file. No file has been selected.": [
-        "Virhe tallennettaessa tiedostoa. Tiedostoa ei ole valittu."
+        "Virhe siirrettäessä tiedostoa. Tiedostoa ei ole valittu."
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "Tapahtui odottamaton virhe. Tuonti on aloitettava uudelleen."
@@ -2549,13 +2549,13 @@
         "Tiedostoa \"${ formattedFilename }\" luettaessa tapahtui virhe. Väärä tiedostomuoto."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
-        "Tiedostoa ${ formattedFilename } tallennettaessa tapahtui virhe. Suurin sallittu tiedostokoko on ${ MAX_IMPORT_FILE_SIZE_STRING }."
+        "Virhe siirrettäessä tiedostoa ${ formattedFilename }. Suurin sallittu tiedostokoko on ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
       "An error occurred uploading your file ${ formattedFilename }. No .csv or .vcf file selected": [
-        "Tiedostoa ${ formattedFilename } tallennettaessa tapahtui virhe. Ei valittua .csv- tai .vcf-tiedostoa"
+        "Virhe siirrettäessä tiedostoa ${ formattedFilename }. Ei valittua .csv- tai .vcf-tiedostoa"
       ],
       "An error occurred uploading your file. No file has been selected.": [
-        "Virhe tallennettaessa tiedostoa. Tiedostoa ei ole valittu."
+        "Virhe siirrettäessä tiedostoa. Tiedostoa ei ole valittu."
       ],
       "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
         "Tiedosto ${ formattedFilename } sisältää yli ${ MAX_IMPORT_CONTACTS_STRING } yhteystietoa."
@@ -3005,8 +3005,8 @@
       "System default": [
         "Seuraa järjestelmää"
       ],
-      "Theme default": [
-        "Teeman oletus"
+      "Theme font": [
+        "Teeman fontti"
       ]
     },
     "Font size option": {
@@ -3037,7 +3037,7 @@
         "Verkko"
       ],
       "Other category": [
-        "Muu kategoria"
+        "Muut aiheet"
       ],
       "Services": [
         "Palvelut"
@@ -3468,10 +3468,10 @@
         "ja"
       ],
       "Anyone with this link can see all the event details of this calendar such as title, location or participants.": [
-        "Tämän linkin välityksellä kuka tahansa voi nähdä tämän kalenterin tapahtumanimikkeiden, sijaintien ja osallistujien kaltaisia tietoja."
+        "Linkin välityksellä kuka tahansa voi nähdä kalenterin tapahtumien nimien, sijaintien ja osallistujien kaltaisia tietoja."
       ],
       "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
-        "Tämän linkin välityksellä kuka tahansa voi nähdä oletko kalenterissasi vapaana vai varattuna. He eivät näe tapahtumanimikkeiden, sijaintien tai osallistujien kaltaisia tietoja."
+        "Linkin välityksellä kuka tahansa voi nähdä oletko kalenterissasi vapaana vai varattuna. He eivät näe tapahtumien nimien, sijaintien ja osallistujien kaltaisia tietoja."
       ],
       "Attention required": [
         "Huomiota vaaditaan"
@@ -3556,7 +3556,7 @@
         "Hylätäänkö muutokset?"
       ],
       "Drop file here to upload": [
-        "Pudota tallennettava tiedosto tähän"
+        "Pudota ladattava tiedosto tähän"
       ],
       "Drop to import": [
         "Tuo pudottamalla"
@@ -3722,7 +3722,7 @@
         "Yhdellekään osallistujalle ei voida ilmoittaa muutoksistasi:"
       ],
       "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
-        "Mikään tallennetuista avaimista ei kelpaa salaukseen. Viestien lähettämiseksi tähän osoitteeseen, tallenna kelvollinen avain tai poista \"Salaa viestit\" käytöstä."
+        "Mikään tallennetuista avaimista ei kelpaa salaukseen. Viestien lähettämiseksi tähän osoitteeseen, lataa kelvollinen avain tai poista \"Salaa viestit\" käytöstä."
       ],
       "Not a valid URL": [
         "Virheellinen URL"
@@ -3900,7 +3900,7 @@
         "Viikko"
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Määrittäessäsi kaksivaiheisen todennuksen saat myös palautuskoodit, joiden avulla voit kirjautua sisään vaikka menettäisit pääsyn todennussovellukseesi."
+        "Määrittäessäsi kaksivaiheisen todennuksen saat myös palautuskoodit, joiden avulla voit kirjautua vaikka menettäisit pääsyn todennussovellukseesi."
       ],
       "Which event would you like to delete?": [
         "Mitkä tapahtumakerrat haluat poistaa?"
@@ -3942,7 +3942,7 @@
         "Liityit jo tähän kalenteriin"
       ],
       "You are about to open another browser tab and visit:": [
-        "Olet avaamassa selaimeen uutta välilehteä sivustolle:"
+        "Olet avaamassa uutta selaimen välilehteä sivustolle:"
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Olet kirjautuneena ${ user.Name } (${ user.Email })."
@@ -3999,10 +3999,10 @@
         "Olet saavuttanut yhteystietoryhmän osoitteiden enimmäismäärän."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
-        "${ BRAND_NAME }-tilisi on tällä hetkellä jäädytetty. 28 päivän kuluttua postilaatikkoosi ei enää toimiteta sähköpostiviestejä ja Drive-jakolinkkisi estetään etkä voi tallentaa uusia tiedostoja. Palauttaaksesi normaalin toiminnan, maksa maksamattomat laskut."
+        "${ BRAND_NAME }-tilisi on tällä hetkellä jäädytetty. 28 päivän kuluttua postilaatikkosi ei enää vastaanota viestejä, Drive-jakolinkkisi ja uusien tiedostojen tallennus estetään. Palauttaaksesi normaalin toiminnan, maksa maksamattomat laskut."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "${ BRAND_NAME }-tilisi on tällä hetkellä jäädytetty. Postilaatikkoosi ei enää toimiteta sähköpostiviestejä ja Drive-jakolinkkisi estetään etkä voi tallentaa uusia tiedostoja. Palauttaaksesi normaalin toiminnan, maksa maksamattomat laskut."
+        "${ BRAND_NAME }-tilisi on tällä hetkellä jäädytetty. Postilaatikkosi ei enää vastaanota viestejä, Drive-jakolinkkisi ja uusien tiedostojen tallennus estetään. Palauttaaksesi normaalin toiminnan, maksa maksamattomat laskut."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Tililläsi on ainakin yksi erääntynyt lasku. Pääsyäsi rajoitetaan pian. ${ payInvoiceLink }"
@@ -4069,7 +4069,7 @@
     },
     "Info; reset calendar keys modal; part 2": {
       "This is because your password was recently reset without using a recovery method.": [
-        "Tämä johtuu siitä, että salasanasi vaihdettiin taannoin käyttämättä palautustapaa."
+        "Tämä johtuu siitä, että salasanasi nollattiin taannoin käyttämättä palautustapaa."
       ]
     },
     "Info; reset calendar keys modal; part 3": {
@@ -4079,7 +4079,7 @@
     },
     "Info; reshare calendar modal; part 1": {
       "Calendar sharing was disabled following your recent password reset.": [
-        "Kalenterijako poistettiin käytöstä taannoisen salasanan vaihdon seurauksena."
+        "Kalenterijako poistettiin käytöstä taannoisen salasanan nollauksen seurauksena."
       ]
     },
     "Info; reshare calendar modal; part 2": {
@@ -4187,7 +4187,7 @@
         "Kalenterit"
       ],
       "Category": [
-        "Kategoria"
+        "Aihe"
       ],
       "City": [
         "Kaupunki"
@@ -4268,7 +4268,7 @@
         "Tapahtumailmoitukset"
       ],
       "Event title": [
-        "Tapahtuman nimike"
+        "Tapahtuman nimi"
       ],
       "Export contacts": [
         "Vie yhteystiedot"
@@ -4640,7 +4640,7 @@
     },
     "Modal title": {
       "Add public holidays": [
-        "Lisää arkipyhät"
+        "Lisää juhlapäivät"
       ],
       "Cannot add more calendars": [
         "Enempää kalentereita ei voida lisätä"
@@ -4649,7 +4649,7 @@
         "Muokkaa kalenteria"
       ],
       "Get a country's official public holidays calendar.": [
-        "Hanki maan virallinen arkipyhäkalenteri."
+        "Hanki maan virallinen juhlapäiväkalenteri."
       ],
       "How to import calendars from another service": [
         "Miten kalenterit tuodaan muista palveluista"
@@ -4895,7 +4895,7 @@
     },
     "Notification in holidays calendar modal": {
       "Adding holidays calendar failed": [
-        "Arkipyhäkalenterin lisäys epäonnistui"
+        "Juhlapäiväkalenterin lisääminen epäonnistui"
       ],
       "Calendar added": [
         "Kalenteri lisättiin"
@@ -5082,9 +5082,6 @@
       "Set up your organization": [
         "Määritä organisaatiosi"
       ],
-      "Set up your organization testing": [
-        "Määritä organisaatiosi"
-      ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
         "Vasemman yläkulman sovellusvalitsimesta pääset kaikkiin ${ BRAND_NAME }-palveluihin: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } ja ${ DRIVE_SHORT_APP_NAME }."
       ]
@@ -5192,7 +5189,7 @@
     },
     "Placeholder": {
       "A way to contact you": [
-        "Miten tavoitamme sinut"
+        "Tapa, jolla tavoitamme sinut"
       ],
       "Add a calendar description": [
         "Lisää kalenterille kuvaus"
@@ -5210,7 +5207,7 @@
         "Lisää osallistujia"
       ],
       "Add title": [
-        "Lisää nimike"
+        "Lisää nimi"
       ],
       "E.g., ": [
         "Esim. "
@@ -5234,7 +5231,7 @@
         "Salasana"
       ],
       "Please describe the problem and include any error messages": [
-        "Kuvaile ongelmaa ja sisällytä mahdolliset virheviestit"
+        "Kuvaile ongelmaa ja sisällytä mahdolliset virheilmoitukset"
       ],
       "Please select a country": [
         "Valitse maa"
@@ -5337,7 +5334,7 @@
     },
     "Select files": {
       "Upload": [
-        "Tallenna"
+        "Lataa"
       ]
     },
     "Select search results": {
@@ -5647,7 +5644,7 @@
     },
     "Spotlight": {
       "Add your country's public holidays to your calendar.": [
-        "Lisää maasi arkipyhät kalenteriisi."
+        "Lisää maasi juhlapäivät kalenteriisi."
       ],
       "Get up to ${ credits } in credits.": [
         "Ansaitse jopa ${ credits } krediittiä."
@@ -5656,7 +5653,7 @@
         "Kutsu kavereita ${ BRAND_NAME }iin"
       ],
       "Public holidays are here!": [
-        "Arkipyhät ovat täällä!"
+        "Juhlapäivät ovat täällä!"
       ]
     },
     "Storage": {
@@ -5731,7 +5728,7 @@
         "Peruutus lähetettiin ja ketjun kaikki tapahtumat poistettiin"
       ],
       "Cancellation sent and event deleted": [
-        "Perumisilmoitus lähetettiin ja tapahtuma poistettiin"
+        "Peruutus lähetettiin ja tapahtuma poistettiin"
       ],
       "Cancellation sent and participants removed": [
         "Peruutus lähetettiin ja osallistujat poistettiin"
@@ -5832,6 +5829,70 @@
     "Success notification when user send feedback": {
       "Feedback sent": [
         "Palaute lähetettiin"
+      ]
+    },
+    "summer2023: Billing cycle option": {
+      "1 year": [
+        "1 vuosi"
+      ],
+      "2 years": [
+        "2 vuotta"
+      ]
+    },
+    "summer2023: Deal details": {
+      "Premium Drive": [
+        "Premium Drive"
+      ],
+      "Premium Mail and Calendar": [
+        "Premium Mail ja Calendar"
+      ],
+      "Premium Password Manager": [
+        "Premium salasananhallinta"
+      ]
+    },
+    "summer2023: Describe Proton Pass": {
+      "Securely store your passwords and autofill them on websites. Includes unlimited passwords, autofill, password generator, and more.": [
+        "Tallenna salasanasi turvallisesti ja täytä ne automaattisesti verkkosivustoilla. Sisältää rajattomasti salasanoja, automaattisen täytön, salasanageneraattorin ja paljon muuta."
+      ]
+    },
+    "summer2023: Short tool name to present Proton Pass": {
+      "Password manager": [
+        "Salasananhallinta"
+      ]
+    },
+    "summer2023: Tooltip": {
+      "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
+        "Luo turvallisia kirjautumistietoja kaikilla laitteillasi. Sisältää rajattomasti aliaksia, 20 holvia, sisäänrakennetun 2FA:n, luottokorttitietojen automaattisen täytön ja paljon muuta."
+      ],
+      "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "Sisältää 2950+ palvelinta yli 65+ maassa, 10 samanaikaista laitetta, tuen suoratoistopalveluille eri puolilta maailmaa, haittaohjelma- ja mainoseston sekä paljon muuta."
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Sisältää tuen yhdelle omalle sähköpostin verkkotunnukselle, 10 sähköpostiosoitteelle, 10 hide-my-email-aliakselle, kalenterijaolle sekä paljon muuta."
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "Suojaa tiedostosi salatulla pilvitallennustilalla. Sisältää versiohistorian, salatun tiedostojen jakamisen ja paljon muuta."
+      ]
+    },
+    "summer2023:Footer": {
+      "*Your subscription will automatically renew at the standard discounted rate at the end of your billing cycle.": [
+        "*Tilauksesi uudistetaan automaattisesti samalla alennetulla hinnalla laskutuskautesi lopussa."
+      ],
+      "Discounts are based on the standard monthly pricing. This offer is only available to first-time subscribers.": [
+        "Alennukset perustuvat tavalliseen kuukausihinnoitteluun. Tämä tarjous on saatavilla vain ensitilaajille."
+      ]
+    },
+    "summer2023:Info": {
+      "For a limited time, get the best ${ BRAND_NAME } has to offer at an exclusive discount.": [
+        "Vain rajoitetun ajan saat parasta, mitä ${ BRAND_NAME } tarjoaa, erinomaiseen hintaan."
+      ],
+      "We’re celebrating the nine-year anniversary of our crowdfunding!": [
+        "Juhlimme joukkorahoituksemme yhdeksänvuotisjuhlaa!"
+      ]
+    },
+    "summer2023:Offer title": {
+      "${ BRAND_NAME } Anniversary Sale": [
+        "${ BRAND_NAME } Vuosipäivän alennusmyynti"
       ]
     },
     "Table header": {
@@ -5936,7 +5997,7 @@
         "Tili on jäädytetty"
       ],
       "Add another notification to remind you of this event": [
-        "Lisää uusi ilmoitus muistuttamaan sinua tapahtumasta"
+        "Lisää uusi ilmoitus muistuttamaan tapahtumasta"
       ],
       "Add contact group name": [
         "Lisää yhteystietoryhmän nimi"
@@ -5945,7 +6006,7 @@
         "Lisää tapahtuman sijainti"
       ],
       "Add event title": [
-        "Lisää tapahtumanimike"
+        "Lisää tapahtuman nimi"
       ],
       "Add more information related to this event": [
         "Lisää tarkempia tietoja tapahtumasta"
@@ -6050,7 +6111,7 @@
         "Poistetaan yhteystietoja"
       ],
       "Drop to upload": [
-        "Lisää pudottamalla"
+        "Lataa pudottamalla"
       ],
       "Edit contact": [
         "Muokkaa yhteystietoa"
@@ -6162,7 +6223,7 @@
         "Yhteystietojen allekirjoitus uudelleen"
       ],
       "Reactivate calendar keys": [
-        "Aktivoi kalenteriavaimet uudelleen"
+        "Aktivoi kalenterin avaimet uudelleen"
       ],
       "Reconnect your account": [
         "Yhdistä tilisi uudelleen"
@@ -6219,7 +6280,7 @@
         "Valitse viimeinen tapahtumapäivä"
       ],
       "Select the time to send this notification": [
-        "Valitse mihin aikaan haluat ilmoituksen tapahtuvan"
+        "Valitse ilmoituksen lähetysaika"
       ],
       "Select the time zone for the event end time": [
         "Valitse tapahtuman päätössajan aikavyöhyke"
@@ -6234,7 +6295,7 @@
         "Valitse milloin tapahtuman järjestäminen päättyy"
       ],
       "Select when you want this notification to be sent": [
-        "Valitse milloin haluat ilmoituksen tapahtuvan"
+        "Valitse ilmoituksen lähetyspäivä"
       ],
       "Select which calendar to add this event to": [
         "Valitse kalenteri, johon tapahtuma lisätään"
@@ -6297,7 +6358,7 @@
         "Mitä uutta"
       ],
       "You have invited participants with equivalent emails": [
-        "Olet kutsunut osallistujia, joilla on samat sähköpostiosoitteet"
+        "Olet kutsunut eri osallistujia samoilla sähköpostiosoitteilla"
       ],
       "Your calendar link": [
         "Linkki kalenteriisi"
@@ -6336,7 +6397,7 @@
         "Automaattiasetuksella viestit lähetetään tälle käyttäjälle käyttäen kirjoituksessa käytettyä muotoilua. Käytettäessä pelkkä teksti -asetusta poistetaan viestistä lähetettäessä mahdolliset muotoilut."
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
-        "Vaihda valitsemiasi päivä- ja yöteemoja järjestelmäsi päivä- ja yötilojen mukana automaattisesti"
+        "Vaihda määrittämiesi päivä-/yöteemojen välillä automaattisesti järjestelmäsi päivä-/yötilan vaihtuessa"
       ],
       "Customize import to reduce the number of folders": [
         "Vähennä kansioiden määrää mukauttamalla tuontia"
@@ -6396,7 +6457,7 @@
         "Valittu teema aktivoidaan järjestelmän ollessa \"vaaleassa tilassa\""
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
-        "Lisää julkinen avain mahdollistaaksesi päästä päähän -salattujen viestien lähetyksen tähän osoitteeseen"
+        "Lataa julkinen avain mahdollistaaksesi päästä päähän -salattujen viestien lähetyksen tähän osoitteeseen"
       ],
       "You do not have any contacts to export": [
         "Sinulla ei ole vietäviä yhteystietoja"
@@ -6494,7 +6555,7 @@
         "Tämä tuonti saattaa ylittää ${ BRAND_NAME }-tilisi tämänhetkisen vapaan tallennuskapasiteetin. Harkitse tuontisi mukautusta."
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
-        "Valitettavasti emme ole juuri nyt tavoitettavissa. Täytä alla oleva lomake ja kuvaile ongelmaasi, niin perehdymme siihen ja otamme yhteyttä kun olemme taas paikalla."
+        "Valitettavasti emme ole juuri nyt tavoitettavissa. Kuvaile ongelmasi täyttämällä alla oleva lomake, niin tutustumme siihen ja otamme yhteyttä kun olemme taas paikalla."
       ],
       "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
         "Sähköpostipalvelinta ei voitu vahvistaa. Jos luotat siihen, voit ohittaa tämän vahvistuksen."
@@ -6516,8 +6577,8 @@
     },
     "Weekly recurring event, frequency": {
       "Every ${ interval } week on ${ multipleDaysString }": [
-        "Joka ${ interval } viikko ${ multipleDaysString }",
-        "Joka ${ interval } viikko ${ multipleDaysString }"
+        "${ interval } viikon välein ${ multipleDaysString }",
+        "${ interval } viikon välein ${ multipleDaysString }"
       ],
       "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
         "${ interval } viikon välein ${ multipleDaysString }, ${ timesString }",
@@ -6528,16 +6589,16 @@
         "${ interval } viikon välein ${ multipleDaysString }, ${ untilString }"
       ],
       "Every ${ interval } week on all days": [
-        "${ interval } viikon välein joka päivä",
-        "${ interval } viikon välein joka päivä"
+        "${ interval } viikon välein kaikkina päivinä",
+        "${ interval } viikon välein kaikkina päivinä"
       ],
       "Every ${ interval } week on all days, ${ timesString }": [
-        "Joka ${ interval } viikko kaikkina päivinä, ${ timesString }",
-        "Joka ${ interval } viikko kaikkina päivinä, ${ timesString }"
+        "${ interval } viikon välein kaikkina päivinä, ${ timesString }",
+        "${ interval } viikon välein kaikkina päivinä, ${ timesString }"
       ],
       "Every ${ interval } week on all days, ${ untilString }": [
-        "Joka ${ interval } viikko kaikkina päivinä, ${ untilString }",
-        "Joka ${ interval } viikko kaikkina päivinä, ${ untilString }"
+        "${ interval } viikon välein kaikkina päivinä, ${ untilString }",
+        "${ interval } viikon välein kaikkina päivinä, ${ untilString }"
       ],
       "Every ${ interval } week on Friday": [
         "Joka ${ interval }. viikko perjantaisin",
@@ -6633,13 +6694,13 @@
         "Viikottain ${ multipleDaysString }, ${ untilString }"
       ],
       "Weekly on all days": [
-        "Viikottain joka päivä"
+        "Viikottain kaikkina päivinä"
       ],
       "Weekly on all days, ${ timesString }": [
-        "Viikottain joka päivä, ${ timesString }"
+        "Viikottain kaikkina päivinä, ${ timesString }"
       ],
       "Weekly on all days, ${ untilString }": [
-        "Viikottain joka päivä, ${ untilString }"
+        "Viikottain kaikkina päivinä, ${ untilString }"
       ],
       "Weekly on Friday": [
         "Viikottain perjantaisin"
