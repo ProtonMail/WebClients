@@ -4383,9 +4383,6 @@
     "Font face option": {
       "System default": [
         "Predefinição do sistema"
-      ],
-      "Theme default": [
-        "Tema predefinido"
       ]
     },
     "Font Size Default": {
@@ -4422,6 +4419,14 @@
       ],
       "(during your first month)": [
         "(durante o primeiro mês)"
+      ]
+    },
+    "Get started checklist instructions": {
+      "${ MAIL_APP_NAME } app": [
+        "${ MAIL_APP_NAME } app"
+      ],
+      "Get the App": [
+        "Descarrega a aplicação"
       ]
     },
     "Gmail forwarding": {
@@ -6500,7 +6505,7 @@
         "Para garantir o acesso contínuo à sua conta, defina um método de recuperação de conta"
       ],
       "To ensure you don’t lose important data, ${ DRIVE_APP_NAME } saves older versions of your files as you and your collaborators make changes. Select how long ${ BRAND_NAME } should keep previous versions.": [
-        "Para garantir que não perde dados importantes, ${ DRIVE_APP_NAME } guarda versões mais antigas dos seus ficheiros à medida que você e os seus colaboradores efectuam alterações. Seleccione durante quanto tempo ${ BRAND_NAME } deve manter as versões anteriores."
+        "Para garantir que não perde dados importantes, ${ DRIVE_APP_NAME } guarda versões mais antigas dos seus ficheiros à medida que você e os seus colaboradores efectuam alterações. Selecione durante quanto tempo ${ BRAND_NAME } deve manter as versões anteriores."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Para combater o spam e abusos, confirme que é um ser humano."
@@ -8018,7 +8023,7 @@
         "Adicione o seguinte registo TXT. Note que os registos DNS podem levar várias horas a atualizar."
       ],
       "Please select files to upload": [
-        "Seleccione os ficheiros a enviar."
+        "Selecione os ficheiros a enviar."
       ],
       "Port": [
         "Porta"
@@ -10079,6 +10084,144 @@
         "Você"
       ]
     },
+    "pass_signup_2023: Action": {
+      "Continue": [
+        "Continuar"
+      ],
+      "Continue to ${ free }": [
+        "Continuar com ${ free }"
+      ],
+      "Continue with Bitcoin": [
+        "Continuar com Bitcoin"
+      ],
+      "create a new account": [
+        "criar uma conta"
+      ],
+      "Download again ${ size }": [
+        "Descarregar novamente ${ size }"
+      ],
+      "Download to continue ${ size }": [
+        "Descarregar para continuar ${ size }"
+      ],
+      "Or ${ createANewAccount }": [
+        "Ou ${ createANewAccount }"
+      ],
+      "Start using ${ appName }": [
+        "Começar a utilizar o ${ appName }"
+      ],
+      "Start using ${ appName } now": [
+        "Começar a utilizar o ${ appName }"
+      ]
+    },
+    "pass_signup_2023: Feature": {
+      "End-to-end encrypted": [
+        "Encriptado de ponta a ponta"
+      ],
+      "Open source": [
+        "Código aberto"
+      ],
+      "Protected by Swiss privacy laws": [
+        "Protegido pelas leis de privacidade suíças"
+      ],
+      "Swiss based": [
+        "Sediado na Suíça"
+      ]
+    },
+    "pass_signup_2023: Header": {
+      "Continue with your ${ BRAND_NAME } account": [
+        "Continue com a sua conta da ${ BRAND_NAME }"
+      ],
+      "Limited time offer": [
+        "Oferta por tempo limitado"
+      ],
+      "Recommended": [
+        "Recomendado"
+      ],
+      "Select your plan": [
+        "Selecione o seu plano"
+      ],
+      "Upgrade your plan": [
+        "Atualize o seu plano"
+      ]
+    },
+    "pass_signup_2023: Info": {
+      "${ PASS_APP_NAME } benefits": [
+        "Benefícios do ${ PASS_APP_NAME }"
+      ],
+      "+ ${ relativePrice } per month": [
+        "+ ${ relativePrice } por mês"
+      ],
+      "End-to-end encrypted notes": [
+        "Notas com encriptação de ponta a ponta"
+      ],
+      "Free forever": [
+        "Gratuito para sempre"
+      ],
+      "Get ${ appName } for ${ browserName }": [
+        "Obtenha ${ appName } para ${ browserName }"
+      ],
+      "Get ${ appName } for ${ browserName } soon": [
+        "Descarrega o ${ appName } para ${ browserName } em breve"
+      ],
+      "Install app": [
+        "Instala a aplicação"
+      ],
+      "Install app and extension": [
+        "Instale a aplicação e a extensão"
+      ],
+      "One easy subscription.": [
+        "Uma subscrição fácil."
+      ],
+      "Open-source and audited": [
+        "Código aberto e auditado"
+      ],
+      "per month, billed annually": [
+        "por mês, pago anualmente"
+      ],
+      "per month, billed every 15 months": [
+        "por mês com faturação a cada 15 meses"
+      ],
+      "per month, billed every 30 months": [
+        "por mês com faturação a cada 30 meses"
+      ],
+      "per month, billed every month": [
+        "por mês, pago a cada mês"
+      ],
+      "per month, billed every two years": [
+        "por mês com faturação a cada dois anos"
+      ],
+      "Protected by Swiss privacy laws": [
+        "Protegido pelas leis de privacidade suíças"
+      ],
+      "to start using ${ PASS_APP_NAME } on your phone": [
+        "para começar a utilizar o ${ PASS_APP_NAME } no seu telefone"
+      ],
+      "Welcome to ${ plan }": [
+        "Boas-vindas ao ${ plan }"
+      ],
+      "Works on all devices": [
+        "Funciona em todos os dispositivos"
+      ],
+      "You currently have": [
+        "Tem atualmente"
+      ]
+    },
+    "pass_signup_2023: Onboarding": {
+      "Welcome to ${ PASS_APP_NAME }": [
+        "Boas-vindas ao ${ PASS_APP_NAME }"
+      ]
+    },
+    "pass_signup_2023: Title": {
+      "${ upsellPlanTitle } plan": [
+        "Plano ${ upsellPlanTitle }"
+      ],
+      "Create your ${ BRAND_NAME } account": [
+        "Crie a sua conta do ${ BRAND_NAME }"
+      ],
+      "Secure your account": [
+        "Proteja a sua conta"
+      ]
+    },
     "Payment method option": {
       "Credit/debit card": [
         "Cartão de crédito/débito"
@@ -10186,7 +10329,7 @@
         "Selecionar"
       ],
       "Select a reason": [
-        "Seleccione um motivo"
+        "Selecione um motivo"
       ],
       "Text": [
         "Texto"
@@ -10617,6 +10760,9 @@
       ],
       "Highest VPN speed": [
         "Velocidade VPN mais elevada"
+      ],
+      "Mail, Calendar, Drive": [
+        "Mail, Calendar e Drive"
       ],
       "Premium early access": [
         "Acesso antecipado premium"
@@ -11239,6 +11385,70 @@
     "Summary of errors during export calendar": {
       "Details about events that couldn't be exported": [
         "Detalhes sobre os eventos que não puderam ser exportados"
+      ]
+    },
+    "summer2023: Billing cycle option": {
+      "1 year": [
+        "1 ano"
+      ],
+      "2 years": [
+        "2 anos"
+      ]
+    },
+    "summer2023: Deal details": {
+      "Premium Drive": [
+        "Versão premium do Drive"
+      ],
+      "Premium Mail and Calendar": [
+        "Versão premium do Mail e Calendar"
+      ],
+      "Premium Password Manager": [
+        "Versão premium do gestor de palavras-passe"
+      ]
+    },
+    "summer2023: Describe Proton Pass": {
+      "Securely store your passwords and autofill them on websites. Includes unlimited passwords, autofill, password generator, and more.": [
+        "Armazene as suas palavaras-passe com segurança e preencha-as automaticamente nos sítios web. Inclui palavaras-passe ilimitadas, preenchimento automático, gerador de palavaras-passe e mais."
+      ]
+    },
+    "summer2023: Short tool name to present Proton Pass": {
+      "Password manager": [
+        "Gestor de palavras-passe"
+      ]
+    },
+    "summer2023: Tooltip": {
+      "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
+        "Crie detalhes seguros de início de sessão em todos os seus dispositivos. Inclui aliases ilimitados, 20 cofres, A2F integrada, preenchimento automático de cartão de crédito e muito mais."
+      ],
+      "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "Inclui mais de 2950 servidores em mais de 65 países, ligue até 10 dispositivos, aceda a serviços de streaming em todo o mundo, malware e bloqueador de anúncios e muito mais."
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Inclui o suporte para 1 domínio de e-mail personalizado, 10 endereços de e-mail, 10 aliases Hide-my-email, partilha de calendário e muito mais."
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "Proteja os seus arquivos com armazenamento encriptado na nuvem. Inclui histórico de versões, partilhamento de ficheiros encriptados e muito mais."
+      ]
+    },
+    "summer2023:Footer": {
+      "*Your subscription will automatically renew at the standard discounted rate at the end of your billing cycle.": [
+        "*A sua subscrição será renovada automaticamente à taxa normal com desconto no final do seu ciclo de faturação."
+      ],
+      "Discounts are based on the standard monthly pricing. This offer is only available to first-time subscribers.": [
+        "Os descontos são baseados no preço mensal padrão. Esta oferta está disponível somente para novos subscritores."
+      ]
+    },
+    "summer2023:Info": {
+      "For a limited time, get the best ${ BRAND_NAME } has to offer at an exclusive discount.": [
+        "Por tempo limitado, obtenha o melhor da ${ BRAND_NAME } com um desconto exclusivo."
+      ],
+      "We’re celebrating the nine-year anniversary of our crowdfunding!": [
+        "Estamos a celebrar o 9º aniversário do nosso crowdfunding!"
+      ]
+    },
+    "summer2023:Offer title": {
+      "${ BRAND_NAME } Anniversary Sale": [
+        "Oferta de aniversário da ${ BRAND_NAME }"
       ]
     },
     "Tab in domain modal": {
@@ -12030,7 +12240,7 @@
         "Diários de segurança"
       ],
       "Select a plan": [
-        "Seleccione um plano"
+        "Selecione um plano"
       ],
       "Select action to take on contact group": [
         "Selecionar a ação a tomar no grupo de contactos"
@@ -12039,13 +12249,13 @@
         "Seleccionar grupo de contactos"
       ],
       "Select the time to send this notification": [
-        "Seleccione a hora para enviar esta notificação"
+        "Selecione a hora para enviar esta notificação"
       ],
       "Select the way to send this notification": [
-        "Seleccione a forma de enviar esta notificação"
+        "Selecione a forma de enviar esta notificação"
       ],
       "Select when you want this notification to be sent": [
-        "Seleccione quando é que a notificação deve ser enviada"
+        "Selecione quando é que a notificação deve ser enviada"
       ],
       "Send email reminders?": [
         "Enviar lembretes por e-mail?"

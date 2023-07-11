@@ -4383,9 +4383,6 @@
     "Font face option": {
       "System default": [
         "Systemstandard"
-      ],
-      "Theme default": [
-        "Standard-Farbschema"
       ]
     },
     "Font Size Default": {
@@ -4422,6 +4419,44 @@
       ],
       "(during your first month)": [
         "(während des ersten Monats)"
+      ]
+    },
+    "Get started checklist instructions": {
+      "${ MAIL_APP_NAME } app": [
+        "${ MAIL_APP_NAME }-App"
+      ],
+      "account logins": [
+        "Konto-Zugangsdaten"
+      ],
+      "Auto-forward Gmail": [
+        "Gmail automatisch weiterleiten"
+      ],
+      "auto-forwarding": [
+        "automatische Weiterleitung"
+      ],
+      "Change ${ strongText } to your ${ BRAND_NAME } address": [
+        "Ändere deine ${ strongText } zu deiner ${ BRAND_NAME }-E-Mail-Adresse"
+      ],
+      "Discover how our ${ strongText } protect you": [
+        "Entdecke, wie dich unsere ${ strongText } schützen"
+      ],
+      "Discover privacy features": [
+        "Entdecke die Datenschutzfunktionen"
+      ],
+      "Get the ${ strongText } on Android or iOS": [
+        "Hol dir die ${ strongText } für Android oder iOS"
+      ],
+      "Get the App": [
+        "App herunterladen"
+      ],
+      "privacy features": [
+        "Datenschutzfunktionen"
+      ],
+      "Set up ${ strongText } from Gmail": [
+        "Richte die ${ strongText } von Gmail ein"
+      ],
+      "Update your logins": [
+        "Aktualisiere deine Zugangsdaten"
       ]
     },
     "Gmail forwarding": {
@@ -6153,6 +6188,9 @@
       "Recovery information will remain on this device unless you select to delete it.": [
         "Die Wiederherstellungsinformationen verbleiben auf diesem Gerät, sofern du sie nicht löschst."
       ],
+      "Recovery kit copied to clipboard": [
+        "Wiederherstellungs-Kit in die Zwischenablage kopiert"
+      ],
       "Recovery phrase copied to clipboard": [
         "Wiederherstellungsphrase wurde in die Zwischenablage kopiert"
       ],
@@ -6863,6 +6901,9 @@
       ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Du benötigst eine ${ BRAND_NAME }-Adresse um ${ MAIL_APP_NAME } und ${ CALENDAR_APP_NAME } zu nutzen"
+      ],
+      "You will NOT be able to decrypt any messages, files, and other data encrypted with this key. All data signed with this key will no longer be verified by ${ BRAND_NAME } applications.": [
+        "Du wirst NICHT in der Lage sein, Nachrichten, Dateien und andere mit diesem Schlüssel verschlüsselte Daten zu entschlüsseln. Alle mit diesem Schlüssel signierten Daten werden von den ${ BRAND_NAME }-Anwendungen nicht mehr verifiziert."
       ],
       "You will receive priority support from specialists trained in account protection. For any account security concerns, please ${ hereLink }.": [
         "Du erhältst bevorzugte Unterstützung von Spezialisten, die für den Schutz deines Kontos ausgebildet sind. Wenn du Fragen zur Kontosicherheit hast, kontaktiere uns bitte ${ hereLink }."
@@ -9467,6 +9508,9 @@
         "Erstelle bis zu ${ n } Kalender oder füge Kalender von Freunden, Familie, Kollegen und Organisationen hinzu",
         "Erstelle bis zu ${ n } Kalender oder füge Kalender von Freunden, Familie, Kollegen und Organisationen hinzu"
       ],
+      "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
+        "Erstelle bis zu ${ n } E-Mail-Adressen/Aliasse, die du Familienmitgliedern zuweisen kannst. Nutze sie für Online-Identitäten, z.B. MaxEinkaufen@${ domain } für Einkaufskonten."
+      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Diese Funktion schützt vor der Bedrohung der VPN-Privatsphäre, indem dein Internet-Verkehr über mehrere Server geleitet wird."
       ],
@@ -10059,14 +10103,50 @@
       ]
     },
     "pass_signup_2023: Action": {
+      "Check out ${ appName } features": [
+        "Sieh dir die Funktionen von ${ appName } an"
+      ],
       "Continue": [
         "Fortfahren"
+      ],
+      "Continue to ${ free }": [
+        "Weiter zu ${ free }"
       ],
       "Continue with Bitcoin": [
         "Mit Bitcoin fortfahren"
       ],
+      "create a new account": [
+        "erstelle ein neues Konto"
+      ],
+      "Create another account instead": [
+        "Stattdessen ein neues Konto erstellen"
+      ],
+      "Download again ${ size }": [
+        "Erneut herunterladen ${ size }"
+      ],
+      "Download to continue ${ size }": [
+        "Herunterladen zum Fortfahren ${ size }"
+      ],
+      "Keep this plan and use ${ appName }": [
+        "Dieses Abonnement behalten und ${ appName } starten"
+      ],
       "Or ${ createANewAccount }": [
         "Oder ${ createANewAccount }"
+      ],
+      "Start using ${ appName }": [
+        "Beginne, ${ appName } zu verwenden"
+      ],
+      "Start using ${ appName } now": [
+        "Beginne, ${ appName } jetzt zu verwenden"
+      ],
+      "Upgrade for only ${ relativePrice } extra per month": [
+        "Upgrade für nur ${ relativePrice } zusätzlich pro Monat"
+      ],
+      "Upgrade my plan": [
+        "Abonnement upgraden"
+      ],
+      "Use ${ free } instead": [
+        "Stattdessen ${ free } nutzen"
       ]
     },
     "pass_signup_2023: Feature": {
@@ -10084,6 +10164,12 @@
       ]
     },
     "pass_signup_2023: Header": {
+      "Checkout": [
+        "Zur Kasse"
+      ],
+      "Continue with your ${ BRAND_NAME } account": [
+        "Mit ${ BRAND_NAME }-Konto fortfahren"
+      ],
       "Limited time offer": [
         "Zeitlich befristetes Angebot"
       ],
@@ -10098,22 +10184,171 @@
       ]
     },
     "pass_signup_2023: Info": {
+      "${ PASS_APP_NAME } benefits": [
+        "${ PASS_APP_NAME }-Vorteile"
+      ],
+      "${ PASS_APP_NAME } is available as a browser extension on Firefox Add-ons.": [
+        "${ PASS_APP_NAME } ist als Browser-Erweiterung unter Firefox Add-ons verfügbar."
+      ],
+      "${ PASS_APP_NAME } is available as a browser extension on the Chrome Web Store.": [
+        "${ PASS_APP_NAME } ist als Browser-Erweiterung im Chrome Web Store verfügbar."
+      ],
+      "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption.": [
+        "${ PASS_APP_NAME } schützt deine Passwörter und deine Identität mit einer strengen Ende-zu-Ende-Verschlüsselung."
+      ],
+      "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption. To add premium features of ${ PASS_APP_NAME_2 } to your current subscription, we suggest upgrading to the ${ upsellPlanName } plan.": [
+        "${ PASS_APP_NAME } schützt deine Passwörter und deine Identität mit einer strengen Ende-zu-Ende-Verschlüsselung. Um die Premium-Funktionen von ${ PASS_APP_NAME_2 } zu deinem aktuellen Abonnement hinzuzufügen, empfehlen wir ein Upgrade auf ${ upsellPlanName }."
+      ],
+      "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption. Your current plan already gives you access to premium ${ PASS_APP_NAME_2 } features — no need to purchase again.": [
+        "${ PASS_APP_NAME } schützt deine Passwörter und deine Identität mit einer strengen Ende-zu-Ende-Verschlüsselung. Dein aktuelles Abonnement gibt dir bereits Zugang zu den Premium-Funktionen von ${ PASS_APP_NAME_2 } - du musst nichts erneut kaufen."
+      ],
+      "+ ${ relativePrice } per month": [
+        "+ ${ relativePrice } pro Monat"
+      ],
+      "All premium ${ BRAND_NAME } services.": [
+        "Alle Premium-Dienste von ${ BRAND_NAME }."
+      ],
+      "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
+        "Aber du kannst **${ unlockPlanTitle }** und alle Premium-Dienste von ${ BRAND_NAME } freischalten, indem du auf **${ upsellPlanTitle }** upgradest - es kostet nur ${ relativePrice } zusätzlich pro Monat."
+      ],
+      "By continuing, you agree to our ${ termsAndConditions }": [
+        "Wenn du fortfährst, erklärst du dich mit unseren ${ termsAndConditions } einverstanden"
+      ],
       "Creating your account": [
         "Dein Konto wird erstellt"
       ],
+      "Discover ${ PASS_APP_NAME },${ br }our new encrypted password manager": [
+        "Entdecke ${ PASS_APP_NAME },${ br }unseren neuen verschlüsselten Passwortmanager"
+      ],
+      "Download and install the relevant apps and extensions to start using ${ PASS_APP_NAME }": [
+        "Lade die entsprechenden Apps und Erweiterungen herunter und installiere sie, um ${ PASS_APP_NAME } zu verwenden."
+      ],
+      "Download the ${ PASS_APP_NAME } app from Google Play and install it to start using ${ PASS_APP_NAME2 } on your phone.": [
+        "Lade die ${ PASS_APP_NAME }-App von Google Play herunter und installiere sie, um ${ PASS_APP_NAME2 } auf deinem Telefon zu verwenden."
+      ],
+      "Download the ${ PASS_APP_NAME } app from the App Store and install it to start using ${ PASS_APP_NAME2 } on your phone.": [
+        "Lade die ${ PASS_APP_NAME }-App aus dem App Store herunter und installiere sie, um ${ PASS_APP_NAME2 } auf deinem Telefon zu verwenden."
+      ],
+      "Encrypted password manager${ breakToken }that also protects your identity": [
+        "Verschlüsselter Passwort-Manager${ breakToken }der auch deine Identität schützt."
+      ],
+      "End-to-end encrypted notes": [
+        "Ende-zu-Ende verschlüsselte Notizen"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
+        "Für nur **${ relativePrice } mehr pro Monat** erhältst du Zugang zu allen premium ${ BRAND_NAME } Leistungen!"
+      ],
       "Free forever": [
         "Dauerhaft kostenlos"
+      ],
+      "Get ${ appName } for ${ browserName }": [
+        "Hol dir ${ appName } für ${ browserName }"
+      ],
+      "Get ${ appName } for ${ browserName } soon": [
+        "Hol dir ${ appName } bald für ${ browserName }"
+      ],
+      "Includes basic ${ appName } features:": [
+        "Enthält grundlegende Funktionen von ${ appName }:"
+      ],
+      "Install ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } installieren"
+      ],
+      "Install app": [
+        "App installieren"
+      ],
+      "Install app and extension": [
+        "App und Erweiterung installieren"
+      ],
+      "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
+        "Schließe dich den über 100 Millionen Menschen an, die ${ BRAND_NAME } gewählt haben, um online sicher zu bleiben"
+      ],
+      "Launching ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } wird gestartet"
+      ],
+      "One easy subscription.": [
+        "Ein einfaches Abonnement."
+      ],
+      "Open-source and audited": [
+        "Quelloffen und unabhängig geprüft"
+      ],
+      "per month, billed annually": [
+        "pro Monat, jährliche Abrechnung"
+      ],
+      "per month, billed every 15 months": [
+        "pro Monat, Abrechnung alle 15 Monate"
+      ],
+      "per month, billed every 30 months": [
+        "pro Monat, Abrechnung alle 30 Monate"
+      ],
+      "per month, billed every month": [
+        "pro Monat, monatliche Abrechnung"
+      ],
+      "per month, billed every two years": [
+        "pro Monat, Abrechnung alle zwei Jahre"
+      ],
+      "Preparing your Recovery Kit": [
+        "Dein Wiederherstellungskit wird vorbereitet"
+      ],
+      "Protected by Swiss privacy laws": [
+        "Geschützt durch Schweizer Datenschutzgesetze"
+      ],
+      "Signing in to ${ PASS_APP_NAME }": [
+        "Anmelden bei ${ PASS_APP_NAME }"
+      ],
+      "Special launch offer: Get ${ title } for ${ price } forever!": [
+        "Spezielles Einführungsangebot: Hol dir ${ title } für ${ price } für immer!"
+      ],
+      "The offer you selected is not available for ${ currentPlanTitle } subscribers.": [
+        "Das von dir gewählte Angebot ist für ${ currentPlanTitle }-Abonnenten nicht verfügbar."
+      ],
+      "to start using ${ PASS_APP_NAME } on your phone": [
+        ", um ${ PASS_APP_NAME } auf deinem Handy zu verwenden"
+      ],
+      "Unlock ${ PASS_APP_NAME } premium features by upgrading": [
+        "Schalte ${ PASS_APP_NAME }-Premium-Funktionen durch ein Upgrade frei"
+      ],
+      "Updating your account": [
+        "Konto wird aktualisiert"
       ],
       "Verifying your payment": [
         "Deine Zahlung wird verifiziert"
       ],
       "Welcome to ${ plan }": [
         "Willkommen bei ${ plan }"
+      ],
+      "Works on all devices": [
+        "Funktioniert auf allen Geräten"
+      ],
+      "You already have access to premium ${ appName } features — no need to purchase again.": [
+        "Du hast bereits Zugang zu den Premium-Funktionen von ${ appName } - ein erneuter Kauf ist nicht erforderlich."
+      ],
+      "You currently have": [
+        "Momentan hast du"
+      ],
+      "Your organization has access to ${ free }. If you want to access premium ${ appName } features, please ask your organization's administrator to upgrade.": [
+        "Deine Organisation hat Zugang zu ${ free }. Wenn du auf die Premiumfunktionen von ${ appName } zugreifen möchtest, bitte den Administrator deiner Organisation um ein Upgrade."
       ]
     },
     "pass_signup_2023: Onboarding": {
       "Welcome to ${ PASS_APP_NAME }": [
         "Willkommen bei ${ PASS_APP_NAME }"
+      ]
+    },
+    "pass_signup_2023: Title": {
+      "${ upsellPlanTitle } plan": [
+        "${ upsellPlanTitle } Abonnement"
+      ],
+      "All ${ BRAND_NAME } Plus services.${ br }One easy subscription.": [
+        "Alle ${ BRAND_NAME } Plus-Dienste.${ br }Ein einfaches Abonnement."
+      ],
+      "Create your ${ BRAND_NAME } account": [
+        "Erstelle dein ${ BRAND_NAME }-Konto"
+      ],
+      "Request your organization administrator to upgrade": [
+        "Fordere den Administrator des Unternehmens zum Upgrade auf"
+      ],
+      "Secure your account": [
+        "Sichere dein Konto"
       ]
     },
     "Payment method option": {

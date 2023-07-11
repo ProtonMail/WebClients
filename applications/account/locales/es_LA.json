@@ -4384,8 +4384,8 @@
       "System default": [
         "Del sistema"
       ],
-      "Theme default": [
-        "Tema por defecto"
+      "Theme font": [
+        "Fuente del tema"
       ]
     },
     "Font Size Default": {
@@ -4422,6 +4422,44 @@
       ],
       "(during your first month)": [
         "(durante su primer mes)"
+      ]
+    },
+    "Get started checklist instructions": {
+      "${ MAIL_APP_NAME } app": [
+        "App de ${ MAIL_APP_NAME }"
+      ],
+      "account logins": [
+        "los inicios de sesión de la cuenta"
+      ],
+      "Auto-forward Gmail": [
+        "Reenvío automático de Gmail"
+      ],
+      "auto-forwarding": [
+        "reenvío automático"
+      ],
+      "Change ${ strongText } to your ${ BRAND_NAME } address": [
+        "Cambie ${ strongText } a su dirección de ${ BRAND_NAME }"
+      ],
+      "Discover how our ${ strongText } protect you": [
+        "Descubra cómo nuestras ${ strongText } le protegen"
+      ],
+      "Discover privacy features": [
+        "Descubra las funciones de privacidad"
+      ],
+      "Get the ${ strongText } on Android or iOS": [
+        "Obtenga la ${ strongText } en Android o iOS"
+      ],
+      "Get the App": [
+        "Descargue la app"
+      ],
+      "privacy features": [
+        "funciones de privacidad"
+      ],
+      "Set up ${ strongText } from Gmail": [
+        "Configure el ${ strongText } desde Gmail"
+      ],
+      "Update your logins": [
+        "Actualice sus inicios de sesión"
       ]
     },
     "Gmail forwarding": {
@@ -6867,6 +6905,9 @@
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Necesitará una dirección de ${ BRAND_NAME } para usar ${ MAIL_APP_NAME } y ${ CALENDAR_APP_NAME }"
       ],
+      "You will NOT be able to decrypt any messages, files, and other data encrypted with this key. All data signed with this key will no longer be verified by ${ BRAND_NAME } applications.": [
+        "NO podrá descifrar ningún mensaje, archivo u otros datos cifrados con esta clave. Todos los datos firmados con esta clave ya no serán verificados por las aplicaciones de ${ BRAND_NAME }."
+      ],
       "You will receive priority support from specialists trained in account protection. For any account security concerns, please ${ hereLink }.": [
         "Recibirá soporte prioritario de especialistas capacitados en protección de cuentas. Para cualquier problema de seguridad de la cuenta, ${ hereLink }."
       ],
@@ -8296,7 +8337,7 @@
         "Comunicados beta de ${ BRAND_NAME }"
       ],
       "${ BRAND_NAME } company announcements": [
-        "Comunicados de la compañía de ${ BRAND_NAME }"
+        "Comunicados de la compañía ${ BRAND_NAME }"
       ],
       "${ BRAND_NAME } for Business newsletter": [
         "Boletín para empresas de ${ BRAND_NAME }"
@@ -9470,6 +9511,9 @@
         "Cree ${ n } calendario o añada calendarios de amistades, familiares, colegas y organizaciones.",
         "Cree hasta ${ n } calendarios o añada calendarios de amistades, familiares, colegas y organizaciones."
       ],
+      "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
+        "Cree hasta ${ n } direcciones de correo/alias que puede asignar a sus familiares. Úselas para las identidades en línea, p.ej., JuanCompras@${ domain } para cuentas de compras."
+      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Defiende de ataques que amenazan la privacidad de la VPN dirigiendo el tráfico de Internet por varios servidores"
       ],
@@ -10062,6 +10106,9 @@
       ]
     },
     "pass_signup_2023: Action": {
+      "Check out ${ appName } features": [
+        "Compruebe las funciones de ${ appName }"
+      ],
       "Continue": [
         "Continuar"
       ],
@@ -10072,13 +10119,19 @@
         "Continuar con Bitcoin"
       ],
       "create a new account": [
-        "crear una cuenta"
+        "cree una cuenta nueva"
+      ],
+      "Create another account instead": [
+        "Cree una nueva cuenta en su lugar"
       ],
       "Download again ${ size }": [
         "Volver a descargar ${ size }"
       ],
       "Download to continue ${ size }": [
         "Descargar para continuar ${ size }"
+      ],
+      "Keep this plan and use ${ appName }": [
+        "Mantenga este plan y use ${ appName }"
       ],
       "Or ${ createANewAccount }": [
         "O ${ createANewAccount }"
@@ -10090,10 +10143,13 @@
         "Comenzar a usar ${ appName }"
       ],
       "Upgrade for only ${ relativePrice } extra per month": [
-        "Mejore su plan por sólo ${ relativePrice } extra al mes"
+        "Actualice su plan por solo ${ relativePrice } extra al mes"
       ],
       "Upgrade my plan": [
-        "Mejorar mi plan"
+        "Actualizar mi plan"
+      ],
+      "Use ${ free } instead": [
+        "Use ${ free } en su lugar"
       ]
     },
     "pass_signup_2023: Feature": {
@@ -10124,18 +10180,39 @@
         "Recomendado"
       ],
       "Select your plan": [
-        "Elija su suscripción"
+        "Elija su plan"
       ],
       "Upgrade your plan": [
-        "Mejore su plan"
+        "Actualice su plan"
       ]
     },
     "pass_signup_2023: Info": {
       "${ PASS_APP_NAME } benefits": [
         "Ventajas de ${ PASS_APP_NAME }"
       ],
+      "${ PASS_APP_NAME } is available as a browser extension on Firefox Add-ons.": [
+        "${ PASS_APP_NAME } está disponible como una extensión del navegador Firefox."
+      ],
+      "${ PASS_APP_NAME } is available as a browser extension on the Chrome Web Store.": [
+        "${ PASS_APP_NAME } está disponible como una extensión del navegador Chrome en la Chrome Web Store."
+      ],
+      "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption.": [
+        "${ PASS_APP_NAME } mantiene sus contraseñas y su identidad a salvo gracias a un cifrado riguroso."
+      ],
+      "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption. To add premium features of ${ PASS_APP_NAME_2 } to your current subscription, we suggest upgrading to the ${ upsellPlanName } plan.": [
+        "${ PASS_APP_NAME } mantiene sus contraseñas y su identidad a salvo gracias a un cifrado riguroso de extremo a extremo. Para añadir funciones premium de ${ PASS_APP_NAME_2 } a su suscripción actual, le sugerimos que actualice al plan ${ upsellPlanName }."
+      ],
+      "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption. Your current plan already gives you access to premium ${ PASS_APP_NAME_2 } features — no need to purchase again.": [
+        "${ PASS_APP_NAME } mantiene sus contraseñas y su identidad a salvo gracias a un cifrado riguroso de extremo a extremo. Su plan actual da acceso a funciones ${ PASS_APP_NAME_2 } premium — no es necesario comprar de nuevo."
+      ],
       "+ ${ relativePrice } per month": [
-        "+${ relativePrice } por mes"
+        "+ ${ relativePrice } por mes"
+      ],
+      "All premium ${ BRAND_NAME } services.": [
+        "Todos los servicios premium de ${ BRAND_NAME }."
+      ],
+      "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
+        "Pero puede desbloquear **${ unlockPlanTitle }** y todos los servicios premium de ${ BRAND_NAME } al actualizar su plan a **${ upsellPlanTitle }** — solo por ${ relativePrice } extra cada mes."
       ],
       "By continuing, you agree to our ${ termsAndConditions }": [
         "Al continuar, acepta nuestros ${ termsAndConditions }"
@@ -10143,8 +10220,26 @@
       "Creating your account": [
         "Creando su cuenta"
       ],
+      "Discover ${ PASS_APP_NAME },${ br }our new encrypted password manager": [
+        "Descubra ${ PASS_APP_NAME },${ br }nuestro nuevo gestor cifrado de contraseñas."
+      ],
+      "Download and install the relevant apps and extensions to start using ${ PASS_APP_NAME }": [
+        "Descargue e instale las aplicaciones relevantes y sus extensiones para comenzar a usar ${ PASS_APP_NAME }"
+      ],
+      "Download the ${ PASS_APP_NAME } app from Google Play and install it to start using ${ PASS_APP_NAME2 } on your phone.": [
+        "Descargue la aplicación ${ PASS_APP_NAME } desde Google Play e instálela para comenzar a usar ${ PASS_APP_NAME2 } en su teléfono móvil."
+      ],
+      "Download the ${ PASS_APP_NAME } app from the App Store and install it to start using ${ PASS_APP_NAME2 } on your phone.": [
+        "Descargue la aplicación ${ PASS_APP_NAME } desde la App Store e instálela para comenzar a usar ${ PASS_APP_NAME2 } en su teléfono móvil."
+      ],
+      "Encrypted password manager${ breakToken }that also protects your identity": [
+        "Gestor de contraseñas cifrado${ breakToken }que protege también su identidad"
+      ],
       "End-to-end encrypted notes": [
         "Notas cifradas de extremo a extremo"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
+        "¡Por solo **${ relativePrice } más al mes**, usted podrá acceder a todos los servicios ${ BRAND_NAME } premium!"
       ],
       "Free forever": [
         "Gratis para siempre"
@@ -10155,11 +10250,32 @@
       "Get ${ appName } for ${ browserName } soon": [
         "Obtenga ${ appName } para ${ browserName } próximamente"
       ],
+      "Hide-my-email aliases protect your email from data breaches": [
+        "Los alias hide-my-email protegen su correo electrónico de las filtraciones de datos."
+      ],
+      "If you get locked out of your ${ BRAND_NAME } Account, your **recovery kit** will allow you to sign in and recover your data.": [
+        "Si se bloquea su cuenta ${ BRAND_NAME }, su **kit de recuperación** le permitirá iniciar sesión y recuperar sus datos."
+      ],
+      "Includes basic ${ appName } features:": [
+        "Incluye las funciones básicas de ${ appName }:"
+      ],
+      "Install ${ PASS_APP_NAME }": [
+        "Instale ${ PASS_APP_NAME }"
+      ],
       "Install app": [
         "Instale la aplicación"
       ],
       "Install app and extension": [
         "Instale la aplicación y la extensión"
+      ],
+      "It’s the only way to fully restore your account, so make sure you keep this **recovery kit** somewhere safe.": [
+        "Es la única forma de restaurar su cuenta, por lo que tome las medidas necesarias para mantener este **kit de recuperación** a salvo."
+      ],
+      "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
+        "Únase a más de 100 millones de personas que han elegido ${ BRAND_NAME } para su seguridad en línea"
+      ],
+      "Launching ${ PASS_APP_NAME }": [
+        "Iniciando ${ PASS_APP_NAME }"
       ],
       "One easy subscription.": [
         "Una suscripción sin complicaciones."
@@ -10188,8 +10304,23 @@
       "Protected by Swiss privacy laws": [
         "Bajo la protección de las leyes de privacidad suizas"
       ],
+      "Save your recovery kit to continue": [
+        "Guarde su kit de recuperación para continuar"
+      ],
+      "Signing in to ${ PASS_APP_NAME }": [
+        "Iniciando sesión en ${ PASS_APP_NAME }"
+      ],
+      "Special launch offer: Get ${ title } for ${ price } forever!": [
+        "¡Oferta especial de lanzamiento: obtenga ${ title } por ${ price } para siempre!"
+      ],
+      "The offer you selected is not available for ${ currentPlanTitle } subscribers.": [
+        "La oferta que ha seleccionado no se encuentra disponible para los suscriptores de ${ currentPlanTitle }."
+      ],
       "to start using ${ PASS_APP_NAME } on your phone": [
         "para usar ${ PASS_APP_NAME } en su teléfono"
+      ],
+      "Unlock ${ PASS_APP_NAME } premium features by upgrading": [
+        "Acceda a las funciones premium de ${ PASS_APP_NAME } al actualizar su plan"
       ],
       "Updating your account": [
         "Actualizando su cuenta"
@@ -10203,8 +10334,14 @@
       "Works on all devices": [
         "Funciona en todos los dispositivos"
       ],
+      "You already have access to premium ${ appName } features — no need to purchase again.": [
+        "Dispone de acceso a las funciones premium de ${ appName }, no es necesaria ninguna compra adicional."
+      ],
       "You currently have": [
         "Actualmente tiene"
+      ],
+      "Your organization has access to ${ free }. If you want to access premium ${ appName } features, please ask your organization's administrator to upgrade.": [
+        "Su organización tiene acceso a ${ free }. Si desea acceder a las funciones premium de ${ appName }, solicite al administrador de su organización que actualice la versión."
       ]
     },
     "pass_signup_2023: Onboarding": {
@@ -10216,8 +10353,14 @@
       "${ upsellPlanTitle } plan": [
         "Plan ${ upsellPlanTitle }"
       ],
+      "All ${ BRAND_NAME } Plus services.${ br }One easy subscription.": [
+        "Todos los servicios Plus de ${ BRAND_NAME }.${ br }Suscripción sencilla."
+      ],
       "Create your ${ BRAND_NAME } account": [
         "Cree su cuenta de ${ BRAND_NAME }"
+      ],
+      "Request your organization administrator to upgrade": [
+        "Solicite al administrador de su organización que actualice la versión."
       ],
       "Secure your account": [
         "Proteja su cuenta"
