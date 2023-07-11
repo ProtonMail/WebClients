@@ -240,6 +240,9 @@
       "Download apps": [
         "Download apps"
       ],
+      "Download Drive for Windows": [
+        "Hent Drive til Windows"
+      ],
       "Drive Locked": [
         "Drev låst"
       ],
@@ -320,6 +323,9 @@
       ],
       "Got it": [
         "Forstået"
+      ],
+      "Grid layout": [
+        "Gitter-layout"
       ],
       "Hide advanced PGP settings": [
         "Skjul avancerede PGP-indstillinger"
@@ -2529,7 +2535,7 @@
         "${ BRAND_NAME } grupper"
       ],
       "Accounts with custom domains cannot join a Visionary or family plan.": [
-        "Konti med brugerdefinerede domæner kan ikke blive medlem af et Visionary eller familie-abonnement."
+        "Konti med brugerdomæner kan ikke blive medlem af et Visionary eller familie-abonnement."
       ],
       "customer support": [
         "kundeservice"
@@ -2617,6 +2623,14 @@
         "Introducerer ${ planName }"
       ]
     },
+    "familyOffer_2023:Tooltip": {
+      "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "Inkluderer 2700 servere i 65+ lande, forbind op til 10 enheder, tilgå verdensomspændende streamingtjenester, malware- og ad-blocker og meget mere."
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "Beskyt dine filer med krypteret lagring i skyen. Inkluderer automatisk synkronisering, krypteret fildeling og meget mere."
+      ]
+    },
     "Feedback Modal Title": {
       "Your feedback": [
         "Din feedback"
@@ -2681,9 +2695,6 @@
     "Font face option": {
       "System default": [
         "Systemstandard"
-      ],
-      "Theme default": [
-        "Temastandard"
       ]
     },
     "Font size option": {
@@ -3417,6 +3428,12 @@
       "Failed": [
         "Mislykkedes"
       ],
+      "Failed to generate a secure link. The reason is: ${ error }": [
+        "Det lykkedes ikke at generere et sikkert link. Årsagen er: ${ error }"
+      ],
+      "Failed to generate a secure link. Try again later": [
+        "Kunne ikke skabe et sikkert link. Prøv igen senere"
+      ],
       "Failed to open a secure link. The reason is: ${ error }": [
         "Kunne ikke åbne et sikkert link. Årsagen er: ${ error }"
       ],
@@ -3488,6 +3505,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Hvis du ikke kan se mailen i din indbakke, bedes du tjekke din spammappe."
+      ],
+      "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process.": [
+        "Hvis du har en af disse, skal du fortsætte til ${ BRAND_NAME }-kontoindstillingerne for at starte processen med at fjerne blokeringen."
       ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Importer ${ calendarCount } af ${ totalCalendarsCount } kalender",
@@ -3888,6 +3908,9 @@
       "This will delete the link and remove access to your file or folder for anyone with the link.": [
         "Dette vil slette linket og fjerne adgangen til din fil eller mappe for alle, der har linket.",
         "Dette vil slette linkene og fjerne adgangen til dine file eller mapper for alle, der har linkene."
+      ],
+      "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on the device won’t be affected.": [
+        "Dette vil fjerne den synkroniserede enhed ${ deviceName } fra ${ DRIVE_APP_NAME }. Lokale filer på enheden vil ikke blive påvirket."
       ],
       "This will replace the existing file with the folder": [
         "Dette vil erstatte eksisterende fil med mappen"
@@ -4536,6 +4559,9 @@
       "Set recovery method": [
         "Indstil gendannelsesmetode"
       ],
+      "Show indexing progress of Encrypted Search": [
+        "Vis fremskridt for indeksering af krypteret søgning"
+      ],
       "Sign emails": [
         "Signér e-mails"
       ],
@@ -4664,6 +4690,9 @@
       ]
     },
     "Link": {
+      "${ DRIVE_APP_NAME } Windows app": [
+        "${ DRIVE_APP_NAME } Windows app"
+      ],
       "clearing your browser cache": [
         "rydder din browser-cache"
       ],
@@ -4678,6 +4707,9 @@
       ],
       "Request an invite": [
         "Anmod om invitation"
+      ],
+      "Seamlessly sync files and folders between your computer and ${ DRIVE_APP_NAME }.": [
+        "Synkroniser filer og mapper problemfrit mellem din computer og ${ DRIVE_APP_NAME }."
       ],
       "Shared": [
         "Delt"
@@ -5047,6 +5079,11 @@
         "For at importen kan fungere, skal du vælge alle de ønskede elementer som vist i GIF-illustrationen."
       ]
     },
+    "Oauth instructions video alternative": {
+      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
+        "Vælg, hvad ${ BRAND_NAME } kan få adgang til: se dine e-mailbeskeder og indstillinger, se og downloade dine kontakter, se og downloade alle kalendere, du har adgang til fra Google Kalender."
+      ]
+    },
     "Onboarding Action": {
       "Next": [
         "Næste"
@@ -5087,9 +5124,6 @@
         "Vælg et tema"
       ],
       "Set up your organization": [
-        "Konfigurer din organisation"
-      ],
-      "Set up your organization testing": [
         "Konfigurer din organisation"
       ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
@@ -5211,6 +5245,11 @@
     "Placeholder for contact group name": {
       "Name": [
         "Navn"
+      ]
+    },
+    "Platform": {
+      "Windows": [
+        "Windows"
       ]
     },
     "Progress bar description": {
@@ -5382,6 +5421,9 @@
       ]
     },
     "specialoffer: Footer": {
+      "Discounts are based on the standard monthly pricing.": [
+        "Rabatter er baseret på den månedlige standardpris."
+      ],
       "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
         "Dette abonnement bliver automatisk fornyet hvert 2. år til samme pris, indtil det annulleres."
       ]
@@ -5395,6 +5437,9 @@
       ],
       "Offer ends soon": [
         "Tilbuddet slutter snart"
+      ],
+      "The discount will continue to apply upon renewal until the subscription is canceled or modified": [
+        "Rabatten vil fortsat gælde ved fornyelse, indtil abonnementet opsiges eller ændres"
       ]
     },
     "specialoffer: Link": {
@@ -5436,6 +5481,12 @@
       ],
       "Get the deal": [
         "Få tilbuddet"
+      ],
+      "Renews after 1 year at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
+        "Fornyes efter 1 år til en nedsat pris på ${ discountedAmount } i stedet for ${ regularAmount } (${ discount }% rabat)"
+      ],
+      "Renews after 2 years at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
+        "Fornyes efter 2 år til en nedsat pris på ${ discountedAmount } i stedet for ${ regularAmount } (${ discount }% rabat)"
       ],
       "Save ${ discount }%": [
         "Spar ${ discount }%"
@@ -5489,8 +5540,17 @@
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
         "Få adgang til indhold på streamingtjenester, herunder Netflix, Disney+ og Prime Video, hvor som helst."
       ],
+      "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
+        "Alle vores premium-tjenester med deres højeste grænser: 100 e-mailadresser, mulighed for 10 brugerdomæner, ubegrænsede Hide-my-email-aliasser, kalenderdeling, krypteret cloud-lagring og fildeling og meget mere."
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Inkluderer support for 1 tilpasset e-maildomæne, 10 e-mailadresser, 10 Hide-my-email-aliasser, kalenderdeling med mere."
+      ],
+      "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Inkluderer support til 3 tilpassede e-maildomæner, 15 e-mailadresser, ubegrænsede Hide-my-email-aliasser, kalenderdeling med mere."
+      ],
       "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
-        "Perfekt til familier eller små teams, hvor alle kan have deres egen indbakke og aliasser. Kræver et brugerdefineret domæne."
+        "Perfekt til familier eller små teams, hvor alle kan have deres egen indbakke og aliasser. Kræver et brugerdomæne."
       ],
       "Receive at no extra cost the paid versions of all new privacy services we release in the future, along with early access to all future features and products.": [
         "Modtag uden ekstra omkostninger betalingsversionerne af alle nye privatlivstjenester, vi lancerer i fremtiden, samt tidlig adgang til alle fremtidige funktioner og produkter."
@@ -5592,6 +5652,16 @@
     "Success notification when user send feedback": {
       "Feedback sent": [
         "Feedback sendt"
+      ]
+    },
+    "summer2023: Describe Proton Pass": {
+      "Securely store your passwords and autofill them on websites. Includes unlimited passwords, autofill, password generator, and more.": [
+        "Gem sikkert dine adgangskoder og udfyld dem automatisk på hjemmesider. Indeholder ubegrænsede adgangskoder, autofyld, adgangskodegenerator og meget mere."
+      ]
+    },
+    "summer2023: Short tool name to present Proton Pass": {
+      "Password manager": [
+        "Adgangskodeadministrator"
       ]
     },
     "Table header": {
