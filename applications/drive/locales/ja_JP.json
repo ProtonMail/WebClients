@@ -1830,6 +1830,9 @@
       "ProtonMail logo and a plus sign": [
         "Proton Mail ロゴとプラスマーク"
       ],
+      "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
+        "一度に全員にメールや招待状を送信することで時間を節約できます。今すぐアップグレード"
+      ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files.": [
         "最大 ${ MAX_IMPORT_FILE_SIZE_STRING } のファイルサイズ、最大 ${ MAX_IMPORT_CONTACTS_STRING } 件の連絡先に対応しています。それより大きなファイルは、分割してください。"
       ],
@@ -2481,6 +2484,9 @@
       ]
     },
     "familyOffer_2023:Action": {
+      "Decline invitation": [
+        "招待を断る"
+      ],
       "Got it": [
         "了解"
       ],
@@ -2671,9 +2677,6 @@
     "Font face option": {
       "System default": [
         "システムのデフォルト"
-      ],
-      "Theme default": [
-        "テーマのデフォルト"
       ]
     },
     "Font size option": {
@@ -4491,6 +4494,9 @@
       "Street address": [
         "番地"
       ],
+      "Synchronize with system": [
+        "システムとの同期"
+      ],
       "System information": [
         "システム情報"
       ],
@@ -4603,6 +4609,9 @@
       ],
       "Pay invoice": [
         "請求の支払い"
+      ],
+      "Reactivate now": [
+        "今すぐ再アクティブ化する"
       ],
       "Request an invite": [
         "登録を申請"
@@ -4743,11 +4752,17 @@
       ]
     },
     "new_plans: feature info": {
+      "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
+        "例えば、JohnShopper@${ domain }はショッピングアカウント用、JohnNews@${ domain2 }はニュース購読用です。"
+      ],
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "SimpleLogin by ${ BRAND_NAME } で無制限にエイリアスを作成"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "ストレージ容量は ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME }、${ DRIVE_APP_NAME } で共有されます。"
+      ],
+      "Use your own custom email domain address, e.g., you@yourname.com": [
+        "独自ドメインのメールアドレスを使用する（例：you@yourname.com）"
       ]
     },
     "new_plans: label": {
@@ -4986,14 +5001,14 @@
       "Discover all ${ BRAND_NAME } services": [
         "すべての ${ BRAND_NAME } サービスを 1 つのアカウントで"
       ],
+      "More theming options are available in your account Settings > Appearance.": [
+        "その他のテーマ設定オプションは、アカウントの「設定」>「外観」で利用できます。"
+      ],
       "Select a theme": [
         "テーマを選択"
       ],
       "Set up your organization": [
         "組織のための設定"
-      ],
-      "Set up your organization testing": [
-        "組織の設定"
       ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
         "左上のアプリセレクターで、すべてのアプリにアクセスできます。 ${ BRAND_NAME } サービス: ${ MAIL_SHORT_APP_NAME }・ ${ VPN_SHORT_APP_NAME }・ ${ CALENDAR_SHORT_APP_NAME }・ ${ DRIVE_SHORT_APP_NAME }"
@@ -5508,6 +5523,24 @@
     "Success notification when user send feedback": {
       "Feedback sent": [
         "フィードバックを送信しました"
+      ]
+    },
+    "summer2023: Billing cycle option": {
+      "1 year": [
+        "1 年"
+      ],
+      "2 years": [
+        "2 年"
+      ]
+    },
+    "summer2023:Info": {
+      "We’re celebrating the nine-year anniversary of our crowdfunding!": [
+        "クラウドファンディングを開始してから９周年です！"
+      ]
+    },
+    "summer2023:Offer title": {
+      "${ BRAND_NAME } Anniversary Sale": [
+        "${ BRAND_NAME } 記念セール"
       ]
     },
     "Table header": {
@@ -6089,6 +6122,9 @@
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "「自動」はこのユーザーに送信する際の書式が、自動選択される事を示しています。「プレーンテキスト」は、常にプレーンテキストに変換されてメッセージが送信されることを示します。"
       ],
+      "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
+        "システムの昼夜モードと同期して、昼と夜のお好みのテーマを自動的に切り替える"
+      ],
       "Customize import to reduce the number of folders": [
         "フォルダー数を減らすためにインポートをカスタマイズします"
       ],
@@ -6131,8 +6167,20 @@
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "システムのサブフォルダーは ${ MAIL_APP_NAME } のそれそれのフォルダーとして表示されます"
       ],
+      "The image could not be loaded": [
+        "画像が読み込めませんでした"
+      ],
+      "The image could not be loaded using proxy": [
+        "プロキシを使用して画像を読み込めませんでした"
+      ],
       "The import will start with the most recent messages.": [
         "インポートは新しいメッセージから始まります。"
+      ],
+      "The selected theme will be active when your system is set to \"dark mode\"": [
+        "選択したテーマは、システムが「ダークモード」に設定されているときに有効になります。"
+      ],
+      "The selected theme will be active when your system is set to \"light mode\"": [
+        "選択したテーマは、システムが「ライトモード」に設定されているときに有効になります。"
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "公開鍵をアップロードすると、このメールアドレス宛の電子メールをエンドツーエンド暗号化することができます"
