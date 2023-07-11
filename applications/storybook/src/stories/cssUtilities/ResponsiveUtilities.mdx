@@ -1,0 +1,90 @@
+import { Canvas, Meta, Primary, Source, Story } from '@storybook/addon-docs';
+
+import { Table, TableBody, TableCell, TableHeader, TableRow } from '@proton/components';
+
+import Resizeme from './Resizeme';
+
+# Responsive utilities
+
+The most common utilities can be applied conditionally at different breakpoints, making it easy to build complex responsive directly using classes on your components.
+
+Here are those breakpoints:
+
+<Table className="color-norm">
+    <TableHeader>
+        <TableRow>
+            <TableCell type="header" className="w-1/5">
+                Prefix
+            </TableCell>
+            <TableCell type="header" className="w-1/4">
+                Breakpoint width
+            </TableCell>
+            <TableCell type="header">Generated CSS</TableCell>
+        </TableRow>
+    </TableHeader>
+    <TableBody>
+        <TableRow>
+            <TableCell>
+                <code>sm</code>
+            </TableCell>
+            <TableCell>450px</TableCell>
+            <TableCell>
+                <code>@media (min-width: 28.135em)</code>
+            </TableCell>
+        </TableRow>
+        <TableRow>
+            <TableCell>
+                <code>md</code>
+            </TableCell>
+            <TableCell>680px</TableCell>
+            <TableCell>
+                <code>@media (min-width: 42.51em)</code>
+            </TableCell>
+        </TableRow>
+        <TableRow>
+            <TableCell>
+                <code>lg</code>
+            </TableCell>
+            <TableCell>910px</TableCell>
+            <TableCell>
+                <code>@media (min-width: 56.885em)</code>
+            </TableCell>
+        </TableRow>
+        <TableRow>
+            <TableCell>
+                <code>xl</code>
+            </TableCell>
+            <TableCell>1100px</TableCell>
+            <TableCell>
+                <code>@media (min-width: 68.76em)</code>
+            </TableCell>
+        </TableRow>
+    </TableBody>
+</Table>
+
+To apply a utility selectively at a specific breakpoint, simply prepend the breakpoint name, followed by the `:` character, to the utility:
+
+```html
+<Component className="pl-4 sm:pl-8 md:pl-10 lg:pl-12 xl:pl-14">…</Component>
+```
+
+<Resizeme />
+<div className="border p-4 rounded bg-weak mb-4" style={{ width: '320px', resize: 'horizontal', overflow: 'auto' }}>
+    <Story id="css-utilities-responsive--responsive" />
+</div>
+
+As mentioned, this works for all the most common utilities. If at any time you find yourself lacking a responsive utility, don't hesitate to contact the UXE team.
+
+## This is mobile first
+
+We've reversed the logic of responsive compared to legacy mechanics.
+
+From now on, our responsive utilities use a **mobile-first approach**, similar to what you may have seen in other frameworks such as Bootstrap or Tailwind.
+
+This means that as soon as you apply a utility class to an element, it affects all screen sizes, while **a responsive utility will affect screens of the desired size and above**.
+
+Following this logic, if you want to apply a class only on mobile, for example, you'll have to override it with another utility for larger screen sizes. So if, for example, you want to apply a `flex` only on mobile, you'll need to apply a class to override it on larger screens, probably `block`:
+
+```html
+<Component className="flex sm:block">…</Component>
+```
