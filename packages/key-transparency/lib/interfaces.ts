@@ -99,7 +99,14 @@ export interface LocalStorageAuditResult {
 
 export interface SelfAuditResult {
     auditTime: number;
+    nextAuditTime: number;
     addressAuditResults: AddressAuditResult[];
     localStorageAuditResultsOwnAddress: LocalStorageAuditResult[];
     localStorageAuditResultsOtherAddress: LocalStorageAuditResult[];
+    error?: SelfAuditError;
+}
+
+export interface SelfAuditError {
+    failedTrials: number;
+    tooManyRetries: boolean;
 }
