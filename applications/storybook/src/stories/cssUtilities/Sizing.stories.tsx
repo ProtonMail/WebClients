@@ -1,5 +1,10 @@
+import { Tooltip } from '@proton/components/components';
+
+
+
 import { getTitle } from '../../helpers/title';
 import mdx from './Sizing.mdx';
+
 
 export default {
     title: getTitle(__filename, false),
@@ -11,56 +16,85 @@ export default {
 };
 
 const demoItemClasses =
-    'user-select flex flex-align-items-center py-2 flex-justify-center bg-primary rounded-sm text-center';
-const demoContainerClasses = 'border p-4 rounded w100 relative flex flex-column gap-2 scroll-if-needed text-2xs';
+    'user-select flex flex-align-items-center py-2 flex-justify-center bg-strong rounded-sm text-center text-nowrap';
+const demoContainerClasses = 'border p-4 my-4 rounded w100 relative flex flex-column gap-2 overflow-auto text-sm';
 
-export const WidthPercents = () => {
-    const sizes = [0, 1, 2, 3, 5, 10, 15, 18, 20, 25, 30, 33, 35, 40, 45, 49, 50, 60, 66, 70, 75, 80, 90, 95, 100];
+export const Fractions = () => {
+    const sizes = [
+        '1/2',
+        '1/2',
+        '1/3',
+        '2/3',
+        '1/4',
+        '2/4',
+        '1/4',
+        '1/4',
+        '3/4',
+        '2/5',
+        '1/5',
+        '2/5',
+        '2/5',
+        '3/5',
+        '1/6',
+        '2/6',
+        '3/6',
+        '4/6',
+        '2/6',
+        '5/6',
+        '1/6',
+    ];
+
+    return (
+        <div className="border py-4 my-4 px-2 rounded w100 relative gap-y-4 flex overflow-auto">
+            {sizes.map((size) => (
+                <Tooltip title={`Equivalent to ${Math.round(eval(size) * 10000) / 100}%`} openDelay={0}>
+                    <div className={`w-${size} px-2`}>
+                        <div className={demoItemClasses}>w-{size}</div>
+                    </div>
+                </Tooltip>
+            ))}
+        </div>
+    );
+};
+
+export const Responsive = () => {
+    return (
+        <div className="border py-4 px-2 rounded w100 relative gap-y-4 flex overflow-auto">
+            <div className="w-full sm:w-1/2 md:w-2/3 lg:w-1/4 px-2">
+                <div className={demoItemClasses}>item</div>
+            </div>
+            <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 px-2">
+                <div className={demoItemClasses}>item</div>
+            </div>
+            <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 px-2">
+                <div className={demoItemClasses}>item</div>
+            </div>
+            <div className="w-full sm:w-1/2 md:w-2/3 lg:w-1/4 px-2">
+                <div className={demoItemClasses}>item</div>
+            </div>
+        </div>
+    );
+};
+
+Responsive.parameters = {
+    docs: {
+        iframeHeight: '250px',
+        inlineStories: false,
+    },
+    layout: 'fullscreen',
+};
+
+export const Framework = () => {
+    const sizes = [0, 'px', 2, 4, 'full', 'auto'];
 
     return (
         <div className={demoContainerClasses}>
             {sizes.map((size) => (
-                <div className={`${demoItemClasses} w${size}`}>
-                    <span className={`${size === 0 ? 'color-norm relative' : ''}`}>w{size}</span>
+                <div className={`${demoItemClasses} w-${size}`}>
+                    <span className={`${size === 'full' || size === 'auto' ? '' : 'color-norm relative ml-8'}`}>
+                        w-{size}
+                    </span>
                 </div>
-            ))}
-        </div>
-    );
-};
-
-export const WidthPixels = () => {
-    const sizes = [10, 40, 50, 70, 80, 90, 150, 200, 250, 300, 500];
-
-    return (
-        <div className={demoContainerClasses}>
-            {sizes.map((size) => (
-                <div className={`${demoItemClasses} w${size}p`}>
-                    <span className={`${size === 10 ? 'color-norm relative ml-8' : ''}`}>w{size}p</span>
-                </div>
-            ))}
-        </div>
-    );
-};
-
-export const WidthEm = () => {
-    const sizes = [2, 3, 4, 5, 6, 8, 10, 11, 13, 14, 15, 16, 20, 24];
-
-    return (
-        <div className={demoContainerClasses}>
-            {sizes.map((size) => (
-                <div className={`${demoItemClasses} w${size}e`}>w{size}e</div>
-            ))}
-        </div>
-    );
-};
-
-export const MaxWidthPercent = () => {
-    const sizes = [50, 60, 80, 100];
-
-    return (
-        <div className={demoContainerClasses}>
-            {sizes.map((size) => (
-                <div className={`${demoItemClasses} max-w${size} w100`}>max-w{size}</div>
             ))}
         </div>
     );

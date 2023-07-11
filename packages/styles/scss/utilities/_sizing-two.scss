@@ -25,28 +25,22 @@ $queries: (
 	xl: '>large',
 );
 
-@for $i from 2 through 6 {
-	@for $j from 1 through $i - 1 {
-		@include responsive-classes(w-#{$j}\/#{$i}) {
-			inline-size: #{math.div($j, $i) * 100%};
-		}
-	}
-}
-
 @each $breakpointname, $query in $queries {
 	@include media($query) {
 		@each $direction, $property in $directions {
 			@each $boundary in $boudaries {
 				$propname: dash-join($boundary, $property, 'size');
 				@each $sizingname, $size in $sizings {
-					$classname: #{if($breakpointname == 'default', '', $breakpointname + '\\\:')}#{dash-join(
-							$boundary,
-							$direction,
-							$sizingname
-						)};
+					@if $sizingname != 'auto' or $sizingname == 'auto' and $boundary == '' {
+						$classname: #{if($breakpointname == 'default', '', $breakpointname + '\\\:')}#{dash-join(
+								$boundary,
+								$direction,
+								$sizingname
+							)};
 
-					.#{$classname} {
-						#{$propname}: #{pixel-to-rem($size)};
+						.#{$classname} {
+							#{$propname}: #{pixel-to-rem($size)};
+						}
 					}
 				}
 
@@ -68,6 +62,14 @@ $queries: (
 					}
 				}
 			}
+		}
+	}
+}
+
+@for $i from 2 through 6 {
+	@for $j from 1 through $i - 1 {
+		@include responsive-classes(w-#{$j}\/#{$i}) {
+			inline-size: #{math.div($j, $i) * 100%};
 		}
 	}
 }
