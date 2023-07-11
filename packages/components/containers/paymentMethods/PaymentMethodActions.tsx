@@ -1,14 +1,19 @@
 import { c } from 'ttag';
 
 import { deletePaymentMethod, orderPaymentMethods } from '@proton/shared/lib/api/payments';
-import { isExpired } from '@proton/shared/lib/helpers/card';
 
 import { Alert } from '../../components/alert';
 import { ErrorButton } from '../../components/button';
 import DropdownActions, { DropdownActionProps } from '../../components/dropdown/DropdownActions';
 import { ConfirmModal } from '../../components/modal';
 import { useApi, useEventManager, useModals, useNotifications } from '../../hooks';
-import { CardModel, PAYMENT_METHOD_TYPES, PaymentMethod, PaymentMethodCardDetails } from '../../payments/core';
+import {
+    CardModel,
+    PAYMENT_METHOD_TYPES,
+    PaymentMethodCardDetails,
+    SavedPaymentMethod,
+    isExpired,
+} from '../../payments/core';
 import EditCardModal from '../payments/EditCardModal';
 
 const toCardModel = ({ Details }: PaymentMethodCardDetails): CardModel => {
@@ -25,8 +30,8 @@ const toCardModel = ({ Details }: PaymentMethodCardDetails): CardModel => {
 
 export interface Props {
     index: number;
-    method: PaymentMethod;
-    methods: PaymentMethod[];
+    method: SavedPaymentMethod;
+    methods: SavedPaymentMethod[];
 }
 
 const PaymentMethodActions = ({ method, methods, index }: Props) => {

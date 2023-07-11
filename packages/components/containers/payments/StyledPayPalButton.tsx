@@ -1,11 +1,12 @@
 import paypalSvg from '@proton/styles/assets/img/bank-icons/paypal-color.svg';
 import clsx from '@proton/utils/clsx';
 
-import PayPalButton, { PayPalButtonProps } from './PayPalButton';
+import PayPalButton, { LegacyPayPalButtonProps, NewPayPalButtonProps } from './PayPalButton';
 
 import './StyledPayPalButton.scss';
 
-type Props = Omit<PayPalButtonProps, 'children' | 'shape' | 'color' | 'icon'>;
+type Omitted = 'children' | 'shape' | 'color' | 'icon';
+type Props = Omit<LegacyPayPalButtonProps, Omitted> | Omit<NewPayPalButtonProps, Omitted>;
 
 const StyledPayPalButton = ({ className, ...rest }: Props) => {
     const payPalButtonClassName = clsx(['paypal-button', className]);

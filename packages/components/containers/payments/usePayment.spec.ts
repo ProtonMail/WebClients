@@ -4,7 +4,7 @@ import { PAYMENT_METHOD_TYPES } from '@proton/components/payments/core';
 import { Api } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
-import { CardModel, WrappedCardPayment } from '../../payments/core/interface';
+import { CardModel, WrappedCardPayment } from '../../payments/core';
 import usePayment from './usePayment';
 
 jest.mock('./usePayPal', () =>
