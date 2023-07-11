@@ -1595,7 +1595,7 @@
         "${ participantName } aceitou provisoriamente o seu convite."
       ],
       "(Attendance optional)": [
-        "(Presença opcional)"
+        "(presença opcional)"
       ],
       "Adding occurrences to an event is not supported for the moment": [
         "A adição de ocorrências a um evento não é suportada no momento."
@@ -2955,12 +2955,6 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Pode marcar para eliminação os contactos que não deseja unir nem manter. A eliminação só ocorrerá depois de clicar no botão de união"
-      ],
-      "You can read the message and click on links without being tracked with email tracker protection.": [
-        "Pode ler a mensagem e clicar nas ligações sem ser rastreado com a proteção do rastreador de e-mail."
-      ],
-      "You can read the message and click on links without being tracked.": [
-        "Pode ler a mensagem e clicar nas ligações sem ser rastreado."
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3145,7 +3139,7 @@
       ],
       "Choose a date within the next ${ SCHEDULED_MAX_DATE_DAYS } day.": [
         "Selecione uma data no próximo ${ SCHEDULED_MAX_DATE_DAYS } dia.",
-        "Seleccione uma data nos próximos ${ SCHEDULED_MAX_DATE_DAYS } dias."
+        "Selecione uma data nos próximos ${ SCHEDULED_MAX_DATE_DAYS } dias."
       ],
       "Condition incomplete": [
         "Condição incompleta"
@@ -4105,9 +4099,6 @@
     "Font face option": {
       "System default": [
         "Predefinição do sistema"
-      ],
-      "Theme default": [
-        "Tema predefinido"
       ]
     },
     "Font Size Default": {
@@ -4147,14 +4138,56 @@
       ]
     },
     "Get started checklist instructions": {
+      "${ MAIL_APP_NAME } app": [
+        "${ MAIL_APP_NAME } app"
+      ],
+      "${ MAIL_APP_NAME } on App Store": [
+        "${ MAIL_APP_NAME } na App Store"
+      ],
+      "${ MAIL_APP_NAME } on Play Store": [
+        "${ MAIL_APP_NAME } na Play Store"
+      ],
+      "Block email communications from scammers permanently.": [
+        "Bloqueie permanentemente mensagens de golpistas."
+      ],
+      "Block unsavory senders": [
+        "Bloqueie remetentes indesejados"
+      ],
+      "Bravo for making your email even more secure, convenient, and relevant! We've upped your free storage to a total of 1 GB.": [
+        "Parabéns por tornar o seu e-mail ainda mais seguro, prático e relevante! Aumentámos o seu armazenamento gratuito para um total de 1 GB."
+      ],
+      "Checklist complete": [
+        "Lista de verificação completa"
+      ],
       "Close": [
         "Fechar"
+      ],
+      "Congratulation, you completed all the steps!": [
+        "Parabéns! Completou todas as etapas."
+      ],
+      "Continue setting up your email": [
+        "Continue a configurar o seu email"
+      ],
+      "Double your free storage to 1 GB when you complete the following:": [
+        "Dobre o seu armazenamento gratuito para 1 GB quando finalizar o seguinte:"
+      ],
+      "Encryption so strong, only you and intended recipients can view your emails.": [
+        "Uma encriptação tão robusta, que somente você e os seus destinatários podem ler os e-mails."
+      ],
+      "For your eyes only": [
+        "Só para si"
+      ],
+      "Get free storage": [
+        "Obter armazenamento grátis"
       ],
       "Get mobile app": [
         "Obtenha a aplicação móvel"
       ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "Obter a aplicação móvel do ${ MAIL_APP_NAME }"
+      ],
+      "Get the App": [
+        "Descarrega a aplicação"
       ],
       "Import contacts or emails": [
         "Importar contactos ou e-mails"
@@ -4165,17 +4198,53 @@
       "Import your contacts or messages": [
         "Importar contactos ou mensagens"
       ],
+      "Keep using ${ MAIL_APP_NAME } to discover more ways ${ BRAND_NAME } protects your privacy and simplifies emailing.": [
+        "Continue utilizando o ${ MAIL_APP_NAME } para descobrir mais sobre como o ${ BRAND_NAME } protege sua privacidade e simplifica a gestão de e-mails."
+      ],
       "Learn more": [
         "Saiba mais"
       ],
+      "Make ${ BRAND_NAME } your go-to inbox": [
+        "Faça do ${ BRAND_NAME } sua caixa de entrada"
+      ],
       "Maybe later": [
         "Talvez mais tarde"
+      ],
+      "Nice! You've updated all services in this category.": [
+        "Ótimo! Atualizou todos os serviços nesta categoria."
+      ],
+      "Open checklist": [
+        "Abrir a lista de verificação"
+      ],
+      "Popular online services": [
+        "Serviços em linha populares"
+      ],
+      "Protect and simplify your email": [
+        "Proteja e simplifique o seu email"
+      ],
+      "Protection from trackers": [
+        "Proteção contra rastreadores"
       ],
       "Quickly transfer your contacts or emails from any provider using our Easy Switch import assistant.": [
         "Transfira rapidamente os seus contactos ou e-mails de qualquer provedor com o nosso assistente de importação Easy Switch."
       ],
       "Send a message": [
         "Enviar uma mensagem"
+      ],
+      "Set recovery method": [
+        "Definir um método de recuperação"
+      ],
+      "Sign in to the mobile app to complete this step": [
+        "Inicie sessão na aplicação móvel para concluir este passo"
+      ],
+      "Using your mobile device, scan this QR code or visit the iOS or Android store.": [
+        "Utilizando o seu dispositivo móvel, escaneie este código QR ou visite a loja de aplicações iOS ou Android."
+      ],
+      "We stop advertisers and data collectors from profiling you.": [
+        "Nós impedimos que anunciantes e coletores de informações analisem os seus dados."
+      ],
+      "You've unlocked 1 GB": [
+        "Desbloqueou 1 GB"
       ]
     },
     "Gmail forwarding": {
@@ -7336,11 +7405,13 @@
       "Set up your organization": [
         "Defina a sua organização"
       ],
-      "Set up your organization testing": [
-        "Defina a sua organização"
-      ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
         "Utilize o seletor de aplicações no canto superior esquerdo para aceder a todos os serviços ${ BRAND_NAME }: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } e ${ DRIVE_SHORT_APP_NAME }."
+      ]
+    },
+    "Online accounts": {
+      "Have an account with one of these services? Just click to change the email address to your ${ MAIL_APP_NAME } address.": [
+        "Tem uma conta com algum desses serviços? Basta clicar para alterar o endereço de e-mail para o seu endereço do ${ MAIL_APP_NAME }."
       ]
     },
     "Online Accounts Name": {
@@ -7350,17 +7421,17 @@
       "Crypto": [
         "Cripto"
       ],
+      "E-commerce and Retail": [
+        "Comércio eletrônico e varejista"
+      ],
       "Entertainment": [
         "Entretenimento"
       ],
       "Food and beverage": [
-        "Alimentação e bebidas"
+        "Comida e bebida"
       ],
       "Gaming": [
         "Jogos"
-      ],
-      "Most popular": [
-        "Mais popular"
       ],
       "Travel": [
         "Viagens"
@@ -8379,6 +8450,70 @@
         "Comentário enviado"
       ]
     },
+    "summer2023: Billing cycle option": {
+      "1 year": [
+        "1 ano"
+      ],
+      "2 years": [
+        "2 anos"
+      ]
+    },
+    "summer2023: Deal details": {
+      "Premium Drive": [
+        "Versão premium do Drive"
+      ],
+      "Premium Mail and Calendar": [
+        "Versão premium do Mail e Calendar"
+      ],
+      "Premium Password Manager": [
+        "Versão premium do gestor de palavras-passe"
+      ]
+    },
+    "summer2023: Describe Proton Pass": {
+      "Securely store your passwords and autofill them on websites. Includes unlimited passwords, autofill, password generator, and more.": [
+        "Armazene as suas palavaras-passe com segurança e preencha-as automaticamente nos sítios web. Inclui palavaras-passe ilimitadas, preenchimento automático, gerador de palavaras-passe e mais."
+      ]
+    },
+    "summer2023: Short tool name to present Proton Pass": {
+      "Password manager": [
+        "Gestor de palavras-passe"
+      ]
+    },
+    "summer2023: Tooltip": {
+      "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
+        "Crie detalhes seguros de início de sessão em todos os seus dispositivos. Inclui aliases ilimitados, 20 cofres, A2F integrada, preenchimento automático de cartão de crédito e muito mais."
+      ],
+      "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "Inclui mais de 2950 servidores em mais de 65 países, ligue até 10 dispositivos, aceda a serviços de streaming em todo o mundo, malware e bloqueador de anúncios e muito mais."
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Inclui o suporte para 1 domínio de e-mail personalizado, 10 endereços de e-mail, 10 aliases Hide-my-email, partilha de calendário e muito mais."
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "Proteja os seus arquivos com armazenamento encriptado na nuvem. Inclui histórico de versões, partilhamento de ficheiros encriptados e muito mais."
+      ]
+    },
+    "summer2023:Footer": {
+      "*Your subscription will automatically renew at the standard discounted rate at the end of your billing cycle.": [
+        "*A sua subscrição será renovada automaticamente à taxa normal com desconto no final do seu ciclo de faturação."
+      ],
+      "Discounts are based on the standard monthly pricing. This offer is only available to first-time subscribers.": [
+        "Os descontos são baseados no preço mensal padrão. Esta oferta está disponível somente para novos subscritores."
+      ]
+    },
+    "summer2023:Info": {
+      "For a limited time, get the best ${ BRAND_NAME } has to offer at an exclusive discount.": [
+        "Por tempo limitado, obtenha o melhor da ${ BRAND_NAME } com um desconto exclusivo."
+      ],
+      "We’re celebrating the nine-year anniversary of our crowdfunding!": [
+        "Estamos a celebrar o 9º aniversário do nosso crowdfunding!"
+      ]
+    },
+    "summer2023:Offer title": {
+      "${ BRAND_NAME } Anniversary Sale": [
+        "Oferta de aniversário da ${ BRAND_NAME }"
+      ]
+    },
     "Table header": {
       "Action": [
         "Ação"
@@ -8986,9 +9121,6 @@
       "Subject missing": [
         "O assunto está em falta"
       ],
-      "This email is protected": [
-        "Este e-mail está protegido."
-      ],
       "To": [
         "Para"
       ],
@@ -9091,7 +9223,7 @@
         "Ocultar o painel lateral"
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
-        "Seleccione o esquema PGP a usar ao assinar ou encriptar para um utilizador. Note que o PGP/incorporado força o envio de mensagens em texto simples"
+        "Selecione o esquema PGP a usar ao assinar ou encriptar para um utilizador. Note que o PGP/incorporado força o envio de mensagens em texto simples"
       ],
       "Show side panel": [
         "Mostrar o painel lateral"

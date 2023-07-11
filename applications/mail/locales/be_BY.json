@@ -145,6 +145,9 @@
       "Carbon Copy": [
         "Копія"
       ],
+      "Change email": [
+        "Змяніць электронную пошту"
+      ],
       "Change page": [
         "Змяніць старонку"
       ],
@@ -2972,12 +2975,6 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Вы можаце пазначыць тыя кантакты, якія вы не хочаце аб'яднаць і пакідаць. Выдаленне адбываецца толькі пасля націску кнопкі аб'яднання"
-      ],
-      "You can read the message and click on links without being tracked with email tracker protection.": [
-        "Вы можаце прачытаць паведамленне і націснуць на спасылку не хвалюючыся пра адсочванне дзякуючы абароне ад праграм сачэння электроннай пошты."
-      ],
-      "You can read the message and click on links without being tracked.": [
-        "Вы можаце прачытаць паведамленне і націснуць на спасылку не хвалюючыся пра адсочванне."
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4160,9 +4157,6 @@
     "Font face option": {
       "System default": [
         "Адпаведна сістэме"
-      ],
-      "Theme default": [
-        "Прадвызначаная тэма"
       ]
     },
     "Font Size Default": {
@@ -4202,17 +4196,143 @@
       ]
     },
     "Get started checklist instructions": {
+      "${ MAIL_APP_NAME } app": [
+        "Праграма ${ MAIL_APP_NAME }"
+      ],
+      "${ MAIL_APP_NAME } on App Store": [
+        "${ MAIL_APP_NAME } у App Store"
+      ],
+      "${ MAIL_APP_NAME } on Play Store": [
+        "${ MAIL_APP_NAME } у Play Store"
+      ],
+      "account logins": [
+        "даныя ўваходу ўліковага запісу"
+      ],
+      "Auto-forward Gmail": [
+        "Аўтаперасыланне Gmail"
+      ],
+      "auto-forwarding": [
+        "аўтаперасыланне"
+      ],
+      "Block email communications from scammers permanently.": [
+        "Цалкам блакіруйце электронныя лісты ад ашуканцаў."
+      ],
+      "Block unsavory senders": [
+        "Блакіруйце адпраўнікоў з дрэннай рэпутацыяй"
+      ],
+      "Bravo for making your email even more secure, convenient, and relevant! We've upped your free storage to a total of 1 GB.": [
+        "Цудоўна, што робіце сваю электронную пошту яшчэ больш бяспечнай, зручнай, і актуальнай! Мы павялічылі аб'ём вашага бясплатнага месца ў сховішчы да 1 ГБ."
+      ],
+      "Change ${ strongText } to your ${ BRAND_NAME } address": [
+        "Змяніце ${ strongText } на ваш адрас ${ BRAND_NAME }"
+      ],
+      "Checklist complete": [
+        "Кантрольны спіс завершаны"
+      ],
+      "Close": [
+        "Закрыць"
+      ],
+      "Congratulation, you completed all the steps!": [
+        "Віншуем, вы выканалі ўсе крокі!"
+      ],
+      "Continue setting up your email": [
+        "Працягнуць наладжванне электроннай пошты"
+      ],
+      "Discover how our ${ strongText } protect you": [
+        "Даведайцеся, як наш ${ strongText } вас абараняе"
+      ],
+      "Discover privacy features": [
+        "Даведайцеся пра функцыі прыватнасці"
+      ],
+      "Double your free storage to 1 GB when you complete the following:": [
+        "Падвойце бясплатнае сховішча да 1 ГБ, выканаўшы наступныя дзеянні:"
+      ],
+      "Encryption so strong, only you and intended recipients can view your emails.": [
+        "У нас настолькі надзейнае шыфраванне, што толькі вы і прызначаныя атрымальнікі змогуць прачытаць вашы лісты."
+      ],
+      "For your eyes only": [
+        "Толькі для вашых вачэй"
+      ],
+      "Get free storage": [
+        "Атрымаць бясплатнае сховішча"
+      ],
+      "Get mobile app": [
+        "Атрымаць мабільную праграму"
+      ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "Атрымаць мабільную праграму ${ MAIL_APP_NAME }"
+      ],
+      "Get the ${ strongText } on Android or iOS": [
+        "Атрымайце ${ strongText } на Android або iOS"
+      ],
+      "Get the App": [
+        "Атрымаць праграму"
       ],
       "Import contacts or emails": [
         "Імпартуйце кантакты або лісты"
       ],
+      "Import data": [
+        "Імпартаваць даныя"
+      ],
       "Import your contacts or messages": [
         "Імпартуйце вашы кантакты або паведамленні"
       ],
+      "Keep using ${ MAIL_APP_NAME } to discover more ways ${ BRAND_NAME } protects your privacy and simplifies emailing.": [
+        "Працягвайце выкарыстоўваць ${ MAIL_APP_NAME }, каб даведацца больш спосабаў, як з ${ BRAND_NAME } абараніць сваю прыватнасць і спрасціць адпраўку лістоў."
+      ],
+      "Learn more": [
+        "Даведацца больш"
+      ],
+      "Make ${ BRAND_NAME } your go-to inbox": [
+        "Зрабіце ${ BRAND_NAME } сваёй уваходнай паштовай скрыняй"
+      ],
+      "Maybe later": [
+        "Магчыма пазней"
+      ],
+      "Nice! You've updated all services in this category.": [
+        "Цудоўна! Вы абнавілі ўсе сэрвісы ў гэтай катэгорыі."
+      ],
+      "Open checklist": [
+        "Адкрыць кантроль спіс"
+      ],
+      "Popular online services": [
+        "Папулярныя сеткавыя сэрвісы"
+      ],
+      "privacy features": [
+        "функцыі прыватнасці"
+      ],
+      "Protect and simplify your email": [
+        "Абарона і спрашчэнне электроннай пошты"
+      ],
+      "Protection from trackers": [
+        "Абарона ад праграм сачэння"
+      ],
       "Quickly transfer your contacts or emails from any provider using our Easy Switch import assistant.": [
         "Хутка перанясіце вашы кантакты або лісты ад любога пастаўшчыка паслуг выкарыстоўваючы памочнік па імпартаванні Easy Switch."
+      ],
+      "Send a message": [
+        "Адправіць паведамленне"
+      ],
+      "Set recovery method": [
+        "Задаць метад аднаўлення"
+      ],
+      "Set up ${ strongText } from Gmail": [
+        "Наладзьце ${ strongText } з Gmail"
+      ],
+      "Sign in to the mobile app to complete this step": [
+        "Увайдзіце ў мабільную праграму, каб завяршыць гэты крок"
+      ],
+      "Update your logins": [
+        "Абнавіце вашы запісы ўваходу"
+      ],
+      "Using your mobile device, scan this QR code or visit the iOS or Android store.": [
+        "Выкарыстоўваючы мабільны тэлефон, адсканіруйце гэты QR-код або наведайце краму iOS або Android."
+      ],
+      "We stop advertisers and data collectors from profiling you.": [
+        "Мы не дазваляем рэкламадаўцам і зборшчыкам даных фарміраваць ваш профіль."
+      ],
+      "You've unlocked 1 GB": [
+        "Вы разблакіравалі 1 ГБ"
       ]
     },
     "Gmail forwarding": {
@@ -5379,7 +5499,7 @@
         "Назавіце новую папку і выберыце бацькоўскую папку, у якую вы хочаце яе ўкласці. Калі вы не выбераце бацькоўскую папку, то гэта новая папка будзе створана як папка верхняга ўзроўню."
       ],
       "New": [
-        "Новы"
+        "Новае"
       ],
       "No action selected": [
         "Дзеянне не выбрана"
@@ -7541,11 +7661,39 @@
       "Set up your organization": [
         "Наладзьце сваю арганізацыю"
       ],
-      "Set up your organization testing": [
-        "Наладзьце тэсціраванне сваёй арганізацыі"
-      ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
         "Скарыстайцеся выбарам праграм злева ўверсе для атрымання доступу да ўсіх сэрвісаў ${ BRAND_NAME }: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } і ${ DRIVE_SHORT_APP_NAME }."
+      ]
+    },
+    "Online accounts": {
+      "Have an account with one of these services? Just click to change the email address to your ${ MAIL_APP_NAME } address.": [
+        "У вас ужо ёсць уліковы запіс у адным з гэтых сэрвісаў? Проста націсніце, каб змяніць адрас электроннай пошты на адрас ${ MAIL_APP_NAME }."
+      ]
+    },
+    "Online Accounts Name": {
+      "Banking": [
+        "Банкаўская справа"
+      ],
+      "Crypto": [
+        "Крыпта"
+      ],
+      "E-commerce and Retail": [
+        "Электронная камерцыя і рознічны продаж"
+      ],
+      "Entertainment": [
+        "Забавы"
+      ],
+      "Food and beverage": [
+        "Ежа і напоі"
+      ],
+      "Gaming": [
+        "Гульні"
+      ],
+      "Travel": [
+        "Падарожжы"
+      ],
+      "Utilities": [
+        "Утыліты"
       ]
     },
     "Option": {
@@ -8139,7 +8287,7 @@
         "Прапанова абмежавана па часе"
       ],
       "Most popular": [
-        "Самы папулярны"
+        "Найбольш папулярны"
       ],
       "Offer ends soon": [
         "Прапанова неўзабаве скончыцца"
@@ -8638,6 +8786,70 @@
         "Водгук адпраўлены"
       ]
     },
+    "summer2023: Billing cycle option": {
+      "1 year": [
+        "1 год"
+      ],
+      "2 years": [
+        "2 гады"
+      ]
+    },
+    "summer2023: Deal details": {
+      "Premium Drive": [
+        "Прэміяльныя функцыі Drive"
+      ],
+      "Premium Mail and Calendar": [
+        "Прэміяльныя функцыі Mail і Calendar"
+      ],
+      "Premium Password Manager": [
+        "Прэміяльныя функцыі менеджара пароляў"
+      ]
+    },
+    "summer2023: Describe Proton Pass": {
+      "Securely store your passwords and autofill them on websites. Includes unlimited passwords, autofill, password generator, and more.": [
+        "Бяспечна захоўвайце свае паролі і аўтаматычна запаўняйце іх на вэб-сайтах. Уключае неабмежаваную колькасць пароляў, аўтаматычнае запаўненне, генератар пароляў і іншыя функцыі."
+      ]
+    },
+    "summer2023: Short tool name to present Proton Pass": {
+      "Password manager": [
+        "Менеджар пароляў"
+      ]
+    },
+    "summer2023: Tooltip": {
+      "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
+        "Стварайце бяспечныя даныя для ўваходу на ўсіх сваіх прыладах. Уключае неабмежаваную колькасць псеўданімаў, 20 сховішчаў, інтэграваную 2ФА, аўтаматычнае запаўненне крэдытных картак і іншыя функцыі."
+      ],
+      "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "Уключае больш за 2950 сервераў у больш чым 65 краінах, магчымасць падключаць да 10 прылад, сэрвісы з трансляцыямі па ўсім свеце, блакіроўку шкодных праграм і рэкламы, а таксама іншыя функцыі."
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Уключае падтрымку 1 карыстальніцкага дамена электроннай пошты, 10 адрасоў электроннай пошты, 10 псеўданімаў hide-my-email, абагульванне календара і іншыя функцыі."
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "Абараніце свае файлы з дапамогай зашыфраванага воблачнага сховішча. Уключае гісторыю версій, абагулены доступ да зашыфраваных файлаў і іншыя функцыі."
+      ]
+    },
+    "summer2023:Footer": {
+      "*Your subscription will automatically renew at the standard discounted rate at the end of your billing cycle.": [
+        "*Ваша падпіска будзе аўтаматычна падаўжацца са стандартнай скідкай у канцы перыяду аплаты."
+      ],
+      "Discounts are based on the standard monthly pricing. This offer is only available to first-time subscribers.": [
+        "Скідкі разлічваюцца на падставе стандартнай платы за месяц. Гэтай прапановай могуць скарыстацца толькі тыя падпісчыкі, якія ўпершыню зарэгістраваліся."
+      ]
+    },
+    "summer2023:Info": {
+      "For a limited time, get the best ${ BRAND_NAME } has to offer at an exclusive discount.": [
+        "Атрымайце эксклюзіўную скідку ад ${ BRAND_NAME }. Прапанова абмежавана па часе."
+      ],
+      "We’re celebrating the nine-year anniversary of our crowdfunding!": [
+        "Мы святкуем дзявятую гадавіну нашага краўдфандзінга!"
+      ]
+    },
+    "summer2023:Offer title": {
+      "${ BRAND_NAME } Anniversary Sale": [
+        "Святочны распродаж ${ BRAND_NAME }"
+      ]
+    },
     "Table header": {
       "Action": [
         "Дзеянне"
@@ -8772,7 +8984,7 @@
         "Дадаць у ${ groupCount } групу",
         "Дадаць у ${ groupCount } групы",
         "Дадаць у ${ groupCount } груп",
-        "Дадаць у ${ groupCount } групы"
+        "Дадаць у ${ groupCount } груп"
       ],
       "Add to ${ groupName }": [
         "Дадаць у ${ groupName }"
@@ -9274,9 +9486,6 @@
       ],
       "Subject missing": [
         "Няма тэмы"
-      ],
-      "This email is protected": [
-        "Гэта электронная пошта абаронена"
       ],
       "To": [
         "Каму"

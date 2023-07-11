@@ -145,6 +145,9 @@
       "Carbon Copy": [
         "Con copia"
       ],
+      "Change email": [
+        "Cambiar la dirección de correo"
+      ],
       "Change page": [
         "Cambiar página"
       ],
@@ -1592,7 +1595,7 @@
         "${ participantName } ha aceptado provisionalmente tu invitación."
       ],
       "(Attendance optional)": [
-        "(Asistencia opcional)"
+        "(asistencia opcional)"
       ],
       "Adding occurrences to an event is not supported for the moment": [
         "No es posible añadir sucesos a un evento por el momento."
@@ -1851,19 +1854,19 @@
         "Ir a Archivo"
       ],
       "Go to Drafts": [
-        "Ir a Borradores"
+        "Ir a la carpeta de Borradores"
       ],
       "Go to Inbox": [
         "Ir a la Bandeja de entrada"
       ],
       "Go to Sent": [
-        "Ir a Enviados"
+        "Ir a la carpeta de Enviados"
       ],
       "Go to Spam": [
-        "Ir a Spam"
+        "Ir a la carpeta de Spam"
       ],
       "Go to Starred": [
-        "Ir a Destacados"
+        "Ir a la carpeta de Destacados"
       ],
       "Go to Trash": [
         "Ir a la Papelera"
@@ -2952,12 +2955,6 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Puedes marcar los contactos que no quieres ni combinar ni mantener para eliminarlos. Se eliminarán solo después de que pulses el botón."
-      ],
-      "You can read the message and click on links without being tracked with email tracker protection.": [
-        "Puedes leer el mensaje y hacer clic en los enlaces sin ser rastreado gracias a la protección del rastreador de correo electrónico."
-      ],
-      "You can read the message and click on links without being tracked.": [
-        "Puedes leer el mensaje y hacer clic en los enlaces sin ser rastreado."
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4101,10 +4098,10 @@
     },
     "Font face option": {
       "System default": [
-        "Igual que el sistema"
+        "Valor por defecto"
       ],
-      "Theme default": [
-        "Tema por defecto"
+      "Theme font": [
+        "Fuente del tema"
       ]
     },
     "Font Size Default": {
@@ -4144,17 +4141,143 @@
       ]
     },
     "Get started checklist instructions": {
+      "${ MAIL_APP_NAME } app": [
+        "Aplicación de ${ MAIL_APP_NAME }"
+      ],
+      "${ MAIL_APP_NAME } on App Store": [
+        "${ MAIL_APP_NAME } en App Store"
+      ],
+      "${ MAIL_APP_NAME } on Play Store": [
+        "${ MAIL_APP_NAME } en Play Store"
+      ],
+      "account logins": [
+        "los inicios de sesión de la cuenta"
+      ],
+      "Auto-forward Gmail": [
+        "Reenvío automático de Gmail"
+      ],
+      "auto-forwarding": [
+        "el reenvío automático"
+      ],
+      "Block email communications from scammers permanently.": [
+        "Bloquea las comunicaciones por correo electrónico de los estafadores de forma permanente."
+      ],
+      "Block unsavory senders": [
+        "Bloquee remitentes no deseados"
+      ],
+      "Bravo for making your email even more secure, convenient, and relevant! We've upped your free storage to a total of 1 GB.": [
+        "¡Enhorabuena por hacer que tu correo electrónico sea aún más seguro, cómodo y relevante! Hemos aumentado tu almacenamiento gratuito a un total de 1 GB."
+      ],
+      "Change ${ strongText } to your ${ BRAND_NAME } address": [
+        "Cambia ${ strongText } a tu dirección de ${ BRAND_NAME }."
+      ],
+      "Checklist complete": [
+        "Lista de verificación completada"
+      ],
+      "Close": [
+        "Cerrar"
+      ],
+      "Congratulation, you completed all the steps!": [
+        "¡Felicitaciones! Has completado todos los pasos."
+      ],
+      "Continue setting up your email": [
+        "Continúa configurando tu correo"
+      ],
+      "Discover how our ${ strongText } protect you": [
+        "Descubre cómo nuestras ${ strongText } te protegen"
+      ],
+      "Discover privacy features": [
+        "Descubre las funciones de privacidad"
+      ],
+      "Double your free storage to 1 GB when you complete the following:": [
+        "Duplica tu almacenamiento gratuito a 1 GB cuando completes los siguientes:"
+      ],
+      "Encryption so strong, only you and intended recipients can view your emails.": [
+        "Cifrado tan sólido que solo tú y los destinatarios pueden ver tus correos electrónicos."
+      ],
+      "For your eyes only": [
+        "Solo para ti"
+      ],
+      "Get free storage": [
+        "Obtén almacenamiento gratuito"
+      ],
+      "Get mobile app": [
+        "Descargar la aplicación móvil"
+      ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "Obtén la aplicación móvil de ${ MAIL_APP_NAME }."
+      ],
+      "Get the ${ strongText } on Android or iOS": [
+        "Descarga la ${ strongText } en Android o iOS"
+      ],
+      "Get the App": [
+        "Descargue la aplicación"
       ],
       "Import contacts or emails": [
         "Importar contactos o correos electrónicos"
       ],
+      "Import data": [
+        "Importar datos"
+      ],
       "Import your contacts or messages": [
         "Importar tus contactos o mensajes"
       ],
+      "Keep using ${ MAIL_APP_NAME } to discover more ways ${ BRAND_NAME } protects your privacy and simplifies emailing.": [
+        "Sigue utilizando ${ MAIL_APP_NAME } y descubre más maneras en que ${ BRAND_NAME } protege tu privacidad y simplifica tu correo electrónico."
+      ],
+      "Learn more": [
+        "Más info"
+      ],
+      "Make ${ BRAND_NAME } your go-to inbox": [
+        "Convierte ${ BRAND_NAME } en tu bandeja de entrada preferida"
+      ],
+      "Maybe later": [
+        "Quizás más tarde"
+      ],
+      "Nice! You've updated all services in this category.": [
+        "¡Hecho! Has actualizado todos los servicios en esta categoría."
+      ],
+      "Open checklist": [
+        "Abrir la lista de verificación"
+      ],
+      "Popular online services": [
+        "Servicios populares en línea"
+      ],
+      "privacy features": [
+        "funciones de privacidad"
+      ],
+      "Protect and simplify your email": [
+        "Protege y simplifica tu correo"
+      ],
+      "Protection from trackers": [
+        "Protección contra rastreadores"
+      ],
       "Quickly transfer your contacts or emails from any provider using our Easy Switch import assistant.": [
         "Transfiere rápidamente tus contactos o correos electrónicos de cualquier proveedor usando el asistente de importación Easy Switch."
+      ],
+      "Send a message": [
+        "Enviar un mensaje"
+      ],
+      "Set recovery method": [
+        "Establecer un método de recuperación"
+      ],
+      "Set up ${ strongText } from Gmail": [
+        "Configura ${ strongText } desde Gmail"
+      ],
+      "Sign in to the mobile app to complete this step": [
+        "Inicia sesión en la aplicación móvil para completar este paso."
+      ],
+      "Update your logins": [
+        "Actualiza tus inicios de sesión"
+      ],
+      "Using your mobile device, scan this QR code or visit the iOS or Android store.": [
+        "Usando tu dispositivo móvil, escanea este código QR o visita la tienda de iOS o Android."
+      ],
+      "We stop advertisers and data collectors from profiling you.": [
+        "Impedimos que los anunciantes y recopiladores de datos te perfilen."
+      ],
+      "You've unlocked 1 GB": [
+        "Has desbloqueado 1 GB"
       ]
     },
     "Gmail forwarding": {
@@ -4883,7 +5006,7 @@
         "Personalización anual"
       ],
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
-        "Personalza el aspecto y la sensación de las aplicaciones de ${ BRAND_NAME }"
+        "Personaliza el aspecto y la sensación de las aplicaciones de ${ BRAND_NAME }"
       ],
       "Daily": [
         "Diariamente"
@@ -5706,7 +5829,7 @@
         "Enlace del URL"
       ],
       "URL: ${ unsubscribeMethods.HttpClient }": [
-        "URL：${ unsubscribeMethods.HttpClient }"
+        "URL: ${ unsubscribeMethods.HttpClient }"
       ],
       "Use keyboard shortcuts to manage your email faster.": [
         "Utiliza los atajos del teclado para administrar tus correos rápidamente."
@@ -7307,7 +7430,7 @@
         "Descubre todos los servicios de ${ BRAND_NAME }"
       ],
       "More theming options are available in your account Settings > Appearance.": [
-        "Más opciones de temas están disponibles en tu ajustes de cuenta en la sección Apariencia."
+        "Hay disponibles más opciones de temas en tus ajustes de cuenta, en la sección Apariencia."
       ],
       "Select a theme": [
         "Seleccionar un tema"
@@ -7315,11 +7438,42 @@
       "Set up your organization": [
         "Configura tu organización"
       ],
-      "Set up your organization testing": [
-        "Configura la prueba para tu organización"
-      ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
         "Utiliza el selector de aplicaciones de la parte superior izquierda para acceder a todos los servicios de ${ BRAND_NAME }: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } y ${ DRIVE_SHORT_APP_NAME }."
+      ]
+    },
+    "Online accounts": {
+      "Have an account with one of these services? Just click to change the email address to your ${ MAIL_APP_NAME } address.": [
+        "¿Tienes una cuenta con uno de estos servicios? Solo haz clic para cambiar la dirección de correo a tu dirección de ${ MAIL_APP_NAME }."
+      ]
+    },
+    "Online Accounts Name": {
+      "Banking": [
+        "Operaciones bancarias"
+      ],
+      "Crypto": [
+        "Cripto"
+      ],
+      "E-commerce and Retail": [
+        "Comercio electrónico y minorista"
+      ],
+      "Entertainment": [
+        "Entretenimiento"
+      ],
+      "Food and beverage": [
+        "Alimentación y bebidas"
+      ],
+      "Gaming": [
+        "Juegos"
+      ],
+      "Most popular": [
+        "Más popular"
+      ],
+      "Travel": [
+        "Viajes"
+      ],
+      "Utilities": [
+        "Utilidades"
       ]
     },
     "Option": {
@@ -8310,7 +8464,7 @@
         "Confirmación de lectura enviada"
       ],
       "Self-destruction removed": [
-        "Destrucción automatica eliminada"
+        "Eliminación automática eliminada"
       ],
       "Self-destruction set": [
         "Destrucción automatica configurada"
@@ -8342,10 +8496,10 @@
     },
     "summer2023: Deal details": {
       "Premium Drive": [
-        "Drive premium"
+        "Versión premium de Drive"
       ],
       "Premium Mail and Calendar": [
-        "Mail y Calendar premium"
+        "Versión premium de Mail y Calendar"
       ],
       "Premium Password Manager": [
         "Administrador de contraseñas premium"
@@ -8366,7 +8520,7 @@
         "Crea credenciales seguras de inicio de sesión en todos tus dispositivos. Incluye alias ilimitados, 20 cámaras acorazadas, 2FA integrado, introducción automática de datos de tarjeta de pago, etc."
       ],
       "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
-        "Incluye 2950 servidores en más de 65 países. Conecta hasta 10 dispositivos, accede a servicios de streaming de todo el mundo, dispón de la protección de bloqueadores de malware y anuncios, etc."
+        "Incluye más de 2950 servidores en más de 65 países. Conecta hasta 10 dispositivos, accede a servicios de streaming de todo el mundo, dispón de la protección de bloqueadores de malware y anuncios, etc."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Incluye compatibilidad con 1 dominio de correo electrónico personalizado, 10 direcciones de correo electrónico, 10 alias de hide-my-email, posibilidad de compartir calendario, etc."
@@ -9003,9 +9157,6 @@
       "Subject missing": [
         "Falta el asunto."
       ],
-      "This email is protected": [
-        "Este correo electrónico está protegido."
-      ],
       "To": [
         "Para"
       ],
@@ -9042,6 +9193,10 @@
       ],
       "Warning: suspected fake website": [
         "Advertencia: sospecha de sitio web falso"
+      ],
+      "We protected you from ${ trackersCount } tracker": [
+        "Te hemos protegido de ${ trackersCount } rastreador.",
+        "Te hemos protegido de ${ trackersCount } rastreadores."
       ],
       "Welcome": [
         "¡Te damos la bienvenida!"
@@ -9273,8 +9428,8 @@
         "Cada ${ interval } semanas todos los días"
       ],
       "Every ${ interval } week on all days, ${ timesString }": [
-        "Cada semana todos los días, ${ timesString } ${ interval }",
-        "Cada ${ interval } semanas todos los días a las ${ timesString }"
+        "Todos los días cada ${ interval } semana, ${ timesString }",
+        "Todos los días cada ${ interval } semanas, ${ timesString }"
       ],
       "Every ${ interval } week on all days, ${ untilString }": [
         "Cada semana todos los días, ${ untilString } ${ interval }",
@@ -9297,8 +9452,8 @@
         "Cada ${ interval } semanas los lunes"
       ],
       "Every ${ interval } week on Monday, ${ timesString }": [
-        "Cada semana los lunes a las ${ timesString } ${ interval }",
-        "Cada ${ interval } semanas los lunes a las ${ timesString }"
+        "Los lunes de cada ${ interval } semana, a las ${ timesString }",
+        "Los lunes cada ${ interval } semanas, a las ${ timesString }"
       ],
       "Every ${ interval } week on Monday, ${ untilString }": [
         "Cada semana los lunes, ${ untilString } ${ interval }",
@@ -9321,8 +9476,8 @@
         "Cada ${ interval } semanas los domingos"
       ],
       "Every ${ interval } week on Sunday, ${ timesString }": [
-        "Cada semana los domingos a las ${ timesString } ${ interval }",
-        "Cada ${ interval } semanas los domingos a las ${ timesString }"
+        "Los domingos de cada ${ interval } semana, a las ${ timesString }",
+        "Los domingos cada ${ interval } semanas, a las ${ timesString }"
       ],
       "Every ${ interval } week on Sunday, ${ untilString }": [
         "Cada semana los domingos, ${ untilString } ${ interval }",
