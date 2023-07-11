@@ -1,6 +1,6 @@
 import { HumanVerificationForm, useConfig } from '@proton/components';
 import { HumanVerificationFormProps } from '@proton/components/containers/api/humanVerification/HumanVerificationForm';
-import metrics from '@proton/metrics';
+import metrics, { observeApiError } from '@proton/metrics';
 
 import Content from '../public/Content';
 import Header from '../public/Header';
@@ -29,23 +29,28 @@ const VerificationStep = ({ title, onBack, onSubmit, onClose, onLoaded, onError,
                     }}
                     onError={(...args) => {
                         onError?.(...args);
-                        void metrics.core_signup_verificationStep_verification_total.increment({
-                            status: 'failed',
-                            application: getSignupApplication(APP_NAME),
-                        });
+                        const [error] = args;
+                        observeApiError(error, (status) =>
+                            metrics.core_signup_verificationStep_verification_total.increment({
+                                status,
+                                application: getSignupApplication(APP_NAME),
+                            })
+                        );
                     }}
                     onSubmit={async (...args) => {
                         try {
                             await onSubmit?.(...args);
                             void metrics.core_signup_verificationStep_verification_total.increment({
-                                status: 'successful',
+                                status: 'success',
                                 application: getSignupApplication(APP_NAME),
                             });
                         } catch (error) {
-                            void metrics.core_signup_verificationStep_verification_total.increment({
-                                status: 'failed',
-                                application: getSignupApplication(APP_NAME),
-                            });
+                            observeApiError(error, (status) =>
+                                metrics.core_signup_verificationStep_verification_total.increment({
+                                    status,
+                                    application: getSignupApplication(APP_NAME),
+                                })
+                            );
 
                             throw error;
                         }
