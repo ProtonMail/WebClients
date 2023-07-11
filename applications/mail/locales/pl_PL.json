@@ -145,6 +145,9 @@
       "Carbon Copy": [
         "DW"
       ],
+      "Change email": [
+        "Zmień adres"
+      ],
       "Change page": [
         "Zmień stronę"
       ],
@@ -482,7 +485,7 @@
         "Ukryj wiadomości"
       ],
       "hide-my-email aliases": [
-        "aliasów Hide-my-email"
+        "aliasów hide-my-email"
       ],
       "I have a question": [
         "Mam pytanie"
@@ -1262,7 +1265,7 @@
         "Usunięto 5 elementów śledzących"
       ],
       "Auto forwarded": [
-        "Automatycznie przekierowane"
+        "Automatycznie przekierowanie"
       ],
       "Email received": [
         "Otrzymano wiadomość"
@@ -2972,12 +2975,6 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Możesz oznaczyć do usunięcia te kontakty, których nie chcesz scalić ani zachować. Usunięcie nastąpi dopiero po kliknięciu przycisku Scal"
-      ],
-      "You can read the message and click on links without being tracked with email tracker protection.": [
-        "Dzięki ochronie przed śledzeniem możesz otworzyć wiadomość i jej linki bez utraty prywatności."
-      ],
-      "You can read the message and click on links without being tracked.": [
-        "Możesz otworzyć wiadomość i jej linki bez śledzenia Cię."
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3977,7 +3974,7 @@
         "Zawiera 2700 serwerów w ponad 65 krajach z możliwością połączenia do 10 urządzeń, dostępem do globalnych usług streamingu oraz funkcję blokowania reklam, złośliwego oprogramowania i wiele więcej."
       ],
       "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
-        "Zawiera obsługę 3 niestandardowych domen, 90 adresów e-mail, nieograniczoną liczbę aliasów Hide-my-email, udostępnianie kalendarza i wiele więcej."
+        "Zawiera obsługę 3 niestandardowych domen, 90 adresów e-mail, nieograniczoną liczbę aliasów hide-my-email, udostępnianie kalendarza i wiele więcej."
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Zabezpiecz pliki dzięki szyfrowanej przestrzeni dyskowej w chmurze. Zawiera automatyczną synchronizację, szyfrowane udostępnianie plików i wiele więcej."
@@ -4161,8 +4158,8 @@
       "System default": [
         "Domyślny systemu"
       ],
-      "Theme default": [
-        "Domyślny motyw"
+      "Theme font": [
+        "Czcionka"
       ]
     },
     "Font Size Default": {
@@ -4202,17 +4199,137 @@
       ]
     },
     "Get started checklist instructions": {
+      "${ MAIL_APP_NAME } app": [
+        "aplikację ${ MAIL_APP_NAME }"
+      ],
+      "${ MAIL_APP_NAME } on App Store": [
+        "${ MAIL_APP_NAME } w App Store"
+      ],
+      "${ MAIL_APP_NAME } on Play Store": [
+        "${ MAIL_APP_NAME } w Google Play"
+      ],
+      "account logins": [
+        "dane logowania kont"
+      ],
+      "Auto-forward Gmail": [
+        "Automatyczne przekierowanie z Gmaila"
+      ],
+      "auto-forwarding": [
+        "automatyczne przekierowanie"
+      ],
+      "Block email communications from scammers permanently.": [
+        "Zablokuj wiadomości od oszustów."
+      ],
+      "Block unsavory senders": [
+        "Zablokuj niechcianych nadawców"
+      ],
+      "Change ${ strongText } to your ${ BRAND_NAME } address": [
+        "Zmień ${ strongText } na adres ${ BRAND_NAME }"
+      ],
+      "Checklist complete": [
+        "Lista kontrolna została zakończona"
+      ],
+      "Close": [
+        "Zamknij"
+      ],
+      "Congratulation, you completed all the steps!": [
+        "Gratulacje zakończenia wszystkich kroków!"
+      ],
+      "Continue setting up your email": [
+        "Kontynuuj konfigurowanie poczty"
+      ],
+      "Discover how our ${ strongText } protect you": [
+        "Poznaj jak nasze ${ strongText } chronią Cię"
+      ],
+      "Discover privacy features": [
+        "Poznaj funkcje ochrony prywatności"
+      ],
+      "Double your free storage to 1 GB when you complete the following:": [
+        "Podwój darmową przestrzeń dyskową do 1 GB po wykonaniu następujących kroków:"
+      ],
+      "Encryption so strong, only you and intended recipients can view your emails.": [
+        "Szyfrowanie tak silne, że tylko Ty i odbiorcy mogę odczytać treść wiadomości."
+      ],
+      "Get free storage": [
+        "Uzyskaj darmową przestrzeń dyskową"
+      ],
+      "Get mobile app": [
+        "Pobierz aplikację mobilną"
+      ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "Pobierz aplikację mobilną ${ MAIL_APP_NAME }"
+      ],
+      "Get the ${ strongText } on Android or iOS": [
+        "Pobierz ${ strongText } na Androida lub iOS"
+      ],
+      "Get the App": [
+        "Pobierz aplikację"
       ],
       "Import contacts or emails": [
         "Importuj kontakty lub wiadomości"
       ],
+      "Import data": [
+        "Importuj dane"
+      ],
       "Import your contacts or messages": [
         "Importuj kontakty lub wiadomości"
       ],
+      "Keep using ${ MAIL_APP_NAME } to discover more ways ${ BRAND_NAME } protects your privacy and simplifies emailing.": [
+        "Korzystaj z ${ MAIL_APP_NAME }, aby poznać więcej funkcji ${ BRAND_NAME }, które chronią Twoją prywatność i upraszczają komunikację."
+      ],
+      "Learn more": [
+        "Dowiedz się więcej"
+      ],
+      "Make ${ BRAND_NAME } your go-to inbox": [
+        "Spraw, aby ${ BRAND_NAME } stał się Twoją skrzynką odbiorczą"
+      ],
+      "Maybe later": [
+        "Może później"
+      ],
+      "Nice! You've updated all services in this category.": [
+        "Świetnie! Zaktualizowano wszystkie usługi w tej kategorii."
+      ],
+      "Open checklist": [
+        "Otwórz listę kontrolną"
+      ],
+      "Popular online services": [
+        "Popularne usługi online"
+      ],
+      "privacy features": [
+        "funkcje ochrony prywatności"
+      ],
+      "Protect and simplify your email": [
+        "Chroń i upraszczaj swoją pocztę"
+      ],
+      "Protection from trackers": [
+        "Ochrona przed elementami śledzącymi"
+      ],
       "Quickly transfer your contacts or emails from any provider using our Easy Switch import assistant.": [
         "Prześlij szybko kontakty lub wiadomości od innego dostawcy za pomocą asystenta importu Easy Switch."
+      ],
+      "Send a message": [
+        "Wyślij wiadomość"
+      ],
+      "Set recovery method": [
+        "Ustaw metodę odzyskiwania"
+      ],
+      "Set up ${ strongText } from Gmail": [
+        "Ustaw ${ strongText } z Gmaila"
+      ],
+      "Sign in to the mobile app to complete this step": [
+        "Zaloguj się w aplikacji mobilnej, aby ukończyć krok"
+      ],
+      "Update your logins": [
+        "Zaktualizuj dane logowania"
+      ],
+      "Using your mobile device, scan this QR code or visit the iOS or Android store.": [
+        "Zeskanuj kod QR za pomocą urządzenia mobilnego lub pobierz aplikację ze sklepu Google Play lub App Store."
+      ],
+      "We stop advertisers and data collectors from profiling you.": [
+        "Blokujemy reklamodawców i firmy zbierające dane, które profilują Cię."
+      ],
+      "You've unlocked 1 GB": [
+        "Odblokowano 1 GB"
       ]
     },
     "Gmail forwarding": {
@@ -5211,7 +5328,7 @@
         "Ukryj oryginalną wiadomość"
       ],
       "How hide-my-email aliases works": [
-        "Jak działają aliasy Hide-my-email"
+        "Jak działają aliasy hide-my-email"
       ],
       "I'm sending this message to a non-${ MAIL_APP_NAME } user.": [
         "Wysyłam wiadomość do użytkownika spoza ${ MAIL_APP_NAME }."
@@ -5610,7 +5727,7 @@
         "Pokaż oryginalną wiadomość"
       ],
       "SimpleLogin is a ${ BRAND_NAME } service, and your ${ BRAND_NAME_TWO } Account includes hide-my-email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
-        "SimpleLogin to usługa ${ BRAND_NAME }. Twoje konto ${ BRAND_NAME_TWO } zawiera aliasy Hide-my-email. Utwórz w usłudze SimpleLogin pierwszy alias, aby ukryć swój adres."
+        "SimpleLogin to usługa ${ BRAND_NAME }. Twoje konto ${ BRAND_NAME_TWO } zawiera aliasy hide-my-email. Utwórz w usłudze SimpleLogin pierwszy alias, aby ukryć swój adres."
       ],
       "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
         "Usługa SimpleLogin zapewnia łatwy sposób tworzenia adresów e-mail dla niezaufanych stron trzecich, gdzie nie chcesz ujawniać swojego prawdziwego adresu."
@@ -5685,7 +5802,7 @@
         "Wystąpił błąd z podpisem używanym do weryfikowania szczegółów kontaktu, którego powodem może być zresetowane hasło."
       ],
       "They can't spam you if they don't know your email address. Protect your inbox with hide-my-email aliases.": [
-        "Nie otrzymasz spamu, jeśli ktoś nie zna Twojego adresu e-mail. Chroń swoją pocztę za pomocą aliasów Hide-my-email."
+        "Nie otrzymasz spamu, jeśli ktoś nie zna Twojego adresu e-mail. Chroń swoją pocztę za pomocą aliasów hide-my-email."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Konto zostało zawieszone z powodu potencjalnego naruszenia regulaminu."
@@ -5928,7 +6045,7 @@
         "Kiedy chcesz, aby wiadomość uległa samozniszczeniu?"
       ],
       "When giving out your email, use a unique, disposable hide-my-email alias instead of your real email address.": [
-        "Użyj unikalnego, jednorazowego aliasu Hide-my-email, zamiast swojego prawdziwego adresu e-mail."
+        "Użyj unikalnego, jednorazowego aliasu hide-my-email, zamiast swojego prawdziwego adresu e-mail."
       ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "Jeśli włączysz zaufane klucze dla adresu ${ senderName }, klucz publiczny zostanie dodany do szczegółów kontaktu."
@@ -7426,7 +7543,7 @@
         "Niestandardowe domeny"
       ],
       "Hide-my-email aliases": [
-        "Aliasy Hide-my-email"
+        "Aliasy hide-my-email"
       ],
       "Schedule messages at any time": [
         "Zaplanuj wiadomości w dowolnym momencie"
@@ -7538,11 +7655,42 @@
       "Set up your organization": [
         "Skonfiguruj organizację"
       ],
-      "Set up your organization testing": [
-        "Skonfiguruj testowanie organizacji"
-      ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
         "Otwórz menu aplikacji w lewym górnym rogu, aby uzyskać dostęp do wszystkich usług ${ BRAND_NAME }: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } i ${ DRIVE_SHORT_APP_NAME }."
+      ]
+    },
+    "Online accounts": {
+      "Have an account with one of these services? Just click to change the email address to your ${ MAIL_APP_NAME } address.": [
+        "Masz konto w tych usługach? Kliknij, aby zmienić adres na ${ MAIL_APP_NAME }."
+      ]
+    },
+    "Online Accounts Name": {
+      "Banking": [
+        "Finanse"
+      ],
+      "Crypto": [
+        "Kryptowaluty"
+      ],
+      "E-commerce and Retail": [
+        "Zakupy"
+      ],
+      "Entertainment": [
+        "Rozrywka"
+      ],
+      "Food and beverage": [
+        "Jedzenie"
+      ],
+      "Gaming": [
+        "Gry"
+      ],
+      "Most popular": [
+        "Najpopularniejsze"
+      ],
+      "Travel": [
+        "Podróże"
+      ],
+      "Utilities": [
+        "Narzędzia"
       ]
     },
     "Option": {
@@ -8070,10 +8218,10 @@
     },
     "specialoffer: Deal": {
       "${ n } month FREE": [
-        "${ n } miesiąc BEZPŁATNIE",
-        "${ n } miesiące BEZPŁATNIE",
-        "${ n } miesięcy BEZPŁATNIE",
-        "${ n } miesięcy BEZPŁATNIE"
+        "${ n } miesiąc ZA DARMO",
+        "${ n } miesiące ZA DARMO",
+        "${ n } miesięcy ZA DARMO",
+        "${ n } miesięcy ZA DARMO"
       ]
     },
     "specialoffer: Deal details": {
@@ -8252,13 +8400,13 @@
         "Uzyskaj dostęp z dowolnego miejsca do treści w usługach streamingowych, takich jak Netflix, Disney+ i Prime Video."
       ],
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
-        "Wszystkie nasze usługi premium z najwyższymi limitami: 100 adresów e-mail, obsługa 10 niestandardowych domen, nieograniczona liczba aliasów Hide-my-email, udostępnianie kalendarza, szyfrowane przechowywanie oraz udostępnianie plików i wiele więcej."
+        "Wszystkie nasze usługi premium z najwyższymi limitami: 100 adresów e-mail, obsługa 10 niestandardowych domen, nieograniczona liczba aliasów hide-my-email, udostępnianie kalendarza, szyfrowane przechowywanie oraz udostępnianie plików i wiele więcej."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Zawiera obsługę 1 niestandardowej domeny, 10 adresów e-mail, 10 aliasów Hide-my-email, udostępnianie kalendarza i wiele więcej."
+        "Zawiera obsługę 1 niestandardowej domeny, 10 adresów e-mail, 10 aliasów hide-my-email, udostępnianie kalendarza i wiele więcej."
       ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Zawiera obsługę 3 niestandardowych domen, 15 adresów e-mail, nieograniczoną liczbę aliasów Hide-my-email, udostępnianie kalendarza i wiele więcej."
+        "Zawiera obsługę 3 niestandardowych domen, 15 adresów e-mail, nieograniczoną liczbę aliasów hide-my-email, udostępnianie kalendarza i wiele więcej."
       ],
       "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
         "Idealne rozwiązanie dla rodzin lub małych zespołów, każda osoba może mieć własną skrzynkę odbiorczą i aliasy. Wymaga niestandardowej domeny."
@@ -9339,9 +9487,6 @@
       "Subject missing": [
         "Brak tematu"
       ],
-      "This email is protected": [
-        "Ta wiadomość jest chroniona"
-      ],
       "To": [
         "Do"
       ],
@@ -9380,6 +9525,12 @@
       ],
       "Warning: suspected fake website": [
         "Ostrzeżenie: podejrzana strona internetowa"
+      ],
+      "We protected you from ${ trackersCount } tracker": [
+        "Chronimy Cię przed ${ trackersCount } elementem śledzącym",
+        "Chronimy Cię przed ${ trackersCount } elementami śledzącymi",
+        "Chronimy Cię przed ${ trackersCount } elementami śledzącymi",
+        "Chronimy Cię przed ${ trackersCount } elementami śledzącymi"
       ],
       "Welcome": [
         "Witaj"
