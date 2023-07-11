@@ -68,7 +68,7 @@
         "Atrás"
       ],
       "Back to Homepage": [
-        "Volver la página de inicio"
+        "Volver a la página de inicio"
       ],
       "Beta Access": [
         "Acceso beta"
@@ -649,7 +649,7 @@
         "Intenta con otro método"
       ],
       "Try for free": [
-        "Pruébelo gratis"
+        "Pruébalo gratis"
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Error al guardar debido a: ${ saveError }. Intenta guardar de nuevo."
@@ -2700,10 +2700,10 @@
     },
     "Font face option": {
       "System default": [
-        "Igual que el sistema"
+        "Valor por defecto"
       ],
-      "Theme default": [
-        "Tema por defecto"
+      "Theme font": [
+        "Fuente del tema"
       ]
     },
     "Font size option": {
@@ -3139,7 +3139,7 @@
         "${ selectedCalendarsTotal } de ${ providerCalendars.length } calendarios"
       ],
       "${ selectedCount } selected": [
-        "Selección: ${ selectedCount }"
+        "${ selectedCount } seleccionados"
       ],
       "${ selectedFoldersCount } folder selected": [
         "${ selectedFoldersCount } carpeta seleccionada",
@@ -3222,7 +3222,7 @@
         "¿Estás seguro de que quieres vaciar la papelera y eliminar permanentemente todos los elementos?"
       ],
       "Are you sure you want to permanently delete": [
-        "¿Estás seguro que deseas eliminar definitivamente"
+        "¿Estás seguro que quieres eliminar permanentemente?"
       ],
       "Are you sure you want to permanently delete \"${ itemName }\" from trash?": [
         "¿Estás seguro de que quieres eliminar \"${ itemName }\" de la papelera de forma permanente?"
@@ -3337,7 +3337,7 @@
         "Versión actual"
       ],
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
-        "Personalza el aspecto y la sensación de las aplicaciones de ${ BRAND_NAME }"
+        "Personaliza el aspecto y la sensación de las aplicaciones de ${ BRAND_NAME }"
       ],
       "Decrypting files": [
         "Descifrando archivos"
@@ -3516,7 +3516,7 @@
         "Si no encuentras el correo electrónico en tu bandeja de entrada, verifica tu carpeta de spam."
       ],
       "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process.": [
-        "Si tienes una de las siguientes opcione, continúa con la configuración de la cuenta de ${ BRAND_NAME } para\ncomenzar con el proceso de desbloqueo."
+        "Si tienes una de las siguientes opciones, continúa con la configuración de la cuenta de ${ BRAND_NAME } para\ncomenzar con el proceso de desbloqueo."
       ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Importar ${ calendarCount } de ${ totalCalendarsCount } calendario",
@@ -4141,7 +4141,7 @@
         "Tu número de teléfono se utilizará solo para esta verificación única."
       ],
       "Your plan is limited to 10 versions for up to 7 days": [
-        "Tu plan está limitado a 10 versiones por hasta 7 días."
+        "Tu plan está limitado a 10 versiones y hasta 7 días."
       ],
       "Your previous password": [
         "Tu contraseña anterior"
@@ -4569,7 +4569,7 @@
         "Configurar un método de recuperación"
       ],
       "Show indexing progress of Encrypted Search": [
-        "Mostrar índice del progreso de la búsqueda encriptada"
+        "Mostrar índice del progreso de la búsqueda cifrada"
       ],
       "Sign emails": [
         "Firmar correos electrónicos"
@@ -5130,15 +5130,12 @@
         "Descubre todos los servicios de ${ BRAND_NAME }"
       ],
       "More theming options are available in your account Settings > Appearance.": [
-        "Más opciones de temas están disponibles en tu ajustes de cuenta en la sección Apariencia."
+        "Hay disponibles más opciones de temas en tus ajustes de cuenta, en la sección Apariencia."
       ],
       "Select a theme": [
         "Seleccionar un tema"
       ],
       "Set up your organization": [
-        "Configura tu organización"
-      ],
-      "Set up your organization testing": [
         "Configura tu organización"
       ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
@@ -6046,7 +6043,7 @@
         "Grupos"
       ],
       "Hm, we couldn't find that one": [
-        "¡Ups! No pudimos encontrar lo que buscas."
+        "¡Vaya! No pudimos encontrar lo que buscas."
       ],
       "Human verification": [
         "Verificación humana"

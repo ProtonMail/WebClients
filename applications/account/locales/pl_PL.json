@@ -1118,7 +1118,7 @@
         "Usunięto 5 elementów śledzących"
       ],
       "Auto forwarded": [
-        "Automatycznie przekierowane"
+        "Automatycznie przekierowanie"
       ],
       "Email received": [
         "Otrzymano wiadomość"
@@ -1167,10 +1167,10 @@
     },
     "Badge for domain": {
       "Disabled": [
-        "Wyłączona"
+        "Wyłączony"
       ],
       "Enabled": [
-        "Włączona"
+        "Włączony"
       ],
       "Missing keys": [
         "Brak kluczy"
@@ -2642,7 +2642,7 @@
         "/ miesiąc"
       ],
       "/user per month": [
-        "/ użytkownika na miesiąc"
+        "/ użytkownika miesięcznie"
       ]
     },
     "Daily recurring event, frequency": {
@@ -4147,7 +4147,7 @@
         "Zawiera 2700 serwerów w ponad 65 krajach z możliwością połączenia do 10 urządzeń, dostępem do globalnych usług streamingu oraz funkcję blokowania reklam, złośliwego oprogramowania i wiele więcej."
       ],
       "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
-        "Zawiera obsługę 3 niestandardowych domen, 90 adresów e-mail, nieograniczoną liczbę aliasów Hide-my-email, udostępnianie kalendarza i wiele więcej."
+        "Zawiera obsługę 3 niestandardowych domen, 90 adresów e-mail, nieograniczoną liczbę aliasów hide-my-email, udostępnianie kalendarza i wiele więcej."
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Zabezpiecz pliki dzięki szyfrowanej przestrzeni dyskowej w chmurze. Zawiera automatyczną synchronizację, szyfrowane udostępnianie plików i wiele więcej."
@@ -4424,8 +4424,8 @@
       "System default": [
         "Domyślny systemu"
       ],
-      "Theme default": [
-        "Domyślny motyw"
+      "Theme font": [
+        "Czcionka"
       ]
     },
     "Font Size Default": {
@@ -4462,6 +4462,44 @@
       ],
       "(during your first month)": [
         "(w pierwszym miesiącu)"
+      ]
+    },
+    "Get started checklist instructions": {
+      "${ MAIL_APP_NAME } app": [
+        "aplikację ${ MAIL_APP_NAME }"
+      ],
+      "account logins": [
+        "dane logowania kont"
+      ],
+      "Auto-forward Gmail": [
+        "Automatyczne przekierowanie z Gmaila"
+      ],
+      "auto-forwarding": [
+        "automatyczne przekierowanie"
+      ],
+      "Change ${ strongText } to your ${ BRAND_NAME } address": [
+        "Zmień ${ strongText } na adres ${ BRAND_NAME }"
+      ],
+      "Discover how our ${ strongText } protect you": [
+        "Poznaj jak nasze ${ strongText } chronią Cię"
+      ],
+      "Discover privacy features": [
+        "Poznaj funkcje ochrony prywatności"
+      ],
+      "Get the ${ strongText } on Android or iOS": [
+        "Pobierz ${ strongText } na Androida lub iOS"
+      ],
+      "Get the App": [
+        "Pobierz aplikację"
+      ],
+      "privacy features": [
+        "funkcje ochrony prywatności"
+      ],
+      "Set up ${ strongText } from Gmail": [
+        "Ustaw ${ strongText } z Gmaila"
+      ],
+      "Update your logins": [
+        "Zaktualizuj dane logowania"
       ]
     },
     "Gmail forwarding": {
@@ -5231,7 +5269,7 @@
         "Użytkownikiem jest konto skojarzone z nazwą użytkownika, skrzynką pocztową lub osobą"
       ],
       "Access your passwords and protect your online identities seamlessly across your devices. Download and install the relevant ${ PASS_APP_NAME } apps and extensions.": [
-        "Uzyskaj dostęp do swoich haseł i chroń swoje tożsamości online na wszystkich urządzeniach. Pobierz i zainstaluj odpowiednie aplikacje i rozszerzenia ${ PASS_APP_NAME }."
+        "Uzyskaj dostęp do swoich haseł i chroń swoje tożsamości internetowe na wszystkich urządzeniach. Pobierz i zainstaluj odpowiednie aplikacje i rozszerzenia ${ PASS_APP_NAME }."
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Dostęp do konta został ograniczony z powodu niezapłaconych faktur. Skontaktuj się ze swoim administratorem."
@@ -6487,6 +6525,9 @@
       "The Import-Export app allows you to export messages for local backups and to restore previous backups to your account.": [
         "Aplikacja Import-Export pozwala wyeksportować wiadomości na potrzeby lokalnej kopii zapasowej i przywrócić poprzednie dane na konto."
       ],
+      "The link to report that that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue.": [
+        "Link umożliwiający zgłoszenie, że to nie jest Twoje konto ${ BRAND_NAME } wygasł. Skontaktuj się z naszym zespołem pomocy technicznej, aby rozwiązać ten problem."
+      ],
       "The name will be visible to your users while they are signed in.": [
         "Nazwa będzie widoczna dla użytkowników po zalogowaniu."
       ],
@@ -6993,6 +7034,9 @@
       ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Będziesz potrzebować adresu ${ BRAND_NAME }, aby używać poczty ${ MAIL_APP_NAME } i usługi ${ CALENDAR_APP_NAME }"
+      ],
+      "You will NOT be able to decrypt any messages, files, and other data encrypted with this key. All data signed with this key will no longer be verified by ${ BRAND_NAME } applications.": [
+        "NIE będziesz mógł odszyfrować wiadomości, plików i innych danych zaszyfrowanych za pomocą tego klucza. Wszystkie dane podpisane za pomocą tego klucza nie będą zweryfikowane przez aplikacje ${ BRAND_NAME }."
       ],
       "You will receive priority support from specialists trained in account protection. For any account security concerns, please ${ hereLink }.": [
         "Otrzymasz priorytetowe wsparcie od specjalistów przeszkolonych w zakresie ochrony konta. W przypadku jakichkolwiek obaw ${ hereLink }."
@@ -9026,7 +9070,7 @@
         "Przejdź do przeglądu"
       ],
       "Continue with Free": [
-        "Kontynuuj bezpłatnie"
+        "Kontynuuj za darmo"
       ],
       "Delete account": [
         "Usuń konto"
@@ -9129,10 +9173,10 @@
         "${ n } folderów i etykiet"
       ],
       "${ n } hide-my-email alias": [
-        "${ n } alias Hide-my-email",
-        "${ n } aliasy Hide-my-email",
-        "${ n } aliasów Hide-my-email",
-        "${ n } aliasów Hide-my-email"
+        "${ n } alias hide-my-email",
+        "${ n } aliasy hide-my-email",
+        "${ n } aliasów hide-my-email",
+        "${ n } aliasów hide-my-email"
       ],
       "${ n } label": [
         "${ n } etykieta",
@@ -9276,7 +9320,7 @@
         "Umowa przetwarzania danych zgodnie z RODO"
       ],
       "Hide-my-email aliases": [
-        "Aliasy Hide-my-email"
+        "Aliasy hide-my-email"
       ],
       "High-speed streaming": [
         "Szybki streaming"
@@ -9384,7 +9428,7 @@
         "Nieograniczona liczba folderów, etykiet i filtrów"
       ],
       "Unlimited hide-my-email aliases": [
-        "Nieograniczona liczba aliasów Hide-my-email"
+        "Nieograniczona liczba aliasów hide-my-email"
       ],
       "Unlimited labels": [
         "Nieograniczona liczba etykiet"
@@ -9500,19 +9544,19 @@
         "Zarządzanie hasłami i ochrona tożsamości na najwyższym poziomie."
       ],
       "If you delete your account, you lose all ${ visionary } plan benefits and it won’t be available if you create a new account.": [
-        "Jeśli usuniesz konto, stracisz wszystkie zalety planu ${ visionary }, które nie będą dostępne przy tworzeniu nowego konta."
+        "Jeśli usuniesz konto, stracisz wszystkie bonusy planu ${ visionary }, które nie będą dostępne przy tworzeniu nowego konta."
       ],
       "If you downgrade your account, you lose all ${ visionary } plan benefits and it won’t be available if you try to subscribe again.": [
-        "Jeśli obniżysz plan, stracisz wszystkie zalety planu ${ visionary }, które nie będą dostępne przy ponownej subskrypcji."
+        "Jeśli obniżysz plan, stracisz wszystkie bonusy planu ${ visionary }, które nie będą dostępne przy ponownej subskrypcji."
       ],
       "If you switch to a different plan, you lose all ${ visionary } plan benefits and won’t be able to switch back to ${ visionary }.": [
-        "Jeśli zmienisz plan, stracisz wszystkie zalety planu ${ visionary }, a ponowny powrót do tego planu nie będzie możliwy."
+        "Jeśli zmienisz plan, stracisz wszystkie bonusy planu ${ visionary }, a ponowny powrót do planu ${ visionary } nie będzie możliwy."
       ],
       "Most popular": [
         "Najpopularniejszy"
       ],
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
-        "Plan ${ visionary } nie jest już dostępny dla nowych subskrybentów, ponieważ jest to specjalny plan dla pierwotnych użytkowników ${ BRAND_NAME }, posiadający specjalne funkcje i zalety."
+        "Plan ${ visionary } nie jest już dostępny dla nowych subskrybentów, ponieważ jest to specjalny plan dla pierwotnych użytkowników ${ BRAND_NAME }, posiadający specjalne funkcje i bonusy."
       ],
       "Popular": [
         "Popularny"
@@ -9539,7 +9583,7 @@
         "Dedykowane rozwiązanie VPN, które zapewnia bezpieczny, nieograniczony i szybki dostęp do Internetu."
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
-        "Bezpłatne, podstawowe konto stworzone z myślą o zapewnieniu każdemu prywatności."
+        "Darmowe, podstawowe konto stworzone z myślą o zapewnieniu każdemu prywatności."
       ],
       "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
         "Korzystasz z promocyjnej ceny na swój obecny plan. Usunięcie konta spowoduje utratę promocyjnej ceny i nie będzie ona dostępna przy tworzeniu nowego konta."
@@ -9668,6 +9712,9 @@
         "Utwórz do ${ n } kalendarzy lub dodaj kalendarze od znajomych, rodziny, współpracowników i organizacji",
         "Utwórz do ${ n } kalendarzy lub dodaj kalendarze od znajomych, rodziny, współpracowników i organizacji",
         "Utwórz do ${ n } kalendarzy lub dodaj kalendarze od znajomych, rodziny, współpracowników i organizacji"
+      ],
+      "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
+        "Utwórz do ${ n } adresów e-mail lub aliasów, które możesz przypisać do członków rodziny. Używaj ich do tożsamości internetowych, np. JanZakupowy@${ domain } dla kont zakupowych."
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Chroni przed zagrożeniem prywatności VPN, przekierowując ruch internetowy przez wiele serwerów"
@@ -10278,6 +10325,267 @@
         "Ty"
       ]
     },
+    "pass_signup_2023: Action": {
+      "Check out ${ appName } features": [
+        "Sprawdź funkcje ${ appName }"
+      ],
+      "Continue": [
+        "Kontynuuj"
+      ],
+      "Continue to ${ free }": [
+        "Kontynuuj z planem ${ free }"
+      ],
+      "Continue with Bitcoin": [
+        "Kontynuuj z Bitcoinami"
+      ],
+      "create a new account": [
+        "utwórz nowe konto"
+      ],
+      "Create another account instead": [
+        "Utwórz inne konto"
+      ],
+      "Download again ${ size }": [
+        "Pobierz ponownie ${ size }"
+      ],
+      "Download to continue ${ size }": [
+        "Pobierz, aby kontynuować ${ size }"
+      ],
+      "Keep this plan and use ${ appName }": [
+        "Zachowaj plan, aby korzystać z ${ appName }"
+      ],
+      "Or ${ createANewAccount }": [
+        "Lub ${ createANewAccount }"
+      ],
+      "Start using ${ appName }": [
+        "Zacznij korzystać z ${ appName }"
+      ],
+      "Start using ${ appName } now": [
+        "Zacznij korzystać z ${ appName }"
+      ],
+      "Upgrade for only ${ relativePrice } extra per month": [
+        "Ulepsz konto za ${ relativePrice } miesięcznie więcej"
+      ],
+      "Upgrade my plan": [
+        "Ulepsz plan"
+      ],
+      "Use ${ free } instead": [
+        "Wybierz plan ${ free }"
+      ]
+    },
+    "pass_signup_2023: Feature": {
+      "End-to-end encrypted": [
+        "Szyfrowany end-to-end"
+      ],
+      "Open source": [
+        "Otwarty kod źródłowy"
+      ],
+      "Protected by Swiss privacy laws": [
+        "Chroniony przez szwajcarskie prawa ochrony danych osobowych"
+      ],
+      "Swiss based": [
+        "Ulokowany w Szwajcarii"
+      ]
+    },
+    "pass_signup_2023: Header": {
+      "Checkout": [
+        "Płatność"
+      ],
+      "Continue with your ${ BRAND_NAME } account": [
+        "Kontynuuj z kontem ${ BRAND_NAME }"
+      ],
+      "Limited time offer": [
+        "Oferta ograniczona czasowo"
+      ],
+      "Recommended": [
+        "Zalecany"
+      ],
+      "Select your plan": [
+        "Wybierz plan"
+      ],
+      "Upgrade your plan": [
+        "Ulepsz plan"
+      ]
+    },
+    "pass_signup_2023: Info": {
+      "${ PASS_APP_NAME } benefits": [
+        "Bonusy ${ PASS_APP_NAME }"
+      ],
+      "${ PASS_APP_NAME } is available as a browser extension on Firefox Add-ons.": [
+        "${ PASS_APP_NAME } jest dostępny jako rozszerzenie do przeglądarki Firefox."
+      ],
+      "${ PASS_APP_NAME } is available as a browser extension on the Chrome Web Store.": [
+        "${ PASS_APP_NAME } jest dostępny jako rozszerzenie w sklepie Chrome Web Store."
+      ],
+      "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption.": [
+        "${ PASS_APP_NAME } bezpiecznie przechowuje hasła i tożsamości za pomocą szyfrowania end-to-end."
+      ],
+      "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption. To add premium features of ${ PASS_APP_NAME_2 } to your current subscription, we suggest upgrading to the ${ upsellPlanName } plan.": [
+        "${ PASS_APP_NAME } bezpiecznie przechowuje hasła i tożsamości za pomocą szyfrowania end-to-end. Aby dodać funkcje premium ${ PASS_APP_NAME_2 } do obecnej subskrypcji, ulepsz plan do wersji ${ upsellPlanName }."
+      ],
+      "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption. Your current plan already gives you access to premium ${ PASS_APP_NAME_2 } features — no need to purchase again.": [
+        "${ PASS_APP_NAME } bezpiecznie przechowuje hasła i tożsamości za pomocą szyfrowania end-to-end. Twój plan zapewnia dostęp do funkcji premium ${ PASS_APP_NAME_2 }. Nie musisz już nic robić."
+      ],
+      "+ ${ relativePrice } per month": [
+        "+ ${ relativePrice } miesięcznie"
+      ],
+      "All premium ${ BRAND_NAME } services.": [
+        "Wszystkie usługi ${ BRAND_NAME } w wersji premium."
+      ],
+      "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
+        "Możesz odblokować plan **${ unlockPlanTitle }** i wszystkie usługi ${ BRAND_NAME } w wersji premium, przechodząc na plan **${ upsellPlanTitle }**. To tylko ${ relativePrice } miesięcznie więcej."
+      ],
+      "By continuing, you agree to our ${ termsAndConditions }": [
+        "Kontynuując, akceptujesz ${ termsAndConditions }"
+      ],
+      "Creating your account": [
+        "Tworzenie konta"
+      ],
+      "Discover ${ PASS_APP_NAME },${ br }our new encrypted password manager": [
+        "Poznaj ${ PASS_APP_NAME },${ br }czyli nasz nowy szyfrowany menedżer haseł"
+      ],
+      "Download and install the relevant apps and extensions to start using ${ PASS_APP_NAME }": [
+        "Aby korzystać z ${ PASS_APP_NAME }, pobierz i zainstaluj odpowiednie aplikacje i rozszerzenia"
+      ],
+      "Download the ${ PASS_APP_NAME } app from Google Play and install it to start using ${ PASS_APP_NAME2 } on your phone.": [
+        "Pobierz aplikację ${ PASS_APP_NAME } ze sklepu Google Play i zainstaluj ją, aby korzystać z ${ PASS_APP_NAME2 } na telefonie."
+      ],
+      "Download the ${ PASS_APP_NAME } app from the App Store and install it to start using ${ PASS_APP_NAME2 } on your phone.": [
+        "Pobierz aplikację ${ PASS_APP_NAME } ze sklepu App Store i zainstaluj ją, aby korzystać z ${ PASS_APP_NAME2 } na telefonie."
+      ],
+      "Encrypted password manager${ breakToken }that also protects your identity": [
+        "Szyfrowany menedżer haseł,${ breakToken }który chroni Twoją tożsamość"
+      ],
+      "End-to-end encrypted notes": [
+        "Notatki szyfrowane end-to-end"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
+        "Za **${ relativePrice } miesięcznie** więcej uzyskasz dostęp do wszystkich funkcji premium usług ${ BRAND_NAME }!"
+      ],
+      "Free forever": [
+        "Darmowy na zawsze"
+      ],
+      "Get ${ appName } for ${ browserName }": [
+        "Pobierz ${ appName } do przeglądarki ${ browserName }"
+      ],
+      "Get ${ appName } for ${ browserName } soon": [
+        "Pobierz wkrótce ${ appName } do przeglądarki ${ browserName }"
+      ],
+      "Hide-my-email aliases protect your email from data breaches": [
+        "Aliasy hide-my-email chronią Twój adres przed wyciekami danych"
+      ],
+      "If you get locked out of your ${ BRAND_NAME } Account, your **recovery kit** will allow you to sign in and recover your data.": [
+        "Jeśli konto ${ BRAND_NAME } zostanie zablokowane, **zestaw odzyskiwania** umożliwi zalogowanie się i odzyskanie danych."
+      ],
+      "Includes basic ${ appName } features:": [
+        "Zawiera podstawowe funkcje ${ appName }:"
+      ],
+      "Install ${ PASS_APP_NAME }": [
+        "Zainstaluj ${ PASS_APP_NAME }"
+      ],
+      "Install app": [
+        "Zainstaluj aplikację"
+      ],
+      "Install app and extension": [
+        "Zainstaluj aplikację i rozszerzenie"
+      ],
+      "It’s the only way to fully restore your account, so make sure you keep this **recovery kit** somewhere safe.": [
+        "Jest to jedyny sposób na pełne przywrócenie konta, więc upewnij się, że przechowujesz **zestaw odzyskiwania ** w bezpiecznym miejscu."
+      ],
+      "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
+        "Dołącz do ponad 100 milionów osób, którzy wybrali ${ BRAND_NAME }, aby zachować bezpieczeństwo w sieci"
+      ],
+      "Launching ${ PASS_APP_NAME }": [
+        "Uruchamianie ${ PASS_APP_NAME }"
+      ],
+      "One easy subscription.": [
+        "Jedna prosta subskrypcja"
+      ],
+      "Open-source and audited": [
+        "Aplikacje z otwartym kodem źródłowym zweryfikowane przez audyt"
+      ],
+      "per month, billed annually": [
+        "miesięcznie, płatne rocznie"
+      ],
+      "per month, billed every 15 months": [
+        "miesięcznie, płatne co 15 miesięcy"
+      ],
+      "per month, billed every 30 months": [
+        "miesięcznie, płatne co 30 miesięcy"
+      ],
+      "per month, billed every month": [
+        "miesięcznie, płatne co miesiąc"
+      ],
+      "per month, billed every two years": [
+        "miesięcznie, płatne co 2 lata"
+      ],
+      "Preparing your Recovery Kit": [
+        "Przygotowywanie zestawu odzyskiwania"
+      ],
+      "Protected by Swiss privacy laws": [
+        "Chroniony przez szwajcarskie prawa ochrony danych osobowych"
+      ],
+      "Save your recovery kit to continue": [
+        "Aby kontynuować, zapisz zestaw odzyskiwania"
+      ],
+      "Signing in to ${ PASS_APP_NAME }": [
+        "Logowanie do ${ PASS_APP_NAME }"
+      ],
+      "Special launch offer: Get ${ title } for ${ price } forever!": [
+        "Oferta specjalna na start: Uzyskaj ${ title } za ${ price } na zawsze!"
+      ],
+      "The offer you selected is not available for ${ currentPlanTitle } subscribers.": [
+        "Oferta nie jest dostępna dla subskrybentów planu ${ currentPlanTitle }."
+      ],
+      "to start using ${ PASS_APP_NAME } on your phone": [
+        "i zacznij korzystać z ${ PASS_APP_NAME } na telefonie"
+      ],
+      "Unlock ${ PASS_APP_NAME } premium features by upgrading": [
+        "Ulepsz konto, aby odblokować funkcje premium ${ PASS_APP_NAME }"
+      ],
+      "Updating your account": [
+        "Aktualizowanie konta"
+      ],
+      "Verifying your payment": [
+        "Weryfikowanie płatności"
+      ],
+      "Welcome to ${ plan }": [
+        "Witaj w planie ${ plan }"
+      ],
+      "Works on all devices": [
+        "Działa na wszystkich urządzeniach"
+      ],
+      "You already have access to premium ${ appName } features — no need to purchase again.": [
+        "Masz już dostęp do funkcji premium ${ appName }. Nie musisz już nic robić."
+      ],
+      "You currently have": [
+        "Obecnie masz"
+      ],
+      "Your organization has access to ${ free }. If you want to access premium ${ appName } features, please ask your organization's administrator to upgrade.": [
+        "Twoja organizacja ma dostęp do planu ${ free }. Jeśli chcesz uzyskać dostęp do funkcji premium ${ appName }, poproś administratora o ulepszenie konta."
+      ]
+    },
+    "pass_signup_2023: Onboarding": {
+      "Welcome to ${ PASS_APP_NAME }": [
+        "Witaj w ${ PASS_APP_NAME }"
+      ]
+    },
+    "pass_signup_2023: Title": {
+      "${ upsellPlanTitle } plan": [
+        "Plan ${ upsellPlanTitle }"
+      ],
+      "All ${ BRAND_NAME } Plus services.${ br }One easy subscription.": [
+        "Wszystkie usługi ${ BRAND_NAME } w wersji Plus.${ br }Jedna prosta subskrypcja."
+      ],
+      "Create your ${ BRAND_NAME } account": [
+        "Utwórz konto ${ BRAND_NAME }"
+      ],
+      "Request your organization administrator to upgrade": [
+        "Poproś administratora organizacji o ulepszenie konta"
+      ],
+      "Secure your account": [
+        "Zabezpiecz konto"
+      ]
+    },
     "Payment method option": {
       "Credit/debit card": [
         "Karta płatnicza"
@@ -10803,10 +11111,10 @@
     },
     "specialoffer: Deal": {
       "${ n } month FREE": [
-        "${ n } miesiąc BEZPŁATNIE",
-        "${ n } miesiące BEZPŁATNIE",
-        "${ n } miesięcy BEZPŁATNIE",
-        "${ n } miesięcy BEZPŁATNIE"
+        "${ n } miesiąc ZA DARMO",
+        "${ n } miesiące ZA DARMO",
+        "${ n } miesięcy ZA DARMO",
+        "${ n } miesięcy ZA DARMO"
       ]
     },
     "specialoffer: Deal details": {
@@ -10990,13 +11298,13 @@
         "Uzyskaj dostęp z dowolnego miejsca do treści w usługach streamingowych, takich jak Netflix, Disney+ i Prime Video."
       ],
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
-        "Wszystkie nasze usługi premium z najwyższymi limitami: 100 adresów e-mail, obsługa 10 niestandardowych domen, nieograniczona liczba aliasów Hide-my-email, udostępnianie kalendarza, szyfrowane przechowywanie oraz udostępnianie plików i wiele więcej."
+        "Wszystkie nasze usługi premium z najwyższymi limitami: 100 adresów e-mail, obsługa 10 niestandardowych domen, nieograniczona liczba aliasów hide-my-email, udostępnianie kalendarza, szyfrowane przechowywanie oraz udostępnianie plików i wiele więcej."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Zawiera obsługę 1 niestandardowej domeny, 10 adresów e-mail, 10 aliasów Hide-my-email, udostępnianie kalendarza i wiele więcej."
+        "Zawiera obsługę 1 niestandardowej domeny, 10 adresów e-mail, 10 aliasów hide-my-email, udostępnianie kalendarza i wiele więcej."
       ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Zawiera obsługę 3 niestandardowych domen, 15 adresów e-mail, nieograniczoną liczbę aliasów Hide-my-email, udostępnianie kalendarza i wiele więcej."
+        "Zawiera obsługę 3 niestandardowych domen, 15 adresów e-mail, nieograniczoną liczbę aliasów hide-my-email, udostępnianie kalendarza i wiele więcej."
       ],
       "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
         "Idealne rozwiązanie dla rodzin lub małych zespołów, każda osoba może mieć własną skrzynkę odbiorczą i aliasy. Wymaga niestandardowej domeny."
@@ -11472,7 +11780,7 @@
         "/ miesiąc"
       ],
       "/user per month": [
-        "/ użytkownika na miesiąc"
+        "/ użytkownika miesięcznie"
       ]
     },
     "Suffix for price": {
@@ -12881,7 +13189,7 @@
     },
     "Upgrade": {
       "Upgrade to ${ passPlusPlanName } to get unlimited hide-my-email aliases": [
-        "Ulepsz do planu ${ passPlusPlanName }, aby uzyskać nieograniczoną liczbę aliasów Hide-my-email"
+        "Ulepsz do planu ${ passPlusPlanName }, aby uzyskać nieograniczoną liczbę aliasów hide-my-email"
       ],
       "Upgrade to ${ planName } to connect up to ${ n } device to the VPN at once": [
         "Ulepsz do planu ${ planName }, aby połączyć do ${ n } urządzenia VPN jednocześnie",

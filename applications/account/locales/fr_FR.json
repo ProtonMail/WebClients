@@ -4384,8 +4384,8 @@
       "System default": [
         "Identique au système"
       ],
-      "Theme default": [
-        "Thème par défaut"
+      "Theme font": [
+        "Police du thème"
       ]
     },
     "Font Size Default": {
@@ -4426,13 +4426,40 @@
     },
     "Get started checklist instructions": {
       "${ MAIL_APP_NAME } app": [
-        "Application ${ MAIL_APP_NAME }"
+        "application ${ MAIL_APP_NAME }"
+      ],
+      "account logins": [
+        "identifiants du compte"
       ],
       "Auto-forward Gmail": [
         "Transfert automatique depuis Gmail"
       ],
+      "auto-forwarding": [
+        "le transfert automatique"
+      ],
+      "Change ${ strongText } to your ${ BRAND_NAME } address": [
+        "Changez les ${ strongText } pour votre adresse ${ BRAND_NAME }"
+      ],
+      "Discover how our ${ strongText } protect you": [
+        "Découvrez comment nos ${ strongText } vous protègent."
+      ],
+      "Discover privacy features": [
+        "Découvrrez les fonctionnalités de respect de la vie privée"
+      ],
+      "Get the ${ strongText } on Android or iOS": [
+        "Téléchargez l'${ strongText } sur Android ou iOS."
+      ],
       "Get the App": [
         "Téléchargez l'application"
+      ],
+      "privacy features": [
+        "fonctionnalités de respect de la vie privée"
+      ],
+      "Set up ${ strongText } from Gmail": [
+        "Configurer ${ strongText } depuis Gmail"
+      ],
+      "Update your logins": [
+        "Mettez à jour vos identifiants"
       ]
     },
     "Gmail forwarding": {
@@ -6165,7 +6192,7 @@
         "Les informations de récupération resteront sur cet appareil jusqu'à ce que vous demandiez à les supprimer."
       ],
       "Recovery kit copied to clipboard": [
-        "Le kit de récupération est copié dans le presse-papiers"
+        "Le kit de récupération est copié dans le presse-papiers."
       ],
       "Recovery phrase copied to clipboard": [
         "La phrase de récupération est copiée dans le presse-papiers."
@@ -6877,6 +6904,9 @@
       ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Vous avez besoin d'une adresse ${ BRAND_NAME } pour utiliser ${ MAIL_APP_NAME } et ${ CALENDAR_APP_NAME }."
+      ],
+      "You will NOT be able to decrypt any messages, files, and other data encrypted with this key. All data signed with this key will no longer be verified by ${ BRAND_NAME } applications.": [
+        "Vous ne pourrez déchiffrer aucun message, fichier ou toute autre donnée chiffrée avec cette clé. Toutes les données signées avec cette clé ne seront plus vérifiées par les applications ${ BRAND_NAME }."
       ],
       "You will receive priority support from specialists trained in account protection. For any account security concerns, please ${ hereLink }.": [
         "Vous bénéficierez d'une assistance prioritaire par des spécialistes formés à la protection des comptes. Pour toute question concernant la sécurité de votre compte, ${ hereLink }."
@@ -9481,6 +9511,9 @@
         "Créez jusqu'à ${ n } calendrier ou ajoutez les calendriers d'amis, de la famille, de collègues et d'organisations.",
         "Créez jusqu'à ${ n } calendriers ou ajoutez les calendriers d'amis, de la famille, de collègues et d'organisations."
       ],
+      "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
+        "Créez jusqu'à ${ n } adresses e-mail/alias et attribuez-les aux membres de votre famille. Utilisez-les pour vos identités en ligne, comme « SebShopping@${ domain } » pour tous vos achats en ligne."
+      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Cette fonctionnalité vous protège des menaces sur la confidentialité du VPN en acheminant votre trafic internet à travers plusieurs serveurs."
       ],
@@ -10089,7 +10122,7 @@
         "créer un nouveau compte"
       ],
       "Create another account instead": [
-        "Créez un autre compte à la place"
+        "Créer un autre compte à la place"
       ],
       "Download again ${ size }": [
         "Télécharger à nouveau ${ size }"
@@ -10158,10 +10191,10 @@
         "Les avantages de ${ PASS_APP_NAME }"
       ],
       "${ PASS_APP_NAME } is available as a browser extension on Firefox Add-ons.": [
-        "${ PASS_APP_NAME } est disponible comme extension de navigateur dans les modules de Firefox."
+        "${ PASS_APP_NAME } est disponible comme extension de navigateur dans les extensions Firefox."
       ],
       "${ PASS_APP_NAME } is available as a browser extension on the Chrome Web Store.": [
-        "${ PASS_APP_NAME } est disponible comme extension de navigateur dans Chrome Web Store."
+        "${ PASS_APP_NAME } est disponible comme extension de navigateur dans le Chrome Web Store."
       ],
       "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption.": [
         "${ PASS_APP_NAME } sécurise vos mots de passe et votre identité grâce à un chiffrement de bout en bout rigoureux."
@@ -10227,7 +10260,7 @@
         "Avec les fonctionnalités de base de ${ appName } :"
       ],
       "Install ${ PASS_APP_NAME }": [
-        "Installer ${ PASS_APP_NAME }"
+        "Installez ${ PASS_APP_NAME }"
       ],
       "Install app": [
         "Installez l'application"

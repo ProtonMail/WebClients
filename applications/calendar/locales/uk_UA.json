@@ -3062,9 +3062,6 @@
     "Font face option": {
       "System default": [
         "Системна"
-      ],
-      "Theme default": [
-        "Стандартна тема"
       ]
     },
     "Font size option": {
@@ -5264,9 +5261,6 @@
       "Set up your organization": [
         "Налаштуйте свою організацію"
       ],
-      "Set up your organization testing": [
-        "Налаштуйте тестування своєї організації"
-      ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
         "Використовуйте селектор застосунків у верхньому лівому куті, щоб отримати доступ до всіх служб ${ BRAND_NAME }: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } і ${ DRIVE_SHORT_APP_NAME }."
       ]
@@ -5834,7 +5828,7 @@
         "Доступ звідусіль до стримінгових сервісів, включно з Netflix, Disney+ та Prime Video."
       ],
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
-        "Всі найкращі можливості наших преміум функцій: 100 адрес пошти, підтримка 10 власних доменів, необмежена кількість псевдонімів Hide-my-email, спільний доступ до календаря, зашифроване хмарне сховище, спільний доступ до файлів і багато іншого."
+        "Усі найкращі можливості наших преміумфункцій: 100 адрес пошти, підтримка 10 власних доменів, необмежена кількість псевдонімів Hide-my-email, спільний доступ до календаря, зашифроване хмарне сховище, спільний доступ до файлів і багато іншого."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Включає підтримку 1 власного домену, 10 адрес пошти, 10 псевдонімів Hide-my-email, спільний доступ до календаря та інші можливості."
@@ -6048,6 +6042,70 @@
     "Success notification when user send feedback": {
       "Feedback sent": [
         "Відгук надіслано"
+      ]
+    },
+    "summer2023: Billing cycle option": {
+      "1 year": [
+        "1 рік"
+      ],
+      "2 years": [
+        "2 роки"
+      ]
+    },
+    "summer2023: Deal details": {
+      "Premium Drive": [
+        "Premium Drive"
+      ],
+      "Premium Mail and Calendar": [
+        "Premium Mail і Calendar"
+      ],
+      "Premium Password Manager": [
+        "Premium Менеджер паролів"
+      ]
+    },
+    "summer2023: Describe Proton Pass": {
+      "Securely store your passwords and autofill them on websites. Includes unlimited passwords, autofill, password generator, and more.": [
+        "Надійно зберігайте свої паролі та автоматично заповнюйте їх на вебсайтах. Включає необмежену кількість паролів, автозаповнення, генератор паролів тощо."
+      ]
+    },
+    "summer2023: Short tool name to present Proton Pass": {
+      "Password manager": [
+        "Менеджер паролів"
+      ]
+    },
+    "summer2023: Tooltip": {
+      "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
+        "Створюйте захищені дані для входу на всіх своїх пристроях. Включає необмежену кількість псевдонімів, 20 сховищ, інтегровану 2FA, автоматичне заповнення кредитної картки тощо."
+      ],
+      "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "Включає понад 2950 серверів у 65 країнах, підключення до 10 пристроїв, доступ до стримінгових сервісів у всьому світі, шкідливого програмного забезпечення та блокування реклами тощо."
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Включає підтримку 1 власного домену електронної пошти, 10 адрес електронної пошти, 10 псевдонімів hide-my-email, спільний доступ до календаря тощо."
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "Захистіть свої файли за допомогою зашифрованого хмарного сховища. Включає історію версій, спільний доступ до зашифрованих файлів тощо."
+      ]
+    },
+    "summer2023:Footer": {
+      "*Your subscription will automatically renew at the standard discounted rate at the end of your billing cycle.": [
+        "*Ваша підписка буде автоматично поновлюватися за стандартною зниженою ставкою в кінці вашого розрахункового циклу."
+      ],
+      "Discounts are based on the standard monthly pricing. This offer is only available to first-time subscribers.": [
+        "Знижки розраховуються на основі стандартної місячної ціни. Ця пропозиція доступна лише тим, хто підписався вперше."
+      ]
+    },
+    "summer2023:Info": {
+      "For a limited time, get the best ${ BRAND_NAME } has to offer at an exclusive discount.": [
+        "Протягом обмеженого часу отримуйте найліпші пропозиції від ${ BRAND_NAME } з ексклюзивною знижкою."
+      ],
+      "We’re celebrating the nine-year anniversary of our crowdfunding!": [
+        "Ми святкуємо дев'ятирічну річницю нашого краудфандингу!"
+      ]
+    },
+    "summer2023:Offer title": {
+      "${ BRAND_NAME } Anniversary Sale": [
+        "${ BRAND_NAME } Святковий розпродаж"
       ]
     },
     "Table header": {
