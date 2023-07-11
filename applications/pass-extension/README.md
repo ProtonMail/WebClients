@@ -15,9 +15,39 @@ yarn install
 yarn install:devtools
 ```
 
-If you want to create a build that targets the production environment, run `yarn start:prod`. `yarn start` targets the black environment by default.
+### For Chromium
+
+Run
+
+```bash
+# `yarn start` targets the internal environment by default.
+yarn start:prod
+```
 
 After that, the build is available in `dist/` directory that you can install in Chromium by going to [extension page](chrome://extensions/), enable the developer mode, click on "Load Unpacked" and choose the `dist/` directory here.
+
+### For Firefox
+
+If you want to run the extension on Firefox, you can do:
+
+```bash
+BUILD_TARGET=firefox yarn start:prod
+```
+
+<details>
+<summary>To run an extension on Firefox</summary>
+<p>
+1. Open firefox and navigate to `about:debugging`
+2. Click on "_This Firefox_"
+3. Click on "_Load Temporary Add-On_" and chose the `dist/manifest.json`
+4. Right click on the extension icon in the toolbar and select "_Manage extension_"
+5. Go to the permission tab and enable all necessary permissions <sup>1</sup>
+6. Go back to `about:debugging` and click on "_Reload_" <sup>2</sup>
+7. You may sign in and start using Pass
+
+> <sup>1</sup> <small>Firefox does not prompt for permissions when launching a temporary add-on </small><br /><sup>2</sup> <small>FF might not pick-up the permission changes needed for content-script communication</small>
+
+</p>
 
 ## How to run the extension against localhost BE
 
