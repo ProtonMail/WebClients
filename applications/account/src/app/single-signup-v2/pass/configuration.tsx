@@ -82,17 +82,7 @@ export const getCustomPassFeatures = () => {
 export const getPassConfiguration = ({ isDesktop }: { isDesktop: boolean }) => {
     const logo = <PassLogo />;
 
-    const breakToken = '*-**-*';
-    const titleWithToken = c('pass_signup_2023: Info')
-        .t`Encrypted password manager${breakToken}that also protects your identity`;
-    const [firstTitle, subTitle] = titleWithToken.split(breakToken);
-    const title = (
-        <>
-            {firstTitle}
-            {<br />}
-            {subTitle}
-        </>
-    );
+    const title = <>{c('pass_signup_2023: Info').t`Encrypted password manager that also protects your identity`}</>;
 
     const onboardingTitle = c('pass_signup_2023: Info').t`Unlock ${PASS_APP_NAME} premium features by upgrading`;
 
