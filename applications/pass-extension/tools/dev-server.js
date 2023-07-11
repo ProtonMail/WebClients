@@ -8,8 +8,8 @@ const webpack = require('webpack');
 
 const fs = require('fs');
 const path = require('path');
-const createReloadRuntimeServer = require('./dev:reload-runtime');
-const createReduxDevTools = require('./dev:redux-tools');
+const createReloadRuntimeServer = require('./reload-runtime');
+const createReduxDevTools = require('./redux-tools');
 const parseEnvVar = require('./env-var.parser');
 
 const config = require('../webpack.config');
