@@ -2716,9 +2716,6 @@
     "Font face option": {
       "System default": [
         "Implicit din sistem"
-      ],
-      "Theme default": [
-        "Temă implicită"
       ]
     },
     "Font size option": {
@@ -5224,9 +5221,6 @@
       "Set up your organization": [
         "Setați organizația"
       ],
-      "Set up your organization testing": [
-        "Setare testare pentru organizație"
-      ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
         "Folosiți meniul de selectare al aplicațiilor din stânga sus pentru a accesa toate serviciile ${ BRAND_NAME }: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } și ${ DRIVE_SHORT_APP_NAME }."
       ]
@@ -5319,7 +5313,7 @@
         "Nume"
       ],
       "Name or email address": [
-        "Numele de utilizator sau adresa de e-mail"
+        "Nume utilizator / adresa de e-mail"
       ],
       "New name": [
         "Nume nou"
@@ -5776,6 +5770,70 @@
     "Success notification when user send feedback": {
       "Feedback sent": [
         "Mesajul a fost trimis"
+      ]
+    },
+    "summer2023: Billing cycle option": {
+      "1 year": [
+        "Un an"
+      ],
+      "2 years": [
+        "2 ani"
+      ]
+    },
+    "summer2023: Deal details": {
+      "Premium Drive": [
+        "Drive premium"
+      ],
+      "Premium Mail and Calendar": [
+        "Mail Premium și Calendar"
+      ],
+      "Premium Password Manager": [
+        "Gestionare parole premium"
+      ]
+    },
+    "summer2023: Describe Proton Pass": {
+      "Securely store your passwords and autofill them on websites. Includes unlimited passwords, autofill, password generator, and more.": [
+        "Stocați-vă parolele și completați-le automat pe paginile web. Include parole nelimitate, completare automată, generator de parole și multe altele."
+      ]
+    },
+    "summer2023: Short tool name to present Proton Pass": {
+      "Password manager": [
+        "Manager de parole"
+      ]
+    },
+    "summer2023: Tooltip": {
+      "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
+        "Creați detalii de conectare sigure pe toate dispozitivele. Include aliasuri nelimitate, 20 de seifuri, integrare autentificare cu doi factori, autocompletare date card de credit și multe altele."
+      ],
+      "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "Include 2950+ servere în peste 65 de țări, conectați până la 10 dispozitive, accesați servicii de transmisii în flux la nivel mondial, programe malițioase, blocare de reclame și multe altele."
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Include suport pentru un domeniu de e-mail personal, 10 adrese de e-mail, 10 aliasuri hide-my-email, partajare calendar și altele."
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "Protejați-vă fișierele cu stocarea criptată în cloud. Include sincronizare automată, partajare criptată a fișierelor și multe altele."
+      ]
+    },
+    "summer2023:Footer": {
+      "*Your subscription will automatically renew at the standard discounted rate at the end of your billing cycle.": [
+        "* Abonamentul se va reînnoi automat la aceeași sumă la sfârșitul ciclului de facturare."
+      ],
+      "Discounts are based on the standard monthly pricing. This offer is only available to first-time subscribers.": [
+        "Reducerile se bazează pe prețurile lunare standard. Această ofertă este disponibilă doar pentru abonații pentru prima dată."
+      ]
+    },
+    "summer2023:Info": {
+      "For a limited time, get the best ${ BRAND_NAME } has to offer at an exclusive discount.": [
+        "Pentru o perioadă limitată de timp, obțineți cel mai bun ${ BRAND_NAME } disponibil cu o reducere exclusivă."
+      ],
+      "We’re celebrating the nine-year anniversary of our crowdfunding!": [
+        "Sărbătorim aniversarea de nouă ani a finanțării noastre de la public!"
+      ]
+    },
+    "summer2023:Offer title": {
+      "${ BRAND_NAME } Anniversary Sale": [
+        "Reducere aniversară ${ BRAND_NAME }"
       ]
     },
     "Table header": {
