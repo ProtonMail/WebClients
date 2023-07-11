@@ -1491,7 +1491,7 @@
         "A finalização da compra expirou. Tente novamente."
       ],
       "Code wrong or not valid anymore": [
-        "O código errado ou não é válido."
+        "Código errado ou já não é válido"
       ],
       "Domain not available, try again later": [
         "Domínio indisponível, tente novamente mais tarde"
@@ -1991,9 +1991,6 @@
     "Font face option": {
       "System default": [
         "Predefinição do sistema"
-      ],
-      "Theme default": [
-        "Tema predefinido"
       ]
     },
     "Font size option": {
@@ -3478,7 +3475,7 @@
     },
     "Live Chat Modal": {
       "Live chat is available with ${ planName }": [
-        "Chat em directo disponível com ${ planName }"
+        "O chat em direto está disponível com ${ planName }"
       ],
       "Open support form": [
         "Abrir o formulário de suporte"
@@ -4390,7 +4387,7 @@
         "Selecionar"
       ],
       "Select a reason": [
-        "Seleccione um motivo"
+        "Selecione um motivo"
       ]
     },
     "Placeholder for custom invoice text": {
@@ -5013,6 +5010,70 @@
         "por mês"
       ]
     },
+    "summer2023: Billing cycle option": {
+      "1 year": [
+        "1 ano"
+      ],
+      "2 years": [
+        "2 anos"
+      ]
+    },
+    "summer2023: Deal details": {
+      "Premium Drive": [
+        "Versão premium do Drive"
+      ],
+      "Premium Mail and Calendar": [
+        "Versão premium do Mail e Calendar"
+      ],
+      "Premium Password Manager": [
+        "Versão premium do gestor de palavras-passe"
+      ]
+    },
+    "summer2023: Describe Proton Pass": {
+      "Securely store your passwords and autofill them on websites. Includes unlimited passwords, autofill, password generator, and more.": [
+        "Armazene as suas palavaras-passe com segurança e preencha-as automaticamente nos sítios web. Inclui palavaras-passe ilimitadas, preenchimento automático, gerador de palavaras-passe e mais."
+      ]
+    },
+    "summer2023: Short tool name to present Proton Pass": {
+      "Password manager": [
+        "Gestor de palavras-passe"
+      ]
+    },
+    "summer2023: Tooltip": {
+      "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
+        "Crie detalhes seguros de início de sessão em todos os seus dispositivos. Inclui aliases ilimitados, 20 cofres, A2F integrada, preenchimento automático de cartão de crédito e muito mais."
+      ],
+      "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "Inclui mais de 2950 servidores em mais de 65 países, ligue até 10 dispositivos, aceda a serviços de streaming em todo o mundo, malware e bloqueador de anúncios e muito mais."
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Inclui o suporte para 1 domínio de e-mail personalizado, 10 endereços de e-mail, 10 aliases Hide-my-email, partilha de calendário e muito mais."
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "Proteja os seus arquivos com armazenamento encriptado na nuvem. Inclui histórico de versões, partilhamento de ficheiros encriptados e muito mais."
+      ]
+    },
+    "summer2023:Footer": {
+      "*Your subscription will automatically renew at the standard discounted rate at the end of your billing cycle.": [
+        "*A sua subscrição será renovada automaticamente à taxa normal com desconto no final do seu ciclo de faturação."
+      ],
+      "Discounts are based on the standard monthly pricing. This offer is only available to first-time subscribers.": [
+        "Os descontos são baseados no preço mensal padrão. Esta oferta está disponível somente para novos subscritores."
+      ]
+    },
+    "summer2023:Info": {
+      "For a limited time, get the best ${ BRAND_NAME } has to offer at an exclusive discount.": [
+        "Por tempo limitado, obtenha o melhor da ${ BRAND_NAME } com um desconto exclusivo."
+      ],
+      "We’re celebrating the nine-year anniversary of our crowdfunding!": [
+        "Estamos a celebrar o 9º aniversário do nosso crowdfunding!"
+      ]
+    },
+    "summer2023:Offer title": {
+      "${ BRAND_NAME } Anniversary Sale": [
+        "Oferta de aniversário da ${ BRAND_NAME }"
+      ]
+    },
     "Tab subscription modal": {
       "For businesses": [
         "Para empresas"
@@ -5333,7 +5394,7 @@
         "Email seguro com base na Suíça"
       ],
       "Select a plan": [
-        "Seleccione um plano"
+        "Selecione um plano"
       ],
       "Set new password": [
         "Definir nova palavra-passe"

@@ -1990,10 +1990,10 @@
     },
     "Font face option": {
       "System default": [
-        "Igual que el sistema"
+        "Valor por defecto"
       ],
-      "Theme default": [
-        "Tema por defecto"
+      "Theme font": [
+        "Fuente del tema"
       ]
     },
     "Font size option": {
@@ -2176,7 +2176,7 @@
         "Opciones adicionales"
       ],
       "All ${ BRAND_NAME } apps and their premium features": [
-        "Todas las aplicaciiones de ${ BRAND_NAME } y sus funciones premium"
+        "Todas las aplicaciones de ${ BRAND_NAME } y sus funciones premium"
       ],
       "All your changes will be lost.": [
         "Todos los cambios se perderán."
@@ -2212,7 +2212,7 @@
         "Se requiere una suscripción Basic, Plus o Visionary"
       ],
       "Be sure to copy your password and store it somewhere safe.": [
-        "Asegúrate de copiar tu contraseña y almacenarla en algún lugar seguro."
+        "Asegúrate de copiar tu contraseña y guardarla en un lugar seguro."
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Antes de solicitar un nuevo código de verificación, verifica tu carpeta de spam y verifica que ${ strong } la dirección es correcta."
@@ -2254,7 +2254,7 @@
         "Continuar con ${ freeName }"
       ],
       "Copy the suggested password to clipboard": [
-        "Copiar la contraseña sugerida al portapapeles"
+        "Copiar la contraseña sugerida en el portapapeles"
       ],
       "Country code": [
         "Código de país"
@@ -2269,7 +2269,7 @@
         "Dominios de correo personalizados"
       ],
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
-        "Personalza el aspecto y la sensación de las aplicaciones de ${ BRAND_NAME }"
+        "Personaliza el aspecto y la sensación de las aplicaciones de ${ BRAND_NAME }"
       ],
       "Discover ProtectBuy logo": [
         "Logo de Discover ProtectBuy"
@@ -2359,7 +2359,7 @@
         "Obtener ${ upsellPlanName }"
       ],
       "Get a ${ BRAND_NAME } address to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
-        "Consigue una dirección ${ BRAND_NAME } para usar todos los servicios ${ BRAND_NAME_TWO } incluyendo ${ MAIL_SHORT_APP_NAME } y ${ CALENDAR_SHORT_APP_NAME }."
+        "Consigue una dirección de ${ BRAND_NAME } para usar todos los servicios ${ BRAND_NAME_TWO } incluyendo ${ MAIL_SHORT_APP_NAME } y ${ CALENDAR_SHORT_APP_NAME }."
       ],
       "Get my ${ BRAND_NAME } address": [
         "Obtener mi dirección ${ BRAND_NAME }"
@@ -2368,7 +2368,7 @@
         "aquí"
       ],
       "If it’s not right for you, we’ll refund you.": [
-        "Si no es el adecuado para ti, te reembolsaremos."
+        "Si no es lo que necesitas, te devolveremos el dinero."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Si tienes problemas para crear tu cuenta, solicita una invitación y responderemos en un día hábil."
@@ -2377,7 +2377,7 @@
         "Si crees que esto es un error, contáctanos ${ contactLink }."
       ],
       "If you cancel, your ${ vpnPlanName } subscription will not be renewed when it expires on ${ expiryDate }.": [
-        "Si cancelas, tu suscripción de ${ vpnPlanName } no será renovarada cuando expire el ${ expiryDate }."
+        "Si cancelas, tu suscripción de ${ vpnPlanName } no se renovará cuando expire el ${ expiryDate }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Si no encuentras el correo electrónico en tu bandeja de entrada, verifica tu carpeta de spam."
@@ -2497,7 +2497,7 @@
         "O selecciona un servidor en particular:"
       ],
       "Password copied to clipboard": [
-        "Contraseña copiada al portapapeles"
+        "Contraseña copiada en el portapapeles"
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Los pagos están protegidos con cifrado TLS y por las leyes de privacidad suizas."
@@ -2548,7 +2548,7 @@
         "Soporte prioritario"
       ],
       "Protected by Swiss privacy laws": [
-        "Protegido por las leyes de privacidad de Suiza"
+        "Protegido por la legislación suiza sobre privacidad"
       ],
       "read our two-factor authentication guide first": [
         "lee primero nuestra guía de autenticación de dos factores"
@@ -2633,7 +2633,7 @@
         "La manera más segura de navegar, hacer streaming y estar en línea."
       ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
-        "El proceso de verificación abrirá una nueva pestaña del navegador. Deshabilita cualquier bloqueador de ventanas emergentes activo."
+        "El proceso de verificación abrirá una nueva pestaña en el navegador. Deshabilita cualquier bloqueador de ventanas emergentes activo."
       ],
       "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         "Estos archivos de configuración te permiten elegir a qué servidor de ${ VPN_APP_NAME } te conectarás cuándo uses una aplicación de VPN de terceros o cuándo configures una conexión VPN en un router."
@@ -2651,7 +2651,7 @@
         "Esto puede tardar unos segundos o minutos dependiendo de tu dispositivo."
       ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
-        "Esto cancelará tu suscripción de pago y perderás todos ventajas de fidelidad acumuladas."
+        "Esto cancelará tu suscripción de pago y perderás todas las ventajas de fidelidad acumuladas."
       ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
         "Esto cancelará tu suscripción de pago actual y perderás cualquier beneficio de lealtad acumulado. El saldo restante de tu suscripción será devuelto como crédito de cuenta."
@@ -2675,7 +2675,7 @@
         "Para ${ planName }"
       ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
-        "Para completar tu pago, envia ${ btcAmountBold } a la dirección abajo."
+        "Para completar tu pago, envía ${ btcAmountBold } a la dirección abajo."
       ],
       "to continue to ${ toAppName }": [
         "para continuar a ${ toAppName }"
@@ -2807,7 +2807,7 @@
         "Enviaremos un nuevo código de verificación a ${ strong }."
       ],
       "Welcome": [
-        "¡Te damos la bienvenida!"
+        "Bienvenido"
       ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "Te enviaremos un código de restablecimiento a la dirección de correo electrónico que nos has proporcionado para recuperar la cuenta."
@@ -2828,7 +2828,7 @@
         "¿Por qué?"
       ],
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME_TWO } services": [
-        "Con una dirección ${ BRAND_NAME } cifrada, puedes usar todos los servicios ${ BRAND_NAME_TWO }."
+        "Con una dirección ${ BRAND_NAME } cifrada, puedes usar todos los servicios de ${ BRAND_NAME_TWO }."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "¿Te gustaría recibir un nuevo código de verificación o utilizar un método de verificación alternativo?"
@@ -2846,7 +2846,7 @@
         "Puedes personalizar y descargar tus facturas para tu contabilidad."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
-        "Puedes tener hasta ${ MAX_CALENDARS_FREE } calendario. Elimina enlaces de calendario compartido y cualquier usuario de ${ BRAND_NAME } con quien hayas compartido tus calendarios antes de cancelar tu suscripción a ${ MAIL_SHORT_APP_NAME }.",
+        "Puedes tener hasta ${ MAX_CALENDARS_FREE } calendario. Elimina enlaces de calendario compartido y cualquier usuario de ${ BRAND_NAME } con quien hayas compartido tu calendario antes de cancelar tu suscripción a ${ MAIL_SHORT_APP_NAME }.",
         "Puedes tener hasta ${ MAX_CALENDARS_FREE } calendarios. Elimina enlaces de calendario compartido y cualquier usuario de ${ BRAND_NAME } con quien hayas compartido tus calendarios antes de cancelar tu suscripción a ${ MAIL_SHORT_APP_NAME }."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
@@ -2895,7 +2895,7 @@
         "Has alcanzado el 100% de tu capacidad de almacenamiento. No podrás enviar o recibir nuevos correos electrónicos. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You will be redirected to the VPN download page": [
-        "Te redirigiremos a la página de descarga del VPN"
+        "Te redirigiremos a la página de descarga de la VPN"
       ],
       "You will lose access to ${ vpnPlanNameShort } servers and features on this date.": [
         "Perderás el acceso a los servidores y funciones de ${ vpnPlanNameShort } en esta fecha."
@@ -2937,7 +2937,7 @@
         "Tu correo electrónico se utilizará solo para esta verificación única."
       ],
       "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your ${ oldPassword }.": [
-        "Tus mensajes, calendarios o contactos existentes serán bloqueados. Para recuperar estos datos, necesitarás tu ${ oldPassword }."
+        "Se bloquearán tus mensajes, calendarios o contactos existentes. Para recuperar estos datos necesitarás tu ${ oldPassword }."
       ],
       "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your recovery phrase or your ${ oldPassword }.": [
         "Tus mensajes, calendarios o contactos existentes serán bloqueados. Para recuperar estos datos, necesitarás tu frase de recuperación o tu ${ oldPassword }."
@@ -3574,7 +3574,7 @@
         "Desde ${ price } por usuario"
       ],
       "Keep my ${ currentPlanName } account": [
-        "Continuar con mi cuneta ${ currentPlanName }"
+        "Continuar con mi cuenta ${ currentPlanName }"
       ],
       "Upgrade now": [
         "Actualizar"
@@ -4103,6 +4103,9 @@
         "Crea ${ n } calendario o añade calendarios de amigos, familiares, compañeros y organizaciones.",
         "Crea hasta ${ n } calendarios o añade calendarios de amigos, familiares, compañeros y organizaciones."
       ],
+      "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
+        "Crea hasta ${ n } direcciones de correo/alias que puedes asignarlos a tus familiares. Utilízalas para las identidades en línea, p.ej., JuanCompras@${ domain } para cuentas de compras."
+      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Te defiende de ataques que amenazan la privacidad de la VPN dirigiendo el tráfico de internet por varios servidores."
       ],
@@ -4134,7 +4137,7 @@
         "Las etiquetas son muy fáciles de añadir a los mensajes y te permiten encontrarlos fácilmente o aplicar filtros."
       ],
       "Like a folder, a vault is a convenient way to organize your items. Sharing vaults with friends and family is in the works.": [
-        "Como una carpeta, una bóveda es una manera conveniente de organizar tus elementos. Se está desarollando las funciones para compartir bóvedas con amistades y familiares."
+        "Como una carpeta, una bóveda es una manera práctica de organizar tus archivos. El poder compartir bóvedas con amistades y familiares es un trabajo que está en desarrollo."
       ],
       "Manage your subscription, including customization of your plan. Payment methods accepted are credit card, PayPal, cryptocurrency, and wire transfer.": [
         "Administra tu suscripción y personaliza también tu plan. Puedes pagar con tarjeta de crédito, PayPal, criptomonedas y transferencia."
@@ -4224,7 +4227,7 @@
         "Compatibilidad con protocolos de intercambio de archivos como BitTorrent"
       ],
       "Unique, on-the-fly email addresses that protect your online identity and let you control what lands in your inbox. From SimpleLogin by ${ BRAND_NAME }.": [
-        "Direcciones de correo únicas y instantáneas que protegen tu identidad en línea y te permiten controlar lo que llega a tu bandeja de entrada. Desde SimpleLogin por ${ BRAND_NAME }."
+        "Direcciones de correo únicas e instantáneas que protegen tu identidad en línea y te permiten controlar lo que llega a tu bandeja de entrada. Desde SimpleLogin por ${ BRAND_NAME }."
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Usa tus propias direcciones de correo personalizadas como por ejemplo, tu@tunombre.com."
@@ -4829,7 +4832,7 @@
         "Sólo inicia sesión en tu cuenta de App Store de Apple y luego pulsa en ${ subscriptions }."
       ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
-        "Sólo inicia sesión en su cuenta de Play Store y luego pulsa en ${ subscriptions }."
+        "Sólo inicia sesión en tu cuenta de Play Store y luego pulsa en ${ subscriptions }."
       ],
       "Manage your subscription on ${ subscriptionManager }": [
         "Gestiona tu suscripción en ${ subscriptionManager }"
@@ -4878,7 +4881,7 @@
         "Nuestro sistema ya no te cobrará automáticamente con este método de pago, pero tu suscripción aún se renovará al final del ciclo de facturación. Si deseas pasar a una versión con menos funciones o cambiar tu suscripción, debes hacerlo ti mismo antes del final del periodo de facturación. Además, si olvidas realizar un pago manual y el pago automático está deshabilitado para todos los métodos de pago, es posible que pasemos a una versión con menos funciones automáticamente para tu cuenta, lo que provocará la pérdida de muchas funciones."
       ],
       "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
-        "Nuestro sistema ya no te cobrará automáticamente con este método de pago, pero tu suscripción aún se renovará al final del ciclo de facturación. Si deseas pasar a una versión con menos funciones o cambiar tu suscripción, debes hacerlo ti mismo antes del final del periodo de facturación. No podemos pasarte a una version con menos funciones automáticamente porque si superas la cuota de almacenamiento del plan gratuito o si usas otras funciones de pago, no podemos eliminar automáticamente archivos, correos electrónicos u otros datos por ti. Si deshabilitas el pago automático, recuerda pagar tu próxima factura de suscripción antes de la fecha de vencimiento para evitar la suspensión de la cuenta."
+        "Nuestro sistema ya no te cobrará automáticamente con este método de pago, pero tu suscripción aún se renovará al final del ciclo de facturación. Si deseas pasar a una versión con menos funciones o cambiar tu suscripción, debes hacerlo tú mismo antes de finalizar el periodo de facturación. No podemos pasarte a una version con menos funciones automáticamente porque si superas la cuota de almacenamiento del plan gratuito o si usas otras funciones de pago, no podemos eliminar automáticamente archivos, correos electrónicos u otros datos por ti. Si deshabilitas el pago automático, recuerda pagar tu próxima factura de suscripción antes de la fecha de vencimiento para evitar la suspensión de la cuenta."
       ]
     },
     "Subscription saving": {
@@ -5169,7 +5172,7 @@
         "Cancelar tu suscripción"
       ],
       "Cancel subscription?": [
-        "Cancelar tu suscripción?"
+        "¿Cancelar la suscripción?"
       ],
       "Card verification": [
         "Verificación de la tarjeta"
