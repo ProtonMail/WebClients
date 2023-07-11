@@ -31,7 +31,11 @@ jest.mock('./useSharesState', () => {
         };
     };
 
-    return useSharesState;
+    return {
+        ...jest.requireActual('./useSharesState'),
+        __esModule: true,
+        default: useSharesState,
+    };
 });
 
 jest.mock('../_shares/useShare', () => {
