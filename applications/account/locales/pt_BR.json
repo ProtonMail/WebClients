@@ -4383,9 +4383,6 @@
     "Font face option": {
       "System default": [
         "Padrão do sistema"
-      ],
-      "Theme default": [
-        "Padrão do tema"
       ]
     },
     "Font Size Default": {
@@ -4422,6 +4419,14 @@
       ],
       "(during your first month)": [
         "(durante o primeiro mês)"
+      ]
+    },
+    "Get started checklist instructions": {
+      "${ MAIL_APP_NAME } app": [
+        "Aplicativo do ${ MAIL_APP_NAME }"
+      ],
+      "Get the App": [
+        "Baixe o aplicativo"
       ]
     },
     "Gmail forwarding": {
@@ -8305,7 +8310,7 @@
         "Comunicados do ${ BRAND_NAME } beta"
       ],
       "${ BRAND_NAME } company announcements": [
-        "Comunicados da empresa do ${ BRAND_NAME }"
+        "Comunicados da empresa ${ BRAND_NAME }"
       ],
       "${ BRAND_NAME } for Business newsletter": [
         "Boletim do ${ BRAND_NAME } for Business"
@@ -10165,7 +10170,7 @@
         "Instala o aplicativo"
       ],
       "Install app and extension": [
-        "Instale o aplicativo y a extensão"
+        "Instale o aplicativo e a extensão"
       ],
       "One easy subscription.": [
         "Uma assinatura fácil."
