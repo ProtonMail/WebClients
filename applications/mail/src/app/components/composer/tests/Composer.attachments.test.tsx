@@ -54,7 +54,7 @@ describe('Composer attachments', () => {
             address1Keys.publicKeys
         );
 
-        const resolve = addApiResolver('mail/v4/attachments');
+        const { resolve } = addApiResolver('mail/v4/attachments');
 
         updateSpy = jest.fn(({ data: { Message, AttachmentKeyPackets } }: any) => {
             Message.Attachments.forEach((Attachment: any) => {
