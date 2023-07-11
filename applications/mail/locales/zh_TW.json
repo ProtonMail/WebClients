@@ -422,7 +422,7 @@
         "取得 SimpleLogin 延伸功能"
       ],
       "Get started": [
-        "入門指南"
+        "開始使用"
       ],
       "Get verification code": [
         "取得驗證碼"
@@ -2945,12 +2945,6 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "您可以把既不合併也不保留的聯絡人標記為刪除。唯有在點擊「合併」按鈕時，才會執行刪除"
-      ],
-      "You can read the message and click on links without being tracked with email tracker protection.": [
-        "您可開啟電子郵件追蹤程式防護並在不被追蹤之情況讀訊息及點及連結"
-      ],
-      "You can read the message and click on links without being tracked.": [
-        "您可在讀訊息和按連時不被追縱"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4076,9 +4070,6 @@
     "Font face option": {
       "System default": [
         "系統預設值"
-      ],
-      "Theme default": [
-        "佈景主題預設值"
       ]
     },
     "Font Size Default": {
@@ -4118,11 +4109,77 @@
       ]
     },
     "Get started checklist instructions": {
+      "${ MAIL_APP_NAME } app": [
+        "${ MAIL_APP_NAME }應用程式"
+      ],
+      "${ MAIL_APP_NAME } on App Store": [
+        "App Store的${ MAIL_APP_NAME }"
+      ],
+      "${ MAIL_APP_NAME } on Play Store": [
+        "Play 商店的${ MAIL_APP_NAME }"
+      ],
+      "account logins": [
+        "帳號登錄"
+      ],
+      "Auto-forward Gmail": [
+        "自動轉寄至Gmail"
+      ],
+      "auto-forwarding": [
+        "自動轉寄"
+      ],
+      "Block email communications from scammers permanently.": [
+        "阻擋詐騙電子郵件通訊。"
+      ],
+      "Block unsavory senders": [
+        "封鎖不良寄件者"
+      ],
+      "Bravo for making your email even more secure, convenient, and relevant! We've upped your free storage to a total of 1 GB.": [
+        "太棒了，讓您的電子郵件變得更加安全、方便與相關！我們已將您的免費儲存空間增加到總計 1 GB。"
+      ],
+      "Change ${ strongText } to your ${ BRAND_NAME } address": [
+        "變更${ strongText }至${ BRAND_NAME }地址"
+      ],
+      "Checklist complete": [
+        "清單完成"
+      ],
+      "Close": [
+        "關閉"
+      ],
+      "Congratulation, you completed all the steps!": [
+        "恭喜，您已完成全部的步驟"
+      ],
+      "Continue setting up your email": [
+        "繼續設定您的電子郵件"
+      ],
+      "Discover how our ${ strongText } protect you": [
+        "了解${ strongText }如何保護您。"
+      ],
+      "Discover privacy features": [
+        "發現隱私功能"
+      ],
+      "Double your free storage to 1 GB when you complete the following:": [
+        "當完成以下任務將獲得兩倍的處存空間(1GB):"
+      ],
+      "Encryption so strong, only you and intended recipients can view your emails.": [
+        "強式加密，只有您及其他收件者可查看內容。"
+      ],
+      "For your eyes only": [
+        "只為了您的眼睛"
+      ],
+      "Get free storage": [
+        "取得免費的儲存空間"
+      ],
       "Get mobile app": [
         "取得行動裝置應用程式"
       ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "免費下載 ${ MAIL_APP_NAME } 行動裝置程式"
+      ],
+      "Get the ${ strongText } on Android or iOS": [
+        "於Android或iOS取得${ strongText }"
+      ],
+      "Get the App": [
+        "取得應用程式"
       ],
       "Import contacts or emails": [
         "匯入聯絡人或郵件"
@@ -4133,11 +4190,62 @@
       "Import your contacts or messages": [
         "匯入您的通訊錄或郵件"
       ],
+      "Keep using ${ MAIL_APP_NAME } to discover more ways ${ BRAND_NAME } protects your privacy and simplifies emailing.": [
+        "保持使用${ MAIL_APP_NAME }以了解更多方法${ BRAND_NAME }保護隱私及簡化信件。"
+      ],
+      "Learn more": [
+        "了解更多"
+      ],
+      "Make ${ BRAND_NAME } your go-to inbox": [
+        "使${ BRAND_NAME }進到您的收件匣"
+      ],
+      "Maybe later": [
+        "稍後再說"
+      ],
+      "Nice! You've updated all services in this category.": [
+        "您已更新於清單上的全部服務"
+      ],
+      "Open checklist": [
+        "開啟確認清單"
+      ],
+      "Popular online services": [
+        "熱門線上節點"
+      ],
+      "privacy features": [
+        "隱私功能"
+      ],
+      "Protect and simplify your email": [
+        "保護及簡化您的電子郵件"
+      ],
+      "Protection from trackers": [
+        "保護免於追蹤"
+      ],
       "Quickly transfer your contacts or emails from any provider using our Easy Switch import assistant.": [
         "使用我們的 Easy Switch 匯入助理從任何提供商快速移轉您的通訊錄或電郵。"
       ],
       "Send a message": [
         "傳送訊息"
+      ],
+      "Set recovery method": [
+        "設定復原方法"
+      ],
+      "Set up ${ strongText } from Gmail": [
+        "設定${ strongText }至Gmail"
+      ],
+      "Sign in to the mobile app to complete this step": [
+        "登入行動APP以完成此步驟"
+      ],
+      "Update your logins": [
+        "更新您的登入"
+      ],
+      "Using your mobile device, scan this QR code or visit the iOS or Android store.": [
+        "請掃描此條碼或瀏覽iOS、Android商店。"
+      ],
+      "We stop advertisers and data collectors from profiling you.": [
+        "我們無廣告及收集販賣你的資料。"
+      ],
+      "You've unlocked 1 GB": [
+        "您解鎖1GB"
       ]
     },
     "Gmail forwarding": {
@@ -7214,11 +7322,39 @@
       "Set up your organization": [
         "設定您的組織"
       ],
-      "Set up your organization testing": [
-        "設定您的組織測試"
-      ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
         "使用左上角的應用程式選取器存取所有的 ${ BRAND_NAME } 服務：${ MAIL_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME } 與 ${ DRIVE_SHORT_APP_NAME }"
+      ]
+    },
+    "Online accounts": {
+      "Have an account with one of these services? Just click to change the email address to your ${ MAIL_APP_NAME } address.": [
+        "您是否有以下服務的帳號?按變更電子郵件地址至您的${ MAIL_APP_NAME }地址。"
+      ]
+    },
+    "Online Accounts Name": {
+      "Banking": [
+        "銀行"
+      ],
+      "Crypto": [
+        "加密貨幣"
+      ],
+      "E-commerce and Retail": [
+        "電子發票"
+      ],
+      "Entertainment": [
+        "娛樂"
+      ],
+      "Food and beverage": [
+        "飲食"
+      ],
+      "Gaming": [
+        "遊戲"
+      ],
+      "Travel": [
+        "旅遊"
+      ],
+      "Utilities": [
+        "無標題"
       ]
     },
     "Option": {
@@ -8188,6 +8324,70 @@
         "意見反饋已送出"
       ]
     },
+    "summer2023: Billing cycle option": {
+      "1 year": [
+        "1 年"
+      ],
+      "2 years": [
+        "2年"
+      ]
+    },
+    "summer2023: Deal details": {
+      "Premium Drive": [
+        "付費版雲端硬碟"
+      ],
+      "Premium Mail and Calendar": [
+        "付費版信件和行事曆"
+      ],
+      "Premium Password Manager": [
+        "付費版密碼管理器"
+      ]
+    },
+    "summer2023: Describe Proton Pass": {
+      "Securely store your passwords and autofill them on websites. Includes unlimited passwords, autofill, password generator, and more.": [
+        "安全處存密碼和自動填入網站。包含無限密碼、自動填入、密碼生成、和更多。"
+      ]
+    },
+    "summer2023: Short tool name to present Proton Pass": {
+      "Password manager": [
+        "密碼管理員"
+      ]
+    },
+    "summer2023: Tooltip": {
+      "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
+        "於您全部的裝置創建安全登入的詳細資料。包含無限別名、20個保管庫、組合雙重驗證、信用卡自動填入及更多。"
+      ],
+      "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "包含於65+國家的2950+伺服器，連接最多10臺裝置，存取全球影音串流服務和惡意軟體、廣告攔截程式，及更多。"
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "包含對 1 個自訂電子郵件網域、10 組電子郵件位址、10 組 hide-my-email 別名、行事曆分享與更多功能的支援。"
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "透過加密的雲端儲存保護檔案。包含版本紀錄、加密的檔案共享、及更多。"
+      ]
+    },
+    "summer2023:Footer": {
+      "*Your subscription will automatically renew at the standard discounted rate at the end of your billing cycle.": [
+        "*您的訂閱將自動續約採用起始繳款單週期的折扣。"
+      ],
+      "Discounts are based on the standard monthly pricing. This offer is only available to first-time subscribers.": [
+        "折扣於每月基本價格。此優惠只提供給第一次訂閱者。"
+      ]
+    },
+    "summer2023:Info": {
+      "For a limited time, get the best ${ BRAND_NAME } has to offer at an exclusive discount.": [
+        "於限定時間，取得最佳的${ BRAND_NAME }折扣。"
+      ],
+      "We’re celebrating the nine-year anniversary of our crowdfunding!": [
+        "我們正在慶祝九年群眾募資!"
+      ]
+    },
+    "summer2023:Offer title": {
+      "${ BRAND_NAME } Anniversary Sale": [
+        "${ BRAND_NAME }年度銷售"
+      ]
+    },
     "Table header": {
       "Action": [
         "動作"
@@ -8779,9 +8979,6 @@
       ],
       "Subject missing": [
         "缺少主旨"
-      ],
-      "This email is protected": [
-        "此電子郵件受保護。"
       ],
       "To": [
         "收件者"

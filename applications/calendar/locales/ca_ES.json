@@ -6,10 +6,10 @@
   "contexts": {
     "Access level": {
       "Full view (see all event details)": [
-        "Vista completa (veu tots els detalls dels esdeveniments)"
+        "Vista completa (mostra tots els detalls dels esdeveniments)"
       ],
       "Limited view (see only free/busy)": [
-        "Vista limitada (mostra només lliures/ocupats)"
+        "Vista limitada (mostra només lliure/ocupat)"
       ]
     },
     "account": {
@@ -593,10 +593,10 @@
     },
     "Action subline": {
       "Anyone with the link can view your calendar": [
-        "Qualsevol que tingui l'enllaç pot veure el vostre calendari."
+        "Qualsevol que tingui l'enllaç pot veure el vostre calendari"
       ],
       "They can view or edit your calendar": [
-        "Poden veure o editar el vostre calendari."
+        "Poden veure o editar el vostre calendari"
       ]
     },
     "Action title": {
@@ -638,7 +638,7 @@
         "${ title } va començar el ${ formattedDateWithoutTime }"
       ],
       "${ title } started on ${ formattedDateWithTime }": [
-        "${ title } va començar el ${ formattedDateWithTime }."
+        "${ title } va començar el ${ formattedDateWithTime }"
       ],
       "${ title } started yesterday": [
         "${ title } va començar ahir"
@@ -650,16 +650,16 @@
         "${ title } va començar a les ${ formattedHour }"
       ],
       "${ title } starts now": [
-        "${ title } comença ara."
+        "${ title } comença ara"
       ],
       "${ title } starts on ${ formattedDate }": [
-        "${ title } va començar a les ${ formattedDate }."
+        "${ title } comença el ${ formattedDate }"
       ],
       "${ title } starts on ${ formattedDate } at ${ formattedHour }": [
-        "${ title } va començar el ${ formattedDate } a les ${ formattedHour }."
+        "${ title } comença el ${ formattedDate } a les ${ formattedHour }"
       ],
       "${ title } starts on ${ formattedDateWithoutTime }": [
-        "${ title } va començar a les ${ formattedDateWithoutTime }."
+        "${ title } comença el ${ formattedDateWithoutTime }"
       ],
       "${ title } starts on ${ formattedDateWithTime }": [
         "${ title } va començar el ${ formattedDateWithTime }"
@@ -825,36 +825,36 @@
     },
     "Calendar invite info": {
       "${ name } accepted the invitation": [
-        "${ name } ha acceptat la vostra invitació."
+        "${ name } ha acceptat la invitació"
       ],
       "${ name } declined the invitation": [
-        "${ name } ha rebutjat la invitació."
+        "${ name } ha rebutjat la invitació"
       ],
       "${ name } hasn't answered the invitation yet": [
-        "${ name } encara no ha respost la invitació."
+        "${ name } encara no ha respost a la invitació"
       ],
       "${ name } tentatively accepted the invitation": [
-        "${ name } ha acceptat provisionalment la invitació."
+        "${ name } ha acceptat provisionalment la invitació"
       ],
       "This event has been canceled": [
-        "Aquest esdeveniment s'ha cancel·lat."
+        "Aquest esdeveniment s'ha cancel·lat"
       ],
       "You accepted the invitation": [
-        "Heu acceptat la invitació."
+        "Heu acceptat la invitació"
       ],
       "You declined the invitation": [
-        "Heu declinat la invitació."
+        "Heu declinat la invitació"
       ],
       "You haven't answered the invitation yet": [
-        "Encara no heu respost a la invitació."
+        "Encara no heu respost a la invitació"
       ],
       "You tentatively accepted the invitation": [
-        "Heu acceptat provisionalment la invitació."
+        "Heu acceptat provisionalment la invitació"
       ]
     },
     "Calendar link sharing label input assistive text": {
       "Only you can see the label": [
-        "Sou l'única persona que podeu veure l'etiqueta."
+        "Sou l'única persona que pot veure l'etiqueta."
       ]
     },
     "Calendar permissions hint": {
@@ -877,10 +877,10 @@
         "Gestiona els enllaços"
       ],
       "Manage members": [
-        "Gestiona les membres"
+        "Gestiona els membres"
       ],
       "Unable to create more calendar links": [
-        "No es poden crear més enllaços del calendari."
+        "No es poden crear més enllaços de calendari"
       ],
       "Unable to share this calendar with more ${ BRAND_NAME } users": [
         "No és possible compartir aquest calendari amb més usuaris de ${ BRAND_NAME }."
@@ -925,28 +925,28 @@
     },
     "Calendar subscription not synced error": {
       "Calendar could not be decrypted": [
-        "El calendari no es pot desxifrar."
+        "No s'ha pogut desxifrar el calendari"
       ],
       "Calendar is syncing": [
-        "El calendari s'està sincronitzant."
+        "El calendari s'està sincronitzant"
       ],
       "Calendar is syncing: it may take several minutes for all of its events to show up.": [
-        "El calendari s'està sincronitzant. Pot ser que els vostres esdeveniments tardin uns minuts a aparèixer."
+        "El calendari s'està sincronitzant. Pot ser que els esdeveniments tardin uns minuts a aparèixer."
       ],
       "Calendar is too big": [
-        "El calendari és massa gran."
+        "El calendari és massa gran"
       ],
       "Calendar link is not accessible": [
-        "L'enllaç del calendari no és accessible."
+        "L'enllaç del calendari no és accessible"
       ],
       "Calendar link is temporarily inaccessible": [
-        "L'enllaç del calendari no és accessible temporalment."
+        "L'enllaç del calendari no és accessible temporalment"
       ],
       "Failed to sync calendar": [
         "Error sincronitzant el calendari"
       ],
       "More than 12 hours passed since last update": [
-        "Han passat més de 12 hores des de la darrera actualització."
+        "Han passat més de 12 hores des de la darrera actualització"
       ],
       "Unsupported calendar format": [
         "Format de calendari no suportat"
@@ -954,13 +954,13 @@
     },
     "Calendar subscription not synced error; long version": {
       "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
-        "L'enllaç del calendari no és accessible des de fora de l'ecosistema del proveïdor del calendari."
+        "L'enllaç al calendari no és accessible des de fora de l'ecosistema del proveïdor del calendari."
       ],
       "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
-        "En aquest moment, el proveïdor d'aquest enllaç no en permet el seu accés. Verifiqueu que l'enllaç segueix essent vàlid."
+        "L'enllaç al calendari és temporalment inaccessible. Verifiqueu que l'enllaç del proveïdor del calendari encara sigui vàlid."
       ],
       "More than 12 hours passed since last update — ${ CALENDAR_APP_NAME } will try to update the calendar in a few hours.": [
-        "Fa més de 12 hores de la darrera actualització — ${ CALENDAR_APP_NAME } provarà d'actualitzar-lo en les hores vinents."
+        "Fa més de 12 hores de la darrera actualització. ${ CALENDAR_APP_NAME } provarà d'actualitzar-lo en unes hores."
       ]
     },
     "Calendar view": {
@@ -1203,7 +1203,7 @@
         "Bahames"
       ],
       "Bahrain": [
-        "Bahrain"
+        "Bahrein"
       ],
       "Bangladesh": [
         "Bangladesh"
@@ -1239,7 +1239,7 @@
         "Bòsnia i Hercegovina"
       ],
       "Botswana": [
-        "Botswana"
+        "Botsuana"
       ],
       "Bouvet Island": [
         "Illa Bouvet"
@@ -1251,7 +1251,7 @@
         "Territori Britànic de l'Oceà Índic"
       ],
       "Brunei Darussalam": [
-        "Brunei Darussalam"
+        "Brunei"
       ],
       "Bulgaria": [
         "Bulgària"
@@ -1302,7 +1302,7 @@
         "Les Comores"
       ],
       "Congo": [
-        "Congo"
+        "República del Congo"
       ],
       "Congo, Democratic Republic of the": [
         "Congo, República Democràtica del"
@@ -1335,7 +1335,7 @@
         "Dinamarca"
       ],
       "Djibouti": [
-        "Djibouti"
+        "Gibuti"
       ],
       "Dominica": [
         "Dominica"
@@ -1350,7 +1350,7 @@
         "Egipte"
       ],
       "El Salvador": [
-        "El Salvador"
+        "el Salvador"
       ],
       "Equatorial Guinea": [
         "Guinea Equatorial"
@@ -1437,10 +1437,10 @@
         "Guinea"
       ],
       "Guinea-Bissau": [
-        "Guinea-Bissau"
+        "Guinea Bissau"
       ],
       "Guyana": [
-        "Guyana"
+        "Guaiana"
       ],
       "Haiti": [
         "Haití"
@@ -1503,7 +1503,7 @@
         "Jordània"
       ],
       "Kazakhstan": [
-        "Kazakhstan"
+        "Casaquistan"
       ],
       "Kenya": [
         "Kènia"
@@ -1515,7 +1515,7 @@
         "Kosovo"
       ],
       "Kuwait": [
-        "Kuwait"
+        "Al-Kuwait"
       ],
       "Kyrgyzstan": [
         "Kirguizstan"
@@ -1608,13 +1608,13 @@
         "Moçambic"
       ],
       "Myanmar": [
-        "Myanmar"
+        "Mianmar"
       ],
       "Namibia": [
         "Namíbia"
       ],
       "Nauru": [
-        "Nauru"
+        "Naüru"
       ],
       "Nepal": [
         "Nepal"
@@ -1659,7 +1659,7 @@
         "Oman"
       ],
       "Pakistan": [
-        "Pakistan"
+        "Paquiistan"
       ],
       "Palau": [
         "Palau"
@@ -1716,10 +1716,10 @@
         "Santa Helena"
       ],
       "Saint Kitts and Nevis": [
-        "Illa de Sant Christopher i Nevis"
+        "Saint Kitts i Nevis"
       ],
       "Saint Lucia": [
-        "Saint Lucia"
+        "Santa Llúcia"
       ],
       "Saint Martin (French Part)": [
         "Saint Martin (Part Francesa)"
@@ -1815,7 +1815,7 @@
         "Taiwan"
       ],
       "Tajikistan": [
-        "Tadjikistan"
+        "Tatgiquistan"
       ],
       "Tanzania": [
         "Tanzània"
@@ -1824,7 +1824,7 @@
         "Tailàndia"
       ],
       "Timor-Leste": [
-        "Timor-Leste"
+        "Timor Oriental"
       ],
       "Togo": [
         "Togo"
@@ -1848,10 +1848,10 @@
         "Turquia"
       ],
       "Turkmenistan": [
-        "Turkmenistan"
+        "Turcmenistan"
       ],
       "Turks and Caicos Islands": [
-        "Illes Turks i Caicos"
+        "Illes de Turks i Caicos"
       ],
       "Tuvalu": [
         "Tuvalu"
@@ -1878,7 +1878,7 @@
         "Uruguai"
       ],
       "Uzbekistan": [
-        "Uzbekistan"
+        "Usbequistan"
       ],
       "Vanuatu": [
         "Vanuatu"
@@ -1916,7 +1916,7 @@
     },
     "Country select label": {
       "Based on your time zone": [
-        "En funció de la teva zona horària"
+        "En funció de la vostra zona horària"
       ]
     },
     "Custom frequency option": {
@@ -1927,7 +1927,7 @@
         "Mai"
       ],
       "On date…": [
-        "El (data)"
+        "En data…"
       ],
       "time": [
         "vegada",
@@ -1981,7 +1981,7 @@
     },
     "Delete event button tooltip": {
       "Delete event": [
-        "Suprimeix l'esdeveniment"
+        "Elimina l'esdeveniment"
       ]
     },
     "Delinquent modal title": {
@@ -2035,7 +2035,7 @@
     },
     "Disabled calendar": {
       "Disabled": [
-        "Deshabilitat"
+        "Desactivat"
       ]
     },
     "Disabled calendar name suffix": {
@@ -2500,7 +2500,7 @@
     },
     "Error accepting calendar invitation": {
       "Invited address does not exist": [
-        "L'adreça convidada no existeix."
+        "L'adreça convidada no existeix"
       ]
     },
     "Error importing calendar": {
@@ -2575,7 +2575,7 @@
         "Calendari"
       ],
       "Calendar time zone not supported": [
-        "La zona horària del calendari no és compatible"
+        "El fus horari del calendari no és compatible"
       ],
       "Component with wrong format": [
         "Component amb format erroni"
@@ -2590,7 +2590,7 @@
         "Element"
       ],
       "Encryption failed": [
-        "Error en el xifratge"
+        "No s'ha pogut xifrar"
       ],
       "End time out of bounds": [
         "Hora de finalització fora de límits"
@@ -2650,7 +2650,7 @@
         "Hora d’inici fora de límits"
       ],
       "Time zone": [
-        "Fus horari"
+        "Zona horària"
       ],
       "Time zone not supported": [
         "Zona horària no compatible"
@@ -2700,7 +2700,7 @@
     },
     "Error notification when score is missing in user feedback form modal": {
       "Score is required": [
-        "Es requereix la valoració"
+        "La valoració és obligatòria"
       ]
     },
     "Event canceled status badge": {
@@ -2716,7 +2716,7 @@
     },
     "Event info. Organizer name": {
       "You": [
-        "Vostè"
+        "Vós"
       ]
     },
     "Event invitation error": {
@@ -2794,7 +2794,7 @@
     },
     "familyOffer_2023: Get Proton Family": {
       "Get ${ planName }": [
-        "Obtenir ${ planName }"
+        "Obteniu ${ planName }"
       ]
     },
     "familyOffer_2023: Tooltip": {
@@ -2883,7 +2883,7 @@
         "Us heu unit al pla familiar"
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
-        "Esteu convidats a enllaçar el vostre Compte de ${ BRAND_NAME } a aquest pla de grup i gaudir junts de totes les característiques prèmium de ${ BRAND_NAME_TWO }."
+        "Esteu convidats a enllaçar el vostre compte de ${ BRAND_NAME } a aquest pla de grup i gaudir junts de totes les característiques prèmium de ${ BRAND_NAME_TWO }."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "El vostre compte té més adreces de correu electrònic de les que teniu disponibles en aquest pla. ${ addressSettingsLink }"
@@ -2905,7 +2905,7 @@
     },
     "familyOffer_2023:Get Proton Family": {
       "Get ${ planName }": [
-        "Obtenir ${ planName }"
+        "Obteniu ${ planName }"
       ]
     },
     "familyOffer_2023:Info": {
@@ -3003,10 +3003,7 @@
     },
     "Font face option": {
       "System default": [
-        "Predeterminat del sistema"
-      ],
-      "Theme default": [
-        "Tema per defecte"
+        "Valors per defecte del sistema"
       ]
     },
     "Font size option": {
@@ -3118,7 +3115,7 @@
     },
     "Import calendar; import invitation": {
       "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your ${ BRAND_NAME } email address.": [
-        "Les invitacions importades aparèixen a ${ CALENDAR_APP_NAME } com a esdeveniments simples sense detalls de l'organitzador i dels participants. Per obtenir actualitzacions de l'esdeveniment i veure els participants, demaneu als organitzadors que us convidin utilitzant la vostra adreça de correu electrònic de ${ BRAND_NAME }."
+        "Les invitacions importades apareixen en ${ CALENDAR_APP_NAME } com a esdeveniments simples sense detalls de l'organitzador ni dels participants. Per obtenir actualitzacions de l'esdeveniment i veure els participants, demaneu als organitzadors que us convidin utilitzant la vostra adreça de correu electrònic de ${ BRAND_NAME }."
       ],
       "This file contains an event invitation:": [
         "Aquest fitxer conté una invitació a un esdeveniment:",
@@ -3716,7 +3713,7 @@
         "No s'ha trobat cap grup"
       ],
       "No results found": [
-        "No s'han trobat resultats."
+        "No s'ha trobat cap resultat"
       ],
       "None of the participants can be notified about your changes:": [
         "Cap dels participants pot ser notificat dels canvis:"
@@ -3849,7 +3846,7 @@
         "Aquesta adreça està inhabilitada. Per tal de poder enviar-hi, el propietari l'ha d'habilitar en primer lloc."
       ],
       "This event has been updated by the organizer. Would you like to change your answer only for this occurrence in this series?": [
-        "L'organitzador ha actualitzat aquest esdeveniment. Vulgueu canviar la vostra resposta només per aquest esdeveniment de la sèrie?"
+        "L'organitzador ha actualitzat aquest esdeveniment. Voleu canviar la vostra resposta només per aquest esdeveniment de la sèrie?"
       ],
       "This event has been updated by the organizer. Would you like to delete this event?": [
         "L'organitzador ha actualitzat aquest esdeveniment. Voleu suprimir aquest esdeveniment?"
@@ -4069,7 +4066,7 @@
     },
     "Info; reset calendar keys modal; part 2": {
       "This is because your password was recently reset without using a recovery method.": [
-        "Això es deu al fet que recentment heu restablert la vostra contrasenya sense un mètode de recuperació."
+        "Això es deu al fet que recentment s'ha restablert la vostra contrasenya sense utilitzar un mètode de recuperació."
       ]
     },
     "Info; reset calendar keys modal; part 3": {
@@ -4093,7 +4090,7 @@
         "Es permet un màxim de ${ MAX_ATTENDEES } participants per invitació"
       ],
       "Creating invites in a shared calendar is not allowed": [
-        "No es permet crear invitacions en un calendari compartit."
+        "No es permet crear invitacions en un calendari compartit"
       ]
     },
     "Input label": {
@@ -4540,7 +4537,7 @@
     },
     "Link to calendar app": {
       "Open in ${ CALENDAR_APP_NAME }": [
-        "Obre a ${ CALENDAR_APP_NAME }"
+        "Obre en ${ CALENDAR_APP_NAME }"
       ]
     },
     "Link; reset calendar keys modal": {
@@ -4592,7 +4589,7 @@
     },
     "Message": {
       "Fw:": [
-        "Rv:"
+        "RV:"
       ],
       "Re:": [
         "Re:"
@@ -4627,7 +4624,7 @@
     },
     "Modal for received invitation to share calendar; text": {
       "${ calendarOwnerDisplayName } shared their calendar ${ boldCalendarName } with you.": [
-        "${ calendarOwnerDisplayName } ha compartit el seu calendari ${ boldCalendarName } amb vosaltres."
+        "${ calendarOwnerDisplayName } ha compartit el seu calendari ${ boldCalendarName } amb vós."
       ]
     },
     "Modal for received invitation to share calendar; Title": {
@@ -4635,7 +4632,7 @@
         "Uniu-vos al calendari"
       ],
       "Unable to join more calendars": [
-        "No es poden unir a més calendaris"
+        "No us podeu unir a més calendaris"
       ]
     },
     "Modal title": {
@@ -4912,7 +4909,7 @@
     },
     "Notification in shared calendar modal": {
       "Calendar invitation declined": [
-        "S'ha rebutjat la invitació al calendari."
+        "S'ha rebutjat la invitació al calendari"
       ],
       "Joined ${ calendarName } (${ senderEmail })": [
         "Us heu unit a ${ calendarName } (${ senderEmail })"
@@ -5055,7 +5052,7 @@
         "Us donem la benvinguda a ${ appName }"
       ],
       "Where you can take control of your time and your data.": [
-        "Preneu el control del vostre temps i les vostres dades."
+        "On podeu prendre el control del vostre temps i les vostres dades."
       ]
     },
     "Onboarding Action": {
@@ -5080,9 +5077,6 @@
         "Seleccioneu un tema"
       ],
       "Set up your organization": [
-        "Configureu la vostra organització"
-      ],
-      "Set up your organization testing": [
         "Configureu la vostra organització"
       ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
@@ -5166,7 +5160,7 @@
     },
     "Participants expand button label": {
       "Expand participants list": [
-        "Expandeix la llista de participants"
+        "Desplega la llista de participants"
       ]
     },
     "PGP key encryption warning": {
@@ -5345,7 +5339,7 @@
         "Comproveu l'ortografia o seleccioneu un país de la llista."
       ],
       "No results found": [
-        "No s'han trobat resultats."
+        "No s'ha trobat cap resultat"
       ]
     },
     "Settings update growler warning": {
@@ -5355,7 +5349,7 @@
     },
     "Share calendar assistive text": {
       "To invite non-${ BRAND_NAME } users, share your calendar with a link.": [
-        "Per convidar usuaris de fora de ${ BRAND_NAME }, compartiu el vostre calendari amb un enllaç."
+        "Per convidar usuaris de fora de ${ BRAND_NAME }, compartiu el calendari amb un enllaç."
       ]
     },
     "Share calendar max shares reached error": {
@@ -5399,10 +5393,10 @@
     },
     "Signature verification error when joining calendar": {
       "Signature verification error": [
-        "Error de verificació de signatura"
+        "S'ha produït un error de verificació de la signatura"
       ],
       "You have enabled address verification for ${ boldSenderEmail }. We couldn't verify the authenticity of this calendar invite. This may be due to changes in the encryption keys of this contact. Please review its advanced PGP settings, or your can ask ${ boldSenderEmail } for a new invite.": [
-        "Heu activat la verificació d'adreces per a ${ boldSenderEmail }. No hem pogut verificar l'autenticitat d'aquesta invitació. Això pot ser degut a canvis en les claus de xifratge d'aquest contacte. Us convidem a comprovar la vostra configuració avançada de PGP o sol·licitar una nova invitació a ${ boldSenderEmail }."
+        "Heu habilitat la verificació d'adreces per a ${ boldSenderEmail }. No hem pogut verificar l'autenticitat d'aquesta invitació de calendari. Això pot ser degut a canvis en les claus de xifratge d'aquest contacte. Comproveu-ne les preferències avançades de PGP o sol·liciteu una nova invitació a ${ boldSenderEmail }."
       ]
     },
     "Signing preference for emails": {
@@ -5479,13 +5473,13 @@
         "Accés anticipat prèmium"
       ],
       "Premium Mail and Calendar": [
-        "Correu i Calendari Prèmium"
+        "Correu i Calendari prèmium"
       ],
       "Premium Mail, Calendar and Drive": [
-        "Correu, Calendari i Drive Prèmium"
+        "Correu, Calendari i Drive prèmium"
       ],
       "Premium VPN": [
-        "VPN Prèmium"
+        "VPN prèmium"
       ],
       "Secure cloud storage": [
         "Emmagatzematge al núvol segur"
@@ -5647,7 +5641,7 @@
     },
     "Spotlight": {
       "Add your country's public holidays to your calendar.": [
-        "Afegiu els dies festius del vostre país al vostre calendari."
+        "Afegiu els dies festius del vostre país al calendari."
       ],
       "Get up to ${ credits } in credits.": [
         "Obteniu fins a ${ credits } en crèdits."
@@ -5704,10 +5698,10 @@
         "S'enviarà una invitació als participants afegits per a tots els esdeveniments d'aquesta sèrie."
       ],
       "Answer sent and all events deleted": [
-        "S'ha enviat la resposta i se suprimeixen tots els esdeveniments."
+        "S'ha enviat la resposta i s'han eliminat tots els esdeveniments"
       ],
       "Answer sent and event deleted": [
-        "Resposta enviada i esdeveniment eliminat"
+        "S'ha enviat la resposta i s'ha eliminat l'esdeveniment"
       ],
       "Bug reported": [
         "Error notificat"
@@ -5719,7 +5713,7 @@
         "Calendari creat"
       ],
       "Calendar information updated": [
-        "S'ha actualitzat la informació del calendari."
+        "S'ha actualitzat la informació del calendari"
       ],
       "Calendar updated": [
         "Calendari actualitzat"
@@ -5769,13 +5763,13 @@
         "Esdeveniment actualitzat"
       ],
       "Events created": [
-        "Esdeveniments creats"
+        "S'han creat els esdeveniments"
       ],
       "Fingerprint copied to clipboard": [
         "Empremta digital copiada al porta-retalls"
       ],
       "Future events deleted": [
-        "Futurs esdeveniments eliminats"
+        "S'han eliminat els futurs esdeveniments"
       ],
       "Future events updated": [
         "Futurs esdeveniments actualitzats"
@@ -5790,7 +5784,7 @@
         "Invitació enviada i esdeveniment creat"
       ],
       "Invitation sent and events created": [
-        "Invitació enviada i esdeveniments creats"
+        "S'ha enviat la invitació i s'ha creat l'esdeveniment"
       ],
       "Invitation sent and participants added": [
         "Invitació enviada i participants afegits"
@@ -5799,7 +5793,7 @@
         "Invitació enviada i participants afegits a tots els esdeveniments"
       ],
       "Participants notified and all events updated": [
-        "Participants notificats i tots els esdeveniments actualitzats"
+        "S'ha notificat als participants i s'han actualitzat tots els esdeveniments"
       ],
       "Participants notified and changes saved": [
         "Participants notificats i canvis guardats"
@@ -5832,6 +5826,27 @@
     "Success notification when user send feedback": {
       "Feedback sent": [
         "S'ha enviat l'opinió"
+      ]
+    },
+    "summer2023: Billing cycle option": {
+      "1 year": [
+        "1 any"
+      ],
+      "2 years": [
+        "2 anys"
+      ]
+    },
+    "summer2023: Deal details": {
+      "Premium Drive": [
+        "Versió prèmium de Drive"
+      ],
+      "Premium Mail and Calendar": [
+        "Versió prèmium de Mail i Calendar"
+      ]
+    },
+    "summer2023: Short tool name to present Proton Pass": {
+      "Password manager": [
+        "Gestor de contrasenyes"
       ]
     },
     "Table header": {
@@ -6080,10 +6095,10 @@
         "Error"
       ],
       "Event is happening all day": [
-        "L’esdeveniment té lloc tot el dia."
+        "L’esdeveniment té lloc tot el dia"
       ],
       "Event is happening on defined time slot": [
-        "L'esdeveniment està succeint en un espai de temps definit."
+        "L'esdeveniment té lloc en un interval de temps definit"
       ],
       "Exporting contacts": [
         "Exportant contactes"
@@ -6255,7 +6270,7 @@
         "Iniciar sessió i concedir accés"
       ],
       "Sign in with 2FA": [
-        "Inicia la sessió amb dos factors"
+        "Inicia la sessió amb 2FA"
       ],
       "Sign out": [
         "Tanca la sessió"
@@ -6313,7 +6328,7 @@
     },
     "Title; calendar sharing pop-up": {
       "Planning just got easier!": [
-        "Gestionar la vostra agenda mai ha estat tan fàcil!"
+        "Planificar mai havia estat tan fàcil!"
       ]
     },
     "Title; create calendar modal": {
@@ -6430,7 +6445,7 @@
     },
     "View event button tooltip": {
       "Open in a new tab": [
-        "Obre a una nova pestanya"
+        "Obre en una pestanya nova"
       ]
     },
     "Warning": {

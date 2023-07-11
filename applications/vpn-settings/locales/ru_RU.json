@@ -2008,9 +2008,6 @@
     "Font face option": {
       "System default": [
         "Системный по умолчанию"
-      ],
-      "Theme default": [
-        "Из темы по умолчанию"
       ]
     },
     "Font size option": {
@@ -3672,6 +3669,12 @@
         "${ n } папки и ярлыка",
         "${ n } папок и ярлыков",
         "Папок и ярлыков: ${ n }"
+      ],
+      "${ n } hide-my-email alias": [
+        "${ n } псевдоним hide-my-email",
+        "${ n } псевдонима hide-my-email",
+        "${ n } псевдонимов hide-my-email",
+        "${ n } псевдонима hide-my-email"
       ],
       "${ n } label": [
         "${ n } ярлык",

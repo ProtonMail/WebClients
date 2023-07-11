@@ -4376,9 +4376,6 @@
     "Font face option": {
       "System default": [
         "Системный по умолчанию"
-      ],
-      "Theme default": [
-        "Из темы по умолчанию"
       ]
     },
     "Font Size Default": {
@@ -6209,6 +6206,9 @@
       "Recovery information will remain on this device unless you select to delete it.": [
         "Информация о восстановлении останется на этом устройстве, если вы не решите ее удалить."
       ],
+      "Recovery kit copied to clipboard": [
+        "Набор для восстановления скопирован в буфер обмена."
+      ],
       "Recovery phrase copied to clipboard": [
         "Фраза для восстановления скопирована в буфер обмена"
       ],
@@ -6232,6 +6232,9 @@
       ],
       "Remove one of your calendars to join this one": [
         "Удалите один из своих календарей, чтобы присоединиться к этому"
+      ],
+      "Report link expired": [
+        "Ссылка на отчет устарела"
       ],
       "Restore": [
         "Восстановить"
@@ -8570,6 +8573,12 @@
       ]
     },
     "Loading info": {
+      "${ twoFAMembers.length }/${ members.length } of your organization member use two-factor authentication.": [
+        "${ twoFAMembers.length } из ${ members.length } члена вашей организации используют двухфакторную аутентификацию.",
+        "${ twoFAMembers.length } из ${ members.length } членов вашей организации используют двухфакторную аутентификацию.",
+        "${ twoFAMembers.length } из ${ members.length } членов вашей организации используют двухфакторную аутентификацию.",
+        "${ twoFAMembers.length } из ${ members.length } членов вашей организации используют двухфакторную аутентификацию."
+      ],
       "Almost there": [
         "Почти готово"
       ],
@@ -9045,6 +9054,12 @@
         "${ n } папки и ярлыка",
         "${ n } папок и ярлыков",
         "Папок и ярлыков: ${ n }"
+      ],
+      "${ n } hide-my-email alias": [
+        "${ n } псевдоним hide-my-email",
+        "${ n } псевдонима hide-my-email",
+        "${ n } псевдонимов hide-my-email",
+        "${ n } псевдонима hide-my-email"
       ],
       "${ n } label": [
         "${ n } ярлык",
@@ -9789,6 +9804,9 @@
       ],
       "Calendar added": [
         "Календарь добавлен"
+      ],
+      "Calendar updated": [
+        "Календарь обновлен"
       ]
     },
     "Notification in share calendar modal": {
@@ -10158,6 +10176,118 @@
     "Participant name": {
       "You": [
         "Вы"
+      ]
+    },
+    "pass_signup_2023: Action": {
+      "Continue": [
+        "Продолжить"
+      ],
+      "Download again ${ size }": [
+        "Скачать снова ${ size }"
+      ],
+      "Download to continue ${ size }": [
+        "Скачать для продолжения ${ size }"
+      ]
+    },
+    "pass_signup_2023: Feature": {
+      "End-to-end encrypted": [
+        "Со сквозным шифрованием"
+      ],
+      "Open source": [
+        "Открытый исходный код"
+      ],
+      "Protected by Swiss privacy laws": [
+        "Защищен швейцарскими законами о конфиденциальности"
+      ],
+      "Swiss based": [
+        "Расположен в Швейцарии"
+      ]
+    },
+    "pass_signup_2023: Info": {
+      "${ PASS_APP_NAME } benefits": [
+        "Преимущества ${ PASS_APP_NAME }"
+      ],
+      "${ PASS_APP_NAME } is available as a browser extension on Firefox Add-ons.": [
+        "${ PASS_APP_NAME } доступно в виде расширения браузера в Firefox Add-ons."
+      ],
+      "${ PASS_APP_NAME } is available as a browser extension on the Chrome Web Store.": [
+        "${ PASS_APP_NAME } доступно в виде расширения браузера в Chrome Web Store."
+      ],
+      "Download and install the relevant apps and extensions to start using ${ PASS_APP_NAME }": [
+        "Скачайте и установите соответствующие приложения и расширения, чтобы начать использовать ${ PASS_APP_NAME }"
+      ],
+      "Download the ${ PASS_APP_NAME } app from Google Play and install it to start using ${ PASS_APP_NAME2 } on your phone.": [
+        "Скачайте приложение ${ PASS_APP_NAME } из Google Play и установите его, чтобы начать использовать ${ PASS_APP_NAME2 } на вашем телефоне."
+      ],
+      "Download the ${ PASS_APP_NAME } app from the App Store and install it to start using ${ PASS_APP_NAME2 } on your phone.": [
+        "Скачайте приложение ${ PASS_APP_NAME } из App Store и установите его, чтобы начать использовать ${ PASS_APP_NAME2 } на вашем телефоне."
+      ],
+      "Encrypted password manager${ breakToken }that also protects your identity": [
+        "Зашифрованный менеджер паролей,${ breakToken } который также защищает вашу личную информацию"
+      ],
+      "End-to-end encrypted notes": [
+        "Заметки со сквозным шифрованием"
+      ],
+      "Get ${ appName } for ${ browserName }": [
+        "Получить ${ appName } для ${ browserName }"
+      ],
+      "Get ${ appName } for ${ browserName } soon": [
+        "Получите ${ appName } для ${ browserName } в ближайшее время"
+      ],
+      "Hide-my-email aliases protect your email from data breaches": [
+        "Псевдонимы Hide-my-email защищают вашу электронную почту от утечек данных"
+      ],
+      "If you get locked out of your ${ BRAND_NAME } Account, your **recovery kit** will allow you to sign in and recover your data.": [
+        "Если вы потеряете доступ в свою учетную запись ${ BRAND_NAME }, ваш **набор для восстановления** позволит вам войти и восстановить свои данные."
+      ],
+      "Install ${ PASS_APP_NAME }": [
+        "Установить ${ PASS_APP_NAME }"
+      ],
+      "Install app": [
+        "Установите приложение"
+      ],
+      "Install app and extension": [
+        "Установка приложения и расширения"
+      ],
+      "It’s the only way to fully restore your account, so make sure you keep this **recovery kit** somewhere safe.": [
+        "Это единственный способ полностью восстановить ваш аккаунт, поэтому убедитесь, что вы храните этот **набор для восстановления** в безопасном месте."
+      ],
+      "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
+        "Присоединяйтесь к более чем 100 миллионам людей, выбравшим ${ BRAND_NAME }, чтобы оставаться в безопасности в Интернете"
+      ],
+      "Launching ${ PASS_APP_NAME }": [
+        "Запуск ${ PASS_APP_NAME }"
+      ],
+      "Open-source and audited": [
+        "Открытый исходный код, проверенный на безопасность"
+      ],
+      "Protected by Swiss privacy laws": [
+        "Защищено швейцарскими законами о конфиденциальности"
+      ],
+      "Save your recovery kit to continue": [
+        "Сохраните свой набор для восстановления, чтобы продолжить."
+      ],
+      "Signing in to ${ PASS_APP_NAME }": [
+        "Вход в ${ PASS_APP_NAME }"
+      ],
+      "to start using ${ PASS_APP_NAME } on your phone": [
+        "чтобы начать использовать ${ PASS_APP_NAME } на вашем телефоне"
+      ],
+      "Unlock ${ PASS_APP_NAME } premium features by upgrading": [
+        "Разблокируйте премиумные функции ${ PASS_APP_NAME }, улучшив подписку"
+      ],
+      "Works on all devices": [
+        "Работает на всех устройствах"
+      ]
+    },
+    "pass_signup_2023: Onboarding": {
+      "Welcome to ${ PASS_APP_NAME }": [
+        "Добро пожаловать в ${ PASS_APP_NAME }"
+      ]
+    },
+    "pass_signup_2023: Title": {
+      "Secure your account": [
+        "Обезопасьте ваш аккаунт"
       ]
     },
     "Payment method option": {

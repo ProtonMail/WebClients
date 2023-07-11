@@ -145,6 +145,9 @@
       "Carbon Copy": [
         "Con copia"
       ],
+      "Change email": [
+        "Cambiar la dirección de correo"
+      ],
       "Change page": [
         "Cambiar página"
       ],
@@ -1592,7 +1595,7 @@
         "${ participantName } aceptó tentativamente su invitación."
       ],
       "(Attendance optional)": [
-        "(Asistencia opcional)"
+        "(asistencia opcional)"
       ],
       "Adding occurrences to an event is not supported for the moment": [
         "Añadir ocurrencias a un evento no es compatible por el momento"
@@ -2952,12 +2955,6 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Puede marcar para eliminar los contactos que no desea ni combinar ni mantener. La eliminación sólo tendrá lugar después de que el botón de combinar sea pulsado."
-      ],
-      "You can read the message and click on links without being tracked with email tracker protection.": [
-        "Puede leer el mensaje y hacer clic en los enlaces sin ser rastreado gracias a la protección de rastreador de correo electrónico."
-      ],
-      "You can read the message and click on links without being tracked.": [
-        "Puede leer el mensaje y hacer clic en los enlaces sin ser rastreado."
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4103,8 +4100,8 @@
       "System default": [
         "Del sistema"
       ],
-      "Theme default": [
-        "Tema por defecto"
+      "Theme font": [
+        "Fuente del tema"
       ]
     },
     "Font Size Default": {
@@ -4144,17 +4141,143 @@
       ]
     },
     "Get started checklist instructions": {
+      "${ MAIL_APP_NAME } app": [
+        "App de ${ MAIL_APP_NAME }"
+      ],
+      "${ MAIL_APP_NAME } on App Store": [
+        "${ MAIL_APP_NAME } en App Store"
+      ],
+      "${ MAIL_APP_NAME } on Play Store": [
+        "${ MAIL_APP_NAME } en Play Store"
+      ],
+      "account logins": [
+        "los inicios de sesión de la cuenta"
+      ],
+      "Auto-forward Gmail": [
+        "Reenvío automático de Gmail"
+      ],
+      "auto-forwarding": [
+        "reenvío automático"
+      ],
+      "Block email communications from scammers permanently.": [
+        "Bloquee las comunicaciones por correo electrónico de los estafadores de forma permanente."
+      ],
+      "Block unsavory senders": [
+        "Bloquee remitentes no deseados"
+      ],
+      "Bravo for making your email even more secure, convenient, and relevant! We've upped your free storage to a total of 1 GB.": [
+        "¡Felicitaciones por hacer que su correo electrónico sea aún más seguro, conveniente y relevante! Hemos aumentado su almacenamiento gratuito a un total de 1 GB."
+      ],
+      "Change ${ strongText } to your ${ BRAND_NAME } address": [
+        "Cambie ${ strongText } a su dirección de ${ BRAND_NAME }"
+      ],
+      "Checklist complete": [
+        "Lista de verificación completada"
+      ],
+      "Close": [
+        "Cerrar"
+      ],
+      "Congratulation, you completed all the steps!": [
+        "¡Felicitaciones, ha completado todos los pasos!"
+      ],
+      "Continue setting up your email": [
+        "Continúe configurando su correo"
+      ],
+      "Discover how our ${ strongText } protect you": [
+        "Descubra cómo nuestras ${ strongText } le protegen"
+      ],
+      "Discover privacy features": [
+        "Descubra las funciones de privacidad"
+      ],
+      "Double your free storage to 1 GB when you complete the following:": [
+        "Duplique su almacenamiento gratuito a 1 GB cuando complete los siguientes:"
+      ],
+      "Encryption so strong, only you and intended recipients can view your emails.": [
+        "Cifrado tan sólido que solo usted y los destinatarios pueden ver sus correos electrónicos."
+      ],
+      "For your eyes only": [
+        "Solo para usted"
+      ],
+      "Get free storage": [
+        "Obtenga almacenamiento gratuito"
+      ],
+      "Get mobile app": [
+        "Descargar app para móviles"
+      ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "Obtenga la aplicación móvil de ${ MAIL_APP_NAME }"
+      ],
+      "Get the ${ strongText } on Android or iOS": [
+        "Obtenga la ${ strongText } en Android o iOS"
+      ],
+      "Get the App": [
+        "Descargue la app"
       ],
       "Import contacts or emails": [
         "Importar contactos o correos"
       ],
+      "Import data": [
+        "Importar datos"
+      ],
       "Import your contacts or messages": [
         "Importe sus contactos y mensajes"
       ],
+      "Keep using ${ MAIL_APP_NAME } to discover more ways ${ BRAND_NAME } protects your privacy and simplifies emailing.": [
+        "Siga usando ${ MAIL_APP_NAME } y descubra más maneras en que ${ BRAND_NAME } protege su privacidad y simplifica su correo electrónico."
+      ],
+      "Learn more": [
+        "Más información"
+      ],
+      "Make ${ BRAND_NAME } your go-to inbox": [
+        "Convierta a ${ BRAND_NAME } en su bandeja de entrada"
+      ],
+      "Maybe later": [
+        "Quizás más tarde"
+      ],
+      "Nice! You've updated all services in this category.": [
+        "¡Hecho! Ha actualizado todos los servicios en esta categoría."
+      ],
+      "Open checklist": [
+        "Abrir la lista de verificación"
+      ],
+      "Popular online services": [
+        "Servicios populares en línea"
+      ],
+      "privacy features": [
+        "funciones de privacidad"
+      ],
+      "Protect and simplify your email": [
+        "Proteja y simplifique su correo"
+      ],
+      "Protection from trackers": [
+        "Protección contra rastreadores"
+      ],
       "Quickly transfer your contacts or emails from any provider using our Easy Switch import assistant.": [
         "Transfiera rápidamente sus contactos o correos de cualquier proveedor usando nuestro asistente de importación Easy Switch."
+      ],
+      "Send a message": [
+        "Enviar un mensaje"
+      ],
+      "Set recovery method": [
+        "Establecer un método de recuperación"
+      ],
+      "Set up ${ strongText } from Gmail": [
+        "Configure el ${ strongText } desde Gmail"
+      ],
+      "Sign in to the mobile app to complete this step": [
+        "Inicie sesión en la app móvil para completar este paso"
+      ],
+      "Update your logins": [
+        "Actualice sus inicios de sesión"
+      ],
+      "Using your mobile device, scan this QR code or visit the iOS or Android store.": [
+        "Usando su dispositivo móvil, escanee este código QR o visite la tienda de iOS o Android."
+      ],
+      "We stop advertisers and data collectors from profiling you.": [
+        "Impedimos que los anunciantes y recopiladores de datos le perfilen."
+      ],
+      "You've unlocked 1 GB": [
+        "Ha desbloqueado 1 GB"
       ]
     },
     "Gmail forwarding": {
@@ -7315,11 +7438,42 @@
       "Set up your organization": [
         "Configure su organización"
       ],
-      "Set up your organization testing": [
-        "Configure la prueba para su organización"
-      ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
         "Use el selector de aplicaciones en la esquina superior izquierda para acceder a todos los servicios de ${ BRAND_NAME }: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } y ${ DRIVE_SHORT_APP_NAME }."
+      ]
+    },
+    "Online accounts": {
+      "Have an account with one of these services? Just click to change the email address to your ${ MAIL_APP_NAME } address.": [
+        "¿Tiene una cuenta con uno de estos servicios? Solo haga clic para cambiar la dirección de correo a su dirección de ${ MAIL_APP_NAME }."
+      ]
+    },
+    "Online Accounts Name": {
+      "Banking": [
+        "Operaciones bancarias"
+      ],
+      "Crypto": [
+        "Cripto"
+      ],
+      "E-commerce and Retail": [
+        "Comercio electrónico y minorista"
+      ],
+      "Entertainment": [
+        "Entretenimiento"
+      ],
+      "Food and beverage": [
+        "Comida y bebida"
+      ],
+      "Gaming": [
+        "Juegos"
+      ],
+      "Most popular": [
+        "Más popular"
+      ],
+      "Travel": [
+        "Viajes"
+      ],
+      "Utilities": [
+        "Utilidades"
       ]
     },
     "Option": {
@@ -8345,10 +8499,10 @@
     },
     "summer2023: Deal details": {
       "Premium Drive": [
-        "Drive premium"
+        "Versión premium de Drive"
       ],
       "Premium Mail and Calendar": [
-        "Correo y calendario premium"
+        "Versión premium de Mail y Calendar"
       ],
       "Premium Password Manager": [
         "Administrador de contraseñas premium"
@@ -8369,7 +8523,7 @@
         "Cree datos de inicio de sesión seguros para todos sus dispositivos. Se incluyen alias ilimitados, 20 bóvedas, 2FA integrada, función de completado automático de tarjetas de crédito y más."
       ],
       "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
-        "Incluye 2950 servidores en más de 65 países, conecta hasta 10 dispositivos, acceda a servicios de transmisión en todo el mundo, malware y bloqueador de anuncios, y más."
+        "Incluye más de 2950 servidores en más de 65 países, conecte hasta 10 dispositivos, acceda a servicios de transmisión en todo el mundo, malware, bloqueador de anuncios y más."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Incluye compatibilidad con 1 dominio de correo electrónico personalizado, 10 direcciones de correo electrónico, 10 seudónimos de hide-my-email, posibilidad de compartir calendario, etc."
@@ -9006,9 +9160,6 @@
       "Subject missing": [
         "Falta el asunto"
       ],
-      "This email is protected": [
-        "Este correo electrónico está protegido."
-      ],
       "To": [
         "Para"
       ],
@@ -9045,6 +9196,10 @@
       ],
       "Warning: suspected fake website": [
         "Advertencia: presunto sitio web falso"
+      ],
+      "We protected you from ${ trackersCount } tracker": [
+        "Le hemos protegido de ${ trackersCount } rastreador",
+        "Le hemos protegido de ${ trackersCount } rastreadores"
       ],
       "Welcome": [
         "Bienvenido"

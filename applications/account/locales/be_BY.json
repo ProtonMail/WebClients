@@ -2863,7 +2863,7 @@
     },
     "Downgrade modal exit survey title": {
       "Help us improve!": [
-        "Дапамажыце нам стаць яшчэ лепш!"
+        "Дапамажыце нам палепшыць наш сэрвіс!"
       ]
     },
     "Duration": {
@@ -4429,9 +4429,6 @@
     "Font face option": {
       "System default": [
         "Адпаведна сістэме"
-      ],
-      "Theme default": [
-        "Прадвызначаная тэма"
       ]
     },
     "Font Size Default": {
@@ -4468,6 +4465,44 @@
       ],
       "(during your first month)": [
         "(на працягу першага месяца)"
+      ]
+    },
+    "Get started checklist instructions": {
+      "${ MAIL_APP_NAME } app": [
+        "Праграма ${ MAIL_APP_NAME }"
+      ],
+      "account logins": [
+        "даныя ўваходу ўліковага запісу"
+      ],
+      "Auto-forward Gmail": [
+        "Аўтаперасыланне Gmail"
+      ],
+      "auto-forwarding": [
+        "аўтаперасыланне"
+      ],
+      "Change ${ strongText } to your ${ BRAND_NAME } address": [
+        "Змяніце ${ strongText } на ваш адрас ${ BRAND_NAME }"
+      ],
+      "Discover how our ${ strongText } protect you": [
+        "Даведайцеся, як наш ${ strongText } вас абараняе"
+      ],
+      "Discover privacy features": [
+        "Даведайцеся пра функцыі прыватнасці"
+      ],
+      "Get the ${ strongText } on Android or iOS": [
+        "Атрымайце ${ strongText } на Android або iOS"
+      ],
+      "Get the App": [
+        "Атрымаць праграму"
+      ],
+      "privacy features": [
+        "функцыі прыватнасці"
+      ],
+      "Set up ${ strongText } from Gmail": [
+        "Наладзьце ${ strongText } з Gmail"
+      ],
+      "Update your logins": [
+        "Абнавіце вашы запісы ўваходу"
       ]
     },
     "Gmail forwarding": {
@@ -6041,7 +6076,7 @@
         "Назавіце новую папку і выберыце бацькоўскую папку, у якую вы хочаце яе ўкласці. Калі вы не выбераце бацькоўскую папку, то гэта новая папка будзе створана як папка верхняга ўзроўню."
       ],
       "New": [
-        "Новы"
+        "Новае"
       ],
       "No account keys exist": [
         "Адсутнічаюць ключы ўліковага запісу"
@@ -6272,7 +6307,7 @@
         "Інфармацыя з аднаўленнем застанецца на гэтай прыладзе пакуль вы не выдаліце яе."
       ],
       "Recovery kit copied to clipboard": [
-        "Набор аднаўлення скапіяваны ў буфер абмену"
+        "Камплект аднаўлення скапіяваны ў буфер абмену"
       ],
       "Recovery phrase copied to clipboard": [
         "Фраза аднаўлення скапіявана ў буфер абмену"
@@ -7002,6 +7037,9 @@
       ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Вам будзе неабходны адрас ${ BRAND_NAME } для выкарыстання ${ MAIL_APP_NAME } і ${ CALENDAR_APP_NAME }"
+      ],
+      "You will NOT be able to decrypt any messages, files, and other data encrypted with this key. All data signed with this key will no longer be verified by ${ BRAND_NAME } applications.": [
+        "Вы НЕ зможаце расшыфраваць ніякія паведамленні, файлы або іншыя даныя, якія былі зашыфраваны гэтым ключом. Усе даныя, падпісаныя гэтым ключом, больш не будуць правярацца праграмамі ${ BRAND_NAME }."
       ],
       "You will receive priority support from specialists trained in account protection. For any account security concerns, please ${ hereLink }.": [
         "Вы атрымаеце прыярытэтную падтрымку ад спецыялістаў, якія маюць досвед у абароне ўліковых запісаў. У выпадку пытанняў звязаных з бяспекай уліковага запісу, перайдзіце па спасылцы ${ hereLink }"
@@ -8350,7 +8388,7 @@
         "Праверачны код"
       ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
-        "Шкада, што вы пакідаеце нас. Патлумачце, чаму вы вырашылі так зрабіць. Гэта дапаможа палепшыць наш сэрвіс."
+        "Шкада, што вы пакідаеце нас. Патлумачце, чаму вы вырашылі так зрабіць. Гэта дапаможа нам палепшыць наш сэрвіс"
       ],
       "Week start": [
         "Пачатак тыдня"
@@ -9678,6 +9716,9 @@
         "Стварайце да ${ n } календароў або дадавайце календары ад сяброў, сям'і, калег і арганізацый",
         "Стварайце да ${ n } календароў або дадавайце календары ад сяброў, сям'і, калег і арганізацый"
       ],
+      "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
+        "Стварыце да ${ n } адрасоў электроннай пошты/псеўданімаў, якія вы можаце прызначыць членам сям'і. Выкарыстоўвайце іх для ідэнтыфікацыі ў інтэрнэце, напрыклад, JankaPakupnik@${ domain } для ўліковых запісаў пакупак."
+      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Абараняе прыватнасць VPN ад пагроз, перадаючы ваш трафік праз некалькі сервераў"
       ],
@@ -9839,7 +9880,7 @@
         "Доступ да пашыраных функцый VPN"
       ],
       "Add more personalization with 15 email addresses and support for 3 custom email domains": [
-        "Дадайце больш персаналізацыі з 15 электроннымі адрасамі і падтрымкай трох карыстальніцкіх даменаў"
+        "Дадайце больш персаналізацыі з 15 электроннымі адрасамі і падтрымкай 3 карыстальніцкіх даменаў"
       ],
       "Boost your storage space to ${ bundleStorage } total": [
         "Палепшыце агульны аб'ём свайго сховішча да ${ bundleStorage }"
@@ -10285,6 +10326,267 @@
     "Participant name": {
       "You": [
         "Вы"
+      ]
+    },
+    "pass_signup_2023: Action": {
+      "Check out ${ appName } features": [
+        "Азнаёмцеся з функцыямі ${ appName }"
+      ],
+      "Continue": [
+        "Працягнуць"
+      ],
+      "Continue to ${ free }": [
+        "Працягнуць з ${ free }"
+      ],
+      "Continue with Bitcoin": [
+        "Працягнуць з Bitcoin"
+      ],
+      "create a new account": [
+        "стварыць новы ўліковы запіс"
+      ],
+      "Create another account instead": [
+        "Стварыце іншы ўліковы запіс"
+      ],
+      "Download again ${ size }": [
+        "Спампаваць яшчэ раз ${ size }"
+      ],
+      "Download to continue ${ size }": [
+        "Спампаваць, каб працягнуць ${ size }"
+      ],
+      "Keep this plan and use ${ appName }": [
+        "Застацца на гэтым тарыфным плане і карыстацца ${ appName }"
+      ],
+      "Or ${ createANewAccount }": [
+        "Або ${ createANewAccount }"
+      ],
+      "Start using ${ appName }": [
+        "Пачніце выкарыстоўваць ${ appName }"
+      ],
+      "Start using ${ appName } now": [
+        "Пачніце выкарыстоўваць ${ appName } ужо цяпер"
+      ],
+      "Upgrade for only ${ relativePrice } extra per month": [
+        "Палепшыце тарыфны план усяго за ${ relativePrice } дадатковай платы ў месяц"
+      ],
+      "Upgrade my plan": [
+        "Палепшыць мой тарыфны план"
+      ],
+      "Use ${ free } instead": [
+        "Замест выкарыстоўвайце ${ free }"
+      ]
+    },
+    "pass_signup_2023: Feature": {
+      "End-to-end encrypted": [
+        "Зашыфравана скразным метадам"
+      ],
+      "Open source": [
+        "Адкрыты зыходны код"
+      ],
+      "Protected by Swiss privacy laws": [
+        "Абаронены швейцарскімі законамі аб прыватнасці"
+      ],
+      "Swiss based": [
+        "Знаходзіцца ў Швейцарыі"
+      ]
+    },
+    "pass_signup_2023: Header": {
+      "Checkout": [
+        "Аплата"
+      ],
+      "Continue with your ${ BRAND_NAME } account": [
+        "Працягнуць з дапамогай вашага ўліковага запісу ${ BRAND_NAME }"
+      ],
+      "Limited time offer": [
+        "Абмежаваная прапанова"
+      ],
+      "Recommended": [
+        "Рэкамендавана"
+      ],
+      "Select your plan": [
+        "Выберыце тарыфны план"
+      ],
+      "Upgrade your plan": [
+        "Палепшыце свой тарыфны план"
+      ]
+    },
+    "pass_signup_2023: Info": {
+      "${ PASS_APP_NAME } benefits": [
+        "Перавагі ${ PASS_APP_NAME }"
+      ],
+      "${ PASS_APP_NAME } is available as a browser extension on Firefox Add-ons.": [
+        "${ PASS_APP_NAME } даступна ў выглядзе пашырэння ў дадатках Firefox."
+      ],
+      "${ PASS_APP_NAME } is available as a browser extension on the Chrome Web Store.": [
+        "${ PASS_APP_NAME } даступна ў выглядзе пашырэння ў вэб-краме Chrome."
+      ],
+      "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption.": [
+        "${ PASS_APP_NAME } захоўвайце вашы паролі і асабістыя даныя ў бяспецы са строгім скразным шыфраваннем."
+      ],
+      "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption. To add premium features of ${ PASS_APP_NAME_2 } to your current subscription, we suggest upgrading to the ${ upsellPlanName } plan.": [
+        "${ PASS_APP_NAME } захоўвае вашы паролі і асабістыя даныя ў бяспецы са строгім скразным шыфраваннем. Для таго, каб дадаць прэміяльныя функцыі ${ PASS_APP_NAME_2 } да вашай бягучай падпіскі, мы прапануем перайсці на тарыфны план ${ upsellPlanName }."
+      ],
+      "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption. Your current plan already gives you access to premium ${ PASS_APP_NAME_2 } features — no need to purchase again.": [
+        "${ PASS_APP_NAME } захоўвайце вашы паролі і асабістыя даныя ў бяспецы са строгім скразным шыфраваннем. Ваш бягучы тарыфны план ужо разлічаны на прэміяльныя функцыі ${ PASS_APP_NAME_2 }. Няма неабходнасці купляць іх яшчэ раз."
+      ],
+      "+ ${ relativePrice } per month": [
+        "+ ${ relativePrice } у месяц"
+      ],
+      "All premium ${ BRAND_NAME } services.": [
+        "Усе прэміяльныя сэрвісы ${ BRAND_NAME }."
+      ],
+      "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
+        "Але вы можаце разблакіраваць **${ unlockPlanTitle }** і ўсе прэміяльныя функцыі сэрвісаў ${ BRAND_NAME } , палепшыўшы да **${ upsellPlanTitle }** . І гэта ўсяго за ${ relativePrice } у месяц дадатковай платы."
+      ],
+      "By continuing, you agree to our ${ termsAndConditions }": [
+        "Працягнуўшы, вы пагаджаецеся з нашымі ${ termsAndConditions }"
+      ],
+      "Creating your account": [
+        "Стварэнне вашага ўліковага запісу"
+      ],
+      "Discover ${ PASS_APP_NAME },${ br }our new encrypted password manager": [
+        "Пазнаёмцеся з ${ PASS_APP_NAME },${ br }нашым новым зашыфраваным менеджарам пароляў"
+      ],
+      "Download and install the relevant apps and extensions to start using ${ PASS_APP_NAME }": [
+        "Спампуйце і ўсталюйце адпаведныя праграмы і пашырэнні, каб пачаць карыстацца ${ PASS_APP_NAME }"
+      ],
+      "Download the ${ PASS_APP_NAME } app from Google Play and install it to start using ${ PASS_APP_NAME2 } on your phone.": [
+        "Спампуйце праграму ${ PASS_APP_NAME } з Google Play і ўсталюйце яе, каб пачаць карыстацца ${ PASS_APP_NAME2 } на сваім тэлефоне."
+      ],
+      "Download the ${ PASS_APP_NAME } app from the App Store and install it to start using ${ PASS_APP_NAME2 } on your phone.": [
+        "Спампуйце праграму ${ PASS_APP_NAME } з App Store і ўсталюйце яе, каб пачаць карыстацца ${ PASS_APP_NAME2 } на сваім тэлефоне."
+      ],
+      "Encrypted password manager${ breakToken }that also protects your identity": [
+        "Зашыфраваны менеджар пароляў${ breakToken }, які таксама абараняе вашы асабістыя даныя"
+      ],
+      "End-to-end encrypted notes": [
+        "Нататкі са скразным шыфраваннем"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
+        "Усяго за **${ relativePrice } у месяц** вы атрымаеце доступ да ўсіх прэміяльных сэрвісаў ${ BRAND_NAME }!"
+      ],
+      "Free forever": [
+        "Бясплатна назаўсёды"
+      ],
+      "Get ${ appName } for ${ browserName }": [
+        "Атрымайце ${ appName } для ${ browserName }"
+      ],
+      "Get ${ appName } for ${ browserName } soon": [
+        "Неўзабаве атрымаеце ${ appName } для ${ browserName }"
+      ],
+      "Hide-my-email aliases protect your email from data breaches": [
+        "Псеўданімы Hide-my-email абараняюць вашу электронную пошту ад уцечкі даных"
+      ],
+      "If you get locked out of your ${ BRAND_NAME } Account, your **recovery kit** will allow you to sign in and recover your data.": [
+        "Калі вы заблакіруеце свой уліковы запіс ${ BRAND_NAME }, ваш **камплект аднаўлення** дазволіць вам увайсці і аднавіць вашы даныя."
+      ],
+      "Includes basic ${ appName } features:": [
+        "Уключае асноўныя функцыі ${ appName }:"
+      ],
+      "Install ${ PASS_APP_NAME }": [
+        "Усталяваць ${ PASS_APP_NAME }"
+      ],
+      "Install app": [
+        "Усталяваць праграму"
+      ],
+      "Install app and extension": [
+        "Усталяваць праграму і пашырэнне"
+      ],
+      "It’s the only way to fully restore your account, so make sure you keep this **recovery kit** somewhere safe.": [
+        "Гэта адзіны спосаб поўнага аднаўлення вашага ўліковага запісу. Пераканайцеся, што **камплект аднаўлення** захаваны ў надзейным месцы."
+      ],
+      "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
+        "Далучайцеся да больш 100 мільёнаў людзей, якія ўжо выбралі ${ BRAND_NAME }, каб захаваць сваю сеткавую бяспеку."
+      ],
+      "Launching ${ PASS_APP_NAME }": [
+        "Запуск ${ PASS_APP_NAME }"
+      ],
+      "One easy subscription.": [
+        "Адна нескладаная падпіска."
+      ],
+      "Open-source and audited": [
+        "Адкрыты зыходны код і аўдыт"
+      ],
+      "per month, billed annually": [
+        "у месяц (аплачваецца адзін раз у год)"
+      ],
+      "per month, billed every 15 months": [
+        "у месяц (аплачваецца кожныя 15 месяцаў)"
+      ],
+      "per month, billed every 30 months": [
+        "у месяц (аплачваецца кожныя 30 месяцаў)"
+      ],
+      "per month, billed every month": [
+        "у месяц (аплачваецца адзін раз у месяц)"
+      ],
+      "per month, billed every two years": [
+        "у месяц (аплачваецца кожныя два гады)"
+      ],
+      "Preparing your Recovery Kit": [
+        "Падрыхтоўка вашага камплекту аднаўлення"
+      ],
+      "Protected by Swiss privacy laws": [
+        "Абаронены швейцарскімі законамі аб прыватнасці"
+      ],
+      "Save your recovery kit to continue": [
+        "Захавайце свой камплект аднаўлення для працягу"
+      ],
+      "Signing in to ${ PASS_APP_NAME }": [
+        "Уваход у ${ PASS_APP_NAME }"
+      ],
+      "Special launch offer: Get ${ title } for ${ price } forever!": [
+        "Спецыяльная акцыя да запуску прадукту: Атрымайце ${ title } за ${ price } назаўсёды!"
+      ],
+      "The offer you selected is not available for ${ currentPlanTitle } subscribers.": [
+        "Выбраная прапанова недаступна для падпісчыкаў з тарыфным планам ${ currentPlanTitle }."
+      ],
+      "to start using ${ PASS_APP_NAME } on your phone": [
+        "каб пачаць выкарыстоўваць ${ PASS_APP_NAME } на тэлефоне"
+      ],
+      "Unlock ${ PASS_APP_NAME } premium features by upgrading": [
+        "Палепшыце сваю падпіску, каб разблакіраваць прэміяльныя функцыі ${ PASS_APP_NAME }"
+      ],
+      "Updating your account": [
+        "Абнаўленне вашага ўліковага запісу"
+      ],
+      "Verifying your payment": [
+        "Праверка вашага плацяжу"
+      ],
+      "Welcome to ${ plan }": [
+        "Вітаем у ${ plan }"
+      ],
+      "Works on all devices": [
+        "Працуе на ўсіх прыладах"
+      ],
+      "You already have access to premium ${ appName } features — no need to purchase again.": [
+        "У вас ужо ёсць доступ да прэміяльных функцый ${ appName }. Няма неабходнасці купляць іх яшчэ раз."
+      ],
+      "You currently have": [
+        "Зараз у вас ёсць"
+      ],
+      "Your organization has access to ${ free }. If you want to access premium ${ appName } features, please ask your organization's administrator to upgrade.": [
+        "У вашай арганізацыі ёсць доступ да ${ free }. Калі вы хочаце атрымаць прэміяльныя функцыі ${ appName }, папрасіце адміністратара сваёй арганізацыі абнавіць тарыфны план."
+      ]
+    },
+    "pass_signup_2023: Onboarding": {
+      "Welcome to ${ PASS_APP_NAME }": [
+        "Вітаем у ${ PASS_APP_NAME }"
+      ]
+    },
+    "pass_signup_2023: Title": {
+      "${ upsellPlanTitle } plan": [
+        "Тарыфны план ${ upsellPlanTitle }"
+      ],
+      "All ${ BRAND_NAME } Plus services.${ br }One easy subscription.": [
+        "Усе сэрвісы ${ BRAND_NAME } Plus.${ br }Адна нескладаная падпіска."
+      ],
+      "Create your ${ BRAND_NAME } account": [
+        "Стварыць уліковы запіс ${ BRAND_NAME }"
+      ],
+      "Request your organization administrator to upgrade": [
+        "Папрасіце адміністратара вашай арганізацыі палепшыць тарыфны план"
+      ],
+      "Secure your account": [
+        "Абараніце свой уліковы запіс"
       ]
     },
     "Payment method option": {
@@ -10883,7 +11185,7 @@
         "Прапанова абмежавана па часе"
       ],
       "Most popular": [
-        "Самы папулярны"
+        "Найбольш папулярны"
       ],
       "Offer ends soon": [
         "Прапанова неўзабаве скончыцца"
@@ -11489,6 +11791,70 @@
     "Summary of errors during export calendar": {
       "Details about events that couldn't be exported": [
         "Падрабязнасці падзей, якія не былі экспартаваны"
+      ]
+    },
+    "summer2023: Billing cycle option": {
+      "1 year": [
+        "1 год"
+      ],
+      "2 years": [
+        "2 гады"
+      ]
+    },
+    "summer2023: Deal details": {
+      "Premium Drive": [
+        "Прэміяльныя функцыі Drive"
+      ],
+      "Premium Mail and Calendar": [
+        "Прэміяльныя функцыі Mail і Calendar"
+      ],
+      "Premium Password Manager": [
+        "Прэміяльныя функцыі менеджара пароляў"
+      ]
+    },
+    "summer2023: Describe Proton Pass": {
+      "Securely store your passwords and autofill them on websites. Includes unlimited passwords, autofill, password generator, and more.": [
+        "Бяспечна захоўвайце свае паролі і аўтаматычна запаўняйце іх на вэб-сайтах. Уключае неабмежаваную колькасць пароляў, аўтаматычнае запаўненне, генератар пароляў і іншыя функцыі."
+      ]
+    },
+    "summer2023: Short tool name to present Proton Pass": {
+      "Password manager": [
+        "Менеджар пароляў"
+      ]
+    },
+    "summer2023: Tooltip": {
+      "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
+        "Стварайце бяспечныя даныя для ўваходу на ўсіх сваіх прыладах. Уключае неабмежаваную колькасць псеўданімаў, 20 сховішчаў, інтэграваную 2ФА, аўтаматычнае запаўненне крэдытных картак і іншыя функцыі."
+      ],
+      "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "Уключае больш за 2950 сервераў у больш чым 65 краінах, магчымасць падключаць да 10 прылад, сэрвісы з трансляцыямі па ўсім свеце, блакіроўку шкодных праграм і рэкламы, а таксама іншыя функцыі."
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Уключае падтрымку 1 карыстальніцкага дамена электроннай пошты, 10 адрасоў электроннай пошты, 10 псеўданімаў hide-my-email, абагульванне календара і іншыя функцыі."
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "Абараніце свае файлы з дапамогай зашыфраванага воблачнага сховішча. Уключае гісторыю версій, абагулены доступ да зашыфраваных файлаў і іншыя функцыі."
+      ]
+    },
+    "summer2023:Footer": {
+      "*Your subscription will automatically renew at the standard discounted rate at the end of your billing cycle.": [
+        "*Ваша падпіска будзе аўтаматычна падаўжацца са стандартнай скідкай у канцы перыяду аплаты."
+      ],
+      "Discounts are based on the standard monthly pricing. This offer is only available to first-time subscribers.": [
+        "Скідкі разлічваюцца на падставе стандартнай платы за месяц. Гэтай прапановай могуць скарыстацца толькі тыя падпісчыкі, якія ўпершыню зарэгістраваліся."
+      ]
+    },
+    "summer2023:Info": {
+      "For a limited time, get the best ${ BRAND_NAME } has to offer at an exclusive discount.": [
+        "Атрымайце эксклюзіўную скідку ад ${ BRAND_NAME }. Прапанова абмежавана па часе."
+      ],
+      "We’re celebrating the nine-year anniversary of our crowdfunding!": [
+        "Мы святкуем дзявятую гадавіну нашага краўдфандзінга!"
+      ]
+    },
+    "summer2023:Offer title": {
+      "${ BRAND_NAME } Anniversary Sale": [
+        "Святочны распродаж ${ BRAND_NAME }"
       ]
     },
     "Tab in domain modal": {
@@ -12791,7 +13157,7 @@
     },
     "Tooltip sign external messages": {
       "Automatically sign all your outgoing messages so users can verify the authenticity of your messages. This is done in combination with the default PGP settings which can be configured below.": [
-        "Аўтаматычна падпісвайце ўсе свае выходныя паведамленні, каб карыстальнікі маглі праверыць іх сапраўднасць. Гэта дзеянне звязана з прадвызначанымі наладамі PGP, якія вы можаце сканфігурыраваць пазней."
+        "Аўтаматычна падпісвайце ўсе свае выходныя паведамленні, каб карыстальнікі маглі праверыць іх сапраўднасць. Гэта дзеянне звязана з прадвызначанымі наладамі PGP, якія вы можаце сканфігураваць пазней."
       ]
     },
     "Tooltip; share calendar modal ": {

@@ -145,6 +145,9 @@
       "Carbon Copy": [
         "Kopya"
       ],
+      "Change email": [
+        "E-postayı değiştir"
+      ],
       "Change page": [
         "Sayfayı değiştir"
       ],
@@ -2952,12 +2955,6 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Birleştirmek veya tutmak istemediğiniz kişileri silinmek üzere işaretleyebilirsiniz. Silme işlemi yalnızca birleştirme düğmesine tıkladıktan sonra yapılır"
-      ],
-      "You can read the message and click on links without being tracked with email tracker protection.": [
-        "E-posta izleme koruması ile izlenmeden iletiyi okuyabilir ve bağlantılara tıklayabilirsiniz."
-      ],
-      "You can read the message and click on links without being tracked.": [
-        "İzlenmeden iletiyi okuyabilir ve bağlantılara tıklayabilirsiniz."
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4102,9 +4099,6 @@
     "Font face option": {
       "System default": [
         "Sistem varsayılanı"
-      ],
-      "Theme default": [
-        "Tema varsayılanı"
       ]
     },
     "Font Size Default": {
@@ -4144,17 +4138,143 @@
       ]
     },
     "Get started checklist instructions": {
+      "${ MAIL_APP_NAME } app": [
+        "${ MAIL_APP_NAME } uygulaması"
+      ],
+      "${ MAIL_APP_NAME } on App Store": [
+        "App Store üzerinde ${ MAIL_APP_NAME }"
+      ],
+      "${ MAIL_APP_NAME } on Play Store": [
+        "Play Store üzerinde ${ MAIL_APP_NAME }"
+      ],
+      "account logins": [
+        "Oturum açma bilgileri"
+      ],
+      "Auto-forward Gmail": [
+        "Gmail otomatik iletme"
+      ],
+      "auto-forwarding": [
+        "otomatik iletme"
+      ],
+      "Block email communications from scammers permanently.": [
+        "Dolandırıcılardan gelen e-postaları kalıcı olarak engelleyin."
+      ],
+      "Block unsavory senders": [
+        "İstemediğiniz göndericileri engelleme"
+      ],
+      "Bravo for making your email even more secure, convenient, and relevant! We've upped your free storage to a total of 1 GB.": [
+        "E-postanızı daha güvenli, kullanışlı ve sizinle ilgili hale getirdiğiniz için tebrik ederiz! Ücretsiz depolama alanınızı toplam 1 GB boyutuna yükselttik."
+      ],
+      "Change ${ strongText } to your ${ BRAND_NAME } address": [
+        "${ strongText }ni ${ BRAND_NAME } adresiniz ile değiştirin"
+      ],
+      "Checklist complete": [
+        "Kontrol listesi tamamlandı"
+      ],
+      "Close": [
+        "Kapat"
+      ],
+      "Congratulation, you completed all the steps!": [
+        "Tebrikler, tüm adımları tamamladınız!"
+      ],
+      "Continue setting up your email": [
+        "E-postanızı kurmayı sürdürün"
+      ],
+      "Discover how our ${ strongText } protect you": [
+        "${ strongText } hizmetimizin sizi nasıl koruduğunu öğrenin"
+      ],
+      "Discover privacy features": [
+        "Gizlilik özelliklerini keşfedin"
+      ],
+      "Double your free storage to 1 GB when you complete the following:": [
+        "Şu işlemleri yaparak ücretsiz depolama alanınızı 1 GB boyutuna çıkarabilirsiniz:"
+      ],
+      "Encryption so strong, only you and intended recipients can view your emails.": [
+        "Kullanılan şifreleme o kadar güçlü ki e-postalarınızı yalnızca siz ve hedeflediğiniz alıcılar görebilir."
+      ],
+      "For your eyes only": [
+        "Yalnızca sizin gözleriniz için"
+      ],
+      "Get free storage": [
+        "Ücretsiz depolama alanı edinin"
+      ],
+      "Get mobile app": [
+        "Mobil uygulamayı edinin"
+      ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "${ MAIL_APP_NAME } mobil uygulamasını edinin"
+      ],
+      "Get the ${ strongText } on Android or iOS": [
+        "Andorid ya da iOS için ${ strongText } edinin"
+      ],
+      "Get the App": [
+        "Uygulamayı edinin"
       ],
       "Import contacts or emails": [
         "Kişileri veya e-postaları içe aktarın"
       ],
+      "Import data": [
+        "Verileri içe aktar"
+      ],
       "Import your contacts or messages": [
         "Kişilerinizi veya iletilerinizi içe aktarın"
       ],
+      "Keep using ${ MAIL_APP_NAME } to discover more ways ${ BRAND_NAME } protects your privacy and simplifies emailing.": [
+        "${ BRAND_NAME } uygulamasının gizliliğinizi koruduğu ve e-posta göndermeyi basitleştirdiği diğer yolları keşfetmek için ${ MAIL_APP_NAME } uygulamasını kullanmayı sürdürün."
+      ],
+      "Learn more": [
+        "Ayrıntılı bilgi alın"
+      ],
+      "Make ${ BRAND_NAME } your go-to inbox": [
+        "${ BRAND_NAME } adresinizi gelen kutunuz yapın"
+      ],
+      "Maybe later": [
+        "Belki daha sonra"
+      ],
+      "Nice! You've updated all services in this category.": [
+        "Güzel! Bu kategorideki tüm hizmetleri güncellediniz."
+      ],
+      "Open checklist": [
+        "Kontrol listesini aç"
+      ],
+      "Popular online services": [
+        "Yaygın kullanılan çevrim içi hizmetler"
+      ],
+      "privacy features": [
+        "gizlilik özellikleri"
+      ],
+      "Protect and simplify your email": [
+        "E-postalarınızı koruyun ve basitleştirin"
+      ],
+      "Protection from trackers": [
+        "İzleyicilere karşı koruma"
+      ],
       "Quickly transfer your contacts or emails from any provider using our Easy Switch import assistant.": [
         "Easy Switch içe aktarma yardımcısı ile herhangi bir hizmet sağlayıcı üzerinde bulunan kişi ve e-postalarınızı kolayca aktarın."
+      ],
+      "Send a message": [
+        "Bir ileti gönderin"
+      ],
+      "Set recovery method": [
+        "Kurtarma yöntemini ayarla"
+      ],
+      "Set up ${ strongText } from Gmail": [
+        "Gmail için ${ strongText } özelliğini ayarlayın"
+      ],
+      "Sign in to the mobile app to complete this step": [
+        "Bu adımı tamamlamak için mobil uygulamada oturum açın"
+      ],
+      "Update your logins": [
+        "Oturum açma bilgilerinizi güncelleyin"
+      ],
+      "Using your mobile device, scan this QR code or visit the iOS or Android store.": [
+        "Mobil aygıtınızı kullanarak, bu QR kodunu tarayın ya da iOS/Android mağazasına gidin."
+      ],
+      "We stop advertisers and data collectors from profiling you.": [
+        "Reklam verenlerin ve veri toplayıcıların profilinizi çıkarmasını durdurun."
+      ],
+      "You've unlocked 1 GB": [
+        "Depolama alanınızı 1 GB boyutuna çıkardınız"
       ]
     },
     "Gmail forwarding": {
@@ -7315,11 +7435,42 @@
       "Set up your organization": [
         "Kuruluşunuzu ayarlayın"
       ],
-      "Set up your organization testing": [
-        "Kuruluş sınamanızı ayarlayın"
-      ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
         "Tüm ${ BRAND_NAME } hizmetlerine erişmek için sol üstteki uygulama seçiciyi kullanın: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } ve ${ DRIVE_SHORT_APP_NAME }."
+      ]
+    },
+    "Online accounts": {
+      "Have an account with one of these services? Just click to change the email address to your ${ MAIL_APP_NAME } address.": [
+        "Bu hizmetlerden birinde hesabınız var mı? E-posta adresinizi ${ MAIL_APP_NAME } adresinizle değiştirmek için tıklamanız yeterlidir."
+      ]
+    },
+    "Online Accounts Name": {
+      "Banking": [
+        "Bankacılık"
+      ],
+      "Crypto": [
+        "Kripto"
+      ],
+      "E-commerce and Retail": [
+        "E-ticaret ve perakende"
+      ],
+      "Entertainment": [
+        "Eğlence"
+      ],
+      "Food and beverage": [
+        "Yeme içme"
+      ],
+      "Gaming": [
+        "Oyun"
+      ],
+      "Most popular": [
+        "En çok kullanılan"
+      ],
+      "Travel": [
+        "Gezi"
+      ],
+      "Utilities": [
+        "Araçlar"
       ]
     },
     "Option": {
@@ -7883,7 +8034,7 @@
         "Yalnızca sınırlı bir süre için"
       ],
       "Most popular": [
-        "En beğenilen"
+        "En çok kullanılan"
       ],
       "Offer ends soon": [
         "Teklifin süresi yakında dolacak"
@@ -8353,7 +8504,7 @@
     },
     "summer2023: Describe Proton Pass": {
       "Securely store your passwords and autofill them on websites. Includes unlimited passwords, autofill, password generator, and more.": [
-        "Parolalarınızı güvenle saklayın ve sitelerde otomatik olarak kullanın. Sınırsız parola, otomatik doldurma, parola oluşturucu ve daha fazlasını içerir."
+        "Parolalarınızı güvenle saklayın ve sitelerde otomatik olarak kullanın. Sınırsız parola, otomatik doldurma, parola oluşturucu ve diğer özellikler."
       ]
     },
     "summer2023: Short tool name to present Proton Pass": {
@@ -8363,13 +8514,13 @@
     },
     "summer2023: Tooltip": {
       "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
-        "Tüm aygıtlarınızda güvenli hesap bilgileri oluşturun. Sınırsız takma ad (e-posta adresi), 20 kasa, entegre 2 adımlı doğrulama, kredi kartı otomatik doldurma ve daha fazlasını içerir."
+        "Tüm aygıtlarınızda güvenli hesap bilgileri oluşturun. Sınırsız e-posta takma adı, 20 kasa, bütünleşik 2 adımlı doğrulama, kredi kartı bilgilerini otomatik doldurma ve diğer özellikler."
       ],
       "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
         "65 üzerindeki ülkede 2950'nin üzerinde sunucu, 10 taneye kadar aygıt bağlayabilme, dünya çapında yayın akışı hizmetlerine erişim, kötü amaçlı yazılım ve reklam engelleyici ile diğer özellikleri içerir."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "1 özel e-posta etki alanı, 10 e-posta adresi, 10 hide-my-email takma adı, takvim paylaşma ve daha fazlası için destek içerir."
+        "1 özel e-posta etki alanı, 10 e-posta adresi, 10 hide-my-email takma adı, takvim paylaşma ve diğer özellikler."
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "Dosyalarınızı şifrelenmiş bulut depolama alanı ile koruyun. Sürüm geçmişi, şifrelenmiş dosya paylaşımı ve diğer özellikler."
@@ -8377,15 +8528,15 @@
     },
     "summer2023:Footer": {
       "*Your subscription will automatically renew at the standard discounted rate at the end of your billing cycle.": [
-        "*Aboneliğiniz, faturalama döneminizin sonunda otomatik olarak standart tarife üzerinden yenilenir."
+        "*Aboneliğiniz, fatura döneminizin sonunda otomatik olarak standart tarife üzerinden yenilenir."
       ],
       "Discounts are based on the standard monthly pricing. This offer is only available to first-time subscribers.": [
-        "İnidirmler standart aylık ücretlendirme temellidir. Bu teklif sadece ilk defa abone olacaklar için geçerlidir."
+        "İndirimler standart aylık ücretlendirmeye göre yapılır. Bu indirimden yalnızca ilk defa abone olacaklar yararlanabilir."
       ]
     },
     "summer2023:Info": {
       "For a limited time, get the best ${ BRAND_NAME } has to offer at an exclusive discount.": [
-        "Sınırlı bir süre için ${ BRAND_NAME }'un en iyi ürünlerini özel bir indirim ile edinin."
+        "Sınırlı bir süre için en iyi ${ BRAND_NAME } ürünlerini özel bir indirim ile edinin."
       ],
       "We’re celebrating the nine-year anniversary of our crowdfunding!": [
         "Topluluk desteğimizin dokuzuncu yıl dönümünü kutluyoruz!"
@@ -9002,9 +9153,6 @@
       ],
       "Subject missing": [
         "Konu eksik"
-      ],
-      "This email is protected": [
-        "Bu e-posta korunuyor"
       ],
       "To": [
         "Kime"

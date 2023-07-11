@@ -1575,7 +1575,7 @@
         "Timeout della richiesta"
       ],
       "Signature verification failed": [
-        "Verifica della firma fallita"
+        "Verifica della firma non riuscita"
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Qualcosa è andato storto, ${ refresh } per procedere. Se continui a vedere questo errore contatta il nostro ${ supportTeam }."
@@ -1991,9 +1991,6 @@
     "Font face option": {
       "System default": [
         "Predefinito di sistema"
-      ],
-      "Theme default": [
-        "Tema predefinito"
       ]
     },
     "Font size option": {
@@ -2601,6 +2598,9 @@
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
         "Lo spazio di archiviazione è condiviso tra ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, e ${ DRIVE_APP_NAME }."
+      ],
+      "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
+        "Termine dell'abbonamento: riattivalo entro ${ byDate } per mantenere i vantaggi del tuo piano${ planName }${ reactivateLink }"
       ],
       "Support for 1 custom email domain": [
         "Assistenza per 1 dominio email personalizzato"
@@ -4987,6 +4987,11 @@
     "summer2023: Describe Proton Pass": {
       "Securely store your passwords and autofill them on websites. Includes unlimited passwords, autofill, password generator, and more.": [
         "Memorizza in modo sicuro le tue password e inseriscile automaticamente nei siti web. Sono incluse password illimitate, generatore di password e altro ancora."
+      ]
+    },
+    "summer2023: Short tool name to present Proton Pass": {
+      "Password manager": [
+        "Password manager"
       ]
     },
     "summer2023: Tooltip": {

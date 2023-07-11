@@ -444,16 +444,16 @@
         "Λάβετε μια νέα κρυπτογραφημένη διεύθυνση ηλεκτρονικού ταχυδρομείου"
       ],
       "Get more addresses": [
-        "Λήψη περισσότερων διευθύνσεων"
+        "Απόκτηση περισσότερων διευθύνσεων"
       ],
       "Get more filters": [
         "Λήψη περισσότερων φίλτρων"
       ],
       "Get more folders": [
-        "Λήψη περισσότερων φακέλων"
+        "Απόκτηση περισσότερων φακέλων"
       ],
       "Get more labels": [
-        "Λήψη περισσότερων ετικετών"
+        "Απόκτηση περισσότερων ετικετών"
       ],
       "Get the deal": [
         "Αποκτήστε την προσφορά"
@@ -855,7 +855,7 @@
         "Ταξινόμηση"
       ],
       "Spam": [
-        "Ενοχλητικό"
+        "Ανεπιθύμητο"
       ],
       "Start import": [
         "Έναρξη εισαγωγής"
@@ -918,7 +918,7 @@
         "Αναβάθμιση τώρα"
       ],
       "Upgrade your plan": [
-        "Αναβαθμίστε το πλάνο σας"
+        "Αναβαθμίστε το πρόγραμμά σας"
       ],
       "Upload picture": [
         "Ανέβασμα εικόνας"
@@ -2721,7 +2721,7 @@
     },
     "Description": {
       "Automatically clear out messages older than 30 days from trash and spam. Enjoy this and other benefits when you upgrade.": [
-        "Αυτόματη εκκαθάριση μηνυμάτων παλαιότερων των 30 ημερών από τον κάδο απορριμμάτων και τα ανεπιθύμητα μηνύματα. Απολαύστε αυτό και άλλα πλεονεκτήματα κατά την αναβάθμιση."
+        "Αυτόματη εκκαθάριση μηνυμάτων παλαιότερων των 30 ημερών από τα Διαγραμμένα και τα Ενοχλητικά. Απολαύστε αυτό και άλλα πλεονεκτήματα όταν αναβαθμίσετε."
       ],
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "Συγχαρητήρια! Κερδίσατε το μέγιστο των ${ rewardsLimit } δωρεάν μηνών ${ plusPlanName }."
@@ -4360,7 +4360,7 @@
         "Αυτές οι λίστες ισχύουν για όλους τους λογαριασμούς στον οργανισμό σας. Τα μέλη μπορούν να δημιουργήσουν τα δικά τους μεμονωμένα φίλτρα, αλλά δε θα μπορούν να παρακάμψουν διευθύνσεις ή τομείς που έχετε αποκλείσει."
       ],
       "To ensure critical messages don't end up in spam and getting missed": [
-        "Για να διασφαλίσετε ότι τα κρίσιμα μηνύματα δεν καταλήγουν σε ανεπιθύμητα μηνύματα και δε χάνονται"
+        "Για να διασφαλίσετε ότι τα κρίσιμα μηνύματα δεν παραπέφτουν με το να καταλήγουν στα Ενοχλητικά"
       ],
       "To prevent junk mail from clogging up inboxes": [
         "Για να αποτρέψετε την απόφραξη των εισερχομένων από ανεπιθύμητη αλληλογραφία"
@@ -4384,8 +4384,8 @@
       "System default": [
         "Προεπιλογή συστήματος"
       ],
-      "Theme default": [
-        "Προεπιλεγμένο θέμα"
+      "Theme font": [
+        "Γραμματοσειρά εμφάνισης"
       ]
     },
     "Font Size Default": {
@@ -4422,6 +4422,44 @@
       ],
       "(during your first month)": [
         "(κατά τη διάρκεια του πρώτου μήνα σας)"
+      ]
+    },
+    "Get started checklist instructions": {
+      "${ MAIL_APP_NAME } app": [
+        "Εφαρμογή ${ MAIL_APP_NAME }"
+      ],
+      "account logins": [
+        "συνδέσεις λογαριασμού"
+      ],
+      "Auto-forward Gmail": [
+        "Αυτόματη προώθηση Gmail"
+      ],
+      "auto-forwarding": [
+        "αυτόματη προώθηση"
+      ],
+      "Change ${ strongText } to your ${ BRAND_NAME } address": [
+        "Αλλάξτε το ${ strongText } στη ${ BRAND_NAME } διεύθυνση σας"
+      ],
+      "Discover how our ${ strongText } protect you": [
+        "Ανακαλύψτε πώς το ${ strongText } μας σας προστατεύει"
+      ],
+      "Discover privacy features": [
+        "Ανακαλύψτε λειτουργίες απορρήτου"
+      ],
+      "Get the ${ strongText } on Android or iOS": [
+        "Λάβετε τη ${ strongText } σε Android ή iOS"
+      ],
+      "Get the App": [
+        "Λάβετε την εφαρμογή"
+      ],
+      "privacy features": [
+        "λειτουργίες απορρήτου"
+      ],
+      "Set up ${ strongText } from Gmail": [
+        "Ρύθμιση ${ strongText } από το Gmail"
+      ],
+      "Update your logins": [
+        "Ενημερώστε τα στοιχεία σύνδεσής σας"
       ]
     },
     "Gmail forwarding": {
@@ -5006,7 +5044,7 @@
         "Το ${ MAIL_APP_NAME } μπορεί επίσης να χρησιμοποιηθεί με έναν μόνο κωδικό πρόσβασης, ο οποίος αντικαθιστά τόσο τον κωδικό εισόδου όσο και τον κωδικό πρόσβασης θυρίδας. Για μετάβαση σε λειτουργία μονού κωδικού πρόσβασης, πληκτρολογήστε αυτόν που θέλετε και πατήστε Αποθήκευση."
       ],
       "${ MAIL_APP_NAME } supports DKIM signing for custom domains. To use DKIM authentication, please add the following CNAME record into your DNS settings for this domain. This can typically be done in the control panel of your domain name registrar.": [
-        "Το ${ MAIL_APP_NAME } υποστηρίζει υπογραφές DKIM για ιδιαίτερους τομείς. Για χρήση ταυτοποίησης DKIM, παρακαλούμε προσθέστε την ακόλουθη εγγραφή CNAME στις ρυθμίσεις DNS για αυτόν τον τομέα, κατά κανόνα στον πίνακα ελέγχου του καταχωρητή σας ονομάτων τομέων."
+        "Το ${ MAIL_APP_NAME } υποστηρίζει υπογραφές DKIM για προσαρμοσμένους τομείς. Για χρήση ταυτοποίησης DKIM, παρακαλούμε προσθέστε την ακόλουθη εγγραφή CNAME στις ρυθμίσεις DNS για αυτόν τον τομέα, κατά κανόνα στον πίνακα ελέγχου του καταχωρητή σας ονομάτων τομέων."
       ],
       "${ n } address": [
         "${ n } διεύθυνση",
@@ -5136,7 +5174,7 @@
         "Μια φράση ανάκτησης σας επιτρέπει να αποκτήσετε πρόσβαση στον λογαριασμό σας και να ανακτήσετε τα κρυπτογραφημένα μηνύματά σας εάν ξεχάσετε τον κωδικό πρόσβασής σας"
       ],
       "A user is an account associated with a single username, mailbox, and person": [
-        "Χρήστης νοείται ένας λογαριασμός συσχετισμένος με μοναδικό όνομα, θυρίδα και πρόσωπο"
+        "Χρήστης νοείται ένας λογαριασμός συσχετισμένος με μοναδικό όνομα χρήστη, θυρίδα και πρόσωπο"
       ],
       "Access your passwords and protect your online identities seamlessly across your devices. Download and install the relevant ${ PASS_APP_NAME } apps and extensions.": [
         "Αποκτήστε πρόσβαση στους κωδικούς πρόσβασής σας και προστατέψτε τις ηλεκτρονικές σας ταυτότητες απρόσκοπτα σε όλες τις συσκευές σας. Κατεβάστε και εγκαταστήστε τις σχετικές ${ PASS_APP_NAME } εφαρμογές και προεκτάσεις."
@@ -5352,7 +5390,7 @@
         "Πριν αιτηθείτε νέο κωδικό επαλήθευσης, ελέγξτε τον φάκελό σας Ενοχλητικά και ότι η ${ strong } είναι η σωστή διεύθυνση."
       ],
       "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following MX records to your DNS. This can typically be done in the control panel of your domain name registrar.": [
-        "Προτού μπορέσετε να λάβετε μηνύματα σε διευθύνσεις των ιδιαίτερών σας τομέων ${ MAIL_APP_NAME }, χρειάζεται να προσθέσετε τις ακόλουθες εγγραφές MX στον DNS σας, κατά κανόνα στον πίνακα ελέγχου του καταχωρητή σας ονομάτων τομέων."
+        "Προτού μπορέσετε να λάβετε μηνύματα σε διευθύνσεις των προσαρμοσμένων τομέων σας ${ MAIL_APP_NAME }, χρειάζεται να προσθέσετε τις ακόλουθες εγγραφές MX στον DNS σας, κατά κανόνα στον πίνακα ελέγχου του καταχωρητή σας ονομάτων τομέων."
       ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Προτού αρχίσετε να στέλνετε και να λαμβάνετε μηνύματα ηλεκτρονικού ταχυδρομείου από τις νέες διευθύνσεις σας, πρέπει πρώτα να δημιουργήσετε κλειδιά κρυπτογράφησης για αυτά."
@@ -5546,7 +5584,7 @@
         "Διεύθυνση E-mail"
       ],
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
-        "Συμπεριλαμβάνεται φιλοξενία email για 10 προσαρμοσμένους τομείς email δωρεάν. Επιπρόσθετοι τομείς μπορούν να προστεθούν έναντι ${ price }."
+        "Η φιλοξενία email για 10 προσαρμοσμένους τομείς email συμπεριλαμβάνεται δωρεάν. Επιπρόσθετοι τομείς μπορούν να προστεθούν έναντι ${ price }."
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "Η φιλοξενία email είναι διαθέσιμη μόνο για τους υπάρχοντες τομείς που κατέχετε. Η εγγραφή τομέων δεν είναι προσωρινά διαθέσιμη μέσω ${ BRAND_NAME }. Μπορείτε να φιλοξενήσετε email για τομείς εγγεγραμμένους σε οιουδήποτε ληξίαρχο τομέων."
@@ -5573,7 +5611,7 @@
         "Η ρύθμιση κρυπτογράφησης ενημερώθηκε"
       ],
       "Enter key manually instead": [
-        "Εναλλακτικά, χειροκίνητη εισαγωγή κλειδιού"
+        "Εναλλακτικά, εισάγετε χειροκίνητα το κλειδί"
       ],
       "Enter new password for user ${ userName }.": [
         "Εισαγάγετε νέο κωδικό πρόσβασης για το χρήστη ${ userName }."
@@ -5705,7 +5743,7 @@
         "Αν δε βρείτε το μήνυμα στα Εισερχόμενα, παρακαλούμε ελέγξτε τον φάκελο Ενοχλητικά."
       ],
       "If you have a custom domain with ${ MAIL_APP_NAME }, you can set a catch-all email address to receive messages sent to your domain but to an invalid email address (e.g., because of typos).": [
-        "Αν έχετε έναν ιδιαίτερο τομέα με το ${ MAIL_APP_NAME }, μπορείτε να ορίσετε μια διεύθυνση παραλειπομένων για λήψη μηνυμάτων προς μη έγκυρες διευθύνσεις εντός του τομέα σας (π.χ. λόγω τυπογραφικών λαθών)."
+        "Αν έχετε έναν προσαρμοσμένο τομέα με το ${ MAIL_APP_NAME }, μπορείτε να ορίσετε μια διεύθυνση παραλειπομένων για λήψη μηνυμάτων προς μη έγκυρες διευθύνσεις εντός του τομέα σας (π.χ. λόγω τυπογραφικών λαθών)."
       ],
       "If you have a gift code, enter it below to apply your discount.": [
         "Εάν έχετε κωδικό δώρου, προσθέστε τον παρακάτω ώστε να εφαρμοστεί η έκπτωσή σας."
@@ -5902,7 +5940,7 @@
         "Βεβαιωθείτε ότι έχετε ${ addARecoveryMethod }, ώστε να μπορείτε να αποκτήσετε ξανά πρόσβαση στο λογαριασμό σας εάν ξεχάσετε τον κωδικό πρόσβασής σας."
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "Καταχωρίστε χειροκίνητα αυτές τις πληροφορίες στη συσκευή επαλήθευσης ταυτότητας δύο παραγόντων ώστε να ρυθμίσετε το λογαριασμό σας. ${ switchButton }."
+        "Καταχωρίστε χειροκίνητα αυτές τις πληροφορίες στη συσκευή επαλήθευσης ταυτότητας δύο παραγόντων ώστε να ρυθμίσετε τον λογαριασμό σας. ${ switchButton }."
       ],
       "Mastercard SecureCode logo": [
         "λογότυπο Mastercard SecureCode"
@@ -6202,7 +6240,7 @@
         "Ο κωδικός πρόσβασης σας αποθηκεύεται"
       ],
       "Scan QR code instead": [
-        "Εναλλακτικά, σάρωση κωδικού QR"
+        "Εναλλακτικά, σαρώστε τον κωδικό QR"
       ],
       "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Σαρώστε αυτόν τον κωδικό με τη συσκευή ελέγχου ταυτότητας δύο παραγόντων για να ρυθμίσετε το λογαριασμό σας. ${ switchButton }."
@@ -6278,10 +6316,10 @@
         "Βήματα ${ step }"
       ],
       "Storage allocated to other users in this organisation": [
-        "Κατανομή αποθηκευτικού χώρου σε άλλους χρήστες αυτού του οργανισμού"
+        "Κατανεμημένος αποθηκευτικός χώρος σε άλλους χρήστες αυτού του οργανισμού"
       ],
       "Storage allocated to this user": [
-        "Κατανομή αποθηκευτικού χώρου σε αυτόν τον χρήστη"
+        "Κατανεμημένος αποθηκευτικός χώρος σε αυτόν τον χρήστη"
       ],
       "Storage for users": [
         "Αποθηκευτικός χώρος για χρήστες"
@@ -6506,7 +6544,7 @@
         "Για να ακολουθείτε την τελευταία εξέλιξη στα προϊόντα ${ BRAND_NAME }, μπορείτε να εγγραφείτε στα διάφορα email μας και να επισκέπτεστε το blog μας κατά διαστήματα."
       ],
       "To proceed, select an account recovery method so we can verify the request.": [
-        "Για συνέχεια, επιλέξτε μια μέθοδο ανάκτησης λογαριασμού, ώστε να επαληθεύσουμε το αίτημα."
+        "Για να συνεχίσετε, επιλέξτε μια μέθοδο ανάκτησης λογαριασμού, ώστε να επαληθεύσουμε το αίτημα."
       ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "Για διασφάλιση της σύνδεσής σας στο διαδίκτυο, κατεβάστε και εγκαταστήστε την εφαρμογή ${ VPN_APP_NAME } για τη συσκευή σας, και συνδεθείτε σε έναν διακομιστή."
@@ -6866,6 +6904,9 @@
       ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Θα χρειαστείτε μια διεύθυνση ${ BRAND_NAME } για να χρησιμοποιήσετε ${ MAIL_APP_NAME } και ${ CALENDAR_APP_NAME }"
+      ],
+      "You will NOT be able to decrypt any messages, files, and other data encrypted with this key. All data signed with this key will no longer be verified by ${ BRAND_NAME } applications.": [
+        "ΔΕ θα μπορείτε να αποκρυπτογραφήσετε μηνύματα, αρχεία και άλλα δεδομένα κρυπτογραφημένα με αυτό το κλειδί. Όλα τα δεδομένα που έχουν υπογραφεί με αυτό το κλειδί δε θα επαληθεύονται πλέον από τις ${ BRAND_NAME } εφαρμογές."
       ],
       "You will receive priority support from specialists trained in account protection. For any account security concerns, please ${ hereLink }.": [
         "Θα λάβετε υποστήριξη προτεραιότητας από ειδικούς εκπαιδευμένους στην προστασία λογαριασμού. Για οποιεσδήποτε ανησυχίες σχετικά με την ασφάλεια του λογαριασμού, παρακαλούμε ${ hereLink }."
@@ -7703,7 +7744,7 @@
         "Να μην ερωτηθώ ξανά"
       ],
       "Don't keep versions": [
-        "Μην διατηρείτε εκδόσεις"
+        "Μη διατηρείτε εκδόσεις"
       ],
       "Duration": [
         "Διάρκεια"
@@ -8502,7 +8543,7 @@
         "Ποια είναι η διαφορά μεταξύ των πρωτοκόλλων UDP και TCP;"
       ],
       "What’s this?": [
-        "Τι είναι αυτό?"
+        "Τι είναι αυτό;"
       ],
       "Why set recovery methods?": [
         "Γιατί να ορίσετε μεθόδους ανάκτησης;"
@@ -9470,6 +9511,9 @@
         "Δημιουργήστε έως και ${ n } ημερολόγιο ή προσθέστε ημερολόγια από φίλους, συγγενείς, συναδέλφους και οργανισμούς",
         "Δημιουργήστε έως και ${ n } ημερολόγια ή προσθέστε ημερολόγια από φίλους, συγγενείς, συναδέλφους και οργανισμούς"
       ],
+      "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
+        "Δημιουργήστε έως και ${ n } διευθύνσεις ηλεκτρονικού ταχυδρομείου/ψευδώνυμα που μπορείτε να αντιστοιχίσετε σε μέλη της οικογένειας. Χρησιμοποιήστε τα για διαδικτυακές ταυτότητες, π.χ. JohnShopper@${ domain } για λογαριασμούς αγορών."
+      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Προστατεύει από την απειλή για το απόρρητο του VPN μεταβιβάζοντας την κυκλοφορία στο διαδίκτυο μέσω πολλών διακομιστών"
       ],
@@ -10059,6 +10103,267 @@
     "Participant name": {
       "You": [
         "Εσείς"
+      ]
+    },
+    "pass_signup_2023: Action": {
+      "Check out ${ appName } features": [
+        "Δείτε τις δυνατότητες του ${ appName }"
+      ],
+      "Continue": [
+        "Συνέχεια"
+      ],
+      "Continue to ${ free }": [
+        "Συνέχεια στο ${ free }"
+      ],
+      "Continue with Bitcoin": [
+        "Συνεχίστε με Bitcoin"
+      ],
+      "create a new account": [
+        "δημιουργία νέου λογαριασμού"
+      ],
+      "Create another account instead": [
+        "Δημιουργήστε έναν άλλο λογαριασμό"
+      ],
+      "Download again ${ size }": [
+        "Επανάληψη λήψης ${ size }"
+      ],
+      "Download to continue ${ size }": [
+        "Λήψη για συνέχεια ${ size }"
+      ],
+      "Keep this plan and use ${ appName }": [
+        "Διατηρήστε αυτό το πλάνο και χρησιμοποιήστε το ${ appName }"
+      ],
+      "Or ${ createANewAccount }": [
+        "Ή ${ createANewAccount }"
+      ],
+      "Start using ${ appName }": [
+        "Έναρξη χρήσης του ${ appName }"
+      ],
+      "Start using ${ appName } now": [
+        "Ξεκινήστε να χρησιμοποιείτε το ${ appName } τώρα"
+      ],
+      "Upgrade for only ${ relativePrice } extra per month": [
+        "Αναβάθμιση για μόνο ${ relativePrice } επιπλέον ανά μήνα"
+      ],
+      "Upgrade my plan": [
+        "Αναβαθμίστε το πλάνο μου"
+      ],
+      "Use ${ free } instead": [
+        "Χρησιμοποιήστε το ${ free } αντί για αυτό"
+      ]
+    },
+    "pass_signup_2023: Feature": {
+      "End-to-end encrypted": [
+        "Κρυπτογραφημένο από άκρο σε άκρο"
+      ],
+      "Open source": [
+        "Ανοιχτού κώδικα"
+      ],
+      "Protected by Swiss privacy laws": [
+        "Προστατεύεται από τους Ελβετικούς νόμους περί απορρήτου"
+      ],
+      "Swiss based": [
+        "Με έδρα στην Ελβετία"
+      ]
+    },
+    "pass_signup_2023: Header": {
+      "Checkout": [
+        "Ολοκλήρωση αγορών"
+      ],
+      "Continue with your ${ BRAND_NAME } account": [
+        "Συνεχίστε με το ${ BRAND_NAME } λογαριασμό σας"
+      ],
+      "Limited time offer": [
+        "Προσφορά περιορισμένου χρόνου"
+      ],
+      "Recommended": [
+        "Προτεινόμενο"
+      ],
+      "Select your plan": [
+        "Επιλέξτε το πλάνο σας"
+      ],
+      "Upgrade your plan": [
+        "Αναβαθμίστε το πλάνο σας"
+      ]
+    },
+    "pass_signup_2023: Info": {
+      "${ PASS_APP_NAME } benefits": [
+        "${ PASS_APP_NAME } οφέλη"
+      ],
+      "${ PASS_APP_NAME } is available as a browser extension on Firefox Add-ons.": [
+        "Το ${ PASS_APP_NAME } είναι διαθέσιμο ως προέκταση προγράμματος περιήγησης στα πρόσθετα του Firefox."
+      ],
+      "${ PASS_APP_NAME } is available as a browser extension on the Chrome Web Store.": [
+        "Το ${ PASS_APP_NAME } είναι διαθέσιμο ως προέκταση προγράμματος περιήγησης στο Chrome Web Store."
+      ],
+      "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption.": [
+        "Το ${ PASS_APP_NAME } διατηρεί τους κωδικούς πρόσβασης και την ταυτότητά σας ασφαλή με αυστηρή κρυπτογράφηση από άκρο σε άκρο."
+      ],
+      "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption. To add premium features of ${ PASS_APP_NAME_2 } to your current subscription, we suggest upgrading to the ${ upsellPlanName } plan.": [
+        "Το ${ PASS_APP_NAME } διατηρεί τους κωδικούς πρόσβασης και την ταυτότητά σας ασφαλή με αυστηρή κρυπτογράφηση από άκρο σε άκρο. Για να προσθέσετε τα premium χαρακτηριστικά του ${ PASS_APP_NAME_2 } στην τρέχουσα συνδρομή σας, προτείνουμε να κάνετε αναβάθμιση στο πρόγραμμα ${ upsellPlanName }."
+      ],
+      "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption. Your current plan already gives you access to premium ${ PASS_APP_NAME_2 } features — no need to purchase again.": [
+        "Το ${ PASS_APP_NAME } διατηρεί τους κωδικούς πρόσβασης και την ταυτότητά σας ασφαλή με αυστηρή κρυπτογράφηση από άκρο σε άκρο. Το τρέχον πρόγραμμά σας σάς δίνει ήδη πρόσβαση στις premium λειτουργίες ${ PASS_APP_NAME_2 } — δε χρειάζεται να το αγοράσετε ξανά."
+      ],
+      "+ ${ relativePrice } per month": [
+        "+ ${ relativePrice } ανά μήνα"
+      ],
+      "All premium ${ BRAND_NAME } services.": [
+        "Όλες οι premium υπηρεσίες του ${ BRAND_NAME }."
+      ],
+      "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
+        "Αλλά μπορείτε να ξεκλειδώσετε το **${ unlockPlanTitle }** και όλες τις premium υπηρεσίες του ${ BRAND_NAME } αναβαθμίζοντας στο **${ upsellPlanTitle }** — είναι μόνο ${ relativePrice } επιπλέον ανά μήνα."
+      ],
+      "By continuing, you agree to our ${ termsAndConditions }": [
+        "Συνεχίζοντας, συμφωνείτε με τους ${ termsAndConditions }"
+      ],
+      "Creating your account": [
+        "Γίνεται δημιουργία του λογαριασμού σας"
+      ],
+      "Discover ${ PASS_APP_NAME },${ br }our new encrypted password manager": [
+        "Ανακαλύψτε το ${ PASS_APP_NAME },${ br }τον νέο μας κρυπτογραφημένο διαχειριστή κωδικών πρόσβασης"
+      ],
+      "Download and install the relevant apps and extensions to start using ${ PASS_APP_NAME }": [
+        "Κατεβάστε και εγκαταστήστε τις σχετικές εφαρμογές και προεκτάσεις για να αρχίσετε να χρησιμοποιείτε το ${ PASS_APP_NAME }"
+      ],
+      "Download the ${ PASS_APP_NAME } app from Google Play and install it to start using ${ PASS_APP_NAME2 } on your phone.": [
+        "Κατεβάστε τη εφαρμογή ${ PASS_APP_NAME } από το Google Play και εγκαταστήστε την για να αρχίσετε να χρησιμοποιείτε την ${ PASS_APP_NAME2 } στο τηλέφωνό σας."
+      ],
+      "Download the ${ PASS_APP_NAME } app from the App Store and install it to start using ${ PASS_APP_NAME2 } on your phone.": [
+        "Κατεβάστε τη εφαρμογή ${ PASS_APP_NAME } από το App Store και εγκαταστήστε την για να αρχίσετε να χρησιμοποιείτε την ${ PASS_APP_NAME2 } στο τηλέφωνό σας."
+      ],
+      "Encrypted password manager${ breakToken }that also protects your identity": [
+        "Κρυπτογραφημένος διαχειριστής κωδικών πρόσβασης${ breakToken }που προστατεύει επίσης την ιδιοτικότητά σας"
+      ],
+      "End-to-end encrypted notes": [
+        "Διατερματικά κρυπτογραφημένες σημειώσεις"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
+        "Με μόνο **${ relativePrice } ανά μήνα** παραπάνω, θα έχετε πρόσβαση σε όλες τις premium υπηρεσίες του ${ BRAND_NAME }!"
+      ],
+      "Free forever": [
+        "Δωρεάν για πάντα"
+      ],
+      "Get ${ appName } for ${ browserName }": [
+        "Λάβετε το ${ appName } για ${ browserName }"
+      ],
+      "Get ${ appName } for ${ browserName } soon": [
+        "Λάβετε το ${ appName } για ${ browserName } σύντομα"
+      ],
+      "Hide-my-email aliases protect your email from data breaches": [
+        "Τα Hide-my-email ψευδώνυμα προστατεύουν το ηλεκτρονικό ταχυδρομείο σας από παραβιάσεις δεδομένων"
+      ],
+      "If you get locked out of your ${ BRAND_NAME } Account, your **recovery kit** will allow you to sign in and recover your data.": [
+        "Εάν κλειδωθείτε έξω από τον ${ BRAND_NAME } λογαριασμό σας, το **κιτ ανάκτησης** θα σας επιτρέψει να συνδεθείτε και να ανακτήσετε τα δεδομένα σας."
+      ],
+      "Includes basic ${ appName } features:": [
+        "Περιλαμβάνει τις βασικές δυνατότητες του ${ appName }:"
+      ],
+      "Install ${ PASS_APP_NAME }": [
+        "Εγκατάσταση ${ PASS_APP_NAME }"
+      ],
+      "Install app": [
+        "Εγκαταστήστε την εφαρμογή"
+      ],
+      "Install app and extension": [
+        "Εγκατάσταση εφαρμογής και προέκτασης"
+      ],
+      "It’s the only way to fully restore your account, so make sure you keep this **recovery kit** somewhere safe.": [
+        "Είναι ο μόνος τρόπος για να επαναφέρετε πλήρως τον λογαριασμό σας, οπότε φροντίστε να διατηρήσετε αυτό το **κιτ ανάκτησης** κάπου ασφαλές."
+      ],
+      "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
+        "Ενταχθείτε με περισσότερους από 100 εκατομμυρίων ανθρώπους που έχουν επιλέξει το ${ BRAND_NAME } για να παραμείνουν ασφαλείς στο διαδίκτυο"
+      ],
+      "Launching ${ PASS_APP_NAME }": [
+        "Εκκίνηση του ${ PASS_APP_NAME }"
+      ],
+      "One easy subscription.": [
+        "Μία εύκολη συνδρομή."
+      ],
+      "Open-source and audited": [
+        "Ανοιχτού κώδικα και ελεγμένο"
+      ],
+      "per month, billed annually": [
+        "ανά μήνα, χρεώνεται ετησίως"
+      ],
+      "per month, billed every 15 months": [
+        "ανά μήνα, χρεώνεται κάθε 15 μήνες"
+      ],
+      "per month, billed every 30 months": [
+        "ανά μήνα, χρεώνεται κάθε 30 μήνες"
+      ],
+      "per month, billed every month": [
+        "ανά μήνα, χρεώνεται κάθε μήνα"
+      ],
+      "per month, billed every two years": [
+        "ανά μήνα, χρεώνεται κάθε δύο χρόνια"
+      ],
+      "Preparing your Recovery Kit": [
+        "Προετοιμασία του Κιτ Αποκατάστασης"
+      ],
+      "Protected by Swiss privacy laws": [
+        "Προστατεύεται από τους Ελβετικούς νόμους περί απορρήτου"
+      ],
+      "Save your recovery kit to continue": [
+        "Αποθηκεύστε το κιτ αποκατάστασης σας για να συνεχίσετε"
+      ],
+      "Signing in to ${ PASS_APP_NAME }": [
+        "Σύνδεση στο ${ PASS_APP_NAME }"
+      ],
+      "Special launch offer: Get ${ title } for ${ price } forever!": [
+        "Ειδική προσφορά έναρξης: Αποκτήστε ${ title } για ${ price } για πάντα!"
+      ],
+      "The offer you selected is not available for ${ currentPlanTitle } subscribers.": [
+        "Η προσφορά που επιλέξατε δεν είναι διαθέσιμη για συνδρομητές του ${ currentPlanTitle }."
+      ],
+      "to start using ${ PASS_APP_NAME } on your phone": [
+        "για να ξεκινήσετε να χρησιμοποιείτε το ${ PASS_APP_NAME } στο τηλέφωνό σας"
+      ],
+      "Unlock ${ PASS_APP_NAME } premium features by upgrading": [
+        "Ξεκλειδώστε premium χαρακτηριστικά του ${ PASS_APP_NAME } με αναβάθμιση"
+      ],
+      "Updating your account": [
+        "Πραγματοποιείται ενημέρωση του λογαριασμού σας"
+      ],
+      "Verifying your payment": [
+        "Γίνεται επαλήθευση της πληρωμής σας"
+      ],
+      "Welcome to ${ plan }": [
+        "Καλώς ήρθατε στο ${ plan }"
+      ],
+      "Works on all devices": [
+        "Λειτουργεί σε όλες τις συσκευές"
+      ],
+      "You already have access to premium ${ appName } features — no need to purchase again.": [
+        "Έχετε ήδη πρόσβαση σε premium λειτουργίες του ${ appName } — δε χρειάζεται να αγοράσετε ξανά."
+      ],
+      "You currently have": [
+        "Προς το παρόν έχετε"
+      ],
+      "Your organization has access to ${ free }. If you want to access premium ${ appName } features, please ask your organization's administrator to upgrade.": [
+        "Ο οργανισμός σας έχει πρόσβαση στο ${ free }. Εάν θέλετε να αποκτήσετε πρόσβαση σε premium δυνατότητες του ${ appName }, ζητήστε από τον διαχειριστή του οργανισμού σας να κάνει αναβάθμιση."
+      ]
+    },
+    "pass_signup_2023: Onboarding": {
+      "Welcome to ${ PASS_APP_NAME }": [
+        "Καλώς ήρθατε στο${ PASS_APP_NAME }"
+      ]
+    },
+    "pass_signup_2023: Title": {
+      "${ upsellPlanTitle } plan": [
+        "${ upsellPlanTitle } πλάνο"
+      ],
+      "All ${ BRAND_NAME } Plus services.${ br }One easy subscription.": [
+        "Όλες οι ${ BRAND_NAME } Plus λειτουργείες.${ br }Μία εύκολη συνδρομή."
+      ],
+      "Create your ${ BRAND_NAME } account": [
+        "Δημιουργήστε το ${ BRAND_NAME } λογαριασμό σας"
+      ],
+      "Request your organization administrator to upgrade": [
+        "Ζητήστε από το διαχειριστή του οργανισμού σας να κάνει αναβάθμιση"
+      ],
+      "Secure your account": [
+        "Επαληθεύστε τον λογαριασμό σας"
       ]
     },
     "Payment method option": {
@@ -11223,6 +11528,70 @@
         "Λεπτομέρειες σχετικά με συμβάντα που δεν ήταν μπορούσαν να εξαχθούν"
       ]
     },
+    "summer2023: Billing cycle option": {
+      "1 year": [
+        "1 έτος"
+      ],
+      "2 years": [
+        "2 έτη"
+      ]
+    },
+    "summer2023: Deal details": {
+      "Premium Drive": [
+        "Premium Μονάδα Αποθήκευσης"
+      ],
+      "Premium Mail and Calendar": [
+        "Premium Αλληλογραφία και Ημερολόγιο"
+      ],
+      "Premium Password Manager": [
+        "Premium Διαχειριστής Κωδικών Πρόσβασης"
+      ]
+    },
+    "summer2023: Describe Proton Pass": {
+      "Securely store your passwords and autofill them on websites. Includes unlimited passwords, autofill, password generator, and more.": [
+        "Αποθηκεύστε με ασφάλεια τους κωδικούς πρόσβασής σας και συμπληρώστε τους αυτόματα σε ιστότοπους. Περιλαμβάνει απεριόριστους κωδικούς πρόσβασης, αυτόματη συμπλήρωση, γεννήτρια κωδικών πρόσβασης και πολλά άλλα."
+      ]
+    },
+    "summer2023: Short tool name to present Proton Pass": {
+      "Password manager": [
+        "Διαχειριστής κωδικού"
+      ]
+    },
+    "summer2023: Tooltip": {
+      "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
+        "Δημιουργήστε ασφαλή στοιχεία σύνδεσης σε όλες τις συσκευές σας. Περιλαμβάνει απεριόριστα ψευδώνυμα, 20 κρύπτες, ενσωματωμένο έλεγχο ταυτότητας δύο παραγόντων (2FA), αυτόματη συμπλήρωση πιστωτικών καρτών και πολλά άλλα."
+      ],
+      "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "Περιλαμβάνει 2950+ διακομιστές σε 65+ χώρες, σύνδεση έως και 10 συσκευών, πρόσβαση σε παγκόσμιες υπηρεσίες ροής, προστασία κακόβουλου λογισμικού και αποκλεισμό διαφημίσεων και πολλά άλλα."
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Περιλαμβάνει υποστήριξη για 1 προσαρμοσμένο τομέα ηλεκτρονικού ταχυδρομείου, 10 διευθύνσεις ηλεκτρονικού ταχυδρομείου, 10 hide-my-email ψευδώνυμα, κοινή χρήση ημερολογίου και πολλά άλλα."
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "Ασφαλίστε τα αρχεία σας με κρυπτογραφημένο χώρο αποθήκευσης cloud. Περιλαμβάνει ιστορικό εκδόσεων, κρυπτογραφημένη κοινή χρήση αρχείων και πολλά άλλα."
+      ]
+    },
+    "summer2023:Footer": {
+      "*Your subscription will automatically renew at the standard discounted rate at the end of your billing cycle.": [
+        "*Η συνδρομή σας θα ανανεωθεί αυτόματα με την τυπική μειωμένη τιμή στο τέλος του κύκλου χρέωσης σας."
+      ],
+      "Discounts are based on the standard monthly pricing. This offer is only available to first-time subscribers.": [
+        "Οι εκπτώσεις βασίζονται στην τυπική μηνιαία τιμολόγηση. Αυτή η προσφορά είναι διαθέσιμη μόνο σε νέους συνδρομητές."
+      ]
+    },
+    "summer2023:Info": {
+      "For a limited time, get the best ${ BRAND_NAME } has to offer at an exclusive discount.": [
+        "Για περιορισμένο χρονικό διάστημα, αποκτήστε τα καλύτερα ${ BRAND_NAME } που έχει να προσφέρει με αποκλειστική έκπτωση."
+      ],
+      "We’re celebrating the nine-year anniversary of our crowdfunding!": [
+        "Γιορτάζουμε την εννιάχρονη επέτειο του crowdfunding μας!"
+      ]
+    },
+    "summer2023:Offer title": {
+      "${ BRAND_NAME } Anniversary Sale": [
+        "${ BRAND_NAME } Επετειακή Πώληση"
+      ]
+    },
     "Tab in domain modal": {
       "Addresses": [
         "Διευθύνσεις"
@@ -11529,7 +11898,7 @@
         "Καθαρισμός"
       ],
       "Clear out the junk": [
-        "Καθαρίστε τα ανεπιθύμητα"
+        "Ξεφορτωθείτε τη σαβούρα"
       ],
       "Composing": [
         "Σύνταξη"
@@ -11578,7 +11947,7 @@
         "Δημιουργήστε τη ${ BRAND_NAME } διεύθυνσής σας"
       ],
       "Creating user accounts": [
-        "Δημιουργία λογαριασμών χρηστών"
+        "Γίνετε δημιουργία λογαριασμών χρηστών"
       ],
       "Credentials": [
         "Διαπιστευτήρια"
@@ -11780,7 +12149,7 @@
         "Πώς λειτουργεί;"
       ],
       "How to refer a friend and get credits": [
-        "Πώς να συστήσετε έναν φίλο και να λάβετε πιστώσεις"
+        "Πώς να συστήσετε έναν φίλο για να λάβετε πόντους"
       ],
       "Human verification": [
         "Ανθρώπινη Επαλήθευση"
@@ -11919,7 +12288,7 @@
         "Πληρωμή τιμολογίου"
       ],
       "Payment failed": [
-        "Η πληρωμή απέτυχε"
+        "Αποτυχία πληρωμής"
       ],
       "Payment methods": [
         "Τρόποι πληρωμής"
@@ -12009,7 +12378,7 @@
         "Ασφάλεια και απόρρητο"
       ],
       "Security logs": [
-        "Καταγραφές διασφάλισης"
+        "Καταγραφές ασφαλείας"
       ],
       "Select a plan": [
         "Επιλέξτε ένα πλάνο"
@@ -12030,7 +12399,7 @@
         "Επιλέξτε πότε θέλετε να σταλεί αυτή η ειδοποίηση"
       ],
       "Send email reminders?": [
-        "Αποστολή email υπενθυμίσεις;"
+        "Αποστολή υπενθυμίσεων μέσω email;"
       ],
       "Session management": [
         "Διαχείριση συνεδρίας"
@@ -12356,7 +12725,7 @@
         "Προσαρμόστε την εισαγωγή για μείωση του αριθμού των ετικετών"
       ],
       "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
-        "Διαγράψτε τον κάδο απορριμμάτων και τα ανεπιθύμητα μηνύματα μετά από 30 ημέρες. Η ενεργοποίηση της αυτόματης διαγραφής δίνει στα μηνύματα που βρίσκονται ήδη στον κάδο απορριμμάτων/ανεπιθύμητη αλληλογραφία μια ημερομηνία διαγραφής με βάση την ημερομηνία μετακίνησής τους εκεί."
+        "Εξαλείψτε οριστικά τα μηνύματα στα Διαγραμμένα και τα Ενοχλητικά μετά από 30 ημέρες. Αυτή η ενεργοποίηση δίνει ημερομηνία αυτόματης εξάλειψης στα μηνύματα που βρίσκονται ήδη στα Διαγραμμένα/Ενοχλητικά βάσει της ημερομηνίας μετακίνησής τους εκεί."
       ],
       "Each imported email will have this label": [
         "Κάθε εισαγόμενο μήνυμα ηλεκτρονικού ταχυδρομείου θα έχει αυτήν την ετικέτα"
@@ -12464,7 +12833,7 @@
         "Όταν κάνετε κλικ σε έναν σύνδεσμο, αυτή η λειτουργία εναντίον του ηλεκτρονικού «ψαρέματος» (phishing) θα σας ζητά να επιβεβαιώσετε τη διεύθυνση URL της ιστοσελίδας."
       ],
       "When you move an email to spam, you’ll automatically be unsubscribed from the sender’s mailing lists.": [
-        "Όταν μετακινείτε ένα μήνυμα ηλεκτρονικού ταχυδρομείου στα ανεπιθύμητα, θα διαγραφείτε αυτόματα από τις λίστες αλληλογραφίας του αποστολέα."
+        "Όταν μετακινείτε ένα μήνυμα στα Ενοχλητικά, θα διαγράφεστε αυτόματα από τις λίστες αλληλογραφίας του αποστολέα."
       ],
       "You have locally decrypted this key": [
         "Έχετε αποκρυπτογραφήσει τοπικά αυτό το κλειδί"

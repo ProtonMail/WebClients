@@ -3278,7 +3278,7 @@
         "Firma non verificata"
       ],
       "Signature verification failed": [
-        "Verifica della firma fallita"
+        "Verifica della firma non riuscita"
       ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Alcuni nomi delle tue cartelle non sono disponibili. Personalizza l'importazione per modificare questi nomi."
@@ -3490,7 +3490,7 @@
     },
     "Error importing contact": {
       "Encryption failed": [
-        "Criptaggio fallito"
+        "Crittografia non riuscita"
       ],
       "vCard versions < 3.0 not supported": [
         "versioni di vCard < 3.0 non supportate"
@@ -3542,7 +3542,7 @@
         "Elemento"
       ],
       "Encryption failed": [
-        "Crittografia fallita"
+        "Crittografia non riuscita"
       ],
       "End time out of bounds": [
         "Ora di fine fuori dai limiti"
@@ -3551,7 +3551,7 @@
         "Evento"
       ],
       "Event validation failed": [
-        "Convalida dell'evento fallita"
+        "Convalida dell'evento non riuscita"
       ],
       "Floating times not supported": [
         "Tempi mobili non supportati"
@@ -4356,9 +4356,6 @@
     "Font face option": {
       "System default": [
         "Predefinito di sistema"
-      ],
-      "Theme default": [
-        "Tema predefinito"
       ]
     },
     "Font Size Default": {
@@ -4395,6 +4392,20 @@
       ],
       "(during your first month)": [
         "(durante il tuo primo mese)"
+      ]
+    },
+    "Get started checklist instructions": {
+      "${ MAIL_APP_NAME } app": [
+        "App ${ MAIL_APP_NAME }"
+      ],
+      "Discover privacy features": [
+        "Scopri le funzionalità per la privacy"
+      ],
+      "Get the App": [
+        "Scarica l'app"
+      ],
+      "privacy features": [
+        "funzionalità per la privacy"
       ]
     },
     "Gmail forwarding": {
@@ -6244,6 +6255,9 @@
       "Store this password and file in a safe place. You’ll need them again to import your key.": [
         "Conserva questa password e file in un luogo sicuro. Ti serviranno di nuovo per importare la tua chiave."
       ],
+      "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
+        "Termine dell'abbonamento: riattivalo entro ${ byDate } per mantenere i vantaggi del tuo piano${ planName }${ reactivateLink }"
+      ],
       "Summary": [
         "Riepilogo"
       ],
@@ -7584,6 +7598,9 @@
       ],
       "Default PGP scheme": [
         "Schema PGP predefinito"
+      ],
+      "Default scrollbars": [
+        "Barre di scorrimento predefinite"
       ],
       "Default view": [
         "Vista predefinita"
@@ -9985,6 +10002,9 @@
       ],
       "Upgrade my plan": [
         "Migliora il mio piano"
+      ],
+      "Use ${ free } instead": [
+        "Usa invece ${ free }"
       ]
     },
     "pass_signup_2023: Feature": {
@@ -10002,6 +10022,9 @@
       ]
     },
     "pass_signup_2023: Header": {
+      "Checkout": [
+        "Vai alla cassa"
+      ],
       "Continue with your ${ BRAND_NAME } account": [
         "Continua con il tuo account ${ BRAND_NAME }"
       ],
@@ -10042,6 +10065,9 @@
       ],
       "Get ${ appName } for ${ browserName } soon": [
         "Ottieni ${ appName } per ${ browserName } presto"
+      ],
+      "Install ${ PASS_APP_NAME }": [
+        "Installa ${ PASS_APP_NAME }"
       ],
       "Install app": [
         "Installa l'app"
@@ -10087,6 +10113,9 @@
       ],
       "Works on all devices": [
         "Funziona su tutti i dispositivi"
+      ],
+      "You currently have": [
+        "Al momento hai"
       ]
     },
     "pass_signup_2023: Onboarding": {
@@ -11289,6 +11318,11 @@
     "summer2023: Describe Proton Pass": {
       "Securely store your passwords and autofill them on websites. Includes unlimited passwords, autofill, password generator, and more.": [
         "Memorizza in modo sicuro le tue password e inseriscile automaticamente nei siti web. Sono incluse password illimitate, generatore di password e altro ancora."
+      ]
+    },
+    "summer2023: Short tool name to present Proton Pass": {
+      "Password manager": [
+        "Password manager"
       ]
     },
     "summer2023: Tooltip": {
