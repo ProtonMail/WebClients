@@ -2955,12 +2955,6 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Du kannst Kontakte, die du weder zusammenführen noch behalten willst, zum Löschen vormerken. Das Löschen erfolgt erst, wenn du auf die Schaltfläche „Zusammenführen“ klickst."
-      ],
-      "You can read the message and click on links without being tracked with email tracker protection.": [
-        "Mit dem E-Mail-Tracker-Schutz kannst du die Nachricht lesen und auf Links klicken, ohne verfolgt zu werden."
-      ],
-      "You can read the message and click on links without being tracked.": [
-        "Du kannst die Nachricht lesen und auf Links klicken, ohne verfolgt zu werden."
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4105,9 +4099,6 @@
     "Font face option": {
       "System default": [
         "Systemstandard"
-      ],
-      "Theme default": [
-        "Standard-Farbschema"
       ]
     },
     "Font Size Default": {
@@ -4147,11 +4138,38 @@
       ]
     },
     "Get started checklist instructions": {
+      "${ MAIL_APP_NAME } app": [
+        "${ MAIL_APP_NAME }-App"
+      ],
       "${ MAIL_APP_NAME } on App Store": [
         "${ MAIL_APP_NAME } im App Store"
       ],
       "${ MAIL_APP_NAME } on Play Store": [
         "${ MAIL_APP_NAME } im Play Store"
+      ],
+      "account logins": [
+        "Konto-Zugangsdaten"
+      ],
+      "Auto-forward Gmail": [
+        "Gmail automatisch weiterleiten"
+      ],
+      "auto-forwarding": [
+        "automatische Weiterleitung"
+      ],
+      "Block email communications from scammers permanently.": [
+        "Blockiere die E-Mail-Kommunikation von Betrügern dauerhaft."
+      ],
+      "Block unsavory senders": [
+        "Blockiere unerwünschte Absender"
+      ],
+      "Bravo for making your email even more secure, convenient, and relevant! We've upped your free storage to a total of 1 GB.": [
+        "Bravo, dass du deine E-Mails noch sicherer, bequemer und relevanter machst! Wir haben deinen kostenlosen Speicherplatz auf insgesamt 1 GB erhöht."
+      ],
+      "Change ${ strongText } to your ${ BRAND_NAME } address": [
+        "Ändere deine ${ strongText } zu deiner ${ BRAND_NAME }-E-Mail-Adresse"
+      ],
+      "Checklist complete": [
+        "Checkliste vollständig"
       ],
       "Close": [
         "Schließen"
@@ -4162,11 +4180,35 @@
       "Continue setting up your email": [
         "Fahre mit dem Einrichten deiner E-Mail-Adresse fort"
       ],
+      "Discover how our ${ strongText } protect you": [
+        "Entdecke, wie dich unsere ${ strongText } schützen"
+      ],
+      "Discover privacy features": [
+        "Entdecke die Datenschutzfunktionen"
+      ],
+      "Double your free storage to 1 GB when you complete the following:": [
+        "Verdopple deinen kostenlosen Speicherplatz auf 1 GB, indem du die folgenden Schritte abschließt:"
+      ],
+      "Encryption so strong, only you and intended recipients can view your emails.": [
+        "Eine so starke Verschlüsselung, dass nur du und die beabsichtigten Empfänger deine E-Mails einsehen können."
+      ],
+      "For your eyes only": [
+        "Nur für dich"
+      ],
+      "Get free storage": [
+        "Kostenlosen Speicherplatz erhalten"
+      ],
       "Get mobile app": [
         "Mobile App holen"
       ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "Hol dir die Mobile-App von ${ MAIL_APP_NAME }"
+      ],
+      "Get the ${ strongText } on Android or iOS": [
+        "Hol dir die ${ strongText } für Android oder iOS"
+      ],
+      "Get the App": [
+        "App herunterladen"
       ],
       "Import contacts or emails": [
         "Kontakte oder E-Mails importieren"
@@ -4177,8 +4219,14 @@
       "Import your contacts or messages": [
         "Importiere deine Kontakte oder Nachrichten"
       ],
+      "Keep using ${ MAIL_APP_NAME } to discover more ways ${ BRAND_NAME } protects your privacy and simplifies emailing.": [
+        "Nutze weiterhin ${ MAIL_APP_NAME }, um weitere Möglichkeiten zu entdecken, wie ${ BRAND_NAME } deine Privatsphäre schützt und das E-Mailen vereinfacht."
+      ],
       "Learn more": [
         "Mehr erfahren"
+      ],
+      "Make ${ BRAND_NAME } your go-to inbox": [
+        "Mache ${ BRAND_NAME } zu deinem bevorzugten Posteingang."
       ],
       "Maybe later": [
         "Vielleicht später"
@@ -4186,8 +4234,14 @@
       "Nice! You've updated all services in this category.": [
         "Sehr schön! Du hast alle Dienste in dieser Kategorie aktualisiert."
       ],
+      "Open checklist": [
+        "Checkliste öffnen"
+      ],
       "Popular online services": [
         "Beliebte Online-Dienste"
+      ],
+      "privacy features": [
+        "Datenschutzfunktionen"
       ],
       "Protect and simplify your email": [
         "Schütze und vereinfache deine E-Mail-Adresse"
@@ -4204,8 +4258,14 @@
       "Set recovery method": [
         "Wiederherstellungsmethode festlegen"
       ],
+      "Set up ${ strongText } from Gmail": [
+        "Richte die ${ strongText } von Gmail ein"
+      ],
       "Sign in to the mobile app to complete this step": [
         "Melde dich bei der mobilen App an, um diesen Schritt abzuschließen."
+      ],
+      "Update your logins": [
+        "Aktualisiere deine Zugangsdaten"
       ],
       "Using your mobile device, scan this QR code or visit the iOS or Android store.": [
         "Scanne mit deinem Mobilgerät diesen QR-Code oder besuche den iOS- oder Android-Store."
@@ -5297,7 +5357,7 @@
         "Keine Ergebnisse gefunden"
       ],
       "No trackers found": [
-        "Kein E-Mail-Tracker gefunden"
+        "Keine E-Mail-Tracker gefunden"
       ],
       "non-${ MAIL_APP_NAME }": [
         "Nicht-${ MAIL_APP_NAME }"
@@ -5838,7 +5898,7 @@
         "Du kannst den Fortschritt hier ${ importProgressLink } überprüfen."
       ],
       "You can click links in this email without being profiled and leaking your online activity with advertisers.": [
-        "Du kannst auf Links in dieser E-Mail klicken, ohne dass ein Profil erstellt wird, und die Online-Aktivitäten an Werbetreibende weitergegeben werden."
+        "Du kannst auf Links in dieser E-Mail klicken, ohne dass ein Profil von dir erstellt und an Werbetreibende weitergegeben wird."
       ],
       "You can either update your search query or ${ button }": [
         "Du kannst deine Suchanfrage entweder aktualisieren oder ${ button }"
@@ -5850,7 +5910,7 @@
         "Du kannst jeweils nur einen Datentyp importieren."
       ],
       "You can read this email without revealing your interactions, location, or device to advertisers.": [
-        "E-Mail kann gelesen werden, ohne dass Interaktionen, der Standort oder die Gerätekennung an Werbetreibende weitergegeben wird."
+        "Du kannst diese E-Mail lesen, ohne deine Interaktionen, deinen Standort oder dein Gerät für Werbetreibende preiszugeben."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Du kannst Mitteilungen aktivieren, um Benachrichtigungen zu erhalten, sobald neue E-Mail-Nachrichten in diesem Ordner eingehen."
@@ -7375,9 +7435,6 @@
       "Set up your organization": [
         "Organisation einrichten"
       ],
-      "Set up your organization testing": [
-        "Richte deine Organisation ein"
-      ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
         "Verwende die App-Auswahl oben links, um auf alle ${ BRAND_NAME }-Dienste zuzugreifen: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } und ${ DRIVE_SHORT_APP_NAME }."
       ]
@@ -7407,10 +7464,13 @@
         "Gaming"
       ],
       "Most popular": [
-        "Am beliebtesten"
+        "Beliebt"
       ],
       "Travel": [
         "Reisen"
+      ],
+      "Utilities": [
+        "Versorgungsunternehmen"
       ]
     },
     "Option": {
@@ -8951,7 +9011,7 @@
         "Kein Anhang gefunden"
       ],
       "No trackers found": [
-        "Kein E-Mail-Tracker gefunden"
+        "Keine E-Mail-Tracker gefunden"
       ],
       "Open actions dropdown": [
         "Auswahlliste „Aktionen“ öffnen"
@@ -9093,9 +9153,6 @@
       ],
       "Subject missing": [
         "Betreff fehlt"
-      ],
-      "This email is protected": [
-        "Diese Nachricht ist geschützt."
       ],
       "To": [
         "An"

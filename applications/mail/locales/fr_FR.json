@@ -2955,12 +2955,6 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Vous pouvez marquer pour suppression les contacts que vous ne voulez ni fusionner ni conserver. Leur suppression n'aura lieu qu'après avoir cliqué sur le bouton de fusion."
-      ],
-      "You can read the message and click on links without being tracked with email tracker protection.": [
-        "Vous pouvez lire le message et cliquer sur les liens sans être suivi grâce à la protection contre le suivi dans les messages."
-      ],
-      "You can read the message and click on links without being tracked.": [
-        "Vous pouvez lire le message et cliquer sur les liens sans être suivi."
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4106,8 +4100,8 @@
       "System default": [
         "Identique au système"
       ],
-      "Theme default": [
-        "Thème par défaut"
+      "Theme font": [
+        "Police du thème"
       ]
     },
     "Font Size Default": {
@@ -4148,13 +4142,61 @@
     },
     "Get started checklist instructions": {
       "${ MAIL_APP_NAME } app": [
-        "Application ${ MAIL_APP_NAME }"
+        "application ${ MAIL_APP_NAME }"
+      ],
+      "${ MAIL_APP_NAME } on App Store": [
+        "${ MAIL_APP_NAME } sur App Store"
+      ],
+      "${ MAIL_APP_NAME } on Play Store": [
+        "${ MAIL_APP_NAME } sur Play Store"
+      ],
+      "account logins": [
+        "identifiants du compte"
       ],
       "Auto-forward Gmail": [
         "Transfert automatique depuis Gmail"
       ],
+      "auto-forwarding": [
+        "le transfert automatique"
+      ],
+      "Block email communications from scammers permanently.": [
+        "Bloquez de manière permanente les e-mails des escrocs."
+      ],
+      "Block unsavory senders": [
+        "Bloquer les expéditeurs indésirables"
+      ],
+      "Bravo for making your email even more secure, convenient, and relevant! We've upped your free storage to a total of 1 GB.": [
+        "Félicitations ! Votre e-mail est désormais plus sécurisé, pratique et pertinent. Nous avons augmenté votre espace de stockage jusqu'à un total de 1 To."
+      ],
+      "Change ${ strongText } to your ${ BRAND_NAME } address": [
+        "Changez les ${ strongText } pour votre adresse ${ BRAND_NAME }"
+      ],
+      "Checklist complete": [
+        "Checklist terminée"
+      ],
       "Close": [
         "Fermer"
+      ],
+      "Congratulation, you completed all the steps!": [
+        "Félicitations, vous avez complété toutes les étapes !"
+      ],
+      "Continue setting up your email": [
+        "Continuez de configurer votre messagerie"
+      ],
+      "Discover how our ${ strongText } protect you": [
+        "Découvrez comment nos ${ strongText } vous protègent."
+      ],
+      "Discover privacy features": [
+        "Découvrrez les fonctionnalités de respect de la vie privée"
+      ],
+      "Double your free storage to 1 GB when you complete the following:": [
+        "Doublez votre stockage gratuit jusqu'à 1 Go en suivant les étapes suivantes :"
+      ],
+      "Encryption so strong, only you and intended recipients can view your emails.": [
+        "Un chiffrement si puissant que seuls vous et les destinataires de vos e-mails pouvez les afficher."
+      ],
+      "For your eyes only": [
+        "Seulement pour vous"
       ],
       "Get free storage": [
         "Obtenir du stockage gratuit"
@@ -4164,6 +4206,9 @@
       ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "Obtenir l'application mobile ${ MAIL_APP_NAME }"
+      ],
+      "Get the ${ strongText } on Android or iOS": [
+        "Téléchargez l'${ strongText } sur Android ou iOS."
       ],
       "Get the App": [
         "Téléchargez l'application"
@@ -4177,14 +4222,32 @@
       "Import your contacts or messages": [
         "Importez vos contacts ou messages."
       ],
+      "Keep using ${ MAIL_APP_NAME } to discover more ways ${ BRAND_NAME } protects your privacy and simplifies emailing.": [
+        "Continuez à utiliser ${ MAIL_APP_NAME } et découvrez les multiples façons dont ${ BRAND_NAME } protège votre vie privée et simplifie l'envoi de vos e-mails."
+      ],
       "Learn more": [
         "En savoir plus"
+      ],
+      "Make ${ BRAND_NAME } your go-to inbox": [
+        "Faites de ${ BRAND_NAME } votre boite de réception principale."
       ],
       "Maybe later": [
         "Peut-être plus tard"
       ],
+      "Nice! You've updated all services in this category.": [
+        "Super ! Vous avez mis à jour tous les services de cette catégorie."
+      ],
       "Open checklist": [
         "Ouvrir la checklist"
+      ],
+      "Popular online services": [
+        "Services en ligne les plus courants"
+      ],
+      "privacy features": [
+        "fonctionnalités de respect de la vie privée"
+      ],
+      "Protect and simplify your email": [
+        "Protégez et simplifiez votre messagerie"
       ],
       "Protection from trackers": [
         "Protection contre les traqueurs"
@@ -4197,6 +4260,24 @@
       ],
       "Set recovery method": [
         "Définir une méthode de récupération"
+      ],
+      "Set up ${ strongText } from Gmail": [
+        "Configurer ${ strongText } depuis Gmail"
+      ],
+      "Sign in to the mobile app to complete this step": [
+        "Connectez-vous avec l'application mobile pour compléter cette étape"
+      ],
+      "Update your logins": [
+        "Mettez à jour vos identifiants"
+      ],
+      "Using your mobile device, scan this QR code or visit the iOS or Android store.": [
+        "Scannez ce code QR avec votre appareil mobile, ou visitez les magasins iOS ou Android."
+      ],
+      "We stop advertisers and data collectors from profiling you.": [
+        "Nous empêchons les publicitaires et collecteurs de données de construire un profil sur vous."
+      ],
+      "You've unlocked 1 GB": [
+        "Vous avez débloqué 1 To."
       ]
     },
     "Gmail forwarding": {
@@ -7357,33 +7438,36 @@
       "Set up your organization": [
         "Configurez votre organisation"
       ],
-      "Set up your organization testing": [
-        "Configurez le test de votre organisation"
-      ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
         "Utilisez le sélecteur d'applications en haut à gauche pour accéder à tous les services ${ BRAND_NAME } : ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } et ${ DRIVE_SHORT_APP_NAME }."
       ]
     },
     "Online accounts": {
       "Have an account with one of these services? Just click to change the email address to your ${ MAIL_APP_NAME } address.": [
-        "Vous avez un compte avec un de ces services ? Cliquez pour remplacer votre adresse e-mail par votre adresse ${ MAIL_APP_NAME }."
+        "Vous utilisez un de ces services ? Il vous suffit de cliquer pour remplacer l'adresse e-mail de votre compte par votre adresse ${ MAIL_APP_NAME }."
       ]
     },
     "Online Accounts Name": {
+      "Banking": [
+        "Services bancaires"
+      ],
       "Crypto": [
         "Crypto"
+      ],
+      "E-commerce and Retail": [
+        "Commerce en ligne et en magasin"
       ],
       "Entertainment": [
         "Divertissement"
       ],
       "Food and beverage": [
-        "Nourriture et boissons"
+        "Alimentation et boissons"
       ],
       "Gaming": [
         "Jeux"
       ],
       "Most popular": [
-        "Le plus populaire"
+        "Les plus courants"
       ],
       "Travel": [
         "Voyages"
@@ -8436,10 +8520,10 @@
         "Créez des identifiants de connexion sécurisés sur tous vos appareils. Profitez d'un nombre illimité d'alias, de 20 coffres-forts, de l'authentification à deux facteurs (2FA) intégrée, du remplissage automatique des cartes bancaires et de bien d'autres fonctionnalités."
       ],
       "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
-        "Cela comprend 2 950 serveurs répartis dans plus de 65 pays, la possibilité de connecter jusqu'à 10 appareils, l'accès aux services de streaming du monde entier, un bloqueur de logiciels malveillants et de publicités et bien d'autres fonctionnalités."
+        "Comprend 2 950 serveurs répartis dans plus de 65 pays, la possibilité de connecter jusqu'à 10 appareils, l'accès aux services de streaming du monde entier, un bloqueur de logiciels malveillants et de publicités et bien d'autres fonctionnalités."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Cela comprend la prise en charge de 1 domaines de messagerie personnalisés, de 10 adresses e-mail, d'un nombre illimité d'alias « hide-my-email », du partage de calendriers et bien d'autres fonctionnalités."
+        "Comprend la prise en charge d'un domaine de messagerie personnalisé, de 10 adresses e-mail, de 10 alias « hide-my-email », du partage de calendrier…"
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "Sécurisez vos fichiers grâce au stockage cloud chiffré. Profitez de l'historique des versions, du partage chiffré des fichiers et de bien d'autres fonctionnalités."
@@ -9073,9 +9157,6 @@
       "Subject missing": [
         "Il manque l'objet."
       ],
-      "This email is protected": [
-        "Ce message est protégé."
-      ],
       "To": [
         "À"
       ],
@@ -9112,6 +9193,10 @@
       ],
       "Warning: suspected fake website": [
         "Attention : site internet suspect/frauduleux"
+      ],
+      "We protected you from ${ trackersCount } tracker": [
+        "Nous avons protégé votre e-mail contre ${ trackersCount } traqueur.",
+        "Nous avons protégé votre e-mail contre ${ trackersCount } traqueurs."
       ],
       "Welcome": [
         "Bienvenue"
