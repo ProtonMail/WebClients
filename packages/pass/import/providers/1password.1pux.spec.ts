@@ -1,6 +1,7 @@
 import fs from 'fs';
 
 import type { ItemImportIntent } from '@proton/pass/types';
+import { CardType } from '@proton/pass/types/protobuf/item-v1';
 
 import type { ImportPayload } from '../types';
 import { read1Password1PuxData } from './1password.reader.1pux';
@@ -36,7 +37,7 @@ describe('Import 1password 1pux', () => {
     test('should parse `private` vault items correctly', () => {
         const [main] = payload.vaults;
 
-        expect(main.items.length).toEqual(10);
+        expect(main.items.length).toEqual(11);
 
         /* Note item */
         const noteItemName = 'Note item';
@@ -57,6 +58,7 @@ describe('Import 1password 1pux', () => {
         const loginItemMultiTOTP = main.items.find(
             (item) => item.metadata.name === loginItemMultiTOTPName
         ) as ItemImportIntent<'login'>;
+
         expect(loginItemMultiTOTP.type).toEqual('login');
         expect(loginItemMultiTOTP.createTime).toEqual(1671029303);
         expect(loginItemMultiTOTP.modifyTime).toEqual(1688987066);
@@ -204,6 +206,22 @@ describe('Import 1password 1pux', () => {
         });
         expect(autofillItem.trashed).toEqual(false);
         expect(autofillItem.extraFields).toEqual([]);
+
+        /* Credit Card item */
+        const creditCardItemName = 'Credit Card item with note';
+        const creditCardItem = main.items.find(
+            (item) => item.metadata.name === creditCardItemName
+        ) as ItemImportIntent<'creditCard'>;
+        expect(creditCardItem.type).toEqual('creditCard');
+        expect(creditCardItem.metadata.note).toEqual('this is credit card item note');
+        expect(creditCardItem.content).toEqual({
+            cardType: CardType.Unspecified,
+            cardholderName: 'A B',
+            expirationDate: '012025',
+            number: '4242333342423333',
+            pin: '',
+            verificationNumber: '123',
+        });
     });
 
     test('should parse `secondary` vault items correctly', () => {
@@ -249,6 +267,6 @@ describe('Import 1password 1pux', () => {
 
     test('should parse `shared` vault items correctly', () => {
         const [, , shared] = payload.vaults;
-        expect(shared.items.length).toEqual(1);
+        expect(shared.items.length).toEqual(0);
     });
 });
