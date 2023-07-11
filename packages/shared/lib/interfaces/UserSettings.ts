@@ -128,6 +128,7 @@ export interface UserSettings {
          */
         Link: string;
     };
+    SessionAccountRecovery: 1 | 0;
     Telemetry: 1 | 0;
     Theme: ThemeSetting | null;
     ThemeType: number;
