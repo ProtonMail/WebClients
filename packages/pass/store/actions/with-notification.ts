@@ -21,14 +21,11 @@ const parseNotification = (notification: NotificationOptions): Notification => {
         case 'warning':
             return notification;
         case 'error': {
+            const errorMessage =
+                notification.error instanceof Error ? getApiErrorMessage(notification.error) : undefined;
             const serializedNotification: Notification = {
                 ...notification,
-                text:
-                    notification.error instanceof Error
-                        ? `${notification.text}: ${
-                              getApiErrorMessage(notification.error) ?? notification.error?.message ?? ''
-                          }`
-                        : notification.text,
+                text: errorMessage ? `${notification.text} (${errorMessage})` : notification.text,
             };
 
             return serializedNotification;

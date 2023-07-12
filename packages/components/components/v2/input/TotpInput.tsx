@@ -1,4 +1,15 @@
-import { ChangeEvent, Fragment, KeyboardEvent, ReactNode, useEffect, useMemo, useRef } from 'react';
+import {
+    ChangeEvent,
+    ForwardRefRenderFunction,
+    Fragment,
+    KeyboardEvent,
+    MutableRefObject,
+    ReactNode,
+    forwardRef,
+    useEffect,
+    useMemo,
+    useRef,
+} from 'react';
 
 import { c } from 'ttag';
 
@@ -45,18 +56,21 @@ const ratios = {
 
 const space = ' ';
 
-const TotpInput = ({
-    value = '',
-    length,
-    onValue,
-    id,
-    type = 'number',
-    inputType,
-    disableChange,
-    autoFocus,
-    autoComplete,
-    error,
-}: TotpInputProps) => {
+const TotpInput: ForwardRefRenderFunction<HTMLInputElement, TotpInputProps> = (
+    {
+        value = '',
+        length,
+        onValue,
+        id,
+        type = 'number',
+        inputType,
+        disableChange,
+        autoFocus,
+        autoComplete,
+        error,
+    }: TotpInputProps,
+    focusRef
+) => {
     const divRef = useRef<HTMLDivElement>(null);
     const rect = useElementRect(divRef);
     const list = useMemo(() => [...Array(length).keys()], [length]);
@@ -99,6 +113,7 @@ const TotpInput = ({
     };
 
     const centerIndex = Math.round(list.length / 2);
+    const focusIndex = Math.min(value.trim().length, length - 1);
 
     const maxInputWidth = Math.floor(Math.max((rect?.width || 0) / length, size.minWidth));
     const marginWidth = Math.floor(maxInputWidth * ratios.elementMargin);
@@ -131,7 +146,7 @@ const TotpInput = ({
                             />
                         )}
                         <Input
-                            autoFocus={i === 0 ? autoFocus : undefined}
+                            autoFocus={i === focusIndex ? autoFocus : undefined}
                             id={(() => {
                                 if (!id) {
                                     return;
@@ -163,6 +178,9 @@ const TotpInput = ({
                             spellCheck="false"
                             ref={(ref) => {
                                 refArray.current[i] = ref;
+                                if (focusRef && focusIndex === i) {
+                                    (focusRef as MutableRefObject<HTMLInputElement | null>).current = ref;
+                                }
                             }}
                             value={value}
                             onFocus={(event) => {
@@ -243,4 +261,4 @@ const TotpInput = ({
     );
 };
 
-export default TotpInput;
+export default forwardRef(TotpInput);
