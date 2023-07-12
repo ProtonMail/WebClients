@@ -1,4 +1,4 @@
-import { DENSITY } from '@proton/shared/lib/constants';
+import { DENSITY, NEWSLETTER_SUBSCRIPTIONS } from '@proton/shared/lib/constants';
 import {
     DRAWER_VISIBILITY,
     SETTINGS_DATE_FORMAT,
@@ -44,10 +44,10 @@ export const getNews = () => ({
     method: 'get',
 });
 
-export const updateNews = (News: number) => ({
+export const patchNews = (data: Partial<Record<NEWSLETTER_SUBSCRIPTIONS, boolean>>) => ({
     url: 'core/v4/settings/news',
-    method: 'put',
-    data: { News },
+    method: 'PATCH',
+    data,
 });
 
 export const getNewsExternal = () => ({
@@ -55,10 +55,10 @@ export const getNewsExternal = () => ({
     method: 'get',
 });
 
-export const updateNewsExternal = (News: number) => ({
+export const patchNewsExternal = (data: Partial<Record<NEWSLETTER_SUBSCRIPTIONS, boolean>>) => ({
     url: 'core/v4/settings/news/external',
-    method: 'put',
-    data: { News },
+    method: 'PATCH',
+    data,
 });
 
 export const updateInvoiceText = (InvoiceText: string) => ({
