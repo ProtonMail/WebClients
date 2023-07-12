@@ -246,7 +246,7 @@ export const createIcon = (field: FieldHandle): InjectionElements => {
     wrapper.style.display = 'none';
 
     const icon = createElement<HTMLButtonElement>({
-        type: 'button',
+        type: 'div',
         classNames: [ICON_ROOT_CLASSNAME, ICON_CLASSNAME],
     });
 

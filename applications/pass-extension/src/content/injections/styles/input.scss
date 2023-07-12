@@ -1,7 +1,7 @@
-@use "sass:meta";
-@import "@proton/styles/scss/lib/em";
+@use 'sass:meta';
+@import '@proton/styles/scss/lib/em';
 
-@import "./reset";
+@import './reset';
 
 .protonpass-input {
 	&--wrapper {
@@ -26,7 +26,7 @@
 		}
 	}
 
-	button.protonpass-input--icon {
+	div.protonpass-input--icon {
 		pointer-events: all;
 		margin: auto;
 		inset-block-start: 0;
