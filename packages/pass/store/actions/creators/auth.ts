@@ -7,6 +7,7 @@ import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 import { settingsEdit, unlockSession } from '../requests';
 import withCacheBlock from '../with-cache-block';
+import withCallback, { type ActionCallback } from '../with-callback';
 import withNotification from '../with-notification';
 import withRequest from '../with-request';
 
@@ -92,26 +93,34 @@ export const sessionLockDisableSuccess = createAction('disable session lock succ
     )({ payload: {} })
 );
 
-export const sessionUnlockIntent = createAction('unlock session lock', (payload: { pin: string }) =>
-    pipe(
-        withCacheBlock,
-        withRequest({
-            id: unlockSession,
-            type: 'start',
-        })
-    )({ payload })
+export const sessionUnlockIntent = createAction(
+    'unlock session lock',
+    (
+        payload: { pin: string },
+        callback?: ActionCallback<ReturnType<typeof sessionUnlockSuccess> | ReturnType<typeof sessionUnlockFailure>>
+    ) =>
+        pipe(
+            withCacheBlock,
+            withCallback(callback),
+            withRequest({
+                id: unlockSession,
+                type: 'start',
+            })
+        )({ payload })
 );
 
-export const sessionUnlockFailure = createAction('unlock session lock failure', (error: unknown) =>
-    pipe(
-        withCacheBlock,
-        withRequest({ id: unlockSession, type: 'failure' }),
-        withNotification({
-            type: 'error',
-            text: c('Error').t`Failed to unlock`,
-            error,
-        })
-    )({ payload: {}, error })
+export const sessionUnlockFailure = createAction(
+    'unlock session lock failure',
+    (error: unknown, payload: { reason: string; canRetry: boolean }) =>
+        pipe(
+            withCacheBlock,
+            withRequest({ id: unlockSession, type: 'failure' }),
+            withNotification({
+                type: 'error',
+                text: payload.reason,
+                error,
+            })
+        )({ payload, error })
 );
 
 export const sessionUnlockSuccess = createAction('unlock session lock success', (payload: { storageToken: string }) =>

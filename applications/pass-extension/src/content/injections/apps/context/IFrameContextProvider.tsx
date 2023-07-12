@@ -28,7 +28,8 @@ type IFrameContextValue = {
     workerState: Maybe<Omit<WorkerState, 'UID'>>;
     settings: ProxiedSettings;
     userEmail: MaybeNull<string>;
-    closeIFrame: () => void;
+    visible: boolean;
+    closeIFrame: (options?: { refocus: boolean }) => void;
     resizeIFrame: (ref?: MaybeNull<HTMLElement>) => void;
     postMessage: (message: IFrameMessage) => void;
     registerHandler: <M extends IFrameMessage['type']>(type: M, handler: IFramePortMessageHandler<M>) => void;
@@ -42,6 +43,7 @@ const IFrameContext = createContext<IFrameContextValue>({
     workerState: undefined,
     settings: INITIAL_SETTINGS,
     userEmail: null,
+    visible: false,
     closeIFrame: noop,
     resizeIFrame: noop,
     postMessage: noop,
@@ -57,6 +59,7 @@ export const IFrameContextProvider: FC<{ endpoint: IFrameEndpoint }> = ({ endpoi
     const [workerState, setWorkerState] = useState<IFrameContextValue['workerState']>();
     const [settings, setSettings] = useState<ProxiedSettings>(INITIAL_SETTINGS);
     const [userEmail, setUserEmail] = useState<MaybeNull<string>>(null);
+    const [visible, setVisible] = useState<boolean>(false);
 
     const destroyFrame = () => {
         logger.info(`[IFrame::${endpoint}] Unauthorized iframe injection`);
@@ -127,6 +130,10 @@ export const IFrameContextProvider: FC<{ endpoint: IFrameEndpoint }> = ({ endpoi
                         setWorkerState(message.payload.workerState);
                         setSettings(message.payload.settings);
                         return;
+                    case IFrameMessageType.IFRAME_OPEN:
+                        return setVisible(true);
+                    case IFrameMessageType.IFRAME_HIDDEN:
+                        return setVisible(false);
                     /* If for any reason we get a `PORT_UNAUTHORIZED`
                      * message : it likely means the iframe was injected
                      * without being controlled by a content-script either
@@ -171,7 +178,10 @@ export const IFrameContextProvider: FC<{ endpoint: IFrameEndpoint }> = ({ endpoi
         [port, forwardTo]
     );
 
-    const closeIFrame = useCallback(() => postMessage({ type: IFrameMessageType.IFRAME_CLOSE }), [postMessage]);
+    const closeIFrame = useCallback(
+        (payload?: { refocus: boolean }) => postMessage({ type: IFrameMessageType.IFRAME_CLOSE, payload }),
+        [postMessage]
+    );
 
     const resizeIFrame = useCallback(
         (el?: MaybeNull<HTMLElement>) => {
@@ -205,12 +215,13 @@ export const IFrameContextProvider: FC<{ endpoint: IFrameEndpoint }> = ({ endpoi
             workerState,
             settings,
             userEmail,
+            visible,
             closeIFrame,
             resizeIFrame,
             postMessage,
             registerHandler,
         }),
-        [port, workerState, settings, userEmail, closeIFrame, resizeIFrame, postMessage, registerHandler]
+        [port, workerState, settings, userEmail, visible, closeIFrame, resizeIFrame, postMessage, registerHandler]
     );
 
     return <IFrameContext.Provider value={context}>{children}</IFrameContext.Provider>;

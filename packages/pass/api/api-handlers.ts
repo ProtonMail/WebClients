@@ -54,8 +54,10 @@ export const withApiHandlers = ({ apiContext, refreshHandler }: ApiHandlersOptio
 
                 if (maxAttempts && attempts >= maxAttempts) throw error;
 
-                /* Inactive extension session */
-                if (code === 300008) throw LockedSessionError();
+                /* Inactive extension session : only throw a `LockedSessionError`
+                 * when we have not reached the max amount of unlock tries. After
+                 * 3 unsuccessful attempts - we will get a 401 */
+                if (code === 300008 && status === HTTP_ERROR_CODES.UNPROCESSABLE_ENTITY) throw LockedSessionError();
 
                 if (code === API_CUSTOM_ERROR_CODES.APP_VERSION_BAD) throw AppVersionBadError();
 
@@ -80,9 +82,7 @@ export const withApiHandlers = ({ apiContext, refreshHandler }: ApiHandlersOptio
                         await refreshHandler(getDateHeader(response && response.headers));
                         return next(attempts + 1, RETRY_ATTEMPTS_MAX);
                     } catch (e: any) {
-                        if (e.status >= 400 && e.status <= 499) {
-                            throw InactiveSessionError();
-                        }
+                        if (e.status >= 400 && e.status <= 499) throw InactiveSessionError();
                         throw e;
                     }
                 }
