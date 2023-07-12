@@ -42,16 +42,25 @@
 		margin: auto;
 		max-inline-size: none;
 		object-fit: contain;
-		transition: opacity 0.2s ease-in-out;
-	}
 
-	&-image.hide {
-		opacity: 0;
+		&-out {
+			animation: anime-image-preview-out 0.2s ease-in-out forwards;
+		}
 	}
 
 	&-loading {
 		position: absolute;
 		inset-block-end: 0;
 		block-size: 2.5em;
+	}
+}
+
+@keyframes anime-image-preview-out {
+	from {
+		opacity: 1;
+	}
+
+	to {
+		opacity: 0;
 	}
 }
