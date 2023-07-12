@@ -6,15 +6,18 @@
 	*::before,
 	*::after {
 		// Using values greater than 0 to have animation events still triggering
-		animation-delay: -1ms !important;
-		animation-duration: 1ms !important;
+		animation-delay: 0.01ms !important;
+		animation-duration: 0.01ms !important;
 		animation-iteration-count: 1 !important;
 
 		// This magic value is needed because of https://bugs.webkit.org/show_bug.cgi?id=242510
 		// which affects visibility changes on Safari (iOS + MacOS) when reduce motion is
 		// enabled in accessibility settings. Even though transitions are not involved.
-		transition-delay: -1ms !important;
-		transition-duration: 1ms !important;
+		// This needs to be set to 0 to prevent lag. In general in all browsers, but particularly
+		// in safari when changing theme.
+		// Warning: This breaks transition events, which need to be handled in JS.
+		transition-delay: 0s !important;
+		transition-duration: 0s !important;
 	}
 }
 
