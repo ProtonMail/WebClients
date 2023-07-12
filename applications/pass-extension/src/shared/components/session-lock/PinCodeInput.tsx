@@ -1,25 +1,34 @@
-import type { VFC } from 'react';
+import { type VFC, useEffect, useRef } from 'react';
 
 import { TotpInput } from '@proton/components/components';
 import clsx from '@proton/utils/clsx';
 
 import './PinCodeInput.scss';
 
-/* FIXME: support proper disabled prop on TotpInput */
-export const PinCodeInput: VFC<{ value: string; onValue: (value: string) => void; loading?: boolean }> = ({
-    value,
-    onValue,
-    loading = false,
-}) => {
+type Props = {
+    value: string;
+    loading?: boolean;
+    autoFocus?: boolean;
+    onValue: (value: string) => void;
+};
+
+export const PinCodeInput: VFC<Props> = ({ value, onValue, loading = false, autoFocus = true }) => {
+    const focusRef = useRef<HTMLInputElement>(null);
+
+    useEffect(() => {
+        if (autoFocus) focusRef.current?.focus();
+    }, [autoFocus]);
+
     return (
         <div className={clsx('pass-pin--input', loading && 'opacity-30 no-pointer-events')}>
             <TotpInput
+                ref={focusRef}
                 length={6}
                 value={value}
                 onValue={onValue}
-                autoFocus
                 inputType="password"
                 disableChange={loading}
+                autoFocus={autoFocus}
             />
         </div>
     );

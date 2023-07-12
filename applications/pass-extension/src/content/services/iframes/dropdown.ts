@@ -31,6 +31,7 @@ export const createDropdown = (): InjectedDropdown => {
         src: DROPDOWN_IFRAME_SRC,
         animation: 'fadein',
         backdropClose: true,
+        onClose: (options) => options?.refocus && fieldRef.current?.focus(),
         backdropExclude: () => [fieldRef.current?.icon?.element, fieldRef.current?.element].filter(truthy),
         position: (iframeRoot: HTMLElement) => {
             const field = fieldRef.current;

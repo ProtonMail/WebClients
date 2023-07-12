@@ -1,5 +1,5 @@
 /* stylelint-disable selector-id-pattern */
-@import "./reset";
+@import './reset';
 
 #protonpass-iframe--root {
 	@include reset;
@@ -31,6 +31,7 @@
 
 		&--visible {
 			display: block;
+			transition: block-size 0.15s ease-in-out 0.05s;
 			animation: var(--protonpass-iframe-animation) 0.25s ease-in-out 0.05s both !important;
 		}
 
