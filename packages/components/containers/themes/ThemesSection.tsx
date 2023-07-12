@@ -15,13 +15,13 @@ import ThemeCards from './ThemeCards';
 import { useTheme } from './ThemeProvider';
 import ThemeSyncModeCard from './ThemeSyncModeCard';
 
-const ThemesSection = ({ accessibilitySettingsAvailable }: { accessibilitySettingsAvailable: boolean }) => {
+const ThemesSection = () => {
     const { information, settings, setTheme, setAutoTheme } = useTheme();
 
     const { createNotification } = useNotifications();
     const notifyPreferenceSaved = () => createNotification({ text: c('Success').t`Preference saved` });
 
-    const themes = getThemes(accessibilitySettingsAvailable);
+    const themes = getThemes();
 
     return (
         <>
@@ -30,29 +30,27 @@ const ThemesSection = ({ accessibilitySettingsAvailable }: { accessibilitySettin
                     .t`Customize the look and feel of ${BRAND_NAME} applications.`}</SettingsParagraph>
             </SettingsSectionWide>
 
-            {accessibilitySettingsAvailable && (
-                <SettingsLayout>
-                    <SettingsLayoutLeft>
-                        <label htmlFor="themeSyncToggle" className="text-semibold align-top">
-                            <span className="mr-2">{c('Label').t`Synchronize with system`}</span>
-                            <Info
-                                title={c('Tooltip')
-                                    .t`Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes`}
-                            />
-                        </label>
-                    </SettingsLayoutLeft>
-                    <SettingsLayoutRight className="flex pt-1">
-                        <Toggle
-                            id="themeSyncToggle"
-                            checked={settings.Mode === ThemeModeSetting.Auto}
-                            onChange={(e) => {
-                                setAutoTheme(e.target.checked);
-                                notifyPreferenceSaved();
-                            }}
+            <SettingsLayout>
+                <SettingsLayoutLeft>
+                    <label htmlFor="themeSyncToggle" className="text-semibold align-top">
+                        <span className="mr-2">{c('Label').t`Synchronize with system`}</span>
+                        <Info
+                            title={c('Tooltip')
+                                .t`Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes`}
                         />
-                    </SettingsLayoutRight>
-                </SettingsLayout>
-            )}
+                    </label>
+                </SettingsLayoutLeft>
+                <SettingsLayoutRight className="flex pt-1">
+                    <Toggle
+                        id="themeSyncToggle"
+                        checked={settings.Mode === ThemeModeSetting.Auto}
+                        onChange={(e) => {
+                            setAutoTheme(e.target.checked);
+                            notifyPreferenceSaved();
+                        }}
+                    />
+                </SettingsLayoutRight>
+            </SettingsLayout>
 
             {settings.Mode === ThemeModeSetting.Auto ? (
                 <SettingsSectionWide className="flex mt-6 flex-nowrap gap-4 on-mobile-flex-column">

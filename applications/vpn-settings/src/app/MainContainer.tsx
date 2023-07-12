@@ -14,7 +14,6 @@ import {
     DowngradeSubscriptionSection,
     EmailSubscriptionSection,
     ErrorBoundary,
-    FeatureCode,
     FreeUserLiveChatModal,
     GiftCodeSection,
     InvoicesSection,
@@ -45,7 +44,6 @@ import {
     WireGuardConfigurationSection,
     YourPlanSection,
     useActiveBreakpoint,
-    useFeature,
     useModalState,
     useSubscription,
     useToggle,
@@ -74,9 +72,6 @@ const vpnZendeskKey = 'c08ab87d-68c3-4d7d-a419-a0a1ef34759d';
 
 const MainContainer = () => {
     useTelemetryScreenSize();
-
-    const isAccessibilitySettingsEnabled =
-        useFeature<boolean>(FeatureCode.AccessibilitySettings)?.feature?.Value === true;
 
     const [user] = useUser();
     const [subscription, loadingSubscription] = useSubscription();
@@ -226,7 +221,7 @@ const MainContainer = () => {
                             <Route path={routes.general.to}>
                                 <PrivateMainSettingsArea config={routes.general}>
                                     <LanguageSection locales={locales} />
-                                    <ThemesSection accessibilitySettingsAvailable={isAccessibilitySettingsEnabled} />
+                                    <ThemesSection />
                                 </PrivateMainSettingsArea>
                             </Route>
                             <Route path={routes.account.to}>

@@ -24,7 +24,6 @@ interface Arguments {
     isOrgSpamBlockListEnabled: boolean;
     isProtonSentinelEligible: boolean;
     isProtonSentinelFeatureEnabled: boolean;
-    isAccessibilitySettingsEnabled: boolean;
     isOrgTwoFactorEnabled: boolean;
 }
 
@@ -42,7 +41,6 @@ export const getRoutes = ({
     isOrgSpamBlockListEnabled,
     isProtonSentinelEligible,
     isProtonSentinelFeatureEnabled,
-    isAccessibilitySettingsEnabled,
     isOrgTwoFactorEnabled,
 }: Arguments) => {
     return {
@@ -57,7 +55,6 @@ export const getRoutes = ({
             organization,
             isProtonSentinelEligible,
             isProtonSentinelFeatureEnabled,
-            isAccessibilitySettingsEnabled,
         }),
         mail: getMailAppRoutes({
             user,
