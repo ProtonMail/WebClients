@@ -106,13 +106,7 @@ const MessageDetailsModal = ({
 
     let senderVerificationDetails;
     if (icon?.senderVerificationDetails) {
-        if (icon.senderVerificationDetails.success) {
-            senderVerificationDetails = c('Sender verification details')
-                .t`Sender verified: ${icon.senderVerificationDetails.description}`;
-        } else {
-            senderVerificationDetails = c('Sender verification details')
-                .t`Sender verification failed: ${icon.senderVerificationDetails.description}`;
-        }
+        senderVerificationDetails = icon.senderVerificationDetails.description;
     }
 
     const sender = message.data?.Sender;
