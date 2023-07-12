@@ -12,6 +12,10 @@ export const getNonPrivateMembers = (members: Member[]) => members.filter(({ Pri
 export const isOrganizationFamily = (organization: Organization) => organization.PlanName === PLANS.FAMILY;
 export const isOrganizationVisionary = (organization: Organization) => organization.PlanName === PLANS.NEW_VISIONARY;
 
+export const isOrganizationB2B = (organization: Organization) => {
+    return [PLANS.MAIL_PRO, PLANS.DRIVE_PRO, PLANS.BUNDLE_PRO, PLANS.ENTERPRISE].includes(organization.PlanName);
+};
+
 export const getOrganizationKeyInfo = (
     organization: Organization | undefined,
     organizationKey?: CachedOrganizationKey
