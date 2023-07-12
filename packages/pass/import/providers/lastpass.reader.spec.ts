@@ -36,7 +36,7 @@ describe('Import LastPass csv', () => {
 
     it('parses primary `LastPass import` vault items correctly', () => {
         const [primary] = payload.vaults;
-        expect(primary.items.length).toEqual(2);
+        expect(primary.items.length).toEqual(3);
 
         /* Login */
         const loginItem1 = primary.items[0] as ItemImportIntent<'login'>;
@@ -52,6 +52,17 @@ describe('Import LastPass csv', () => {
         expect(noteItem1.type).toEqual('note');
         expect(noteItem1.metadata.name).toEqual('Secure note');
         expect(noteItem1.metadata.note).toEqual('This is a secure note');
+
+        /* Credit Card */
+        const creditCardItem1 = primary.items[2] as ItemImportIntent<'creditCard'>;
+        expect(creditCardItem1.type).toEqual('creditCard');
+        expect(creditCardItem1.metadata.name).toEqual('Credit Card Item with note');
+        expect(creditCardItem1.metadata.note).toEqual('this is a note for the credit card');
+        expect(creditCardItem1.content.cardholderName).toEqual('A B');
+        expect(creditCardItem1.content.number).toEqual('4242424242424242');
+        expect(creditCardItem1.content.expirationDate).toEqual('012025');
+        expect(creditCardItem1.content.verificationNumber).toEqual('123');
+        expect(creditCardItem1.content.pin).toEqual('');
     });
 
     it('parses secondary vault items correctly', async () => {
@@ -103,7 +114,6 @@ describe('Import LastPass csv', () => {
     test('correctly keeps a reference to ignored items', () => {
         expect(payload.ignored).not.toEqual([]);
         expect(payload.ignored[0]).toEqual('[Bank Account] test');
-        expect(payload.ignored[1]).toEqual('[Credit Card] TestCC');
-        expect(payload.ignored[2]).toEqual('[Address] TestID');
+        expect(payload.ignored[1]).toEqual('[Address] TestID');
     });
 });
