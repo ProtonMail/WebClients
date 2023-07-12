@@ -1,26 +1,16 @@
-import { useEffect, useMemo, useState } from 'react';
 import * as React from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
-import {
-    Checkbox,
-    FilterConstants,
-    FilterUtils,
-    FiltersUpsellModal,
-    PrimaryButton,
-    useFilters,
-    useModalState,
-    useUser,
-} from '@proton/components';
+import { Checkbox, FiltersUpsellModal, PrimaryButton, useFilters, useModalState, useUser } from '@proton/components';
+import { OPERATORS } from '@proton/components/containers/filters/constants';
 import { ConditionComparator, ConditionType, Filter } from '@proton/components/containers/filters/interfaces';
 import FilterModal from '@proton/components/containers/filters/modal/FilterModal';
+import newFilter, { computeTree } from '@proton/components/containers/filters/utils';
 import { hasReachedFiltersLimit } from '@proton/shared/lib/helpers/filters';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import identity from '@proton/utils/identity';
-
-const { computeTree, newFilter } = FilterUtils;
-const { OPERATORS } = FilterConstants;
 
 type FiltersState = {
     [key in ConditionType]: boolean;

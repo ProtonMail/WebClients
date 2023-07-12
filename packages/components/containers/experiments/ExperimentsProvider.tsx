@@ -105,6 +105,9 @@ const ExperimentsProvider = ({ children }: Props) => {
                     ...addExperiments(experiments), // add experiments based on ExperimentCode
                 }));
             })
+            // Make sure that cookie is set
+            //   if set, send a signal to the data team that the experiment started
+            //   if not set, wait a bit more and try again
             .then(() => {
                 // The timeout is here to make sure the cookie is set
                 setTimeout(() => {

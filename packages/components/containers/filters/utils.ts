@@ -1,6 +1,6 @@
-import Sieve from '@proton/shared/lib/filters/sieve';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { toMap } from '@proton/shared/lib/helpers/object';
+import { fromSieveTree, toSieveTree } from '@proton/sieve';
 
 import { COMPARATORS, FILTER_VERSION, OPERATORS, TYPES, getDefaultFolders } from './constants';
 import {
@@ -15,8 +15,12 @@ import {
 export const computeFromTree = (filter: Filter) => {
     const ignoreComment = ({ Type }: any) => Type !== 'Comment';
 
-    const simple = Sieve.fromTree(filter.Tree);
-    const fromSimple = Sieve.toTree(simple, filter.Version).filter(ignoreComment);
+    const simple = fromSieveTree(filter.Tree);
+    if (!simple) {
+        return null;
+    }
+
+    const fromSimple = toSieveTree(simple, filter.Version).filter(ignoreComment);
     const original = filter.Tree.filter(ignoreComment);
     return isDeepEqual(fromSimple, original) ? simple : null;
 };
@@ -25,7 +29,7 @@ export const computeTree = ({ Simple, Version }: Partial<Filter>) => {
     if (!Simple) {
         return [];
     }
-    return Sieve.toTree(Simple, Version);
+    return toSieveTree(Simple, Version);
 };
 
 export function normalize() {
