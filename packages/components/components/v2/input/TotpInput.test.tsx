@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 
 import { fireEvent, render } from '@testing-library/react';
 
@@ -204,5 +204,45 @@ describe('TotpInput component', () => {
 
         expectValues('3987', inputNodes);
         expect(inputNodes[3]).toHaveFocus();
+    });
+
+    describe('Autofocus behaviours', () => {
+        const Test = (options: { autoFocus: boolean; initialValue: string }) => {
+            const focusRef = useRef<HTMLInputElement>(null);
+            const [value, setValue] = useState(options.initialValue);
+            return (
+                <TotpInput value={value} onValue={setValue} length={4} ref={focusRef} autoFocus={options.autoFocus} />
+            );
+        };
+
+        it('should not focus inputs if not autofocused & empty value', () => {
+            const { container } = render(<Test autoFocus={false} initialValue="" />);
+            const inputNodes = container.querySelectorAll('input');
+            inputNodes.forEach((input) => expect(input).not.toHaveFocus());
+        });
+
+        it('should not focus inputs if not autofocused & initial value', () => {
+            const { container } = render(<Test autoFocus={false} initialValue="123" />);
+            const inputNodes = container.querySelectorAll('input');
+            inputNodes.forEach((input) => expect(input).not.toHaveFocus());
+        });
+
+        it('should focus first input when autofocused & empty value', () => {
+            const { container } = render(<Test autoFocus initialValue="" />);
+            const inputNodes = container.querySelectorAll('input');
+            expect(inputNodes[0]).toHaveFocus();
+        });
+
+        it('should focus correct input when autofocused & initial value', () => {
+            const { container } = render(<Test autoFocus initialValue="12" />);
+            const inputNodes = container.querySelectorAll('input');
+            expect(inputNodes[2]).toHaveFocus();
+        });
+
+        it('should focus last input when autofocused & initial value outgrows TOTP length', () => {
+            const { container } = render(<Test autoFocus initialValue="123456789" />);
+            const inputNodes = container.querySelectorAll('input');
+            expect(inputNodes[3]).toHaveFocus();
+        });
     });
 });

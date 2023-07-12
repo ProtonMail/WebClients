@@ -15,6 +15,9 @@ import {
     notification,
     selectSessionLockToken,
     selectUser,
+    sessionUnlockFailure,
+    sessionUnlockIntent,
+    sessionUnlockSuccess,
     setUserPlan,
     stateDestroy,
     stateLock,
@@ -372,6 +375,20 @@ export const createAuthService = ({
 
     WorkerMessageBroker.registerMessage(WorkerMessageType.ACCOUNT_FORK, withPayload(authService.consumeFork));
     WorkerMessageBroker.registerMessage(WorkerMessageType.SESSION_RESUMED, withPayload(authService.login));
+
+    WorkerMessageBroker.registerMessage(
+        WorkerMessageType.UNLOCK_REQUEST,
+        ({ payload: { pin } }) =>
+            new Promise((resolve) => {
+                store.dispatch(
+                    sessionUnlockIntent({ pin }, (action) => {
+                        if (sessionUnlockSuccess.match(action)) return resolve({ ok: true });
+                        if (sessionUnlockFailure.match(action)) return resolve({ ok: false, ...action.payload });
+                    })
+                );
+            })
+    );
+
     WorkerMessageBroker.registerMessage(WorkerMessageType.RESOLVE_USER_DATA, () => ({
         user: selectUser(store.getState()),
     }));

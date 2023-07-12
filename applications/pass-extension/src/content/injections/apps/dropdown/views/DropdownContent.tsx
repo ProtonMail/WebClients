@@ -9,7 +9,7 @@ import { DropdownSwitch } from '../components/DropdownSwitch';
 
 export const DropdownContent: VFC = () => {
     const dropdownRef = useRef<HTMLDivElement>(null);
-    const { workerState, resizeIFrame, closeIFrame, postMessage } = useIFrameContext();
+    const { workerState, visible, resizeIFrame, closeIFrame, postMessage } = useIFrameContext();
     const [dropdownState, setDropdownState] = useState<MaybeNull<DropdownSetActionPayload>>(null);
 
     const withStateReset = <F extends Callback>(fn: F): F =>
@@ -35,9 +35,10 @@ export const DropdownContent: VFC = () => {
             state={dropdownState}
             status={workerState?.status ?? WorkerStatus.IDLE}
             loggedIn={workerState?.loggedIn ?? false}
-            onLoad={triggerResize}
             onMessage={withStateReset(postMessage)}
             onClose={withStateReset(closeIFrame)}
+            onResize={triggerResize}
+            visible={visible}
         />
     );
 };
