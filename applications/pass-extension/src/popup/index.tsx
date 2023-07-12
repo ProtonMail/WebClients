@@ -13,6 +13,7 @@ sentry({
         environment: `browser-pass::popup`,
     },
     ignore: () => false,
+    denyUrls: [],
 });
 
 const root = document.querySelector('.app-root') as HTMLElement;
