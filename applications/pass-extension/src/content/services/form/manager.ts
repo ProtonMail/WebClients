@@ -1,5 +1,5 @@
 import { contentScriptMessage, sendMessage } from '@proton/pass/extension/message';
-import { clearVisibilityCache } from '@proton/pass/fathom';
+import { clearDetectionCache } from '@proton/pass/fathom';
 import type { FormEntryPrompt } from '@proton/pass/types';
 import { FormEntryStatus, WorkerMessageType } from '@proton/pass/types';
 import { createListenerStore } from '@proton/pass/utils/listener';
@@ -163,7 +163,7 @@ export const createFormManager = (options: FormManagerOptions) => {
                     });
 
                     return true;
-                } else clearVisibilityCache();
+                } else clearDetectionCache();
 
                 ctx.busy = false;
                 return false;

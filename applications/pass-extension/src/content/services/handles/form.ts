@@ -1,3 +1,4 @@
+import { setFieldProcessable, setFormProcessable } from '@proton/pass/fathom';
 import type { FormType } from '@proton/pass/types';
 import { FormField } from '@proton/pass/types';
 import { getMaxZIndex } from '@proton/pass/utils/dom';
@@ -8,7 +9,7 @@ import debounce from '@proton/utils/debounce';
 
 import { withContext } from '../../context/context';
 import type { DetectedField, DetectedForm, FormHandle } from '../../types';
-import { hasUnprocessedFields, setFieldProcessable, setFormProcessable } from '../../utils/nodes';
+import { hasUnprocessedFields } from '../../utils/nodes';
 import { createFormTracker } from '../form/tracker';
 import { createFieldHandles } from './field';
 
@@ -57,9 +58,10 @@ export const createFormHandles = (options: DetectedForm): FormHandle => {
 
         reconciliate: (formType: FormType, fields: DetectedField[]) => {
             formHandle.formType = formType;
-            /* detach removed fields */
+
             formHandle.getFields().forEach((field) => {
-                if (!form.contains(field.element)) formHandle.detachField(field.element);
+                const shouldDetach = !fields.some((incoming) => field.element === incoming.field);
+                return shouldDetach && formHandle.detachField(field.element);
             });
 
             /* attach incoming new fields */
@@ -91,7 +93,6 @@ export const createFormHandles = (options: DetectedForm): FormHandle => {
             logger.debug(`[FormHandles]: Detaching tracker for form [${formType}:${formHandle.id}]`);
             listeners.removeAll();
             setFormProcessable(form);
-            Array.from(form.querySelectorAll('input')).forEach(setFieldProcessable);
             formHandle.tracker?.detach();
             formHandle.getFields().forEach((field) => field.detach());
         },
@@ -113,7 +114,10 @@ export const createFormHandles = (options: DetectedForm): FormHandle => {
             const fields = formHandle.getFields();
             fields.forEach((field) => field.icon?.reposition());
 
-            if (hasUnprocessedFields(options.form.parentElement!)) void formManager.detect('NewFormFields');
+            if (hasUnprocessedFields(options.form.parentElement!)) {
+                setFormProcessable(form);
+                void formManager.detect('NewFormFields');
+            }
         }),
         50
     );
