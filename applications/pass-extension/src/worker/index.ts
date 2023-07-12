@@ -51,6 +51,7 @@ sentry({
         environment: `browser-pass::worker`,
     },
     ignore: () => false,
+    denyUrls: [],
 });
 
 const api = exposeApi(
