@@ -6,9 +6,9 @@ import { UserShareResult } from '@proton/shared/lib/interfaces/drive/share';
 import { shareMetaShortToShare, useDebouncedRequest } from '../_api';
 import { useDebouncedFunction } from '../_utils';
 import { useVolumesState } from '../_volumes';
-import { ShareWithKey } from './interface';
+import { Share, ShareWithKey } from './interface';
 import useShare from './useShare';
-import useSharesState from './useSharesState';
+import useSharesState, { findDefaultShareId } from './useSharesState';
 import useVolume from './useVolume';
 
 /**
@@ -22,7 +22,7 @@ export default function useDefaultShare() {
     const { createVolume } = useVolume();
     const volumesState = useVolumesState();
 
-    const loadUserShares = useCallback(async (): Promise<void> => {
+    const loadUserShares = useCallback(async (): Promise<Share[]> => {
         const { Shares } = await debouncedRequest<UserShareResult>(queryUserShares());
         const shares = Shares.map(shareMetaShortToShare);
 
@@ -30,6 +30,7 @@ export default function useDefaultShare() {
             volumesState.setVolumeShareIds(volumeId, [shareId]);
         });
         sharesState.setShares(shares);
+        return shares;
     }, []);
 
     const getDefaultShare = useCallback(
@@ -41,8 +42,11 @@ export default function useDefaultShare() {
                     // First try to load fresh list of shares from API to make sure
                     // we don't create second default share.
                     if (!defaultShareId) {
-                        await loadUserShares();
-                        defaultShareId = sharesState.getDefaultShareId();
+                        const shares = await loadUserShares();
+                        // Do not use sharesState.getDefaultShareId as useState
+                        // is not sync operation and thus the new state might
+                        // not be set just yet.
+                        defaultShareId = findDefaultShareId(shares);
                     }
 
                     if (!defaultShareId) {
