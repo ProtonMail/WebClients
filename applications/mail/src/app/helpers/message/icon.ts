@@ -365,12 +365,23 @@ const getReceivedStatusIconInternalWithKT = (
         fill: WARNING,
     };
 
+    if (apiKeysErrors?.length) {
+        const keyErrorMessages = apiKeysErrors.join(', ');
+        return {
+            ...warningResult,
+            senderVerificationDetails: {
+                description: c('loc_nightly: Sender verification error')
+                    .t`Sender verification failed: Error while retrieving the sender's public keys: ${keyErrorMessages}`,
+            },
+        };
+    }
+
     if (verificationErrorsMessage) {
         return {
             ...warningResult,
             senderVerificationDetails: {
-                success: false,
-                description: verificationErrorsMessage,
+                description: c('loc_nightly: Sender verification error')
+                    .t`Sender verification failed: ${verificationErrorsMessage}`,
             },
         };
     }
@@ -383,9 +394,8 @@ const getReceivedStatusIconInternalWithKT = (
                 text: messageEncryptionDetails,
                 fill: PLAIN,
                 senderVerificationDetails: {
-                    success: false,
                     description: c('loc_nightly: Sender verification error')
-                        .t`Messages is not signed, ${MAIL_APP_NAME} started signing messages after ${formattedDate}`,
+                        .t`Sender verification failed: Messages is not signed, ${MAIL_APP_NAME} started signing messages after ${formattedDate}`,
                 },
             };
         }
@@ -400,30 +410,18 @@ const getReceivedStatusIconInternalWithKT = (
         return {
             ...warningResult,
             senderVerificationDetails: {
-                success: false,
-                description: c('loc_nightly: Sender verification error').t`Message is not signed`,
+                description: c('loc_nightly: Sender verification error')
+                    .t`Sender verification failed: Message is not signed`,
             },
         };
     }
 
     if (!signingPublicKey) {
-        if (apiKeysErrors?.length) {
-            const keyErrorMessages = apiKeysErrors.join(', ');
-            return {
-                ...warningResult,
-                senderVerificationDetails: {
-                    success: false,
-                    description: c('loc_nightly: Sender verification error')
-                        .t`Error while retrieving the sender's public keys: ${keyErrorMessages}`,
-                },
-            };
-        }
         return {
             ...warningResult,
             senderVerificationDetails: {
-                success: false,
                 description: c('loc_nightly: Sender verification error')
-                    .t`Cannot find the verification key, contact the sender to get their their public key.`,
+                    .t`Sender verification failed: Cannot find the verification key, contact the sender to get their their public key.`,
             },
         };
     }
@@ -432,8 +430,8 @@ const getReceivedStatusIconInternalWithKT = (
         return {
             ...warningResult,
             senderVerificationDetails: {
-                success: false,
-                description: c('Sender verification error').t`Verification key is not in the list of trusted keys.`,
+                description: c('Sender verification error')
+                    .t`Sender verification failed: Verification key is not in the list of trusted keys.`,
             },
         };
     }
@@ -442,9 +440,8 @@ const getReceivedStatusIconInternalWithKT = (
         return {
             ...warningResult,
             senderVerificationDetails: {
-                success: false,
                 description: c('loc_nightly: Sender verification error')
-                    .t`Verification key is not protected with key transparency.`,
+                    .t`Sender verification failed: Verification key is not protected with key transparency.`,
             },
         };
     }
@@ -453,9 +450,8 @@ const getReceivedStatusIconInternalWithKT = (
         return {
             ...warningResult,
             senderVerificationDetails: {
-                success: false,
                 description: c('loc_nightly: Sender verification error')
-                    .t`Verification key is marked as compromised by the sender.`,
+                    .t`Sender verification failed: Verification key is marked as compromised by the sender.`,
             },
         };
     }
@@ -464,8 +460,8 @@ const getReceivedStatusIconInternalWithKT = (
         return {
             ...warningResult,
             senderVerificationDetails: {
-                success: false,
-                description: c('loc_nightly: Sender verification error').t`Message signature is invalid.`,
+                description: c('loc_nightly: Sender verification error')
+                    .t`Sender verification failed: Message signature is invalid.`,
             },
         };
     }
@@ -474,9 +470,8 @@ const getReceivedStatusIconInternalWithKT = (
         return {
             ...warningResult,
             senderVerificationDetails: {
-                success: false,
                 description: c('loc_nightly: Signature verification warning')
-                    .t`Sender's trusted keys verification failed`,
+                    .t`Sender verification failed: Sender's trusted keys verification failed`,
             },
         };
     }
@@ -488,7 +483,6 @@ const getReceivedStatusIconInternalWithKT = (
                 text: c('loc_nightly: Received email icon').t`End-to-end encrypted message from verified sender`,
                 fill: CHECKMARK,
                 senderVerificationDetails: {
-                    success: false,
                     description: c('loc_nightly: Signature verification success').t`Sender verified with a trusted key`,
                 },
             };
@@ -502,7 +496,6 @@ const getReceivedStatusIconInternalWithKT = (
                 text: messageEncryptionDetails,
                 fill: PLAIN,
                 senderVerificationDetails: {
-                    success: false,
                     description: c('loc_nightly: Signature verification success')
                         .t`Sender verified with Key Transparency`,
                 },
