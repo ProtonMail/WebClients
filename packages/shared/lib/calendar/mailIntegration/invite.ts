@@ -48,7 +48,13 @@ import {
     getPropertyTzid,
     getSequence,
 } from '../vcalHelper';
-import { getIsEventCancelled, withDtstamp, withSummary, withoutRedundantDtEnd } from '../veventHelper';
+import {
+    getIsEventCancelled,
+    withDtstamp,
+    withSummary,
+    withoutRedundantDtEnd,
+    withoutRedundantRrule,
+} from '../veventHelper';
 
 export const getParticipantHasAddressID = (
     participant: Participant
@@ -131,6 +137,10 @@ interface CreateInviteVeventParams {
 
 export const createInviteVevent = ({ method, attendeesTo, vevent, keepDtstamp }: CreateInviteVeventParams) => {
     if ([ICAL_METHOD.REPLY, ICAL_METHOD.CANCEL].includes(method) && attendeesTo?.length) {
+        const propertiesToKeepForCancel: (keyof VcalVeventComponent)[] = ['x-pm-shared-event-id'];
+        const propertiesToKeepForReply: (keyof VcalVeventComponent)[] = ['x-pm-proton-reply'];
+        const keepDtStampProperty: (keyof VcalVeventComponent)[] = ['dtstamp'];
+
         // only put RFC-mandatory fields to make reply as short as possible
         // rrule, summary and location are also included for a better UI in the external provider widget
         const propertiesToKeep: (keyof VcalVeventComponent)[] = [
@@ -143,17 +153,11 @@ export const createInviteVevent = ({ method, attendeesTo, vevent, keepDtstamp }:
             'rrule',
             'location',
             'summary',
+            ...(keepDtstamp ? keepDtStampProperty : []),
+            ...(method === ICAL_METHOD.CANCEL ? propertiesToKeepForCancel : []),
+            ...(method === ICAL_METHOD.REPLY ? propertiesToKeepForReply : []),
         ];
-        if (method === ICAL_METHOD.CANCEL) {
-            propertiesToKeep.push('x-pm-shared-event-id');
-        }
-        if (method === ICAL_METHOD.REPLY) {
-            propertiesToKeep.push('x-pm-proton-reply');
-        }
-        // use current time as dtstamp unless indicated otherwise
-        if (keepDtstamp) {
-            propertiesToKeep.push('dtstamp');
-        }
+
         const attendee = attendeesTo.map(({ value, parameters }) => {
             const { partstat } = parameters || {};
             if (method === ICAL_METHOD.REPLY) {
@@ -167,14 +171,20 @@ export const createInviteVevent = ({ method, attendeesTo, vevent, keepDtstamp }:
             }
             return { value };
         });
-        return withoutRedundantDtEnd(
+
+        const veventWithoutRedundantDtEnd = withoutRedundantDtEnd(
             withDtstamp({
                 ...pick(vevent, propertiesToKeep),
                 component: 'vevent',
                 attendee,
             })
         );
+
+        return method === ICAL_METHOD.REPLY
+            ? withoutRedundantRrule(veventWithoutRedundantDtEnd)
+            : veventWithoutRedundantDtEnd;
     }
+
     if (method === ICAL_METHOD.REQUEST) {
         // strip alarms
         const propertiesToOmit: (keyof VcalVeventComponent)[] = ['components', 'x-pm-proton-reply'];
@@ -219,9 +229,11 @@ export const createInviteIcs = ({
         method: { value: method },
         calscale: { value: 'GREGORIAN' },
     };
+
     if (vtimezones?.length) {
         inviteVcal.components = [...vtimezones, ...inviteVcal.components];
     }
+
     return serialize(inviteVcal);
 };
 
