@@ -156,12 +156,6 @@ const ImagePreview = ({
         setFullImageDimensions(getImageDimensions(imageHiResRef.current));
     };
 
-    const handleTransitionEnd = (e: React.TransitionEvent) => {
-        if (e.propertyName === 'opacity') {
-            setIsLowResImageHidden(isHiResImageRendered);
-        }
-    };
-
     useEffect(() => {
         if (error) {
             setError(false);
@@ -237,7 +231,10 @@ const ImagePreview = ({
                                 ref={imageLowResRef}
                                 onLoad={() => fitImageToContainer(imageLowResRef.current)}
                                 onError={handleBrokenImage}
-                                className={clsx(['file-preview-image', isHiResImageRendered && 'hide'])}
+                                className={clsx([
+                                    'file-preview-image',
+                                    isHiResImageRendered && 'file-preview-image-out',
+                                ])}
                                 style={{
                                     ...imageStyles,
                                     // Blurring an image this way leads to its edges to become transparent.
@@ -247,7 +244,11 @@ const ImagePreview = ({
                                 }}
                                 src={placeholderSrc}
                                 alt={c('Info').t`${fileName}: low-resolution preview`}
-                                onTransitionEnd={handleTransitionEnd}
+                                onAnimationEnd={(e) => {
+                                    if (e.animationName === 'anime-image-preview-out') {
+                                        setIsLowResImageHidden(isHiResImageRendered);
+                                    }
+                                }}
                             />
                         )}
                     </div>
