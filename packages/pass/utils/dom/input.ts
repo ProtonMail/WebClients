@@ -43,10 +43,12 @@ export const findBoundingInputElement = (
         /* special case when an input is wrapped in its label :
          * often the label can be considered the container if
          * all children overlap and current element is not bordered */
-        const isBorderedEl = pixelParser(getComputedStyle(input).borderBottomWidth) !== 0;
-        const label = isBorderedEl ? null : input.closest('label');
+        const inputHasBorder = pixelParser(getComputedStyle(input).borderBottomWidth) !== 0;
+        if (inputHasBorder) return input;
 
-        if (label) {
+        const label = input.closest('label');
+
+        if (label && label.querySelectorAll('input:not([type="hidden"])').length === 1) {
             const labelHeightCheck = label.getBoundingClientRect().height >= minHeight;
             const labelChildrenOverlap = allChildrenOverlap(label, BOUNDING_ELEMENT_MAX_OFFSET);
             if (labelHeightCheck && labelChildrenOverlap) return label;
