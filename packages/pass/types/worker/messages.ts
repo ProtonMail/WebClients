@@ -57,6 +57,7 @@ export enum WorkerMessageType {
     AUTOFILL_SELECT = 'AUTOFILL_SELECT',
     AUTOFILL_SYNC = 'AUTOFILL_SYNC',
     AUTOSAVE_REQUEST = 'AUTOSAVE_REQUEST',
+    UNLOCK_REQUEST = 'UNLOCK_REQUEST',
     ALIAS_OPTIONS = 'ALIAS_OPTIONS',
     ALIAS_CREATE = 'ALIAS_CREATE',
     OTP_CODE_GENERATE = 'OTP_CODE_GENERATE',
@@ -99,6 +100,7 @@ export type AutofillQueryMessage = { type: WorkerMessageType.AUTOFILL_QUERY };
 export type AutofillSyncMessage = WithPayload<WorkerMessageType.AUTOFILL_SYNC, { count: number }>;
 export type AutofillSelectMessage = WithPayload<WorkerMessageType.AUTOFILL_SELECT, SelectedItem>;
 export type AutoSaveRequestMessage = WithPayload<WorkerMessageType.AUTOSAVE_REQUEST, AutosavePayload>;
+export type UnlockRequestMessage = WithPayload<WorkerMessageType.UNLOCK_REQUEST, { pin: string }>;
 export type FormEntryStageMessage = WithPayload<WorkerMessageType.FORM_ENTRY_STAGE, NewFormEntry & { reason: string }>;
 export type FormEntryStashMessage = WithPayload<WorkerMessageType.FORM_ENTRY_STASH, { reason: string }>;
 export type FormEntryCommitMessage = WithPayload<WorkerMessageType.FORM_ENTRY_COMMIT, { reason: string }>;
@@ -143,6 +145,7 @@ export type WorkerMessage =
     | AutofillSelectMessage
     | AutofillSyncMessage
     | AutoSaveRequestMessage
+    | UnlockRequestMessage
     | OTPCodeGenerateMessage
     | FormEntryStageMessage
     | FormEntryStashMessage
@@ -185,6 +188,7 @@ type WorkerMessageResponseMap = {
     [WorkerMessageType.FORM_ENTRY_STAGE]: { staged: FormEntry };
     [WorkerMessageType.AUTOFILL_QUERY]: { items: SafeLoginItem[]; needsUpgrade: boolean };
     [WorkerMessageType.AUTOFILL_SELECT]: { username: string; password: string };
+    [WorkerMessageType.UNLOCK_REQUEST]: { ok: true } | { ok: false; canRetry: boolean; reason: string };
     [WorkerMessageType.OTP_CODE_GENERATE]: OtpCode;
     [WorkerMessageType.ALIAS_OPTIONS]: { options: AliasState['aliasOptions']; needsUpgrade: boolean };
     [WorkerMessageType.EXPORT_REQUEST]: { data: string };

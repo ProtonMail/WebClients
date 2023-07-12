@@ -1,20 +1,21 @@
 import { useEffect } from 'react';
 
+import { useDebouncedValue } from '../../hooks';
 import { SESSION_LOCK_PIN_LENGTH } from './constants';
 
 type UseSessionLockPinOptions = {
     onSubmit: (pin: string) => void;
 };
 
-/**
- * Calls onSubmit when the pin has reached
- * the necessary length
- */
+/* Calls onSubmit when the pin has reached
+ * the necessary length */
 export const useSessionLockPinSubmitEffect = (pin: string, { onSubmit }: UseSessionLockPinOptions) => {
+    const value = useDebouncedValue(pin, 150);
+
     useEffect(() => {
-        const safePin = pin.replaceAll(/\s+/g, '');
+        const safePin = value.replaceAll(/\s+/g, '');
         if (safePin.length === SESSION_LOCK_PIN_LENGTH) {
-            onSubmit(pin);
+            onSubmit(value);
         }
-    }, [pin, onSubmit]);
+    }, [value, onSubmit]);
 };
