@@ -1,14 +1,12 @@
 import { c } from 'ttag';
 
-import { Href } from '@proton/atoms';
 import { disableHighSecurity, enableHighSecurity } from '@proton/shared/lib/api/settings';
-import { BRAND_NAME, PROTON_SENTINEL_NAME } from '@proton/shared/lib/constants';
-import { getSupportContactURL } from '@proton/shared/lib/helpers/url';
+import { PROTON_SENTINEL_NAME } from '@proton/shared/lib/constants';
 import { SETTINGS_PROTON_SENTINEL_STATE } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
 import { Toggle } from '../../components';
-import { useApi, useEventManager, useLoading, useUser, useUserSettings } from '../../hooks';
+import { useApi, useEventManager, useLoading, useUserSettings } from '../../hooks';
 import { SettingsParagraph, SettingsSectionWide } from '../account';
 import SettingsLayout from '../account/SettingsLayout';
 import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
@@ -16,7 +14,6 @@ import SettingsLayoutRight from '../account/SettingsLayoutRight';
 
 const SentinelSection = () => {
     const [settings] = useUserSettings();
-    const [user] = useUser();
     const api = useApi();
     const [loadingSentinel, withLoadingSentinel] = useLoading();
     const protonSentinel = settings.HighSecurity.Value;
@@ -32,39 +29,15 @@ const SentinelSection = () => {
         }
         await call();
     };
-
-    const params = {
-        topic: 'account security',
-        username: user.Email,
-    };
-    // translator: full sentence is: You will receive priority support from specialists trained in account protection. For any account security concerns, please <contact us>.
-    const hereLink = <Href href={getSupportContactURL(params)}>{c('Link').t`contact us`}</Href>;
-
     return (
         <SettingsSectionWide>
             {sentinelEligible ? (
                 <>
                     <SettingsParagraph large={true}>
                         <p className="mt-0">{c('Info')
-                            .t`${PROTON_SENTINEL_NAME} is an account protection program developed at ${BRAND_NAME} for users who need maximum security.`}</p>
+                            .t`${PROTON_SENTINEL_NAME} is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.`}</p>
                         <p>{c('Info')
-                            .t`${PROTON_SENTINEL_NAME} is powered by sophisticated AI systems and teams of specialists working 24/7 to mitigate bad actors and security threats.`}</p>
-                        <p>{c('Info')
-                            .t`Users with sensitive data and communications, such as journalists or executives, are highly encouraged to enable ${PROTON_SENTINEL_NAME}.`}</p>
-                        <h3 className="text-bold text-rg">{c('Info').t`Once you enable ${PROTON_SENTINEL_NAME}:`}</h3>
-                        <ol>
-                            <li>{c('Info')
-                                .t`You will see more details in the Security logs below for important events such as sign in attempts.`}</li>
-                            <li>{c('Info')
-                                .t`Suspicious events will be challenged by multiple layers of defense that help prevent attackers from hijacking your account.`}</li>
-                            <li>
-                                {
-                                    // translator: full sentence is: You will receive priority support from specialists trained in account protection. For any account security concerns, please <contact us>.
-                                    c('Info')
-                                        .jt`You will receive priority support from specialists trained in account protection. For any account security concerns, please ${hereLink}.`
-                                }
-                            </li>
-                        </ol>
+                            .t`Public figures, journalists, executives, and others who may be the target of cyber attacks are highly encouraged to enable ${PROTON_SENTINEL_NAME}.`}</p>
                     </SettingsParagraph>
                     <SettingsLayout>
                         <SettingsLayoutLeft>
