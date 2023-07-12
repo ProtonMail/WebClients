@@ -21,7 +21,6 @@ declare const trainees: {
 };
 declare const rulesetMaker: () => ReturnType<typeof ruleset>;
 
-declare const isFormOfInterest: (fnodeOrEl: Fnode | HTMLElement) => boolean;
 declare const getFormParent: (form: HTMLElement) => HTMLElement;
 type FormInputIterator = ReturnType<typeof createInputIterator>;
 declare const createInputIterator: (form: HTMLElement) => {
@@ -29,36 +28,40 @@ declare const createInputIterator: (form: HTMLElement) => {
     next(input: HTMLElement): HTMLElement | null;
 };
 
-declare const isFieldOfInterest: (fnode: Fnode) => boolean;
-declare const isUserEditableField: (el: HTMLInputElement) => boolean;
+declare const isActiveField: (el: HTMLInputElement) => boolean;
 declare const splitFieldsByVisibility: (els: HTMLElement[]) => [HTMLElement[], HTMLElement[]];
 declare const maybeEmail: (fnode: Fnode) => boolean;
 declare const maybePassword: (fnode: Fnode) => boolean;
-declare const maybeOTP: (fnode: Fnode) => any;
-declare const maybeUsername: (fnode: Fnode) => any;
+declare const maybeOTP: (fnode: Fnode) => boolean;
+declare const maybeUsername: (fnode: Fnode) => boolean;
 declare const maybeHiddenUsername: (fnode: Fnode) => any;
 declare const isUsernameCandidate: (el: HTMLElement) => boolean;
 declare const isEmailCandidate: (el: HTMLElement) => boolean;
 declare const isOAuthCandidate: (el: HTMLElement) => boolean;
 declare const isSubmitBtnCandidate: (btn: HTMLElement) => boolean;
 
-declare const formOfInterestSelector = 'form:not([role="search"]):not(body > form:only-of-type):not(table td > form)';
 declare const headingSelector: string;
 declare const fieldSelector = 'input, select, textarea';
-declare const editableFieldSelector: string;
-declare const fieldOfInterestSelector: string;
+declare const inputSelector =
+    'input:not([type="hidden"]):not([type="submit"]):not([type="button"]):not([type="image"]):not([type="checkbox"])';
 declare const buttonSubmitSelector: string;
 declare const buttonSelector: string;
 declare const anchorLinkSelector = 'a, span[role="button"]';
 declare const captchaSelector = '[class*="captcha"], [id*="captcha"], [name*="captcha"]';
 declare const socialSelector = '[class*=social],[aria-label*=with]';
-declare const clusterSelector =
+declare const domGroupSelector =
     '[role="dialog"], [role="tabpanel"], [role="group"], [role="form"], [id*="modal"], [class*="modal"], header, section, nav, footer, aside';
 declare const layoutSelector = 'div, section, aside, main, nav';
-declare const usernameSelector: string;
 declare const passwordSelector: string;
-declare const hiddenUsernameSelector = 'input[type="email"], input[type="text"], input[type="hidden"]';
-declare const otpSelector = 'input[type="tel"], input[type="number"], input[type="text"], input:not([type])';
+declare const hiddenUsernameSelector = '[type="email"], [type="text"], [type="hidden"]';
+declare const otpSelector = '[type="tel"], [type="number"], [type="text"], input:not([type])';
+declare const unprocessedFormFilter: string;
+declare const unprocessedFieldFilter: string;
+declare const danglingFieldFilter: string;
+declare const detectedSelector: string;
+declare const detectedFormSelector: string;
+declare const preDetectedClusterSelector: string;
+declare const ignoredSelector: string;
 
 type VisibilityCache = WeakMap<HTMLElement, boolean>;
 type IsVisibleOptions = {
@@ -68,8 +71,9 @@ declare const cacheContext: Record<string, VisibilityCache>;
 declare const getVisibilityCache: (key: string) => VisibilityCache;
 declare const clearVisibilityCache: () => void;
 declare const isVisible: (fnodeOrElement: Fnode | HTMLElement, options: IsVisibleOptions) => boolean;
-declare const isVisibleField: (field: HTMLElement) => boolean;
 declare const isVisibleEl: (el: HTMLElement) => boolean;
+declare const isVisibleForm: (form: HTMLElement) => boolean;
+declare const isVisibleField: (field: HTMLElement) => boolean;
 
 declare const TEXT_ATTRIBUTES: string[];
 declare const EL_ATTRIBUTES: string[];
@@ -84,10 +88,45 @@ declare const DETECTED_FIELD_TYPE_ATTR = 'data-protonpass-field-type';
 declare const DETECTED_FORM_TYPE_ATTR = 'data-protonpass-form-type';
 declare const DETECTED_CLUSTER_ATTR = 'data-protonpass-cluster';
 declare const IGNORE_ELEMENT_ATTR = 'data-protonpass-ignore';
-declare const setInputType: (input: HTMLInputElement, type: string) => void;
-declare const setFormType: (form: HTMLElement, type: string) => void;
-declare const setClusterType: (el: HTMLElement) => void;
-declare const setIgnoreType: (el: HTMLElement) => void;
+declare const PROCESSED_FORM_ATTR = 'data-protonpass-form';
+declare const PROCESSED_FIELD_ATTR = 'data-protonpass-field';
+
+declare const withIgnoreFlag: <T extends HTMLElement, R extends any[]>(
+    predicate: (el: T, ...args: R) => boolean
+) => (el: T, ...args: R) => boolean;
+declare const setIgnoreFlag: (el: HTMLElement) => void;
+declare const getIgnoredParent: (el?: HTMLElement) => HTMLElement | null | undefined;
+declare const setClusterFlag: (el: HTMLElement) => void;
+declare const setFormProcessed: (el: HTMLElement) => void;
+declare const setFieldProcessed: (el: HTMLInputElement) => void;
+declare const setFieldProcessable: (field: HTMLElement) => void;
+declare const setFormProcessable: (form: HTMLElement) => void;
+declare const isFormProcessed: (form: HTMLElement) => boolean;
+declare const isFieldProcessed: (field: HTMLElement) => boolean;
+declare const processFormEffect: (fnode: Fnode) => Fnode;
+declare const processFieldEffect: (fnode: Fnode) => Fnode;
+declare const setFieldType: (element: HTMLElement, value: string) => void;
+declare const setFormType: (element: HTMLElement, value: string) => void;
+declare const getDetectedFormParent: (el?: HTMLElement) => HTMLElement | null | undefined;
+declare const typeFormEffect: (type: string) => (fnode: Fnode) => Fnode;
+declare const typeFieldEffect: (type: string) => (fnode: Fnode) => Fnode;
+
+declare const inputFilter: (input: HTMLInputElement) => boolean;
+declare const fieldFilter: (fnode: Fnode) => boolean;
+declare const selectInputs: ((root?: Document | HTMLElement) => HTMLInputElement[]) & {
+    clearCache: () => void;
+};
+declare const selectUnprocessedInputs: (target?: Document | HTMLElement) => HTMLInputElement[];
+declare const selectDanglingInputs: (target?: Document | HTMLElement) => HTMLInputElement[];
+
+declare const formFilter: (form: HTMLElement) => boolean;
+declare const selectForms: ((root?: Document | HTMLElement) => HTMLFormElement[]) & {
+    clearCache: () => void;
+};
+declare const selectAllForms: (doc?: Document) => HTMLElement[];
+declare const selectUnprocessedForms: (target?: Document) => HTMLElement[];
+
+declare const clearDetectionCache: () => void;
 
 export {
     DETECTED_CLUSTER_ATTR,
@@ -98,38 +137,49 @@ export {
     FORM_ATTRIBUTES,
     FormInputIterator,
     IGNORE_ELEMENT_ATTR,
+    PROCESSED_FIELD_ATTR,
+    PROCESSED_FORM_ATTR,
     TEXT_ATTRIBUTES,
     anchorLinkSelector,
     buttonSelector,
     buttonSubmitSelector,
     cacheContext,
     captchaSelector,
+    clearDetectionCache,
     clearVisibilityCache,
-    clusterSelector,
     createInputIterator,
-    editableFieldSelector,
-    fieldOfInterestSelector,
+    danglingFieldFilter,
+    detectedFormSelector,
+    detectedSelector,
+    domGroupSelector,
+    fieldFilter,
     fieldSelector,
-    formOfInterestSelector,
+    formFilter,
     getAttributes,
     getBaseAttributes,
+    getDetectedFormParent,
     getFieldAttributes,
     getFormAttributes,
     getFormParent,
+    getIgnoredParent,
     getTextAttributes,
     getVisibilityCache,
     headingSelector,
     hiddenUsernameSelector,
+    ignoredSelector,
+    inputFilter,
+    inputSelector,
+    isActiveField,
     isEmailCandidate,
-    isFieldOfInterest,
-    isFormOfInterest,
+    isFieldProcessed,
+    isFormProcessed,
     isOAuthCandidate,
     isSubmitBtnCandidate,
-    isUserEditableField,
     isUsernameCandidate,
     isVisible,
     isVisibleEl,
     isVisibleField,
+    isVisibleForm,
     layoutSelector,
     maybeEmail,
     maybeHiddenUsername,
@@ -138,13 +188,30 @@ export {
     maybeUsername,
     otpSelector,
     passwordSelector,
+    preDetectedClusterSelector,
+    processFieldEffect,
+    processFormEffect,
     rulesetMaker,
-    setClusterType,
+    selectAllForms,
+    selectDanglingInputs,
+    selectForms,
+    selectInputs,
+    selectUnprocessedForms,
+    selectUnprocessedInputs,
+    setClusterFlag,
+    setFieldProcessable,
+    setFieldProcessed,
+    setFieldType,
+    setFormProcessable,
+    setFormProcessed,
     setFormType,
-    setIgnoreType,
-    setInputType,
+    setIgnoreFlag,
     socialSelector,
     splitFieldsByVisibility,
     trainees,
-    usernameSelector,
+    typeFieldEffect,
+    typeFormEffect,
+    unprocessedFieldFilter,
+    unprocessedFormFilter,
+    withIgnoreFlag,
 };
