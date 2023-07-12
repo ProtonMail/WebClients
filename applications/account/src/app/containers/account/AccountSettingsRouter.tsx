@@ -127,7 +127,7 @@ const AccountSettingsRouter = ({
             </Route>
             <Route path={getSectionPath(path, appearance)}>
                 <PrivateMainSettingsArea config={appearance}>
-                    <ThemesSection accessibilitySettingsAvailable={!!appearance.subsections[1]?.available} />
+                    <ThemesSection />
                     <AccessibilitySection />
                 </PrivateMainSettingsArea>
             </Route>
