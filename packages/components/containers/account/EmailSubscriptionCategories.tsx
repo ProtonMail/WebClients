@@ -1,28 +1,30 @@
 import { c } from 'ttag';
 
-import { NEWS } from '@proton/shared/lib/constants';
+import { NEWSLETTER_SUBSCRIPTIONS_BITS } from '@proton/shared/lib/constants';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { getTitle } from './EmailSubscriptionCheckboxes';
+import { getEmailSubscriptionsMap } from './constants/email-subscriptions';
 
-const EmailSubscriptionCategories = ({ news }: { news: NEWS[] }) => {
-    const categories = news.map(getTitle).filter(isTruthy);
+const EmailSubscriptionCategories = ({ news }: { news: NEWSLETTER_SUBSCRIPTIONS_BITS[] }) => {
+    const emailSubscriptionMap = getEmailSubscriptionsMap();
+    const categoryTitles = news
+        .map((newsKind) => emailSubscriptionMap[newsKind]?.title)
+        .filter((title) => isTruthy(title));
 
-    if (!categories) {
+    if (!categoryTitles.length) {
         return null;
     }
 
-    const allCategoriesExceptTheLastOne = categories.slice(0, -1).join(', ');
-
-    const lastCategory = categories[categories.length - 1];
+    const allCategoryTitlesExceptTheLastOne = categoryTitles.slice(0, -1).join(', ');
+    const lastCategoryTitle = categoryTitles[categoryTitles.length - 1];
 
     const categoriesString =
-        categories.length > 1
-            ? c('Email Unsubscribe Categories').t`${allCategoriesExceptTheLastOne} and ${lastCategory}`
-            : lastCategory;
+        categoryTitles.length > 1
+            ? c('Email Unsubscribe Categories').t`${allCategoryTitlesExceptTheLastOne} and ${lastCategoryTitle}`
+            : lastCategoryTitle;
 
     return (
-        <span key="bold" className="text-bold">
+        <span className="text-bold" key="category-title">
             {categoriesString}
         </span>
     );

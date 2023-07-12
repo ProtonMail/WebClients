@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms/Button';
-import { EmailSubscriptionCheckboxes } from '@proton/components';
+import { EmailSubscriptionToggles } from '@proton/components';
+import { NewsletterSubscriptionUpdateData } from '@proton/components/containers/account/EmailSubscriptionToggles';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 
 import PublicFooter from './PublicFooter';
@@ -10,7 +11,7 @@ import PublicLayout from './PublicLayout';
 interface EmailSubscriptionManagementProps {
     News: number;
     disabled: boolean;
-    onChange: (News: number) => void;
+    onChange: (data: NewsletterSubscriptionUpdateData) => void;
 }
 
 const EmailSubscriptionManagement = ({ News, disabled, onChange }: EmailSubscriptionManagementProps) => {
@@ -23,7 +24,7 @@ const EmailSubscriptionManagement = ({ News, disabled, onChange }: EmailSubscrip
                     <div className="text-center">
                         {c('Email Unsubscribe').t`Which emails do you want to receive from ${BRAND_NAME}?`}
                     </div>
-                    <EmailSubscriptionCheckboxes News={News} disabled={disabled} onChange={onChange} />
+                    <EmailSubscriptionToggles News={News} disabled={disabled} onChange={onChange} />
                 </div>
             }
             footer={

@@ -1,26 +1,52 @@
+import { isBefore, sub } from 'date-fns';
 import { c } from 'ttag';
 
-import { updateNews } from '@proton/shared/lib/api/settings';
+import { patchNews } from '@proton/shared/lib/api/settings';
+import { NEWSLETTER_SUBSCRIPTIONS_BITS } from '@proton/shared/lib/constants';
 
-import { useApi, useEventManager, useLoading, useNotifications, useUserSettings } from '../../hooks';
-import EmailSubscriptionCheckboxes from './EmailSubscriptionCheckboxes';
+import { useApi, useEventManager, useLoading, useNotifications, useUser, useUserSettings } from '../../hooks';
+import EmailSubscriptionToggles, { NewsletterSubscriptionUpdateData } from './EmailSubscriptionToggles';
+import { getEmailSubscriptions } from './constants';
 
-const EditNews = () => {
-    const [{ News } = { News: 0 }] = useUserSettings();
+const EditEmailSubscription = () => {
+    const [user] = useUser();
+    const [{ News, EarlyAccess } = { News: 0, EarlyAccess: 0 }] = useUserSettings();
     const { createNotification } = useNotifications();
     const { call } = useEventManager();
     const api = useApi();
     const [loading, withLoading] = useLoading();
 
-    const update = async (News: number) => {
-        await api(updateNews(News));
-        await call();
-        createNotification({ text: c('Info').t`Emailing preference saved` });
-    };
+    const handleChange = (data: NewsletterSubscriptionUpdateData) =>
+        withLoading(async () => {
+            await api(patchNews(data));
+            await call();
+            createNotification({ text: c('Info').t`Emailing preference saved` });
+        });
 
-    const handleChange = (News: number) => withLoading(update(News));
+    const filteredEmailSubscription = getEmailSubscriptions().filter(({ flag }) => {
+        switch (flag) {
+            case NEWSLETTER_SUBSCRIPTIONS_BITS.FEATURES:
+                // We don't want to display toggle for FEATURES news subscription as manual switch has been deprecated for this option.
+                // INBOX_NEWS, DRIVE_NEWS & VPN_NEWS should be used instead
+                return false;
+            case NEWSLETTER_SUBSCRIPTIONS_BITS.ONBOARDING:
+                // check if the user account was created more than 1 month ago
+                return isBefore(sub(new Date(), { months: 1 }), user.CreateTime * 1000);
+            case NEWSLETTER_SUBSCRIPTIONS_BITS.BETA:
+                return Boolean(EarlyAccess);
+            default:
+                return true;
+        }
+    });
 
-    return <EmailSubscriptionCheckboxes News={News} onChange={handleChange} disabled={loading} />;
+    return (
+        <EmailSubscriptionToggles
+            News={News}
+            onChange={handleChange}
+            disabled={loading}
+            subscriptions={filteredEmailSubscription}
+        />
+    );
 };
 
-export default EditNews;
+export default EditEmailSubscription;
