@@ -2,13 +2,20 @@ import { MouseEvent } from 'react';
 
 import { c } from 'ttag';
 
-import { APPS, MAIL_APP_NAME } from '@proton/shared/lib/constants';
+import { patchNews } from '@proton/shared/lib/api/settings';
+import {
+    APPS,
+    MAIL_APP_NAME,
+    NEWSLETTER_SUBSCRIPTIONS,
+    NEWSLETTER_SUBSCRIPTIONS_BITS,
+} from '@proton/shared/lib/constants';
+import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { getStaticURL } from '@proton/shared/lib/helpers/url';
 import { SETTINGS_STATUS } from '@proton/shared/lib/interfaces';
 
 import { Info, SettingsLink, useModalState } from '../../components';
 import Icon from '../../components/icon/Icon';
-import { useUser, useUserSettings } from '../../hooks';
+import { useApi, useEventManager, useNotifications, useUser, useUserSettings } from '../../hooks';
 import SettingsLayout from '../account/SettingsLayout';
 import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
 import SettingsLayoutRight from '../account/SettingsLayoutRight';
@@ -21,6 +28,9 @@ import RecoveryEmail from '../recovery/email/RecoveryEmail';
 const MessagesGeneralSection = () => {
     const [userSettings] = useUserSettings();
     const [user, userLoading] = useUser();
+    const api = useApi();
+    const { call } = useEventManager();
+    const { createNotification } = useNotifications();
 
     const [mailShortcutsProps, setMailShortcutsModalOpen] = useModalState();
 
@@ -30,8 +40,26 @@ const MessagesGeneralSection = () => {
     };
 
     const showRecoveryEmailInput = !user.isPrivate;
-    const isDailyEmailEnabled = !!userSettings?.Email?.Notify && !!userSettings?.Email?.Value;
-    const canEnableDailyEmail = !!userSettings?.Email?.Value;
+    const canEnableDailyEmails = !!userSettings?.Email?.Value;
+    const isDailyEmailEnabled =
+        canEnableDailyEmails && hasBit(userSettings.News, NEWSLETTER_SUBSCRIPTIONS_BITS.NEW_EMAIL_NOTIF);
+
+    const handleChangeEmailNotify = async () => {
+        if (!canEnableDailyEmails) {
+            createNotification({
+                type: 'error',
+                text: c('Error').t`Please set a recovery/notification email first`,
+            });
+            return;
+        }
+
+        await api(
+            patchNews({
+                [NEWSLETTER_SUBSCRIPTIONS.NEW_EMAIL_NOTIF]: !isDailyEmailEnabled,
+            })
+        );
+        await call();
+    };
 
     return (
         <>
@@ -94,7 +122,8 @@ const MessagesGeneralSection = () => {
                                 id="dailyNotificationsToggle"
                                 className="mr-2"
                                 isEnabled={isDailyEmailEnabled}
-                                canEnable={canEnableDailyEmail}
+                                canEnable={canEnableDailyEmails}
+                                onChange={handleChangeEmailNotify}
                             />
                             {!userLoading && showRecoveryEmailInput && (
                                 <label htmlFor="dailyNotificationsToggle" className="flex-item-fluid">
