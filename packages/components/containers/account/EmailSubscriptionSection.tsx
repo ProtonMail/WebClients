@@ -1,6 +1,8 @@
 import { c } from 'ttag';
 
+import { Href } from '@proton/atoms/Href';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
+import { getStaticURL } from '@proton/shared/lib/helpers/url';
 
 import { useSubscription } from '../../hooks';
 import EditEmailSubscription from './EditEmailSubscription';
@@ -15,11 +17,15 @@ const EmailSubscriptionSection = () => {
         return <MozillaInfoPanel />;
     }
 
+    const blogLink = (
+        <Href key={`link-to-blog`} href={getStaticURL('/blog')}>{c('Link').t`visit our blog`}</Href>
+    );
+
     return (
         <SettingsSection>
             <SettingsParagraph>
                 {c('Info')
-                    .t`To keep up with the latest development at ${BRAND_NAME} products, you can subscribe to our various emails and visit our blog from time to time.`}
+                    .jt`To keep up with the latest development at ${BRAND_NAME} products, you can subscribe to our various emails and ${blogLink} from time to time.`}
             </SettingsParagraph>
             <EditEmailSubscription />
         </SettingsSection>
