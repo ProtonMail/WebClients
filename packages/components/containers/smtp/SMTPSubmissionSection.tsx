@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { format, fromUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
+import { Href } from '@proton/atoms';
 import { Button } from '@proton/atoms/Button';
 import {
     Loader,
@@ -21,11 +22,12 @@ import {
     useModalState,
     useNotifications,
     useOrganization,
+    useUser,
 } from '@proton/components';
 import { deleteToken, getTokens } from '@proton/shared/lib/api/smtptokens';
 import { ADDRESS_TYPE, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { hasSMTPSubmission } from '@proton/shared/lib/helpers/organization';
-import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import { getKnowledgeBaseUrl, getSupportContactURL } from '@proton/shared/lib/helpers/url';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
@@ -40,10 +42,9 @@ interface SmtpTokens {
     LastUsedTime: number | null;
 }
 
-const BUSINESS_CONTACT_EMAIL = 'business-updates@proton.me';
-
 const SMTPSubmissionSection = () => {
     const api = useApi();
+    const [user] = useUser();
     const [addresses = []] = useAddresses();
     const addressMap = new Map(addresses.map((address) => [address.ID, address.Email]));
     const hasCustomAddress = addresses.some(({ Type }) => Type === ADDRESS_TYPE.TYPE_CUSTOM_DOMAIN);
@@ -115,18 +116,18 @@ const SMTPSubmissionSection = () => {
     }
 
     if (!submissionTokenAvailable) {
-        const emailLink = (
-            <a key="email-address" href={`mailto:${BUSINESS_CONTACT_EMAIL}`}>
-                {BUSINESS_CONTACT_EMAIL}
-            </a>
-        );
+        const params = {
+            topic: 'email delivery and spam',
+            username: user.Email,
+        };
+        const createTicket = <Href key="ticket" href={getSupportContactURL(params)}>{c('Link').t`create a ticket`}</Href>;
         return (
             <SettingsSection>
                 <SettingsParagraph learnMoreUrl={getKnowledgeBaseUrl('/smtp-submission')}>
                     {
-                        // translator: full sentence will be: SMTP allows 3rd-party services or devices to send email through <Proton Mail>. It is a new feature available to select business users. Please email <business-updates@proton.me> to request access.
+                        // translator: full sentence will be: SMTP submission allows 3rd-party services or devices to send email through <Proton Mail> for your custom domain addresses. To request access, please <create a ticket> describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.
                         c('Info')
-                            .jt`SMTP allows 3rd-party services or devices to send email through ${MAIL_APP_NAME}. It is a new feature available to select business users. Please email ${emailLink} to request access.`
+                            .jt`SMTP submission allows 3rd-party services or devices to send email through ${MAIL_APP_NAME} for your custom domain addresses. To request access, please ${createTicket} describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.`
                     }
                 </SettingsParagraph>
             </SettingsSection>
@@ -136,8 +137,11 @@ const SMTPSubmissionSection = () => {
     return (
         <SettingsSectionWide>
             <SettingsParagraph learnMoreUrl={getKnowledgeBaseUrl('/smtp-submission')}>
-                {c('Info')
-                    .t`SMTP allows 3rd-party services or devices to send email through ${MAIL_APP_NAME}. To use this feature, start by generating a new token.`}
+                {
+                    // translator: full sentence will be: SMTP submission allows 3rd-party services or devices to send email through <Proton Mail> for your custom domain addresses. To use this feature, start by generating a new token.
+                    c('Info')
+                        .t`SMTP submission allows 3rd-party services or devices to send email through ${MAIL_APP_NAME} for your custom domain addresses. To use this feature, start by generating a new token.`
+                }
             </SettingsParagraph>
             <div className="mb-4">
                 <Button
