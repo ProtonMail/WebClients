@@ -30,7 +30,7 @@ export interface IFrameApp {
     getPosition: () => IFramePosition;
     updatePosition: () => void;
     open: (scrollRef?: HTMLElement) => void;
-    close: (options?: { event?: Event; userInitiated: boolean }) => void;
+    close: (options?: { event?: Event; userInitiated: boolean; refocus?: boolean }) => void;
     init: (port: Runtime.Port) => void;
     reset: (workerState: WorkerState, settings: ProxiedSettings) => void;
     destroy: () => void;
@@ -51,6 +51,7 @@ export enum IFrameMessageType {
     IFRAME_INIT = 'IFRAME_INIT',
     IFRAME_OPEN = 'IFRAME_OPEN',
     IFRAME_CLOSE = 'IFRAME_CLOSE',
+    IFRAME_HIDDEN = 'IFRAME_HIDDEN',
     IFRAME_DIMENSIONS = 'IFRAME_DIMENSIONS',
     DROPDOWN_ACTION = 'DROPDOWN_ACTION',
     DROPDOWN_AUTOFILL_LOGIN = 'DROPDOWN_AUTOFILL_LOGIN',
@@ -70,7 +71,8 @@ export type IFrameMessage<T extends IFrameMessageType = IFrameMessageType> = Ext
     | { type: IFrameMessageType.IFRAME_CONNECTED; payload: { framePort: string; id: IFrameEndpoint } }
     | { type: IFrameMessageType.IFRAME_INIT; payload: { workerState: WorkerState; settings: ProxiedSettings } }
     | { type: IFrameMessageType.IFRAME_OPEN }
-    | { type: IFrameMessageType.IFRAME_CLOSE }
+    | { type: IFrameMessageType.IFRAME_CLOSE; payload?: { refocus: boolean } }
+    | { type: IFrameMessageType.IFRAME_HIDDEN }
     | { type: IFrameMessageType.IFRAME_DIMENSIONS; payload: { height: number; width?: number } }
     | { type: IFrameMessageType.DROPDOWN_ACTION; payload: DropdownSetActionPayload }
     | { type: IFrameMessageType.DROPDOWN_AUTOFILL_LOGIN; payload: { item: SafeLoginItem } }
