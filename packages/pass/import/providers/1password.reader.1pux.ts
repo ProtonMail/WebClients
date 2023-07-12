@@ -9,8 +9,13 @@ import { uniqueId } from '@proton/pass/utils/string';
 import { ImportReaderError } from '../helpers/reader.error';
 import { getImportedVaultName, importCreditCardItem, importLoginItem, importNoteItem } from '../helpers/transformers';
 import type { ImportPayload, ImportVault } from '../types';
-import type { OnePass1PuxData, OnePassBaseItem, OnePassItem, OnePassItemDetails ,
-    OnePassField} from './1password.1pux.types';
+import type {
+    OnePass1PuxData,
+    OnePassBaseItem,
+    OnePassField,
+    OnePassItem,
+    OnePassItemDetails,
+} from './1password.1pux.types';
 import {
     OnePassCategory,
     OnePassFieldIdCreditCard,
@@ -142,13 +147,21 @@ const extractLoginFieldFromLoginItem = (
 const processLoginItem = (
     item: Extract<OnePassItem, { categoryUuid: OnePassCategory.LOGIN }>
 ): ItemImportIntent<'login'> => {
+    const [totp, extraFields] = extractExtraFields(item).reduce<[ItemExtraField<'totp'> | null, ItemExtraField[]]>(
+        (acc, extraField) => {
+            return !acc[0] && extraField.type === 'totp' ? [extraField, acc[1]] : [acc[0], [...acc[1], extraField]];
+        },
+        [null, []]
+    );
+
     return importLoginItem({
         name: item.overview.title,
         note: item.details.notesPlain,
         username: extractLoginFieldFromLoginItem(item, OnePassLoginDesignation.USERNAME),
         password: extractLoginFieldFromLoginItem(item, OnePassLoginDesignation.PASSWORD),
         urls: extractURLs(item),
-        extraFields: extractExtraFields(item),
+        totp: totp?.data.totpUri,
+        extraFields,
         trashed: item.state === OnePassState.ARCHIVED,
         createTime: item.createdAt,
         modifyTime: item.updatedAt,
