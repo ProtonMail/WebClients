@@ -2,7 +2,6 @@ import { ReactElement } from 'react';
 
 import { c } from 'ttag';
 
-import { useFeature } from '@proton/components/hooks';
 import { CYCLE, PLANS, PLAN_TYPES } from '@proton/shared/lib/constants';
 import { switchPlan } from '@proton/shared/lib/helpers/planIDs';
 import {
@@ -30,7 +29,6 @@ import {
     Tabs,
     VpnLogo,
 } from '../../../components';
-import { FeatureCode } from '../../features';
 import CurrencySelector from '../CurrencySelector';
 import CycleSelector from '../CycleSelector';
 import { getAllFeatures } from '../features';
@@ -118,12 +116,6 @@ const PlanSelection = ({
     calendarSharingEnabled,
     filter,
 }: Props) => {
-    const featureContext = useFeature(FeatureCode.FamilyPlan);
-    if (featureContext.loading) {
-        return null;
-    }
-    const familyPlanAvailable = featureContext.feature?.Value;
-
     const currentPlan = subscription ? subscription.Plans?.find(({ Type }) => Type === PLAN_TYPES.PLAN) : null;
 
     const enabledProductB2CPlans = [PLANS.MAIL, PLANS.VPN, PLANS.DRIVE, PLANS.PASS_PLUS].filter(isTruthy);
@@ -241,20 +233,18 @@ const PlanSelection = ({
             ),
             audience: Audience.B2C,
         },
-        familyPlanAvailable
-            ? {
-                  title: c('Tab subscription modal').t`For families`,
-                  content: (
-                      <div
-                          className="plan-selection plan-selection--family mt-4"
-                          style={{ '--plan-selection-number': FamilyPlans.length }}
-                      >
-                          {FamilyPlans.map((plan) => renderPlanCard(plan, Audience.FAMILY))}
-                      </div>
-                  ),
-                  audience: Audience.FAMILY,
-              }
-            : null,
+        {
+            title: c('Tab subscription modal').t`For families`,
+            content: (
+                <div
+                    className="plan-selection plan-selection--family mt-4"
+                    style={{ '--plan-selection-number': FamilyPlans.length }}
+                >
+                    {FamilyPlans.map((plan) => renderPlanCard(plan, Audience.FAMILY))}
+                </div>
+            ),
+            audience: Audience.FAMILY,
+        },
         {
             title: c('Tab subscription modal').t`For businesses`,
             content: (

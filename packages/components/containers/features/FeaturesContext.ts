@@ -97,7 +97,6 @@ export enum FeatureCode {
     KeyTransparencyCalendar = 'KeyTransparencyWebCalendar',
     KeyTransparencyDrive = 'KeyTransparencyWebDrive',
     AutoDelete = 'AutoDelete',
-    FamilyPlan = 'FamilyPlan',
     OrgSpamBlockList = 'OrgSpamBlockList',
     ProtonSentinel = 'ProtonSentinel',
     AccessibilitySettings = 'AccessibilitySettings',
