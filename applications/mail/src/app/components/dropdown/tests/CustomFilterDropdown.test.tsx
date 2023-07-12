@@ -7,11 +7,6 @@ import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { render, tick } from '../../../helpers/test/render';
 import CustomFilterDropdown from '../CustomFilterDropdown';
 
-jest.mock('@proton/shared/lib/filters/sieve', () => ({
-    toTree: jest.fn(() => []),
-    fromTree: jest.fn(() => []),
-}));
-
 const subject = 'Message subject';
 const sender = 'sender@pm.me';
 const me = 'me@pm.me';
