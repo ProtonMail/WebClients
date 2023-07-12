@@ -55,7 +55,6 @@ const usePreLoadElements = ({ elements, labelID, loading }: Props) => {
         };
 
         if (!loading && firstElements.length > 0 && isAllConversation) {
-            console.log('preload');
             void preload();
         }
     }, [firstElements.join(), labelID, loading]); // "firstElementIDs.join()" makes firstElementIDs dependency stable
