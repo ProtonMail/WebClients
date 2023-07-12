@@ -15,6 +15,7 @@ sentry({
         environment: `browser-pass::settings`,
     },
     ignore: () => false,
+    denyUrls: [],
 });
 
 const root = document.getElementById('root') as HTMLElement;
