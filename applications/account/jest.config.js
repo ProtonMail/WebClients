@@ -13,7 +13,6 @@ module.exports = {
             '@proton/components/__mocks__/fileMock.js',
         '\\.(css|scss|less)$': '@proton/components/__mocks__/styleMock.js',
         '\\.(md)$': '<rootDir>/src/__mocks__/mdMock.ts',
-        '@protontech/sieve.js': '@proton/components/__mocks__/sieve.js',
     },
     reporters: ['default', ['jest-junit', { outputName: 'test-report.xml' }]],
     collectCoverageFrom: ['src/**/*.{js,jsx,ts,tsx}', '!src/app/locales.ts'],

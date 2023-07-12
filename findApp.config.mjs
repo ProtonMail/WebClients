@@ -64,6 +64,10 @@ export default {
                 name: 'activation',
                 glob: '{src/**/*,index}.{js,jsx,ts,tsx}',
             },
+            {
+                name: 'sieve',
+                glob: '{src/**/*,index}.{js,jsx,ts,tsx}',
+            },
         ],
         ignore: ['pack', 'config', 'i18n', 'eslint-config-proton', 'stylelint-config-proton', 'styles', 'testing'],
     },
