@@ -26,6 +26,18 @@ export enum ConditionComparator {
     DOES_NOT_MATCH = '!matches',
 }
 
+export const ConditionComparatorMap = new Map<ConditionComparator, ConditionComparator>([
+    [ConditionComparator.CONTAINS, ConditionComparator.DOES_NOT_CONTAIN],
+    [ConditionComparator.ENDS, ConditionComparator.DOES_NOT_END],
+    [ConditionComparator.MATCHES, ConditionComparator.DOES_NOT_MATCH],
+    [ConditionComparator.STARTS, ConditionComparator.DOES_NOT_START],
+    [ConditionComparator.IS, ConditionComparator.IS_NOT],
+]);
+
+//Map the opposite to it's positive comparator
+export const ConditionComparatorInvertedMap = new Map<ConditionComparator, ConditionComparator>();
+ConditionComparatorMap.forEach((value, key) => ConditionComparatorInvertedMap.set(value, key));
+
 /* Simple Modal Filter Model interfaces */
 
 export enum Step {
@@ -107,7 +119,7 @@ export interface FilterActions {
         Read: boolean;
         Starred: boolean;
     };
-    Vacation: string | null;
+    Vacation?: string | null;
 }
 
 export interface FilterCondition {
@@ -122,17 +134,19 @@ export interface FilterCondition {
     Values: string[];
 }
 
+export interface SimpleObject {
+    Operator: FilterOperator;
+    Conditions: FilterCondition[];
+    Actions: FilterActions;
+}
+
 export interface Filter {
     ID: string;
     Name: string;
     Status: number;
     Priority?: number;
     Version: 1 | 2;
-    Simple?: {
-        Operator: FilterOperator;
-        Conditions: FilterCondition[];
-        Actions: FilterActions;
-    };
+    Simple?: SimpleObject;
     Sieve?: string;
     Tree?: any;
 }
