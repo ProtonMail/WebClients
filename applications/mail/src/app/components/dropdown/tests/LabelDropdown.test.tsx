@@ -16,10 +16,6 @@ import { Breakpoints } from '../../../models/utils';
 import { messageID } from '../../message/tests/Message.test.helpers';
 import LabelDropdown from '../LabelDropdown';
 
-jest.mock('@proton/shared/lib/filters/sieve', () => ({
-    toTree: jest.fn(),
-}));
-
 const label1Name = 'Label1';
 const label1ID = 'label-1-id';
 const label2Name = 'Label2';
