@@ -1,4 +1,5 @@
 import {
+    BrowserOptions,
     captureException,
     configureScope,
     init,
@@ -23,12 +24,17 @@ type SentryConfig = {
     environment: string;
 };
 
+type SentryDenyUrls = BrowserOptions['denyUrls'];
+type SentryIgnoreErrors = BrowserOptions['ignoreErrors'];
+
 type SentryOptions = {
     sessionTracking?: boolean;
     config: ProtonConfig;
     uid?: string;
     sentryConfig?: SentryConfig;
     ignore?: (config: SentryConfig) => boolean;
+    denyUrls?: SentryDenyUrls;
+    ignoreErrors?: SentryIgnoreErrors;
 };
 
 const context: SentryContext = {
@@ -88,12 +94,81 @@ const getDefaultSentryConfig = ({ APP_VERSION, COMMIT }: ProtonConfig): SentryCo
     };
 };
 
+const getDefaultDenyUrls = (): SentryDenyUrls => {
+    return [
+        // Google Adsense
+        /pagead\/js/i,
+        // Facebook flakiness
+        /graph\.facebook\.com/i,
+        // Facebook blocked
+        /connect\.facebook\.net\/en_US\/all\.js/i,
+        // Woopra flakiness
+        /eatdifferent\.com\.woopra-ns\.com/i,
+        /static\.woopra\.com\/js\/woopra\.js/i,
+        // Chrome extensions
+        /extensions\//i,
+        /^chrome:\/\//i,
+        /^chrome-extension:\/\//i,
+        // Other plugins
+        /127\.0\.0\.1:4001\/isrunning/i, // Cacaoweb
+        /webappstoolbarba\.texthelp\.com\//i,
+        /metrics\.itunes\.apple\.com\.edgesuite\.net\//i,
+    ];
+};
+
+const getDefaultIgnoreErrors = (): SentryIgnoreErrors => {
+    return [
+        // Ignore random plugins/extensions
+        'top.GLOBALS',
+        'canvas.contentDocument',
+        'MyApp_RemoveAllHighlights',
+        'atomicFindClose',
+        // See http://toolbar.conduit.com/Developer/HtmlAndGadget/Methods/JSInjection.aspx
+        'conduitPage',
+        // https://bugzilla.mozilla.org/show_bug.cgi?id=1678243
+        'XDR encoding failure',
+        'Request timed out',
+        'No network connection',
+        'Failed to fetch',
+        'NetworkError when attempting to fetch resource.',
+        'webkitExitFullScreen', // Bug in Firefox for iOS.
+        'InactiveSession',
+        'UnhandledRejection', // Happens too often in extensions and we have lints for that, so should be safe to ignore.
+        /chrome-extension/,
+        /moz-extension/,
+        'TransferCancel', // User action to interrupt upload or download in Drive.
+        'UploadConflictError', // User uploading the same file again in Drive.
+        'UploadUserError', // Upload error on user's side in Drive.
+        'ValidationError', // Validation error on user's side in Drive.
+        'ChunkLoadError', // WebPack loading source code.
+        /ResizeObserver loop/, // Chromium bug https://stackoverflow.com/questions/49384120/resizeobserver-loop-limit-exceeded
+        // See: http://blog.errorception.com/2012/03/tale-of-unfindable-js-error.html
+        'originalCreateNotification',
+        'http://tt.epicplay.com',
+        "Can't find variable: ZiteReader",
+        'jigsaw is not defined',
+        'ComboSearch is not defined',
+        'http://loading.retry.widdit.com/',
+        // Facebook borked
+        'fb_xd_fragment',
+        // ISP "optimizing" proxy - `Cache-Control: no-transform` seems to reduce this. (thanks @acdha)
+        // See http://stackoverflow.com/questions/4113268/how-to-stop-javascript-injection-from-vodafone-proxy
+        'bmi_SafeAddOnload',
+        'EBCallBackMessageReceived',
+        // Avast extension error
+        '_avast_submit',
+        'AbortError',
+    ];
+};
+
 function main({
     uid,
     config,
     sessionTracking = false,
     sentryConfig = getDefaultSentryConfig(config),
     ignore = ({ host }) => isLocalhost(host),
+    denyUrls = getDefaultDenyUrls(),
+    ignoreErrors = getDefaultIgnoreErrors(),
 }: SentryOptions) {
     const { SENTRY_DSN, APP_VERSION } = config;
     const { host, release, environment } = sentryConfig;
@@ -155,66 +230,8 @@ function main({
         },
         // Some ignoreErrors and denyUrls are taken from this gist: https://gist.github.com/Chocksy/e9b2cdd4afc2aadc7989762c4b8b495a
         // This gist is suggested in the Sentry documentation: https://docs.sentry.io/clients/javascript/tips/#decluttering-sentry
-        ignoreErrors: [
-            // Ignore random plugins/extensions
-            'top.GLOBALS',
-            'canvas.contentDocument',
-            'MyApp_RemoveAllHighlights',
-            'atomicFindClose',
-            // See http://toolbar.conduit.com/Developer/HtmlAndGadget/Methods/JSInjection.aspx
-            'conduitPage',
-            // https://bugzilla.mozilla.org/show_bug.cgi?id=1678243
-            'XDR encoding failure',
-            'Request timed out',
-            'No network connection',
-            'Failed to fetch',
-            'NetworkError when attempting to fetch resource.',
-            'webkitExitFullScreen', // Bug in Firefox for iOS.
-            'InactiveSession',
-            'UnhandledRejection', // Happens too often in extensions and we have lints for that, so should be safe to ignore.
-            /chrome-extension/,
-            /moz-extension/,
-            'TransferCancel', // User action to interrupt upload or download in Drive.
-            'UploadConflictError', // User uploading the same file again in Drive.
-            'UploadUserError', // Upload error on user's side in Drive.
-            'ValidationError', // Validation error on user's side in Drive.
-            'ChunkLoadError', // WebPack loading source code.
-            /ResizeObserver loop/, // Chromium bug https://stackoverflow.com/questions/49384120/resizeobserver-loop-limit-exceeded
-            // See: http://blog.errorception.com/2012/03/tale-of-unfindable-js-error.html
-            'originalCreateNotification',
-            'http://tt.epicplay.com',
-            "Can't find variable: ZiteReader",
-            'jigsaw is not defined',
-            'ComboSearch is not defined',
-            'http://loading.retry.widdit.com/',
-            // Facebook borked
-            'fb_xd_fragment',
-            // ISP "optimizing" proxy - `Cache-Control: no-transform` seems to reduce this. (thanks @acdha)
-            // See http://stackoverflow.com/questions/4113268/how-to-stop-javascript-injection-from-vodafone-proxy
-            'bmi_SafeAddOnload',
-            'EBCallBackMessageReceived',
-            // Avast extension error
-            '_avast_submit',
-            'AbortError',
-        ],
-        denyUrls: [
-            // Google Adsense
-            /pagead\/js/i,
-            // Facebook flakiness
-            /graph\.facebook\.com/i,
-            // Facebook blocked
-            /connect\.facebook\.net\/en_US\/all\.js/i,
-            // Woopra flakiness
-            /eatdifferent\.com\.woopra-ns\.com/i,
-            /static\.woopra\.com\/js\/woopra\.js/i,
-            // Chrome extensions
-            /extensions\//i,
-            /^chrome:\/\//i,
-            // Other plugins
-            /127\.0\.0\.1:4001\/isrunning/i, // Cacaoweb
-            /webappstoolbarba\.texthelp\.com\//i,
-            /metrics\.itunes\.apple\.com\.edgesuite\.net\//i,
-        ],
+        ignoreErrors,
+        denyUrls,
     });
 
     configureScope((scope) => {
