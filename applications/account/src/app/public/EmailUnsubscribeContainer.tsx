@@ -12,13 +12,19 @@ import {
     useLoading,
     useNotifications,
 } from '@proton/components';
+import { NewsletterSubscriptionUpdateData } from '@proton/components/containers/account/EmailSubscriptionToggles';
 import { authJwt } from '@proton/shared/lib/api/auth';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getAuthAPI, getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
-import { getNewsExternal, updateNewsExternal } from '@proton/shared/lib/api/settings';
-import { NEWS } from '@proton/shared/lib/constants';
+import { getNewsExternal, patchNewsExternal } from '@proton/shared/lib/api/settings';
+import {
+    NEWSLETTER_SUBSCRIPTIONS,
+    NEWSLETTER_SUBSCRIPTIONS_BITS,
+    NEWSLETTER_SUBSCRIPTIONS_BY_BITS,
+} from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
-import { clearBit, getBits, setBit } from '@proton/shared/lib/helpers/bitset';
+import { getBits } from '@proton/shared/lib/helpers/bitset';
+import { isGlobalFeatureNewsEnabled } from '@proton/shared/lib/helpers/newsletter';
 import { Api } from '@proton/shared/lib/interfaces';
 
 import EmailResubscribed from '../components/EmailResubscribed';
@@ -44,6 +50,22 @@ enum ErrorType {
     API,
 }
 
+const getUpdatedSubscription = (
+    currentSubscription: number,
+    subscriptionBits: NEWSLETTER_SUBSCRIPTIONS_BITS[],
+    isEnabled = false
+) => {
+    const updates = subscriptionBits.reduce<Partial<Record<NEWSLETTER_SUBSCRIPTIONS, boolean>>>(
+        (acc, bit) => ({ ...acc, [NEWSLETTER_SUBSCRIPTIONS_BY_BITS[bit]]: isEnabled }),
+        {}
+    );
+
+    return {
+        ...updates,
+        [NEWSLETTER_SUBSCRIPTIONS.FEATURES]: isGlobalFeatureNewsEnabled(currentSubscription, updates),
+    };
+};
+
 const EmailUnsubscribeContainer = () => {
     const api = useApi();
     const silentApi = getSilentApi(api);
@@ -57,7 +79,7 @@ const EmailUnsubscribeContainer = () => {
     const { subscriptions: subscriptionsParam } = useParams<{ subscriptions: string | undefined }>();
 
     const subscriptions = Number(subscriptionsParam);
-    const subscriptionBits = getBits(subscriptions) as NEWS[];
+    const subscriptionBits = getBits(subscriptions);
 
     useEffect(() => {
         const init = async () => {
@@ -73,8 +95,8 @@ const EmailUnsubscribeContainer = () => {
             if (!subscriptionBits.length) {
                 setPage(PAGE.MANAGE);
             } else {
-                const nextNews = subscriptionBits.reduce(clearBit, currentNews);
-                const result = await authApiFn<UserSettingsNewsResponse>(updateNewsExternal(nextNews));
+                const nextNews = getUpdatedSubscription(currentNews, subscriptionBits);
+                const result = await authApiFn<UserSettingsNewsResponse>(patchNewsExternal(nextNews));
                 currentNews = result.UserSettings.News;
             }
 
@@ -96,26 +118,26 @@ const EmailUnsubscribeContainer = () => {
 
     const { createNotification } = useNotifications();
 
-    const update = async (news: number) => {
+    const update = async (data: NewsletterSubscriptionUpdateData) => {
         if (!authApi) {
             return;
         }
 
         const {
             UserSettings: { News },
-        } = await authApi<{ UserSettings: { News: number } }>(updateNewsExternal(news));
+        } = await authApi<{ UserSettings: { News: number } }>(patchNewsExternal(data));
 
         setNews(News);
         createNotification({ text: c('Info').t`Emailing preference saved` });
     };
 
     const handleResubscribeClick = async () => {
-        await withLoading(update(subscriptionBits.reduce(setBit, news || 0)));
+        await withLoading(update(getUpdatedSubscription(news ?? 0, subscriptionBits, true)));
         setPage(PAGE.RESUBSCRIBE);
     };
 
     const handleUnsubscribeClick = async () => {
-        await withLoading(update(subscriptionBits.reduce(clearBit, news || 0)));
+        await withLoading(update(getUpdatedSubscription(news ?? 0, subscriptionBits)));
         setPage(PAGE.UNSUBSCRIBE);
     };
 
@@ -123,11 +145,11 @@ const EmailUnsubscribeContainer = () => {
         setPage(PAGE.MANAGE);
     };
 
-    const handleChange = (news: number) => {
-        void withLoading(update(news));
+    const handleChange = (data: NewsletterSubscriptionUpdateData) => {
+        void withLoading(update(data));
     };
 
-    const categoriesJsx = <EmailSubscriptionCategories news={subscriptionBits} />;
+    const categoriesJsx = <EmailSubscriptionCategories key="subscription-categories" news={subscriptionBits} />;
 
     return (
         <main className="main-area h100">
