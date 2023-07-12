@@ -119,16 +119,15 @@ export const createFormManager = (options: FormManagerOptions) => {
      * - if a stale form has been detected: unsubscribe
      * - on each detected form: recycle/create form handle and reconciliate its fields
      * Returns a boolean flag indicating wether or not the detection was ran */
-    const detect = debounce(
+    const runDetection = debounce(
         withContext<(reason: string) => Promise<boolean>>(
             async ({ destroy, service: { detector } }, reason: string) => {
-                if (ctx.busy || !ctx.active) return false;
-                ctx.busy = true;
-                cancelIdleCallback(ctx.detectionRequest);
                 garbagecollect();
 
                 if (await detector.shouldRunDetection()) {
                     ctx.detectionRequest = requestIdleCallback(() => {
+                        ctx.busy = true;
+
                         if (ctx.active) {
                             logger.info(`[FormTracker::Detector] Running detection for "${reason}"`);
 
@@ -169,9 +168,14 @@ export const createFormManager = (options: FormManagerOptions) => {
                 return false;
             }
         ),
-        150,
-        { leading: true }
+        150
     );
+
+    const detect = async (reason: string) => {
+        if (ctx.busy || !ctx.active) return false;
+        cancelIdleCallback(ctx.detectionRequest);
+        return Boolean(await runDetection(reason));
+    };
 
     /**
      * Form Detection Trigger via DOM Mutation :
@@ -249,7 +253,7 @@ export const createFormManager = (options: FormManagerOptions) => {
         ctx.busy = false;
 
         cancelIdleCallback(ctx.detectionRequest);
-        detect.cancel();
+        runDetection.cancel();
         listeners.removeAll();
 
         ctx.trackedForms.forEach((form) => detachTrackedForm(form.element));
