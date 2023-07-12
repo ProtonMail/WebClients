@@ -414,6 +414,7 @@ export const getSendIcsAction =
                     partstat: getAttendeePartstat(selfAttendeeWithPartstat),
                     emailAddress: getAttendeeEmail(selfAttendee),
                 };
+
                 await sendIcs({
                     method: ICAL_METHOD.REPLY,
                     ics: replyIcs,

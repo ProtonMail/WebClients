@@ -225,7 +225,7 @@ describe('getSendIcsAction', () => {
             });
             expect(sendIcsSpy).toHaveBeenNthCalledWith(2, {
                 method: 'CANCEL',
-                ics: 'BEGIN:VCALENDAR\r\nPRODID:ProtonCal\r\nVERSION:2.0\r\nMETHOD:CANCEL\r\nCALSCALE:GREGORIAN\r\nBEGIN:VTIMEZONE\r\nTZID:Europe/Oslo\r\nEND:VTIMEZONE\r\nBEGIN:VEVENT\r\nUID:vLuqif_R99XqZlDXKmotcoBkJZ4j@proton.me\r\nDTSTART;TZID=Europe/Oslo:20230531T090000\r\nDTEND;TZID=Europe/Oslo:20230531T093000\r\nSEQUENCE:0\r\nORGANIZER;CN=unlimited:mailto:unlimited@proton.test\r\nSUMMARY:test 10\r\nX-PM-SHARED-EVENT-ID:nsgA6N6lbhgc1Fl49VHyNoBwtGpx-IHgBeyxaGUlw_3Pe3HMlo4qvm\r\n DHeV_RLSiT6plc-X9kS-ErcPJfHgYYiZwx6jwFrlk3ZnIdAyrupNM=\r\nDTSTAMP:20230525T114641Z\r\nATTENDEE:mailto:pmtest2@proton.test\r\nEND:VEVENT\r\nEND:VCALENDAR',
+                ics: 'BEGIN:VCALENDAR\r\nPRODID:ProtonCal\r\nVERSION:2.0\r\nMETHOD:CANCEL\r\nCALSCALE:GREGORIAN\r\nBEGIN:VTIMEZONE\r\nTZID:Europe/Oslo\r\nEND:VTIMEZONE\r\nBEGIN:VEVENT\r\nUID:vLuqif_R99XqZlDXKmotcoBkJZ4j@proton.me\r\nDTSTART;TZID=Europe/Oslo:20230531T090000\r\nDTEND;TZID=Europe/Oslo:20230531T093000\r\nSEQUENCE:0\r\nORGANIZER;CN=unlimited:mailto:unlimited@proton.test\r\nSUMMARY:test 10\r\nDTSTAMP:20230525T114641Z\r\nX-PM-SHARED-EVENT-ID:nsgA6N6lbhgc1Fl49VHyNoBwtGpx-IHgBeyxaGUlw_3Pe3HMlo4qvm\r\n DHeV_RLSiT6plc-X9kS-ErcPJfHgYYiZwx6jwFrlk3ZnIdAyrupNM=\r\nATTENDEE:mailto:pmtest2@proton.test\r\nEND:VEVENT\r\nEND:VCALENDAR',
                 addressID: 'fHR97Meg0sNme5k8IFa2umNtk5FjTUA7FbImbZj7RIO3U5hMmGk8_NF6a7qgSZ2QviSQmEg7Qib9xfLEdjCdXA==',
                 from: { Address: 'unlimited@proton.test', Name: 'unlimited' },
                 to: [{ Address: 'pmtest2@proton.test', Name: 'pmtest2@proton.test' }],
@@ -385,7 +385,7 @@ describe('getSendIcsAction', () => {
             });
             expect(sendIcsSpy).toHaveBeenNthCalledWith(3, {
                 method: 'CANCEL',
-                ics: 'BEGIN:VCALENDAR\r\nPRODID:ProtonCal\r\nVERSION:2.0\r\nMETHOD:CANCEL\r\nCALSCALE:GREGORIAN\r\nBEGIN:VTIMEZONE\r\nTZID:Europe/Oslo\r\nEND:VTIMEZONE\r\nBEGIN:VEVENT\r\nUID:vLuqif_R99XqZlDXKmotcoBkJZ4j@proton.me\r\nDTSTART;TZID=Europe/Oslo:20230531T090000\r\nDTEND;TZID=Europe/Oslo:20230531T093000\r\nSEQUENCE:0\r\nORGANIZER;CN=unlimited:mailto:unlimited@proton.test\r\nSUMMARY:test 10\r\nX-PM-SHARED-EVENT-ID:nsgA6N6lbhgc1Fl49VHyNoBwtGpx-IHgBeyxaGUlw_3Pe3HMlo4qvm\r\n DHeV_RLSiT6plc-X9kS-ErcPJfHgYYiZwx6jwFrlk3ZnIdAyrupNM=\r\nDTSTAMP:20230525T114641Z\r\nATTENDEE:mailto:pmtest2@proton.test\r\nEND:VEVENT\r\nEND:VCALENDAR',
+                ics: 'BEGIN:VCALENDAR\r\nPRODID:ProtonCal\r\nVERSION:2.0\r\nMETHOD:CANCEL\r\nCALSCALE:GREGORIAN\r\nBEGIN:VTIMEZONE\r\nTZID:Europe/Oslo\r\nEND:VTIMEZONE\r\nBEGIN:VEVENT\r\nUID:vLuqif_R99XqZlDXKmotcoBkJZ4j@proton.me\r\nDTSTART;TZID=Europe/Oslo:20230531T090000\r\nDTEND;TZID=Europe/Oslo:20230531T093000\r\nSEQUENCE:0\r\nORGANIZER;CN=unlimited:mailto:unlimited@proton.test\r\nSUMMARY:test 10\r\nDTSTAMP:20230525T114641Z\r\nX-PM-SHARED-EVENT-ID:nsgA6N6lbhgc1Fl49VHyNoBwtGpx-IHgBeyxaGUlw_3Pe3HMlo4qvm\r\n DHeV_RLSiT6plc-X9kS-ErcPJfHgYYiZwx6jwFrlk3ZnIdAyrupNM=\r\nATTENDEE:mailto:pmtest2@proton.test\r\nEND:VEVENT\r\nEND:VCALENDAR',
                 addressID: 'fHR97Meg0sNme5k8IFa2umNtk5FjTUA7FbImbZj7RIO3U5hMmGk8_NF6a7qgSZ2QviSQmEg7Qib9xfLEdjCdXA==',
                 from: { Address: 'unlimited@proton.test', Name: 'unlimited' },
                 to: [{ Address: 'pmtest2@proton.test', Name: 'pmtest2@proton.test' }],
@@ -507,7 +507,7 @@ describe('getSendIcsAction', () => {
             expect(sendIcsSpy).toHaveBeenCalledTimes(1);
             expect(sendIcsSpy).toHaveBeenCalledWith({
                 method: 'CANCEL',
-                ics: 'BEGIN:VCALENDAR\r\nPRODID:ProtonCal\r\nVERSION:2.0\r\nMETHOD:CANCEL\r\nCALSCALE:GREGORIAN\r\nBEGIN:VTIMEZONE\r\nTZID:Europe/Oslo\r\nEND:VTIMEZONE\r\nBEGIN:VEVENT\r\nUID:vLuqif_R99XqZlDXKmotcoBkJZ4j@proton.me\r\nDTSTART;TZID=Europe/Oslo:20230531T090000\r\nDTEND;TZID=Europe/Oslo:20230531T093000\r\nSEQUENCE:1\r\nORGANIZER;CN=unlimited:mailto:unlimited@proton.test\r\nSUMMARY:test 10\r\nX-PM-SHARED-EVENT-ID:nsgA6N6lbhgc1Fl49VHyNoBwtGpx-IHgBeyxaGUlw_3Pe3HMlo4qvm\r\n DHeV_RLSiT6plc-X9kS-ErcPJfHgYYiZwx6jwFrlk3ZnIdAyrupNM=\r\nDTSTAMP:20230525T114641Z\r\nATTENDEE:mailto:plus@proton.test\r\nATTENDEE:mailto:pmtest2@proton.test\r\nEND:VEVENT\r\nEND:VCALENDAR',
+                ics: 'BEGIN:VCALENDAR\r\nPRODID:ProtonCal\r\nVERSION:2.0\r\nMETHOD:CANCEL\r\nCALSCALE:GREGORIAN\r\nBEGIN:VTIMEZONE\r\nTZID:Europe/Oslo\r\nEND:VTIMEZONE\r\nBEGIN:VEVENT\r\nUID:vLuqif_R99XqZlDXKmotcoBkJZ4j@proton.me\r\nDTSTART;TZID=Europe/Oslo:20230531T090000\r\nDTEND;TZID=Europe/Oslo:20230531T093000\r\nSEQUENCE:1\r\nORGANIZER;CN=unlimited:mailto:unlimited@proton.test\r\nSUMMARY:test 10\r\nDTSTAMP:20230525T114641Z\r\nX-PM-SHARED-EVENT-ID:nsgA6N6lbhgc1Fl49VHyNoBwtGpx-IHgBeyxaGUlw_3Pe3HMlo4qvm\r\n DHeV_RLSiT6plc-X9kS-ErcPJfHgYYiZwx6jwFrlk3ZnIdAyrupNM=\r\nATTENDEE:mailto:plus@proton.test\r\nATTENDEE:mailto:pmtest2@proton.test\r\nEND:VEVENT\r\nEND:VCALENDAR',
                 addressID: 'fHR97Meg0sNme5k8IFa2umNtk5FjTUA7FbImbZj7RIO3U5hMmGk8_NF6a7qgSZ2QviSQmEg7Qib9xfLEdjCdXA==',
                 from: { Address: 'unlimited@proton.test', Name: 'unlimited' },
                 to: [
@@ -614,7 +614,7 @@ describe('getSendIcsAction', () => {
             expect(sendIcsSpy).toHaveBeenCalledTimes(1);
             expect(sendIcsSpy).toHaveBeenCalledWith({
                 method: 'REPLY',
-                ics: 'BEGIN:VCALENDAR\r\nPRODID:ProtonCal\r\nVERSION:2.0\r\nMETHOD:REPLY\r\nCALSCALE:GREGORIAN\r\nBEGIN:VTIMEZONE\r\nTZID:Europe/Oslo\r\nEND:VTIMEZONE\r\nBEGIN:VEVENT\r\nUID:vLuqif_R99XqZlDXKmotcoBkJZ4j@proton.me\r\nDTSTART;TZID=Europe/Oslo:20230531T090000\r\nDTEND;TZID=Europe/Oslo:20230531T093000\r\nSEQUENCE:0\r\nORGANIZER;CN=unlimited:mailto:unlimited@proton.test\r\nSUMMARY:test 10\r\nX-PM-PROTON-REPLY;VALUE=BOOLEAN:TRUE\r\nDTSTAMP:20230525T114641Z\r\nATTENDEE;PARTSTAT=ACCEPTED:mailto:plus@proton.test\r\nEND:VEVENT\r\nEND:VCALENDAR',
+                ics: 'BEGIN:VCALENDAR\r\nPRODID:ProtonCal\r\nVERSION:2.0\r\nMETHOD:REPLY\r\nCALSCALE:GREGORIAN\r\nBEGIN:VTIMEZONE\r\nTZID:Europe/Oslo\r\nEND:VTIMEZONE\r\nBEGIN:VEVENT\r\nUID:vLuqif_R99XqZlDXKmotcoBkJZ4j@proton.me\r\nDTSTART;TZID=Europe/Oslo:20230531T090000\r\nDTEND;TZID=Europe/Oslo:20230531T093000\r\nSEQUENCE:0\r\nORGANIZER;CN=unlimited:mailto:unlimited@proton.test\r\nSUMMARY:test 10\r\nDTSTAMP:20230525T114641Z\r\nX-PM-PROTON-REPLY;VALUE=BOOLEAN:TRUE\r\nATTENDEE;PARTSTAT=ACCEPTED:mailto:plus@proton.test\r\nEND:VEVENT\r\nEND:VCALENDAR',
                 addressID: 'fHR97Meg0sNme5k8IFa2umNtk5FjTUA7FbImbZj7RIO3U5hMmGk8_NF6a7qgSZ2QviSQmEg7Qib9xfLEdjCdXA==',
                 from: { Address: 'unlimited@proton.test', Name: 'unlimited' },
                 to: [{ Address: 'unlimited@proton.test', Name: 'unlimited' }],
