@@ -1,3 +1,5 @@
+import getMonth from 'date-fns/getMonth';
+import getYear from 'date-fns/getYear';
 import { c } from 'ttag';
 
 import type { ItemImportIntent } from '@proton/pass/types';
@@ -10,9 +12,9 @@ import lastItem from '@proton/utils/lastItem';
 
 import { readCSV } from '../helpers/csv.reader';
 import { ImportReaderError } from '../helpers/reader.error';
-import { getImportedVaultName, importLoginItem, importNoteItem } from '../helpers/transformers';
+import { getImportedVaultName, importCreditCardItem, importLoginItem, importNoteItem } from '../helpers/transformers';
 import type { ImportPayload, ImportVault } from '../types';
-import type { LastPassItem } from './lastpass.types';
+import { type LastPassItem, LastPassNoteType } from './lastpass.types';
 
 const LASTPASS_EXPECTED_HEADERS: (keyof LastPassItem)[] = [
     'url',
@@ -23,6 +25,13 @@ const LASTPASS_EXPECTED_HEADERS: (keyof LastPassItem)[] = [
     'grouping',
     'fav',
 ];
+
+const getFieldValue = (extra: LastPassItem['extra'], key: string) => {
+    /* match key and get the value: 'NoteType:Credit Card' */
+    if (!extra) return null;
+    const match = extra.match(new RegExp(`${key}:(.*)`));
+    return match && match[1];
+};
 
 const processLoginItem = (item: LastPassItem): ItemImportIntent<'login'> =>
     importLoginItem({
@@ -38,6 +47,31 @@ const processNoteItem = (item: LastPassItem): ItemImportIntent<'note'> =>
     importNoteItem({
         name: item.name,
         note: item.extra,
+    });
+
+const getCCExpirationDate = (extra: LastPassItem['extra']) => {
+    /* lastpass exp date format: 'January, 2025' */
+    const unformatted = getFieldValue(extra, 'Expiration Date');
+
+    if (!unformatted) return null;
+
+    const date = new Date(`${unformatted} UTC`);
+    const month = Number(getMonth(date) + 1).toLocaleString('en-US', {
+        minimumIntegerDigits: 2,
+        useGrouping: false,
+    });
+
+    return `${month}${getYear(date)}`;
+};
+
+const processCreditCardItem = (item: LastPassItem): ItemImportIntent<'creditCard'> =>
+    importCreditCardItem({
+        name: item.name,
+        note: getFieldValue(item.extra, 'Notes'),
+        cardholderName: getFieldValue(item.extra, 'Name on Card'),
+        number: getFieldValue(item.extra, 'Number'),
+        verificationNumber: getFieldValue(item.extra, 'Security Code'),
+        expirationDate: getCCExpirationDate(item.extra),
     });
 
 export const readLastPassData = async (data: string): Promise<ImportPayload> => {
@@ -77,8 +111,11 @@ export const readLastPassData = async (data: string): Promise<ImportPayload> => 
                             const isNote = item.url === 'http://sn';
                             if (!isNote) return processLoginItem(item);
 
-                            const matchType = isNote && item.extra?.match(/^NoteType:(.*)/);
-                            const noteType = matchType && matchType[1];
+                            const noteType = getFieldValue(item.extra, 'NoteType');
+
+                            if (noteType === LastPassNoteType.CREDIT_CARD) {
+                                return processCreditCardItem(item);
+                            }
 
                             if (!noteType) return processNoteItem(item);
                             ignored.push(`[${capitalize(noteType)}] ${item.name}`);
