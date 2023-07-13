@@ -116,7 +116,7 @@ export const createFormHandles = (options: DetectedForm): FormHandle => {
 
             if (hasUnprocessedFields(options.form.parentElement!)) {
                 setFormProcessable(form);
-                void formManager.detect('NewFormFields');
+                void formManager.detect({ reason: 'NewFormFields' });
             }
         }),
         50
