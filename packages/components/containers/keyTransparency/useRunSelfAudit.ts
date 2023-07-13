@@ -12,7 +12,7 @@ import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { MINUTE } from '@proton/shared/lib/constants';
 import { getPrimaryKey } from '@proton/shared/lib/keys';
 
-import { useApi, useConfig, useGetAddresses, useGetUserKeys, useUser } from '../../hooks';
+import { useApi, useConfig, useGetAddressKeys, useGetAddresses, useGetUserKeys, useUser } from '../../hooks';
 import useGetLatestEpoch from './useGetLatestEpoch';
 import useReportSelfAuditErrors from './useReportSelfAuditErrors';
 import useSaveSKLToLS from './useSaveSKLToLS';
@@ -31,6 +31,7 @@ const useRunSelfAudit = () => {
     const uploadMissingSKL = useUploadMissingSKL();
     const saveSKLToLS = useSaveSKLToLS();
     const reportSelfAuditErrors = useReportSelfAuditErrors();
+    const getAddressKeys = useGetAddressKeys();
     const selfAuditBaseInterval = getSelfAuditInterval();
 
     const runSelfAudit = async () => {
@@ -55,7 +56,8 @@ const useRunSelfAudit = () => {
                 ktLSAPI,
                 saveSKLToLS,
                 getLatestEpoch,
-                uploadMissingSKL
+                uploadMissingSKL,
+                getAddressKeys
             );
             await reportSelfAuditErrors(selfAuditResult);
             await storeAuditResult(userID, selfAuditResult, userPrimaryPublicKey, ktLSAPI);

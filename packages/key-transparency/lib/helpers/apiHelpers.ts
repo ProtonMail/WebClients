@@ -1,5 +1,5 @@
 import { CryptoProxy, PrivateKeyReference, PublicKeyReference, VERIFICATION_STATUS } from '@proton/crypto';
-import { getSignedKeyListRoute, getSignedKeyListsRoute, updateSignedKeyListRoute } from '@proton/shared/lib/api/keys';
+import { getSignedKeyListRoute, getSignedKeyListsRoute, updateSignedKeyListRoute, updateSignedKeyListSignatureRoute } from '@proton/shared/lib/api/keys';
 import { HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
 import { Address, Api, FetchedSignedKeyList, SignedKeyList } from '@proton/shared/lib/interfaces';
 
@@ -168,6 +168,24 @@ export const uploadVerifiedEpoch = async (
                 detached: true,
                 context: KT_VE_SIGNING_CONTEXT,
             }),
+        })
+    );
+};
+
+/**
+ * Update the signature for an existing SKL
+ */
+export const updateSignedKeyListSignature = async (
+    addressID: string,
+    revision: number,
+    newSignature: string,
+    api: Api
+) => {
+    await api(
+        updateSignedKeyListSignatureRoute({
+            AddressID: addressID,
+            Revision: revision,
+            Signature: newSignature,
         })
     );
 };
