@@ -10,8 +10,15 @@ import {
     SaveSKLToLS,
     UploadMissingSKL,
 } from '@proton/shared/lib/interfaces';
+import { getSignedKeyListSignature } from '@proton/shared/lib/keys';
 
-import { fetchProof, fetchSignedKeyLists, fetchVerifiedEpoch, uploadVerifiedEpoch } from '../../helpers/apiHelpers';
+import {
+    fetchProof,
+    fetchSignedKeyLists,
+    fetchVerifiedEpoch,
+    updateSignedKeyListSignature,
+    uploadVerifiedEpoch,
+} from '../../helpers/apiHelpers';
 import { KeyTransparencyError, throwKTError } from '../../helpers/utils';
 import {
     AddressAuditResult,
@@ -112,10 +119,13 @@ const earlyTermination = async (
     return false;
 };
 
-const successOrWarning = (email: string, sklAudits: SKLAuditResult[]) => {
+const successOrWarning = (email: string, sklAudits: SKLAuditResult[], signatureWasInTheFuture: boolean) => {
     const addressWasDisabled = sklAudits.filter((audit) => audit.status === SKLAuditStatus.Obsolete).length != 0;
-    const sklVerificationFailed =
-        sklAudits.filter((audit) => audit.status === SKLAuditStatus.ExistentUnverified).length != 0;
+    const numberOfFailedSig = sklAudits.filter((audit) => audit.status === SKLAuditStatus.ExistentUnverified).length;
+    /**
+     * If the SKL sig was in the future (and got fixed), then we don't show a warning.
+     */
+    const sklVerificationFailed = numberOfFailedSig > 1 || (numberOfFailedSig == 1 && !signatureWasInTheFuture);
     if (addressWasDisabled || sklVerificationFailed) {
         return {
             email,
@@ -130,13 +140,38 @@ const successOrWarning = (email: string, sklAudits: SKLAuditResult[]) => {
     return { email, status: AddressAuditStatus.Success };
 };
 
+/**
+ * Some SKL will fail verification because
+ * they were signed with a time in the future.
+ * In this case we resign them.
+ */
+const checkAndFixSKLInTheFuture = async (address: Address, primaryAddressKey: PrivateKeyReference, api: Api) => {
+    const { Email, ID, SignedKeyList } = address;
+    const { Revision, Data, Signature } = SignedKeyList!;
+    if (Revision === 1) {
+        const signatureIsInTheFuture = await verifySKLSignature(
+            [primaryAddressKey],
+            Data,
+            Signature,
+            new Date(0xffffffff * 1000) // max date in the future
+        );
+        if (signatureIsInTheFuture) {
+            const newSignature = await getSignedKeyListSignature(Data, primaryAddressKey);
+            await updateSignedKeyListSignature(ID, Revision, newSignature, api);
+            return;
+        }
+    }
+    return throwKTError('Input SKL signature was not verified', { email: Email, inputSKL: SignedKeyList });
+};
+
 const auditAddressImplementation = async (
     address: Address,
     userKeys: DecryptedKey[],
     epoch: Epoch,
     saveSKLToLS: SaveSKLToLS,
     api: Api,
-    uploadMissingSKL: UploadMissingSKL
+    uploadMissingSKL: UploadMissingSKL,
+    getAddressKeys: (id: string) => Promise<DecryptedKey[]>
 ): Promise<AddressAuditResult> => {
     const inputSKL = address.SignedKeyList;
     const email = address.Email;
@@ -173,20 +208,15 @@ const auditAddressImplementation = async (
         })
     );
     const addressKeys = await importKeys(address.Keys.filter(({ Active }) => Active === 1));
-    const addressVerificationKeys = addressKeys.filter(({ Flags }) => hasBit(Flags, KEY_FLAG.FLAG_NOT_COMPROMISED));
+    const addressVerificationKeys = addressKeys
+        .filter(({ Flags }) => hasBit(Flags, KEY_FLAG.FLAG_NOT_COMPROMISED))
+        .map(({ PublicKey }) => PublicKey);
 
     const sklAudits = await Promise.all(
         range(verifiedRevision + 1, lastIncludedRevision).map((revision) => {
             const skl = newSKLs.find((skl) => skl.Revision == revision);
             const proof = proofs.find(({ revision: proofRevision }) => proofRevision == revision)?.proof!;
-            return auditSKL(
-                email,
-                addressVerificationKeys.map(({ PublicKey }) => PublicKey),
-                revision,
-                skl ?? null,
-                epoch,
-                proof
-            );
+            return auditSKL(email, addressVerificationKeys, revision, skl ?? null, epoch, proof);
         })
     );
 
@@ -211,21 +241,22 @@ const auditAddressImplementation = async (
     await verifyProofOfAbsenceForRevision(nextRevisionProof, email, epoch.TreeHash, lastIncludedRevision + 1);
 
     const audit = sklAudits.find(({ revision }) => revision === inputSKL.Revision);
+    let signatureWasInTheFuture = false;
     if (audit) {
         if (audit.signedKeyList?.Data !== inputSKL.Data) {
             return throwKTError('Audited SKL doesnt match the input SKL', { email, inputSKL });
         }
         if (audit.status !== SKLAuditStatus.ExistentVerified) {
-            return throwKTError('Input SKL signature was not verified', { email, inputSKL });
+            const primaryAddressKey = (await getAddressKeys(address.ID))[0].privateKey;
+            await checkAndFixSKLInTheFuture(address, primaryAddressKey, api);
+            signatureWasInTheFuture = true;
         }
     } else {
-        const verified = await verifySKLSignature(
-            addressVerificationKeys.map(({ PublicKey }) => PublicKey),
-            inputSKL.Data,
-            inputSKL.Signature
-        );
+        const verified = await verifySKLSignature(addressVerificationKeys, inputSKL.Data, inputSKL.Signature);
         if (verified === null) {
-            return throwKTError('Input SKL signature was not verified', { email, inputSKL });
+            const primaryAddressKey = (await getAddressKeys(address.ID))[0].privateKey;
+            await checkAndFixSKLInTheFuture(address, primaryAddressKey, api);
+            signatureWasInTheFuture = true;
         }
         const expectedMinEpochID = inputSKL.MinEpochID ?? inputSKL.ExpectedMinEpochID;
         if (!expectedMinEpochID) {
@@ -238,7 +269,7 @@ const auditAddressImplementation = async (
 
     await uploadNewVerifiedEpoch(sklAudits, epoch, address, userPrimaryKey, api);
 
-    return successOrWarning(email, sklAudits);
+    return successOrWarning(email, sklAudits, signatureWasInTheFuture);
 };
 
 export const auditAddress = async (
@@ -247,10 +278,19 @@ export const auditAddress = async (
     epoch: Epoch,
     saveSKLToLS: SaveSKLToLS,
     api: Api,
-    uploadMissingSKL: UploadMissingSKL
+    uploadMissingSKL: UploadMissingSKL,
+    getAddressKeys: (id: string) => Promise<DecryptedKey[]>
 ): Promise<AddressAuditResult> => {
     try {
-        return await auditAddressImplementation(address, userKeys, epoch, saveSKLToLS, api, uploadMissingSKL);
+        return await auditAddressImplementation(
+            address,
+            userKeys,
+            epoch,
+            saveSKLToLS,
+            api,
+            uploadMissingSKL,
+            getAddressKeys
+        );
     } catch (error: any) {
         if (error instanceof KeyTransparencyError) {
             return { email: address.Email, status: AddressAuditStatus.Failure, error };
