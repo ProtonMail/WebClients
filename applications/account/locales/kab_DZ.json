@@ -2259,11 +2259,6 @@
         "Teffɣeḍ seg ujerred ɣer yimaylen ${ categoriesJsx }."
       ]
     },
-    "Email Unsubscribe Categories": {
-      "${ allCategoriesExceptTheLastOne } and ${ lastCategory }": [
-        "${ allCategoriesExceptTheLastOne } d ${ lastCategory }"
-      ]
-    },
     "Enabled 2FA": {
       "2FA": [
         "2FA"
@@ -4278,9 +4273,6 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Akken ad nennaɣ mgal ispament, senqed ma yella kečč d amdan."
-      ],
-      "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and visit our blog from time to time.": [
-        "I wakken ad tḍefreḍ isnerniyen ineggura n yifarisen ${ BRAND_NAME } Proton, tzemreḍ ad tmuletɣeḍ ɣer yimaylen-nneɣ yemgaraden daɣen tzemreḍ ad terzuḍ ɣer ublug-nneɣ sya ɣer da."
       ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Ččar amiḍan-ik·im s yisemdan i tzemreḍ ad tesxedmeḍ i uttekki deg uɣawas amaynut neɣ allus n uɣawas-ik·im amiran. Ad d-tesɛud asmad i yal ${ i18nCurrency } i tserfeḍ."

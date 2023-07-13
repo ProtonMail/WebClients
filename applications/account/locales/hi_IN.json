@@ -2880,11 +2880,6 @@
         "आपने ${ categoriesJsx } ईमेल से सदस्यता समाप्त कर ली है।"
       ]
     },
-    "Email Unsubscribe Categories": {
-      "${ allCategoriesExceptTheLastOne } and ${ lastCategory }": [
-        "${ allCategoriesExceptTheLastOne } और ${ lastCategory }"
-      ]
-    },
     "Enabled 2FA": {
       "2FA": [
         "2-एफए"
@@ -5866,12 +5861,6 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "चूंकि आप एक वफादार उपयोगकर्ता हैं, इसलिए आपके खाते में अतिरिक्त सुविधाएं सक्षम हैं।"
       ],
-      "SMTP allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME }. It is a new feature available to select business users. Please email ${ emailLink } to request access.": [
-        "एसएमटीपी दूसरे लोगो की सेवाओं या डिवाइसों को ${ MAIL_APP_NAME } से ईमेल भेजने देता है। ये एक नई सुविधा है जो कुछ चुने गए बिज़नेस यूज़र को मिली है। एक्सेस पाने के लिए ${ emailLink } पे कृपया ईमेल भेजें।"
-      ],
-      "SMTP allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME }. To use this feature, start by generating a new token.": [
-        "SMTP दूसरे लोगो की सेवाओं या डिवाइसों को ${ MAIL_APP_NAME } से ईमेल भेजने देता है। ये सुविधा इस्तेमाल करने के लिए, नया टोकन बनाने से शुरू करें।"
-      ],
       "Some keys successfully reactivated": [
         "कुछ कुंजियाँ सफलतापूर्वक पुन: सक्रिय हो गईं"
       ],
@@ -6070,9 +6059,6 @@
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "इवेंट आयात करने के लिए, पहले ${ CALENDAR_APP_NAME } में एक कैलेंडर बनाएं। आयात के बाद इवेंट इधर दिखाएं जाएंगे।"
-      ],
-      "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and visit our blog from time to time.": [
-        "${ BRAND_NAME } के नए खबरो के साथ बने रहने के लिए, आप हमारे अलग-अलग ईमेल की सदस्यता ले सकते है या हमारे ब्लॉग पे समय-समय पे आ सकते है।"
       ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "आगे बढ़ने के लिए, खाता पुनर्प्राप्ति विधि चुनें ताकि हम अनुरोध को सत्यापित कर सकें।"
@@ -7765,9 +7751,6 @@
     "Label for news": {
       "${ BRAND_NAME } beta announcements": [
         "${ BRAND_NAME } बीटा खबर"
-      ],
-      "${ BRAND_NAME } company announcements": [
-        "${ BRAND_NAME } कंपनी खबर"
       ],
       "${ BRAND_NAME } for Business newsletter": [
         "${ BRAND_NAME } बिज़नेस खबरपत्र के लिए"
@@ -11286,9 +11269,6 @@
       ],
       "Signed in to member account": [
         "सदस्य खाते पे साइनइन हुए"
-      ],
-      "SMTP tokens": [
-        "SMTP टोकन"
       ],
       "Sort folders alphabetically": [
         "फ़ोल्डरों को वर्णानुक्रम में क्रमबद्ध करें"
