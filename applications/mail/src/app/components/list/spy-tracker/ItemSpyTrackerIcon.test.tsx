@@ -154,6 +154,9 @@ describe('ItemSpyTrackerIcon', () => {
 
         getByText(imageTrackerRow, 'No trackers found');
         getByText(utmTrackerRow, 'No links cleaned');
+
+        // Description is displayed
+        screen.getByText("We didn't find any known trackers and tracking URLs in this email.");
     });
 
     it('should open the privacy dropdown with no protection', async () => {
@@ -167,9 +170,13 @@ describe('ItemSpyTrackerIcon', () => {
 
         // Dropdown title
         const title = screen.getByTestId('privacy:title');
-        getByText(title, 'Protect your email');
+        getByText(title, 'Protect yourself from trackers');
 
         screen.getByTestId('privacy:prevent-tracking-toggle');
+        // Description is displayed
+        screen.getByText(
+            'Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.'
+        );
     });
 
     it('should open the image tracker modal and list expected info', async () => {

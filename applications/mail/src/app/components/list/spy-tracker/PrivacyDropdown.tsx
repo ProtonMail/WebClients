@@ -23,7 +23,7 @@ import UTMTrackerModal from './UTMTrackerModal';
 
 const getTitle = (needsMoreProtection: boolean, trackersCount: number) => {
     if (needsMoreProtection) {
-        return c('Title').t`Protect your email`;
+        return c('Title').t`Protect yourself from trackers`;
     } else {
         if (trackersCount > 0) {
             // translator: trackersCount refers to the number of image trackers + utm trackers found in the message
@@ -36,6 +36,17 @@ const getTitle = (needsMoreProtection: boolean, trackersCount: number) => {
             return c('Title').t`No trackers found`;
         }
     }
+};
+
+const getDescription = (needsMoreProtection: boolean, hasTrackers: boolean) => {
+    if (needsMoreProtection) {
+        return c('Description')
+            .t`Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.`;
+    } else if (!hasTrackers) {
+        return c('Description').t`We didn't find any known trackers and tracking URLs in this email.`;
+    }
+
+    return undefined;
 };
 
 interface Props {
@@ -74,6 +85,7 @@ const PrivacyDropdown = ({ message }: Props) => {
     }, [showSpotlight]);
 
     const title = getTitle(needsMoreProtection, numberOfImageTrackers + numberOfUTMTrackers);
+    const description = getDescription(needsMoreProtection, hasTrackers);
 
     const handleShowImageTrackersDetails = () => {
         if (numberOfImageTrackers > 0) {
@@ -148,6 +160,7 @@ const PrivacyDropdown = ({ message }: Props) => {
                             <h5 className="text-bold mb-2" tabIndex={-2} data-testid="privacy:title">
                                 {title}
                             </h5>
+                            {description && <span data-testid="privacy:description">{description}</span>}
                             <br />
                             <Href className="ml-1" href={emailTrackerProtectionURL} data-testid="privacy:learnmore">{c(
                                 'Info'
