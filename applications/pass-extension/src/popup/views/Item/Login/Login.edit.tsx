@@ -11,7 +11,7 @@ import { passwordSave } from '@proton/pass/store/actions/creators/pw-history';
 import { PassFeature } from '@proton/pass/types/api/features';
 import { prop } from '@proton/pass/utils/fp';
 import { merge } from '@proton/pass/utils/object';
-import { parseOTPValue } from '@proton/pass/utils/otp/otp';
+import { getSecretOrUri, parseOTPValue } from '@proton/pass/utils/otp/otp';
 import { isEmptyString, uniqueId } from '@proton/pass/utils/string';
 import { getEpoch } from '@proton/pass/utils/time';
 import { parseUrl } from '@proton/pass/utils/url';
@@ -63,7 +63,7 @@ export const LoginEdit: VFC<ItemEditProps<'login'>> = ({ vault, revision, onSubm
         password,
         note,
         shareId,
-        totpUri,
+        totpUri: getSecretOrUri(totpUri),
         url: '',
         urls: urls.map(createNewUrl),
         withAlias: false,
