@@ -68,18 +68,11 @@ describe('Import 1password 1pux', () => {
             username: 'john@wick.com',
             password: 'password',
             urls: ['http://localhost:7777'],
-            totpUri: '',
+            totpUri:
+                'otpauth://totp/Login%20item%20with%20two%20TOTP%20and%20one%20text%20extra%20fields?secret=BASE32SECRET3232&algorithm=SHA1&digits=6&period=30',
         });
         expect(loginItemMultiTOTP.trashed).toEqual(false);
         expect(loginItemMultiTOTP.extraFields).toEqual([
-            {
-                fieldName: 'one-time password',
-                type: 'totp',
-                data: {
-                    totpUri:
-                        'otpauth://totp/Login%20item%20with%20two%20TOTP%20and%20one%20text%20extra%20fields?secret=BASE32SECRET3232&algorithm=SHA1&digits=6&period=30',
-                },
-            },
             {
                 fieldName: 'one-time password',
                 type: 'totp',
@@ -107,15 +100,10 @@ describe('Import 1password 1pux', () => {
         expect(emptyLoginItem.metadata.itemUuid).not.toBeUndefined();
         expect(emptyLoginItem.metadata.note).toEqual('');
         expect(emptyLoginItem.trashed).toEqual(false);
-        expect(emptyLoginItem.extraFields).toEqual([
-            {
-                fieldName: 'empty TOTP',
-                type: 'totp',
-                data: {
-                    totpUri: '',
-                },
-            },
-        ]);
+        expect(emptyLoginItem.content.username).toEqual('');
+        expect(emptyLoginItem.content.password).toEqual('');
+        expect(emptyLoginItem.content.totpUri).toEqual('');
+        expect(emptyLoginItem.extraFields).toEqual([]);
 
         /* Login item with single TOTP extra field */
         const loginItemSingleTOTPName = 'Login item with a note and single TOTP extra field';
@@ -127,16 +115,11 @@ describe('Import 1password 1pux', () => {
         expect(loginItemSingleTOTP.modifyTime).toEqual(1688983719);
         expect(loginItemSingleTOTP.metadata.itemUuid).not.toBeUndefined();
         expect(loginItemSingleTOTP.metadata.note).toEqual('this is a login item note');
+        expect(loginItemSingleTOTP.content.totpUri).toEqual(
+            'otpauth://totp/az?secret=QQ&algorithm=SHA1&digits=6&period=30'
+        );
         expect(loginItemSingleTOTP.trashed).toEqual(false);
-        expect(loginItemSingleTOTP.extraFields).toEqual([
-            {
-                fieldName: 'one-time password',
-                type: 'totp',
-                data: {
-                    totpUri: 'otpauth://totp/az?secret=QQ&algorithm=SHA1&digits=6&period=30',
-                },
-            },
-        ]);
+        expect(loginItemSingleTOTP.extraFields).toEqual([]);
 
         /* Login item with special chars in password */
         const specialCharItemName = 'Login item with " in password';
