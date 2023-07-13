@@ -10,7 +10,7 @@ const toMap = (list: string[]) =>
 
 const LIST_PROTON_ATTR = ['data-src', 'src', 'srcset', 'background', 'poster', 'xlink:href', 'href'];
 const MAP_PROTON_ATTR = toMap(LIST_PROTON_ATTR);
-const PROTON_ATTR_TAG_WHITELIST = ['a', 'base'];
+const PROTON_ATTR_TAG_WHITELIST = ['a', 'base', 'area'];
 const MAP_PROTON_ATTR_TAG_WHITELIST = toMap(PROTON_ATTR_TAG_WHITELIST.map((tag) => tag.toUpperCase()));
 
 const shouldPrefix = (tagName: string, attributeName: string) => {
