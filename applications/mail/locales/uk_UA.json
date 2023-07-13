@@ -4157,6 +4157,9 @@
     "Font face option": {
       "System default": [
         "Системна"
+      ],
+      "Theme font": [
+        "Шрифт теми"
       ]
     },
     "Font Size Default": {
@@ -4203,7 +4206,7 @@
         "${ MAIL_APP_NAME } в App Store"
       ],
       "${ MAIL_APP_NAME } on Play Store": [
-        "${ MAIL_APP_NAME } в Play Маркеті"
+        "${ MAIL_APP_NAME } у Play Маркеті"
       ],
       "account logins": [
         "облікові записи"
@@ -4254,7 +4257,7 @@
         "Тільки для ваших очей"
       ],
       "Get free storage": [
-        "Отримати безплатнe сховище"
+        "Отримати безплатне сховище"
       ],
       "Get mobile app": [
         "Отримати мобільний застосунок"
@@ -9528,6 +9531,12 @@
       ],
       "Warning: suspected fake website": [
         "Попередження: імовірно підроблений вебсайт"
+      ],
+      "We protected you from ${ trackersCount } tracker": [
+        "Ми захистили вас від ${ trackersCount } трекера",
+        "Ми захистили вас від ${ trackersCount } трекерів",
+        "Ми захистили вас від ${ trackersCount } трекерів",
+        "Ми захистили вас від ${ trackersCount } трекерів"
       ],
       "Welcome": [
         "Вітаємо"
