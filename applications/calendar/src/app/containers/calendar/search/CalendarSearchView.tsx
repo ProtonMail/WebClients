@@ -208,7 +208,7 @@ const CalendarSearchView = ({
                                         ref={isFirst ? firstItemRef : null}
                                         type="button"
                                         key={`${CalendarID}-${ID}-${fakeUTCStartDate}`}
-                                        className="flex flex-nowrap search-event-cell flex-align-items-center text-left"
+                                        className="flex flex-nowrap search-event-cell flex-align-items-center text-left interactive-pseudo w100"
                                         onClick={(e) => handleClickSearchItem(e, item)}
                                     >
                                         <span
