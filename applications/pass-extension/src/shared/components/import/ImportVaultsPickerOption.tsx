@@ -1,5 +1,5 @@
 import type { FC } from 'react';
-import { useMemo } from 'react';
+import { useEffect, useMemo } from 'react';
 import { useSelector } from 'react-redux';
 
 import { c, msgid } from 'ttag';
@@ -19,6 +19,7 @@ type VaultsPickerOptionProps = {
     onChange: (id: string) => void;
     data: ImportVault;
     vaults: VaultShare[];
+    vaultsRemaining: number;
 };
 
 export const ImportVaultPickerOption: FC<VaultsPickerOptionProps> = ({
@@ -28,10 +29,19 @@ export const ImportVaultPickerOption: FC<VaultsPickerOptionProps> = ({
     onChange,
     data: { vaultName, items, id },
     vaults,
+    vaultsRemaining,
 }) => {
     const count = useMemo(() => items.length, [items]);
     const primaryVaultId = useSelector(selectPrimaryVault).shareId;
     const { didDowngrade, needsUpgrade } = useSelector(selectVaultLimits);
+
+    /* handle edge case: when selecting "New Vault" then creating a new vault in extension popup, trigger onChange to
+     * automatically switch "New Vault" to primary vault if vault limit is reached */
+    useEffect(() => {
+        if (vaultsRemaining < 0 && id === value) {
+            onChange(primaryVaultId);
+        }
+    }, [vaultsRemaining]);
 
     return (
         <>
@@ -56,19 +66,18 @@ export const ImportVaultPickerOption: FC<VaultsPickerOptionProps> = ({
                             /* if user needs to upgrade, this means he cannot
                              * create any more vaults - disable this option when
                              * trying to import if that is the case */
-                            !needsUpgrade && (
-                                <Option
-                                    key={'new-vault'}
-                                    title={c('Label').t`Create new vault`}
-                                    value={id}
-                                    className="text-sm"
-                                >
-                                    <span className="flex flex-align-items-center">
-                                        <Icon name="plus" size={14} className="mr-3 flex-item-nogrow" />
-                                        <span className="flex-item-fluid text-ellipsis">{c('Label').t`New vault`}</span>
-                                    </span>
-                                </Option>
-                            ),
+                            <Option
+                                key={'new-vault'}
+                                title={c('Label').t`Create new vault`}
+                                value={id}
+                                className="text-sm"
+                                disabled={needsUpgrade || vaultsRemaining <= 0}
+                            >
+                                <span className="flex flex-align-items-center">
+                                    <Icon name="plus" size={14} className="mr-3 flex-item-nogrow" />
+                                    <span className="flex-item-fluid text-ellipsis">{c('Label').t`New vault`}</span>
+                                </span>
+                            </Option>,
                             ...vaults.map((vault) => (
                                 <Option
                                     key={vault.shareId}
