@@ -1,5 +1,6 @@
 import { RefObject, useCallback } from 'react';
 
+import { Dropzone } from '@proton/components/components';
 import { ToolbarConfig } from '@proton/components/components/editor/helpers/getToolbarConfig';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
@@ -92,6 +93,10 @@ const Editor = ({
         [onAddAttachments, metadata.supportImages]
     );
 
+    const plaintextEditor = (
+        <PlainTextEditor onChange={onChange} placeholder={placeholder} onReady={onReady} onFocus={onFocus} />
+    );
+
     return (
         <>
             <div
@@ -110,12 +115,11 @@ const Editor = ({
                     ])}
                 >
                     {metadata.isPlainText ? (
-                        <PlainTextEditor
-                            onChange={onChange}
-                            placeholder={placeholder}
-                            onReady={onReady}
-                            onFocus={onFocus}
-                        />
+                        !!onAddAttachments ? (
+                            <Dropzone onDrop={onAddAttachments}>{plaintextEditor}</Dropzone>
+                        ) : (
+                            plaintextEditor
+                        )
                     ) : (
                         <RoosterEditor
                             placeholder={placeholder}
