@@ -1,20 +1,13 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import { useLoading } from '@proton/hooks';
 import { orderFolders } from '@proton/shared/lib/api/labels';
 import { MAIL_UPSELL_PATHS, ROOT_FOLDER } from '@proton/shared/lib/constants';
 import { hasReachedFolderLimit } from '@proton/shared/lib/helpers/folder';
 
 import { Info, LabelsUpsellModal, Loader, MailUpsellButton, useModalState } from '../../components';
-import {
-    useApi,
-    useEventManager,
-    useFolders,
-    useLoading,
-    useMailSettings,
-    useNotifications,
-    useUser,
-} from '../../hooks';
+import { useApi, useEventManager, useFolders, useMailSettings, useNotifications, useUser } from '../../hooks';
 import { SettingsSection } from '../account';
 import SettingsLayout from '../account/SettingsLayout';
 import SettingsLayoutLeft from '../account/SettingsLayoutLeft';

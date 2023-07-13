@@ -3,6 +3,7 @@ import { FormEvent, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import { useLoading } from '@proton/hooks';
 import { updateAddress } from '@proton/shared/lib/api/addresses';
 import { Address } from '@proton/shared/lib/interfaces';
 
@@ -15,7 +16,7 @@ import {
     ModalProps,
     useFormErrors,
 } from '../../components';
-import { useApi, useEventManager, useLoading, useNotifications } from '../../hooks';
+import { useApi, useEventManager, useNotifications } from '../../hooks';
 
 interface Props extends ModalProps<'form'> {
     address: Address;

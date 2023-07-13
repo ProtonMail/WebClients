@@ -1,3 +1,4 @@
+import { useLoading } from '@proton/hooks';
 import { updateEarlyAccess } from '@proton/shared/lib/api/settings';
 import { doesNotSupportEarlyAccessVersion } from '@proton/shared/lib/helpers/browser';
 import { deleteCookie, getCookie, setCookie } from '@proton/shared/lib/helpers/cookies';
@@ -6,7 +7,6 @@ import { Environment } from '@proton/shared/lib/interfaces';
 import { Feature, FeatureCode } from '../containers/features';
 import useApi from './useApi';
 import useFeature from './useFeature';
-import useLoading from './useLoading';
 import useUserSettings from './useUserSettings';
 
 export const getVersionCookieIsValid = (

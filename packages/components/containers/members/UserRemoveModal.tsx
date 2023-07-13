@@ -1,12 +1,13 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import { useLoading } from '@proton/hooks';
 import { deleteMember } from '@proton/shared/lib/api/members';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { FAMILY_PLAN_INVITE_STATE, Member, Organization } from '@proton/shared/lib/interfaces';
 
 import { ModalProps, Prompt } from '../../components';
-import { useApi, useEventManager, useLoading, useNotifications } from '../../hooks';
+import { useApi, useEventManager, useNotifications } from '../../hooks';
 
 interface Props extends ModalProps {
     member: Member;

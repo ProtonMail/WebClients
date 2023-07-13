@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { Button, Href } from '@proton/atoms';
 import { CryptoProxy, PrivateKeyReference } from '@proton/crypto';
+import { useLoading } from '@proton/hooks';
 import { activateOrganizationKey, getOrganizationBackupKeys } from '@proton/shared/lib/api/organization';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
@@ -23,7 +24,7 @@ import {
     PasswordInputTwo,
     useFormErrors,
 } from '../../components';
-import { useApi, useAuthentication, useCache, useEventManager, useLoading, useNotifications } from '../../hooks';
+import { useApi, useAuthentication, useCache, useEventManager, useNotifications } from '../../hooks';
 
 interface Props extends ModalProps {
     mode: 'reactivate' | 'activate';

@@ -1,10 +1,11 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import { useLoading } from '@proton/hooks';
 import { disableTotp } from '@proton/shared/lib/api/settings';
 
 import { ModalProps, Prompt, useModalState } from '../../../components';
-import { useEventManager, useLoading, useNotifications } from '../../../hooks';
+import { useEventManager, useNotifications } from '../../../hooks';
 import AuthModal from '../../password/AuthModal';
 
 const DisableTOTPModal = ({ onClose, ...rest }: ModalProps) => {

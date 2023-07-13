@@ -1,10 +1,10 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import { useLoading } from '@proton/hooks';
 import noop from '@proton/utils/noop';
 
 import { Prompt } from '../../../components';
-import { useLoading } from '../../../hooks';
 
 interface Props {
     edit?: string;

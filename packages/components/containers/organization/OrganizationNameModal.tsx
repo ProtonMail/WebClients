@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import { useLoading } from '@proton/hooks';
 import { updateOrganizationName } from '@proton/shared/lib/api/organization';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { Organization } from '@proton/shared/lib/interfaces';
@@ -18,7 +19,7 @@ import {
     ModalProps,
     useFormErrors,
 } from '../../components';
-import { useApi, useEventManager, useLoading } from '../../hooks';
+import { useApi, useEventManager } from '../../hooks';
 
 interface Props extends ModalProps {
     organization: Organization;

@@ -11,10 +11,10 @@ import {
     DropdownSizeUnit,
     Icon,
     IconName,
-    useLoading,
     usePopperAnchor,
 } from '@proton/components';
 import { DropdownMenuButton } from '@proton/components/components';
+import { useLoading } from '@proton/hooks';
 import { fetchDesktopVersion } from '@proton/shared/lib/apps/desktopVersions';
 import { DESKTOP_APP_NAMES, DESKTOP_PLATFORMS, RELEASE_CATEGORIES } from '@proton/shared/lib/constants';
 

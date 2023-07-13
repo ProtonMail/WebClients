@@ -1,10 +1,11 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import { useLoading } from '@proton/hooks';
 import { deleteRecoverySecrets } from '@proton/shared/lib/api/settingsRecovery';
 
 import { ModalProps, Prompt } from '../../components';
-import { useApi, useEventManager, useLoading, useNotifications } from '../../hooks';
+import { useApi, useEventManager, useNotifications } from '../../hooks';
 
 interface Props extends Omit<ModalProps, 'children' | 'size'> {
     /**

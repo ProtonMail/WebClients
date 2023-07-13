@@ -4,6 +4,7 @@ import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { SettingsParagraph } from '@proton/components/containers';
+import { useLoading } from '@proton/hooks';
 import useIsMounted from '@proton/hooks/useIsMounted';
 import { deletePublicLink, editPublicLink, getPublicLinks } from '@proton/shared/lib/api/calendars';
 import { CALENDAR_SETTINGS_SECTION_ID, MAX_LINKS_PER_CALENDAR } from '@proton/shared/lib/calendar/constants';
@@ -19,7 +20,7 @@ import { Nullable } from '@proton/shared/lib/interfaces/utils';
 import { splitKeys } from '@proton/shared/lib/keys';
 
 import { Alert, Loader } from '../../../components';
-import { useApi, useGetCalendarInfo, useLoading, useNotifications } from '../../../hooks';
+import { useApi, useGetCalendarInfo, useNotifications } from '../../../hooks';
 import { useModalsMap } from '../../../hooks/useModalsMap';
 import DeleteLinkConfirmationModal from './DeleteLinkConfirmationModal';
 import EditLinkModal from './EditLinkModal';

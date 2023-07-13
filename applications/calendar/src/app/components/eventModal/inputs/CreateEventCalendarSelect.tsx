@@ -1,6 +1,7 @@
-import { useGetAddresses, useGetCalendarBootstrap, useLoading } from '@proton/components';
+import { useGetAddresses, useGetCalendarBootstrap } from '@proton/components';
 import CalendarSelect from '@proton/components/components/calendarSelect/CalendarSelect';
 import { Props as SelectProps } from '@proton/components/components/selectTwo/SelectTwo';
+import { useLoading } from '@proton/hooks';
 import { notificationsToModel } from '@proton/shared/lib/calendar/alarms/notificationsToModel';
 import { EventModel } from '@proton/shared/lib/interfaces/calendar';
 

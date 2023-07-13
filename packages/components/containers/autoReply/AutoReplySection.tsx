@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { useToolbar } from '@proton/components/components/editor/hooks/useToolbar';
+import { useLoading } from '@proton/hooks';
 import { updateAutoresponder } from '@proton/shared/lib/api/mailSettings';
 import {
     APP_UPSELL_REF_PATH,
@@ -23,7 +24,6 @@ import {
     useErrorHandler,
     useEventManager,
     useHotkeys,
-    useLoading,
     useMailSettings,
     useNotifications,
     useUser,

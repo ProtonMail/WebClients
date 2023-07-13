@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import { useLoading } from '@proton/hooks';
 import { querySessions, revokeOtherSessions, revokeSession } from '@proton/shared/lib/api/auth';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
@@ -17,7 +18,7 @@ import {
     Time,
     usePagination,
 } from '../../components';
-import { useApi, useAuthentication, useLoading, useModals, useNotifications } from '../../hooks';
+import { useApi, useAuthentication, useModals, useNotifications } from '../../hooks';
 import { SettingsParagraph, SettingsSectionWide } from '../account';
 import SessionAction from './SessionAction';
 import { Session } from './interface';

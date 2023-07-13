@@ -3,6 +3,7 @@ import { FormEvent, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import { useLoading } from '@proton/hooks';
 import {
     checkMemberAddressAvailability,
     createMember,
@@ -40,15 +41,7 @@ import {
     Toggle,
     useFormErrors,
 } from '../../components';
-import {
-    useApi,
-    useEventManager,
-    useGetAddresses,
-    useGetUser,
-    useGetUserKeys,
-    useLoading,
-    useNotifications,
-} from '../../hooks';
+import { useApi, useEventManager, useGetAddresses, useGetUser, useGetUserKeys, useNotifications } from '../../hooks';
 import { useKTVerifier } from '../keyTransparency';
 import SelectEncryption from '../keys/addKey/SelectEncryption';
 import MemberStorageSelector, { getStorageRange, getTotalStorage } from './MemberStorageSelector';

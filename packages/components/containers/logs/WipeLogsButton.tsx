@@ -1,14 +1,10 @@
 import { c } from 'ttag';
 
-
-
 import { Button } from '@proton/atoms';
-
-
+import { useLoading } from '@proton/hooks';
 
 import { Alert, ConfirmModal } from '../../components';
-import { useLoading, useModals } from '../../hooks';
-
+import { useModals } from '../../hooks';
 
 interface Props {
     onWipe: () => Promise<void>;

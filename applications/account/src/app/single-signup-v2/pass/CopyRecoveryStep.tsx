@@ -6,7 +6,8 @@ import { Button } from '@proton/atoms/Button';
 import { Card } from '@proton/atoms/Card';
 import { Copy } from '@proton/components/components';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
-import { useLoading, useNotifications } from '@proton/components/hooks';
+import { useNotifications } from '@proton/components/hooks';
+import { useLoading } from '@proton/hooks';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 
 import Content from '../../public/Content';

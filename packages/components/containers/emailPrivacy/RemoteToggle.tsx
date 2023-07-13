@@ -1,10 +1,11 @@
 import { c } from 'ttag';
 
+import { useLoading } from '@proton/hooks';
 import { updateHideRemoteImages } from '@proton/shared/lib/api/mailSettings';
 import { SHOW_IMAGES } from '@proton/shared/lib/constants';
 
 import { Toggle } from '../../components';
-import { useApi, useEventManager, useLoading, useNotifications, useToggle } from '../../hooks';
+import { useApi, useEventManager, useNotifications, useToggle } from '../../hooks';
 
 interface Props {
     id: string;

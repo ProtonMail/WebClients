@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button, ButtonLike } from '@proton/atoms';
+import { useLoading } from '@proton/hooks';
 import {
     CALENDAR_STATUS_TYPE,
     getCalendarStatusBadges,
@@ -39,13 +40,7 @@ import {
 import CalendarSelectIcon from '../../../components/calendarSelect/CalendarSelectIcon';
 import { FeatureCode, SettingsSectionWide } from '../../../containers';
 import CalendarBadge from '../../../containers/calendar/settings/CalendarBadge';
-import {
-    useCalendarShareInvitationActions,
-    useEventManager,
-    useFeature,
-    useLoading,
-    useNotifications,
-} from '../../../hooks';
+import { useCalendarShareInvitationActions, useEventManager, useFeature, useNotifications } from '../../../hooks';
 import ShareCalendarWithSignatureVerificationErrorModal from '../../calendar/shareProton/ShareCalendarWithSignatureVerificationErrorModal';
 
 const SharedCalendarRow = ({ calendar, displayEmail }: { calendar: VisualCalendar; displayEmail: boolean }) => {

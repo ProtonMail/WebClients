@@ -13,12 +13,12 @@ import {
     useConfig,
     useErrorHandler,
     useExperiment,
-    useLoading,
     useLocalState,
     useMyCountry,
     useVPNServersCount,
 } from '@proton/components/hooks';
 import { PaymentMethodStatus } from '@proton/components/payments/core';
+import { useLoading } from '@proton/hooks';
 import metrics, { observeApiError } from '@proton/metrics';
 import { WebCoreSignupBackButtonTotal } from '@proton/metrics/types/web_core_signup_backButton_total_v1.schema';
 import { checkReferrer } from '@proton/shared/lib/api/core/referrals';

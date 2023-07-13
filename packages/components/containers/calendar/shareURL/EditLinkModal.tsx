@@ -4,11 +4,12 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { BasicModalProps } from '@proton/components/components/modalTwo/BasicModal';
+import { useLoading } from '@proton/hooks';
 import { MAX_CHARS_CLEARTEXT } from '@proton/shared/lib/calendar/constants';
 import { Nullable } from '@proton/shared/lib/interfaces/utils';
 
 import { BasicModal, Form, InputFieldTwo } from '../../../components';
-import { useLoading, useNotifications } from '../../../hooks';
+import { useNotifications } from '../../../hooks';
 
 interface EditLinkModalProps extends Omit<BasicModalProps, 'children' | 'footer'> {
     decryptedPurpose: Nullable<string>;

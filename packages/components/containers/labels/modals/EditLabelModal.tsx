@@ -3,6 +3,7 @@ import { FormEvent, useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import { useLoading } from '@proton/hooks';
 import { checkLabelAvailability, create as createLabel, updateLabel } from '@proton/shared/lib/api/labels';
 import { getRandomAccentColor } from '@proton/shared/lib/colors';
 import { LABEL_TYPE, ROOT_FOLDER } from '@proton/shared/lib/constants';
@@ -20,7 +21,7 @@ import {
     ModalTwoHeader,
     useFormErrors,
 } from '../../../components';
-import { useApi, useEventManager, useLoading, useNotifications } from '../../../hooks';
+import { useApi, useEventManager, useNotifications } from '../../../hooks';
 import NewLabelForm from '../NewLabelForm';
 
 export interface LabelModel extends Pick<Folder | Label, 'Name' | 'Color' | 'Type'> {

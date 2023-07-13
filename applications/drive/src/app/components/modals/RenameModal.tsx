@@ -13,9 +13,9 @@ import {
     ModalTwoHeader,
     PrimaryButton,
     Row,
-    useLoading,
     useModalTwo,
 } from '@proton/components';
+import { useLoading } from '@proton/hooks';
 import { MAX_NAME_LENGTH } from '@proton/shared/lib/drive/constants';
 import noop from '@proton/utils/noop';
 

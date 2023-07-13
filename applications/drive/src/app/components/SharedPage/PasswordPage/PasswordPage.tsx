@@ -3,7 +3,8 @@ import { FormEvent, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { Icon, InputFieldTwo, PasswordInputTwo, useLoading } from '@proton/components';
+import { Icon, InputFieldTwo, PasswordInputTwo } from '@proton/components';
+import { useLoading } from '@proton/hooks';
 
 import SharedPageLayout from '../Layout/SharedPageLayout';
 

@@ -11,11 +11,11 @@ import {
     ModalTwoHeader,
     PrimaryButton,
     useApi,
-    useLoading,
     useNotifications,
     useUserKeys,
 } from '@proton/components';
 import { PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
+import { useLoading } from '@proton/hooks';
 import { getContact, updateContact } from '@proton/shared/lib/api/contacts';
 import { processApiRequestsSafe } from '@proton/shared/lib/api/helpers/safeApiRequests';
 import { pinKeyUpdateContact } from '@proton/shared/lib/contacts/keyPinning';
