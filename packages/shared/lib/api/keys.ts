@@ -304,3 +304,15 @@ export const updateSignedKeyListRoute = (data: UpdateSignedKeyListPayload) => ({
     method: 'post',
     data,
 });
+
+export interface UpdateSignedKeyListSignatureData {
+    AddressID: string;
+    Revision: number;
+    Signature: string;
+}
+
+export const updateSignedKeyListSignatureRoute = (data: UpdateSignedKeyListSignatureData) => ({
+    url: 'core/v4/keys/signedkeylists/signature',
+    method: 'put',
+    data,
+});

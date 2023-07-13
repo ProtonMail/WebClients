@@ -27,7 +27,8 @@ export const selfAudit = async (
     ktLSAPI: KTLocalStorageAPI,
     saveSKLToLS: SaveSKLToLS,
     getLatestEpoch: GetLatestEpoch,
-    uploadMissingSKL: UploadMissingSKL
+    uploadMissingSKL: UploadMissingSKL,
+    getAddressKeys: (id: string) => Promise<DecryptedKey[]>
 ): Promise<SelfAuditResult> => {
     const userPrivateKeys = userKeys.map(({ privateKey }) => privateKey);
 
@@ -47,7 +48,7 @@ export const selfAudit = async (
         addresses
             .filter((address) => !getIsAddressDisabled(address))
             .map((address) => {
-                return auditAddress(address, userKeys, epoch, saveSKLToLS, api, uploadMissingSKL);
+                return auditAddress(address, userKeys, epoch, saveSKLToLS, api, uploadMissingSKL, getAddressKeys);
             })
     );
     const currentTime = +serverTime();
