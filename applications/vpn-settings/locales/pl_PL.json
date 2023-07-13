@@ -2043,6 +2043,12 @@
       "(1-2 emails per month)": [
         "(1-2 wiadomości miesięcznie)"
       ],
+      "(2-4 per year)": [
+        "(2-4 wiadomości rocznie)"
+      ],
+      "(4-6 emails per year)": [
+        "(4-6 wiadomości rocznie)"
+      ],
       "(during your first month)": [
         "(w pierwszym miesiącu)"
       ]
@@ -2710,9 +2716,6 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Weryfikacja antyspamowa i nadużyć. Udowodnij, że jesteś człowiekiem."
-      ],
-      "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and visit our blog from time to time.": [
-        "Aby na bieżąco śledzić rozwój usług ${ BRAND_NAME }, możesz zapisać się do naszych list mailingowych, a także okazjonalnie odwiedzać naszego bloga."
       ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "Aby kontynuować, wybierz metodę odzyskiwania konta, abyśmy mogli zweryfikować żądanie."
@@ -3401,9 +3404,6 @@
     "Label for news": {
       "${ BRAND_NAME } beta announcements": [
         "Ogłoszenia ${ BRAND_NAME } beta"
-      ],
-      "${ BRAND_NAME } company announcements": [
-        "Ogłoszenia firmy ${ BRAND_NAME }"
       ],
       "${ BRAND_NAME } for Business newsletter": [
         "Newsletter ${ BRAND_NAME } dla biznesu"

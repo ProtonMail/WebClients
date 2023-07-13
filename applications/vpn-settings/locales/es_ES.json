@@ -2683,8 +2683,8 @@
       "To fight spam and abuse, please verify you are human.": [
         "Para luchar contra el spam y el abuso, necesitamos verificar que eres humano."
       ],
-      "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and visit our blog from time to time.": [
-        "Para estar informado de las últimas novedades de los productos ${ BRAND_NAME }, puedes suscribirte a nuestros diferentes boletines y visitar nuestro blog de vez en cuando."
+      "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
+        "Para estar informado de las últimas novedades de los productos ${ BRAND_NAME }, puedes suscribirte a nuestros diferentes boletines y ${ blogLink } de vez en cuando."
       ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "Para continuar, selecciona un método de recuperación de cuenta para que podamos verificar la solicitud."
@@ -3082,7 +3082,7 @@
         "Dirección BTC"
       ],
       "BTC amount": [
-        "Importe BTC"
+        "Importe en BTC"
       ],
       "Card holder": [
         "Titular de la tarjeta"
@@ -3364,9 +3364,6 @@
       "${ BRAND_NAME } beta announcements": [
         "Comunicados beta de ${ BRAND_NAME }"
       ],
-      "${ BRAND_NAME } company announcements": [
-        "Comunicados de la empresa ${ BRAND_NAME }"
-      ],
       "${ BRAND_NAME } for Business newsletter": [
         "Boletín comercial de ${ BRAND_NAME }"
       ],
@@ -3458,7 +3455,7 @@
         "¿Problemas para iniciar sesión?"
       ],
       "Upgrade account": [
-        "Mejorar cuenta"
+        "Mejorar mi cuenta"
       ],
       "View guide": [
         "Ver guía"
@@ -3478,10 +3475,10 @@
         "Abrir el formulario de soporte"
       ],
       "Upgrade subscription": [
-        "Actualizar tu suscripción"
+        "Mejorar tu suscripción"
       ],
       "Upgrade to unlock chat support and other premium features, or use our free support form to report your issue.": [
-        "Actualiza para desbloquear el soporte por chat y otras funciones premium o usa nuestro formulario de soporte gratuito para notificar tu problema."
+        "Mejora tu plan para desbloquear el soporte por chat y otras funciones premium o usa nuestro formulario de soporte gratuito para notificar tu problema."
       ]
     },
     "Message": {
@@ -3577,7 +3574,7 @@
         "Continuar con mi cuenta ${ currentPlanName }"
       ],
       "Upgrade now": [
-        "Actualizar"
+        "Mejorar ahora"
       ]
     },
     "new_plans: attribute": {
@@ -4059,7 +4056,7 @@
         "Prueba de ${ mailPlanName }"
       ],
       "Upgrade to ${ planName }": [
-        "Pasar a ${ planName }"
+        "Mejorar a ${ planName }"
       ],
       "Your account's usage": [
         "Uso de la cuenta"
@@ -4752,7 +4749,7 @@
         "Notas de la versión"
       ],
       "Upgrade storage": [
-        "Aumentar almacenamiento"
+        "Aumentar el almacenamiento"
       ],
       "Your current storage:": [
         "Tu almacenamiento actual:"
@@ -4944,7 +4941,7 @@
         "Factura pagada"
       ],
       "Locale updated": [
-        "Idioma actualizado"
+        "El idioma ha sido ctualizado."
       ],
       "Password updated": [
         "Contraseña actualizada"
