@@ -76,12 +76,14 @@ const ImportVaultsPickerRef: ForwardRefRenderFunction<ImportVaultsPickerHandle, 
     const form = useFormik<VaultsPickerFormValues>({
         onSubmit: handleSubmit,
         initialValues: {
-            vaults: reconciliateVaults(
-                payload.vaults.map((vault) => ({
-                    ...vault,
-                    selected: true,
-                }))
-            ),
+            vaults: payload.vaults.map((vault) => ({
+                ...vault,
+                // default vault selection to primary vault
+                shareId: primaryVault.shareId,
+                vaultName: primaryVault.content.name,
+                type: 'existing',
+                selected: true,
+            })),
         },
     });
 

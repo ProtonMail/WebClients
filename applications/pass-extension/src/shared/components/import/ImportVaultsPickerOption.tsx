@@ -1,5 +1,5 @@
 import type { FC } from 'react';
-import { useEffect, useMemo } from 'react';
+import { useMemo } from 'react';
 import { useSelector } from 'react-redux';
 
 import { c, msgid } from 'ttag';
@@ -32,12 +32,6 @@ export const ImportVaultPickerOption: FC<VaultsPickerOptionProps> = ({
     const count = useMemo(() => items.length, [items]);
     const primaryVaultId = useSelector(selectPrimaryVault).shareId;
     const { didDowngrade, needsUpgrade } = useSelector(selectVaultLimits);
-
-    useEffect(() => {
-        /* if upgrade is required, user cannot create a new vault
-         * so we auto-select the primary vault id by default */
-        if (needsUpgrade) onChange(primaryVaultId);
-    }, [didDowngrade]);
 
     return (
         <>
