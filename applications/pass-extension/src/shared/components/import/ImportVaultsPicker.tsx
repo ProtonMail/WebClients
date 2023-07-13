@@ -1,4 +1,11 @@
-import { type ForwardRefRenderFunction, forwardRef, useCallback, useImperativeHandle } from 'react';
+import {
+    type ForwardRefRenderFunction,
+    forwardRef,
+    useCallback,
+    useEffect,
+    useImperativeHandle,
+    useState,
+} from 'react';
 import { useSelector } from 'react-redux';
 
 import { Form, FormikProvider, useFormik } from 'formik';
@@ -6,7 +13,8 @@ import { c } from 'ttag';
 
 import { Card } from '@proton/atoms/Card';
 import type { ImportPayload, ImportVault } from '@proton/pass/import';
-import { selectAllVaults, selectPrimaryVault, selectVaultLimits } from '@proton/pass/store';
+import { selectAllVaults, selectPassPlan, selectPrimaryVault, selectVaultLimits } from '@proton/pass/store';
+import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { merge } from '@proton/pass/utils/object';
 import { omit } from '@proton/shared/lib/helpers/object';
 
@@ -25,9 +33,15 @@ const ImportVaultsPickerRef: ForwardRefRenderFunction<ImportVaultsPickerHandle, 
     const vaults = useSelector(selectAllVaults);
     const primaryVault = useSelector(selectPrimaryVault);
     const { vaultLimit, vaultTotalCount } = useSelector(selectVaultLimits);
-    /* needs upgrade needs to be dynamically computed based on the number
-     * of potential vaults the import will try to create */
-    const needsUpgrade = vaultTotalCount + payload.vaults.length > vaultLimit;
+    const passPlan = useSelector(selectPassPlan);
+
+    const [vaultsToCreate, setVaultsToCreate] = useState(0);
+
+    const vaultsRemaining = vaultLimit - vaultTotalCount - vaultsToCreate;
+    /* needsUpgrade is dynamically computed based on the current vault count +
+     * the number of potential vaults the import will try to create */
+    const needsUpgrade = passPlan === UserPassPlan.FREE && vaultTotalCount + payload.vaults.length > vaultLimit;
+    const reachedVaultLimitPremium = passPlan !== UserPassPlan.FREE && vaultsRemaining <= 0;
 
     const handleSubmit = useCallback(
         (values: VaultsPickerFormValues) =>
@@ -87,14 +101,24 @@ const ImportVaultsPickerRef: ForwardRefRenderFunction<ImportVaultsPickerHandle, 
         },
     });
 
+    useEffect(() => {
+        setVaultsToCreate(
+            form.values.vaults.reduce((acc, vault) => {
+                if (vault.type === 'new') {
+                    acc += 1;
+                }
+                return acc;
+            }, 0)
+        );
+    }, [form.values.vaults]);
+
     useImperativeHandle(ref, () => ({ submit: () => handleSubmit(form.values) }), [onSubmit, form.values]);
 
     return (
         <FormikProvider value={form}>
             <Form>
                 <Card rounded className="mb-4 text-sm">
-                    {c('Info')
-                        .t`Select the destination vault for each imported vault. By default a new vault will be created for each imported vault.`}
+                    {c('Info').t`Select the destination vault for each imported vault.`}
 
                     {needsUpgrade && (
                         <>
@@ -102,6 +126,13 @@ const ImportVaultsPickerRef: ForwardRefRenderFunction<ImportVaultsPickerHandle, 
                             {c('Warning')
                                 .t`Your subscription does not allow you to create multiple vaults. All items will be imported to your primary vault by default. To import into multiple vaults upgrade your subscription.`}
                             <UpgradeButton inline className="ml-1" />
+                        </>
+                    )}
+                    {reachedVaultLimitPremium && (
+                        <>
+                            <hr className="mt-2 mb-2" />
+                            {c('Warning')
+                                .t`You cannot create more vaults than your subscription allows. Items will be imported to your primary vault by default.`}
                         </>
                     )}
                 </Card>
@@ -143,6 +174,7 @@ const ImportVaultsPickerRef: ForwardRefRenderFunction<ImportVaultsPickerHandle, 
                                 }
                                 data={importedVault}
                                 vaults={vaults}
+                                vaultsRemaining={vaultsRemaining}
                             />
                         </Card>
                     );
