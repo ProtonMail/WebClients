@@ -2716,6 +2716,9 @@
     "Font face option": {
       "System default": [
         "Implicit din sistem"
+      ],
+      "Theme font": [
+        "Font temă"
       ]
     },
     "Font size option": {
@@ -6565,7 +6568,7 @@
         "Sigur doriți să anulați importarea?"
       ],
       "Are you sure you want to permanently delete ${ count } contact group?": [
-        "Sigur doriți să ștergeți definitiv un grup de contacte?",
+        "Sigur doriți să ștergeți definitiv ${ count } grup de contacte?",
         "Sigur doriți să ștergeți definitiv ${ count } grupuri de contacte?",
         "Sigur doriți să ștergeți definitiv ${ count } de grupuri de contacte?"
       ],
