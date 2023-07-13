@@ -270,13 +270,7 @@ const Step1 = ({
     const isOnboardingMode = mode === SignupMode.Onboarding && !!model.session?.user;
 
     return (
-        <Layout
-            logo={logo}
-            hasDecoration
-            languageSelect={false}
-            bottomRight={<SignupSupportDropdown />}
-            className={className}
-        >
+        <Layout logo={logo} hasDecoration bottomRight={<SignupSupportDropdown />} className={className}>
             <div className="flex flex-align-items-center flex-column">
                 <div className={clsx('single-signup-header-v2 text-center', 'mt-8 mb-4')}>
                     <h1 className="m-0 large-font lg:px-4 text-semibold">
