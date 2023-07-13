@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 
+import { useLoading } from '@proton/hooks';
 import {
     queryVPNCountriesCount,
     queryVPNLogicalServerInfoCount,
@@ -13,7 +14,6 @@ import {
 } from '@proton/shared/lib/interfaces';
 
 import useApi from './useApi';
-import useLoading from './useLoading';
 
 const DEFAULT_RESULT: VPNServersCountData = {
     free: { countries: 3, servers: 150 },

@@ -3,7 +3,8 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { Icon, Logo, useConfig, useLoading } from '@proton/components';
+import { Icon, Logo, useConfig } from '@proton/components';
+import { useLoading } from '@proton/hooks';
 import metrics from '@proton/metrics';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { APPS, APP_NAMES, BRAND_NAME } from '@proton/shared/lib/constants';

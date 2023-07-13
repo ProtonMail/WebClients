@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { PrivateKeyReference } from '@proton/crypto';
+import { useLoading } from '@proton/hooks';
 import { updateBackupKey } from '@proton/shared/lib/api/organization';
 import { confirmPasswordValidator, passwordLengthValidator } from '@proton/shared/lib/helpers/formValidators';
 import { getBackupKeyData } from '@proton/shared/lib/keys';
@@ -22,7 +23,7 @@ import {
     useFormErrors,
     useModalState,
 } from '../../components';
-import { useEventManager, useLoading, useNotifications } from '../../hooks';
+import { useEventManager, useNotifications } from '../../hooks';
 import AuthModal from '../password/AuthModal';
 
 interface Props extends ModalProps {

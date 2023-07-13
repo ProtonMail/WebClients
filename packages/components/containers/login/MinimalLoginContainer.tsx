@@ -5,13 +5,14 @@ import { c } from 'ttag';
 import { Button, CircleLoader } from '@proton/atoms';
 import { TotpInputs } from '@proton/components/containers';
 import { startUnAuthFlow } from '@proton/components/containers/api/unAuthenticatedApi';
+import { useLoading } from '@proton/hooks';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import noop from '@proton/utils/noop';
 
 import { InputFieldTwo, PasswordInputTwo, useFormErrors } from '../../components';
-import { useApi, useConfig, useErrorHandler, useLoading, useNotifications } from '../../hooks';
+import { useApi, useConfig, useErrorHandler, useNotifications } from '../../hooks';
 import { OnLoginCallback } from '../app/interface';
 import { Challenge, ChallengeError, ChallengeRef, ChallengeResult } from '../challenge';
 import useKTActivation from '../keyTransparency/useKTActivation';

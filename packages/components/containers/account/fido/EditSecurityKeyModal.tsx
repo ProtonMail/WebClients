@@ -3,6 +3,7 @@ import { FormEvent, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import { useLoading } from '@proton/hooks';
 import { renameSecurityKey } from '@proton/shared/lib/api/settings';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 
@@ -16,7 +17,7 @@ import {
     ModalProps,
     useFormErrors,
 } from '../../../components';
-import { useApi, useErrorHandler, useEventManager, useLoading, useNotifications } from '../../../hooks';
+import { useApi, useErrorHandler, useEventManager, useNotifications } from '../../../hooks';
 import { maxSecurityKeyNameLength } from './constants';
 
 interface Props extends ModalProps {

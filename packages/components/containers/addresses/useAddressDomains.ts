@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react';
 
+import { useLoading } from '@proton/hooks';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
 import { MEMBER_TYPE } from '@proton/shared/lib/constants';
 import { Member } from '@proton/shared/lib/interfaces';
 
-import { useApi, useDomains, useLoading, usePremiumDomains, useUser } from '../../hooks';
+import { useApi, useDomains, usePremiumDomains, useUser } from '../../hooks';
 
 const useAddressDomains = (member: Member) => {
     const api = useApi();

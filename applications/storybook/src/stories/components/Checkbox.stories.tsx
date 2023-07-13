@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
-import { Checkbox, InputFieldTwo, useLoading } from '@proton/components';
+import { Checkbox, InputFieldTwo } from '@proton/components';
+import { useLoading } from '@proton/hooks';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
 import { getTitle } from '../../helpers/title';

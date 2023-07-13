@@ -1,13 +1,25 @@
 import { useState } from 'react';
 
-
-
 import { c } from 'ttag';
 
-
-
 import { Button, Href } from '@proton/atoms';
-import { Copy, Form, InputFieldTwo, ModalProps, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, Option, PrimaryButton, SelectTwo, useApi, useFormErrors, useLoading, useNotifications } from '@proton/components';
+import {
+    Copy,
+    Form,
+    InputFieldTwo,
+    ModalProps,
+    ModalTwo,
+    ModalTwoContent,
+    ModalTwoFooter,
+    ModalTwoHeader,
+    Option,
+    PrimaryButton,
+    SelectTwo,
+    useApi,
+    useFormErrors,
+    useNotifications,
+} from '@proton/components';
+import { useLoading } from '@proton/hooks';
 import { createToken } from '@proton/shared/lib/api/smtptokens';
 import { ADDRESS_TYPE } from '@proton/shared/lib/constants';
 import { maxLengthValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
@@ -15,10 +27,7 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { Address } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
-
-
 import './SMTPTokenModal.scss';
-
 
 const Steps = {
     TokenForm: 0,

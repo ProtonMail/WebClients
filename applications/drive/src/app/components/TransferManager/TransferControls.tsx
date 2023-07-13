@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { useLoading } from '@proton/components';
+import { useLoading } from '@proton/hooks';
 
 import {
     isTransferFailed,

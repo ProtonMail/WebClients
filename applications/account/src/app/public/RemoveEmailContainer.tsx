@@ -4,7 +4,8 @@ import { useLocation } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { ButtonLike, CircleLoader, Href } from '@proton/atoms';
-import { GenericError, useApi, useErrorHandler, useLoading } from '@proton/components';
+import { GenericError, useApi, useErrorHandler } from '@proton/components';
+import { useLoading } from '@proton/hooks';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { disableUser } from '@proton/shared/lib/api/user';
 import { postVerifyUnvalidate } from '@proton/shared/lib/api/verify';

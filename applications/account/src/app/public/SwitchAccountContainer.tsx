@@ -13,11 +13,11 @@ import {
     useApi,
     useConfig,
     useErrorHandler,
-    useLoading,
     useModals,
     useNotifications,
 } from '@proton/components';
 import { startUnAuthFlow } from '@proton/components/containers/api/unAuthenticatedApi';
+import { useLoading } from '@proton/hooks';
 import { revoke } from '@proton/shared/lib/api/auth';
 import { PersistedSessionWithLocalID } from '@proton/shared/lib/authentication/SessionInterface';
 import { InvalidPersistentSessionError } from '@proton/shared/lib/authentication/error';

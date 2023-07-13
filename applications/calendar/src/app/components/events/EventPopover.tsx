@@ -13,10 +13,10 @@ import {
     Loader,
     ReloadSpinner,
     Tooltip,
-    useLoading,
     useReadCalendarBootstrap,
 } from '@proton/components';
 import CalendarEventDateHeader from '@proton/components/components/calendarEventDateHeader/CalendarEventDateHeader';
+import { useLoading } from '@proton/hooks';
 import {
     getIsCalendarDisabled,
     getIsCalendarWritable,

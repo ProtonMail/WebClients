@@ -12,9 +12,9 @@ import {
     useEventManager,
     useHotkeys,
     useItemsDroppable,
-    useLoading,
     useMailSettings,
 } from '@proton/components';
+import { useLoading } from '@proton/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import clsx from '@proton/utils/clsx';

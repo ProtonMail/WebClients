@@ -2,7 +2,8 @@ import { useEffect, useState } from 'react';
 
 import { differenceInDays, fromUnixTime } from 'date-fns';
 
-import { useApi, useLoading, useUser } from '@proton/components';
+import { useApi, useUser } from '@proton/components';
+import { useLoading } from '@proton/hooks';
 import { getDriveChecklist, seenCompletedDriveChecklist } from '@proton/shared/lib/api/checklist';
 import { ChecklistApiResponse } from '@proton/shared/lib/interfaces';
 

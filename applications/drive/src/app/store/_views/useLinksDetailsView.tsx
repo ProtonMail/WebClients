@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import { useLoading } from '@proton/components';
+import { useLoading } from '@proton/hooks';
 
 import { sendErrorReport } from '../../utils/errorHandling';
 import { DecryptedLink, useLinks } from '../_links';

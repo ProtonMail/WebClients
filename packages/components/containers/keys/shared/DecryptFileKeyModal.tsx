@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { CryptoProxy, PrivateKeyReference } from '@proton/crypto';
+import { useLoading } from '@proton/hooks';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { ArmoredKeyWithInfo } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
@@ -20,7 +21,6 @@ import {
     useFormErrors,
 } from '../../../components';
 import { generateUID } from '../../../helpers';
-import { useLoading } from '../../../hooks';
 
 interface Props extends ModalProps {
     privateKeyInfo: ArmoredKeyWithInfo;

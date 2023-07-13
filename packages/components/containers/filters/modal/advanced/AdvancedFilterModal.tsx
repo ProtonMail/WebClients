@@ -3,6 +3,7 @@ import { FormEvent, useMemo, useState } from 'react';
 import { c } from 'ttag';
 
 import { Href } from '@proton/atoms';
+import { useLoading } from '@proton/hooks';
 import { addTreeFilter, checkSieveFilter, updateFilter } from '@proton/shared/lib/api/filters';
 import { normalize } from '@proton/shared/lib/helpers/string';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
@@ -23,7 +24,6 @@ import {
     useApiWithoutResult,
     useEventManager,
     useFilters,
-    useLoading,
     useNotifications,
     useUserSettings,
 } from '../../../../hooks';
