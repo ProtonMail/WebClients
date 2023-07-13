@@ -14,10 +14,10 @@ import {
     ModalTwoHeader,
     Row,
     Tooltip,
-    useLoading,
     useModalTwo,
 } from '@proton/components';
 import EllipsisLoader from '@proton/components/components/loader/EllipsisLoader';
+import { useLoading } from '@proton/hooks';
 import humanSize, { bytesSize } from '@proton/shared/lib/helpers/humanSize';
 import { DriveFileRevision } from '@proton/shared/lib/interfaces/drive/file';
 

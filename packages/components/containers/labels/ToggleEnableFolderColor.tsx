@@ -2,10 +2,11 @@ import { ChangeEvent } from 'react';
 
 import { c } from 'ttag';
 
+import { useLoading } from '@proton/hooks';
 import { updateEnableFolderColor } from '@proton/shared/lib/api/mailSettings';
 
 import { Toggle } from '../../components';
-import { useApi, useEventManager, useLoading, useMailSettings, useNotifications } from '../../hooks';
+import { useApi, useEventManager, useMailSettings, useNotifications } from '../../hooks';
 
 interface Props {
     id?: string;

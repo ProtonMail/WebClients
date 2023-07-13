@@ -1,12 +1,13 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import { useLoading } from '@proton/hooks';
 import { changeRenewState } from '@proton/shared/lib/api/payments';
 import { PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
 import { Renew, Subscription } from '@proton/shared/lib/interfaces';
 
 import { ModalProps, Prompt, Time } from '../../components';
-import { useApi, useEventManager, useLoading } from '../../hooks';
+import { useApi, useEventManager } from '../../hooks';
 
 interface Props extends ModalProps {
     subscription: Subscription;

@@ -11,9 +11,9 @@ import {
     ModalTwoContent,
     ModalTwoFooter,
     ModalTwoHeader,
-    useLoading,
     useModalTwo,
 } from '@proton/components';
+import { useLoading } from '@proton/hooks';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 

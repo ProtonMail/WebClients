@@ -11,11 +11,11 @@ import {
     useApi,
     useErrorHandler,
     useFormErrors,
-    useLoading,
     useMyCountry,
     useNotifications,
 } from '@proton/components';
 import { startUnAuthFlow } from '@proton/components/containers/api/unAuthenticatedApi';
+import { useLoading } from '@proton/hooks';
 import { requestUsername } from '@proton/shared/lib/api/reset';
 import { SSO_PATHS } from '@proton/shared/lib/constants';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';

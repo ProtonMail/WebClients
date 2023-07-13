@@ -2,7 +2,8 @@ import { Fragment, useCallback, useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Info, Toggle, useApi, useLoading, useMailSettings, useUserSettings } from '@proton/components';
+import { Info, Toggle, useApi, useMailSettings, useUserSettings } from '@proton/components';
+import { useLoading } from '@proton/hooks';
 import useIsMounted from '@proton/hooks/useIsMounted';
 import { updatePMSignatureReferralLink } from '@proton/shared/lib/api/mailSettings';
 import { getProtonMailSignature } from '@proton/shared/lib/mail/signature';

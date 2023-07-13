@@ -2,7 +2,8 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { useLoading, useNotifications } from '@proton/components';
+import { useNotifications } from '@proton/components';
+import { useLoading } from '@proton/hooks';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
 import { RESPONSE_CODE } from '@proton/shared/lib/drive/constants';

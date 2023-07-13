@@ -3,11 +3,12 @@ import React from 'react';
 import { c } from 'ttag';
 
 import UpsellIcon from '@proton/components/components/upsell/UpsellIcon';
+import { useLoading } from '@proton/hooks';
 import { updateAutoDelete } from '@proton/shared/lib/api/mailSettings';
 import { AutoDeleteSpamAndTrashDaysSetting } from '@proton/shared/lib/interfaces';
 
 import { AutoDeleteUpsellModal, Info, Toggle, useModalState } from '../../components';
-import { useApi, useEventManager, useFeature, useLoading, useUser } from '../../hooks';
+import { useApi, useEventManager, useFeature, useUser } from '../../hooks';
 import { SettingsLayout, SettingsLayoutLeft, SettingsLayoutRight } from '../account';
 import { FeatureCode } from '../features';
 

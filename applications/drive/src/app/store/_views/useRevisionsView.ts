@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from 'react';
 
-import { useLoading } from '@proton/components/hooks';
+import { useLoading } from '@proton/hooks';
 import {
     queryDeleteFileRevision,
     queryFileRevisions,

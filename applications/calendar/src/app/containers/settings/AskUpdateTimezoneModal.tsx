@@ -9,9 +9,9 @@ import {
     useApi,
     useCalendarUserSettings,
     useEventManager,
-    useLoading,
     useNotifications,
 } from '@proton/components';
+import { useLoading } from '@proton/hooks';
 import { updateCalendarUserSettings } from '@proton/shared/lib/api/calendars';
 
 interface Props {

@@ -16,9 +16,9 @@ import {
     useApi,
     useGetEncryptionPreferences,
     useGetUserKeys,
-    useLoading,
     useNotifications,
 } from '@proton/components';
+import { useLoading } from '@proton/hooks';
 import { getContact, updateContact } from '@proton/shared/lib/api/contacts';
 import { processApiRequestsSafe } from '@proton/shared/lib/api/helpers/safeApiRequests';
 import { resignCards } from '@proton/shared/lib/contacts/resign';

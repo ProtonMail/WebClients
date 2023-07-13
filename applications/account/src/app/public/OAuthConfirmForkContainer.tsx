@@ -1,19 +1,14 @@
 import { c } from 'ttag';
 
-
-
 import { Button } from '@proton/atoms';
-import { useLoading } from '@proton/components';
+import { useLoading } from '@proton/hooks';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
-
-
 
 import Content from './Content';
 import Header from './Header';
 import Layout from './Layout';
 import Main from './Main';
 import Text from './Text';
-
 
 interface Props {
     name: string;

@@ -1,11 +1,12 @@
 import { c } from 'ttag';
 
+import { useLoading } from '@proton/hooks';
 import { queryPaymentMethodStatus } from '@proton/shared/lib/api/payments';
 import { INVOICE_STATE } from '@proton/shared/lib/constants';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { DropdownActions } from '../../components';
-import { useApi, useLoading, useModals, useNotifications } from '../../hooks';
+import { useApi, useModals, useNotifications } from '../../hooks';
 import PayInvoiceModal from './PayInvoiceModal';
 import { Invoice } from './interface';
 

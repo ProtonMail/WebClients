@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { Button, Href } from '@proton/atoms';
+import { useLoading } from '@proton/hooks';
 import { updateDeviceRecovery } from '@proton/shared/lib/api/settingsRecovery';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
@@ -14,7 +15,6 @@ import {
     useHasOutdatedRecoveryFile,
     useIsMnemonicAvailable,
     useIsRecoveryFileAvailable,
-    useLoading,
     useRecoverySecrets,
     useSearchParamsEffect,
     useUser,

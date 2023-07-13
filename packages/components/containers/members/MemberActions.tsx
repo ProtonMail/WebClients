@@ -1,12 +1,12 @@
 import { c } from 'ttag';
 
+import { useLoading } from '@proton/hooks';
 import { MEMBER_PRIVATE, MEMBER_TYPE } from '@proton/shared/lib/constants';
 import { hasOrganizationSetup, hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
 import { CachedOrganizationKey, Member, Organization, PartialMemberAddress } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { DropdownActions } from '../../components';
-import { useLoading } from '../../hooks';
 
 interface Props {
     member: Member;

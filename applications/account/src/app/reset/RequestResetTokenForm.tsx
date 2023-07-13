@@ -4,11 +4,12 @@ import { useHistory } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { Icon, InputFieldTwo, PhoneInput, Tabs, useFormErrors, useLoading } from '@proton/components';
+import { Icon, InputFieldTwo, PhoneInput, Tabs, useFormErrors } from '@proton/components';
 import MnemonicInputField, {
     useMnemonicInputValidation,
 } from '@proton/components/containers/mnemonic/MnemonicInputField';
 import { RecoveryMethod } from '@proton/components/containers/resetPassword/interface';
+import { useLoading } from '@proton/hooks';
 import { SSO_PATHS } from '@proton/shared/lib/constants';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import isTruthy from '@proton/utils/isTruthy';

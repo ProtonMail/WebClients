@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { Dispatch, SetStateAction, useCallback, useEffect, useRef, useState } from 'react';
 
 import isFunction from '@proton/utils/isFunction';
 
@@ -12,7 +12,7 @@ function unwrapPromise<T>(maybeWrappedPromise: Promise<T | void> | (() => Promis
     return maybeWrappedPromise;
 }
 
-const useLoading = (initialState = false): [boolean, WithLoading] => {
+const useLoading = (initialState = false): [boolean, WithLoading, Dispatch<SetStateAction<boolean>>] => {
     const [loading, setLoading] = useState(initialState);
     const unmountedRef = useRef(false);
     const counterRef = useRef(0);
@@ -55,7 +55,7 @@ const useLoading = (initialState = false): [boolean, WithLoading] => {
             });
     }, []);
 
-    return [loading, withLoading];
+    return [loading, withLoading, setLoading];
 };
 
 export default useLoading;

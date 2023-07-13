@@ -3,14 +3,8 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import {
-    AddressesAutocomplete,
-    Icon,
-    useApi,
-    useContactEmails,
-    useLoading,
-    useNotifications,
-} from '@proton/components';
+import { AddressesAutocomplete, Icon, useApi, useContactEmails, useNotifications } from '@proton/components';
+import { useLoading } from '@proton/hooks';
 import { sendEmailInvitation } from '@proton/shared/lib/api/core/referrals';
 import { Recipient, Referral } from '@proton/shared/lib/interfaces';
 

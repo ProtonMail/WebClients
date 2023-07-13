@@ -2,15 +2,9 @@ import { Dispatch, SetStateAction, useCallback } from 'react';
 
 import { c } from 'ttag';
 
-import {
-    CalendarInviteButtons,
-    InlineLinkButton,
-    Loader,
-    useDrawer,
-    useLoading,
-    useNotifications,
-} from '@proton/components';
+import { CalendarInviteButtons, InlineLinkButton, Loader, useDrawer, useNotifications } from '@proton/components';
 import Banner, { BannerBackgroundColor } from '@proton/components/components/banner/Banner';
+import { useLoading } from '@proton/hooks';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { reformatApiErrorMessage } from '@proton/shared/lib/calendar/api';
 import { ICAL_ATTENDEE_STATUS, ICAL_METHOD } from '@proton/shared/lib/calendar/constants';

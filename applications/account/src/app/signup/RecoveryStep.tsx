@@ -12,9 +12,9 @@ import {
     useApi,
     useConfig,
     useFormErrors,
-    useLoading,
     useModalState,
 } from '@proton/components';
+import { useLoading } from '@proton/hooks';
 import metrics from '@proton/metrics';
 import { validateEmail, validatePhone } from '@proton/shared/lib/api/core/validate';
 import { emailValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';

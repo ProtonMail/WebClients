@@ -5,6 +5,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import AuthSecurityKeyContent from '@proton/components/containers/account/fido/AuthSecurityKeyContent';
+import { useLoading } from '@proton/hooks';
 import { PASSWORD_WRONG_ERROR, getInfo } from '@proton/shared/lib/api/auth';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { Fido2Data, InfoAuthedResponse } from '@proton/shared/lib/authentication/interface';
@@ -29,7 +30,7 @@ import {
     Tabs,
     useFormErrors,
 } from '../../components';
-import { useApi, useConfig, useErrorHandler, useLoading, useUser, useUserSettings } from '../../hooks';
+import { useApi, useConfig, useErrorHandler, useUser, useUserSettings } from '../../hooks';
 import TotpInputs from '../account/totp/TotpInputs';
 import { getAuthTypes } from './getAuthTypes';
 

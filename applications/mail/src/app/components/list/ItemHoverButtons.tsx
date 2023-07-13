@@ -3,7 +3,8 @@ import { MouseEvent } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { Icon, Tooltip, useLoading } from '@proton/components';
+import { Icon, Tooltip } from '@proton/components';
+import { useLoading } from '@proton/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 

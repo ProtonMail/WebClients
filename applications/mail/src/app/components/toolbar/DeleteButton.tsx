@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
 import { Kbd } from '@proton/atoms';
-import { Icon, ToolbarButton, useLoading, useMailSettings } from '@proton/components';
+import { Icon, ToolbarButton, useMailSettings } from '@proton/components';
+import { useLoading } from '@proton/hooks';
 import { metaKey } from '@proton/shared/lib/helpers/browser';
 
 interface Props {
