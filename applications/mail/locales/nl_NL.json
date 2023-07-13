@@ -4581,6 +4581,10 @@
         "${ messagesNotAuthorizedToMove } bericht kon niet verplaatst worden.",
         "${ messagesNotAuthorizedToMove } berichten konden niet worden verplaatst."
       ],
+      "${ numberOfUTMTrackers } link cleaned": [
+        "${ numberOfUTMTrackers } link opgeruimd",
+        "${ numberOfUTMTrackers } links opgeruimd"
+      ],
       "${ numContact } contact": [
         "${ numContact } contactpersoon",
         "${ numContact } contactpersonen"
@@ -5121,6 +5125,9 @@
       "Link type": [
         "Soort"
       ],
+      "Links cleaned:": [
+        "Links opgeruimd:"
+      ],
       "Loading": [
         "Laden"
       ],
@@ -5217,6 +5224,9 @@
       ],
       "No label selected": [
         "Geen label geselecteerd"
+      ],
+      "No links cleaned": [
+        "Geen links opgeruimd"
       ],
       "No more results found": [
         "Geen resultaten meer gevonden"
@@ -5759,6 +5769,9 @@
       "You can check the progress ${ importProgressLink }.": [
         "U kunt de voortgang controleren ${ importProgressLink }."
       ],
+      "You can click links in this email without being profiled and leaking your online activity with advertisers.": [
+        "U kan links volgen in deze e-mail zonder te worden geprofileerd en uw online activiteit bloot te stellen aan adverteerders"
+      ],
       "You can either update your search query or ${ button }": [
         "U kunt uw zoekopdracht bewerken of ${ button }"
       ],
@@ -6247,6 +6260,9 @@
       "City": [
         "Stad"
       ],
+      "Cleaned": [
+        "Opgeruimd"
+      ],
       "Code is 6 digits without spaces": [
         "Code is 6 cijfers zonder spaties"
       ],
@@ -6448,6 +6464,9 @@
       "OK": [
         "OK"
       ],
+      "Open in a new tab": [
+        "Openen in een nieuw tabblad"
+      ],
       "Operating system": [
         "Besturingssysteem"
       ],
@@ -6462,6 +6481,9 @@
       ],
       "Or": [
         "Of"
+      ],
+      "Original link": [
+        "Originele link"
       ],
       "Participants": [
         "Deelnemers"
@@ -8852,7 +8874,7 @@
         "Vorig bericht"
       ],
       "Protect your email": [
-        "Bescherm uw e-mail"
+        "Bescherm uw e-mailadres"
       ],
       "Re-sign all contacts": [
         "Alle contacten opnieuw ondertekenen"
