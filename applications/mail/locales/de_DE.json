@@ -4099,6 +4099,9 @@
     "Font face option": {
       "System default": [
         "Systemstandard"
+      ],
+      "Theme font": [
+        "Design-Schriftart"
       ]
     },
     "Font Size Default": {
@@ -9190,6 +9193,10 @@
       ],
       "Warning: suspected fake website": [
         "Warnung: Verdacht auf gefälschte Website"
+      ],
+      "We protected you from ${ trackersCount } tracker": [
+        "Wir haben dich vor ${ trackersCount } Tracker geschützt",
+        "Wir haben dich vor ${ trackersCount } Trackern geschützt"
       ],
       "Welcome": [
         "Willkommen"
