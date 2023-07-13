@@ -31,7 +31,6 @@ const EncryptedSearchField = ({ esState }: Props) => {
         isEnablingEncryptedSearch,
         isPaused,
         contentIndexingDone,
-        isMigrating,
     } = getESDBStatus();
     const { esProgress, oldestTime, totalIndexingItems, estimatedMinutes, currentProgressValue } = esState;
 
@@ -65,10 +64,8 @@ const EncryptedSearchField = ({ esState }: Props) => {
             : c('Info').t`Turn on to search the content of your messages`;
     }
 
-    const esActivationTooltip = isMigrating
-        ? c('Info').t`Updating your local messages, message content won't be searched during this update`
-        : c('Info').t`The local database is being prepared`;
-    const esActivationLoading = isMigrating || isEnablingEncryptedSearch;
+    const esActivationTooltip = c('Info').t`The local database is being prepared`;
+    const esActivationLoading = isEnablingEncryptedSearch;
     const esActivationButton = (
         <Button
             onClick={() => setEnableESModalOpen(true)}
