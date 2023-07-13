@@ -520,10 +520,10 @@
         "Επαναφορά από Διαγραμμένα"
       ],
       "Restore this version": [
-        "Επαναφέρετε αυτήν την έκδοση"
+        "Επαναφορά αυτής της έκδοσης"
       ],
       "Restore version": [
-        "Επαναφορά Έκδοσης"
+        "Επαναφορά έκδοσης"
       ],
       "Resume all": [
         "Συνέχιση όλων"
@@ -2055,13 +2055,13 @@
         "Λείπει η υπογραφή"
       ],
       "No calendars found to import": [
-        "Δε βρέθηκαν ημερολόγια για εισαγωγή."
+        "Δεν βρέθηκαν ημερολόγια προς εισαγωγή."
       ],
       "No contacts found to import": [
-        "Δε βρέθηκαν επαφές για εισαγωγή"
+        "Δεν βρέθηκαν επαφές προς εισαγωγή"
       ],
       "No emails found to import - the account does not have an inbox": [
-        "Δεν βρέθηκαν μηνύματα ηλεκτρονικού ταχυδρομείου για εισαγωγή - ο λογαριασμός δεν διαθέτει εισερχόμενα"
+        "Δεν βρέθηκαν μηνύματα προς εισαγωγή - ο λογαριασμός δεν διαθέτει εισερχόμενα"
       ],
       "No valid address found": [
         "Δεν βρέθηκε έγκυρη διεύθυνση"
@@ -3234,7 +3234,7 @@
         "Χρειάζεται προσοχή"
       ],
       "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access or decrypt your files for you. To unlock your drive after a password reset, you must have one of the following:": [
-        "Επειδή το ${ DRIVE_APP_NAME } είναι κρυπτογραφημένο από άκρο σε άκρο, δεν μπορούμε να έχουμε πρόσβαση ή να αποκρυπτογραφήσουμε τα αρχεία σας για εσάς. Για να ξεκλειδώσετε τη μονάδα δίσκου μετά την επαναφορά κωδικού πρόσβασης, πρέπει να έχετε ένα από τα εξής:"
+        "Επειδή το ${ DRIVE_APP_NAME } είναι διατερματικά κρυπτογραφημένο, δεν μπορούμε να αποκρυπτογραφήσουμε και να προσπελάσουμε τα αρχεία σας για λογαριασμό σας. Για να ξεκλειδώσετε την αρχειοθήκη σας μετά από επαναφορά κωδικού πρόσβασης, πρέπει να έχετε ένα από τα εξής:"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Πριν αιτηθείτε νέο κωδικό επαλήθευσης, ελέγξτε τον φάκελό σας Ενοχλητικά και ότι η ${ strong } είναι η σωστή διεύθυνση."
@@ -3288,10 +3288,10 @@
         "Διένεξη"
       ],
       "Contact assigned to group ${ contactGroupName }": [
-        "Επαφή προστέθηκε στην ομάδα ${ contactGroupName }"
+        "Η επαφή προστέθηκε στην ομάδα ${ contactGroupName }"
       ],
       "Contact unassigned to group ${ contactGroupName }": [
-        "Επαφή αφαιρέθηκε από την ομάδα ${ contactGroupName }"
+        "Η επαφή αφαιρέθηκε από την ομάδα ${ contactGroupName }"
       ],
       "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
         "Συνέχιση χρήσης ${ DRIVE_APP_NAME } και ξεκλείδωμα αρχειοθήκης αργότερα."
@@ -4042,7 +4042,7 @@
         "Θα γίνει επαναφορά στην έκδοση από ${ formattedRevisionDate }. Όλες οι άλλες εκδόσεις Θα εξακολουθούν να αποθηκεύονται."
       ],
       "With ${ DRIVE_APP_NAME }, your data is protected with end-to-end encryption. Only you can decrypt it.": [
-        "Με το ${ DRIVE_APP_NAME }, τα δεδομένα σας προστατεύονται με κρυπτογράφηση από άκρο σε άκρο. Μόνο εσείς μπορείτε να το αποκρυπτογραφήσετε."
+        "Με το ${ DRIVE_APP_NAME }, τα δεδομένα σας προστατεύονται με διατερματική κρυπτογράφηση. Μόνο εσείς μπορείτε να τα αποκρυπτογραφήσετε."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Θέλετε να λάβετε έναν νέο κωδικό επαλήθευσης ή να χρησιμοποιήσετε μια εναλλακτική μέθοδο επαλήθευσης;"
@@ -4093,10 +4093,10 @@
         "Θα χάσετε όλες τις αλλαγές που δεν έχετε αποθηκεύσει."
       ],
       "You've reached the maximum number of addresses in the contact group(s):": [
-        "Έχετε συμπληρώσει τον μέγιστο αριθμό διευθύνσεων στην/στις ομάδα(ες) επαφών:"
+        "Έχετε συμπληρώσει τον μέγιστο αριθμό διευθύνσεων στις ομάδες επαφών:"
       ],
       "You've reached the maximum number of addresses in the contact group.": [
-        "Έχετε συμπληρώσει τον μέγιστο αριθμό διευθύνσεων στην ομάδα επαφών:"
+        "Έχετε συμπληρώσει τον μέγιστο αριθμό διευθύνσεων στην ομάδα επαφών."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Οι υπηρεσίες του ${ BRAND_NAME } λογαριασμού σας μόλις έχουν ανασταλεί. Μετά από 28 ημέρες, δεν θα μπορείτε να λάβετε μηνύματα στα εισερχόμενα, οι Drive σύνδεσμοι θα αποκλειστούν, και δεν θα μπορείτε να ανεβάσετε καινούργια αρχεία. Για να συνεχίσετε ομαλά τις υπηρεσίες σας, παρακαλούμε να πληρώσετε τυχόν ληξιπρόθεσμα τιμολόγια."
@@ -5431,7 +5431,7 @@
         "Ασφαλής αποθήκευση στο cloud"
       ],
       "Secure streaming": [
-        "Ασφαλής μετάδοση"
+        "Διασφαλισμένη μετάδοση"
       ],
       "Support online privacy": [
         "Υποστήριξη ηλεκτρονικού απορρήτου"
@@ -5887,7 +5887,7 @@
         "Ο περιηγητής ενδέχεται να ξεμείνει από μνήμη"
       ],
       "Cannot add more addresses": [
-        "Δεν είναι δυνατή η προσθήκη περισσότερων διευθύνσεων"
+        "Αδυναμία προσθήκης περισσότερων διευθύνσεων"
       ],
       "Cannot load link": [
         "Αποτυχία φόρτωσης συνδέσμου"
@@ -6218,7 +6218,7 @@
         "Εισέλθετε και παραχωρήστε πρόσβαση"
       ],
       "Sign in with 2FA": [
-        "Συνδεθείτε με 2FA"
+        "Είσοδος με Ταυτοποίηση 2 Παραγόντων"
       ],
       "Sign out": [
         "Αποσύνδεση"
