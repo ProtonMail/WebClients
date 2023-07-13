@@ -40,13 +40,13 @@ const EmptyDevices = () => {
     return (
         <EmptyViewContainer imageProps={{ src: emptyDevicesImg, alt: syncFoldersText, height: 180 }}>
             <h3 className="text-bold">{syncFoldersText}</h3>
-            <p className="mt-2 max-w-custom" style={{ '--max-w-custom': '400px' }}>
+            <p className="mt-2 max-w-custom mx-auto" style={{ '--max-w-custom': '25rem' }}>
                 {c('Info')
                     .t`Sync folders with ease using our desktop app, ensuring your files are always up to date and accessible from anywhere.`}
             </p>
             <PrimaryButton
                 onClick={startDownload}
-                className="mt-8 mx-auto flex flex-align-items-center"
+                className="mt-8 mx-auto flex flex-item-grow-1 flex-align-items-center"
                 disabled={downloadDisabled}
             >
                 <Icon name="brand-windows" className="mr-2" />
