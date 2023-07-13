@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import { useLoading } from '@proton/hooks';
 import { updateQuota, updateVPN } from '@proton/shared/lib/api/members';
 import {
     updateOrganizationKeysLegacy,
@@ -39,7 +40,6 @@ import {
     useApi,
     useAuthentication,
     useEventManager,
-    useLoading,
     useMembers,
     useNotifications,
     useOrganization,

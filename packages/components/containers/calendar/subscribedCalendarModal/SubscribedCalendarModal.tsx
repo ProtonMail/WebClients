@@ -3,6 +3,7 @@ import { ChangeEvent, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button, Href } from '@proton/atoms';
+import { useLoading } from '@proton/hooks';
 import { validateSubscription } from '@proton/shared/lib/api/calendars';
 import { MAX_CHARS_API } from '@proton/shared/lib/calendar/constants';
 import { getCalendarStatusInfo } from '@proton/shared/lib/calendar/subscribe/helpers';
@@ -12,7 +13,7 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { CALENDAR_SUBSCRIPTION_STATUS, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
 import { BasicModal, Form, InputFieldTwo, Loader } from '../../../components';
-import { useApi, useLoading } from '../../../hooks';
+import { useApi } from '../../../hooks';
 import { GenericError } from '../../error';
 import { getCalendarPayload, getCalendarSettingsPayload, getDefaultModel } from '../calendarModal/calendarModalState';
 import useGetCalendarActions from '../hooks/useGetCalendarActions';

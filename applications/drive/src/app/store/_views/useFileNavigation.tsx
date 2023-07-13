@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-import { useLoading } from '@proton/components/hooks';
+import { useLoading } from '@proton/hooks';
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 
 import { logError } from '../../utils/errorHandling';

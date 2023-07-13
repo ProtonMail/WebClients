@@ -9,11 +9,11 @@ import {
     useApi,
     useConfig,
     useErrorHandler,
-    useLoading,
     useVPNServersCount,
 } from '@proton/components';
 import { startUnAuthFlow } from '@proton/components/containers/api/unAuthenticatedApi';
 import { PaymentMethodStatus } from '@proton/components/payments/core';
+import { useLoading } from '@proton/hooks';
 import metrics, { observeApiError } from '@proton/metrics';
 import { update as updateRoute } from '@proton/shared/lib/api/core/update';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';

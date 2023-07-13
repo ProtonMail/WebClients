@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { useApi, useEventManager, useLoading, useNotifications } from '@proton/components/hooks';
+import { useApi, useEventManager, useNotifications } from '@proton/components/hooks';
+import { useLoading } from '@proton/hooks';
 import { updateCalendarUserSettings } from '@proton/shared/lib/api/calendars';
 import { CalendarUserSettings } from '@proton/shared/lib/interfaces/calendar';
 

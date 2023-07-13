@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import { useLoading } from '@proton/hooks';
 import { setupAddress } from '@proton/shared/lib/api/addresses';
 import { DEFAULT_ENCRYPTION_CONFIG, ENCRYPTION_CONFIGS } from '@proton/shared/lib/constants';
 import { missingKeysSelfProcess } from '@proton/shared/lib/keys';
@@ -12,7 +13,6 @@ import {
     useAuthentication,
     useEventManager,
     useGetUserKeys,
-    useLoading,
     useModals,
     useNotifications,
     usePremiumDomains,

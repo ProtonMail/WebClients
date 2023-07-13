@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { CryptoProxy } from '@proton/crypto';
+import { useLoading } from '@proton/hooks';
 import { updateOrganizationKeysLegacy, updateOrganizationKeysV2 } from '@proton/shared/lib/api/organization';
 import { DEFAULT_ENCRYPTION_CONFIG, ENCRYPTION_CONFIGS } from '@proton/shared/lib/constants';
 import { confirmPasswordValidator, passwordLengthValidator } from '@proton/shared/lib/helpers/formValidators';
@@ -33,7 +34,6 @@ import {
     useAuthentication,
     useEventManager,
     useGetAddresses,
-    useLoading,
     useModals,
     useNotifications,
     useStep,

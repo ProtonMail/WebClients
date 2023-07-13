@@ -3,6 +3,7 @@ import { MutableRefObject, useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button, Card } from '@proton/atoms';
+import { useLoading } from '@proton/hooks';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
@@ -10,7 +11,6 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { Api, HumanVerificationMethodType } from '@proton/shared/lib/interfaces';
 
 import { Icon, LearnMore } from '../../../components';
-import useLoading from '../../../hooks/useLoading';
 import useNotifications from '../../../hooks/useNotifications';
 import EmailMethodForm from './EmailMethodForm';
 import PhoneMethodForm from './PhoneMethodForm';

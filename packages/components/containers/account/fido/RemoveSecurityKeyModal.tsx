@@ -1,12 +1,13 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import { useLoading } from '@proton/hooks';
 import { removeSecurityKey } from '@proton/shared/lib/api/settings';
 import { lockSensitiveSettings, unlockPasswordChanges } from '@proton/shared/lib/api/user';
 import noop from '@proton/utils/noop';
 
 import { ModalProps, Prompt, useModalState } from '../../../components';
-import { useApi, useEventManager, useLoading, useNotifications } from '../../../hooks';
+import { useApi, useEventManager, useNotifications } from '../../../hooks';
 import AuthModal from '../../password/AuthModal';
 
 interface Key {

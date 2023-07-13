@@ -3,7 +3,8 @@ import { MouseEvent } from 'react';
 import { c } from 'ttag';
 
 import { Kbd } from '@proton/atoms';
-import { Icon, IconSize, Tooltip, useLoading, useMailSettings } from '@proton/components';
+import { Icon, IconSize, Tooltip, useMailSettings } from '@proton/components';
+import { useLoading } from '@proton/hooks';
 import clsx from '@proton/utils/clsx';
 
 import { isMessage, isStarred as testIsStarred } from '../../helpers/elements';

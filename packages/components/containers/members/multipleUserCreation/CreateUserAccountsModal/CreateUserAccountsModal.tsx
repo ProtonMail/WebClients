@@ -24,12 +24,12 @@ import {
     useGetAddresses,
     useGetUserKeys,
     useKTVerifier,
-    useLoading,
     useNotifications,
     useOrganization,
     useOrganizationKey,
     useUser,
 } from '@proton/components';
+import { useLoading } from '@proton/hooks';
 import { getIsOfflineError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getSilentApiWithAbort } from '@proton/shared/lib/api/helpers/customConfig';
 import { APP_NAMES, DOMAIN_STATE } from '@proton/shared/lib/constants';

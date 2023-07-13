@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
-import { ModalProps, ModalTwo, ModalTwoContent, ModalTwoHeader, useLoading } from '@proton/components';
+import { ModalProps, ModalTwo, ModalTwoContent, ModalTwoHeader } from '@proton/components';
+import { useLoading } from '@proton/hooks';
 import { Plan, PlansMap } from '@proton/shared/lib/interfaces';
 
 import { getFreeTitle } from '../helper';

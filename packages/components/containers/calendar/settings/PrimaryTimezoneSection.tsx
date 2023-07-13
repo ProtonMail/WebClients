@@ -1,10 +1,11 @@
 import { c } from 'ttag';
 
+import { useLoading } from '@proton/hooks';
 import { updateCalendarUserSettings } from '@proton/shared/lib/api/calendars';
 import { CalendarUserSettings } from '@proton/shared/lib/interfaces/calendar';
 
 import { TimeZoneSelector } from '../../../components';
-import { useApi, useEventManager, useLoading, useNotifications } from '../../../hooks';
+import { useApi, useEventManager, useNotifications } from '../../../hooks';
 import SettingsLayout from '../../account/SettingsLayout';
 import SettingsLayoutLeft from '../../account/SettingsLayoutLeft';
 import SettingsLayoutRight from '../../account/SettingsLayoutRight';

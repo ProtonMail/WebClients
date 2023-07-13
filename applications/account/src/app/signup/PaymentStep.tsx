@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { Icon, Price, useConfig, useLoading } from '@proton/components';
+import { Icon, Price, useConfig } from '@proton/components';
 import {
     Alert3ds,
     CurrencySelector,
@@ -24,6 +24,7 @@ import {
     TokenPayment,
     TokenPaymentMethod,
 } from '@proton/components/payments/core';
+import { useLoading } from '@proton/hooks';
 import metrics from '@proton/metrics';
 import { PLANS } from '@proton/shared/lib/constants';
 import { getIsCustomCycle, getIsOfferBasedOnCoupon } from '@proton/shared/lib/helpers/checkout';

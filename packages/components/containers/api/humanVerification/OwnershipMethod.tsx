@@ -4,6 +4,7 @@ import { flushSync } from 'react-dom';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import { useLoading } from '@proton/hooks';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import {
     getVerificationDataRoute,
@@ -14,7 +15,7 @@ import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { Api, HumanVerificationMethodType } from '@proton/shared/lib/interfaces';
 
 import { Loader } from '../../../components';
-import { useLoading, useNotifications } from '../../../hooks';
+import { useNotifications } from '../../../hooks';
 import RequestNewCodeModal from './RequestNewCodeModal';
 import Text from './Text';
 import VerifyCodeForm from './VerifyCodeForm';

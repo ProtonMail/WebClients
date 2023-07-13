@@ -3,6 +3,7 @@ import { ReactElement } from 'react';
 import { c } from 'ttag';
 
 import { DropdownActionProps } from '@proton/components/components/dropdown/DropdownActions';
+import { useLoading } from '@proton/hooks';
 import { changeRenewState } from '@proton/shared/lib/api/payments';
 import { getCheckResultFromSubscription, getCheckout } from '@proton/shared/lib/helpers/checkout';
 import { toMap } from '@proton/shared/lib/helpers/object';
@@ -24,7 +25,7 @@ import {
 } from '../../components';
 import { default as Badge, Props as BadgeProps } from '../../components/badge/Badge';
 import Price from '../../components/price/Price';
-import { useApi, useEventManager, useLoading, usePlans, useSubscription } from '../../hooks';
+import { useApi, useEventManager, usePlans, useSubscription } from '../../hooks';
 import { SettingsSectionWide } from '../account';
 import MozillaInfoPanel from '../account/MozillaInfoPanel';
 import { getShortBillingText } from './helper';

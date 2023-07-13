@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { CryptoProxy, PrivateKeyReference } from '@proton/crypto';
+import { useLoading } from '@proton/hooks';
 import { KEY_FILE_EXTENSION } from '@proton/shared/lib/constants';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { passwordLengthValidator } from '@proton/shared/lib/helpers/formValidators';
@@ -21,7 +22,7 @@ import {
     useFormErrors,
 } from '../../../components';
 import { generateUID } from '../../../helpers';
-import { useLoading, useModals } from '../../../hooks';
+import { useModals } from '../../../hooks';
 import UnlockModal from '../../login/UnlockModal';
 
 const handleExport = async (name: string, privateKey: PrivateKeyReference, password: string) => {

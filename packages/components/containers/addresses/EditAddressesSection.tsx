@@ -4,11 +4,12 @@ import { c } from 'ttag';
 
 import { Button, Input } from '@proton/atoms';
 import { useToolbar } from '@proton/components/components/editor/hooks/useToolbar';
+import { useLoading } from '@proton/hooks';
 import { updateAddress } from '@proton/shared/lib/api/addresses';
 import { Address } from '@proton/shared/lib/interfaces';
 
 import { Editor, EditorActions } from '../../components';
-import { useApi, useEventManager, useHotkeys, useLoading, useMailSettings, useNotifications } from '../../hooks';
+import { useApi, useEventManager, useHotkeys, useMailSettings, useNotifications } from '../../hooks';
 import SettingsLayout from '../account/SettingsLayout';
 import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
 import SettingsLayoutRight from '../account/SettingsLayoutRight';

@@ -6,7 +6,7 @@ import { ReportSummaryID } from '@proton/activation/src/logic/reports/reports.in
 import { useEasySwitchDispatch } from '@proton/activation/src/logic/store';
 import { Button } from '@proton/atoms';
 import { Alert, DropdownActions, Prompt, useModalState } from '@proton/components';
-import { useLoading } from '@proton/components/hooks';
+import { useLoading } from '@proton/hooks';
 
 interface Props {
     reportSummaryID: ReportSummaryID;

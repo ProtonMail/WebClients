@@ -9,10 +9,10 @@ import {
     GenericError,
     useApi,
     useErrorHandler,
-    useLoading,
     useNotifications,
 } from '@proton/components';
 import { NewsletterSubscriptionUpdateData } from '@proton/components/containers/account/EmailSubscriptionToggles';
+import { useLoading } from '@proton/hooks';
 import { authJwt } from '@proton/shared/lib/api/auth';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getAuthAPI, getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';

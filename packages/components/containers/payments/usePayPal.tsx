@@ -2,10 +2,11 @@ import { useState } from 'react';
 
 import { ensureTokenChargeable } from '@proton/components/payments/client-extensions';
 import { PAYMENT_METHOD_TYPES } from '@proton/components/payments/core';
+import { useLoading } from '@proton/hooks';
 import { createToken } from '@proton/shared/lib/api/payments';
 import { Api, Currency } from '@proton/shared/lib/interfaces';
 
-import { useLoading, useModals } from '../../hooks';
+import { useModals } from '../../hooks';
 import { AmountAndCurrency, TokenPaymentMethod } from '../../payments/core/interface';
 import PaymentVerificationModal from './PaymentVerificationModal';
 

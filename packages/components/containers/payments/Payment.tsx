@@ -9,12 +9,13 @@ import {
     PaymentMethodType,
     SavedPaymentMethod,
 } from '@proton/components/payments/core';
+import { useLoading } from '@proton/hooks';
 import { DEFAULT_CURRENCY, MIN_CREDIT_AMOUNT, MIN_DONATION_AMOUNT } from '@proton/shared/lib/constants';
 import { Api, Currency } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
 import { Alert, Loader, Price } from '../../components';
-import { useAuthentication, useLoading } from '../../hooks';
+import { useAuthentication } from '../../hooks';
 import { CardModel } from '../../payments/core';
 import { useMethods } from '../paymentMethods';
 import PaymentMethodDetails from '../paymentMethods/PaymentMethodDetails';

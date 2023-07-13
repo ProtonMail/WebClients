@@ -1,5 +1,6 @@
 import { Dispatch, SetStateAction, useEffect, useMemo, useState } from 'react';
 
+import { useLoading } from '@proton/hooks';
 import { getContact } from '@proton/shared/lib/api/contacts';
 import { processApiRequestsSafe } from '@proton/shared/lib/api/helpers/safeApiRequests';
 import { prepareVCardContact } from '@proton/shared/lib/contacts/decrypt';
@@ -9,7 +10,7 @@ import { VCardContact } from '@proton/shared/lib/interfaces/contacts/VCard';
 import { splitKeys } from '@proton/shared/lib/keys/keys';
 
 import { ModalProps, ModalTwo } from '../../../components';
-import { useApi, useEventManager, useLoading, useUserKeys } from '../../../hooks';
+import { useApi, useEventManager, useUserKeys } from '../../../hooks';
 import ContactMergeErrorContent from './ContactMergeErrorContent';
 import ContactMergeViewContent from './ContactMergeViewContent';
 import MergingModalContent from './ContactMergingContent';

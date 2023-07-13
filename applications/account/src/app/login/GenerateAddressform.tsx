@@ -3,7 +3,8 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { InputFieldTwo, useFormErrors, useLoading } from '@proton/components';
+import { InputFieldTwo, useFormErrors } from '@proton/components';
+import { useLoading } from '@proton/hooks';
 import {
     requiredValidator,
     usernameCharacterValidator,

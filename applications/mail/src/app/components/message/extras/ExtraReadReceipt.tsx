@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { Icon, Tooltip, useApi, useEventManager, useLoading, useNotifications } from '@proton/components';
+import { Icon, Tooltip, useApi, useEventManager, useNotifications } from '@proton/components';
+import { useLoading } from '@proton/hooks';
 import { readReceipt } from '@proton/shared/lib/api/messages';
 import { isReadReceiptSent, requireReadReceipt } from '@proton/shared/lib/mail/messages';
 

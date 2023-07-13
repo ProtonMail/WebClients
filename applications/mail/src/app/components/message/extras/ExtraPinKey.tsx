@@ -9,12 +9,12 @@ import {
     useAddresses,
     useApi,
     useEventManager,
-    useLoading,
     useMailSettings,
     useModalState,
     useNotifications,
 } from '@proton/components';
 import { PublicKeyReference } from '@proton/crypto';
+import { useLoading } from '@proton/hooks';
 import { updatePromptPin } from '@proton/shared/lib/api/mailSettings';
 import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';

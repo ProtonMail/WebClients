@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { Icon, ToolbarButton, useLoading } from '@proton/components';
+import { Icon, ToolbarButton } from '@proton/components';
+import { useLoading } from '@proton/hooks';
 
 import { DecryptedLink, useActions } from '../../../../store';
 

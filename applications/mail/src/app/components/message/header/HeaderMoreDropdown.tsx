@@ -17,7 +17,6 @@ import {
     useEventManager,
     useFeature,
     useFolders,
-    useLoading,
     useMailSettings,
     useModalState,
     useNotifications,
@@ -25,6 +24,7 @@ import {
 } from '@proton/components';
 import { ContactEditProps } from '@proton/components/containers/contacts/edit/ContactEditModal';
 import { WorkerDecryptionResult } from '@proton/crypto';
+import { useLoading } from '@proton/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { MailSettings } from '@proton/shared/lib/interfaces';
