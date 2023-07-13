@@ -3,7 +3,8 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { InputFieldTwo, useConfig, useFormErrors, useLoading } from '@proton/components';
+import { InputFieldTwo, useConfig, useFormErrors } from '@proton/components';
+import { useLoading } from '@proton/hooks';
 import metrics from '@proton/metrics';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 

@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
 
+import { useLoading } from '@proton/hooks';
 import { Currency } from '@proton/shared/lib/interfaces';
 
-import { useApi, useLoading } from '../../../hooks';
+import { useApi } from '../../../hooks';
 import { fetchDealPrices } from '../helpers/dealPrices';
 import { Offer, OfferConfig } from '../interface';
 

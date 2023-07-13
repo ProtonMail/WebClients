@@ -21,7 +21,6 @@ import {
     useApi,
     useEventManager,
     useFeature,
-    useLoading,
     useModalState,
     useSpotlightOnFeature,
     useSpotlightShow,
@@ -33,6 +32,7 @@ import { CalendarModal } from '@proton/components/containers/calendar/calendarMo
 import HolidaysCalendarModal from '@proton/components/containers/calendar/holidaysCalendarModal/HolidaysCalendarModal';
 import SubscribedCalendarModal from '@proton/components/containers/calendar/subscribedCalendarModal/SubscribedCalendarModal';
 import useSubscribedCalendars from '@proton/components/hooks/useSubscribedCalendars';
+import { useLoading } from '@proton/hooks';
 import { updateMember } from '@proton/shared/lib/api/calendars';
 import { groupCalendarsByTaxonomy, sortCalendars } from '@proton/shared/lib/calendar/calendar';
 import { getHasUserReachedCalendarsLimit } from '@proton/shared/lib/calendar/calendarLimits';

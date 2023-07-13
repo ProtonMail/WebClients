@@ -4,6 +4,7 @@ import { fromUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import { useLoading } from '@proton/hooks';
 import { clearLogs, queryLogs } from '@proton/shared/lib/api/logs';
 import { updateLogAuth } from '@proton/shared/lib/api/settings';
 import { AuthLog } from '@proton/shared/lib/authlog';
@@ -13,7 +14,7 @@ import { wait } from '@proton/shared/lib/helpers/promise';
 import { SETTINGS_LOG_AUTH_STATE } from '@proton/shared/lib/interfaces';
 
 import { Alert, ConfirmModal, Icon, Info, Pagination, Toggle, usePaginationAsync } from '../../components';
-import { useApi, useLoading, useModals, useUserSettings } from '../../hooks';
+import { useApi, useModals, useUserSettings } from '../../hooks';
 import { SettingsParagraph, SettingsSectionWide } from '../account';
 import SettingsLayout from '../account/SettingsLayout';
 import SettingsLayoutLeft from '../account/SettingsLayoutLeft';

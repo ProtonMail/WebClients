@@ -3,11 +3,12 @@ import { ChangeEvent, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import { useLoading } from '@proton/hooks';
 import { buyCredit, validateCredit } from '@proton/shared/lib/api/payments';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 
 import { InputFieldTwo, useFormErrors } from '../../components';
-import { useApiWithoutResult, useEventManager, useLoading, useNotifications } from '../../hooks';
+import { useApiWithoutResult, useEventManager, useNotifications } from '../../hooks';
 import { SettingsSection } from '../account';
 import SettingsParagraph from '../account/SettingsParagraph';
 

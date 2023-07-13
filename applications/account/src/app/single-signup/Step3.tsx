@@ -16,7 +16,8 @@ import {
     useFormErrors,
     useModalState,
 } from '@proton/components/components';
-import { useLoading, useNotifications } from '@proton/components/hooks';
+import { useNotifications } from '@proton/components/hooks';
+import { useLoading } from '@proton/hooks';
 import metrics from '@proton/metrics';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import {

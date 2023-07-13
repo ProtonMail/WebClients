@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useLoading } from '@proton/hooks';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { HumanVerificationMethodType } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
@@ -12,7 +13,7 @@ import {
     ModalTwoHeader as ModalHeader,
     ModalProps,
 } from '../../../components';
-import { useLoading, useNotifications } from '../../../hooks';
+import { useNotifications } from '../../../hooks';
 import HumanVerificationForm from './HumanVerificationForm';
 import { HumanVerificationSteps } from './interface';
 

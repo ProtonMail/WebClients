@@ -1,10 +1,11 @@
 import { c } from 'ttag';
 
+import { useLoading } from '@proton/hooks';
 import { updateAutoWildcardSearch } from '@proton/shared/lib/api/mailSettings';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import { Field, Info, Label, Row, Toggle } from '../../components';
-import { useApi, useEventManager, useLoading, useMailSettings } from '../../hooks';
+import { useApi, useEventManager, useMailSettings } from '../../hooks';
 
 const SearchSection = () => {
     const api = useApi();

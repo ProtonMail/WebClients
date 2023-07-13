@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
 
+import { useLoading } from '@proton/hooks';
 import useIsMounted from '@proton/hooks/useIsMounted';
 import { getLastCancelledSubscription } from '@proton/shared/lib/api/payments';
 
 import { LatestSubscription } from '../payments/core';
 import useApi from './useApi';
-import useLoading from './useLoading';
 import useUser from './useUser';
 
 let promise: Promise<LatestSubscription> | undefined;

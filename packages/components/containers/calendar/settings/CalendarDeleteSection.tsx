@@ -5,7 +5,8 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { Alert, ErrorButton, Prompt, useModalState } from '@proton/components/components';
 import { SettingsParagraph } from '@proton/components/containers';
-import { useApi, useEventManager, useLoading, useNotifications } from '@proton/components/hooks';
+import { useApi, useEventManager, useNotifications } from '@proton/components/hooks';
+import { useLoading } from '@proton/hooks';
 import { removeCalendar, removeMember, updateCalendarUserSettings } from '@proton/shared/lib/api/calendars';
 import {
     getIsHolidaysCalendar,

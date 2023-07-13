@@ -11,6 +11,7 @@ import {
     TokenPaymentMethod,
     WrappedCardPayment,
 } from '@proton/components/payments/core/interface';
+import { useLoading } from '@proton/hooks';
 import { checkSubscription, deleteSubscription, subscribe } from '@proton/shared/lib/api/payments';
 import { getShouldCalendarPreventSubscripitionChange, willHavePaidMail } from '@proton/shared/lib/calendar/plans';
 import { APP_NAMES, DEFAULT_CURRENCY, DEFAULT_CYCLE, PLANS, PLAN_TYPES } from '@proton/shared/lib/constants';
@@ -51,7 +52,6 @@ import {
     useEventManager,
     useFeature,
     useGetCalendars,
-    useLoading,
     useModals,
     useNotifications,
     useOrganization,

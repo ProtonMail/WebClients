@@ -1,12 +1,13 @@
 import { c } from 'ttag';
 
+import { useLoading } from '@proton/hooks';
 import { updateCalendarUserSettings } from '@proton/shared/lib/api/calendars';
 import { getClosestLocaleCode } from '@proton/shared/lib/i18n/helper';
 import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 import { CalendarUserSettings } from '@proton/shared/lib/interfaces/calendar';
 
 import { Info, Toggle } from '../../../components';
-import { useApi, useEventManager, useLoading, useNotifications } from '../../../hooks';
+import { useApi, useEventManager, useNotifications } from '../../../hooks';
 import { SettingsSection } from '../../account';
 import SettingsLayout from '../../account/SettingsLayout';
 import SettingsLayoutLeft from '../../account/SettingsLayoutLeft';

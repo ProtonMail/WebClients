@@ -3,6 +3,7 @@ import { useCallback, useMemo, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
+import { useLoading } from '@proton/hooks';
 import { removeMember } from '@proton/shared/lib/api/calendars';
 import { dedupeNotifications, sortNotificationsByAscendingTrigger } from '@proton/shared/lib/calendar/alarms';
 import { modelToNotifications } from '@proton/shared/lib/calendar/alarms/modelToNotifications';
@@ -49,7 +50,6 @@ import {
     useEventManager,
     useGetAddressKeys,
     useGetAddresses,
-    useLoading,
     useNotifications,
     useReadCalendarBootstrap,
 } from '../../../hooks';

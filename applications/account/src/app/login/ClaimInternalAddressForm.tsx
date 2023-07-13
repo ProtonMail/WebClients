@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Button, Card } from '@proton/atoms';
-import { useLoading } from '@proton/components';
+import { useLoading } from '@proton/hooks';
 import noop from '@proton/utils/noop';
 
 interface Props {

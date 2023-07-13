@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-import { useLoading } from '@proton/components';
+import { useLoading } from '@proton/hooks';
 
 interface Props {
     loadingText: string;

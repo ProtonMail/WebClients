@@ -2,7 +2,8 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { ModalStateProps, ModalTwo, useLoading, useModalTwo } from '@proton/components';
+import { ModalStateProps, ModalTwo, useModalTwo } from '@proton/components';
+import { useLoading } from '@proton/hooks';
 
 import { DecryptedLink, useTreeForModals } from '../../../store';
 import ModalContentLoader from '../ModalContentLoader';

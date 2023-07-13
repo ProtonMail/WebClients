@@ -1,12 +1,13 @@
 import { c } from 'ttag';
 
+import { useLoading } from '@proton/hooks';
 import { disableHighSecurity, enableHighSecurity } from '@proton/shared/lib/api/settings';
 import { PROTON_SENTINEL_NAME } from '@proton/shared/lib/constants';
 import { SETTINGS_PROTON_SENTINEL_STATE } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
 import { Toggle } from '../../components';
-import { useApi, useEventManager, useLoading, useUserSettings } from '../../hooks';
+import { useApi, useEventManager, useUserSettings } from '../../hooks';
 import { SettingsParagraph, SettingsSectionWide } from '../account';
 import SettingsLayout from '../account/SettingsLayout';
 import SettingsLayoutLeft from '../account/SettingsLayoutLeft';

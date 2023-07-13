@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from 'react';
 
+import { useLoading } from '@proton/hooks';
 import { Api } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
-import { useLoading } from '../../hooks';
 import {
     AmountAndCurrency,
     CardModel,

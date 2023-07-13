@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { Avatar, Button } from '@proton/atoms';
+import { useLoading } from '@proton/hooks';
 import { sendEmailReminderTwoFA } from '@proton/shared/lib/api/organization';
 import { MEMBER_ROLE } from '@proton/shared/lib/constants';
 import { getInitials } from '@proton/shared/lib/helpers/string';
@@ -17,7 +18,7 @@ import {
     ModalProps,
     useFormErrors,
 } from '../../components';
-import { useApi, useEventManager, useLoading, useMemberAddresses, useNotifications } from '../../hooks';
+import { useApi, useEventManager, useMemberAddresses, useNotifications } from '../../hooks';
 
 interface Props extends ModalProps {
     members: Member[];

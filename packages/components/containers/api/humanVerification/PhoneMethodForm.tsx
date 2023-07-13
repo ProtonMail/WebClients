@@ -3,12 +3,12 @@ import { KeyboardEvent, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import { useLoading } from '@proton/hooks';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { Api } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
 import { InputFieldTwo, PhoneInput, useFormErrors } from '../../../components';
-import { useLoading } from '../../../hooks';
 
 interface Props {
     onSubmit: (phone: string) => Promise<void>;

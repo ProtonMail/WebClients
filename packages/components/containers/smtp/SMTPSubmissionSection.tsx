@@ -18,12 +18,12 @@ import {
     useActiveBreakpoint,
     useAddresses,
     useApi,
-    useLoading,
     useModalState,
     useNotifications,
     useOrganization,
     useUser,
 } from '@proton/components';
+import { useLoading } from '@proton/hooks';
 import { deleteToken, getTokens } from '@proton/shared/lib/api/smtptokens';
 import { ADDRESS_TYPE, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { hasSMTPSubmission } from '@proton/shared/lib/helpers/organization';
@@ -120,7 +120,9 @@ const SMTPSubmissionSection = () => {
             topic: 'email delivery and spam',
             username: user.Email,
         };
-        const createTicket = <Href key="ticket" href={getSupportContactURL(params)}>{c('Link').t`create a ticket`}</Href>;
+        const createTicket = (
+            <Href key="ticket" href={getSupportContactURL(params)}>{c('Link').t`create a ticket`}</Href>
+        );
         return (
             <SettingsSection>
                 <SettingsParagraph learnMoreUrl={getKnowledgeBaseUrl('/smtp-submission')}>

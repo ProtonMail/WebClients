@@ -10,7 +10,7 @@ let mockedApi: ReturnType<typeof mockedUseApi>;
 
 jest.mock('../../hooks/useEventManager', () => () => ({ call: jest.fn() }));
 
-jest.mock('../../hooks/useLoading', () => () => [false, jest.fn((fn) => fn())]);
+jest.mock('@proton/hooks/useLoading', () => () => [false, jest.fn((fn) => fn())]);
 
 jest.mock('../../hooks/useNotifications', () => () => ({ createNotification: jest.fn() }));
 

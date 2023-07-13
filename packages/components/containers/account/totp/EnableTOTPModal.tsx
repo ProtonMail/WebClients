@@ -3,6 +3,7 @@ import { FormEvent, ReactNode, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button, Href } from '@proton/atoms';
+import { useLoading } from '@proton/hooks';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { TOTP_WRONG_ERROR, setupTotp } from '@proton/shared/lib/api/settings';
 import { unlockPasswordChanges } from '@proton/shared/lib/api/user';
@@ -27,7 +28,7 @@ import {
     TotpInput,
     useFormErrors,
 } from '../../../components';
-import { useApi, useConfig, useEventManager, useLoading, useNotifications, useUser } from '../../../hooks';
+import { useApi, useConfig, useEventManager, useNotifications, useUser } from '../../../hooks';
 import AuthModal from '../../password/AuthModal';
 
 interface ModalProperties {

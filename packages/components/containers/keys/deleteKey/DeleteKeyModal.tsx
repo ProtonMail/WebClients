@@ -3,11 +3,12 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import { useLoading } from '@proton/hooks';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 
 import { Prompt, PromptProps } from '../../../components';
-import { useLoading, useNotifications } from '../../../hooks';
+import { useNotifications } from '../../../hooks';
 
 enum STEPS {
     EXPORT_KEY,

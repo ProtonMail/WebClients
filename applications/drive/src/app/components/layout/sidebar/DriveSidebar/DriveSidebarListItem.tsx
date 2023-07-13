@@ -7,8 +7,8 @@ import {
     SidebarListItemContent,
     SidebarListItemContentIcon,
     SidebarListItemLink,
-    useLoading,
 } from '@proton/components';
+import { useLoading } from '@proton/hooks';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
 import { useDriveEventManager } from '../../../../store';

@@ -3,6 +3,7 @@ import { FormEvent, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import { useLoading } from '@proton/hooks';
 import { getAllMemberAddresses } from '@proton/shared/lib/api/members';
 import {
     DEFAULT_ENCRYPTION_CONFIG,
@@ -45,7 +46,6 @@ import {
     useGetAddresses,
     useGetUser,
     useGetUserKeys,
-    useLoading,
     useNotifications,
 } from '../../../hooks';
 import { useKTVerifier } from '../../keyTransparency';

@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
 import { ModalProps, ModalTwo, ModalTwoContent, ModalTwoFooter } from '@proton/components/components';
-import { useLoading } from '@proton/components/hooks';
+import { useLoading } from '@proton/hooks';
 
 import access from '../pass/access.svg';
 

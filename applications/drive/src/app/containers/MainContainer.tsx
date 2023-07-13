@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
 
-import { LoaderPage, LocationErrorBoundary, ModalsChildren, useLoading, useWelcomeFlags } from '@proton/components';
+import { LoaderPage, LocationErrorBoundary, ModalsChildren, useWelcomeFlags } from '@proton/components';
 import useTelemetryScreenSize from '@proton/components/hooks/useTelemetryScreenSize';
+import { useLoading } from '@proton/hooks';
 
 import TransferManager from '../components/TransferManager/TransferManager';
 import DriveWindow from '../components/layout/DriveWindow';

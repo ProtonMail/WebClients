@@ -1,10 +1,11 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import { useLoading } from '@proton/hooks';
 import { leaveOrganisation } from '@proton/shared/lib/api/organization';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 
-import { useApi, useEventManager, useLoading, useNotifications } from '../..';
+import { useApi, useEventManager, useNotifications } from '../..';
 import { ModalStateProps, Prompt } from '../../components';
 
 interface Props extends ModalStateProps {

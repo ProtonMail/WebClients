@@ -1,10 +1,11 @@
 import { isBefore, sub } from 'date-fns';
 import { c } from 'ttag';
 
+import { useLoading } from '@proton/hooks';
 import { patchNews } from '@proton/shared/lib/api/settings';
 import { NEWSLETTER_SUBSCRIPTIONS_BITS } from '@proton/shared/lib/constants';
 
-import { useApi, useEventManager, useLoading, useNotifications, useUser, useUserSettings } from '../../hooks';
+import { useApi, useEventManager, useNotifications, useUser, useUserSettings } from '../../hooks';
 import EmailSubscriptionToggles, { NewsletterSubscriptionUpdateData } from './EmailSubscriptionToggles';
 import { getEmailSubscriptions } from './constants';
 
