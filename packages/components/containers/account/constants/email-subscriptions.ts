@@ -23,7 +23,7 @@ export const getEmailSubscriptions: () => EmailSubscription[] = () => [
         id: 'announcements',
         flag: NEWSLETTER_SUBSCRIPTIONS_BITS.ANNOUNCEMENTS,
         title: c('Label for news').t`${BRAND_NAME} important announcements`,
-        frequency: c('Frequency of news').t`(2-4 per year)`,
+        frequency: c('Frequency of news').t`(2-4 emails per year)`,
     },
     {
         id: 'features',
