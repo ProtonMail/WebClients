@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
 
+import { CLIENT_VAULT_LIMIT } from '@proton/pass/constants';
 import { selectVaultLimits, vaultCreationIntent } from '@proton/pass/store';
 import { vaultCreate } from '@proton/pass/store/actions/requests';
 import { VaultColor, VaultIcon } from '@proton/pass/types/protobuf/vault-v1';
@@ -56,7 +57,7 @@ export const VaultNew: VFC<VaultFormConsumerProps> = ({ onSubmit, onSuccess, onF
             {needsUpgrade && (
                 <ItemCard className="mb-4">
                     {c('Info')
-                        .t`You have reached the limit of vaults you can create. Create an unlimited number of vaults when you upgrade your subscription.`}
+                        .t`You have reached the limit of vaults you can create. Create up to ${CLIENT_VAULT_LIMIT} vaults when you upgrade your subscription.`}
                 </ItemCard>
             )}
             <FormikProvider value={form}>
