@@ -3,7 +3,8 @@ import { useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { TotpInputs, useFormErrors, useLoading } from '@proton/components';
+import { TotpInputs, useFormErrors } from '@proton/components';
+import { useLoading } from '@proton/hooks';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import noop from '@proton/utils/noop';
 

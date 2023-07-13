@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { Button, ButtonProps } from '@proton/atoms';
+import { useLoading } from '@proton/hooks';
 import { setNewRecoverySecret } from '@proton/shared/lib/api/settingsRecovery';
 import {
     exportRecoveryFile,
@@ -8,14 +9,7 @@ import {
     validateRecoverySecret,
 } from '@proton/shared/lib/recoveryFile/recoveryFile';
 
-import {
-    useApi,
-    useEventManager,
-    useLoading,
-    useNotifications,
-    usePrimaryRecoverySecret,
-    useUserKeys,
-} from '../../hooks';
+import { useApi, useEventManager, useNotifications, usePrimaryRecoverySecret, useUserKeys } from '../../hooks';
 
 interface Props extends Omit<ButtonProps, 'onClick'> {}
 

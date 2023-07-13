@@ -5,11 +5,12 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { ensureTokenChargeable } from '@proton/components/payments/client-extensions';
 import { PAYMENT_METHOD_TYPES } from '@proton/components/payments/core';
+import { useLoading } from '@proton/hooks';
 import { createToken, setPaymentMethod } from '@proton/shared/lib/api/payments';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 
 import { ModalProps, Prompt } from '../../components';
-import { useApi, useEventManager, useLoading, useNotifications } from '../../hooks';
+import { useApi, useEventManager, useNotifications } from '../../hooks';
 import { PaymentTokenResult } from '../../payments/core/interface';
 
 const PAYMENT_AUTHORIZATION_AMOUNT = 100;

@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import { useLoading } from '@proton/hooks';
 import getPublicKeysEmailHelper from '@proton/shared/lib/api/helpers/getPublicKeysEmailHelper';
 import { extractScheme } from '@proton/shared/lib/api/helpers/mailSettings';
 import { CONTACT_MIME_TYPES, MIME_TYPES, MIME_TYPES_MORE, PGP_SCHEMES } from '@proton/shared/lib/constants';
@@ -41,7 +42,7 @@ import {
     ModalTwoHeader,
     Row,
 } from '../../../components';
-import { useApi, useEventManager, useLoading, useMailSettings, useNotifications } from '../../../hooks';
+import { useApi, useEventManager, useMailSettings, useNotifications } from '../../../hooks';
 import { useKeyTransparencyContext } from '../../keyTransparency';
 import { useSaveVCardContact } from '../hooks/useSaveVCardContact';
 import ContactMIMETypeSelect from './ContactMIMETypeSelect';

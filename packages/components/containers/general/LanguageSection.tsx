@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { Href } from '@proton/atoms/Href';
+import { useLoading } from '@proton/hooks';
 import { updateLocale } from '@proton/shared/lib/api/settings';
 import { getBlogURL } from '@proton/shared/lib/helpers/url';
 import { getBrowserLocale, getClosestLocaleCode } from '@proton/shared/lib/i18n/helper';
@@ -8,15 +9,7 @@ import { loadDateLocale, loadLocale } from '@proton/shared/lib/i18n/loadLocale';
 import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 
 import { Option, SelectTwo } from '../../components';
-import {
-    useApi,
-    useConfig,
-    useEventManager,
-    useForceRefresh,
-    useLoading,
-    useNotifications,
-    useUserSettings,
-} from '../../hooks';
+import { useApi, useConfig, useEventManager, useForceRefresh, useNotifications, useUserSettings } from '../../hooks';
 import SettingsLayout from '../account/SettingsLayout';
 import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
 import SettingsLayoutRight from '../account/SettingsLayoutRight';

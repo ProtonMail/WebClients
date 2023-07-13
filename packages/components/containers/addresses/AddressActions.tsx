@@ -1,12 +1,13 @@
 import { c } from 'ttag';
 
+import { useLoading } from '@proton/hooks';
 import { deleteAddress, disableAddress, enableAddress } from '@proton/shared/lib/api/addresses';
 import { ADDRESS_STATUS } from '@proton/shared/lib/constants';
 import { Address, CachedOrganizationKey, Member } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { DropdownActions, useModalState } from '../../components';
-import { useAddressFlags, useApi, useEventManager, useLoading, useNotifications } from '../../hooks';
+import { useAddressFlags, useApi, useEventManager, useNotifications } from '../../hooks';
 import DeleteAddressModal from './DeleteAddressModal';
 import DisableAddressModal from './DisableAddressModal';
 import { AddressPermissions } from './helper';

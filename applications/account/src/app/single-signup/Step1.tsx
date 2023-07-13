@@ -23,13 +23,7 @@ import {
 } from '@proton/components/containers/payments/features/vpn';
 import { PlanCardFeatureList } from '@proton/components/containers/payments/subscription/PlanCardFeatures';
 import usePaymentToken from '@proton/components/containers/payments/usePaymentToken';
-import {
-    useActiveBreakpoint,
-    useApi,
-    useConfig,
-    useErrorHandler,
-    useLoading,
-} from '@proton/components/hooks';
+import { useActiveBreakpoint, useApi, useConfig, useErrorHandler } from '@proton/components/hooks';
 import {
     AmountAndCurrency,
     CardPayment,
@@ -38,6 +32,7 @@ import {
     TokenPayment,
     TokenPaymentMethod,
 } from '@proton/components/payments/core';
+import { useLoading } from '@proton/hooks';
 import metrics, { observeApiError } from '@proton/metrics';
 import { WebCoreVpnSingleSignupStep1InteractionTotal } from '@proton/metrics/types/web_core_vpn_single_signup_step1_interaction_total_v1.schema';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';

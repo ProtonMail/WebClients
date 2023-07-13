@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import { useLoading } from '@proton/hooks';
 import {
     APP_UPSELL_REF_PATH,
     BRAND_NAME,
@@ -19,7 +20,7 @@ import { loadModels } from '@proton/shared/lib/models/helper';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { DropdownActions, Loader, Table, TableBody, TableHeader, TableRow, useModalState } from '../../components';
-import { useApi, useCache, useDomains, useDomainsAddresses, useLoading, useOrganization, useUser } from '../../hooks';
+import { useApi, useCache, useDomains, useDomainsAddresses, useOrganization, useUser } from '../../hooks';
 import { SettingsParagraph, SettingsSectionWide, UpgradeBanner } from '../account';
 import RestoreAdministratorPrivileges from '../organization/RestoreAdministratorPrivileges';
 import CatchAllModal from './CatchAllModal';

@@ -11,7 +11,6 @@ import {
     useApi,
     useConfig,
     useErrorHandler,
-    useLoading,
     useModalState,
     useVPNServersCount,
 } from '@proton/components';
@@ -20,6 +19,7 @@ import { startUnAuthFlow } from '@proton/components/containers/api/unAuthenticat
 import useKTActivation from '@proton/components/containers/keyTransparency/useKTActivation';
 import { AuthSession } from '@proton/components/containers/login/interface';
 import { PAYMENT_METHOD_TYPES, PaymentMethodStatus } from '@proton/components/payments/core';
+import { useLoading } from '@proton/hooks';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
 import { updateFeatureValue } from '@proton/shared/lib/api/features';
 import { getSilentApi, getUIDApi } from '@proton/shared/lib/api/helpers/customConfig';

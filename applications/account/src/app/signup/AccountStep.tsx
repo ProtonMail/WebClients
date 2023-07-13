@@ -19,8 +19,8 @@ import {
     SelectTwo,
     useConfig,
     useFormErrors,
-    useLoading,
 } from '@proton/components';
+import { useLoading } from '@proton/hooks';
 import metrics from '@proton/metrics';
 import { getIsVPNApp } from '@proton/shared/lib/authentication/apps';
 import {

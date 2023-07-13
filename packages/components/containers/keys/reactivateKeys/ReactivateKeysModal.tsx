@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { CryptoProxy, PrivateKeyReference } from '@proton/crypto';
+import { useLoading } from '@proton/hooks';
 import { getKeySalts } from '@proton/shared/lib/api/keys';
 import { MnemonicKeyResponse, getMnemonicUserKeys } from '@proton/shared/lib/api/settingsMnemonic';
 import { lockSensitiveSettings, unlockPasswordChanges } from '@proton/shared/lib/api/user';
@@ -30,7 +31,6 @@ import {
 import {
     useApi,
     useIsMnemonicAvailable,
-    useLoading,
     useModals,
     useNotifications,
     useRecoverySecrets,

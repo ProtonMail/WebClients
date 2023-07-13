@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
 
+import { useLoading } from '@proton/hooks';
 import { checkSubscription } from '@proton/shared/lib/api/payments';
 import { getPlanIDs } from '@proton/shared/lib/helpers/subscription';
 import { SubscriptionCheckResponse } from '@proton/shared/lib/interfaces/Subscription';
 
 import useApi from './useApi';
-import useLoading from './useLoading';
 import useSubscription from './useSubscription';
 import { useUser } from './useUser';
 

@@ -3,7 +3,8 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Href } from '@proton/atoms';
-import { Icon, PrimaryButton, VpnLogo, useApi, useLoading } from '@proton/components';
+import { Icon, PrimaryButton, VpnLogo, useApi } from '@proton/components';
+import { useLoading } from '@proton/hooks';
 import { pushForkSession } from '@proton/shared/lib/api/auth';
 
 import TVCodeInputs from './TVCodeInputs';

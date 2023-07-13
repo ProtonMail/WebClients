@@ -3,6 +3,7 @@ import { ChangeEvent, FormEvent, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button, Href } from '@proton/atoms';
+import { useLoading } from '@proton/hooks';
 import { leaveOrganisation } from '@proton/shared/lib/api/organization';
 import { reportBug } from '@proton/shared/lib/api/reports';
 import { canDelete, deleteUser, unlockPasswordChanges } from '@proton/shared/lib/api/user';
@@ -39,7 +40,6 @@ import {
     useAuthentication,
     useConfig,
     useEventManager,
-    useLoading,
     useNotifications,
     useOrganization,
     useUser,

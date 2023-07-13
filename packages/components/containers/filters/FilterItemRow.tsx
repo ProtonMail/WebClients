@@ -2,13 +2,14 @@ import React, { ChangeEvent, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useLoading } from '@proton/hooks';
 import { deleteFilter, toggleEnable } from '@proton/shared/lib/api/filters';
 import { FILTER_STATUS } from '@proton/shared/lib/constants';
 import { hasReachedFiltersLimit } from '@proton/shared/lib/helpers/filters';
 
 import { DropdownActions, FiltersUpsellModal, OrderableTableRow, Toggle, useModalState } from '../../components';
 import { DropdownActionProps } from '../../components/dropdown/DropdownActions';
-import { useApi, useEventManager, useLoading, useNotifications, useUser } from '../../hooks';
+import { useApi, useEventManager, useNotifications, useUser } from '../../hooks';
 import FilterWarningModal from './FilterWarningModal';
 import { Filter } from './interfaces';
 import DeleteFilterModal from './modal/DeleteFilterModal';

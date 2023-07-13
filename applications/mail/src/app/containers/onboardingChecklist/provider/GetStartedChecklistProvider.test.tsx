@@ -1,4 +1,5 @@
-import { useFeature, useLoading } from '@proton/components/hooks';
+import { useFeature } from '@proton/components/hooks';
+import { useLoading } from '@proton/hooks';
 import { CHECKLIST_DISPLAY_TYPE, ChecklistId, ChecklistKey } from '@proton/shared/lib/interfaces';
 
 import { renderHook } from 'proton-mail/helpers/test/render';
@@ -10,7 +11,7 @@ import { useGetStartedChecklist } from './GetStartedChecklistProvider';
 jest.mock('@proton/components/hooks/useFeature');
 const mockFeature = useFeature as jest.MockedFunction<any>;
 
-jest.mock('@proton/components/hooks/useLoading');
+jest.mock('@proton/hooks/useLoading');
 const mockLoading = useLoading as jest.MockedFunction<any>;
 jest.mock('../hooks/useChecklist');
 const mockChecklist = useChecklist as jest.MockedFunction<any>;

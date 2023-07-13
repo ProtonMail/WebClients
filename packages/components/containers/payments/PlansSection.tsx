@@ -4,6 +4,7 @@ import { useLocation } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import { useLoading } from '@proton/hooks';
 import { checkSubscription } from '@proton/shared/lib/api/payments';
 import { APPS, APP_NAMES, DEFAULT_CYCLE } from '@proton/shared/lib/constants';
 import { toMap } from '@proton/shared/lib/helpers/object';
@@ -23,7 +24,6 @@ import {
     useApi,
     useFeature,
     useLoad,
-    useLoading,
     useOrganization,
     usePlans,
     useSubscription,

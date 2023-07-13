@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
 import { Button, Href } from '@proton/atoms';
-import { Icon, Prompt, useApi, useEventManager, useLoading, useModalState, useNotifications } from '@proton/components';
+import { Icon, Prompt, useApi, useEventManager, useModalState, useNotifications } from '@proton/components';
+import { useLoading } from '@proton/hooks';
 import { markAsHam } from '@proton/shared/lib/api/messages';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { getBlogURL, getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';

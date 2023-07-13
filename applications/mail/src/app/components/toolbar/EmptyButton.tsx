@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
 import { Kbd, Vr } from '@proton/atoms';
-import { Icon, ToolbarButton, useLabels, useLoading, useMailSettings } from '@proton/components';
+import { Icon, ToolbarButton, useLabels, useMailSettings } from '@proton/components';
+import { useLoading } from '@proton/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { metaKey, shiftKey } from '@proton/shared/lib/helpers/browser';
 

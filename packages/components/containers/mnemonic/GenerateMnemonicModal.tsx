@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import { useLoading } from '@proton/hooks';
 import { reactivateMnemonicPhrase, updateMnemonicPhrase } from '@proton/shared/lib/api/settingsMnemonic';
 import { lockSensitiveSettings, unlockPasswordChanges } from '@proton/shared/lib/api/user';
 import { MNEMONIC_STATUS } from '@proton/shared/lib/interfaces';
@@ -18,7 +19,7 @@ import {
     Prompt,
     useModalState,
 } from '../../components';
-import { useApi, useEventManager, useGetUserKeys, useLoading, useUser } from '../../hooks';
+import { useApi, useEventManager, useGetUserKeys, useUser } from '../../hooks';
 import AuthModal from '../password/AuthModal';
 import { MnemonicPhraseStepButtons, MnemonicPhraseStepContent } from './MnemonicPhraseStep';
 

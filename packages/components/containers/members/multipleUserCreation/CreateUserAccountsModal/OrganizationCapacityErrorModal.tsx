@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { ModalProps, Prompt, SettingsLink, useConfig, useLoading } from '@proton/components';
+import { ModalProps, Prompt, SettingsLink, useConfig } from '@proton/components';
+import { useLoading } from '@proton/hooks';
 import { APP_NAMES, SHARED_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { addUpsellPath, getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
 

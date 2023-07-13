@@ -2,7 +2,8 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { useLoading, useNotifications } from '@proton/components';
+import { useNotifications } from '@proton/components';
+import { useLoading } from '@proton/hooks';
 import { SHARE_GENERATED_PASSWORD_LENGTH } from '@proton/shared/lib/drive/constants';
 import { SharedURLSessionKeyPayload } from '@proton/shared/lib/interfaces/drive/sharing';
 

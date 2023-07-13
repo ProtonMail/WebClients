@@ -2,6 +2,7 @@ import React from 'react';
 
 import { c } from 'ttag';
 
+import { useLoading } from '@proton/hooks';
 import metrics from '@proton/metrics';
 import { updateCrashReports, updateTelemetry } from '@proton/shared/lib/api/settings';
 import { setMetricsEnabled } from '@proton/shared/lib/helpers/metrics';
@@ -9,7 +10,7 @@ import { setSentryEnabled } from '@proton/shared/lib/helpers/sentry';
 import noop from '@proton/utils/noop';
 
 import { Toggle } from '../../components';
-import { useApi, useEventManager, useLoading, useUserSettings } from '../../hooks';
+import { useApi, useEventManager, useUserSettings } from '../../hooks';
 import {
     SettingsLayout,
     SettingsLayoutLeft,

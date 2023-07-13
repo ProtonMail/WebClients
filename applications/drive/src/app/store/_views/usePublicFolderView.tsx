@@ -1,6 +1,6 @@
 import { useEffect, useMemo } from 'react';
 
-import { useLoading } from '@proton/components';
+import { useLoading } from '@proton/hooks';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import { LayoutSetting } from '@proton/shared/lib/interfaces/drive/userSettings';
 
