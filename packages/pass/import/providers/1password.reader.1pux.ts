@@ -148,9 +148,9 @@ const extractLoginFieldFromLoginItem = (
 const processLoginItem = (
     item: Extract<OnePassItem, { categoryUuid: OnePassCategory.LOGIN }>
 ): ItemImportIntent<'login'> => {
-    const [totp, extraFields] = extractFirst<ItemExtraField<'totp'>, ItemExtraField>(
+    const [totp, extraFields] = extractFirst(
         extractExtraFields(item),
-        (extraField: ItemExtraField) => extraField.type === 'totp'
+        (extraField): extraField is ItemExtraField<'totp'> => extraField.type === 'totp'
     );
 
     return importLoginItem({
