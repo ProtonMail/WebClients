@@ -2759,11 +2759,6 @@
         "您已取消订阅 ${ categoriesJsx } 电子邮件。"
       ]
     },
-    "Email Unsubscribe Categories": {
-      "${ allCategoriesExceptTheLastOne } and ${ lastCategory }": [
-        "${ allCategoriesExceptTheLastOne } 和 ${ lastCategory }"
-      ]
-    },
     "Error": {
       "A group with this name already exists": [
         "已存在同名群组"
@@ -5515,12 +5510,6 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "作为 Proton 忠实用户，您拥有以下特权。"
       ],
-      "SMTP allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME }. It is a new feature available to select business users. Please email ${ emailLink } to request access.": [
-        "第三方服务或设备可以通过 SMTP 功能发送 ${ MAIL_APP_NAME } 邮件。这项新功能仅对部分商业用户开放，如有需要请联系 ${ emailLink } 申请开通。"
-      ],
-      "SMTP allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME }. To use this feature, start by generating a new token.": [
-        "第三方服务或设备可以通过 SMTP 功能发送 ${ MAIL_APP_NAME } 邮件。使用此功能需要生成专用密码。"
-      ],
       "Some keys successfully reactivated": [
         "已成功重新激活某些密钥"
       ],
@@ -5688,9 +5677,6 @@
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "导入日程需要先在 ${ CALENDAR_APP_NAME } 中创建日历，作为日程导入后的存放位置。"
-      ],
-      "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and visit our blog from time to time.": [
-        "您可以订阅我们的各类邮件或阅读我们的博客了解 ${ BRAND_NAME } 产品的动态。"
       ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "您需要选择一种账户恢复方式，验证身份后方可继续操作。"
@@ -7313,9 +7299,6 @@
     "Label for news": {
       "${ BRAND_NAME } beta announcements": [
         "${ BRAND_NAME } 公测通知"
-      ],
-      "${ BRAND_NAME } company announcements": [
-        "${ BRAND_NAME } 公司公告"
       ],
       "${ BRAND_NAME } for Business newsletter": [
         "${ BRAND_NAME } 商业通讯"
@@ -10670,9 +10653,6 @@
       ],
       "Signed in to member account": [
         "已登录成员账户"
-      ],
-      "SMTP tokens": [
-        "SMTP 专用密码"
       ],
       "Sort folders alphabetically": [
         "按字母顺序排列文件夹"

@@ -200,7 +200,7 @@
         "Sulje tämä ilmoituspalkki"
       ],
       "Collapse URL": [
-        "Supista URL-osoite"
+        "Pienennä URL-osoite"
       ],
       "Color": [
         "Väri"
@@ -896,7 +896,7 @@
         "Valitse kaikki viestit"
       ],
       "Self-destruct in 7 days": [
-        "Eräänny 7 päivän kuluttua"
+        "Eräänny seitsemän päivän kuluttua"
       ],
       "Self-destruct message": [
         "Aseta"
@@ -1601,7 +1601,7 @@
         "Esiintymän lisäystä tapahtumaan ei vielä tueta"
       ],
       "Event refreshing is not supported for the moment": [
-        "Tapahtuman päivitystä ei vielä tueta"
+        "Tapahtumapäivityksiä ei toistaiseksi tueta"
       ],
       "Event rescheduling is not supported for the moment": [
         "Tapahtuman uudelleenajoitusta ei vielä tueta"
@@ -1670,7 +1670,7 @@
     },
     "Collapsible tooltip": {
       "Collapse": [
-        "Supista"
+        "Piennennä"
       ],
       "Expand": [
         "Laajenna"
@@ -2851,7 +2851,7 @@
         "${ interval } päivän välein, ${ untilString }"
       ],
       "until ${ dateString }": [
-        "${ dateString } asti"
+        "päättyen ${ dateString }"
       ]
     },
     "Date label": {
@@ -4988,10 +4988,10 @@
         "Luo kalenteriin"
       ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
-        "CSV-tiedostoja Outlookista, Outlook Expressistä, Yahoo! Mailista, Hotmailista, Eudorasta ja joistakin muista sovelluksista sekä vCard 3.1 ja 4.0 -muotoja (UTF-8-koodaus) tuetaan."
+        "Outlookin, Outlook Expressin, Yahoo! Mailin, Hotmailin, Eudoran ja joidenkin muiden sovellusten CSV-tiedostoja, sekä vCard-tiedostojen 3.1- ja 4.0-versioita (UTF-8-koodauksella) tuetaan."
       ],
       "Custom": [
-        "Oma"
+        "Mukautettu"
       ],
       "Custom daily": [
         "Oma päivittäinen"
@@ -5000,7 +5000,7 @@
         "Oma kuukausittainen"
       ],
       "Custom weekly": [
-        "Oma viikottainen"
+        "Mukautettu viikottainen"
       ],
       "Custom yearly": [
         "Oma vuosittainen"
@@ -5089,7 +5089,7 @@
         "Salaa viesti"
       ],
       "Enter the code from your authenticator app": [
-        "Syötä todennussovelluksesi näyttämä koodi"
+        "Syötä todennussovelluksen näyttämä koodi"
       ],
       "Enter the credentials of the email account you want to import from.": [
         "Syötä tuotavan tilin kirjautumistiedot."
@@ -5913,7 +5913,7 @@
         "Voit tuoda vain yhden tietotyypin kerrallaan."
       ],
       "You can read this email without revealing your interactions, location, or device to advertisers.": [
-        "Voit lukea tämän viestin paljastamatta mainostajille toimiasi, sijaintiasi tai laitteesi tietoja."
+        "Voit lukea viestin paljastamatta mainostajille tietoja toiminnastasi, sijainnistasi tai laitteestasi."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Käytä ilmoituksia saadaksesi hälytyksen kansioon saapuvista uusista viesteistä."
@@ -5993,10 +5993,10 @@
         "SimpleLogin sisältyy ${ BRAND_NAME }-tiliisi. Aloita asentamalla selainlaajennus yhdellä painalluksella."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
-        "${ BRAND_NAME }-tilisi on tällä hetkellä jäädytetty. 28 päivän kuluttua postilaatikkosi ei enää vastaanota viestejä, Drive-jakolinkkisi ja uusien tiedostojen tallennus estetään. Palauttaaksesi normaalin toiminnan, maksa maksamattomat laskut."
+        "${ BRAND_NAME }-tilisi on jäädytetty, ja 28 päivän kuluttua postilaatikkosi ei enää vastaanota viestejä ja Drive-jakolinkit sekä uusien tiedostojen tallennus estetään. Palauttaaksesi tilisi normaalin toiminnan, maksa maksamattomat laskut."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "${ BRAND_NAME }-tilisi on tällä hetkellä jäädytetty. Postilaatikkosi ei enää vastaanota viestejä, Drive-jakolinkkisi ja uusien tiedostojen tallennus estetään. Palauttaaksesi normaalin toiminnan, maksa maksamattomat laskut."
+        "${ BRAND_NAME }-tilisi on jäädytetty, eikä postilaatikkosi enää vastaanota viestejä ja Drive-jakolinkit sekä uusien tiedostojen tallennus estetään. Palauttaaksesi tilisi normaalin toiminnan, maksa maksamattomat laskut."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Tililläsi on ainakin yksi erääntynyt lasku. Pääsyäsi rajoitetaan pian. ${ payInvoiceLink }"
@@ -6123,7 +6123,7 @@
         "Hylkää luonnos"
       ],
       "Expand / contract composer": [
-        "Laajenna/supista viestin kirjoitus"
+        "Laajenna/tiivistä viestin kirjoitus"
       ],
       "Forward": [
         "Välitä"
@@ -6183,7 +6183,7 @@
         "Siirry alaspäin"
       ],
       "Move left / collapse": [
-        "Siirry vasemmalle/supista"
+        "Siirry vasemmalle/pienennä"
       ],
       "Move right / expand": [
         "Siirry oikealle/laajenna"
@@ -6518,7 +6518,7 @@
         "Tuo yhteystietoja"
       ],
       "Import interval": [
-        "Tuontiaika"
+        "Tuontiväli"
       ],
       "Import to email address": [
         "Tuo sähköpostiosoitteelle"
@@ -7170,12 +7170,12 @@
         "${ interval } kuukauden välein ${ onDayString }"
       ],
       "Every ${ interval } month ${ onDayString }, ${ timesString }": [
-        "Joka ${ interval } kuukauden ${ onDayString }, ${ timesString }",
-        "Joka ${ interval } kuukauden ${ onDayString }, ${ timesString }"
+        "${ interval } kuukauden välein ${ onDayString }, ${ timesString }",
+        "${ interval } kuukauden välein ${ onDayString }, ${ timesString }"
       ],
       "Every ${ interval } month ${ onDayString }, ${ untilString }": [
-        "Joka ${ interval } kuukauden ${ onDayString }, ${ untilString }",
-        "Joka ${ interval } kuukauden ${ onDayString }, ${ untilString }"
+        "${ interval } kuukauden välein ${ onDayString }, ${ untilString }",
+        "${ interval } kuukauden välein ${ onDayString }, ${ untilString }"
       ],
       "Monthly ${ onDayString }": [
         "Kuukausittain ${ onDayString }"
@@ -7740,7 +7740,7 @@
     },
     "Refresh on apply warning": {
       "Note: the service will reload after you click the Apply button.": [
-        "Huomioi: palvelu latautuu uudelleen kun painat Käytä-painiketta."
+        "Huomioi: palvelu latautuu uudelleen kun painat Käytä."
       ]
     },
     "Remaining days before the message expire": {
@@ -8502,7 +8502,7 @@
         "Premium Mail ja Calendar"
       ],
       "Premium Password Manager": [
-        "Premium salasananhallinta"
+        "Premium salasanahallinta"
       ]
     },
     "summer2023: Describe Proton Pass": {
@@ -8512,7 +8512,7 @@
     },
     "summer2023: Short tool name to present Proton Pass": {
       "Password manager": [
-        "Salasananhallinta"
+        "Salasanahallinta"
       ]
     },
     "summer2023: Tooltip": {
@@ -9194,6 +9194,10 @@
       "Warning: suspected fake website": [
         "Varoitus: epäilty huijaussivusto"
       ],
+      "We protected you from ${ trackersCount } tracker": [
+        "Suojasimme sinua ${ trackersCount } seurannalta",
+        "Suojasimme sinua ${ trackersCount } seurannalta"
+      ],
       "Welcome": [
         "Tervetuloa"
       ],
@@ -9432,88 +9436,88 @@
         "${ interval } viikon välein kaikkina päivinä, ${ untilString }"
       ],
       "Every ${ interval } week on Friday": [
-        "Joka ${ interval }. viikko perjantaisin",
-        "Joka ${ interval }. viikko perjantaisin"
+        "${ interval } viikon välein perjantaisin",
+        "${ interval } viikon välein perjantaisin"
       ],
       "Every ${ interval } week on Friday, ${ timesString }": [
-        "Joka ${ interval }. viikko perjantaisin, ${ timesString }",
-        "Joka ${ interval }. viikko perjantaisin, ${ timesString }"
+        "${ interval } viikon välein perjantaisin, ${ timesString }",
+        "${ interval } viikon välein perjantaisin, ${ timesString }"
       ],
       "Every ${ interval } week on Friday, ${ untilString }": [
-        "Joka ${ interval }. viikko perjantaisin, ${ untilString }",
-        "Joka ${ interval }. viikko perjantaisin, ${ untilString }"
+        "${ interval } viikon välein perjantaisin, ${ untilString }",
+        "${ interval } viikon välein perjantaisin, ${ untilString }"
       ],
       "Every ${ interval } week on Monday": [
-        "Joka ${ interval }. viikko maanantaisin",
-        "Joka ${ interval }. viikko maanantaisin"
+        "${ interval } viikon välein maanantaisin",
+        "${ interval } viikon välein maanantaisin"
       ],
       "Every ${ interval } week on Monday, ${ timesString }": [
-        "Joka ${ interval }. viikko maanantaisin, ${ timesString }",
-        "Joka ${ interval }. viikko maanantaisin, ${ timesString }"
+        "${ interval } viikon välein maanantaisin, ${ timesString }",
+        "${ interval } viikon välein maanantaisin, ${ timesString }"
       ],
       "Every ${ interval } week on Monday, ${ untilString }": [
-        "Joka ${ interval }. viikko maanantaisin, ${ untilString }",
-        "Joka ${ interval }. viikko maanantaisin, ${ untilString }"
+        "${ interval } viikon välein maanantaisin, ${ untilString }",
+        "${ interval } viikon välein maanantaisin, ${ untilString }"
       ],
       "Every ${ interval } week on Saturday": [
-        "Joka ${ interval }. viikko lauantaisin",
-        "Joka ${ interval }. viikko lauantaisin"
+        "${ interval } viikon välein lauantaisin",
+        "${ interval } viikon välein lauantaisin"
       ],
       "Every ${ interval } week on Saturday, ${ timesString }": [
-        "Joka ${ interval }. viikko lauantaisin, ${ timesString }",
-        "Joka ${ interval }. viikko lauantaisin, ${ timesString }"
+        "${ interval } viikon välein lauantaisin, ${ timesString }",
+        "${ interval } viikon välein lauantaisin, ${ timesString }"
       ],
       "Every ${ interval } week on Saturday, ${ untilString }": [
-        "Joka ${ interval }. viikko lauantaisin, ${ untilString }",
-        "Joka ${ interval }. viikko lauantaisin, ${ untilString }"
+        "${ interval } viikon välein lauantaisin, ${ untilString }",
+        "${ interval } viikon välein lauantaisin, ${ untilString }"
       ],
       "Every ${ interval } week on Sunday": [
-        "Joka ${ interval }. viikko sunnuntaisin",
-        "Joka ${ interval }. viikko sunnuntaisin"
+        "${ interval } viikon välein sunnuntaisin",
+        "${ interval } viikon välein sunnuntaisin"
       ],
       "Every ${ interval } week on Sunday, ${ timesString }": [
-        "Joka ${ interval }. viikko sunnuntaisin, ${ timesString }",
-        "Joka ${ interval }. viikko sunnuntaisin, ${ timesString }"
+        "${ interval } viikon välein sunnuntaisin, ${ timesString }",
+        "${ interval } viikon välein sunnuntaisin, ${ timesString }"
       ],
       "Every ${ interval } week on Sunday, ${ untilString }": [
-        "Joka ${ interval }. viikko sunnuntaisin, ${ untilString }",
-        "Joka ${ interval }. viikko sunnuntaisin, ${ untilString }"
+        "${ interval } viikon välein sunnuntaisin, ${ untilString }",
+        "${ interval } viikon välein sunnuntaisin, ${ untilString }"
       ],
       "Every ${ interval } week on Thursday": [
-        "Joka ${ interval }. viikko torstaisin",
-        "Joka ${ interval }. viikko torstaisin"
+        "${ interval } viikon välein torstaisin",
+        "${ interval } viikon välein torstaisin"
       ],
       "Every ${ interval } week on Thursday, ${ timesString }": [
-        "Joka ${ interval }. viikko torstaisin, ${ timesString }",
-        "Joka ${ interval }. viikko torstaisin, ${ timesString }"
+        "${ interval } viikon välein torstaisin, ${ timesString }",
+        "${ interval } viikon välein torstaisin, ${ timesString }"
       ],
       "Every ${ interval } week on Thursday, ${ untilString }": [
-        "Joka ${ interval }. viikko torstaisin, ${ untilString }",
-        "Joka ${ interval }. viikko torstaisin, ${ untilString }"
+        "${ interval } viikon välein torstaisin, ${ untilString }",
+        "${ interval } viikon välein torstaisin, ${ untilString }"
       ],
       "Every ${ interval } week on Tuesday": [
-        "Joka ${ interval }. viikko tiistaisin",
-        "Joka ${ interval }. viikko tiistaisin"
+        "${ interval } viikon välein tiistaisin",
+        "${ interval } viikon välein tiistaisin"
       ],
       "Every ${ interval } week on Tuesday, ${ timesString }": [
-        "Joka ${ interval }. viikko tiistaisin, ${ timesString }",
-        "Joka ${ interval }. viikko tiistaisin, ${ timesString }"
+        "${ interval } viikon välein tiistaisin, ${ timesString }",
+        "${ interval } viikon välein tiistaisin, ${ timesString }"
       ],
       "Every ${ interval } week on Tuesday, ${ untilString }": [
-        "Joka ${ interval }. viikko tiistaisin, ${ untilString }",
-        "Joka ${ interval }. viikko tiistaisin, ${ untilString }"
+        "${ interval } viikon välein tiistaisin, ${ untilString }",
+        "${ interval } viikon välein tiistaisin, ${ untilString }"
       ],
       "Every ${ interval } week on Wednesday": [
-        "Joka ${ interval }. viikko keskiviikkoisin",
-        "Joka ${ interval }. viikko keskiviikkoisin"
+        "${ interval } viikon välein keskiviikkoisin",
+        "${ interval } viikon välein keskiviikkoisin"
       ],
       "Every ${ interval } week on Wednesday, ${ timesString }": [
-        "Joka ${ interval }. viikko keskiviikkoisin, ${ timesString }",
-        "Joka ${ interval }. viikko keskiviikkoisin, ${ timesString }"
+        "${ interval } viikon välein keskiviikkoisin, ${ timesString }",
+        "${ interval } viikon välein keskiviikkoisin, ${ timesString }"
       ],
       "Every ${ interval } week on Wednesday, ${ untilString }": [
-        "Joka ${ interval }. viikko keskiviikkoisin, ${ untilString }",
-        "Joka ${ interval }. viikko keskiviikkoisin, ${ untilString }"
+        "${ interval } viikon välein keskiviikkoisin, ${ untilString }",
+        "${ interval } viikon välein keskiviikkoisin, ${ untilString }"
       ],
       "Weekly on ${ multipleDaysString }": [
         "Viikottain ${ multipleDaysString }"
@@ -9630,8 +9634,8 @@
         "${ interval } vuoden välein, ${ timesString }"
       ],
       "Every ${ interval } year, ${ untilString }": [
-        "Joka ${ interval } vuosi, ${ untilString }",
-        "Joka ${ interval } vuosi, ${ untilString }"
+        "${ interval } vuoden välein, ${ untilString }",
+        "${ interval } vuoden välein, ${ untilString }"
       ],
       "Yearly": [
         "Vuosittain"

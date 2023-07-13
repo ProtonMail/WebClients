@@ -4099,6 +4099,9 @@
     "Font face option": {
       "System default": [
         "Valors per defecte del sistema"
+      ],
+      "Theme font": [
+        "Font del tema"
       ]
     },
     "Font Size Default": {
@@ -4138,17 +4141,56 @@
       ]
     },
     "Get started checklist instructions": {
+      "${ MAIL_APP_NAME } app": [
+        "Aplicació ${ MAIL_APP_NAME }"
+      ],
       "${ MAIL_APP_NAME } on App Store": [
         "${ MAIL_APP_NAME } a l'App Store"
       ],
       "${ MAIL_APP_NAME } on Play Store": [
         "${ MAIL_APP_NAME } a Play Store"
       ],
+      "account logins": [
+        "els inicis de sessió del compte"
+      ],
+      "Auto-forward Gmail": [
+        "Reenviament automàtic des de Gmail"
+      ],
+      "auto-forwarding": [
+        "reenviament automàtic"
+      ],
+      "Block email communications from scammers permanently.": [
+        "Bloqueja permanentment comunicacions de correu electrònic d'estafadors."
+      ],
+      "Block unsavory senders": [
+        "Bloqueja els remitents no desitjats"
+      ],
+      "Bravo for making your email even more secure, convenient, and relevant! We've upped your free storage to a total of 1 GB.": [
+        "Enhorabona per fer el vostre correu electrònic encara més segur, convenient i rellevant! Hem apujat el vostre emmagatzematge gratuït fins a un total d'1 GB."
+      ],
+      "Checklist complete": [
+        "Llista de verificació completada"
+      ],
       "Close": [
         "Tanca"
       ],
       "Congratulation, you completed all the steps!": [
         "Enhorabona, heu completat tots els passos!"
+      ],
+      "Continue setting up your email": [
+        "Continueu configurant el vostre correu electrònic"
+      ],
+      "Discover privacy features": [
+        "Descobriu les característiques de privacitat"
+      ],
+      "Double your free storage to 1 GB when you complete the following:": [
+        "Dobleu l'emmagatzematge gratuït a 1 GB quan completeu els passos següents:"
+      ],
+      "Encryption so strong, only you and intended recipients can view your emails.": [
+        "Xifratge tan fort que només vós i els destinataris escollits poden veure els vostres correus electrònics."
+      ],
+      "For your eyes only": [
+        "Només pels vostres ulls"
       ],
       "Get free storage": [
         "Obtenir emmagatzematge gratuït"
@@ -4159,6 +4201,9 @@
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "Obteniu l'aplicació mòbil de ${ MAIL_APP_NAME }"
       ],
+      "Get the App": [
+        "Obtén l'aplicació"
+      ],
       "Import contacts or emails": [
         "Importeu contactes o correus electrònics"
       ],
@@ -4168,14 +4213,35 @@
       "Import your contacts or messages": [
         "Importeu els vostres contactes o missatges"
       ],
+      "Keep using ${ MAIL_APP_NAME } to discover more ways ${ BRAND_NAME } protects your privacy and simplifies emailing.": [
+        "Seguiu utilitzant ${ MAIL_APP_NAME } per a descobrir més formes amb què ${ BRAND_NAME } protegeix la vostra privacitat i simplifica l'enviament de correus electrònics."
+      ],
       "Learn more": [
         "Saber-ne més"
+      ],
+      "Make ${ BRAND_NAME } your go-to inbox": [
+        "Feu de ${ BRAND_NAME } la vostra safata d'entrada preferida"
       ],
       "Maybe later": [
         "Potser després"
       ],
+      "Nice! You've updated all services in this category.": [
+        "Perfecte! Heu actualitzat tots els serveis d'aquesta categoria."
+      ],
       "Open checklist": [
         "Obrir la llista de comprovacions"
+      ],
+      "Popular online services": [
+        "Serveis populars en línia"
+      ],
+      "privacy features": [
+        "característiques de privacitat"
+      ],
+      "Protect and simplify your email": [
+        "Protegiu i simplifiqueu el vostre correu electrònic"
+      ],
+      "Protection from trackers": [
+        "Protecció contra els rastrejadors"
       ],
       "Quickly transfer your contacts or emails from any provider using our Easy Switch import assistant.": [
         "Transferiu ràpidament els vostres contactes o correus electrònics de qualsevol proveïdor utilitzant el nostre assistent d'importació Easy Switch."
@@ -4188,6 +4254,18 @@
       ],
       "Sign in to the mobile app to complete this step": [
         "Inicieu sessió a l'aplicació mòbil per completar aquest pas."
+      ],
+      "Update your logins": [
+        "Actualitzeu els inicis de sessió"
+      ],
+      "Using your mobile device, scan this QR code or visit the iOS or Android store.": [
+        "Amb el vostre dispositiu mòbil, escanegeu aquest codi QR o visiteu la tenda d'aplicacions iOS o Android."
+      ],
+      "We stop advertisers and data collectors from profiling you.": [
+        "Impedim que els anunciants i els recopiladors de dades us perfilin."
+      ],
+      "You've unlocked 1 GB": [
+        "Heu desbloquejat 1 GB"
       ]
     },
     "Gmail forwarding": {
@@ -7352,9 +7430,20 @@
         "Feu servir el selector d'aplicacions de dalt a l'esquerra per accedir a tots els serveis de ${ BRAND_NAME }: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } i ${ DRIVE_SHORT_APP_NAME }."
       ]
     },
+    "Online accounts": {
+      "Have an account with one of these services? Just click to change the email address to your ${ MAIL_APP_NAME } address.": [
+        "Teniu un compte amb algun d'aquests serveis? Cliqueu per a canviar l'adreça de correu electrònic a la vostra adreça ${ MAIL_APP_NAME }."
+      ]
+    },
     "Online Accounts Name": {
+      "Banking": [
+        "Operacions bancàries"
+      ],
       "Crypto": [
         "Cripto"
+      ],
+      "E-commerce and Retail": [
+        "Comerç electrònic i Botiga"
       ],
       "Entertainment": [
         "Entreteniment"
@@ -7364,6 +7453,9 @@
       ],
       "Gaming": [
         "Jocs"
+      ],
+      "Most popular": [
+        "Més populars"
       ],
       "Travel": [
         "Viatges"
@@ -8396,11 +8488,54 @@
       ],
       "Premium Mail and Calendar": [
         "Versió prèmium de Mail i Calendar"
+      ],
+      "Premium Password Manager": [
+        "Gestor de Contrasenyes Prèmium"
+      ]
+    },
+    "summer2023: Describe Proton Pass": {
+      "Securely store your passwords and autofill them on websites. Includes unlimited passwords, autofill, password generator, and more.": [
+        "Deseu de forma segura les vostres contrasenyes i inseriu-les automàticament a llocs web. Inclou, entre d'altres, contrasenyes il·limitades, inserció automàtica, generador de contrasenyes."
       ]
     },
     "summer2023: Short tool name to present Proton Pass": {
       "Password manager": [
         "Gestor de contrasenyes"
+      ]
+    },
+    "summer2023: Tooltip": {
+      "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
+        "Creeu detalls d'inici de sessió segurs en tots els vostres dispositius. Inclou, entre d'altres, àlies il·limitats, 20 caixes fortes, autenticació de dos factors (2FA) i inserció automàtica de targetes de crèdit."
+      ],
+      "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "Inclou, entre d'altres, més de 2950 servidors en més de 65 països, connexió fins a 10 dispositius, accés a serveis de reproducció en línia de tot el món i bloqueig de programari maliciós i d'anuncis."
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Inclou, entre d'altres, suport per a 1 domini de correu electrònic personalitzat, 10 adreces de correu electrònic, 10 àlies hide-my-email i compartició de calendari."
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "Protegiu els vostres fitxers amb emmagatzematge xifrat al núvol. Inclou, entre d'altres, historial de versions i compartició de fitxers xifrats."
+      ]
+    },
+    "summer2023:Footer": {
+      "*Your subscription will automatically renew at the standard discounted rate at the end of your billing cycle.": [
+        "*La vostra subscripció es renovarà automàticament a la tarifa estàndard amb descompte al final del cicle de facturació."
+      ],
+      "Discounts are based on the standard monthly pricing. This offer is only available to first-time subscribers.": [
+        "Els descomptes s'apliquen als preus mensuals estàndard. Aquesta oferta només està disponible per a nous subscriptors."
+      ]
+    },
+    "summer2023:Info": {
+      "For a limited time, get the best ${ BRAND_NAME } has to offer at an exclusive discount.": [
+        "Per un temps limitat podeu obtenir el millor que ${ BRAND_NAME } pot oferir amb un descompte exclusiu."
+      ],
+      "We’re celebrating the nine-year anniversary of our crowdfunding!": [
+        "Estem celebrant el novè aniversari del nostre finançament col·lectiu!"
+      ]
+    },
+    "summer2023:Offer title": {
+      "${ BRAND_NAME } Anniversary Sale": [
+        "${ BRAND_NAME } Rebaixa d'Aniversari"
       ]
     },
     "Table header": {
@@ -9046,6 +9181,10 @@
       ],
       "Warning: suspected fake website": [
         "Avís: presumpte lloc web fals"
+      ],
+      "We protected you from ${ trackersCount } tracker": [
+        "Hem protegit el vostre correu electrònic contra ${ trackersCount } rastrejador.",
+        "Hem protegit el vostre correu electrònic contra ${ trackersCount } rastrejadors."
       ],
       "Welcome": [
         "Us donem la benvinguda"

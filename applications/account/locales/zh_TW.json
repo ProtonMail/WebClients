@@ -2976,11 +2976,6 @@
         "您已取消訂閱 ${ categoriesJsx } 電郵。"
       ]
     },
-    "Email Unsubscribe Categories": {
-      "${ allCategoriesExceptTheLastOne } and ${ lastCategory }": [
-        "${ allCategoriesExceptTheLastOne } 與 ${ lastCategory }"
-      ]
-    },
     "Enabled 2FA": {
       "2FA": [
         "雙重驗證"
@@ -4360,6 +4355,9 @@
     "Font face option": {
       "System default": [
         "系統預設值"
+      ],
+      "Theme font": [
+        "選擇布景主題字體"
       ]
     },
     "Font Size Default": {
@@ -5031,11 +5029,8 @@
       "${ numGroups } contact groups": [
         "${ numGroups } 個聯絡人群組"
       ],
-      "${ PROTON_SENTINEL_NAME } is an account protection program developed at ${ BRAND_NAME } for users who need maximum security.": [
-        "${ PROTON_SENTINEL_NAME }是由${ BRAND_NAME }開發，提供給需要最高安全性的使用者"
-      ],
-      "${ PROTON_SENTINEL_NAME } is powered by sophisticated AI systems and teams of specialists working 24/7 to mitigate bad actors and security threats.": [
-        "${ PROTON_SENTINEL_NAME }使用了複雜的人工智慧系統及24/7防禦團隊以確保安全"
+      "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
+        "${ PROTON_SENTINEL_NAME } 是一種高級帳戶保護程序，由最新的 AI 系統和全天候工作的專家提供協助，以保護您免受不良行為者與安全威脅的侵害。"
       ],
       "${ providerFoldersNumLocalized } folders found": [
         "找到 ${ providerFoldersNumLocalized } 個資料夾"
@@ -5961,9 +5956,6 @@
       "old password": [
         "舊密碼"
       ],
-      "Once you enable ${ PROTON_SENTINEL_NAME }:": [
-        "當您啟用${ PROTON_SENTINEL_NAME }"
-      ],
       "Once you reset your password:": [
         "一旦您重設您的密碼："
       ],
@@ -6105,6 +6097,9 @@
       "Protected by Swiss privacy laws": [
         "受瑞士隱私法律保障"
       ],
+      "Public figures, journalists, executives, and others who may be the target of cyber attacks are highly encouraged to enable ${ PROTON_SENTINEL_NAME }.": [
+        "強烈鼓勵公眾人物、記者、管理人員和其他可能成為網絡攻擊目標的人啟用 ${ PROTON_SENTINEL_NAME }。"
+      ],
       "Public link invite": [
         "公開的連結邀請"
       ],
@@ -6237,11 +6232,11 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "為答謝您的長期支援，您的帳號已啟用額外的功能。"
       ],
-      "SMTP allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME }. It is a new feature available to select business users. Please email ${ emailLink } to request access.": [
-        "SMTP 允許第三方服務或裝置透過 ${ MAIL_APP_NAME } 傳送電子郵件。這是一項新功能，開放給指定企業使用者。請寄送電子郵件至 ${ emailLink } 以請求存取。"
+      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
+        "SMTP Submission 允許第三方服務或設備通過 ${ MAIL_APP_NAME } 使用您自有的網域地址發送電子郵件。\n要請求訪問權限，請 ${ createTicket } 描述您的使用情境、您想要使用的自定義域以及預期的每小時和每日電子郵件量。"
       ],
-      "SMTP allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME }. To use this feature, start by generating a new token.": [
-        "SMTP 允許第三方服務或裝置透過 ${ MAIL_APP_NAME } 傳送電子郵件。若要使用此功能，請產生一個新權仗作開始。"
+      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To use this feature, start by generating a new token.": [
+        "SMTP Submission 允許第三方服務或設備通過 ${ MAIL_APP_NAME } 使用您自有的網域地址發送電子郵件。要使用此功能，請先產生新的 token 令牌。"
       ],
       "Some keys successfully reactivated": [
         "部份金鑰都已成功重新啟用"
@@ -6284,9 +6279,6 @@
       ],
       "support team": [
         "支援團隊"
-      ],
-      "Suspicious events will be challenged by multiple layers of defense that help prevent attackers from hijacking your account.": [
-        "可疑的活動會被多層的防禦確認以避免帳戶劫持。"
       ],
       "Swiss based": [
         "總部設於瑞士"
@@ -6474,8 +6466,8 @@
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "若要匯入行程，須先在 ${ CALENDAR_APP_NAME } 創建新的行事曆。匯入後的行程，都會在此顯示。"
       ],
-      "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and visit our blog from time to time.": [
-        "為了解 ${ BRAND_NAME } 產品的最新開發動態，您可訂購授權我們的各份電子通訊，或不時造訪我們的部落格。"
+      "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
+        "想知道 ${ BRAND_NAME } 的最新發展嗎？您可以隨時訂閱我們的各種電子郵件通知以及 ${ blogLink }。"
       ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "為繼續此程序，選擇帳號復原手段，然後我們將能驗證您的請求。"
@@ -6590,9 +6582,6 @@
       ],
       "Use the selected email address as the SMTP username in the external service, and the generated token as the SMTP password.": [
         "將選取的電子郵件位址用作外部服務的 SMTP 使用者名稱、產生的通證用作 SMTP 密碼。"
-      ],
-      "Users with sensitive data and communications, such as journalists or executives, are highly encouraged to enable ${ PROTON_SENTINEL_NAME }.": [
-        "持有機密資料及通訊者，如記者及行政人員，建議開啟 ${ PROTON_SENTINEL_NAME }。"
       ],
       "Verification can take a few minutes.": [
         "驗證或需時數分鐘。"
@@ -6836,12 +6825,6 @@
       ],
       "You will NOT be able to decrypt any messages, files, and other data encrypted with this key. All data signed with this key will no longer be verified by ${ BRAND_NAME } applications.": [
         "您無法透過此金鑰解密訊息、檔案、及其他資料。所有透過此金鑰簽署的資料將不在被${ BRAND_NAME }驗證應用程式承認。"
-      ],
-      "You will receive priority support from specialists trained in account protection. For any account security concerns, please ${ hereLink }.": [
-        "您將獲得受過帳號保護訓練的專家的優先支援。若任何帳號安全問題，請聯絡我們 ${ hereLink }"
-      ],
-      "You will see more details in the Security logs below for important events such as sign in attempts.": [
-        "您能在下方看到更細節的安全紀錄，如登入紀錄。"
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "即將重新導向到 PayPal 驗證您的付款。"
@@ -8260,9 +8243,6 @@
       "${ BRAND_NAME } beta announcements": [
         "${ BRAND_NAME } Beta 公告"
       ],
-      "${ BRAND_NAME } company announcements": [
-        "${ BRAND_NAME } 公司公告"
-      ],
       "${ BRAND_NAME } for Business newsletter": [
         "${ BRAND_NAME } 商業通訊"
       ],
@@ -8385,8 +8365,8 @@
       "Common sign up issues": [
         "常見註冊問題"
       ],
-      "contact us": [
-        "聯絡我們"
+      "create a ticket": [
+        "新增申請"
       ],
       "Create account": [
         "創建帳號"
@@ -10116,8 +10096,8 @@
       "Download the ${ PASS_APP_NAME } app from the App Store and install it to start using ${ PASS_APP_NAME2 } on your phone.": [
         "從App Store下載${ PASS_APP_NAME }應用程式並安裝以於手機啟用${ PASS_APP_NAME2 }。"
       ],
-      "Encrypted password manager${ breakToken }that also protects your identity": [
-        "加密的密碼字元管理器${ breakToken }也保護您的身分"
+      "Encrypted password manager that also protects your identity": [
+        "加密的密碼管理器保護您的身分"
       ],
       "End-to-end encrypted notes": [
         "點對點加密附註"
@@ -12154,7 +12134,7 @@
         "PayPal 驗證失敗"
       ],
       "Personalise your e-mail footer": [
-        "個人化您的電子郵件簽名"
+        "自訂您電郵的下款"
       ],
       "Phone": [
         "電話"
@@ -12303,8 +12283,8 @@
       "Signed in to member account": [
         "登入到成員帳號"
       ],
-      "SMTP tokens": [
-        "SMTP 通證"
+      "SMTP Submission": [
+        "SMTP Submission"
       ],
       "Sort folders alphabetically": [
         "按英文字母排序資料夾"

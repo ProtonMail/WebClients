@@ -4128,6 +4128,9 @@
     "Font face option": {
       "System default": [
         "Implicit din sistem"
+      ],
+      "Theme font": [
+        "Font temă"
       ]
     },
     "Font Size Default": {
@@ -4976,7 +4979,7 @@
         "Sigur doriți să ștergeți definitiv această ciornă?"
       ],
       "Are you sure you want to permanently delete this message?": [
-        "Sigur doriți să ștergeți permanent acest mesaj?"
+        "Sigur doriți să ștergeți definitiv acest mesaj?"
       ],
       "Attach public key": [
         "Atașare cheie publică"
@@ -9360,6 +9363,11 @@
       "Warning: suspected fake website": [
         "Avertisment: suspectare site fals"
       ],
+      "We protected you from ${ trackersCount } tracker": [
+        "S-a blocat ${ trackersCount } funcție de monitorizare.",
+        "S-au blocat ${ trackersCount } funcții de monitorizare.",
+        "S-au blocat ${ trackersCount } de funcții de monitorizare."
+      ],
       "Welcome": [
         "Bun venit"
       ],
@@ -9508,7 +9516,7 @@
         "Sigur doriți să anulați importarea?"
       ],
       "Are you sure you want to permanently delete ${ count } contact group?": [
-        "Sigur doriți să ștergeți definitiv un grup de contacte?",
+        "Sigur doriți să ștergeți definitiv ${ count } grup de contacte?",
         "Sigur doriți să ștergeți definitiv ${ count } grupuri de contacte?",
         "Sigur doriți să ștergeți definitiv ${ count } de grupuri de contacte?"
       ],
