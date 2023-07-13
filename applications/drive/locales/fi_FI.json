@@ -131,10 +131,10 @@
         "Sulje siirrot"
       ],
       "Collapse": [
-        "Supista"
+        "Pienennä"
       ],
       "Collapse folder": [
-        "Supista kansio"
+        "Pienennä kansio"
       ],
       "Compose": [
         "Kirjoita"
@@ -877,7 +877,7 @@
     },
     "Collapsible tooltip": {
       "Collapse": [
-        "Supista"
+        "Piennennä"
       ],
       "Expand": [
         "Laajenna"
@@ -3331,7 +3331,7 @@
         "Luodaan linkkiä kansioon"
       ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
-        "CSV-tiedostoja Outlookista, Outlook Expressistä, Yahoo! Mailista, Hotmailista, Eudorasta ja joistakin muista sovelluksista sekä vCard 3.1 ja 4.0 -muotoja (UTF-8-koodaus) tuetaan."
+        "Outlookin, Outlook Expressin, Yahoo! Mailin, Hotmailin, Eudoran ja joidenkin muiden sovellusten CSV-tiedostoja, sekä vCard-tiedostojen 3.1- ja 4.0-versioita (UTF-8-koodauksella) tuetaan."
       ],
       "Current version": [
         "Nykyinen versio"
@@ -3410,7 +3410,7 @@
         "Syötä salasana"
       ],
       "Enter the code from your authenticator app": [
-        "Syötä todennussovelluksesi näyttämä koodi"
+        "Syötä todennussovelluksen näyttämä koodi"
       ],
       "Enter the credentials of the email account you want to import from.": [
         "Syötä tuotavan tilin kirjautumistiedot."
@@ -4099,10 +4099,10 @@
         "Olet saavuttanut yhteystietoryhmän osoitteiden enimmäismäärän."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
-        "${ BRAND_NAME }-tilisi on tällä hetkellä jäädytetty. 28 päivän kuluttua postilaatikkosi ei enää vastaanota viestejä, Drive-jakolinkkisi ja uusien tiedostojen tallennus estetään. Palauttaaksesi normaalin toiminnan, maksa maksamattomat laskut."
+        "${ BRAND_NAME }-tilisi on jäädytetty, ja 28 päivän kuluttua postilaatikkosi ei enää vastaanota viestejä ja Drive-jakolinkit sekä uusien tiedostojen tallennus estetään. Palauttaaksesi tilisi normaalin toiminnan, maksa maksamattomat laskut."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "${ BRAND_NAME }-tilisi on tällä hetkellä jäädytetty. Postilaatikkosi ei enää vastaanota viestejä, Drive-jakolinkkisi ja uusien tiedostojen tallennus estetään. Palauttaaksesi normaalin toiminnan, maksa maksamattomat laskut."
+        "${ BRAND_NAME }-tilisi on jäädytetty, eikä postilaatikkosi enää vastaanota viestejä ja Drive-jakolinkit sekä uusien tiedostojen tallennus estetään. Palauttaaksesi tilisi normaalin toiminnan, maksa maksamattomat laskut."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Tililläsi on ainakin yksi erääntynyt lasku. Pääsyäsi rajoitetaan pian. ${ payInvoiceLink }"
@@ -4141,7 +4141,7 @@
         "Puhelinnumeroasi käytetään vain tähän kertaluontoiseen vahvistukseen."
       ],
       "Your plan is limited to 10 versions for up to 7 days": [
-        "Tilauksesi on rajoitettu 10 versioon 7 päivän aikana"
+        "Tilauksesi on seitsemän päivän ajan rajoitettu 10 versioon"
       ],
       "Your previous password": [
         "Edellinen salasanasi"
@@ -4437,7 +4437,7 @@
         "Tuo yhteystietoja"
       ],
       "Import interval": [
-        "Tuontiaika"
+        "Tuontiväli"
       ],
       "Import to email address": [
         "Tuo sähköpostiosoitteelle"
@@ -5329,7 +5329,7 @@
     },
     "Refresh on apply warning": {
       "Note: the service will reload after you click the Apply button.": [
-        "Huomioi: palvelu latautuu uudelleen kun painat Käytä-painiketta."
+        "Huomioi: palvelu latautuu uudelleen kun painat Käytä."
       ]
     },
     "Select files": {
@@ -5693,7 +5693,7 @@
         "Premium Mail ja Calendar"
       ],
       "Premium Password Manager": [
-        "Premium salasananhallinta"
+        "Premium salasanahallinta"
       ]
     },
     "summer2023: Describe Proton Pass": {
@@ -5703,7 +5703,7 @@
     },
     "summer2023: Short tool name to present Proton Pass": {
       "Password manager": [
-        "Salasananhallinta"
+        "Salasanahallinta"
       ]
     },
     "summer2023: Tooltip": {
