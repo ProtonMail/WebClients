@@ -12,10 +12,10 @@ import {
     useApi,
     useEventManager,
     useGetUserKeys,
-    useLoading,
     useNotifications,
 } from '@proton/components';
 import { PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
+import { useLoading } from '@proton/hooks';
 import { addContacts, getContact, updateContact } from '@proton/shared/lib/api/contacts';
 import { API_CODES, CONTACT_CARD_TYPE } from '@proton/shared/lib/constants';
 import { pinKeyCreateContact, pinKeyUpdateContact } from '@proton/shared/lib/contacts/keyPinning';

@@ -3,6 +3,7 @@ import { ChangeEvent, FormEvent, useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import { useLoading } from '@proton/hooks';
 import { sendFeedback } from '@proton/shared/lib/api/feedback';
 
 import {
@@ -15,7 +16,7 @@ import {
     ModalProps,
     TextArea,
 } from '../../components';
-import { useApi, useLoading, useNotifications } from '../../hooks';
+import { useApi, useNotifications } from '../../hooks';
 
 interface FeedbackModalModel {
     Score?: number;

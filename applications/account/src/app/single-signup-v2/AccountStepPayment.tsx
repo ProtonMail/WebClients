@@ -16,7 +16,6 @@ import {
 import { getTotalBillingText } from '@proton/components/containers/payments/helper';
 import { getDefaultVerifyPayment } from '@proton/components/containers/payments/usePaymentToken';
 import { useConfig } from '@proton/components/hooks';
-import { WithLoading } from '@proton/components/hooks/useLoading';
 import useModals from '@proton/components/hooks/useModals';
 import {
     AmountAndCurrency,
@@ -26,6 +25,7 @@ import {
     TokenPayment,
     createPaymentToken,
 } from '@proton/components/payments/core';
+import { WithLoading } from '@proton/hooks/useLoading';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import { getIsVPNApp } from '@proton/shared/lib/authentication/apps';
 import { APPS } from '@proton/shared/lib/constants';

@@ -2,7 +2,8 @@ import { useEffect, useMemo } from 'react';
 
 import { c } from 'ttag';
 
-import { useLoading, useNotifications } from '@proton/components';
+import { useNotifications } from '@proton/components';
+import { useLoading } from '@proton/hooks';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 
 import { sendErrorReport } from '../../utils/errorHandling';

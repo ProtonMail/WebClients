@@ -15,9 +15,9 @@ import {
     SelectTwo,
     TextAreaTwo,
     useFormErrors,
-    useLoading,
     useNotifications,
 } from '@proton/components';
+import { useLoading } from '@proton/hooks';
 import { emailValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import noop from '@proton/utils/noop';
 

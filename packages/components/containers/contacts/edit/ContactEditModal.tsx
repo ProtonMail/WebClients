@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import { useLoading } from '@proton/hooks';
 import {
     addVCardProperty,
     getSortedProperties,
@@ -21,7 +22,7 @@ import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import randomIntFromInterval from '@proton/utils/randomIntFromInterval';
 
 import { ModalProps, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../../components';
-import { useContactEmails, useEventManager, useHandler, useLoading, useNotifications } from '../../../hooks';
+import { useContactEmails, useEventManager, useHandler, useNotifications } from '../../../hooks';
 import { ContactGroupEditProps } from '../group/ContactGroupEditModal';
 import useApplyGroups from '../hooks/useApplyGroups';
 import { useSaveVCardContact } from '../hooks/useSaveVCardContact';

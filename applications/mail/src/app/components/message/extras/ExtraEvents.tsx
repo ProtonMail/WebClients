@@ -10,13 +10,13 @@ import {
     useGetCalendarInfo,
     useGetCalendarUserSettings,
     useGetCalendars,
-    useLoading,
     useUser,
     useUserSettings,
 } from '@proton/components';
 import { useGetCanonicalEmailsMap } from '@proton/components/hooks/useGetCanonicalEmailsMap';
 import { WorkerDecryptionResult } from '@proton/crypto';
 import { arrayToBinaryString, decodeUtf8 } from '@proton/crypto/lib/utils';
+import { useLoading } from '@proton/hooks';
 import useIsMounted from '@proton/hooks/useIsMounted';
 import {
     getCanCreateCalendar,

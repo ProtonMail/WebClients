@@ -17,7 +17,6 @@ import {
     Tooltip,
     useApi,
     useFeature,
-    useLoading,
     useModalState,
     useNotifications,
     useSettingsLink,
@@ -32,6 +31,7 @@ import ShareCalendarModal from '@proton/components/containers/calendar/shareProt
 import ShareLinkModal from '@proton/components/containers/calendar/shareURL/ShareLinkModal';
 import ShareLinkSuccessModal from '@proton/components/containers/calendar/shareURL/ShareLinkSuccessModal';
 import { useModalsMap } from '@proton/components/hooks/useModalsMap';
+import { useLoading } from '@proton/hooks';
 import { getAllMembers, getCalendarInvitations, getPublicLinks } from '@proton/shared/lib/api/calendars';
 import {
     getIsCalendarDisabled,

@@ -9,10 +9,10 @@ import {
     useGetAddressKeys,
     useGetDecryptedPassphraseAndCalendarKeys,
     useGetEncryptionPreferences,
-    useLoading,
     useNotifications,
 } from '@proton/components/hooks';
 import { PublicKeyReference } from '@proton/crypto';
+import { useLoading } from '@proton/hooks';
 import { addMember } from '@proton/shared/lib/api/calendars';
 import { reformatApiErrorMessage } from '@proton/shared/lib/calendar/api';
 import { MAX_CALENDAR_MEMBERS } from '@proton/shared/lib/calendar/constants';

@@ -3,7 +3,8 @@ import { ReactNode, createContext, useContext, useEffect, useState } from 'react
 import { addDays, fromUnixTime } from 'date-fns';
 
 import { FeatureCode } from '@proton/components/containers';
-import { useApi, useEventManager, useFeature, useLoading } from '@proton/components/hooks';
+import { useApi, useEventManager, useFeature } from '@proton/components/hooks';
+import { useLoading } from '@proton/hooks';
 import {
     hidePaidUserChecklist,
     seenCompletedChecklist,

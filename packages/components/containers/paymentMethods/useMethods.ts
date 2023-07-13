@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 
 import { PaymentMethodStatus, SavedPaymentMethod } from '@proton/components/payments/core';
+import { useLoading } from '@proton/hooks';
 import { queryPaymentMethodStatus, queryPaymentMethods } from '@proton/shared/lib/api/payments';
 import { Api } from '@proton/shared/lib/interfaces';
 
-import { useLoading } from '../../hooks';
 import { getPaymentMethodOptions } from './getPaymentMethodOptions';
 import { PaymentMethodFlows } from './interface';
 

@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import RegisterSecurityKeyContent from '@proton/components/containers/account/fido/RegisterSecurityKeyContent';
+import { useLoading } from '@proton/hooks';
 import { getSecurityKeyChallenge, registerSecurityKey } from '@proton/shared/lib/api/settings';
 import { lockSensitiveSettings, unlockPasswordChanges } from '@proton/shared/lib/api/user';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
@@ -22,7 +23,7 @@ import {
     ModalProps,
     useFormErrors,
 } from '../../../components';
-import { useApi, useErrorHandler, useEventManager, useLoading } from '../../../hooks';
+import { useApi, useErrorHandler, useEventManager } from '../../../hooks';
 import AuthModal from '../../password/AuthModal';
 import { maxSecurityKeyNameLength } from './constants';
 

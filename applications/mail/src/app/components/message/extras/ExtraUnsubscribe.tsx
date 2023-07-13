@@ -19,10 +19,10 @@ import {
     useApi,
     useEventManager,
     useFeature,
-    useLoading,
     useModalState,
     useNotifications,
 } from '@proton/components';
+import { useLoading } from '@proton/hooks';
 import { markAsUnsubscribed, oneClickUnsubscribe } from '@proton/shared/lib/api/messages';
 import { TelemetrySimpleLoginEvents } from '@proton/shared/lib/api/telemetry';
 import { MIME_TYPES } from '@proton/shared/lib/constants';

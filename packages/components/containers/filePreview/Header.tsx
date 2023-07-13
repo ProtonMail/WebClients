@@ -3,8 +3,9 @@ import { ReactNode, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import { useLoading } from '@proton/hooks';
 
-import { TimeIntl, useLoading } from '../../';
+import { TimeIntl } from '../../';
 import { FileIcon, FileNameDisplay, Icon } from '../../components';
 
 const SHARED_STATUS_TO_COLOR = {
