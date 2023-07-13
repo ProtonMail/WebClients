@@ -2982,11 +2982,6 @@
         "Hai annullato l'iscrizione alle email ${ categoriesJsx }."
       ]
     },
-    "Email Unsubscribe Categories": {
-      "${ allCategoriesExceptTheLastOne } and ${ lastCategory }": [
-        "${ allCategoriesExceptTheLastOne } e ${ lastCategory }"
-      ]
-    },
     "Enabled 2FA": {
       "2FA": [
         "2FA"
@@ -4356,6 +4351,9 @@
     "Font face option": {
       "System default": [
         "Predefinito di sistema"
+      ],
+      "Theme font": [
+        "Tipo di carattere"
       ]
     },
     "Font Size Default": {
@@ -4406,6 +4404,9 @@
       ],
       "privacy features": [
         "funzionalità per la privacy"
+      ],
+      "Set up ${ strongText } from Gmail": [
+        "Configurare ${ strongText } da Gmail"
       ]
     },
     "Gmail forwarding": {
@@ -5012,12 +5013,6 @@
       "${ numGroups } contact group": [
         "${ numGroups } gruppo di contatti",
         "${ numGroups } gruppi di contatti"
-      ],
-      "${ PROTON_SENTINEL_NAME } is an account protection program developed at ${ BRAND_NAME } for users who need maximum security.": [
-        "${ PROTON_SENTINEL_NAME } è un programma di protezione account sviluppato da ${ BRAND_NAME } per utenti che hanno bisogno della massima sicurezza."
-      ],
-      "${ PROTON_SENTINEL_NAME } is powered by sophisticated AI systems and teams of specialists working 24/7 to mitigate bad actors and security threats.": [
-        "${ PROTON_SENTINEL_NAME } è alimentato da sistemi IA sofisticati e team di specialisti che lavorano 24/7 per mitigare attori cattivi e pericoli di sicurezza."
       ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } cartella trovata",
@@ -5954,9 +5949,6 @@
       "old password": [
         "vecchia password"
       ],
-      "Once you enable ${ PROTON_SENTINEL_NAME }:": [
-        "Una volta attivato ${ PROTON_SENTINEL_NAME }:"
-      ],
       "Once you reset your password:": [
         "Una volta che reimposti la tua password:"
       ],
@@ -5992,6 +5984,9 @@
       ],
       "Outdated recovery phrase; update to ensure access to your data": [
         "Frase di recupero obsoleta; aggiornare per garantire l'accesso ai tuoi dati"
+      ],
+      "Over 100 million people and businesses have signed up for ${ BRAND_NAME }.": [
+        "Oltre 100 milioni di persone e aziende si sono registrate su ${ BRAND_NAME }."
       ],
       "Paid for a ${ rewardMonths } month plan": [
         "Pagato per un piano di ${ rewardMonths } mese",
@@ -6122,6 +6117,9 @@
       "Recovery information will remain on this device unless you select to delete it.": [
         "Le informazioni di ripristino rimarranno su questo dispositivo a meno che tu non decida di eliminarle."
       ],
+      "Recovery kit copied to clipboard": [
+        "Il kit di recupero è copiato negli appunti."
+      ],
       "Recovery phrase copied to clipboard": [
         "Frase di recupero copiata negli appunti"
       ],
@@ -6221,12 +6219,6 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Dato che sei un utente fedele, il tuo account ha funzionalità aggiuntive abilitate."
       ],
-      "SMTP allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME }. It is a new feature available to select business users. Please email ${ emailLink } to request access.": [
-        "SMTP consente a servizi o dispositivi di terze parti di inviare email tramite ${ MAIL_APP_NAME }. Si tratta di una nuova funzionalità disponibile per utenti aziendali selezionati. Invia un'email a ${ emailLink } per richiedere l'accesso."
-      ],
-      "SMTP allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME }. To use this feature, start by generating a new token.": [
-        "SMTP consente a servizi o dispositivi di terze parti di inviare email tramite ${ MAIL_APP_NAME }. Per utilizzare questa funzione, genera un nuovo token."
-      ],
       "Some keys successfully reactivated": [
         "Alcune chiavi sono state riattivate con successo"
       ],
@@ -6266,9 +6258,6 @@
       ],
       "support team": [
         "team di supporto"
-      ],
-      "Suspicious events will be challenged by multiple layers of defense that help prevent attackers from hijacking your account.": [
-        "Eventi sospetti saranno sottoposti a molteplici strati di difesa che aiutano a impedire agli attaccanti di dirottare il tuo account."
       ],
       "Swiss based": [
         "Con sede in Svizzera"
@@ -6447,9 +6436,6 @@
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Per importare eventi, devi prima creare un calendario su ${ CALENDAR_APP_NAME }. È dove appariranno gli eventi dopo l'importazione."
       ],
-      "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and visit our blog from time to time.": [
-        "Per rimanere aggiornato sugli ultimi sviluppi dei prodotti ${ BRAND_NAME }, iscriviti alle nostre newsletter e visita il nostro blog."
-      ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "Per procedere, seleziona un metodo di recupero dell'account in modo da poter verificare la richiesta."
       ],
@@ -6563,9 +6549,6 @@
       ],
       "Use the selected email address as the SMTP username in the external service, and the generated token as the SMTP password.": [
         "Utilizza l'indirizzo email selezionato come nome utente SMTP nel servizio esterno e il token generato come password SMTP."
-      ],
-      "Users with sensitive data and communications, such as journalists or executives, are highly encouraged to enable ${ PROTON_SENTINEL_NAME }.": [
-        "Gli utenti con dati e comunicazioni sensibili, come giornalisti o dirigenti, sono fortemente incoraggiati ad attivate ${ PROTON_SENTINEL_NAME }."
       ],
       "Verification can take a few minutes.": [
         "La verifica può richiedere alcuni minuti."
@@ -6805,12 +6788,6 @@
       ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Avrai bisogno di un indirizzo ${ BRAND_NAME } per utilizzare ${ MAIL_APP_NAME } e ${ CALENDAR_APP_NAME }"
-      ],
-      "You will receive priority support from specialists trained in account protection. For any account security concerns, please ${ hereLink }.": [
-        "Riceverai supporto prioritario da specialisti addestrati in protezione di account. Per qualsiasi problema di sicurezza dell'account, ${ hereLink }."
-      ],
-      "You will see more details in the Security logs below for important events such as sign in attempts.": [
-        "Vedrai più dettagli nei log di sicurezza in basso per eventi importanti come tentativi di accesso."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Sarai presto reindirizzato a PayPal per verificare il pagamento."
@@ -8231,9 +8208,6 @@
       "${ BRAND_NAME } beta announcements": [
         "Comunicazioni ${ BRAND_NAME } sulle versioni beta"
       ],
-      "${ BRAND_NAME } company announcements": [
-        "Comunicazioni da ${ BRAND_NAME }"
-      ],
       "${ BRAND_NAME } for Business newsletter": [
         "Newsletter ${ BRAND_NAME } Business"
       ],
@@ -8355,9 +8329,6 @@
       ],
       "Common sign up issues": [
         "Problemi di registrazione comuni"
-      ],
-      "contact us": [
-        "contattaci"
       ],
       "Create account": [
         "Crea account"
@@ -10101,6 +10072,9 @@
       ],
       "Protected by Swiss privacy laws": [
         "Ti protegge la legislazione svizzera sulla privacy"
+      ],
+      "Save your recovery kit to continue": [
+        "Salva il tuo kit di recupero per continuare"
       ],
       "Updating your account": [
         "Aggiornamento del tuo account"
@@ -12216,9 +12190,6 @@
       ],
       "Signed in to member account": [
         "Accesso all'account membro"
-      ],
-      "SMTP tokens": [
-        "Token SMTP"
       ],
       "Sort folders alphabetically": [
         "Ordina le cartelle in modo alfabetico"

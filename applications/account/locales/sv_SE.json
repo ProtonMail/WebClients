@@ -2965,11 +2965,6 @@
         "Du slutade prenumerera på e-post från kategorin ${ categoriesJsx }."
       ]
     },
-    "Email Unsubscribe Categories": {
-      "${ allCategoriesExceptTheLastOne } and ${ lastCategory }": [
-        "${ allCategoriesExceptTheLastOne } och ${ lastCategory }"
-      ]
-    },
     "Enabled 2FA": {
       "2FA": [
         "2FA"
@@ -4388,6 +4383,12 @@
       "(1-2 emails per month)": [
         "(1-2 e-postmeddelanden per månad)"
       ],
+      "(2-4 per year)": [
+        "(2-4 per år)"
+      ],
+      "(4-6 emails per year)": [
+        "(4-6 e-postmeddelanden per år)"
+      ],
       "(during your first month)": [
         "(under din första månad)"
       ]
@@ -5041,8 +5042,8 @@
         "${ numGroups } kontaktgrupp",
         "${ numGroups } kontaktgrupper"
       ],
-      "${ PROTON_SENTINEL_NAME } is an account protection program developed at ${ BRAND_NAME } for users who need maximum security.": [
-        "${ PROTON_SENTINEL_NAME } är ett kontoskyddsprogram utvecklat på ${ BRAND_NAME } för användare som behöver maximal säkerhet."
+      "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
+        "${ PROTON_SENTINEL_NAME } är ett avancerat kontoskyddsprogram som drivs av sofistikerade AI-system och specialister som arbetar dygnet runt för att skydda dig från dåliga aktörer och säkerhetshot."
       ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } mapp hittades",
@@ -5976,9 +5977,6 @@
       "old password": [
         "gammalt lösenord"
       ],
-      "Once you enable ${ PROTON_SENTINEL_NAME }:": [
-        "När du aktiverat ${ PROTON_SENTINEL_NAME }:"
-      ],
       "Once you reset your password:": [
         "När du har återställt ditt lösenord:"
       ],
@@ -6123,6 +6121,9 @@
       "Protected by Swiss privacy laws": [
         "Skyddad av schweiziska integritetslagar"
       ],
+      "Public figures, journalists, executives, and others who may be the target of cyber attacks are highly encouraged to enable ${ PROTON_SENTINEL_NAME }.": [
+        "Offentliga personer, journalister, chefer och andra som kan vara måltavla för cyberattacker uppmuntras starkt att aktivera ${ PROTON_SENTINEL_NAME }."
+      ],
       "Public link invite": [
         "Offentlig länkinbjudan"
       ],
@@ -6255,11 +6256,11 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Eftersom du är en lojal användare har ditt konto ytterligare funktioner aktiverade."
       ],
-      "SMTP allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME }. It is a new feature available to select business users. Please email ${ emailLink } to request access.": [
-        "SMTP tillåter tjänster eller enheter från tredje part att skicka e-post via ${ MAIL_APP_NAME }. Det är en ny funktion som är tillgänglig för utvalda Business-användare. Skicka e-post till ${ emailLink } för att begära åtkomst."
+      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
+        "SMTP-inlämning tillåter tredjepartstjänster eller enheter att skicka e-post via ${ MAIL_APP_NAME } för dina anpassade domänadresser. För att begära åtkomst, ${ createTicket } som beskriver dina användningsfall, vilka anpassade domäner du vill använda och förväntade e-postvolymer per timme och dagligen."
       ],
-      "SMTP allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME }. To use this feature, start by generating a new token.": [
-        "SMTP tillåter tjänster eller enheter från tredje part att skicka e-post via ${ MAIL_APP_NAME }. För att använda denna funktion, börja med att generera en ny token."
+      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To use this feature, start by generating a new token.": [
+        "SMTP-inlämning tillåter tredjepartstjänster eller enheter att skicka e-post via ${ MAIL_APP_NAME } för dina anpassade domänadresser. För att använda denna funktion, börja med att generera en ny token."
       ],
       "Some keys successfully reactivated": [
         "Några nycklar har återaktiverats"
@@ -6303,9 +6304,6 @@
       ],
       "support team": [
         "supportteam"
-      ],
-      "Suspicious events will be challenged by multiple layers of defense that help prevent attackers from hijacking your account.": [
-        "Misstänkta händelser kommer att utmanas av flera lager av försvar som hjälper till att förhindra angripare från att kapa ditt konto."
       ],
       "Swiss based": [
         "Baserat i Schweiz"
@@ -6454,6 +6452,9 @@
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "Detta kommer att ersätta ditt temporära lösenord. Du kommer att använda det för att komma åt ditt ${ BRAND_NAME }-konto i framtiden."
       ],
+      "This will sign you out of any active sessions and disable 2-factor authentication.": [
+        "Detta kommer att logga ut dig från alla aktiva sessioner och inaktivera 2-faktors autentisering."
+      ],
       "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
         "Den här guiden aktiverar tvåfaktorsautentisering (2FA) på ditt ${ BRAND_NAME }-konto. Tvåfaktorsautentisering gör ditt ${ BRAND_NAME_TWO }-konto säkrare så vi rekommenderar att du aktiverar det."
       ],
@@ -6490,8 +6491,8 @@
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "För att importera händelser, skapa först en kalender i ${ CALENDAR_APP_NAME }. Det är här händelserna kommer att visas efter importen."
       ],
-      "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and visit our blog from time to time.": [
-        "För att hänga med i den senaste utvecklingen på ${ BRAND_NAME }-produkter kan du prenumerera på våra olika e-postmeddelanden och besöka vår blogg då och då."
+      "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
+        "För att hänga med i den senaste utvecklingen på ${ BRAND_NAME }-produkter kan du prenumerera på våra olika e-postmeddelanden och ${ blogLink } då och då."
       ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "För att fortsätta, välj en metod för kontoåterställning så att vi kan verifiera begäran."
@@ -6600,9 +6601,6 @@
       ],
       "Use the selected email address as the SMTP username in the external service, and the generated token as the SMTP password.": [
         "Använd den valda e-postadressen som SMTP-användarnamn i den externa tjänsten och den genererade token som SMTP-lösenord."
-      ],
-      "Users with sensitive data and communications, such as journalists or executives, are highly encouraged to enable ${ PROTON_SENTINEL_NAME }.": [
-        "Användare med känslig data och kommunikation, som journalister eller företagsledare, uppmanas starkt att aktivera ${ PROTON_SENTINEL_NAME }."
       ],
       "Verification can take a few minutes.": [
         "Verifiering kan ta några minuter."
@@ -6851,12 +6849,6 @@
       ],
       "You will NOT be able to decrypt any messages, files, and other data encrypted with this key. All data signed with this key will no longer be verified by ${ BRAND_NAME } applications.": [
         "Du kommer INTE att kunna dekryptera några meddelanden, filer och annan data krypterad med denna nyckel. All data signerad med denna nyckel kommer inte längre att verifieras av ${ BRAND_NAME }-applikationer."
-      ],
-      "You will receive priority support from specialists trained in account protection. For any account security concerns, please ${ hereLink }.": [
-        "Du kommer få prioriterad support från specialister utbildade i kontoskydd. För alla problem med kontosäkerhet, ${ hereLink }."
-      ],
-      "You will see more details in the Security logs below for important events such as sign in attempts.": [
-        "Du kommer att se mer information i säkerhetsloggarna nedan för viktiga händelser som inloggningsförsök."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Du kommer snart att omdirigeras till PayPal för att verifiera din betalning."
@@ -8268,9 +8260,6 @@
       "${ BRAND_NAME } beta announcements": [
         "${ BRAND_NAME } meddelanden om beta-versioner"
       ],
-      "${ BRAND_NAME } company announcements": [
-        "${ BRAND_NAME } företagsnyheter"
-      ],
       "${ BRAND_NAME } for Business newsletter": [
         "${ BRAND_NAME } for Business nyhetsbrev"
       ],
@@ -8393,8 +8382,8 @@
       "Common sign up issues": [
         "Vanliga registreringsproblem"
       ],
-      "contact us": [
-        "kontakta oss"
+      "create a ticket": [
+        "skapa ett supportärende"
       ],
       "Create account": [
         "Skapa konto"
@@ -8471,6 +8460,9 @@
       "View guide": [
         "Visa guide"
       ],
+      "visit our blog": [
+        "besök vår blogg"
+      ],
       "What is the difference between UDP and TCP protocols?": [
         "Vad är skillnaden mellan UDP- och TCP-protokoll?"
       ],
@@ -8482,6 +8474,10 @@
       ]
     },
     "Loading info": {
+      "${ twoFAMembers.length }/${ members.length } of your organization member use two-factor authentication.": [
+        "${ twoFAMembers.length }/${ members.length } av din organisationsmedlem använder tvåfaktorsautentisering.",
+        "${ twoFAMembers.length }/${ members.length } av dina organisationsmedlemmar använder tvåfaktorsautentisering."
+      ],
       "Almost there": [
         "Nästan framme"
       ],
@@ -10089,6 +10085,9 @@
       ]
     },
     "pass_signup_2023: Header": {
+      "Checkout": [
+        "Kassa"
+      ],
       "Continue with your ${ BRAND_NAME } account": [
         "Fortsätt med ditt ${ BRAND_NAME }-konto"
       ],
@@ -10145,8 +10144,8 @@
       "Download the ${ PASS_APP_NAME } app from the App Store and install it to start using ${ PASS_APP_NAME2 } on your phone.": [
         "Ladda ner appen ${ PASS_APP_NAME } från App Store och installera den för att börja använda ${ PASS_APP_NAME2 } på din telefon."
       ],
-      "Encrypted password manager${ breakToken }that also protects your identity": [
-        "Krypterad lösenordshanterare${ breakToken }som också skyddar din identitet"
+      "Encrypted password manager that also protects your identity": [
+        "Krypterad lösenordshanteraresom också skyddar din identitet"
       ],
       "End-to-end encrypted notes": [
         "End-to-end-krypterade anteckningar"
@@ -11443,6 +11442,9 @@
       ],
       "Premium Mail and Calendar": [
         "Premium Mail och Calendar"
+      ],
+      "Premium Password Manager": [
+        "Premium lösenordshanterare"
       ]
     },
     "summer2023: Describe Proton Pass": {
@@ -12111,6 +12113,9 @@
       "Messages": [
         "Meddelanden"
       ],
+      "Messages and composing": [
+        "Meddelanden och skrivning"
+      ],
       "Minicalendar": [
         "Minikalender"
       ],
@@ -12330,8 +12335,8 @@
       "Signed in to member account": [
         "Loggade in på medlemskonto"
       ],
-      "SMTP tokens": [
-        "SMTP-tokens"
+      "SMTP Submission": [
+        "SMTP-inlämning"
       ],
       "Sort folders alphabetically": [
         "Sortera mappar alfabetiskt"
@@ -12379,6 +12384,9 @@
       ],
       "Two-factor authentication": [
         "Tvåfaktorsautentisering"
+      ],
+      "Two-factor authentication reminders": [
+        "Påminnelser om tvåfaktorsautentisering"
       ],
       "Type": [
         "Typ"
@@ -12586,6 +12594,9 @@
       ],
       "Account is disconnected": [
         "Kontot är frånkopplat"
+      ],
+      "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
+        "Växla automatiskt mellan dina föredragna teman för dag och natt i synk med ditt systems dag- och nattlägen"
       ],
       "Customize import to reduce the number of folders": [
         "Anpassa import för att minska antalet mappar"

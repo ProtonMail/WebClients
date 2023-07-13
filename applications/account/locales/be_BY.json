@@ -3003,11 +3003,6 @@
         "Вы адпісаліся ад лістоў ${ categoriesJsx }."
       ]
     },
-    "Email Unsubscribe Categories": {
-      "${ allCategoriesExceptTheLastOne } and ${ lastCategory }": [
-        "${ allCategoriesExceptTheLastOne } і ${ lastCategory }"
-      ]
-    },
     "Enabled 2FA": {
       "2FA": [
         "2ФА"
@@ -4429,6 +4424,9 @@
     "Font face option": {
       "System default": [
         "Адпаведна сістэме"
+      ],
+      "Theme font": [
+        "Шрыфт тэмы"
       ]
     },
     "Font Size Default": {
@@ -5148,11 +5146,8 @@
         "${ numGroups } груп кантактаў",
         "${ numGroups } групы кантактаў"
       ],
-      "${ PROTON_SENTINEL_NAME } is an account protection program developed at ${ BRAND_NAME } for users who need maximum security.": [
-        "${ PROTON_SENTINEL_NAME } - гэта абаронены ўліковы запіс праграмы, якая распрацавана ${ BRAND_NAME } для карыстальнікаў, якім неабходна максімальная абарона."
-      ],
-      "${ PROTON_SENTINEL_NAME } is powered by sophisticated AI systems and teams of specialists working 24/7 to mitigate bad actors and security threats.": [
-        "У ${ PROTON_SENTINEL_NAME } выкарыстоўваюцца складаныя сістэмы штучнага інтэлекту, а групы спецыялістаў працуюць кругласутачна і без выхадных над нейтралізацыяй зламыснікаў і пагроз бяспекі."
+      "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
+        "${ PROTON_SENTINEL_NAME } з'яўляецца перадавой праграмай абароны ўліковых запісаў з дапамогаю вытанчаных AI сістэм і спецыялістаў, якія кругласутачна працуюць каб абараніць вас ад зламыснікаў і пагроз бяспекі."
       ],
       "${ providerFoldersNumLocalized } folder found": [
         "Знойдзена ${ providerFoldersNumLocalized } папка",
@@ -6129,9 +6124,6 @@
       "old password": [
         "стары пароль"
       ],
-      "Once you enable ${ PROTON_SENTINEL_NAME }:": [
-        "Пасля ўключэння ${ PROTON_SENTINEL_NAME }"
-      ],
       "Once you reset your password:": [
         "Пасля скідання вашага пароля:"
       ],
@@ -6282,6 +6274,9 @@
       "Protected by Swiss privacy laws": [
         "Абаронены швейцарскімі законамі аб прыватнасці"
       ],
+      "Public figures, journalists, executives, and others who may be the target of cyber attacks are highly encouraged to enable ${ PROTON_SENTINEL_NAME }.": [
+        "Грамадскім дзеячам, журналістам і ўсім іншым, хто можа стаць мэтаю кібератак мы настойліва раім уключыць ${ PROTON_SENTINEL_NAME }"
+      ],
       "Public link invite": [
         "Запрашэнне па публічнай спасылцы"
       ],
@@ -6414,11 +6409,11 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Паколькі вы з'яўляецеся пастаянным карыстальнікам, мы дадалі ў ваш уліковы запіс дадатковыя функцыі."
       ],
-      "SMTP allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME }. It is a new feature available to select business users. Please email ${ emailLink } to request access.": [
-        "SMTP дазваляе іншым сэрвісам або прыладам адпраўляць лісты праз ${ MAIL_APP_NAME }. Гэта новая функцыя, якая даступна некаторым бізнес карыстальнікам. Адпраўце нам ліст на адрас ${ emailLink }, каб атрымаць да яе доступ."
+      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
+        "Адпраўка SMTP дазваляе староннім службам ци прыладам адпраўляць электронную пошту праз ${ MAIL_APP_NAME } для адрасоў вашых карыстальніцкіх даменаў. Каб запытаць доступ, калі ласка, ${ createTicket } з апісаннем вашых варыянтаў выкарыстання, якія карыстальніцкія дамены вы хацелі б ужываць, а таксама ацэнкаю штогадзінных і штодзённых аб'ёмаў электроннай пошты."
       ],
-      "SMTP allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME }. To use this feature, start by generating a new token.": [
-        "SMTP дазваляе іншым сэрвісам або прыладам адпраўляць лісты праз ${ MAIL_APP_NAME }. Для выкарыстання гэтай функцыі, пачніце генерацыю новага токена."
+      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To use this feature, start by generating a new token.": [
+        "Адпраўка SMTP дазваляе староннім службам ці прыладам адпраўляць электронную пошту праз ${ MAIL_APP_NAME } для адрасоў вашых карыстальніцкіх даменаў. Каб карыстацца гэтай функцый, стварыце новы токен."
       ],
       "Some keys successfully reactivated": [
         "Некаторыя ключы паспяхова паўторна актываваны"
@@ -6464,9 +6459,6 @@
       ],
       "support team": [
         "каманда падтрымкі"
-      ],
-      "Suspicious events will be challenged by multiple layers of defense that help prevent attackers from hijacking your account.": [
-        "Падазроныя падзеі будуць правераны пры дапамозе некалькіх слаёў абароны, якія дапамогуць прадухіліць узлом вашага ўліковага запісу зламыснікамі."
       ],
       "Swiss based": [
         "Знаходзіцца ў Швейцарыі"
@@ -6663,8 +6655,8 @@
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Спачатку стварыце каляндар у ${ CALENDAR_APP_NAME } для імпартавання падзей. Менавіта тут з'явяцца падзеі пасля імпартавання."
       ],
-      "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and visit our blog from time to time.": [
-        "Каб даведацца пра апошнія распрацоўкі прадуктаў ${ BRAND_NAME }, падпішыцеся на нашу рассылку, а таксама час ад часу наведвайце наш блог."
+      "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
+        "Каб быць у курсе апошніх распрацовак прадуктаў ${ BRAND_NAME }, падпішыцеся на нашу рассылку, а таксама час ад часу наведвайце наш блог ${ blogLink }."
       ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "Для працягу, выберыце метад аднаўлення ўліковага запісу, каб мы маглі праверыць запыт."
@@ -6779,9 +6771,6 @@
       ],
       "Use the selected email address as the SMTP username in the external service, and the generated token as the SMTP password.": [
         "Выкарыстоўвайце выбраны адрас электроннай пошты ў якасці імя карыстальніка SMTP у знешнім сэрвісе і згенерыраваны токен у якасці пароля SMTP."
-      ],
-      "Users with sensitive data and communications, such as journalists or executives, are highly encouraged to enable ${ PROTON_SENTINEL_NAME }.": [
-        "Карыстальнікі з канфідэнцыяльнымі данымі і камунікацыямі такія як, журналісты або кіраўнікі, вельмі вітаюць уключэнне ${ PROTON_SENTINEL_NAME }"
       ],
       "Verification can take a few minutes.": [
         "Праверка можа заняць некалькі хвілін."
@@ -7040,12 +7029,6 @@
       ],
       "You will NOT be able to decrypt any messages, files, and other data encrypted with this key. All data signed with this key will no longer be verified by ${ BRAND_NAME } applications.": [
         "Вы НЕ зможаце расшыфраваць ніякія паведамленні, файлы або іншыя даныя, якія былі зашыфраваны гэтым ключом. Усе даныя, падпісаныя гэтым ключом, больш не будуць правярацца праграмамі ${ BRAND_NAME }."
-      ],
-      "You will receive priority support from specialists trained in account protection. For any account security concerns, please ${ hereLink }.": [
-        "Вы атрымаеце прыярытэтную падтрымку ад спецыялістаў, якія маюць досвед у абароне ўліковых запісаў. У выпадку пытанняў звязаных з бяспекай уліковага запісу, перайдзіце па спасылцы ${ hereLink }"
-      ],
-      "You will see more details in the Security logs below for important events such as sign in attempts.": [
-        "Вы ўбачыце ніжэй больш падрабязнасцей у журнале бяспекі пра такія важныя падзеі, як спробы ўваходу."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Неўзабаве вы будзеце перанакіраваны на сайт PayPal для праверкі плацяжу."
@@ -8479,9 +8462,6 @@
       "${ BRAND_NAME } beta announcements": [
         "Апавяшчэнні ${ BRAND_NAME } бэта-версій"
       ],
-      "${ BRAND_NAME } company announcements": [
-        "Аб'явы кампаніі ${ BRAND_NAME }"
-      ],
       "${ BRAND_NAME } for Business newsletter": [
         "Навіны ${ BRAND_NAME } для бізнесу"
       ],
@@ -8604,8 +8584,8 @@
       "Common sign up issues": [
         "Распаўсюджаныя праблемы рэгістрацыі"
       ],
-      "contact us": [
-        "звязацца з намі"
+      "create a ticket": [
+        "стварыце тікет"
       ],
       "Create account": [
         "Стварыць уліковы запіс"
@@ -10455,8 +10435,8 @@
       "Download the ${ PASS_APP_NAME } app from the App Store and install it to start using ${ PASS_APP_NAME2 } on your phone.": [
         "Спампуйце праграму ${ PASS_APP_NAME } з App Store і ўсталюйце яе, каб пачаць карыстацца ${ PASS_APP_NAME2 } на сваім тэлефоне."
       ],
-      "Encrypted password manager${ breakToken }that also protects your identity": [
-        "Зашыфраваны менеджар пароляў${ breakToken }, які таксама абараняе вашы асабістыя даныя"
+      "Encrypted password manager that also protects your identity": [
+        "Менеджар зашыфраваных пароляў, які таксама абараняе вашы асабістыя даныя"
       ],
       "End-to-end encrypted notes": [
         "Нататкі са скразным шыфраваннем"
@@ -12583,7 +12563,7 @@
         "Не ўдалося ажыццявіць праверку PayPal"
       ],
       "Personalise your e-mail footer": [
-        "Персаналізуйце ніжні калонтытул ліста"
+        "Персаналізуйце ніжні калонтытул свайго ліста"
       ],
       "Phone": [
         "Тэлефон"
@@ -12732,8 +12712,8 @@
       "Signed in to member account": [
         "Уваход ва ўліковы запіс удзельніка"
       ],
-      "SMTP tokens": [
-        "Токены SMTP"
+      "SMTP Submission": [
+        "Адпраўка SMTP"
       ],
       "Sort folders alphabetically": [
         "Сартаваць папкі па алфавіце"
