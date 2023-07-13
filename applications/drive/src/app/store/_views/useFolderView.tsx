@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import { useLoading } from '@proton/components';
+import { useLoading } from '@proton/hooks';
 
 import { useLinksListing } from '../_links';
 import { useUserSettings } from '../_settings';

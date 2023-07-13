@@ -3,6 +3,7 @@ import { FormEvent, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button, Card } from '@proton/atoms';
+import { useLoading } from '@proton/hooks';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { removeDiacritics } from '@proton/shared/lib/helpers/string';
 import { Member } from '@proton/shared/lib/interfaces/Member';
@@ -17,7 +18,6 @@ import {
     ModalTwoHeader,
     useFormErrors,
 } from '../../components';
-import { useLoading } from '../../hooks';
 
 const clean = (value: string) => {
     return removeDiacritics(value.toLowerCase().replace(/\s+/g, ''));

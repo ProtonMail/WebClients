@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { CryptoProxy, PublicKeyReference } from '@proton/crypto';
+import { useLoading } from '@proton/hooks';
 import { KEY_FILE_EXTENSION } from '@proton/shared/lib/constants';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import noop from '@proton/utils/noop';
@@ -14,7 +15,6 @@ import {
     ModalTwoHeader as ModalHeader,
     ModalProps,
 } from '../../../components';
-import { useLoading } from '../../../hooks';
 
 const handleExport = async (name: string, publicKey: PublicKeyReference) => {
     const fingerprint = publicKey.getFingerprint();

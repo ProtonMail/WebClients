@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import useContactList from '@proton/components/containers/contacts/hooks/useContactList';
+import { useLoading } from '@proton/hooks';
 import { getContact } from '@proton/shared/lib/api/contacts';
 import { CRYPTO_PROCESSING_TYPES } from '@proton/shared/lib/contacts/constants';
 import { CryptoProcessingError, prepareVCardContact } from '@proton/shared/lib/contacts/decrypt';
@@ -14,7 +15,7 @@ import { splitKeys } from '@proton/shared/lib/keys/keys';
 import noop from '@proton/utils/noop';
 
 import { Loader, ModalProps, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../../components';
-import { useAddresses, useApi, useContactGroups, useLoading, useUserKeys } from '../../../hooks';
+import { useAddresses, useApi, useContactGroups, useUserKeys } from '../../../hooks';
 import ContactView from '../view/ContactView';
 
 export interface ContactMergeDetailsModalProps {

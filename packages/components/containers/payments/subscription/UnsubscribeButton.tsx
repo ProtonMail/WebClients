@@ -3,6 +3,7 @@ import { ReactNode } from 'react';
 import { c } from 'ttag';
 
 import { Button, ButtonProps } from '@proton/atoms';
+import { useLoading } from '@proton/hooks';
 import { deleteSubscription } from '@proton/shared/lib/api/payments';
 import { getShouldCalendarPreventSubscripitionChange } from '@proton/shared/lib/calendar/plans';
 import { PLANS, PLAN_SERVICES } from '@proton/shared/lib/constants';
@@ -21,7 +22,6 @@ import {
     useApi,
     useEventManager,
     useGetCalendars,
-    useLoading,
     useModals,
     useNotifications,
     useOrganization,

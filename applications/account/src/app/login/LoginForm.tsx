@@ -16,9 +16,9 @@ import {
     Label,
     PasswordInputTwo,
     useFormErrors,
-    useLoading,
     useLocalState,
 } from '@proton/components';
+import { useLoading } from '@proton/hooks';
 import { BRAND_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';

@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { useLoading } from '@proton/components/hooks';
+import { useLoading } from '@proton/hooks';
 
 import useOfferFlags from '../../hooks/useOfferFlags';
 import { OfferProps } from '../../interface';

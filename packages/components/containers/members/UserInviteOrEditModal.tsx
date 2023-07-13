@@ -3,6 +3,7 @@ import { FormEvent, useMemo, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import { useLoading } from '@proton/hooks';
 import { editMemberInvitation, inviteMember, updateQuota, updateRole, updateVPN } from '@proton/shared/lib/api/members';
 import { GIGA, MAIL_APP_NAME, MEMBER_ROLE, MEMBER_SUBSCRIBER, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
 import { emailValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
@@ -21,7 +22,7 @@ import {
     Toggle,
     useFormErrors,
 } from '../../components';
-import { useApi, useEventManager, useLoading, useModals, useNotifications } from '../../hooks';
+import { useApi, useEventManager, useModals, useNotifications } from '../../hooks';
 import Addresses from '../addresses/Addresses';
 import MemberStorageSelector, { getStorageRange, getTotalStorage } from './MemberStorageSelector';
 

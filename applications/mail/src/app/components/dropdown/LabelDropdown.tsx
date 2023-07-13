@@ -13,11 +13,11 @@ import {
     Tooltip,
     generateUID,
     useLabels,
-    useLoading,
     useModalState,
     useUser,
 } from '@proton/components';
 import EditLabelModal from '@proton/components/containers/labels/modals/EditLabelModal';
+import { useLoading } from '@proton/hooks';
 import { getRandomAccentColor } from '@proton/shared/lib/colors';
 import { LABEL_TYPE, MAILBOX_IDENTIFIERS, MAIL_UPSELL_PATHS } from '@proton/shared/lib/constants';
 import { hasReachedLabelLimit } from '@proton/shared/lib/helpers/folder';

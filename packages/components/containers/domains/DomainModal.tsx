@@ -3,6 +3,7 @@ import { FormEvent, useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import { useLoading } from '@proton/hooks';
 import { addressType } from '@proton/shared/lib/api/addresses';
 import { addDomain, getDomain } from '@proton/shared/lib/api/domains';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
@@ -49,7 +50,6 @@ import {
     useGetAddresses,
     useGetUser,
     useGetUserKeys,
-    useLoading,
     useNotifications,
     useStep,
 } from '../../hooks';

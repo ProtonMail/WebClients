@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 
-import { useApi, useLoading } from '@proton/components/hooks';
+import { useApi } from '@proton/components/hooks';
+import { useLoading } from '@proton/hooks';
 import { getAllInvitations } from '@proton/shared/lib/api/calendars';
 import { CalendarMemberInvitation } from '@proton/shared/lib/interfaces/calendar';
 import noop from '@proton/utils/noop';

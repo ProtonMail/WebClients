@@ -9,7 +9,8 @@ import {
     ModalTwoHeader,
     useSettingsLink,
 } from '@proton/components/components';
-import { useApi, useCache, useConfig, useEventManager, useLoading, useNotifications } from '@proton/components/hooks';
+import { useApi, useCache, useConfig, useEventManager, useNotifications } from '@proton/components/hooks';
+import { useLoading } from '@proton/hooks';
 import { acceptInvitation, rejectInvitation } from '@proton/shared/lib/api/user';
 import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';

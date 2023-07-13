@@ -10,7 +10,8 @@ import { selectSyncById } from '@proton/activation/src/logic/sync/sync.selectors
 import { Button } from '@proton/atoms/Button';
 import { Alert, DropdownActions, Prompt, useModalState } from '@proton/components/components';
 import { FeatureCode } from '@proton/components/containers';
-import { useFeature, useLoading } from '@proton/components/hooks';
+import { useFeature } from '@proton/components/hooks';
+import { useLoading } from '@proton/hooks';
 
 interface Props {
     syncId: string;

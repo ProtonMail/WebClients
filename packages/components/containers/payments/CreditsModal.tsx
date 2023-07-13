@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { Button, Href } from '@proton/atoms';
 import { usePaymentFacade } from '@proton/components/payments/client-extensions';
 import { PaymentProcessorHook } from '@proton/components/payments/react-extensions/interface';
+import { useLoading } from '@proton/hooks';
 import { APPS, DEFAULT_CREDITS_AMOUNT, DEFAULT_CURRENCY, MIN_CREDIT_AMOUNT } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { Currency } from '@proton/shared/lib/interfaces';
@@ -19,7 +20,7 @@ import {
     PrimaryButton,
     useDebounceInput,
 } from '../../components';
-import { useConfig, useEventManager, useLoading, useNotifications } from '../../hooks';
+import { useConfig, useEventManager, useNotifications } from '../../hooks';
 import AmountRow from './AmountRow';
 import PaymentInfo from './PaymentInfo';
 import PaymentWrapper from './PaymentWrapper';

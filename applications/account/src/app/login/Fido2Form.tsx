@@ -3,7 +3,8 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { AuthSecurityKeyContent, useLoading } from '@proton/components';
+import { AuthSecurityKeyContent } from '@proton/components';
+import { useLoading } from '@proton/hooks';
 import { Fido2Data, Fido2Response } from '@proton/shared/lib/authentication/interface';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { getAuthentication } from '@proton/shared/lib/webauthn/get';

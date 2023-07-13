@@ -3,6 +3,7 @@ import { ReactNode, Ref, forwardRef, useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { useCombinedRefs } from '@proton/hooks';
+import { useLoading } from '@proton/hooks';
 import busy from '@proton/shared/lib/busy';
 import {
     isAudio,
@@ -15,7 +16,7 @@ import {
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 
 import { useFocusTrap, useModalState } from '../../components';
-import { useBeforeUnload, useHotkeys, useLoading } from '../../hooks';
+import { useBeforeUnload, useHotkeys } from '../../hooks';
 import AudioPreview from './AudioPreview';
 import CloseModal from './CloseModal';
 import Header, { SharedStatus } from './Header';

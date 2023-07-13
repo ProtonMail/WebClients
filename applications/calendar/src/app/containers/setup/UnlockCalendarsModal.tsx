@@ -18,9 +18,9 @@ import {
     useDrawer,
     useGetAddressKeys,
     useGetAddresses,
-    useLoading,
     useModalState,
 } from '@proton/components';
+import { useLoading } from '@proton/hooks';
 import { getPersonalCalendars } from '@proton/shared/lib/calendar/calendar';
 import { CALENDAR_FLAGS } from '@proton/shared/lib/calendar/constants';
 import { process } from '@proton/shared/lib/calendar/crypto/keys/resetHelper';

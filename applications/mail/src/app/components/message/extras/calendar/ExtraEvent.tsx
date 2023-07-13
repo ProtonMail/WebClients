@@ -2,8 +2,9 @@ import { useCallback, useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Banner, InlineLinkButton, useApi, useLoading } from '@proton/components';
+import { Banner, InlineLinkButton, useApi } from '@proton/components';
 import { BannerBackgroundColor } from '@proton/components/components/banner/Banner';
+import { useLoading } from '@proton/hooks';
 import useIsMounted from '@proton/hooks/useIsMounted';
 import { generateAttendeeToken } from '@proton/shared/lib/calendar/attendees';
 import {

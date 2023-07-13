@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { useContactEmailsCache } from '@proton/components/containers/contacts/ContactEmailsProvider';
+import { useLoading } from '@proton/hooks';
 import { dedupeNotifications, sortNotificationsByAscendingTrigger } from '@proton/shared/lib/calendar/alarms';
 import { getIsSubscribedCalendar, getShowDuration } from '@proton/shared/lib/calendar/calendar';
 import { MAX_CHARS_API, MAX_DEFAULT_NOTIFICATIONS } from '@proton/shared/lib/calendar/constants';
@@ -27,7 +28,6 @@ import {
 } from '../../../components';
 import { SelectChangeEvent } from '../../../components/selectTwo/select';
 import { TruncatedText } from '../../../components/truncatedText';
-import { useLoading } from '../../../hooks';
 import GenericError from '../../error/GenericError';
 import useGetCalendarActions from '../hooks/useGetCalendarActions';
 import useGetCalendarSetup from '../hooks/useGetCalendarSetup';

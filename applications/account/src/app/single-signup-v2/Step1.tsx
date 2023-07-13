@@ -17,7 +17,7 @@ import { Icon, InlineLinkButton } from '@proton/components/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import { CurrencySelector, CycleSelector } from '@proton/components/containers';
 import { getShortBillingText } from '@proton/components/containers/payments/helper';
-import { useLoading } from '@proton/components/hooks';
+import { useLoading } from '@proton/hooks';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import { APP_NAMES, BRAND_NAME, CYCLE, PLANS } from '@proton/shared/lib/constants';

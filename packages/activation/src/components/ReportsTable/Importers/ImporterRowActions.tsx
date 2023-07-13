@@ -15,7 +15,8 @@ import {
 import { useEasySwitchDispatch, useEasySwitchSelector } from '@proton/activation/src/logic/store';
 import { Button } from '@proton/atoms';
 import { Alert, DropdownActions, Prompt, useModalState } from '@proton/components';
-import { useApi, useEventManager, useLoading, useNotifications } from '@proton/components/hooks';
+import { useApi, useEventManager, useNotifications } from '@proton/components/hooks';
+import { useLoading } from '@proton/hooks';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 
 import { getScopeFromProvider } from '../../Modals/OAuth/StepProducts/useStepProducts.helpers';

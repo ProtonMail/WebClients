@@ -1,11 +1,12 @@
 import { c } from 'ttag';
 
+import { useLoading } from '@proton/hooks';
 import { updateImageProxy } from '@proton/shared/lib/api/mailSettings';
 import { IMAGE_PROXY_FLAGS } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 
 import { Toggle } from '../../components/toggle';
-import { useApi, useEventManager, useLoading, useNotifications, useToggle } from '../../hooks';
+import { useApi, useEventManager, useNotifications, useToggle } from '../../hooks';
 
 interface Props {
     id: string;

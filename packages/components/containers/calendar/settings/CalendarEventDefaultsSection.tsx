@@ -10,7 +10,8 @@ import {
     getCalendarEventSettingsModel,
     getDefaultModel,
 } from '@proton/components/containers/calendar/calendarModal/calendarModalState';
-import { useApi, useLoading, useNotifications } from '@proton/components/hooks';
+import { useApi, useNotifications } from '@proton/components/hooks';
+import { useLoading } from '@proton/hooks';
 import { updateCalendarSettings } from '@proton/shared/lib/api/calendars';
 import { dedupeNotifications, sortNotificationsByAscendingTrigger } from '@proton/shared/lib/calendar/alarms';
 import { modelToNotifications } from '@proton/shared/lib/calendar/alarms/modelToNotifications';
