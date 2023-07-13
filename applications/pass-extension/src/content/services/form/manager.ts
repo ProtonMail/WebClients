@@ -123,7 +123,6 @@ export const createFormManager = (options: FormManagerOptions) => {
         withContext<(reason: string) => Promise<boolean>>(
             async ({ destroy, service: { detector } }, reason: string) => {
                 garbagecollect();
-
                 if (await detector.shouldRunDetection()) {
                     ctx.detectionRequest = requestIdleCallback(() => {
                         ctx.busy = true;
@@ -168,13 +167,19 @@ export const createFormManager = (options: FormManagerOptions) => {
                 return false;
             }
         ),
-        150
+        250
     );
 
-    const detect = async (reason: string) => {
+    const detect = async (options: { reason: string; flush?: boolean }) => {
         if (ctx.busy || !ctx.active) return false;
         cancelIdleCallback(ctx.detectionRequest);
-        return Boolean(await runDetection(reason));
+
+        if (options.flush) {
+            void runDetection(options.reason);
+            return Boolean(await runDetection.flush());
+        }
+
+        return Boolean(await runDetection(options.reason));
     };
 
     /**
@@ -213,7 +218,7 @@ export const createFormManager = (options: FormManagerOptions) => {
             return false;
         });
 
-        if (triggerFormChange) void detect('DomMutation');
+        if (triggerFormChange) void detect({ reason: 'DomMutation' });
     };
 
     /**
@@ -227,7 +232,7 @@ export const createFormManager = (options: FormManagerOptions) => {
      * · The purpose is to catch appearing forms that may have been previously
      *   filtered out by the ML algorithm when it was first triggered */
     const onTransition = debounce(
-        () => requestAnimationFrame(() => hasUnprocessedForms() && detect('TransitionEnd')),
+        () => requestAnimationFrame(() => hasUnprocessedForms() && detect({ reason: 'TransitionEnd' })),
         250,
         { leading: true }
     );

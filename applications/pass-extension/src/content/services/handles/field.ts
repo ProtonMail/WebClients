@@ -65,7 +65,7 @@ const onFieldAttributeChange = (field: FieldHandle): MutationCallback =>
             const target = mutation.target as HTMLInputElement;
             if (mutation.type === 'attributes' && mutation.oldValue !== target.type) {
                 field.getFormHandle().detachField(mutation.target as HTMLInputElement);
-                void formManager.detect('FieldTypeChange');
+                void formManager.detect({ reason: 'FieldTypeChange' });
             }
         });
     });
