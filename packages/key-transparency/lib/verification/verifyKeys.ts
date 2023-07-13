@@ -128,13 +128,15 @@ export const checkKeysInSKL = async (email: string, importedKeysWithFlags: KeyWi
 export const verifySKLSignature = async (
     verificationKeys: PublicKeyReference[],
     signedKeyListData: string,
-    signedKeyListSignature: string
+    signedKeyListSignature: string,
+    verificationTime?: Date
 ): Promise<Date | null> => {
     const { verified, signatureTimestamp } = await CryptoProxy.verifyMessage({
         armoredSignature: signedKeyListSignature,
         verificationKeys,
         textData: signedKeyListData,
         context: KT_SKL_VERIFICATION_CONTEXT,
+        date: verificationTime,
     });
     if (verified !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
         return null;
