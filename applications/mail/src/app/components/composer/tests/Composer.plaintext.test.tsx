@@ -5,6 +5,7 @@ import { MIME_TYPES } from '@proton/shared/lib/constants';
 import { clearAll, createDocument, waitForSpyCall } from '../../../helpers/test/helper';
 import { render } from '../../../helpers/test/render';
 import * as useSaveDraft from '../../../hooks/message/useSaveDraft';
+import { store } from '../../../logic/store';
 import Composer from '../Composer';
 import { ID, prepareMessage, props } from './Composer.test.helpers';
 
@@ -42,7 +43,8 @@ jest.mock('@proton/components/components/editor/rooster/helpers/getRoosterEditor
 });
 
 describe('Composer switch plaintext <-> html', () => {
-    afterEach(clearAll);
+    beforeEach(clearAll);
+    afterAll(clearAll);
 
     it('should switch from plaintext to html content without loosing content', async () => {
         const content = 'content';
@@ -58,7 +60,9 @@ describe('Composer switch plaintext <-> html', () => {
             },
         });
 
-        const { findByTestId } = await render(<Composer {...props} messageID={ID} />);
+        const composerID = Object.keys(store.getState().composers.composers)[0];
+
+        const { findByTestId } = await render(<Composer {...props} composerID={composerID} />);
 
         const moreOptionsButton = await findByTestId('composer:more-options-button');
         fireEvent.click(moreOptionsButton);
@@ -95,7 +99,9 @@ describe('Composer switch plaintext <-> html', () => {
             },
         });
 
-        const { findByTestId } = await render(<Composer {...props} messageID={ID} />);
+        const composerID = Object.keys(store.getState().composers.composers)[0];
+
+        const { findByTestId } = await render(<Composer {...props} composerID={composerID} />);
 
         const moreOptionsButton = await findByTestId('composer:more-options-button');
         fireEvent.click(moreOptionsButton);

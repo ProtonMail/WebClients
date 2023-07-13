@@ -15,6 +15,7 @@ import {
     createDocument,
     generateKeys,
 } from '../../../helpers/test/helper';
+import { store } from '../../../logic/store';
 import { AddressID, ID, fromAddress, prepareMessage, renderComposer, toAddress } from './Composer.test.helpers';
 
 jest.setTimeout(20000);
@@ -34,17 +35,18 @@ describe('Composer autosave', () => {
     });
 
     afterAll(async () => {
+        clearAll();
         await releaseCryptoProxy();
     });
 
     beforeEach(() => {
+        clearAll();
         jest.useFakeTimers();
         addKeysToAddressKeysCache(AddressID, fromKeys);
         addApiKeys(false, toAddress, []);
     });
 
     afterEach(() => {
-        clearAll();
         jest.useRealTimers();
     });
 
@@ -73,11 +75,13 @@ describe('Composer autosave', () => {
     };
 
     const setup = async (resolved = true) => {
-        const message = prepareMessage({
+        prepareMessage({
             data: { ID: undefined, MIMEType: MIME_TYPES.DEFAULT },
             messageDocument: { document: createDocument('test') },
         });
-        const renderResult = await renderComposer(message.localID);
+        const composerID = Object.keys(store.getState().composers.composers)[0];
+
+        const renderResult = await renderComposer(composerID);
         triggerRoosterInput(renderResult.container); // Initial dummy Squire input
         const { spy: createSpy, resolve: createResolve } = asyncSpy(resolved);
         const { spy: updateSpy, resolve: updateResolve } = asyncSpy(resolved);
