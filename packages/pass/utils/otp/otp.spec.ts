@@ -1,4 +1,4 @@
-import { parseOTPValue } from './otp';
+import { getOPTSecret, getSecretOrUri, hasDefaultOTP, parseOTPValue } from './otp';
 
 const toOtpUri = (secret: string) =>
     `otpauth://totp/Proton%20Pass?secret=${secret.split(' ').join('')}&algorithm=SHA1&digits=6&period=30`;
@@ -97,5 +97,67 @@ describe('otp parser', () => {
         ).toEqual(
             'otpauth://totp/TestIssuer:TestLabel?issuer=TestIssuer&secret=QWERTZUIOPASDFGH&algorithm=SHA1&digits=6&period=30'
         );
+    });
+});
+
+describe('getOPTSecret', () => {
+    test('should return just the secret value of totpUri', () => {
+        [
+            'otpauth://totp/TestIssuer:TestLabel?issuer=TestIssuer&secret=QWERTZUIOPASDFGH&algorithm=SHA1&digits=6&period=30',
+            'otpauth://totp/TestIssuer:TestLabel?issuer=TestIssuer&secret=QWERTZUIOPASDFGH&algorithm=SHA1&digits=9&period=30',
+            'otpauth://totp/TestIssuer:TestLabel?issuer=TestIssuer&secret=QWERTZUIOPASDFGH&algorithm=SHA1&digits=6&period=45',
+            'otpauth://totp/TestIssuer:TestLabel?issuer=TestIssuer&secret=QWERTZUIOPASDFGH&algorithm=SHA2&digits=6&period=30',
+            'otpauth://totp/TestIssuer:TestLabel?issuer=TestIssuer&secret=QWERTZUIOPASDFGH',
+        ].forEach((totpUri) => expect(getOPTSecret(totpUri)).toEqual('QWERTZUIOPASDFGH'));
+    });
+
+    test('should return empty string when secret is missing', () => {
+        [
+            'otpauth://totp/TestIssuer:TestLabel?issuer=TestIssuer&algorithm=SHA1&digits=6&period=30',
+            'otpauth://totp/TestIssuer:TestLabel?issuer=TestIssuer&algorithm=SHA1&digits=9&period=30',
+            'otpauth://totp/TestIssuer:TestLabel?issuer=TestIssuer&algorithm=SHA1&digits=6&period=45',
+            'otpauth://totp/TestIssuer:TestLabel?issuer=TestIssuer&algorithm=SHA2&digits=6&period=30',
+            'otpauth://totp/TestIssuer:TestLabel?issuer=TestIssuer',
+        ].forEach((totpUri) => expect(getOPTSecret(totpUri)).toEqual(''));
+    });
+});
+
+describe('hasDefaultOTP', () => {
+    test('should return true when 3 defaults are set', () => {
+        ['1MC2NUFEYUEBIT4U', 'NMC2 NUFE YUEB IT4U'].forEach(
+            (secret) => expect(hasDefaultOTP(parseOTPValue(secret))).toBeTruthy
+        );
+    });
+    test('should return true when some of the defaults is not set at all', () => {
+        [
+            'otpauth://totp/TestIssuer:TestLabel?issuer=TestIssuer&secret=QWERTZUIOPASDFGH&algorithm=SHA1&digits=6',
+            'otpauth://totp/TestIssuer:TestLabel?issuer=TestIssuer&secret=QWERTZUIOPASDFGH&algorithm=SHA1&&period=30',
+            'otpauth://totp/TestIssuer:TestLabel?issuer=TestIssuer&secret=QWERTZUIOPASDFGH&digits=6&period=30',
+        ].forEach((totpUri) => expect(hasDefaultOTP(totpUri)).toBeFalsy);
+    });
+    test('should return false when some of the 3 defaults do not match', () => {
+        [
+            'otpauth://totp/TestIssuer:TestLabel?issuer=TestIssuer&secret=QWERTZUIOPASDFGH&algorithm=SHA2&digits=6&period=30',
+            'otpauth://totp/TestIssuer:TestLabel?issuer=TestIssuer&secret=QWERTZUIOPASDFGH&algorithm=SHA1&digits=9&period=30',
+            'otpauth://totp/TestIssuer:TestLabel?issuer=TestIssuer&secret=QWERTZUIOPASDFGH&algorithm=SHA1&digits=6&period=45',
+        ].forEach((totpUri) => expect(hasDefaultOTP(totpUri)).toBeFalsy);
+    });
+});
+
+describe('getSecretOrUri', () => {
+    test('should return secret when all of the 3 defaults do match or some is not set', () => {
+        [
+            'otpauth://totp/TestIssuer:TestLabel?issuer=TestIssuer&secret=QWERTZUIOPASDFGH&algorithm=SHA1&digits=6&period=30',
+            'otpauth://totp/TestIssuer:TestLabel?issuer=TestIssuer&secret=QWERTZUIOPASDFGH&algorithm=SHA1&digits=6',
+            'otpauth://totp/TestIssuer:TestLabel?issuer=TestIssuer&secret=QWERTZUIOPASDFGH&algorithm=SHA1&period=30',
+            'otpauth://totp/TestIssuer:TestLabel?issuer=TestIssuer&secret=QWERTZUIOPASDFGH&digits=6&period=30',
+        ].forEach((totpUri) => expect(getSecretOrUri(totpUri)).toEqual('QWERTZUIOPASDFGH'));
+    });
+    test('should return full totpUri when some of the 3 defaults do not match', () => {
+        [
+            'otpauth://totp/TestIssuer:TestLabel?issuer=TestIssuer&secret=QWERTZUIOPASDFGH&algorithm=SHA2&digits=6&period=30',
+            'otpauth://totp/TestIssuer:TestLabel?issuer=TestIssuer&secret=QWERTZUIOPASDFGH&algorithm=SHA1&digits=9&period=30',
+            'otpauth://totp/TestIssuer:TestLabel?issuer=TestIssuer&secret=QWERTZUIOPASDFGH&algorithm=SHA1&digits=6&period=45',
+        ].forEach((totpUri) => expect(getSecretOrUri(totpUri)).toEqual(totpUri));
     });
 });
