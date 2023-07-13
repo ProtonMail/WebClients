@@ -16,7 +16,6 @@ export const useGetPublicKeys = () => {
     const cache = useCache();
     const api = useApi();
     const { verifyOutboundPublicKeys, ktActivation } = useKeyTransparencyContext();
-
     return useCallback(
         (email, lifetime = DEFAULT_LIFETIME, noCache = false) => {
             if (!cache.has(CACHE_KEY)) {
@@ -27,7 +26,7 @@ export const useGetPublicKeys = () => {
                 getPublicKeysEmailHelper(api, ktActivation, email, verifyOutboundPublicKeys, true, noCache);
             return getPromiseValue(subCache, email, miss, lifetime);
         },
-        [api, cache]
+        [api, cache, ktActivation]
     );
 };
 
