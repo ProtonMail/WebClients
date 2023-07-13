@@ -26,12 +26,12 @@ const fetchSKLWithRevision = async (api: Api, email: string, revision: number, d
         return throwKTError('Could not find new SKL with same revision', { email, revision });
     }
 
-    if (includedSKL.Data != data) {
+    if (includedSKL.Data != data && includedSKL.ObsolescenceToken != data) {
         return throwKTError('SKL data has changed for revision', {
             email,
             revision,
             savedData: data,
-            fetchedData: includedSKL.Data,
+            includedSKL,
         });
     }
 
