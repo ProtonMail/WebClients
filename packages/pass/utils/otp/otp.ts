@@ -19,9 +19,7 @@ export const parseOTPValue = (
     input: string,
     { label, issuer }: { label?: MaybeNull<string>; issuer?: MaybeNull<string> } = {}
 ): string => {
-    if (isEmptyString(input)) {
-        return '';
-    }
+    if (isEmptyString(input)) return '';
 
     try {
         return URI.parse(input).toString();
@@ -62,4 +60,21 @@ export const parseOTPValue = (
             return '';
         }
     }
+};
+
+export const getOPTSecret = (totpUri: string): string => {
+    const params = getSearchParams(totpUri.split('?')?.[1]);
+    return params.secret === undefined ? '' : params.secret;
+};
+
+/* we like to compare just algorithm: 'SHA1', digits: 6, period: 30, */
+export const hasDefaultOTP = (totpUri: string): boolean => {
+    const keysToCompare = ['algorithm', 'digits', 'period'] as const;
+    const totpUriParams = getSearchParams(totpUri.split('?')?.[1]);
+    return keysToCompare.every((key) => !(key in totpUriParams) || totpUriParams[key] === String(OTP_DEFAULTS[key]));
+};
+
+/* returns just the secret when we have defaults */
+export const getSecretOrUri = (totpUri: string): string => {
+    return hasDefaultOTP(totpUri) ? getOPTSecret(totpUri) : totpUri;
 };
