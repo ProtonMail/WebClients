@@ -2,6 +2,7 @@ import jszip from 'jszip';
 import { c } from 'ttag';
 
 import type { ItemExtraField, ItemImportIntent, Maybe, Unpack } from '@proton/pass/types';
+import { extractFirst } from '@proton/pass/utils/array';
 import { truthy } from '@proton/pass/utils/fp';
 import { logger } from '@proton/pass/utils/logger';
 import { uniqueId } from '@proton/pass/utils/string';
@@ -9,8 +10,13 @@ import { uniqueId } from '@proton/pass/utils/string';
 import { ImportReaderError } from '../helpers/reader.error';
 import { getImportedVaultName, importCreditCardItem, importLoginItem, importNoteItem } from '../helpers/transformers';
 import type { ImportPayload, ImportVault } from '../types';
-import type { OnePass1PuxData, OnePassBaseItem, OnePassItem, OnePassItemDetails ,
-    OnePassField} from './1password.1pux.types';
+import type {
+    OnePass1PuxData,
+    OnePassBaseItem,
+    OnePassField,
+    OnePassItem,
+    OnePassItemDetails,
+} from './1password.1pux.types';
 import {
     OnePassCategory,
     OnePassFieldIdCreditCard,
@@ -142,13 +148,19 @@ const extractLoginFieldFromLoginItem = (
 const processLoginItem = (
     item: Extract<OnePassItem, { categoryUuid: OnePassCategory.LOGIN }>
 ): ItemImportIntent<'login'> => {
+    const [totp, extraFields] = extractFirst<ItemExtraField<'totp'>, ItemExtraField>(
+        extractExtraFields(item),
+        (extraField: ItemExtraField) => extraField.type === 'totp'
+    );
+
     return importLoginItem({
         name: item.overview.title,
         note: item.details.notesPlain,
         username: extractLoginFieldFromLoginItem(item, OnePassLoginDesignation.USERNAME),
         password: extractLoginFieldFromLoginItem(item, OnePassLoginDesignation.PASSWORD),
         urls: extractURLs(item),
-        extraFields: extractExtraFields(item),
+        totp: totp?.data.totpUri,
+        extraFields,
         trashed: item.state === OnePassState.ARCHIVED,
         createTime: item.createdAt,
         modifyTime: item.updatedAt,
