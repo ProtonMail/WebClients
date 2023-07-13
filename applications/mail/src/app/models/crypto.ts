@@ -34,7 +34,6 @@ export interface StatusIcon {
 }
 
 export interface SenderVerificationDetails {
-    success: boolean;
     description: string;
 }
 
