@@ -195,7 +195,7 @@
         "Augmenter"
       ],
       "Keep my ${ vpnPlanNameShort } subscription": [
-        "Je maintiens mon abonnement à ${ vpnPlanNameShort }."
+        "Garder mon abonnement à ${ vpnPlanNameShort }."
       ],
       "Load more": [
         "Charger plus"
@@ -2683,9 +2683,6 @@
       "To fight spam and abuse, please verify you are human.": [
         "Pour lutter contre les messages indésirables/spam et les abus, nous vous invitons à prouver que vous n'êtes pas un robot."
       ],
-      "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and visit our blog from time to time.": [
-        "Pour rester au courant des actualités et évolutions des produits ${ BRAND_NAME }, vous pouvez vous abonner à nos différentes newsletters et consulter notre blog de temps en temps."
-      ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "Pour continuer, sélectionnez une méthode de récupération de compte et nous pourrons vérifier la demande."
       ],
@@ -3363,9 +3360,6 @@
     "Label for news": {
       "${ BRAND_NAME } beta announcements": [
         "Actualités des versions bêta ${ BRAND_NAME }"
-      ],
-      "${ BRAND_NAME } company announcements": [
-        "Actualités de l'entreprise ${ BRAND_NAME }"
       ],
       "${ BRAND_NAME } for Business newsletter": [
         "Newsletter ${ BRAND_NAME } for Business"
@@ -4965,7 +4959,7 @@
         "La préférence a été enregistrée."
       ],
       "Verification successful": [
-        "La vérification est réussie."
+        "La vérification a abouti."
       ],
       "You have successfully cancelled your subscription.": [
         "Vous avez résilié votre abonnement."
@@ -5103,7 +5097,7 @@
         "Clients ${ VPN_APP_NAME }"
       ],
       "(active)": [
-        "(activé)"
+        "(actif)"
       ],
       "1. Give a name to the config to be generated": [
         "1. Donnez un nom à la configuration qui doit être générée"

@@ -1587,7 +1587,7 @@
         "O navegador que você está usando não permite que o pagamento seja completamente autorizado. Use um navegador diferente ou inicie a sessão através de um computador."
       ],
       "The email addresses do not match": [
-        "Os endereços de e-mail não são iguais"
+        "Os endereços de e-mail não correspondem."
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "O valor mínimo de crédito que pode ser adicionado é ${ price }."
@@ -1991,6 +1991,9 @@
     "Font face option": {
       "System default": [
         "Padrão do sistema"
+      ],
+      "Theme font": [
+        "Tipo de letra do tema"
       ]
     },
     "Font size option": {
@@ -2182,7 +2185,7 @@
         "Logotipo do American Express SafeKey"
       ],
       "Amount above maximum (${ amount }).": [
-        "Valor total acima do máximo (${ amount })."
+        "O valor total é acima do máximo (${ amount })."
       ],
       "Amount below minimum (${ amount }).": [
         "Valor total abaixo do mínimo (${ amount })."
@@ -2539,7 +2542,7 @@
         "A pré-visualização falhou ao carregar"
       ],
       "Preview for this file type is not supported": [
-        "A pré-visualização deste arquivo não é suportada"
+        "A pré-visualização deste arquivo não é suportada."
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "O preço inclui todos os descontos baseados em ciclos aplicáveis ​​e cupons não expirados salvos em sua conta."
@@ -2621,7 +2624,7 @@
         "equipe de suporte"
       ],
       "Swiss based": [
-        "Baseado na suíça"
+        "Sediado na Suíça"
       ],
       "Thank you": [
         "Obrigado"
@@ -2683,8 +2686,8 @@
       "To fight spam and abuse, please verify you are human.": [
         "Para combater o spam e/ou abuso, verifique se você é humano."
       ],
-      "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and visit our blog from time to time.": [
-        "Para acompanhar o desenvolvimento dos produtos da ${ BRAND_NAME }, você poderá se inscrever em nossos e-mails e/ou visitar nosso blog periodicamente."
+      "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
+        "Para acompanhar as novidades sobre desenvolvimento de produtos ${ BRAND_NAME }, de tempos em tempos, você pode se inscrever em um dos nossos vários e-mails e no ${ blogLink }."
       ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "Para prosseguir, selecione um método de recuperação de conta para que possamos verificar a sua solicitação."
@@ -2913,7 +2916,7 @@
         "Você permanecerá conectado mesmo depois de fechar o navegador."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
-        "Sua conta da ${ BRAND_NAME } está atualmente suspensa. Após 28 dias, os e-mails não serão mais entregues em sua caixa de entrada, seus links de compartilhamento de Drive serão bloqueados e você não poderá enviar novos arquivos. Para retomar o serviço normal, favor pagar qualquer fatura vencida."
+        "Sua conta da ${ BRAND_NAME } está atualmente suspensa. Após 28 dias, os e-mails não serão mais entregues em sua caixa de entrada, seus links de compartilhamento de Drive serão bloqueados e você não poderá enviar novos arquivos. Para retomar o serviço normal, pague quaisquer faturas vencidas."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "Sua conta da ${ BRAND_NAME } está suspensa no momento. Os e-mails não estão mais sendo entregues em sua caixa de entrada. Seus links de compartilhamento do Drive não estão mais ativos e você não pode enviar novos arquivos. Para continuar usando sua conta, pague as faturas vencidas."
@@ -3091,7 +3094,7 @@
         "Titular do cartão"
       ],
       "Card information": [
-        "Informação do cartão"
+        "Informações do cartão"
       ],
       "Card number": [
         "Número do cartão"
@@ -3367,9 +3370,6 @@
       "${ BRAND_NAME } beta announcements": [
         "Comunicados do ${ BRAND_NAME } beta"
       ],
-      "${ BRAND_NAME } company announcements": [
-        "Comunicados da empresa ${ BRAND_NAME }"
-      ],
       "${ BRAND_NAME } for Business newsletter": [
         "Boletim do ${ BRAND_NAME } for Business"
       ],
@@ -3627,8 +3627,8 @@
         "${ n } pastas e marcadores"
       ],
       "${ n } hide-my-email alias": [
-        "${ n } alias do Hide-my-email",
-        "${ n } aliases do Hide-my-email"
+        "${ n } alias do hide-my-email",
+        "${ n } aliases do hide-my-email"
       ],
       "${ n } label": [
         "${ n } marcador",
@@ -3687,7 +3687,7 @@
         "Disponível em todas plataformas"
       ],
       "Calendar sharing": [
-        "Compartilhar calendário"
+        "Compartilhar o calendário"
       ],
       "Catch-all": [
         "Catch-all"
@@ -4106,6 +4106,9 @@
         "Crie até ${ n } calendário ou adicione calendários de amigos, familiares, colegas e organizações",
         "Crie até ${ n } calendários ou adicione calendários de amigos, familiares, colegas e organizações"
       ],
+      "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
+        "Crie até ${ n } endereços de e-mail ou aliases que você pode atribuir aos membros da sua família. Utilize-os como identidades digitais como, por exemplo, JoaoDasCompras@${ domain } para contas em e-commerce."
+      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Proteja-se de ameaças à privacidade da VPN ao transmitir seu tráfego de internet por meio de múltiplos servidores"
       ],
@@ -4116,7 +4119,7 @@
         "Compartilhe facilmente seus calendários com colegas, familiares e amigos por meio de um link"
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
-        "Compartilhe facilmente seus calendários com familiares, amigos ou colegas"
+        "Compartilhe facilmente seus calendários com familiares, amigos ou colegas."
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Garante que você receba todos os e-mails enviados ao seu domínio, mesmo que o endereço de e-mail não exista, tenha deixado de existir ou contenha um erro de digitação"
@@ -4245,7 +4248,7 @@
         "Ao enviar para outros usuários do ${ MAIL_APP_NAME }, a criptografia é automática. O envio para usuários que não usam ${ MAIL_APP_NAME_TWO } requer a definição de uma senha antes do envio."
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
-        "Você pode ter mais de um administrador. Todos os administradores podem adicionar e gerenciar usuários, mas apenas o administrador primário tem controle sobre o faturamento."
+        "Você pode ter mais de um administrador. Todos os administradores podem adicionar e gerenciar usuários, mas apenas o administrador principal tem controle sobre o faturamento."
       ]
     },
     "new_plans: Upsell attribute": {
@@ -4284,7 +4287,7 @@
         "Suporte prioritário"
       ],
       "Secure your passwords and identity with an open-source and encrypted password manager.": [
-        "Proteja a suas senhas e identidade com um gerenciador de senha criptografada de códio aberto."
+        "Proteja suas senhas e identidade com um gerenciador de senha criptografada de códio aberto."
       ],
       "Support for 1 custom email domain": [
         "Suporte para 1 domínio de e-mail personalizado"
@@ -4850,7 +4853,7 @@
         "Gerencie sua assinatura em ${ subscriptionManager }."
       ],
       "Subscription is managed by ${ subscriptionManager }": [
-        "A assinatura é gerenciada por ${ subscriptionManager }"
+        "A assinatura é gerenciada por ${ subscriptionManager }."
       ],
       "Subscription of user ID-${ userId } has been done via an in-app purchase. To manage the subscription user needs to navigate to the Subscription section of their ${ subscriptionManager } account.": [
         "Assinatura de ID de usuário-${ userId } foi feito via uma compra no aplicativo. Para gerenciar a assinatura, o usuário precisa navegar até a seção Assinatura da sua ${ subscriptionManager } conta."
@@ -4977,7 +4980,7 @@
         "Preferência salva"
       ],
       "Verification successful": [
-        "Verificado com sucesso"
+        "Verificado"
       ],
       "You have successfully cancelled your subscription.": [
         "Você cancelou sua assinatura com sucesso."

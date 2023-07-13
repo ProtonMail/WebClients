@@ -1991,6 +1991,9 @@
     "Font face option": {
       "System default": [
         "Systemstandard"
+      ],
+      "Theme font": [
+        "Design-Schriftart"
       ]
     },
     "Font size option": {
@@ -2680,8 +2683,8 @@
       "To fight spam and abuse, please verify you are human.": [
         "Bitte beweise, dass du ein Mensch bist, um Spam und Missbrauch zu vermeiden."
       ],
-      "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and visit our blog from time to time.": [
-        "Um über die neuesten Entwicklungen bei ${ BRAND_NAME }-Produkten auf dem Laufenden zu bleiben, kannst du unsere verschiedenen E-Mails abonnieren und von Zeit zu Zeit unseren Blog besuchen."
+      "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
+        "Um über die neuesten Entwicklungen bei ${ BRAND_NAME }-Produkten auf dem Laufenden zu bleiben, kannst du unsere verschiedenen Newsletter abonnieren und von Zeit zu Zeit unseren ${ blogLink } besuchen."
       ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "Wähle um fortzufahren eine Kontowiederherstellungsmethode aus, damit wir die Anfrage überprüfen können."
@@ -3360,9 +3363,6 @@
     "Label for news": {
       "${ BRAND_NAME } beta announcements": [
         "${ BRAND_NAME } Beta-Ankündigungen"
-      ],
-      "${ BRAND_NAME } company announcements": [
-        "${ BRAND_NAME } Firmenankündigungen"
       ],
       "${ BRAND_NAME } for Business newsletter": [
         "${ BRAND_NAME } for Business-Newsletter"
