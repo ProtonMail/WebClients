@@ -2011,6 +2011,9 @@
     "Font face option": {
       "System default": [
         "Системна"
+      ],
+      "Theme font": [
+        "Шрифт теми"
       ]
     },
     "Font size option": {
@@ -2708,9 +2711,6 @@
       "To fight spam and abuse, please verify you are human.": [
         "З метою протидії спаму та зловживанням, будь ласка, підтвердьте, що ви людина."
       ],
-      "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and visit our blog from time to time.": [
-        "Щоб бути в курсі найновіших розробок продуктів ${ BRAND_NAME }, ви можете підписатися на наші розсилки електронною поштою та час від часу відвідувати наш блог."
-      ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "Для продовження виберіть спосіб відновлення облікового запису, щоб ми могли засвідчити запит."
       ],
@@ -3398,9 +3398,6 @@
     "Label for news": {
       "${ BRAND_NAME } beta announcements": [
         "Оголошення ${ BRAND_NAME } бета"
-      ],
-      "${ BRAND_NAME } company announcements": [
-        "Оголошення компанії ${ BRAND_NAME }"
       ],
       "${ BRAND_NAME } for Business newsletter": [
         "Новини ${ BRAND_NAME } для бізнесу"

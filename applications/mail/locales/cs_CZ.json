@@ -4157,6 +4157,9 @@
     "Font face option": {
       "System default": [
         "Systémové výchozí"
+      ],
+      "Theme font": [
+        "Písmo motivu"
       ]
     },
     "Font Size Default": {
@@ -4202,11 +4205,44 @@
       "${ MAIL_APP_NAME } on Play Store": [
         "${ MAIL_APP_NAME } v Obchodu Play"
       ],
+      "auto-forwarding": [
+        "automatické přeposílání"
+      ],
+      "Block email communications from scammers permanently.": [
+        "Trvale blokujte e-mailovou komunikaci od podvodníků."
+      ],
+      "Block unsavory senders": [
+        "Blokování nevhodných odesílatelů"
+      ],
+      "Bravo for making your email even more secure, convenient, and relevant! We've upped your free storage to a total of 1 GB.": [
+        "Bravo za ještě bezpečnější, pohodlnější a relevantnější e-mail! Zvýšili jsme vaše bezplatné úložiště na celkem 1 GB."
+      ],
+      "Checklist complete": [
+        "Kontrolní seznam je kompletní"
+      ],
       "Close": [
         "Zavřít"
       ],
       "Congratulation, you completed all the steps!": [
         "Gratulujeme, dokončili jste všechny kroky!"
+      ],
+      "Continue setting up your email": [
+        "Pokračujte v nastavení e-mailu"
+      ],
+      "Discover how our ${ strongText } protect you": [
+        "Zjistěte, jak vás naše ${ strongText } chrání"
+      ],
+      "Discover privacy features": [
+        "Objevte funkce ochrany soukromí"
+      ],
+      "Double your free storage to 1 GB when you complete the following:": [
+        "Zdvojnásobte své bezplatné úložiště na 1 GB splněním následujících podmínek:"
+      ],
+      "Encryption so strong, only you and intended recipients can view your emails.": [
+        "Šifrování je tak silné, že e-maily můžete zobrazit pouze vy a určení příjemci."
+      ],
+      "For your eyes only": [
+        "Pouze pro vaše oči"
       ],
       "Get free storage": [
         "Získat bezplatné úložiště"
@@ -4217,6 +4253,9 @@
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "Získat mobilní aplikaci ${ MAIL_APP_NAME }"
       ],
+      "Get the App": [
+        "Získat aplikaci"
+      ],
       "Import contacts or emails": [
         "Import kontaktů nebo emailů"
       ],
@@ -4226,11 +4265,35 @@
       "Import your contacts or messages": [
         "Import kontaktů nebo zpráv"
       ],
+      "Keep using ${ MAIL_APP_NAME } to discover more ways ${ BRAND_NAME } protects your privacy and simplifies emailing.": [
+        "Používejte ${ MAIL_APP_NAME } i nadále a objevte další způsoby, jak ${ BRAND_NAME } chrání vaše soukromí a zjednodušuje odesílání e-mailů."
+      ],
+      "Learn more": [
+        "Více informací"
+      ],
+      "Make ${ BRAND_NAME } your go-to inbox": [
+        "Udělejte si z ${ BRAND_NAME } svou schránku pro doručenou poštu"
+      ],
       "Maybe later": [
         "Možná později"
       ],
+      "Nice! You've updated all services in this category.": [
+        "Pěkné! Aktualizovali jste všechny služby v této kategorii."
+      ],
       "Open checklist": [
         "Otevřít kontrolní seznam"
+      ],
+      "Popular online services": [
+        "Oblíbené online služby"
+      ],
+      "privacy features": [
+        "funkce ochrany soukromí"
+      ],
+      "Protect and simplify your email": [
+        "Ochrana a zjednodušení e-mailu"
+      ],
+      "Protection from trackers": [
+        "Ochrana před sledováním"
       ],
       "Quickly transfer your contacts or emails from any provider using our Easy Switch import assistant.": [
         "Rychle přeneste kontakty nebo e-maily od jakéhokoli poskytovatele pomocí našeho Easy Switch asistenta pro snadný import."
@@ -4240,6 +4303,18 @@
       ],
       "Set recovery method": [
         "Nastavit metodu obnovení"
+      ],
+      "Sign in to the mobile app to complete this step": [
+        "Přihlaste se do mobilní aplikace a dokončete tento krok"
+      ],
+      "Using your mobile device, scan this QR code or visit the iOS or Android store.": [
+        "Pomocí svého mobilního zařízení naskenujte tento QR kód nebo navštivte obchod pro iOS nebo Android."
+      ],
+      "We stop advertisers and data collectors from profiling you.": [
+        "Zabraňujeme inzerentům a sběratelům dat, aby vás profilovali."
+      ],
+      "You've unlocked 1 GB": [
+        "Odemkli jste 1 GB"
       ]
     },
     "Gmail forwarding": {
@@ -7572,6 +7647,11 @@
         "Pomocí výběru aplikací v levém horním rohu získáte přístup ke všem službám ${ BRAND_NAME }: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } a ${ DRIVE_SHORT_APP_NAME }."
       ]
     },
+    "Online accounts": {
+      "Have an account with one of these services? Just click to change the email address to your ${ MAIL_APP_NAME } address.": [
+        "Máte účet u některé z těchto služeb? Stačí kliknout pro změnu e-mailové adresy na vaši adresu ${ MAIL_APP_NAME }."
+      ]
+    },
     "Online Accounts Name": {
       "Banking": [
         "Bankovnictví"
@@ -7590,6 +7670,9 @@
       ],
       "Gaming": [
         "Hry"
+      ],
+      "Most popular": [
+        "Nejoblíbenější"
       ],
       "Travel": [
         "Cestování"
@@ -8696,9 +8779,60 @@
         "2 roky"
       ]
     },
+    "summer2023: Deal details": {
+      "Premium Drive": [
+        "Prémiový Disk"
+      ],
+      "Premium Mail and Calendar": [
+        "Prémiový Mail a Kalendář"
+      ],
+      "Premium Password Manager": [
+        "Prémiový správce hesel"
+      ]
+    },
+    "summer2023: Describe Proton Pass": {
+      "Securely store your passwords and autofill them on websites. Includes unlimited passwords, autofill, password generator, and more.": [
+        "Bezpečné ukládání hesel a jejich automatické vyplňování na webových stránkách. Obsahuje neomezený počet hesel, automatické vyplňování, generátor hesel a další funkce."
+      ]
+    },
     "summer2023: Short tool name to present Proton Pass": {
       "Password manager": [
         "Správce hesel"
+      ]
+    },
+    "summer2023: Tooltip": {
+      "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
+        "Vytvoření zabezpečených přihlašovacích údajů na všech zařízeních. Obsahuje neomezený počet aliasů, 20 trezorů, integrovanou funkci 2FA, automatické vyplňování kreditních karet a další funkce."
+      ],
+      "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "Zahrnuje 2950 serverů v 65+ zemích, přípojení až 10 zařízení, přístup ke světovým streamovacím službám, blokovač malwaru a reklam a více."
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Obsahuje podporu 1 vlastní e-mailové domény, 10 e-mailových adres, 10 aliasů pro hide-my-email, sdílení kalendáře a další funkce."
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "Zabezpečte své soubory pomocí šifrovaného cloudového úložiště. Obsahuje historii verzí, šifrované sdílení souborů a další funkce."
+      ]
+    },
+    "summer2023:Footer": {
+      "*Your subscription will automatically renew at the standard discounted rate at the end of your billing cycle.": [
+        "*Vaše předplatné se automaticky obnoví za standardní zvýhodněnou sazbu na konci vašeho zúčtovacího cyklu."
+      ],
+      "Discounts are based on the standard monthly pricing. This offer is only available to first-time subscribers.": [
+        "Slevy jsou založeny na standardní měsíční ceně. Tato nabídka je k dispozici pouze pro první předplatitele."
+      ]
+    },
+    "summer2023:Info": {
+      "For a limited time, get the best ${ BRAND_NAME } has to offer at an exclusive discount.": [
+        "Po omezenou dobu získáte to nejlepší, co ${ BRAND_NAME } nabízí, s exkluzivní slevou."
+      ],
+      "We’re celebrating the nine-year anniversary of our crowdfunding!": [
+        "Slavíme devítileté výročí našeho crowdfundingu!"
+      ]
+    },
+    "summer2023:Offer title": {
+      "${ BRAND_NAME } Anniversary Sale": [
+        "${ BRAND_NAME } Výprodej k výročí"
       ]
     },
     "Table header": {
@@ -9376,6 +9510,12 @@
       ],
       "Warning: suspected fake website": [
         "Varování: podezření na falešnou webovou stránku"
+      ],
+      "We protected you from ${ trackersCount } tracker": [
+        "Ochránili jsme vás před ${ trackersCount } sledováním",
+        "Ochránili jsme vás před ${ trackersCount } sledováními",
+        "Ochránili jsme vás před ${ trackersCount } sledování",
+        "Ochránili jsme vás před ${ trackersCount } sledování"
       ],
       "Welcome": [
         "Vítejte"

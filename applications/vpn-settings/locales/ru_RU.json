@@ -2705,8 +2705,8 @@
       "To fight spam and abuse, please verify you are human.": [
         "Для предотвращения распространения спама и иных злоупотреблений нашим сервисом, нам нужно убедиться, что вы человек."
       ],
-      "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and visit our blog from time to time.": [
-        "Чтобы быть в курсе последних событий, касающихся продукции ${ BRAND_NAME }, вы можете подписаться на наши разнообразные электронные письма и время от времени посещать наш блог."
+      "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
+        "Для того чтобы быть в курсе последних событий в продуктах ${ BRAND_NAME }, вы можете подписаться на наши различные электронные письма и время от времени посещать ${ blogLink }."
       ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "Чтобы продолжить, выберите метод восстановления аккаунта, чтобы мы могли проверить запрос."
@@ -3390,9 +3390,6 @@
     "Label for news": {
       "${ BRAND_NAME } beta announcements": [
         "Бета-объявления ${ BRAND_NAME }"
-      ],
-      "${ BRAND_NAME } company announcements": [
-        "Объявления компании ${ BRAND_NAME }"
       ],
       "${ BRAND_NAME } for Business newsletter": [
         "Рассылка ${ BRAND_NAME } for Business"

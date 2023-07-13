@@ -2011,6 +2011,9 @@
     "Font face option": {
       "System default": [
         "Адпаведна сістэме"
+      ],
+      "Theme font": [
+        "Шрыфт тэмы"
       ]
     },
     "Font size option": {
@@ -2708,8 +2711,8 @@
       "To fight spam and abuse, please verify you are human.": [
         "У мэтах барацьбы са спамам і іншымі злоўжываннямі, нам неабходна пераканацца, што вы чалавек."
       ],
-      "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and visit our blog from time to time.": [
-        "Каб даведацца пра апошнія распрацоўкі прадуктаў ${ BRAND_NAME }, падпішыцеся на нашу рассылку, а таксама час ад часу наведвайце наш блог."
+      "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
+        "Каб быць у курсе апошніх распрацовак прадуктаў ${ BRAND_NAME }, падпішыцеся на нашу рассылку, а таксама час ад часу наведвайце наш блог ${ blogLink }."
       ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "Для працягу, выберыце метад аднаўлення ўліковага запісу, каб мы маглі праверыць запыт."
@@ -3398,9 +3401,6 @@
     "Label for news": {
       "${ BRAND_NAME } beta announcements": [
         "Апавяшчэнні ${ BRAND_NAME } бэта-версій"
-      ],
-      "${ BRAND_NAME } company announcements": [
-        "Аб'явы кампаніі ${ BRAND_NAME }"
       ],
       "${ BRAND_NAME } for Business newsletter": [
         "Навіны ${ BRAND_NAME } для бізнесу"

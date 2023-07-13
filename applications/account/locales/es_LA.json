@@ -918,7 +918,7 @@
         "Actualizar ahora"
       ],
       "Upgrade your plan": [
-        "Actualice su plan"
+        "Mejore su plan"
       ],
       "Upload picture": [
         "Cargar imagen"
@@ -2986,8 +2986,8 @@
       ]
     },
     "Email Unsubscribe Categories": {
-      "${ allCategoriesExceptTheLastOne } and ${ lastCategory }": [
-        "${ allCategoriesExceptTheLastOne } y ${ lastCategory }"
+      "${ allCategoryTitlesExceptTheLastOne } and ${ lastCategoryTitle }": [
+        "${ allCategoryTitlesExceptTheLastOne } y ${ lastCategoryTitle }"
       ]
     },
     "Enabled 2FA": {
@@ -4420,6 +4420,12 @@
       "(1-2 emails per month)": [
         "(1-2 correos al mes)"
       ],
+      "(2-4 per year)": [
+        "(2-4 al año)"
+      ],
+      "(4-6 emails per year)": [
+        "(4-6 correos al año)"
+      ],
       "(during your first month)": [
         "(durante su primer mes)"
       ]
@@ -5073,11 +5079,8 @@
         "${ numGroups } grupo de contactos",
         "${ numGroups } grupos de contactos"
       ],
-      "${ PROTON_SENTINEL_NAME } is an account protection program developed at ${ BRAND_NAME } for users who need maximum security.": [
-        "${ PROTON_SENTINEL_NAME } es un programa de protección de cuentas desarrollado por ${ BRAND_NAME } para usuarios que necesitan seguridad máxima."
-      ],
-      "${ PROTON_SENTINEL_NAME } is powered by sophisticated AI systems and teams of specialists working 24/7 to mitigate bad actors and security threats.": [
-        "${ PROTON_SENTINEL_NAME } está impulsado por sistemas de inteligencia artificial sofisticados y equipos de especialistas que trabajan 24 horas del día los 7 días de la semana para mitigar malos actores y las amenazas de seguridad."
+      "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
+        "${ PROTON_SENTINEL_NAME } es un programa avanzado de protección de cuentas impulsado por sistemas sofisticados de inteligencia artificial y especialistas que trabajan las 24 horas para protegerle de malos actores y amenazas de seguridad."
       ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } carpeta encontrada",
@@ -6020,9 +6023,6 @@
       "old password": [
         "contraseña anterior"
       ],
-      "Once you enable ${ PROTON_SENTINEL_NAME }:": [
-        "Luego de habilitar ${ PROTON_SENTINEL_NAME }:"
-      ],
       "Once you reset your password:": [
         "Luego de restablecer su contraseña:"
       ],
@@ -6167,6 +6167,9 @@
       "Protected by Swiss privacy laws": [
         "Protegido por las leyes de privacidad de Suiza"
       ],
+      "Public figures, journalists, executives, and others who may be the target of cyber attacks are highly encouraged to enable ${ PROTON_SENTINEL_NAME }.": [
+        "Figuras públicas, periodistas, ejecutivos y demás que puedan ser objetivos de ciberataques se les recomienda habilitar ${ PROTON_SENTINEL_NAME }."
+      ],
       "Public link invite": [
         "Enlace de invitación público"
       ],
@@ -6299,11 +6302,11 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Como es un usuario leal, su cuenta tiene habilitadas funciones adicionales."
       ],
-      "SMTP allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME }. It is a new feature available to select business users. Please email ${ emailLink } to request access.": [
-        "SMTP permite a servicios de terceros o dispositivos enviar correos electrónicos a través de ${ MAIL_APP_NAME }. Es una funcionalidad nueva disponible para usuarios de empresas selectas. Envíe un correo electrónico a ${ emailLink } para solicitar acceso."
+      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
+        "El envío por SMTP permite que servicios o dispositivos de terceros envíen correos electrónicos a través de ${ MAIL_APP_NAME } para sus direcciones de dominio personalizadas. Para solicitar acceso, ${ createTicket } describiendo sus casos de uso, cuáles dominios personalizados le gustaría usar y los volúmenes de correo electrónico esperados por hora y por día."
       ],
-      "SMTP allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME }. To use this feature, start by generating a new token.": [
-        "SMTP permite a servicios de terceros o dispositivos enviar correos electrónicos a través de ${ MAIL_APP_NAME }. Para usar esta funcionalidad, comience generando un token nuevo."
+      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To use this feature, start by generating a new token.": [
+        "El envío por SMTP permite a servicios de terceros o dispositivos enviar correos electrónicos a través de ${ MAIL_APP_NAME } para sus direcciones de dominio personalizadas. Para usar esta función, comience generando un token nuevo."
       ],
       "Some keys successfully reactivated": [
         "Algunas claves fueron reactivadas."
@@ -6347,9 +6350,6 @@
       ],
       "support team": [
         "equipo de soporte"
-      ],
-      "Suspicious events will be challenged by multiple layers of defense that help prevent attackers from hijacking your account.": [
-        "Los eventos sospechosos serán desafiados por múltiples capas de defensa que ayudan a evitar que los atacantes secuestren su cuenta."
       ],
       "Swiss based": [
         "Con sede en Suiza"
@@ -6540,8 +6540,8 @@
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Para importar eventos, primero cree un calendario en ${ CALENDAR_APP_NAME }. Aquí es donde aparecerán los eventos tras la importación."
       ],
-      "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and visit our blog from time to time.": [
-        "Para estar informado de las últimas novedades de los productos ${ BRAND_NAME }, puede suscribirse a nuestros diferentes boletines y visitar nuestro blog de vez en cuando."
+      "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
+        "Para informarse de las últimas novedades de los productos de ${ BRAND_NAME }, puede suscribirse a nuestros diferentes boletines y ${ blogLink } de vez en cuando."
       ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "Para continuar, seleccione un método de recuperación de cuenta para que podamos verificar la solicitud."
@@ -6656,9 +6656,6 @@
       ],
       "Use the selected email address as the SMTP username in the external service, and the generated token as the SMTP password.": [
         "Use la dirección de correo seleccionada como nombre de usuario SMTP en el servicio externo y el token generado como contraseña SMTP."
-      ],
-      "Users with sensitive data and communications, such as journalists or executives, are highly encouraged to enable ${ PROTON_SENTINEL_NAME }.": [
-        "Se recomienda a los usuarios con datos y comunicaciones sensibles, como periodistas o ejecutivos, habilitar ${ PROTON_SENTINEL_NAME }."
       ],
       "Verification can take a few minutes.": [
         "La verificación puede tomar unos minutos."
@@ -6907,12 +6904,6 @@
       ],
       "You will NOT be able to decrypt any messages, files, and other data encrypted with this key. All data signed with this key will no longer be verified by ${ BRAND_NAME } applications.": [
         "NO podrá descifrar ningún mensaje, archivo u otros datos cifrados con esta clave. Todos los datos firmados con esta clave ya no serán verificados por las aplicaciones de ${ BRAND_NAME }."
-      ],
-      "You will receive priority support from specialists trained in account protection. For any account security concerns, please ${ hereLink }.": [
-        "Recibirá soporte prioritario de especialistas capacitados en protección de cuentas. Para cualquier problema de seguridad de la cuenta, ${ hereLink }."
-      ],
-      "You will see more details in the Security logs below for important events such as sign in attempts.": [
-        "Verá más detalles en el registro de seguridad de abajo de eventos importantes como intentos de inicio de sesión."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Pronto será redirigido a PayPal para verificar su pago."
@@ -7567,7 +7558,7 @@
         "Dirección BTC"
       ],
       "BTC amount": [
-        "Importe BTC"
+        "Importe en BTC"
       ],
       "Calendar": [
         "Calendario"
@@ -8336,11 +8327,11 @@
       "${ BRAND_NAME } beta announcements": [
         "Comunicados beta de ${ BRAND_NAME }"
       ],
-      "${ BRAND_NAME } company announcements": [
-        "Comunicados de la compañía ${ BRAND_NAME }"
-      ],
       "${ BRAND_NAME } for Business newsletter": [
         "Boletín para empresas de ${ BRAND_NAME }"
+      ],
+      "${ BRAND_NAME } important announcements": [
+        "Comunicados importantes de ${ BRAND_NAME }"
       ],
       "${ BRAND_NAME } newsletter": [
         "Boletín de ${ BRAND_NAME }"
@@ -8461,8 +8452,8 @@
       "Common sign up issues": [
         "Problemas comunes de registro"
       ],
-      "contact us": [
-        "contáctenos"
+      "create a ticket": [
+        "cree un tiquete"
       ],
       "Create account": [
         "Crear una cuenta"
@@ -8534,10 +8525,13 @@
         "Mejorar cuenta"
       ],
       "Upgrade your plan": [
-        "Actualice su plan"
+        "Mejore su plan"
       ],
       "View guide": [
         "Ver guía"
+      ],
+      "visit our blog": [
+        "visitar nuestro blog"
       ],
       "What is the difference between UDP and TCP protocols?": [
         "¿Cuál es la diferencia entre los protocolos UDP y TCP?"
@@ -8900,7 +8894,7 @@
         "Seguir en ${ currentPlanName }"
       ],
       "Upgrade now": [
-        "Actualizar ahora"
+        "Mejorar ahora"
       ]
     },
     "new_plans: action": {
@@ -9444,7 +9438,7 @@
         "Prueba de ${ mailPlanName }"
       ],
       "Upgrade to ${ planName }": [
-        "Actualizar a ${ planName }"
+        "Mejorar a ${ planName }"
       ],
       "Your account's usage": [
         "Uso de la cuenta"
@@ -10146,7 +10140,7 @@
         "Actualice su plan por solo ${ relativePrice } extra al mes"
       ],
       "Upgrade my plan": [
-        "Actualizar mi plan"
+        "Mejorar mi plan"
       ],
       "Use ${ free } instead": [
         "Use ${ free } en su lugar"
@@ -10183,7 +10177,7 @@
         "Elija su plan"
       ],
       "Upgrade your plan": [
-        "Actualice su plan"
+        "Mejore su plan"
       ]
     },
     "pass_signup_2023: Info": {
@@ -10232,8 +10226,8 @@
       "Download the ${ PASS_APP_NAME } app from the App Store and install it to start using ${ PASS_APP_NAME2 } on your phone.": [
         "Descargue la aplicación ${ PASS_APP_NAME } desde la App Store e instálela para comenzar a usar ${ PASS_APP_NAME2 } en su teléfono móvil."
       ],
-      "Encrypted password manager${ breakToken }that also protects your identity": [
-        "Gestor de contraseñas cifrado${ breakToken }que protege también su identidad"
+      "Encrypted password manager that also protects your identity": [
+        "Gestor de contraseñas cifrado que protege también su identidad"
       ],
       "End-to-end encrypted notes": [
         "Notas cifradas de extremo a extremo"
@@ -10360,7 +10354,7 @@
         "Cree su cuenta de ${ BRAND_NAME }"
       ],
       "Request your organization administrator to upgrade": [
-        "Solicite al administrador de su organización que actualice la versión."
+        "Solicite una actualización al administrador de su organización"
       ],
       "Secure your account": [
         "Proteja su cuenta"
@@ -11115,7 +11109,7 @@
         "Notas de la versión"
       ],
       "Upgrade storage": [
-        "Mejorar almacenamiento"
+        "Aumentar el almacenamiento"
       ],
       "Your current storage:": [
         "Su almacenamiento actual:"
@@ -12452,8 +12446,8 @@
       "Signed in to member account": [
         "Sesión iniciada en la cuenta del miembro"
       ],
-      "SMTP tokens": [
-        "Tokens SMTP"
+      "SMTP Submission": [
+        "Envío SMTP"
       ],
       "Sort folders alphabetically": [
         "Ordenar carpetas alfabéticamente"

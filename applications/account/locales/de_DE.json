@@ -2985,11 +2985,6 @@
         "Du hast dich von ${ categoriesJsx }-E-Mails abgemeldet."
       ]
     },
-    "Email Unsubscribe Categories": {
-      "${ allCategoriesExceptTheLastOne } and ${ lastCategory }": [
-        "${ allCategoriesExceptTheLastOne } und ${ lastCategory }"
-      ]
-    },
     "Enabled 2FA": {
       "2FA": [
         "2FA"
@@ -4383,6 +4378,9 @@
     "Font face option": {
       "System default": [
         "Systemstandard"
+      ],
+      "Theme font": [
+        "Design-Schriftart"
       ]
     },
     "Font Size Default": {
@@ -5070,11 +5068,8 @@
         "${ numGroups } Kontaktgruppe",
         "${ numGroups } Kontaktgruppen"
       ],
-      "${ PROTON_SENTINEL_NAME } is an account protection program developed at ${ BRAND_NAME } for users who need maximum security.": [
-        "${ PROTON_SENTINEL_NAME } ist ein von ${ BRAND_NAME } entwickeltes Kontoschutzprogramm für Benutzer, die maximale Sicherheit benötigen."
-      ],
-      "${ PROTON_SENTINEL_NAME } is powered by sophisticated AI systems and teams of specialists working 24/7 to mitigate bad actors and security threats.": [
-        "${ PROTON_SENTINEL_NAME } wird von ausgereiften KI-Systemen und Spezialistenteams unterstützt, die rund um die Uhr daran arbeiten, bösartige Akteure und Sicherheitsbedrohungen zu entschärfen."
+      "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
+        "${ PROTON_SENTINEL_NAME } ist ein fortschrittliches Kontoschutzprogramm, das von hochentwickelten KI-Systemen und Spezialisten angetrieben wird, die rund um die Uhr arbeiten, um dich vor bösen Akteuren und Sicherheitsbedrohungen zu schützen."
       ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } Ordner gefunden",
@@ -6017,9 +6012,6 @@
       "old password": [
         "altes Passwort"
       ],
-      "Once you enable ${ PROTON_SENTINEL_NAME }:": [
-        "Sobald du ${ PROTON_SENTINEL_NAME } aktivierst:"
-      ],
       "Once you reset your password:": [
         "Sobald du dein Passwort zurücksetzt:"
       ],
@@ -6164,6 +6156,9 @@
       "Protected by Swiss privacy laws": [
         "Geschützt durch Schweizer Datenschutzgesetze"
       ],
+      "Public figures, journalists, executives, and others who may be the target of cyber attacks are highly encouraged to enable ${ PROTON_SENTINEL_NAME }.": [
+        "Persönlichkeiten des öffentlichen Lebens, Journalisten, Führungskräfte und andere, die das Ziel von Cyberangriffen sein könnten, sollten unbedingt ${ PROTON_SENTINEL_NAME } aktivieren."
+      ],
       "Public link invite": [
         "Öffentlicher Einladungslink"
       ],
@@ -6296,11 +6291,11 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Da du ein treuer Benutzer bist, wurden deinem Konto zusätzliche Funktionen hinzugefügt."
       ],
-      "SMTP allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME }. It is a new feature available to select business users. Please email ${ emailLink } to request access.": [
-        "SMTP erlaubt es Drittanbieterdiensten oder -geräten, E-Mails über ${ MAIL_APP_NAME } zu senden. Diese neue Funktion ist für ausgewählte Business-Benutzer verfügbar. Bitte sende eine E-Mail an ${ emailLink }, um Zugriff anzufordern."
+      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
+        "Die SMTP Submission ermöglicht es Diensten oder Geräten von Drittanbietern, E-Mails über ${ MAIL_APP_NAME } für deine eigenen Domainadressen zu versenden. Um Zugang zu beantragen, ${ createTicket } und beschreibe bitte deine Anwendungsfälle, die eigenen Domains, die du verwenden möchtest und das erwartete stündliche und tägliche E-Mail-Volumen."
       ],
-      "SMTP allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME }. To use this feature, start by generating a new token.": [
-        "SMTP erlaubt es Drittanbieterdiensten oder -geräten, E-Mails über ${ MAIL_APP_NAME } zu senden. Um diese Funktion zu nutzen, generiere zunächst ein neues Token."
+      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To use this feature, start by generating a new token.": [
+        "Die SMTP Submission ermöglicht es Diensten oder Geräten von Drittanbietern, E-Mails über ${ MAIL_APP_NAME } für deine eigenen Domainadressen zu versenden. Um diese Funktion zu nutzen, erzeuge zunächst ein neues Token."
       ],
       "Some keys successfully reactivated": [
         "Einige Schlüssel wurden erfolgreich wiederhergestellt"
@@ -6344,9 +6339,6 @@
       ],
       "support team": [
         "Support-Team"
-      ],
-      "Suspicious events will be challenged by multiple layers of defense that help prevent attackers from hijacking your account.": [
-        "Verdächtige Ereignisse werden durch mehrere Schichten abgewehrt, die Angreifer daran hindern, dein Konto zu kapern."
       ],
       "Swiss based": [
         "Aus der Schweiz"
@@ -6537,8 +6529,8 @@
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Um Termine zu importieren, erstelle zuerst einen Kalender in ${ CALENDAR_APP_NAME }. Dort werden die Termine nach dem Import angezeigt."
       ],
-      "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and visit our blog from time to time.": [
-        "Um über die neuesten Entwicklungen bei ${ BRAND_NAME }-Produkten auf dem Laufenden zu bleiben, kannst du unsere verschiedenen E-Mails abonnieren und von Zeit zu Zeit unseren Blog besuchen."
+      "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
+        "Um über die neuesten Entwicklungen bei ${ BRAND_NAME }-Produkten auf dem Laufenden zu bleiben, kannst du unsere verschiedenen Newsletter abonnieren und von Zeit zu Zeit unseren ${ blogLink } besuchen."
       ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "Wähle um fortzufahren eine Kontowiederherstellungsmethode aus, damit wir die Anfrage überprüfen können."
@@ -6653,9 +6645,6 @@
       ],
       "Use the selected email address as the SMTP username in the external service, and the generated token as the SMTP password.": [
         "Verwende die gewählte E-Mail-Adresse als SMTP-Benutzername im externen Dienst und das generierte Token als SMTP-Passwort."
-      ],
-      "Users with sensitive data and communications, such as journalists or executives, are highly encouraged to enable ${ PROTON_SENTINEL_NAME }.": [
-        "Personen mit schützenswerten Daten und Kommunikationen, wie Journalisten oder Führungskräften, wird ${ PROTON_SENTINEL_NAME } dringend empfohlen."
       ],
       "Verification can take a few minutes.": [
         "Die Überprüfung kann einige Minuten dauern."
@@ -6904,12 +6893,6 @@
       ],
       "You will NOT be able to decrypt any messages, files, and other data encrypted with this key. All data signed with this key will no longer be verified by ${ BRAND_NAME } applications.": [
         "Du wirst NICHT in der Lage sein, Nachrichten, Dateien und andere mit diesem Schlüssel verschlüsselte Daten zu entschlüsseln. Alle mit diesem Schlüssel signierten Daten werden von den ${ BRAND_NAME }-Anwendungen nicht mehr verifiziert."
-      ],
-      "You will receive priority support from specialists trained in account protection. For any account security concerns, please ${ hereLink }.": [
-        "Du erhältst bevorzugte Unterstützung von Spezialisten, die für den Schutz deines Kontos ausgebildet sind. Wenn du Fragen zur Kontosicherheit hast, kontaktiere uns bitte ${ hereLink }."
-      ],
-      "You will see more details in the Security logs below for important events such as sign in attempts.": [
-        "In den Sicherheitsprotokollen unten findest du weitere Details zu wichtigen Ereignissen wie Anmeldeversuchen."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Du wirst in Kürze zu PayPal weitergeleitet, um deine Zahlung zu bestätigen."
@@ -8333,9 +8316,6 @@
       "${ BRAND_NAME } beta announcements": [
         "${ BRAND_NAME } Beta-Ankündigungen"
       ],
-      "${ BRAND_NAME } company announcements": [
-        "${ BRAND_NAME } Firmenankündigungen"
-      ],
       "${ BRAND_NAME } for Business newsletter": [
         "${ BRAND_NAME } for Business-Newsletter"
       ],
@@ -8458,8 +8438,8 @@
       "Common sign up issues": [
         "Häufige Probleme bei der Registrierung"
       ],
-      "contact us": [
-        "Kontaktiere uns"
+      "create a ticket": [
+        "erstelle ein Ticket"
       ],
       "Create account": [
         "Konto erstellen"
@@ -10229,8 +10209,8 @@
       "Download the ${ PASS_APP_NAME } app from the App Store and install it to start using ${ PASS_APP_NAME2 } on your phone.": [
         "Lade die ${ PASS_APP_NAME }-App aus dem App Store herunter und installiere sie, um ${ PASS_APP_NAME2 } auf deinem Telefon zu verwenden."
       ],
-      "Encrypted password manager${ breakToken }that also protects your identity": [
-        "Verschlüsselter Passwort-Manager${ breakToken }der auch deine Identität schützt."
+      "Encrypted password manager that also protects your identity": [
+        "Verschlüsselter Passwort-Manager, der auch deine Identität schützt."
       ],
       "End-to-end encrypted notes": [
         "Ende-zu-Ende verschlüsselte Notizen"
@@ -10247,6 +10227,12 @@
       "Get ${ appName } for ${ browserName } soon": [
         "Hol dir ${ appName } bald für ${ browserName }"
       ],
+      "Hide-my-email aliases protect your email from data breaches": [
+        "Hide-my-email-Aliasse schützen deine E-Mails vor Datenpannen"
+      ],
+      "If you get locked out of your ${ BRAND_NAME } Account, your **recovery kit** will allow you to sign in and recover your data.": [
+        "Wenn du aus deinem ${ BRAND_NAME }-Konto ausgesperrt wirst, kannst du dich mit deinem **Wiederherstellungs-Kit** anmelden und deine Daten wiederherstellen."
+      ],
       "Includes basic ${ appName } features:": [
         "Enthält grundlegende Funktionen von ${ appName }:"
       ],
@@ -10258,6 +10244,9 @@
       ],
       "Install app and extension": [
         "App und Erweiterung installieren"
+      ],
+      "It’s the only way to fully restore your account, so make sure you keep this **recovery kit** somewhere safe.": [
+        "Nur so kannst du dein Konto vollständig wiederherstellen, also bewahre dieses **Wiederherstellungs-Kit** an einem sicheren Ort auf."
       ],
       "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
         "Schließe dich den über 100 Millionen Menschen an, die ${ BRAND_NAME } gewählt haben, um online sicher zu bleiben"
@@ -10291,6 +10280,9 @@
       ],
       "Protected by Swiss privacy laws": [
         "Geschützt durch Schweizer Datenschutzgesetze"
+      ],
+      "Save your recovery kit to continue": [
+        "Lade dein Wiederherstellungs-Kit herunter, um fortzufahren"
       ],
       "Signing in to ${ PASS_APP_NAME }": [
         "Anmelden bei ${ PASS_APP_NAME }"
@@ -12434,8 +12426,8 @@
       "Signed in to member account": [
         "In Mitgliedskonto angemeldet"
       ],
-      "SMTP tokens": [
-        "SMTP-Token"
+      "SMTP Submission": [
+        "SMTP Submission"
       ],
       "Sort folders alphabetically": [
         "Ordner alphabetisch sortieren"

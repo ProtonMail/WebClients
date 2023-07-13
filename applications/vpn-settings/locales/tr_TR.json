@@ -1991,6 +1991,9 @@
     "Font face option": {
       "System default": [
         "Sistem varsayılanı"
+      ],
+      "Theme font": [
+        "Tema yazı tipi"
       ]
     },
     "Font size option": {
@@ -2680,9 +2683,6 @@
       "To fight spam and abuse, please verify you are human.": [
         "İstenmeyen iletilere ve kötüye kullanıma karşı lütfen insan olduğunuzu doğrulayın."
       ],
-      "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and visit our blog from time to time.": [
-        "${ BRAND_NAME } ürünlerindeki son gelişmeleri izlemek için çeşitli e-posta gruplarımıza abone olabilir ve zaman zaman günlük sayfamıza bakabilirsiniz."
-      ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "İlerlemek için, isteği doğrulayabileceğimiz bir hesap kurtarma yöntemi seçin."
       ],
@@ -3360,9 +3360,6 @@
     "Label for news": {
       "${ BRAND_NAME } beta announcements": [
         "${ BRAND_NAME } beta sürümü duyuruları"
-      ],
-      "${ BRAND_NAME } company announcements": [
-        "${ BRAND_NAME } kurumsal duyuruları"
       ],
       "${ BRAND_NAME } for Business newsletter": [
         "${ BRAND_NAME } for Business bülteni"
