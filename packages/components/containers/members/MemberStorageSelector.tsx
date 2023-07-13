@@ -176,6 +176,7 @@ const MemberStorageSelector = ({
                         disableChange={disabled}
                         value={tmpValue}
                         aria-label={c('Label').t`Account storage`}
+                        data-testid="member-storage-selector"
                         aria-describedby={uid}
                         onValue={(value: string) => {
                             setTmpValue(value.replace(/[^\d.]/g, ''));
