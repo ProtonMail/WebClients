@@ -2816,6 +2816,12 @@
       "${ name } failed to move to spam list": [
         "Doménu ${ name } se nepodařilo přesunout na Seznam spamů"
       ],
+      "${ name } moved to allow list": [
+        "E-mailová adresa ${ name } přesunuta na Seznam povolených"
+      ],
+      "${ name } moved to block list": [
+        "E-mailová adresa ${ name } přesunuta na Seznam blokovaných"
+      ],
       "${ name } moved to spam list": [
         "Doména ${ name } byla přesunuta na seznam spamů"
       ],
@@ -2944,6 +2950,12 @@
       "${ name } failed to move to spam list": [
         "E-mailovou adresu ${ name } se nepodařilo přesunout na Seznam spamů"
       ],
+      "${ name } moved to allow list": [
+        "E-mailová adresa ${ name } přesunuta na Seznam povolených"
+      ],
+      "${ name } moved to block list": [
+        "E-mailová adresa ${ name } přesunuta na Seznam blokovaných"
+      ],
       "${ name } moved to spam list": [
         "Emailová adresa ${ name } byla přesunuta na Seznam spamů"
       ],
@@ -2983,11 +2995,6 @@
       ],
       "You unsubscribed from ${ categoriesJsx } emails.": [
         "Přihlásili jste se znovu k ${ categoriesJsx } e-mailům."
-      ]
-    },
-    "Email Unsubscribe Categories": {
-      "${ allCategoriesExceptTheLastOne } and ${ lastCategory }": [
-        "${ allCategoriesExceptTheLastOne } a ${ lastCategory }"
       ]
     },
     "Enabled 2FA": {
@@ -4411,6 +4418,9 @@
     "Font face option": {
       "System default": [
         "Systémové výchozí"
+      ],
+      "Theme font": [
+        "Písmo motivu"
       ]
     },
     "Font Size Default": {
@@ -4447,6 +4457,23 @@
       ],
       "(during your first month)": [
         "(během prvního měsíce)"
+      ]
+    },
+    "Get started checklist instructions": {
+      "auto-forwarding": [
+        "automatické přeposílání"
+      ],
+      "Discover how our ${ strongText } protect you": [
+        "Zjistěte, jak vás naše ${ strongText } chrání"
+      ],
+      "Discover privacy features": [
+        "Objevte funkce ochrany soukromí"
+      ],
+      "Get the App": [
+        "Získat aplikaci"
+      ],
+      "privacy features": [
+        "funkce ochrany soukromí"
       ]
     },
     "Gmail forwarding": {
@@ -5091,12 +5118,6 @@
         "${ numGroups } skupiny kontaktů",
         "${ numGroups } skupin kontaktů",
         "${ numGroups } skupin kontaktů"
-      ],
-      "${ PROTON_SENTINEL_NAME } is an account protection program developed at ${ BRAND_NAME } for users who need maximum security.": [
-        "${ PROTON_SENTINEL_NAME } je program na ochranu účtu vyvinutý v ${ BRAND_NAME } pro uživatele, kteří vyžadují maximální zabezpečení."
-      ],
-      "${ PROTON_SENTINEL_NAME } is powered by sophisticated AI systems and teams of specialists working 24/7 to mitigate bad actors and security threats.": [
-        "${ PROTON_SENTINEL_NAME } je podporován pokročilými systémy umělé inteligence a týmy specialistů, které nepřetržitě pracují na zmírnění útoků a bezpečnostních hrozeb."
       ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } složka nalezena",
@@ -6073,9 +6094,6 @@
       "old password": [
         "staré heslo"
       ],
-      "Once you enable ${ PROTON_SENTINEL_NAME }:": [
-        "Jakmile povolíte ${ PROTON_SENTINEL_NAME }:"
-      ],
       "Once you reset your password:": [
         "Po resetu vašeho hesla:"
       ],
@@ -6358,12 +6376,6 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Vzhledem k tomu, že jste věrný uživatel, má Váš účet povolené další funkce."
       ],
-      "SMTP allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME }. It is a new feature available to select business users. Please email ${ emailLink } to request access.": [
-        "SMTP umožňuje službám nebo zařízením třetích stran odesílat e-maily prostřednictvím ${ MAIL_APP_NAME }. Jedná se o novou funkci dostupnou vybraným firemním uživatelům. Požádejte o přístup e-mailem na adresu ${ emailLink }."
-      ],
-      "SMTP allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME }. To use this feature, start by generating a new token.": [
-        "SMTP umožňuje službám nebo zařízením třetích stran odesílat e-maily prostřednictvím ${ MAIL_APP_NAME }. Chcete-li tuto funkci použít, začněte vygenerováním nového tokenu."
-      ],
       "Some keys successfully reactivated": [
         "Některé klíče byly úspěšně znovu aktivovány"
       ],
@@ -6408,9 +6420,6 @@
       ],
       "support team": [
         "tým podpory"
-      ],
-      "Suspicious events will be challenged by multiple layers of defense that help prevent attackers from hijacking your account.": [
-        "Podezřelým událostem bude čelit několik vrstev ochrany, které pomohou zabránit útočníkům ve zneužití vašeho účtu."
       ],
       "Swiss based": [
         "Vytvořeno ve Švýcarsku"
@@ -6607,9 +6616,6 @@
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Chcete-li importovat události, nejprve vytvořte kalendář v ${ CALENDAR_APP_NAME }. Po importu se zde zobrazí události."
       ],
-      "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and visit our blog from time to time.": [
-        "Chcete-li držet krok s nejnovějším vývojem produktů ${ BRAND_NAME }, můžete se přihlásit k odběru našich e-mailů a občas navštívit náš blog."
-      ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "Chcete-li pokračovat, vyberte způsob obnovení účtu, abychom mohli žádost ověřit."
       ],
@@ -6723,9 +6729,6 @@
       ],
       "Use the selected email address as the SMTP username in the external service, and the generated token as the SMTP password.": [
         "Vybranou e-mailovou adresu použijte jako uživatelské jméno SMTP v externí službě a vygenerovaný token jako heslo SMTP."
-      ],
-      "Users with sensitive data and communications, such as journalists or executives, are highly encouraged to enable ${ PROTON_SENTINEL_NAME }.": [
-        "Uživatelům s citlivými daty a komunikací, jako jsou novináři nebo vedoucí pracovníci, doporučujeme povolit ${ PROTON_SENTINEL_NAME }."
       ],
       "Verification can take a few minutes.": [
         "Ověřování může trvat několik minut."
@@ -6982,11 +6985,8 @@
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Potřebujete ${ BRAND_NAME } adresu pro používání ${ MAIL_APP_NAME } a ${ CALENDAR_APP_NAME }"
       ],
-      "You will receive priority support from specialists trained in account protection. For any account security concerns, please ${ hereLink }.": [
-        "Přednostní podporu vám poskytnou specialisté vyškolení v oblasti ochrany účtů. Máte-li obavy o bezpečnost účtu, ${ hereLink }."
-      ],
-      "You will see more details in the Security logs below for important events such as sign in attempts.": [
-        "Podrobnější informace o důležitých událostech, např. o pokusech o přihlášení, najdete v níže uvedených bezpečnostních protokolech."
+      "You will NOT be able to decrypt any messages, files, and other data encrypted with this key. All data signed with this key will no longer be verified by ${ BRAND_NAME } applications.": [
+        "Zprávy, soubory a další data zašifrovaná tímto klíčem NEBUDE možné dešifrovat. Všechna data podepsaná tímto klíčem již nebudou ověřována aplikacemi ${ BRAND_NAME }."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Za účelem ověření platby budete přesměrováni na PayPal."
@@ -8420,9 +8420,6 @@
       "${ BRAND_NAME } beta announcements": [
         "Beta oznámení ${ BRAND_NAME }"
       ],
-      "${ BRAND_NAME } company announcements": [
-        "Firemní oznámení ${ BRAND_NAME }"
-      ],
       "${ BRAND_NAME } for Business newsletter": [
         "Novinky ${ BRAND_NAME } pro firmy"
       ],
@@ -8544,9 +8541,6 @@
       ],
       "Common sign up issues": [
         "Běžné problémy s registrací"
-      ],
-      "contact us": [
-        "kontaktujte nás"
       ],
       "Create account": [
         "Vytvořit účet"
@@ -10266,6 +10260,87 @@
         "Vy"
       ]
     },
+    "pass_signup_2023: Action": {
+      "Continue": [
+        "Pokračovat"
+      ],
+      "Continue to ${ free }": [
+        "Pokračovat na ${ free }"
+      ],
+      "Start using ${ appName }": [
+        "Začněte používat ${ appName }"
+      ]
+    },
+    "pass_signup_2023: Feature": {
+      "End-to-end encrypted": [
+        "Koncově šifrováno"
+      ],
+      "Open source": [
+        "Open source"
+      ],
+      "Protected by Swiss privacy laws": [
+        "Chráněno švýcarskými zákony o ochraně soukromí"
+      ],
+      "Swiss based": [
+        "Vytvořeno ve Švýcarsku"
+      ]
+    },
+    "pass_signup_2023: Header": {
+      "Continue with your ${ BRAND_NAME } account": [
+        "Pokračujte pomocí vašeho ${ BRAND_NAME } účtu"
+      ],
+      "Limited time offer": [
+        "Časově omezená nabídka"
+      ],
+      "Recommended": [
+        "Doporučeno"
+      ],
+      "Select your plan": [
+        "Vyberte tarif"
+      ],
+      "Upgrade your plan": [
+        "Přejděte na vyšší tarif"
+      ]
+    },
+    "pass_signup_2023: Info": {
+      "+ ${ relativePrice } per month": [
+        "+ ${ relativePrice } za měsíc"
+      ],
+      "Free forever": [
+        "Navždy zdarma"
+      ],
+      "per month, billed annually": [
+        "za měsíc, účtováno ročně"
+      ],
+      "per month, billed every 15 months": [
+        "za měsíc, účtováno kažkých 15 měsíců"
+      ],
+      "per month, billed every 30 months": [
+        "za měsíc, účtováno kažkých 30 měsíců"
+      ],
+      "per month, billed every month": [
+        "za měsíc, účtováno kažký měsíc"
+      ],
+      "per month, billed every two years": [
+        "za měsíc, účtováno kažké dva roky"
+      ],
+      "You currently have": [
+        "Momentálně máte"
+      ]
+    },
+    "pass_signup_2023: Onboarding": {
+      "Welcome to ${ PASS_APP_NAME }": [
+        "Vítejte v ${ PASS_APP_NAME }"
+      ]
+    },
+    "pass_signup_2023: Title": {
+      "Create your ${ BRAND_NAME } account": [
+        "Vytvořit účet ${ BRAND_NAME }"
+      ],
+      "Secure your account": [
+        "Zabezpečte svůj účet"
+      ]
+    },
     "Payment method option": {
       "Credit/debit card": [
         "Kreditní/debetní karta"
@@ -11475,9 +11550,60 @@
         "2 roky"
       ]
     },
+    "summer2023: Deal details": {
+      "Premium Drive": [
+        "Prémiový Disk"
+      ],
+      "Premium Mail and Calendar": [
+        "Prémiový Mail a Kalendář"
+      ],
+      "Premium Password Manager": [
+        "Prémiový správce hesel"
+      ]
+    },
+    "summer2023: Describe Proton Pass": {
+      "Securely store your passwords and autofill them on websites. Includes unlimited passwords, autofill, password generator, and more.": [
+        "Bezpečné ukládání hesel a jejich automatické vyplňování na webových stránkách. Obsahuje neomezený počet hesel, automatické vyplňování, generátor hesel a další funkce."
+      ]
+    },
     "summer2023: Short tool name to present Proton Pass": {
       "Password manager": [
         "Správce hesel"
+      ]
+    },
+    "summer2023: Tooltip": {
+      "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
+        "Vytvoření zabezpečených přihlašovacích údajů na všech zařízeních. Obsahuje neomezený počet aliasů, 20 trezorů, integrovanou funkci 2FA, automatické vyplňování kreditních karet a další funkce."
+      ],
+      "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "Zahrnuje 2950 serverů v 65+ zemích, přípojení až 10 zařízení, přístup ke světovým streamovacím službám, blokovač malwaru a reklam a více."
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Obsahuje podporu 1 vlastní e-mailové domény, 10 e-mailových adres, 10 aliasů pro hide-my-email, sdílení kalendáře a další funkce."
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "Zabezpečte své soubory pomocí šifrovaného cloudového úložiště. Obsahuje historii verzí, šifrované sdílení souborů a další funkce."
+      ]
+    },
+    "summer2023:Footer": {
+      "*Your subscription will automatically renew at the standard discounted rate at the end of your billing cycle.": [
+        "*Vaše předplatné se automaticky obnoví za standardní zvýhodněnou sazbu na konci vašeho zúčtovacího cyklu."
+      ],
+      "Discounts are based on the standard monthly pricing. This offer is only available to first-time subscribers.": [
+        "Slevy jsou založeny na standardní měsíční ceně. Tato nabídka je k dispozici pouze pro první předplatitele."
+      ]
+    },
+    "summer2023:Info": {
+      "For a limited time, get the best ${ BRAND_NAME } has to offer at an exclusive discount.": [
+        "Po omezenou dobu získáte to nejlepší, co ${ BRAND_NAME } nabízí, s exkluzivní slevou."
+      ],
+      "We’re celebrating the nine-year anniversary of our crowdfunding!": [
+        "Slavíme devítileté výročí našeho crowdfundingu!"
+      ]
+    },
+    "summer2023:Offer title": {
+      "${ BRAND_NAME } Anniversary Sale": [
+        "${ BRAND_NAME } Výprodej k výročí"
       ]
     },
     "Tab in domain modal": {
@@ -12354,9 +12480,6 @@
       ],
       "Signed in to member account": [
         "Přihlášeno k členskému účtu"
-      ],
-      "SMTP tokens": [
-        "SMTP tokeny"
       ],
       "Sort folders alphabetically": [
         "Řadit složky abecedně"

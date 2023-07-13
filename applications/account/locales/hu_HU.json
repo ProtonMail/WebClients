@@ -2811,11 +2811,6 @@
         "Leiratkozott ezekről az e-mailekről: ${ categoriesJsx }."
       ]
     },
-    "Email Unsubscribe Categories": {
-      "${ allCategoriesExceptTheLastOne } and ${ lastCategory }": [
-        "${ allCategoriesExceptTheLastOne } és ${ lastCategory }"
-      ]
-    },
     "Error": {
       "A group with this name already exists": [
         "Már létezik csoport ezzel a névvel"
@@ -5818,9 +5813,6 @@
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Események importálásához, először hozzon létre egy ${ CALENDAR_APP_NAME } naptárat. Ebben fognak megjelenni az események az importálás után."
       ],
-      "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and visit our blog from time to time.": [
-        "Hogy mindig értesüljön a legfrissebb ${ BRAND_NAME } hírekről, iratkozzon fel hírleveleinkre és időnként nézze meg a blogunkat."
-      ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "A folytatáshoz válasszon egy fiók helyreállítási módszert, hogy ellenőrizhessük a kérést."
       ],
@@ -7443,9 +7435,6 @@
       ]
     },
     "Label for news": {
-      "${ BRAND_NAME } company announcements": [
-        "${ BRAND_NAME } céges hírek"
-      ],
       "${ BRAND_NAME } for Business newsletter": [
         "${ BRAND_NAME } üzleti hírlevél"
       ],
@@ -10814,9 +10803,6 @@
       ],
       "Signed in to member account": [
         "Bejelentkezve egy tagsági fiókba"
-      ],
-      "SMTP tokens": [
-        "SMTP tokenek"
       ],
       "Sort folders alphabetically": [
         "Mappák rendezése betűrendbe"
