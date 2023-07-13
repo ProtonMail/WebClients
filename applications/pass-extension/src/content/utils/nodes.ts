@@ -8,4 +8,4 @@ export const fieldProcessable = (el: HTMLInputElement): boolean => !isFieldProce
 export const isNodeOfInterest = (node: Node): node is HTMLElement =>
     node instanceof HTMLInputElement ||
     node instanceof HTMLFormElement ||
-    (node instanceof HTMLElement && hasUnprocessedFields(node));
+    (node instanceof HTMLElement && (hasUnprocessedFields(node) || node.querySelector('input') !== null));
