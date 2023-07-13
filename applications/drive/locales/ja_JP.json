@@ -238,6 +238,9 @@
       "Download apps": [
         "アプリをダウンロード"
       ],
+      "Download Drive for Windows": [
+        "Windows 用の Drive をダウンロード"
+      ],
       "Drive Locked": [
         "ドライブはロックされています"
       ],
@@ -318,6 +321,9 @@
       ],
       "Got it": [
         "はい"
+      ],
+      "Grid layout": [
+        "グリッド表示"
       ],
       "Hide advanced PGP settings": [
         "拡張 PGP 設定を非表示"
@@ -2677,6 +2683,9 @@
     "Font face option": {
       "System default": [
         "システムのデフォルト"
+      ],
+      "Theme font": [
+        "テーマ フォント"
       ]
     },
     "Font size option": {
@@ -3169,6 +3178,9 @@
       "Attention required": [
         "注意が必要です"
       ],
+      "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access or decrypt your files for you. To unlock your drive after a password reset, you must have one of the following:": [
+        "${ DRIVE_APP_NAME } はエンドツーエンド暗号化されているため、私たちはあなたのファイルにアクセスしたり、復号化したりすることはできません。パスワードのリセット後にドライブをロック解除するには、以下のいずれかを持っている必要があります :"
+      ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "新しい検証コードを要求する前に、迷惑メールフォルダーを確認し、${ strong } が正しいアドレスなことを確認してください。"
       ],
@@ -3367,6 +3379,12 @@
       "Failed": [
         "失敗"
       ],
+      "Failed to generate a secure link. The reason is: ${ error }": [
+        "セキュアリンクの生成に失敗しました。原因: ${ error }"
+      ],
+      "Failed to generate a secure link. Try again later": [
+        "セキュアリンクの生成に失敗しました。後でもう一度お試しください"
+      ],
       "Failed to open a secure link. The reason is: ${ error }": [
         "リンクを開くことができませんでした。エラー内容：${ error }"
       ],
@@ -3438,6 +3456,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "受信トレイに関連するメッセージを見つけなかった場合、迷惑メールフォルダーを確認してください。"
+      ],
+      "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process.": [
+        "いずれかをお持ちの場合は、${ BRAND_NAME } のアカウント設定に進んでブロック解除のプロセスを開始してください。"
       ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendars": [
         "${ totalCalendarsCount } 件中 ${ calendarCount } 件のカレンダーをインポート"
@@ -5533,7 +5554,50 @@
         "2 年"
       ]
     },
+    "summer2023: Deal details": {
+      "Premium Drive": [
+        "プレミアム Drive"
+      ],
+      "Premium Mail and Calendar": [
+        "プレミアム Mail と Calendar"
+      ],
+      "Premium Password Manager": [
+        "プレミアムパスワードマネージャー"
+      ]
+    },
+    "summer2023: Describe Proton Pass": {
+      "Securely store your passwords and autofill them on websites. Includes unlimited passwords, autofill, password generator, and more.": [
+        "安全にパスワードを保存し、ウェブサイト上で自動入力します。無制限のパスワード、自動入力、パスワード生成などが含まれています。"
+      ]
+    },
+    "summer2023: Short tool name to present Proton Pass": {
+      "Password manager": [
+        "パスワードマネージャー"
+      ]
+    },
+    "summer2023: Tooltip": {
+      "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
+        "すべてのデバイスで安全なログインの詳細情報を作成します。無制限のエイリアス、20 個の保管庫、統合された 2 要素認証、クレジットカードの自動入力などが含まれます。"
+      ],
+      "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "65 か国以上の 2950 台以上のサーバー、最大 10 台のデバイスの接続、世界中のストリーミングサービスへのアクセス、マルウェアと広告ブロッカーなどが含まれます。"
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "暗号化されたクラウドストレージでファイルの安全性を保ちましょう。バージョン履歴、暗号化済みファイル共有などが含まれています。"
+      ]
+    },
+    "summer2023:Footer": {
+      "*Your subscription will automatically renew at the standard discounted rate at the end of your billing cycle.": [
+        "* あなたのサブスクリプションは、支払い間隔の終了時に標準の割引価格で自動的に更新されます。"
+      ],
+      "Discounts are based on the standard monthly pricing. This offer is only available to first-time subscribers.": [
+        "割引は標準の月額価格を基にしています。このオファーは初回のサブスクリプションでのみ有効です。"
+      ]
+    },
     "summer2023:Info": {
+      "For a limited time, get the best ${ BRAND_NAME } has to offer at an exclusive discount.": [
+        "期間限定で、最高の ${ BRAND_NAME } 提供製品を特別な割引価格で入手できます。"
+      ],
       "We’re celebrating the nine-year anniversary of our crowdfunding!": [
         "クラウドファンディングを開始してから９周年です！"
       ]

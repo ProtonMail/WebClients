@@ -2998,8 +2998,8 @@
       ]
     },
     "Email Unsubscribe Categories": {
-      "${ allCategoriesExceptTheLastOne } and ${ lastCategory }": [
-        "${ allCategoriesExceptTheLastOne } i ${ lastCategory }"
+      "${ allCategoryTitlesExceptTheLastOne } and ${ lastCategoryTitle }": [
+        "${ allCategoryTitlesExceptTheLastOne } i ${ lastCategoryTitle }"
       ]
     },
     "Enabled 2FA": {
@@ -4460,6 +4460,12 @@
       "(1-2 emails per month)": [
         "(1-2 wiadomości miesięcznie)"
       ],
+      "(2-4 per year)": [
+        "(2-4 wiadomości rocznie)"
+      ],
+      "(4-6 emails per year)": [
+        "(4-6 wiadomości rocznie)"
+      ],
       "(during your first month)": [
         "(w pierwszym miesiącu)"
       ]
@@ -5144,12 +5150,6 @@
         "${ numGroups } grupy kontaktów",
         "${ numGroups } grup kontaktów",
         "${ numGroups } grupy kontaktów"
-      ],
-      "${ PROTON_SENTINEL_NAME } is an account protection program developed at ${ BRAND_NAME } for users who need maximum security.": [
-        "${ PROTON_SENTINEL_NAME } to program ochrony konta opracowany przez ${ BRAND_NAME } dla użytkowników, którzy potrzebują maksymalnego bezpieczeństwa."
-      ],
-      "${ PROTON_SENTINEL_NAME } is powered by sophisticated AI systems and teams of specialists working 24/7 to mitigate bad actors and security threats.": [
-        "${ PROTON_SENTINEL_NAME } jest wspierany przez zaawansowane systemy sztucznej inteligencji i zespoły specjalistów pracujących 24 godziny na dobę, 7 dni w tygodniu, w celu łagodzenia ataków i zagrożeń bezpieczeństwa."
       ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } znaleziony folder",
@@ -6126,9 +6126,6 @@
       "old password": [
         "starego hasła"
       ],
-      "Once you enable ${ PROTON_SENTINEL_NAME }:": [
-        "Po włączeniu ${ PROTON_SENTINEL_NAME }:"
-      ],
       "Once you reset your password:": [
         "Po zresetowaniu hasła:"
       ],
@@ -6411,12 +6408,6 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Dzięki temu, że od dawna jesteś użytkownikiem, Twoje konto posiada dodatkowe funkcje."
       ],
-      "SMTP allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME }. It is a new feature available to select business users. Please email ${ emailLink } to request access.": [
-        "Protokół SMTP pozwala innym usługom lub urządzeniom na wysyłanie wiadomości przez pocztę ${ MAIL_APP_NAME }. To nowa funkcja dostępna dla wybranych biznesowych użytkowników. Wyślij wiadomość na adres ${ emailLink }, aby uzyskać do niej dostęp."
-      ],
-      "SMTP allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME }. To use this feature, start by generating a new token.": [
-        "Protokół SMTP pozwala innym usługom lub urządzeniom na wysyłanie wiadomości przez pocztę ${ MAIL_APP_NAME }. Wygeneruj nowy token, aby użyć tej funkcji."
-      ],
       "Some keys successfully reactivated": [
         "Niektóre klucze zostały reaktywowane"
       ],
@@ -6461,9 +6452,6 @@
       ],
       "support team": [
         "pomocą techniczną"
-      ],
-      "Suspicious events will be challenged by multiple layers of defense that help prevent attackers from hijacking your account.": [
-        "Podejrzane zdarzenia będą sprawdzane przez wiele warstw ochrony, które pomogą zapobiec przejęciu konta przez atakujących."
       ],
       "Swiss based": [
         "Ulokowany w Szwajcarii"
@@ -6660,9 +6648,6 @@
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Aby zaimportować wydarzenia, utwórz kalendarz w ${ CALENDAR_APP_NAME }. W utworzonym kalendarzu pojawią się zaimportowane wydarzenia."
       ],
-      "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and visit our blog from time to time.": [
-        "Aby na bieżąco śledzić rozwój usług ${ BRAND_NAME }, możesz zapisać się do naszych list mailingowych, a także okazjonalnie odwiedzać naszego bloga."
-      ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "Aby kontynuować, wybierz metodę odzyskiwania konta, abyśmy mogli zweryfikować żądanie."
       ],
@@ -6776,9 +6761,6 @@
       ],
       "Use the selected email address as the SMTP username in the external service, and the generated token as the SMTP password.": [
         "Użyj wybranej nazwy użytkownika jako nazwy użytkownika SMTP w zewnętrznej usłudze i wygeneruj token jako hasło SMTP."
-      ],
-      "Users with sensitive data and communications, such as journalists or executives, are highly encouraged to enable ${ PROTON_SENTINEL_NAME }.": [
-        "Użytkownicy posiadający poufne dane i komunikację, jak dziennikarze lub kierownictwo, powinni włączyć ${ PROTON_SENTINEL_NAME }."
       ],
       "Verification can take a few minutes.": [
         "Weryfikacja może zająć kilka minut."
@@ -7037,12 +7019,6 @@
       ],
       "You will NOT be able to decrypt any messages, files, and other data encrypted with this key. All data signed with this key will no longer be verified by ${ BRAND_NAME } applications.": [
         "NIE będziesz mógł odszyfrować wiadomości, plików i innych danych zaszyfrowanych za pomocą tego klucza. Wszystkie dane podpisane za pomocą tego klucza nie będą zweryfikowane przez aplikacje ${ BRAND_NAME }."
-      ],
-      "You will receive priority support from specialists trained in account protection. For any account security concerns, please ${ hereLink }.": [
-        "Otrzymasz priorytetowe wsparcie od specjalistów przeszkolonych w zakresie ochrony konta. W przypadku jakichkolwiek obaw ${ hereLink }."
-      ],
-      "You will see more details in the Security logs below for important events such as sign in attempts.": [
-        "Zobaczysz w logach bezpieczeństwa więcej szczegółów zdarzeń, np. próby logowania."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "W celu zweryfikowania płatności wkrótce zostaniesz przekierowany na stronę firmy PayPal."
@@ -8476,9 +8452,6 @@
       "${ BRAND_NAME } beta announcements": [
         "Ogłoszenia ${ BRAND_NAME } beta"
       ],
-      "${ BRAND_NAME } company announcements": [
-        "Ogłoszenia firmy ${ BRAND_NAME }"
-      ],
       "${ BRAND_NAME } for Business newsletter": [
         "Newsletter ${ BRAND_NAME } dla biznesu"
       ],
@@ -8600,9 +8573,6 @@
       ],
       "Common sign up issues": [
         "Typowe problemy z rejestracją"
-      ],
-      "contact us": [
-        "skontaktuj się z nami"
       ],
       "Create account": [
         "Utwórz konto"
@@ -10452,8 +10422,8 @@
       "Download the ${ PASS_APP_NAME } app from the App Store and install it to start using ${ PASS_APP_NAME2 } on your phone.": [
         "Pobierz aplikację ${ PASS_APP_NAME } ze sklepu App Store i zainstaluj ją, aby korzystać z ${ PASS_APP_NAME2 } na telefonie."
       ],
-      "Encrypted password manager${ breakToken }that also protects your identity": [
-        "Szyfrowany menedżer haseł,${ breakToken }który chroni Twoją tożsamość"
+      "Encrypted password manager that also protects your identity": [
+        "Szyfrowany menedżer haseł, który chroni Twoją tożsamość"
       ],
       "End-to-end encrypted notes": [
         "Notatki szyfrowane end-to-end"
@@ -12731,9 +12701,6 @@
       ],
       "Signed in to member account": [
         "Zalogowano na konto użytkownika"
-      ],
-      "SMTP tokens": [
-        "Tokeny SMTP"
       ],
       "Sort folders alphabetically": [
         "Sortuj foldery alfabetycznie"

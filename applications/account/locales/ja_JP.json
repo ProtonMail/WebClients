@@ -60,6 +60,9 @@
       "Add address": [
         "住所を追加"
       ],
+      "Add address or domain": [
+        "メールアドレスかドメインを追加"
+      ],
       "Add calendar from URL": [
         "URL からカレンダーを追加"
       ],
@@ -197,6 +200,9 @@
       ],
       "Continue": [
         "続行"
+      ],
+      "Continue anyway": [
+        "とにかく続行"
       ],
       "Continue import": [
         "インポートを続行"
@@ -414,11 +420,26 @@
       "Generate token": [
         "鍵を生成"
       ],
+      "Get ${ discountPercentage } off with 24 months": [
+        "24 ヶ月で ${ discountPercentage } の割引を獲得"
+      ],
       "Get ${ vpnPlus }": [
         "${ vpnPlus } を入手"
       ],
       "Get a new encrypted email address": [
         "新しい暗号化メールアドレスを取得する"
+      ],
+      "Get more addresses": [
+        "さらにメールアドレスを取得"
+      ],
+      "Get more filters": [
+        "さらにフィルターを取得"
+      ],
+      "Get more folders": [
+        "さらにフォルダを取得"
+      ],
+      "Get more labels": [
+        "もっとラベルを取得"
       ],
       "Get the deal": [
         "割引をゲット"
@@ -485,6 +506,9 @@
       ],
       "Keep": [
         "保持"
+      ],
+      "Keep my ${ vpnPlanNameShort } subscription": [
+        "${ vpnPlanNameShort } サブスクリプションを継続"
       ],
       "label emails as": [
         "メールにラベル付け"
@@ -732,11 +756,17 @@
       "Send code": [
         "コードを送信"
       ],
+      "Send email reminder": [
+        "メールでリマインダーを送信"
+      ],
       "Send messages with @pm.me": [
         "@pm.me でメッセージを送信"
       ],
       "Send my username": [
         "ユーザー名を送信"
+      ],
+      "Send reminder": [
+        "リマインダーを送信"
       ],
       "Set as default": [
         "既定にする"
@@ -2811,11 +2841,6 @@
         "${ categoriesJsx } のメールを購読停止しました"
       ]
     },
-    "Email Unsubscribe Categories": {
-      "${ allCategoriesExceptTheLastOne } and ${ lastCategory }": [
-        "${ allCategoriesExceptTheLastOne } と ${ lastCategory }"
-      ]
-    },
     "Error": {
       "A group with this name already exists": [
         "この名前のグループは既に存在します"
@@ -3990,6 +4015,9 @@
     "Font face option": {
       "System default": [
         "システムのデフォルト"
+      ],
+      "Theme font": [
+        "テーマ フォント"
       ]
     },
     "Font Size Default": {
@@ -4524,6 +4552,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } からの通知を受け取るには、${ enableDesktopNotifications }必要があります。"
       ],
+      "${ autoRenewal } your subscription will renew automatically on ${ renewalTime }.": [
+        "${ autoRenewal }: あなたのサブスクリプションは、${ renewalTime } に自動的に更新されます。"
+      ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } 続行するとアカウント内にある現在の暗号化されたデータにアクセスすることができなくなります。"
       ],
@@ -4587,12 +4618,6 @@
       "${ numGroups } contact groups": [
         "${ numGroups } 件の連絡先グループ"
       ],
-      "${ PROTON_SENTINEL_NAME } is an account protection program developed at ${ BRAND_NAME } for users who need maximum security.": [
-        "${ PROTON_SENTINEL_NAME } は、最大限のセキュリティが必要なユーザー向けに ${ BRAND_NAME } で開発されたアカウント保護プログラムです。"
-      ],
-      "${ PROTON_SENTINEL_NAME } is powered by sophisticated AI systems and teams of specialists working 24/7 to mitigate bad actors and security threats.": [
-        "${ PROTON_SENTINEL_NAME } は、悪意あるアクターおよびセキュリティ上の脅威の軽減に取り組む、24 時間体制の洗練された AI システムと専門家チームに支えられています。"
-      ],
       "${ providerFoldersNumLocalized } folders found": [
         "${ providerFoldersNumLocalized } 件のフォルダーが存在"
       ],
@@ -4613,6 +4638,9 @@
       ],
       "${ selectedFoldersCountLocalized } labels selected": [
         "${ selectedFoldersCountLocalized } 件のラベルを選択"
+      ],
+      "${ storage } storage": [
+        "${ storage } ストレージ"
       ],
       "${ storageSize } storage": [
         "${ storageSize } ストレージ"
@@ -4737,6 +4765,9 @@
       "Align right": [
         "右揃え"
       ],
+      "All ${ BRAND_NAME } apps and their premium features": [
+        "すべての ${ BRAND_NAME } アプリとそのプレミアム機能"
+      ],
       "All (${ totalFoldersCount } folders)": [
         "すべて (${ totalFoldersCount } フォルダー)"
       ],
@@ -4766,6 +4797,9 @@
       ],
       "American Express SafeKey logo": [
         "American Express SafeKey ロゴ"
+      ],
+      "Amount above maximum (${ amount }).": [
+        "最大金額 (${ amount }) を超えています"
       ],
       "Amount below minimum (${ amount }).": [
         "最低金額 (${ amount }) を下回っています。"
@@ -4943,6 +4977,9 @@
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "サブアカウントを作成・管理し、独自ドメインのメール アドレスを割り当ててください。"
+      ],
+      "Create email addresses for other people, manage ${ MAIL_APP_NAME } for a business, school, or group. Get started by adding your organization name and custom domain (e.g. @yourcompany.com). ": [
+        "他の人のためにメールアドレスを作成し、ビジネス、学校、またはグループのために ${ MAIL_APP_NAME } を管理します。組織名とカスタムドメイン (例: @yourcompany.com ) を追加して始めましょう。 "
       ],
       "Create in": [
         "作成日時"
@@ -5187,6 +5224,9 @@
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "エラーだと思われる場合は ${ contactLink } までご連絡ください。"
       ],
+      "If you cancel, your ${ vpnPlanName } subscription will not be renewed when it expires on ${ expiryDate }.": [
+        "キャンセルすると、${ vpnPlanName } サブスクリプションは ${ expiryDate } に期限が切れると更新されません。"
+      ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "受信トレイに関連するメッセージを見つけなかった場合、迷惑メールフォルダーを確認してください。"
       ],
@@ -5268,6 +5308,12 @@
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "データを ${ importedEmailAddress } から ${ toEmail } にインポートしています。"
       ],
+      "Improve your ${ BRAND_NAME } experience by adapting the application to your needs.": [
+        "${ BRAND_NAME } での体験を向上させるために、ご希望に合わせてアプリをカスタマイズしてください。"
+      ],
+      "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
+        "次のステップでは、Bitcoin アドレスを使用してデポジットを送信することができます。"
+      ],
       "Inherited from parent folder": [
         "親フォルダーから継承"
       ],
@@ -5307,6 +5353,9 @@
       "it’s imperative": [
         "必須です"
       ],
+      "I’ve been using @ProtonMail and thought you might like it. It’s a secure email service that protects your privacy. Sign up with my referral link to get 1 month of premium features for free: ${ referrerLink }": [
+        "@ProtonMail を使っているのですが、あなたにもおすすめです。これはプライバシーを保護する安全なメールサービスです。私の紹介リンクでサインアップすると、1 か月間のプレミアム機能が無料で利用できます: ${ referrerLink }"
+      ],
       "Just confirm your selection and we'll do the rest.": [
         "あとは、選択を確認するだけです。"
       ],
@@ -5327,6 +5376,9 @@
       ],
       "Large imports can take several days.": [
         "巨大なインポートは数日かかる場合があります。"
+      ],
+      "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
+        "サードパーティの VPN アプリを使用して、${ VPN_APP_NAME } にサインインする方法を学ぶ"
       ],
       "Learn more": [
         "詳細"
@@ -5403,6 +5455,9 @@
       "New": [
         "新規"
       ],
+      "No account keys exist": [
+        "アカウントのキーが存在しません"
+      ],
       "No account recovery method set; you are at risk of losing access to your account": [
         "アカウントの回復手段が設定されていません。アカウントにアクセスできなくなる危険性があります。"
       ],
@@ -5447,9 +5502,6 @@
       ],
       "old password": [
         "古いパスワード"
-      ],
-      "Once you enable ${ PROTON_SENTINEL_NAME }:": [
-        "${ PROTON_SENTINEL_NAME } を有効にすると:"
       ],
       "One account. All ${ BRAND_NAME } services.": [
         "すべての ${ BRAND_NAME } サービスを 1 つのアカウントで。"
@@ -5573,6 +5625,9 @@
       ],
       "Priority support": [
         "優先的なサポート"
+      ],
+      "Public figures, journalists, executives, and others who may be the target of cyber attacks are highly encouraged to enable ${ PROTON_SENTINEL_NAME }.": [
+        "サイバー攻撃の標的になる可能性がある公人、ジャーナリスト、幹部などは、${ PROTON_SENTINEL_NAME } を有効にしておくことが強く推奨されています。"
       ],
       "Public link invite": [
         "公開リンク招待"
@@ -5721,6 +5776,9 @@
       "Store this password and file in a safe place. You’ll need them again to import your key.": [
         "このパスワードとファイルは安全な場所に保管してください。パスワードとファイルは鍵をインポートするときにもう一度必要になります。"
       ],
+      "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
+        "以下のアドレスを使用するか、QRコードをスキャンして入金してください。確認後、デポジットはアカウントに反映されます。"
+      ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "サブスクリプションがもうすぐ終了します: ${ planName }の特典を維持するには${ byDate }までに更新してください。${ reactivateLink }"
       ],
@@ -5729,9 +5787,6 @@
       ],
       "support team": [
         "サポートチーム"
-      ],
-      "Suspicious events will be challenged by multiple layers of defense that help prevent attackers from hijacking your account.": [
-        "不審なイベントには、攻撃者によるアカウントの乗っ取りを防ぐために、複数の防御層が挑みます。"
       ],
       "Temporarily unavailable. Please check back later.": [
         "一時的に利用できません。あとでお試しください。"
@@ -5799,6 +5854,9 @@
       "This could take up to 15 minutes. Please do not close this page or disconnect from the internet.": [
         "これには 15 分ほどかかります。ページを閉じたりインターネットから切断しないでください。"
       ],
+      "This is a 12-word phrase that you were prompted to set.": [
+        "これは設定するように促された 12 語の語句です。"
+      ],
       "This is a recovery file or encryption key you may have previously saved.": [
         "これは以前保存した回復用ファイルまたは暗号鍵です。"
       ],
@@ -5822,6 +5880,9 @@
       ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "このユーザーは組織の経理責任を負っています。このユーザーを降格させた場合、あなたが経理責任を負います。"
+      ],
+      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
+        "現在の有料サブスクリプションがキャンセルされ、蓄積されたロイヤリティ特典も失われます。"
       ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
         "この操作により、現在の有料サブスクリプションがキャンセルされ、これまでに蓄積されたロイヤルティ特典が失われます。ご利用料金の残高分はアカウントクレジットとして返金されます。"
@@ -5847,8 +5908,14 @@
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "すべての有効なセッションからサインアウトし、2 段階認証を無効にします。"
       ],
+      "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
+        "このウィザードでは、あなたの ${ BRAND_NAME } アカウントの 2 要素認証 (2FA) を有効にします。2 要素認証を使用することで、${ BRAND_NAME_TWO } アカウントのセキュリティがより高まるため、有効にすることをおすすめします。"
+      ],
       "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
         "データを失うことを避けるため、あなたが何をしているか理解していない場合やコピーをエクスポートしていない場合は削除しないでください。"
+      ],
+      "To complete your payment, please send ${ btcAmountBold } to the address below.": [
+        "お支払い手続きを完了するために、下のアドレスに ${ btcAmountBold } を送信してください。"
       ],
       "To confirm, please enter the name of the user you wish to delete.": [
         "確認のため、削除するユーザー名を入力してください。"
@@ -5870,9 +5937,6 @@
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "予定をインポートするには、まず ${ CALENDAR_APP_NAME } に予定のインポート先となるカレンダーを作成してください。"
-      ],
-      "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and visit our blog from time to time.": [
-        "各種メールニュースやブログで ${ BRAND_NAME } プロダクトの最新情報を配信しています。"
       ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "アカウント復旧方法を選択し、リクエストを確認してください。"
@@ -5937,6 +6001,9 @@
       "Unsupported file": [
         "非対応のファイル"
       ],
+      "Up to ${ FAMILY_MAX_USERS } users": [
+        "最大 ${ FAMILY_MAX_USERS } ユーザーまで"
+      ],
       "Update recovery file": [
         "回復用ファイルを更新"
       ],
@@ -5948,6 +6015,9 @@
       ],
       "Upgrade to a paid account to enable ${ PROTON_SENTINEL_NAME }.": [
         "有料アカウントにアップグレードして ${ PROTON_SENTINEL_NAME } を有効にします。"
+      ],
+      "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
+        "アップグレードして、アカウントにより短く共有しやすい @pm.me アドレスを追加します。これは \"私に ${ MAIL_APP_NAME } で\" と \"プライベートメッセージを私に\" という意味です。"
       ],
       "Upgrade to unlock": [
         "アップグレードしてアンロック"
@@ -5972,9 +6042,6 @@
       ],
       "Use the selected email address as the SMTP username in the external service, and the generated token as the SMTP password.": [
         "選択したメールアドレスを外部サービスの SMTP ユーザー名として、生成されたトークンを SMTP パスワードとして使用します。"
-      ],
-      "Users with sensitive data and communications, such as journalists or executives, are highly encouraged to enable ${ PROTON_SENTINEL_NAME }.": [
-        "ジャーナリストや重要な役職にある人など、センシティブなデータやコミュニケーションを持つユーザーは、${ PROTON_SENTINEL_NAME } を有効にすることが強く望まれます。"
       ],
       "Verification can take a few minutes.": [
         "検証に数分かかることがあります。"
@@ -6075,6 +6142,9 @@
       "Why?": [
         "なぜ?"
       ],
+      "With your current plan, you can only receive messages with your @pm.me address. Upgrade to send messages and create additional addresses using @pm.me.": [
+        "現在のプランでは、@pm.me アドレスでメッセージを受信することだけが出来ます。@pm.me を使用してメッセージを送信したり、追加のアドレスを作成したりするには、アップグレードしてください。"
+      ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "有効化しない限り、新規ユーザーの作成、既存ユーザーへのメールアドレスの追加並びに、ユーザーのアカウントへのアクセスはできません。"
       ],
@@ -6113,6 +6183,18 @@
       ],
       "You can import one data type at a time.": [
         "1 回にインポートできるのは 1 種類のみです。"
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendars. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
+        "カレンダーを最大 ${ MAX_CALENDARS_FREE } 個まで保持することができます。あなたの ${ MAIL_SHORT_APP_NAME } サブスクリプションをキャンセルする前に、共有カレンダーリンクと共有したカレンダーの ${ BRAND_NAME } ユーザーを削除してください。"
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendars. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
+        "最大 ${ MAX_CALENDARS_FREE } 個までカレンダーを保持できます。サブスクリプションをキャンセルする前に、共有カレンダーリンクとあなたのカレンダーを共有した ${ BRAND_NAME } のユーザーを削除してください。"
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendars. Please remove shared calendar links before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
+        "カレンダーを最大 ${ MAX_CALENDARS_FREE } 個まで保持できます。あなたの ${ MAIL_SHORT_APP_NAME } サブスクリプションをキャンセルする前に、共有カレンダーリンクを削除してください。"
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendars. Please remove shared calendar links before you cancel your subscription.": [
+        "カレンダーを最大 ${ MAX_CALENDARS_FREE } 個まで保持できます。サブスクリプションをキャンセルする前に、共有カレンダーリンクを削除してください。"
       ],
       "You can now access and manage the account as an administrator.": [
         "管理者としてのアカウントでアクセスし管理することが可能です。"
@@ -6180,11 +6262,14 @@
       "You still need to reply to invitations for the host to see your response.": [
         "主催者に招待への応答を返信する必要があります。"
       ],
+      "You will lose access to ${ vpnPlanNameShort } servers and features on this date.": [
+        "この日付になると、${ vpnPlanNameShort } のサーバーと機能へのアクセス権が失われます。"
+      ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "${ MAIL_APP_NAME } と ${ CALENDAR_APP_NAME } を使うには ${ BRAND_NAME } アドレスが必要です"
       ],
-      "You will see more details in the Security logs below for important events such as sign in attempts.": [
-        "サインイン試行などの重要なイベントについては、以下のセキュリティログで詳細を確認することができます。"
+      "You will NOT be able to decrypt any messages, files, and other data encrypted with this key. All data signed with this key will no longer be verified by ${ BRAND_NAME } applications.": [
+        "このキーで暗号化されたどんなメッセージも、ファイルも、他のデータも、復号化することはできません。このキーで署名されたすべてのデータは、${ BRAND_NAME } アプリによって検証されなくなります。"
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "支払いの検証のため、まもなく PayPal のサイトへリダイレクトされます。"
@@ -7565,9 +7650,6 @@
       "${ BRAND_NAME } beta announcements": [
         "${ BRAND_NAME } ベータのお知らせ"
       ],
-      "${ BRAND_NAME } company announcements": [
-        "${ BRAND_NAME } 会社のお知らせ"
-      ],
       "${ BRAND_NAME } for Business newsletter": [
         "${ BRAND_NAME } for Business ニュースレター"
       ],
@@ -7773,6 +7855,9 @@
       ]
     },
     "Loading info": {
+      "${ twoFAMembers.length }/${ members.length } of your organization members use two-factor authentication.": [
+        "組織メンバーうち、${ twoFAMembers.length }/${ members.length } 人が 2 要素認証を使用しています。"
+      ],
       "Almost there": [
         "もう少しです"
       ],
@@ -8182,6 +8267,9 @@
       ],
       "${ n } folders and labels": [
         "${ n } 件のフォルダーおよびラベル"
+      ],
+      "${ n } hide-my-email aliases": [
+        "${ n } 件の Hide-my-email エイリアス"
       ],
       "${ n } labels": [
         "${ n } 件のラベル"
@@ -10096,7 +10184,50 @@
         "2 年"
       ]
     },
+    "summer2023: Deal details": {
+      "Premium Drive": [
+        "プレミアム Drive"
+      ],
+      "Premium Mail and Calendar": [
+        "プレミアム Mail と Calendar"
+      ],
+      "Premium Password Manager": [
+        "プレミアムパスワードマネージャー"
+      ]
+    },
+    "summer2023: Describe Proton Pass": {
+      "Securely store your passwords and autofill them on websites. Includes unlimited passwords, autofill, password generator, and more.": [
+        "安全にパスワードを保存し、ウェブサイト上で自動入力します。無制限のパスワード、自動入力、パスワード生成などが含まれています。"
+      ]
+    },
+    "summer2023: Short tool name to present Proton Pass": {
+      "Password manager": [
+        "パスワードマネージャー"
+      ]
+    },
+    "summer2023: Tooltip": {
+      "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
+        "すべてのデバイスで安全なログインの詳細情報を作成します。無制限のエイリアス、20 個の保管庫、統合された 2 要素認証、クレジットカードの自動入力などが含まれます。"
+      ],
+      "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "65 か国以上の 2950 台以上のサーバー、最大 10 台のデバイスの接続、世界中のストリーミングサービスへのアクセス、マルウェアと広告ブロッカーなどが含まれます。"
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "暗号化されたクラウドストレージでファイルの安全性を保ちましょう。バージョン履歴、暗号化済みファイル共有などが含まれています。"
+      ]
+    },
+    "summer2023:Footer": {
+      "*Your subscription will automatically renew at the standard discounted rate at the end of your billing cycle.": [
+        "* あなたのサブスクリプションは、支払い間隔の終了時に標準の割引価格で自動的に更新されます。"
+      ],
+      "Discounts are based on the standard monthly pricing. This offer is only available to first-time subscribers.": [
+        "割引は標準の月額価格を基にしています。このオファーは初回のサブスクリプションでのみ有効です。"
+      ]
+    },
     "summer2023:Info": {
+      "For a limited time, get the best ${ BRAND_NAME } has to offer at an exclusive discount.": [
+        "期間限定で、最高の ${ BRAND_NAME } 提供製品を特別な割引価格で入手できます。"
+      ],
       "We’re celebrating the nine-year anniversary of our crowdfunding!": [
         "クラウドファンディングを開始してから９周年です！"
       ]
@@ -10923,9 +11054,6 @@
       ],
       "Signed in to member account": [
         "メンバーアカウントでサインイン"
-      ],
-      "SMTP tokens": [
-        "SMTPトークン"
       ],
       "Sort folders alphabetically": [
         "フォルダーをアルファベット順に並べ替え"

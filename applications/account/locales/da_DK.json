@@ -2883,11 +2883,6 @@
         "Du afmeldte dig fra ${ categoriesJsx } e-mails."
       ]
     },
-    "Email Unsubscribe Categories": {
-      "${ allCategoriesExceptTheLastOne } and ${ lastCategory }": [
-        "${ allCategoriesExceptTheLastOne } og ${ lastCategory }"
-      ]
-    },
     "Error": {
       "A group with this name already exists": [
         "En gruppe med dette navn findes allerede"
@@ -4675,9 +4670,6 @@
         "${ numGroups } kontaktgruppe",
         "${ numGroups } kontaktgrupper"
       ],
-      "${ PROTON_SENTINEL_NAME } is an account protection program developed at ${ BRAND_NAME } for users who need maximum security.": [
-        "${ PROTON_SENTINEL_NAME } er et kontobeskyttelsesprogram udviklet af ${ BRAND_NAME } til brugere, der har brug for maksimal sikkerhed."
-      ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } mappe fundet",
         "${ providerFoldersNumLocalized } mapper fundet"
@@ -5826,12 +5818,6 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Eftersom du er en loyal bruger, har din konto ekstra features aktiveret."
       ],
-      "SMTP allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME }. It is a new feature available to select business users. Please email ${ emailLink } to request access.": [
-        "SMTP tillader tredjeparts services eller enheder at sende emails igennem ${ MAIL_APP_NAME }. Det er en funktion tilgængelig for udvalgte virksomhedsbrugere. Send venligst en email til ${ emailLink } for at bede om adgang."
-      ],
-      "SMTP allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME }. To use this feature, start by generating a new token.": [
-        "SMTP tillader tredjeparts services eller enheder at sende emails igennem ${ MAIL_APP_NAME }. For at bruge denne funktion, skal du starte med at generer en ny token."
-      ],
       "Some keys successfully reactivated": [
         "Nogle nøgler er genaktiveret med succes"
       ],
@@ -6030,9 +6016,6 @@
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "For at importere begivenheder, skal du først oprette en kalender i ${ CALENDAR_APP_NAME }. Det er her, at begivenhederne vises efter importen."
-      ],
-      "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and visit our blog from time to time.": [
-        "For at holde trit med den seneste udvikling hos ${ BRAND_NAME } kan du abonnere på vores forskellige nyhedsbreve og fra tid til anden besøge vores blog."
       ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "For at fortsætte skal du vælge en metode til kontogendannelse, så vi kan bekræfte anmodningen."
@@ -7732,9 +7715,6 @@
       "${ BRAND_NAME } beta announcements": [
         "${ BRAND_NAME } beta-annonceringer"
       ],
-      "${ BRAND_NAME } company announcements": [
-        "${ BRAND_NAME }-virksomhedsmeddelelser"
-      ],
       "${ BRAND_NAME } for Business newsletter": [
         "${ BRAND_NAME } for Business nyhedsbrev"
       ],
@@ -8407,6 +8387,9 @@
       "1 free VPN connection in total": [
         "1 gratis VPN-forbindelse i alt"
       ],
+      "Ad-blocker & malware protection": [
+        "Annonceblokering og beskyttelse mod malware"
+      ],
       "Admin console": [
         "Administrationskonsol"
       ],
@@ -8418,6 +8401,9 @@
       ],
       "Auto-reply": [
         "Autosvar"
+      ],
+      "Calendar sharing": [
+        "Kalenderdeling"
       ],
       "Catch-all": [
         "Fang-alle"
@@ -8470,6 +8456,9 @@
       "Hide-my-email aliases": [
         "Hide-my-email-aliasser"
       ],
+      "High-speed streaming": [
+        "Streaming ved høj hastighed"
+      ],
       "High-speed VPN on ${ n } device": [
         "Højhastigheds VPN på ${ n } enhed",
         "Højhastigheds VPN på ${ n } enheder"
@@ -8510,6 +8499,9 @@
       ],
       "Secure Core servers": [
         "Secure Core servere"
+      ],
+      "Send & receive invitations": [
+        "Send og modtag invitationer"
       ],
       "Share calendar via link": [
         "Del kalender via link"
@@ -8576,6 +8568,9 @@
       ],
       "Vault and Item sharing": [
         "Boks- og elementdeling"
+      ],
+      "Vault and Item sharing (coming soon)": [
+        "Boks og element-deling (kommer snart)"
       ]
     },
     "new_plans: feature info": {
@@ -8732,7 +8727,7 @@
         "${ mailPlanName } Prøve"
       ],
       "Upgrade to ${ planName }": [
-        "Opgrader til ${ planName }"
+        "Opgradér til ${ planName }"
       ],
       "Your account's usage": [
         "Din kontos forbrug"
@@ -9826,7 +9821,7 @@
         "Gå til abonnementer"
       ],
       "Upgrade": [
-        "Opgrader"
+        "Opgradér"
       ]
     },
     "specialoffer: Offers": {
@@ -11158,9 +11153,6 @@
       "Signed in to member account": [
         "Logget ind på medlemskonto"
       ],
-      "SMTP tokens": [
-        "SMTP-tokens"
-      ],
       "Sort folders alphabetically": [
         "Sortér mapper alfabetisk"
       ],
@@ -11570,8 +11562,8 @@
     },
     "Upgrade": {
       "Upgrade to ${ planName } to connect up to ${ n } device to the VPN at once": [
-        "Opgrader til ${ planName } for at forbinde op til ${ n } enhed til VPN'en samtidig",
-        "Opgrader til ${ planName } for at forbinde op til ${ n } enheder til VPN'en samtidig"
+        "Opgradér til ${ planName } for at forbinde op til ${ n } enhed til VPN'en samtidig",
+        "Opgradér til ${ planName } for at forbinde op til ${ n } enheder til VPN'en samtidig"
       ]
     },
     "User referee invited via email": {

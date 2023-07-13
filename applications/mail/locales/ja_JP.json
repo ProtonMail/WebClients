@@ -145,6 +145,9 @@
       "Carbon Copy": [
         "カーボンコピー (Carbon Copy)"
       ],
+      "Change email": [
+        "メールアドレスを変更"
+      ],
       "Change page": [
         "ページの変更"
       ],
@@ -4064,6 +4067,9 @@
     "Font face option": {
       "System default": [
         "システムのデフォルト"
+      ],
+      "Theme font": [
+        "テーマ フォント"
       ]
     },
     "Font Size Default": {
@@ -4103,11 +4109,38 @@
       ]
     },
     "Get started checklist instructions": {
+      "${ MAIL_APP_NAME } on App Store": [
+        "App Store での ${ MAIL_APP_NAME }"
+      ],
+      "${ MAIL_APP_NAME } on Play Store": [
+        "Play Store での ${ MAIL_APP_NAME }"
+      ],
       "Auto-forward Gmail": [
         "Gmailへ自動転送"
       ],
+      "Block email communications from scammers permanently.": [
+        "詐欺師からのメールを永久にブロックする"
+      ],
+      "Block unsavory senders": [
+        "不適切な送信者をブロックする"
+      ],
+      "Bravo for making your email even more secure, convenient, and relevant! We've upped your free storage to a total of 1 GB.": [
+        "メールがさらに安全に、便利に、そして関連性が向上しました! 無料のストレージも合計 1 GB に増やしました。"
+      ],
       "Close": [
         "閉じる"
+      ],
+      "Congratulation, you completed all the steps!": [
+        "すべてのステップを完了しました。おめでとう！"
+      ],
+      "Continue setting up your email": [
+        "メールの設定を続ける"
+      ],
+      "Double your free storage to 1 GB when you complete the following:": [
+        "次の項目を達成すると、無料ストレージの 2 倍にできます :"
+      ],
+      "Encryption so strong, only you and intended recipients can view your emails.": [
+        "強力な暗号化により、あなたと意図した宛先の受信者のみがメールを閲覧できます。"
       ],
       "Get free storage": [
         "無料のストレージを取得"
@@ -4127,8 +4160,26 @@
       "Import your contacts or messages": [
         "連絡先またはメッセージをインポート"
       ],
+      "Keep using ${ MAIL_APP_NAME } to discover more ways ${ BRAND_NAME } protects your privacy and simplifies emailing.": [
+        "${ MAIL_APP_NAME } を引き続き使用して、${ BRAND_NAME } がプライバシーを保護しメールの送受信をより簡単にする方法をさらに見つけてください。"
+      ],
+      "Learn more": [
+        "より詳しく"
+      ],
       "Maybe later": [
         "後で行う"
+      ],
+      "Nice! You've updated all services in this category.": [
+        "素晴らしい ! カテゴリーの全てのサービスが更新されました。"
+      ],
+      "Open checklist": [
+        "チェックリストを開く"
+      ],
+      "Popular online services": [
+        "有名なオンラインサービス"
+      ],
+      "Protect and simplify your email": [
+        "メールを保護し、シンプルにする"
       ],
       "Protection from trackers": [
         "トラッカーからの保護"
@@ -4138,6 +4189,18 @@
       ],
       "Send a message": [
         "メッセージを送信する"
+      ],
+      "Set recovery method": [
+        "回復手段を設定"
+      ],
+      "Sign in to the mobile app to complete this step": [
+        "モバイル端末でサインインして、このステップを達成"
+      ],
+      "Using your mobile device, scan this QR code or visit the iOS or Android store.": [
+        "モバイル端末を使って、QR コードをスキャンするか iOS や Android のストアを見る。"
+      ],
+      "We stop advertisers and data collectors from profiling you.": [
+        "私たちは広告主やデータ収集者によるお客様の行動の推定を阻止します。"
       ],
       "You've unlocked 1 GB": [
         "1GBのロックを解除しました"
@@ -4540,6 +4603,9 @@
       ],
       "${ messagesNotAuthorizedToMove } messages could not be moved.": [
         "${ messagesNotAuthorizedToMove } 件のメッセージを移動できませんでした。"
+      ],
+      "${ numberOfImageTrackers } email trackers blocked": [
+        "${ numberOfImageTrackers } 個のメールトラッカーをブロックしました"
       ],
       "${ numberOfImageTrackers } trackers blocked": [
         "${ numberOfImageTrackers }個のトラッカーをブロックしました"
@@ -6160,6 +6226,9 @@
       "City": [
         "市区町村"
       ],
+      "Cleaned": [
+        "クリア済み"
+      ],
       "Code is 6 digits without spaces": [
         "コードは空白なしの 6 桁の数字です"
       ],
@@ -6378,6 +6447,9 @@
       ],
       "Or": [
         "または"
+      ],
+      "Original link": [
+        "元のリンク"
       ],
       "Participants": [
         "参加者"
@@ -7194,9 +7266,38 @@
         "左上のアプリセレクターで、すべてのアプリにアクセスできます。 ${ BRAND_NAME } サービス: ${ MAIL_SHORT_APP_NAME }・ ${ VPN_SHORT_APP_NAME }・ ${ CALENDAR_SHORT_APP_NAME }・ ${ DRIVE_SHORT_APP_NAME }"
       ]
     },
+    "Online accounts": {
+      "Have an account with one of these services? Just click to change the email address to your ${ MAIL_APP_NAME } address.": [
+        "これらのサービスのアカウントをお持ちですか？ クリックするだけで、メールアドレスを ${ MAIL_APP_NAME } のアドレスに変更できます。"
+      ]
+    },
     "Online Accounts Name": {
+      "Banking": [
+        "銀行"
+      ],
       "Crypto": [
         "暗号通貨"
+      ],
+      "E-commerce and Retail": [
+        "E コマースと小売業"
+      ],
+      "Entertainment": [
+        "エンターテインメント"
+      ],
+      "Food and beverage": [
+        "食料品 と 飲料"
+      ],
+      "Gaming": [
+        "ゲーム"
+      ],
+      "Most popular": [
+        "最も一般的"
+      ],
+      "Travel": [
+        "旅行"
+      ],
+      "Utilities": [
+        "ユーティリティ"
       ]
     },
     "Option": {
@@ -8165,7 +8266,50 @@
         "2 年"
       ]
     },
+    "summer2023: Deal details": {
+      "Premium Drive": [
+        "プレミアム Drive"
+      ],
+      "Premium Mail and Calendar": [
+        "プレミアム Mail と Calendar"
+      ],
+      "Premium Password Manager": [
+        "プレミアムパスワードマネージャー"
+      ]
+    },
+    "summer2023: Describe Proton Pass": {
+      "Securely store your passwords and autofill them on websites. Includes unlimited passwords, autofill, password generator, and more.": [
+        "安全にパスワードを保存し、ウェブサイト上で自動入力します。無制限のパスワード、自動入力、パスワード生成などが含まれています。"
+      ]
+    },
+    "summer2023: Short tool name to present Proton Pass": {
+      "Password manager": [
+        "パスワードマネージャー"
+      ]
+    },
+    "summer2023: Tooltip": {
+      "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
+        "すべてのデバイスで安全なログインの詳細情報を作成します。無制限のエイリアス、20 個の保管庫、統合された 2 要素認証、クレジットカードの自動入力などが含まれます。"
+      ],
+      "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "65 か国以上の 2950 台以上のサーバー、最大 10 台のデバイスの接続、世界中のストリーミングサービスへのアクセス、マルウェアと広告ブロッカーなどが含まれます。"
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "暗号化されたクラウドストレージでファイルの安全性を保ちましょう。バージョン履歴、暗号化済みファイル共有などが含まれています。"
+      ]
+    },
+    "summer2023:Footer": {
+      "*Your subscription will automatically renew at the standard discounted rate at the end of your billing cycle.": [
+        "* あなたのサブスクリプションは、支払い間隔の終了時に標準の割引価格で自動的に更新されます。"
+      ],
+      "Discounts are based on the standard monthly pricing. This offer is only available to first-time subscribers.": [
+        "割引は標準の月額価格を基にしています。このオファーは初回のサブスクリプションでのみ有効です。"
+      ]
+    },
     "summer2023:Info": {
+      "For a limited time, get the best ${ BRAND_NAME } has to offer at an exclusive discount.": [
+        "期間限定で、最高の ${ BRAND_NAME } 提供製品を特別な割引価格で入手できます。"
+      ],
       "We’re celebrating the nine-year anniversary of our crowdfunding!": [
         "クラウドファンディングを開始してから９周年です！"
       ]
@@ -8802,6 +8946,9 @@
       ],
       "Warning: suspected fake website": [
         "警告: 偽のウェブサイトの疑いがあります"
+      ],
+      "We protected you from ${ trackersCount } trackers": [
+        "${ trackersCount } 件のトラッカーから保護しました"
       ],
       "Welcome": [
         "ようこそ"

@@ -2023,6 +2023,12 @@
       "(1-2 emails per month)": [
         "(1-2 correos al mes)"
       ],
+      "(2-4 per year)": [
+        "(2-4 al año)"
+      ],
+      "(4-6 emails per year)": [
+        "(4-6 correos al año)"
+      ],
       "(during your first month)": [
         "(durante su primer mes)"
       ]
@@ -2683,8 +2689,8 @@
       "To fight spam and abuse, please verify you are human.": [
         "Para luchar contra el spam y el abuso, verifique que es humano."
       ],
-      "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and visit our blog from time to time.": [
-        "Para estar informado de las últimas novedades de los productos ${ BRAND_NAME }, puede suscribirse a nuestros diferentes boletines y visitar nuestro blog de vez en cuando."
+      "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
+        "Para informarse de las últimas novedades de los productos de ${ BRAND_NAME }, puede suscribirse a nuestros diferentes boletines y ${ blogLink } de vez en cuando."
       ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "Para continuar, seleccione un método de recuperación de cuenta para que podamos verificar la solicitud."
@@ -3082,7 +3088,7 @@
         "Dirección BTC"
       ],
       "BTC amount": [
-        "Importe BTC"
+        "Importe en BTC"
       ],
       "Card holder": [
         "Titular de la tarjeta"
@@ -3364,11 +3370,11 @@
       "${ BRAND_NAME } beta announcements": [
         "Comunicados beta de ${ BRAND_NAME }"
       ],
-      "${ BRAND_NAME } company announcements": [
-        "Comunicados de la compañía ${ BRAND_NAME }"
-      ],
       "${ BRAND_NAME } for Business newsletter": [
         "Boletín para empresas de ${ BRAND_NAME }"
+      ],
+      "${ BRAND_NAME } important announcements": [
+        "Comunicados importantes de ${ BRAND_NAME }"
       ],
       "${ BRAND_NAME } newsletter": [
         "Boletín de ${ BRAND_NAME }"
@@ -3463,6 +3469,9 @@
       "View guide": [
         "Ver guía"
       ],
+      "visit our blog": [
+        "visitar nuestro blog"
+      ],
       "What is the difference between UDP and TCP protocols?": [
         "¿Cuál es la diferencia entre los protocolos UDP y TCP?"
       ],
@@ -3478,7 +3487,7 @@
         "Abrir formulario de soporte"
       ],
       "Upgrade subscription": [
-        "Actualizar su suscripción"
+        "Mejorar la suscripción"
       ],
       "Upgrade to unlock chat support and other premium features, or use our free support form to report your issue.": [
         "Actualice para desbloquear el soporte por chat y otras funciones premium o use nuestro formulario de soporte gratuito para notificar su problema."
@@ -3577,7 +3586,7 @@
         "Seguir en ${ currentPlanName }"
       ],
       "Upgrade now": [
-        "Actualizar ahora"
+        "Mejorar ahora"
       ]
     },
     "new_plans: attribute": {
@@ -4059,7 +4068,7 @@
         "Prueba de ${ mailPlanName }"
       ],
       "Upgrade to ${ planName }": [
-        "Actualizar a ${ planName }"
+        "Mejorar a ${ planName }"
       ],
       "Your account's usage": [
         "Uso de la cuenta"
@@ -4755,7 +4764,7 @@
         "Notas de la versión"
       ],
       "Upgrade storage": [
-        "Mejorar almacenamiento"
+        "Aumentar el almacenamiento"
       ],
       "Your current storage:": [
         "Su almacenamiento actual:"
