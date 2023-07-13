@@ -1,5 +1,5 @@
 import { contentScriptMessage, sendMessage } from '@proton/pass/extension/message';
-import { clearDetectionCache } from '@proton/pass/fathom';
+import { clearDetectionCache, getDetectedFormParent, getIgnoredParent, setFormProcessable } from '@proton/pass/fathom';
 import type { FormEntryPrompt } from '@proton/pass/types';
 import { FormEntryStatus, WorkerMessageType } from '@proton/pass/types';
 import { createListenerStore } from '@proton/pass/utils/listener';
@@ -182,6 +182,22 @@ export const createFormManager = (options: FormManagerOptions) => {
         return Boolean(await runDetection(options.reason));
     };
 
+    /* if a new field was added to a currently ignored form :
+     * set it as processable in case it was recycled in case
+     * we need to re-run the classifiers */
+    const onNewField = (field?: HTMLElement) => {
+        const ignored = getIgnoredParent(field);
+        if (ignored) setFormProcessable(ignored);
+    };
+
+    /* if a field was deleted inside a currently detected
+     * form, un-flag it if the form is recycled and could have
+     * its predicted class change */
+    const onDeletedField = (field?: HTMLElement) => {
+        const detected = getDetectedFormParent(field);
+        if (detected) setFormProcessable(detected);
+    };
+
     /**
      * Form Detection Trigger via DOM Mutation :
      *
@@ -205,9 +221,13 @@ export const createFormManager = (options: FormManagerOptions) => {
     const onMutation = (mutations: MutationRecord[]) => {
         const triggerFormChange = mutations.some((mutation) => {
             if (mutation.type === 'childList') {
-                const deletedNodes = Array.from(mutation.removedNodes).some(isNodeOfInterest);
-                const newNodes = Array.from(mutation.addedNodes).some(isNodeOfInterest);
-                return newNodes || deletedNodes;
+                const deletedFields = Array.from(mutation.removedNodes).some(isNodeOfInterest);
+                const addedFields = Array.from(mutation.addedNodes).some(isNodeOfInterest);
+
+                if (addedFields) onNewField(mutation.target as HTMLElement);
+                if (deletedFields) onDeletedField(mutation.target as HTMLElement);
+
+                return addedFields || deletedFields;
             }
 
             if (mutation.type === 'attributes') {
