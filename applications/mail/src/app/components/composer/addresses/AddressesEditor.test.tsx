@@ -1,15 +1,17 @@
 import { MutableRefObject } from 'react';
 
-import { fireEvent } from '@testing-library/react';
+import { fireEvent, screen } from '@testing-library/react';
 import { getByText } from '@testing-library/react';
 
+import { pick } from '@proton/shared/lib/helpers/object';
 import { Recipient } from '@proton/shared/lib/interfaces';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
-import { mergeMessages } from '../../../helpers/message/messages';
 import { addApiMock, clearAll, getDropdown, render, tick } from '../../../helpers/test/helper';
 import { MessageSendInfo } from '../../../hooks/useSendInfo';
+import { composerActions } from '../../../logic/composers/composersSlice';
 import { MessageState } from '../../../logic/messages/messagesTypes';
+import { store } from '../../../logic/store';
 import AddressesEditor from './AddressesEditor';
 
 const email1 = 'test@test.com';
@@ -74,22 +76,39 @@ const props = {
     },
 };
 
+const setupComposer = async () => {
+    store.dispatch(
+        composerActions.addComposer({
+            messageID: message.localID || '',
+            // @ts-expect-error
+            recipients: pick(message?.data, ['ToList', 'CCList', 'BCCList']),
+            senderEmailAddress: message.data?.Sender?.Address || '',
+        })
+    );
+    const composerID = Object.keys(store.getState().composers.composers)[0];
+
+    return composerID;
+};
+
 describe('AddressesEditor', () => {
     beforeAll(() => {
         ccExpanded = false;
         bccExpanded = false;
     });
-    afterEach(clearAll);
+    beforeEach(clearAll);
+    afterAll(clearAll);
 
     it('should render Addresses', async () => {
-        const { getByText } = await render(<AddressesEditor {...props} />);
+        const composerID = await setupComposer();
+        const { getByText } = await render(<AddressesEditor {...props} composerID={composerID} />);
 
         getByText(`${email1Name} <${email1}>`);
         getByText(`${email2Name} <${email2}>`);
     });
 
     it('should delete an address', async () => {
-        const { getByTestId, getAllByTestId, rerender } = await render(<AddressesEditor {...props} />);
+        const composerID = await setupComposer();
+        const { getByTestId, getAllByTestId } = await render(<AddressesEditor {...props} composerID={composerID} />);
 
         const displayedAddresses = getAllByTestId('composer-addresses-item');
 
@@ -98,13 +117,6 @@ describe('AddressesEditor', () => {
         const email2RemoveButton = getByTestId(`remove-address-button-${email2}`);
 
         fireEvent.click(email2RemoveButton);
-
-        const expectedChange = { data: { ToList: [recipient1] } };
-        expect(props.onChange).toHaveBeenCalledWith(expectedChange);
-
-        const updatedMessage = mergeMessages(message, expectedChange);
-
-        await rerender(<AddressesEditor {...props} message={updatedMessage} />);
 
         const remainingAddresses = getAllByTestId('composer-addresses-item');
         expect(remainingAddresses.length).toEqual(1);
@@ -122,8 +134,11 @@ describe('AddressesEditor', () => {
         'should add correct addresses with the input "$input"',
         async ({ input, expectedArray }: { input: string; expectedArray: Recipient[] }) => {
             addApiMock('core/v4/keys', () => ({}));
+            const composerID = await setupComposer();
 
-            const { getAllByTestId, getByTestId, rerender } = await render(<AddressesEditor {...props} />);
+            const { getAllByTestId, getByTestId } = await render(
+                <AddressesEditor {...props} composerID={composerID} />
+            );
 
             const displayedAddresses = getAllByTestId('composer-addresses-item');
 
@@ -134,20 +149,14 @@ describe('AddressesEditor', () => {
             fireEvent.change(addressesInput, { target: { value: input } });
             fireEvent.keyDown(addressesInput, { key: 'Enter' });
 
-            const expectedChange = { data: { ToList: [recipient1, recipient2, ...expectedArray] } };
-            expect(props.onChange).toHaveBeenCalledWith(expectedChange);
-
-            const updatedMessage = mergeMessages(message, expectedChange);
-
-            await rerender(<AddressesEditor {...props} message={updatedMessage} />);
-
             const newAddresses = getAllByTestId('composer-addresses-item');
             expect(newAddresses.length).toEqual(2 + expectedArray.length);
         }
     );
 
     it('should edit an address on double click', async () => {
-        const { getAllByTestId } = await render(<AddressesEditor {...props} />);
+        const composerID = await setupComposer();
+        const { getAllByTestId, getByText } = await render(<AddressesEditor {...props} composerID={composerID} />);
 
         const displayedAddresses = getAllByTestId('composer-addresses-item-label');
 
@@ -163,13 +172,13 @@ describe('AddressesEditor', () => {
         });
         fireEvent.keyDown(addressSpan, { key: 'Enter' });
 
-        expect(props.onChange).toHaveBeenCalledWith({
-            data: { ToList: [{ Address: email3, Name: email3 }, recipient2] },
-        });
+        getByText(email3);
+        expect(addressSpan.getAttribute('contenteditable')).toEqual('false');
     });
 
     it('should open option dropdown', async () => {
-        const { getAllByTestId } = await render(<AddressesEditor {...props} />);
+        const composerID = await setupComposer();
+        const { getAllByTestId } = await render(<AddressesEditor {...props} composerID={composerID} />);
 
         const displayedAddresses = getAllByTestId('composer-addresses-item-label');
 
@@ -186,7 +195,8 @@ describe('AddressesEditor', () => {
     it('should copy an address', async () => {
         document.execCommand = jest.fn();
 
-        const { getAllByTestId } = await render(<AddressesEditor {...props} />);
+        const composerID = await setupComposer();
+        const { getAllByTestId } = await render(<AddressesEditor {...props} composerID={composerID} />);
 
         const displayedAddresses = getAllByTestId('composer-addresses-item-label');
 
@@ -202,7 +212,8 @@ describe('AddressesEditor', () => {
     });
 
     it('should edit an address in option dropdown', async () => {
-        const { getAllByTestId } = await render(<AddressesEditor {...props} />);
+        const composerID = await setupComposer();
+        const { getAllByTestId } = await render(<AddressesEditor {...props} composerID={composerID} />);
 
         const displayedAddresses = getAllByTestId('composer-addresses-item-label');
 
@@ -223,15 +234,14 @@ describe('AddressesEditor', () => {
 
         fireEvent.keyDown(addressSpan, { key: 'Enter' });
 
-        expect(props.onChange).toHaveBeenCalledWith({
-            data: { ToList: [{ Address: email3, Name: email3 }, recipient2] },
-        });
+        screen.getByText(email3);
     });
 
     it('should open create modal when clicking on create contact', async () => {
         addApiMock('contacts/v4/contacts', () => ({ Contacts: [] }));
 
-        const { getAllByTestId } = await render(<AddressesEditor {...props} />);
+        const composerID = await setupComposer();
+        const { getAllByTestId } = await render(<AddressesEditor {...props} composerID={composerID} />);
 
         const displayedAddresses = getAllByTestId('composer-addresses-item-label');
 
@@ -249,7 +259,8 @@ describe('AddressesEditor', () => {
     });
 
     it('should delete an address in option modal', async () => {
-        const { getAllByTestId, rerender } = await render(<AddressesEditor {...props} />);
+        const composerID = await setupComposer();
+        const { getAllByTestId } = await render(<AddressesEditor {...props} composerID={composerID} />);
 
         const displayedAddresses = getAllByTestId('composer-addresses-item-label');
 
@@ -264,19 +275,14 @@ describe('AddressesEditor', () => {
 
         fireEvent.click(removeAddressButton);
 
-        const expectedChange = { data: { ToList: [recipient2] } };
-        expect(props.onChange).toHaveBeenCalledWith(expectedChange);
-
-        const updatedMessage = mergeMessages(message, expectedChange);
-
-        await rerender(<AddressesEditor {...props} message={updatedMessage} />);
-
         const remainingAddresses = getAllByTestId('composer-addresses-item');
         expect(remainingAddresses.length).toEqual(1);
     });
 
     it('should not focus CC BCC or Insert contacts buttons', async () => {
-        const { getByTestId } = await render(<AddressesEditor {...props} />);
+        const composerID = await setupComposer();
+        const { getByTestId } = await render(<AddressesEditor {...props} composerID={composerID} />);
+
         const ccButton = getByTestId('composer:recipients:cc-button');
         const bccButton = getByTestId('composer:recipients:bcc-button');
         const insertContactsButton = getByTestId('composer:to-button');

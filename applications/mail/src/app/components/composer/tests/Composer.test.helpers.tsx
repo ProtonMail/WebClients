@@ -2,6 +2,7 @@ import { act } from 'react-dom/test-utils';
 
 import { RenderResult, fireEvent } from '@testing-library/react';
 
+import { pick } from '@proton/shared/lib/helpers/object';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
@@ -16,7 +17,9 @@ import {
     waitForNoNotification,
     waitForNotification,
 } from '../../../helpers/test/helper';
-import { MessageState, MessageStateWithData, PartialMessageState } from '../../../logic/messages/messagesTypes';
+import { EditorTypes } from '../../../hooks/composer/useComposerContent';
+import { composerActions } from '../../../logic/composers/composersSlice';
+import { MessageStateWithData, PartialMessageState } from '../../../logic/messages/messagesTypes';
 import { initialize } from '../../../logic/messages/read/messagesReadActions';
 import { store } from '../../../logic/store';
 import { Breakpoints } from '../../../models/utils';
@@ -38,6 +41,7 @@ export const fromAddress = 'me@home.net';
 export const toAddress = 'someone@somewhere.net';
 
 export const props = {
+    composerID: 'ComposerID',
     messageID: ID,
     composerFrameRef: { current: document.body as HTMLDivElement },
     breakpoints: {} as Breakpoints,
@@ -50,7 +54,7 @@ export const props = {
     isFocused: true,
 };
 
-export const prepareMessage = (message: PartialMessageState) => {
+export const prepareMessage = (messageProp: PartialMessageState) => {
     const baseMessage = {
         localID: 'localID',
         data: {
@@ -68,15 +72,28 @@ export const prepareMessage = (message: PartialMessageState) => {
         },
     } as MessageStateWithData;
 
-    const resultMessage = mergeMessages(baseMessage, message);
+    const message = mergeMessages(baseMessage, messageProp) as MessageStateWithData;
 
-    store.dispatch(initialize(resultMessage));
+    store.dispatch(initialize(message));
 
-    return resultMessage as MessageStateWithData;
+    store.dispatch(
+        composerActions.addComposer({
+            messageID: message.localID,
+            type: EditorTypes.composer,
+            senderEmailAddress: message.data?.Sender?.Address || '',
+            recipients: message.data
+                ? pick(message.data, ['ToList', 'CCList', 'BCCList'])
+                : { BCCList: [], CCList: [], ToList: [] },
+        })
+    );
+
+    const composerID = Object.keys(store.getState().composers.composers)[0];
+
+    return { message, composerID };
 };
 
-export const renderComposer = async (localID: string, useMinimalCache = true) => {
-    const renderResult = await render(<Composer {...props} messageID={localID} />, useMinimalCache);
+export const renderComposer = async (composerID: string, useMinimalCache = true) => {
+    const renderResult = await render(<Composer {...props} composerID={composerID} />, useMinimalCache);
 
     // onClose will most likely unmount the component, it has to continue working
     props.onClose.mockImplementation(renderResult.unmount);
@@ -106,13 +123,13 @@ export const clickSend = async (renderResult: RenderResult) => {
     return sendRequest;
 };
 
-export const send = async (message: MessageState, useMinimalCache = true) => {
+export const send = async (composerID: string, useMinimalCache = true) => {
     try {
         if (!apiKeys.has(toAddress)) {
             addApiKeys(false, toAddress, []);
         }
 
-        const renderResult = await renderComposer(message.localID, useMinimalCache);
+        const renderResult = await renderComposer(composerID, useMinimalCache);
 
         return await clickSend(renderResult);
     } catch (error: any) {

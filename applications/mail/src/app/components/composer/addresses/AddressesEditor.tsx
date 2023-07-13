@@ -8,16 +8,16 @@ import { Recipient } from '@proton/shared/lib/interfaces/Address';
 import clsx from '@proton/utils/clsx';
 
 import { MessageSendInfo } from '../../../hooks/useSendInfo';
-import { MessageState } from '../../../logic/messages/messagesTypes';
+import { selectComposer } from '../../../logic/composers/composerSelectors';
+import { composerActions } from '../../../logic/composers/composersSlice';
+import { useAppDispatch, useAppSelector } from '../../../logic/store';
 import { RecipientType } from '../../../models/address';
-import { MessageChange } from '../Composer';
 import AddressesCCButton from './AddressesCCButton';
 import AddressesInput from './AddressesInput';
 
 interface Props {
-    message: MessageState;
+    composerID: string;
     messageSendInfo: MessageSendInfo;
-    onChange: MessageChange;
     ccExpanded: boolean;
     bccExpanded: boolean;
     toggleExpanded: (type: RecipientType) => (e: MouseEvent<HTMLButtonElement>) => void;
@@ -30,9 +30,8 @@ interface Props {
 }
 
 const AddressesEditor = ({
-    message,
+    composerID,
     messageSendInfo,
-    onChange,
     inputFocusRefs,
     handleContactModal,
     ccExpanded,
@@ -40,14 +39,16 @@ const AddressesEditor = ({
     toggleExpanded,
 }: Props) => {
     const [uid] = useState(generateUID('composer'));
+    const composer = useAppSelector((store) => selectComposer(store, composerID));
     const expanded = ccExpanded || bccExpanded;
+    const dispatch = useAppDispatch();
 
     const toListAnchorRef = useRef<HTMLDivElement>(null);
     const ccListAnchorRef = useRef<HTMLDivElement>(null);
     const bccListAnchorRef = useRef<HTMLDivElement>(null);
 
-    const handleChange = (type: RecipientType) => (value: Partial<Recipient>[]) => {
-        onChange({ data: { [type]: value } });
+    const handleChange = (type: RecipientType) => (recipients: Recipient[]) => {
+        dispatch(composerActions.setRecipients({ ID: composerID, type, recipients }));
     };
 
     return (
@@ -65,7 +66,7 @@ const AddressesEditor = ({
                 >
                     <AddressesInput
                         id={`to-${uid}`}
-                        recipients={message.data?.ToList}
+                        recipients={composer.recipients.ToList}
                         messageSendInfo={messageSendInfo}
                         onChange={handleChange('ToList')}
                         inputFocusRef={inputFocusRefs.to}
@@ -126,7 +127,7 @@ const AddressesEditor = ({
                             </Label>
                             <AddressesInput
                                 id={`cc-${uid}`}
-                                recipients={message.data?.CCList}
+                                recipients={composer.recipients.CCList}
                                 messageSendInfo={messageSendInfo}
                                 onChange={handleChange('CCList')}
                                 placeholder={c('Placeholder').t`Email address`}
@@ -155,7 +156,7 @@ const AddressesEditor = ({
                             </Label>
                             <AddressesInput
                                 id={`bcc-${uid}`}
-                                recipients={message.data?.BCCList}
+                                recipients={composer.recipients.BCCList}
                                 messageSendInfo={messageSendInfo}
                                 onChange={handleChange('BCCList')}
                                 placeholder={c('Placeholder').t`Email address`}

@@ -22,6 +22,7 @@ import {
     decryptSessionKey,
     minimalCache,
 } from '../../../helpers/test/helper';
+import { store } from '../../../logic/store';
 import { ID, clickSend, prepareMessage, renderComposer, send } from './Composer.test.helpers';
 
 loudRejection();
@@ -66,7 +67,7 @@ describe('Composer reply and forward', () => {
     });
 
     it('send content with blockquote collapsed', async () => {
-        const message = prepareMessage({
+        const { composerID } = prepareMessage({
             messageDocument: { document: createDocument(content) },
             data: { MIMEType: MIME_TYPES.DEFAULT },
         });
@@ -79,7 +80,7 @@ describe('Composer reply and forward', () => {
         const updateSpy = jest.fn(() => Promise.reject(new Error('Should not update here')));
         addApiMock(`mail/v4/messages/${ID}`, updateSpy, 'put');
 
-        const sendRequest = await send(message, false);
+        const sendRequest = await send(composerID, false);
 
         const packages = sendRequest.data.Packages;
         const pack = packages['text/html'];
@@ -92,7 +93,7 @@ describe('Composer reply and forward', () => {
     });
 
     it('send content with blockquote expanded', async () => {
-        const message = prepareMessage({
+        prepareMessage({
             messageDocument: { document: createDocument(content) },
             data: { MIMEType: MIME_TYPES.DEFAULT },
         });
@@ -101,7 +102,9 @@ describe('Composer reply and forward', () => {
         addToCache('MailSettings', { DraftMIMEType: MIME_TYPES.DEFAULT } as MailSettings);
         addApiKeys(true, toAddress, [toKeys]);
 
-        const renderResult = await renderComposer(message.localID, false);
+        const composerID = Object.keys(store.getState().composers.composers)[0];
+
+        const renderResult = await renderComposer(composerID, false);
 
         const iframe = (await renderResult.findByTestId('rooster-iframe')) as HTMLIFrameElement;
         const button = iframe.contentWindow?.document.getElementById('ellipsis') as HTMLButtonElement;
