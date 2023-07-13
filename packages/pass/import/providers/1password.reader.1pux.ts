@@ -2,6 +2,7 @@ import jszip from 'jszip';
 import { c } from 'ttag';
 
 import type { ItemExtraField, ItemImportIntent, Maybe, Unpack } from '@proton/pass/types';
+import { extractFirst } from '@proton/pass/utils/array';
 import { truthy } from '@proton/pass/utils/fp';
 import { logger } from '@proton/pass/utils/logger';
 import { uniqueId } from '@proton/pass/utils/string';
@@ -147,11 +148,9 @@ const extractLoginFieldFromLoginItem = (
 const processLoginItem = (
     item: Extract<OnePassItem, { categoryUuid: OnePassCategory.LOGIN }>
 ): ItemImportIntent<'login'> => {
-    const [totp, extraFields] = extractExtraFields(item).reduce<[ItemExtraField<'totp'> | null, ItemExtraField[]]>(
-        (acc, extraField) => {
-            return !acc[0] && extraField.type === 'totp' ? [extraField, acc[1]] : [acc[0], [...acc[1], extraField]];
-        },
-        [null, []]
+    const [totp, extraFields] = extractFirst<ItemExtraField<'totp'>, ItemExtraField>(
+        extractExtraFields(item),
+        (extraField: ItemExtraField) => extraField.type === 'totp'
     );
 
     return importLoginItem({
