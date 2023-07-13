@@ -2,16 +2,18 @@ import { ReactNode, memo, useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { useBeforeUnload, useDrawerWidth, useHandler } from '@proton/components';
+import { useBeforeUnload, useDrawerWidth } from '@proton/components';
+import { pick } from '@proton/shared/lib/helpers/object';
 
 import ComposerFrame from '../components/composer/ComposerFrame';
 import { MAX_ACTIVE_COMPOSER_DESKTOP, MAX_ACTIVE_COMPOSER_MOBILE } from '../helpers/composerPositioning';
 import { useCompose } from '../hooks/composer/useCompose';
+import { EditorTypes } from '../hooks/composer/useComposerContent';
 import { useGetMessage } from '../hooks/message/useMessage';
 import { useClickMailContent } from '../hooks/useClickMailContent';
-import { selectComposerMessageIds, selectComposersCount } from '../logic/composers/composerSelectors';
+import { selectOpenedComposersIds } from '../logic/composers/composerSelectors';
 import { composerActions } from '../logic/composers/composersSlice';
-import { useAppDispatch, useAppSelector, useAppStore } from '../logic/store';
+import { useAppDispatch, useAppSelector } from '../logic/store';
 import { Breakpoints } from '../models/utils';
 import { ComposeProvider } from './ComposeProvider';
 
@@ -22,19 +24,78 @@ interface Props {
     children: ReactNode;
 }
 
+const useOpenComposer = () => {
+    const dispatch = useAppDispatch();
+    const getMessage = useGetMessage();
+
+    return (messageID: string) => {
+        const message = getMessage(messageID);
+
+        if (!message?.data?.Sender.Address) {
+            throw new Error('No address');
+        }
+
+        dispatch(
+            composerActions.addComposer({
+                type: EditorTypes.composer,
+                messageID,
+                senderEmailAddress: message.data.Sender.Address,
+                recipients: pick(message.data, ['ToList', 'CCList', 'BCCList']),
+            })
+        );
+    };
+};
+
 const ComposerContainer = ({ breakpoints, children }: Props) => {
     const dispatch = useAppDispatch();
-    const composersCount = useAppSelector(selectComposersCount);
-    const messageIDs = useAppSelector(selectComposerMessageIds);
-    const [focusedMessageID, setFocusedMessageID] = useState<string>();
-    const [composerIndex, setComposerIndex] = useState(0);
-    const store = useAppStore();
-    const getMessage = useGetMessage();
-    useClickMailContent(() => setFocusedMessageID(undefined));
+    const composerIDs = useAppSelector(selectOpenedComposersIds);
+    const [focusedComposerID, setFocusedComposerID] = useState<string>();
     const drawerOffset = useDrawerWidth();
-
     const returnFocusToElement = useRef<HTMLElement | null>(null);
-    const isComposerOpened = composersCount > 0;
+    const isComposerOpened = composerIDs.length > 0;
+
+    const openComposerFunc = useOpenComposer();
+
+    useClickMailContent(() => setFocusedComposerID(undefined));
+
+    const maxActiveComposer = breakpoints.isNarrow ? MAX_ACTIVE_COMPOSER_MOBILE : MAX_ACTIVE_COMPOSER_DESKTOP;
+
+    const handleClose = (composerId: string) => () => {
+        dispatch(composerActions.removeComposer({ ID: composerId }));
+        const remainingComposerIDs = composerIDs.filter((id) => id !== composerId);
+
+        if (remainingComposerIDs.length) {
+            setFocusedComposerID(remainingComposerIDs[0]);
+        }
+    };
+
+    const openComposer = (messageID: string, returnFocusTo?: HTMLElement | null) => {
+        openComposerFunc(messageID);
+
+        if (returnFocusTo) {
+            returnFocusToElement.current = returnFocusTo;
+        }
+    };
+
+    const { handleCompose, storageCapacityModal, sendingFromDefaultAddressModal, sendingOriginalMessageModal } =
+        useCompose({
+            openedComposerIDs: composerIDs,
+            openComposer,
+            focusComposer: setFocusedComposerID,
+            maxActiveComposer,
+        });
+
+    const handleFocus = (composerID: string) => () => {
+        setFocusedComposerID(composerID);
+    };
+
+    // After closing all composers, focus goes back to previously focused element
+    useEffect(() => {
+        if (composerIDs.length === 0 && returnFocusToElement.current) {
+            returnFocusToElement.current.focus();
+            returnFocusToElement.current = null;
+        }
+    }, [composerIDs]);
 
     useBeforeUnload(
         isComposerOpened
@@ -42,68 +103,20 @@ const ComposerContainer = ({ breakpoints, children }: Props) => {
             : ''
     );
 
-    const maxActiveComposer = breakpoints.isNarrow ? MAX_ACTIVE_COMPOSER_MOBILE : MAX_ACTIVE_COMPOSER_DESKTOP;
-
-    const handleClose = (messageID: string) => () => {
-        dispatch(composerActions.removeComposer({ messageID }));
-        const newMessageIDs = messageIDs.filter((id) => id !== messageID);
-
-        if (newMessageIDs.length) {
-            setFocusedMessageID(newMessageIDs[0]);
-        }
-    };
-
-    const messageDeletionListener = useHandler(() => {
-        messageIDs.forEach((messageID) => {
-            const message = getMessage(messageID);
-            if (!message) {
-                handleClose(messageID)();
-            }
-        });
-    });
-
-    // Automatically close draft which has been deleted (could happen through the message list)
-    // Doesnt use a useSelector to avoir render on a child component update
-    useEffect(() => store.subscribe(messageDeletionListener), [store]);
-
-    // After closing all composers, focus goes back to previously focused element
-    useEffect(() => {
-        if (messageIDs.length === 0 && returnFocusToElement.current) {
-            returnFocusToElement.current.focus();
-            returnFocusToElement.current = null;
-        }
-    }, [messageIDs]);
-
-    const openComposer = (messageID: string, returnFocusTo?: HTMLElement | null) => {
-        dispatch(composerActions.addComposer({ messageID }));
-        setComposerIndex(composerIndex + 1);
-        if (returnFocusTo) {
-            returnFocusToElement.current = returnFocusTo;
-        }
-    };
-
-    const { handleCompose, storageCapacityModal, sendingFromDefaultAddressModal, sendingOriginalMessageModal } =
-        useCompose(messageIDs, openComposer, setFocusedMessageID, maxActiveComposer);
-
-    const handleFocus = (messageID: string) => () => {
-        setFocusedMessageID(messageID);
-    };
-
     return (
         <ComposeProvider onCompose={handleCompose}>
             {children}
             <div>
-                {messageIDs.map((messageID, i) => (
+                {composerIDs.map((composerID, i) => (
                     <ComposerFrame
-                        key={messageID}
-                        messageID={messageID}
+                        key={composerID}
                         index={i}
-                        composerID={composerIndex}
-                        count={messageIDs.length}
-                        focus={messageID === focusedMessageID}
+                        composerID={composerID}
+                        count={composerIDs.length}
+                        focus={composerID === focusedComposerID}
                         breakpoints={breakpoints}
-                        onFocus={handleFocus(messageID)}
-                        onClose={handleClose(messageID)}
+                        onFocus={handleFocus(composerID)}
+                        onClose={handleClose(composerID)}
                         drawerOffset={drawerOffset}
                     />
                 ))}

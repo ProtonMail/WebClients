@@ -25,7 +25,9 @@ import { EditorTypes, useComposerContent } from '../../hooks/composer/useCompose
 import { ComposerInnerModalStates } from '../../hooks/composer/useComposerInnerModals';
 import { useScheduleSend } from '../../hooks/composer/useScheduleSend';
 import { useHasScroll } from '../../hooks/useHasScroll';
+import { selectComposer } from '../../logic/composers/composerSelectors';
 import { MessageState, MessageStateWithData, PartialMessageState } from '../../logic/messages/messagesTypes';
+import { useAppSelector } from '../../logic/store';
 import { Event } from '../../models/event';
 import ComposerContent from './ComposerContent';
 import ComposerMeta from './ComposerMeta';
@@ -48,7 +50,7 @@ export interface ComposerAction {
 }
 
 interface Props {
-    messageID: string;
+    composerID: string;
     composerFrameRef: RefObject<HTMLDivElement>;
     toggleMinimized: () => void;
     toggleMaximized: () => void;
@@ -60,7 +62,7 @@ interface Props {
 
 const Composer = (
     {
-        messageID,
+        composerID,
         composerFrameRef,
         toggleMinimized,
         toggleMaximized,
@@ -71,6 +73,7 @@ const Composer = (
     }: Props,
     ref: Ref<ComposerAction>
 ) => {
+    const { messageID } = useAppSelector((store) => selectComposer(store, composerID));
     const [mailSettings] = useMailSettings();
 
     const bodyRef = useRef<HTMLDivElement>(null);
@@ -145,6 +148,7 @@ const Composer = (
     } = useComposerContent({
         type: EditorTypes.composer,
         messageID,
+        composerID,
         onClose,
         addressesFocusRef,
         isFocused,
@@ -266,6 +270,7 @@ const Composer = (
                     className="composer-body-container flex flex-column flex-nowrap flex-item-fluid max-w100 mt-2"
                 >
                     <ComposerMeta
+                        composerID={composerID}
                         message={modelMessage}
                         messageSendInfo={messageSendInfo}
                         disabled={opening}

@@ -2,7 +2,7 @@ import { fireEvent, getByTestId } from '@testing-library/react';
 import loudRejection from 'loud-rejection';
 
 import { ROOSTER_EDITOR_ID } from '@proton/components/components/editor/constants';
-import { WorkerDecryptionResult } from '@proton/crypto';
+import { WorkerDecryptionResult } from '@proton/crypto/lib';
 import { MIME_TYPES, PGP_SIGN } from '@proton/shared/lib/constants';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 
@@ -57,20 +57,18 @@ describe('Composer sending', () => {
     });
 
     afterAll(async () => {
+        clearAll();
         await releaseCryptoProxy();
     });
 
     beforeEach(() => {
-        addKeysToAddressKeysCache(AddressID, fromKeys);
-    });
-
-    afterEach(() => {
         clearAll();
+        addKeysToAddressKeysCache(AddressID, fromKeys);
     });
 
     describe('send plaintext', () => {
         it('text/plain clear', async () => {
-            const message = prepareMessage({
+            const { composerID, message } = prepareMessage({
                 localID: ID,
                 messageDocument: { plainText: 'test' },
                 data: { MIMEType: MIME_TYPES.PLAINTEXT },
@@ -78,7 +76,7 @@ describe('Composer sending', () => {
 
             addKeysToAddressKeysCache(message.data.AddressID, fromKeys);
 
-            const sendRequest = await send(message);
+            const sendRequest = await send(composerID);
 
             expect(sendRequest.data.ExpirationTime).toBeUndefined();
             expect(sendRequest.data.ExpiresIn).toBeUndefined();
@@ -96,7 +94,7 @@ describe('Composer sending', () => {
         });
 
         it('text/plain self', async () => {
-            const message = prepareMessage({
+            const { composerID, message } = prepareMessage({
                 messageDocument: { plainText: 'test' },
                 data: { MIMEType: MIME_TYPES.PLAINTEXT, ToList: [{ Name: '', Address: fromAddress }] },
             });
@@ -118,7 +116,7 @@ describe('Composer sending', () => {
                 },
             ]);
 
-            const sendRequest = await send(message, false);
+            const sendRequest = await send(composerID, false);
 
             expect(sendRequest.data.ExpirationTime).toBeUndefined();
             expect(sendRequest.data.ExpiresIn).toBeUndefined();
@@ -137,14 +135,14 @@ describe('Composer sending', () => {
         });
 
         it('text/plain pgp internal', async () => {
-            const message = prepareMessage({
+            const { composerID, message } = prepareMessage({
                 messageDocument: { plainText: 'test' },
                 data: { MIMEType: MIME_TYPES.PLAINTEXT },
             });
 
             addApiKeys(true, toAddress, [toKeys]);
 
-            const sendRequest = await send(message);
+            const sendRequest = await send(composerID);
 
             expect(sendRequest.data.ExpirationTime).toBeUndefined();
             expect(sendRequest.data.ExpiresIn).toBeUndefined();
@@ -163,14 +161,14 @@ describe('Composer sending', () => {
         });
 
         it('multipart/mixed pgp external', async () => {
-            const message = prepareMessage({
+            const { composerID, message } = prepareMessage({
                 messageDocument: { plainText: 'test' },
                 data: { MIMEType: MIME_TYPES.PLAINTEXT },
             });
 
             addApiKeys(false, toAddress, [toKeys]);
 
-            const sendRequest = await send(message);
+            const sendRequest = await send(composerID);
 
             expect(sendRequest.data.ExpirationTime).toBeUndefined();
             expect(sendRequest.data.ExpiresIn).toBeUndefined();
@@ -192,7 +190,7 @@ describe('Composer sending', () => {
         it('downgrade to plaintext due to contact setting', async () => {
             const content = 'test';
 
-            const message = prepareMessage({
+            const { composerID } = prepareMessage({
                 messageDocument: { document: createDocument(content) },
                 data: { MIMEType: MIME_TYPES.DEFAULT },
             });
@@ -202,7 +200,7 @@ describe('Composer sending', () => {
             addKeysToUserKeysCache(fromKeys);
             addApiContact({ contactID: 'ContactID', email: toAddress, mimeType: MIME_TYPES.PLAINTEXT }, fromKeys);
 
-            const sendRequest = await send(message, false);
+            const sendRequest = await send(composerID, false);
 
             expect(sendRequest.data.ExpirationTime).toBeUndefined();
             expect(sendRequest.data.ExpiresIn).toBeUndefined();
@@ -222,7 +220,7 @@ describe('Composer sending', () => {
         it.skip('downgrade to plaintext and sign', async () => {
             const content = 'test';
 
-            const message = prepareMessage({
+            const { composerID } = prepareMessage({
                 messageDocument: { document: createDocument(content) },
                 data: { MIMEType: MIME_TYPES.DEFAULT },
             });
@@ -231,7 +229,7 @@ describe('Composer sending', () => {
             addToCache('MailSettings', { DraftMIMEType: MIME_TYPES.DEFAULT, Sign: PGP_SIGN } as MailSettings);
             addApiContact({ contactID: 'ContactID', email: toAddress, mimeType: MIME_TYPES.PLAINTEXT }, fromKeys);
 
-            const sendRequest = await send(message, false);
+            const sendRequest = await send(composerID, false);
 
             expect(sendRequest.data.ExpirationTime).toBeUndefined();
             expect(sendRequest.data.ExpiresIn).toBeUndefined();
@@ -253,7 +251,7 @@ describe('Composer sending', () => {
         it('text/html clear', async () => {
             const content = 'test';
 
-            const message = prepareMessage({
+            const { composerID } = prepareMessage({
                 messageDocument: { document: createDocument(content) },
                 data: { MIMEType: MIME_TYPES.DEFAULT },
             });
@@ -261,7 +259,7 @@ describe('Composer sending', () => {
             minimalCache();
             addToCache('MailSettings', { DraftMIMEType: MIME_TYPES.DEFAULT } as MailSettings);
 
-            const sendRequest = await send(message, false);
+            const sendRequest = await send(composerID, false);
 
             expect(sendRequest.data.ExpirationTime).toBeUndefined();
             expect(sendRequest.data.ExpiresIn).toBeUndefined();
@@ -281,7 +279,7 @@ describe('Composer sending', () => {
         it('text/html pgp internal', async () => {
             const content = 'test';
 
-            const message = prepareMessage({
+            const { composerID } = prepareMessage({
                 messageDocument: { document: createDocument(content) },
                 data: { MIMEType: MIME_TYPES.DEFAULT },
             });
@@ -290,7 +288,7 @@ describe('Composer sending', () => {
             addToCache('MailSettings', { DraftMIMEType: MIME_TYPES.DEFAULT } as MailSettings);
             addApiKeys(true, toAddress, [toKeys]);
 
-            const sendRequest = await send(message, false);
+            const sendRequest = await send(composerID, false);
 
             expect(sendRequest.data.ExpirationTime).toBeUndefined();
             expect(sendRequest.data.ExpiresIn).toBeUndefined();
@@ -311,7 +309,7 @@ describe('Composer sending', () => {
         it('no downgrade even for default plaintext', async () => {
             const content = 'test';
 
-            const message = prepareMessage({
+            const { composerID } = prepareMessage({
                 messageDocument: { document: createDocument(content) },
                 data: { MIMEType: MIME_TYPES.DEFAULT },
             });
@@ -320,7 +318,7 @@ describe('Composer sending', () => {
             addToCache('MailSettings', { DraftMIMEType: MIME_TYPES.PLAINTEXT } as MailSettings);
             addApiKeys(true, toAddress, [toKeys]);
 
-            const sendRequest = await send(message, false);
+            const sendRequest = await send(composerID, false);
 
             expect(sendRequest.data.ExpirationTime).toBeUndefined();
             expect(sendRequest.data.ExpiresIn).toBeUndefined();
@@ -343,13 +341,16 @@ describe('Composer sending', () => {
             const document = window.document.createElement('div');
             document.innerHTML = content;
 
-            const message = prepareMessage({ messageDocument: { document }, data: { MIMEType: MIME_TYPES.DEFAULT } });
+            const { composerID, message } = prepareMessage({
+                messageDocument: { document },
+                data: { MIMEType: MIME_TYPES.DEFAULT },
+            });
 
             minimalCache();
             addToCache('MailSettings', { DraftMIMEType: MIME_TYPES.DEFAULT } as MailSettings);
             addApiKeys(false, toAddress, [toKeys]);
 
-            const sendRequest = await send(message, false);
+            const sendRequest = await send(composerID, false);
 
             expect(sendRequest.data.ExpirationTime).toBeUndefined();
             expect(sendRequest.data.ExpiresIn).toBeUndefined();
@@ -380,7 +381,7 @@ describe('Composer sending', () => {
                 },
                 fromKeys.publicKeys
             );
-            const message = prepareMessage({
+            const { composerID } = prepareMessage({
                 messageDocument: { document: createDocument(content) },
                 data: { MIMEType: MIME_TYPES.DEFAULT, Attachments: [attachment] },
             });
@@ -389,7 +390,7 @@ describe('Composer sending', () => {
             addToCache('MailSettings', { DraftMIMEType: MIME_TYPES.DEFAULT } as MailSettings);
             addApiKeys(true, toAddress, [toKeys]);
 
-            const sendRequest = await send(message, false);
+            const sendRequest = await send(composerID, false);
 
             expect(sendRequest.data.ExpirationTime).toBeUndefined();
             expect(sendRequest.data.ExpiresIn).toBeUndefined();
@@ -415,9 +416,12 @@ describe('Composer sending', () => {
                 },
                 fromKeys.publicKeys
             );
-            const message = prepareMessage({
+            const { message, composerID } = prepareMessage({
                 messageDocument: { document: createDocument(content) },
-                data: { MIMEType: MIME_TYPES.DEFAULT, Attachments: [attachment] },
+                data: {
+                    MIMEType: MIME_TYPES.DEFAULT,
+                    Attachments: [attachment],
+                },
             });
 
             addApiKeys(false, toAddress, [toKeys]);
@@ -428,7 +432,7 @@ describe('Composer sending', () => {
                 })
             );
 
-            const sendRequest = await send(message);
+            const sendRequest = await send(composerID);
 
             expect(sendRequest.data.ExpirationTime).toBeUndefined();
             expect(sendRequest.data.ExpiresIn).toBeUndefined();
@@ -446,6 +450,7 @@ describe('Composer sending', () => {
             expect(decryptResult.data).toBe(content);
             expect(decryptResult.mimeType).toBe(message.data.MIMEType);
             expect(decryptResult.attachments.length).toBe(1);
+
             expect(decryptResult.attachments[0].fileName).toBe(attachment.Name);
             expect(decryptResult.attachments[0].contentType).toBe(attachment.MIMEType);
         });
@@ -469,7 +474,7 @@ describe('Composer sending', () => {
             const document = window.document.createElement('div');
             document.innerHTML = content;
 
-            const message = prepareMessage({
+            const { composerID } = prepareMessage({
                 messageDocument: { document },
                 messageImages,
                 data: { MIMEType: MIME_TYPES.DEFAULT, Attachments: [attachment] },
@@ -479,7 +484,7 @@ describe('Composer sending', () => {
             addToCache('MailSettings', { DraftMIMEType: MIME_TYPES.DEFAULT } as MailSettings);
             addApiKeys(true, toAddress, [toKeys]);
 
-            const sendRequest = await send(message, false);
+            const sendRequest = await send(composerID, false);
 
             expect(sendRequest.data.ExpirationTime).toBeUndefined();
             expect(sendRequest.data.ExpiresIn).toBeUndefined();
@@ -499,7 +504,7 @@ describe('Composer sending', () => {
     });
 
     it('should not encrypt message with multiple keys', async () => {
-        const message = prepareMessage({
+        const { message, composerID } = prepareMessage({
             messageDocument: { plainText: 'test' },
             data: { MIMEType: MIME_TYPES.PLAINTEXT },
         });
@@ -507,7 +512,7 @@ describe('Composer sending', () => {
         addKeysToAddressKeysCache(message.data.AddressID, secondFromKeys);
         addApiKeys(true, toAddress, [toKeys]);
 
-        const sendRequest = await send(message);
+        const sendRequest = await send(composerID);
 
         expect(sendRequest.data.ExpirationTime).toBeUndefined();
         expect(sendRequest.data.ExpiresIn).toBeUndefined();
@@ -539,7 +544,7 @@ describe('Composer sending', () => {
         const content = 'test';
         const editorContent = 'editor-test';
 
-        const message = prepareMessage({
+        const { composerID } = prepareMessage({
             messageDocument: { document: createDocument(content) },
             data: { MIMEType: MIME_TYPES.DEFAULT },
         });
@@ -548,7 +553,7 @@ describe('Composer sending', () => {
         addToCache('MailSettings', { DraftMIMEType: MIME_TYPES.DEFAULT } as MailSettings);
         addApiKeys(false, toAddress, []);
 
-        const renderResult = await renderComposer(message.localID, false);
+        const renderResult = await renderComposer(composerID, false);
 
         triggerEditorInput(renderResult.container, editorContent);
         addApiMock(`mail/v4/messages/${ID}`, ({ data: { Message } }) => ({ Message }), 'put');

@@ -25,7 +25,7 @@ import { MESSAGE_ACTIONS } from '../../constants';
 import { isDirtyAddress } from '../../helpers/addresses';
 import { openDraft } from '../../logic/messages/draft/messagesDraftActions';
 import { MessageState, PartialMessageState } from '../../logic/messages/messagesTypes';
-import { useAppDispatch } from '../../logic/store';
+import { store, useAppDispatch } from '../../logic/store';
 import { useGetLocalID, useGetMessage } from '../message/useMessage';
 import { useDraft } from '../useDraft';
 
@@ -66,12 +66,14 @@ export interface OnCompose {
     (args: ComposeArgs): void;
 }
 
-export const useCompose = (
-    openComposers: string[],
-    openComposer: (messageID: string, returnFocusTo?: HTMLElement) => void,
-    focusComposer: (messageID: string) => void,
-    maxActiveComposer: number
-) => {
+interface UseComposeProps {
+    openedComposerIDs: string[];
+    openComposer: (messageID: string, returnFocusTo?: HTMLElement) => void;
+    focusComposer: (messageID: string) => void;
+    maxActiveComposer: number;
+}
+
+export const useCompose = ({ openedComposerIDs, openComposer, focusComposer, maxActiveComposer }: UseComposeProps) => {
     // Avoid useUser for performance issues
     const getUser = useGetUser();
     const [addresses = []] = useAddresses();
@@ -136,7 +138,7 @@ export const useCompose = (
             return;
         }
 
-        if (openComposers.length >= maxActiveComposer) {
+        if (openedComposerIDs.length >= maxActiveComposer) {
             createNotification({
                 type: 'error',
                 // translator: maxActiveComposer should never be 1, is fixed to 3 today but can potentially vary from 2 to 5(?) in the future.
@@ -155,10 +157,12 @@ export const useCompose = (
             const { existingDraft, fromUndo, returnFocusTo } = compose;
             const localID = getLocalID(existingDraft.localID);
 
-            const existingMessageID = openComposers.find((id) => id === localID);
+            let composer = Object.values(store.getState().composers.composers).find(
+                ({ messageID }) => messageID === localID
+            );
 
-            if (existingMessageID) {
-                focusComposer(existingMessageID);
+            if (composer) {
+                focusComposer(composer.ID);
                 return;
             }
 
@@ -171,7 +175,15 @@ export const useCompose = (
             dispatch(openDraft({ ID: localID, fromUndo }));
 
             openComposer(localID, returnFocusTo);
-            focusComposer(localID);
+
+            composer = Object.values(store.getState().composers.composers).find(
+                ({ messageID }) => messageID === localID
+            );
+
+            if (composer) {
+                focusComposer(composer.ID);
+            }
+
             return;
         }
 
@@ -193,14 +205,23 @@ export const useCompose = (
             const newMessageID = await createDraft(action, referenceMessage);
 
             openComposer(newMessageID, returnFocusTo);
-            focusComposer(newMessageID);
+            const composer = Object.values(store.getState().composers.composers).find(
+                ({ messageID }) => messageID === newMessageID
+            );
+            if (composer) {
+                focusComposer(composer?.ID);
+            }
         }
 
         if (compose.type === ComposeTypes.fromMessage) {
             const { modelMessage, returnFocusTo } = compose;
-
             openComposer(modelMessage.localID, returnFocusTo);
-            focusComposer(modelMessage.localID);
+            const composer = Object.values(store.getState().composers.composers).find(
+                ({ messageID }) => messageID === modelMessage.localID
+            );
+            if (composer) {
+                focusComposer(composer?.ID);
+            }
         }
     });
 

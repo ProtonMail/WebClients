@@ -70,14 +70,14 @@ describe('Composer verify sender', () => {
     });
 
     afterAll(async () => {
+        clearAll();
         await releaseCryptoProxy();
     });
 
     beforeEach(() => {
+        clearAll();
         addKeysToAddressKeysCache(addressID1, fromKeys);
     });
-
-    afterEach(clearAll);
 
     const setup = (sender: Recipient) => {
         minimalCache();
@@ -87,7 +87,7 @@ describe('Composer verify sender', () => {
         addApiKeys(false, toAddress, []);
         addApiKeys(false, sender.Address, []);
 
-        prepareMessage({
+        const { composerID } = prepareMessage({
             localID: ID,
             data: {
                 ID: messageID,
@@ -98,13 +98,15 @@ describe('Composer verify sender', () => {
             draftFlags: { isSentDraft: false, openDraftFromUndo: false },
             messageDocument: { plainText: '' },
         });
+
+        return composerID;
     };
 
     it('should display the sender address if the address is valid', async () => {
         const sender = { Name: name1, Address: address1 } as Recipient;
-        setup(sender);
+        const composerID = setup(sender);
 
-        const { findByTestId } = await render(<Composer {...props} />, false);
+        const { findByTestId } = await render(<Composer {...props} composerID={composerID} />, false);
 
         const fromField = await findByTestId('composer:from');
         getByTextDefault(fromField, address1);
@@ -114,9 +116,12 @@ describe('Composer verify sender', () => {
         addApiMock(`mail/v4/messages/${messageID}`, () => ({}));
 
         const sender = { Name: name2, Address: address2 } as Recipient;
-        setup(sender);
+        const composerID = setup(sender);
 
-        const { findByTestId, getByText, container } = await render(<Composer {...props} />, false);
+        const { findByTestId, getByText, container } = await render(
+            <Composer {...props} composerID={composerID} />,
+            false
+        );
 
         await saveNow(container);
 
@@ -132,9 +137,12 @@ describe('Composer verify sender', () => {
         addApiMock(`mail/v4/messages/${messageID}`, () => ({}));
 
         const sender = { Name: 'Address 3', Address: 'address3@protonmail.com' } as Recipient;
-        setup(sender);
+        const composerID = setup(sender);
 
-        const { findByTestId, container, getByText } = await render(<Composer {...props} />, false);
+        const { findByTestId, container, getByText } = await render(
+            <Composer {...props} composerID={composerID} />,
+            false
+        );
 
         await saveNow(container);
 

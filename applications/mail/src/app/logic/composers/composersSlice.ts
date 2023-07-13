@@ -1,8 +1,11 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 
 import generateUID from '@proton/atoms/generateUID';
+import { Recipient } from '@proton/shared/lib/interfaces';
 
-import { Composer, ComposersState } from './composerTypes';
+import { RecipientType } from '../../models/address';
+import { globalReset } from '../actions';
+import { Composer, ComposerID, ComposersState } from './composerTypes';
 
 const initialState: ComposersState = {
     composers: {},
@@ -12,22 +15,40 @@ const composersSlice = createSlice({
     name: 'composers',
     initialState,
     reducers: {
-        addComposer(state, action: PayloadAction<{ messageID: Composer['messageID'] }>) {
+        addComposer(
+            state,
+            action: PayloadAction<Pick<Composer, 'messageID' | 'type' | 'senderEmailAddress' | 'recipients'>>
+        ) {
             const composerID = generateUID('composer-');
+            const { messageID, type, senderEmailAddress, recipients } = action.payload;
+
             state.composers[composerID] = {
                 ID: composerID,
-                messageID: action.payload.messageID,
+                messageID,
+                type,
+                senderEmailAddress,
+                changesCount: 0,
+                recipients,
             };
         },
-        removeComposer(state, action: PayloadAction<{ messageID: Composer['messageID'] }>) {
-            const composerID = Object.values(state.composers).find(
-                (composer) => composer.messageID === action.payload.messageID
-            )?.ID;
-
-            if (composerID) {
-                delete state.composers[composerID];
-            }
+        removeComposer(state, action: PayloadAction<{ ID: ComposerID }>) {
+            delete state.composers[action.payload.ID];
         },
+        setSender(state, action: PayloadAction<{ ID: ComposerID; emailAddress: string }>) {
+            const { ID, emailAddress } = action.payload;
+            state.composers[ID].senderEmailAddress = emailAddress;
+            state.composers[ID].changesCount += 1;
+        },
+        setRecipients(state, action: PayloadAction<{ ID: ComposerID; type: RecipientType; recipients: Recipient[] }>) {
+            const { ID, type, recipients } = action.payload;
+            state.composers[ID].recipients[type] = recipients;
+            state.composers[ID].changesCount += 1;
+        },
+    },
+    extraReducers: (builder) => {
+        builder.addCase(globalReset, (state) => {
+            Object.keys(state.composers).forEach((key) => delete state.composers[key]);
+        });
     },
 });
 
