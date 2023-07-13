@@ -930,7 +930,7 @@
         "Käytä toista korttia"
       ],
       "Use a different payment method": [
-        "Käytä toista maksutapaa"
+        "Käytä eri maksutapaa"
       ],
       "Use authentication code": [
         "Käytä todennuskoodia"
@@ -1164,7 +1164,7 @@
     },
     "Autoresponse": {
       "I'm out of the office with limited access to my email.": [
-        "En ole töissä ja pääsyni sähköpostiini on rajallinen."
+        "En ole töissä, enkä tarkasta sähköpostiani aktiivisesti."
       ]
     },
     "Badge for domain": {
@@ -1521,7 +1521,7 @@
     },
     "Collapsible tooltip": {
       "Collapse": [
-        "Supista"
+        "Piennennä"
       ],
       "Expand": [
         "Laajenna"
@@ -2670,7 +2670,7 @@
         "${ interval } päivän välein, ${ untilString }"
       ],
       "until ${ dateString }": [
-        "${ dateString } asti"
+        "päättyen ${ dateString }"
       ]
     },
     "Day": {
@@ -2985,11 +2985,6 @@
         "Lopetit seuraavat sähköpostit: ${ categoriesJsx }."
       ]
     },
-    "Email Unsubscribe Categories": {
-      "${ allCategoriesExceptTheLastOne } and ${ lastCategory }": [
-        "${ allCategoriesExceptTheLastOne } ja ${ lastCategory }"
-      ]
-    },
     "Enabled 2FA": {
       "2FA": [
         "2FA"
@@ -3027,7 +3022,7 @@
         "Todennusvirhe."
       ],
       "Automatic replies is a paid feature. Please upgrade to a paid account to use this feature.": [
-        "Automaattivastaus on maksullinen ominaisuus. Päivitä maksulliseen tilaukseen käyttääksesi ominaisuutta."
+        "Automaattivastaus on maksullinen ominaisuus. Päivitä maksulliseen tiliin käyttääksesi sitä."
       ],
       "Calendar cannot be found": [
         "Kalenteria ei löytynyt"
@@ -3165,7 +3160,7 @@
         "Nimi vaaditaan"
       ],
       "No active sessions": [
-        "Ei aktiivisia istuntoja"
+        "Aktiivisia istuntoja ei ole"
       ],
       "No calendars found to import": [
         "Tuotavia kalentereita ei löytynyt"
@@ -3308,7 +3303,7 @@
         "Osoite on ehkä kirjoitettu väärin"
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or sign in via a computer.": [
-        "Käyttämäsi selain ei salli maksun täydellistä valtuutusta. Käytä toista selainta tai kirjaudu sisään tietokoneella."
+        "Käyttämäsi selain ei mahdollista maksun täydellistä valtuutusta. Käytä eri selainta tai kirjaudu tietokoneella."
       ],
       "The email addresses do not match": [
         "Sähköpostiosoitteet eivät täsmää"
@@ -3350,7 +3345,7 @@
         "Lähetysavain ei kelpaa"
       ],
       "The session has expired. Please sign in again.": [
-        "Istunto on erääntynyt. Kirjaudu sisään uudelleen."
+        "Istunto on päättynyt. Kirjaudu sisään uudelleen."
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Ulkoisella tililläsi on liian monta kansiota. Muokkaa tuontia tai poista joitakin kansioita."
@@ -3654,7 +3649,7 @@
         "Jotain meni pieleen"
       ],
       "Too many child sessions, please clear your cookies and sign back in.": [
-        "Liian monta alaistuntoa. Tyhjennä evästeesi ja kirjaudu sisään uudelleen."
+        "Liian monta ali-istuntoa. Tyhjennä selaimen evästeet ja kirjaudu uudelleen."
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Sivua ei voitu ladata. Päivitä sivu tai tarkista Internet-yhteytesi."
@@ -3662,7 +3657,7 @@
     },
     "Error message, recovery": {
       "Contact ${ BRAND_NAME }": [
-        "Ota yhteyttä ${ BRAND_NAME }"
+        "Ota yhteyttä ${ BRAND_NAME }iin"
       ],
       "Please ${ signIn } to resend a recovery email verification request.": [
         "${ signIn } lähettääksesi palautussähköpostiosoitteen vahvistuspyynnön uudelleen."
@@ -3671,7 +3666,7 @@
         "Kirjaudu sisään"
       ],
       "Sign in to verify": [
-        "Kirjaudu sisään vahvistaaksesi"
+        "Vahvista kirjautumalla"
       ],
       "There was a problem removing your email address.": [
         "Sähköpostiosoitteesi poistossa ilmeni ongelma."
@@ -4336,7 +4331,7 @@
     },
     "FilterSettings": {
       "Add a custom filter to automatically perform certain actions, like labeling or archiving messages.": [
-        "Automatisoi viestien merkinnän tai arkistoinnin kaltaisia toimintoja lisäämällä omia suodattimia."
+        "Automatisoi viestien merkinnän ja arkistoinnin kaltaisia toimintoja lisäämällä omia suodattimia."
       ],
       "Allow:": [
         "Salli:"
@@ -5073,11 +5068,8 @@
         "${ numGroups } yhteystietoryhmä",
         "${ numGroups } yhteystietoryhmää"
       ],
-      "${ PROTON_SENTINEL_NAME } is an account protection program developed at ${ BRAND_NAME } for users who need maximum security.": [
-        "${ PROTON_SENTINEL_NAME } on tilinsuojausohjelma, jonka ${ BRAND_NAME } on kehittänyt käyttäjille, jotka tarvitsevat maksimaalista suojausta."
-      ],
-      "${ PROTON_SENTINEL_NAME } is powered by sophisticated AI systems and teams of specialists working 24/7 to mitigate bad actors and security threats.": [
-        "${ PROTON_SENTINEL_NAME } toimii kehittyneillä tekoälyjärjestelmillä ja asiantuntijatiimeillä, jotka työskentelevät 24/7 torjuakseen haitallisia toimijoita ja tietoturvauhkia"
+      "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
+        "${ PROTON_SENTINEL_NAME } on edistynyt tilisuojausohjelma, joka perustuu kehittyneisiin tekoälyjärjestelmiin ja ympäri vuorokauden työskenteleviin asiantuntijoihin, jotka suojaavat sinua pahantekijöiltä ja tietoturvauhilta."
       ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } kansio löytyi",
@@ -5345,19 +5337,19 @@
         "Automaattinen uusiminen: "
       ],
       "Auto-reply is active each month between the selected start and end time.": [
-        "Automaattivastaus on käytössä joka kuukausi valitun aloitus- ja lopetusajan välillä."
+        "Automaattivastaus on joka kuukausi käytössä aloitusajasta lopetusaikaan."
       ],
       "Auto-reply is active each week between the selected start and end time.": [
-        "Automaattivastaus on käytössä joka viikko valitun aloitus- ja lopetusajan välillä."
+        "Automaattivastaus on joka viikko käytössä aloitusajasta lopetusaikaan."
       ],
       "Auto-reply is active from the start time to the end time.": [
         "Automaattivastaus on käytössä aloitusajasta lopetusaikaan."
       ],
       "Auto-reply is active until you turn it off.": [
-        "Automaattivastaus on käytössä kunnes kytket sen pois päältä."
+        "Automaattivastaus on käytössä kunnes se kytketään pois käytöstä."
       ],
       "Auto-reply is always active on the days of the week you select, between the selected hours.": [
-        "Automaattivastaus on aina käytössä valitseminasi viikonpäivinä, valittujen tuntien välillä."
+        "Automaattivastaus on aina käytössä valittuina viikonpäivinä, valittujen tuntien välillä."
       ],
       "Available on macOS, Windows, and Linux.": [
         "Saatavilla macOS, Windows ja Linux -alustoille."
@@ -5408,7 +5400,7 @@
         "Laskutetaan 30 kuukauden välein"
       ],
       "Billed every month": [
-        "Laskutetaan joka kuukausi"
+        "Laskutetaan kuukausittain"
       ],
       "Billing cycle: ${ text }": [
         "Laskutusjakso: ${ text }"
@@ -5490,7 +5482,7 @@
         "Krediittejä ansaittu"
       ],
       "Custom": [
-        "Oma"
+        "Mukautettu"
       ],
       "Custom daily": [
         "Oma päivittäinen"
@@ -5502,7 +5494,7 @@
         "Oma kuukausittainen"
       ],
       "Custom weekly": [
-        "Oma viikottainen"
+        "Mukautettu viikottainen"
       ],
       "Custom yearly": [
         "Oma vuosittainen"
@@ -5617,7 +5609,7 @@
         "Syötä uusi salasana käyttäjälle ${ userName }."
       ],
       "Enter the code from your authenticator app": [
-        "Syötä todennussovelluksesi näyttämä koodi"
+        "Syötä todennussovelluksen näyttämä koodi"
       ],
       "Enter the code sent to your phone number ${ phone }.": [
         "Syötä numeroon ${ phone } lähetetty koodi."
@@ -6020,9 +6012,6 @@
       "old password": [
         "vanhan salasanasi"
       ],
-      "Once you enable ${ PROTON_SENTINEL_NAME }:": [
-        "Kun olet ottanut ${ PROTON_SENTINEL_NAME } käyttöön:"
-      ],
       "Once you reset your password:": [
         "Kun nollaat salasanasi:"
       ],
@@ -6138,10 +6127,10 @@
         "Valitse lisättävän linkin tyyppi ja täytä kaikki kentät."
       ],
       "Please try again using a different payment method, or contact your bank.": [
-        "Yritä uudelleen toisella maksutavalla tai ota yhteyttä pankkiisi."
+        "Yritä uudelleen eri maksutavalla tai ota yhteyttä pankkiisi."
       ],
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
-        "Yritä uudelleen, käytä toista maksutapaa tai ota yhteyttä PayPaliin saadaksesi apua."
+        "Yritä uudelleen, käytä eri maksutapaa tai ota yhteyttä PayPalin asiakaspalveluun."
       ],
       "Please verify payment at the new tab which was opened.": [
         "Vahvista maksu juuri avatussa, uudessa välilehdessä."
@@ -6166,6 +6155,9 @@
       ],
       "Protected by Swiss privacy laws": [
         "Sveitsin tietosuojalakien suojaama"
+      ],
+      "Public figures, journalists, executives, and others who may be the target of cyber attacks are highly encouraged to enable ${ PROTON_SENTINEL_NAME }.": [
+        "Julkisuuden henkilöitä, toimittajia, johtajia ja muita henkilöitä, jotka voivat joutua verkkohyökkäysten kohteeksi, kehotetaan ottamaan käyttöön ${ PROTON_SENTINEL_NAME }."
       ],
       "Public link invite": [
         "Julkinen linkkikutsu"
@@ -6237,7 +6229,7 @@
         "Tallenna salasanasi turvalliseen paikkaan. Paina kuvaketta vahvistaaksesi, että olet kirjoittanut salasanasi oikein."
       ],
       "Saving your password": [
-        "Tallennetaan salasanaasi"
+        "Salasanaasi tallennetaan"
       ],
       "Scan QR code instead": [
         "Skannaa sen sijaan QR-koodi"
@@ -6299,12 +6291,6 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Koska olet uskollinen käyttäjä, tililläsi on lisäominaisuuksia."
       ],
-      "SMTP allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME }. It is a new feature available to select business users. Please email ${ emailLink } to request access.": [
-        "SMTP-palvelimen avulla ulkoiset palvelut tai laitteet voivat lähettää viestejä ${ MAIL_APP_NAME }in välityksellä. Se on valittujen yrityskäyttäjien käytettävissä oleva uusi ominaisuus. Ano käyttöoikeutta lähettämällä sähköpostia osoitteeseen ${ emailLink }."
-      ],
-      "SMTP allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME }. To use this feature, start by generating a new token.": [
-        "SMTP-palvelimen avulla ulkoiset palvelut tai laitteet voivat lähettää viestejä ${ MAIL_APP_NAME }in välityksellä. Aloita ominaisuuden käyttäminen luomalla uusi tunniste."
-      ],
       "Some keys successfully reactivated": [
         "Joitakin avaimia aktivoitiin uudelleen"
       ],
@@ -6348,9 +6334,6 @@
       "support team": [
         "tukeemme"
       ],
-      "Suspicious events will be challenged by multiple layers of defense that help prevent attackers from hijacking your account.": [
-        "Epäilyttävät tapahtumat kohtaavat useat puolustustasot, jotka auttavat estämään hyökkääjiä kaappaamasta tiliäsi."
-      ],
       "Swiss based": [
         "Sveitsiläinen"
       ],
@@ -6379,7 +6362,7 @@
         "Kalenteri poistetaan tililtäsi."
       ],
       "The email verification link has expired. Please sign in to resend a verification link.": [
-        "Sähköpostivarmistuksen linkki on erääntynyt. Kirjaudu sisään ja lähetä linkki uudestaan."
+        "Sähköpostivahvistuksen linkki on erääntynyt. Kirjaudu sisään ja lähetä uusi linkki."
       ],
       "The following address is available:": [
         "Seuraava osoite on saatavilla:"
@@ -6463,7 +6446,7 @@
         "Tunniste ei ole ikkunan sulkeuduttua käytettävissä, eikä sitä tulisi jakaa kenellekään."
       ],
       "This unsubscribe link has expired. Please open a more recent email from this mailing list.": [
-        "Tilauksen peruutuslinkki on erääntynyt. Avaa uudempi sähköposti tältä sähköpostilistalta."
+        "Tilauksen peruutuslinkki on erääntynyt. Avaa uudempi viesti tältä postituslistalta."
       ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Tämä käyttäjä on tällä hetkellä vastuussa organisaatiosi maksuista. Alentamalla jäsenen, organisaatiosi maksut jäävät sinun vastuullesi."
@@ -6499,7 +6482,7 @@
         "Tämä poistaa tilisi ja kaikki sen tiedot pysyvästi. Et voi aktivoida tiliä uudelleen."
       ],
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
-        "Tämä korvaa väliaikaisen salasanasi. Käytät jatkossa sitä ${ BRAND_NAME } -tilisi käyttöön."
+        "Tämä korvaa väliaikaisen salasanasi ja jatkossa käytät tätä ${ BRAND_NAME }-tilillesi kirjautumiseen."
       ],
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "Tämä kirjaa ulos kaikki aktiiviset istuntosi ja poistaa kaksivaiheisen todennuksen käytöstä."
@@ -6520,7 +6503,7 @@
         "Vahvistaaksesi, syötä sen käyttäjän nimi, jonka haluat poistaa."
       ],
       "to continue to ${ toAppName }": [
-        "jatkaaksesi ${ toAppName }iin"
+        "jatkaaksesi ${ toAppName } -palveluun"
       ],
       "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
         "Palveluidemme jatkuvaa kehitystä varten keräämme ajoittain tietoja niiden kunnollisen toiminnan seuraamiseksi. Näitä tietoja ei jaeta minkään ulkopuolisien tahojen kanssa."
@@ -6540,8 +6523,8 @@
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Tapahtumien tuomiseksi sinun on ensin luotava ${ CALENDAR_APP_NAME }iin kalenteri, johon tapahtumat tuonnin jälkeen lisätään."
       ],
-      "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and visit our blog from time to time.": [
-        "Pysyäksesi ajan tasalla ${ BRAND_NAME }-tuotteiden viimeisimmistä muutoksista, voit tilata meiltä erilaisia sähköpostiuutiskirjeitä ja seurata blogiamme."
+      "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
+        "Pysyäksesi ajan tasalla ${ BRAND_NAME }-tuotteiden viimeisimmistä muutoksista, voit tilata meiltä erilaisia sähköpostiuutiskirjeitä ja ${ blogLink } ajoittain."
       ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "Jatka valitsemalla tilin palautustapa, jolla pyyntö voidaan vahvistaa."
@@ -6559,7 +6542,7 @@
         "Toimiakseen oikein, jokaisen suodattimen täytyy sisältää ainakin nimi ja toimiva Sieve-skripti. ${ link }"
       ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
-        "Lisää tilillesi krediittejä, joita voit käyttää uusiin tilauksiin tai nykyisen tilauksesi uudistamiseen. Saat yhden krediitin jokaista kulutettua ${ i18nCurrency } kohden."
+        "Lisää tilillesi krediittejä, joilla voit maksaa tilauspäivityksen tai nykyisen tilauksen uudistuksen. Saat yhden krediitin jokaista kuluttamaasi ${ i18nCurrency } kohden."
       ],
       "Total email addresses": [
         "Sähköpostiosoitteiden kokonaismäärä"
@@ -6657,9 +6640,6 @@
       "Use the selected email address as the SMTP username in the external service, and the generated token as the SMTP password.": [
         "Käytä valittua sähköpostiosoitetta ulkoisen palvelun SMTP-palvelimen käyttäjätunnuksena ja salasanana luotua tunnistetta."
       ],
-      "Users with sensitive data and communications, such as journalists or executives, are highly encouraged to enable ${ PROTON_SENTINEL_NAME }.": [
-        "Käyttäjiä, joilla on arkaluonteisia tietoja ja viestintää, kuten toimittajia tai johtajia, kehotetaan ottamaan käyttöön ${ PROTON_SENTINEL_NAME }."
-      ],
       "Verification can take a few minutes.": [
         "Vahvistus saattaa kestää muutamia minuutteja."
       ],
@@ -6700,7 +6680,7 @@
         "Maksuasi ei voitu käsitellä."
       ],
       "We need to authenticate your payment method with your bank.": [
-        "Meidän on vahvistettava maksutapasi pankissasi."
+        "Maksutapa on vahvistettava pankistasi."
       ],
       "We need to authenticate your payment with your bank.": [
         "Meidän on vahvistettava maksusi pankissasi."
@@ -6760,7 +6740,7 @@
         "Määrittäessäsi kaksivaiheisen todennuksen saat myös palautuskoodit, joiden avulla voit kirjautua vaikka menettäisit pääsyn todennussovellukseesi."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
-        "Kun tilauksesi uudistetaan, käytetään ensin kaikki tilillä olevat krediitit ennen yllä määritetyn maksutavan veloitusta."
+        "Kun tilauksesi uudistuu, kulutetaan ensin kaikki tilillä olevat krediitit ennen yllä määritetyn maksutavan veloitusta."
       ],
       "Why?": [
         "Miksi?"
@@ -6897,7 +6877,7 @@
         "Sinun on silti vastattava kutsuihin, jotta järjestäjä näkee vastauksesi."
       ],
       "You will be redirected to the VPN download page": [
-        "Sinut ohjataan VPN-lataussivulle"
+        "Sinut ohjataan VPN:n lataussivulle"
       ],
       "You will lose access to ${ vpnPlanNameShort } servers and features on this date.": [
         "Menetät pääsyn ${ vpnPlanNameShort } -palvelimiin ja -ominaisuuksiin tänä päivänä."
@@ -6907,12 +6887,6 @@
       ],
       "You will NOT be able to decrypt any messages, files, and other data encrypted with this key. All data signed with this key will no longer be verified by ${ BRAND_NAME } applications.": [
         "Et voi purkaa tällä avaimella salattujen viestien, tiedostojen ja muiden tietojen salausta. ${ BRAND_NAME } -sovellukset eivät enää vahvista kaikkia tällä avaimella allekirjoitettuja tietoja."
-      ],
-      "You will receive priority support from specialists trained in account protection. For any account security concerns, please ${ hereLink }.": [
-        "Saat ensisijaisesti tukea tilin suojaamiseen koulutetuilta asiantuntijoilta. Jos sinulla on tilin turvallisuuteen liittyviä kysymyksiä, ${ hereLink }."
-      ],
-      "You will see more details in the Security logs below for important events such as sign in attempts.": [
-        "Näet alla olevissa suojauslokeissa lisätietoja tärkeistä tapahtumista, kuten kirjautumisyrityksistä."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Sinut ohjataan pian PayPaliin maksun vahvistamiseksi."
@@ -6930,10 +6904,10 @@
         "${ BRAND_NAME }-tilisi liittyy osoitteeseen ${ externalEmailAddress }."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
-        "${ BRAND_NAME }-tilisi on tällä hetkellä jäädytetty. 28 päivän kuluttua postilaatikkosi ei enää vastaanota viestejä, Drive-jakolinkkisi ja uusien tiedostojen tallennus estetään. Palauttaaksesi normaalin toiminnan, maksa maksamattomat laskut."
+        "${ BRAND_NAME }-tilisi on jäädytetty, ja 28 päivän kuluttua postilaatikkosi ei enää vastaanota viestejä ja Drive-jakolinkit sekä uusien tiedostojen tallennus estetään. Palauttaaksesi tilisi normaalin toiminnan, maksa maksamattomat laskut."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "${ BRAND_NAME }-tilisi on tällä hetkellä jäädytetty. Postilaatikkosi ei enää vastaanota viestejä, Drive-jakolinkkisi ja uusien tiedostojen tallennus estetään. Palauttaaksesi normaalin toiminnan, maksa maksamattomat laskut."
+        "${ BRAND_NAME }-tilisi on jäädytetty, eikä postilaatikkosi enää vastaanota viestejä ja Drive-jakolinkit sekä uusien tiedostojen tallennus estetään. Palauttaaksesi tilisi normaalin toiminnan, maksa maksamattomat laskut."
       ],
       "Your ${ BRAND_NAME } password": [
         "Sinun ${ BRAND_NAME } -salasanasi"
@@ -6997,7 +6971,7 @@
         "Puhelinnumeroasi käytetään vain tähän kertaluontoiseen vahvistukseen."
       ],
       "Your plan is limited to 10 versions for up to 7 days": [
-        "Tilauksesi on rajoitettu 10 versioon 7 päivän aikana"
+        "Tilauksesi on seitsemän päivän ajan rajoitettu 10 versioon"
       ],
       "Your recovery phrase": [
         "Palautuslausekkeesi"
@@ -7024,7 +6998,7 @@
     },
     "Info for cash payment method": {
       "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Ota meihin yhteyttä osoitteella ${ email } saadaksesi ohjeet käteismaksuun."
+        "Pyydä ohjeet käteismaksua varten sähköpostitse osoitteesta ${ email }."
       ]
     },
     "Info for domain modal": {
@@ -7207,7 +7181,7 @@
         "Hylkää luonnos"
       ],
       "Expand / contract composer": [
-        "Laajenna/supista viestin kirjoitus"
+        "Laajenna/tiivistä viestin kirjoitus"
       ],
       "Forward": [
         "Välitä"
@@ -7267,7 +7241,7 @@
         "Siirry alaspäin"
       ],
       "Move left / collapse": [
-        "Siirry vasemmalle/supista"
+        "Siirry vasemmalle/pienennä"
       ],
       "Move right / expand": [
         "Siirry oikealle/laajenna"
@@ -7774,16 +7748,16 @@
         "Viestit (viime kuukausi)"
       ],
       "End date": [
-        "Päätöspäivä"
+        "Lopetuspäivä"
       ],
       "End day of month": [
-        "Kuukauden lopetuspäivä"
+        "Päättymispäivä"
       ],
       "End time": [
-        "Päätösaika"
+        "Lopetusaika"
       ],
       "End weekday": [
-        "Viikon lopetuspäivä"
+        "Lopetuspäivä"
       ],
       "Enter password": [
         "Syötä salasana"
@@ -7849,7 +7823,7 @@
         "Tuo kaikki viestit"
       ],
       "Import interval": [
-        "Tuontiaika"
+        "Tuontiväli"
       ],
       "Import to email address": [
         "Tuo sähköpostiosoitteelle"
@@ -8155,13 +8129,13 @@
         "Aloituspäivä"
       ],
       "Start day of month": [
-        "Kuukauden aloituspäivä"
+        "Aloituspäivä"
       ],
       "Start time": [
         "Aloitusaika"
       ],
       "Start weekday": [
-        "Viikon aloituspäivä"
+        "Aloituspäivä"
       ],
       "Statement": [
         "Ehto"
@@ -8336,9 +8310,6 @@
       "${ BRAND_NAME } beta announcements": [
         "${ BRAND_NAME }in beta-julkaisut"
       ],
-      "${ BRAND_NAME } company announcements": [
-        "${ BRAND_NAME }-yrityksen ilmoitukset"
-      ],
       "${ BRAND_NAME } for Business newsletter": [
         "${ BRAND_NAME }in uutiskirje yrityksille"
       ],
@@ -8461,8 +8432,8 @@
       "Common sign up issues": [
         "Yleiset rekisteröitymisongelmat"
       ],
-      "contact us": [
-        "ota meihin yhteyttä"
+      "create a ticket": [
+        "luo tiketti"
       ],
       "Create account": [
         "Luo tili"
@@ -8687,13 +8658,13 @@
     },
     "Monetary unit": {
       "Dollar": [
-        "Dollari"
+        "dollaria"
       ],
       "Euro": [
-        "Euro"
+        "euroa"
       ],
       "Swiss franc": [
-        "Sveitsin frangi"
+        "Sveitsin frangia"
       ]
     },
     "Monthly recurring event, frequency": {
@@ -8702,12 +8673,12 @@
         "${ interval } kuukauden välein ${ onDayString }"
       ],
       "Every ${ interval } month ${ onDayString }, ${ timesString }": [
-        "Joka ${ interval } kuukauden ${ onDayString }, ${ timesString }",
-        "Joka ${ interval } kuukauden ${ onDayString }, ${ timesString }"
+        "${ interval } kuukauden välein ${ onDayString }, ${ timesString }",
+        "${ interval } kuukauden välein ${ onDayString }, ${ timesString }"
       ],
       "Every ${ interval } month ${ onDayString }, ${ untilString }": [
-        "Joka ${ interval } kuukauden ${ onDayString }, ${ untilString }",
-        "Joka ${ interval } kuukauden ${ onDayString }, ${ untilString }"
+        "${ interval } kuukauden välein ${ onDayString }, ${ untilString }",
+        "${ interval } kuukauden välein ${ onDayString }, ${ untilString }"
       ],
       "Monthly ${ onDayString }": [
         "Kuukausittain ${ onDayString }"
@@ -9379,7 +9350,7 @@
         "Turvallinen sähköposti erityisominaisuuksilla jokapäiväiseen viestintään."
       ],
       "Set automatic replies to inform contacts you are out of the office or unable to respond.": [
-        "Käytä automaattivastauksia tiedottaaksesi yhteystiedoille, ettet ole töissä tai voi muusta syystä vastata."
+        "Asettamalla automaattivastauksen, voit ilmoittaa yhteydenottajille, ettet ole töissä tai voi muusta syystä vastata."
       ],
       "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
         "Kohdennettu VPN-ratkaisu, joka tarjoaa turvallisen, rajoittamattoman, nopean pääsyn Internetiin."
@@ -9548,7 +9519,7 @@
         "Kansion tavoin, holvi on kätevä tapa järjestää kohteitasi. Holvien jako ystävien ja perheen kanssa on tulossa."
       ],
       "Manage your subscription, including customization of your plan. Payment methods accepted are credit card, PayPal, cryptocurrency, and wire transfer.": [
-        "Hallitse tilaustasi ja mukauta mm. tilaamaasi palvelukokonaisuutta. Hyväksytyt maksutavat ovat maksukortti, PayPal, kryptovaluutta ja pankkisiirto."
+        "Hallitse tilaustasi ja mukauta tilaamaasi palvelukokonaisuutta. Hyväksytyt maksutavat ovat maksukortti, PayPal, kryptovaluutta ja pankkisiirto."
       ],
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "Arkipäivisin ${ BRAND_NAME }in asiakastuki vastaa pyyntöihin 24 tunnin kuluessa"
@@ -9658,7 +9629,7 @@
     },
     "new_plans: upgrade": {
       "Included with ${ plus }, ${ bundle }, and ${ BRAND_NAME } for Business.": [
-        "Sisältyy tilauksiin ${ plus }, ${ bundle } ja ${ BRAND_NAME } Yrityksille."
+        "Sisältyy ${ plus }-, ${ bundle }- ja ${ BRAND_NAME } for Business -tilauksiin."
       ],
       "Included with all ${ BRAND_NAME } for Business plans.": [
         "Sisältyy kaikkiin ${ BRAND_NAME } Yrityksille -tilauksiin."
@@ -9700,7 +9671,7 @@
         "Ensisijainen tuki"
       ],
       "Secure your passwords and identity with an open-source and encrypted password manager.": [
-        "Suojaa salasanasi ja henkilöllisyytesi avoimen lähdekoodin ja salatun salasananhallintaohjelman avulla."
+        "Suojaa salasanasi ja henkilöllisyytesi avoimen lähdekoodin ja salatun salasanahallinnan avulla."
       ],
       "Support for 1 custom email domain": [
         "Tuki 1 omalle sähköpostin verkkotunnukselle"
@@ -9834,7 +9805,7 @@
     },
     "Onboarding": {
       "Welcome to ${ VPN_APP_NAME }": [
-        "Tervetuloa ${ VPN_APP_NAME } -palveluun"
+        "Tervetuloa ${ VPN_APP_NAME }:ään"
       ]
     },
     "Option": {
@@ -9869,7 +9840,7 @@
         "Kuukauden 19. päivä"
       ],
       "1st of the month": [
-        "kuukauden 1."
+        "Kuukauden 1. päivä"
       ],
       "20th of the month": [
         "Kuukauden 20. päivä"
@@ -9902,7 +9873,7 @@
         "Kuukauden 29. päivä"
       ],
       "2nd of the month": [
-        "kuukauden 2."
+        "Kuukauden 2. päivä"
       ],
       "30th of the month": [
         "Kuukauden 30. päivä"
@@ -9911,25 +9882,25 @@
         "Kuukauden 31. päivä"
       ],
       "3rd of the month": [
-        "kuukauden 3."
+        "Kuukauden 3. päivä"
       ],
       "4th of the month": [
-        "kuukauden 4."
+        "Kuukauden 4. päivä"
       ],
       "5th of the month": [
-        "kuukauden 5."
+        "Kuukauden 5. päivä"
       ],
       "6th of the month": [
-        "kuukauden 6."
+        "Kuukauden 6. päivä"
       ],
       "7th of the month": [
-        "kuukauden 7."
+        "Kuukauden 7. päivä"
       ],
       "8th of the month": [
-        "kuukauden 8."
+        "Kuukauden 8. päivä"
       ],
       "9th of the month": [
-        "kuukauden 9."
+        "Kuukauden 9. päivä"
       ],
       "Add to existing group": [
         "Lisää olemassa olevaan ryhmään"
@@ -10218,10 +10189,10 @@
         "Jatkamalla hyväksyt ${ termsAndConditions }"
       ],
       "Creating your account": [
-        "Luodaan tiliä"
+        "Tiliäsi luodaan"
       ],
       "Discover ${ PASS_APP_NAME },${ br }our new encrypted password manager": [
-        "Tutustu ${ PASS_APP_NAME },${ br } uuteen salattuun salasananhallintaohjelmaamme"
+        "Tutustu ${ PASS_APP_NAME },${ br } uuteen salattuun salasanahallintaamme"
       ],
       "Download and install the relevant apps and extensions to start using ${ PASS_APP_NAME }": [
         "Lataa ja asenna tarvittavat sovellukset ja laajennukset, aloittaaksesi ${ PASS_APP_NAME } käytön"
@@ -10232,8 +10203,8 @@
       "Download the ${ PASS_APP_NAME } app from the App Store and install it to start using ${ PASS_APP_NAME2 } on your phone.": [
         "Lataa ${ PASS_APP_NAME } -sovellus App Storesta ja asenna se, aloittaaksesi ${ PASS_APP_NAME2 } -sovelluksen käytön puhelimellasi."
       ],
-      "Encrypted password manager${ breakToken }that also protects your identity": [
-        "Salattu salasananhallinta${ breakToken }, joka suojaa myös henkilöllisyytesi"
+      "Encrypted password manager that also protects your identity": [
+        "Salattu salasanahallinta, joka suojaa myös henkilöllisyytesi"
       ],
       "End-to-end encrypted notes": [
         "Päästä päähän -salatut muistiinpanot"
@@ -10287,19 +10258,19 @@
         "per kuukausi, laskutetaan vuosittain"
       ],
       "per month, billed every 15 months": [
-        "per kuukausi, laskutetaan 15 kuukauden välein"
+        "kuukaudessa, laskutetaan 15 kuukauden välein"
       ],
       "per month, billed every 30 months": [
-        "per kuukausi, laskutetaan 30 kuukauden välein"
+        "kuukaudessa, laskutetaan 30 kuukauden välein"
       ],
       "per month, billed every month": [
-        "per kuukausi, laskutetaan joka kuukausi"
+        "kuukaudessa, laskutetaan kuukausittain"
       ],
       "per month, billed every two years": [
-        "per kuukausi, laskutetaan kahden vuoden välein"
+        "kuukaudessa, laskutetaan kahden vuoden välein"
       ],
       "Preparing your Recovery Kit": [
-        "Valmistellaan palautuspakettiasi"
+        "Palautuspakettiasi valmistellaan"
       ],
       "Protected by Swiss privacy laws": [
         "Sveitsin tietosuojalakien suojaama"
@@ -10323,10 +10294,10 @@
         "Avaa ${ PASS_APP_NAME } -premium-ominaisuudet päivittämällä"
       ],
       "Updating your account": [
-        "Päivitetään tiliäsi"
+        "Tiliäsi päivitetään"
       ],
       "Verifying your payment": [
-        "Vahvistetaan maksuasi"
+        "Maksuasi vahvistetaan"
       ],
       "Welcome to ${ plan }": [
         "Tervetuloa ${ plan }iin"
@@ -10354,7 +10325,7 @@
         "${ upsellPlanTitle } -tilaus"
       ],
       "All ${ BRAND_NAME } Plus services.${ br }One easy subscription.": [
-        "Kaikki ${ BRAND_NAME } Plus-palvelut.${ br }Yksi helppo tilaus."
+        "Kaikki ${ BRAND_NAME }in Plus-palvelut.${ br }Yksi helppo tilaus."
       ],
       "Create your ${ BRAND_NAME } account": [
         "Luo ${ BRAND_NAME } -tilisi"
@@ -11259,10 +11230,10 @@
         "PIdä automaattinen maksu"
       ],
       "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. Furthermore, if you forget to make a manual payment and auto-pay is disabled for all payment methods, we may auto-downgrade your account which will lead to the loss of many features.": [
-        "Järjestelmämme ei enää veloita sinua automaattisesti tällä maksutavalla, mutta tilauksesi uusitaan silti laskutusjakson lopussa. Jos haluat alentaa tai muuttaa tilaustasi, sinun on tehtävä se itse ennen laskutuskauden päättymistä. Jos unohdat suorittaa manuaalisen maksun ja automaattinen maksu on poistettu käytöstä kaikilla maksutavoilla, saatamme automaattisesti alentaa tilaustasi, jolloin menetät useita ominaisuuksia."
+        "Järjestelmämme ei enää veloita tätä maksutapaa automaattisesti, mutta tilauksesi uudistuu silti laskutusjakson lopussa. Jos haluat alentaa tai muuttaa tilaustasi, sinun on tehtävä se itse ennen laskutuskauden päättymistä. Jos unohdat suorittaa maksun itse ja automaattiveloitus on estetty kaikilta maksutavoilta, voidaan tilauksesi alentaa automaattisesti, jolloin menetät useita ominaisuuksia."
       ],
       "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
-        "Järjestelmämme ei enää veloita sinua automaattisesti tällä maksutavalla, mutta tilauksesi uusitaan silti laskutusjakson lopussa. Jos haluat alentaa tai muuttaa tilaustasi, sinun on tehtävä se itse ennen laskutuskauden päättymistä. Emme voi alentaa tilaustasi automaattisesti, koska jos olet ylittänyt ilmaisen tilauksen tallennustilakiintiön tai käytät muita maksullisia ominaisuuksia, emme voi automaattisesti poistaa tiedostoja, sähköposteja tai muita tietoja puolestasi. Jos poistat automaattimaksun käytöstä, muista maksaa seuraava tilauslaskusi ennen eräpäivää estääksesi tilin lukkiutumisen."
+        "Järjestelmämme ei enää veloita tätä maksutapaa automaattisesti, mutta tilauksesi uudistuu silti laskutusjakson lopussa. Jos haluat alentaa tai muuttaa tilaustasi, sinun on tehtävä se itse ennen laskutuskauden päättymistä. Tilaustasi ei voida alentaa automaattisesti, koska emme voi poistaa tiedostoja, viestejä tai muita tietoja puolestasi, jos olet ylittänyt ilmaistilauksen tallennustilakiintiön tai käytät muita maksullisia ominaisuuksia. Jos poistat automaattiveloituksen käytöstä, muista maksaa seuraava tilauslaskusi ennen eräpäivää estääksesi tilin jäädyttämisen."
       ]
     },
     "Subscription saving": {
@@ -11331,7 +11302,7 @@
         "Koodi lähetettiin kohteeseen ${ methodTo }"
       ],
       "Credits added": [
-        "Krediittejä lisättiin"
+        "Krediitit lisättiin"
       ],
       "Default calendar updated": [
         "Oletuskalenteri vaihdettiin"
@@ -11394,7 +11365,7 @@
         "Maksutapa poistettiin"
       ],
       "Payment method updated": [
-        "Maksutapa vaihdettiin"
+        "Maksutapa päivitettiin"
       ],
       "Phone number updated": [
         "Puhelinnumero vaihdettiin"
@@ -11492,7 +11463,7 @@
         "Varmenne ${ name } on mitätöity"
       ],
       "Certificate extended until ${ formattedExpirationDate }": [
-        "Varmennetta jatkettu ${ formattedExpirationDate } saakka"
+        "Varmennetta on jatkettu ${ formattedExpirationDate } saakka"
       ],
       "Config \"${ name }\" created, note that the private key is not stored and won't be shown again, you should copy or download this config.": [
         "Määritys \"${ name }\" luotiin. Huomioi, ettei yksityistä avainta säilytetä ja näytetä uudelleen, joten määritys tulisi kopioida tai ladata nyt."
@@ -11544,7 +11515,7 @@
         "Premium Mail ja Calendar"
       ],
       "Premium Password Manager": [
-        "Premium salasananhallinta"
+        "Premium salasanahallinta"
       ]
     },
     "summer2023: Describe Proton Pass": {
@@ -11554,7 +11525,7 @@
     },
     "summer2023: Short tool name to present Proton Pass": {
       "Password manager": [
-        "Salasananhallinta"
+        "Salasanahallinta"
       ]
     },
     "summer2023: Tooltip": {
@@ -11941,7 +11912,7 @@
         "Luo käyttäjätilejä"
       ],
       "Create your ${ BRAND_NAME } Account": [
-        "Luo ${ BRAND_NAME } -tilisi"
+        "Luo itsellesi ${ BRAND_NAME }-tili"
       ],
       "Create your ${ BRAND_NAME } address": [
         "Luo ${ BRAND_NAME }-osoitteesi"
@@ -12372,7 +12343,7 @@
         "Säästä aikaa sähköpostisuodattimilla"
       ],
       "Secure email based in Switzerland": [
-        "Turvallinen sähköposti Sveitsissä"
+        "Turvallinen sähköposti Sveitsistä"
       ],
       "Security and privacy": [
         "Suojaus ja yksityisyys"
@@ -12448,9 +12419,6 @@
       ],
       "Signed in to member account": [
         "Kirjaudu jäsentilille"
-      ],
-      "SMTP tokens": [
-        "SMTP-tunnisteet"
       ],
       "Sort folders alphabetically": [
         "Jätjestä kansiot aakkosellisesti"
@@ -12597,7 +12565,7 @@
         "Toiminnot"
       ],
       "Method": [
-        "Tapa"
+        "Maksutapa"
       ],
       "Status": [
         "Tila"
@@ -12850,7 +12818,7 @@
     },
     "tooltip": {
       "${ PASS_APP_NAME }: end-to-end encrypted password manager": [
-        "${ PASS_APP_NAME }: päästä päähän -salattu salasananhallintaohjelma"
+        "${ PASS_APP_NAME }: päästä päähän -salattu salasanahallinta"
       ]
     },
     "Tooltip automatically attach public key": {
@@ -12911,7 +12879,7 @@
     },
     "Upgrade notice": {
       "Upgrade to a ${ MAIL_SHORT_APP_NAME } paid plan to share your calendar.": [
-        "Päivitä maksulliseen ${ MAIL_SHORT_APP_NAME } -tilaukseen jakaaksesi kalenterisi."
+        "Jaa kalenterisi päivittämällä maksulliseen ${ MAIL_SHORT_APP_NAME } -tilaukseen."
       ]
     },
     "User referee invited via email": {
@@ -13104,88 +13072,88 @@
         "${ interval } viikon välein kaikkina päivinä, ${ untilString }"
       ],
       "Every ${ interval } week on Friday": [
-        "Joka ${ interval }. viikko perjantaisin",
-        "Joka ${ interval }. viikko perjantaisin"
+        "${ interval } viikon välein perjantaisin",
+        "${ interval } viikon välein perjantaisin"
       ],
       "Every ${ interval } week on Friday, ${ timesString }": [
-        "Joka ${ interval }. viikko perjantaisin, ${ timesString }",
-        "Joka ${ interval }. viikko perjantaisin, ${ timesString }"
+        "${ interval } viikon välein perjantaisin, ${ timesString }",
+        "${ interval } viikon välein perjantaisin, ${ timesString }"
       ],
       "Every ${ interval } week on Friday, ${ untilString }": [
-        "Joka ${ interval }. viikko perjantaisin, ${ untilString }",
-        "Joka ${ interval }. viikko perjantaisin, ${ untilString }"
+        "${ interval } viikon välein perjantaisin, ${ untilString }",
+        "${ interval } viikon välein perjantaisin, ${ untilString }"
       ],
       "Every ${ interval } week on Monday": [
-        "Joka ${ interval }. viikko maanantaisin",
-        "Joka ${ interval }. viikko maanantaisin"
+        "${ interval } viikon välein maanantaisin",
+        "${ interval } viikon välein maanantaisin"
       ],
       "Every ${ interval } week on Monday, ${ timesString }": [
-        "Joka ${ interval }. viikko maanantaisin, ${ timesString }",
-        "Joka ${ interval }. viikko maanantaisin, ${ timesString }"
+        "${ interval } viikon välein maanantaisin, ${ timesString }",
+        "${ interval } viikon välein maanantaisin, ${ timesString }"
       ],
       "Every ${ interval } week on Monday, ${ untilString }": [
-        "Joka ${ interval }. viikko maanantaisin, ${ untilString }",
-        "Joka ${ interval }. viikko maanantaisin, ${ untilString }"
+        "${ interval } viikon välein maanantaisin, ${ untilString }",
+        "${ interval } viikon välein maanantaisin, ${ untilString }"
       ],
       "Every ${ interval } week on Saturday": [
-        "Joka ${ interval }. viikko lauantaisin",
-        "Joka ${ interval }. viikko lauantaisin"
+        "${ interval } viikon välein lauantaisin",
+        "${ interval } viikon välein lauantaisin"
       ],
       "Every ${ interval } week on Saturday, ${ timesString }": [
-        "Joka ${ interval }. viikko lauantaisin, ${ timesString }",
-        "Joka ${ interval }. viikko lauantaisin, ${ timesString }"
+        "${ interval } viikon välein lauantaisin, ${ timesString }",
+        "${ interval } viikon välein lauantaisin, ${ timesString }"
       ],
       "Every ${ interval } week on Saturday, ${ untilString }": [
-        "Joka ${ interval }. viikko lauantaisin, ${ untilString }",
-        "Joka ${ interval }. viikko lauantaisin, ${ untilString }"
+        "${ interval } viikon välein lauantaisin, ${ untilString }",
+        "${ interval } viikon välein lauantaisin, ${ untilString }"
       ],
       "Every ${ interval } week on Sunday": [
-        "Joka ${ interval }. viikko sunnuntaisin",
-        "Joka ${ interval }. viikko sunnuntaisin"
+        "${ interval } viikon välein sunnuntaisin",
+        "${ interval } viikon välein sunnuntaisin"
       ],
       "Every ${ interval } week on Sunday, ${ timesString }": [
-        "Joka ${ interval }. viikko sunnuntaisin, ${ timesString }",
-        "Joka ${ interval }. viikko sunnuntaisin, ${ timesString }"
+        "${ interval } viikon välein sunnuntaisin, ${ timesString }",
+        "${ interval } viikon välein sunnuntaisin, ${ timesString }"
       ],
       "Every ${ interval } week on Sunday, ${ untilString }": [
-        "Joka ${ interval }. viikko sunnuntaisin, ${ untilString }",
-        "Joka ${ interval }. viikko sunnuntaisin, ${ untilString }"
+        "${ interval } viikon välein sunnuntaisin, ${ untilString }",
+        "${ interval } viikon välein sunnuntaisin, ${ untilString }"
       ],
       "Every ${ interval } week on Thursday": [
-        "Joka ${ interval }. viikko torstaisin",
-        "Joka ${ interval }. viikko torstaisin"
+        "${ interval } viikon välein torstaisin",
+        "${ interval } viikon välein torstaisin"
       ],
       "Every ${ interval } week on Thursday, ${ timesString }": [
-        "Joka ${ interval }. viikko torstaisin, ${ timesString }",
-        "Joka ${ interval }. viikko torstaisin, ${ timesString }"
+        "${ interval } viikon välein torstaisin, ${ timesString }",
+        "${ interval } viikon välein torstaisin, ${ timesString }"
       ],
       "Every ${ interval } week on Thursday, ${ untilString }": [
-        "Joka ${ interval }. viikko torstaisin, ${ untilString }",
-        "Joka ${ interval }. viikko torstaisin, ${ untilString }"
+        "${ interval } viikon välein torstaisin, ${ untilString }",
+        "${ interval } viikon välein torstaisin, ${ untilString }"
       ],
       "Every ${ interval } week on Tuesday": [
-        "Joka ${ interval }. viikko tiistaisin",
-        "Joka ${ interval }. viikko tiistaisin"
+        "${ interval } viikon välein tiistaisin",
+        "${ interval } viikon välein tiistaisin"
       ],
       "Every ${ interval } week on Tuesday, ${ timesString }": [
-        "Joka ${ interval }. viikko tiistaisin, ${ timesString }",
-        "Joka ${ interval }. viikko tiistaisin, ${ timesString }"
+        "${ interval } viikon välein tiistaisin, ${ timesString }",
+        "${ interval } viikon välein tiistaisin, ${ timesString }"
       ],
       "Every ${ interval } week on Tuesday, ${ untilString }": [
-        "Joka ${ interval }. viikko tiistaisin, ${ untilString }",
-        "Joka ${ interval }. viikko tiistaisin, ${ untilString }"
+        "${ interval } viikon välein tiistaisin, ${ untilString }",
+        "${ interval } viikon välein tiistaisin, ${ untilString }"
       ],
       "Every ${ interval } week on Wednesday": [
-        "Joka ${ interval }. viikko keskiviikkoisin",
-        "Joka ${ interval }. viikko keskiviikkoisin"
+        "${ interval } viikon välein keskiviikkoisin",
+        "${ interval } viikon välein keskiviikkoisin"
       ],
       "Every ${ interval } week on Wednesday, ${ timesString }": [
-        "Joka ${ interval }. viikko keskiviikkoisin, ${ timesString }",
-        "Joka ${ interval }. viikko keskiviikkoisin, ${ timesString }"
+        "${ interval } viikon välein keskiviikkoisin, ${ timesString }",
+        "${ interval } viikon välein keskiviikkoisin, ${ timesString }"
       ],
       "Every ${ interval } week on Wednesday, ${ untilString }": [
-        "Joka ${ interval }. viikko keskiviikkoisin, ${ untilString }",
-        "Joka ${ interval }. viikko keskiviikkoisin, ${ untilString }"
+        "${ interval } viikon välein keskiviikkoisin, ${ untilString }",
+        "${ interval } viikon välein keskiviikkoisin, ${ untilString }"
       ],
       "Weekly on ${ multipleDaysString }": [
         "Viikottain ${ multipleDaysString }"
@@ -13302,8 +13270,8 @@
         "${ interval } vuoden välein, ${ timesString }"
       ],
       "Every ${ interval } year, ${ untilString }": [
-        "Joka ${ interval } vuosi, ${ untilString }",
-        "Joka ${ interval } vuosi, ${ untilString }"
+        "${ interval } vuoden välein, ${ untilString }",
+        "${ interval } vuoden välein, ${ untilString }"
       ],
       "Yearly": [
         "Vuosittain"
