@@ -187,7 +187,7 @@ const TotpInput: ForwardRefRenderFunction<HTMLInputElement, TotpInputProps> = (
                                 event.currentTarget.select();
                             }}
                             onPaste={(event) => {
-                                handleMultipleValues(event.clipboardData.getData('text/plain'), i);
+                                handleMultipleValues(event.clipboardData?.getData('text/plain') || '', i);
                                 event.preventDefault();
                             }}
                             onKeyDown={(event: KeyboardEvent<HTMLInputElement>) => {
