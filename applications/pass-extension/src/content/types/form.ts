@@ -21,6 +21,7 @@ export interface FormHandle {
     detach: () => void;
 }
 
+export type HTMLElementWithActionTrap = HTMLInputElement & { preventAction?: boolean };
 export interface FieldHandle {
     formType: FormType;
     fieldType: FormField;
@@ -36,7 +37,7 @@ export interface FieldHandle {
     setValue: (value: string) => void;
     setAction: (action: MaybeNull<DropdownAction>) => void;
     autofill: (value: string, options?: AutofillOptions) => void;
-    focus: (options?: { preventDefault?: boolean }) => void;
+    focus: (options?: { preventAction?: boolean }) => void;
     attachIcon: () => FieldIconHandle;
     detachIcon: () => void;
     attach: (onSubmit: () => void) => void;
