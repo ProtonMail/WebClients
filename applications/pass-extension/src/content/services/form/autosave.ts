@@ -33,10 +33,10 @@ export const createAutosaveService = () => {
         if (submission !== undefined) {
             const { status, partial, domain, type } = submission;
             const currentDomain = getExtensionContext().url.domain;
-            const formRemoved = !formManager.getTrackedForms().some(({ formType }) => formType === type);
+            const formTypeChangeOrRemoved = !formManager.getTrackedForms().some(({ formType }) => formType === type);
 
             const domainmatch = currentDomain === domain;
-            const canCommit = domainmatch && formRemoved;
+            const canCommit = domainmatch && formTypeChangeOrRemoved;
 
             /* if we have a non-partial staging form submission at
              * this stage either commit it if no forms of the same
@@ -52,9 +52,12 @@ export const createAutosaveService = () => {
                 );
             }
 
-            if (isSubmissionPromptable(submission) && formRemoved) return promptAutoSave(submission);
+            if (isSubmissionPromptable(submission) && formTypeChangeOrRemoved) return promptAutoSave(submission);
 
-            if (!formRemoved) {
+            /* if the form type is still detected on the current page :
+             * only stash the form submission if it is not "partial". This
+             * avois losing form data on multi-step forms */
+            if (!formTypeChangeOrRemoved && !partial) {
                 void sendMessage(
                     contentScriptMessage({
                         type: WorkerMessageType.FORM_ENTRY_STASH,
