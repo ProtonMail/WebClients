@@ -62,8 +62,8 @@ export const createContentScriptClient = (scriptId: string, mainFrame: boolean) 
             context.service.iframe.reset();
             context.service.formManager.sync();
 
-            if (!loggedIn) context.service.autofill.setLoginItemsCount(0);
-            if (workerReady(status)) context.service.autofill.queryItems().catch(noop);
+            if (!loggedIn) context.service.autofill.setAutofillCount(0);
+            if (workerReady(status)) context.service.autofill.syncAutofillCandidates().catch(noop);
         }
     };
 
@@ -72,7 +72,7 @@ export const createContentScriptClient = (scriptId: string, mainFrame: boolean) 
             context.setSettings(settings);
             context.service.iframe.reset();
             context.service.formManager.sync();
-            context.service.autofill.queryItems().catch(noop);
+            context.service.autofill.syncAutofillCandidates().catch(noop);
         }
     };
 
@@ -86,7 +86,7 @@ export const createContentScriptClient = (scriptId: string, mainFrame: boolean) 
                 case WorkerMessageType.SETTINGS_UPDATE:
                     return onSettingsChange(message.payload);
                 case WorkerMessageType.AUTOFILL_SYNC:
-                    return context.service.autofill.setLoginItemsCount(message.payload.count);
+                    return context.service.autofill.setAutofillCount(message.payload.count);
             }
         }
     };
@@ -114,7 +114,7 @@ export const createContentScriptClient = (scriptId: string, mainFrame: boolean) 
 
             context.service.formManager.observe();
             const didDetect = await context.service.formManager.detect({ reason: 'InitialLoad', flush: true });
-            if (!didDetect) await context.service.formManager.reconciliate();
+            if (!didDetect) await context.service.autosave.reconciliate();
         }
     };
 
