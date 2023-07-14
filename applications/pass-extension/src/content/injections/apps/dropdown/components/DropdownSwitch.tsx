@@ -12,7 +12,7 @@ import { FORK_TYPE } from '@proton/shared/lib/authentication/ForkInterface';
 import { BRAND_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 import type { IFrameMessage } from '../../../../../content/types';
-import { DropdownAction, type DropdownSetActionPayload } from '../../../../../content/types';
+import { DropdownAction, type DropdownActions } from '../../../../../content/types';
 import { useAccountFork } from '../../../../../shared/hooks';
 import { AliasAutoSuggest } from '../views/AliasAutoSuggest';
 import { ItemsList } from '../views/ItemsList';
@@ -21,7 +21,7 @@ import { DROPDOWN_ITEM_HEIGHT, DropdownItem } from './DropdownItem';
 import { DropdownPinUnlock } from './DropdownPinUnlock';
 
 type Props = {
-    state: MaybeNull<DropdownSetActionPayload>;
+    state: MaybeNull<DropdownActions>;
     status: WorkerStatus;
     loggedIn: boolean;
     visible?: boolean;
@@ -73,14 +73,13 @@ const DropdownSwitchRender: ForwardRefRenderFunction<HTMLDivElement, Props> = (
 
                 switch (state.action) {
                     case DropdownAction.AUTOFILL:
-                        return state.items.length > 0 ? (
-                            <ItemsList items={state.items} needsUpgrade={state.needsUpgrade} onMessage={onMessage} />
-                        ) : (
-                            <DropdownItem
-                                icon={PassIconStatus.ACTIVE}
-                                onClick={onClose}
-                                title={PASS_APP_NAME}
-                                subTitle={c('Info').t`No login found`}
+                        return (
+                            <ItemsList
+                                items={state.items}
+                                needsUpgrade={state.needsUpgrade}
+                                onMessage={onMessage}
+                                onClose={onClose}
+                                visible={visible}
                             />
                         );
 

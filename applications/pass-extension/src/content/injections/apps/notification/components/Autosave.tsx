@@ -1,4 +1,4 @@
-import { type VFC, useState } from 'react';
+import { type VFC, useEffect, useState } from 'react';
 
 import type { FormikErrors } from 'formik';
 import { Form, FormikProvider, useFormik } from 'formik';
@@ -27,13 +27,26 @@ import { NotificationHeader } from './NotificationHeader';
 
 import './Autosave.scss';
 
-type Props = { submission: FormEntryPrompt; onClose?: () => void; settings: ProxiedSettings };
+type Props = { visible?: boolean; submission: FormEntryPrompt; onClose?: () => void; settings: ProxiedSettings };
 type AutosaveFormValues = { name: string; username: string; password: string };
 
-export const Autosave: VFC<Props> = ({ submission, settings, onClose }) => {
+export const Autosave: VFC<Props> = ({ visible, submission, settings, onClose }) => {
     const { createNotification } = useNotifications();
     const [busy, setBusy] = useState(false);
     const submissionURL = submission.subdomain ?? submission.domain;
+
+    useEffect(() => {
+        if (visible) {
+            void sendMessage(
+                contentScriptMessage({
+                    type: WorkerMessageType.TELEMETRY_EVENT,
+                    payload: {
+                        event: createTelemetryEvent(TelemetryEventName.AutosaveDisplay, {}, {}),
+                    },
+                })
+            );
+        }
+    }, [visible]);
 
     const form = useFormik<AutosaveFormValues>({
         initialValues: {

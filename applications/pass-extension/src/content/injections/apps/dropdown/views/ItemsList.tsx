@@ -1,9 +1,13 @@
 import type { VFC } from 'react';
-import { useMemo } from 'react';
+import { useEffect, useMemo } from 'react';
 
 import { c } from 'ttag';
 
-import type { SafeLoginItem } from '@proton/pass/types';
+import { contentScriptMessage, sendMessage } from '@proton/pass/extension/message';
+import { createTelemetryEvent } from '@proton/pass/telemetry/events';
+import { type SafeLoginItem, WorkerMessageType } from '@proton/pass/types';
+import { PassIconStatus } from '@proton/pass/types/data/pass-icon';
+import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import { truthy } from '@proton/pass/utils/fp';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
@@ -17,11 +21,26 @@ import { DropdownItemsList } from '../components/DropdownItemsList';
 type Props = {
     items: SafeLoginItem[];
     needsUpgrade: boolean;
+    visible?: boolean;
+    onClose?: () => void;
     onMessage?: (message: IFrameMessage) => void;
 };
 
-export const ItemsList: VFC<Props> = ({ items, needsUpgrade, onMessage }) => {
+export const ItemsList: VFC<Props> = ({ items, needsUpgrade, visible, onMessage, onClose }) => {
     const { settings } = useIFrameContext();
+
+    useEffect(() => {
+        if (visible) {
+            void sendMessage(
+                contentScriptMessage({
+                    type: WorkerMessageType.TELEMETRY_EVENT,
+                    payload: {
+                        event: createTelemetryEvent(TelemetryEventName.AutofillDisplay, {}, { location: 'source' }),
+                    },
+                })
+            );
+        }
+    }, [visible]);
 
     const dropdownItems = useMemo(
         () =>
@@ -58,5 +77,14 @@ export const ItemsList: VFC<Props> = ({ items, needsUpgrade, onMessage }) => {
         [items, needsUpgrade, onMessage]
     );
 
-    return <DropdownItemsList>{dropdownItems}</DropdownItemsList>;
+    return dropdownItems.length > 0 ? (
+        <DropdownItemsList>{dropdownItems}</DropdownItemsList>
+    ) : (
+        <DropdownItem
+            icon={PassIconStatus.ACTIVE}
+            onClick={onClose}
+            title={PASS_APP_NAME}
+            subTitle={c('Info').t`No login found`}
+        />
+    );
 };
