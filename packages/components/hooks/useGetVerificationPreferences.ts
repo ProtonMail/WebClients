@@ -89,7 +89,7 @@ const useGetVerificationPreferences = () => {
             const pinnedKeysFingerprints = new Set(pinnedKeys.map((key) => key.getFingerprint()));
             const apiPublicKeys = apiKeys.filter(({ publicKey }) => !!publicKey).map(({ publicKey }) => publicKey!);
             let verifyingKeys: PublicKeyReference[] = [];
-            if (pinnedKeys) {
+            if (pinnedKeys.length) {
                 verifyingKeys = getVerifyingKeys(pinnedKeys, compromisedKeysFingerprints);
             } else if (isInternal && ktVerificationResult?.status === KT_VERIFICATION_STATUS.VERIFIED_KEYS) {
                 verifyingKeys = getVerifyingKeys(apiPublicKeys, compromisedKeysFingerprints);
