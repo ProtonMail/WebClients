@@ -16,7 +16,7 @@ import { deriveAliasPrefix } from '../../../shared/items/alias';
 import { DROPDOWN_IFRAME_SRC, DROPDOWN_WIDTH, MIN_DROPDOWN_HEIGHT } from '../../constants';
 import { withContext } from '../../context/context';
 import { createIFrameApp } from '../../injections/iframe/create-iframe-app';
-import type { DropdownSetActionPayload, FieldHandle, InjectedDropdown, OpenDropdownOptions } from '../../types';
+import type { DropdownActions, DropdownOpenOptions, FieldHandle, InjectedDropdown } from '../../types';
 import { DropdownAction } from '../../types';
 import { IFrameMessageType } from '../../types/iframe';
 
@@ -26,12 +26,12 @@ export const createDropdown = (): InjectedDropdown => {
     const fieldRef: DropdownFieldRef = { current: null };
     const listeners = createListenerStore();
 
-    const iframe = createIFrameApp({
+    const iframe = createIFrameApp<DropdownAction>({
         id: 'dropdown',
         src: DROPDOWN_IFRAME_SRC,
         animation: 'fadein',
         backdropClose: true,
-        onClose: (options) => options?.refocus && fieldRef.current?.focus(),
+        onClose: (_, options) => options?.refocus && fieldRef.current?.focus(),
         backdropExclude: () => [fieldRef.current?.icon?.element, fieldRef.current?.element].filter(truthy),
         position: (iframeRoot: HTMLElement) => {
             const field = fieldRef.current;
@@ -84,14 +84,14 @@ export const createDropdown = (): InjectedDropdown => {
      * Dropdown opening may be automatically triggered on initial
      * page load with a positive ifion : ensure the iframe is
      * in a ready state in order to send out the dropdown action */
-    const open = withContext<(options: OpenDropdownOptions) => Promise<void>>(
+    const open = withContext<(options: DropdownOpenOptions) => Promise<void>>(
         async ({ service: { autofill }, getState, getExtensionContext }, { field, action, autofocused }) => {
             await waitUntil(() => iframe.state.ready, 50);
             fieldRef.current = field;
 
             const { loggedIn } = getState();
 
-            const payload = await (async (): Promise<DropdownSetActionPayload> => {
+            const payload = await (async (): Promise<DropdownActions> => {
                 switch (action) {
                     case DropdownAction.AUTOFILL: {
                         if (!loggedIn) return { action, items: [], needsUpgrade: false };

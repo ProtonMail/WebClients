@@ -12,6 +12,7 @@ import { merge } from '@proton/pass/utils/object';
 import { EXTENSION_PREFIX } from '../../constants';
 import type {
     IFrameApp,
+    IFrameCloseOptions,
     IFrameDimensions,
     IFrameEndpoint,
     IFrameMessageWithSender,
@@ -23,7 +24,7 @@ import type {
 import { type IFrameMessage, IFrameMessageType } from '../../types/iframe';
 import { createIframeRoot } from './create-iframe-root';
 
-type CreateIFrameAppOptions = {
+type CreateIFrameAppOptions<A> = {
     id: IFrameEndpoint;
     src: string;
     animation: 'slidein' | 'fadein';
@@ -31,13 +32,13 @@ type CreateIFrameAppOptions = {
     backdropClose: boolean;
     backdropExclude?: () => HTMLElement[];
     onReady?: () => void;
-    onOpen?: () => void;
-    onClose?: IFrameApp['close'];
+    onOpen?: (state: IFrameState<A>) => void;
+    onClose?: (state: IFrameState<A>, options: IFrameCloseOptions) => void;
     position: (iframeRoot: HTMLDivElement) => IFramePosition;
-    dimensions: () => IFrameDimensions;
+    dimensions: (state: IFrameState<A>) => IFrameDimensions;
 };
 
-export const createIFrameApp = ({
+export const createIFrameApp = <A>({
     id,
     src,
     animation,
@@ -48,17 +49,18 @@ export const createIFrameApp = ({
     onClose,
     position,
     dimensions,
-}: CreateIFrameAppOptions): IFrameApp => {
+}: CreateIFrameAppOptions<A>): IFrameApp<A> => {
     const iframeRoot = createIframeRoot();
     const portMessageHandlers: Map<IFrameMessageType, IFramePortMessageHandler> = new Map();
 
-    const state: IFrameState = {
+    const state: IFrameState<A> = {
         visible: false,
         ready: false,
         loaded: false,
         port: null,
         framePort: null,
         position: { top: -1, left: -1, zIndex: -1 },
+        action: null,
     };
 
     const listeners = createListenerStore();
@@ -134,23 +136,24 @@ export const createIFrameApp = ({
 
     const close: IFrameApp['close'] = (options) => {
         if (state.visible) {
+            state.action = null;
             void sendPortMessage({ type: IFrameMessageType.IFRAME_HIDDEN });
             const target = options?.event?.target as Maybe<MaybeNull<HTMLElement>>;
 
             if (!target || !backdropExclude?.().includes(target)) {
                 listeners.removeAll();
-                state.visible = false;
+                onClose?.(state, { userInitiated: options?.userInitiated ?? true, refocus: options?.refocus ?? false });
+                iframe.classList.remove(`${EXTENSION_PREFIX}-iframe--visible`);
 
-                requestAnimationFrame(() => {
-                    onClose?.({ userInitiated: options?.userInitiated ?? true, refocus: options?.refocus ?? false });
-                    iframe.classList.remove(`${EXTENSION_PREFIX}-iframe--visible`);
-                });
+                state.visible = false;
+                state.action = null;
             }
         }
     };
 
-    const open = (scrollRef?: HTMLElement) => {
+    const open = (action: A, scrollRef?: HTMLElement) => {
         if (!state.visible) {
+            state.action = action;
             state.visible = true;
 
             listeners.addListener(window, 'resize', updatePosition);
@@ -165,9 +168,9 @@ export const createIFrameApp = ({
             sendPortMessage({ type: IFrameMessageType.IFRAME_OPEN });
 
             iframe.classList.add(`${EXTENSION_PREFIX}-iframe--visible`);
-            setIframeDimensions(dimensions());
+            setIframeDimensions(dimensions(state));
             updatePosition();
-            onOpen?.();
+            onOpen?.(state);
         }
     };
 
@@ -206,7 +209,7 @@ export const createIFrameApp = ({
     );
 
     registerMessageHandler(IFrameMessageType.IFRAME_DIMENSIONS, (message) => {
-        const { width, height } = merge(dimensions(), { height: message.payload.height });
+        const { width, height } = merge(dimensions(state), { height: message.payload.height });
         return setIframeDimensions({ width, height });
     });
 

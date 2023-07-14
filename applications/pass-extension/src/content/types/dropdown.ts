@@ -9,17 +9,17 @@ export enum DropdownAction {
     AUTOSUGGEST_ALIAS = 'AUTOSUGGEST_ALIAS',
 }
 
-export type DropdownSetActionPayload =
+export type DropdownActions =
     | { action: DropdownAction.AUTOFILL; items: SafeLoginItem[]; needsUpgrade: boolean }
     | { action: DropdownAction.AUTOSUGGEST_PASSWORD }
     | { action: DropdownAction.AUTOSUGGEST_ALIAS; domain: string; prefix: string };
 
-export type OpenDropdownOptions = {
-    field: FieldHandle;
+export type DropdownOpenOptions = {
     action: DropdownAction;
+    field: FieldHandle;
     autofocused?: boolean;
 };
 
-export interface InjectedDropdown extends IFrameAppService<OpenDropdownOptions> {
+export interface InjectedDropdown extends IFrameAppService<DropdownOpenOptions> {
     getCurrentField: () => MaybeNull<FieldHandle>;
 }
