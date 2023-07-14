@@ -178,8 +178,11 @@ export const createFormTracker = (form: FormHandle): FormTracker => {
             if (!loggedIn) icon.setCount(0);
         });
 
+        /* trigger auto-focus on current active field if value is empty:
+         * This handles autofocused simple forms, and dynamic forms where
+         * fields may be added incrementally  */
         form.getFields()
-            .find((field) => field.element === document.activeElement)
+            .find((field) => field.element === document.activeElement && !field.value)
             ?.focus();
 
         if (form.formType === FormType.MFA) handleOTP();
