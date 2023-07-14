@@ -1,16 +1,13 @@
 import { contentScriptMessage, sendMessage } from '@proton/pass/extension/message';
 import { clearDetectionCache, getDetectedFormParent, getIgnoredParent, setFormProcessable } from '@proton/pass/fathom';
-import type { FormEntryPrompt } from '@proton/pass/types';
-import { FormEntryStatus, WorkerMessageType } from '@proton/pass/types';
+import { WorkerMessageType } from '@proton/pass/types';
 import { createListenerStore } from '@proton/pass/utils/listener';
 import { logger } from '@proton/pass/utils/logger';
 import debounce from '@proton/utils/debounce';
 import noop from '@proton/utils/noop';
 
-import { isSubmissionPromptable } from '../../../shared/form';
 import { withContext } from '../../context/context';
 import type { FormHandle } from '../../types';
-import { NotificationAction } from '../../types';
 import { hasUnprocessedFields, hasUnprocessedForms, isNodeOfInterest } from '../../utils/nodes';
 import { createFormHandles } from '../handles/form';
 
@@ -38,65 +35,6 @@ export const createFormManager = (options: FormManagerOptions) => {
     const listeners = createListenerStore();
     const getTrackedForms = () => Array.from(ctx.trackedForms.values());
 
-    /* FIXME: if no autosave.prompt setting we should avoid
-     * setting any listeners at all for form submissions */
-    const promptAutoSave: (submission: FormEntryPrompt) => void = withContext(
-        ({ getSettings, service: { iframe } }, submission) => {
-            const shouldPrompt = getSettings().autosave.prompt;
-
-            if (shouldPrompt) {
-                iframe.attachNotification();
-                iframe.notification?.open({
-                    action: NotificationAction.AUTOSAVE_PROMPT,
-                    submission,
-                });
-            }
-        }
-    );
-
-    /* Reconciliation is responsible for syncing the service
-     * worker state with our local detection in order to take
-     * the appropriate action for auto-save */
-    const reconciliate: () => Promise<void> = withContext(async ({ getExtensionContext }) => {
-        const submission = await sendMessage.on(
-            contentScriptMessage({ type: WorkerMessageType.FORM_ENTRY_REQUEST }),
-            (response) => (response.type === 'success' ? response.submission : undefined)
-        );
-        if (submission !== undefined) {
-            const { status, partial, domain, type } = submission;
-            const currentDomain = getExtensionContext().url.domain;
-            const formRemoved = !getTrackedForms().some(({ formType }) => formType === type);
-
-            const domainmatch = currentDomain === domain;
-            const canCommit = domainmatch && formRemoved;
-
-            /* if we have a non-partial staging form submission at
-             * this stage either commit it if no forms of the same
-             * type are present in the DOM - or stash it if it's the
-             * case : we may be dealing with a failed login */
-            if (status === FormEntryStatus.STAGING && !partial && canCommit) {
-                return sendMessage.onSuccess(
-                    contentScriptMessage({
-                        type: WorkerMessageType.FORM_ENTRY_COMMIT,
-                        payload: { reason: 'FORM_TYPE_REMOVED' },
-                    }),
-                    ({ committed }) => committed && promptAutoSave(committed)
-                );
-            }
-
-            if (isSubmissionPromptable(submission) && formRemoved) return promptAutoSave(submission);
-
-            if (!formRemoved) {
-                void sendMessage(
-                    contentScriptMessage({
-                        type: WorkerMessageType.FORM_ENTRY_STASH,
-                        payload: { reason: 'FORM_TYPE_PRESENT' },
-                    })
-                );
-            }
-        }
-    });
-
     const detachTrackedForm = (formEl: HTMLElement) => {
         ctx.trackedForms.get(formEl)?.detach();
         ctx.trackedForms.delete(formEl);
@@ -107,9 +45,8 @@ export const createFormManager = (options: FormManagerOptions) => {
      * in SPA apps. Once a form is detected, it will be tracked until
      * removed : form visibility changes have no effect on detachment
      * for performance reasons (costly `isVisible` check) */
-    const garbagecollect = () => {
+    const garbagecollect = () =>
         ctx.trackedForms.forEach((form) => form.shouldRemove() && detachTrackedForm(form.element));
-    };
 
     /* Detection :
      * - runs in `requestAnimationFrame` to defer costly DOM operations
@@ -118,7 +55,7 @@ export const createFormManager = (options: FormManagerOptions) => {
      * Returns a boolean flag indicating wether or not the detection was ran */
     const runDetection = debounce(
         withContext<(reason: string) => Promise<boolean>>(
-            async ({ destroy, service: { detector } }, reason: string) => {
+            async ({ destroy, service: { detector, autosave } }, reason: string) => {
                 garbagecollect();
                 if (await detector.shouldRunDetection()) {
                     ctx.detectionRequest = requestIdleCallback(() => {
@@ -149,7 +86,7 @@ export const createFormManager = (options: FormManagerOptions) => {
                                 });
 
                                 options.onDetection(getTrackedForms());
-                                void reconciliate();
+                                void autosave.reconciliate();
                                 ctx.busy = false;
                             } catch (err) {
                                 logger.warn(`[FormTracker::Detector] ${err}`);
@@ -284,14 +221,7 @@ export const createFormManager = (options: FormManagerOptions) => {
 
     const sync = () => ctx.trackedForms.forEach((form) => form.tracker?.reconciliate());
 
-    return {
-        getTrackedForms,
-        observe,
-        detect,
-        sync,
-        destroy,
-        reconciliate,
-    };
+    return { getTrackedForms, observe, detect, sync, destroy };
 };
 
 export type FormManager = ReturnType<typeof createFormManager>;
