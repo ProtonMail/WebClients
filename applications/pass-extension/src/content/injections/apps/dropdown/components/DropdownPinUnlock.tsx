@@ -3,7 +3,7 @@ import { useCallback, useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { pageMessage, sendMessage } from '@proton/pass/extension/message';
+import { contentScriptMessage, sendMessage } from '@proton/pass/extension/message';
 import type { MaybeNull } from '@proton/pass/types';
 import { WorkerMessageType } from '@proton/pass/types';
 import { PassIconStatus } from '@proton/pass/types/data/pass-icon';
@@ -29,7 +29,7 @@ export const DropdownPinUnlock: VFC<{
         try {
             setLoading(true);
             await sendMessage.onSuccess(
-                pageMessage({ type: WorkerMessageType.UNLOCK_REQUEST, payload: { pin: value } }),
+                contentScriptMessage({ type: WorkerMessageType.UNLOCK_REQUEST, payload: { pin: value } }),
                 (res) => {
                     if (!res.ok) {
                         ensureMounted(setError)(res.reason);
