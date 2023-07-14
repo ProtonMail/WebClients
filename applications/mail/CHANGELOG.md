@@ -1,3 +1,11 @@
+## Release 5.0.26.0 — Aug 02, 2023
+
+### Fixes
+
+-   Fixed an issue where the “Label as” shortcut would not work on Firefox when message content is in focus
+-   Fixed an issue where uploading big inline images into the composer would slow it down
+-   Fixed an issue where on some rare cases, embedded link in newsletters would not be clickable
+
 ## Release 5.0.25.0 — July 19, 2023
 
 ### New features
