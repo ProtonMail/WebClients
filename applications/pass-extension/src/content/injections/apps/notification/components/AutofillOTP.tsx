@@ -38,13 +38,15 @@ export const AutofillOTP: VFC<Props> = ({ item, onMessage, onClose }) => {
                     color="norm"
                     type="submit"
                     className="flex-item-fluid-auto"
-                    onClick={() =>
-                        otp?.token &&
-                        onMessage?.({
-                            type: IFrameMessageType.NOTIFICATION_AUTOFILL_OTP,
-                            payload: { code: otp.token },
-                        })
-                    }
+                    onClick={() => {
+                        if (otp?.token) {
+                            onMessage?.({
+                                type: IFrameMessageType.NOTIFICATION_AUTOFILL_OTP,
+                                payload: { code: otp.token },
+                            });
+                            onClose?.();
+                        }
+                    }}
                 >
                     {c('Action').t`Copy & fill in`}
                 </Button>
