@@ -90,6 +90,7 @@ const PlanCard = ({
                     disabled={disabled}
                     className="w100"
                     aria-describedby={`desc_${planName}`}
+                    data-testid={`select-${planName}`}
                 >
                     {action}
                 </PrimaryButton>
