@@ -1,17 +1,23 @@
 import type { Callback, Maybe } from '@proton/pass/types';
 
-interface SharedContext<T = any> {
+export interface SharedContext<T = any> {
     set: (ctx: T) => T;
     get: () => T;
     read: () => Maybe<T>;
     clear: () => void;
 }
 
-type SharedContextValue<T extends SharedContext = SharedContext> = T extends SharedContext<infer U> ? U : never;
-type SharedContextInjector<F extends Callback, T extends SharedContext> = (
-    ctx: SharedContextValue<T>,
-    ...args: Parameters<F>
-) => ReturnType<F>;
+export type SharedContextValue<T extends SharedContext = SharedContext> = T extends SharedContext<infer U> ? U : never;
+
+/* F extends `Maybe<Callback>` in order to improve automatic inference
+ * when using `withContext` on typed optional object methods. This avoids
+ * having to hard-cast - ie :
+ *   type Obj = { method?: (foo: number) => boolean }
+ *   const obj: Foo = { method: withContext((ctx, foo) => foo > 0.5) }
+ */
+export type SharedContextInjector<F extends Maybe<Callback>, T extends SharedContext> = F extends Callback
+    ? (ctx: SharedContextValue<T>, ...args: Parameters<F>) => ReturnType<F>
+    : (ctx: SharedContextValue<T>) => void;
 
 /**
  * Creates a generic context with a simple
@@ -58,9 +64,9 @@ export const createSharedContext = <T>(id: string): SharedContext<T> => {
  * ```
  */
 export const createSharedContextInjector = <T extends SharedContext>(context: T) => {
-    return <F extends Callback>(fn: SharedContextInjector<F, T>): F =>
+    return <F extends Maybe<Callback> = Callback>(fn: SharedContextInjector<F, T>) =>
         ((...args: any[]) => {
             const value = context.get();
             return fn(value, ...(args as any));
-        }) as any;
+        }) as F extends Maybe<infer U> ? U : F extends Callback ? F : never;
 };
