@@ -9,12 +9,17 @@ import { uniqueId } from '@proton/pass/utils/string';
 import { getEpoch } from '@proton/pass/utils/time';
 
 import { withContext } from '../../context/context';
-import type { FormHandle } from '../../types';
+import { type FormHandle, NotificationAction } from '../../types';
 
 export const createAutofillService = () => {
-    const queryItems: () => Promise<WorkerMessageResponse<WorkerMessageType.AUTOFILL_QUERY>> = withContext(
-        async ({ mainFrame }) =>
-            sendMessage.on(
+    const setAutofillCount: (count: number) => void = withContext(({ service: { formManager } }, count): void => {
+        const loginForms = formManager.getTrackedForms().filter((form) => form.formType === FormType.LOGIN);
+        loginForms.forEach((form) => form.getFields().forEach((field) => field.icon?.setCount(count)));
+    });
+
+    const getAutofillCandidates = withContext<() => Promise<WorkerMessageResponse<WorkerMessageType.AUTOFILL_QUERY>>>(
+        async ({ mainFrame }) => {
+            const result = await sendMessage.on(
                 contentScriptMessage({
                     type: WorkerMessageType.AUTOFILL_QUERY,
                     payload: { mainFrame },
@@ -23,21 +28,14 @@ export const createAutofillService = () => {
                     response.type === 'success'
                         ? { items: response.items, needsUpgrade: response.needsUpgrade }
                         : { items: [], needsUpgrade: false }
-            )
+            );
+
+            /* FIXME: sync autofill candidates if dropdown is opened */
+            setAutofillCount(result.items.length);
+
+            return result;
+        }
     );
-
-    const setAutofillCount: (count: number) => void = withContext(({ service: { formManager } }, count): void => {
-        const loginForms = formManager.getTrackedForms().filter((form) => form.formType === FormType.LOGIN);
-        loginForms.forEach((form) => form.getFields().forEach((field) => field.icon?.setCount(count)));
-    });
-
-    const syncAutofillCandidates = async () => {
-        /* FIXME: sync autofill candidates if dropdown is opened */
-        const result = await queryItems();
-        setAutofillCount(result.items.length);
-
-        return result;
-    };
 
     const autofillTelemetry = () => {
         void sendMessage(
@@ -90,12 +88,40 @@ export const createAutofillService = () => {
         autofillTelemetry();
     };
 
+    /* The `AUTOFILL_OTP_CHECK` message handler will take care of parsing
+     * the current tab's url & check for any tracked form submissions in order
+     * to pick the correct login item from which to derive the OTP code */
+    const reconciliate = withContext<() => Promise<boolean>>(async ({ service }) => {
+        void getAutofillCandidates();
+
+        const otpFieldDetected = service.formManager
+            .getTrackedForms()
+            .some((form) => form.formType === FormType.MFA && form.getFieldsFor(FormField.OTP).length > 0);
+
+        if (otpFieldDetected) {
+            return sendMessage.on(contentScriptMessage({ type: WorkerMessageType.AUTOFILL_OTP_CHECK }), (res) => {
+                if (res.type === 'success' && res.shouldPrompt) {
+                    service.iframe.attachNotification();
+                    service.iframe.notification?.open({
+                        action: NotificationAction.AUTOFILL_OTP_PROMPT,
+                        item: { shareId: res.shareId, itemId: res.itemId },
+                    });
+                    return true;
+                }
+                return false;
+            });
+        }
+
+        return false;
+    });
+
     return {
+        reconciliate,
         setAutofillCount,
-        syncAutofillCandidates,
+        getAutofillCandidates,
         autofillLogin,
-        autofillOTP,
         autofillGeneratedPassword,
+        autofillOTP,
     };
 };
 

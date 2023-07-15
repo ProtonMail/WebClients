@@ -30,7 +30,6 @@ export const createContentScriptContext = (options: {
                 onDetection: (forms) => {
                     const didDetect = forms.length > 0;
                     context.service.iframe[didDetect ? 'attachDropdown' : 'detachDropdown']();
-                    void (didDetect && context.service.autofill.syncAutofillCandidates());
                 },
             }),
             autofill: createAutofillService(),
