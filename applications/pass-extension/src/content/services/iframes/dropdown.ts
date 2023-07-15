@@ -89,7 +89,7 @@ export const createDropdown = (): InjectedDropdown => {
                 switch (action) {
                     case DropdownAction.AUTOFILL: {
                         if (!loggedIn) return { action, items: [], needsUpgrade: false };
-                        const { items, needsUpgrade } = await autofill.syncAutofillCandidates();
+                        const { items, needsUpgrade } = await autofill.getAutofillCandidates();
                         return { action, items, needsUpgrade };
                     }
                     case DropdownAction.AUTOSUGGEST_ALIAS: {

@@ -17,7 +17,6 @@ import { createListenerStore } from '@proton/pass/utils/listener';
 import { logger } from '@proton/pass/utils/logger';
 import { workerReady } from '@proton/pass/utils/worker';
 import { setUID as setSentryUID } from '@proton/shared/lib/helpers/sentry';
-import noop from '@proton/utils/noop';
 
 import { ExtensionContext, type ExtensionContextType, setupExtensionContext } from '../../shared/extension';
 import { CSContext } from '../context/context';
@@ -63,7 +62,7 @@ export const createContentScriptClient = (scriptId: string, mainFrame: boolean) 
             context.service.formManager.sync();
 
             if (!loggedIn) context.service.autofill.setAutofillCount(0);
-            if (workerReady(status)) context.service.autofill.syncAutofillCandidates().catch(noop);
+            if (workerReady(status)) void context.service.autofill.getAutofillCandidates();
         }
     };
 
@@ -72,7 +71,7 @@ export const createContentScriptClient = (scriptId: string, mainFrame: boolean) 
             context.setSettings(settings);
             context.service.iframe.reset();
             context.service.formManager.sync();
-            context.service.autofill.syncAutofillCandidates().catch(noop);
+            void context.service.autofill.getAutofillCandidates();
         }
     };
 
