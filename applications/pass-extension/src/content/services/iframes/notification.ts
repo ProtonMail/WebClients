@@ -1,4 +1,5 @@
 import { contentScriptMessage, sendMessage } from '@proton/pass/extension/message';
+import { resetFormFlags, setIgnoreFlag } from '@proton/pass/fathom';
 import { FormType, WorkerMessageType } from '@proton/pass/types';
 import { pipe, waitUntil } from '@proton/pass/utils/fp';
 
@@ -21,14 +22,35 @@ export const createNotification = (): InjectedNotification => {
         animation: 'slidein',
         backdropClose: false,
         classNames: [`${EXTENSION_PREFIX}-iframe--fixed`],
-        onClose: (_, options) =>
-            options?.userInitiated &&
-            sendMessage(
-                contentScriptMessage({
-                    type: WorkerMessageType.FORM_ENTRY_STASH,
-                    payload: { reason: 'AUTOSAVE_DISMISSED' },
-                })
-            ),
+        onClose: withContext(({ service }, { action }, options) => {
+            switch (action) {
+                /* stash the form submission if the user discarded
+                 * the autosave prompt */
+                case NotificationAction.AUTOSAVE_PROMPT:
+                    return (
+                        options?.discard &&
+                        sendMessage(
+                            contentScriptMessage({
+                                type: WorkerMessageType.FORM_ENTRY_STASH,
+                                payload: { reason: 'AUTOSAVE_DISMISSED' },
+                            })
+                        )
+                    );
+                /* flag all MFA forms as ignorable on user discards the
+                 * OTP autofill prompt */
+                case NotificationAction.AUTOFILL_OTP_PROMPT:
+                    if (options?.discard) {
+                        service.formManager
+                            .getTrackedForms()
+                            .filter(({ formType }) => formType === FormType.MFA)
+                            .forEach(({ element }) => {
+                                resetFormFlags(element);
+                                setIgnoreFlag(element);
+                            });
+                    }
+                    return service.autosave.reconciliate();
+            }
+        }),
         position: () => ({ top: 15, right: 15 }),
         dimensions: ({ action }) => ({
             width: NOTIFICATION_WIDTH,

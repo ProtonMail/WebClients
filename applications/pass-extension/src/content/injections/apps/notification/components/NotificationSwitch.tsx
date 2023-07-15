@@ -4,7 +4,7 @@ import { CircleLoader } from '@proton/atoms/CircleLoader';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import type { MaybeNull } from '@proton/pass/types';
 
-import type { IFrameMessage, NotificationActions } from '../../../../types';
+import type { IFrameCloseOptions, IFrameMessage, NotificationActions } from '../../../../types';
 import { NotificationAction } from '../../../../types';
 import { AutofillOTP } from './AutofillOTP';
 import { Autosave } from './Autosave';
@@ -15,7 +15,7 @@ type Props = {
     state: MaybeNull<NotificationActions>;
     visible?: boolean;
     onMessage?: (message: IFrameMessage) => void;
-    onClose?: () => void;
+    onClose?: (options?: IFrameCloseOptions) => void;
 };
 
 export const NotificationSwitch: VFC<Props> = ({ children, visible, state, settings, onMessage, onClose }) => {
