@@ -12,7 +12,7 @@ import { truthy } from '@proton/pass/utils/fp';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 import { navigateToUpgrade } from '../../../../../shared/components/upgrade/UpgradeButton';
-import type { IFrameMessage } from '../../../../types';
+import type { IFrameCloseOptions, IFrameMessage } from '../../../../types';
 import { IFrameMessageType } from '../../../../types';
 import { useIFrameContext } from '../../context/IFrameContextProvider';
 import { DropdownItem } from '../components/DropdownItem';
@@ -22,7 +22,7 @@ type Props = {
     items: SafeLoginItem[];
     needsUpgrade: boolean;
     visible?: boolean;
-    onClose?: () => void;
+    onClose?: (options?: IFrameCloseOptions) => void;
     onMessage?: (message: IFrameMessage) => void;
 };
 
@@ -82,7 +82,7 @@ export const ItemsList: VFC<Props> = ({ items, needsUpgrade, visible, onMessage,
     ) : (
         <DropdownItem
             icon={PassIconStatus.ACTIVE}
-            onClick={onClose}
+            onClick={() => onClose?.()}
             title={PASS_APP_NAME}
             subTitle={c('Info').t`No login found`}
         />

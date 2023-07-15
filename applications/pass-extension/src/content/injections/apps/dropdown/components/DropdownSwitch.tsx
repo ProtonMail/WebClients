@@ -11,7 +11,7 @@ import { workerBusy } from '@proton/pass/utils/worker';
 import { FORK_TYPE } from '@proton/shared/lib/authentication/ForkInterface';
 import { BRAND_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
 
-import type { IFrameMessage } from '../../../../../content/types';
+import type { IFrameCloseOptions, IFrameMessage } from '../../../../../content/types';
 import { DropdownAction, type DropdownActions } from '../../../../../content/types';
 import { useAccountFork } from '../../../../../shared/hooks';
 import { AliasAutoSuggest } from '../views/AliasAutoSuggest';
@@ -25,7 +25,7 @@ type Props = {
     status: WorkerStatus;
     loggedIn: boolean;
     visible?: boolean;
-    onClose?: (options?: { refocus: boolean }) => void;
+    onClose?: (options?: IFrameCloseOptions) => void;
     onMessage?: (message: IFrameMessage) => void;
     onResize?: () => void;
 };
