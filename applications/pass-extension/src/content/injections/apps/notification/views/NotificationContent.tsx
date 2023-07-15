@@ -25,9 +25,9 @@ export const NotificationContent: VFC = () => {
             visible={visible}
             settings={settings}
             onMessage={postMessage}
-            onClose={() => {
+            onClose={(options) => {
                 setNotificationState(null);
-                closeIFrame();
+                closeIFrame(options);
             }}
         >
             <NotificationsChildren />

@@ -129,8 +129,8 @@ export const createDropdown = (): InjectedDropdown => {
                     payload: { shareId, itemId },
                 }),
                 (data) => {
-                    iframe.close();
                     service.autofill.autofillLogin(form, data);
+                    iframe.close({ refocus: false });
                     fieldRef.current?.focus({ preventAction: true });
                 }
             );
@@ -167,10 +167,10 @@ export const createDropdown = (): InjectedDropdown => {
         iframe.destroy();
     };
 
-    listeners.addListener(window, 'popstate', () => iframe.close({ userInitiated: false }));
-    listeners.addListener(window, 'hashchange', () => iframe.close({ userInitiated: false }));
-    listeners.addListener(window, 'unload', () => iframe.close({ userInitiated: false }));
-    listeners.addListener(window, 'beforeunload', () => iframe.close({ userInitiated: false }));
+    listeners.addListener(window, 'popstate', () => iframe.close({ discard: false }));
+    listeners.addListener(window, 'hashchange', () => iframe.close({ discard: false }));
+    listeners.addListener(window, 'unload', () => iframe.close({ discard: false }));
+    listeners.addListener(window, 'beforeunload', () => iframe.close({ discard: false }));
 
     const dropdown: InjectedDropdown = {
         getState: () => iframe.state,

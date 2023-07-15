@@ -134,15 +134,14 @@ export const createIFrameApp = <A>({
 
     const updatePosition = () => requestAnimationFrame(() => setIframePosition(position(iframeRoot)));
 
-    const close: IFrameApp['close'] = (options) => {
+    const close = (options: IFrameCloseOptions = {}) => {
         if (state.visible) {
-            state.action = null;
             void sendPortMessage({ type: IFrameMessageType.IFRAME_HIDDEN });
             const target = options?.event?.target as Maybe<MaybeNull<HTMLElement>>;
 
             if (!target || !backdropExclude?.().includes(target)) {
                 listeners.removeAll();
-                onClose?.(state, { userInitiated: options?.userInitiated ?? true, refocus: options?.refocus ?? false });
+                onClose?.(state, options);
                 iframe.classList.remove(`${EXTENSION_PREFIX}-iframe--visible`);
 
                 state.visible = false;
@@ -160,9 +159,7 @@ export const createIFrameApp = <A>({
             listeners.addListener(scrollRef, 'scroll', updatePosition);
 
             if (backdropClose) {
-                listeners.addListener(window, 'mousedown', (event) =>
-                    close({ event, userInitiated: true, refocus: false })
-                );
+                listeners.addListener(window, 'mousedown', (event) => close({ event, discard: true, refocus: false }));
             }
 
             sendPortMessage({ type: IFrameMessageType.IFRAME_OPEN });
@@ -192,7 +189,7 @@ export const createIFrameApp = <A>({
     };
 
     const destroy = () => {
-        close({ userInitiated: false, refocus: false });
+        close({ discard: false, refocus: false });
         listeners.removeAll();
         state.port?.onMessage.removeListener(onMessageHandler);
         safeCall(() => iframeRoot.removeChild(iframe))();
@@ -204,9 +201,7 @@ export const createIFrameApp = <A>({
         state.framePort = framePort;
     });
 
-    registerMessageHandler(IFrameMessageType.IFRAME_CLOSE, (message) =>
-        close({ userInitiated: true, refocus: message.payload?.refocus ?? false })
-    );
+    registerMessageHandler(IFrameMessageType.IFRAME_CLOSE, (message) => close(message.payload));
 
     registerMessageHandler(IFrameMessageType.IFRAME_DIMENSIONS, (message) => {
         const { width, height } = merge(dimensions(state), { height: message.payload.height });
