@@ -4,7 +4,6 @@ import { WorkerMessageType } from '@proton/pass/types';
 import { createListenerStore } from '@proton/pass/utils/listener';
 import { logger } from '@proton/pass/utils/logger';
 import debounce from '@proton/utils/debounce';
-import noop from '@proton/utils/noop';
 
 import { withContext } from '../../context/context';
 import type { FormHandle } from '../../types';
@@ -54,53 +53,52 @@ export const createFormManager = (options: FormManagerOptions) => {
      * - on each detected form: recycle/create form handle and reconciliate its fields
      * Returns a boolean flag indicating wether or not the detection was ran */
     const runDetection = debounce(
-        withContext<(reason: string) => Promise<boolean>>(
-            async ({ destroy, service: { detector, autosave } }, reason: string) => {
-                garbagecollect();
-                if (await detector.shouldRunDetection()) {
-                    ctx.detectionRequest = requestIdleCallback(() => {
-                        ctx.busy = true;
+        withContext<(reason: string) => Promise<boolean>>(async ({ destroy, service }, reason: string) => {
+            garbagecollect();
+            if (await service.detector.shouldRunDetection()) {
+                ctx.detectionRequest = requestIdleCallback(async () => {
+                    ctx.busy = true;
 
-                        if (ctx.active) {
-                            logger.info(`[FormTracker::Detector] Running detection for "${reason}"`);
+                    if (ctx.active) {
+                        logger.info(`[FormTracker::Detector] Running detection for "${reason}"`);
 
-                            try {
-                                const forms = detector.runDetection({
-                                    onBottleneck: (data) => {
-                                        void sendMessage(
-                                            contentScriptMessage({
-                                                type: WorkerMessageType.SENTRY_CS_EVENT,
-                                                payload: { message: 'DetectorBottleneck', data },
-                                            })
-                                        ).catch(noop);
+                        try {
+                            const forms = service.detector.runDetection({
+                                onBottleneck: (data) => {
+                                    void sendMessage(
+                                        contentScriptMessage({
+                                            type: WorkerMessageType.SENTRY_CS_EVENT,
+                                            payload: { message: 'DetectorBottleneck', data },
+                                        })
+                                    );
 
-                                        destroy({ reason: 'detector bottleneck', recycle: false });
-                                    },
-                                });
+                                    destroy({ reason: 'detector bottleneck', recycle: false });
+                                },
+                            });
 
-                                forms.forEach((options) => {
-                                    const formHandle = ctx.trackedForms.get(options.form) ?? createFormHandles(options);
-                                    ctx.trackedForms.set(options.form, formHandle);
-                                    formHandle.reconciliate(options.formType, options.fields);
-                                    formHandle.attach();
-                                });
+                            forms.forEach((options) => {
+                                const formHandle = ctx.trackedForms.get(options.form) ?? createFormHandles(options);
+                                ctx.trackedForms.set(options.form, formHandle);
+                                formHandle.reconciliate(options.formType, options.fields);
+                                formHandle.attach();
+                            });
 
-                                options.onDetection(getTrackedForms());
-                                void autosave.reconciliate();
-                                ctx.busy = false;
-                            } catch (err) {
-                                logger.warn(`[FormTracker::Detector] ${err}`);
-                            }
+                            const didPrompt = await service.autofill.reconciliate();
+                            await (!didPrompt && service.autosave.reconciliate());
+                            options.onDetection(getTrackedForms());
+                            ctx.busy = false;
+                        } catch (err) {
+                            logger.warn(`[FormTracker::Detector] ${err}`);
                         }
-                    });
+                    }
+                });
 
-                    return true;
-                } else clearDetectionCache();
+                return true;
+            } else clearDetectionCache();
 
-                ctx.busy = false;
-                return false;
-            }
-        ),
+            ctx.busy = false;
+            return false;
+        }),
         250
     );
 
