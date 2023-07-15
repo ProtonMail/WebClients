@@ -8,10 +8,15 @@ import type { SelectedItem } from '@proton/pass/types';
 import { OTPDonut } from '../../../../../shared/components/otp/OTPDonut';
 import { OTPValue } from '../../../../../shared/components/otp/OTPValue';
 import { usePeriodicOtpCode } from '../../../../../shared/hooks/usePeriodicOtpCode';
+import type { IFrameCloseOptions } from '../../../../types';
 import { type IFrameMessage, IFrameMessageType } from '../../../../types';
 import { NotificationHeader } from './NotificationHeader';
 
-type Props = { item: SelectedItem; onMessage?: (message: IFrameMessage) => void; onClose?: () => void };
+type Props = {
+    item: SelectedItem;
+    onMessage?: (message: IFrameMessage) => void;
+    onClose?: (options?: IFrameCloseOptions) => void;
+};
 
 export const AutofillOTP: VFC<Props> = ({ item, onMessage, onClose }) => {
     const [otp, percent] = usePeriodicOtpCode({ ...item, type: 'item' });

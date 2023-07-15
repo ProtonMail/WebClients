@@ -23,11 +23,17 @@ import { TextField } from '../../../../../popup/components/Field/TextField';
 import { TitleField } from '../../../../../popup/components/Field/TitleField';
 import { BaseItemIcon } from '../../../../../shared/components/icon/ItemIcon';
 import { MAX_ITEM_NAME_LENGTH, validateItemName } from '../../../../../shared/form/validator/validate-item';
+import type { IFrameCloseOptions } from '../../../../types';
 import { NotificationHeader } from './NotificationHeader';
 
 import './Autosave.scss';
 
-type Props = { visible?: boolean; submission: FormEntryPrompt; onClose?: () => void; settings: ProxiedSettings };
+type Props = {
+    visible?: boolean;
+    submission: FormEntryPrompt;
+    onClose?: (options?: IFrameCloseOptions) => void;
+    settings: ProxiedSettings;
+};
 type AutosaveFormValues = { name: string; username: string; password: string };
 
 export const Autosave: VFC<Props> = ({ visible, submission, settings, onClose }) => {
@@ -113,7 +119,7 @@ export const Autosave: VFC<Props> = ({ visible, submission, settings, onClose })
                         })
                     ).catch(noop);
 
-                    return onClose?.();
+                    return onClose?.({ discard: true });
                 }
 
                 return createNotification({ text: c('Warning').t`Unable to save`, type: 'error' });
@@ -169,7 +175,8 @@ export const Autosave: VFC<Props> = ({ visible, submission, settings, onClose })
                     </FieldsetCluster>
                 </div>
                 <div className="flex flex-justify-space-between gap-3">
-                    <Button pill color="norm" shape="outline" onClick={onClose}>{c('Action').t`Not now`}</Button>
+                    <Button pill color="norm" shape="outline" onClick={() => onClose?.({ discard: true })}>{c('Action')
+                        .t`Not now`}</Button>
                     <Button
                         pill
                         color="norm"

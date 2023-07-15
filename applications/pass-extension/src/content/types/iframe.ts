@@ -23,7 +23,7 @@ export type IFramePortMessageHandler<T extends IFrameMessageType = IFrameMessage
     message: IFrameMessageWithSender<T>
 ) => void;
 
-export type IFrameCloseOptions = { event?: Event; userInitiated: boolean; refocus?: boolean };
+export type IFrameCloseOptions = { event?: Event; discard?: boolean; refocus?: boolean };
 
 export interface IFrameApp<A = any> {
     element: HTMLIFrameElement;
@@ -74,7 +74,7 @@ export type IFrameMessage<T extends IFrameMessageType = IFrameMessageType> = Ext
     | { type: IFrameMessageType.IFRAME_CONNECTED; payload: { framePort: string; id: IFrameEndpoint } }
     | { type: IFrameMessageType.IFRAME_INIT; payload: { workerState: WorkerState; settings: ProxiedSettings } }
     | { type: IFrameMessageType.IFRAME_OPEN }
-    | { type: IFrameMessageType.IFRAME_CLOSE; payload?: { refocus: boolean } }
+    | { type: IFrameMessageType.IFRAME_CLOSE; payload: IFrameCloseOptions }
     | { type: IFrameMessageType.IFRAME_HIDDEN }
     | { type: IFrameMessageType.IFRAME_DIMENSIONS; payload: { height: number; width?: number } }
     | { type: IFrameMessageType.DROPDOWN_ACTION; payload: DropdownActions }
