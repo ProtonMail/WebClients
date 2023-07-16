@@ -1,4 +1,4 @@
-import { setFieldProcessable, setFormProcessable } from '@proton/pass/fathom';
+import { resetFormFlags, setFieldProcessable, setFormProcessable } from '@proton/pass/fathom';
 import type { FormType } from '@proton/pass/types';
 import { FormField } from '@proton/pass/types';
 import { getMaxZIndex } from '@proton/pass/utils/dom';
@@ -115,7 +115,7 @@ export const createFormHandles = (options: DetectedForm): FormHandle => {
             fields.forEach((field) => field.icon?.reposition());
 
             if (hasUnprocessedFields(options.form.parentElement!)) {
-                setFormProcessable(form);
+                resetFormFlags(form);
                 void formManager.detect({ reason: 'NewFormFields' });
             }
         }),
