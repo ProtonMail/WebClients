@@ -1,5 +1,5 @@
 import { contentScriptMessage, sendMessage } from '@proton/pass/extension/message';
-import { clearDetectionCache, getDetectedFormParent, getIgnoredParent, setFormProcessable } from '@proton/pass/fathom';
+import { clearDetectionCache, getDetectedFormParent, getIgnoredParent, resetFormFlags } from '@proton/pass/fathom';
 import { WorkerMessageType } from '@proton/pass/types';
 import { createListenerStore } from '@proton/pass/utils/listener';
 import { logger } from '@proton/pass/utils/logger';
@@ -115,19 +115,19 @@ export const createFormManager = (options: FormManagerOptions) => {
     };
 
     /* if a new field was added to a currently ignored form :
-     * set it as processable in case it was recycled in case
-     * we need to re-run the classifiers */
+     * reset all detection flags: the classification result
+     * may change (ie: dynamic form recycling) */
     const onNewField = (field?: HTMLElement) => {
         const ignored = getIgnoredParent(field);
-        if (ignored) setFormProcessable(ignored);
+        if (ignored) resetFormFlags(ignored);
     };
 
-    /* if a field was deleted inside a currently detected
-     * form, un-flag it if the form is recycled and could have
-     * its predicted class change */
+    /* if a field was deleted from a currently detected form :
+     * reset all detection flags: the classification result
+     * may change (ie: dynamic form recycling) */
     const onDeletedField = (field?: HTMLElement) => {
         const detected = getDetectedFormParent(field);
-        if (detected) setFormProcessable(detected);
+        if (detected) resetFormFlags(detected);
     };
 
     /**
