@@ -101,6 +101,8 @@ declare const setFormProcessed: (el: HTMLElement) => void;
 declare const setFieldProcessed: (el: HTMLInputElement) => void;
 declare const setFieldProcessable: (field: HTMLElement) => void;
 declare const setFormProcessable: (form: HTMLElement) => void;
+declare const resetFieldFlags: (field: HTMLElement) => void;
+declare const resetFormFlags: (form: HTMLElement) => void;
 declare const isFormProcessed: (form: HTMLElement) => boolean;
 declare const isFieldProcessed: (field: HTMLElement) => boolean;
 declare const processFormEffect: (fnode: Fnode) => Fnode;
@@ -191,6 +193,8 @@ export {
     preDetectedClusterSelector,
     processFieldEffect,
     processFormEffect,
+    resetFieldFlags,
+    resetFormFlags,
     rulesetMaker,
     selectAllForms,
     selectDanglingInputs,
