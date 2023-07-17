@@ -19,6 +19,7 @@ export interface CalendarStatusBadge {
     badgeType: BadgeType;
     text: string;
     tooltipText?: string;
+    className?: string;
 }
 
 export const getDefaultCalendarBadge = (): CalendarStatusBadge => ({
