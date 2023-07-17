@@ -41,7 +41,7 @@ const UTMTrackerModal = ({ message, ...rest }: Props) => {
                     <img src={cleanLinkImg} alt="" className="flex-item-noshrink" />
                     <p className="color-weak flex-item-fluid pl-4 my-0">
                         {c('Info')
-                            .t`You can click links in this email without being profiled and leaking your online activity with advertisers.`}
+                            .t`We removed tracking information from the following links to help protect you from advertisers and others trying to track your online activity.`}
                         <br />
                         <span>{learnMoreLink}</span>
                     </p>
