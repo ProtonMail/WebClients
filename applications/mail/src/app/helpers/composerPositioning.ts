@@ -1,15 +1,23 @@
 import { getCustomSizingClasses } from '@proton/components';
+import { rootFontSize } from '@proton/shared/lib/helpers/dom';
 
 export const MAX_ACTIVE_COMPOSER_DESKTOP = 3;
 export const MAX_ACTIVE_COMPOSER_MOBILE = 1;
 
-export const COMPOSER_WIDTH = 640;
-export const COMPOSER_GUTTER = 15;
-const COMPOSER_HEIGHT = 640;
-const COMPOSER_VERTICAL_GUTTER = 10;
-const COMPOSER_SWITCH_MODE = 100;
-const HEADER_HEIGHT = 80;
-const APP_BAR_WIDTH = 45;
+export const getComposerDimension = () => {
+    const root = rootFontSize();
+    return {
+        width: 40 * root, // 640
+        height: 40 * root, // 640
+        gutter: root, // 16
+        verticalGutter: 0.625 * root, // 10
+        switchMode: 6.25 * root, // 100
+        headerHeight: 5 * root, // 80
+        appBarWidth: 2.8125 * root, // 45
+    };
+};
+
+export type ComposerDimension = ReturnType<typeof getComposerDimension>;
 
 const COMPOSER_NARROW_STYLES = {
     position: 'fixed',
@@ -21,34 +29,40 @@ const COMPOSER_NARROW_STYLES = {
     '--w-custom': 'auto',
 };
 
-export const computeLeftPosition = (index: number, count: number, windowWidth: number) => {
-    const neededWidth = COMPOSER_WIDTH * count + COMPOSER_GUTTER * (count + 1);
+export const computeLeftPosition = (
+    { width, gutter }: ComposerDimension,
+    index: number,
+    count: number,
+    windowWidth: number
+) => {
+    const neededWidth = width * count + gutter * (count + 1);
 
     let rightPosition: number;
 
     if (neededWidth < windowWidth) {
-        rightPosition = COMPOSER_WIDTH * index + COMPOSER_GUTTER * (index + 1);
+        rightPosition = width * index + gutter * (index + 1);
     } else {
-        const widthToDivide = windowWidth - COMPOSER_GUTTER * 2 - COMPOSER_WIDTH;
+        const widthToDivide = windowWidth - gutter * 2 - width;
         const share = widthToDivide / (count - 1);
 
-        rightPosition = COMPOSER_GUTTER + share * index;
+        rightPosition = gutter + share * index;
     }
 
     // Prevent negative value
     if (rightPosition < 0) {
-        rightPosition = COMPOSER_GUTTER;
+        rightPosition = gutter;
     }
 
-    return windowWidth - COMPOSER_WIDTH - rightPosition;
+    return windowWidth - width - rightPosition;
 };
 
-const computeHeight = (windowHeight: number) => {
-    const maxHeight = windowHeight - COMPOSER_VERTICAL_GUTTER - HEADER_HEIGHT;
-    return maxHeight > COMPOSER_HEIGHT ? COMPOSER_HEIGHT : maxHeight;
+const computeHeight = ({ height, verticalGutter, headerHeight }: ComposerDimension, windowHeight: number) => {
+    const maxHeight = windowHeight - verticalGutter - headerHeight;
+    return maxHeight > height ? height : maxHeight;
 };
 
 interface ComputeComposerStyleOptions {
+    composerDimension: ReturnType<typeof getComposerDimension>;
     // Composer index
     index: number;
     // Number of composer opened
@@ -65,6 +79,7 @@ interface ComputeComposerStyleReturns {
 }
 
 export const computeComposerStyle = ({
+    composerDimension,
     index,
     count,
     minimized,
@@ -76,8 +91,8 @@ export const computeComposerStyle = ({
     const windowHeight = window.innerHeight;
     const windowWidth = window.innerWidth - drawerOffset;
     let style: Record<string, string | number> = {
-        '--left-custom': `${computeLeftPosition(index, count, windowWidth)}px`,
-        computeHeight: `${computeHeight(windowHeight)}px`,
+        '--left-custom': `${computeLeftPosition(composerDimension, index, count, windowWidth)}px`,
+        computeHeight: `${computeHeight(composerDimension, windowHeight)}px`,
     };
 
     if (isNarrow) {
@@ -85,13 +100,17 @@ export const computeComposerStyle = ({
     } else if (minimized) {
         style['--h-custom'] = '35px';
     } else if (maximized) {
-        const composerWidth = windowWidth - COMPOSER_GUTTER - APP_BAR_WIDTH;
-        style['--left-custom'] = `${windowWidth - composerWidth - COMPOSER_GUTTER}px`;
+        const composerWidth = windowWidth - composerDimension.gutter - composerDimension.appBarWidth;
+        style['--left-custom'] = `${windowWidth - composerWidth - composerDimension.gutter}px`;
         style['--w-custom'] = `${composerWidth}px`;
-        style['--h-custom'] = `${windowHeight - COMPOSER_VERTICAL_GUTTER * 2}px`;
+        style['--h-custom'] = `${windowHeight - composerDimension.verticalGutter * 2}px`;
     }
 
     return { style, customClasses: getCustomSizingClasses(style) };
 };
 
-export const shouldBeMaximized = (windowHeight: number) => windowHeight < COMPOSER_HEIGHT - COMPOSER_SWITCH_MODE;
+export const shouldBeMaximized = (composerDimension: ComposerDimension, windowHeight: number) => {
+    const { height, switchMode } = getComposerDimension();
+
+    return windowHeight < height - switchMode;
+};
