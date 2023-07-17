@@ -5,7 +5,7 @@ import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
 import { Card } from '@proton/atoms/Card';
-import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, useNotifications } from '@proton/components';
+import { useNotifications } from '@proton/components';
 import type { ImportPayload } from '@proton/pass/import';
 import { PROVIDER_INFO_MAP } from '@proton/pass/import';
 import * as requests from '@proton/pass/store/actions/requests';
@@ -13,7 +13,7 @@ import type { MaybeNull } from '@proton/pass/types';
 import { pipe, tap } from '@proton/pass/utils/fp';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
-import { ImportForm, ImportVaultsPicker, type ImportVaultsPickerHandle } from '../../../shared/components/import';
+import { ImportForm, ImportVaultsPickerModal } from '../../../shared/components/import';
 import { ImportProgress } from '../../../shared/components/import/ImportProgress';
 import {
     type UseImportFormBeforeSubmit,
@@ -25,7 +25,6 @@ import {
 export const Import: VFC = () => {
     const { createNotification } = useNotifications();
     const [importData, setImportData] = useState<MaybeNull<ImportPayload>>(null);
-    const vaultPickerRef = useRef<ImportVaultsPickerHandle>(null);
     const beforeSubmitResolver = useRef<(value: UseImportFormBeforeSubmitValue) => void>();
     const reset = () => beforeSubmitResolver.current?.({ ok: false });
 
@@ -92,28 +91,15 @@ export const Import: VFC = () => {
                 </FormikProvider>
 
                 {importData !== null && (
-                    <ModalTwo onClose={reset} onReset={reset} open size={'medium'} className="mt-10">
-                        <ModalTwoHeader title={c('Title').t`Import to vaults`} />
-                        <ModalTwoContent>
-                            <ImportVaultsPicker
-                                ref={vaultPickerRef}
-                                payload={importData}
-                                onSubmit={(payload) =>
-                                    beforeSubmitResolver?.current?.(
-                                        payload.vaults.length === 0 ? { ok: false } : { ok: true, payload }
-                                    )
-                                }
-                            />
-                        </ModalTwoContent>
-                        <ModalTwoFooter>
-                            <Button type="reset" onClick={reset} color="danger">
-                                {c('Action').t`Cancel`}
-                            </Button>
-                            <Button type="button" color="norm" onClick={() => vaultPickerRef.current?.submit()}>{c(
-                                'Action'
-                            ).t`Proceed`}</Button>
-                        </ModalTwoFooter>
-                    </ModalTwo>
+                    <ImportVaultsPickerModal
+                        onClose={reset}
+                        payload={importData}
+                        onSubmit={(payload) =>
+                            beforeSubmitResolver?.current?.(
+                                payload.vaults.length === 0 ? { ok: false } : { ok: true, payload }
+                            )
+                        }
+                    />
                 )}
             </Card>
 
