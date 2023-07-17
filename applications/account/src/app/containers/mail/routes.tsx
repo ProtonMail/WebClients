@@ -175,7 +175,7 @@ export const getMailAppRoutes = ({
                         id: 'protonmail-bridge',
                     },
                     {
-                        text: c('Title').t`SMTP Submission`,
+                        text: c('Title').t`SMTP submission`,
                         id: 'smtp-tokens',
                         available: isSmtpTokenEnabled && (isB2BOrganization || hasSmtpOrganization),
                     },
