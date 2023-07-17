@@ -59,12 +59,7 @@ const formatCCExpirationDate = (item: BitwardenCCItem) => {
     const { expMonth, expYear } = item.card;
     if (!expMonth || !expYear) return '';
 
-    const month = Number(expMonth).toLocaleString('en-US', {
-        minimumIntegerDigits: 2,
-        useGrouping: false,
-    });
-
-    return `${month}${expYear}`;
+    return `${String(expMonth).padStart(2, '0')}${expYear}`;
 };
 
 export const readBitwardenData = (data: string): ImportPayload => {
