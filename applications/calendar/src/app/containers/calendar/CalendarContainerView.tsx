@@ -517,9 +517,9 @@ const CalendarContainerView = ({
                     </FloatingButton>
                 }
                 searchBox={
-                    <CalendarSearch isNarrow={isNarrow} containerRef={containerRef} onSearch={onSearch} />
+                    <CalendarSearch isNarrow={isNarrow} containerRef={containerRef} onSearch={onSearch} onBackFromSearch={onBackFromSearch} />
                 }
-                searchDropdown={<CalendarSearch isNarrow={isNarrow} containerRef={containerRef} onSearch={onSearch} />}
+                searchDropdown={<CalendarSearch isNarrow={isNarrow} containerRef={containerRef} onSearch={onSearch} onBackFromSearch={onBackFromSearch} />}
                 feedbackButton={
                     hasRebrandingFeedback ? (
                         <TopNavbarListItemFeedbackButton onClick={() => setRebrandingFeedbackModal(true)} />
