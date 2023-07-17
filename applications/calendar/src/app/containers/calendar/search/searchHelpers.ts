@@ -1,4 +1,4 @@
-import { getUnixTime } from 'date-fns';
+import { getUnixTime, isAfter, isBefore, startOfDay } from 'date-fns';
 import { c } from 'ttag';
 
 import { ESItem } from '@proton/encrypted-search/lib';
@@ -6,6 +6,7 @@ import { OccurrenceIterationCache, getOccurrences } from '@proton/shared/lib/cal
 import { propertyToUTCDate } from '@proton/shared/lib/calendar/vcalConverter';
 import { DAY, SECOND } from '@proton/shared/lib/constants';
 import { endOfDay, format as formatUTC, isSameDay as isSameUTCDay } from '@proton/shared/lib/date-fns-utc';
+import { formatIntlUTCDate } from '@proton/shared/lib/date-utc/formatIntlUTCDate';
 import { convertTimestampToTimezone, toUTCDate } from '@proton/shared/lib/date/timezone';
 import { pick } from '@proton/shared/lib/helpers/object';
 import { dateLocale } from '@proton/shared/lib/i18n';
@@ -14,7 +15,7 @@ import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import groupWith from '@proton/utils/groupWith';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { ESCalendarContent, ESCalendarMetadata } from '../../../interfaces/encryptedSearch';
+import { ESCalendarMetadata, ESCalendarContent } from '../../../interfaces/encryptedSearch';
 import { getCurrentEvent } from '../eventActions/recurringHelper';
 import getComponentFromCalendarEventWithoutBlob from '../eventStore/cache/getComponentFromCalendarEventWithoutBlob';
 import { CalendarsEventsCache } from '../eventStore/interface';
@@ -218,4 +219,70 @@ export const getTimeString = ({
     return plusDaysToEnd === 0
         ? `${formattedStartTime} - ${formattedEndTime}`
         : `${formattedStartTime} - ${formattedEndTime} (+${plusDaysToEnd})`;
+};
+
+export const getEventsDayDateString = (date: Date) => {
+    const formattedMonthYear = formatIntlUTCDate(date, {
+        month: 'short',
+        year: 'numeric',
+    });
+    const shortWeekDay = formatUTC(date, 'ccc');
+    return `${shortWeekDay}, ${formattedMonthYear}`;
+};
+
+/**
+ * Used to know in which position append empty today, returns either -1, 0 or 1:
+ *
+ * - -1: empty today should be placed before current day (used only when today is before first event)
+ * - 0: empty today should not be displayed (because there are events today)
+ * - 1: empty today should be placed after current day (either because today is between current & next day or there is simply no next day)
+ */
+const getEmptyTodayPosition = ({
+    currentStartDate,
+    nextStartDate,
+    today,
+    isFirstDay,
+}: {
+    currentStartDate: Date;
+    today: Date;
+    nextStartDate?: Date;
+    isFirstDay: boolean;
+}) => {
+    switch (true) {
+        case isFirstDay && isBefore(today, startOfDay(currentStartDate)):
+            return -1;
+        case isAfter(today, startOfDay(currentStartDate)) &&
+            (!nextStartDate || isBefore(today, startOfDay(nextStartDate))):
+            return 1;
+        default:
+            return 0;
+    }
+};
+
+/**
+ * If `today` has no event, we'll add an empty group
+ */
+export const fillEmptyToday = (eventsGroupedByDay: VisualSearchItem[][]) => {
+    const today = startOfDay(new Date());
+    return eventsGroupedByDay.reduce((acc: VisualSearchItem[][], currentDayEvents, index) => {
+        const [{ fakeUTCStartDate }] = eventsGroupedByDay[index];
+        const nextDailyEvents = eventsGroupedByDay[index + 1];
+
+        const emptyTodayPosition = getEmptyTodayPosition({
+            currentStartDate: fakeUTCStartDate,
+            nextStartDate: nextDailyEvents?.[0]?.fakeUTCStartDate,
+            isFirstDay: index === 0,
+            today,
+        });
+
+        const withMaybeEmptyToday = [currentDayEvents];
+
+        if (emptyTodayPosition === -1) {
+            withMaybeEmptyToday.unshift([]);
+        } else if (emptyTodayPosition === 1) {
+            withMaybeEmptyToday.push([]);
+        }
+
+        return [...acc, ...withMaybeEmptyToday];
+    }, []);
 };

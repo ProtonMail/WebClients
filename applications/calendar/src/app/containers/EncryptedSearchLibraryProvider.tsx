@@ -28,8 +28,8 @@ const EncryptedSearchLibraryContext = createContext<EncryptedSearchLibrary>({
 export const useEncryptedSearchLibrary = () => useContext(EncryptedSearchLibraryContext);
 
 interface Props {
-    children?: ReactNode;
     calendarIDs: string[];
+    children?: ReactNode;
 }
 
 const EncryptedSearchLibraryProvider = ({ calendarIDs, children }: Props) => {
@@ -42,7 +42,13 @@ const EncryptedSearchLibraryProvider = ({ calendarIDs, children }: Props) => {
 
     const [isLibraryInitialized, setIsLibraryInitialized] = useState(false);
 
-    const esHelpers = getESHelpers({ api, calendarIDs, history, userID, getCalendarEventRaw });
+    const esHelpers = getESHelpers({
+        api,
+        calendarIDs,
+        history,
+        userID,
+        getCalendarEventRaw,
+    });
 
     const successMessage = c('Success').t`Calendar search activated`;
 
@@ -104,7 +110,8 @@ const EncryptedSearchLibraryProvider = ({ calendarIDs, children }: Props) => {
             await esLibraryFunctions.initializeES();
             setIsLibraryInitialized(true);
         };
-        initializeLibrary();
+
+        void initializeLibrary();
     }, []);
 
     const value = { ...esLibraryFunctions, isLibraryInitialized };

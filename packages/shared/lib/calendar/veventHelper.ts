@@ -1,20 +1,19 @@
-import {serverTime} from '@proton/crypto';
-import {absoluteToRelativeTrigger, getIsAbsoluteTrigger} from '@proton/shared/lib/calendar/alarms/trigger';
+import { serverTime } from '@proton/crypto';
+import { absoluteToRelativeTrigger, getIsAbsoluteTrigger } from '@proton/shared/lib/calendar/alarms/trigger';
 
-import {DAY} from '../constants';
-import {fromUTCDate, toUTCDate} from '../date/timezone';
-import {omit, pick} from '../helpers/object';
+import { DAY } from '../constants';
+import { fromUTCDate, toUTCDate } from '../date/timezone';
+import { omit, pick } from '../helpers/object';
 import {
     AttendeeClearPartResult,
     AttendeePart,
-    CalendarEvent,
     CalendarEventData,
     VcalDateOrDateTimeProperty,
     VcalValarmComponent,
     VcalVeventComponent,
 } from '../interfaces/calendar';
-import {RequireOnly} from '../interfaces/utils';
-import {fromInternalAttendee} from './attendees';
+import { RequireOnly } from '../interfaces/utils';
+import { fromInternalAttendee } from './attendees';
 import {
     CALENDAR_CARD_TYPE,
     CALENDAR_ENCRYPTED_FIELDS,
@@ -28,16 +27,16 @@ import {
     USER_ENCRYPTED_FIELDS,
     USER_SIGNED_FIELDS,
 } from './constants';
-import {generateProtonCalendarUID, getDisplayTitle, hasMoreThan, wrap} from './helper';
-import {withMandatoryPublishFields as withVAlarmMandatoryPublishFields} from './valarmHelper';
-import {parse, serialize, toTriggerString} from './vcal';
-import {prodId} from './vcalConfig';
-import {dateTimeToProperty, propertyToUTCDate} from './vcalConverter';
-import {getEventStatus, getIsCalendar, getIsEventComponent, getIsPropertyAllDay} from './vcalHelper';
+import { generateProtonCalendarUID, getDisplayTitle, hasMoreThan, wrap } from './helper';
+import { withMandatoryPublishFields as withVAlarmMandatoryPublishFields } from './valarmHelper';
+import { parse, serialize, toTriggerString } from './vcal';
+import { prodId } from './vcalConfig';
+import { dateTimeToProperty, propertyToUTCDate } from './vcalConverter';
+import { getEventStatus, getIsCalendar, getIsEventComponent, getIsPropertyAllDay } from './vcalHelper';
 
 const { ENCRYPTED_AND_SIGNED, SIGNED, CLEAR_TEXT } = CALENDAR_CARD_TYPE;
 
-export const getIsAllDay = ({dtstart}: Pick<VcalVeventComponent, 'dtstart'>) => {
+export const getIsAllDay = ({ dtstart }: Pick<VcalVeventComponent, 'dtstart'>) => {
     return getIsPropertyAllDay(dtstart);
 };
 
@@ -45,11 +44,11 @@ export const getUidValue = (component: VcalVeventComponent) => {
     return component.uid.value;
 };
 
-export const getIsRecurring = ({rrule}: Pick<VcalVeventComponent, 'rrule'>) => {
+export const getIsRecurring = ({ rrule }: Pick<VcalVeventComponent, 'rrule'>) => {
     return !!rrule;
 };
 
-export const getRecurrenceId = ({'recurrence-id': recurrenceId}: Pick<VcalVeventComponent, 'recurrence-id'>) => {
+export const getRecurrenceId = ({ 'recurrence-id': recurrenceId }: Pick<VcalVeventComponent, 'recurrence-id'>) => {
     return recurrenceId;
 };
 
@@ -70,7 +69,7 @@ export const getReadableCard = (cards: CalendarEventData[]) => {
     return cards.find(({ Type }) => [CLEAR_TEXT, SIGNED].includes(Type));
 };
 
-export const getIsEventCancelled = (event: CalendarEvent) => {
+export const getIsEventCancelled = <T extends { CalendarEvents: CalendarEventData[] }>(event: T) => {
     const calendarClearTextPart = getReadableCard(event.CalendarEvents);
     if (!calendarClearTextPart) {
         return;
