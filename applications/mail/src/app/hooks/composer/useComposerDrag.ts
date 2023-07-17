@@ -5,9 +5,10 @@ import { COMPOSER_MODE } from '@proton/shared/lib/constants';
 import debounce from '@proton/utils/debounce';
 import throttle from '@proton/utils/throttle';
 
-import { COMPOSER_GUTTER, COMPOSER_WIDTH, computeLeftPosition } from '../../helpers/composerPositioning';
+import { ComposerDimension, computeLeftPosition } from '../../helpers/composerPositioning';
 
 interface Props {
+    composerDimension: ComposerDimension;
     minimized: boolean;
     maximized: boolean;
     composerIndex: number;
@@ -44,12 +45,19 @@ const moveReducer = (state: State, action: Action) => {
     }
 };
 
-const useComposerDrag = ({ drawerOffset, maximized, minimized, totalComposers, composerIndex }: Props) => {
+const useComposerDrag = ({
+    composerDimension,
+    drawerOffset,
+    maximized,
+    minimized,
+    totalComposers,
+    composerIndex,
+}: Props) => {
     const windowWidth = window.innerWidth - drawerOffset;
     const [mailSettings] = useMailSettings();
     const prevMinimized = useRef(minimized);
     const prevMaximized = useRef(maximized);
-    const composerLeftStyle = computeLeftPosition(composerIndex, totalComposers, windowWidth);
+    const composerLeftStyle = computeLeftPosition(composerDimension, composerIndex, totalComposers, windowWidth);
 
     const [{ isDragging, initialCursorPosition, offset, lastOffset }, dispatch] = useReducer<Reducer<State, Action>>(
         moveReducer,
@@ -80,13 +88,13 @@ const useComposerDrag = ({ drawerOffset, maximized, minimized, totalComposers, c
             let finalOffset = prevOffset + cursorMoveOffset;
 
             const composerLeftCornerPos = composerLeftStyle + finalOffset;
-            const composerRightCornerPos = composerLeftCornerPos + COMPOSER_WIDTH;
+            const composerRightCornerPos = composerLeftCornerPos + composerDimension.width;
 
-            if (composerLeftCornerPos < COMPOSER_GUTTER) {
-                finalOffset = -(composerLeftStyle - COMPOSER_GUTTER);
+            if (composerLeftCornerPos < composerDimension.gutter) {
+                finalOffset = -(composerLeftStyle - composerDimension.gutter);
             }
-            if (composerRightCornerPos > windowWidth - COMPOSER_GUTTER) {
-                const maxOffset = windowWidth - COMPOSER_GUTTER - composerLeftStyle - COMPOSER_WIDTH;
+            if (composerRightCornerPos > windowWidth - composerDimension.gutter) {
+                const maxOffset = windowWidth - composerDimension.gutter - composerLeftStyle - composerDimension.width;
                 finalOffset = maxOffset;
             }
 

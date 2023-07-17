@@ -5,7 +5,7 @@ import { COMPOSER_MODE } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
 import { ADVANCED_SEARCH_OVERLAY_CLOSE_EVENT, DRAG_ADDRESS_KEY } from '../../constants';
-import { computeComposerStyle, shouldBeMaximized } from '../../helpers/composerPositioning';
+import { computeComposerStyle, getComposerDimension, shouldBeMaximized } from '../../helpers/composerPositioning';
 import useComposerDrag from '../../hooks/composer/useComposerDrag';
 import { ComposerID } from '../../logic/composers/composerTypes';
 import { Breakpoints } from '../../models/utils';
@@ -47,7 +47,10 @@ const ComposerFrame = ({
         mailSettings?.ComposerMode === COMPOSER_MODE.MAXIMIZED
     );
 
+    const composerDimension = getComposerDimension();
+
     const { style, customClasses } = computeComposerStyle({
+        composerDimension,
         index,
         count,
         minimized,
@@ -61,6 +64,7 @@ const ComposerFrame = ({
         offset: dragOffset,
         isDragging,
     } = useComposerDrag({
+        composerDimension,
         composerIndex: index,
         maximized,
         minimized,
@@ -83,7 +87,7 @@ const ComposerFrame = ({
 
     // Automatic maximize if height too small
     useEffect(() => {
-        const shouldMaximized = shouldBeMaximized(windowHeight);
+        const shouldMaximized = shouldBeMaximized(composerDimension, windowHeight);
 
         if (!maximized && shouldMaximized) {
             toggleMaximized();
