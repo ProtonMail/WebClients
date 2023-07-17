@@ -4,7 +4,6 @@ import X2JS from 'x2js';
 
 import type { ItemImportIntent, MaybeNull } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
-import { uniqueId } from '@proton/pass/utils/string';
 
 import { ImportReaderError } from '../helpers/reader.error';
 import { getImportedVaultName, importLoginItem } from '../helpers/transformers';
@@ -71,9 +70,8 @@ const groupToVault = (group: KeePassGroup): MaybeNull<ImportVault> => {
     if (!entry) return null;
 
     return {
-        type: 'new',
-        vaultName: getImportedVaultName(group.Name),
-        id: uniqueId(),
+        name: getImportedVaultName(group.Name),
+        shareId: null,
         items: Array.isArray(entry) ? entry.map(entryToItem) : [entryToItem(entry)],
     };
 };

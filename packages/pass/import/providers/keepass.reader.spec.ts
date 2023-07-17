@@ -28,17 +28,10 @@ describe('Import KeePass xml', () => {
     it('should extract vaults from groups', () => {
         expect(payload.vaults.length).toEqual(4);
 
-        expect(payload.vaults[0].type).toEqual('new');
-        expect(payload.vaults[0].vaultName).toEqual('Group A');
-
-        expect(payload.vaults[1].type).toEqual('new');
-        expect(payload.vaults[1].vaultName).toEqual('Group B');
-
-        expect(payload.vaults[2].type).toEqual('new');
-        expect(payload.vaults[2].vaultName).toEqual('Group C');
-
-        expect(payload.vaults[3].type).toEqual('new');
-        expect(payload.vaults[3].vaultName).toEqual('Import - 27 Apr 2023');
+        expect(payload.vaults[0].name).toEqual('Group A');
+        expect(payload.vaults[1].name).toEqual('Group B');
+        expect(payload.vaults[2].name).toEqual('Group C');
+        expect(payload.vaults[3].name).toEqual('Import - 27 Apr 2023');
     });
 
     it('should extract items from `Group A`', () => {
