@@ -28,10 +28,8 @@ describe('Import LastPass csv', () => {
     it('converts LastPass folders to vaults correctly', () => {
         const [primary, secondary] = payload.vaults;
         expect(payload.vaults.length).toEqual(2);
-        expect(primary.type).toEqual('new');
-        expect(primary.type === 'new' && primary.vaultName).toEqual('Import - 27 Apr 2023');
-        expect(secondary.type).toEqual('new');
-        expect(secondary.type === 'new' && secondary.vaultName).toEqual('company services');
+        expect(primary.name).toEqual('Import - 27 Apr 2023');
+        expect(secondary.name).toEqual('company services');
     });
 
     it('parses primary `LastPass import` vault items correctly', () => {

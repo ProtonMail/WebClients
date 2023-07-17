@@ -2,7 +2,6 @@ import { c } from 'ttag';
 
 import type { ItemImportIntent } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
-import { uniqueId } from '@proton/pass/utils/string';
 
 import { readCSV } from '../helpers/csv.reader';
 import { ImportReaderError } from '../helpers/reader.error';
@@ -29,9 +28,8 @@ export const readSafariData = async (data: string): Promise<ImportPayload> => {
         return {
             vaults: [
                 {
-                    type: 'new',
-                    vaultName: getImportedVaultName(),
-                    id: uniqueId(),
+                    name: getImportedVaultName(),
+                    shareId: null,
                     items: result.items.map(
                         (item): ItemImportIntent<'login'> =>
                             importLoginItem({

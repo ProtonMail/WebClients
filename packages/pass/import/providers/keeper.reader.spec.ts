@@ -24,14 +24,9 @@ describe('Import Keeper CSV', () => {
     it('converts Keeper folders to vaults correctly', () => {
         expect(payload.vaults.length).toEqual(3);
 
-        expect(payload.vaults[0].type).toEqual('new');
-        expect(payload.vaults[0].vaultName).toEqual('Import - 27 Apr 2023');
-
-        expect(payload.vaults[1].type).toEqual('new');
-        expect(payload.vaults[1].vaultName).toEqual('folder1');
-
-        expect(payload.vaults[2].type).toEqual('new');
-        expect(payload.vaults[2].vaultName).toEqual('subfolder1');
+        expect(payload.vaults[0].name).toEqual('Import - 27 Apr 2023');
+        expect(payload.vaults[1].name).toEqual('folder1');
+        expect(payload.vaults[2].name).toEqual('subfolder1');
     });
 
     it('should correctly parse items from 1st vault', () => {
