@@ -1,12 +1,12 @@
-import { MouseEvent, MutableRefObject, useEffect, useMemo, useRef, useState } from 'react';
+import React, { MouseEvent, MutableRefObject, useEffect, useMemo, useRef, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
+import { getYear, isSameYear, startOfDay } from 'date-fns';
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms/Button';
+import { CircleLoader } from '@proton/atoms/CircleLoader';
 import { IllustrationPlaceholder } from '@proton/components/containers';
-import { format as formatUTC } from '@proton/shared/lib/date-fns-utc';
-import { formatIntlUTCDate } from '@proton/shared/lib/date-utc/formatIntlUTCDate';
-import { dateLocale } from '@proton/shared/lib/i18n';
 import { SimpleMap } from '@proton/shared/lib/interfaces';
 import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import noResultsImg from '@proton/styles/assets/img/illustrations/empty-search.svg';
@@ -19,14 +19,17 @@ import { CalendarsEventsCache, EventReadResult } from '../eventStore/interface';
 import useCalendarsEventsReader from '../eventStore/useCalendarsEventsReader';
 import { CalendarViewEvent, InteractiveState } from '../interface';
 import { useCalendarSearch } from './CalendarSearchProvider';
+import CalendarSearchViewDayEvents from './CalendarSearchViewDayEvents';
+import CalendarSearchViewYearSeparator from './CalendarSearchViewYearSeparator';
 import { VisualSearchItem } from './interface';
 import {
     expandAndOrderItems,
+    fillEmptyToday,
     getCalendarViewEventWithMetadata,
-    getTimeString,
     getVisualSearchItems,
     groupItemsByDay,
 } from './searchHelpers';
+import { useCalendarSearchPagination } from './useCalendarSearchPagination';
 
 import './SearchView.scss';
 
@@ -50,9 +53,9 @@ const CalendarSearchView = ({
     getOpenedMailEvents,
 }: Props) => {
     const history = useHistory();
-    const firstItemRef = useRef<HTMLButtonElement | null>(null);
+    const firstItemRef = useRef<HTMLDivElement | null>(null);
 
-    const { items, hasSearchedCounter } = useCalendarSearch();
+    const { items, hasSearchedCounter, loading } = useCalendarSearch();
     const [calendarViewEvents, setCalendarViewEvents] = useState<CalendarViewEvent[]>([]);
 
     const calendarsMap = calendars.reduce<SimpleMap<VisualCalendar>>((acc, calendar) => {
@@ -60,6 +63,7 @@ const CalendarSearchView = ({
 
         return acc;
     }, {});
+
     const visualItems = useMemo(() => {
         return getVisualSearchItems({
             items: expandAndOrderItems(items, calendarsEventsCacheRef.current),
@@ -103,9 +107,19 @@ const CalendarSearchView = ({
         metadataOnly: false,
     });
 
+    // visualItems is sorted by StartTime so we can paginate it directly without sorting it again
+    const {
+        currentPage,
+        items: paginatedItems,
+        isNextEnabled,
+        isPreviousEnabled,
+        next,
+        previous,
+    } = useCalendarSearchPagination(visualItems);
+
     useEffect(() => {
         firstItemRef.current?.scrollIntoView(true);
-    }, [history.location]);
+    }, [history.location, currentPage]);
 
     const handleClickSearchItem = (e: MouseEvent<HTMLButtonElement>, item: VisualSearchItem) => {
         const calendarsEventsCache = calendarsEventsCacheRef.current;
@@ -145,91 +159,86 @@ const CalendarSearchView = ({
         setCalendarViewEvents([calendarViewEvent]);
     };
 
-    if (!visualItems.length) {
+    if (loading || !visualItems) {
         return (
             <div className="flex flex-column flex-justify-center flex-align-items-center w100 h100">
-                <IllustrationPlaceholder title={c('Info message').t`No results found`} url={noResultsImg} />
-                <div className="text-center">
-                    {c('Info calendar search')
-                        .t`You can either update your search query or close search to go back to calendar views`}
-                </div>
+                <CircleLoader size="medium" className="color-primary" />
             </div>
         );
     }
 
+    const hasResults = Boolean(visualItems.length);
+
+    const eventsGroupedByDay = groupItemsByDay(paginatedItems);
+    const maybeWithEmptyToday = fillEmptyToday(eventsGroupedByDay);
+
     return (
-        <div className="flex-no-min-children flex-column flex-nowrap flex-justify-start flex-align-items-start w100 h100">
-            {groupItemsByDay(visualItems).map((dailyItems) => {
-                const [{ fakeUTCStartDate }] = dailyItems;
-                const formattedMonthYear = formatIntlUTCDate(fakeUTCStartDate, { month: 'short', year: 'numeric' });
-                const formattedWeekDay = formatUTC(fakeUTCStartDate, 'ccc');
-                const formattedDate = `${formattedWeekDay}, ${formattedMonthYear}`;
-                const day = formatUTC(fakeUTCStartDate, 'd', { locale: dateLocale });
-
-                // TODO
-                const isToday = false;
-
-                return (
-                    <div
-                        key={+fakeUTCStartDate}
-                        className="flex flex-nowrap border-bottom border-weak search-result-line w100 px-4 py-2 on-tablet-flex-column"
-                    >
-                        <div
-                            className="flex-no-min-children flex-item-noshrink mt-1 pt-0.5"
-                            aria-current={isToday ? `date` : undefined}
+        <div className="relative flex-no-min-children flex-column flex-nowrap flex-justify-start flex-align-items-start w100 h100">
+            <div className="flex flex-row flex-justify-space-between flex-align-items-center w100 py-3 px-5 bg-norm border-bottom">
+                <h2 className="h6 text-semibold">
+                    {hasResults ? c('esCalendar').t`Results` : c('esCalendar').t`No result`}
+                </h2>
+                {hasResults && (
+                    <div className="flex-row">
+                        <Button
+                            color="weak"
+                            shape="ghost"
+                            size="small"
+                            className="mx-2"
+                            disabled={!isPreviousEnabled}
+                            onClick={previous}
                         >
-                            <div className="text-lg text-semibold min-w3e text-center">
-                                <span className="search-day-number rounded-sm py-0.5 px-1">{day}</span>
-                            </div>
-                            <div className="text-lg text-weak min-w9e">{formattedDate}</div>
-                        </div>
-                        <div className="flex-items-fluid search-day flex flex-nowrap flex-column pl-7 lg:pl-0 mt-2 lg:mt-0">
-                            {dailyItems.map((item) => {
-                                const {
-                                    ID,
-                                    CalendarID,
-                                    visualCalendar,
-                                    fakeUTCStartDate,
-                                    fakeUTCEndDate,
-                                    isAllDay,
-                                    plusDaysToEnd,
-                                    Summary,
-                                    isFirst,
-                                } = item;
-                                const timeString = getTimeString({
-                                    startDate: fakeUTCStartDate,
-                                    endDate: fakeUTCEndDate,
-                                    isAllDay,
-                                    plusDaysToEnd,
-                                });
-
-                                return (
-                                    <button
-                                        ref={isFirst ? firstItemRef : null}
-                                        type="button"
-                                        key={`${CalendarID}-${ID}-${fakeUTCStartDate}`}
-                                        className="flex flex-nowrap search-event-cell flex-align-items-center text-left interactive-pseudo w100"
-                                        onClick={(e) => handleClickSearchItem(e, item)}
-                                    >
-                                        <span
-                                            className="search-calendar-border flex-item-noshrink my-1"
-                                            style={{ '--calendar-color': visualCalendar.Color }}
-                                        />
-                                        <span className="flex-no-min-children flex-nowrap flex-item-fluid search-event-time-details on-tablet-flex-column">
-                                            <span className="text-lg min-w14e pl-2 lg:pl-0 search-event-time">
-                                                {timeString}
-                                            </span>
-                                            <span className="text-lg text-bold text-ellipsis flex-item-fluid pl-2 lg:pl-0 search-event-summary">
-                                                {Summary}
-                                            </span>
-                                        </span>
-                                    </button>
-                                );
-                            })}
-                        </div>
+                            {c('Action').t`Previous`}
+                        </Button>
+                        <Button
+                            color="weak"
+                            shape="ghost"
+                            size="small"
+                            className="mx-2"
+                            disabled={!isNextEnabled}
+                            onClick={next}
+                        >
+                            {c('Action').t`Next`}
+                        </Button>
                     </div>
-                );
-            })}
+                )}
+            </div>
+
+            {hasResults ? (
+                <div className="w100 flex-1 scroll-if-needed">
+                    {maybeWithEmptyToday.reduce((acc: React.JSX.Element[], dailyEvents, index) => {
+                        const isEmptyDay = !dailyEvents.length;
+                        const utcStartDate = isEmptyDay ? startOfDay(new Date()) : dailyEvents[0]?.fakeUTCStartDate;
+                        const previousDailyEvents = maybeWithEmptyToday[index - 1];
+                        const previousUtStartDate = previousDailyEvents?.[0]?.fakeUTCStartDate ?? new Date();
+
+                        const shouldDisplayYearSeparatorBeforeCurrentDay =
+                            !previousDailyEvents || !isSameYear(previousUtStartDate, utcStartDate);
+
+                        const year = getYear(utcStartDate);
+
+                        return [
+                            ...acc,
+                            ...(shouldDisplayYearSeparatorBeforeCurrentDay
+                                ? [<CalendarSearchViewYearSeparator key={`year_${year}`} year={year} />]
+                                : []),
+                            <CalendarSearchViewDayEvents
+                                key={utcStartDate.toString()}
+                                dailyEvents={dailyEvents}
+                                onClickSearchItem={handleClickSearchItem}
+                            />,
+                        ];
+                    }, [])}
+                </div>
+            ) : (
+                <div className="flex flex-column flex-justify-center flex-align-items-center w100 h100">
+                    <IllustrationPlaceholder title={c('Info message').t`No results found`} url={noResultsImg} />
+                    <div className="text-center">
+                        {c('Info calendar search')
+                            .t`You can either update your search query or close search to go back to calendar views`}
+                    </div>
+                </div>
+            )}
         </div>
     );
 };

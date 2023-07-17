@@ -104,6 +104,7 @@ export interface CalendarSearchQuery {
     keyword?: string;
     begin?: string;
     end?: string;
+    page?: string;
 }
 
 export interface OnSaveConfirmationArgs {

@@ -19,6 +19,7 @@ const baseProps: ComponentProps<typeof CalendarSearchInput> = {
     value: '',
     loading: false,
     onOpen: jest.fn(),
+    onClear: jest.fn(),
     onChange: jest.fn(),
 };
 
@@ -183,9 +184,8 @@ describe('CalendarSearchInput', () => {
 
     describe('when clear button is hit', () => {
         it('act clear search and open', async () => {
-            const onOpen = jest.fn();
-            const onChange = jest.fn();
-            renderComponent({ ...baseProps, value: 'test value here', onOpen, onChange });
+            const onClear = jest.fn();
+            renderComponent({ ...baseProps, value: 'test value here', onClear });
 
             expect(screen.getByDisplayValue('test value here'));
 
@@ -193,12 +193,8 @@ describe('CalendarSearchInput', () => {
             await userEvent.click(button);
 
             await waitFor(() => {
-                expect(onChange).toHaveBeenCalledTimes(1);
+                expect(onClear).toHaveBeenCalledTimes(1);
             });
-
-            expect(onChange).toHaveBeenCalledWith('');
-            expect(onOpen).toHaveBeenCalledTimes(1);
-            expect(onOpen).toHaveBeenCalledWith();
         });
     });
 });

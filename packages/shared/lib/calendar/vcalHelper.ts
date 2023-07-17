@@ -1,4 +1,4 @@
-import {normalize} from '../helpers/string';
+import { normalize } from '../helpers/string';
 import {
     VcalAttendeeProperty,
     VcalAttendeePropertyWithCn,
@@ -187,7 +187,7 @@ export const getIsValidMethod = (method: ICAL_METHOD, isOrganizerMode: boolean) 
     return isOrganizerMode ? ICAL_METHODS_ATTENDEE.includes(method) : ICAL_METHODS_ORGANIZER.includes(method);
 };
 
-export const getEventStatus = ({ status }: VcalVeventComponent) => {
+export const getEventStatus = <T extends { status?: VcalVeventComponent['status'] }>({ status }: T) => {
     if (Object.values(ICAL_EVENT_STATUS).some((icalStatus) => icalStatus === status?.value)) {
         return status?.value as ICAL_EVENT_STATUS;
     }

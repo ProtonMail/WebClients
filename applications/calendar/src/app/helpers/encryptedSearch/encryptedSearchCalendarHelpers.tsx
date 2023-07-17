@@ -21,7 +21,13 @@ import {
     MetadataRecoveryPoint,
 } from '../../interfaces/encryptedSearch';
 import { CALENDAR_CORE_LOOP } from './constants';
-import { generateID, getAllESEventsFromCalendar, parseSearchParams, transformAttendees } from './esUtils';
+import {
+    extractAttendees,
+    generateID,
+    getESEventsFromCalendarInBatch,
+    parseSearchParams,
+    transformAttendees,
+} from './esUtils';
 
 interface Props {
     api: Api;
@@ -30,6 +36,22 @@ interface Props {
     userID: string;
     getCalendarEventRaw: GetCalendarEventRaw;
 }
+
+interface ItemMetadataQueryResult {
+    resultMetadata?: ESCalendarMetadata[];
+    setRecoveryPoint?: (setIDB?: boolean) => Promise<void>;
+}
+
+const popOneCalendar = (
+    calendarIDs: string[]
+): Pick<MetadataRecoveryPoint, 'remainingCalendarIDs' | 'currentCalendarId'> => {
+    const [first, ...rest] = calendarIDs;
+
+    return {
+        remainingCalendarIDs: rest,
+        currentCalendarId: first,
+    };
+};
 
 export const getESHelpers = ({
     api,
@@ -42,44 +64,58 @@ export const getESHelpers = ({
     // for cases where IDB couldn't be instantiated but we still want to
     // index content
     let metadataRecoveryPoint: MetadataRecoveryPoint | undefined;
-    const queryItemsMetadata = async (): Promise<{
-        resultMetadata?: ESCalendarMetadata[];
-        setRecoveryPoint?: (setIDB?: boolean) => Promise<void>;
-    }> => {
-        const recoveryPoint: MetadataRecoveryPoint = metadataRecoveryPoint || [];
+
+    const queryItemsMetadata = async (): Promise<ItemMetadataQueryResult> => {
+        let recoveryPoint: MetadataRecoveryPoint = metadataRecoveryPoint ?? popOneCalendar(calendarIDs);
         // Note that indexing, and therefore an instance of this function,
         // can exist even without an IDB, because we can index in memory only.
         // Therefore, we have to check if an IDB exists before querying it
         const esdbExists = await checkVersionedESDB(userID);
         if (esdbExists) {
-            const localRecoveryPoint: MetadataRecoveryPoint =
-                (await metadataIndexingProgress.readRecoveryPoint(userID)) || [];
-            recoveryPoint.push(...localRecoveryPoint);
+            const localRecoveryPoint: MetadataRecoveryPoint = await metadataIndexingProgress.readRecoveryPoint(userID);
+            if (localRecoveryPoint) {
+                recoveryPoint = localRecoveryPoint;
+            }
         }
 
-        if (calendarIDs.length === 0) {
+        const { currentCalendarId } = recoveryPoint;
+        if (!currentCalendarId) {
             return { resultMetadata: [] };
         }
 
-        const nextCalendarID = calendarIDs.find((calendarID) => !recoveryPoint.includes(calendarID));
-        if (!nextCalendarID) {
-            return { resultMetadata: [] };
+        const { events: esMetadataEvents, cursor: newCursor } = await getESEventsFromCalendarInBatch({
+            calendarID: currentCalendarId,
+            eventCursor: recoveryPoint.eventCursor,
+            api,
+            getCalendarEventRaw,
+        });
+
+        const newRecoveryPoint: MetadataRecoveryPoint = newCursor
+            ? {
+                  ...recoveryPoint,
+                  eventCursor: newCursor,
+              }
+            : popOneCalendar(recoveryPoint.remainingCalendarIDs);
+
+        const setNewRecoveryPoint = esdbExists
+            ? async (setIDB: boolean = true) => {
+                  metadataRecoveryPoint = newRecoveryPoint;
+                  if (setIDB) {
+                      await metadataIndexingProgress.setRecoveryPoint(userID, newRecoveryPoint);
+                  }
+              }
+            : undefined;
+
+        // some calendars might have no event so if there is others, we want to forward query to them
+        if (!esMetadataEvents.length && newRecoveryPoint.currentCalendarId) {
+            console.warn('empty calendar, skipping: next one please!');
+            await setNewRecoveryPoint?.();
+            return queryItemsMetadata();
         }
-
-        const esMetadataEvents = await getAllESEventsFromCalendar(nextCalendarID, api, getCalendarEventRaw);
-
-        const newRecoveryPoint = [...recoveryPoint, nextCalendarID];
 
         return {
             resultMetadata: esMetadataEvents,
-            setRecoveryPoint: esdbExists
-                ? async (setIDB: boolean = true) => {
-                      metadataRecoveryPoint = newRecoveryPoint;
-                      if (setIDB) {
-                          await metadataIndexingProgress.setRecoveryPoint(userID, newRecoveryPoint);
-                      }
-                  }
-                : undefined,
+            setRecoveryPoint: setNewRecoveryPoint,
         };
     };
 
@@ -123,12 +159,15 @@ export const getESHelpers = ({
         itemToSearch: CachedItem<ESCalendarMetadata, ESCalendarContent>,
         hasApostrophe: boolean
     ) => {
+        const { metadata } = itemToSearch;
+
         const stringsToSearch: string[] = [
-            itemToSearch.metadata?.Description || '',
-            itemToSearch.metadata?.Location || '',
-            itemToSearch.metadata?.Summary || '',
-            ...transformAttendees(itemToSearch.metadata?.Attendees || []),
+            metadata?.Description || '',
+            metadata?.Location || '',
+            metadata?.Summary || '',
+            ...transformAttendees(extractAttendees({ attendee: metadata?.Attendees })),
         ];
+
         return testKeywords(keywords, stringsToSearch, hasApostrophe);
     };
 
@@ -144,8 +183,13 @@ export const getESHelpers = ({
     });
 
     const applyFilters = (esSearchParams: ESCalendarSearchParams, metadata: ESCalendarMetadata) => {
-        const { CalendarID, StartTime, EndTime, RRule } = metadata;
         const { calendarID, begin, end } = esSearchParams;
+
+        if (!metadata.IsDecryptable) {
+            return false;
+        }
+
+        const { CalendarID, StartTime, EndTime, RRule } = metadata;
 
         // If it's the wrong calendar, we exclude it
         if (calendarID && calendarID !== CalendarID) {

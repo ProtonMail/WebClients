@@ -49,6 +49,7 @@ const MainContainerSetup = ({ user, addresses, calendars, drawerView }: Props) =
             calendars,
             activeCalendars: getProbablyActiveCalendars(calendars),
             visibleCalendars: calendars.filter(({ Display }) => !!Display),
+
             allCalendarIDs: calendars.map(({ ID }) => ID),
         };
     }, [calendars]);

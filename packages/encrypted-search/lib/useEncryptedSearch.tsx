@@ -3,7 +3,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { IDBPDatabase } from 'idb';
 import { c } from 'ttag';
 
-import { useOnLogout } from '@proton/components';
+import useOnLogout from '@proton/components/containers/app/useOnLogout';
 import useApi from '@proton/components/hooks/useApi';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import useUser from '@proton/components/hooks/useUser';
@@ -693,9 +693,9 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
         // end result is that some items are not indexed. Since it's tricky and slow to figure
         // out which ones, we instead just delete everything and notify users
         if (wasESDBCreated) {
-            const finalIndexed = await readNumMetadata(userID);
-            const finalMailbox = await esCallbacks.getTotalItems();
-            if (typeof finalIndexed === 'undefined' || finalIndexed < finalMailbox) {
+            const totalIndexed = await readNumMetadata(userID);
+            const expectedTotalIndexed = await esCallbacks.getTotalItems();
+            if (typeof totalIndexed === 'undefined' || totalIndexed < expectedTotalIndexed) {
                 return handleError();
             }
 

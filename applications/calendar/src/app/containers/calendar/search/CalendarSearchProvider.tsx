@@ -1,8 +1,8 @@
 import { ReactNode, createContext, useCallback, useContext, useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
-import { useLoading } from '@proton/components/hooks';
 import { ESItem } from '@proton/encrypted-search/lib';
+import { useLoading } from '@proton/hooks';
 import noop from '@proton/utils/noop';
 
 import { extractSearchParametersFromURL } from '../../../helpers/encryptedSearch/esUtils';
@@ -41,7 +41,7 @@ const CalendarSearchProvider = ({ children }: Props) => {
 
     const [hasSearchedCounter, setHasSearchedCounter] = useState(0);
     const [renderCounter, setRenderCounter] = useState(0);
-    const [loading, withLoading] = useLoading();
+    const [loading, withLoading, setLoading] = useLoading(true);
 
     const { dbExists, isEnablingEncryptedSearch, isRefreshing, isMetadataIndexingPaused } = getESDBStatus();
 
@@ -59,10 +59,12 @@ const CalendarSearchProvider = ({ children }: Props) => {
 
     useEffect(() => {
         if (!isLibraryInitialized || !keyword) {
+            setLoading(false);
             return;
         }
+
         void withLoading(
-            encryptedSearch(setItems).then(() => {
+            encryptedSearch(setItems).then(async () => {
                 setHasSearchedCounter((c) => c + 1);
             })
         );

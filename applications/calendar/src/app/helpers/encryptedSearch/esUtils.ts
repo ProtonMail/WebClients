@@ -82,9 +82,10 @@ export const generatePathnameWithSearchParams = (location: Location, searchQuery
 };
 
 const extractSearchParameters = (location: Location): ESCalendarSearchParams => {
-    const { calendarID, keyword, begin, end } = getSearchParamsFromURL(location.hash);
+    const { calendarID, keyword, begin, end, page } = getSearchParamsFromURL(location.hash);
     return {
         calendarID,
+        page: stringToInt(page),
         normalizedKeywords: !!keyword ? normalizeKeyword(keyword) : undefined,
         begin: stringToInt(begin),
         end: stringToInt(end),
@@ -127,7 +128,9 @@ export const getAllEventsIDs = async (calendarID: string, api: Api, Limit: numbe
     return result;
 };
 
-export const extractAttendees = (veventComponent: VcalVeventComponent): ESAttendeeModel[] => {
+export const extractAttendees = <T extends { attendee: VcalVeventComponent['attendee'] }>(
+    veventComponent: T
+): ESAttendeeModel[] => {
     const attendees = propertiesToAttendeeModel(veventComponent.attendee);
     return attendees.map(({ email, cn, role, partstat }) => ({ email, cn, role, partstat }));
 };
@@ -139,13 +142,29 @@ export const getESEvent = async (
     getCalendarEventRaw: GetCalendarEventRaw
 ): Promise<ESCalendarMetadata> => {
     const { Event } = await api<{ Event: CalendarEvent }>(getEvent(calendarID, eventID));
-    const { veventComponent } = await getCalendarEventRaw(Event);
+
+    let hasError = false;
+    const { veventComponent } = await getCalendarEventRaw(Event).catch(() => {
+        hasError = true;
+        return {
+            veventComponent: {
+                status: undefined,
+                summary: undefined,
+                location: undefined,
+                description: undefined,
+                organizer: undefined,
+                attendee: [],
+            },
+        };
+    });
 
     return {
+        Status: veventComponent.status?.value || '',
         Summary: veventComponent.summary?.value || '',
         Location: veventComponent.location?.value || '',
         Description: veventComponent.description?.value || '',
-        Attendees: extractAttendees(veventComponent),
+        Attendees: veventComponent.attendee ?? [],
+        Organizer: veventComponent.organizer?.value || '',
         Order: await generateOrder(generateID(calendarID, eventID)),
         ID: Event.ID,
         SharedEventID: Event.SharedEventID,
@@ -165,6 +184,7 @@ export const getESEvent = async (
         UID: Event.UID,
         RecurrenceID: Event.RecurrenceID,
         Exdates: Event.Exdates,
+        IsDecryptable: !hasError,
     };
 };
 
@@ -175,12 +195,49 @@ export const getAllESEventsFromCalendar = async (
 ) => {
     const eventIDs = await getAllEventsIDs(calendarID, api, 1000);
     return runInQueue(
+        eventIDs.map((eventID) => () => getESEvent(eventID, calendarID, api, getCalendarEventRaw)),
+        ES_MAX_CONCURRENT
+    );
+};
+
+/**
+ * Fetches a batch of events from a calendar
+ *
+ * @returns if calendar has still more events after cursor + limit, then it will be return last fetched event as new cursor
+ */
+export const getESEventsFromCalendarInBatch = async ({
+    calendarID,
+    limit = 200,
+    eventCursor,
+    api,
+    getCalendarEventRaw,
+}: {
+    calendarID: string;
+    limit?: number;
+    eventCursor?: string;
+    api: Api;
+    getCalendarEventRaw: GetCalendarEventRaw;
+}) => {
+    const params: CalendarEventsIDsQuery = {
+        Limit: limit,
+        AfterID: eventCursor,
+    };
+
+    const { IDs: eventIDs } = await api<{ IDs: string[] }>(queryEventsIDs(calendarID, params));
+    const cursor = eventIDs.length === limit ? eventIDs[eventIDs.length - 1] : undefined;
+
+    const events = await runInQueue(
         eventIDs.map(
             // eslint-disable-next-line @typescript-eslint/no-loop-func
             (eventID) => () => getESEvent(eventID, calendarID, api, getCalendarEventRaw)
         ),
         ES_MAX_CONCURRENT
     );
+
+    return {
+        events,
+        cursor,
+    };
 };
 
 export const processCoreEvents = async (
@@ -212,13 +269,15 @@ export const processCoreEvents = async (
             const { CalendarModelEventID } = await api<{ CalendarModelEventID: string }>(queryLatestModelEventID(ID));
             newEventsObject[ID] = CalendarModelEventID;
 
-            Items.push(
-                ...(await getAllESEventsFromCalendar(ID, api, getCalendarEventRaw)).map((item) => ({
+            const maybeEventsFromCalendar = (await getAllESEventsFromCalendar(ID, api, getCalendarEventRaw))
+                .filter((item): item is ESCalendarMetadata => !!item)
+                .map((item) => ({
                     ID: generateID(item.CalendarID, item.ID),
                     Action: ES_SYNC_ACTIONS.CREATE,
                     ItemMetadata: item,
-                }))
-            );
+                }));
+
+            Items.push(...maybeEventsFromCalendar);
         } else if (Action === EVENT_ACTIONS.DELETE) {
             // Get from IDB all items such that itemID={calendarID}.* and delete them, plus+ remove calendarID from event object
             eventLoopsToDelete.push(ID);
@@ -286,7 +345,9 @@ export const processCalendarEvents = async (
             calendarID = CalendarID;
             // CREATE or UPDATE is the same because we anyway overwrite the row in IDB
             const esItem = await getESEvent(ID, CalendarID, api, getCalendarEventRaw);
-            Items.push({ ID: generateID(CalendarID, ID), Action: ES_SYNC_ACTIONS.CREATE, ItemMetadata: esItem });
+            if (esItem) {
+                Items.push({ ID: generateID(CalendarID, ID), Action: ES_SYNC_ACTIONS.CREATE, ItemMetadata: esItem });
+            }
         }
 
         if (calendarID) {

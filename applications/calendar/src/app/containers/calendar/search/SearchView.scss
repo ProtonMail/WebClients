@@ -29,6 +29,17 @@
 		margin-inline-end: rem(8);
 		min-block-size: rem(28);
 
+		&.isUnanswered {
+			background-color: transparent;
+			background-image: repeating-linear-gradient(
+				-45deg,
+				transparent,
+				transparent rem(2),
+				var(--calendar-color, transparent) rem(2),
+				var(--calendar-color, transparent) rem(4)
+			);
+		}
+
 		@include media('<=#{em(1000, 16)}') {
 			// @include media('<=medium') {
 			min-block-size: rem(44);
