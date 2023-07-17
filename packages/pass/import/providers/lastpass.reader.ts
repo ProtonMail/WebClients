@@ -56,12 +56,8 @@ const getCCExpirationDate = (extra: LastPassItem['extra']) => {
     if (!unformatted) return null;
 
     const date = new Date(`${unformatted} UTC`);
-    const month = Number(getMonth(date) + 1).toLocaleString('en-US', {
-        minimumIntegerDigits: 2,
-        useGrouping: false,
-    });
 
-    return `${month}${getYear(date)}`;
+    return `${String(getMonth(date) + 1).padStart(2, '0')}${getYear(date)}`;
 };
 
 const processCreditCardItem = (item: LastPassItem): ItemImportIntent<'creditCard'> =>
