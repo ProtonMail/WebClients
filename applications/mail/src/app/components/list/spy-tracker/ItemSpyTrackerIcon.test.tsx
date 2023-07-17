@@ -197,7 +197,7 @@ describe('ItemSpyTrackerIcon', () => {
 
         getByText(
             modal,
-            'You can read this email without revealing your interactions, location, or device to advertisers.'
+            'We blocked the following advertisers and organizations from seeing when you open this email, what device you’re using, and where you’re located.'
         );
 
         // Trackers are visible
@@ -223,7 +223,7 @@ describe('ItemSpyTrackerIcon', () => {
 
         getByText(
             modal,
-            'You can click links in this email without being profiled and leaking your online activity with advertisers.'
+            'We removed tracking information from the following links to help protect you from advertisers and others trying to track your online activity.'
         );
 
         // Trackers are visible
