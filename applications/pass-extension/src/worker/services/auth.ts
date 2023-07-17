@@ -27,7 +27,7 @@ import { SessionLockStatus, WorkerMessageType, WorkerStatus } from '@proton/pass
 import { withPayload } from '@proton/pass/utils/fp';
 import { logger } from '@proton/pass/utils/logger';
 import { getEpoch } from '@proton/pass/utils/time';
-import { workerReady } from '@proton/pass/utils/worker';
+import { workerLocked, workerReady } from '@proton/pass/utils/worker';
 import { getApiError, getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import type { AuthenticationStore } from '@proton/shared/lib/authentication/createAuthenticationStore';
 import createAuthenticationStore from '@proton/shared/lib/authentication/createAuthenticationStore';
@@ -162,7 +162,7 @@ export const createAuthService = ({
 
                 /* if the session is locked we might not be considered
                  * fully logged in but we can still persist the session */
-                if (loggedIn || api.getStatus().sessionLocked) {
+                if (loggedIn || workerLocked(ctx.status)) {
                     logger.info('[Worker::Auth] Persisting session...');
                     void persistSession(api, result);
                 }
