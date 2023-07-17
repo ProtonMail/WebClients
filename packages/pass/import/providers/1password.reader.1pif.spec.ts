@@ -1,6 +1,7 @@
 import fs from 'fs';
 
 import type { ItemImportIntent } from '@proton/pass/types';
+import { CardType } from '@proton/pass/types/protobuf/item-v1';
 
 import type { ImportPayload } from '../types';
 import { read1Password1PifData } from './1password.reader.1pif';
@@ -20,7 +21,7 @@ describe('Import 1password 1pif', () => {
 
     it('should correctly parse items', () => {
         const [vaultData] = payload.vaults;
-        expect(vaultData.items.length).toEqual(7);
+        expect(vaultData.items.length).toEqual(8);
 
         expect(payload.vaults.length).toEqual(1);
         expect(vaultData.type).toEqual('new');
@@ -163,5 +164,21 @@ describe('Import 1password 1pif', () => {
         });
         expect(autofillItem.trashed).toEqual(false);
         expect(autofillItem.extraFields).toEqual([]);
+
+        /* Credit Card item */
+        const creditCardItemName = 'Credit Card item with note';
+        const creditCardItem = items.find(
+            (item) => item.metadata.name === creditCardItemName
+        ) as ItemImportIntent<'creditCard'>;
+        expect(creditCardItem.type).toEqual('creditCard');
+        expect(creditCardItem.metadata.note).toEqual('this is credit card item note');
+        expect(creditCardItem.content).toEqual({
+            cardType: CardType.Unspecified,
+            cardholderName: 'A B',
+            expirationDate: '012025',
+            number: '4242333342423333',
+            pin: '',
+            verificationNumber: '123',
+        });
     });
 });
