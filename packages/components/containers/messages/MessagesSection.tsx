@@ -18,7 +18,6 @@ import ViewModeToggle from '../layouts/ViewModeToggle';
 import AutoDeleteSetting from './AutoDeleteSetting';
 import EmbeddedToggle from './EmbeddedToggle';
 import RequestLinkConfirmationToggle from './RequestLinkConfirmationToggle';
-import SenderImagesToggle from './SenderImagesToggle';
 import ShowMovedToggle from './ShowMovedToggle';
 import SpamActionSelect from './SpamActionSelect';
 
@@ -136,21 +135,6 @@ const MessagesSection = () => {
                         onToggle={(value) => withLoadingViewMode(handleChangeViewMode(value))}
                         data-testid="appearance:conversation-group-toggle"
                     />
-                </SettingsLayoutRight>
-            </SettingsLayout>
-
-            <SettingsLayout>
-                <SettingsLayoutLeft>
-                    <label htmlFor="senderImagesToggle" className="text-semibold">
-                        <span className="mr-2">{c('Label').t`Show sender images`}</span>
-                        <Info
-                            title={c('Tooltip')
-                                .t`Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.`}
-                        />
-                    </label>
-                </SettingsLayoutLeft>
-                <SettingsLayoutRight className="pt-2">
-                    <SenderImagesToggle className="mr-4" id="senderImagesToggle" />
                 </SettingsLayoutRight>
             </SettingsLayout>
 
