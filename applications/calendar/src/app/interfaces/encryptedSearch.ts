@@ -1,14 +1,22 @@
 import { EncryptedSearchFunctions } from '@proton/encrypted-search';
-import { AttendeeModel, CalendarEventMetadata, CalendarEventSharedData } from '@proton/shared/lib/interfaces/calendar';
+import {
+    AttendeeModel,
+    CalendarEventMetadata,
+    CalendarEventSharedData,
+    VcalAttendeeProperty,
+} from '@proton/shared/lib/interfaces/calendar';
 
 export interface ESAttendeeModel extends Pick<AttendeeModel, 'email' | 'cn' | 'role' | 'partstat'> {}
 
 export interface ESCalendarMetadata extends CalendarEventSharedData, CalendarEventMetadata {
+    Status: string;
     Order: number;
     Summary: string;
     Location: string;
     Description: string;
-    Attendees: ESAttendeeModel[];
+    Attendees: VcalAttendeeProperty[];
+    Organizer: string;
+    IsDecryptable: boolean;
 }
 
 export interface ESCalendarContent {}
@@ -17,9 +25,19 @@ export interface ESCalendarSearchParams {
     calendarID?: string;
     begin?: number;
     end?: number;
+    page?: number;
 }
 
-export type MetadataRecoveryPoint = string[];
+/**
+ * @var remainingCalendarIDs the calendars for which indexation has not been done yet
+ * @var currentCalendarId the calendar for which indexation is currently ongoing. Can be undefined when there no calendar left to be indexed
+ * @var eventCursor the cursor fetched during last query. Can be undefined when starting to index event from a new calendar
+ */
+export type MetadataRecoveryPoint = {
+    remainingCalendarIDs: string[];
+    currentCalendarId?: string;
+    eventCursor?: string;
+};
 
 export type EncryptedSearchFunctionsCalendar = EncryptedSearchFunctions<
     ESCalendarMetadata,

@@ -16,9 +16,10 @@ interface Props {
     isNarrow: boolean;
     containerRef: HTMLDivElement | null;
     onSearch: () => void;
+    onBackFromSearch: () => void;
 }
 
-const CalendarSearch = ({ isNarrow, containerRef, onSearch }: Props) => {
+const CalendarSearch = ({ isNarrow, containerRef, onSearch, onBackFromSearch }: Props) => {
     const history = useHistory();
     const [uid] = useState(generateUID('advanced-search-overlay'));
     const { anchorRef, isOpen, open, close } = usePopperAnchor<HTMLInputElement>();
@@ -61,6 +62,7 @@ const CalendarSearch = ({ isNarrow, containerRef, onSearch }: Props) => {
                     value={searchInputValue}
                     onChange={setSearchInputValue}
                     onOpen={handleOpen}
+                    onClear={onBackFromSearch}
                     loading={loading}
                 />
             )}

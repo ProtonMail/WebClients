@@ -1,4 +1,4 @@
-import { Ref, forwardRef, useRef } from 'react';
+import { MouseEvent, Ref, forwardRef, useRef } from 'react';
 
 import { isBefore, sub } from 'date-fns';
 import { c } from 'ttag';
@@ -16,9 +16,10 @@ interface Props {
     value: string;
     loading: boolean;
     onChange: (newValue: string) => void;
+    onClear: () => void;
 }
 
-const CalendarSearchInput = ({ value, loading, onOpen, onChange }: Props, ref: Ref<HTMLInputElement>) => {
+const CalendarSearchInput = ({ value, loading, onOpen, onClear }: Props, ref: Ref<HTMLInputElement>) => {
     const [user] = useUser();
     const [{ isWelcomeFlow }] = useWelcomeFlags();
     const { isNarrow } = useActiveBreakpoint();
@@ -42,9 +43,9 @@ const CalendarSearchInput = ({ value, loading, onOpen, onChange }: Props, ref: R
 
     const shouldShowHolidaysSpotlight = useSpotlightShow(showHolidaysSpotlight);
 
-    const handleClear = () => {
-        onChange('');
-        onOpen();
+    const handleClear = (event: MouseEvent<HTMLButtonElement>) => {
+        event.stopPropagation();
+        onClear();
     };
 
     const handleFocus = () => {
@@ -113,7 +114,7 @@ const CalendarSearchInput = ({ value, loading, onOpen, onChange }: Props, ref: R
                                     size="small"
                                     className="rounded-sm"
                                     title={c('Action').t`Clear search`}
-                                    onClick={() => handleClear()}
+                                    onClick={handleClear}
                                     data-testid="clear-button"
                                 >
                                     {c('Action').t`Clear`}
