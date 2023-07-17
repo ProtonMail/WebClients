@@ -24,8 +24,7 @@ describe('Import 1password 1pif', () => {
         expect(vaultData.items.length).toEqual(8);
 
         expect(payload.vaults.length).toEqual(1);
-        expect(vaultData.type).toEqual('new');
-        expect(vaultData.type === 'new' && vaultData.vaultName).not.toBeUndefined();
+        expect(vaultData.name).not.toBeUndefined();
 
         const { items } = vaultData;
 

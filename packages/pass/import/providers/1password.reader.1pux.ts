@@ -5,7 +5,6 @@ import type { ItemExtraField, ItemImportIntent, Maybe, Unpack } from '@proton/pa
 import { extractFirst } from '@proton/pass/utils/array';
 import { truthy } from '@proton/pass/utils/fp';
 import { logger } from '@proton/pass/utils/logger';
-import { uniqueId } from '@proton/pass/utils/string';
 
 import { ImportReaderError } from '../helpers/reader.error';
 import { getImportedVaultName, importCreditCardItem, importLoginItem, importNoteItem } from '../helpers/transformers';
@@ -224,9 +223,8 @@ export const read1Password1PuxData = async (data: ArrayBuffer): Promise<ImportPa
         const vaults = parsedData.accounts.flatMap((account) =>
             account.vaults.map(
                 (vault): ImportVault => ({
-                    type: 'new',
-                    vaultName: getImportedVaultName(vault.attrs.name),
-                    id: uniqueId(),
+                    name: getImportedVaultName(vault.attrs.name),
+                    shareId: null,
                     items: vault.items
                         .filter((item) => item.state !== OnePassState.TRASHED)
                         .map((item): Maybe<ItemImportIntent> => {

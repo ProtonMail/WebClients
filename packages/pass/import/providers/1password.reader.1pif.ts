@@ -3,7 +3,6 @@ import { c } from 'ttag';
 import type { ItemExtraField, ItemImportIntent } from '@proton/pass/types';
 import { truthy } from '@proton/pass/utils/fp';
 import { logger } from '@proton/pass/utils/logger';
-import { uniqueId } from '@proton/pass/utils/string';
 
 import { ImportReaderError } from '../helpers/reader.error';
 import { getImportedVaultName, importCreditCardItem, importLoginItem, importNoteItem } from '../helpers/transformers';
@@ -159,9 +158,8 @@ export const read1Password1PifData = async (data: string): Promise<ImportPayload
 
         const vaults: ImportVault[] = [
             {
-                type: 'new',
-                vaultName: getImportedVaultName(),
-                id: uniqueId(),
+                name: getImportedVaultName(),
+                shareId: null,
                 items: items,
             },
         ];
