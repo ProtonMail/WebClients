@@ -12,7 +12,8 @@ import { useCopyToClipboard } from '../../../hooks/useCopyToClipboard';
 export const NoteView: VFC<ItemTypeViewProps<'note'>> = ({ vault, revision, ...itemViewProps }) => {
     const { note, name } = revision.data.metadata;
     const copyToClipboard = useCopyToClipboard();
-    const noteRows = (note.match(/\n/g) || '').length + 1;
+    // se to some max number of rows in the view (15)
+    const noteRows = Math.max((note.match(/\n/g) || '').length + 1, 15);
 
     return (
         <ItemViewPanel
@@ -40,7 +41,9 @@ export const NoteView: VFC<ItemTypeViewProps<'note'>> = ({ vault, revision, ...i
             }
             {...itemViewProps}
         >
-            <textarea readOnly className="text-break w100" rows={noteRows} value={note} />
+            <div className="flex flex-column flex-item-grow-2">
+                <textarea readOnly className="text-break w-full h-full" rows={noteRows} value={note} />
+            </div>
         </ItemViewPanel>
     );
 };
