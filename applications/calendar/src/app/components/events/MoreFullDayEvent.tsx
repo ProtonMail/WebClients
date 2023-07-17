@@ -12,6 +12,9 @@ interface Props {
 }
 // NOTE: Can not be a button to satisfy auto close, and to be the same as the normal events
 const MoreFullDayEvent = ({ style, more, eventRef, isSelected }: Props) => {
+    // translator: This string shows up when we have to collapse some events in the calendar view because they don't all fit in the window. The variable ${more} is a number. E.g.: "3 more" (short for 3 events more)
+    const moreText = c('Calendar view; more events collapsed').ngettext(msgid`${more} more`, `${more} more`, more);
+
     return (
         <div
             style={style}
@@ -26,16 +29,17 @@ const MoreFullDayEvent = ({ style, more, eventRef, isSelected }: Props) => {
         >
             <div
                 className={clsx([
-                    'calendar-dayeventcell-inner isNotAllDay isLoaded text-ellipsis inline-flex text-left w100 px-2',
+                    'calendar-dayeventcell-inner isNotAllDay isLoaded inline-flex text-left w100 px-2',
                     isSelected && 'isSelected',
                 ])}
                 ref={eventRef}
             >
-                <span data-testid="calendar-view:more-events-collapsed" className="my-auto">
-                    {
-                        // translator: This string shows up when we have to collapse some events in the calendar view because they don't all fit in the window. The variable ${more} is a number. E.g.: "3 more" (short for 3 events more)
-                        c('Calendar view; more events collapsed').ngettext(msgid`${more} more`, `${more} more`, more)
-                    }
+                <span
+                    data-testid="calendar-view:more-events-collapsed"
+                    className="my-auto text-ellipsis"
+                    title={moreText}
+                >
+                    {moreText}
                 </span>
             </div>
         </div>
