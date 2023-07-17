@@ -24,14 +24,9 @@ describe('Import 1password 1pux', () => {
 
         expect(payload.vaults.length).toEqual(3);
 
-        expect(main.type).toEqual('new');
-        expect(main.type === 'new' && main.vaultName).toEqual('Private');
-
-        expect(secondary.type).toEqual('new');
-        expect(secondary.type === 'new' && secondary.vaultName).toEqual('SecondaryVault');
-
-        expect(shared.type).toEqual('new');
-        expect(shared.type === 'new' && shared.vaultName).toEqual('Shared');
+        expect(main.name).toEqual('Private');
+        expect(secondary.name).toEqual('SecondaryVault');
+        expect(shared.name).toEqual('Shared');
     });
 
     test('should parse `private` vault items correctly', () => {
