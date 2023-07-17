@@ -1,6 +1,5 @@
 import { createSelector } from '@reduxjs/toolkit';
 
-import { CLIENT_VAULT_LIMIT } from '@proton/pass/constants';
 import { PlanType } from '@proton/pass/types';
 import { sortItems } from '@proton/pass/utils/search';
 
@@ -9,8 +8,7 @@ import { selectAllVaults } from './shares';
 import { selectUserPlan } from './user';
 
 export const selectVaultLimits = createSelector([selectAllVaults, selectUserPlan], (vaults, plan) => {
-    // backend currently does not return the vault limit on paid plans
-    const vaultLimit = plan?.VaultLimit ?? CLIENT_VAULT_LIMIT;
+    const vaultLimit = plan?.VaultLimit ?? Number.MAX_SAFE_INTEGER;
 
     return {
         vaultLimit,
