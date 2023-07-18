@@ -9,13 +9,14 @@ import type { InviteData, ReferralData, SessionData, SubscriptionData, UserCache
 import { SignupCacheResult } from '../signup/interfaces';
 import { TelemetryMeasurementData } from './measure';
 
-export type Measure = (data: TelemetryMeasurementData) => Promise<void>;
+export type BaseMeasure<T> = (data: T) => Promise<void>;
+export type Measure = BaseMeasure<TelemetryMeasurementData>;
 export type OnOpenLogin = (data: { email: string; location: 'step2' | 'error_msg' }) => void;
 
 export interface OptimisticOptions {
     cycle: CYCLE;
     currency: Currency;
-    plan?: Plan;
+    plan: Plan;
     planIDs: PlanIDs;
     checkResult: RequiredCheckResponse;
 }

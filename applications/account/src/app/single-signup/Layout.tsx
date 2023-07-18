@@ -63,7 +63,7 @@ const Layout = ({
                     )
                 }
             />
-            <div className="flex-item-fluid-auto flex flex-nowrap flex-column flex-justify-space-between md:mx-12 mx-6">
+            <main className="flex-item-fluid-auto flex flex-nowrap flex-column flex-justify-space-between md:mx-12 mx-6">
                 <div>
                     {children}
                     {hasDecoration && (
@@ -72,7 +72,7 @@ const Layout = ({
                                 className="h-custom pb-8 w100 flex flex-align-items-end"
                                 style={{ '--h-custom': '12rem' }}
                             >
-                                <div className="flex flex-justify-space-between w100 on-mobile-flex-column">
+                                <footer className="flex flex-justify-space-between w100 on-mobile-flex-column">
                                     <div className="flex gap-1 flex-column on-mobile-flex-column">
                                         <LayoutLogosV2 size={20} className="on-mobile-flex-justify-center" />
                                         <span className="text-sm color-weak on-mobile-text-center mb-4 lg:mb-0">
@@ -83,12 +83,12 @@ const Layout = ({
                                         </span>
                                     </div>
                                     {bottomRight}
-                                </div>
+                                </footer>
                             </Box>
                         </div>
                     )}
                 </div>
-            </div>
+            </main>
         </div>
     );
 };

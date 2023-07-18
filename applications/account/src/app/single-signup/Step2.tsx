@@ -30,7 +30,7 @@ const Step2 = ({ onSetup, product, img }: { onSetup: () => Promise<void>; produc
         <Layout hasDecoration={false}>
             <Main>
                 <Content>
-                    <div className="text-center pt-6">
+                    <div className="text-center pt-6" role="alert">
                         <h1 className="h2 text-bold">{c('Info').t`Thank you`}</h1>
                         <span className="color-weak">{c('Info').t`For choosing ${product}`}</span>
                     </div>
