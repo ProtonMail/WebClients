@@ -1,22 +1,16 @@
 import { contentScriptMessage, sendMessage } from '@proton/pass/extension/message';
-import { passwordSave } from '@proton/pass/store/actions/creators/pw-history';
-import { createTelemetryEvent } from '@proton/pass/telemetry/events';
 import type { MaybeNull } from '@proton/pass/types';
-import { FormField, WorkerMessageType } from '@proton/pass/types';
-import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
-import { first } from '@proton/pass/utils/array';
-import { createStyleCompute, getComputedHeight } from '@proton/pass/utils/dom';
+import { WorkerMessageType } from '@proton/pass/types';
+import { animatePositionChange, createStyleCompute, getComputedHeight } from '@proton/pass/utils/dom';
 import { pipe, truthy, waitUntil } from '@proton/pass/utils/fp';
 import { createListenerStore } from '@proton/pass/utils/listener';
-import { uniqueId } from '@proton/pass/utils/string';
-import { getEpoch } from '@proton/pass/utils/time';
 import { getScrollParent } from '@proton/shared/lib/helpers/dom';
 
 import { deriveAliasPrefix } from '../../../shared/items/alias';
 import { DROPDOWN_IFRAME_SRC, DROPDOWN_WIDTH, MIN_DROPDOWN_HEIGHT } from '../../constants';
 import { withContext } from '../../context/context';
 import { createIFrameApp } from '../../injections/iframe/create-iframe-app';
-import type { DropdownSetActionPayload, FieldHandle, InjectedDropdown, OpenDropdownOptions } from '../../types';
+import type { DropdownActions, DropdownOpenOptions, FieldHandle, InjectedDropdown } from '../../types';
 import { DropdownAction } from '../../types';
 import { IFrameMessageType } from '../../types/iframe';
 
@@ -26,12 +20,12 @@ export const createDropdown = (): InjectedDropdown => {
     const fieldRef: DropdownFieldRef = { current: null };
     const listeners = createListenerStore();
 
-    const iframe = createIFrameApp({
+    const iframe = createIFrameApp<DropdownAction>({
         id: 'dropdown',
         src: DROPDOWN_IFRAME_SRC,
         animation: 'fadein',
         backdropClose: true,
-        onClose: (options) => options?.refocus && fieldRef.current?.focus(),
+        onClose: (_, options) => options?.refocus && fieldRef.current?.focus(),
         backdropExclude: () => [fieldRef.current?.icon?.element, fieldRef.current?.element].filter(truthy),
         position: (iframeRoot: HTMLElement) => {
             const field = fieldRef.current;
@@ -60,23 +54,11 @@ export const createDropdown = (): InjectedDropdown => {
 
     /* if the dropdown is opened while the field is being animated
      * we must update its position until the position stabilizes */
-    const updatePosition = () => {
-        let { top, left, right } = iframe.getPosition();
-
-        const check = () =>
-            requestAnimationFrame(() => {
-                const { top: nTop, left: nLeft, right: nRight } = iframe.getPosition();
-                if (nTop !== top || nLeft !== left || nRight !== right) {
-                    iframe.updatePosition();
-                    top = nTop;
-                    left = nLeft;
-                    right = nRight;
-                    check();
-                }
-            });
-
-        check();
-    };
+    const updatePosition = () =>
+        animatePositionChange({
+            get: () => iframe.getPosition(),
+            set: () => iframe.updatePosition(),
+        });
 
     /* As we are recyling the dropdown iframe sub-app instead of
      * re-injecting for each field - opening the dropdown involves
@@ -84,33 +66,23 @@ export const createDropdown = (): InjectedDropdown => {
      * Dropdown opening may be automatically triggered on initial
      * page load with a positive ifion : ensure the iframe is
      * in a ready state in order to send out the dropdown action */
-    const open = withContext<(options: OpenDropdownOptions) => Promise<void>>(
+    const open = withContext<(options: DropdownOpenOptions) => Promise<void>>(
         async ({ service: { autofill }, getState, getExtensionContext }, { field, action, autofocused }) => {
             await waitUntil(() => iframe.state.ready, 50);
             fieldRef.current = field;
 
             const { loggedIn } = getState();
 
-            const payload = await (async (): Promise<DropdownSetActionPayload> => {
+            const payload = await (async (): Promise<DropdownActions> => {
                 switch (action) {
                     case DropdownAction.AUTOFILL: {
                         if (!loggedIn) return { action, items: [], needsUpgrade: false };
-                        const { items, needsUpgrade } = await autofill.queryItems();
-
-                        return {
-                            action,
-                            items,
-                            needsUpgrade,
-                        };
+                        const { items, needsUpgrade } = await autofill.getAutofillCandidates();
+                        return { action, items, needsUpgrade };
                     }
                     case DropdownAction.AUTOSUGGEST_ALIAS: {
                         const { domain, subdomain, displayName } = getExtensionContext().url;
-
-                        return {
-                            action,
-                            domain: subdomain ?? domain!,
-                            prefix: deriveAliasPrefix(displayName!),
-                        };
+                        return { action, domain: subdomain ?? domain!, prefix: deriveAliasPrefix(displayName!) };
                     }
                     case DropdownAction.AUTOSUGGEST_PASSWORD: {
                         return { action };
@@ -118,122 +90,63 @@ export const createDropdown = (): InjectedDropdown => {
                 }
             })();
 
-            /* If the opening action is coming from a focus event
-             * for an autofill action and the we have no login
-             * items that match the current domain, avoid auto-opening
-             * the dropdown */
-            const blockAutofocus =
-                autofocused && payload.action === DropdownAction.AUTOFILL && payload.items.length === 0;
+            /* If the opening action is coming from a focus event for an autofill action and the we
+             * have no login items that match the current domain, avoid auto-opening  the dropdown */
+            if (autofocused && payload.action === DropdownAction.AUTOFILL && payload.items.length === 0) return;
 
-            if (!blockAutofocus) {
-                iframe.sendPortMessage({ type: IFrameMessageType.DROPDOWN_ACTION, payload });
-                const scrollParent = getScrollParent(field.element);
-
-                if (!iframe.state.visible) {
-                    void sendMessage(
-                        contentScriptMessage({
-                            type: WorkerMessageType.TELEMETRY_EVENT,
-                            payload: {
-                                event: createTelemetryEvent(
-                                    TelemetryEventName.AutofillDisplay,
-                                    {},
-                                    { location: 'source' }
-                                ),
-                            },
-                        })
-                    );
-                }
-
-                iframe.open(scrollParent);
-                updatePosition();
-            }
+            iframe.sendPortMessage({ type: IFrameMessageType.DROPDOWN_ACTION, payload });
+            const scrollParent = getScrollParent(field.element);
+            iframe.open(action, scrollParent);
+            updatePosition();
         }
     );
 
     /* On a login autofill request - resolve the credentials via
      * worker communication and autofill the parent form of the
-     * field the current dropdown is attached to.
-     * FIXME: autofill logic should be moved to the AutofillService */
-    iframe.registerMessageHandler(IFrameMessageType.DROPDOWN_AUTOFILL_LOGIN, (message) => {
-        const { shareId, itemId } = message.payload.item;
+     * field the current dropdown is attached to. */
+    iframe.registerMessageHandler(
+        IFrameMessageType.DROPDOWN_AUTOFILL_LOGIN,
+        withContext(({ service }, { payload: { item } }) => {
+            const { shareId, itemId } = item;
+            const form = fieldRef.current?.getFormHandle();
+            if (!form) return;
 
-        void sendMessage.onSuccess(
-            contentScriptMessage({
-                type: WorkerMessageType.AUTOFILL_SELECT,
-                payload: { shareId, itemId },
-            }),
-            ({ username, password }) => {
-                const form = fieldRef.current?.getFormHandle();
-
-                void sendMessage(
-                    contentScriptMessage({
-                        type: WorkerMessageType.TELEMETRY_EVENT,
-                        payload: {
-                            event: createTelemetryEvent(
-                                TelemetryEventName.AutofillTriggered,
-                                {},
-                                { location: 'source' }
-                            ),
-                        },
-                    })
-                );
-
-                first(form?.getFieldsFor(FormField.USERNAME) ?? [])?.autofill(username);
-                first(form?.getFieldsFor(FormField.EMAIL) ?? [])?.autofill(username);
-                form?.getFieldsFor(FormField.PASSWORD_CURRENT).forEach((field) => field.autofill(password));
-
-                iframe.close();
-                fieldRef.current?.focus({ preventDefault: true });
-            }
-        );
-    });
+            return sendMessage.onSuccess(
+                contentScriptMessage({
+                    type: WorkerMessageType.AUTOFILL_SELECT,
+                    payload: { shareId, itemId },
+                }),
+                (data) => {
+                    service.autofill.autofillLogin(form, data);
+                    iframe.close({ refocus: false });
+                    fieldRef.current?.focus({ preventAction: true });
+                }
+            );
+        })
+    );
 
     /* For a password auto-suggestion - the password will have
      * been generated in the injected iframe and passed in clear
      * text through the secure extension port channel */
     iframe.registerMessageHandler(
-        IFrameMessageType.DROPDOWN_AUTOSUGGEST_PASSWORD,
-        withContext(({ getExtensionContext }, message) => {
-            const { password } = message.payload;
+        IFrameMessageType.DROPDOWN_AUTOFILL_GENERATED_PW,
+        withContext(({ service }, { payload }) => {
             const form = fieldRef.current?.getFormHandle();
-            const { domain, subdomain, hostname } = getExtensionContext().url;
-
-            form?.getFieldsFor(FormField.PASSWORD_NEW).forEach((field) => field.autofill(password));
-
-            void sendMessage(
-                contentScriptMessage({
-                    type: WorkerMessageType.STORE_ACTION,
-                    payload: {
-                        action: passwordSave({
-                            id: uniqueId(),
-                            value: password,
-                            origin: subdomain ?? domain ?? hostname,
-                            createTime: getEpoch(),
-                        }),
-                    },
-                })
-            );
+            if (!form) return;
 
             iframe.close();
-            fieldRef.current?.focus({ preventDefault: true });
+            service.autofill.autofillGeneratedPassword(form, payload.password);
+            fieldRef.current?.focus({ preventAction: true });
         })
     );
 
     /* When suggesting an alias on a register form, the alias will
      * only be created upon user action - this avoids creating
      * aliases everytime the injected iframe dropdown is opened */
-    iframe.registerMessageHandler(IFrameMessageType.DROPDOWN_AUTOSUGGEST_ALIAS, ({ payload }) => {
-        const { aliasEmail } = payload;
-        fieldRef.current?.autofill(aliasEmail);
+    iframe.registerMessageHandler(IFrameMessageType.DROPDOWN_AUTOFILL_EMAIL, ({ payload }) => {
         iframe.close();
-        fieldRef.current?.focus({ preventDefault: true });
-    });
-
-    iframe.registerMessageHandler(IFrameMessageType.DROPDOWN_AUTOFILL_USER_EMAIL, (message) => {
-        const { userEmail } = message.payload;
-        fieldRef.current?.autofill(userEmail);
-        iframe.close();
-        fieldRef.current?.focus({ preventDefault: true });
+        fieldRef.current?.autofill(payload.email);
+        fieldRef.current?.focus({ preventAction: true });
     });
 
     const destroy = () => {
@@ -242,10 +155,10 @@ export const createDropdown = (): InjectedDropdown => {
         iframe.destroy();
     };
 
-    listeners.addListener(window, 'popstate', () => iframe.close({ userInitiated: false }));
-    listeners.addListener(window, 'hashchange', () => iframe.close({ userInitiated: false }));
-    listeners.addListener(window, 'unload', () => iframe.close({ userInitiated: false }));
-    listeners.addListener(window, 'beforeunload', () => iframe.close({ userInitiated: false }));
+    listeners.addListener(window, 'popstate', () => iframe.close({ discard: false }));
+    listeners.addListener(window, 'hashchange', () => iframe.close({ discard: false }));
+    listeners.addListener(window, 'unload', () => iframe.close({ discard: false }));
+    listeners.addListener(window, 'beforeunload', () => iframe.close({ discard: false }));
 
     const dropdown: InjectedDropdown = {
         getState: () => iframe.state,

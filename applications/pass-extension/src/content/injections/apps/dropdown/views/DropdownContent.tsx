@@ -3,14 +3,14 @@ import { type VFC, useCallback, useLayoutEffect, useRef, useState } from 'react'
 import { type Callback, type MaybeNull, WorkerStatus } from '@proton/pass/types';
 import { pipe, tap } from '@proton/pass/utils/fp';
 
-import { type DropdownSetActionPayload, type IFrameMessage, IFrameMessageType } from '../../../../types';
+import { type DropdownActions, type IFrameMessage, IFrameMessageType } from '../../../../types';
 import { useIFrameContext, useRegisterMessageHandler } from '../../context/IFrameContextProvider';
 import { DropdownSwitch } from '../components/DropdownSwitch';
 
 export const DropdownContent: VFC = () => {
     const dropdownRef = useRef<HTMLDivElement>(null);
     const { workerState, visible, resizeIFrame, closeIFrame, postMessage } = useIFrameContext();
-    const [dropdownState, setDropdownState] = useState<MaybeNull<DropdownSetActionPayload>>(null);
+    const [dropdownState, setDropdownState] = useState<MaybeNull<DropdownActions>>(null);
 
     const withStateReset = <F extends Callback>(fn: F): F =>
         pipe(

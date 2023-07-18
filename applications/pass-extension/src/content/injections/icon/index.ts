@@ -24,6 +24,7 @@ import {
 import type { FieldHandle } from '../../types';
 
 type InjectionElements = {
+    form: HTMLElement;
     icon: HTMLButtonElement;
     input: HTMLInputElement;
     inputBox: HTMLElement;
@@ -43,10 +44,15 @@ type InputInitialStyles = {
     ['padding-right']?: string;
 };
 
-const getOverlayedElement = (options: { x: number; y: number; parent: HTMLElement }): MaybeNull<HTMLElement> => {
+const getOverlayedElement = (options: {
+    x: number;
+    y: number;
+    inputBox: HTMLElement;
+    form: HTMLElement;
+}): MaybeNull<HTMLElement> => {
     try {
-        const { x, y, parent } = options;
-        const maxWidth = parent.offsetWidth;
+        const { x, y, form, inputBox } = options;
+        const maxWidth = inputBox.offsetWidth;
 
         if (Number.isNaN(x) || Number.isNaN(y)) return null;
         const overlays = Array.from(document.elementsFromPoint(x, y));
@@ -59,8 +65,8 @@ const getOverlayedElement = (options: { x: number; y: number; parent: HTMLElemen
                 if (el.matches('svg *')) return false;
                 /* exclude our own injected elements */
                 if (el.matches(`.${ICON_CLASSNAME}`)) return false;
-                /* exclude elements not in the current stack */
-                if (!parent.contains(el)) return false;
+                /* exclude elements not in the current form stack */
+                if (!form.contains(el)) return false;
                 /* exclude "placeholder" overlays */
                 if (el.innerText.length > 0 && el.offsetWidth >= maxWidth * 0.9) return false;
 
@@ -79,7 +85,7 @@ const getOverlayedElement = (options: { x: number; y: number; parent: HTMLElemen
  * ie: check amazon sign-in page without repaint to
  * reproduce issue */
 const computeIconInjectionStyles = (
-    { input, wrapper }: Omit<InjectionElements, 'icon'>,
+    { input, wrapper, form }: Omit<InjectionElements, 'icon'>,
     { getInputStyle, getBoxStyle, inputBox }: SharedInjectionOptions
 ) => {
     repaint(input);
@@ -111,7 +117,8 @@ const computeIconInjectionStyles = (
     const overlayEl = getOverlayedElement({
         x: inputRight - (iconPaddingRight + size / 2),
         y: inputTop + inputHeight / 2,
-        parent: inputBox.parentElement!,
+        inputBox,
+        form,
     });
 
     const overlayWidth = overlayEl?.clientWidth ?? 0;
@@ -246,7 +253,7 @@ export const createIcon = (field: FieldHandle): InjectionElements => {
     wrapper.style.display = 'none';
 
     const icon = createElement<HTMLButtonElement>({
-        type: 'button',
+        type: 'div',
         classNames: [ICON_ROOT_CLASSNAME, ICON_CLASSNAME],
     });
 
@@ -254,7 +261,7 @@ export const createIcon = (field: FieldHandle): InjectionElements => {
     icon.style.zIndex = field.zIndex.toString();
     icon.setAttribute('type', 'button');
 
-    const elements = { icon, wrapper, input, inputBox };
+    const elements = { icon, wrapper, input, inputBox, form: field.getFormHandle().element };
     const boxed = input !== inputBox;
 
     if (boxed) inputBox.insertBefore(wrapper, inputBox.firstElementChild);

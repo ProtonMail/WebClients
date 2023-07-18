@@ -1,4 +1,6 @@
-import { EXTENSION_PREFIX, INPUT_STYLES_ATTR, PROCESSED_FIELD_ATTR, PROCESSED_FORM_ATTR } from '../constants';
+import { PROCESSED_FIELD_ATTR, PROCESSED_FORM_ATTR } from '@proton/pass/fathom';
+
+import { EXTENSION_PREFIX, INPUT_STYLES_ATTR } from '../constants';
 import { cleanupInputInjectedStyles } from './icon';
 import { getIFrameRoot } from './iframe/create-iframe-root';
 
