@@ -41,6 +41,7 @@ export interface ContactEditProps {
 
 export interface ContactEditModalProps {
     onUpgrade: () => void;
+    onChange?: () => void;
     onSelectImage: (props: ContactImageProps) => void;
     onGroupEdit: (props: ContactGroupEditProps) => void;
     onLimitReached: (props: ContactGroupLimitReachedProps) => void;
@@ -53,6 +54,7 @@ const ContactEditModal = ({
     vCardContact: inputVCardContact = { fn: [] },
     newField,
     onUpgrade,
+    onChange,
     onSelectImage,
     onGroupEdit,
     onLimitReached,
@@ -219,6 +221,7 @@ const ContactEditModal = ({
             await saveVCardContact(contactID, vCardContact);
             await call();
             await saveContactGroups();
+            onChange?.();
             createNotification({ text: c('Success').t`Contact saved` });
         } finally {
             rest.onClose?.();

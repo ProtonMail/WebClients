@@ -8,6 +8,7 @@ import { Recipient } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
 import { useDrawer } from '../../hooks';
+import DrawerContactModals from './DrawerContactModals';
 
 import './DrawerApp.scss';
 
@@ -27,36 +28,40 @@ const DrawerApp = ({ onCompose, onMailTo, contactCustomActions }: Props) => {
     const { appInView, iframeSrcMap } = useDrawer();
 
     return (
-        <aside
-            className={clsx([
-                'drawer-app border-left bg-norm overflow-hidden no-print',
-                !appInView && 'hidden',
-                appInView !== APPS.PROTONCONTACTS && 'drawer-app--hide-on-mobile',
-            ])}
-        >
-            <ErrorBoundary component={<StandardErrorPage />}>
-                <div className="drawer-app-inner h100 w100">
-                    {Object.entries(iframeSrcMap)
-                        .filter(([, src]) => src)
-                        .map(([app, src]) => (
-                            <iframe
-                                key={app}
-                                id={`drawer-app-iframe-${app}`}
-                                className={clsx(['drawer-app-view h100 w100', appInView !== app && 'hidden'])}
-                                src={src}
-                                title={c('Info').t`Calendar side panel`}
+        <>
+            <DrawerContactModals />
+            <aside
+                className={clsx([
+                    'drawer-app border-left bg-norm overflow-hidden no-print',
+                    !appInView && 'hidden',
+                    appInView !== APPS.PROTONCONTACTS && 'drawer-app--hide-on-mobile',
+                ])}
+            >
+                <ErrorBoundary component={<StandardErrorPage />}>
+                    <div className="drawer-app-inner h100 w100">
+                        {Object.entries(iframeSrcMap)
+                            .filter(([, src]) => src)
+                            .map(([app, src]) => (
+                                <iframe
+                                    key={app}
+                                    id={`drawer-app-iframe-${app}`}
+                                    className={clsx(['drawer-app-view h100 w100', appInView !== app && 'hidden'])}
+                                    src={src}
+                                    title={c('Info').t`Calendar side panel`}
+                                    allow="clipboard-read; clipboard-write"
+                                />
+                            ))}
+                        {appInView === APPS.PROTONCONTACTS && (
+                            <DrawerContactView
+                                onCompose={onCompose}
+                                onMailTo={onMailTo}
+                                customActions={contactCustomActions}
                             />
-                        ))}
-                    {appInView === APPS.PROTONCONTACTS && (
-                        <DrawerContactView
-                            onCompose={onCompose}
-                            onMailTo={onMailTo}
-                            customActions={contactCustomActions}
-                        />
-                    )}
-                </div>
-            </ErrorBoundary>
-        </aside>
+                        )}
+                    </div>
+                </ErrorBoundary>
+            </aside>
+        </>
     );
 };
 
