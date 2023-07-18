@@ -1,3 +1,4 @@
+import type { RectOffset } from '../../types/utils/dom';
 import { pixelParser } from './computed-styles';
 import { allChildrenOverlap } from './overlap';
 
@@ -6,7 +7,7 @@ const containsTextNode = (el: HTMLElement) =>
 
 /* heuristic value for computing the best
  * bounding element - adapt as needed */
-const BOUNDING_ELEMENT_MAX_OFFSET = 10;
+const BOUNDING_ELEMENT_OFFSET: RectOffset = { x: 10, y: 0 };
 const BOUNDING_ELEMENT_MAX_WIDTH_RATIO = 1.2;
 const INVALID_BOUNDING_TAGS = ['TD', 'TR'];
 
@@ -50,7 +51,7 @@ export const findBoundingInputElement = (
 
         if (label && label.querySelectorAll('input:not([type="hidden"])').length === 1) {
             const labelHeightCheck = label.getBoundingClientRect().height >= minHeight;
-            const labelChildrenOverlap = allChildrenOverlap(label, BOUNDING_ELEMENT_MAX_OFFSET);
+            const labelChildrenOverlap = allChildrenOverlap(label, BOUNDING_ELEMENT_OFFSET);
             if (labelHeightCheck && labelChildrenOverlap) return label;
         }
     }
@@ -84,7 +85,7 @@ export const findBoundingInputElement = (
     const { height: parentHeight, width: parentWidth } = parent.getBoundingClientRect();
     const hasTextNode = containsTextNode(parent);
     const hasOneChild = parent.childElementCount === 1;
-    const childrenOverlap = allChildrenOverlap(parent, BOUNDING_ELEMENT_MAX_OFFSET);
+    const childrenOverlap = allChildrenOverlap(parent, BOUNDING_ELEMENT_OFFSET);
 
     if (
         parentHeight > 0 &&
