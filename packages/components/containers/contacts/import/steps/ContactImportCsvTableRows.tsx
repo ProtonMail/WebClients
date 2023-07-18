@@ -5,6 +5,7 @@ import { PreVcardsProperty } from '@proton/shared/lib/interfaces/contacts/Import
 import { Checkbox } from '../../../../components';
 import ContactImportCsvSelectField from './ContactImportCsvSelectField';
 import ContactImportCsvSelectType from './ContactImportCsvSelectType';
+import ContactImportCsvTableRowsNField from './ContactImportCsvTableRowsNField';
 
 interface Props {
     preVcards: PreVcardsProperty;
@@ -17,41 +18,45 @@ const ContactImportCsvTableRows = ({ preVcards, onToggle, onChangeField, onChang
     const { field, params } = toVCard(preVcards) || {};
     const display = preVcards[0]?.custom ? getDisplay.custom(preVcards) : getDisplay[field as string](preVcards);
 
-    if (field === 'n' || field === 'categories') {
-        // Do not display N or CATEGORIES vcard fields since they cannot be edited from the contact modal
+    if (field === 'categories') {
+        // Do not display CATEGORIES vcard fields since they cannot be edited from the contact modal
         return null;
     }
 
     return (
         <>
-            {preVcards.map(({ checked, header }, i) => (
-                // eslint-disable-next-line react/no-array-index-key
-                <tr key={i}>
-                    <td className="text-center">
-                        <Checkbox checked={checked} onChange={() => onToggle(i)} />
-                    </td>
-                    <td>{header}</td>
-                    {i === 0 ? (
-                        <>
-                            <td rowSpan={preVcards.length}>
-                                <div className="flex">
-                                    <ContactImportCsvSelectField value={field} onChangeField={onChangeField} />
-                                    {params?.type !== undefined ? (
-                                        <ContactImportCsvSelectType
-                                            field={field}
-                                            value={params.type}
-                                            onChangeType={onChangeType}
-                                        />
-                                    ) : null}
-                                </div>
-                            </td>
-                            <td rowSpan={preVcards.length} className="text-ellipsis" title={display}>
-                                {display}
-                            </td>
-                        </>
-                    ) : null}
-                </tr>
-            ))}
+            {field === 'n' ? (
+                <ContactImportCsvTableRowsNField preVcards={preVcards} onToggle={onToggle} />
+            ) : (
+                preVcards.map(({ checked, header }, i) => (
+                    // eslint-disable-next-line react/no-array-index-key
+                    <tr key={i}>
+                        <td className="text-center">
+                            <Checkbox checked={checked} onChange={() => onToggle(i)} />
+                        </td>
+                        <td>{header}</td>
+                        {i === 0 ? (
+                            <>
+                                <td rowSpan={preVcards.length}>
+                                    <div className="flex">
+                                        <ContactImportCsvSelectField value={field} onChangeField={onChangeField} />
+                                        {params?.type !== undefined ? (
+                                            <ContactImportCsvSelectType
+                                                field={field}
+                                                value={params.type}
+                                                onChangeType={onChangeType}
+                                            />
+                                        ) : null}
+                                    </div>
+                                </td>
+                                <td rowSpan={preVcards.length} className="text-ellipsis" title={display}>
+                                    {display}
+                                </td>
+                            </>
+                        ) : null}
+                    </tr>
+                ))
+            )}
         </>
     );
 };

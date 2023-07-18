@@ -25,9 +25,11 @@ const ContactSummary = ({ vCardContact, leftBlockWidth = 'w30' }: Props) => {
     const loadImageDirectRef = useRef<() => void>(null);
 
     const photo = formatImage(getSortedProperties(vCardContact, 'photo')[0]?.value || '');
-    const name = getSortedProperties(vCardContact, 'fn')[0]?.value || '';
+    const [lastName, firstName] = getSortedProperties(vCardContact, 'n')[0]?.value || ['', ''];
+    const displayName = getSortedProperties(vCardContact, 'fn')[0]?.value || '';
+    const computedName = `${firstName} ${lastName}`;
 
-    const nameIsEmail = validateEmailAddress(name);
+    const nameIsEmail = validateEmailAddress(displayName);
 
     return (
         <>
@@ -53,22 +55,25 @@ const ContactSummary = ({ vCardContact, leftBlockWidth = 'w30' }: Props) => {
                 >
                     <ContactImageSummary
                         photo={photo}
-                        name={name}
+                        name={displayName}
                         loadImageDirectRef={loadImageDirectRef}
                         onToggleLoadDirectBanner={setShowLoadImageBanner}
                     />
                 </div>
-                <div className="contactsummary-contact-name-container pl-0 md:pl-7 flex-no-min-children flex-item-fluid">
+                <div className="contactsummary-contact-name-container pl-0 md:pl-7 flex-column">
                     <h2
                         className={clsx(
-                            'contactsummary-contact-name on-mobile-text-center mb-4 md:mb-0 flex-item-fluid text-bold text-ellipsis-two-lines',
+                            'contactsummary-contact-name on-mobile-text-center mb-4 md:mb-0 flex-item-fluid text-bold text-ellipsis-two-lines w100',
                             // Several email addresses are a single word but too long, for this case, we break at any char
                             nameIsEmail && 'text-break'
                         )}
-                        title={name}
+                        title={displayName}
                     >
-                        {name}
+                        {displayName}
                     </h2>
+                    <h3 className="color-weak" style={{ whiteSpace: 'break-spaces' }}>
+                        {computedName}
+                    </h3>
                 </div>
             </div>
         </>

@@ -102,10 +102,8 @@ const ContactGroupDropdown = ({
     const { applyGroups, contactGroupLimitReachedModal } = useApplyGroups(setLock, setLoading, onSelectEmails);
 
     // If the name and email are not empty, we can create a new group, otherwise we disable the button
-    const canCreateNewGroup =
-        contactEmails[0]?.Email !== '' &&
-        validateEmailAddress(contactEmails[0]?.Email ?? '') &&
-        contactEmails[0]?.Name !== '';
+    const { Email, Name } = contactEmails[0] ?? {};
+    const canCreateNewGroup = Email !== '' && Name?.trim() !== '' && validateEmailAddress(Email ?? '');
 
     useEffect(() => onLockWidget?.(isOpen), [isOpen]);
 

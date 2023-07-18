@@ -15,10 +15,11 @@ import { isContactNameValid } from '@proton/shared/lib/contacts/property';
 import { prepareForEdition } from '@proton/shared/lib/contacts/surgery';
 import { isMultiValue } from '@proton/shared/lib/contacts/vcard';
 import { getOtherInformationFields } from '@proton/shared/lib/helpers/contacts';
-import { canonicalizeEmail } from '@proton/shared/lib/helpers/email';
+import { canonicalizeEmail, validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import { ContactEmailModel } from '@proton/shared/lib/interfaces/contacts/Contact';
 import { VCardContact, VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
+import isTruthy from '@proton/utils/isTruthy';
 import randomIntFromInterval from '@proton/utils/randomIntFromInterval';
 
 import { ModalProps, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../../components';
@@ -67,7 +68,8 @@ const ContactEditModal = ({
 
     const [vCardContact, setVCardContact] = useState<VCardContact>(prepareForEdition(inputVCardContact));
 
-    const nameFieldRef = useRef<HTMLInputElement>(null);
+    const displayNameFieldRef = useRef<HTMLInputElement>(null);
+    const firstNameFieldRef = useRef<HTMLInputElement>(null);
     const [contactEmails = [], loadingContactEmails] = useContactEmails();
     const [modelContactEmails, setModelContactEmails] = useState<SimpleMap<ContactEmailModel>>({});
 
@@ -75,7 +77,8 @@ const ContactEditModal = ({
     const { applyGroups, contactGroupLimitReachedModal } = useApplyGroups();
     const title = contactID ? c('Title').t`Edit contact` : c('Title').t`Create contact`;
 
-    const nameProperty = getSortedProperties(vCardContact, 'fn')[0] as VCardProperty<string>;
+    const displayNameProperty = getSortedProperties(vCardContact, 'fn')[0] as VCardProperty<string>;
+    const nameProperty = getSortedProperties(vCardContact, 'n')[0] as VCardProperty<string>;
     const photoProperty = getSortedProperties(vCardContact, 'photo')[0] as VCardProperty<string>;
 
     const getContactEmail = (email: string) => {
@@ -95,7 +98,7 @@ const ContactEditModal = ({
             // ---
             // We also need to trim the value, contactEmails names are trimmed when we save a new contact, but we might have an extra space in the input
             return (
-                nameProperty.value.trim() === contactEmail.Name &&
+                displayNameProperty.value.trim() === contactEmail.Name &&
                 canonicalizeEmail(contactEmail.Email) === canonicalizeEmail(email)
             );
         });
@@ -109,6 +112,12 @@ const ContactEditModal = ({
         const newModelContactEmails = { ...modelContactEmails };
 
         const emails = vCardContact.email || [];
+        const displayName = displayNameProperty.value as string;
+        const [lastName, firstName] = vCardContact?.n?.value || [];
+        const computedName = `${firstName} ${lastName}`;
+
+        // The name can either be the display name, or the computed name if we're creating a new contact
+        const Name = contactID ? displayName : displayName || computedName;
 
         emails.forEach((emailProperty) => {
             const uid = emailProperty.uid;
@@ -124,7 +133,7 @@ const ContactEditModal = ({
                     newModelContactEmails[email] = {
                         ...existingModel,
                         Email: email,
-                        Name: nameProperty.value as string,
+                        Name,
                     };
                     delete newModelContactEmails[oldEmail];
                 }
@@ -138,7 +147,7 @@ const ContactEditModal = ({
                     ...existingContactEmail,
                     uid,
                     changes: {},
-                    Name: nameProperty.value as string,
+                    Name,
                 };
                 return;
             }
@@ -149,16 +158,42 @@ const ContactEditModal = ({
                 Email: email,
                 ContactID: contactID || '',
                 LabelIDs: [],
-                Name: nameProperty.value as string,
+                Name,
             };
         });
 
         setModelContactEmails(newModelContactEmails);
     }, [loadingContactEmails, vCardContact.email]);
 
+    // The condition defining if the form is valid is different if we are editing an existing contact or creating a new one
+    // In all cases we want to make sure that all emails are correct
     const isFormValid = () => {
-        const nameFilled = !!nameProperty?.value && isContactNameValid(nameProperty.value);
-        return nameFilled;
+        const displayName = displayNameProperty?.value;
+        const errors = [];
+
+        errors.push(
+            vCardContact.email
+                ?.map((emailProperty) => emailProperty.value)
+                .filter(isTruthy)
+                .every((email) => validateEmailAddress(email)) ?? true
+        );
+
+        if (contactID) {
+            const nameFilled = !!displayName && isContactNameValid(displayNameProperty.value);
+            errors.push(nameFilled);
+        } else {
+            const fullName = Array.isArray(nameProperty.value)
+                ? nameProperty.value.join(' ').trim()
+                : nameProperty.value;
+
+            errors.push(
+                displayName
+                    ? !!displayName && isContactNameValid(displayNameProperty.value)
+                    : !!(fullName.length > 0 && isContactNameValid(fullName))
+            );
+        }
+
+        return errors.every(Boolean);
     };
 
     const handleRemove = (propertyUID: string) => {
@@ -170,7 +205,14 @@ const ContactEditModal = ({
     const focusOnField = (uid: string) => {
         const elm = document.querySelector(`[data-contact-property-id="${uid}"]`) as HTMLElement;
 
-        elm?.querySelector('input')?.focus();
+        // Try to focus on the input field, if not present try the textarea
+        const hasInput = elm?.querySelector('input');
+        if (hasInput) {
+            hasInput.focus();
+            return;
+        }
+
+        elm?.querySelector('textarea')?.focus();
     };
 
     const handleAdd = (inputField?: string) => () => {
@@ -213,7 +255,7 @@ const ContactEditModal = ({
         setIsSubmitted(true);
 
         if (!isFormValid()) {
-            nameFieldRef.current?.focus();
+            firstNameFieldRef.current?.focus();
             return;
         }
 
@@ -245,7 +287,7 @@ const ContactEditModal = ({
 
     // Default focus on name field
     useEffect(() => {
-        nameFieldRef.current?.focus();
+        firstNameFieldRef.current?.focus();
     }, []);
 
     return (
@@ -255,12 +297,26 @@ const ContactEditModal = ({
                 <ModalTwoContent>
                     <div className="mb-4">
                         <ContactEditProperty
-                            ref={nameFieldRef}
+                            ref={firstNameFieldRef}
+                            contactID={contactID}
+                            vCardContact={vCardContact}
                             isSubmitted={isSubmitted}
                             onRemove={handleRemove}
                             actionRow={false}
-                            mainItem
                             vCardProperty={nameProperty}
+                            onChangeVCard={handleChangeVCard}
+                            onUpgrade={onUpgrade}
+                            onSelectImage={onSelectImage}
+                            onGroupEdit={onGroupEdit}
+                        />
+                        <ContactEditProperty
+                            ref={displayNameFieldRef}
+                            contactID={contactID}
+                            vCardContact={vCardContact}
+                            isSubmitted={isSubmitted}
+                            onRemove={handleRemove}
+                            actionRow={false}
+                            vCardProperty={displayNameProperty}
                             onChangeVCard={handleChangeVCard}
                             onUpgrade={onUpgrade}
                             onSelectImage={onSelectImage}
@@ -268,11 +324,12 @@ const ContactEditModal = ({
                         />
 
                         <ContactEditProperty
+                            contactID={contactID}
+                            vCardContact={vCardContact}
                             isSubmitted={isSubmitted}
                             onRemove={handleRemove}
                             actionRow
                             fixedType
-                            mainItem
                             vCardProperty={photoProperty}
                             onChangeVCard={handleChangeVCard}
                             onUpgrade={onUpgrade}
@@ -282,6 +339,7 @@ const ContactEditModal = ({
                     </div>
                     <ContactEditProperties
                         field="fn"
+                        contactID={contactID}
                         isSignatureVerified
                         isSubmitted={isSubmitted}
                         onRemove={handleRemove}
@@ -293,6 +351,7 @@ const ContactEditModal = ({
                     />
                     <ContactEditProperties
                         field="email"
+                        contactID={contactID}
                         isSignatureVerified
                         isSubmitted={isSubmitted}
                         onRemove={handleRemove}
@@ -307,34 +366,26 @@ const ContactEditModal = ({
                         onGroupEdit={onGroupEdit}
                         onLimitReached={onLimitReached}
                     />
-                    <ContactEditProperties
-                        field="tel"
-                        isSignatureVerified
-                        isSubmitted={isSubmitted}
-                        onRemove={handleRemove}
-                        sortable
-                        onAdd={handleAdd('tel')}
-                        vCardContact={vCardContact}
-                        onChangeVCard={handleChangeVCard}
-                        onUpgrade={onUpgrade}
-                        onSelectImage={onSelectImage}
-                        onGroupEdit={onGroupEdit}
-                    />
-                    <ContactEditProperties
-                        field="adr"
-                        isSignatureVerified
-                        isSubmitted={isSubmitted}
-                        onRemove={handleRemove}
-                        sortable
-                        onAdd={handleAdd('adr')}
-                        vCardContact={vCardContact}
-                        onChangeVCard={handleChangeVCard}
-                        onUpgrade={onUpgrade}
-                        onSelectImage={onSelectImage}
-                        onGroupEdit={onGroupEdit}
-                    />
+                    {['tel', 'adr', 'bday', 'note'].map((item) => (
+                        <ContactEditProperties
+                            key={item}
+                            contactID={contactID}
+                            field={item}
+                            isSignatureVerified
+                            isSubmitted={isSubmitted}
+                            onRemove={handleRemove}
+                            sortable
+                            onAdd={handleAdd(item)}
+                            vCardContact={vCardContact}
+                            onChangeVCard={handleChangeVCard}
+                            onUpgrade={onUpgrade}
+                            onSelectImage={onSelectImage}
+                            onGroupEdit={onGroupEdit}
+                        />
+                    ))}
                     <ContactEditProperties
                         isSubmitted={isSubmitted}
+                        contactID={contactID}
                         isSignatureVerified
                         onRemove={handleRemove}
                         onAdd={handleAdd()}

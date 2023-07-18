@@ -1,6 +1,6 @@
 import { Ref, forwardRef } from 'react';
 
-import { VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
+import { VCardContact, VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
 
 import { ContactImageProps } from '../../modals/ContactImageModal';
 import ContactFieldAdr from './ContactFieldAdr';
@@ -9,11 +9,14 @@ import ContactFieldEmail from './ContactFieldEmail';
 import ContactFieldFn from './ContactFieldFn';
 import ContactFieldGender from './ContactFieldGender';
 import ContactFieldImage from './ContactFieldImage';
+import ContactFieldN from './ContactFieldN';
 import ContactFieldNote from './ContactFieldNote';
 import ContactFieldString from './ContactFieldString';
 import ContactFieldTel from './ContactFieldTel';
 
 interface Props {
+    contactID?: string;
+    vCardContact: VCardContact;
     vCardProperty: VCardProperty<any>;
     onChangeVCard: (vCardProperty: VCardProperty) => void;
     onSelectImage: (props: ContactImageProps) => void;
@@ -21,7 +24,7 @@ interface Props {
 }
 
 const ContactFieldProperty = (
-    { vCardProperty, onChangeVCard, onSelectImage, isSubmitted = false, ...rest }: Props,
+    { contactID, vCardContact, vCardProperty, onChangeVCard, onSelectImage, isSubmitted = false, ...rest }: Props,
     ref: Ref<HTMLInputElement>
 ) => {
     const { field } = vCardProperty;
@@ -60,8 +63,9 @@ const ContactFieldProperty = (
     if (field === 'fn') {
         return (
             <ContactFieldFn
-                ref={ref}
+                contactID={contactID}
                 vCardProperty={vCardProperty}
+                vCardContact={vCardContact}
                 onChange={onChangeVCard}
                 isSubmitted={isSubmitted}
                 {...rest}
@@ -71,6 +75,19 @@ const ContactFieldProperty = (
 
     if (field === 'gender') {
         return <ContactFieldGender vCardProperty={vCardProperty} onChange={onChangeVCard} {...rest} />;
+    }
+
+    if (field === 'n') {
+        return (
+            <ContactFieldN
+                ref={ref}
+                vCardContact={vCardContact}
+                isSubmitted={isSubmitted}
+                vCardProperty={vCardProperty}
+                onChangeVCard={onChangeVCard}
+                {...rest}
+            />
+        );
     }
 
     return <ContactFieldString vCardProperty={vCardProperty} onChange={onChangeVCard} {...rest} />;

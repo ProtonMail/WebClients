@@ -10,8 +10,10 @@ import { ContactGroupEditProps } from '../group/ContactGroupEditModal';
 import ContactSummary from './ContactSummary';
 import ContactViewErrors from './ContactViewErrors';
 import ContactViewAdrs from './properties/ContactViewAdrs';
+import ContactViewBdy from './properties/ContactViewBdy';
 import ContactViewEmails from './properties/ContactViewEmails';
 import ContactViewFns from './properties/ContactViewFns';
+import ContactViewNotes from './properties/ContactViewNotes';
 import ContactViewOthers from './properties/ContactViewOthers';
 import ContactViewTels from './properties/ContactViewTels';
 
@@ -36,6 +38,14 @@ interface Props {
     isPreview?: boolean;
 }
 
+const ShortcutButton = ({ onClick, label }: { onClick: () => void; label: string }) => (
+    <div className="mb-2">
+        <Button shape="outline" size="small" onClick={onClick}>
+            {label}
+        </Button>
+    </div>
+);
+
 const ContactView = ({
     vCardContact,
     contactID,
@@ -57,6 +67,8 @@ const ContactView = ({
     const hasEmail = vCardContact.email?.length || 0 > 0;
     const hasTel = vCardContact.tel?.length || 0 > 0;
     const hasAdr = vCardContact.adr?.length || 0 > 0;
+    const hasNote = vCardContact.note?.length || 0 > 0;
+    const hasBday = Boolean(vCardContact.bday);
 
     return (
         <div>
@@ -88,31 +100,25 @@ const ContactView = ({
                 />
                 <ContactViewTels vCardContact={vCardContact} isSignatureVerified={isSignatureVerified} />
                 <ContactViewAdrs vCardContact={vCardContact} isSignatureVerified={isSignatureVerified} />
+                <ContactViewBdy vCardContact={vCardContact} isSignatureVerified={isSignatureVerified} />
+                <ContactViewNotes vCardContact={vCardContact} isSignatureVerified={isSignatureVerified} />
                 <ContactViewOthers vCardContact={vCardContact} isSignatureVerified={isSignatureVerified} />
             </div>
             {!isPreview ? (
                 <div className="mt-6">
                     {hasEmail ? null : (
-                        <div className="mb-2">
-                            <Button shape="outline" color="norm" onClick={() => onEdit('email')}>
-                                {c('Action').t`Add email`}
-                            </Button>
-                        </div>
+                        <ShortcutButton onClick={() => onEdit('email')} label={c('Action').t`Add email`} />
                     )}
                     {hasTel ? null : (
-                        <div className="mb-2">
-                            <Button shape="outline" color="norm" onClick={() => onEdit('tel')}>
-                                {c('Action').t`Add phone number`}
-                            </Button>
-                        </div>
+                        <ShortcutButton onClick={() => onEdit('tel')} label={c('Action').t`Add phone number`} />
                     )}
                     {hasAdr ? null : (
-                        <div className="mb-2">
-                            <Button shape="outline" color="norm" onClick={() => onEdit('adr')}>
-                                {c('Action').t`Add address`}
-                            </Button>
-                        </div>
+                        <ShortcutButton onClick={() => onEdit('adr')} label={c('Action').t`Add address`} />
                     )}
+                    {hasBday ? null : (
+                        <ShortcutButton onClick={() => onEdit('bday')} label={c('Action').t`Add birthday`} />
+                    )}
+                    {hasNote ? null : <ShortcutButton onClick={() => onEdit('note')} label={c('Action').t`Add note`} />}
                 </div>
             ) : null}
         </div>

@@ -33,7 +33,6 @@ export enum CATEGORIES {
 }
 
 export const OTHER_INFORMATION_FIELDS = [
-    'bday',
     'anniversary',
     'gender',
     'lang',
@@ -45,7 +44,6 @@ export const OTHER_INFORMATION_FIELDS = [
     'logo',
     'org',
     'member',
-    'note',
     'url',
 ];
 
