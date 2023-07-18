@@ -1,10 +1,18 @@
-import { KeyboardEvent, MutableRefObject, useCallback, useEffect, useImperativeHandle, useRef, useState } from 'react';
+import {
+    KeyboardEvent,
+    MutableRefObject,
+    ReactNode,
+    useCallback,
+    useEffect,
+    useImperativeHandle,
+    useRef,
+    useState,
+} from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader';
-import { Icon, InlineLinkButton, InputFieldTwo, PasswordInputTwo } from '@proton/components/components';
+import { Icon, InputFieldTwo, PasswordInputTwo } from '@proton/components/components';
 import { Challenge, ChallengeRef } from '@proton/components/containers';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import { PLANS } from '@proton/shared/lib/constants';
@@ -24,7 +32,7 @@ import noop from '@proton/utils/noop';
 
 import { AccountData, SignupType } from '../signup/interfaces';
 import { runAfterScroll } from './helper';
-import { Measure, OnOpenLogin, SignupModelV2 } from './interface';
+import { Measure, SignupModelV2 } from './interface';
 import { InteractFields } from './measure';
 import {
     EmailAsyncState,
@@ -32,6 +40,8 @@ import {
     createAsyncValidator,
     defaultEmailValidationState,
 } from './validateEmail';
+
+import '../signup/AccountStep.scss';
 
 const first = <T,>(errors: T[]) => {
     return errors.find((x) => !!x);
@@ -154,24 +164,24 @@ interface Props {
     model: SignupModelV2;
     onChallengeLoaded: () => void;
     onChallengeError: () => void;
-    onOpenLogin: OnOpenLogin;
     loading: boolean;
-    appName?: string;
     measure: Measure;
+    passwordFields: boolean;
+    footer: (details: AccountDetails) => ReactNode;
 }
 
 const AccountStepDetails = ({
     loading,
     accountStepDetailsRef,
     disableChange,
-    onSubmit,
+    footer,
     api,
     model,
+    onSubmit,
     onChallengeLoaded,
     onChallengeError,
-    onOpenLogin,
-    appName,
     measure,
+    passwordFields,
 }: Props) => {
     const challengeRefEmail = useRef<ChallengeRef>();
     const formInputRef = useRef<HTMLFormElement>(null);
@@ -287,8 +297,8 @@ const AccountStepDetails = ({
                     !hasValidAsyncEmailState ? 'email' : undefined,
                     errorDetails.email ? 'email' : undefined,
                     errorDetails.emailConfirm ? 'emailConfirm' : undefined,
-                    errorDetails.password ? 'password' : undefined,
-                    errorDetails.passwordConfirm ? 'passwordConfirm' : undefined,
+                    passwordFields && errorDetails.password ? 'password' : undefined,
+                    passwordFields && errorDetails.passwordConfirm ? 'passwordConfirm' : undefined,
                 ] as const
             ).filter(isTruthy);
         })();
@@ -345,24 +355,13 @@ const AccountStepDetails = ({
         };
     }, []);
 
-    const signIn = (
-        <InlineLinkButton
-            key="signin"
-            className="link link-focus text-nowrap"
-            onClick={() => {
-                //onUpdate({ create: 'login' });
-                onOpenLogin({ email: trimmedEmail, location: 'step2' });
-            }}
-        >
-            {c('Link').t`Sign in`}
-        </InlineLinkButton>
-    );
     const emailError = states.email.interactive && states.email.focus ? errorDetails.email : undefined;
     const emailConfirmError =
         states.emailConfirm.interactive && states.emailConfirm.focus ? errorDetails.emailConfirm : undefined;
     const passwordError = states.password.interactive && states.password.focus ? errorDetails.password : undefined;
     const passwordConfirmError =
         states.passwordConfirm.interactive && states.passwordConfirm.focus ? errorDetails.passwordConfirm : undefined;
+    const inputsWrapper = 'flex flex-column gap-1';
     return (
         <>
             {loading && (
@@ -394,7 +393,7 @@ const AccountStepDetails = ({
                     }
                 }}
             >
-                <div className="flex flex-column gap-1 mb-4">
+                <div className={`${inputsWrapper} mb-4`}>
                     <Challenge
                         bodyClassName="color-norm bg-transparent px-2"
                         iframeClassName="challenge-width-increase"
@@ -411,89 +410,43 @@ const AccountStepDetails = ({
                             onChallengeError();
                         }}
                     >
-                        <InputFieldTwo
-                            ref={emailRef}
-                            id="email"
-                            label={c('Signup label').t`Email address`}
-                            inputClassName="email-input-field"
-                            error={emailError}
-                            suffix={(() => {
-                                if (emailError) {
-                                    return undefined;
-                                }
-                                if (emailValidationState.state === EmailAsyncState.Success) {
-                                    return (
-                                        <Icon
-                                            name="checkmark-circle"
-                                            className="color-success"
-                                            size={16}
-                                            data-testid="email-valid"
-                                        />
-                                    );
-                                }
-                                if (emailValidationState.state === EmailAsyncState.Loading) {
-                                    return <CircleLoader size="small" />;
-                                }
-                            })()}
-                            disableChange={disableChange}
-                            dense={!emailError}
-                            rootClassName={!emailError ? 'pb-2' : undefined}
-                            value={details.email}
-                            onValue={(value: string) => {
-                                inputValuesRef.current.email = true;
-                                setInputsDiff({ email: value });
-                                setInputsStateDiff({ email: { interactive: true } });
-                                const email = value.trim();
-                                const errors = getErrorDetails({
-                                    email,
-                                    emailConfirm: details.emailConfirm.trim(),
-                                });
-                                validator.trigger({
-                                    api,
-                                    error: !!(errors.email || errors.emailConfirm),
-                                    email,
-                                    set: setEmailValidationState,
-                                    measure,
-                                });
-                            }}
-                            onBlur={() => {
-                                // Doesn't work because it's in the challenge
-                                setInputsStateDiff({ email: { focus: true } });
-                            }}
-                            onClick={() => {
-                                if (inputValuesRef.current.emailConfirm) {
-                                    setInputsStateDiff({ emailConfirm: { focus: true } });
-                                }
-                            }}
-                            onKeyDown={(event: KeyboardEvent<HTMLInputElement>) => {
-                                if (event.key === 'Enter') {
-                                    onSubmit?.();
-                                }
-                                if (event.key === 'Tab') {
-                                    setInputsStateDiff({ email: { focus: true } });
-                                }
-                            }}
-                        />
-
-                        {states.email.interactive && (
+                        <div className={inputsWrapper}>
                             <InputFieldTwo
-                                ref={emailConfirmRef}
-                                id="email-confirm"
-                                placeholder={c('Signup label').t`Confirm email address`}
+                                ref={emailRef}
+                                id="email"
+                                label={c('Signup label').t`Email address`}
                                 inputClassName="email-input-field"
-                                error={emailConfirmError}
-                                dense={!emailConfirmError}
-                                rootClassName={clsx(!emailConfirmError && 'pb-2', emailError && 'pt-2')}
+                                error={emailError}
+                                suffix={(() => {
+                                    if (emailError) {
+                                        return undefined;
+                                    }
+                                    if (emailValidationState.state === EmailAsyncState.Success) {
+                                        return (
+                                            <Icon
+                                                name="checkmark-circle"
+                                                className="color-success"
+                                                size={16}
+                                                data-testid="email-valid"
+                                            />
+                                        );
+                                    }
+                                    if (emailValidationState.state === EmailAsyncState.Loading) {
+                                        return <CircleLoader size="small" />;
+                                    }
+                                })()}
                                 disableChange={disableChange}
-                                value={details.emailConfirm}
+                                dense={!emailError}
+                                rootClassName={!emailError ? 'pb-2' : undefined}
+                                value={details.email}
                                 onValue={(value: string) => {
-                                    inputValuesRef.current.emailConfirm = true;
-                                    setInputsDiff({ emailConfirm: value });
-                                    setInputsStateDiff({ emailConfirm: { interactive: true } });
-                                    const email = details.email.trim();
+                                    inputValuesRef.current.email = true;
+                                    setInputsDiff({ email: value });
+                                    setInputsStateDiff({ email: { interactive: true } });
+                                    const email = value.trim();
                                     const errors = getErrorDetails({
                                         email,
-                                        emailConfirm: value.trim(),
+                                        emailConfirm: details.emailConfirm.trim(),
                                     });
                                     validator.trigger({
                                         api,
@@ -505,11 +458,11 @@ const AccountStepDetails = ({
                                 }}
                                 onBlur={() => {
                                     // Doesn't work because it's in the challenge
-                                    setInputsStateDiff({ emailConfirm: { focus: true } });
+                                    setInputsStateDiff({ email: { focus: true } });
                                 }}
                                 onClick={() => {
-                                    if (inputValuesRef.current.email) {
-                                        setInputsStateDiff({ email: { focus: true } });
+                                    if (inputValuesRef.current.emailConfirm) {
+                                        setInputsStateDiff({ emailConfirm: { focus: true } });
                                     }
                                 }}
                                 onKeyDown={(event: KeyboardEvent<HTMLInputElement>) => {
@@ -517,76 +470,108 @@ const AccountStepDetails = ({
                                         onSubmit?.();
                                     }
                                     if (event.key === 'Tab') {
-                                        setInputsStateDiff({ emailConfirm: { focus: true } });
+                                        setInputsStateDiff({ email: { focus: true } });
                                     }
                                 }}
                             />
-                        )}
+
+                            {states.email.interactive && (
+                                <InputFieldTwo
+                                    ref={emailConfirmRef}
+                                    id="email-confirm"
+                                    placeholder={c('Signup label').t`Confirm email address`}
+                                    inputClassName="email-input-field"
+                                    error={emailConfirmError}
+                                    dense={!emailConfirmError}
+                                    rootClassName={clsx(!emailConfirmError && 'pb-2', emailError && 'pt-2')}
+                                    disableChange={disableChange}
+                                    value={details.emailConfirm}
+                                    onValue={(value: string) => {
+                                        inputValuesRef.current.emailConfirm = true;
+                                        setInputsDiff({ emailConfirm: value });
+                                        setInputsStateDiff({ emailConfirm: { interactive: true } });
+                                        const email = details.email.trim();
+                                        const errors = getErrorDetails({
+                                            email,
+                                            emailConfirm: value.trim(),
+                                        });
+                                        validator.trigger({
+                                            api,
+                                            error: !!(errors.email || errors.emailConfirm),
+                                            email,
+                                            set: setEmailValidationState,
+                                            measure,
+                                        });
+                                    }}
+                                    onBlur={() => {
+                                        // Doesn't work because it's in the challenge
+                                        setInputsStateDiff({ emailConfirm: { focus: true } });
+                                    }}
+                                    onClick={() => {
+                                        if (inputValuesRef.current.email) {
+                                            setInputsStateDiff({ email: { focus: true } });
+                                        }
+                                    }}
+                                    onKeyDown={(event: KeyboardEvent<HTMLInputElement>) => {
+                                        if (event.key === 'Enter') {
+                                            onSubmit?.();
+                                        }
+                                        if (event.key === 'Tab') {
+                                            setInputsStateDiff({ emailConfirm: { focus: true } });
+                                        }
+                                    }}
+                                />
+                            )}
+                        </div>
                     </Challenge>
 
-                    <InputFieldTwo
-                        ref={passwordRef}
-                        id="password"
-                        as={PasswordInputTwo}
-                        assistiveText={states.password.focus && getMinPasswordLengthMessage()}
-                        label={c('Signup label').t`Password`}
-                        error={passwordError}
-                        dense={!passwordError}
-                        rootClassName={clsx('mt-4', !passwordError && 'pb-2')}
-                        disableChange={disableChange}
-                        value={details.password}
-                        autoComplete="new-password"
-                        onValue={(value: string) => {
-                            setInputsDiff({ password: value });
-                            setInputsStateDiff({ password: { interactive: true } });
-                        }}
-                        onFocus={() => {
-                            //handleUpdate('email', { emType: 'email' });
-                        }}
-                        onBlur={() => {
-                            setInputsStateDiff({ password: { focus: true } });
-                        }}
-                    />
-                    {states.password.interactive && (
-                        <InputFieldTwo
-                            ref={passwordConfirmRef}
-                            id="password-confirm"
-                            as={PasswordInputTwo}
-                            placeholder={c('Signup label').t`Confirm password`}
-                            error={passwordConfirmError}
-                            dense={!passwordConfirmError}
-                            rootClassName={clsx(passwordError && 'pt-2')}
-                            disableChange={disableChange}
-                            value={details.passwordConfirm}
-                            autoComplete="new-password"
-                            onValue={(value: string) => {
-                                setInputsDiff({ passwordConfirm: value });
-                                setInputsStateDiff({ passwordConfirm: { interactive: true } });
-                            }}
-                            onFocus={() => {
-                                //handleUpdate('email', { emType: 'confirm' });
-                            }}
-                            onBlur={() => {
-                                setInputsStateDiff({ passwordConfirm: { focus: true } });
-                            }}
-                        />
+                    {passwordFields && (
+                        <>
+                            <InputFieldTwo
+                                ref={passwordRef}
+                                id="password"
+                                as={PasswordInputTwo}
+                                assistiveText={states.password.focus && getMinPasswordLengthMessage()}
+                                label={c('Signup label').t`Password`}
+                                error={passwordError}
+                                dense={!passwordError}
+                                rootClassName={clsx('mt-4', !passwordError && 'pb-2')}
+                                disableChange={disableChange}
+                                value={details.password}
+                                autoComplete="new-password"
+                                onValue={(value: string) => {
+                                    setInputsDiff({ password: value });
+                                    setInputsStateDiff({ password: { interactive: true } });
+                                }}
+                                onBlur={() => {
+                                    setInputsStateDiff({ password: { focus: true } });
+                                }}
+                            />
+                            {states.password.interactive && (
+                                <InputFieldTwo
+                                    ref={passwordConfirmRef}
+                                    id="password-confirm"
+                                    as={PasswordInputTwo}
+                                    placeholder={c('Signup label').t`Confirm password`}
+                                    error={passwordConfirmError}
+                                    dense={!passwordConfirmError}
+                                    rootClassName={clsx(passwordError && 'pt-2')}
+                                    disableChange={disableChange}
+                                    value={details.passwordConfirm}
+                                    autoComplete="new-password"
+                                    onValue={(value: string) => {
+                                        setInputsDiff({ passwordConfirm: value });
+                                        setInputsStateDiff({ passwordConfirm: { interactive: true } });
+                                    }}
+                                    onBlur={() => {
+                                        setInputsStateDiff({ passwordConfirm: { focus: true } });
+                                    }}
+                                />
+                            )}
+                        </>
                     )}
                 </div>
-                {onSubmit && (
-                    <div className="mb-4">
-                        <Button type="submit" size="large" loading={disableChange} color="norm" fullWidth>
-                            {c('pass_signup_2023: Action').t`Start using ${appName} now`}
-                        </Button>
-                    </div>
-                )}
-                <div className="text-center">
-                    <span>
-                        {
-                            // translator: Full sentence "Already have an account? Sign in"
-                            c('Go to sign in').jt`Already have an account? ${signIn}`
-                        }
-                    </span>
-                </div>
+                {footer(details)}
             </form>
         </>
     );
