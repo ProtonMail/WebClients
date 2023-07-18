@@ -65,6 +65,7 @@ const PaymentMethodActions = ({ method, methods, index }: Props) => {
             text: c('Action').t`Edit`,
             onClick: () =>
                 createModal(<EditCardModal card={card} renewState={method.Autopay} paymentMethodId={method.ID} />),
+            'data-testid': 'Edit',
         });
     }
 
@@ -78,6 +79,7 @@ const PaymentMethodActions = ({ method, methods, index }: Props) => {
     dropdownActions.push({
         text: c('Action').t`Delete`,
         actionType: 'delete',
+        'data-testid': 'Delete',
         onClick: () => {
             createModal(
                 <ConfirmModal
