@@ -2925,6 +2925,9 @@
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files.": [
         "檔案大小上限為 ${ MAX_IMPORT_FILE_SIZE_STRING }，上限為 ${ MAX_IMPORT_CONTACTS_STRING } 個聯絡人。若您的檔案超出此限，請將其分割為較小的檔案。"
       ],
+      "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
+        "開啟電郵追蹤程式保護以避免廣告商或其他人追踪您的地點或網上活動。"
+      ],
       "Unlock custom message scheduling and other benefits when you upgrade your plan.": [
         "升級方案以解鎖自訂訊息排程與其他好處。"
       ],
@@ -2936,6 +2939,9 @@
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "拖動以調整聯絡人合併的優先次序。未勾選的聯絡人將不會被合併。"
+      ],
+      "We didn't find any known trackers and tracking URLs in this email.": [
+        "我們沒有在此電郵中發現追蹤程式或追踪網址。"
       ],
       "When do you want your message to be sent?": [
         "您想在什麼時候傳送郵件？"
@@ -5807,9 +5813,6 @@
       "You can check the progress ${ importProgressLink }.": [
         "您可以檢查進度 ${ importProgressLink }。"
       ],
-      "You can click links in this email without being profiled and leaking your online activity with advertisers.": [
-        "您在不洩漏您電子活動給廣告商之情況按於電子郵件中的連結"
-      ],
       "You can either update your search query or ${ button }": [
         "您可以更新您的搜尋查詢，又或者${ button }。"
       ],
@@ -5818,9 +5821,6 @@
       ],
       "You can import one data type at a time.": [
         "您可以一次匯入一種資料類型。"
-      ],
-      "You can read this email without revealing your interactions, location, or device to advertisers.": [
-        "您可在不提供您的互動、地點及裝置給廣告商使用"
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "您可以啟用通知功能，以便在新的電郵訊息送達此資料夾時收到通知。"
@@ -5883,7 +5883,7 @@
         "您編寫了「${ attachmentsFoundKeyword }」，但沒有加入對應的附件。無論如何寄出此封郵件？"
       ],
       "You've reached the maximum number of addresses in the contact group(s):": [
-        "您已達到通訊群組郵件地址最高上限:"
+        "您已達到聯絡人群組郵件地址最高上限："
       ],
       "You've reached the maximum number of addresses in the contact group.": [
         "您以達到通訊群組郵件地址最高上限"
@@ -7707,17 +7707,11 @@
     "Sender verification details": {
       "Sender verification": [
         "驗證的寄件人"
-      ],
-      "Sender verification failed: ${ icon.senderVerificationDetails.description }": [
-        "寄件人驗證失敗: ${ icon.senderVerificationDetails.description }"
-      ],
-      "Sender verified: ${ icon.senderVerificationDetails.description }": [
-        "驗證的寄件者:${ icon.senderVerificationDetails.description }"
       ]
     },
     "Sender verification error": {
-      "Verification key is not in the list of trusted keys.": [
-        "驗證金鑰不在信任金鑰清單裡"
+      "Sender verification failed: Verification key is not in the list of trusted keys.": [
+        "寄件者認證失敗： 認證金鑰並非在信任金鑰之中。"
       ]
     },
     "Sent email icon": {
@@ -8872,8 +8866,8 @@
       "Previous message": [
         "上一封郵件"
       ],
-      "Protect your email": [
-        "保護您的電子郵件"
+      "Protect yourself from trackers": [
+        "保護自己免於追蹤程式"
       ],
       "Re-sign all contacts": [
         "重新簽署所有聯絡人"

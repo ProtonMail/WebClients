@@ -2955,6 +2955,9 @@
         "Файл повинен мати максимальний розмір ${ MAX_IMPORT_FILE_SIZE_STRING } та містити до ${ MAX_IMPORT_CONTACTS_STRING } контактів. Якщо ваш файл більший, розділіть його на менші файли.",
         "Файл повинен мати максимальний розмір ${ MAX_IMPORT_FILE_SIZE_STRING } та містити до ${ MAX_IMPORT_CONTACTS_STRING } контактів. Якщо ваш файл більший, розділіть його на менші файли."
       ],
+      "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
+        "Увімкніть захист трекера електронної пошти, щоб рекламодавці та інші не відстежували ваше розташування та активність в Інтернеті."
+      ],
       "Unlock custom message scheduling and other benefits when you upgrade your plan.": [
         "Користуйтеся власним розкладом листування та іншими перевагами після оновлення тарифного плану."
       ],
@@ -2966,6 +2969,9 @@
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Використовуйте перетягування для пріоритету об'єднання між контактами. Приберіть позначку з тих контактів, які ви не хочете об'єднувати."
+      ],
+      "We didn't find any known trackers and tracking URLs in this email.": [
+        "У цьому електронному листі не знайдено жодних відомих трекерів і URL-адрес для відстеження."
       ],
       "When do you want your message to be sent?": [
         "Коли ви хочете надіслати своє повідомлення?"
@@ -6029,8 +6035,14 @@
       "We apologize. This might have been a mistake from our side. Can you please confirm that you want to mark this email as a legitimate one?": [
         "Перепрошуємо. Це могла бути помилка з нашого боку. Підтвердьте, що ви хочете позначити цей лист надійним."
       ],
+      "We blocked the following advertisers and organizations from seeing when you open this email, what device you’re using, and where you’re located.": [
+        "Ми заблокували наступним рекламодавцям та організаціям можливість бачити, коли ви відкриваєте цей лист, який пристрій ви використовуєте і де ви знаходитесь."
+      ],
       "We could not verify the sender's trusted keys.": [
         "Нам не вдалося перевірити довірені ключі відправника."
+      ],
+      "We removed tracking information from the following links to help protect you from advertisers and others trying to track your online activity.": [
+        "Ми видалили інформацію про відстеження з наступних посилань, щоб захистити вас від рекламодавців та інших осіб, які намагаються відстежувати вашу активність в Інтернеті."
       ],
       "We'll notify you when the import is done.": [
         "Ми сповістимо вас, коли імпорт буде завершено."
@@ -6086,9 +6098,6 @@
       "You can check the progress ${ importProgressLink }.": [
         "Ви можете переглянути поступ ${ importProgressLink }."
       ],
-      "You can click links in this email without being profiled and leaking your online activity with advertisers.": [
-        "Ви можете натискати посилання в цьому листі, не маючи профілю та не повідомляючи про свою онлайн-активність рекламодавцям."
-      ],
       "You can either update your search query or ${ button }": [
         "Ви можете оновити свій пошуковий запит, або ${ button }"
       ],
@@ -6097,9 +6106,6 @@
       ],
       "You can import one data type at a time.": [
         "Ви можете імпортувати один тип даних за один раз."
-      ],
-      "You can read this email without revealing your interactions, location, or device to advertisers.": [
-        "Ви можете прочитати цей лист, не розкриваючи рекламодавцям свою взаємодію, розташування або пристрій."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Ви можете увімкнути сповіщення про надходження нових повідомлень до цієї теки."
@@ -8070,17 +8076,11 @@
     "Sender verification details": {
       "Sender verification": [
         "Перевірка відправника"
-      ],
-      "Sender verification failed: ${ icon.senderVerificationDetails.description }": [
-        "Помилка перевірки відправника: ${ icon.senderVerificationDetails.description }"
-      ],
-      "Sender verified: ${ icon.senderVerificationDetails.description }": [
-        "Відправника перевірено: ${ icon.senderVerificationDetails.description }"
       ]
     },
     "Sender verification error": {
-      "Verification key is not in the list of trusted keys.": [
-        "Ключа підтвердження немає в списку довірених ключів."
+      "Sender verification failed: Verification key is not in the list of trusted keys.": [
+        "Помилка перевірки відправника: ключ перевірки відсутній у списку довірених ключів."
       ]
     },
     "Sent email icon": {
@@ -9379,8 +9379,8 @@
       "Previous message": [
         "Попереднє повідомлення"
       ],
-      "Protect your email": [
-        "Захистіть свою електронну пошту"
+      "Protect yourself from trackers": [
+        "Захистіть себе від трекерів"
       ],
       "Re-sign all contacts": [
         "Повторно підписати всі контакти"

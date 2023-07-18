@@ -95,10 +95,10 @@
         "Siirrä arkistoon"
       ],
       "As Scheduled": [
-        "Ajoitetusti"
+        "Kuten ajoitettu"
       ],
       "At most 100 contacts are allowed per contact group": [
-        "Yhteystietoryhmää kohden sallitaan enintään 100 yhteystietoa"
+        "Yhdessä yhteystietoryhmässä sallitaan enintään 100 yhteystietoa"
       ],
       "Attach screenshot(s)": [
         "Liitä kuvankaappauksia"
@@ -152,7 +152,7 @@
         "Vaihda sivua"
       ],
       "Chat with us": [
-        "Chattaile kanssamme"
+        "Keskustele kanssamme"
       ],
       "Check import progress": [
         "Tarkasta tuonnin tila"
@@ -239,7 +239,7 @@
         "Kopioi osoitteet"
       ],
       "Copy email to clipboard": [
-        "Kopioi osoite leikepöydälle"
+        "Kopioi sähköpostiosoite leikepöydälle"
       ],
       "Copy password to clipboard": [
         "Kopioi salasana leikepöydälle"
@@ -2935,6 +2935,9 @@
         "Tiedosto voi olla enintään ${ MAX_IMPORT_FILE_SIZE_STRING } kokoinen ja sisältää ${ MAX_IMPORT_CONTACTS_STRING } yhteystiedon. Jos tiedosto on suurempi, jaa se pienempiin tiedostoihin.",
         "Tiedosto voi olla enintään ${ MAX_IMPORT_FILE_SIZE_STRING } kokoinen ja sisältää enintään ${ MAX_IMPORT_CONTACTS_STRING } yhteystietoa. Jos tiedosto on suurempi, jaa se pienempiin tiedostoihin."
       ],
+      "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
+        "Ota sähköpostin seurantasuojaus käyttöön, jotta mainostajat ja muut tahot eivät voi seurata sijaintiasi ja verkkotoimintaasi."
+      ],
       "Unlock custom message scheduling and other benefits when you upgrade your plan.": [
         "Avaa mukautettu viestien ajoitus sekä muita etuja päivittämällä tilauksesi."
       ],
@@ -2946,6 +2949,9 @@
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Määritä yhdistettävien yhteystietojen painotusjärjestys vetämällä ja pudottamalla. Poista niiden valinta, joita et halua yhdistää."
+      ],
+      "We didn't find any known trackers and tracking URLs in this email.": [
+        "Emme löytäneet tästä sähköpostiviestistä mitään tunnettuja seuraajia tai seuranta-URL-osoitteita."
       ],
       "When do you want your message to be sent?": [
         "Milloin haluat viestin lähtevän?"
@@ -3405,7 +3411,7 @@
         "Tunnisteen nimi on liian pitkä. Valitse eri nimi."
       ],
       "The maximum expiration is 4 weeks": [
-        "Suurin mahdollinen erääntymisaika on 4 viikkoa"
+        "Pisin mahdollinen erääntymisaika on 4 viikkoa"
       ],
       "The sending key is not valid": [
         "Lähetysavain ei kelpaa"
@@ -3501,8 +3507,8 @@
     },
     "Error adding participants to a calendar event": {
       "At most ${ MAX_ATTENDEES } participant is allowed per invitation": [
-        "Kutsua kohti sallitaan enintään ${ MAX_ATTENDEES } osallistuja",
-        "Kutsua kohti sallitaan enintään ${ MAX_ATTENDEES } osallistujaa"
+        "Kutsua kohden sallitaan enintään ${ MAX_ATTENDEES } osallistuja",
+        "Kutsua kohden sallitaan enintään ${ MAX_ATTENDEES } osallistujaa"
       ]
     },
     "Error display when performing invalid move on message": {
@@ -5124,8 +5130,8 @@
         "Erääntyy ${ minutesDiff } minuutin kuluttua"
       ],
       "Expires in less than ${ hoursDiff } hour": [
-        "Erääntyy alle ${ hoursDiff } tunnissa",
-        "Erääntyy alle ${ hoursDiff } tunnissa"
+        "Erääntyy vajaan ${ hoursDiff } tunnin kuluttua",
+        "Erääntyy vajaan ${ hoursDiff } tunnin kuluttua"
       ],
       "file attached": [
         "liitetiedosto",
@@ -5675,7 +5681,7 @@
         "Viestin ulkoasua on muutettu tummalle taustalle sopivaksi."
       ],
       "This message is automatically generated as a response to a previous message.": [
-        "Tämä viesti on luotu automaattisesti vastaukseksi edelliseen viestiin."
+        "Tämä viesti on luotu automaattisesti edellisen viestin vastaukseksi."
       ],
       "This message is from a mailing list.": [
         "Viesti on postituslistan lähettämä."
@@ -5900,9 +5906,6 @@
       "You can check the progress ${ importProgressLink }.": [
         "Voit tarkastaa tilan ${ importProgressLink }."
       ],
-      "You can click links in this email without being profiled and leaking your online activity with advertisers.": [
-        "Voit klikata tässä sähköpostissa olevia linkkejä ilman, että sinua profiloidaan tai että verkkotoimintasi vuotaa mainostajille."
-      ],
       "You can either update your search query or ${ button }": [
         "Voit joko muuttaa hakuasi tai ${ button }"
       ],
@@ -5911,9 +5914,6 @@
       ],
       "You can import one data type at a time.": [
         "Voit tuoda vain yhden tietotyypin kerrallaan."
-      ],
-      "You can read this email without revealing your interactions, location, or device to advertisers.": [
-        "Voit lukea viestin paljastamatta mainostajille tietoja toiminnastasi, sijainnistasi tai laitteestasi."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Käytä ilmoituksia saadaksesi hälytyksen kansioon saapuvista uusista viesteistä."
@@ -6359,7 +6359,7 @@
         "Tallenna yhteystiedot automaattisesti"
       ],
       "Awful": [
-        "Kamala"
+        "Surkea"
       ],
       "Bad": [
         "Huono"
@@ -6767,7 +6767,7 @@
         "ilman liitteitä"
       ],
       "Wonderful": [
-        "Ihana"
+        "Erinomainen"
       ],
       "Your password (admin)": [
         "Salasanasi (ylläpitäjä)"
@@ -7192,109 +7192,109 @@
         "${ dayOfMonth }. päivä"
       ],
       "on the first Friday": [
-        "ensimmäisenä perjantaina"
+        "ensimmäinen perjantai"
       ],
       "on the first Monday": [
-        "ensimmäisenä maanantaina"
+        "ensimmäinen maanantai"
       ],
       "on the first Saturday": [
-        "ensimmäisenä lauantaina"
+        "ensimmäinen lauantai"
       ],
       "on the first Sunday": [
-        "ensimmäisenä sunnuntaina"
+        "ensimmäinen sunnuntai"
       ],
       "on the first Thursday": [
-        "ensimmäisenä torstaina"
+        "ensimmäinen torstai"
       ],
       "on the first Tuesday": [
-        "ensimmäisenä tiistaina"
+        "ensimmäinen tiistai"
       ],
       "on the first Wednesday": [
-        "ensimmäisenä keskiviikkona"
+        "ensimmäinen keskiviikko"
       ],
       "on the fourth Friday": [
-        "neljäntenä perjantaina"
+        "neljäs perjantai"
       ],
       "on the fourth Monday": [
-        "neljäntenä maanantaina"
+        "neljäs maanantai"
       ],
       "on the fourth Saturday": [
-        "neljäntenä lauantaina"
+        "neljäs lauantai"
       ],
       "on the fourth Sunday": [
-        "neljäntenä sunnuntaina"
+        "neljäs sunnuntai"
       ],
       "on the fourth Thursday": [
-        "neljäntenä torstaina"
+        "neljäs torstai"
       ],
       "on the fourth Tuesday": [
-        "neljäntenä tiistaina"
+        "neljäs tiistai"
       ],
       "on the fourth Wednesday": [
-        "neljäntenä keskiviikkona"
+        "neljäs keskiviikko"
       ],
       "on the last Friday": [
-        "viimeisenä perjantaina"
+        "viimeinen perjantai"
       ],
       "on the last Monday": [
-        "viimeisenä maanantaina"
+        "viimeinen maanantai"
       ],
       "on the last Saturday": [
-        "viimeisenä lauantaina"
+        "viimeinen lauantai"
       ],
       "on the last Sunday": [
-        "viimeisenä sunnuntaina"
+        "viimeinen sunnuntai"
       ],
       "on the last Thursday": [
-        "viimeisenä torstaina"
+        "viimeinen torstai"
       ],
       "on the last Tuesday": [
-        "viimeisenä tiistaina"
+        "viimeinen tiistai"
       ],
       "on the last Wednesday": [
-        "viimeisenä keskiviikkona"
+        "viimeinen keskiviikko"
       ],
       "on the second Friday": [
-        "toisena perjantaina"
+        "toinen perjantai"
       ],
       "on the second Monday": [
-        "toisena maanantaina"
+        "toinen maanantai"
       ],
       "on the second Saturday": [
-        "toisena lauantaina"
+        "toinen lauantai"
       ],
       "on the second Sunday": [
-        "toisena sunnuntaina"
+        "toinen sunnuntai"
       ],
       "on the second Thursday": [
-        "toisena torstaina"
+        "toinen torstai"
       ],
       "on the second Tuesday": [
-        "toisena tiistaina"
+        "toinen tiistai"
       ],
       "on the second Wednesday": [
-        "toisena keskiviikkona"
+        "toinen keskiviikko"
       ],
       "on the third Friday": [
-        "kolmantena perjantaina"
+        "kolmas perjantai"
       ],
       "on the third Monday": [
-        "kolmantena maanantaina"
+        "kolmas maanantai"
       ],
       "on the third Saturday": [
-        "kolmantena lauantaina"
+        "kolmas lauantai"
       ],
       "on the third Sunday": [
-        "kolmantena sunnuntaina"
+        "kolmas sunnuntai"
       ],
       "on the third Thursday": [
-        "kolmantena torstaina"
+        "kolmas torstai"
       ],
       "on the third Tuesday": [
-        "kolmantena tiistaina"
+        "kolmas tiistai"
       ],
       "on the third Wednesday": [
-        "kolmantena keskiviikkona"
+        "kolmas keskiviikko"
       ]
     },
     "New Label form": {
@@ -7315,7 +7315,7 @@
     },
     "new_plans: action": {
       "Switch or add account": [
-        "Vaihda tiliä tai lisää uusi"
+        "Vaihda tai lisää tili"
       ]
     },
     "new_plans: feature": {
@@ -7554,7 +7554,7 @@
         "Sähköpostiosoite"
       ],
       "End date": [
-        "Päätöspäivä"
+        "Päättymispäivä"
       ],
       "Filter folders": [
         "Suodata kansioita"
@@ -7828,17 +7828,11 @@
     "Sender verification details": {
       "Sender verification": [
         "Lähettäjän vahvistus"
-      ],
-      "Sender verification failed: ${ icon.senderVerificationDetails.description }": [
-        "Lähettäjän vahvistus epäonnistui: ${ icon.senderVerificationDetails.description }"
-      ],
-      "Sender verified: ${ icon.senderVerificationDetails.description }": [
-        "Lähettäjä vahvistettu: ${ icon.senderVerificationDetails.description }"
       ]
     },
     "Sender verification error": {
-      "Verification key is not in the list of trusted keys.": [
-        "Todennusavain ei ole luotettujen avainten listalla."
+      "Sender verification failed: Verification key is not in the list of trusted keys.": [
+        "Lähettäjän vahvistus epäonnistui: todennusavain ei ole luotettujen avainten listalla."
       ]
     },
     "Sent email icon": {
@@ -7956,7 +7950,7 @@
     "specialoffer: Countdown unit": {
       "${ days } day": [
         "${ days } päivä",
-        "${ days } päivää"
+        "${ days } päivä"
       ],
       "${ hours } hour": [
         "${ hours } tunti",
@@ -9043,8 +9037,8 @@
       "Previous message": [
         "Edellinen viesti"
       ],
-      "Protect your email": [
-        "Suojaa sähköpostisi"
+      "Protect yourself from trackers": [
+        "Suojaa itsesi seurannalta"
       ],
       "Re-sign all contacts": [
         "Allekirjoita kaikki yhteystiedot uudelleen"
@@ -9603,25 +9597,25 @@
     },
     "Weekly recurring event, repeats on (multiple days), frequency": {
       "Friday": [
-        "perjantaisin"
+        "perjantai"
       ],
       "Monday": [
-        "maanantaisin"
+        "maanantai"
       ],
       "Saturday": [
-        "lauantaisin"
+        "lauantai"
       ],
       "Sunday": [
-        "sunnuntaisin"
+        "sunnuntai"
       ],
       "Thursday": [
-        "torstaisin"
+        "torstai"
       ],
       "Tuesday": [
-        "tiistaisin"
+        "tiistai"
       ],
       "Wednesday": [
-        "keskiviikkoisin"
+        "keskiviikko"
       ]
     },
     "Yearly recurring event, frequency": {

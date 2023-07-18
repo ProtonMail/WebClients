@@ -2955,6 +2955,9 @@
         "Soubor by měl mít maximální velikost ${ MAX_IMPORT_FILE_SIZE_STRING } a obsahovat nanejvýš ${ MAX_IMPORT_CONTACTS_STRING } kontaktů. Pokud je váš soubor větší, rozdělte jej do menších souborů.",
         "Soubor by měl mít maximální velikost ${ MAX_IMPORT_FILE_SIZE_STRING } a obsahovat nanejvýš ${ MAX_IMPORT_CONTACTS_STRING } kontaktů. Pokud je váš soubor větší, rozdělte jej do menších souborů."
       ],
+      "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
+        "Zapnutím ochrany proti sledování e-mailů zabráníte inzerentům a dalším subjektům sledovat vaši polohu a online aktivity."
+      ],
       "Unlock custom message scheduling and other benefits when you upgrade your plan.": [
         "Odemkněte si vlastní plánování zpráv a další výhody navýšením tarifu."
       ],
@@ -2966,6 +2969,9 @@
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Pomocí myši táhněte a pusťte pro změnu priority spojení kontaktů. Odškrtněte kontakty, které nechcete sloučit."
+      ],
+      "We didn't find any known trackers and tracking URLs in this email.": [
+        "V tomto e-mailu jsme nenašli žádné známé sledovací prvky a sledovací adresy URL."
       ],
       "When do you want your message to be sent?": [
         "Kdy chcete, aby byla vaše zpráva odeslána?"
@@ -6065,9 +6071,6 @@
       "You can check the progress ${ importProgressLink }.": [
         "Zde můžete zkontrolovat průběh ${ importProgressLink }."
       ],
-      "You can click links in this email without being profiled and leaking your online activity with advertisers.": [
-        "V tomto e-mailu můžete klikat na odkazy, aniž by došlo k profilování a úniku informací o vaší online aktivitě k inzerentům."
-      ],
       "You can either update your search query or ${ button }": [
         "Můžete buď aktualizovat hledaný dotaz nebo ${ button }"
       ],
@@ -6076,9 +6079,6 @@
       ],
       "You can import one data type at a time.": [
         "Importovat můžete vždy jeden typ dat."
-      ],
-      "You can read this email without revealing your interactions, location, or device to advertisers.": [
-        "Tento e-mail můžete číst, aniž byste inzerentům odhalili své interakce, polohu nebo zařízení."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Můžete zapnout upozornění abyste obdrželi oznámení v případě, že do této složky přijde nový e-mail."
@@ -8049,17 +8049,11 @@
     "Sender verification details": {
       "Sender verification": [
         "Ověření odesílatele"
-      ],
-      "Sender verification failed: ${ icon.senderVerificationDetails.description }": [
-        "Ověření odesílatele selhalo: ${ icon.senderVerificationDetails.description }"
-      ],
-      "Sender verified: ${ icon.senderVerificationDetails.description }": [
-        "Odesílatel ověřen: ${ icon.senderVerificationDetails.description }"
       ]
     },
     "Sender verification error": {
-      "Verification key is not in the list of trusted keys.": [
-        "Ověřovací klíč není v seznamu důvěryhodných klíčů."
+      "Sender verification failed: Verification key is not in the list of trusted keys.": [
+        "Ověření odesílatele selhalo: Ověřovací klíč není v seznamu důvěryhodných klíčů."
       ]
     },
     "Sent email icon": {
@@ -9358,8 +9352,8 @@
       "Previous message": [
         "Předchozí zpráva"
       ],
-      "Protect your email": [
-        "Chraňte váš e-mail"
+      "Protect yourself from trackers": [
+        "Chraňte se před sledovacími prvky"
       ],
       "Re-sign all contacts": [
         "Znovu podepsat všechny kontakty"
@@ -9510,12 +9504,6 @@
       ],
       "Warning: suspected fake website": [
         "Varování: podezření na falešnou webovou stránku"
-      ],
-      "We protected you from ${ trackersCount } tracker": [
-        "Ochránili jsme vás před ${ trackersCount } sledováním",
-        "Ochránili jsme vás před ${ trackersCount } sledováními",
-        "Ochránili jsme vás před ${ trackersCount } sledování",
-        "Ochránili jsme vás před ${ trackersCount } sledování"
       ],
       "Welcome": [
         "Vítejte"
