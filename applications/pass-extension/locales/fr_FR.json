@@ -435,6 +435,9 @@
       "The file you are trying to import is empty": [
         "Le fichier que vous essayez d'importer est vide."
       ],
+      "Too many failed attempts. Please sign in again.": [
+        "Trop de tentatives n'ont pas abouti. Connectez-vous à nouveau."
+      ],
       "Trashing item failed": [
         "La suppression de l'élément n'a pas abouti."
       ],
@@ -467,6 +470,9 @@
       ],
       "Vault name does not match": [
         "Le nom du coffre-fort ne correspond pas."
+      ],
+      "Wrong PIN code. Try again.": [
+        "Le code PIN n'est pas correct. Veuillez réessayer."
       ]
     },
     "Error message": {
@@ -608,6 +614,9 @@
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Enter verification code. Digit ${ digit }."
+      ],
+      "Enter your pin code": [
+        "Saisissez votre code PIN."
       ],
       "Enter your PIN code": [
         "Entrez votre code PIN"
@@ -1411,6 +1420,9 @@
       ],
       "Unlock ${ brandNameJSX }": [
         "Débloquer ${ brandNameJSX }"
+      ],
+      "Unlock ${ PASS_APP_NAME }": [
+        "Débloquer ${ PASS_APP_NAME }"
       ],
       "Update available": [
         "Mise à jour disponible"

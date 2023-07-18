@@ -1,0 +1,1461 @@
+{
+  "headers": {
+    "plural-forms": "nplurals=1; plural=0;",
+    "language": "id_ID"
+  },
+  "contexts": {
+    "Action": {
+      "Add": [
+        "Tambah"
+      ],
+      "Add current url": [
+        "Tambahkan URL saat ini"
+      ],
+      "Add more": [
+        "Tambahkan lagi"
+      ],
+      "Add new item": [
+        "Tambahkan item baru"
+      ],
+      "Advanced options": [
+        "Opsi lanjutan"
+      ],
+      "Back": [
+        "Kembali"
+      ],
+      "Can't find your password manager? Please let us know!": [
+        "Tidak dapat menemukan pengelola kata sandi Anda? Silakan beri tahu kami!"
+      ],
+      "Cancel": [
+        "Batal"
+      ],
+      "Change": [
+        "Ubah"
+      ],
+      "Choose a file or drag it here": [
+        "Pilih berkas atau taruh di sini"
+      ],
+      "Clear": [
+        "Bersihkan"
+      ],
+      "Clear search": [
+        "Hapus pencarian"
+      ],
+      "Close": [
+        "Tutup"
+      ],
+      "Close navigation": [
+        "Tutup navigasi"
+      ],
+      "Confirm": [
+        "Konfirmasi"
+      ],
+      "Copy and close": [
+        "Salin dan tutup"
+      ],
+      "Copy to clipboard": [
+        "Salin ke papan klip"
+      ],
+      "Create": [
+        "Buat"
+      ],
+      "Create a ${ BRAND_NAME } account": [
+        "Buat akun ${ BRAND_NAME }"
+      ],
+      "Create alias": [
+        "Buat alias"
+      ],
+      "Create an account": [
+        "Buat akun"
+      ],
+      "Create login": [
+        "Buat login"
+      ],
+      "Create note": [
+        "Buat catatan"
+      ],
+      "Create vault": [
+        "Buat brankas"
+      ],
+      "Creating vault": [
+        "Membuat brankas"
+      ],
+      "Delete": [
+        "Hapus"
+      ],
+      "Delete alias": [
+        "Hapus alias"
+      ],
+      "Delete all": [
+        "Hapus semua"
+      ],
+      "Delete permanently": [
+        "Hapus secara permanen"
+      ],
+      "Delete vault": [
+        "Hapus brankas"
+      ],
+      "Discard": [
+        "Buang"
+      ],
+      "Dismiss": [
+        "Abaikan"
+      ],
+      "Done": [
+        "Selesai"
+      ],
+      "Edit": [
+        "Sunting"
+      ],
+      "Edit vault": [
+        "Sunting brankas"
+      ],
+      "Export": [
+        "Ekspor"
+      ],
+      "Feedback": [
+        "Masukan"
+      ],
+      "Fill password": [
+        "Isi kata sandi"
+      ],
+      "Filter vault items": [
+        "Saring item brankas"
+      ],
+      "Generate alias": [
+        "Hasilkan alias"
+      ],
+      "Generate password": [
+        "Buat kata sandi"
+      ],
+      "Hide": [
+        "Sembunyikan"
+      ],
+      "How do I export my data from ${ PROVIDER_INFO_MAP[form.values.provider].title }?": [
+        "Bagaimana cara mengekspor data saya dari ${ PROVIDER_INFO_MAP[form.values.provider].title }?"
+      ],
+      "Import": [
+        "Impor"
+      ],
+      "Import your passwords": [
+        "Impor kata sandi Anda"
+      ],
+      "Importing": [
+        "Mengimpor"
+      ],
+      "Learn more": [
+        "Pelajari lebih lanjut"
+      ],
+      "Lock ${ PASS_APP_NAME }": [
+        "Kunci ${ PASS_APP_NAME }"
+      ],
+      "More options": [
+        "Opsi lainnya"
+      ],
+      "Move to another vault": [
+        "Pindahkan ke brankas lainnya"
+      ],
+      "Move to Trash": [
+        "Pindahkan ke Sampah"
+      ],
+      "Move to trash": [
+        "Pindahkan ke sampah"
+      ],
+      "Not now": [
+        "Tidak sekarang"
+      ],
+      "Open navigation": [
+        "Buka navigasi"
+      ],
+      "Proceed": [
+        "Lanjut"
+      ],
+      "Rate Pass": [
+        "Beri Nilai Pass"
+      ],
+      "Refresh extension": [
+        "Segarkan ekstensi"
+      ],
+      "Refresh the page": [
+        "Muat ulang halaman"
+      ],
+      "Regenerate": [
+        "Buat ulang"
+      ],
+      "Reload extension": [
+        "Muat ulang ekstensi"
+      ],
+      "Request a feature": [
+        "Minta fitur"
+      ],
+      "Restore item": [
+        "Pulihkan item"
+      ],
+      "Retry": [
+        "Coba lagi"
+      ],
+      "Save": [
+        "Simpan"
+      ],
+      "Saving": [
+        "Menyimpan"
+      ],
+      "Show": [
+        "Tampilkan"
+      ],
+      "Sign back in": [
+        "Masuk kembali"
+      ],
+      "Sign in": [
+        "Masuk"
+      ],
+      "Sign in with ${ BRAND_NAME }": [
+        "Masuk dengan ${ BRAND_NAME }"
+      ],
+      "Sign out": [
+        "Keluar"
+      ],
+      "Sort vault items": [
+        "Sortir item brankas"
+      ],
+      "Submit": [
+        "Kirim"
+      ],
+      "Submitting report...": [
+        "Mengirim laporan..."
+      ],
+      "Sync": [
+        "Sinkronkan"
+      ],
+      "Try again": [
+        "Coba lagi"
+      ],
+      "Update": [
+        "Perbarui"
+      ],
+      "Updating": [
+        "Memperbarui"
+      ],
+      "Upgrade": [
+        "Tingkatkan"
+      ],
+      "Upgrade to keep these features": [
+        "Tingkatkan paket Anda untuk tetap menikmati berbagai fitur berikut"
+      ]
+    },
+    "Button": {
+      "More info": [
+        "Info lebih lanjut"
+      ]
+    },
+    "Collapsible tooltip": {
+      "Collapse": [
+        "Ciutkan"
+      ],
+      "Expand": [
+        "Lebarkan"
+      ]
+    },
+    "Error": {
+      "${ PASS_APP_NAME } export file could not be parsed. ${ errorDetail }": [
+        "Berkas ekspor ${ PASS_APP_NAME } tidak dapat diurai. ${ errorDetail }"
+      ],
+      "1Password export file could not be parsed. ${ errorDetail }": [
+        "Berkas ekspor 1Password tidak dapat diurai. ${ errorDetail }"
+      ],
+      "Auto-lock could not be activated": [
+        "Pengunci otomatis tidak dapat diaktifkan"
+      ],
+      "Auto-lock could not be disabled": [
+        "Pengunci otomatis tidak dapat dinonaktifkan"
+      ],
+      "Bitwarden export file could not be parsed. ${ errorDetail }": [
+        "Berkas ekspor Bitwarden tidak dapat diurai. ${ errorDetail }"
+      ],
+      "Cannot create alias.": [
+        "Alias tidak dapat dibuat."
+      ],
+      "Chrome export file could not be parsed. ${ errorDetail }": [
+        "Berkas ekspor Chrome tidak dapat diurai. ${ errorDetail }"
+      ],
+      "Could not open created vault": [
+        "Brankas yang dibuat tidak dapat dibuka"
+      ],
+      "Could not open updated vault": [
+        "Brankas yang diperbarui tidak dapat dibuka"
+      ],
+      "Could not resume your session : ${ description }": [
+        "Tidak dapat melanjutkan sesi Anda : ${ description }"
+      ],
+      "CSV file is missing expected headers: ${ missingHeaders }": [
+        "Berkas CSV tidak memiliki header yang sewajarnya dimiliki oleh berkas: ${ missingHeaders }"
+      ],
+      "Dashlane export file could not be parsed. ${ errorDetail }": [
+        "Berkas ekspor Dashlane tidak dapat diurai. ${ errorDetail }"
+      ],
+      "Decrypting your ${ PASS_APP_NAME } export file failed. ${ errorDetail }": [
+        "Gagal mendekripsikan berkas ekspor ${ PASS_APP_NAME } Anda. ${ errorDetail }"
+      ],
+      "Deleting item failed": [
+        "Item gagal dihapus"
+      ],
+      "Deleting vault \"${ payload.content.name }\" failed": [
+        "Gagal menghapus brankas \"${ payload.content.name }\""
+      ],
+      "Editing item failed": [
+        "Item gagal disunting"
+      ],
+      "Empty CSV file": [
+        "Berkas CSV kosong"
+      ],
+      "Emptying trash failed": [
+        "Sampah gagal dikosongkan"
+      ],
+      "Encrypted JSON not supported": [
+        "JSON terenkripsi tidak didukung"
+      ],
+      "Error reporting problem": [
+        "Terdapat masalah dengan pelaporan masalah"
+      ],
+      "File could not be parsed": [
+        "Berkas tidak dapat diurai"
+      ],
+      "Firefox export file could not be parsed. ${ errorDetail }": [
+        "Berkas ekspor Firefox tidak dapat diurai. ${ errorDetail }"
+      ],
+      "Import failed for vault \"${ vaultData.vaultName }\" : ${ description }": [
+        "Brankas \"${ vaultData.vaultName }\" gagal diimpor : ${ description }"
+      ],
+      "Importing items failed": [
+        "Item gagal diimpor"
+      ],
+      "Invalid password manager": [
+        "Pengelola kata sandi tidak valid"
+      ],
+      "Item content cannot exceed 40kb": [
+        "Konten item tidak dapat melebihi 40KB"
+      ],
+      "Item creation failed": [
+        "Item gagal dibuat"
+      ],
+      "KeePass export file could not be parsed. ${ errorDetail }": [
+        "Berkas ekspor KeePass tidak dapat diurai. ${ errorDetail }"
+      ],
+      "Keeper export file could not be parsed. ${ errorDetail }": [
+        "Berkas ekspor Keeper tidak dapat diurai. ${ errorDetail }"
+      ],
+      "LastPass export file could not be parsed. ${ errorDetail }": [
+        "Berkas ekspor LastPass tidak dapat diurai. ${ errorDetail }"
+      ],
+      "LastPass will export a corrupted CSV file if any of your item fields contain unexpected commas, quotes or multiple lines": [
+        "LastPass akan mengekspor file CSV yang rusak jika salah satu kolom item Anda mengandung koma, tanda kutip atau beberapa baris yang tidak terduga."
+      ],
+      "Moving item failed": [
+        "Item gagal dipindahkan"
+      ],
+      "Passphrase is incorrect": [
+        "Frasa sandi salah"
+      ],
+      "PIN codes do not match": [
+        "Kode PIN tidak cocok"
+      ],
+      "Please grant ${ PASS_APP_NAME } the necessary extension permissions in order to continue": [
+        "Mohon berikan ${ PASS_APP_NAME } izin ekstensi yang diperlukan untuk dapat melanjutkan"
+      ],
+      "Request timed out": [
+        "Waktu permintaan habis"
+      ],
+      "Requesting alias details failed": [
+        "Rincian alias gagal diperoleh"
+      ],
+      "Requesting alias options failed": [
+        "Opsi alias gagal diperoleh"
+      ],
+      "Restoring item failed": [
+        "Item gagal dipulihkan"
+      ],
+      "Safari export file could not be parsed. ${ errorDetail }": [
+        "Berkas ekspor Safari tidak dapat diurai. ${ errorDetail }"
+      ],
+      "Setting \"${ payload.name }\" as primary vault failed": [
+        "\"${ payload.name }\" gagal ditetapkan sebagai brankas utama"
+      ],
+      "Settings update failed": [
+        "Pengaturan gagal diperbarui"
+      ],
+      "Some vaults are no longer accessible due to a password reset. Reactivate your account keys in order to regain access. ${ reactivateLink }": [
+        "Sebagian berkas tidak lagi dapat diakses akibat pengaturan ulang kata sandi. Aktifkan ulang kunci akun Anda untuk dapat kembali mengakses berkas yang terkunci. ${ reactivateLink }"
+      ],
+      "Something went wrong": [
+        "Terjadi kesalahan"
+      ],
+      "Something went wrong. Please reload the ${ PASS_APP_NAME } extension. This issue has been logged": [
+        "Terjadi kesalahan. Silakan muat ulang ekstensi ${ PASS_APP_NAME }. Masalah ini telah dicatat"
+      ],
+      "The file you are trying to import is empty": [
+        "Berkas yang ingin Anda impor kosong"
+      ],
+      "Trashing item failed": [
+        "Item gagal dibuang"
+      ],
+      "Unable to boot": [
+        "Tidak dapat melangsungkan proses booting"
+      ],
+      "Unable to sync": [
+        "Tidak dapat menyinkronkan"
+      ],
+      "Unknown error": [
+        "Kesalahan yang tidak diketahui"
+      ],
+      "Unsupported ${ PASS_APP_NAME } file format": [
+        "Berkas format ${ PASS_APP_NAME } tidak didukung"
+      ],
+      "Unsupported 1Password file format": [
+        "Format berkas 1Password tidak didukung"
+      ],
+      "Updating vault \"${ payload.content.name }\" failed": [
+        "Gagal memperbarui brankas \"${ payload.content.name }\""
+      ],
+      "Vault \"${ payload.content.name }\" creation failed": [
+        "Pembuatan brankas \"${ payload.content.name }\" gagal"
+      ],
+      "Vault \"${ vaultData.vaultName }\" could not be created": [
+        "Berkas \"${ vaultData.vaultName }\" tidak dapat dibuat"
+      ],
+      "Vault name does not match": [
+        "Nama brankas tidak sesuai"
+      ]
+    },
+    "Error message": {
+      "Please refresh the page or try again later.": [
+        "Silakan muat ulang laman atau coba lagi nanti."
+      ],
+      "Something went wrong": [
+        "Terdapat suatu kesalahan"
+      ]
+    },
+    "file size format": {
+      "bytes": [
+        "byte"
+      ],
+      "GB": [
+        "GB"
+      ],
+      "KB": [
+        "KB"
+      ],
+      "MB": [
+        "MB"
+      ]
+    },
+    "file size format, long": {
+      "Bytes": [
+        "Byte"
+      ],
+      "Gigabytes": [
+        "Gigabyte"
+      ],
+      "Kilobytes": [
+        "Kilobyte"
+      ],
+      "Megabytes": [
+        "Megabyte"
+      ]
+    },
+    "Info": {
+      "\"${ payload.item.data.metadata.name }\" item was dismissed": [
+        "Item \"${ payload.item.data.metadata.name }\" telah diabaikan"
+      ],
+      "\"${ payload.item.data.metadata.name }\" update was dismissed": [
+        "Pembaruan \"${ payload.item.data.metadata.name }\" telah diabaikan"
+      ],
+      "\"${ payload.name }\" set as primary vault": [
+        "Brankas \"${ payload.name }\" diatur sebagai brankas utama"
+      ],
+      "${ count } items": [
+        "${ count } item"
+      ],
+      "${ PASS_APP_NAME } will only import logins and notes. Credit cards, passports, attached files, etc. are not supported at the moment.": [
+        "${ PASS_APP_NAME } hanya akan mengimpor data login dan catatan. Impor kartu kredit, paspor, berkas lampiran, dan lain sebagainya saat ini tidak didukung."
+      ],
+      "${ revisionNumber } times": [
+        "${ revisionNumber } kali"
+      ],
+      "${ totalImportedItems } items": [
+        "${ totalImportedItems } item"
+      ],
+      "${ totalItems } items": [
+        "${ totalItems } item"
+      ],
+      "${ trialDaysLeft } days left": [
+        "${ trialDaysLeft } hari tersisa"
+      ],
+      "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
+        "Versi terbaru dari ${ PASS_APP_NAME } tersedia. Perbarui aplikasinya untuk menikmati fitur terbaru dan perbaikan bug."
+      ],
+      "Access ${ PASS_APP_NAME } via this icon": [
+        "Akses ${ PASS_APP_NAME } melalui ikon ini"
+      ],
+      "Access to ${ PASS_APP_NAME } will require a pin code to unlock your session": [
+        "Akses ke ${ PASS_APP_NAME } akan memerlukan kode PIN untuk membuka sesi Anda"
+      ],
+      "Access your passwords on the go with our mobile apps.": [
+        "Akses kata sandi Anda di mana saja dengan aplikasi mobile kami."
+      ],
+      "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
+        "Alias \"${ item.aliasEmail }\" dipindahkan ke sampah - alamat ini tidak akan lagi meneruskan email ke kotak surat Anda"
+      ],
+      "All items permanently removed": [
+        "Seluruh item dihapus secara permanen"
+      ],
+      "All items successfully restored": [
+        "Seluruh item berhasil dipulihkan"
+      ],
+      "An item previously shared with you was disabled": [
+        "Item yang sebelumnya dibagikan dengan Anda telah dinonaktifkan"
+      ],
+      "Auto-lock successfully disabled": [
+        "Pengunci otomatis berhasil dinonaktifkan"
+      ],
+      "Autosaved on ${ submissionURL }": [
+        "Tersimpan secara otomatis pada ${ submissionURL }"
+      ],
+      "Check out all the exclusive features that are available to you for a limited time.": [
+        "Lihat semua fitur eksklusif yang tersedia untuk Anda hanya untuk waktu terbatas."
+      ],
+      "Copied to clipboard": [
+        "Disalin ke papan klip"
+      ],
+      "Creating alias...": [
+        "Membuat alias..."
+      ],
+      "Custom fields": [
+        "Kolom khusus"
+      ],
+      "Decrypting your data": [
+        "Mendekripsi data Anda"
+      ],
+      "Deleted items will be moved here first": [
+        "Item yang dihapus akan terlebih dahulu dipindahkan ke sini"
+      ],
+      "Discover ${ PASS_APP_NAME } Youtube Video": [
+        "Telusuri Video YouTube ${ PASS_APP_NAME }"
+      ],
+      "Drop file here to upload": [
+        "Lepaskan berkas di sini untuk mengunggah"
+      ],
+      "Drop to import": [
+        "Lepaskan untuk mengimpor"
+      ],
+      "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
+        "Impor kata sandi Anda secara mudah ke ${ PASS_APP_NAME }."
+      ],
+      "Enable ${ PASS_APP_NAME } by connecting your ${ BRAND_NAME } account": [
+        "Aktifkan ${ PASS_APP_NAME } dengan menghubungkan akun ${ BRAND_NAME } Anda"
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Masukkan kode verifikasi. Digit ${ digit }."
+      ],
+      "Enter your PIN code": [
+        "Masukkan kode PIN Anda"
+      ],
+      "Export is encrypted using PGP and requires a strong passphrase.": [
+        "Ekspor terenkripsi menggunakan PGP dan memerlukan frasa sandi yang kuat."
+      ],
+      "Follow these simple steps to get the best experience:": [
+        "Ikuti langkah-langkah sederhana ini untuk mendapatkan pengalaman terbaik:"
+      ],
+      "Free Trial": [
+        "Uji Coba Gratis"
+      ],
+      "Generating alias...": [
+        "Menghasilkan alias..."
+      ],
+      "Here you will find all the necessary information to get you started.": [
+        "Di sini Anda akan menemukan semua informasi yang diperlukan untuk memulai."
+      ],
+      "If disabled, ${ PASS_APP_NAME } will not display the item favicon via ${ BRAND_NAME } anonymised image proxy.": [
+        "Jika dinonaktifkan, ${ PASS_APP_NAME } tidak akan menampilkan favicon item melalui proksi gambar ${ BRAND_NAME } yang dianonimkan."
+      ],
+      "If disabled, ${ PASS_APP_NAME } will not prompt you to save or update credentials.": [
+        "Jika dinonaktifkan, ${ PASS_APP_NAME } tidak akan meminta Anda untuk menyimpan atau memperbarui kredensial."
+      ],
+      "If disabled, ${ PASS_APP_NAME } will not suggest creating an email alias on sign-up forms.": [
+        "Apabila dinonakifkan, ${ PASS_APP_NAME } tidak akan menyarankan Anda untuk membuat alias email setiap kali Anda mengisi formulir pendaftaran."
+      ],
+      "If disabled, ${ PASS_APP_NAME } will not suggest creating strong passwords on sign-up forms.": [
+        "Jika dinonaktifkan, ${ PASS_APP_NAME } tidak akan menyarankan membuat kata sandi yang kuat pada formulir pendaftaran."
+      ],
+      "If enabled, the autosave dropdown will automatically open on field focus.": [
+        "Jika diaktifkan, menu tarik-turun penyimpanan otomatis akan otomatis terbuka saat fokus pada kolom."
+      ],
+      "If enabled, you can quickly autofill your credentials by clicking on the ${ PASS_APP_NAME } icon.": [
+        "Apabila diaktifkan, Anda dapat mengisi informasi kredensial Anda secara otomatis dengan mengklik ikon ${ PASS_APP_NAME }."
+      ],
+      "Import in progress :": [
+        "Impor yang sedang berlangsung :"
+      ],
+      "Imported ${ payload.total } items": [
+        "${ payload.total } item diimpor"
+      ],
+      "Imported on ${ date }": [
+        "Diimpor pada tanggal ${ date }"
+      ],
+      "In order to get the best experience out of ${ PASS_APP_NAME }, please grant the necessary extension permissions": [
+        "Untuk mendapatkan pengalaman terbaik menggunakan ${ PASS_APP_NAME }, mohon berikan izin yang diperlukan pada ekstensi ini."
+      ],
+      "In order to migrate your data to ${ PASS_APP_NAME } from another password manager, export your passwords and import them using the form below. Once all your items have been imported, delete the previously exported file.": [
+        "Untuk memindahkan data Anda ke ${ PASS_APP_NAME } dari pengelola kata sandi lainnya, ekspor kata sandi Anda dan impor dengan menggunakan formulir di bawah ini. Setelah seluruh item Anda diimpor, hapus berkas yang diekspor sebelumnya."
+      ],
+      "Integrated 2FA authenticator": [
+        "Autentikator 2FA terintegrasi"
+      ],
+      "Internet connection lost": [
+        "Koneksi internet terputus"
+      ],
+      "Item \"${ payload.item.data.metadata.name }\" created": [
+        "Item \"${ payload.item.data.metadata.name }\" dibuat"
+      ],
+      "Item \"${ payload.item.data.metadata.name }\" updated": [
+        "Item \"${ payload.item.data.metadata.name }\" diperbarui"
+      ],
+      "Item moved to trash": [
+        "Item dipindahkan ke sampah"
+      ],
+      "Item permanently deleted": [
+        "Item dihapus secara permanen"
+      ],
+      "Item restored": [
+        "Item dipulihkan"
+      ],
+      "Item successfully moved": [
+        "Item berhasil dipindahkan"
+      ],
+      "items": [
+        "items"
+      ],
+      "Let's get you started by creating your first item": [
+        "Mulailah dengan membuat item pertama Anda"
+      ],
+      "Loading": [
+        "Memuat"
+      ],
+      "Loading extension": [
+        "Memuat ekstensi"
+      ],
+      "Loading...": [
+        "Memuat..."
+      ],
+      "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
+        "Lebih dari sekadar pengelola kata sandi, ${ PASS_APP_NAME } melindungi kata sandi dan alamat email pribadi Anda melalui alamat email samaran. Dengan didukung oleh teknologi yang serupa dengan ${ MAIL_APP_NAME }, data Anda akan terenkripsi secara end-to-end dan hanya akan dapat diakses oleh Anda."
+      ],
+      "Multiple vaults": [
+        "Dukungan lebih dari satu brankas"
+      ],
+      "N/A": [
+        "N/A"
+      ],
+      "No login found": [
+        "Tidak ada login yang ditemukan"
+      ],
+      "None": [
+        "Tidak ada"
+      ],
+      "Open the Extensions menu": [
+        "Buka menu Ekstensi"
+      ],
+      "Pin ${ PASS_APP_NAME } to your toolbar": [
+        "Sematkan ${ PASS_APP_NAME } ke toolbar Anda"
+      ],
+      "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
+        "Kode PIN berhasil didaftarkan. Gunakan kode PIN Anda untuk membuka kunci ${ PASS_APP_NAME }"
+      ],
+      "Please confirm your PIN code in order to unregister your current lock.\n${ PASS_APP_NAME } will then never lock.": [
+        "Mohon konfirmasi kode PIN Anda untuk menonaktifkan kunci Anda saat ini.\nSetelahnya, ${ PASS_APP_NAME } tidak akan lagi pernah terkunci."
+      ],
+      "Please confirm your PIN code to edit this setting.": [
+        "Silakan mengonfirmasikan kode PIN Anda untuk menyunting pengaturan ini."
+      ],
+      "Please confirm your PIN code to finish registering your auto-lock settings.": [
+        "Silakan konfirmasi kode PIN Anda untuk menyelesaikan pendaftaran pengaturan penguncian otomatis Anda."
+      ],
+      "Please enter your current pin code to continue": [
+        "Silakan masukan kode PIN saat ini untuk melanjutkan"
+      ],
+      "Press Enter to copy": [
+        "Tekan Enter untuk menyalin"
+      ],
+      "Privacy is a big concern for us. Learn why ${ PASS_APP_NAME } is different.": [
+        "Privasi merupakan hal yang sangat penting bagi kami. Pelajari mengapa ${ PASS_APP_NAME } berbeda."
+      ],
+      "Save login": [
+        "Simpan login"
+      ],
+      "Select the destination vault for each imported vault. By default a new vault will be created for each imported vault.": [
+        "Pilih tempat penyimpanan untuk setiap brankas yang diimpor. Secara bawaan, brankas baru akan dibuat untuk setiap brankas yang diimpor."
+      ],
+      "Servers are unreachable. Please try again in a few minutes": [
+        "Server kami sedang tidak dapat dijangkau. Silakan coba lagi dalam beberapa menit"
+      ],
+      "Session timed out": [
+        "Masa berlaku sesi telah berakhir"
+      ],
+      "Set up a PIN code to easily lock your data": [
+        "Atur kode PIN untuk dengan mudah mengunci data Anda."
+      ],
+      "Settings successfully updated": [
+        "Pengaturan berhasil diperbarui"
+      ],
+      "Sign in or create an account to continue.": [
+        "Silakan masuk atau buat akun untuk melanjutkan."
+      ],
+      "Sign in to your account": [
+        "Masuk ke akun Anda"
+      ],
+      "Signing you in": [
+        "Memasukkan Anda ke akun"
+      ],
+      "Successfully exported all your items": [
+        "Seluruh item Anda berhasil diekspor"
+      ],
+      "Successfully synced all vaults": [
+        "Seluruh berkas berhasil disinkronkan"
+      ],
+      "Syncing your vaults…": [
+        "Menyinkronkan berkas Anda…"
+      ],
+      "Thank you, the problem has been reported": [
+        "Terima kasih, masalah ini telah dilaporkan"
+      ],
+      "The following ${ result.ignored.length } items could not be imported": [
+        "${ result.ignored.length } item berikut tidak dapat diimpor"
+      ],
+      "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
+        "Panjang teks yang ingin Anda salin melebihi batas ${ maxLength } karakter yang diperkenankan."
+      ],
+      "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
+        "Ekspor ini tidak akan terenkripsi, dan semua orang yang memiliki akses ke berkas yang Anda ekspor akan dapat melihat kata sandi Anda. Demi keamanan Anda, mohon hapus ekspor ini setelah tidak lagi digunakan."
+      ],
+      "This will disable your browser's default auto-saving capabilities.": [
+        "Hal ini akan menonaktifkan kemampuan penyimpanan otomatis bawaan pada peramban Anda."
+      ],
+      "Unable to copy to clipboard": [
+        "Tidak dapat menyalin ke papan klip"
+      ],
+      "Unlock it with your PIN to access the settings": [
+        "Buka kunci ini dengan PIN Anda untuk mengakses pengaturan"
+      ],
+      "Update login": [
+        "Perbarui login"
+      ],
+      "Upgrade ${ PASS_APP_NAME }": [
+        "Tingkatkan ${ PASS_APP_NAME }"
+      ],
+      "Vault \"${ payload.content.name }\" successfully deleted": [
+        "Brankas \"${ payload.content.name }\" berhasil dihapus"
+      ],
+      "Vault \"${ payload.share.content.name }\" successfully created": [
+        "Brankas \"${ payload.share.content.name }\" berhasil dibuat"
+      ],
+      "Vault \"${ payload.share.content.name }\" successfully updated": [
+        "Brankas \"${ payload.share.content.name }\" berhasil diperbarui"
+      ],
+      "Vault \"${ share.content.name }\" was disabled": [
+        "Berkas \"${ share.content.name }\" telah dinonaktifkan"
+      ],
+      "You are about to create:": [
+        "Anda akan membuat:"
+      ],
+      "You have ${ daysRemaining } days left in your trial period.": [
+        "Anda memiliki ${ daysRemaining } hari tersisa pada masa uji coba Anda."
+      ],
+      "You have exceeded the number of vaults included in your subscription. Items can only be moved to your primary vault. To move items between all vaults upgrade your subscription.": [
+        "Anda telah melebihi jumlah brankas yang termasuk dalam langganan Anda. Item hanya dapat dipindahkan ke brankas utama Anda. Untuk memindahkan item antara semua brankas, tingkatkan langganan Anda."
+      ],
+      "You have exceeded the number of vaults included in your subscription. New items can only be created in your primary vault. To create new items in all vaults upgrade your subscription.": [
+        "Anda telah melebihi jumlah brankas yang termasuk dalam langganan Anda. Item baru hanya dapat dibuat di brankas utama Anda. Untuk membuat item baru di semua brankas, tingkatkan langganan Anda."
+      ],
+      "You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.": [
+        "Anda telah mencapai batas jumlah alias yang dapat Anda buat. Dapatkan kemampuan untuk membuat berbagai macam alias tanpa batasan jumlah dengan meningkatkan paket langganan Anda."
+      ],
+      "You have reached the limit of vaults you can create. Create an unlimited number of vaults when you upgrade your subscription.": [
+        "Anda telah mencapai batas jumlah brankas yang dapat Anda buat. Dapatkan kemampuan untuk membuat brankas tanpa batasan jumlah dengan meningkatkan paket langganan Anda."
+      ],
+      "You have reached the maximum allowed length of ${ maxLength } characters.": [
+        "Anda telah mencapai panjang maksimum yang diizinkan sebesar ${ maxLength } karakter."
+      ],
+      "You will use this PIN to unlock ${ PASS_APP_NAME } once it auto-locks after a period of inactivity.": [
+        "Anda akan menggunakan PIN ini untuk membuka ${ PASS_APP_NAME } setelah itu terkunci secara otomatis karena tidak digunakan untuk jangka waktu tertentu."
+      ],
+      "You're about to create": [
+        "Anda akan membuat"
+      ],
+      "Your ${ PASS_APP_NAME } session is locked": [
+        "Sesi ${ PASS_APP_NAME } Anda terkunci"
+      ],
+      "Your files will be encrypted and then saved": [
+        "Berkas Anda akan dienkripsi lalu disimpan"
+      ]
+    },
+    "Label": {
+      "${ passwordOptions.options.length } characters": [
+        "${ passwordOptions.options.length } karakter"
+      ],
+      "${ passwordOptions.options.wordCount } words": [
+        "${ passwordOptions.options.wordCount } kata"
+      ],
+      "1 hour": [
+        "1 jam"
+      ],
+      "1 minute": [
+        "1 menit"
+      ],
+      "10 minutes": [
+        "10 menit"
+      ],
+      "15 minutes": [
+        "15 menit"
+      ],
+      "2FA secret (TOTP)": [
+        "Secret 2FA (TOTP)"
+      ],
+      "2FA token (TOTP)": [
+        "Token 2FA (TOTP)"
+      ],
+      "30 minutes": [
+        "30 menit"
+      ],
+      "30 seconds": [
+        "30 detik"
+      ],
+      "5 minutes": [
+        "5 menit"
+      ],
+      "A-Z": [
+        "A-Z"
+      ],
+      "Alias": [
+        "Alias"
+      ],
+      "Alias address": [
+        "Alamat alias"
+      ],
+      "Aliases": [
+        "Alias"
+      ],
+      "All": [
+        "Semua"
+      ],
+      "All vaults": [
+        "Seluruh brankas"
+      ],
+      "Alphabetical": [
+        "Menurut abjad"
+      ],
+      "Application logs": [
+        "Log aplikasi"
+      ],
+      "Auto-lock ${ PASS_APP_NAME }": [
+        "Kunci ${ PASS_APP_NAME } secara otomatis"
+      ],
+      "Auto-lock after": [
+        "Kunci otomatis setelah"
+      ],
+      "Autofill": [
+        "Isi otomatis"
+      ],
+      "Automatically open autofill when focusing login fields": [
+        "Buka modul autofill secara otomatis pada saat kursor terfokus pada kolom login"
+      ],
+      "Autosave": [
+        "Simpan otomatis"
+      ],
+      "Autosuggest": [
+        "Saran otomatis"
+      ],
+      "Capital letters (A-Z)": [
+        "Huruf kapital (A-Z)"
+      ],
+      "Capitalise": [
+        "Gunakan huruf kapital"
+      ],
+      "Card number": [
+        "Nomor kartu"
+      ],
+      "Cards": [
+        "Kartu"
+      ],
+      "Confirm vault name": [
+        "Konfirmasi nama brankas"
+      ],
+      "Create a hide-my-email alias": [
+        "Buat alias hide-my-email"
+      ],
+      "Create a login": [
+        "Buat login"
+      ],
+      "Create an encrypted note": [
+        "Buat catatan yang terenkripsi"
+      ],
+      "Create new vault": [
+        "Buat brankas baru"
+      ],
+      "Created": [
+        "Waktu Dibuat"
+      ],
+      "Current plan": [
+        "Paket saat ini"
+      ],
+      "Display": [
+        "Tampilan"
+      ],
+      "Display ${ PASS_APP_NAME } icon on login fields": [
+        "Tampilkan ikon ${ PASS_APP_NAME } pada kolom login"
+      ],
+      "Download logs": [
+        "Unduh log"
+      ],
+      "Email aliases": [
+        "Alias email"
+      ],
+      "Empty trash": [
+        "Kosongkan sampah"
+      ],
+      "Encrypt your ${ PASS_APP_NAME } data export file": [
+        "Enkripsi data ekspor ${ PASS_APP_NAME } Anda"
+      ],
+      "Export": [
+        "Ekspor"
+      ],
+      "Forwards to": [
+        "Teruskan ke"
+      ],
+      "General": [
+        "Umum"
+      ],
+      "Grant": [
+        "Izinkan"
+      ],
+      "Hidden": [
+        "Tersembunyi"
+      ],
+      "Hide password": [
+        "Sembunyikan kata sandi"
+      ],
+      "Import": [
+        "Impor"
+      ],
+      "Import passwords": [
+        "Impor kata sandi"
+      ],
+      "Imported from : ": [
+        "Diimpor dari : "
+      ],
+      "Imported on : ": [
+        "Diimpor pada : "
+      ],
+      "Include numbers": [
+        "Sertakan angka"
+      ],
+      "Include numbers (0-9)": [
+        "Sertakan angka (0-9)"
+      ],
+      "Label": [
+        "Label"
+      ],
+      "Last 2 weeks": [
+        "2 minggu terakhir"
+      ],
+      "Last autofill": [
+        "Pengisian otomatis terakhir"
+      ],
+      "Last month": [
+        "Bulan lalu"
+      ],
+      "Last week": [
+        "Minggu lalu"
+      ],
+      "Latest import": [
+        "Impor terkini"
+      ],
+      "Learn more": [
+        "Pelajari lebih lanjut"
+      ],
+      "Login": [
+        "Masuk"
+      ],
+      "Logins": [
+        "Login"
+      ],
+      "Modified": [
+        "Dimodifikasi"
+      ],
+      "Most recent": [
+        "Terkini"
+      ],
+      "Move items to": [
+        "Pindahkan item ke"
+      ],
+      "Name": [
+        "Nama"
+      ],
+      "New vault": [
+        "Brankas baru"
+      ],
+      "New-Old": [
+        "Baru–Lama"
+      ],
+      "Newest to oldest": [
+        "Terbaru ke terlama"
+      ],
+      "Not recently used": [
+        "Tidak digunakan baru-baru ini"
+      ],
+      "Note": [
+        "Catatan"
+      ],
+      "Notes": [
+        "Catatan"
+      ],
+      "Old-New": [
+        "Lama–Baru"
+      ],
+      "Oldest to newest": [
+        "Terlama ke terbaru"
+      ],
+      "Passphrase": [
+        "Frasa sandi"
+      ],
+      "Password": [
+        "Kata Sandi"
+      ],
+      "Passwords": [
+        "Kata sandi"
+      ],
+      "Permanently delete items": [
+        "Hapus item secara permanen"
+      ],
+      "PIN": [
+        "PIN"
+      ],
+      "Prefix": [
+        "Awalan"
+      ],
+      "Primary vault": [
+        "Brankas utama"
+      ],
+      "Prompt for auto-save": [
+        "Ajukan permintaan untuk setiap penyimpanan otomatis"
+      ],
+      "Recent": [
+        "Baru digunakan"
+      ],
+      "Report a problem": [
+        "Laporkan masalah"
+      ],
+      "Restore all items": [
+        "Pulihkan seluruh item"
+      ],
+      "Reveal password": [
+        "Perlihatkan kata sandi"
+      ],
+      "Security": [
+        "Keamanan"
+      ],
+      "Select an email address": [
+        "Pilih alamat email"
+      ],
+      "Select your password manager": [
+        "Pilih pengelola kata sandi Anda"
+      ],
+      "Selected": [
+        "Dipilih"
+      ],
+      "Session locking": [
+        "Penguncian sesi"
+      ],
+      "Set PIN code": [
+        "Tetapkan kode PIN"
+      ],
+      "Settings": [
+        "Pengaturan"
+      ],
+      "Show website thumbnails": [
+        "Tampilkan thumbnail situs web"
+      ],
+      "Special characters (!&*)": [
+        "Karakter khusus (!&*)"
+      ],
+      "Suffix": [
+        "Akhiran"
+      ],
+      "Support": [
+        "Dukungan"
+      ],
+      "Text": [
+        "Teks"
+      ],
+      "Title": [
+        "Judul"
+      ],
+      "Today": [
+        "Hari ini"
+      ],
+      "Total imported items : ": [
+        "Total item yang diimpor : "
+      ],
+      "Total items : ": [
+        "Total item : "
+      ],
+      "TOTP": [
+        "TOTP"
+      ],
+      "Trash": [
+        "Sampah"
+      ],
+      "Type": [
+        "Tipe"
+      ],
+      "Unnamed item": [
+        "Item tidak bernama"
+      ],
+      "Unnamed note": [
+        "Item tidak bernama"
+      ],
+      "Untitled": [
+        "Tanpa judul"
+      ],
+      "Update": [
+        "Perbarui"
+      ],
+      "Use ${ PASS_APP_NAME } as default autosave manager": [
+        "Gunakan ${ PASS_APP_NAME } sebagai aplikasi pengelola penyimpanan otomatis default"
+      ],
+      "Username": [
+        "Nama Pengguna"
+      ],
+      "Username (alias)": [
+        "Nama pengguna (alias)"
+      ],
+      "Username (new alias)": [
+        "Nama pengguna (alias baru)"
+      ],
+      "Vault": [
+        "Brankas"
+      ],
+      "Vaults": [
+        "Brankas"
+      ],
+      "View logs": [
+        "Lihat log"
+      ],
+      "Websites": [
+        "Situs web"
+      ],
+      "You are about to create": [
+        "Anda akan membuat"
+      ]
+    },
+    "Option": {
+      "Commas": [
+        "Koma"
+      ],
+      "Hyphens": [
+        "Tanda hubung"
+      ],
+      "Memorable Password": [
+        "Kata Sandi yang Mudah Diingat"
+      ],
+      "Numbers": [
+        "Angka"
+      ],
+      "Numbers and Symbols": [
+        "Angka atau Simbol"
+      ],
+      "Periods": [
+        "Titik"
+      ],
+      "Random Password": [
+        "Kata Sandi Acak"
+      ],
+      "Spaces": [
+        "Spasi"
+      ],
+      "Underscores": [
+        "Garis bawah"
+      ]
+    },
+    "Placeholder": {
+      "Add 2FA secret": [
+        "Tambahkan secret 2FA"
+      ],
+      "Add note": [
+        "Tambahkan catatan"
+      ],
+      "Add text": [
+        "Tambahkan teks"
+      ],
+      "Enter a note...": [
+        "Masukkan catatan..."
+      ],
+      "Enter a prefix": [
+        "Masukkan awalan"
+      ],
+      "Enter email or username": [
+        "Masukkan email atau nama pengguna"
+      ],
+      "Enter password": [
+        "Masukkan kata sandi"
+      ],
+      "MM/YYYY": [
+        "BB/TTTT"
+      ],
+      "Pick a vault": [
+        "Pilih brankas"
+      ],
+      "Please describe the problem and include any error messages": [
+        "Mohon uraikan masalah dan sertakan pesan kesalahan apa pun"
+      ],
+      "Retype \"${ vaultName }\" to confirm deletion": [
+        "Ketik ulang \"${ vaultName }\" untuk mengonfirmasi penghapusan"
+      ],
+      "Search in ${ vault.content.name }": [
+        "Cari di ${ vault.content.name }"
+      ],
+      "Search in all vaults": [
+        "Cari di seluruh brankas"
+      ],
+      "Search in Trash": [
+        "Cari di Sampah"
+      ],
+      "Select a suffix": [
+        "Pilih akhiran"
+      ],
+      "Untitled": [
+        "Tanpa judul"
+      ],
+      "Used on ${ url }": [
+        "Digunakan pada ${ url }"
+      ],
+      "Write your note": [
+        "Tulis catatan Anda"
+      ]
+    },
+    "Title": {
+      "${ PASS_APP_NAME } Settings": [
+        "Pengaturan ${ PASS_APP_NAME }"
+      ],
+      "Auto-lock update": [
+        "Kunci pembaruan secara otomatis"
+      ],
+      "Confirm PIN code": [
+        "Konfirmasikan kode PIN"
+      ],
+      "Connect your ${ BRAND_NAME } account": [
+        "Hubungkan akun ${ BRAND_NAME } Anda"
+      ],
+      "Create PIN code": [
+        "Buat kode PIN"
+      ],
+      "Delete vault \"${ vaultName }\" ?": [
+        "Hapus brankas \"${ vaultName }\" ?"
+      ],
+      "Discard changes ?": [
+        "Buang perubahan?"
+      ],
+      "Enjoy your free trial": [
+        "Nikmati masa uji coba gratis Anda"
+      ],
+      "Get the mobile apps": [
+        "Dapatkan aplikasi ponsel"
+      ],
+      "Grant permissions": [
+        "Berikan izin"
+      ],
+      "Import - ${ date }": [
+        "Impor - ${ date }"
+      ],
+      "Import to vaults": [
+        "Impor ke brankas"
+      ],
+      "Permanently remove all items ?": [
+        "Hapus seluruh item secara permanen ?"
+      ],
+      "Pin the extension": [
+        "Sematkan ekstensi"
+      ],
+      "Secure your data": [
+        "Amankan data Anda"
+      ],
+      "Switching to ${ PASS_APP_NAME }?": [
+        "Beralih ke ${ PASS_APP_NAME }?"
+      ],
+      "Thank you for installing ${ PASS_APP_NAME }": [
+        "Terima kasih telah menginstal ${ PASS_APP_NAME }"
+      ],
+      "The extension is now ready to use.": [
+        "Ekstensi telah siap untuk digunakan."
+      ],
+      "Trash empty": [
+        "Sampah kosong"
+      ],
+      "Unlock ${ brandNameJSX }": [
+        "Buka kunci ${ brandNameJSX }"
+      ],
+      "Update available": [
+        "Pembaruan tersedia"
+      ],
+      "Use my email": [
+        "Gunakan email saya"
+      ],
+      "Use secure password": [
+        "Gunakan kata sandi yang aman"
+      ],
+      "Welcome to ${ brandNameJSX }": [
+        "Selamat datang di ${ brandNameJSX }"
+      ],
+      "Welcome to ${ PASS_APP_NAME }": [
+        "Selamat datang di ${ PASS_APP_NAME }"
+      ],
+      "Welcome!": [
+        "Selamat datang!"
+      ],
+      "Why ${ PASS_APP_NAME }?": [
+        "Mengapa ${ PASS_APP_NAME }?"
+      ],
+      "Your vault is empty": [
+        "Brankas Anda kosong"
+      ]
+    },
+    "Validation": {
+      "Duplicated url": [
+        "URL yang terduplikasi"
+      ],
+      "Label is required": [
+        "Label diperlukan"
+      ],
+      "OTP Secret or URI is invalid": [
+        "Secret OTP atau URI tidak valid"
+      ],
+      "OTP Secret or URI required": [
+        "Secret OTP atau URI dibutuhkan"
+      ],
+      "Url already exists": [
+        "URL sudah ada"
+      ],
+      "Url cannot be empty": [
+        "URL tidak boleh kosong"
+      ],
+      "Url is invalid": [
+        "URL tidak valid"
+      ]
+    },
+    "Warning": {
+      "A description of the problem is required": [
+        "Penjelasan masalah diperlukan"
+      ],
+      "Alias \"${ name }\" is currently used in login item \"${ relatedLoginName }\". You will also stop receiving emails sent to \"${ aliasEmail }\"": [
+        "Alias \"${ name }\" saat ini digunakan pada item login \"${ relatedLoginName }\". Anda juga tidak lagi akan menerima email yang dikirim ke \"${ aliasEmail }\""
+      ],
+      "All your trashed items will be permanently deleted. You can not undo this action.": [
+        "Seluruh item yang telah Anda buang ke sampah akan dihapus secara permanen. Tindakan ini tidak dapat diurungkan."
+      ],
+      "An error occured while exporting your data": [
+        "Terdapat kesalahan pada saat mengekspor data Anda"
+      ],
+      "Cannot retrieve mailboxes for this alias right now": [
+        "Kotak surat untuk alias ini tidak dapat diterima untuk saat ini"
+      ],
+      "Could not create vault \"${ vaultName }\"": [
+        "Berkas \"${ vaultName }\" tidak dapat dibuat"
+      ],
+      "Empty note": [
+        "Catatan kosong"
+      ],
+      "Invalid alias prefix": [
+        "Awalan alias tidak valid"
+      ],
+      "Maximum length is ${ maxLength } characters": [
+        "Panjang teks tidak boleh melebihi ${ maxLength } karakter"
+      ],
+      "Missing alias prefix": [
+        "Awalan alias hilang"
+      ],
+      "Missing alias suffix": [
+        "Akhiran alias hilang"
+      ],
+      "No items": [
+        "Tidak ada item"
+      ],
+      "No items in trash matching": [
+        "Tidak ada item yang sesuai di sampah"
+      ],
+      "No items matching": [
+        "Tidak ada item yang cocok"
+      ],
+      "No password manager selected": [
+        "Tidak ada pengelola kata sandi yang dipilih"
+      ],
+      "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
+        "Kolom ini hanya dapat diisi dengan karakter alfanumerik, titik, tanda hubung, dan garis bawah"
+      ],
+      "Passphrase is required": [
+        "Frasa sandi dibutuhkan"
+      ],
+      "PGP encrypted export file requires passphrase": [
+        "Berkas ekspor yang terenkripsi PGP memerlukan frasa sandi"
+      ],
+      "Please log back in": [
+        "Silakan masuk kembali"
+      ],
+      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
+        "Laporan tidak dienkripsi secara ujung ke ujung, mohon tidak mengirim informasi sensitif apa pun."
+      ],
+      "Something went wrong while starting ${ PASS_APP_NAME }. Please try refreshing or reloading the extension": [
+        "Terjadi masalah saat memulai ${ PASS_APP_NAME }. Silakan coba segarkan atau muat ulang ekstensi."
+      ],
+      "The alias prefix cannot be longer than 40 characters": [
+        "Awalan alias tidak boleh melebihi 40 karakter"
+      ],
+      "Title is required": [
+        "Judul dibutuhkan"
+      ],
+      "Trash alias ?": [
+        "Buang alias?"
+      ],
+      "Unable to save": [
+        "Tidak dapat menyimpan"
+      ],
+      "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
+        "Tidak dapat masuk ke ${ PASS_APP_NAME }. ${ additionalMessage }."
+      ],
+      "Vault \"${ vaultName }\" and all its items will be permanently deleted. You can not undo this action": [
+        "Brankas \"${ vaultName }\" dan seluruh item di dalamnya akan dihapus secara permanen. Tindakan ini tidak dapat diurungkan"
+      ],
+      "Vault \"${ vaultName }\" will be permanently deleted and all its items moved to \"${ destinationVaultName }\"": [
+        "Brankas \"${ vaultName }\" akan dihapus secara permanen dan seluruh item di dalamnya akan dipindahkan ke \"${ destinationVaultName }\""
+      ],
+      "Vault name is required": [
+        "Nama brankas dibutuhkan"
+      ],
+      "You have unsaved changes, are you sure you want to discard them?": [
+        "Anda memiliki perubahan yang belum disimpan. Apakah Anda yakin untuk membatalkan perubahan ini?"
+      ],
+      "You must select at least one mailbox": [
+        "Anda harus memilih setidaknya satu kotak surat"
+      ],
+      "Your plan does not allow you to create more aliases": [
+        "Paket Anda tidak mengizinkan Anda untuk membuat lebih banyak alias"
+      ],
+      "Your plan only allows you to autofill from your primary vault": [
+        "Paket Anda hanya mengizinkan pengisian otomatis dari brankas utama Anda"
+      ],
+      "Your session was locked due to inactivity": [
+        "Sesi Anda dikunci karena tidak ada rekam jejak aktivitas"
+      ],
+      "Your subscription does not allow you to create multiple vaults. All items will be imported to your primary vault by default. To import into multiple vaults upgrade your subscription.": [
+        "Langganan Anda tidak mengizinkan Anda membuat beberapa brankas. Semua item akan diimpor ke brankas utama Anda secara bawaan. Untuk mengimpor ke beberapa brankas, tingkatkan langganan Anda."
+      ]
+    }
+  }
+}
