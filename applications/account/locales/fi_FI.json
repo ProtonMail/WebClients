@@ -174,7 +174,7 @@
         "Vaihda salasana"
       ],
       "Chat with us": [
-        "Chattaile kanssamme"
+        "Keskustele kanssamme"
       ],
       "Check import progress": [
         "Tarkasta tuonnin tila"
@@ -237,7 +237,7 @@
         "Kopioi"
       ],
       "Copy email to clipboard": [
-        "Kopioi osoite leikepöydälle"
+        "Kopioi sähköpostiosoite leikepöydälle"
       ],
       "Copy link": [
         "Kopioi linkki"
@@ -2640,7 +2640,7 @@
         "/kuukausi"
       ],
       "/user per month": [
-        "/käyttäjä per kuukausi"
+        "kuukaudessa/käyttäjä"
       ]
     },
     "Daily recurring event, frequency": {
@@ -2983,6 +2983,11 @@
       ],
       "You unsubscribed from ${ categoriesJsx } emails.": [
         "Lopetit seuraavat sähköpostit: ${ categoriesJsx }."
+      ]
+    },
+    "Email Unsubscribe Categories": {
+      "${ allCategoryTitlesExceptTheLastOne } and ${ lastCategoryTitle }": [
+        "${ allCategoryTitlesExceptTheLastOne } ja ${ lastCategoryTitle }"
       ]
     },
     "Enabled 2FA": {
@@ -3913,7 +3918,7 @@
         "Hallinnoi käyttäjätilejä"
       ],
       "Only 10 accepted invitations are allowed in a 6-month period.": [
-        "Vain 10 hyväksyttyä kutsua sallitaan kuuden kuukauden sisällä."
+        "Kuuden kuukauden sisällä sallitaan vain 10 kutsuhyväksyntää."
       ],
       "Owners of a plan with members cannot join another group plan.": [
         "Jäseniä sisältävän tilauksen omistajat eivät voi liittyä toiseen ryhmätilaukseen."
@@ -3958,7 +3963,7 @@
         "Sinut on kutsuttu liittymään organisaatioon ${ bannerOrganization }. ${ viewInviteButton }"
       ],
       "You have reached the limit of 10 accepted invitations in 6 months.": [
-        "Olet saavuttanut 10 hyväksytyn kutsun rajan 6 kuukauden aikana."
+        "Olet saavuttanut kuuden kuukauden aikana sallitun 10 hyväksytyn kutsun rajoituksen."
       ],
       "You have reached the limit of 10 accepted invitations in 6 months. The button will become clickable when you can invite additional users.": [
         "Olet saavuttanut 10 hyväksytyn kutsun rajan 6 kuukauden sisällä. Painike muuttuu klikattavaksii, kun voit kutsua lisää käyttäjiä."
@@ -4003,7 +4008,7 @@
     },
     "familyOffer_2023:Info": {
       "*Only one free trial per user.": [
-        "*Vain yksi ilmainen kokeilu käyttäjää kohden."
+        "*Vain yksi ilmainen kokeilu/käyttäjä."
       ],
       "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
         "Oletuksena myönnämme ${ formattedStorage } tallennustilaa ylläpitäjän tilille. Voit hallita lisäkäyttäjien kesken jaettua tallennustilaa myöhemmin."
@@ -4012,22 +4017,22 @@
         "Luo ja hallinnoi perheenjäseniä ja myönnä heille tallennustilaa, joka on jaettu ${ DRIVE_APP_NAME } ja ${ MAIL_APP_NAME } välillä."
       ],
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
-        "Jos käyttäjällä on jo ${ MAIL_APP_NAME } -osoite, kirjoita se tähän. Muussa tapauksessa heidän on ensin luotava tili."
+        "Jos käyttäjällä on jo ${ MAIL_APP_NAME } -osoite, syötä se tähän. Muutoin heidän on ensin luotava tili."
       ],
       "Online privacy, for your whole family": [
         "Yksityisyyttä verkossa, koko perheellesi"
       ],
       "The invitation will be cancelled and the user won't be able to join ${ organization.Name }.": [
-        "Kutsu peruutetaan, eikä käyttäjä voi liittyä organisaatioon ${ organization.Name }."
+        "Kutsu perutaan, eikä käyttäjä voi liittyä organisaatioon ${ organization.Name }."
       ],
       "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
-        "Käyttäjän tili vaihdetaan ${ BRAND_NAME } Unlimited -tilauksen 30 päivän ilmaiseen kokeiluun*."
+        "Käyttäjän tili vaihdetaan ${ BRAND_NAME } Unlimited -tilauksen ilmaiseen 30 päivän kokeiluun*."
       ],
       "To create a new user, a configured custom domain is required.": [
         "Uuden käyttäjän luominen vaatii määritetyn mukautetun verkkotunnuksen."
       ],
       "You can increase or reduce the storage for this user.": [
-        "Voit lisätä tai vähentää tämän käyttäjän tallennustilaa."
+        "Voit lisätä tai vähentää käyttäjälle varattua tallennustilaa."
       ],
       "You left this plan": [
         "Poistuit tilauksesta"
@@ -4035,10 +4040,10 @@
     },
     "familyOffer_2023:Info for members section": {
       "Add, remove, and make changes to user accounts in your family group.": [
-        "Lisää, poista ja tee muutoksia perheryhmäsi käyttäjätileihin."
+        "Lisää, poista ja muokkaa perheryhmäsi käyttäjätilejä."
       ],
       "Add, remove, and make changes to user accounts in your organization.": [
-        "Lisää, poista ja tee muutoksia organisaatiosi käyttäjätileihin."
+        "Lisää, poista ja muokkaa organisaatiosi käyttäjätilejä."
       ]
     },
     "familyOffer_2023:Label": {
@@ -4070,7 +4075,7 @@
         "${ member.Name } poistettiin organisaatiosta ${ organization.Name }"
       ],
       "An error occurred, please try again": [
-        "Tapahtui virhe, yritä uudelleen"
+        "Tapahtui virhe. Yritä uudelleen."
       ],
       "Member updated": [
         "Jäsen päivitettiin"
@@ -4414,6 +4419,12 @@
       ],
       "(1-2 emails per month)": [
         "(1-2 viestiä kuukaudessa)"
+      ],
+      "(2-4 per year)": [
+        "(2-4/vuosi)"
+      ],
+      "(4-6 emails per year)": [
+        "(4-6 viestiä vuodessa)"
       ],
       "(during your first month)": [
         "(ensimmäisen kuukautesi aikana)"
@@ -5021,7 +5032,7 @@
         "${ current }/${ total }"
       ],
       "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
-        "${ DRIVE_APP_NAME } ei enää säilytä tiedostojesi edellisiä versioita."
+        "${ DRIVE_APP_NAME } ei enää säilytä tiedostojesi aiempia versioita."
       ],
       "${ emailAddress } is invalid": [
         "${ emailAddress } on virheellinen"
@@ -6160,7 +6171,7 @@
         "Julkisuuden henkilöitä, toimittajia, johtajia ja muita henkilöitä, jotka voivat joutua verkkohyökkäysten kohteeksi, kehotetaan ottamaan käyttöön ${ PROTON_SENTINEL_NAME }."
       ],
       "Public link invite": [
-        "Julkinen linkkikutsu"
+        "Kutsu julkisella linkillä"
       ],
       "purchase additional storage": [
         "osta lisää tallennustilaa"
@@ -6274,10 +6285,10 @@
         "Määritetään Driveasi"
       ],
       "Settings update failed": [
-        "Asetusten päivitys epäonnistui"
+        "Asetusten tallennus epäonnistui"
       ],
       "Settings updated": [
-        "Asetukset päivitetty"
+        "Asetukset tallennettiin"
       ],
       "Show original message": [
         "Näytä alkuperäinen viesti"
@@ -6449,7 +6460,7 @@
         "Tilauksen peruutuslinkki on erääntynyt. Avaa uudempi viesti tältä postituslistalta."
       ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
-        "Tämä käyttäjä on tällä hetkellä vastuussa organisaatiosi maksuista. Alentamalla jäsenen, organisaatiosi maksut jäävät sinun vastuullesi."
+        "Tämä käyttäjä vastaa tällä hetkellä organisaatiosi maksuista. Jos alennat käyttäjän, jäävät organisaatiosi maksut sinun vastuullesi."
       ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
         "Tämä peruuttaa nykyisen maksullisen tilauksesi ja menetät kaikki kertyneet kanta-asiakasetusi."
@@ -6461,10 +6472,10 @@
         "Tämä luo organisaatiollesi uuden salausavaimen. 4096-bittiset avaimet toimivat vain tehokkaissa tietokoneissa, useimmille käyttäjille suosittelemme 2048-bittisten avainten käyttöä."
       ],
       "This will delete all previous versions of your files older than ${ rententionLabel }.": [
-        "Tämä poistaa kaikki aiemmat versiot tiedostoistasi, jotka ovat vanhempia kuin ${ rententionLabel }."
+        "Tämä poistaa kaikki tiedostojesi aiemmat ${ rententionLabel } vanhemmat versiot."
       ],
       "This will delete all previous versions of your files.": [
-        "Tämä poistaa kaikki tiedostosi edelliset versiot."
+        "Tämä poistaa tiedostojesi kaikki aiemmat versiot."
       ],
       "This will disable your current recovery phrase. You won't be able to use it to access your account or decrypt your data.": [
         "Tämä poistaa nykyisen salauslausekkeesi käytöstä. Et voi enää avata sillä holviasi tai purkaa tietojesi salausta."
@@ -7748,7 +7759,7 @@
         "Viestit (viime kuukausi)"
       ],
       "End date": [
-        "Lopetuspäivä"
+        "Päättymispäivä"
       ],
       "End day of month": [
         "Päättymispäivä"
@@ -8222,7 +8233,7 @@
         "Olemme pahoillamme kun lähdet. Kertoisitko meille miksi, jotta voimme parantaa toimintaamme, kiitos."
       ],
       "Week start": [
-        "Viikon aloitus"
+        "Viikon aloituspäivä"
       ],
       "What happened?": [
         "Mitä tapahtui?"
@@ -8312,6 +8323,9 @@
       ],
       "${ BRAND_NAME } for Business newsletter": [
         "${ BRAND_NAME }in uutiskirje yrityksille"
+      ],
+      "${ BRAND_NAME } important announcements": [
+        "Tärkeät ${ BRAND_NAME } -ilmoitukset"
       ],
       "${ BRAND_NAME } newsletter": [
         "${ BRAND_NAME }in uutiskirje"
@@ -8510,6 +8524,9 @@
       "View guide": [
         "Näytä opas"
       ],
+      "visit our blog": [
+        "vieraile blogissamme"
+      ],
       "What is the difference between UDP and TCP protocols?": [
         "Miten UDP- ja TCP-protokollat eroavat toisistaan?"
       ],
@@ -8608,7 +8625,7 @@
     },
     "Message": {
       "All filter actions will be applied to all messages in your ${ MAIL_APP_NAME } account. No auto-reply emails will be sent.": [
-        "Kaikki suodatustoiminnot koskevat ${ MAIL_APP_NAME }-tilisi kaikkia viestejä. Automaattivastauksia ei lähetetä."
+        "Kaikki suodatustoiminnot koskevat ${ MAIL_APP_NAME } -tilisi kaikkia viestejä. Automaattivastauksia ei lähetetä."
       ],
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
         "Yhdistä oma verkkotunnuksesi ${ BRAND_NAME } määrittääksesi omia sähköpostiosoitteita (esim. sinä@yrityksesi.fi). Ohjattu toimintomme opastaa sinut prosessin läpi."
@@ -8695,109 +8712,109 @@
         "${ dayOfMonth }. päivä"
       ],
       "on the first Friday": [
-        "ensimmäisenä perjantaina"
+        "ensimmäinen perjantai"
       ],
       "on the first Monday": [
-        "ensimmäisenä maanantaina"
+        "ensimmäinen maanantai"
       ],
       "on the first Saturday": [
-        "ensimmäisenä lauantaina"
+        "ensimmäinen lauantai"
       ],
       "on the first Sunday": [
-        "ensimmäisenä sunnuntaina"
+        "ensimmäinen sunnuntai"
       ],
       "on the first Thursday": [
-        "ensimmäisenä torstaina"
+        "ensimmäinen torstai"
       ],
       "on the first Tuesday": [
-        "ensimmäisenä tiistaina"
+        "ensimmäinen tiistai"
       ],
       "on the first Wednesday": [
-        "ensimmäisenä keskiviikkona"
+        "ensimmäinen keskiviikko"
       ],
       "on the fourth Friday": [
-        "neljäntenä perjantaina"
+        "neljäs perjantai"
       ],
       "on the fourth Monday": [
-        "neljäntenä maanantaina"
+        "neljäs maanantai"
       ],
       "on the fourth Saturday": [
-        "neljäntenä lauantaina"
+        "neljäs lauantai"
       ],
       "on the fourth Sunday": [
-        "neljäntenä sunnuntaina"
+        "neljäs sunnuntai"
       ],
       "on the fourth Thursday": [
-        "neljäntenä torstaina"
+        "neljäs torstai"
       ],
       "on the fourth Tuesday": [
-        "neljäntenä tiistaina"
+        "neljäs tiistai"
       ],
       "on the fourth Wednesday": [
-        "neljäntenä keskiviikkona"
+        "neljäs keskiviikko"
       ],
       "on the last Friday": [
-        "viimeisenä perjantaina"
+        "viimeinen perjantai"
       ],
       "on the last Monday": [
-        "viimeisenä maanantaina"
+        "viimeinen maanantai"
       ],
       "on the last Saturday": [
-        "viimeisenä lauantaina"
+        "viimeinen lauantai"
       ],
       "on the last Sunday": [
-        "viimeisenä sunnuntaina"
+        "viimeinen sunnuntai"
       ],
       "on the last Thursday": [
-        "viimeisenä torstaina"
+        "viimeinen torstai"
       ],
       "on the last Tuesday": [
-        "viimeisenä tiistaina"
+        "viimeinen tiistai"
       ],
       "on the last Wednesday": [
-        "viimeisenä keskiviikkona"
+        "viimeinen keskiviikko"
       ],
       "on the second Friday": [
-        "toisena perjantaina"
+        "toinen perjantai"
       ],
       "on the second Monday": [
-        "toisena maanantaina"
+        "toinen maanantai"
       ],
       "on the second Saturday": [
-        "toisena lauantaina"
+        "toinen lauantai"
       ],
       "on the second Sunday": [
-        "toisena sunnuntaina"
+        "toinen sunnuntai"
       ],
       "on the second Thursday": [
-        "toisena torstaina"
+        "toinen torstai"
       ],
       "on the second Tuesday": [
-        "toisena tiistaina"
+        "toinen tiistai"
       ],
       "on the second Wednesday": [
-        "toisena keskiviikkona"
+        "toinen keskiviikko"
       ],
       "on the third Friday": [
-        "kolmantena perjantaina"
+        "kolmas perjantai"
       ],
       "on the third Monday": [
-        "kolmantena maanantaina"
+        "kolmas maanantai"
       ],
       "on the third Saturday": [
-        "kolmantena lauantaina"
+        "kolmas lauantai"
       ],
       "on the third Sunday": [
-        "kolmantena sunnuntaina"
+        "kolmas sunnuntai"
       ],
       "on the third Thursday": [
-        "kolmantena torstaina"
+        "kolmas torstai"
       ],
       "on the third Tuesday": [
-        "kolmantena tiistaina"
+        "kolmas tiistai"
       ],
       "on the third Wednesday": [
-        "kolmantena keskiviikkona"
+        "kolmas keskiviikko"
       ]
     },
     "Navigation": {
@@ -8909,7 +8926,7 @@
         "Säilytä tili"
       ],
       "Switch or add account": [
-        "Vaihda tiliä tai lisää uusi"
+        "Vaihda tai lisää tili"
       ],
       "Switch plan": [
         "Vaihda tilausta"
@@ -9311,10 +9328,10 @@
         "Sovellettavia hyvityksiä, esittelyhintoja ja kuponkeja sovelletaan seuraavassa vaiheessa"
       ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
-        "Kattavaa yksityisyyttä ja turvaa yhdistetyillä ${ BRAND_NAME }-palveluilla."
+        "Kattavaa yksityisyyttä ja turvaa kaikkien ${ BRAND_NAME }-palveluiden yhdistelmällä."
       ],
       "For next-level password management and identity protection.": [
-        "Vie salasanojen hallintasi ja henkilöllisyytesi suojaaminen seuraavalle tasolle."
+        "Edistyneempään salasanojen hallintaan ja henkilöllisyyden suojaukseen."
       ],
       "If you delete your account, you lose all ${ visionary } plan benefits and it won’t be available if you create a new account.": [
         "Jos poistat tilisi, menetät kaikki ${ visionary }-tilauksen edut, eikä niitä ole enää saatavilla, jos luot uuden tilin."
@@ -9335,28 +9352,28 @@
         "Suosittu"
       ],
       "Privacy and security suite for businesses, including all premium ${ BRAND_NAME } services.": [
-        "Kaikki ${ BRAND_NAME }in premium-palvelut sisältävä yksityisyys- ja suojauspaketti yrityksille."
+        "Tietosuojaa ja turvaa yrityksille tarjoava paketti ${ BRAND_NAME }in kaikilla premium-palveluilla."
       ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
-        "Suojaa perheesi yksityisyyttä kaikilla ${ BRAND_NAME } -palveluilla yhdistettynä."
+        "Suojaa perheesi yksityisyyttä kaikkien ${ BRAND_NAME } -palveluiden yhdistelmällä."
       ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
-        "Suojattu pilvitallennustila, jolla voit tallentaa, synkronoida ja jakaa tiedostoja helposti ja turvallisesti."
+        "Turvallinen pilvitallennuspalvelu tiedostojen turvalliseen säilytykseen, synkronointiin ja helppoon jakamiseen."
       ],
       "Secure email and calendar for professionals and businesses.": [
         "Turvallinen sähköposti ja kalenteri ammattilaisille ja yrityksille."
       ],
       "Secure email with advanced features for your everyday communications.": [
-        "Turvallinen sähköposti erityisominaisuuksilla jokapäiväiseen viestintään."
+        "Turvallinen sähköposti edistyneillä ominaisuuksilla jokapäiväiseen viestintään."
       ],
       "Set automatic replies to inform contacts you are out of the office or unable to respond.": [
         "Asettamalla automaattivastauksen, voit ilmoittaa yhteydenottajille, ettet ole töissä tai voi muusta syystä vastata."
       ],
       "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
-        "Kohdennettu VPN-ratkaisu, joka tarjoaa turvallisen, rajoittamattoman, nopean pääsyn Internetiin."
+        "Erityinen VPN-ratkaisu, joka tarjoaa turvallisen, rajattoman ja nopean pääsyn Internetiin."
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
-        "Maksuton aloitustili, joka on suunniteltu antamaan kaikille yksityisyyden suojaa oletuksena."
+        "Maksuton aloitustili, joka on suunniteltu tuomaan oletusarvoinen yksityisyys kaikkien ulottuville."
       ],
       "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
         "Nautit alennetusta myynninedistämishinnasta nykyisessä tilauksessasi. Jos poistat tilisi, menetät alennetun myynninedistämishinnan, joka ei ole enää käytettävissä, jos luot uuden tilin."
@@ -9579,7 +9596,7 @@
         "Säilytä yhteystietojesi puhelinnumeroiden, osoitteiden, syntymäpäivien ja henkilökohtaisten muistiinpanojen kaltaiset tiedot turvallisesti. Zero Access -salaus varmistaa, ettei edes ${ BRAND_NAME } näe niitä."
       ],
       "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
-        "Lähetä sähköposteja suurille ryhmille nopeasti ja helposti luomalla tarvitsemasi määrä yhteystietoryhmiä (jopa 100 yhteystietoa/ryhmä)"
+        "Lähetä viestejä suurille ryhmille nopeasti ja helposti luomalla tarvitsemasi määrä yhteystietoryhmiä (jopa 100 yhteystietoa/ryhmä)"
       ],
       "Set up filters to automatically reply to, sort, and/or label your emails": [
         "Määritä suodattimia vastataksesi sähköposteihin sekä lajitellaksesi ja/tai merkitäksesi viestejä tunnisteilla automaattisesti"
@@ -9652,7 +9669,7 @@
         "Korota tallennustilaksi yhteensä ${ bundleStorage }"
       ],
       "Boost your storage space to ${ businessStorage } per user": [
-        "Korota käyttäjäkohtaiseksi tallennustilaksi ${ businessStorage }"
+        "Korota tallennustilasi ${ businessStorage }/käyttäjä"
       ],
       "Cover more ground with support for 10 custom email domains": [
         "Laajenna toimialuettasi 10 omalla sähköpostiverkkotunnuksella"
@@ -9665,7 +9682,7 @@
         "Kaikki ${ vpnPlanName }-tilauksesta"
       ],
       "Get 5 additional email addresses per user": [
-        "Hanki 5 käyttäjäkohtaista lisäsähköpostiosoitetta"
+        "Hanki 5 sähköpostiosoitetta lisää/käyttäjä"
       ],
       "Priority support": [
         "Ensisijainen tuki"
@@ -9769,7 +9786,7 @@
         "tapahtuman alkaessa"
       ],
       "day before": [
-        "päivä aiemmin",
+        "päivää aiemmin",
         "päivää aiemmin"
       ],
       "hour before": [
@@ -10114,7 +10131,7 @@
         "Aloita ${ appName } -sovelluksen käyttö nyt"
       ],
       "Upgrade for only ${ relativePrice } extra per month": [
-        "Päivitä vain ${ relativePrice } lisähintaan kuukaudessa."
+        "Päivitä vain ${ relativePrice } kuukausikorotuksella."
       ],
       "Upgrade my plan": [
         "Päivitä tilaukseni"
@@ -10177,13 +10194,13 @@
         "${ PASS_APP_NAME } pitää salasanasi ja henkilöllisyytesi turvassa tiukalla päästä päähän -salauksella. Nykyinen tilauksesi antaa sinulle jo pääsyn ${ PASS_APP_NAME_2 } -premium-ominaisuuksiin - sinun ei tarvitse ostaa sitä uudelleen."
       ],
       "+ ${ relativePrice } per month": [
-        "+ ${ relativePrice } per kuukausi"
+        "+ ${ relativePrice } kuukaudessa"
       ],
       "All premium ${ BRAND_NAME } services.": [
         "Kaikki premium ${ BRAND_NAME } -palvelut."
       ],
       "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
-        "Mutta voit avata **${ unlockPlanTitle }** ja kaikki premium-${ BRAND_NAME } -palvelut päivittämällä palveluun **${ upsellPlanTitle }** – se on vain ${ relativePrice } ylimääräistä kuukaudessa."
+        "Mutta voit avata **${ unlockPlanTitle }**-tilauksen ja kaikki ${ BRAND_NAME }in premium-palvelut päivittämällä **${ upsellPlanTitle }**-tilaukseen — vain ${ relativePrice } kuukausikorotuksella."
       ],
       "By continuing, you agree to our ${ termsAndConditions }": [
         "Jatkamalla hyväksyt ${ termsAndConditions }"
@@ -10210,7 +10227,7 @@
         "Päästä päähän -salatut muistiinpanot"
       ],
       "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
-        "Saat käyttöösi kaikki ${ BRAND_NAME } premium-palvelut vain **${ relativePrice } kuukaudessa** lisää!"
+        "Saat kaikki ${ BRAND_NAME } premium-palvelut käyttöösi vain **${ relativePrice } kuukausikorotuksella**!"
       ],
       "Free forever": [
         "Ikuisesti ilmainen"
@@ -10255,7 +10272,7 @@
         "Avoin lähdekoodi ja auditoitu"
       ],
       "per month, billed annually": [
-        "per kuukausi, laskutetaan vuosittain"
+        "kuukaudessa, laskutetaan vuosittain"
       ],
       "per month, billed every 15 months": [
         "kuukaudessa, laskutetaan 15 kuukauden välein"
@@ -10432,7 +10449,7 @@
         "Haku"
       ],
       "Search for a user or address": [
-        "Hae käyttäjää tai osoitetta"
+        "Etsi käyttäjää tai osoitetta"
       ],
       "Search settings": [
         "Etsi asetuksista"
@@ -10833,7 +10850,7 @@
     "specialoffer: Countdown unit": {
       "${ days } day": [
         "${ days } päivä",
-        "${ days } päivää"
+        "${ days } päivä"
       ],
       "${ hours } hour": [
         "${ hours } tunti",
@@ -11486,7 +11503,7 @@
         "/kuukausi"
       ],
       "/user per month": [
-        "/käyttäjä per kuukausi"
+        "kuukaudessa/käyttäjä"
       ]
     },
     "Suffix for price": {
@@ -13239,25 +13256,25 @@
     },
     "Weekly recurring event, repeats on (multiple days), frequency": {
       "Friday": [
-        "perjantaisin"
+        "perjantai"
       ],
       "Monday": [
-        "maanantaisin"
+        "maanantai"
       ],
       "Saturday": [
-        "lauantaisin"
+        "lauantai"
       ],
       "Sunday": [
-        "sunnuntaisin"
+        "sunnuntai"
       ],
       "Thursday": [
-        "torstaisin"
+        "torstai"
       ],
       "Tuesday": [
-        "tiistaisin"
+        "tiistai"
       ],
       "Wednesday": [
-        "keskiviikkoisin"
+        "keskiviikko"
       ]
     },
     "Yearly recurring event, frequency": {

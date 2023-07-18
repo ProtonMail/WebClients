@@ -1723,7 +1723,7 @@
         "αχνό γκρι"
       ],
       "enzian": [
-        "ενζιάν"
+        "βαθύ μπλέ"
       ],
       "fern": [
         "φτέρη"
@@ -1789,10 +1789,10 @@
         "περσικό κόκκινο"
       ],
       "philippine gray": [
-        "φιλιππίνων γκρι"
+        "γκρί των φιλιππίνων"
       ],
       "philippine silver": [
-        "φιλιππίνων ασήμι"
+        "ασημί των φιλιππίνων"
       ],
       "pickle": [
         "τουρσί"
@@ -2935,6 +2935,9 @@
         "Το αρχείο πρέπει να έχει μέγιστο μέγεθος ${ MAX_IMPORT_FILE_SIZE_STRING } και να έχει μέχρι και ${ MAX_IMPORT_CONTACTS_STRING } επαφή. Εάν το αρχείο σας είναι μεγαλύτερο, διαχωρίστε το σε μικρότερα αρχεία.",
         "Το αρχείο πρέπει να έχει μέγιστο μέγεθος ${ MAX_IMPORT_FILE_SIZE_STRING } και να έχει\nμέχρι και ${ MAX_IMPORT_CONTACTS_STRING } επαφές. Εάν το αρχείο σας είναι μεγαλύτερο, διαχωρίστε το σε μικρότερα αρχεία."
       ],
+      "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
+        "Ενεργοποιήστε την προστασία παρακολούθησης ηλεκτρονικού ταχυδρομείου για να αποτρέψετε διαφημιστές και άλλους χρήστες από την παρακολούθηση της τοποθεσίας και της δραστηριότητάς σας στο διαδίκτυο."
+      ],
       "Unlock custom message scheduling and other benefits when you upgrade your plan.": [
         "Ξεκλειδώστε προσαρμοσμένο προγραμματισμό μηνυμάτων και άλλα οφέλη όταν αναβαθμίζετε το πρόγραμμά σας."
       ],
@@ -2946,6 +2949,9 @@
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Χρησιμοποιήστε την επιλογή \"Drag and Drop\" για να ταξινομήσετε τη προτεραιότητα συγχώνευσης μεταξύ των επαφών. Καταργήστε την επιλογή των επαφών που δεν θέλετε να συγχωνεύσετε."
+      ],
+      "We didn't find any known trackers and tracking URLs in this email.": [
+        "Δε βρήκαμε γνωστούς ιχνηλάτες και διευθύνσεις URL παρακολούθησης σε αυτό το μήνυμα ηλεκτρονικού ταχυδρομείου."
       ],
       "When do you want your message to be sent?": [
         "Πότε θέλετε να αποσταλεί το μήνυμά σας?"
@@ -5369,7 +5375,7 @@
         "Κανένα από τα κλειδιά που ανεβάσατε είναι έγκυρα για κρυπτογράφηση. Για να μπορείτε να στέλνετε μηνύματα σε αυτήν τη διεύθυνση, παρακαλούμε να ανεβάσετε ένα έγκυρο κλειδί ή να απενεργοποιήσετε την \"Κρυπτογράφηση μηνυμάτων\"."
       ],
       "Normal": [
-        "Κανονικό\n*.*, add translation *.*"
+        "Κανονικό"
       ],
       "Not a valid URL": [
         "Μη έγκυρο URL"
@@ -5439,7 +5445,7 @@
         "Η φόρτωση της προεπισκόπησης απέτυχε"
       ],
       "Preview for this file type is not supported": [
-        "Η προεπισκόπηση για αυτόν τον τύπο αρχείου δεν υποστηρίζεται\n*.*, add translation *.*"
+        "Η προεπισκόπηση για αυτόν τον τύπο αρχείου δεν υποστηρίζεται"
       ],
       "Primary": [
         "Κύριο"
@@ -5472,7 +5478,7 @@
         "Αίτημα αποδεικτικού ανάγνωσης"
       ],
       "Restore": [
-        "Επαναφορά\n*.*, add translation *.*"
+        "Επαναφορά"
       ],
       "Right to Left": [
         "Δεξιά προς τα αριστερά"
@@ -5843,8 +5849,14 @@
       "We apologize. This might have been a mistake from our side. Can you please confirm that you want to mark this email as a legitimate one?": [
         "Ζητάμε συγγνώμη. Αυτό μπορεί να ήταν λάθος από την πλευρά μας. Μπορείτε να επιβεβαιώσετε ότι θέλετε να επισημάνετε αυτό το email ως νόμιμο;"
       ],
+      "We blocked the following advertisers and organizations from seeing when you open this email, what device you’re using, and where you’re located.": [
+        "Αποκλείσαμε τους ακόλουθους διαφημιζόμενους και οργανισμούς από το να βλέπουν πότε ανοίγετε αυτό το μήνυμα ηλεκτρονικού ταχυδρομείου, ποια συσκευή χρησιμοποιείτε και πού βρίσκεστε."
+      ],
       "We could not verify the sender's trusted keys.": [
         "Δεν μπορούμε να επαληθεύσουμε τα έμπιστα κλειδιά του αποστολέα."
+      ],
+      "We removed tracking information from the following links to help protect you from advertisers and others trying to track your online activity.": [
+        "Καταργήσαμε τις πληροφορίες παρακολούθησης από τους παρακάτω συνδέσμους, για να σας προστατεύσουμε από διαφημιζόμενους και άλλους που προσπαθούν να παρακολουθήσουν τη δραστηριότητά σας στο διαδίκτυο."
       ],
       "We'll notify you when the import is done.": [
         "Θα σας ειδοποιήσουμε όταν ολοκληρωθεί η εισαγωγή."
@@ -5859,7 +5871,7 @@
         "Εβδομάδα"
       ],
       "When do you want your message to be automatically deleted from the recipient's inbox and your sent folder?": [
-        "Πότε θέλετε να διαγραφεί αυτόματα το μήνυμά σας από τα εισερχόμενα του παραλήπτη και τον απεσταλμένο σας φάκελο;\n*.*, add translation *.*\n*?*, please add *;*;"
+        "Πότε θέλετε να διαγραφεί αυτόματα το μήνυμά σας από τα εισερχόμενα του παραλήπτη και από τον φάκελλο των απεσταλμένων σας;"
       ],
       "When do you want your message to be sent?": [
         "Πότε θέλετε να αποσταλεί το μήνυμά σας;"
@@ -5900,9 +5912,6 @@
       "You can check the progress ${ importProgressLink }.": [
         "Μπορείτε να δείτε την πρόοδο ${ importProgressLink }."
       ],
-      "You can click links in this email without being profiled and leaking your online activity with advertisers.": [
-        "Μπορείτε να κάνετε κλικ σε συνδέσμους σε αυτό το μήνυμα ηλεκτρονικού ταχυδρομείου χωρίς να έχετε προφίλ και να διαρρεύσετε τη δραστηριότητά σας στο διαδίκτυο με διαφημιστές."
-      ],
       "You can either update your search query or ${ button }": [
         "Μπορείτε είτε να ενημερώσετε τα κριτήρια αναζήτησης είτε ${ button }"
       ],
@@ -5911,9 +5920,6 @@
       ],
       "You can import one data type at a time.": [
         "Μπορεί να εισαχθεί ένας τύπος δεδομένων τη φορά."
-      ],
-      "You can read this email without revealing your interactions, location, or device to advertisers.": [
-        "Μπορείτε να διαβάσετε αυτό το μήνυμα ηλεκτρονικού ταχυδρομείου χωρίς να αποκαλύψετε τις αλληλεπιδράσεις, την τοποθεσία ή τη συσκευή σας στους διαφημιζόμενους."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Μπορείτε να ενεργοποιήσετε τις ειδοποιήσεις, για να λαμβάνετε ειδοποιήσεις όταν φτάνουν νέα email σε αυτόν το φάκελο."
@@ -7828,17 +7834,11 @@
     "Sender verification details": {
       "Sender verification": [
         "Επαλήθευση αποστολέα"
-      ],
-      "Sender verification failed: ${ icon.senderVerificationDetails.description }": [
-        "Αποτυχία επαλήθευσης αποστολέα: ${ icon.senderVerificationDetails.description }"
-      ],
-      "Sender verified: ${ icon.senderVerificationDetails.description }": [
-        "Ο αποστολέας επαληθεύτηκε: ${ icon.senderVerificationDetails.description }"
       ]
     },
     "Sender verification error": {
-      "Verification key is not in the list of trusted keys.": [
-        "Το κλειδί επαλήθευσης δεν περιλαμβάνεται στη λίστα αξιόπιστων κλειδιών."
+      "Sender verification failed: Verification key is not in the list of trusted keys.": [
+        "Η επαλήθευση αποστολέα απέτυχε: Το κλειδί επαλήθευσης δεν περιλαμβάνεται στη λίστα αξιόπιστων κλειδιών."
       ]
     },
     "Sent email icon": {
@@ -9043,8 +9043,8 @@
       "Previous message": [
         "Προηγούμενο Μήνυμα"
       ],
-      "Protect your email": [
-        "Προστατέψτε το ηλεκτρονικό ταχυδρομείο σας"
+      "Protect yourself from trackers": [
+        "Προστατέψτε τον εαυτό σας από ιχνηλάτες"
       ],
       "Re-sign all contacts": [
         "Επανυπογραφή όλων των επαφών"

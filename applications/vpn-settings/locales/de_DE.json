@@ -2023,6 +2023,12 @@
       "(1-2 emails per month)": [
         "(1-2 E-Mails pro Monat)"
       ],
+      "(2-4 per year)": [
+        "(2-4 E-Mails pro Jahr)"
+      ],
+      "(4-6 emails per year)": [
+        "(4-6 E-Mails pro Jahr)"
+      ],
       "(during your first month)": [
         "(während des ersten Monats)"
       ]
@@ -2609,7 +2615,7 @@
         "Der Speicherplatz wird von ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } und ${ DRIVE_APP_NAME } gemeinsam genutzt."
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
-        "Tätige eine Einzahlung über die folgende Adresse, oder scanne den QR-Code. Die Einzahlung wird nach der Bestätigung auf deinem Konto gutgeschrieben."
+        "Tätige eine Einzahlung über die folgende Adresse oder scanne den QR-Code. Die Einzahlung wird nach der Bestätigung auf deinem Konto gutgeschrieben."
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Dein Abonnement endet bald: Reaktiviere es bis zum ${ byDate }, um deine ${ planName }-Vorteile zu behalten. ${ reactivateLink }"
@@ -3367,6 +3373,9 @@
       "${ BRAND_NAME } for Business newsletter": [
         "${ BRAND_NAME } for Business-Newsletter"
       ],
+      "${ BRAND_NAME } important announcements": [
+        "${ BRAND_NAME } Wichtige Ankündigungen"
+      ],
       "${ BRAND_NAME } newsletter": [
         "${ BRAND_NAME } Newsletter"
       ],
@@ -3459,6 +3468,9 @@
       ],
       "View guide": [
         "Anleitung anzeigen"
+      ],
+      "visit our blog": [
+        "Blog besuchen"
       ],
       "What is the difference between UDP and TCP protocols?": [
         "Was ist der Unterschied zwischen UDP- und TCP-Protokollen?"

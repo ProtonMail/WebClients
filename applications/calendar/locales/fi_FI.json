@@ -67,7 +67,7 @@
         "Toteuta"
       ],
       "At most 100 contacts are allowed per contact group": [
-        "Yhteystietoryhmää kohden sallitaan enintään 100 yhteystietoa"
+        "Yhdessä yhteystietoryhmässä sallitaan enintään 100 yhteystietoa"
       ],
       "Attach screenshot(s)": [
         "Liitä kuvankaappauksia"
@@ -88,7 +88,7 @@
         "Peru"
       ],
       "Chat with us": [
-        "Chattaile kanssamme"
+        "Keskustele kanssamme"
       ],
       "Check import progress": [
         "Tarkasta tuonnin tila"
@@ -142,7 +142,7 @@
         "Jatka Googlella"
       ],
       "Copy email to clipboard": [
-        "Kopioi osoite leikepöydälle"
+        "Kopioi sähköpostiosoite leikepöydälle"
       ],
       "Copy link": [
         "Kopioi linkki"
@@ -2238,10 +2238,10 @@
         "Virheellinen sähköpostiosoite"
       ],
       "Ends on date cannot be empty": [
-        "Päätöspäivä ei voi olla tyhjä"
+        "Päättymispäivä ei voi olla tyhjä"
       ],
       "Ends on date must be after start time": [
-        "Päätöspäivän on oltava aloitusajan jälkeen"
+        "Päättymispäivän on oltava aloitusajan jälkeen"
       ],
       "Enter 6 digits": [
         "Syötä 6-numeroa"
@@ -4089,8 +4089,8 @@
     },
     "Information about why calendar event cannot be saved": {
       "At most ${ MAX_ATTENDEES } participant is allowed per invitation": [
-        "Kutsua kohti sallitaan enintään ${ MAX_ATTENDEES } osallistuja",
-        "Kutsua kohti sallitaan enintään ${ MAX_ATTENDEES } osallistujaa"
+        "Kutsua kohden sallitaan enintään ${ MAX_ATTENDEES } osallistuja",
+        "Kutsua kohden sallitaan enintään ${ MAX_ATTENDEES } osallistujaa"
       ],
       "Creating invites in a shared calendar is not allowed": [
         "Kutsujen luontia ei sallita jaetussa kalenterissa"
@@ -4169,7 +4169,7 @@
         "Tallenna yhteystiedot automaattisesti"
       ],
       "Awful": [
-        "Kamala"
+        "Surkea"
       ],
       "Bad": [
         "Huono"
@@ -4452,7 +4452,7 @@
         "Mitä tapahtui?"
       ],
       "Wonderful": [
-        "Ihana"
+        "Erinomainen"
       ],
       "Your calendar URL": [
         "Kalenterisi URL-osoite"
@@ -4709,109 +4709,109 @@
         "${ dayOfMonth }. päivä"
       ],
       "on the first Friday": [
-        "ensimmäisenä perjantaina"
+        "ensimmäinen perjantai"
       ],
       "on the first Monday": [
-        "ensimmäisenä maanantaina"
+        "ensimmäinen maanantai"
       ],
       "on the first Saturday": [
-        "ensimmäisenä lauantaina"
+        "ensimmäinen lauantai"
       ],
       "on the first Sunday": [
-        "ensimmäisenä sunnuntaina"
+        "ensimmäinen sunnuntai"
       ],
       "on the first Thursday": [
-        "ensimmäisenä torstaina"
+        "ensimmäinen torstai"
       ],
       "on the first Tuesday": [
-        "ensimmäisenä tiistaina"
+        "ensimmäinen tiistai"
       ],
       "on the first Wednesday": [
-        "ensimmäisenä keskiviikkona"
+        "ensimmäinen keskiviikko"
       ],
       "on the fourth Friday": [
-        "neljäntenä perjantaina"
+        "neljäs perjantai"
       ],
       "on the fourth Monday": [
-        "neljäntenä maanantaina"
+        "neljäs maanantai"
       ],
       "on the fourth Saturday": [
-        "neljäntenä lauantaina"
+        "neljäs lauantai"
       ],
       "on the fourth Sunday": [
-        "neljäntenä sunnuntaina"
+        "neljäs sunnuntai"
       ],
       "on the fourth Thursday": [
-        "neljäntenä torstaina"
+        "neljäs torstai"
       ],
       "on the fourth Tuesday": [
-        "neljäntenä tiistaina"
+        "neljäs tiistai"
       ],
       "on the fourth Wednesday": [
-        "neljäntenä keskiviikkona"
+        "neljäs keskiviikko"
       ],
       "on the last Friday": [
-        "viimeisenä perjantaina"
+        "viimeinen perjantai"
       ],
       "on the last Monday": [
-        "viimeisenä maanantaina"
+        "viimeinen maanantai"
       ],
       "on the last Saturday": [
-        "viimeisenä lauantaina"
+        "viimeinen lauantai"
       ],
       "on the last Sunday": [
-        "viimeisenä sunnuntaina"
+        "viimeinen sunnuntai"
       ],
       "on the last Thursday": [
-        "viimeisenä torstaina"
+        "viimeinen torstai"
       ],
       "on the last Tuesday": [
-        "viimeisenä tiistaina"
+        "viimeinen tiistai"
       ],
       "on the last Wednesday": [
-        "viimeisenä keskiviikkona"
+        "viimeinen keskiviikko"
       ],
       "on the second Friday": [
-        "toisena perjantaina"
+        "toinen perjantai"
       ],
       "on the second Monday": [
-        "toisena maanantaina"
+        "toinen maanantai"
       ],
       "on the second Saturday": [
-        "toisena lauantaina"
+        "toinen lauantai"
       ],
       "on the second Sunday": [
-        "toisena sunnuntaina"
+        "toinen sunnuntai"
       ],
       "on the second Thursday": [
-        "toisena torstaina"
+        "toinen torstai"
       ],
       "on the second Tuesday": [
-        "toisena tiistaina"
+        "toinen tiistai"
       ],
       "on the second Wednesday": [
-        "toisena keskiviikkona"
+        "toinen keskiviikko"
       ],
       "on the third Friday": [
-        "kolmantena perjantaina"
+        "kolmas perjantai"
       ],
       "on the third Monday": [
-        "kolmantena maanantaina"
+        "kolmas maanantai"
       ],
       "on the third Saturday": [
-        "kolmantena lauantaina"
+        "kolmas lauantai"
       ],
       "on the third Sunday": [
-        "kolmantena sunnuntaina"
+        "kolmas sunnuntai"
       ],
       "on the third Thursday": [
-        "kolmantena torstaina"
+        "kolmas torstai"
       ],
       "on the third Tuesday": [
-        "kolmantena tiistaina"
+        "kolmas tiistai"
       ],
       "on the third Wednesday": [
-        "kolmantena keskiviikkona"
+        "kolmas keskiviikko"
       ]
     },
     "New Label form": {
@@ -4832,7 +4832,7 @@
     },
     "new_plans: action": {
       "Switch or add account": [
-        "Vaihda tiliä tai lisää uusi"
+        "Vaihda tai lisää tili"
       ]
     },
     "new_plans: feature": {
@@ -4941,7 +4941,7 @@
         "tapahtuman alkaessa"
       ],
       "day before": [
-        "päivä aiemmin",
+        "päivää aiemmin",
         "päivää aiemmin"
       ],
       "hour before": [
@@ -5010,19 +5010,19 @@
         "${ value } minuuttia aiemmin klo ${ time }"
       ],
       "${ value } week after": [
-        "${ value } viikkoa myöhemmin",
+        "${ value } viikko myöhemmin",
         "${ value } viikkoa myöhemmin"
       ],
       "${ value } week after at ${ time }": [
-        "${ value } viikkoa myöhemmin klo ${ time }",
+        "${ value } viikko myöhemmin klo ${ time }",
         "${ value } viikkoa myöhemmin klo ${ time }"
       ],
       "${ value } week before": [
-        "${ value } viikkoa aiemmin",
+        "${ value } viikko aiemmin",
         "${ value } viikkoa aiemmin"
       ],
       "${ value } week before at ${ time }": [
-        "${ value } viikkoa aiemmin klo ${ time }",
+        "${ value } viikko aiemmin klo ${ time }",
         "${ value } viikkoa aiemmin klo ${ time }"
       ],
       "At time of event": [
@@ -5100,20 +5100,20 @@
         "Mukautettu"
       ],
       "Day": [
-        "Päivä",
-        "Päivää"
+        "päivä",
+        "päivä"
       ],
       "Does not repeat": [
         "Ei toistu"
       ],
       "Every day": [
-        "Päivittäin"
+        "Joka päivä"
       ],
       "Every month": [
-        "Kuukausittain"
+        "Joka kuukausi"
       ],
       "Every week": [
-        "Viikottain"
+        "Joka viikko"
       ],
       "Every year": [
         "Joka vuosi"
@@ -5122,8 +5122,8 @@
         "Ohita ryhmä"
       ],
       "Month": [
-        "Kuukausi",
-        "Kuukautta"
+        "kuukausi",
+        "kuukausi"
       ],
       "No parent folder": [
         "Ei yläkansiota"
@@ -5135,12 +5135,12 @@
         "Vain tämän tapahtumakerran"
       ],
       "Week": [
-        "Viikko",
-        "Viikkoa"
+        "viikko",
+        "viikko"
       ],
       "Year": [
-        "Vuosi",
-        "Vuotta"
+        "vuosi",
+        "vuosi"
       ]
     },
     "Option group label": {
@@ -6259,7 +6259,7 @@
         "Valitse yhteystietoryhmä"
       ],
       "Select event end date": [
-        "Valitse tapahtuman päätöspäivä"
+        "Valitse tapahtuman päättymispäivä"
       ],
       "Select event end time": [
         "Valitse tapahtuman päätösaika"
@@ -6768,25 +6768,25 @@
     },
     "Weekly recurring event, repeats on (multiple days), frequency": {
       "Friday": [
-        "perjantaisin"
+        "perjantai"
       ],
       "Monday": [
-        "maanantaisin"
+        "maanantai"
       ],
       "Saturday": [
-        "lauantaisin"
+        "lauantai"
       ],
       "Sunday": [
-        "sunnuntaisin"
+        "sunnuntai"
       ],
       "Thursday": [
-        "torstaisin"
+        "torstai"
       ],
       "Tuesday": [
-        "tiistaisin"
+        "tiistai"
       ],
       "Wednesday": [
-        "keskiviikkoisin"
+        "keskiviikko"
       ]
     },
     "Yearly recurring event, frequency": {

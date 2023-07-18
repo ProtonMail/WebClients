@@ -2994,6 +2994,11 @@
         "V-ați dezabonat de la mesajele venite de la ${ categoriesJsx }."
       ]
     },
+    "Email Unsubscribe Categories": {
+      "${ allCategoryTitlesExceptTheLastOne } and ${ lastCategoryTitle }": [
+        "${ allCategoryTitlesExceptTheLastOne } și ${ lastCategoryTitle }"
+      ]
+    },
     "Enabled 2FA": {
       "2FA": [
         "A2F"
@@ -4437,6 +4442,12 @@
       ],
       "(1-2 emails per month)": [
         "(1-2 mesaje pe lună)"
+      ],
+      "(2-4 per year)": [
+        "(2-4 pe an)"
+      ],
+      "(4-6 emails per year)": [
+        "(4-6 mesaje pe an)"
       ],
       "(during your first month)": [
         "(pe durata primei luni)"
@@ -8392,6 +8403,9 @@
       "${ BRAND_NAME } for Business newsletter": [
         "Buletin informativ ${ BRAND_NAME } pentru afaceri"
       ],
+      "${ BRAND_NAME } important announcements": [
+        "Anunțuri importante ale ${ BRAND_NAME }"
+      ],
       "${ BRAND_NAME } newsletter": [
         "Buletin informativ ${ BRAND_NAME }"
       ],
@@ -8588,6 +8602,9 @@
       ],
       "View guide": [
         "Consultare ghid"
+      ],
+      "visit our blog": [
+        "vizitați blogul nostru"
       ],
       "What is the difference between UDP and TCP protocols?": [
         "Care este diferenţa dintre protocoalele UDP şi TCP?"
