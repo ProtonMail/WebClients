@@ -272,7 +272,7 @@ const Step1 = ({
     return (
         <Layout logo={logo} hasDecoration bottomRight={<SignupSupportDropdown />} className={className}>
             <div className="flex flex-align-items-center flex-column">
-                <div className={clsx('single-signup-header-v2 text-center', 'mt-8 mb-4')}>
+                <div className="single-signup-header-v2 text-center mt-8 mb-4">
                     <h1 className="m-0 large-font lg:px-4 text-semibold">
                         {!isOnboardingMode ? titles[SignupMode.Default] : titles[SignupMode.Onboarding]}
                     </h1>
@@ -493,12 +493,12 @@ const Step1 = ({
                                     <div className="flex flex-align-items-start flex-justify-space-between gap-14">
                                         <div className="flex-item-fluid w0 relative">
                                             <AccountStepDetails
+                                                passwordFields={true}
                                                 model={model}
                                                 measure={measure}
                                                 loading={loadingChallenge || loadingSignout}
                                                 api={silentApi}
                                                 accountStepDetailsRef={accountDetailsRef}
-                                                onOpenLogin={onOpenLogin}
                                                 onChallengeError={() => {
                                                     setLoadingChallenge(false);
                                                     onChallengeError();
@@ -519,7 +519,50 @@ const Step1 = ({
                                                           }
                                                         : undefined
                                                 }
-                                                appName={appName}
+                                                footer={(details) => {
+                                                    const signIn = (
+                                                        <InlineLinkButton
+                                                            key="signin"
+                                                            className="link link-focus text-nowrap"
+                                                            onClick={() => {
+                                                                onOpenLogin({
+                                                                    email: details.email.trim(),
+                                                                    location: 'step2',
+                                                                });
+                                                            }}
+                                                        >
+                                                            {c('Link').t`Sign in`}
+                                                        </InlineLinkButton>
+                                                    );
+
+                                                    return (
+                                                        <>
+                                                            {hasSelectedFree && (
+                                                                <div className="mb-4">
+                                                                    <Button
+                                                                        type="submit"
+                                                                        size="large"
+                                                                        loading={loadingSignup}
+                                                                        color="norm"
+                                                                        fullWidth
+                                                                    >
+                                                                        {c('pass_signup_2023: Action')
+                                                                            .t`Start using ${appName} now`}
+                                                                    </Button>
+                                                                </div>
+                                                            )}
+                                                            <div className="text-center">
+                                                                <span>
+                                                                    {
+                                                                        // translator: Full sentence "Already have an account? Sign in"
+                                                                        c('Go to sign in')
+                                                                            .jt`Already have an account? ${signIn}`
+                                                                    }
+                                                                </span>
+                                                            </div>
+                                                        </>
+                                                    );
+                                                }}
                                             />
                                         </div>
                                         {step2Summary}

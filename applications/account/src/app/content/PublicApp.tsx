@@ -502,7 +502,6 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                                                         SSO_PATHS.CALENDAR_SIGNUP,
                                                         SSO_PATHS.MAIL_SIGNUP,
                                                         SSO_PATHS.DRIVE_SIGNUP,
-                                                        SSO_PATHS.VPN_SIGNUP,
                                                     ]}
                                                 >
                                                     <SignupContainer
@@ -531,13 +530,13 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                                                         }
                                                     />
                                                 </Route>
-                                                <Route path={SSO_PATHS.VPN_PRICING}>
+                                                <Route path={[SSO_PATHS.VPN_SIGNUP, SSO_PATHS.VPN_PRICING]}>
                                                     <SingleSignupContainer
                                                         loader={loader}
                                                         productParam={APPS.PROTONVPN_SETTINGS}
                                                         clientType={CLIENT_TYPES.VPN}
-                                                        toApp={maybePreAppIntent}
-                                                        toAppName={toAppName}
+                                                        toApp={APPS.PROTONVPN_SETTINGS}
+                                                        toAppName={getToAppName(APPS.PROTONVPN_SETTINGS)}
                                                         onLogin={handleLogin}
                                                         onBack={
                                                             hasBackToSwitch ? () => history.push('/login') : undefined
