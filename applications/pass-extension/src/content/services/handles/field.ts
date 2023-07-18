@@ -32,19 +32,19 @@ const onFocusField = (field: FieldHandle): ((evt?: FocusEvent) => void) =>
 
             const current = iframe.dropdown?.getCurrentField()?.element;
             const opened = iframe.dropdown?.getState().visible;
+
             const shouldClose = opened && current !== target;
-            const canOpen = getState().loggedIn && (!opened || shouldClose) && getSettings().autofill.openOnFocus;
+            const shouldOpen = getState().loggedIn && (!opened || shouldClose) && getSettings().autofill.openOnFocus;
 
             if (shouldClose) iframe.dropdown?.close();
-
-            return (
-                canOpen &&
+            if (shouldOpen) {
+                iframe.attachDropdown();
                 iframe.dropdown?.open({
                     action,
                     autofocused: true,
                     field,
-                })
-            );
+                });
+            }
         });
     });
 
