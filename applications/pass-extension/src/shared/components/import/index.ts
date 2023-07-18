@@ -1,2 +1,2 @@
 export * from './ImportForm';
-export * from './ImportVaultsPicker';
+export * from './ImportVaultsPickerModal';
