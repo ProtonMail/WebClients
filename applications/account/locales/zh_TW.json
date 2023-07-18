@@ -2976,6 +2976,11 @@
         "您已取消訂閱 ${ categoriesJsx } 電郵。"
       ]
     },
+    "Email Unsubscribe Categories": {
+      "${ allCategoryTitlesExceptTheLastOne } and ${ lastCategoryTitle }": [
+        "${ allCategoryTitlesExceptTheLastOne }和${ lastCategoryTitle }"
+      ]
+    },
     "Enabled 2FA": {
       "2FA": [
         "雙重驗證"
@@ -4392,6 +4397,12 @@
       "(1-2 emails per month)": [
         "(每月 1-2 封電郵)"
       ],
+      "(2-4 per year)": [
+        "(每年二至四)"
+      ],
+      "(4-6 emails per year)": [
+        "(每年四至六封電子郵件)"
+      ],
       "(during your first month)": [
         "(您初來首個月內)"
       ]
@@ -5219,7 +5230,7 @@
         "金額不得高於 (${ amount })。"
       ],
       "Amount below minimum (${ amount }).": [
-        "金額低於下限 (${ amount })。"
+        "金額不得低於 (${ amount })。"
       ],
       "An error occurred while communicating with the extension": [
         "與延伸功能通訊時發生錯誤"
@@ -6440,7 +6451,7 @@
         "為避免資料遺失，最好只刪除您知道的檔案，或是匯出複本。"
       ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
-        "欲完成您的繳款，請傳送 ${ btcAmountBold } 至以下位址。"
+        "為完成付款，請傳送${ btcAmountBold }至以下地址"
       ],
       "To confirm, please enter the name of the user you wish to delete.": [
         "要確認，請輸入您想要刪除的使用者名稱。"
@@ -6467,7 +6478,7 @@
         "若要匯入行程，須先在 ${ CALENDAR_APP_NAME } 創建新的行事曆。匯入後的行程，都會在此顯示。"
       ],
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
-        "想知道 ${ BRAND_NAME } 的最新發展嗎？您可以隨時訂閱我們的各種電子郵件通知以及 ${ blogLink }。"
+        "想知道 ${ BRAND_NAME } 的最新發展嗎？您可以前往 ${ blogLink } 隨時訂閱我們的各種電子郵件通知。"
       ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "為繼續此程序，選擇帳號復原手段，然後我們將能驗證您的請求。"
@@ -7471,7 +7482,7 @@
         "瀏覽器版本"
       ],
       "BTC address": [
-        "比特幣地址"
+        "比特幣位址 (數位錢包)"
       ],
       "BTC amount": [
         "比特幣金額"
@@ -8246,6 +8257,9 @@
       "${ BRAND_NAME } for Business newsletter": [
         "${ BRAND_NAME } 商業通訊"
       ],
+      "${ BRAND_NAME } important announcements": [
+        "${ BRAND_NAME }重要通知"
+      ],
       "${ BRAND_NAME } newsletter": [
         "${ BRAND_NAME } 通訊"
       ],
@@ -8442,6 +8456,9 @@
       ],
       "View guide": [
         "查看指南"
+      ],
+      "visit our blog": [
+        "參閱我們的部落格"
       ],
       "What is the difference between UDP and TCP protocols?": [
         "UDP 與 TCP 通訊協定有何分別？"
@@ -9352,10 +9369,10 @@
         "${ CALENDAR_APP_NAME }:點對點加密的行事曆"
       ],
       "${ DRIVE_APP_NAME }: end-to-end encrypted cloud storage": [
-        "${ DRIVE_APP_NAME }:點對點加密的雲端儲存"
+        "${ DRIVE_APP_NAME }:端對端加密的雲端儲存"
       ],
       "${ MAIL_APP_NAME }: end-to-end encrypted email": [
-        "${ MAIL_APP_NAME }:點對點加密的電子郵件"
+        "${ MAIL_APP_NAME }:端對端加密的電子郵件"
       ],
       "${ VPN_APP_NAME }: unblock content, browse privately": [
         "${ VPN_APP_NAME }:解鎖內容、更隱私的瀏覽"
@@ -9980,7 +9997,7 @@
         "繼續使用 ${ free }"
       ],
       "Continue with Bitcoin": [
-        "使用Bitcoin以繼續"
+        "以比特幣繳款方式繼續"
       ],
       "create a new account": [
         "創建一個新的帳號"
@@ -10018,7 +10035,7 @@
     },
     "pass_signup_2023: Feature": {
       "End-to-end encrypted": [
-        "點對點加密"
+        "端對端加密"
       ],
       "Open source": [
         "開原"
@@ -10100,7 +10117,7 @@
         "加密的密碼管理器保護您的身分"
       ],
       "End-to-end encrypted notes": [
-        "點對點加密附註"
+        "端對端加密的附註"
       ],
       "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
         "**每月${ relativePrice }及更多**，讓您存取付費版${ BRAND_NAME }功能!"
@@ -12682,7 +12699,7 @@
     },
     "tooltip": {
       "${ PASS_APP_NAME }: end-to-end encrypted password manager": [
-        "${ PASS_APP_NAME }:點對點加密的密碼管理器"
+        "${ PASS_APP_NAME }:端對端加密的密碼管理器"
       ]
     },
     "Tooltip automatically attach public key": {
