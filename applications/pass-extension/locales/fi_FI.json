@@ -1,0 +1,1586 @@
+{
+  "headers": {
+    "plural-forms": "nplurals=2; plural=(n != 1);",
+    "language": "fi_FI"
+  },
+  "contexts": {
+    "Action": {
+      "Add": [
+        "Lisää"
+      ],
+      "Add current url": [
+        "Lisää nykyinen URL"
+      ],
+      "Add more": [
+        "Lisää"
+      ],
+      "Add new item": [
+        "Lisää uusi kohde"
+      ],
+      "Advanced options": [
+        "Lisävalinnat"
+      ],
+      "Back": [
+        "Takaisin"
+      ],
+      "Can't find your password manager? Please let us know!": [
+        "Etkö löydä käyttämääsi salasanahallintaa? Kerro siitä meille!"
+      ],
+      "Cancel": [
+        "Peru"
+      ],
+      "Change": [
+        "Muuta"
+      ],
+      "Choose a file or drag it here": [
+        "Valitse tiedosto tai pudota se tähän"
+      ],
+      "Clear": [
+        "Tyhjennä"
+      ],
+      "Clear search": [
+        "Tyhjennä haku"
+      ],
+      "Close": [
+        "Sulje"
+      ],
+      "Close advanced options": [
+        "Sulje lisävalinnat"
+      ],
+      "Close navigation": [
+        "Sulje navigaatio"
+      ],
+      "Confirm": [
+        "Vahvista"
+      ],
+      "Continue without pinning": [
+        "Jatka kiinnittämättä"
+      ],
+      "Copy and close": [
+        "Kopioi ja sulje"
+      ],
+      "Copy to clipboard": [
+        "Kopioi leikepöydälle"
+      ],
+      "Create": [
+        "Luo"
+      ],
+      "Create a ${ BRAND_NAME } account": [
+        "Luo ${ BRAND_NAME }-tili"
+      ],
+      "Create alias": [
+        "Luo alias"
+      ],
+      "Create an account": [
+        "Luo tili"
+      ],
+      "Create login": [
+        "Luo kirjautumistieto"
+      ],
+      "Create note": [
+        "Luo muistiinpano"
+      ],
+      "Create vault": [
+        "Luo holvi"
+      ],
+      "Creating vault": [
+        "Luodaan holvia"
+      ],
+      "Delete": [
+        "Poista"
+      ],
+      "Delete alias": [
+        "Poista alias"
+      ],
+      "Delete all": [
+        "Poista kaikki"
+      ],
+      "Delete password": [
+        "Poista salasana"
+      ],
+      "Delete permanently": [
+        "Poista pysyvästi"
+      ],
+      "Delete vault": [
+        "Poista holvi"
+      ],
+      "Discard": [
+        "Hylkää"
+      ],
+      "Dismiss": [
+        "Hylkää"
+      ],
+      "Done": [
+        "Valmis"
+      ],
+      "Edit": [
+        "Muokkaa"
+      ],
+      "Edit vault": [
+        "Muokkaa holvia"
+      ],
+      "Export": [
+        "Vie"
+      ],
+      "Feedback": [
+        "Palaute"
+      ],
+      "Fill password": [
+        "Täytä salasana"
+      ],
+      "Filter vault items": [
+        "Suodata holvin kohteita"
+      ],
+      "Generate alias": [
+        "Luo alias"
+      ],
+      "Generate password": [
+        "Luo salasana"
+      ],
+      "Get mobile apps": [
+        "Hanki mobiilisovellukset"
+      ],
+      "Help us improve": [
+        "Auta meitä kehittymään"
+      ],
+      "Hide": [
+        "Piilota"
+      ],
+      "How do I export my data from ${ PROVIDER_INFO_MAP[form.values.provider].title }?": [
+        "Miten vien tietoni palvelusta ${ PROVIDER_INFO_MAP[form.values.provider].title }?"
+      ],
+      "Import": [
+        "Tuo"
+      ],
+      "Import your passwords": [
+        "Tuo salasanasi"
+      ],
+      "Importing": [
+        "Tuodaan"
+      ],
+      "Learn more": [
+        "Lue lisää"
+      ],
+      "Lock ${ PASS_APP_NAME }": [
+        "Lukitse ${ PASS_APP_NAME }"
+      ],
+      "More options": [
+        "Lisää asetuksia"
+      ],
+      "Move to another vault": [
+        "Siirrä toiseen holviin"
+      ],
+      "Move to Trash": [
+        "Siirrä roskakoriin"
+      ],
+      "Move to trash": [
+        "Siirrä roskakoriin"
+      ],
+      "Not now": [
+        "Ei nyt"
+      ],
+      "Open navigation": [
+        "Avaa navigaatio"
+      ],
+      "Pass for Android": [
+        "Pass Androidille"
+      ],
+      "Pass for iOS": [
+        "Pass iOS:lle"
+      ],
+      "Proceed": [
+        "Jatka"
+      ],
+      "Rate Pass": [
+        "Arvostele Pass"
+      ],
+      "Refresh extension": [
+        "Päivitä laajennus"
+      ],
+      "Refresh the page": [
+        "Päivitä sivu"
+      ],
+      "Regenerate": [
+        "Uudista"
+      ],
+      "Reload extension": [
+        "Lataa laajennus uudelleen"
+      ],
+      "Request a feature": [
+        "Pyydä ominaisuutta"
+      ],
+      "Restore item": [
+        "Palauta kohde"
+      ],
+      "Retry": [
+        "Yritä uudelleen"
+      ],
+      "Save": [
+        "Tallenna"
+      ],
+      "Saving": [
+        "Tallennetaan"
+      ],
+      "Send us a message": [
+        "Lähetä meille viesti"
+      ],
+      "Show": [
+        "Näytä"
+      ],
+      "Sign back in": [
+        "Kirjaudu takaisin sisään"
+      ],
+      "Sign in": [
+        "Kirjaudu sisään"
+      ],
+      "Sign in with ${ BRAND_NAME }": [
+        "Kirjaudu palvelulla ${ BRAND_NAME }"
+      ],
+      "Sign out": [
+        "Kirjaudu ulos"
+      ],
+      "Sort vault items": [
+        "Järjestä holvin kohteet"
+      ],
+      "Submit": [
+        "Lähetä"
+      ],
+      "Submitting report...": [
+        "Lähetetään raporttia..."
+      ],
+      "Sync": [
+        "Synkronoi"
+      ],
+      "Try again": [
+        "Yritä uudelleen"
+      ],
+      "Update": [
+        "Päivitä"
+      ],
+      "Updating": [
+        "Päivitetään"
+      ],
+      "Upgrade": [
+        "Päivitä"
+      ],
+      "Upgrade to keep these features": [
+        "Päivitä säilyttääksesi nämä ominaisuudet"
+      ],
+      "Write us on Reddit": [
+        "Kirjoita meille Redditissä"
+      ],
+      "Write us on Twitter": [
+        "Kirjoita meille Twitterissä"
+      ]
+    },
+    "Button": {
+      "More info": [
+        "Lisätietoja"
+      ]
+    },
+    "Collapsible tooltip": {
+      "Collapse": [
+        "Piennennä"
+      ],
+      "Expand": [
+        "Laajenna"
+      ]
+    },
+    "Error": {
+      "${ PASS_APP_NAME } export file could not be parsed. ${ errorDetail }": [
+        "${ PASS_APP_NAME }in vientitiedostoa ei voitu jäsentää. ${ errorDetail }"
+      ],
+      "1Password export file could not be parsed. ${ errorDetail }": [
+        "1Passwordin vientitiedostoa ei voitu jäsentää. ${ errorDetail }"
+      ],
+      "Authentication error": [
+        "Todennusvirhe"
+      ],
+      "Auto-lock could not be activated": [
+        "Automaattilukitusta ei voitu ottaa käyttöön"
+      ],
+      "Auto-lock could not be disabled": [
+        "Automaattilukitusta ei voitu poistaa käytöstä"
+      ],
+      "Bitwarden export file could not be parsed. ${ errorDetail }": [
+        "Bitwardenin vientitiedostoa ei voitu jäsentää. ${ errorDetail }"
+      ],
+      "Cannot create alias.": [
+        "Aliaksen luonti ei onnistu."
+      ],
+      "Chrome export file could not be parsed. ${ errorDetail }": [
+        "Chromen vientitiedostoa ei voitu jäsentää. ${ errorDetail }"
+      ],
+      "Could not open created vault": [
+        "Luotua holvia ei voitu avata"
+      ],
+      "Could not open updated vault": [
+        "Muuttunutta holvia ei voitu avata"
+      ],
+      "Could not resume your session : ${ description }": [
+        "Istuntoasi ei voitu jatkaa: ${ description }"
+      ],
+      "CSV file is missing expected headers: ${ missingHeaders }": [
+        "CSV-tiedostosta puuttuu odotettuja otsikoita: ${ missingHeaders }"
+      ],
+      "Dashlane export file could not be parsed. ${ errorDetail }": [
+        "Dashlanen vientitiedostoa ei voitu jäsentää. ${ errorDetail }"
+      ],
+      "Decrypting your ${ PASS_APP_NAME } export file failed. ${ errorDetail }": [
+        "${ PASS_APP_NAME }in vientitiedoston salauksen purku epäonnistui. ${ errorDetail }"
+      ],
+      "Deleting item failed": [
+        "Kohteen poistaminen epäonnistui"
+      ],
+      "Deleting vault \"${ payload.content.name }\" failed": [
+        "Holvin \"${ payload.content.name }\" poisto epäonnistui"
+      ],
+      "Detected ${ errors.length } corrupted csv row": [
+        "Havaittiin ${ errors.length } virheellinen CSV-rivi",
+        "Havaittiin ${ errors.length } virheellinen CSV-rivi"
+      ],
+      "Editing item failed": [
+        "Kohteen muokkaus epäonnistui"
+      ],
+      "Empty CSV file": [
+        "Tyhjä CSV-tiedosto"
+      ],
+      "Emptying trash failed": [
+        "Roskakorin tyhjennys epäonnistui"
+      ],
+      "Encrypted JSON not supported": [
+        "Salattua JSON-tiedostoa ei tueta"
+      ],
+      "Error reporting problem": [
+        "Ongelma ilmoitettaessa virheestä"
+      ],
+      "File could not be parsed": [
+        "Tiedostoa ei voitu jäsentää"
+      ],
+      "Firefox export file could not be parsed. ${ errorDetail }": [
+        "Firefoxin vientitiedostoa ei voitu jäsentää. ${ errorDetail }"
+      ],
+      "Import failed for vault \"${ vaultData.vaultName }\" : ${ description }": [
+        "Holvin \"${ vaultData.vaultName }\" tuonti epäonnistui: ${ description }"
+      ],
+      "Importing items failed": [
+        "Kohteiden tuonti epäonnistui"
+      ],
+      "Invalid password manager": [
+        "Virheellinen salasanahallinta"
+      ],
+      "Item content cannot exceed 40kb": [
+        "Kohteen sisältö voi olla enintään 40 kt"
+      ],
+      "Item creation failed": [
+        "Kohteen luonti epäonnistui"
+      ],
+      "KeePass export file could not be parsed. ${ errorDetail }": [
+        "KeePassin vientitiedostoa ei voitu jäsentää. ${ errorDetail }"
+      ],
+      "Keeper export file could not be parsed. ${ errorDetail }": [
+        "Keeperin vientitiedostoa ei voitu jäsentää. ${ errorDetail }"
+      ],
+      "LastPass export file could not be parsed. ${ errorDetail }": [
+        "LastPassin vientitiedostoa ei voitu jäsentää. ${ errorDetail }"
+      ],
+      "LastPass will export a corrupted CSV file if any of your item fields contain unexpected commas, quotes or multiple lines": [
+        "LastPass vie virheellisen CSV-tiedoston, jos yksikin kohteidesi kentistäsi sisältää odottamattomia pilkkuja, lainausmerkkejä tai useita rivejä"
+      ],
+      "Moving item failed": [
+        "Kohteen siirto epäonnistui"
+      ],
+      "Passphrase is incorrect": [
+        "Tunnuslauseke on virheellinen"
+      ],
+      "PIN codes do not match": [
+        "PIN-koodit eivät täsmää"
+      ],
+      "Please grant ${ PASS_APP_NAME } the necessary extension permissions in order to continue": [
+        "Anna palvelulle ${ PASS_APP_NAME } tarvittavat laajennusoikeudet, jotta voit jatkaa"
+      ],
+      "Please pin the extension or select \"Continue without pinning\".": [
+        "Kiinnitä laajennus tai valitse \"Jatka kiinnittämättä\"."
+      ],
+      "Request timed out": [
+        "Pyyntö aikakatkaistiin"
+      ],
+      "Requesting alias details failed": [
+        "Alias-tietojen hakeminen epäonnistui"
+      ],
+      "Requesting alias options failed": [
+        "Alias-vaihtoehtojen hakeminen epäonnistui"
+      ],
+      "Restoring item failed": [
+        "Kohteen palautus epäonnistui"
+      ],
+      "Safari export file could not be parsed. ${ errorDetail }": [
+        "Safarin vientitiedostoa ei voitu jäsentää. ${ errorDetail }"
+      ],
+      "Setting \"${ payload.name }\" as primary vault failed": [
+        "\"${ payload.name }\" asettaminen ensisijaiseksi holviksi epäonnistui"
+      ],
+      "Settings update failed": [
+        "Asetusten päivitys epäonnistui"
+      ],
+      "Some vaults are no longer accessible due to a password reset. Reactivate your account keys in order to regain access. ${ reactivateLink }": [
+        "Jotkin kolvit eivät ole enää käytettävissä salasanan nollauksen vuoksi. Palauta käyttöoikeus aktivoimalla tilisi avaimet uudelleen. ${ reactivateLink }"
+      ],
+      "Something went wrong": [
+        "Jotain meni pieleen"
+      ],
+      "Something went wrong. Please reload the ${ PASS_APP_NAME } extension. This issue has been logged": [
+        "Jotain meni pieleen. Lataa ${ PASS_APP_NAME } -laajennus uudelleen. Ongelma on kirjattu lokiin"
+      ],
+      "The file you are trying to import is empty": [
+        "Tiedosto, jota yrität tuoda, on tyhjä"
+      ],
+      "Too many failed attempts. Please sign in again.": [
+        "Liian monta epäonnistunutta yritystä. Kirjaudu sisään uudelleen."
+      ],
+      "Trashing item failed": [
+        "Kohteen siirto roskakoriin epäonnistui"
+      ],
+      "Unable to boot": [
+        "Käynnistys epäonnistui"
+      ],
+      "Unable to generate an OTP code for this item": [
+        "OTP-koodia ei voida luoda tälle kohteelle"
+      ],
+      "Unable to sync": [
+        "Synkronointi epäonnistui"
+      ],
+      "Unknown error": [
+        "Tuntematon virhe"
+      ],
+      "Unsupported ${ PASS_APP_NAME } file format": [
+        "Ei tuettu ${ PASS_APP_NAME } -tiedostomuoto"
+      ],
+      "Unsupported 1Password file format": [
+        "Ei tuettu 1Password-tiedostomuoto"
+      ],
+      "Updating vault \"${ payload.content.name }\" failed": [
+        "Holvin \"${ payload.content.name }\" päivitys epäonnistui"
+      ],
+      "Vault \"${ payload.content.name }\" creation failed": [
+        "Holvin \"${ payload.content.name }\" luonti epäonnistui"
+      ],
+      "Vault \"${ vaultData.vaultName }\" could not be created": [
+        "Holvia \"${ vaultData.vaultName }\" ei voitu luoda"
+      ],
+      "Vault name does not match": [
+        "Holvin nimi ei täsmää"
+      ],
+      "Wrong PIN code. Try again.": [
+        "Väärä PIN-koodi. Yritä uudelleen."
+      ]
+    },
+    "Error message": {
+      "Please refresh the page or try again later.": [
+        "Päivitä sivu tai yritä myöhemmin uudelleen."
+      ],
+      "Something went wrong": [
+        "Jotain meni pieleen"
+      ]
+    },
+    "file size format": {
+      "byte": [
+        "tavu",
+        "tavua"
+      ],
+      "GB": [
+        "Gt"
+      ],
+      "KB": [
+        "Kt"
+      ],
+      "MB": [
+        "Mt"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "Tavu",
+        "Tavua"
+      ],
+      "Gigabyte": [
+        "Gigatavu",
+        "Gigatavua"
+      ],
+      "Kilobyte": [
+        "Kilotavu",
+        "Kilotavua"
+      ],
+      "Megabyte": [
+        "Megatavu",
+        "Megatavua"
+      ]
+    },
+    "Info": {
+      "\"${ payload.item.data.metadata.name }\" item was dismissed": [
+        "Kohde \"${ payload.item.data.metadata.name }\" hylättiin"
+      ],
+      "\"${ payload.item.data.metadata.name }\" update was dismissed": [
+        "Kohteen \"${ payload.item.data.metadata.name }\" päivitys hylättiin"
+      ],
+      "\"${ payload.name }\" set as primary vault": [
+        "\"${ payload.name }\" asetettiin ensisijaiseksi holviksi"
+      ],
+      "${ count } item": [
+        "${ count } kohde",
+        "${ count } kohdetta"
+      ],
+      "${ PASS_APP_NAME } will only import logins and notes. Credit cards, passports, attached files, etc. are not supported at the moment.": [
+        "${ PASS_APP_NAME } tuo vain kirjautumistiedot ja muistiinpanot. Maksukortteja, passeja, liitetiedostoja ja muita tietoja ei tällä hetkellä tueta."
+      ],
+      "${ revisionNumber } time": [
+        "${ revisionNumber } kerran",
+        "${ revisionNumber } kertaa"
+      ],
+      "${ totalImportedItems } item": [
+        "${ totalImportedItems } kohde",
+        "${ totalImportedItems } kohdetta"
+      ],
+      "${ totalItems } item": [
+        "${ totalItems } kohde",
+        "${ totalItems } kohdetta"
+      ],
+      "${ trialDaysLeft } day left": [
+        "${ trialDaysLeft } päivä jäljellä",
+        "${ trialDaysLeft } päivää jäljellä"
+      ],
+      "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
+        "Uusi sovelluksen ${ PASS_APP_NAME } versio on saatavilla. Päivitä se nauttiaksesi uusimmista ominaisuuksista ja viankorjauksista."
+      ],
+      "Access ${ PASS_APP_NAME } via this icon": [
+        "Käytä ${ PASS_APP_NAME }ia tästä kuvakkeesta"
+      ],
+      "Access to ${ PASS_APP_NAME } will require a pin code to unlock your session": [
+        "${ PASS_APP_NAME } -istunnon avaus vaatii PIN-koodin"
+      ],
+      "Access your passwords on the go with our mobile apps.": [
+        "Mobiilisovelluksillamme tavoitat salasanasi myös liikkeellä ollessasi."
+      ],
+      "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
+        "Alias \"${ item.aliasEmail }\" siirrettiin roskakoriin, eikä se enää ohjaa viestejä postilaatikkoosi"
+      ],
+      "All items permanently removed": [
+        "Kaikki kohteet poistettiin pysyvästi"
+      ],
+      "All items successfully restored": [
+        "Kaikki kohteet palautettiin"
+      ],
+      "An item previously shared with you was disabled": [
+        "Aiemmin kanssasi jaettu kohde poistettiin käytöstä"
+      ],
+      "Auto-lock successfully disabled": [
+        "Automaattilukitus poistettiin käytöstä"
+      ],
+      "Autosaved on ${ submissionURL }": [
+        "Automaattitallennettiin osoitteesta ${ submissionURL }"
+      ],
+      "Check out all the exclusive features that are available to you for a limited time.": [
+        "Tutustu kaikkiin ainutlaatuisiin ominaisuuksiin, jotka ovat käytettävissäsi rajoitetun ajan."
+      ],
+      "Copied to clipboard": [
+        "Kopioitiin leikepöydälle"
+      ],
+      "Creating alias...": [
+        "Luodaan aliasta.."
+      ],
+      "Custom fields": [
+        "Mukautettavia kenttiä"
+      ],
+      "Decrypting your data": [
+        "Puretaan tietojesi salausta"
+      ],
+      "Deleted items will be moved here first": [
+        "Poistetut kohteet siirretään ensin tänne"
+      ],
+      "Discover ${ PASS_APP_NAME } Youtube Video": [
+        "Tutustu ${ PASS_APP_NAME } -Youtube-videoon"
+      ],
+      "Drop file here to upload": [
+        "Pudota ladattava tiedosto tähän"
+      ],
+      "Drop to import": [
+        "Tuo pudottamalla"
+      ],
+      "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
+        "Tuo olemassa olevat salasanasi ${ PASS_APP_NAME }iin helposti."
+      ],
+      "Enable ${ PASS_APP_NAME } by connecting your ${ BRAND_NAME } account": [
+        "Ota ${ PASS_APP_NAME } käyttöön yhdistämällä ${ BRAND_NAME }-tilisi"
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Syötä vahvistuskoodi. Numero ${ digit }."
+      ],
+      "Enter your pin code": [
+        "Syötä PIN-koodisi"
+      ],
+      "Enter your PIN code": [
+        "Syötä PIN-koodisi"
+      ],
+      "Export is encrypted using PGP and requires a strong passphrase.": [
+        "Tuonti salataan PGP:llä ja se vaatii vahvan tunnuslausekkeen."
+      ],
+      "Follow these simple steps to get the best experience:": [
+        "Näillä ohjeilla saat parhaan käyttökokemuksen:"
+      ],
+      "Free Trial": [
+        "Ilmainen kokeilu"
+      ],
+      "Generated passwords will be stored for a period of one day.": [
+        "Generoituja salasanoja säilytetään yhden päivän ajan."
+      ],
+      "Generating alias...": [
+        "Luodaan aliasta.."
+      ],
+      "Here you will find all the necessary information to get you started.": [
+        "Tästä saat kaikki tarvittavat tiedot, jotta pääset alkuun."
+      ],
+      "If disabled, ${ PASS_APP_NAME } will not display the item favicon via ${ BRAND_NAME } anonymised image proxy.": [
+        "Asetuksen ollessa pois käytöstä ${ PASS_APP_NAME } ei näytä kohteen sivustokuvaketta ${ BRAND_NAME }in anonymisoidun kuvavälityspalvelimen kautta."
+      ],
+      "If disabled, ${ PASS_APP_NAME } will not prompt you to save or update credentials.": [
+        "Asetuksen ollessa pois käytöstä ${ PASS_APP_NAME } ei tarjoa kirjautumistietojen tallennusta tai päivitystä."
+      ],
+      "If disabled, ${ PASS_APP_NAME } will not suggest creating an email alias on sign-up forms.": [
+        "Asetuksen ollessa pois käytöstä ${ PASS_APP_NAME } ei ehdota rekisteröitymislomakkeissa sähköpostialiasten luontia."
+      ],
+      "If disabled, ${ PASS_APP_NAME } will not suggest creating strong passwords on sign-up forms.": [
+        "Asetuksen ollessa pois käytöstä ${ PASS_APP_NAME } ei ehdota rekisteröitymislomakkeissa vahvojen salasanojen luontia."
+      ],
+      "If enabled, the autosave dropdown will automatically open on field focus.": [
+        "Tämä avaa automaattitäytön pudotusvalikon automaattisesti kentän aktivoituessa."
+      ],
+      "If enabled, you can quickly autofill your credentials by clicking on the ${ PASS_APP_NAME } icon.": [
+        "Tämä mahdollistaa kirjautumistietojesi nopean automaattitäytön ${ PASS_APP_NAME } -kuvaketta painamalla."
+      ],
+      "Import in progress :": [
+        "Tuonti on käynnissä:"
+      ],
+      "Imported ${ payload.total } item": [
+        "${ payload.total } kohde tuotiin",
+        "${ payload.total } kohdetta tuotiin"
+      ],
+      "Imported on ${ date }": [
+        "Tuotiin ${ date }"
+      ],
+      "In order to get the best experience out of ${ PASS_APP_NAME }, please grant the necessary extension permissions": [
+        "Jotta saat parhaan mahdollisen kokemuksen ${ PASS_APP_NAME } -sovelluksen käytössä, myönnä tarvittavat laajennuksen käyttöoikeudet"
+      ],
+      "In order to migrate your data to ${ PASS_APP_NAME } from another password manager, export your passwords and import them using the form below. Once all your items have been imported, delete the previously exported file.": [
+        "Siirtääksesi tietosi muista salasanahallinnoista tallenna ne niiden tarjoamilla vientivalinnoilla ja tuo ne ${ PASS_APP_NAME }iin alla olevalla lomakkeella. Kun kaikki kohteet on tuotu, poista aiemmin tallennettu vientitiedosto."
+      ],
+      "Integrated 2FA authenticator": [
+        "Sisäänrakennettu kaksivaiheinen todentaja"
+      ],
+      "Internet connection lost": [
+        "Internet-yhteys katkesi"
+      ],
+      "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
+        "Näyttää siltä, että olet jo kirjautunut sisään ${ PASS_APP_NAME }. Jos yrität kirjautua sisään toisella tilillä, kirjaudu ensin ulos laajennuksesta."
+      ],
+      "item": [
+        "kohde",
+        "kohdetta"
+      ],
+      "Item \"${ payload.item.data.metadata.name }\" created": [
+        "Kohde \"${ payload.item.data.metadata.name }\" luotiin"
+      ],
+      "Item \"${ payload.item.data.metadata.name }\" updated": [
+        "Kohde \"${ payload.item.data.metadata.name }\" päivitettiin"
+      ],
+      "Item moved to trash": [
+        "Kohde siirrettiin roskakoriin"
+      ],
+      "Item permanently deleted": [
+        "Kohde poistettiin pysyvästi"
+      ],
+      "Item restored": [
+        "Kohde palautettiin"
+      ],
+      "Item successfully moved": [
+        "Kohde siirrettiin onnistuneesti"
+      ],
+      "Let's get you started by creating your first item": [
+        "Aloita luomalla ensimmäinen kohteesi"
+      ],
+      "Loading": [
+        "Ladataan"
+      ],
+      "Loading extension": [
+        "Ladataan laajennusta"
+      ],
+      "Loading...": [
+        "Ladataan..."
+      ],
+      "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
+        "${ PASS_APP_NAME } on muutakin kuin pelkkä salasanahallinta, sillä se voi suojata salasanasi ja henkilökohtaisen sähköpostiosoitteesi sähköpostialiaksilla. Tietosi säilytetään päästä päähän -salattuina samalla tekniikalla, jota ${ MAIL_APP_NAME } käyttää, ja vain sinulla on niiden käyttöoikeus."
+      ],
+      "Multiple vaults": [
+        "Useita holveja"
+      ],
+      "N/A": [
+        "N/A"
+      ],
+      "No login found": [
+        "Kirjautumistietoa ei löytynyt"
+      ],
+      "None": [
+        "Ei mitään"
+      ],
+      "Open the Extensions menu": [
+        "Avaa laajennusvalikko"
+      ],
+      "Passwords older than 1 day are automatically deleted from history.": [
+        "Yli päivän vanhat salasanat poistetaan automaattisesti historiasta."
+      ],
+      "Pin ${ PASS_APP_NAME } to your toolbar": [
+        "Kiinnitä ${ PASS_APP_NAME } työkalupalkkiisi"
+      ],
+      "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
+        "PIN-koodi on rekisteröity ja voit nyt avata ${ PASS_APP_NAME }in sillä."
+      ],
+      "Please confirm your PIN code in order to unregister your current lock.\n${ PASS_APP_NAME } will then never lock.": [
+        "Poista nykyinen lukitus vahvistamalla PIN-koodisi. Sen jälkeen\n${ PASS_APP_NAME } ei enää koskaan lukitu."
+      ],
+      "Please confirm your PIN code to edit this setting.": [
+        "Muokkaa asetusta vahvistamalla PIN-koodisi."
+      ],
+      "Please confirm your PIN code to finish registering your auto-lock settings.": [
+        "Viimeistele automaattilukituksen asetus vahvistamalla PIN-koodisi."
+      ],
+      "Please enter your current pin code to continue": [
+        "Jatka syöttämällä nykyinen PIN-koodisi"
+      ],
+      "Press Enter to copy": [
+        "Kopioi painamalla Enter-näppäintä"
+      ],
+      "Privacy is a big concern for us. Learn why ${ PASS_APP_NAME } is different.": [
+        "Yksityisyys on meille suuri huolenaihe. Lue, miksi ${ PASS_APP_NAME } on erilainen."
+      ],
+      "Save login": [
+        "Tallenna kirjautumistieto"
+      ],
+      "Select the destination vault for each imported vault. By default a new vault will be created for each imported vault.": [
+        "Valitse kohdeholvi kullekin tuodulle holville. Oletusarvoisesti jokaiselle tuodulle holville luodaan uusi holvi."
+      ],
+      "Servers are unreachable. Please try again in a few minutes": [
+        "Palvelimia ei tavoiteta. Yritä muutaman minuutin kuluttua uudelleen"
+      ],
+      "Session timed out": [
+        "Istunto aikakatkaistiin"
+      ],
+      "Set up a PIN code to easily lock your data": [
+        "Lukitse tietosi helposti asettamalla PIN-koodi"
+      ],
+      "Settings successfully updated": [
+        "Asetukset päivitettiin onnistuneesti"
+      ],
+      "Sign in or create an account to continue.": [
+        "Jatka kirjautumalla tai luomalla tili."
+      ],
+      "Sign in to your account": [
+        "Kirjaudu tilillesi"
+      ],
+      "Signing you in": [
+        "Kirjaudutaan sisään"
+      ],
+      "Successfully exported all your items": [
+        "Kaikki kohteesi vietiin"
+      ],
+      "Successfully synced all vaults": [
+        "Kaikki holvit synkronoitiin onnistuneesti"
+      ],
+      "Syncing your vaults…": [
+        "Holvejasi synkronoidaan…"
+      ],
+      "Thank you, the problem has been reported": [
+        "Kiitos, ongelmasta on ilmoitettu"
+      ],
+      "The following item could not be imported :": [
+        "Seuraavaa kohdetta ei voitu tuoda:",
+        "Seuraavia ${ result.ignored.length } kohdetta ei voitu tuoda"
+      ],
+      "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
+        "Teksti, jota yrität liittää, ylittää ${ maxLength }-merkin enimmäispituuden."
+      ],
+      "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
+        "Tämä vienti on salaamaton, eli salasanasi voi nähdä kuka tahansa, jolla on pääsy vietyyn tiedostoon. Tietojen suojaamiseksi tiedosto tulee poistaa heti, kun et enää tarvitse sitä."
+      ],
+      "This will disable your browser's default auto-saving capabilities.": [
+        "Tämä poistaa selaimesi oletusarvoiset automaattitallennusominaisuudet käytöstä."
+      ],
+      "Unable to copy to clipboard": [
+        "Leikepöydälle kopiointi epäonnistui"
+      ],
+      "Unlock it with your PIN to access the settings": [
+        "Avaa lukitus PIN-koodillasi päästäksesi asetuksiin."
+      ],
+      "Update login": [
+        "Päivitä kirjautumistieto"
+      ],
+      "Upgrade ${ PASS_APP_NAME }": [
+        "Päivitä ${ PASS_APP_NAME }"
+      ],
+      "Vault \"${ payload.content.name }\" successfully deleted": [
+        "Holvi \"${ payload.content.name }\" poistettiin onnistuneesti"
+      ],
+      "Vault \"${ payload.share.content.name }\" successfully created": [
+        "Holvi \"${ payload.share.content.name }\" luotiin"
+      ],
+      "Vault \"${ payload.share.content.name }\" successfully updated": [
+        "Holvi \"${ payload.share.content.name }\" päivitettiin onnistuneesti"
+      ],
+      "Vault \"${ share.content.name }\" was disabled": [
+        "Holvi \"${ share.content.name }\" otettiin pois käytöstä"
+      ],
+      "You are about to create:": [
+        "Olet luomassa:"
+      ],
+      "You have ${ daysRemaining } day left in your trial period.": [
+        "Kokeilujaksoasi on jäljellä ${ daysRemaining } päivä.",
+        "Kokeilujaksoasi on jäljellä ${ daysRemaining } päivää."
+      ],
+      "You have exceeded the number of vaults included in your subscription. Items can only be moved to your primary vault. To move items between all vaults upgrade your subscription.": [
+        "Olet ylittänyt tilaukseesi sisältyvän holvien enimmäismäärän. Kohteita voidaan siirtää vain ensisijaiseen holviin. Jos haluat siirtää kohteita kaikkien holvien välillä, päivitä tilauksesi."
+      ],
+      "You have exceeded the number of vaults included in your subscription. New items can only be created in your primary vault. To create new items in all vaults upgrade your subscription.": [
+        "Olet ylittänyt tilaukseesi sisältyvän holvien enimmäismäärän. Uusia kohteita voidaan luoda vain ensisijaiseen holviin. Jos haluat luoda kohteita kaikkiin holveihin, päivitä tilauksesi."
+      ],
+      "You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.": [
+        "Luotujen aliasten enimmäismäärä on saavutettu. Luo aliaksia rajattomasti päivittämällä tilauksesi."
+      ],
+      "You have reached the limit of vaults you can create. Create an unlimited number of vaults when you upgrade your subscription.": [
+        "Luotujen holvien enimmäismäärä on saavutettu. Luo holveja rajattomasti päivittämällä tilauksesi."
+      ],
+      "You have reached the maximum allowed length of ${ maxLength } characters.": [
+        "Olet saavuttanut ${ maxLength }-merkin enimmäispituuden."
+      ],
+      "You will use this PIN to unlock ${ PASS_APP_NAME } once it auto-locks after a period of inactivity.": [
+        "Tällä PIN-koodilla voit avata ${ PASS_APP_NAME }in sen lukkiuduttua toimettomuuden seuraksena automaattisesti."
+      ],
+      "You're about to create": [
+        "Olet luomassa"
+      ],
+      "Your ${ PASS_APP_NAME } session is locked": [
+        "${ PASS_APP_NAME } -istuntosi on lukittu."
+      ],
+      "Your files will be encrypted and then saved": [
+        "Tiedostosi salataan ja tallennetaan"
+      ]
+    },
+    "Label": {
+      "${ passwordOptions.options.length } character": [
+        "${ passwordOptions.options.length } merkki",
+        "${ passwordOptions.options.length } merkkiä"
+      ],
+      "${ passwordOptions.options.wordCount } word": [
+        "${ passwordOptions.options.wordCount } sana",
+        "${ passwordOptions.options.wordCount } sanaa"
+      ],
+      "1 hour": [
+        "Tunnin kuluttua"
+      ],
+      "1 minute": [
+        "Minuutin kuluttua"
+      ],
+      "10 minutes": [
+        "10 minuutin kuluttua"
+      ],
+      "15 minutes": [
+        "15 minuutin kuluttua"
+      ],
+      "2FA secret (TOTP)": [
+        "2FA-salaisuus (TOTP)"
+      ],
+      "2FA token (TOTP)": [
+        "2FA-todennustunniste (TOTP)"
+      ],
+      "30 minutes": [
+        "30 minuutin kuluttua"
+      ],
+      "30 seconds": [
+        "30 sekunnin kuluttua"
+      ],
+      "5 minutes": [
+        "5 minuutin kuluttua"
+      ],
+      "A-Z": [
+        "A-Ö"
+      ],
+      "Alias": [
+        "Alias"
+      ],
+      "Alias address": [
+        "Alias-osoite"
+      ],
+      "Aliases": [
+        "Aliakset"
+      ],
+      "All": [
+        "Kaikki"
+      ],
+      "All vaults": [
+        "Kaikki holvit"
+      ],
+      "Alphabetical": [
+        "Aakkosellinen"
+      ],
+      "Application logs": [
+        "Sovelluksen lokitiedot"
+      ],
+      "Auto-lock ${ PASS_APP_NAME }": [
+        "Lukitse ${ PASS_APP_NAME } automaattisesti"
+      ],
+      "Auto-lock after": [
+        "Lukitse automaattisesti"
+      ],
+      "Autofill": [
+        "Automaattitäyttö"
+      ],
+      "Automatically open autofill when focusing login fields": [
+        "Näytä automaattitäyttö automaattisesti kun kirjautumiskenttä aktivoidaan"
+      ],
+      "Autosave": [
+        "Automaattitallennus"
+      ],
+      "Autosuggest": [
+        "Automaattiehdotus"
+      ],
+      "Capital letters (A-Z)": [
+        "Isot kirjaimet (A-Ö)"
+      ],
+      "Capitalise": [
+        "Isot kirjaimet"
+      ],
+      "Card number": [
+        "Kortin numero"
+      ],
+      "Cardholder name": [
+        "Kortinhaltijan nimi"
+      ],
+      "Cards": [
+        "Kortit"
+      ],
+      "Confirm vault name": [
+        "Vahvista holvin nimi"
+      ],
+      "Create a credit card": [
+        "Luo maksukortti"
+      ],
+      "Create a hide-my-email alias": [
+        "Luo Hide-my-email-alias"
+      ],
+      "Create a login": [
+        "Luo kirjautumistieto"
+      ],
+      "Create an encrypted note": [
+        "Luo salattu muistiinpano"
+      ],
+      "Create new vault": [
+        "Luo uusi holvi"
+      ],
+      "Created": [
+        "Luotu"
+      ],
+      "Credit Card": [
+        "Maksukortti"
+      ],
+      "Current plan": [
+        "Nykyinen tilaus"
+      ],
+      "Display": [
+        "Ulkoasu"
+      ],
+      "Display ${ PASS_APP_NAME } icon on login fields": [
+        "Näytä ${ PASS_APP_NAME } -kuvake kirjautumiskentissä"
+      ],
+      "Download logs": [
+        "Lataa lokitiedot"
+      ],
+      "Email aliases": [
+        "Sähköpostialiakset"
+      ],
+      "Empty trash": [
+        "Tyhjennä roskakori"
+      ],
+      "Encrypt your ${ PASS_APP_NAME } data export file": [
+        "Salaa ${ PASS_APP_NAME } -tietojesi vientitiedosto"
+      ],
+      "Expires on": [
+        "Voimassaolo päättyy"
+      ],
+      "Export": [
+        "Vienti"
+      ],
+      "Forwards to": [
+        "Edelleenlähettää osoitteeseen:"
+      ],
+      "General": [
+        "Yleiset"
+      ],
+      "Grant": [
+        "Myönnä"
+      ],
+      "Hidden": [
+        "Piilotettu"
+      ],
+      "Hide password": [
+        "Piilota salasana"
+      ],
+      "Import": [
+        "Tuonti"
+      ],
+      "Import passwords": [
+        "Tuo salasanoja"
+      ],
+      "Imported from : ": [
+        "Tuontilähde: "
+      ],
+      "Imported on : ": [
+        "Tuontiaika: "
+      ],
+      "Include numbers": [
+        "Sisällytä numerot"
+      ],
+      "Include numbers (0-9)": [
+        "Sisällytä numerot (0-9)"
+      ],
+      "Label": [
+        "Tunniste"
+      ],
+      "Last 2 weeks": [
+        "Kahden viikon sisällä"
+      ],
+      "Last autofill": [
+        "Viimeksi automaattitäytetty"
+      ],
+      "Last month": [
+        "Kuukauden sisällä"
+      ],
+      "Last week": [
+        "Viikon sisällä"
+      ],
+      "Latest import": [
+        "Viimeisin tuonti"
+      ],
+      "Learn more": [
+        "Lisätietoja"
+      ],
+      "Login": [
+        "Kirjaudu"
+      ],
+      "Logins": [
+        "Kirjautumistiedot"
+      ],
+      "Modified": [
+        "Muokattu"
+      ],
+      "Most recent": [
+        "Uusimmat"
+      ],
+      "Move items to": [
+        "Siirrä kohteet sijaintiin"
+      ],
+      "Name": [
+        "Nimi"
+      ],
+      "New vault": [
+        "Uusi holvi"
+      ],
+      "New-Old": [
+        "Uusi-vanha"
+      ],
+      "Newest to oldest": [
+        "Uusimmasta vanhimpaan"
+      ],
+      "No history": [
+        "Ei historiaa"
+      ],
+      "Not recently used": [
+        "Hiljattain käytettyjä ei ole"
+      ],
+      "Note": [
+        "Muistiinpano"
+      ],
+      "Notes": [
+        "Muistiinpanot"
+      ],
+      "Old-New": [
+        "Vanha-uusi"
+      ],
+      "Oldest to newest": [
+        "Vanhimmasta uusimpaan"
+      ],
+      "Passphrase": [
+        "Tunnuslauseke"
+      ],
+      "Password": [
+        "Salasana"
+      ],
+      "Password history": [
+        "Salasanahistoria"
+      ],
+      "Passwords": [
+        "Salasanat"
+      ],
+      "Permanently delete items": [
+        "Poista kohteet pysyvästi"
+      ],
+      "PIN": [
+        "PIN-koodi"
+      ],
+      "Prefix": [
+        "Etuliite"
+      ],
+      "Primary vault": [
+        "Ensisijainen holvi"
+      ],
+      "Prompt for auto-save": [
+        "Tarjoa automaattitallennusta"
+      ],
+      "Recent": [
+        "Viimeisimmät"
+      ],
+      "Report a problem": [
+        "Ilmoita ongelmasta"
+      ],
+      "Restore all items": [
+        "Palauta kaikki kohteet"
+      ],
+      "Reveal password": [
+        "Näytä salasana"
+      ],
+      "Security": [
+        "Suojaus"
+      ],
+      "Select an email address": [
+        "Valitse sähköpostiosoite"
+      ],
+      "Select your password manager": [
+        "Valitse salasanahallintasi"
+      ],
+      "Selected": [
+        "Valittu"
+      ],
+      "Session locking": [
+        "Istunnon lukitus"
+      ],
+      "Set PIN code": [
+        "Aseta PIN-koodi"
+      ],
+      "Settings": [
+        "Asetukset"
+      ],
+      "Show website thumbnails": [
+        "Näytä verkkosivustojen kuvakkeet"
+      ],
+      "Special characters (!&*)": [
+        "Erikoismerkit (!&*)"
+      ],
+      "Suffix": [
+        "Jälkiliite"
+      ],
+      "Support": [
+        "Tuki"
+      ],
+      "Text": [
+        "Tekstitiedosto"
+      ],
+      "Title": [
+        "Nimi"
+      ],
+      "Today": [
+        "Tänään"
+      ],
+      "Total imported items : ": [
+        "Kohteita tuotiin yhteensä: "
+      ],
+      "Total items : ": [
+        "Kohteita yhteensä: "
+      ],
+      "TOTP": [
+        "TOTP"
+      ],
+      "Trash": [
+        "Roskakori"
+      ],
+      "Type": [
+        "Tyyppi"
+      ],
+      "Unnamed Credit Card": [
+        "Nimetön maksukortti"
+      ],
+      "Unnamed item": [
+        "Nimetön kohde"
+      ],
+      "Unnamed note": [
+        "Nimetön muistiinpano"
+      ],
+      "Untitled": [
+        "Nimetön"
+      ],
+      "Update": [
+        "Päivitä"
+      ],
+      "Use ${ PASS_APP_NAME } as default autosave manager": [
+        "Käytä kirjautumistietojen tallennukseen oletusarvoisesti ${ PASS_APP_NAME }ia"
+      ],
+      "Username": [
+        "Käyttäjätunnus"
+      ],
+      "Username (alias)": [
+        "Käyttäjänimi (alias)"
+      ],
+      "Username (new alias)": [
+        "Käyttäjänimi (uusi alias)"
+      ],
+      "Vault": [
+        "Holvi"
+      ],
+      "Vaults": [
+        "Holvit"
+      ],
+      "Verification number": [
+        "Turvakoodi"
+      ],
+      "View logs": [
+        "Näytä lokitiedot"
+      ],
+      "Websites": [
+        "Verkkosivut"
+      ],
+      "You are about to create": [
+        "Olet luomassa"
+      ]
+    },
+    "Option": {
+      "Commas": [
+        "Pilkut"
+      ],
+      "Hyphens": [
+        "Yhdysmerkit"
+      ],
+      "Memorable Password": [
+        "Mieleenpainuva salasana"
+      ],
+      "Numbers": [
+        "Numerot"
+      ],
+      "Numbers and Symbols": [
+        "Numerot ja symbolit"
+      ],
+      "Periods": [
+        "Pisteet"
+      ],
+      "Random Password": [
+        "Satunnainen salasana"
+      ],
+      "Spaces": [
+        "Välilyönnit"
+      ],
+      "Underscores": [
+        "Alaviivat"
+      ]
+    },
+    "Placeholder": {
+      "Add 2FA secret": [
+        "Lisää 2FA-salaisuus"
+      ],
+      "Add hidden text": [
+        "Lisää piilotettu teksti"
+      ],
+      "Add note": [
+        "Lisää muistiinpano"
+      ],
+      "Add text": [
+        "Lisää teksti"
+      ],
+      "Enter a note...": [
+        "Syötä muistiinpano..."
+      ],
+      "Enter a prefix": [
+        "Syötä etuliite"
+      ],
+      "Enter email or username": [
+        "Syötä sähköpostiosoite tai käyttäjätunnus"
+      ],
+      "Enter password": [
+        "Syötä salasana"
+      ],
+      "Full Name": [
+        "Koko nimi"
+      ],
+      "MM/YYYY": [
+        "KK/VVVV"
+      ],
+      "Move items to another vault (optional)": [
+        "Siirrä kohteet toiseen holviin (valinnainen)"
+      ],
+      "Pick a vault": [
+        "Valitse holvi"
+      ],
+      "Please describe the problem and include any error messages": [
+        "Kuvaile ongelmaa ja sisällytä mahdolliset virheilmoitukset"
+      ],
+      "Retype \"${ vaultName }\" to confirm deletion": [
+        "Vahvista poisto kirjoittamalla \"${ vaultName }\""
+      ],
+      "Search in ${ vault.content.name }": [
+        "Etsi sijainnista ${ vault.content.name }"
+      ],
+      "Search in all vaults": [
+        "Etsi kaikista holveista"
+      ],
+      "Search in Trash": [
+        "Etsi roskakorista"
+      ],
+      "Select a suffix": [
+        "Valitse jälkiliite"
+      ],
+      "Unknown origin": [
+        "Tuntematon alkuperä"
+      ],
+      "Untitled": [
+        "Nimetön"
+      ],
+      "Used on ${ url }": [
+        "Käytetään osoitteessa: ${ url }"
+      ],
+      "Write your note": [
+        "Kirjoita muistiinpanosi"
+      ]
+    },
+    "Title": {
+      "${ PASS_APP_NAME } Settings": [
+        "${ PASS_APP_NAME } -asetukset"
+      ],
+      "Auto-lock update": [
+        "Muuta automaattilukitusta"
+      ],
+      "Confirm PIN code": [
+        "Vahvista PIN-koodi"
+      ],
+      "Connect your ${ BRAND_NAME } account": [
+        "Yhdistä ${ BRAND_NAME }-tilisi"
+      ],
+      "Create PIN code": [
+        "Luo PIN-koodi"
+      ],
+      "Delete vault \"${ vaultName }\" ?": [
+        "Poista holvi \"${ vaultName }\"?"
+      ],
+      "Discard changes ?": [
+        "Hylätäänkö muutokset?"
+      ],
+      "Enjoy your free trial": [
+        "Nauti ilmaisesta kokeilusta"
+      ],
+      "Enter your Pin": [
+        "Syötä PIN-koodisi"
+      ],
+      "Get the mobile apps": [
+        "Hanki mobiilisovellukset"
+      ],
+      "Grant permissions": [
+        "Myönnä käyttöoikeudet"
+      ],
+      "Hide my email": [
+        "Hide-my-email"
+      ],
+      "Import - ${ date }": [
+        "Tuontipäivä - ${ date }"
+      ],
+      "Import to vaults": [
+        "Kohdeholvit"
+      ],
+      "Permanently remove all items ?": [
+        "Poistetaanko kaikki kohteet pysyvästi?"
+      ],
+      "Pin the extension": [
+        "Kiinnitä laajennus"
+      ],
+      "Secure your data": [
+        "Suojaa tietosi"
+      ],
+      "Switching to ${ PASS_APP_NAME }?": [
+        "Oletko vaihtamassa ${ PASS_APP_NAME }iin?"
+      ],
+      "Thank you for installing ${ PASS_APP_NAME }": [
+        "Kiitos kun asensit lisäosan ${ PASS_APP_NAME }"
+      ],
+      "The extension is now ready to use.": [
+        "Laajennus on nyt käyttövalmis."
+      ],
+      "Trash empty": [
+        "Roskakori on tyhjä"
+      ],
+      "Unlock ${ brandNameJSX }": [
+        "Avaa ${ brandNameJSX }"
+      ],
+      "Unlock ${ PASS_APP_NAME }": [
+        "Avaa ${ PASS_APP_NAME }"
+      ],
+      "Update available": [
+        "Päivitys saatavilla"
+      ],
+      "Use my email": [
+        "Käytä sähköpostiosoitettani"
+      ],
+      "Use secure password": [
+        "Käytä turvallista salasanaa"
+      ],
+      "Welcome to ${ brandNameJSX }": [
+        "Tervetuloa palveluun ${ brandNameJSX }"
+      ],
+      "Welcome to ${ PASS_APP_NAME }": [
+        "Tervetuloa palveluun ${ PASS_APP_NAME }"
+      ],
+      "Welcome!": [
+        "Tervetuloa!"
+      ],
+      "Why ${ PASS_APP_NAME }?": [
+        "Miksi ${ PASS_APP_NAME }?"
+      ],
+      "Your vault is empty": [
+        "Holvisi on tyhjä"
+      ]
+    },
+    "Validation": {
+      "Duplicated url": [
+        "Olemassaoleva URL-osoite"
+      ],
+      "Label is required": [
+        "Tunniste vaaditaan"
+      ],
+      "OTP Secret or URI is invalid": [
+        "OTP-salaisuus tai URI on virheellinen"
+      ],
+      "OTP Secret or URI required": [
+        "OTP-salaisuus tai URI vaaditaan"
+      ],
+      "Url already exists": [
+        "URL-osoite on jo olemassa"
+      ],
+      "Url cannot be empty": [
+        "URL-osoite ei voi olla tyhjä"
+      ],
+      "Url is invalid": [
+        "URL-osoite on virheellinen"
+      ]
+    },
+    "Warning": {
+      "A description of the problem is required": [
+        "Ongelman kuvaus vaaditaan"
+      ],
+      "Alias \"${ name }\" is currently used in login item \"${ relatedLoginName }\". You will also stop receiving emails sent to \"${ aliasEmail }\"": [
+        "Alias \"${ name }\" on tällä hetkellä käytössä kirjautumiskohteessa \"${ relatedLoginName }\". Lopetat myös osoitteeseen \"${ aliasEmail }\" lähetettyjen sähköpostiviestien vastaanottamisen."
+      ],
+      "All your trashed items will be permanently deleted. You can not undo this action.": [
+        "Kaikki roskakorin kohteet poistetaan pysyvästi. Et voi kumota toimintoa"
+      ],
+      "An error occured while exporting your data": [
+        "Tietojasi vietäessä tapahtui virhe"
+      ],
+      "Cannot retrieve mailboxes for this alias right now": [
+        "Tämän aliaksen postilaatikoita ei voida hakea tällä hetkellä"
+      ],
+      "Could not create vault \"${ vaultName }\"": [
+        "Holvia \"${ vaultName }\" ei voitu luoda"
+      ],
+      "Empty note": [
+        "Tyhjä muistiinpano"
+      ],
+      "Expiration Date is incomplete": [
+        "Vanhentumispäivä on puutteellinen"
+      ],
+      "Invalid alias prefix": [
+        "Virheellinen aliaksen etuliite"
+      ],
+      "Maximum length is ${ maxLength } characters": [
+        "Enimmäispituus on ${ maxLength }-merkkiä"
+      ],
+      "Missing alias prefix": [
+        "Puuttuva aliaksen etuliite"
+      ],
+      "Missing alias suffix": [
+        "Puuttuva aliaksen jälkiliite"
+      ],
+      "No items": [
+        "Kohteita ei ole"
+      ],
+      "No items in trash matching": [
+        "Roskakorissa ei ole kohteita, jotka vastaavat kohdetta"
+      ],
+      "No items matching": [
+        "Ei vastaavia kohteita"
+      ],
+      "No password manager selected": [
+        "Salasanahallintaa ei ole valittu"
+      ],
+      "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
+        "Vain aakkosnumeeriset merkit, pisteet, väli- ja alaviivat sallitaan."
+      ],
+      "Passphrase is required": [
+        "Tunnuslauseke vaaditaan"
+      ],
+      "PGP encrypted export file requires passphrase": [
+        "PGP-salattu vientitiedosto vaatii tunnuslausekkeen"
+      ],
+      "Please log back in": [
+        "Kirjaudu takaisin sisään"
+      ],
+      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
+        "Raportit eivät ole päästä päähän -salattuja, joten älä sisällytä niihin arkaluonteisia tietoja."
+      ],
+      "Something went wrong while starting ${ PASS_APP_NAME }. Please try refreshing or reloading the extension": [
+        "Jokin meni pieleen ${ PASS_APP_NAME } -laajennusta käynnistettäessä. Yritä päivittää tai ladata se uudelleen"
+      ],
+      "The alias prefix cannot be longer than 40 characters": [
+        "Aliaksen etuliite voi sisältää enintään 40-merkkiä"
+      ],
+      "Title is required": [
+        "Otsikko vaaditaan"
+      ],
+      "Trash alias ?": [
+        "Siirretäänkö alias roskakoriin?"
+      ],
+      "Unable to save": [
+        "Tallennus ei onnistu"
+      ],
+      "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
+        "Palveluun ${ PASS_APP_NAME } kirjautuminen ei onnistu. ${ additionalMessage }"
+      ],
+      "Vault \"${ vaultName }\" and all its items will be permanently deleted. You can not undo this action": [
+        "Holvi \"${ vaultName }\" ja kaikki sen kohteet poistetaan pysyvästi. Et voi kumota toimintoa"
+      ],
+      "Vault \"${ vaultName }\" will be permanently deleted and all its items moved to \"${ destinationVaultName }\"": [
+        "Holvi \"${ vaultName }\" poistetaan pysyvästi ja kaikki sen kohteet siirretään holviin \"${ destinationVaultName }\""
+      ],
+      "Vault name is required": [
+        "Holvin nimi vaaditaan"
+      ],
+      "You have unsaved changes, are you sure you want to discard them?": [
+        "Sinulla on tallentamattomia muutoksia. Haluatko varmasti hylätä ne?"
+      ],
+      "You must select at least one mailbox": [
+        "Sinun on valittava vähintään yksi postilaatikko"
+      ],
+      "Your plan does not allow you to create more aliases": [
+        "Tilauksesi ei anna sinun luoda enempää aliaksia"
+      ],
+      "Your plan only allows you to autofill from your primary vault": [
+        "Tilauksesi sallii automaattitäytön vain ensisijaisesta holvistasi"
+      ],
+      "Your session was locked due to inactivity": [
+        "Istuntosi lukittiin toimettomuuden seuraksena"
+      ],
+      "Your subscription does not allow you to create multiple vaults. All items will be imported to your primary vault by default. To import into multiple vaults upgrade your subscription.": [
+        "Tilauksesi ei salli useiden holvien luontia ja kaikki kohteet tuodaan oletusarvoisesti ensisijaiseen holviisi. Jos haluat tuoda useisiin holveihin, päivitä tilauksesi."
+      ]
+    }
+  }
+}
