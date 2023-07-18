@@ -53,7 +53,7 @@
         "Toteuta"
       ],
       "At most 100 contacts are allowed per contact group": [
-        "Yhteystietoryhmää kohden sallitaan enintään 100 yhteystietoa"
+        "Yhdessä yhteystietoryhmässä sallitaan enintään 100 yhteystietoa"
       ],
       "Attach screenshot(s)": [
         "Liitä kuvankaappauksia"
@@ -95,7 +95,7 @@
         "Muuta"
       ],
       "Chat with us": [
-        "Chattaile kanssamme"
+        "Keskustele kanssamme"
       ],
       "Check import progress": [
         "Tarkasta tuonnin tila"
@@ -161,7 +161,7 @@
         "Jatka Googlella"
       ],
       "Copy email to clipboard": [
-        "Kopioi osoite leikepöydälle"
+        "Kopioi sähköpostiosoite leikepöydälle"
       ],
       "Copy link": [
         "Kopioi linkki"
@@ -4006,7 +4006,7 @@
         "Tällä lomakkeella voit ilmoittaa meille sopimattomista, laittomista tai muuten haitallisista tiedostoista. Olet raportoimassa:"
       ],
       "Version is deleted": [
-        "Versio on poistettu"
+        "Versio poistettiin"
       ],
       "Version is restored": [
         "Versio palautettiin"
@@ -4256,7 +4256,7 @@
         "Tallenna yhteystiedot automaattisesti"
       ],
       "Awful": [
-        "Kamala"
+        "Surkea"
       ],
       "Bad": [
         "Huono"
@@ -4644,7 +4644,7 @@
         "Mitä tapahtui?"
       ],
       "Wonderful": [
-        "Ihana"
+        "Erinomainen"
       ],
       "Yes, I want to permanently delete my old files": [
         "Kyllä, haluan poistaa vanhat tiedostoni pysyvästi"
@@ -4831,7 +4831,7 @@
     },
     "new_plans: action": {
       "Switch or add account": [
-        "Vaihda tiliä tai lisää uusi"
+        "Vaihda tai lisää tili"
       ]
     },
     "new_plans: feature": {
@@ -5372,7 +5372,7 @@
     "specialoffer: Countdown unit": {
       "${ days } day": [
         "${ days } päivä",
-        "${ days } päivää"
+        "${ days } päivä"
       ],
       "${ hours } hour": [
         "${ hours } tunti",
