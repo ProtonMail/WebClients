@@ -4,10 +4,21 @@
 	background-color: rgba(109 74 255 / 0.1);
 }
 
-.pricing {
-	&-bg {
-		@include media('>xsmall') {
-			background: linear-gradient(68.66deg, #e8e2ff 1.3%, #f7f5ff 50%);
+.signup-v1-bg {
+	@include media('>xsmall') {
+		background: linear-gradient(68.66deg, #e8e2ff 1.3%, #f7f5ff 50%);
+	}
+}
+
+.signup-v1-header {
+	max-inline-size: rem(777);
+
+	.large-font {
+		font-size: rem(40);
+		color: var(--optional-promotion-text-color);
+
+		@include media('<=small') {
+			font-size: rem(24);
 		}
 	}
 }
