@@ -9,7 +9,7 @@ const Alert3ds = () => {
     return (
         <div className="my-6 color-weak text-center">
             <div className="mb-2 text-sm" data-testid="3ds-info">
-                {c('Info').t`We use 3-D Secure to protect your payments.`}
+                {c('Info').t`We use 3-D Secure to protect your payments`}
             </div>
             <div className="flex flex-nowrap flex-align-items-center flex-justify-center">
                 <img

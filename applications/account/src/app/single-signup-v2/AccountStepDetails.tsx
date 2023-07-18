@@ -32,8 +32,8 @@ import noop from '@proton/utils/noop';
 
 import { AccountData, SignupType } from '../signup/interfaces';
 import { runAfterScroll } from './helper';
-import { Measure, SignupModelV2 } from './interface';
-import { InteractFields } from './measure';
+import type { BaseMeasure, SignupModelV2 } from './interface';
+import type { AvailableExternalEvents, InteractCreateEvents, InteractFields, UserCheckoutEvents } from './measure';
 import {
     EmailAsyncState,
     EmailValidationState,
@@ -165,7 +165,7 @@ interface Props {
     onChallengeLoaded: () => void;
     onChallengeError: () => void;
     loading: boolean;
-    measure: Measure;
+    measure: BaseMeasure<InteractCreateEvents | UserCheckoutEvents | AvailableExternalEvents>;
     passwordFields: boolean;
     footer: (details: AccountDetails) => ReactNode;
 }
