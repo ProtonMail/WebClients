@@ -114,7 +114,7 @@ export const createFormHandles = (options: DetectedForm): FormHandle => {
             const fields = formHandle.getFields();
             fields.forEach((field) => field.icon?.reposition());
 
-            if (hasUnprocessedFields(options.form.parentElement!)) {
+            if (options.form.parentElement === null || hasUnprocessedFields(options.form.parentElement)) {
                 resetFormFlags(form);
                 void formManager.detect({ reason: 'NewFormFields' });
             }
