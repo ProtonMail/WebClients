@@ -3,7 +3,7 @@ import { Ref, forwardRef } from 'react';
 import { c } from 'ttag';
 
 import { ContactEmail, ContactEmailModel } from '@proton/shared/lib/interfaces/contacts';
-import { VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
+import { VCardContact, VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
 import clsx from '@proton/utils/clsx';
 
 import { DropdownActions, Icon, OrderableHandle } from '../../../components';
@@ -15,13 +15,14 @@ import ContactEditLabel from './ContactEditLabel';
 import ContactFieldProperty from './fields/ContactFieldProperty';
 
 interface Props {
+    contactID?: string;
     vCardProperty: VCardProperty;
+    vCardContact: VCardContact;
     onChangeVCard: (vCardProperty: VCardProperty) => void;
     onRemove: (value: string) => void;
     sortable?: boolean;
     isSubmitted?: boolean;
     actionRow?: boolean;
-    mainItem?: boolean;
     fixedType?: boolean;
     labelWidthClassName?: string;
     filteredTypes?: string[];
@@ -35,13 +36,14 @@ interface Props {
 
 const ContactEditProperty = (
     {
+        contactID,
         vCardProperty,
+        vCardContact,
         onChangeVCard,
         onRemove,
         sortable = false,
         isSubmitted = false,
         actionRow = true,
-        mainItem = false,
         labelWidthClassName,
         fixedType,
         filteredTypes,
@@ -104,7 +106,6 @@ const ContactEditProperty = (
                 <span
                     className={clsx([
                         'contact-modal-select flex flex-nowrap mb-2 md:mb-4 flex-align-items-start on-mobile-flex-align-self-start',
-                        mainItem && 'text-semibold',
                         labelWidthClassName || 'w30',
                     ])}
                 >
@@ -121,9 +122,11 @@ const ContactEditProperty = (
                         <ContactFieldProperty
                             ref={ref}
                             vCardProperty={vCardProperty}
+                            vCardContact={vCardContact}
                             onChangeVCard={onChangeVCard}
                             isSubmitted={isSubmitted}
                             onSelectImage={onSelectImage}
+                            contactID={contactID}
                         />
                     </span>
                     {actionRow && (
@@ -131,7 +134,7 @@ const ContactEditProperty = (
                             {list.length > 0 && (
                                 <div
                                     className={clsx([
-                                        'flex flex-item-noshrink',
+                                        'flex flex-item-noshrink h-4',
                                         field,
                                         (field === 'photo' ||
                                             field === 'note' ||

@@ -298,6 +298,22 @@ export const merge = (contacts: VCardContact[] = []): VCardContact => {
                 for (const property of contactProperties) {
                     const { field, group, value, params } = property;
                     const newGroup = group ? changeGroup[group] : group;
+
+                    // Manage first and last name merge
+                    if (field === 'n') {
+                        const mergedContactNFieldIndex = mergedContact.findIndex(({ field }) => field === 'n');
+                        const mergedValues = mergedContact.find(({ field }) => field === 'n');
+                        const [newLast, newFirst] = value;
+                        const [oldLast, oldFirst] = mergedValues?.value;
+
+                        if (mergedContactNFieldIndex && newLast && newLast !== oldLast) {
+                            mergedContact[mergedContactNFieldIndex].value[0] = newLast;
+                        }
+                        if (mergedContactNFieldIndex && newFirst && newFirst !== oldFirst) {
+                            mergedContact[mergedContactNFieldIndex].value[1] = newFirst;
+                        }
+                    }
+
                     if (!mergedProperties[field]) {
                         // an unseen property is directly merged
                         mergedContact.push({ ...property, params, group: newGroup });

@@ -45,7 +45,7 @@ const ContactViewOthers = ({ vCardContact, isSignatureVerified = false }: Props)
                             </a>
                         );
                     }
-                    if (['bday', 'anniversary'].includes(field)) {
+                    if (field === 'anniversary') {
                         const dateOrText = value as VCardDateOrText;
                         if (dateOrText.date && isValid(dateOrText.date)) {
                             return format(dateOrText.date, 'PP', { locale: dateLocale });
