@@ -3,7 +3,6 @@ import { Redirect, Route, Switch, useHistory, useLocation } from 'react-router-d
 
 import AccountForgotUsernameContainer from 'proton-account/src/app/public/ForgotUsernameContainer';
 import AccountResetPasswordContainer from 'proton-account/src/app/reset/ResetPasswordContainer';
-import AccountSignupContainer from 'proton-account/src/app/signup/SignupContainer';
 import AccountSignupInviteContainer from 'proton-account/src/app/signup/SignupInviteContainer';
 import AccountSingleSignupContainer from 'proton-account/src/app/single-signup/SingleSignupContainer';
 
@@ -69,20 +68,9 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                                             onInvalid={() => history.push('/signup')}
                                         />
                                     </Route>
-                                    <Route path="/signup">
-                                        <AccountSignupContainer
-                                            productParam={APPS.PROTONVPN_SETTINGS}
-                                            clientType={CLIENT_TYPES.VPN}
-                                            onLogin={async (args) =>
-                                                onLogin({
-                                                    ...args,
-                                                    path: '/downloads?prompt',
-                                                })
-                                            }
-                                        />
-                                    </Route>
-                                    <Route path="/pricing">
+                                    <Route path={['/pricing', '/signup']}>
                                         <AccountSingleSignupContainer
+                                            toApp={APPS.PROTONVPN_SETTINGS}
                                             loader={loader}
                                             productParam={APPS.PROTONVPN_SETTINGS}
                                             clientType={CLIENT_TYPES.VPN}
