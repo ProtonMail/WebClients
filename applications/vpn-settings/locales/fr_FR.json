@@ -393,7 +393,7 @@
         "Utiliser un code de récupération"
       ],
       "Use your current email instead": [
-        "Utiliser plutôt votre adresse e-mail actuelle"
+        "Utiliser plutôt votre adresse actuelle"
       ],
       "User": [
         "Utilisateur"
@@ -2023,6 +2023,12 @@
       "(1-2 emails per month)": [
         "(une à deux fois par mois)"
       ],
+      "(2-4 per year)": [
+        "(2 à 4 messages par an)"
+      ],
+      "(4-6 emails per year)": [
+        "(4 à 6 messages par an)"
+      ],
       "(during your first month)": [
         "(au cours de votre premier mois)"
       ]
@@ -2068,7 +2074,7 @@
         "Choisissez votre moyen de paiement préféré."
       ],
       "Select your pricing plan": [
-        "Sélectionnez votre plan tarifaire"
+        "Sélectionnez votre formule d'abonnement"
       ]
     },
     "Heading in trial plan": {
@@ -2672,7 +2678,7 @@
         "Cet assistant permet d'activer l'authentification à deux facteurs (A2F) sur votre compte ${ BRAND_NAME }. Cela renforce la sécurité de votre compte ${ BRAND_NAME_TWO }, c'est pourquoi nous vous recommandons de l'activer."
       ],
       "To ${ planName }": [
-        "À : ${ planName }"
+        "sur ${ planName }"
       ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Pour finaliser votre paiement, vous devez envoyer ${ btcAmountBold } à l'adresse ci-dessous."
@@ -2682,6 +2688,9 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Pour lutter contre les messages indésirables/spam et les abus, nous vous invitons à prouver que vous n'êtes pas un robot."
+      ],
+      "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
+        "Pour vous tenir au courant des dernières évolutions des produits ${ BRAND_NAME }, vous pouvez vous abonner à nos différentes newsletters et ${ blogLink } de temps en temps."
       ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "Pour continuer, sélectionnez une méthode de récupération de compte et nous pourrons vérifier la demande."
@@ -3364,6 +3373,9 @@
       "${ BRAND_NAME } for Business newsletter": [
         "Newsletter ${ BRAND_NAME } for Business"
       ],
+      "${ BRAND_NAME } important announcements": [
+        "Annonces importantes de ${ BRAND_NAME }"
+      ],
       "${ BRAND_NAME } newsletter": [
         "Newsletter ${ BRAND_NAME }"
       ],
@@ -3456,6 +3468,9 @@
       ],
       "View guide": [
         "Voir le guide"
+      ],
+      "visit our blog": [
+        "consulter notre blog"
       ],
       "What is the difference between UDP and TCP protocols?": [
         "Quelle est la différence entre les protocoles UDP et TCP ?"
@@ -4920,7 +4935,7 @@
         "L'adresse e-mail a été copiée dans le presse-papiers."
       ],
       "Email updated": [
-        "L'adresse e-mail a été mise à jour."
+        "L'adresse a été mise à jour."
       ],
       "Gift code applied": [
         "Le code cadeau a été appliqué."
