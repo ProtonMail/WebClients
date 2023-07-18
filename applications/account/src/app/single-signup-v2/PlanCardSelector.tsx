@@ -223,7 +223,7 @@ export const PlanCardSelector = ({
     plansMap: PlansMap;
     cycle: CYCLE;
     currency: Currency;
-    plan: PLANS | ADDON_NAMES | undefined;
+    plan: PLANS | ADDON_NAMES;
     planCards: PlanCard[];
     onSelect: (planIDs: PlanIDs, plan: PLANS, upsellFrom?: PLANS) => void;
     onSelectedClick?: () => void;

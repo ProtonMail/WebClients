@@ -19,6 +19,7 @@ import {
 import { useNotifications } from '@proton/components/hooks';
 import { useLoading } from '@proton/hooks';
 import metrics from '@proton/metrics';
+import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import {
     confirmPasswordValidator,
@@ -32,7 +33,7 @@ import Content from '../public/Content';
 import Header from '../public/Header';
 import Main from '../public/Main';
 import Layout from './Layout';
-import { OnUpdate } from './interface';
+import { Measure } from './interface';
 
 const CopyPasswordModal = ({
     password,
@@ -74,12 +75,12 @@ const Step3 = ({
     onComplete,
     password,
     email,
-    onUpdate,
+    measure,
 }: {
     password: string;
     email: string;
     onComplete: (newPassword: string | undefined) => Promise<void>;
-    onUpdate: OnUpdate;
+    measure: Measure;
 }) => {
     const { createNotification } = useNotifications();
     const [setOwnPasswordMode, setSetOwnPasswordMode] = useState(false);
@@ -91,6 +92,10 @@ const Step3 = ({
     const [copied, setCopied] = useState(false);
 
     const { validator, onFormSubmit, reset } = useFormErrors();
+
+    useEffect(() => {
+        measure({ event: TelemetryAccountSignupEvents.onboardingStart, dimensions: {} });
+    }, []);
 
     useEffect(() => {
         metrics.core_vpn_single_signup_pageLoad_total.increment({ step: 'password_selection' });
@@ -120,7 +125,7 @@ const Step3 = ({
                 shape="ghost"
                 value={password}
                 onCopy={() => {
-                    onUpdate({ pw: 'copied' });
+                    measure({ event: TelemetryAccountSignupEvents.interactPassword, dimensions: { click: 'copy' } });
                     setCopied(true);
                     createNotification({ text: c('Info').t`Password copied to clipboard` });
                 }}
@@ -156,9 +161,15 @@ const Step3 = ({
                             }
 
                             if (!setOwnPasswordMode) {
-                                onUpdate({ pw: 'continue' });
+                                measure({
+                                    event: TelemetryAccountSignupEvents.interactPassword,
+                                    dimensions: { click: 'continue_suggested' },
+                                });
                             } else {
-                                onUpdate({ pw: 'setcustom' });
+                                measure({
+                                    event: TelemetryAccountSignupEvents.interactPassword,
+                                    dimensions: { click: 'continue_custom' },
+                                });
                             }
 
                             if (!copied && !setOwnPasswordMode) {
@@ -216,7 +227,10 @@ const Step3 = ({
                                 loading={loading}
                                 className="mt-2"
                                 onClick={() => {
-                                    onUpdate({ pw: 'custom' });
+                                    measure({
+                                        event: TelemetryAccountSignupEvents.interactPassword,
+                                        dimensions: { click: 'set_custom' },
+                                    });
                                     setSetOwnPasswordMode(true);
                                     reset();
                                 }}
