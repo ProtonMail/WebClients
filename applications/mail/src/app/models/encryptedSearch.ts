@@ -36,7 +36,6 @@ export interface ESDBStatusMail {
     dropdownOpened: boolean;
     temporaryToggleOff: boolean;
     lastContentTime: number;
-    isMigrating: boolean;
 }
 
 export interface EncryptedSearchFunctionsMail
