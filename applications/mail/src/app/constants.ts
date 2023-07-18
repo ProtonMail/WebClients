@@ -140,7 +140,6 @@ export const defaultESMailStatus: ESDBStatusMail = {
     dropdownOpened: false,
     temporaryToggleOff: false,
     lastContentTime: 0,
-    isMigrating: false,
 };
 export const defaultESContextMail: EncryptedSearchFunctionsMail = {
     ...defaultESContext,
