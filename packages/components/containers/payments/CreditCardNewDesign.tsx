@@ -187,7 +187,7 @@ const CreditCardNewDesign = ({
                 <Label
                     htmlFor={commonNumberProps.id}
                     className="field-two-label field-two-label-container flex pt-3"
-                >{c('Label').t`Card information`}</Label>
+                >{c('Label').t`Card details`}</Label>
                 <span id="id_desc_card_number" className="sr-only">{c('Label').t`Card number`}</span>
                 <Input
                     className="card-number--small"
@@ -247,7 +247,7 @@ const CreditCardNewDesign = ({
                 <Label
                     htmlFor={commonNumberProps.id}
                     className="field-two-label field-two-label-container flex pt-3"
-                >{c('Label').t`Card information`}</Label>
+                >{c('Label').t`Card details`}</Label>
                 <span id="id_desc_card_number" className="sr-only">{c('Label').t`Card number`}</span>
                 <Input
                     className="card-information"
@@ -332,7 +332,7 @@ const CreditCardNewDesign = ({
                 )}
             </div>
             <Label htmlFor="postalcode" className="field-two-label field-two-label-container flex pt-1">{c('Label')
-                .t`Country`}</Label>
+                .t`Billing address`}</Label>
             <Input
                 placeholder={title}
                 className="country-select flex-justify-space-between divide-x"
