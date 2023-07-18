@@ -8,7 +8,8 @@ import { getOwnershipVerificationHeaders, mergeHeaders } from '@proton/shared/li
 import { Api } from '@proton/shared/lib/interfaces';
 import debounce from '@proton/utils/debounce';
 
-import { Measure } from './interface';
+import { BaseMeasure } from './interface';
+import { AvailableExternalEvents } from './measure';
 
 export enum EmailAsyncState {
     Idle,
@@ -57,7 +58,17 @@ export const createAsyncValidator = () => {
     const cache: { [key: string]: EmailValidationState } = {};
 
     const validator = debounce(
-        ({ email, api, set, measure }: { email: string; api: Api; set: Setter; measure: Measure }) => {
+        ({
+            email,
+            api,
+            set,
+            measure,
+        }: {
+            email: string;
+            api: Api;
+            set: Setter;
+            measure: BaseMeasure<AvailableExternalEvents>;
+        }) => {
             abortController?.abort();
 
             if (lastEmail !== email) {
@@ -116,7 +127,7 @@ export const createAsyncValidator = () => {
             email: string;
             api: Api;
             set: Setter;
-            measure: Measure;
+            measure: BaseMeasure<AvailableExternalEvents>;
         }) => {
             lastEmail = email;
 
