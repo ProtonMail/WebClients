@@ -3901,6 +3901,9 @@
       "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
         "65 か国以上の 2700 台のサーバー、最大 10 台のデバイスの接続、世界中のストリーミングサービスへのアクセス、マルウェアと広告ブロッカーなどが含まれます。"
       ],
+      "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
+        "3 件の独自メールドメイン対応、90 件のメールアドレス、無制限の hide-my-email エイリアス、カレンダー共有などが含まれます。"
+      ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "暗号化クラウドストレージでファイルの安全を保ちます。自動同期、暗号化ファイル共有などが含まれます。"
       ]
@@ -4109,14 +4112,23 @@
       ]
     },
     "Get started checklist instructions": {
+      "${ MAIL_APP_NAME } app": [
+        "${ MAIL_APP_NAME } アプリ"
+      ],
       "${ MAIL_APP_NAME } on App Store": [
         "App Store での ${ MAIL_APP_NAME }"
       ],
       "${ MAIL_APP_NAME } on Play Store": [
         "Play Store での ${ MAIL_APP_NAME }"
       ],
+      "account logins": [
+        "アカウントログイン"
+      ],
       "Auto-forward Gmail": [
         "Gmailへ自動転送"
+      ],
+      "auto-forwarding": [
+        "自動転送"
       ],
       "Block email communications from scammers permanently.": [
         "詐欺師からのメールを永久にブロックする"
@@ -4127,6 +4139,9 @@
       "Bravo for making your email even more secure, convenient, and relevant! We've upped your free storage to a total of 1 GB.": [
         "メールがさらに安全に、便利に、そして関連性が向上しました! 無料のストレージも合計 1 GB に増やしました。"
       ],
+      "Change ${ strongText } to your ${ BRAND_NAME } address": [
+        "${ strongText } を ${ BRAND_NAME } のアドレスに変更します"
+      ],
       "Close": [
         "閉じる"
       ],
@@ -4135,6 +4150,12 @@
       ],
       "Continue setting up your email": [
         "メールの設定を続ける"
+      ],
+      "Discover how our ${ strongText } protect you": [
+        "${ strongText } がどのように保護されているかをご覧ください"
+      ],
+      "Discover privacy features": [
+        "プライバシー機能の発見"
       ],
       "Double your free storage to 1 GB when you complete the following:": [
         "次の項目を達成すると、無料ストレージの 2 倍にできます :"
@@ -4150,6 +4171,12 @@
       ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "${ MAIL_APP_NAME } のモバイルアプリを入手"
+      ],
+      "Get the ${ strongText } on Android or iOS": [
+        "Android または iOS で ${ strongText } を取得します"
+      ],
+      "Get the App": [
+        "アプリを入手する"
       ],
       "Import contacts or emails": [
         "連絡先とメールをインポート"
@@ -4178,6 +4205,9 @@
       "Popular online services": [
         "有名なオンラインサービス"
       ],
+      "privacy features": [
+        "プライバシー機能"
+      ],
       "Protect and simplify your email": [
         "メールを保護し、シンプルにする"
       ],
@@ -4193,8 +4223,14 @@
       "Set recovery method": [
         "回復手段を設定"
       ],
+      "Set up ${ strongText } from Gmail": [
+        "Gmail から ${ strongText } を設定する"
+      ],
       "Sign in to the mobile app to complete this step": [
         "モバイル端末でサインインして、このステップを達成"
+      ],
+      "Update your logins": [
+        "ログイン情報を更新する"
       ],
       "Using your mobile device, scan this QR code or visit the iOS or Android store.": [
         "モバイル端末を使って、QR コードをスキャンするか iOS や Android のストアを見る。"
@@ -5411,6 +5447,9 @@
       "Show original message": [
         "元のメッセージを表示"
       ],
+      "SimpleLogin is a ${ BRAND_NAME } service, and your ${ BRAND_NAME_TWO } Account includes hide-my-email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
+        "SimpleLogin は ${ BRAND_NAME } のサービスで、あなたの ${ BRAND_NAME_TWO } アカウントには hide-my-email エイリアスが含まれています。あなたのメールアドレスをマスキングするには、SimpleLogin で最初のエイリアスを作成してください。"
+      ],
       "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
         "SimpleLogin は、信頼のおけない第三者サイトで、本来のメールアドレスを公開せずにアカウントを作成するためのシンプルな方法を提供します。"
       ],
@@ -5485,6 +5524,9 @@
       ],
       "These messages will be marked as spam. Would you also like to unsubscribe from future emails?": [
         "このメッセージを迷惑メールとして扱います。将来のメールから購読を解除しますか?"
+      ],
+      "They can't spam you if they don't know your email address. Protect your inbox with hide-my-email aliases.": [
+        "本来のメールアドレスを知られなければ、迷惑メールを送りつけられることもありません。Hide-my-email で受信トレイを守りましょう。"
       ],
       "This account has been suspended due to a potential policy violation.": [
         "このアカウントは、ポリシー違反の可能性があるため停止されています。"
@@ -5714,6 +5756,9 @@
       "When do you want your message to self-destruct?": [
         "メッセージの有効期限をいつに設定しますか？"
       ],
+      "When giving out your email, use a unique, disposable hide-my-email alias instead of your real email address.": [
+        "メールアドレスを伝える際に、本来のメールアドレスではなく専用の使い捨て hide-my-email エイリアスを使用します。"
+      ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "${ senderName } の信頼された鍵を有効にすると、公開鍵は連絡先の詳細に追加されます。"
       ],
@@ -5744,9 +5789,6 @@
       "You can check the progress ${ importProgressLink }.": [
         "進捗を確認するには ${ importProgressLink }。"
       ],
-      "You can click links in this email without being profiled and leaking your online activity with advertisers.": [
-        "このEメールに記載されているリンクをクリックすれば、あなたのオンライン活動が広告主に漏れることはありません。"
-      ],
       "You can either update your search query or ${ button }": [
         "検索内容を変えるか ${ button }"
       ],
@@ -5755,9 +5797,6 @@
       ],
       "You can import one data type at a time.": [
         "1 回にインポートできるのは 1 種類のみです。"
-      ],
-      "You can read this email without revealing your interactions, location, or device to advertisers.": [
-        "このメールは、あなたのやり取り、場所、デバイスを広告主に明かすことなく読むことができます。"
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "この機能を有効にすると、このフォルダーに新しいメッセージが届いた際に通知されます。"
@@ -7644,17 +7683,6 @@
     "Sender verification details": {
       "Sender verification": [
         "送信者検証"
-      ],
-      "Sender verification failed: ${ icon.senderVerificationDetails.description }": [
-        "送信者の検証に失敗しました: ${ icon.senderVerificationDetails.description }"
-      ],
-      "Sender verified: ${ icon.senderVerificationDetails.description }": [
-        "送信者が確認されました: ${ icon.senderVerificationDetails.description }"
-      ]
-    },
-    "Sender verification error": {
-      "Verification key is not in the list of trusted keys.": [
-        "検証キーが信頼できるキーのリストにありません。"
       ]
     },
     "Sent email icon": {
@@ -7954,6 +7982,15 @@
       ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
         "Netflix、Disney+、Prime Video などのストリーミングサービス上のコンテンツにどこからでもアクセスします。"
+      ],
+      "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
+        "すべてのプレミアムサービスを高い自由度で利用できます。100 件のメールアドレス、10 件の独自ドメイン対応、無制限の hide-my-email エイリアス、カレンダー共有、暗号化クラウドストレージとファイル共有など。"
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "1 件の独自メールドメイン対応、10 件のメールアドレス、10 件の hide-my-email エイリアス、カレンダー共有などが含まれます。"
+      ],
+      "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "3 件の独自メールドメイン対応、15 件のメールアドレス、無制限の hide-my-email エイリアス、カレンダー共有などが含まれます。"
       ],
       "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
         "ファミリーや小規模なチームに最適で、各自が受信トレイとエイリアスを持ちます。カスタムドメインが必要です。"
@@ -8293,6 +8330,9 @@
       ],
       "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
         "65 か国以上の 2950 台以上のサーバー、最大 10 台のデバイスの接続、世界中のストリーミングサービスへのアクセス、マルウェアと広告ブロッカーなどが含まれます。"
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "1 件の独自メールドメイン対応、10 件のメールアドレス、10 件の hide-my-email エイリアス、カレンダー共有などが含まれます。"
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "暗号化されたクラウドストレージでファイルの安全性を保ちましょう。バージョン履歴、暗号化済みファイル共有などが含まれています。"
@@ -8796,9 +8836,6 @@
       ],
       "Previous message": [
         "前のメッセージ"
-      ],
-      "Protect your email": [
-        "メールを保護する"
       ],
       "Re-sign all contacts": [
         "すべての連絡先を再署名する"
