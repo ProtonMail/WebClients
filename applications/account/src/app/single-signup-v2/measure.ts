@@ -38,6 +38,30 @@ export type SignupFinishEvents = {
     };
 };
 
+export type AvailableExternalEvents = {
+    event: TelemetryAccountSignupEvents.beAvailableExternal;
+    dimensions: {
+        available: TelemetryBoolean;
+    };
+};
+
+export type InteractCreateEvents = {
+    event: TelemetryAccountSignupEvents.interactAccountCreate;
+    dimensions: {
+        field: InteractFields;
+    };
+};
+
+export type UserCheckoutEvents = {
+    event: TelemetryAccountSignupEvents.userCheckout | TelemetryAccountSignupEvents.checkoutError;
+    dimensions: {
+        type: TelemetryPayType;
+        plan: PLANS;
+        cycle: `${CYCLE}`;
+        currency: Currency;
+    };
+};
+
 export type TelemetryMeasurementData =
     | {
           event: TelemetryAccountSignupEvents.pageLoad;
@@ -65,18 +89,8 @@ export type TelemetryMeasurementData =
               cycle: `${CYCLE}`;
           };
       }
-    | {
-          event: TelemetryAccountSignupEvents.beAvailableExternal;
-          dimensions: {
-              available: TelemetryBoolean;
-          };
-      }
-    | {
-          event: TelemetryAccountSignupEvents.interactAccountCreate;
-          dimensions: {
-              field: InteractFields;
-          };
-      }
+    | AvailableExternalEvents
+    | InteractCreateEvents
     | {
           event: TelemetryAccountSignupEvents.userSignIn;
           dimensions: {
@@ -109,15 +123,7 @@ export type TelemetryMeasurementData =
               field: 'cc-number' | 'cc-exp' | 'cc-csc' | 'country' | 'postal-code';
           };
       }
-    | {
-          event: TelemetryAccountSignupEvents.userCheckout | TelemetryAccountSignupEvents.checkoutError;
-          dimensions: {
-              type: TelemetryPayType;
-              plan: PLANS;
-              cycle: `${CYCLE}`;
-              currency: Currency;
-          };
-      }
+    | UserCheckoutEvents
     | {
           event: TelemetryAccountSignupEvents.loadPaymentBtc;
           dimensions: {};
