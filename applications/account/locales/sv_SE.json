@@ -2787,11 +2787,17 @@
       "${ name } deletion failed": [
         "Borttagning av ${ name } misslyckades"
       ],
+      "${ name } failed to move to allow list": [
+        "${ name } misslyckades att flyttas till listan ”Tillåt”"
+      ],
       "${ name } failed to move to block list": [
         "${ name } misslyckades att flyttas till blockeringslista"
       ],
       "${ name } failed to move to spam list": [
         "${ name } misslyckades att flyttas till skräppostlista"
+      ],
+      "${ name } moved to allow list": [
+        "${ name } flyttades till listan ”Tillåt”"
       ],
       "${ name } moved to block list": [
         "${ name } flyttades till blocklista"
@@ -2915,11 +2921,17 @@
       "${ name } deletion failed": [
         "Borttagning av ${ name } misslyckades"
       ],
+      "${ name } failed to move to allow list": [
+        "${ name } misslyckades att flyttas till listan ”Tillåt”"
+      ],
       "${ name } failed to move to block list": [
         "${ name } misslyckades att flyttas till blockeringslista"
       ],
       "${ name } failed to move to spam list": [
         "${ name } misslyckades att flyttas till skräppostlista"
+      ],
+      "${ name } moved to allow list": [
+        "${ name } flyttades till listan ”Tillåt”"
       ],
       "${ name } moved to block list": [
         "${ name } flyttades till blocklista"
@@ -2963,6 +2975,11 @@
       ],
       "You unsubscribed from ${ categoriesJsx } emails.": [
         "Du slutade prenumerera på e-post från kategorin ${ categoriesJsx }."
+      ]
+    },
+    "Email Unsubscribe Categories": {
+      "${ allCategoryTitlesExceptTheLastOne } and ${ lastCategoryTitle }": [
+        "${ allCategoryTitlesExceptTheLastOne } och ${ lastCategoryTitle }"
       ]
     },
     "Enabled 2FA": {
@@ -4309,6 +4326,9 @@
       ],
       "Block:": [
         "Blockera:"
+      ],
+      "Search list": [
+        "Sök lista"
       ],
       "Spam:": [
         "Skräppost:"
@@ -8263,6 +8283,9 @@
       "${ BRAND_NAME } for Business newsletter": [
         "${ BRAND_NAME } for Business nyhetsbrev"
       ],
+      "${ BRAND_NAME } important announcements": [
+        "Viktiga meddelanden från ${ BRAND_NAME }"
+      ],
       "${ BRAND_NAME } newsletter": [
         "${ BRAND_NAME } nyhetsbrev"
       ],
@@ -10105,6 +10128,9 @@
       ]
     },
     "pass_signup_2023: Info": {
+      "${ PASS_APP_NAME } benefits": [
+        "Förmåner med ${ PASS_APP_NAME }"
+      ],
       "${ PASS_APP_NAME } is available as a browser extension on the Chrome Web Store.": [
         "${ PASS_APP_NAME } är tillgängligt som ett webbläsartillägg på Chrome Web Store."
       ],
@@ -10145,7 +10171,7 @@
         "Ladda ner appen ${ PASS_APP_NAME } från App Store och installera den för att börja använda ${ PASS_APP_NAME2 } på din telefon."
       ],
       "Encrypted password manager that also protects your identity": [
-        "Krypterad lösenordshanteraresom också skyddar din identitet"
+        "Krypterad lösenordshanterare som också skyddar din identitet"
       ],
       "End-to-end encrypted notes": [
         "End-to-end-krypterade anteckningar"
@@ -10817,6 +10843,9 @@
       "Highest VPN speed": [
         "Högsta VPN-hastighet"
       ],
+      "Premium early access": [
+        "Premium förhandstillgång"
+      ],
       "Premium Mail and Calendar": [
         "Premium Mail och Calendar"
       ],
@@ -10947,6 +10976,9 @@
       "Get our premium bundle and save more": [
         "Skaffa vårt premiumpaket och spara mer"
       ],
+      "Our discontinued Visionary plan is back for a limited time only": [
+        "Vårt avvecklade Visionary-paket är tillbaka endast under en begränsad tid"
+      ],
       "Save more with 2 years of ${ planName }": [
         "Spara mer med 2 år med ${ planName }"
       ],
@@ -10975,6 +11007,9 @@
       ],
       "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
         "Perfekt för familjer eller små team, alla kan ha sin egen inkorg och alias. Kräver en anpassad domän."
+      ],
+      "Receive at no extra cost the paid versions of all new privacy services we release in the future, along with early access to all future features and products.": [
+        "Få utan extra kostnad de betalda versionerna av alla nya integritetstjänster som vi släpper i framtiden, tillsammans med förhandstillgång till alla framtida funktioner och produkter."
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Säkra dina filer med krypterad molnlagring. Inkluderar automatisk synkronisering, krypterad fildelning och mer."
@@ -11678,6 +11713,9 @@
       "Add Sieve filter": [
         "Lägg till Sieve-filter"
       ],
+      "Add to allow list": [
+        "Lägg till i listan ”Tillåt”"
+      ],
       "Add to block list": [
         "Lägg till i blockeringslista"
       ],
@@ -12343,6 +12381,9 @@
       ],
       "Sort labels alphabetically": [
         "Sortera etiketter alfabetiskt"
+      ],
+      "Spam, block, and allow lists": [
+        "Listor för skräppost, blockera och tillåt"
       ],
       "Start a new import": [
         "Starta en ny import"

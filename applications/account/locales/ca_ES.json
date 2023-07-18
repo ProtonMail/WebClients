@@ -2985,6 +2985,11 @@
         "Has cancel·lat la subscripció dels correus de ${ categoriesJsx }."
       ]
     },
+    "Email Unsubscribe Categories": {
+      "${ allCategoryTitlesExceptTheLastOne } and ${ lastCategoryTitle }": [
+        "${ allCategoryTitlesExceptTheLastOne } i ${ lastCategoryTitle }"
+      ]
+    },
     "Enabled 2FA": {
       "2FA": [
         "2FA"
@@ -3282,7 +3287,7 @@
         "Alguns dels vostres noms de carpeta no estan disponibles. Personalitzeu la importació per tal d'editar-ne els noms."
       ],
       "Some of your folder names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
-        "Els noms d'algunes de les carpetes superen el límit màxim de caràcters de ${ MAIL_APP_NAME }. Personalitzeu la importació per a editar-ne els noms."
+        "Els noms d'algunes de les carpetes superen el límit màxim de caràcters de ${ MAIL_APP_NAME }. Personalitzeu la importació per a editar-los."
       ],
       "Some of your label names are reserved. Please customize the import to edit these names.": [
         "Alguns dels vostres noms d'etiqueta estan reservats. Personalitzeu la importació per a editar-los."
@@ -3420,7 +3425,7 @@
         "No teniu cap factura."
       ],
       "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
-        "Heu assolit el nombre màxim de calendaris. No s'han pogut importar alguns calendaris."
+        "Heu assolit el nombre màxim de calendaris. No se n'han pogut importar alguns."
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "Heu utilitzat totes les adreces del vostre pla. Milloreu-lo per a afegir adreces."
@@ -3858,13 +3863,13 @@
     },
     "familyOffer_2023:Deal details": {
       "Premium Drive": [
-        "Versió prèmium de Drive"
+        "Drive prèmium"
       ],
       "Premium Mail and Calendar": [
-        "Versió prèmium de Mail i Calendar"
+        "Correu i Calendari prèmium"
       ],
       "Premium VPN": [
-        "Versió prèmium de VPN"
+        "VPN prèmium"
       ],
       "Up to 6 users": [
         "Fins a 6 usuaris"
@@ -3976,7 +3981,7 @@
         "Perdreu l'accés a totes les característiques prèmium i a l'espai d'emmagatzematge inclòs amb ${ BRAND_NAME } Family."
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
-        "Esteu convidats a enllaçar el vostre compte de ${ BRAND_NAME } a aquest pla de grup i gaudir junts de totes les característiques prèmium de ${ BRAND_NAME_TWO }."
+        "Esteu convidat a enllaçar el vostre compte de ${ BRAND_NAME } a aquest pla de grup i gaudir junts de totes les característiques prèmium de ${ BRAND_NAME_TWO }."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "El vostre compte té més adreces de correu electrònic de les que teniu disponibles en aquest pla. ${ addressSettingsLink }"
@@ -4415,6 +4420,12 @@
       "(1-2 emails per month)": [
         "(1-2 correus electrònics al mes)"
       ],
+      "(2-4 per year)": [
+        "(2 a 4 per any)"
+      ],
+      "(4-6 emails per year)": [
+        "(4 a 5 correus electrònics per any)"
+      ],
       "(during your first month)": [
         "(durant el vostre primer mes)"
       ]
@@ -4699,10 +4710,10 @@
         "${ totalImported }/${ totalToImport } contactes xifrats i afegits a la vostra llista de contactes"
       ],
       "An error occurred while encrypting and adding your contact. No contact could be imported.": [
-        "S'ha produït un error en xifrar i afegir els vostres contactes. No s'ha pogut importar cap contacte."
+        "S'ha produït un error en xifrar i afegir el vostre contacte. No s'ha pogut importar cap contacte."
       ],
       "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
-        "S'ha produït un error en xifrar i afegir els vostres contactes. ${ totalImported } de ${ totalToImport } contactes importats."
+        "S'ha produït un error en xifrar i afegir els vostres contactes. S'han importat ${ totalImported } contactes de ${ totalToImport }."
       ],
       "An error occurred while encrypting and adding your contacts. No contact could be imported.": [
         "S'ha produït un error en xifrar i afegir els vostres contactes. No s'ha pogut importar cap contacte."
@@ -5406,7 +5417,7 @@
         "Si surt ara, és possible que els canvis no es desin"
       ],
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
-        "Compartint tots els detalls dels esdeveniments d'aquest calendari accepteu donar a ${ BRAND_NAME } accés a la informació xifrada d'aquest calendari."
+        "Pel fet de compartir tots els detalls dels esdeveniments d'aquest calendari, accepteu donar a ${ BRAND_NAME } accés a la informació xifrada d'aquest calendari."
       ],
       "Center": [
         "Centre"
@@ -5654,7 +5665,7 @@
         "Per a Visa, MasterCard i Discover, els 3 dígits a la part posterior de la targeta. Per a American Express, els 4 dígits a la part frontal de la targeta."
       ],
       "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "Transferiu els missatges entrants d'un altre compte vers la vostra safata d'entrada segura de ${ MAIL_APP_NAME }."
+        "Reenvieu els missatges entrants d'un altre compte a la vostra safata d'entrada segura de ${ MAIL_APP_NAME }."
       ],
       "Free forever": [
         "Gratuït per sempre"
@@ -5884,10 +5895,10 @@
         "Feu que els vostres contactes coneguin que us preocupeu per la seva privadesa."
       ],
       "Link copied to clipboard": [
-        "S'ha copiat l'enllaç al porta-retalls."
+        "S'ha copiat l'enllaç al porta-retalls"
       ],
       "Link created": [
-        "Enllaç creat"
+        "S'ha creat l'enllaç"
       ],
       "Link deleted": [
         "S'ha eliminat l'enllaç"
@@ -6273,6 +6284,9 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Com que sou un usuari fidel, el vostre compte té característiques addicionals activades."
       ],
+      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To use this feature, start by generating a new token.": [
+        "Una tramesa SMTP permet als serveis de tercers o dispositius enviar correus electrònics a través de ${ MAIL_APP_NAME } per a les adreces de domini personalitzades. Per utilitzar aquesta característica, comenceu generant un nou token."
+      ],
       "Some keys successfully reactivated": [
         "S'han reactivat correctament algunes claus"
       ],
@@ -6419,7 +6433,7 @@
         "Aquest enllaç porta a un lloc web que us podria estar intentant robar la informació, com ara contrasenyes i detalls de targetes de crèdit."
       ],
       "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Aquest enllaç podria ser un atac homògraf i no es pot obrir amb el navegador Edge. Si esteu segurs que aquest enllaç és legítim, feu servir un navegador diferent per a obrir-lo."
+        "Aquest enllaç podria ser un atac homògraf i no es pot obrir amb el navegador Edge. Si esteu segur que aquest enllaç és legítim, feu servir un navegador diferent per a obrir-lo."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Aquest enllaç pot ser un atac de homògraf. Si esteu segurs que l’enllaç és el que vols, o no l'obriu."
@@ -6503,7 +6517,10 @@
         "Per lluitar contra el correu brossa i l'abús, verifiqueu que sou humà."
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
-        "Per importar esdeveniments, creeu abans un calendari en ${ CALENDAR_APP_NAME }. Aquí és on apareixeran tots els esdeveniments després de la importació."
+        "Per a importar esdeveniments, creeu abans un calendari en ${ CALENDAR_APP_NAME }. Aquí és on apareixeran tots els esdeveniments després de la importació."
+      ],
+      "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
+        "Per mantenir-vos al dia amb els darrers desenvolupaments de ${ BRAND_NAME }, podeu subscriure-us als nostres diversos correus electrònics i ${ blogLink } de tant en tant."
       ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "Per a continuar, seleccioneu un mètode de recuperació del compte perquè puguem verificar la sol·licitud."
@@ -8289,6 +8306,9 @@
       "${ BRAND_NAME } for Business newsletter": [
         "Butlletí ${ BRAND_NAME } for Business"
       ],
+      "${ BRAND_NAME } important announcements": [
+        "Anuncis importants de ${ BRAND_NAME }"
+      ],
       "${ BRAND_NAME } newsletter": [
         "Butlletí ${ BRAND_NAME }"
       ],
@@ -8408,6 +8428,9 @@
       "Common sign up issues": [
         "Problemes comuns de registre"
       ],
+      "create a ticket": [
+        "crear un incidència"
+      ],
       "Create account": [
         "Crea un compte"
       ],
@@ -8482,6 +8505,9 @@
       ],
       "View guide": [
         "Veure la guia"
+      ],
+      "visit our blog": [
+        "visitar el nostre blog"
       ],
       "What is the difference between UDP and TCP protocols?": [
         "Quina és la diferència entre els protocols UDP i TCP?"
@@ -10096,6 +10122,9 @@
       "Checkout": [
         "Pagament"
       ],
+      "Continue with your ${ BRAND_NAME } account": [
+        "Continueu amb el vostre compte de ${ BRAND_NAME }"
+      ],
       "Limited time offer": [
         "Oferta per temps limitat"
       ],
@@ -10110,6 +10139,9 @@
       ]
     },
     "pass_signup_2023: Info": {
+      "${ PASS_APP_NAME } benefits": [
+        "Avantatges de ${ PASS_APP_NAME }"
+      ],
       "+ ${ relativePrice } per month": [
         "+ ${ relativePrice } al mes"
       ],
@@ -10119,8 +10151,14 @@
       "Creating your account": [
         "S'està creant el compte"
       ],
+      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
+        "Per només **${ relativePrice } més al mes**, obteniu accés a tots els serveis prèmium de ${ BRAND_NAME }!"
+      ],
       "Free forever": [
         "Gratuït per sempre"
+      ],
+      "Includes basic ${ appName } features:": [
+        "Inclou les característiques bàsiques de ${ appName }:"
       ],
       "Install ${ PASS_APP_NAME }": [
         "Instal·leu ${ PASS_APP_NAME }"
@@ -10169,6 +10207,9 @@
       ],
       "Works on all devices": [
         "Funciona en tots els dispositius"
+      ],
+      "You currently have": [
+        "Actualment teniu"
       ]
     },
     "pass_signup_2023: Onboarding": {
@@ -10179,6 +10220,9 @@
     "pass_signup_2023: Title": {
       "${ upsellPlanTitle } plan": [
         "Pla ${ upsellPlanTitle }"
+      ],
+      "Create your ${ BRAND_NAME } account": [
+        "Creeu el vostre compte de ${ BRAND_NAME }"
       ],
       "Secure your account": [
         "Protegiu el vostre compte"
@@ -11356,13 +11400,13 @@
     },
     "summer2023: Deal details": {
       "Premium Drive": [
-        "Versió prèmium de Drive"
+        "Drive prèmium"
       ],
       "Premium Mail and Calendar": [
-        "Versió prèmium de Mail i Calendar"
+        "Correu i Calendari prèmium"
       ],
       "Premium Password Manager": [
-        "Gestor de Contrasenyes Prèmium"
+        "Gestor de Contrasenyes prèmium"
       ]
     },
     "summer2023: Describe Proton Pass": {
@@ -12117,6 +12161,9 @@
       "PayPal verification failed": [
         "Ha fallat la verificació de PayPal"
       ],
+      "Personalise your e-mail footer": [
+        "Personalitzeu el peu de pàgina del vostre correu electrònic"
+      ],
       "Phone": [
         "Telèfon"
       ],
@@ -12263,6 +12310,9 @@
       ],
       "Signed in to member account": [
         "S'ha iniciat la sessió al compte de membre"
+      ],
+      "SMTP Submission": [
+        "Tramesa SMTP"
       ],
       "Sort folders alphabetically": [
         "Ordena les carpetes alfabèticament"
@@ -12706,7 +12756,7 @@
         "Avui és un bon dia per escriure un correu electrònic"
       ],
       "Update default font and size": [
-        "Actualitza la font i la mida per defecte"
+        "Actualitza la lletra i la mida per defecte"
       ],
       "Your default font will look like following:": [
         "La font per defecte serà com la següent:"

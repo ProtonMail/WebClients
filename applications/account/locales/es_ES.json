@@ -177,7 +177,7 @@
         "Chatea con nosotros"
       ],
       "Check import progress": [
-        "Comprobar el progreso de la importación"
+        "Verificar el progreso de la importación"
       ],
       "Choose a file or drag it here": [
         "Elige un archivo o arrástralo aquí"
@@ -444,16 +444,16 @@
         "Obtener una nueva dirección de correo cifrada"
       ],
       "Get more addresses": [
-        "Disfruta de más direcciones"
+        "Obtener más direcciones"
       ],
       "Get more filters": [
         "Disfruta de más filtros"
       ],
       "Get more folders": [
-        "Disfruta de más carpetas"
+        "Obtener más carpetas"
       ],
       "Get more labels": [
-        "Disfruta de más etiquetas"
+        "Obtener más etiquetas"
       ],
       "Get the deal": [
         "Obtener la promoción"
@@ -735,7 +735,7 @@
         "Guardar archivo ICS"
       ],
       "Save selected": [
-        "Guardar los elementos seleccionados"
+        "Guardar seleccionado"
       ],
       "Search": [
         "Buscar"
@@ -1207,7 +1207,7 @@
         "Anual"
       ],
       "Monthly": [
-        "Mensualmente"
+        "Mensual"
       ],
       "Two-year": [
         "Bienal"
@@ -1302,7 +1302,7 @@
         "Añadir enlace al pie de tu correo electrónico"
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
-        "Continuar usando ${ MAIL_APP_NAME }."
+        "Continuar utilizando ${ MAIL_APP_NAME }."
       ],
       "Copy": [
         "Copiar"
@@ -2985,6 +2985,11 @@
         "Has cancelado la suscripción de correos de ${ categoriesJsx }."
       ]
     },
+    "Email Unsubscribe Categories": {
+      "${ allCategoryTitlesExceptTheLastOne } and ${ lastCategoryTitle }": [
+        "${ allCategoryTitlesExceptTheLastOne } y ${ lastCategoryTitle }"
+      ]
+    },
     "Enabled 2FA": {
       "2FA": [
         "2FA"
@@ -3022,7 +3027,7 @@
         "Error de autenticación."
       ],
       "Automatic replies is a paid feature. Please upgrade to a paid account to use this feature.": [
-        "Las respuestas automáticas son una función de pago. Mejora a un plan de pago para usar esta función."
+        "Las respuestas automáticas son una función de pago. Mejora a un plan de pago para utilizar esta función."
       ],
       "Calendar cannot be found": [
         "No se ha encontrado el calendario."
@@ -3078,7 +3083,7 @@
         "Error en una de las condiciones"
       ],
       "Expired": [
-        "Caducado"
+        "Expirado"
       ],
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
         "Error al obtener las sesiones activas. ${ refresh } o inténtalo de nuevo más tarde."
@@ -3372,7 +3377,7 @@
         "Las claves de confianza no son válidas para el envío"
       ],
       "Try again later": [
-        "Vuelva a intentarlo más tarde"
+        "Vuelve a intentarlo más tarde"
       ],
       "Try using only letters, numerals, and _.-": [
         "Utiliza solo letras, números y _.-"
@@ -3646,7 +3651,7 @@
         "Vuelve a cargar la página o inténtalo de nuevo más tarde."
       ],
       "Something went wrong": [
-        "Algo salió mal"
+        "Se ha producido un error."
       ],
       "Too many child sessions, please clear your cookies and sign back in.": [
         "Hay demasiadas sesiones secundarias. Borra tus cookies y vuelve a iniciar sesión."
@@ -3982,7 +3987,7 @@
         "Tu cuenta tiene más direcciones de correo electrónico que las que tienes disponibles en este plan. ${ addressSettingsLink }"
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
-        "Tu cuenta está usando ${ usedSpace } de almacenamiento, por lo que sobrepasa el espacio que tienes asignado (${ inviteSpace }). Elimina algunos datos o pídeles al administrador del plan que aumente el espacio de almacenamiento."
+        "Tu cuenta está utilizando ${ usedSpace } de almacenamiento, por lo que sobrepasa el espacio que tienes asignado (${ inviteSpace }). Elimina algunos datos o pídeles al administrador del plan que aumente el espacio de almacenamiento."
       ],
       "Your current plan cannot join a Visionary or family plan.": [
         "Tu plan actual no puede formar parte de un plan Visionary o familiar."
@@ -4415,6 +4420,12 @@
       "(1-2 emails per month)": [
         "(1-2 correos al mes)"
       ],
+      "(2-4 per year)": [
+        "(2-4 al año)"
+      ],
+      "(4-6 emails per year)": [
+        "(4-6 correos al año)"
+      ],
       "(during your first month)": [
         "(durante tu primer mes)"
       ]
@@ -4608,7 +4619,7 @@
         "Dirección de correo electrónico"
       ],
       "Last used": [
-        "Última vez usado"
+        "Última vez utilizado"
       ],
       "Token name": [
         "Nombre de token"
@@ -5036,7 +5047,7 @@
         "${ firstRemainingCalendarName } se definirá como calendario por defecto."
       ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
-        "Se puede también usar ${ MAIL_APP_NAME } con una contraseña única que reemplaza tanto a la contraseña de inicio de sesión como a la contraseña del buzón. Para cambiar al modo de contraseña única, introduce la contraseña única que quieres utilizar y haz clic en Guardar."
+        "Se puede también utilizar ${ MAIL_APP_NAME } con una contraseña única que reemplaza tanto a la contraseña de inicio de sesión como a la contraseña del buzón. Para cambiar al modo de contraseña única, introduce la contraseña única que quieres utilizar y haz clic en Guardar."
       ],
       "${ MAIL_APP_NAME } supports DKIM signing for custom domains. To use DKIM authentication, please add the following CNAME record into your DNS settings for this domain. This can typically be done in the control panel of your domain name registrar.": [
         "${ MAIL_APP_NAME } admite las firmas DKIM para los dominios personalizados. Para utilizar la autenticación DKIM, añade el siguiente registro CNAME en tu configuración DNS para este dominio. Esto puede hacerse normalmente en el panel de control de tu registrador de nombres de dominio."
@@ -5157,7 +5168,7 @@
         "Un nombre que te ayude a identificar dónde lo utilizas para poder revocarlo o ampliarlo fácilmente más adelante."
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
-        "Un número telefónico solo puede usarse para verificar una cuenta de ${ BRAND_NAME }."
+        "Un número telefónico solo puede utilizarse para verificar una cuenta de ${ BRAND_NAME }."
       ],
       "A recovery file lets you unlock and view your data after an account reset": [
         "Un archivo de recuperación te permite desbloquear y ver tus datos después de un restablecimiento de la cuenta."
@@ -5564,7 +5575,7 @@
         "Suelta aquí para importar"
       ],
       "Each code can only be used once": [
-        "Cada código puede usarse solo una vez."
+        "Cada código puede utilizarse solo una vez."
       ],
       "Edit label": [
         "Editar etiqueta"
@@ -5690,13 +5701,13 @@
         "Obtener ${ upsellPlanName }"
       ],
       "Get a ${ BRAND_NAME } address to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
-        "Consigue una dirección de ${ BRAND_NAME } para usar todos los servicios ${ BRAND_NAME_TWO } incluyendo ${ MAIL_SHORT_APP_NAME } y ${ CALENDAR_SHORT_APP_NAME }."
+        "Consigue una dirección de ${ BRAND_NAME } para utilizar todos los servicios ${ BRAND_NAME_TWO } incluyendo ${ MAIL_SHORT_APP_NAME } y ${ CALENDAR_SHORT_APP_NAME }."
       ],
       "Get my ${ BRAND_NAME } address": [
         "Obtener mi dirección ${ BRAND_NAME }"
       ],
       "Give the token a descriptive name, such as the service you plan to use it with, and select one of your active custom domain addresses. Only this address will be able to send emails with this token.": [
-        "Pon un nombre descriptivo al token, como el servicio con el que planeas usarlo, y selecciona una de tus direcciones de dominio personalizado activas. Solo esta dirección podrá enviar correos electrónicos con este token."
+        "Pon un nombre descriptivo al token, como el servicio con el que planeas utilizarlo, y selecciona una de tus direcciones de dominio personalizado activas. Solo esta dirección podrá enviar correos electrónicos con este token."
       ],
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
         "¡Dale tu clave pública a tus amigos o publícala en línea para que todos puedan enviarte correos electrónicos cifrados de extremo a extremo!"
@@ -5765,7 +5776,7 @@
         "Si continúas con un plan con menos funciones, perderás el acceso a las funciones de pago de ${ VPN_APP_NAME }."
       ],
       "If you recently reset your password, you can use a data recovery method to unlock your data": [
-        "Si has restablecido recientemente tu contraseña, puedes usar un método de recuperación de datos para desbloquear tus datos."
+        "Si has restablecido recientemente tu contraseña, puedes utilizar un método de recuperación de datos para desbloquear tus datos."
       ],
       "If you want to keep an existing SPF record, you can just add ${ spf } to it after the ${ spfValue }. Do not create multiple SPF records.": [
         "Si quieres mantener un registro SPF existente, solo añade ${ spf } a él después de ${ spfValue }. No crees múltiples registros SPF."
@@ -5814,7 +5825,7 @@
         "Importando tus datos desde ${ importedEmailAddress } a ${ toEmail }."
       ],
       "Improve your ${ BRAND_NAME } experience by adapting the application to your needs.": [
-        "Mejora tu experiencia en ${ BRAND_NAME } tras adaptar la aplicación a tus necesidades."
+        "Mejora tu experiencia en ${ BRAND_NAME } adaptando la aplicación a tus necesidades."
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "En el siguiente paso, podrás enviar un depósito con una dirección Bitcoin."
@@ -5860,7 +5871,7 @@
         "es obligatorio"
       ],
       "I’ve been using @ProtonMail and thought you might like it. It’s a secure email service that protects your privacy. Sign up with my referral link to get 1 month of premium features for free: ${ referrerLink }": [
-        "He estado usando @ProtonMail y creo que puede gustarte. Es un servicio de correo electrónico seguro que protege tu privacidad. Regístrate con mi enlace de referencia para obtener gratis 1 mes de funciones premium: ${ referrerLink }"
+        "He estado utilizando @ProtonMail y creo que puede gustarte. Es un servicio de correo electrónico seguro que protege tu privacidad. Regístrate con mi enlace de referencia para obtener gratis 1 mes de funciones premium: ${ referrerLink }"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Solo tienes que confirmar tu selección y nosotros haremos el resto."
@@ -5926,7 +5937,7 @@
         "Cargando..."
       ],
       "Logs include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
-        "Los registros incluyen los intentos de autenticación para todos los servicios de ${ BRAND_NAME } que usan tus credenciales de ${ BRAND_NAME_TWO }."
+        "Los registros incluyen los intentos de autenticación para todos los servicios de ${ BRAND_NAME } que utilizan tus credenciales de ${ BRAND_NAME_TWO }."
       ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Asegúrate de ${ addARecoveryMethod }. De esta manera puedes volver a tener acceso a tu cuenta en caso de olvidar la contraseña."
@@ -6091,7 +6102,7 @@
         "Verifica los posibles errores de tu archivo o contacta con el servicio al cliente para más información."
       ],
       "Please check your file, or try using our ${ csvTemplateButton }.": [
-        "Verifica tu archivo o prueba a usar nuestro ${ csvTemplateButton }."
+        "Verifica tu archivo o prueba a utilizar nuestro ${ csvTemplateButton }."
       ],
       "Please contact the administrator of the organisation to manage the subscription.": [
         "Contacta al administrador de la organización para administrar la suscripción."
@@ -6294,11 +6305,14 @@
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
         "El envío por SMTP permite que servicios o dispositivos de terceros envíen correos electrónicos a través de ${ MAIL_APP_NAME } para tus direcciones de dominio personalizadas. Para solicitar acceso, ${ createTicket } describiendo tus casos de uso, cuáles dominios personalizados te gustaría utilizar y los volúmenes de correo electrónico esperados por hora y por día."
       ],
+      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To use this feature, start by generating a new token.": [
+        "El envío por SMTP permite a servicios de terceros o dispositivos enviar correos electrónicos a través de ${ MAIL_APP_NAME } para tus direcciones de dominio personalizadas. Para utilizar esta función, comienca generando un token nuevo."
+      ],
       "Some keys successfully reactivated": [
         "Se han reactivado algunas claves."
       ],
       "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ${ MAIL_APP_NAME } in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
-        "Se usa el metodo SPF para especificar a quién està autorizado a enviar correo electrónico para el dominio. Recomendamos encarecidamente incluir ${ MAIL_APP_NAME } en tu registro SPF. Añade el siguiente registro TXT en tu DNS. Esto puede hacerse normalmente en el panel de control de tu registrador de nombres de dominio."
+        "Se utiliza el metodo SPF para especificar a quién està autorizado a enviar correo electrónico para el dominio. Recomendamos encarecidamente incluir ${ MAIL_APP_NAME } en tu registro SPF. Añade el siguiente registro TXT en tu DNS. Esto puede hacerse normalmente en el panel de control de tu registrador de nombres de dominio."
       ],
       "Step ${ step }": [
         "Paso ${ step }",
@@ -6317,7 +6331,7 @@
         "El espacio de almacenamiento es compartido entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } y ${ DRIVE_APP_NAME }."
       ],
       "Storage used by this user": [
-        "Almacenamiento usado por este usuario"
+        "Almacenamiento utilizado por este usuario"
       ],
       "Store this password and file in a safe place. You’ll need them again to import your key.": [
         "Guarda esta contraseña y archivo en un lugar seguro. Los necesitarás de nuevo para importar tu clave."
@@ -6434,13 +6448,13 @@
         "Esta es una clave de cifrado que puedes haber guardado anteriormente."
       ],
       "This is the password you used before the password reset.": [
-        "Esta es la contraseña que usabas antes de restablecer la contraseña."
+        "Esta es la contraseña que utilizabas antes de restablecer la contraseña."
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Este enlace conduce a un sitio web que podría estar intentando robar tus datos, como contraseñas y datos de tarjetas de crédito."
       ],
       "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Este enlace puede ser un ataque homógrafo y el navegador Edge no puede abrirlo. Si estás seguro de que el enlace es legítimo, usa un navegador diferente para abrirlo."
+        "Este enlace puede ser un ataque homógrafo y el navegador Edge no puede abrirlo. Si estás seguro de que el enlace es legítimo, utiliza un navegador diferente para abrirlo."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Este enlace puede ser un ataque homógrafo. Verifica que este es el enlace que quieres visitar o no lo abras."
@@ -6470,7 +6484,7 @@
         "Esto eliminará todas las versiones anteriores de tus archivos."
       ],
       "This will disable your current recovery phrase. You won't be able to use it to access your account or decrypt your data.": [
-        "Esto deshabilitará tu frase de recuperación actual. No podrás usarla para acceder a tu cuenta o descifrar tus datos."
+        "Esto deshabilitará tu frase de recuperación actual. No podrás utilizarla para acceder a tu cuenta o descifrar tus datos."
       ],
       "This will download a file containing your private key. Protect this file by encrypting it with a password.": [
         "Esto descargará un archivo que contiene tu clave privada. Protege este archivo cifrándolo con una contraseña."
@@ -6500,7 +6514,7 @@
         "Para evitar la pérdida de datos, solo bórralo si sabes qué estás haciendo o si has exportado una copia."
       ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
-        "Para completar tu pago, envía ${ btcAmountBold } a la dirección abajo."
+        "Para completar tu pago, envía ${ btcAmountBold } a la dirección de abajo."
       ],
       "To confirm, please enter the name of the user you wish to delete.": [
         "Para confirmar, introduce el nombre del usuario que quieres eliminar."
@@ -6536,10 +6550,10 @@
         "Para asegurar tu conexión a internet, descarga e instala la aplicación ${ VPN_APP_NAME } en tu dispositivo y conéctate a un servidor."
       ],
       "to use ${ toAppName } and all ${ BRAND_NAME } services": [
-        "para usar ${ toAppName } y todos los servicios de ${ BRAND_NAME }"
+        "para utilizar ${ toAppName } y todos los servicios de ${ BRAND_NAME }"
       ],
       "To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
-        "Para usar ${ toAppName } necesitas una dirección ${ MAIL_APP_NAME }."
+        "Para utilizar ${ toAppName } necesitas una dirección ${ MAIL_APP_NAME }."
       ],
       "To work properly, each filter must contain at least a name and a valid Sieve script. You can ${ link }.": [
         "Para funcionar correctamente, cada filtro debe contener al menos un nombre y un script Sieve válido. Puedes ${ link }."
@@ -6683,16 +6697,16 @@
         "No hemos podido procesar tu pago."
       ],
       "We need to authenticate your payment method with your bank.": [
-        "Necesitamos autenticar tu método de pago con tu banco."
+        "Necesitamos autenticar el método de pago con tu banco."
       ],
       "We need to authenticate your payment with your bank.": [
-        "Necesitamos autenticar tu pago con tu banco."
+        "Necesitamos autenticar el pago con tu banco."
       ],
       "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
         "Recomendamos notificar a los miembros de la organización y pedirles que configuren 2FA para sus cuentas antes de requerir la utilización de 2FA."
       ],
       "We recommend using your recovery phrase instead.": [
-        "Recomendamos usar tu frase de recuperación en su lugar."
+        "Recomendamos utilizar tu frase de recuperación en su lugar."
       ],
       "We securely store recovery information on your trusted device to prevent you from losing your data": [
         "Almacenamos de manera segura la información de recuperación en tu dispositivo de confianza para evitar que pierdas tus datos."
@@ -6737,7 +6751,7 @@
         "Cuando las notificaciones están activadas, enviaremos una alerta a tu correo electrónico de recuperación si tienes nuevos mensajes en tu cuenta ${ MAIL_APP_NAME }."
       ],
       "When they subscribe to a plan, you'll get credits to use on your subscription.": [
-        "Cuando se suscriban a un plan, obtendrás créditos para usar en tu suscripción."
+        "Cuando se suscriban a un plan, obtendrás créditos para utilizar en tu suscripción."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Cuando configuras la autenticación de dos factores, te proporcionamos códigos de recuperación que puedes utilizar para iniciar sesión si pierdes el acceso a tu aplicación de autenticación."
@@ -6749,7 +6763,7 @@
         "¿Por qué?"
       ],
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME_TWO } services": [
-        "Con una dirección ${ BRAND_NAME } cifrada, puedes usar todos los servicios de ${ BRAND_NAME_TWO }."
+        "Con una dirección ${ BRAND_NAME } cifrada, puedes utilizar todos los servicios de ${ BRAND_NAME_TWO }."
       ],
       "With your current plan, you can only receive messages with your @pm.me address. Upgrade to send messages and create additional addresses using @pm.me.": [
         "Con tu plan actual, solo puedes recibir mensajes con tu dirección @pm.me. Actualiza tu cuenta para enviar mensajes y crear direcciones adicionales con @pm.me."
@@ -6886,7 +6900,7 @@
         "Perderás el acceso a los servidores y funciones de ${ vpnPlanNameShort } en esta fecha."
       ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
-        "Necesitarás una dirección ${ BRAND_NAME } para usar ${ MAIL_APP_NAME } y ${ CALENDAR_APP_NAME }"
+        "Necesitarás una dirección ${ BRAND_NAME } para utilizar ${ MAIL_APP_NAME } y ${ CALENDAR_APP_NAME }"
       ],
       "You will NOT be able to decrypt any messages, files, and other data encrypted with this key. All data signed with this key will no longer be verified by ${ BRAND_NAME } applications.": [
         "NO podrás descifrar ningún mensaje, archivo u otros datos cifrados con esta clave. Todos los datos firmados con esta clave ya no serán verificados por las aplicaciones de ${ BRAND_NAME }."
@@ -6898,7 +6912,7 @@
         "No podrás recuperar los datos cifrados después de un restablecimiento de la cuenta utilizando los archivos de recuperación descargados."
       ],
       "You won’t be able to recover locked data using your downloaded recovery files. This will also void trusted device-recovery information.": [
-        "No podrás recuperar datos bloqueados usando tus archivos de recuperación descargados. Esto también invalidará la información de recuperación del dispositivo de confianza."
+        "No podrás recuperar datos bloqueados utilizando tus archivos de recuperación descargados. Esto también invalidará la información de recuperación del dispositivo de confianza."
       ],
       "You'll stay signed in even after you close the browser.": [
         "Seguirás conectado incluso después de cerrar el navegador."
@@ -6910,7 +6924,7 @@
         "Tu cuenta ${ BRAND_NAME } está actualmente suspendida. Transcurridos 28 días, los correos ya no serán entregados en tu bandeja de entrada, tus enlaces compartidos en tu almacenamiento serán bloqueados y no podrás cargar nuevos archivos. Para restablecer el servicio normal, tienes que pagar las facturas pendientes."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "Tu cuenta ${ BRAND_NAME } está suspendida actualmente. Los correos ya no serán entregados en tu bandeja de entrada, tus enlaces compartidos en tu almacenamiento están bloqueados y no puedes cargar nuevos archivos. Para continuar usando tu cuenta, tienes que pagar las facturas pendientes."
+        "Tu cuenta ${ BRAND_NAME } está suspendida actualmente. Los correos ya no serán entregados en tu bandeja de entrada, tus enlaces compartidos en tu almacenamiento están bloqueados y no puedes cargar nuevos archivos. Para continuar utilizando tu cuenta, tienes que pagar las facturas pendientes."
       ],
       "Your ${ BRAND_NAME } password": [
         "Tu contraseña de ${ BRAND_NAME }"
@@ -6965,7 +6979,7 @@
         "La contraseña de tu organización puede compartirse con otros usuarios a los que desees otorgar privilegios administrativos. También es un código de recuperación de emergencia para tener acceso a tu organización en caso de que pierdas el acceso a tu cuenta. Guarda esta contraseña y mantenla segura."
       ],
       "Your organization's emails are protected with end-to-end encryption using the organization key. This fingerprint can be used to verify that all administrators in your account have the same key.": [
-        "Los correos electrónicos de tu organización están protegidos con cifrado de extremo a extremo utilizando la clave de la organización. Se puede usar esta huella digital para verificar que todos los administradores en tu cuenta tienen la misma clave."
+        "Los correos electrónicos de tu organización están protegidos con cifrado de extremo a extremo utilizando la clave de la organización. Se puede utilizar esta huella digital para verificar que todos los administradores en tu cuenta tienen la misma clave."
       ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "Los detalles de pago están protegidos con cifrado TLS y por las leyes de privacidad suizas."
@@ -7625,7 +7639,7 @@
         "Contactos"
       ],
       "Conversation grouping": [
-        "Agrupación de conversaciones"
+        "Agrupar conversaciones"
       ],
       "Copy": [
         "Copiar"
@@ -8316,6 +8330,9 @@
       "${ BRAND_NAME } for Business newsletter": [
         "Boletín comercial de ${ BRAND_NAME }"
       ],
+      "${ BRAND_NAME } important announcements": [
+        "Comunicados importantes de ${ BRAND_NAME }"
+      ],
       "${ BRAND_NAME } newsletter": [
         "Boletín de ${ BRAND_NAME }"
       ],
@@ -8435,6 +8452,9 @@
       "Common sign up issues": [
         "Problemas comunes de registro"
       ],
+      "create a ticket": [
+        "cree un tiquete"
+      ],
       "Create account": [
         "Crear cuenta"
       ],
@@ -8509,6 +8529,9 @@
       ],
       "View guide": [
         "Ver guía"
+      ],
+      "visit our blog": [
+        "visitar nuestro blog"
       ],
       "What is the difference between UDP and TCP protocols?": [
         "¿Cuál es la diferencia entre los protocolos UDP y TCP?"
@@ -9273,7 +9296,7 @@
         "Si no lo haces, tendrás un acceso limitado a tu cuenta y eventualmente se desactivará."
       ],
       "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Para seguir usando ${ MAIL_APP_NAME } con las funciones prémium, suscríbete y elige el método de pago."
+        "Para seguir utilizando ${ MAIL_APP_NAME } con las funciones prémium, suscríbete y elige el método de pago."
       ],
       "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
         "Pásate al plan para empresas y disfruta de todos los servicios prémium de ${ BRAND_NAME }."
@@ -9479,7 +9502,7 @@
         "Crea varias direcciones de correo electrónico para tus identidades en línea, como \"JuanCompras@${ domain }\" para las cuentas destinadas a compras o \"JuanNoticias@${ domain }\", para las suscripciones a medios de comunicación."
       ],
       "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
-        "Crea ${ n } calendario o añade calendarios de amigos, familiares, compañeros y organizaciones.",
+        "Crea hasta ${ n } calendario o añade calendarios de amigos, familiares, compañeros y organizaciones.",
         "Crea hasta ${ n } calendarios o añade calendarios de amigos, familiares, compañeros y organizaciones."
       ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
@@ -9504,7 +9527,7 @@
         "Impón el cierre de sesión cuando se sospeche de que las credenciales del usuario están en peligro."
       ],
       "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
-        "Solo se puede usar IMAP con aplicaciones de escritorio (Outlook, Apple Mail o Thunderbird) mediante ${ MAIL_APP_NAME } Bridge. De momento, no existe compatibilidad con integraciones IMAP en la nube."
+        "Solo se puede utilizar IMAP con aplicaciones de escritorio (Outlook, Apple Mail o Thunderbird) mediante ${ MAIL_APP_NAME } Bridge. De momento, no existe compatibilidad con integraciones IMAP en la nube."
       ],
       "Keep your plans private to you and your family with an encrypted calendar": [
         "Mantén privados tus planes y los de tu familia con un calendario cifrado."
@@ -10171,10 +10194,10 @@
         "${ PASS_APP_NAME } mantiene tus contraseñas y tu identidad a salvo gracias a un cifrado riguroso."
       ],
       "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption. To add premium features of ${ PASS_APP_NAME_2 } to your current subscription, we suggest upgrading to the ${ upsellPlanName } plan.": [
-        "${ PASS_APP_NAME } mantienesus contraseñas y su identidad a salvo gracias a un crifrado riguroso de extremo a extremo. Para añadir características premium de ${ PASS_APP_NAME_2 } a su suscripción actual, le sugerimos que actualice al plan ${ upsellPlanName }."
+        "${ PASS_APP_NAME } mantiene tus contraseñas y tu identidad a salvo gracias a un crifrado riguroso de extremo a extremo. Para añadir características premium de ${ PASS_APP_NAME_2 } a tu suscripción actual, te sugerimos pasarte al plan ${ upsellPlanName }."
       ],
       "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption. Your current plan already gives you access to premium ${ PASS_APP_NAME_2 } features — no need to purchase again.": [
-        "${ PASS_APP_NAME } mantiene tus contraseñas y tu identidad a salvo gracias a un crifrado riguroso de extremo a extremo. Tu plan actual da acceso características ${ PASS_APP_NAME_2 } premium — no es necesario comprar de nuevo."
+        "${ PASS_APP_NAME } mantiene tus contraseñas y tu identidad a salvo gracias a un cifrado riguroso de extremo a extremo. Tu plan actual da acceso características ${ PASS_APP_NAME_2 } premium — no es necesario comprar de nuevo."
       ],
       "+ ${ relativePrice } per month": [
         "+${ relativePrice } por mes"
@@ -10240,7 +10263,7 @@
         "Instala la aplicación y la extensión"
       ],
       "It’s the only way to fully restore your account, so make sure you keep this **recovery kit** somewhere safe.": [
-        "Es la única forma de restaurar tu cuenta, por lo que tomes las medidas necesarias para mantener este **kit de recuperación** a salvo."
+        "Es la única forma de restaurar tu cuenta, asegúrate de tomar las medidas necesarias para mantener este **kit de recuperación** a salvo."
       ],
       "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
         "Únete a más de 100 millones de personas que han elegido ${ BRAND_NAME } para tu seguridad en línea"
@@ -10384,7 +10407,7 @@
         "Confirmar contraseña"
       ],
       "domain.com": [
-        "dominio.es"
+        "dominio.com"
       ],
       "E.g., ": [
         "P. ej., "
@@ -10777,7 +10800,7 @@
         "Error al verificar la firma"
       ],
       "You have enabled address verification for ${ boldSenderEmail }. We couldn't verify the authenticity of this calendar invite. This may be due to changes in the encryption keys of this contact. Please review its advanced PGP settings, or your can ask ${ boldSenderEmail } for a new invite.": [
-        "Has activado la verificación de dirección para ${ boldSenderEmail }. No hemos podido verificar la autenticidad de la invitación de este calendario. Esto puede ser debido a cambios en las claves de cifrado de este contacto. Revisa los ajustes de PGP avanzados o pide a ${ boldSenderEmail } una nueva invitación."
+        "Has activado la verificación de dirección para ${ boldSenderEmail }. No hemos podido verificar la autenticidad de la invitación de este calendario. Esto puede ser debido a cambios en las claves de cifrado de este contacto. Verifica los ajustes de PGP avanzados o pide a ${ boldSenderEmail } una nueva invitación."
       ]
     },
     "Signup label": {
@@ -10785,7 +10808,7 @@
         "Confirmar la dirección de correo electrónico"
       ],
       "Confirm password": [
-        "Confirmar la contraseña"
+        "Confirmar contraseña"
       ],
       "Display name": [
         "Nombre para mostrar"
@@ -11199,10 +11222,10 @@
         "Suscripciones"
       ],
       "Your plan was purchased using an Android app. So to make changes to your plan or update your payment details, you’ll need to go to the Google Play Store.": [
-        "Has comprado tu plan usando una app de Android. Para realizar cambios a tu plan o actualizar tus datos de pago necesitarás conectarte a Google Play Store."
+        "Has comprado tu plan utilizando una app de Android. Para realizar cambios a tu plan o actualizar tus datos de pago necesitarás conectarte a Google Play Store."
       ],
       "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
-        "Has comprado tu plan usando una app de iOS. Para realizar cambios a tu plan o actualizar tus datos de pago necesitarás conectarte a la App Store de Apple."
+        "Has comprado tu plan utilizando una app de iOS. Para realizar cambios a tu plan o actualizar tus datos de pago necesitarás conectarte a la App Store de Apple."
       ]
     },
     "Subscription price": {
@@ -11227,13 +11250,13 @@
         "Habilitar el soporte de pago automático"
       ],
       "Keep auto-pay": [
-        "Mantener el pago automático"
+        "Mantener pago automático"
       ],
       "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. Furthermore, if you forget to make a manual payment and auto-pay is disabled for all payment methods, we may auto-downgrade your account which will lead to the loss of many features.": [
         "Nuestro sistema ya no te cobrará automáticamente con este método de pago, pero tu suscripción aún se renovará al final del ciclo de facturación. Si deseas pasar a una versión con menos funciones o cambiar tu suscripción, debes hacerlo ti mismo antes del final del periodo de facturación. Además, si olvidas realizar un pago manual y el pago automático está deshabilitado para todos los métodos de pago, es posible que pasemos a una versión con menos funciones automáticamente para tu cuenta, lo que provocará la pérdida de muchas funciones."
       ],
       "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
-        "Nuestro sistema ya no te cobrará automáticamente con este método de pago, pero tu suscripción aún se renovará al final del ciclo de facturación. Si deseas pasar a una versión con menos funciones o cambiar tu suscripción, debes hacerlo tú mismo antes de finalizar el periodo de facturación. No podemos pasarte a una version con menos funciones automáticamente porque si superas la cuota de almacenamiento del plan gratuito o si usas otras funciones de pago, no podemos eliminar automáticamente archivos, correos electrónicos u otros datos por ti. Si deshabilitas el pago automático, recuerda pagar tu próxima factura de suscripción antes de la fecha de vencimiento para evitar la suspensión de la cuenta."
+        "Nuestro sistema ya no te cobrará automáticamente con este método de pago, pero tu suscripción aún se renovará al final del ciclo de facturación. Si deseas pasar a una versión con menos funciones o cambiar tu suscripción, debes hacerlo tú mismo antes de finalizar el periodo de facturación. No podemos pasarte a una version con menos funciones automáticamente porque si superas la cuota de almacenamiento del plan gratuito o si utilizas otras funciones de pago, no podemos eliminar automáticamente archivos, correos electrónicos u otros datos por ti. Si deshabilitas el pago automático, recuerda pagar tu próxima factura de suscripción antes de la fecha de vencimiento para evitar la suspensión de la cuenta."
       ]
     },
     "Subscription saving": {
@@ -11241,7 +11264,7 @@
         "Ahorra"
       ],
       "Save ${ discountPercentage }%": [
-        "Economiza ${ discountPercentage }%"
+        "Ahorra un ${ discountPercentage }%"
       ]
     },
     "Subscription status": {
@@ -11249,7 +11272,7 @@
         "Activa"
       ],
       "Expiring": [
-        "Expirando"
+        "Expira"
       ],
       "Upcoming": [
         "Próximo"
@@ -11350,7 +11373,7 @@
         "Claves actualizadas"
       ],
       "Locale updated": [
-        "El idioma ha sido ctualizado."
+        "Idioma actualizado"
       ],
       "Organization activated": [
         "Organización activada"
@@ -11827,10 +11850,10 @@
         "Cancelar ${ MAIL_SHORT_APP_NAME } subscripción"
       ],
       "Cancel subscription": [
-        "Cancelar tu suscripción"
+        "Cancelar suscripción"
       ],
       "Cancel subscription?": [
-        "¿Cancelar la suscripción?"
+        "¿Cancelar suscripción?"
       ],
       "Card verification": [
         "Verificación de la tarjeta"
@@ -12187,7 +12210,7 @@
         "Diseño"
       ],
       "Leave ${ organisationName }?": [
-        "¿Dejar ${ organisationName }?"
+        "¿Abandonar ${ organisationName }?"
       ],
       "Link confirmation": [
         "Confirmación de enlace"
@@ -12420,6 +12443,9 @@
       "Signed in to member account": [
         "Sesión Iniciada en la cuenta de usuario"
       ],
+      "SMTP Submission": [
+        "Envío SMTP"
+      ],
       "Sort folders alphabetically": [
         "Ordenar carpetas alfabéticamente"
       ],
@@ -12471,10 +12497,10 @@
         "Autenticación de doble factor"
       ],
       "Two-factor authentication enforcement": [
-        "Autenticación de dos factores requerida"
+        "Autenticación de doble factor requerida"
       ],
       "Two-factor authentication reminders": [
-        "Recordatorios de autenticación de dos factores"
+        "Recordatorios de autenticación de doble factor"
       ],
       "Type": [
         "Tipo"
@@ -12486,7 +12512,7 @@
         "Navegador no soportado"
       ],
       "Upgrade plan": [
-        "Mejorar tu plan"
+        "Mejorar plan"
       ],
       "Users and addresses": [
         "Usuarios y direcciones"
@@ -12744,7 +12770,7 @@
         "Muestra la imagen de cada remitente en la lista de mensajes. Si no hay una foto disponible se mostrarán las iniciales."
       ],
       "Signatures produced by this key are treated as invalid and this key cannot be used for encryption": [
-        "Las firmas creadas con esta clave son tratadas como inválidas y esta clave no puede usarse para cifrar"
+        "Las firmas creadas con esta clave son tratadas como inválidas y esta clave no puede utilizarse para cifrar"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Las carpetas secundarias del sistema se mostrarán como carpetas separadas en ${ MAIL_APP_NAME }."
