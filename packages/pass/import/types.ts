@@ -1,6 +1,6 @@
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
-import type { ItemImportIntent } from '../types';
+import type { ItemImportIntent, MaybeNull } from '../types';
 
 export enum ImportProvider {
     BITWARDEN = 'bitwarden',
@@ -90,18 +90,10 @@ export type ImportReaderPayload = {
     passphrase?: string;
 };
 
-/* type: 'existing' => import items to existing vault
- * type: 'new'      => import items to new vault */
-export type ImportVault = (
-    | {
-          type: 'existing';
-          shareId: string;
-      }
-    | { type: 'new' }
-) & {
+export type ImportVault = {
+    shareId: MaybeNull<string> /* `shareId: null` => new vault */;
+    name: string;
     items: ItemImportIntent[];
-    vaultName: string;
-    id: string;
 };
 
 export type ImportPayload = { vaults: ImportVault[]; ignored: string[]; warnings: string[] };

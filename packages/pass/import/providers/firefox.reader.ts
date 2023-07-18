@@ -2,7 +2,6 @@ import { c } from 'ttag';
 
 import type { ItemImportIntent } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
-import { uniqueId } from '@proton/pass/utils/string';
 import { msToEpoch } from '@proton/pass/utils/time/get-epoch';
 
 import { readCSV } from '../helpers/csv.reader';
@@ -33,9 +32,8 @@ export const readFirefoxData = async (data: string): Promise<ImportPayload> => {
         return {
             vaults: [
                 {
-                    type: 'new',
-                    vaultName: getImportedVaultName(),
-                    id: uniqueId(),
+                    name: getImportedVaultName(),
+                    shareId: null,
                     items: result.items
                         .filter((item) => item.url !== 'chrome://FirefoxAccounts')
                         .map(

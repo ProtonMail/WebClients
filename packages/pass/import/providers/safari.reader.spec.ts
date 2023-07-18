@@ -21,8 +21,7 @@ describe('Import Safari CSV', () => {
         const [vaultData] = payload.vaults;
 
         expect(payload.vaults.length).toEqual(1);
-        expect(vaultData.type).toEqual('new');
-        expect(vaultData.type === 'new' && vaultData.vaultName).not.toBeUndefined();
+        expect(vaultData.name).not.toBeUndefined();
 
         const { items } = vaultData;
 

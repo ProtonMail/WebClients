@@ -7,7 +7,6 @@ import { type ItemImportIntent, ItemState, WorkerMessageType } from '@proton/pas
 import { partition } from '@proton/pass/utils/array';
 import { prop } from '@proton/pass/utils/fp';
 import { logger } from '@proton/pass/utils/logger';
-import { uniqueId } from '@proton/pass/utils/string';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 
@@ -70,9 +69,8 @@ export const readProtonPassData = async (payload: ProtonPassReaderPayload): Prom
 
                 return {
                     vault: {
-                        type: 'new',
-                        vaultName: name,
-                        id: uniqueId(),
+                        name: name,
+                        shareId: null,
                         items: itemsToImport.map(
                             (item) =>
                                 ({
