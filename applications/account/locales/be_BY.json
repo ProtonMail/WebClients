@@ -3003,6 +3003,11 @@
         "Вы адпісаліся ад лістоў ${ categoriesJsx }."
       ]
     },
+    "Email Unsubscribe Categories": {
+      "${ allCategoryTitlesExceptTheLastOne } and ${ lastCategoryTitle }": [
+        "${ allCategoryTitlesExceptTheLastOne } і ${ lastCategoryTitle }"
+      ]
+    },
     "Enabled 2FA": {
       "2FA": [
         "2ФА"
@@ -4461,6 +4466,12 @@
       "(1-2 emails per month)": [
         "(1-2 лісты ў месяц)"
       ],
+      "(2-4 per year)": [
+        "(2-4 разы ў год)"
+      ],
+      "(4-6 emails per year)": [
+        "(4-6 паведамленняў у год)"
+      ],
       "(during your first month)": [
         "(на працягу першага месяца)"
       ]
@@ -5147,7 +5158,7 @@
         "${ numGroups } групы кантактаў"
       ],
       "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
-        "${ PROTON_SENTINEL_NAME } з'яўляецца перадавой праграмай абароны ўліковых запісаў з дапамогаю вытанчаных AI сістэм і спецыялістаў, якія кругласутачна працуюць каб абараніць вас ад зламыснікаў і пагроз бяспекі."
+        "${ PROTON_SENTINEL_NAME } з'яўляецца перадавой праграмай абароны ўліковых запісаў на базе выдасканаленай сістэмы штучнага інтэлекту і спецыялістаў, якія кругласутачна працуюць, каб абараніць вас ад зламыснікаў і пагроз бяспекі."
       ],
       "${ providerFoldersNumLocalized } folder found": [
         "Знойдзена ${ providerFoldersNumLocalized } папка",
@@ -5888,7 +5899,7 @@
         "URL-адрас відарыса"
       ],
       "Images have been removed because they are not allowed in auto-reply": [
-        "Відарысы былі выдалены, таму што іх нельга выкарыстоўваць у аўтаматычным адказе"
+        "Відарысы былі выдалены, бо іх нельга выкарыстоўваць у аўтаматычным адказе"
       ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Імпартаванне ${ calendarCount } календара з ${ totalCalendarsCount }",
@@ -6275,7 +6286,7 @@
         "Абаронены швейцарскімі законамі аб прыватнасці"
       ],
       "Public figures, journalists, executives, and others who may be the target of cyber attacks are highly encouraged to enable ${ PROTON_SENTINEL_NAME }.": [
-        "Грамадскім дзеячам, журналістам і ўсім іншым, хто можа стаць мэтаю кібератак мы настойліва раім уключыць ${ PROTON_SENTINEL_NAME }"
+        "Грамадскім дзеячам, журналістам і ўсім астатнім, хто можа стаць мішэнню кібератак, мы настойліва раім уключыць ${ PROTON_SENTINEL_NAME }"
       ],
       "Public link invite": [
         "Запрашэнне па публічнай спасылцы"
@@ -6410,10 +6421,10 @@
         "Паколькі вы з'яўляецеся пастаянным карыстальнікам, мы дадалі ў ваш уліковы запіс дадатковыя функцыі."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
-        "Адпраўка SMTP дазваляе староннім службам ци прыладам адпраўляць электронную пошту праз ${ MAIL_APP_NAME } для адрасоў вашых карыстальніцкіх даменаў. Каб запытаць доступ, калі ласка, ${ createTicket } з апісаннем вашых варыянтаў выкарыстання, якія карыстальніцкія дамены вы хацелі б ужываць, а таксама ацэнкаю штогадзінных і штодзённых аб'ёмаў электроннай пошты."
+        "Адпраўка праз SMTP дазваляе староннім сэрвісам або прыладам адпраўляць лісты праз ${ MAIL_APP_NAME } для адрасоў вашых карыстальніцкіх даменаў. Каб запытаць доступ, ${ createTicket } з апісаннем вашых варыянтаў выкарыстання, якія карыстальніцкія дамены вы б хацелі выкарыстоўваць, а таксама чаканыя штогадзінныя і штодзённыя аб'ёмы лістоў"
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To use this feature, start by generating a new token.": [
-        "Адпраўка SMTP дазваляе староннім службам ці прыладам адпраўляць электронную пошту праз ${ MAIL_APP_NAME } для адрасоў вашых карыстальніцкіх даменаў. Каб карыстацца гэтай функцый, стварыце новы токен."
+        "Адпраўка праз SMTP дазваляе староннім сэрвісам або прыладам адпраўляць лісты праз ${ MAIL_APP_NAME } для адрасоў вашых карыстальніцкіх даменаў. Каб карыстацца гэтай функцый, згенерыруйце новы токен."
       ],
       "Some keys successfully reactivated": [
         "Некаторыя ключы паспяхова паўторна актываваны"
@@ -6656,7 +6667,7 @@
         "Спачатку стварыце каляндар у ${ CALENDAR_APP_NAME } для імпартавання падзей. Менавіта тут з'явяцца падзеі пасля імпартавання."
       ],
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
-        "Каб быць у курсе апошніх распрацовак прадуктаў ${ BRAND_NAME }, падпішыцеся на нашу рассылку, а таксама час ад часу наведвайце наш блог ${ blogLink }."
+        "Каб быць у курсе апошніх распрацовак прадуктаў ${ BRAND_NAME }, вы можаце падпісацца на нашу рассылку, а таксама час ад часу ${ blogLink }."
       ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "Для працягу, выберыце метад аднаўлення ўліковага запісу, каб мы маглі праверыць запыт."
@@ -8465,6 +8476,9 @@
       "${ BRAND_NAME } for Business newsletter": [
         "Навіны ${ BRAND_NAME } для бізнесу"
       ],
+      "${ BRAND_NAME } important announcements": [
+        "Важныя аб'явы ${ BRAND_NAME }"
+      ],
       "${ BRAND_NAME } newsletter": [
         "Навіны ${ BRAND_NAME }"
       ],
@@ -8585,7 +8599,7 @@
         "Распаўсюджаныя праблемы рэгістрацыі"
       ],
       "create a ticket": [
-        "стварыце тікет"
+        "стварыце запыт"
       ],
       "Create account": [
         "Стварыць уліковы запіс"
@@ -8661,6 +8675,9 @@
       ],
       "View guide": [
         "Паглядзець дапаможнік"
+      ],
+      "visit our blog": [
+        "наведвайце наш блог"
       ],
       "What is the difference between UDP and TCP protocols?": [
         "Чым адрозніваюцца пратаколы UDP і TCP?"
@@ -10436,7 +10453,7 @@
         "Спампуйце праграму ${ PASS_APP_NAME } з App Store і ўсталюйце яе, каб пачаць карыстацца ${ PASS_APP_NAME2 } на сваім тэлефоне."
       ],
       "Encrypted password manager that also protects your identity": [
-        "Менеджар зашыфраваных пароляў, які таксама абараняе вашы асабістыя даныя"
+        "Зашыфраваны менеджар пароляў, які таксама абараняе вашы асабістыя даныя"
       ],
       "End-to-end encrypted notes": [
         "Нататкі са скразным шыфраваннем"
@@ -12713,7 +12730,7 @@
         "Уваход ва ўліковы запіс удзельніка"
       ],
       "SMTP Submission": [
-        "Адпраўка SMTP"
+        "Адпраўка па SMTP"
       ],
       "Sort folders alphabetically": [
         "Сартаваць папкі па алфавіце"

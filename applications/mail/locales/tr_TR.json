@@ -2935,6 +2935,9 @@
         "Dosya en fazla ${ MAX_IMPORT_FILE_SIZE_STRING } boyutunda olmalı ve en fazla ${ MAX_IMPORT_CONTACTS_STRING } kişi kaydı içermeli. Dosyanız daha büyükse, daha küçük dosyalara bölün.",
         "Dosya en fazla ${ MAX_IMPORT_FILE_SIZE_STRING } boyutunda olmalı ve en fazla ${ MAX_IMPORT_CONTACTS_STRING } kişi kaydı içermeli. Dosyanız daha büyükse, daha küçük dosyalara bölün."
       ],
+      "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
+        "Reklam verenlerin ve diğer kişilerin konumunuzu ve çevrim içi etkinliğinizi izlemesini önlemek için e-posta izleyici korumasını açın."
+      ],
       "Unlock custom message scheduling and other benefits when you upgrade your plan.": [
         "Tarifenizi yükselttiğinizde özel ileti zamanlaması ve diğer ek faydalara erişebilirsiniz."
       ],
@@ -2946,6 +2949,9 @@
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Sürükleyip bırakarak kişiler arasında birleştirme önceliğini sıralayın. Birleştirmek istemediğiniz kişilerin işaretini kaldırın."
+      ],
+      "We didn't find any known trackers and tracking URLs in this email.": [
+        "Bu e-postada bilinen herhangi bir izleyici veya izleme adresi bulamadık."
       ],
       "When do you want your message to be sent?": [
         "İletinizin ne zaman gönderilmesini istersiniz?"
@@ -5900,9 +5906,6 @@
       "You can check the progress ${ importProgressLink }.": [
         "İlerlemeye bakabilirsiniz ${ importProgressLink }."
       ],
-      "You can click links in this email without being profiled and leaking your online activity with advertisers.": [
-        "Profilinizle ilgili bilgiler vermeden ve çevrim içi etkinliğinizi reklam verenlere sızdırmadan bu e-postadaki bağlantılara tıklayabilirsiniz."
-      ],
       "You can either update your search query or ${ button }": [
         "Arama sorgusunu güncelle ya da ${ button }"
       ],
@@ -5911,9 +5914,6 @@
       ],
       "You can import one data type at a time.": [
         "Bir seferde bir veri türünü içe aktarabilirsiniz."
-      ],
-      "You can read this email without revealing your interactions, location, or device to advertisers.": [
-        "Bu e-postayı, etkileşiminizi, konumunuzu veya aygıtınızı reklam verenlere açıklamadan okuyabilirsiniz."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Bu klasöre yeni e-posta iletileri geldiğinde uyarı almak için bildirimleri açabilirsiniz."
@@ -7828,17 +7828,11 @@
     "Sender verification details": {
       "Sender verification": [
         "Gönderici doğrulama"
-      ],
-      "Sender verification failed: ${ icon.senderVerificationDetails.description }": [
-        "Gönderici doğrulanamadı: ${ icon.senderVerificationDetails.description }"
-      ],
-      "Sender verified: ${ icon.senderVerificationDetails.description }": [
-        "Gönderici doğrulandı: ${ icon.senderVerificationDetails.description }"
       ]
     },
     "Sender verification error": {
-      "Verification key is not in the list of trusted keys.": [
-        "Doğrulama anahtarı, güvenilen anahtarlar listesinde bulunmuyor."
+      "Sender verification failed: Verification key is not in the list of trusted keys.": [
+        "Gönderici doğrulanamadı: Doğrulama anahtarı, güvenilir anahtarlar listesinde yok."
       ]
     },
     "Sent email icon": {
@@ -9043,8 +9037,8 @@
       "Previous message": [
         "Önceki ileti"
       ],
-      "Protect your email": [
-        "E-postanızı koruyun"
+      "Protect yourself from trackers": [
+        "Kendinizi izleyicilerden koruyun"
       ],
       "Re-sign all contacts": [
         "Tüm kişileri yeniden imzala"
