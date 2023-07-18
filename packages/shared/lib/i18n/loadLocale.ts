@@ -41,6 +41,7 @@ export const loadDateLocale = async (localeCode: string, browserLocaleCode?: str
     setDateLocales({
         defaultDateLocale: dateFnLocale,
         browserDateLocale: browserDateFnLocale,
+        browserLocaleCode: closestBrowserLocaleCode,
         dateLocale: updatedDateFnLocale,
         dateLocaleCode: closestLocaleCode,
     });

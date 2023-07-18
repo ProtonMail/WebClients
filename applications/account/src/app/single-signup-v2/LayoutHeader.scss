@@ -1,0 +1,27 @@
+@import '~@proton/styles/scss/lib';
+
+.signup-v2-header {
+	&#{&} {
+		// alignment on content of the page
+		@include media('>=#{em(984, 16)}') {
+			inline-size: rem(984);
+			margin-inline: auto;
+		}
+
+		// alignment with same values as Proton.me, to make it more "linked/uniform"
+		@include media('>=#{em(1100, 16)}') {
+			inline-size: rem(1100);
+			padding-inline: rem(48);
+		}
+
+		@include media('>=#{em(1500, 16)}') {
+			inline-size: rem(1500);
+			padding-inline: rem(96);
+		}
+
+		@include media('>=#{em(2040, 16)}') {
+			inline-size: rem(2040);
+			padding-inline: rem(102);
+		}
+	}
+}

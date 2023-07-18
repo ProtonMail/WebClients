@@ -103,6 +103,17 @@ export const getP2P = (included: boolean, highlight?: boolean): PlanCardFeatureD
     };
 };
 
+export const getAdvancedVPNCustomizations = (included: boolean, highlight?: boolean): PlanCardFeatureDefinition => {
+    return {
+        text: c('vpn_2step: feature').t`Advanced VPN customizations`,
+        tooltip: c('vpn_2step: tooltip')
+            .t`Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, Double hop, and more.`,
+        included,
+        highlight,
+        icon: 'arrows-switch',
+    };
+};
+
 export const getDoubleHop = (included: boolean, highlight?: boolean): PlanCardFeatureDefinition => {
     return {
         text: c('new_plans: feature').t`Double hop`,
@@ -194,9 +205,16 @@ export const getNoLogs = (highlight?: boolean): PlanCardFeatureDefinition => {
         icon: 'alias',
     };
 };
-const getBandwidth = (): PlanCardFeatureDefinition => {
+export const getBandwidth = (): PlanCardFeatureDefinition => {
     return {
         text: c('new_plans: feature').t`Unlimited volume/bandwidth`,
+        included: true,
+    };
+};
+
+export const getNoAds = (): PlanCardFeatureDefinition => {
+    return {
+        text: c('vpn_2step: feature').t`No ads`,
         included: true,
     };
 };
