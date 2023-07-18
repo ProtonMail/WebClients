@@ -1,0 +1,1574 @@
+{
+  "headers": {
+    "plural-forms": "nplurals=2; plural=(n != 1);",
+    "language": "de_DE"
+  },
+  "contexts": {
+    "Action": {
+      "Add": [
+        "Hinzufügen"
+      ],
+      "Add current url": [
+        "Aktuelle URL hinzufügen"
+      ],
+      "Add more": [
+        "Weitere hinzufügen"
+      ],
+      "Add new item": [
+        "Neuen Eintrag hinzufügen"
+      ],
+      "Advanced options": [
+        "Erweiterte Optionen"
+      ],
+      "Back": [
+        "Zurück"
+      ],
+      "Can't find your password manager? Please let us know!": [
+        "Du kannst deinen Passwort-Manager nicht finden? Bitte informiere uns!"
+      ],
+      "Cancel": [
+        "Abbrechen"
+      ],
+      "Change": [
+        "Ändern"
+      ],
+      "Choose a file or drag it here": [
+        "Datei auswählen oder hierhinein ziehen"
+      ],
+      "Clear": [
+        "Löschen"
+      ],
+      "Clear search": [
+        "Suche löschen"
+      ],
+      "Close": [
+        "Schließen"
+      ],
+      "Close advanced options": [
+        "Erweiterte Optionen schließen"
+      ],
+      "Close navigation": [
+        "Navigation schließen"
+      ],
+      "Confirm": [
+        "Bestätigen"
+      ],
+      "Continue without pinning": [
+        "Ohne Anheften fortfahren"
+      ],
+      "Copy and close": [
+        "Kopieren und schließen"
+      ],
+      "Copy to clipboard": [
+        "In die Zwischenablage kopieren"
+      ],
+      "Create": [
+        "Erstellen"
+      ],
+      "Create a ${ BRAND_NAME } account": [
+        "${ BRAND_NAME }-Konto erstellen"
+      ],
+      "Create alias": [
+        "Alias erstellen"
+      ],
+      "Create an account": [
+        "Konto erstellen"
+      ],
+      "Create login": [
+        "Login erstellen"
+      ],
+      "Create note": [
+        "Notiz erstellen"
+      ],
+      "Create vault": [
+        "Tresor erstellen"
+      ],
+      "Creating vault": [
+        "Tresor wird erstellt"
+      ],
+      "Delete": [
+        "Löschen"
+      ],
+      "Delete alias": [
+        "Alias löschen"
+      ],
+      "Delete all": [
+        "Alle löschen"
+      ],
+      "Delete password": [
+        "Passwort löschen"
+      ],
+      "Delete permanently": [
+        "Dauerhaft löschen"
+      ],
+      "Delete vault": [
+        "Tresor löschen"
+      ],
+      "Discard": [
+        "Verwerfen"
+      ],
+      "Dismiss": [
+        "Verwerfen"
+      ],
+      "Done": [
+        "Fertig"
+      ],
+      "Edit": [
+        "Bearbeiten"
+      ],
+      "Edit vault": [
+        "Tresor bearbeiten"
+      ],
+      "Export": [
+        "Exportieren"
+      ],
+      "Feedback": [
+        "Feedback"
+      ],
+      "Fill password": [
+        "Passwort ausfüllen"
+      ],
+      "Filter vault items": [
+        "Tresoreinträge filtern"
+      ],
+      "Generate alias": [
+        "Alias generieren"
+      ],
+      "Generate password": [
+        "Passwort generieren"
+      ],
+      "Get mobile apps": [
+        "Mobile Apps holen"
+      ],
+      "Help us improve": [
+        "Hilf uns, besser zu werden"
+      ],
+      "Hide": [
+        "Ausblenden"
+      ],
+      "How do I export my data from ${ PROVIDER_INFO_MAP[form.values.provider].title }?": [
+        "Wie exportiere ich meine Daten aus ${ PROVIDER_INFO_MAP[form.values.provider].title }?"
+      ],
+      "Import": [
+        "Importieren"
+      ],
+      "Import your passwords": [
+        "Importiere deine Passwörter"
+      ],
+      "Importing": [
+        "Wird importiert"
+      ],
+      "Learn more": [
+        "Mehr erfahren"
+      ],
+      "Lock ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } sperren"
+      ],
+      "More options": [
+        "Weitere Optionen"
+      ],
+      "Move to another vault": [
+        "In einen anderen Tresor verschieben"
+      ],
+      "Move to Trash": [
+        "In Papierkorb verschieben"
+      ],
+      "Move to trash": [
+        "In den Papierkorb verschieben"
+      ],
+      "Not now": [
+        "Nicht jetzt"
+      ],
+      "Open navigation": [
+        "Navigation öffnen"
+      ],
+      "Pass for Android": [
+        "Pass für Android"
+      ],
+      "Pass for iOS": [
+        "Pass für iOS"
+      ],
+      "Proceed": [
+        "Fortfahren"
+      ],
+      "Rate Pass": [
+        "Pass bewerten"
+      ],
+      "Refresh extension": [
+        "Erweiterung aktualisieren"
+      ],
+      "Refresh the page": [
+        "Seite aktualisieren"
+      ],
+      "Regenerate": [
+        "Neu generieren"
+      ],
+      "Reload extension": [
+        "Erweiterung neu laden"
+      ],
+      "Request a feature": [
+        "Funktion vorschlagen"
+      ],
+      "Restore item": [
+        "Eintrag wiederherstellen"
+      ],
+      "Retry": [
+        "Erneut versuchen"
+      ],
+      "Save": [
+        "Speichern"
+      ],
+      "Saving": [
+        "Wird gespeichert"
+      ],
+      "Send us a message": [
+        "Sende uns eine Nachricht"
+      ],
+      "Show": [
+        "Anzeigen"
+      ],
+      "Sign back in": [
+        "Wieder anmelden"
+      ],
+      "Sign in": [
+        "Anmelden"
+      ],
+      "Sign in with ${ BRAND_NAME }": [
+        "Mit ${ BRAND_NAME } anmelden"
+      ],
+      "Sign out": [
+        "Abmelden"
+      ],
+      "Sort vault items": [
+        "Tresoreinträge sortieren"
+      ],
+      "Submit": [
+        "Senden"
+      ],
+      "Submitting report...": [
+        "Bericht wird übermittelt…"
+      ],
+      "Sync": [
+        "Synchronisieren"
+      ],
+      "Try again": [
+        "Erneut versuchen"
+      ],
+      "Update": [
+        "Aktualisieren"
+      ],
+      "Updating": [
+        "Wird aktualisiert"
+      ],
+      "Upgrade": [
+        "Wechseln"
+      ],
+      "Upgrade to keep these features": [
+        "Upgrade, um diese Funktionen zu behalten"
+      ],
+      "Write us on Reddit": [
+        "Schreibe uns auf Reddit"
+      ],
+      "Write us on Twitter": [
+        "Schreibe uns auf Twitter"
+      ]
+    },
+    "Button": {
+      "More info": [
+        "Weitere Informationen"
+      ]
+    },
+    "Collapsible tooltip": {
+      "Collapse": [
+        "Reduzieren"
+      ],
+      "Expand": [
+        "Erweitern"
+      ]
+    },
+    "Error": {
+      "${ PASS_APP_NAME } export file could not be parsed. ${ errorDetail }": [
+        "Die ${ PASS_APP_NAME }-Exportdatei konnte nicht geparst werden. ${ errorDetail }"
+      ],
+      "1Password export file could not be parsed. ${ errorDetail }": [
+        "1Password-Exportdatei konnte nicht geparst werden. ${ errorDetail }"
+      ],
+      "Authentication error": [
+        "Authentifizierungsfehler"
+      ],
+      "Auto-lock could not be activated": [
+        "Automatisches Sperren konnte nicht aktiviert werden."
+      ],
+      "Auto-lock could not be disabled": [
+        "Automatisches Sperren konnte nicht deaktiviert werden."
+      ],
+      "Bitwarden export file could not be parsed. ${ errorDetail }": [
+        "Bitwarden-Exportdatei konnte nicht geparst werden. ${ errorDetail }"
+      ],
+      "Cannot create alias.": [
+        "Fehler beim Erstellen des Alias."
+      ],
+      "Chrome export file could not be parsed. ${ errorDetail }": [
+        "Chrome-Exportdatei konnte nicht geparst werden. ${ errorDetail }"
+      ],
+      "Could not open created vault": [
+        "Erstellter Tresor konnte nicht geöffnet werden."
+      ],
+      "Could not open updated vault": [
+        "Aktualisierter Tresor konnte nicht geöffnet werden."
+      ],
+      "Could not resume your session : ${ description }": [
+        "Deine Sitzung konnte nicht fortgesetzt werden: ${ description }"
+      ],
+      "CSV file is missing expected headers: ${ missingHeaders }": [
+        "In der CSV-Datei fehlen erwartete Kopfzeilen: ${ missingHeaders }"
+      ],
+      "Dashlane export file could not be parsed. ${ errorDetail }": [
+        "Dashlane-Exportdatei konnte nicht geparst werden. ${ errorDetail }"
+      ],
+      "Decrypting your ${ PASS_APP_NAME } export file failed. ${ errorDetail }": [
+        "Das Entschlüsseln deiner ${ PASS_APP_NAME }-Exportdatei ist fehlgeschlagen. ${ errorDetail }"
+      ],
+      "Deleting item failed": [
+        "Fehler beim Löschen des Eintrags."
+      ],
+      "Deleting vault \"${ payload.content.name }\" failed": [
+        "Löschen des Tresors \"${ payload.content.name }\" fehlgeschlagen."
+      ],
+      "Detected ${ errors.length } corrupted csv row": [
+        "${ errors.length } beschädigte csv-Zeile gefunden",
+        "${ errors.length } beschädigte csv-Zeilen gefunden"
+      ],
+      "Editing item failed": [
+        "Fehler beim Bearbeiten des Eintrags."
+      ],
+      "Empty CSV file": [
+        "Leere CSV-Datei"
+      ],
+      "Emptying trash failed": [
+        "Fehler beim Leeren des Papierkorbs."
+      ],
+      "Encrypted JSON not supported": [
+        "Verschlüsseltes JSON wird nicht unterstützt."
+      ],
+      "Error reporting problem": [
+        "Fehler beim Melden des Problems."
+      ],
+      "File could not be parsed": [
+        "Datei konnte nicht geparst werden."
+      ],
+      "Firefox export file could not be parsed. ${ errorDetail }": [
+        "Firefox-Exportdatei konnte nicht geparst werden. ${ errorDetail }"
+      ],
+      "Import failed for vault \"${ vaultData.vaultName }\" : ${ description }": [
+        "Import für Tresor \"${ vaultData.vaultName }\" fehlgeschlagen: ${ description }"
+      ],
+      "Importing items failed": [
+        "Fehler beim Importieren der Einträge."
+      ],
+      "Invalid password manager": [
+        "Ungültiger Passwort-Manager"
+      ],
+      "Item content cannot exceed 40kb": [
+        "Der Inhalt des Eintrags darf 40 KB nicht überschreiten."
+      ],
+      "Item creation failed": [
+        "Fehler beim Erstellen des Eintrags."
+      ],
+      "KeePass export file could not be parsed. ${ errorDetail }": [
+        "KeePass-Exportdatei konnte nicht geparst werden. ${ errorDetail }"
+      ],
+      "Keeper export file could not be parsed. ${ errorDetail }": [
+        "Die Keeper-Exportdatei konnte nicht geparst werden. ${ errorDetail }"
+      ],
+      "LastPass export file could not be parsed. ${ errorDetail }": [
+        "LastPass-Exportdatei konnte nicht geparst werden. ${ errorDetail }"
+      ],
+      "LastPass will export a corrupted CSV file if any of your item fields contain unexpected commas, quotes or multiple lines": [
+        "LastPass exportiert eine beschädigte CSV-Datei, wenn eines deiner Elementfelder unerwartete Kommas, Anführungszeichen oder mehrere Zeilen enthält."
+      ],
+      "Moving item failed": [
+        "Fehler beim Verschieben des Eintrags."
+      ],
+      "Passphrase is incorrect": [
+        "Passphrase ist falsch"
+      ],
+      "PIN codes do not match": [
+        "PIN-Codes stimmen nicht überein"
+      ],
+      "Please grant ${ PASS_APP_NAME } the necessary extension permissions in order to continue": [
+        "Bitte erteile ${ PASS_APP_NAME } die erforderlichen Erweiterungsrechte, um fortzufahren."
+      ],
+      "Please pin the extension or select \"Continue without pinning\".": [
+        "Bitte hefte die Erweiterung an oder wähle \"Ohne Anheften fortsetzen\"."
+      ],
+      "Request timed out": [
+        "Zeitüberschreitung bei der Anfrage"
+      ],
+      "Requesting alias details failed": [
+        "Abfrage von Alias-Details fehlgeschlagen"
+      ],
+      "Requesting alias options failed": [
+        "Abfrage von Alias-Optionen fehlgeschlagen"
+      ],
+      "Restoring item failed": [
+        "Fehler beim Wiederherstellen des Eintrags."
+      ],
+      "Safari export file could not be parsed. ${ errorDetail }": [
+        "Safari-Exportdatei konnte nicht geparst werden. ${ errorDetail }"
+      ],
+      "Setting \"${ payload.name }\" as primary vault failed": [
+        "Festlegen von \"${ payload.name }\" als primärer Tresor fehlgeschlagen."
+      ],
+      "Settings update failed": [
+        "Fehler beim Aktualisieren der Einstellungen."
+      ],
+      "Some vaults are no longer accessible due to a password reset. Reactivate your account keys in order to regain access. ${ reactivateLink }": [
+        "Einige Tresore sind aufgrund einer Passwortzurücksetzung nicht mehr zugänglich. Reaktiviere deine Kontoschlüssel, um wieder Zugang zu erhalten. ${ reactivateLink }"
+      ],
+      "Something went wrong": [
+        "Etwas ist schief gelaufen."
+      ],
+      "Something went wrong. Please reload the ${ PASS_APP_NAME } extension. This issue has been logged": [
+        "Etwas ist schief gelaufen. Bitte lade die Erweiterung ${ PASS_APP_NAME } neu. Dieses Problem wurde protokolliert."
+      ],
+      "The file you are trying to import is empty": [
+        "Die Datei, die du importieren möchtest, ist leer."
+      ],
+      "Too many failed attempts. Please sign in again.": [
+        "Zu viele Fehlversuche! Bitte melde dich erneut an."
+      ],
+      "Trashing item failed": [
+        "Fehler beim Verschieben des Eintrags in den Papierkorb."
+      ],
+      "Unable to boot": [
+        "Booten nicht möglich"
+      ],
+      "Unable to generate an OTP code for this item": [
+        "Es konnte kein OTP-Code für diesen Eintrag generiert werden."
+      ],
+      "Unable to sync": [
+        "Synchronisation nicht möglich"
+      ],
+      "Unknown error": [
+        "Unbekannter Fehler"
+      ],
+      "Unsupported ${ PASS_APP_NAME } file format": [
+        "Nicht unterstütztes ${ PASS_APP_NAME }-Dateiformat."
+      ],
+      "Unsupported 1Password file format": [
+        "Nicht unterstütztes 1Password-Dateiformat."
+      ],
+      "Updating vault \"${ payload.content.name }\" failed": [
+        "Aktualisieren des Tresors \"${ payload.content.name }\" fehlgeschlagen."
+      ],
+      "Vault \"${ payload.content.name }\" creation failed": [
+        "Erstellen des Tresors \"${ payload.content.name }\" fehlgeschlagen."
+      ],
+      "Vault \"${ vaultData.vaultName }\" could not be created": [
+        "Tresor \"${ vaultData.vaultName }\" konnte nicht erstellt werden."
+      ],
+      "Vault name does not match": [
+        "Tresorname stimmt nicht überein"
+      ],
+      "Wrong PIN code. Try again.": [
+        "Falscher PIN-Code. Versuche es erneut."
+      ]
+    },
+    "Error message": {
+      "Please refresh the page or try again later.": [
+        "Aktualisiere die Seite oder versuche es später erneut."
+      ],
+      "Something went wrong": [
+        "Etwas ist schief gelaufen."
+      ]
+    },
+    "file size format": {
+      "byte": [
+        "Byte",
+        "Bytes"
+      ],
+      "GB": [
+        "GB"
+      ],
+      "KB": [
+        "KB"
+      ],
+      "MB": [
+        "MB"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "Byte",
+        "Bytes"
+      ],
+      "Gigabyte": [
+        "Gigabyte",
+        "Gigabytes"
+      ],
+      "Kilobyte": [
+        "Kilobyte",
+        "Kilobytes"
+      ],
+      "Megabyte": [
+        "Megabyte",
+        "Megabytes"
+      ]
+    },
+    "Info": {
+      "\"${ payload.item.data.metadata.name }\" item was dismissed": [
+        "Der Eintrag \"${ payload.item.data.metadata.name }\" wurde verworfen."
+      ],
+      "\"${ payload.item.data.metadata.name }\" update was dismissed": [
+        "Die Aktualisierung von \"${ payload.item.data.metadata.name }\" wurde verworfen."
+      ],
+      "\"${ payload.name }\" set as primary vault": [
+        "\"${ payload.name }\" als primärer Tresor festgelegt."
+      ],
+      "${ count } item": [
+        "${ count } Eintrag",
+        "${ count } Einträge"
+      ],
+      "${ PASS_APP_NAME } will only import logins and notes. Credit cards, passports, attached files, etc. are not supported at the moment.": [
+        "${ PASS_APP_NAME } unterstützt nur den Import von Zugangsdaten und Notizen. Kreditkarten, Pässe, angehängte Dateien usw. werden derzeit nicht unterstützt."
+      ],
+      "${ revisionNumber } time": [
+        "${ revisionNumber } Mal",
+        "${ revisionNumber } Mal"
+      ],
+      "${ totalImportedItems } item": [
+        "${ totalImportedItems } Eintrag",
+        "${ totalImportedItems } Einträge"
+      ],
+      "${ totalItems } item": [
+        "${ totalItems } Eintrag",
+        "${ totalItems } Einträge"
+      ],
+      "${ trialDaysLeft } day left": [
+        "${ trialDaysLeft } verbleibender Tag",
+        "${ trialDaysLeft } verbleibende Tage"
+      ],
+      "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
+        "Eine neue Version von ${ PASS_APP_NAME } ist verfügbar. Aktualisiere sie, um die neuesten Funktionen und Fehlerbehebungen zu genießen."
+      ],
+      "Access ${ PASS_APP_NAME } via this icon": [
+        "Greife über dieses Symbol auf ${ PASS_APP_NAME } zu"
+      ],
+      "Access to ${ PASS_APP_NAME } will require a pin code to unlock your session": [
+        "Der Zugang zu ${ PASS_APP_NAME } erfordert einen PIN-Code, um deine Sitzung zu entsperren."
+      ],
+      "Access your passwords on the go with our mobile apps.": [
+        "Greife mit unseren mobilen Apps auch unterwegs auf deine Passwörter zu."
+      ],
+      "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
+        "Alias \"${ item.aliasEmail }\" wurde in den Papierkorb verschoben - er wird keine E-Mails mehr an dein Postfach weiterleiten."
+      ],
+      "All items permanently removed": [
+        "Alle Einträge dauerhaft gelöscht."
+      ],
+      "All items successfully restored": [
+        "Alle Einträge erfolgreich wiederhergestellt."
+      ],
+      "An item previously shared with you was disabled": [
+        "Ein zuvor mit dir geteilter Eintrag wurde deaktiviert."
+      ],
+      "Auto-lock successfully disabled": [
+        "Automatisches Sperren erfolgreich deaktiviert."
+      ],
+      "Autosaved on ${ submissionURL }": [
+        "Auf ${ submissionURL } automatisch gespeichert"
+      ],
+      "Check out all the exclusive features that are available to you for a limited time.": [
+        "Sieh dir all die exklusiven Funktionen an, die dir für eine begrenzte Zeit zur Verfügung stehen."
+      ],
+      "Copied to clipboard": [
+        "In die Zwischenablage kopiert"
+      ],
+      "Creating alias...": [
+        "Alias wird erstellt..."
+      ],
+      "Custom fields": [
+        "Benutzerdefinierte Felder"
+      ],
+      "Decrypting your data": [
+        "Deine Daten werden entschlüsselt"
+      ],
+      "Deleted items will be moved here first": [
+        "Gelöschte Einträge werden zuerst hierhin verschoben."
+      ],
+      "Discover ${ PASS_APP_NAME } Youtube Video": [
+        "Entdecke ${ PASS_APP_NAME }"
+      ],
+      "Drop file here to upload": [
+        "Ziehe Dateien hierher, um sie hochzuladen"
+      ],
+      "Drop to import": [
+        "Ablegen zum Importieren"
+      ],
+      "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
+        "Importiere bestehende Passwörter ganz einfach in ${ PASS_APP_NAME }."
+      ],
+      "Enable ${ PASS_APP_NAME } by connecting your ${ BRAND_NAME } account": [
+        "Aktiviere ${ PASS_APP_NAME }, indem du dein ${ BRAND_NAME }-Konto verbindest."
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Bestätigungscode eingeben. Ziffer ${ digit }."
+      ],
+      "Enter your pin code": [
+        "PIN-Code eingeben"
+      ],
+      "Enter your PIN code": [
+        "PIN-Code eingeben"
+      ],
+      "Export is encrypted using PGP and requires a strong passphrase.": [
+        "Der Export wird mit PGP verschlüsselt und erfordert eine starke Passphrase."
+      ],
+      "Follow these simple steps to get the best experience:": [
+        "Befolge diese einfachen Schritte, um das bestmögliche Erlebnis zu erhalten:"
+      ],
+      "Free Trial": [
+        "Kostenlose Testversion"
+      ],
+      "Generated passwords will be stored for a period of one day.": [
+        "Generierte Passwörter werden für einen Zeitraum von einem Tag gespeichert."
+      ],
+      "Generating alias...": [
+        "Alias wird generiert..."
+      ],
+      "Here you will find all the necessary information to get you started.": [
+        "Nachfolgend findest du alle notwendigen Informationen für den Einstieg."
+      ],
+      "If disabled, ${ PASS_APP_NAME } will not display the item favicon via ${ BRAND_NAME } anonymised image proxy.": [
+        "Wenn diese Option deaktiviert ist, zeigt ${ PASS_APP_NAME } das Website-Symbol des Eintrags nicht über den anonymisierten Bild-Proxy von ${ BRAND_NAME } an."
+      ],
+      "If disabled, ${ PASS_APP_NAME } will not prompt you to save or update credentials.": [
+        "Wenn diese Option deaktiviert ist, wird ${ PASS_APP_NAME } dich nicht auffordern, deine Anmeldedaten zu speichern oder zu aktualisieren."
+      ],
+      "If disabled, ${ PASS_APP_NAME } will not suggest creating an email alias on sign-up forms.": [
+        "Wenn diese Option deaktiviert ist, schlägt ${ PASS_APP_NAME } die Erstellung eines E-Mail-Alias in Anmeldeformularen nicht vor."
+      ],
+      "If disabled, ${ PASS_APP_NAME } will not suggest creating strong passwords on sign-up forms.": [
+        "Wenn diese Option deaktiviert ist, schlägt ${ PASS_APP_NAME } nicht vor, sichere Passwörter für Anmeldeformulare zu erstellen."
+      ],
+      "If enabled, the autosave dropdown will automatically open on field focus.": [
+        "Wenn diese Funktion aktiviert ist, wird das Dropdown-Menü für das automatische Speichern automatisch geöffnet, wenn das Feld fokussiert wird."
+      ],
+      "If enabled, you can quickly autofill your credentials by clicking on the ${ PASS_APP_NAME } icon.": [
+        "Wenn diese Funktion aktiviert ist, kannst du deine Anmeldeinformationen schnell ausfüllen, indem du auf das ${ PASS_APP_NAME }-Symbol klickst."
+      ],
+      "Import in progress :": [
+        "Import läuft:"
+      ],
+      "Imported ${ payload.total } item": [
+        "${ payload.total } Eintrag importiert",
+        "${ payload.total } Einträge importiert"
+      ],
+      "Imported on ${ date }": [
+        "Importiert am ${ date }"
+      ],
+      "In order to get the best experience out of ${ PASS_APP_NAME }, please grant the necessary extension permissions": [
+        "Um ${ PASS_APP_NAME } optimal nutzen zu können, erteile bitte die notwendigen Erweiterungsrechte."
+      ],
+      "In order to migrate your data to ${ PASS_APP_NAME } from another password manager, export your passwords and import them using the form below. Once all your items have been imported, delete the previously exported file.": [
+        "Um deine Daten von einem anderen Passwort-Manager zu ${ PASS_APP_NAME } zu migrieren, exportiere deine Passwörter und importiere sie mit dem unten stehenden Formular. Sobald alle deine Daten importiert wurden, lösche die zuvor exportierte Datei."
+      ],
+      "Integrated 2FA authenticator": [
+        "Integrierter 2FA-Authentifikator"
+      ],
+      "Internet connection lost": [
+        "Internetverbindung unterbrochen"
+      ],
+      "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
+        "Es scheint, dass du bereits bei ${ PASS_APP_NAME } angemeldet bist. Wenn du versuchst, dich mit einem anderen Konto anzumelden, melde dich bitte zuerst bei der Erweiterung ab."
+      ],
+      "item": [
+        "Eintrag",
+        "Einträge"
+      ],
+      "Item \"${ payload.item.data.metadata.name }\" created": [
+        "Eintrag \"${ payload.item.data.metadata.name }\" erstellt."
+      ],
+      "Item \"${ payload.item.data.metadata.name }\" updated": [
+        "Eintrag \"${ payload.item.data.metadata.name }\" aktualisiert."
+      ],
+      "Item moved to trash": [
+        "Eintrag in den Papierkorb verschoben."
+      ],
+      "Item permanently deleted": [
+        "Eintrag dauerhaft gelöscht."
+      ],
+      "Item restored": [
+        "Eintrag wiederhergestellt."
+      ],
+      "Item successfully moved": [
+        "Eintrag erfolgreich verschoben."
+      ],
+      "Let's get you started by creating your first item": [
+        "Beginne mit dem Erstellen deines ersten Eintrags"
+      ],
+      "Loading": [
+        "Wird geladen"
+      ],
+      "Loading extension": [
+        "Die Erweiterung wird geladen"
+      ],
+      "Loading...": [
+        "Wird geladen..."
+      ],
+      "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
+        "${ PASS_APP_NAME } ist mehr als nur ein Passwort-Manager: Er schützt dein Passwort und deine persönliche E-Mail-Adresse über E-Mail-Aliasse. Dank der gleichen Technologie wie bei ${ MAIL_APP_NAME } sind deine Daten durchgängig verschlüsselt und nur für dich zugänglich."
+      ],
+      "Multiple vaults": [
+        "Mehrere Tresore"
+      ],
+      "N/A": [
+        "N/A"
+      ],
+      "No login found": [
+        "Keine Zugangsdaten gefunden."
+      ],
+      "None": [
+        "Keine"
+      ],
+      "Open the Extensions menu": [
+        "Öffne das Erweiterungen-Menü"
+      ],
+      "Passwords older than 1 day are automatically deleted from history.": [
+        "Passwörter, die älter als 1 Tag sind, werden automatisch aus dem Verlauf gelöscht."
+      ],
+      "Pin ${ PASS_APP_NAME } to your toolbar": [
+        "Hefte ${ PASS_APP_NAME } an deine Symbolleiste an"
+      ],
+      "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
+        "PIN-Code erfolgreich registriert. Verwende ihn, um ${ PASS_APP_NAME } zu entsperren."
+      ],
+      "Please confirm your PIN code in order to unregister your current lock.\n${ PASS_APP_NAME } will then never lock.": [
+        "Bitte bestätige deinen PIN-Code, um die aktuelle Sperre aufzuheben.\n${ PASS_APP_NAME } wird dann nicht mehr gesperrt."
+      ],
+      "Please confirm your PIN code to edit this setting.": [
+        "Bitte bestätige deinen PIN-Code, um diese Einstellung zu bearbeiten."
+      ],
+      "Please confirm your PIN code to finish registering your auto-lock settings.": [
+        "Bitte bestätige deinen PIN-Code, um die Registrierung der Einstellungen für die automatische Sperre abzuschließen."
+      ],
+      "Please enter your current pin code to continue": [
+        "Bitte gib deinen aktuellen PIN-Code ein, um fortzufahren."
+      ],
+      "Press Enter to copy": [
+        "Drücke Enter zum Kopieren"
+      ],
+      "Privacy is a big concern for us. Learn why ${ PASS_APP_NAME } is different.": [
+        "Der Datenschutz ist uns ein großes Anliegen. Erfahre, warum ${ PASS_APP_NAME } anders ist."
+      ],
+      "Save login": [
+        "Anmeldedaten speichern"
+      ],
+      "Select the destination vault for each imported vault. By default a new vault will be created for each imported vault.": [
+        "Wähle den Zieltresor für jeden importierten Tresor aus. Standardmäßig wird ein neuer Tresor für jeden importierten Tresor erstellt."
+      ],
+      "Servers are unreachable. Please try again in a few minutes": [
+        "Die Server sind unerreichbar. Bitte versuche es in ein paar Minuten erneut"
+      ],
+      "Session timed out": [
+        "Zeitüberschreitung der Sitzung"
+      ],
+      "Set up a PIN code to easily lock your data": [
+        "Richte einen PIN-Code zum einfachen Sperren deiner Daten ein."
+      ],
+      "Settings successfully updated": [
+        "Einstellungen erfolgreich aktualisiert."
+      ],
+      "Sign in or create an account to continue.": [
+        "Melde dich an oder erstelle ein Konto, um fortzufahren."
+      ],
+      "Sign in to your account": [
+        "Mit deinem Konto anmelden"
+      ],
+      "Signing you in": [
+        "Du wirst angemeldet"
+      ],
+      "Successfully exported all your items": [
+        "Alle Einträge erfolgreich exportiert."
+      ],
+      "Successfully synced all vaults": [
+        "Alle Tresore erfolgreich synchronisiert."
+      ],
+      "Syncing your vaults…": [
+        "Synchronisiere deine Tresore…"
+      ],
+      "Thank you, the problem has been reported": [
+        "Vielen Dank, das Problem wurde gemeldet."
+      ],
+      "The following item could not be imported :": [
+        "Der folgende Eintrag konnte nicht importiert werden:",
+        "Die folgenden ${ result.ignored.length } Einträge konnten nicht importiert werden:"
+      ],
+      "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
+        "Der Text, den du einzufügen versuchst, ist länger als die maximal zulässige Länge von ${ maxLength } Zeichen."
+      ],
+      "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
+        "Dieser Export ist unverschlüsselt und jeder, der Zugang zu deiner exportierten Datei hat, kann deine Passwörter sehen. Bitte lösche die Datei aus Sicherheitsgründen, wenn du sie nicht mehr benötigst."
+      ],
+      "This will disable your browser's default auto-saving capabilities.": [
+        "Dadurch wird die standardmäßige automatische Speicherfunktion deines Browsers deaktiviert."
+      ],
+      "Unable to copy to clipboard": [
+        "Kopieren in die Zwischenablage nicht möglich"
+      ],
+      "Unlock it with your PIN to access the settings": [
+        "Entsperre sie mit deiner PIN, um auf die Einstellungen zuzugreifen."
+      ],
+      "Update login": [
+        "Anmeldedaten aktualisieren"
+      ],
+      "Upgrade ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } upgraden"
+      ],
+      "Vault \"${ payload.content.name }\" successfully deleted": [
+        "Tresor \"${ payload.content.name }\" erfolgreich gelöscht."
+      ],
+      "Vault \"${ payload.share.content.name }\" successfully created": [
+        "Tresor \"${ payload.share.content.name }\" erfolgreich erstellt."
+      ],
+      "Vault \"${ payload.share.content.name }\" successfully updated": [
+        "Tresor \"${ payload.share.content.name }\" erfolgreich aktualisiert."
+      ],
+      "Vault \"${ share.content.name }\" was disabled": [
+        "Tresor \"${ share.content.name }\" wurde deaktiviert."
+      ],
+      "You have ${ daysRemaining } day left in your trial period.": [
+        "Du hast noch ${ daysRemaining } Tag in deinem Testzeitraum übrig.",
+        "Du hast noch ${ daysRemaining } Tage in deinem Testzeitraum übrig."
+      ],
+      "You have exceeded the number of vaults included in your subscription. Items can only be moved to your primary vault. To move items between all vaults upgrade your subscription.": [
+        "Du hast die Anzahl der in deinem Abonnement enthaltenen Tresore überschritten. Einträge können nur in deinen primären Tresor verschoben werden. Um Einträge zwischen allen Tresoren zu verschieben, upgrade dein Abonnement."
+      ],
+      "You have exceeded the number of vaults included in your subscription. New items can only be created in your primary vault. To create new items in all vaults upgrade your subscription.": [
+        "Du hast die Anzahl der in deinem Abonnement enthaltenen Tresore überschritten. Neue Einträge können nur in deinem primären Tresor erstellt werden. Um neue Einträge in allen Tresoren zu erstellen, upgrade dein Abonnement."
+      ],
+      "You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.": [
+        "Du hast das Limit an Aliassen erreicht, die du erstellen kannst. Ein Upgrade deines Abonnements ermöglicht dir das Erstellen von unbegrenzten Aliassen."
+      ],
+      "You have reached the limit of vaults you can create. Create an unlimited number of vaults when you upgrade your subscription.": [
+        "Du hast das Limit an Tresoren erreicht, die du erstellen kannst. Erstelle unbegrenzte Tresore, wenn du dein Abonnement upgradest."
+      ],
+      "You have reached the maximum allowed length of ${ maxLength } characters.": [
+        "Du hast die maximal erlaubte Länge von ${ maxLength } Zeichen erreicht."
+      ],
+      "You will use this PIN to unlock ${ PASS_APP_NAME } once it auto-locks after a period of inactivity.": [
+        "Du verwendest diese PIN, um ${ PASS_APP_NAME } zu entsperren, sobald es sich nach einer gewissen Zeit der Inaktivität automatisch sperrt."
+      ],
+      "Your ${ PASS_APP_NAME } session is locked": [
+        "Deine ${ PASS_APP_NAME }-Sitzung ist gesperrt."
+      ],
+      "Your files will be encrypted and then saved": [
+        "Deine Dateien werden verschlüsselt und anschließend gespeichert"
+      ]
+    },
+    "Label": {
+      "${ passwordOptions.options.length } character": [
+        "${ passwordOptions.options.length } Zeichen",
+        "${ passwordOptions.options.length } Zeichen"
+      ],
+      "${ passwordOptions.options.wordCount } word": [
+        "${ passwordOptions.options.wordCount } Wort",
+        "${ passwordOptions.options.wordCount } Wörter"
+      ],
+      "1 hour": [
+        "1 Stunde"
+      ],
+      "1 minute": [
+        "1 Minute"
+      ],
+      "10 minutes": [
+        "10 Minuten"
+      ],
+      "15 minutes": [
+        "15 Minuten"
+      ],
+      "2FA secret (TOTP)": [
+        "2FA-Geheimnis (TOTP)"
+      ],
+      "2FA token (TOTP)": [
+        "2FA-Token (TOTP)"
+      ],
+      "30 minutes": [
+        "30 Minuten"
+      ],
+      "30 seconds": [
+        "30 Sekunden"
+      ],
+      "5 minutes": [
+        "5 Minuten"
+      ],
+      "A-Z": [
+        "A-Z"
+      ],
+      "Alias": [
+        "Alias"
+      ],
+      "Alias address": [
+        "Alias-Adresse"
+      ],
+      "Aliases": [
+        "Aliasse"
+      ],
+      "All": [
+        "Alle"
+      ],
+      "All vaults": [
+        "Alle Tresore"
+      ],
+      "Alphabetical": [
+        "Alphabetisch"
+      ],
+      "Application logs": [
+        "Anwendungsprotokolle"
+      ],
+      "Auto-lock ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } automatisch sperren"
+      ],
+      "Auto-lock after": [
+        "Automatisch sperren nach"
+      ],
+      "Autofill": [
+        "Auto-Ausfüllen"
+      ],
+      "Automatically open autofill when focusing login fields": [
+        "Automatisches Öffnen der Autofill-Funktion beim Fokussieren von Anmeldefeldern"
+      ],
+      "Autosave": [
+        "Auto-Speichern"
+      ],
+      "Autosuggest": [
+        "Auto-Vorschlagen"
+      ],
+      "Capital letters (A-Z)": [
+        "Großbuchstaben (A-Z)"
+      ],
+      "Capitalise": [
+        "Großschreiben"
+      ],
+      "Card number": [
+        "Kartennummer"
+      ],
+      "Cardholder name": [
+        "Name des Karteninhabers"
+      ],
+      "Cards": [
+        "Karten"
+      ],
+      "Confirm vault name": [
+        "Tresorname bestätigen"
+      ],
+      "Create a credit card": [
+        "Kreditkarte erfassen"
+      ],
+      "Create a hide-my-email alias": [
+        "Einen hide-my-email-Alias erstellen"
+      ],
+      "Create a login": [
+        "Zugangsdaten erstellen"
+      ],
+      "Create an encrypted note": [
+        "Eine verschlüsselte Notiz erstellen"
+      ],
+      "Create new vault": [
+        "Neuen Tresor erstellen"
+      ],
+      "Created": [
+        "Erstellt"
+      ],
+      "Credit Card": [
+        "Kreditkarte"
+      ],
+      "Current plan": [
+        "Aktuelles Abonnement"
+      ],
+      "Display": [
+        "Darstellung"
+      ],
+      "Display ${ PASS_APP_NAME } icon on login fields": [
+        "${ PASS_APP_NAME } Symbol auf Anmeldefeldern anzeigen"
+      ],
+      "Download logs": [
+        "Protokolle herunterladen"
+      ],
+      "Email aliases": [
+        "E-Mail-Aliasse"
+      ],
+      "Empty trash": [
+        "Papierkorb leeren"
+      ],
+      "Encrypt your ${ PASS_APP_NAME } data export file": [
+        "Verschlüssle deine ${ PASS_APP_NAME } Datenexportdatei."
+      ],
+      "Expires on": [
+        "Verfällt am"
+      ],
+      "Export": [
+        "Exportieren"
+      ],
+      "Forwards to": [
+        "Leitet weiter an"
+      ],
+      "General": [
+        "Allgemein"
+      ],
+      "Grant": [
+        "Zulassen"
+      ],
+      "Hidden": [
+        "Ausgeblendet"
+      ],
+      "Hide password": [
+        "Passwort ausblenden"
+      ],
+      "Import": [
+        "Importieren"
+      ],
+      "Import passwords": [
+        "Passwörter importieren"
+      ],
+      "Imported from : ": [
+        "Importiert von:"
+      ],
+      "Imported on : ": [
+        "Importiert am: "
+      ],
+      "Include numbers": [
+        "Zahlen einschließen"
+      ],
+      "Include numbers (0-9)": [
+        "Zahlen (0-9) einschließen"
+      ],
+      "Label": [
+        "Bezeichnung"
+      ],
+      "Last 2 weeks": [
+        "Letzte 2 Wochen"
+      ],
+      "Last autofill": [
+        "Letztes Auto-Ausfüllen"
+      ],
+      "Last month": [
+        "Letzter Monat"
+      ],
+      "Last week": [
+        "Letzte Woche"
+      ],
+      "Latest import": [
+        "Letzter Import"
+      ],
+      "Learn more": [
+        "Mehr erfahren"
+      ],
+      "Login": [
+        "Zugangsdaten"
+      ],
+      "Logins": [
+        "Zugangsdaten"
+      ],
+      "Modified": [
+        "Geändert"
+      ],
+      "Most recent": [
+        "Neuste"
+      ],
+      "Move items to": [
+        "Einträge verschieben nach"
+      ],
+      "Name": [
+        "Name"
+      ],
+      "New vault": [
+        "Neuer Tresor"
+      ],
+      "New-Old": [
+        "Neu-Alt"
+      ],
+      "Newest to oldest": [
+        "Neueste nach älteste"
+      ],
+      "No history": [
+        "Kein Verlauf"
+      ],
+      "Not recently used": [
+        "Nicht kürzlich benutzt"
+      ],
+      "Note": [
+        "Notiz"
+      ],
+      "Notes": [
+        "Notizen"
+      ],
+      "Old-New": [
+        "Alt-Neu"
+      ],
+      "Oldest to newest": [
+        "Älteste nach neueste"
+      ],
+      "Passphrase": [
+        "Passphrase"
+      ],
+      "Password": [
+        "Passwort"
+      ],
+      "Password history": [
+        "Passwortverlauf"
+      ],
+      "Passwords": [
+        "Passwörter"
+      ],
+      "Permanently delete items": [
+        "Einträge dauerhaft löschen"
+      ],
+      "PIN": [
+        "PIN"
+      ],
+      "Prefix": [
+        "Präfix"
+      ],
+      "Primary vault": [
+        "Primärer Tresor"
+      ],
+      "Prompt for auto-save": [
+        "Aufforderung zum Auto-Speichern"
+      ],
+      "Recent": [
+        "Kürzlich"
+      ],
+      "Report a problem": [
+        "Ein Problem melden"
+      ],
+      "Restore all items": [
+        "Alle Einträge wiederherstellen"
+      ],
+      "Reveal password": [
+        "Passwort anzeigen"
+      ],
+      "Security": [
+        "Sicherheit"
+      ],
+      "Select an email address": [
+        "E-Mail-Adresse auswählen"
+      ],
+      "Select your password manager": [
+        "Passwort-Manager auswählen"
+      ],
+      "Selected": [
+        "Ausgewählt"
+      ],
+      "Session locking": [
+        "Sperren der Sitzung"
+      ],
+      "Set PIN code": [
+        "PIN-Code festlegen"
+      ],
+      "Settings": [
+        "Einstellungen"
+      ],
+      "Show website thumbnails": [
+        "Website-Thumbnails anzeigen"
+      ],
+      "Special characters (!&*)": [
+        "Sonderzeichen (!&*)"
+      ],
+      "Suffix": [
+        "Suffix"
+      ],
+      "Support": [
+        "Support"
+      ],
+      "Text": [
+        "Text"
+      ],
+      "Title": [
+        "Titel"
+      ],
+      "Today": [
+        "Heute"
+      ],
+      "Total imported items : ": [
+        "Insgesamt importierte Einträge:"
+      ],
+      "Total items : ": [
+        "Einträge insgesamt: "
+      ],
+      "TOTP": [
+        "TOTP"
+      ],
+      "Trash": [
+        "Papierkorb"
+      ],
+      "Type": [
+        "Typ"
+      ],
+      "Unnamed Credit Card": [
+        "Unbenannte Kreditkarte"
+      ],
+      "Unnamed item": [
+        "Unbenannter Eintrag"
+      ],
+      "Unnamed note": [
+        "Unbenannte Notiz"
+      ],
+      "Untitled": [
+        "Unbenannt"
+      ],
+      "Update": [
+        "Aktualisieren"
+      ],
+      "Use ${ PASS_APP_NAME } as default autosave manager": [
+        "${ PASS_APP_NAME } als Standard-Auto-Speichern-Manager verwenden"
+      ],
+      "Username": [
+        "Benutzername"
+      ],
+      "Username (alias)": [
+        "Benutzername (Alias)"
+      ],
+      "Username (new alias)": [
+        "Benutzername (neuer Alias)"
+      ],
+      "Vault": [
+        "Tresor"
+      ],
+      "Vaults": [
+        "Tresore"
+      ],
+      "Verification number": [
+        "Kartenprüfnummer"
+      ],
+      "View logs": [
+        "Protokolle anzeigen"
+      ],
+      "Websites": [
+        "Websites"
+      ]
+    },
+    "Option": {
+      "Commas": [
+        "Kommas"
+      ],
+      "Hyphens": [
+        "Bindestriche"
+      ],
+      "Memorable Password": [
+        "Einprägsames Passwort"
+      ],
+      "Numbers": [
+        "Zahlen"
+      ],
+      "Numbers and Symbols": [
+        "Zahlen und Symbole"
+      ],
+      "Periods": [
+        "Punkte"
+      ],
+      "Random Password": [
+        "Zufälliges Passwort"
+      ],
+      "Spaces": [
+        "Leerzeichen"
+      ],
+      "Underscores": [
+        "Unterstriche"
+      ]
+    },
+    "Placeholder": {
+      "Add 2FA secret": [
+        "2FA-Geheimnis hinzufügen"
+      ],
+      "Add hidden text": [
+        "Versteckten Text hinzufügen"
+      ],
+      "Add note": [
+        "Notiz hinzufügen"
+      ],
+      "Add text": [
+        "Text hinzufügen"
+      ],
+      "Enter a note...": [
+        "Notiz eingeben..."
+      ],
+      "Enter a prefix": [
+        "Präfix eingeben"
+      ],
+      "Enter email or username": [
+        "E-Mail-Adresse oder Benutzername eingeben"
+      ],
+      "Enter password": [
+        "Passwort eingeben"
+      ],
+      "Full Name": [
+        "Vollständiger Name"
+      ],
+      "MM/YYYY": [
+        "MM/JJJJ"
+      ],
+      "Move items to another vault (optional)": [
+        "Einträge in einen anderen Tresor verschieben (optional)"
+      ],
+      "Pick a vault": [
+        "Wähle einen Tresor"
+      ],
+      "Please describe the problem and include any error messages": [
+        "Bitte beschreibe das Problem und füge alle Fehlermeldungen hinzu"
+      ],
+      "Retype \"${ vaultName }\" to confirm deletion": [
+        "Gib \"${ vaultName }\" erneut ein, um die Löschung zu bestätigen."
+      ],
+      "Search in ${ vault.content.name }": [
+        "In ${ vault.content.name } suchen"
+      ],
+      "Search in all vaults": [
+        "In allen Tresoren suchen"
+      ],
+      "Search in Trash": [
+        "Im Papierkorb suchen"
+      ],
+      "Select a suffix": [
+        "Suffix auswählen"
+      ],
+      "Unknown origin": [
+        "Ursprung unbekannt"
+      ],
+      "Untitled": [
+        "Unbenannt"
+      ],
+      "Used on ${ url }": [
+        "Verwendet auf ${ url }"
+      ],
+      "Write your note": [
+        "Schreibe deine Notiz"
+      ]
+    },
+    "Title": {
+      "${ PASS_APP_NAME } Settings": [
+        "${ PASS_APP_NAME }-Einstellungen"
+      ],
+      "Confirm PIN code": [
+        "PIN-Code bestätigen"
+      ],
+      "Connect your ${ BRAND_NAME } account": [
+        "${ BRAND_NAME }-Konto verbinden"
+      ],
+      "Create PIN code": [
+        "PIN-Code erstellen"
+      ],
+      "Delete vault \"${ vaultName }\" ?": [
+        "Tresor \"${ vaultName }\" löschen?"
+      ],
+      "Discard changes ?": [
+        "Änderungen verwerfen?"
+      ],
+      "Enjoy your free trial": [
+        "Genieße deine kostenlose Testversion"
+      ],
+      "Enter your Pin": [
+        "PIN eingeben"
+      ],
+      "Get the mobile apps": [
+        "Apps für Mobilgeräte herunterladen"
+      ],
+      "Grant permissions": [
+        "Berechtigungen erteilen"
+      ],
+      "Hide my email": [
+        "Meine E-Mail-Adresse verstecken"
+      ],
+      "Import - ${ date }": [
+        "Import - ${ date }"
+      ],
+      "Import to vaults": [
+        "In Tresore importieren"
+      ],
+      "Permanently remove all items ?": [
+        "Alle Einträge dauerhaft löschen?"
+      ],
+      "Pin the extension": [
+        "Erweiterung anheften"
+      ],
+      "Secure your data": [
+        "Schütze deine Daten"
+      ],
+      "Switching to ${ PASS_APP_NAME }?": [
+        "Du wechselst zu ${ PASS_APP_NAME }?"
+      ],
+      "Thank you for installing ${ PASS_APP_NAME }": [
+        "Danke, dass du ${ PASS_APP_NAME } installiert hast."
+      ],
+      "The extension is now ready to use.": [
+        "Die Erweiterung ist nun einsatzbereit."
+      ],
+      "Trash empty": [
+        "Papierkorb leer"
+      ],
+      "Unlock ${ brandNameJSX }": [
+        "${ brandNameJSX } entsperren"
+      ],
+      "Unlock ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } entsperren"
+      ],
+      "Update available": [
+        "Update verfügbar"
+      ],
+      "Use my email": [
+        "Meine E-Mail-Adresse verwenden"
+      ],
+      "Use secure password": [
+        "Sicheres Passwort verwenden"
+      ],
+      "Welcome to ${ brandNameJSX }": [
+        "Willkommen bei ${ brandNameJSX }"
+      ],
+      "Welcome to ${ PASS_APP_NAME }": [
+        "Willkommen bei ${ PASS_APP_NAME }"
+      ],
+      "Welcome!": [
+        "Willkommen!"
+      ],
+      "Why ${ PASS_APP_NAME }?": [
+        "Warum ${ PASS_APP_NAME }?"
+      ],
+      "Your vault is empty": [
+        "Dein Tresor ist leer."
+      ]
+    },
+    "Validation": {
+      "Duplicated url": [
+        "Doppelte URL"
+      ],
+      "Label is required": [
+        "Bezeichnung ist erforderlich"
+      ],
+      "OTP Secret or URI is invalid": [
+        "OTP-Geheimnis oder URI ungültig"
+      ],
+      "OTP Secret or URI required": [
+        "OTP-Geheimnis oder URI erforderlich"
+      ],
+      "Url already exists": [
+        "URL existiert bereits"
+      ],
+      "Url cannot be empty": [
+        "URL darf nicht leer sein"
+      ],
+      "Url is invalid": [
+        "URL ungültig"
+      ]
+    },
+    "Warning": {
+      "A description of the problem is required": [
+        "Eine Beschreibung des Problems ist erforderlich."
+      ],
+      "Alias \"${ name }\" is currently used in login item \"${ relatedLoginName }\". You will also stop receiving emails sent to \"${ aliasEmail }\"": [
+        "Der Alias \"${ name }\" wird derzeit im Zugangsdaten-Eintrag \"${ relatedLoginName }\" verwendet. Du wirst auch keine E-Mails mehr erhalten, die an \"${ aliasEmail }\" gesendet werden."
+      ],
+      "All your trashed items will be permanently deleted. You can not undo this action.": [
+        "Alle deine gelöschten Einträge werden dauerhaft gelöscht. Du kannst diese Aktion nicht rückgängig machen."
+      ],
+      "An error occured while exporting your data": [
+        "Beim Exportieren deiner Daten ist ein Fehler aufgetreten."
+      ],
+      "Cannot retrieve mailboxes for this alias right now": [
+        "Mailboxen für diesen Alias können derzeit nicht abgerufen werden."
+      ],
+      "Could not create vault \"${ vaultName }\"": [
+        "Tresor \"${ vaultName }\" konnte nicht erstellt werden."
+      ],
+      "Empty note": [
+        "Leere Notiz"
+      ],
+      "Expiration Date is incomplete": [
+        "Das Ablaufdatum ist unvollständig"
+      ],
+      "Invalid alias prefix": [
+        "Ungültiges Alias-Präfix"
+      ],
+      "Maximum length is ${ maxLength } characters": [
+        "Die maximale Länge beträgt ${ maxLength } Zeichen."
+      ],
+      "Missing alias prefix": [
+        "Fehlendes Alias-Präfix"
+      ],
+      "Missing alias suffix": [
+        "Fehlendes Alias-Suffix"
+      ],
+      "No items": [
+        "Keine Einträge"
+      ],
+      "No items in trash matching": [
+        "Keine zutreffenden Einträge im Papierkorb"
+      ],
+      "No items matching": [
+        "Keine zutreffenden Einträge"
+      ],
+      "No password manager selected": [
+        "Kein Passwort-Manager ausgewählt."
+      ],
+      "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
+        "Nur alphanumerische Zeichen, Punkte, Bindestriche und Unterstriche sind erlaubt."
+      ],
+      "Passphrase is required": [
+        "Passphrase ist erforderlich"
+      ],
+      "PGP encrypted export file requires passphrase": [
+        "PGP-verschlüsselte Exportdatei erfordert Passphrase"
+      ],
+      "Please log back in": [
+        "Bitte melde dich erneut an."
+      ],
+      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
+        "Berichte sind nicht Ende-zu-Ende-verschlüsselt. Bitte sende daher keine sensiblen Informationen."
+      ],
+      "Something went wrong while starting ${ PASS_APP_NAME }. Please try refreshing or reloading the extension": [
+        "Beim Starten von ${ PASS_APP_NAME } ist ein Fehler aufgetreten. Bitte versuche, die Erweiterung zu aktualisieren oder neu zu laden."
+      ],
+      "The alias prefix cannot be longer than 40 characters": [
+        "Der Alias-Präfix darf nicht länger als 40 Zeichen sein."
+      ],
+      "Title is required": [
+        "Titel ist erforderlich"
+      ],
+      "Trash alias ?": [
+        "Alias in den Papierkorb verschieben?"
+      ],
+      "Unable to save": [
+        "Speichern nicht möglich"
+      ],
+      "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
+        "Anmeldung bei ${ PASS_APP_NAME } nicht möglich. ${ additionalMessage }"
+      ],
+      "Vault \"${ vaultName }\" and all its items will be permanently deleted. You can not undo this action": [
+        "Der Tresor \"${ vaultName }\" und alle seine Einträge werden dauerhaft gelöscht. Du kannst diese Aktion nicht rückgängig machen."
+      ],
+      "Vault \"${ vaultName }\" will be permanently deleted and all its items moved to \"${ destinationVaultName }\"": [
+        "Der Tresor \"${ vaultName }\" wird dauerhaft gelöscht und alle darin enthaltenen Einträge werden nach \"${ destinationVaultName }\" verschoben."
+      ],
+      "Vault name is required": [
+        "Tresorname ist erforderlich"
+      ],
+      "You have unsaved changes, are you sure you want to discard them?": [
+        "Du hast ungespeicherte Änderungen. Bist du dir sicher, dass du diese verwerfen möchtest?"
+      ],
+      "You must select at least one mailbox": [
+        "Du musst mindestens ein Postfach auswählen."
+      ],
+      "Your plan does not allow you to create more aliases": [
+        "Dein Abonnement erlaubt es dir nicht, weitere Aliasse zu erstellen."
+      ],
+      "Your plan only allows you to autofill from your primary vault": [
+        "Dein Abonnement gestattet dir nur das automatische Ausfüllen aus deinem primären Tresor."
+      ],
+      "Your session was locked due to inactivity": [
+        "Deine Sitzung wurde aufgrund von Inaktivität gesperrt."
+      ],
+      "Your subscription does not allow you to create multiple vaults. All items will be imported to your primary vault by default. To import into multiple vaults upgrade your subscription.": [
+        "Dein Abonnement erlaubt es dir nicht, mehrere Tresore zu erstellen. Alle Einträge werden standardmäßig in deinen primären Tresor importiert. Um in mehrere Tresore zu importieren, musst du dein Abonnement upgraden."
+      ]
+    }
+  }
+}
