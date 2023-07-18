@@ -2,6 +2,7 @@ import { APPS } from '@proton/shared/lib/constants';
 import { Environment } from '@proton/shared/lib/interfaces';
 
 import { User as tsUser } from '../interfaces';
+import { VCardContact } from '../interfaces/contacts/VCard';
 import { ThemeSetting } from '../themes/themes';
 
 export type DRAWER_APPS = typeof APPS.PROTONCALENDAR | typeof APPS.PROTONCONTACTS;
@@ -48,6 +49,7 @@ export enum DRAWER_EVENTS {
     // Calendar to mail events
     REQUEST_OPEN_EVENTS = 'outside-request-open-events',
     REFRESH_WIDGET = 'outside-refresh-widget',
+    OPEN_CONTACT_MODAL = 'open-contact-modal',
 }
 
 // Global inside iframe events
@@ -180,6 +182,20 @@ interface REFRESH_WIDGET {
     };
 }
 
+type OPEN_CONTACT_MODAL =
+    | {
+          type: DRAWER_EVENTS.OPEN_CONTACT_MODAL;
+          payload: {
+              contactID: string;
+          };
+      }
+    | {
+          type: DRAWER_EVENTS.OPEN_CONTACT_MODAL;
+          payload: {
+              vCardContact: VCardContact;
+          };
+      };
+
 export type DRAWER_ACTION =
     | CLOSE
     | SHOW
@@ -197,4 +213,5 @@ export type DRAWER_ACTION =
     | SET_WIDGET_EVENT
     | UNSET_WIDGET_EVENT
     | REQUEST_OPEN_EVENTS
-    | REFRESH_WIDGET;
+    | REFRESH_WIDGET
+    | OPEN_CONTACT_MODAL;
