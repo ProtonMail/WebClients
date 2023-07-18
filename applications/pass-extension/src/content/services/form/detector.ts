@@ -23,7 +23,6 @@ const ruleset = rulesetMaker();
 const NOOP_EL = document.createElement('form');
 const DETECTABLE_FORMS = Object.values(FormType).filter((type) => type !== FormType.NOOP);
 const DETECTABLE_FIELDS = Object.values(FormField).filter((type) => type !== FormField.NOOP);
-const LOGIN_DELTA_TOLERANCE = 0.15;
 
 type BoundRuleset = ReturnType<typeof ruleset.against>;
 type PredictionResult<T extends string> = { fnode: FNode; type: T; score: number };
@@ -139,13 +138,13 @@ const groupFields = (
 const selectBest = <T extends string>(a: PredictionResult<T>, b: PredictionResult<T>): PredictionResult<T> =>
     a.score > b.score ? a : b;
 
+/* if we have a tie with a login form : always prefer the login type
+ * as it is less deceptive for the user. FIXME: on tie between login &
+ * register, we should query the autofillable candidates and adapt the
+ * form-type accordingly */
 const selectBestForm = (a: PredictionResult<FormType>, b: PredictionResult<FormType>): PredictionResult<FormType> => {
-    if (a.type !== FormType.LOGIN || b.type !== FormType.LOGIN) return selectBest(a, b);
-
-    const login = a.type === FormType.LOGIN ? a : b;
-    const other = login === a ? b : a;
-    const delta = Math.abs(login.score - other.score);
-    return delta < LOGIN_DELTA_TOLERANCE ? login : other;
+    if (a.type !== FormType.LOGIN && b.type !== FormType.LOGIN) return selectBest(a, b);
+    return a.type === FormType.LOGIN ? a : b;
 };
 
 /* Runs the fathom detection and returns a form handle for each detected form.. */
