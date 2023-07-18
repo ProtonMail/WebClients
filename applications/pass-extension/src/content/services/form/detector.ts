@@ -1,10 +1,10 @@
 import {
-    DETECTED_FORM_TYPE_ATTR,
     type FNode,
     clearDetectionCache,
     isActiveField,
     isFormProcessed,
     isVisibleForm,
+    resetFormFlags,
     rulesetMaker,
     selectAllForms,
     selectDanglingInputs,
@@ -54,7 +54,7 @@ const shouldRunDetection = (): Promise<boolean> =>
                      * remove the current cached detection result */
                     if (unprocessedFields) {
                         logger.info('[Detector::assess] new tracked form fields detected');
-                        form.removeAttribute(DETECTED_FORM_TYPE_ATTR);
+                        resetFormFlags(form);
                     }
 
                     return runDetection || unprocessedFields;
