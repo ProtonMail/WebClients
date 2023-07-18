@@ -2,8 +2,9 @@ import { c } from 'ttag';
 
 import { apiNotificationsToModel } from '@proton/shared/lib/calendar/alarms/notificationsToModel';
 import { ICAL_ATTENDEE_STATUS } from '@proton/shared/lib/calendar/constants';
-import { canonicalizeEmailByGuess } from '@proton/shared/lib/helpers/email';
+import { canonicalizeEmail, canonicalizeEmailByGuess } from '@proton/shared/lib/helpers/email';
 import { CalendarSettings, EventModel } from '@proton/shared/lib/interfaces/calendar';
+import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import { RequireOnly, SimpleMap } from '@proton/shared/lib/interfaces/utils';
 
 import { DisplayNameEmail } from '../containers/calendar/interface';
@@ -50,6 +51,7 @@ export const modifyEventModelPartstat = (
 export const getOrganizerDisplayData = (
     organizer = { email: '', cn: '' },
     isOrganizer: boolean,
+    contactEmailsMap: SimpleMap<ContactEmail>,
     displayNameEmailMap: SimpleMap<DisplayNameEmail>
 ) => {
     const { email, cn } = organizer;
@@ -57,14 +59,19 @@ export const getOrganizerDisplayData = (
         // it should not happen
         return { name: '', title: '' };
     }
+
+    const { displayName, displayEmail } = displayNameEmailMap[canonicalizeEmailByGuess(email)] || {};
+    const { ContactID: contactID } = contactEmailsMap[displayEmail || canonicalizeEmail(email)] || {};
+
     if (isOrganizer) {
         return {
             name: c('Event info. Organizer name').t`You`,
             title: `${email}`,
+            contactID,
         };
     }
-    const { displayName } = displayNameEmailMap[canonicalizeEmailByGuess(email)] || {};
     const name = displayName || cn || email;
     const title = name === email ? email : `${name} <${email}>`;
-    return { name, title };
+
+    return { name, title, contactID };
 };
