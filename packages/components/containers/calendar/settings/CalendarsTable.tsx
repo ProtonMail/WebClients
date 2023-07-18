@@ -110,6 +110,7 @@ const CalendarsTable = ({
                                             badgeType={badgeType}
                                             text={text}
                                             tooltipText={tooltipText}
+                                            className="mb-1 mr-2"
                                         />
                                     ))}
                                 </div>
