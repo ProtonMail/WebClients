@@ -939,7 +939,7 @@
         "Utiliser un code de récupération"
       ],
       "Use your current email instead": [
-        "Utiliser plutôt votre adresse e-mail actuelle"
+        "Utiliser plutôt votre adresse actuelle"
       ],
       "Use “${ label }” setting": [
         "Utiliser le paramètre « ${ label } »"
@@ -2870,7 +2870,7 @@
         "Merci de vérifier votre adresse e-mail."
       ],
       "Thanks for letting us know": [
-        "Merci de nous en informer"
+        "Merci de nous avoir informés."
       ],
       "We've noted that this account doesn't belong to you. We'll investigate and act accordingly.": [
         "Nous avons constaté que ce compte ne vous appartient pas. Nous allons examiner la situation et prendre les mesures nécessaires."
@@ -2983,6 +2983,11 @@
       ],
       "You unsubscribed from ${ categoriesJsx } emails.": [
         "Vous ne recevrez plus les messages de ${ categoriesJsx }."
+      ]
+    },
+    "Email Unsubscribe Categories": {
+      "${ allCategoryTitlesExceptTheLastOne } and ${ lastCategoryTitle }": [
+        "${ allCategoryTitlesExceptTheLastOne } et ${ lastCategoryTitle }"
       ]
     },
     "Enabled 2FA": {
@@ -3657,7 +3662,7 @@
     },
     "Error message, recovery": {
       "Contact ${ BRAND_NAME }": [
-        "Contactez ${ BRAND_NAME }"
+        "Contacter ${ BRAND_NAME }"
       ],
       "Please ${ signIn } to resend a recovery email verification request.": [
         "Veuillez vous ${ signIn } pour envoyer une nouvelle demande de vérification de l'adresse e-mail de récupération."
@@ -4415,6 +4420,12 @@
       "(1-2 emails per month)": [
         "(une à deux fois par mois)"
       ],
+      "(2-4 per year)": [
+        "(2 à 4 messages par an)"
+      ],
+      "(4-6 emails per year)": [
+        "(4 à 6 messages par an)"
+      ],
       "(during your first month)": [
         "(au cours de votre premier mois)"
       ]
@@ -4551,7 +4562,7 @@
         "Choisissez votre moyen de paiement préféré."
       ],
       "Select your pricing plan": [
-        "Sélectionnez votre plan tarifaire"
+        "Sélectionnez votre formule d'abonnement"
       ],
       "Status": [
         "État"
@@ -5067,6 +5078,9 @@
       "${ numGroups } contact group": [
         "${ numGroups } groupe de contacts",
         "${ numGroups } groupes de contacts"
+      ],
+      "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
+        "${ PROTON_SENTINEL_NAME } est un programme avancé de protection des comptes qui s'appuie sur des systèmes d'IA sophistiqués et des spécialistes qui travaillent en permanence pour vous protéger des acteurs malveillants et des menaces de sécurité."
       ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } dossier trouvé",
@@ -6153,6 +6167,9 @@
       "Protected by Swiss privacy laws": [
         "Protégé par les lois suisses sur la vie privée"
       ],
+      "Public figures, journalists, executives, and others who may be the target of cyber attacks are highly encouraged to enable ${ PROTON_SENTINEL_NAME }.": [
+        "Si vous êtes une personnalité publique, un journaliste, un dirigeant ou une personne susceptible d'être la cible de cyberattaques, nous vous recommandons d'activer ${ PROTON_SENTINEL_NAME }."
+      ],
       "Public link invite": [
         "Lien d'invitation public"
       ],
@@ -6284,6 +6301,12 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Votre compte bénéficie de fonctionnalités supplémentaires parce que vous êtes un utilisateur fidèle."
+      ],
+      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
+        "Une requête SMTP permet à des services ou des appareils tiers d'envoyer des messages par l'intermédiaire de ${ MAIL_APP_NAME } depuis les adresses de votre domaine personnalisé. Pour demander l'accès, nous vous invitons à ${ createTicket } en décrivant vos cas d'utilisation, les domaines personnalisés que vous voudriez utiliser et le nombre de messages attendus par heure et par jour."
+      ],
+      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To use this feature, start by generating a new token.": [
+        "Une requête SMTP permet à des services ou des appareils tiers d'envoyer des messages par l'intermédiaire de ${ MAIL_APP_NAME } depuis les adresses de votre domaine personnalisé. Pour utiliser cette fonctionnalité, commencez par générer un nouveau jeton."
       ],
       "Some keys successfully reactivated": [
         "Certaines clés ont été réactivées."
@@ -6485,7 +6508,7 @@
         "Cet assistant permet d'activer l'authentification à deux facteurs (A2F) sur votre compte ${ BRAND_NAME }. Cela renforce la sécurité de votre compte ${ BRAND_NAME_TWO }, c'est pourquoi nous vous recommandons de l'activer."
       ],
       "To ${ planName }": [
-        "À : ${ planName }"
+        "sur ${ planName }"
       ],
       "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
         "Pour éviter toute perte de données, ne le supprimez que si vous maîtrisez la situation ou si vous en avez exporté une copie."
@@ -6516,6 +6539,9 @@
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Pour importer des événements, créez d'abord un calendrier dans ${ CALENDAR_APP_NAME }. Ce calendrier contiendra les événements après leur importation."
+      ],
+      "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
+        "Pour vous tenir au courant des dernières évolutions des produits ${ BRAND_NAME }, vous pouvez vous abonner à nos différentes newsletters et ${ blogLink } de temps en temps."
       ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "Pour continuer, sélectionnez une méthode de récupération de compte et nous pourrons vérifier la demande."
@@ -8304,6 +8330,9 @@
       "${ BRAND_NAME } for Business newsletter": [
         "Newsletter ${ BRAND_NAME } for Business"
       ],
+      "${ BRAND_NAME } important announcements": [
+        "Annonces importantes de ${ BRAND_NAME }"
+      ],
       "${ BRAND_NAME } newsletter": [
         "Newsletter ${ BRAND_NAME }"
       ],
@@ -8423,6 +8452,9 @@
       "Common sign up issues": [
         "Problèmes d'inscription courants"
       ],
+      "create a ticket": [
+        "créer un ticket"
+      ],
       "Create account": [
         "Créer un compte"
       ],
@@ -8497,6 +8529,9 @@
       ],
       "View guide": [
         "Voir le guide"
+      ],
+      "visit our blog": [
+        "consulter notre blog"
       ],
       "What is the difference between UDP and TCP protocols?": [
         "Quelle est la différence entre les protocoles UDP et TCP ?"
@@ -11308,7 +11343,7 @@
         "L'adresse e-mail a été copiée dans le presse-papiers."
       ],
       "Email updated": [
-        "L'adresse e-mail a été mise à jour."
+        "L'adresse a été mise à jour."
       ],
       "Gift code applied": [
         "Le code cadeau a été appliqué."
@@ -12407,6 +12442,9 @@
       ],
       "Signed in to member account": [
         "Connecté au compte membre"
+      ],
+      "SMTP Submission": [
+        "Requête SMTP"
       ],
       "Sort folders alphabetically": [
         "Trier les dossiers par ordre alphabétique"

@@ -2985,6 +2985,11 @@
         "${ categoriesJsx } e-postalarının aboneliğinden ayrıldınız."
       ]
     },
+    "Email Unsubscribe Categories": {
+      "${ allCategoryTitlesExceptTheLastOne } and ${ lastCategoryTitle }": [
+        "${ allCategoryTitlesExceptTheLastOne } ve ${ lastCategoryTitle }"
+      ]
+    },
     "Enabled 2FA": {
       "2FA": [
         "İki adımlı doğrulama"
@@ -4415,6 +4420,12 @@
       "(1-2 emails per month)": [
         "(ayda 1-2 e-posta)"
       ],
+      "(2-4 per year)": [
+        "(1 yılda 2-4 kez)"
+      ],
+      "(4-6 emails per year)": [
+        "(1 yılda 4-6 e-posta)"
+      ],
       "(during your first month)": [
         "(ilk ayınız boyunca)"
       ]
@@ -5067,6 +5078,9 @@
       "${ numGroups } contact group": [
         "${ numGroups } kişi grubu",
         "${ numGroups } kişi grubu"
+      ],
+      "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
+        "${ PROTON_SENTINEL_NAME }, sizi kötü niyetli kişilerden ve güvenlik tehditlerinden korumak için günün her saati çalışan, gelişmiş yapay zeka sistemleri ile uzmanlar tarafından desteklenen gelişmiş bir hesap koruma programıdır."
       ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } klasör bulundu",
@@ -6153,6 +6167,9 @@
       "Protected by Swiss privacy laws": [
         "İsviçre gizlilik yasaları tarafından korunmaktadır"
       ],
+      "Public figures, journalists, executives, and others who may be the target of cyber attacks are highly encouraged to enable ${ PROTON_SENTINEL_NAME }.": [
+        "Tanınmış kişiler, gazeteciler, yöneticiler ve siber saldırıların hedefi olabilecek diğer kişilerin, ${ PROTON_SENTINEL_NAME } özelliğini etkinleştirmesi önemle önerilir."
+      ],
       "Public link invite": [
         "Herkese açık davet bağlantısı"
       ],
@@ -6284,6 +6301,12 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Sadık bir kullanıcı olduğunuz için, hesabınızda ek özellikler etkinleştirildi."
+      ],
+      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
+        "SMTP gönderim özelliği, üçüncü taraf hizmetlerin veya aygıtların özel etki alanı adreslerinizle ${ MAIL_APP_NAME } üzerinden e-posta göndermesini sağlar. Erişim isteğinde bulunmak için lütfen kullanım durumlarınızı, hangi özel etki alanlarını kullanmak istediğinizi ve gerçekleşmesi beklenen saatlik ve günlük e-posta sayılarını açıklayan ${ createTicket }."
+      ],
+      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To use this feature, start by generating a new token.": [
+        "SMTP gönderim özelliği ile üçüncü taraf hizmetler ya da aygıtlar ${ MAIL_APP_NAME } üzerinden özel etki alanı adreslerinizle e-posta gönderebilir. Bu özelliği kullanmaya başlamak için yeni bir kod oluşturun."
       ],
       "Some keys successfully reactivated": [
         "Bazı anahtarlar yeniden etkinleştirildi"
@@ -6516,6 +6539,9 @@
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Etkinlikleri içe aktarmak için önce ${ CALENDAR_APP_NAME } içinde bir takvim oluşturun. Etkinlikleriniz içe aktarma işleminden sonra bu takvimde görüntülenir."
+      ],
+      "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
+        "${ BRAND_NAME } ürünlerindeki son gelişmeleri izlemek için çeşitli e-posta gruplarımıza abone olabilir ve zaman zaman ${ blogLink } sayfamıza bakabilirsiniz."
       ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "İlerlemek için, isteği doğrulayabileceğimiz bir hesap kurtarma yöntemi seçin."
@@ -8304,6 +8330,9 @@
       "${ BRAND_NAME } for Business newsletter": [
         "${ BRAND_NAME } for Business bülteni"
       ],
+      "${ BRAND_NAME } important announcements": [
+        "Önemli ${ BRAND_NAME } duyuruları"
+      ],
       "${ BRAND_NAME } newsletter": [
         "${ BRAND_NAME } bülteni"
       ],
@@ -8423,6 +8452,9 @@
       "Common sign up issues": [
         "Sık karşılaşılan hesap açma sorunları"
       ],
+      "create a ticket": [
+        "bir destek kaydı oluşturun"
+      ],
       "Create account": [
         "Hesap ekle"
       ],
@@ -8497,6 +8529,9 @@
       ],
       "View guide": [
         "Rehberi görüntüle"
+      ],
+      "visit our blog": [
+        "günlüğümüzü ziyaret edin"
       ],
       "What is the difference between UDP and TCP protocols?": [
         "UDP ve TCP iletişim kuralları arasındaki fark nedir?"
@@ -12407,6 +12442,9 @@
       ],
       "Signed in to member account": [
         "Üye hesabıyla oturum açıldı"
+      ],
+      "SMTP Submission": [
+        "SMTP gönderim"
       ],
       "Sort folders alphabetically": [
         "Klasörler alfabetik olarak sıralansın"
