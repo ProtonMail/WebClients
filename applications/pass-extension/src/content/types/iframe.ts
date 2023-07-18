@@ -2,12 +2,12 @@ import type { Runtime } from 'webextension-polyfill';
 
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import type { MaybeNull, SafeLoginItem, WorkerState } from '@proton/pass/types';
+import type { Rect } from '@proton/pass/types/utils/dom';
 
 import type { DropdownActions } from './dropdown';
 import type { NotificationActions } from './notification';
 
-export type IFramePosition = { top: number; left?: number; right?: number; zIndex?: number };
-export type IFrameDimensions = { width: number; height: number };
+export type IFramePosition = Partial<Rect> & { zIndex?: number };
 
 export type IFrameState<A> = {
     visible: boolean;
