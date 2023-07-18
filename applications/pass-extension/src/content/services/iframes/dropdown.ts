@@ -1,7 +1,7 @@
 import { contentScriptMessage, sendMessage } from '@proton/pass/extension/message';
 import type { MaybeNull } from '@proton/pass/types';
 import { WorkerMessageType } from '@proton/pass/types';
-import { createStyleCompute, getComputedHeight } from '@proton/pass/utils/dom';
+import { animatePositionChange, createStyleCompute, getComputedHeight } from '@proton/pass/utils/dom';
 import { pipe, truthy, waitUntil } from '@proton/pass/utils/fp';
 import { createListenerStore } from '@proton/pass/utils/listener';
 import { getScrollParent } from '@proton/shared/lib/helpers/dom';
@@ -54,23 +54,11 @@ export const createDropdown = (): InjectedDropdown => {
 
     /* if the dropdown is opened while the field is being animated
      * we must update its position until the position stabilizes */
-    const updatePosition = () => {
-        let { top, left, right } = iframe.getPosition();
-
-        const check = () =>
-            requestAnimationFrame(() => {
-                const { top: nTop, left: nLeft, right: nRight } = iframe.getPosition();
-                if (nTop !== top || nLeft !== left || nRight !== right) {
-                    iframe.updatePosition();
-                    top = nTop;
-                    left = nLeft;
-                    right = nRight;
-                    check();
-                }
-            });
-
-        check();
-    };
+    const updatePosition = () =>
+        animatePositionChange({
+            get: () => iframe.getPosition(),
+            set: () => iframe.updatePosition(),
+        });
 
     /* As we are recyling the dropdown iframe sub-app instead of
      * re-injecting for each field - opening the dropdown involves
