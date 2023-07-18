@@ -13,7 +13,7 @@ export const selectVaultLimits = createSelector([selectAllVaults, selectUserPlan
     return {
         vaultLimit,
         vaultTotalCount: vaults.length,
-        needsUpgrade: vaults.length >= vaultLimit,
+        vaultLimitReached: vaults.length >= vaultLimit,
         didDowngrade: vaults.length > vaultLimit,
     };
 });

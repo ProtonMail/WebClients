@@ -30,7 +30,7 @@ export type Props = {
 export const VaultModal: FC<Props> = ({ payload, onClose = noop, ...props }) => {
     const [loading, setLoading] = useState(false);
     const [canSubmit, setCanSubmit] = useState(payload.type === 'edit');
-    const { needsUpgrade } = useSelector(selectVaultLimits);
+    const { vaultLimitReached } = useSelector(selectVaultLimits);
 
     const vaultViewProps = useMemo<VaultFormConsumerProps>(
         () => ({
@@ -45,7 +45,7 @@ export const VaultModal: FC<Props> = ({ payload, onClose = noop, ...props }) => 
         []
     );
 
-    const canProcessSubmit = !needsUpgrade || payload.type === 'edit';
+    const canProcessSubmit = !vaultLimitReached || payload.type === 'edit';
 
     return (
         <SidebarModal {...props} onClose={onClose}>
