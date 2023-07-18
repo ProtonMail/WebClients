@@ -7,9 +7,9 @@ import { popupMessage, sendMessage } from '@proton/pass/extension/message';
 import type { MaybeNull, OtpCode, OtpRequest } from '@proton/pass/types';
 import { WorkerMessageType } from '@proton/pass/types';
 
-import { useEnsureMounted } from '../../shared/hooks/useEnsureMounted';
+import { useEnsureMounted } from './useEnsureMounted';
 
-export type Props = OtpRequest & { totpUri: string };
+export type Props = OtpRequest & { totpUri?: string };
 
 const requestOtpCodeGeneration = async (payload: OtpRequest): Promise<MaybeNull<OtpCode>> =>
     sendMessage.on(

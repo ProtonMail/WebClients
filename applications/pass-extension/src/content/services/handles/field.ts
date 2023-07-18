@@ -5,7 +5,7 @@ import { createListenerStore } from '@proton/pass/utils/listener';
 
 import { createAutofill } from '../../../shared/form';
 import { withContext } from '../../context/context';
-import type { FieldHandle, FormHandle } from '../../types';
+import type { FieldHandle, FormHandle, HTMLElementWithActionTrap } from '../../types';
 import { createFieldIconHandle } from './icon';
 
 type CreateFieldHandlesOptions = {
@@ -21,29 +21,30 @@ type CreateFieldHandlesOptions = {
  * when changing focus with the dropdown open */
 const onFocusField = (field: FieldHandle): ((evt?: FocusEvent) => void) =>
     withContext(({ service: { iframe }, getSettings, getState }, evt) => {
-        const el = field.element as any;
-        const preventDefault = el?.focusData ?? false;
-        if (preventDefault) return delete el.focusData;
+        const { action, element } = field;
+
+        const inputEl = element as HTMLElementWithActionTrap;
+        if (inputEl.preventAction) return delete inputEl.preventAction;
+        if (!action) return;
 
         requestAnimationFrame(() => {
             const target = evt?.target;
 
             const current = iframe.dropdown?.getCurrentField()?.element;
             const opened = iframe.dropdown?.getState().visible;
+
             const shouldClose = opened && current !== target;
-            const canOpen = getState().loggedIn && (!opened || shouldClose) && getSettings().autofill.openOnFocus;
+            const shouldOpen = getState().loggedIn && (!opened || shouldClose) && getSettings().autofill.openOnFocus;
 
             if (shouldClose) iframe.dropdown?.close();
-
-            return (
-                canOpen &&
-                field.action &&
+            if (shouldOpen) {
+                iframe.attachDropdown();
                 iframe.dropdown?.open({
-                    action: field.action,
+                    action,
                     autofocused: true,
                     field,
-                })
-            );
+                });
+            }
         });
     });
 
@@ -65,7 +66,7 @@ const onFieldAttributeChange = (field: FieldHandle): MutationCallback =>
             const target = mutation.target as HTMLInputElement;
             if (mutation.type === 'attributes' && mutation.oldValue !== target.type) {
                 field.getFormHandle().detachField(mutation.target as HTMLInputElement);
-                void formManager.detect('FieldTypeChange');
+                void formManager.detect({ reason: 'FieldTypeChange' });
             }
         });
     });
@@ -102,14 +103,15 @@ export const createFieldHandles = ({
         setValue: (value) => (field.value = value),
         setAction: (action) => (field.action = action),
 
-        /* if the field is already focused by the browser we need
-         * to re-dispatch the event on the input element to trigger
-         * initial dropdown autofocus. There is no way to attach
-         * extra data to a focus event so we rely on adding custom
-         * properties on the field element itself */
-        focus(focusData) {
-            (field.element as any).focusData = focusData;
+        /* if the field is already focused we need to re-dispatch the event on the input
+         * element to trigger initial dropdown autofocus. Calling `el.focus()` will not
+         * re-dispatch the focus event if it is already the document's active element.
+         * In certain cases, we may want to re-focus the element without triggering the
+         * attached action effect : as there is no way to attach extra data to a focus event,
+         * so we rely on adding custom properties on the field element itself */
+        focus(options) {
             const isFocusedField = document.activeElement === field.element;
+            (field.element as HTMLElementWithActionTrap).preventAction = options?.preventAction;
             field.element.focus();
 
             if (isFocusedField) {

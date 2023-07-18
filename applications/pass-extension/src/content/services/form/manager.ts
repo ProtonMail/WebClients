@@ -1,16 +1,12 @@
 import { contentScriptMessage, sendMessage } from '@proton/pass/extension/message';
-import { clearVisibilityCache } from '@proton/pass/fathom';
-import type { FormEntryPrompt } from '@proton/pass/types';
-import { FormEntryStatus, WorkerMessageType } from '@proton/pass/types';
+import { clearDetectionCache, getDetectedFormParent, getIgnoredParent, resetFormFlags } from '@proton/pass/fathom';
+import { WorkerMessageType } from '@proton/pass/types';
 import { createListenerStore } from '@proton/pass/utils/listener';
 import { logger } from '@proton/pass/utils/logger';
 import debounce from '@proton/utils/debounce';
-import noop from '@proton/utils/noop';
 
-import { isSubmissionPromptable } from '../../../shared/form';
 import { withContext } from '../../context/context';
 import type { FormHandle } from '../../types';
-import { NotificationAction } from '../../types';
 import { hasUnprocessedFields, hasUnprocessedForms, isNodeOfInterest } from '../../utils/nodes';
 import { createFormHandles } from '../handles/form';
 
@@ -38,68 +34,6 @@ export const createFormManager = (options: FormManagerOptions) => {
     const listeners = createListenerStore();
     const getTrackedForms = () => Array.from(ctx.trackedForms.values());
 
-    /* FIXME: if no autosave.prompt setting we should avoid
-     * setting any listeners at all for form submissions */
-    const promptAutoSave: (submission: FormEntryPrompt) => void = withContext(
-        ({ getSettings, service: { iframe } }, submission) => {
-            const shouldPrompt = getSettings().autosave.prompt;
-
-            if (shouldPrompt) {
-                iframe.attachNotification();
-                iframe.notification?.open({
-                    action: NotificationAction.AUTOSAVE_PROMPT,
-                    submission,
-                });
-            }
-        }
-    );
-
-    /* Reconciliation is responsible for syncing the service
-     * worker state with our local detection in order to take
-     * the appropriate action for auto-save */
-    const reconciliate: () => Promise<void> = withContext(async ({ getExtensionContext, service: { iframe } }) => {
-        const submission = await sendMessage.on(
-            contentScriptMessage({ type: WorkerMessageType.FORM_ENTRY_REQUEST }),
-            (response) => (response.type === 'success' ? response.submission : undefined)
-        );
-
-        if (submission !== undefined) {
-            const { status, partial, domain, type } = submission;
-            const currentDomain = getExtensionContext().url.domain;
-            const formRemoved = !getTrackedForms().some(({ formType }) => formType === type);
-
-            const domainmatch = currentDomain === domain;
-            const canCommit = domainmatch && formRemoved;
-
-            /* if we have a non-partial staging form submission at
-             * this stage either commit it if no forms of the same
-             * type are present in the DOM - or stash it if it's the
-             * case : we may be dealing with a failed login */
-            if (status === FormEntryStatus.STAGING && !partial && canCommit) {
-                return sendMessage.onSuccess(
-                    contentScriptMessage({
-                        type: WorkerMessageType.FORM_ENTRY_COMMIT,
-                        payload: { reason: 'FORM_TYPE_REMOVED' },
-                    }),
-                    ({ committed }) => committed && promptAutoSave(committed)
-                );
-            }
-
-            if (isSubmissionPromptable(submission) && formRemoved) return promptAutoSave(submission);
-
-            if (!formRemoved) {
-                void sendMessage(
-                    contentScriptMessage({
-                        type: WorkerMessageType.FORM_ENTRY_STASH,
-                        payload: { reason: 'FORM_TYPE_PRESENT' },
-                    })
-                );
-            }
-        }
-
-        iframe.detachNotification();
-    });
-
     const detachTrackedForm = (formEl: HTMLElement) => {
         ctx.trackedForms.get(formEl)?.detach();
         ctx.trackedForms.delete(formEl);
@@ -110,68 +44,91 @@ export const createFormManager = (options: FormManagerOptions) => {
      * in SPA apps. Once a form is detected, it will be tracked until
      * removed : form visibility changes have no effect on detachment
      * for performance reasons (costly `isVisible` check) */
-    const garbagecollect = () => {
+    const garbagecollect = () =>
         ctx.trackedForms.forEach((form) => form.shouldRemove() && detachTrackedForm(form.element));
-    };
 
     /* Detection :
      * - runs in `requestAnimationFrame` to defer costly DOM operations
      * - if a stale form has been detected: unsubscribe
      * - on each detected form: recycle/create form handle and reconciliate its fields
      * Returns a boolean flag indicating wether or not the detection was ran */
-    const detect = debounce(
-        withContext<(reason: string) => Promise<boolean>>(
-            async ({ destroy, service: { detector } }, reason: string) => {
-                if (ctx.busy || !ctx.active) return false;
-                ctx.busy = true;
-                cancelIdleCallback(ctx.detectionRequest);
-                garbagecollect();
+    const runDetection = debounce(
+        withContext<(reason: string) => Promise<boolean>>(async ({ destroy, service }, reason: string) => {
+            garbagecollect();
+            if (await service.detector.shouldRunDetection()) {
+                ctx.detectionRequest = requestIdleCallback(async () => {
+                    ctx.busy = true;
 
-                if (await detector.shouldRunDetection()) {
-                    ctx.detectionRequest = requestIdleCallback(() => {
-                        if (ctx.active) {
-                            logger.info(`[FormTracker::Detector] Running detection for "${reason}"`);
+                    if (ctx.active) {
+                        logger.info(`[FormTracker::Detector] Running detection for "${reason}"`);
 
-                            try {
-                                const forms = detector.runDetection({
-                                    onBottleneck: (data) => {
-                                        void sendMessage(
-                                            contentScriptMessage({
-                                                type: WorkerMessageType.SENTRY_CS_EVENT,
-                                                payload: { message: 'DetectorBottleneck', data },
-                                            })
-                                        ).catch(noop);
+                        try {
+                            const forms = service.detector.runDetection({
+                                onBottleneck: (data) => {
+                                    void sendMessage(
+                                        contentScriptMessage({
+                                            type: WorkerMessageType.SENTRY_CS_EVENT,
+                                            payload: { message: 'DetectorBottleneck', data },
+                                        })
+                                    );
 
-                                        destroy({ reason: 'detector bottleneck', recycle: false });
-                                    },
-                                });
+                                    destroy({ reason: 'detector bottleneck', recycle: false });
+                                },
+                            });
 
-                                forms.forEach((options) => {
-                                    const formHandle = ctx.trackedForms.get(options.form) ?? createFormHandles(options);
-                                    ctx.trackedForms.set(options.form, formHandle);
-                                    formHandle.reconciliate(options.formType, options.fields);
-                                    formHandle.attach();
-                                });
+                            forms.forEach((options) => {
+                                const formHandle = ctx.trackedForms.get(options.form) ?? createFormHandles(options);
+                                ctx.trackedForms.set(options.form, formHandle);
+                                formHandle.reconciliate(options.formType, options.fields);
+                                formHandle.attach();
+                            });
 
-                                options.onDetection(getTrackedForms());
-                                void reconciliate();
-                                ctx.busy = false;
-                            } catch (err) {
-                                logger.warn(`[FormTracker::Detector] ${err}`);
-                            }
+                            const didPrompt = await service.autofill.reconciliate();
+                            await (!didPrompt && service.autosave.reconciliate());
+                            options.onDetection(getTrackedForms());
+                            ctx.busy = false;
+                        } catch (err) {
+                            logger.warn(`[FormTracker::Detector] ${err}`);
                         }
-                    });
+                    }
+                });
 
-                    return true;
-                } else clearVisibilityCache();
+                return true;
+            } else clearDetectionCache();
 
-                ctx.busy = false;
-                return false;
-            }
-        ),
-        150,
-        { leading: true }
+            ctx.busy = false;
+            return false;
+        }),
+        250
     );
+
+    const detect = async (options: { reason: string; flush?: boolean }) => {
+        if (ctx.busy || !ctx.active) return false;
+        cancelIdleCallback(ctx.detectionRequest);
+
+        if (options.flush) {
+            void runDetection(options.reason);
+            return Boolean(await runDetection.flush());
+        }
+
+        return Boolean(await runDetection(options.reason));
+    };
+
+    /* if a new field was added to a currently ignored form :
+     * reset all detection flags: the classification result
+     * may change (ie: dynamic form recycling) */
+    const onNewField = (field?: HTMLElement) => {
+        const ignored = getIgnoredParent(field);
+        if (ignored) resetFormFlags(ignored);
+    };
+
+    /* if a field was deleted from a currently detected form :
+     * reset all detection flags: the classification result
+     * may change (ie: dynamic form recycling) */
+    const onDeletedField = (field?: HTMLElement) => {
+        const detected = getDetectedFormParent(field);
+        if (detected) resetFormFlags(detected);
+    };
 
     /**
      * Form Detection Trigger via DOM Mutation :
@@ -196,9 +153,13 @@ export const createFormManager = (options: FormManagerOptions) => {
     const onMutation = (mutations: MutationRecord[]) => {
         const triggerFormChange = mutations.some((mutation) => {
             if (mutation.type === 'childList') {
-                const deletedNodes = Array.from(mutation.removedNodes).some(isNodeOfInterest);
-                const newNodes = Array.from(mutation.addedNodes).some(isNodeOfInterest);
-                return newNodes || deletedNodes;
+                const deletedFields = Array.from(mutation.removedNodes).some(isNodeOfInterest);
+                const addedFields = Array.from(mutation.addedNodes).some(isNodeOfInterest);
+
+                if (addedFields) onNewField(mutation.target as HTMLElement);
+                if (deletedFields) onDeletedField(mutation.target as HTMLElement);
+
+                return addedFields || deletedFields;
             }
 
             if (mutation.type === 'attributes') {
@@ -209,7 +170,7 @@ export const createFormManager = (options: FormManagerOptions) => {
             return false;
         });
 
-        if (triggerFormChange) void detect('DomMutation');
+        if (triggerFormChange) void detect({ reason: 'DomMutation' });
     };
 
     /**
@@ -223,7 +184,7 @@ export const createFormManager = (options: FormManagerOptions) => {
      * · The purpose is to catch appearing forms that may have been previously
      *   filtered out by the ML algorithm when it was first triggered */
     const onTransition = debounce(
-        () => requestAnimationFrame(() => hasUnprocessedForms() && detect('TransitionEnd')),
+        () => requestAnimationFrame(() => hasUnprocessedForms() && detect({ reason: 'TransitionEnd' })),
         250,
         { leading: true }
     );
@@ -249,7 +210,7 @@ export const createFormManager = (options: FormManagerOptions) => {
         ctx.busy = false;
 
         cancelIdleCallback(ctx.detectionRequest);
-        detect.cancel();
+        runDetection.cancel();
         listeners.removeAll();
 
         ctx.trackedForms.forEach((form) => detachTrackedForm(form.element));
@@ -258,14 +219,7 @@ export const createFormManager = (options: FormManagerOptions) => {
 
     const sync = () => ctx.trackedForms.forEach((form) => form.tracker?.reconciliate());
 
-    return {
-        getTrackedForms,
-        observe,
-        detect,
-        sync,
-        destroy,
-        reconciliate,
-    };
+    return { getTrackedForms, observe, detect, sync, destroy };
 };
 
 export type FormManager = ReturnType<typeof createFormManager>;

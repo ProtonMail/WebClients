@@ -56,6 +56,7 @@ export enum WorkerMessageType {
     AUTOFILL_QUERY = 'AUTOFILL_QUERY',
     AUTOFILL_SELECT = 'AUTOFILL_SELECT',
     AUTOFILL_SYNC = 'AUTOFILL_SYNC',
+    AUTOFILL_OTP_CHECK = 'AUTOFILL_OTP_CHECK',
     AUTOSAVE_REQUEST = 'AUTOSAVE_REQUEST',
     UNLOCK_REQUEST = 'UNLOCK_REQUEST',
     ALIAS_OPTIONS = 'ALIAS_OPTIONS',
@@ -99,6 +100,7 @@ export type NotificationMessage = WithPayload<WorkerMessageType.NOTIFICATION, { 
 export type AutofillQueryMessage = { type: WorkerMessageType.AUTOFILL_QUERY };
 export type AutofillSyncMessage = WithPayload<WorkerMessageType.AUTOFILL_SYNC, { count: number }>;
 export type AutofillSelectMessage = WithPayload<WorkerMessageType.AUTOFILL_SELECT, SelectedItem>;
+export type AutofillOTPCheckMessage = { type: WorkerMessageType.AUTOFILL_OTP_CHECK };
 export type AutoSaveRequestMessage = WithPayload<WorkerMessageType.AUTOSAVE_REQUEST, AutosavePayload>;
 export type UnlockRequestMessage = WithPayload<WorkerMessageType.UNLOCK_REQUEST, { pin: string }>;
 export type FormEntryStageMessage = WithPayload<WorkerMessageType.FORM_ENTRY_STAGE, NewFormEntry & { reason: string }>;
@@ -144,6 +146,7 @@ export type WorkerMessage =
     | AutofillQueryMessage
     | AutofillSelectMessage
     | AutofillSyncMessage
+    | AutofillOTPCheckMessage
     | AutoSaveRequestMessage
     | UnlockRequestMessage
     | OTPCodeGenerateMessage
@@ -188,6 +191,7 @@ type WorkerMessageResponseMap = {
     [WorkerMessageType.FORM_ENTRY_STAGE]: { staged: FormEntry };
     [WorkerMessageType.AUTOFILL_QUERY]: { items: SafeLoginItem[]; needsUpgrade: boolean };
     [WorkerMessageType.AUTOFILL_SELECT]: { username: string; password: string };
+    [WorkerMessageType.AUTOFILL_OTP_CHECK]: { shouldPrompt: false } | ({ shouldPrompt: true } & SelectedItem);
     [WorkerMessageType.UNLOCK_REQUEST]: { ok: true } | { ok: false; canRetry: boolean; reason: string };
     [WorkerMessageType.OTP_CODE_GENERATE]: OtpCode;
     [WorkerMessageType.ALIAS_OPTIONS]: { options: AliasState['aliasOptions']; needsUpgrade: boolean };

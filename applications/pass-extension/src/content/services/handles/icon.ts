@@ -1,4 +1,5 @@
 import type { WorkerStatus } from '@proton/pass/types';
+import { animatePositionChange } from '@proton/pass/utils/dom';
 import { or, safeCall } from '@proton/pass/utils/fp';
 import { createListenerStore } from '@proton/pass/utils/listener';
 import { workerErrored, workerLocked, workerLoggedOut, workerStale } from '@proton/pass/utils/worker';
@@ -49,8 +50,20 @@ export const createFieldIconHandle = ({ field }: CreateIconOptions): FieldIconHa
         (revalidate: boolean = false) => {
             cancelAnimationFrame(repositionRequest);
             repositionRequest = requestAnimationFrame(() => {
-                cleanupInjectionStyles({ input, wrapper });
-                applyInjectionStyles({ input, wrapper, inputBox: field.getBoxElement({ revalidate }), icon });
+                animatePositionChange({
+                    get: () => field.element.getBoundingClientRect(),
+                    set: () => {
+                        const inputBox = field.getBoxElement({ revalidate });
+                        cleanupInjectionStyles({ input, wrapper });
+                        applyInjectionStyles({
+                            icon,
+                            wrapper,
+                            input,
+                            inputBox,
+                            form: field.getFormHandle().element,
+                        });
+                    },
+                });
             });
         },
         50,
