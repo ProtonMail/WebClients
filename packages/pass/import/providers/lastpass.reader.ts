@@ -5,7 +5,6 @@ import { c } from 'ttag';
 import type { ItemImportIntent } from '@proton/pass/types';
 import { truthy } from '@proton/pass/utils/fp';
 import { logger } from '@proton/pass/utils/logger';
-import { uniqueId } from '@proton/pass/utils/string';
 import capitalize from '@proton/utils/capitalize';
 import groupWith from '@proton/utils/groupWith';
 import lastItem from '@proton/utils/lastItem';
@@ -99,9 +98,8 @@ export const readLastPassData = async (data: string): Promise<ImportPayload> => 
             .filter(({ length }) => length > 0)
             .map((items) => {
                 return {
-                    type: 'new',
-                    vaultName: getImportedVaultName(items?.[0].grouping),
-                    id: uniqueId(),
+                    name: getImportedVaultName(items?.[0].grouping),
+                    shareId: null,
                     items: items
                         .map((item) => {
                             const isNote = item.url === 'http://sn';
