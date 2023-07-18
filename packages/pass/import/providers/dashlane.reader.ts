@@ -3,7 +3,6 @@ import { c } from 'ttag';
 
 import type { ItemImportIntent, Maybe } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
-import { uniqueId } from '@proton/pass/utils/string';
 import capitalize from '@proton/utils/capitalize';
 
 import { readCSV } from '../helpers/csv.reader';
@@ -119,9 +118,8 @@ export const readDashlaneData = async (data: ArrayBuffer): Promise<ImportPayload
 
         const vaults: ImportVault[] = [
             {
-                type: 'new',
-                vaultName: getImportedVaultName(),
-                id: uniqueId(),
+                name: getImportedVaultName(),
+                shareId: null,
                 items: [...loginItems, ...noteItems],
             },
         ];

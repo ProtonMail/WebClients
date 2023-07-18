@@ -3,7 +3,6 @@ import { c } from 'ttag';
 import type { ItemExtraField, ItemImportIntent, Maybe } from '@proton/pass/types';
 import { truthy } from '@proton/pass/utils/fp';
 import { logger } from '@proton/pass/utils/logger';
-import { uniqueId } from '@proton/pass/utils/string';
 import groupWith from '@proton/utils/groupWith';
 import lastItem from '@proton/utils/lastItem';
 
@@ -72,9 +71,8 @@ export const readKeeperData = async (data: string): Promise<ImportPayload> => {
             .filter(({ length }) => length > 0)
             .map((items) => {
                 return {
-                    type: 'new',
-                    vaultName: getImportedVaultName(items?.[0][0]),
-                    id: uniqueId(),
+                    name: getImportedVaultName(items?.[0][0]),
+                    shareId: null,
                     items: items
                         .map((item): Maybe<ItemImportIntent> => {
                             if (isNoteItem(item)) {

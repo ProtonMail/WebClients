@@ -11,6 +11,7 @@ import { getEpoch } from '@proton/pass/utils/time';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import capitalize from '@proton/utils/capitalize';
 import chunk from '@proton/utils/chunk';
+import groupWith from '@proton/utils/groupWith';
 
 import {
     acknowledgeRequest,
@@ -61,18 +62,17 @@ function* importWorker(
 ) {
     let totalItems: number = 0;
     const ignored: string[] = data.ignored;
-    const vaultIds = data.vaults.map((vault) => (vault.type === 'existing' ? vault.shareId : vault.id));
-    const totalVaults = new Set(vaultIds).size;
+    const importVaults = groupWith((a, b) => a.shareId === b.shareId, data.vaults).map((group) => ({
+        ...group[0],
+        items: group.flatMap(({ items }) => items),
+    }));
 
     try {
         /* we want to apply these request sequentially to avoid
          * swarming the network with too many parallel requests */
-        for (const vaultData of data.vaults) {
+        for (const vaultData of importVaults) {
             try {
-                const shareId: string =
-                    vaultData.type === 'existing'
-                        ? vaultData.shareId
-                        : yield call(createVaultForImport, vaultData.vaultName);
+                const shareId: string = vaultData.shareId ?? (yield call(createVaultForImport, vaultData.name));
 
                 for (const batch of chunk(vaultData.items, MAX_BATCH_ITEMS_PER_REQUEST)) {
                     try {
@@ -100,7 +100,7 @@ function* importWorker(
                                 receiver: meta.sender?.endpoint,
                                 key: meta.request.id,
                                 type: 'error',
-                                text: c('Error').t`Import failed for vault "${vaultData.vaultName}" : ${description}`,
+                                text: c('Error').t`Import failed for vault "${vaultData.name}" : ${description}`,
                             })
                         );
                     }
@@ -112,7 +112,7 @@ function* importWorker(
                         key: meta.request.id,
                         receiver: meta.sender?.endpoint,
                         type: 'error',
-                        text: c('Error').t`Vault "${vaultData.vaultName}" could not be created`,
+                        text: c('Error').t`Vault "${vaultData.name}" could not be created`,
                     })
                 );
             }
@@ -121,7 +121,7 @@ function* importWorker(
         telemetry?.(
             createTelemetryEvent(
                 TelemetryEventName.ImportCompletion,
-                { item_count: totalItems, vaults: totalVaults },
+                { item_count: totalItems, vaults: importVaults.length },
                 { source: provider }
             )
         );
