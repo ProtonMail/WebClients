@@ -4,6 +4,7 @@ import { contentScriptMessage, portForwardingMessage, sendMessage } from '@proto
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import type { Maybe, MaybeNull, WorkerState } from '@proton/pass/types';
 import { WorkerMessageType } from '@proton/pass/types';
+import type { Dimensions, Rect } from '@proton/pass/types/utils/dom';
 import { createElement, pixelEncoder } from '@proton/pass/utils/dom';
 import { safeCall, waitUntil } from '@proton/pass/utils/fp';
 import { createListenerStore } from '@proton/pass/utils/listener';
@@ -13,7 +14,6 @@ import { EXTENSION_PREFIX } from '../../constants';
 import type {
     IFrameApp,
     IFrameCloseOptions,
-    IFrameDimensions,
     IFrameEndpoint,
     IFrameMessageWithSender,
     IFramePortMessageHandler,
@@ -34,8 +34,8 @@ type CreateIFrameAppOptions<A> = {
     onReady?: () => void;
     onOpen?: (state: IFrameState<A>) => void;
     onClose?: (state: IFrameState<A>, options: IFrameCloseOptions) => void;
-    position: (iframeRoot: HTMLDivElement) => IFramePosition;
-    dimensions: (state: IFrameState<A>) => IFrameDimensions;
+    position: (iframeRoot: HTMLDivElement) => Partial<Rect>;
+    dimensions: (state: IFrameState<A>) => Dimensions;
 };
 
 export const createIFrameApp = <A>({
@@ -59,7 +59,7 @@ export const createIFrameApp = <A>({
         loaded: false,
         port: null,
         framePort: null,
-        position: { top: -1, left: -1, zIndex: -1 },
+        position: { top: -1, left: -1, right: -1, bottom: -1, zIndex: -1 },
         action: null,
     };
 
@@ -122,12 +122,12 @@ export const createIFrameApp = <A>({
 
         const { top, left, right, zIndex } = values;
         iframe.style.setProperty(`--${EXTENSION_PREFIX}-iframe-zindex`, `${zIndex ?? 1}`);
-        iframe.style.setProperty(`--${EXTENSION_PREFIX}-iframe-top`, pixelEncoder(top));
+        iframe.style.setProperty(`--${EXTENSION_PREFIX}-iframe-top`, top ? pixelEncoder(top) : 'unset');
         iframe.style.setProperty(`--${EXTENSION_PREFIX}-iframe-left`, left ? pixelEncoder(left) : 'unset');
         iframe.style.setProperty(`--${EXTENSION_PREFIX}-iframe-right`, right ? pixelEncoder(right) : 'unset');
     };
 
-    const setIframeDimensions = ({ width, height }: IFrameDimensions) => {
+    const setIframeDimensions = ({ width, height }: Dimensions) => {
         iframe.style.setProperty(`--${EXTENSION_PREFIX}-iframe-width`, pixelEncoder(width));
         iframe.style.setProperty(`--${EXTENSION_PREFIX}-iframe-height`, pixelEncoder(height));
     };
