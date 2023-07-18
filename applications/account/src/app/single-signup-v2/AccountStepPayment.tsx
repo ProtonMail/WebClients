@@ -276,7 +276,7 @@ const AccountStepPayment = ({
                     {(() => {
                         if (method === PAYMENT_METHOD_TYPES.PAYPAL && options.checkResult.AmountDue > 0) {
                             return (
-                                <div className="flex flex-column">
+                                <div className="flex flex-column gap-2">
                                     <StyledPayPalButton
                                         paypal={paypal}
                                         amount={options.checkResult.AmountDue}
@@ -287,8 +287,8 @@ const AccountStepPayment = ({
                                         shape="ghost"
                                         color="norm"
                                         paypal={paypalCredit}
+                                        disabled={loadingSignup}
                                         amount={options.checkResult.AmountDue}
-                                        className="mt-2"
                                     >
                                         {c('Link').t`Paypal without credit card`}
                                     </PayPalButton>

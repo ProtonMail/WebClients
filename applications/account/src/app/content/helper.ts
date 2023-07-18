@@ -1,6 +1,6 @@
 import type { ActiveSessionData } from '@proton/components/containers/app/SSOForkProducer';
 import { SSOType } from '@proton/components/containers/app/SSOForkProducer';
-import { getIsPassApp } from '@proton/shared/lib/authentication/apps';
+import { getIsPassApp, getIsVPNApp } from '@proton/shared/lib/authentication/apps';
 import { APP_NAMES, SSO_PATHS } from '@proton/shared/lib/constants';
 import { stringifySearchParams } from '@proton/shared/lib/helpers/url';
 
@@ -17,11 +17,19 @@ export const getSignupUrl = (forkState: ActiveSessionData | undefined, app: APP_
                 return { path: SSO_PATHS.PASS_SIGNUP, params };
             }
 
+            if (getIsVPNApp(forkState.payload.app)) {
+                return { path: SSO_PATHS.VPN_SIGNUP, params };
+            }
+
             return { path: SSO_PATHS.SIGNUP, params };
         }
 
         if (getIsPassApp(app)) {
             return { path: SSO_PATHS.PASS_SIGNUP, params: {} };
+        }
+
+        if (getIsVPNApp(app)) {
+            return { path: SSO_PATHS.VPN_SIGNUP, params: {} };
         }
 
         return { path: SSO_PATHS.SIGNUP, params: {} };
