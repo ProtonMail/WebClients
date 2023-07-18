@@ -606,7 +606,7 @@ function linearScale(number, zeroAt, oneAt) {
  */
 function* flatten(iterable) {
     for (const i of iterable) {
-        if (typeof i !== 'string' && isIterable(i)) {
+        if (typeof i !== 'string' && !(i instanceof Element) && isIterable(i)) {
             yield* flatten(i);
         } else {
             yield i;

@@ -139,7 +139,7 @@ export const createFormTracker = (form: FormHandle): FormTracker => {
 
     /* reconciliating the form trackers involves syncing
      * the form's trackable fields.*/
-    const reconciliate = withContext(({ getSettings, getState }) => {
+    const reconciliate = withContext(({ getState, getSettings }) => {
         const { loggedIn, status } = getState();
         const settings = getSettings();
         const fieldsToTrack = getTrackableFields(settings);
@@ -159,8 +159,11 @@ export const createFormTracker = (form: FormHandle): FormTracker => {
             if (!loggedIn) icon.setCount(0);
         });
 
+        /* trigger auto-focus on current active field if value is empty:
+         * This handles autofocused simple forms, and dynamic forms where
+         * fields may be added incrementally  */
         form.getFields()
-            .find((field) => field.element === document.activeElement)
+            .find((field) => field.element === document.activeElement && !field.value)
             ?.focus();
     });
 
