@@ -5765,9 +5765,6 @@
       "You can check the progress ${ importProgressLink }.": [
         "Figyelemmel kísérheti a folyamatot: ${ importProgressLink }."
       ],
-      "You can click links in this email without being profiled and leaking your online activity with advertisers.": [
-        "Rá tud kattintani a hivatkozásokra ebben az emailben anélkül, hogy profil készülne magáról és kiszivárogna online tevékenysége a hirdetőknek."
-      ],
       "You can either update your search query or ${ button }": [
         "Próbálkozzon másik kereséssel vagy ${ button }"
       ],
@@ -5776,9 +5773,6 @@
       ],
       "You can import one data type at a time.": [
         "Egyszerre egyféle adat importálható."
-      ],
-      "You can read this email without revealing your interactions, location, or device to advertisers.": [
-        "El tudja olvasni ezt az emailt anélkül, hogy tevékenységét, tartózkodási helyét vagy eszközét felfedné hirdetők elől"
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Bekapcsolhatja az értesítéseket az ebbe a mappába érkező új üzenetekhez."
@@ -7659,17 +7653,6 @@
     "Sender verification details": {
       "Sender verification": [
         "Feladó ellenőrzése"
-      ],
-      "Sender verification failed: ${ icon.senderVerificationDetails.description }": [
-        "A feladó ellenőrzése sikertelen: ${ icon.senderVerificationDetails.description }"
-      ],
-      "Sender verified: ${ icon.senderVerificationDetails.description }": [
-        "A feladó ellenőrzése sikeres: ${ icon.senderVerificationDetails.description }"
-      ]
-    },
-    "Sender verification error": {
-      "Verification key is not in the list of trusted keys.": [
-        "A hitelesítési kulcs nincs rajta a megbízható kulcsok listáján."
       ]
     },
     "Sent email icon": {
@@ -8809,9 +8792,6 @@
       ],
       "Previous message": [
         "Előző üzenet"
-      ],
-      "Protect your email": [
-        "Óvja meg emailjeit"
       ],
       "Re-sign all contacts": [
         "Az összes névjegy ismételt aláírása"

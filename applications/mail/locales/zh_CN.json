@@ -4122,7 +4122,7 @@
         "阻止不良发件人"
       ],
       "Bravo for making your email even more secure, convenient, and relevant! We've upped your free storage to a total of 1 GB.": [
-        "太棒了，让您的电子邮件变得更加安全、方便和相关！我们已将您的免费存储空间增加到总计 1 GB。"
+        "太好了，现在您的邮箱将更加安全、更加便捷、更加称心如意。我们已免费为您将邮箱容量升至 1 GB。"
       ],
       "Checklist complete": [
         "清单已完成"
@@ -4140,10 +4140,10 @@
         "完成以下操作后，您的免费存储空间将翻倍至 1 GB："
       ],
       "Encryption so strong, only you and intended recipients can view your emails.": [
-        "加密如此强大，只有您和目标收件人才能查看您的电子邮件。"
+        "极致的加密技术，只有您和目标收件人能够阅读邮件内容。"
       ],
       "For your eyes only": [
-        "只为你的眼睛"
+        "密不透风"
       ],
       "Get free storage": [
         "获得免费存储空间"
@@ -4167,7 +4167,7 @@
         "继续使用 ${ MAIL_APP_NAME } 来发现 ${ BRAND_NAME } 保护您的隐私和简化电子邮件发送的更多方法。"
       ],
       "Learn more": [
-        "了解更多"
+        "了解详情"
       ],
       "Make ${ BRAND_NAME } your go-to inbox": [
         "将 ${ BRAND_NAME } 设置为您的首选收件箱"
@@ -4185,10 +4185,10 @@
         "热门在线服务"
       ],
       "Protect and simplify your email": [
-        "保护并简化您的电子邮件"
+        "让您的邮箱更加安全便捷"
       ],
       "Protection from trackers": [
-        "防止追踪器"
+        "抵御追踪脚本"
       ],
       "Quickly transfer your contacts or emails from any provider using our Easy Switch import assistant.": [
         "通过简单转换助手以快速地将您之前的联系人和电子邮件从任何服务提供商转移"
@@ -5765,9 +5765,6 @@
       "You can check the progress ${ importProgressLink }.": [
         "您可以在${ importProgressLink } 查看导入进度"
       ],
-      "You can click links in this email without being profiled and leaking your online activity with advertisers.": [
-        "点击此邮件中的链接操作不会透露给广告投放者。"
-      ],
       "You can either update your search query or ${ button }": [
         "您可以更改或${ button }搜索条件。"
       ],
@@ -5776,9 +5773,6 @@
       ],
       "You can import one data type at a time.": [
         "您一次可以导入一种数据类型。"
-      ],
-      "You can read this email without revealing your interactions, location, or device to advertisers.": [
-        "您可以安全地阅读此邮件，浏览操作、地理位置、设备类型等信息不会透露给广告投放者。"
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "您可以开启通知功能，以便在新邮件到达此文件夹时获得提醒。"
@@ -7289,12 +7283,36 @@
     },
     "Online accounts": {
       "Have an account with one of these services? Just click to change the email address to your ${ MAIL_APP_NAME } address.": [
-        "拥有这些服务之一的账户吗？只需点击即可将电子邮件地址更改为您的 ${ MAIL_APP_NAME } 地址。"
+        "注册过下列账户？点击右侧按钮即可将注册邮箱更改为 ${ MAIL_APP_NAME }。"
       ]
     },
     "Online Accounts Name": {
       "Banking": [
         "银行"
+      ],
+      "Crypto": [
+        "加密货币"
+      ],
+      "E-commerce and Retail": [
+        "电商"
+      ],
+      "Entertainment": [
+        "娱乐"
+      ],
+      "Food and beverage": [
+        "餐饮"
+      ],
+      "Gaming": [
+        "游戏"
+      ],
+      "Most popular": [
+        "常用"
+      ],
+      "Travel": [
+        "旅游"
+      ],
+      "Utilities": [
+        "通信"
       ]
     },
     "Option": {
@@ -7641,17 +7659,6 @@
     "Sender verification details": {
       "Sender verification": [
         "发件人验证"
-      ],
-      "Sender verification failed: ${ icon.senderVerificationDetails.description }": [
-        "发件人验证失败：${ icon.senderVerificationDetails.description }"
-      ],
-      "Sender verified: ${ icon.senderVerificationDetails.description }": [
-        "发件人已验证：${ icon.senderVerificationDetails.description }"
-      ]
-    },
-    "Sender verification error": {
-      "Verification key is not in the list of trusted keys.": [
-        "验证密钥不在可信密钥列表中。"
       ]
     },
     "Sent email icon": {
@@ -8274,10 +8281,10 @@
     },
     "summer2023: Deal details": {
       "Premium Drive": [
-        "高级云盘"
+        "高级云盘账户"
       ],
       "Premium Mail and Calendar": [
-        "高级邮件和日历"
+        "高级邮箱与日历账户"
       ],
       "Premium Password Manager": [
         "高级密码管理器"
@@ -8301,7 +8308,7 @@
         "连接全球逾 65 个国家的 2950 + 台服务器，多达 10 台设备同时在线，畅享全球流媒体服务，拦截恶意软件和广告，还有更多功能等您体验。"
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "包括对 1 个自定义电子邮件域、10 个电子邮件地址、10 个hide-my-email别名、日历共享等的支持。"
+        "支持 1 个自有域名、10 个邮箱地址、10 个 Hide-my-email 邮箱别名、日程共享等功能。"
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "使用加密的云存储保护您的文件。包括版本历史记录、加密文件共享等。"
@@ -8805,9 +8812,6 @@
       ],
       "Previous message": [
         "上一封邮件"
-      ],
-      "Protect your email": [
-        "开启邮件防护"
       ],
       "Re-sign all contacts": [
         "重新签署所有联系人"
