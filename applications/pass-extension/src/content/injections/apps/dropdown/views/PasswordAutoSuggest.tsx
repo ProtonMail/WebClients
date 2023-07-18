@@ -21,7 +21,7 @@ export const PasswordAutoSuggest: VFC<{ onMessage?: (message: IFrameMessage) => 
             subTitle={<span className="text-monospace">{getCharsGroupedByColor(password)}</span>}
             onClick={() =>
                 onMessage?.({
-                    type: IFrameMessageType.DROPDOWN_AUTOSUGGEST_PASSWORD,
+                    type: IFrameMessageType.DROPDOWN_AUTOFILL_GENERATED_PW,
                     payload: { password },
                 })
             }

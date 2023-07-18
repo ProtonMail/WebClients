@@ -14,6 +14,7 @@ import noop from '@proton/utils/noop';
 
 import { INITIAL_SETTINGS } from '../../../../shared/constants';
 import type {
+    IFrameCloseOptions,
     IFrameEndpoint,
     IFrameMessage,
     IFrameMessageWithSender,
@@ -29,7 +30,7 @@ type IFrameContextValue = {
     settings: ProxiedSettings;
     userEmail: MaybeNull<string>;
     visible: boolean;
-    closeIFrame: (options?: { refocus: boolean }) => void;
+    closeIFrame: (options?: IFrameCloseOptions) => void;
     resizeIFrame: (ref?: MaybeNull<HTMLElement>) => void;
     postMessage: (message: IFrameMessage) => void;
     registerHandler: <M extends IFrameMessage['type']>(type: M, handler: IFramePortMessageHandler<M>) => void;
@@ -179,7 +180,7 @@ export const IFrameContextProvider: FC<{ endpoint: IFrameEndpoint }> = ({ endpoi
     );
 
     const closeIFrame = useCallback(
-        (payload?: { refocus: boolean }) => postMessage({ type: IFrameMessageType.IFRAME_CLOSE, payload }),
+        (payload: IFrameCloseOptions = {}) => postMessage({ type: IFrameMessageType.IFRAME_CLOSE, payload }),
         [postMessage]
     );
 

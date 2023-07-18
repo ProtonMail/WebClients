@@ -1,48 +1,81 @@
 import { contentScriptMessage, sendMessage } from '@proton/pass/extension/message';
-import { createTelemetryEvent } from '@proton/pass/telemetry/events';
-import { WorkerMessageType } from '@proton/pass/types';
-import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
+import { resetFormFlags, setIgnoreFlag } from '@proton/pass/fathom';
+import { FormType, WorkerMessageType } from '@proton/pass/types';
 import { pipe, waitUntil } from '@proton/pass/utils/fp';
 
-import { EXTENSION_PREFIX, NOTIFICATION_HEIGHT, NOTIFICATION_IFRAME_SRC, NOTIFICATION_WIDTH } from '../../constants';
+import {
+    EXTENSION_PREFIX,
+    NOTIFICATION_HEIGHT,
+    NOTIFICATION_HEIGHT_SM,
+    NOTIFICATION_IFRAME_SRC,
+    NOTIFICATION_WIDTH,
+} from '../../constants';
+import { withContext } from '../../context/context';
 import { createIFrameApp } from '../../injections/iframe/create-iframe-app';
-import { IFrameMessageType, type InjectedNotification, type OpenNotificationOptions } from '../../types';
+import type { NotificationActions } from '../../types';
+import { IFrameMessageType, type InjectedNotification, NotificationAction } from '../../types';
 
 export const createNotification = (): InjectedNotification => {
-    const iframe = createIFrameApp({
+    const iframe = createIFrameApp<NotificationAction>({
         id: 'notification',
         src: NOTIFICATION_IFRAME_SRC,
         animation: 'slidein',
         backdropClose: false,
         classNames: [`${EXTENSION_PREFIX}-iframe--fixed`],
-        onClose: (options) =>
-            options?.userInitiated &&
-            sendMessage(
-                contentScriptMessage({
-                    type: WorkerMessageType.FORM_ENTRY_STASH,
-                    payload: { reason: 'AUTOSAVE_DISMISSED' },
-                })
-            ),
+        onClose: withContext(({ service }, { action }, options) => {
+            switch (action) {
+                /* stash the form submission if the user discarded
+                 * the autosave prompt */
+                case NotificationAction.AUTOSAVE_PROMPT:
+                    return (
+                        options?.discard &&
+                        sendMessage(
+                            contentScriptMessage({
+                                type: WorkerMessageType.FORM_ENTRY_STASH,
+                                payload: { reason: 'AUTOSAVE_DISMISSED' },
+                            })
+                        )
+                    );
+                /* flag all MFA forms as ignorable on user discards the
+                 * OTP autofill prompt */
+                case NotificationAction.AUTOFILL_OTP_PROMPT:
+                    if (options?.discard) {
+                        service.formManager
+                            .getTrackedForms()
+                            .filter(({ formType }) => formType === FormType.MFA)
+                            .forEach(({ element }) => {
+                                resetFormFlags(element);
+                                setIgnoreFlag(element);
+                            });
+                    }
+                    return service.autosave.reconciliate();
+            }
+        }),
         position: () => ({ top: 15, right: 15 }),
-        dimensions: () => ({ width: NOTIFICATION_WIDTH, height: NOTIFICATION_HEIGHT }),
+        dimensions: ({ action }) => ({
+            width: NOTIFICATION_WIDTH,
+            height: action === NotificationAction.AUTOFILL_OTP_PROMPT ? NOTIFICATION_HEIGHT_SM : NOTIFICATION_HEIGHT,
+        }),
     });
 
-    const open = async ({ action, submission }: OpenNotificationOptions) => {
+    const open = async (payload: NotificationActions) => {
         await waitUntil(() => iframe.state.ready, 50);
-        iframe.sendPortMessage({ type: IFrameMessageType.NOTIFICATION_ACTION, payload: { action, submission } });
-        iframe.open();
 
         if (!iframe.state.visible) {
-            void sendMessage(
-                contentScriptMessage({
-                    type: WorkerMessageType.TELEMETRY_EVENT,
-                    payload: {
-                        event: createTelemetryEvent(TelemetryEventName.AutosaveDisplay, {}, {}),
-                    },
-                })
-            );
+            iframe.sendPortMessage({ type: IFrameMessageType.NOTIFICATION_ACTION, payload });
+            iframe.open(payload.action);
         }
     };
+
+    iframe.registerMessageHandler(
+        IFrameMessageType.NOTIFICATION_AUTOFILL_OTP,
+        withContext(({ service: { formManager, autofill } }, { payload: { code } }) => {
+            const form = formManager.getTrackedForms().find(({ formType }) => formType === FormType.MFA);
+            if (!form) return;
+
+            autofill.autofillOTP(form, code);
+        })
+    );
 
     const notification: InjectedNotification = {
         getState: () => iframe.state,

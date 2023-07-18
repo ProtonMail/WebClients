@@ -3,7 +3,7 @@ import { type VFC, useCallback, useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader';
-import { pageMessage, sendMessage } from '@proton/pass/extension/message';
+import { contentScriptMessage, sendMessage } from '@proton/pass/extension/message';
 import type { AliasState } from '@proton/pass/store';
 import { createTelemetryEvent } from '@proton/pass/telemetry/events';
 import { type MaybeNull, type RequiredNonNull, WorkerMessageType } from '@proton/pass/types';
@@ -49,7 +49,7 @@ export const AliasAutoSuggest: VFC<Props> = ({ prefix, domain, onOptions, onMess
             setError(false);
             await wait(500);
 
-            await sendMessage.onSuccess(pageMessage({ type: WorkerMessageType.ALIAS_OPTIONS }), (response) => {
+            await sendMessage.onSuccess(contentScriptMessage({ type: WorkerMessageType.ALIAS_OPTIONS }), (response) => {
                 if (response.options !== null) {
                     ensureMounted(setAliasOptions)(response.options);
                     ensureMounted(setNeedsUpgrade)(response.needsUpgrade);
@@ -72,7 +72,7 @@ export const AliasAutoSuggest: VFC<Props> = ({ prefix, domain, onOptions, onMess
             const aliasEmail = `${prefix}${defaultSuffix.suffix}`;
             try {
                 await sendMessage.on(
-                    pageMessage({
+                    contentScriptMessage({
                         type: WorkerMessageType.ALIAS_CREATE,
                         payload: {
                             url: domain,
@@ -87,7 +87,7 @@ export const AliasAutoSuggest: VFC<Props> = ({ prefix, domain, onOptions, onMess
                     (response) => {
                         if (response.type === 'success') {
                             void sendMessage(
-                                pageMessage({
+                                contentScriptMessage({
                                     type: WorkerMessageType.TELEMETRY_EVENT,
                                     payload: {
                                         event: createTelemetryEvent(TelemetryEventName.AutosuggestAliasCreated, {}, {}),
@@ -103,8 +103,8 @@ export const AliasAutoSuggest: VFC<Props> = ({ prefix, domain, onOptions, onMess
                 ensureMounted(() => {
                     setLoadingText(null);
                     onMessage?.({
-                        type: IFrameMessageType.DROPDOWN_AUTOSUGGEST_ALIAS,
-                        payload: { aliasEmail },
+                        type: IFrameMessageType.DROPDOWN_AUTOFILL_EMAIL,
+                        payload: { email: aliasEmail },
                     });
                 })();
             } catch (err) {
@@ -142,8 +142,8 @@ export const AliasAutoSuggest: VFC<Props> = ({ prefix, domain, onOptions, onMess
                     userEmail
                         ? () =>
                               onMessage?.({
-                                  type: IFrameMessageType.DROPDOWN_AUTOFILL_USER_EMAIL,
-                                  payload: { userEmail },
+                                  type: IFrameMessageType.DROPDOWN_AUTOFILL_EMAIL,
+                                  payload: { email: userEmail },
                               })
                         : noop
                 }

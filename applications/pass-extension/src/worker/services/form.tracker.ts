@@ -1,5 +1,5 @@
 import type { FormEntry, FormIdentifier, Maybe, TabId, WithAutoSavePromptOptions } from '@proton/pass/types';
-import { FormEntryStatus, WorkerMessageType } from '@proton/pass/types';
+import { FormEntryStatus, FormType, WorkerMessageType } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
 import { merge } from '@proton/pass/utils/object';
 import { parseSender } from '@proton/pass/utils/url';
@@ -11,8 +11,14 @@ import { createMainFrameRequestTracker } from './main-frame.tracker';
 import { createXMLHTTPRequestTracker } from './xmlhttp-request.tracker';
 
 const isPartialFormData = ({ type, data }: Pick<FormEntry, 'data' | 'type'>): boolean => {
-    if (type === 'login') return data.password === undefined || data.password.trim() === '';
-    return false;
+    switch (type) {
+        case FormType.LOGIN:
+        case FormType.REGISTER: {
+            return !(data.username?.trim() && data.password?.trim());
+        }
+        default:
+            return false;
+    }
 };
 
 const getFormId = (tabId: TabId, domain: string): FormIdentifier => `${tabId}:${domain}`;
@@ -41,7 +47,9 @@ export const createFormTrackerService = () => {
         const pending = submissions.get(formId);
 
         if (pending !== undefined && pending.status === FormEntryStatus.STAGING) {
-            const update = merge(pending, { ...submission, status: FormEntryStatus.STAGING });
+            /* do not override empty values when merging in order to properly
+             * support multi-step forms which may have partial data on each step */
+            const update = merge(pending, { ...submission, status: FormEntryStatus.STAGING }, { excludeEmpty: true });
             const staging = merge(update, { partial: isPartialFormData(update) });
 
             submissions.set(formId, staging);

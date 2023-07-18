@@ -7,8 +7,9 @@ import { Icon } from '@proton/components/components';
 import { PassIconStatus } from '@proton/pass/types/data/pass-icon';
 
 import { PassIcon } from '../../../../../shared/components/icon/PassIcon';
+import type { IFrameCloseOptions } from '../../../../types';
 
-type Props = { title: string; onClose?: () => void };
+type Props = { title: string; onClose?: (options?: IFrameCloseOptions) => void };
 
 export const NotificationHeader: VFC<Props> = ({ title, onClose }) => {
     return (
@@ -23,7 +24,7 @@ export const NotificationHeader: VFC<Props> = ({ title, onClose }) => {
                 pill
                 shape="solid"
                 color="weak"
-                onClick={onClose}
+                onClick={() => onClose?.({ discard: true })}
                 title={c('Action').t`Cancel`}
             >
                 <Icon name="cross" alt={c('Action').t`Cancel`} />

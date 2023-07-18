@@ -4,6 +4,7 @@ import { contentScriptMessage, portForwardingMessage, sendMessage } from '@proto
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import type { Maybe, MaybeNull, WorkerState } from '@proton/pass/types';
 import { WorkerMessageType } from '@proton/pass/types';
+import type { Dimensions, Rect } from '@proton/pass/types/utils/dom';
 import { createElement, pixelEncoder } from '@proton/pass/utils/dom';
 import { safeCall, waitUntil } from '@proton/pass/utils/fp';
 import { createListenerStore } from '@proton/pass/utils/listener';
@@ -12,7 +13,7 @@ import { merge } from '@proton/pass/utils/object';
 import { EXTENSION_PREFIX } from '../../constants';
 import type {
     IFrameApp,
-    IFrameDimensions,
+    IFrameCloseOptions,
     IFrameEndpoint,
     IFrameMessageWithSender,
     IFramePortMessageHandler,
@@ -23,7 +24,7 @@ import type {
 import { type IFrameMessage, IFrameMessageType } from '../../types/iframe';
 import { createIframeRoot } from './create-iframe-root';
 
-type CreateIFrameAppOptions = {
+type CreateIFrameAppOptions<A> = {
     id: IFrameEndpoint;
     src: string;
     animation: 'slidein' | 'fadein';
@@ -31,13 +32,13 @@ type CreateIFrameAppOptions = {
     backdropClose: boolean;
     backdropExclude?: () => HTMLElement[];
     onReady?: () => void;
-    onOpen?: () => void;
-    onClose?: IFrameApp['close'];
-    position: (iframeRoot: HTMLDivElement) => IFramePosition;
-    dimensions: () => IFrameDimensions;
+    onOpen?: (state: IFrameState<A>) => void;
+    onClose?: (state: IFrameState<A>, options: IFrameCloseOptions) => void;
+    position: (iframeRoot: HTMLDivElement) => Partial<Rect>;
+    dimensions: (state: IFrameState<A>) => Dimensions;
 };
 
-export const createIFrameApp = ({
+export const createIFrameApp = <A>({
     id,
     src,
     animation,
@@ -48,17 +49,18 @@ export const createIFrameApp = ({
     onClose,
     position,
     dimensions,
-}: CreateIFrameAppOptions): IFrameApp => {
+}: CreateIFrameAppOptions<A>): IFrameApp<A> => {
     const iframeRoot = createIframeRoot();
     const portMessageHandlers: Map<IFrameMessageType, IFramePortMessageHandler> = new Map();
 
-    const state: IFrameState = {
+    const state: IFrameState<A> = {
         visible: false,
         ready: false,
         loaded: false,
         port: null,
         framePort: null,
-        position: { top: -1, left: -1, zIndex: -1 },
+        position: { top: -1, left: -1, right: -1, bottom: -1, zIndex: -1 },
+        action: null,
     };
 
     const listeners = createListenerStore();
@@ -120,54 +122,52 @@ export const createIFrameApp = ({
 
         const { top, left, right, zIndex } = values;
         iframe.style.setProperty(`--${EXTENSION_PREFIX}-iframe-zindex`, `${zIndex ?? 1}`);
-        iframe.style.setProperty(`--${EXTENSION_PREFIX}-iframe-top`, pixelEncoder(top));
+        iframe.style.setProperty(`--${EXTENSION_PREFIX}-iframe-top`, top ? pixelEncoder(top) : 'unset');
         iframe.style.setProperty(`--${EXTENSION_PREFIX}-iframe-left`, left ? pixelEncoder(left) : 'unset');
         iframe.style.setProperty(`--${EXTENSION_PREFIX}-iframe-right`, right ? pixelEncoder(right) : 'unset');
     };
 
-    const setIframeDimensions = ({ width, height }: IFrameDimensions) => {
+    const setIframeDimensions = ({ width, height }: Dimensions) => {
         iframe.style.setProperty(`--${EXTENSION_PREFIX}-iframe-width`, pixelEncoder(width));
         iframe.style.setProperty(`--${EXTENSION_PREFIX}-iframe-height`, pixelEncoder(height));
     };
 
     const updatePosition = () => requestAnimationFrame(() => setIframePosition(position(iframeRoot)));
 
-    const close: IFrameApp['close'] = (options) => {
+    const close = (options: IFrameCloseOptions = {}) => {
         if (state.visible) {
             void sendPortMessage({ type: IFrameMessageType.IFRAME_HIDDEN });
             const target = options?.event?.target as Maybe<MaybeNull<HTMLElement>>;
 
             if (!target || !backdropExclude?.().includes(target)) {
                 listeners.removeAll();
-                state.visible = false;
+                onClose?.(state, options);
+                iframe.classList.remove(`${EXTENSION_PREFIX}-iframe--visible`);
 
-                requestAnimationFrame(() => {
-                    onClose?.({ userInitiated: options?.userInitiated ?? true, refocus: options?.refocus ?? false });
-                    iframe.classList.remove(`${EXTENSION_PREFIX}-iframe--visible`);
-                });
+                state.visible = false;
+                state.action = null;
             }
         }
     };
 
-    const open = (scrollRef?: HTMLElement) => {
+    const open = (action: A, scrollRef?: HTMLElement) => {
         if (!state.visible) {
+            state.action = action;
             state.visible = true;
 
             listeners.addListener(window, 'resize', updatePosition);
             listeners.addListener(scrollRef, 'scroll', updatePosition);
 
             if (backdropClose) {
-                listeners.addListener(window, 'mousedown', (event) =>
-                    close({ event, userInitiated: true, refocus: false })
-                );
+                listeners.addListener(window, 'mousedown', (event) => close({ event, discard: true, refocus: false }));
             }
 
             sendPortMessage({ type: IFrameMessageType.IFRAME_OPEN });
 
             iframe.classList.add(`${EXTENSION_PREFIX}-iframe--visible`);
-            setIframeDimensions(dimensions());
+            setIframeDimensions(dimensions(state));
             updatePosition();
-            onOpen?.();
+            onOpen?.(state);
         }
     };
 
@@ -189,7 +189,7 @@ export const createIFrameApp = ({
     };
 
     const destroy = () => {
-        close({ userInitiated: false, refocus: false });
+        close({ discard: false, refocus: false });
         listeners.removeAll();
         state.port?.onMessage.removeListener(onMessageHandler);
         safeCall(() => iframeRoot.removeChild(iframe))();
@@ -201,12 +201,10 @@ export const createIFrameApp = ({
         state.framePort = framePort;
     });
 
-    registerMessageHandler(IFrameMessageType.IFRAME_CLOSE, (message) =>
-        close({ userInitiated: true, refocus: message.payload?.refocus ?? false })
-    );
+    registerMessageHandler(IFrameMessageType.IFRAME_CLOSE, (message) => close(message.payload));
 
     registerMessageHandler(IFrameMessageType.IFRAME_DIMENSIONS, (message) => {
-        const { width, height } = merge(dimensions(), { height: message.payload.height });
+        const { width, height } = merge(dimensions(state), { height: message.payload.height });
         return setIframeDimensions({ width, height });
     });
 

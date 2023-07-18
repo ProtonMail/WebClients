@@ -1,5 +1,6 @@
 import type { FormField, FormType, MaybeNull } from '@proton/pass/types';
 
+import type { AutofillOptions } from '../../shared/form';
 import type { DropdownAction } from './dropdown';
 import type { FieldIconHandle } from './icon';
 
@@ -20,6 +21,7 @@ export interface FormHandle {
     detach: () => void;
 }
 
+export type HTMLElementWithActionTrap = HTMLInputElement & { preventAction?: boolean };
 export interface FieldHandle {
     formType: FormType;
     fieldType: FormField;
@@ -34,8 +36,8 @@ export interface FieldHandle {
     getBoxElement: (options?: { revalidate: boolean }) => HTMLElement;
     setValue: (value: string) => void;
     setAction: (action: MaybeNull<DropdownAction>) => void;
-    autofill: (value: string) => void;
-    focus: (options?: { preventDefault?: boolean }) => void;
+    autofill: (value: string, options?: AutofillOptions) => void;
+    focus: (options?: { preventAction?: boolean }) => void;
     attachIcon: () => FieldIconHandle;
     detachIcon: () => void;
     attach: (onSubmit: () => void) => void;

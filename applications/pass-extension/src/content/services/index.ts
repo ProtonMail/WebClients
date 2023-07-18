@@ -17,7 +17,6 @@ import { createListenerStore } from '@proton/pass/utils/listener';
 import { logger } from '@proton/pass/utils/logger';
 import { workerReady } from '@proton/pass/utils/worker';
 import { setUID as setSentryUID } from '@proton/shared/lib/helpers/sentry';
-import noop from '@proton/utils/noop';
 
 import { ExtensionContext, type ExtensionContextType, setupExtensionContext } from '../../shared/extension';
 import { CSContext } from '../context/context';
@@ -62,8 +61,8 @@ export const createContentScriptClient = (scriptId: string, mainFrame: boolean) 
             context.service.iframe.reset();
             context.service.formManager.sync();
 
-            if (!loggedIn) context.service.autofill.setLoginItemsCount(0);
-            if (workerReady(status)) context.service.autofill.queryItems().catch(noop);
+            if (!loggedIn) context.service.autofill.setAutofillCount(0);
+            if (workerReady(status)) void context.service.autofill.getAutofillCandidates();
         }
     };
 
@@ -72,7 +71,7 @@ export const createContentScriptClient = (scriptId: string, mainFrame: boolean) 
             context.setSettings(settings);
             context.service.iframe.reset();
             context.service.formManager.sync();
-            context.service.autofill.queryItems().catch(noop);
+            void context.service.autofill.getAutofillCandidates();
         }
     };
 
@@ -86,7 +85,7 @@ export const createContentScriptClient = (scriptId: string, mainFrame: boolean) 
                 case WorkerMessageType.SETTINGS_UPDATE:
                     return onSettingsChange(message.payload);
                 case WorkerMessageType.AUTOFILL_SYNC:
-                    return context.service.autofill.setLoginItemsCount(message.payload.count);
+                    return context.service.autofill.setAutofillCount(message.payload.count);
             }
         }
     };
@@ -113,8 +112,8 @@ export const createContentScriptClient = (scriptId: string, mainFrame: boolean) 
             port.onMessage.addListener(onPortMessage);
 
             context.service.formManager.observe();
-            const didDetect = await context.service.formManager.detect('InitialLoad');
-            if (!didDetect) await context.service.formManager.reconciliate();
+            const didDetect = await context.service.formManager.detect({ reason: 'InitialLoad', flush: true });
+            if (!didDetect) await context.service.autosave.reconciliate();
         }
     };
 
