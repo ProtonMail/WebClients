@@ -2935,6 +2935,9 @@
         "Il file dovrebbe avere una dimensione massima di ${ MAX_IMPORT_FILE_SIZE_STRING } e avere ${ MAX_IMPORT_CONTACTS_STRING } contatto. Se il tuo file è più grande dividilo in file più piccoli.",
         "Il file dovrebbe avere una dimensione massima di ${ MAX_IMPORT_FILE_SIZE_STRING } e avere fino a ${ MAX_IMPORT_CONTACTS_STRING } contatti. Se il tuo file è più grande dividilo in file più piccoli."
       ],
+      "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
+        "Attiva la protezione dai tracker email per impedire agli inserzionisti e ad altri soggetti di tracciare la tua posizione geografica e la tua attività online."
+      ],
       "Unlock custom message scheduling and other benefits when you upgrade your plan.": [
         "Sblocca i messaggi programmati personalizzati e altri benefici effettuando l'upgrade del tuo piano."
       ],
@@ -2946,6 +2949,9 @@
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Utilizza il Trascina e Rilascia per classificare la priorità di unione tra i contatti. Deseleziona i contatti che non vuoi unire."
+      ],
+      "We didn't find any known trackers and tracking URLs in this email.": [
+        "Non abbiamo trovato alcun tracker o URL di tracciamento noto in questa email."
       ],
       "When do you want your message to be sent?": [
         "Quando vuoi che il messaggio venga inviato?"
@@ -4150,6 +4156,15 @@
       "${ MAIL_APP_NAME } on Play Store": [
         "${ MAIL_APP_NAME } su Play Store"
       ],
+      "account logins": [
+        "login account"
+      ],
+      "Auto-forward Gmail": [
+        "Inoltro automatico di Gmail"
+      ],
+      "auto-forwarding": [
+        "inoltro automatico"
+      ],
       "Block email communications from scammers permanently.": [
         "Blocca in modo permanente le comunicazioni email dei truffatori."
       ],
@@ -4158,6 +4173,9 @@
       ],
       "Bravo for making your email even more secure, convenient, and relevant! We've upped your free storage to a total of 1 GB.": [
         "Complimenti per aver reso la tua email ancora più sicura, economica e pertinente! Abbiamo aumentato il tuo spazio di archiviazione gratuito a un totale di 1 GB."
+      ],
+      "Change ${ strongText } to your ${ BRAND_NAME } address": [
+        "Cambia ${ strongText } con il tuo indirizzo ${ BRAND_NAME }"
       ],
       "Checklist complete": [
         "Checklist completata"
@@ -4170,6 +4188,9 @@
       ],
       "Continue setting up your email": [
         "Continua a configurare la tua email"
+      ],
+      "Discover how our ${ strongText } protect you": [
+        "Scopri come la nostra ${ strongText } ti protegge"
       ],
       "Discover privacy features": [
         "Scopri le funzionalità per la privacy"
@@ -4191,6 +4212,9 @@
       ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "Ottieni l'app mobile ${ MAIL_APP_NAME }"
+      ],
+      "Get the ${ strongText } on Android or iOS": [
+        "Ottieni ${ strongText } su Android o iOS"
       ],
       "Get the App": [
         "Scarica l'app"
@@ -4248,6 +4272,9 @@
       ],
       "Sign in to the mobile app to complete this step": [
         "Accedi all'app mobile per completare questo passaggio"
+      ],
+      "Update your logins": [
+        "Aggiorna i tuoi login"
       ],
       "Using your mobile device, scan this QR code or visit the iOS or Android store.": [
         "Utilizzando il tuo dispositivo mobile, scansiona questo codice QR o visita lo store iOS o Android."
@@ -5556,7 +5583,7 @@
         "Oggetto: "
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
-        "Termine dell'abbonamento: riattivalo entro ${ byDate } per mantenere i vantaggi del tuo piano${ planName }${ reactivateLink }"
+        "Termine dell'abbonamento: riattivalo entro ${ byDate } per mantenere i vantaggi del tuo piano ${ planName }. ${ reactivateLink }"
       ],
       "support team": [
         "team di supporto"
@@ -5822,8 +5849,14 @@
       "We apologize. This might have been a mistake from our side. Can you please confirm that you want to mark this email as a legitimate one?": [
         "Ci scusiamo. Questo potrebbe esser stato un errore da parte nostra. Potresti confermare che vuoi segnare quest'email come legittima?"
       ],
+      "We blocked the following advertisers and organizations from seeing when you open this email, what device you’re using, and where you’re located.": [
+        "Abbiamo impedito ai seguenti inserzionisti e organizzazioni di vedere quando apri questa email, quale dispositivo stai utilizzando e dove ti trovi."
+      ],
       "We could not verify the sender's trusted keys.": [
         "Non abbiamo potuto verificare le chiavi attendibili del mittente."
+      ],
+      "We removed tracking information from the following links to help protect you from advertisers and others trying to track your online activity.": [
+        "Abbiamo rimosso le informazioni di tracciamento dai seguenti link per aiutarti a proteggerti dagli inserzionisti e dagli altri che cercano di tracciare la tua attività online."
       ],
       "We'll notify you when the import is done.": [
         "Ti avviseremo quando l'importazione sarà completata."
@@ -5879,9 +5912,6 @@
       "You can check the progress ${ importProgressLink }.": [
         "Puoi controllare lo stato di avanzamento ${ importProgressLink }."
       ],
-      "You can click links in this email without being profiled and leaking your online activity with advertisers.": [
-        "Puoi fare clic sui collegamenti in questa email senza essere profilato e divulgare la tua attività online con gli inserzionisti."
-      ],
       "You can either update your search query or ${ button }": [
         "Puoi aggiornare la tua ricerca o ${ button }"
       ],
@@ -5890,9 +5920,6 @@
       ],
       "You can import one data type at a time.": [
         "Puoi importare un tipo di dati alla volta."
-      ],
-      "You can read this email without revealing your interactions, location, or device to advertisers.": [
-        "Puoi leggere questa email senza rivelare all'inserzionista le tue interazioni, la tua posizione o il tuo dispositivo"
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Puoi attivare le notifiche per ricevere avvisi quando arrivano nuovi messaggi email in questa cartella."
@@ -7807,17 +7834,11 @@
     "Sender verification details": {
       "Sender verification": [
         "Verifica del mittente"
-      ],
-      "Sender verification failed: ${ icon.senderVerificationDetails.description }": [
-        "Verifica del mittente non riuscita: ${ icon.senderVerificationDetails.description }"
-      ],
-      "Sender verified: ${ icon.senderVerificationDetails.description }": [
-        "Mittente verificato: ${ icon.senderVerificationDetails.description }"
       ]
     },
     "Sender verification error": {
-      "Verification key is not in the list of trusted keys.": [
-        "La chiave di verifica non è nell'elenco delle chiavi attendibili."
+      "Sender verification failed: Verification key is not in the list of trusted keys.": [
+        "Verifica del mittente fallita: la chiave di verifica non è presente nell'elenco delle chiavi affidabili."
       ]
     },
     "Sent email icon": {
@@ -9022,8 +9043,8 @@
       "Previous message": [
         "Messaggio precedente"
       ],
-      "Protect your email": [
-        "Proteggi la tua email"
+      "Protect yourself from trackers": [
+        "Proteggiti dai tracker"
       ],
       "Re-sign all contacts": [
         "Ri-firma tutti i contatti"

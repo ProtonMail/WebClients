@@ -4157,6 +4157,9 @@
     "Font face option": {
       "System default": [
         "Системный по умолчанию"
+      ],
+      "Theme font": [
+        "Шрифт темы"
       ]
     },
     "Font Size Default": {
@@ -5981,9 +5984,6 @@
       "You can check the progress ${ importProgressLink }.": [
         "Вы можете проверить ход выполнения ${ importProgressLink }."
       ],
-      "You can click links in this email without being profiled and leaking your online activity with advertisers.": [
-        "Вы можете переходить по ссылкам в этом письме, не подвергаясь профилированию и не раскрывая рекламодателям информацию о своей онлайн-активности."
-      ],
       "You can either update your search query or ${ button }": [
         "Вы можете изменить ваш поисковый запрос или ${ button }"
       ],
@@ -5992,9 +5992,6 @@
       ],
       "You can import one data type at a time.": [
         "Вы можете импортировать один тип данных за один раз."
-      ],
-      "You can read this email without revealing your interactions, location, or device to advertisers.": [
-        "Вы можете прочитать это письмо не сообщая рекламодателям о своих взаимодействиях, местоположении или устройстве."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Вы можете включить уведомления, чтобы получать оповещения при появлении новых сообщений электронной почты в этой папке."
@@ -7945,17 +7942,6 @@
     "Sender verification details": {
       "Sender verification": [
         "Проверка отправителя"
-      ],
-      "Sender verification failed: ${ icon.senderVerificationDetails.description }": [
-        "Не удалось проверить отправителя: ${ icon.senderVerificationDetails.description }"
-      ],
-      "Sender verified: ${ icon.senderVerificationDetails.description }": [
-        "Отправитель проверен: ${ icon.senderVerificationDetails.description }"
-      ]
-    },
-    "Sender verification error": {
-      "Verification key is not in the list of trusted keys.": [
-        "Ключ верификации не входит в список доверенных ключей."
       ]
     },
     "Sent email icon": {
@@ -9253,9 +9239,6 @@
       ],
       "Previous message": [
         "Предыдущее сообщение"
-      ],
-      "Protect your email": [
-        "Защитите ваши электронные письма"
       ],
       "Re-sign all contacts": [
         "Переподписать все контакты"

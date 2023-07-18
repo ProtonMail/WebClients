@@ -2947,6 +2947,9 @@
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Arraste e largue para alterar a prioridade de união entre contactos. Desmarque os contactos que não deseja unir."
       ],
+      "We didn't find any known trackers and tracking URLs in this email.": [
+        "Não encontramos nenhum rasteador conhecido e URLs de rastreamentro nesse e-mail."
+      ],
       "When do you want your message to be sent?": [
         "Quando quer que a sua mensagem seja enviada?"
       ],
@@ -4150,6 +4153,9 @@
       "${ MAIL_APP_NAME } on Play Store": [
         "${ MAIL_APP_NAME } na Play Store"
       ],
+      "account logins": [
+        "dados da conta"
+      ],
       "Auto-forward Gmail": [
         "Encaminhamento automático do Gmail"
       ],
@@ -4164,6 +4170,9 @@
       ],
       "Bravo for making your email even more secure, convenient, and relevant! We've upped your free storage to a total of 1 GB.": [
         "Parabéns por tornar o seu e-mail ainda mais seguro, prático e relevante! Aumentámos o seu armazenamento gratuito para um total de 1 GB."
+      ],
+      "Change ${ strongText } to your ${ BRAND_NAME } address": [
+        "Altere ${ strongText } para o seu endereço ${ BRAND_NAME }"
       ],
       "Checklist complete": [
         "Lista de verificação completa"
@@ -4200,6 +4209,9 @@
       ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "Obter a aplicação móvel do ${ MAIL_APP_NAME }"
+      ],
+      "Get the ${ strongText } on Android or iOS": [
+        "Descarrega o ${ strongText } para Android na Google Play ou iOS na App Store."
       ],
       "Get the App": [
         "Descarrega a aplicação"
@@ -4252,8 +4264,14 @@
       "Set recovery method": [
         "Definir um método de recuperação"
       ],
+      "Set up ${ strongText } from Gmail": [
+        "Configurar ${ strongText } a partir do Gmail"
+      ],
       "Sign in to the mobile app to complete this step": [
         "Inicie sessão na aplicação móvel para concluir este passo"
+      ],
+      "Update your logins": [
+        "Atualize os seus dados"
       ],
       "Using your mobile device, scan this QR code or visit the iOS or Android store.": [
         "Utilizando o seu dispositivo móvel, escaneie este código QR ou visite a loja de aplicações iOS ou Android."
@@ -5885,9 +5903,6 @@
       "You can check the progress ${ importProgressLink }.": [
         "Pode verificar o progresso ${ importProgressLink }."
       ],
-      "You can click links in this email without being profiled and leaking your online activity with advertisers.": [
-        "Pode clicar nas hiperligações desta mensagem de e-mail sem que lhe seja traçado um perfil e sem que a sua atividade online seja divulgada aos anunciantes."
-      ],
       "You can either update your search query or ${ button }": [
         "Pode actualizar a sua pesquisa ou ${ button }."
       ],
@@ -5896,9 +5911,6 @@
       ],
       "You can import one data type at a time.": [
         "Pode importar um tipo de dado por vez."
-      ],
-      "You can read this email without revealing your interactions, location, or device to advertisers.": [
-        "Pode ler este e-mail sem revelar as suas interações, localização ou dispositivo aos anunciantes."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Pode ativar as notificações para receber alertas quando novas mensagens chegarem a esta pasta."
@@ -7813,17 +7825,11 @@
     "Sender verification details": {
       "Sender verification": [
         "Verificação do remetente"
-      ],
-      "Sender verification failed: ${ icon.senderVerificationDetails.description }": [
-        "Erro ao verificar o remetente: ${ icon.senderVerificationDetails.description }"
-      ],
-      "Sender verified: ${ icon.senderVerificationDetails.description }": [
-        "O remetente foi verificado: ${ icon.senderVerificationDetails.description }"
       ]
     },
     "Sender verification error": {
-      "Verification key is not in the list of trusted keys.": [
-        "A chave de verificação não está na lista de chaves de confiança."
+      "Sender verification failed: Verification key is not in the list of trusted keys.": [
+        "Erro na verificação de remetente. A chave de verificação não está na lista de chaves de confiança."
       ]
     },
     "Sent email icon": {
@@ -9028,8 +9034,8 @@
       "Previous message": [
         "Mensagem anterior"
       ],
-      "Protect your email": [
-        "Proteja o seu e-mail"
+      "Protect yourself from trackers": [
+        "Proteja-se de rastreadores"
       ],
       "Re-sign all contacts": [
         "A re-assinar todos os contactos"

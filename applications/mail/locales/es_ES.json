@@ -155,7 +155,7 @@
         "Chatea con nosotros"
       ],
       "Check import progress": [
-        "Comprobar el progreso de la importación"
+        "Verificar el progreso de la importación"
       ],
       "Choose a file or drag it here": [
         "Elige un archivo o arrástralo aquí"
@@ -1113,7 +1113,7 @@
         "Utilizar código de recuperación"
       ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
-        "Utiliza el ratón para cambiar el tamaño de la vista. Si utilizas el teclado, puedes usar las teclas de flecha izquierda y derecha para cambiar el tamaño."
+        "Utiliza el ratón para cambiar el tamaño de la vista. Si utilizas el teclado, puedes utilizar las teclas de flecha izquierda y derecha para cambiar el tamaño."
       ],
       "Use “${ label }” setting": [
         "Utilizar la configuración de \"${ label }\""
@@ -1315,7 +1315,7 @@
         "Anual"
       ],
       "Monthly": [
-        "Mensualmente"
+        "Mensual"
       ],
       "Two-year": [
         "Bienal"
@@ -1397,7 +1397,7 @@
     },
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
-        "Continuar usando ${ MAIL_APP_NAME }."
+        "Continuar utilizando ${ MAIL_APP_NAME }."
       ]
     },
     "Calendar attachment tooltip": {
@@ -2935,6 +2935,9 @@
         "El archivo debe tener un tamaño máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } y tener\nhasta ${ MAX_IMPORT_CONTACTS_STRING } contacto. Si tu archivo es más grande, divídelo en archivos más pequeños.",
         "El archivo debe tener un tamaño máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } y tener\nhasta ${ MAX_IMPORT_CONTACTS_STRING } contactos. Si tu archivo es más grande, divídelo en archivos más pequeños."
       ],
+      "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
+        "Activa la protección de rastreo de correo para evitar que los anunciantes y otros rastreen tu ubicación y actividad en línea."
+      ],
       "Unlock custom message scheduling and other benefits when you upgrade your plan.": [
         "Desbloquea la programación personalizada de mensajes y otros beneficios al pasar a un plan superior."
       ],
@@ -2946,6 +2949,9 @@
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Arrastra y suelta los contactos para clasificarlos por prioridad. Desmarca los contactos que no quieres combinar."
+      ],
+      "We didn't find any known trackers and tracking URLs in this email.": [
+        "No hemos encontrado ningún rastreador o URL de rastreo conocidos en este correo."
       ],
       "When do you want your message to be sent?": [
         "¿Cuándo quieres que se envíe tu mensaje?"
@@ -3701,7 +3707,7 @@
         "Vuelve a cargar la página o inténtalo de nuevo más tarde."
       ],
       "Something went wrong": [
-        "Algo salió mal"
+        "Se ha producido un error."
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "No hemos podido cargar esta página. Vuelve a cargar la página o verifica tu conexión a internet."
@@ -3881,7 +3887,7 @@
         "Tu cuenta tiene más direcciones de correo electrónico que las que tienes disponibles en este plan. ${ addressSettingsLink }"
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
-        "Tu cuenta está usando ${ usedSpace } de almacenamiento, por lo que sobrepasa el espacio que tienes asignado (${ inviteSpace }). Elimina algunos datos o pídeles al administrador del plan que aumente el espacio de almacenamiento."
+        "Tu cuenta está utilizando ${ usedSpace } de almacenamiento, por lo que sobrepasa el espacio que tienes asignado (${ inviteSpace }). Elimina algunos datos o pídeles al administrador del plan que aumente el espacio de almacenamiento."
       ],
       "Your current plan cannot join a Visionary or family plan.": [
         "Tu plan actual no puede formar parte de un plan Visionary o familiar."
@@ -4253,7 +4259,7 @@
         "Protección contra rastreadores"
       ],
       "Quickly transfer your contacts or emails from any provider using our Easy Switch import assistant.": [
-        "Transfiere rápidamente tus contactos o correos electrónicos de cualquier proveedor usando el asistente de importación Easy Switch."
+        "Transfiere rápidamente tus contactos o correos electrónicos de cualquier proveedor utilizando el asistente de importación Easy Switch."
       ],
       "Send a message": [
         "Enviar un mensaje"
@@ -4808,10 +4814,10 @@
         "(Sin destinatario)"
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
-        "Un número telefónico solo puede usarse para verificar una cuenta de ${ BRAND_NAME }."
+        "Un número telefónico solo puede utilizarse para verificar una cuenta de ${ BRAND_NAME }."
       ],
       "A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.": [
-        "Una frase de recuperación es una de las formas más seguras de proteger el acceso a tu cuenta. Puedes usarla para acceder a tu cuenta y recuperar tus datos cifrados si alguna vez olvidas tu contraseña."
+        "Una frase de recuperación es una de las formas más seguras de proteger el acceso a tu cuenta. Puedes utilizarla para acceder a tu cuenta y recuperar tus datos cifrados si alguna vez olvidas tu contraseña."
       ],
       "A request to unsubscribe from this mailing list will be sent to the sender of the newsletter and automatically processed.": [
         "Se enviará una solicitud para darte de baja de esta lista de correo y se procesará automáticamente."
@@ -5052,7 +5058,7 @@
         "Clave duplicada actualizada"
       ],
       "Each code can only be used once": [
-        "Cada código puede usarse solo una vez."
+        "Cada código puede utilizarse solo una vez."
       ],
       "Edit encryption": [
         "Editar cifrado"
@@ -5666,7 +5672,7 @@
         "Este enlace conduce a un sitio web que podría estar intentando robar tus datos, como contraseñas y datos de tarjetas de crédito."
       ],
       "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Este enlace puede ser un ataque homógrafo y el navegador Edge no puede abrirlo. Si estás seguro de que el enlace es legítimo, usa un navegador diferente para abrirlo."
+        "Este enlace puede ser un ataque homógrafo y el navegador Edge no puede abrirlo. Si estás seguro de que el enlace es legítimo, utiliza un navegador diferente para abrirlo."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Este enlace puede ser un ataque homógrafo. Verifica que este es el enlace que quieres visitar o no lo abras."
@@ -5727,7 +5733,7 @@
         "Este mensaje expirará mañana a las ${ shortDateMessage }"
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
-        "Esta clave pública se usará automáticamente para cifrar el correo electrónico enviado a esta dirección."
+        "Esta clave pública se utilizará automáticamente para cifrar el correo electrónico enviado a esta dirección."
       ],
       "This sender's public key has not been trusted yet.": [
         "La clave pública de este remitente aún no es de confianza."
@@ -5751,7 +5757,7 @@
         "Para darte de baja de esta lista de correo, se te redirigirá a la siguiente URL donde el remitente del boletín te dará las instrucciones:"
       ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
-        "Para usar la verificación de dirección, debes confiar en una o más de las claves públicas disponibles, incluyendo la clave que quieres utilizar para enviar. Esto impedirá que las claves de cifrado sean falsificadas."
+        "Para utilizar la verificación de dirección, debes confiar en una o más de las claves públicas disponibles, incluyendo la clave que quieres utilizar para enviar. Esto impedirá que las claves de cifrado sean falsificadas."
       ],
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "Demasiados mensajes esperando a ser enviados. Espera hasta que otro mensaje se envíe para programar este."
@@ -5835,7 +5841,7 @@
         "Utiliza los atajos del teclado para administrar tus correos rápidamente."
       ],
       "Using SimpleLogin is easy": [
-        "SimpleLogin es fácil de usar."
+        "SimpleLogin es fácil de utilizar."
       ],
       "Version ${ appVersion }": [
         "Versión ${ appVersion }"
@@ -5868,7 +5874,7 @@
         "¿Cuándo quieres que se destruya automaticamente tu mensaje?"
       ],
       "When giving out your email, use a unique, disposable hide-my-email alias instead of your real email address.": [
-        "Cuando des tu correo electrónico, usa un alias de Hide-my-email único y desechable en vez de tu dirección de correo real."
+        "Cuando des tu correo electrónico, utiliza un alias de Hide-my-email único y desechable en vez de tu dirección de correo real."
       ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "Cuando has habilitado las claves de confianza para ${ senderName }, las claves públicas se han añadido a los datos del contacto."
@@ -5900,9 +5906,6 @@
       "You can check the progress ${ importProgressLink }.": [
         "Puedes comprobar el progreso ${ importProgressLink }."
       ],
-      "You can click links in this email without being profiled and leaking your online activity with advertisers.": [
-        "Puedes hacer clic en los enlaces de este correo electrónico sin que se elabore un perfil y se filtre tu actividad en línea a los anunciantes."
-      ],
       "You can either update your search query or ${ button }": [
         "Puedes actualizar tu consulta de búsqueda o ${ button }."
       ],
@@ -5912,14 +5915,11 @@
       "You can import one data type at a time.": [
         "Puedes importar un tipo de datos a la vez."
       ],
-      "You can read this email without revealing your interactions, location, or device to advertisers.": [
-        "Puedes leer este correo electrónico sin revelar tus interacciones, ubicación o dispositivo a los anunciantes."
-      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Puedes activar las notificaciones para recibir alertas cuando lleguen mensajes de correo electrónico nuevos a esta carpeta."
       ],
       "You can use ${ VPN_APP_NAME } for free, today.": [
-        "Puedes usar ${ VPN_APP_NAME } gratis, hoy."
+        "Puedes utilizar ${ VPN_APP_NAME } gratis, hoy."
       ],
       "You cannot reply from the invited address.": [
         "No puedes responder desde la dirección invitada."
@@ -5996,7 +5996,7 @@
         "Tu cuenta ${ BRAND_NAME } está actualmente suspendida. Transcurridos 28 días, los correos ya no serán entregados en tu bandeja de entrada, tus enlaces compartidos en tu almacenamiento serán bloqueados y no podrás cargar nuevos archivos. Para restablecer el servicio normal, tienes que pagar las facturas pendientes."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "Tu cuenta ${ BRAND_NAME } está suspendida actualmente. Los correos ya no serán entregados en tu bandeja de entrada, tus enlaces compartidos en tu almacenamiento están bloqueados y no puedes cargar nuevos archivos. Para continuar usando tu cuenta, tienes que pagar las facturas pendientes."
+        "Tu cuenta ${ BRAND_NAME } está suspendida actualmente. Los correos ya no serán entregados en tu bandeja de entrada, tus enlaces compartidos en tu almacenamiento están bloqueados y no puedes cargar nuevos archivos. Para continuar utilizando tu cuenta, tienes que pagar las facturas pendientes."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Tu cuenta tiene al menos una factura atrasada. Tu acceso pronto será restringido. ${ payInvoiceLink }"
@@ -7529,10 +7529,10 @@
     },
     "PGP Key info": {
       "${ emailAddress } has marked this key as compromised. This key cannot be used neither for encryption nor for signature verification.": [
-        "${ emailAddress } marcó esta clave como comprometida. Esta clave no puede usarse ni para el cifrado ni para verificar la firma."
+        "${ emailAddress } marcó esta clave como comprometida. Esta clave no puede utilizarse ni para el cifrado ni para verificar la firma."
       ],
       "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
-        "${ emailAddress } marcó esta clave como obsoleta. Esta clave solo puede usarse para verificar la firma."
+        "${ emailAddress } marcó esta clave como obsoleta. Esta clave solo puede utilizarse para verificar la firma."
       ],
       "We recommend that you \"untrust\" this key.": [
         "Te recomendamos que consideres esta clave \"no fiable\"."
@@ -7828,17 +7828,11 @@
     "Sender verification details": {
       "Sender verification": [
         "Verificación del remitente"
-      ],
-      "Sender verification failed: ${ icon.senderVerificationDetails.description }": [
-        "Error al verificar el remitente: ${ icon.senderVerificationDetails.description }."
-      ],
-      "Sender verified: ${ icon.senderVerificationDetails.description }": [
-        "Se ha verificado el remitente: ${ icon.senderVerificationDetails.description }."
       ]
     },
     "Sender verification error": {
-      "Verification key is not in the list of trusted keys.": [
-        "La clave de verificación no está en la lista de las claves de confianza."
+      "Sender verification failed: Verification key is not in the list of trusted keys.": [
+        "Error en la verificación del remitente: la clave de verificación no está en la lista de claves de confianza."
       ]
     },
     "Sent email icon": {
@@ -9043,8 +9037,8 @@
       "Previous message": [
         "Mensaje anterior"
       ],
-      "Protect your email": [
-        "Protege tu correo electrónico"
+      "Protect yourself from trackers": [
+        "Protégete contra los rastreadores"
       ],
       "Re-sign all contacts": [
         "Volver a firmar todos los contactos"
