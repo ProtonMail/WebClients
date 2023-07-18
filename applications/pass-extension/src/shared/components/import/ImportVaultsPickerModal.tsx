@@ -82,12 +82,11 @@ export const ImportVaultsPickerModal: VFC<ImportVaultsPickerProps> = ({ payload,
                                     {plan === UserPassPlan.FREE ? (
                                         <>
                                             {c('Warning')
-                                                .t`Your subscription does not allow you to create multiple vaults. All items will be imported to your primary vault by default. To import into multiple vaults upgrade your subscription.`}
+                                                .t`Your subscription does not allow you to create multiple vaults. All items will be imported to your primary vault. To import into multiple vaults upgrade your subscription.`}
                                             <UpgradeButton inline className="ml-1" />
                                         </>
                                     ) : (
-                                        c('Warning')
-                                            .t`You cannot create more vaults than your subscription allows. Items will be imported to your primary vault by default.`
+                                        c('Warning').t`You cannot create more vaults than your subscription allows.`
                                     )}
                                 </>
                             )}
