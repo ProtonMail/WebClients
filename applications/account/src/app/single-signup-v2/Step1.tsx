@@ -91,7 +91,7 @@ const Step1 = ({
     logo: ReactNode;
     titles: { [SignupMode.Default]: ReactNode; [SignupMode.Onboarding]: ReactNode };
     features: { text: string; left: ReactNode }[];
-    selectedPlan: Plan | undefined;
+    selectedPlan: Plan;
     planCards: PlanCard[];
     isDesktop: boolean;
     vpnServersCountData: VPNServersCountData;
@@ -140,7 +140,7 @@ const Step1 = ({
         checkResult: model.optimistic.checkResult || model.subscriptionData.checkResult,
     };
 
-    const selectedPlanCard = planCards.find((planCard) => planCard.plan === options.plan?.Name);
+    const selectedPlanCard = planCards.find((planCard) => planCard.plan === options.plan.Name);
 
     const setOptimisticDiff = (diff: Partial<OptimisticOptions>) => {
         setModel((old) => ({
@@ -357,7 +357,7 @@ const Step1 = ({
                         {model.upsell.mode === UpsellTypes.PLANS ? (
                             <PlanCardSelector
                                 plansMap={model.plansMap}
-                                plan={options.plan?.Name}
+                                plan={options.plan.Name}
                                 cycle={options.cycle}
                                 currency={options.currency}
                                 planCards={planCards}

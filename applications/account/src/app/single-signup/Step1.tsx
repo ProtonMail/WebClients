@@ -1,4 +1,4 @@
-import { Fragment, ReactElement, ReactNode, useRef, useState } from 'react';
+import { Dispatch, Fragment, ReactElement, ReactNode, SetStateAction, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import { addMonths } from 'date-fns';
@@ -31,6 +31,7 @@ import {
     getNoAds,
     getPrioritySupport,
     getProtectDevices,
+    getRefundable,
     getStreaming,
     getVPNAppFeature,
     getVPNSpeed,
@@ -50,6 +51,7 @@ import { useLoading } from '@proton/hooks';
 import metrics, { observeApiError } from '@proton/metrics';
 import { WebCoreVpnSingleSignupStep1InteractionTotal } from '@proton/metrics/types/web_core_vpn_single_signup_step1_interaction_total_v1.schema';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
+import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import { getIsVPNApp } from '@proton/shared/lib/authentication/apps';
 import {
     APPS,
@@ -61,13 +63,13 @@ import {
     VPN_SHORT_APP_NAME,
 } from '@proton/shared/lib/constants';
 import { formatIntlDate } from '@proton/shared/lib/date/formatIntlDate';
-import { hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
+import { getOptimisticCheckResult } from '@proton/shared/lib/helpers/checkout';
 import { getPricingFromPlanIDs, getTotalFromPricing } from '@proton/shared/lib/helpers/subscription';
 import { getTermsURL, stringifySearchParams } from '@proton/shared/lib/helpers/url';
 import { browserLocaleCode } from '@proton/shared/lib/i18n';
 import { Currency, Cycle, Plan, VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { generatePassword } from '@proton/shared/lib/password';
-import { getFreeServers, getPlusServers } from '@proton/shared/lib/vpn/features';
+import { getFreeServers, getPlusServers, getVpnServers } from '@proton/shared/lib/vpn/features';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
@@ -79,7 +81,8 @@ import AccountStepDetails, { AccountStepDetailsRef } from '../single-signup-v2/A
 import FreeLogo from '../single-signup-v2/FreeLogo';
 import bundle from '../single-signup-v2/bundle.svg';
 import { getFreeSubscriptionData, getFreeTitle } from '../single-signup-v2/helper';
-import { Measure, SignupModelV2 } from '../single-signup-v2/interface';
+import { OptimisticOptions, SignupModelV2 } from '../single-signup-v2/interface';
+import { getPaymentMethod } from '../single-signup-v2/measure';
 import { useFlowRef } from '../useFlowRef';
 import Box from './Box';
 import CycleSelector from './CycleSelector';
@@ -90,10 +93,66 @@ import SaveLabel2 from './SaveLabel2';
 import StepLabel from './StepLabel';
 import UpsellModal from './UpsellModal';
 import swissFlag from './flag.svg';
-import { getUpsellShortPlan } from './helper';
-import { OnUpdate } from './interface';
+import { getBillingCycleText, getOffText, getUpsellShortPlan } from './helper';
+import { Measure } from './interface';
+import { TelemetryPayType } from './measure';
 
 const today = new Date();
+
+const getPlanInformation = (
+    selectedPlan: Plan,
+    vpnServersCountData: VPNServersCountData,
+    flow: 'pricing' | 'signup'
+) => {
+    const iconSize = 28;
+
+    if (selectedPlan.Name === PLANS.FREE) {
+        const freeServers = getFreeServers(vpnServersCountData.free.servers, vpnServersCountData.free.countries);
+        return {
+            logo: <FreeLogo size={iconSize} app={APPS.PROTONVPN_SETTINGS} />,
+            title: getFreeTitle(BRAND_NAME),
+            features: [getCountries(freeServers), getNoAds(), getBandwidth()],
+        };
+    }
+
+    if (selectedPlan.Name === PLANS.VPN) {
+        const plusServers = getPlusServers(vpnServersCountData.paid.servers, vpnServersCountData.paid.countries);
+        return {
+            logo: <VpnLogo variant="glyph-only" size={iconSize} />,
+            title: selectedPlan.Title,
+            features: [
+                flow === 'pricing' ? getCountries(plusServers) : undefined,
+                getVPNSpeed('highest'),
+                flow === 'pricing' ? getStreaming(true) : undefined,
+                getProtectDevices(VPN_CONNECTIONS),
+                getAllPlatforms(),
+                getNetShield(true),
+                flow === 'signup' ? getStreaming(true) : undefined,
+                getPrioritySupport(),
+                getAdvancedVPNCustomizations(true),
+                flow === 'pricing' ? getRefundable() : undefined,
+            ].filter(isTruthy),
+        };
+    }
+
+    if (selectedPlan.Name === PLANS.BUNDLE) {
+        return {
+            logo: (
+                <div>
+                    <img src={bundle} width={iconSize} height={iconSize} alt={selectedPlan.Title} />
+                </div>
+            ),
+            title: selectedPlan.Title,
+            features: [
+                getMailAppFeature(),
+                getCalendarAppFeature(),
+                getDriveAppFeature(),
+                getVPNAppFeature(),
+                getPassAppFeature(),
+            ],
+        };
+    }
+};
 
 const getPeriodEnd = (date: Date, cycle: CYCLE) => {
     return addMonths(date, 1 * cycle);
@@ -160,10 +219,10 @@ const BoxHeader = ({ step, title, right }: { step: number; title: string; right?
     return (
         <div className="flex flex-align-items-center flex-justify-space-between flex-nowrap">
             <div className="flex flex-align-items-center on-mobile-flex-column md:gap-4 gap-2">
-                <div>
+                <div className="flex-item-noshrink">
                     <StepLabel step={step} />
                 </div>
-                <h2 className="text-bold text-4xl">{title}</h2>
+                <h2 className="text-bold text-4xl flex-item-fluid">{title}</h2>
             </div>
             {right && <div className="flex-item-noshrink">{right}</div>}
         </div>
@@ -181,9 +240,8 @@ type HasBeenCountedState = {
 
 const Step1 = ({
     mode,
-    plan,
+    selectedPlan,
     onComplete,
-    onUpdate,
     model,
     setModel,
     upsellShortPlan,
@@ -196,7 +254,7 @@ const Step1 = ({
     className,
 }: {
     mode: 'signup' | 'pricing';
-    plan: Plan | undefined;
+    selectedPlan: Plan;
     upsellShortPlan: ReturnType<typeof getUpsellShortPlan> | undefined;
     vpnServersCountData: VPNServersCountData;
     onComplete: (data: {
@@ -204,9 +262,8 @@ const Step1 = ({
         subscriptionData: SignupCacheResult['subscriptionData'];
         type: 'signup';
     }) => void;
-    onUpdate: OnUpdate;
     model: SignupModelV2;
-    setModel: (model: Partial<SignupModelV2>) => void;
+    setModel: Dispatch<SetStateAction<SignupModelV2>>;
     hideFreePlan: boolean;
     upsellImg: ReactElement;
     measure: Measure;
@@ -220,8 +277,6 @@ const Step1 = ({
     const [loadingChallenge, setLoadingChallenge] = useState(false);
     const normalApi = useApi();
     const silentApi = getSilentApi(normalApi);
-    const [optimisticCycle, setOptimisticCycle] = useState<CYCLE | undefined>();
-    const [optimisticCurrency, setOptimisticCurrency] = useState<Currency | undefined>();
     const [toggleUpsell, setToggleUpsell] = useState<{ from: CYCLE; to: CYCLE } | undefined>(undefined);
     const createPaymentToken = usePaymentToken();
     const accountDetailsRef = useRef<AccountStepDetailsRef>();
@@ -231,10 +286,7 @@ const Step1 = ({
     const [loadingSignup, withLoadingSignup] = useLoading();
     const [loadingPaymentDetails, withLoadingPaymentDetails] = useLoading();
 
-    const currency = optimisticCurrency || model.subscriptionData.currency;
-    const cycle = optimisticCycle || model.subscriptionData.cycle;
-
-    const { plansMap, subscriptionData, paymentMethodStatus } = model;
+    const { plansMap, paymentMethodStatus } = model;
 
     const hasBeenCountedRef = useRef<HasBeenCountedState>({
         plan: false,
@@ -242,7 +294,15 @@ const Step1 = ({
         payment: false,
     });
 
-    const handleUpdate = (step: StepId, params: any) => {
+    const options: OptimisticOptions = {
+        currency: model.optimistic.currency || model.subscriptionData.currency,
+        cycle: model.optimistic.cycle || model.subscriptionData.cycle,
+        plan: model.optimistic.plan || selectedPlan,
+        planIDs: model.optimistic.planIDs || model.subscriptionData.planIDs,
+        checkResult: model.optimistic.checkResult || model.subscriptionData.checkResult,
+    };
+
+    const handleUpdate = (step: StepId) => {
         if (!hasBeenCountedRef.current[step]) {
             metrics.core_vpn_single_signup_step1_interaction_total.increment({ step });
 
@@ -251,80 +311,118 @@ const Step1 = ({
                 [step]: true,
             };
         }
-        onUpdate(params);
     };
 
-    const handleChangePlanIds = async (planIDs: PlanIDs) => {
-        const validateFlow = createFlow();
-        const checkResult = await getSubscriptionPrices(
-            silentApi,
-            planIDs,
-            currency,
-            cycle,
-            model.subscriptionData.checkResult.Coupon?.Code
-        );
-        if (!validateFlow()) {
-            return;
-        }
-        if (!checkResult) {
-            return;
-        }
-        setModel({
-            subscriptionData: {
-                ...model.subscriptionData,
-                planIDs,
-                currency,
-                checkResult,
+    const setOptimisticDiff = (diff: Partial<OptimisticOptions>) => {
+        setModel((old) => ({
+            ...old,
+            optimistic: {
+                ...old.optimistic,
+                ...diff,
             },
+        }));
+    };
+
+    const handleOptimistic = async (optimistic: Partial<OptimisticOptions>) => {
+        const newCurrency = optimistic.currency || options.currency;
+        const newPlanIDs = optimistic.planIDs || options.planIDs;
+        const newCycle = optimistic.cycle || options.cycle;
+
+        const optimisticCheckResult = getOptimisticCheckResult({
+            plansMap: model.plansMap,
+            planIDs: newPlanIDs,
+            cycle: newCycle,
         });
+
+        const newOptimistic = {
+            ...optimistic,
+            checkResult: optimisticCheckResult,
+        };
+
+        const resetOptimistic = Object.keys(newOptimistic).reduce<Partial<OptimisticOptions>>((acc, key) => {
+            acc[key as keyof typeof acc] = undefined;
+            return acc;
+        }, {});
+
+        try {
+            const validateFlow = createFlow();
+
+            setOptimisticDiff(newOptimistic);
+
+            const checkResult = await getSubscriptionPrices(
+                silentApi,
+                newPlanIDs,
+                newCurrency,
+                newCycle,
+                model.subscriptionData.checkResult.Coupon?.Code
+            );
+
+            if (!validateFlow()) {
+                return;
+            }
+
+            setModel((old) => ({
+                ...old,
+                subscriptionData: {
+                    ...model.subscriptionData,
+                    currency: newCurrency,
+                    cycle: newCycle,
+                    planIDs: newPlanIDs,
+                    checkResult,
+                },
+                optimistic: {
+                    ...old.optimistic,
+                    ...resetOptimistic,
+                },
+            }));
+        } catch (e) {
+            // Reset any optimistic state on failures
+            setModel((old) => ({
+                ...old,
+                optimistic: {},
+            }));
+        }
+    };
+
+    const handleChangePlanIds = async (planIDs: PlanIDs, planName: PLANS) => {
+        handleUpdate('plan');
+        measure({
+            event: TelemetryAccountSignupEvents.planSelect,
+            dimensions: { plan: planName },
+        });
+        handleOptimistic({ planIDs });
     };
 
     const handleChangeCurrency = async (currency: Currency) => {
-        const validateFlow = createFlow();
-        setOptimisticCurrency(currency);
-        handleUpdate('plan', { currency: currency });
-        const checkResult = await getSubscriptionPrices(
-            silentApi,
-            model.subscriptionData.planIDs,
-            currency,
-            cycle,
-            model.subscriptionData.checkResult.Coupon?.Code
-        )
-            .then((result) => {
+        handleUpdate('plan');
+        measure({
+            event: TelemetryAccountSignupEvents.currencySelect,
+            dimensions: { currency: currency },
+        });
+        handleOptimistic({ currency })
+            .then(() => {
                 metrics.core_vpn_single_signup_step1_currencyChange_total.increment({ status: 'success' });
-                return result;
             })
             .catch((error) => {
                 observeApiError(error, (status) =>
                     metrics.core_vpn_single_signup_step1_currencyChange_total.increment({ status })
                 );
             });
-        if (!validateFlow()) {
-            return;
-        }
-        setOptimisticCurrency(undefined);
-        if (!checkResult) {
-            return;
-        }
-        setModel({
-            subscriptionData: {
-                ...model.subscriptionData,
-                currency,
-                checkResult,
-            },
-        });
     };
 
-    const handleChangeCycle = async (cycle: Cycle) => {
-        const validateFlow = createFlow();
-        setOptimisticCycle(cycle);
-        const checkResult = await getSubscriptionPrices(
-            silentApi,
-            model.subscriptionData.planIDs,
-            currency,
-            cycle,
-            model.subscriptionData.checkResult.Coupon?.Code
-        )
+    const handleChangeCycle = async (cycle: Cycle, mode?: 'upsell') => {
+        if (mode === 'upsell') {
+            measure({
+                event: TelemetryAccountSignupEvents.interactUpsell,
+                dimensions: {
+                    upsell_to: `${options.plan.Name}_${cycle}m`,
+                    upsell_from: `${options.plan.Name}_${options.cycle}m`,
+                },
+            });
+        } else {
+            measure({ event: TelemetryAccountSignupEvents.cycleSelect, dimensions: { cycle: `${cycle}` } });
+        }
+        handleOptimistic({ cycle })
             .then((result) => {
                 metrics.core_vpn_single_signup_step1_cycleChange_total.increment({ status: 'success' });
                 return result;
@@ -334,20 +432,6 @@ const Step1 = ({
                     metrics.core_vpn_single_signup_step1_cycleChange_total.increment({ status })
                 );
             });
-        if (!validateFlow()) {
-            return;
-        }
-        setOptimisticCycle(undefined);
-        if (!checkResult) {
-            return;
-        }
-        setModel({
-            subscriptionData: {
-                ...model.subscriptionData,
-                cycle,
-                checkResult,
-            },
-        });
     };
 
     const handleCompletion = async (subscriptionData: SubscriptionData) => {
@@ -376,7 +460,33 @@ const Step1 = ({
         paymentMethodStatus?.Card && PAYMENT_METHOD_TYPES.CARD,
         paymentMethodStatus?.Paypal && PAYMENT_METHOD_TYPES.PAYPAL,
     ].filter(isTruthy);
-    const hasGuarantee = plan?.Name === PLANS.VPN;
+
+    const hasGuarantee = options.plan.Name === PLANS.VPN;
+
+    const measurePay = (
+        type: TelemetryPayType,
+        event: TelemetryAccountSignupEvents.userCheckout | TelemetryAccountSignupEvents.checkoutError
+    ) => {
+        if (!options.plan) {
+            return;
+        }
+        measure({
+            event,
+            dimensions: {
+                type: type,
+                plan: options.plan.Name as any,
+                cycle: `${options.cycle}`,
+                currency: options.currency,
+            },
+        });
+    };
+
+    const measurePaySubmit = (type: TelemetryPayType) => {
+        return measurePay(type, TelemetryAccountSignupEvents.userCheckout);
+    };
+    const measurePayError = (type: TelemetryPayType) => {
+        return measurePay(type, TelemetryAccountSignupEvents.checkoutError);
+    };
 
     const validatePayment = () => {
         if (loadingSignup || loadingPaymentDetails) {
@@ -399,10 +509,13 @@ const Step1 = ({
         ignoreName: true,
         api: normalApi,
         defaultMethod: paymentMethods[0],
-        amount: subscriptionData.checkResult.AmountDue,
-        currency,
-        onValidatePaypal: () => {
-            onUpdate({ pay: 'paypal' });
+        amount: options.checkResult.AmountDue,
+        currency: options.currency,
+        onPaypalError: (type) => {
+            measurePayError(type);
+        },
+        onValidatePaypal: (type) => {
+            measurePaySubmit(type);
             if (!validatePayment() || !accountDetailsRef.current?.validate()) {
                 return false;
             }
@@ -414,8 +527,8 @@ const Step1 = ({
     });
 
     const price = (
-        <Price key="price" currency={currency}>
-            {subscriptionData.checkResult.AmountDue}
+        <Price key="price" currency={options.currency}>
+            {options.checkResult.AmountDue}
         </Price>
     );
 
@@ -430,9 +543,9 @@ const Step1 = ({
         </Href>
     );
 
-    const pricing = getPricingFromPlanIDs(subscriptionData.planIDs, plansMap);
+    const pricing = getPricingFromPlanIDs(options.planIDs, plansMap);
 
-    const totals = getTotalFromPricing(pricing, cycle);
+    const totals = getTotalFromPricing(pricing, options.cycle);
 
     const cycles = isDesktop
         ? [CYCLE.MONTHLY, CYCLE.TWO_YEARS, CYCLE.YEARLY]
@@ -440,8 +553,8 @@ const Step1 = ({
 
     const features = [
         {
-            left: <Icon size={24} className="color-primary" name="lock" />,
-            text: c('Info').t`End-to-end encrypted`,
+            left: <Icon size={24} className="color-primary" name="code" />,
+            text: c('Info').t`Open source`,
         },
         {
             left: <Icon size={24} className="color-primary" name="eye-slash" />,
@@ -451,77 +564,39 @@ const Step1 = ({
             left: <img width="24" alt="" src={swissFlag} />,
             text: isDesktop ? c('Info').t`Protected by Swiss privacy laws` : c('Info').t`Swiss based`,
         },
+        isDesktop &&
+            [PLANS.VPN, PLANS.BUNDLE].includes(selectedPlan.Name as any) && {
+                left: <Icon size={24} className="color-primary" name="servers" />,
+                text: getVpnServers(vpnServersCountData.paid.servers),
+            },
     ].filter(isTruthy);
 
     const freeName = `${VPN_SHORT_APP_NAME} Free`;
     const appName = VPN_APP_NAME;
 
     const handleCloseUpsellModal = () => {
-        handleUpdate('plan', { plan: upsellShortPlan?.plan });
+        handleUpdate('plan');
         upsellModalProps.onClose();
     };
 
-    const hasSelectedFree = !hasPlanIDs(model.subscriptionData.planIDs || {});
+    const hasSelectedFree = selectedPlan.Name === PLANS.FREE;
 
     let step = 1;
     const padding = 'sm:p-11';
 
-    const planInformation = (() => {
-        const iconSize = 28;
-        if (!plan || hasSelectedFree) {
-            const freeServers = getFreeServers(vpnServersCountData.free.servers, vpnServersCountData.free.countries);
-            return {
-                logo: <FreeLogo size={iconSize} app={APPS.PROTONVPN_SETTINGS} />,
-                title: getFreeTitle(BRAND_NAME),
-                features: [getCountries(freeServers), getNoAds(), getBandwidth()],
-            };
-        }
-        if (plan.Name === PLANS.VPN) {
-            return {
-                logo: <VpnLogo variant="glyph-only" size={iconSize} />,
-                title: plan.Title,
-                features: [
-                    getVPNSpeed('highest'),
-                    getProtectDevices(VPN_CONNECTIONS),
-                    getAllPlatforms(),
-                    getNetShield(true),
-                    getStreaming(true),
-                    getPrioritySupport(),
-                    getAdvancedVPNCustomizations(true),
-                ],
-            };
-        }
-
-        if (plan.Name === PLANS.BUNDLE) {
-            return {
-                logo: (
-                    <div>
-                        <img src={bundle} width={iconSize} height={iconSize} alt={plan.Title} />
-                    </div>
-                ),
-                title: plan.Title,
-                features: [
-                    getMailAppFeature(),
-                    getCalendarAppFeature(),
-                    getDriveAppFeature(),
-                    getVPNAppFeature(),
-                    getPassAppFeature(),
-                ],
-            };
-        }
-    })();
+    const planInformation = getPlanInformation(options.plan, vpnServersCountData, mode);
 
     const upsellToCycle = (() => {
-        if (cycle === CYCLE.MONTHLY) {
+        if (options.cycle === CYCLE.MONTHLY) {
             return CYCLE.YEARLY;
         }
-        if (cycle === CYCLE.YEARLY) {
+        if (options.cycle === CYCLE.YEARLY) {
             return CYCLE.TWO_YEARS;
         }
     })();
 
     return (
-        <Layout hasDecoration className={className} bottomRight={<SignupSupportDropdown />}>
+        <Layout languageSelect={false} hasDecoration className={className} bottomRight={<SignupSupportDropdown />}>
             <div className="flex flex-align-items-center flex-column">
                 <div className="signup-v1-header mt-8 mb-4 text-center">
                     <h1 className="m-0 large-font lg:px-4 text-semibold">
@@ -552,7 +627,7 @@ const Step1 = ({
                             right={
                                 <CurrencySelector
                                     mode="select-two"
-                                    currency={currency}
+                                    currency={options.currency}
                                     onSelect={(currency) => withLoadingPaymentDetails(handleChangeCurrency(currency))}
                                 />
                             }
@@ -562,29 +637,32 @@ const Step1 = ({
                                 <CycleSelector
                                     pricing={pricing}
                                     onGetTheDeal={(cycle) => {
-                                        handleUpdate('plan', { cycle: `${cycle}m` });
+                                        handleUpdate('plan');
+                                        setToggleUpsell(undefined);
+                                        withLoadingPaymentDetails(handleChangeCycle(cycle)).catch(noop);
                                         accountDetailsRef.current?.scrollInto('email');
                                     }}
-                                    cycle={cycle}
-                                    currency={currency}
+                                    cycle={options.cycle}
+                                    currency={options.currency}
                                     cycles={cycles}
                                     onChangeCycle={(cycle, upsellFrom) => {
-                                        if (upsellFrom !== undefined) {
-                                            handleUpdate('plan', { cycle: `${cycle}m-${upsellFrom}m-upsell` });
-                                        } else {
-                                            handleUpdate('plan', { cycle: `${cycle}m` });
-                                        }
+                                        handleUpdate('plan');
                                         setToggleUpsell(undefined);
-                                        return withLoadingPaymentDetails(handleChangeCycle(cycle)).catch(noop);
+                                        return withLoadingPaymentDetails(
+                                            handleChangeCycle(cycle, upsellFrom !== undefined ? 'upsell' : undefined)
+                                        ).catch(noop);
                                     }}
                                 />
                             </div>
                             <div className="flex flex-justify-end mt-10 on-tablet-flex-justify-center">
-                                {!hideFreePlan && plan?.Name === PLANS.VPN && (
+                                {!hideFreePlan && options.plan.Name === PLANS.VPN && (
                                     <InlineLinkButton
                                         className="color-weak"
                                         onClick={() => {
-                                            handleUpdate('plan', { plan: 'free' });
+                                            measure({
+                                                event: TelemetryAccountSignupEvents.planSelect,
+                                                dimensions: { plan: PLANS.FREE },
+                                            });
                                             setUpsellModal(true);
                                         }}
                                     >
@@ -632,9 +710,9 @@ const Step1 = ({
                                             const signInTo = {
                                                 pathname: `/dashboard${stringifySearchParams(
                                                     {
-                                                        plan: plan?.Name,
-                                                        cycle: `${subscriptionData.cycle}`,
-                                                        currency: subscriptionData.currency,
+                                                        plan: options.plan.Name,
+                                                        cycle: `${options.cycle}`,
+                                                        currency: options.currency,
                                                     },
                                                     '?'
                                                 )}`,
@@ -647,7 +725,14 @@ const Step1 = ({
                                                     key="signin"
                                                     className="link link-focus text-nowrap"
                                                     to={signInTo}
-                                                    onClick={() => onUpdate({ create: 'login' })}
+                                                    onClick={() =>
+                                                        measure({
+                                                            event: TelemetryAccountSignupEvents.userSignIn,
+                                                            dimensions: {
+                                                                location: 'step2',
+                                                            },
+                                                        })
+                                                    }
                                                 >
                                                     {c('Link').t`Sign in`}
                                                 </Link>
@@ -665,7 +750,7 @@ const Step1 = ({
                                                                 fullWidth
                                                             >
                                                                 {c('pass_signup_2023: Action')
-                                                                    .t`Start using ${appName} now`}
+                                                                    .t`Start using ${appName}`}
                                                             </Button>
                                                         </div>
                                                     )}
@@ -721,7 +806,10 @@ const Step1 = ({
                                         onFocus={(e) => {
                                             const autocomplete = e.target.getAttribute('autocomplete');
                                             if (autocomplete) {
-                                                handleUpdate('payment', { cc: autocomplete });
+                                                measure({
+                                                    event: TelemetryAccountSignupEvents.interactCreditCard,
+                                                    dimensions: { field: autocomplete as any },
+                                                });
                                             }
                                         }}
                                         name="payment-form"
@@ -729,8 +817,8 @@ const Step1 = ({
                                             event.preventDefault();
 
                                             const amountAndCurrency: AmountAndCurrency = {
-                                                Currency: currency,
-                                                Amount: subscriptionData.checkResult.AmountDue,
+                                                Currency: options.currency,
+                                                Amount: options.checkResult.AmountDue,
                                             };
 
                                             const run = async () => {
@@ -749,18 +837,21 @@ const Step1 = ({
                                                 return onPay(data.Payment);
                                             };
 
-                                            handleUpdate('payment', { pay: 'card' });
+                                            const type = amountAndCurrency.Amount <= 0 ? 'free' : 'pay_cc';
+                                            measurePaySubmit(type);
                                             if (
                                                 accountDetailsRef.current?.validate() &&
                                                 handleCardSubmit() &&
                                                 validatePayment()
                                             ) {
-                                                withLoadingSignup(run()).catch(noop);
+                                                withLoadingSignup(run()).catch(() => {
+                                                    measurePayError(type);
+                                                });
                                             }
                                         }}
                                         method="post"
                                     >
-                                        {subscriptionData.checkResult?.AmountDue ? (
+                                        {options.checkResult.AmountDue ? (
                                             <PaymentComponent
                                                 api={normalApi}
                                                 noMaxWidth
@@ -769,12 +860,18 @@ const Step1 = ({
                                                 paypalCredit={paypalCredit}
                                                 paymentMethodStatus={paymentMethodStatus}
                                                 method={method}
-                                                amount={subscriptionData.checkResult.AmountDue}
-                                                currency={currency}
+                                                amount={options.checkResult.AmountDue}
+                                                currency={options.currency}
                                                 card={card}
                                                 onMethod={(newMethod) => {
                                                     if (method && newMethod && method !== newMethod) {
-                                                        handleUpdate('payment', { method: newMethod });
+                                                        const value = getPaymentMethod(newMethod);
+                                                        if (value) {
+                                                            measure({
+                                                                event: TelemetryAccountSignupEvents.paymentSelect,
+                                                                dimensions: { type: value },
+                                                            });
+                                                        }
                                                     }
                                                     setMethod(newMethod);
                                                 }}
@@ -789,13 +886,13 @@ const Step1 = ({
                                         {(() => {
                                             if (
                                                 method === PAYMENT_METHOD_TYPES.PAYPAL &&
-                                                subscriptionData.checkResult.AmountDue > 0
+                                                options.checkResult.AmountDue > 0
                                             ) {
                                                 return (
                                                     <div className="flex flex-column gap-2">
                                                         <StyledPayPalButton
                                                             paypal={paypal}
-                                                            amount={subscriptionData.checkResult.AmountDue}
+                                                            amount={options.checkResult.AmountDue}
                                                             loading={loadingSignup}
                                                         />
                                                         <PayPalButton
@@ -804,7 +901,7 @@ const Step1 = ({
                                                             color="norm"
                                                             paypal={paypalCredit}
                                                             disabled={loadingSignup}
-                                                            amount={subscriptionData.checkResult.AmountDue}
+                                                            amount={options.checkResult.AmountDue}
                                                         >
                                                             {c('Link').t`Paypal without credit card`}
                                                         </PayPalButton>
@@ -821,7 +918,7 @@ const Step1 = ({
                                                         color="norm"
                                                         fullWidth
                                                     >
-                                                        {subscriptionData.checkResult.AmountDue > 0
+                                                        {options.checkResult.AmountDue > 0
                                                             ? c('Action').jt`Pay ${price} now`
                                                             : c('Action').t`Confirm`}
                                                     </Button>
@@ -846,16 +943,16 @@ const Step1 = ({
                                 >
                                     <div className="border rounded-xl border-weak p-3">
                                         <div className="flex flex-column gap-2">
-                                            <div className="color-weak text-semibold">{c('Info').t`Summary`}</div>
+                                            <div className="color-weak text-semibold ml-3">{c('Info').t`Summary`}</div>
                                             {(() => {
                                                 if (!planInformation) {
                                                     return null;
                                                 }
 
                                                 const pricePerMonth = totals.totalPerMonth;
-                                                const price = getSimplePriceString(currency, pricePerMonth, '');
+                                                const price = getSimplePriceString(options.currency, pricePerMonth, '');
                                                 const regularPrice = getSimplePriceString(
-                                                    currency,
+                                                    options.currency,
                                                     totals.totalNoDiscountPerMonth,
                                                     ''
                                                 );
@@ -882,7 +979,7 @@ const Step1 = ({
                                                                 <div className="flex-item-fluid flex flex-align-items-center gap-2">
                                                                     <div className="flex-item-fluid text-sm">
                                                                         <span className="color-weak mr-1">
-                                                                            {getBilledText(cycle)}
+                                                                            {getBilledText(options.cycle)}
                                                                         </span>
                                                                         {totals.discountPercentage > 0 && (
                                                                             <SaveLabel2
@@ -923,6 +1020,8 @@ const Step1 = ({
                                                                 <div className="p-2 flex gap-1 flex-align-items-center">
                                                                     <Toggle
                                                                         checked={!!toggleUpsell}
+                                                                        id="toggle-upsell-plan"
+                                                                        className="mx-1"
                                                                         onChange={(event) => {
                                                                             if (
                                                                                 loadingSignup ||
@@ -932,21 +1031,30 @@ const Step1 = ({
                                                                             }
                                                                             if (event.target.checked && upsellToCycle) {
                                                                                 setToggleUpsell({
-                                                                                    from: cycle,
+                                                                                    from: options.cycle,
                                                                                     to: upsellToCycle,
                                                                                 });
                                                                                 withLoadingPaymentDetails(
-                                                                                    handleChangeCycle(upsellToCycle)
+                                                                                    handleChangeCycle(
+                                                                                        upsellToCycle,
+                                                                                        'upsell'
+                                                                                    )
                                                                                 ).catch(noop);
                                                                             } else if (toggleUpsell) {
                                                                                 withLoadingPaymentDetails(
-                                                                                    handleChangeCycle(toggleUpsell.from)
+                                                                                    handleChangeCycle(
+                                                                                        toggleUpsell.from,
+                                                                                        'upsell'
+                                                                                    )
                                                                                 ).catch(noop);
                                                                                 setToggleUpsell(undefined);
                                                                             }
                                                                         }}
                                                                     ></Toggle>
-                                                                    <span className="flex-item-fluid text-sm">
+                                                                    <label
+                                                                        htmlFor="toggle-upsell-plan"
+                                                                        className="flex-item-fluid text-sm"
+                                                                    >
                                                                         {(() => {
                                                                             const toCycle =
                                                                                 toggleUpsell?.to || upsellToCycle;
@@ -958,30 +1066,15 @@ const Step1 = ({
                                                                                 toCycle
                                                                             );
                                                                             const discount = `${totals.discountPercentage}%`;
-                                                                            const getBillingCycleText = (
-                                                                                cycle: CYCLE
-                                                                            ) => {
-                                                                                if (cycle === CYCLE.TWO_YEARS) {
-                                                                                    // translator: full sentence is "Get 33% off with a 2-year subscription"
-                                                                                    return c('vpn_2step: discount')
-                                                                                        .t`2-year`;
-                                                                                }
-                                                                                if (cycle === CYCLE.YEARLY) {
-                                                                                    // translator: full sentence is "Get 33% off with a 1-year subscription"
-                                                                                    return c('vpn_2step: discount')
-                                                                                        .t`1-year`;
-                                                                                }
-                                                                            };
                                                                             const billingCycle =
                                                                                 getBillingCycleText(toCycle);
                                                                             if (!billingCycle) {
                                                                                 return null;
                                                                             }
                                                                             // translator: full sentence is "Get 33% off with a 2-year subscription"
-                                                                            return c('vpn_2step: discount')
-                                                                                .t`Get ${discount} off with a ${billingCycle} subscription`;
+                                                                            return getOffText(discount, billingCycle);
                                                                         })()}
-                                                                    </span>
+                                                                    </label>
                                                                 </div>
                                                             </>
                                                         )}
@@ -1009,19 +1102,19 @@ const Step1 = ({
                                                         'flex flex-justify-space-between text-rg'
                                                     )}
                                                 >
-                                                    <span>{getTotalBillingText(cycle)}</span>
+                                                    <span>{getTotalBillingText(options.cycle)}</span>
                                                     <span>
                                                         {loadingPaymentDetails ? (
                                                             <CircleLoader />
                                                         ) : (
-                                                            <Price currency={subscriptionData.currency}>
-                                                                {subscriptionData.checkResult.AmountDue}
+                                                            <Price currency={options.currency}>
+                                                                {options.checkResult.AmountDue}
                                                             </Price>
                                                         )}
                                                     </span>
                                                 </div>
                                                 <div className="text-sm color-weak">
-                                                    <span>{getRenewText(cycle)}</span>
+                                                    <span>{getRenewText(options.cycle)}</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -1035,7 +1128,7 @@ const Step1 = ({
             {renderUpsellModal && (
                 <UpsellModal
                     img={upsellImg}
-                    title={c('Info').t`Try ${upsellPlanName} risk free`}
+                    title={c('vpn_2step: info').t`Try ${upsellPlanName} risk-free`}
                     info={c('Info').t`If it’s not right for you, we’ll refund you.`}
                     features={[
                         getStreaming(true),
@@ -1054,7 +1147,7 @@ const Step1 = ({
                                     shape="outline"
                                     onClick={() => {
                                         upsellModalProps.onClose();
-                                        handleChangePlanIds({});
+                                        handleChangePlanIds({}, PLANS.FREE);
                                     }}
                                 >
                                     {c('Info').t`Continue with ${freeName}`}

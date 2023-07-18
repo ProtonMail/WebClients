@@ -98,7 +98,7 @@ const AccountStepPayment = ({
             event,
             dimensions: {
                 type: type,
-                plan: options.plan?.Name as any,
+                plan: options.plan.Name as any,
                 cycle: `${options.cycle}`,
                 currency: options.currency,
             },

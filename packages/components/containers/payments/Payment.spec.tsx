@@ -61,7 +61,7 @@ describe('Payment', () => {
         );
 
         await waitFor(() => {
-            expect(container).toHaveTextContent('We use 3-D Secure to protect your payments.');
+            expect(container).toHaveTextContent('We use 3-D Secure to protect your payments');
         });
     });
 
@@ -84,7 +84,7 @@ describe('Payment', () => {
         );
 
         await waitFor(() => {
-            expect(container).not.toHaveTextContent('We use 3-D Secure to protect your payments.');
+            expect(container).not.toHaveTextContent('We use 3-D Secure to protect your payments');
         });
     });
 
@@ -120,7 +120,7 @@ describe('Payment', () => {
         );
 
         await waitFor(() => {
-            expect(container).toHaveTextContent('We use 3-D Secure to protect your payments.');
+            expect(container).toHaveTextContent('We use 3-D Secure to protect your payments');
         });
     });
 
@@ -156,7 +156,7 @@ describe('Payment', () => {
         );
 
         await waitFor(() => {
-            expect(container).not.toHaveTextContent('We use 3-D Secure to protect your payments.');
+            expect(container).not.toHaveTextContent('We use 3-D Secure to protect your payments');
         });
     });
 });

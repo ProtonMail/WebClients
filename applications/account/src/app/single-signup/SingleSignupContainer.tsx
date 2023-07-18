@@ -17,11 +17,10 @@ import useKTActivation from '@proton/components/containers/keyTransparency/useKT
 import { PaymentMethodStatus } from '@proton/components/payments/core';
 import { useLoading } from '@proton/hooks';
 import metrics, { observeApiError } from '@proton/metrics';
-import { update as updateRoute } from '@proton/shared/lib/api/core/update';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { queryPaymentMethodStatus, queryPlans } from '@proton/shared/lib/api/payments';
-import { TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
+import { TelemetryAccountSignupEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { ProductParam } from '@proton/shared/lib/apps/product';
 import { APP_NAMES, CLIENT_TYPES, DEFAULT_CURRENCY, PLANS, VPN_APP_NAME } from '@proton/shared/lib/constants';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
@@ -29,7 +28,7 @@ import { toMap } from '@proton/shared/lib/helpers/object';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { getNormalCycleFromCustomCycle } from '@proton/shared/lib/helpers/subscription';
 import { Api, Plan, PlansMap } from '@proton/shared/lib/interfaces';
-import { getFreeCheckResult } from '@proton/shared/lib/subscription/freePlans';
+import { FREE_PLAN, getFreeCheckResult } from '@proton/shared/lib/subscription/freePlans';
 import onboardingVPNWelcome from '@proton/styles/assets/img/onboarding/vpn-welcome.svg';
 import noop from '@proton/utils/noop';
 
@@ -41,13 +40,15 @@ import { handleCreateUser } from '../signup/signupActions/handleCreateUser';
 import { getSignupMeta } from '../signup/signupPagesJson';
 import { defaultSignupModel } from '../single-signup-v2/SingleSignupContainerV2';
 import { SignupModelV2, Steps } from '../single-signup-v2/interface';
-import { TelemetryMeasurementData, getSignupTelemetryData } from '../single-signup-v2/measure';
+import { getPaymentMethodsAvailable, getSignupTelemetryData } from '../single-signup-v2/measure';
+import useForceLanguage from '../useForceLanguage';
 import { useMetaTags } from '../useMetaTags';
 import Step1 from './Step1';
 import Step2 from './Step2';
 import Step3 from './Step3';
 import { getUpsellShortPlan } from './helper';
 import onboardingVPNWelcome2 from './illustration.svg';
+import { TelemetryMeasurementData } from './measure';
 import vpnUpsellIllustration from './vpn-upsell-illustration.svg';
 
 interface Props {
@@ -70,25 +71,8 @@ const SingleSignupContainer = ({ toApp, clientType, loader, onLogin, productPara
     const handleError = useErrorHandler();
     const location = useLocation();
 
+    useForceLanguage();
     useMetaTags(getSignupMeta(toApp, APP_NAME, { isMailTrial: false, isMailRefer: false }));
-
-    const update = (params: any) => {
-        silentApi(updateRoute(params)).catch(noop);
-    };
-
-    const measure = (data: TelemetryMeasurementData) => {
-        const values = 'values' in data ? data.values : {};
-        return sendTelemetryReport({
-            api: unauthApi,
-            measurementGroup: TelemetryMeasurementGroups.accountSignup,
-            event: data.event,
-            dimensions: {
-                ...data.dimensions,
-                flow: 'vpn_signup',
-            },
-            values,
-        }).catch(noop);
-    };
 
     const [loadingDependencies, withLoadingDependencies] = useLoading(true);
     const [loadingChallenge, setLoadingChallenge] = useState(true);
@@ -106,9 +90,26 @@ const SingleSignupContainer = ({ toApp, clientType, loader, onLogin, productPara
 
         return {
             ...result,
-            mode: searchParams.get('plan') && searchParams.get('cycle') ? ('signup' as const) : ('pricing' as const),
+            mode:
+                searchParams.get('plan') && (searchParams.get('cycle') || searchParams.get('billing'))
+                    ? ('signup' as const)
+                    : ('pricing' as const),
         };
     });
+
+    const measure = (data: TelemetryMeasurementData) => {
+        const values = 'values' in data ? data.values : {};
+        return sendTelemetryReport({
+            api: unauthApi,
+            measurementGroup: TelemetryMeasurementGroups.accountSignup,
+            event: data.event,
+            dimensions: {
+                ...data.dimensions,
+                flow: signupParameters.mode === 'signup' ? 'vpn_signup_2step' : 'vpn_signup_3step',
+            },
+            values,
+        }).catch(noop);
+    };
 
     const [model, setModel] = useState<SignupModelV2>(defaultSignupModel);
 
@@ -119,8 +120,8 @@ const SingleSignupContainer = ({ toApp, clientType, loader, onLogin, productPara
         }));
     };
 
-    const plan = getPlanFromPlanIDs(model.plans, model.subscriptionData.planIDs);
-    const upsellShortPlan = getUpsellShortPlan(plan, vpnServersCountData);
+    const selectedPlan = getPlanFromPlanIDs(model.plans, model.subscriptionData.planIDs) || FREE_PLAN;
+    const upsellShortPlan = getUpsellShortPlan(selectedPlan, vpnServersCountData);
 
     useEffect(() => {
         const getSubscriptionData = async (
@@ -184,6 +185,15 @@ const SingleSignupContainer = ({ toApp, clientType, loader, onLogin, productPara
             const subscriptionData = await getSubscriptionData(silentApi, Plans, signupParameters);
             const plansMap = toMap(Plans, 'Name') as PlansMap;
 
+            measure({
+                event: TelemetryAccountSignupEvents.pageLoad,
+                dimensions: {},
+            });
+            measure({
+                event: TelemetryAccountSignupEvents.bePaymentMethods,
+                dimensions: getPaymentMethodsAvailable(paymentMethodStatus),
+            });
+
             // Disable bitcoin in this signup because it doesn't handle signed in state
             paymentMethodStatus.Bitcoin = false;
 
@@ -242,12 +252,11 @@ const SingleSignupContainer = ({ toApp, clientType, loader, onLogin, productPara
                     <Step1
                         mode={signupParameters.mode}
                         className={loadingDependencies || loadingChallenge ? 'visibility-hidden' : undefined}
-                        plan={plan}
+                        selectedPlan={selectedPlan}
                         vpnServersCountData={vpnServersCountData}
                         upsellShortPlan={upsellShortPlan}
                         model={model}
-                        setModel={setModelDiff}
-                        onUpdate={update}
+                        setModel={setModel}
                         measure={measure}
                         onChallengeError={() => {
                             setError(new Error('Challenge error'));
@@ -341,13 +350,19 @@ const SingleSignupContainer = ({ toApp, clientType, loader, onLogin, productPara
                                 }
                                 const [result] = await Promise.all([await handleDone({ cache })]);
 
-                                await onLogin(result.session);
-
                                 metrics.core_vpn_single_signup_step4_setup_total.increment({
                                     status: 'success',
                                 });
 
-                                await metrics.processAllRequests();
+                                await Promise.all([
+                                    measure({
+                                        event: TelemetryAccountSignupEvents.onboardFinish,
+                                        dimensions: {},
+                                    }),
+                                    metrics.processAllRequests(),
+                                ]);
+
+                                await onLogin(result.session);
                             };
                             if (newPassword) {
                                 try {
@@ -376,7 +391,7 @@ const SingleSignupContainer = ({ toApp, clientType, loader, onLogin, productPara
                                 await done(model.cache);
                             }
                         }}
-                        onUpdate={update}
+                        measure={measure}
                     />
                 )}
             </UnAuthenticated>

@@ -11,6 +11,7 @@ import { Currency } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
 import Guarantee from './Guarantee';
+import { getBillingCycleText, getOffText } from './helper';
 
 export const getBilledText = (cycle: CYCLE): string | null => {
     switch (cycle) {
@@ -103,9 +104,9 @@ const CycleItemView = ({
                                 </strong>
                             </div>
                             {discountPercentage > 0 && (
-                                <div id={`${cycle}-save`}>
+                                <div id={`${cycle}-save`} className="text-right mt-0.5 ml-2">
                                     <span className={clsx(highlightPrice ? 'color-success' : 'color-weak')}>
-                                        {c('Subscription saving').t`Save ${discountPercentage}%`}
+                                        {`− ${discountPercentage}%`}
                                     </span>
                                 </div>
                             )}
@@ -168,6 +169,7 @@ const CycleSelector = ({
                 const totals = getTotalFromPricing(pricing, cycleItem);
                 const discount24months = getTotalFromPricing(pricing, upsellCycle);
                 const discountPercentage = `${discount24months.discountPercentage}%`;
+                const offText = getOffText(discountPercentage, getBillingCycleText(upsellCycle) || '');
                 return (
                     <CycleItemView
                         cycle={cycleItem}
@@ -193,10 +195,7 @@ const CycleSelector = ({
                                     }}
                                     className="color-primary bg-norm-weak text-center rounded w100 py-2 px-4"
                                 >
-                                    {
-                                        // translator: full sentence will be: Get <50%> off with 24 months
-                                        c('Action').t`Get ${discountPercentage} off with 24 months`
-                                    }
+                                    {offText}
                                 </button>
                             )
                         }
