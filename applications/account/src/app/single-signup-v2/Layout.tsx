@@ -4,13 +4,11 @@ import { c } from 'ttag';
 
 import { PublicTopBanners } from '@proton/components';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
-import { locales } from '@proton/shared/lib/i18n/locales';
 import clsx from '@proton/utils/clsx';
 
-import BackButton from '../public/BackButton';
-import LanguageSelect from '../public/LanguageSelect';
 import LayoutLogosV2 from '../public/LayoutLogosV2';
 import Box from './Box';
+import LayoutHeader from './LayoutHeader';
 
 import './Layout.scss';
 
@@ -43,23 +41,14 @@ const Layout = ({
             )}
         >
             <PublicTopBanners />
-            <header
-                className={clsx(
-                    headerClassName,
-                    'flex flex-justify-space-between flex-align-items-center flex-item-noshrink flex-nowrap signup-v2-header gap-1 md:px-8 md:py-6 py-4 px-3'
-                )}
-            >
-                <div className="inline-flex flex-nowrap flex-item-noshrink">
-                    <div className="no-desktop no-tablet flex-item-noshrink mr-2">
-                        {onBack && <BackButton onClick={onBack} />}
-                    </div>
-                    <div className="flex-item-noshrink">{logo}</div>
-                </div>
-                {hasDecoration && languageSelect && (
-                    <LanguageSelect className="max-w100 ml-4" globe locales={locales} />
-                )}
-            </header>
-            <div className="pricing-container flex-item-fluid-auto flex flex-nowrap flex-column flex-justify-space-between md:mx-4 mx-2">
+            <LayoutHeader
+                hasDecoration={hasDecoration}
+                className={headerClassName}
+                onBack={onBack}
+                languageSelect={languageSelect}
+                logo={logo}
+            />
+            <div className="flex-item-fluid-auto flex flex-nowrap flex-column flex-justify-space-between md:mx-4 mx-2">
                 <div className="mx-4">
                     {children}
                     {hasDecoration && (
