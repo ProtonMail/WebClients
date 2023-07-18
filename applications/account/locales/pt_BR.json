@@ -2985,6 +2985,11 @@
         "Você cancelou a assinatura de e-mails de ${ categoriesJsx }."
       ]
     },
+    "Email Unsubscribe Categories": {
+      "${ allCategoryTitlesExceptTheLastOne } and ${ lastCategoryTitle }": [
+        "${ allCategoryTitlesExceptTheLastOne } e ${ lastCategoryTitle }"
+      ]
+    },
     "Enabled 2FA": {
       "2FA": [
         "A2F"
@@ -4380,7 +4385,7 @@
         "Padrão do sistema"
       ],
       "Theme font": [
-        "Tipo de letra do tema"
+        "Fonte do tema"
       ]
     },
     "Font Size Default": {
@@ -4415,6 +4420,12 @@
       "(1-2 emails per month)": [
         "(1-2 e-mails por mês)"
       ],
+      "(2-4 per year)": [
+        "(2-4 por ano)"
+      ],
+      "(4-6 emails per year)": [
+        "(4-6 e-mails por ano)"
+      ],
       "(during your first month)": [
         "(durante o primeiro mês)"
       ]
@@ -4424,7 +4435,7 @@
         "Aplicativo do ${ MAIL_APP_NAME }"
       ],
       "account logins": [
-        "logins de contas"
+        "os dados da conta"
       ],
       "Auto-forward Gmail": [
         "Encaminhamento automático do Gmail"
@@ -4451,10 +4462,10 @@
         "recursos de privacidade"
       ],
       "Set up ${ strongText } from Gmail": [
-        "Configurar ${ strongText } do Gmail"
+        "Configure ${ strongText } a partir do Gmail"
       ],
       "Update your logins": [
-        "Atualize seus logins"
+        "Atualize seus dados"
       ]
     },
     "Gmail forwarding": {
@@ -5470,7 +5481,7 @@
         "Criar e gerenciar subcontas além de atribuir a elas endereços de e-mail em seu domínio personalizado."
       ],
       "Create email addresses for other people, manage ${ MAIL_APP_NAME } for a business, school, or group. Get started by adding your organization name and custom domain (e.g. @yourcompany.com). ": [
-        "Crie endereços de e-mail para outras pessoas, gerencie ${ MAIL_APP_NAME } para um negócio, escola, ou grupo. Comece adicionando o nome e domínio personalizado da sua organização (ex. @suaempresa.com). "
+        "Crie endereços de e-mail para outras pessoas, gerencie o ${ MAIL_APP_NAME } para um negócio, escola, ou grupo. Comece adicionando o nome e domínio personalizado da sua organização (ex. @suaempresa.com). "
       ],
       "Create in": [
         "Criar em"
@@ -6052,7 +6063,7 @@
         "Frase de recuperação desatualizada. Atualize para garantir acesso aos seus dados"
       ],
       "Over 100 million people and businesses have signed up for ${ BRAND_NAME }.": [
-        "Mais de 100 milhões de pessoas e empresas já possuem ${ BRAND_NAME }."
+        "Mais de 100 milhões de pessoas e empresas já possuem uma conta da ${ BRAND_NAME }."
       ],
       "P2P": [
         "P2P"
@@ -6163,7 +6174,7 @@
         "Protegido pelas leis de privacidade suíças"
       ],
       "Public figures, journalists, executives, and others who may be the target of cyber attacks are highly encouraged to enable ${ PROTON_SENTINEL_NAME }.": [
-        "Figuras públicas, jornalistas, executivos e outros que possam ser alvo de ataques cibernéticos são altamente encorajados a habilitar o ${ PROTON_SENTINEL_NAME }."
+        "Figuras públicas, jornalistas, executivos e outros que possam ser alvo de ataques cibernéticos são altamente encorajados a ativar o ${ PROTON_SENTINEL_NAME }."
       ],
       "Public link invite": [
         "Link de convite público"
@@ -6296,6 +6307,12 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Como você é um usuário fiel, sua conta tem recursos adicionais ativados."
+      ],
+      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
+        "O envio SMTP permite que serviços ou dispositivos de terceiros enviem correio e-mail através do ${ MAIL_APP_NAME } para os seus endereços de domínio personalizado. Para solicitar acesso, ${ createTicket } e descreva os seus casos de uso, os domínios personalizados que gostaria de usar e os números de e-mail previstos por hora e por dia."
+      ],
+      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To use this feature, start by generating a new token.": [
+        "O envio SMTP permite que serviços ou dispositivos de terceiros enviem correio e-mail através do ${ MAIL_APP_NAME } para os seus endereços de domínio personalizado. Para usar esta funcionalidade, comece por gerar um novo token."
       ],
       "Some keys successfully reactivated": [
         "Algumas chaves foram reativadas"
@@ -6922,7 +6939,7 @@
         "Sua senha da ${ BRAND_NAME }"
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there.": [
-        "Suas contas ${ VPN_APP_NAME } e ${ MAIL_APP_NAME } estão vinculadas. Para excluir ambas, inicia sessão em ${ loginLink } e exclua sua conta lá."
+        "Suas contas do ${ VPN_APP_NAME } e ${ MAIL_APP_NAME } estão vinculadas. Para excluir ambas, inicia sessão em ${ loginLink } e exclua sua conta lá."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Sua conta tem pelo menos uma fatura vencida. O seu acesso será restringido em breve. ${ payInvoiceLink }"
@@ -8322,6 +8339,9 @@
       "${ BRAND_NAME } for Business newsletter": [
         "Boletim do ${ BRAND_NAME } for Business"
       ],
+      "${ BRAND_NAME } important announcements": [
+        "Comunicados importantes da ${ BRAND_NAME }"
+      ],
       "${ BRAND_NAME } newsletter": [
         "Boletim do ${ BRAND_NAME }"
       ],
@@ -8441,6 +8461,9 @@
       "Common sign up issues": [
         "Problemas frequentes ao se cadastrar"
       ],
+      "create a ticket": [
+        "criar um ticket"
+      ],
       "Create account": [
         "Criar conta"
       ],
@@ -8515,6 +8538,9 @@
       ],
       "View guide": [
         "Ver guia"
+      ],
+      "visit our blog": [
+        "visitar nosso blog"
       ],
       "What is the difference between UDP and TCP protocols?": [
         "Qual é a diferença entre os protocolos UDP e TCP?"
@@ -8968,8 +8994,8 @@
         "${ n } pastas e marcadores"
       ],
       "${ n } hide-my-email alias": [
-        "${ n } alias do hide-my-email",
-        "${ n } aliases do hide-my-email"
+        "${ n } alias do Hide-my-email",
+        "${ n } aliases do Hide-my-email"
       ],
       "${ n } label": [
         "${ n } marcador",
@@ -10092,6 +10118,9 @@
       ]
     },
     "pass_signup_2023: Action": {
+      "Check out ${ appName } features": [
+        "Verifique os recursos de ${ appName }"
+      ],
       "Continue": [
         "Continuar"
       ],
@@ -10104,11 +10133,17 @@
       "create a new account": [
         "criar uma conta"
       ],
+      "Create another account instead": [
+        "Crie uma conta em vez disso"
+      ],
       "Download again ${ size }": [
         "Baixar novamente ${ size }"
       ],
       "Download to continue ${ size }": [
         "Baixar para continuar ${ size }"
+      ],
+      "Keep this plan and use ${ appName }": [
+        "Mantenha este plano e use ${ appName }"
       ],
       "Or ${ createANewAccount }": [
         "Ou ${ createANewAccount }"
@@ -10118,6 +10153,15 @@
       ],
       "Start using ${ appName } now": [
         "Começar a usar o ${ appName }"
+      ],
+      "Upgrade for only ${ relativePrice } extra per month": [
+        "Faça upgrade por apenas ${ relativePrice } extra por mês"
+      ],
+      "Upgrade my plan": [
+        "Fazer upgrade do meu plano"
+      ],
+      "Use ${ free } instead": [
+        "Usar ${ free } em vez disso"
       ]
     },
     "pass_signup_2023: Feature": {
@@ -10158,6 +10202,12 @@
       "${ PASS_APP_NAME } benefits": [
         "Benefícios do ${ PASS_APP_NAME }"
       ],
+      "${ PASS_APP_NAME } is available as a browser extension on Firefox Add-ons.": [
+        "${ PASS_APP_NAME } está disponível como uma extensão do navegador Firefox."
+      ],
+      "${ PASS_APP_NAME } is available as a browser extension on the Chrome Web Store.": [
+        "${ PASS_APP_NAME } está disponível como uma extensão do Chrome Web Store."
+      ],
       "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption.": [
         "O ${ PASS_APP_NAME } mantém suas senhas e sua identidade seguras com rigorosa criptografia de ponta-a-ponta."
       ],
@@ -10173,11 +10223,29 @@
       "All premium ${ BRAND_NAME } services.": [
         "Todos os serviços premium da ${ BRAND_NAME }."
       ],
+      "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
+        "Mas você pode desbloquear **${ unlockPlanTitle }** e todos os serviços premium ${ BRAND_NAME } atualizando para o **${ upsellPlanTitle }** — por apenas ${ relativePrice } extras por mês."
+      ],
+      "By continuing, you agree to our ${ termsAndConditions }": [
+        "Ao continuar, você concorda com nosso ${ termsAndConditions }"
+      ],
       "Creating your account": [
         "Criando sua conta"
       ],
       "Discover ${ PASS_APP_NAME },${ br }our new encrypted password manager": [
         "Descubra o ${ PASS_APP_NAME },${ br }: Nosso novo gerenciador de senhas criptografado"
+      ],
+      "Download and install the relevant apps and extensions to start using ${ PASS_APP_NAME }": [
+        "Baixe e instale os aplicativos relevantes e suas extensões para começar a usar o ${ PASS_APP_NAME }"
+      ],
+      "Download the ${ PASS_APP_NAME } app from Google Play and install it to start using ${ PASS_APP_NAME2 } on your phone.": [
+        "Baixe o aplicativo do ${ PASS_APP_NAME } da Google Play e instale para começar a usar o ${ PASS_APP_NAME2 } em seu celular."
+      ],
+      "Download the ${ PASS_APP_NAME } app from the App Store and install it to start using ${ PASS_APP_NAME2 } on your phone.": [
+        "Baixe o aplicativo do ${ PASS_APP_NAME } da App Store e instale para começar a usar o ${ PASS_APP_NAME2 } em seu celular."
+      ],
+      "Encrypted password manager that also protects your identity": [
+        "O gerenciador de senhas criptografado protege também sua identidade"
       ],
       "End-to-end encrypted notes": [
         "Notas com criptografia de ponta a ponta"
@@ -10194,11 +10262,17 @@
       "Get ${ appName } for ${ browserName } soon": [
         "Obtenha ${ appName } para ${ browserName } em breve"
       ],
+      "Hide-my-email aliases protect your email from data breaches": [
+        "Hide-my-email aliases protegem seu e-mail contra violações de dados"
+      ],
       "If you get locked out of your ${ BRAND_NAME } Account, your **recovery kit** will allow you to sign in and recover your data.": [
         "Se você não conseguir entrar na sua conta da ${ BRAND_NAME }, o seu **kit de recuperação** permitirá que você faça login e recupere seus dados."
       ],
       "Includes basic ${ appName } features:": [
         "Inclui recursos básicos do ${ appName }:"
+      ],
+      "Install ${ PASS_APP_NAME }": [
+        "Instale o ${ PASS_APP_NAME }"
       ],
       "Install app": [
         "Instale o aplicativo"
@@ -10207,7 +10281,13 @@
         "Instale o aplicativo e a extensão"
       ],
       "It’s the only way to fully restore your account, so make sure you keep this **recovery kit** somewhere safe.": [
-        "É a única maneira de restaurar totalmente sua conta, então tenha certeza de manter o **kit de recuperação** em um local seguro."
+        "É a única maneira de restaurar totalmente sua conta, então tenha certeza de manter o **kit de recuperação** em um lugar seguro."
+      ],
+      "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
+        "Junte-se a mais de 100 milhões de pessoas que escolheram ${ BRAND_NAME } para manter a segurança on-line"
+      ],
+      "Launching ${ PASS_APP_NAME }": [
+        "Iniciando o ${ PASS_APP_NAME }"
       ],
       "One easy subscription.": [
         "Uma assinatura fácil."
@@ -10230,14 +10310,29 @@
       "per month, billed every two years": [
         "por mês com cobrança a cada dois anos"
       ],
+      "Preparing your Recovery Kit": [
+        "Preparando o kit de recuperação"
+      ],
       "Protected by Swiss privacy laws": [
         "Protegido pelas leis de privacidade suíças"
       ],
       "Save your recovery kit to continue": [
         "Salve o seu kit de recuperação para continuar"
       ],
+      "Signing in to ${ PASS_APP_NAME }": [
+        "Iniciando sessão em ${ PASS_APP_NAME }"
+      ],
+      "Special launch offer: Get ${ title } for ${ price } forever!": [
+        "Oferta especial de lançamento: Obtenha ${ title } por ${ price } para sempre!"
+      ],
+      "The offer you selected is not available for ${ currentPlanTitle } subscribers.": [
+        "A oferta selecionada não está disponível para assinantes ${ currentPlanTitle }."
+      ],
       "to start using ${ PASS_APP_NAME } on your phone": [
         "para começar a usar o ${ PASS_APP_NAME } em seu telefone"
+      ],
+      "Unlock ${ PASS_APP_NAME } premium features by upgrading": [
+        "Desbloqueie recursos premium do ${ PASS_APP_NAME } atualizando"
       ],
       "Updating your account": [
         "Atualizando sua conta"
@@ -10251,8 +10346,14 @@
       "Works on all devices": [
         "Funciona em todos os dispositivos"
       ],
+      "You already have access to premium ${ appName } features — no need to purchase again.": [
+        "Você já possui acessos recursos premium ${ appName } — não é necessário comprar novamente."
+      ],
       "You currently have": [
         "Você tem atualmente"
+      ],
+      "Your organization has access to ${ free }. If you want to access premium ${ appName } features, please ask your organization's administrator to upgrade.": [
+        "Sua organização possui acesso a ${ free }. Se você deseja acesso a recursos premium do ${ appName }, por favor, solicite a atualização para o administrador da sua organização."
       ]
     },
     "pass_signup_2023: Onboarding": {
@@ -10264,8 +10365,14 @@
       "${ upsellPlanTitle } plan": [
         "Plano ${ upsellPlanTitle }"
       ],
+      "All ${ BRAND_NAME } Plus services.${ br }One easy subscription.": [
+        "Todos os serviços Plus da ${ BRAND_NAME }.${ br }assinatura facilitada."
+      ],
       "Create your ${ BRAND_NAME } account": [
         "Crie sua conta do ${ BRAND_NAME }"
+      ],
+      "Request your organization administrator to upgrade": [
+        "Solicite um upgrade para o administrador de sua organização"
       ],
       "Secure your account": [
         "Proteja a sua conta"
@@ -12207,6 +12314,9 @@
       "PayPal verification failed": [
         "Ocorreu um erro na verificação do PayPal"
       ],
+      "Personalise your e-mail footer": [
+        "Personalize o rodapé do seu e-mail"
+      ],
       "Phone": [
         "Telefone"
       ],
@@ -12353,6 +12463,9 @@
       ],
       "Signed in to member account": [
         "Iniciado sessão à conta de membro"
+      ],
+      "SMTP Submission": [
+        "Envio SMTP"
       ],
       "Sort folders alphabetically": [
         "Ordenar pastas por ordem alfabética"
