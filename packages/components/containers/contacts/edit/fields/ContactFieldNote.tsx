@@ -18,15 +18,9 @@ const ContactFieldNote = ({ vCardProperty, onChange, ...rest }: Props) => {
         onChange({ ...vCardProperty, value: newValue });
     };
 
-    return (
-        <TextAreaTwo
-            value={vCardProperty.value}
-            placeholder={label}
-            onChange={handleChange}
-            data-testid={label}
-            {...rest}
-        />
-    );
+    const value = vCardProperty.value || '';
+
+    return <TextAreaTwo value={value} placeholder={label} onChange={handleChange} data-testid={label} {...rest} />;
 };
 
 export default ContactFieldNote;

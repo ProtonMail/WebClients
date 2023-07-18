@@ -18,7 +18,6 @@ import { icalValueToInternalAddress } from '../vcard';
 
 // Csv properties to be ignored
 const beIgnoredCsvProperties = [
-    'name',
     'initials',
     'short name',
     'maiden name',
@@ -243,6 +242,17 @@ const templates = {
             combineIndex: index,
         };
     },
+    n({ header, value, index }: TemplateArgs) {
+        return {
+            header,
+            value,
+            checked: true,
+            pref: 1,
+            field: 'n',
+            combineInto: 'n-main',
+            combineIndex: index,
+        };
+    },
     fnYomi({ header, value, index }: TemplateArgs) {
         return {
             header,
@@ -348,17 +358,26 @@ export const toPreVcard = ({ original, standard }: { original: string; standard:
     const postalCodeMatch = property.match(/^(\w*)\s?postal code\s?(\d*)$/);
     const countryMatch = property.match(/^(\w*)\s?country\s?(\d*)$/);
 
+    if (['display name', 'name'].includes(property)) {
+        return (value: ContactValue) => [templates.fn({ header, value, index: 1 })];
+    }
+    if (['last name', 'family name'].includes(property)) {
+        return (value: ContactValue) => [
+            templates.n({ header, value, index: 1 }), //N field value
+            templates.fn({ header, value, index: 3 }), //FN field value
+        ];
+    }
+    if (['first name', 'given name'].includes(property)) {
+        return (value: ContactValue) => [
+            templates.n({ header, value, index: 0 }), //N field value
+            templates.fn({ header, value, index: 1 }), //FN field value
+        ];
+    }
     if (['title', 'name prefix'].includes(property)) {
         return (value: ContactValue) => [templates.fn({ header, value, index: 0 })];
     }
-    if (['first name', 'given name'].includes(property)) {
-        return (value: ContactValue) => [templates.fn({ header, value, index: 1 })];
-    }
     if (['middle name', 'additional name'].includes(property)) {
         return (value: ContactValue) => [templates.fn({ header, value, index: 2 })];
-    }
-    if (['last name', 'family name'].includes(property)) {
-        return (value: ContactValue) => [templates.fn({ header, value, index: 3 })];
     }
     if (['suffix', 'name suffix'].includes(property)) {
         return (value: ContactValue) => [templates.fn({ header, value, index: 4 })];
@@ -372,6 +391,7 @@ export const toPreVcard = ({ original, standard }: { original: string; standard:
     if (['surname yomi', 'family name yomi'].includes(property)) {
         return (value: ContactValue) => templates.fnYomi({ header, value, index: 2 });
     }
+
     if (companyMatch) {
         const pref = companyMatch[1] ? +companyMatch[1] : undefined;
         return (value: ContactValue) => templates.org({ pref, header, value, index: 0 });
@@ -602,6 +622,14 @@ export const combine: Combine = {
     fn(preVcards: PreVcardsProperty) {
         return preVcards.reduce((acc, { value, checked }) => (value && checked ? `${acc} ${value}` : acc), '').trim();
     },
+    // N field follow the following format lastName;firstName;additionalName;prefix;suffix
+    n(preVcards: PreVcardsProperty) {
+        const nField = preVcards
+            .map((item) => (item.checked ? item.value : false))
+            .filter(Boolean)
+            .join(';');
+        return `${nField};;;`;
+    },
     adr(preVcards: PreVcardsProperty) {
         // To avoid unintended CRLF sequences inside the values of vCard address fields (those are interpreted as field separators unless followed by a space), we sanitize string values
         const sanitizeStringValue = (value: string) => value.replaceAll('\n', ' ');
@@ -666,6 +694,9 @@ export const combine: Combine = {
  */
 export const display: Display = {
     fn(preVcards: PreVcardsProperty) {
+        return preVcards.reduce((acc, { value, checked }) => (value && checked ? `${acc} ${value}` : acc), '').trim();
+    },
+    n(preVcards: PreVcardsProperty) {
         return preVcards.reduce((acc, { value, checked }) => (value && checked ? `${acc} ${value}` : acc), '').trim();
     },
     adr(preVcards: PreVcardsProperty) {

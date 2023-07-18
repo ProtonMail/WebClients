@@ -1,4 +1,4 @@
-import { ChangeEvent } from 'react';
+import { ChangeEvent, Ref, forwardRef } from 'react';
 
 import { Input, InputProps } from '@proton/atoms';
 import { getAllFieldLabels } from '@proton/shared/lib/helpers/contacts';
@@ -9,7 +9,7 @@ interface Props extends Omit<InputProps, 'onChange'> {
     onChange: (vCardProperty: VCardProperty) => void;
 }
 
-const ContactFieldString = ({ vCardProperty, onChange, ...rest }: Props) => {
+const ContactFieldString = ({ vCardProperty, onChange, ...rest }: Props, ref: Ref<HTMLInputElement>) => {
     const label = (getAllFieldLabels() as any)[vCardProperty.field] || '';
 
     const handleChange = ({ target }: ChangeEvent<HTMLInputElement>) => {
@@ -18,8 +18,15 @@ const ContactFieldString = ({ vCardProperty, onChange, ...rest }: Props) => {
     };
 
     return (
-        <Input value={vCardProperty.value} placeholder={label} onChange={handleChange} data-testid={label} {...rest} />
+        <Input
+            ref={ref}
+            value={vCardProperty.value}
+            placeholder={label}
+            onChange={handleChange}
+            data-testid={label}
+            {...rest}
+        />
     );
 };
 
-export default ContactFieldString;
+export default forwardRef(ContactFieldString);
