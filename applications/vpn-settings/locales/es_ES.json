@@ -291,7 +291,7 @@
         "Guardar"
       ],
       "Save selected": [
-        "Guardar los elementos seleccionados"
+        "Guardar seleccionado"
       ],
       "Search countries": [
         "Buscar países"
@@ -484,7 +484,7 @@
         "Anual"
       ],
       "Monthly": [
-        "Mensualmente"
+        "Mensual"
       ],
       "Two-year": [
         "Bienal"
@@ -566,7 +566,7 @@
     },
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
-        "Continuar usando ${ MAIL_APP_NAME }."
+        "Continuar utilizando ${ MAIL_APP_NAME }."
       ]
     },
     "Checkout row": {
@@ -1608,7 +1608,7 @@
         "Este campo requiere un mínimo de ${ minimumLength } caracteres."
       ],
       "Try again later": [
-        "Vuelva a intentarlo más tarde"
+        "Vuelve a intentarlo más tarde"
       ],
       "Try using only letters, numerals, and _.-": [
         "Utiliza solo letras, números y _.-"
@@ -1646,7 +1646,7 @@
         "Vuelve a cargar la página o inténtalo de nuevo más tarde."
       ],
       "Something went wrong": [
-        "Algo salió mal"
+        "Se ha producido un error."
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "No hemos podido cargar esta página. Vuelve a cargar la página o verifica tu conexión a internet."
@@ -1787,7 +1787,7 @@
         "Tu cuenta tiene más direcciones de correo electrónico que las que tienes disponibles en este plan. ${ addressSettingsLink }"
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
-        "Tu cuenta está usando ${ usedSpace } de almacenamiento, por lo que sobrepasa el espacio que tienes asignado (${ inviteSpace }). Elimina algunos datos o pídeles al administrador del plan que aumente el espacio de almacenamiento."
+        "Tu cuenta está utilizando ${ usedSpace } de almacenamiento, por lo que sobrepasa el espacio que tienes asignado (${ inviteSpace }). Elimina algunos datos o pídeles al administrador del plan que aumente el espacio de almacenamiento."
       ],
       "Your current plan cannot join a Visionary or family plan.": [
         "Tu plan actual no puede formar parte de un plan Visionary o familiar."
@@ -2023,6 +2023,12 @@
       "(1-2 emails per month)": [
         "(1-2 correos al mes)"
       ],
+      "(2-4 per year)": [
+        "(2-4 al año)"
+      ],
+      "(4-6 emails per year)": [
+        "(4-6 correos al año)"
+      ],
       "(during your first month)": [
         "(durante tu primer mes)"
       ]
@@ -2107,7 +2113,7 @@
         "${ fileName }: vista previa de baja resolución"
       ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
-        "Se puede también usar ${ MAIL_APP_NAME } con una contraseña única que reemplaza tanto a la contraseña de inicio de sesión como a la contraseña del buzón. Para cambiar al modo de contraseña única, introduce la contraseña única que quieres utilizar y haz clic en Guardar."
+        "Se puede también utilizar ${ MAIL_APP_NAME } con una contraseña única que reemplaza tanto a la contraseña de inicio de sesión como a la contraseña del buzón. Para cambiar al modo de contraseña única, introduce la contraseña única que quieres utilizar y haz clic en Guardar."
       ],
       "${ number } city": [
         "${ number } ciudad",
@@ -2152,7 +2158,7 @@
         "Un nombre que te ayude a identificar dónde lo utilizas para poder revocarlo o ampliarlo fácilmente más adelante."
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
-        "Un número telefónico solo puede usarse para verificar una cuenta de ${ BRAND_NAME }."
+        "Un número telefónico solo puede utilizarse para verificar una cuenta de ${ BRAND_NAME }."
       ],
       "A user is an account associated with a single username, mailbox, and person": [
         "Un usuario es una cuenta asociada a un único nombre de usuario, bandeja de entrada y persona"
@@ -2290,7 +2296,7 @@
         "Descarga hoy tu aplicación favorita y lleva la privacidad contigo donde quieras que vayas."
       ],
       "Each code can only be used once": [
-        "Cada código puede usarse solo una vez."
+        "Cada código puede utilizarse solo una vez."
       ],
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
         "El alojamiento de correo electrónico para 10 nombres de dominio de correo personalizados se incluye de forma gratuita. Se puede añadir dominios adicionales por ${ price }."
@@ -2359,7 +2365,7 @@
         "Obtener ${ upsellPlanName }"
       ],
       "Get a ${ BRAND_NAME } address to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
-        "Consigue una dirección de ${ BRAND_NAME } para usar todos los servicios ${ BRAND_NAME_TWO } incluyendo ${ MAIL_SHORT_APP_NAME } y ${ CALENDAR_SHORT_APP_NAME }."
+        "Consigue una dirección de ${ BRAND_NAME } para utilizar todos los servicios ${ BRAND_NAME_TWO } incluyendo ${ MAIL_SHORT_APP_NAME } y ${ CALENDAR_SHORT_APP_NAME }."
       ],
       "Get my ${ BRAND_NAME } address": [
         "Obtener mi dirección ${ BRAND_NAME }"
@@ -2675,7 +2681,7 @@
         "Para ${ planName }"
       ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
-        "Para completar tu pago, envía ${ btcAmountBold } a la dirección abajo."
+        "Para completar tu pago, envía ${ btcAmountBold } a la dirección de abajo."
       ],
       "to continue to ${ toAppName }": [
         "para continuar a ${ toAppName }"
@@ -2693,7 +2699,7 @@
         "Para asegurar tu conexión a internet, descarga e instala la aplicación ${ VPN_APP_NAME } en tu dispositivo y conéctate a un servidor."
       ],
       "to use ${ toAppName } and all ${ BRAND_NAME } services": [
-        "para usar ${ toAppName } y todos los servicios de ${ BRAND_NAME }"
+        "para utilizar ${ toAppName } y todos los servicios de ${ BRAND_NAME }"
       ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Recarga tu cuenta con créditos que puedes utilizar para suscribirte a un plan nuevo o renovar el actual. Obtienes un crédito por cada ${ i18nCurrency } gastado."
@@ -2789,13 +2795,13 @@
         "No hemos podido procesar tu pago."
       ],
       "We need to authenticate your payment method with your bank.": [
-        "Necesitamos autenticar tu método de pago con tu banco."
+        "Necesitamos autenticar el método de pago con tu banco."
       ],
       "We need to authenticate your payment with your bank.": [
-        "Necesitamos autenticar tu pago con tu banco."
+        "Necesitamos autenticar el pago con tu banco."
       ],
       "We recommend using your recovery phrase instead.": [
-        "Recomendamos usar tu frase de recuperación en su lugar."
+        "Recomendamos utilizar tu frase de recuperación en su lugar."
       ],
       "We use 3-D Secure to protect your payments.": [
         "Se utiliza 3-D Secure para proteger tus pagos."
@@ -2828,7 +2834,7 @@
         "¿Por qué?"
       ],
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME_TWO } services": [
-        "Con una dirección ${ BRAND_NAME } cifrada, puedes usar todos los servicios de ${ BRAND_NAME_TWO }."
+        "Con una dirección ${ BRAND_NAME } cifrada, puedes utilizar todos los servicios de ${ BRAND_NAME_TWO }."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "¿Te gustaría recibir un nuevo código de verificación o utilizar un método de verificación alternativo?"
@@ -2901,7 +2907,7 @@
         "Perderás el acceso a los servidores y funciones de ${ vpnPlanNameShort } en esta fecha."
       ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
-        "Necesitarás una dirección ${ BRAND_NAME } para usar ${ MAIL_APP_NAME } y ${ CALENDAR_APP_NAME }"
+        "Necesitarás una dirección ${ BRAND_NAME } para utilizar ${ MAIL_APP_NAME } y ${ CALENDAR_APP_NAME }"
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Pronto serás redirigido a PayPal para verificar tu pago."
@@ -2913,7 +2919,7 @@
         "Tu cuenta ${ BRAND_NAME } está actualmente suspendida. Transcurridos 28 días, los correos ya no serán entregados en tu bandeja de entrada, tus enlaces compartidos en tu almacenamiento serán bloqueados y no podrás cargar nuevos archivos. Para restablecer el servicio normal, tienes que pagar las facturas pendientes."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "Tu cuenta ${ BRAND_NAME } está suspendida actualmente. Los correos ya no serán entregados en tu bandeja de entrada, tus enlaces compartidos en tu almacenamiento están bloqueados y no puedes cargar nuevos archivos. Para continuar usando tu cuenta, tienes que pagar las facturas pendientes."
+        "Tu cuenta ${ BRAND_NAME } está suspendida actualmente. Los correos ya no serán entregados en tu bandeja de entrada, tus enlaces compartidos en tu almacenamiento están bloqueados y no puedes cargar nuevos archivos. Para continuar utilizando tu cuenta, tienes que pagar las facturas pendientes."
       ],
       "Your ${ BRAND_NAME } password": [
         "Tu contraseña de ${ BRAND_NAME }"
@@ -3367,6 +3373,9 @@
       "${ BRAND_NAME } for Business newsletter": [
         "Boletín comercial de ${ BRAND_NAME }"
       ],
+      "${ BRAND_NAME } important announcements": [
+        "Comunicados importantes de ${ BRAND_NAME }"
+      ],
       "${ BRAND_NAME } newsletter": [
         "Boletín de ${ BRAND_NAME }"
       ],
@@ -3460,6 +3469,9 @@
       "View guide": [
         "Ver guía"
       ],
+      "visit our blog": [
+        "visitar nuestro blog"
+      ],
       "What is the difference between UDP and TCP protocols?": [
         "¿Cuál es la diferencia entre los protocolos UDP y TCP?"
       ],
@@ -3478,7 +3490,7 @@
         "Mejorar tu suscripción"
       ],
       "Upgrade to unlock chat support and other premium features, or use our free support form to report your issue.": [
-        "Mejora tu plan para desbloquear el soporte por chat y otras funciones premium o usa nuestro formulario de soporte gratuito para notificar tu problema."
+        "Mejora tu plan para desbloquear el soporte por chat y otras funciones premium o utiliza nuestro formulario de soporte gratuito para notificar tu problema."
       ]
     },
     "Message": {
@@ -3974,7 +3986,7 @@
         "Si no lo haces, tendrás un acceso limitado a tu cuenta y eventualmente se desactivará."
       ],
       "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Para seguir usando ${ MAIL_APP_NAME } con las funciones prémium, suscríbete y elige el método de pago."
+        "Para seguir utilizando ${ MAIL_APP_NAME } con las funciones prémium, suscríbete y elige el método de pago."
       ],
       "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
         "Pásate al plan para empresas y disfruta de todos los servicios prémium de ${ BRAND_NAME }."
@@ -4097,7 +4109,7 @@
         "Crea varias direcciones de correo electrónico para tus identidades en línea, como \"JuanCompras@${ domain }\" para las cuentas destinadas a compras o \"JuanNoticias@${ domain }\", para las suscripciones a medios de comunicación."
       ],
       "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
-        "Crea ${ n } calendario o añade calendarios de amigos, familiares, compañeros y organizaciones.",
+        "Crea hasta ${ n } calendario o añade calendarios de amigos, familiares, compañeros y organizaciones.",
         "Crea hasta ${ n } calendarios o añade calendarios de amigos, familiares, compañeros y organizaciones."
       ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
@@ -4122,7 +4134,7 @@
         "Impón el cierre de sesión cuando se sospeche de que las credenciales del usuario están en peligro."
       ],
       "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
-        "Solo se puede usar IMAP con aplicaciones de escritorio (Outlook, Apple Mail o Thunderbird) mediante ${ MAIL_APP_NAME } Bridge. De momento, no existe compatibilidad con integraciones IMAP en la nube."
+        "Solo se puede utilizar IMAP con aplicaciones de escritorio (Outlook, Apple Mail o Thunderbird) mediante ${ MAIL_APP_NAME } Bridge. De momento, no existe compatibilidad con integraciones IMAP en la nube."
       ],
       "Keep your plans private to you and your family with an encrypted calendar": [
         "Mantén privados tus planes y los de tu familia con un calendario cifrado."
@@ -4844,10 +4856,10 @@
         "Suscripciones"
       ],
       "Your plan was purchased using an Android app. So to make changes to your plan or update your payment details, you’ll need to go to the Google Play Store.": [
-        "Has comprado tu plan usando una app de Android. Para realizar cambios a tu plan o actualizar tus datos de pago necesitarás conectarte a Google Play Store."
+        "Has comprado tu plan utilizando una app de Android. Para realizar cambios a tu plan o actualizar tus datos de pago necesitarás conectarte a Google Play Store."
       ],
       "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
-        "Has comprado tu plan usando una app de iOS. Para realizar cambios a tu plan o actualizar tus datos de pago necesitarás conectarte a la App Store de Apple."
+        "Has comprado tu plan utilizando una app de iOS. Para realizar cambios a tu plan o actualizar tus datos de pago necesitarás conectarte a la App Store de Apple."
       ]
     },
     "Subscription price": {
@@ -4872,13 +4884,13 @@
         "Habilitar el soporte de pago automático"
       ],
       "Keep auto-pay": [
-        "Mantener el pago automático"
+        "Mantener pago automático"
       ],
       "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. Furthermore, if you forget to make a manual payment and auto-pay is disabled for all payment methods, we may auto-downgrade your account which will lead to the loss of many features.": [
         "Nuestro sistema ya no te cobrará automáticamente con este método de pago, pero tu suscripción aún se renovará al final del ciclo de facturación. Si deseas pasar a una versión con menos funciones o cambiar tu suscripción, debes hacerlo ti mismo antes del final del periodo de facturación. Además, si olvidas realizar un pago manual y el pago automático está deshabilitado para todos los métodos de pago, es posible que pasemos a una versión con menos funciones automáticamente para tu cuenta, lo que provocará la pérdida de muchas funciones."
       ],
       "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
-        "Nuestro sistema ya no te cobrará automáticamente con este método de pago, pero tu suscripción aún se renovará al final del ciclo de facturación. Si deseas pasar a una versión con menos funciones o cambiar tu suscripción, debes hacerlo tú mismo antes de finalizar el periodo de facturación. No podemos pasarte a una version con menos funciones automáticamente porque si superas la cuota de almacenamiento del plan gratuito o si usas otras funciones de pago, no podemos eliminar automáticamente archivos, correos electrónicos u otros datos por ti. Si deshabilitas el pago automático, recuerda pagar tu próxima factura de suscripción antes de la fecha de vencimiento para evitar la suspensión de la cuenta."
+        "Nuestro sistema ya no te cobrará automáticamente con este método de pago, pero tu suscripción aún se renovará al final del ciclo de facturación. Si deseas pasar a una versión con menos funciones o cambiar tu suscripción, debes hacerlo tú mismo antes de finalizar el periodo de facturación. No podemos pasarte a una version con menos funciones automáticamente porque si superas la cuota de almacenamiento del plan gratuito o si utilizas otras funciones de pago, no podemos eliminar automáticamente archivos, correos electrónicos u otros datos por ti. Si deshabilitas el pago automático, recuerda pagar tu próxima factura de suscripción antes de la fecha de vencimiento para evitar la suspensión de la cuenta."
       ]
     },
     "Subscription saving": {
@@ -4886,7 +4898,7 @@
         "Ahorra"
       ],
       "Save ${ discountPercentage }%": [
-        "Economiza ${ discountPercentage }%"
+        "Ahorra un ${ discountPercentage }%"
       ]
     },
     "Subscription status": {
@@ -4894,7 +4906,7 @@
         "Activa"
       ],
       "Expiring": [
-        "Expirando"
+        "Expira"
       ],
       "Upcoming": [
         "Próximo"
@@ -4941,7 +4953,7 @@
         "Factura pagada"
       ],
       "Locale updated": [
-        "El idioma ha sido ctualizado."
+        "Idioma actualizado"
       ],
       "Password updated": [
         "Contraseña actualizada"
@@ -5166,10 +5178,10 @@
         "Cancelar ${ MAIL_SHORT_APP_NAME } subscripción"
       ],
       "Cancel subscription": [
-        "Cancelar tu suscripción"
+        "Cancelar suscripción"
       ],
       "Cancel subscription?": [
-        "¿Cancelar la suscripción?"
+        "¿Cancelar suscripción?"
       ],
       "Card verification": [
         "Verificación de la tarjeta"

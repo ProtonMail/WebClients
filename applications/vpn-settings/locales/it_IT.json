@@ -2023,6 +2023,12 @@
       "(1-2 emails per month)": [
         "(1-2 email al mese)"
       ],
+      "(2-4 per year)": [
+        "(2-4 all'anno)"
+      ],
+      "(4-6 emails per year)": [
+        "(4-6 email all'anno)"
+      ],
       "(during your first month)": [
         "(durante il tuo primo mese)"
       ]
@@ -2090,6 +2096,9 @@
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } ha bisogno del tuo permesso per ${ enableDesktopNotifications }."
+      ],
+      "${ autoRenewal } your subscription will renew automatically on ${ renewalTime }.": [
+        "${ autoRenewal } il tuo abbonamento si rinnoverà automaticamente il ${ renewalTime }."
       ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Se continui, perderai l'accesso a tutti i dati crittografati correnti nel tuo account."
@@ -2180,6 +2189,9 @@
       ],
       "American Express SafeKey logo": [
         "Logo American Express SafeKey"
+      ],
+      "Amount above maximum (${ amount }).": [
+        "Importo superiore al massimo (${ amount })."
       ],
       "Amount below minimum (${ amount }).": [
         "Importo inferiore al minimo (${ amount })."
@@ -2602,8 +2614,11 @@
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
         "Lo spazio di archiviazione è condiviso tra ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, e ${ DRIVE_APP_NAME }."
       ],
+      "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
+        "Invia un deposito utilizzando il seguente indirizzo, oppure scansionando il codice QR fornito. Il tuo deposito verrà correttamente accreditato una volta confermato."
+      ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
-        "Termine dell'abbonamento: riattivalo entro ${ byDate } per mantenere i vantaggi del tuo piano${ planName }${ reactivateLink }"
+        "Termine dell'abbonamento: riattivalo entro ${ byDate } per mantenere i vantaggi del tuo piano ${ planName }. ${ reactivateLink }"
       ],
       "Support for 1 custom email domain": [
         "Assistenza per 1 dominio email personalizzato"
@@ -2641,6 +2656,9 @@
       "This can take a few seconds or a few minutes depending on your device": [
         "Questo può richiedere alcuni secondi o alcuni minuti a seconda del dispositivo"
       ],
+      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
+        "Questo annullerà il tuo attuale abbonamento e perderai tutti i benefici accumulati finora."
+      ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
         "Questo annullerà il tuo attuale abbonamento a pagamento e perderai i benefici di fedeltà che hai accumulato. Il saldo residuo dell'abbonamento verrà restituito come credito dell'account."
       ],
@@ -2662,11 +2680,17 @@
       "To ${ planName }": [
         "Su ${ planName }"
       ],
+      "To complete your payment, please send ${ btcAmountBold } to the address below.": [
+        "Per completare il pagamento, per favore invia ${ btcAmountBold } all'indirizzo sottostante."
+      ],
       "to continue to ${ toAppName }": [
         "continua su ${ toAppName }"
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Per contrastare spam e abusi, si prega di verificare di essere umano."
+      ],
+      "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
+        "Per rimanere informato degli ultimi aggiornamenti dei prodotti ${ BRAND_NAME }, puoi iscriverti alle nostre liste email e ${ blogLink } di tanto in tanto."
       ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "Per procedere, seleziona un metodo di recupero dell'account in modo da poter verificare la richiesta."
@@ -2878,6 +2902,9 @@
       ],
       "You will be redirected to the VPN download page": [
         "Sarai reindirizzato alla pagina per scaricare la VPN"
+      ],
+      "You will lose access to ${ vpnPlanNameShort } servers and features on this date.": [
+        "Perderai l'accesso ai server e le funzionalità del piano ${ vpnPlanNameShort } a partire da questa data."
       ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Avrai bisogno di un indirizzo ${ BRAND_NAME } per utilizzare ${ MAIL_APP_NAME } e ${ CALENDAR_APP_NAME }"
@@ -3346,6 +3373,9 @@
       "${ BRAND_NAME } for Business newsletter": [
         "Newsletter ${ BRAND_NAME } Business"
       ],
+      "${ BRAND_NAME } important announcements": [
+        "${ BRAND_NAME } annunci importanti"
+      ],
       "${ BRAND_NAME } newsletter": [
         "${ BRAND_NAME } newsletter"
       ],
@@ -3438,6 +3468,9 @@
       ],
       "View guide": [
         "Visualizza guida"
+      ],
+      "visit our blog": [
+        "visita il nostro blog"
       ],
       "What is the difference between UDP and TCP protocols?": [
         "Quale è la differenza tra i protocolli UDP e TCP?"
@@ -4042,6 +4075,18 @@
       ]
     },
     "new_plans: tooltip": {
+      "${ CALENDAR_APP_NAME }: end-to-end encrypted calendar": [
+        "${ CALENDAR_APP_NAME }: calendario crittografato end-to-end"
+      ],
+      "${ DRIVE_APP_NAME }: end-to-end encrypted cloud storage": [
+        "${ DRIVE_APP_NAME }: archiviazione cloud crittografata end-to-end"
+      ],
+      "${ MAIL_APP_NAME }: end-to-end encrypted email": [
+        "${ MAIL_APP_NAME }: email crittografate end-to-end"
+      ],
+      "${ VPN_APP_NAME }: unblock content, browse privately": [
+        "${ VPN_APP_NAME }: sblocca i contenuti, naviga in privato"
+      ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
         "Accedi ai contenuti dei servizi di streaming, tra cui Netflix, Disney+ e Prime Video, da qualsiasi luogo"
       ],
@@ -4066,6 +4111,9 @@
       "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
         "Crea fino a ${ n } calendario o aggiungi calendari di amici, familiari, colleghi e organizzazioni",
         "Crea fino a ${ n } calendari o aggiungi calendari di amici, familiari, colleghi e organizzazioni"
+      ],
+      "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
+        "Crea fino a ${ n } indirizzi email/alias che puoi assegnare ai membri della famiglia. Utilizzali per le identità online, ad esempio JohnShopper@${ domain } per gli account di acquisto."
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Difenditi dalle minacce alla privacy VPN inviando il traffico Internet attraverso più server"
@@ -5499,6 +5547,11 @@
       ],
       "The selected theme will be active when your system is set to \"light mode\"": [
         "Il tema selezionato sarà attivo quando il tuo sistema è impostato su \"modalità chiara\"."
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: end-to-end encrypted password manager": [
+        "${ PASS_APP_NAME }: gestore di password crittografato end-to-end"
       ]
     },
     "Tor out of date": {

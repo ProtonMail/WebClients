@@ -2124,7 +2124,7 @@
         "Alguns dels vostres noms de carpeta no estan disponibles. Personalitzeu la importació per tal d'editar-ne els noms."
       ],
       "Some of your folder names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
-        "Els noms d'algunes de les carpetes superen el límit màxim de caràcters de ${ MAIL_APP_NAME }. Personalitzeu la importació per a editar-ne els noms."
+        "Els noms d'algunes de les carpetes superen el límit màxim de caràcters de ${ MAIL_APP_NAME }. Personalitzeu la importació per a editar-los."
       ],
       "Some of your label names are reserved. Please customize the import to edit these names.": [
         "Alguns dels vostres noms d'etiqueta estan reservats. Personalitzeu la importació per a editar-los."
@@ -2214,7 +2214,7 @@
         "No podeu enviar fitxers vCard de més de 10 contactes"
       ],
       "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
-        "Heu assolit el nombre màxim de calendaris. No s'han pogut importar alguns calendaris."
+        "Heu assolit el nombre màxim de calendaris. No se n'han pogut importar alguns."
       ],
       "You must set a name": [
         "Heu d'establir un nom"
@@ -2518,13 +2518,13 @@
     },
     "familyOffer_2023:Deal details": {
       "Premium Drive": [
-        "Versió prèmium de Drive"
+        "Drive prèmium"
       ],
       "Premium Mail and Calendar": [
-        "Versió prèmium de Mail i Calendar"
+        "Correu i Calendari prèmium"
       ],
       "Premium VPN": [
-        "Versió prèmium de VPN"
+        "VPN prèmium"
       ],
       "Up to 6 users": [
         "Fins a 6 usuaris"
@@ -2580,7 +2580,7 @@
         "Us heu unit al pla familiar"
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
-        "Esteu convidats a enllaçar el vostre compte de ${ BRAND_NAME } a aquest pla de grup i gaudir junts de totes les característiques prèmium de ${ BRAND_NAME_TWO }."
+        "Esteu convidat a enllaçar el vostre compte de ${ BRAND_NAME } a aquest pla de grup i gaudir junts de totes les característiques prèmium de ${ BRAND_NAME_TWO }."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "El vostre compte té més adreces de correu electrònic de les que teniu disponibles en aquest pla. ${ addressSettingsLink }"
@@ -2832,10 +2832,10 @@
         "${ totalImported }/${ totalToImport } contactes xifrats i afegits a la vostra llista de contactes"
       ],
       "An error occurred while encrypting and adding your contact. No contact could be imported.": [
-        "S'ha produït un error en xifrar i afegir els vostres contactes. No s'ha pogut importar cap contacte."
+        "S'ha produït un error en xifrar i afegir el vostre contacte. No s'ha pogut importar cap contacte."
       ],
       "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
-        "S'ha produït un error en xifrar i afegir els vostres contactes. ${ totalImported } de ${ totalToImport } contactes importats."
+        "S'ha produït un error en xifrar i afegir els vostres contactes. S'han importat ${ totalImported } contactes de ${ totalToImport }."
       ],
       "An error occurred while encrypting and adding your contacts. No contact could be imported.": [
         "S'ha produït un error en xifrar i afegir els vostres contactes. No s'ha pogut importar cap contacte."
@@ -3595,7 +3595,7 @@
         "Més informació"
       ],
       "Link copied to clipboard": [
-        "S'ha copiat l'enllaç al porta-retalls."
+        "S'ha copiat l'enllaç al porta-retalls"
       ],
       "Link owner has the password": [
         "El propietari de l'enllaç té la contrasenya"
@@ -3900,7 +3900,7 @@
         "Aquest enllaç porta a un lloc web que us podria estar intentant robar la informació, com ara contrasenyes i detalls de targetes de crèdit."
       ],
       "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Aquest enllaç podria ser un atac homògraf i no es pot obrir amb el navegador Edge. Si esteu segurs que aquest enllaç és legítim, feu servir un navegador diferent per a obrir-lo."
+        "Aquest enllaç podria ser un atac homògraf i no es pot obrir amb el navegador Edge. Si esteu segur que aquest enllaç és legítim, feu servir un navegador diferent per a obrir-lo."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Aquest enllaç pot ser un atac de homògraf. Si esteu segurs que l’enllaç és el que vols, o no l'obriu."
@@ -3943,13 +3943,13 @@
         "Per lluitar contra el correu brossa i l'abús, verifiqueu que sou humà."
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
-        "Per importar esdeveniments, creeu abans un calendari en ${ CALENDAR_APP_NAME }. Aquí és on apareixeran tots els esdeveniments després de la importació."
+        "Per a importar esdeveniments, creeu abans un calendari en ${ CALENDAR_APP_NAME }. Aquí és on apareixeran tots els esdeveniments després de la importació."
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "Per tornar a signar els vostres contactes necessitem comprovar cada contacte comparant-lo amb la llista de claus xifrades disponibles al vostre compte. Si no es troben coincidències, el vostre contacte es tornarà a signar amb la clau de xifratge primària."
       ],
       "To recover your data, you need to re-activate the account key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
-        "Per recuperar les dades, heu de tornar a activar la clau del compte utilitzada en el moment que es van crear les dades. Això requereix que recordeu la contrasenya utilitzada quan es va generar la clau."
+        "Per a recuperar les dades, heu de tornar a activar la clau del compte utilitzada en el moment que es van crear les dades. Això requereix que recordeu la contrasenya utilitzada quan es va generar la clau."
       ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Per utilitzar la verificació d'adreça, heu d'habilitar les claus de confiança i confiar en una o més de les claus públiques disponibles, incloent la clau primària per a aquesta adreça. Això evita que les claus de xifratge es falsifiquin."
@@ -4629,7 +4629,7 @@
         "Desbloqueja més tard"
       ],
       "Upload picture": [
-        "Carrega la imatge"
+        "Carrega una imatge"
       ],
       "Upload your first file": [
         "Carrega el teu primer fitxer"
@@ -5687,13 +5687,13 @@
     },
     "summer2023: Deal details": {
       "Premium Drive": [
-        "Versió prèmium de Drive"
+        "Drive prèmium"
       ],
       "Premium Mail and Calendar": [
-        "Versió prèmium de Mail i Calendar"
+        "Correu i Calendari prèmium"
       ],
       "Premium Password Manager": [
-        "Gestor de Contrasenyes Prèmium"
+        "Gestor de Contrasenyes prèmium"
       ]
     },
     "summer2023: Describe Proton Pass": {

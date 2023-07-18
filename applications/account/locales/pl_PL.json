@@ -1050,11 +1050,17 @@
       "Disable encryption": [
         "Wyłącz szyfrowanie"
       ],
+      "Disable expect signed": [
+        "Wyłącz podpisywanie"
+      ],
       "Enable": [
         "Włącz"
       ],
       "Enable encryption": [
         "Włącz szyfrowanie"
+      ],
+      "Enable expect signed": [
+        "Włącz podpisywanie"
       ],
       "Generate missing keys": [
         "Generuj brakujące klucze"
@@ -2885,7 +2891,7 @@
         "Dziękujemy za potwierdzenie"
       ],
       "We've noted that this account doesn't belong to you. We'll investigate and act accordingly.": [
-        "Zauważyliśmy, że to konto nie należy do Ciebie. Zbadamy sprawę i podejmiemy odpowiednie działania."
+        "Odnotowaliśmy, że to konto nie należy do Ciebie. Zbadamy sprawę i podejmiemy odpowiednie działania."
       ],
       "You can safely close this tab.": [
         "Możesz zamknąć tę kartę."
@@ -5151,6 +5157,9 @@
         "${ numGroups } grup kontaktów",
         "${ numGroups } grupy kontaktów"
       ],
+      "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
+        "${ PROTON_SENTINEL_NAME } to zaawansowany program ochrony konta wspierany przez systemy sztucznej inteligencji i specjalistów pracujących całą dobę, w celu łagodzenia ataków i zagrożeń bezpieczeństwa."
+      ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } znaleziony folder",
         "${ providerFoldersNumLocalized } znalezione foldery",
@@ -6276,6 +6285,9 @@
       "Protected by Swiss privacy laws": [
         "Chroniony przez szwajcarskie prawa ochrony danych osobowych"
       ],
+      "Public figures, journalists, executives, and others who may be the target of cyber attacks are highly encouraged to enable ${ PROTON_SENTINEL_NAME }.": [
+        "Osoby publiczne, dziennikarze, kierownictwo i inne osoby, które mogą być celem cyberataków powinni włączyć ochronę ${ PROTON_SENTINEL_NAME }."
+      ],
       "Public link invite": [
         "Publiczny link zaproszenia"
       ],
@@ -6407,6 +6419,12 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Dzięki temu, że od dawna jesteś użytkownikiem, Twoje konto posiada dodatkowe funkcje."
+      ],
+      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
+        "Poświadczenia SMTP pozwalają innym usługom lub urządzeniom na wysyłanie wiadomości z Twojej niestandardowej domenie w ${ MAIL_APP_NAME }. Aby uzyskać dostęp do tej funkcji, ${ createTicket } i opisz swoje potrzeby. Napisz jakiej niestandardowej domeny chcesz użyć i oszacuj zapotrzebowanie wiadomości."
+      ],
+      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To use this feature, start by generating a new token.": [
+        "Poświadczenia SMTP pozwalają innym usługom lub urządzeniom na wysyłanie wiadomości z Twojej niestandardowej domenie w ${ MAIL_APP_NAME }. Wygeneruj nowy token, aby rozpocząć."
       ],
       "Some keys successfully reactivated": [
         "Niektóre klucze zostały reaktywowane"
@@ -6647,6 +6665,9 @@
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Aby zaimportować wydarzenia, utwórz kalendarz w ${ CALENDAR_APP_NAME }. W utworzonym kalendarzu pojawią się zaimportowane wydarzenia."
+      ],
+      "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
+        "Aby na bieżąco śledzić rozwój usług ${ BRAND_NAME }, możesz zapisać się do naszych list mailingowych, a także okazjonalnie ${ blogLink }."
       ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "Aby kontynuować, wybierz metodę odzyskiwania konta, abyśmy mogli zweryfikować żądanie."
@@ -8455,6 +8476,9 @@
       "${ BRAND_NAME } for Business newsletter": [
         "Newsletter ${ BRAND_NAME } dla biznesu"
       ],
+      "${ BRAND_NAME } important announcements": [
+        "Ważne ogłoszenia ${ BRAND_NAME }"
+      ],
       "${ BRAND_NAME } newsletter": [
         "Newsletter ${ BRAND_NAME }"
       ],
@@ -8574,6 +8598,9 @@
       "Common sign up issues": [
         "Typowe problemy z rejestracją"
       ],
+      "create a ticket": [
+        "utwórz zgłoszenie"
+      ],
       "Create account": [
         "Utwórz konto"
       ],
@@ -8648,6 +8675,9 @@
       ],
       "View guide": [
         "Pokaż przewodnik"
+      ],
+      "visit our blog": [
+        "odwiedzać naszego bloga"
       ],
       "What is the difference between UDP and TCP protocols?": [
         "Jaka jest różnica między protokołem UDP i TCP?"
@@ -9040,7 +9070,7 @@
         "Przejdź do przeglądu"
       ],
       "Continue with Free": [
-        "Kontynuuj za darmo"
+        "Kontynuuj z planem Free"
       ],
       "Delete account": [
         "Usuń konto"
@@ -10393,7 +10423,7 @@
         "${ PASS_APP_NAME } bezpiecznie przechowuje hasła i tożsamości za pomocą szyfrowania end-to-end. Aby dodać funkcje premium ${ PASS_APP_NAME_2 } do obecnej subskrypcji, ulepsz plan do wersji ${ upsellPlanName }."
       ],
       "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption. Your current plan already gives you access to premium ${ PASS_APP_NAME_2 } features — no need to purchase again.": [
-        "${ PASS_APP_NAME } bezpiecznie przechowuje hasła i tożsamości za pomocą szyfrowania end-to-end. Twój plan zapewnia dostęp do funkcji premium ${ PASS_APP_NAME_2 }. Nie musisz już nic robić."
+        "${ PASS_APP_NAME } bezpiecznie przechowuje hasła i tożsamości za pomocą szyfrowania end-to-end. Twój plan zapewnia dostęp do funkcji premium ${ PASS_APP_NAME_2 }. Nie musisz nic robić."
       ],
       "+ ${ relativePrice } per month": [
         "+ ${ relativePrice } miesięcznie"
@@ -10495,7 +10525,7 @@
         "Chroniony przez szwajcarskie prawa ochrony danych osobowych"
       ],
       "Save your recovery kit to continue": [
-        "Aby kontynuować, zapisz zestaw odzyskiwania"
+        "Zapisz zestaw odzyskiwania, aby kontynuować"
       ],
       "Signing in to ${ PASS_APP_NAME }": [
         "Logowanie do ${ PASS_APP_NAME }"
@@ -10525,7 +10555,7 @@
         "Działa na wszystkich urządzeniach"
       ],
       "You already have access to premium ${ appName } features — no need to purchase again.": [
-        "Masz już dostęp do funkcji premium ${ appName }. Nie musisz już nic robić."
+        "Masz już dostęp do funkcji premium ${ appName }. Nie musisz nic robić."
       ],
       "You currently have": [
         "Obecnie masz"
@@ -11268,7 +11298,7 @@
         "Uzyskaj dostęp z dowolnego miejsca do treści w usługach streamingowych, takich jak Netflix, Disney+ i Prime Video."
       ],
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
-        "Wszystkie nasze usługi premium z najwyższymi limitami: 100 adresów e-mail, obsługa 10 niestandardowych domen, nieograniczona liczba aliasów hide-my-email, udostępnianie kalendarza, szyfrowane przechowywanie oraz udostępnianie plików i wiele więcej."
+        "Wszystkie nasze usługi premium z najwyższymi limitami: 100 adresów e-mail, obsługa 10 niestandardowych domen, nieograniczona liczba aliasów hide-my-email, udostępnianie kalendarza, szyfrowane przechowywanie, udostępnianie plików i wiele więcej."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Zawiera obsługę 1 niestandardowej domeny, 10 adresów e-mail, 10 aliasów hide-my-email, udostępnianie kalendarza i wiele więcej."
@@ -12701,6 +12731,9 @@
       ],
       "Signed in to member account": [
         "Zalogowano na konto użytkownika"
+      ],
+      "SMTP Submission": [
+        "Poświadczenia SMTP"
       ],
       "Sort folders alphabetically": [
         "Sortuj foldery alfabetycznie"

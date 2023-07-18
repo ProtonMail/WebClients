@@ -1,0 +1,294 @@
+{
+  "headers": {
+    "plural-forms": "nplurals=2; plural=(n != 1);",
+    "language": "nl_NL"
+  },
+  "contexts": {
+    "Action": {
+      "Add": [
+        "Voeg toe"
+      ],
+      "Back": [
+        "Terug"
+      ],
+      "Can't find your password manager? Please let us know!": [
+        "Ziet u uw wachtwoordbeheerder niet? Laat het ons weten!"
+      ],
+      "Cancel": [
+        "Annuleren"
+      ],
+      "Change": [
+        "Wijzigen"
+      ],
+      "Choose a file or drag it here": [
+        "Kies een bestand of sleep het hierheen"
+      ],
+      "Clear": [
+        "Wissen"
+      ],
+      "Clear search": [
+        "Zoekveld leegmaken"
+      ],
+      "Close": [
+        "Sluiten"
+      ],
+      "Close navigation": [
+        "Navigatie sluiten"
+      ],
+      "Confirm": [
+        "Bevestigen"
+      ],
+      "Create": [
+        "Aanmaken"
+      ],
+      "Create an account": [
+        "Een account aanmaken"
+      ],
+      "Delete": [
+        "Verwijderen"
+      ],
+      "Delete all": [
+        "Alles verwijderen"
+      ],
+      "Delete permanently": [
+        "Permanent verwijderen"
+      ],
+      "Discard": [
+        "Verwijderen"
+      ],
+      "Done": [
+        "Klaar"
+      ],
+      "Edit": [
+        "Bewerken"
+      ],
+      "Export": [
+        "Exporteren"
+      ],
+      "Hide": [
+        "Verbergen"
+      ],
+      "How do I export my data from ${ PROVIDER_INFO_MAP[form.values.provider].title }?": [
+        "\nHoe exporteer ik mijn gegevens van ${ PROVIDER_INFO_MAP[form.values.provider].title }?"
+      ],
+      "Import": [
+        "Importeren"
+      ],
+      "Learn more": [
+        "Meer informatie"
+      ],
+      "More options": [
+        "Meer opties"
+      ],
+      "Move to trash": [
+        "Naar prullenbak verplaatsen"
+      ],
+      "Open navigation": [
+        "Navigatie openen"
+      ],
+      "Refresh the page": [
+        "Pagina vernieuwen"
+      ],
+      "Request a feature": [
+        "Vraag een functie aan"
+      ],
+      "Retry": [
+        "Opnieuw proberen"
+      ],
+      "Save": [
+        "Opslaan"
+      ],
+      "Show": [
+        "Tonen"
+      ],
+      "Sign in": [
+        "Inloggen"
+      ],
+      "Sign out": [
+        "Uitloggen"
+      ],
+      "Submit": [
+        "Versturen"
+      ],
+      "Try again": [
+        "Opnieuw proberen"
+      ],
+      "Update": [
+        "Updaten"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ]
+    },
+    "Collapsible tooltip": {
+      "Collapse": [
+        "Inklappen"
+      ],
+      "Expand": [
+        "Uitvouwen"
+      ]
+    },
+    "Error": {
+      "Invalid password manager": [
+        "Ongeldige wachtwoordbeheerder"
+      ],
+      "Request timed out": [
+        "Reactietijd verzoek overschreden"
+      ],
+      "Unknown error": [
+        "Onbekende fout"
+      ]
+    },
+    "Error message": {
+      "Please refresh the page or try again later.": [
+        "Ververs de pagina of probeer het later opnieuw."
+      ],
+      "Something went wrong": [
+        "Er is iets fout gegaan"
+      ]
+    },
+    "file size format": {
+      "byte": [
+        "byte",
+        "bytes"
+      ],
+      "GB": [
+        "GB"
+      ],
+      "KB": [
+        "KB"
+      ],
+      "MB": [
+        "MB"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "Byte",
+        "Bytes"
+      ],
+      "Gigabyte": [
+        "Gigabyte",
+        "Gigabytes"
+      ],
+      "Kilobyte": [
+        "Kilobyte",
+        "Kilobytes"
+      ],
+      "Megabyte": [
+        "Megabyt",
+        "Megabytes"
+      ]
+    },
+    "Info": {
+      "${ PASS_APP_NAME } will only import logins and notes. Credit cards, passports, attached files, etc. are not supported at the moment.": [
+        "${ PASS_APP_NAME } zal enkel logins en notities importeren. Kredietkaarten, paspoorten, bijlagen, etc. worden niet ondersteund op dit moment."
+      ],
+      "Copied to clipboard": [
+        "Gekopieerd naar het klembord"
+      ],
+      "Drop file here to upload": [
+        "Sleep bestand hier om te uploaden"
+      ],
+      "Drop to import": [
+        "Neerzetten om te importeren"
+      ],
+      "Enable ${ PASS_APP_NAME } by connecting your ${ BRAND_NAME } account": [
+        "Schakel ${ PASS_APP_NAME } in door uw ${ BRAND_NAME }-account te verbinden"
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Voer verificatiecode in. Cijfer ${ digit }."
+      ],
+      "In order to migrate your data to ${ PASS_APP_NAME } from another password manager, export your passwords and import them using the form below. Once all your items have been imported, delete the previously exported file.": [
+        "Om uw data van een andere wachtwoordbeheerder naar ${ PASS_APP_NAME } te migreren, exporteer uw wachtwoorden en gebruik onderstaand formulier om ze te importeren. Eens geïmporteerd, verwijder dan het eerder geëxporteerd bestand."
+      ],
+      "Internet connection lost": [
+        "Internetverbinding verbroken"
+      ],
+      "item": [
+        "item",
+        "items"
+      ],
+      "Loading": [
+        "Laden"
+      ],
+      "Loading...": [
+        "Laden..."
+      ],
+      "Open the Extensions menu": [
+        "Open het Extensie-menu"
+      ],
+      "Save login": [
+        "Bewaar login"
+      ],
+      "Servers are unreachable. Please try again in a few minutes": [
+        "De servers zijn onbereikbaar, probeer het over enkele minuten opnieuw"
+      ],
+      "Session timed out": [
+        "Sessie verlopen"
+      ],
+      "Update login": [
+        "Update login"
+      ],
+      "Your files will be encrypted and then saved": [
+        "Uw bestanden worden versleuteld en vervolgens opgeslagen"
+      ]
+    },
+    "Label": {
+      "Card number": [
+        "Kaartnummer"
+      ],
+      "Created": [
+        "Aangemaakt"
+      ],
+      "Hide password": [
+        "Wachtwoord verbergen"
+      ],
+      "Modified": [
+        "Gewijzigd"
+      ],
+      "Name": [
+        "Naam"
+      ],
+      "Password": [
+        "Wachtwoord"
+      ],
+      "Reveal password": [
+        "Wachtwoord tonen"
+      ],
+      "Select your password manager": [
+        "Selecteer uw wachtwoordbeheerder"
+      ],
+      "Settings": [
+        "Instellingen"
+      ],
+      "Text": [
+        "Tekst"
+      ],
+      "Type": [
+        "Soort"
+      ],
+      "Username": [
+        "Gebruikersnaam"
+      ]
+    },
+    "Placeholder": {
+      "Please describe the problem and include any error messages": [
+        "Beschrijf het probleem alstublieft en vermeld ook eventuele foutmeldingen"
+      ]
+    },
+    "Title": {
+      "Use my email": [
+        "Gebruik mijn e-mail"
+      ]
+    },
+    "Warning": {
+      "No password manager selected": [
+        "Geen wachtwoordbeheerder geselecteerd"
+      ],
+      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
+        "Rapporten zijn niet versleuteld met end-to-end-versleuteling, stuur geen gevoelige informatie."
+      ]
+    }
+  }
+}
