@@ -1,4 +1,4 @@
-import { RefObject, useMemo } from 'react';
+import { ReactElement, RefObject, useMemo } from 'react';
 
 import { c, msgid } from 'ttag';
 
@@ -10,14 +10,20 @@ import {
     Icon,
     IconRow,
     Info,
+    useContactModals,
     useMailSettings,
 } from '@proton/components';
 import CalendarSelectIcon from '@proton/components/components/calendarSelect/CalendarSelectIcon';
+import { useContactEmailsCache } from '@proton/components/containers/contacts/ContactEmailsProvider';
 import { useLinkHandler } from '@proton/components/hooks/useLinkHandler';
 import { getIsCalendarDisabled, getIsSubscribedCalendar } from '@proton/shared/lib/calendar/calendar';
 import { ICAL_ATTENDEE_ROLE, ICAL_ATTENDEE_STATUS } from '@proton/shared/lib/calendar/constants';
 import { restrictedCalendarSanitize } from '@proton/shared/lib/calendar/sanitize';
 import urlify from '@proton/shared/lib/calendar/urlify';
+import { APPS } from '@proton/shared/lib/constants';
+import { createContactPropertyUid } from '@proton/shared/lib/contacts/properties';
+import { postMessageFromIframe } from '@proton/shared/lib/drawer/helpers';
+import { DRAWER_EVENTS } from '@proton/shared/lib/drawer/interfaces';
 import { canonicalizeEmailByGuess, canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import { getInitials } from '@proton/shared/lib/helpers/string';
 import { EventModelReadView, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
@@ -32,12 +38,16 @@ import getAttendanceTooltip from './getAttendanceTooltip';
 
 type AttendeeViewModel = {
     title: string;
-    text: string;
-    icon: JSX.Element | null;
+    name: string;
+    icon: ReactElement | null;
     partstat: ICAL_ATTENDEE_STATUS;
     initials: string;
     tooltip: string;
     extraText?: string;
+    email: string;
+    isCurrentUser?: boolean;
+    /** If registered in contacts */
+    contactID?: string;
 };
 type GroupedAttendees = {
     [key: string]: AttendeeViewModel[];
@@ -50,19 +60,68 @@ interface Props {
     formatTime: (date: Date) => string;
     displayNameEmailMap: SimpleMap<DisplayNameEmail>;
     popoverEventContentRef: RefObject<HTMLDivElement>;
+    isDrawerApp: boolean;
 }
-const PopoverEventContent = ({ calendar, model, formatTime, displayNameEmailMap, popoverEventContentRef }: Props) => {
+const PopoverEventContent = ({
+    calendar,
+    model,
+    formatTime,
+    displayNameEmailMap,
+    popoverEventContentRef,
+    isDrawerApp,
+}: Props) => {
     const [mailSettings] = useMailSettings();
     const { Name: calendarName, Color } = calendar;
+    const { contactEmailsMap } = useContactEmailsCache();
+    const { modals: contactModals, onDetails, onEdit } = useContactModals();
+
+    const handleContactAdd = (email: string, name: string) => () => {
+        const payload = {
+            vCardContact: {
+                fn: [{ field: 'fn', value: name, uid: createContactPropertyUid() }],
+                email: [{ field: 'email', value: email, uid: createContactPropertyUid() }],
+            },
+        };
+
+        if (isDrawerApp) {
+            postMessageFromIframe(
+                {
+                    type: DRAWER_EVENTS.OPEN_CONTACT_MODAL,
+                    payload,
+                },
+                APPS.PROTONMAIL
+            );
+        } else {
+            onEdit(payload);
+        }
+    };
+    const handleContactDetails = (contactID: string) => () => {
+        if (isDrawerApp) {
+            postMessageFromIframe(
+                {
+                    type: DRAWER_EVENTS.OPEN_CONTACT_MODAL,
+                    payload: { contactID },
+                },
+                APPS.PROTONMAIL
+            );
+        } else {
+            onDetails(contactID);
+        }
+    };
 
     const isCalendarDisabled = getIsCalendarDisabled(calendar);
     const isSubscribedCalendar = getIsSubscribedCalendar(calendar);
     const { organizer, attendees } = model;
     const hasOrganizer = !!organizer;
     const numberOfParticipants = attendees.length;
-    const { name: organizerName, title: organizerTitle } = getOrganizerDisplayData(
+    const {
+        name: organizerName,
+        title: organizerTitle,
+        contactID: organizerContactID,
+    } = getOrganizerDisplayData(
         organizer,
         model.isOrganizer && !isSubscribedCalendar,
+        contactEmailsMap,
         displayNameEmailMap
     );
     const sanitizedLocation = useMemo(
@@ -107,27 +166,31 @@ const PopoverEventContent = ({ calendar, model, formatTime, displayNameEmailMap,
         .map((attendee) => {
             const attendeeEmail = attendee.email;
             const selfEmail = model.selfAddress?.Email;
-            const displayName =
-                displayNameEmailMap[canonicalizeEmailByGuess(attendeeEmail)]?.displayName ||
-                attendee.cn ||
-                attendeeEmail;
-            const isYou = !!(
+            const displayContact = displayNameEmailMap[canonicalizeEmailByGuess(attendeeEmail)];
+            const displayName = displayContact?.displayName || attendee.cn || attendeeEmail;
+            const isCurrentUser = !!(
                 selfEmail && canonicalizeInternalEmail(selfEmail) === canonicalizeInternalEmail(attendeeEmail)
             );
-            const name = isYou ? c('Participant name').t`You` : displayName;
-            const title = name === attendee.email || isYou ? attendeeEmail : `${name} <${attendeeEmail}>`;
+            const name = isCurrentUser ? c('Participant name').t`You` : displayName;
+            const title = name === attendee.email || isCurrentUser ? attendeeEmail : `${name} <${attendeeEmail}>`;
             const initials = getInitials(displayName);
-            const tooltip = getAttendanceTooltip({ partstat: attendee.partstat, name, isYou });
+            const tooltip = getAttendanceTooltip({ partstat: attendee.partstat, name, isYou: isCurrentUser });
             const extraText = attendee.role === ICAL_ATTENDEE_ROLE.OPTIONAL ? c('Attendee role').t`Optional` : '';
+            const contactEmail = displayContact?.displayEmail
+                ? contactEmailsMap[displayContact.displayEmail]
+                : undefined;
 
             return {
                 title,
-                text: name,
+                name,
                 icon: <AttendeeStatusIcon partstat={attendee.partstat} />,
                 partstat: attendee.partstat,
                 initials,
                 tooltip,
                 extraText,
+                email: attendeeEmail,
+                isCurrentUser,
+                contactID: contactEmail?.ContactID,
             };
         })
         .reduce<GroupedAttendees>(
@@ -150,25 +213,31 @@ const PopoverEventContent = ({ calendar, model, formatTime, displayNameEmailMap,
 
     const getAttendees = () => {
         return (
-            <>
+            <ul className="unstyled m-0">
                 {[
                     ...groupedAttendees[ACCEPTED],
                     ...groupedAttendees[TENTATIVE],
                     ...groupedAttendees[DECLINED],
                     ...groupedAttendees[NEEDS_ACTION],
                     ...groupedAttendees.other,
-                ].map(({ icon, text, title, initials, tooltip, extraText }) => (
-                    <Participant
-                        key={title}
-                        title={title}
-                        initials={initials}
-                        icon={icon}
-                        text={text}
-                        tooltip={tooltip}
-                        extraText={extraText}
-                    />
+                ].map(({ icon, name, title, initials, tooltip, extraText, email, contactID }) => (
+                    <li className="pr-1" key={title}>
+                        <Participant
+                            title={title}
+                            initials={initials}
+                            icon={icon}
+                            name={name}
+                            tooltip={tooltip}
+                            extraText={extraText}
+                            email={email}
+                            isContact={!!contactID}
+                            onCreateOrEditContact={
+                                contactID ? handleContactDetails(contactID) : handleContactAdd(email, name)
+                            }
+                        />
+                    </li>
                 ))}
-            </>
+            </ul>
         );
     };
 
@@ -209,7 +278,7 @@ const PopoverEventContent = ({ calendar, model, formatTime, displayNameEmailMap,
                     />
                 </IconRow>
             ) : null}
-            {!!numberOfParticipants && (
+            {!!numberOfParticipants && organizer && (
                 <IconRow labelClassName={labelClassName} icon="user" title={c('Label').t`Participants`}>
                     <div className="w100">
                         <Collapsible>
@@ -242,9 +311,16 @@ const PopoverEventContent = ({ calendar, model, formatTime, displayNameEmailMap,
                             title={organizerTitle}
                             initials={getInitials(organizerName)}
                             icon={organizerPartstatIcon}
-                            text={organizerName}
+                            name={organizerName}
                             tooltip={organizerTitle}
                             extraText={c('Label').t`Organizer`}
+                            email={organizer.email}
+                            isContact={!!organizerContactID}
+                            onCreateOrEditContact={
+                                organizerContactID
+                                    ? handleContactDetails(organizerContactID)
+                                    : handleContactAdd(organizer.email, organizerName)
+                            }
                         />
                     </div>
                 </IconRow>
@@ -276,6 +352,7 @@ const PopoverEventContent = ({ calendar, model, formatTime, displayNameEmailMap,
                 </IconRow>
             ) : null}
             {linkModal}
+            {contactModals}
         </>
     );
 

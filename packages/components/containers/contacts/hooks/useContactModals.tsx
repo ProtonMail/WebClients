@@ -33,10 +33,11 @@ import SelectEmailsModal, { SelectEmailsProps } from '../modals/SelectEmailsModa
 import ContactDetailsModal, { ContactDetailsProps } from '../view/ContactDetailsModal';
 
 interface Props {
-    onMailTo: (email: string) => void;
+    onMailTo?: (email: string) => void;
     onCompose?: (recipients: Recipient[], attachments: File[]) => void;
+    onChange?: () => void;
 }
-export const useContactModals = ({ onMailTo = noop, onCompose }: Props) => {
+export const useContactModals = ({ onMailTo = noop, onCompose, onChange }: Props = {}) => {
     const [contactDetailsModal, handleShowContactDetailsModal] = useModalTwo<ContactDetailsProps, void>(
         ContactDetailsModal,
         false
@@ -158,6 +159,7 @@ export const useContactModals = ({ onMailTo = noop, onCompose }: Props) => {
     const handleEdit = (props: ContactEditProps) => {
         void handleShowContactEditModal({
             ...props,
+            onChange,
             onUpgrade: handleUpgrade,
             onSelectImage: handleSelectImage,
             onGroupEdit: handleGroupEdit,
@@ -166,7 +168,13 @@ export const useContactModals = ({ onMailTo = noop, onCompose }: Props) => {
     };
 
     const handleDelete = (props: ContactDeleteProps) => {
-        void handleShowContactDeleteModal(props);
+        void handleShowContactDeleteModal({
+            ...props,
+            onDelete: (...args) => {
+                onChange?.();
+                props.onDelete?.(...args);
+            },
+        });
     };
 
     const handleEmailSettings = (props: ContactEmailSettingsProps) => {
