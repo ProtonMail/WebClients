@@ -65,6 +65,7 @@ export interface AuthLog {
     Event: AUTH_LOG_EVENTS;
     IP: string;
     ProtectionDesc: string;
+    Protection: number;
     Status: AuthLogStatus;
     Time: number;
 }

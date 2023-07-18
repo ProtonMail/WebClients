@@ -18,6 +18,22 @@ const getIcon = (status: AuthLogStatus) => {
     return <Icon className="align-text-bottom color-success" name="checkmark-circle-filled" />;
 };
 
+const getProtectionIcon = () => {
+    return <Icon className="align-text-bottom color-success" name="checkmark-circle-filled" />;
+};
+
+const getProtection = (protection?: number, protectionDesc?: string) => {
+    if (protection === 5) {
+        return <span className="flex-item-noshrink mr-2">{getProtectionIcon()}</span>;
+    }
+    return (
+        <>
+            {protection && <span className="flex-item-noshrink mr-2">{getProtectionIcon()}</span>}
+            <code>{protectionDesc || '-'}</code>
+        </>
+    );
+};
+
 interface Props {
     logs: AuthLog[];
     logAuth: SETTINGS_LOG_AUTH_STATE;
@@ -61,43 +77,51 @@ const LogsTable = ({ logs, logAuth, protonSentinel, loading, error }: Props) => 
                 </tr>
             </TableHeader>
             <TableBody loading={loading} colSpan={3}>
-                {logs.map(({ Time: time, AppVersion, Description, IP, Device, ProtectionDesc, Status }, index) => {
-                    const key = index.toString();
+                {logs.map(
+                    (
+                        { Time: time, AppVersion, Description, IP, Device, ProtectionDesc, Protection, Status },
+                        index
+                    ) => {
+                        const key = index.toString();
 
-                    return (
-                        <TableRow key={key}>
-                            <TableCell label={c('Header').t`Event`}>
-                                <div className="inline-flex">
-                                    <span className="flex-item-noshrink mr-2">{getIcon(Status)}</span>
-                                    <span className="flex-item-fluid">{Description}</span>
-                                </div>
-                            </TableCell>
-                            {logAuth === ADVANCED && (
-                                <TableCell label="IP">
-                                    <code>{IP || '-'}</code>
+                        return (
+                            <TableRow key={key}>
+                                <TableCell label={c('Header').t`Event`}>
+                                    <div className="inline-flex">
+                                        <span className="flex-item-noshrink mr-2">{getIcon(Status)}</span>
+                                        <span className="flex-item-fluid">{Description}</span>
+                                    </div>
                                 </TableCell>
-                            )}
-                            {protonSentinel === ENABLED && (
-                                <TableCell label={c('Header').t`Protection`}>
-                                    <code>{ProtectionDesc || '-'}</code>
+                                {logAuth === ADVANCED && (
+                                    <TableCell label="IP">
+                                        <code>{IP || '-'}</code>
+                                    </TableCell>
+                                )}
+                                {protonSentinel === ENABLED && (
+                                    <TableCell label={c('Header').t`Protection`}>
+                                        {getProtection(Protection, ProtectionDesc)}
+                                    </TableCell>
+                                )}
+                                {protonSentinel === ENABLED && (
+                                    <TableCell label={c('Header').t`Device`}>
+                                        <span className="flex-item-fluid">{Device || '-'}</span>
+                                    </TableCell>
+                                )}
+                                <TableCell
+                                    label={c('Header').t`App version`}
+                                    className="on-tablet-text-left text-right"
+                                >
+                                    <span className="flex-item-fluid">{AppVersion}</span>
                                 </TableCell>
-                            )}
-                            {protonSentinel === ENABLED && (
-                                <TableCell label={c('Header').t`Device`}>
-                                    <span className="flex-item-fluid">{Device || '-'}</span>
+                                <TableCell label={c('Header').t`Time`} className="on-tablet-text-left text-right">
+                                    <Time key={key} format="PPp">
+                                        {time}
+                                    </Time>
                                 </TableCell>
-                            )}
-                            <TableCell label={c('Header').t`App version`} className="on-tablet-text-left text-right">
-                                <span className="flex-item-fluid">{AppVersion}</span>
-                            </TableCell>
-                            <TableCell label={c('Header').t`Time`} className="on-tablet-text-left text-right">
-                                <Time key={key} format="PPp">
-                                    {time}
-                                </Time>
-                            </TableCell>
-                        </TableRow>
-                    );
-                })}
+                            </TableRow>
+                        );
+                    }
+                )}
             </TableBody>
         </Table>
     );
