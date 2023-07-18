@@ -106,6 +106,7 @@ export type IconName =
     | 'calendar-row'
     | 'calendar-today'
     | 'camera'
+    | 'candles-cake'
     | 'card-identity'
     | 'column-one'
     | 'column-two'

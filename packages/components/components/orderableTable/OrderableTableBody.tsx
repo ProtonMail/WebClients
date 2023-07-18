@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { ReactNode, forwardRef } from 'react';
 
 import { TableBody } from '../table';
 
@@ -14,4 +14,4 @@ const OrderableTableBody = ({ children, colSpan = 0, loading, ...rest }: Props) 
     </TableBody>
 );
 
-export default OrderableTableBody;
+export default forwardRef(OrderableTableBody);

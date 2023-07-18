@@ -165,6 +165,7 @@ END:VCARD`.replaceAll('\n', '\r\n');
 VERSION:4.0
 TEL;PREF=1:newtel
 NOTE:NewNote
+N:;
 TITLE:NewTitle
 END:VCARD`.replaceAll('\n', '\r\n');
 
@@ -188,8 +189,14 @@ END:VCARD`.replaceAll('\n', '\r\n');
 
         const { getByTestId, getByText } = render(<ContactEditModal open={true} {...props} />);
 
-        const name = getByTestId('Name');
-        fireEvent.change(name, { target: { value: 'New name' } });
+        const firstName = getByTestId('First name');
+        fireEvent.change(firstName, { target: { value: 'Bruno' } });
+
+        const lastName = getByTestId('Last name');
+        fireEvent.change(lastName, { target: { value: 'Mars' } });
+
+        const displayName = getByTestId('Enter a display name or nickname');
+        fireEvent.change(displayName, { target: { value: 'New name' } });
 
         const email = getByTestId('Email');
         fireEvent.change(email, { target: { value: 'new@email.com' } });
@@ -206,7 +213,12 @@ END:VCARD`.replaceAll('\n', '\r\n');
             ({ Type }: { Type: CONTACT_CARD_TYPE }) => Type === CONTACT_CARD_TYPE.SIGNED
         ).Data;
 
+        const encryptedAndSignedCardContent = cards.find(
+            ({ Type }: { Type: CONTACT_CARD_TYPE }) => Type === CONTACT_CARD_TYPE.ENCRYPTED_AND_SIGNED
+        ).Data;
+
         expect(signedCardContent).toContain('FN;PREF=1:New name');
+        expect(encryptedAndSignedCardContent).toContain('N:Mars;Bruno');
         expect(signedCardContent).toContain('ITEM1.EMAIL;PREF=1:new@email.com');
     });
 });

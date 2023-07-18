@@ -71,7 +71,6 @@ export const prepareCardsFromVCard = (
         promises.push(
             CryptoProxy.encryptMessage({
                 textData,
-                stripTrailingSpaces: true,
                 encryptionKeys: publicKeys,
                 signingKeys: privateKeys,
                 detached: true,
@@ -84,6 +83,20 @@ export const prepareCardsFromVCard = (
                 return card;
             })
         );
+    }
+
+    // The FN field could be empty on contact creation, this is intentional but we need to compute it from first and last name field if that's the case
+    if (!vCardContact.fn) {
+        const [lastName, firstName] = vCardContact.n?.value ?? [];
+        const computedFirstAndLastName = [firstName, lastName].join(' ');
+        const fallbackEmail = vCardContact.email?.[0]?.value; // Fallback that should never happen since we should always have a first and last name
+
+        const computedFullName: VCardProperty = {
+            field: 'fn',
+            value: computedFirstAndLastName || fallbackEmail || '',
+            uid: createContactPropertyUid(),
+        };
+        toSign.push(computedFullName);
     }
 
     if (toSign.length > 0) {
