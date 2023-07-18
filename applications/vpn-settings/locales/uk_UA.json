@@ -2043,6 +2043,12 @@
       "(1-2 emails per month)": [
         "(1-2 електронні листи на місяць)"
       ],
+      "(2-4 per year)": [
+        "(2-4 рази на рік)"
+      ],
+      "(4-6 emails per year)": [
+        "(4-6 листів на рік)"
+      ],
       "(during your first month)": [
         "(упродовж першого місяця)"
       ]
@@ -2710,6 +2716,9 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "З метою протидії спаму та зловживанням, будь ласка, підтвердьте, що ви людина."
+      ],
+      "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
+        "Щоб бути в курсі останніх розробок продуктів ${ BRAND_NAME }, якщо підпишетесь на неї, час від часу ви можете отримувати нашу розсилку ${ blogLink }."
       ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "Для продовження виберіть спосіб відновлення облікового запису, щоб ми могли засвідчити запит."
@@ -3402,6 +3411,9 @@
       "${ BRAND_NAME } for Business newsletter": [
         "Новини ${ BRAND_NAME } для бізнесу"
       ],
+      "${ BRAND_NAME } important announcements": [
+        "Важливі оголошення ${ BRAND_NAME }"
+      ],
       "${ BRAND_NAME } newsletter": [
         "Новини ${ BRAND_NAME }"
       ],
@@ -3494,6 +3506,9 @@
       ],
       "View guide": [
         "Переглянути посібник"
+      ],
+      "visit our blog": [
+        "відвідайте наш блог"
       ],
       "What is the difference between UDP and TCP protocols?": [
         "Яка різниця між протоколами UDP і TCP?"

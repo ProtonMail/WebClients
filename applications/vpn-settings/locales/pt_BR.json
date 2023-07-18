@@ -1993,7 +1993,7 @@
         "Padrão do sistema"
       ],
       "Theme font": [
-        "Tipo de letra do tema"
+        "Fonte do tema"
       ]
     },
     "Font size option": {
@@ -2022,6 +2022,12 @@
       ],
       "(1-2 emails per month)": [
         "(1-2 e-mails por mês)"
+      ],
+      "(2-4 per year)": [
+        "(2-4 por ano)"
+      ],
+      "(4-6 emails per year)": [
+        "(4-6 e-mails por ano)"
       ],
       "(during your first month)": [
         "(durante o primeiro mês)"
@@ -2925,7 +2931,7 @@
         "Sua senha da ${ BRAND_NAME }"
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there.": [
-        "Suas contas ${ VPN_APP_NAME } e ${ MAIL_APP_NAME } estão vinculadas. Para excluir ambas, inicia sessão em ${ loginLink } e exclua sua conta lá."
+        "Suas contas do ${ VPN_APP_NAME } e ${ MAIL_APP_NAME } estão vinculadas. Para excluir ambas, inicia sessão em ${ loginLink } e exclua sua conta lá."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Sua conta tem pelo menos uma fatura vencida. O seu acesso será restringido em breve. ${ payInvoiceLink }"
@@ -3373,6 +3379,9 @@
       "${ BRAND_NAME } for Business newsletter": [
         "Boletim do ${ BRAND_NAME } for Business"
       ],
+      "${ BRAND_NAME } important announcements": [
+        "Comunicados importantes da ${ BRAND_NAME }"
+      ],
       "${ BRAND_NAME } newsletter": [
         "Boletim do ${ BRAND_NAME }"
       ],
@@ -3465,6 +3474,9 @@
       ],
       "View guide": [
         "Ver guia"
+      ],
+      "visit our blog": [
+        "visitar nosso blog"
       ],
       "What is the difference between UDP and TCP protocols?": [
         "Qual é a diferença entre os protocolos UDP e TCP?"
@@ -3627,8 +3639,8 @@
         "${ n } pastas e marcadores"
       ],
       "${ n } hide-my-email alias": [
-        "${ n } alias do hide-my-email",
-        "${ n } aliases do hide-my-email"
+        "${ n } alias do Hide-my-email",
+        "${ n } aliases do Hide-my-email"
       ],
       "${ n } label": [
         "${ n } marcador",
