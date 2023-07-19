@@ -30,7 +30,7 @@ import { useCopyToClipboard } from '../../hooks/useCopyToClipboard';
 import { useItemsFilteringContext } from '../../hooks/useItemsFilteringContext';
 import { usePopupContext } from '../../hooks/usePopupContext';
 import { OnboardingPanel } from '../Onboarding/OnboardingPanel';
-import { usePasswordGeneratorContext } from '../PasswordGenerator/PasswordGeneratorContext';
+import { usePasswordContext } from '../PasswordGenerator/PasswordContext';
 import { MenuDropdown } from './MenuDropdown';
 import { Searchbar } from './Searchbar';
 
@@ -42,7 +42,7 @@ export const Header: VFC<{}> = () => {
     const { ready, context } = usePopupContext();
     const { search, setSearch } = useItemsFilteringContext();
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
-    const { generatePassword } = usePasswordGeneratorContext();
+    const { generatePassword } = usePasswordContext();
     const withClose = <T extends (...args: any[]) => void>(action: T) => pipe(action, close) as T;
     const copyToClipboard = useCopyToClipboard();
     const { needsUpgrade, aliasLimit, aliasLimited, aliasTotalCount } = useSelector(selectAliasLimits);
