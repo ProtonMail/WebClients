@@ -37,9 +37,9 @@ export const FieldBox: FC<FieldBoxProps> = (props) => {
     const { className, actions, actionsContainerClassName, children, icon } = props;
 
     return (
-        <div className={clsx('pass-field-box flex flex-nowrap flex-align-items-center px-4 py-3', className)}>
+        <div className={clsx('pass-field-box flex flex-nowrap flex-align-items-start px-4 py-3', className)}>
             {icon && (
-                <span className="flex flex-justify-center flex-align-items-center flex-item-noshrink pr-4">
+                <span className="flex flex-justify-center flex-align-items-center flex-item-noshrink pr-4 mt-2">
                     {isValidElement(icon) ? (
                         icon
                     ) : (
