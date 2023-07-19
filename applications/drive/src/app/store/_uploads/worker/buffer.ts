@@ -8,7 +8,7 @@ import {
     TOKEN_EXPIRATION_TIME,
     WAIT_TIME,
 } from '../constants';
-import { BlockToken, EncryptedBlock, EncryptedThumbnailBlock, Link } from '../interface';
+import { EncryptedBlock, EncryptedThumbnailBlock, Link } from '../interface';
 import { BlockHash, UploadingBlock, UploadingBlockControl } from './interface';
 import { waitForCondition } from './pauser';
 
@@ -37,8 +37,6 @@ export default class UploadWorkerBuffer {
     uploadingBlocks: UploadingBlock[] = [];
 
     blockHashes: BlockHash[] = [];
-
-    blockTokens: BlockToken[] = [];
 
     requestingBlockLinks = false;
 
@@ -129,10 +127,6 @@ export default class UploadWorkerBuffer {
                         this.blockHashes.push({
                             index: block.index,
                             hash: block.hash,
-                        });
-                        this.blockTokens.push({
-                            index: block.index,
-                            token: uploadToken,
                         });
                     },
                     // eslint-disable-next-line @typescript-eslint/no-loop-func
