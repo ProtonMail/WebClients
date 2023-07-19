@@ -5,6 +5,7 @@ import { selectExtraFieldLimits } from '@proton/pass/store';
 import type { ItemExtraField } from '@proton/pass/types';
 import { isEmptyString } from '@proton/pass/utils/string';
 
+import { TextAreaReadonly } from '../../../../shared/components/fields/TextAreaReadonly';
 import { getExtraFieldOption } from '../ExtraFieldGroup/ExtraField';
 import { FieldsetCluster } from '../Layout/FieldsetCluster';
 import { OTPValueControl } from './OTPValueControl';
@@ -49,7 +50,7 @@ export const ExtraFieldsControl: VFC<ExtraFieldsControlProps> = ({ extraFields, 
                     return (
                         <ValueControl
                             clickToCopy
-                            as="pre"
+                            as={TextAreaReadonly}
                             key={key}
                             hidden={type === 'hidden'}
                             icon={icon}
