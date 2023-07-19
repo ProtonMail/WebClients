@@ -1,7 +1,6 @@
 import { CryptoProxy, PrivateKeyReference, SessionKey, serverTime, updateServerTime } from '@proton/crypto';
 
 import {
-    BlockToken,
     EncryptedBlock,
     EncryptedThumbnailBlock,
     FileKeys,
@@ -98,7 +97,6 @@ type ProgressMessage = {
 
 type DoneMessage = {
     command: 'done';
-    blockTokens: BlockToken[];
     signature: string;
     signatureAddress: string;
     xattr: string;
@@ -143,7 +141,7 @@ interface WorkerControllerHandlers {
     keysGenerated: (keys: FileKeys) => void;
     createBlocks: (fileBlocks: FileRequestBlock[], thumbnailBlock?: ThumbnailRequestBlock) => void;
     onProgress: (increment: number) => void;
-    finalize: (blockTokens: BlockToken[], signature: string, signatureAddress: string, xattr: string) => void;
+    finalize: (signature: string, signatureAddress: string, xattr: string) => void;
     onNetworkError: (error: string) => void;
     onError: (error: string) => void;
     onCancel: () => void;
@@ -285,10 +283,9 @@ export class UploadWorker {
         } as ProgressMessage);
     }
 
-    postDone(blockTokens: BlockToken[], signature: string, signatureAddress: string, xattr: string) {
+    postDone(signature: string, signatureAddress: string, xattr: string) {
         this.worker.postMessage({
             command: 'done',
-            blockTokens,
             signature,
             signatureAddress,
             xattr,
@@ -370,7 +367,7 @@ export class UploadWorkerController {
                     onProgress(data.increment);
                     break;
                 case 'done':
-                    finalize(data.blockTokens, data.signature, data.signatureAddress, data.xattr);
+                    finalize(data.signature, data.signatureAddress, data.xattr);
                     break;
                 case 'network_error':
                     onNetworkError(data.error);
