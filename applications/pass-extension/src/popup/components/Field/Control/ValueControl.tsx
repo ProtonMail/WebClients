@@ -1,3 +1,4 @@
+import type { ElementType } from 'react';
 import { type ReactNode, type VFC, useMemo, useState } from 'react';
 
 import { c } from 'ttag';
@@ -7,14 +8,13 @@ import { Icon, type IconName } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
 import { FieldBox, type FieldBoxProps } from '../Layout/FieldBox';
+import type { ClickToCopyProps } from './ClickToCopy';
 import { ClickToCopy } from './ClickToCopy';
 
 import './ValueControl.scss';
 
-type ContainerElement = 'div' | 'pre' | 'p' | 'ul';
-
 export type ValueControlProps = Omit<FieldBoxProps, 'icon'> & {
-    as?: ContainerElement;
+    as?: ElementType;
     children?: ReactNode;
     clickToCopy?: boolean;
     error?: boolean;
@@ -72,14 +72,13 @@ export const ValueControl: VFC<ValueControlProps> = ({
         return value;
     }, [children, hidden, hide, value]);
 
+    const canCopy = clickToCopy && value;
+    const MaybeClickToCopy: ElementType<ClickToCopyProps> = canCopy ? ClickToCopy : 'div';
+
     return (
-        <ClickToCopy
-            className={clsx(
-                clickToCopy && value && 'pass-value-control--interactive',
-                !loading && error && 'border-danger'
-            )}
-            enabled={clickToCopy}
-            value={value}
+        <MaybeClickToCopy
+            className={clsx(canCopy && 'pass-value-control--interactive', !loading && error && 'border-danger')}
+            {...(canCopy ? { value } : {})}
         >
             <FieldBox
                 actions={
@@ -92,16 +91,12 @@ export const ValueControl: VFC<ValueControlProps> = ({
             >
                 <div className="color-weak text-sm">{label}</div>
                 <ValueContainer
-                    className={clsx(
-                        'pass-value-control--value m-0 p-0 user-select-none',
-                        as === 'pre' ? 'text-break' : 'text-ellipsis',
-                        valueClassName
-                    )}
+                    className={clsx('pass-value-control--value m-0 p-0 text-ellipsis cursor-pointer', valueClassName)}
                 >
                     {loading ? <div className="pass-skeleton pass-skeleton--value" /> : displayValue}
                 </ValueContainer>
                 {extra}
             </FieldBox>
-        </ClickToCopy>
+        </MaybeClickToCopy>
     );
 };
