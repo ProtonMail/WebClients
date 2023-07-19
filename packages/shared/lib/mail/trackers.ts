@@ -4,17 +4,20 @@ import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { MessageUTMTracker } from '@proton/shared/lib/models/mailUtmTrackers';
 
 export const getUTMTrackersFromURL = (originalURL: string) => {
+    // originalURL can be an mailto: link
     try {
-        /*
-         * Check that the URL is valid before cleaning the URL
-         * We also surround this method with an extra try&catch in case of lib crash
-         */
-        const { protocol } = new URL(originalURL);
+        // Only parse http(s) URLs
+        try {
+            // new URL(originalURL) may crash if the URL is invalid on Safari
+            const { protocol } = new URL(originalURL);
 
-        if (!protocol.includes('http')) {
+            if (!protocol.includes('http')) {
+                return undefined;
+            }
+        } catch {
             return undefined;
         }
-
+        
         const { url, info } = TidyURL.clean(originalURL);
 
         let utmTracker: MessageUTMTracker | undefined;
