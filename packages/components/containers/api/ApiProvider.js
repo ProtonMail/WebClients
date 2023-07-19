@@ -12,6 +12,7 @@ import {
 } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import withApiHandlers from '@proton/shared/lib/api/helpers/withApiHandlers';
 import { getClientID } from '@proton/shared/lib/apps/helper';
+import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import xhr from '@proton/shared/lib/fetch/fetch';
 import { withLocaleHeaders } from '@proton/shared/lib/fetch/headers';
 import { getDateHeader } from '@proton/shared/lib/fetch/helpers';
@@ -175,10 +176,21 @@ const ApiProvider = ({ config, onLogout, children, UID, noErrorState }) => {
                         if (errorMessage) {
                             const isSilenced = getSilenced(e.config, code);
                             if (!isSilenced) {
+                                const codeExpirations = {
+                                    [API_CUSTOM_ERROR_CODES.USER_RESTRICTED_STATE]: 10_000,
+                                };
                                 createNotification({
                                     type: 'error',
-                                    expiration: config?.notificationExpiration,
                                     text: errorMessage,
+                                    ...(code in codeExpirations
+                                        ? {
+                                              id: code,
+                                              expiration: codeExpirations[code],
+                                          }
+                                        : {
+                                              expiration: config?.notificationExpiration,
+                                          }
+                                    ),
                                 });
                             }
                         }
