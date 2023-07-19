@@ -6,6 +6,7 @@ import { c } from 'ttag';
 import { selectPassPlan } from '@proton/pass/store';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 
+import { TextAreaReadonly } from '../../../../shared/components/fields/TextAreaReadonly';
 import type { ItemTypeViewProps } from '../../../../shared/items/types';
 import { MaskedValueControl } from '../../../components/Field/Control/MaskedValueControl';
 import { UpgradeControl } from '../../../components/Field/Control/UpgradeControl';
@@ -60,7 +61,13 @@ export const CreditCardView: VFC<ItemTypeViewProps<'creditCard'>> = ({ vault, re
 
             {note && (
                 <FieldsetCluster mode="read" as="div">
-                    <ValueControl clickToCopy as="pre" icon="note" label={c('Label').t`Note`} value={note} />
+                    <ValueControl
+                        clickToCopy
+                        as={TextAreaReadonly}
+                        icon="note"
+                        label={c('Label').t`Note`}
+                        value={note}
+                    />
                 </FieldsetCluster>
             )}
         </ItemViewPanel>
