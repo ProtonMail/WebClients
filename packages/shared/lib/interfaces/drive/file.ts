@@ -27,8 +27,6 @@ export interface RevisionManifest {
 }
 
 export interface UpdateFileRevision {
-    State: FileRevisionState;
-    BlockList: { Index: number; Token: string }[];
     ManifestSignature: string;
     SignatureAddress: string;
     XAttr?: string;
