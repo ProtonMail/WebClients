@@ -51,15 +51,7 @@ const createApi = ({ config, auth, onSessionRefresh }: ApiCreateOptions): Api =>
 
     const ctx: ApiContext = {
         auth,
-        call: configureApi({
-            ...config,
-            clientID,
-            xhr: (options: any) =>
-                xhr({
-                    ...options,
-                    credentials: 'omit',
-                }),
-        } as any) as ApiCallFn,
+        call: configureApi({ ...config, clientID, xhr } as any) as ApiCallFn,
         status: INITIAL_API_STATUS,
     };
 
