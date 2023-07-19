@@ -1,4 +1,5 @@
-import { type ReactNode, type VFC, useMemo, useState } from 'react';
+import type { ComponentType, ElementType } from 'react';
+import { type ReactNode, useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -7,15 +8,16 @@ import { Icon, type IconName } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
 import { FieldBox, type FieldBoxProps } from '../Layout/FieldBox';
+import type { ClickToCopyProps } from './ClickToCopy';
 import { ClickToCopy } from './ClickToCopy';
 
 import './ValueControl.scss';
 
-type ContainerElement = 'div' | 'pre' | 'p' | 'ul';
+const isIntrinsicElement = <E extends ElementType>(c: E) => typeof c === 'string' || typeof c === 'symbol';
 
-export type ValueControlProps = Omit<FieldBoxProps, 'icon'> & {
-    as?: ContainerElement;
-    children?: ReactNode;
+export type ValueControlProps<E extends ElementType> = Omit<FieldBoxProps, 'icon'> & {
+    as?: E;
+    children?: E extends ComponentType<infer U> ? (U extends { children?: infer C } ? C : never) : ReactNode;
     clickToCopy?: boolean;
     error?: boolean;
     extra?: ReactNode;
@@ -45,10 +47,10 @@ const HideButton = ({ hidden, onClick }: { hidden: boolean; onClick: () => void 
 /* When passed both children and a value prop:
  * children will be rendered, value will be passed
  * to ClickToCopy */
-export const ValueControl: VFC<ValueControlProps> = ({
+export const ValueControl = <E extends ElementType = 'div'>({
     actions,
     actionsContainerClassName,
-    as = 'div',
+    as,
     children,
     clickToCopy = false,
     error = false,
@@ -60,26 +62,41 @@ export const ValueControl: VFC<ValueControlProps> = ({
     loading = false,
     value,
     valueClassName,
-}) => {
+}: ValueControlProps<E>) => {
+    /* we're leveraging type-safety at the consumer level - we're recasting
+     * the `as` prop as a generic `ElementType` to avoid switching over all
+     * possible sub-types. Trade-off is being extra careful with the children
+     * the `ValueContainer` can accept */
+    const ValueContainer = (as ?? 'div') as ElementType;
+    const intrinsicEl = isIntrinsicElement(ValueContainer);
+
     const [hide, setHide] = useState(hidden);
-    const ValueContainer = as;
     const defaultHiddenValue = '••••••••••••';
 
     const displayValue = useMemo(() => {
-        if (!value && !children) return <div className="color-weak">{c('Info').t`None`}</div>;
-        if (hidden && hide) return hiddenValue ?? defaultHiddenValue;
+        /* intrinsinc elements support nesting custom DOM structure */
+        if (intrinsicEl && loading) return <div className="pass-skeleton pass-skeleton--value" />;
+        if (intrinsicEl && !value && !children) return <div className="color-weak">{c('Info').t`None`}</div>;
+
+        if (hide) return hiddenValue ?? defaultHiddenValue;
+
+        /* if children are passed: display them - when working with
+         * a `ValueContainer` component, we leverage the inherited prop
+         * type-safety */
         if (children) return children;
-        return value;
-    }, [children, hidden, hide, value]);
+
+        /* if no children provided: fallback to value which is always
+         * a valid "string" ReactNode */
+        return value ?? '';
+    }, [value, children, loading, hide, intrinsicEl]);
+
+    const canCopy = clickToCopy && value;
+    const MaybeClickToCopy: ElementType<ClickToCopyProps> = canCopy ? ClickToCopy : 'div';
 
     return (
-        <ClickToCopy
-            className={clsx(
-                clickToCopy && value && 'pass-value-control--interactive',
-                !loading && error && 'border-danger'
-            )}
-            enabled={clickToCopy}
-            value={value}
+        <MaybeClickToCopy
+            className={clsx(canCopy && 'pass-value-control--interactive', !loading && error && 'border-danger')}
+            {...(canCopy ? { value } : {})}
         >
             <FieldBox
                 actions={
@@ -91,17 +108,14 @@ export const ValueControl: VFC<ValueControlProps> = ({
                 icon={icon && <Icon name={icon} size={20} style={{ color: 'var(--fieldset-cluster-icon-color)' }} />}
             >
                 <div className="color-weak text-sm">{label}</div>
+
                 <ValueContainer
-                    className={clsx(
-                        'pass-value-control--value m-0 p-0 user-select-none',
-                        as === 'pre' ? 'text-break' : 'text-ellipsis',
-                        valueClassName
-                    )}
-                >
-                    {loading ? <div className="pass-skeleton pass-skeleton--value" /> : displayValue}
-                </ValueContainer>
+                    className={clsx('pass-value-control--value m-0 p-0 text-ellipsis cursor-pointer', valueClassName)}
+                    children={displayValue}
+                />
+
                 {extra}
             </FieldBox>
-        </ClickToCopy>
+        </MaybeClickToCopy>
     );
 };
