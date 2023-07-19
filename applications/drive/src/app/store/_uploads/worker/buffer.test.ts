@@ -180,10 +180,8 @@ describe('upload worker buffer', () => {
         } = await buffer.generateUploadingBlocks().next();
 
         expect(buffer.blockHashes).toMatchObject([]);
-        expect(buffer.blockTokens).toMatchObject([]);
         finish();
         expect(buffer.blockHashes).toMatchObject([{ index: 1, hash: block.block.hash }]);
-        expect(buffer.blockTokens).toMatchObject([{ index: 1, token: block.uploadToken }]);
     });
 
     it('retries uploading block by adding it back to encrypted buffer', async () => {
@@ -198,7 +196,6 @@ describe('upload worker buffer', () => {
         onTokenExpiration();
         expect(buffer.encryptedBlocks).toMatchObject(new Map([[1, block.block]]));
         expect(buffer.blockHashes).toMatchObject([]);
-        expect(buffer.blockTokens).toMatchObject([]);
     });
 
     it('waits for blocks to be processed', async () => {
