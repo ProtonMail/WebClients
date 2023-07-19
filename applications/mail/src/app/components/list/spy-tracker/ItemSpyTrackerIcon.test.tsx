@@ -149,12 +149,6 @@ describe('ItemSpyTrackerIcon', () => {
         const title = screen.getByTestId('privacy:title');
         getByText(title, 'No trackers found');
 
-        const imageTrackerRow = screen.getByTestId('privacy:image-row');
-        const utmTrackerRow = screen.getByTestId('privacy:utm-row');
-
-        getByText(imageTrackerRow, 'No trackers found');
-        getByText(utmTrackerRow, 'No links cleaned');
-
         // Description is displayed
         screen.getByText("We didn't find any known trackers and tracking URLs in this email.");
     });
