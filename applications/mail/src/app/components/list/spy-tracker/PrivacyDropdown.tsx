@@ -187,39 +187,36 @@ const PrivacyDropdown = ({ message }: Props) => {
                             <hr className="mt-4 mb-2" />
                         </>
                     ) : (
-                        <>
-                            <hr className="my-1" />
+                        hasTrackers && (
+                            <>
+                                <hr className="my-1" />
 
-                            {hasImageTrackers ? (
-                                <button
-                                    onClick={handleShowImageTrackersDetails}
-                                    className="interactive w100 rounded-sm"
-                                >
-                                    {imageTrackerRow}
-                                </button>
-                            ) : (
-                                imageTrackerRow
-                            )}
+                                {hasImageTrackers && (
+                                    <>
+                                        <button
+                                            onClick={handleShowImageTrackersDetails}
+                                            className="interactive w100 rounded-sm"
+                                        >
+                                            {imageTrackerRow}
+                                        </button>
 
-                            <hr className="my-1" />
+                                        <hr className="my-1" />
+                                    </>
+                                )}
 
-                            {canCleanUTMTrackers && (
-                                <>
-                                    {hasUTMTrackers ? (
+                                {canCleanUTMTrackers && hasUTMTrackers && (
+                                    <>
                                         <button
                                             onClick={handleShowUTMTrackersDetails}
                                             className="interactive w100 rounded-sm"
                                         >
                                             {utmTrackerRow}
                                         </button>
-                                    ) : (
-                                        utmTrackerRow
-                                    )}
-
-                                    <hr className="my-1" />
-                                </>
-                            )}
-                        </>
+                                        <hr className="my-1" />
+                                    </>
+                                )}
+                            </>
+                        )
                     )}
                 </div>
             </Dropdown>
