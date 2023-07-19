@@ -167,7 +167,7 @@ export const read1Password1PifData = async (data: string): Promise<ImportPayload
         return { vaults, ignored, warnings: [] };
     } catch (e) {
         logger.warn('[Importer::1Password]', e);
-        const errorDetail = e instanceof ImportReaderError ? e.message : '';
+        const errorDetail = e instanceof ImportReaderError ? `(${e.message})` : '';
         throw new ImportReaderError(c('Error').t`1Password export file could not be parsed. ${errorDetail}`);
     }
 };

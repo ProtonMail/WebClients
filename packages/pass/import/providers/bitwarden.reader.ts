@@ -118,7 +118,7 @@ export const readBitwardenData = (data: string): ImportPayload => {
         return { vaults, ignored, warnings: [] };
     } catch (e) {
         logger.warn('[Importer::Bitwarden]', e);
-        const errorDetail = e instanceof ImportReaderError ? e.message : '';
+        const errorDetail = e instanceof ImportReaderError ? `(${e.message})` : '';
         throw new ImportReaderError(c('Error').t`Bitwarden export file could not be parsed. ${errorDetail}`);
     }
 };

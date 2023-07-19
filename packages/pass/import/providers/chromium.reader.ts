@@ -44,7 +44,7 @@ export const readChromiumData = async (data: string): Promise<ImportPayload> => 
         };
     } catch (e) {
         logger.warn('[Importer::Chrome]', e);
-        const errorDetail = e instanceof ImportReaderError ? e.message : '';
+        const errorDetail = e instanceof ImportReaderError ? `(${e.message})` : '';
         throw new Error(c('Error').t`Chrome export file could not be parsed. ${errorDetail}`);
     }
 };
