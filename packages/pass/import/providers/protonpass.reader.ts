@@ -96,7 +96,7 @@ export const readProtonPassData = async (payload: ProtonPassReaderPayload): Prom
         };
     } catch (e) {
         logger.warn('[Importer::Proton]', e);
-        const errorDetail = e instanceof ImportReaderError ? e.message : '';
+        const errorDetail = e instanceof ImportReaderError ? `(${e.message})` : '';
         throw new ImportReaderError(c('Error').t`${PASS_APP_NAME} export file could not be parsed. ${errorDetail}`);
     }
 };

@@ -127,7 +127,7 @@ export const readDashlaneData = async (data: ArrayBuffer): Promise<ImportPayload
         return { vaults, ignored, warnings };
     } catch (e) {
         logger.warn('[Importer::Dashlane]', e);
-        const errorDetail = e instanceof ImportReaderError ? e.message : '';
+        const errorDetail = e instanceof ImportReaderError ? `(${e.message})` : '';
         throw new ImportReaderError(c('Error').t`Dashlane export file could not be parsed. ${errorDetail}`);
     }
 };
