@@ -10,7 +10,7 @@ import { logger } from '@proton/pass/utils/logger';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 
-import { ImportReaderError } from '../helpers/reader.error';
+import { ImportProviderError, ImportReaderError } from '../helpers/error';
 import type { ImportPayload, ImportVault } from '../types';
 
 type ProtonPassReaderPayload =
@@ -96,7 +96,6 @@ export const readProtonPassData = async (payload: ProtonPassReaderPayload): Prom
         };
     } catch (e) {
         logger.warn('[Importer::Proton]', e);
-        const errorDetail = e instanceof ImportReaderError ? `(${e.message})` : '';
-        throw new ImportReaderError(c('Error').t`${PASS_APP_NAME} export file could not be parsed. ${errorDetail}`);
+        throw new ImportProviderError(PASS_APP_NAME, e);
     }
 };
