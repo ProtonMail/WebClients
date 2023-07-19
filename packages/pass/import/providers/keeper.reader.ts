@@ -108,7 +108,7 @@ export const readKeeperData = async (data: string): Promise<ImportPayload> => {
         };
     } catch (e) {
         logger.warn('[Importer::Keeper]', e);
-        const errorDetail = e instanceof ImportReaderError ? e.message : '';
+        const errorDetail = e instanceof ImportReaderError ? `(${e.message})` : '';
         throw new Error(c('Error').t`Keeper export file could not be parsed. ${errorDetail}`);
     }
 };

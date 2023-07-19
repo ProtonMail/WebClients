@@ -55,7 +55,7 @@ export const readFirefoxData = async (data: string): Promise<ImportPayload> => {
         };
     } catch (e) {
         logger.warn('[Importer::Firefox]', e);
-        const errorDetail = e instanceof ImportReaderError ? e.message : '';
+        const errorDetail = e instanceof ImportReaderError ? `(${e.message})` : '';
         throw new Error(c('Error').t`Firefox export file could not be parsed. ${errorDetail}`);
     }
 };
