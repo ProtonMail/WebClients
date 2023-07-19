@@ -128,11 +128,12 @@ export const rejectCalendarShareInvitation = ({
     return api(rejectInvitation(calendarID, addressID));
 };
 
-export const getCalendarCreatedByText = (calendar: VisualCalendar, contactEmailsMap: SimpleMap<ContactEmail>) => {
+export const getSharedCalendarSubHeaderText = (calendar: VisualCalendar, contactEmailsMap: SimpleMap<ContactEmail>) => {
     // we only need to display the owner for shared calendars
     if (!getIsSharedCalendar(calendar)) {
         return;
     }
+
     const { Name: contactName, Email: contactEmail } = contactEmailsMap[canonicalizeEmail(calendar.Owner.Email)] || {};
     const email = contactEmail || calendar.Owner.Email;
     const { nameEmail: ownerName } = getContactDisplayNameEmail({
@@ -141,7 +142,7 @@ export const getCalendarCreatedByText = (calendar: VisualCalendar, contactEmails
         emailDelimiters: ['(', ')'],
     });
 
-    return c('Shared calendar; Info about calendar owner').t`Created by ${ownerName}`;
+    return c('Shared calendar; Info about calendar owner').t`Shared by ${ownerName}`;
 };
 
 export const getCalendarNameWithOwner = ({
