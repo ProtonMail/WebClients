@@ -1,9 +1,10 @@
 import { c } from 'ttag';
 
-import { AuthLog, AuthLogStatus } from '@proton/shared/lib/authlog';
+import { AuthLog, AuthLogStatus, ProtectionType } from '@proton/shared/lib/authlog';
+import { PROTON_SENTINEL_NAME } from '@proton/shared/lib/constants';
 import { SETTINGS_LOG_AUTH_STATE, SETTINGS_PROTON_SENTINEL_STATE } from '@proton/shared/lib/interfaces';
 
-import { Alert, Icon, Table, TableBody, TableCell, TableHeader, TableRow, Time } from '../../components';
+import { Alert, Icon, Table, TableBody, TableCell, TableHeader, TableRow, Time, Tooltip } from '../../components';
 
 const { ADVANCED, DISABLE } = SETTINGS_LOG_AUTH_STATE;
 const { ENABLED } = SETTINGS_PROTON_SENTINEL_STATE;
@@ -19,17 +20,29 @@ const getIcon = (status: AuthLogStatus) => {
 };
 
 const getProtectionIcon = () => {
-    return <Icon className="align-text-bottom color-success" name="checkmark-circle-filled" />;
+    return <Icon className="align-text-bottom color-primary" name="shield-filled" />;
 };
 
-const getProtection = (protection?: number, protectionDesc?: string) => {
-    if (protection === 5) {
-        return <span className="flex-item-noshrink mr-2">{getProtectionIcon()}</span>;
+type ProtectionProps = {
+    protection?: number;
+    protectionDesc?: string;
+};
+
+const buildProtectionTooltips = () => (
+    <Tooltip title={c('Title').t`${PROTON_SENTINEL_NAME}`} openDelay={0} closeDelay={150} longTapDelay={0}>
+        {getProtectionIcon()}
+    </Tooltip>
+);
+
+const getProtection = ({ protection, protectionDesc }: ProtectionProps) => {
+    const protectionTooltip = protection && buildProtectionTooltips();
+    if (protection === ProtectionType.OK) {
+        return protectionTooltip;
     }
     return (
         <>
-            {protection && <span className="flex-item-noshrink mr-2">{getProtectionIcon()}</span>}
-            <code>{protectionDesc || '-'}</code>
+            <span className="flex-item-noshrink mr-2">{protectionTooltip}</span>
+            <span className="flex-item-fluid">{protectionDesc || '-'}</span>
         </>
     );
 };
@@ -99,7 +112,7 @@ const LogsTable = ({ logs, logAuth, protonSentinel, loading, error }: Props) => 
                                 )}
                                 {protonSentinel === ENABLED && (
                                     <TableCell label={c('Header').t`Protection`}>
-                                        {getProtection(Protection, ProtectionDesc)}
+                                        {getProtection({ protection: Protection, protectionDesc: ProtectionDesc })}
                                     </TableCell>
                                 )}
                                 {protonSentinel === ENABLED && (
