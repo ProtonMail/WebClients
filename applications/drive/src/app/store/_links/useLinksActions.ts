@@ -17,7 +17,6 @@ import groupWith from '@proton/utils/groupWith';
 
 import { ValidationError } from '../../utils/errorHandling/ValidationError';
 import { useDebouncedRequest } from '../_api';
-import { useDriveCrypto } from '../_crypto';
 import { useDriveEventManager } from '../_events';
 import { useShare } from '../_shares';
 import { useVolumesState } from '../_volumes';
@@ -56,8 +55,7 @@ export function useLinksActions({
     const { getLink, getLinkPassphraseAndSessionKey, getLinkPrivateKey, getLinkHashKey } = useLink();
     const { getLinks } = useLinks();
     const { lockLinks, unlockLinks, lockTrash } = useLinksState();
-    const { getOwnAddressAndPrimaryKeys } = useDriveCrypto();
-    const { getShare } = useShare();
+    const { getShareCreatorKeys } = useShare();
     const volumeState = useVolumesState();
 
     /**
@@ -90,7 +88,7 @@ export function useLinksActions({
             getLinkPassphraseAndSessionKey(abortSignal, shareId, linkId),
             getLinkPrivateKey(abortSignal, shareId, newParentLinkId),
             getLinkHashKey(abortSignal, shareId, newParentLinkId),
-            getShare(abortSignal, shareId).then((share) => getOwnAddressAndPrimaryKeys(share.creator)),
+            getShareCreatorKeys(abortSignal, shareId),
         ]);
 
         const [currentParentPrivateKey, Hash, { NodePassphrase, NodePassphraseSignature }] = await Promise.all([
