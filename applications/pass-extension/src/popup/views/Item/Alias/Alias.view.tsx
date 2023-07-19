@@ -17,6 +17,7 @@ import { pipe } from '@proton/pass/utils/fp';
 import { getFormattedDateFromTimestamp } from '@proton/pass/utils/time/format';
 
 import { ConfirmationModal } from '../../../../shared/components/confirmation';
+import { TextAreaReadonly } from '../../../../shared/components/fields/TextAreaReadonly';
 import type { ItemTypeViewProps } from '../../../../shared/items/types';
 import { MoreInfoDropdown } from '../../../components/Dropdown/MoreInfoDropdown';
 import { ValueControl } from '../../../components/Field/Control/ValueControl';
@@ -120,7 +121,13 @@ export const AliasView: VFC<ItemTypeViewProps<'alias'>> = ({ vault, revision, ..
 
             {note && (
                 <FieldsetCluster mode="read" as="div">
-                    <ValueControl clickToCopy as="pre" icon="note" label={c('Label').t`Note`} value={note} />
+                    <ValueControl
+                        clickToCopy
+                        as={TextAreaReadonly}
+                        icon="note"
+                        label={c('Label').t`Note`}
+                        value={note}
+                    />
                 </FieldsetCluster>
             )}
 
