@@ -6,7 +6,6 @@ import { generateNodeKeys } from '@proton/shared/lib/keys/driveKeys';
 import { getDecryptedSessionKey } from '@proton/shared/lib/keys/drivePassphrase';
 
 import { useDebouncedRequest } from '../_api';
-import { useDriveCrypto } from '../_crypto';
 import { useLink } from '../_links';
 import useShare from './useShare';
 
@@ -16,15 +15,12 @@ import useShare from './useShare';
 export default function useShareActions() {
     const { preventLeave } = usePreventLeave();
     const debouncedRequest = useDebouncedRequest();
-    const { getOwnAddressAndPrimaryKeys } = useDriveCrypto();
     const { getLink, getLinkPassphraseAndSessionKey, getLinkPrivateKey } = useLink();
-    const { getShare } = useShare();
+    const { getShareCreatorKeys } = useShare();
 
     const createShare = async (abortSignal: AbortSignal, shareId: string, volumeId: string, linkId: string) => {
-        const share = await getShare(abortSignal, shareId);
-
         const [{ address, privateKey: addressPrivateKey }, { passphraseSessionKey }, link] = await Promise.all([
-            getOwnAddressAndPrimaryKeys(share.creator),
+            getShareCreatorKeys(abortSignal, shareId),
             getLinkPassphraseAndSessionKey(abortSignal, shareId, linkId),
             getLink(abortSignal, shareId, linkId),
         ]);
