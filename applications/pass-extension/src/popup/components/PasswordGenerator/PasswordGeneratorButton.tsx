@@ -6,12 +6,12 @@ import { Button, type ButtonProps } from '@proton/atoms';
 import { Icon } from '@proton/components/components';
 
 import { SubTheme } from '../../../shared/theme/sub-theme';
-import { usePasswordGeneratorContext } from './PasswordGeneratorContext';
+import { usePasswordContext } from './PasswordContext';
 
 type Props = Omit<ButtonProps, 'onSubmit'> & { onSubmit: (password: string) => void };
 
 const PasswordGeneratorButtonRaw: VFC<Props> = ({ onSubmit, type, ...rest }) => {
-    const { generatePassword } = usePasswordGeneratorContext();
+    const { generatePassword } = usePasswordContext();
     const handleOnClick = () =>
         generatePassword({
             onSubmit,
