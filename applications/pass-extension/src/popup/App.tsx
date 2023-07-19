@@ -1,4 +1,4 @@
-import { PasswordGeneratorContextProvider } from './components/PasswordGenerator/PasswordGeneratorContext';
+import { PasswordContextProvider } from './components/PasswordGenerator/PasswordContext';
 import { ItemEffects } from './context/items/ItemEffects';
 import { ItemsFilteringContextProvider } from './context/items/ItemsFilteringContext';
 import { NavigationContextProvider } from './context/navigation/NavigationContext';
@@ -9,9 +9,9 @@ export const App = () => {
         <NavigationContextProvider>
             <ItemsFilteringContextProvider>
                 <ItemEffects />
-                <PasswordGeneratorContextProvider>
+                <PasswordContextProvider>
                     <Main />
-                </PasswordGeneratorContextProvider>
+                </PasswordContextProvider>
             </ItemsFilteringContextProvider>
         </NavigationContextProvider>
     );

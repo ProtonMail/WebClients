@@ -25,7 +25,6 @@ import {
 import type { MaybeNull, VaultShare } from '@proton/pass/types';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { pipe, tap } from '@proton/pass/utils/fp';
-import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
 import { ConfirmationModal } from '../../../../src/shared/components/confirmation';
@@ -36,6 +35,7 @@ import { useNavigationContext } from '../../hooks/useNavigationContext';
 import { useOpenSettingsTab } from '../../hooks/useOpenSettingsTab';
 import { usePopupContext } from '../../hooks/usePopupContext';
 import { VaultModal, type Props as VaultModalProps } from '../../views/Vault/Vault.modal';
+import { usePasswordContext } from '../PasswordGenerator/PasswordContext';
 import { VaultDeleteModal } from '../Vault/VaultDeleteModal';
 import { Submenu, type SubmenuLinkItem } from './Submenu';
 import { VaultSubmenu } from './VaultSubmenu';
@@ -128,6 +128,21 @@ const MenuDropdownRaw: VFC<{ className?: string }> = ({ className }) => {
         },
     ];
 
+    const { openPasswordHistory } = usePasswordContext();
+
+    const advancedLinks: SubmenuLinkItem[] = [
+        {
+            icon: 'key-history',
+            label: c('Action').t`Generated password`,
+            actionTab: withClose(openPasswordHistory),
+        },
+        {
+            icon: 'arrow-rotate-right',
+            label: c('Action').t`Manually sync your data`,
+            actionTab: withClose(sync),
+        },
+    ];
+
     return (
         <>
             <nav className={className}>
@@ -206,6 +221,23 @@ const MenuDropdownRaw: VFC<{ className?: string }> = ({ className }) => {
                             <Icon name="arrow-out-square" className="ml-3 color-weak" />
                         </DropdownMenuButton>
 
+                        {canLock && (
+                            <DropdownMenuButton
+                                className="flex flex-align-items-center py-2 px-4"
+                                onClick={withClose(lock)}
+                                disabled={!ready}
+                            >
+                                <Icon name="lock" className="mr-3 color-weak" />
+                                {c('Action').t`Lock extension`}
+                            </DropdownMenuButton>
+                        )}
+
+                        <Submenu
+                            submenuIcon="notepad-checklist"
+                            submenuLabel={c('Action').t`Advanced`}
+                            linkItems={advancedLinks}
+                        />
+
                         <hr className="dropdown-item-hr my-2 mx-4" aria-hidden="true" />
 
                         {webStoreURL && (
@@ -227,25 +259,6 @@ const MenuDropdownRaw: VFC<{ className?: string }> = ({ className }) => {
                             submenuLabel={c('Action').t`Get mobile apps`}
                             linkItems={downloadLinks}
                         />
-                        <DropdownMenuButton
-                            className="flex flex-align-items-center py-2 px-4"
-                            onClick={withClose(sync)}
-                            disabled={!ready}
-                        >
-                            <Icon name="arrow-rotate-right" className="mr-3 color-weak" />
-                            {c('Action').t`Sync`}
-                        </DropdownMenuButton>
-
-                        {canLock && (
-                            <DropdownMenuButton
-                                className="flex flex-align-items-center py-2 px-4"
-                                onClick={withClose(lock)}
-                                disabled={!ready}
-                            >
-                                <Icon name="lock" className="mr-3 color-weak" />
-                                {c('Action').t`Lock ${PASS_APP_NAME}`}
-                            </DropdownMenuButton>
-                        )}
 
                         <DropdownMenuButton
                             className="flex flex-align-items-center py-2 px-4"

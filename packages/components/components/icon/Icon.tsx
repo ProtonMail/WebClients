@@ -195,6 +195,7 @@ export type IconName =
     | 'info-circle'
     | 'info-circle-filled'
     | 'key'
+    | 'key-history'
     | 'key-skeleton'
     | 'language'
     | 'life-ring'
