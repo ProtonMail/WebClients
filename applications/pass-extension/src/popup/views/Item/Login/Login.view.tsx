@@ -7,6 +7,7 @@ import { Href } from '@proton/atoms';
 import { selectAliasByAliasEmail, selectTOTPLimits } from '@proton/pass/store';
 import { getFormattedDateFromTimestamp } from '@proton/pass/utils/time/format';
 
+import { TextAreaReadonly } from '../../../../shared/components/fields/TextAreaReadonly';
 import { UpgradeButton } from '../../../../shared/components/upgrade/UpgradeButton';
 import { getCharsGroupedByColor } from '../../../../shared/hooks/usePasswordGenerator';
 import type { ItemTypeViewProps } from '../../../../shared/items/types';
@@ -71,7 +72,13 @@ export const LoginView: VFC<ItemTypeViewProps<'login'>> = ({ vault, revision, ..
 
             {note && (
                 <FieldsetCluster mode="read" as="div">
-                    <ValueControl clickToCopy as="pre" icon="note" label={c('Label').t`Note`} value={note} />
+                    <ValueControl
+                        clickToCopy
+                        as={TextAreaReadonly}
+                        icon="note"
+                        label={c('Label').t`Note`}
+                        value={note}
+                    />
                 </FieldsetCluster>
             )}
 
