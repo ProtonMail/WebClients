@@ -25,7 +25,6 @@ import {
 import type { MaybeNull, VaultShare } from '@proton/pass/types';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { pipe, tap } from '@proton/pass/utils/fp';
-import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
 import { ConfirmationModal } from '../../../../src/shared/components/confirmation';
@@ -222,6 +221,23 @@ const MenuDropdownRaw: VFC<{ className?: string }> = ({ className }) => {
                             <Icon name="arrow-out-square" className="ml-3 color-weak" />
                         </DropdownMenuButton>
 
+                        {canLock && (
+                            <DropdownMenuButton
+                                className="flex flex-align-items-center py-2 px-4"
+                                onClick={withClose(lock)}
+                                disabled={!ready}
+                            >
+                                <Icon name="lock" className="mr-3 color-weak" />
+                                {c('Action').t`Lock extension`}
+                            </DropdownMenuButton>
+                        )}
+
+                        <Submenu
+                            submenuIcon="notepad-checklist"
+                            submenuLabel={c('Action').t`Advanced`}
+                            linkItems={advancedLinks}
+                        />
+
                         <hr className="dropdown-item-hr my-2 mx-4" aria-hidden="true" />
 
                         {webStoreURL && (
@@ -243,22 +259,6 @@ const MenuDropdownRaw: VFC<{ className?: string }> = ({ className }) => {
                             submenuLabel={c('Action').t`Get mobile apps`}
                             linkItems={downloadLinks}
                         />
-                        <Submenu
-                            submenuIcon="notepad-checklist"
-                            submenuLabel={c('Action').t`Advanced`}
-                            linkItems={advancedLinks}
-                        />
-
-                        {canLock && (
-                            <DropdownMenuButton
-                                className="flex flex-align-items-center py-2 px-4"
-                                onClick={withClose(lock)}
-                                disabled={!ready}
-                            >
-                                <Icon name="lock" className="mr-3 color-weak" />
-                                {c('Action').t`Lock ${PASS_APP_NAME}`}
-                            </DropdownMenuButton>
-                        )}
 
                         <DropdownMenuButton
                             className="flex flex-align-items-center py-2 px-4"
