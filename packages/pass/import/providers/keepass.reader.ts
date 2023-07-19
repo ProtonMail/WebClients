@@ -102,7 +102,7 @@ export const readKeePassData = (data: string): ImportPayload => {
         };
     } catch (e) {
         logger.warn('[Importer::KeePass]', e);
-        const errorDetail = e instanceof ImportReaderError ? e.message : '';
+        const errorDetail = e instanceof ImportReaderError ? `(${e.message})` : '';
         throw new ImportReaderError(c('Error').t`KeePass export file could not be parsed. ${errorDetail}`);
     }
 };

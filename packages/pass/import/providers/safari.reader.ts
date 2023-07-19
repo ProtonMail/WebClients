@@ -48,7 +48,7 @@ export const readSafariData = async (data: string): Promise<ImportPayload> => {
         };
     } catch (e) {
         logger.warn('[Importer::Safari]', e);
-        const errorDetail = e instanceof ImportReaderError ? e.message : '';
+        const errorDetail = e instanceof ImportReaderError ? `(${e.message})` : '';
         throw new Error(c('Error').t`Safari export file could not be parsed. ${errorDetail}`);
     }
 };

@@ -121,7 +121,7 @@ export const readLastPassData = async (data: string): Promise<ImportPayload> => 
         return { vaults, ignored, warnings };
     } catch (e) {
         logger.warn('[Importer::LastPass]', e);
-        const errorDetail = e instanceof ImportReaderError ? e.message : '';
+        const errorDetail = e instanceof ImportReaderError ? `(${e.message})` : '';
         throw new ImportReaderError(c('Error').t`LastPass export file could not be parsed. ${errorDetail}`);
     }
 };
