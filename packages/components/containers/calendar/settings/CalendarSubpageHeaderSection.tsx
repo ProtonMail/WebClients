@@ -8,8 +8,8 @@ import { useContactEmailsCache } from '@proton/components/containers/contacts/Co
 import { CALENDAR_STATUS_TYPE, getCalendarStatusBadges } from '@proton/shared/lib/calendar/badges';
 import { getIsHolidaysCalendar } from '@proton/shared/lib/calendar/calendar';
 import {
-    getCalendarCreatedByText,
     getCalendarNameSubline,
+    getSharedCalendarSubHeaderText,
 } from '@proton/shared/lib/calendar/sharing/shareProton/shareProton';
 import { getCalendarHasSubscriptionParameters } from '@proton/shared/lib/calendar/subscribe/helpers';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
@@ -36,13 +36,14 @@ const CalendarSubpageHeaderSection = ({ calendar, defaultCalendar, holidaysCalen
         Description,
         Color,
         Email: memberEmail,
-        Permissions: memberPermissions,
         Type: calendarType,
+        Permissions: memberPermissions,
     } = calendar;
     const { isSubscribed, badges, isNotSyncedInfo } = getCalendarStatusBadges(calendar, defaultCalendar?.ID);
     const url = getCalendarHasSubscriptionParameters(calendar) ? calendar.SubscriptionParameters.URL : undefined;
-    const createdByText = getCalendarCreatedByText(calendar, contactEmailsMap);
+    const subHeaderText = getSharedCalendarSubHeaderText(calendar, contactEmailsMap);
     const subline = getCalendarNameSubline({ calendarType, displayEmail: true, memberEmail, memberPermissions });
+
     const editCalendarText = c('Calendar edit button tooltip').t`Edit calendar`;
 
     const [calendarModal, setIsCalendarModalOpen, renderCalendarModal] = useModalState();
@@ -82,14 +83,16 @@ const CalendarSubpageHeaderSection = ({ calendar, defaultCalendar, holidaysCalen
                         {Name}
                     </h1>
                     {Description && <div className="mb-1 text-break">{Description}</div>}
-                    {createdByText && (
-                        <div className="text-break mb-1" title={createdByText}>
-                            {createdByText}
+
+                    {subHeaderText && (
+                        <div className="text-rg text-break mb-1 color-norm" title={subHeaderText}>
+                            {subHeaderText}
                         </div>
                     )}
                     <div className="text-ellipsis color-weak" title={subline}>
                         {subline}
                     </div>
+
                     {isSubscribed && (
                         <div
                             className={clsx(['text-break text-sm mt-1 color-weak', !url && 'calendar-email'])}
