@@ -1,4 +1,4 @@
-import { Dispatch, Fragment, ReactElement, ReactNode, SetStateAction, useRef, useState } from 'react';
+import { Dispatch, Fragment, ReactElement, ReactNode, SetStateAction, useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import { addMonths } from 'date-fns';
@@ -287,6 +287,10 @@ const Step1 = ({
     const [loadingPaymentDetails, withLoadingPaymentDetails] = useLoading();
 
     const { plansMap, paymentMethodStatus } = model;
+
+    useEffect(() => {
+        metrics.core_vpn_single_signup_pageLoad_total.increment({ step: 'plan_username_payment' });
+    }, []);
 
     const hasBeenCountedRef = useRef<HasBeenCountedState>({
         plan: false,
