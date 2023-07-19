@@ -1,11 +1,10 @@
 import get from 'lodash/get';
-import { c } from 'ttag';
 import X2JS from 'x2js';
 
 import type { ItemImportIntent, MaybeNull } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
 
-import { ImportReaderError } from '../helpers/reader.error';
+import { ImportProviderError } from '../helpers/error';
 import { getImportedVaultName, importLoginItem } from '../helpers/transformers';
 import type { ImportVault } from '../types';
 import { type ImportPayload } from '../types';
@@ -102,7 +101,6 @@ export const readKeePassData = (data: string): ImportPayload => {
         };
     } catch (e) {
         logger.warn('[Importer::KeePass]', e);
-        const errorDetail = e instanceof ImportReaderError ? `(${e.message})` : '';
-        throw new ImportReaderError(c('Error').t`KeePass export file could not be parsed. ${errorDetail}`);
+        throw new ImportProviderError('KeePass', e);
     }
 };

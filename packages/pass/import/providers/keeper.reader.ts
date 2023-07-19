@@ -1,5 +1,3 @@
-import { c } from 'ttag';
-
 import type { ItemExtraField, ItemImportIntent, Maybe } from '@proton/pass/types';
 import { truthy } from '@proton/pass/utils/fp';
 import { logger } from '@proton/pass/utils/logger';
@@ -7,7 +5,7 @@ import groupWith from '@proton/utils/groupWith';
 import lastItem from '@proton/utils/lastItem';
 
 import { readCSV } from '../helpers/csv.reader';
-import { ImportReaderError } from '../helpers/reader.error';
+import { ImportProviderError } from '../helpers/error';
 import { getImportedVaultName, importLoginItem, importNoteItem } from '../helpers/transformers';
 import type { ImportPayload, ImportVault } from '../types';
 import type { KeeperItem } from './keeper.types';
@@ -108,7 +106,6 @@ export const readKeeperData = async (data: string): Promise<ImportPayload> => {
         };
     } catch (e) {
         logger.warn('[Importer::Keeper]', e);
-        const errorDetail = e instanceof ImportReaderError ? `(${e.message})` : '';
-        throw new Error(c('Error').t`Keeper export file could not be parsed. ${errorDetail}`);
+        throw new ImportProviderError('Keeper', e);
     }
 };

@@ -10,7 +10,7 @@ import groupWith from '@proton/utils/groupWith';
 import lastItem from '@proton/utils/lastItem';
 
 import { readCSV } from '../helpers/csv.reader';
-import { ImportReaderError } from '../helpers/reader.error';
+import { ImportProviderError } from '../helpers/error';
 import { getImportedVaultName, importCreditCardItem, importLoginItem, importNoteItem } from '../helpers/transformers';
 import type { ImportPayload, ImportVault } from '../types';
 import { type LastPassItem, LastPassNoteType } from './lastpass.types';
@@ -121,7 +121,6 @@ export const readLastPassData = async (data: string): Promise<ImportPayload> => 
         return { vaults, ignored, warnings };
     } catch (e) {
         logger.warn('[Importer::LastPass]', e);
-        const errorDetail = e instanceof ImportReaderError ? `(${e.message})` : '';
-        throw new ImportReaderError(c('Error').t`LastPass export file could not be parsed. ${errorDetail}`);
+        throw new ImportProviderError('LastPass', e);
     }
 };
