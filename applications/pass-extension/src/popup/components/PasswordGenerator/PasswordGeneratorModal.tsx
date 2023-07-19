@@ -1,4 +1,4 @@
-import { type VFC, useCallback, useEffect, useState } from 'react';
+import { type VFC, useCallback, useEffect } from 'react';
 
 import { c } from 'ttag';
 
@@ -10,14 +10,14 @@ import { SidebarModal } from '../../../shared/components/sidebarmodal/SidebarMod
 import { usePasswordGenerator } from '../../../shared/hooks';
 import { PanelHeader } from '../Panel/Header';
 import { Panel } from '../Panel/Panel';
+import { usePasswordContext } from './PasswordContext';
 import { PasswordGenerator } from './PasswordGenerator';
-import { PasswordHistoryModal } from './PasswordHistoryModal';
 
 export type BaseProps = { actionLabel?: string; className?: string; onSubmit?: (password: string) => void };
 export type Props = Omit<ModalProps, 'onSubmit'> & BaseProps;
 
 export const PasswordGeneratorModal: VFC<Props> = ({ onSubmit, actionLabel, ...props }) => {
-    const [showHistory, setShowHistory] = useState(false);
+    const { openPasswordHistory } = usePasswordContext();
     const passwordGenerator = usePasswordGenerator();
     const handleActionClick = useCallback(() => onSubmit?.(passwordGenerator.password), [passwordGenerator, onSubmit]);
 
@@ -68,19 +68,11 @@ export const PasswordGeneratorModal: VFC<Props> = ({ onSubmit, actionLabel, ...p
 
                 <button
                     className="w100 flex flex-align-items-center flex-justify-space-between"
-                    onClick={() => setShowHistory(true)}
+                    onClick={() => openPasswordHistory(true)}
                 >
                     <span>{c('Label').t`Password history`}</span>
                     <Icon name="chevron-right" />
                 </button>
-
-                <PasswordHistoryModal
-                    open={showHistory}
-                    onClose={() => setShowHistory(false)}
-                    className={props.className}
-                    /* pass the parent modal classname
-                     * to maintain sub-theme */
-                />
             </Panel>
         </SidebarModal>
     );
