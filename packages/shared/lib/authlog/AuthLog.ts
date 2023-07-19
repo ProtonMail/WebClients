@@ -58,6 +58,18 @@ export enum AuthLogStatus {
     Failure = 'failure',
 }
 
+export enum ProtectionType {
+    BLOCKED = 1,
+    CAPTCHA = 2,
+    OWNERSHIP_VERIFICATION = 3,
+    DEVICE_VERIFICATION = 4,
+    /**
+     * AuthLog action was protected by anti-abuse systems
+     * and was evaluated as safe.
+     */
+    OK = 5,
+}
+
 export interface AuthLog {
     AppVersion: string;
     Description: string;
