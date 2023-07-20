@@ -12,6 +12,9 @@ import {
 import getPublicKeysEmailHelperLegacy from './getPublicKeysEmailHelperLegacy';
 import getPublicKeysEmailHelperWithKT from './getPublicKeysEmailHelperWithKT';
 
+export const KEY_VERIFICATION_ERROR_MESSAGE = c('loc_nightly: Key verification error')
+    .t`Unable to verify this address at this time`;
+
 /**
  * Ask the API for public keys for a given email address. The response will contain keys both
  * for internal users and for external users with WKD keys
@@ -33,7 +36,8 @@ const getPublicKeysEmailHelper = async (
         if (ktActivation === KeyTransparencyActivation.SHOW_UI) {
             return {
                 publicKeys: [],
-                Errors: [c('loc_nightly: Key verification error').t`Key verification error`],
+                ktVerificationResult: result.ktVerificationResult,
+                Errors: [KEY_VERIFICATION_ERROR_MESSAGE],
             };
         }
     }
