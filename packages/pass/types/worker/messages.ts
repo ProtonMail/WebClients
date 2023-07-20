@@ -3,7 +3,7 @@ import type { Tabs } from 'webextension-polyfill';
 
 import type { ResumedSessionResult } from '@proton/pass/auth';
 import type { ExportRequestPayload } from '@proton/pass/export/types';
-import type { AliasState } from '@proton/pass/store';
+import type { AliasOptions } from '@proton/pass/store';
 import type { Notification } from '@proton/pass/store/actions/with-notification';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import type { ExtensionForkResultPayload } from '@proton/shared/lib/authentication/sessionForking';
@@ -178,6 +178,7 @@ export type WorkerMessageWithSender<T extends WorkerMessage = WorkerMessage> = T
 export type MessageFailure = { type: 'error'; error: string; payload?: string };
 export type MessageSuccess<T> = T extends { [key: string]: any } ? T & { type: 'success' } : { type: 'success' };
 export type MaybeMessage<T> = MessageSuccess<T> | MessageFailure;
+export type Outcome<T = {}, F = {}> = ({ ok: true } & T) | ({ ok: false; error: MaybeNull<string> } & F);
 
 type WorkerMessageResponseMap = {
     [WorkerMessageType.WORKER_WAKEUP]: WorkerState & { settings: ProxiedSettings };
@@ -192,14 +193,10 @@ type WorkerMessageResponseMap = {
     [WorkerMessageType.AUTOFILL_QUERY]: { items: SafeLoginItem[]; needsUpgrade: boolean };
     [WorkerMessageType.AUTOFILL_SELECT]: { username: string; password: string };
     [WorkerMessageType.AUTOFILL_OTP_CHECK]: { shouldPrompt: false } | ({ shouldPrompt: true } & SelectedItem);
-    [WorkerMessageType.ALIAS_CREATE]: { ok: true } | { ok: false; reason: string };
-    [WorkerMessageType.UNLOCK_REQUEST]: { ok: true } | { ok: false; canRetry: boolean; reason: string };
+    [WorkerMessageType.ALIAS_CREATE]: Outcome;
+    [WorkerMessageType.UNLOCK_REQUEST]: Outcome<{}, { canRetry: boolean }>;
     [WorkerMessageType.OTP_CODE_GENERATE]: OtpCode;
-    [WorkerMessageType.ALIAS_OPTIONS]: {
-        options: AliasState['aliasOptions'];
-        needsUpgrade: boolean;
-        error: MaybeNull<string>;
-    };
+    [WorkerMessageType.ALIAS_OPTIONS]: Outcome<{ options: AliasOptions; needsUpgrade: boolean }>;
     [WorkerMessageType.EXPORT_REQUEST]: { data: string };
     [WorkerMessageType.EXPORT_DECRYPT]: { data: string };
     [WorkerMessageType.ONBOARDING_REQUEST]: { message?: OnboardingMessage };

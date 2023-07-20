@@ -6,7 +6,7 @@ import type { AliasState } from '../reducers';
 import type { State } from '../types';
 import { selectItemsByType } from './items';
 
-export const selectAliasOptions = ({ alias }: State): AliasState['aliasOptions'] | null => alias.aliasOptions;
+export const selectAliasOptions = ({ alias }: State): AliasState['aliasOptions'] => alias.aliasOptions;
 
 export const selectMailboxesForAlias =
     (aliasEmail: string) =>
