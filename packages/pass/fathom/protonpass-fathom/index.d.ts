@@ -4,7 +4,15 @@ import * as fathomWeb from './fathom.js';
 export { fathomWeb as fathom };
 
 type AnyRule = ReturnType<typeof rule>;
+type Ruleset = ReturnType<typeof ruleset>;
+type BoundRuleset = ReturnType<Ruleset['against']>;
 type Coeff = [string, number];
+type Bias = [string, number];
+type RulesetAggregation = {
+    rules: AnyRule[];
+    coeffs: Coeff[];
+    biases: Bias[];
+};
 type TrainingResults = {
     coeffs: Coeff[];
     bias: number;
@@ -14,6 +22,22 @@ type Trainee = TrainingResults & {
     name: string;
     getRules: () => AnyRule[];
 };
+declare enum FormType {
+    LOGIN = 'login',
+    REGISTER = 'register',
+    PASSWORD_CHANGE = 'password-change',
+    RECOVERY = 'recovery',
+    MFA = 'mfa',
+    NOOP = 'noop',
+}
+declare enum FieldType {
+    EMAIL = 'email',
+    USERNAME = 'username',
+    USERNAME_HIDDEN = 'username-hidden',
+    PASSWORD_CURRENT = 'password',
+    PASSWORD_NEW = 'new-password',
+    OTP = 'otp',
+}
 
 declare const trainees: {
     forms: Record<string, Trainee>;
@@ -27,6 +51,15 @@ declare const createInputIterator: (form: HTMLElement) => {
     prev(input: HTMLElement): HTMLElement | null;
     next(input: HTMLElement): HTMLElement | null;
 };
+declare const getFormClassification: (formFnode: Fnode | null) => {
+    login: boolean;
+    register: boolean;
+    pwChange: boolean;
+    recovery: boolean;
+    mfa: boolean;
+    noop: boolean;
+};
+declare const isNoopForm: (formFnode: Fnode) => boolean;
 
 declare const isActiveField: (el: HTMLInputElement) => boolean;
 declare const splitFieldsByVisibility: (els: HTMLElement[]) => [HTMLElement[], HTMLElement[]];
@@ -131,17 +164,27 @@ declare const selectUnprocessedForms: (target?: Document) => HTMLElement[];
 declare const clearDetectionCache: () => void;
 
 export {
+    AnyRule,
+    Bias,
+    BoundRuleset,
+    Coeff,
     DETECTED_CLUSTER_ATTR,
     DETECTED_FIELD_TYPE_ATTR,
     DETECTED_FORM_TYPE_ATTR,
     EL_ATTRIBUTES,
     FIELD_ATTRIBUTES,
     FORM_ATTRIBUTES,
+    FieldType,
     FormInputIterator,
+    FormType,
     IGNORE_ELEMENT_ATTR,
     PROCESSED_FIELD_ATTR,
     PROCESSED_FORM_ATTR,
+    Ruleset,
+    RulesetAggregation,
     TEXT_ATTRIBUTES,
+    Trainee,
+    TrainingResults,
     anchorLinkSelector,
     buttonSelector,
     buttonSubmitSelector,
@@ -162,6 +205,7 @@ export {
     getDetectedFormParent,
     getFieldAttributes,
     getFormAttributes,
+    getFormClassification,
     getFormParent,
     getIgnoredParent,
     getTextAttributes,
@@ -175,6 +219,7 @@ export {
     isEmailCandidate,
     isFieldProcessed,
     isFormProcessed,
+    isNoopForm,
     isOAuthCandidate,
     isSubmitBtnCandidate,
     isUsernameCandidate,
