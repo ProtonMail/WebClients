@@ -1,5 +1,5 @@
-import type { FormType } from '@proton/pass/types';
-import { FormField } from '@proton/pass/types';
+import type { FormType } from '@proton/pass/fathom';
+import { FieldType } from '@proton/pass/fathom';
 import { findBoundingInputElement } from '@proton/pass/utils/dom';
 import { createListenerStore } from '@proton/pass/utils/listener';
 
@@ -11,7 +11,7 @@ import { createFieldIconHandle } from './icon';
 type CreateFieldHandlesOptions = {
     element: HTMLInputElement;
     formType: FormType;
-    fieldType: FormField;
+    fieldType: FieldType;
     zIndex: number;
     getFormHandle: () => FormHandle;
 };
@@ -60,7 +60,7 @@ const onInputField = (field: FieldHandle): (() => void) =>
  * the tracked form and re-trigger the detection */
 const onFieldAttributeChange = (field: FieldHandle): MutationCallback =>
     withContext<MutationCallback>(({ service: { formManager } }, mutations) => {
-        if ([FormField.PASSWORD_CURRENT, FormField.PASSWORD_NEW].includes(field.fieldType)) return;
+        if ([FieldType.PASSWORD_CURRENT, FieldType.PASSWORD_NEW].includes(field.fieldType)) return;
 
         mutations.forEach((mutation) => {
             const target = mutation.target as HTMLInputElement;

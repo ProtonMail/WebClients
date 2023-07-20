@@ -1,6 +1,6 @@
 import { contentScriptMessage, sendMessage } from '@proton/pass/extension/message';
-import { resetFormFlags, setIgnoreFlag } from '@proton/pass/fathom';
-import { FormType, WorkerMessageType } from '@proton/pass/types';
+import { FormType, resetFormFlags, setIgnoreFlag } from '@proton/pass/fathom';
+import { WorkerMessageType } from '@proton/pass/types';
 import { pipe, waitUntil } from '@proton/pass/utils/fp';
 
 import {
