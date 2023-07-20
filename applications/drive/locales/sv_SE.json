@@ -3403,6 +3403,9 @@
       "Enter the credentials of the email account you want to import from.": [
         "Ange inloggningsuppgifter till e-postkontot du vill importera från."
       ],
+      "Enter the device name to confirm removal.": [
+        "Ange enhetsnamnet för att bekräfta borttagning."
+      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Ange verifieringskoden som skickades till ${ destinationText }."
       ],
@@ -3905,9 +3908,6 @@
       "This will delete the link and remove access to your file or folder for anyone with the link.": [
         "Detta kommer att ta bort länken och ta bort åtkomst till din fil eller mapp för alla med länken.",
         "Detta kommer att ta bort länkarna och ta bort åtkomst till dina filer eller mappar för alla med länkarna."
-      ],
-      "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on the device won’t be affected.": [
-        "Detta tar bort den synkroniserade enheten ${ deviceName } från ${ DRIVE_APP_NAME }. Lokala filer på enheten påverkas inte."
       ],
       "This will replace the existing file with the folder": [
         "Detta kommer ersätta den befintliga filen med mappen"
