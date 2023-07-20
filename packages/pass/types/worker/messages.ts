@@ -195,7 +195,11 @@ type WorkerMessageResponseMap = {
     [WorkerMessageType.ALIAS_CREATE]: { ok: true } | { ok: false; reason: string };
     [WorkerMessageType.UNLOCK_REQUEST]: { ok: true } | { ok: false; canRetry: boolean; reason: string };
     [WorkerMessageType.OTP_CODE_GENERATE]: OtpCode;
-    [WorkerMessageType.ALIAS_OPTIONS]: { options: AliasState['aliasOptions']; needsUpgrade: boolean };
+    [WorkerMessageType.ALIAS_OPTIONS]: {
+        options: AliasState['aliasOptions'];
+        needsUpgrade: boolean;
+        error: MaybeNull<string>;
+    };
     [WorkerMessageType.EXPORT_REQUEST]: { data: string };
     [WorkerMessageType.EXPORT_DECRYPT]: { data: string };
     [WorkerMessageType.ONBOARDING_REQUEST]: { message?: OnboardingMessage };
