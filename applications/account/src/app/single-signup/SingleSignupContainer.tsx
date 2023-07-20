@@ -41,7 +41,6 @@ import { getSignupMeta } from '../signup/signupPagesJson';
 import { defaultSignupModel } from '../single-signup-v2/SingleSignupContainerV2';
 import { SignupModelV2, Steps } from '../single-signup-v2/interface';
 import { getPaymentMethodsAvailable, getSignupTelemetryData } from '../single-signup-v2/measure';
-import useForceLanguage from '../useForceLanguage';
 import { useMetaTags } from '../useMetaTags';
 import Step1 from './Step1';
 import Step2 from './Step2';
@@ -71,7 +70,6 @@ const SingleSignupContainer = ({ toApp, clientType, loader, onLogin, productPara
     const handleError = useErrorHandler();
     const location = useLocation();
 
-    useForceLanguage();
     useMetaTags(getSignupMeta(toApp, APP_NAME, { isMailTrial: false, isMailRefer: false }));
 
     const [loadingDependencies, withLoadingDependencies] = useLoading(true);
