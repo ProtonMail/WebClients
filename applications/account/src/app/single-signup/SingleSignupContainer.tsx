@@ -33,9 +33,9 @@ import onboardingVPNWelcome from '@proton/styles/assets/img/onboarding/vpn-welco
 import noop from '@proton/utils/noop';
 
 import { getPlanFromPlanIDs, getSubscriptionPrices } from '../signup/helper';
-import { SignupCacheResult, SubscriptionData } from '../signup/interfaces';
+import { SignupCacheResult, SignupType, SubscriptionData } from '../signup/interfaces';
 import { SignupParameters, getPlanIDsFromParams, getSignupSearchParams } from '../signup/searchParams';
-import { handleDone, handleSetPassword, handleSetupUser } from '../signup/signupActions';
+import { getSubscriptionMetricsData, handleDone, handleSetPassword, handleSetupUser } from '../signup/signupActions';
 import { handleCreateUser } from '../signup/signupActions/handleCreateUser';
 import { getSignupMeta } from '../signup/signupPagesJson';
 import { defaultSignupModel } from '../single-signup-v2/SingleSignupContainerV2';
@@ -263,9 +263,10 @@ const SingleSignupContainer = ({ toApp, clientType, loader, onLogin, productPara
                             setLoadingChallenge(false);
                         }}
                         onComplete={async (data) => {
+                            const { accountData, subscriptionData } = data;
+                            const accountType =
+                                accountData.signupType === SignupType.Email ? 'external_account' : 'proton_account';
                             try {
-                                const { accountData, subscriptionData } = data;
-
                                 const cache: SignupCacheResult = {
                                     type: 'signup',
                                     appName: APP_NAME,
@@ -290,11 +291,17 @@ const SingleSignupContainer = ({ toApp, clientType, loader, onLogin, productPara
                                     step: Steps.Loading,
                                 });
 
-                                metrics.core_vpn_single_signup_step1_payment_total.increment({ status: 'success' });
+                                metrics.core_vpn_single_signup_step1_account_creation_total.increment({
+                                    status: 'success',
+                                    account_type: accountType,
+                                });
                             } catch (error) {
                                 handleError(error);
                                 observeApiError(error, (status) =>
-                                    metrics.core_vpn_single_signup_step1_payment_total.increment({ status })
+                                    metrics.core_vpn_single_signup_step1_account_creation_total.increment({
+                                        status,
+                                        account_type: accountType,
+                                    })
                                 );
                             }
                         }}
@@ -310,6 +317,7 @@ const SingleSignupContainer = ({ toApp, clientType, loader, onLogin, productPara
                             if (!cache || cache.type !== 'signup') {
                                 throw new Error('Missing cache');
                             }
+                            const subscriptionMetricsData = getSubscriptionMetricsData(cache.subscriptionData);
                             try {
                                 if (cache.type === 'signup') {
                                     const result = await handleSetupNewUser(cache);
@@ -318,11 +326,17 @@ const SingleSignupContainer = ({ toApp, clientType, loader, onLogin, productPara
                                         step: Steps.Custom,
                                     });
 
-                                    metrics.core_vpn_single_signup_step2_setup_total.increment({ status: 'success' });
+                                    metrics.core_vpn_single_signup_step2_setup_total.increment({
+                                        status: 'success',
+                                        ...subscriptionMetricsData,
+                                    });
                                 }
                             } catch (error) {
                                 observeApiError(error, (status) =>
-                                    metrics.core_vpn_single_signup_step2_setup_total.increment({ status })
+                                    metrics.core_vpn_single_signup_step2_setup_total.increment({
+                                        status,
+                                        ...subscriptionMetricsData,
+                                    })
                                 );
 
                                 handleError(error);
