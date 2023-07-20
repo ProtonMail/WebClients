@@ -4,7 +4,7 @@ import { c } from 'ttag';
 import type { AliasMailbox } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp';
 
-import type { AliasState } from '../../reducers';
+import type { AliasOptions } from '../../reducers';
 import * as requests from '../requests';
 import withCacheBlock from '../with-cache-block';
 import type { ActionCallback } from '../with-callback';
@@ -32,7 +32,7 @@ export const aliasOptionsRequested = createAction(
 
 export const aliasOptionsRequestSuccess = createAction(
     'alias options request success',
-    (payload: { options: AliasState['aliasOptions'] }) =>
+    (payload: { options: AliasOptions }) =>
         withRequest({
             id: requests.aliasOptions(),
             type: 'success',

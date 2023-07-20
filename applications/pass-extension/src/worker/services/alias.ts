@@ -1,10 +1,8 @@
 import { c } from 'ttag';
 
 import {
-    aliasOptionsRequestFailure,
     aliasOptionsRequestSuccess,
     aliasOptionsRequested,
-    itemCreationFailure,
     itemCreationIntent,
     itemCreationSuccess,
     selectAliasLimits,
@@ -25,23 +23,18 @@ export const createAliasService = () => {
      * the upselling UI when alias limits have been reached */
     WorkerMessageBroker.registerMessage(WorkerMessageType.ALIAS_OPTIONS, async () => {
         const { needsUpgrade } = selectAliasLimits(store.getState());
-        const primaryVault = selectPrimaryVault(store.getState());
+        const { shareId } = selectPrimaryVault(store.getState());
 
         return new Promise((resolve) =>
             store.dispatch(
-                aliasOptionsRequested({ shareId: primaryVault.shareId }, (result) => {
+                aliasOptionsRequested({ shareId }, (result) => {
                     if (aliasOptionsRequestSuccess.match(result)) {
-                        return resolve({ needsUpgrade: needsUpgrade, options: result.payload.options, error: null });
+                        const { options } = result.payload;
+                        return resolve({ ok: true, needsUpgrade, options });
                     }
 
-                    if (aliasOptionsRequestFailure.match(result)) {
-                        const errorMessage =
-                            result.error instanceof Error ? getApiErrorMessage(result.error) : undefined;
-                        return resolve({ needsUpgrade: needsUpgrade, options: null, error: errorMessage ?? null });
-                    }
-
-                    // should never happen, but just in case
-                    return resolve({ needsUpgrade: needsUpgrade, options: null, error: null });
+                    const error = result.error instanceof Error ? getApiErrorMessage(result.error) ?? null : null;
+                    return resolve({ ok: false, error });
                 })
             )
         );
@@ -75,20 +68,11 @@ export const createAliasService = () => {
 
         return new Promise((resolve) =>
             store.dispatch(
-                itemCreationIntent(aliasCreationIntent, (intentResultAction) => {
-                    if (itemCreationSuccess.match(intentResultAction)) {
-                        return resolve({ ok: true });
-                    }
+                itemCreationIntent(aliasCreationIntent, (result) => {
+                    if (itemCreationSuccess.match(result)) return resolve({ ok: true });
 
-                    if (itemCreationFailure.match(intentResultAction)) {
-                        const errorMessage =
-                            intentResultAction.error instanceof Error
-                                ? getApiErrorMessage(intentResultAction.error)
-                                : undefined;
-                        return resolve({ ok: false, reason: errorMessage ?? '' });
-                    }
-
-                    return resolve({ ok: false, reason: '' });
+                    const error = result.error instanceof Error ? getApiErrorMessage(result.error) ?? null : null;
+                    return resolve({ ok: false, error });
                 })
             )
         );
