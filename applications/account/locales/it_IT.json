@@ -434,9 +434,6 @@
       "Generate token": [
         "Genera token"
       ],
-      "Get ${ discountPercentage } off with 24 months": [
-        "Ottieni uno sconto del ${ discountPercentage } con 24 mesi"
-      ],
       "Get ${ vpnPlus }": [
         "Ottieni ${ vpnPlus }"
       ],
@@ -4420,8 +4417,8 @@
       "(1-2 emails per month)": [
         "(1-2 email al mese)"
       ],
-      "(2-4 per year)": [
-        "(2-4 all'anno)"
+      "(2-4 emails per year)": [
+        "(2-4 email all'anno)"
       ],
       "(4-6 emails per year)": [
         "(4-6 email all'anno)"
@@ -4522,11 +4519,14 @@
       "Best deal": [
         "Miglior offerta"
       ],
+      "Checkout": [
+        "Checkout"
+      ],
+      "Create your account": [
+        "Crea il tuo account"
+      ],
       "Device": [
         "Dispositivo"
-      ],
-      "Enter your email address": [
-        "Inserisci il tuo indirizzo email"
       ],
       "Event": [
         "Evento"
@@ -4557,9 +4557,6 @@
       ],
       "Protection": [
         "Protezione"
-      ],
-      "Select your preferred method of payment": [
-        "Seleziona il metodo di pagamento che preferisci."
       ],
       "Select your pricing plan": [
         "Seleziona il tuo piano tariffario."
@@ -4912,7 +4909,7 @@
     },
     "Import key": {
       "Are you sure you want to import a private key? Importing an insecurely generated or leaked private key can harm the security of your emails.\n\nPlease also note that the public key corresponding to this private key will be publicly available from our key server. If the key contains personal details (such as your full name) which you do not want to publish, please edit the key before importing it.": [
-        "Sei sicuro di voler importare una chiave privata? L'importazione di una chiave privata generata in modo non sicuro o trapelata può danneggiare la sicurezza delle tue e-mail.\n\nTieni inoltre presente che la chiave pubblica corrispondente a questa chiave privata sarà disponibile pubblicamente dal nostro server delle chiavi. Se la chiave contiene dettagli personali (come il tuo nome completo) che non desideri pubblicare, modifica la chiave prima di importarla."
+        "Sei sicuro di voler importare una chiave privata? L'importazione di una chiave privata generata in modo non sicuro o trapelata può danneggiare la sicurezza delle tue email.\n\nTieni inoltre presente che la chiave pubblica corrispondente a questa chiave privata sarà disponibile pubblicamente dal nostro server delle chiavi. Se la chiave contiene dettagli personali (come il tuo nome completo) che non desideri pubblicare, modifica la chiave prima di importarla."
       ]
     },
     "Import provider": {
@@ -5030,6 +5027,9 @@
       ],
       "${ current } of ${ total }": [
         "${ current } di ${ total }"
+      ],
+      "${ discountPercentage } forever": [
+        "${ discountPercentage } per sempre"
       ],
       "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
         "${ DRIVE_APP_NAME } non manterrà più versioni precedenti dei tuoi file."
@@ -6239,9 +6239,6 @@
       "Save your password somewhere safe. Click on icon to confirm that you have typed your password correctly.": [
         "Salva la password in un posto sicuro. Fai clic sull'icona per confermare di aver digitato correttamente la password."
       ],
-      "Saving your password": [
-        "Salva la tua password"
-      ],
       "Scan QR code instead": [
         "Oppure scansiona il codice QR"
       ],
@@ -6371,9 +6368,6 @@
       ],
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
         "Il messaggio ${ boldDataLocked } non verrà più mostrato, ma puoi ancora sbloccare i tuoi dati in ${ encryptionAndKeysLink }."
-      ],
-      "The ${ planName } plan includes:": [
-        "Il piano ${ planName } include:"
       ],
       "The calendar will be removed from your account.": [
         "Il calendario verrà rimosso dal tuo account."
@@ -6507,9 +6501,6 @@
       "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
         "Questa procedura guidata abiliterà l'autenticazione a due fattori (2FA) sul tuo account ${ BRAND_NAME }. L'autenticazione a due fattori renderà il tuo account ${ BRAND_NAME_TWO } molto più sicuro e per questo ti raccomandiamo di attivarla."
       ],
-      "To ${ planName }": [
-        "Su ${ planName }"
-      ],
       "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
         "Per evitare la perdita di dati, eliminali solo se sai cosa stai facendo o se ne hai esportato una copia."
       ],
@@ -6572,9 +6563,6 @@
       ],
       "Total VPN connections": [
         "Totale connessioni VPN"
-      ],
-      "Try ${ upsellPlanName } risk free": [
-        "Prova ${ upsellPlanName } senza rischi"
       ],
       "two-factor authentication (2FA)": [
         "autenticazione a due fattori (2FA)"
@@ -6711,8 +6699,8 @@
       "We securely store recovery information on your trusted device to prevent you from losing your data": [
         "Le tue informazioni di ripristino sono conservate in modo sicuro sul tuo dispositivo attendibile, per evitare la perdita dei tuoi dati"
       ],
-      "We use 3-D Secure to protect your payments.": [
-        "Utilizziamo 3-D Secure per proteggere i tuoi pagamenti."
+      "We use 3-D Secure to protect your payments": [
+        "Utilizziamo 3-D Secure per proteggere i tuoi pagamenti"
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Sarai reindirizzato su PayPal in una nuova scheda del browser per completare questa transazione. Se utilizzi un blocco pop-up, disattivalo per continuare."
@@ -6731,9 +6719,6 @@
       ],
       "Week and month views only apply to desktop.": [
         "Le visualizzazioni settimanali e mensili si applicano solo al desktop."
-      ],
-      "Welcome": [
-        "Ti diamo il benvenuto"
       ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "Invieremo un codice di ripristino all'indirizzo email fornito per il recupero dell'account."
@@ -6893,9 +6878,6 @@
       "You still need to reply to invitations for the host to see your response.": [
         "Devi ancora rispondere agli inviti affinché l'host possa vedere la tua risposta."
       ],
-      "You will be redirected to the VPN download page": [
-        "Sarai reindirizzato alla pagina per scaricare la VPN"
-      ],
       "You will lose access to ${ vpnPlanNameShort } servers and features on this date.": [
         "Perderai l'accesso ai server e le funzionalità del piano ${ vpnPlanNameShort } a partire da questa data."
       ],
@@ -6971,6 +6953,9 @@
       ],
       "Your import will not be processed.": [
         "La tua importazione non verrà elaborata."
+      ],
+      "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
+        "La tua informazione è al sicuro con noi. Ti contatteremo solo quando sarà necessario per fornire i nostri servizi."
       ],
       "Your login information will not be saved after the import is completed.": [
         "Le informazioni di accesso non verranno salvate dopo il completamento dell'importazione."
@@ -7465,7 +7450,7 @@
         "Consenti"
       ],
       "Allow notifications by email": [
-        "Consenti le notifiche via e-mail"
+        "Consenti le notifiche via email"
       ],
       "Allow recovery by email": [
         "Consenti il recupero via email"
@@ -7533,6 +7518,9 @@
       "Awarded": [
         "Premiato"
       ],
+      "Billing address": [
+        "Indirizzo di fatturazione"
+      ],
       "Billing cycle": [
         "Ciclo di fatturazione"
       ],
@@ -7566,11 +7554,11 @@
       "Calendars": [
         "Calendari"
       ],
+      "Card details": [
+        "Dettagli della carta"
+      ],
       "Card holder": [
         "Titolare carta"
-      ],
-      "Card information": [
-        "Informazioni carta"
       ],
       "Card number": [
         "Numero carta"
@@ -9199,6 +9187,9 @@
       "Split tunneling (Android and Windows)": [
         "Split tunneling (Android e Windows)"
       ],
+      "Start protecting yourself online in 2 easy steps": [
+        "Inizia a proteggerti online in 2 semplici passaggi"
+      ],
       "Strict no-logs policy": [
         "Rigorosa politica di non conservazione dei log"
       ],
@@ -10791,8 +10782,8 @@
       ]
     },
     "Shared calendar; Info about calendar owner": {
-      "Created by ${ ownerName }": [
-        "Creato da ${ ownerName }"
+      "Shared by ${ ownerName }": [
+        "Condiviso da ${ ownerName }"
       ]
     },
     "Signature verification error when joining calendar": {
@@ -10805,7 +10796,7 @@
     },
     "Signup label": {
       "Confirm email address": [
-        "Conferma l'indirizzo e-mail"
+        "Conferma l'indirizzo email"
       ],
       "Confirm password": [
         "Conferma password"
@@ -11262,9 +11253,6 @@
     "Subscription saving": {
       "Save": [
         "Risparmia"
-      ],
-      "Save ${ discountPercentage }%": [
-        "Risparmia il ${ discountPercentage }%"
       ]
     },
     "Subscription status": {
@@ -12443,7 +12431,7 @@
       "Signed in to member account": [
         "Accesso all'account membro"
       ],
-      "SMTP Submission": [
+      "SMTP submission": [
         "Invio SMTP"
       ],
       "Sort folders alphabetically": [
@@ -12968,6 +12956,69 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } in ${ numberOfCountries } paese",
         "${ numberOfServers } in ${ numberOfCountries } paesi"
+      ]
+    },
+    "vpn_2step: billing": {
+      "${ billedText }, renews on ${ formattedEndTime }": [
+        "${ billedText }, rinnovo in data ${ formattedEndTime }"
+      ],
+      "Billed every 15 months": [
+        "Fatturato ogni 15 mesi"
+      ],
+      "Billed every 2 years": [
+        "Fatturato ogni 2 anni"
+      ],
+      "Billed every 30 months": [
+        "Fatturato ogni 30 mesi"
+      ],
+      "Billed monthly": [
+        "Fatturazione mensile"
+      ],
+      "Billed yearly": [
+        "Fatturazione annuale"
+      ]
+    },
+    "vpn_2step: discount": {
+      "1-year": [
+        "1 anno"
+      ],
+      "2-year": [
+        "2 anni"
+      ],
+      "Get ${ discount } off with a ${ billingCycle } subscription": [
+        "Ottieni ${ discount } con un abbonamento ${ billingCycle }"
+      ],
+      "monthly": [
+        "mensile"
+      ]
+    },
+    "vpn_2step: feature": {
+      "Advanced VPN customizations": [
+        "Personalizzazioni VPN avanzate"
+      ],
+      "No ads": [
+        "Nessuna pubblicità"
+      ]
+    },
+    "vpn_2step: info": {
+      "${ n } month": [
+        "${ n } mese",
+        "${ n } mesi"
+      ],
+      "${ n } year": [
+        "${ n } anno",
+        "${ n } anni"
+      ],
+      "Try ${ upsellPlanName } risk-free": [
+        "Prova ${ upsellPlanName } senza rischi"
+      ],
+      "Your ${ selected } plan": [
+        "Il tuo piano ${ selected }"
+      ]
+    },
+    "vpn_2step: tooltip": {
+      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, Double hop, and more.": [
+        "Accesso a server core sicuri, download veloci P2P/BitTorrent, Tor over VPN, Double hop e altro ancora."
       ]
     },
     "Warning": {

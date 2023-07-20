@@ -434,9 +434,6 @@
       "Generate token": [
         "鍵を生成"
       ],
-      "Get ${ discountPercentage } off with 24 months": [
-        "24 ヶ月で ${ discountPercentage } の割引を獲得"
-      ],
       "Get ${ vpnPlus }": [
         "${ vpnPlus } を入手"
       ],
@@ -2716,6 +2713,9 @@
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files.": [
         "最大 ${ MAX_IMPORT_FILE_SIZE_STRING } のファイルサイズ、最大 ${ MAX_IMPORT_CONTACTS_STRING } 件の連絡先に対応しています。それより大きなファイルは、分割してください。"
       ],
+      "To remove the ${ MAIL_APP_NAME } footer, upgrade and unlock even more premium features.": [
+        "${ MAIL_APP_NAME }フッターを削除するには、プレミアム機能にアップグレードしてさらに多くのロックを解除します。"
+      ],
       "Track the status and activity of your referrals.": [
         "招待の状態やアクティビティを確認します。"
       ],
@@ -4402,9 +4402,6 @@
       "Permissions": [
         "権限"
       ],
-      "Select your preferred method of payment": [
-        "お支払い方法を選択"
-      ],
       "Status": [
         "状態"
       ],
@@ -6041,9 +6038,6 @@
       "Save your password somewhere safe. Click on icon to confirm that you have typed your password correctly.": [
         "パスワードは安全な場所に保管してください。 パスワードが正しく入力されたか確認するには、アイコンをクリックしてください。"
       ],
-      "Saving your password": [
-        "パスワードを保存"
-      ],
       "Scan QR code instead": [
         "代わりに QR コードをスキャン"
       ],
@@ -6172,9 +6166,6 @@
       ],
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
         "${ boldDataLocked }メッセージは表示されませんが、${ encryptionAndKeysLink }を利用してロックを解除できます。"
-      ],
-      "The ${ planName } plan includes:": [
-        "${ planName } プランには次のものが含まれます。"
       ],
       "The calendar will be removed from your account.": [
         "このカレンダーはアカウントから削除されます。"
@@ -6305,9 +6296,6 @@
       "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
         "このウィザードでは、あなたの ${ BRAND_NAME } アカウントの 2 要素認証 (2FA) を有効にします。2 要素認証を使用することで、${ BRAND_NAME_TWO } アカウントのセキュリティがより高まるため、有効にすることをおすすめします。"
       ],
-      "To ${ planName }": [
-        "${ planName } へ"
-      ],
       "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
         "データを失うことを避けるため、あなたが何をしているか理解していない場合やコピーをエクスポートしていない場合は削除しないでください。"
       ],
@@ -6370,9 +6358,6 @@
       ],
       "Total VPN connections": [
         "総VPN接続数"
-      ],
-      "Try ${ upsellPlanName } risk free": [
-        "${ upsellPlanName } をリスクなしでお試しください"
       ],
       "two-factor authentication (2FA)": [
         "2要素認証(2FA)"
@@ -6509,8 +6494,8 @@
       "We securely store recovery information on your trusted device to prevent you from losing your data": [
         "回復に関する情報を信頼できるデバイスに安全に保存し、データ紛失を防止します"
       ],
-      "We use 3-D Secure to protect your payments.": [
-        "決済を保護するために 3D セキュアを利用します。"
+      "We use 3-D Secure to protect your payments": [
+        "決済を保護するために 3D セキュアを利用します"
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "この取引を完了するために、新しいブラウザーのタブで PayPal にリダイレクトします。 ポップアップブロッカーを使用している場合は無効にして続けてください。"
@@ -6529,9 +6514,6 @@
       ],
       "Week and month views only apply to desktop.": [
         "週と月のビューはデスクトップにのみ適用されます。"
-      ],
-      "Welcome": [
-        "ようこそ"
       ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "リセットコードをアカウント回復に設定したメールアドレスに送信しました。"
@@ -6686,9 +6668,6 @@
       "You still need to reply to invitations for the host to see your response.": [
         "主催者に招待への応答を返信する必要があります。"
       ],
-      "You will be redirected to the VPN download page": [
-        "VPNのダウンロードページに移動します"
-      ],
       "You will lose access to ${ vpnPlanNameShort } servers and features on this date.": [
         "この日付になると、${ vpnPlanNameShort } のサーバーと機能へのアクセス権が失われます。"
       ],
@@ -6763,6 +6742,9 @@
       ],
       "Your imports from ${ accounts } are temporarily delayed.": [
         "${ accounts } からのインポートが一時的に遅延しています。"
+      ],
+      "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
+        "あなたの情報は安全です。 サービスの提供に必要な場合にのみ、お客様に連絡します。"
       ],
       "Your login information will not be saved after the import is completed.": [
         "インポート完了後、ログイン情報は保存されません。"
@@ -7318,6 +7300,9 @@
       "Auto-unsubscribe": [
         "自動登録解除"
       ],
+      "Billing address": [
+        "ご請求先住所"
+      ],
       "Billing cycle": [
         "支払い間隔"
       ],
@@ -7351,11 +7336,11 @@
       "Calendars": [
         "カレンダー"
       ],
+      "Card details": [
+        "カード詳細"
+      ],
       "Card holder": [
         "カード名義人"
-      ],
-      "Card information": [
-        "カード情報"
       ],
       "Card number": [
         "カード番号"
@@ -8775,6 +8760,9 @@
       "1 free VPN connection in total": [
         "合計 1 件の無料 VPN 接続"
       ],
+      "1 user": [
+        "1ユーザー"
+      ],
       "99.95% SLA": [
         "SLA 99.95%"
       ],
@@ -8810,6 +8798,9 @@
       ],
       "Contact groups management": [
         "連絡先グループ管理"
+      ],
+      "Custom domains for email aliases": [
+        "メールエイリアスのカスタムドメイン"
       ],
       "Custom email domains": [
         "独自メールドメイン"
@@ -8972,6 +8963,9 @@
       ],
       "Up to ${ FAMILY_MAX_USERS } users": [
         "最大 ${ FAMILY_MAX_USERS } ユーザーまで"
+      ],
+      "Up to ${ n } users": [
+        "最大 ${ n } ユーザーまで"
       ],
       "Up to ${ totalStorageSize } storage": [
         "最大 ${ totalStorageSize } のストレージ"
@@ -10251,11 +10245,6 @@
         "ラベルを追加"
       ]
     },
-    "Shared calendar; Info about calendar owner": {
-      "Created by ${ ownerName }": [
-        "${ ownerName }が作成"
-      ]
-    },
     "Signature verification error when joining calendar": {
       "Signature verification error": [
         "署名の検証でエラーが発生しました"
@@ -10704,9 +10693,6 @@
     "Subscription saving": {
       "Save": [
         "割引率:"
-      ],
-      "Save ${ discountPercentage }%": [
-        "${ discountPercentage }% を節約"
       ]
     },
     "Subscription status": {
@@ -11870,7 +11856,7 @@
       "Signed in to member account": [
         "メンバーアカウントでサインイン"
       ],
-      "SMTP Submission": [
+      "SMTP submission": [
         "SMTP 送信"
       ],
       "Sort folders alphabetically": [
@@ -12376,6 +12362,14 @@
       ],
       "${ numberOfServers } in ${ numberOfCountries } countries": [
         "${ numberOfCountries } か国で ${ numberOfServers } 台"
+      ]
+    },
+    "vpn_2step: info": {
+      "${ n } months": [
+        "${ n } か月"
+      ],
+      "${ n } years": [
+        "${ n }年"
       ]
     },
     "Warning": {

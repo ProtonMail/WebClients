@@ -434,9 +434,6 @@
       "Generate token": [
         "Gerar um token"
       ],
-      "Get ${ discountPercentage } off with 24 months": [
-        "Obtenha ${ discountPercentage } de desconto com 24 meses"
-      ],
       "Get ${ vpnPlus }": [
         "Obter o ${ vpnPlus }"
       ],
@@ -4420,6 +4417,12 @@
       "(1-2 emails per month)": [
         "(1 a 2 e-mails por mês)"
       ],
+      "(2-4 emails per year)": [
+        "(2 a 4 e-mails por ano)"
+      ],
+      "(4-6 emails per year)": [
+        "(4 a 6 e-mails por ano)"
+      ],
       "(during your first month)": [
         "(durante o primeiro mês)"
       ]
@@ -4516,11 +4519,14 @@
       "Best deal": [
         "Melhor oferta"
       ],
+      "Checkout": [
+        "Pagamento"
+      ],
+      "Create your account": [
+        "Crie a sua conta"
+      ],
       "Device": [
         "Dispositivo"
-      ],
-      "Enter your email address": [
-        "Introduza o seu endereço de e-mail"
       ],
       "Event": [
         "Evento"
@@ -4551,9 +4557,6 @@
       ],
       "Protection": [
         "Proteção"
-      ],
-      "Select your preferred method of payment": [
-        "Seleciona o teu meio de pagamento preferido"
       ],
       "Select your pricing plan": [
         "Selecione o seu plano"
@@ -5028,6 +5031,9 @@
       "${ current } of ${ total }": [
         "${ current } de ${ total }"
       ],
+      "${ discountPercentage } forever": [
+        "${ discountPercentage } para sempre"
+      ],
       "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
         "${ DRIVE_APP_NAME } deixará de manter as versões anteriores dos seus ficheiros."
       ],
@@ -5075,6 +5081,9 @@
       "${ numGroups } contact group": [
         "${ numGroups } grupo de contactos",
         "${ numGroups } grupos de contactos"
+      ],
+      "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
+        "${ PROTON_SENTINEL_NAME } é um programa avançado de proteção de conta, alimentado por sofisticados sistemas de IA e especialistas que trabalham ininterruptamente para o proteger de pessoas mal-intencionadas e ameaças à segurança."
       ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } pasta encontrada",
@@ -6164,6 +6173,9 @@
       "Protected by Swiss privacy laws": [
         "Protegido pelas leis de privacidade suíças"
       ],
+      "Public figures, journalists, executives, and others who may be the target of cyber attacks are highly encouraged to enable ${ PROTON_SENTINEL_NAME }.": [
+        "As figuras públicas, os jornalistas, os executivos e outros que possam ser alvo de ataques cibernéticos são altamente encorajados a ativar o ${ PROTON_SENTINEL_NAME }."
+      ],
       "Public link invite": [
         "Ligação do convite público"
       ],
@@ -6232,9 +6244,6 @@
       ],
       "Save your password somewhere safe. Click on icon to confirm that you have typed your password correctly.": [
         "Guarde a sua palavra-passe num lugar seguro. Clique no ícone para confirmar que digitou a sua palavra-passe corretamente."
-      ],
-      "Saving your password": [
-        "A guardar a sua palavras-passe"
       ],
       "Scan QR code instead": [
         "Ler antes código QR"
@@ -6365,9 +6374,6 @@
       ],
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
         "A mensagem ${ boldDataLocked } deixará de ser apresentada, mas ainda pode desbloquear os seus dados em ${ encryptionAndKeysLink }."
-      ],
-      "The ${ planName } plan includes:": [
-        "O plano ${ planName } inclui:"
       ],
       "The calendar will be removed from your account.": [
         "O calendário será removido da sua conta."
@@ -6501,9 +6507,6 @@
       "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
         "Este assistente ativará a autenticação de dois factores (A2F) na sua conta da ${ BRAND_NAME }. A autenticação de dois factores tornará a sua conta da ${ BRAND_NAME_TWO } mais segura. Por isto recomendamos ativá-la."
       ],
-      "To ${ planName }": [
-        "Para ${ planName }"
-      ],
       "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
         "Para evitar a perda de dados, elimine-o apenas se souber o que está a fazer ou se tiver exportado uma cópia."
       ],
@@ -6569,9 +6572,6 @@
       ],
       "Total VPN connections": [
         "Total de ligações VPN"
-      ],
-      "Try ${ upsellPlanName } risk free": [
-        "Experimente ${ upsellPlanName } sem riscos."
       ],
       "two-factor authentication (2FA)": [
         "autenticação de dois factores (A2F)"
@@ -6708,7 +6708,7 @@
       "We securely store recovery information on your trusted device to prevent you from losing your data": [
         "Armazenamos de forma segura as informações de recuperação no seu dispositivo de confiança para evitar que perca os seus dados"
       ],
-      "We use 3-D Secure to protect your payments.": [
+      "We use 3-D Secure to protect your payments": [
         "Utilizamos 3-D Secure para proteger os seus pagamentos."
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
@@ -6728,9 +6728,6 @@
       ],
       "Week and month views only apply to desktop.": [
         "As vistas semanal e mensal só se aplicam à área de trabalho."
-      ],
-      "Welcome": [
-        "Boas vindas"
       ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "Enviaremos um código de reposição para o endereço de e-mail que forneceu para a recuperação da conta."
@@ -6890,9 +6887,6 @@
       "You still need to reply to invitations for the host to see your response.": [
         "Ainda precisa responder aos convites para que o hospedeiro veja a sua resposta."
       ],
-      "You will be redirected to the VPN download page": [
-        "Será redireccionado para a página de transferência da VPN."
-      ],
       "You will lose access to ${ vpnPlanNameShort } servers and features on this date.": [
         "Nesta data, perderá o acesso a servidores e funcionalidades ${ vpnPlanNameShort }."
       ],
@@ -6968,6 +6962,9 @@
       ],
       "Your import will not be processed.": [
         "A sua importação não será processada."
+      ],
+      "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
+        "As suas informações estão seguras connosco. Só entraremos em contato quando tal for necessário para fornecer os nossos serviços."
       ],
       "Your login information will not be saved after the import is completed.": [
         "A informação de início de sessão não será guardada após concluir a importação."
@@ -7530,6 +7527,9 @@
       "Awarded": [
         "Premiado"
       ],
+      "Billing address": [
+        "Endereço de faturação"
+      ],
       "Billing cycle": [
         "Ciclo de faturação"
       ],
@@ -7563,11 +7563,11 @@
       "Calendars": [
         "Calendários"
       ],
+      "Card details": [
+        "Detalhes do cartão"
+      ],
       "Card holder": [
         "Titular do cartão"
-      ],
-      "Card information": [
-        "Informações sobre o cartão"
       ],
       "Card number": [
         "Número do cartão"
@@ -9196,6 +9196,9 @@
       "Split tunneling (Android and Windows)": [
         "Tunelamento dividido (Android e Windows)"
       ],
+      "Start protecting yourself online in 2 easy steps": [
+        "Comece a se proteger em linha em 2 passos fáceis"
+      ],
       "Strict no-logs policy": [
         "Política estrita sem diários"
       ],
@@ -10106,6 +10109,9 @@
       ]
     },
     "pass_signup_2023: Action": {
+      "Check out ${ appName } features": [
+        "Descubra as funcionalidades do ${ appName }"
+      ],
       "Continue": [
         "Continuar"
       ],
@@ -10118,11 +10124,17 @@
       "create a new account": [
         "criar uma conta"
       ],
+      "Create another account instead": [
+        "Crie outra conta em vez disso"
+      ],
       "Download again ${ size }": [
         "Descarregar novamente ${ size }"
       ],
       "Download to continue ${ size }": [
         "Descarregar para continuar ${ size }"
+      ],
+      "Keep this plan and use ${ appName }": [
+        "Mantenha este plano e utilize ${ appName }"
       ],
       "Or ${ createANewAccount }": [
         "Ou ${ createANewAccount }"
@@ -10178,6 +10190,12 @@
       "${ PASS_APP_NAME } benefits": [
         "Benefícios do ${ PASS_APP_NAME }"
       ],
+      "${ PASS_APP_NAME } is available as a browser extension on Firefox Add-ons.": [
+        "O ${ PASS_APP_NAME } está disponível como uma extensão para o navegador Firefox."
+      ],
+      "${ PASS_APP_NAME } is available as a browser extension on the Chrome Web Store.": [
+        "O ${ PASS_APP_NAME } está disponível como uma extensão do Chrome Web Store."
+      ],
       "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption.": [
         "O ${ PASS_APP_NAME } mantém as suas palavras-passe e sua identidade seguras com rigorosa encriptação de ponta-a-ponta."
       ],
@@ -10193,6 +10211,9 @@
       "All premium ${ BRAND_NAME } services.": [
         "Todos os serviços premium da ${ BRAND_NAME }."
       ],
+      "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
+        "Mas pode desbloquear **${ unlockPlanTitle }** e todos os serviços premium da ${ BRAND_NAME } com uma atualização para o **${ upsellPlanTitle }** — por apenas ${ relativePrice } extras por mês."
+      ],
       "By continuing, you agree to our ${ termsAndConditions }": [
         "Ao continuar, concorda com os nossos ${ termsAndConditions }"
       ],
@@ -10201,6 +10222,12 @@
       ],
       "Discover ${ PASS_APP_NAME },${ br }our new encrypted password manager": [
         "Descubre o ${ PASS_APP_NAME },${ br }: o nosso novo gestor de palavras-passe encriptadas"
+      ],
+      "Download the ${ PASS_APP_NAME } app from Google Play and install it to start using ${ PASS_APP_NAME2 } on your phone.": [
+        "Descarregue a aplicação do ${ PASS_APP_NAME } da Google Play e instale para começar a utilizar o ${ PASS_APP_NAME2 } no seu telefone."
+      ],
+      "Download the ${ PASS_APP_NAME } app from the App Store and install it to start using ${ PASS_APP_NAME2 } on your phone.": [
+        "Descarregue a aplicação do ${ PASS_APP_NAME } da App Store e instale para começar a utilizar o ${ PASS_APP_NAME2 } no seu telefone."
       ],
       "End-to-end encrypted notes": [
         "Notas com encriptação de ponta a ponta"
@@ -10268,6 +10295,12 @@
       "Save your recovery kit to continue": [
         "Guarde o seu kit de recuperação para continuar"
       ],
+      "Signing in to ${ PASS_APP_NAME }": [
+        "Inicio de sessão no ${ PASS_APP_NAME }"
+      ],
+      "The offer you selected is not available for ${ currentPlanTitle } subscribers.": [
+        "A oferta selecionada não está disponível para subscritores de ${ currentPlanTitle }."
+      ],
       "to start using ${ PASS_APP_NAME } on your phone": [
         "para começar a utilizar o ${ PASS_APP_NAME } no seu telefone"
       ],
@@ -10285,6 +10318,9 @@
       ],
       "You currently have": [
         "Tem actualmente"
+      ],
+      "Your organization has access to ${ free }. If you want to access premium ${ appName } features, please ask your organization's administrator to upgrade.": [
+        "A sua organização tem acesso a ${ free }. Se deseja acesso a funcionalidades premium do ${ appName }, solicite a atualização ao administrador da sua organização."
       ]
     },
     "pass_signup_2023: Onboarding": {
@@ -10737,11 +10773,6 @@
     "Shared calendar label input placeholder": {
       "Add label": [
         "Adicionar etiqueta"
-      ]
-    },
-    "Shared calendar; Info about calendar owner": {
-      "Created by ${ ownerName }": [
-        "Criado por ${ ownerName }"
       ]
     },
     "Signature verification error when joining calendar": {
@@ -11214,9 +11245,6 @@
     "Subscription saving": {
       "Save": [
         "Poupe"
-      ],
-      "Save ${ discountPercentage }%": [
-        "Poupe ${ discountPercentage }%"
       ]
     },
     "Subscription status": {
@@ -12395,7 +12423,7 @@
       "Signed in to member account": [
         "Iniciou sessão na conta de membro"
       ],
-      "SMTP Submission": [
+      "SMTP submission": [
         "Envio SMTP"
       ],
       "Sort folders alphabetically": [
@@ -12920,6 +12948,58 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } em ${ numberOfCountries } país",
         "${ numberOfServers } em ${ numberOfCountries } países"
+      ]
+    },
+    "vpn_2step: billing": {
+      "Billed every 15 months": [
+        "Faturação a cada 15 meses"
+      ],
+      "Billed every 2 years": [
+        "Faturação a cada 2 anos"
+      ],
+      "Billed every 30 months": [
+        "Faturação a cada 30 meses"
+      ],
+      "Billed monthly": [
+        "Faturação mensal"
+      ],
+      "Billed yearly": [
+        "Faturação anual"
+      ]
+    },
+    "vpn_2step: discount": {
+      "1-year": [
+        "1 ano"
+      ],
+      "2-year": [
+        "2 anos"
+      ],
+      "monthly": [
+        "mensalmente"
+      ]
+    },
+    "vpn_2step: feature": {
+      "Advanced VPN customizations": [
+        "Personalizações avançadas de VPN"
+      ],
+      "No ads": [
+        "Sem anúncios"
+      ]
+    },
+    "vpn_2step: info": {
+      "${ n } month": [
+        "${ n } mês",
+        "${ n } meses"
+      ],
+      "${ n } year": [
+        "${ n } ano",
+        "${ n } anos"
+      ],
+      "Try ${ upsellPlanName } risk-free": [
+        "Experimente ${ upsellPlanName } sem riscos"
+      ],
+      "Your ${ selected } plan": [
+        "O seu plano ${ selected }"
       ]
     },
     "VPNClient": {
