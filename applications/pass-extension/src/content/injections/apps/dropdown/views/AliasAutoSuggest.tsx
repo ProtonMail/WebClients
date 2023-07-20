@@ -4,9 +4,9 @@ import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader';
 import { contentScriptMessage, sendMessage } from '@proton/pass/extension/message';
-import type { AliasState } from '@proton/pass/store';
+import type { AliasOptions, AliasState } from '@proton/pass/store';
 import { createTelemetryEvent } from '@proton/pass/telemetry/events';
-import { type MaybeNull, type RequiredNonNull, WorkerMessageType } from '@proton/pass/types';
+import { type MaybeNull, WorkerMessageType } from '@proton/pass/types';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
@@ -24,14 +24,11 @@ type Props = {
     prefix: string;
     domain: string;
     onMessage?: (message: IFrameMessage) => void;
-    onOptions?: () => void;
+    onOptions?: () => void /* notify parent component if we need an iframe resize */;
 };
 
-const isValidAliasOptions = (
-    options: MaybeNull<AliasState['aliasOptions']>
-): options is RequiredNonNull<AliasState['aliasOptions']> => {
-    return options !== null && options?.suffixes?.[0] !== undefined;
-};
+const isValidAliasOptions = (options: AliasState['aliasOptions']): options is AliasOptions =>
+    options !== null && options?.suffixes?.[0] !== undefined;
 
 const getInitialLoadingText = (): string => c('Info').t`Generating alias...`;
 
@@ -41,37 +38,39 @@ export const AliasAutoSuggest: VFC<Props> = ({ prefix, domain, onOptions, onMess
     const [aliasOptions, setAliasOptions] = useState<MaybeNull<AliasState['aliasOptions']>>(null);
     const [needsUpgrade, setNeedsUpgrade] = useState<boolean>(false);
     const [loadingText, setLoadingText] = useState<MaybeNull<string>>(getInitialLoadingText());
-    const [error, setError] = useState<boolean>(false);
+    const [error, setError] = useState<MaybeNull<string>>(null);
 
     const requestAliasOptions = useCallback(async () => {
         try {
             setLoadingText(getInitialLoadingText());
-            setError(false);
+            onOptions?.();
+            setError(null);
             await wait(500);
 
-            await sendMessage.onSuccess(contentScriptMessage({ type: WorkerMessageType.ALIAS_OPTIONS }), (response) => {
-                if (response.options !== null) {
-                    ensureMounted(setAliasOptions)(response.options);
-                    ensureMounted(setNeedsUpgrade)(response.needsUpgrade);
-                    return onOptions?.(); /* notify parent component if we need an iframe resize */
-                }
-
-                throw new Error('alias options could not be resolved');
-            });
+            await sendMessage.onSuccess(
+                contentScriptMessage({ type: WorkerMessageType.ALIAS_OPTIONS }),
+                ensureMounted((response) => {
+                    if (response.ok) {
+                        setAliasOptions(response.options);
+                        setNeedsUpgrade(response.needsUpgrade);
+                    } else setError(response.error ?? c('Error').t`Alias options could not be resolved`);
+                })
+            );
+        } catch {
+        } finally {
             ensureMounted(setLoadingText)(null);
-        } catch (_) {
-            ensureMounted(setError)(true);
+            onOptions?.();
         }
     }, []);
 
     const createAlias = useCallback(
-        async ({ suffixes, mailboxes }: RequiredNonNull<AliasState['aliasOptions']>) => {
+        async ({ suffixes, mailboxes }: AliasOptions) => {
             const defaultSuffix = suffixes[0];
 
             setLoadingText(c('Info').t`Creating alias...`);
             const aliasEmail = `${prefix}${defaultSuffix.suffix}`;
             try {
-                await sendMessage.on(
+                await sendMessage.onSuccess(
                     contentScriptMessage({
                         type: WorkerMessageType.ALIAS_CREATE,
                         payload: {
@@ -84,8 +83,13 @@ export const AliasAutoSuggest: VFC<Props> = ({ prefix, domain, onOptions, onMess
                             },
                         },
                     }),
-                    (response) => {
-                        if (response.type === 'success') {
+                    ensureMounted((response) => {
+                        if (response.ok) {
+                            onMessage?.({
+                                type: IFrameMessageType.DROPDOWN_AUTOFILL_EMAIL,
+                                payload: { email: aliasEmail },
+                            });
+
                             void sendMessage(
                                 contentScriptMessage({
                                     type: WorkerMessageType.TELEMETRY_EVENT,
@@ -94,21 +98,13 @@ export const AliasAutoSuggest: VFC<Props> = ({ prefix, domain, onOptions, onMess
                                     },
                                 })
                             );
-                        }
-
-                        if (response.type === 'error') throw new Error(response.error);
-                    }
+                        } else setError(response.error);
+                    })
                 );
-
-                ensureMounted(() => {
-                    setLoadingText(null);
-                    onMessage?.({
-                        type: IFrameMessageType.DROPDOWN_AUTOFILL_EMAIL,
-                        payload: { email: aliasEmail },
-                    });
-                })();
-            } catch (err) {
-                ensureMounted(setError)(true);
+            } catch {
+            } finally {
+                ensureMounted(setLoadingText)(null);
+                onOptions?.();
             }
         },
         [domain]
@@ -150,7 +146,7 @@ export const AliasAutoSuggest: VFC<Props> = ({ prefix, domain, onOptions, onMess
             />
             <DropdownItem
                 title={needsUpgrade ? c('Info').t`Upgrade ${PASS_APP_NAME}` : c('Title').t`Hide my email`}
-                autogrow={needsUpgrade}
+                autogrow
                 subTitle={(() => {
                     if (loadingText) {
                         return (
@@ -171,7 +167,7 @@ export const AliasAutoSuggest: VFC<Props> = ({ prefix, domain, onOptions, onMess
                     if (error) {
                         return (
                             <span className="color-danger text-sm block">
-                                {c('Error').t`Cannot create alias.`}{' '}
+                                {c('Error').t`Cannot create alias (${error}).`}
                                 <span className="text-semibold text-underline">{c('Action').t`Try again`}</span>
                             </span>
                         );
