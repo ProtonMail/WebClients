@@ -1,8 +1,9 @@
 import { contentScriptMessage, sendMessage } from '@proton/pass/extension/message';
+import { FieldType, FormType } from '@proton/pass/fathom';
 import { passwordSave } from '@proton/pass/store/actions/creators/pw-history';
 import { createTelemetryEvent } from '@proton/pass/telemetry/events';
 import type { WorkerMessageResponse } from '@proton/pass/types';
-import { FormField, FormType, WorkerMessageType } from '@proton/pass/types';
+import { WorkerMessageType } from '@proton/pass/types';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import { first } from '@proton/pass/utils/array';
 import { uniqueId } from '@proton/pass/utils/string';
@@ -49,9 +50,9 @@ export const createAutofillService = () => {
     };
 
     const autofillLogin = (form: FormHandle, data: { username: string; password: string }) => {
-        first(form.getFieldsFor(FormField.USERNAME) ?? [])?.autofill(data.username);
-        first(form.getFieldsFor(FormField.EMAIL) ?? [])?.autofill(data.username);
-        form.getFieldsFor(FormField.PASSWORD_CURRENT).forEach((field) => field.autofill(data.password));
+        first(form.getFieldsFor(FieldType.USERNAME) ?? [])?.autofill(data.username);
+        first(form.getFieldsFor(FieldType.EMAIL) ?? [])?.autofill(data.username);
+        form.getFieldsFor(FieldType.PASSWORD_CURRENT).forEach((field) => field.autofill(data.password));
 
         autofillTelemetry();
     };
@@ -60,7 +61,7 @@ export const createAutofillService = () => {
         ({ getExtensionContext }, form, password) => {
             const { domain, subdomain, hostname } = getExtensionContext().url;
 
-            form.getFieldsFor(FormField.PASSWORD_NEW).forEach((field) => field.autofill(password));
+            form.getFieldsFor(FieldType.PASSWORD_NEW).forEach((field) => field.autofill(password));
 
             void sendMessage(
                 contentScriptMessage({
@@ -82,7 +83,7 @@ export const createAutofillService = () => {
      * with an OTP code field spread out into multiple text
      * inputs : in this case, prefer a "paste autofill" */
     const autofillOTP = (form: FormHandle, code: string) => {
-        const otps = form.getFieldsFor(FormField.OTP);
+        const otps = form.getFieldsFor(FieldType.OTP);
         otps?.[0]?.autofill(code, { paste: otps.length > 1 });
 
         autofillTelemetry();
@@ -96,7 +97,7 @@ export const createAutofillService = () => {
 
         const otpFieldDetected = service.formManager
             .getTrackedForms()
-            .some((form) => form.formType === FormType.MFA && form.getFieldsFor(FormField.OTP).length > 0);
+            .some((form) => form.formType === FormType.MFA && form.getFieldsFor(FieldType.OTP).length > 0);
 
         if (otpFieldDetected) {
             return sendMessage.on(contentScriptMessage({ type: WorkerMessageType.AUTOFILL_OTP_CHECK }), (res) => {
