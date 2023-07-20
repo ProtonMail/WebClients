@@ -3,7 +3,7 @@ import { c, msgid } from 'ttag';
 
 import { logger } from '@proton/pass/utils/logger';
 
-import { ImportReaderError } from './reader.error';
+import { ImportReaderError } from './error';
 
 export type CSVReaderResult<T extends Record<string, any>> = { items: T[]; ignored: Partial<T>[] };
 

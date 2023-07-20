@@ -1,5 +1,5 @@
 import { readCSV } from './csv.reader';
-import { ImportReaderError } from './reader.error';
+import { ImportReaderError } from './error';
 
 type CSVItem = { id: string; name: string };
 
