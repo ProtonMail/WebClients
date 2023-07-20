@@ -96,7 +96,7 @@ const PaymentVerificationModal = ({
             setStep(STEPS.FAIL);
             setError(error);
             // if not coming from API error
-            if (error.message && !error.config) {
+            if (error && error.message && !error.config) {
                 createNotification({ text: error.message, type: 'error' });
             }
         }
