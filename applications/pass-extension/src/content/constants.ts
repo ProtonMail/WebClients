@@ -1,5 +1,5 @@
+import { FieldType, FormType } from '@proton/pass/fathom';
 import browser from '@proton/pass/globals/browser';
-import { FormField, FormType } from '@proton/pass/types';
 
 import type { FormTrackerFieldConfig } from './types';
 import { DropdownAction, FieldInjectionRule } from './types';
@@ -52,83 +52,83 @@ export const EMAIL_PROVIDERS = [
 export const FORM_TRACKER_CONFIG: Record<FormType, FormTrackerFieldConfig[]> = {
     [FormType.LOGIN]: [
         {
-            type: FormField.USERNAME,
+            type: FieldType.USERNAME,
             injection: FieldInjectionRule.FIRST_OF_FORM,
             action: DropdownAction.AUTOFILL,
         },
         {
-            type: FormField.USERNAME_HIDDEN,
+            type: FieldType.USERNAME_HIDDEN,
             injection: FieldInjectionRule.NEVER,
         },
         {
-            type: FormField.EMAIL,
+            type: FieldType.EMAIL,
             injection: FieldInjectionRule.FIRST_OF_FORM,
             action: DropdownAction.AUTOFILL,
         },
         {
-            type: FormField.PASSWORD_CURRENT,
+            type: FieldType.PASSWORD_CURRENT,
             injection: FieldInjectionRule.FIRST_OF_FORM,
             action: DropdownAction.AUTOFILL,
         },
     ],
     [FormType.REGISTER]: [
         {
-            type: FormField.USERNAME,
+            type: FieldType.USERNAME,
             injection: FieldInjectionRule.NEVER,
         },
         {
-            type: FormField.USERNAME_HIDDEN,
+            type: FieldType.USERNAME_HIDDEN,
             injection: FieldInjectionRule.NEVER,
         },
         {
-            type: FormField.EMAIL,
+            type: FieldType.EMAIL,
             injection: FieldInjectionRule.FIRST_OF_TYPE,
             action: DropdownAction.AUTOSUGGEST_ALIAS,
         },
         {
-            type: FormField.PASSWORD_NEW,
+            type: FieldType.PASSWORD_NEW,
             injection: FieldInjectionRule.FIRST_OF_TYPE,
             action: DropdownAction.AUTOSUGGEST_PASSWORD,
         },
     ],
     [FormType.RECOVERY]: [
         {
-            type: FormField.EMAIL,
+            type: FieldType.EMAIL,
             injection: FieldInjectionRule.FIRST_OF_TYPE,
             action: DropdownAction.AUTOFILL,
         },
     ],
     [FormType.PASSWORD_CHANGE]: [
         {
-            type: FormField.PASSWORD_CURRENT,
+            type: FieldType.PASSWORD_CURRENT,
             injection: FieldInjectionRule.FIRST_OF_TYPE,
             action: DropdownAction.AUTOFILL,
         },
         {
-            type: FormField.PASSWORD_NEW,
+            type: FieldType.PASSWORD_NEW,
             injection: FieldInjectionRule.FIRST_OF_TYPE,
             action: DropdownAction.AUTOSUGGEST_PASSWORD,
         },
     ],
-    [FormType.MFA]: [] /* TODO */,
+    [FormType.MFA]: [],
     /* NOOP forms are forms that were not classified into
-     * on of our form types. This can either be a detection
+     * one of our form types. This can either be a detection
      * error - in that case, if we match any fields of interest
      * we should still add some actions - OR due to exotic
      * forms (newsletters etc..) */
     [FormType.NOOP]: [
         {
-            type: FormField.EMAIL,
+            type: FieldType.EMAIL,
             injection: FieldInjectionRule.ALWAYS,
             action: DropdownAction.AUTOSUGGEST_ALIAS,
         },
         {
-            type: FormField.PASSWORD_CURRENT,
+            type: FieldType.PASSWORD_CURRENT,
             injection: FieldInjectionRule.FIRST_OF_TYPE,
             action: DropdownAction.AUTOFILL,
         },
         {
-            type: FormField.PASSWORD_NEW,
+            type: FieldType.PASSWORD_NEW,
             injection: FieldInjectionRule.FIRST_OF_TYPE,
             action: DropdownAction.AUTOSUGGEST_PASSWORD,
         },

@@ -1,6 +1,7 @@
 import { contentScriptMessage, sendMessage } from '@proton/pass/extension/message';
+import { FieldType, FormType } from '@proton/pass/fathom';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
-import { FormField, FormType, type MaybeNull, WorkerMessageType } from '@proton/pass/types';
+import { type MaybeNull, WorkerMessageType } from '@proton/pass/types';
 import { first } from '@proton/pass/utils/array';
 import { parseFormAction } from '@proton/pass/utils/dom';
 import { createListenerStore } from '@proton/pass/utils/listener';
@@ -53,15 +54,15 @@ export const createFormTracker = (form: FormHandle): FormTracker => {
 
         /* in the case of username or email fields : we always consider the
          * first non-empty field as the final `username` candidate */
-        const username = first(form.getFieldsFor(FormField.USERNAME, nonEmptyField));
-        const usernameHidden = first(form.getFieldsFor(FormField.USERNAME_HIDDEN, nonEmptyField));
-        const email = first(form.getFieldsFor(FormField.EMAIL, nonEmptyField));
+        const username = first(form.getFieldsFor(FieldType.USERNAME, nonEmptyField));
+        const usernameHidden = first(form.getFieldsFor(FieldType.USERNAME_HIDDEN, nonEmptyField));
+        const email = first(form.getFieldsFor(FieldType.EMAIL, nonEmptyField));
 
         /* in the case of passwords : we may be dealing with confirmation
          * cases and/or  temporary passwords being detected - as a heuristic :
          * always choose the last one.*/
-        const passwordNew = lastItem(form.getFieldsFor(FormField.PASSWORD_NEW, nonEmptyField));
-        const passwordCurrent = lastItem(form.getFieldsFor(FormField.PASSWORD_CURRENT, nonEmptyField));
+        const passwordNew = lastItem(form.getFieldsFor(FieldType.PASSWORD_NEW, nonEmptyField));
+        const passwordCurrent = lastItem(form.getFieldsFor(FieldType.PASSWORD_CURRENT, nonEmptyField));
 
         return {
             username: (username ?? email ?? usernameHidden)?.value,
@@ -99,7 +100,7 @@ export const createFormTracker = (form: FormHandle): FormTracker => {
 
     const getTrackableFields = (settings: ProxiedSettings): FieldsForFormResults => {
         const results: FieldsForFormResults = new WeakMap();
-        const status = { injections: new Map<FormField, boolean>(), injected: false };
+        const status = { injections: new Map<FieldType, boolean>(), injected: false };
 
         FORM_TRACKER_CONFIG[form.formType].forEach(({ type, injection, action: fieldAction }) => {
             form.getFieldsFor(type).forEach((field) => {

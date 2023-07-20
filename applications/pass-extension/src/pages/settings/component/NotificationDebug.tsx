@@ -2,9 +2,10 @@ import type { ReactNode, VFC } from 'react';
 import { useSelector } from 'react-redux';
 
 import { Card } from '@proton/atoms/Card';
+import { FormType } from '@proton/pass/fathom';
 import { selectItemsByType } from '@proton/pass/store';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
-import { AutoSaveType, FormEntryStatus, FormType } from '@proton/pass/types';
+import { AutoSaveType, FormEntryStatus } from '@proton/pass/types';
 
 import { NOTIFICATION_HEIGHT, NOTIFICATION_WIDTH } from '../../../content/constants';
 import { NotificationSwitch } from '../../../content/injections/apps/notification/components/NotificationSwitch';
