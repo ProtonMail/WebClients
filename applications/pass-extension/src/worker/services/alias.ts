@@ -74,8 +74,8 @@ export const createAliasService = () => {
 
                     if (itemCreationFailure.match(intentResultAction)) {
                         const errorMessage =
-                            intentResultAction.payload.error instanceof Error
-                                ? getApiErrorMessage(intentResultAction.payload.error)
+                            intentResultAction.error instanceof Error
+                                ? getApiErrorMessage(intentResultAction.error)
                                 : undefined;
                         return resolve({ ok: false, reason: errorMessage ?? '' });
                     }
