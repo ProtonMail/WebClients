@@ -11,14 +11,15 @@ interface Props extends Partial<StatusIcon> {
     useTooltip?: boolean;
     className?: string;
     isDetailsModal?: boolean;
+    shouldHaveHref?: boolean;
 }
 
 const EncryptionStatusIcon = ({
-    colorClassName,
     isEncrypted,
     fill,
     text,
     loading,
+    shouldHaveHref = true,
     /**
      * Disabled is for the case when composer is fully disabled
      */
@@ -26,6 +27,7 @@ const EncryptionStatusIcon = ({
     useTooltip = true,
     className,
     isDetailsModal = false,
+    colorClassName,
 }: Props) => {
     if (loading) {
         return <Loader className="icon-16p m-auto flex" />;
@@ -34,33 +36,22 @@ const EncryptionStatusIcon = ({
         return null;
     }
 
-    const href = getSendIconHref({ isEncrypted, fill });
+    const href = shouldHaveHref && getSendIconHref({ isEncrypted, fill });
     const iconName = getStatusIconName({ isEncrypted, fill });
     const tooltip = useTooltip ? text : undefined;
 
-    if (isDetailsModal) {
-        return (
-            <span className={clsx(['inline-flex flex-item-noshrink align-middle', className])}>
-                {iconName && (
-                    <Icon
-                        size={16}
-                        name={iconName}
-                        className={colorClassName}
-                        alt={text || ''}
-                        data-testid="encryption-icon"
-                    />
-                )}
-            </span>
-        );
-    }
-
+    const spanClassNames = clsx(['inline-flex flex-item-noshrink align-middle', className]);
     const icon = iconName && (
         <Icon size={16} name={iconName} className={colorClassName} alt={text || ''} data-testid="encryption-icon" />
     );
 
+    if (isDetailsModal) {
+        return <span className={spanClassNames}>{icon}</span>;
+    }
+
     return (
-        <Tooltip title={tooltip}>
-            <span className={clsx(['inline-flex flex-item-noshrink align-middle', className])}>
+        <Tooltip title={tooltip} data-testid="encryption-icon-tooltip">
+            <span className={spanClassNames}>
                 {href ? (
                     <Href href={href} className="flex flex-item-noshrink m-auto" tabIndex={disabled ? -1 : undefined}>
                         {icon}
