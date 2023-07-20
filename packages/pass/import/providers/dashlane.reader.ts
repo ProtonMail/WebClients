@@ -1,12 +1,11 @@
 import jszip from 'jszip';
-import { c } from 'ttag';
 
 import type { ItemImportIntent, Maybe } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
 import capitalize from '@proton/utils/capitalize';
 
 import { readCSV } from '../helpers/csv.reader';
-import { ImportReaderError } from '../helpers/reader.error';
+import { ImportProviderError } from '../helpers/error';
 import { getImportedVaultName, importLoginItem, importNoteItem } from '../helpers/transformers';
 import type { ImportPayload, ImportVault } from '../types';
 import type {
@@ -127,7 +126,6 @@ export const readDashlaneData = async (data: ArrayBuffer): Promise<ImportPayload
         return { vaults, ignored, warnings };
     } catch (e) {
         logger.warn('[Importer::Dashlane]', e);
-        const errorDetail = e instanceof ImportReaderError ? e.message : '';
-        throw new ImportReaderError(c('Error').t`Dashlane export file could not be parsed. ${errorDetail}`);
+        throw new ImportProviderError('Dashlane', e);
     }
 };
