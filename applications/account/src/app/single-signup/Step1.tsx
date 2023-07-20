@@ -600,7 +600,7 @@ const Step1 = ({
     })();
 
     return (
-        <Layout languageSelect={false} hasDecoration className={className} bottomRight={<SignupSupportDropdown />}>
+        <Layout hasDecoration className={className} bottomRight={<SignupSupportDropdown />}>
             <div className="flex flex-align-items-center flex-column">
                 <div className="signup-v1-header mt-8 mb-4 text-center">
                     <h1 className="m-0 large-font lg:px-4 text-semibold">
