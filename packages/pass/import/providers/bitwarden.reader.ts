@@ -5,7 +5,7 @@ import { truthy } from '@proton/pass/utils/fp';
 import { logger } from '@proton/pass/utils/logger';
 import { BITWARDEN_ANDROID_APP_FLAG, isBitwardenLinkedAndroidAppUrl } from '@proton/pass/utils/url';
 
-import { ImportReaderError } from '../helpers/reader.error';
+import { ImportProviderError, ImportReaderError } from '../helpers/error';
 import { getImportedVaultName, importCreditCardItem, importLoginItem, importNoteItem } from '../helpers/transformers';
 import type { ImportPayload, ImportVault } from '../types';
 import {
@@ -118,7 +118,6 @@ export const readBitwardenData = (data: string): ImportPayload => {
         return { vaults, ignored, warnings: [] };
     } catch (e) {
         logger.warn('[Importer::Bitwarden]', e);
-        const errorDetail = e instanceof ImportReaderError ? e.message : '';
-        throw new ImportReaderError(c('Error').t`Bitwarden export file could not be parsed. ${errorDetail}`);
+        throw new ImportProviderError('Bitwarden', e);
     }
 };
