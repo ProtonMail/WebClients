@@ -1,6 +1,5 @@
+import type { FormType } from '@proton/pass/fathom';
 import { setFieldProcessable, setFormProcessable } from '@proton/pass/fathom';
-import type { FormType } from '@proton/pass/types';
-import { FormField } from '@proton/pass/types';
 import { getMaxZIndex } from '@proton/pass/utils/dom';
 import { createListenerStore } from '@proton/pass/utils/listener';
 import { logger } from '@proton/pass/utils/logger';
@@ -25,18 +24,16 @@ export const createFormHandles = (options: DetectedForm): FormHandle => {
         element: form,
         formType: formType,
         fields: new Map(
-            detectedFields
-                .filter(({ fieldType }) => fieldType !== FormField.NOOP)
-                .map(({ fieldType, field }) => [
-                    field,
-                    createFieldHandles({
-                        element: field,
-                        formType,
-                        fieldType,
-                        zIndex,
-                        getFormHandle: () => formHandle,
-                    }),
-                ])
+            detectedFields.map(({ fieldType, field }) => [
+                field,
+                createFieldHandles({
+                    element: field,
+                    formType,
+                    fieldType,
+                    zIndex,
+                    getFormHandle: () => formHandle,
+                }),
+            ])
         ),
         getFieldsFor: (type, predicate) => {
             const fields = Array.from(formHandle.fields.values());
@@ -66,7 +63,7 @@ export const createFormHandles = (options: DetectedForm): FormHandle => {
 
             /* attach incoming new fields */
             fields.forEach(({ field, fieldType }) => {
-                if (formHandle.fields.get(field) === undefined && fieldType !== FormField.NOOP) {
+                if (formHandle.fields.get(field) === undefined) {
                     formHandle.fields.set(
                         field,
                         createFieldHandles({
