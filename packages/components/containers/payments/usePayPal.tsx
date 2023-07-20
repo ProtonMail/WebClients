@@ -42,7 +42,7 @@ interface Props {
     type: PAYPAL_PAYMENT_METHOD;
     onPay: (data: OnPayResult) => void;
     onValidate?: () => boolean;
-    onError?: () => void;
+    onError?: (error: any) => void;
     /**
      * This lifecycle hook is called before the payment token is fetched.
      * It can be convinient if you need to fullfill some codition before fetching the token.
@@ -139,7 +139,7 @@ const usePayPal = ({
                 return;
             }
             return withLoadingVerification(onVerification(model)).catch((e) => {
-                onError?.();
+                onError?.(e);
                 throw e;
             });
         },
