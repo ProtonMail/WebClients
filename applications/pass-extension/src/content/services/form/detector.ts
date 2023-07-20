@@ -1,5 +1,7 @@
 import {
     type FNode,
+    FieldType,
+    FormType,
     clearDetectionCache,
     isActiveField,
     isFormProcessed,
@@ -11,7 +13,6 @@ import {
     selectUnprocessedInputs,
 } from '@proton/pass/fathom';
 import type { Fnode } from '@proton/pass/fathom/protonpass-fathom/fathom';
-import { FormField, FormType } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
 import { withMaxExecutionTime } from '@proton/pass/utils/time';
 import { wait } from '@proton/shared/lib/helpers/promise';
@@ -21,8 +22,8 @@ import type { DetectedField, DetectedForm } from '../../types';
 
 const ruleset = rulesetMaker();
 const NOOP_EL = document.createElement('form');
-const DETECTABLE_FORMS = Object.values(FormType).filter((type) => type !== FormType.NOOP);
-const DETECTABLE_FIELDS = Object.values(FormField).filter((type) => type !== FormField.NOOP);
+const DETECTABLE_FORMS = Object.values(FormType);
+const DETECTABLE_FIELDS = Object.values(FieldType);
 
 type BoundRuleset = ReturnType<typeof ruleset.against>;
 type PredictionResult<T extends string> = { fnode: FNode; type: T; score: number };
@@ -84,7 +85,6 @@ const getPredictionsFor = <T extends string>(
     options: {
         type: 'form' | 'field';
         subTypes: T[];
-        fallbackType: T;
         selectBest: PredictionBestSelector<T>;
     }
 ): PredictionResult<T>[] => {
@@ -114,7 +114,7 @@ const getPredictionsFor = <T extends string>(
  * "dangling" fields in order to process them accordingly */
 const groupFields = (
     formPredictions: PredictionResult<FormType>[],
-    fieldPredictions: PredictionResult<FormField>[]
+    fieldPredictions: PredictionResult<FieldType>[]
 ) => {
     const grouping = new WeakMap<HTMLElement, DetectedField[]>();
 
@@ -152,19 +152,17 @@ const createDetectionRunner =
     (ruleset: ReturnType<typeof rulesetMaker>, doc: Document) =>
     (options: { onBottleneck: (data: {}) => void }): DetectedForm[] => {
         const [formPredictions, fieldPredictions] = withMaxExecutionTime(
-            (): [PredictionResult<FormType>[], PredictionResult<FormField>[]] => {
+            (): [PredictionResult<FormType>[], PredictionResult<FieldType>[]] => {
                 const boundRuleset = ruleset.against(doc.body);
                 return [
                     getPredictionsFor<FormType>(boundRuleset, {
                         type: 'form',
                         subTypes: DETECTABLE_FORMS,
-                        fallbackType: FormType.NOOP,
                         selectBest: selectBestForm,
                     }),
                     getPredictionsFor(boundRuleset, {
                         type: 'field',
                         subTypes: DETECTABLE_FIELDS,
-                        fallbackType: FormField.NOOP,
                         selectBest,
                     }),
                 ];
@@ -203,10 +201,7 @@ const createDetectionRunner =
 
         /* only start tracking forms which have a positive detection result or
          * dangling forms which have at least one detected field */
-        const formsToTrack = forms.filter(
-            ({ formType, fields }) =>
-                formType !== FormType.NOOP || fields.some(({ fieldType }) => fieldType !== FormField.NOOP)
-        );
+        const formsToTrack = forms.filter(({ formType, fields }) => formType !== FormType.NOOP || fields.length > 0);
 
         clearDetectionCache(); /* clear visibility cache on each detection run */
         return formsToTrack;
