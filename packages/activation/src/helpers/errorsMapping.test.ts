@@ -59,6 +59,41 @@ describe('Activation errors mapping', () => {
             const res = isNameAlreadyUsed('path3', paths);
             expect(res).toBe(false);
         });
+        it('Should return true if the name present in an array contains a space before', () => {
+            const paths = ['path1', 'path2', ' path3'];
+            const res = isNameAlreadyUsed('path3', paths);
+            expect(res).toBe(true);
+        });
+        it('Should return true if the name present in an array contains a space after', () => {
+            const paths = ['path1', 'path2', 'path3 '];
+            const res = isNameAlreadyUsed('path3', paths);
+            expect(res).toBe(true);
+        });
+        it('Should return true if the name present in an array contains a space before and after', () => {
+            const paths = ['path1', 'path2', ' path3 '];
+            const res = isNameAlreadyUsed('path3', paths);
+            expect(res).toBe(true);
+        });
+        it('Should return true if the name present in an array contains a space before and after and is capitalized', () => {
+            const paths = ['path1', 'path2', ' path3 '];
+            const res = isNameAlreadyUsed('Path3', paths);
+            expect(res).toBe(true);
+        });
+        it('Should return true if the name present in an array contains two space before', () => {
+            const paths = ['path1', 'path2', '  path3'];
+            const res = isNameAlreadyUsed('path3', paths);
+            expect(res).toBe(true);
+        });
+        it('Should return true if the name passed contains a space before and after', () => {
+            const paths = ['path1', 'path2', 'path3'];
+            const res = isNameAlreadyUsed(' path3 ', paths);
+            expect(res).toBe(true);
+        });
+        it('Should return true if the name passed contains a space before and after and is capitalized', () => {
+            const paths = ['path1', 'path2', 'path3'];
+            const res = isNameAlreadyUsed(' Path3 ', paths);
+            expect(res).toBe(true);
+        });
     });
 
     describe('isNameEmpty', () => {
