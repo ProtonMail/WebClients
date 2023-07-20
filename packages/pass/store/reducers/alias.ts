@@ -3,6 +3,7 @@ import type { Reducer } from 'redux';
 import type { AliasMailbox, AliasSuffix } from '@proton/pass/types/data/alias';
 import { merge } from '@proton/pass/utils/object';
 
+import type { MaybeNull } from '../../types';
 import {
     aliasDetailsEditSuccess,
     aliasDetailsRequestSuccess,
@@ -11,11 +12,13 @@ import {
     itemEditIntent,
 } from '../actions';
 
+export type AliasOptions = {
+    mailboxes: AliasMailbox[];
+    suffixes: AliasSuffix[];
+};
+
 export type AliasState = {
-    aliasOptions: {
-        mailboxes: AliasMailbox[];
-        suffixes: AliasSuffix[];
-    } | null;
+    aliasOptions: MaybeNull<AliasOptions>;
     aliasDetails: { [aliasEmail: string]: AliasMailbox[] };
 };
 
