@@ -56,6 +56,9 @@
       "Continue without pinning": [
         "Ohne Anheften fortfahren"
       ],
+      "Copy & fill in": [
+        "Kopieren & ausfüllen"
+      ],
       "Copy and close": [
         "Kopieren und schließen"
       ],
@@ -161,9 +164,6 @@
       "Learn more": [
         "Mehr erfahren"
       ],
-      "Lock ${ PASS_APP_NAME }": [
-        "${ PASS_APP_NAME } sperren"
-      ],
       "More options": [
         "Weitere Optionen"
       ],
@@ -247,9 +247,6 @@
       ],
       "Submitting report...": [
         "Bericht wird übermittelt…"
-      ],
-      "Sync": [
-        "Synchronisieren"
       ],
       "Try again": [
         "Erneut versuchen"
@@ -360,8 +357,8 @@
       "Firefox export file could not be parsed. ${ errorDetail }": [
         "Firefox-Exportdatei konnte nicht geparst werden. ${ errorDetail }"
       ],
-      "Import failed for vault \"${ vaultData.vaultName }\" : ${ description }": [
-        "Import für Tresor \"${ vaultData.vaultName }\" fehlgeschlagen: ${ description }"
+      "Import failed for vault \"${ vaultData.name }\" : ${ description }": [
+        "Import für Tresor \"${ vaultData.name }\" fehlgeschlagen: ${ description }"
       ],
       "Importing items failed": [
         "Fehler beim Importieren der Einträge."
@@ -465,8 +462,8 @@
       "Vault \"${ payload.content.name }\" creation failed": [
         "Erstellen des Tresors \"${ payload.content.name }\" fehlgeschlagen."
       ],
-      "Vault \"${ vaultData.vaultName }\" could not be created": [
-        "Tresor \"${ vaultData.vaultName }\" konnte nicht erstellt werden."
+      "Vault \"${ vaultData.name }\" could not be created": [
+        "Tresor \"${ vaultData.name }\" konnte nicht erstellt werden."
       ],
       "Vault name does not match": [
         "Tresorname stimmt nicht überein"
@@ -517,6 +514,9 @@
       ]
     },
     "Info": {
+      " Upgrade to a paid plan to create multiple vaults.": [
+        "Upgrade auf ein kostenpflichtiges Abonnement, um mehrere Tresore zu erstellen."
+      ],
       "\"${ payload.item.data.metadata.name }\" item was dismissed": [
         "Der Eintrag \"${ payload.item.data.metadata.name }\" wurde verworfen."
       ],
@@ -764,8 +764,8 @@
       "Save login": [
         "Anmeldedaten speichern"
       ],
-      "Select the destination vault for each imported vault. By default a new vault will be created for each imported vault.": [
-        "Wähle den Zieltresor für jeden importierten Tresor aus. Standardmäßig wird ein neuer Tresor für jeden importierten Tresor erstellt."
+      "Select the destination vault for each imported vault.": [
+        "Wähle den Zieltresor für jeden importierten Tresor."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Die Server sind unerreichbar. Bitte versuche es in ein paar Minuten erneut"
@@ -837,6 +837,9 @@
       "Vault \"${ share.content.name }\" was disabled": [
         "Tresor \"${ share.content.name }\" wurde deaktiviert."
       ],
+      "Verification code": [
+        "Verifizierungscode"
+      ],
       "You have ${ daysRemaining } day left in your trial period.": [
         "Du hast noch ${ daysRemaining } Tag in deinem Testzeitraum übrig.",
         "Du hast noch ${ daysRemaining } Tage in deinem Testzeitraum übrig."
@@ -850,8 +853,8 @@
       "You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.": [
         "Du hast das Limit an Aliassen erreicht, die du erstellen kannst. Ein Upgrade deines Abonnements ermöglicht dir das Erstellen von unbegrenzten Aliassen."
       ],
-      "You have reached the limit of vaults you can create. Create an unlimited number of vaults when you upgrade your subscription.": [
-        "Du hast das Limit an Tresoren erreicht, die du erstellen kannst. Erstelle unbegrenzte Tresore, wenn du dein Abonnement upgradest."
+      "You have reached the limit of vaults you can create.": [
+        "Du hast die maximale Anzahl an Tresoren erreicht, die du erstellen kannst."
       ],
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "Du hast die maximal erlaubte Länge von ${ maxLength } Zeichen erreicht."
@@ -1551,6 +1554,9 @@
       "Vault name is required": [
         "Tresorname ist erforderlich"
       ],
+      "You cannot create more vaults than your subscription allows.": [
+        "Du kannst nicht mehr Tresore erstellen, als dein Abonnement zulässt."
+      ],
       "You have unsaved changes, are you sure you want to discard them?": [
         "Du hast ungespeicherte Änderungen. Bist du dir sicher, dass du diese verwerfen möchtest?"
       ],
@@ -1566,8 +1572,8 @@
       "Your session was locked due to inactivity": [
         "Deine Sitzung wurde aufgrund von Inaktivität gesperrt."
       ],
-      "Your subscription does not allow you to create multiple vaults. All items will be imported to your primary vault by default. To import into multiple vaults upgrade your subscription.": [
-        "Dein Abonnement erlaubt es dir nicht, mehrere Tresore zu erstellen. Alle Einträge werden standardmäßig in deinen primären Tresor importiert. Um in mehrere Tresore zu importieren, musst du dein Abonnement upgraden."
+      "Your subscription does not allow you to create multiple vaults. All items will be imported to your primary vault. To import into multiple vaults upgrade your subscription.": [
+        "Dein Abonnement erlaubt es dir nicht, mehrere Tresore zu erstellen. Alle Einträge werden in deinen primären Tresor importiert. Um in mehrere Tresore zu importieren, musst du dein Abonnement upgraden."
       ]
     }
   }

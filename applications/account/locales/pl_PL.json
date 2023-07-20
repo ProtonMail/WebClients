@@ -434,9 +434,6 @@
       "Generate token": [
         "Generuj token"
       ],
-      "Get ${ discountPercentage } off with 24 months": [
-        "Uzyskaj ${ discountPercentage } zniżki za subskrypcję dwuletnią"
-      ],
       "Get ${ vpnPlus }": [
         "Wybierz plan ${ vpnPlus }"
       ],
@@ -4466,7 +4463,7 @@
       "(1-2 emails per month)": [
         "(1-2 wiadomości miesięcznie)"
       ],
-      "(2-4 per year)": [
+      "(2-4 emails per year)": [
         "(2-4 wiadomości rocznie)"
       ],
       "(4-6 emails per year)": [
@@ -4568,11 +4565,14 @@
       "Best deal": [
         "Najlepsza oferta"
       ],
+      "Checkout": [
+        "Płatność"
+      ],
+      "Create your account": [
+        "Utwórz konto"
+      ],
       "Device": [
         "Urządzenie"
-      ],
-      "Enter your email address": [
-        "Wpisz adres e-mail"
       ],
       "Event": [
         "Zdarzenie"
@@ -4603,9 +4603,6 @@
       ],
       "Protection": [
         "Ochrona"
-      ],
-      "Select your preferred method of payment": [
-        "Wybierz metodę płatności"
       ],
       "Select your pricing plan": [
         "Wybierz plan"
@@ -5096,6 +5093,9 @@
       ],
       "${ current } of ${ total }": [
         "${ current } z ${ total }"
+      ],
+      "${ discountPercentage } forever": [
+        "${ discountPercentage } na zawsze"
       ],
       "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
         "${ DRIVE_APP_NAME } nie zachowa poprzednich wersji plików."
@@ -6357,9 +6357,6 @@
       "Save your password somewhere safe. Click on icon to confirm that you have typed your password correctly.": [
         "Zapisz hasło w bezpiecznym miejscu. Kliknij na ikonę, aby potwierdzić, że poprawnie wpisano hasło."
       ],
-      "Saving your password": [
-        "Zapisywanie hasła"
-      ],
       "Scan QR code instead": [
         "Zamiast tego zeskanuj kod QR"
       ],
@@ -6491,9 +6488,6 @@
       ],
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
         "Wiadomość \"${ boldDataLocked }\" nie będzie pokazywana, ale możesz nadal odblokować dane w sekcji ${ encryptionAndKeysLink }."
-      ],
-      "The ${ planName } plan includes:": [
-        "Plan ${ planName } zawiera:"
       ],
       "The calendar will be removed from your account.": [
         "Kalendarz zostanie usunięty."
@@ -6633,9 +6627,6 @@
       "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
         "Ten kreator umożliwi włączenie uwierzytelniania dwustopniowego (2FA) na koncie ${ BRAND_NAME }. Ta funkcja poprawi bezpieczeństwo Twojego konta ${ BRAND_NAME_TWO }, dlatego zalecamy włączenie tej opcji."
       ],
-      "To ${ planName }": [
-        "w planie ${ planName }"
-      ],
       "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
         "Aby uniknąć utraty danych, usuń klucz tylko wtedy, kiedy wiesz co robisz lub posiadasz kopię zapasową klucza."
       ],
@@ -6698,9 +6689,6 @@
       ],
       "Total VPN connections": [
         "Połączenia VPN"
-      ],
-      "Try ${ upsellPlanName } risk free": [
-        "Wypróbuj plan ${ upsellPlanName } bez ryzyka"
       ],
       "two-factor authentication (2FA)": [
         "Uwierzytelnianie dwustopniowe"
@@ -6837,8 +6825,8 @@
       "We securely store recovery information on your trusted device to prevent you from losing your data": [
         "Aby uniknąć utraty danych, informacje o odzyskiwaniu pozostaną zachowane na zaufanym urządzeniu"
       ],
-      "We use 3-D Secure to protect your payments.": [
-        "Korzystamy z 3-D Secure, aby zabezpieczyć Twoje płatności."
+      "We use 3-D Secure to protect your payments": [
+        "Korzystamy z 3-D Secure, aby zabezpieczyć Twoje płatności"
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Zostaniesz przekierowany na stronę PayPal w celu dokończenia transakcji. Jeśli używasz opcji blokowania wyskakujących okien, wyłącz ją, aby kontynuować."
@@ -6857,9 +6845,6 @@
       ],
       "Week and month views only apply to desktop.": [
         "Widoki tygodnia oraz miesiąca dostępne są tylko na komputerze."
-      ],
-      "Welcome": [
-        "Witaj"
       ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "Wyślemy kod resetowania na adres pomocniczy."
@@ -7029,9 +7014,6 @@
       "You still need to reply to invitations for the host to see your response.": [
         "Nadal musisz odpowiedzieć na zaproszenia, aby organizator zobaczył odpowiedź."
       ],
-      "You will be redirected to the VPN download page": [
-        "Zostaniesz przekierowany do strony pobierania aplikacji VPN"
-      ],
       "You will lose access to ${ vpnPlanNameShort } servers and features on this date.": [
         "W tym dniu stracisz dostęp do serwerów planu ${ vpnPlanNameShort } i ich funkcji."
       ],
@@ -7109,6 +7091,9 @@
       ],
       "Your import will not be processed.": [
         "Twój import nie zostanie przetworzony."
+      ],
+      "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
+        "Twoje dane są u nas bezpieczne. Skontaktujemy się z Tobą tylko wtedy, gdy będzie to konieczne."
       ],
       "Your login information will not be saved after the import is completed.": [
         "Twoje dane logowania, po ukończeniu importu, zostaną usunięte."
@@ -7679,6 +7664,9 @@
       "Awarded": [
         "Przyznano"
       ],
+      "Billing address": [
+        "Adres rozliczeniowy"
+      ],
       "Billing cycle": [
         "Cykl rozliczeniowy"
       ],
@@ -7712,11 +7700,11 @@
       "Calendars": [
         "Kalendarze"
       ],
+      "Card details": [
+        "Szczegóły karty"
+      ],
       "Card holder": [
         "Właściciel karty"
-      ],
-      "Card information": [
-        "Informacje o karcie"
       ],
       "Card number": [
         "Numer karty"
@@ -9403,6 +9391,9 @@
       "Split tunneling (Android and Windows)": [
         "Split Tunneling (Android i Windows)"
       ],
+      "Start protecting yourself online in 2 easy steps": [
+        "Chroń się online w 2 prostych krokach"
+      ],
       "Strict no-logs policy": [
         "Polityka braku przechowywania logów"
       ],
@@ -11021,8 +11012,8 @@
       ]
     },
     "Shared calendar; Info about calendar owner": {
-      "Created by ${ ownerName }": [
-        "Utworzony przez ${ ownerName }"
+      "Shared by ${ ownerName }": [
+        "Udostępniony przez ${ ownerName }"
       ]
     },
     "Signature verification error when joining calendar": {
@@ -11533,9 +11524,6 @@
     "Subscription saving": {
       "Save": [
         "Zaoszczędź"
-      ],
-      "Save ${ discountPercentage }%": [
-        "Zaoszczędź ${ discountPercentage }%"
       ]
     },
     "Subscription status": {
@@ -12732,7 +12720,7 @@
       "Signed in to member account": [
         "Zalogowano na konto użytkownika"
       ],
-      "SMTP Submission": [
+      "SMTP submission": [
         "Poświadczenia SMTP"
       ],
       "Sort folders alphabetically": [
@@ -13275,6 +13263,73 @@
         "${ numberOfServers } w ${ numberOfCountries } krajach",
         "${ numberOfServers } w ${ numberOfCountries } krajach",
         "${ numberOfServers } w ${ numberOfCountries } krajach"
+      ]
+    },
+    "vpn_2step: billing": {
+      "${ billedText }, renews on ${ formattedEndTime }": [
+        "${ billedText }, odnowienie ${ formattedEndTime }"
+      ],
+      "Billed every 15 months": [
+        "Płatne co 15 miesięcy"
+      ],
+      "Billed every 2 years": [
+        "Płatne co 2 lata"
+      ],
+      "Billed every 30 months": [
+        "Płatne co 30 miesięcy"
+      ],
+      "Billed monthly": [
+        "Płatne miesięcznie"
+      ],
+      "Billed yearly": [
+        "Płatne rocznie"
+      ]
+    },
+    "vpn_2step: discount": {
+      "1-year": [
+        "roczną"
+      ],
+      "2-year": [
+        "dwuletnią"
+      ],
+      "Get ${ discount } off with a ${ billingCycle } subscription": [
+        "Uzyskaj ${ discount } zniżki za subskrypcję ${ billingCycle }"
+      ],
+      "monthly": [
+        "miesięczną"
+      ]
+    },
+    "vpn_2step: feature": {
+      "Advanced VPN customizations": [
+        "Zaawansowane ustawienia VPN"
+      ],
+      "No ads": [
+        "Brak reklam"
+      ]
+    },
+    "vpn_2step: info": {
+      "${ n } month": [
+        "${ n } miesiąc",
+        "${ n } miesiące",
+        "${ n } miesięcy",
+        "${ n } miesiąca"
+      ],
+      "${ n } year": [
+        "${ n } rok",
+        "${ n } lata",
+        "${ n } lat",
+        "${ n } roku"
+      ],
+      "Try ${ upsellPlanName } risk-free": [
+        "Wypróbuj plan ${ upsellPlanName } bez ryzyka"
+      ],
+      "Your ${ selected } plan": [
+        "Plan ${ selected }"
+      ]
+    },
+    "vpn_2step: tooltip": {
+      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, Double hop, and more.": [
+        "Dostęp do serwerów Secure Core, szybkie pobieranie P2P / BitTorrent, Tor przez VPN, Double hop i wiele więcej."
       ]
     },
     "Warning": {

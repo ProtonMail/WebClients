@@ -161,9 +161,6 @@
       "Learn more": [
         "瞭解詳情"
       ],
-      "Lock ${ PASS_APP_NAME }": [
-        "鎖定${ PASS_APP_NAME }"
-      ],
       "More options": [
         "更多選項"
       ],
@@ -247,9 +244,6 @@
       ],
       "Submitting report...": [
         "正在送出報告..."
-      ],
-      "Sync": [
-        "同步"
       ],
       "Try again": [
         "再試一次"
@@ -359,9 +353,6 @@
       "Firefox export file could not be parsed. ${ errorDetail }": [
         "Firefox 匯出檔案無法剖析${ errorDetail }"
       ],
-      "Import failed for vault \"${ vaultData.vaultName }\" : ${ description }": [
-        "匯入保管庫失敗${ vaultData.vaultName }:${ description }"
-      ],
       "Importing items failed": [
         "匯入項目失敗"
       ],
@@ -463,9 +454,6 @@
       ],
       "Vault \"${ payload.content.name }\" creation failed": [
         "保管庫${ payload.content.name }新增失敗"
-      ],
-      "Vault \"${ vaultData.vaultName }\" could not be created": [
-        "保管庫${ vaultData.vaultName }無法創建"
       ],
       "Vault name does not match": [
         "保管庫名稱不符"
@@ -751,9 +739,6 @@
       "Save login": [
         "儲存登入資料"
       ],
-      "Select the destination vault for each imported vault. By default a new vault will be created for each imported vault.": [
-        "為匯入的保管庫選取目標保管庫。預設將會新增保管庫"
-      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "無法連線至伺服器。請過幾分鐘後再試"
       ],
@@ -823,6 +808,9 @@
       "Vault \"${ share.content.name }\" was disabled": [
         "保管庫${ share.content.name }已被停用"
       ],
+      "Verification code": [
+        "驗證碼"
+      ],
       "You are about to create:": [
         "您將要創建:"
       ],
@@ -837,9 +825,6 @@
       ],
       "You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.": [
         "你以達到新增別名。升級訂閱以新增無限別名"
-      ],
-      "You have reached the limit of vaults you can create. Create an unlimited number of vaults when you upgrade your subscription.": [
-        "你已達到保管庫創建上限。升級訂閱已創建無限保管庫"
       ],
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "您以達到${ maxLength }字元"
@@ -1560,9 +1545,6 @@
       ],
       "Your session was locked due to inactivity": [
         "您的作業階段因為使用而鎖定"
-      ],
-      "Your subscription does not allow you to create multiple vaults. All items will be imported to your primary vault by default. To import into multiple vaults upgrade your subscription.": [
-        "您的訂閱不允許新增多重保管庫。預設會把所有項目匯入主要保管庫。若要匯入多重保管庫，需升級訂閱。"
       ]
     }
   }

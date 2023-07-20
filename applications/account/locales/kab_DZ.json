@@ -2993,6 +2993,9 @@
       ],
       "(1-2 emails per month)": [
         "(1-2 yimaylen i wayyur)"
+      ],
+      "(2-4 emails per year)": [
+        "(2-4 n yimaylen i useggas)"
       ]
     },
     "Go to sign in": {
@@ -3028,6 +3031,12 @@
       ],
       "Actions": [
         "Tigawin"
+      ],
+      "Checkout": [
+        "Axelleṣ"
+      ],
+      "Create your account": [
+        "Rnu amiḍan"
       ],
       "Event": [
         "Amaynut"
@@ -3398,6 +3407,9 @@
       "${ calendarsToBeMergedCount } merged calendar": [
         "${ calendarsToBeMergedCount } n uwitay yettwamezdi",
         "${ calendarsToBeMergedCount } n yiwitayen ttwamezdin"
+      ],
+      "${ discountPercentage } forever": [
+        "${ discountPercentage } i lebda"
       ],
       "${ emailAddress } is invalid": [
         "${ emailAddress } d tarameɣtut"
@@ -4339,9 +4351,6 @@
       ],
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "Ad k•m-nsemter akken ad tesqedceḍ isnasen unṣiben n ${ VPN_APP_NAME } melmi tzemreḍ."
-      ],
-      "We use 3-D Secure to protect your payments.": [
-        "Nesseqdac 3-D Secure akken ad nesseḥbiber ɣef lexlaṣ-nwen."
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Ad k/m-nwehhi ɣer PayPal deg yiccer amaynut n yiminig akken ad tkemmleḍ lexlaṣ-agi. Ma tseqdaceḍ kra n usewḥel pop-up, ttxil-k/m kkes-iten akken ad tkemmleḍ."
@@ -8239,6 +8248,43 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } deg ${ numberOfCountries } n tmurt",
         "${ numberOfServers } deg ${ numberOfCountries } n tmura"
+      ]
+    },
+    "vpn_2step: billing": {
+      "Billed every 15 months": [
+        "After n yal 15 wayyuren"
+      ],
+      "Billed every 2 years": [
+        "After n yal 2 yiseggasen"
+      ],
+      "Billed every 30 months": [
+        "After n yal 30 wayyuren"
+      ],
+      "Billed monthly": [
+        "Tifaṭurin n wayyuren"
+      ]
+    },
+    "vpn_2step: discount": {
+      "1-year": [
+        "1-Iseggasen"
+      ],
+      "2-year": [
+        "2-Iseggasen"
+      ]
+    },
+    "vpn_2step: feature": {
+      "No ads": [
+        "Ulac adellel"
+      ]
+    },
+    "vpn_2step: info": {
+      "${ n } month": [
+        "${ n } wayyur",
+        "${ n } wayyuren"
+      ],
+      "${ n } year": [
+        "${ n } useggas",
+        "${ n } yiseggasen"
       ]
     },
     "Warning": {

@@ -17,6 +17,9 @@
       "Add new item": [
         "Ajouter un nouvel élément"
       ],
+      "Advanced": [
+        "Avancé"
+      ],
       "Advanced options": [
         "Options avancées"
       ],
@@ -55,6 +58,9 @@
       ],
       "Continue without pinning": [
         "Continuer sans épingler"
+      ],
+      "Copy & fill in": [
+        "Copier et compléter"
       ],
       "Copy and close": [
         "Copier et fermer"
@@ -137,6 +143,9 @@
       "Generate password": [
         "Générer un mot de passe"
       ],
+      "Generated password": [
+        "Mot de passe généré"
+      ],
       "Get mobile apps": [
         "Télécharger les applications mobiles"
       ],
@@ -161,8 +170,11 @@
       "Learn more": [
         "En savoir plus"
       ],
-      "Lock ${ PASS_APP_NAME }": [
-        "Verrouiller ${ PASS_APP_NAME }"
+      "Lock extension": [
+        "Verrouiller l'extension"
+      ],
+      "Manually sync your data": [
+        "Synchroniser manuellement vos données"
       ],
       "More options": [
         "Plus d'options"
@@ -171,7 +183,7 @@
         "Déplacer vers un autre coffre-fort"
       ],
       "Move to Trash": [
-        "Déplacer dans la Corbeille"
+        "Déplacer dans la corbeille"
       ],
       "Move to trash": [
         "Déplacer dans le dossier Corbeille"
@@ -247,9 +259,6 @@
       ],
       "Submitting report...": [
         "Envoyer le rapport"
-      ],
-      "Sync": [
-        "Synchroniser"
       ],
       "Try again": [
         "Réessayer"
@@ -346,7 +355,7 @@
         "Le fichier CSV est vide."
       ],
       "Emptying trash failed": [
-        "La Corbeille n'a pas pu être vidée."
+        "La corbeille n'a pas pu être vidée."
       ],
       "Encrypted JSON not supported": [
         "Le JSON chiffré n'est pas pris en charge."
@@ -360,8 +369,8 @@
       "Firefox export file could not be parsed. ${ errorDetail }": [
         "Le fichier d'exportation Firefox n'a pu être analysé. ${ errorDetail }"
       ],
-      "Import failed for vault \"${ vaultData.vaultName }\" : ${ description }": [
-        "L'importation du coffre-fort « ${ vaultData.vaultName } » n'a pas abouti : ${ description }."
+      "Import failed for vault \"${ vaultData.name }\" : ${ description }": [
+        "L'importation du coffre-fort « ${ vaultData.name } » n'a pas abouti : ${ description }."
       ],
       "Importing items failed": [
         "L'importation d'éléments n'a pas abouti."
@@ -465,8 +474,8 @@
       "Vault \"${ payload.content.name }\" creation failed": [
         "La création du coffre-fort « ${ payload.content.name } » n'a pas abouti."
       ],
-      "Vault \"${ vaultData.vaultName }\" could not be created": [
-        "Le coffre-fort « ${ vaultData.vaultName } » n'a pu être créé."
+      "Vault \"${ vaultData.name }\" could not be created": [
+        "Le coffre-fort « ${ vaultData.name } » n'a pu être créé."
       ],
       "Vault name does not match": [
         "Le nom du coffre-fort ne correspond pas."
@@ -517,6 +526,9 @@
       ]
     },
     "Info": {
+      " Upgrade to a paid plan to create multiple vaults.": [
+        "Passez à un abonnement payant pour créer plusieurs coffres-forts."
+      ],
       "\"${ payload.item.data.metadata.name }\" item was dismissed": [
         "L'élément « ${ payload.item.data.metadata.name } » a été rejeté."
       ],
@@ -562,7 +574,7 @@
         "Accédez à vos mots de passe en déplacement grâce à nos applications mobiles."
       ],
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
-        "L'alias « ${ item.aliasEmail } » a été déplacé dans la Corbeille, il ne transfèrera plus de messages vers votre messagerie."
+        "L'alias « ${ item.aliasEmail } » a été déplacé dans la corbeille, il ne transfèrera plus de messages vers votre messagerie."
       ],
       "All items permanently removed": [
         "Tous les éléments ont été définitivement supprimés."
@@ -693,7 +705,7 @@
         "L'élément « ${ payload.item.data.metadata.name } » a été mis à jour."
       ],
       "Item moved to trash": [
-        "L'élément a été déplacé dans la Corbeille."
+        "L'élément a été déplacé dans la corbeille."
       ],
       "Item permanently deleted": [
         "L'élément a été définitivement supprimé."
@@ -764,8 +776,8 @@
       "Save login": [
         "Sauvegarder l'identifiant"
       ],
-      "Select the destination vault for each imported vault. By default a new vault will be created for each imported vault.": [
-        "Sélectionnez un coffre-fort de destination pour chaque coffre-fort importé. Sinon, un nouveau coffre-fort sera créé pour chaque coffre-fort importé."
+      "Select the destination vault for each imported vault.": [
+        "Sélectionnez le coffre-fort de destination pour chaque coffre-fort importé."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Les serveurs sont inaccessibles, nous vous invitons à réessayer dans quelques minutes."
@@ -837,6 +849,9 @@
       "Vault \"${ share.content.name }\" was disabled": [
         "Le coffre-fort « ${ share.content.name } » a été désactivé."
       ],
+      "Verification code": [
+        "Code de vérification"
+      ],
       "You are about to create:": [
         "Vous êtes sur le point de créer :"
       ],
@@ -853,8 +868,8 @@
       "You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.": [
         "Vous avez atteint le nombre maximum d'alias que vous pouvez créer. Changez d'abonnement pour créer un nombre illimité d'alias."
       ],
-      "You have reached the limit of vaults you can create. Create an unlimited number of vaults when you upgrade your subscription.": [
-        "Vous avez atteint le nombre maximum de coffres-forts que vous pouvez créer. Changez d'abonnement pour créer un nombre illimité de coffres-forts."
+      "You have reached the limit of vaults you can create.": [
+        "Vous avez atteint la limite de coffres-forts que vous pouvez créer."
       ],
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "Vous avez atteint le nombre maximum de ${ maxLength } caractères."
@@ -1005,7 +1020,7 @@
         "Alias d'adresse e-mail"
       ],
       "Empty trash": [
-        "Vider le dossier Corbeille"
+        "Vider la corbeille"
       ],
       "Encrypt your ${ PASS_APP_NAME } data export file": [
         "Chiffrez votre fichier d'exportation de données ${ PASS_APP_NAME }"
@@ -1336,7 +1351,7 @@
         "Recherchez dans tous les coffres-forts"
       ],
       "Search in Trash": [
-        "Recherchez dans la Corbeille"
+        "Recherchez dans la corbeille"
       ],
       "Select a suffix": [
         "Sélectionnez un suffixe"
@@ -1416,7 +1431,7 @@
         "L'extension est prête à être utilisée."
       ],
       "Trash empty": [
-        "La Corbeille est vide."
+        "La corbeille est vide."
       ],
       "Unlock ${ brandNameJSX }": [
         "Débloquer ${ brandNameJSX }"
@@ -1480,7 +1495,7 @@
         "L'alias « ${ name } » est actuellement utilisé pour l'identifiant « ${ relatedLoginName } ». Vous ne recevrez plus les messages envoyés à « ${ aliasEmail } »."
       ],
       "All your trashed items will be permanently deleted. You can not undo this action.": [
-        "Tous les éléments dans la Corbeille seront définitivement supprimés. Vous ne pouvez pas annuler cette action."
+        "Tous les éléments dans la corbeille seront définitivement supprimés. Vous ne pouvez pas annuler cette action."
       ],
       "An error occured while exporting your data": [
         "Une erreur s'est produite pendant l'exportation de vos données."
@@ -1513,7 +1528,7 @@
         "Aucun élément"
       ],
       "No items in trash matching": [
-        "Aucun élément dans la Corbeille ne correspond."
+        "Aucun élément dans la corbeille ne correspond."
       ],
       "No items matching": [
         "Aucun élément ne correspond."
@@ -1546,7 +1561,7 @@
         "Le titre est nécessaire."
       ],
       "Trash alias ?": [
-        "Déplacer l'alias dans la Corbeille ?"
+        "Déplacer l'alias dans la corbeille ?"
       ],
       "Unable to save": [
         "Enregistrement impossible"
@@ -1563,6 +1578,9 @@
       "Vault name is required": [
         "Le nom du coffre-fort est nécessaire."
       ],
+      "You cannot create more vaults than your subscription allows.": [
+        "Vous ne pouvez pas créer plus de coffres-forts que votre abonnement ne le permet."
+      ],
       "You have unsaved changes, are you sure you want to discard them?": [
         "Des modifications n'ont pas été enregistrées. Voulez-vous vraiment les annuler ?"
       ],
@@ -1578,8 +1596,8 @@
       "Your session was locked due to inactivity": [
         "Votre session a été verrouillée suite à une période d'inactivité."
       ],
-      "Your subscription does not allow you to create multiple vaults. All items will be imported to your primary vault by default. To import into multiple vaults upgrade your subscription.": [
-        "Votre abonnement ne vous permet pas de créer plusieurs coffres-forts. Tous les éléments seront importés par défaut dans votre coffre-fort principal. Changez d'abonnement pour pouvoir importer dans plusieurs coffres-forts."
+      "Your subscription does not allow you to create multiple vaults. All items will be imported to your primary vault. To import into multiple vaults upgrade your subscription.": [
+        "Votre abonnement ne vous permet pas de créer plusieurs coffres-forts. Tous les éléments seront importés dans votre coffre-fort principal. Changez d'abonnement pour pouvoir importer dans plusieurs coffres-forts."
       ]
     }
   }
