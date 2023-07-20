@@ -24,7 +24,7 @@ function* unlockSessionWorker(
 
         const failureMessage = sessionUnlockFailure(err, {
             canRetry: !inactiveSession,
-            reason: inactiveSession
+            error: inactiveSession
                 ? c('Error').t`Too many failed attempts. Please sign in again.`
                 : c('Error').t`Wrong PIN code. Try again.`,
         });

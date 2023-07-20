@@ -1,10 +1,11 @@
 import { put, takeLeading } from 'redux-saga/effects';
+import { c } from 'ttag';
 
 import { api } from '@proton/pass/api';
 import type { AliasOptionsResponse } from '@proton/pass/types';
 
 import { aliasOptionsRequestFailure, aliasOptionsRequestSuccess, aliasOptionsRequested } from '../actions';
-import type { AliasState } from '../reducers';
+import type { AliasOptions } from '../reducers';
 
 export const ALIAS_OPTIONS_VALIDITY_WINDOW = 10 * 60;
 
@@ -18,9 +19,12 @@ function* requestAliasOptions(action: ReturnType<typeof aliasOptionsRequested>) 
         const aliasOptions: AliasOptionsResponse = yield api({
             url: `pass/v1/share/${shareId}/alias/options`,
             method: 'get',
-        }).then(({ Options }) => Options!);
+        }).then(({ Options }) => {
+            if (!Options) throw new Error(c('Error').t`Alias options could not be resolved`);
+            return Options;
+        });
 
-        const options: AliasState['aliasOptions'] = {
+        const options: AliasOptions = {
             suffixes: aliasOptions.Suffixes.map((data) => ({
                 signedSuffix: data.SignedSuffix!,
                 suffix: data.Suffix!,
