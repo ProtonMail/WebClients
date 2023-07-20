@@ -1,5 +1,6 @@
 import { c, msgid } from 'ttag';
 
+import { KEY_VERIFICATION_ERROR_MESSAGE } from '@proton/shared/lib/api/helpers/getPublicKeysEmailHelper';
 import { MAIL_APP_NAME, PACKAGE_TYPE } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { KT_VERIFICATION_STATUS, KeyTransparencyActivation } from '@proton/shared/lib/interfaces';
@@ -66,7 +67,12 @@ export const getSendStatusIcon = (
         ? c('Key validation warning').t`Recipient's key validation failed: ${validationErrorsMessage}`
         : undefined;
     if (error) {
-        return { colorClassName: 'color-danger', isEncrypted: false, fill: FAIL, text: error.message };
+        // Special text for KT errors in composer
+        const errorMessage =
+            error.message === KEY_VERIFICATION_ERROR_MESSAGE
+                ? c('loc_nightly: Composer email icon').t`Unable to send to this address at this time`
+                : error.message;
+        return { colorClassName: 'color-danger', isEncrypted: false, fill: FAIL, text: errorMessage };
     }
     const ktVerificationStatus = ktVerificationResult?.status;
     if (pgpScheme === SEND_PM) {
@@ -366,12 +372,16 @@ const getReceivedStatusIconInternalWithKT = (
     };
 
     if (apiKeysErrors?.length) {
-        const keyErrorMessages = apiKeysErrors.join(', ');
+        // Special text for KT errors in message details
+        const errorMessage =
+            apiKeysErrors[0] === KEY_VERIFICATION_ERROR_MESSAGE
+                ? c('loc_nightly: Composer email icon').t`Unable to verify sender at this time`
+                : apiKeysErrors[0];
         return {
             ...warningResult,
             senderVerificationDetails: {
                 description: c('loc_nightly: Sender verification error')
-                    .t`Sender verification failed: Error while retrieving the sender's public keys: ${keyErrorMessages}`,
+                    .t`Sender verification failed: Error while retrieving the sender's public keys: ${errorMessage}`,
             },
         };
     }
