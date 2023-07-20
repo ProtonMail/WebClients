@@ -2,7 +2,6 @@ import { SimpleMap } from '@proton/shared/lib/interfaces';
 
 export enum TelemetryMeasurementGroups {
     mailSimpleLogin = 'mail.web.simplelogin_popups',
-    screenSize = 'any.web.screen_size',
     calendarTimeZoneSelector = 'calendar.web.timezone_selector',
     accountSignupBasic = 'account.any.signup_basic',
     accountSignup = 'account.any.signup',
@@ -15,11 +14,6 @@ export enum TelemetrySimpleLoginEvents {
     newsletter_unsubscribe = 'newsletter_unsubscribe',
     simplelogin_modal_view = 'simplelogin_modal_view',
     go_to_simplelogin = 'go_to_simplelogin',
-}
-
-export enum TelemetryScreenSizeEvents {
-    load = 'load',
-    resize = 'resize',
 }
 
 export enum TelemetryCalendarEvents {
@@ -68,7 +62,6 @@ export enum TelemetryMailEvents {
 
 export type TelemetryEvents =
     | TelemetrySimpleLoginEvents
-    | TelemetryScreenSizeEvents
     | TelemetryCalendarEvents
     | TelemetryAccountSignupBasicEvents
     | TelemetryAccountSignupEvents
