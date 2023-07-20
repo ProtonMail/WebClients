@@ -20,7 +20,7 @@ interface Props {
     amount: number;
     currency: Currency;
     onPaypalPay: (data: OnPayResult) => void;
-    onPaypalError?: (type: 'pay_pp' | 'pay_pp_no_cc') => void;
+    onPaypalError?: (error: any, type: 'pay_pp' | 'pay_pp_no_cc') => void;
     onValidatePaypal?: (type: 'pay_pp' | 'pay_pp_no_cc') => boolean;
     defaultMethod?: PAYMENT_METHOD_TYPES | undefined;
     paypalPrefetchToken?: boolean;
@@ -51,7 +51,7 @@ const usePayment = ({
         currency,
         type: PAYPAL,
         onValidate: onValidatePaypal ? () => onValidatePaypal('pay_pp') : undefined,
-        onError: onPaypalError ? () => onPaypalError('pay_pp') : undefined,
+        onError: onPaypalError ? (error) => onPaypalError(error, 'pay_pp') : undefined,
         onPay: onPaypalPay,
         onBeforeTokenFetch: onBeforeTokenFetchPaypal,
     });
@@ -62,7 +62,7 @@ const usePayment = ({
         currency,
         type: PAYPAL_CREDIT,
         onValidate: onValidatePaypal ? () => onValidatePaypal('pay_pp_no_cc') : undefined,
-        onError: onPaypalError ? () => onPaypalError('pay_pp_no_cc') : undefined,
+        onError: onPaypalError ? (error) => onPaypalError(error, 'pay_pp_no_cc') : undefined,
         onPay: onPaypalPay,
         onBeforeTokenFetch: onBeforeTokenFetchPaypal,
     });
