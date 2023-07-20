@@ -3520,6 +3520,9 @@
       "Enter the credentials of the email account you want to import from.": [
         "Wpisz dane logowania do konta e-mail, z którego chcesz zaimportować dane."
       ],
+      "Enter the device name to confirm removal.": [
+        "Wpisz nazwę urządzenia, aby potwierdzić jego usunięcie."
+      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Wpisz kod weryfikacyjny wysłany do ${ destinationText }."
       ],
@@ -4033,8 +4036,8 @@
         "Spowoduje to usunięcie linków i dostępu do folderów dla każdego, kto posiada link.",
         "Spowoduje to usunięcie linków i dostępu do folderów dla każdego, kto posiada link."
       ],
-      "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on the device won’t be affected.": [
-        "Spowoduje to usunięcie zsynchronizowanego urządzenia ${ deviceName } z ${ DRIVE_APP_NAME }. Lokalne pliki na urządzeniu nie zostaną utracone."
+      "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and stop syncing folders you added to My Computers.": [
+        "Spowoduje to usunięcie zsynchronizowanego urządzenia ${ deviceName } z ${ DRIVE_APP_NAME } i zatrzymanie synchronizacji folderów."
       ],
       "This will replace the existing file with the folder": [
         "Spowoduje to zastąpienie obecnego pliku folderem"
