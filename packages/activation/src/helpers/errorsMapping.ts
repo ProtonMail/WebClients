@@ -11,7 +11,7 @@ export const isNameTooLong = (folderPath: string) => new Blob([folderPath]).size
 export const isNameReserved = (folderPath: string) => RESERVED_NAMES.includes(folderPath.toLowerCase());
 
 export const isNameAlreadyUsed = (name: string, paths: string[]) =>
-    paths.some((i) => i.toLowerCase() === name.toLowerCase());
+    paths.some((i) => i.toLowerCase().trim() === name.toLowerCase().trim());
 
 export const isNameEmpty = (name: string | undefined) => !name || !name.trim();
 
