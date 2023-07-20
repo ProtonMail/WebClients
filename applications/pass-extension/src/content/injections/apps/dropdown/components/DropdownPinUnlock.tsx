@@ -16,7 +16,7 @@ import { useEnsureMounted } from '../../../../../shared/hooks/useEnsureMounted';
 import { DropdownItemIcon } from './DropdownItemIcon';
 
 export const DropdownPinUnlock: VFC<{
-    onError?: () => void;
+    onError?: () => void /* notify parent component we need an iframe resize */;
     onUnlock?: () => void;
     visible?: boolean;
 }> = ({ onError, onUnlock, visible }) => {
@@ -30,15 +30,14 @@ export const DropdownPinUnlock: VFC<{
             setLoading(true);
             await sendMessage.onSuccess(
                 contentScriptMessage({ type: WorkerMessageType.UNLOCK_REQUEST, payload: { pin: value } }),
-                (res) => {
+                ensureMounted((res) => {
                     if (!res.ok) {
-                        ensureMounted(setError)(res.reason);
-                        return onError?.(); /* notify parent component we need an iframe resize */
-                    }
-                    if (res.ok) onUnlock?.();
-                }
+                        setError(res.error);
+                        return onError?.();
+                    } else onUnlock?.();
+                })
             );
-        } catch (_) {
+        } catch {
         } finally {
             ensureMounted(setLoading)(false);
         }
