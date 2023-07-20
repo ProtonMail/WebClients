@@ -1,11 +1,12 @@
-import type { FormField, FormType, MaybeNull } from '@proton/pass/types';
+import type { FieldType, FormType } from '@proton/pass/fathom';
+import type { MaybeNull } from '@proton/pass/types';
 
 import type { AutofillOptions } from '../../shared/form';
 import type { DropdownAction } from './dropdown';
 import type { FieldIconHandle } from './icon';
 
 export type DetectedForm = { formType: FormType; form: HTMLElement; fields: DetectedField[] };
-export type DetectedField = { fieldType: FormField; field: HTMLInputElement };
+export type DetectedField = { fieldType: FieldType; field: HTMLInputElement };
 export interface FormHandle {
     id: string;
     formType: FormType;
@@ -13,7 +14,7 @@ export interface FormHandle {
     fields: Map<HTMLInputElement, FieldHandle>;
     tracker?: FormTracker;
     detachField: (field: HTMLInputElement) => void;
-    getFieldsFor: (type: FormField, predicate?: (handle: FieldHandle) => boolean) => FieldHandle[];
+    getFieldsFor: (type: FieldType, predicate?: (handle: FieldHandle) => boolean) => FieldHandle[];
     getFields: (predicate?: (handle: FieldHandle) => boolean) => FieldHandle[];
     reconciliate: (type: FormType, fields: DetectedField[]) => void;
     shouldRemove: () => boolean;
@@ -24,7 +25,7 @@ export interface FormHandle {
 export type HTMLElementWithActionTrap = HTMLInputElement & { preventAction?: boolean };
 export interface FieldHandle {
     formType: FormType;
-    fieldType: FormField;
+    fieldType: FieldType;
     element: HTMLInputElement;
     boxElement: HTMLElement;
     icon: FieldIconHandle | null;
@@ -52,7 +53,7 @@ export enum FieldInjectionRule {
 }
 
 export type FormTrackerFieldConfig = {
-    type: FormField;
+    type: FieldType;
     injection: FieldInjectionRule;
     action?: DropdownAction;
 };
