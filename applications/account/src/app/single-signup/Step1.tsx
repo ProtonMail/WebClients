@@ -602,7 +602,7 @@ const Step1 = ({
     return (
         <Layout hasDecoration className={className} bottomRight={<SignupSupportDropdown />}>
             <div className="flex flex-align-items-center flex-column">
-                <div className="signup-v1-header mt-8 mb-4 text-center">
+                <div className="signup-v1-header mb-4 text-center">
                     <h1 className="m-0 large-font lg:px-4 text-semibold">
                         {mode === 'pricing'
                             ? c('new_plans: feature').t`High-speed Swiss VPN that protects your privacy`
@@ -610,7 +610,7 @@ const Step1 = ({
                     </h1>
                 </div>
                 {mode === 'pricing' && (
-                    <div className="flex flex-nowrap mb-4 md:gap-8 gap-3">
+                    <div className="flex flex-nowrap md:gap-8 gap-3">
                         {features.map(({ left, text }, i, arr) => {
                             return (
                                 <Fragment key={text}>
