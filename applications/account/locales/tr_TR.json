@@ -51,19 +51,19 @@
         "${ BRAND_NAME } mağazası"
       ],
       "activate": [
-        "etkinleştir"
+        "kullanıma al"
       ],
       "Activate ${ Name }@pm.me": [
-        "${ Name }@pm.me adresini etkinleştir"
+        "${ Name }@pm.me adresini kullanıma al"
       ],
       "Activate ${ user.Name }@pm.me": [
-        "${ user.Name }@pm.me adresini etkinleştir"
+        "${ user.Name }@pm.me adresini kullanıma al"
       ],
       "Activate organization key": [
-        "Kuruluş anahtarını etkinleştir"
+        "Kuruluş anahtarını kullanıma al"
       ],
       "Activate recovery": [
-        "Kurtarmayı etkinleştir"
+        "Kurtarma özelliğini aç"
       ],
       "Add": [
         "Ekle"
@@ -108,7 +108,7 @@
         "PayPal ekle"
       ],
       "Add public holidays": [
-        "Genel tatil günlerini ekle"
+        "Resmi tatilleri ekle"
       ],
       "Add sieve filter": [
         "Sieve süzgeci ekle"
@@ -312,13 +312,13 @@
         "Bir kod almadınız mı?"
       ],
       "Disable": [
-        "Devre dışı bırak"
+        "Kapat"
       ],
       "Disable recovery phrase": [
-        "Kurtarma ifadesini devre dışı bırak"
+        "Kurtarma ifadesini kapat"
       ],
       "Disable recovery phrase?": [
-        "Kurtarma ifadesi devre dışı bırakılsın mı?"
+        "Kurtarma ifadesi özelliği kapatılsın mı?"
       ],
       "Discard": [
         "Sil"
@@ -387,10 +387,10 @@
         "Emoji"
       ],
       "enable desktop notifications": [
-        "masaüstü bildirimlerini etkinleştirmek"
+        "masaüstü bildirimlerini açmak"
       ],
       "Enable multi-user support": [
-        "Çok kullanıcı desteğini etkinleştir"
+        "Çok kullanıcı desteğini aç"
       ],
       "Encrypt and export": [
         "Şifrele ve dışa aktar"
@@ -433,9 +433,6 @@
       ],
       "Generate token": [
         "Kod oluştur"
-      ],
-      "Get ${ discountPercentage } off with 24 months": [
-        "24 ay için ${ discountPercentage } indirim alın"
       ],
       "Get ${ vpnPlus }": [
         "${ vpnPlus } alın"
@@ -615,7 +612,7 @@
         "Alıntıla"
       ],
       "Reactivate keys": [
-        "Anahtarı yeniden etkinleştir"
+        "Anahtarı yeniden kullanıma al"
       ],
       "Reconnect": [
         "Yeniden bağlan"
@@ -1013,7 +1010,7 @@
         "Yönet"
       ],
       "Reactivate": [
-        "Yeniden etkinleştir"
+        "Yenile"
       ]
     },
     "Action; accept invitation to share calendar": {
@@ -1041,7 +1038,7 @@
         "Sil"
       ],
       "Disable": [
-        "Devre dışı bırak"
+        "Kullanımdan kaldır"
       ],
       "Disable encryption": [
         "Şifreleme kullanılmasın"
@@ -1050,7 +1047,7 @@
         "İmzalama beklentisi kullanılmasın"
       ],
       "Enable": [
-        "Etkinleştir"
+        "Kullanıma al"
       ],
       "Enable encryption": [
         "Şifreleme kullanılsın"
@@ -1076,7 +1073,7 @@
         "Varsayılan"
       ],
       "Disabled": [
-        "Devre dışı"
+        "Kullanımdan kaldırılmış"
       ],
       "External": [
         "Dış"
@@ -1169,10 +1166,10 @@
     },
     "Badge for domain": {
       "Disabled": [
-        "Devre dışı"
+        "Kullanımdan kaldırılmış"
       ],
       "Enabled": [
-        "Etkin"
+        "Kullanılıyor"
       ],
       "Missing keys": [
         "Eksik anahtarlar"
@@ -1383,7 +1380,7 @@
     },
     "Calendar settings private share description": {
       "Share your calendar with other ${ BRAND_NAME } users. Enable collaboration by allowing them to add and edit events in your calendar. You can modify the user permissions anytime.": [
-        "Takviminizi diğer ${ BRAND_NAME } kullanıcılarıyla paylaşın. Diğer kullanıcıların takviminize etkinlik eklemesine ve düzenlemesine izin vererek işbirliğini etkinleştirin. Kullanıcı izinlerini istediğiniz zaman değiştirebilirsiniz."
+        "Takviminizi diğer ${ BRAND_NAME } kullanıcılarıyla paylaşın. Diğer kullanıcıların takviminize etkinlik eklemesine ve düzenlemesine izin vererek işbirliği yapın. Kullanıcı izinlerini istediğiniz zaman değiştirebilirsiniz."
       ]
     },
     "Calendar settings section title": {
@@ -1439,7 +1436,7 @@
         "Varsayılan"
       ],
       "Disabled": [
-        "Devre dışı"
+        "Kullanımdan kaldırılmış"
       ],
       "Not synced": [
         "Eşitlenmemiş"
@@ -3059,7 +3056,7 @@
         "Etki alanı kullanılamıyor. Bir süre sonra yeniden deneyin"
       ],
       "Email address disabled": [
-        "E-posta adresi devre dışı"
+        "E-posta adresi kullanımdan kaldırılmış"
       ],
       "Email address is required": [
         "E-posta adresinin yazılması zorunludur"
@@ -3222,7 +3219,7 @@
         "Lütfen kuruluşunuza kullanıcılar eklemeden önce bir özel etki alanı ayarlayın."
       ],
       "Please enable multi-user support before adding users to your organization.": [
-        "Lütfen kuruluşunuza kullanıcılar eklemeden önce çok kullanıcı desteğini etkinleştirin."
+        "Lütfen kuruluşunuza kullanıcılar eklemeden önce çok kullanıcı desteğini açın."
       ],
       "Please fix the highlighted conflict to proceed.": [
         "İlerlemek için lütfen vurgulanan çakışmayı düzeltin.",
@@ -3241,7 +3238,7 @@
         "Lütfen önce bir kurtarma/bildirim e-postası adresi ayarlayın"
       ],
       "Please upgrade to a business plan with more than 1 user to get multi-user support": [
-        "Birden çok kullanıcı desteği almak için lütfen 1 taneden fazla kullanıcı içeren kurumsal bir tarifeye yükseltin"
+        "Çok kullanıcı desteği almak için lütfen 1 taneden fazla kullanıcı içeren kurumsal bir tarifeye yükseltin"
       ],
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Birden çok kullanıcıyı yönetmek için lütfen 1 taneden fazla kullanıcı içeren kurumsal bir tarifeye yükseltin."
@@ -3341,10 +3338,10 @@
         "Kabul ettiğimiz en az ödeme: ${ price }"
       ],
       "The organization key must be activated first": [
-        "Önce kuruluş anahtarı etkinleştirilmelidir"
+        "Önce kuruluş anahtarı kullanıma alınmalıdır"
       ],
       "The organization key must be activated first.": [
-        "Önce kuruluş anahtarı etkinleştirilmelidir."
+        "Önce kuruluş anahtarı kullanıma alınmalıdır."
       ],
       "The sending key is not valid": [
         "Gönderim anahtarı geçersiz"
@@ -3434,7 +3431,7 @@
         "Tarifenizin kullanıcı sayısı sınırına ulaştınız. Yeni bir kullanıcı eklemek için lütfen tarifenizi yükseltin."
       ],
       "You must activate your organization keys. Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
-        "Kuruluş anahtarlarınızı etkinleştirmelisiniz. Etkinleştirme işlemini yapmadan yeni kullanıcılar ekleyemez, var olan kullanıcılara adres ekleyemez veya korunmayan kullanıcı hesaplarına erişemezsiniz."
+        "Kuruluş anahtarlarınızı kullanıma almalısınız. Kullanıma alma işlemini yapmadan yeni kullanıcılar ekleyemez, var olan kullanıcılara adres ekleyemez veya korunmayan kullanıcı hesaplarına erişemezsiniz."
       ],
       "You must privatize all users before generating new organization keys": [
         "Yeni kuruluş anahtarları oluşturmadan önce tüm kullanıcıları kişiselleştirmelisiniz"
@@ -3455,7 +3452,7 @@
         "İçe aktarma işleminiz yapılmayacak."
       ],
       "Zero keys reactivated": [
-        "Hiç bir anahtar yeniden etkinleştirilmedi"
+        "Hiç bir anahtar yeniden kullanıma alınmadı"
       ]
     },
     "Error importing calendar": {
@@ -4420,8 +4417,8 @@
       "(1-2 emails per month)": [
         "(ayda 1-2 e-posta)"
       ],
-      "(2-4 per year)": [
-        "(1 yılda 2-4 kez)"
+      "(2-4 emails per year)": [
+        "(1 yılda 2-4 e-posta)"
       ],
       "(4-6 emails per year)": [
         "(1 yılda 4-6 e-posta)"
@@ -4522,11 +4519,14 @@
       "Best deal": [
         "En iyi teklif"
       ],
+      "Checkout": [
+        "Ödeme yapın"
+      ],
+      "Create your account": [
+        "Hesabınızı açın"
+      ],
       "Device": [
         "Aygıt"
-      ],
-      "Enter your email address": [
-        "E-posta adresinizi yazın"
       ],
       "Event": [
         "Etkinlik"
@@ -4557,9 +4557,6 @@
       ],
       "Protection": [
         "Koruma"
-      ],
-      "Select your preferred method of payment": [
-        "Kullanmayı yeğlediğiniz ödeme yöntemini seçin"
       ],
       "Select your pricing plan": [
         "Ücretlendirme tarifenizi seçin"
@@ -4778,16 +4775,16 @@
         "${ BRAND_NAME }, Yahoo hesabınızla bağlantı kuramadı. Lütfen şundan emin olun:"
       ],
       "2-step verification is enabled in your external account.": [
-        "Dış hesabınızda iki adımlı kimlik doğrulaması etkinleştirilmiş."
+        "Dış hesabınızda iki adımlı doğrulama açılmış."
       ],
       "2-step verification is enabled in your external email account.": [
-        "Dış e-posta hesabınızda iki adımlı kimlik doğrulaması etkinleştirilmiş."
+        "Dış e-posta hesabınızda iki adımlı doğrulama açılmış."
       ],
       "IMAP access is enabled in your external account.": [
-        "Dış hesabınızda IMAP erişimi etkinleştirilmiş."
+        "Dış hesabınızda IMAP erişimi açılmış."
       ],
       "IMAP access is enabled in your Yahoo account.": [
-        "Yahoo hesabınızda IMAP erişimi etkinleştirildi."
+        "Yahoo hesabınızda IMAP erişimi özelliği açıldı."
       ],
       "Too many recent requests. Please try again in a few moments.": [
         "Kısa sürede çok fazla istek yapıldı. Lütfen birkaç dakika sonra yeniden deneyin."
@@ -4887,7 +4884,7 @@
         "uygulama parolası"
       ],
       "app password or enable IMAP": [
-        "uygulama parolası ya da IMAP etkinleştirin"
+        "uygulama parolası ya da IMAP özelliğini açın"
       ],
       "CSV or a VCF (vCard) file": [
         "CSV ya da VCF (vCard) dosyası"
@@ -5030,6 +5027,9 @@
       ],
       "${ current } of ${ total }": [
         "${ current } / ${ total }"
+      ],
+      "${ discountPercentage } forever": [
+        "${ discountPercentage } sonsuza dek"
       ],
       "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
         "${ DRIVE_APP_NAME } artık dosyalarınızın önceki sürümlerini tutmayacak."
@@ -5198,7 +5198,7 @@
         "Hesap güncellendi"
       ],
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
-        "Parolanızı kaybederseniz, ${ BRAND_NAME } hesabınızın içeriğine erişmeyi sürdürebileceğinizden emin olmak için en az bir veri kurtarma yöntemini etkinleştirin."
+        "Parolanızı kaybederseniz, ${ BRAND_NAME } hesabınızın içeriğine erişmeyi sürdürebileceğinizden emin olmak için en az bir veri kurtarma yöntemini açın."
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Hesabınıza @pm.me e-posta adresini ekler. Bu basit ve kısa etki alanı \"Bana ${ MAIL_APP_NAME } gönder\" (ProtonMail me) veya \"Bana özel ileti gönder\" (Private Message me) şeklinde anlamlandırılabilir"
@@ -5255,7 +5255,7 @@
         "Tümü (${ totalFoldersCount } etiket)"
       ],
       "All keys successfully reactivated": [
-        "Tüm anahtarlar yeniden etkinleştirildi"
+        "Tüm anahtarlar yeniden kullanıma alındı"
       ],
       "All your changes will be lost.": [
         "Yaptığınız tüm değişiklikler kaybolacak."
@@ -5291,7 +5291,7 @@
         "ve"
       ],
       "Any ${ twoFa } method on your account will be disabled.": [
-        "Hesabınızda kullanılan tüm ${ twoFa } yöntemleri devre dışı bırakılacak."
+        "Hesabınızda kullanılan tüm ${ twoFa } yöntemleri kapatılacak."
       ],
       "Anyone with this link can see all the event details of this calendar such as title, location or participants.": [
         "Bu bağlantıya sahip olan herkes bu takvimdeki etkinliklerin başlık, yer veya katılımcılar gibi tüm ayrıntılarını görebilir."
@@ -5348,19 +5348,19 @@
         "Otomatik yenileme: "
       ],
       "Auto-reply is active each month between the selected start and end time.": [
-        "Otomatik yanıt, her ay seçilmiş başlangıç ve bitiş saatleri arasında etkinleştirilir."
+        "Otomatik yanıt, her ay seçilmiş başlangıç ve bitiş saatleri arasında açılır."
       ],
       "Auto-reply is active each week between the selected start and end time.": [
-        "Otomatik yanıt, her hafta seçilmiş başlangıç ​​ve bitiş saatleri arasında etkinleştirilir."
+        "Otomatik yanıt, her hafta seçilmiş başlangıç ​​ve bitiş saatleri arasında açılır."
       ],
       "Auto-reply is active from the start time to the end time.": [
-        "Otomatik yanıt, başlangıç ​​saati ile bitiş saati arasında etkinleştirilir."
+        "Otomatik yanıt, başlangıç ​​saati ile bitiş saati arasında açılır."
       ],
       "Auto-reply is active until you turn it off.": [
         "Otomatik yanıtlama siz kapatana kadar etkin."
       ],
       "Auto-reply is always active on the days of the week you select, between the selected hours.": [
-        "Otomatik yanıt, haftanın seçilmiş günlerinde seçilmiş saatler arasında etkinleştirilir."
+        "Otomatik yanıt özelliği, haftanın seçilmiş günlerinde seçilmiş saatler arasında açılır."
       ],
       "Available on macOS, Windows, and Linux.": [
         "MacOS, Windows ve Linux üzerinde kullanılabilir."
@@ -5387,7 +5387,7 @@
         "Bu adresi oluşturmadan önce bir parola belirtmeli ve adresin şifreleme anahtarlarını üretmelisiniz."
       ],
       "Before enabling the account you need to provide a password and create encryption keys for the new addresses.": [
-        "Hesabı etkinleştirmeden önce bir parola belirtmeli ve yeni adresin şifreleme anahtarlarını oluşturmalısınız."
+        "Hesabı kullanıma almadan önce bir parola belirtmeli ve yeni adresin şifreleme anahtarlarını oluşturmalısınız."
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Yeni bir doğrulama kodu istemeden önce İstenmeyen kutunuza bakın ve ${ strong } adresinin doğru olduğundan emin olun."
@@ -5602,13 +5602,13 @@
         "Bu etiket ile işaretlenmiş e-postalar silinmeyecek ve hala ilgili klasörde bulunabilecek."
       ],
       "Enable this address to join this calendar": [
-        "Takvime katılmak için bu adresi etkinleştirin"
+        "Takvime katılmak için bu adresi kullanıma alın"
       ],
       "Enable TLS or SSL on the external service if it is supported.": [
         "Destekleniyorsa, dış hizmette TLS ya da SSL kullanın."
       ],
       "Enabling recovery by phrase again will generate a new recovery phrase.": [
-        "İfade ile kurtarma seçeneğini yeniden etkinleştirdiğinizde, yeni bir kurtarma ifadesi oluşturulur."
+        "İfade ile kurtarma seçeneğini yeniden açtığınızda, yeni bir kurtarma ifadesi oluşturulur."
       ],
       "Encryption setting updated": [
         "Şifreleme ayarları güncellendi"
@@ -5695,7 +5695,7 @@
         "eski iletileri veya diğer verileri silerek boş yer açın"
       ],
       "Generating a new recovery phrase will deactivate your old one.": [
-        "Yeni bir kurtarma ifadesi oluşturmak önceki ifadeyi devre dışı bırakır."
+        "Yeni bir kurtarma ifadesi oluşturmak, önceki ifadeyi kullanımdan kaldırır."
       ],
       "Get ${ upsellPlanName }": [
         "${ upsellPlanName } tarifesini edinin"
@@ -5964,7 +5964,7 @@
         "diğer"
       ],
       "Multi-user support not enabled.": [
-        "Çok kullanıcı desteği etkin değil."
+        "Çok kullanıcı desteği açılmamış."
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Yeni klasörünüzü adlandırın ve içine eklemek istediğiniz üst klasörü seçin. Herhangi bir üst klasör seçmezseniz, yeni klasör bir üst düzey klasör olur."
@@ -6035,14 +6035,11 @@
       "Only you can see the labels.": [
         "Etiketleri yalnızca siz görebilirsiniz."
       ],
-      "Open source": [
-        "Açık kaynaklı"
-      ],
       "Or select a particular server:": [
         "Ya da belirli bir sunucuyu seçin:"
       ],
       "Organization keys activated": [
-        "Kuruluş anahtarları etkinleştirildi"
+        "Kuruluş anahtarları kullanıma alındı"
       ],
       "Organization keys restored": [
         "Kuruluş anahtarları geri yüklendi"
@@ -6120,7 +6117,7 @@
         "Lütfen bu adresi silerseniz, bu adresi kullanarak e-posta gönderip alamayacağınızı unutmayın."
       ],
       "Please note that if you delete this domain, all the addresses associated with it will be disabled.": [
-        "Bu etki alanını silerseniz, ilişkili tüm adreslerin devre dışı bırakılacağını unutmayın."
+        "Bu etki alanını silerseniz, ilişkili tüm adreslerin kullanımdan kaldırılacağını unutmayın."
       ],
       "Please note that if you delete this filter, we will stop processing all the automated actions it triggers.": [
         "Bu süzgeci silerseniz, tetiklediği tüm otomatik işlemlerin durdurulacağını unutmayın."
@@ -6168,7 +6165,7 @@
         "İsviçre gizlilik yasaları tarafından korunmaktadır"
       ],
       "Public figures, journalists, executives, and others who may be the target of cyber attacks are highly encouraged to enable ${ PROTON_SENTINEL_NAME }.": [
-        "Tanınmış kişiler, gazeteciler, yöneticiler ve siber saldırıların hedefi olabilecek diğer kişilerin, ${ PROTON_SENTINEL_NAME } özelliğini etkinleştirmesi önemle önerilir."
+        "Tanınmış kişiler, gazeteciler, yöneticiler ve siber saldırıların hedefi olabilecek diğer kişilerin, ${ PROTON_SENTINEL_NAME } özelliğini açması önemle önerilir."
       ],
       "Public link invite": [
         "Herkese açık davet bağlantısı"
@@ -6204,7 +6201,7 @@
         "Kurtarma ifadesi indirildi"
       ],
       "Recovery phrase has been disabled": [
-        "Kurtarma ifadesi devre dışı bırakıldı"
+        "Kurtarma ifadesi kapatıldı"
       ],
       "Recovery phrase is not associated with any keys.": [
         "Kurtarma ifadesi herhangi bir anahtarla ilişkili değil."
@@ -6238,9 +6235,6 @@
       ],
       "Save your password somewhere safe. Click on icon to confirm that you have typed your password correctly.": [
         "Parolanızı güvenli bir yere kaydedin. Parolanızı doğru yazdığınızı onaylamak için simgeye tıklayın."
-      ],
-      "Saving your password": [
-        "Parolanız kaydediliyor"
       ],
       "Scan QR code instead": [
         "Bunun yerine QR kodunu tarayın"
@@ -6294,13 +6288,13 @@
         "Özgün iletiyi göster"
       ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
-        "Adresinizi etkinleştirmek için ${ MAIL_APP_NAME } adresinde oturum açın"
+        "Adresinizi kullanıma almak için ${ MAIL_APP_NAME } adresinde oturum açın"
       ],
       "Signed up": [
         "Hesap açtı"
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
-        "Sadık bir kullanıcı olduğunuz için, hesabınızda ek özellikler etkinleştirildi."
+        "Sadık bir kullanıcı olduğunuz için, hesabınızda yeni özellikler eklendi."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
         "SMTP gönderim özelliği, üçüncü taraf hizmetlerin veya aygıtların özel etki alanı adreslerinizle ${ MAIL_APP_NAME } üzerinden e-posta göndermesini sağlar. Erişim isteğinde bulunmak için lütfen kullanım durumlarınızı, hangi özel etki alanlarını kullanmak istediğinizi ve gerçekleşmesi beklenen saatlik ve günlük e-posta sayılarını açıklayan ${ createTicket }."
@@ -6309,7 +6303,7 @@
         "SMTP gönderim özelliği ile üçüncü taraf hizmetler ya da aygıtlar ${ MAIL_APP_NAME } üzerinden özel etki alanı adreslerinizle e-posta gönderebilir. Bu özelliği kullanmaya başlamak için yeni bir kod oluşturun."
       ],
       "Some keys successfully reactivated": [
-        "Bazı anahtarlar yeniden etkinleştirildi"
+        "Bazı anahtarlar yeniden kullanıma alındı"
       ],
       "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ${ MAIL_APP_NAME } in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
         "SPF etki alanı adına kimlerin e-posta göndermesine izin verildiğini belirtmek için kullanılır. Bu nedenle SPF kaydınıza ${ MAIL_APP_NAME } eklemenizi önemle öneririz. Lütfen DNS kayıtlarınıza aşağıdaki TXT kaydını ekleyin. Bu işlem genellikle etki alanı kayıt kuruluşunuzun kontrol panosundan yapılabilir."
@@ -6340,7 +6334,7 @@
         "Ödemeyi aşağıdaki adrese yapın ya da QR kodunu tarayın. Ön ödemeniz onaylandıktan sonra hesabınıza yansıtılacak."
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
-        "Abonelik sona eriyor: ${ planName } tarifesinin ek özelliklerini korumak için ${ byDate } tarihine kadar yeniden etkinleştirin. ${ reactivateLink }"
+        "Abonelik sona eriyor: ${ planName } tarifesinin ek özelliklerini korumak için ${ byDate } tarihine kadar yenileyin. ${ reactivateLink }"
       ],
       "Summary": [
         "Özet"
@@ -6372,9 +6366,6 @@
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
         "${ boldDataLocked } iletisi artık görüntülenmeyecek. Ancak yine de ${ encryptionAndKeysLink } altında verilerinizin kilidini açabilirsiniz."
       ],
-      "The ${ planName } plan includes:": [
-        "${ planName } tarifesinin özellikleri:"
-      ],
       "The calendar will be removed from your account.": [
         "Takvim hesabınızdan kaldırılacak."
       ],
@@ -6397,7 +6388,7 @@
         "Şu adresler eklenemedi."
       ],
       "The following members will receive an email prompting them to enable two-factor authentication as soon as possible.": [
-        "Şu üyelere, en kısa sürede iki adımlı doğrulamayı etkinleştirmelerini bildiren bir e-posta gönderilecek."
+        "Şu üyelere, en kısa sürede iki adımlı doğrulama özelliğini açmalarını bildiren bir e-posta gönderilecek."
       ],
       "The format of your CSV file is incorrect.": [
         "CSV dosyanız doğru biçimde değil."
@@ -6415,7 +6406,7 @@
         "İnternet üzerinde gezinmenin, yayın akışlarını izlemenin ve çevrim içi olmanın en güvenli yolu."
       ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
-        "Doğrulama işlemi için yeni bir tarayıcı sekmesi açılacak. Kullanıyorsanız lütfen açılır pencere engelleyicileri devre dışı bırakın."
+        "Doğrulama işlemi için yeni bir tarayıcı sekmesi açılacak. Kullanıyorsanız lütfen açılır pencere engelleyicileri kapatın."
       ],
       "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         "Bu yapılandırma dosyaları, üçüncü taraf bir VPN uygulaması kullanırken veya bir yönelticide VPN bağlantısı kurarken bağlanacağınız ${ VPN_APP_NAME } sunucusunu seçmenizi sağlar."
@@ -6484,19 +6475,19 @@
         "Bu işlem dosyalarınızın tüm önceki sürümlerini siler."
       ],
       "This will disable your current recovery phrase. You won't be able to use it to access your account or decrypt your data.": [
-        "Bu işlem, geçerli kurtarma ifadenizi devre dışı bırakır. Bu ifadeyi artık hesabınıza erişmek veya verilerinizin şifresini çözmek için kullanamazsınız."
+        "Bu işlem, geçerli kurtarma ifadenizi kapatır. Bu ifadeyi artık hesabınıza erişmek veya verilerinizin şifresini çözmek için kullanamazsınız."
       ],
       "This will download a file containing your private key. Protect this file by encrypting it with a password.": [
         "Bu işlem kişisel anahtarınızın bulunduğu bir dosyayı indirecek. Bu dosyayı bir parola ile şifreleyerek koruyun."
       ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
-        "Bu seçenek, ${ BRAND_NAME } aboneliğiniz için PayPal üzerinden ödeme yapılabilmesini sağlar. Yeni bir tarayıcı sekmesi açarak sizi PayPal sitesine yönlendireceğiz. Herhangi bir açılır pencere engelleyici kullanıyorsanız, işlemi sürdürmek için bunu devre dışı bırakın."
+        "Bu seçenek, ${ BRAND_NAME } aboneliğiniz için PayPal üzerinden ödeme yapılabilmesini sağlar. Yeni bir tarayıcı sekmesi açarak sizi PayPal sitesine yönlendireceğiz. Herhangi bir açılır pencere engelleyici kullanıyorsanız, işlemi sürdürmek için onu kapatın."
       ],
       "This will permanently delete the data and all email addresses associated with this user.": [
         "Bu kullanıcı ile ilişkili tüm e-posta ve veriler kalıcı olarak silinecek."
       ],
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
-        "Bu işlem, hesabınızı ve tüm verilerini kalıcı olarak siler. Bu hesabı yeniden etkinleştiremezsiniz."
+        "Bu işlem, hesabınızı ve tüm verilerini kalıcı olarak siler. Bu hesabı yeniden kullanıma alamazsınız."
       ],
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "Bu bilgi, geçici parolanızın yerini alır. Gelecekte ${ BRAND_NAME } hesabınıza erişmek için bunu kullanacaksınız."
@@ -6506,9 +6497,6 @@
       ],
       "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
         "Bu yardımcı, ${ BRAND_NAME } hesabınızda iki adımlı doğrulamayı (2FA) açar. ${ BRAND_NAME_TWO } hesabınızı daha güvenli kılacağından iki adımlı doğrulamayı açmanızı öneririz."
-      ],
-      "To ${ planName }": [
-        "${ planName } tarifesine"
       ],
       "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
         "Veri kaybını engellemek için bu anahtarı, yalnızca ne yaptığınızdan eminseniz ya da dışa aktardıysanız silin."
@@ -6573,9 +6561,6 @@
       "Total VPN connections": [
         "Toplam VPN bağlantısı"
       ],
-      "Try ${ upsellPlanName } risk free": [
-        "Risk almadan ${ upsellPlanName } tarifesini deneyin"
-      ],
       "two-factor authentication (2FA)": [
         "iki adımlı doğrulama (2FA)"
       ],
@@ -6628,7 +6613,7 @@
         "Ücretli özellikleri, ürünleri ve depolama alanını özel bir fiyat ile almak için tarifenizi şimdi yükseltin"
       ],
       "Upgrade to a paid account to enable ${ PROTON_SENTINEL_NAME }.": [
-        "${ PROTON_SENTINEL_NAME } özelliğini etkinleştirmek için ücretli bir tarifeye yükseltin."
+        "${ PROTON_SENTINEL_NAME } özelliğini açmak için ücretli bir tarifeye yükseltin."
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Hesabınızı paylaşması daha kolay ve daha kısa @pm.me adresi ile kullanmak için tarifenizi yükseltin. İngilizce olarak \"${ MAIL_APP_NAME } ben\" ya da \"Bana özel ileti\" anlamına gelir."
@@ -6711,9 +6696,6 @@
       "We securely store recovery information on your trusted device to prevent you from losing your data": [
         "Verilerinizi kaybetmenizi önlemek için kurtarma bilgilerini güvenilir aygıtnızda güvenli bir şekilde saklarız"
       ],
-      "We use 3-D Secure to protect your payments.": [
-        "Ödemelerinizi korumak için 3-D Secure kullanıyoruz."
-      ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Bu işlemi tamamlamanız için yeni bir tarayıcı sekmesi açarak sizi PayPal sitesine yönlendireceğiz. İşlemi tamamlamak için, varsa açılır pencere engelleyicilerinizi kapatın."
       ],
@@ -6732,9 +6714,6 @@
       "Week and month views only apply to desktop.": [
         "Haftalık ve aylık görünümler yalnızca masaüstü için geçerlidir."
       ],
-      "Welcome": [
-        "Hoş geldiniz"
-      ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "Hesap kurtarma için ayarladığınız e-posta adresine bir sıfırlama kodu göndereceğiz."
       ],
@@ -6745,10 +6724,10 @@
         "Geçerli tarifenizi aynı fiyata daha fazlasını sunan iyileştirilmiş bir tarifeye yükseltiyoruz. Sistemlerimiz güncellenmekte olduğundan bunu değiştiremezsiniz. İşlem tamamlandığında size bir e-posta göndereceğiz."
       ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
-        "Devre dışı bırakıldığında, görsel dosyalarının bilginiz olmadan aygıtınıza yüklenmesi engellenir."
+        "Kapatıldığında, görsel dosyalarının bilginiz olmadan aygıtınıza yüklenmesi engellenir."
       ],
       "When notifications are enabled, we'll send an alert to your recovery email address if you have new messages in your ${ MAIL_APP_NAME } account.": [
-        "Bildirimler etkinleştirildiğinde, ${ MAIL_APP_NAME } hesabınızda yeni ileti varsa, kurtarma/bildirim adresinize bir uyarı göndeririz."
+        "Bildirimler açıldığında, ${ MAIL_APP_NAME } hesabınızda yeni ileti varsa, kurtarma/bildirim adresinize bir uyarı göndeririz."
       ],
       "When they subscribe to a plan, you'll get credits to use on your subscription.": [
         "Bir tarifeye abone olduklarında, aboneliğiniz ile kullanabileceğiniz bir miktar kredi kazanacaksınız."
@@ -6769,7 +6748,7 @@
         "Geçerli tarifeniz ile @pm.me adresiniz iletileri yalnızca alabilir. @pm.me kullanarak ileti göndermek ve başka adresler oluşturmak için tarifenizi yükseltin."
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
-        "Etkinleştirme yapılmadan yeni kullanıcılar eklenemez. Var olan kullanıcılara adres ekleyemez veya korunmayan kullanıcı hesaplarına erişemezsiniz."
+        "Kullanıma almadan yeni kullanıcılar eklenemez. Var olan kullanıcılara adres ekleyemez veya korunmayan kullanıcı hesaplarına erişemezsiniz."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Yeni bir doğrulama kodu almak ya da alternatif bir doğrulama yöntemi kullanmak ister misiniz?"
@@ -6802,7 +6781,7 @@
         "Faturalarınızı muhasebe kullanımı için özelleştirebilir ve indirebilirsiniz."
       ],
       "You can enable authentication sign in to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
-        "Hesabınıza ne zaman ve hangi IP adresinden erişildiğini görmek için kimlik doğrulama günlüğünü etkinleştirebilirsiniz. Başarısız oturum açma girişimlerinin yanında hesaba erişen IP adresini ve saatini de kaydedeceğiz."
+        "Hesabınıza ne zaman ve hangi IP adresinden erişildiğini görmek için kimlik doğrulama günlüğünü açabilirsiniz. Başarısız oturum açma girişimlerinin yanında hesaba erişen IP adresini ve saatini de kaydedeceğiz."
       ],
       "You can import one data type at a time.": [
         "Bir seferde bir veri türünü içe aktarabilirsiniz."
@@ -6867,10 +6846,10 @@
         "Artık eklentiyi kullanmaya başlayabilirsiniz"
       ],
       "You must activate your organization private key with the backup organization key password provided to you by your organization administrator.": [
-        "Kuruluşunuzun kişisel anahtarını, kuruluş yöneticiniz tarafından size sağlanan yedek kuruluş anahtarı parolasıyla etkinleştirmeniz gerekir."
+        "Kuruluşunuzun kişisel anahtarını, kuruluş yöneticiniz tarafından size sağlanan yedek kuruluş anahtarı parolasıyla kullanıma almanız gerekir."
       ],
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
-        "Tarifenizi düşürmeden önce, ek ${ MAIL_APP_NAME } kullanıcılarını, adreslerini ve özel etki alanlarını devre dışı bırakmalı ya da silmelisiniz."
+        "Tarifenizi düşürmeden önce, ek ${ MAIL_APP_NAME } kullanıcılarını, adreslerini ve özel etki alanlarını kullanımdan kaldırmalı ya da silmelisiniz."
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "Ödeme yöntemi olarak eklemek için, PayPal hesabınızla bağlantılı bir kredi kartı ya da banka hesabı olmalıdır."
@@ -6892,9 +6871,6 @@
       ],
       "You still need to reply to invitations for the host to see your response.": [
         "Düzenleyicinin yanıtınızı görebilmesi için yine de davetleri yanıtlamanız gerekir."
-      ],
-      "You will be redirected to the VPN download page": [
-        "VPN indirme sayfasına yönlendirileceksiniz"
       ],
       "You will lose access to ${ vpnPlanNameShort } servers and features on this date.": [
         "Bu tarihte ${ vpnPlanNameShort } sunucularına ve özelliklerine erişiminizi kaybedeceksiniz."
@@ -6942,7 +6918,7 @@
         "Hesabınızda süresi geçmiş en az bir fatura var. Hesabınıza erişim kısıtlandı. Ödeme yapmazsanız e-postalarınız ve paylaşım bağlantılarınız engellenecek. ${ payInvoiceLink }"
       ],
       "Your account recovery method is set": [
-        "Hesap kurtarma yönteminiz ayarlandı"
+        "Hesap kurtarma yönteminiz ayarlanmış"
       ],
       "Your account will be updated once the payment is cleared.": [
         "Ödemeniz onaylandıktan sonra hesabınız güncellenecek."
@@ -6951,7 +6927,7 @@
         "Verileriniz ${ importedEmailAddressStrong } üzerinden ${ BRAND_NAME } hesabınız içine aktarılmaya hazır."
       ],
       "Your data recovery method is set": [
-        "Veri kurtarma yönteminiz ayarlandı"
+        "Veri kurtarma yönteminiz ayarlanmış"
       ],
       "Your email will only be used for this one-time verification.": [
         "E-posta adresiniz yalnızca bu tek seferlik doğrulama için kullanılacak."
@@ -6971,6 +6947,9 @@
       ],
       "Your import will not be processed.": [
         "İçe aktarma işleminiz yapılmayacak."
+      ],
+      "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
+        "Bilgileriniz bizimle güvende olur. Sizinle yalnızca hizmetlerimizi sağlamak için gerekli olduğunda iletişim kuracağız."
       ],
       "Your login information will not be saved after the import is completed.": [
         "İçe aktarma işleminden sonra oturum açma bilgileriniz kaydedilmez."
@@ -7010,7 +6989,7 @@
     },
     "Info - folder colouring feature": {
       "When enabled, sub-folders inherit the color of the parent folder.": [
-        "Etkinleştirildiğinde, alt klasörler üst klasörün rengini alır."
+        "Açıldığında alt klasörler üst klasörün rengini alır."
       ]
     },
     "Info for cash payment method": {
@@ -7046,7 +7025,7 @@
     },
     "Info subscription": {
       "You can prevent expiry by reactivating the subscription": [
-        "Aboneliği yeniden etkinleştirerek hizmetin sona ermesini önleyebilirsiniz"
+        "Aboneliği yenileyerek hizmetin sona ermesini önleyebilirsiniz"
       ]
     },
     "Info when deleting payment method": {
@@ -7152,7 +7131,7 @@
         "Ele geçirilmiş"
       ],
       "Disabled": [
-        "Devre dışı"
+        "Kullanımdan kaldırılmış"
       ],
       "Inactive": [
         "Etkin değil"
@@ -7569,9 +7548,6 @@
       "Card holder": [
         "Kart sahibi"
       ],
-      "Card information": [
-        "Kart bilgileri"
-      ],
       "Card number": [
         "Kart numarası"
       ],
@@ -7606,7 +7582,7 @@
         "Oluşturucu varsayılan yazı tipi/boyutu"
       ],
       "Composer mode": [
-        "Oluşturucu kipi"
+        "Oluşturucu görünümü"
       ],
       "Composer text direction": [
         "Oluşturucu metin doğrultusu"
@@ -8367,7 +8343,7 @@
     },
     "Label to change composer mode": {
       "Maximized": [
-        "Büyütülmüş"
+        "Geniş"
       ],
       "Normal": [
         "Normal"
@@ -8489,7 +8465,7 @@
         "Yardım gerekiyor mu?"
       ],
       "Not activated": [
-        "Etkinleştirilmemiş"
+        "Kullanıma alınmamış"
       ],
       "Pay invoice": [
         "Faturayı öde"
@@ -8501,7 +8477,7 @@
         "Gizlilik ilkesi"
       ],
       "Reactivate now": [
-        "Şimdi yeniden etkinleştir"
+        "Şimdi yenile"
       ],
       "Request an invite": [
         "Davet iste"
@@ -8573,7 +8549,7 @@
     },
     "Log preference": {
       "Enable ${ PROTON_SENTINEL_NAME }": [
-        "${ PROTON_SENTINEL_NAME } özelliğini etkinleştir"
+        "${ PROTON_SENTINEL_NAME } özelliğini aç"
       ],
       "Enable advanced logs": [
         "Gelişmiş günlükler tutulsun"
@@ -8634,10 +8610,10 @@
         "Tüm süzgeç işlemleri, ${ MAIL_APP_NAME } hesabınızdaki tüm iletilere uygulanacak. Herhangi bir otomatik yanıt e-postası gönderilmeyecek."
       ],
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
-        "Özel e-posta adresleri (siz@sirketiniz.com gibi) oluşturmak için özel etki alanınızı ${ BRAND_NAME } ile ilişkilendirin. Yardımcımız süreç boyunca size yol gösterir."
+        "Özel e-posta adresleri (siz@sirketiniz.com gibi) oluşturmak için özel etki alanınızı ${ BRAND_NAME } ile ilişkilendirin. Süreç boyunca yardımcımız size yol gösterecek."
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
-        "Ücretsiz deneme süreniz doldu. Hesap erişiminiz yakında devre dışı bırakılacak. ${ action }"
+        "Ücretsiz deneme süreniz doldu. Hesabınıza erişim yakında kapatılacak. ${ action }"
       ]
     },
     "Message display when a new app version is available": {
@@ -8647,7 +8623,7 @@
     },
     "Modal title": {
       "Add public holidays": [
-        "Tatil günlerini ekle"
+        "Resmi tatilleri ekle"
       ],
       "Edit calendar": [
         "Takvimi düzenle"
@@ -9199,6 +9175,9 @@
       "Split tunneling (Android and Windows)": [
         "Ayrılmış tünelleme (Android ve Windows)"
       ],
+      "Start protecting yourself online in 2 easy steps": [
+        "İki kolay adımda kendinizi korumaya başlayın"
+      ],
       "Strict no-logs policy": [
         "Sıkı kayıt tutmama ilkesi"
       ],
@@ -9293,7 +9272,7 @@
         "Dosya yedekleme, depolama, paylaşma ve alma işlemlerinizde standart olarak gizlilik sağlayın."
       ],
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Yoksa hesabınıza erişim sınırlanacak ve sonunda hesabınız devre dışı bırakılacak."
+        "Yoksa hesabınıza erişim sınırlanacak ve sonunda hesabınız kullanımdan kaldırılacak."
       ],
       "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
         "${ MAIL_APP_NAME } uygulamasını ücretli tarife özellikleriyle kullanmayı sürdürmek istiyorsanız, abonelik ve ödeme seçeneklerinizi belirleyin."
@@ -9373,7 +9352,7 @@
         "Günlük iletişim gereksinimleriniz için gelişmiş özellikleri olan güvenli e-posta."
       ],
       "Set automatic replies to inform contacts you are out of the office or unable to respond.": [
-        "Kişilere ofis dışında olduğunuzu veya başka bir şekilde yanıt veremeyeceğinizi bildirmek için otomatik yanıtlar ayarlayın."
+        "Otomatik yanıtlar ayarlayarak, kişilere ofis dışında olduğunuzu veya başka bir şekilde yanıt veremeyeceğinizi bildirin."
       ],
       "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
         "Güvenli, sınırsız ve yüksek hızda internet erişimi sağlayan özel VPN çözümü."
@@ -9711,7 +9690,7 @@
         "${ Filter.Name } eklendi"
       ],
       "A disabled address cannot be default": [
-        "Devre dışı bırakılmış bir adres varsayılan olamaz"
+        "Kullanımdan kaldırılmış bir adres varsayılan olamaz"
       ],
       "An external address cannot be default": [
         "Bir dış adres varsayılan olamaz"
@@ -10790,17 +10769,12 @@
         "Etiket ekle"
       ]
     },
-    "Shared calendar; Info about calendar owner": {
-      "Created by ${ ownerName }": [
-        "${ ownerName } tarafından oluşturuldu"
-      ]
-    },
     "Signature verification error when joining calendar": {
       "Signature verification error": [
         "İmza doğrulanırken sorun çıktı"
       ],
       "You have enabled address verification for ${ boldSenderEmail }. We couldn't verify the authenticity of this calendar invite. This may be due to changes in the encryption keys of this contact. Please review its advanced PGP settings, or your can ask ${ boldSenderEmail } for a new invite.": [
-        "${ boldSenderEmail } için adres doğrulamasını etkinleştirdiniz. Bu takvim davetinin gerçek olduğunbu doğrulayamadık. Bu durum, bu kişinin şifreleme anahtarlarındaki değişikliklerden kaynaklanıyor olabilir. Lütfen gelişmiş PGP ayarlarını gözden geçirin ya da ${ boldSenderEmail } adresinden yeni bir davet isteyin."
+        "${ boldSenderEmail } için adres doğrulama özelliğini açtınız. Bu takvim davetinin gerçek olduğunu doğrulayamadık. Bu durum, bu kişinin şifreleme anahtarlarındaki değişikliklerden kaynaklanıyor olabilir. Lütfen gelişmiş PGP ayarlarını gözden geçirin ya da ${ boldSenderEmail } adresinden yeni bir davet isteyin."
       ]
     },
     "Signup label": {
@@ -11238,13 +11212,13 @@
         "Emin misiniz?"
       ],
       "Auto-pay is disabled": [
-        "Otomatik ödeme devre dışı bırakıldı"
+        "Otomatik ödeme kapatıldı"
       ],
       "Auto-pay is enabled": [
         "Otomatik ödeme açıldı"
       ],
       "Disable": [
-        "Devre dışı bırak"
+        "Kullanımdan kaldır"
       ],
       "Enable auto-pay support": [
         "Otomatik ödeme desteğini aç"
@@ -11253,18 +11227,15 @@
         "Otomatik ödemeyi sürdür"
       ],
       "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. Furthermore, if you forget to make a manual payment and auto-pay is disabled for all payment methods, we may auto-downgrade your account which will lead to the loss of many features.": [
-        "Sistemimiz artık bu ödeme yöntemini kullanarak sizden otomatik olarak ücret almayacak. Ancak aboneliğiniz fatura döneminin sonunda yine de yenilenecek. Abonelik tarifenizi düşürmek ya da değiştirmek istiyorsanız, fatura dönemi sona ermeden önce bunu sizin yapmanız gerekir. Ayrıca, el ile ödeme yapmayı unutursanız ve tüm ödeme yöntemleri için otomatik ödeme devre dışı bırakılmışsa, hesabınızın tarifesini otomatik olarak düşürebiliriz ve bu da birçok özelliğin kaybolmasına neden olur."
+        "Sistemimiz artık bu ödeme yöntemini kullanarak sizden otomatik olarak ücret almayacak. Ancak aboneliğiniz fatura döneminin sonunda yine de yenilenecek. Abonelik tarifenizi düşürmek ya da değiştirmek istiyorsanız, fatura dönemi sona ermeden önce bunu sizin yapmanız gerekir. Ayrıca, el ile ödeme yapmayı unutursanız ve tüm ödeme yöntemleri için otomatik ödeme kapatılmışsa, hesabınızın tarifesini otomatik olarak düşürebiliriz ve bu da birçok özelliğin kaybolmasına neden olur."
       ],
       "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
-        "Sistemimiz artık bu ödeme yöntemini kullanarak sizden otomatik olarak ücret almayacak. Ancak aboneliğiniz fatura döneminin sonunda yine de yenilenecek. Abonelik tarifenizi düşürmek ya da değiştirmek istiyorsanız, fatura dönemi sona ermeden önce bunu sizin yapmanız gerekir. Free tarifesinin depolama kotasını aşarsanız ya da diğer ücretli özellikleri kullanıyorsanız dosyaları, e-postaları veya diğer verileri sizin için otomatik olarak silemeyeceğimizden otomatik olarak tarifenizi düşüremeyiz. Otomatik ödemeyi devre dışı bırakırsanız, hesabın askıya alınmasını önlemek için bir sonraki faturanızı son ödeme tarihinden önce el ile ödemeyi unutmayın."
+        "Sistemimiz artık bu ödeme yöntemini kullanarak sizden otomatik olarak ücret almayacak. Ancak aboneliğiniz fatura döneminin sonunda yine de yenilenecek. Abonelik tarifenizi düşürmek ya da değiştirmek istiyorsanız, fatura dönemi sona ermeden önce bunu sizin yapmanız gerekir. Free tarifesinin depolama kotasını aşarsanız ya da diğer ücretli özellikleri kullanıyorsanız dosyaları, e-postaları veya diğer verileri sizin için otomatik olarak silemeyeceğimizden otomatik olarak tarifenizi düşüremeyiz. Otomatik ödemeyi kapatırsanız, hesabın askıya alınmasını önlemek için bir sonraki faturanızı son ödeme tarihinden önce el ile ödemeyi unutmayın."
       ]
     },
     "Subscription saving": {
       "Save": [
         "Kazancınız"
-      ],
-      "Save ${ discountPercentage }%": [
-        "%${ discountPercentage } indirim"
       ]
     },
     "Subscription status": {
@@ -11292,7 +11263,7 @@
         "Adres güncellendi"
       ],
       "Auto-reply disabled": [
-        "Otomatik yanıt etkinleştirildi"
+        "Otomatik yanıt özelliği açıldı"
       ],
       "Auto-reply updated": [
         "Otomatik yanıt güncellendi"
@@ -11376,7 +11347,7 @@
         "Yerel ayarlar güncellendi"
       ],
       "Organization activated": [
-        "Kuruluş etkinleştirildi"
+        "Kuruluş kullanıma alındı"
       ],
       "Password updated": [
         "Parola güncellendi"
@@ -11477,10 +11448,10 @@
         "Adres silindi"
       ],
       "Address disabled": [
-        "Adres devre dışı bırakıldı"
+        "Adres kullanımdan kaldırıldı"
       ],
       "Address enabled": [
-        "Adres etkinleştirildi"
+        "Adres kullanıma alındı"
       ],
       "Certificate ${ name } revoked": [
         "${ name } sertifikası geçersiz kılındı"
@@ -11745,13 +11716,13 @@
         "İşlem"
       ],
       "Activate @pm.me": [
-        "@pm.me adresini etkinleştir"
+        "@pm.me adresini kullanıma al"
       ],
       "Activate account and generate keys": [
-        "Hesabı etkinleştir ve anahtarları üret"
+        "Hesabı kullanıma al ve anahtarları üret"
       ],
       "Activate organization key": [
-        "Kuruluş anahtarını etkinleştir"
+        "Kuruluş anahtarını kullanıma al"
       ],
       "Add address": [
         "Adres ekle"
@@ -12022,7 +11993,7 @@
         "Sürüm geçmişi silinsin mi?"
       ],
       "Disable ${ email }": [
-        "${ email } adresini devre dışı bırak"
+        "${ email } adresini kullanımdan kaldır"
       ],
       "Disable two-factor authentication": [
         "İki adımlı doğrulamayı kapat"
@@ -12443,7 +12414,7 @@
       "Signed in to member account": [
         "Üye hesabıyla oturum açıldı"
       ],
-      "SMTP Submission": [
+      "SMTP submission": [
         "SMTP gönderim"
       ],
       "Sort folders alphabetically": [
@@ -12710,7 +12681,7 @@
         "Hesap bağlantısı kesildi"
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
-        "Sisteminizin gündüz ve gece kipine uyarak gündüz ve gece için seçtiğiniz temalar arasında otomatik olarak geçiş yapın"
+        "Sisteminizin gündüz ve gece durumuna uyarak gündüz ve gece için seçtiğiniz temalar arasında otomatik olarak geçiş yapın"
       ],
       "Customize import to reduce the number of folders": [
         "Klasör sayısını azaltmak için içe aktarmayı özelleştirin"
@@ -12731,10 +12702,10 @@
         "Etiket adlarını düzenle"
       ],
       "Enable/disable desktop and mobile notifications": [
-        "Masaüstü ve mobil bildirimlerini etkinleştir/devre dışı bırak"
+        "Masaüstü ve mobil bildirimleri aç/kapat"
       ],
       "Enabling advanced logs records the IP address for each event in the security log.": [
-        "Gelişmiş günlük kaydı etkinleştirildiğinde, her etkinliğin IP adresi kaydedilir."
+        "Gelişmiş günlük kaydı özelliği açıldığında, her etkinliğin IP adresi kaydedilir."
       ],
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail bazı e-postaları Sosyal ya da Tanıtım gibi kategorilere ayırır. Bu e-postaların nereye içe aktarılacağını seçebilirsiniz."
@@ -12746,7 +12717,7 @@
         "Satın aldığınız ya da destek ekibimizden verilen bir hediye kodunuz varsa, buraya yazabilirsiniz."
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
-        "İki adımlı doğrulama kullanmayan üyelere en kısa sürede etkinleştirmelerini isteyen bir e-posta gönderilecek."
+        "İki adımlı doğrulama kullanmayan üyelere bu özelliği en kısa sürede açmalarını isteyen bir e-posta gönderilecek."
       ],
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "Gönderilmiş veya Taslaklar kutusundaki iletiler, başka bir klasöre taşısanız bile o klasörde görünmeyi sürdürür."
@@ -12782,16 +12753,16 @@
         "Yeni gönderim döngüsü ${ formattedTime } zamanında başlayacak"
       ],
       "The reduce motion setting is already enabled on this device": [
-        "Hareketi azaltma ayarı bu aygıtta zaten etkinleştirilmiş"
+        "Bu aygıtta hareketi azaltma ayarı zaten açılmış"
       ],
       "The selected theme will be active when your system is set to \"dark mode\"": [
-        "Seçilmiş tema sisteminiz \"koyu kipe\" geçtiğinde etkinleştirilecek"
+        "Sisteminiz \"koyu temaya\" geçtiğinde seçilmiş tema kullanılacak"
       ],
       "The selected theme will be active when your system is set to \"light mode\"": [
-        "Seçilmiş tema sisteminiz \"açık kipe\" geçtiğinde etkinleştirilecek"
+        "Sisteminiz \"açık temaya\" geçtiğinde seçilmiş tema kullanılacak"
       ],
       "This address has been disabled": [
-        "Bu adres devre dışı bırakıldı"
+        "Bu adres kullanımdan kaldırıldı"
       ],
       "This feature delays sending your emails, giving you the opportunity to undo send during the selected time frame.": [
         "Bu özellik, e-postalarınızı göndermeyi geciktirerek belirtilen süre içinde göndermeyi geri alma olanağı sağlar."
@@ -12818,7 +12789,7 @@
         "DNS yapılandırmanızdaki sorunlar nedeniyle DKIM imzalamasını durdurduk. İmzalamayı sürdürmek için aşağıdaki yönergeleri izleyin."
       ],
       "When enabled, animations and transitions will not show": [
-        "Bu seçenek etkinleştirildiğinde, canlandırma ve geçişler görüntülenmez"
+        "Bu seçenek açıldığında, canlandırma ve geçişler görüntülenmez"
       ],
       "When you add a label to a message in a conversation, it will automatically be applied to all future messages you send or receive in that conversation.": [
         "Bir yazışmadaki bir iletiyi etiketlediğinizde, bu etiket yazışmada göndereceğiniz veya alacağınız tüm yeni iletilere otomatik olarak uygulanır."
@@ -12859,7 +12830,7 @@
     },
     "Tooltip prompt to trust keys": {
       "When receiving an email from another ${ MAIL_APP_NAME } user who does not have trusted keys in your contacts, a banner will ask if you want to enable trusted keys.": [
-        "Kişilerinizde güvenilen anahtarları olmayan başka bir ${ MAIL_APP_NAME } kullanıcısından bir e-posta aldığınızda, güvenilen anahtarları etkinleştirmek isteyip istemediğiniz sorulur."
+        "Kişilerinizde güvenilen anahtarları olmayan başka bir ${ MAIL_APP_NAME } kullanıcısından bir e-posta aldığınızda, güvenilen anahtarlar özelliğini açmak isteyip istemediğiniz sorulur."
       ]
     },
     "Tooltip sign external messages": {
@@ -12970,6 +12941,63 @@
         "${ numberOfCountries } ülkede ${ numberOfServers }"
       ]
     },
+    "vpn_2step: billing": {
+      "${ billedText }, renews on ${ formattedEndTime }": [
+        "${ billedText }, ${ formattedEndTime } zamanında yenilenir"
+      ],
+      "Billed every 15 months": [
+        "15 ayda bir faturalanır"
+      ],
+      "Billed every 2 years": [
+        "2 yılda bir faturalanır"
+      ],
+      "Billed every 30 months": [
+        "30 ayda bir faturalanır"
+      ],
+      "Billed monthly": [
+        "Ayda bir faturalanır"
+      ],
+      "Billed yearly": [
+        "Yılda bir faturalanır"
+      ]
+    },
+    "vpn_2step: discount": {
+      "1-year": [
+        "1 yıl"
+      ],
+      "2-year": [
+        "2 yıl"
+      ],
+      "Get ${ discount } off with a ${ billingCycle } subscription": [
+        "${ billingCycle } aboneliği ile ${ discount } indirim alın"
+      ]
+    },
+    "vpn_2step: feature": {
+      "Advanced VPN customizations": [
+        "Gelişmiş VPN özelleştirmeleri"
+      ],
+      "No ads": [
+        "Reklamsız"
+      ]
+    },
+    "vpn_2step: info": {
+      "${ n } month": [
+        "${ n } ay",
+        "${ n } ay"
+      ],
+      "${ n } year": [
+        "${ n } yıl",
+        "${ n } yıl"
+      ],
+      "Your ${ selected } plan": [
+        "${ selected } tarifeniz"
+      ]
+    },
+    "vpn_2step: tooltip": {
+      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, Double hop, and more.": [
+        "Secure Core sunucularına erişim, hızlı P2P/BitTorrent indirmeleri, VPN üzerinden Tor, Double Hop ve diğer özellikler"
+      ]
+    },
     "Warning": {
       "${ BRAND_NAME } will merge all folders with the same name. To avoid this, change the names before import.": [
         "${ BRAND_NAME } aynı adlı tüm klasörleri birleştirecek. Bunu istemiyorsanız, içe aktarmadan önce klasör adlarını değiştirin."
@@ -12999,10 +13027,10 @@
         "Bu telefon numarasını silerseniz, hesabınızı kurtaramazsınız."
       ],
       "By disabling the logs, you will also clear your entire logs history. Are you sure you want to disable the logs?": [
-        "Günlük kayıtlarını devre dışı bıraktığınızda, bütün günlük geçmişinizi de temizlemiş olursunuz. Günlük kaydını devre dışı bırakmak istediğinize emin misiniz?"
+        "Günlük kayıtları özelliğini kapattığınızda, bütün günlük geçmişinizi de temizlemiş olursunuz. Günlük kaydını kapatmak istediğinize emin misiniz?"
       ],
       "By disabling this address, you will no longer be able to send or receive emails using this address and all the linked ${ BRAND_NAME } products will also be disabled. Are you sure you want to disable this address?": [
-        "Bu adresi devre dışı bıraktığınızda, bu adresi kullanarak e-posta gönderemez veya alamazsınız ve bağlantılı tüm ${ BRAND_NAME } ürünleri de devre dışı bırakılır. Bu adresi devre dışı bırakmak istediğinize emin misiniz?"
+        "Bu adresi kullanımdan kaldırdığınızda, bu adresi kullanarak e-posta gönderemez veya alamazsınız ve bağlantılı tüm ${ BRAND_NAME } ürünleri de kullanımdan kaldırılır. Bu adresi kullanımdan kaldırmak istediğinize emin misiniz?"
       ],
       "If you cancel this import, you won't be able to resume it. ${ BRAND_NAME } saved all progress in your account. Cancel anyway?": [
         "Bu içe aktarma işlemini iptal ederseniz, daha sonra sürdüremezsiniz. ${ BRAND_NAME }, tüm ilerlemeyi hesabınıza kaydetti. Yine de işlemi iptal etmek istiyor musunuz?"

@@ -428,9 +428,6 @@
       "Generate token": [
         "Generér token"
       ],
-      "Get ${ discountPercentage } off with 24 months": [
-        "Få ${ discountPercentage } rabat med 24 måneder"
-      ],
       "Get ${ vpnPlus }": [
         "Få ${ vpnPlus }"
       ],
@@ -4068,6 +4065,9 @@
     "Font face option": {
       "System default": [
         "Systemstandard"
+      ],
+      "Theme font": [
+        "Temaskrifttype"
       ]
     },
     "Font Size Default": {
@@ -5794,9 +5794,6 @@
       "Save your password somewhere safe. Click on icon to confirm that you have typed your password correctly.": [
         "Gem din adgangskode et sikkert sted. Tryk på ikon for at bekræfte, at du har indtastet din adgangskode korrekt."
       ],
-      "Saving your password": [
-        "Gemmer din adgangskode"
-      ],
       "Scan QR code instead": [
         "Skan i stedet QR-kode"
       ],
@@ -6224,9 +6221,6 @@
       "We securely store recovery information on your trusted device to prevent you from losing your data": [
         "Vi gemmer gendannelsesoplysninger sikkert på din betroede enhed for at forhindre, at du mister dine data"
       ],
-      "We use 3-D Secure to protect your payments.": [
-        "Vi bruger 3-D Secure til at beskytte dine betalinger."
-      ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Du omdirigeres til PayPal i en ny browserfane for at gennemføre denne transaktion. Benytter du evt. pop-up blockere, så deaktivér venligst disse for at fortsætte."
       ],
@@ -6244,9 +6238,6 @@
       ],
       "Week and month views only apply to desktop.": [
         "Uge- og månedsvisninger gælder kun på desktop."
-      ],
-      "Welcome": [
-        "Velkommen"
       ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "Vi sender en nulstillingskode til den e-mailadresse, du angav til kontogendannelse."
@@ -6402,9 +6393,6 @@
       ],
       "You still need to reply to invitations for the host to see your response.": [
         "Du skal stadig svare på invitationer for at værten kan se dit svar."
-      ],
-      "You will be redirected to the VPN download page": [
-        "Du vil blive omdirigeret til siden for VPN-download."
       ],
       "You will lose access to ${ vpnPlanNameShort } servers and features on this date.": [
         "Du vil miste adgang til ${ vpnPlanNameShort }-servere og funktioner på denne dato."
@@ -7061,9 +7049,6 @@
       ],
       "Card holder": [
         "Kortindehaver"
-      ],
-      "Card information": [
-        "Kortoplysninger"
       ],
       "Card number": [
         "Kortnummer"
@@ -9770,11 +9755,6 @@
         "Tilføj etiket"
       ]
     },
-    "Shared calendar; Info about calendar owner": {
-      "Created by ${ ownerName }": [
-        "Oprettet af ${ ownerName }"
-      ]
-    },
     "Signature verification error when joining calendar": {
       "Signature verification error": [
         "Signaturbekræftelse mislykkedes"
@@ -11779,6 +11759,16 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } i ${ numberOfCountries } land",
         "${ numberOfServers } i ${ numberOfCountries } lande"
+      ]
+    },
+    "vpn_2step: info": {
+      "${ n } month": [
+        "${ n } måned",
+        "${ n } måneder"
+      ],
+      "${ n } year": [
+        "${ n } år",
+        "${ n } år"
       ]
     },
     "Warning": {

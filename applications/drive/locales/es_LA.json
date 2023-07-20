@@ -700,7 +700,7 @@
         "Usar código de autenticación"
       ],
       "Use for sending": [
-        "Usar para enviar"
+        "Usar para el envío"
       ],
       "Use recovery code": [
         "Usar código de recuperación"
@@ -3415,6 +3415,9 @@
       "Enter the credentials of the email account you want to import from.": [
         "Ingrese las credenciales de la cuenta de correo electrónico desde la que desea importar."
       ],
+      "Enter the device name to confirm removal.": [
+        "Ingrese el nombre del dispositivo para confirmar la eliminación."
+      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Ingrese el código de verificación que fue enviado a ${ destinationText }."
       ],
@@ -3918,8 +3921,8 @@
         "Esto eliminará el enlace y removerá el acceso a su archivo o carpeta para cualquier persona que tenga el enlace.",
         "Esto eliminará los enlaces y removerá el acceso a sus archivos o carpetas para cualquier persona que tenga los enlaces."
       ],
-      "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on the device won’t be affected.": [
-        "Esto elimina de ${ DRIVE_APP_NAME } el dispositivo sincronizado ${ deviceName }. Los archivos locales en el dispositivo no se verán afectados."
+      "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and stop syncing folders you added to My Computers.": [
+        "Esto eliminará el dispositivo sincronizado ${ deviceName } de ${ DRIVE_APP_NAME } y detendrá la sincronización de carpetas añadidas a Mis Dispositivos."
       ],
       "This will replace the existing file with the folder": [
         "Esto reemplazará el archivo existente con la carpeta"
@@ -5431,7 +5434,7 @@
         "VPN premium"
       ],
       "Secure cloud storage": [
-        "Almacenamiento en la nube seguro"
+        "Almacenamiento seguro en la nube"
       ],
       "Secure streaming": [
         "Transmisión segura"

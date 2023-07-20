@@ -3415,6 +3415,9 @@
       "Enter the credentials of the email account you want to import from.": [
         "Inserisci le credenziali dell'account email da cui vuoi importare."
       ],
+      "Enter the device name to confirm removal.": [
+        "Inserisci il nome del dispositivo per confermare la rimozione."
+      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Inserisci il codice di verifica inviato a ${ destinationText }."
       ],
@@ -3725,8 +3728,8 @@
         "Si prega di selezionare le cartelle che si desidera importare:"
       ],
       "Please select which email address or addresses to add to ${ groupCount } group.": [
-        "Selezionare l'indirizzo o gli indirizzi e-mail da aggiungere al gruppo ${ groupCount }.",
-        "Selezionare l'indirizzo o gli indirizzi e-mail da aggiungere ai gruppi ${ groupCount }."
+        "Selezionare l'indirizzo o gli indirizzi email da aggiungere al gruppo ${ groupCount }.",
+        "Selezionare l'indirizzo o gli indirizzi email da aggiungere ai gruppi ${ groupCount }."
       ],
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Selezionare l'indirizzo o gli indirizzi e-mail da aggiungere a ${ groupName }."
@@ -3918,8 +3921,8 @@
         "Questo eliminerà il collegamento e rimuoverà l'accesso al file o alla cartella per chiunque abbia il collegamento.",
         "Questo eliminerà i collegamenti e rimuoverà l'accesso ai tuoi file o cartelle per chiunque abbia i collegamenti."
       ],
-      "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on the device won’t be affected.": [
-        "Questo rimuoverà da ${ DRIVE_APP_NAME } il dispositivo sincronizzato ${ deviceName }. I file locali sul dispositivo non saranno interessati."
+      "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and stop syncing folders you added to My Computers.": [
+        "Questo rimuoverà il dispositivo sincronizzato ${ deviceName } da ${ DRIVE_APP_NAME } e interromperà la sincronizzazione delle cartelle che hai aggiunto a I miei computer."
       ],
       "This will replace the existing file with the folder": [
         "Questo sostituirà il file esistente con la cartella."

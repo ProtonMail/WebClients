@@ -434,9 +434,6 @@
       "Generate token": [
         "Згенерыраваць токен"
       ],
-      "Get ${ discountPercentage } off with 24 months": [
-        "Атрымаць скідку ў памеры ${ discountPercentage } за падпіску на 24 месяцы"
-      ],
       "Get ${ vpnPlus }": [
         "Атрымаць ${ vpnPlus }"
       ],
@@ -4466,8 +4463,8 @@
       "(1-2 emails per month)": [
         "(1-2 лісты ў месяц)"
       ],
-      "(2-4 per year)": [
-        "(2-4 разы ў год)"
+      "(2-4 emails per year)": [
+        "(2-4 паведамленні ў год)"
       ],
       "(4-6 emails per year)": [
         "(4-6 паведамленняў у год)"
@@ -4568,11 +4565,14 @@
       "Best deal": [
         "Лепшая прапанова"
       ],
+      "Checkout": [
+        "Аплата"
+      ],
+      "Create your account": [
+        "Стварэнне вашага ўліковага запісу"
+      ],
       "Device": [
         "Прылада"
-      ],
-      "Enter your email address": [
-        "Увядзіце адрас сваёй электроннай пошты"
       ],
       "Event": [
         "Падзея"
@@ -4603,9 +4603,6 @@
       ],
       "Protection": [
         "Абарона"
-      ],
-      "Select your preferred method of payment": [
-        "Выберыце пажаданы метад аплаты"
       ],
       "Select your pricing plan": [
         "Выберыце тарыфны план"
@@ -5096,6 +5093,9 @@
       ],
       "${ current } of ${ total }": [
         "${ current } з ${ total }"
+      ],
+      "${ discountPercentage } forever": [
+        "${ discountPercentage } назаўсёды"
       ],
       "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
         "${ DRIVE_APP_NAME } больш не будзе пакідаць папярэднія версіі вашых файлаў."
@@ -6357,9 +6357,6 @@
       "Save your password somewhere safe. Click on icon to confirm that you have typed your password correctly.": [
         "Захавайце ваш пароль у надзейным месцы. Націсніце на значок, каб праверыць правільнасць уводу пароля."
       ],
-      "Saving your password": [
-        "Захаванне вашага пароля"
-      ],
       "Scan QR code instead": [
         "Сканіраваць QR-код"
       ],
@@ -6491,9 +6488,6 @@
       ],
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
         "Паведамленне ${ boldDataLocked } не будзе больш паказвацца, але вы ўсё яшчэ можаце разблакіраваць свае даныя ў ${ encryptionAndKeysLink }."
-      ],
-      "The ${ planName } plan includes:": [
-        "Тарыфны план ${ planName } уключае:"
       ],
       "The calendar will be removed from your account.": [
         "Каляндар будзе выдалены з вашага ўліковага запісу."
@@ -6633,9 +6627,6 @@
       "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
         "Гэты майстар дапаможа ўключыць двухфактарную аўтэнтыфікацыю (2ФА) для вашага ўліковага запісу ${ BRAND_NAME }. Мы рэкамендуем уключыць яе для таго, каб павялічыць бяспеку вашага ўліковага запісу ${ BRAND_NAME_TWO }."
       ],
-      "To ${ planName }": [
-        "у тарыфным плане ${ planName }"
-      ],
       "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
         "Каб не страціць даныя, выдаляйце іх толькі пасля экспартавання копіі або калі цалкам упэўнены ў сваіх дзеяннях."
       ],
@@ -6698,9 +6689,6 @@
       ],
       "Total VPN connections": [
         "Усяго падключэнняў па VPN"
-      ],
-      "Try ${ upsellPlanName } risk free": [
-        "Паспрабуйце тарыфны план ${ upsellPlanName } без рызыкі"
       ],
       "two-factor authentication (2FA)": [
         "двухфактарнай праверкі сапраўднасці (2ФА)"
@@ -6837,8 +6825,8 @@
       "We securely store recovery information on your trusted device to prevent you from losing your data": [
         "Мы надзейна захоўваем інфармацыю для аднаўлення на вашай даверанай прыладзе, каб прадухіліць страту вашых даных"
       ],
-      "We use 3-D Secure to protect your payments.": [
-        "Мы выкарыстоўваем 3-D Secure для абароны вашых плацяжоў."
+      "We use 3-D Secure to protect your payments": [
+        "Мы выкарыстоўваем 3-D Secure для абароны вашых плацяжоў"
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Для завяршэння трансакцыі мы адкрыем новую ўкладку браўзера і перанакіруем вас на сайт PayPal. Калі вы выкарыстоўваеце пашырэнні блакіроўкі ўсплывальных вокнаў, адключыце іх, каб працягнуць."
@@ -6857,9 +6845,6 @@
       ],
       "Week and month views only apply to desktop.": [
         "Адлюстраванне тыдня і месяца ўжываюцца толькі для камп'ютара."
-      ],
-      "Welcome": [
-        "Вітаем"
       ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "Мы адправім код скідання для аднаўлення ўліковага запісу на пазначаны вамі адрас электроннай пошты."
@@ -7029,9 +7014,6 @@
       "You still need to reply to invitations for the host to see your response.": [
         "Вам усё яшчэ неабходна адказаць на запрашэнні для таго, каб арганізатар мог убачыць ваш адказ."
       ],
-      "You will be redirected to the VPN download page": [
-        "Вы будзеце перанакіраваны на старонку спампоўвання VPN"
-      ],
       "You will lose access to ${ vpnPlanNameShort } servers and features on this date.": [
         "Вы страціце доступ да сервераў ${ vpnPlanNameShort } і функцыі пасля наступлення гэтай даты."
       ],
@@ -7109,6 +7091,9 @@
       ],
       "Your import will not be processed.": [
         "Ваша імпартаванне не будзе апрацавана."
+      ],
+      "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
+        "З намі ваша інфармацыя ў бяспецы. Мы будзем звязвацца з вамі, толькі па меры неабходнасці, каб забяспечыць нашымі сэрвісамі."
       ],
       "Your login information will not be saved after the import is completed.": [
         "Пасля завяршэння імпартавання вашы даныя ўваходу не будуць захаваны."
@@ -7679,6 +7664,9 @@
       "Awarded": [
         "Узнагароджаны"
       ],
+      "Billing address": [
+        "Адрас для аплаты"
+      ],
       "Billing cycle": [
         "Перыяд аплаты"
       ],
@@ -7712,11 +7700,11 @@
       "Calendars": [
         "Календары"
       ],
+      "Card details": [
+        "Падрабязнасці карткі"
+      ],
       "Card holder": [
         "Трымальнік карткі"
-      ],
-      "Card information": [
-        "Звесткі карткі"
       ],
       "Card number": [
         "Нумар карткі"
@@ -9403,6 +9391,9 @@
       "Split tunneling (Android and Windows)": [
         "Split Tunneling (Android і Windows)"
       ],
+      "Start protecting yourself online in 2 easy steps": [
+        "Пачніце абараняць сябе ў інтэрнэце выканаўшы 2 простыя крокі"
+      ],
       "Strict no-logs policy": [
         "Палітыка строгай адсутнасці журналаў актыўнасці"
       ],
@@ -11020,11 +11011,6 @@
         "Дадаць метку"
       ]
     },
-    "Shared calendar; Info about calendar owner": {
-      "Created by ${ ownerName }": [
-        "Створана ${ ownerName }"
-      ]
-    },
     "Signature verification error when joining calendar": {
       "Signature verification error": [
         "Памылка праверкі подпісу"
@@ -11530,9 +11516,6 @@
     "Subscription saving": {
       "Save": [
         "Захаваць"
-      ],
-      "Save ${ discountPercentage }%": [
-        "Эканомія ${ discountPercentage }%"
       ]
     },
     "Subscription status": {
@@ -12729,7 +12712,7 @@
       "Signed in to member account": [
         "Уваход ва ўліковы запіс удзельніка"
       ],
-      "SMTP Submission": [
+      "SMTP submission": [
         "Адпраўка па SMTP"
       ],
       "Sort folders alphabetically": [
@@ -13272,6 +13255,73 @@
         "${ numberOfServers } у ${ numberOfCountries } краінах",
         "${ numberOfServers } у ${ numberOfCountries } краінах",
         "${ numberOfServers } у ${ numberOfCountries } краінах"
+      ]
+    },
+    "vpn_2step: billing": {
+      "${ billedText }, renews on ${ formattedEndTime }": [
+        "${ billedText }, падоўжыцца ${ formattedEndTime }"
+      ],
+      "Billed every 15 months": [
+        "Аплачваецца кожныя 15 месяцаў"
+      ],
+      "Billed every 2 years": [
+        "Аплачваецца кожныя 2 гады"
+      ],
+      "Billed every 30 months": [
+        "Аплачваецца кожныя 30 месяцаў"
+      ],
+      "Billed monthly": [
+        "Аплачваецца штомесяц"
+      ],
+      "Billed yearly": [
+        "Аплачваецца штогод"
+      ]
+    },
+    "vpn_2step: discount": {
+      "1-year": [
+        "1 год"
+      ],
+      "2-year": [
+        "2 гады"
+      ],
+      "Get ${ discount } off with a ${ billingCycle } subscription": [
+        "Атрымайце скідку ў памеры ${ discount } з падпіскай на ${ billingCycle }"
+      ],
+      "monthly": [
+        "штомесяц"
+      ]
+    },
+    "vpn_2step: feature": {
+      "Advanced VPN customizations": [
+        "Пашыраныя налады VPN"
+      ],
+      "No ads": [
+        "Без рэкламы"
+      ]
+    },
+    "vpn_2step: info": {
+      "${ n } month": [
+        "${ n } месяц",
+        "${ n } месяцы",
+        "${ n } месяцаў",
+        "${ n } месяцаў"
+      ],
+      "${ n } year": [
+        "${ n } год",
+        "${ n } гады",
+        "${ n } гадоў",
+        "${ n } гадоў"
+      ],
+      "Try ${ upsellPlanName } risk-free": [
+        "Паспрабуйце ${ upsellPlanName } без рызыкі"
+      ],
+      "Your ${ selected } plan": [
+        "Ваш тарыфны план ${ selected }"
+      ]
+    },
+    "vpn_2step: tooltip": {
+      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, Double hop, and more.": [
+        "Доступ да сервераў Secure Core, хуткія спампоўванні P2P/BitTorrent, Tor праз VPN, Double Hop і іншыя функцыі."
       ]
     },
     "Warning": {

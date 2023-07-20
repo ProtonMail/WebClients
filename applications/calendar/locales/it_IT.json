@@ -141,6 +141,9 @@
       "Continue with Google": [
         "Continua con Google"
       ],
+      "Copy email address": [
+        "Copia indirizzo email"
+      ],
       "Copy email to clipboard": [
         "Copia email negli appunti"
       ],
@@ -158,6 +161,9 @@
       ],
       "Create event": [
         "Crea evento"
+      ],
+      "Create new contact": [
+        "Crea un nuovo contatto"
       ],
       "Customize": [
         "Personalizza"
@@ -580,6 +586,9 @@
       ],
       "View": [
         "Visualizza"
+      ],
+      "View contact details": [
+        "Visualizza i dettagli di contatto"
       ],
       "View invoice": [
         "Visualizza fattura"
@@ -3755,8 +3764,8 @@
         "Si prega di selezionare le cartelle che si desidera importare:"
       ],
       "Please select which email address or addresses to add to ${ groupCount } group.": [
-        "Selezionare l'indirizzo o gli indirizzi e-mail da aggiungere al gruppo ${ groupCount }.",
-        "Selezionare l'indirizzo o gli indirizzi e-mail da aggiungere ai gruppi ${ groupCount }."
+        "Selezionare l'indirizzo o gli indirizzi email da aggiungere al gruppo ${ groupCount }.",
+        "Selezionare l'indirizzo o gli indirizzi email da aggiungere ai gruppi ${ groupCount }."
       ],
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Selezionare l'indirizzo o gli indirizzi e-mail da aggiungere a ${ groupName }."
@@ -5377,8 +5386,8 @@
       ]
     },
     "Shared calendar; Info about calendar owner": {
-      "Created by ${ ownerName }": [
-        "Creato da ${ ownerName }"
+      "Shared by ${ ownerName }": [
+        "Condiviso da ${ ownerName }"
       ]
     },
     "Side panel spotlight": {

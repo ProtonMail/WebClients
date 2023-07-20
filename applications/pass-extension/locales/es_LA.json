@@ -17,6 +17,9 @@
       "Add new item": [
         "Añadir elemento nuevo"
       ],
+      "Advanced": [
+        "Avanzado"
+      ],
       "Advanced options": [
         "Opciones avanzadas"
       ],
@@ -55,6 +58,9 @@
       ],
       "Continue without pinning": [
         "Continuar sin fijar"
+      ],
+      "Copy & fill in": [
+        "Copiar y llenar"
       ],
       "Copy and close": [
         "Copiar y cerrar"
@@ -137,6 +143,9 @@
       "Generate password": [
         "Generar contraseña"
       ],
+      "Generated password": [
+        "Contraseña generada"
+      ],
       "Get mobile apps": [
         "Descargar apps móviles"
       ],
@@ -161,8 +170,11 @@
       "Learn more": [
         "Más información"
       ],
-      "Lock ${ PASS_APP_NAME }": [
-        "Bloquear ${ PASS_APP_NAME }"
+      "Lock extension": [
+        "Bloquear extensión"
+      ],
+      "Manually sync your data": [
+        "Sincronizar los datos manualmente"
       ],
       "More options": [
         "Más opciones"
@@ -247,9 +259,6 @@
       ],
       "Submitting report...": [
         "Enviando reporte..."
-      ],
-      "Sync": [
-        "Sincronizar"
       ],
       "Try again": [
         "Volver a intentar"
@@ -360,8 +369,8 @@
       "Firefox export file could not be parsed. ${ errorDetail }": [
         "No se pudo analizar el archivo de exportación de Firefox. ${ errorDetail }"
       ],
-      "Import failed for vault \"${ vaultData.vaultName }\" : ${ description }": [
-        "Error de importación para la bóveda \"${ vaultData.vaultName }\": ${ description }"
+      "Import failed for vault \"${ vaultData.name }\" : ${ description }": [
+        "Error de importación para la bóveda \"${ vaultData.name }\": ${ description }"
       ],
       "Importing items failed": [
         "Error al importar elementos"
@@ -436,7 +445,7 @@
         "El archivo que intenta importar está vacío"
       ],
       "Too many failed attempts. Please sign in again.": [
-        "Demasiados intentos fallidos. Inicie sesión de nuevo."
+        "Demasiados intentos erróneos. Inicie sesión de nuevo."
       ],
       "Trashing item failed": [
         "Error al eliminar el elemento"
@@ -465,8 +474,8 @@
       "Vault \"${ payload.content.name }\" creation failed": [
         "Error al crear la bóveda \"${ payload.content.name }\""
       ],
-      "Vault \"${ vaultData.vaultName }\" could not be created": [
-        "No se pudo crear la bóveda \"${ vaultData.vaultName }\""
+      "Vault \"${ vaultData.name }\" could not be created": [
+        "No se pudo crear la bóveda \"${ vaultData.name }\""
       ],
       "Vault name does not match": [
         "El nombre de la bóveda no coincide"
@@ -517,6 +526,9 @@
       ]
     },
     "Info": {
+      " Upgrade to a paid plan to create multiple vaults.": [
+        "Mejore a un plan de pago para crear varias bóvedas."
+      ],
       "\"${ payload.item.data.metadata.name }\" item was dismissed": [
         "El elemento \"${ payload.item.data.metadata.name }\" fue descartado."
       ],
@@ -764,8 +776,8 @@
       "Save login": [
         "Guardar inicio de sesión"
       ],
-      "Select the destination vault for each imported vault. By default a new vault will be created for each imported vault.": [
-        "Seleccione la bóveda de destino para cada bóveda importada. Por defecto, se creará una bóveda para cada bóveda importada."
+      "Select the destination vault for each imported vault.": [
+        "Seleccione la bóveda de destino para cada bóveda importada."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "No hay conexión con los servidores. Intente de nuevo en unos minutos."
@@ -837,6 +849,9 @@
       "Vault \"${ share.content.name }\" was disabled": [
         "La bóveda \"${ share.content.name }\" fue deshabilitada"
       ],
+      "Verification code": [
+        "Código de verificación"
+      ],
       "You are about to create:": [
         "Está por crear:"
       ],
@@ -853,8 +868,8 @@
       "You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.": [
         "Ha alcanzado el límite de alias que puede crear. Cree alias ilimitados al actualizar su suscripción."
       ],
-      "You have reached the limit of vaults you can create. Create an unlimited number of vaults when you upgrade your subscription.": [
-        "Ha alcanzado el límite de bóvedas que puede crear. Cree bóvedas ilimitadas al actualizar su suscripción."
+      "You have reached the limit of vaults you can create.": [
+        "Ha alcanzado el límite de bóvedas que puede crear."
       ],
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "Ha alcanzado el número máximo de ${ maxLength } caracteres."
@@ -1563,6 +1578,9 @@
       "Vault name is required": [
         "El nombre de la bóveda es requerido"
       ],
+      "You cannot create more vaults than your subscription allows.": [
+        "No puede crear más bóvedas de las que permite su suscripción."
+      ],
       "You have unsaved changes, are you sure you want to discard them?": [
         "Tiene cambios sin guardar. ¿En verdad desea descartarlos?"
       ],
@@ -1578,8 +1596,8 @@
       "Your session was locked due to inactivity": [
         "Se bloqueó su sesión por inactividad"
       ],
-      "Your subscription does not allow you to create multiple vaults. All items will be imported to your primary vault by default. To import into multiple vaults upgrade your subscription.": [
-        "Su suscripción no le permite crear bóvedas múltiples. Todos los elementos serán importados a su bóveda principal por defecto. Para importar a bóvedas múltiples actualice su suscripción."
+      "Your subscription does not allow you to create multiple vaults. All items will be imported to your primary vault. To import into multiple vaults upgrade your subscription.": [
+        "Su suscripción no le permite crear varias bóvedas. Todos los elementos serán importados a su bóveda principal. Para importar a varias bóvedas actualice su suscripción."
       ]
     }
   }
