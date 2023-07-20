@@ -111,13 +111,13 @@ export const sessionUnlockIntent = createAction(
 
 export const sessionUnlockFailure = createAction(
     'unlock session lock failure',
-    (error: unknown, payload: { reason: string; canRetry: boolean }) =>
+    (error: unknown, payload: { error: string; canRetry: boolean }) =>
         pipe(
             withCacheBlock,
             withRequest({ id: unlockSession, type: 'failure' }),
             withNotification({
                 type: 'error',
-                text: payload.reason,
+                text: payload.error,
                 error,
             })
         )({ payload, error })

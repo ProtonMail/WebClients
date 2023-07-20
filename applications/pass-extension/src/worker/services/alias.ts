@@ -1,6 +1,5 @@
 import { c } from 'ttag';
 
-import type { AliasState } from '@proton/pass/store';
 import {
     aliasOptionsRequestSuccess,
     aliasOptionsRequested,
@@ -13,6 +12,7 @@ import type { ItemCreateIntent } from '@proton/pass/types';
 import { WorkerMessageType } from '@proton/pass/types';
 import { uniqueId } from '@proton/pass/utils/string';
 import { getEpoch } from '@proton/pass/utils/time';
+import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 
 import WorkerMessageBroker from '../channel';
 import store from '../store';
@@ -23,18 +23,21 @@ export const createAliasService = () => {
      * the upselling UI when alias limits have been reached */
     WorkerMessageBroker.registerMessage(WorkerMessageType.ALIAS_OPTIONS, async () => {
         const { needsUpgrade } = selectAliasLimits(store.getState());
-        const primaryVault = selectPrimaryVault(store.getState());
+        const { shareId } = selectPrimaryVault(store.getState());
 
-        return {
-            needsUpgrade,
-            options: await new Promise<AliasState['aliasOptions']>((resolve) =>
-                store.dispatch(
-                    aliasOptionsRequested({ shareId: primaryVault.shareId }, (result) =>
-                        resolve(aliasOptionsRequestSuccess.match(result) ? result.payload.options : null)
-                    )
-                )
-            ),
-        };
+        return new Promise((resolve) =>
+            store.dispatch(
+                aliasOptionsRequested({ shareId }, (result) => {
+                    if (aliasOptionsRequestSuccess.match(result)) {
+                        const { options } = result.payload;
+                        return resolve({ ok: true, needsUpgrade, options });
+                    }
+
+                    const error = result.error instanceof Error ? getApiErrorMessage(result.error) ?? null : null;
+                    return resolve({ ok: false, error });
+                })
+            )
+        );
     });
 
     WorkerMessageBroker.registerMessage(WorkerMessageType.ALIAS_CREATE, async (message) => {
@@ -63,11 +66,14 @@ export const createAliasService = () => {
             },
         };
 
-        return new Promise<boolean>((resolve) =>
+        return new Promise((resolve) =>
             store.dispatch(
-                itemCreationIntent(aliasCreationIntent, (intentResultAction) =>
-                    itemCreationSuccess.match(intentResultAction) ? resolve(true) : resolve(false)
-                )
+                itemCreationIntent(aliasCreationIntent, (result) => {
+                    if (itemCreationSuccess.match(result)) return resolve({ ok: true });
+
+                    const error = result.error instanceof Error ? getApiErrorMessage(result.error) ?? null : null;
+                    return resolve({ ok: false, error });
+                })
             )
         );
     });
