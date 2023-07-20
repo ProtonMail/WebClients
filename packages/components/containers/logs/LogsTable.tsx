@@ -24,12 +24,12 @@ const getProtectionIcon = () => {
 };
 
 type ProtectionProps = {
-    protection?: number;
-    protectionDesc?: string;
+    protection?: ProtectionType | null;
+    protectionDesc?: string | null;
 };
 
 const buildProtectionTooltips = () => (
-    <Tooltip title={c('Title').t`${PROTON_SENTINEL_NAME}`} openDelay={0} closeDelay={150} longTapDelay={0}>
+    <Tooltip title={PROTON_SENTINEL_NAME} openDelay={0} closeDelay={150} longTapDelay={0}>
         {getProtectionIcon()}
     </Tooltip>
 );
