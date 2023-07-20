@@ -56,6 +56,9 @@
       "Continue without pinning": [
         "Працягнуць без замацавання"
       ],
+      "Copy & fill in": [
+        "Скапіяваць і запоўніць"
+      ],
       "Copy and close": [
         "Скапіяваць і закрыць"
       ],
@@ -161,9 +164,6 @@
       "Learn more": [
         "Даведацца больш"
       ],
-      "Lock ${ PASS_APP_NAME }": [
-        "Заблакіраваць ${ PASS_APP_NAME }"
-      ],
       "More options": [
         "Дадатковыя параметры"
       ],
@@ -247,9 +247,6 @@
       ],
       "Submitting report...": [
         "Адпраўка справаздачы..."
-      ],
-      "Sync": [
-        "Сінхранізаваць"
       ],
       "Try again": [
         "Паспрабуйце яшчэ раз"
@@ -362,8 +359,8 @@
       "Firefox export file could not be parsed. ${ errorDetail }": [
         "Не атрымалася прааналізаваць экспартаваны файл Firefox. ${ errorDetail }"
       ],
-      "Import failed for vault \"${ vaultData.vaultName }\" : ${ description }": [
-        "Збой імпартавання для сховішча \"${ vaultData.vaultName }\" : ${ description }"
+      "Import failed for vault \"${ vaultData.name }\" : ${ description }": [
+        "Збой імпартавання для сховішча \"${ vaultData.name }\" : ${ description }"
       ],
       "Importing items failed": [
         "Збой імпартавання элементаў"
@@ -467,8 +464,8 @@
       "Vault \"${ payload.content.name }\" creation failed": [
         "Збой стварэння сховішча \"${ payload.content.name }\""
       ],
-      "Vault \"${ vaultData.vaultName }\" could not be created": [
-        "Немагчыма стварыць сховішча \"${ vaultData.vaultName }\""
+      "Vault \"${ vaultData.name }\" could not be created": [
+        "Немагчыма стварыць сховішча \"${ vaultData.name }\""
       ],
       "Vault name does not match": [
         "Назва сховішча не супадае"
@@ -529,6 +526,9 @@
       ]
     },
     "Info": {
+      " Upgrade to a paid plan to create multiple vaults.": [
+        " Перайдзіце на платны тарыфны план, каб стварыць некалькі сховішчаў."
+      ],
       "\"${ payload.item.data.metadata.name }\" item was dismissed": [
         "Элемент \"${ payload.item.data.metadata.name }\" быў праігнараваны"
       ],
@@ -790,8 +790,8 @@
       "Save login": [
         "Захаваць запіс уваходу"
       ],
-      "Select the destination vault for each imported vault. By default a new vault will be created for each imported vault.": [
-        "Выберыце прызначэнне сховішча для кожнага імпартаванага сховішча. Прадвызначана новае сховішча будзе створана для кожнага імпартаванага сховішча."
+      "Select the destination vault for each imported vault.": [
+        "Выберыце канчатковае сховішча для кожнага імпартаванага сховішча."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Серверы недаступны. Паспрабуйце яшчэ раз праз некалькі хвілін"
@@ -865,6 +865,9 @@
       "Vault \"${ share.content.name }\" was disabled": [
         "Сховішча \"${ share.content.name }\" адключана"
       ],
+      "Verification code": [
+        "Праверачны код"
+      ],
       "You are about to create:": [
         "Вы збіраецеся стварыць:"
       ],
@@ -883,8 +886,8 @@
       "You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.": [
         "Вы дасягнулі абмежавання па колькасці псеўданімаў, якія вы можаце стварыць. Неабмежаваная колькасць псеўданімаў стане даступна пасля паляпшэння вашай падпіскі."
       ],
-      "You have reached the limit of vaults you can create. Create an unlimited number of vaults when you upgrade your subscription.": [
-        "Вы дасягнулі абмежавання па колькасці сховішчаў, якія вы можаце стварыць. Неабмежаваная колькасць сховішчаў стане даступна пасля паляпшэння вашай падпіскі."
+      "You have reached the limit of vaults you can create.": [
+        "Перавышана абмежаванне колькасці сховішчаў, якія вам дазволена стварыць."
       ],
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "Вы дасягнулі максімальнай даўжыні. Дазволена сімвалаў: ${ maxLength }."
@@ -1597,6 +1600,9 @@
       "Vault name is required": [
         "Неабходна ўвесці назву сховішча"
       ],
+      "You cannot create more vaults than your subscription allows.": [
+        "Ваша падпіска не дазваляе ствараць яшчэ больш сховішчаў."
+      ],
       "You have unsaved changes, are you sure you want to discard them?": [
         "У вас ёсць незахаваныя змены. Вы сапраўды хочаце адхіліць іх?"
       ],
@@ -1612,8 +1618,8 @@
       "Your session was locked due to inactivity": [
         "Ваш сеанс заблакіраваны па прычыне адсутнасці актыўнасці"
       ],
-      "Your subscription does not allow you to create multiple vaults. All items will be imported to your primary vault by default. To import into multiple vaults upgrade your subscription.": [
-        "Ваша падпіска не дазваляе стараць некалькі сховішчаў. Прадвызначана ўсе элементы будуць імпартаваны ў ваша асноўнае сховішча. Палепшыце сваю падпіску, каб мець магчымасць імпартаваць у некалькі сховішчаў."
+      "Your subscription does not allow you to create multiple vaults. All items will be imported to your primary vault. To import into multiple vaults upgrade your subscription.": [
+        "Ваша падпіска не дазваляе стараць некалькі сховішчаў. Усе элементы будуць імпартаваны ў ваша асноўнае сховішча. Палепшыце сваю падпіску, каб мець магчымасць імпартаваць у некалькі сховішчаў."
       ]
     }
   }

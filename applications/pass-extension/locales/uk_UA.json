@@ -56,6 +56,9 @@
       "Continue without pinning": [
         "Продовжити без закріплення"
       ],
+      "Copy & fill in": [
+        "Скопіювати та заповнити"
+      ],
       "Copy and close": [
         "Скопіювати та закрити"
       ],
@@ -161,9 +164,6 @@
       "Learn more": [
         "Докладніше"
       ],
-      "Lock ${ PASS_APP_NAME }": [
-        "Заблокувати ${ PASS_APP_NAME }"
-      ],
       "More options": [
         "Додаткові параметри"
       ],
@@ -247,9 +247,6 @@
       ],
       "Submitting report...": [
         "Надсилання проблеми..."
-      ],
-      "Sync": [
-        "Синхронізувати"
       ],
       "Try again": [
         "Спробувати знову"
@@ -362,8 +359,8 @@
       "Firefox export file could not be parsed. ${ errorDetail }": [
         "Не вдалося проаналізувати файл експорту Firefox. ${ errorDetail }"
       ],
-      "Import failed for vault \"${ vaultData.vaultName }\" : ${ description }": [
-        "Не вдалося імпортувати сховище \"${ vaultData.vaultName }\" : ${ description }"
+      "Import failed for vault \"${ vaultData.name }\" : ${ description }": [
+        "Не вдалося імпортувати для сховища \"${ vaultData.name }\" : ${ description }"
       ],
       "Importing items failed": [
         "Не вдалося імпортувати елементи"
@@ -467,8 +464,8 @@
       "Vault \"${ payload.content.name }\" creation failed": [
         "Не вдалося створити сховище \"${ payload.content.name }\""
       ],
-      "Vault \"${ vaultData.vaultName }\" could not be created": [
-        "Не вдалося створити сховище \"${ vaultData.vaultName }\""
+      "Vault \"${ vaultData.name }\" could not be created": [
+        "Не вдалося створити сховище \"${ vaultData.name }\"."
       ],
       "Vault name does not match": [
         "Назва сховища не збігається"
@@ -529,6 +526,9 @@
       ]
     },
     "Info": {
+      " Upgrade to a paid plan to create multiple vaults.": [
+        " Перейдіть на платний тарифний план, щоб створити кілька сховищ."
+      ],
       "\"${ payload.item.data.metadata.name }\" item was dismissed": [
         "\"${ payload.item.data.metadata.name }\" елемент було відхилено"
       ],
@@ -790,8 +790,8 @@
       "Save login": [
         "Зберегти дані для входу"
       ],
-      "Select the destination vault for each imported vault. By default a new vault will be created for each imported vault.": [
-        "Виберіть сховище призначення для кожного імпортованого сховища. Інакше для кожного імпортованого сховища буде створено нове сховище."
+      "Select the destination vault for each imported vault.": [
+        "Виберіть цільове сховище для кожного імпортованого сховища."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Сервери недоступні. Спробуйте знову за кілька хвилин"
@@ -865,6 +865,9 @@
       "Vault \"${ share.content.name }\" was disabled": [
         "Сховище \"${ share.content.name }\" вимкнено"
       ],
+      "Verification code": [
+        "Код підтвердження"
+      ],
       "You are about to create:": [
         "Ви збираєтеся створити:"
       ],
@@ -883,8 +886,8 @@
       "You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.": [
         "Ви досягли обмеження кількості псевдонімів. Створюйте скільки завгодно псевдонімів, передплативши тарифний план вищого рівня."
       ],
-      "You have reached the limit of vaults you can create. Create an unlimited number of vaults when you upgrade your subscription.": [
-        "Ви досягли обмеження кількості сховищ. Створюйте скільки завгодно сховищ, передплативши тарифний план вищого рівня."
+      "You have reached the limit of vaults you can create.": [
+        "Ви досягли ліміту сховищ, які можете створити."
       ],
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "Ви досягли максимальної дозволеної кількості символів ${ maxLength }."
@@ -1597,6 +1600,9 @@
       "Vault name is required": [
         "Потрібно вказати назву сховища"
       ],
+      "You cannot create more vaults than your subscription allows.": [
+        "Ви не можете створити більше сховищ, ніж дозволяє ваша підписка."
+      ],
       "You have unsaved changes, are you sure you want to discard them?": [
         "У вас є незбережені зміни. Ви впевнені, що хочете відхилити їх?"
       ],
@@ -1612,8 +1618,8 @@
       "Your session was locked due to inactivity": [
         "Ваш сеанс був заблокований через бездіяльність"
       ],
-      "Your subscription does not allow you to create multiple vaults. All items will be imported to your primary vault by default. To import into multiple vaults upgrade your subscription.": [
-        "Ваша передплата не дозволяє створювати кілька сховищ. Всі елементи будуть імпортовані до вашого основного типового сховища. Для імпорту в кілька сховищ передплатіть тарифний план вищого рівня."
+      "Your subscription does not allow you to create multiple vaults. All items will be imported to your primary vault. To import into multiple vaults upgrade your subscription.": [
+        "Ваша підписка не дозволяє створювати кілька сховищ. Всі елементи будуть імпортовані до вашого основного сховища. Для імпорту в кілька сховищ поліпшіть підписку."
       ]
     }
   }

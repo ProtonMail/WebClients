@@ -146,9 +146,6 @@
       "Learn more": [
         "Pelajari lebih lanjut"
       ],
-      "Lock ${ PASS_APP_NAME }": [
-        "Kunci ${ PASS_APP_NAME }"
-      ],
       "More options": [
         "Opsi lainnya"
       ],
@@ -223,9 +220,6 @@
       ],
       "Submitting report...": [
         "Mengirim laporan..."
-      ],
-      "Sync": [
-        "Sinkronkan"
       ],
       "Try again": [
         "Coba lagi"
@@ -323,9 +317,6 @@
       "Firefox export file could not be parsed. ${ errorDetail }": [
         "Berkas ekspor Firefox tidak dapat diurai. ${ errorDetail }"
       ],
-      "Import failed for vault \"${ vaultData.vaultName }\" : ${ description }": [
-        "Brankas \"${ vaultData.vaultName }\" gagal diimpor : ${ description }"
-      ],
       "Importing items failed": [
         "Item gagal diimpor"
       ],
@@ -418,9 +409,6 @@
       ],
       "Vault \"${ payload.content.name }\" creation failed": [
         "Pembuatan brankas \"${ payload.content.name }\" gagal"
-      ],
-      "Vault \"${ vaultData.vaultName }\" could not be created": [
-        "Berkas \"${ vaultData.vaultName }\" tidak dapat dibuat"
       ],
       "Vault name does not match": [
         "Nama brankas tidak sesuai"
@@ -691,9 +679,6 @@
       "Save login": [
         "Simpan login"
       ],
-      "Select the destination vault for each imported vault. By default a new vault will be created for each imported vault.": [
-        "Pilih tempat penyimpanan untuk setiap brankas yang diimpor. Secara bawaan, brankas baru akan dibuat untuk setiap brankas yang diimpor."
-      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Server kami sedang tidak dapat dijangkau. Silakan coba lagi dalam beberapa menit"
       ],
@@ -777,9 +762,6 @@
       ],
       "You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.": [
         "Anda telah mencapai batas jumlah alias yang dapat Anda buat. Dapatkan kemampuan untuk membuat berbagai macam alias tanpa batasan jumlah dengan meningkatkan paket langganan Anda."
-      ],
-      "You have reached the limit of vaults you can create. Create an unlimited number of vaults when you upgrade your subscription.": [
-        "Anda telah mencapai batas jumlah brankas yang dapat Anda buat. Dapatkan kemampuan untuk membuat brankas tanpa batasan jumlah dengan meningkatkan paket langganan Anda."
       ],
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "Anda telah mencapai panjang maksimum yang diizinkan sebesar ${ maxLength } karakter."
@@ -1452,9 +1434,6 @@
       ],
       "Your session was locked due to inactivity": [
         "Sesi Anda dikunci karena tidak ada rekam jejak aktivitas"
-      ],
-      "Your subscription does not allow you to create multiple vaults. All items will be imported to your primary vault by default. To import into multiple vaults upgrade your subscription.": [
-        "Langganan Anda tidak mengizinkan Anda membuat beberapa brankas. Semua item akan diimpor ke brankas utama Anda secara bawaan. Untuk mengimpor ke beberapa brankas, tingkatkan langganan Anda."
       ]
     }
   }
