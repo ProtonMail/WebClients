@@ -56,6 +56,9 @@
       "Continue without pinning": [
         "Continuar sem fixar"
       ],
+      "Copy & fill in": [
+        "Copiar e preencher"
+      ],
       "Copy and close": [
         "Copiar e fechar"
       ],
@@ -138,7 +141,7 @@
         "Gerar senha"
       ],
       "Get mobile apps": [
-        "Baixa os aplicativos móveis"
+        "Baixar os aplicativos móveis"
       ],
       "Help us improve": [
         "Ajude-nos a melhorar"
@@ -160,9 +163,6 @@
       ],
       "Learn more": [
         "Saiba mais"
-      ],
-      "Lock ${ PASS_APP_NAME }": [
-        "Bloquear o ${ PASS_APP_NAME }"
       ],
       "More options": [
         "Mais opções"
@@ -247,9 +247,6 @@
       ],
       "Submitting report...": [
         "Enviando relatório..."
-      ],
-      "Sync": [
-        "Sincronizar"
       ],
       "Try again": [
         "Tentar novamente"
@@ -360,8 +357,8 @@
       "Firefox export file could not be parsed. ${ errorDetail }": [
         "Não foi possível analisar o arquivo de exportação do Firefox. ${ errorDetail }"
       ],
-      "Import failed for vault \"${ vaultData.vaultName }\" : ${ description }": [
-        "Falha na importação para o cofre \"${ vaultData.vaultName }\" : ${ description }"
+      "Import failed for vault \"${ vaultData.name }\" : ${ description }": [
+        "Falha na importação para o cofre \"${ vaultData.name }\": ${ description }"
       ],
       "Importing items failed": [
         "Falha ao importar itens"
@@ -400,7 +397,7 @@
         "Conceda as permissões de extensão necessárias ao ${ PASS_APP_NAME } para continuar"
       ],
       "Please pin the extension or select \"Continue without pinning\".": [
-        "Fixe a extensão ou selecione Continua sem fixar."
+        "Fixe a extensão ou selecione Continuar sem fixar."
       ],
       "Request timed out": [
         "A solicitação expirou"
@@ -436,7 +433,7 @@
         "O arquivo que você está tentando importar está vazio"
       ],
       "Too many failed attempts. Please sign in again.": [
-        "Muitas tentativas fracassadas. Por favor, tente novamente."
+        "Muitas tentativas erradas. Inicie sessão novamente."
       ],
       "Trashing item failed": [
         "Falha ao mover item para a lixeira"
@@ -465,8 +462,8 @@
       "Vault \"${ payload.content.name }\" creation failed": [
         "Falha ao criar o cofre \"${ payload.content.name }\""
       ],
-      "Vault \"${ vaultData.vaultName }\" could not be created": [
-        "Não foi possível criar o cofre \"${ vaultData.vaultName }\""
+      "Vault \"${ vaultData.name }\" could not be created": [
+        "Não foi possível criar o cofre \"${ vaultData.name }\""
       ],
       "Vault name does not match": [
         "O nome do cofre não corresponde"
@@ -517,6 +514,9 @@
       ]
     },
     "Info": {
+      " Upgrade to a paid plan to create multiple vaults.": [
+        " Faça upgrade para um plano pago para criar múltiplos cofres."
+      ],
       "\"${ payload.item.data.metadata.name }\" item was dismissed": [
         "O item \"${ payload.item.data.metadata.name }\" foi descartado"
       ],
@@ -764,8 +764,8 @@
       "Save login": [
         "Salvar início de sessão"
       ],
-      "Select the destination vault for each imported vault. By default a new vault will be created for each imported vault.": [
-        "Selecione o cofre de destino para cada cofre importado. Por padrão, um novo cofre será criado para cada cofre importado."
+      "Select the destination vault for each imported vault.": [
+        "Selecione o cofre de destino para cada cofre importado."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Os servidores estão inacessíveis. Tente novamente em alguns minutos"
@@ -837,6 +837,9 @@
       "Vault \"${ share.content.name }\" was disabled": [
         "O cofre \"${ share.content.name }\" foi desativado"
       ],
+      "Verification code": [
+        "Código de verificação"
+      ],
       "You are about to create:": [
         "Você está prestes a criar:"
       ],
@@ -853,8 +856,8 @@
       "You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.": [
         "Você atingiu o limite de aliases que pode criar. Crie um número ilimitado de aliases ao fazer upgrade da sua assinatura."
       ],
-      "You have reached the limit of vaults you can create. Create an unlimited number of vaults when you upgrade your subscription.": [
-        "Você atingiu o limite de cofres que pode criar. Crie um número ilimitado de cofres ao fazer upgrade da sua assinatura."
+      "You have reached the limit of vaults you can create.": [
+        "Você atingiu o limite de cofres que pode criar."
       ],
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "Você atingiu o comprimento máximo permitido de ${ maxLength } caracteres."
@@ -1563,6 +1566,9 @@
       "Vault name is required": [
         "O nome do cofre é obrigatório"
       ],
+      "You cannot create more vaults than your subscription allows.": [
+        "Sua assinatura não permite a criação de múltiplos cofres."
+      ],
       "You have unsaved changes, are you sure you want to discard them?": [
         "Você tem alterações não salvas. Tem certeza de que deseja descartá-las?"
       ],
@@ -1578,8 +1584,8 @@
       "Your session was locked due to inactivity": [
         "Sua sessão foi bloqueada devido à inatividade"
       ],
-      "Your subscription does not allow you to create multiple vaults. All items will be imported to your primary vault by default. To import into multiple vaults upgrade your subscription.": [
-        "A sua assinatura não permite que você crie múltiplos cofres. Todos os itens serão importados para o seu cofre principal por padrão. Para importar em múltiplos cofres, atualize a sua assinatura."
+      "Your subscription does not allow you to create multiple vaults. All items will be imported to your primary vault. To import into multiple vaults upgrade your subscription.": [
+        "A sua assinatura não permite que você crie múltiplos cofres. Todos os itens serão importados para o seu cofre principal. Para importar em múltiplos cofres, atualize a sua assinatura."
       ]
     }
   }
