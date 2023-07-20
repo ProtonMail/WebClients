@@ -11,10 +11,10 @@
 }
 
 .signup-v1-header {
-	max-inline-size: rem(777);
+	max-inline-size: rem(850);
 
 	.large-font {
-		font-size: rem(40);
+		font-size: rem(32);
 		color: var(--optional-promotion-text-color);
 
 		@include media('<=small') {
