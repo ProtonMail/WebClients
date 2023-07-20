@@ -434,9 +434,6 @@
       "Generate token": [
         "Згенерувати токен"
       ],
-      "Get ${ discountPercentage } off with 24 months": [
-        "Отримайте знижку ${ discountPercentage } з передплатою на 24 місяці"
-      ],
       "Get ${ vpnPlus }": [
         "Отримати ${ vpnPlus }"
       ],
@@ -4466,8 +4463,8 @@
       "(1-2 emails per month)": [
         "(1-2 електронні листи на місяць)"
       ],
-      "(2-4 per year)": [
-        "(2-4 рази на рік)"
+      "(2-4 emails per year)": [
+        "(2-4 листи на рік)"
       ],
       "(4-6 emails per year)": [
         "(4-6 листів на рік)"
@@ -4568,11 +4565,14 @@
       "Best deal": [
         "Найкраща пропозиція"
       ],
+      "Checkout": [
+        "Оплата"
+      ],
+      "Create your account": [
+        "Створіть обліковий запис"
+      ],
       "Device": [
         "Пристрій"
-      ],
-      "Enter your email address": [
-        "Введіть адресу своєї е-пошти"
       ],
       "Event": [
         "Подія"
@@ -4603,9 +4603,6 @@
       ],
       "Protection": [
         "Захист"
-      ],
-      "Select your preferred method of payment": [
-        "Оберіть бажаний спосіб оплати."
       ],
       "Select your pricing plan": [
         "Виберіть свій тариф"
@@ -5096,6 +5093,9 @@
       ],
       "${ current } of ${ total }": [
         "${ current } з ${ total }"
+      ],
+      "${ discountPercentage } forever": [
+        "${ discountPercentage } назавжди"
       ],
       "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
         "${ DRIVE_APP_NAME } більше не зберігатиме попередні версії ваших файлів."
@@ -6148,7 +6148,7 @@
         "Лише ви можете бачити мітки."
       ],
       "Open source": [
-        "Відкритий код"
+        "Відкритий програмний код"
       ],
       "Or select a particular server:": [
         "Або виберіть певний сервер:"
@@ -6357,9 +6357,6 @@
       "Save your password somewhere safe. Click on icon to confirm that you have typed your password correctly.": [
         "Збережіть пароль у надійному місці. Клацніть на піктограму, щоб підтвердити правильність його введення."
       ],
-      "Saving your password": [
-        "Збереження вашого пароля"
-      ],
       "Scan QR code instead": [
         "Cканувати QR-код натомість"
       ],
@@ -6491,9 +6488,6 @@
       ],
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
         "Повідомлення ${ boldDataLocked } більше не буде показано, але ви все ще можете розблокувати свої дані в ${ encryptionAndKeysLink }."
-      ],
-      "The ${ planName } plan includes:": [
-        "Тарифний план ${ planName } включає:"
       ],
       "The calendar will be removed from your account.": [
         "Календар буде вилучено з вашого облікового запису."
@@ -6633,9 +6627,6 @@
       "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
         "Цей помічник увімкне двоетапну перевірку (2FA) для вашого облікового запису ${ BRAND_NAME }. Двоетапна перевірка забезпечує додатковий рівень захисту вашого облікового запису ${ BRAND_NAME_TWO }, тому рекомендуємо ввімкнути її."
       ],
-      "To ${ planName }": [
-        "Для ${ planName }"
-      ],
       "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
         "Щоб уникнути втрати даних, видаляйте його лише якщо впевнені у своїх діях або експортували копію."
       ],
@@ -6698,9 +6689,6 @@
       ],
       "Total VPN connections": [
         "Усього VPN-з'єднань"
-      ],
-      "Try ${ upsellPlanName } risk free": [
-        "Спробуйте ${ upsellPlanName } без ризику"
       ],
       "two-factor authentication (2FA)": [
         "двоетапна перевірка (2FA)"
@@ -6837,8 +6825,8 @@
       "We securely store recovery information on your trusted device to prevent you from losing your data": [
         "Ми надійно зберігаємо інформацію для відновлення на вашому довіреному пристрої, щоб запобігти втраті ваших даних"
       ],
-      "We use 3-D Secure to protect your payments.": [
-        "Ми використовуємо 3-D Secure для захисту ваших платежів."
+      "We use 3-D Secure to protect your payments": [
+        "Ми використовуємо 3-D Secure для захисту ваших платежів"
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Ми перенаправимо вас на PayPal на новій вкладці браузера для завершення цієї транзакції. Якщо ви користуєтесь блокувальниками вмісту, вимкніть їх перед продовженням."
@@ -6857,9 +6845,6 @@
       ],
       "Week and month views only apply to desktop.": [
         "Подання тижня і місяця застосовуються лише на комп'ютері."
-      ],
-      "Welcome": [
-        "Вітаємо"
       ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "Для відновлення облікового запису ми надішлемо код відновлення на вказану електронну пошту."
@@ -7029,9 +7014,6 @@
       "You still need to reply to invitations for the host to see your response.": [
         "Вам усе одно необхідно відповісти на запрошення, щоб організатор побачив вашу відповідь."
       ],
-      "You will be redirected to the VPN download page": [
-        "Вас буде перенаправлено на сторінку завантаження VPN"
-      ],
       "You will lose access to ${ vpnPlanNameShort } servers and features on this date.": [
         "Ви втратите доступ до серверів і функцій ${ vpnPlanNameShort } після цієї дати."
       ],
@@ -7109,6 +7091,9 @@
       ],
       "Your import will not be processed.": [
         "Ваш імпорт не буде оброблений."
+      ],
+      "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
+        "Ваша інформація в безпеці з нами. Ми зв'яжемося з вами лише тоді, коли це буде необхідно для надання наших послуг."
       ],
       "Your login information will not be saved after the import is completed.": [
         "Ваша реєстраційна інформація не буде збережена після завершення імпорту."
@@ -7679,6 +7664,9 @@
       "Awarded": [
         "Нагороди"
       ],
+      "Billing address": [
+        "Платіжна адреса"
+      ],
       "Billing cycle": [
         "Платіжний цикл"
       ],
@@ -7712,11 +7700,11 @@
       "Calendars": [
         "Календарі"
       ],
+      "Card details": [
+        "Подробиці картки"
+      ],
       "Card holder": [
         "Власник картки"
-      ],
-      "Card information": [
-        "Інформація про картку"
       ],
       "Card number": [
         "Номер картки"
@@ -9403,6 +9391,9 @@
       "Split tunneling (Android and Windows)": [
         "Розділене тунелювання (Android і Windows)"
       ],
+      "Start protecting yourself online in 2 easy steps": [
+        "Захистіть себе в мережі у 2 простих кроки"
+      ],
       "Strict no-logs policy": [
         "Суворе дотримання політики без журналювання"
       ],
@@ -11020,11 +11011,6 @@
         "Додати мітку"
       ]
     },
-    "Shared calendar; Info about calendar owner": {
-      "Created by ${ ownerName }": [
-        "Створено ${ ownerName }"
-      ]
-    },
     "Signature verification error when joining calendar": {
       "Signature verification error": [
         "Помилка перевірки підпису"
@@ -11530,9 +11516,6 @@
     "Subscription saving": {
       "Save": [
         "Зберегти"
-      ],
-      "Save ${ discountPercentage }%": [
-        "Заощадьте ${ discountPercentage }%"
       ]
     },
     "Subscription status": {
@@ -12729,7 +12712,7 @@
       "Signed in to member account": [
         "Виконано вхід до облікового запису учасника"
       ],
-      "SMTP Submission": [
+      "SMTP submission": [
         "Надсилання по SMTP"
       ],
       "Sort folders alphabetically": [
@@ -13272,6 +13255,73 @@
         "${ numberOfServers } в ${ numberOfCountries } країнах",
         "${ numberOfServers } в ${ numberOfCountries } країнах",
         "${ numberOfServers } в ${ numberOfCountries } країнах"
+      ]
+    },
+    "vpn_2step: billing": {
+      "${ billedText }, renews on ${ formattedEndTime }": [
+        "${ billedText } продовжується на ${ formattedEndTime }"
+      ],
+      "Billed every 15 months": [
+        "Сплачується кожні 15 місяців"
+      ],
+      "Billed every 2 years": [
+        "Сплачується кожні 2 роки"
+      ],
+      "Billed every 30 months": [
+        "Сплачується кожні 30 місяців"
+      ],
+      "Billed monthly": [
+        "Сплачується щомісяця"
+      ],
+      "Billed yearly": [
+        "Сплачується щороку"
+      ]
+    },
+    "vpn_2step: discount": {
+      "1-year": [
+        "1 рік"
+      ],
+      "2-year": [
+        "2 роки"
+      ],
+      "Get ${ discount } off with a ${ billingCycle } subscription": [
+        "Отримайте знижку ${ discount } з підпискою ${ billingCycle }"
+      ],
+      "monthly": [
+        "щомісяця"
+      ]
+    },
+    "vpn_2step: feature": {
+      "Advanced VPN customizations": [
+        "Розширені налаштування VPN"
+      ],
+      "No ads": [
+        "Без реклами"
+      ]
+    },
+    "vpn_2step: info": {
+      "${ n } month": [
+        "${ n } місяць",
+        "${ n } місяці",
+        "${ n } місяців",
+        "${ n } місяців"
+      ],
+      "${ n } year": [
+        "${ n } рік",
+        "${ n } роки",
+        "${ n } років",
+        "${ n } років"
+      ],
+      "Try ${ upsellPlanName } risk-free": [
+        "Спробуйте ${ upsellPlanName } без ризику"
+      ],
+      "Your ${ selected } plan": [
+        "Ваш ${ selected } тарифний план"
+      ]
+    },
+    "vpn_2step: tooltip": {
+      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, Double hop, and more.": [
+        "Доступ до захищених основних серверів, швидке завантаження P2P/BitTorrent, Tor через VPN, Double hop та багато іншого."
       ]
     },
     "Warning": {

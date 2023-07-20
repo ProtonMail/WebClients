@@ -434,9 +434,6 @@
       "Generate token": [
         "Genera un token"
       ],
-      "Get ${ discountPercentage } off with 24 months": [
-        "Obtén un descompte de ${ discountPercentage } amb 24 mesos"
-      ],
       "Get ${ vpnPlus }": [
         "Obtenir ${ vpnPlus }"
       ],
@@ -1358,7 +1355,7 @@
     },
     "Calendar link sharing label input assistive text": {
       "Only you can see the label": [
-        "Sou l'única persona que pot veure l'etiqueta."
+        "Sou l'única persona que pot veure l'etiqueta"
       ]
     },
     "Calendar permissions hint": {
@@ -1456,7 +1453,7 @@
         "El calendari s'està sincronitzant"
       ],
       "Calendar is syncing: it may take several minutes for all of its events to show up.": [
-        "El calendari s'està sincronitzant. Pot ser que els esdeveniments tardin uns minuts a aparèixer."
+        "El calendari s'està sincronitzant. Pot ser que els vostres esdeveniments tardin uns minuts a aparèixer."
       ],
       "Calendar is too big": [
         "El calendari és massa gran"
@@ -2992,7 +2989,7 @@
     },
     "Enabled 2FA": {
       "2FA": [
-        "2FA"
+        "A2F"
       ]
     },
     "Error": {
@@ -4162,7 +4159,7 @@
     },
     "fido2: Error": {
       "Please disable 2FA via security key before disabling TOTP": [
-        "Desactiveu el 2FA amb la clau de seguretat abans de desactivar TOTP."
+        "Desactiveu l'A2F amb la clau de seguretat abans de desactivar TOTP."
       ],
       "Something went wrong authenticating with your security key. Please try again.": [
         "Alguna cosa no ha anat bé amb l'autenticació amb la vostra clau de seguretat. Proveu-ho de nou."
@@ -4200,7 +4197,7 @@
         "Això eliminarà totes les claus de seguretat vinculades al vostre compte."
       ],
       "To turn on 2FA via security key, you'll need to activate 2FA via authenticator app": [
-        "Per activar el 2FA amb una clau de seguretat, haureu d'activar primer el 2FA mitjançant l'aplicació d'autenticació."
+        "Per activar l'A2F amb una clau de seguretat, haureu d'activar primer l'A2F mitjançant l'aplicació d'autenticació."
       ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "Confirmeu la vostra identitat amb una clau de seguretat física U2F o FIDO2."
@@ -4222,7 +4219,7 @@
         "Eliminar clau de seguretat?"
       ],
       "Disable 2FA via security key?": [
-        "Desactivar 2FA amb clau de seguretat?"
+        "Desactivar l'A2F amb clau de seguretat?"
       ],
       "Name your security key": [
         "Anomeneu la vostra clau de seguretat"
@@ -4420,9 +4417,6 @@
       "(1-2 emails per month)": [
         "(1-2 correus electrònics al mes)"
       ],
-      "(2-4 per year)": [
-        "(2 a 4 per any)"
-      ],
       "(4-6 emails per year)": [
         "(4 a 5 correus electrònics per any)"
       ],
@@ -4510,11 +4504,11 @@
       "Best deal": [
         "Millor oferta"
       ],
+      "Checkout": [
+        "Pagament"
+      ],
       "Device": [
         "Dispositiu"
-      ],
-      "Enter your email address": [
-        "Introduïu la vostra adreça de correu electrònic"
       ],
       "Event": [
         "Esdeveniment"
@@ -4545,9 +4539,6 @@
       ],
       "Protection": [
         "Protecció"
-      ],
-      "Select your preferred method of payment": [
-        "Seleccioneu el vostre mètode de pagament preferit"
       ],
       "Select your pricing plan": [
         "Seleccioneu el vostre pla de preus"
@@ -5198,7 +5189,7 @@
         "Afegeix un número de telèfon de recuperació"
       ],
       "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
-        "Afegiu una seguretat addicional al vostre compte amb l'autenticació de doble factor (2FA) cada vegada que inicieu sessió."
+        "Afegiu una seguretat addicional al vostre compte amb l'autenticació de doble factor (A2F) cada vegada que inicieu sessió."
       ],
       "Add image URL": [
         "Afegeix l'URL de la imatge"
@@ -6221,9 +6212,6 @@
       "Save your password somewhere safe. Click on icon to confirm that you have typed your password correctly.": [
         "Guardeu les seves contrasenyes en un lloc segur. Feu clic a la icona per confirmar que ha escrit la contrasenya correctament."
       ],
-      "Saving your password": [
-        "S'està desant la vostra contrasenya"
-      ],
       "Scan QR code instead": [
         "Escanejar codi QR"
       ],
@@ -6243,7 +6231,7 @@
         "Seleccioneu quins calendaris importar. Es crearà un calendari per cada calendari importat segons el nombre de calendaris disponibles al vostre pla."
       ],
       "Send emails to encourage your members to protect their accounts with 2FA.": [
-        "Envieu correus electrònics per animar els vostres membres a protegir els seus comptes amb 2FA."
+        "Envieu correus electrònics per animar els vostres membres a protegir els seus comptes amb l'A2F."
       ],
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "Enviat amb el correu segur de <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
@@ -6295,7 +6283,7 @@
       ],
       "Step ${ step }": [
         "Pas ${ step }",
-        "Pas ${ step }"
+        "Passes ${ step }"
       ],
       "Storage allocated to other users in this organisation": [
         "Emmagatzematge assignat a altres usuaris d'aquesta organització"
@@ -6350,9 +6338,6 @@
       ],
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
         "El missatge ${ boldDataLocked } ja no es mostrarà, però encara podeu desbloquejar les vostres dades amb ${ encryptionAndKeysLink }."
-      ],
-      "The ${ planName } plan includes:": [
-        "El pla ${ planName } inclou:"
       ],
       "The calendar will be removed from your account.": [
         "El calendari se suprimirà del vostre compte."
@@ -6484,10 +6469,7 @@
         "Això tancarà qualsevol sessió activa i desactivarà l'autenticació de dos factors."
       ],
       "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
-        "Aquest assistent habilitarà l'autenticació de dos factors (2FA) al vostre compte de ${ BRAND_NAME }. L’autenticació de dos factors farà que el vostre compte ${ BRAND_NAME_TWO } sigui més segur, de manera que us recomanem que l’activeu."
-      ],
-      "To ${ planName }": [
-        "A: ${ planName }"
+        "Aquest assistent habilitarà l'autenticació de dos factors (A2F) al vostre compte de ${ BRAND_NAME }. L’autenticació de dos factors farà que el vostre compte ${ BRAND_NAME_TWO } sigui més segur, de manera que us recomanem que l’activeu."
       ],
       "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
         "Per evitar la pèrdua de dades, elimineu-ho només si sabeu el que esteu fent o n'heu exportat una còpia."
@@ -6552,11 +6534,8 @@
       "Total VPN connections": [
         "Connexions VPN totals"
       ],
-      "Try ${ upsellPlanName } risk free": [
-        "Prova ${ upsellPlanName } sense risc"
-      ],
       "two-factor authentication (2FA)": [
-        "autenticació de dos factors (2FA)"
+        "autenticació de dos factors (A2F)"
       ],
       "Two-factor authentication disabled": [
         "Autenticació de dos factors desactivada"
@@ -6682,7 +6661,7 @@
         "Hem d'autenticar el vostre pagament amb el banc."
       ],
       "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
-        "Recomanem que notifiqueu als membres de l'organització i els demaneu que estableixin l'autenticació de dos factors (2FA) per als seus comptes abans de fer-ne complir l'ús."
+        "Recomanem que notifiqueu als membres de l'organització i els demaneu que estableixin l'autenticació de dos factors (A2F) per als seus comptes abans de fer-ne complir l'ús."
       ],
       "We recommend using your recovery phrase instead.": [
         "Recomanem utilitzar la frase de recuperació."
@@ -6690,8 +6669,8 @@
       "We securely store recovery information on your trusted device to prevent you from losing your data": [
         "Emmagatzemem de manera segura la informació de recuperació al vostre dispositiu de confiança per evitar que perdeu les vostres dades"
       ],
-      "We use 3-D Secure to protect your payments.": [
-        "Utilitzem 3-D Secure per protegir els teus pagaments."
+      "We use 3-D Secure to protect your payments": [
+        "Utilitzem 3-D Secure per protegir els vostres pagaments."
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Us redireccionarem a PayPal en una pestanya nova del navegador per completar aquesta transacció. Si utilitzeu bloquejadors emergents, inhabiliteu-los per continuar."
@@ -6710,9 +6689,6 @@
       ],
       "Week and month views only apply to desktop.": [
         "Les visualitzacions de setmana i mes només s'apliquen a l'escriptori."
-      ],
-      "Welcome": [
-        "Us donem la benvinguda"
       ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "Enviarem un codi de restabliment a l'adreça de correu electrònic que heu proporcionat per a la recuperació del compte."
@@ -6871,9 +6847,6 @@
       ],
       "You still need to reply to invitations for the host to see your response.": [
         "Encara heu de respondre a les invitacions perquè l'amfitrió vegi la vostra resposta."
-      ],
-      "You will be redirected to the VPN download page": [
-        "Se us redirigirà a la pàgina de descàrrega de VPN"
       ],
       "You will lose access to ${ vpnPlanNameShort } servers and features on this date.": [
         "Perdreu accés a servidors i funcions de ${ vpnPlanNameShort } en aquesta data."
@@ -7509,6 +7482,9 @@
       "Awarded": [
         "Premiat"
       ],
+      "Billing address": [
+        "Adreça de facturació"
+      ],
       "Billing cycle": [
         "Cicle de facturació"
       ],
@@ -7544,9 +7520,6 @@
       ],
       "Card holder": [
         "Titular de la targeta"
-      ],
-      "Card information": [
-        "Informació de la targeta"
       ],
       "Card number": [
         "Número de la targeta"
@@ -8056,10 +8029,10 @@
         "Repetir contrasenya"
       ],
       "Require 2FA for administrators": [
-        "Requereix 2FA per als administradors"
+        "Requereix l'A2F per als administradors"
       ],
       "Require 2FA for everyone": [
-        "Requereix 2FA per a tothom"
+        "Requereix l'A2F per a tothom"
       ],
       "Reveal password": [
         "Mostra la contrasenya"
@@ -9112,7 +9085,7 @@
         "Signatures HTML"
       ],
       "Integrated 2FA authenticator": [
-        "Autenticador 2FA integrat"
+        "Autenticador A2F integrat"
       ],
       "Kill switch/always-on VPN": [
         "Kill switch /VPN sempre activa"
@@ -10629,7 +10602,7 @@
     },
     "Share calendar assistive text": {
       "To invite non-${ BRAND_NAME } users, share your calendar with a link.": [
-        "Per convidar usuaris de fora de ${ BRAND_NAME }, compartiu el calendari amb un enllaç."
+        "Per a convidar usuaris de fora de ${ BRAND_NAME }, compartiu el calendari amb un enllaç."
       ]
     },
     "Share calendar max shares reached error": {
@@ -10656,11 +10629,6 @@
     "Shared calendar label input placeholder": {
       "Add label": [
         "Afegeix etiqueta"
-      ]
-    },
-    "Shared calendar; Info about calendar owner": {
-      "Created by ${ ownerName }": [
-        "Creat per ${ ownerName }"
       ]
     },
     "Signature verification error when joining calendar": {
@@ -10985,7 +10953,7 @@
         "URL del calendari"
       ],
       "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Other calendars.\n${ kbLink }": [
-        "Per subscriure-us a un calendari extern o públic i a les seves actualitzacions, introduïu-ne l'URL. Una versió de només lectura del calendari s'afegirà als vostres Altres calendaris.\n${ kbLink }"
+        "Per a subscriure-us a un calendari extern o públic i a les seves actualitzacions, introduïu-ne l'URL. Una versió de només lectura del calendari s'afegirà als vostres Altres calendaris.\n${ kbLink }"
       ]
     },
     "Subscribe to calendar modal description": {
@@ -11130,9 +11098,6 @@
     "Subscription saving": {
       "Save": [
         "Desa"
-      ],
-      "Save ${ discountPercentage }%": [
-        "Estalvia el ${ discountPercentage }%"
       ]
     },
     "Subscription status": {
@@ -12311,7 +12276,7 @@
       "Signed in to member account": [
         "S'ha iniciat la sessió al compte de membre"
       ],
-      "SMTP Submission": [
+      "SMTP submission": [
         "Tramesa SMTP"
       ],
       "Sort folders alphabetically": [
@@ -12614,7 +12579,7 @@
         "Si heu comprat un codi regal o n'heu rebut un del nostre equip de suport, escriviu-lo aquí."
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
-        "Els membres que no utilitzen 2FA rebran un correu electrònic sol·licitant-los que ho habiliten al més aviat possible."
+        "Els membres que no utilitzen l'A2F rebran un correu electrònic sol·licitant-los que ho habiliten al més aviat possible."
       ],
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "Els missatges a la carpeta d'Enviats o Esborranys continuaran apareixent a aquestes carpetes, fins i tot si els moveu a una altra carpeta."
@@ -12836,6 +12801,49 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } a ${ numberOfCountries } país",
         "${ numberOfServers } a ${ numberOfCountries } països"
+      ]
+    },
+    "vpn_2step: billing": {
+      "Billed every 15 months": [
+        "Facturat cada 15 mesos"
+      ],
+      "Billed every 2 years": [
+        "Facturat cada 2 anys"
+      ],
+      "Billed every 30 months": [
+        "Facturat cada 30 mesos"
+      ],
+      "Billed monthly": [
+        "Facturat mensualment"
+      ],
+      "Billed yearly": [
+        "Facturat anualment"
+      ]
+    },
+    "vpn_2step: discount": {
+      "1-year": [
+        "1 any"
+      ],
+      "2-year": [
+        "2 any"
+      ],
+      "monthly": [
+        "mensualment"
+      ]
+    },
+    "vpn_2step: feature": {
+      "No ads": [
+        "Sense anuncis"
+      ]
+    },
+    "vpn_2step: info": {
+      "${ n } month": [
+        "${ n } mes",
+        "${ n } mesos"
+      ],
+      "${ n } year": [
+        "${ n } any",
+        "${ n } anys"
       ]
     },
     "Warning": {

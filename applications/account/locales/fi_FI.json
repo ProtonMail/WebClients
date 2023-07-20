@@ -434,9 +434,6 @@
       "Generate token": [
         "Luo avain"
       ],
-      "Get ${ discountPercentage } off with 24 months": [
-        "Saat ${ discountPercentage } alennusta 24 kuukaudella"
-      ],
       "Get ${ vpnPlus }": [
         "Hanki ${ vpnPlus }"
       ],
@@ -4420,8 +4417,8 @@
       "(1-2 emails per month)": [
         "(1-2 viestiä kuukaudessa)"
       ],
-      "(2-4 per year)": [
-        "(2-4/vuosi)"
+      "(2-4 emails per year)": [
+        "(2-4 viestiä vuodessa)"
       ],
       "(4-6 emails per year)": [
         "(4-6 viestiä vuodessa)"
@@ -4522,11 +4519,14 @@
       "Best deal": [
         "Paras tarjous"
       ],
+      "Checkout": [
+        "Kassa"
+      ],
+      "Create your account": [
+        "Luo tilisi"
+      ],
       "Device": [
         "Laite"
-      ],
-      "Enter your email address": [
-        "Syötä sähköpostiosoitteesi"
       ],
       "Event": [
         "Tapahtuma"
@@ -4557,9 +4557,6 @@
       ],
       "Protection": [
         "Suojaus"
-      ],
-      "Select your preferred method of payment": [
-        "Valitse haluamasi maksutapa"
       ],
       "Select your pricing plan": [
         "Valitse maksusuunnitelma:"
@@ -5030,6 +5027,9 @@
       ],
       "${ current } of ${ total }": [
         "${ current }/${ total }"
+      ],
+      "${ discountPercentage } forever": [
+        "${ discountPercentage } ikuisesti"
       ],
       "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
         "${ DRIVE_APP_NAME } ei enää säilytä tiedostojesi aiempia versioita."
@@ -6036,7 +6036,7 @@
         "Vain sinä näet tunnisteet."
       ],
       "Open source": [
-        "Avointa lähdekoodia"
+        "Avoin lähdekoodi"
       ],
       "Or select a particular server:": [
         "Tai valitse tietty palvelin:"
@@ -6239,9 +6239,6 @@
       "Save your password somewhere safe. Click on icon to confirm that you have typed your password correctly.": [
         "Tallenna salasanasi turvalliseen paikkaan. Paina kuvaketta vahvistaaksesi, että olet kirjoittanut salasanasi oikein."
       ],
-      "Saving your password": [
-        "Salasanaasi tallennetaan"
-      ],
       "Scan QR code instead": [
         "Skannaa sen sijaan QR-koodi"
       ],
@@ -6365,9 +6362,6 @@
       ],
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
         "${ boldDataLocked } viestiä ei enää näytetä, mutta voit silti poistaa lukituksen tiedoista kohdassa ${ encryptionAndKeysLink }."
-      ],
-      "The ${ planName } plan includes:": [
-        "${ planName } -tilaus sisältää:"
       ],
       "The calendar will be removed from your account.": [
         "Kalenteri poistetaan tililtäsi."
@@ -6501,9 +6495,6 @@
       "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
         "Tämä ohjattu toiminto ottaa käyttöön kaksivaiheisen todennuksen (2FA) ${ BRAND_NAME } -tililläsi. Kaksivaiheinen todennus tekee ${ BRAND_NAME_TWO } -tilisi turvallisemmaksi, joten suosittelemme sen ottamista käyttöön."
       ],
-      "To ${ planName }": [
-        "Tilaukseen ${ planName }"
-      ],
       "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
         "Välttääksesi tietojen menetyksen, poista se vain, jos tiedät mitä teet tai olet vienyt kopion."
       ],
@@ -6566,9 +6557,6 @@
       ],
       "Total VPN connections": [
         "VPN-yhteyksien kokonaismäärä"
-      ],
-      "Try ${ upsellPlanName } risk free": [
-        "Kokeile ${ upsellPlanName } -tilausta riskittömästi"
       ],
       "two-factor authentication (2FA)": [
         "kaksivaiheiset todennustavat (2FA)"
@@ -6705,8 +6693,8 @@
       "We securely store recovery information on your trusted device to prevent you from losing your data": [
         "Säilytämme palautustiedot luotetulla laitteellasi turvallisesti estääksemme sinua menettämästä tietojasi"
       ],
-      "We use 3-D Secure to protect your payments.": [
-        "Käytämme 3-D Securea maksujesi suojaukseen."
+      "We use 3-D Secure to protect your payments": [
+        "Käytämme 3-D Securea maksujesi suojaukseen"
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Ohjaamme sinut uudessa välilehdessä PayPaliin suorittamaan maksun. Jos käytät ponnahdusikkunoiden estäjiä, poista ne käytöstä jatkaaksesi."
@@ -6725,9 +6713,6 @@
       ],
       "Week and month views only apply to desktop.": [
         "Viikko- ja kuukaisinäkymät koskevat vain työpöytäkäyttöä."
-      ],
-      "Welcome": [
-        "Tervetuloa"
       ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "Lähetämme palautuskoodin tilin palautusta varten ilmoittamaasi sähköpostiosoitteeseen."
@@ -6887,9 +6872,6 @@
       "You still need to reply to invitations for the host to see your response.": [
         "Sinun on silti vastattava kutsuihin, jotta järjestäjä näkee vastauksesi."
       ],
-      "You will be redirected to the VPN download page": [
-        "Sinut ohjataan VPN:n lataussivulle"
-      ],
       "You will lose access to ${ vpnPlanNameShort } servers and features on this date.": [
         "Menetät pääsyn ${ vpnPlanNameShort } -palvelimiin ja -ominaisuuksiin tänä päivänä."
       ],
@@ -6965,6 +6947,9 @@
       ],
       "Your import will not be processed.": [
         "Tuontiasi ei käsitellä."
+      ],
+      "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
+        "Tietosi ovat turvassa meillä. Otamme sinuun yhteyttä vain, kun se on tarpeen palveluidemme tarjoamiseksi."
       ],
       "Your login information will not be saved after the import is completed.": [
         "Kirjautumistietojasi ei säilytetä tuonnin päätyttyä."
@@ -7527,6 +7512,9 @@
       "Awarded": [
         "Palkittu"
       ],
+      "Billing address": [
+        "Laskutusosoite"
+      ],
       "Billing cycle": [
         "Laskutusjakso"
       ],
@@ -7560,11 +7548,11 @@
       "Calendars": [
         "Kalenterit"
       ],
+      "Card details": [
+        "Kortin tiedot"
+      ],
       "Card holder": [
         "Kortinhaltija"
-      ],
-      "Card information": [
-        "Korttitiedot"
       ],
       "Card number": [
         "Kortin numero"
@@ -9193,6 +9181,9 @@
       "Split tunneling (Android and Windows)": [
         "Jaettu tunnelointi (Android ja Windows)"
       ],
+      "Start protecting yourself online in 2 easy steps": [
+        "Suojaa itsesi verkossa kahdella helpolla askeleella"
+      ],
       "Strict no-logs policy": [
         "Tiukka lokivastainen käytäntö"
       ],
@@ -10784,11 +10775,6 @@
         "Lisää tunniste"
       ]
     },
-    "Shared calendar; Info about calendar owner": {
-      "Created by ${ ownerName }": [
-        "Luonut ${ ownerName }"
-      ]
-    },
     "Signature verification error when joining calendar": {
       "Signature verification error": [
         "Allekirjoituksen vahvistusvirhe"
@@ -11256,9 +11242,6 @@
     "Subscription saving": {
       "Save": [
         "Tallenna"
-      ],
-      "Save ${ discountPercentage }%": [
-        "Säästä ${ discountPercentage }%"
       ]
     },
     "Subscription status": {
@@ -12959,6 +12942,66 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } ${ numberOfCountries } maassa",
         "${ numberOfServers } ${ numberOfCountries } maassa"
+      ]
+    },
+    "vpn_2step: billing": {
+      "${ billedText }, renews on ${ formattedEndTime }": [
+        "${ billedText }, uusiutumispäivämäärä: ${ formattedEndTime }"
+      ],
+      "Billed every 15 months": [
+        "Laskutetaan 15 kuukauden välein"
+      ],
+      "Billed every 2 years": [
+        "Laskutetaan 2 vuoden välein"
+      ],
+      "Billed every 30 months": [
+        "Laskutetaan 30 kuukauden välein"
+      ],
+      "Billed monthly": [
+        "Laskutetaan kuukausittain"
+      ],
+      "Billed yearly": [
+        "Laskutetaan vuosittain"
+      ]
+    },
+    "vpn_2step: discount": {
+      "1-year": [
+        "1 vuoden"
+      ],
+      "2-year": [
+        "2 vuoden"
+      ],
+      "monthly": [
+        "kuukausittain"
+      ]
+    },
+    "vpn_2step: feature": {
+      "Advanced VPN customizations": [
+        "Edistyneet VPN-mukautukset"
+      ],
+      "No ads": [
+        "Ei mainoksia"
+      ]
+    },
+    "vpn_2step: info": {
+      "${ n } month": [
+        "${ n } kuukausi",
+        "${ n } kuukautta"
+      ],
+      "${ n } year": [
+        "${ n } vuosi",
+        "${ n } vuotta"
+      ],
+      "Try ${ upsellPlanName } risk-free": [
+        "Kokeile ${ upsellPlanName } -tilausta riskittömästi"
+      ],
+      "Your ${ selected } plan": [
+        "Sinun ${ selected } tilauksesi"
+      ]
+    },
+    "vpn_2step: tooltip": {
+      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, Double hop, and more.": [
+        "Pääsy Secure core -palvelimille, nopeat P2P/BitTorrent-lataukset, Tor + VPN, Double hop ja paljon muuta."
       ]
     },
     "Warning": {
