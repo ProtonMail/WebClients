@@ -7,9 +7,9 @@ export const useEnsureMounted = () => {
     const isMounted = useIsMounted();
     return useCallback(
         <T extends Callback>(fn: T) =>
-            (...args: Parameters<T>): Maybe<ReturnType<T>> => {
+            ((...args: Parameters<T>): Maybe<ReturnType<T>> => {
                 if (isMounted()) return fn(...args);
-            },
+            }) as T,
         []
     );
 };
