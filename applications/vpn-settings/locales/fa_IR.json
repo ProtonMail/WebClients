@@ -74,9 +74,6 @@
       "Create": [
         "ایجاد"
       ],
-      "Create account": [
-        "ایجاد حساب کاربری"
-      ],
       "Current plan": [
         "طرح فعلی"
       ],
@@ -155,9 +152,6 @@
       "Get ${ vpnPlus }": [
         "دریافت ${ vpnPlus }"
       ],
-      "Get a new encrypted email address": [
-        "دریافت یک آدرس ایمیل رمزگذاری شده جدید"
-      ],
       "Get verification code": [
         "دریافت کد تایید"
       ],
@@ -178,9 +172,6 @@
       ],
       "Mark as default": [
         "علامت‌گذاری به‌عنوان پیش‌فرض"
-      ],
-      "Maybe later": [
-        "شاید بعدا"
       ],
       "More info: ${ safeTitle }": [
         "اطلاعات بیشتر: ${ safeTitle }"
@@ -256,9 +247,6 @@
       ],
       "Save": [
         "ذخیره"
-      ],
-      "Save selected": [
-        "ذخیره کردن انتخاب ‌شده ‌ها"
       ],
       "Search countries": [
         "جستجوی کشورها"
@@ -352,9 +340,6 @@
       ],
       "Use recovery code": [
         "از کد بازیابی استفاده کنید"
-      ],
-      "Use your current email instead": [
-        "در عوض از ایمیل فعلی خود استفاده کنید"
       ],
       "User": [
         "کاربر"
@@ -1710,9 +1695,6 @@
         "${ number } سرور",
         "${ number } سرور"
       ],
-      "* No credit card required.": [
-        "* نیازی به کارت اعتباری نیست."
-      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } فضای ذخیره‌سازی هدیه"
       ],
@@ -2128,9 +2110,6 @@
       "We recommend using your recovery phrase instead.": [
         "پیشنهاد می‌کنیم به‌جای آن از عبارت بازیابی خود استفاده کنید."
       ],
-      "We use 3-D Secure to protect your payments.": [
-        "ما برای محافظت از پرداخت‌های شما از امنیت 3 بعدی استفاده می‌کنیم."
-      ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "برای تکمیل این تراکنش شما از طریق یک زبانه جدید در مرورگر به PayPal منتقل می‌شوید. برای ادامه لطفا اگر از مسدودکننده‌های پیش‌آ استفاده می‌کنید، آن‌ها را غیرفعال کنید."
       ],
@@ -2175,9 +2154,6 @@
       ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "میتوانید با استفاده از اطلاعات ذیل به یک سرور ${ VPN_APP_NAME } با استفاده از برنامه های VPN متن باز دیگر مانند Tunnelblick برای macOS یا OpenVPN برای لینوکس/GNU متصل شوید."
-      ],
-      "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
-        "شما یک روش بازیابی تنظیم نکرده‌اید بنابراین در صورت فراموش کردن گذرواژه، بازیابی حساب غیرممکن است. بدون روش بازیابی ادامه می‌دهید؟"
       ],
       "You have no saved payment methods.": [
         "شما روش پرداخت ذخیره شده‌ای ندارید."
@@ -2530,9 +2506,6 @@
       "Recovery phrase": [
         "عبارت بازیابی"
       ],
-      "Repeat password": [
-        "تکرار گذرواژه"
-      ],
       "Reveal password": [
         "افشای گذرواژه"
       ],
@@ -2553,12 +2526,6 @@
       ],
       "Two-password mode": [
         "حالت دوگذرواژه"
-      ],
-      "Use a recovery email address": [
-        "استفاده از یک آدرس ایمیل بازیابی"
-      ],
-      "Use a recovery phone number": [
-        "استفاده از یک شماره تلفن بازیابی"
       ],
       "User's new password": [
         "گذرواژه جدید کاربر"
@@ -2718,9 +2685,6 @@
       "Continue to review": [
         "ادامه دادن به بازبینی"
       ],
-      "Continue with Free": [
-        "ادامه دادن با رایگان"
-      ],
       "Delete account": [
         "حذف حساب کاربری"
       ],
@@ -2732,9 +2696,6 @@
       ],
       "Get ${ planName }": [
         "دریافت ${ planName }"
-      ],
-      "Get ${ upsellShortPlan.title }": [
-        "دریافت ${ upsellShortPlan.title }"
       ],
       "Got it": [
         "متوجه شدم"
@@ -2750,9 +2711,6 @@
       ],
       "Switch plan": [
         "تغییر دادن طرح"
-      ],
-      "Upgrade to ${ upsellPlanHumanSize }": [
-        "ارتقا به ${ upsellPlanHumanSize }"
       ]
     },
     "new_plans: Action": {
@@ -2987,21 +2945,6 @@
       "${ brand } ending in ${ last4 }": [
         "${ brand } با شماره های آخر ${ last4 }"
       ],
-      "* With 1-month subscription. Other subscription options available at checkout.": [
-        "* با 1 ماه اشتراک. گزینه های اشتراک دیگر در موقع پرداخت موجود است."
-      ],
-      "* With 12-month subscription. Other subscription options available at checkout.": [
-        "* با 12 ماه اشتراک. گزینه های اشتراک دیگر در موقع پرداخت موجود است."
-      ],
-      "* With 15-month subscription. Other subscription options available at checkout.": [
-        "* با 15 ماه اشتراک. گزینه های اشتراک دیگر در موقع پرداخت موجود است."
-      ],
-      "* With 24-month subscription. Other subscription options available at checkout.": [
-        "* با 24 ماه اشتراک. گزینه های اشتراک دیگر در موقع پرداخت موجود است."
-      ],
-      "* With 30-month subscription. Other subscription options available at checkout.": [
-        "* با 30 ماه اشتراک. گزینه های اشتراک دیگر در موقع پرداخت موجود است."
-      ],
       "Applicable credits, proration, and coupons are applied in the next step": [
         "اعتبارها، هزینهٔ لحظه‌ای و کوپن های قابل استفاده در قدم بعدی اعمال میشوند"
       ],
@@ -3085,29 +3028,8 @@
       ]
     },
     "new_plans: signup": {
-      "By creating a ${ BRAND_NAME } account, you agree to our ${ terms }": [
-        "با ساخت یک حساب ${ BRAND_NAME }، با ${ terms } ما موافقت میکنید"
-      ],
-      "Payment details": [
-        "جزئیات پرداخت"
-      ],
-      "Save your email address or phone number to use for verification if you need to reset your account.": [
-        "آدرس ایمیل یا شماره تلفن خود را به هنگام استفاده برای تایید سازی در صورت نیاز به بازنشانی حساب خود، ذخیره کنید."
-      ],
-      "Subscription": [
-        "اشتراک"
-      ],
       "terms and conditions": [
         "شرایط و ضوابط"
-      ],
-      "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
-        "برای شروع ، نامی که میخواهید نمایش داده شود را انتخاب کنید. این چیزی است که همه به هنگام ارسال ایمیل به شما، دعوت آنها به یک رویداد یا به اشتراک گذاری فایلی می بینند."
-      ],
-      "Your ${ planName } subscription is now active.": [
-        "اشتراک ${ planName } شما اکنون فعال است."
-      ],
-      "Your selected plan: ${ planName }": [
-        "طرح انتخابی شما: ${ planName }"
       ]
     },
     "new_plans: title": {
@@ -3122,9 +3044,6 @@
       ],
       "Review subscription and pay": [
         "بازنگری اشتراک و پرداخت"
-      ],
-      "Start exploring the ${ BRAND_NAME } universe": [
-        "شروع به کاوش جهان ${ BRAND_NAME } کنید"
       ],
       "Switch plans?": [
         "تغییر دادن طرح؟"
@@ -3477,30 +3396,6 @@
         "تایید کردن شماره تلفن شما امنیت حساب شما را افزایش داده و اجازه میدهد تا گزینه های بیشتری برای بازیابی داشته باشید."
       ]
     },
-    "Shared calendar; Info about calendar owner": {
-      "Created by ${ ownerName }": [
-        "ایجاد شده توسط ${ ownerName }"
-      ]
-    },
-    "Signup label": {
-      "Display name": [
-        "نام نمایشی"
-      ],
-      "Email": [
-        "ایمیل"
-      ],
-      "Username": [
-        "نام کاربری"
-      ]
-    },
-    "Signup step": {
-      "Payment": [
-        "پرداخت"
-      ],
-      "Verification": [
-        "تایید"
-      ]
-    },
     "State": {
       "Downgrading your account, please wait": [
         "در حال تنزیل حساب شما، لطفاً منتظر بمانید"
@@ -3799,12 +3694,6 @@
       "Confirm phone number": [
         "تایید شماره تلفن"
       ],
-      "Congratulations on choosing privacy!": [
-        "برای انتخاب حریم خصوصی به شما تبریک میگوییم!"
-      ],
-      "Create your ${ BRAND_NAME } Account": [
-        "حساب کاربری ${ BRAND_NAME } خود را ایجاد کنید"
-      ],
       "Credits": [
         "اعتبار"
       ],
@@ -3967,12 +3856,6 @@
       "Revoke certificate": [
         "لغو کردن گواهی"
       ],
-      "Save contact details": [
-        "ذخیره جزئیات مخاطب"
-      ],
-      "Secure email based in Switzerland": [
-        "ایمیل امن مستقر در سوئیس"
-      ],
       "Select a plan": [
         "یک طرح انتخاب کنید"
       ],
@@ -4015,15 +3898,6 @@
       "Unsupported browser": [
         "مرورگر پشتیبانی نشده"
       ],
-      "Verification": [
-        "تایید"
-      ],
-      "Verify email address": [
-        "تایید آدرس ایمیل"
-      ],
-      "Warning": [
-        "هشدار"
-      ],
       "What's new": [
         "تغییرات جدید"
       ],
@@ -4035,9 +3909,6 @@
       ],
       "Your plan": [
         "طرح شما"
-      ],
-      "You’ve been invited to try ${ MAIL_APP_NAME }": [
-        "شما دعوت شده اید تا ${ MAIL_APP_NAME } را امتحان کنید"
       ]
     },
     "Title for payment methods table": {
