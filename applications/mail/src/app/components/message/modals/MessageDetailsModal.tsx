@@ -1,6 +1,6 @@
 import { c, msgid } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button, Href } from '@proton/atoms';
 import {
     FeatureCode,
     Icon,
@@ -14,6 +14,7 @@ import {
 } from '@proton/components';
 import { ContactEditProps } from '@proton/components/containers/contacts/edit/ContactEditModal';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 import { getAttachments } from '@proton/shared/lib/mail/messages';
 
@@ -104,11 +105,6 @@ const MessageDetailsModal = ({
         ? pureAttachmentsCount > 0
         : attachmentsText;
 
-    let senderVerificationDetails;
-    if (icon?.senderVerificationDetails) {
-        senderVerificationDetails = icon.senderVerificationDetails.description;
-    }
-
     const sender = message.data?.Sender;
 
     return (
@@ -129,13 +125,21 @@ const MessageDetailsModal = ({
                                     <span className="text-ellipsis w100" title={icon.text}>
                                         {icon.messageEncryptionDetails ?? icon.text}
                                     </span>
-                                    {senderVerificationDetails && (
-                                        <span
-                                            className="w100"
-                                            title={c('Sender verification details').t`Sender verification`}
-                                        >
-                                            {senderVerificationDetails}
-                                        </span>
+                                    {icon.senderVerificationDetails && (
+                                        <div>
+                                            <span
+                                                className="w100"
+                                                title={c('Sender verification details').t`Sender verification`}
+                                            >
+                                                {icon.senderVerificationDetails.description}
+                                            </span>
+                                            {icon.senderVerificationDetails?.showKeyTransparencyLearnMore && (
+                                                <Href
+                                                    className="ml-1"
+                                                    href={getKnowledgeBaseUrl('/key-transparency')}
+                                                >{c('Link').t`Learn more`}</Href>
+                                            )}
+                                        </div>
                                     )}
                                 </div>
                             </div>
