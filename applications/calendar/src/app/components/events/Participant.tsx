@@ -1,4 +1,7 @@
-import { Tooltip, usePopperAnchor } from '@proton/components';
+import { c } from 'ttag';
+
+import { Button } from '@proton/atoms';
+import { Icon, Tooltip, usePopperAnchor } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
 import ParticipantDropdown from './ParticipantDropdown';
@@ -32,12 +35,7 @@ const Participant = ({
     const displayDropdown = !!email;
 
     return (
-        <button
-            type="button"
-            ref={anchorRef}
-            onClick={() => {
-                toggle();
-            }}
+        <div
             className={clsx([
                 'participant flex flex-nowrap flex-align-items-center w100 relative interactive-pseudo interactive--no-background text-left',
                 className,
@@ -51,12 +49,28 @@ const Participant = ({
             </Tooltip>
             <div className="ml-4 flex-item-fluid" title={title}>
                 <div className="max-w100 participant-text text-ellipsis">{name}</div>
+                {name !== email ? (
+                    <div className="max-w100 text-ellipsis participant-extra-text color-weak text-sm m-0">{email}</div>
+                ) : null}
                 {!!extraText && (
                     <div className="max-w100 text-ellipsis participant-extra-text color-weak text-sm m-0">
                         {extraText}
                     </div>
                 )}
             </div>
+            <Button
+                shape="ghost"
+                size="small"
+                icon
+                ref={anchorRef}
+                onClick={() => {
+                    toggle();
+                }}
+                className="ml-1"
+                title={c('Action').t`More options`}
+            >
+                <Icon name="three-dots-vertical" alt={c('Action').t`More options`} />
+            </Button>
             {displayDropdown && (
                 <ParticipantDropdown
                     anchorRef={anchorRef}
@@ -68,7 +82,7 @@ const Participant = ({
                     onCreateOrEditContact={onCreateOrEditContact}
                 />
             )}
-        </button>
+        </div>
     );
 };
 
