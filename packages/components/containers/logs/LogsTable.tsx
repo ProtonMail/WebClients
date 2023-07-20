@@ -1,9 +1,10 @@
 import { c } from 'ttag';
 
-import { AuthLog, AuthLogStatus } from '@proton/shared/lib/authlog';
+import { AuthLog, AuthLogStatus, ProtectionType } from '@proton/shared/lib/authlog';
+import { PROTON_SENTINEL_NAME } from '@proton/shared/lib/constants';
 import { SETTINGS_LOG_AUTH_STATE, SETTINGS_PROTON_SENTINEL_STATE } from '@proton/shared/lib/interfaces';
 
-import { Alert, Icon, Table, TableBody, TableCell, TableHeader, TableRow, Time } from '../../components';
+import { Alert, Icon, Table, TableBody, TableCell, TableHeader, TableRow, Time, Tooltip } from '../../components';
 
 const { ADVANCED, DISABLE } = SETTINGS_LOG_AUTH_STATE;
 const { ENABLED } = SETTINGS_PROTON_SENTINEL_STATE;
@@ -16,6 +17,34 @@ const getIcon = (status: AuthLogStatus) => {
             return <Icon className="align-text-bottom color-danger" name="cross-circle-filled" />;
     }
     return <Icon className="align-text-bottom color-success" name="checkmark-circle-filled" />;
+};
+
+const getProtectionIcon = () => {
+    return <Icon className="align-text-bottom color-primary" name="shield-filled" />;
+};
+
+type ProtectionProps = {
+    protection?: ProtectionType | null;
+    protectionDesc?: string | null;
+};
+
+const buildProtectionTooltips = () => (
+    <Tooltip title={PROTON_SENTINEL_NAME} openDelay={0} closeDelay={150} longTapDelay={0}>
+        {getProtectionIcon()}
+    </Tooltip>
+);
+
+const getProtection = ({ protection, protectionDesc }: ProtectionProps) => {
+    const protectionTooltip = protection && buildProtectionTooltips();
+    if (protection === ProtectionType.OK) {
+        return protectionTooltip;
+    }
+    return (
+        <>
+            <span className="flex-item-noshrink mr-2">{protectionTooltip}</span>
+            <span className="flex-item-fluid">{protectionDesc || '-'}</span>
+        </>
+    );
 };
 
 interface Props {
@@ -61,43 +90,51 @@ const LogsTable = ({ logs, logAuth, protonSentinel, loading, error }: Props) => 
                 </tr>
             </TableHeader>
             <TableBody loading={loading} colSpan={3}>
-                {logs.map(({ Time: time, AppVersion, Description, IP, Device, ProtectionDesc, Status }, index) => {
-                    const key = index.toString();
+                {logs.map(
+                    (
+                        { Time: time, AppVersion, Description, IP, Device, ProtectionDesc, Protection, Status },
+                        index
+                    ) => {
+                        const key = index.toString();
 
-                    return (
-                        <TableRow key={key}>
-                            <TableCell label={c('Header').t`Event`}>
-                                <div className="inline-flex">
-                                    <span className="flex-item-noshrink mr-2">{getIcon(Status)}</span>
-                                    <span className="flex-item-fluid">{Description}</span>
-                                </div>
-                            </TableCell>
-                            {logAuth === ADVANCED && (
-                                <TableCell label="IP">
-                                    <code>{IP || '-'}</code>
+                        return (
+                            <TableRow key={key}>
+                                <TableCell label={c('Header').t`Event`}>
+                                    <div className="inline-flex">
+                                        <span className="flex-item-noshrink mr-2">{getIcon(Status)}</span>
+                                        <span className="flex-item-fluid">{Description}</span>
+                                    </div>
                                 </TableCell>
-                            )}
-                            {protonSentinel === ENABLED && (
-                                <TableCell label={c('Header').t`Protection`}>
-                                    <code>{ProtectionDesc || '-'}</code>
+                                {logAuth === ADVANCED && (
+                                    <TableCell label="IP">
+                                        <code>{IP || '-'}</code>
+                                    </TableCell>
+                                )}
+                                {protonSentinel === ENABLED && (
+                                    <TableCell label={c('Header').t`Protection`}>
+                                        {getProtection({ protection: Protection, protectionDesc: ProtectionDesc })}
+                                    </TableCell>
+                                )}
+                                {protonSentinel === ENABLED && (
+                                    <TableCell label={c('Header').t`Device`}>
+                                        <span className="flex-item-fluid">{Device || '-'}</span>
+                                    </TableCell>
+                                )}
+                                <TableCell
+                                    label={c('Header').t`App version`}
+                                    className="on-tablet-text-left text-right"
+                                >
+                                    <span className="flex-item-fluid">{AppVersion}</span>
                                 </TableCell>
-                            )}
-                            {protonSentinel === ENABLED && (
-                                <TableCell label={c('Header').t`Device`}>
-                                    <span className="flex-item-fluid">{Device || '-'}</span>
+                                <TableCell label={c('Header').t`Time`} className="on-tablet-text-left text-right">
+                                    <Time key={key} format="PPp">
+                                        {time}
+                                    </Time>
                                 </TableCell>
-                            )}
-                            <TableCell label={c('Header').t`App version`} className="on-tablet-text-left text-right">
-                                <span className="flex-item-fluid">{AppVersion}</span>
-                            </TableCell>
-                            <TableCell label={c('Header').t`Time`} className="on-tablet-text-left text-right">
-                                <Time key={key} format="PPp">
-                                    {time}
-                                </Time>
-                            </TableCell>
-                        </TableRow>
-                    );
-                })}
+                            </TableRow>
+                        );
+                    }
+                )}
             </TableBody>
         </Table>
     );
