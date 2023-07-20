@@ -3415,6 +3415,9 @@
       "Enter the credentials of the email account you want to import from.": [
         "Συμπληρώστε τα διαπιστευτήρια του λογαριασμού email από τον οποίο θέλετε να εισάγετε."
       ],
+      "Enter the device name to confirm removal.": [
+        "Εισαγάγετε το όνομα της συσκευής για να επιβεβαιώσετε την κατάργηση."
+      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Εισάγετε τον κωδικό επαλήθευσης στον οποίο εστάλη ${ destinationText }."
       ],
@@ -3918,8 +3921,8 @@
         "Αυτό θα διαγράψει τον σύνδεσμο και θα καταργήσει την πρόσβαση στο αρχείο ή φάκελο σας για οποιονδήποτε με τον σύνδεσμο.",
         "Αυτό θα διαγράψει τους συνδέσμους και θα καταργήσει την πρόσβαση στα αρχεία ή φακέλους σας για οποιονδήποτε με τους συνδέσμους."
       ],
-      "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on the device won’t be affected.": [
-        "Αυτό θα διαγράψει από ${ DRIVE_APP_NAME } τη συγχρονισμένη συσκευή ${ deviceName }. Τοπικά αρχεία στη συσκευή δε θα επηρεαστούν."
+      "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and stop syncing folders you added to My Computers.": [
+        "Αυτό θα καταργήσει τη συγχρονισμένη συσκευή ${ deviceName } από το ${ DRIVE_APP_NAME } και θα σταματήσει το συγχρονισμό φακέλων που προσθέσατε στο Οι Υπολογιστές μου."
       ],
       "This will replace the existing file with the folder": [
         "Αυτό θα αντικαταστήσει το υπάρχον αρχείο με το φάκελο"
