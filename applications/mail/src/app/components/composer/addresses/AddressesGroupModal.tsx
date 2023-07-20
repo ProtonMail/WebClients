@@ -15,6 +15,7 @@ import {
     generateUID,
 } from '@proton/components';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
+import { ENCRYPTION_PREFERENCES_ERROR_TYPES } from '@proton/shared/lib/mail/encryptionPreferences';
 import { contactToInput } from '@proton/shared/lib/mail/recipient';
 import clsx from '@proton/utils/clsx';
 
@@ -46,12 +47,16 @@ const AddressesGroupModalRow = ({ contact, uid, isChecked, messageSendInfo, onCh
     const icon = sendInfo?.sendIcon;
     const loading = sendInfo?.loading;
     const cannotSend = icon?.fill === STATUS_ICONS_FILLS.FAIL && !loading;
+    const shouldHaveHref =
+        sendInfo?.encryptionPreferenceError !== ENCRYPTION_PREFERENCES_ERROR_TYPES.EMAIL_ADDRESS_ERROR;
 
     return (
         <li className="mb-2">
             <Checkbox id={id} checked={isChecked(contact)} onChange={onChange} />
             <span className="min-w1-4e inline-flex align-middle">
-                {(icon || loading) && <EncryptionStatusIcon loading={loading} {...icon} />}
+                {(icon || loading) && (
+                    <EncryptionStatusIcon loading={loading} {...icon} shouldHaveHref={shouldHaveHref} />
+                )}
             </span>
             <Label htmlFor={id} className={clsx(['pt-0 pl-2', cannotSend && 'color-danger'])}>
                 {contactToInput(contact)}
