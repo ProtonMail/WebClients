@@ -29,15 +29,15 @@ export const itemCreationIntent = createOptimisticAction(
 
 export const itemCreationFailure = createOptimisticAction(
     'item creation failure',
-    (payload: { optimisticId: string; shareId: string; error: unknown }) =>
+    (payload: { optimisticId: string; shareId: string }, error: unknown) =>
         pipe(
             withCacheBlock,
             withNotification({
                 type: 'error',
                 text: c('Error').t`Item creation failed`,
-                error: payload.error,
+                error,
             })
-        )({ payload }),
+        )({ payload, error }),
     ({ payload }) => getItemActionId(payload)
 );
 
