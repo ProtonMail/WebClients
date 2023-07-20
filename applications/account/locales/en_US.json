@@ -4,10 +4,41 @@
     "language": "en_US"
   },
   "contexts": {
+    "familyOffer_2023:Action": {
+      "Invite member to your family": [
+        "Invite a user"
+      ]
+    },
     "Info": {
       "Invite successfully sent": [
         "Invite sent",
         "Invites sent"
+      ],
+      "The link to report that that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue.": [
+        "The link to report that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue."
+      ],
+      "You can enable authentication sign in to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
+        "You can enable authentication logs to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts."
+      ]
+    },
+    "Link": {
+      "Paypal without credit card": [
+        "PayPal without credit card"
+      ]
+    },
+    "Subscription change warning": {
+      "Just sign in to your Apple App Store account, then press ${ subscriptions }.": [
+        "Just sign in to your Apple App Store account, then select ${ subscriptions }."
+      ]
+    },
+    "Success": {
+      "If you entered a valid recovery phone we will send you an sms with your usernames in the next minute.": [
+        "You will receive your username via SMS within a minute if you entered a valid recovery phone number."
+      ]
+    },
+    "vpn_2step: tooltip": {
+      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, Double hop, and more.": [
+        "Access to Secure Core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more."
       ]
     }
   }

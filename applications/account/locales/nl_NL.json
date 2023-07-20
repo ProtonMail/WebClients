@@ -434,9 +434,6 @@
       "Generate token": [
         "Sleutel genereren"
       ],
-      "Get ${ discountPercentage } off with 24 months": [
-        "Krijg ${ discountPercentage } korting met 24 maanden"
-      ],
       "Get ${ vpnPlus }": [
         "Krijg ${ vpnPlus }"
       ],
@@ -2795,6 +2792,9 @@
       "${ name } deletion failed": [
         "Verwijdering van ${ name } is mislukt"
       ],
+      "${ name } failed to move to block list": [
+        "${ name } is niet verplaatst naar de blokkeringslijst."
+      ],
       "${ name } failed to move to spam list": [
         "${ name } niet verplaatst naar spamlijst"
       ],
@@ -4291,8 +4291,17 @@
       "Add a custom filter to automatically perform certain actions, like labeling or archiving messages.": [
         "Voeg een aangepaste filter toe om bepaalde acties, zoals berichten labelen of archiveren, automatisch uit te voeren."
       ],
+      "Allow:": [
+        "Geautoriseerde adressen:"
+      ],
+      "Block:": [
+        "Geblokkeerde adressen:"
+      ],
       "Search list": [
         "Lijst doorzoeken"
+      ],
+      "Spam:": [
+        "Spam:"
       ]
     },
     "Font Face Default": {
@@ -4303,6 +4312,9 @@
     "Font face option": {
       "System default": [
         "Systeem standaard"
+      ],
+      "Theme font": [
+        "Thema lettertype"
       ]
     },
     "Font Size Default": {
@@ -4339,6 +4351,14 @@
       ],
       "(during your first month)": [
         "(gedurende uw eerste maand)"
+      ]
+    },
+    "Get started checklist instructions": {
+      "${ MAIL_APP_NAME } app": [
+        "${ MAIL_APP_NAME }-app"
+      ],
+      "Get the App": [
+        "Download de app"
       ]
     },
     "Gmail forwarding": {
@@ -4395,11 +4415,11 @@
       "Best deal": [
         "Beste deal"
       ],
+      "Create your account": [
+        "Maak uw account aan"
+      ],
       "Device": [
         "Apparaat"
-      ],
-      "Enter your email address": [
-        "Voer uw e-mailadres in"
       ],
       "Event": [
         "Gebeurtenis"
@@ -4430,9 +4450,6 @@
       ],
       "Protection": [
         "Bescherming"
-      ],
-      "Select your preferred method of payment": [
-        "Selecteer uw gewenste betaalmethode"
       ],
       "Select your pricing plan": [
         "Selecteer uw abonnement"
@@ -5887,9 +5904,6 @@
       "Only you can see the labels.": [
         "Alleen u kunt de labels zien."
       ],
-      "Open source": [
-        "Open-source"
-      ],
       "Or select a particular server:": [
         "Of selecteer een specifieke server:"
       ],
@@ -6085,9 +6099,6 @@
       "Save your password somewhere safe. Click on icon to confirm that you have typed your password correctly.": [
         "Bewaar uw wachtwoord op een veilige plaats. Klik op het pictogram om te controleren of u het wachtwoord correct hebt ingevoerd."
       ],
-      "Saving your password": [
-        "Bewaar uw wachtwoord"
-      ],
       "Scan QR code instead": [
         "Scan QR-code in plaats daarvan"
       ],
@@ -6208,9 +6219,6 @@
       ],
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
         "Het ${ boldDataLocked } bericht wordt niet meer weergegeven, maar u kan nog steeds uw gegevens ontgrendelen via ${ encryptionAndKeysLink }."
-      ],
-      "The ${ planName } plan includes:": [
-        "Het ${ planName }-abonnement omvat:"
       ],
       "The calendar will be removed from your account.": [
         "De agenda zal verwijderd worden van uw account."
@@ -6341,9 +6349,6 @@
       "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
         "Deze wizard zal Tweestapsverificatie (2FA) inschakelen voor uw ${ BRAND_NAME }-account. Tweestapsverificatie zal uw ${ BRAND_NAME_TWO }-account veiliger maken en daarom raden we aan om het in te schakelen."
       ],
-      "To ${ planName }": [
-        "Naar ${ planName }"
-      ],
       "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
         "Om verlies van data te voorkomen, verwijder alleen als u weet wat u doet of een kopie hebt geëxporteerd."
       ],
@@ -6370,6 +6375,9 @@
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Maak eerst een agenda aan in ${ CALENDAR_APP_NAME } om afspraken te importeren. Dit is waar de afspraken tevoorschijn komen na het importeren."
+      ],
+      "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
+        "Om de laatste ontwikkeling bij ${ BRAND_NAME }-producten te kunnen bijhouden, kunt u zich abonneren op onze verschillende e-mails en van tijd tot tijd ${ blogLink }."
       ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "Om verder te gaan, selecteer een herstelmethode voor uw account zodat we het verzoek kunnen verifiëren."
@@ -6400,9 +6408,6 @@
       ],
       "Total VPN connections": [
         "Totale VPN-verbindingen"
-      ],
-      "Try ${ upsellPlanName } risk free": [
-        "Probeer ${ upsellPlanName } zonder risico"
       ],
       "two-factor authentication (2FA)": [
         "tweestapsverificatie (2FA)"
@@ -6539,9 +6544,6 @@
       "We securely store recovery information on your trusted device to prevent you from losing your data": [
         "Wij slaan herstelinformatie veilig op uw vertrouwde apparaat op om te voorkomen dat u uw gegevens verliest"
       ],
-      "We use 3-D Secure to protect your payments.": [
-        "We gebruiken 3-D Secure om uw betalingen te beschermen."
-      ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "We verwijzen u naar PayPal in een nieuw browsertabblad om de transactie te voltooien. Als u een pop-up blocker gebruikt, schakel deze dan uit alvorens door te gaan."
       ],
@@ -6559,9 +6561,6 @@
       ],
       "Week and month views only apply to desktop.": [
         "Week en maand weergaven zijn alleen van toepassing op bureaublad."
-      ],
-      "Welcome": [
-        "Welkom"
       ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "We sturen een resetcode naar het e-mailadres dat u hebt opgegeven voor het herstel van uw account."
@@ -6720,9 +6719,6 @@
       ],
       "You still need to reply to invitations for the host to see your response.": [
         "U moet nog steeds reageren op uitnodigingen om de host uw reactie te laten zien."
-      ],
-      "You will be redirected to the VPN download page": [
-        "U wordt doorgestuurd naar de VPN-downloadpagina"
       ],
       "You will lose access to ${ vpnPlanNameShort } servers and features on this date.": [
         "U verliest toegang tot ${ vpnPlanNameShort }-servers en functies op deze datum."
@@ -7286,6 +7282,9 @@
       "All-day event notifications": [
         "De hele dag meldingen van afspraken"
       ],
+      "Allow": [
+        "Geautoriseerde adressen"
+      ],
       "Allow notifications by email": [
         "Meldingen van e-mail toestaan"
       ],
@@ -7358,6 +7357,9 @@
       "Billing cycle": [
         "Facturatieperiode"
       ],
+      "Block": [
+        "Geblokkeerd"
+      ],
       "Block email tracking": [
         "Blokkeer e-mailtracking"
       ],
@@ -7373,6 +7375,12 @@
       "Browser version": [
         "Browserversie"
       ],
+      "BTC address": [
+        "BTC adres"
+      ],
+      "BTC amount": [
+        "BTC bedrag"
+      ],
       "Calendar": [
         "Agenda"
       ],
@@ -7381,9 +7389,6 @@
       ],
       "Card holder": [
         "Kaarthouder"
-      ],
-      "Card information": [
-        "Kaartinformatie"
       ],
       "Card number": [
         "Kaartnummer"
@@ -7595,6 +7600,9 @@
       "Event notifications": [
         "Afspraakmeldingen"
       ],
+      "Expiration (${ patternExpiration })": [
+        "Verloopdatum (${ patternExpiration })"
+      ],
       "Expiration date": [
         "Vervaldatum"
       ],
@@ -7609,6 +7617,12 @@
       ],
       "Folder location": [
         "Map locatie"
+      ],
+      "Font family": [
+        "Lettertype familie"
+      ],
+      "Font size": [
+        "Lettertypegrootte"
       ],
       "From: ${ from }": [
         "Van: ${ from }"
@@ -7888,6 +7902,9 @@
       ],
       "Security code": [
         "Beveiligingscode"
+      ],
+      "Security code (${ codeName })": [
+        "Beveiligingscode (${ codeName })"
       ],
       "Select your country": [
         "Selecteer uw land"
@@ -8244,6 +8261,9 @@
       "Common sign up issues": [
         "Problemen met algemene registratie"
       ],
+      "create a ticket": [
+        "een ticket aanmaken"
+      ],
       "Create account": [
         "Account aanmaken"
       ],
@@ -8318,6 +8338,9 @@
       ],
       "View guide": [
         "Bekijk gids"
+      ],
+      "visit our blog": [
+        "onze blog bezoeken"
       ],
       "What is the difference between UDP and TCP protocols?": [
         "Wat is het verschil tussen UDP en TCP-protocollen?"
@@ -8613,6 +8636,9 @@
       "All": [
         "Alles"
       ],
+      "Allow": [
+        "Geautoriseerde adressen"
+      ],
       "Back": [
         "Terug"
       ],
@@ -8624,6 +8650,9 @@
       ],
       "Back to inbox": [
         "Terug naar postvak in"
+      ],
+      "Block": [
+        "Geblokkeerde adressen"
       ],
       "Calendar": [
         "Agenda"
@@ -8763,6 +8792,10 @@
       "${ n } folder and label": [
         "${ n } map en label",
         "${ n } mappen en labels"
+      ],
+      "${ n } hide-my-email alias": [
+        "${ n } hide-my-email-alias",
+        "${ n } hide-my-email-aliassen"
       ],
       "${ n } label": [
         "${ n } label",
@@ -9851,6 +9884,78 @@
         "U"
       ]
     },
+    "pass_signup_2023: Action": {
+      "Continue": [
+        "Doorgaan"
+      ],
+      "Start using ${ appName }": [
+        "Begin met ${ appName }"
+      ]
+    },
+    "pass_signup_2023: Feature": {
+      "Open source": [
+        "Open-source"
+      ],
+      "Protected by Swiss privacy laws": [
+        "Beschermd door Zwitserse privacywetten"
+      ],
+      "Swiss based": [
+        "Gevestigd in Zwitserland"
+      ]
+    },
+    "pass_signup_2023: Header": {
+      "Continue with your ${ BRAND_NAME } account": [
+        "Ga verder met uw ${ BRAND_NAME }-account"
+      ],
+      "Recommended": [
+        "Aanbevolen"
+      ],
+      "Upgrade your plan": [
+        "Upgrade uw abonnement"
+      ]
+    },
+    "pass_signup_2023: Info": {
+      "+ ${ relativePrice } per month": [
+        "+ ${ relativePrice } per maand"
+      ],
+      "By continuing, you agree to our ${ termsAndConditions }": [
+        "Door verder te gaan gaat u akkoord met onze ${ termsAndConditions }"
+      ],
+      "Creating your account": [
+        "Account aan het aanmaken"
+      ],
+      "Free forever": [
+        "Voor altijd gratis"
+      ],
+      "Get ${ appName } for ${ browserName }": [
+        "Download ${ appName } voor ${ browserName }"
+      ],
+      "Install ${ PASS_APP_NAME }": [
+        "Installeer ${ PASS_APP_NAME }"
+      ],
+      "Install app": [
+        "Installeer de app"
+      ],
+      "Protected by Swiss privacy laws": [
+        "Beschermd door Zwitserse privacywetten"
+      ],
+      "Verifying your payment": [
+        "Verifiëren van uw betaling"
+      ],
+      "Welcome to ${ plan }": [
+        "Welkom bij ${ plan }"
+      ]
+    },
+    "pass_signup_2023: Onboarding": {
+      "Welcome to ${ PASS_APP_NAME }": [
+        "Welkom bij ${ PASS_APP_NAME }"
+      ]
+    },
+    "pass_signup_2023: Title": {
+      "Create your ${ BRAND_NAME } account": [
+        "Maak uw ${ BRAND_NAME }-account aan"
+      ]
+    },
     "Payment method option": {
       "Credit/debit card": [
         "Krediet/debetkaart"
@@ -10279,11 +10384,6 @@
     "Shared calendar label input placeholder": {
       "Add label": [
         "Label toevoegen"
-      ]
-    },
-    "Shared calendar; Info about calendar owner": {
-      "Created by ${ ownerName }": [
-        "Aangemaakt door ${ ownerName }"
       ]
     },
     "Signature verification error when joining calendar": {
@@ -10753,9 +10853,6 @@
     "Subscription saving": {
       "Save": [
         "Bespaar"
-      ],
-      "Save ${ discountPercentage }%": [
-        "Bespaar ${ discountPercentage }%"
       ]
     },
     "Subscription status": {
@@ -11119,6 +11216,9 @@
       ],
       "Import": [
         "Importeren"
+      ],
+      "List": [
+        "Lijst"
       ],
       "Marked as": [
         "Gemarkeerd als"
@@ -11765,6 +11865,9 @@
       ],
       "PayPal verification failed": [
         "PayPal verificatie mislukt"
+      ],
+      "Personalise your e-mail footer": [
+        "Personaliseer de voettekst van uw e-mail"
       ],
       "Phone": [
         "Telefoon"

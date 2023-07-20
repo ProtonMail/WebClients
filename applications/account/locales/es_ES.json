@@ -434,9 +434,6 @@
       "Generate token": [
         "Generar token"
       ],
-      "Get ${ discountPercentage } off with 24 months": [
-        "Obtener ${ discountPercentage } de descuento con 24 meses"
-      ],
       "Get ${ vpnPlus }": [
         "Obtener ${ vpnPlus }"
       ],
@@ -939,7 +936,7 @@
         "Utilizar código de recuperación"
       ],
       "Use your current email instead": [
-        "Usar en cambio tu dirección de correo actual"
+        "Utiliza tu correo electrónico actual en su lugar"
       ],
       "Use “${ label }” setting": [
         "Utilizar la configuración de \"${ label }\""
@@ -2739,7 +2736,7 @@
         "Logo de Proton Mail y un signo más"
       ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
-        "Separa diferentes aspectos de tu vida con múltiples direcciones de correo y desbloquea funciones premium cuando actualizas tu plan."
+        "Separa diferentes aspectos de tu vida con múltiples direcciones de correo y desbloquea funciones premium al actualizar tu plan."
       ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "El archivo debe tener un tamaño máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } y tener\nhasta ${ MAX_IMPORT_CONTACTS_STRING } contacto. Si tu archivo es más grande, divídelo en archivos más pequeños.",
@@ -3978,7 +3975,7 @@
         "Debes configurar un dominio personalizado antes de crear un nuevo usuario."
       ],
       "You will lose access to all premium features and storage space included with ${ BRAND_NAME } Family.": [
-        "Perderás acceso a todas las funciones prémium y al espacio de almacenamiento que ofrece ${ BRAND_NAME } Family."
+        "Perderás el acceso a todas las funciones prémium y al espacio de almacenamiento que ofrece ${ BRAND_NAME } Family."
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "Has recibido una invitación para que vincules tu cuenta de ${ BRAND_NAME } a este plan grupal y disfrutes así de todas las funciones prémium de ${ BRAND_NAME_TWO }."
@@ -4420,8 +4417,8 @@
       "(1-2 emails per month)": [
         "(1-2 correos al mes)"
       ],
-      "(2-4 per year)": [
-        "(2-4 al año)"
+      "(2-4 emails per year)": [
+        "(2 a 4 correos al año)"
       ],
       "(4-6 emails per year)": [
         "(4-6 correos al año)"
@@ -4522,11 +4519,14 @@
       "Best deal": [
         "Mejor oferta"
       ],
+      "Checkout": [
+        "Pago"
+      ],
+      "Create your account": [
+        "Crea tu cuenta"
+      ],
       "Device": [
         "Dispositivo"
-      ],
-      "Enter your email address": [
-        "Introduce tu dirección de correo electrónico"
       ],
       "Event": [
         "Evento"
@@ -4557,9 +4557,6 @@
       ],
       "Protection": [
         "Protección"
-      ],
-      "Select your preferred method of payment": [
-        "Selecciona tu método de pago preferido"
       ],
       "Select your pricing plan": [
         "Selecciona el precio del plan"
@@ -5030,6 +5027,9 @@
       ],
       "${ current } of ${ total }": [
         "${ current } de ${ total }"
+      ],
+      "${ discountPercentage } forever": [
+        "${ discountPercentage } para siempre"
       ],
       "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
         "${ DRIVE_APP_NAME } no conservará versiones anteriores de tus archivos."
@@ -6239,9 +6239,6 @@
       "Save your password somewhere safe. Click on icon to confirm that you have typed your password correctly.": [
         "Guarda tu contraseña en un lugar seguro. Haz clic en el icono para confirmar que has escrito correctamente tu contraseña."
       ],
-      "Saving your password": [
-        "Guardando tu contraseña"
-      ],
       "Scan QR code instead": [
         "Escanear código QR en su lugar"
       ],
@@ -6261,7 +6258,7 @@
         "Selecciona los calendarios que deseas importar. Se creará un calendario para cada calendario importado de acuerdo con el número de calendarios disponibles en tu plan."
       ],
       "Send emails to encourage your members to protect their accounts with 2FA.": [
-        "Envia correos electrónicos para animar tus miembros a proteger sus cuentas con 2FA."
+        "Envia correos electrónicos para animar tus miembros a proteger sus cuentas con doble autenticación."
       ],
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "Enviado con el correo electrónico seguro de <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
@@ -6306,7 +6303,7 @@
         "El envío por SMTP permite que servicios o dispositivos de terceros envíen correos electrónicos a través de ${ MAIL_APP_NAME } para tus direcciones de dominio personalizadas. Para solicitar acceso, ${ createTicket } describiendo tus casos de uso, cuáles dominios personalizados te gustaría utilizar y los volúmenes de correo electrónico esperados por hora y por día."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To use this feature, start by generating a new token.": [
-        "El envío por SMTP permite a servicios de terceros o dispositivos enviar correos electrónicos a través de ${ MAIL_APP_NAME } para tus direcciones de dominio personalizadas. Para utilizar esta función, comienca generando un token nuevo."
+        "El envío por SMTP permite que servicios de terceros o dispositivos envíen correos electrónicos a través de ${ MAIL_APP_NAME } para tus direcciones de dominio personalizadas. Para utilizar esta función, genera primero un nuevo token."
       ],
       "Some keys successfully reactivated": [
         "Se han reactivado algunas claves."
@@ -6371,9 +6368,6 @@
       ],
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
         "El mensaje ${ boldDataLocked } ya no se mostrará, pero podrás seguir desbloqueando tus datos en ${ encryptionAndKeysLink }."
-      ],
-      "The ${ planName } plan includes:": [
-        "El plan ${ planName } incluye:"
       ],
       "The calendar will be removed from your account.": [
         "El calendario se eliminará de tu cuenta."
@@ -6507,9 +6501,6 @@
       "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
         "Este asistente habilitará la autenticación de dos factores (2FA) en tu cuenta de ${ BRAND_NAME }. La autenticación de dos factores hará que tu cuenta de ${ BRAND_NAME_TWO } sea más segura, por lo que te recomendamos habilitarla."
       ],
-      "To ${ planName }": [
-        "Para ${ planName }"
-      ],
       "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
         "Para evitar la pérdida de datos, solo bórralo si sabes qué estás haciendo o si has exportado una copia."
       ],
@@ -6572,9 +6563,6 @@
       ],
       "Total VPN connections": [
         "Conexiones VPN totales"
-      ],
-      "Try ${ upsellPlanName } risk free": [
-        "Prueba ${ upsellPlanName } sin riesgos"
       ],
       "two-factor authentication (2FA)": [
         "autenticación de dos factores (2FA)"
@@ -6711,7 +6699,7 @@
       "We securely store recovery information on your trusted device to prevent you from losing your data": [
         "Almacenamos de manera segura la información de recuperación en tu dispositivo de confianza para evitar que pierdas tus datos."
       ],
-      "We use 3-D Secure to protect your payments.": [
+      "We use 3-D Secure to protect your payments": [
         "Se utiliza 3-D Secure para proteger tus pagos."
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
@@ -6731,9 +6719,6 @@
       ],
       "Week and month views only apply to desktop.": [
         "Las vistas semanales y mensuales solo se aplican al escritorio."
-      ],
-      "Welcome": [
-        "Bienvenido"
       ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "Te enviaremos un código de restablecimiento a la dirección de correo electrónico que nos has proporcionado para recuperar la cuenta."
@@ -6893,9 +6878,6 @@
       "You still need to reply to invitations for the host to see your response.": [
         "Todavía tienes que responder a las invitaciones para que el anfitrión vea tu respuesta."
       ],
-      "You will be redirected to the VPN download page": [
-        "Te redirigiremos a la página de descarga de la VPN"
-      ],
       "You will lose access to ${ vpnPlanNameShort } servers and features on this date.": [
         "Perderás el acceso a los servidores y funciones de ${ vpnPlanNameShort } en esta fecha."
       ],
@@ -6971,6 +6953,9 @@
       ],
       "Your import will not be processed.": [
         "No se procesará tu importación."
+      ],
+      "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
+        "Tu información está segura con nosotros. Solo te contactaremos cuando sea necesario para prestar nuestros servicios."
       ],
       "Your login information will not be saved after the import is completed.": [
         "La información de inicio de sesión no se guardará una vez finalizada la importación."
@@ -7533,6 +7518,9 @@
       "Awarded": [
         "Galardonado"
       ],
+      "Billing address": [
+        "Dirección de facturación"
+      ],
       "Billing cycle": [
         "Ciclo de facturación"
       ],
@@ -7566,11 +7554,11 @@
       "Calendars": [
         "Calendarios"
       ],
+      "Card details": [
+        "Detalles de la tarjeta"
+      ],
       "Card holder": [
         "Titular de la tarjeta"
-      ],
-      "Card information": [
-        "Información sobre la tarjeta"
       ],
       "Card number": [
         "Número de tarjeta"
@@ -8215,10 +8203,10 @@
         "URL"
       ],
       "Use a recovery email address": [
-        "Usar una dirección de correo electrónico de recuperación"
+        "Utilizar una dirección de correo electrónico de recuperación"
       ],
       "Use a recovery phone number": [
-        "Usar un número de teléfono de recuperación"
+        "Utilizar un número de teléfono de recuperación"
       ],
       "Use folder colors": [
         "Utilizar colores de carpetas"
@@ -9199,6 +9187,9 @@
       "Split tunneling (Android and Windows)": [
         "Túnel dividido (Android y Windows)"
       ],
+      "Start protecting yourself online in 2 easy steps": [
+        "Comienza a protegerte en línea en 2 sencillos pasos."
+      ],
       "Strict no-logs policy": [
         "Política estricta de cero registros"
       ],
@@ -9277,7 +9268,7 @@
         "El espacio de almacenamiento es compartido entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } y ${ DRIVE_APP_NAME }."
       ],
       "Use your own custom email domain address, e.g., you@yourname.com": [
-        "Utiliza tu propia dirección de correo personalizada, p. ej. tú@tunombre.com"
+        "Utiliza tu propia dirección de correo personalizada, p. ej. tu@tunombre.com"
       ]
     },
     "new_plans: heading": {
@@ -9506,7 +9497,7 @@
         "Crea hasta ${ n } calendarios o añade calendarios de amigos, familiares, compañeros y organizaciones."
       ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
-        "Crea hasta ${ n } direcciones de correo/alias que puedes asignarlos a tus familiares. Utilízalas para las identidades en línea, p.ej., JuanCompras@${ domain } para cuentas de compras."
+        "Crea hasta ${ n } direcciones de correo o alias que puedes asignarlos a tus familiares. Utilízalos para las identidades en línea, p. ej., JuanCompras@${ domain } para cuentas de compras."
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Te defiende de ataques que amenazan la privacidad de la VPN dirigiendo el tráfico de internet por varios servidores."
@@ -10215,7 +10206,7 @@
         "Creando tu cuenta"
       ],
       "Discover ${ PASS_APP_NAME },${ br }our new encrypted password manager": [
-        "Descubre ${ PASS_APP_NAME },${ br }nuestro nuevo gestor encriptado de contraseñas."
+        "Descubre ${ PASS_APP_NAME },${ br }nuestro nuevo gestor encriptado de contraseñas"
       ],
       "Download and install the relevant apps and extensions to start using ${ PASS_APP_NAME }": [
         "Descarga e instala las aplicaciones relevantes y tus extensiones para poder comenzar a utilizar ${ PASS_APP_NAME }"
@@ -10791,8 +10782,8 @@
       ]
     },
     "Shared calendar; Info about calendar owner": {
-      "Created by ${ ownerName }": [
-        "Creado por ${ ownerName }"
+      "Shared by ${ ownerName }": [
+        "Compartido por ${ ownerName }"
       ]
     },
     "Signature verification error when joining calendar": {
@@ -11053,7 +11044,7 @@
         "Accede desde cualquier lugar al contenido de servicios de transmisión como Netflix, Disney+ o Prime Video."
       ],
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
-        "Todos nuestros servicios premium al máximo: 100 direcciones de correo electrónico, compatibilidad con 10 dominios personalizados, alias ilimitados de Hide-my-email, posibilidad de compartir calendarios y archivos cifrados, almacenamiento cifrado en la nube, etc."
+        "Todos nuestros servicios premium: 100 direcciones de correo electrónico, compatibilidad con 10 dominios personalizados, alias ilimitados de Hide-my-email, posibilidad de compartir calendarios y archivos cifrados, almacenamiento cifrado en la nube, etc."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Incluye compatibilidad con 1 dominio de correo electrónico personalizado, 10 direcciones de correo electrónico, 10 alias de Hide-my-email, posibilidad de compartir calendario, etc."
@@ -11222,7 +11213,7 @@
         "Suscripciones"
       ],
       "Your plan was purchased using an Android app. So to make changes to your plan or update your payment details, you’ll need to go to the Google Play Store.": [
-        "Has comprado tu plan utilizando una app de Android. Para realizar cambios a tu plan o actualizar tus datos de pago necesitarás conectarte a Google Play Store."
+        "Has comprado tu plan utilizando una app de Android. Para realizar cambios en tu plan o actualizar tus datos de pago necesitarás conectarte a Google Play Store."
       ],
       "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
         "Has comprado tu plan utilizando una app de iOS. Para realizar cambios a tu plan o actualizar tus datos de pago necesitarás conectarte a la App Store de Apple."
@@ -11262,9 +11253,6 @@
     "Subscription saving": {
       "Save": [
         "Ahorra"
-      ],
-      "Save ${ discountPercentage }%": [
-        "Ahorra un ${ discountPercentage }%"
       ]
     },
     "Subscription status": {
@@ -12443,7 +12431,7 @@
       "Signed in to member account": [
         "Sesión Iniciada en la cuenta de usuario"
       ],
-      "SMTP Submission": [
+      "SMTP submission": [
         "Envío SMTP"
       ],
       "Sort folders alphabetically": [
@@ -12968,6 +12956,69 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } en ${ numberOfCountries } país",
         "${ numberOfServers } en ${ numberOfCountries } países"
+      ]
+    },
+    "vpn_2step: billing": {
+      "${ billedText }, renews on ${ formattedEndTime }": [
+        "${ billedText }, se renueva el ${ formattedEndTime }"
+      ],
+      "Billed every 15 months": [
+        "Facturado cada 15 meses"
+      ],
+      "Billed every 2 years": [
+        "Facturado cada 2 años"
+      ],
+      "Billed every 30 months": [
+        "Facturado cada 30 meses"
+      ],
+      "Billed monthly": [
+        "Facturado mensualmente"
+      ],
+      "Billed yearly": [
+        "Facturado anualmente"
+      ]
+    },
+    "vpn_2step: discount": {
+      "1-year": [
+        "1 año"
+      ],
+      "2-year": [
+        "2 años"
+      ],
+      "Get ${ discount } off with a ${ billingCycle } subscription": [
+        "Obtén ${ discount } de descuento con una suscripción de ${ billingCycle }."
+      ],
+      "monthly": [
+        "mensualmente"
+      ]
+    },
+    "vpn_2step: feature": {
+      "Advanced VPN customizations": [
+        "Personalizaciones VPN avanzadas"
+      ],
+      "No ads": [
+        "Sin anuncios"
+      ]
+    },
+    "vpn_2step: info": {
+      "${ n } month": [
+        "${ n } mes",
+        "${ n } meses"
+      ],
+      "${ n } year": [
+        "${ n } año",
+        "${ n } años"
+      ],
+      "Try ${ upsellPlanName } risk-free": [
+        "Prueba ${ upsellPlanName } sin riesgos"
+      ],
+      "Your ${ selected } plan": [
+        "Tu plan ${ selected }"
+      ]
+    },
+    "vpn_2step: tooltip": {
+      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, Double hop, and more.": [
+        "Acceso a servidores Secure Core, descargas rápidas P2P/BitTorrent, Tor sobre VPN, Double hop y más."
       ]
     },
     "Warning": {
