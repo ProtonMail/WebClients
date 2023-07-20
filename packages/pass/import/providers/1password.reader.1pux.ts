@@ -6,7 +6,7 @@ import { extractFirst } from '@proton/pass/utils/array';
 import { truthy } from '@proton/pass/utils/fp';
 import { logger } from '@proton/pass/utils/logger';
 
-import { ImportReaderError } from '../helpers/reader.error';
+import { ImportProviderError } from '../helpers/error';
 import { getImportedVaultName, importCreditCardItem, importLoginItem, importNoteItem } from '../helpers/transformers';
 import type { ImportPayload, ImportVault } from '../types';
 import type {
@@ -254,7 +254,6 @@ export const read1Password1PuxData = async (data: ArrayBuffer): Promise<ImportPa
         return { vaults, ignored, warnings: [] };
     } catch (e) {
         logger.warn('[Importer::1Password]', e);
-        const errorDetail = e instanceof ImportReaderError ? e.message : '';
-        throw new ImportReaderError(c('Error').t`1Password export file could not be parsed. ${errorDetail}`);
+        throw new ImportProviderError('1Password', e);
     }
 };
