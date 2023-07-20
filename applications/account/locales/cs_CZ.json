@@ -434,9 +434,6 @@
       "Generate token": [
         "Vygenerovat token"
       ],
-      "Get ${ discountPercentage } off with 24 months": [
-        "Získejte ${ discountPercentage } slevu s 24 měsíci"
-      ],
       "Get ${ vpnPlus }": [
         "Získejte ${ vpnPlus }"
       ],
@@ -2997,6 +2994,11 @@
         "Přihlásili jste se znovu k ${ categoriesJsx } e-mailům."
       ]
     },
+    "Email Unsubscribe Categories": {
+      "${ allCategoryTitlesExceptTheLastOne } and ${ lastCategoryTitle }": [
+        "${ allCategoryTitlesExceptTheLastOne } a ${ lastCategoryTitle }"
+      ]
+    },
     "Enabled 2FA": {
       "2FA": [
         "2FA"
@@ -4455,6 +4457,12 @@
       "(1-2 emails per month)": [
         "(1-2 e-maily měsíčně)"
       ],
+      "(2-4 emails per year)": [
+        "(2-4 e-maily za rok)"
+      ],
+      "(4-6 emails per year)": [
+        "(4-6 e-mailů za rok)"
+      ],
       "(during your first month)": [
         "(během prvního měsíce)"
       ]
@@ -4530,11 +4538,11 @@
       "Best deal": [
         "Nejlepší nabídka"
       ],
+      "Create your account": [
+        "Vytvořte si účet"
+      ],
       "Device": [
         "Zařízení"
-      ],
-      "Enter your email address": [
-        "Zadejte vaši e-mailovou adresu"
       ],
       "Event": [
         "Událost"
@@ -4565,9 +4573,6 @@
       ],
       "Protection": [
         "Ochrana"
-      ],
-      "Select your preferred method of payment": [
-        "Vyberte preferovaný způsob platby"
       ],
       "Select your pricing plan": [
         "Vyberte si tarif"
@@ -5058,6 +5063,9 @@
       ],
       "${ current } of ${ total }": [
         "${ current } z ${ total }"
+      ],
+      "${ discountPercentage } forever": [
+        "${ discountPercentage } navždy"
       ],
       "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
         "${ DRIVE_APP_NAME } již nebude uchovávat předchozí verze vašich souborů."
@@ -6316,9 +6324,6 @@
       "Save your password somewhere safe. Click on icon to confirm that you have typed your password correctly.": [
         "Uložte si heslo na bezpečné místo. Kliknutím na ikonu potvrďte, že jste heslo zadali správně."
       ],
-      "Saving your password": [
-        "Uložení hesla"
-      ],
       "Scan QR code instead": [
         "Namísto toho naskenujte QR kód"
       ],
@@ -6444,9 +6449,6 @@
       ],
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
         "Zpráva ${ boldDataLocked } se již nebude zobrazovat, ale stále můžete svá data odemknout pomocí ${ encryptionAndKeysLink }."
-      ],
-      "The ${ planName } plan includes:": [
-        "Tarif ${ planName } zahrnuje:"
       ],
       "The calendar will be removed from your account.": [
         "Kalendář bude odstraněn z vašeho účtu."
@@ -6586,9 +6588,6 @@
       "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
         "Tento průvodce zapne dvoufázové ověřování (2FA) na vašem ${ BRAND_NAME } účtu. Doporučujeme 2FA zapnout, zajistí vám bezpečnější ${ BRAND_NAME_TWO } účet."
       ],
-      "To ${ planName }": [
-        "Na ${ planName }"
-      ],
       "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
         "Abyste předešli ztrátě dat, klíč smažte pouze v případě, že víte, co děláte, nebo pokud máte klíč zálohovaný."
       ],
@@ -6651,9 +6650,6 @@
       ],
       "Total VPN connections": [
         "Celkem VPN připojení"
-      ],
-      "Try ${ upsellPlanName } risk free": [
-        "Zkusit ${ upsellPlanName } bez rizika"
       ],
       "two-factor authentication (2FA)": [
         "dvoufázové ověření (2FA)"
@@ -6790,8 +6786,8 @@
       "We securely store recovery information on your trusted device to prevent you from losing your data": [
         "Abyste o svá data nepřišli, bezpečně ukládáme informace pro obnovení do vašeho důvěryhodného zařízení"
       ],
-      "We use 3-D Secure to protect your payments.": [
-        "K zabezpečení Vašich plateb používáme 3-D Secure."
+      "We use 3-D Secure to protect your payments": [
+        "K zabezpečení vašich plateb používáme 3-D Secure"
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Pro dokončení transakce Vás přesměrujeme na váš PayPal účet v nové záložce prohlížeče. Pokud používáte blokování vyskakovacích oken, pro pokračování je prosím vypněte."
@@ -6810,9 +6806,6 @@
       ],
       "Week and month views only apply to desktop.": [
         "Zobrazení týdne a měsíce platí pouze pro stolní počítače."
-      ],
-      "Welcome": [
-        "Vítejte"
       ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "Na zadanou e-mailovou adresu Vám zašleme kód pro obnovení účtu."
@@ -6982,9 +6975,6 @@
       "You still need to reply to invitations for the host to see your response.": [
         "Aby host viděl vaši odpověď, musíte stále odpovídat na pozvánky."
       ],
-      "You will be redirected to the VPN download page": [
-        "Budete přesměrováni na stránku stažení VPN"
-      ],
       "You will lose access to ${ vpnPlanNameShort } servers and features on this date.": [
         "K tomuto datu ztratíte přístup k serverům a funkcím ${ vpnPlanNameShort }."
       ],
@@ -7062,6 +7052,9 @@
       ],
       "Your import will not be processed.": [
         "Váš import nebude zpracován."
+      ],
+      "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
+        "Vaše informace jsou u nás v bezpečí. Budeme vás kontaktovat pouze v případě, že to bude nutné pro poskytování našich služeb."
       ],
       "Your login information will not be saved after the import is completed.": [
         "Po dokončení importu nebudou Vaše přihlašovací údaje uloženy."
@@ -7632,6 +7625,9 @@
       "Awarded": [
         "Uděleno"
       ],
+      "Billing address": [
+        "Fakturační adresa"
+      ],
       "Billing cycle": [
         "Fakturační období"
       ],
@@ -7665,11 +7661,11 @@
       "Calendars": [
         "Kalendáře"
       ],
+      "Card details": [
+        "Podrobnosti karty"
+      ],
       "Card holder": [
         "Držitel karty"
-      ],
-      "Card information": [
-        "Informace o kartě"
       ],
       "Card number": [
         "Číslo karty"
@@ -8428,6 +8424,9 @@
       ],
       "${ BRAND_NAME } for Business newsletter": [
         "Novinky ${ BRAND_NAME } pro firmy"
+      ],
+      "${ BRAND_NAME } important announcements": [
+        "Důležitá oznámení ${ BRAND_NAME }"
       ],
       "${ BRAND_NAME } newsletter": [
         "Novinky ${ BRAND_NAME }"
@@ -9349,6 +9348,9 @@
       ],
       "Split tunneling (Android and Windows)": [
         "Split Tunneling (Android a Windows)"
+      ],
+      "Start protecting yourself online in 2 easy steps": [
+        "Začněte se chránit online ve 2 jednoduchých krocích"
       ],
       "Strict no-logs policy": [
         "Přísné zásady neukládání záznamů"
@@ -10327,6 +10329,9 @@
       "Free forever": [
         "Navždy zdarma"
       ],
+      "Install app": [
+        "Nainstalujte aplikaci"
+      ],
       "Open-source and audited": [
         "Open-source a auditováno"
       ],
@@ -10347,6 +10352,9 @@
       ],
       "Protected by Swiss privacy laws": [
         "Chráněno švýcarskými zákony o ochraně soukromí"
+      ],
+      "to start using ${ PASS_APP_NAME } on your phone": [
+        "a začněte používat ${ PASS_APP_NAME } na vašem telefonu"
       ],
       "Verifying your payment": [
         "Ověřování vaší platby"
@@ -10806,11 +10814,6 @@
     "Shared calendar label input placeholder": {
       "Add label": [
         "Přidat štítek"
-      ]
-    },
-    "Shared calendar; Info about calendar owner": {
-      "Created by ${ ownerName }": [
-        "Vytvořil/a ${ ownerName }"
       ]
     },
     "Signature verification error when joining calendar": {
@@ -11318,9 +11321,6 @@
     "Subscription saving": {
       "Save": [
         "Ušetříte"
-      ],
-      "Save ${ discountPercentage }%": [
-        "Ušetřete ${ discountPercentage }%"
       ]
     },
     "Subscription status": {
@@ -13054,6 +13054,61 @@
         "${ numberOfServers } v ${ numberOfCountries } zemích",
         "${ numberOfServers } v ${ numberOfCountries } zemích",
         "${ numberOfServers } v ${ numberOfCountries } zemích"
+      ]
+    },
+    "vpn_2step: billing": {
+      "Billed every 15 months": [
+        "Účtováno každých 15 měsíců"
+      ],
+      "Billed every 2 years": [
+        "Účtováno každé 2 roky"
+      ],
+      "Billed every 30 months": [
+        "Účtováno každých 30 měsíců"
+      ],
+      "Billed monthly": [
+        "Účtováno měsíčně"
+      ],
+      "Billed yearly": [
+        "Účtováno ročně"
+      ]
+    },
+    "vpn_2step: discount": {
+      "1-year": [
+        "ročním"
+      ],
+      "2-year": [
+        "dvouletým"
+      ],
+      "Get ${ discount } off with a ${ billingCycle } subscription": [
+        "Získejte slevu ${ discount } s ${ billingCycle } předplatným"
+      ]
+    },
+    "vpn_2step: feature": {
+      "Advanced VPN customizations": [
+        "Pokročilá přizpůsobení VPN"
+      ],
+      "No ads": [
+        "Bez reklam"
+      ]
+    },
+    "vpn_2step: info": {
+      "${ n } month": [
+        "${ n } měsíc",
+        "${ n } měsíce",
+        "${ n } měsíců",
+        "${ n } měsíců"
+      ],
+      "${ n } year": [
+        "${ n } rok",
+        "${ n } roky",
+        "${ n } let",
+        "${ n } let"
+      ]
+    },
+    "vpn_2step: tooltip": {
+      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, Double hop, and more.": [
+        "Přístup k serverům Secure Core, rychlé stahování P2P/BitTorrent, Tor skrze VPN, Double hop a další."
       ]
     },
     "Warning": {

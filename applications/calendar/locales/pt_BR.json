@@ -141,6 +141,9 @@
       "Continue with Google": [
         "Continuar com o Google"
       ],
+      "Copy email address": [
+        "Copiar endereço de email"
+      ],
       "Copy email to clipboard": [
         "Copiar e-mail para a área de transferência"
       ],
@@ -158,6 +161,9 @@
       ],
       "Create event": [
         "Criar evento"
+      ],
+      "Create new contact": [
+        "Criar novo contato"
       ],
       "Customize": [
         "Personalizar"
@@ -580,6 +586,9 @@
       ],
       "View": [
         "Visualizar"
+      ],
+      "View contact details": [
+        "Ver detalhes do contato"
       ],
       "View invoice": [
         "Visualizar fatura"
@@ -4640,7 +4649,7 @@
     },
     "Modal title": {
       "Add public holidays": [
-        "Adicionar feriados públicos"
+        "Adicionar feriados"
       ],
       "Cannot add more calendars": [
         "Não é possível adicionar mais calendários"
@@ -5376,11 +5385,6 @@
         "Compartilhar com usuários da ${ BRAND_NAME }"
       ]
     },
-    "Shared calendar; Info about calendar owner": {
-      "Created by ${ ownerName }": [
-        "Criado por ${ ownerName }"
-      ]
-    },
     "Side panel spotlight": {
       "Manage your contacts and view your calendar without leaving your app.": [
         "Gerencie seus contatos e veja seu calendário sem sair do aplicativo."
@@ -5647,7 +5651,7 @@
     },
     "Spotlight": {
       "Add your country's public holidays to your calendar.": [
-        "Adicione seus feriados públicos de seu país no seu calendário."
+        "Adicione seus feriados de seu país no seu calendário."
       ],
       "Get up to ${ credits } in credits.": [
         "Receba até ${ credits } em créditos."
@@ -5656,7 +5660,7 @@
         "Convide amigos para ${ BRAND_NAME }"
       ],
       "Public holidays are here!": [
-        "Feriados públicos estão aqui!"
+        "Feriados estão aqui!"
       ]
     },
     "Storage": {

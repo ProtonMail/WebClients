@@ -3,5 +3,26 @@
     "plural-forms": "nplurals=2; plural=(n != 1);",
     "language": "en_US"
   },
-  "contexts": {}
+  "contexts": {
+    "Link": {
+      "Paypal without credit card": [
+        "PayPal without credit card"
+      ]
+    },
+    "Subscription change warning": {
+      "Just sign in to your Apple App Store account, then press ${ subscriptions }.": [
+        "Just sign in to your Apple App Store account, then select ${ subscriptions }."
+      ]
+    },
+    "Success": {
+      "If you entered a valid recovery phone we will send you an sms with your usernames in the next minute.": [
+        "You will receive your username via SMS within a minute if you entered a valid recovery phone number."
+      ]
+    },
+    "vpn_2step: tooltip": {
+      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, Double hop, and more.": [
+        "Access to Secure Core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more."
+      ]
+    }
+  }
 }

@@ -159,6 +159,9 @@
       "Create event": [
         "Crea un esdeveniment"
       ],
+      "Create new contact": [
+        "Crea un nou contacte"
+      ],
       "Customize": [
         "Personalitza"
       ],
@@ -581,6 +584,9 @@
       "View": [
         "Mostra"
       ],
+      "View contact details": [
+        "Veure detalls del contacte"
+      ],
       "View invoice": [
         "Mostra la factura"
       ],
@@ -854,7 +860,7 @@
     },
     "Calendar link sharing label input assistive text": {
       "Only you can see the label": [
-        "Sou l'única persona que pot veure l'etiqueta."
+        "Sou l'única persona que pot veure l'etiqueta"
       ]
     },
     "Calendar permissions hint": {
@@ -931,7 +937,7 @@
         "El calendari s'està sincronitzant"
       ],
       "Calendar is syncing: it may take several minutes for all of its events to show up.": [
-        "El calendari s'està sincronitzant. Pot ser que els esdeveniments tardin uns minuts a aparèixer."
+        "El calendari s'està sincronitzant. Pot ser que els vostres esdeveniments tardin uns minuts a aparèixer."
       ],
       "Calendar is too big": [
         "El calendari és massa gran"
@@ -5352,7 +5358,7 @@
     },
     "Share calendar assistive text": {
       "To invite non-${ BRAND_NAME } users, share your calendar with a link.": [
-        "Per convidar usuaris de fora de ${ BRAND_NAME }, compartiu el calendari amb un enllaç."
+        "Per a convidar usuaris de fora de ${ BRAND_NAME }, compartiu el calendari amb un enllaç."
       ]
     },
     "Share calendar max shares reached error": {
@@ -5374,11 +5380,6 @@
     "Share calendar modal title": {
       "Share with ${ BRAND_NAME } users": [
         "Comparteix amb usuaris de ${ BRAND_NAME }"
-      ]
-    },
-    "Shared calendar; Info about calendar owner": {
-      "Created by ${ ownerName }": [
-        "Creat per ${ ownerName }"
       ]
     },
     "Side panel spotlight": {
@@ -5672,7 +5673,7 @@
         "URL del calendari"
       ],
       "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Other calendars.\n${ kbLink }": [
-        "Per subscriure-us a un calendari extern o públic i a les seves actualitzacions, introduïu-ne l'URL. Una versió de només lectura del calendari s'afegirà als vostres Altres calendaris.\n${ kbLink }"
+        "Per a subscriure-us a un calendari extern o públic i a les seves actualitzacions, introduïu-ne l'URL. Una versió de només lectura del calendari s'afegirà als vostres Altres calendaris.\n${ kbLink }"
       ]
     },
     "Subscribe to calendar modal description": {

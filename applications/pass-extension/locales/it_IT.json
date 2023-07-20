@@ -17,6 +17,9 @@
       "Add new item": [
         "Aggiungi elemento"
       ],
+      "Advanced": [
+        "Avanzate"
+      ],
       "Advanced options": [
         "Opzioni avanzate"
       ],
@@ -55,6 +58,9 @@
       ],
       "Continue without pinning": [
         "Continua senza bloccare"
+      ],
+      "Copy & fill in": [
+        "Copia e compila"
       ],
       "Copy and close": [
         "Copia e chiudi"
@@ -137,6 +143,9 @@
       "Generate password": [
         "Genera password"
       ],
+      "Generated password": [
+        "Password generata"
+      ],
       "Get mobile apps": [
         "Scarica le applicazioni per dispositivi mobili"
       ],
@@ -161,8 +170,11 @@
       "Learn more": [
         "Scopri di più"
       ],
-      "Lock ${ PASS_APP_NAME }": [
-        "Blocca ${ PASS_APP_NAME }"
+      "Lock extension": [
+        "Blocca l'estensione"
+      ],
+      "Manually sync your data": [
+        "Sincronizza manualmente i tuoi dati"
       ],
       "More options": [
         "Più opzioni"
@@ -247,9 +259,6 @@
       ],
       "Submitting report...": [
         "Invio della segnalazione..."
-      ],
-      "Sync": [
-        "Sincronizza"
       ],
       "Try again": [
         "Riprova"
@@ -336,7 +345,7 @@
         "Eliminazione della cassaforte \"${ payload.content.name }\" fallita"
       ],
       "Detected ${ errors.length } corrupted csv row": [
-        "${ errors.length } riga csv corrotte trovata",
+        "${ errors.length } riga csv corrotta trovata",
         "${ errors.length } righe csv corrotte trovate"
       ],
       "Editing item failed": [
@@ -360,8 +369,8 @@
       "Firefox export file could not be parsed. ${ errorDetail }": [
         "Il file esportato da Firefox non può essere elaborato. ${ errorDetail }"
       ],
-      "Import failed for vault \"${ vaultData.vaultName }\" : ${ description }": [
-        "Importazione della cassaforte \"${ vaultData.vaultName }\" fallita: ${ description }"
+      "Import failed for vault \"${ vaultData.name }\" : ${ description }": [
+        "Importazione fallita per la cassaforte \"${ vaultData.name }\": ${ description }"
       ],
       "Importing items failed": [
         "Importazione degli elementi non riuscita"
@@ -436,7 +445,7 @@
         "Il file che stai tentando di importare è vuoto"
       ],
       "Too many failed attempts. Please sign in again.": [
-        "Troppi tentativi falliti. Effettua nuovamente l'accesso."
+        "Troppi tentativi errati. Effettua nuovamente l'accesso."
       ],
       "Trashing item failed": [
         "Cancellazione dell'elemento non riuscita"
@@ -465,8 +474,8 @@
       "Vault \"${ payload.content.name }\" creation failed": [
         "Creazione della cassaforte \"${ payload.content.name }\" fallita"
       ],
-      "Vault \"${ vaultData.vaultName }\" could not be created": [
-        "Impossibile creare la cassaforte \"${ vaultData.vaultName }\""
+      "Vault \"${ vaultData.name }\" could not be created": [
+        "La cassaforte \"${ vaultData.name }\" non può essere creata"
       ],
       "Vault name does not match": [
         "Il nome della cassaforte non corrisponde"
@@ -517,6 +526,9 @@
       ]
     },
     "Info": {
+      " Upgrade to a paid plan to create multiple vaults.": [
+        " Effettua l'aggiornamento a un piano a pagamento per poter creare casseforti multiple."
+      ],
       "\"${ payload.item.data.metadata.name }\" item was dismissed": [
         "L'elemento \"${ payload.item.data.metadata.name }\" è stato rimosso"
       ],
@@ -764,8 +776,8 @@
       "Save login": [
         "Salva il login"
       ],
-      "Select the destination vault for each imported vault. By default a new vault will be created for each imported vault.": [
-        "Seleziona la cassaforte di destinazione per ogni cassaforte importata. Per impostazione predefinita, verrà creata una nuova cassaforte per ogni cassaforte importata."
+      "Select the destination vault for each imported vault.": [
+        "Seleziona la cassaforte di destinazione per ciascuna cassaforte importata."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "I server sono irraggiungibili. Riprova tra qualche minuto"
@@ -837,6 +849,9 @@
       "Vault \"${ share.content.name }\" was disabled": [
         "La cassaforte \"${ share.content.name }\" è stata disabilitata"
       ],
+      "Verification code": [
+        "Codice di verifica"
+      ],
       "You are about to create:": [
         "Stai per creare:"
       ],
@@ -853,8 +868,8 @@
       "You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.": [
         "Hai raggiunto il numero massimo di alias che puoi creare. Crea un numero illimitato di alias effettuando l'aggiornamento del tuo piano di abbonamento."
       ],
-      "You have reached the limit of vaults you can create. Create an unlimited number of vaults when you upgrade your subscription.": [
-        "Hai raggiunto il limite di casseforti da poter creare. Crea un numero illimitato di casseforti aggiornando il tuo abbonamento."
+      "You have reached the limit of vaults you can create.": [
+        "Hai raggiunto il limite di casseforti che puoi creare."
       ],
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "Hai raggiunto la lunghezza massima consentita di ${ maxLength } caratteri."
@@ -1288,7 +1303,7 @@
     },
     "Placeholder": {
       "Add 2FA secret": [
-        "Aggiungi 2FA segreto"
+        "Aggiungi una chiave 2FA segreta"
       ],
       "Add hidden text": [
         "Aggiungi testo nascosto"
@@ -1563,6 +1578,9 @@
       "Vault name is required": [
         "Nome cassaforte richiesto"
       ],
+      "You cannot create more vaults than your subscription allows.": [
+        "Non puoi creare più casseforti di quelle consentite dal tuo abbonamento."
+      ],
       "You have unsaved changes, are you sure you want to discard them?": [
         "Sono presenti modifiche non salvate. Vuoi davvero scartarle?"
       ],
@@ -1578,8 +1596,8 @@
       "Your session was locked due to inactivity": [
         "La tua sessione è stata bloccata per inattività"
       ],
-      "Your subscription does not allow you to create multiple vaults. All items will be imported to your primary vault by default. To import into multiple vaults upgrade your subscription.": [
-        "Il tuo abbonamento non ti permette di creare casseforti multiple. Tutti gli elementi verranno importati nella tua cassaforte principale. Per poter importare in casseforti multiple effettua l'aggiornamento del tuo piano."
+      "Your subscription does not allow you to create multiple vaults. All items will be imported to your primary vault. To import into multiple vaults upgrade your subscription.": [
+        "Il tuo abbonamento non consente di creare casseforti multiple. Tutti gli elementi saranno importati nella cassaforte principale. Puoi importare in casseforti multiple effettuando l'aggiornamento del tuo abbonamento."
       ]
     }
   }

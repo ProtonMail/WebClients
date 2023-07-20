@@ -434,9 +434,6 @@
       "Generate token": [
         "Generera token"
       ],
-      "Get ${ discountPercentage } off with 24 months": [
-        "Få ${ discountPercentage } rabatt med 24 månader"
-      ],
       "Get ${ vpnPlus }": [
         "Skaffa ${ vpnPlus }"
       ],
@@ -4403,8 +4400,8 @@
       "(1-2 emails per month)": [
         "(1-2 e-postmeddelanden per månad)"
       ],
-      "(2-4 per year)": [
-        "(2-4 per år)"
+      "(2-4 emails per year)": [
+        "(2-4 e-postmeddelanden per år)"
       ],
       "(4-6 emails per year)": [
         "(4-6 e-postmeddelanden per år)"
@@ -4505,11 +4502,14 @@
       "Best deal": [
         "Bästa erbjudandet"
       ],
+      "Checkout": [
+        "Kassa"
+      ],
+      "Create your account": [
+        "Skapa ditt konto"
+      ],
       "Device": [
         "Enhet"
-      ],
-      "Enter your email address": [
-        "Ange din e-postadress"
       ],
       "Event": [
         "Händelse"
@@ -4540,9 +4540,6 @@
       ],
       "Protection": [
         "Skydd"
-      ],
-      "Select your preferred method of payment": [
-        "Välj din föredragna betalningsmetod"
       ],
       "Select your pricing plan": [
         "Välj ditt prispaket"
@@ -5013,6 +5010,9 @@
       ],
       "${ current } of ${ total }": [
         "${ current } av ${ total }"
+      ],
+      "${ discountPercentage } forever": [
+        "${ discountPercentage } för alltid"
       ],
       "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
         "${ DRIVE_APP_NAME } kommer inte längre behålla tidigare versioner av dina filer."
@@ -6213,9 +6213,6 @@
       "Save your password somewhere safe. Click on icon to confirm that you have typed your password correctly.": [
         "Spara ditt lösenord på ett säkert ställe. Klicka på ikonen för att bekräfta att du har skrivit in ditt lösenord korrekt."
       ],
-      "Saving your password": [
-        "Sparar ditt lösenord"
-      ],
       "Scan QR code instead": [
         "Skanna QR-kod istället"
       ],
@@ -6346,9 +6343,6 @@
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
         "Meddelandet ${ boldDataLocked } kommer inte längre att visas, men du kan fortfarande låsa upp dina data under ${ encryptionAndKeysLink }."
       ],
-      "The ${ planName } plan includes:": [
-        "${ planName }-paketet inkluderar:"
-      ],
       "The calendar will be removed from your account.": [
         "Kalendern kommer att tas bort från ditt konto."
       ],
@@ -6478,9 +6472,6 @@
       "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
         "Den här guiden aktiverar tvåfaktorsautentisering (2FA) på ditt ${ BRAND_NAME }-konto. Tvåfaktorsautentisering gör ditt ${ BRAND_NAME_TWO }-konto säkrare så vi rekommenderar att du aktiverar det."
       ],
-      "To ${ planName }": [
-        "Till ${ planName }"
-      ],
       "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
         "För att undvika dataförlust, ta bara bort det om du vet vad du gör eller har exporterat en kopia."
       ],
@@ -6543,9 +6534,6 @@
       ],
       "Total VPN connections": [
         "Totalt antal VPN-anslutningar"
-      ],
-      "Try ${ upsellPlanName } risk free": [
-        "Prova ${ upsellPlanName } riskfritt"
       ],
       "two-factor authentication (2FA)": [
         "tvåfaktorsautentisering (2FA)"
@@ -6676,8 +6664,8 @@
       "We securely store recovery information on your trusted device to prevent you from losing your data": [
         "Vi lagrar säkert återställningsinformation på din betrodda enhet för att förhindra att du förlorar din data"
       ],
-      "We use 3-D Secure to protect your payments.": [
-        "Vi använder 3-D Secure för att skydda dina betalningar."
+      "We use 3-D Secure to protect your payments": [
+        "Vi använder 3-D Secure för att skydda dina betalningar"
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Vi kommer att omdirigera dig till PayPal i en ny webbläsarflik för att slutföra denna transaktion. Om du använder några popup-blockerare, inaktivera dem för att fortsätta."
@@ -6696,9 +6684,6 @@
       ],
       "Week and month views only apply to desktop.": [
         "Vecko- och månadsvyer tillämpas endast för stationära datorer."
-      ],
-      "Welcome": [
-        "Välkommen"
       ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "Vi kommer skicka en återställningskod till e-postadressen som du angav för kontoåterställning."
@@ -6858,9 +6843,6 @@
       "You still need to reply to invitations for the host to see your response.": [
         "Du måste fortfarande svara på inbjudningar för att värden ska se ditt svar."
       ],
-      "You will be redirected to the VPN download page": [
-        "Du kommer att omdirigeras till VPN-nedladdningssidan"
-      ],
       "You will lose access to ${ vpnPlanNameShort } servers and features on this date.": [
         "Du kommer förlora åtkomst till ${ vpnPlanNameShort }-servrar och funktionerna på detta datum."
       ],
@@ -6936,6 +6918,9 @@
       ],
       "Your import will not be processed.": [
         "Din import kommer inte att bearbetas."
+      ],
+      "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
+        "Din information är säker hos oss. Vi kommer endast kontakta dig när det krävs för att tillhandahålla våra tjänster."
       ],
       "Your login information will not be saved after the import is completed.": [
         "Dina inloggningsuppgifter kommer inte att sparas när importen är slutförd."
@@ -7492,6 +7477,9 @@
       "Awarded": [
         "Belönades"
       ],
+      "Billing address": [
+        "Faktureringsadress"
+      ],
       "Billing cycle": [
         "Faktureringsperiod"
       ],
@@ -7525,11 +7513,11 @@
       "Calendars": [
         "Kalendrar"
       ],
+      "Card details": [
+        "Kortdetaljer"
+      ],
       "Card holder": [
         "Kortinnehavare"
-      ],
-      "Card information": [
-        "Kortinformation"
       ],
       "Card number": [
         "Kortnummer"
@@ -7651,6 +7639,9 @@
       "Default PGP scheme": [
         "Standard PGP-schema"
       ],
+      "Default scrollbars": [
+        "Standardrullningslister"
+      ],
       "Default view": [
         "Standardvy"
       ],
@@ -7743,6 +7734,9 @@
       ],
       "Event notifications": [
         "Händelseaviseringar"
+      ],
+      "Expiration (${ patternExpiration })": [
+        "Förfallodatum (${ patternExpiration })"
       ],
       "Expiration date": [
         "Utgångsdatum"
@@ -9148,6 +9142,9 @@
       ],
       "Split tunneling (Android and Windows)": [
         "Split tunneling (Android och Windows)"
+      ],
+      "Start protecting yourself online in 2 easy steps": [
+        "Börja skydda dig själv online med två enkla steg"
       ],
       "Strict no-logs policy": [
         "Strikt policy att inte logga"
@@ -10734,11 +10731,6 @@
         "Lägg till etikett"
       ]
     },
-    "Shared calendar; Info about calendar owner": {
-      "Created by ${ ownerName }": [
-        "Skapad av ${ ownerName }"
-      ]
-    },
     "Signature verification error when joining calendar": {
       "Signature verification error": [
         "Fel vid signaturverifiering"
@@ -11203,9 +11195,6 @@
     "Subscription saving": {
       "Save": [
         "Spara"
-      ],
-      "Save ${ discountPercentage }%": [
-        "Spara ${ discountPercentage } %"
       ]
     },
     "Subscription status": {
@@ -12373,7 +12362,7 @@
       "Signed in to member account": [
         "Loggade in på medlemskonto"
       ],
-      "SMTP Submission": [
+      "SMTP submission": [
         "SMTP-inlämning"
       ],
       "Sort folders alphabetically": [
@@ -12895,6 +12884,69 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } i ${ numberOfCountries } land",
         "${ numberOfServers } i ${ numberOfCountries } länder"
+      ]
+    },
+    "vpn_2step: billing": {
+      "${ billedText }, renews on ${ formattedEndTime }": [
+        "${ billedText }, förnyas den ${ formattedEndTime }"
+      ],
+      "Billed every 15 months": [
+        "Faktureras var 15:e månad"
+      ],
+      "Billed every 2 years": [
+        "Faktureras vartannat år"
+      ],
+      "Billed every 30 months": [
+        "Faktureras var 30:e månad"
+      ],
+      "Billed monthly": [
+        "Faktureras månadsvis"
+      ],
+      "Billed yearly": [
+        "Faktureras årligen"
+      ]
+    },
+    "vpn_2step: discount": {
+      "1-year": [
+        "1 år"
+      ],
+      "2-year": [
+        "2-årig"
+      ],
+      "Get ${ discount } off with a ${ billingCycle } subscription": [
+        "Få ${ discount } rabatt med en ${ billingCycle } prenumeration"
+      ],
+      "monthly": [
+        "månadsvis"
+      ]
+    },
+    "vpn_2step: feature": {
+      "Advanced VPN customizations": [
+        "Avancerade VPN-anpassningar"
+      ],
+      "No ads": [
+        "Inga annonser"
+      ]
+    },
+    "vpn_2step: info": {
+      "${ n } month": [
+        "${ n } månad",
+        "${ n } månader"
+      ],
+      "${ n } year": [
+        "${ n } år",
+        "${ n } år"
+      ],
+      "Try ${ upsellPlanName } risk-free": [
+        "Prova ${ upsellPlanName } riskfritt"
+      ],
+      "Your ${ selected } plan": [
+        "Ditt ${ selected }-paket"
+      ]
+    },
+    "vpn_2step: tooltip": {
+      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, Double hop, and more.": [
+        "Åtkomst till Secure Core-servrar, snabba P2P/BitTorrent-nedladdningar, Tor över VPN, Double Hop och mer."
       ]
     },
     "Warning": {

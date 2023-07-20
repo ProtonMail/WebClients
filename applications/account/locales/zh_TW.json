@@ -434,9 +434,6 @@
       "Generate token": [
         "產生通證"
       ],
-      "Get ${ discountPercentage } off with 24 months": [
-        "選購 24 個月，即享 ${ discountPercentage } 折扣"
-      ],
       "Get ${ vpnPlus }": [
         "選購 ${ vpnPlus }"
       ],
@@ -4397,8 +4394,8 @@
       "(1-2 emails per month)": [
         "(每月 1-2 封電郵)"
       ],
-      "(2-4 per year)": [
-        "(每年二至四)"
+      "(2-4 emails per year)": [
+        "(每年 2 - 4 封電子報電郵)"
       ],
       "(4-6 emails per year)": [
         "(每年四至六封電子郵件)"
@@ -4499,11 +4496,14 @@
       "Best deal": [
         "至划算"
       ],
+      "Checkout": [
+        "結帳"
+      ],
+      "Create your account": [
+        "創建您的帳號"
+      ],
       "Device": [
         "裝置"
-      ],
-      "Enter your email address": [
-        "輸入您的電子郵件位址"
       ],
       "Event": [
         "行程"
@@ -4534,9 +4534,6 @@
       ],
       "Protection": [
         "安全"
-      ],
-      "Select your preferred method of payment": [
-        "選擇您喜好的付款方法"
       ],
       "Select your pricing plan": [
         "選擇您的定價方案"
@@ -4997,6 +4994,9 @@
       ],
       "${ current } of ${ total }": [
         "${ total } 中的 ${ current }"
+      ],
+      "${ discountPercentage } forever": [
+        "${ discountPercentage } 永久折扣"
       ],
       "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
         "${ DRIVE_APP_NAME } 將不再為您的檔案保留先前的版本。"
@@ -6180,9 +6180,6 @@
       "Save your password somewhere safe. Click on icon to confirm that you have typed your password correctly.": [
         "請將密碼妥善保存到合適的地方。點擊圖示以確認密碼輸入正確。"
       ],
-      "Saving your password": [
-        "正在儲存您的密碼"
-      ],
       "Scan QR code instead": [
         "改為掃描 QR 代碼"
       ],
@@ -6311,9 +6308,6 @@
       ],
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
         "${ boldDataLocked }這一訊息將不再顯示，然而您仍可在${ encryptionAndKeysLink }中解除鎖定您的資料。"
-      ],
-      "The ${ planName } plan includes:": [
-        "${ planName } 方案包括："
       ],
       "The calendar will be removed from your account.": [
         "該行事曆將會從您的帳號中移除。"
@@ -6444,9 +6438,6 @@
       "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
         "本精靈將會在您的 ${ BRAND_NAME } 帳號上啟用兩步驟驗證。兩步驟驗證讓您的 ${ BRAND_NAME_TWO } 帳號更安全，所以我們建議啟用它。"
       ],
-      "To ${ planName }": [
-        "使用 ${ planName }"
-      ],
       "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
         "為避免資料遺失，最好只刪除您知道的檔案，或是匯出複本。"
       ],
@@ -6509,9 +6500,6 @@
       ],
       "Total VPN connections": [
         "總 VPN 連線數量"
-      ],
-      "Try ${ upsellPlanName } risk free": [
-        "安心試試看 ${ upsellPlanName }"
       ],
       "two-factor authentication (2FA)": [
         "雙重認證 (2FA)"
@@ -6648,8 +6636,8 @@
       "We securely store recovery information on your trusted device to prevent you from losing your data": [
         "我們在您信任的裝置上妥善保管復原金鑰，以防發生資料丟失。"
       ],
-      "We use 3-D Secure to protect your payments.": [
-        "我們使用 3-D Secure 保障您的付款。"
+      "We use 3-D Secure to protect your payments": [
+        "我們使用3-D安全來保護你的付款資訊"
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "我們將在瀏覽器的新索引標籤中重新導向到 PayPal 以完成此交易。若您有使用任何彈出式視窗攔截程式，請先停用，然後才繼續。"
@@ -6668,9 +6656,6 @@
       ],
       "Week and month views only apply to desktop.": [
         "週和月檢視僅適用於電腦版。"
-      ],
-      "Welcome": [
-        "歡迎"
       ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "我們將會傳送重設代碼到您先前所提供的電郵位址。"
@@ -6825,9 +6810,6 @@
       "You still need to reply to invitations for the host to see your response.": [
         "您仍需回覆邀請以便主辦者了解您的回覆。"
       ],
-      "You will be redirected to the VPN download page": [
-        "您將會重新導向至 VPN 下載頁面"
-      ],
       "You will lose access to ${ vpnPlanNameShort } servers and features on this date.": [
         "您將於此日失去存取${ vpnPlanNameShort }伺服器及功能"
       ],
@@ -6902,6 +6884,9 @@
       ],
       "Your imports from ${ accounts } are temporarily delayed.": [
         "您從匯入 ${ accounts } 的操作被暫時推遲。"
+      ],
+      "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
+        "您的各項資訊在我們安全保護下安全無虞，僅有提供服務前的身分驗證需求時，我們才會使用該資訊與您進行聯繫。"
       ],
       "Your login information will not be saved after the import is completed.": [
         "匯入完成後不會保存您的登入資訊。"
@@ -7460,6 +7445,9 @@
       "Awarded": [
         "獲得獎勵"
       ],
+      "Billing address": [
+        "帳單地址"
+      ],
       "Billing cycle": [
         "繳款單週期"
       ],
@@ -7493,11 +7481,11 @@
       "Calendars": [
         "行事曆"
       ],
+      "Card details": [
+        "卡片資訊"
+      ],
       "Card holder": [
         "持卡人"
-      ],
-      "Card information": [
-        "卡片資料"
       ],
       "Card number": [
         "卡號"
@@ -9097,6 +9085,9 @@
       "Split tunneling (Android and Windows)": [
         "分隔通道(Android 與 Windows)"
       ],
+      "Start protecting yourself online in 2 easy steps": [
+        "2 個簡單步驟即可啟動您專屬的線上防護"
+      ],
       "Strict no-logs policy": [
         "嚴格的無日誌政策"
       ],
@@ -10675,11 +10666,6 @@
         "加入標籤"
       ]
     },
-    "Shared calendar; Info about calendar owner": {
-      "Created by ${ ownerName }": [
-        "由 ${ ownerName } 建立"
-      ]
-    },
     "Signature verification error when joining calendar": {
       "Signature verification error": [
         "簽章驗證錯誤"
@@ -11128,9 +11114,6 @@
     "Subscription saving": {
       "Save": [
         "省下"
-      ],
-      "Save ${ discountPercentage }%": [
-        "省下 ${ discountPercentage }%"
       ]
     },
     "Subscription status": {
@@ -12300,8 +12283,8 @@
       "Signed in to member account": [
         "登入到成員帳號"
       ],
-      "SMTP Submission": [
-        "SMTP Submission"
+      "SMTP submission": [
+        "SMTP 傳送"
       ],
       "Sort folders alphabetically": [
         "按英文字母排序資料夾"
@@ -12816,6 +12799,67 @@
       ],
       "${ numberOfServers } in ${ numberOfCountries } countries": [
         "分布於 ${ numberOfCountries } 國家的 ${ numberOfServers } 台伺服器"
+      ]
+    },
+    "vpn_2step: billing": {
+      "${ billedText }, renews on ${ formattedEndTime }": [
+        "${ billedText }，續約日為 ${ formattedEndTime }"
+      ],
+      "Billed every 15 months": [
+        "15 個月繳制"
+      ],
+      "Billed every 2 years": [
+        "雙年繳制"
+      ],
+      "Billed every 30 months": [
+        "30 個月繳制"
+      ],
+      "Billed monthly": [
+        "月繳制"
+      ],
+      "Billed yearly": [
+        "年繳制"
+      ]
+    },
+    "vpn_2step: discount": {
+      "1-year": [
+        "1-年"
+      ],
+      "2-year": [
+        "2-年"
+      ],
+      "Get ${ discount } off with a ${ billingCycle } subscription": [
+        "於${ billingCycle }訂購授權取得${ discount }折扣"
+      ],
+      "monthly": [
+        "每月"
+      ]
+    },
+    "vpn_2step: feature": {
+      "Advanced VPN customizations": [
+        "進階 VPN 客製化"
+      ],
+      "No ads": [
+        "零廣告"
+      ]
+    },
+    "vpn_2step: info": {
+      "${ n } months": [
+        "${ n } 月"
+      ],
+      "${ n } years": [
+        "${ n } 年"
+      ],
+      "Try ${ upsellPlanName } risk-free": [
+        "嘗試無風險的 ${ upsellPlanName }"
+      ],
+      "Your ${ selected } plan": [
+        "您專屬的 ${ selected } 方案"
+      ]
+    },
+    "vpn_2step: tooltip": {
+      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, Double hop, and more.": [
+        "直達 Secure Core 伺服器、極速 P2P/BitTorrent 下載、匿名連接 VPN、多躍點路由以及其它更多功能。"
       ]
     },
     "Warning": {

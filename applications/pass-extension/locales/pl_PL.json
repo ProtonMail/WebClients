@@ -17,6 +17,9 @@
       "Add new item": [
         "Dodaj nowy element"
       ],
+      "Advanced": [
+        "Zaawansowane"
+      ],
       "Advanced options": [
         "Opcje zaawansowane"
       ],
@@ -55,6 +58,9 @@
       ],
       "Continue without pinning": [
         "Kontynuuj bez przypinania"
+      ],
+      "Copy & fill in": [
+        "Kopiuj i uzupełnij"
       ],
       "Copy and close": [
         "Kopiuj i zamknij"
@@ -137,6 +143,9 @@
       "Generate password": [
         "Generuj hasło"
       ],
+      "Generated password": [
+        "Wygenerowane hasło"
+      ],
       "Get mobile apps": [
         "Pobierz aplikację mobilną"
       ],
@@ -161,8 +170,11 @@
       "Learn more": [
         "Dowiedz się więcej"
       ],
-      "Lock ${ PASS_APP_NAME }": [
-        "Zablokuj ${ PASS_APP_NAME }"
+      "Lock extension": [
+        "Zablokuj rozszerzenie"
+      ],
+      "Manually sync your data": [
+        "Synchronizuj dane ręcznie"
       ],
       "More options": [
         "Więcej opcji"
@@ -247,9 +259,6 @@
       ],
       "Submitting report...": [
         "Wysyłanie raportu..."
-      ],
-      "Sync": [
-        "Synchronizuj"
       ],
       "Try again": [
         "Spróbuj ponownie"
@@ -362,8 +371,8 @@
       "Firefox export file could not be parsed. ${ errorDetail }": [
         "Plik eksportu danych Firefox nie mógł zostać przetworzony. ${ errorDetail }"
       ],
-      "Import failed for vault \"${ vaultData.vaultName }\" : ${ description }": [
-        "Importowanie sejfu \"${ vaultData.vaultName }\" nie powiodło się: ${ description }"
+      "Import failed for vault \"${ vaultData.name }\" : ${ description }": [
+        "Importowanie sejfu \"${ vaultData.name }\" nie powiodło się: ${ description }"
       ],
       "Importing items failed": [
         "Importowanie elementów nie powiodło się"
@@ -467,8 +476,8 @@
       "Vault \"${ payload.content.name }\" creation failed": [
         "Utworzenie sejfu \"${ payload.content.name }\" nie powiodło się"
       ],
-      "Vault \"${ vaultData.vaultName }\" could not be created": [
-        "Sejf \"${ vaultData.vaultName }\" nie mógł zostać utworzony"
+      "Vault \"${ vaultData.name }\" could not be created": [
+        "Sejf \"${ vaultData.name }\" nie mógł zostać utworzony"
       ],
       "Vault name does not match": [
         "Nazwy sejfów nie pasują do siebie"
@@ -529,6 +538,9 @@
       ]
     },
     "Info": {
+      " Upgrade to a paid plan to create multiple vaults.": [
+        "Ulepsz do płatnego planu, aby tworzyć wiele sejfów."
+      ],
       "\"${ payload.item.data.metadata.name }\" item was dismissed": [
         "Element \"${ payload.item.data.metadata.name }\" został odrzucony"
       ],
@@ -790,8 +802,8 @@
       "Save login": [
         "Zapisz dane logowania"
       ],
-      "Select the destination vault for each imported vault. By default a new vault will be created for each imported vault.": [
-        "Wybierz docelowy sejf dla zaimportowanych sejfów. Domyślnie dla każdego zaimportowanego sejfu zostanie utworzony nowy sejf."
+      "Select the destination vault for each imported vault.": [
+        "Wybierz docelowy sejf dla zaimportowanych sejfów."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Serwery są nieosiągalne. Spróbuj ponownie za kilka minut"
@@ -865,6 +877,9 @@
       "Vault \"${ share.content.name }\" was disabled": [
         "Sejf \"${ share.content.name }\" został wyłączony"
       ],
+      "Verification code": [
+        "Kod weryfikacyjny"
+      ],
       "You are about to create:": [
         "Utworzysz:"
       ],
@@ -883,8 +898,8 @@
       "You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.": [
         "Osiągnięto maksymalną liczbę aliasów, które możesz utworzyć. Ulepsz subskrypcję, aby utworzyć nieograniczoną liczbę aliasów."
       ],
-      "You have reached the limit of vaults you can create. Create an unlimited number of vaults when you upgrade your subscription.": [
-        "Osiągnięto maksymalną liczbę sejfów, które możesz utworzyć. Ulepsz subskrypcję, aby utworzyć nieograniczoną liczbę sejfów."
+      "You have reached the limit of vaults you can create.": [
+        "Osiągnięto maksymalną liczbę utworzonych sejfów."
       ],
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "Osiągnięto maksymalną liczbę ${ maxLength } znaków."
@@ -1594,6 +1609,9 @@
       "Vault name is required": [
         "Nazwa sejfu jest wymagana"
       ],
+      "You cannot create more vaults than your subscription allows.": [
+        "Nie możesz utworzyć więcej sejfów w swojej subskrypcji."
+      ],
       "You have unsaved changes, are you sure you want to discard them?": [
         "Masz niezapisane zmiany. Czy chcesz je odrzucić?"
       ],
@@ -1609,8 +1627,8 @@
       "Your session was locked due to inactivity": [
         "Sesja została zablokowana z powodu nieaktywności"
       ],
-      "Your subscription does not allow you to create multiple vaults. All items will be imported to your primary vault by default. To import into multiple vaults upgrade your subscription.": [
-        "Twoja subskrypcja nie pozwala na tworzenie wielu sejfów. Wszystkie elementy zostaną domyślnie zaimportowane do głównego sejfu. Ulepsz plan, aby importować do wielu sejfów."
+      "Your subscription does not allow you to create multiple vaults. All items will be imported to your primary vault. To import into multiple vaults upgrade your subscription.": [
+        "Twoja subskrypcja nie pozwala na tworzenie wielu sejfów. Wszystkie elementy zostaną zaimportowane do głównego sejfu. Ulepsz plan, aby importować do wielu sejfów."
       ]
     }
   }

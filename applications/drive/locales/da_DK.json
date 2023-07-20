@@ -2695,6 +2695,9 @@
     "Font face option": {
       "System default": [
         "Systemstandard"
+      ],
+      "Theme font": [
+        "Temaskrifttype"
       ]
     },
     "Font size option": {
@@ -3908,9 +3911,6 @@
       "This will delete the link and remove access to your file or folder for anyone with the link.": [
         "Dette vil slette linket og fjerne adgangen til din fil eller mappe for alle, der har linket.",
         "Dette vil slette linkene og fjerne adgangen til dine file eller mapper for alle, der har linkene."
-      ],
-      "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on the device won’t be affected.": [
-        "Dette vil fjerne den synkroniserede enhed ${ deviceName } fra ${ DRIVE_APP_NAME }. Lokale filer på enheden vil ikke blive påvirket."
       ],
       "This will replace the existing file with the folder": [
         "Dette vil erstatte eksisterende fil med mappen"
