@@ -84,7 +84,17 @@ export const createAutofillService = () => {
      * inputs : in this case, prefer a "paste autofill" */
     const autofillOTP = (form: FormHandle, code: string) => {
         const otps = form.getFieldsFor(FieldType.OTP);
-        otps?.[0]?.autofill(code, { paste: otps.length > 1 });
+        if (otps.length === 0) return;
+
+        if (otps.length === 1) otps[0].autofill(code, { paste: false });
+        if (otps.length > 1) {
+            /* for FF : sanity check in case the paste failed */
+            otps[0].autofill(code, { paste: true });
+            otps.forEach((otp, i) => {
+                const token = code?.[i] ?? '';
+                if (!otp.element.value || otp.element.value !== token) otp.autofill(code?.[i] ?? '');
+            });
+        }
 
         autofillTelemetry();
     };
