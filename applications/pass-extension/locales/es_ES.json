@@ -17,6 +17,9 @@
       "Add new item": [
         "Añadir un elemento"
       ],
+      "Advanced": [
+        "Avanzado"
+      ],
       "Advanced options": [
         "Opciones avanzadas"
       ],
@@ -55,6 +58,9 @@
       ],
       "Continue without pinning": [
         "Continuar sin fijar"
+      ],
+      "Copy & fill in": [
+        "Copiar y llenar"
       ],
       "Copy and close": [
         "Copiar y cerrar"
@@ -137,6 +143,9 @@
       "Generate password": [
         "Generar contraseña"
       ],
+      "Generated password": [
+        "Contraseña generada"
+      ],
       "Get mobile apps": [
         "Descargar las aplicaciiones móviles"
       ],
@@ -161,8 +170,11 @@
       "Learn more": [
         "Más información"
       ],
-      "Lock ${ PASS_APP_NAME }": [
-        "Bloquear ${ PASS_APP_NAME }"
+      "Lock extension": [
+        "Bloquear la extensión"
+      ],
+      "Manually sync your data": [
+        "Sincronizar tus datos manualmente"
       ],
       "More options": [
         "Más opciones"
@@ -247,9 +259,6 @@
       ],
       "Submitting report...": [
         "Enviando informe..."
-      ],
-      "Sync": [
-        "Sincronizar"
       ],
       "Try again": [
         "Inténtalo de nuevo"
@@ -360,8 +369,8 @@
       "Firefox export file could not be parsed. ${ errorDetail }": [
         "No se ha podido analizar el archivo de exportación de Firefox. ${ errorDetail }"
       ],
-      "Import failed for vault \"${ vaultData.vaultName }\" : ${ description }": [
-        "Error de importación para la bóveda \"${ vaultData.vaultName }\": ${ description }"
+      "Import failed for vault \"${ vaultData.name }\" : ${ description }": [
+        "Error de importación para la bóveda \"${ vaultData.name }\": ${ description }"
       ],
       "Importing items failed": [
         "Error al importar los elementos"
@@ -436,7 +445,7 @@
         "El archivo que intentas importar está vacío."
       ],
       "Too many failed attempts. Please sign in again.": [
-        "Demasiados intentos fallidos. Inicia sesión de nuevo."
+        "Demasiados intentos erróneos. Inicia sesión de nuevo."
       ],
       "Trashing item failed": [
         "Error al eliminar el elemento"
@@ -465,8 +474,8 @@
       "Vault \"${ payload.content.name }\" creation failed": [
         "Error al crear la bóveda \"${ payload.content.name }\""
       ],
-      "Vault \"${ vaultData.vaultName }\" could not be created": [
-        "No se ha podido crear la bóveda \"${ vaultData.vaultName }\"."
+      "Vault \"${ vaultData.name }\" could not be created": [
+        "No se ha podido crear la bóveda \"${ vaultData.name }\"."
       ],
       "Vault name does not match": [
         "El nombre de la bóveda no coincide."
@@ -517,6 +526,9 @@
       ]
     },
     "Info": {
+      " Upgrade to a paid plan to create multiple vaults.": [
+        "Mejora a un plan de pago para crear varias bóvedas."
+      ],
       "\"${ payload.item.data.metadata.name }\" item was dismissed": [
         "El elemento \"${ payload.item.data.metadata.name }\" ha sido descartado."
       ],
@@ -764,8 +776,8 @@
       "Save login": [
         "Guardar el inicio de sesión"
       ],
-      "Select the destination vault for each imported vault. By default a new vault will be created for each imported vault.": [
-        "Selecciona la bóveda de destino para cada bóveda importada. Por defecto, se creará una bóveda para cada bóveda importada."
+      "Select the destination vault for each imported vault.": [
+        "Seleccione la bóveda de destino para cada bóveda importada."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "No se puede acceder a los servidores. Inténtalo de nuevo en unos minutos."
@@ -837,6 +849,9 @@
       "Vault \"${ share.content.name }\" was disabled": [
         "La bóveda \"${ share.content.name }\" ha sido deshabilitada."
       ],
+      "Verification code": [
+        "Código de verificación"
+      ],
       "You are about to create:": [
         "Vas a crear:"
       ],
@@ -853,8 +868,8 @@
       "You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.": [
         "Has alcanzado el límite de alias que puedes crear. Crea alias ilimitados al actualizar tu suscripción."
       ],
-      "You have reached the limit of vaults you can create. Create an unlimited number of vaults when you upgrade your subscription.": [
-        "Has alcanzado el límite de bóvedas que puedes crear. Crea bóvedas ilimitadas al actualizar tu suscripción."
+      "You have reached the limit of vaults you can create.": [
+        "Has alcanzado el límite de bóvedas que puedes crear."
       ],
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "Has alcanzado el número máximo de ${ maxLength } caracteres."
@@ -1563,6 +1578,9 @@
       "Vault name is required": [
         "El nombre de la bóveda es requerido."
       ],
+      "You cannot create more vaults than your subscription allows.": [
+        "No puedes crear más bóvedas de las que permite tu suscripción."
+      ],
       "You have unsaved changes, are you sure you want to discard them?": [
         "Tienes cambios sin guardar. ¿Estás seguro de que desas descartarlos?"
       ],
@@ -1578,8 +1596,8 @@
       "Your session was locked due to inactivity": [
         "Se ha bloqueado tu sesión por inactividad."
       ],
-      "Your subscription does not allow you to create multiple vaults. All items will be imported to your primary vault by default. To import into multiple vaults upgrade your subscription.": [
-        "Tu suscripción no te permite crear más de una bóveda. Todos los elementos serán importados a tu bóveda principal. Para importar a múltiples bóvedas actualiza tu suscripción."
+      "Your subscription does not allow you to create multiple vaults. All items will be imported to your primary vault. To import into multiple vaults upgrade your subscription.": [
+        "Tu suscripción no te permite crear varias bóvedas. Todos los elementos serán importados a tu bóveda principal. Para importar a varias bóvedas actualiza tu suscripción."
       ]
     }
   }

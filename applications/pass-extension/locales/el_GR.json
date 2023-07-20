@@ -17,6 +17,9 @@
       "Add new item": [
         "Προσθήκη νέου αντικείμενου"
       ],
+      "Advanced": [
+        "Για προχωρημένους"
+      ],
       "Advanced options": [
         "Προηγμένες επιλογές"
       ],
@@ -55,6 +58,9 @@
       ],
       "Continue without pinning": [
         "Συνέχεια χωρίς καρφίτσωμα"
+      ],
+      "Copy & fill in": [
+        "Αντιγραφή & συμπλήρωση"
       ],
       "Copy and close": [
         "Αντιγραφή και κλείσιμο"
@@ -137,6 +143,9 @@
       "Generate password": [
         "Παραγωγή τυχαίου κωδικού πρόσβασης"
       ],
+      "Generated password": [
+        "Τυχαίος κωδικός πρόσβασης"
+      ],
       "Get mobile apps": [
         "Αποκτήστε εφαρμογές κινητών"
       ],
@@ -161,8 +170,11 @@
       "Learn more": [
         "Μάθετε περισσότερα"
       ],
-      "Lock ${ PASS_APP_NAME }": [
-        "Κλείδωμα ${ PASS_APP_NAME }"
+      "Lock extension": [
+        "Κλείδωμα προέκτασης"
+      ],
+      "Manually sync your data": [
+        "Μη αυτόματος συγχρονισμός των δεδομένων σας"
       ],
       "More options": [
         "Περισσότερες επιλογές"
@@ -247,9 +259,6 @@
       ],
       "Submitting report...": [
         "Υποβολή αναφοράς..."
-      ],
-      "Sync": [
-        "Συγχρονισμός"
       ],
       "Try again": [
         "Δοκιμάστε ξανά"
@@ -360,8 +369,8 @@
       "Firefox export file could not be parsed. ${ errorDetail }": [
         "Δεν ήταν δυνατή η ανάλυση του αρχείου εξαγωγής Firefox. ${ errorDetail }"
       ],
-      "Import failed for vault \"${ vaultData.vaultName }\" : ${ description }": [
-        "Η εισαγωγή απέτυχε για την κρύπτη \"${ vaultData.vaultName }\" : ${ description }"
+      "Import failed for vault \"${ vaultData.name }\" : ${ description }": [
+        "Η εισαγωγή απέτυχε για την κρύπτη \"${ vaultData.name }\" : ${ description }"
       ],
       "Importing items failed": [
         "Η εισαγωγή στοιχείων απέτυχε"
@@ -465,8 +474,8 @@
       "Vault \"${ payload.content.name }\" creation failed": [
         "Η δημιουργία της κρύπτης \"${ payload.content.name }\" απέτυχε"
       ],
-      "Vault \"${ vaultData.vaultName }\" could not be created": [
-        "Δεν ήταν δυνατή η δημιουργία της κρύπτης \"${ vaultData.vaultName }\""
+      "Vault \"${ vaultData.name }\" could not be created": [
+        "Δεν ήταν δυνατή η δημιουργία της κρύπτης \"${ vaultData.name }\""
       ],
       "Vault name does not match": [
         "Το όνομα της κρύπτης δεν ταιριάζει"
@@ -517,6 +526,9 @@
       ]
     },
     "Info": {
+      " Upgrade to a paid plan to create multiple vaults.": [
+        " Κάντε αναβάθμιση σε πλάνο επί πληρωμή για να δημιουργήσετε πολλαπλές κρύπτες."
+      ],
       "\"${ payload.item.data.metadata.name }\" item was dismissed": [
         "Το στοιχείο \"${ payload.item.data.metadata.name }\" απορρίφθηκε"
       ],
@@ -764,8 +776,8 @@
       "Save login": [
         "Αποθήκευση διαπιστευτηρίων"
       ],
-      "Select the destination vault for each imported vault. By default a new vault will be created for each imported vault.": [
-        "Επιλέξτε την κρύπτη προορισμού για κάθε κρύπτη που έχει εισαχθεί. Από προεπιλογή, θα δημιουργηθεί μια νέα κρύπτη για κάθε εισαγόμενη κρύπτη."
+      "Select the destination vault for each imported vault.": [
+        "Επιλέξτε την κρύπτη προορισμού για κάθε κρύπτη που έχει εισαχθεί."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Οι διακομιστές είναι απρόσιτοι. Παρακαλούμε δοκιμάστε ξανά σε λίγα λεπτά"
@@ -837,6 +849,9 @@
       "Vault \"${ share.content.name }\" was disabled": [
         "Η κρύπτη \"${ share.content.name }\" απενεργοποιήθηκε"
       ],
+      "Verification code": [
+        "Κωδικός επαλήθευσης"
+      ],
       "You are about to create:": [
         "Είστε έτοιμοι να δημιουργήσετε:"
       ],
@@ -853,8 +868,8 @@
       "You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.": [
         "Έχετε φτάσει στο όριο των ψευδωνύμων που μπορείτε να δημιουργήσετε. Δημιουργήστε ένα απεριόριστο αριθμό ψευδωνύμων κατά την αναβάθμιση της συνδρομής σας."
       ],
-      "You have reached the limit of vaults you can create. Create an unlimited number of vaults when you upgrade your subscription.": [
-        "Έχετε φτάσει στο όριο των κρυπτών που μπορείτε να δημιουργήσετε. Δημιουργήστε ένα απεριόριστο αριθμό κρυπτών κατά την αναβάθμιση της συνδρομής σας."
+      "You have reached the limit of vaults you can create.": [
+        "Έχετε φτάσει στο όριο των κρυπτών που μπορείτε να δημιουργήσετε."
       ],
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "Έχετε φτάσει στο μέγιστο επιτρεπόμενο μήκος των ${ maxLength } χαρακτήρων."
@@ -1563,6 +1578,9 @@
       "Vault name is required": [
         "Απαιτείται όνομα κρύπτης"
       ],
+      "You cannot create more vaults than your subscription allows.": [
+        "Δεν μπορείτε να δημιουργήσετε περισσότερες κρύπτες από όσες επιτρέπει η συνδρομή σας."
+      ],
       "You have unsaved changes, are you sure you want to discard them?": [
         "Έχετε μη αποθηκευμένες αλλαγές, είστε σίγουροι πως θέλετε να τις απορρίψετε;"
       ],
@@ -1578,8 +1596,8 @@
       "Your session was locked due to inactivity": [
         "Η περίοδος λειτουργίας σας κλειδώθηκε λόγω αδράνειας"
       ],
-      "Your subscription does not allow you to create multiple vaults. All items will be imported to your primary vault by default. To import into multiple vaults upgrade your subscription.": [
-        "Η συνδρομή σας δε σας επιτρέπει να δημιουργήσετε πολλές κρύπτες. Όλα τα στοιχεία θα εισαχθούν στην κύρια κρύπτη από προεπιλογή. Για να κάνετε εισαγωγή σε πολλές κρύπτες, αναβαθμίστε τη συνδρομή σας."
+      "Your subscription does not allow you to create multiple vaults. All items will be imported to your primary vault. To import into multiple vaults upgrade your subscription.": [
+        "Η συνδρομή σας δε σας επιτρέπει να δημιουργήσετε πολλαπλές κρύπτες. Όλα τα στοιχεία θα εισαχθούν στην κύρια κρύπτη. Για να κάνετε εισαγωγή σε πολλαπλές κρύπτες, αναβαθμίστε τη συνδρομή σας."
       ]
     }
   }

@@ -434,9 +434,6 @@
       "Generate token": [
         "Δημιουργία διακριτικού"
       ],
-      "Get ${ discountPercentage } off with 24 months": [
-        "Κερδίστε έκπτωση ${ discountPercentage } με 24 μήνες"
-      ],
       "Get ${ vpnPlus }": [
         "Λήψη ${ vpnPlus }"
       ],
@@ -4420,7 +4417,7 @@
       "(1-2 emails per month)": [
         "(1-2 μηνύματα ανά μήνα)"
       ],
-      "(2-4 per year)": [
+      "(2-4 emails per year)": [
         "(2-4 μηνύματα ανά έτος)"
       ],
       "(4-6 emails per year)": [
@@ -4522,11 +4519,14 @@
       "Best deal": [
         "Η καλύτερη προσφορά"
       ],
+      "Checkout": [
+        "Ολοκλήρωση αγορών"
+      ],
+      "Create your account": [
+        "Δημιουργήστε το λογαριασμό σας."
+      ],
       "Device": [
         "Συσκευή"
-      ],
-      "Enter your email address": [
-        "Καταχωρίστε τη διεύθυνση email σας"
       ],
       "Event": [
         "Γεγονός"
@@ -4557,9 +4557,6 @@
       ],
       "Protection": [
         "Προστασία"
-      ],
-      "Select your preferred method of payment": [
-        "Επιλέξτε τον τρόπο πληρωμής που προτιμάτε"
       ],
       "Select your pricing plan": [
         "Επιλέξτε το πρόγραμμα χρέωσης:"
@@ -5030,6 +5027,9 @@
       ],
       "${ current } of ${ total }": [
         "${ current } από ${ total }"
+      ],
+      "${ discountPercentage } forever": [
+        "${ discountPercentage } για πάντα"
       ],
       "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
         "Το ${ DRIVE_APP_NAME } δε θα διατηρεί πλέον προηγούμενες εκδόσεις των αρχείων σας."
@@ -6239,9 +6239,6 @@
       "Save your password somewhere safe. Click on icon to confirm that you have typed your password correctly.": [
         "Φυλάξτε τον κωδικό πρόσβασής σας σε ασφαλές μέρος. Κάντε κλικ στο εικονίδιο για επιβεβαίωση της ορθής πληκτρολόγησης του κωδικού σας."
       ],
-      "Saving your password": [
-        "Ο κωδικός πρόσβασης σας αποθηκεύεται"
-      ],
       "Scan QR code instead": [
         "Εναλλακτικά, σαρώστε τον κωδικό QR"
       ],
@@ -6371,9 +6368,6 @@
       ],
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
         "Το μήνυμα ${ boldDataLocked } δεν θα εμφανίζεται πλέον, ωστόσο μπορείτε να ξεκλειδώσετε τα δεδομένα σας στο ${ encryptionAndKeysLink }."
-      ],
-      "The ${ planName } plan includes:": [
-        "Το πλάνο ${ planName } περιλαμβάνει:"
       ],
       "The calendar will be removed from your account.": [
         "Το ημερολόγιο θα αφαιρεθεί από τον λογαριασμό σας."
@@ -6507,9 +6501,6 @@
       "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
         "Αυτός ο οδηγός θα ενεργοποιήσει τον έλεγχο ταυτότητας δύο παραγόντων (2FA) στον λογαριασμό σας ${ BRAND_NAME }. Ο έλεγχος ταυτότητας δύο παραγόντων θα κάνει τον λογαριασμό σας ${ BRAND_NAME_TWO } πιο ασφαλή, γι αυτό συνιστούμε να τον ενεργοποιήσετε."
       ],
-      "To ${ planName }": [
-        "Στο ${ planName }"
-      ],
       "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
         "Προς αποφυγή απώλειας δεδομένων, διαγράψτε το μόνο εφόσον γνωρίζετε τι κάνετε ή έχετε εξάγει αντίγραφο."
       ],
@@ -6572,9 +6563,6 @@
       ],
       "Total VPN connections": [
         "Σύνολο συνδέσεων VPN"
-      ],
-      "Try ${ upsellPlanName } risk free": [
-        "Δοκιμάστε το ${ upsellPlanName } χωρίς κίνδυνο"
       ],
       "two-factor authentication (2FA)": [
         "ταυτοποίηση δύο παραγόντων (2FA)"
@@ -6711,8 +6699,8 @@
       "We securely store recovery information on your trusted device to prevent you from losing your data": [
         "Αποθηκεύουμε με ασφάλεια πληροφορίες ανάκτησης στην αξιόπιστη συσκευή σας για να αποτρέψουμε την απώλεια των δεδομένων σας"
       ],
-      "We use 3-D Secure to protect your payments.": [
-        "Χρησιμοποιούμε ασφάλεια 3-D για να προστατεύσουμε τις πληρωμές σας."
+      "We use 3-D Secure to protect your payments": [
+        "Χρησιμοποιούμε ασφάλεια 3-D για να προστατεύσουμε τις πληρωμές σας"
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Θα σας ανακατευθύνουμε στο PayPal, σε μια νέα καρτέλα προγράμματος περιήγησης, για να ολοκληρώσετε αυτήν τη συναλλαγή. Εάν έχετε ενεργοποιημένο τον αποκλεισμό αναδυόμενων παραθύρων, παρακαλώ απενεργοποιήστε τον για να συνεχίσετε."
@@ -6731,9 +6719,6 @@
       ],
       "Week and month views only apply to desktop.": [
         "Οι προβολές εβδομάδας και μήνα ισχύουν μόνο για την επιφάνεια εργασίας."
-      ],
-      "Welcome": [
-        "Καλώς ήρθατε"
       ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "Θα στείλουμε έναν κωδικό επαναφοράς στην ηλ. διεύθυνση που καθορίσατε για ανακτήσεις λογαριασμού."
@@ -6893,9 +6878,6 @@
       "You still need to reply to invitations for the host to see your response.": [
         "Χρειάζεται ακόμα να απαντήσετε στις προσκλήσεις για να βλέπει ο διοργανωτής τις απαντήσεις σας."
       ],
-      "You will be redirected to the VPN download page": [
-        "Θα μεταφερθείτε στη σελίδα λήψης VPN"
-      ],
       "You will lose access to ${ vpnPlanNameShort } servers and features on this date.": [
         "Θα χάσετε την πρόσβαση στους διακομιστές και λειτουργίες του ${ vpnPlanNameShort } αυτήν την ημέρα."
       ],
@@ -6971,6 +6953,9 @@
       ],
       "Your import will not be processed.": [
         "Η εισαγωγή σας δεν θα υποβληθεί σε επεξεργασία."
+      ],
+      "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
+        "Οι πληροφορίες σας είναι ασφαλείς μαζί μας. Θα επικοινωνήσουμε μαζί σας μόνο όταν απαιτείται για την παροχή των υπηρεσιών μας."
       ],
       "Your login information will not be saved after the import is completed.": [
         "Τα στοιχεία σύνδεσής σας δεν θα αποθηκευτούν μετά την ολοκλήρωση της εισαγωγής."
@@ -7533,6 +7518,9 @@
       "Awarded": [
         "Βραβευμένα"
       ],
+      "Billing address": [
+        "Διεύθυνση χρέωσης"
+      ],
       "Billing cycle": [
         "Κύκλος χρέωσης"
       ],
@@ -7566,11 +7554,11 @@
       "Calendars": [
         "Ημερολόγια"
       ],
+      "Card details": [
+        "Στοιχεία κάρτας"
+      ],
       "Card holder": [
         "Κάτοχος κάρτας"
-      ],
-      "Card information": [
-        "Πληροφορίες κάρτας"
       ],
       "Card number": [
         "Αριθμός κάρτας"
@@ -9199,6 +9187,9 @@
       "Split tunneling (Android and Windows)": [
         "Διαίρεση σήραγγας (Android και Windows)"
       ],
+      "Start protecting yourself online in 2 easy steps": [
+        "Αρχίστε να προστατεύετε τον εαυτό σας online σε 2 εύκολα βήματα"
+      ],
       "Strict no-logs policy": [
         "Αυστηρή πολιτική μη διατήρησης αρχείων καταγραφής"
       ],
@@ -10791,8 +10782,8 @@
       ]
     },
     "Shared calendar; Info about calendar owner": {
-      "Created by ${ ownerName }": [
-        "Δημιουργήθηκε από ${ ownerName }"
+      "Shared by ${ ownerName }": [
+        "Κοινοποιήθηκε από τον/την ${ ownerName }"
       ]
     },
     "Signature verification error when joining calendar": {
@@ -11262,9 +11253,6 @@
     "Subscription saving": {
       "Save": [
         "Αποθήκευση"
-      ],
-      "Save ${ discountPercentage }%": [
-        "Εξοικονομήστε ${ discountPercentage }%"
       ]
     },
     "Subscription status": {
@@ -12443,7 +12431,7 @@
       "Signed in to member account": [
         "Σύνδεση στον λογαριασμό μέλους"
       ],
-      "SMTP Submission": [
+      "SMTP submission": [
         "Υποβολή SMTP"
       ],
       "Sort folders alphabetically": [
@@ -12968,6 +12956,69 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } σε ${ numberOfCountries } χώρα",
         "${ numberOfServers } σε ${ numberOfCountries } χώρες"
+      ]
+    },
+    "vpn_2step: billing": {
+      "${ billedText }, renews on ${ formattedEndTime }": [
+        "${ billedText }, ανανεώνεται στις ${ formattedEndTime }"
+      ],
+      "Billed every 15 months": [
+        "Χρέωση κάθε 15 μήνες"
+      ],
+      "Billed every 2 years": [
+        "Χρέωση κάθε 2 χρόνια"
+      ],
+      "Billed every 30 months": [
+        "Χρέωση κάθε 30 μήνες"
+      ],
+      "Billed monthly": [
+        "Μηνιαία χρέωση"
+      ],
+      "Billed yearly": [
+        "Ετήσια χρέωση"
+      ]
+    },
+    "vpn_2step: discount": {
+      "1-year": [
+        "1ετής"
+      ],
+      "2-year": [
+        "2ετής"
+      ],
+      "Get ${ discount } off with a ${ billingCycle } subscription": [
+        "Λάβετε έκπτωση ${ discount } με ${ billingCycle } συνδρομή"
+      ],
+      "monthly": [
+        "μηνιαία"
+      ]
+    },
+    "vpn_2step: feature": {
+      "Advanced VPN customizations": [
+        "Προχωρημένες Ρυθμίσεις VPN"
+      ],
+      "No ads": [
+        "Χωρίς διαφημίσεις"
+      ]
+    },
+    "vpn_2step: info": {
+      "${ n } month": [
+        "${ n } μήνας",
+        "${ n } μήνες"
+      ],
+      "${ n } year": [
+        "${ n } έτος",
+        "${ n } έτη"
+      ],
+      "Try ${ upsellPlanName } risk-free": [
+        "Δοκιμάστε το ${ upsellPlanName } χωρίς κίνδυνο"
+      ],
+      "Your ${ selected } plan": [
+        "Το ${ selected } πλάνο σας"
+      ]
+    },
+    "vpn_2step: tooltip": {
+      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, Double hop, and more.": [
+        "Πρόσβαση σε Secure core διακομιστές, γρήγορες λήψεις P2P/BitTorrent, Tor over VPN, Double hop και πολλά άλλα."
       ]
     },
     "Warning": {

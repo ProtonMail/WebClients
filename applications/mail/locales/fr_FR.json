@@ -2936,7 +2936,7 @@
         "Le fichier doit avoir une taille maximale de ${ MAX_IMPORT_FILE_SIZE_STRING } et jusqu'à ${ MAX_IMPORT_CONTACTS_STRING } contacts. Si votre fichier est plus grand, veuillez le diviser en fichiers plus petits."
       ],
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
-        "Activez la protection contre les traqueurs d'e-mails pour éviter que les publicitaires ou toute autre personne ne surveillent votre emplacement ou vos activités en ligne."
+        "Activez la protection contre le suivi des e-mails pour empêcher les annonceurs et toute autre personne de suivre votre localisation et vos activités en ligne."
       ],
       "Unlock custom message scheduling and other benefits when you upgrade your plan.": [
         "Débloquez l'envoi programmé de messages personnalisé et d'autres fonctionnalités en passant à un abonnement supérieur."
@@ -2951,7 +2951,7 @@
         "Utilisez le glisser-déposer pour classer la priorité de fusion entre les contacts. Décochez les contacts que vous ne voulez pas fusionner."
       ],
       "We didn't find any known trackers and tracking URLs in this email.": [
-        "Nous n'avons trouvé aucun traqueur ou URL tentant de vous suivre dans cet e-mail."
+        "Nous n'avons trouvé aucun traqueur connu ou URL de suivi dans ce message."
       ],
       "When do you want your message to be sent?": [
         "Quand voulez-vous que votre message soit envoyé ?"
@@ -3421,9 +3421,6 @@
       ],
       "There has been an issue with content search. Default search has been used instead.": [
         "Il y a eu un problème avec la recherche dans le contenu. La recherche par défaut a été utilisée à la place."
-      ],
-      "There was a problem updating your local messages, they will be downloaded again to re-enable content search": [
-        "Il y a eu un problème de mise à jour de vos messages locaux, ils seront téléchargés à nouveau pour réactiver la recherche dans le contenu des messages."
       ],
       "There was an error when exporting the contacts vCards": [
         "Une erreur s’est produite pendant l’exportation des vCards des contacts."
@@ -4178,7 +4175,7 @@
         "Changez les ${ strongText } pour votre adresse ${ BRAND_NAME }"
       ],
       "Checklist complete": [
-        "Checklist terminée"
+        "La checklist est terminée."
       ],
       "Close": [
         "Fermer"
@@ -5766,7 +5763,7 @@
         "Traqueurs bloqués :"
       ],
       "Turn off to only search by date, name, email address, or subject line. To disable search message content and delete downloaded messages, go to settings.": [
-        "Désactivez cette option pour rechercher uniquement par date, nom, adresse e-mail ou objet du message. Pour désactiver la recherche dans le contenu des messages (et supprimer les messages qui ont été téléchargés pour permettre cette fonctionnalité), accédez aux paramètres."
+        "Désactivez cette option pour faire des recherches uniquement par date, nom, adresse e-mail ou objet du message. Pour désactiver la recherche dans le contenu des messages (et supprimer les messages qui ont été téléchargés pour permettre cette fonctionnalité), accédez aux paramètres."
       ],
       "Turn on to search the content of your messages": [
         "Activer pour rechercher dans le contenu de vos messages"
@@ -5782,9 +5779,6 @@
       ],
       "Updating message content search...": [
         "Mise à jour de la recherche dans le contenu des messages en cours"
-      ],
-      "Updating your local messages, message content won't be searched during this update": [
-        "Mise à jour de vos messages locaux, le contenu des messages ne sera pas recherché pendant cette mise à jour."
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Passez à la version supérieure pour profiter de fonctionnalités, de produits et d'espace de stockage premium à un tarif avantageux."
@@ -5850,13 +5844,13 @@
         "Nous nous excusons, il s'agit peut-être d'une erreur de notre part. Pouvez-vous confirmer que vous voulez marquer ce message comme légitime ?"
       ],
       "We blocked the following advertisers and organizations from seeing when you open this email, what device you’re using, and where you’re located.": [
-        "Nous avons empêché les publicitaires et organisations suivantes de savoir si vous aviez ouvert ce message, quel appareil vous utilisez et où vous vous situez."
+        "Nous avons empêché les annonceurs et entreprises suivants de savoir quand vous ouvrez ce message, quel appareil vous utilisez et où vous vous trouvez."
       ],
       "We could not verify the sender's trusted keys.": [
         "Nous n'avons pas pu vérifier les clés approuvées de l'expéditeur."
       ],
       "We removed tracking information from the following links to help protect you from advertisers and others trying to track your online activity.": [
-        "Nous avons supprimé les informations de traçage des liens suivants pour vous aider à vous protéger des publicitaires et autres parties essayant de tracer votre activité en ligne."
+        "Nous avons supprimé les informations de traçage des liens suivants pour vous protéger des entités qui tentent de suivre vos activités en ligne, qu'il s'agisse d'annonceurs ou d'autres entreprises."
       ],
       "We'll notify you when the import is done.": [
         "Nous vous informerons dès que l'importation sera terminée."

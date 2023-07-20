@@ -161,9 +161,6 @@
       "Learn more": [
         "Ayrıntılı bilgi alın"
       ],
-      "Lock ${ PASS_APP_NAME }": [
-        "${ PASS_APP_NAME } uygulamasını kilitle"
-      ],
       "More options": [
         "Diğer seçenekler"
       ],
@@ -248,9 +245,6 @@
       "Submitting report...": [
         "Rapor gönderiliyor..."
       ],
-      "Sync": [
-        "Eşitle"
-      ],
       "Try again": [
         "Yeniden dene"
       ],
@@ -297,10 +291,10 @@
         "Kimlik doğrulayıcı sorunu"
       ],
       "Auto-lock could not be activated": [
-        "Otomatik kilit etkinleştirilemedi"
+        "Otomatik kilit özelliği açılamadı"
       ],
       "Auto-lock could not be disabled": [
-        "Otomatik kilit devre dışı bırakılamadı"
+        "Otomatik kilitleme kapatılamadı"
       ],
       "Bitwarden export file could not be parsed. ${ errorDetail }": [
         "Bitwarden dışa aktarma dosyası işlenemedi. ${ errorDetail }"
@@ -359,9 +353,6 @@
       ],
       "Firefox export file could not be parsed. ${ errorDetail }": [
         "Firefox dışa aktarma dosyası işlenemedi. ${ errorDetail }"
-      ],
-      "Import failed for vault \"${ vaultData.vaultName }\" : ${ description }": [
-        "\"${ vaultData.vaultName }\" kasasına içe aktarılamadı: ${ description }"
       ],
       "Importing items failed": [
         "Ögeler içe aktarılamadı"
@@ -424,7 +415,7 @@
         "Ayarlar güncellenemedi"
       ],
       "Some vaults are no longer accessible due to a password reset. Reactivate your account keys in order to regain access. ${ reactivateLink }": [
-        "Parola sıfırlandığı için bazı kasalara artık erişilemiyor. Yeniden erişebilmek için hesap anahtarlarınızı yeniden etkinleştirin. ${ reactivateLink }"
+        "Parola sıfırlandığı için bazı kasalara artık erişilemiyor. Yeniden erişebilmek için hesap anahtarlarınızı yeniden kullanıma alın. ${ reactivateLink }"
       ],
       "Something went wrong": [
         "Bir sorun çıktı"
@@ -464,9 +455,6 @@
       ],
       "Vault \"${ payload.content.name }\" creation failed": [
         "\"${ payload.content.name }\" kasası oluşturulamadı"
-      ],
-      "Vault \"${ vaultData.vaultName }\" could not be created": [
-        "\"${ vaultData.vaultName }\" kasası oluşturulamadı"
       ],
       "Vault name does not match": [
         "Kasa adı aynı değil"
@@ -571,10 +559,10 @@
         "Tüm ögeler geri yüklendi"
       ],
       "An item previously shared with you was disabled": [
-        "Daha önce paylaştığınız bir öge devre dışı bırakılmış"
+        "Daha önce paylaştığınız bir öge kullanımdan kaldırılmış"
       ],
       "Auto-lock successfully disabled": [
-        "Otomatik kilit devre dışı bırakıldı"
+        "Otomatik kilitleme kapatıldı"
       ],
       "Autosaved on ${ submissionURL }": [
         "${ submissionURL } üzerinden otomatik olarak kaydedildi"
@@ -610,7 +598,7 @@
         "Var olan parolalarınızı kolayca ${ PASS_APP_NAME } içine aktarın."
       ],
       "Enable ${ PASS_APP_NAME } by connecting your ${ BRAND_NAME } account": [
-        "${ BRAND_NAME } hesabınızı bağlayarak ${ PASS_APP_NAME } uygulamasını etkinleştirin"
+        "${ BRAND_NAME } hesabınızı bağlayarak ${ PASS_APP_NAME } uygulamasını kullanıma alın"
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Doğrulama kodunu yazın. Rakam ${ digit }."
@@ -764,9 +752,6 @@
       "Save login": [
         "Oturum açmayı kaydet"
       ],
-      "Select the destination vault for each imported vault. By default a new vault will be created for each imported vault.": [
-        "İçe aktarılacak her kasa için hedef kasayı seçin. Varsayılan olarak içe aktarılan her kasa için yeni bir kasa oluşturulur."
-      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Sunuculara erişilemiyor. Lütfen birkaç dakika sonra yeniden deneyin"
       ],
@@ -835,7 +820,7 @@
         "\"${ payload.share.content.name }\" kasası güncellendi"
       ],
       "Vault \"${ share.content.name }\" was disabled": [
-        "\"${ share.content.name }\" kasası devre dışı bırakılmış"
+        "\"${ share.content.name }\" kasası kullanımdan kaldırılmış"
       ],
       "You are about to create:": [
         "Şunu oluşturmak üzeresiniz:"
@@ -852,9 +837,6 @@
       ],
       "You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.": [
         "Oluşturabileceğiniz takma ad sayısı sınırına ulaştınız. Abonelik tarifenizi yükselterek sınırsız sayıda takma ad oluşturabilirsiniz."
-      ],
-      "You have reached the limit of vaults you can create. Create an unlimited number of vaults when you upgrade your subscription.": [
-        "Oluşturabileceğiniz kasa sayısı sınırına ulaştınız. Abonelik tarifenizi yükselterek sınırsız sayıda kasa oluşturabilirsiniz."
       ],
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "İzin verilen en fazla ${ maxLength } karakter sayısına ulaştınız."
@@ -1577,9 +1559,6 @@
       ],
       "Your session was locked due to inactivity": [
         "Bir süredir işlem yapmadığınızdan oturumunuz kilitlendi"
-      ],
-      "Your subscription does not allow you to create multiple vaults. All items will be imported to your primary vault by default. To import into multiple vaults upgrade your subscription.": [
-        "Abonelik tarifeniz birden fazla kasa oluşturmanıza izin vermiyor. Varsayılan olarak tüm ögeler birincil kasanız içine aktarılır. Birden fazla kasa içine aktarım yapabilmek için abonelik tarifenizi yükseltin."
       ]
     }
   }

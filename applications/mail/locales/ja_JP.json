@@ -521,7 +521,7 @@
         "挿入"
       ],
       "Insert ${ totalChecked } contacts": [
-        "${ totalChecked } 件の連絡先を挿入"
+        "${ totalChecked } 個の連絡先を挿入"
       ],
       "Insert contact": [
         "連絡先を挿入"
@@ -2925,6 +2925,9 @@
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files.": [
         "最大 ${ MAX_IMPORT_FILE_SIZE_STRING } のファイルサイズ、最大 ${ MAX_IMPORT_CONTACTS_STRING } 件の連絡先に対応しています。それより大きなファイルは、分割してください。"
       ],
+      "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
+        "電子メール トラッカー保護をオンにして、広告主などがあなたの位置情報やオンライン アクティビティを追跡しないようにします。"
+      ],
       "Unlock custom message scheduling and other benefits when you upgrade your plan.": [
         "プランをアップグレードすると、カスタムメッセージの送信予約などを使用できます。"
       ],
@@ -2936,6 +2939,9 @@
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "ドラッグアンドドロップを使って連絡先の優先順位を決めてください。チェックを解除するとこの連絡先は結合されません。"
+      ],
+      "We didn't find any known trackers and tracking URLs in this email.": [
+        "このメールには既知のトラッカーと追跡 URL は見つかりませんでした。"
       ],
       "When do you want your message to be sent?": [
         "いつメッセージを送信しますか？"
@@ -3394,9 +3400,6 @@
       ],
       "There has been an issue with content search. Default search has been used instead.": [
         "コンテンツ検索に問題があります。既定の検索が代わりに使用されています。"
-      ],
-      "There was a problem updating your local messages, they will be downloaded again to re-enable content search": [
-        "ローカルメッセージ更新中に問題が発生しましたが、コンテンツ検索を有効化するために再度ダウンロードされます"
       ],
       "There was an error when exporting the contacts vCards": [
         "連絡先の vCard のエクスポート中にエラーが発生しました"
@@ -4142,6 +4145,9 @@
       "Change ${ strongText } to your ${ BRAND_NAME } address": [
         "${ strongText } を ${ BRAND_NAME } のアドレスに変更します"
       ],
+      "Checklist complete": [
+        "チェックリストが完了しました"
+      ],
       "Close": [
         "閉じる"
       ],
@@ -4192,6 +4198,9 @@
       ],
       "Learn more": [
         "より詳しく"
+      ],
+      "Make ${ BRAND_NAME } your go-to inbox": [
+        "${ BRAND_NAME } を頼りになる受信箱にしましょう"
       ],
       "Maybe later": [
         "後で行う"
@@ -4645,6 +4654,9 @@
       ],
       "${ numberOfImageTrackers } trackers blocked": [
         "${ numberOfImageTrackers }個のトラッカーをブロックしました"
+      ],
+      "${ numberOfUTMTrackers } links cleaned": [
+        "${ numberOfUTMTrackers } リンクが削除されました"
       ],
       "${ numContact } contacts": [
         "${ numContact } 件の連絡先"
@@ -5246,6 +5258,9 @@
       "No label selected": [
         "ラベルが選択されていません"
       ],
+      "No links cleaned": [
+        "クリーンアップされたリンクはありません"
+      ],
       "No more results found": [
         "これ以上の結果が見つかりません"
       ],
@@ -5666,9 +5681,6 @@
       "Updating message content search...": [
         "メッセージ内容の検索を更新中..."
       ],
-      "Updating your local messages, message content won't be searched during this update": [
-        "ローカルのメッセージを更新している間、メッセージ本文は検索対象になりません"
-      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "今すぐアップグレードして、プレミアム機能、製品、ストレージを特別価格で手に入れよう"
       ],
@@ -5732,8 +5744,14 @@
       "We apologize. This might have been a mistake from our side. Can you please confirm that you want to mark this email as a legitimate one?": [
         "申し訳ございません。スパム判定を誤ってしまった可能性があります。このメールを迷惑メールから除外しますか？"
       ],
+      "We blocked the following advertisers and organizations from seeing when you open this email, what device you’re using, and where you’re located.": [
+        "次の広告主および組織が、あなたがこのメールを開いたとき、使用しているデバイス、現在地を確認できないようにブロックしました。"
+      ],
       "We could not verify the sender's trusted keys.": [
         "差出人の信頼された鍵を検証できませんでした。"
+      ],
+      "We removed tracking information from the following links to help protect you from advertisers and others trying to track your online activity.": [
+        "広告主や他のユーザーがあなたのオンライン アクティビティを追跡しようとすることから保護するために、次のリンクから追跡情報を削除しました。"
       ],
       "We'll notify you when the import is done.": [
         "インポートが完了したら通知します。"
@@ -7685,6 +7703,11 @@
         "送信者検証"
       ]
     },
+    "Sender verification error": {
+      "Sender verification failed: Verification key is not in the list of trusted keys.": [
+        "送信者の検証に失敗しました: 検証キーが信頼できるキーのリストにありません。"
+      ]
+    },
     "Sent email icon": {
       "Encrypted by ${ MAIL_APP_NAME }": [
         "${ MAIL_APP_NAME } による暗号化"
@@ -8836,6 +8859,9 @@
       ],
       "Previous message": [
         "前のメッセージ"
+      ],
+      "Protect yourself from trackers": [
+        "トラッカーから身を守る"
       ],
       "Re-sign all contacts": [
         "すべての連絡先を再署名する"

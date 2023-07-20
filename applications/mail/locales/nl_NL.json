@@ -124,6 +124,9 @@
       "Block": [
         "Blokkeer"
       ],
+      "Block email tracking": [
+        "Blokkeer e-mailtracking"
+      ],
       "Block messages from this sender": [
         "Berichten van deze afzender blokkeren"
       ],
@@ -3413,9 +3416,6 @@
       "There has been an issue with content search. Default search has been used instead.": [
         "Er is een probleem opgetreden met het zoeken naar inhoud. In plaats daarvan is de standaard zoekopdracht gebruikt."
       ],
-      "There was a problem updating your local messages, they will be downloaded again to re-enable content search": [
-        "Er was een probleem bij het bijwerken van uw lokale berichten, ze zullen opnieuw gedownload worden om inhoud doorzoeken te kunnen herinschakelen"
-      ],
       "There was an error when exporting the contacts vCards": [
         "Er is een fout opgetreden bij het exporteren van de contacten vCards"
       ],
@@ -4096,6 +4096,9 @@
     "Font face option": {
       "System default": [
         "Systeem standaard"
+      ],
+      "Theme font": [
+        "Thema lettertype"
       ]
     },
     "Font Size Default": {
@@ -4135,6 +4138,15 @@
       ]
     },
     "Get started checklist instructions": {
+      "${ MAIL_APP_NAME } app": [
+        "${ MAIL_APP_NAME }-app"
+      ],
+      "${ MAIL_APP_NAME } on App Store": [
+        "${ MAIL_APP_NAME } in de App Store"
+      ],
+      "${ MAIL_APP_NAME } on Play Store": [
+        "${ MAIL_APP_NAME } in de Play Store"
+      ],
       "Close": [
         "Sluiten"
       ],
@@ -4143,6 +4155,9 @@
       ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "Download de ${ MAIL_APP_NAME } mobiele app"
+      ],
+      "Get the App": [
+        "Download de app"
       ],
       "Import contacts or emails": [
         "Contacten of e-mails importeren"
@@ -4161,6 +4176,9 @@
       ],
       "Send a message": [
         "Verstuur een bericht"
+      ],
+      "Set recovery method": [
+        "Herstelmethode instellen"
       ]
     },
     "Gmail forwarding": {
@@ -5645,9 +5663,6 @@
       ],
       "Updating message content search...": [
         "Zoeken naar berichtinhoud bijwerken..."
-      ],
-      "Updating your local messages, message content won't be searched during this update": [
-        "Uw lokale berichten worden geüpdatet, berichtinhoud kan niet doorzocht worden tijdens deze update"
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Upgrade nu om alle premium functionaliteiten, producten en opslag te krijgen voor een speciale prijs"
