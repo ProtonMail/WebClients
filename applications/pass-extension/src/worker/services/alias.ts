@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
-import type { AliasState } from '@proton/pass/store';
 import {
+    aliasOptionsRequestFailure,
     aliasOptionsRequestSuccess,
     aliasOptionsRequested,
     itemCreationFailure,
@@ -27,16 +27,24 @@ export const createAliasService = () => {
         const { needsUpgrade } = selectAliasLimits(store.getState());
         const primaryVault = selectPrimaryVault(store.getState());
 
-        return {
-            needsUpgrade,
-            options: await new Promise<AliasState['aliasOptions']>((resolve) =>
-                store.dispatch(
-                    aliasOptionsRequested({ shareId: primaryVault.shareId }, (result) =>
-                        resolve(aliasOptionsRequestSuccess.match(result) ? result.payload.options : null)
-                    )
-                )
-            ),
-        };
+        return new Promise((resolve) =>
+            store.dispatch(
+                aliasOptionsRequested({ shareId: primaryVault.shareId }, (result) => {
+                    if (aliasOptionsRequestSuccess.match(result)) {
+                        return resolve({ needsUpgrade: needsUpgrade, options: result.payload.options, error: null });
+                    }
+
+                    if (aliasOptionsRequestFailure.match(result)) {
+                        const errorMessage =
+                            result.error instanceof Error ? getApiErrorMessage(result.error) : undefined;
+                        return resolve({ needsUpgrade: needsUpgrade, options: null, error: errorMessage ?? null });
+                    }
+
+                    // should never happen, but just in case
+                    return resolve({ needsUpgrade: needsUpgrade, options: null, error: null });
+                })
+            )
+        );
     });
 
     WorkerMessageBroker.registerMessage(WorkerMessageType.ALIAS_CREATE, async (message) => {

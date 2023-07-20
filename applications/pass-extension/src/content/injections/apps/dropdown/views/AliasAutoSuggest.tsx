@@ -53,6 +53,7 @@ export const AliasAutoSuggest: VFC<Props> = ({ prefix, domain, onOptions, onMess
 
             await sendMessage.onSuccess(contentScriptMessage({ type: WorkerMessageType.ALIAS_OPTIONS }), (response) => {
                 if (response.options === null) {
+                    ensureMounted(setErrorText)(response.error);
                     throw new Error('alias options could not be resolved');
                 }
                 ensureMounted(setAliasOptions)(response.options);
@@ -178,7 +179,7 @@ export const AliasAutoSuggest: VFC<Props> = ({ prefix, domain, onOptions, onMess
 
                     if (error) {
                         return (
-                            <span className="color-danger block">
+                            <span className="color-danger text-sm block">
                                 {errorText
                                     ? c('Error').t`Cannot create alias (${errorText}).`
                                     : c('Error').t`Cannot create alias.`}{' '}
