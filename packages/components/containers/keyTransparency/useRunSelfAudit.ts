@@ -18,7 +18,7 @@ import useReportSelfAuditErrors from './useReportSelfAuditErrors';
 import useSaveSKLToLS from './useSaveSKLToLS';
 import useUploadMissingSKL from './useUploadMissingSKL';
 
-const SELF_AUDIT_MAX_TRIALS = 5;
+const SELF_AUDIT_MAX_TRIALS = 6;
 
 const useRunSelfAudit = () => {
     const getAddresses = useGetAddresses();
