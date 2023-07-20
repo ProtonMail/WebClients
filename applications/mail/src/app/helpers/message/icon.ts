@@ -420,7 +420,7 @@ const getReceivedStatusIconInternalWithKT = (
             senderVerificationDetails: {
                 description: c('loc_nightly: Sender verification error')
                     .t`Signing key not protected by Key Transparency`,
-                // TODO: Add learn more link.
+                showKeyTransparencyLearnMore: true,
             },
         };
     }
@@ -474,7 +474,7 @@ const getReceivedStatusIconInternalWithKT = (
                 senderVerificationDetails: {
                     description: c('loc_nightly: Signature verification success')
                         .t`Sender verified with Key Transparency`,
-                    // TODO: Add learn more link.
+                    showKeyTransparencyLearnMore: true,
                 },
             };
         }

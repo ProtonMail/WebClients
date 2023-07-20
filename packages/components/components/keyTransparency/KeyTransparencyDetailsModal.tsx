@@ -23,6 +23,7 @@ import {
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
 import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { dateLocale } from '@proton/shared/lib/i18n';
 
 const uniqueByEmail = (failedAudits: LocalStorageAuditResult[]): LocalStorageAuditResult[] => {
@@ -263,7 +264,7 @@ const KeyTransparencyDetailsModal = (props: ModalProps) => {
                 )}
                 <p>
                     <span className="mr-1">{introductionText}</span>
-                    <Href href={'' /*TODO: add link here*/}>{c('Link').t`Learn more`}</Href>
+                    <Href href={getKnowledgeBaseUrl('/key-transparency')}>{c('Link').t`Learn more`}</Href>
                 </p>
                 <hr />
                 {!!selfAuditResult && <SelfAuditResults selfAuditResult={selfAuditResult} />}
