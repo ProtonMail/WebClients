@@ -4,6 +4,7 @@ import type { AliasState } from '@proton/pass/store';
 import {
     aliasOptionsRequestSuccess,
     aliasOptionsRequested,
+    itemCreationFailure,
     itemCreationIntent,
     itemCreationSuccess,
     selectAliasLimits,
@@ -13,6 +14,7 @@ import type { ItemCreateIntent } from '@proton/pass/types';
 import { WorkerMessageType } from '@proton/pass/types';
 import { uniqueId } from '@proton/pass/utils/string';
 import { getEpoch } from '@proton/pass/utils/time';
+import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 
 import WorkerMessageBroker from '../channel';
 import store from '../store';
@@ -63,11 +65,23 @@ export const createAliasService = () => {
             },
         };
 
-        return new Promise<boolean>((resolve) =>
+        return new Promise((resolve) =>
             store.dispatch(
-                itemCreationIntent(aliasCreationIntent, (intentResultAction) =>
-                    itemCreationSuccess.match(intentResultAction) ? resolve(true) : resolve(false)
-                )
+                itemCreationIntent(aliasCreationIntent, (intentResultAction) => {
+                    if (itemCreationSuccess.match(intentResultAction)) {
+                        return resolve({ ok: true });
+                    }
+
+                    if (itemCreationFailure.match(intentResultAction)) {
+                        const errorMessage =
+                            intentResultAction.payload.error instanceof Error
+                                ? getApiErrorMessage(intentResultAction.payload.error)
+                                : undefined;
+                        return resolve({ ok: false, reason: errorMessage ?? '' });
+                    }
+
+                    return resolve({ ok: false, reason: '' });
+                })
             )
         );
     });

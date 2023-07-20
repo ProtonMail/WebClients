@@ -43,7 +43,7 @@ function* singleItemCreationWorker({ onItemsChange, telemetry }: WorkerRootSagaO
         onItemCreationIntentProcessed?.(itemCreationSuccessAction);
         onItemsChange?.();
     } catch (e) {
-        const itemCreationfailureAction = itemCreationFailure({ optimisticId, shareId }, e);
+        const itemCreationfailureAction = itemCreationFailure({ optimisticId, shareId, error: e });
         yield put(itemCreationfailureAction);
 
         onItemCreationIntentProcessed?.(itemCreationfailureAction);
@@ -71,7 +71,7 @@ function* withAliasCreationWorker(
 
         onItemsChange?.();
     } catch (e) {
-        const itemCreationfailureAction = itemCreationFailure({ optimisticId, shareId }, e);
+        const itemCreationfailureAction = itemCreationFailure({ optimisticId, shareId, error: e });
         yield put(itemCreationfailureAction);
     }
 }

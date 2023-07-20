@@ -42,25 +42,27 @@ export const AliasAutoSuggest: VFC<Props> = ({ prefix, domain, onOptions, onMess
     const [needsUpgrade, setNeedsUpgrade] = useState<boolean>(false);
     const [loadingText, setLoadingText] = useState<MaybeNull<string>>(getInitialLoadingText());
     const [error, setError] = useState<boolean>(false);
+    const [errorText, setErrorText] = useState<MaybeNull<string>>(null);
 
     const requestAliasOptions = useCallback(async () => {
         try {
             setLoadingText(getInitialLoadingText());
+            onOptions?.(); /* notify parent component if we need an iframe resize */
             setError(false);
             await wait(500);
 
             await sendMessage.onSuccess(contentScriptMessage({ type: WorkerMessageType.ALIAS_OPTIONS }), (response) => {
-                if (response.options !== null) {
-                    ensureMounted(setAliasOptions)(response.options);
-                    ensureMounted(setNeedsUpgrade)(response.needsUpgrade);
-                    return onOptions?.(); /* notify parent component if we need an iframe resize */
+                if (response.options === null) {
+                    throw new Error('alias options could not be resolved');
                 }
-
-                throw new Error('alias options could not be resolved');
+                ensureMounted(setAliasOptions)(response.options);
+                ensureMounted(setNeedsUpgrade)(response.needsUpgrade);
             });
             ensureMounted(setLoadingText)(null);
         } catch (_) {
             ensureMounted(setError)(true);
+        } finally {
+            onOptions?.(); /* notify parent component if we need an iframe resize */
         }
     }, []);
 
@@ -71,7 +73,7 @@ export const AliasAutoSuggest: VFC<Props> = ({ prefix, domain, onOptions, onMess
             setLoadingText(c('Info').t`Creating alias...`);
             const aliasEmail = `${prefix}${defaultSuffix.suffix}`;
             try {
-                await sendMessage.on(
+                await sendMessage.onSuccess(
                     contentScriptMessage({
                         type: WorkerMessageType.ALIAS_CREATE,
                         payload: {
@@ -85,7 +87,7 @@ export const AliasAutoSuggest: VFC<Props> = ({ prefix, domain, onOptions, onMess
                         },
                     }),
                     (response) => {
-                        if (response.type === 'success') {
+                        if (response.ok) {
                             void sendMessage(
                                 contentScriptMessage({
                                     type: WorkerMessageType.TELEMETRY_EVENT,
@@ -96,7 +98,10 @@ export const AliasAutoSuggest: VFC<Props> = ({ prefix, domain, onOptions, onMess
                             );
                         }
 
-                        if (response.type === 'error') throw new Error(response.error);
+                        if (!response.ok) {
+                            ensureMounted(setErrorText)(response.reason);
+                            throw new Error(response.reason);
+                        }
                     }
                 );
 
@@ -109,6 +114,8 @@ export const AliasAutoSuggest: VFC<Props> = ({ prefix, domain, onOptions, onMess
                 })();
             } catch (err) {
                 ensureMounted(setError)(true);
+            } finally {
+                onOptions?.(); /* notify parent component if we need an iframe resize */
             }
         },
         [domain]
@@ -120,6 +127,7 @@ export const AliasAutoSuggest: VFC<Props> = ({ prefix, domain, onOptions, onMess
 
     useEffect(() => {
         if (error) setLoadingText(null);
+        if (!error) setErrorText(null);
     }, [error]);
 
     const validAliasOptions = isValidAliasOptions(aliasOptions);
@@ -150,7 +158,7 @@ export const AliasAutoSuggest: VFC<Props> = ({ prefix, domain, onOptions, onMess
             />
             <DropdownItem
                 title={needsUpgrade ? c('Info').t`Upgrade ${PASS_APP_NAME}` : c('Title').t`Hide my email`}
-                autogrow={needsUpgrade}
+                autogrow
                 subTitle={(() => {
                     if (loadingText) {
                         return (
@@ -170,8 +178,10 @@ export const AliasAutoSuggest: VFC<Props> = ({ prefix, domain, onOptions, onMess
 
                     if (error) {
                         return (
-                            <span className="color-danger text-sm block">
-                                {c('Error').t`Cannot create alias.`}{' '}
+                            <span className="color-danger block">
+                                {errorText
+                                    ? c('Error').t`Cannot create alias (${errorText}).`
+                                    : c('Error').t`Cannot create alias.`}{' '}
                                 <span className="text-semibold text-underline">{c('Action').t`Try again`}</span>
                             </span>
                         );
