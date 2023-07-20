@@ -137,6 +137,9 @@
       "Generate password": [
         "Genera la contrasenya"
       ],
+      "Get mobile apps": [
+        "Baixeu l'aplicació mòbil"
+      ],
       "Help us improve": [
         "Ajudeu-nos a millorar"
       ],
@@ -158,9 +161,6 @@
       "Learn more": [
         "Més informació"
       ],
-      "Lock ${ PASS_APP_NAME }": [
-        "Bloquejar ${ PASS_APP_NAME }"
-      ],
       "More options": [
         "Més opcions"
       ],
@@ -178,6 +178,12 @@
       ],
       "Open navigation": [
         "Obre la navegació"
+      ],
+      "Pass for Android": [
+        "Pass per a Android"
+      ],
+      "Pass for iOS": [
+        "Pass per a iOS"
       ],
       "Proceed": [
         "Continua"
@@ -238,9 +244,6 @@
       ],
       "Submitting report...": [
         "S'està enviant l'informe..."
-      ],
-      "Sync": [
-        "Sincronitza"
       ],
       "Try again": [
         "Proveu de nou"
@@ -351,9 +354,6 @@
       "Firefox export file could not be parsed. ${ errorDetail }": [
         "No s'ha pogut analitzar el fitxer d'exportació del Firefox. ${ errorDetail }"
       ],
-      "Import failed for vault \"${ vaultData.vaultName }\" : ${ description }": [
-        "No s'ha pogut importar la caixa forta \"${ vaultData.vaultName }\": ${ description }"
-      ],
       "Importing items failed": [
         "Ha fallat la importació dels elements"
       ],
@@ -426,6 +426,9 @@
       "The file you are trying to import is empty": [
         "El fitxer que esteu intentant importar està buit"
       ],
+      "Too many failed attempts. Please sign in again.": [
+        "Massa intents erronis. Torneu a iniciar la sessió."
+      ],
       "Trashing item failed": [
         "No s'ha pogut moure l'element a la paperera"
       ],
@@ -453,11 +456,11 @@
       "Vault \"${ payload.content.name }\" creation failed": [
         "No s'ha pogut crear la caixa forta \"${ payload.content.name }\""
       ],
-      "Vault \"${ vaultData.vaultName }\" could not be created": [
-        "No s'ha pogut crear la caixa forta \"${ vaultData.vaultName }\""
-      ],
       "Vault name does not match": [
         "El nom de la caixa forta no coincideix"
+      ],
+      "Wrong PIN code. Try again.": [
+        "Codi PIN incorrecte. Proveu de nou."
       ]
     },
     "Error message": {
@@ -599,6 +602,9 @@
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Introduïu el codi de verificació. Dígit ${ digit }."
+      ],
+      "Enter your pin code": [
+        "Introduïu el vostre codi PIN"
       ],
       "Enter your PIN code": [
         "Introduïu el codi PIN"
@@ -746,9 +752,6 @@
       "Save login": [
         "Desa l'inici de sessió"
       ],
-      "Select the destination vault for each imported vault. By default a new vault will be created for each imported vault.": [
-        "Seleccioneu la caixa forta de destinació per a cada caixa forta importada. Per defecte, es crearà una nova caixa forta per a cada caixa forta importada."
-      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Servidors inaccessibles. Torneu a provar-ho en uns minuts"
       ],
@@ -834,9 +837,6 @@
       ],
       "You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.": [
         "Heu assolit el límit d'àlies que podeu crear. Creeu un nombre il·limitat d'àlies quan milloreu la vostra subscripció."
-      ],
-      "You have reached the limit of vaults you can create. Create an unlimited number of vaults when you upgrade your subscription.": [
-        "Heu assolit el límit de caixes fortes que podeu crear. Creeu un nombre il·limitat de caixes fortes quan milloreu la vostra subscripció."
       ],
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "Heu assolit la longitud màxima permesa de ${ maxLength } caràcters."
@@ -1559,9 +1559,6 @@
       ],
       "Your session was locked due to inactivity": [
         "S'ha bloquejat la vostra sessió per inactivitat"
-      ],
-      "Your subscription does not allow you to create multiple vaults. All items will be imported to your primary vault by default. To import into multiple vaults upgrade your subscription.": [
-        "La vostra subscripció no us permet crear diverses caixes fortes. Per defecte, tots els elements s'importaran a la vostra caixa forta principal. Per a importar a diverses caixes fortes milloreu la vostra subscripció."
       ]
     }
   }

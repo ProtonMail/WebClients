@@ -56,6 +56,9 @@
       "Continue without pinning": [
         "Continuar sem fixar"
       ],
+      "Copy & fill in": [
+        "Copiar e preencher"
+      ],
       "Copy and close": [
         "Copiar e fechar"
       ],
@@ -161,9 +164,6 @@
       "Learn more": [
         "Saber mais"
       ],
-      "Lock ${ PASS_APP_NAME }": [
-        "Bloquear o ${ PASS_APP_NAME }"
-      ],
       "More options": [
         "Mais opções"
       ],
@@ -247,9 +247,6 @@
       ],
       "Submitting report...": [
         "A enviar o relatório..."
-      ],
-      "Sync": [
-        "Sincronizar"
       ],
       "Try again": [
         "Tentar novamente"
@@ -360,9 +357,6 @@
       "Firefox export file could not be parsed. ${ errorDetail }": [
         "Não foi possível analisar o ficheiro de exportação do Firefox. ${ errorDetail }"
       ],
-      "Import failed for vault \"${ vaultData.vaultName }\" : ${ description }": [
-        "Importação falhou para o cofre \"${ vaultData.vaultName }\": ${ description }"
-      ],
       "Importing items failed": [
         "A importação de itens falhou"
       ],
@@ -435,6 +429,9 @@
       "The file you are trying to import is empty": [
         "O ficheiro que está a tentar importar está vazio"
       ],
+      "Too many failed attempts. Please sign in again.": [
+        "Demasiadas tentativas erradas. Inicie sessão novamente."
+      ],
       "Trashing item failed": [
         "Falha ao mover o item para o lixo."
       ],
@@ -462,11 +459,11 @@
       "Vault \"${ payload.content.name }\" creation failed": [
         "A criação do cofre \"${ payload.content.name }\" falhou."
       ],
-      "Vault \"${ vaultData.vaultName }\" could not be created": [
-        "Não foi possível criar o cofre \"${ vaultData.vaultName }\""
-      ],
       "Vault name does not match": [
         "O nome do cofre não corresponde"
+      ],
+      "Wrong PIN code. Try again.": [
+        "Código PIN errado. Tente novamente."
       ]
     },
     "Error message": {
@@ -608,6 +605,9 @@
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Introduzir o código de verificação. Digite ${ digit }."
+      ],
+      "Enter your pin code": [
+        "Introduza o seu código PIN"
       ],
       "Enter your PIN code": [
         "Introduza o seu código PIN"
@@ -755,9 +755,6 @@
       "Save login": [
         "Guardar login"
       ],
-      "Select the destination vault for each imported vault. By default a new vault will be created for each imported vault.": [
-        "Selecione o cofre de destino para cada cofre importado. Por defeito, será criado um novo cofre para cada cofre importado."
-      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Os servidores estão inacessíveis.Tente novamente dentro de alguns minutos."
       ],
@@ -828,6 +825,9 @@
       "Vault \"${ share.content.name }\" was disabled": [
         "O cofre \"${ share.content.name }\" foi desativado"
       ],
+      "Verification code": [
+        "Código de verificação"
+      ],
       "You are about to create:": [
         "Está prestes a criar:"
       ],
@@ -843,9 +843,6 @@
       ],
       "You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.": [
         "Atingiu o limite de aliases que pode criar. Crie um número ilimitado de aliases quando actualizar a sua subscrição."
-      ],
-      "You have reached the limit of vaults you can create. Create an unlimited number of vaults when you upgrade your subscription.": [
-        "Atingiu o limite de cofres que pode criar. Crie um número ilimitado de cofres quando actualizar a sua subscrição."
       ],
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "Atingiu o comprimento máximo permitido de ${ maxLength } carateres."
@@ -1412,6 +1409,9 @@
       "Unlock ${ brandNameJSX }": [
         "Desbloquear ${ brandNameJSX }"
       ],
+      "Unlock ${ PASS_APP_NAME }": [
+        "Desbloquear ${ PASS_APP_NAME }"
+      ],
       "Update available": [
         "Actualização disponível"
       ],
@@ -1566,8 +1566,8 @@
       "Your session was locked due to inactivity": [
         "A sua sessão foi bloqueada devido à inatividade."
       ],
-      "Your subscription does not allow you to create multiple vaults. All items will be imported to your primary vault by default. To import into multiple vaults upgrade your subscription.": [
-        "A sua subscrição não lhe permite criar vários cofres. Por defeito, todos os itens serão importados para o seu cofre principal. Para importar para vários cofres, actualize a sua subscrição."
+      "Your subscription does not allow you to create multiple vaults. All items will be imported to your primary vault. To import into multiple vaults upgrade your subscription.": [
+        "A sua subscrição não lhe permite criar vários cofres. Todos os itens serão importados para o seu cofre principal. Para importar para vários cofres, actualize a sua subscrição."
       ]
     }
   }
