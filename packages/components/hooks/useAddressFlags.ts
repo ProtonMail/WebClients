@@ -33,9 +33,12 @@ const useAddressFlags: UseAddressFlags = (address) => {
     const [addressesKeys] = useAddressesKeys();
     const { keyTransparencyVerify } = useKTVerifier(api, async () => User);
     const mailForwardingFeature = useFeature<boolean>(FeatureCode.MailForwarding);
-    const isMailForwardingEnabled = !mailForwardingFeature.loading && mailForwardingFeature.feature?.Value === true;
+    const mailDisableE2EEFeature = useFeature<boolean>(FeatureCode.MailDisableE2EE);
+    const isDisableEncryptionEnabled =
+        (!mailForwardingFeature.loading && mailForwardingFeature.feature?.Value === true) ||
+        (!mailDisableE2EEFeature.loading && mailDisableE2EEFeature.feature?.Value === true);
 
-    if (address.Flags === undefined || !isMailForwardingEnabled) {
+    if (address.Flags === undefined || !isDisableEncryptionEnabled) {
         return null;
     }
 

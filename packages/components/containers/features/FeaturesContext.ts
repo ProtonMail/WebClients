@@ -85,6 +85,7 @@ export enum FeatureCode {
     OfferSummer2023 = 'OfferSummer2023',
     SmtpToken = 'SmtpToken',
     MailForwarding = 'MailForwarding',
+    MailDisableE2EE = 'MailDisableE2EE',
     TrustedDeviceRecovery = 'TrustedDeviceRecovery',
     DriveMyDevices = 'DriveWebMyDevices',
     DriveWindowsGA = 'DriveWindowsGA',
