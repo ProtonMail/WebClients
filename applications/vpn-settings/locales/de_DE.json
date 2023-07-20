@@ -86,9 +86,6 @@
       "Create": [
         "Erstellen"
       ],
-      "Create account": [
-        "Konto erstellen"
-      ],
       "Current plan": [
         "Aktuelles Abonnement"
       ],
@@ -170,14 +167,8 @@
       "Fit to window": [
         "An das Fenster anpassen"
       ],
-      "Get ${ discountPercentage } off with 24 months": [
-        "Spare ${ discountPercentage } mit 24 Monaten"
-      ],
       "Get ${ vpnPlus }": [
         "${ vpnPlus } holen"
-      ],
-      "Get a new encrypted email address": [
-        "Erhalte eine neue verschlüsselte E-Mail-Adresse"
       ],
       "Get the deal": [
         "Jetzt zugreifen"
@@ -205,9 +196,6 @@
       ],
       "Mark as default": [
         "Als Standard festlegen"
-      ],
-      "Maybe later": [
-        "Vielleicht später"
       ],
       "More info: ${ safeTitle }": [
         "Weitere Informationen: ${ safeTitle }"
@@ -289,9 +277,6 @@
       ],
       "Save": [
         "Speichern"
-      ],
-      "Save selected": [
-        "Auswahl speichern"
       ],
       "Search countries": [
         "Länder durchsuchen"
@@ -392,9 +377,6 @@
       "Use recovery code": [
         "Wiederherstellungscode verwenden"
       ],
-      "Use your current email instead": [
-        "Verwende stattdessen deine aktuelle E-Mail-Adresse"
-      ],
       "User": [
         "Benutzer"
       ],
@@ -429,14 +411,6 @@
         "Verkleinern"
       ]
     },
-    "Action in trial plan": {
-      "No, thanks": [
-        "Nein, danke"
-      ],
-      "Try free for 30 days": [
-        "30 Tage lang kostenlos testen"
-      ]
-    },
     "Action subscription": {
       "Manage": [
         "Verwalten"
@@ -458,11 +432,6 @@
     "Alter": {
       "This will disconnect all the routers and clients using this certificate.": [
         "Dadurch werden alle Router und Clients, die dieses Zertifikat verwenden, getrennt."
-      ]
-    },
-    "Baseline in trial plan": {
-      "${ mailPlus }: the privacy-first Mail and Calendar solution for your everyday communications needs.": [
-        "${ mailPlus }: die datenschutzfreundliche E-Mail- und Kalenderlösung für deine täglichen Kommunikationsbedürfnisse."
       ]
     },
     "Billing cycle": {
@@ -2023,7 +1992,7 @@
       "(1-2 emails per month)": [
         "(1-2 E-Mails pro Monat)"
       ],
-      "(2-4 per year)": [
+      "(2-4 emails per year)": [
         "(2-4 E-Mails pro Jahr)"
       ],
       "(4-6 emails per year)": [
@@ -2064,22 +2033,17 @@
       "Best deal": [
         "Bestes Angebot"
       ],
-      "Enter your email address": [
-        "E-Mail-Adresse eingeben"
+      "Checkout": [
+        "Zur Kasse"
+      ],
+      "Create your account": [
+        "Erstelle dein Konto"
       ],
       "Get help": [
         "Hilfe erhalten"
       ],
-      "Select your preferred method of payment": [
-        "Bevorzugte Zahlungsmethode auswählen"
-      ],
       "Select your pricing plan": [
         "Wähle dein Abonnement"
-      ]
-    },
-    "Heading in trial plan": {
-      "Try the best of ${ MAIL_APP_NAME } for free": [
-        "Teste die besten Funktionen von ${ MAIL_APP_NAME } kostenlos"
       ]
     },
     "Human verification method": {
@@ -2106,6 +2070,9 @@
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }'s Verschlüsselungstechnologie bedeutet, dass keiner Zugriff auf dein Passwort hat - nicht einmal wir."
       ],
+      "${ discountPercentage } forever": [
+        "Dauerhaft ${ discountPercentage }"
+      ],
       "${ fileName }: full-size image": [
         "${ fileName }: Bild in voller Größe"
       ],
@@ -2126,17 +2093,11 @@
       "${ storage } storage": [
         "${ storage } Speicherplatz"
       ],
-      "${ storageSize } storage": [
-        "${ storageSize } Speicherplatz"
-      ],
       "${ vpnPlus } required for Country level connection.": [
         "${ vpnPlus } ist für die länderbasierte Verbindung notwendig."
       ],
       "${ vpnPlus } required for Secure Core feature.": [
         "${ vpnPlus } ist für die Secure Core-Funktion notwendig."
-      ],
-      "* No credit card required.": [
-        "* Keine Kreditkarte erforderlich."
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } Bonus-Speicherplatz"
@@ -2144,9 +2105,6 @@
       "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
         "${ organization.BonusVPN } zusätzliche Verbindung für ${ VPN_APP_NAME } (ermöglicht es dir, weitere Geräte mit VPN zu verbinden)",
         "${ organization.BonusVPN } zusätzliche Verbindungen für ${ VPN_APP_NAME } (ermöglicht es dir, weitere Geräte mit VPN zu verbinden)"
-      ],
-      "10 email addresses": [
-        "10 E-Mail-Adressen"
       ],
       "30-day money-back guarantee": [
         "30 Tage Geld-zurück-Garantie"
@@ -2355,6 +2313,9 @@
       "For Visa, MasterCard and Discover, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
         "Bei Visa, MasterCard und Discover: die 3 Ziffern auf der Rückseite deiner Karte. Bei American Express die 4 Ziffern auf der Vorderseite deiner Karte."
       ],
+      "Free forever": [
+        "Für immer kostenlos"
+      ],
       "Free up some space or add more storage space.": [
         "Gib etwas Platz frei oder füge zusätzlichen Speicherplatz hinzu."
       ],
@@ -2469,9 +2430,6 @@
       "MM/YY": [
         "MM/JJ"
       ],
-      "No credit card required": [
-        "Keine Kreditkarte erforderlich"
-      ],
       "No payment is required at this time.": [
         "Zu diesem Zeitpunkt ist keine Zahlung erforderlich."
       ],
@@ -2492,9 +2450,6 @@
       ],
       "Once you reset your password:": [
         "Sobald du dein Passwort zurücksetzt:"
-      ],
-      "One account. All ${ BRAND_NAME } services.": [
-        "Ein Konto für alle ${ BRAND_NAME }-Dienste."
       ],
       "Open source": [
         "Quelloffen"
@@ -2550,9 +2505,6 @@
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Der Preis beinhaltet alle anwendbaren zyklusbasierten Rabatte und nicht abgelaufenen Coupons, die auf deinem Konto gespeichert sind."
       ],
-      "Priority support": [
-        "Vorrangiger Support"
-      ],
       "Protected by Swiss privacy laws": [
         "Geschützt durch Schweizer Datenschutzgesetze"
       ],
@@ -2573,9 +2525,6 @@
       ],
       "Revoke certificate ${ name }": [
         "Zertifikat ${ name } widerrufen"
-      ],
-      "Saving your password": [
-        "Passwort wird gespeichert"
       ],
       "Scan QR code instead": [
         "Stattdessen QR-Code scannen"
@@ -2611,17 +2560,14 @@
         "Schritt ${ step }",
         "Schritt ${ step }"
       ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Der Speicherplatz wird von ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } und ${ DRIVE_APP_NAME } gemeinsam genutzt."
-      ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Tätige eine Einzahlung über die folgende Adresse oder scanne den QR-Code. Die Einzahlung wird nach der Bestätigung auf deinem Konto gutgeschrieben."
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Dein Abonnement endet bald: Reaktiviere es bis zum ${ byDate }, um deine ${ planName }-Vorteile zu behalten. ${ reactivateLink }"
       ],
-      "Support for 1 custom email domain": [
-        "Unterstützung für eine eigene E-Mail-Domain"
+      "Summary": [
+        "Zusammenfassung"
       ],
       "support team": [
         "Support-Team"
@@ -2631,9 +2577,6 @@
       ],
       "Thank you": [
         "Vielen Dank"
-      ],
-      "The ${ planName } plan includes:": [
-        "Das ${ planName }-Abonnement beinhaltet:"
       ],
       "The securest way to browse, stream, and be online.": [
         "Die sicherste Art, zu surfen, zu streamen und online zu sein."
@@ -2677,9 +2620,6 @@
       "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
         "Dieser Wizard wird die Zwei-Faktor-Authentifizierung (2FA) auf deinem ${ BRAND_NAME }-Konto aktivieren. Zwei-Faktor-Authentifizierung macht dein ${ BRAND_NAME_TWO }-Konto sicherer, wir empfehlen deshalb, sie zu aktivieren."
       ],
-      "To ${ planName }": [
-        "bei ${ planName }"
-      ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Um die Zahlung abzuschließen, sende bitte ${ btcAmountBold } an die untenstehende Adresse."
       ],
@@ -2698,9 +2638,6 @@
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "Um deine Internetverbindung zu schützen, lade die ${ VPN_APP_NAME }-App für dein Gerät herunter, installiere diese und verbinde dich mit einem Server."
       ],
-      "to use ${ toAppName } and all ${ BRAND_NAME } services": [
-        "um ${ toAppName } und alle weiteren ${ BRAND_NAME }-Dienste zu nutzen."
-      ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Lade dein Konto mit Guthaben auf, mit dem du ein anderes Abonnement abschließen oder dein aktuelles Abonnement verlängern kannst. Du erhältst ein Guthaben für jeden ${ i18nCurrency }, der ausgegeben wird."
       ],
@@ -2715,9 +2652,6 @@
       ],
       "Total VPN connections": [
         "Anzahl VPN‐Verbindungen"
-      ],
-      "Try ${ upsellPlanName } risk free": [
-        "${ upsellPlanName } risikofrei ausprobieren"
       ],
       "two-factor authentication (2FA)": [
         "Zwei-Faktor-Authentifizierung (2FA)"
@@ -2736,12 +2670,6 @@
       ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Leider wurde für dieses Konto keine Wiederherstellungsmethode gespeichert."
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Unbegrenzte Anzahl an Ordnern, Kategorien und Filtern"
-      ],
-      "Unlimited messages": [
-        "Unbegrenzte Anzahl von Nachrichten"
       ],
       "Unsaved changes": [
         "Ungespeicherte Änderungen"
@@ -2803,17 +2731,14 @@
       "We recommend using your recovery phrase instead.": [
         "Wir empfehlen, stattdessen deine Wiederherstellungsphrase zu verwenden."
       ],
-      "We use 3-D Secure to protect your payments.": [
-        "Wir verwenden 3-D Secure zum Schutz deiner Zahlungen."
+      "We use 3-D Secure to protect your payments": [
+        "Wir verwenden 3-D Secure zum Schutz deiner Zahlungen"
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Wir werden dich in einem neuen Browser-Tab zu PayPal umleiten, um diese Zahlung abzuschließen. Falls du Pop-up-Blocker verwendest, deaktiviere diese bitte, um fortzufahren."
       ],
       "We'll send a new verification code to ${ strong }": [
         "Wir senden einen neuen Verifizierungscode an ${ strong }"
-      ],
-      "Welcome": [
-        "Willkommen"
       ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "Du erhältst dann einen Rücksetzungscode an die E-Mail-Adresse, die du für die Wiederherstellung deines Kontos angegeben hast."
@@ -2832,9 +2757,6 @@
       ],
       "Why?": [
         "Warum?"
-      ],
-      "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME_TWO } services": [
-        "Mit einer verschlüsselten ${ BRAND_NAME }-Adresse kannst du alle ${ BRAND_NAME_TWO }-Dienste nutzen."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Möchtest du einen neuen Verifizierungscode anfordern oder eine alternative Verifizierungsmethode verwenden?"
@@ -2876,9 +2798,6 @@
       "You cannot use the OpenVPN / IKEv2 credentials to sign in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
         "Du kannst keine OpenVPN/IKEv2-Zugangsdaten verwenden, um dich an ${ VPN_APP_NAME }-Anwendungen oder dem ${ VPN_APP_NAME }-Dashboard anzumelden. ${ learnMore }"
       ],
-      "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
-        "Du hast keine Wiederherstellungs-Methode eingerichtet, sodass eine Wiederherstellung des Kontos unmöglich ist, falls du dein Passwort vergisst. Trotzdem ohne Wiederherstellungs-Methode fortfahren?"
-      ],
       "You have no saved payment methods.": [
         "Du hast keine Zahlungsmethoden festgelegt."
       ],
@@ -2900,14 +2819,8 @@
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
         "Du hast 100 % deiner Speicherkapazität aufgebraucht. Du kannst keine neuen E-Mails senden oder empfangen. ${ freeUpMessage } ${ upgradeLink }"
       ],
-      "You will be redirected to the VPN download page": [
-        "Du wirst zur VPN-Download-Seite weitergeleitet"
-      ],
       "You will lose access to ${ vpnPlanNameShort } servers and features on this date.": [
         "An diesem Datum verlierst du den Zugang zu ${ vpnPlanNameShort }-Servern und -funktionen."
-      ],
-      "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
-        "Du benötigst eine ${ BRAND_NAME }-Adresse um ${ MAIL_APP_NAME } und ${ CALENDAR_APP_NAME } zu nutzen"
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Du wirst in Kürze zu PayPal weitergeleitet, um deine Zahlung zu bestätigen."
@@ -2947,6 +2860,9 @@
       ],
       "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your recovery phrase or your ${ oldPassword }.": [
         "Deine vorhandenen Nachrichten, Kalender oder Kontakte werden gesperrt. Um diese Daten wiederherzustellen, brauchst du deine Wiederherstellungsphrase oder dein ${ oldPassword }."
+      ],
+      "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
+        "Deine Informationen sind bei uns sicher. Wir kontaktieren dich nur, wenn es für die Erbringung unserer Dienstleistungen erforderlich ist."
       ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "Deine Zahlungsdaten sind durch TLS-Verschlüsselung und Schweizer Datenschutzgesetze geschützt."
@@ -3069,6 +2985,9 @@
       "Authenticator app": [
         "Authenticator App"
       ],
+      "Billing address": [
+        "Rechnungsadresse"
+      ],
       "Billing cycle": [
         "Abrechnungszeitraum"
       ],
@@ -3090,11 +3009,11 @@
       "BTC amount": [
         "Betrag in Bitcoin"
       ],
+      "Card details": [
+        "Kartendaten"
+      ],
       "Card holder": [
         "Karteninhaber"
-      ],
-      "Card information": [
-        "Karteninformationen"
       ],
       "Card number": [
         "Kartennummer"
@@ -3297,9 +3216,6 @@
       "Recovery phrase": [
         "Wiederherstellungsphrase"
       ],
-      "Repeat password": [
-        "Passwort wiederholen"
-      ],
       "Reveal password": [
         "Passwort anzeigen"
       ],
@@ -3326,12 +3242,6 @@
       ],
       "Two-password mode": [
         "Zwei-Passwort-Modus"
-      ],
-      "Use a recovery email address": [
-        "Verwende eine E-Mail-Adresse für die Wiederherstellung"
-      ],
-      "Use a recovery phone number": [
-        "Telefonnummer für die Wiederherstellung verwenden"
       ],
       "User's new password": [
         "Neues Passwort des Benutzers"
@@ -3442,6 +3352,9 @@
       "Pay invoice": [
         "Rechnung bezahlen"
       ],
+      "Paypal without credit card": [
+        "PayPal ohne Kreditkarte"
+      ],
       "Privacy policy": [
         "Datenschutzerklärung"
       ],
@@ -3529,9 +3442,6 @@
       "Continue to review": [
         "Weiter zur Prüfung"
       ],
-      "Continue with Free": [
-        "Mit Free fortfahren"
-      ],
       "Delete account": [
         "Konto löschen"
       ],
@@ -3541,14 +3451,8 @@
       "Get ${ BRAND_NAME } for free": [
         "${ BRAND_NAME } kostenlos holen"
       ],
-      "Get ${ mostPopularShortPlan.title }": [
-        "Hol dir ${ mostPopularShortPlan.title }"
-      ],
       "Get ${ planName }": [
         "${ planName } holen"
-      ],
-      "Get ${ upsellShortPlan.title }": [
-        "${ upsellShortPlan.title } holen"
       ],
       "Got it": [
         "Verstanden"
@@ -3564,9 +3468,6 @@
       ],
       "Switch plan": [
         "Abonnement wechseln"
-      ],
-      "Upgrade to ${ upsellPlanHumanSize }": [
-        "Umsteigen auf ${ upsellPlanHumanSize }"
       ]
     },
     "new_plans: Action": {
@@ -3835,6 +3736,9 @@
       "Split tunneling (Android and Windows)": [
         "Split-Tunneling (für Android und Windows)"
       ],
+      "Start protecting yourself online in 2 easy steps": [
+        "Schütze dich online in 2 einfachen Schritten"
+      ],
       "Strict no-logs policy": [
         "Strenge No-Logs-Richtlinie"
       ],
@@ -3908,21 +3812,6 @@
       "${ brand } ending in ${ last4 }": [
         "${ brand } mit den Endziffern ${ last4 }"
       ],
-      "* With 1-month subscription. Other subscription options available at checkout.": [
-        "* Mit 1-monatigem Abonnement. Andere Abonnementoptionen sind beim Bezahlvorgang verfügbar."
-      ],
-      "* With 12-month subscription. Other subscription options available at checkout.": [
-        "* Mit 12-monatigem Abonnement. Andere Abonnementoptionen sind beim Bezahlvorgang verfügbar."
-      ],
-      "* With 15-month subscription. Other subscription options available at checkout.": [
-        "* Mit 15-monatigem Abonnement. Andere Abonnementoptionen sind beim Bezahlvorgang verfügbar."
-      ],
-      "* With 24-month subscription. Other subscription options available at checkout.": [
-        "* Mit 24-monatigem Abonnement. Andere Abonnementoptionen sind beim Bezahlvorgang verfügbar."
-      ],
-      "* With 30-month subscription. Other subscription options available at checkout.": [
-        "* Mit 30-monatigem Abonnement. Andere Abonnementoptionen sind beim Bezahlvorgang verfügbar."
-      ],
       "Applicable credits, proration, and coupons are applied in the next step": [
         "Anwendbares Guthaben, anteilige Anrechnungen und Gutscheine können im nächsten Schritt berücksichtigt werden."
       ],
@@ -3940,9 +3829,6 @@
       ],
       "If you switch to a different plan, you lose all ${ visionary } plan benefits and won’t be able to switch back to ${ visionary }.": [
         "Wenn du zu einem anderen Abonnement wechselst, verlierst du alle Vorteile des ${ visionary }-Abonnements und kannst du anschließend nicht zu ${ visionary } zurückwechseln."
-      ],
-      "Most popular": [
-        "Am beliebtesten"
       ],
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
         "Unser ${ visionary }-Abonnement steht neuen Benutzern nicht länger zur Verfügung, da es ein spezielles Abonnement für Originalbenutzer von ${ BRAND_NAME } ist und besondere Funktionen und Vorteile umfasst."
@@ -4015,32 +3901,11 @@
       ]
     },
     "new_plans: signup": {
-      "By creating a ${ BRAND_NAME } account, you agree to our ${ terms }": [
-        "Mit der Erstellung eines ${ BRAND_NAME }-Kontos erklärst du dich mit unseren ${ terms } einverstanden."
-      ],
       "By paying, you agree to our ${ termsAndConditions }": [
         "Durch deine Zahlung stimmst du unseren ${ termsAndConditions } zu."
       ],
-      "Payment details": [
-        "Zahlungsdetails"
-      ],
-      "Save your email address or phone number to use for verification if you need to reset your account.": [
-        "Speichere deine E-Mail-Adresse oder Telefonnummer, um sie zur Verifizierung zu nutzen, wenn du dein Konto zurücksetzen musst."
-      ],
-      "Subscription": [
-        "Abonnement"
-      ],
       "terms and conditions": [
         "Allgemeinen Geschäftsbedingungen"
-      ],
-      "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
-        "Wähle zunächst einen Anzeigenamen aus. Diesen werden deine Empfänger sehen, wenn du ihnen eine E-Mail sendest, sie zu einem Termin einlädst oder eine Datei mit ihnen teilst."
-      ],
-      "Your ${ planName } subscription is now active.": [
-        "Dein ${ planName }-Abonnement ist nun aktiv."
-      ],
-      "Your selected plan: ${ planName }": [
-        "Das von dir ausgewählte Abonnement: ${ planName }"
       ]
     },
     "new_plans: title": {
@@ -4055,9 +3920,6 @@
       ],
       "Review subscription and pay": [
         "Abonnement prüfen und bezahlen"
-      ],
-      "Start exploring the ${ BRAND_NAME } universe": [
-        "Erkunde das Universum von ${ BRAND_NAME }"
       ],
       "Switch plans?": [
         "Abonnement wechseln?"
@@ -4347,6 +4209,30 @@
         "Standard-Server-Konfigurationen"
       ]
     },
+    "pass_signup_2023: Action": {
+      "Start using ${ appName }": [
+        "Beginne, ${ appName } zu verwenden"
+      ]
+    },
+    "pass_signup_2023: Info": {
+      "Creating your account": [
+        "Dein Konto wird erstellt"
+      ],
+      "Preparing your Recovery Kit": [
+        "Dein Wiederherstellungskit wird vorbereitet"
+      ],
+      "Updating your account": [
+        "Dein Konto wird aktualisiert"
+      ],
+      "Verifying your payment": [
+        "Deine Zahlung wird verifiziert"
+      ]
+    },
+    "pass_signup_2023: Title": {
+      "All ${ BRAND_NAME } Plus services.${ br }One easy subscription.": [
+        "Alle ${ BRAND_NAME } Plus-Dienste.${ br }Ein einfaches Abonnement."
+      ]
+    },
     "Payment method option": {
       "Credit/debit card": [
         "Kredit-/Debitkarte"
@@ -4478,37 +4364,18 @@
         "Das Verifizieren deiner Telefonnummer erhöht die Sicherheit deines Kontos und bietet zusätzliche Möglichkeiten zur Wiederherstellung."
       ]
     },
-    "Shared calendar; Info about calendar owner": {
-      "Created by ${ ownerName }": [
-        "Erstellt von ${ ownerName }"
-      ]
-    },
     "Signup label": {
       "Confirm email address": [
         "E-Mail-Adresse bestätigen"
       ],
-      "Display name": [
-        "Anzeigename"
-      ],
-      "Email": [
-        "E-Mail-Adresse"
+      "Confirm password": [
+        "Passwort bestätigen"
       ],
       "Email address": [
         "E‐Mail‐Adresse"
       ],
-      "Username": [
-        "Benutzername"
-      ]
-    },
-    "Signup step": {
-      "Account setup": [
-        "Kontoeinrichtung"
-      ],
-      "Payment": [
-        "Zahlung"
-      ],
-      "Verification": [
-        "Verifikation"
+      "Password": [
+        "Passwort"
       ]
     },
     "specialoffer: Action": {
@@ -4896,9 +4763,6 @@
     "Subscription saving": {
       "Save": [
         "Spare"
-      ],
-      "Save ${ discountPercentage }%": [
-        "Spare ${ discountPercentage } %"
       ]
     },
     "Subscription status": {
@@ -5108,6 +4972,9 @@
       ]
     },
     "Title": {
+      "${ appName } Free": [
+        "${ appName } Free"
+      ],
       "${ VPN_APP_NAME } clients": [
         "${ VPN_APP_NAME } Geräte"
       ],
@@ -5206,12 +5073,6 @@
       ],
       "Confirm phone number": [
         "Telefonnummer bestätigen"
-      ],
-      "Congratulations on choosing privacy!": [
-        "Herzlichen Glückwunsch zur Entscheidung für den Datenschutz!"
-      ],
-      "Create your ${ BRAND_NAME } Account": [
-        "Erstelle dein ${ BRAND_NAME }-Konto"
       ],
       "Credits": [
         "Guthaben"
@@ -5387,12 +5248,6 @@
       "Revoke certificate": [
         "Zertifikat widerrufen"
       ],
-      "Save contact details": [
-        "Kontaktinformationen speichern"
-      ],
-      "Secure email based in Switzerland": [
-        "Sicherer E-Mail-Dienst aus der Schweiz"
-      ],
       "Select a plan": [
         "Abonnement auswählen"
       ],
@@ -5441,23 +5296,14 @@
       "Unsupported browser": [
         "Nicht unterstützter Browser"
       ],
-      "Verification": [
-        "Verifizierung"
-      ],
       "Verification failed": [
         "Verifizierung fehlgeschlagen"
-      ],
-      "Verify email address": [
-        "E-Mail-Adresse verifizieren"
       ],
       "Verifying your card...": [
         "Deine Karte wird verifiziert..."
       ],
       "Verifying your payment...": [
         "Deine Zahlung wird verifiziert..."
-      ],
-      "Warning": [
-        "Warnhinweis"
       ],
       "What's new": [
         "Neuigkeiten"
@@ -5482,9 +5328,6 @@
       ],
       "Your subscriptions": [
         "Deine Abonnements"
-      ],
-      "You’ve been invited to try ${ MAIL_APP_NAME }": [
-        "Du wurdest eingeladen, ${ MAIL_APP_NAME } zu testen."
       ]
     },
     "Title for payment methods table": {
@@ -5593,6 +5436,69 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } in ${ numberOfCountries } Land",
         "${ numberOfServers } in ${ numberOfCountries } Ländern"
+      ]
+    },
+    "vpn_2step: billing": {
+      "${ billedText }, renews on ${ formattedEndTime }": [
+        "${ billedText }, wird erneuert am ${ formattedEndTime }"
+      ],
+      "Billed every 15 months": [
+        "Wird alle 15 Monate abgerechnet"
+      ],
+      "Billed every 2 years": [
+        "Wird alle 2 Jahre abgerechnet"
+      ],
+      "Billed every 30 months": [
+        "Wird alle 30 Monate abgerechnet"
+      ],
+      "Billed monthly": [
+        "Wird monatlich abgerechnet"
+      ],
+      "Billed yearly": [
+        "Wird jährlich abgerechnet"
+      ]
+    },
+    "vpn_2step: discount": {
+      "1-year": [
+        "1-Jahres"
+      ],
+      "2-year": [
+        "2-Jahres"
+      ],
+      "Get ${ discount } off with a ${ billingCycle } subscription": [
+        "Hol dir ${ discount } Rabatt mit einem ${ billingCycle }-Abonnement"
+      ],
+      "monthly": [
+        "monatlich"
+      ]
+    },
+    "vpn_2step: feature": {
+      "Advanced VPN customizations": [
+        "Erweiterte VPN-Anpassungen"
+      ],
+      "No ads": [
+        "Keine Werbung"
+      ]
+    },
+    "vpn_2step: info": {
+      "${ n } month": [
+        "${ n } Monat",
+        "${ n } Monate"
+      ],
+      "${ n } year": [
+        "${ n } Jahr",
+        "${ n } Jahre"
+      ],
+      "Try ${ upsellPlanName } risk-free": [
+        "${ upsellPlanName } risikofrei ausprobieren"
+      ],
+      "Your ${ selected } plan": [
+        "Dein ${ selected }-Abonnement"
+      ]
+    },
+    "vpn_2step: tooltip": {
+      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, Double hop, and more.": [
+        "Zugang zu Secure Core-Servern, schnelle P2P/BitTorrent-Downloads, Tor über VPN, Double Hop und mehr."
       ]
     },
     "Warning": {
