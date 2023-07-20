@@ -110,6 +110,7 @@ const MainContainer = () => {
         FeatureCode.ReferralProgram,
         FeatureCode.SmtpToken,
         FeatureCode.MailForwarding,
+        FeatureCode.MailDisableE2EE,
         FeatureCode.CalendarSharingEnabled,
         FeatureCode.HolidaysCalendars,
         FeatureCode.EasySwitch,
