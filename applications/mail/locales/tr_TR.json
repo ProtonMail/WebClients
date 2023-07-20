@@ -20,7 +20,7 @@
         "${ BRAND_NAME } mağazası"
       ],
       "Activate recovery": [
-        "Kurtarmayı etkinleştir"
+        "Kurtarma özelliğini aç"
       ],
       "Add": [
         "Ekle"
@@ -370,10 +370,10 @@
         "Emoji"
       ],
       "Enable": [
-        "Etkinleştir"
+        "Aç"
       ],
       "enable desktop notifications": [
-        "masaüstü bildirimlerini etkinleştirmek"
+        "masaüstü bildirimlerini açmak"
       ],
       "Encryption": [
         "Şifrele"
@@ -1307,7 +1307,7 @@
         "Beta erişimi, ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } ve ${ DRIVE_APP_NAME } beta sürümlerini herkese sunulmadan önce kullanmanızı sağlar. Böylece, yeni ürünleri ilk deneyen, yeni güncellemeleri ilk alan ve yeni özellikleri kullanan ilk kişilerden olabilirsiniz."
       ],
       "If you encounter issues, you can always disable Beta Access.": [
-        "Sorunlarla karşılaşırsanız, istediğiniz zaman Beta erişimini devre dışı bırakabilirsiniz."
+        "Sorunlarla karşılaşırsanız, istediğiniz zaman Beta erişimini kapatabilirsiniz."
       ]
     },
     "Billing cycle option": {
@@ -1906,7 +1906,7 @@
     },
     "Composer size": {
       "Maximized": [
-        "Büyütülmüş"
+        "Geniş"
       ],
       "Normal": [
         "Normal"
@@ -3110,7 +3110,7 @@
     },
     "Error": {
       "${ error.message } for <${ email }>. You can add another key or disable encryption for this contact to resolve the issue.": [
-        "<${ email }> için ${ error.message }. Bu sorunu çözmek için başka bir anahtar ekleyebilir ya da bu kişinin şifrelemesini devre dışı bırakabilirsiniz."
+        "<${ email }> için ${ error.message }. Bu sorunu çözmek için başka bir anahtar ekleyebilir ya da bu kişinin şifrelemesini kapatabilirsiniz."
       ],
       "A group with this name already exists": [
         "Aynı adlı bir grup zaten var"
@@ -3166,7 +3166,7 @@
         "Bu sorunu çözmek için kuruluşunuzun yöneticisi ile görüşün"
       ],
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
-        "Bu tarayıcıda içerik araması etkinleştirilemiyor. Lütfen gizli/özel tarayıcı kipinden çıkın ya da farklı bir tarayıcı deneyin."
+        "Bu tarayıcıda içerik arama özelliği açılamıyor. Lütfen gizli/özel tarayıcı kipinden çıkın ya da farklı bir tarayıcı deneyin."
       ],
       "Decryption error: decryption of this message's encrypted content failed.": [
         "Şifre çözme sorunu: Bu iletinin şifrelenmiş içeriğinin şifresi çözülemedi."
@@ -3186,7 +3186,7 @@
         "Taslak kaydedilemedi. Yeniden deneyin."
       ],
       "Email address disabled": [
-        "E-posta adresi devre dışı"
+        "E-posta adresi kullanımdan kaldırılmış"
       ],
       "Email address is required": [
         "E-posta adresinin yazılması zorunludur"
@@ -3312,7 +3312,7 @@
         "Parola ile onayı aynı değil"
       ],
       "Please activate your search again": [
-        "Lütfen aramayı yeniden etkinleştirin"
+        "Lütfen arama özelliğini yeniden açın"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "İlerlemek için lütfen vurgulanan çakışmayı düzeltin.",
@@ -3337,7 +3337,7 @@
         "Herkese açık anahtara güvenilemedi"
       ],
       "re-activate the previous key": [
-        "önceki anahtarı yeniden etkinleştir"
+        "önceki anahtarı yeniden kullanıma al"
       ],
       "Removed duplicate recipient: ${ recipents }": [
         "Yinelenen alıcı kaldırıldı: ${ recipents }",
@@ -3421,9 +3421,6 @@
       ],
       "There has been an issue with content search. Default search has been used instead.": [
         "İçerik aramasıyla ilgili bir sorun çıktı. Varsayılan arama yöntemi kullanıldı."
-      ],
-      "There was a problem updating your local messages, they will be downloaded again to re-enable content search": [
-        "Yerel iletileriniz güncellenirken bir sorun çıktı. İçerik arama özelliğini etkinleştirebilmek için iletileriniz yeniden indirilecek"
       ],
       "There was an error when exporting the contacts vCards": [
         "Kişilerin vCard dosyaları dışa aktarılırken bir sorun çıktı"
@@ -4483,16 +4480,16 @@
         "${ BRAND_NAME }, Yahoo hesabınızla bağlantı kuramadı. Lütfen şundan emin olun:"
       ],
       "2-step verification is enabled in your external account.": [
-        "Dış hesabınızda iki adımlı kimlik doğrulaması etkinleştirilmiş."
+        "Dış hesabınızda iki adımlı doğrulama açılmış."
       ],
       "2-step verification is enabled in your external email account.": [
-        "Dış e-posta hesabınızda iki adımlı kimlik doğrulaması etkinleştirilmiş."
+        "Dış e-posta hesabınızda iki adımlı doğrulama açılmış."
       ],
       "IMAP access is enabled in your external account.": [
-        "Dış hesabınızda IMAP erişimi etkinleştirilmiş."
+        "Dış hesabınızda IMAP erişimi açılmış."
       ],
       "IMAP access is enabled in your Yahoo account.": [
-        "Yahoo hesabınızda IMAP erişimi etkinleştirildi."
+        "Yahoo hesabınızda IMAP erişimi özelliği açıldı."
       ],
       "Too many recent requests. Please try again in a few moments.": [
         "Kısa sürede çok fazla istek yapıldı. Lütfen birkaç dakika sonra yeniden deneyin."
@@ -4595,7 +4592,7 @@
         "uygulama parolası"
       ],
       "app password or enable IMAP": [
-        "uygulama parolası ya da IMAP etkinleştirin"
+        "uygulama parolası ya da IMAP özelliğini açın"
       ],
       "CSV or a VCF (vCard) file": [
         "CSV ya da VCF (vCard) dosyası"
@@ -4826,13 +4823,13 @@
         "Ödenmemiş faturalar nedeniyle hesap erişimi kısıtlandı. Lütfen yöneticinizle görüşün."
       ],
       "Activation in progress": [
-        "Etkinleştirme sürüyor"
+        "Açılıyor"
       ],
       "Add image URL": [
         "Adresten görsel ekle"
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
-        "Bu adres için güvenilen anahtarlar ile adres doğrulaması etkinleştirildi. Bu adrese e-posta gönderebilmek için, önce göndermek için kullanılabilecek herkese açık anahtarlara güvenin."
+        "Bu adres için güvenilen anahtarlar ile adres doğrulama özelliği açıldı. Bu adrese e-posta gönderebilmek için, önce göndermek için kullanılabilecek herkese açık anahtarlara güvenin."
       ],
       "Align left": [
         "Sola hizala"
@@ -4855,7 +4852,7 @@
         "Bu etiket ile kaydedilmiş tüm iletiler kalıcı olarak silinecek."
       ],
       "All your calendars are disabled.": [
-        "Tüm takvimleriniz devre dışı."
+        "Tüm takvimleriniz kullanımdan kaldırılmış."
       ],
       "All your changes will be lost.": [
         "Yaptığınız tüm değişiklikler kaybolacak."
@@ -4948,7 +4945,7 @@
         "Verileri temizle"
       ],
       "Clearing browser data also deactivates message content search on this device. All messages will need to be downloaded again to search within them.": [
-        "Bu aygıtta tarayıcı verilerini temizlemek, ileti içeriği aramasını da devre dışı bırakır. İçerik araması yapabilmek için tüm iletilerin yeniden indirilmesi gerekir."
+        "Bu aygıtta tarayıcı verilerini temizlemek, ileti içeriği arama özelliğini de kapatır. İçerik araması yapabilmek için tüm iletilerin yeniden indirilmesi gerekir."
       ],
       "Clears browser data related to message content search including downloaded messages": [
         "İndirilen iletileri ve ileti içeriği aramasıyla ilgili tarayıcı verilerini temizler"
@@ -5021,7 +5018,7 @@
         "Varsayılan e-posta uygulaması"
       ],
       "Disable message content search": [
-        "İleti içeriği aramasını devre dışı bırak"
+        "İleti içeriği arama özelliğini kapat"
       ],
       "Do you want to download this attachment anyway?": [
         "Bu ek dosyayı yine de indirmek istiyor musunuz?",
@@ -5076,7 +5073,7 @@
         "E-posta, posta kutunuza iletilir. Asıl e-posta adresiniz gizli kalır."
       ],
       "Email tracker protection is disabled": [
-        "E-posta izleme koruması devre dışı"
+        "E-posta izleme koruması kapalı"
       ],
       "Emails are automatically signed": [
         "E-postalar otomatik olarak imzalanıyor"
@@ -5181,7 +5178,7 @@
         "E-postayı Gelen kutunuzda göremezseniz, İstenmeyen kutusuna bakmayı unutmayın."
       ],
       "If your alias is sold, leaked, or abused, simply disable it to stop receiving spam.": [
-        "Takma adınız satılırsa, sızdırılırsa veya kötü amaçla kullanılırsa, istenmeyen e-postalar almayı durdurmak için takma adı devre dışı bırakmanız yeterlidir."
+        "Takma adınız satılırsa, sızdırılırsa veya kötü amaçla kullanılırsa, istenmeyen e-postalar almayı durdurmak için takma adı kullanımdan kaldırmanız yeterlidir."
       ],
       "Image description": [
         "Görsel açıklaması"
@@ -5372,7 +5369,7 @@
         "${ MAIL_APP_NAME } kullanmayan"
       ],
       "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
-        "Yüklenen anahtarların hiçbiri şifreleme için geçerli değil. Bu adrese ileti gönderebilmek için lütfen geçerli bir anahtar yükleyin ya da \"E-postalar şifrelensin\" seçeneğini devre dışı bırakın."
+        "Yüklenen anahtarların hiçbiri şifreleme için geçerli değil. Bu adrese ileti gönderebilmek için lütfen geçerli bir anahtar yükleyin ya da \"E-postalar şifrelensin\" seçeneğini kapatın."
       ],
       "Normal": [
         "Normal"
@@ -5583,7 +5580,7 @@
         "Konu: "
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
-        "Abonelik sona eriyor: ${ planName } tarifesinin ek özelliklerini korumak için ${ byDate } tarihine kadar yeniden etkinleştirin. ${ reactivateLink }"
+        "Abonelik sona eriyor: ${ planName } tarifesinin ek özelliklerini korumak için ${ byDate } tarihine kadar yenileyin. ${ reactivateLink }"
       ],
       "support team": [
         "destek ekibi"
@@ -5641,7 +5638,7 @@
         "Bu hesap, ilkeye aykırı kullanım olasılığı nedeniyle askıya alınmış."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
-        "Bu adres devre dışı. Bu adrese e-posta gönderebilmek için önce sahibi adresi etkinleştirmelidir."
+        "Bu adres kullanımdan kaldırılmış. Bu adrese e-posta gönderebilmek için önce sahibi adresi kullanıma almalıdır."
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Bu tarayıcı, PDF belgelerinin ön izlemesini desteklemiyor. Lütfen dosyayı indirin."
@@ -5666,7 +5663,7 @@
         "Bu e-posta, etki alanının doğrulama gereksinimlerini karşılayamadı. E-posta, sahte ya da hatalı iletilmiş olabilir."
       ],
       "This invitation is saved in a disabled calendar.": [
-        "Bu davet, devre dışı bırakılmış bir takvime kaydedilmiş."
+        "Bu davet, kullanımdan kaldırılmış bir takvime kaydedilmiş."
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Bu bağlantı, parola ve kredi kartı gibi bilgilerinizi çalmayı deneyen bir siteye gidiyor olabilir."
@@ -5748,7 +5745,7 @@
         "Kişilerinizi yeniden imzalamak için, her kişiyi hesabınızda bulunan şifreleme anahtarı listesiyle karşılaştırarak denetlememiz gerekir. Herhangi bir eşleşme bulunamazsa, kişiniz birincil şifreleme anahtarıyla yeniden imzalanır."
       ],
       "To recover your data, you need to re-activate the account key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
-        "Verilerinizi kurtarmak için, verilerin oluşturulduğu sırada kullanılan hesap anahtarını yeniden etkinleştirmelisiniz. Bunun için anahtar oluşturulurken kullanılan parolayı bilmeniz gerekir."
+        "Verilerinizi kurtarmak için, verilerin oluşturulduğu sırada kullanılan hesap anahtarını yeniden kullanıma almalısınız. Bunun için anahtar oluşturulurken kullanılan parolayı bilmeniz gerekir."
       ],
       "To unsubscribe from this mailing list, an email will be sent from ${ boldFrom } with following details as defined by the sender of the newsletter:": [
         "Bu e-posta listesinden ayrılmak için, bültenin göndericisi tarafından belirtilen ${ boldFrom } adresine şu bilgileri içeren bir e-posta gönderilecek:"
@@ -5766,7 +5763,7 @@
         "Engellenen izleyiciler:"
       ],
       "Turn off to only search by date, name, email address, or subject line. To disable search message content and delete downloaded messages, go to settings.": [
-        "Yalnızca tarihe, ada, e-posta adresine veya konu satırına göre arama yapmak için bu seçeneği kapatın. İleti içeriği aramayı devre dışı bırakmak ve indirilen iletileri silmek için ayarlara gidin."
+        "Yalnızca tarihe, ada, e-posta adresine veya konu satırına göre arama yapmak için bu seçeneği kapatın. İleti içeriği arama özelliğini kapatmak ve indirilen iletileri silmek için ayarlara gidin."
       ],
       "Turn on to search the content of your messages": [
         "İletilerinizin içeriklerini arayabilmek için açın"
@@ -5782,9 +5779,6 @@
       ],
       "Updating message content search...": [
         "İleti içerikleri araması güncelleniyor..."
-      ],
-      "Updating your local messages, message content won't be searched during this update": [
-        "Yerel iletileriniz güncelleniyor. Bu güncelleme sırasında iletilerin içeriklerinde arama yapılamaz"
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Ücretli özellikleri, ürünleri ve depolama alanını özel bir fiyat ile almak için tarifenizi şimdi yükseltin"
@@ -5849,8 +5843,14 @@
       "We apologize. This might have been a mistake from our side. Can you please confirm that you want to mark this email as a legitimate one?": [
         "Özür dileriz. Bu durum bizim hatamızdan kaynaklanıyor olabilir. Bu e-postanın göründüğü gibi olduğunu doğrulayabilir misiniz misiniz?"
       ],
+      "We blocked the following advertisers and organizations from seeing when you open this email, what device you’re using, and where you’re located.": [
+        "Şu reklam verenlerin ve kuruluşların bu e-postayı ne zaman açtığınızı, hangi aygıtı kullandığınızı ve nerede bulunduğunuzu görmesini engelledik."
+      ],
       "We could not verify the sender's trusted keys.": [
         "Göndericinin güvenilen anahtarlarını doğrulayamadık."
+      ],
+      "We removed tracking information from the following links to help protect you from advertisers and others trying to track your online activity.": [
+        "Sizi reklam verenlerden ve çevrim içi etkinliğinizi izlemeye çalışanlardan korumaya yardımcı olmak için şu bağlantılardaki izleme bilgilerini kaldırdık."
       ],
       "We'll notify you when the import is done.": [
         "İçe aktarım tamamlandığında sizi bilgilendireceğiz."
@@ -5877,7 +5877,7 @@
         "E-posta adresinizi başkalarına verirken, gerçek e-posta adresiniz yerine benzersiz, tek kullanımlık bir hide-my-email takma adı kullanın."
       ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
-        "${ senderName } için güvenilen anahtarları etkinleştirdiğinizde, kişi bilgilerine herkese açık anahtarlar eklenir."
+        "${ senderName } için güvenilen anahtarlar özelliğini açtığınızda, kişi bilgilerine herkese açık anahtarlar eklenir."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "İki adımlı doğrulamayı kurduğunuzda, kimlik doğrulama uygulamanızda sorun olması durumunda oturum açmak için kullanabileceğiniz kurtarma kodları vereceğiz."
@@ -6088,8 +6088,8 @@
         "Aşağıdaki parmak izlerine sahip birincil ortak anahtarlara güvenmek istiyor musunuz?"
       ],
       "You have enabled Address Verification with Trusted Keys for this email address,\nbut no active encryption key has been trusted.\nYou must trust a key valid for sending in order to send a message to this email address.": [
-        "Bu e-posta adresi için Güvenilen anahtarlarla adres doğrulamasını etkinleştirmişsiniz,\nancak herhangi bir etkin şifreleme anahtarına güvenilmemiş.\nBu e-posta adresine ileti gönderebilmek için gönderimde geçerli olacak bir anahtara güvenmeniz gerekir.",
-        "Bu e-posta adresleri için Güvenilen anahtarlarla adres doğrulamasını etkinleştirmişsiniz,\nancak herhangi bir etkin şifreleme anahtarına güvenilmemiş.\nBu e-posta adreslerine ileti gönderebilmek için gönderimde geçerli olacak anahtarlara güvenmeniz gerekir."
+        "Bu e-posta adresi için güvenilen anahtarlarla adres doğrulama özelliğini açmışsınız,\nancak kullanımdaki herhangi bir şifreleme anahtarına güvenilmemiş.\nBu e-posta adresine ileti gönderebilmek için gönderimde kullanılacak bir anahtara güvenmeniz gerekir.",
+        "Bu e-posta adresleri için güvenilen anahtarlarla adres doğrulama özelliğini açmışsınız,\nancak kullanımdaki herhangi bir şifreleme anahtarına güvenilmemiş.\nBu e-posta adreslerine ileti gönderebilmek için gönderimde kullanılacak anahtarlara güvenmeniz gerekir."
       ]
     },
     "Key validation warning": {
@@ -6461,7 +6461,7 @@
         "E-postalar (son 1 ay)"
       ],
       "Enable Beta Access": [
-        "Beta erişimini etkinleştir"
+        "Beta erişimini aç"
       ],
       "Encrypt emails": [
         "E-postaları şifrele"
@@ -6803,7 +6803,7 @@
     },
     "Label to change composer mode": {
       "Maximized": [
-        "Büyütülmüş"
+        "Geniş"
       ],
       "Normal": [
         "Normal"
@@ -6894,19 +6894,19 @@
         "Taslaklar"
       ],
       "Enable an email address linked to one of your calendars.": [
-        "Takvimlerinizden birine bağlı bir e-posta adresini etkinleştirin."
+        "Takvimlerinizden birine bağlı bir e-posta adresini kullanıma alın."
       ],
       "Enable the email address linked to the disabled calendar to cancel the event.": [
-        "Etkinliği iptal etmek için devre dışı bırakılan takvime bağlı e-posta adresini etkinleştirin."
+        "Etkinliği iptal etmek için kullanımdan kaldırılan takvime bağlı e-posta adresini kullanıma alın."
       ],
       "Enable the email address linked to the disabled calendar to modify your answer.": [
-        "Yanıtınızı değiştirmek için devre dışı bırakılan takvime bağlı e-posta adresini etkinleştirin."
+        "Yanıtınızı değiştirmek için kullanımdan kaldırılan takvime bağlı e-posta adresini kullanıma alın."
       ],
       "Enable your address again to modify your answer.": [
-        "Yanıtınızı değiştirmek için adresinizi yeniden etkinleştirin."
+        "Yanıtınızı değiştirmek için adresinizi yeniden kullanıma alın."
       ],
       "Enable your address to answer this invitation.": [
-        "Bu daveti yanıtlamak için adresinizi etkinleştirin."
+        "Bu daveti yanıtlamak için adresinizi kullanıma alın."
       ],
       "Folders": [
         "Klasörler"
@@ -6954,13 +6954,13 @@
         "Gizlilik ilkesi"
       ],
       "Re-enable the address linked to this calendar to manage your invitation.": [
-        "Davetinizi yönetmek için bu takvime bağlı adresi yeniden etkinleştirin."
+        "Davetinizi yönetmek için bu takvime bağlı adresi yeniden kullanıma alın."
       ],
       "Re-enable the address linked to this calendar to update your invitation.": [
-        "Davetinizi güncellemek için bu takvime bağlı adresi yeniden etkinleştirin."
+        "Davetinizi güncellemek için bu takvime bağlı adresi yeniden kullanıma alın."
       ],
       "Reactivate now": [
-        "Şimdi yeniden etkinleştir"
+        "Şimdi yenile"
       ],
       "Request an invite": [
         "Davet iste"
@@ -6996,28 +6996,28 @@
         "Bu nedir?"
       ],
       "You need to activate your calendar keys to add this event": [
-        "Bu etkinliği eklemek için takvim anahtarlarınızı etkinleştirmelisiniz"
+        "Bu etkinliği eklemek için takvim anahtarlarınızı kullanıma almalısınız"
       ],
       "You need to activate your calendar keys to answer this invitation": [
-        "Bu daveti yanıtlamak için takvim anahtarlarınızı etkinleştirmelisiniz"
+        "Bu daveti yanıtlamak için takvim anahtarlarınızı kullanıma almalısınız"
       ],
       "You need to activate your calendar keys to manage this invitation": [
-        "Bu daveti yönetmek için takvim anahtarlarınızı etkinleştirmelisiniz"
+        "Bu daveti yönetmek için takvim anahtarlarınızı kullanıma almalısınız"
       ],
       "You need to activate your calendar keys to see the updated event": [
-        "Güncellenen etkinliği görmek için takvim anahtarlarınızı etkinleştirmelisiniz"
+        "Güncellenen etkinliği görmek için takvim anahtarlarınızı kullanıma almalısınız"
       ],
       "You need to activate your calendar keys to see the updated invitation": [
-        "Güncellenen daveti görmek için takvim anahtarlarınızı etkinleştirmelisiniz"
+        "Güncellenen daveti görmek için takvim anahtarlarınızı kullanıma almalısınız"
       ],
       "You need to reactivate your keys to manage this invitation": [
-        "Bu daveti yönetmek için anahtarlarınızı yeniden etkinleştirmelisiniz"
+        "Bu daveti yönetmek için anahtarlarınızı yeniden kullanıma almalısınız"
       ],
       "You need to reactivate your keys to see the updated event": [
-        "Güncellenen etkinliği görmek için anahtarlarınızı yeniden etkinleştirmelisiniz"
+        "Güncellenen etkinliği görmek için anahtarlarınızı yeniden kullanıma almalısınız"
       ],
       "You need to reactivate your keys to see the updated invitation": [
-        "Güncellenen daveti görmek için anahtarlarınızı yeniden etkinleştirmelisiniz"
+        "Güncellenen daveti görmek için anahtarlarınızı yeniden kullanıma almalısınız"
       ]
     },
     "Link to calendar event": {
@@ -7106,7 +7106,7 @@
         "Ynt:"
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
-        "Ücretsiz deneme süreniz doldu. Hesap erişiminiz yakında devre dışı bırakılacak. ${ action }"
+        "Ücretsiz deneme süreniz doldu. Hesabınıza erişim yakında kapatılacak. ${ action }"
       ]
     },
     "Message display when a new app version is available": {
@@ -8307,7 +8307,7 @@
         "Adres panoya kopyalandı"
       ],
       "Address verification disabled": [
-        "Adres doğrulama devre dışı"
+        "Adres doğrulama özelliği kapalı"
       ],
       "Bug reported": [
         "Hata bildirildi"
@@ -8390,7 +8390,7 @@
         "İletiye ${ labelName } etiketi eklendi."
       ],
       "Message content search enabled": [
-        "İleti içeriği arama etkinleştirildi"
+        "İleti içeriğini arama özelliği açıldı"
       ],
       "Message deleted": [
         "İleti silindi"
@@ -8848,7 +8848,7 @@
         "E-posta ayarları"
       ],
       "Enable message content search": [
-        "İleti içeriği aramasını etkinleştir"
+        "İleti içeriğini arama özelliğini aç"
       ],
       "Enter your password": [
         "Parolanızı yazın"
@@ -9221,7 +9221,7 @@
         "Otomatik, bu kullanıcıya gönderim için oluşturucudaki biçimin kullanılacağını belirtir. Düz metin, iletinin gönderim sırasında her zaman düz metne dönüştürüleceğini belirtir."
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
-        "Sisteminizin gündüz ve gece kipine uyarak gündüz ve gece için seçtiğiniz temalar arasında otomatik olarak geçiş yapın"
+        "Sisteminizin gündüz ve gece durumuna uyarak gündüz ve gece için seçtiğiniz temalar arasında otomatik olarak geçiş yapın"
       ],
       "Customize import to reduce the number of folders": [
         "Klasör sayısını azaltmak için içe aktarmayı özelleştirin"
@@ -9275,10 +9275,10 @@
         "İçe aktarma yeni iletilerden eski iletilere doğru yapılacak."
       ],
       "The selected theme will be active when your system is set to \"dark mode\"": [
-        "Seçilmiş tema sisteminiz \"koyu kipe\" geçtiğinde etkinleştirilecek"
+        "Sisteminiz \"koyu temaya\" geçtiğinde seçilmiş tema kullanılacak"
       ],
       "The selected theme will be active when your system is set to \"light mode\"": [
-        "Seçilmiş tema sisteminiz \"açık kipe\" geçtiğinde etkinleştirilecek"
+        "Sisteminiz \"açık temaya\" geçtiğinde seçilmiş tema kullanılacak"
       ],
       "This feature is only available for paid users": [
         "Bu özelliği yalnızca ücretli tarife kullanıcıları kullanabilir"
@@ -9355,7 +9355,7 @@
         "Kişiler birleştirilemedi"
       ],
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
-        "Parolanızı hatırlamıyorsanız, anahtarınız yeniden etkinleştirilemez. Bu uyarıyı kapatmanıza yardımcı olabiliriz. Ancak bu süreçte bu anahtarla şifrelenmiş tüm verilere erişimi kalıcı olarak kaybedeceksiniz."
+        "Parolanızı hatırlamıyorsanız, anahtarınız yeniden kullanıma alınamaz. Bu uyarıyı kapatmanıza yardımcı olabiliriz. Ancak bu süreçte bu anahtarla şifrelenmiş tüm verilere erişimi kalıcı olarak kaybedeceksiniz."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Bildirimler uçtan uca şifrelenmez. Lütfen herhangi bir hassas bilgi göndermeyin."
