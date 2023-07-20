@@ -56,6 +56,9 @@
       "Continue without pinning": [
         "Jatka kiinnittämättä"
       ],
+      "Copy & fill in": [
+        "Kopioi ja täytä"
+      ],
       "Copy and close": [
         "Kopioi ja sulje"
       ],
@@ -161,9 +164,6 @@
       "Learn more": [
         "Lue lisää"
       ],
-      "Lock ${ PASS_APP_NAME }": [
-        "Lukitse ${ PASS_APP_NAME }"
-      ],
       "More options": [
         "Lisää asetuksia"
       ],
@@ -247,9 +247,6 @@
       ],
       "Submitting report...": [
         "Lähetetään raporttia..."
-      ],
-      "Sync": [
-        "Synkronoi"
       ],
       "Try again": [
         "Yritä uudelleen"
@@ -360,8 +357,8 @@
       "Firefox export file could not be parsed. ${ errorDetail }": [
         "Firefoxin vientitiedostoa ei voitu jäsentää. ${ errorDetail }"
       ],
-      "Import failed for vault \"${ vaultData.vaultName }\" : ${ description }": [
-        "Holvin \"${ vaultData.vaultName }\" tuonti epäonnistui: ${ description }"
+      "Import failed for vault \"${ vaultData.name }\" : ${ description }": [
+        "Holvin \"${ vaultData.name }\" tuonti epäonnistui: ${ description }"
       ],
       "Importing items failed": [
         "Kohteiden tuonti epäonnistui"
@@ -465,8 +462,8 @@
       "Vault \"${ payload.content.name }\" creation failed": [
         "Holvin \"${ payload.content.name }\" luonti epäonnistui"
       ],
-      "Vault \"${ vaultData.vaultName }\" could not be created": [
-        "Holvia \"${ vaultData.vaultName }\" ei voitu luoda"
+      "Vault \"${ vaultData.name }\" could not be created": [
+        "Holvia \"${ vaultData.name }\" ei voitu luoda"
       ],
       "Vault name does not match": [
         "Holvin nimi ei täsmää"
@@ -517,6 +514,9 @@
       ]
     },
     "Info": {
+      " Upgrade to a paid plan to create multiple vaults.": [
+        " Päivitä maksulliseen tilaukseen luodaksesi useita holveja."
+      ],
       "\"${ payload.item.data.metadata.name }\" item was dismissed": [
         "Kohde \"${ payload.item.data.metadata.name }\" hylättiin"
       ],
@@ -764,8 +764,8 @@
       "Save login": [
         "Tallenna kirjautumistieto"
       ],
-      "Select the destination vault for each imported vault. By default a new vault will be created for each imported vault.": [
-        "Valitse kohdeholvi kullekin tuodulle holville. Oletusarvoisesti jokaiselle tuodulle holville luodaan uusi holvi."
+      "Select the destination vault for each imported vault.": [
+        "Valitse kohdeholvi kullekin tuodulle holville."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Palvelimia ei tavoiteta. Yritä muutaman minuutin kuluttua uudelleen"
@@ -837,6 +837,9 @@
       "Vault \"${ share.content.name }\" was disabled": [
         "Holvi \"${ share.content.name }\" otettiin pois käytöstä"
       ],
+      "Verification code": [
+        "Vahvistuskoodi"
+      ],
       "You are about to create:": [
         "Olet luomassa:"
       ],
@@ -853,8 +856,8 @@
       "You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.": [
         "Luotujen aliasten enimmäismäärä on saavutettu. Luo aliaksia rajattomasti päivittämällä tilauksesi."
       ],
-      "You have reached the limit of vaults you can create. Create an unlimited number of vaults when you upgrade your subscription.": [
-        "Luotujen holvien enimmäismäärä on saavutettu. Luo holveja rajattomasti päivittämällä tilauksesi."
+      "You have reached the limit of vaults you can create.": [
+        "Olet saavuttanut luomiesi holvien enimmäismäärän."
       ],
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "Olet saavuttanut ${ maxLength }-merkin enimmäispituuden."
@@ -1563,6 +1566,9 @@
       "Vault name is required": [
         "Holvin nimi vaaditaan"
       ],
+      "You cannot create more vaults than your subscription allows.": [
+        "Et voi luoda enempää holveja kuin tilauksesi sallii."
+      ],
       "You have unsaved changes, are you sure you want to discard them?": [
         "Sinulla on tallentamattomia muutoksia. Haluatko varmasti hylätä ne?"
       ],
@@ -1578,7 +1584,7 @@
       "Your session was locked due to inactivity": [
         "Istuntosi lukittiin toimettomuuden seuraksena"
       ],
-      "Your subscription does not allow you to create multiple vaults. All items will be imported to your primary vault by default. To import into multiple vaults upgrade your subscription.": [
+      "Your subscription does not allow you to create multiple vaults. All items will be imported to your primary vault. To import into multiple vaults upgrade your subscription.": [
         "Tilauksesi ei salli useiden holvien luontia ja kaikki kohteet tuodaan oletusarvoisesti ensisijaiseen holviisi. Jos haluat tuoda useisiin holveihin, päivitä tilauksesi."
       ]
     }
