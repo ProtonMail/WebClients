@@ -192,6 +192,7 @@ type WorkerMessageResponseMap = {
     [WorkerMessageType.AUTOFILL_QUERY]: { items: SafeLoginItem[]; needsUpgrade: boolean };
     [WorkerMessageType.AUTOFILL_SELECT]: { username: string; password: string };
     [WorkerMessageType.AUTOFILL_OTP_CHECK]: { shouldPrompt: false } | ({ shouldPrompt: true } & SelectedItem);
+    [WorkerMessageType.ALIAS_CREATE]: { ok: true } | { ok: false; reason: string };
     [WorkerMessageType.UNLOCK_REQUEST]: { ok: true } | { ok: false; canRetry: boolean; reason: string };
     [WorkerMessageType.OTP_CODE_GENERATE]: OtpCode;
     [WorkerMessageType.ALIAS_OPTIONS]: { options: AliasState['aliasOptions']; needsUpgrade: boolean };
