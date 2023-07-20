@@ -141,6 +141,9 @@
       "Continue with Google": [
         "Continuar con Google"
       ],
+      "Copy email address": [
+        "Copiar la dirección de correo"
+      ],
       "Copy email to clipboard": [
         "Copiar correo al portapapeles"
       ],
@@ -158,6 +161,9 @@
       ],
       "Create event": [
         "Crear evento"
+      ],
+      "Create new contact": [
+        "Crear un contacto"
       ],
       "Customize": [
         "Personalizar"
@@ -567,7 +573,7 @@
         "Utilizar código de autenticación"
       ],
       "Use for sending": [
-        "Usar para enviar"
+        "Utilizar para el envío"
       ],
       "Use recovery code": [
         "Utilizar código de recuperación"
@@ -580,6 +586,9 @@
       ],
       "View": [
         "Ver"
+      ],
+      "View contact details": [
+        "Ver detalles del contacto"
       ],
       "View invoice": [
         "Ver factura"
@@ -4872,7 +4881,7 @@
         "El espacio de almacenamiento es compartido entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } y ${ DRIVE_APP_NAME }."
       ],
       "Use your own custom email domain address, e.g., you@yourname.com": [
-        "Utiliza tu propia dirección de correo personalizada, p. ej. tú@tunombre.com"
+        "Utiliza tu propia dirección de correo personalizada, p. ej. tu@tunombre.com"
       ]
     },
     "new_plans: label": {
@@ -5377,8 +5386,8 @@
       ]
     },
     "Shared calendar; Info about calendar owner": {
-      "Created by ${ ownerName }": [
-        "Creado por ${ ownerName }"
+      "Shared by ${ ownerName }": [
+        "Compartido por ${ ownerName }"
       ]
     },
     "Side panel spotlight": {
@@ -5621,7 +5630,7 @@
         "Accede desde cualquier lugar al contenido de servicios de transmisión como Netflix, Disney+ o Prime Video."
       ],
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
-        "Todos nuestros servicios premium al máximo: 100 direcciones de correo electrónico, compatibilidad con 10 dominios personalizados, alias ilimitados de Hide-my-email, posibilidad de compartir calendarios y archivos cifrados, almacenamiento cifrado en la nube, etc."
+        "Todos nuestros servicios premium: 100 direcciones de correo electrónico, compatibilidad con 10 dominios personalizados, alias ilimitados de Hide-my-email, posibilidad de compartir calendarios y archivos cifrados, almacenamiento cifrado en la nube, etc."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Incluye compatibilidad con 1 dominio de correo electrónico personalizado, 10 direcciones de correo electrónico, 10 alias de Hide-my-email, posibilidad de compartir calendario, etc."
@@ -6040,7 +6049,7 @@
         "Alarma del calendario"
       ],
       "Cannot add more addresses": [
-        "No se pueden añadir más direcciones."
+        "No se pueden añadir más direcciones"
       ],
       "Change my answer": [
         "Cambiar mi respuesta"
