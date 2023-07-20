@@ -86,9 +86,6 @@
       "Create": [
         "Buat"
       ],
-      "Create account": [
-        "Buat akun"
-      ],
       "Current plan": [
         "Paket saat ini"
       ],
@@ -170,14 +167,8 @@
       "Fit to window": [
         "Sesuaikan dengan jendela"
       ],
-      "Get ${ discountPercentage } off with 24 months": [
-        "Dapatkan diskon ${ discountPercentage } dengan 24 bulan"
-      ],
       "Get ${ vpnPlus }": [
         "Dapatkan ${ vpnPlus }"
-      ],
-      "Get a new encrypted email address": [
-        "Dapatkan alamat email terenkripsi baru"
       ],
       "Get the deal": [
         "Dapatkan penawaran"
@@ -205,9 +196,6 @@
       ],
       "Mark as default": [
         "Tandai sebagai standar"
-      ],
-      "Maybe later": [
-        "Mungkin nanti"
       ],
       "More info: ${ safeTitle }": [
         "Info lebih lanjut: ${ safeTitle }"
@@ -289,9 +277,6 @@
       ],
       "Save": [
         "Simpan"
-      ],
-      "Save selected": [
-        "Simpan pilihan"
       ],
       "Search countries": [
         "Cari negara"
@@ -392,9 +377,6 @@
       "Use recovery code": [
         "Gunakan kode pemulihan"
       ],
-      "Use your current email instead": [
-        "Gunakan alamat email Anda saat ini"
-      ],
       "User": [
         "Pengguna"
       ],
@@ -429,14 +411,6 @@
         "Perkecil"
       ]
     },
-    "Action in trial plan": {
-      "No, thanks": [
-        "Tidak, terima kasih"
-      ],
-      "Try free for 30 days": [
-        "Coba gratis selama 30 hari"
-      ]
-    },
     "Action subscription": {
       "Manage": [
         "Kelola"
@@ -456,11 +430,6 @@
     "Alter": {
       "This will disconnect all the routers and clients using this certificate.": [
         "Tindakan ini akan memutuskan seluruh sambungan router dan klien yang menggunakan sertifikat ini."
-      ]
-    },
-    "Baseline in trial plan": {
-      "${ mailPlus }: the privacy-first Mail and Calendar solution for your everyday communications needs.": [
-        "${ mailPlus }: solusi Mail dan Calendar yang mengedepankan privasi untuk kebutuhan komunikasi Anda sehari-hari."
       ]
     },
     "Billing cycle": {
@@ -2045,22 +2014,11 @@
       "Best deal": [
         "Penawaran terbaik"
       ],
-      "Enter your email address": [
-        "Masukkan alamat email Anda"
-      ],
       "Get help": [
         "Dapatkan bantuan"
       ],
-      "Select your preferred method of payment": [
-        "Pilih metode pembayaran yang Anda inginkan"
-      ],
       "Select your pricing plan": [
         "Pilih paket Anda"
-      ]
-    },
-    "Heading in trial plan": {
-      "Try the best of ${ MAIL_APP_NAME } for free": [
-        "Cobalah berbagai fitur unggulan ${ MAIL_APP_NAME } secara cuma-cuma"
       ]
     },
     "Human verification method": {
@@ -2105,26 +2063,17 @@
       "${ storage } storage": [
         "Kuota penyimpanan ${ storage }"
       ],
-      "${ storageSize } storage": [
-        "Kuota penyimpanan ${ storageSize }"
-      ],
       "${ vpnPlus } required for Country level connection.": [
         "${ vpnPlus } diperlukan untuk koneksi tingkat Negara."
       ],
       "${ vpnPlus } required for Secure Core feature.": [
         "${ vpnPlus } diperlukan untuk fitur Secure Core."
       ],
-      "* No credit card required.": [
-        "* Tanpa perlu kartu kredit."
-      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } kuota penyimpanan tambahan"
       ],
       "+${ organization.BonusVPN } connections for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
         "+${ organization.BonusVPN } koneksi untuk ${ VPN_APP_NAME } (yang memungkinkan Anda untuk menyambungkan lebih banyak perangkat ke VPN dalam satu waktu)"
-      ],
-      "10 email addresses": [
-        "10 alamat email"
       ],
       "30-day money-back guarantee": [
         "Jaminan uang kembali dalam 30 hari"
@@ -2333,6 +2282,9 @@
       "For Visa, MasterCard and Discover, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
         "Untuk Visa, MasterCard, dan Discover, 3 digit yang terdapat pada sisi belakang kartu. Untuk American Express, 4 digit yang terdapat pada sisi depan kartu."
       ],
+      "Free forever": [
+        "Selamanya gratis"
+      ],
       "Free up some space or add more storage space.": [
         "Kosongkan beberapa ruang atau tambah ruang penyimpanan."
       ],
@@ -2447,9 +2399,6 @@
       "MM/YY": [
         "BB/TT"
       ],
-      "No credit card required": [
-        "Tanpa perlu kartu kredit"
-      ],
       "No payment is required at this time.": [
         "Tidak ada pembayaran yang diperlukan untuk saat ini."
       ],
@@ -2470,12 +2419,6 @@
       ],
       "Once you reset your password:": [
         "Setelah Anda mengatur ulang kata sandi Anda:"
-      ],
-      "One account. All ${ BRAND_NAME } services.": [
-        "Satu akun. Seluruh layanan ${ BRAND_NAME }."
-      ],
-      "Open source": [
-        "Sumber terbuka"
       ],
       "Or select a particular server:": [
         "Atau pilih salah satu server berikut:"
@@ -2528,9 +2471,6 @@
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Harga termasuk seluruh diskon berbasis siklus yang berlaku dan kupon tanpa tanggal berakhir yang disimpan di akun Anda."
       ],
-      "Priority support": [
-        "Dukungan prioritas"
-      ],
       "Protected by Swiss privacy laws": [
         "Dilindungi oleh hukum privasi Swiss"
       ],
@@ -2551,9 +2491,6 @@
       ],
       "Revoke certificate ${ name }": [
         "Cabut sertifikat ${ name }"
-      ],
-      "Saving your password": [
-        "Menyimpan kata sandi Anda"
       ],
       "Scan QR code instead": [
         "Pindai kode QR"
@@ -2588,17 +2525,14 @@
       "Step ${ step }": [
         "Langkah ${ step }"
       ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Kuota penyimpanan diperuntukkan bagi ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, dan ${ DRIVE_APP_NAME } secara bersamaan."
-      ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Kirimkan deposit menggunakan alamat berikut atau pindai kode QR. Deposit Anda akan tercermin di akun setelah konfirmasi."
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Langganan akan segera berakhir: Aktifkan kembali paket Anda sebelum tanggal ${ byDate } untuk tetap memperoleh manfaat ${ planName } Anda. ${ reactivateLink }"
       ],
-      "Support for 1 custom email domain": [
-        "Dukungan 1 alamat email dengan domain khusus"
+      "Summary": [
+        "Rangkuman"
       ],
       "support team": [
         "tim dukungan"
@@ -2608,9 +2542,6 @@
       ],
       "Thank you": [
         "Terima kasih"
-      ],
-      "The ${ planName } plan includes:": [
-        "Paket ${ planName } termasuk:"
       ],
       "The securest way to browse, stream, and be online.": [
         "Cara paling aman untuk menjelajah, menonton, dan beraktivitas di internet."
@@ -2654,9 +2585,6 @@
       "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
         "Wisaya ini akan mengaktifkan Autentikasi Dua Faktor (2FA) di akun ${ BRAND_NAME } Anda. Autentikasi dua faktor akan membuat akun ${ BRAND_NAME_TWO } Anda lebih aman, jadi kami menyarankan untuk mengaktifkannya."
       ],
-      "To ${ planName }": [
-        "Di ${ planName }"
-      ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Untuk menyelesaikan pembayaran Anda, silakan kirim ${ btcAmountBold } ke alamat di bawah ini."
       ],
@@ -2672,9 +2600,6 @@
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "Untuk mengamankan koneksi internet Anda, unduh dan instal aplikasi ${ VPN_APP_NAME } untuk perangkat Anda dan sambungkan diri Anda ke server yang tersedia."
       ],
-      "to use ${ toAppName } and all ${ BRAND_NAME } services": [
-        "untuk dapat menggunakan ${ toAppName } dan seluruh layanan ${ BRAND_NAME }"
-      ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Isikan akun Anda dengan kredit yang dapat Anda pakai untuk berlangganan paket baru atau memperbarui paket. Anda mendapatkan satu kredit untuk setiap ${ i18nCurrency } yang dihabiskan."
       ],
@@ -2689,9 +2614,6 @@
       ],
       "Total VPN connections": [
         "Total koneksi VPN"
-      ],
-      "Try ${ upsellPlanName } risk free": [
-        "Coba ${ upsellPlanName } tanpa risiko"
       ],
       "two-factor authentication (2FA)": [
         "autentikasi dua faktor (2FA)"
@@ -2710,12 +2632,6 @@
       ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Sayangnya, tidak ada metode pemulihan yang ditetapkan untuk akun ini."
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Tanpa batasan jumlah folder, label, dan filter"
-      ],
-      "Unlimited messages": [
-        "Tanpa batasan jumlah pesan"
       ],
       "Unsaved changes": [
         "Perubahan yang belum disimpan"
@@ -2777,17 +2693,11 @@
       "We recommend using your recovery phrase instead.": [
         "Kami menyarankan Anda untuk menggunakan frasa pemulihan."
       ],
-      "We use 3-D Secure to protect your payments.": [
-        "Kami menggunakan 3-D Secure untuk melindungi pembayaran anda."
-      ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Untuk menyelesaikan transaksi, kami akan mengarahkan Anda ke PayPal di tab baru. Nonaktifkan pemblokir pop-up terlebih dahulu sebelum melanjutkan."
       ],
       "We'll send a new verification code to ${ strong }": [
         "Kami akan mengirimkan kode verifikasi baru ke ${ strong }"
-      ],
-      "Welcome": [
-        "Selamat datang"
       ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "Kami akan mengirimkan kode untuk mengatur ulang akun ke alamat email yang telah Anda tentukan sebelumnya."
@@ -2806,9 +2716,6 @@
       ],
       "Why?": [
         "Mengapa?"
-      ],
-      "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME_TWO } services": [
-        "Dengan alamat ${ BRAND_NAME } yang terenkripsi, Anda dapat menggunakan seluruh layanan ${ BRAND_NAME_TWO }"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Apakah Anda mau menerima kode verifikasi baru atau menggunakan metode verifikasi alternatif?"
@@ -2846,9 +2753,6 @@
       "You cannot use the OpenVPN / IKEv2 credentials to sign in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
         "Anda tidak dapat menggunakan informasi kredensial OpenVPN / IKEv2 untuk masuk ke aplikasi ${ VPN_APP_NAME } atau dasbor ${ VPN_APP_NAME }. ${ learnMore }"
       ],
-      "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
-        "Berhubung Anda belum mengatur metode pemulihan, akun Anda tidak akan dapat dipulihkan apabila ke depannya Anda kehilangan kata sandi Anda. Lanjutkan tanpa metode pemulihan?"
-      ],
       "You have no saved payment methods.": [
         "Anda tidak memiliki metode pembayaran yang tersimpan."
       ],
@@ -2870,14 +2774,8 @@
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
         "Kapasitas penyimpanan Anda telah mencapai 100%. Anda tidak akan dapat mengirim atau menerima pesan baru. ${ freeUpMessage } ${ upgradeLink }"
       ],
-      "You will be redirected to the VPN download page": [
-        "Anda akan dialihkan ke laman pengunduhan VPN"
-      ],
       "You will lose access to ${ vpnPlanNameShort } servers and features on this date.": [
         "Anda akan kehilangan akses ke server dan fitur ${ vpnPlanNameShort } pada tanggal ini."
-      ],
-      "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
-        "Anda akan butuh alamat ${ BRAND_NAME } untuk dapat menggunakan ${ MAIL_APP_NAME } dan ${ CALENDAR_APP_NAME }"
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Anda akan segera dialihkan menuju PayPal untuk memverifikasi pembayaran anda."
@@ -3061,9 +2959,6 @@
       ],
       "Card holder": [
         "Pemegang kartu"
-      ],
-      "Card information": [
-        "Informasi kartu"
       ],
       "Card number": [
         "Nomor kartu"
@@ -3266,9 +3161,6 @@
       "Recovery phrase": [
         "Frasa pemulihan"
       ],
-      "Repeat password": [
-        "Ulangi kata sandi"
-      ],
       "Reveal password": [
         "Perlihatkan kata sandi"
       ],
@@ -3295,12 +3187,6 @@
       ],
       "Two-password mode": [
         "Mode dua kata sandi"
-      ],
-      "Use a recovery email address": [
-        "Gunakan alamat email pemulihan"
-      ],
-      "Use a recovery phone number": [
-        "Gunakan nomor telepon pemulihan"
       ],
       "User's new password": [
         "Kata sandi baru pengguna"
@@ -3408,6 +3294,9 @@
       "Pay invoice": [
         "Bayar tagihan"
       ],
+      "Paypal without credit card": [
+        "PayPal tanpa kartu kredit"
+      ],
       "Privacy policy": [
         "Kebijakan privasi"
       ],
@@ -3492,9 +3381,6 @@
       "Continue to review": [
         "Lanjut ke proses peninjauan"
       ],
-      "Continue with Free": [
-        "Lanjut dengan akun Free"
-      ],
       "Delete account": [
         "Hapus akun"
       ],
@@ -3504,14 +3390,8 @@
       "Get ${ BRAND_NAME } for free": [
         "Dapatkan ${ BRAND_NAME } secara cuma-cuma"
       ],
-      "Get ${ mostPopularShortPlan.title }": [
-        "Dapatkan ${ mostPopularShortPlan.title }"
-      ],
       "Get ${ planName }": [
         "Dapatkan ${ planName }"
-      ],
-      "Get ${ upsellShortPlan.title }": [
-        "Dapatkan ${ upsellShortPlan.title }"
       ],
       "Got it": [
         "Mengerti"
@@ -3527,9 +3407,6 @@
       ],
       "Switch plan": [
         "Ganti paket"
-      ],
-      "Upgrade to ${ upsellPlanHumanSize }": [
-        "Tingkatkan ke ${ upsellPlanHumanSize }"
       ]
     },
     "new_plans: Action": {
@@ -3853,21 +3730,6 @@
       "${ brand } ending in ${ last4 }": [
         "${ brand } akan berakhir dalam ${ last4 }"
       ],
-      "* With 1-month subscription. Other subscription options available at checkout.": [
-        "* Dengan berlangganan selama 1 bulan. Opsi berlangganan lainnya akan tersedia untuk dipilih pada proses checkout."
-      ],
-      "* With 12-month subscription. Other subscription options available at checkout.": [
-        "* Dengan berlangganan selama 12 bulan. Opsi berlangganan lainnya akan tersedia untuk dipilih pada proses checkout."
-      ],
-      "* With 15-month subscription. Other subscription options available at checkout.": [
-        "* Dengan langganan selama 15 bulan. Opsi berlangganan lainnya tersedia untuk dipilih pada proses checkout."
-      ],
-      "* With 24-month subscription. Other subscription options available at checkout.": [
-        "* Dengan berlangganan selama 24 bulan. Opsi berlangganan lainnya akan tersedia untuk dipilih pada proses checkout."
-      ],
-      "* With 30-month subscription. Other subscription options available at checkout.": [
-        "* Dengan langganan selama 30 bulan. Opsi berlangganan lainnya tersedia untuk dipilih pada proses checkout."
-      ],
       "Applicable credits, proration, and coupons are applied in the next step": [
         "Segala saldo, prorasi, dan kupon diskon akan diterapkan pada langkah selanjutnya"
       ],
@@ -3885,9 +3747,6 @@
       ],
       "If you switch to a different plan, you lose all ${ visionary } plan benefits and won’t be able to switch back to ${ visionary }.": [
         "Dengan beralih ke paket lainnya, Anda akan kehilangan seluruh manfaat yang dimiliki oleh paket ${ visionary } dan Anda tidak akan lagi dapat beralih kembali ke ${ visionary } ke depannya."
-      ],
-      "Most popular": [
-        "Terpopuler"
       ],
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
         "Paket ${ visionary } kami tidak lagi tersedia kepada pengguna baru karena paket tersebut merupakan paket khusus yang hanya tersedia bagi para pengguna ${ BRAND_NAME } lama dengan berbagai fitur dan manfaat spesial."
@@ -3959,32 +3818,11 @@
       ]
     },
     "new_plans: signup": {
-      "By creating a ${ BRAND_NAME } account, you agree to our ${ terms }": [
-        "Dengan membuat akun ${ BRAND_NAME }, Anda menyatakan diri setuju pada ${ terms } kami"
-      ],
       "By paying, you agree to our ${ termsAndConditions }": [
         "Dengan membayar, Anda setuju dengan ${ termsAndConditions } kami"
       ],
-      "Payment details": [
-        "Rincian pembayaran"
-      ],
-      "Save your email address or phone number to use for verification if you need to reset your account.": [
-        "Simpan alamat email atau nomor telepon Anda untuk keperluan verifikasi apabila Anda perlu mengatur ulang akun Anda ke depannya."
-      ],
-      "Subscription": [
-        "Langganan"
-      ],
       "terms and conditions": [
         "syarat dan ketentuan"
-      ],
-      "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
-        "Untuk memulai, tentukan nama layar Anda. Nama ini merupakan nama yang akan dilihat oleh orang lain pada saat Anda mengirim email, mengirim undangan, atau membagikan berkas kepada mereka."
-      ],
-      "Your ${ planName } subscription is now active.": [
-        "Langganan ${ planName } Anda kini telah aktif."
-      ],
-      "Your selected plan: ${ planName }": [
-        "Paket yang Anda pilih: ${ planName }"
       ]
     },
     "new_plans: title": {
@@ -3999,9 +3837,6 @@
       ],
       "Review subscription and pay": [
         "Peninjauan dan pembayaran langganan"
-      ],
-      "Start exploring the ${ BRAND_NAME } universe": [
-        "Mulai jelajahi semesta ${ BRAND_NAME }"
       ],
       "Switch plans?": [
         "Ganti paket?"
@@ -4416,37 +4251,18 @@
         "Dengan memverifikasi nomor telepon, Anda akan meningkatkan keamanan akun serta menambah metode pemulihan bagi akun Anda."
       ]
     },
-    "Shared calendar; Info about calendar owner": {
-      "Created by ${ ownerName }": [
-        "Dibuat oleh ${ ownerName }"
-      ]
-    },
     "Signup label": {
       "Confirm email address": [
         "Konfirmasi alamat email"
       ],
-      "Display name": [
-        "Nama tampilan"
-      ],
-      "Email": [
-        "Email"
+      "Confirm password": [
+        "Konfirmasi kata sandi"
       ],
       "Email address": [
         "Alamat email"
       ],
-      "Username": [
-        "Nama pengguna"
-      ]
-    },
-    "Signup step": {
-      "Account setup": [
-        "Pengaturan akun"
-      ],
-      "Payment": [
-        "Pembayaran"
-      ],
-      "Verification": [
-        "Verifikasi"
+      "Password": [
+        "Kata sandi"
       ]
     },
     "specialoffer: Action": {
@@ -4815,9 +4631,6 @@
     "Subscription saving": {
       "Save": [
         "Hemat"
-      ],
-      "Save ${ discountPercentage }%": [
-        "Hemat ${ discountPercentage }%"
       ]
     },
     "Subscription status": {
@@ -4971,6 +4784,9 @@
       ]
     },
     "Title": {
+      "${ appName } Free": [
+        "${ appName } Free"
+      ],
       "${ VPN_APP_NAME } clients": [
         "Klien ${ VPN_APP_NAME }"
       ],
@@ -5069,12 +4885,6 @@
       ],
       "Confirm phone number": [
         "Konfirmasi nomor telepon"
-      ],
-      "Congratulations on choosing privacy!": [
-        "Selamat karena telah memilih privasi!"
-      ],
-      "Create your ${ BRAND_NAME } Account": [
-        "Buat Akun ${ BRAND_NAME } Anda"
       ],
       "Credits": [
         "Saldo"
@@ -5250,12 +5060,6 @@
       "Revoke certificate": [
         "Cabut sertifikat"
       ],
-      "Save contact details": [
-        "Simpan rincian kontak"
-      ],
-      "Secure email based in Switzerland": [
-        "Email aman berbasis di Swiss"
-      ],
       "Select a plan": [
         "Pilih paket"
       ],
@@ -5304,23 +5108,14 @@
       "Unsupported browser": [
         "Browser tidak didukung"
       ],
-      "Verification": [
-        "Verifikasi"
-      ],
       "Verification failed": [
         "Verifikasi gagal"
-      ],
-      "Verify email address": [
-        "Verifikasi alamat email"
       ],
       "Verifying your card...": [
         "Memverifikasi kartu Anda..."
       ],
       "Verifying your payment...": [
         "Memverifikasi pembayaran Anda..."
-      ],
-      "Warning": [
-        "Peringatan"
       ],
       "What's new": [
         "Apa-apa saja yang baru"
@@ -5345,9 +5140,6 @@
       ],
       "Your subscriptions": [
         "Langganan Anda"
-      ],
-      "You’ve been invited to try ${ MAIL_APP_NAME }": [
-        "Anda telah diundang untuk mencoba ${ MAIL_APP_NAME }"
       ]
     },
     "Title for payment methods table": {
