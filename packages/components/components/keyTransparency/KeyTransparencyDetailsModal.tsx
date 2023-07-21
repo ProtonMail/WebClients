@@ -23,6 +23,7 @@ import {
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
 import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { dateLocale } from '@proton/shared/lib/i18n';
 
 const uniqueByEmail = (failedAudits: LocalStorageAuditResult[]): LocalStorageAuditResult[] => {
@@ -86,13 +87,13 @@ const SelfAuditResults = ({ selfAuditResult }: { selfAuditResult: SelfAuditResul
             return;
         }
         const fingerprintMessage = c('loc_nightly: Key transparency details')
-            .t`To verify the security of your end-to-end encryption with this contact, ask them for the fingerprint of the first key that is displayed under Settings > Encryption & Keys for this address in their account, and check that it matches the following:`;
+            .t`To verify the security of your end-to-end encryption with this contact, compare the following fingerprint with the one the recipient sees in their Account (Settings > Encryption & Keys).`;
         return (
             <>
-                <p>
-                    {fingerprintMessage}{' '}
+                <div className="flex flex-column gap-1">
+                    <p>{fingerprintMessage}</p>
                     <code className="bg-weak p-1 rounded user-select text-sm text-break">{primaryKeyFingerprint}</code>
-                </p>
+                </div>
             </>
         );
     };
@@ -263,7 +264,7 @@ const KeyTransparencyDetailsModal = (props: ModalProps) => {
                 )}
                 <p>
                     <span className="mr-1">{introductionText}</span>
-                    <Href href={'' /*TODO: add link here*/}>{c('Link').t`Learn more`}</Href>
+                    <Href href={getKnowledgeBaseUrl('/key-transparency')}>{c('Link').t`Learn more`}</Href>
                 </p>
                 <hr />
                 {!!selfAuditResult && <SelfAuditResults selfAuditResult={selfAuditResult} />}
