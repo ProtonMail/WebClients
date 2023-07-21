@@ -1,7 +1,7 @@
 import type { Runtime } from 'webextension-polyfill';
 
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
-import type { MaybeNull, SafeLoginItem, WorkerState } from '@proton/pass/types';
+import type { MaybeNull, WorkerState } from '@proton/pass/types';
 import type { Rect } from '@proton/pass/types/utils/dom';
 
 import type { DropdownActions } from './dropdown';
@@ -78,7 +78,7 @@ export type IFrameMessage<T extends IFrameMessageType = IFrameMessageType> = Ext
     | { type: IFrameMessageType.IFRAME_HIDDEN }
     | { type: IFrameMessageType.IFRAME_DIMENSIONS; payload: { height: number; width?: number } }
     | { type: IFrameMessageType.DROPDOWN_ACTION; payload: DropdownActions }
-    | { type: IFrameMessageType.DROPDOWN_AUTOFILL_LOGIN; payload: { item: SafeLoginItem } }
+    | { type: IFrameMessageType.DROPDOWN_AUTOFILL_LOGIN; payload: { username: string; password: string } }
     | { type: IFrameMessageType.DROPDOWN_AUTOFILL_GENERATED_PW; payload: { password: string } }
     | { type: IFrameMessageType.DROPDOWN_AUTOFILL_EMAIL; payload: { email: string } }
     | { type: IFrameMessageType.NOTIFICATION_ACTION; payload: NotificationActions }
