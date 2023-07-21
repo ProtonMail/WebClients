@@ -25,6 +25,7 @@ import noop from '@proton/utils/noop';
 import locales from '../../../app/locales';
 import { INITIAL_WORKER_STATE } from '../../constants';
 import { ExtensionContext, type ExtensionContextType } from '../../extension';
+import { useActivityProbe } from '../../hooks/useActivityProbe';
 
 export interface ExtensionAppContextValue {
     context: MaybeNull<ExtensionContextType>;
@@ -79,6 +80,7 @@ export const ExtensionContextProvider = <T extends ExtensionEndpoint>({
 }: ExtensionContextProviderProps<T>) => {
     const dispatch = useDispatch();
     const { tabId } = ExtensionContext.get();
+    const activityProbe = useActivityProbe(messageFactory);
 
     const [state, setState] = useState<WorkerState>(INITIAL_WORKER_STATE);
     const ready = useSelector(selectDidWakeup(endpoint, tabId)) && workerReady(state.status);
@@ -126,6 +128,14 @@ export const ExtensionContextProvider = <T extends ExtensionEndpoint>({
             });
 
         return () => ExtensionContext.get().port.onMessage.removeListener(onMessage);
+    }, []);
+
+    useEffect(() => {
+        const onVisibilityChange = () => activityProbe[document.visibilityState === 'visible' ? 'start' : 'cancel']();
+        document.addEventListener('visibilitychange', onVisibilityChange);
+        onVisibilityChange();
+
+        return () => document.removeEventListener('visibilitychange', onVisibilityChange);
     }, []);
 
     const context = useMemo<ExtensionAppContextValue>(
