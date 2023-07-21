@@ -14,7 +14,7 @@ export const selectVaultLimits = createSelector([selectAllVaults, selectUserPlan
         vaultLimit,
         vaultTotalCount: vaults.length,
         vaultLimitReached: vaults.length >= vaultLimit,
-        didDowngrade: vaults.length > vaultLimit,
+        didDowngrade: vaults.length > vaultLimit && plan?.Type === PlanType.free,
     };
 });
 
