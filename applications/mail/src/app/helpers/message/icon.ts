@@ -363,7 +363,7 @@ const getReceivedStatusIconInternalWithKT = (
         // Special text for KT errors in message details
         const errorMessage =
             apiKeysErrors[0] === KEY_VERIFICATION_ERROR_MESSAGE
-                ? c('loc_nightly: Composer email icon').t`Unable to verify sender at this time`
+                ? c('loc_nightly: Composer email icon').t`Unable to verify sender at this time.`
                 : apiKeysErrors[0];
         return {
             ...warningResult,
@@ -378,7 +378,7 @@ const getReceivedStatusIconInternalWithKT = (
             ...warningResult,
             senderVerificationDetails: {
                 description: c('loc_nightly: Sender verification error')
-                    .t`Sender verification failed: ${verificationErrorsMessage}`,
+                    .t`Sender verification failed: ${verificationErrorsMessage}.`,
             },
         };
     }
@@ -399,7 +399,7 @@ const getReceivedStatusIconInternalWithKT = (
         return {
             ...warningResult,
             senderVerificationDetails: {
-                description: c('loc_nightly: Sender verification error').t`Unable to retrieve sender key`,
+                description: c('loc_nightly: Sender verification error').t`Unable to retrieve sender key.`,
             },
         };
     }
@@ -409,7 +409,7 @@ const getReceivedStatusIconInternalWithKT = (
             ...warningResult,
             senderVerificationDetails: {
                 description: c('loc_nightly: Sender verification error')
-                    .t`Signing key is not in the list of trusted keys`,
+                    .t`Signing key is not in the list of trusted keys.`,
             },
         };
     }
@@ -419,7 +419,7 @@ const getReceivedStatusIconInternalWithKT = (
             ...warningResult,
             senderVerificationDetails: {
                 description: c('loc_nightly: Sender verification error')
-                    .t`Signing key not protected by Key Transparency`,
+                    .t`Signing key not protected by Key Transparency.`,
                 showKeyTransparencyLearnMore: true,
             },
         };
@@ -429,7 +429,8 @@ const getReceivedStatusIconInternalWithKT = (
         return {
             ...warningResult,
             senderVerificationDetails: {
-                description: c('loc_nightly: Sender verification error').t`Signing key marked as compromised by sender`,
+                description: c('loc_nightly: Sender verification error')
+                    .t`Signing key marked as compromised by sender.`,
             },
         };
     }
@@ -447,7 +448,7 @@ const getReceivedStatusIconInternalWithKT = (
         return {
             ...warningResult,
             senderVerificationDetails: {
-                description: c('loc_nightly: Signature verification warning').t`Sender's keys must be trusted again`,
+                description: c('loc_nightly: Signature verification warning').t`Sender's keys must be trusted again.`,
             },
         };
     }
@@ -456,10 +457,11 @@ const getReceivedStatusIconInternalWithKT = (
         if (hasPinnedKeys) {
             return {
                 ...result,
-                text: c('loc_nightly: Received email icon').t`End-to-end encrypted message from verified sender`,
+                text: c('loc_nightly: Received email icon').t`End-to-end encrypted message from verified sender.`,
                 fill: CHECKMARK,
                 senderVerificationDetails: {
-                    description: c('loc_nightly: Signature verification success').t`Sender verified with a trusted key`,
+                    description: c('loc_nightly: Signature verification success')
+                        .t`Sender verified with a trusted key.`,
                 },
             };
         }
@@ -473,7 +475,7 @@ const getReceivedStatusIconInternalWithKT = (
                 fill: PLAIN,
                 senderVerificationDetails: {
                     description: c('loc_nightly: Signature verification success')
-                        .t`Sender verified with Key Transparency`,
+                        .t`Sender verified with Key Transparency.`,
                     showKeyTransparencyLearnMore: true,
                 },
             };
