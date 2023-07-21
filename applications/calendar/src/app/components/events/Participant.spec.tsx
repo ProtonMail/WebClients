@@ -14,6 +14,7 @@ describe('Participant', () => {
         initials: 'initials',
         email: 'email@provider.com',
         isContact: true,
+        isCurrentUser: false,
         onCreateOrEditContact: onCreateOrEditContactCallback,
     };
 
@@ -37,6 +38,11 @@ describe('Participant', () => {
         render(<Participant {...props} name={props.email} />);
         expect(screen.getByText(props.email)).toBeInTheDocument();
         expect(screen.queryAllByText(props.email)).toHaveLength(1);
+    });
+
+    it('should not render email if isCurrentUser', () => {
+        render(<Participant {...props} isCurrentUser />);
+        expect(screen.queryByText(props.email)).not.toBeInTheDocument();
     });
 
     it('should render dropdown on user click', async () => {

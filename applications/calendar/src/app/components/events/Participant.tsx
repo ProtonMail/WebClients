@@ -17,6 +17,7 @@ interface Props {
     className?: string;
     email: string;
     isContact: boolean;
+    isCurrentUser?: boolean;
     onCreateOrEditContact: () => void;
 }
 
@@ -30,12 +31,13 @@ const Participant = ({
     className,
     email,
     isContact,
+    isCurrentUser,
     onCreateOrEditContact,
 }: Props) => {
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     const hasEmail = !!email;
     const displayDropdown = hasEmail;
-    const emailDifferFromName = hasEmail && normalize(email) !== normalize(name);
+    const showEmailAddress = !isCurrentUser && hasEmail && normalize(email) !== normalize(name);
 
     return (
         <div
@@ -52,7 +54,7 @@ const Participant = ({
             </Tooltip>
             <div className="ml-4 flex-item-fluid" title={title}>
                 <div className="max-w100 participant-text text-ellipsis">{name}</div>
-                {emailDifferFromName ? (
+                {showEmailAddress ? (
                     <div className="max-w100 text-ellipsis participant-extra-text color-weak text-sm m-0">{email}</div>
                 ) : null}
                 {!!extraText && (
