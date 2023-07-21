@@ -58,18 +58,26 @@ export const ItemsList: VFC<Props> = ({ items, needsUpgrade, visible, onMessage,
                         autogrow
                     />
                 ),
-                ...items.map((item) => (
+                ...items.map(({ shareId, itemId, username, name, url }) => (
                     <DropdownItem
-                        key={item.itemId}
-                        title={item.name}
-                        subTitle={item.username}
-                        url={settings.loadDomainImages ? item.url : undefined}
+                        key={itemId}
+                        title={name}
+                        subTitle={username}
+                        url={settings.loadDomainImages ? url : undefined}
                         icon="user"
                         onClick={() =>
-                            onMessage?.({
-                                type: IFrameMessageType.DROPDOWN_AUTOFILL_LOGIN,
-                                payload: { item },
-                            })
+                            sendMessage.onSuccess(
+                                contentScriptMessage({
+                                    type: WorkerMessageType.AUTOFILL_SELECT,
+                                    payload: { shareId, itemId },
+                                }),
+                                ({ username, password }) => {
+                                    onMessage?.({
+                                        type: IFrameMessageType.DROPDOWN_AUTOFILL_LOGIN,
+                                        payload: { username, password },
+                                    });
+                                }
+                            )
                         }
                     />
                 )),

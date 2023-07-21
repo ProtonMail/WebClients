@@ -1,6 +1,4 @@
-import { contentScriptMessage, sendMessage } from '@proton/pass/extension/message';
-import type { MaybeNull } from '@proton/pass/types';
-import { WorkerMessageType } from '@proton/pass/types';
+import { type MaybeNull } from '@proton/pass/types';
 import { animatePositionChange, createStyleCompute, getComputedHeight } from '@proton/pass/utils/dom';
 import { pipe, truthy, waitUntil } from '@proton/pass/utils/fp';
 import { createListenerStore } from '@proton/pass/utils/listener';
@@ -106,22 +104,13 @@ export const createDropdown = (): InjectedDropdown => {
      * field the current dropdown is attached to. */
     iframe.registerMessageHandler(
         IFrameMessageType.DROPDOWN_AUTOFILL_LOGIN,
-        withContext(({ service }, { payload: { item } }) => {
-            const { shareId, itemId } = item;
+        withContext(({ service }, { payload }) => {
             const form = fieldRef.current?.getFormHandle();
             if (!form) return;
 
-            return sendMessage.onSuccess(
-                contentScriptMessage({
-                    type: WorkerMessageType.AUTOFILL_SELECT,
-                    payload: { shareId, itemId },
-                }),
-                (data) => {
-                    service.autofill.autofillLogin(form, data);
-                    iframe.close({ refocus: false });
-                    fieldRef.current?.focus({ preventAction: true });
-                }
-            );
+            service.autofill.autofillLogin(form, payload);
+            iframe.close({ refocus: false });
+            fieldRef.current?.focus({ preventAction: true });
         })
     );
 
