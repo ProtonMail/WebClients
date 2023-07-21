@@ -49,50 +49,45 @@ export const getPrimaryAddressKeyAsync = async (
     return { privateKey, publicKey, address: activeAddress };
 };
 
-export const getPrimaryAddressKeysAsync = async (
-    getPrimaryAddress: () => Promise<Address>,
-    getAddressKeys: (id: string) => Promise<DecryptedKey[]>
-) => {
-    const activeAddress = await getPrimaryAddress();
-    const addressKeys = await getAddressKeys(activeAddress.ID);
-    return Promise.all(
-        addressKeys.map(async ({ privateKey, publicKey }) => ({
-            privateKey,
-            publicKey: publicKey || (await toPublicKeyReference(privateKey)),
-        }))
-    );
-};
-
-const getOwnAddressKeys = async (
-    email: string,
-    getAddresses: () => Promise<Address[]>,
-    getAddressKeys: (id: string) => Promise<DecryptedKey[]>
-) => {
-    const addresses = await getAddresses();
+const getOwnAddress = async (email: string, getAddresses: () => Promise<Address[]>) => {
     // Some characters can be changed but still be the same email.
-    const ownAddress = addresses.find(
+    return (await getAddresses()).find(
         ({ Email }) => canonicalizeInternalEmail(Email) === canonicalizeInternalEmail(email)
     );
-    if (!ownAddress) {
-        return;
-    }
-    return getAddressKeys(ownAddress.ID);
 };
 
-export const getOwnAddressPrimaryKeyAsync = async (
+const getOwnAddressAndKeys = async (
     email: string,
     getAddresses: () => Promise<Address[]>,
     getAddressKeys: (id: string) => Promise<DecryptedKey[]>
 ) => {
-    const addressKeys = await getOwnAddressKeys(email, getAddresses, getAddressKeys);
+    const address = await getOwnAddress(email, getAddresses);
+    if (!address) {
+        return {};
+    }
+    const addressKeys = await getAddressKeys(address.ID);
+
+    return { address, addressKeys };
+};
+
+export const getOwnAddressAndPrimaryKeysAsync = async (
+    email: string,
+    getAddresses: () => Promise<Address[]>,
+    getAddressKeys: (id: string) => Promise<DecryptedKey[]>
+) => {
+    const { address, addressKeys } = await getOwnAddressAndKeys(email, getAddresses, getAddressKeys);
     const { privateKey, publicKey } = getPrimaryKey(addressKeys) || {};
 
     if (!privateKey) {
         // Should never happen
         throw new Error('Primary private key is not available');
     }
+    if (!address) {
+        // Should never happen
+        throw new Error('Address is not available');
+    }
 
-    return { privateKey, publicKey: publicKey || (await toPublicKeyReference(privateKey)) };
+    return { address, privateKey, publicKey: publicKey || (await toPublicKeyReference(privateKey)) };
 };
 
 export const getOwnAddressKeysAsync = async (
@@ -100,7 +95,7 @@ export const getOwnAddressKeysAsync = async (
     getAddresses: () => Promise<Address[]>,
     getAddressKeys: (id: string) => Promise<DecryptedKey[]>
 ) => {
-    const addressKeys = await getOwnAddressKeys(email, getAddresses, getAddressKeys);
+    const { addressKeys } = await getOwnAddressAndKeys(email, getAddresses, getAddressKeys);
     return addressKeys ? splitKeys(addressKeys) : undefined;
 };
 
