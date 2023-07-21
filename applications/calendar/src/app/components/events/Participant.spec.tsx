@@ -25,6 +25,7 @@ describe('Participant', () => {
         const { rerender } = render(<Participant {...props} />);
 
         expect(screen.getByText(props.name)).toBeInTheDocument();
+        expect(screen.getByText(props.email)).toBeInTheDocument();
         expect(screen.getByText(props.initials)).toBeInTheDocument();
         expect(screen.getByText('Icon')).toBeInTheDocument();
 
@@ -32,22 +33,16 @@ describe('Participant', () => {
         expect(screen.getByText('extraText')).toBeInTheDocument();
     });
 
+    it('should render email only one time', () => {
+        render(<Participant {...props} name={props.email} />);
+        expect(screen.getByText(props.email)).toBeInTheDocument();
+        expect(screen.queryAllByText(props.email)).toHaveLength(1);
+    });
+
     it('should render dropdown on user click', async () => {
         render(<Participant {...props} />);
 
-        userEvent.click(screen.getByText('text'));
-
-        await waitFor(() => {
-            expect(screen.getByText('Copy email address')).toBeInTheDocument();
-        });
-        expect(screen.getByText('View contact details')).toBeInTheDocument();
-    });
-
-    it('should render dropdown on press enter', async () => {
-        render(<Participant {...props} />);
-
-        userEvent.tab();
-        userEvent.keyboard('{enter}');
+        userEvent.click(screen.getByTitle('More options'));
 
         await waitFor(() => {
             expect(screen.getByText('Copy email address')).toBeInTheDocument();
@@ -59,7 +54,7 @@ describe('Participant', () => {
         it('should call contact details modal callback', async () => {
             render(<Participant {...props} isContact />);
 
-            userEvent.click(screen.getByText('text'));
+            userEvent.click(screen.getByTitle('More options'));
 
             await waitFor(() => {
                 expect(screen.getByText('View contact details')).toBeInTheDocument();
@@ -73,7 +68,7 @@ describe('Participant', () => {
         it('should call add contact modal callback', async () => {
             render(<Participant {...props} isContact={false} />);
 
-            userEvent.click(screen.getByText('text'));
+            userEvent.click(screen.getByTitle('More options'));
 
             await waitFor(() => {
                 expect(screen.getByText('Create new contact')).toBeInTheDocument();
