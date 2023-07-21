@@ -11,6 +11,7 @@ import { ADDRESS_TYPE, APP_NAMES, PRODUCT_BIT } from '@proton/shared/lib/constan
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { getEmailParts, removePlusAliasLocalPart } from '@proton/shared/lib/helpers/email';
 import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';
+import { isPrivate } from '@proton/shared/lib/user/helpers';
 import noop from '@proton/utils/noop';
 
 import { getAllAddresses } from '../api/addresses';
@@ -302,21 +303,24 @@ export const getIsVPNOnlyAccount = (user: tsUser | undefined) => {
     return user.Type === UserType.PROTON && !user.Keys.length && user.Services === PRODUCT_BIT.VPN;
 };
 
-export const getIsExternalAccount = (user: tsUser | undefined) => {
+export const getIsExternalAccount = (user: tsUser) => {
     if (!user) {
         return false;
     }
     return user.Type === UserType.EXTERNAL;
 };
 
-export const getRequiresPasswordSetup = (user: tsUser | undefined, setupVPN: boolean) => {
-    if (!user || user.Keys.length > 0) {
+export const getRequiresPasswordSetup = (user: tsUser, setupVPN: boolean) => {
+    if (!user || user.Keys.length > 0 || !isPrivate(user)) {
         return false;
     }
     return getRequiresMailKeySetup(user) || (getIsVPNOnlyAccount(user) && setupVPN) || getIsExternalAccount(user);
 };
 
-export const getRequiresAddressSetup = (toApp: APP_NAMES, user: tsUser | undefined) => {
+export const getRequiresAddressSetup = (toApp: APP_NAMES, user: tsUser) => {
+    if (!user || !isPrivate(user)) {
+        return false;
+    }
     return (
         (getRequiresProtonAddress(toApp) && getIsExternalAccount(user)) ||
         (getRequiresAddress(toApp) && (getIsVPNOnlyAccount(user) || getRequiresMailKeySetup(user)))
