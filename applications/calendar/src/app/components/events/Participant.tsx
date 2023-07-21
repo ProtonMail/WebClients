@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { Icon, Tooltip, usePopperAnchor } from '@proton/components';
+import { normalize } from '@proton/shared/lib/helpers/string';
 import clsx from '@proton/utils/clsx';
 
 import ParticipantDropdown from './ParticipantDropdown';
@@ -32,7 +33,9 @@ const Participant = ({
     onCreateOrEditContact,
 }: Props) => {
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
-    const displayDropdown = !!email;
+    const hasEmail = !!email;
+    const displayDropdown = hasEmail;
+    const emailDifferFromName = hasEmail && normalize(email) !== normalize(name);
 
     return (
         <div
@@ -49,7 +52,7 @@ const Participant = ({
             </Tooltip>
             <div className="ml-4 flex-item-fluid" title={title}>
                 <div className="max-w100 participant-text text-ellipsis">{name}</div>
-                {name !== email ? (
+                {emailDifferFromName ? (
                     <div className="max-w100 text-ellipsis participant-extra-text color-weak text-sm m-0">{email}</div>
                 ) : null}
                 {!!extraText && (
