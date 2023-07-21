@@ -44,6 +44,7 @@ jest.mock('../_crypto/useDriveCrypto', () => {
     const useDriveCrypto = () => {
         return {
             getPrimaryAddressKey: () => {},
+            getOwnAddressAndPrimaryKeys: () => {},
         };
     };
 
@@ -69,6 +70,7 @@ const mockGetLinks = jest.fn();
 const mockQueryTrashLinks = jest.fn();
 const mockQueryRestoreLinks = jest.fn();
 const mockQueryDeleteTrashedLinks = jest.fn();
+const mockGetShare = jest.fn();
 
 jest.mock('./useLinks', () => {
     const useLink = () => {
@@ -85,6 +87,15 @@ jest.mock('../_api/useDebouncedRequest', () => {
         return mockRequest;
     };
     return useDebouncedRequest;
+});
+
+jest.mock('../_shares/useShare', () => {
+    const useLink = () => {
+        return {
+            getShare: mockGetShare,
+        };
+    };
+    return useLink;
 });
 
 const SHARE_ID_0 = 'shareId00';
@@ -111,6 +122,7 @@ describe('useLinksActions', () => {
         mockQueryTrashLinks.mockImplementation((shareId, parentLinkId, linkIds) => linkIds);
         mockQueryRestoreLinks.mockImplementation((shareId, linkIds) => linkIds);
         mockQueryDeleteTrashedLinks.mockImplementation((shareId, linkIds) => linkIds);
+        mockGetShare.mockImplementation((ac, shareId) => ({ shareId }));
 
         const wrapper = ({ children }: { children: React.ReactNode }) => (
             <VolumesStateProvider>{children}</VolumesStateProvider>

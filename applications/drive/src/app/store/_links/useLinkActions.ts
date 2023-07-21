@@ -13,7 +13,6 @@ import getRandomString from '@proton/utils/getRandomString';
 
 import { ValidationError } from '../../utils/errorHandling/ValidationError';
 import { useDebouncedRequest } from '../_api';
-import { useDriveCrypto } from '../_crypto';
 import { useDriveEventManager } from '../_events';
 import { useShare } from '../_shares';
 import { useVolumesState } from '../_volumes';
@@ -29,8 +28,7 @@ export default function useLinkActions() {
     const debouncedRequest = useDebouncedRequest();
     const events = useDriveEventManager();
     const { getLink, getLinkPrivateKey, getLinkSessionKey, getLinkHashKey } = useLink();
-    const { getSharePrivateKey } = useShare();
-    const { getPrimaryAddressKey } = useDriveCrypto();
+    const { getSharePrivateKey, getShareCreatorKeys } = useShare();
     const volumeState = useVolumesState();
 
     const createFolder = async (
@@ -49,7 +47,7 @@ export default function useLinkActions() {
         const [parentPrivateKey, parentHashKey, { privateKey: addressKey, address }] = await Promise.all([
             getLinkPrivateKey(abortSignal, shareId, parentLinkId),
             getLinkHashKey(abortSignal, shareId, parentLinkId),
-            getPrimaryAddressKey(),
+            getShareCreatorKeys(abortSignal, shareId),
         ]);
 
         const [Hash, { NodeKey, NodePassphrase, privateKey, NodePassphraseSignature }, encryptedName] =
@@ -97,19 +95,21 @@ export default function useLinkActions() {
             throw new ValidationError(error);
         }
 
-        const meta = await getLink(abortSignal, shareId, linkId);
+        const [meta, { privateKey: addressKey, address }] = await Promise.all([
+            getLink(abortSignal, shareId, linkId),
+            getShareCreatorKeys(abortSignal, shareId),
+        ]);
         const [parentPrivateKey, parentHashKey] = await Promise.all([
             meta.parentLinkId
                 ? getLinkPrivateKey(abortSignal, shareId, meta.parentLinkId)
                 : getSharePrivateKey(abortSignal, shareId),
             meta.parentLinkId ? getLinkHashKey(abortSignal, shareId, meta.parentLinkId) : null,
         ]);
-        const [sessionKey, { address, privateKey: addressKey }] = await Promise.all([
+        const [sessionKey] = await Promise.all([
             getDecryptedSessionKey({
                 data: meta.encryptedName,
                 privateKeys: parentPrivateKey,
             }),
-            getPrimaryAddressKey(),
         ]);
 
         const [Hash, { message: encryptedName }] = await Promise.all([
