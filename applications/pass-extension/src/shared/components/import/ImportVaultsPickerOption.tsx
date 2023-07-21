@@ -78,7 +78,7 @@ export const ImportVaultPickerOption: FC<VaultsPickerOptionProps> = ({
                                         name={
                                             vault.content.display.icon
                                                 ? VAULT_ICON_MAP[vault.content.display.icon]
-                                                : 'vault'
+                                                : 'pass-home'
                                         }
                                         size={14}
                                         className="mr-3 flex-item-nogrow"
