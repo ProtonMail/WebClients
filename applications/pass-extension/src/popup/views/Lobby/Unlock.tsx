@@ -5,7 +5,7 @@ import { selectRequestStatus, sessionUnlockIntent } from '@proton/pass/store';
 import { unlockSession } from '@proton/pass/store/actions/requests';
 
 import { PinCodeInput } from '../../../shared/components//session-lock/PinCodeInput';
-import { useSessionLockPinSubmitEffect } from '../../../shared/components/session-lock/useSessionLockPinSubmitEffect';
+import { useSessionLockPinSubmitEffect } from '../../../shared/hooks/useSessionLockPinSubmitEffect';
 
 export const Unlock: VFC = () => {
     const dispatch = useDispatch();
