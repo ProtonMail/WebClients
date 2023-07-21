@@ -1,5 +1,6 @@
 import { c, msgid } from 'ttag';
 
+import { KEY_VERIFICATION_ERROR_MESSAGE } from '@proton/shared/lib/api/helpers/getPublicKeysEmailHelper';
 import { MAIL_APP_NAME, PACKAGE_TYPE } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { KT_VERIFICATION_STATUS, KeyTransparencyActivation } from '@proton/shared/lib/interfaces';
@@ -9,7 +10,6 @@ import { getParsedHeadersFirstValue, inSigningPeriod } from '@proton/shared/lib/
 
 import { MessageState, MessageVerification, MessageWithOptionalBody } from '../../logic/messages/messagesTypes';
 import { MapStatusIcons, STATUS_ICONS_FILLS, StatusIcon, X_PM_HEADERS } from '../../models/crypto';
-import { formatSimpleDate } from '../date';
 
 // The logic for determining the status icons can be found in Confluence under the title
 // Encryption status for outgoing and incoming email
@@ -66,7 +66,12 @@ export const getSendStatusIcon = (
         ? c('Key validation warning').t`Recipient's key validation failed: ${validationErrorsMessage}`
         : undefined;
     if (error) {
-        return { colorClassName: 'color-danger', isEncrypted: false, fill: FAIL, text: error.message };
+        // Special text for KT errors in composer
+        const errorMessage =
+            error.message === KEY_VERIFICATION_ERROR_MESSAGE
+                ? c('loc_nightly: Composer email icon').t`Unable to send to this address at this time`
+                : error.message;
+        return { colorClassName: 'color-danger', isEncrypted: false, fill: FAIL, text: errorMessage };
     }
     const ktVerificationStatus = ktVerificationResult?.status;
     if (pgpScheme === SEND_PM) {
@@ -83,17 +88,6 @@ export const getSendStatusIcon = (
                 ...result,
                 fill: CHECKMARK,
                 text: c('Composer email icon').t`End-to-end encrypted to verified recipient`,
-            };
-        }
-        if (
-            ktActivated &&
-            ktVerificationStatus === KT_VERIFICATION_STATUS.VERIFIED_KEYS &&
-            !ktVerificationResult?.keysChangedRecently
-        ) {
-            return {
-                ...result,
-                fill: PLAIN,
-                text: c('loc_nightly: Composer email icon').t`End-to-end encrypted with Key Transparency`,
             };
         }
         return {
@@ -366,12 +360,15 @@ const getReceivedStatusIconInternalWithKT = (
     };
 
     if (apiKeysErrors?.length) {
-        const keyErrorMessages = apiKeysErrors.join(', ');
+        // Special text for KT errors in message details
+        const errorMessage =
+            apiKeysErrors[0] === KEY_VERIFICATION_ERROR_MESSAGE
+                ? c('loc_nightly: Composer email icon').t`Unable to verify sender at this time.`
+                : apiKeysErrors[0];
         return {
             ...warningResult,
             senderVerificationDetails: {
-                description: c('loc_nightly: Sender verification error')
-                    .t`Sender verification failed: Error while retrieving the sender's public keys: ${keyErrorMessages}`,
+                description: errorMessage,
             },
         };
     }
@@ -381,24 +378,12 @@ const getReceivedStatusIconInternalWithKT = (
             ...warningResult,
             senderVerificationDetails: {
                 description: c('loc_nightly: Sender verification error')
-                    .t`Sender verification failed: ${verificationErrorsMessage}`,
+                    .t`Sender verification failed: ${verificationErrorsMessage}.`,
             },
         };
     }
 
     if (verificationStatus === NOT_SIGNED) {
-        if (!message.Sender.IsProton && message.Time < SIGNATURE_START.USER) {
-            const formattedDate = formatSimpleDate(new Date(SIGNATURE_START.USER * 1000));
-            return {
-                ...result,
-                text: messageEncryptionDetails,
-                fill: PLAIN,
-                senderVerificationDetails: {
-                    description: c('loc_nightly: Sender verification error')
-                        .t`Sender verification failed: Messages is not signed, ${MAIL_APP_NAME} started signing messages after ${formattedDate}`,
-                },
-            };
-        }
         if (message.Sender.IsProton && message.Time < SIGNATURE_START.BULK) {
             // Don't show a warning on official emails
             return {
@@ -407,21 +392,14 @@ const getReceivedStatusIconInternalWithKT = (
                 fill: PLAIN,
             };
         }
-        return {
-            ...warningResult,
-            senderVerificationDetails: {
-                description: c('loc_nightly: Sender verification error')
-                    .t`Sender verification failed: Message is not signed`,
-            },
-        };
+        return warningResult;
     }
 
     if (!signingPublicKey) {
         return {
             ...warningResult,
             senderVerificationDetails: {
-                description: c('loc_nightly: Sender verification error')
-                    .t`Sender verification failed: Cannot find the verification key, contact the sender to get their their public key.`,
+                description: c('loc_nightly: Sender verification error').t`Unable to retrieve sender key.`,
             },
         };
     }
@@ -430,8 +408,8 @@ const getReceivedStatusIconInternalWithKT = (
         return {
             ...warningResult,
             senderVerificationDetails: {
-                description: c('Sender verification error')
-                    .t`Sender verification failed: Verification key is not in the list of trusted keys.`,
+                description: c('loc_nightly: Sender verification error')
+                    .t`Signing key is not in the list of trusted keys.`,
             },
         };
     }
@@ -441,7 +419,8 @@ const getReceivedStatusIconInternalWithKT = (
             ...warningResult,
             senderVerificationDetails: {
                 description: c('loc_nightly: Sender verification error')
-                    .t`Sender verification failed: Verification key is not protected with key transparency.`,
+                    .t`Signing key not protected by Key Transparency.`,
+                showKeyTransparencyLearnMore: true,
             },
         };
     }
@@ -451,7 +430,7 @@ const getReceivedStatusIconInternalWithKT = (
             ...warningResult,
             senderVerificationDetails: {
                 description: c('loc_nightly: Sender verification error')
-                    .t`Sender verification failed: Verification key is marked as compromised by the sender.`,
+                    .t`Signing key marked as compromised by sender.`,
             },
         };
     }
@@ -460,8 +439,7 @@ const getReceivedStatusIconInternalWithKT = (
         return {
             ...warningResult,
             senderVerificationDetails: {
-                description: c('loc_nightly: Sender verification error')
-                    .t`Sender verification failed: Message signature is invalid.`,
+                description: c('loc_nightly: Sender verification error').t`Message signature is invalid`,
             },
         };
     }
@@ -470,8 +448,7 @@ const getReceivedStatusIconInternalWithKT = (
         return {
             ...warningResult,
             senderVerificationDetails: {
-                description: c('loc_nightly: Signature verification warning')
-                    .t`Sender verification failed: Sender's trusted keys verification failed`,
+                description: c('loc_nightly: Signature verification warning').t`Sender's keys must be trusted again.`,
             },
         };
     }
@@ -480,10 +457,11 @@ const getReceivedStatusIconInternalWithKT = (
         if (hasPinnedKeys) {
             return {
                 ...result,
-                text: c('loc_nightly: Received email icon').t`End-to-end encrypted message from verified sender`,
+                text: c('loc_nightly: Received email icon').t`End-to-end encrypted message from verified sender.`,
                 fill: CHECKMARK,
                 senderVerificationDetails: {
-                    description: c('loc_nightly: Signature verification success').t`Sender verified with a trusted key`,
+                    description: c('loc_nightly: Signature verification success')
+                        .t`Sender verified with a trusted key.`,
                 },
             };
         }
@@ -497,7 +475,8 @@ const getReceivedStatusIconInternalWithKT = (
                 fill: PLAIN,
                 senderVerificationDetails: {
                     description: c('loc_nightly: Signature verification success')
-                        .t`Sender verified with Key Transparency`,
+                        .t`Sender verified with Key Transparency.`,
+                    showKeyTransparencyLearnMore: true,
                 },
             };
         }
