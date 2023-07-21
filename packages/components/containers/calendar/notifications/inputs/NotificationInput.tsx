@@ -7,7 +7,7 @@ import {
 import { NotificationModel } from '@proton/shared/lib/interfaces/calendar/Notification';
 import clsx from '@proton/utils/clsx';
 
-import { IntegerInput, Option, SelectTwo, TimeInput } from '../../../../components';
+import { DropdownSizeUnit, IntegerInput, Option, SelectTwo, TimeInput } from '../../../../components';
 import {
     getDaysBefore,
     getHoursBefore,
@@ -137,6 +137,7 @@ const NotificationInput = ({
                 <SelectTwo
                     data-testid="notification-time-dropdown"
                     className="flex-item-fluid"
+                    size={{ width: DropdownSizeUnit.Dynamic }}
                     value={optionsValue}
                     disabled={disabled}
                     onChange={({ value }) => {
@@ -154,7 +155,7 @@ const NotificationInput = ({
                     {...errorProps}
                 >
                     {textOptions.map(({ value, text }) => (
-                        <Option key={value} value={value} title={text} />
+                        <Option key={value} value={value} title={text} truncate />
                     ))}
                 </SelectTwo>
             </span>
