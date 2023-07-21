@@ -40,6 +40,7 @@ export const createMessageBroker = (options: {
     const handlers: Map<WorkerMessageType, MessageHandlerCallback> = new Map();
     const ports: Map<string, Runtime.Port> = new Map();
     const buffer: Set<WorkerMessageWithSender> = new Set();
+    const extensionOrigin = new URL(browser.runtime.getURL('/')).origin;
 
     const broadcast = <M extends WorkerMessage>(message: M, matchPort?: string | ((name: string) => boolean)) => {
         ports.forEach(
@@ -94,8 +95,8 @@ export const createMessageBroker = (options: {
                 }
 
                 if (isInternal && options.strictOriginCheck.includes(message.type)) {
-                    const origin = (sender as any).origin ?? sender.url;
-                    if (!origin.startsWith(browser.runtime.getURL('/'))) {
+                    const origin = new URL((sender as any).origin ?? sender.url).origin;
+                    if (origin !== extensionOrigin) {
                         logger.warn('[MessageBroker::Message] unauthorized message origin');
                         return errorMessage('unauthorized');
                     }
