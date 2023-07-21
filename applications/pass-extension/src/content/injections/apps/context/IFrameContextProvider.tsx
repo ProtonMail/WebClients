@@ -13,6 +13,7 @@ import { workerReady } from '@proton/pass/utils/worker';
 import noop from '@proton/utils/noop';
 
 import { INITIAL_SETTINGS } from '../../../../shared/constants';
+import { useActivityProbe } from '../../../../shared/hooks/useActivityProbe';
 import type {
     IFrameCloseOptions,
     IFrameEndpoint,
@@ -61,6 +62,7 @@ export const IFrameContextProvider: FC<{ endpoint: IFrameEndpoint }> = ({ endpoi
     const [settings, setSettings] = useState<ProxiedSettings>(INITIAL_SETTINGS);
     const [userEmail, setUserEmail] = useState<MaybeNull<string>>(null);
     const [visible, setVisible] = useState<boolean>(false);
+    const activityProbe = useActivityProbe(contentScriptMessage);
 
     const destroyFrame = () => {
         logger.info(`[IFrame::${endpoint}] Unauthorized iframe injection`);
@@ -207,6 +209,11 @@ export const IFrameContextProvider: FC<{ endpoint: IFrameEndpoint }> = ({ endpoi
         },
         [port]
     );
+
+    useEffect(() => {
+        if (visible) activityProbe.start();
+        else activityProbe.cancel();
+    }, [visible]);
 
     const context = useMemo<IFrameContextValue>(
         () => ({
