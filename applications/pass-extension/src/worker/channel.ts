@@ -17,6 +17,7 @@ const WorkerMessageBroker = createMessageBroker({
         WorkerMessageType.ACCOUNT_ONBOARDING,
     ],
     strictOriginCheck: [
+        WorkerMessageType.ACTIVITY_PROBE,
         WorkerMessageType.ALIAS_CREATE,
         WorkerMessageType.ALIAS_OPTIONS,
         WorkerMessageType.AUTOFILL_SELECT,
