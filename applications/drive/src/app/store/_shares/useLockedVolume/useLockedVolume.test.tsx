@@ -93,7 +93,7 @@ const useHook = (props: any = {}) => {
         getShareWithKey: jest.fn(),
         addressesKeys: [],
         getDefaultShare: jest.fn(),
-        getPrimaryAddressKey: jest.fn(),
+        getOwnAddressAndPrimaryKeys: jest.fn(),
         prepareVolumeForRestore: jest.fn(),
         getLinkPrivateKey: jest.fn(),
         getLinkHashKey: jest.fn(),

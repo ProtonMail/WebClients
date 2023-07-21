@@ -10,6 +10,11 @@ export default function useVolume() {
     const { getPrimaryAddressKey } = useDriveCrypto();
 
     const createVolume = async (): Promise<{ volumeId: string; shareId: string; linkId: string }> => {
+        // Volumes should use primary address key, as we only create
+        // a new volume when bootstrapping an empty user.
+        //
+        // In this scenario, there are no other prefered keys.
+
         const { address, privateKey } = await getPrimaryAddressKey();
         const { bootstrap, folderPrivateKey } = await generateDriveBootstrap(privateKey);
         const { NodeHashKey: FolderHashKey } = await generateNodeHashKey(folderPrivateKey, folderPrivateKey);
@@ -23,6 +28,7 @@ export default function useVolume() {
                 ...bootstrap,
             })
         );
+
         return {
             volumeId: Volume.ID,
             shareId: Volume.Share.ID,
