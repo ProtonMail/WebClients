@@ -306,22 +306,24 @@ const PopoverEventContent = ({
                             </CollapsibleHeader>
                             <CollapsibleContent>{getAttendees()}</CollapsibleContent>
                         </Collapsible>
-                        <Participant
-                            className="is-organizer"
-                            title={organizerTitle}
-                            initials={getInitials(organizerName)}
-                            icon={organizerPartstatIcon}
-                            name={organizerName}
-                            tooltip={organizerTitle}
-                            extraText={c('Label').t`Organizer`}
-                            email={organizer.email}
-                            isContact={!!organizerContactID}
-                            onCreateOrEditContact={
-                                organizerContactID
-                                    ? handleContactDetails(organizerContactID)
-                                    : handleContactAdd(organizer.email, organizerName)
-                            }
-                        />
+                        <div className="pr-1">
+                            <Participant
+                                className="is-organizer"
+                                title={organizerTitle}
+                                initials={getInitials(organizerName)}
+                                icon={organizerPartstatIcon}
+                                name={organizerName}
+                                tooltip={organizerTitle}
+                                extraText={c('Label').t`Organizer`}
+                                email={organizer.email}
+                                isContact={!!organizerContactID}
+                                onCreateOrEditContact={
+                                    organizerContactID
+                                        ? handleContactDetails(organizerContactID)
+                                        : handleContactAdd(organizer.email, organizerName)
+                                }
+                            />
+                        </div>
                     </div>
                 </IconRow>
             )}
