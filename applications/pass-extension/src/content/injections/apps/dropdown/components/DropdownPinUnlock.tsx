@@ -11,8 +11,8 @@ import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
 import { PinCodeInput } from '../../../../../shared/components/session-lock/PinCodeInput';
-import { useSessionLockPinSubmitEffect } from '../../../../../shared/components/session-lock/useSessionLockPinSubmitEffect';
 import { useEnsureMounted } from '../../../../../shared/hooks/useEnsureMounted';
+import { useSessionLockPinSubmitEffect } from '../../../../../shared/hooks/useSessionLockPinSubmitEffect';
 import { DropdownItemIcon } from './DropdownItemIcon';
 
 export const DropdownPinUnlock: VFC<{

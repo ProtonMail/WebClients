@@ -3,8 +3,8 @@ import { type VFC, useEffect, useState } from 'react';
 import { Card } from '@proton/atoms/Card';
 import { type ModalProps, ModalTwo, ModalTwoContent, ModalTwoHeader } from '@proton/components/components';
 
+import { useSessionLockPinSubmitEffect } from '../../hooks/useSessionLockPinSubmitEffect';
 import { PinCodeInput } from './PinCodeInput';
-import { useSessionLockPinSubmitEffect } from './useSessionLockPinSubmitEffect';
 
 type Props = Omit<ModalProps, 'onSubmit'> & {
     title: string;
