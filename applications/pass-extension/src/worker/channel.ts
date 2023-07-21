@@ -16,6 +16,21 @@ const WorkerMessageBroker = createMessageBroker({
         WorkerMessageType.ACCOUNT_PROBE,
         WorkerMessageType.ACCOUNT_ONBOARDING,
     ],
+    strictOriginCheck: [
+        WorkerMessageType.ALIAS_CREATE,
+        WorkerMessageType.ALIAS_OPTIONS,
+        WorkerMessageType.AUTOFILL_SELECT,
+        WorkerMessageType.AUTOSAVE_REQUEST,
+        WorkerMessageType.EXPORT_REQUEST,
+        WorkerMessageType.EXPORT_DECRYPT,
+        WorkerMessageType.LOG_REQUEST,
+        WorkerMessageType.ONBOARDING_ACK,
+        WorkerMessageType.ONBOARDING_REQUEST,
+        WorkerMessageType.OTP_CODE_GENERATE,
+        WorkerMessageType.POPUP_INIT,
+        WorkerMessageType.SESSION_RESUMED,
+        WorkerMessageType.UNLOCK_REQUEST,
+    ],
     onDisconnect: (portName) => portName.startsWith('popup') && store.dispatch(stateCache()),
 });
 
