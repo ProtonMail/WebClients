@@ -3,7 +3,7 @@ import { CSSProperties, MouseEventHandler, Ref, useEffect, useRef, useState } fr
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { PrimaryButton } from '@proton/components';
+import { PrimaryButton, useMailSettings } from '@proton/components';
 import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 import { Address } from '@proton/shared/lib/interfaces';
 import { EventModel } from '@proton/shared/lib/interfaces/calendar';
@@ -56,12 +56,14 @@ const CreateEventPopover = ({
     isDraggingDisabled = false,
     isDrawerApp,
 }: Props) => {
+    const [mailSettings] = useMailSettings();
     const [participantError, setParticipantError] = useState(false);
     const errors = { ...validateEventModel(model), participantError };
     const cannotSave = getCannotSaveEvent({
         isOwnedCalendar: model.calendar.isOwned,
         isOrganizer: model.isOrganizer,
         numberOfAttendees: model.attendees.length,
+        maxAttendees: mailSettings?.RecipientLimit,
     });
     const formRef = useRef<HTMLFormElement>(null);
     const { isSubmitted, loadingAction, lastAction, handleSubmit } = useForm({

@@ -42,9 +42,15 @@ describe('getCannotSaveEvent()', () => {
         const numberOfAttendees = MAX_ATTENDEES + 1;
         const canEditSharedEventData = true;
 
-        expect(getCannotSaveEvent({ isOwnedCalendar, isOrganizer, numberOfAttendees, canEditSharedEventData })).toEqual(
-            true
-        );
+        expect(
+            getCannotSaveEvent({
+                isOwnedCalendar,
+                isOrganizer,
+                numberOfAttendees,
+                canEditSharedEventData,
+                maxAttendees: MAX_ATTENDEES,
+            })
+        ).toEqual(true);
     });
 
     test('Attendee can add notifications to invite in a personal calendar', () => {

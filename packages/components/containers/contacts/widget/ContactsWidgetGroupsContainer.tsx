@@ -3,13 +3,14 @@ import { useMemo, useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms';
+import { MAX_RECIPIENTS } from '@proton/shared/lib/contacts/constants';
 import { orderContactGroups } from '@proton/shared/lib/helpers/contactGroups';
 import { normalize } from '@proton/shared/lib/helpers/string';
 import { Recipient } from '@proton/shared/lib/interfaces';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 
 import { SearchInput } from '../../../components';
-import { useContactEmails, useContactGroups, useNotifications, useUser } from '../../../hooks';
+import { useContactEmails, useContactGroups, useMailSettings, useNotifications, useUser } from '../../../hooks';
 import { useItemsSelection } from '../../items';
 import { ContactGroupDeleteProps } from '../group/ContactGroupDeleteModal';
 import { ContactGroupEditProps } from '../group/ContactGroupEditModal';
@@ -41,6 +42,7 @@ const ContactsWidgetGroupsContainer = ({
     onUpgrade,
     isDrawer = false,
 }: Props) => {
+    const [mailSettings] = useMailSettings();
     const { createNotification } = useNotifications();
     const [user] = useUser();
 
@@ -97,10 +99,16 @@ const ContactsWidgetGroupsContainer = ({
     };
 
     const handleCompose = () => {
-        if (recipients.length > 100) {
+        const maxContacts = mailSettings?.RecipientLimit || MAX_RECIPIENTS;
+
+        if (recipients.length > maxContacts) {
             createNotification({
                 type: 'error',
-                text: c('Error').t`You can't send a mail to more than 100 recipients`,
+                text: c('Error').ngettext(
+                    msgid`You can't send a mail to more than ${maxContacts} recipient`,
+                    `You can't send a mail to more than ${maxContacts} recipients`,
+                    maxContacts
+                ),
             });
             return;
         }
