@@ -1,0 +1,65 @@
+$base-font-size: 14 !default;
+
+@use 'sass:meta';
+@import '@proton/styles/scss/lib/em';
+@import '../styles/reset';
+
+button {
+	@include reset;
+
+	pointer-events: all;
+	margin: auto;
+	inset-block-start: 0;
+	inset-inline-end: em(5);
+	opacity: 0.9;
+	max-inline-size: 0;
+	animation: icon-fade-in 0.25s ease-in-out 0.05s both !important;
+	transition: opacity 0.2s ease-in-out;
+	margin-block-start: 0 !important;
+	cursor: pointer !important;
+	position: absolute !important;
+	background-size: cover !important;
+	border-radius: unset !important;
+
+	&:hover,
+	&:focus,
+	&:active {
+		transform: none !important;
+	}
+
+	&::before {
+		content: none !important;
+	}
+
+	&::after {
+		content: var(--control-count) !important;
+		position: absolute !important;
+		inset: 0 !important;
+		margin: auto !important;
+		inline-size: 100% !important;
+		color: white !important;
+		text-align: center !important;
+		font-family: system-ui, sans-serif !important;
+		line-height: var(--control-lineheight) !important;
+		font-size: var(--control-fontsize) !important;
+		display: block !important;
+		font-weight: bold !important;
+		text-shadow: 0 0.5px 3px #320dc5 !important;
+	}
+
+	&:hover {
+		opacity: 1;
+	}
+}
+
+@keyframes icon-fade-in {
+	from {
+		opacity: 0;
+		max-inline-size: 0;
+	}
+
+	to {
+		opacity: 0.9;
+		max-inline-size: em(35);
+	}
+}
