@@ -20,6 +20,7 @@ import { WorkerMessageType, type WorkerMessageWithSender } from '@proton/pass/ty
 import { isMainFrame } from '@proton/pass/utils/dom';
 import { uniqueId } from '@proton/pass/utils/string';
 
+import './injections/shadow';
 import type { ContentScriptClientService } from './services';
 import { createContentScriptClient } from './services';
 
@@ -39,7 +40,7 @@ Promise.resolve(script?.start())
                         void script.start();
                         break;
                     case WorkerMessageType.UNLOAD_CONTENT_SCRIPT:
-                        script?.destroy({ reason: 'unload', recycle: false });
+                        script?.destroy({ reason: 'unload' });
                         script = null;
                         break;
                 }

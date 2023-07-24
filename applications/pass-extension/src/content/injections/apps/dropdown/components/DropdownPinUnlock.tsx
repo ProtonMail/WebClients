@@ -1,5 +1,5 @@
 import type { VFC } from 'react';
-import { useCallback, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -25,7 +25,7 @@ export const DropdownPinUnlock: VFC<{
     const [loading, setLoading] = useState<boolean>(false);
     const [error, setError] = useState<MaybeNull<string>>(null);
 
-    const onSubmit = useCallback(async (value: string) => {
+    const onSubmit = async (value: string) => {
         try {
             setLoading(true);
             await sendMessage.onSuccess(
@@ -41,7 +41,7 @@ export const DropdownPinUnlock: VFC<{
         } finally {
             ensureMounted(setLoading)(false);
         }
-    }, []);
+    };
 
     useSessionLockPinSubmitEffect(value, { onSubmit });
 

@@ -8362,6 +8362,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@webcomponents/custom-elements@npm:^1.6.0":
+  version: 1.6.0
+  resolution: "@webcomponents/custom-elements@npm:1.6.0"
+  checksum: 503d81a8dba0bc5982ad7d0c7bf5b0e69021c98dc33e942b9a0bc872d707ac030d0d00d38afdb576ab7c01c3c3fe0395543681c58ad52000bbbe8240a0645271
+  languageName: node
+  linkType: hard
+
 "@webpack-cli/configtest@npm:^2.1.1":
   version: 2.1.1
   resolution: "@webpack-cli/configtest@npm:2.1.1"
@@ -26110,6 +26117,7 @@ fsevents@^1.2.7:
     "@types/chrome": ^0.0.239
     "@types/react-helmet": ^6.1.6
     "@types/webextension-polyfill": ^0.10.1
+    "@webcomponents/custom-elements": ^1.6.0
     babel-plugin-transform-require-context: ^0.1.1
     cross-env: ^7.0.3
     eslint: ^8.43.0
