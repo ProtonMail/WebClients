@@ -51,7 +51,7 @@ export const createSettingsService = () => {
         'autosave.browserDefault': createBrowserSetting(
             'passwordSavingEnabled',
             browser.privacy.services.passwordSavingEnabled,
-            false
+            true
         ),
     };
 
@@ -61,7 +61,7 @@ export const createSettingsService = () => {
     const onInstall = async () => {
         await Promise.all(Object.values(browserSettings).map(({ set, defaultValue }) => set(defaultValue)));
         const initialSettings = selectProxiedSettings(store.getState());
-        initialSettings.autosave.browserDefault = await browserSettings['autosave.browserDefault'].get();
+        initialSettings.autosave.browserDefault = !(await browserSettings['autosave.browserDefault'].get());
 
         return browserLocalStorage.setItem('settings', JSON.stringify(initialSettings));
     };
