@@ -1,6 +1,7 @@
 import type { VFC } from 'react';
 
 import { PasswordContextProvider } from './components/PasswordGenerator/PasswordContext';
+import { InviteContextProvider } from './context/invite/InviteContextProvider';
 import { ItemEffects } from './context/items/ItemEffects';
 import { ItemsFilteringContextProvider } from './context/items/ItemsFilteringContext';
 import { NavigationContextProvider } from './context/navigation/NavigationContext';
@@ -19,7 +20,9 @@ export const App: VFC = () => {
             <ItemsFilteringContextProvider>
                 <ItemEffects />
                 <PasswordContextProvider>
-                    <Main />
+                    <InviteContextProvider>
+                        <Main />
+                    </InviteContextProvider>
                 </PasswordContextProvider>
             </ItemsFilteringContextProvider>
         </NavigationContextProvider>

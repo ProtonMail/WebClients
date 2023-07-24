@@ -15,9 +15,10 @@ import noop from '@proton/utils/noop';
 import { promptForPermissions } from '../../../shared/extension/permissions';
 import { useExtensionContext } from '../../../shared/hooks';
 import { useOpenSettingsTab } from '../../hooks/useOpenSettingsTab';
+import { VaultInvite } from '../Invite/VaultInvitation';
 import { FreeTrialModal } from './FreeTrialModal';
 import { OnboardingContent, type OnboardingMessageDefinition } from './OnboardingContent';
-import { OnboardingFiveStarIcon, OnboardingShieldIcon } from './OnboardingIcon';
+import { OnboardingFiveStarIcon, OnboardingShieldIcon, OnboardingVaultInvitationIcon } from './OnboardingIcon';
 
 import './OnboardingPanel.scss';
 
@@ -29,6 +30,7 @@ export const OnboardingPanel: VFC = () => {
     const [message, setMessage] = useState<Maybe<OnboardingMessage>>();
 
     const [freeTrialModalOpen, setFreeTrialModalOpen] = useState<boolean>(false);
+    const [invitationModalOpen, setInvitationModalOpen] = useState<boolean>(false);
 
     useEffect(() => {
         void sendMessage.onSuccess(
@@ -139,6 +141,17 @@ export const OnboardingPanel: VFC = () => {
                     onClick: () => openSettings('support'),
                 },
             },
+            [OnboardingMessage.VAULT_INVITATION]: {
+                title: c('Title').t`Shared vault invitation`,
+                message: c('Info').t`You've been invited to a vault. Click here to see the invitation.`,
+                className: 'ui-violet',
+                icon: <OnboardingVaultInvitationIcon />,
+                action: {
+                    label: c('Label').t`Respond`,
+                    type: 'button',
+                    onClick: () => setInvitationModalOpen(true),
+                },
+            },
         }),
         []
     );
@@ -187,6 +200,22 @@ export const OnboardingPanel: VFC = () => {
             </div>
 
             <FreeTrialModal open={freeTrialModalOpen} onClose={() => setFreeTrialModalOpen(false)} />
+            {/* test props, to be replaced with real data */}
+            <VaultInvite
+                open={invitationModalOpen}
+                onClose={() => setInvitationModalOpen(false)}
+                inviterEmail="the.tester@example.com"
+                itemCount={65}
+                memberCount={2}
+                vaultContent={{
+                    name: 'Work',
+                    description: '',
+                    display: {
+                        color: 4,
+                        icon: 3,
+                    },
+                }}
+            />
         </>
     );
 };
