@@ -1,0 +1,48 @@
+iframe {
+	position: absolute;
+	inline-size: var(--frame-width) !important;
+	block-size: var(--frame-height) !important;
+	inset-block-start: var(--frame-top) !important;
+	inset-inline-start: var(--frame-left) !important;
+	inset-inline-end: var(--frame-right) !important;
+	z-index: var(--frame-zindex) !important;
+	background: #191927 !important; // FIXME: support themes
+	box-shadow: 0 2px 10px rgb(0 0 0 / 0.3) !important; // FIXME: support themes
+	border-radius: 12px !important;
+	border: none !important;
+	display: none;
+	margin: 0 !important;
+
+	&.visible {
+		display: block;
+		transition: block-size 0.15s ease-in-out 0.05s;
+		animation: var(--frame-animation) 0.25s ease-in-out 0.05s both !important;
+	}
+
+	&.fixed {
+		position: fixed !important;
+		z-index: 9999 !important;
+	}
+}
+
+@keyframes fadein {
+	from {
+		opacity: 0;
+		max-block-size: 0;
+	}
+
+	to {
+		opacity: 1;
+		max-block-size: 180px;
+	}
+}
+
+@keyframes slidein {
+	from {
+		transform: translateX(380px);
+	}
+
+	to {
+		transform: translateX(0);
+	}
+}

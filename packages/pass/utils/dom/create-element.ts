@@ -1,8 +1,9 @@
 export const createElement = <T extends HTMLElement = HTMLElement>(options: {
-    type: keyof HTMLElementTagNameMap;
+    type: string;
     classNames?: string[];
     parent?: HTMLElement;
     attributes?: { [K in keyof T]?: string };
+    shadow?: boolean;
 }): T => {
     const el = document.createElement(options.type);
     options.classNames?.forEach((className) => el.classList.add(className));
@@ -11,9 +12,8 @@ export const createElement = <T extends HTMLElement = HTMLElement>(options: {
         Object.entries(options.attributes).forEach(([key, attr]) => el.setAttribute(key, attr));
     }
 
-    if (options.parent) {
-        options.parent.appendChild(el);
-    }
+    if (options.parent && !options.shadow) options.parent.appendChild(el);
+    if (options.parent && options.shadow) options.parent.shadowRoot?.appendChild(el);
 
     return el as T;
 };

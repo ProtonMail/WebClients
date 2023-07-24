@@ -4,7 +4,6 @@ import { WorkerMessageType } from '@proton/pass/types';
 import { pipe, waitUntil } from '@proton/pass/utils/fp';
 
 import {
-    EXTENSION_PREFIX,
     NOTIFICATION_HEIGHT,
     NOTIFICATION_HEIGHT_SM,
     NOTIFICATION_IFRAME_SRC,
@@ -21,7 +20,7 @@ export const createNotification = (): InjectedNotification => {
         src: NOTIFICATION_IFRAME_SRC,
         animation: 'slidein',
         backdropClose: false,
-        classNames: [`${EXTENSION_PREFIX}-iframe--fixed`],
+        classNames: ['fixed'],
         onClose: withContext(({ service }, { action }, options) => {
             switch (action) {
                 /* stash the form submission if the user discarded
