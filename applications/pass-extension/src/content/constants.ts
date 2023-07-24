@@ -4,12 +4,7 @@ import browser from '@proton/pass/globals/browser';
 import type { FormTrackerFieldConfig } from './types';
 import { DropdownAction, FieldInjectionRule } from './types';
 
-export const EXTENSION_PREFIX = 'protonpass';
-export const CONTENT_SCRIPT_INJECTED_MESSAGE = `${EXTENSION_PREFIX}-cs-injected`;
-export const INPUT_STYLES_ATTR = `data-${EXTENSION_PREFIX}-styles-reset`;
-export const ICON_ROOT_CLASSNAME = `${EXTENSION_PREFIX}-input`;
-export const ICON_WRAPPER_CLASSNAME = `${ICON_ROOT_CLASSNAME}--wrapper`;
-export const ICON_CLASSNAME = `${ICON_ROOT_CLASSNAME}--icon`;
+export const INPUT_BASE_STYLES_ATTR = `data-protonpass-base-css`;
 
 export const ICON_MAX_HEIGHT = 28;
 export const ICON_MIN_HEIGHT = 16;

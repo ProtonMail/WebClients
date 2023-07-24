@@ -1,4 +1,40 @@
-$base-font-size: 14 !default;
+/* stylelint-disable selector-type-no-unknown */
+@import './reset';
 
-@import './input';
-@import './iframe';
+protonpass-root {
+	@include reset;
+
+	position: absolute !important;
+	inline-size: 100% !important;
+	display: block !important;
+	border: 0 !important;
+	z-index: unset !important;
+	inset: unset !important;
+	inset-block-start: 0 !important;
+	inset-inline-start: 0 !important;
+	block-size: 0 !important;
+}
+
+protonpass-control {
+	@include reset;
+
+	grid-row: none;
+	grid-column: none;
+	pointer-events: none;
+	position: relative !important;
+	margin: 0 !important;
+	flex: 0 0 0;
+	opacity: 1;
+	z-index: unset !important;
+	order: 0 !important;
+	block-size: 0 !important;
+	inline-size: 0 !important;
+	display: block !important;
+	/* stylelint-disable-next-line */
+	float: left !important;
+	animation: none !important;
+
+	> input {
+		pointer-events: all;
+	}
+}
