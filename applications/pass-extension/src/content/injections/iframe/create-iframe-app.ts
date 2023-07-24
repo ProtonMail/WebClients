@@ -175,18 +175,21 @@ export const createIFrameApp = <A>({
         message && message?.type !== undefined && portMessageHandlers.get(message.type)?.(message);
 
     const init = (port: Runtime.Port) => {
+        state.port = port;
+        state.port.onMessage.addListener(onMessageHandler);
+        state.port.onDisconnect.addListener(() => (state.ready = false));
+
         void sendSecurePostMessage({
             type: IFrameMessageType.IFRAME_INJECT_PORT,
             payload: { port: port.name },
         });
-
-        state.port = port;
-        state.port.onMessage.addListener(onMessageHandler);
     };
 
-    const reset = (workerState: WorkerState, settings: ProxiedSettings) => {
-        sendPortMessage({ type: IFrameMessageType.IFRAME_INIT, payload: { workerState, settings } });
-    };
+    const reset = (workerState: WorkerState, settings: ProxiedSettings) =>
+        sendPortMessage({
+            type: IFrameMessageType.IFRAME_INIT,
+            payload: { workerState, settings },
+        });
 
     const destroy = () => {
         close({ discard: false, refocus: false });
