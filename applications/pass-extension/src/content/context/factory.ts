@@ -14,7 +14,7 @@ import type { CSContextState, ContentScriptContext } from './types';
 export const createContentScriptContext = (options: {
     scriptId: string;
     mainFrame: boolean;
-    destroy: (options: { reason: string; recycle?: boolean }) => void;
+    destroy: (options: { reason: string }) => void;
 }): ContentScriptContext => {
     const state: CSContextState = { active: true, loggedIn: false, status: WorkerStatus.IDLE, UID: undefined };
     const settings: ProxiedSettings = INITIAL_SETTINGS;

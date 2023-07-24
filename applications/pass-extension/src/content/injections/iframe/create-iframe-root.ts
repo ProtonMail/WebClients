@@ -1,22 +1,15 @@
 import { createElement } from '@proton/pass/utils/dom';
 
-import { EXTENSION_PREFIX } from '../../constants';
+import type { ProtonPassRoot } from '../shadow/ProtonPassRoot';
 
-export const getIFrameRoot = () => document.querySelector<HTMLDivElement>(`#${EXTENSION_PREFIX}-iframe--root`);
+export const getIFrameRoot = () => document.querySelector<ProtonPassRoot>('protonpass-root');
 export const isIFrameRootAttached = () => getIFrameRoot() !== null;
 
-export const createIframeRoot = (): HTMLDivElement => {
+export const createIframeRoot = (): ProtonPassRoot => {
     const root = getIFrameRoot();
+    if (root !== null) return root;
 
-    if (root !== null) {
-        return root;
-    }
-
-    const iframeRoot = createElement<HTMLDivElement>({
-        type: 'aside',
-        parent: document.body,
-        attributes: { id: `${EXTENSION_PREFIX}-iframe--root` },
-    });
+    const iframeRoot = createElement<HTMLDivElement>({ type: 'protonpass-root', parent: document.body });
 
     /* we may hit a case where the content-script is reloaded - on
      * firefox, this will cause our injected stylesheets to be removed
