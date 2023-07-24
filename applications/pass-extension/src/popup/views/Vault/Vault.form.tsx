@@ -25,7 +25,7 @@ export const VaultForm: VFC<Props> = ({ formId, form }) => {
     return (
         <Form id={formId} className="flex flex-column gap-y-4">
             <div className="flex flex-align-items-center gap-x-3">
-                <VaultIcon color={form.values.color} icon={form.values.icon} size="large" />
+                <VaultIcon color={form.values.color} icon={form.values.icon} size={20} background />
                 <div className="flex-item-fluid">
                     <FieldsetCluster>
                         <Field

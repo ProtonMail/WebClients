@@ -16,13 +16,14 @@ import {
     selectUser,
     vaultDeleteIntent,
 } from '@proton/pass/store';
-import type { MaybeNull, ShareType, VaultShare } from '@proton/pass/types';
+import { type MaybeNull, ShareType, type VaultShare } from '@proton/pass/types';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { pipe, tap } from '@proton/pass/utils/fp';
 import clsx from '@proton/utils/clsx';
 
 import { ConfirmationModal } from '../../../../src/shared/components/confirmation';
 import { UpgradeButton } from '../../../shared/components/upgrade/UpgradeButton';
+import { useInviteContext } from '../../context/invite/InviteContextProvider';
 import { handleVaultDeletionEffects } from '../../context/items/ItemEffects';
 import { useItemsFilteringContext } from '../../hooks/useItemsFilteringContext';
 import { useNavigationContext } from '../../hooks/useNavigationContext';
@@ -58,6 +59,7 @@ const MenuDropdownRaw: VFC<{ className?: string }> = ({ className }) => {
 
     const dispatch = useDispatch();
     const canLock = useSelector(selectHasRegisteredLock);
+    const inviteContext = useInviteContext();
     const [deleteVault, setDeleteVault] = useState<MaybeNull<VaultShare>>(null);
     const [vaultModalProps, setVaultModalProps] = useState<MaybeNull<VaultModalProps>>(null);
     const [deleteAllConfirm, setDeleteAllConfirm] = useState(false);
@@ -157,7 +159,7 @@ const MenuDropdownRaw: VFC<{ className?: string }> = ({ className }) => {
                 >
                     <VaultIcon
                         className="flex-item-noshrink"
-                        size="medium"
+                        size={16}
                         color={vault?.content.display.color}
                         icon={vault?.content.display.icon}
                     />
@@ -205,6 +207,9 @@ const MenuDropdownRaw: VFC<{ className?: string }> = ({ className }) => {
                             )}
                             handleVaultCreateClick={withClose(() =>
                                 setVaultModalProps({ open: true, payload: { type: 'new' } })
+                            )}
+                            handleVaultShareClick={withClose((vault: VaultShare) =>
+                                inviteContext.invite(vault.shareId, ShareType.Vault)
                             )}
                             inTrash={inTrash}
                             handleRestoreTrash={handleRestoreTrash}
