@@ -4,7 +4,7 @@ import { serverTime } from '@proton/crypto';
 import { syncMultipleEvents as syncMultipleEventsRoute } from '@proton/shared/lib/api/calendars';
 import { getHasDefaultNotifications, getHasSharedEventContent } from '@proton/shared/lib/calendar/apiModels';
 import { getAttendeeEmail, withPmAttendees } from '@proton/shared/lib/calendar/attendees';
-import { DEFAULT_ATTENDEE_PERMISSIONS, ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
+import { DEFAULT_ATTENDEE_PERMISSIONS, ICAL_METHOD, MAX_ATTENDEES } from '@proton/shared/lib/calendar/constants';
 import { getBase64SharedSessionKey, getCreationKeys } from '@proton/shared/lib/calendar/crypto/keys/helpers';
 import { getInviteLocale } from '@proton/shared/lib/calendar/getSettings';
 import { ADD_EVENT_ERROR_TYPE, AddAttendeeError } from '@proton/shared/lib/calendar/mailIntegration/AddAttendeeError';
@@ -38,6 +38,7 @@ import {
     useGetCalendarUserSettings,
     useGetEncryptionPreferences,
     useGetMailSettings,
+    useMailSettings,
     useRelocalizeText,
 } from '../../../hooks';
 import { useGetCanonicalEmailsMap } from '../../../hooks/useGetCanonicalEmailsMap';
@@ -45,6 +46,7 @@ import { useGetVtimezonesMap } from '../../../hooks/useGetVtimezonesMap';
 import useSendIcs from '../../../hooks/useSendIcs';
 
 const useAddAttendees = () => {
+    const [mailSettings] = useMailSettings();
     const api = useApi();
     const [addresses] = useAddresses();
     const getAddressKeys = useGetAddressKeys();
@@ -71,8 +73,9 @@ const useAddAttendees = () => {
             sendInvitation: boolean;
             contactEmailsMap?: SimpleMap<ContactEmail>;
         }) => {
-            if ((eventComponent.attendee?.length || 0) > 100) {
-                throw new AddAttendeeError(ADD_EVENT_ERROR_TYPE.TOO_MANY_PARTICIPANTS);
+            const maxAttendees = mailSettings?.RecipientLimit || MAX_ATTENDEES;
+            if ((eventComponent.attendee?.length || 0) > maxAttendees) {
+                throw new AddAttendeeError(ADD_EVENT_ERROR_TYPE.TOO_MANY_PARTICIPANTS, undefined, maxAttendees);
             }
             const { addressID, memberID, calendarKeys, addressKeys } = await getCalendarInfo(calendarEvent.CalendarID);
             const selfAddress = addresses.find(({ ID }) => ID === addressID);

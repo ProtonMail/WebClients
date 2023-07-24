@@ -127,18 +127,20 @@ export const getCannotSaveEvent = ({
     isOrganizer,
     numberOfAttendees,
     canEditSharedEventData = true,
+    maxAttendees,
 }: {
     isOwnedCalendar: boolean;
     isOrganizer: boolean;
     numberOfAttendees: number;
     canEditSharedEventData?: boolean;
+    maxAttendees?: number;
 }) => {
     if (!canEditSharedEventData) {
         // user is editing only notifications
         return false;
     }
     if (isOrganizer) {
-        return !!getParticipantsError({ isOwnedCalendar, numberOfAttendees });
+        return !!getParticipantsError({ isOwnedCalendar, numberOfAttendees, maxAttendees });
     }
     return false;
 };
