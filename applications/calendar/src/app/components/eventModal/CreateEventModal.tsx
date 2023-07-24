@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { BasicModal, Form } from '@proton/components';
+import { BasicModal, Form, useMailSettings } from '@proton/components';
 import { ICAL_ATTENDEE_STATUS, ICAL_EVENT_STATUS } from '@proton/shared/lib/calendar/constants';
 import { getDisplayTitle } from '@proton/shared/lib/calendar/helper';
 import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
@@ -55,6 +55,7 @@ const CreateEventModal = ({
     tzid,
     ...rest
 }: Props) => {
+    const [mailSettings] = useMailSettings();
     const [participantError, setParticipantError] = useState(false);
     const errors = { ...validateEventModel(model), participantError };
     const { isSubmitted, loadingAction, handleDelete, handleSubmit, lastAction } = useForm({
@@ -87,6 +88,7 @@ const CreateEventModal = ({
         isOrganizer,
         numberOfAttendees: attendees.length,
         canEditSharedEventData,
+        maxAttendees: mailSettings?.RecipientLimit,
     });
 
     // new events have no uid yet

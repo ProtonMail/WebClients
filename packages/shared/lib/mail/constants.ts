@@ -43,3 +43,5 @@ export const SIGNATURE_START = {
 export enum BLOCK_SENDER_CONFIRMATION {
     DO_NOT_ASK = 1,
 }
+
+export const ATTACHMENT_MAX_COUNT = 100;
