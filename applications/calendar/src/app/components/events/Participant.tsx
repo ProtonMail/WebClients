@@ -55,7 +55,7 @@ const Participant = ({
             <div className="ml-4 flex-item-fluid" title={title}>
                 <div className="max-w100 participant-text text-ellipsis">{name}</div>
                 {showEmailAddress ? (
-                    <div className="max-w100 text-ellipsis participant-extra-text color-weak text-sm m-0">{email}</div>
+                    <div className="max-w100 text-ellipsis participant-extra-text text-sm m-0">{email}</div>
                 ) : null}
                 {!!extraText && (
                     <div className="max-w100 text-ellipsis participant-extra-text color-weak text-sm m-0">
