@@ -123,7 +123,10 @@ const UpsellStep = ({
         return getFreePlan();
     })();
 
-    const upsellShortPlan = getShortPlan(upsellPlanName, plansMap, vpnServers, { boldStorageSize: true });
+    const upsellShortPlan = getShortPlan(upsellPlanName, plansMap, {
+        vpnServers,
+        boldStorageSize: true,
+    });
     const upsellPlan = plansMap[upsellPlanName];
     const upsellPlanHumanSize = humanSize(upsellPlan.MaxSpace, undefined, undefined, 0);
 
@@ -138,8 +141,9 @@ const UpsellStep = ({
             return null;
         }
 
-        const mostPopularShortPlan = getShortPlan(mostPopularPlanName, plansMap, vpnServers, {
+        const mostPopularShortPlan = getShortPlan(mostPopularPlanName, plansMap, {
             boldStorageSize: true,
+            vpnServers,
         });
 
         if (!mostPopularShortPlan) {

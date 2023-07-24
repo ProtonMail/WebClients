@@ -15,12 +15,22 @@ const getNCalendarsTooltipText = (n: number) => {
     );
 };
 
+export const getNCalendarToCreateFeature = (n: number): PlanCardFeatureDefinition => ({
+    icon: 'brand-proton-calendar',
+    included: true,
+    text: c('new_plans: Upsell attribute').ngettext(
+        msgid`Create up to ${n} calendar`,
+        `Create up to ${n} calendars`,
+        n
+    ),
+});
+
 export const getNCalendarsFeature = (n: number): PlanCardFeatureDefinition => {
     return {
         text: c('new_plans: feature').ngettext(msgid`${n} calendar`, `${n} calendars`, n),
         tooltip: n > 1 ? getNCalendarsTooltipText(n) : '',
         included: true,
-        icon: 'calendar-checkmark',
+        icon: 'brand-proton-calendar',
     };
 };
 
@@ -29,7 +39,7 @@ export const getNCalendarsPerUserFeature = (n: number): PlanCardFeatureDefinitio
         text: c('new_plans: feature').ngettext(msgid`${n} calendar per user`, `${n} calendars per user`, n),
         tooltip: n > 1 ? getNCalendarsTooltipText(n) : '',
         included: true,
-        icon: 'calendar-checkmark',
+        icon: 'brand-proton-calendar',
     };
 };
 
