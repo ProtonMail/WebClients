@@ -33,19 +33,15 @@ export const createContentScriptClient = (scriptId: string, mainFrame: boolean) 
         mainFrame,
         destroy: (options) => {
             if (context.getState().active) {
-                logger.info(`[ContentScript::${scriptId}] destroying.. [reason: "${options.reason}"]`, options.recycle);
+                logger.info(`[ContentScript::${scriptId}] destroying.. [reason: "${options.reason}"]`);
 
                 listeners.removeAll();
-                context.setState({ active: options.recycle ?? false });
+                context.setState({ active: false });
                 context.service.formManager.destroy();
+                context.service.iframe.destroy();
 
-                /* Only destroy the injection DOM if we're not going to
-                 * recycle this content-script service.  */
-                if (!options.recycle) {
-                    context.service.iframe.destroy();
-                    CSContext.clear();
-                    DOMCleanUp();
-                }
+                CSContext.clear();
+                DOMCleanUp();
 
                 ExtensionContext.read()?.destroy();
             }
@@ -79,7 +75,7 @@ export const createContentScriptClient = (scriptId: string, mainFrame: boolean) 
         if (message.sender === 'background') {
             switch (message.type) {
                 case WorkerMessageType.UNLOAD_CONTENT_SCRIPT:
-                    return context.destroy({ recycle: false, reason: 'unload script' });
+                    return context.destroy({ reason: 'unload script' });
                 case WorkerMessageType.WORKER_STATUS:
                     return onWorkerStateChange(message.payload.state);
                 case WorkerMessageType.SETTINGS_UPDATE:
@@ -107,7 +103,7 @@ export const createContentScriptClient = (scriptId: string, mainFrame: boolean) 
 
             /* if we're in an iframe and the initial detection should not
              * be triggered : destroy this content-script service */
-            if (!mainFrame) return context.destroy({ reason: 'subframe discarded', recycle: false });
+            if (!mainFrame) return context.destroy({ reason: 'subframe discarded' });
 
             port.onMessage.addListener(onPortMessage);
 
@@ -121,15 +117,19 @@ export const createContentScriptClient = (scriptId: string, mainFrame: boolean) 
         try {
             const extensionContext = await setupExtensionContext({
                 endpoint: 'contentscript',
-                onDisconnect: () => context.destroy({ recycle: true, reason: 'port disconnected' }),
-                onContextChange: (nextCtx) => context.getState().active && handleStart(nextCtx),
+                onDisconnect: () => {
+                    const recycle = context.getState().active;
+                    if (!recycle) context.destroy({ reason: 'port disconnected' });
+                    return { recycle };
+                },
+                onRecycle: handleStart,
             });
 
             logger.debug(`[ContentScript::${scriptId}] Starting content-script service`);
             return await handleStart(extensionContext);
         } catch (e) {
             logger.debug(`[ContentScript::${scriptId}] Setup error`, e);
-            context.destroy({ recycle: false, reason: 'setup error' });
+            context.destroy({ reason: 'setup error' });
         }
     };
 
