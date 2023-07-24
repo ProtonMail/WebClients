@@ -1,0 +1,10 @@
+.border-recommended {
+	border-width: 3px;
+}
+
+.recommended-label {
+	inset-block-start: 0;
+	inset-inline-start: 50%;
+	transform: translateX(-50%) translateY(-50%);
+	width: 10em
+}

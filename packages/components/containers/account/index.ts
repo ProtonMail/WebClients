@@ -5,6 +5,7 @@ export { default as SettingsPageTitle } from './SettingsPageTitle';
 export { default as SettingsParagraph } from './SettingsParagraph';
 export { default as SettingsSection } from './SettingsSection';
 export { default as SettingsSectionWide } from './SettingsSectionWide';
+export { default as SettingsSectionExtraWide } from './SettingsSectionExtraWide';
 export { default as SettingsSectionTitle } from './SettingsSectionTitle';
 export { default as EmailSubscriptionToggles } from './EmailSubscriptionToggles';
 export { default as EmailSubscriptionCategories } from './EmailSubscriptionCategories';

@@ -145,7 +145,7 @@ const PlanSelection = ({
         const isFree = plan.ID === PLANS.FREE;
         const isCurrentPlan = isFree ? !currentPlan : currentPlan?.ID === plan.ID;
         const isRecommended = recommendedPlans.includes(plan.Name as PLANS);
-        const shortPlan = getShortPlan(plan.Name as PLANS, plansMap, vpnServers, {});
+        const shortPlan = getShortPlan(plan.Name as PLANS, plansMap, { vpnServers });
 
         if (!shortPlan) {
             return null;

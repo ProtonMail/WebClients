@@ -294,25 +294,36 @@ export const getFamilyPlan = (plan: Plan): ShortPlan => {
     };
 };
 
+/**
+ * Takes a plans map, a plan and some options and returns short visual plan details
+ *
+ * @param options.boldStorageSize Whether or not print the storage size in bold
+ * @param options.vpnServers Details about vpn servers. WARNING: If this option is not provided, then VPN plan won't be returned
+ */
 export const getShortPlan = (
     plan: PLANS,
     plansMap: PlansMap,
-    vpnServers: VPNServersCountData,
-    options: { boldStorageSize?: boolean } = {}
+    options: {
+        boldStorageSize?: boolean;
+        vpnServers?: VPNServersCountData;
+    } = {}
 ) => {
-    const { boldStorageSize } = options;
     if (plan === PLANS.FREE) {
         return getFreePlan();
     }
+
     const planData = plansMap[plan];
     if (!planData) {
         return null;
     }
+
+    const { vpnServers, boldStorageSize } = options;
+
     switch (plan) {
         case PLANS.MAIL:
             return getMailPlan(planData);
         case PLANS.VPN:
-            return getVPNPlan(planData, vpnServers);
+            return vpnServers && getVPNPlan(planData, vpnServers);
         case PLANS.DRIVE:
             return getDrivePlan(planData, boldStorageSize);
         case PLANS.PASS_PLUS:

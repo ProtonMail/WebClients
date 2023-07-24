@@ -8,7 +8,8 @@ import { Calendar } from '@proton/shared/lib/interfaces/calendar';
 import isTruthy from '@proton/utils/isTruthy';
 import percentage from '@proton/utils/percentage';
 
-import { Icon, IconName, Meter, StripedItem, StripedList } from '../../../components';
+import { Icon, IconName, Meter, StripedItem, StripedList } from '../../../../components';
+import Panel from './Panel';
 
 interface Item {
     icon: IconName;
@@ -65,10 +66,7 @@ const UsagePanel = ({ addresses, calendars, organization, user, children }: Prop
     ];
 
     return (
-        <div className="border rounded px-6 py-5 your-account-usage-container">
-            <h2 className="h3 mb-1">
-                <strong>{c('new_plans: Title').t`Your account's usage`}</strong>
-            </h2>
+        <Panel title={c('new_plans: Title').t`Your account's usage`}>
             <StripedList>
                 <StripedItem left={<Icon className="color-success" name="storage" size={20} />}>
                     <span id="usedSpaceLabel" className="block">{c('new_plans: Label')
@@ -91,7 +89,7 @@ const UsagePanel = ({ addresses, calendars, organization, user, children }: Prop
                 })}
             </StripedList>
             {children}
-        </div>
+        </Panel>
     );
 };
 
