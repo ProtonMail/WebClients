@@ -72,7 +72,6 @@ export const createFieldIconHandle = ({ field }: CreateIconOptions): FieldIconHa
     const onClick: (evt: MouseEvent) => void = withContext(({ service: { iframe } }, evt) => {
         evt.preventDefault();
         evt.stopPropagation();
-        field.element.focus();
 
         if (field.action) {
             return iframe.dropdown?.getState().visible
