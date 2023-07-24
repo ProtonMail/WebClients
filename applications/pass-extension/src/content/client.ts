@@ -40,7 +40,7 @@ Promise.resolve(script?.start())
                         void script.start();
                         break;
                     case WorkerMessageType.UNLOAD_CONTENT_SCRIPT:
-                        script?.destroy({ reason: 'unload', recycle: false });
+                        script?.destroy({ reason: 'unload' });
                         script = null;
                         break;
                 }
