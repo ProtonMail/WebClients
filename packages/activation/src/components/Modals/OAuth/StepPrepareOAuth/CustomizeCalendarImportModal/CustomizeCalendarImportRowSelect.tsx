@@ -26,11 +26,16 @@ const CustomizeCalendarImportRowSelect = ({
     const calendarToBeCreatedValue = `${CALENDAR_TO_BE_CREATED_PREFIX}${calendar.source}`;
     const value = calendar.mergedTo ? calendar.mergedTo.ID : calendar.source;
 
+    // translator; when managing calendar import, calendars can be created or merged. The text is displayed next to the calendar row and the value can be "merged" (this case) or "new"
+    const mergedLabel = c('Info').t`Merged`;
+    // translator; when managing calendar import, calendars can be created or merged. The text is displayed next to the calendar row and the value can be "merged" or "new" (this case)
+    const newLabel = c('Info').t`New`;
+
     const newMergeLabel = (
         <LabelStack
             labels={[
                 {
-                    name: !!calendar.mergedTo ? c('Info').t`Merged` : c('Info').t`New`,
+                    name: !!calendar.mergedTo ? mergedLabel : newLabel,
                 },
             ]}
         />
