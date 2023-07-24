@@ -94,6 +94,12 @@ const ONBOARDING_RULES: OnboardingRule[] = [
             return !previous && createdItemsCount >= PROMPT_ITEM_COUNT;
         },
     }),
+    createOnboardingRule({
+        message: OnboardingMessage.VAULT_INVITATION,
+        when: () => {
+            return false;
+        },
+    }),
 ];
 
 export const createOnboardingService = () => {

@@ -14,8 +14,10 @@ import {
 } from '@proton/components';
 import { selectAllTrashedItems, selectAllVaultWithItemsCount, selectShare } from '@proton/pass/store';
 import type { MaybeNull, ShareType, VaultShare } from '@proton/pass/types';
+import { PassFeature } from '@proton/pass/types/api/features';
 import type { VaultColor as VaultColorEnum } from '@proton/pass/types/protobuf/vault-v1';
 
+import { useFeatureFlag } from '../../../shared/hooks/useFeatureFlag';
 import { DropdownMenuButton } from '../Dropdown/DropdownMenuButton';
 import { VaultIcon, type VaultIconName } from '../Vault/VaultIcon';
 
@@ -48,6 +50,7 @@ type VaultItemProps = {
     onSelect: () => void;
     onEdit?: () => void;
     onDelete?: () => void;
+    onShare?: () => void;
 };
 
 const handleClickEvent = (handler: () => void) => (evt: React.MouseEvent) => {
@@ -56,8 +59,18 @@ const handleClickEvent = (handler: () => void) => (evt: React.MouseEvent) => {
     handler();
 };
 
-export const VaultItem: VFC<VaultItemProps> = ({ share, label, count, selected, onSelect, onDelete, onEdit }) => {
-    const withActions = onEdit || onDelete;
+export const VaultItem: VFC<VaultItemProps> = ({
+    share,
+    label,
+    count,
+    selected,
+    onSelect,
+    onDelete,
+    onEdit,
+    onShare,
+}) => {
+    const withActions = onEdit || onDelete || onShare;
+    const showSharing = useFeatureFlag(PassFeature.PassSharingV1);
 
     return (
         <DropdownMenuButton
@@ -68,7 +81,7 @@ export const VaultItem: VFC<VaultItemProps> = ({ share, label, count, selected, 
             icon={
                 <VaultIcon
                     className="flex-item-noshrink mr-2"
-                    size="medium"
+                    size={16}
                     color={share?.content.display.color}
                     icon={share?.content.display.icon}
                 />
@@ -83,6 +96,16 @@ export const VaultItem: VFC<VaultItemProps> = ({ share, label, count, selected, 
                                 onClick={onEdit ? (evt) => handleClickEvent(onEdit)(evt) : undefined}
                             />
                         )}
+
+                        {showSharing && (
+                            <DropdownMenuButton
+                                className="flex flex-align-items-center py-2 px-4"
+                                onClick={onShare ? (evt) => handleClickEvent(onShare)(evt) : undefined}
+                                icon="user-plus"
+                                label={c('Action').t`Share vault`}
+                            />
+                        )}
+
                         <DropdownMenuButton
                             disabled={!onDelete}
                             onClick={onDelete ? handleClickEvent(onDelete) : undefined}
@@ -140,6 +163,7 @@ export const VaultSubmenu: VFC<{
     handleVaultDeleteClick: (vault: VaultShare) => void;
     handleVaultEditClick: (vault: VaultShare) => void;
     handleVaultCreateClick: () => void;
+    handleVaultShareClick: (vault: VaultShare) => void;
     handleRestoreTrash: () => void;
     handleEmptyTrash: () => void;
 }> = ({
@@ -149,6 +173,7 @@ export const VaultSubmenu: VFC<{
     handleVaultDeleteClick,
     handleVaultEditClick,
     handleVaultCreateClick,
+    handleVaultShareClick,
     handleRestoreTrash,
     handleEmptyTrash,
 }) => {
@@ -178,8 +203,8 @@ export const VaultSubmenu: VFC<{
             >
                 <span className="flex flex-align-items-center flex-nowrap gap-1">
                     <VaultIcon
-                        className="mr-2"
-                        size="medium"
+                        className="mr-3"
+                        size={16}
                         color={selectedVaultOption?.color}
                         icon={selectedVaultOption?.icon}
                     />
@@ -208,6 +233,7 @@ export const VaultSubmenu: VFC<{
                             onSelect={() => handleSelect(vault)}
                             onDelete={!isPrimary ? () => handleVaultDeleteClick(vault) : undefined}
                             onEdit={() => handleVaultEditClick(vault)}
+                            onShare={() => handleVaultShareClick(vault)}
                         />
                     );
                 })}

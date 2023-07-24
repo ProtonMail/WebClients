@@ -1,0 +1,29 @@
+import { c } from 'ttag';
+
+import { ShareRole } from '@proton/pass/types';
+
+export const getShareRoleDefinition = (): Record<ShareRole, { title: string; description: string }> => ({
+    [ShareRole.ADMIN]: {
+        title: c('Info').t`Can manage`,
+        description: c('Info').t`Can grant and revoke access to this vault.`,
+    },
+    [ShareRole.WRITE]: {
+        title: c('Info').t`Can edit`,
+        description: c('Info').t`Can create, edit, delete and export items in this vault.`,
+    },
+    [ShareRole.READ]: {
+        title: c('Info').t`Can view`,
+        description: c('Info').t`Can view items in this vault.`,
+    },
+});
+
+export const shareRoleOptions = () =>
+    Object.entries(getShareRoleDefinition()).map(([value, { title, description }]) => ({
+        value: value as ShareRole,
+        label: (
+            <div>
+                <div>{title}</div>
+                <div className="color-weak">{description}</div>
+            </div>
+        ),
+    }));
