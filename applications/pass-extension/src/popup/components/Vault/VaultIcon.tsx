@@ -10,32 +10,36 @@ import { VAULT_COLOR_MAP, VAULT_ICON_MAP } from '../../components/Vault/constant
 
 import './VaultIcon.scss';
 
-type Size = 'large' | 'medium' | 'small';
-
 export type VaultIconName = VaultIconEnum | 'pass-all-vaults' | 'pass-trash';
 
 type Props = {
     color?: VaultColorEnum;
     icon?: VaultIconName;
-    size?: Size;
+    size?: IconSize;
+    background?: boolean;
     className?: string;
 };
 
-const SIZE_MAP: { [key in Size]: IconSize } = {
-    large: 20,
-    medium: 16,
-    small: 12,
-};
+const rem = (px: number) => `${px / parseFloat(getComputedStyle(document.documentElement).fontSize)}rem`;
 
-export const VaultIcon: VFC<Props> = ({ icon = 'pass-all-vaults', color, size = 'large', className }) => (
+export const VaultIcon: VFC<Props> = ({ icon = 'pass-all-vaults', color, size = 20, background, className }) => (
     <span
-        className={clsx([`pass-vault-icon ${size} rounded-xl relative`, className])}
-        style={{ '--vault-icon-color': VAULT_COLOR_MAP[color ?? VaultColorEnum.COLOR1] }}
+        className={clsx([
+            `pass-vault-icon rounded-xl relative w-custom h-custom`,
+            background && 'background',
+            size >= 32 && 'rounded-full',
+            className,
+        ])}
+        style={{
+            '--vault-icon-color': VAULT_COLOR_MAP[color ?? VaultColorEnum.COLOR1],
+            '--w-custom': rem(background ? size * 2 : size),
+            '--h-custom': rem(background ? size * 2 : size),
+        }}
     >
         <Icon
             className="absolute-center"
             name={icon === 'pass-all-vaults' || icon === 'pass-trash' ? icon : VAULT_ICON_MAP[icon]}
-            size={SIZE_MAP[size]}
+            size={size}
         />
     </span>
 );
