@@ -100,7 +100,6 @@ export const IFrameContextProvider: FC<{ endpoint: IFrameEndpoint }> = ({ endpoi
                 event.data?.type === IFrameMessageType.IFRAME_INJECT_PORT &&
                 event.data.sender === 'contentscript'
             ) {
-                window.removeEventListener('message', onPostMessageHandler);
                 handlePortInjection(event.data).catch(noop);
             }
         }),
