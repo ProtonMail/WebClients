@@ -73,7 +73,7 @@
 	}
 
 	.participant {
-		block-size: rem(32);
+		min-block-size: rem(32);
 
 		&-text {
 			line-height: rem(20);
