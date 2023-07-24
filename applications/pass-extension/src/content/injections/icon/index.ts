@@ -7,20 +7,10 @@ import {
     getComputedWidth,
     pixelEncoder,
     pixelParser,
-    pixelTransformer,
     repaint,
 } from '@proton/pass/utils/dom';
 
-import {
-    EXTENSION_PREFIX,
-    ICON_CLASSNAME,
-    ICON_MAX_HEIGHT,
-    ICON_MIN_HEIGHT,
-    ICON_PADDING,
-    ICON_ROOT_CLASSNAME,
-    ICON_WRAPPER_CLASSNAME,
-    INPUT_STYLES_ATTR,
-} from '../../constants';
+import { ICON_MAX_HEIGHT, ICON_MIN_HEIGHT, ICON_PADDING, INPUT_BASE_STYLES_ATTR } from '../../constants';
 import type { FieldHandle } from '../../types';
 
 type InjectionElements = {
@@ -64,7 +54,7 @@ const getOverlayedElement = (options: {
                 /* exclude svg elements */
                 if (el.matches('svg *')) return false;
                 /* exclude our own injected elements */
-                if (el.matches(`.${ICON_CLASSNAME}`)) return false;
+                if (el.matches('protonpass-control')) return false;
                 /* exclude elements not in the current form stack */
                 if (!form.contains(el)) return false;
                 /* exclude "placeholder" overlays */
@@ -160,12 +150,13 @@ const computeIconInjectionStyles = (
             top: pixelEncoder(top),
             right: pixelEncoder(right),
             size: pixelEncoder(size),
+            fontSize: size / 2.5,
         },
     };
 };
 
 export const getInputInitialStyles = (el: HTMLElement): InputInitialStyles => {
-    const initialStyles = el.getAttribute(INPUT_STYLES_ATTR);
+    const initialStyles = el.getAttribute(INPUT_BASE_STYLES_ATTR);
     return initialStyles ? JSON.parse(initialStyles) : {};
 };
 
@@ -177,7 +168,7 @@ export const cleanupInputInjectedStyles = (input: HTMLInputElement) => {
                 : input.style.removeProperty(prop) /* else remove override */
     );
 
-    input.removeAttribute(INPUT_STYLES_ATTR);
+    input.removeAttribute(INPUT_BASE_STYLES_ATTR);
 };
 
 export const cleanupInjectionStyles = ({ wrapper, input }: Pick<InjectionElements, 'wrapper' | 'input'>) => {
@@ -196,11 +187,8 @@ const applyIconInjectionStyles = (elements: InjectionElements, shared: SharedInj
     icon.style.right = styles.icon.right;
     icon.style.width = styles.icon.size;
     icon.style.height = styles.icon.size;
-    icon.style.setProperty(`--${EXTENSION_PREFIX}-icon-lineheight`, styles.icon.size);
-    icon.style.setProperty(
-        `--${EXTENSION_PREFIX}-icon-fontsize`,
-        pixelTransformer(styles.icon.size, (size) => size / 2.5)
-    );
+    icon.style.setProperty(`--control-lineheight`, styles.icon.size);
+    icon.style.setProperty(`--control-fontsize`, pixelEncoder(styles.icon.fontSize));
 
     /* Content-script may be destroyed and re-injected
      * on extension update or on code hot-reload. Keep
@@ -211,7 +199,7 @@ const applyIconInjectionStyles = (elements: InjectionElements, shared: SharedInj
         'padding-right': input.style.paddingRight,
     };
 
-    input.setAttribute(INPUT_STYLES_ATTR, JSON.stringify(initialInputStyles));
+    input.setAttribute(INPUT_BASE_STYLES_ATTR, JSON.stringify(initialInputStyles));
     input.style.setProperty('padding-right', styles.input.paddingRight, 'important');
     const inputWidthAfter = input.getBoundingClientRect().width;
 
@@ -243,31 +231,28 @@ export const createIcon = (field: FieldHandle): InjectionElements => {
     const input = field.element as HTMLInputElement;
     const inputBox = field.boxElement;
 
-    const wrapper = createElement<HTMLDivElement>({
-        type: 'div',
-        classNames: [ICON_ROOT_CLASSNAME, ICON_WRAPPER_CLASSNAME],
-    });
+    const control = createElement<HTMLDivElement>({ type: 'protonpass-control' });
 
     /* overridden by `injection.scss` in order to properly handle
      * content-script re-injection flickering glitch */
-    wrapper.style.display = 'none';
+    control.style.display = 'none';
 
     const icon = createElement<HTMLButtonElement>({
-        type: 'div',
-        classNames: [ICON_ROOT_CLASSNAME, ICON_CLASSNAME],
+        type: 'button',
+        classNames: [],
     });
 
     icon.tabIndex = -1;
     icon.style.zIndex = field.zIndex.toString();
     icon.setAttribute('type', 'button');
 
-    const elements = { icon, wrapper, input, inputBox, form: field.getFormHandle().element };
+    const elements = { icon, wrapper: control, input, inputBox, form: field.getFormHandle().element };
     const boxed = input !== inputBox;
 
-    if (boxed) inputBox.insertBefore(wrapper, inputBox.firstElementChild);
-    else input.parentElement!.insertBefore(wrapper, input);
+    if (boxed) inputBox.insertBefore(control, inputBox.firstElementChild);
+    else input.parentElement!.insertBefore(control, input);
 
-    wrapper.appendChild(icon);
+    control.shadowRoot?.appendChild(icon);
     applyInjectionStyles(elements);
 
     return elements;
