@@ -43,6 +43,22 @@ export const getStorageFeature = (
     };
 };
 
+export const getStorageBoostFeature = (bundleStorage: string): PlanCardFeatureDefinition => {
+    return {
+        icon: 'storage',
+        text: c('new_plans: Upsell attribute').t`Boost your storage space to ${bundleStorage} total`,
+        included: true,
+    };
+};
+
+export const getStorageBoostFeatureB2B = (bundleStorage: string): PlanCardFeatureDefinition => {
+    return {
+        icon: 'storage',
+        text: c('new_plans: Upsell attribute').t`Boost your storage space to ${bundleStorage} per user`,
+        included: true,
+    };
+};
+
 export const getStorageFeatureB2B = (bytes: number, highlight?: boolean): PlanCardFeatureDefinition => {
     const size = humanSize(bytes, undefined, undefined, 0);
     return {
