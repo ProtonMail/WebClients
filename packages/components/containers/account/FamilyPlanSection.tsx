@@ -6,7 +6,7 @@ import { Loader } from '@proton/components/components/loader';
 import { useAddresses, useCalendars, useOrganization, useUser } from '@proton/components/hooks';
 import { isOrganizationFamily } from '@proton/shared/lib/organization/helper';
 
-import UsagePanel from '../payments/subscription/UsagePanel';
+import { UsagePanel } from '../payments/subscription/panels';
 import LeaveFamilyModal from './LeaveFamilyModal';
 import SettingsParagraph from './SettingsParagraph';
 
