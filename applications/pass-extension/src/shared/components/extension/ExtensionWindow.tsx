@@ -11,6 +11,7 @@ import {
 import { Portal } from '@proton/components/components/portal';
 import type { ExtensionEndpoint } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
+import noop from '@proton/utils/noop';
 
 import * as config from '../../../app/config';
 import { setupExtensionContext } from '../../extension/context';
@@ -23,7 +24,14 @@ export const ExtensionWindow: FC<{
     const [ready, setReady] = useState(false);
 
     useEffect(() => {
-        setupExtensionContext({ endpoint, onDisconnect: () => window.location.reload() })
+        setupExtensionContext({
+            endpoint,
+            onDisconnect: () => {
+                window.location.reload();
+                return { recycle: false };
+            },
+            onRecycle: noop,
+        })
             .then(() => setReady(true))
             .catch(logger.warn);
     }, []);

@@ -22,14 +22,14 @@ export type ExtensionContextType = {
 
 export type ExtensionContextOptions = {
     endpoint: ExtensionEndpoint;
-    onDisconnect?: (previousCtx: ExtensionContextType) => void;
-    onContextChange?: (nextCtx: ExtensionContextType) => void;
+    onDisconnect: (previousCtx?: ExtensionContextType) => { recycle: boolean };
+    onRecycle: (nextCtx: ExtensionContextType) => void;
 };
 
 export const ExtensionContext = createSharedContext<ExtensionContextType>('extension');
 
 export const setupExtensionContext = async (options: ExtensionContextOptions): Promise<ExtensionContextType> => {
-    const { endpoint, onDisconnect, onContextChange } = options;
+    const { endpoint, onDisconnect, onRecycle } = options;
     try {
         const tab = await getCurrentTab();
         if (tab !== undefined && tab.id !== undefined) {
@@ -63,8 +63,8 @@ export const setupExtensionContext = async (options: ExtensionContextOptions): P
 
             ctx.port.onDisconnect.addListener(async () => {
                 logger.info('[Context::Extension] port disconnected - reconnecting');
-                onDisconnect?.(ExtensionContext.get());
-                onContextChange?.(await setupExtensionContext(options));
+                const { recycle } = onDisconnect?.(ExtensionContext.read());
+                return recycle && onRecycle(await setupExtensionContext(options));
             });
 
             return ctx;

@@ -10,7 +10,6 @@ import { safeCall, waitUntil } from '@proton/pass/utils/fp';
 import { createListenerStore } from '@proton/pass/utils/listener';
 import { merge } from '@proton/pass/utils/object';
 
-import { EXTENSION_PREFIX } from '../../constants';
 import type {
     IFrameApp,
     IFrameCloseOptions,
@@ -34,7 +33,7 @@ type CreateIFrameAppOptions<A> = {
     onReady?: () => void;
     onOpen?: (state: IFrameState<A>) => void;
     onClose?: (state: IFrameState<A>, options: IFrameCloseOptions) => void;
-    position: (iframeRoot: HTMLDivElement) => Partial<Rect>;
+    position: (iframeRoot: HTMLElement) => Partial<Rect>;
     dimensions: (state: IFrameState<A>) => Dimensions;
 };
 
@@ -67,12 +66,13 @@ export const createIFrameApp = <A>({
 
     const iframe = createElement<HTMLIFrameElement>({
         type: 'iframe',
-        classNames: [`${EXTENSION_PREFIX}-iframe`, ...classNames],
+        classNames,
         attributes: { src },
         parent: iframeRoot,
+        shadow: true,
     });
 
-    iframe.style.setProperty(`--${EXTENSION_PREFIX}-iframe-animation`, `${EXTENSION_PREFIX}-anim-${animation}`);
+    iframe.style.setProperty(`--frame-animation`, animation);
     iframe.addEventListener('load', () => (state.loaded = true), { once: true });
 
     /* Securing the posted message's allowed target origins.
@@ -121,15 +121,15 @@ export const createIFrameApp = <A>({
         state.position = values;
 
         const { top, left, right, zIndex } = values;
-        iframe.style.setProperty(`--${EXTENSION_PREFIX}-iframe-zindex`, `${zIndex ?? 1}`);
-        iframe.style.setProperty(`--${EXTENSION_PREFIX}-iframe-top`, top ? pixelEncoder(top) : 'unset');
-        iframe.style.setProperty(`--${EXTENSION_PREFIX}-iframe-left`, left ? pixelEncoder(left) : 'unset');
-        iframe.style.setProperty(`--${EXTENSION_PREFIX}-iframe-right`, right ? pixelEncoder(right) : 'unset');
+        iframe.style.setProperty(`--frame-zindex`, `${zIndex ?? 1}`);
+        iframe.style.setProperty(`--frame-top`, top ? pixelEncoder(top) : 'unset');
+        iframe.style.setProperty(`--frame-left`, left ? pixelEncoder(left) : 'unset');
+        iframe.style.setProperty(`--frame-right`, right ? pixelEncoder(right) : 'unset');
     };
 
     const setIframeDimensions = ({ width, height }: Dimensions) => {
-        iframe.style.setProperty(`--${EXTENSION_PREFIX}-iframe-width`, pixelEncoder(width));
-        iframe.style.setProperty(`--${EXTENSION_PREFIX}-iframe-height`, pixelEncoder(height));
+        iframe.style.setProperty(`--frame-width`, pixelEncoder(width));
+        iframe.style.setProperty(`--frame-height`, pixelEncoder(height));
     };
 
     const updatePosition = () => requestAnimationFrame(() => setIframePosition(position(iframeRoot)));
@@ -142,7 +142,7 @@ export const createIFrameApp = <A>({
             if (!target || !backdropExclude?.().includes(target)) {
                 listeners.removeAll();
                 onClose?.(state, options);
-                iframe.classList.remove(`${EXTENSION_PREFIX}-iframe--visible`);
+                iframe.classList.remove('visible');
 
                 state.visible = false;
                 state.action = null;
@@ -164,7 +164,7 @@ export const createIFrameApp = <A>({
 
             sendPortMessage({ type: IFrameMessageType.IFRAME_OPEN });
 
-            iframe.classList.add(`${EXTENSION_PREFIX}-iframe--visible`);
+            iframe.classList.add('visible');
             setIframeDimensions(dimensions(state));
             updatePosition();
             onOpen?.(state);
@@ -175,18 +175,21 @@ export const createIFrameApp = <A>({
         message && message?.type !== undefined && portMessageHandlers.get(message.type)?.(message);
 
     const init = (port: Runtime.Port) => {
+        state.port = port;
+        state.port.onMessage.addListener(onMessageHandler);
+        state.port.onDisconnect.addListener(() => (state.ready = false));
+
         void sendSecurePostMessage({
             type: IFrameMessageType.IFRAME_INJECT_PORT,
             payload: { port: port.name },
         });
-
-        state.port = port;
-        state.port.onMessage.addListener(onMessageHandler);
     };
 
-    const reset = (workerState: WorkerState, settings: ProxiedSettings) => {
-        sendPortMessage({ type: IFrameMessageType.IFRAME_INIT, payload: { workerState, settings } });
-    };
+    const reset = (workerState: WorkerState, settings: ProxiedSettings) =>
+        sendPortMessage({
+            type: IFrameMessageType.IFRAME_INIT,
+            payload: { workerState, settings },
+        });
 
     const destroy = () => {
         close({ discard: false, refocus: false });
