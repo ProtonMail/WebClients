@@ -72,7 +72,7 @@ export const createFormManager = (options: FormManagerOptions) => {
                                         })
                                     );
 
-                                    destroy({ reason: 'detector bottleneck', recycle: false });
+                                    destroy({ reason: 'detector bottleneck' });
                                 },
                             });
 
