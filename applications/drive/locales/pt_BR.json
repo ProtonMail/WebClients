@@ -3415,6 +3415,9 @@
       "Enter the credentials of the email account you want to import from.": [
         "Digite as credenciais da conta de e-mail da qual você deseja importar."
       ],
+      "Enter the device name to confirm removal.": [
+        "Digite o nome do dispositivo para confirmar a remoção."
+      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Digite o código de verificação que foi enviado para ${ destinationText }."
       ],
@@ -3917,6 +3920,9 @@
       "This will delete the link and remove access to your file or folder for anyone with the link.": [
         "Este link será excluído e removeremos o acesso ao seu arquivo ou pasta para qualquer pessoa com o link.",
         "Estes links serão excluídos e removeremos o acesso aos seus arquivos ou pastas para qualquer pessoa com os links."
+      ],
+      "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and stop syncing folders you added to My Computers.": [
+        "Isso removerá o dispositivo sincronizado ${ deviceName } do ${ DRIVE_APP_NAME } e interromperá a sincronização das pastas que você adicionou a Computadores."
       ],
       "This will replace the existing file with the folder": [
         "Isso substituirá o arquivo existente pela pasta"
