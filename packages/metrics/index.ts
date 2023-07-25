@@ -20,11 +20,12 @@ import { WebCoreSignupVerificationStepVerificationTotal } from './types/web_core
 import { WebCoreVpnSingleSignupFetchDependenciesTotal } from './types/web_core_vpn_single_signup_fetchDependencies_total_v1.schema';
 import { WebCoreVpnSingleSignupPageLoadTotal } from './types/web_core_vpn_single_signup_pageLoad_total_v1.schema';
 import { WebCoreVpnSingleSignupPasswordSelectionStepTotal } from './types/web_core_vpn_single_signup_passwordSelection_step_total_v1.schema';
+import { WebCoreVpnSingleSignupStep1AccountCreationTotal } from './types/web_core_vpn_single_signup_step1_accountCreation_total_v1.schema';
 import { WebCoreVpnSingleSignupStep1CurrencyChangeTotal } from './types/web_core_vpn_single_signup_step1_currencyChange_total_v1.schema';
 import { WebCoreVpnSingleSignupStep1CycleChangeTotal } from './types/web_core_vpn_single_signup_step1_cycleChange_total_v1.schema';
 import { WebCoreVpnSingleSignupStep1InteractionTotal } from './types/web_core_vpn_single_signup_step1_interaction_total_v1.schema';
 import { WebCoreVpnSingleSignupStep1PaymentTotal } from './types/web_core_vpn_single_signup_step1_payment_total_v1.schema';
-import { WebCoreVpnSingleSignupStep2SetupTotal } from './types/web_core_vpn_single_signup_step2_setup_total_v1.schema';
+import { WebCoreVpnSingleSignupStep2SetupTotal } from './types/web_core_vpn_single_signup_step2_setup_total_v2.schema';
 import { WebCoreVpnSingleSignupStep3CompleteTotal } from './types/web_core_vpn_single_signup_step3_complete_total_v1.schema';
 import { WebCoreVpnSingleSignupStep4SetupTotal } from './types/web_core_vpn_single_signup_step4_setup_total_v1.schema';
 
@@ -57,6 +58,8 @@ class Metrics extends MetricsBase {
     public core_vpn_single_signup_pageLoad_total: Counter<WebCoreVpnSingleSignupPageLoadTotal>;
 
     public core_vpn_single_signup_fetchDependencies_total: Counter<WebCoreVpnSingleSignupFetchDependenciesTotal>;
+
+    public core_vpn_single_signup_step1_account_creation_total: Counter<WebCoreVpnSingleSignupStep1AccountCreationTotal>;
 
     public core_vpn_single_signup_step1_interaction_total: Counter<WebCoreVpnSingleSignupStep1InteractionTotal>;
 
@@ -149,8 +152,13 @@ class Metrics extends MetricsBase {
             { name: 'web_core_vpn_single_signup_step1_payment_total', version: 1 },
             this.requestService
         );
+        this.core_vpn_single_signup_step1_account_creation_total =
+            new Counter<WebCoreVpnSingleSignupStep1AccountCreationTotal>(
+                { name: 'web_core_vpn_single_signup_step1_account_creation_total', version: 1 },
+                this.requestService
+            );
         this.core_vpn_single_signup_step2_setup_total = new Counter<WebCoreVpnSingleSignupStep2SetupTotal>(
-            { name: 'web_core_vpn_single_signup_step2_setup_total', version: 1 },
+            { name: 'web_core_vpn_single_signup_step2_setup_total', version: 2 },
             this.requestService
         );
         this.core_vpn_single_signup_passwordSelection_step_total =
