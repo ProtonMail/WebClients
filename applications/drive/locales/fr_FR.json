@@ -3101,8 +3101,8 @@
         "${ doneUploadsCount } importés"
       ],
       "${ errorCount } failed": [
-        "${ errorCount } échec",
-        "${ errorCount } échecs"
+        "${ errorCount } erreur",
+        "${ errorCount } erreurs"
       ],
       "${ fileName }: full-size image": [
         "${ fileName } : image en taille réelle"
@@ -3416,7 +3416,7 @@
         "Saisissez les identifiants du compte de messagerie depuis lequel vous voulez importer."
       ],
       "Enter the device name to confirm removal.": [
-        "Entrer le nom de l'appareil pour confirmer sa suppression."
+        "Saissiez le nom de l'appareil pour confirmer sa suppression."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Saisissez le code de vérification qui a été envoyé à ${ destinationText }."
