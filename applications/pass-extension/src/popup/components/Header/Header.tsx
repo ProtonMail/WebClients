@@ -16,14 +16,12 @@ import {
 import { selectAliasLimits, selectPassPlan } from '@proton/pass/store';
 import { passwordSave } from '@proton/pass/store/actions/creators/pw-history';
 import type { ItemType } from '@proton/pass/types';
-import { PassFeature } from '@proton/pass/types/api/features';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { pipe } from '@proton/pass/utils/fp';
 import { uniqueId } from '@proton/pass/utils/string';
 import { getEpoch } from '@proton/pass/utils/time';
 import clsx from '@proton/utils/clsx';
 
-import { useFeatureFlag } from '../../../shared/hooks/useFeatureFlag';
 import { itemTypeToIconName } from '../../../shared/items';
 import { itemTypeToSubThemeClassName } from '../../../shared/theme/sub-theme';
 import { useCopyToClipboard } from '../../hooks/useCopyToClipboard';
@@ -47,7 +45,6 @@ export const Header: VFC<{}> = () => {
     const copyToClipboard = useCopyToClipboard();
     const { needsUpgrade, aliasLimit, aliasLimited, aliasTotalCount } = useSelector(selectAliasLimits);
     const isFreePlan = useSelector(selectPassPlan) === UserPassPlan.FREE;
-    const showCreditCards = useFeatureFlag<boolean>(PassFeature.PassCreditCardsV1);
 
     const handleNewItemClick = (type: ItemType) => {
         /* Trick to be able to return to the initial route using
@@ -122,41 +119,37 @@ export const Header: VFC<{}> = () => {
                     originalPlacement="bottom-start"
                 >
                     <DropdownMenu>
-                        {quickAddActions.map(({ type, label }) => {
-                            if (type === 'creditCard' && !showCreditCards) return null;
-
-                            return (
-                                <DropdownMenuButton
-                                    key={`item-type-dropdown-button-${type}`}
-                                    className={`${itemTypeToSubThemeClassName[type]} flex flex-align-items-center py-2 px-4`}
-                                    onClick={withClose(() => handleNewItemClick(type))}
-                                    disabled={isFreePlan && type === 'creditCard'}
+                        {quickAddActions.map(({ type, label }) => (
+                            <DropdownMenuButton
+                                key={`item-type-dropdown-button-${type}`}
+                                className={`${itemTypeToSubThemeClassName[type]} flex flex-align-items-center py-2 px-4`}
+                                onClick={withClose(() => handleNewItemClick(type))}
+                                disabled={isFreePlan && type === 'creditCard'}
+                            >
+                                <span
+                                    className="mr-2 w-custom h-custom rounded-lg overflow-hidden relative pass-item-icon"
+                                    style={{ '--w-custom': `2em`, '--h-custom': `2em` }}
                                 >
-                                    <span
-                                        className="mr-2 w-custom h-custom rounded-lg overflow-hidden relative pass-item-icon"
-                                        style={{ '--w-custom': `2em`, '--h-custom': `2em` }}
-                                    >
-                                        <Icon
-                                            name={itemTypeToIconName[type]}
-                                            className="absolute-center"
-                                            color="var(--interaction-norm)"
-                                        />
-                                    </span>
+                                    <Icon
+                                        name={itemTypeToIconName[type]}
+                                        className="absolute-center"
+                                        color="var(--interaction-norm)"
+                                    />
+                                </span>
 
-                                    {label}
+                                {label}
 
-                                    {
-                                        /* Only show alias count if the user plan
-                                         * has an an alias limit. */
-                                        type === 'alias' && aliasLimited && (
-                                            <span
-                                                className={clsx('ml-1', needsUpgrade ? 'color-danger' : 'color-weak')}
-                                            >{`(${aliasTotalCount}/${aliasLimit})`}</span>
-                                        )
-                                    }
-                                </DropdownMenuButton>
-                            );
-                        })}
+                                {
+                                    /* Only show alias count if the user plan
+                                     * has an an alias limit. */
+                                    type === 'alias' && aliasLimited && (
+                                        <span
+                                            className={clsx('ml-1', needsUpgrade ? 'color-danger' : 'color-weak')}
+                                        >{`(${aliasTotalCount}/${aliasLimit})`}</span>
+                                    )
+                                }
+                            </DropdownMenuButton>
+                        ))}
 
                         <DropdownMenuButton
                             className="text-left flex flex-align-items-center ui-red"
