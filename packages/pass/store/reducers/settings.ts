@@ -4,6 +4,7 @@ import type { AutoFillSettings, AutoSaveSettings, AutoSuggestSettings } from '@p
 import { partialMerge } from '@proton/pass/utils/object';
 
 import {
+    itemCreationSuccess,
     sessionLockDisableSuccess,
     sessionLockEnableSuccess,
     sessionUnlockSuccess,
@@ -17,6 +18,8 @@ export type SettingsState = {
     autosave: AutoSaveSettings;
     autosuggest: AutoSuggestSettings;
     loadDomainImages: boolean;
+    /* explicitly created, not including import */
+    createdItemsCount: number;
 };
 
 /* proxied settings will also be copied on local
@@ -28,6 +31,7 @@ const INITIAL_STATE: SettingsState = {
     autofill: { inject: true, openOnFocus: true },
     autosave: { prompt: true, browserDefault: true },
     autosuggest: { password: true, email: true },
+    createdItemsCount: 0,
     loadDomainImages: true,
 };
 
@@ -49,6 +53,10 @@ const reducer: Reducer<SettingsState> = (state = INITIAL_STATE, action) => {
 
     if (settingEditSuccess.match(action)) {
         return partialMerge(state, action.payload);
+    }
+
+    if (itemCreationSuccess.match(action)) {
+        return partialMerge(state, { createdItemsCount: state.createdItemsCount + 1 });
     }
 
     return state;

@@ -11,9 +11,9 @@ export const detectBrowser = (): Browser => {
         : 'firefox';
 };
 
-export const getWebStoreUrl = (browser: Browser): string | null => {
+export const getWebStoreUrl = (browser: Browser): string => {
     return {
         chrome: 'https://chrome.google.com/webstore/detail/proton-pass/ghmbeldphafepmbegfdlkpapadhbakde',
-        firefox: null,
+        firefox: 'https://addons.mozilla.org/en-US/firefox/addon/proton-pass/',
     }[browser];
 };
