@@ -296,11 +296,11 @@
       ]
     },
     "Error": {
-      "${ PASS_APP_NAME } export file could not be parsed. ${ errorDetail }": [
-        "Δεν ήταν δυνατή η ανάλυση του αρχείου εξαγωγής ${ PASS_APP_NAME }. ${ errorDetail }"
+      "${ provider } file could not be parsed. ${ errorDetail }": [
+        "Δεν ήταν δυνατή η ανάλυση του αρχείου ${ provider }. ${ errorDetail }"
       ],
-      "1Password export file could not be parsed. ${ errorDetail }": [
-        "Δεν ήταν δυνατή η ανάλυση του αρχείου εξαγωγής 1Password. ${ errorDetail }"
+      "Alias options could not be resolved": [
+        "Δεν ήταν δυνατή η επίλυση των επιλογών ψευδωνύμου"
       ],
       "Authentication error": [
         "Σφάλμα ταυτοποίησης"
@@ -311,14 +311,8 @@
       "Auto-lock could not be disabled": [
         "Δεν ήταν δυνατή η απενεργοποίηση του αυτόματου κλειδώματος"
       ],
-      "Bitwarden export file could not be parsed. ${ errorDetail }": [
-        "Δεν ήταν δυνατή η ανάλυση του αρχείου εξαγωγής Bitwarden. ${ errorDetail }"
-      ],
-      "Cannot create alias.": [
-        "Δεν είναι δυνατή η δημιουργία ψευδωνύμου."
-      ],
-      "Chrome export file could not be parsed. ${ errorDetail }": [
-        "Δεν ήταν δυνατή η ανάλυση του αρχείου εξαγωγής Chrome. ${ errorDetail }"
+      "Cannot create alias (${ error }).": [
+        "Δεν είναι δυνατή η δημιουργία ψευδωνύμου (${ error })."
       ],
       "Could not open created vault": [
         "Δεν ήταν δυνατό το άνοιγμα της δημιουργημένης κρύπτης"
@@ -332,9 +326,6 @@
       "CSV file is missing expected headers: ${ missingHeaders }": [
         "Λείπει το αρχείο CSV αναμενόμενες κεφαλίδες: ${ missingHeaders }"
       ],
-      "Dashlane export file could not be parsed. ${ errorDetail }": [
-        "Δεν ήταν δυνατή η ανάλυση του αρχείου εξαγωγής Dashlane. ${ errorDetail }"
-      ],
       "Decrypting your ${ PASS_APP_NAME } export file failed. ${ errorDetail }": [
         "Η αποκρυπτογράφηση του αρχείου εξαγωγής ${ PASS_APP_NAME } απέτυχε. ${ errorDetail }"
       ],
@@ -345,8 +336,8 @@
         "Η διαγραφή της κρύπτης \"${ payload.content.name }\" απέτυχε"
       ],
       "Detected ${ errors.length } corrupted csv row": [
-        "Εντοπίστηκε ${ errors.length } κατεστραμμένη γραμμή CSV",
-        "Εντοπίστηκε ${ errors.length } κατεστραμμένη γραμμές CSV"
+        "Εντοπίστηκε ${ errors.length } αλλοιωμένη γραμμή csv",
+        "Εντοπίστηκε ${ errors.length } αλλοιωμένες γραμμές csv"
       ],
       "Editing item failed": [
         "Η επεξεργασία του στοιχείου απέτυχε"
@@ -366,9 +357,6 @@
       "File could not be parsed": [
         "Δεν ήταν δυνατή η ανάλυση του αρχείου"
       ],
-      "Firefox export file could not be parsed. ${ errorDetail }": [
-        "Δεν ήταν δυνατή η ανάλυση του αρχείου εξαγωγής Firefox. ${ errorDetail }"
-      ],
       "Import failed for vault \"${ vaultData.name }\" : ${ description }": [
         "Η εισαγωγή απέτυχε για την κρύπτη \"${ vaultData.name }\" : ${ description }"
       ],
@@ -383,15 +371,6 @@
       ],
       "Item creation failed": [
         "Η δημιουργία του στοιχείου απέτυχε"
-      ],
-      "KeePass export file could not be parsed. ${ errorDetail }": [
-        "Δεν ήταν δυνατή η ανάλυση του αρχείου εξαγωγής KeePass. ${ errorDetail }"
-      ],
-      "Keeper export file could not be parsed. ${ errorDetail }": [
-        "Δεν ήταν δυνατή η ανάλυση του αρχείου εξαγωγής Keeper. ${ errorDetail }"
-      ],
-      "LastPass export file could not be parsed. ${ errorDetail }": [
-        "Δεν ήταν δυνατή η ανάλυση του αρχείου εξαγωγής LastPass. ${ errorDetail }"
       ],
       "LastPass will export a corrupted CSV file if any of your item fields contain unexpected commas, quotes or multiple lines": [
         "Το LastPass θα εξαγάγει ένα κατεστραμμένο αρχείο CSV εάν κάποιο από τα πεδία στοιχείων σας περιέχει μην αναμενόμενα κόμματα, εισαγωγικά ή πολλές γραμμές"
@@ -422,9 +401,6 @@
       ],
       "Restoring item failed": [
         "Η επαναφορά του στοιχείου απέτυχε"
-      ],
-      "Safari export file could not be parsed. ${ errorDetail }": [
-        "Δεν ήταν δυνατή η ανάλυση του αρχείου εξαγωγής Safari. ${ errorDetail }"
       ],
       "Setting \"${ payload.name }\" as primary vault failed": [
         "Η ρύθμιση του \"${ payload.name }\" ως κύριας κρύπτης απέτυχε"
@@ -674,7 +650,7 @@
       ],
       "Imported ${ payload.total } item": [
         "Εισαγόμενο ${ payload.total } στοιχείο",
-        "Εισαγόμενο ${ payload.total } στοιχεία"
+        "Εισαγόμενα ${ payload.total } στοιχεία"
       ],
       "Imported on ${ date }": [
         "Εισήχθη στις ${ date }"

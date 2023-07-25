@@ -1126,7 +1126,7 @@
         "Versleuteld"
       ],
       "New email": [
-        "Nieuwe e-mailadres"
+        "Nieuwe e-mail"
       ]
     },
     "Apps dropdown": {
@@ -1156,7 +1156,7 @@
     },
     "Auto import invitations setting": {
       "Add to calendar and mark as pending": [
-        "Voeg toe aan uw agenda en markeer als wachtend"
+        "Voeg toe aan uw agenda en markeer als in afwachting"
       ]
     },
     "Autoresponse": {
@@ -6718,7 +6718,7 @@
         "U exporteert best een back-up van deze sleutel voor het geval u de gegevens die het versleutelde wilt herstellen."
       ],
       "You still need to reply to invitations for the host to see your response.": [
-        "U moet nog steeds reageren op uitnodigingen om de host uw reactie te laten zien."
+        "U moet nog steeds reageren op uitnodigingen om de organisator uw reactie te laten zien."
       ],
       "You will lose access to ${ vpnPlanNameShort } servers and features on this date.": [
         "U verliest toegang tot ${ vpnPlanNameShort }-servers en functies op deze datum."
@@ -8696,9 +8696,6 @@
       "From ${ price }": [
         "Vanaf ${ price }"
       ],
-      "From ${ price } per user": [
-        "Vanaf ${ price } per gebruiker"
-      ],
       "Keep my ${ currentPlanName } account": [
         "Behoud mijn ${ currentPlanName }-account"
       ],
@@ -8748,16 +8745,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Upgraden naar ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: attribute": {
-      "Get ${ connections } high-speed VPN connection": [
-        "Gebruik ${ connections } supersnelle VPN-verbinding",
-        "Gebruik ${ connections } supersnelle VPN-verbindingen"
-      ],
-      "Get ${ connections } high-speed VPN connection per user": [
-        "Gebruik ${ connections } supersnelle VPN-verbinding per gebruiker",
-        "Gebruik ${ connections } supersnelle VPN-verbindingen per gebruiker"
       ]
     },
     "new_plans: feature": {
@@ -9095,23 +9082,11 @@
       ]
     },
     "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Maak privacy uw standaard voor back-ups, opslag, delen en herstel van bestanden."
-      ],
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "Anders zal de toegang tot uw account worden beperkt en wordt uw account uiteindelijk uitgeschakeld."
       ],
       "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
         "Om ${ MAIL_APP_NAME } te blijven gebruiken met premium functies, kiest u uw abonnement en betaalwijze."
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "Upgrade naar het zakelijke pakket met toegang tot alle premium ${ BRAND_NAME }-services."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "Upgrade naar het ultieme privacypakket met toegang tot alle premium ${ BRAND_NAME }-services."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Uw proefperiode eindigt op ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: info": {
@@ -9240,12 +9215,6 @@
       ]
     },
     "new_plans: Title": {
-      "${ mailPlanName } Trial": [
-        "Proefversie van ${ mailPlanName }"
-      ],
-      "Upgrade to ${ planName }": [
-        "Upgraden naar ${ planName }"
-      ],
       "Your account's usage": [
         "Verbruik van uw account"
       ]
@@ -9447,12 +9416,6 @@
       ]
     },
     "new_plans: Upsell attribute": {
-      "${ storageSize } total storage": [
-        "${ storageSize } opslagruimte"
-      ],
-      "10 email addresses/aliases": [
-        "10 e-mailadressen/aliassen"
-      ],
       "Access advanced VPN features": [
         "Gebruik geavanceerde VPN-functies"
       ],
@@ -9462,33 +9425,8 @@
       "Boost your storage space to ${ bundleStorage } total": [
         "Verhoog uw opslagruimte tot ${ bundleStorage }"
       ],
-      "Boost your storage space to ${ businessStorage } per user": [
-        "Breid uw opslagruimte uit naar ${ businessStorage } per gebruiker"
-      ],
       "Cover more ground with support for 10 custom email domains": [
         "Doe meer met ondersteuning voor 10 aangepaste e-maildomeinen"
-      ],
-      "Create up to ${ MAX_CALENDARS_PAID } calendar": [
-        "Maak tot ${ MAX_CALENDARS_PAID } agenda",
-        "Maak tot ${ MAX_CALENDARS_PAID } agenda's"
-      ],
-      "Everything in ${ vpnPlanName }": [
-        "Alles van ${ vpnPlanName }"
-      ],
-      "Get 5 additional email addresses per user": [
-        "Gebruik 5 aanvullende e-mailadressen per gebruiker"
-      ],
-      "Priority support": [
-        "Prioriteitsondersteuning"
-      ],
-      "Support for 1 custom email domain": [
-        "Ondersteuning voor 1 aangepast e-maildomein"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Onbeperkt aantal mappen, labels en filters"
-      ],
-      "Unlimited messages": [
-        "Onbeperkt aantal berichten"
       ]
     },
     "Notification": {
@@ -11807,7 +11745,7 @@
         "Mijn adressen"
       ],
       "My calendars": [
-        "Mijn agenda"
+        "Mijn agenda's"
       ],
       "Network error": [
         "Netwerkfout"
@@ -12521,6 +12459,61 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } in ${ numberOfCountries } land",
         "${ numberOfServers } in ${ numberOfCountries } landen"
+      ]
+    },
+    "vpn_2step: billing": {
+      "${ billedText }, renews on ${ formattedEndTime }": [
+        "${ billedText }, verlengt op ${ formattedEndTime }"
+      ],
+      "Billed every 15 months": [
+        "Wordt om de 15 maanden gefactureerd"
+      ],
+      "Billed every 2 years": [
+        "Wordt om de 2 jaar gefactureerd"
+      ],
+      "Billed every 30 months": [
+        "Wordt om de 30 maanden gefactureerd"
+      ],
+      "Billed monthly": [
+        "Maandelijks gefactureerd"
+      ],
+      "Billed yearly": [
+        "Jaarlijks gefactureerd"
+      ]
+    },
+    "vpn_2step: discount": {
+      "1-year": [
+        "1-jarig"
+      ],
+      "2-year": [
+        "2-jarig"
+      ],
+      "Get ${ discount } off with a ${ billingCycle } subscription": [
+        "Krijg ${ discount } korting met een ${ billingCycle } abonnement"
+      ],
+      "monthly": [
+        "maandelijks"
+      ]
+    },
+    "vpn_2step: feature": {
+      "Advanced VPN customizations": [
+        "Geavanceerde VPN-aanpassingen"
+      ],
+      "No ads": [
+        "Geen advertenties"
+      ]
+    },
+    "vpn_2step: info": {
+      "Try ${ upsellPlanName } risk-free": [
+        "Probeer risicoloos ${ upsellPlanName }"
+      ],
+      "Your ${ selected } plan": [
+        "Je ${ selected }-abonnement"
+      ]
+    },
+    "vpn_2step: tooltip": {
+      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, Double hop, and more.": [
+        "Toegang tot Secure Core-servers, snelle P2P/BitTorrent-downloads, Tor over VPN, Double hop en meer."
       ]
     },
     "Warning": {

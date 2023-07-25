@@ -17,6 +17,9 @@
       "Add new item": [
         "Додати новий елемент"
       ],
+      "Advanced": [
+        "Розширені"
+      ],
       "Advanced options": [
         "Додаткові параметри"
       ],
@@ -140,6 +143,9 @@
       "Generate password": [
         "Згенерувати пароль"
       ],
+      "Generated password": [
+        "Згенеровано пароль"
+      ],
       "Get mobile apps": [
         "Отримати мобільні застосунки"
       ],
@@ -163,6 +169,12 @@
       ],
       "Learn more": [
         "Докладніше"
+      ],
+      "Lock extension": [
+        "Блокування розширення"
+      ],
+      "Manually sync your data": [
+        "Синхронізація даних вручну"
       ],
       "More options": [
         "Додаткові параметри"
@@ -284,11 +296,11 @@
       ]
     },
     "Error": {
-      "${ PASS_APP_NAME } export file could not be parsed. ${ errorDetail }": [
-        "Не вдалося проаналізувати файл експорту ${ PASS_APP_NAME }. ${ errorDetail }"
+      "${ provider } file could not be parsed. ${ errorDetail }": [
+        "Не вдалося проаналізувати файл ${ provider }. ${ errorDetail }"
       ],
-      "1Password export file could not be parsed. ${ errorDetail }": [
-        "Не вдалося проаналізувати файл експорту 1Password. ${ errorDetail }"
+      "Alias options could not be resolved": [
+        "Не вдалося вирішити параметри псевдоніму"
       ],
       "Authentication error": [
         "Помилка автентифікації"
@@ -299,14 +311,8 @@
       "Auto-lock could not be disabled": [
         "Не вдалося вимкнути автоблокування"
       ],
-      "Bitwarden export file could not be parsed. ${ errorDetail }": [
-        "Не вдалося проаналізувати файл експорту Bitwarden. ${ errorDetail }"
-      ],
-      "Cannot create alias.": [
-        "Не вдалося створити псевдонім."
-      ],
-      "Chrome export file could not be parsed. ${ errorDetail }": [
-        "Не вдалося проаналізувати файл експорту Chrome. ${ errorDetail }"
+      "Cannot create alias (${ error }).": [
+        "Неможливо створити псевдонім (${ error })."
       ],
       "Could not open created vault": [
         "Не вдалося відкрити створене сховище"
@@ -319,9 +325,6 @@
       ],
       "CSV file is missing expected headers: ${ missingHeaders }": [
         "Файл CSV не містить необхідних заголовків: ${ missingHeaders }"
-      ],
-      "Dashlane export file could not be parsed. ${ errorDetail }": [
-        "Не вдалося проаналізувати файл експорту Dashlane. ${ errorDetail }"
       ],
       "Decrypting your ${ PASS_APP_NAME } export file failed. ${ errorDetail }": [
         "Не вдалося розшифрувати файл експорту ${ PASS_APP_NAME }. ${ errorDetail }"
@@ -356,9 +359,6 @@
       "File could not be parsed": [
         "Не вдалося проаналізувати файл"
       ],
-      "Firefox export file could not be parsed. ${ errorDetail }": [
-        "Не вдалося проаналізувати файл експорту Firefox. ${ errorDetail }"
-      ],
       "Import failed for vault \"${ vaultData.name }\" : ${ description }": [
         "Не вдалося імпортувати для сховища \"${ vaultData.name }\" : ${ description }"
       ],
@@ -373,15 +373,6 @@
       ],
       "Item creation failed": [
         "Не вдалося створити елемент"
-      ],
-      "KeePass export file could not be parsed. ${ errorDetail }": [
-        "Не вдалося проаналізувати файл експорту KeePass. ${ errorDetail }"
-      ],
-      "Keeper export file could not be parsed. ${ errorDetail }": [
-        "Не вдалося проаналізувати файл експорту Keeper. ${ errorDetail }"
-      ],
-      "LastPass export file could not be parsed. ${ errorDetail }": [
-        "Не вдалося проаналізувати файл експорту LastPass. ${ errorDetail }"
       ],
       "LastPass will export a corrupted CSV file if any of your item fields contain unexpected commas, quotes or multiple lines": [
         "LastPass експортує пошкоджений файл CSV, якщо будь-яке з полів вашого елемента містить неочікувані коми, лапки або кілька рядків"
@@ -412,9 +403,6 @@
       ],
       "Restoring item failed": [
         "Не вдалося відновити елемент"
-      ],
-      "Safari export file could not be parsed. ${ errorDetail }": [
-        "Не вдалося проаналізувати файл експорту Safari. ${ errorDetail }"
       ],
       "Setting \"${ payload.name }\" as primary vault failed": [
         "Не вдалося налаштувати \"${ payload.name }\" основним сховищем"

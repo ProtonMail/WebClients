@@ -134,12 +134,6 @@
       ]
     },
     "Error": {
-      "${ PASS_APP_NAME } export file could not be parsed. ${ errorDetail }": [
-        "Файл экспорта ${ PASS_APP_NAME } не может быть обработан. ${ errorDetail }"
-      ],
-      "1Password export file could not be parsed. ${ errorDetail }": [
-        "Файл экспорта 1Password не может быть обработан. ${ errorDetail }"
-      ],
       "Authentication error": [
         "Ошибка аутентификации"
       ],
@@ -148,15 +142,6 @@
       ],
       "Auto-lock could not be disabled": [
         "Автоблокировка не может быть выключена"
-      ],
-      "Bitwarden export file could not be parsed. ${ errorDetail }": [
-        "Файл экспорта Bitwarden не может быть обработан. ${ errorDetail }"
-      ],
-      "Cannot create alias.": [
-        "Не удается создать псевдонимы."
-      ],
-      "Chrome export file could not be parsed. ${ errorDetail }": [
-        "Файл экспорта Chome не может быть обработан. ${ errorDetail }"
       ],
       "Could not open created vault": [
         "Не могу открыть созданное хранилище"
@@ -169,9 +154,6 @@
       ],
       "CSV file is missing expected headers: ${ missingHeaders }": [
         "В файле CSV отсутствуют ожидаемые заголовки: ${ missingHeaders }"
-      ],
-      "Dashlane export file could not be parsed. ${ errorDetail }": [
-        "Файл экспорта Dashlane не может быть обработан. ${ errorDetail }"
       ],
       "Decrypting your ${ PASS_APP_NAME } export file failed. ${ errorDetail }": [
         "Сбой при расшифровке файл экспорта ${ PASS_APP_NAME }. ${ errorDetail }"
@@ -206,9 +188,6 @@
       "File could not be parsed": [
         "Файл не может быть обработан"
       ],
-      "Firefox export file could not be parsed. ${ errorDetail }": [
-        "Файл экспорта Firefox не может быть обработан. ${ errorDetail }"
-      ],
       "Importing items failed": [
         "Сбой импорта элементов"
       ],
@@ -220,15 +199,6 @@
       ],
       "Item creation failed": [
         "Ошибка при создании элемента"
-      ],
-      "KeePass export file could not be parsed. ${ errorDetail }": [
-        "Файл экспорта KeePass не может быть обработан. ${ errorDetail }"
-      ],
-      "Keeper export file could not be parsed. ${ errorDetail }": [
-        "Файл экспорта Keeper не может быть обработан. ${ errorDetail }"
-      ],
-      "LastPass export file could not be parsed. ${ errorDetail }": [
-        "Файл экспорта LastPass не может быть обработан. ${ errorDetail }"
       ],
       "LastPass will export a corrupted CSV file if any of your item fields contain unexpected commas, quotes or multiple lines": [
         "LastPass экспортирует поврежденный CSV-файл, если любое поле содержит неожиданные запятые, кавычки или несколько строк"
@@ -259,9 +229,6 @@
       ],
       "Restoring item failed": [
         "Ошибка при восстановлении элемента"
-      ],
-      "Safari export file could not be parsed. ${ errorDetail }": [
-        "Файл экспорта Safari не может быть обработан. ${ errorDetail }"
       ],
       "Setting \"${ payload.name }\" as primary vault failed": [
         "Сбой при установке хранилища \"${ payload.name }\" как главного"
@@ -399,6 +366,8 @@
       ],
       "${ totalItems } item": [
         "${ totalItems } элемент",
+        "${ totalItems } элемента",
+        "${ totalItems } элементов",
         "${ totalItems } элементов"
       ],
       "${ trialDaysLeft } day left": [

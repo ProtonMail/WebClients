@@ -17,6 +17,9 @@
       "Add new item": [
         "Afegir un nou element"
       ],
+      "Advanced": [
+        "Avançat"
+      ],
       "Advanced options": [
         "Opcions avançades"
       ],
@@ -39,7 +42,7 @@
         "Neteja"
       ],
       "Clear search": [
-        "Neteja la cerca"
+        "Esborra la cerca"
       ],
       "Close": [
         "Tanca"
@@ -55,6 +58,9 @@
       ],
       "Continue without pinning": [
         "Continua sense fixar"
+      ],
+      "Copy & fill in": [
+        "Copia i ompliu"
       ],
       "Copy and close": [
         "Copiar i tancar"
@@ -137,6 +143,9 @@
       "Generate password": [
         "Genera la contrasenya"
       ],
+      "Generated password": [
+        "Contrasenya generada"
+      ],
       "Get mobile apps": [
         "Baixeu l'aplicació mòbil"
       ],
@@ -150,7 +159,7 @@
         "Com exporto les meves dades de ${ PROVIDER_INFO_MAP[form.values.provider].title }?"
       ],
       "Import": [
-        "Importar"
+        "Importa"
       ],
       "Import your passwords": [
         "Importeu les vostres contrasenyes"
@@ -160,6 +169,12 @@
       ],
       "Learn more": [
         "Més informació"
+      ],
+      "Lock extension": [
+        "Bloqueja l'extensió"
+      ],
+      "Manually sync your data": [
+        "Sincronitzeu les vostres dades manualment"
       ],
       "More options": [
         "Més opcions"
@@ -281,11 +296,11 @@
       ]
     },
     "Error": {
-      "${ PASS_APP_NAME } export file could not be parsed. ${ errorDetail }": [
-        "No s'ha pogut analitzar el fitxer d'exportació de ${ PASS_APP_NAME }. ${ errorDetail }"
+      "${ provider } file could not be parsed. ${ errorDetail }": [
+        "No s'ha pogut analitzar el fitxer de ${ provider }. ${ errorDetail }"
       ],
-      "1Password export file could not be parsed. ${ errorDetail }": [
-        "No s'ha pogut analitzar el fitxer d'exportació del 1Password . ${ errorDetail }"
+      "Alias options could not be resolved": [
+        "Les opcions d'àlies no s'han pogut resoldre."
       ],
       "Authentication error": [
         "Error d'autenticació"
@@ -296,14 +311,8 @@
       "Auto-lock could not be disabled": [
         "No s'ha pogut desactivar el bloqueig automàtic"
       ],
-      "Bitwarden export file could not be parsed. ${ errorDetail }": [
-        "No s'ha pogut analitzar el fitxer d'exportació del Bitwarden. ${ errorDetail }"
-      ],
-      "Cannot create alias.": [
-        "No es pot crear l'àlies."
-      ],
-      "Chrome export file could not be parsed. ${ errorDetail }": [
-        "No s'ha pogut analitzar el fitxer d'exportació del Chrome. ${ errorDetail }"
+      "Cannot create alias (${ error }).": [
+        "No es pot crear l'àlies (${ error })."
       ],
       "Could not open created vault": [
         "No s'ha pogut obrir la caixa forta creada"
@@ -316,9 +325,6 @@
       ],
       "CSV file is missing expected headers: ${ missingHeaders }": [
         "Al fitxer CSV li falten les capçaleres esperades: ${ missingHeaders }"
-      ],
-      "Dashlane export file could not be parsed. ${ errorDetail }": [
-        "No s'ha pogut analitzar el fitxer d'exportació del Dashlane. ${ errorDetail }"
       ],
       "Decrypting your ${ PASS_APP_NAME } export file failed. ${ errorDetail }": [
         "No s'ha pogut desxifrar el fitxer d'exportació de ${ PASS_APP_NAME }. ${ errorDetail }"
@@ -351,11 +357,11 @@
       "File could not be parsed": [
         "No s'ha pogut analitzar el fitxer"
       ],
-      "Firefox export file could not be parsed. ${ errorDetail }": [
-        "No s'ha pogut analitzar el fitxer d'exportació del Firefox. ${ errorDetail }"
+      "Import failed for vault \"${ vaultData.name }\" : ${ description }": [
+        "No s'ha pogut importar la caixa forta \"${ vaultData.name }\": ${ description }"
       ],
       "Importing items failed": [
-        "Ha fallat la importació dels elements"
+        "No s'ha pogut importar els elements."
       ],
       "Invalid password manager": [
         "Gestor de contrasenya invàlid"
@@ -365,15 +371,6 @@
       ],
       "Item creation failed": [
         "No s'ha pogut crear l'element"
-      ],
-      "KeePass export file could not be parsed. ${ errorDetail }": [
-        "No s'ha pogut analitzar el fitxer d'exportació del KeePass. ${ errorDetail }"
-      ],
-      "Keeper export file could not be parsed. ${ errorDetail }": [
-        "No s'ha pogut analitzar el fitxer d'exportació del Keeper. ${ errorDetail }"
-      ],
-      "LastPass export file could not be parsed. ${ errorDetail }": [
-        "No s'ha pogut analitzar el fitxer d'exportació del LastPass. ${ errorDetail }"
       ],
       "LastPass will export a corrupted CSV file if any of your item fields contain unexpected commas, quotes or multiple lines": [
         "LastPass exportarà un fitxer CSV corromput si qualsevol dels camps de l'element conté comes, cometes o línies múltiples inesperades"
@@ -397,28 +394,25 @@
         "S'ha esgotat el temps d'espera"
       ],
       "Requesting alias details failed": [
-        "Ha fallat la sol·licitud dels detalls d'àlies"
+        "No s'han pogut sol·licitar els detalls de l'àlies."
       ],
       "Requesting alias options failed": [
-        "Ha fallat la sol·licitud de les opcions d'àlies"
+        "No s'han pogut sol·licitar les opcions d'àlies."
       ],
       "Restoring item failed": [
         "No s'ha pogut restaurar l'element"
-      ],
-      "Safari export file could not be parsed. ${ errorDetail }": [
-        "No s'ha pogut analitzar el fitxer d'exportació del Safari. ${ errorDetail }"
       ],
       "Setting \"${ payload.name }\" as primary vault failed": [
         "No s'ha pogut establir \"${ payload.name }\" com a caixa porta primària"
       ],
       "Settings update failed": [
-        "No s'han pogut actualitzar les preferències"
+        "No s'han pogut actualitzar les preferències."
       ],
       "Some vaults are no longer accessible due to a password reset. Reactivate your account keys in order to regain access. ${ reactivateLink }": [
         "Algunes caixes fortes ja no són accessibles a causa d'un restabliment de contrasenya. Reactiveu les claus del vostre compte per recuperar-hi l'accés. ${ reactivateLink }"
       ],
       "Something went wrong": [
-        "Alguna cosa ha anat malament"
+        "S'ha produït un error."
       ],
       "Something went wrong. Please reload the ${ PASS_APP_NAME } extension. This issue has been logged": [
         "Alguna cosa ha anat malament. Torneu a carregar l'extensió ${ PASS_APP_NAME }. Aquest problema ha estat registrat"
@@ -456,6 +450,9 @@
       "Vault \"${ payload.content.name }\" creation failed": [
         "No s'ha pogut crear la caixa forta \"${ payload.content.name }\""
       ],
+      "Vault \"${ vaultData.name }\" could not be created": [
+        "No s'ha pogut crear la caixa forta \"${ vaultData.name }\"."
+      ],
       "Vault name does not match": [
         "El nom de la caixa forta no coincideix"
       ],
@@ -468,7 +465,7 @@
         "Refresqueu la pàgina o proveu de nou més tard."
       ],
       "Something went wrong": [
-        "S'ha produït un error"
+        "Alguna cosa ha anat malament."
       ]
     },
     "file size format": {
@@ -505,6 +502,9 @@
       ]
     },
     "Info": {
+      " Upgrade to a paid plan to create multiple vaults.": [
+        "Millora a un pla de pagament per crear diverses caixes fortes."
+      ],
       "\"${ payload.item.data.metadata.name }\" item was dismissed": [
         "S'ha descartat l'element \"${ payload.item.data.metadata.name }\""
       ],
@@ -604,7 +604,7 @@
         "Introduïu el codi de verificació. Dígit ${ digit }."
       ],
       "Enter your pin code": [
-        "Introduïu el vostre codi PIN"
+        "Introduïu el codi PIN"
       ],
       "Enter your PIN code": [
         "Introduïu el codi PIN"
@@ -662,7 +662,7 @@
         "Per a migrar les vostres dades a ${ PASS_APP_NAME } des d'un altre gestor de contrasenyes, exporteu les contrasenyes i importeu-les utilitzant el formulari següent. Un cop s'hagin importat tots els vostres elements, elimineu el fitxer exportat anteriorment."
       ],
       "Integrated 2FA authenticator": [
-        "Autenticador 2FA integrat"
+        "Autenticador A2F integrat"
       ],
       "Internet connection lost": [
         "S'ha perdut la connexió a Internet"
@@ -752,6 +752,9 @@
       "Save login": [
         "Desa l'inici de sessió"
       ],
+      "Select the destination vault for each imported vault.": [
+        "Seleccioneu la caixa forte de destinació per caixa forte importada."
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Servidors inaccessibles. Torneu a provar-ho en uns minuts"
       ],
@@ -822,6 +825,9 @@
       "Vault \"${ share.content.name }\" was disabled": [
         "S'ha desactivat la caixa forta \"${ share.content.name }\""
       ],
+      "Verification code": [
+        "Codi de verificació"
+      ],
       "You are about to create:": [
         "Esteu a punt de crear:"
       ],
@@ -838,6 +844,9 @@
       "You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.": [
         "Heu assolit el límit d'àlies que podeu crear. Creeu un nombre il·limitat d'àlies quan milloreu la vostra subscripció."
       ],
+      "You have reached the limit of vaults you can create.": [
+        "Heu arribat al límit de caixes fortes que podeu crear."
+      ],
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "Heu assolit la longitud màxima permesa de ${ maxLength } caràcters."
       ],
@@ -851,7 +860,7 @@
         "La vostra sessió de ${ PASS_APP_NAME } està bloquejada"
       ],
       "Your files will be encrypted and then saved": [
-        "Es xifraran els fitxers i després es desaran"
+        "Es xifraran els fitxers i després es desaran."
       ]
     },
     "Label": {
@@ -1167,7 +1176,7 @@
         "Sufix"
       ],
       "Support": [
-        "Suport"
+        "Assistència"
       ],
       "Text": [
         "Text"
@@ -1545,6 +1554,9 @@
       "Vault name is required": [
         "Es requereix el nom de la caixa forta"
       ],
+      "You cannot create more vaults than your subscription allows.": [
+        "No podeu crear més caixes fortes del que permet la vostra subscripció."
+      ],
       "You have unsaved changes, are you sure you want to discard them?": [
         "Hi ha modificacions que no s'han desat. Segur que voleu descartar-les?"
       ],
@@ -1559,6 +1571,9 @@
       ],
       "Your session was locked due to inactivity": [
         "S'ha bloquejat la vostra sessió per inactivitat"
+      ],
+      "Your subscription does not allow you to create multiple vaults. All items will be imported to your primary vault. To import into multiple vaults upgrade your subscription.": [
+        "La vostra subscripció no us permet crear diverses caixes fortes. Tots els elements s'importaran a la vostra caixa forta principal. Per a importar a diverses caixes fortes milloreu la vostra subscripció."
       ]
     }
   }

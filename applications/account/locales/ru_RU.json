@@ -6030,6 +6030,9 @@
       "Only you can see the labels.": [
         "Только вы можете видеть ярлыки."
       ],
+      "Open source": [
+        "Открытый исходный код"
+      ],
       "Or select a particular server:": [
         "Или выберите определенный сервер:"
       ],
@@ -6689,6 +6692,9 @@
       ],
       "We securely store recovery information on your trusted device to prevent you from losing your data": [
         "Мы надежно храним информацию о восстановлении на вашем доверенном устройстве, чтобы вы не потеряли свои данные"
+      ],
+      "We use 3-D Secure to protect your payments": [
+        "Мы используем 3-D Secure для защиты ваших платежей"
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Для завершения транзакции мы откроем новую вкладку браузера и перенаправим вас на сайт PayPal. Если вы используете блокировщики всплывающих окон, то отключите их перед тем, как продолжить."
@@ -7515,6 +7521,9 @@
       "Awarded": [
         "Присуждено"
       ],
+      "Billing address": [
+        "Адрес для выставления счета"
+      ],
       "Billing cycle": [
         "Платежный цикл"
       ],
@@ -7547,6 +7556,9 @@
       ],
       "Calendars": [
         "Календари"
+      ],
+      "Card details": [
+        "Данные карты"
       ],
       "Card holder": [
         "Владелец карты"
@@ -8876,9 +8888,6 @@
       "From ${ price }": [
         "От: ${ price }"
       ],
-      "From ${ price } per user": [
-        "От ${ price } за пользователя"
-      ],
       "Keep my ${ currentPlanName } account": [
         "Сохранить мой аккаунт ${ currentPlanName }"
       ],
@@ -8928,20 +8937,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Улучшить до ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: attribute": {
-      "Get ${ connections } high-speed VPN connection": [
-        "Получите ${ connections } высокоскоростное подключение к VPN",
-        "Получите ${ connections } высокоскоростных подключения к VPN",
-        "Получите ${ connections } высокоскоростных подключений к VPN",
-        "Получите ${ connections } высокоскоростных подключений к VPN"
-      ],
-      "Get ${ connections } high-speed VPN connection per user": [
-        "Получите ${ connections } высокоскоростное подключение к VPN на пользователя",
-        "Получите ${ connections } высокоскоростных подключения к VPN на пользователя",
-        "Получите ${ connections } высокоскоростных подключений к VPN на пользователя",
-        "Получите ${ connections } высокоскоростных подключений к VPN на пользователя"
       ]
     },
     "new_plans: feature": {
@@ -9305,23 +9300,11 @@
       ]
     },
     "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Обеспечьте конфиденциальность по умолчанию для резервного копирования, хранения, обмена и поиска файлов."
-      ],
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "В противном случае доступ к вашему аккаунту будет ограничен, и в конечном итоге отключен."
       ],
       "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
         "Чтобы продолжить использование ${ MAIL_APP_NAME } с платными функциями, выберите подписку и способ оплаты."
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "Перейдите на пакет для бизнеса с доступом ко всем платным услугам ${ BRAND_NAME }."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "Улучшите пакет для обеспечения максимальной конфиденциальности и получите доступ ко всем платным услугам ${ BRAND_NAME }."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Ваш пробный период заканчивается ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: info": {
@@ -9452,12 +9435,6 @@
       ]
     },
     "new_plans: Title": {
-      "${ mailPlanName } Trial": [
-        "Пробная версия ${ mailPlanName }"
-      ],
-      "Upgrade to ${ planName }": [
-        "Улучшить до ${ planName }"
-      ],
       "Your account's usage": [
         "Использование вашего аккаунта"
       ]
@@ -9661,12 +9638,6 @@
       ]
     },
     "new_plans: Upsell attribute": {
-      "${ storageSize } total storage": [
-        "Общий объем хранилища: ${ storageSize }"
-      ],
-      "10 email addresses/aliases": [
-        "10 адресов электронной почты/алиасов"
-      ],
       "Access advanced VPN features": [
         "Получите доступ к расширенным функциям VPN"
       ],
@@ -9676,35 +9647,8 @@
       "Boost your storage space to ${ bundleStorage } total": [
         "Увеличьте объем хранилища в общей сложности до ${ bundleStorage }"
       ],
-      "Boost your storage space to ${ businessStorage } per user": [
-        "Увеличьте хранилище до ${ businessStorage } на пользователя"
-      ],
       "Cover more ground with support for 10 custom email domains": [
         "Расширьте возможности с поддержкой 10 пользовательских доменов электронной почты"
-      ],
-      "Create up to ${ MAX_CALENDARS_PAID } calendar": [
-        "Создайте до ${ MAX_CALENDARS_PAID } календаря",
-        "Создайте до ${ MAX_CALENDARS_PAID } календарей",
-        "Создайте до ${ MAX_CALENDARS_PAID } календарей",
-        "Создайте до ${ MAX_CALENDARS_PAID } календарей"
-      ],
-      "Everything in ${ vpnPlanName }": [
-        "Все, что входит в ${ vpnPlanName }"
-      ],
-      "Get 5 additional email addresses per user": [
-        "Получите 5 дополнительных адресов электронной почты на пользователя"
-      ],
-      "Priority support": [
-        "Приоритетная поддержка"
-      ],
-      "Support for 1 custom email domain": [
-        "Поддержка 1 пользовательского домена электронной почты"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Неограниченное количество папок, ярлыков и фильтров"
-      ],
-      "Unlimited messages": [
-        "Неограниченное количество сообщений"
       ]
     },
     "Notification": {
@@ -12883,6 +12827,45 @@
         "${ numberOfServers } в ${ numberOfCountries } странах",
         "${ numberOfServers } в ${ numberOfCountries } странах",
         "${ numberOfServers } в ${ numberOfCountries } странах"
+      ]
+    },
+    "vpn_2step: billing": {
+      "${ billedText }, renews on ${ formattedEndTime }": [
+        "${ billedText }, будет пролонгирован ${ formattedEndTime }"
+      ],
+      "Billed every 15 months": [
+        "Оплата раз в 15 месяцев"
+      ],
+      "Billed every 2 years": [
+        "Оплата каждые 2 года"
+      ],
+      "Billed every 30 months": [
+        "Оплата раз в 30 месяцев"
+      ],
+      "Billed monthly": [
+        "Ежемесячная оплата"
+      ],
+      "Billed yearly": [
+        "Ежегодная оплата"
+      ]
+    },
+    "vpn_2step: discount": {
+      "1-year": [
+        "1-летний"
+      ],
+      "2-year": [
+        "2-летний"
+      ],
+      "monthly": [
+        "ежемесячной"
+      ]
+    },
+    "vpn_2step: info": {
+      "Try ${ upsellPlanName } risk-free": [
+        "Испытайте ${ upsellPlanName } без риска"
+      ],
+      "Your ${ selected } plan": [
+        "Ваш тариф ${ selected }"
       ]
     },
     "Warning": {
