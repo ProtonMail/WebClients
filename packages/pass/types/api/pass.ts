@@ -134,6 +134,8 @@ export type InviteCreateRequest = {
     Email: string;
     /* Invite target type. 1 = Vault, 2 = Item */
     TargetType: number;
+    /* ShareRoleID for this invite. The values are in the top level Pass docs. */
+    ShareRoleID?: string;
     /* Invite encrypted item ID (only in case the invite is of type Item) */
     ItemID?: string | null;
     /* Expiration time for the share */
@@ -141,8 +143,8 @@ export type InviteCreateRequest = {
 };
 
 export type ShareUpdateRequest = {
-    /* Permissions to set for this share */
-    Permission?: number | null;
+    /* ShareRoleID to apply to this share */
+    ShareRoleID?: string | null;
     /* Expiration time to set for this share */
     ExpireTime?: number | null;
 };
@@ -223,7 +225,7 @@ export type ItemRevisionListResponse = {
 };
 
 export type InvitesGetResponse = {
-    /* Invites */
+    /* UserInvites */
     Invites: InviteDataForUser[];
 };
 
@@ -322,12 +324,16 @@ export type ShareGetResponse = {
     AddressID: string;
     /* Whether this vault is primary for this user */
     Primary: boolean;
+    /* Wether the user is owner of this vault */
+    Owner?: boolean;
     /* Type of share. 1 for vault, 2 for item */
     TargetType: number;
     /* TargetID for this share */
     TargetID: string;
     /* Permissions for this share */
     Permission: number;
+    /* ShareRoleID for this share. The values are in the top level Pass docs. */
+    ShareRoleID?: string;
     /* Base64 encoded content of the share. Only shown if it a vault share */
     Content?: string | null;
     /* Key rotation that should be used to open the content */
@@ -341,7 +347,7 @@ export type ShareGetResponse = {
 };
 
 export type InvitesForVaultGetResponse = {
-    /* Invites */
+    /* ShareInvites */
     Invites: VaultInviteData[];
 };
 
@@ -363,8 +369,10 @@ export type ActiveShareGetResponse = {
     TargetType: number;
     /* ID of the top object that this share gives access to */
     TargetID: string;
-    /* Permissions this share has */
-    Permission: number;
+    /* Permissions this share has. Only admins can see it */
+    Permission?: number | null;
+    /* ShareRoleID this share has. Only admins can see it */
+    ShareRoleID?: string | null;
     /* Expiration time if set */
     ExpireTime?: number | null;
     /* Creation time of this share */
@@ -372,6 +380,11 @@ export type ActiveShareGetResponse = {
 };
 
 export type UserAccessGetResponse = { Plan: PassPlanResponse };
+
+export type UserAccessCheckGetResponse = {
+    /* When this user started using Pass */
+    ActivationTime: number;
+};
 
 export type GetMissingAliasResponse = {
     /* MissingAlias */
@@ -463,8 +476,8 @@ export type AliasMailboxResponse2 = {
 };
 
 export type InviteDataForUser = {
-    /* InviteID */
-    InviteID: string;
+    /* InviteToken */
+    InviteToken: string;
     /* Number of reminders sent */
     RemindersSent: number;
     /* Type of target for this invite */
@@ -474,9 +487,10 @@ export type InviteDataForUser = {
     /* Email of the inviter */
     InviterEmail: string;
     /* Invited email */
-    InvitedEmail?: string;
-    /* Keys for the invite */
+    InvitedEmail: string;
+    /* Share keys encrypted for the address key of the invitee and signed with the user keys of the inviter */
     Keys: KeyRotationKeyPair[];
+    VaultData?: InviteVaultDataForUser;
     /* Creation time for the invite */
     CreateTime: number;
 };
@@ -565,6 +579,19 @@ export type MissingAliasDto = {
     Note?: string;
 };
 
+export type InviteVaultDataForUser = {
+    /* Base64 encoded content of the share. Only shown if it a vault share */
+    Content: string;
+    /* Key rotation that should be used to open the content */
+    ContentKeyRotation: number;
+    /* Content format version */
+    ContentFormatVersion: number;
+    /* Number of members that have access to this vault */
+    MemberCount?: number;
+    /* Number of items in this vault */
+    ItemCount?: number;
+};
+
 export enum PlanType {
     free = 'free',
     plus = 'plus',
@@ -607,6 +634,10 @@ export type ApiResponse<Path extends string, Method extends ApiMethod> = Path ex
     : Path extends `pass/v1/user/missing_alias`
     ? Method extends `get`
         ? GetMissingAliasResponse & { Code?: ResponseCodeSuccess }
+        : never
+    : Path extends `pass/v1/user/access/check`
+    ? Method extends `get`
+        ? { Code?: ResponseCodeSuccess; Data?: undefined | null }
         : never
     : Path extends `pass/v1/user/access`
     ? Method extends `get`
@@ -703,7 +734,7 @@ export type ApiResponse<Path extends string, Method extends ApiMethod> = Path ex
         : never
     : Path extends `pass/v1/share/${string}/invite`
     ? Method extends `get`
-        ? { Code?: ResponseCodeSuccess; Shares?: InvitesForVaultGetResponse }
+        ? InvitesForVaultGetResponse & { Code?: ResponseCodeSuccess }
         : Method extends `post`
         ? { Code?: ResponseCodeSuccess }
         : never
@@ -749,7 +780,7 @@ export type ApiResponse<Path extends string, Method extends ApiMethod> = Path ex
         : never
     : Path extends `pass/v1/invite`
     ? Method extends `get`
-        ? { Code?: ResponseCodeSuccess; ''?: InvitesGetResponse }
+        ? InvitesGetResponse & { Code?: ResponseCodeSuccess }
         : never
     : any;
 
@@ -786,6 +817,10 @@ export type ApiRequest<Path extends string, Method extends ApiMethod> = Path ext
         ? UserSessionUnlockRequest
         : never
     : Path extends `pass/v1/user/missing_alias`
+    ? Method extends `get`
+        ? never
+        : never
+    : Path extends `pass/v1/user/access/check`
     ? Method extends `get`
         ? never
         : never
