@@ -59,6 +59,9 @@
       "Add address": [
         "添加地址"
       ],
+      "Add address or domain": [
+        "添加邮箱地址或域名"
+      ],
       "Add condition": [
         "添加条件"
       ],
@@ -103,6 +106,9 @@
       ],
       "Alignment": [
         "对齐方式"
+      ],
+      "Allow": [
+        "白名单"
       ],
       "Apply": [
         "应用"
@@ -742,6 +748,9 @@
       ],
       "Sign out of all accounts": [
         "退出所有账户"
+      ],
+      "Sign up for free": [
+        "免费注册"
       ],
       "Signing in": [
         "正在登录"
@@ -3123,6 +3132,9 @@
       "Trusted keys are not valid for sending": [
         "已信任的密钥对发送无效"
       ],
+      "Try again later": [
+        "请稍后再试"
+      ],
       "Try using only letters, numerals, and _.-": [
         "请使用英文字母、阿拉伯数字或 _ . - 符号"
       ],
@@ -3882,8 +3894,41 @@
       "Add a custom filter to automatically perform certain actions, like labeling or archiving messages.": [
         "定制筛选规则能自动帮您完成某些操作，例如给邮件加标签或将邮件存档。"
       ],
+      "Allow:": [
+        "白名单："
+      ],
+      "Block:": [
+        "黑名单："
+      ],
       "Search list": [
         "搜索名单"
+      ],
+      "Spam:": [
+        "垃圾邮件："
+      ],
+      "Take control over what lands in your inbox by creating the following lists:": [
+        "借助以下名单掌控邮件归类方式："
+      ],
+      "Take control over what lands in your organization members' inboxes by creating the following lists:": [
+        "借助以下名单掌控邮件归类方式："
+      ],
+      "These lists apply to all accounts in your organization. Members can create their own individual filters, but won't be able to override addresses or domains you blocked.": [
+        "这些名单对所有机构用户都有效，用户可以进一步创建自己的名单，但不能解除您对邮箱地址与域名的屏蔽。"
+      ],
+      "To ensure critical messages don't end up in spam and getting missed": [
+        "确保重要邮件不被识别为垃圾邮件而遗漏"
+      ],
+      "To prevent junk mail from clogging up inboxes": [
+        "避免垃圾邮件挤占收件箱"
+      ],
+      "To prevent junk mail from clogging up your inbox": [
+        "避免垃圾邮件挤占您的收件箱"
+      ],
+      "To stop phishing or suspicious emails from entering your email system": [
+        "彻底杜绝欺诈邮件和可疑邮件进入您的邮箱"
+      ],
+      "To stop phishing or suspicious emails from entering your organization's email system": [
+        "彻底杜绝欺诈邮件和可疑邮件进入机构邮箱"
       ]
     },
     "Font Face Default": {
@@ -3894,6 +3939,9 @@
     "Font face option": {
       "System default": [
         "跟随系统"
+      ],
+      "Theme font": [
+        "跟随配色"
       ]
     },
     "Font Size Default": {
@@ -3928,8 +3976,19 @@
       "(1-2 emails per month)": [
         "（每月 1 至 2 封邮件）"
       ],
+      "(2-4 emails per year)": [
+        "（每年 2 至 4 封邮件）"
+      ],
+      "(4-6 emails per year)": [
+        "（每年 4 至 6 封邮件）"
+      ],
       "(during your first month)": [
         "（账户注册首月）"
+      ]
+    },
+    "Get started checklist instructions": {
+      "Set up ${ strongText } from Gmail": [
+        "设置${ strongText } Gmail 邮件"
       ]
     },
     "Gmail forwarding": {
@@ -3983,6 +4042,12 @@
       "App version": [
         "程序版本"
       ],
+      "Checkout": [
+        "支付"
+      ],
+      "Create your account": [
+        "创建您的账户"
+      ],
       "Event": [
         "事件"
       ],
@@ -4009,6 +4074,9 @@
       ],
       "Permissions": [
         "权限"
+      ],
+      "Select your pricing plan": [
+        "选择适合您的账户等级"
       ],
       "Status": [
         "状态"
@@ -4439,6 +4507,9 @@
       "${ current } of ${ total }": [
         "${ current } / ${ total }"
       ],
+      "${ discountPercentage } forever": [
+        "终身享受 ${ discountPercentage } 折扣"
+      ],
       "${ emailAddress } is invalid": [
         "${ emailAddress } 无效"
       ],
@@ -4531,6 +4602,9 @@
       ],
       "3. You earn credits": [
         "3. 赢取奖励"
+      ],
+      "30-day money-back guarantee": [
+        "30 天内可退款"
       ],
       "30-day money-back guarantee.": [
         "30 天内可退款。"
@@ -4769,6 +4843,9 @@
       "Close this screen to exit.": [
         "关闭这个窗口以退出"
       ],
+      "Continue with ${ freeName }": [
+        "继续使用 ${ freeName }"
+      ],
       "Continuing will connect your ${ BRAND_NAME } Account to ${ name }.": [
         "继续操作将把您的 ${ BRAND_NAME } 账户与 ${ name } 连接。"
       ],
@@ -4976,6 +5053,12 @@
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "筛选规则对所有邮件都有效，既包括收到的，也包括发出的。每条规则包括名称、条件和操作三部分。"
       ],
+      "for choosing ${ product }": [
+        "感谢您选择 ${ product }"
+      ],
+      "For choosing ${ product }": [
+        "感谢您选择 ${ product }"
+      ],
       "For Visa, MasterCard and Discover, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
         "Visa、万事达卡和发现卡：卡片背面的三位数字。美国运通卡：卡片正面的四位数字。"
       ],
@@ -4997,6 +5080,9 @@
       "Generating a new recovery phrase will deactivate your old one.": [
         "新生成的恢复密语将取代旧的。"
       ],
+      "Get ${ upsellPlanName }": [
+        "开通 ${ upsellPlanName }"
+      ],
       "Get my ${ BRAND_NAME } address": [
         "注册 ${ BRAND_NAME } 地址"
       ],
@@ -5014,6 +5100,9 @@
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "若其他管理员更改了此密码，您需要向其询问新的机构密码。"
+      ],
+      "If it’s not right for you, we’ll refund you.": [
+        "若不满意可要求退款。"
       ],
       "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
         "若系统时区与当前配置时区不一致，则询问是否更改（每天最多一次）。"
@@ -5104,6 +5193,9 @@
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "将您的数据从${ importedEmailAddress } 导入到${ toEmail }"
+      ],
+      "Improve your ${ BRAND_NAME } experience by adapting the application to your needs.": [
+        "按需定制 ${ BRAND_NAME }，提升您的使用体验。"
       ],
       "Inherited from parent folder": [
         "与上层文件夹一致"
@@ -5204,6 +5296,9 @@
       "Loading...": [
         "加载中..."
       ],
+      "Logs include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
+        "试图使用您的 ${ BRAND_NAME } 账户登录任何 ${ BRAND_NAME_TWO } 产品的操作都会被记录。"
+      ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "请务必${ addARecoveryMethod }，否则如果不慎忘记密码将无法找回账户。"
       ],
@@ -5284,6 +5379,9 @@
       ],
       "Only you can see the labels.": [
         "标签只对您可见。"
+      ],
+      "Open source": [
+        "开放源代码"
       ],
       "Or select a particular server:": [
         "或选择特定的服务器："
@@ -5399,6 +5497,9 @@
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "价格包括所有适用的基于周期的折扣与保存在您账户中的未过期的优惠券。"
       ],
+      "Protected by Swiss privacy laws": [
+        "由瑞士隐私法律保护"
+      ],
       "Public link invite": [
         "公开链接邀请"
       ],
@@ -5422,6 +5523,9 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "只要不选择删除，账户数据恢复信息就会一直保存在此设备上。"
+      ],
+      "Recovery kit copied to clipboard": [
+        "账户恢复信息已复制"
       ],
       "Recovery phrase copied to clipboard": [
         "恢复短语已复制到剪贴板"
@@ -5534,8 +5638,14 @@
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "您的账户等级即将失效：${ byDate } 前重新激活即可继续享受 ${ planName } 权益。${ reactivateLink }"
       ],
+      "Summary": [
+        "概览"
+      ],
       "support team": [
         "客服团队"
+      ],
+      "Swiss based": [
+        "立足瑞士"
       ],
       "Temporarily unavailable. Please check back later.": [
         "暂时不可用。请稍后再试。"
@@ -5548,6 +5658,9 @@
       ],
       "Text to display": [
         "要显示的文字"
+      ],
+      "Thank you": [
+        "谢谢"
       ],
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
         "${ boldDataLocked }的提示将不会再出现，但您仍然可以在${ encryptionAndKeysLink }设置中解密数据。"
@@ -5678,6 +5791,9 @@
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "导入日程需要先在 ${ CALENDAR_APP_NAME } 中创建日历，作为日程导入后的存放位置。"
       ],
+      "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
+        "您可以订阅我们的各类邮件或${ blogLink }了解 ${ BRAND_NAME } 产品的动态。"
+      ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "您需要选择一种账户恢复方式，验证身份后方可继续操作。"
       ],
@@ -5740,6 +5856,9 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "现在升级账户可获得更大存储空间、更多功能，还能享受优惠"
+      ],
+      "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
+        "升级账户即可增设一个简短的 @pm.me 邮箱地址，这个域名可以代表 ${ MAIL_APP_NAME } me 或者 Private Message me。"
       ],
       "Upload picture": [
         "上传图片"
@@ -6010,6 +6129,9 @@
       ],
       "Your imports from ${ accounts } are temporarily delayed.": [
         "您从 ${ accounts } 的导入被暂时推迟。"
+      ],
+      "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
+        "您的个人信息交由我们处理是安全的，我们只会在提供服务所必需的情况下联系您。"
       ],
       "Your login information will not be saved after the import is completed.": [
         "导入完成后我们不会留存您的账号和密码。"
@@ -6698,6 +6820,9 @@
       "Default PGP scheme": [
         "默认 PGP 格式"
       ],
+      "Default scrollbars": [
+        "使用默认滚动条"
+      ],
       "Default view": [
         "默认视图"
       ],
@@ -6718,6 +6843,9 @@
       ],
       "Digits": [
         "验证码位数"
+      ],
+      "Disable animations": [
+        "关闭动画"
       ],
       "Display name": [
         "称呼"
@@ -6799,6 +6927,12 @@
       ],
       "Folder location": [
         "文件夹位置"
+      ],
+      "Font family": [
+        "字体"
+      ],
+      "Font size": [
+        "字号"
       ],
       "From: ${ from }": [
         "发件人：${ from }"
@@ -7088,6 +7222,9 @@
       "Show sender images": [
         "显示发件人头像"
       ],
+      "Show unread count in Favicon": [
+        "在网页图标中显示未读邮件数量"
+      ],
       "Show week numbers": [
         "显示周数"
       ],
@@ -7300,6 +7437,9 @@
       "${ BRAND_NAME } for Business newsletter": [
         "${ BRAND_NAME } 商业通讯"
       ],
+      "${ BRAND_NAME } important announcements": [
+        "${ BRAND_NAME } 重要公告"
+      ],
       "${ BRAND_NAME } newsletter": [
         "${ BRAND_NAME } 通讯"
       ],
@@ -7396,6 +7536,9 @@
       "Add a gift code": [
         "使用礼品码"
       ],
+      "Apps and extensions": [
+        "应用与扩展"
+      ],
       "Calendars": [
         "日历"
       ],
@@ -7422,6 +7565,9 @@
       ],
       "General": [
         "常规"
+      ],
+      "Help translate": [
+        "协助翻译"
       ],
       "How to unlock data": [
         "如何解锁数据"
@@ -7476,6 +7622,9 @@
       ],
       "View guide": [
         "查看指南"
+      ],
+      "visit our blog": [
+        "阅读我们的博客"
       ],
       "What is the difference between UDP and TCP protocols?": [
         "UDP 和 TCP 协议有何区别？"
@@ -7796,9 +7945,6 @@
       "From ${ price }": [
         "低至 ${ price }"
       ],
-      "From ${ price } per user": [
-        "每位用户低至 ${ price }"
-      ],
       "Keep my ${ currentPlanName } account": [
         "继续使用 ${ currentPlanName } 账户"
       ],
@@ -7845,14 +7991,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "开通 ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: attribute": {
-      "Get ${ connections } high-speed VPN connections": [
-        "${ connections } 台设备可同时接入高速 VPN"
-      ],
-      "Get ${ connections } high-speed VPN connections per user": [
-        "每位用户可通过 ${ connections } 台设备同时接入高速 VPN"
       ]
     },
     "new_plans: feature": {
@@ -7961,6 +8099,9 @@
       "Hide-my-email aliases": [
         "Hide My Email 邮箱别名"
       ],
+      "High-speed Swiss VPN that protects your privacy": [
+        "使用瑞士的高速 VPN 捍卫您的隐私"
+      ],
       "High-speed VPN on ${ n } devices": [
         "${ n } 台设备可同时接入高速 VPN"
       ],
@@ -7975,6 +8116,9 @@
       ],
       "Multiple admin roles": [
         "多管理员机制"
+      ],
+      "No-logs policy": [
+        "无日志原则"
       ],
       "Password-protected Emails": [
         "邮件密码保护"
@@ -8011,6 +8155,9 @@
       ],
       "Split tunneling (Android and Windows)": [
         "线路分离（支持 Android 与 Windows）"
+      ],
+      "Start protecting yourself online in 2 easy steps": [
+        "只需两步即可保护您的网络隐私"
       ],
       "Strict no-logs policy": [
         "严格的零日志原则"
@@ -8081,23 +8228,11 @@
       ]
     },
     "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "将隐私设为文件备份、存储、共享和检索的默认设置。"
-      ],
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "否则，您的账户功能将受到限制，直至最后被停用。"
       ],
       "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
         "如需继续使用 ${ MAIL_APP_NAME } 的高级功能，请选择您要开通的账户等级和支付方式。"
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "采用商业隐私保护体系，畅享所有 ${ BRAND_NAME } 高级功能。"
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "解锁顶级隐私保护体系，畅享所有 ${ BRAND_NAME } 高级功能。"
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "您的体验期将于 ${ formattedTrialExpirationDate } 结束"
       ]
     },
     "new_plans: info": {
@@ -8127,6 +8262,9 @@
       ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "各项 ${ BRAND_NAME } 服务深度融合，为您提供全方位的隐私保护。"
+      ],
+      "For next-level password management and identity protection.": [
+        "体验更高等级的密码管理与身份保护。"
       ],
       "If you delete your account, you lose all ${ visionary } plan benefits and it won’t be available if you create a new account.": [
         "删除您的账户后，您将失去所有${ visionary } 套餐福利，如果您创建新账户，则无法享受这些福利。"
@@ -8190,6 +8328,9 @@
       "By creating a ${ BRAND_NAME } account, you agree to our ${ terms }": [
         "创建 ${ BRAND_NAME } 账户即表示您接受我们的${ terms }。"
       ],
+      "By paying, you agree to our ${ termsAndConditions }": [
+        "支付即表示您同意我们的${ termsAndConditions }"
+      ],
       "Payment details": [
         "支付方式"
       ],
@@ -8213,12 +8354,6 @@
       ]
     },
     "new_plans: Title": {
-      "${ mailPlanName } Trial": [
-        "${ mailPlanName } $ 试用"
-      ],
-      "Upgrade to ${ planName }": [
-        "开通 ${ planName }"
-      ],
       "Your account's usage": [
         "您的账户使用情况"
       ]
@@ -8389,12 +8524,6 @@
       ]
     },
     "new_plans: Upsell attribute": {
-      "${ storageSize } total storage": [
-        "${ storageSize } 总存储空间"
-      ],
-      "10 email addresses/aliases": [
-        "10 个邮箱地址"
-      ],
       "Access advanced VPN features": [
         "解锁高级 VPN 功能"
       ],
@@ -8404,32 +8533,8 @@
       "Boost your storage space to ${ bundleStorage } total": [
         "总存储空间升至 ${ bundleStorage }"
       ],
-      "Boost your storage space to ${ businessStorage } per user": [
-        "每位用户存储空间可升至 ${ businessStorage }"
-      ],
       "Cover more ground with support for 10 custom email domains": [
         "10 个自有域名更显游刃有余"
-      ],
-      "Create up to ${ MAX_CALENDARS_PAID } calendars": [
-        "创建多达 ${ MAX_CALENDARS_PAID } 份日历"
-      ],
-      "Everything in ${ vpnPlanName }": [
-        "包含 ${ vpnPlanName } 所有功能"
-      ],
-      "Get 5 additional email addresses per user": [
-        "每位用户可额外获得 5 个邮箱地址"
-      ],
-      "Priority support": [
-        "优先享受客服"
-      ],
-      "Support for 1 custom email domain": [
-        "支持 1 个自有域名"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "文件夹、标签、筛选规则不限量"
-      ],
-      "Unlimited messages": [
-        "每日发送邮件不限量"
       ]
     },
     "Notification": {
@@ -8792,6 +8897,65 @@
     "Participant name": {
       "You": [
         "你"
+      ]
+    },
+    "pass_signup_2023: Action": {
+      "Check out ${ appName } features": [
+        "开通 ${ appName } 高级功能"
+      ],
+      "create a new account": [
+        "创建新账户"
+      ],
+      "Or ${ createANewAccount }": [
+        "或${ createANewAccount }"
+      ],
+      "Start using ${ appName }": [
+        "开始使用 ${ appName }"
+      ],
+      "Start using ${ appName } now": [
+        "立即开始使用 ${ appName }"
+      ]
+    },
+    "pass_signup_2023: Header": {
+      "Checkout": [
+        "支付"
+      ],
+      "Continue with your ${ BRAND_NAME } account": [
+        "继续使用您的 ${ BRAND_NAME } 账户"
+      ],
+      "Select your plan": [
+        "选择账户等级"
+      ],
+      "Upgrade your plan": [
+        "升级账户"
+      ]
+    },
+    "pass_signup_2023: Info": {
+      "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption.": [
+        "${ PASS_APP_NAME } 采用严格的端到端加密保护您的密码与身份安全。"
+      ],
+      "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption. To add premium features of ${ PASS_APP_NAME_2 } to your current subscription, we suggest upgrading to the ${ upsellPlanName } plan.": [
+        "${ PASS_APP_NAME } 采用严格的端到端加密保护您的密码与身份安全。为了体验 ${ PASS_APP_NAME_2 } 的各类高级功能，建议您开通 ${ upsellPlanName } 账户等级。"
+      ],
+      "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption. Your current plan already gives you access to premium ${ PASS_APP_NAME_2 } features — no need to purchase again.": [
+        "${ PASS_APP_NAME } 采用严格的端到端加密保护您的密码与身份安全。您当前的账户等级已包含所有 ${ PASS_APP_NAME_2 } 高级功能，无需额外付费。"
+      ],
+      "By continuing, you agree to our ${ termsAndConditions }": [
+        "继续操作即表示您同意我们的${ termsAndConditions }"
+      ],
+      "Discover ${ PASS_APP_NAME },${ br }our new encrypted password manager": [
+        "体验 ${ PASS_APP_NAME }，${ br }我们的全新密码加密管理器"
+      ],
+      "Special launch offer: Get ${ title } for ${ price } forever!": [
+        "新品特惠：${ price } 终身优惠价开通 ${ title }！"
+      ],
+      "Unlock ${ PASS_APP_NAME } premium features by upgrading": [
+        "升级账户解锁 ${ PASS_APP_NAME } 高级功能"
+      ]
+    },
+    "pass_signup_2023: Title": {
+      "Create your ${ BRAND_NAME } account": [
+        "创建 ${ BRAND_NAME } 账户"
       ]
     },
     "Payment method option": {
@@ -9909,11 +10073,17 @@
       "Edit": [
         "更改"
       ],
+      "Email address or domain": [
+        "邮箱地址或域名"
+      ],
       "Email addresses": [
         "邮箱地址"
       ],
       "Import": [
         "导入"
+      ],
+      "List": [
+        "名单类型"
       ],
       "Marked as": [
         "标记为"
@@ -9962,6 +10132,9 @@
       ]
     },
     "Title": {
+      "${ appName } Free": [
+        "${ appName } 免费版"
+      ],
       "${ MAIL_APP_NAME } Keyboard Shortcuts": [
         "${ MAIL_APP_NAME } 快捷键"
       ],
@@ -9988,6 +10161,9 @@
       ],
       "4. Select a server to connect to": [
         "4. 选择需要连接的服务器"
+      ],
+      "Accessibility": [
+        "无障碍"
       ],
       "Account and password": [
         "账户和密钥"
@@ -10039,6 +10215,12 @@
       ],
       "Add Sieve filter": [
         "创建 Sieve 规则"
+      ],
+      "Add to allow list": [
+        "加入白名单"
+      ],
+      "Add to block list": [
+        "加入黑名单"
       ],
       "Add to spam list": [
         "加入垃圾邮件名单"
@@ -10131,7 +10313,7 @@
         "清除"
       ],
       "Clear out the junk": [
-        "辞旧迎新"
+        "邮件也需辞旧迎新"
       ],
       "Composing": [
         "邮件编辑"
@@ -10482,10 +10664,13 @@
         "打开帮助菜单"
       ],
       "Open pagination": [
-        "打开分页"
+        "选择页码"
       ],
       "OpenVPN configuration files": [
         "OpenVPN 配置文件"
+      ],
+      "Other preferences": [
+        "其他设置"
       ],
       "Password": [
         "密码"
@@ -10651,6 +10836,9 @@
       ],
       "Sort labels alphabetically": [
         "按字母顺序排列标签"
+      ],
+      "Spam, block, and allow lists": [
+        "垃圾邮件与黑白名单"
       ],
       "Start a new import": [
         "开始导入"
@@ -10902,6 +11090,9 @@
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "“已发送”和“草稿”文件夹中的邮件始终显示在相应文件夹中，无论移动与否。"
       ],
+      "See number of unread messages in the tab icon": [
+        "在标签页图标中即可看到未读邮件的数量"
+      ],
       "Set how your list of messages looks like by default.": [
         "调整邮件列表的显示方式。"
       ],
@@ -10929,6 +11120,9 @@
       "The new subscription cycle starts on ${ formattedTime }": [
         "新的计费周期将从 ${ formattedTime } 开始"
       ],
+      "The reduce motion setting is already enabled on this device": [
+        "此设备已开启减少动态效果的选项"
+      ],
       "The selected theme will be active when your system is set to \"dark mode\"": [
         "所选模式将在系统设置为“暗色模式”时生效。"
       ],
@@ -10953,11 +11147,17 @@
       "This key is used by ${ MAIL_APP_NAME } to encrypt your contact's data": [
         "${ MAIL_APP_NAME } 使用此密钥加密您的通讯录数据"
       ],
+      "Use your browser’s default scrollbars. These are typically larger and easier to use": [
+        "滚动条还原为浏览器预置的样式，通常更宽且更易用"
+      ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "我们检测到您的 DNS 配置存在问题，请确认您的记录与下方所示一致。若问题仍存在，我们将关闭 DKIM 签名功能。"
       ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "由于您的 DNS 配置存在问题，我们已中止 DKIM 签名。请参照下列步骤进行配置。"
+      ],
+      "When enabled, animations and transitions will not show": [
+        "界面不再显示动画和过渡效果"
       ],
       "When you add a label to a message in a conversation, it will automatically be applied to all future messages you send or receive in that conversation.": [
         "给会话中的某一邮件加标签后，自动为将来该会话中的所有往来邮件加上同一标签。"
@@ -11076,6 +11276,34 @@
       ],
       "${ numberOfServers } in ${ numberOfCountries } countries": [
         "${ numberOfCountries } 个国家的 ${ numberOfServers }"
+      ]
+    },
+    "vpn_2step: billing": {
+      "${ billedText }, renews on ${ formattedEndTime }": [
+        "${ billedText }，下次续费为 ${ formattedEndTime }"
+      ],
+      "Billed every 15 months": [
+        "每 15 个月付费"
+      ],
+      "Billed every 2 years": [
+        "每两年付费"
+      ],
+      "Billed every 30 months": [
+        "每 30 个月付费"
+      ],
+      "Billed monthly": [
+        "每月付费"
+      ],
+      "Billed yearly": [
+        "每年付费"
+      ]
+    },
+    "vpn_2step: info": {
+      "Try ${ upsellPlanName } risk-free": [
+        "无忧体验 ${ upsellPlanName }"
+      ],
+      "Your ${ selected } plan": [
+        "您的 ${ selected } 账户"
       ]
     },
     "Warning": {

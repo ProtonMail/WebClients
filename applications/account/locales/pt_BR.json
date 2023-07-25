@@ -473,6 +473,9 @@
       "Hide labels": [
         "Ocultar marcadores"
       ],
+      "Hide plan features": [
+        "Ocultar recursos do plano"
+      ],
       "I have a question": [
         "Eu tenho uma dúvida"
       ],
@@ -4325,7 +4328,7 @@
     },
     "Filter preview": {
       "read": [
-        "lido"
+        "lidos"
       ],
       "starred": [
         "com estrela"
@@ -8059,7 +8062,7 @@
         "Modo de proteção"
       ],
       "Read": [
-        "Lido"
+        "Lidos"
       ],
       "Recovery email address": [
         "Endereço de e-mail de recuperação"
@@ -8884,9 +8887,6 @@
       "From ${ price }": [
         "A partir de ${ price }"
       ],
-      "From ${ price } per user": [
-        "A partir de ${ price } por usuário"
-      ],
       "Keep my ${ currentPlanName } account": [
         "Manter minha conta do ${ currentPlanName }"
       ],
@@ -8936,16 +8936,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Fazer upgrade para o ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: attribute": {
-      "Get ${ connections } high-speed VPN connection": [
-        "Obter ${ connections } conexão VPN de alta velocidade",
-        "Obter ${ connections } conexões VPN de alta velocidade"
-      ],
-      "Get ${ connections } high-speed VPN connection per user": [
-        "Obter ${ connections } conexão VPN de alta velocidade por usuário",
-        "Obter ${ connections } conexões VPN de alta velocidade por usuário"
       ]
     },
     "new_plans: feature": {
@@ -9004,6 +8994,9 @@
       "${ n } VPN connection per user": [
         "${ n } conexão VPN por usuário",
         "${ n } conexões VPN por usuário"
+      ],
+      "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
+        "${ PASS_APP_NAME } com alias de hide-my-email ilimitados"
       ],
       "${ size } attachment size": [
         "Anexos de ${ size }"
@@ -9289,23 +9282,14 @@
       ]
     },
     "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Torne a privacidade seu padrão para backup, armazenamento, compartilhamento e recuperação de arquivos."
-      ],
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "Caso contrário, o acesso à sua conta será limitado e, futuramente, sua conta será desativada."
       ],
       "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
         "Para continuar usando o ${ MAIL_APP_NAME } com recursos premium, escolha sua assinatura e opções de pagamento."
       ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "Faça o upgrade para o pacote para empresas com acesso a todos os serviços premium da ${ BRAND_NAME }."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "Faça o upgrade para o pacote de privacidade completo e acesse todos os serviços premium da ${ BRAND_NAME }."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Sua avaliação termina em ${ formattedTrialExpirationDate }"
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Sua avaliação termina em ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: info": {
@@ -9434,11 +9418,8 @@
       ]
     },
     "new_plans: Title": {
-      "${ mailPlanName } Trial": [
-        "Avaliação do ${ mailPlanName }"
-      ],
-      "Upgrade to ${ planName }": [
-        "Fazer upgrade para o ${ planName }"
+      "${ shortPlan.title } Trial": [
+        "Avaliação do ${ shortPlan.title }"
       ],
       "Your account's usage": [
         "Uso da sua conta"
@@ -9659,51 +9640,24 @@
       ]
     },
     "new_plans: Upsell attribute": {
-      "${ storageSize } total storage": [
-        "Armazenamento total de ${ storageSize }"
-      ],
-      "10 email addresses/aliases": [
-        "10 endereços de e-mail/aliases"
-      ],
       "Access advanced VPN features": [
         "Acesse recursos avançados de VPN"
       ],
       "Add more personalization with 15 email addresses and support for 3 custom email domains": [
         "Adicione personalização com 15 endereços de e-mail e suporte para 3 domínios de e-mail personalizados"
       ],
+      "Boost your storage space to ${ bundleStorage } per user": [
+        "Aumente seu espaço de armazenamento para ${ bundleStorage } por usuário"
+      ],
       "Boost your storage space to ${ bundleStorage } total": [
         "Aumente seu espaço de armazenamento para um total de ${ bundleStorage }"
-      ],
-      "Boost your storage space to ${ businessStorage } per user": [
-        "Aumente seu espaço de armazenamento para ${ businessStorage } por usuário"
       ],
       "Cover more ground with support for 10 custom email domains": [
         "Tenha mais opções com o suporte para 10 domínios de e-mail personalizados"
       ],
-      "Create up to ${ MAX_CALENDARS_PAID } calendar": [
-        "Crie até ${ MAX_CALENDARS_PAID } calendário",
-        "Crie até ${ MAX_CALENDARS_PAID } calendários"
-      ],
-      "Everything in ${ vpnPlanName }": [
-        "Tudo que está incluso no ${ vpnPlanName }"
-      ],
-      "Get 5 additional email addresses per user": [
-        "Obtenha 5 endereços de e-mail adicionais por usuário"
-      ],
-      "Priority support": [
-        "Suporte prioritário"
-      ],
-      "Secure your passwords and identity with an open-source and encrypted password manager.": [
-        "Proteja suas senhas e identidade com um gerenciador de senha criptografada de códio aberto."
-      ],
-      "Support for 1 custom email domain": [
-        "Suporte para 1 domínio de e-mail personalizado"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Pastas, marcadores e filtros ilimitados"
-      ],
-      "Unlimited messages": [
-        "Mensagens ilimitadas"
+      "Create up to ${ n } calendar": [
+        "Crie até ${ n } calendário",
+        "Crie até ${ n } calendários"
       ]
     },
     "Notification": {
@@ -10254,7 +10208,7 @@
         "Obtenha ${ appName } para ${ browserName } em breve"
       ],
       "Hide-my-email aliases protect your email from data breaches": [
-        "Hide-my-email aliases protegem seu e-mail contra violações de dados"
+        "Os aliases hide-my-email protegem seu e-mail contra violações de dados"
       ],
       "If you get locked out of your ${ BRAND_NAME } Account, your **recovery kit** will allow you to sign in and recover your data.": [
         "Se você não conseguir entrar na sua conta da ${ BRAND_NAME }, o seu **kit de recuperação** permitirá que você faça login e recupere seus dados."
@@ -10314,7 +10268,7 @@
         "Iniciando sessão em ${ PASS_APP_NAME }"
       ],
       "Special launch offer: Get ${ title } for ${ price } forever!": [
-        "Oferta especial de lançamento: Obtenha ${ title } por ${ price } para sempre!"
+        "Oferta especial de lançamento: obtenha ${ title } por ${ price } para sempre!"
       ],
       "The offer you selected is not available for ${ currentPlanTitle } subscribers.": [
         "A oferta selecionada não está disponível para assinantes de ${ currentPlanTitle }."
@@ -10323,7 +10277,7 @@
         "para começar a usar o ${ PASS_APP_NAME } em seu telefone"
       ],
       "Unlock ${ PASS_APP_NAME } premium features by upgrading": [
-        "Desbloqueie recursos premium do ${ PASS_APP_NAME } atualizando"
+        "Desbloqueie recursos premium do ${ PASS_APP_NAME } fazendo o upgrade de seu plano."
       ],
       "Updating your account": [
         "Atualizando sua conta"
@@ -10338,7 +10292,7 @@
         "Funciona em todos os dispositivos"
       ],
       "You already have access to premium ${ appName } features — no need to purchase again.": [
-        "Você já possui acessos recursos premium ${ appName } — não é necessário comprar novamente."
+        "Você já tem acesso aos recursos premium de ${ appName } - não é necessário comprar novamente."
       ],
       "You currently have": [
         "Você tem atualmente"
@@ -10797,6 +10751,11 @@
     "Shared calendar label input placeholder": {
       "Add label": [
         "Adicionar marcador"
+      ]
+    },
+    "Shared calendar; Info about calendar owner": {
+      "Shared by ${ ownerName }": [
+        "Compartilhado por ${ ownerName }"
       ]
     },
     "Signature verification error when joining calendar": {
@@ -12912,6 +12871,11 @@
         "Faça upgrade para um plano pago ${ MAIL_SHORT_APP_NAME } para compartilhar seu calendário."
       ]
     },
+    "upsell panel": {
+      "Recommended": [
+        "Recomendado"
+      ]
+    },
     "User referee invited via email": {
       "Invited via email": [
         "Convidado através do e-mail"
@@ -13002,7 +12966,7 @@
         "2 anos"
       ],
       "Get ${ discount } off with a ${ billingCycle } subscription": [
-        "Ganhe ${ discount } de desconto com uma assinatura de ${ billingCycle }"
+        "Economize ${ discount } com uma assinatura de ${ billingCycle }."
       ],
       "monthly": [
         "mensal"
@@ -13034,7 +12998,7 @@
     },
     "vpn_2step: tooltip": {
       "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, Double hop, and more.": [
-        "Acesso a servidores Secure core, downloads rápidos P2P/BitTorrent, Tor over VPN, Double hop, e mais."
+        "Acesso a servidores Secure Core, downloads rápidos P2P/BitTorrent, Tor over VPN, Double hop, e mais."
       ]
     },
     "VPNClient": {
