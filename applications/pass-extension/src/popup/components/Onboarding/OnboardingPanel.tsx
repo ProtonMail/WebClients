@@ -2,6 +2,7 @@ import { type VFC, useCallback, useEffect, useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { detectBrowser, getWebStoreUrl } from '@proton/pass/extension/browser';
 import { popupMessage, sendMessage } from '@proton/pass/extension/message';
 import browser from '@proton/pass/globals/browser';
 import type { Maybe, WorkerMessageWithSender } from '@proton/pass/types';
@@ -16,12 +17,13 @@ import { useExtensionContext } from '../../../shared/hooks';
 import { useOpenSettingsTab } from '../../hooks/useOpenSettingsTab';
 import { FreeTrialModal } from './FreeTrialModal';
 import { OnboardingContent, type OnboardingMessageDefinition } from './OnboardingContent';
-import { OnboardingShieldIcon } from './OnboardingIcon';
+import { OnboardingShieldIcon, OnboardingStarIcon } from './OnboardingIcon';
 
 import './OnboardingPanel.scss';
 
 export const OnboardingPanel: VFC = () => {
     const { context: extensionContext } = useExtensionContext();
+    const webStoreURL = getWebStoreUrl(detectBrowser());
 
     const [open, setOpen] = useState(false);
     const [message, setMessage] = useState<Maybe<OnboardingMessage>>();
@@ -113,6 +115,17 @@ export const OnboardingPanel: VFC = () => {
                     label: c('Label').t`Grant`,
                     type: 'button',
                     onClick: () => promptForPermissions(),
+                },
+            },
+            [OnboardingMessage.USER_RATING]: {
+                title: c('Title').t`Enjoying ${PASS_APP_NAME}?`,
+                message: c('Info').t`Please consider leaving a review.`,
+                className: 'ui-lime',
+                icon: <OnboardingStarIcon />,
+                action: {
+                    label: c('Label').t`Write a review`,
+                    type: 'button',
+                    onClick: () => window.open(webStoreURL, '_blank'),
                 },
             },
         }),

@@ -27,7 +27,15 @@ export const OnboardingContent: VFC<Props> = ({ title, message, className, icon,
                 );
             case 'button':
                 return (
-                    <Button pill shape="solid" color="weak" size="small" className="text-sm" onClick={action.onClick}>
+                    <Button
+                        pill
+                        shape="solid"
+                        color="norm"
+                        size="small"
+                        className="text-sm"
+                        onClick={action.onClick}
+                        style={{ backgroundColor: 'var(--interaction-norm-major-3)' }}
+                    >
                         {action.label}
                     </Button>
                 );
@@ -37,7 +45,7 @@ export const OnboardingContent: VFC<Props> = ({ title, message, className, icon,
     return (
         <div
             className={clsx(
-                `pass-onboarding-content flex flex-align-items-center gap-4 p-3 rounded relative mt-2`,
+                `pass-onboarding-content flex flex-align-items-center gap-4 p-4 rounded relative mt-2`,
                 className
             )}
         >
