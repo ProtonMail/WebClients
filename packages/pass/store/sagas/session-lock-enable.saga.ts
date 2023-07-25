@@ -8,7 +8,7 @@ import { selectCanLockSession } from '../selectors';
 import type { WorkerRootSagaOptions } from '../types';
 
 function* enableSessionLockWorker(
-    _: WorkerRootSagaOptions,
+    { onSessionLockChange }: WorkerRootSagaOptions,
     { meta, payload }: WithSenderAction<ReturnType<typeof sessionLockEnableIntent>>
 ) {
     try {
@@ -21,6 +21,7 @@ function* enableSessionLockWorker(
 
         const storageToken: string = yield lockSession(payload.pin, payload.ttl);
         yield put(sessionLockEnableSuccess({ storageToken, ttl: payload.ttl }, meta.sender?.endpoint));
+        onSessionLockChange?.(true);
     } catch (e) {
         yield put(sessionLockEnableFailure(e, meta.sender?.endpoint));
     }

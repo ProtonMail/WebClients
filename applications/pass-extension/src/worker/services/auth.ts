@@ -47,6 +47,7 @@ type LoginOptions = {
 };
 export interface AuthService {
     authStore: AuthenticationStore;
+    setLockStatus: (status: MaybeNull<SessionLockStatus>) => void;
     resumeSession: () => Promise<boolean>;
     consumeFork: (
         data: AccountForkMessage['payload']
@@ -80,6 +81,7 @@ export const createAuthService = ({
 
     const authService: AuthService = {
         authStore: exposeAuthStore(createAuthenticationStore(createStore())),
+        setLockStatus: (status) => (authCtx.lockStatus = status),
 
         lock: withContext((ctx) => {
             logger.info(`[Worker::Auth] Locking context`);
@@ -88,7 +90,7 @@ export const createAuthService = ({
             /* set the lock status before dispatching
              * the `stateLock` so the UI can pick up
              * the locked state before wiping the store */
-            authCtx.lockStatus = SessionLockStatus.LOCKED;
+            authService.setLockStatus(SessionLockStatus.LOCKED);
             ctx.setStatus(WorkerStatus.LOCKED);
 
             if (shouldLockState) {
@@ -101,7 +103,7 @@ export const createAuthService = ({
 
         unlock: () => {
             logger.info(`[Worker::Auth] Unlocking context`);
-            authCtx.lockStatus = SessionLockStatus.REGISTERED;
+            authService.setLockStatus(SessionLockStatus.REGISTERED);
         },
 
         init: async () => {
@@ -237,7 +239,7 @@ export const createAuthService = ({
             try {
                 const cachedLockStatus = authCtx.lockStatus;
                 const lock = cachedLockStatus !== null ? { status: cachedLockStatus } : await checkSessionLock();
-                authCtx.lockStatus = lock.status;
+                authService.setLockStatus(lock.status);
 
                 if (lock.status === SessionLockStatus.LOCKED) {
                     logger.info(`[Worker::Auth] Detected locked session`);
@@ -312,7 +314,7 @@ export const createAuthService = ({
             void browserSessionStorage.removeItems(['AccessToken', 'RefreshToken', 'UID', 'keyPassword']);
             void browserLocalStorage.clear();
 
-            authCtx.lockStatus = null;
+            authService.setLockStatus(null);
             authService.authStore.setUID(undefined);
             authService.authStore.setPassword(undefined);
 
@@ -373,25 +375,22 @@ export const createAuthService = ({
         }),
     };
 
+    const handleUnlockRequest = (request: { pin: string }) =>
+        new Promise<WorkerMessageResponse<WorkerMessageType.UNLOCK_REQUEST>>((resolve) => {
+            store.dispatch(
+                sessionUnlockIntent({ pin: request.pin }, (action) => {
+                    if (sessionUnlockSuccess.match(action)) return resolve({ ok: true });
+                    if (sessionUnlockFailure.match(action)) return resolve({ ok: false, ...action.payload });
+                })
+            );
+        });
+
+    const resolveUserData = () => ({ user: selectUser(store.getState()) });
+
     WorkerMessageBroker.registerMessage(WorkerMessageType.ACCOUNT_FORK, withPayload(authService.consumeFork));
     WorkerMessageBroker.registerMessage(WorkerMessageType.SESSION_RESUMED, withPayload(authService.login));
-
-    WorkerMessageBroker.registerMessage(
-        WorkerMessageType.UNLOCK_REQUEST,
-        ({ payload: { pin } }) =>
-            new Promise((resolve) => {
-                store.dispatch(
-                    sessionUnlockIntent({ pin }, (action) => {
-                        if (sessionUnlockSuccess.match(action)) return resolve({ ok: true });
-                        if (sessionUnlockFailure.match(action)) return resolve({ ok: false, ...action.payload });
-                    })
-                );
-            })
-    );
-
-    WorkerMessageBroker.registerMessage(WorkerMessageType.RESOLVE_USER_DATA, () => ({
-        user: selectUser(store.getState()),
-    }));
+    WorkerMessageBroker.registerMessage(WorkerMessageType.UNLOCK_REQUEST, withPayload(handleUnlockRequest));
+    WorkerMessageBroker.registerMessage(WorkerMessageType.RESOLVE_USER_DATA, resolveUserData);
 
     return authService;
 };

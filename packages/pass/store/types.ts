@@ -19,6 +19,7 @@ export interface WorkerRootSagaOptions {
     onNotification?: (notification: Notification) => void;
     onSessionLocked?: (storageToken: string) => void;
     onSessionUnlocked?: (storageToken: string) => void;
+    onSessionLockChange?: (registered: boolean) => void;
     onSettingUpdate?: (settings: ProxiedSettings) => Promise<void>;
     onShareEventDisabled?: (shareId: string) => void;
     onShareEventItemsDeleted?: (shareId: string, itemIds: string[]) => void;
