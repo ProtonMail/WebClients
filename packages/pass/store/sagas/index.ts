@@ -20,6 +20,7 @@ import notification from './notification.saga';
 import reportProblem from './report-problem.saga';
 import sessionLockDisable from './session-lock-disable.saga';
 import sessionLockEnable from './session-lock-enable.saga';
+import sessionLockExtend from './session-lock-extend.saga';
 import sessionLockImmediate from './session-lock-immediate.saga';
 import sessionUnlock from './session-unlock.saga';
 import settings from './settings.saga';
@@ -58,6 +59,7 @@ export function* workerRootSaga(options: WorkerRootSagaOptions) {
             reportProblem,
             sessionLockDisable,
             sessionLockEnable,
+            sessionLockExtend,
             sessionLockImmediate,
             sessionUnlock,
             settings,
