@@ -17,6 +17,9 @@
       "Add new item": [
         "Adicionar um item"
       ],
+      "Advanced": [
+        "Avançado"
+      ],
       "Advanced options": [
         "Opções avançadas"
       ],
@@ -140,6 +143,9 @@
       "Generate password": [
         "Gerar uma palavra-passe"
       ],
+      "Generated password": [
+        "Palavra-passe gerada"
+      ],
       "Get mobile apps": [
         "Descarregue as aplicações móveis"
       ],
@@ -163,6 +169,12 @@
       ],
       "Learn more": [
         "Saber mais"
+      ],
+      "Lock extension": [
+        "Bloquear a extensão"
+      ],
+      "Manually sync your data": [
+        "Sincronize os seus dados manualmente"
       ],
       "More options": [
         "Mais opções"
@@ -284,11 +296,11 @@
       ]
     },
     "Error": {
-      "${ PASS_APP_NAME } export file could not be parsed. ${ errorDetail }": [
-        "O ficheiro de exportação ${ PASS_APP_NAME } não pôde ser analisado. ${ errorDetail }"
+      "${ provider } file could not be parsed. ${ errorDetail }": [
+        "O ficheiro ${ provider } não pôde ser analisado. ${ errorDetail }"
       ],
-      "1Password export file could not be parsed. ${ errorDetail }": [
-        "Não foi possível analisar o ficheiro de exportação do 1Password. ${ errorDetail }"
+      "Alias options could not be resolved": [
+        "Não foi possível resolver as opções de alias."
       ],
       "Authentication error": [
         "Erro de autenticação"
@@ -299,14 +311,8 @@
       "Auto-lock could not be disabled": [
         "O bloqueio automático não pôde ser desativado"
       ],
-      "Bitwarden export file could not be parsed. ${ errorDetail }": [
-        "O ficheiro de exportação do Bitwarden não pôde ser analisado. ${ errorDetail }"
-      ],
-      "Cannot create alias.": [
-        "Não é possível criar um alias."
-      ],
-      "Chrome export file could not be parsed. ${ errorDetail }": [
-        "O ficheiro de exportação do Chrome não pôde ser analisado. ${ errorDetail }"
+      "Cannot create alias (${ error }).": [
+        "Não é possível criar o alias (${ error })."
       ],
       "Could not open created vault": [
         "Não foi possível abrir o cofre criado"
@@ -319,9 +325,6 @@
       ],
       "CSV file is missing expected headers: ${ missingHeaders }": [
         "O ficheiro CSV não tem os cabeçalhos esperados: ${ missingHeaders }"
-      ],
-      "Dashlane export file could not be parsed. ${ errorDetail }": [
-        "Não foi possível analisar o ficheiro de exportação do Dashlane. ${ errorDetail }"
       ],
       "Decrypting your ${ PASS_APP_NAME } export file failed. ${ errorDetail }": [
         "Falha ao desencriptar o ficheiro de exportação ${ PASS_APP_NAME }. ${ errorDetail }"
@@ -354,8 +357,8 @@
       "File could not be parsed": [
         "O ficheiro não pôde ser analisado"
       ],
-      "Firefox export file could not be parsed. ${ errorDetail }": [
-        "Não foi possível analisar o ficheiro de exportação do Firefox. ${ errorDetail }"
+      "Import failed for vault \"${ vaultData.name }\" : ${ description }": [
+        "A importação não foi possível para o cofre \"${ vaultData.name }\": ${ description }"
       ],
       "Importing items failed": [
         "A importação de itens falhou"
@@ -368,15 +371,6 @@
       ],
       "Item creation failed": [
         "Falha na criação do item"
-      ],
-      "KeePass export file could not be parsed. ${ errorDetail }": [
-        "Não foi possível analisar o ficheiro de exportação do KeePass. ${ errorDetail }"
-      ],
-      "Keeper export file could not be parsed. ${ errorDetail }": [
-        "O ficheiro de exportação do Keeper não pôde ser analisado. ${ errorDetail }"
-      ],
-      "LastPass export file could not be parsed. ${ errorDetail }": [
-        "O ficheiro de exportação do LastPass não pôde ser analisado. ${ errorDetail }"
       ],
       "LastPass will export a corrupted CSV file if any of your item fields contain unexpected commas, quotes or multiple lines": [
         "O LastPass exportará um arquivo CSV corrompido se algum dos campos de item contiver vírgulas, aspas ou várias linhas inesperadas"
@@ -407,9 +401,6 @@
       ],
       "Restoring item failed": [
         "Falha ao restaurar o item"
-      ],
-      "Safari export file could not be parsed. ${ errorDetail }": [
-        "O ficheiro de exportação do Safari não pôde ser analisado. ${ errorDetail }"
       ],
       "Setting \"${ payload.name }\" as primary vault failed": [
         "A definição do cofre \"${ payload.name }\" como primário falhou."
@@ -458,6 +449,9 @@
       ],
       "Vault \"${ payload.content.name }\" creation failed": [
         "A criação do cofre \"${ payload.content.name }\" falhou."
+      ],
+      "Vault \"${ vaultData.name }\" could not be created": [
+        "Não foi possível criar o cofre \"${ vaultData.name }\""
       ],
       "Vault name does not match": [
         "O nome do cofre não corresponde"
@@ -508,6 +502,9 @@
       ]
     },
     "Info": {
+      " Upgrade to a paid plan to create multiple vaults.": [
+        "Melhore para um plano pago para um plano pago para criar vários cofres."
+      ],
       "\"${ payload.item.data.metadata.name }\" item was dismissed": [
         "O item \"${ payload.item.data.metadata.name }\" foi descartado"
       ],
@@ -755,6 +752,9 @@
       "Save login": [
         "Guardar login"
       ],
+      "Select the destination vault for each imported vault.": [
+        "Selecione o cofre de destino para cada cofre importado."
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Os servidores estão inacessíveis.Tente novamente dentro de alguns minutos."
       ],
@@ -843,6 +843,9 @@
       ],
       "You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.": [
         "Atingiu o limite de aliases que pode criar. Crie um número ilimitado de aliases quando actualizar a sua subscrição."
+      ],
+      "You have reached the limit of vaults you can create.": [
+        "Atingiu o limite de cofres que pode criar."
       ],
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "Atingiu o comprimento máximo permitido de ${ maxLength } carateres."
@@ -1550,6 +1553,9 @@
       ],
       "Vault name is required": [
         "O nome do cofre é obrigatório."
+      ],
+      "You cannot create more vaults than your subscription allows.": [
+        "A sua subscrição não permite a criação de vários cofres."
       ],
       "You have unsaved changes, are you sure you want to discard them?": [
         "Tem alterações não guardadas. Tem certeza de que deseja descartá-las?"
