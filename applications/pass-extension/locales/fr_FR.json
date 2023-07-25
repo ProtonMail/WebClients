@@ -296,11 +296,11 @@
       ]
     },
     "Error": {
-      "${ PASS_APP_NAME } export file could not be parsed. ${ errorDetail }": [
-        "Le fichier d'exportation ${ PASS_APP_NAME } n'a pu être analysé. ${ errorDetail }"
+      "${ provider } file could not be parsed. ${ errorDetail }": [
+        "Le fichier ${ provider } n'a pu être analysé. ${ errorDetail }"
       ],
-      "1Password export file could not be parsed. ${ errorDetail }": [
-        "Le fichier d'exportation 1Password n'a pu être analysé. ${ errorDetail }"
+      "Alias options could not be resolved": [
+        "Les options d'alias n'ont pas pu être définies."
       ],
       "Authentication error": [
         "Erreur d'authentification"
@@ -311,14 +311,8 @@
       "Auto-lock could not be disabled": [
         "Le verrouillage automatique n’a pu être désactivé."
       ],
-      "Bitwarden export file could not be parsed. ${ errorDetail }": [
-        "Le fichier d'exportation Bitwarden n'a pu être analysé. ${ errorDetail }"
-      ],
-      "Cannot create alias.": [
-        "Impossible de créer un alias"
-      ],
-      "Chrome export file could not be parsed. ${ errorDetail }": [
-        "Le fichier d'exportation Chrome n'a pu être analysé. ${ errorDetail }"
+      "Cannot create alias (${ error }).": [
+        "Impossible de créer l'alias (${ error })"
       ],
       "Could not open created vault": [
         "Impossible d'ouvrir le coffre-fort créé"
@@ -331,9 +325,6 @@
       ],
       "CSV file is missing expected headers: ${ missingHeaders }": [
         "Le fichier CSV ne contient pas les en-têtes nécessaires : ${ missingHeaders }"
-      ],
-      "Dashlane export file could not be parsed. ${ errorDetail }": [
-        "Le fichier d'exportation Dashlane n'a pu être analysé. ${ errorDetail }"
       ],
       "Decrypting your ${ PASS_APP_NAME } export file failed. ${ errorDetail }": [
         "Le déchiffrement de votre fichier d'exportation ${ PASS_APP_NAME } n'a pas abouti. ${ errorDetail }"
@@ -366,9 +357,6 @@
       "File could not be parsed": [
         "Le fichier n'a pas pu être analysé."
       ],
-      "Firefox export file could not be parsed. ${ errorDetail }": [
-        "Le fichier d'exportation Firefox n'a pu être analysé. ${ errorDetail }"
-      ],
       "Import failed for vault \"${ vaultData.name }\" : ${ description }": [
         "L'importation du coffre-fort « ${ vaultData.name } » n'a pas abouti : ${ description }."
       ],
@@ -383,15 +371,6 @@
       ],
       "Item creation failed": [
         "La création de l'élément n'a pas abouti."
-      ],
-      "KeePass export file could not be parsed. ${ errorDetail }": [
-        "Le fichier d'exportation KeePass n'a pu être analysé. ${ errorDetail }"
-      ],
-      "Keeper export file could not be parsed. ${ errorDetail }": [
-        "Le fichier d'exportation Keeper n'a pu être analysé. ${ errorDetail }"
-      ],
-      "LastPass export file could not be parsed. ${ errorDetail }": [
-        "Le fichier d'exportation LastPass n'a pu être analysé. ${ errorDetail }"
       ],
       "LastPass will export a corrupted CSV file if any of your item fields contain unexpected commas, quotes or multiple lines": [
         "Si l'un des champs comporte des virgules, des guillemets ou des lignes supplémentaires non prévues, LastPass exportera un fichier CSV corrompu."
@@ -422,9 +401,6 @@
       ],
       "Restoring item failed": [
         "La restauration de l'élément n'a pas abouti."
-      ],
-      "Safari export file could not be parsed. ${ errorDetail }": [
-        "Le fichier d'exportation Safari n'a pu être analysé. ${ errorDetail }"
       ],
       "Setting \"${ payload.name }\" as primary vault failed": [
         "« ${ payload.name } » n'a pas pu être défini comme coffre-fort principal."

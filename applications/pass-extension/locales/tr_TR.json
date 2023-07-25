@@ -17,6 +17,9 @@
       "Add new item": [
         "Yeni öge ekle"
       ],
+      "Advanced": [
+        "Gelişmiş"
+      ],
       "Advanced options": [
         "Gelişmiş seçenekler"
       ],
@@ -55,6 +58,9 @@
       ],
       "Continue without pinning": [
         "Sabitlemeden ilerle"
+      ],
+      "Copy & fill in": [
+        "Kopyala ve doldur"
       ],
       "Copy and close": [
         "Kopyala ve kapat"
@@ -137,6 +143,9 @@
       "Generate password": [
         "Parola üret"
       ],
+      "Generated password": [
+        "Oluşturulan parola"
+      ],
       "Get mobile apps": [
         "Mobil uygulamaları edinin"
       ],
@@ -160,6 +169,12 @@
       ],
       "Learn more": [
         "Ayrıntılı bilgi alın"
+      ],
+      "Lock extension": [
+        "Eklentiyi kilitle"
+      ],
+      "Manually sync your data": [
+        "Verilerinizi el ile eşitleyin"
       ],
       "More options": [
         "Diğer seçenekler"
@@ -281,11 +296,11 @@
       ]
     },
     "Error": {
-      "${ PASS_APP_NAME } export file could not be parsed. ${ errorDetail }": [
-        "${ PASS_APP_NAME } dışa aktarma dosyası işlenemedi. ${ errorDetail }"
+      "${ provider } file could not be parsed. ${ errorDetail }": [
+        "${ provider } dosyası işlenemedi. ${ errorDetail }"
       ],
-      "1Password export file could not be parsed. ${ errorDetail }": [
-        "1Password dışa aktarma dosyası işlenemedi. ${ errorDetail }"
+      "Alias options could not be resolved": [
+        "Takma ad seçenekleri çözümlenemedi"
       ],
       "Authentication error": [
         "Kimlik doğrulayıcı sorunu"
@@ -296,14 +311,8 @@
       "Auto-lock could not be disabled": [
         "Otomatik kilitleme kapatılamadı"
       ],
-      "Bitwarden export file could not be parsed. ${ errorDetail }": [
-        "Bitwarden dışa aktarma dosyası işlenemedi. ${ errorDetail }"
-      ],
-      "Cannot create alias.": [
-        "Takma ad oluşturulamaz."
-      ],
-      "Chrome export file could not be parsed. ${ errorDetail }": [
-        "Chrome dışa aktarma dosyası işlenemedi. ${ errorDetail }"
+      "Cannot create alias (${ error }).": [
+        "Takma ad oluşturulamadı (${ error })."
       ],
       "Could not open created vault": [
         "Oluşturulan kasa açılamadı"
@@ -316,9 +325,6 @@
       ],
       "CSV file is missing expected headers: ${ missingHeaders }": [
         "CSV dosyasında beklenen başlık bilgileri bulunamadı: ${ missingHeaders }"
-      ],
-      "Dashlane export file could not be parsed. ${ errorDetail }": [
-        "Dashlane dışa aktarma dosyası işlenemedi. ${ errorDetail }"
       ],
       "Decrypting your ${ PASS_APP_NAME } export file failed. ${ errorDetail }": [
         "${ PASS_APP_NAME } dış aktarma dosyanızın şifresi çözülemedi. ${ errorDetail }"
@@ -351,8 +357,8 @@
       "File could not be parsed": [
         "Dosya işlenemedi"
       ],
-      "Firefox export file could not be parsed. ${ errorDetail }": [
-        "Firefox dışa aktarma dosyası işlenemedi. ${ errorDetail }"
+      "Import failed for vault \"${ vaultData.name }\" : ${ description }": [
+        "\"${ vaultData.name }\" kasası içine aktarılamadı: ${ description }"
       ],
       "Importing items failed": [
         "Ögeler içe aktarılamadı"
@@ -365,15 +371,6 @@
       ],
       "Item creation failed": [
         "Öge oluşturulamadı"
-      ],
-      "KeePass export file could not be parsed. ${ errorDetail }": [
-        "KeePass dışa aktarma dosyası işlenemedi. ${ errorDetail }"
-      ],
-      "Keeper export file could not be parsed. ${ errorDetail }": [
-        "Keeper dışa aktarma dosyası işlenemedi. ${ errorDetail }"
-      ],
-      "LastPass export file could not be parsed. ${ errorDetail }": [
-        "LastPass dışa aktarma dosyası işlenemedi. ${ errorDetail }"
       ],
       "LastPass will export a corrupted CSV file if any of your item fields contain unexpected commas, quotes or multiple lines": [
         "Öge alanlarınızdan herhangi birinde beklenmedik virgüller, tırnak işaretleri veya birkaç satır varsa, LastPass tarafından dışa aktarılan CSV dosyası bozuk olur"
@@ -404,9 +401,6 @@
       ],
       "Restoring item failed": [
         "Öge geri yüklenemedi"
-      ],
-      "Safari export file could not be parsed. ${ errorDetail }": [
-        "Safari dışa aktarma dosyası işlenemedi. ${ errorDetail }"
       ],
       "Setting \"${ payload.name }\" as primary vault failed": [
         "\"${ payload.name }\" kasası birincil kasa olarak ayarlanamadı"
@@ -455,6 +449,9 @@
       ],
       "Vault \"${ payload.content.name }\" creation failed": [
         "\"${ payload.content.name }\" kasası oluşturulamadı"
+      ],
+      "Vault \"${ vaultData.name }\" could not be created": [
+        "\"${ vaultData.name }\" kasası oluşturulamadı"
       ],
       "Vault name does not match": [
         "Kasa adı aynı değil"
@@ -505,6 +502,9 @@
       ]
     },
     "Info": {
+      " Upgrade to a paid plan to create multiple vaults.": [
+        " Birden çok kasa oluşturmak için ücretli bir tarifeye yükseltin."
+      ],
       "\"${ payload.item.data.metadata.name }\" item was dismissed": [
         "\"${ payload.item.data.metadata.name }\" ögesi yok sayıldı"
       ],
@@ -752,6 +752,9 @@
       "Save login": [
         "Oturum açmayı kaydet"
       ],
+      "Select the destination vault for each imported vault.": [
+        "İçe aktarılacak her kasanın hedef kasasını seçin."
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Sunuculara erişilemiyor. Lütfen birkaç dakika sonra yeniden deneyin"
       ],
@@ -822,6 +825,9 @@
       "Vault \"${ share.content.name }\" was disabled": [
         "\"${ share.content.name }\" kasası kullanımdan kaldırılmış"
       ],
+      "Verification code": [
+        "Doğrulama kodu"
+      ],
       "You are about to create:": [
         "Şunu oluşturmak üzeresiniz:"
       ],
@@ -837,6 +843,9 @@
       ],
       "You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.": [
         "Oluşturabileceğiniz takma ad sayısı sınırına ulaştınız. Abonelik tarifenizi yükselterek sınırsız sayıda takma ad oluşturabilirsiniz."
+      ],
+      "You have reached the limit of vaults you can create.": [
+        "Oluşturabileceğiniz kasa sayısı sınırına ulaştınız."
       ],
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "İzin verilen en fazla ${ maxLength } karakter sayısına ulaştınız."
@@ -1545,6 +1554,9 @@
       "Vault name is required": [
         "Kasa adının yazılması zorunludur"
       ],
+      "You cannot create more vaults than your subscription allows.": [
+        "Abonelik tarifenizde sunulan kasa sayısından daha fazla kasa oluşturamazsınız."
+      ],
       "You have unsaved changes, are you sure you want to discard them?": [
         "Kaydedilmemiş değişiklikleriniz var, bunları silmek istediğinize emin misiniz?"
       ],
@@ -1559,6 +1571,9 @@
       ],
       "Your session was locked due to inactivity": [
         "Bir süredir işlem yapmadığınızdan oturumunuz kilitlendi"
+      ],
+      "Your subscription does not allow you to create multiple vaults. All items will be imported to your primary vault. To import into multiple vaults upgrade your subscription.": [
+        "Abonelik tarifeniz birden fazla kasa oluşturmanıza izin vermiyor. Tüm ögeler birincil kasanız içine aktarılacak. İçe aktarımda birden fazla kasa kullanabilmek için abonelik tarifenizi yükseltin."
       ]
     }
   }
