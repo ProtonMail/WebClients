@@ -50,6 +50,7 @@ module.exports = {
         },
         client: './src/content/client.ts',
         dropdown: nonAccessibleWebResource('./src/content/injections/apps/dropdown/index.tsx'),
+        elements: './src/content/elements.ts',
         notification: nonAccessibleWebResource('./src/content/injections/apps/notification/index.tsx'),
         onboarding: './src/pages/onboarding/index.tsx',
         orchestrator: noBrowserTrap('./src/content/orchestrator.ts'),
