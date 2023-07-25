@@ -4202,11 +4202,20 @@
       ]
     },
     "Get started checklist instructions": {
+      "${ MAIL_APP_NAME } app": [
+        "${ MAIL_APP_NAME } aplikace"
+      ],
       "${ MAIL_APP_NAME } on App Store": [
         "${ MAIL_APP_NAME } v App Store"
       ],
       "${ MAIL_APP_NAME } on Play Store": [
         "${ MAIL_APP_NAME } v Obchodu Play"
+      ],
+      "account logins": [
+        "přihlášení k účtu"
+      ],
+      "Auto-forward Gmail": [
+        "Automatické přeposílání Gmailu"
       ],
       "auto-forwarding": [
         "automatické přeposílání"
@@ -4219,6 +4228,9 @@
       ],
       "Bravo for making your email even more secure, convenient, and relevant! We've upped your free storage to a total of 1 GB.": [
         "Bravo za ještě bezpečnější, pohodlnější a relevantnější e-mail! Zvýšili jsme vaše bezplatné úložiště na celkem 1 GB."
+      ],
+      "Change ${ strongText } to your ${ BRAND_NAME } address": [
+        "Změňte adresu ${ strongText } na adresu ${ BRAND_NAME }."
       ],
       "Checklist complete": [
         "Kontrolní seznam je kompletní"
@@ -4255,6 +4267,9 @@
       ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "Získat mobilní aplikaci ${ MAIL_APP_NAME }"
+      ],
+      "Get the ${ strongText } on Android or iOS": [
+        "Získání ${ strongText } v systému Android nebo iOS"
       ],
       "Get the App": [
         "Získat aplikaci"
@@ -4307,8 +4322,14 @@
       "Set recovery method": [
         "Nastavit metodu obnovení"
       ],
+      "Set up ${ strongText } from Gmail": [
+        "Nastavení ${ strongText } ze služby Gmail"
+      ],
       "Sign in to the mobile app to complete this step": [
         "Přihlaste se do mobilní aplikace a dokončete tento krok"
+      ],
+      "Update your logins": [
+        "Aktualizace přihlašovacích údajů"
       ],
       "Using your mobile device, scan this QR code or visit the iOS or Android store.": [
         "Pomocí svého mobilního zařízení naskenujte tento QR kód nebo navštivte obchod pro iOS nebo Android."
@@ -6008,8 +6029,14 @@
       "We apologize. This might have been a mistake from our side. Can you please confirm that you want to mark this email as a legitimate one?": [
         "Omlouváme se. Toto mohla být chyba na naší straně. Potvrďte prosím, že jste si jistí, že chcete tento e-mail označit jako legitimní?"
       ],
+      "We blocked the following advertisers and organizations from seeing when you open this email, what device you’re using, and where you’re located.": [
+        "Následujícím inzerentům a organizacím jsme zabránili, aby při otevření tohoto e-mailu viděli, jaké zařízení používáte a kde se nacházíte."
+      ],
       "We could not verify the sender's trusted keys.": [
         "Nemohli jsme ověřit důvěrné klíče odesílatele."
+      ],
+      "We removed tracking information from the following links to help protect you from advertisers and others trying to track your online activity.": [
+        "Z následujících odkazů jsme odstranili informace ke sledování, abychom vás ochránili před inzerenty a dalšími subjekty, kteří se snaží sledovat vaši online aktivitu."
       ],
       "We'll notify you when the import is done.": [
         "Po dokončení importu Vás budeme informovat."
@@ -8045,11 +8072,6 @@
         "Ověření odesílatele"
       ]
     },
-    "Sender verification error": {
-      "Sender verification failed: Verification key is not in the list of trusted keys.": [
-        "Ověření odesílatele selhalo: Ověřovací klíč není v seznamu důvěryhodných klíčů."
-      ]
-    },
     "Sent email icon": {
       "Encrypted by ${ MAIL_APP_NAME }": [
         "Šifrováno pomocí ${ MAIL_APP_NAME }"
@@ -9498,6 +9520,12 @@
       ],
       "Warning: suspected fake website": [
         "Varování: podezření na falešnou webovou stránku"
+      ],
+      "We protected you from ${ trackersCount } tracker": [
+        "Ochránili jsme vás před ${ trackersCount } sledovacím prvkem",
+        "Ochránili jsme vás před ${ trackersCount } sledovacími prvky",
+        "Ochránili jsme vás před ${ trackersCount } sledovacími prvky",
+        "Ochránili jsme vás před ${ trackersCount } sledovacími prvky"
       ],
       "Welcome": [
         "Vítejte"

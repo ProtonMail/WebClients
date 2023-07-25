@@ -5619,11 +5619,11 @@
         "El remitente ha solicitado un acuse de recibo."
       ],
       "The verification of ${ contactName } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddress } or edit the contact.": [
-        "La verificación de ${ contactName } ha fallado: el contacto no está firmado correctamente.\nEsto puede ser resultado de un restablecimiento de contraseña.\nDebe volver a firmar el contacto para enviar un mensaje a ${ contactAddress } o editar el contacto."
+        "Error al verificar ${ contactName }: el contacto no está firmado correctamente.\nEsto puede ser el resultado de un restablecimiento de contraseña.\nDebe volver a firmar el contacto para enviar un mensaje a ${ contactAddress } o editar el contacto."
       ],
       "The verification of ${ contactNames } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddresses } or edit the contact.": [
-        "La verificación de ${ contactNames } ha fallado: el contacto no está firmado correctamente.\nEsto puede ser resultado de un restablecimiento de contraseña.\nDebe volver a firmar el contacto para enviar un mensaje a ${ contactAddresses } o editar el contacto.",
-        "La verificación de ${ contactNames } ha fallado: los contactos no están firmados correctamente.\nEsto puede ser resultado de un restablecimiento de contraseña.\nDebe volver a firmar los contactos para enviar un mensaje a ${ contactAddresses } o editar los contactos."
+        "Error al verificar ${ contactNames }: el contacto no está firmado correctamente.\nEsto puede ser resultado de un restablecimiento de contraseña.\nDebe volver a firmar el contacto para enviar un mensaje a ${ contactAddresses } o editar el contacto.",
+        "Error al verificar ${ contactNames }: los contactos no están firmados correctamente.\nEsto puede ser resultado de un restablecimiento de contraseña.\nDebe volver a firmar los contactos para enviar un mensaje a ${ contactAddresses } o editar los contactos."
       ],
       "Themes can give your inbox a new look.": [
         "Los temas pueden darle un estilo nuevo a su buzón."
@@ -5660,7 +5660,7 @@
         "Estas conversaciones serán marcadas como spam. ¿Le gustaría también cancelar la suscripción de correos futuros?"
       ],
       "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded.": [
-        "Este correo electrónico ha fallado los requisitos de autenticación de su dominio. ¡Puede estar falsificado o reenviado incorrectamente."
+        "Este correo electrónico no cumple con con los requisitos de autenticación del dominio. Puede estar falsificado o reenviado incorrectamente."
       ],
       "This invitation is saved in a disabled calendar.": [
         "Esta invitación está guardada en un calendario deshabilitado."
@@ -5787,13 +5787,13 @@
         "Actualice para añadir más direcciones a su cuenta."
       ],
       "Upgrade to automatically delete messages that have been in trash and spam for more than 30 days.": [
-        "Actualice su plan para eliminar automáticamente los mensajes que hayan estado en la papelera y en spam por más de 30 días."
+        "Mejore su plan para eliminar automáticamente los mensajes que hayan estado en la papelera y en spam por más de 30 días."
       ],
       "Upgrade to create more folders, filters, and addresses.": [
         "Actualice para crear más carpetas, filtros y direcciones."
       ],
       "Upgrade to level up your privacy.": [
-        "Actualice el plan para aumentar su privacidad."
+        "Mejore su plan para aumentar su privacidad."
       ],
       "Upgrade to send email from @pm.me addresses.": [
         "Actualice para enviar correos desde direcciones @pm.me."
@@ -5802,16 +5802,16 @@
         "Actualice el plan para enviar correos desde su dominio de correo personalizado."
       ],
       "Upgrade to send emails to contact groups easily.": [
-        "Actualice para enviar correos a grupos de contactos fácilmente."
+        "Mejore su plan para enviar correos a grupos de contactos fácilmente."
       ],
       "Upgrade to support a privacy-first internet.": [
-        "Actualice para apoyar una Internet que priorice la privacidad."
+        "Mejore su plan para apoyar una Internet que priorice la privacidad."
       ],
       "Upgrade to support our mission of privacy for all.": [
-        "Actualice para apoyar nuestra misión de privacidad para todos."
+        "Mejore su plan para apoyar nuestra misión de privacidad para todos."
       ],
       "Upgrade to support privacy and get more features.": [
-        "Actualice para apoyar la privacidad y obtener más funciones."
+        "Mejore su plan para apoyar la privacidad y obtener más funciones."
       ],
       "Upgrade to unlock premium features.": [
         "Actualice el plan para desbloquear funciones premium."
@@ -6862,7 +6862,7 @@
         "Para añadir un calendario nuevo, elimine uno existente."
       ],
       "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
-        "Para añadir un calendario nuevo, elimine otro o actualice su plan de ${ BRAND_NAME } a un plan de pago de ${ MAIL_SHORT_APP_NAME }."
+        "Para añadir un calendario nuevo, elimine otro o mejore su plan de ${ BRAND_NAME } a un plan de pago de ${ MAIL_SHORT_APP_NAME }."
       ],
       "You've reached the maximum number of calendars available in your plan.": [
         "Ha alcanzado el número máximo de calendarios disponibles en su plan."
@@ -7828,11 +7828,6 @@
     "Sender verification details": {
       "Sender verification": [
         "Verificación del remitente"
-      ]
-    },
-    "Sender verification error": {
-      "Sender verification failed: Verification key is not in the list of trusted keys.": [
-        "Error en la verificación del remitente: la clave de verificación no está en la lista de claves de confianza."
       ]
     },
     "Sent email icon": {

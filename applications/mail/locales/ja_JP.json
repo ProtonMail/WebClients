@@ -4656,7 +4656,7 @@
         "${ numberOfImageTrackers }個のトラッカーをブロックしました"
       ],
       "${ numberOfUTMTrackers } links cleaned": [
-        "${ numberOfUTMTrackers } リンクが削除されました"
+        "${ numberOfUTMTrackers } 件のリンクがクリアされました"
       ],
       "${ numContact } contacts": [
         "${ numContact } 件の連絡先"
@@ -5160,7 +5160,7 @@
         "リンクの種類"
       ],
       "Links cleaned:": [
-        "清掃したリンク:"
+        "クリアしたリンク:"
       ],
       "Loading": [
         "読み込み中"
@@ -5259,7 +5259,7 @@
         "ラベルが選択されていません"
       ],
       "No links cleaned": [
-        "クリーンアップされたリンクはありません"
+        "クリアされたリンクはありません"
       ],
       "No more results found": [
         "これ以上の結果が見つかりません"
@@ -7701,11 +7701,6 @@
     "Sender verification details": {
       "Sender verification": [
         "送信者検証"
-      ]
-    },
-    "Sender verification error": {
-      "Sender verification failed: Verification key is not in the list of trusted keys.": [
-        "送信者の検証に失敗しました: 検証キーが信頼できるキーのリストにありません。"
       ]
     },
     "Sent email icon": {
