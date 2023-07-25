@@ -1,6 +1,5 @@
 import type { Reducer } from 'redux';
 
-import type { Feature } from '@proton/components/containers';
 import type { MaybeNull, PassPlanResponse } from '@proton/pass/types';
 import { EventActions } from '@proton/pass/types';
 import type { PassFeature } from '@proton/pass/types/api/features';
@@ -10,7 +9,7 @@ import type { Address, User } from '@proton/shared/lib/interfaces';
 import { bootSuccess, serverEvent, setUserFeatures, setUserPlan } from '../actions';
 
 export type AddressState = { [addressId: string]: Address };
-export type UserFeatureState = Partial<Record<PassFeature, Feature>> & { requestedAt?: number };
+export type UserFeatureState = Partial<Record<PassFeature, boolean>> & { requestedAt?: number };
 export type UserPlanState = PassPlanResponse & { requestedAt?: number };
 
 export type UserState = {
