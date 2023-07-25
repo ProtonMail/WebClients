@@ -3874,6 +3874,9 @@
       "You have successfully joined the Family plan": [
         "Du har gått med i familjepaketet"
       ],
+      "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
+        "Du är inbjuden att länka ditt ${ BRAND_NAME }-konto till detta gruppaket och tillsammans njuta av alla ${ BRAND_NAME_TWO } premiumfunktioner."
+      ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Ditt konto har fler e-postadresser än vad som är tillgängligt för dig i detta paket. ${ addressSettingsLink }"
       ],
@@ -3885,6 +3888,9 @@
       ]
     },
     "familyOffer_2023:Footer": {
+      "*Your subscription will automatically renew at the same rate at the end of your billing cycle.": [
+        "*Din penumeration kommer förnyas automatiskt med samma pris i slutet av din faktureringsperiod."
+      ],
       "Discounts are based on the standard monthly pricing.": [
         "Rabatterna är baserade på ordinarie månadspriser."
       ]
@@ -4159,6 +4165,9 @@
       "Block unsavory senders": [
         "Blockera otrevliga avsändare"
       ],
+      "Bravo for making your email even more secure, convenient, and relevant! We've upped your free storage to a total of 1 GB.": [
+        "Bravo för att göra din e-post ännu säkrare, bekvämare och mer relevant! Vi har utökat ditt gratis lagringsutrymme till totalt 1 GB."
+      ],
       "Change ${ strongText } to your ${ BRAND_NAME } address": [
         "Ändra ${ strongText } till din ${ BRAND_NAME }-adress"
       ],
@@ -4212,6 +4221,9 @@
       ],
       "Import your contacts or messages": [
         "Importera dina kontakter eller meddelanden"
+      ],
+      "Keep using ${ MAIL_APP_NAME } to discover more ways ${ BRAND_NAME } protects your privacy and simplifies emailing.": [
+        "Fortsätt använda ${ MAIL_APP_NAME } för att upptäcka fler sätt ${ BRAND_NAME } skyddar din integritet och förenklar sättet att skicka e-post."
       ],
       "Learn more": [
         "Lär dig mer"
@@ -5269,6 +5281,7 @@
         "Sammanslagna"
       ],
       "Message downloaded: ${ currentProgress } out of ${ totalProgress }": [
+        "Meddelande nedladdat: ${ currentProgress } av ${ totalProgress }",
         "Meddelanden nedladdade: ${ currentProgress } av ${ totalProgress }"
       ],
       "Message expiration works out-of-the-box when sending emails to other ${ MAIL_APP_NAME } users. To send expiring emails to non-${ BRAND_NAME } users, please cancel and add password protection to your email.": [
@@ -7799,11 +7812,6 @@
         "Avsändarverifiering"
       ]
     },
-    "Sender verification error": {
-      "Sender verification failed: Verification key is not in the list of trusted keys.": [
-        "Avsändarverifiering misslyckades: Verifieringsnyckel är inte i listan över betrodda nycklar."
-      ]
-    },
     "Sent email icon": {
       "Encrypted by ${ MAIL_APP_NAME }": [
         "Krypterad av ${ MAIL_APP_NAME }"
@@ -8479,6 +8487,9 @@
       ]
     },
     "summer2023: Tooltip": {
+      "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
+        "Skapa säkra inloggningsuppgifter på alla dina enheter. Innehåller obegränsade alias, 20 valv, integrerad 2FA, automatisk ifyllning av kreditkort och mer."
+      ],
       "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
         "Inkluderar 2950+ servrar i 65+ länder, anslut upp till 10 enheter, få åtkomst till världsomspännande streamingtjänster, blockerare mot skadlig programvara och annonser och mer."
       ],

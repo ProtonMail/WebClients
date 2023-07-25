@@ -4,10 +4,74 @@
     "language": "en_US"
   },
   "contexts": {
+    "Action": {
+      "Toggle Contact app": [
+        "Toggle Contacts app"
+      ]
+    },
+    "Description": {
+      "Automatically clear out messages older than 30 days from trash and spam. Enjoy this and other benefits when you upgrade.": [
+        "Automatically clear out messages older than 30 days from trash or spam. Enjoy this and other benefits when you upgrade."
+      ]
+    },
+    "Error": {
+      "Require at least one action": [
+        "At least one action is required."
+      ],
+      "Require at least one condition": [
+        "At least one condition is required."
+      ]
+    },
+    "familyOffer_2023:Family plan": {
+      "Accounts with custom domains cannot join a Visionary or family plan.": [
+        "Accounts with custom domains cannot join a Visionary or Family plan."
+      ],
+      "Manage addresses.": [
+        "Manage addresses"
+      ]
+    },
+    "familyOffer_2023:Onboarding Proton": {
+      "Configure your family account and invite users ": [
+        "Configure your family account and invite users"
+      ]
+    },
+    "Filter option to only show message with attachments": {
+      "Has file": [
+        "Has attachments"
+      ]
+    },
+    "Font face option": {
+      "System default": [
+        "Paramètres par défaut du système"
+      ]
+    },
     "Info": {
+      "${ numberOfUTMTrackers } link cleaned": [
+        "${ numberOfUTMTrackers } cleaned link",
+        "${ numberOfUTMTrackers } cleaned links"
+      ],
+      "Contact unassigned to group ${ contactGroupName }": [
+        "Contact unassigned from group ${ contactGroupName }"
+      ],
       "file attached": [
         "attachment",
         "attachments"
+      ],
+      "No links cleaned": [
+        "No cleaned links"
+      ],
+      "Upgrade to automatically delete messages that have been in trash and spam for more than 30 days.": [
+        "Upgrade to automatically delete messages that have been in trash or spam for more than 30 days."
+      ]
+    },
+    "Label": {
+      "Synchronize with system": [
+        "Synchronize with system settings"
+      ]
+    },
+    "Oauth instructions video alternative": {
+      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
+        "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Calendar."
       ]
     }
   }
