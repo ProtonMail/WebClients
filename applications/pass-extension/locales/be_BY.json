@@ -17,6 +17,9 @@
       "Add new item": [
         "Дадаць новы элемент"
       ],
+      "Advanced": [
+        "Дадаткова"
+      ],
       "Advanced options": [
         "Дадатковыя параметры"
       ],
@@ -140,6 +143,9 @@
       "Generate password": [
         "Згенерыраваць пароль"
       ],
+      "Generated password": [
+        "Згенерыраваны пароль"
+      ],
       "Get mobile apps": [
         "Атрымаць мабільныя праграмы"
       ],
@@ -163,6 +169,12 @@
       ],
       "Learn more": [
         "Даведацца больш"
+      ],
+      "Lock extension": [
+        "Блакіраванне пашырэння"
+      ],
+      "Manually sync your data": [
+        "Сінхранізацыя даных уручную"
       ],
       "More options": [
         "Дадатковыя параметры"
@@ -284,11 +296,11 @@
       ]
     },
     "Error": {
-      "${ PASS_APP_NAME } export file could not be parsed. ${ errorDetail }": [
-        "Не атрымалася прааналізаваць экспартаваны файл ${ PASS_APP_NAME }. ${ errorDetail }"
+      "${ provider } file could not be parsed. ${ errorDetail }": [
+        "Не атрымалася прааналізаваць файл ${ provider }. ${ errorDetail }"
       ],
-      "1Password export file could not be parsed. ${ errorDetail }": [
-        "Не атрымалася прааналізаваць экспартаваны файл 1Password. ${ errorDetail }"
+      "Alias options could not be resolved": [
+        "Немагчыма вызначыць параметры псеўданімаў"
       ],
       "Authentication error": [
         "Памылка аўтэнтыфікацыі"
@@ -299,14 +311,8 @@
       "Auto-lock could not be disabled": [
         "Не атрымалася адключыць аўтаблакіроўку"
       ],
-      "Bitwarden export file could not be parsed. ${ errorDetail }": [
-        "Не атрымалася прааналізаваць экспартаваны файл Bitwarden. ${ errorDetail }"
-      ],
-      "Cannot create alias.": [
-        "Немагчыма стварыць псеўданім."
-      ],
-      "Chrome export file could not be parsed. ${ errorDetail }": [
-        "Не атрымалася прааналізаваць экспартаваны файл Chrome. ${ errorDetail }"
+      "Cannot create alias (${ error }).": [
+        "Немагчыма стварыць псеўданімы (${ error })."
       ],
       "Could not open created vault": [
         "Немагчыма адкрыць створанае сховішча"
@@ -319,9 +325,6 @@
       ],
       "CSV file is missing expected headers: ${ missingHeaders }": [
         "Файл CSV не змяшчае неабходных загалоўкаў: ${ missingHeaders }"
-      ],
-      "Dashlane export file could not be parsed. ${ errorDetail }": [
-        "Не атрымалася прааналізаваць экспартаваны файл Dashlane. ${ errorDetail }"
       ],
       "Decrypting your ${ PASS_APP_NAME } export file failed. ${ errorDetail }": [
         "Збой расшыфроўкі экспартаванага файла ${ PASS_APP_NAME }. ${ errorDetail }"
@@ -356,9 +359,6 @@
       "File could not be parsed": [
         "Немагчыма прааналізаваць файл"
       ],
-      "Firefox export file could not be parsed. ${ errorDetail }": [
-        "Не атрымалася прааналізаваць экспартаваны файл Firefox. ${ errorDetail }"
-      ],
       "Import failed for vault \"${ vaultData.name }\" : ${ description }": [
         "Збой імпартавання для сховішча \"${ vaultData.name }\" : ${ description }"
       ],
@@ -373,15 +373,6 @@
       ],
       "Item creation failed": [
         "Збой стварэння элемента"
-      ],
-      "KeePass export file could not be parsed. ${ errorDetail }": [
-        "Не атрымалася прааналізаваць экспартаваны файл KeePass. ${ errorDetail }"
-      ],
-      "Keeper export file could not be parsed. ${ errorDetail }": [
-        "Не атрымалася прааналізаваць экспартаваны файл Keeper. ${ errorDetail }"
-      ],
-      "LastPass export file could not be parsed. ${ errorDetail }": [
-        "Не атрымалася прааналізаваць экспартаваны файл LastPass. ${ errorDetail }"
       ],
       "LastPass will export a corrupted CSV file if any of your item fields contain unexpected commas, quotes or multiple lines": [
         "LastPass экспартуе пашкоджаны файл CSV, калі якое-небудзь поле элемента змяшчае нечаканыя коскі, двукоссі або некалькі радкоў"
@@ -412,9 +403,6 @@
       ],
       "Restoring item failed": [
         "Збой аднаўлення элемента"
-      ],
-      "Safari export file could not be parsed. ${ errorDetail }": [
-        "Не атрымалася прааналізаваць экспартаваны файл Safari. ${ errorDetail }"
       ],
       "Setting \"${ payload.name }\" as primary vault failed": [
         "Не ўдалося задаць \"${ payload.name }\" у якасці асноўнага сховішча"
@@ -1619,7 +1607,7 @@
         "Ваш сеанс заблакіраваны па прычыне адсутнасці актыўнасці"
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your primary vault. To import into multiple vaults upgrade your subscription.": [
-        "Ваша падпіска не дазваляе стараць некалькі сховішчаў. Усе элементы будуць імпартаваны ў ваша асноўнае сховішча. Палепшыце сваю падпіску, каб мець магчымасць імпартаваць у некалькі сховішчаў."
+        "Ваша падпіска не дазваляе ствараць некалькі сховішчаў. Усе элементы будуць імпартаваны ў ваша асноўнае сховішча. Палепшыце сваю падпіску, каб мець магчымасць імпартаваць у некалькі сховішчаў."
       ]
     }
   }

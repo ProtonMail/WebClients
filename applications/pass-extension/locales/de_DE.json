@@ -17,6 +17,9 @@
       "Add new item": [
         "Neuen Eintrag hinzufügen"
       ],
+      "Advanced": [
+        "Erweitert"
+      ],
       "Advanced options": [
         "Erweiterte Optionen"
       ],
@@ -140,6 +143,9 @@
       "Generate password": [
         "Passwort generieren"
       ],
+      "Generated password": [
+        "Generierte Passwörter"
+      ],
       "Get mobile apps": [
         "Mobile Apps holen"
       ],
@@ -163,6 +169,12 @@
       ],
       "Learn more": [
         "Mehr erfahren"
+      ],
+      "Lock extension": [
+        "Erweiterung sperren"
+      ],
+      "Manually sync your data": [
+        "Daten manuell synchronisieren"
       ],
       "More options": [
         "Weitere Optionen"
@@ -284,11 +296,11 @@
       ]
     },
     "Error": {
-      "${ PASS_APP_NAME } export file could not be parsed. ${ errorDetail }": [
-        "Die ${ PASS_APP_NAME }-Exportdatei konnte nicht geparst werden. ${ errorDetail }"
+      "${ provider } file could not be parsed. ${ errorDetail }": [
+        "Die ${ provider }-Datei konnte nicht geparst werden. ${ errorDetail }"
       ],
-      "1Password export file could not be parsed. ${ errorDetail }": [
-        "1Password-Exportdatei konnte nicht geparst werden. ${ errorDetail }"
+      "Alias options could not be resolved": [
+        "Fehler beim Auflösen der Aliasoptionen."
       ],
       "Authentication error": [
         "Authentifizierungsfehler"
@@ -299,14 +311,8 @@
       "Auto-lock could not be disabled": [
         "Automatisches Sperren konnte nicht deaktiviert werden."
       ],
-      "Bitwarden export file could not be parsed. ${ errorDetail }": [
-        "Bitwarden-Exportdatei konnte nicht geparst werden. ${ errorDetail }"
-      ],
-      "Cannot create alias.": [
-        "Fehler beim Erstellen des Alias."
-      ],
-      "Chrome export file could not be parsed. ${ errorDetail }": [
-        "Chrome-Exportdatei konnte nicht geparst werden. ${ errorDetail }"
+      "Cannot create alias (${ error }).": [
+        "Fehler beim Erstellen des Alias (${ error })."
       ],
       "Could not open created vault": [
         "Erstellter Tresor konnte nicht geöffnet werden."
@@ -319,9 +325,6 @@
       ],
       "CSV file is missing expected headers: ${ missingHeaders }": [
         "In der CSV-Datei fehlen erwartete Kopfzeilen: ${ missingHeaders }"
-      ],
-      "Dashlane export file could not be parsed. ${ errorDetail }": [
-        "Dashlane-Exportdatei konnte nicht geparst werden. ${ errorDetail }"
       ],
       "Decrypting your ${ PASS_APP_NAME } export file failed. ${ errorDetail }": [
         "Das Entschlüsseln deiner ${ PASS_APP_NAME }-Exportdatei ist fehlgeschlagen. ${ errorDetail }"
@@ -354,9 +357,6 @@
       "File could not be parsed": [
         "Datei konnte nicht geparst werden."
       ],
-      "Firefox export file could not be parsed. ${ errorDetail }": [
-        "Firefox-Exportdatei konnte nicht geparst werden. ${ errorDetail }"
-      ],
       "Import failed for vault \"${ vaultData.name }\" : ${ description }": [
         "Import für Tresor \"${ vaultData.name }\" fehlgeschlagen: ${ description }"
       ],
@@ -371,15 +371,6 @@
       ],
       "Item creation failed": [
         "Fehler beim Erstellen des Eintrags."
-      ],
-      "KeePass export file could not be parsed. ${ errorDetail }": [
-        "KeePass-Exportdatei konnte nicht geparst werden. ${ errorDetail }"
-      ],
-      "Keeper export file could not be parsed. ${ errorDetail }": [
-        "Die Keeper-Exportdatei konnte nicht geparst werden. ${ errorDetail }"
-      ],
-      "LastPass export file could not be parsed. ${ errorDetail }": [
-        "LastPass-Exportdatei konnte nicht geparst werden. ${ errorDetail }"
       ],
       "LastPass will export a corrupted CSV file if any of your item fields contain unexpected commas, quotes or multiple lines": [
         "LastPass exportiert eine beschädigte CSV-Datei, wenn eines deiner Elementfelder unerwartete Kommas, Anführungszeichen oder mehrere Zeilen enthält."
@@ -410,9 +401,6 @@
       ],
       "Restoring item failed": [
         "Fehler beim Wiederherstellen des Eintrags."
-      ],
-      "Safari export file could not be parsed. ${ errorDetail }": [
-        "Safari-Exportdatei konnte nicht geparst werden. ${ errorDetail }"
       ],
       "Setting \"${ payload.name }\" as primary vault failed": [
         "Festlegen von \"${ payload.name }\" als primärer Tresor fehlgeschlagen."
@@ -840,6 +828,9 @@
       "Verification code": [
         "Verifizierungscode"
       ],
+      "You are about to create:": [
+        "Folgender Alias wird erstellt:"
+      ],
       "You have ${ daysRemaining } day left in your trial period.": [
         "Du hast noch ${ daysRemaining } Tag in deinem Testzeitraum übrig.",
         "Du hast noch ${ daysRemaining } Tage in deinem Testzeitraum übrig."
@@ -861,6 +852,9 @@
       ],
       "You will use this PIN to unlock ${ PASS_APP_NAME } once it auto-locks after a period of inactivity.": [
         "Du verwendest diese PIN, um ${ PASS_APP_NAME } zu entsperren, sobald es sich nach einer gewissen Zeit der Inaktivität automatisch sperrt."
+      ],
+      "You're about to create": [
+        "Folgender Alias wird erstellt:"
       ],
       "Your ${ PASS_APP_NAME } session is locked": [
         "Deine ${ PASS_APP_NAME }-Sitzung ist gesperrt."
@@ -1249,6 +1243,9 @@
       ],
       "Websites": [
         "Websites"
+      ],
+      "You are about to create": [
+        "Folgender Alias wird erstellt:"
       ]
     },
     "Option": {
@@ -1380,7 +1377,7 @@
         "Berechtigungen erteilen"
       ],
       "Hide my email": [
-        "Meine E-Mail-Adresse verstecken"
+        "Hide-my-email"
       ],
       "Import - ${ date }": [
         "Import - ${ date }"
