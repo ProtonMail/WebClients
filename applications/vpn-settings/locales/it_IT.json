@@ -179,6 +179,9 @@
       "Hide": [
         "Nascondi"
       ],
+      "Hide plan features": [
+        "Nascondi le caratteristiche del piano"
+      ],
       "I have a question": [
         "Ho una domanda"
       ],
@@ -3438,6 +3441,20 @@
         "Media velocità della VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Esegui il downgrade a ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Scopri tutti i piani ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Da ${ price }"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "Mantieni il mio account ${ currentPlanName }"
+      ]
+    },
     "new_plans: action": {
       "Continue to review": [
         "Continua per controllare"
@@ -3468,36 +3485,6 @@
       ],
       "Switch plan": [
         "Cambia piano"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Esegui il downgrade a ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Scopri tutti i piani ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Da ${ price }"
-      ],
-      "From ${ price } per user": [
-        "Da ${ price } per utente"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "Mantieni il mio account ${ currentPlanName }"
-      ],
-      "Upgrade now": [
-        "Effettua l'upgrade ora"
-      ]
-    },
-    "new_plans: attribute": {
-      "Get ${ connections } high-speed VPN connection": [
-        "Ottieni ${ connections } connessione VPN ad alta velocità",
-        "Ottieni ${ connections } connessioni VPN ad alta velocità"
-      ],
-      "Get ${ connections } high-speed VPN connection per user": [
-        "Ottieni ${ connections } connessione VPN ad alta velocità per utente",
-        "Ottieni ${ connections } connessioni VPN ad alta velocità per utente"
       ]
     },
     "new_plans: feature": {
@@ -3556,6 +3543,9 @@
       "${ n } VPN connection per user": [
         "${ n } connessione VPN per utente",
         "${ n } connessioni VPN per utente"
+      ],
+      "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
+        "${ PASS_APP_NAME } con alias hide-my-email illimitati"
       ],
       "${ size } attachment size": [
         "Dimensioni allegato ${ size }"
@@ -3865,23 +3855,14 @@
       ]
     },
     "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Rendi la privacy la tua impostazione predefinita per il backup, l'archiviazione, la condivisione e il recupero dei file."
-      ],
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "In caso contrario, l'accesso al tuo account sarà limitato e il tuo account verrà di seguito disabilitato."
       ],
       "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
         "Per continuare a utilizzare ${ MAIL_APP_NAME } con le funzionalità premium, scegli l'abbonamento e le opzioni di pagamento."
       ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "Effettua l'upgrade al pacchetto per le aziende con accesso a tutti i servizi premium di ${ BRAND_NAME }."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "Effettua l'upgrade al pacchetto per la privacy definitivo e accedi a tutti i servizi premium di ${ BRAND_NAME }."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Il periodo di prova termina il ${ formattedTrialExpirationDate }"
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "La tua prova termina ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -3908,6 +3889,14 @@
         "termini e condizioni"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } Prova"
+      ],
+      "Your account's usage": [
+        "L'utilizzo del tuo account"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Eliminare l'account?"
@@ -3923,17 +3912,6 @@
       ],
       "Switch plans?": [
         "Cambiare piani?"
-      ]
-    },
-    "new_plans: Title": {
-      "${ mailPlanName } Trial": [
-        "Prova ${ mailPlanName }"
-      ],
-      "Upgrade to ${ planName }": [
-        "Effettua l'upgrade a ${ planName }"
-      ],
-      "Your account's usage": [
-        "L'utilizzo del tuo account"
       ]
     },
     "new_plans: tooltip": {
@@ -4120,51 +4098,24 @@
       ]
     },
     "new_plans: Upsell attribute": {
-      "${ storageSize } total storage": [
-        "${ storageSize } di spazio di archiviazione totale"
-      ],
-      "10 email addresses/aliases": [
-        "10 indirizzi email/alias"
-      ],
       "Access advanced VPN features": [
         "Accedi a funzionalità VPN avanzate"
       ],
       "Add more personalization with 15 email addresses and support for 3 custom email domains": [
         "Aggiungi più personalizzazione con 15 indirizzi email e 3 domini email personalizzati inclusi"
       ],
+      "Boost your storage space to ${ bundleStorage } per user": [
+        "Aumenta il tuo spazio di archiviazione a ${ bundleStorage } per utente"
+      ],
       "Boost your storage space to ${ bundleStorage } total": [
         "Incrementa il tuo spazio di archiviazione a un totale di ${ bundleStorage }"
-      ],
-      "Boost your storage space to ${ businessStorage } per user": [
-        "Incrementa il tuo spazio di archiviazione fino a ${ businessStorage } per utente"
       ],
       "Cover more ground with support for 10 custom email domains": [
         "Ottieni di più con 10 domini email personalizzati inclusi"
       ],
-      "Create up to ${ MAX_CALENDARS_PAID } calendar": [
-        "Crea fino a ${ MAX_CALENDARS_PAID } calendario",
-        "Crea fino a ${ MAX_CALENDARS_PAID } calendari"
-      ],
-      "Everything in ${ vpnPlanName }": [
-        "Tutto in ${ vpnPlanName }"
-      ],
-      "Get 5 additional email addresses per user": [
-        "Ottieni 5 indirizzi email aggiuntivi per utente"
-      ],
-      "Priority support": [
-        "Assistenza prioritaria"
-      ],
-      "Secure your passwords and identity with an open-source and encrypted password manager.": [
-        "Metti al sicuro le tue password e la tua identità con un gestore delle password open-source e crittografato."
-      ],
-      "Support for 1 custom email domain": [
-        "Assistenza per 1 dominio email personalizzato"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Cartelle, etichette e filtri illimitati"
-      ],
-      "Unlimited messages": [
-        "Messaggi illimitati"
+      "Create up to ${ n } calendar": [
+        "Crea fino a ${ n } calendario",
+        "Crea fino a ${ n } calendari"
       ]
     },
     "Notification": {
@@ -5408,6 +5359,11 @@
       ],
       "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
         "Questa versione di Tor Browser non è supportata. Si prega di aggiornare all'ultima ${ stableRelease }"
+      ]
+    },
+    "upsell panel": {
+      "Recommended": [
+        "Consigliato"
       ]
     },
     "Validation": {
