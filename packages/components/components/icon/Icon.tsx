@@ -76,6 +76,7 @@ export type IconName =
     | 'brand-brave'
     | 'brand-chrome'
     | 'brand-discover'
+    | 'brand-edge'
     | 'brand-firefox'
     | 'brand-github'
     | 'brand-linux'
