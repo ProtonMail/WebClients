@@ -17,6 +17,9 @@
       "Add new item": [
         "Lisää uusi kohde"
       ],
+      "Advanced": [
+        "Lisäasetukset"
+      ],
       "Advanced options": [
         "Lisävalinnat"
       ],
@@ -27,7 +30,7 @@
         "Etkö löydä käyttämääsi salasanahallintaa? Kerro siitä meille!"
       ],
       "Cancel": [
-        "Peru"
+        "Peruuta"
       ],
       "Change": [
         "Muuta"
@@ -140,6 +143,9 @@
       "Generate password": [
         "Luo salasana"
       ],
+      "Generated password": [
+        "Luotu salasana"
+      ],
       "Get mobile apps": [
         "Hanki mobiilisovellukset"
       ],
@@ -163,6 +169,12 @@
       ],
       "Learn more": [
         "Lue lisää"
+      ],
+      "Lock extension": [
+        "Lukitse laajennus"
+      ],
+      "Manually sync your data": [
+        "Synkronoi tietosi manuaalisesti"
       ],
       "More options": [
         "Lisää asetuksia"
@@ -284,11 +296,11 @@
       ]
     },
     "Error": {
-      "${ PASS_APP_NAME } export file could not be parsed. ${ errorDetail }": [
-        "${ PASS_APP_NAME }in vientitiedostoa ei voitu jäsentää. ${ errorDetail }"
+      "${ provider } file could not be parsed. ${ errorDetail }": [
+        "${ provider } -tiedostoa ei voitu jäsentää. ${ errorDetail }"
       ],
-      "1Password export file could not be parsed. ${ errorDetail }": [
-        "1Passwordin vientitiedostoa ei voitu jäsentää. ${ errorDetail }"
+      "Alias options could not be resolved": [
+        "Alias-vaihtoehtoja ei voitu määrittää"
       ],
       "Authentication error": [
         "Todennusvirhe"
@@ -299,14 +311,8 @@
       "Auto-lock could not be disabled": [
         "Automaattilukitusta ei voitu poistaa käytöstä"
       ],
-      "Bitwarden export file could not be parsed. ${ errorDetail }": [
-        "Bitwardenin vientitiedostoa ei voitu jäsentää. ${ errorDetail }"
-      ],
-      "Cannot create alias.": [
-        "Aliaksen luonti ei onnistu."
-      ],
-      "Chrome export file could not be parsed. ${ errorDetail }": [
-        "Chromen vientitiedostoa ei voitu jäsentää. ${ errorDetail }"
+      "Cannot create alias (${ error }).": [
+        "Aliasta ei voida luoda (${ error })."
       ],
       "Could not open created vault": [
         "Luotua holvia ei voitu avata"
@@ -319,9 +325,6 @@
       ],
       "CSV file is missing expected headers: ${ missingHeaders }": [
         "CSV-tiedostosta puuttuu odotettuja otsikoita: ${ missingHeaders }"
-      ],
-      "Dashlane export file could not be parsed. ${ errorDetail }": [
-        "Dashlanen vientitiedostoa ei voitu jäsentää. ${ errorDetail }"
       ],
       "Decrypting your ${ PASS_APP_NAME } export file failed. ${ errorDetail }": [
         "${ PASS_APP_NAME }in vientitiedoston salauksen purku epäonnistui. ${ errorDetail }"
@@ -354,9 +357,6 @@
       "File could not be parsed": [
         "Tiedostoa ei voitu jäsentää"
       ],
-      "Firefox export file could not be parsed. ${ errorDetail }": [
-        "Firefoxin vientitiedostoa ei voitu jäsentää. ${ errorDetail }"
-      ],
       "Import failed for vault \"${ vaultData.name }\" : ${ description }": [
         "Holvin \"${ vaultData.name }\" tuonti epäonnistui: ${ description }"
       ],
@@ -372,15 +372,6 @@
       "Item creation failed": [
         "Kohteen luonti epäonnistui"
       ],
-      "KeePass export file could not be parsed. ${ errorDetail }": [
-        "KeePassin vientitiedostoa ei voitu jäsentää. ${ errorDetail }"
-      ],
-      "Keeper export file could not be parsed. ${ errorDetail }": [
-        "Keeperin vientitiedostoa ei voitu jäsentää. ${ errorDetail }"
-      ],
-      "LastPass export file could not be parsed. ${ errorDetail }": [
-        "LastPassin vientitiedostoa ei voitu jäsentää. ${ errorDetail }"
-      ],
       "LastPass will export a corrupted CSV file if any of your item fields contain unexpected commas, quotes or multiple lines": [
         "LastPass vie virheellisen CSV-tiedoston, jos yksikin kohteidesi kentistäsi sisältää odottamattomia pilkkuja, lainausmerkkejä tai useita rivejä"
       ],
@@ -394,7 +385,7 @@
         "PIN-koodit eivät täsmää"
       ],
       "Please grant ${ PASS_APP_NAME } the necessary extension permissions in order to continue": [
-        "Anna palvelulle ${ PASS_APP_NAME } tarvittavat laajennusoikeudet, jotta voit jatkaa"
+        "Jatka myöntämällä ${ PASS_APP_NAME }ille tarvittavat laajennusoikeudet"
       ],
       "Please pin the extension or select \"Continue without pinning\".": [
         "Kiinnitä laajennus tai valitse \"Jatka kiinnittämättä\"."
@@ -411,11 +402,8 @@
       "Restoring item failed": [
         "Kohteen palautus epäonnistui"
       ],
-      "Safari export file could not be parsed. ${ errorDetail }": [
-        "Safarin vientitiedostoa ei voitu jäsentää. ${ errorDetail }"
-      ],
       "Setting \"${ payload.name }\" as primary vault failed": [
-        "\"${ payload.name }\" asettaminen ensisijaiseksi holviksi epäonnistui"
+        "\"${ payload.name }\" asetus ensisijaiseksi holviksi epäonnistui"
       ],
       "Settings update failed": [
         "Asetusten päivitys epäonnistui"
@@ -556,13 +544,13 @@
         "Käytä ${ PASS_APP_NAME }ia tästä kuvakkeesta"
       ],
       "Access to ${ PASS_APP_NAME } will require a pin code to unlock your session": [
-        "${ PASS_APP_NAME } -istunnon avaus vaatii PIN-koodin"
+        "${ PASS_APP_NAME } -istunnon lukituksen avaus vaatii PIN-koodin"
       ],
       "Access your passwords on the go with our mobile apps.": [
         "Mobiilisovelluksillamme tavoitat salasanasi myös liikkeellä ollessasi."
       ],
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
-        "Alias \"${ item.aliasEmail }\" siirrettiin roskakoriin, eikä se enää ohjaa viestejä postilaatikkoosi"
+        "Alias \"${ item.aliasEmail }\" siirrettiin roskakoriin, eikä se enää ohjaa viestejä postilaatikkoosi."
       ],
       "All items permanently removed": [
         "Kaikki kohteet poistettiin pysyvästi"
@@ -744,7 +732,7 @@
         "PIN-koodi on rekisteröity ja voit nyt avata ${ PASS_APP_NAME }in sillä."
       ],
       "Please confirm your PIN code in order to unregister your current lock.\n${ PASS_APP_NAME } will then never lock.": [
-        "Poista nykyinen lukitus vahvistamalla PIN-koodisi. Sen jälkeen\n${ PASS_APP_NAME } ei enää koskaan lukitu."
+        "Poista nykyinen lukitustapa vahvistamalla PIN-koodisi. Sen jälkeen\n${ PASS_APP_NAME } ei enää koskaan lukitu."
       ],
       "Please confirm your PIN code to edit this setting.": [
         "Muokkaa asetusta vahvistamalla PIN-koodisi."
@@ -1083,7 +1071,7 @@
         "Muokattu"
       ],
       "Most recent": [
-        "Uusimmat"
+        "Käytön mukaan"
       ],
       "Move items to": [
         "Siirrä kohteet sijaintiin"
@@ -1146,7 +1134,7 @@
         "Tarjoa automaattitallennusta"
       ],
       "Recent": [
-        "Viimeisimmät"
+        "Käytön mukaan"
       ],
       "Report a problem": [
         "Ilmoita ongelmasta"
@@ -1236,10 +1224,10 @@
         "Käyttäjätunnus"
       ],
       "Username (alias)": [
-        "Käyttäjänimi (alias)"
+        "Käyttäjätunnus (alias)"
       ],
       "Username (new alias)": [
-        "Käyttäjänimi (uusi alias)"
+        "Käyttäjätunnus (uusi alias)"
       ],
       "Vault": [
         "Holvi"
@@ -1437,10 +1425,10 @@
         "Käytä turvallista salasanaa"
       ],
       "Welcome to ${ brandNameJSX }": [
-        "Tervetuloa palveluun ${ brandNameJSX }"
+        "Tervetuloa ${ brandNameJSX }iin"
       ],
       "Welcome to ${ PASS_APP_NAME }": [
-        "Tervetuloa palveluun ${ PASS_APP_NAME }"
+        "Tervetuloa ${ PASS_APP_NAME }iin"
       ],
       "Welcome!": [
         "Tervetuloa!"
@@ -1480,7 +1468,7 @@
         "Ongelman kuvaus vaaditaan"
       ],
       "Alias \"${ name }\" is currently used in login item \"${ relatedLoginName }\". You will also stop receiving emails sent to \"${ aliasEmail }\"": [
-        "Alias \"${ name }\" on tällä hetkellä käytössä kirjautumiskohteessa \"${ relatedLoginName }\". Lopetat myös osoitteeseen \"${ aliasEmail }\" lähetettyjen sähköpostiviestien vastaanottamisen."
+        "Aliasta \"${ name }\" käytetään tällä hetkellä kirjautumistiedossa \"${ relatedLoginName }\". Lisäksi osoitteeseen \"${ aliasEmail }\" lähetettyjen sähköpostiviestien vastaanottaminen päättyy."
       ],
       "All your trashed items will be permanently deleted. You can not undo this action.": [
         "Kaikki roskakorin kohteet poistetaan pysyvästi. Et voi kumota toimintoa"
@@ -1498,7 +1486,7 @@
         "Tyhjä muistiinpano"
       ],
       "Expiration Date is incomplete": [
-        "Vanhentumispäivä on puutteellinen"
+        "Erääntymisaika on puutteellinen"
       ],
       "Invalid alias prefix": [
         "Virheellinen aliaksen etuliite"
