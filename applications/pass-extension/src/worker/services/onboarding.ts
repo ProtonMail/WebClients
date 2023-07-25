@@ -83,6 +83,14 @@ const ONBOARDING_RULES: OnboardingRule[] = [
             return !hasLock && shouldPrompt;
         },
     }),
+    createOnboardingRule({
+        message: OnboardingMessage.USER_RATING,
+        when: (previous) => {
+            const PROMPT_ITEM_COUNT = 10;
+            const { createdItemsCount } = store.getState().settings;
+            return !previous && createdItemsCount >= PROMPT_ITEM_COUNT;
+        },
+    }),
 ];
 
 export const createOnboardingService = () => {
