@@ -63,6 +63,21 @@ const handleFrameVisibilityChange = () => {
     }
 };
 
+const loadCustomElements = async () =>
+    new Promise<void>((resolve, reject) => {
+        const script = document.createElement('script');
+        script.src = chrome.runtime.getURL('elements.js');
+
+        script.addEventListener('load', () => {
+            script.remove();
+            resolve();
+        });
+
+        script.addEventListener('error', () => reject('Could not load custom elements'));
+
+        (document.head || document.documentElement).appendChild(script);
+    });
+
 /* This IIFE is responsible for handling every new content-script injection. It starts
  * by cleaning up the DOM (in case of concurrent scripts running) and unloading any client
  * content-scripts. Depending on the current visibility state, either the client content
@@ -73,7 +88,9 @@ const handleFrameVisibilityChange = () => {
 void (async () => {
     try {
         DOMCleanUp();
+        await loadCustomElements();
         await unloadClient();
+
         if (!isMainFrame()) {
             /* FIXME: apply iframe specific heuristics here :
              * we want to avoid injecting into frames that have
