@@ -220,7 +220,7 @@ const PopoverEventContent = ({
                     ...groupedAttendees[DECLINED],
                     ...groupedAttendees[NEEDS_ACTION],
                     ...groupedAttendees.other,
-                ].map(({ icon, name, title, initials, tooltip, extraText, email, contactID }) => (
+                ].map(({ icon, name, title, initials, tooltip, extraText, email, contactID, isCurrentUser }) => (
                     <li className="pr-1" key={title}>
                         <Participant
                             title={title}
@@ -231,6 +231,7 @@ const PopoverEventContent = ({
                             extraText={extraText}
                             email={email}
                             isContact={!!contactID}
+                            isCurrentUser={isCurrentUser}
                             onCreateOrEditContact={
                                 contactID ? handleContactDetails(contactID) : handleContactAdd(email, name)
                             }
@@ -306,22 +307,25 @@ const PopoverEventContent = ({
                             </CollapsibleHeader>
                             <CollapsibleContent>{getAttendees()}</CollapsibleContent>
                         </Collapsible>
-                        <Participant
-                            className="is-organizer"
-                            title={organizerTitle}
-                            initials={getInitials(organizerName)}
-                            icon={organizerPartstatIcon}
-                            name={organizerName}
-                            tooltip={organizerTitle}
-                            extraText={c('Label').t`Organizer`}
-                            email={organizer.email}
-                            isContact={!!organizerContactID}
-                            onCreateOrEditContact={
-                                organizerContactID
-                                    ? handleContactDetails(organizerContactID)
-                                    : handleContactAdd(organizer.email, organizerName)
-                            }
-                        />
+                        <div className="pr-1">
+                            <Participant
+                                className="is-organizer"
+                                title={organizerTitle}
+                                initials={getInitials(organizerName)}
+                                icon={organizerPartstatIcon}
+                                name={organizerName}
+                                tooltip={organizerTitle}
+                                extraText={c('Label').t`Organizer`}
+                                email={organizer.email}
+                                isContact={!!organizerContactID}
+                                isCurrentUser={model.isOrganizer && !isSubscribedCalendar}
+                                onCreateOrEditContact={
+                                    organizerContactID
+                                        ? handleContactDetails(organizerContactID)
+                                        : handleContactAdd(organizer.email, organizerName)
+                                }
+                            />
+                        </div>
                     </div>
                 </IconRow>
             )}

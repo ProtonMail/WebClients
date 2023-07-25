@@ -1,4 +1,8 @@
-import { Tooltip, usePopperAnchor } from '@proton/components';
+import { c } from 'ttag';
+
+import { Button } from '@proton/atoms';
+import { Icon, Tooltip, usePopperAnchor } from '@proton/components';
+import { normalize } from '@proton/shared/lib/helpers/string';
 import clsx from '@proton/utils/clsx';
 
 import ParticipantDropdown from './ParticipantDropdown';
@@ -13,6 +17,7 @@ interface Props {
     className?: string;
     email: string;
     isContact: boolean;
+    isCurrentUser?: boolean;
     onCreateOrEditContact: () => void;
 }
 
@@ -26,18 +31,16 @@ const Participant = ({
     className,
     email,
     isContact,
+    isCurrentUser,
     onCreateOrEditContact,
 }: Props) => {
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
-    const displayDropdown = !!email;
+    const hasEmail = !!email;
+    const displayDropdown = hasEmail;
+    const showEmailAddress = !isCurrentUser && hasEmail && normalize(email) !== normalize(name);
 
     return (
-        <button
-            type="button"
-            ref={anchorRef}
-            onClick={() => {
-                toggle();
-            }}
+        <div
             className={clsx([
                 'participant flex flex-nowrap flex-align-items-center w100 relative interactive-pseudo interactive--no-background text-left',
                 className,
@@ -51,12 +54,28 @@ const Participant = ({
             </Tooltip>
             <div className="ml-4 flex-item-fluid" title={title}>
                 <div className="max-w100 participant-text text-ellipsis">{name}</div>
+                {showEmailAddress ? (
+                    <div className="max-w100 text-ellipsis participant-extra-text text-sm m-0">{email}</div>
+                ) : null}
                 {!!extraText && (
                     <div className="max-w100 text-ellipsis participant-extra-text color-weak text-sm m-0">
                         {extraText}
                     </div>
                 )}
             </div>
+            <Button
+                shape="ghost"
+                size="small"
+                icon
+                ref={anchorRef}
+                onClick={() => {
+                    toggle();
+                }}
+                className="ml-1"
+                title={c('Action').t`More options`}
+            >
+                <Icon name="three-dots-vertical" alt={c('Action').t`More options`} />
+            </Button>
             {displayDropdown && (
                 <ParticipantDropdown
                     anchorRef={anchorRef}
@@ -68,7 +87,7 @@ const Participant = ({
                     onCreateOrEditContact={onCreateOrEditContact}
                 />
             )}
-        </button>
+        </div>
     );
 };
 
