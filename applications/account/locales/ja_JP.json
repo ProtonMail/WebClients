@@ -1083,6 +1083,11 @@
         "元ドメインなし"
       ]
     },
+    "Admin": {
+      "admin": [
+        "管理者"
+      ]
+    },
     "Alert": {
       "By leaving now, some contacts may not be imported": [
         "今すぐ退出することで、いくつかの連絡先がインポートされない可能性があります"
@@ -4281,6 +4286,12 @@
       ],
       "(1-2 emails per month)": [
         "(毎月 1 〜 2 通のメール)"
+      ],
+      "(2-4 emails per year)": [
+        "(毎年 2～4 通のメール)"
+      ],
+      "(4-6 emails per year)": [
+        "(毎年 4～6 通のメール)"
       ]
     },
     "Get started checklist instructions": {
@@ -8643,9 +8654,6 @@
       "From ${ price }": [
         "${ price } から"
       ],
-      "From ${ price } per user": [
-        "1 ユーザーあたり ${ price } から"
-      ],
       "Keep my ${ currentPlanName } account": [
         "${ currentPlanName } アカウントを継続"
       ],
@@ -8695,14 +8703,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "${ upsellPlanHumanSize } へアップグレード"
-      ]
-    },
-    "new_plans: attribute": {
-      "Get ${ connections } high-speed VPN connections": [
-        "${ connections } 件の高速 VPN 接続を入手"
-      ],
-      "Get ${ connections } high-speed VPN connections per user": [
-        "1 ユーザーあたり ${ connections } 件の高速 VPN 接続を入手"
       ]
     },
     "new_plans: feature": {
@@ -9017,15 +9017,6 @@
       ],
       "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
         "プレミアム機能の ${ MAIL_APP_NAME } を使い続けるには、サブスクリプションと支払方法を選択してください。"
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "ビジネスパックにアップレードして、すべてのプレミアムな ${ BRAND_NAME } サービスにアクセスします。"
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "究極のプライバシーパックにアップレードして、すべてのプレミアムな ${ BRAND_NAME } サービスにアクセスします。"
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "トライアルは ${ formattedTrialExpirationDate } で終了します"
       ]
     },
     "new_plans: info": {
@@ -9153,12 +9144,6 @@
       ]
     },
     "new_plans: Title": {
-      "${ mailPlanName } Trial": [
-        "${ mailPlanName } トライアル"
-      ],
-      "Upgrade to ${ planName }": [
-        "${ planName } へアップグレード"
-      ],
       "Your account's usage": [
         "アカウントの使用率"
       ]
@@ -9190,14 +9175,29 @@
       "${ CALENDAR_APP_NAME }: end-to-end encrypted calendar": [
         "${ CALENDAR_APP_NAME }: エンドツーエンドで暗号化されたカレンダー"
       ],
+      "${ DRIVE_APP_NAME }: end-to-end encrypted cloud storage": [
+        "${ DRIVE_APP_NAME }: エンドツーエンド暗号化クラウドストレージ"
+      ],
+      "${ MAIL_APP_NAME }: end-to-end encrypted email": [
+        "${ MAIL_APP_NAME }: エンドツーエンド暗号化メール"
+      ],
+      "${ VPN_APP_NAME }: unblock content, browse privately": [
+        "${ VPN_APP_NAME }: コンテンツを自由にプライベートに閲覧する"
+      ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
         "どこでも Netflix や Disney+ および Prime Video を含むストリーミングサービスにアクセスします"
+      ],
+      "Allows you to set up automatic responses (auto-reply) for your incoming messages": [
+        "受信メッセージへの自動返信が可能になります"
       ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
         "現在、プロモーション目的やプログラム制御のメールの一括送信はサポートしていません。このような場合は、専用のメールサービスプロバイダーを使用することをおすすめします。"
       ],
       "Control access to your shared files by adding password protection and link expiration dates": [
         "パスワード保護とリンクの有効期限を追加して、共有ファイルへのアクセスを制御します"
+      ],
+      "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
+        "複数のメールアドレスを作成して使用できます。例えば、買い物用に JohnShopper@${ domain } 、ニュース購読用に JohnNews@${ domain } を使用するなどです。"
       ],
       "Create up to ${ n } calendars or add calendars from friends, family, colleagues, and organizations": [
         "${ n } 個までのカレンダーを作成または友人/家族/同僚/組織のカレンダーを追加"
@@ -9290,12 +9290,6 @@
       ]
     },
     "new_plans: Upsell attribute": {
-      "${ storageSize } total storage": [
-        "合計 ${ storageSize } のストレージ"
-      ],
-      "10 email addresses/aliases": [
-        "10 件のメールアドレス / エイリアス"
-      ],
       "Access advanced VPN features": [
         "高度な VPN 機能にアクセス"
       ],
@@ -9304,30 +9298,6 @@
       ],
       "Boost your storage space to ${ bundleStorage } total": [
         "ストレージ容量を合計 ${ bundleStorage } に拡張"
-      ],
-      "Boost your storage space to ${ businessStorage } per user": [
-        "1 人ユーザーあたりストレージ容量を合計 ${ businessStorage } に拡張"
-      ],
-      "Create up to ${ MAX_CALENDARS_PAID } calendars": [
-        "最大 ${ MAX_CALENDARS_PAID } 個までのカレンダーを作成"
-      ],
-      "Everything in ${ vpnPlanName }": [
-        "${ vpnPlanName } のすべての機能を含みます"
-      ],
-      "Get 5 additional email addresses per user": [
-        "1 ユーザーごとに 5 件の追加メールアドレス"
-      ],
-      "Priority support": [
-        "優先的なサポート"
-      ],
-      "Support for 1 custom email domain": [
-        "1 つの独自メールドメインをサポート"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "制限なしのフォルダー、ラベル、フィルター"
-      ],
-      "Unlimited messages": [
-        "送信数制限なし"
       ]
     },
     "Notification": {
@@ -9782,6 +9752,9 @@
       "Includes basic ${ appName } features:": [
         "基本的な ${ appName } 機能が含まれています。"
       ],
+      "Install app": [
+        "アプリをインストール"
+      ],
       "One easy subscription.": [
         "1 回の簡単なサブスクリプション。"
       ],
@@ -9799,6 +9772,9 @@
       ],
       "per month, billed every two years": [
         "月額、2年ごとに請求"
+      ],
+      "to start using ${ PASS_APP_NAME } on your phone": [
+        "してモバイル端末で ${ PASS_APP_NAME } を使い始めましょう"
       ],
       "You currently have": [
         "あなたは現在"

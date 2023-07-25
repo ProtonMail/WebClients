@@ -8248,9 +8248,6 @@
       "From ${ price }": [
         "${ price } से"
       ],
-      "From ${ price } per user": [
-        "हर यूज़र पे ${ price } से"
-      ],
       "Keep my ${ currentPlanName } account": [
         "मेरा ${ currentPlanName } खाता रखें"
       ],
@@ -8300,16 +8297,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "${ upsellPlanHumanSize } पे अपग्रेड करें"
-      ]
-    },
-    "new_plans: attribute": {
-      "Get ${ connections } high-speed VPN connection": [
-        "${ connections } तेज़ वीपीएन कनेक्शन लें",
-        "${ connections } तेज़ वीपीएन कनेक्शन लें"
-      ],
-      "Get ${ connections } high-speed VPN connection per user": [
-        "हर यूज़र पे ${ connections } तेज़ वीपीएन कनेक्शन लें",
-        "हर यूज़र पे ${ connections } तेज़ वीपीएन कनेक्शन लें"
       ]
     },
     "new_plans: feature": {
@@ -8613,23 +8600,11 @@
       ]
     },
     "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "फाइल बैकअप, स्टोरेज, शेयर, और वापस लाने के लिए निजता को अपना डिफॉल्ट बनाएं।"
-      ],
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "वरना आपके खाते तक का एक्सेस सीमित होगा, और आखिर में आपका खाता अक्षम कर दिया जाएगा।"
       ],
       "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
         "${ MAIL_APP_NAME } के प्रीमियम सुविधाओं का इस्तेमाल जारी रखने के लिए अपनी सदस्यता और भुगतान तरीका चुनें।"
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "सारे प्रीमियम ${ BRAND_NAME } सेवाओं के साथ वाले बिज़नेस पैक पे अपग्रेड करें।"
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "सबसे ताकतवर निजता पैक पे अपग्रेड करके सारे प्रीमियम ${ BRAND_NAME } सुविधाओं को एक्सेस करें।"
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "आपका ट्रायल खत्म होगा ${ formattedTrialExpirationDate } पे"
       ]
     },
     "new_plans: info": {
@@ -8749,12 +8724,6 @@
       ]
     },
     "new_plans: Title": {
-      "${ mailPlanName } Trial": [
-        "${ mailPlanName } ट्रायल"
-      ],
-      "Upgrade to ${ planName }": [
-        "${ planName } पे अपग्रेड करें"
-      ],
       "Your account's usage": [
         "आपका खाते का इस्तेमाल"
       ]
@@ -8932,12 +8901,6 @@
       ]
     },
     "new_plans: Upsell attribute": {
-      "${ storageSize } total storage": [
-        "कुल स्टोरेज ${ storageSize }"
-      ],
-      "10 email addresses/aliases": [
-        "10 ईमेल पते/नकलीनाम"
-      ],
       "Access advanced VPN features": [
         "एडवांस वीपीएन सुविधाएं एक्सेस करें"
       ],
@@ -8947,33 +8910,8 @@
       "Boost your storage space to ${ bundleStorage } total": [
         "अपना स्टोरेज जगह ${ bundleStorage } तक ले जाएं"
       ],
-      "Boost your storage space to ${ businessStorage } per user": [
-        "अपने स्टोरेज जगह को ${ businessStorage } हर यूज़र तक बढ़ाएं"
-      ],
       "Cover more ground with support for 10 custom email domains": [
         "10 कस्टम ईमेल डोमेन के सपोर्ट के साथ काम करें ज़्यादा"
-      ],
-      "Create up to ${ MAX_CALENDARS_PAID } calendar": [
-        "${ MAX_CALENDARS_PAID } कैलेंडर तक बनाएं",
-        "${ MAX_CALENDARS_PAID } कैलेंडर तक बनाएं"
-      ],
-      "Everything in ${ vpnPlanName }": [
-        "${ vpnPlanName } में सब कुछ"
-      ],
-      "Get 5 additional email addresses per user": [
-        "हर यूज़र पे 5 और ईमेल पते पाएं"
-      ],
-      "Priority support": [
-        "प्राथमिकता समर्थन"
-      ],
-      "Support for 1 custom email domain": [
-        "1 कस्टम ईमेल डोमेन के लिए समर्थन"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "असीमित फ़ोल्डर, लेबल और फ़िल्टर"
-      ],
-      "Unlimited messages": [
-        "असीमित संदेश"
       ]
     },
     "Notification": {

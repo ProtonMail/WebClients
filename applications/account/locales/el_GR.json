@@ -473,6 +473,9 @@
       "Hide labels": [
         "Απόκρυψη ετικετών"
       ],
+      "Hide plan features": [
+        "Απόκρυψη δυνατοτήτων προγράμματος"
+      ],
       "I have a question": [
         "Έχω μια ερώτηση"
       ],
@@ -8875,9 +8878,6 @@
       "From ${ price }": [
         "Από ${ price }"
       ],
-      "From ${ price } per user": [
-        "Από ${ price } ανά χρήστη"
-      ],
       "Keep my ${ currentPlanName } account": [
         "Διατήρηση του λογαριασμού μου ${ currentPlanName }"
       ],
@@ -8927,16 +8927,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Αναβάθμιση σε ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: attribute": {
-      "Get ${ connections } high-speed VPN connection": [
-        "${ connections } σύνδεση VPN υψηλής ταχύτητας",
-        "${ connections } συνδέσεις VPN υψηλής ταχύτητας"
-      ],
-      "Get ${ connections } high-speed VPN connection per user": [
-        "${ connections } σύνδεση VPN υψηλής ταχύτητας ανά χρήστη",
-        "${ connections } συνδέσεις VPN υψηλής ταχύτητας ανά χρήστη"
       ]
     },
     "new_plans: feature": {
@@ -8995,6 +8985,9 @@
       "${ n } VPN connection per user": [
         "${ n } σύνδεση VPN ανά χρήστη",
         "${ n } συνδέσεις VPN ανά χρήστη"
+      ],
+      "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
+        "${ PASS_APP_NAME } με απεριόριστα hide-my-email ψευδώνυμα"
       ],
       "${ size } attachment size": [
         "${ size } μέγεθος συνημμένων"
@@ -9280,23 +9273,14 @@
       ]
     },
     "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Κάντε την ιδιωτικότητα προεπιλογή σας, για αντίγραφα ασφαλείας, αποθήκευση, κοινοποίηση και ανάκτηση αρχείων."
-      ],
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "Ειδάλλως η πρόσβαση στον λογαριασμό σας θα περιοριστεί, και εν τέλη ο λογαριασμός σας θα απενεργοποιηθεί."
       ],
       "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
         "Για συνέχιση της χρήσης του ${ MAIL_APP_NAME } με προηγμένα χαρακτηριστικά, επιλέξτε τη συνδρομή και τον τρόπο πληρωμής σας."
       ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "Αναβαθμίστε στο επιχειρηματικό πακέτο με πρόσβαση σε όλες τις ${ BRAND_NAME } premium υπηρεσίες."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "Αναβαθμίστε στο απόλυτο πακέτο απορρήτου και αποκτήστε πρόσβαση σε όλες τις premium υπηρεσίες του ${ BRAND_NAME }."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Η δοκιμαστική σας περίοδος λήγει στις ${ formattedTrialExpirationDate }"
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Η δοκιμαστική σας περίοδος λήγει στις ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: info": {
@@ -9425,11 +9409,8 @@
       ]
     },
     "new_plans: Title": {
-      "${ mailPlanName } Trial": [
-        "Δοκιμή ${ mailPlanName }"
-      ],
-      "Upgrade to ${ planName }": [
-        "Αναβάθμιση σε ${ planName }"
+      "${ shortPlan.title } Trial": [
+        "Δοκιμή ${ shortPlan.title }"
       ],
       "Your account's usage": [
         "Η κατανάλωση του λογαριασμού σας"
@@ -9650,51 +9631,24 @@
       ]
     },
     "new_plans: Upsell attribute": {
-      "${ storageSize } total storage": [
-        "${ storageSize } συνολικός αποθηκευτικός χώρος"
-      ],
-      "10 email addresses/aliases": [
-        "10 διεύθυνσεις email/ψευδώνυμα"
-      ],
       "Access advanced VPN features": [
         "Πρόσβαση σε προηγμένα χαρακτηριστικά VPN"
       ],
       "Add more personalization with 15 email addresses and support for 3 custom email domains": [
         "Προσθέστε περισσότερη εξατομίκευση με 15 διευθύνσεις email και υποστήριξη για 3 προσαρμοσμένους τομείς email"
       ],
+      "Boost your storage space to ${ bundleStorage } per user": [
+        "Μεγαλώστε τον αποθηκευτικό σας χώρο σε ${ bundleStorage } ανά χρήστη"
+      ],
       "Boost your storage space to ${ bundleStorage } total": [
         "Μεγαλώστε τον αποθηκευτικό σας χώρο σε συνολικά ${ bundleStorage }"
-      ],
-      "Boost your storage space to ${ businessStorage } per user": [
-        "Μεγαλώστε τον αποθηκευτικό σας χώρο σε ${ businessStorage } ανά χρήστη"
       ],
       "Cover more ground with support for 10 custom email domains": [
         "Καλύψτε περισσότερο έδαφος με υποστήριξη για 10 προσαρμοσμένους τομείς email"
       ],
-      "Create up to ${ MAX_CALENDARS_PAID } calendar": [
-        "Δημιουργήστε μέχρι και ${ MAX_CALENDARS_PAID } ημερολόγιο",
-        "Δημιουργήστε μέχρι και ${ MAX_CALENDARS_PAID } ημερολόγια"
-      ],
-      "Everything in ${ vpnPlanName }": [
-        "Όλα στο ${ vpnPlanName }"
-      ],
-      "Get 5 additional email addresses per user": [
-        "Λάβετε 5 επιπλέον διευθύνσεις ηλεκτρονικού ταχυδρομείου ανά χρήστη"
-      ],
-      "Priority support": [
-        "Υποστήριξη κατά προτεραιότητα"
-      ],
-      "Secure your passwords and identity with an open-source and encrypted password manager.": [
-        "Ασφαλίστε τους κωδικούς πρόσβασης και την ταυτότητά σας με έναν διαχειριστή κωδικών πρόσβασης ανοιχτού κώδικα και κρυπτογραφημένο."
-      ],
-      "Support for 1 custom email domain": [
-        "Υποστήριξη για 1 παραμετροποιημένο τομέα email"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Απεριόριστοι φάκελοι, ετικέτες και φίλτρα"
-      ],
-      "Unlimited messages": [
-        "Aπεριόριστα μηνύματα"
+      "Create up to ${ n } calendar": [
+        "Δημιουργήστε μέχρι και ${ n } ημερολόγιο",
+        "Δημιουργήστε μέχρι και ${ n } ημερολόγια"
       ]
     },
     "Notification": {
@@ -12894,6 +12848,11 @@
     "Upgrade notice": {
       "Upgrade to a ${ MAIL_SHORT_APP_NAME } paid plan to share your calendar.": [
         "Κάντε αναβάθμιση του ${ MAIL_SHORT_APP_NAME } σε πλάνο επί πληρωμή για κοινή χρήση του ημερολογίου σας."
+      ]
+    },
+    "upsell panel": {
+      "Recommended": [
+        "Προτεινόμενο"
       ]
     },
     "User referee invited via email": {
