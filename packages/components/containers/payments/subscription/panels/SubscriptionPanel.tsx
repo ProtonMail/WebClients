@@ -240,7 +240,7 @@ const SubscriptionPanel = ({
         const items: Item[] = [
             getHideMyEmailAliases('unlimited'),
             getVaults(PASS_PLUS_VAULTS),
-            getCustomFields(),
+            getCustomFields(true),
             getLoginsAndNotes(),
             getDevices(),
         ];
