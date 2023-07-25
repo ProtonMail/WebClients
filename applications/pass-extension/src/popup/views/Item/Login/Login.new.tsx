@@ -10,7 +10,6 @@ import { DropdownMenuButton, Icon } from '@proton/components';
 import { selectTOTPLimits, selectVaultLimits } from '@proton/pass/store';
 import { passwordSave } from '@proton/pass/store/actions/creators/pw-history';
 import { type LoginWithAliasCreationDTO } from '@proton/pass/types';
-import { PassFeature } from '@proton/pass/types/api/features';
 import { merge } from '@proton/pass/utils/object';
 import { parseOTPValue } from '@proton/pass/utils/otp/otp';
 import { isEmptyString, uniqueId } from '@proton/pass/utils/string';
@@ -21,7 +20,6 @@ import { UpgradeButton } from '../../../../shared/components/upgrade/UpgradeButt
 import type { LoginItemFormValues, NewLoginItemFormValues } from '../../../../shared/form/types';
 import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH } from '../../../../shared/form/validator/validate-item';
 import { validateLoginForm } from '../../../../shared/form/validator/validate-login';
-import { useFeatureFlag } from '../../../../shared/hooks/useFeatureFlag';
 import type { ItemNewProps } from '../../../../shared/items';
 import { deriveAliasPrefix, sanitizeLoginAliasHydration, sanitizeLoginAliasSave } from '../../../../shared/items/alias';
 import { QuickActionsDropdown } from '../../../components/Dropdown/QuickActionsDropdown';
@@ -50,8 +48,6 @@ export const LoginNew: VFC<ItemNewProps<'login'>> = ({ shareId, onSubmit, onCanc
 
     const { vaultTotalCount } = useSelector(selectVaultLimits);
     const { needsUpgrade } = useSelector(selectTOTPLimits);
-
-    const showCustomFields = useFeatureFlag<boolean>(PassFeature.PassCustomFields);
 
     const initialValues: LoginItemFormValues = useMemo(() => {
         const params = new URLSearchParams(search);
@@ -314,7 +310,7 @@ export const LoginNew: VFC<ItemNewProps<'login'>> = ({ shareId, onSubmit, onCanc
                                 />
                             </FieldsetCluster>
 
-                            {Boolean(showCustomFields) && <ExtraFieldGroup form={form} />}
+                            <ExtraFieldGroup form={form} />
                         </Form>
                     </FormikProvider>
                 )}
