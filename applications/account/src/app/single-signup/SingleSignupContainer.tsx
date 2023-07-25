@@ -326,14 +326,14 @@ const SingleSignupContainer = ({ toApp, clientType, loader, onLogin, productPara
                                         step: Steps.Custom,
                                     });
 
-                                    metrics.core_vpn_single_signup_step2_setup_total.increment({
+                                    metrics.core_vpn_single_signup_step2_setup_2_total.increment({
                                         status: 'success',
                                         ...subscriptionMetricsData,
                                     });
                                 }
                             } catch (error) {
                                 observeApiError(error, (status) =>
-                                    metrics.core_vpn_single_signup_step2_setup_total.increment({
+                                    metrics.core_vpn_single_signup_step2_setup_2_total.increment({
                                         status,
                                         ...subscriptionMetricsData,
                                     })

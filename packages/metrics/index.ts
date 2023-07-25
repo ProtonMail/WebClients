@@ -25,7 +25,7 @@ import { WebCoreVpnSingleSignupStep1CurrencyChangeTotal } from './types/web_core
 import { WebCoreVpnSingleSignupStep1CycleChangeTotal } from './types/web_core_vpn_single_signup_step1_cycleChange_total_v1.schema';
 import { WebCoreVpnSingleSignupStep1InteractionTotal } from './types/web_core_vpn_single_signup_step1_interaction_total_v1.schema';
 import { WebCoreVpnSingleSignupStep1PaymentTotal } from './types/web_core_vpn_single_signup_step1_payment_total_v1.schema';
-import { WebCoreVpnSingleSignupStep2SetupTotal } from './types/web_core_vpn_single_signup_step2_setup_total_v2.schema';
+import { WebCoreVpnSingleSignupStep2Setup2Total } from './types/web_core_vpn_single_signup_step2_setup_2_total_v1.schema';
 import { WebCoreVpnSingleSignupStep3CompleteTotal } from './types/web_core_vpn_single_signup_step3_complete_total_v1.schema';
 import { WebCoreVpnSingleSignupStep4SetupTotal } from './types/web_core_vpn_single_signup_step4_setup_total_v1.schema';
 
@@ -69,7 +69,7 @@ class Metrics extends MetricsBase {
 
     public core_vpn_single_signup_step1_payment_total: Counter<WebCoreVpnSingleSignupStep1PaymentTotal>;
 
-    public core_vpn_single_signup_step2_setup_total: Counter<WebCoreVpnSingleSignupStep2SetupTotal>;
+    public core_vpn_single_signup_step2_setup_2_total: Counter<WebCoreVpnSingleSignupStep2Setup2Total>;
 
     public core_vpn_single_signup_passwordSelection_step_total: Counter<WebCoreVpnSingleSignupPasswordSelectionStepTotal>;
 
@@ -157,8 +157,8 @@ class Metrics extends MetricsBase {
                 { name: 'web_core_vpn_single_signup_step1_account_creation_total', version: 1 },
                 this.requestService
             );
-        this.core_vpn_single_signup_step2_setup_total = new Counter<WebCoreVpnSingleSignupStep2SetupTotal>(
-            { name: 'web_core_vpn_single_signup_step2_setup_total', version: 2 },
+        this.core_vpn_single_signup_step2_setup_2_total = new Counter<WebCoreVpnSingleSignupStep2Setup2Total>(
+            { name: 'web_core_vpn_single_signup_step2_setup_2_total', version: 1 },
             this.requestService
         );
         this.core_vpn_single_signup_passwordSelection_step_total =
