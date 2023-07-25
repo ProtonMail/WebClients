@@ -8,7 +8,6 @@ import { Button } from '@proton/atoms';
 import { Icon } from '@proton/components';
 import { itemCreationIntent, selectTOTPLimits } from '@proton/pass/store';
 import { passwordSave } from '@proton/pass/store/actions/creators/pw-history';
-import { PassFeature } from '@proton/pass/types/api/features';
 import { prop } from '@proton/pass/utils/fp';
 import { merge } from '@proton/pass/utils/object';
 import { getSecretOrUri, parseOTPValue } from '@proton/pass/utils/otp/otp';
@@ -20,7 +19,6 @@ import { UpgradeButton } from '../../../../shared/components/upgrade/UpgradeButt
 import type { EditLoginItemFormValues } from '../../../../shared/form/types';
 import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH } from '../../../../shared/form/validator/validate-item';
 import { validateLoginForm } from '../../../../shared/form/validator/validate-login';
-import { useFeatureFlag } from '../../../../shared/hooks/useFeatureFlag';
 import type { ItemEditProps } from '../../../../shared/items';
 import { deriveAliasPrefix, sanitizeLoginAliasHydration, sanitizeLoginAliasSave } from '../../../../shared/items/alias';
 import { DropdownMenuButton } from '../../../components/Dropdown/DropdownMenuButton';
@@ -54,8 +52,6 @@ export const LoginEdit: VFC<ItemEditProps<'login'>> = ({ vault, revision, onSubm
 
     const dispatch = useDispatch();
     const { needsUpgrade } = useSelector(selectTOTPLimits);
-
-    const showCustomFields = useFeatureFlag<boolean>(PassFeature.PassCustomFields);
 
     const initialValues: EditLoginItemFormValues = {
         name,
@@ -333,7 +329,7 @@ export const LoginEdit: VFC<ItemEditProps<'login'>> = ({ vault, revision, onSubm
                                 />
                             </FieldsetCluster>
 
-                            {Boolean(showCustomFields) && <ExtraFieldGroup form={form} />}
+                            <ExtraFieldGroup form={form} />
                         </Form>
                     </FormikProvider>
                 )}

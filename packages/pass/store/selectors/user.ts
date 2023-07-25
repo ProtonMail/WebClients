@@ -55,6 +55,6 @@ export const selectAddress =
 export const selectLatestEventId = ({ user: { eventId } }: State) => eventId;
 
 export const selectUserFeature =
-    <T extends any>(feature: PassFeature) =>
-    ({ user: { features } }: State): MaybeNull<T> =>
-        (features?.[feature]?.Value as T) ?? null;
+    (feature: PassFeature) =>
+    ({ user: { features } }: State): boolean =>
+        features?.[feature] ?? false;
