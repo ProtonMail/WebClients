@@ -48,7 +48,11 @@ const reducer: Reducer<UserState> = (state = initialState, action) => {
     }
 
     if (setUserPlan.match(action)) return partialMerge(state, { plan: action.payload });
-    if (setUserFeatures.match(action)) return partialMerge(state, { features: action.payload });
+
+    if (setUserFeatures.match(action)) {
+        state.features = null; /* wipe all features before merge */
+        return partialMerge(state, { features: action.payload });
+    }
 
     return state;
 };
