@@ -34,7 +34,6 @@ export const createContentScriptClient = (scriptId: string, mainFrame: boolean) 
         destroy: (options) => {
             if (context.getState().active) {
                 logger.info(`[ContentScript::${scriptId}] destroying.. [reason: "${options.reason}"]`);
-
                 listeners.removeAll();
                 context.setState({ active: false });
                 context.service.formManager.destroy();
