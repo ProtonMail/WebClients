@@ -1,7 +1,7 @@
 interface Client {
     title: string;
     link: string;
-    icon: 'brand-chrome' | 'brand-android' | 'brand-apple' | 'brand-brave' | 'brand-firefox';
+    icon: 'brand-chrome' | 'brand-android' | 'brand-apple' | 'brand-brave' | 'brand-firefox' | 'brand-edge';
 }
 
 export enum Clients {
@@ -10,6 +10,7 @@ export enum Clients {
     iOS,
     Brave,
     Firefox,
+    Edge,
 }
 
 export const clients: { [key in Clients]: Client } = {
@@ -32,6 +33,11 @@ export const clients: { [key in Clients]: Client } = {
         title: 'Brave',
         link: 'https://chrome.google.com/webstore/detail/proton-pass/ghmbeldphafepmbegfdlkpapadhbakde',
         icon: 'brand-brave',
+    },
+    [Clients.Edge]: {
+        title: 'Edge',
+        link: 'https://chrome.google.com/webstore/detail/proton-pass/ghmbeldphafepmbegfdlkpapadhbakde',
+        icon: 'brand-edge',
     },
     [Clients.Firefox]: {
         title: 'Firefox',
