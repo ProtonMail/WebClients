@@ -2681,6 +2681,20 @@
         "سرعت متوسط VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "تنزل به ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "همه طرح های ${ BRAND_NAME } را بررسی کنید"
+      ],
+      "From ${ price }": [
+        "از ${ price }"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "حساب فعلی ${ currentPlanName } $ من را حفظ کن"
+      ]
+    },
     "new_plans: action": {
       "Continue to review": [
         "ادامه دادن به بازبینی"
@@ -2711,36 +2725,6 @@
       ],
       "Switch plan": [
         "تغییر دادن طرح"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "تنزل به ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "همه طرح های ${ BRAND_NAME } را بررسی کنید"
-      ],
-      "From ${ price }": [
-        "از ${ price }"
-      ],
-      "From ${ price } per user": [
-        "از ${ price } برای هر کاربر"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "حساب فعلی ${ currentPlanName } $ من را حفظ کن"
-      ],
-      "Upgrade now": [
-        "اکنون ارتقا دهید"
-      ]
-    },
-    "new_plans: attribute": {
-      "Get ${ connections } high-speed VPN connection": [
-        "دریافت ${ connections } اتصال VPN پرسرعت",
-        "دریافت ${ connections } اتصال VPN پرسرعت"
-      ],
-      "Get ${ connections } high-speed VPN connection per user": [
-        "دریافت ${ connections } اتصال VPN پرسرعت برای هر کاربر",
-        "دریافت ${ connections } اتصال VPN پرسرعت برای هر کاربر"
       ]
     },
     "new_plans: feature": {
@@ -2992,23 +2976,11 @@
       ]
     },
     "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "حریم خصوصی را برای پشتیبان گیری فایل، فضای ذخیره‌سازی، اشتراک گذاری و بازیابی، پیش فرض خود کنید."
-      ],
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "در غیراینصورت دسترسی به حساب شما محدود خواهد شد و درنهایت غیرفعال خواهد شد."
       ],
       "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
         "برای ادامه به استفاده از ${ MAIL_APP_NAME } با امکانات ویژه، اشتراک و روش پرداخت خود را انتخاب کنید."
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "به بسته مشاغل ارتقا دهید تا به تمامی خدمات ${ BRAND_NAME } دسترسی پیدا کنید."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "به بسته بالاترین حد حریم خصوصی ارتقا دهید و به تمام خدمات ویژه ${ BRAND_NAME } دسترسی پیدا کنید."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "دورهٔ آزمایشی شما در ${ formattedTrialExpirationDate } به پایان می‌رسد"
       ]
     },
     "new_plans: Label": {
@@ -3032,6 +3004,11 @@
         "شرایط و ضوابط"
       ]
     },
+    "new_plans: Title": {
+      "Your account's usage": [
+        "رکورد استفاده حساب شما"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "حذف کردن حساب؟"
@@ -3047,17 +3024,6 @@
       ],
       "Switch plans?": [
         "تغییر دادن طرح؟"
-      ]
-    },
-    "new_plans: Title": {
-      "${ mailPlanName } Trial": [
-        "دوره آزمایشی رایگان ${ mailPlanName }"
-      ],
-      "Upgrade to ${ planName }": [
-        "ارتقا به ${ planName }"
-      ],
-      "Your account's usage": [
-        "رکورد استفاده حساب شما"
       ]
     },
     "new_plans: tooltip": {
@@ -3192,12 +3158,6 @@
       ]
     },
     "new_plans: Upsell attribute": {
-      "${ storageSize } total storage": [
-        "${ storageSize } فضای ذخیره‌سازی کلی"
-      ],
-      "10 email addresses/aliases": [
-        "10 نشانی ایمیل/نام مستعار"
-      ],
       "Access advanced VPN features": [
         "به ویژگی‌های پیشرفته VPN دسترسی پیدا کنید"
       ],
@@ -3207,29 +3167,8 @@
       "Boost your storage space to ${ bundleStorage } total": [
         "فضای ذخیره‌سازی خود را به ${ bundleStorage } افزایش دهید"
       ],
-      "Boost your storage space to ${ businessStorage } per user": [
-        "فضای ذخیره‌سازی خود را به ${ businessStorage } برای هر کاربر افزایش دهید"
-      ],
       "Cover more ground with support for 10 custom email domains": [
         "با پشتیبانی از 10 دامنه ایمیل سفارشی پیشرفت بیشتری کنید"
-      ],
-      "Everything in ${ vpnPlanName }": [
-        "همه چیز موجود در ${ vpnPlanName }"
-      ],
-      "Get 5 additional email addresses per user": [
-        "5 آدرس ایمیل اضافی برای هر کاربر دریافت کنید"
-      ],
-      "Priority support": [
-        "اولویت پشتیبانی"
-      ],
-      "Support for 1 custom email domain": [
-        "پشتیبانی از ١ دامنه ایمیل سفارشی"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "پوشه‌ها، برچسب‌ها و فیلترهای بی‌شمار"
-      ],
-      "Unlimited messages": [
-        "پیام های نامحدود"
       ]
     },
     "Notification": {
@@ -3420,9 +3359,6 @@
       "${ n } calendar": [
         "${ n } تقویم",
         "${ n } تقویم"
-      ],
-      "${ n } calendar per user": [
-        "${ n } تقویم برای هر کاربر"
       ],
       "${ n } high-speed VPN connection": [
         "${ n } اتصال VPN پرسرعت",
