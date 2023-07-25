@@ -10,9 +10,12 @@ import {
     persistSession,
     resumeSession,
 } from '@proton/pass/auth';
+import type { MessageHandlerCallback } from '@proton/pass/extension/message';
 import { browserLocalStorage, browserSessionStorage } from '@proton/pass/extension/storage';
 import {
+    extendLock,
     notification,
+    selectSessionLockTTL,
     selectSessionLockToken,
     selectUser,
     sessionUnlockFailure,
@@ -69,6 +72,7 @@ type CreateAuthServiceOptions = {
 type AuthContext = {
     pendingInit: MaybeNull<Promise<boolean>>;
     lockStatus: MaybeNull<SessionLockStatus>;
+    extendTime: number;
 };
 
 export const createAuthService = ({
@@ -77,7 +81,11 @@ export const createAuthService = ({
     onUnauthorized,
     onLocked,
 }: CreateAuthServiceOptions): AuthService => {
-    const authCtx: AuthContext = { pendingInit: null, lockStatus: null };
+    const authCtx: AuthContext = {
+        pendingInit: null,
+        lockStatus: null,
+        extendTime: getEpoch(),
+    };
 
     const authService: AuthService = {
         authStore: exposeAuthStore(createAuthenticationStore(createStore())),
@@ -385,11 +393,30 @@ export const createAuthService = ({
             );
         });
 
+    /* only extend the session lock if a lock is registered and we've
+     * reached at least 80% of the lock TTL since the last extension */
+    const handleActivityProbe = withContext<MessageHandlerCallback<WorkerMessageType.ACTIVITY_PROBE>>(({ status }) => {
+        const shouldExtend = workerReady(status) && authCtx.lockStatus === SessionLockStatus.REGISTERED;
+        const ttl = selectSessionLockTTL(store.getState());
+
+        if (shouldExtend && ttl !== undefined) {
+            const now = getEpoch();
+            const diff = now - authCtx.extendTime;
+            if (diff > ttl * 0.8) {
+                authCtx.extendTime = now;
+                store.dispatch(extendLock());
+            }
+        }
+
+        return true;
+    });
+
     const resolveUserData = () => ({ user: selectUser(store.getState()) });
 
     WorkerMessageBroker.registerMessage(WorkerMessageType.ACCOUNT_FORK, withPayload(authService.consumeFork));
     WorkerMessageBroker.registerMessage(WorkerMessageType.SESSION_RESUMED, withPayload(authService.login));
     WorkerMessageBroker.registerMessage(WorkerMessageType.UNLOCK_REQUEST, withPayload(handleUnlockRequest));
+    WorkerMessageBroker.registerMessage(WorkerMessageType.ACTIVITY_PROBE, handleActivityProbe);
     WorkerMessageBroker.registerMessage(WorkerMessageType.RESOLVE_USER_DATA, resolveUserData);
 
     return authService;
