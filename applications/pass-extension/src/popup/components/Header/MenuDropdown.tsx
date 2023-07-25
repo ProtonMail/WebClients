@@ -13,7 +13,6 @@ import {
     Icon,
     usePopperAnchor,
 } from '@proton/components';
-import { detectBrowser, getWebStoreUrl } from '@proton/pass/extension/browser';
 import {
     emptyTrashIntent,
     restoreTrashIntent,
@@ -55,7 +54,6 @@ const MenuDropdownRaw: VFC<{ className?: string }> = ({ className }) => {
     const planDisplayName = useSelector(selectPlanDisplayName);
 
     const openSettings = useOpenSettingsTab();
-    const webStoreURL = getWebStoreUrl(detectBrowser());
 
     const dispatch = useDispatch();
     const canLock = useSelector(selectCanLockSession);
@@ -240,19 +238,6 @@ const MenuDropdownRaw: VFC<{ className?: string }> = ({ className }) => {
 
                         <hr className="dropdown-item-hr my-2 mx-4" aria-hidden="true" />
 
-                        {webStoreURL && (
-                            <DropdownMenuButton
-                                className="flex flex-align-items-center flex-justify-space-between py-2 px-4"
-                                onClick={() => window.open(webStoreURL, '_blank')}
-                            >
-                                <span className="flex flex-align-items-center">
-                                    <Icon name="star" className="mr-3 color-weak" />
-                                    {c('Action').t`Rate Pass`}
-                                </span>
-
-                                <Icon name="arrow-out-square" className="ml-3 color-weak" />
-                            </DropdownMenuButton>
-                        )}
                         <Submenu submenuIcon="bug" submenuLabel={c('Action').t`Feedback`} linkItems={feedbackLinks} />
                         <Submenu
                             submenuIcon="mobile"
