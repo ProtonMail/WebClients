@@ -8,7 +8,7 @@
 /**
  * Measures the total step 2 setup success and failures
  */
-export interface WebCoreVpnSingleSignupStep2SetupTotal {
+export interface WebCoreVpnSingleSignupStep2Setup2Total {
   Value: number;
   Labels: {
     type: "free" | "cc" | "pp" | "btc";
