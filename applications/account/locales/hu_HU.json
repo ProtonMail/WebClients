@@ -7932,9 +7932,6 @@
       "From ${ price }": [
         "Már ${ price }-tól"
       ],
-      "From ${ price } per user": [
-        "Már felhasználónkénti ${ price }-tól"
-      ],
       "Keep my ${ currentPlanName } account": [
         "Megtartom a ${ currentPlanName } fiókot"
       ],
@@ -7981,16 +7978,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Váltás ${ upsellPlanHumanSize } csomagra"
-      ]
-    },
-    "new_plans: attribute": {
-      "Get ${ connections } high-speed VPN connection": [
-        "Szerezzen ${ connections } nagysebességű VPN kapcsolatot",
-        "Szerezzen ${ connections } nagysebességű VPN kapcsolatot"
-      ],
-      "Get ${ connections } high-speed VPN connection per user": [
-        "Szerezzen ${ connections } nagysebességű VPN kapcsolatot felhasználónként",
-        "Szerezzen ${ connections } nagysebességű VPN kapcsolatot felhasználónként"
       ]
     },
     "new_plans: feature": {
@@ -8239,23 +8226,11 @@
       ]
     },
     "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Tegye az adatbiztonságot alapértelmezetté biztonsági mentésekhez, tároláshoz, megosztáshoz és visszakereséshez."
-      ],
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "Máskülönben a fiókjához való hozzáférése korlátozott lesz, és a fiókja végül letiltásra kerül."
       ],
       "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
         "Ahhoz, hogy tudja folytatni a ${ MAIL_APP_NAME } használatát a prémium funkciókkal, válassza ki előfizetési csomagját és a fizetés módját."
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "Váltson az üzleti csomagra, a ${ BRAND_NAME } összes prémium szolgáltatásának eléréshez."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "Váltson a legnagyobb adatvédelmi csomagra, a ${ BRAND_NAME } összes prémium szolgáltatásának eléréshez."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Próbaideje véget ér: ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: info": {
@@ -8372,12 +8347,6 @@
       ]
     },
     "new_plans: Title": {
-      "${ mailPlanName } Trial": [
-        "${ mailPlanName } Próbaváltozat"
-      ],
-      "Upgrade to ${ planName }": [
-        "Váltás ${ planName } csomagra"
-      ],
       "Your account's usage": [
         "A fiókja kihasználtsága"
       ]
@@ -8545,12 +8514,6 @@
       ]
     },
     "new_plans: Upsell attribute": {
-      "${ storageSize } total storage": [
-        "${ storageSize } teljes tárhely"
-      ],
-      "10 email addresses/aliases": [
-        "10 email cím / alias"
-      ],
       "Access advanced VPN features": [
         "További VPN lehetőségek elérése"
       ],
@@ -8560,29 +8523,8 @@
       "Boost your storage space to ${ bundleStorage } total": [
         "Emelje meg tárhelyét ${ bundleStorage } méretűre"
       ],
-      "Boost your storage space to ${ businessStorage } per user": [
-        "Emelje meg tárhelyét felhasználónként ${ businessStorage } méretűre"
-      ],
       "Cover more ground with support for 10 custom email domains": [
         "Fedjen le több területet 10 saját e-mail domain név támogatásával"
-      ],
-      "Everything in ${ vpnPlanName }": [
-        "Minden a ${ vpnPlanName } csomagból"
-      ],
-      "Get 5 additional email addresses per user": [
-        "Szerezzen 5 további e-mail címet felhasználónként"
-      ],
-      "Priority support": [
-        "Elsőbbségi támogatás"
-      ],
-      "Support for 1 custom email domain": [
-        "Egy saját e-mail domain név használata"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Korlátlan számú mappa, címke és szűrő"
-      ],
-      "Unlimited messages": [
-        "Korlátlan számú üzenet"
       ]
     },
     "Notification": {

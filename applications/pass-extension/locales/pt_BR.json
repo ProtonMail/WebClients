@@ -17,6 +17,9 @@
       "Add new item": [
         "Adicionar novo item"
       ],
+      "Advanced": [
+        "Avançado"
+      ],
       "Advanced options": [
         "Opções avançadas"
       ],
@@ -99,7 +102,7 @@
         "Excluir tudo"
       ],
       "Delete password": [
-        "Excluir a senha"
+        "Excluir senha"
       ],
       "Delete permanently": [
         "Excluir permanentemente"
@@ -140,6 +143,9 @@
       "Generate password": [
         "Gerar senha"
       ],
+      "Generated password": [
+        "Senha gerada"
+      ],
       "Get mobile apps": [
         "Baixar os aplicativos móveis"
       ],
@@ -163,6 +169,12 @@
       ],
       "Learn more": [
         "Saiba mais"
+      ],
+      "Lock extension": [
+        "Bloquear extensão"
+      ],
+      "Manually sync your data": [
+        "Sincronizar seus dados manualmente"
       ],
       "More options": [
         "Mais opções"
@@ -284,11 +296,11 @@
       ]
     },
     "Error": {
-      "${ PASS_APP_NAME } export file could not be parsed. ${ errorDetail }": [
-        "Não foi possível analisar o arquivo de exportação do ${ PASS_APP_NAME }. ${ errorDetail }"
+      "${ provider } file could not be parsed. ${ errorDetail }": [
+        "${ provider } o arquivo não pôde ser analisado ${ errorDetail }"
       ],
-      "1Password export file could not be parsed. ${ errorDetail }": [
-        "Não foi possível analisar o arquivo de exportação do 1Password. ${ errorDetail }"
+      "Alias options could not be resolved": [
+        "Não foi possível resolver as opções de alias."
       ],
       "Authentication error": [
         "Erro de autenticação"
@@ -299,14 +311,8 @@
       "Auto-lock could not be disabled": [
         "Não foi possível desativar o bloqueio automático"
       ],
-      "Bitwarden export file could not be parsed. ${ errorDetail }": [
-        "Não foi possível analisar o arquivo de exportação do Bitwarden. ${ errorDetail }"
-      ],
-      "Cannot create alias.": [
-        "Não é possível criar alias."
-      ],
-      "Chrome export file could not be parsed. ${ errorDetail }": [
-        "Não foi possível analisar o arquivo de exportação do Chrome. ${ errorDetail }"
+      "Cannot create alias (${ error }).": [
+        "Não é possível criar o alias (${ error })."
       ],
       "Could not open created vault": [
         "Não foi possível abrir o cofre criado"
@@ -319,9 +325,6 @@
       ],
       "CSV file is missing expected headers: ${ missingHeaders }": [
         "O arquivo CSV está faltando cabeçalhos esperados: ${ missingHeaders }"
-      ],
-      "Dashlane export file could not be parsed. ${ errorDetail }": [
-        "Não foi possível analisar o arquivo de exportação do Dashlane. ${ errorDetail }"
       ],
       "Decrypting your ${ PASS_APP_NAME } export file failed. ${ errorDetail }": [
         "A descriptografia do seu arquivo de exportação do ${ PASS_APP_NAME } falhou. ${ errorDetail }"
@@ -354,9 +357,6 @@
       "File could not be parsed": [
         "Não foi possível analisar o arquivo."
       ],
-      "Firefox export file could not be parsed. ${ errorDetail }": [
-        "Não foi possível analisar o arquivo de exportação do Firefox. ${ errorDetail }"
-      ],
       "Import failed for vault \"${ vaultData.name }\" : ${ description }": [
         "Falha na importação para o cofre \"${ vaultData.name }\": ${ description }"
       ],
@@ -371,15 +371,6 @@
       ],
       "Item creation failed": [
         "Falha na criação do item"
-      ],
-      "KeePass export file could not be parsed. ${ errorDetail }": [
-        "Não foi possível analisar o arquivo de exportação do KeePass. ${ errorDetail }"
-      ],
-      "Keeper export file could not be parsed. ${ errorDetail }": [
-        "Não foi possível analisar o arquivo de exportação do Keeper. ${ errorDetail }"
-      ],
-      "LastPass export file could not be parsed. ${ errorDetail }": [
-        "Não foi possível analisar o arquivo de exportação do LastPass. ${ errorDetail }"
       ],
       "LastPass will export a corrupted CSV file if any of your item fields contain unexpected commas, quotes or multiple lines": [
         "O LastPass exportará um arquivo CSV corrompido se algum campo do item contiver vírgulas, aspas ou várias linhas inesperadas."
@@ -410,9 +401,6 @@
       ],
       "Restoring item failed": [
         "Falha ao restaurar item"
-      ],
-      "Safari export file could not be parsed. ${ errorDetail }": [
-        "Não foi possível analisar o arquivo de exportação do Safari. ${ errorDetail }"
       ],
       "Setting \"${ payload.name }\" as primary vault failed": [
         "Falha ao definir \"${ payload.name }\" como cofre principal"
@@ -610,7 +598,7 @@
         "Transfira suas senhas existentes para o ${ PASS_APP_NAME } de forma simples e rápida."
       ],
       "Enable ${ PASS_APP_NAME } by connecting your ${ BRAND_NAME } account": [
-        "Ative ${ PASS_APP_NAME } ao conectar a sua conta da ${ BRAND_NAME }."
+        "Ative ${ PASS_APP_NAME } ao conectar a sua conta da ${ BRAND_NAME }"
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Digite o código de verificação. Insira ${ digit }."

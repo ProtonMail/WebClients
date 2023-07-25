@@ -9043,9 +9043,6 @@
       "From ${ price }": [
         "Від ${ price }"
       ],
-      "From ${ price } per user": [
-        "Від ${ price } за користувача"
-      ],
       "Keep my ${ currentPlanName } account": [
         "Залишити мою передплату ${ currentPlanName }"
       ],
@@ -9095,20 +9092,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Покращити до ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: attribute": {
-      "Get ${ connections } high-speed VPN connection": [
-        "Отримайте ${ connections } високошвидкісне VPN-з'єднання",
-        "Отримайте ${ connections } високошвидкісні VPN-з'єднання",
-        "Отримайте ${ connections } високошвидкісних VPN-з'єднань",
-        "Отримайте ${ connections } високошвидкісних VPN-з'єднань"
-      ],
-      "Get ${ connections } high-speed VPN connection per user": [
-        "Отримайте ${ connections } високошвидкісне VPN-з'єднання на користувача",
-        "Отримайте ${ connections } високошвидкісні VPN-з'єднання на користувача",
-        "Отримайте ${ connections } високошвидкісних VPN-з'єднань на користувача",
-        "Отримайте ${ connections } високошвидкісних VPN-з'єднань на користувача"
       ]
     },
     "new_plans: feature": {
@@ -9484,23 +9467,11 @@
       ]
     },
     "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Зробіть приватність усталеною для резервних копій, зберігання, обміну та отримання файлів."
-      ],
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "В іншому випадку доступ до вашого облікового запису буде обмежено, а з часом деактивовано."
       ],
       "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
         "Щоб і надалі користуватися ${ MAIL_APP_NAME } з преміумфункціями, оберіть тарифний план та спосіб оплати."
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "Оновіться до комплекту для бізнесу й користуйтеся всіма преміумфункціями служб ${ BRAND_NAME }."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "Оновіться до виняткового комплекту приватності й користуйтеся всіма преміумфункціями служб ${ BRAND_NAME }."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Ваш пробний період завершується ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: info": {
@@ -9631,12 +9602,6 @@
       ]
     },
     "new_plans: Title": {
-      "${ mailPlanName } Trial": [
-        "Пробна версія ${ mailPlanName }"
-      ],
-      "Upgrade to ${ planName }": [
-        "Покращити до ${ planName }"
-      ],
       "Your account's usage": [
         "Використання вашого облікового запису"
       ]
@@ -9858,12 +9823,6 @@
       ]
     },
     "new_plans: Upsell attribute": {
-      "${ storageSize } total storage": [
-        "Усього ${ storageSize } сховища"
-      ],
-      "10 email addresses/aliases": [
-        "10 адрес/псевдонімів е-пошти"
-      ],
       "Access advanced VPN features": [
         "Користуйтеся розширеними можливостями VPN"
       ],
@@ -9873,38 +9832,8 @@
       "Boost your storage space to ${ bundleStorage } total": [
         "Розширте загальний обсяг свого сховища до ${ bundleStorage }"
       ],
-      "Boost your storage space to ${ businessStorage } per user": [
-        "Розширте обсяг свого сховища до ${ businessStorage } на користувача"
-      ],
       "Cover more ground with support for 10 custom email domains": [
         "Охоплюйте більше з підтримкою 10 власних доменів електронної пошти"
-      ],
-      "Create up to ${ MAX_CALENDARS_PAID } calendar": [
-        "Створіть максимум ${ MAX_CALENDARS_PAID } календар",
-        "Створіть максимум ${ MAX_CALENDARS_PAID } календарі",
-        "Створіть максимум ${ MAX_CALENDARS_PAID } календарів",
-        "Створіть максимум ${ MAX_CALENDARS_PAID } календарів"
-      ],
-      "Everything in ${ vpnPlanName }": [
-        "Усе в ${ vpnPlanName }"
-      ],
-      "Get 5 additional email addresses per user": [
-        "Отримайте 5 додаткових адрес електронної пошти на користувача"
-      ],
-      "Priority support": [
-        "Пріоритетна підтримка"
-      ],
-      "Secure your passwords and identity with an open-source and encrypted password manager.": [
-        "Захистіть свої паролі та ідентифікаційні дані за допомогою зашифрованого менеджера паролів із відкритим кодом."
-      ],
-      "Support for 1 custom email domain": [
-        "Підтримка 1 власного домену е-пошти"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Необмежена кількість тек, міток і фільтрів"
-      ],
-      "Unlimited messages": [
-        "Необмежена кількість повідомлень"
       ]
     },
     "Notification": {

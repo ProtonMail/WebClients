@@ -3,5 +3,44 @@
     "plural-forms": "nplurals=2; plural=(n != 1);",
     "language": "en_US"
   },
-  "contexts": {}
+  "contexts": {
+    "Action": {
+      "Toggle Contact app": [
+        "Toggle Contacts app"
+      ]
+    },
+    "familyOffer_2023:Family plan": {
+      "Accounts with custom domains cannot join a Visionary or family plan.": [
+        "Accounts with custom domains cannot join a Visionary or Family plan."
+      ],
+      "Manage addresses.": [
+        "Manage addresses"
+      ]
+    },
+    "familyOffer_2023:Onboarding Proton": {
+      "Configure your family account and invite users ": [
+        "Configure your family account and invite users"
+      ]
+    },
+    "Font face option": {
+      "System default": [
+        "Paramètres par défaut du système"
+      ]
+    },
+    "Info": {
+      "Contact unassigned to group ${ contactGroupName }": [
+        "Contact unassigned from group ${ contactGroupName }"
+      ]
+    },
+    "Label": {
+      "Synchronize with system": [
+        "Synchronize with system settings"
+      ]
+    },
+    "Oauth instructions video alternative": {
+      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
+        "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Calendar."
+      ]
+    }
+  }
 }

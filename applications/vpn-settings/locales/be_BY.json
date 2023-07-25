@@ -1900,7 +1900,7 @@
         "Для ўключэння 2ФА праз ключ бяспекі, вы павінны актываваць 2ФА праз праграму аўтэнтыфікацыі"
       ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
-        "Пацвердзіце сваю асобу пры дапамозе фізічнага ключа бяспекі U2F або FIDO2"
+        "Пацвердзіце свае асабістыя даныя пры дапамозе фізічнага ключа бяспекі U2F або FIDO2"
       ],
       "Your two-factor authentication key is ready to use.": [
         "Ваш двухфактарны ключ аўтэнтыфікацыі гатовы да выкарыстання."
@@ -2057,7 +2057,7 @@
         "Аплата"
       ],
       "Create your account": [
-        "Стварэнне вашага ўліковага запісу"
+        "Стварэнне ўліковага запісу"
       ],
       "Get help": [
         "Атрымаць даведку"
@@ -2727,7 +2727,7 @@
         "Праверка адкрые новую ўкладку, адключыце блакіроўку ўсплывальных вокнаў. З вас не будуць спаганяцца грашовыя сродкі. Любая сума, якая выкарыстоўваецца для праверкі вашай карткі, будзе неадкладна вернута."
       ],
       "Verify your identity with a time-based one-time password from an authenticator app": [
-        "Пацвердзіце сваю асобу пры дапамозе аднаразовага пароля з абмежаваным тэрмінам дзеяння з праграмы аўтэнтыфікацыі"
+        "Пацвердзіце свае асабістыя даныя пры дапамозе аднаразовага пароля з абмежаваным тэрмінам дзеяння з праграмы аўтэнтыфікацыі"
       ],
       "Verifying your payment": [
         "Праверка вашага плацяжу"
@@ -3476,6 +3476,20 @@
         "Сярэдняя хуткасць VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Панізіць да ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Азнаёмцеся з усімі тарыфнымі планамі ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Ад ${ price }"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "Пакінуць мой уліковы запіс ${ currentPlanName }"
+      ]
+    },
     "new_plans: action": {
       "Continue to review": [
         "Працягнуць агляд"
@@ -3506,40 +3520,6 @@
       ],
       "Switch plan": [
         "Змяніць тарыфны план"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Панізіць да ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Азнаёмцеся з усімі тарыфнымі планамі ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Ад ${ price }"
-      ],
-      "From ${ price } per user": [
-        "Ад ${ price } за карыстальніка"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "Пакінуць мой уліковы запіс ${ currentPlanName }"
-      ],
-      "Upgrade now": [
-        "Палепшыць зараз"
-      ]
-    },
-    "new_plans: attribute": {
-      "Get ${ connections } high-speed VPN connection": [
-        "Атрымаць ${ connections } высакахуткаснае падключэнне па VPN",
-        "Атрымаць ${ connections } высакахуткасныя падключэнні па VPN",
-        "Атрымаць ${ connections } высакахуткасных падключэнняў па VPN",
-        "Атрымаць ${ connections } высакахуткасныя падключэнні па VPN"
-      ],
-      "Get ${ connections } high-speed VPN connection per user": [
-        "Атрымаць ${ connections } высакахуткаснае падключэнне па VPN на карыстальніка",
-        "Атрымаць ${ connections } высакахуткасныя падключэнні па VPN на карыстальніка",
-        "Атрымаць ${ connections } высакахуткасных падключэнняў па VPN на карыстальніка",
-        "Атрымаць ${ connections } высакахуткасныя падключэнні па VPN на карыстальніка"
       ]
     },
     "new_plans: feature": {
@@ -3893,7 +3873,7 @@
         "Комплексная прыватнасць і бяспека ў спалучэнні з усімі сэрвісамі ${ BRAND_NAME }."
       ],
       "For next-level password management and identity protection.": [
-        "Для больш высокага ўзроўню кіравання паролямі і абароны ідэнтыфікацыі."
+        "Для больш высокага ўзроўню кіравання паролямі і абароны асабістых даных."
       ],
       "If you delete your account, you lose all ${ visionary } plan benefits and it won’t be available if you create a new account.": [
         "Калі вы выдаліце свой уліковы запіс, то згубіце ўсе перавагі тарыфнага плана ${ visionary } і пры гэтым яго нельга будзе выбраць падчас стварэння новага ўліковага запісу."
@@ -3939,23 +3919,11 @@
       ]
     },
     "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Зрабіце прыватнасць прадвызначаным параметрам для рэзервовага капіявання, захоўвання і абмену файламі."
-      ],
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "Калі гэта не зрабіць, доступ да вашага ўліковага запісу будзе абмежаваны, а потым цалкам адключаны."
       ],
       "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
         "Для працягу выкарыстання ${ MAIL_APP_NAME } з прэміяльнымі функцыямі, выберыце вашу падпіску і спосаб аплаты."
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "Палепшыце да пакета для бізнесу і атрымайце доступ да ўсіх прэміяльных сэрвісаў ${ BRAND_NAME }."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "Палепшыце да максімальнага пакета прыватнасці і атрымайце доступ да ўсіх прэміяльных сэрвісаў ${ BRAND_NAME }."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Ваш выпрабавальны перыяд завершыцца ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -3984,6 +3952,11 @@
         "ўмовамі выкарыстання"
       ]
     },
+    "new_plans: Title": {
+      "Your account's usage": [
+        "Выкарыстанне вашага ўліковага запісу"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Выдаліць уліковы запіс?"
@@ -3999,17 +3972,6 @@
       ],
       "Switch plans?": [
         "Змяніць тарыфны план?"
-      ]
-    },
-    "new_plans: Title": {
-      "${ mailPlanName } Trial": [
-        "Выпрабавальны перыяд ${ mailPlanName }"
-      ],
-      "Upgrade to ${ planName }": [
-        "Палепшыць да ${ planName }"
-      ],
-      "Your account's usage": [
-        "Выкарыстанне вашага ўліковага запісу"
       ]
     },
     "new_plans: tooltip": {
@@ -4198,12 +4160,6 @@
       ]
     },
     "new_plans: Upsell attribute": {
-      "${ storageSize } total storage": [
-        "Агульны аб'ём сховішча: ${ storageSize }"
-      ],
-      "10 email addresses/aliases": [
-        "10 адрасоў электроннай пошты/псеўданімаў"
-      ],
       "Access advanced VPN features": [
         "Доступ да пашыраных функцый VPN"
       ],
@@ -4213,38 +4169,8 @@
       "Boost your storage space to ${ bundleStorage } total": [
         "Палепшыце агульны аб'ём свайго сховішча да ${ bundleStorage }"
       ],
-      "Boost your storage space to ${ businessStorage } per user": [
-        "Палепшыце прастору сховішча да ${ businessStorage } на карыстальніка"
-      ],
       "Cover more ground with support for 10 custom email domains": [
         "Дасягніце большага з падтрымкай 10 карыстальніцкіх даменаў электроннай пошты"
-      ],
-      "Create up to ${ MAX_CALENDARS_PAID } calendar": [
-        "Стварыць да ${ MAX_CALENDARS_PAID } календара",
-        "Стварыць да ${ MAX_CALENDARS_PAID } календароў",
-        "Стварыць да ${ MAX_CALENDARS_PAID } календароў",
-        "Стварыць да ${ MAX_CALENDARS_PAID } календароў"
-      ],
-      "Everything in ${ vpnPlanName }": [
-        "Усё, што ўваходзіць у ${ vpnPlanName }"
-      ],
-      "Get 5 additional email addresses per user": [
-        "Атрымайце 5 дадатковых адрасоў электроннай пошты на карыстальніка"
-      ],
-      "Priority support": [
-        "Прыярытэтная падтрымка"
-      ],
-      "Secure your passwords and identity with an open-source and encrypted password manager.": [
-        "Абараняйце свае паролі і пасведчанні з дапамогай зашыфраванага менеджара пароляў, які мае адкрыты зыходны код."
-      ],
-      "Support for 1 custom email domain": [
-        "Падтрымка для 1 карыстальніцкага дамена электроннай пошты"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Неабмежаваная колькасць папак, метак і фільтраў"
-      ],
-      "Unlimited messages": [
-        "Неабмежаваная колькасць паведамленняў"
       ]
     },
     "Notification": {
