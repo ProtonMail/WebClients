@@ -3333,6 +3333,9 @@
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Din konto eller organisation har en forfalden faktura. Betal venligst alle udestående fakturaer."
       ],
+      "Your forward will not be processed.": [
+        "Din videresendelse vil ikke blive behandlet."
+      ],
       "Your import will not be processed.": [
         "Din import vil ikke blive behandlet."
       ],
@@ -3820,6 +3823,9 @@
       "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
         "Inkluderer 2700 servere i 65+ lande, forbind op til 10 enheder, tilgå verdensomspændende streamingtjenester, malware- og ad-blocker og meget mere."
       ],
+      "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
+        "Inkluderer support til 3 bruger-e-maildomæner, 90 e-mailadresser, ubegrænsede hide-my-email-aliasser, kalenderdeling med mere."
+      ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Beskyt dine filer med krypteret lagring i skyen. Inkluderer automatisk synkronisering, krypteret fildeling og meget mere."
       ]
@@ -4104,6 +4110,11 @@
       ],
       "(during your first month)": [
         "(i løbet af din første måned)"
+      ]
+    },
+    "Get started checklist instructions": {
+      "privacy features": [
+        "privatlivsfunktioner"
       ]
     },
     "Gmail forwarding": {
@@ -6221,6 +6232,9 @@
       "We securely store recovery information on your trusted device to prevent you from losing your data": [
         "Vi gemmer gendannelsesoplysninger sikkert på din betroede enhed for at forhindre, at du mister dine data"
       ],
+      "We use 3-D Secure to protect your payments": [
+        "Vi bruger 3-D Secure til at beskytte dine betalinger"
+      ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Du omdirigeres til PayPal i en ny browserfane for at gennemføre denne transaktion. Benytter du evt. pop-up blockere, så deaktivér venligst disse for at fortsætte."
       ],
@@ -7909,6 +7923,9 @@
       "Common sign up issues": [
         "Almindelige tilmeldingsproblemer"
       ],
+      "create a ticket": [
+        "opret en sag"
+      ],
       "Create account": [
         "Opret konto"
       ],
@@ -7923,6 +7940,9 @@
       ],
       "Help translate": [
         "Hjælp med at oversætte"
+      ],
+      "How to pay with Bitcoin?": [
+        "Hvordan betaler man med Bitcoin?"
       ],
       "How to unlock data": [
         "Sådan oplåses data"
@@ -7944,6 +7964,9 @@
       ],
       "Pay invoice": [
         "Betal faktura"
+      ],
+      "Paypal without credit card": [
+        "Paypal uden kreditkort"
       ],
       "Privacy policy": [
         "Privatlivspolitik"
@@ -7977,6 +8000,9 @@
       ],
       "View guide": [
         "Se guide"
+      ],
+      "visit our blog": [
+        "besøg vores blog"
       ],
       "What is the difference between UDP and TCP protocols?": [
         "Hvad er forskellen mellem UDP og TCP-protokoller?"
@@ -8329,9 +8355,6 @@
       "From ${ price }": [
         "Fra ${ price }"
       ],
-      "From ${ price } per user": [
-        "Fra ${ price } per bruger"
-      ],
       "Keep my ${ currentPlanName } account": [
         "Behold min ${ currentPlanName }-konto"
       ],
@@ -8378,16 +8401,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Opgrader til ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: attribute": {
-      "Get ${ connections } high-speed VPN connection": [
-        "Få ${ connections } højhastigheds VPN-forbindelse",
-        "Få ${ connections } højhastigheds VPN-forbindelser"
-      ],
-      "Get ${ connections } high-speed VPN connection per user": [
-        "Få ${ connections } højhastigheds VPN-forbindelse per bruger",
-        "Få ${ connections } højhastigheds VPN-forbindelser per bruger"
       ]
     },
     "new_plans: feature": {
@@ -8459,6 +8472,9 @@
       "1 free VPN connection in total": [
         "1 gratis VPN-forbindelse i alt"
       ],
+      "1 user": [
+        "1 bruger"
+      ],
       "Ad-blocker & malware protection": [
         "Annonceblokering og beskyttelse mod malware"
       ],
@@ -8474,6 +8490,12 @@
       "Auto-reply": [
         "Autosvar"
       ],
+      "Autofill credit cards (coming soon)": [
+        "Autofyld kreditkort (kommer snart)"
+      ],
+      "Available on all platforms": [
+        "Tilgængelig på alle platforme"
+      ],
       "Calendar sharing": [
         "Kalenderdeling"
       ],
@@ -8488,6 +8510,9 @@
       ],
       "Contact groups management": [
         "Administration af kontaktgrupper"
+      ],
+      "Custom domains for email aliases": [
+        "Brugerdomæner til e-mailaliasser"
       ],
       "Custom email domains": [
         "Brugerdefinerede e-maildomæner"
@@ -8519,8 +8544,14 @@
       "End-to-end encryption": [
         "End-to-end kryptering"
       ],
+      "Fast P2P/BitTorrent downloads": [
+        "Hurtige P2P/BitTorrent-downloads"
+      ],
       "Free VPN on a single device": [
         "Gratis VPN på en enkelt enhed"
+      ],
+      "Fully refundable for 30 days": [
+        "Fuldt refunderbar i 30 dage"
       ],
       "GDPR data processing agreement": [
         "GDPR databehandleraftale"
@@ -8530,6 +8561,9 @@
       ],
       "High-speed streaming": [
         "Streaming ved høj hastighed"
+      ],
+      "High-speed Swiss VPN that protects your privacy": [
+        "Schweizisk VPN med høj hastighed, der beskytter dit privatliv"
       ],
       "High-speed VPN on ${ n } device": [
         "Højhastigheds VPN på ${ n } enhed",
@@ -8547,8 +8581,11 @@
       "Multiple admin roles": [
         "Flere administratorroller"
       ],
+      "Organize items with multiple vaults": [
+        "Organiser elementer med flere bokse"
+      ],
       "Password-protected Emails": [
-        "Kodebeskyttet e-mails"
+        "Adgangskodebeskyttede e-mails"
       ],
       "Phone support (6+ users)": [
         "Telefon-support (6+ brugere)"
@@ -8587,6 +8624,9 @@
       "Split tunneling (Android and Windows)": [
         "Split tunneling (Android og Windows)"
       ],
+      "Start protecting yourself online in 2 easy steps": [
+        "Begynd at beskytte dig selv online i 2 nemme trin"
+      ],
       "Strict no-logs policy": [
         "Streng politik om ingen logger"
       ],
@@ -8611,6 +8651,9 @@
       "Unlimited folders, labels, and filters": [
         "Ubegrænsede mapper, etiketter og filtre"
       ],
+      "Unlimited hide-my-email aliases": [
+        "Ubegrænsede hide-my-email-aliasser"
+      ],
       "Unlimited labels": [
         "Ubegrænsede etiketter"
       ],
@@ -8622,6 +8665,9 @@
       ],
       "Unlimited volume/bandwidth": [
         "Ubegrænset mængde/båndbredde"
+      ],
+      "Up to ${ FAMILY_MAX_USERS } users": [
+        "Op til ${ FAMILY_MAX_USERS } brugere"
       ],
       "Up to ${ n } users": [
         "Op til ${ n } brugere"
@@ -8671,23 +8717,11 @@
       ]
     },
     "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Gør privatlivsbeskyttelse til din standard for sikkerhedskopiering, lagring, deling og hentning af filer."
-      ],
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "Ellers vil adgangen til din konto blive begrænset, og din konto vil i sidste ende blive deaktiveret."
       ],
       "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
         "Hvis du vil fortsætte med at bruge ${ MAIL_APP_NAME } med premium-funktioner, skal du vælge dit abonnement og dine betalingsmuligheder."
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "Opgrader til virksomhedspakken med adgang til alle premium ${ BRAND_NAME }-tjenester."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "Opgradér til den ultimative privatlivspakke og få adgang til alle premium ${ BRAND_NAME }-tjenester."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Din prøveperiode ender ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: info": {
@@ -8798,12 +8832,6 @@
       ]
     },
     "new_plans: Title": {
-      "${ mailPlanName } Trial": [
-        "${ mailPlanName } Prøve"
-      ],
-      "Upgrade to ${ planName }": [
-        "Opgradér til ${ planName }"
-      ],
       "Your account's usage": [
         "Din kontos forbrug"
       ]
@@ -8924,12 +8952,6 @@
       ]
     },
     "new_plans: Upsell attribute": {
-      "${ storageSize } total storage": [
-        "${ storageSize } lagerplads i alt"
-      ],
-      "10 email addresses/aliases": [
-        "10 e-mailadresser/aliasser"
-      ],
       "Access advanced VPN features": [
         "Få adgang til avancerede VPN-funktioner"
       ],
@@ -8939,36 +8961,8 @@
       "Boost your storage space to ${ bundleStorage } total": [
         "Forøg din lagerplads til ${ bundleStorage } i alt"
       ],
-      "Boost your storage space to ${ businessStorage } per user": [
-        "Forøg din lagerplads til ${ businessStorage } i alt"
-      ],
       "Cover more ground with support for 10 custom email domains": [
         "Dæk dig mere ind, med understøttelse af 10 brugerdefinerede domæner"
-      ],
-      "Create up to ${ MAX_CALENDARS_PAID } calendar": [
-        "Opret op til ${ MAX_CALENDARS_PAID } kalender",
-        "Opret op til ${ MAX_CALENDARS_PAID } kalendere"
-      ],
-      "Everything in ${ vpnPlanName }": [
-        "Alt i ${ vpnPlanName }"
-      ],
-      "Get 5 additional email addresses per user": [
-        "Få 5 ekstra e-mailadresser pr. bruger"
-      ],
-      "Priority support": [
-        "Prioriteret support"
-      ],
-      "Secure your passwords and identity with an open-source and encrypted password manager.": [
-        "Beskyt dine adgangskoder og din identitet med en open source og krypteret adgangskodeadministrator."
-      ],
-      "Support for 1 custom email domain": [
-        "Understøttelse af 1 brugerdefineret e-mail-domæne"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Ubegrænsede mapper / etiketter / filtre"
-      ],
-      "Unlimited messages": [
-        "Ubegrænset antal beskeder"
       ]
     },
     "Notification": {
@@ -11694,6 +11688,9 @@
       ]
     },
     "Upgrade": {
+      "Upgrade to ${ passPlusPlanName } to get unlimited hide-my-email aliases": [
+        "Opgradér til ${ passPlusPlanName } for at få ubegrænsede hide-my-email-aliasser"
+      ],
       "Upgrade to ${ planName } to connect up to ${ n } device to the VPN at once": [
         "Opgradér til ${ planName } for at forbinde op til ${ n } enhed til VPN'en samtidig",
         "Opgradér til ${ planName } for at forbinde op til ${ n } enheder til VPN'en samtidig"

@@ -2451,6 +2451,9 @@
       "Once you reset your password:": [
         "Parolanızı sıfırladığınızda:"
       ],
+      "Open source": [
+        "Açık kaynaklı"
+      ],
       "Or select a particular server:": [
         "Ya da belirli bir sunucuyu seçin:"
       ],
@@ -2728,6 +2731,9 @@
       "We recommend using your recovery phrase instead.": [
         "Bunun yerine kurtarma ifadesini kullanmanızı öneririz."
       ],
+      "We use 3-D Secure to protect your payments": [
+        "Ödemelerinizi korumak için 3-D Secure kullanıyoruz"
+      ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Bu işlemi tamamlamanız için yeni bir tarayıcı sekmesi açarak sizi PayPal sitesine yönlendireceğiz. İşlemi tamamlamak için, varsa açılır pencere engelleyicilerinizi kapatın."
       ],
@@ -2979,6 +2985,9 @@
       "Authenticator app": [
         "Kimlik doğrulama uygulaması"
       ],
+      "Billing address": [
+        "Fatura adresi"
+      ],
       "Billing cycle": [
         "Fatura dönemi"
       ],
@@ -2999,6 +3008,9 @@
       ],
       "BTC amount": [
         "BTC tutarı"
+      ],
+      "Card details": [
+        "Kart bilgileri"
       ],
       "Card holder": [
         "Kart sahibi"
@@ -3426,6 +3438,20 @@
         "Orta VPN hızı"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName } tarifesine düşür"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Tüm diğer ${ BRAND_NAME } tarifelerine bakın"
+      ],
+      "From ${ price }": [
+        "${ price } ile başlar"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "${ currentPlanName } hesabımı koru"
+      ]
+    },
     "new_plans: action": {
       "Continue to review": [
         "Gözden geçirmeyi sürdür"
@@ -3456,36 +3482,6 @@
       ],
       "Switch plan": [
         "Tarifeyi değiştir"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName } tarifesine düşür"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Tüm diğer ${ BRAND_NAME } tarifelerine bakın"
-      ],
-      "From ${ price }": [
-        "${ price } ile başlar"
-      ],
-      "From ${ price } per user": [
-        "Bir kullanıcı için ${ price } ile başlar"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "${ currentPlanName } hesabımı koru"
-      ],
-      "Upgrade now": [
-        "Şimdi yükselt"
-      ]
-    },
-    "new_plans: attribute": {
-      "Get ${ connections } high-speed VPN connection": [
-        "${ connections } yüksek hızlı VPN bağlantısı alın",
-        "${ connections } yüksek hızlı VPN bağlantısı alın"
-      ],
-      "Get ${ connections } high-speed VPN connection per user": [
-        "Her kullanıcı için ${ connections } yüksek hızlı VPN bağlantısı alın",
-        "Her kullanıcı için ${ connections } yüksek hızlı VPN bağlantısı alın"
       ]
     },
     "new_plans: feature": {
@@ -3853,23 +3849,11 @@
       ]
     },
     "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Dosya yedekleme, depolama, paylaşma ve alma işlemlerinizde standart olarak gizlilik sağlayın."
-      ],
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "Yoksa hesabınıza erişim sınırlanacak ve sonunda hesabınız kullanımdan kaldırılacak."
       ],
       "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
         "${ MAIL_APP_NAME } uygulamasını ücretli tarife özellikleriyle kullanmayı sürdürmek istiyorsanız, abonelik ve ödeme seçeneklerinizi belirleyin."
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "Tüm ücretli ${ BRAND_NAME } hizmetlerine erişim sağlayan kurumsal gizlilik paketine yükseltin."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "Tüm ücretli ${ BRAND_NAME } hizmetlerine erişim sağlayan en üst düzey gizlilik paketine yükseltin."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Deneme süreniz ${ formattedTrialExpirationDate } tarihinde sona eriyor"
       ]
     },
     "new_plans: Label": {
@@ -3896,6 +3880,11 @@
         "hüküm ve koşullar"
       ]
     },
+    "new_plans: Title": {
+      "Your account's usage": [
+        "Hesap kullanımınız"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Hesap silinsin mi?"
@@ -3911,17 +3900,6 @@
       ],
       "Switch plans?": [
         "Tarifeler değiştirilsin mi?"
-      ]
-    },
-    "new_plans: Title": {
-      "${ mailPlanName } Trial": [
-        "${ mailPlanName } deneme"
-      ],
-      "Upgrade to ${ planName }": [
-        "${ planName } tarifesine yükselt"
-      ],
-      "Your account's usage": [
-        "Hesap kullanımınız"
       ]
     },
     "new_plans: tooltip": {
@@ -4108,12 +4086,6 @@
       ]
     },
     "new_plans: Upsell attribute": {
-      "${ storageSize } total storage": [
-        "${ storageSize } toplam depolama alanı"
-      ],
-      "10 email addresses/aliases": [
-        "10 e-posta adresi/takma adı"
-      ],
       "Access advanced VPN features": [
         "Gelişmiş VPN özelliklerine erişin"
       ],
@@ -4123,36 +4095,8 @@
       "Boost your storage space to ${ bundleStorage } total": [
         "Toplam depolama alanınızı ${ bundleStorage } boyutuna artırın"
       ],
-      "Boost your storage space to ${ businessStorage } per user": [
-        "Her kullanıcı için depolama alanınızı ${ businessStorage } boyutuna kadar artırın"
-      ],
       "Cover more ground with support for 10 custom email domains": [
         "10 özel e-posta etki alanı desteği ile daha geniş bir kullanım sağlayın"
-      ],
-      "Create up to ${ MAX_CALENDARS_PAID } calendar": [
-        "${ MAX_CALENDARS_PAID } taneye kadar takvim oluşturun",
-        "${ MAX_CALENDARS_PAID } taneye kadar takvim oluşturun"
-      ],
-      "Everything in ${ vpnPlanName }": [
-        "${ vpnPlanName } özelliklerinin tümü"
-      ],
-      "Get 5 additional email addresses per user": [
-        "Her kullanıcı için 5 ek e-posta adresi alın"
-      ],
-      "Priority support": [
-        "Öncelikli destek"
-      ],
-      "Secure your passwords and identity with an open-source and encrypted password manager.": [
-        "Açık kaynaklı ve şifrelenmiş bir parola yöneticisi ile parolalarınızı ve kimliğinizi koruyun."
-      ],
-      "Support for 1 custom email domain": [
-        "1 özel e-posta etki alanı desteği"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Sınırsız klasör, etiket, süzgeç"
-      ],
-      "Unlimited messages": [
-        "Sınırsız ileti"
       ]
     },
     "Notification": {
@@ -5455,6 +5399,9 @@
       ],
       "Get ${ discount } off with a ${ billingCycle } subscription": [
         "${ billingCycle } aboneliği ile ${ discount } indirim alın"
+      ],
+      "monthly": [
+        "ayda bir"
       ]
     },
     "vpn_2step: feature": {
@@ -5473,6 +5420,9 @@
       "${ n } year": [
         "${ n } yıl",
         "${ n } yıl"
+      ],
+      "Try ${ upsellPlanName } risk-free": [
+        "Risk almadan ${ upsellPlanName } tarifesini deneyin"
       ],
       "Your ${ selected } plan": [
         "${ selected } tarifeniz"

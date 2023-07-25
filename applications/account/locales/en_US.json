@@ -4,9 +4,35 @@
     "language": "en_US"
   },
   "contexts": {
+    "Description": {
+      "Automatically clear out messages older than 30 days from trash and spam. Enjoy this and other benefits when you upgrade.": [
+        "Automatically clear out messages older than 30 days from trash or spam. Enjoy this and other benefits when you upgrade."
+      ]
+    },
+    "Error": {
+      "Require at least one action": [
+        "At least one action is required."
+      ],
+      "Require at least one condition": [
+        "At least one condition is required."
+      ]
+    },
     "familyOffer_2023:Action": {
       "Invite member to your family": [
         "Invite a user"
+      ]
+    },
+    "familyOffer_2023:Family plan": {
+      "Accounts with custom domains cannot join a Visionary or family plan.": [
+        "Accounts with custom domains cannot join a Visionary or Family plan."
+      ],
+      "Manage addresses.": [
+        "Manage addresses"
+      ]
+    },
+    "Font face option": {
+      "System default": [
+        "Paramètres par défaut du système"
       ]
     },
     "Info": {
@@ -21,9 +47,19 @@
         "You can enable authentication logs to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts."
       ]
     },
+    "Label": {
+      "Synchronize with system": [
+        "Synchronize with system settings"
+      ]
+    },
     "Link": {
       "Paypal without credit card": [
         "PayPal without credit card"
+      ]
+    },
+    "Oauth instructions video alternative": {
+      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
+        "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Calendar."
       ]
     },
     "Subscription change warning": {
@@ -34,6 +70,11 @@
     "Success": {
       "If you entered a valid recovery phone we will send you an sms with your usernames in the next minute.": [
         "You will receive your username via SMS within a minute if you entered a valid recovery phone number."
+      ]
+    },
+    "Title": {
+      "Personalise your e-mail footer": [
+        "Personalize your e-mail footer"
       ]
     },
     "vpn_2step: tooltip": {

@@ -5666,6 +5666,9 @@
       "Saved at ${ dateString }": [
         "Zapisano o ${ dateString }"
       ],
+      "Saved on ${ dateString }": [
+        "Zapisano: ${ dateString }"
+      ],
       "Saved yesterday": [
         "Zapisano wczoraj"
       ],
@@ -8067,11 +8070,6 @@
     "Sender verification details": {
       "Sender verification": [
         "Weryfikacja nadawcy"
-      ]
-    },
-    "Sender verification error": {
-      "Sender verification failed: Verification key is not in the list of trusted keys.": [
-        "Weryfikacja nadawcy nie powiodła się: Klucz weryfikacyjny nie znajduje się na liście zaufanych kluczy."
       ]
     },
     "Sent email icon": {

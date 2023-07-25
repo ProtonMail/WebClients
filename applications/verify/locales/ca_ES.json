@@ -849,7 +849,7 @@
         "Introduïu 6 dígits"
       ],
       "Invalid verification code": [
-        "Codi de verificació no vàlid"
+        "El codi de verificació no és vàlid."
       ],
       "Not a valid number": [
         "Número no vàlid"
@@ -861,7 +861,7 @@
         "S'ha esgotat el temps d'espera"
       ],
       "The email addresses do not match": [
-        "Les adreces de correu electrònic no coincideixen"
+        "Les adreces de correu electrònic no coincideixen."
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Aquest camp excedeix el màxim de ${ maximumLength } caràcters."
@@ -879,10 +879,10 @@
         "Error desconegut"
       ],
       "Username must begin with a letter or digit": [
-        "El nom d'usuari ha de començar amb una lletra o un dígit"
+        "El nom d'usuari ha de començar amb una lletra o un dígit."
       ],
       "Username must end with a letter or digit": [
-        "El nom d'usuari ha d'acabar amb una lletra o un dígit"
+        "El nom d'usuari ha d'acabar amb una lletra o un dígit."
       ]
     },
     "Error message": {
@@ -893,7 +893,7 @@
         "Refresqueu la pàgina o proveu de nou més tard."
       ],
       "Something went wrong": [
-        "S'ha produït un error"
+        "Alguna cosa ha anat malament."
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "No hem pogut carregar aquesta pàgina. Refresqueu la pàgina o comproveu la vostra connexió a Internet."
@@ -919,10 +919,10 @@
     },
     "Font face option": {
       "System default": [
-        "Valors per defecte del sistema"
+        "Valor per defecte del sistema"
       ],
       "Theme font": [
-        "Font del tema"
+        "Tipus de lletra del tema"
       ]
     },
     "Font size option": {
@@ -967,7 +967,7 @@
         "Codi de país"
       ],
       "Each code can only be used once": [
-        "Cada codi només es pot utilitzar una vegada"
+        "Cada codi només es pot utilitzar una vegada."
       ],
       "Enter the code from your authenticator app": [
         "Introduïu el codi de la vostra aplicació d'autenticació"
@@ -997,7 +997,7 @@
         "Carregant"
       ],
       "No results found": [
-        "No s'ha trobat cap resultat"
+        "No s'ha trobat cap resultat."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Servidors inaccessibles. Torneu a provar-ho en uns minuts"
@@ -1091,13 +1091,13 @@
         "Verificació humana"
       ],
       "Invalid verification code": [
-        "Codi de verificació no vàlid"
+        "El codi de verificació no és vàlid."
       ],
       "Request new code": [
-        "Demanar un codi nou"
+        "Demana un nou codi"
       ],
       "Sign in with 2FA": [
-        "Inicia la sessió amb 2FA"
+        "Inicia la sessió amb autenticació de dos factors (A2F)"
       ]
     },
     "Validation": {

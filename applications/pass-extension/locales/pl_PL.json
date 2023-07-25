@@ -144,7 +144,7 @@
         "Generuj hasło"
       ],
       "Generated password": [
-        "Wygenerowane hasło"
+        "Wygenerowane hasła"
       ],
       "Get mobile apps": [
         "Pobierz aplikację mobilną"
@@ -174,7 +174,7 @@
         "Zablokuj rozszerzenie"
       ],
       "Manually sync your data": [
-        "Synchronizuj dane ręcznie"
+        "Synchronizuj dane"
       ],
       "More options": [
         "Więcej opcji"
@@ -296,11 +296,11 @@
       ]
     },
     "Error": {
-      "${ PASS_APP_NAME } export file could not be parsed. ${ errorDetail }": [
-        "Plik eksportu danych ${ PASS_APP_NAME } nie mógł zostać przetworzony. ${ errorDetail }"
+      "${ provider } file could not be parsed. ${ errorDetail }": [
+        "Plik eksportu danych ${ provider } nie mógł zostać przetworzony. ${ errorDetail }"
       ],
-      "1Password export file could not be parsed. ${ errorDetail }": [
-        "Plik eksportu danych 1Password nie mógł zostać przetworzony. ${ errorDetail }"
+      "Alias options could not be resolved": [
+        "Nie można załadować opcji aliasu"
       ],
       "Authentication error": [
         "Błąd uwierzytelniania"
@@ -311,14 +311,8 @@
       "Auto-lock could not be disabled": [
         "Automatyczna blokada nie mogła zostać wyłączona"
       ],
-      "Bitwarden export file could not be parsed. ${ errorDetail }": [
-        "Plik eksportu danych Bitwarden nie mógł zostać przetworzony. ${ errorDetail }"
-      ],
-      "Cannot create alias.": [
-        "Nie można utworzyć aliasu."
-      ],
-      "Chrome export file could not be parsed. ${ errorDetail }": [
-        "Plik eksportu danych Chrome nie mógł zostać przetworzony. ${ errorDetail }"
+      "Cannot create alias (${ error }).": [
+        "Nie można utworzyć aliasu (${ error })."
       ],
       "Could not open created vault": [
         "Nie można otworzyć utworzonego sejfu"
@@ -331,9 +325,6 @@
       ],
       "CSV file is missing expected headers: ${ missingHeaders }": [
         "Brak wymaganych nagłówków w pliku CSV: ${ missingHeaders }"
-      ],
-      "Dashlane export file could not be parsed. ${ errorDetail }": [
-        "Plik eksportu danych Dashlane nie mógł zostać przetworzony. ${ errorDetail }"
       ],
       "Decrypting your ${ PASS_APP_NAME } export file failed. ${ errorDetail }": [
         "Odszyfrowywanie pliku eksportu danych ${ PASS_APP_NAME } nie powiodło się. ${ errorDetail }"
@@ -368,9 +359,6 @@
       "File could not be parsed": [
         "Plik nie mógł zostać przetworzony"
       ],
-      "Firefox export file could not be parsed. ${ errorDetail }": [
-        "Plik eksportu danych Firefox nie mógł zostać przetworzony. ${ errorDetail }"
-      ],
       "Import failed for vault \"${ vaultData.name }\" : ${ description }": [
         "Importowanie sejfu \"${ vaultData.name }\" nie powiodło się: ${ description }"
       ],
@@ -385,15 +373,6 @@
       ],
       "Item creation failed": [
         "Utworzenie elementu nie powiodło się"
-      ],
-      "KeePass export file could not be parsed. ${ errorDetail }": [
-        "Plik eksportu danych KeePass nie mógł zostać przetworzony. ${ errorDetail }"
-      ],
-      "Keeper export file could not be parsed. ${ errorDetail }": [
-        "Plik eksportu danych Keeper nie mógł zostać przetworzony. ${ errorDetail }"
-      ],
-      "LastPass export file could not be parsed. ${ errorDetail }": [
-        "Plik eksportu danych LastPass nie mógł zostać przetworzony. ${ errorDetail }"
       ],
       "LastPass will export a corrupted CSV file if any of your item fields contain unexpected commas, quotes or multiple lines": [
         "LastPass wyeksportuje uszkodzony plik CSV, jeśli jakiekolwiek pole zawiera nieoczekiwane przecinki, cudzysłowy lub wiele wierszy"
@@ -424,9 +403,6 @@
       ],
       "Restoring item failed": [
         "Przywracanie elementu nie powiodło się"
-      ],
-      "Safari export file could not be parsed. ${ errorDetail }": [
-        "Plik eksportu danych Safari nie mógł zostać przetworzony. ${ errorDetail }"
       ],
       "Setting \"${ payload.name }\" as primary vault failed": [
         "Ustawienie sejfu \"${ payload.name }\" jako sejfu głównego nie powiodło się"
@@ -539,7 +515,7 @@
     },
     "Info": {
       " Upgrade to a paid plan to create multiple vaults.": [
-        "Ulepsz do płatnego planu, aby tworzyć wiele sejfów."
+        "Ulepsz do płatnego planu, aby utworzyć wiele sejfów."
       ],
       "\"${ payload.item.data.metadata.name }\" item was dismissed": [
         "Element \"${ payload.item.data.metadata.name }\" został odrzucony"
