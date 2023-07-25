@@ -5303,7 +5303,7 @@
         "Qualquer um com esta ligação pode ver no seu calendário se está livre ou não. Não podem ver os detalhes do evento, como título, localização ou participantes."
       ],
       "Anyone with this link won't be able to sync or get future updates for your calendar. If you want to give them access again, you will have to create a new link.": [
-        "Ninguém com esta ligação conseguirá sincronizar ou obter actualizações do seu calendário. Se desejar conceder novo acesso, terá de criar uma ligação."
+        "Ninguém com esta ligação conseguirá sincronizar ou obter atualizações do seu calendário. Se desejar conceder novo acesso, terá de criar uma ligação."
       ],
       "Are you sure you want to delete this address?": [
         "Tem a certeza de que pretende eliminar este endereço?"
@@ -5318,7 +5318,7 @@
         "Tem a certeza de que deseja eliminar este calendário? Todos os eventos nele serão eliminados."
       ],
       "Are you sure you want to delete this calendar? You can add the holidays calendar back later.": [
-        "Tem certeza que deseja eliminarestecalendário? Pode adicionar calendário de feriados mais tarde."
+        "Tem certeza que deseja eliminar este calendário? Pode adicionar calendário de feriados mais tarde."
       ],
       "Are you sure you want to delete this domain?": [
         "Tem certeza de que deseja eliminar este domínio?"
@@ -5605,7 +5605,7 @@
         "Mensagens com esta etiqueta não serão eliminadas e continuam na sua pasta respectiva."
       ],
       "Enable this address to join this calendar": [
-        "Ative este endereço para juntar-se a este calendário."
+        "Ative este endereço para aderir a este calendário"
       ],
       "Enable TLS or SSL on the external service if it is supported.": [
         "Ative o TLS ou SSL no serviço externo, se for suportado."
@@ -6225,7 +6225,7 @@
         "Actualizar a página ou ${ link } resolve automaticamente a maioria dos problemas."
       ],
       "Remove one of your calendars to join this one": [
-        "Ative este endereço para juntar-se a este calendário."
+        "Remova um dos seus calendários para se juntar a este"
       ],
       "Report link expired": [
         "A ligação do relatório expirou."
@@ -6643,7 +6643,7 @@
         "Hiperligação do URL"
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
-        "Utilize o melhor servidor de acordo com a carga actual e a posição: ${ formattedBestServerName }"
+        "Utilize o melhor servidor de acordo com a carga atual e a posição: ${ formattedBestServerName }"
       ],
       "Use the different types of email addresses and aliases offered by ${ BRAND_NAME }.": [
         "Utilize os diferentes tipos de endereços de e-mail e aliases oferecidos por ${ BRAND_NAME }."
@@ -6885,7 +6885,7 @@
         "Deve exportar uma cópia de segurança desta chave para o caso de ser necessário restaurar os dados encriptados."
       ],
       "You still need to reply to invitations for the host to see your response.": [
-        "Ainda precisa responder aos convites para que o hospedeiro veja a sua resposta."
+        "Ainda precisa de responder aos convites para que o anfitrião veja a sua resposta."
       ],
       "You will lose access to ${ vpnPlanNameShort } servers and features on this date.": [
         "Nesta data, perderá o acesso a servidores e funcionalidades ${ vpnPlanNameShort }."
@@ -8884,9 +8884,6 @@
       "From ${ price }": [
         "A partir de ${ price }"
       ],
-      "From ${ price } per user": [
-        "A partir de ${ price } por utilizador"
-      ],
       "Keep my ${ currentPlanName } account": [
         "Manter a minha conta ${ currentPlanName }"
       ],
@@ -8936,16 +8933,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Cambiar a ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: attribute": {
-      "Get ${ connections } high-speed VPN connection": [
-        "Obter ${ connections } ligação VPN de alta velocidade",
-        "Obter ${ connections } ligações VPN de alta velocidade"
-      ],
-      "Get ${ connections } high-speed VPN connection per user": [
-        "Obter ${ connections } ligação VPN de alta velocidade por utilizador",
-        "Obter ${ connections } ligações VPN de alta velocidade por utilizador"
       ]
     },
     "new_plans: feature": {
@@ -9289,23 +9276,11 @@
       ]
     },
     "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Proteja a sua privacidade quando se trata de fazer cópias de segurança, armazenar, partilhar e recuperar ficheiros."
-      ],
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "Caso contrário, o acesso à sua conta será limitado e a sua conta acabará por ser desativada."
       ],
       "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
         "Para continuar a utilizar ${ MAIL_APP_NAME } com funcionalidades premium, escolha a sua subscrição e as opções de pagamento."
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "Actualize para o pacote para empresas com acesso a todos os serviços premium da ${ BRAND_NAME }."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "Actualize para o pacote de privacidade completo e aceda a todos os serviços premium da ${ BRAND_NAME }."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "O seu teste termina em ${ formattedTrialExpirationDate }."
       ]
     },
     "new_plans: info": {
@@ -9434,12 +9409,6 @@
       ]
     },
     "new_plans: Title": {
-      "${ mailPlanName } Trial": [
-        "Teste do ${ mailPlanName }"
-      ],
-      "Upgrade to ${ planName }": [
-        "Actualizar para o plano ${ planName }"
-      ],
       "Your account's usage": [
         "Utilização da sua conta"
       ]
@@ -9659,12 +9628,6 @@
       ]
     },
     "new_plans: Upsell attribute": {
-      "${ storageSize } total storage": [
-        "${ storageSize } de armazenamento total"
-      ],
-      "10 email addresses/aliases": [
-        "10 endereços de e-mail/aliases"
-      ],
       "Access advanced VPN features": [
         "Acede a funcionalidades VPN avançadas"
       ],
@@ -9674,36 +9637,8 @@
       "Boost your storage space to ${ bundleStorage } total": [
         "Aumente o seu espaço de armazenamento para um total de ${ bundleStorage }."
       ],
-      "Boost your storage space to ${ businessStorage } per user": [
-        "Aumente o seu espaço de armazenamento para um total de ${ businessStorage } por utilizador."
-      ],
       "Cover more ground with support for 10 custom email domains": [
         "Beneficie-se de ainda mais possibilidades com o suporte a 10 domínios de e-mail personalizados."
-      ],
-      "Create up to ${ MAX_CALENDARS_PAID } calendar": [
-        "Crie até ${ MAX_CALENDARS_PAID } calendário",
-        "Crie até ${ MAX_CALENDARS_PAID } calendários"
-      ],
-      "Everything in ${ vpnPlanName }": [
-        "Tudo em ${ vpnPlanName }"
-      ],
-      "Get 5 additional email addresses per user": [
-        "Obtenha 5 endereços de e-mail adicionais por utilizador"
-      ],
-      "Priority support": [
-        "Apoio ao cliente prioritário"
-      ],
-      "Secure your passwords and identity with an open-source and encrypted password manager.": [
-        "Proteja as suas palavras-passe e a sua identidade com um gestor de palavras-passe de código aberto e encriptado."
-      ],
-      "Support for 1 custom email domain": [
-        "Suporte para 1 domínio de e-mail personalizado"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Pastas, etiquetas e filtros ilimitados"
-      ],
-      "Unlimited messages": [
-        "Mensagens ilimitadas"
       ]
     },
     "Notification": {
@@ -10145,6 +10080,9 @@
       "Start using ${ appName } now": [
         "Começar a utilizar o ${ appName }"
       ],
+      "Upgrade for only ${ relativePrice } extra per month": [
+        "Melhore o seu plano por apenas ${ relativePrice } extra por mês."
+      ],
       "Upgrade my plan": [
         "Actualizar o meu plano"
       ],
@@ -10223,11 +10161,17 @@
       "Discover ${ PASS_APP_NAME },${ br }our new encrypted password manager": [
         "Descubre o ${ PASS_APP_NAME },${ br }: o nosso novo gestor de palavras-passe encriptadas"
       ],
+      "Download and install the relevant apps and extensions to start using ${ PASS_APP_NAME }": [
+        "Descarregue e instale as aplicações relevantes e as suas extensões para começar a utilizar o ${ PASS_APP_NAME }"
+      ],
       "Download the ${ PASS_APP_NAME } app from Google Play and install it to start using ${ PASS_APP_NAME2 } on your phone.": [
         "Descarregue a aplicação do ${ PASS_APP_NAME } da Google Play e instale para começar a utilizar o ${ PASS_APP_NAME2 } no seu telefone."
       ],
       "Download the ${ PASS_APP_NAME } app from the App Store and install it to start using ${ PASS_APP_NAME2 } on your phone.": [
         "Descarregue a aplicação do ${ PASS_APP_NAME } da App Store e instale para começar a utilizar o ${ PASS_APP_NAME2 } no seu telefone."
+      ],
+      "Encrypted password manager that also protects your identity": [
+        "O gestor de palavras-passe encriptado que também protege a sua identidade"
       ],
       "End-to-end encrypted notes": [
         "Notas com encriptação de ponta a ponta"
@@ -10243,6 +10187,9 @@
       ],
       "Get ${ appName } for ${ browserName } soon": [
         "Descarrega o ${ appName } para ${ browserName } em breve"
+      ],
+      "Hide-my-email aliases protect your email from data breaches": [
+        "Os aliases hide-my-email protegem o seu e-mail contra violações de dados."
       ],
       "If you get locked out of your ${ BRAND_NAME } Account, your **recovery kit** will allow you to sign in and recover your data.": [
         "Se não conseguir entrar na sua conta da ${ BRAND_NAME }, o seu **kit de recuperação** permitirá que inicia sessão e recupere os seus dados."
@@ -10261,6 +10208,9 @@
       ],
       "It’s the only way to fully restore your account, so make sure you keep this **recovery kit** somewhere safe.": [
         "É a única maneira de restaurar totalmente a sua conta. Por isso, tenha certeza de manter o **kit de recuperação** em um lugar seguro."
+      ],
+      "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
+        "Junte-se a mais de 100 milhões de pessoas que escolheram a ${ BRAND_NAME } para se manterem seguras em linha."
       ],
       "Launching ${ PASS_APP_NAME }": [
         "Início do ${ PASS_APP_NAME }"
@@ -10298,11 +10248,17 @@
       "Signing in to ${ PASS_APP_NAME }": [
         "Inicio de sessão no ${ PASS_APP_NAME }"
       ],
+      "Special launch offer: Get ${ title } for ${ price } forever!": [
+        "Oferta especial de lançamento: obtenha ${ title } por ${ price } para sempre!"
+      ],
       "The offer you selected is not available for ${ currentPlanTitle } subscribers.": [
         "A oferta selecionada não está disponível para subscritores de ${ currentPlanTitle }."
       ],
       "to start using ${ PASS_APP_NAME } on your phone": [
         "para começar a utilizar o ${ PASS_APP_NAME } no seu telefone"
+      ],
+      "Unlock ${ PASS_APP_NAME } premium features by upgrading": [
+        "Desbloqueie as funcionalidades premium do ${ PASS_APP_NAME } com a atualização do seu plano."
       ],
       "Updating your account": [
         "Actualização da sua conta"
@@ -10315,6 +10271,9 @@
       ],
       "Works on all devices": [
         "Funciona em todos os dispositivos"
+      ],
+      "You already have access to premium ${ appName } features — no need to purchase again.": [
+        "Já tem acesso a funcionalidades premium do ${ appName } - não precisa de comprar novamente."
       ],
       "You currently have": [
         "Tem actualmente"
@@ -10773,6 +10732,11 @@
     "Shared calendar label input placeholder": {
       "Add label": [
         "Adicionar etiqueta"
+      ]
+    },
+    "Shared calendar; Info about calendar owner": {
+      "Shared by ${ ownerName }": [
+        "Partilhado por ${ ownerName }"
       ]
     },
     "Signature verification error when joining calendar": {
@@ -12951,6 +12915,9 @@
       ]
     },
     "vpn_2step: billing": {
+      "${ billedText }, renews on ${ formattedEndTime }": [
+        "${ billedText }, renova em ${ formattedEndTime }"
+      ],
       "Billed every 15 months": [
         "Faturação a cada 15 meses"
       ],
@@ -12973,6 +12940,9 @@
       ],
       "2-year": [
         "2 anos"
+      ],
+      "Get ${ discount } off with a ${ billingCycle } subscription": [
+        "Poupe ${ discount } de desconto com uma subscrição de ${ billingCycle }."
       ],
       "monthly": [
         "mensalmente"
@@ -13000,6 +12970,11 @@
       ],
       "Your ${ selected } plan": [
         "O seu plano ${ selected }"
+      ]
+    },
+    "vpn_2step: tooltip": {
+      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, Double hop, and more.": [
+        "Acesso a servidores Secure Core, transferências P2P/BitTorrent rápidas , Tor sobre VPN, Double hop, e mais."
       ]
     },
     "VPNClient": {

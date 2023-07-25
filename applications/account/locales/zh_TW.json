@@ -8791,9 +8791,6 @@
       "From ${ price }": [
         "${ price }起"
       ],
-      "From ${ price } per user": [
-        "每一使用者 ${ price }起"
-      ],
       "Keep my ${ currentPlanName } account": [
         "保留我的 ${ currentPlanName } $ 帳號"
       ],
@@ -8843,14 +8840,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "升級到 ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: attribute": {
-      "Get ${ connections } high-speed VPN connections": [
-        "取得 ${ connections } 個高速 VPN 連線"
-      ],
-      "Get ${ connections } high-speed VPN connections per user": [
-        "取得 ${ connections } 個高速 VPN 連線 / 每一位使用者"
       ]
     },
     "new_plans: feature": {
@@ -9178,23 +9167,11 @@
       ]
     },
     "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "將隱私權設定為檔案備份、儲存、共享和檢索的預設值。"
-      ],
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "否則您對帳號的存取將會受限，且您的帳號最終將會停用。"
       ],
       "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
         "要繼續使用有進階功能的 ${ MAIL_APP_NAME }，請選擇您的訂購授權與繳款選項。"
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "升級到商業組合，以存取所有 ${ BRAND_NAME } 的優質服務。"
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "升級到終極的隱私權組合，以存取所有 ${ BRAND_NAME } 的優質服務。"
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "您的試用期結束於 ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: info": {
@@ -9322,12 +9299,6 @@
       ]
     },
     "new_plans: Title": {
-      "${ mailPlanName } Trial": [
-        "${ mailPlanName } 試用版"
-      ],
-      "Upgrade to ${ planName }": [
-        "升級到 ${ planName }"
-      ],
       "Your account's usage": [
         "您帳號的使用情況"
       ]
@@ -9546,12 +9517,6 @@
       ]
     },
     "new_plans: Upsell attribute": {
-      "${ storageSize } total storage": [
-        "${ storageSize } 總儲存空間"
-      ],
-      "10 email addresses/aliases": [
-        "10 組電郵位址/別名"
-      ],
       "Access advanced VPN features": [
         "存取進階 VPN 功能"
       ],
@@ -9561,35 +9526,8 @@
       "Boost your storage space to ${ bundleStorage } total": [
         "將現有儲存空間加大至 ${ bundleStorage }為總可用量"
       ],
-      "Boost your storage space to ${ businessStorage } per user": [
-        "將現有儲存空間加大至 ${ businessStorage } 予每位使用者"
-      ],
       "Cover more ground with support for 10 custom email domains": [
         "支援 10 個自訂電郵網域更全面性的服務"
-      ],
-      "Create up to ${ MAX_CALENDARS_PAID } calendars": [
-        "建立多達 ${ MAX_CALENDARS_PAID } 個行事曆"
-      ],
-      "Everything in ${ vpnPlanName }": [
-        "全部都在 ${ vpnPlanName }"
-      ],
-      "Get 5 additional email addresses per user": [
-        "取得每位使用者5個額外的電子郵件位址"
-      ],
-      "Priority support": [
-        "優先支援"
-      ],
-      "Secure your passwords and identity with an open-source and encrypted password manager.": [
-        "透過開源和加密的密碼管理器保護你的密碼和身分資料"
-      ],
-      "Support for 1 custom email domain": [
-        "支援 1 個自訂電郵網域"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "不限數量的資料夾、標籤與篩選器"
-      ],
-      "Unlimited messages": [
-        "無限制的郵件"
       ]
     },
     "Notification": {

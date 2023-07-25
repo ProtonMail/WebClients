@@ -4440,6 +4440,9 @@
       "(1-2 emails per month)": [
         "(1-2 mesaje pe lună)"
       ],
+      "(2-4 emails per year)": [
+        "(2-4 mesaje pe an)"
+      ],
       "(4-6 emails per year)": [
         "(4-6 mesaje pe an)"
       ],
@@ -4538,6 +4541,12 @@
       ],
       "Best deal": [
         "Cea mai rentabilă"
+      ],
+      "Checkout": [
+        "Finalizare"
+      ],
+      "Create your account": [
+        "Creați-vă contul"
       ],
       "Device": [
         "Dispozitiv"
@@ -5051,6 +5060,9 @@
       ],
       "${ current } of ${ total }": [
         "${ current } din ${ total }"
+      ],
+      "${ discountPercentage } forever": [
+        "${ discountPercentage } permanent"
       ],
       "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
         "${ DRIVE_APP_NAME } nu va mai păstra versiunile anterioare ale fișierelor."
@@ -6079,6 +6091,9 @@
       "Only you can see the labels.": [
         "Numai dvs. puteți vedea etichetele."
       ],
+      "Open source": [
+        "Cod sursă public"
+      ],
       "Or select a particular server:": [
         "Sau selectați un server anume:"
       ],
@@ -6747,6 +6762,9 @@
       "We securely store recovery information on your trusted device to prevent you from losing your data": [
         "Stocăm în siguranță informațiile de recuperare pe dispozitivul dvs. de încredere pentru a preveni pierderea datelor."
       ],
+      "We use 3-D Secure to protect your payments": [
+        "Folosim 3-D Secure pentru a proteja plățile"
+      ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Pentru finalizarea tranzacției prin PayPal se va deschide o filă nouă. Dacă folosiți programe de blocat ferestre flotante dezactivați-le înainte de a continua."
       ],
@@ -7004,6 +7022,9 @@
       ],
       "Your import will not be processed.": [
         "Importarea nu va fi procesată."
+      ],
+      "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
+        "Informațiile vă sunt în siguranță la noi. Vă vom contacta doar atunci când este necesar să vă furnizăm serviciile."
       ],
       "Your login information will not be saved after the import is completed.": [
         "Informațiile de conectare nu vor fi salvate după terminarea importării."
@@ -7570,6 +7591,9 @@
       "Awarded": [
         "Acreditat"
       ],
+      "Billing address": [
+        "Adresă de facturare"
+      ],
       "Billing cycle": [
         "Ciclu de facturare"
       ],
@@ -7602,6 +7626,9 @@
       ],
       "Calendars": [
         "Calendare"
+      ],
+      "Card details": [
+        "Detalii card"
       ],
       "Card holder": [
         "Titular card"
@@ -8932,9 +8959,6 @@
       "From ${ price }": [
         "De la ${ price }"
       ],
-      "From ${ price } per user": [
-        "De la ${ price } per utilizator"
-      ],
       "Keep my ${ currentPlanName } account": [
         "Păstrez contul ${ currentPlanName } $"
       ],
@@ -8984,18 +9008,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Trecere la ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: attribute": {
-      "Get ${ connections } high-speed VPN connection": [
-        "Obțineți o conexiune VPN de mare viteză",
-        "Obțineți ${ connections } conexiuni VPN de mare viteză",
-        "Obțineți ${ connections } de conexiuni VPN de mare viteză"
-      ],
-      "Get ${ connections } high-speed VPN connection per user": [
-        "Obțineți o conexiune VPN de mare viteză per utilizator",
-        "Obțineți ${ connections } conexiuni VPN de mare viteză per utilizator",
-        "Obțineți ${ connections } de conexiuni VPN de mare viteză per utilizator"
       ]
     },
     "new_plans: feature": {
@@ -9262,6 +9274,9 @@
       "Split tunneling (Android and Windows)": [
         "Trafic divizat (Android și Windows)"
       ],
+      "Start protecting yourself online in 2 easy steps": [
+        "Începeți să vă protejați online în doi pași simpli"
+      ],
       "Strict no-logs policy": [
         "Politică strictă fără înregistrări"
       ],
@@ -9352,23 +9367,11 @@
       ]
     },
     "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Faceți confidențialitatea ca implicită pentru conservarea fișierelor, stocarea, partajarea și recuperarea lor."
-      ],
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "Altfel accesul la cont va fi limitat și eventual va fi dezactivat."
       ],
       "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
         "Pentru a continua să utilizați ${ MAIL_APP_NAME } cu funcțiile premium, alegeți tipul de abonament și opțiunea de plată."
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "Treceți la pachetul de afaceri cu acces la toate serviciile premium ale ${ BRAND_NAME }."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "Treceți la pachetul de confidențialitate complet și accesați toate serviciile premium ale ${ BRAND_NAME }."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Perioada de probare se termină ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: info": {
@@ -9498,12 +9501,6 @@
       ]
     },
     "new_plans: Title": {
-      "${ mailPlanName } Trial": [
-        "Probare ${ mailPlanName }"
-      ],
-      "Upgrade to ${ planName }": [
-        "Trecere la ${ planName }"
-      ],
       "Your account's usage": [
         "Utilizare cont"
       ]
@@ -9724,12 +9721,6 @@
       ]
     },
     "new_plans: Upsell attribute": {
-      "${ storageSize } total storage": [
-        "${ storageSize } spațiu total"
-      ],
-      "10 email addresses/aliases": [
-        "10 adrese de e-mail / aliasuri"
-      ],
       "Access advanced VPN features": [
         "Accesați caracteristici VPN avansate"
       ],
@@ -9739,37 +9730,8 @@
       "Boost your storage space to ${ bundleStorage } total": [
         "Măriți spațiul de stocare la ${ bundleStorage } în total"
       ],
-      "Boost your storage space to ${ businessStorage } per user": [
-        "Măriți spațiul de stocare la ${ businessStorage } per utilizator"
-      ],
       "Cover more ground with support for 10 custom email domains": [
         "Acoperiți mai mult teren cu suport pentru 10 domenii de e-mail personale"
-      ],
-      "Create up to ${ MAX_CALENDARS_PAID } calendar": [
-        "Creați până la ${ MAX_CALENDARS_PAID } calendar",
-        "Creați până la ${ MAX_CALENDARS_PAID } calendare",
-        "Creați până la ${ MAX_CALENDARS_PAID } de calendare"
-      ],
-      "Everything in ${ vpnPlanName }": [
-        "Totul în ${ vpnPlanName }"
-      ],
-      "Get 5 additional email addresses per user": [
-        "Obțineți 5 adrese de e-mail suplimentare per utilizator"
-      ],
-      "Priority support": [
-        "Asistență prioritară"
-      ],
-      "Secure your passwords and identity with an open-source and encrypted password manager.": [
-        "Asigurați-vă parolele și identitatea cu un manager de parole cu sursă publică și criptat."
-      ],
-      "Support for 1 custom email domain": [
-        "Suport pentru un domeniu de e-mail personal"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Foldere, etichete și filtre nelimitate"
-      ],
-      "Unlimited messages": [
-        "Mesaje nelimitate"
       ]
     },
     "Notification": {
@@ -10075,7 +10037,7 @@
         "Ruter"
       ],
       "Secure Core configs": [
-        "Configurări „Secure Core”"
+        "Configurări Secure Core"
       ],
       "Standard server configs": [
         "Configurări standard de server"
@@ -10444,7 +10406,7 @@
     },
     "Personal calendar section description": {
       "Create a calendar to stay on top of your schedule while keeping your data secure.": [
-        "Creați un calendar pentru a rămâne în topul programului dvs. păstrându-vă datele în siguranță."
+        "Creați un calendar pentru a fi la curent cu propriul program, păstrându-vă datele în siguranță."
       ]
     },
     "PGP key warning": {
@@ -12539,6 +12501,9 @@
       "Signed in to member account": [
         "Conectat în cont de membru"
       ],
+      "SMTP submission": [
+        "Trimitere SMTP"
+      ],
       "Sort folders alphabetically": [
         "Sortare alfabetică foldere"
       ],
@@ -13070,6 +13035,71 @@
         "${ numberOfServers } într-o țară",
         "${ numberOfServers } în ${ numberOfCountries } țări",
         "${ numberOfServers } în ${ numberOfCountries } de țări"
+      ]
+    },
+    "vpn_2step: billing": {
+      "${ billedText }, renews on ${ formattedEndTime }": [
+        "${ billedText }, reînnoit la ${ formattedEndTime }"
+      ],
+      "Billed every 15 months": [
+        "Facturat la 15 luni"
+      ],
+      "Billed every 2 years": [
+        "Facturat la doi ani"
+      ],
+      "Billed every 30 months": [
+        "Facturat la 30 de luni"
+      ],
+      "Billed monthly": [
+        "Facturat lunar"
+      ],
+      "Billed yearly": [
+        "Facturat anual"
+      ]
+    },
+    "vpn_2step: discount": {
+      "1-year": [
+        "1 an"
+      ],
+      "2-year": [
+        "2 ani"
+      ],
+      "Get ${ discount } off with a ${ billingCycle } subscription": [
+        "Obțineți ${ discount } reducere cu abonamentul pe ${ billingCycle }"
+      ],
+      "monthly": [
+        "lunar"
+      ]
+    },
+    "vpn_2step: feature": {
+      "Advanced VPN customizations": [
+        "Personalizări avansate VPN"
+      ],
+      "No ads": [
+        "Fără reclame"
+      ]
+    },
+    "vpn_2step: info": {
+      "${ n } month": [
+        "${ n } lună",
+        "${ n } luni",
+        "${ n } de luni"
+      ],
+      "${ n } year": [
+        "${ n } an",
+        "${ n } ani",
+        "${ n } de ani"
+      ],
+      "Try ${ upsellPlanName } risk-free": [
+        "Încercați fără riscuri ${ upsellPlanName }"
+      ],
+      "Your ${ selected } plan": [
+        "Planul dvs. ${ selected }"
+      ]
+    },
+    "vpn_2step: tooltip": {
+      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, Double hop, and more.": [
+        "Accesa la servere Secure Core, descărcări rapide P2P / BitTorrent, Tor peste VPN și altele."
       ]
     },
     "Warning": {

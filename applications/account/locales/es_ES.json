@@ -1583,7 +1583,7 @@
         "bosque"
       ],
       "gainsboro": [
-        "gainsboro"
+        "gris claro"
       ],
       "japanese laurel": [
         "laurel japonés"
@@ -3428,7 +3428,7 @@
         "Has utilizado todas las direcciones de tu plan. Pasa a un plan superior para añadir una dirección."
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
-        "Has utilizado todos los usuarios de tu plan. Pasa a un plan superior para añadir un usuario."
+        "Has utilizado todos los usuarios de tu plan. Mejora tu plan para añadir un usuario."
       ],
       "You must activate your organization keys. Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Debes activar las claves de tu organización. Sin la activación no serás capaz de crear nuevos usuarios, agregar direcciones a los usuarios o acceder a cuentas de usuario no privadas."
@@ -5423,7 +5423,7 @@
         "Bloquea a los remitentes para que no vean si has abierto un mensaje y cuándo lo has hecho."
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
-        "Al pasar a un plan gratuito, perderás permanentemente estos beneficios, incluso si pasas de nuevo a un plan superior en el futuro."
+        "Al pasar a un plan gratuito, perderás permanentemente estos beneficios, incluso si mejoras de nuevo tu plan en el futuro."
       ],
       "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
         "Al pasar a un plan con menos funciones perderás los siguientes beneficios. ¿Estás seguro de que quieres continuar?"
@@ -8412,7 +8412,7 @@
         "Para añadir un calendario, elimina uno existente."
       ],
       "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
-        "Para añadir un calendario, elimina otro calendario o actualiza tu plan ${ BRAND_NAME } a un plan de pago ${ MAIL_SHORT_APP_NAME }."
+        "Para añadir un calendario, elimina otro calendario o mejora tu plan ${ BRAND_NAME } a un plan de pago ${ MAIL_SHORT_APP_NAME }."
       ],
       "You've reached the maximum number of calendars available in your plan.": [
         "Has alcanzado el número máximo de calendarios disponibles en tu plan."
@@ -8875,14 +8875,11 @@
       "From ${ price }": [
         "Desde ${ price }"
       ],
-      "From ${ price } per user": [
-        "Desde ${ price } por usuario"
-      ],
       "Keep my ${ currentPlanName } account": [
         "Continuar con mi cuenta ${ currentPlanName }"
       ],
       "Upgrade now": [
-        "Mejorar ahora"
+        "Actualizar el plan ahora"
       ]
     },
     "new_plans: action": {
@@ -8927,16 +8924,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Cambiar a ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: attribute": {
-      "Get ${ connections } high-speed VPN connection": [
-        "Obtén ${ connections } conexión VPN de alta velocidad.",
-        "Obtén ${ connections } conexiones VPN de alta velocidad."
-      ],
-      "Get ${ connections } high-speed VPN connection per user": [
-        "Obtén ${ connections } conexión VPN de alta velocidad por usuario.",
-        "Obtén ${ connections } conexiones VPN de alta velocidad por usuario."
       ]
     },
     "new_plans: feature": {
@@ -9280,23 +9267,11 @@
       ]
     },
     "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Haz que la privacidad sea tu opción por defecto para la copia de seguridad, el almacenamiento, el intercambio y la recuperación de archivos."
-      ],
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "Si no lo haces, tendrás un acceso limitado a tu cuenta y eventualmente se desactivará."
       ],
       "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
         "Para seguir utilizando ${ MAIL_APP_NAME } con las funciones prémium, suscríbete y elige el método de pago."
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "Pásate al plan para empresas y disfruta de todos los servicios prémium de ${ BRAND_NAME }."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "Pásate al plan de privacidad más completo y disfruta de todos los servicios prémium de ${ BRAND_NAME }."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Tu periodo de pruebas acaba el ${ formattedTrialExpirationDate }."
       ]
     },
     "new_plans: info": {
@@ -9334,7 +9309,7 @@
         "Si eliminas la cuenta, perderás todas las ventajas que tienes con ${ visionary } y no podrás volver al mismo plan creando otra cuenta."
       ],
       "If you downgrade your account, you lose all ${ visionary } plan benefits and it won’t be available if you try to subscribe again.": [
-        "Si te pasas a un plan inferior, perderás todas las ventajas que tiene con ${ visionary } y no podrás volver al mismo plan suscribiéndote de nuevo."
+        "Si pasas a un plan inferior, perderás todas las ventajas que tiene con ${ visionary } y no podrás volver al mismo plan suscribiéndote de nuevo."
       ],
       "If you switch to a different plan, you lose all ${ visionary } plan benefits and won’t be able to switch back to ${ visionary }.": [
         "Si te cambias de plan, perderás todas las ventajas del plan ${ visionary } y no podrás volver al plan ${ visionary }."
@@ -9425,12 +9400,6 @@
       ]
     },
     "new_plans: Title": {
-      "${ mailPlanName } Trial": [
-        "Prueba de ${ mailPlanName }"
-      ],
-      "Upgrade to ${ planName }": [
-        "Mejorar a ${ planName }"
-      ],
       "Your account's usage": [
         "Uso de la cuenta"
       ]
@@ -9650,12 +9619,6 @@
       ]
     },
     "new_plans: Upsell attribute": {
-      "${ storageSize } total storage": [
-        "${ storageSize } de almacenamiento total"
-      ],
-      "10 email addresses/aliases": [
-        "10 direcciones/alias de correo electrónico"
-      ],
       "Access advanced VPN features": [
         "Acceso a funciones VPN avanzadas"
       ],
@@ -9665,36 +9628,8 @@
       "Boost your storage space to ${ bundleStorage } total": [
         "Aumenta tu espacio de almacenamiento a un total de ${ bundleStorage }."
       ],
-      "Boost your storage space to ${ businessStorage } per user": [
-        "Aumenta tu espacio de almacenamiento a un total de ${ businessStorage } por usuario."
-      ],
       "Cover more ground with support for 10 custom email domains": [
         "Cubre más posibilidades con 10 dominios de correo electrónico personalizados."
-      ],
-      "Create up to ${ MAX_CALENDARS_PAID } calendar": [
-        "Crea hasta ${ MAX_CALENDARS_PAID } calendario",
-        "Crea hasta ${ MAX_CALENDARS_PAID } calendarios"
-      ],
-      "Everything in ${ vpnPlanName }": [
-        "Todo en ${ vpnPlanName }"
-      ],
-      "Get 5 additional email addresses per user": [
-        "Obtén 5 direcciones de correo electrónico adicionales por usuario."
-      ],
-      "Priority support": [
-        "Soporte prioritario"
-      ],
-      "Secure your passwords and identity with an open-source and encrypted password manager.": [
-        "Asegura tus contraseñas e identidad con un gestor de contraseñas cifrado de código abierto."
-      ],
-      "Support for 1 custom email domain": [
-        "Soporte para 1 dominio de correo electrónico personalizado"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Carpetas, etiquetas y filtros ilimitados"
-      ],
-      "Unlimited messages": [
-        "Mensajes ilimitados"
       ]
     },
     "Notification": {
@@ -9714,7 +9649,7 @@
         "Credenciales OpenVPN / IKEv2 regeneradas"
       ],
       "Reminder has been sent": [
-        "Se ha enviado un recordatorio."
+        "Se ha enviado un recordatorio"
       ],
       "Two-factor authentication has been enforced for administrators": [
         "La autenticación de dos factores ha sido requerida para los administradores."
@@ -10296,7 +10231,7 @@
         "Iniciando sesión en ${ PASS_APP_NAME }"
       ],
       "Special launch offer: Get ${ title } for ${ price } forever!": [
-        "¡Oferta especial de lanzamiento: Obtén ${ title } por ${ price } para siempre!"
+        "¡Oferta especial de lanzamiento: obtén ${ title } por ${ price } para siempre!"
       ],
       "The offer you selected is not available for ${ currentPlanTitle } subscribers.": [
         "La oferta que has seleccionado no se encuentra disponible para los suscriptores de ${ currentPlanTitle }."
@@ -10398,7 +10333,7 @@
         "Confirmar contraseña"
       ],
       "domain.com": [
-        "dominio.com"
+        "dominio.es"
       ],
       "E.g., ": [
         "P. ej., "
@@ -10407,7 +10342,7 @@
         "Dirección de correo electrónico"
       ],
       "example@domain.com": [
-        "ejemplo@dominio.com"
+        "ejemplo@dominio.es"
       ],
       "Feedback": [
         "Comentarios"
@@ -12887,8 +12822,8 @@
         "Actualiza a ${ passPlusPlanName } para obtener alias ilimitados de Hide-my-email."
       ],
       "Upgrade to ${ planName } to connect up to ${ n } device to the VPN at once": [
-        "Actualiza a ${ planName } para conectar hasta ${ n } dispositivo a la VPN a la vez.",
-        "Actualiza a ${ planName } para conectar hasta ${ n } dispositivos a la VPN a la vez."
+        "Mejora a ${ planName } para conectar hasta ${ n } dispositivo a la VPN a la vez.",
+        "Mejora a ${ planName } para conectar hasta ${ n } dispositivos a la VPN a la vez."
       ]
     },
     "Upgrade notice": {
