@@ -14,12 +14,6 @@ import { createDevReloader } from '../shared/extension';
 import WorkerMessageBroker from './channel';
 import { createWorkerContext } from './context';
 
-if (BUILD_TARGET === 'chrome') {
-    /* https://bugs.chromium.org/p/chromium/issues/detail?id=1271154#c66 */
-    const globalScope = self as any as ServiceWorkerGlobalScope;
-    globalScope.oninstall = () => globalScope.skipWaiting();
-}
-
 /* The `EXTENSION_KEY` is a random & unique identifier for the current
  * extension runtime. It is currently used for verifiying the origin of
  * messages sent through unsecure channels (ie: iframe postmessaging).
