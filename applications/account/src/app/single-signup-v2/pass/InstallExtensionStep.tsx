@@ -202,7 +202,7 @@ export const getInfo = (
         };
     }
 
-    const logos: { [key in Clients]: string } = {
+    const logos: { [key in Clients]?: string } = {
         [Clients.iOS]: appStore,
         [Clients.Chrome]: chrome,
         [Clients.Brave]: brave,
