@@ -473,6 +473,9 @@
       "Hide labels": [
         "Dölj etiketter"
       ],
+      "Hide plan features": [
+        "Dölj paketfunktioner"
+      ],
       "I have a question": [
         "Jag har en fråga"
       ],
@@ -3966,6 +3969,9 @@
       "You will lose access to all premium features and storage space included with ${ BRAND_NAME } Family.": [
         "Du kommer förlora åtkomst till alla premiumfunktioner och lagringsutrymme inkluderad med ${ BRAND_NAME } Family."
       ],
+      "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
+        "Du är inbjuden att länka ditt ${ BRAND_NAME }-konto till detta gruppaket och tillsammans njuta av alla ${ BRAND_NAME_TWO } premiumfunktioner."
+      ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Ditt konto har fler e-postadresser än vad som är tillgängligt för dig i detta paket. ${ addressSettingsLink }"
       ],
@@ -3977,6 +3983,9 @@
       ]
     },
     "familyOffer_2023:Footer": {
+      "*Your subscription will automatically renew at the same rate at the end of your billing cycle.": [
+        "*Din penumeration kommer förnyas automatiskt med samma pris i slutet av din faktureringsperiod."
+      ],
       "Discounts are based on the standard monthly pricing.": [
         "Rabatterna är baserade på ordinarie månadspriser."
       ]
@@ -5569,6 +5578,9 @@
       "Email address": [
         "E-postadress"
       ],
+      "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
+        "E-postlagring för 10 anpassade e-postdomännamn är inkluderat gratis. Ytterligare domäner kan läggas till för ${ price }."
+      ],
       "Emailing preference saved": [
         "E-postpreferenser sparade"
       ],
@@ -6585,6 +6597,9 @@
       ],
       "Upgrade to a paid account to enable ${ PROTON_SENTINEL_NAME }.": [
         "Uppgradera till ett betalt konto för att aktivera ${ PROTON_SENTINEL_NAME }."
+      ],
+      "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
+        "Uppgradera för att lägga till en kortare @pm.me-adress till ditt konto som är lättare att dela. Det står för “${ MAIL_APP_NAME } me“ eller “Private Message me“."
       ],
       "Upgrade to unlock": [
         "Uppgradera för att låsa upp"
@@ -8577,6 +8592,9 @@
       ]
     },
     "Message": {
+      "All filter actions will be applied to all messages in your ${ MAIL_APP_NAME } account. No auto-reply emails will be sent.": [
+        "Alla filteråtgärder kommer att tillämpas på alla meddelanden i ditt ${ MAIL_APP_NAME }-konto. Inget autosvar för e-post kommer att skickas."
+      ],
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
         "Anslut din anpassade domän till ${ BRAND_NAME } för att ställa in anpassade e-postadresser (t.ex., du@yourcompany.com). Vår guide kommer att guida dig genom processen."
       ],
@@ -8831,9 +8849,6 @@
       "From ${ price }": [
         "Från ${ price }"
       ],
-      "From ${ price } per user": [
-        "Från ${ price } per användare"
-      ],
       "Keep my ${ currentPlanName } account": [
         "Behåll mitt ${ currentPlanName }-konto"
       ],
@@ -8883,16 +8898,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Uppgradera till ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: attribute": {
-      "Get ${ connections } high-speed VPN connection": [
-        "Få ${ connections } höghastighets VPN-anslutning",
-        "Få ${ connections } höghastighets VPN-anslutningar"
-      ],
-      "Get ${ connections } high-speed VPN connection per user": [
-        "Få ${ connections } höghastighets VPN-anslutning per användare",
-        "Få ${ connections } höghastighets VPN-anslutningar per användare"
       ]
     },
     "new_plans: feature": {
@@ -8951,6 +8956,9 @@
       "${ n } VPN connection per user": [
         "${ n } VPN-anslutning per användare",
         "${ n } VPN-anslutningar per användare"
+      ],
+      "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
+        "${ PASS_APP_NAME } med obegränsat antal hide-my-email-alias"
       ],
       "${ size } attachment size": [
         "${ size } bilagestorlek"
@@ -9236,23 +9244,14 @@
       ]
     },
     "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Gör integritet till din standard för säkerhetskopiering, lagring, delning och hämtning."
-      ],
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "Annars kommer åtkomsten till ditt konto att begränsas och ditt konto kommer så småningom att inaktiveras."
       ],
       "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
         "För att fortsätta använda ${ MAIL_APP_NAME } med premiumfunktioner, välj din prenumeration och betalningsalternativ."
       ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "Uppgradera till företagspaketet med åtkomst till alla ${ BRAND_NAME } premiumtjänster."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "Uppgradera till det ultimata integritetspaketet och åtkomst till alla ${ BRAND_NAME } premiumtjänster."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Din provperiod slutar ${ formattedTrialExpirationDate }"
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Din provperiod slutar den ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: info": {
@@ -9381,11 +9380,8 @@
       ]
     },
     "new_plans: Title": {
-      "${ mailPlanName } Trial": [
-        "${ mailPlanName } provperiod"
-      ],
-      "Upgrade to ${ planName }": [
-        "Uppgradera till ${ planName }"
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } provperiod"
       ],
       "Your account's usage": [
         "Ditt kontos användning"
@@ -9606,51 +9602,24 @@
       ]
     },
     "new_plans: Upsell attribute": {
-      "${ storageSize } total storage": [
-        "${ storageSize } totalt lagringsutrymme"
-      ],
-      "10 email addresses/aliases": [
-        "10 e-postadresser/alias"
-      ],
       "Access advanced VPN features": [
         "Få tillgång till avancerade VPN-funktioner"
       ],
       "Add more personalization with 15 email addresses and support for 3 custom email domains": [
         "Lägg till mer personifiering med 15 e-postadresser och stöd för 3 anpassade e-postdomäner"
       ],
+      "Boost your storage space to ${ bundleStorage } per user": [
+        "Öka ditt lagringsutrymme till ${ bundleStorage } per användare"
+      ],
       "Boost your storage space to ${ bundleStorage } total": [
         "Öka ditt lagringsutrymme till totalt ${ bundleStorage }"
-      ],
-      "Boost your storage space to ${ businessStorage } per user": [
-        "Öka ditt lagringsutrymme till ${ businessStorage } per användare"
       ],
       "Cover more ground with support for 10 custom email domains": [
         "Få mer gjort med stöd för 10 anpassade e-postdomäner"
       ],
-      "Create up to ${ MAX_CALENDARS_PAID } calendar": [
-        "Skapa upp till ${ MAX_CALENDARS_PAID } kalender",
-        "Skapa upp till ${ MAX_CALENDARS_PAID } kalendrar"
-      ],
-      "Everything in ${ vpnPlanName }": [
-        "Allt i ${ vpnPlanName }"
-      ],
-      "Get 5 additional email addresses per user": [
-        "Få 5 ytterligare e-postadresser per användare"
-      ],
-      "Priority support": [
-        "Prioriterad support"
-      ],
-      "Secure your passwords and identity with an open-source and encrypted password manager.": [
-        "Säkra dina lösenord och identitet med en öppen källkod och krypterad lösenordshanterare."
-      ],
-      "Support for 1 custom email domain": [
-        "Stöd för 1 anpassad e-postdomän"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Obegränsade mappar, etiketter och filter"
-      ],
-      "Unlimited messages": [
-        "Obegränsade meddelanden"
+      "Create up to ${ n } calendar": [
+        "Skapa upp till ${ n } kalender",
+        "Skapa upp till ${ n } kalendrar"
       ]
     },
     "Notification": {
@@ -10731,6 +10700,11 @@
         "Lägg till etikett"
       ]
     },
+    "Shared calendar; Info about calendar owner": {
+      "Shared by ${ ownerName }": [
+        "Delad av ${ ownerName }"
+      ]
+    },
     "Signature verification error when joining calendar": {
       "Signature verification error": [
         "Fel vid signaturverifiering"
@@ -11151,6 +11125,9 @@
       "Subscription is managed by ${ subscriptionManager }": [
         "Prenumeration hanteras av ${ subscriptionManager }"
       ],
+      "Subscription of user ID-${ userId } has been done via an in-app purchase. To manage the subscription user needs to navigate to the Subscription section of their ${ subscriptionManager } account.": [
+        "Prenumeration på användar-ID-${ userId } har gjorts via ett köp i appen. För att hantera prenumerationen måste användaren navigera till sektionen ”Prenumeration” i sitt ${ subscriptionManager }-konto."
+      ],
       "Subscriptions": [
         "Prenumeration"
       ],
@@ -11482,6 +11459,9 @@
       ]
     },
     "summer2023: Tooltip": {
+      "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
+        "Skapa säkra inloggningsuppgifter på alla dina enheter. Innehåller obegränsade alias, 20 valv, integrerad 2FA, automatisk ifyllning av kreditkort och mer."
+      ],
       "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
         "Inkluderar 2950+ servrar i 65+ länder, anslut upp till 10 enheter, få åtkomst till världsomspännande streamingtjänster, blockerare mot skadlig programvara och annonser och mer."
       ],
@@ -12822,6 +12802,11 @@
     "Upgrade notice": {
       "Upgrade to a ${ MAIL_SHORT_APP_NAME } paid plan to share your calendar.": [
         "Uppgradera till ett betalt ${ MAIL_SHORT_APP_NAME }-paket för att dela din kalender."
+      ]
+    },
+    "upsell panel": {
+      "Recommended": [
+        "Rekommenderad"
       ]
     },
     "User referee invited via email": {

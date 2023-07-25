@@ -17,6 +17,9 @@
       "Add new item": [
         "新增內容"
       ],
+      "Advanced": [
+        "進階"
+      ],
       "Advanced options": [
         "進階選項"
       ],
@@ -55,6 +58,9 @@
       ],
       "Continue without pinning": [
         "不釘選繼續"
+      ],
+      "Copy & fill in": [
+        "複製及填入"
       ],
       "Copy and close": [
         "複製並關閉"
@@ -137,6 +143,9 @@
       "Generate password": [
         "生成密碼"
       ],
+      "Generated password": [
+        "已生成密碼"
+      ],
       "Get mobile apps": [
         "取得手機應用程式"
       ],
@@ -160,6 +169,12 @@
       ],
       "Learn more": [
         "瞭解詳情"
+      ],
+      "Lock extension": [
+        "鎖定擴充"
+      ],
+      "Manually sync your data": [
+        "手動同步您的資料"
       ],
       "More options": [
         "更多選項"
@@ -281,11 +296,11 @@
       ]
     },
     "Error": {
-      "${ PASS_APP_NAME } export file could not be parsed. ${ errorDetail }": [
-        "${ PASS_APP_NAME }匯出檔案無法剖析${ errorDetail }"
+      "${ provider } file could not be parsed. ${ errorDetail }": [
+        "${ provider } 的檔案無法進行剖析。 ${ errorDetail }"
       ],
-      "1Password export file could not be parsed. ${ errorDetail }": [
-        "1Password匯出檔案無法剖析${ errorDetail }"
+      "Alias options could not be resolved": [
+        "別名選項無法解析處理"
       ],
       "Authentication error": [
         "認證錯誤"
@@ -296,14 +311,8 @@
       "Auto-lock could not be disabled": [
         "無法停用自動鎖定"
       ],
-      "Bitwarden export file could not be parsed. ${ errorDetail }": [
-        "Bitwarden 匯出檔案無法剖析${ errorDetail }"
-      ],
-      "Cannot create alias.": [
-        "無法創建電子信箱別名"
-      ],
-      "Chrome export file could not be parsed. ${ errorDetail }": [
-        "Chrome 匯出檔案無法剖析${ errorDetail }"
+      "Cannot create alias (${ error }).": [
+        "無法創建別名 (${ error })。"
       ],
       "Could not open created vault": [
         "無法開啟被新增的保管庫"
@@ -316,9 +325,6 @@
       ],
       "CSV file is missing expected headers: ${ missingHeaders }": [
         "CSV檔案失去表頭。${ missingHeaders }"
-      ],
-      "Dashlane export file could not be parsed. ${ errorDetail }": [
-        "Dashlane 匯出檔案無法剖析${ errorDetail }"
       ],
       "Decrypting your ${ PASS_APP_NAME } export file failed. ${ errorDetail }": [
         "解密您的${ PASS_APP_NAME }匯出檔案失敗。${ errorDetail }"
@@ -350,8 +356,8 @@
       "File could not be parsed": [
         "檔案無法剖析"
       ],
-      "Firefox export file could not be parsed. ${ errorDetail }": [
-        "Firefox 匯出檔案無法剖析${ errorDetail }"
+      "Import failed for vault \"${ vaultData.name }\" : ${ description }": [
+        "匯入保管庫失敗${ vaultData.name }:${ description }"
       ],
       "Importing items failed": [
         "匯入項目失敗"
@@ -364,15 +370,6 @@
       ],
       "Item creation failed": [
         "項目新增失敗"
-      ],
-      "KeePass export file could not be parsed. ${ errorDetail }": [
-        "Keepass 匯出的檔案無法剖析。${ errorDetail }"
-      ],
-      "Keeper export file could not be parsed. ${ errorDetail }": [
-        "Keeper 匯出檔案無法剖析${ errorDetail }"
-      ],
-      "LastPass export file could not be parsed. ${ errorDetail }": [
-        "LastPass 匯出檔案無法剖析${ errorDetail }"
       ],
       "LastPass will export a corrupted CSV file if any of your item fields contain unexpected commas, quotes or multiple lines": [
         "如果項目欄位包含多餘的逗號、引號、欄位，LastPass 匯出的CSV會發生錯誤"
@@ -403,9 +400,6 @@
       ],
       "Restoring item failed": [
         "還原項目失敗"
-      ],
-      "Safari export file could not be parsed. ${ errorDetail }": [
-        "Safari 匯出檔案無法剖析${ errorDetail }"
       ],
       "Setting \"${ payload.name }\" as primary vault failed": [
         "設定${ payload.name }為主要保管庫失敗"
@@ -455,6 +449,9 @@
       "Vault \"${ payload.content.name }\" creation failed": [
         "保管庫${ payload.content.name }新增失敗"
       ],
+      "Vault \"${ vaultData.name }\" could not be created": [
+        "保管庫\"${ vaultData.name }\"無法創建"
+      ],
       "Vault name does not match": [
         "保管庫名稱不符"
       ],
@@ -499,6 +496,9 @@
       ]
     },
     "Info": {
+      " Upgrade to a paid plan to create multiple vaults.": [
+        " 升級付費方案以創建多重保管庫。"
+      ],
       "\"${ payload.item.data.metadata.name }\" item was dismissed": [
         "忽略${ payload.item.data.metadata.name }項目"
       ],
@@ -739,6 +739,9 @@
       "Save login": [
         "儲存登入資料"
       ],
+      "Select the destination vault for each imported vault.": [
+        "選取目標保管庫給每個匯入的保管庫。"
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "無法連線至伺服器。請過幾分鐘後再試"
       ],
@@ -825,6 +828,9 @@
       ],
       "You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.": [
         "你以達到新增別名。升級訂閱以新增無限別名"
+      ],
+      "You have reached the limit of vaults you can create.": [
+        "您以達到您可新增的上限保管庫。"
       ],
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "您以達到${ maxLength }字元"
@@ -1531,6 +1537,9 @@
       "Vault name is required": [
         "保管庫需要名字"
       ],
+      "You cannot create more vaults than your subscription allows.": [
+        "您無法創建多於訂閱方案的保管庫。"
+      ],
       "You have unsaved changes, are you sure you want to discard them?": [
         "你有未儲存的修改。你確定要捨棄它嗎？"
       ],
@@ -1545,6 +1554,9 @@
       ],
       "Your session was locked due to inactivity": [
         "您的作業階段因為使用而鎖定"
+      ],
+      "Your subscription does not allow you to create multiple vaults. All items will be imported to your primary vault. To import into multiple vaults upgrade your subscription.": [
+        "您的訂閱不允許新增多重保管庫。預設會把所有項目匯入主要保管庫。若要匯入多重保管庫，需升級訂閱。"
       ]
     }
   }

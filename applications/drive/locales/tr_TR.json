@@ -3043,16 +3043,16 @@
     },
     "Info": {
       "${ activeDownloadsCount } downloading": [
-        "${ activeDownloadsCount } indiriliyor",
-        "${ activeDownloadsCount } indiriliyor"
+        "${ activeDownloadsCount } öge indiriliyor",
+        "${ activeDownloadsCount } öge indiriliyor"
       ],
       "${ activeDownloadsCount } downloading (${ downloadProgress }%)": [
-        "${ activeDownloadsCount } indiriliyor (${ downloadProgress }%)",
-        "${ activeDownloadsCount } indiriliyor (${ downloadProgress }%)"
+        "${ activeDownloadsCount } öge indiriliyor (${ downloadProgress }%)",
+        "${ activeDownloadsCount } öge indiriliyor (${ downloadProgress }%)"
       ],
       "${ activeUploadsCount } uploading (${ uploadProgress }%)": [
-        "${ activeUploadsCount } yükleniyor (%${ uploadProgress })",
-        "${ activeUploadsCount } yükleniyor (%${ uploadProgress })"
+        "${ activeUploadsCount } öge yükleniyor (%${ uploadProgress })",
+        "${ activeUploadsCount } öge yükleniyor (%${ uploadProgress })"
       ],
       "${ addressCount } email address": [
         "${ addressCount } e-posta adresi",
@@ -3070,8 +3070,8 @@
         "${ calendarsToBeMergedCount } birleştirilmiş takvim"
       ],
       "${ canceledCount } canceled": [
-        "${ canceledCount } iptal edildi",
-        "${ canceledCount } iptal edildi"
+        "${ canceledCount } öge iptal edildi",
+        "${ canceledCount } öge iptal edildi"
       ],
       "${ contactCount } contact contains multiple email addresses.": [
         "${ contactCount } kişinin birkaç e-posta adresi var.",
@@ -3097,8 +3097,8 @@
         "${ doneDownloadsCount } indirildi"
       ],
       "${ doneUploadsCount } uploaded": [
-        "${ doneUploadsCount } yüklendi",
-        "${ doneUploadsCount } yüklendi"
+        "${ doneUploadsCount } öge yüklendi",
+        "${ doneUploadsCount } öge yüklendi"
       ],
       "${ errorCount } failed": [
         "${ errorCount } başarısız oldu",
@@ -3435,7 +3435,7 @@
         "Kalan süre öngörülüyor..."
       ],
       "Failed": [
-        "Başarısız oldu"
+        "Aktarılmayan"
       ],
       "Failed to generate a secure link. The reason is: ${ error }": [
         "Güvenli bir bağlantı oluşturulamadı. Nedeni: ${ error }"
@@ -5850,7 +5850,7 @@
         "Hesap askıya alınmış"
       ],
       "Active": [
-        "Etkin"
+        "İşlenen"
       ],
       "Add contact group name": [
         "Kişi grubu adı ekle"
@@ -5896,7 +5896,7 @@
         "Veriler temizleniyor"
       ],
       "Completed": [
-        "Tamamlandı"
+        "Aktarılan"
       ],
       "Computers": [
         "Bilgisayarlar"
@@ -6012,7 +6012,7 @@
         "Kişileri dışa aktarma"
       ],
       "Failed": [
-        "Başarısız"
+        "Aktarılmayan"
       ],
       "Feedback": [
         "Geri bildirim"

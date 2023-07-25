@@ -74,7 +74,7 @@
         "Beta-käyttö"
       ],
       "Cancel": [
-        "Peru"
+        "Peruuta"
       ],
       "Cancel all": [
         "Peru kaikki"
@@ -352,13 +352,13 @@
         "tuo"
       ],
       "Import calendars": [
-        "Tuo kalentereita"
+        "Tuo kalenterit"
       ],
       "Import contacts": [
-        "Tuo yhteystietoja"
+        "Tuo yhteystiedot"
       ],
       "Import emails": [
-        "Tuo viestejä"
+        "Tuo viestit"
       ],
       "Import from .csv or vCard": [
         "Tuo .csv- tai vCard-tiedostosta"
@@ -574,7 +574,7 @@
         "Jaa kohde"
       ],
       "Share via link": [
-        "Jaa linkin kautta"
+        "Jaa linkkinä"
       ],
       "Sharing options": [
         "Jakovalinnat"
@@ -1839,7 +1839,7 @@
         "Proton Mail -logo ja plus-merkki"
       ],
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
-        "Säästä aikaa lähettämällä viestit tai kutsut saman tien koko purukalle. Yksi premium-ominaisuus monien muiden joukossa. Päivitä tänään."
+        "Säästä aikaa lähettämällä viestit tai kutsut saman tien koko porukalle. Yksi premium-ominaisuus monien muiden joukossa. Päivitä tilauksesi tänään."
       ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "Tiedosto voi olla enintään ${ MAX_IMPORT_FILE_SIZE_STRING } kokoinen ja sisältää ${ MAX_IMPORT_CONTACTS_STRING } yhteystiedon. Jos tiedosto on suurempi, jaa se pienempiin tiedostoihin.",
@@ -1997,7 +1997,7 @@
         "Syötä 6-numeroa"
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
-        "Tiedostoa \"${ item.name }\" ei voida tallentaa, koska: ${ error }"
+        "Tiedostoa \"${ item.name }\" ei voida tallentaa virheen \"${ error }\" vuoksi"
       ],
       "File \"${ name }\" is already downloading": [
         "Tiedostoa \"${ name }\" ladataan jo"
@@ -2628,10 +2628,10 @@
     },
     "familyOffer_2023:Tooltip": {
       "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
-        "Sisältää 2700 palvelinta yli 65+ maassa, 10 samanaikaista laitetta, tuen suoratoistopalveluille eri puolilta maailmaa, haittaohjelma- ja mainoseston sekä paljon muuta."
+        "Sisältää 2950+ palvelinta yli 65+ maassa, 10 samanaikaista laitetta, maailmanlaajuisen tuen suoratoistopalveluille, haittasisällön- ja mainoseston sekä paljon muuta."
       ],
       "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
-        "Sisältää tuen 3 omalle sähköpostin verkkotunnukselle, 90 sähköpostiosoitteelle, rajattomasti Hide-my-email-aliaksia, kalenterijaon sekä paljon muuta."
+        "Sisältää tuen kolmelle omalle sähköpostiverkkotunnukselle, 90 sähköpostiosoitteelle, rajattomasti Hide-my-email-aliaksia, kalenterijaon sekä paljon muuta."
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Suojaa tiedostosi salatulla pilvitallennustilalla. Sisältää automaattisen synkronoinnin, salatun tiedostojen jakamisen ja paljon muuta."
@@ -3172,7 +3172,7 @@
         "(${ memberCount } jäsentä)"
       ],
       "A number will be added to the filename": [
-        "Tiedoston nimeen lisätään numero"
+        "Lisää tiedoston nimeen numeron"
       ],
       "A number will be added to the folder name": [
         "Kansion nimeen lisätään numero"
@@ -3210,7 +3210,7 @@
         "Ja käytä sitä mistä tahansa"
       ],
       "Anyone with this link can access your file.": [
-        "Tämän linkin välityksellä kuka tahansa voi käyttää tiedostoasi."
+        "Linkin välityksellä kuka tahansa voi käyttää tiedostoasi."
       ],
       "Anyone with this link can access your folder.": [
         "Linkin välityksellä kuka tahansa voi käyttää kansiotasi."
@@ -3453,7 +3453,7 @@
         "Tiedostolta ${ fileName } puuttuu allekirjoitus, eikä käyttäjän ${ emailAddress } voitu vahvistaa tallentaneen sitä."
       ],
       "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
-        "Tiedostolta ${ fileName } puuttuu allekirjoitus, eikä sen tallentanutta käyttäjää ei voitu vahvistaa."
+        "Tiedostolta ${ fileName } puuttuu allekirjoitus, eikä sen tallentanutta käyttäjää voitu vahvistaa."
       ],
       "File will not be updated": [
         "Tiedostoa ei tallenneta"
@@ -3498,7 +3498,7 @@
         "Aloita tallentamalla tiedosto"
       ],
       "Go to \"My files\" and upload some files first.": [
-        "Siirry sijaintiin \"Omat tiedostot\" ja lisää joitakin tiedostoja."
+        "Avaa \"Omat tiedostot\" ja tallenna ensin joitakin tiedostoja."
       ],
       "here": [
         "tässä"
@@ -3562,7 +3562,7 @@
         "Internet-yhteys on palautettu."
       ],
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
-        "Näyttää siltä, että yritit hiljattain tallentaa kohteen ${ uploadName }. Jos siirto epäonnistui, ${ replaceFile }. Jos siirto on edelleen käynnissä, sen korvaus peruu käynnissä olevan siirron."
+        "Näyttää siltä, että yritit hiljattain tallentaa kohteen ${ uploadName }. Jos siirto epäonnistui, ${ replaceFile }. Jos siirto on edelleen käynnissä, sen korvaaminen peruu käynnissä olevan siirron."
       ],
       "Items in the trash will stay here until you delete them permanently": [
         "Roskakorissa olevat kohteet säilyvät siellä kunnes poistat ne pysyvästi"
@@ -3571,7 +3571,7 @@
         "Se onnistuu helposti vetämällä ja pudottamalla tai selaamalla tiedostoja"
       ],
       "It’s easy and secure": [
-        "Se on helppo ja turvallinen"
+        "Se on helppoa ja turvallista"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Vahvista vain valintasi niin me teemme loput."
@@ -3909,7 +3909,7 @@
         "Linkki luotiin vanhalla Drive-versiolla, eikä sitä ole mahdollista muokata. Muuttaaksesi asetuksia, poista tämä linkki ja luo uusi."
       ],
       "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
-        "Linkki poistetaan käytöstä pysyvästi, jonka jälkeen kukaan ei voi enää käyttää tiedostoa sen kautta. Jakaaksesi tiedoston uudelleen tarvitset uuden linkin."
+        "Linkki poistetaan käytöstä pysyvästi, jonka jälkeen kukaan ei voi enää käyttää tiedostoasi sen välityksellä. Jakaaksesi tiedoston uudelleen sinun on luotava uusi linkki."
       ],
       "This link will be permanently disabled. No one with this link will be able to access your folder. To reshare the folder, you will need a new link.": [
         "Linkki poistetaan käytöstä pysyvästi, jonks jälkeen kukaan ei voi enää käyttää kansiota sen kautta. Jakaaksesi kansion uudelleen tarvitset uuden linkin."
@@ -3925,7 +3925,7 @@
         "Tämä korvaa olemassa olevan kansion tiedostolla"
       ],
       "This will upload a new version of the file": [
-        "Tämä tallentaa tiedostosta uuden version"
+        "Tallentaa tiedostosta uuden version"
       ],
       "This will upload a new version of the folder": [
         "Tämä tallentaa kansiosta uuden version"
@@ -3940,7 +3940,7 @@
         "Vahvista olevasi ihminen roskapostin ja väärinkäytösten torjumiseksi."
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
-        "Tapahtumien tuomiseksi sinun on ensin luotava ${ CALENDAR_APP_NAME }iin kalenteri, johon tapahtumat tuonnin jälkeen lisätään."
+        "Tuodaksesi tapahtumia, luo ensin ${ CALENDAR_APP_NAME }iin kalenteri, johon tapahtumat lisätään."
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "Allekirjoittaaksesi yhteystietosi uudelleen, on jokainen yhteystieto tarkistettava tilisi salausavainluetteloa vasten. Jos vastaavuutta ei löydy, allekirjoitetaan yhteystietosi ensisijaisella salausavaimella."
@@ -4138,7 +4138,7 @@
         "Puhelinnumeroasi käytetään vain tähän kertaluontoiseen vahvistukseen."
       ],
       "Your plan is limited to 10 versions for up to 7 days": [
-        "Tilauksesi on seitsemän päivän ajan rajoitettu 10 versioon"
+        "Tilauksesi on rajoitettu 10 versioon, joita säilytetään enintään 7 päivää"
       ],
       "Your previous password": [
         "Edellinen salasanasi"
@@ -4232,10 +4232,10 @@
         "Sovellussalasana"
       ],
       "Apply to all duplicated files": [
-        "Suorita kaikille tiedostojen kaksoiskappaleille"
+        "Toteuta kaikille tiedostojen kaksoiskappaleille"
       ],
       "Apply to all duplicated folders": [
-        "Suorita kaikille kansioiden kaksoiskappaleille"
+        "Toteuta kaikille kansioiden kaksoiskappaleille"
       ],
       "Apply to all unverified items": [
         "Käytä kaikille vahvistamattomille kohteille"
@@ -4265,7 +4265,7 @@
         "Selaimen versio"
       ],
       "Calendar": [
-        "Kalenteri"
+        "Kalenterin"
       ],
       "Calendars": [
         "Kalenterit"
@@ -4868,7 +4868,7 @@
         "Tallennustila jaetaan ${ MAIL_APP_NAME }in, ${ CALENDAR_APP_NAME }in ja ${ DRIVE_APP_NAME }n välillä"
       ],
       "Use your own custom email domain address, e.g., you@yourname.com": [
-        "Käytä omaa mukautettua sähköpostin verkkotunnustasi, esim. sina@nimesi.fi"
+        "Käytä sähköpostiosoitteissasi omaa verkkotunnustasi, kuten nimesi@esimerkki.fi"
       ]
     },
     "new_plans: label": {
@@ -5012,7 +5012,7 @@
         "Tiedostoa tai kansiota \"${ filename }\" ja ${ count } muuta tallennetaan jo"
       ],
       "File or folder \"${ filename }\" is already uploading": [
-        "Tiedostoa/kansiota \"${ filename }\" tallennetaan jo"
+        "Tiedostoa tai kansiota \"${ filename }\" tallennetaan jo"
       ],
       "File or folder is missing a name": [
         "Tiedostolta tai kansiolta puuttuu nimi"
@@ -5060,7 +5060,7 @@
         "Linkin poisto kohteeseen epäonnistui"
       ],
       "The link to your item was deleted": [
-        "Linkki kohteeseen poistettiin"
+        "Kohteen linkki poistettiin"
       ],
       "Trash failed to be emptied": [
         "Roskakorin tyhjennys epäonnistui"
@@ -5095,7 +5095,7 @@
         "Seuraava"
       ],
       "Start using ${ DRIVE_APP_NAME }": [
-        "Aloita ${ DRIVE_APP_NAME }n käyttäminen"
+        "Aloita ${ DRIVE_APP_NAME }n käyttö"
       ]
     },
     "Onboarding Info": {
@@ -5109,8 +5109,8 @@
         "Määritä palautustapa"
       ],
       "Simply complete the following in the next ${ expiresInDays } day:": [
-        "Tee vain seuraavat toimenpiteet seuraavan ${ expiresInDays } päivän sisällä:",
-        "Tee vain seuraavat toimenpiteet seuraavien ${ expiresInDays } päivän sisällä:"
+        "Tee vain nämä tehtävät seuraavan ${ expiresInDays } päivän aikana:",
+        "Tee vain nämä tehtävät seuraavien ${ expiresInDays } päivän aikana:"
       ],
       "Upload a file": [
         "Tallenna tiedosto"
@@ -5547,15 +5547,15 @@
         "Säästä enemmän 2-vuotisella ${ planName }-tilauksella"
       ],
       "Upgrade and save more with 2 years of ${ planName }": [
-        "Päivitä ja säästä enemmän 2 vuoden ${ planName }-tilauksella"
+        "Päivitä tilauksesi ja säästä lisää kahden vuoden ${ planName } -tilauksella"
       ]
     },
     "specialoffer: Tooltip": {
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.": [
-        "Käytä estettyä sisältöä ja selaa yksityisesti. Sisältää 1700 palvelinta yli 60+ maassa, korkeimman VPN-nopeuden, 10 VPN-yhteyttä käyttäjää kohden, suoratoistopalvelut maailmanlaajuisesti, haittaohjelma- ja mainoseston sekä paljon muuta."
+        "Käytä estettyä sisältöä ja selaa yksityisesti. Sisältää 1700 palvelinta yli 60+ maassa, korkeimman VPN-nopeuden, 10 VPN-yhteyttä/käyttäjä, suoratoistopalvelut maailmanlaajuisesti, haittasisällön- ja mainoseston sekä paljon muuta."
       ],
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
-        "Käytä estettyä sisältöä ja selaa yksityisesti. Sisältää 1700 palvelinta yli 60+ maassa, korkeimman VPN-nopeuden, 10 VPN-yhteyttä käyttäjää kohden, suoratoistopalvelut maailmanlaajuisesti, haittaohjelma- ja mainoseston sekä paljon muuta."
+        "Käytä estettyä sisältöä ja selaa yksityisesti. Sisältää 1700 palvelinta yli 60+ maassa, korkeimman VPN-nopeuden, 10 VPN-yhteyttä/käyttäjä, suoratoistopalvelut maailmanlaajuisesti, haittasisällön- ja mainoseston sekä paljon muuta."
       ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
         "Käytä mm. Netflixin, Disney+:n ja Prime Videon kaltaisten suoratoistopalveluiden sisältöä mistä tahansa."
@@ -5564,13 +5564,13 @@
         "Kaikki premium-palvelumme parhaimmillaan: 100 sähköpostiosoitetta, tuki 10 omalle verkkotunnukselle, rajattomasti Hide-my-email-aliaksia, kalenterijako, salattu pilvitallennus tiedostojen jaolla sekä paljon muuta."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Sisältää tuen yhdelle omalle sähköpostin verkkotunnukselle, 10 sähköpostiosoitteelle, 10 Hide-my-email-aliakselle, kalenterijaolle sekä paljon muuta."
+        "Sisältää tuen yhdelle omalle sähköpostiverkkotunnukselle, 10 sähköpostiosoitteelle, 10 Hide-my-email-aliakselle, kalenterijaolle sekä paljon muuta."
       ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Sisältää tuen 3 omalle sähköpostin verkkotunnukselle, 15 sähköpostiosoitteelle, rajattomasti Hide-my-email-aliaksia, kalenterijaon sekä paljon muuta."
+        "Sisältää tuen kolmelle omalle sähköpostiverkkotunnukselle, 15 sähköpostiosoitteelle, rajattomasti Hide-my-email-aliaksia, kalenterijaon sekä paljon muuta."
       ],
       "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
-        "Täydellinen perheille tai pienille ryhmille, jokaisella voi olla oma postilaatikko ja alias. Vaatii mukautetun verkkotunnuksen."
+        "Täydellinen perheille tai pienille ryhmille, joilla jokaisella voi olla oma postilaatikko ja alias. Vaatii oman verkkotunnuksen."
       ],
       "Receive at no extra cost the paid versions of all new privacy services we release in the future, along with early access to all future features and products.": [
         "Saat ilmaiseksi maksulliset versiot kaikista uusista tietosuojapalveluista, jotka julkaisemme tulevaisuudessa, sekä pääsyn kaikkiin tuleviin ominaisuuksiin ja tuotteisiin."
@@ -5708,10 +5708,10 @@
         "Luo turvallisia kirjautumistietoja kaikilla laitteillasi. Sisältää rajattomasti aliaksia, 20 holvia, sisäänrakennetun 2FA:n, luottokorttitietojen automaattisen täytön ja paljon muuta."
       ],
       "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
-        "Sisältää 2950+ palvelinta yli 65+ maassa, 10 samanaikaista laitetta, tuen suoratoistopalveluille eri puolilta maailmaa, haittaohjelma- ja mainoseston sekä paljon muuta."
+        "Sisältää 2950+ palvelinta yli 65+ maassa, 10 samanaikaista laitetta, maailmanlaajuisen tuen suoratoistopalveluille, haittasisällön- ja mainoseston sekä paljon muuta."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Sisältää tuen yhdelle omalle sähköpostin verkkotunnukselle, 10 sähköpostiosoitteelle, 10 hide-my-email-aliakselle, kalenterijaolle sekä paljon muuta."
+        "Sisältää tuen yhdelle omalle sähköpostiverkkotunnukselle, 10 sähköpostiosoitteelle, 10 hide-my-email-aliakselle, kalenterijaolle sekä paljon muuta."
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "Suojaa tiedostosi salatulla pilvitallennustilalla. Sisältää versiohistorian, salatun tiedostojen jakamisen ja paljon muuta."
@@ -5801,8 +5801,8 @@
         "${ hours } t"
       ],
       "${ hoursInt }.5 h": [
-        "${ hoursInt }.5 h",
-        "${ hoursInt }.5 h"
+        "${ hoursInt }.5 t",
+        "${ hoursInt }.5 t"
       ],
       "${ minutes } min": [
         "${ minutes } min",
@@ -5840,8 +5840,8 @@
         "${ numberOfFailedTransfer.total } epäonnistunutta siirtoa"
       ],
       "${ numberOfFailedTransfer.total } failed upload": [
-        "${ numberOfFailedTransfer.total } epäonnistunut tallennus",
-        "${ numberOfFailedTransfer.total } epäonnistunutta tallennusta"
+        "${ numberOfFailedTransfer.total } tallennus epäonnistui",
+        "${ numberOfFailedTransfer.total } tallennusta epäonnistui"
       ],
       "(active)": [
         "(käytössä)"
@@ -5976,7 +5976,7 @@
         "Lataa pudottamalla"
       ],
       "Duplicate file found": [
-        "Löydettiin tiedoston kaksoiskappale"
+        "Havaittiin tiedoston kaksoiskappale"
       ],
       "Duplicate folder found": [
         "Löydettiin kansion kaksoiskappale"
@@ -6302,7 +6302,7 @@
         "Sinulla on tiedostoja, joita ei voida käyttää"
       ],
       "You have no files to share": [
-        "Sinulla ei ole jaettavia tiedostoja"
+        "Jaettavia tiedostoja ei ole"
       ],
       "You have no folders yet": [
         "Kansioita ei vielä ole"
@@ -6317,7 +6317,7 @@
         "Ilmainen Mail Plus -kokeilusi päättyy ${ textDate }"
       ],
       "Your welcome actions": [
-        "Tervetuliaistoimintosi"
+        "Tervetuliaistehtäväsi"
       ],
       "You’ve got 1 GB of storage": [
         "Sinulla on 1 Gt tallennustilaa"
@@ -6333,7 +6333,7 @@
         "Automaattiasetuksella viestit lähetetään tälle käyttäjälle käyttäen kirjoituksessa käytettyä muotoilua. Käytettäessä pelkkä teksti -asetusta poistetaan viestistä lähetettäessä mahdolliset muotoilut."
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
-        "Vaihda määrittämiesi päivä-/yöteemojen välillä automaattisesti järjestelmäsi päivä-/yötilan vaihtuessa"
+        "Vaihda valitsemasi päivä- ja yöteeman välillä automaattisesti järjestelmäsi päivä- ja yötilan vaihtuessa"
       ],
       "Customize import to reduce the number of folders": [
         "Vähennä kansioiden määrää mukauttamalla tuontia"

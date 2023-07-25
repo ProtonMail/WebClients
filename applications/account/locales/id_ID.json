@@ -8685,9 +8685,6 @@
       "From ${ price }": [
         "Dari ${ price }"
       ],
-      "From ${ price } per user": [
-        "Dari ${ price } per pengguna"
-      ],
       "Keep my ${ currentPlanName } account": [
         "Pertahankan akun ${ currentPlanName } yang saya miliki saat ini"
       ],
@@ -8737,14 +8734,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Tingkatkan ke ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: attribute": {
-      "Get ${ connections } high-speed VPN connections": [
-        "Dapatkan ${ connections } koneksi VPN berkecepatan tinggi"
-      ],
-      "Get ${ connections } high-speed VPN connections per user": [
-        "Dapatkan ${ connections } koneksi VPN berkecepatan tinggi per pengguna"
       ]
     },
     "new_plans: feature": {
@@ -9069,23 +9058,11 @@
       ]
     },
     "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Jadikan privasi sebagai hal yang baku dalam hal penyimpanan, pencadangan, pembagian, dan penerimaan berkas."
-      ],
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "Apabila tidak, akses menuju akun Anda akan dibatasi dan akun Anda akan dinonaktifkan ke depannya."
       ],
       "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
         "Untuk dapat tetap menggunakan ${ MAIL_APP_NAME } dengan berbagai fitur premium, pilih jenis langganan dan metode pembayaran yang Anda kehendaki."
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "Tingkatkan akun Anda ke paket bisnis dengan akses ke seluruh layanan premium ${ BRAND_NAME }."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "Tingkatkan akun Anda ke paket privasi menyeluruh dan akses seluruh layanan premium ${ BRAND_NAME }."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Masa uji coba Anda akan berakhir ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: info": {
@@ -9213,12 +9190,6 @@
       ]
     },
     "new_plans: Title": {
-      "${ mailPlanName } Trial": [
-        "Uji Coba ${ mailPlanName }"
-      ],
-      "Upgrade to ${ planName }": [
-        "Tingkatkan ke ${ planName }"
-      ],
       "Your account's usage": [
         "Penggunaan akun Anda"
       ]
@@ -9434,12 +9405,6 @@
       ]
     },
     "new_plans: Upsell attribute": {
-      "${ storageSize } total storage": [
-        "Total kuota penyimpanan ${ storageSize }"
-      ],
-      "10 email addresses/aliases": [
-        "10 alamat email/alias"
-      ],
       "Access advanced VPN features": [
         "Akses berbagai fitur VPN lanjutan"
       ],
@@ -9449,35 +9414,8 @@
       "Boost your storage space to ${ bundleStorage } total": [
         "Tingkatkan total kuota penyimpanan Anda ke ${ bundleStorage }"
       ],
-      "Boost your storage space to ${ businessStorage } per user": [
-        "Tingkatkan kuota penyimpanan Anda ke ${ businessStorage } per pengguna"
-      ],
       "Cover more ground with support for 10 custom email domains": [
         "Perluas jaringan relasi Anda dengan dukungan 10 alamat email khusus"
-      ],
-      "Create up to ${ MAX_CALENDARS_PAID } calendars": [
-        "Buat hingga ${ MAX_CALENDARS_PAID } kalender"
-      ],
-      "Everything in ${ vpnPlanName }": [
-        "Segalanya di ${ vpnPlanName }"
-      ],
-      "Get 5 additional email addresses per user": [
-        "Dapatkan 5 alamat email tambahan per pengguna"
-      ],
-      "Priority support": [
-        "Dukungan prioritas"
-      ],
-      "Secure your passwords and identity with an open-source and encrypted password manager.": [
-        "Amankan kata sandi dan identitas Anda dengan pengelola kata sandi open-source yang terenkripsi."
-      ],
-      "Support for 1 custom email domain": [
-        "Dukungan 1 alamat email dengan domain khusus"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Tanpa batasan jumlah folder, label, dan filter"
-      ],
-      "Unlimited messages": [
-        "Tanpa batasan jumlah pesan"
       ]
     },
     "Notification": {
@@ -11004,6 +10942,11 @@
       ],
       "2 years": [
         "2 tahun"
+      ]
+    },
+    "summer2023: Describe Proton Pass": {
+      "Securely store your passwords and autofill them on websites. Includes unlimited passwords, autofill, password generator, and more.": [
+        "Simpan sandi Anda secara aman dan otomatis isi pada situs web. Termasuk sandi tidak terbatas, pengisi otomatis, pembuat sandi, dan banyak fitur lainnya."
       ]
     },
     "Tab in domain modal": {

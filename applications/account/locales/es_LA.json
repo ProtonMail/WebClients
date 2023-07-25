@@ -330,10 +330,10 @@
         "Hecho"
       ],
       "Downgrade": [
-        "Degradar"
+        "Pasar a un plan inferior"
       ],
       "Downgrade account": [
-        "Degradar cuenta"
+        "Pasar a un plan inferior"
       ],
       "Download": [
         "Descargar"
@@ -472,6 +472,9 @@
       ],
       "Hide labels": [
         "Ocultar etiquetas"
+      ],
+      "Hide plan features": [
+        "Ocultar funcionalidades del plan"
       ],
       "I have a question": [
         "Tengo una pregunta"
@@ -3204,7 +3207,7 @@
         "Proceso de pago consumido"
       ],
       "Payment process failed": [
-        "Proceso de pago fallido"
+        "Error al procesar el pago"
       ],
       "Payment process not supported": [
         "Proceso de pago no soportado"
@@ -3800,7 +3803,7 @@
         "Algunos de sus eventos no pudieron ser exportados."
       ],
       "The internet connection was interrupted, causing the export process to fail. Please try again.": [
-        "Se interrumpió la conexión a internet causando que el proceso de exportación fallara. Intente de nuevo."
+        "La conexión a internet fue interrumpida causando un error con el proceso de exportación. Intente de nuevo."
       ],
       "You can save an ICS file of the events that were successfully exported.": [
         "Puede guardar un archivo ICS de los eventos que se exportaron."
@@ -5423,10 +5426,10 @@
         "Impide que los remitentes vean si abrió un mensaje y cuándo lo hizo."
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
-        "Al degradar a un plan Free, perderá permanentemente estos beneficios, incluso si mejora de nuevo en el futuro."
+        "Al pasar a un plan gratuito, perderá permanentemente estos beneficios, incluso si mejore de nuevo su plan en el futuro."
       ],
       "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
-        "Al degradar la cuenta perderá los siguientes beneficios. ¿Está seguro que desea continuar?"
+        "Al pasar a un plan con menos funciones perderá los siguientes beneficios. ¿En verdad desea continuar?"
       ],
       "By leaving now, changes may not be saved": [
         "Al salir ahora, los cambios podrían no ser guardados"
@@ -5755,7 +5758,7 @@
         "Si nunca ha usado la autenticación de dos factores anteriormente, le recomendamos encarecidamente ${ guideButton }."
       ],
       "If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly.": [
-        "Si ha configurado tanto SPF como DKIM, DMARC le permite especificar cómo otros servicios de correo electrónico deben entregar el correo electrónico para su dominio si fallaron las comprobaciones de SPF y DKIM. Esto puede hacer que sea más difícil para los spammers que fingen ser usted, pero también puede causar problemas de entrega si no se hace correctamente."
+        "Si ha configurado tanto SPF como DKIM, DMARC le permite especificar cómo otros servicios de correo electrónico deben entregar el correo electrónico para su dominio si se ha producido un error con las verificaciones de SPF y DKIM. Esto puede hacer que sea más difícil para los spammers que fingen ser usted, pero también puede causar problemas de entrega si no se hace correctamente."
       ],
       "If you lose your password and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
         "Si pierde su contraseña y necesita restablecer su cuenta, ${ boldImperative } que tenga un ${ boldAccountRecovery } configurado."
@@ -8412,7 +8415,7 @@
         "Para añadir un calendario nuevo, elimine uno existente."
       ],
       "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
-        "Para añadir un calendario nuevo, elimine otro o actualice su plan de ${ BRAND_NAME } a un plan de pago de ${ MAIL_SHORT_APP_NAME }."
+        "Para añadir un calendario nuevo, elimine otro o mejore su plan de ${ BRAND_NAME } a un plan de pago de ${ MAIL_SHORT_APP_NAME }."
       ],
       "You've reached the maximum number of calendars available in your plan.": [
         "Ha alcanzado el número máximo de calendarios disponibles en su plan."
@@ -8875,9 +8878,6 @@
       "From ${ price }": [
         "Desde ${ price }"
       ],
-      "From ${ price } per user": [
-        "Desde ${ price } por usuario"
-      ],
       "Keep my ${ currentPlanName } account": [
         "Seguir en ${ currentPlanName }"
       ],
@@ -8927,16 +8927,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Actualizar a ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: attribute": {
-      "Get ${ connections } high-speed VPN connection": [
-        "${ connections } conexión VPN de alta velocidad",
-        "${ connections } conexiones VPN de alta velocidad"
-      ],
-      "Get ${ connections } high-speed VPN connection per user": [
-        "${ connections } conexión VPN de alta velocidad por usuario",
-        "${ connections } conexiones VPN de alta velocidad por usuario"
       ]
     },
     "new_plans: feature": {
@@ -8995,6 +8985,9 @@
       "${ n } VPN connection per user": [
         "${ n } conexión VPN por usuario",
         "${ n } conexiones VPN por usuario"
+      ],
+      "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
+        "${ PASS_APP_NAME } con alias de hide-my-email ilimitados"
       ],
       "${ size } attachment size": [
         "${ size } en archivos adjuntos"
@@ -9280,23 +9273,14 @@
       ]
     },
     "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Haga que la privacidad sea su opción predeterminada para la copia de seguridad, el almacenamiento, el uso compartido y la recuperación de archivos."
-      ],
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "De lo contrario, el acceso a su cuenta será limitado y la cuenta eventualmente deshabilitada."
       ],
       "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
         "Para continuar usando ${ MAIL_APP_NAME } con funciones premium, elija su suscripción y opciones de pago."
       ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "Actualice al paquete de negocios con acceso a todos los servicios premium de ${ BRAND_NAME }."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "Actualice al paquete de privaciad definitivo y acceda a todos los servicios premium de ${ BRAND_NAME }."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Su prueba termina el ${ formattedTrialExpirationDate }"
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Su prueba termina el ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: info": {
@@ -9425,11 +9409,8 @@
       ]
     },
     "new_plans: Title": {
-      "${ mailPlanName } Trial": [
-        "Prueba de ${ mailPlanName }"
-      ],
-      "Upgrade to ${ planName }": [
-        "Mejorar a ${ planName }"
+      "${ shortPlan.title } Trial": [
+        "Prueba de ${ shortPlan.title }"
       ],
       "Your account's usage": [
         "Uso de la cuenta"
@@ -9440,7 +9421,7 @@
         "¿Eliminar cuenta?"
       ],
       "Downgrade account?": [
-        "¿Degradar cuenta?"
+        "¿Pasar a un plan inferior?"
       ],
       "Improved plans coming soon!": [
         "¡Pronto habrá planes mejores!"
@@ -9650,51 +9631,24 @@
       ]
     },
     "new_plans: Upsell attribute": {
-      "${ storageSize } total storage": [
-        "${ storageSize } de almacenamiento total"
-      ],
-      "10 email addresses/aliases": [
-        "10 direcciones/alias de correo electrónico"
-      ],
       "Access advanced VPN features": [
         "Acceso a funciones VPN avanzadas"
       ],
       "Add more personalization with 15 email addresses and support for 3 custom email domains": [
         "Añada más personalización con 15 direcciones de correo y soporte para 3 dominios de correo personalizados"
       ],
+      "Boost your storage space to ${ bundleStorage } per user": [
+        "Aumente su espacio de almacenamiento hasta ${ bundleStorage } por usuario"
+      ],
       "Boost your storage space to ${ bundleStorage } total": [
         "Aumente su espacio de almacenamiento hasta ${ bundleStorage }"
-      ],
-      "Boost your storage space to ${ businessStorage } per user": [
-        "Aumente su espacio de almacenamiento hasta ${ businessStorage } por usuario"
       ],
       "Cover more ground with support for 10 custom email domains": [
         "Cubra más con soporte para 10 dominios de correo electrónico personalizados"
       ],
-      "Create up to ${ MAX_CALENDARS_PAID } calendar": [
-        "Cree hasta ${ MAX_CALENDARS_PAID } calendario",
-        "Cree hasta ${ MAX_CALENDARS_PAID } calendarios"
-      ],
-      "Everything in ${ vpnPlanName }": [
-        "Todo en ${ vpnPlanName }"
-      ],
-      "Get 5 additional email addresses per user": [
-        "Obtenga 5 direcciones de correo adicionales por usuario"
-      ],
-      "Priority support": [
-        "Soporte prioritario"
-      ],
-      "Secure your passwords and identity with an open-source and encrypted password manager.": [
-        "Asegure sus contraseñas e identidad con un gestor de contraseñas cifrado de código abierto."
-      ],
-      "Support for 1 custom email domain": [
-        "Soporte para 1 dominio de correo personalizado"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Carpetas, etiquetas y filtros ilimitados"
-      ],
-      "Unlimited messages": [
-        "Mensajes ilimitados"
+      "Create up to ${ n } calendar": [
+        "Cree hasta ${ n } calendario",
+        "Cree hasta ${ n } calendarios"
       ]
     },
     "Notification": {
@@ -11078,7 +11032,7 @@
     },
     "State": {
       "Downgrading your account, please wait": [
-        "Degradando su cuenta, espere"
+        "Espere, estamos modificando su cuenta."
       ]
     },
     "Step in filter modal": {
@@ -11247,10 +11201,10 @@
         "Mantener pago automático"
       ],
       "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. Furthermore, if you forget to make a manual payment and auto-pay is disabled for all payment methods, we may auto-downgrade your account which will lead to the loss of many features.": [
-        "Nuestro sistema ya no le cobrará automáticamente con este método de pago, pero su suscripción aún se renovará al final del ciclo de facturación. Si desea degradar o cambiar su suscripción, debe hacerlo usted mismo antes del final del periodo de facturación. Además, si olvida realizar un pago manual y el pago automático está deshabilitado para todos los métodos de pago, es posible que degrademos automáticamente su cuenta, lo que provocará la pérdida de muchas funciones."
+        "Nuestro sistema ya no le cobrará automáticamente con este método de pago, pero su suscripción aún se renovará al final del ciclo de facturación. Si desea pasar a un plan inferior o cambiar su suscripción, debe hacerlo usted mismo antes del final del periodo de facturación. Además, si olvida realizar un pago manual y el pago automático está deshabilitado para todos los métodos de pago, es posible que pasaremos automáticamente su cuenta a un plan inferior, lo que provocará la pérdida de muchas funciones."
       ],
       "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
-        "Nuestro sistema ya no le cobrará automáticamente con este método de pago, pero su suscripción aún se renovará al final del ciclo de facturación. Si desea degradar o cambiar su suscripción, debe hacerlo usted mismo antes del final del periodo de facturación. No podemos degradarle automáticamente porque si supera la cuota de almacenamiento del plan gratuito o si usa otras funciones de pago, no podemos eliminar automáticamente archivos, correos electrónicos u otros datos por usted. Si deshabilita el pago automático, recuerde pagar su próxima factura de suscripción antes de la fecha de vencimiento para evitar la suspensión de la cuenta."
+        "Nuestro sistema ya no le cobrará automáticamente con este método de pago, pero su suscripción aún se renovará al final del ciclo de facturación. Si desea pasar a un plan inferior o cambiar su suscripción, debe hacerlo usted mismo antes del final del periodo de facturación. No podemos pasar automáticamente su cuenta a un plan inferior porque si supera la cuota de almacenamiento del plan gratuito o si usa otras funciones de pago, no podemos eliminar automáticamente archivos, correos electrónicos u otros datos por usted. Si deshabilita el pago automático, recuerde pagar su próxima factura de suscripción antes de la fecha de vencimiento para evitar la suspensión de la cuenta."
       ]
     },
     "Subscription saving": {
@@ -11892,7 +11846,7 @@
         "Confirmar dirección"
       ],
       "Confirm downgrade": [
-        "Confirmar degradación"
+        "Confirmar el paso a un plan inferior"
       ],
       "Confirm loss of ${ BRAND_NAME } bonuses": [
         "Confirmar pérdida de beneficios de ${ BRAND_NAME }"
@@ -12028,7 +11982,7 @@
         "¿No volver a mostrar?"
       ],
       "Downgrade account": [
-        "Degradar cuenta"
+        "Pasar a un plan inferior"
       ],
       "Download ${ VPN_APP_NAME }": [
         "Descargar ${ VPN_APP_NAME }"
@@ -12282,7 +12236,7 @@
         "Verificación de pago"
       ],
       "PayPal verification failed": [
-        "Falló la verificación de PayPal"
+        "Error con la verificación de PayPal"
       ],
       "Personalise your e-mail footer": [
         "Personalice su pie de correo"
@@ -12890,13 +12844,18 @@
         "Actualice a ${ passPlusPlanName } para obtener alias ilimitados de Hide My Email."
       ],
       "Upgrade to ${ planName } to connect up to ${ n } device to the VPN at once": [
-        "Actualice a ${ planName } para conectar hasta ${ n } dispositivo al mismo tiempo",
-        "Actualice a ${ planName } para conectar hasta ${ n } dispositivos al mismo tiempo"
+        "Mejore a ${ planName } para conectar hasta ${ n } dispositivo al mismo tiempo.",
+        "Mejore a ${ planName } para conectar hasta ${ n } dispositivos al mismo tiempo."
       ]
     },
     "Upgrade notice": {
       "Upgrade to a ${ MAIL_SHORT_APP_NAME } paid plan to share your calendar.": [
         "Actualice a un plan de pago de ${ MAIL_SHORT_APP_NAME } para compartir su calendario."
+      ]
+    },
+    "upsell panel": {
+      "Recommended": [
+        "Recomendado"
       ]
     },
     "User referee invited via email": {

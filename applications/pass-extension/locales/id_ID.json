@@ -251,26 +251,11 @@
       ]
     },
     "Error": {
-      "${ PASS_APP_NAME } export file could not be parsed. ${ errorDetail }": [
-        "Berkas ekspor ${ PASS_APP_NAME } tidak dapat diurai. ${ errorDetail }"
-      ],
-      "1Password export file could not be parsed. ${ errorDetail }": [
-        "Berkas ekspor 1Password tidak dapat diurai. ${ errorDetail }"
-      ],
       "Auto-lock could not be activated": [
         "Pengunci otomatis tidak dapat diaktifkan"
       ],
       "Auto-lock could not be disabled": [
         "Pengunci otomatis tidak dapat dinonaktifkan"
-      ],
-      "Bitwarden export file could not be parsed. ${ errorDetail }": [
-        "Berkas ekspor Bitwarden tidak dapat diurai. ${ errorDetail }"
-      ],
-      "Cannot create alias.": [
-        "Alias tidak dapat dibuat."
-      ],
-      "Chrome export file could not be parsed. ${ errorDetail }": [
-        "Berkas ekspor Chrome tidak dapat diurai. ${ errorDetail }"
       ],
       "Could not open created vault": [
         "Brankas yang dibuat tidak dapat dibuka"
@@ -283,9 +268,6 @@
       ],
       "CSV file is missing expected headers: ${ missingHeaders }": [
         "Berkas CSV tidak memiliki header yang sewajarnya dimiliki oleh berkas: ${ missingHeaders }"
-      ],
-      "Dashlane export file could not be parsed. ${ errorDetail }": [
-        "Berkas ekspor Dashlane tidak dapat diurai. ${ errorDetail }"
       ],
       "Decrypting your ${ PASS_APP_NAME } export file failed. ${ errorDetail }": [
         "Gagal mendekripsikan berkas ekspor ${ PASS_APP_NAME } Anda. ${ errorDetail }"
@@ -314,9 +296,6 @@
       "File could not be parsed": [
         "Berkas tidak dapat diurai"
       ],
-      "Firefox export file could not be parsed. ${ errorDetail }": [
-        "Berkas ekspor Firefox tidak dapat diurai. ${ errorDetail }"
-      ],
       "Importing items failed": [
         "Item gagal diimpor"
       ],
@@ -328,15 +307,6 @@
       ],
       "Item creation failed": [
         "Item gagal dibuat"
-      ],
-      "KeePass export file could not be parsed. ${ errorDetail }": [
-        "Berkas ekspor KeePass tidak dapat diurai. ${ errorDetail }"
-      ],
-      "Keeper export file could not be parsed. ${ errorDetail }": [
-        "Berkas ekspor Keeper tidak dapat diurai. ${ errorDetail }"
-      ],
-      "LastPass export file could not be parsed. ${ errorDetail }": [
-        "Berkas ekspor LastPass tidak dapat diurai. ${ errorDetail }"
       ],
       "LastPass will export a corrupted CSV file if any of your item fields contain unexpected commas, quotes or multiple lines": [
         "LastPass akan mengekspor file CSV yang rusak jika salah satu kolom item Anda mengandung koma, tanda kutip atau beberapa baris yang tidak terduga."
@@ -364,9 +334,6 @@
       ],
       "Restoring item failed": [
         "Item gagal dipulihkan"
-      ],
-      "Safari export file could not be parsed. ${ errorDetail }": [
-        "Berkas ekspor Safari tidak dapat diurai. ${ errorDetail }"
       ],
       "Setting \"${ payload.name }\" as primary vault failed": [
         "\"${ payload.name }\" gagal ditetapkan sebagai brankas utama"
