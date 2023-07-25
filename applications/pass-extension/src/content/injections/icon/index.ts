@@ -12,13 +12,14 @@ import {
 
 import { ICON_MAX_HEIGHT, ICON_MIN_HEIGHT, ICON_PADDING, INPUT_BASE_STYLES_ATTR } from '../../constants';
 import type { FieldHandle } from '../../types';
+import type { ProtonPassControl } from '../custom-elements/ProtonPassControl';
 
 type InjectionElements = {
     form: HTMLElement;
-    icon: HTMLButtonElement;
     input: HTMLInputElement;
     inputBox: HTMLElement;
-    wrapper: HTMLElement;
+    icon: HTMLButtonElement;
+    control: ProtonPassControl;
 };
 
 type SharedInjectionOptions = {
@@ -75,14 +76,14 @@ const getOverlayedElement = (options: {
  * ie: check amazon sign-in page without repaint to
  * reproduce issue */
 const computeIconInjectionStyles = (
-    { input, wrapper, form }: Omit<InjectionElements, 'icon'>,
+    { input, control, form }: Omit<InjectionElements, 'icon'>,
     { getInputStyle, getBoxStyle, inputBox }: SharedInjectionOptions
 ) => {
     repaint(input);
 
     const { right: inputRight, top: inputTop, height: inputHeight } = input.getBoundingClientRect();
     const { top: boxTop, height: boxMaxHeight } = inputBox.getBoundingClientRect();
-    const { top: wrapperTop, right: wrapperRight } = wrapper.getBoundingClientRect();
+    const { top: wrapperTop, right: wrapperRight } = control.getBoundingClientRect();
     const { value: inputWidth } = getComputedWidth(getInputStyle, { node: input, mode: 'outer' });
 
     /* If inputBox is not the input element in the case we
@@ -171,10 +172,10 @@ export const cleanupInputInjectedStyles = (input: HTMLInputElement) => {
     input.removeAttribute(INPUT_BASE_STYLES_ATTR);
 };
 
-export const cleanupInjectionStyles = ({ wrapper, input }: Pick<InjectionElements, 'wrapper' | 'input'>) => {
-    wrapper.style.removeProperty('float');
-    wrapper.style.removeProperty('max-width');
-    wrapper.style.removeProperty('margin-left');
+export const cleanupInjectionStyles = ({ control, input }: Pick<InjectionElements, 'control' | 'input'>) => {
+    control.style.removeProperty('float');
+    control.style.removeProperty('max-width');
+    control.style.removeProperty('margin-left');
     cleanupInputInjectedStyles(input);
 };
 
@@ -231,7 +232,7 @@ export const createIcon = (field: FieldHandle): InjectionElements => {
     const input = field.element as HTMLInputElement;
     const inputBox = field.boxElement;
 
-    const control = createElement<HTMLDivElement>({ type: 'protonpass-control' });
+    const control = createElement<ProtonPassControl>({ type: 'protonpass-control' });
 
     /* overridden by `injection.scss` in order to properly handle
      * content-script re-injection flickering glitch */
@@ -246,7 +247,7 @@ export const createIcon = (field: FieldHandle): InjectionElements => {
     icon.style.zIndex = field.zIndex.toString();
     icon.setAttribute('type', 'button');
 
-    const elements = { icon, wrapper: control, input, inputBox, form: field.getFormHandle().element };
+    const elements = { icon, control, input, inputBox, form: field.getFormHandle().element };
     const boxed = input !== inputBox;
 
     if (boxed) inputBox.insertBefore(control, inputBox.firstElementChild);
