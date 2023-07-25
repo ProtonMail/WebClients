@@ -120,7 +120,7 @@ export const useAddressesInputDrag: UseAddressesInputDrag = (recipientsOrGroups,
     };
 
     const handleItemDragEndParsed = (dragStatus: DragStatus) => {
-        if (dragStatus === DragStatus.Success && draggedRecipient !== undefined && placeholderPosition === undefined) {
+        if (dragStatus === DragStatus.Success && draggedRecipient !== undefined) {
             const newRecipients = recipientsOrGroups.filter(
                 (recipientOrGroup) => !matchRecipientOrGroup(recipientOrGroup, draggedRecipient as RecipientOrGroup)
             );
