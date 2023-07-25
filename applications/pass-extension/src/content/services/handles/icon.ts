@@ -17,7 +17,7 @@ export const createFieldIconHandle = ({ field }: CreateIconOptions): FieldIconHa
     let repositionRequest: number = -1; /* track repositioning requests */
 
     const input = field.element as HTMLInputElement;
-    const { icon, wrapper } = createIcon(field);
+    const { icon, control } = createIcon(field);
 
     const setStatus = (status: WorkerStatus) => {
         const iconUrl = (() => {
@@ -45,10 +45,10 @@ export const createFieldIconHandle = ({ field }: CreateIconOptions): FieldIconHa
                     get: () => field.element.getBoundingClientRect(),
                     set: () => {
                         const inputBox = field.getBoxElement({ revalidate });
-                        cleanupInjectionStyles({ input, wrapper });
+                        cleanupInjectionStyles({ input, control });
                         applyInjectionStyles({
                             icon,
-                            wrapper,
+                            control,
                             input,
                             inputBox,
                             form: field.getFormHandle().element,
@@ -83,9 +83,9 @@ export const createFieldIconHandle = ({ field }: CreateIconOptions): FieldIconHa
     const detach = safeCall(() => {
         listeners.removeAll();
         cancelReposition();
-        cleanupInjectionStyles({ input, wrapper });
-        icon.parentElement!.removeChild(icon);
-        wrapper.parentElement!.removeChild(wrapper);
+        cleanupInjectionStyles({ input, control });
+        icon.remove();
+        control.remove();
     });
 
     /* repositioning the icon can happen either :

@@ -19,7 +19,15 @@ const REDUX_DEVTOOLS_PORT = parseEnvVar('REDUX_DEVTOOLS_PORT', 8000, Number);
 const RUNTIME_RELOAD = parseEnvVar('RUNTIME_RELOAD', false, Boolean);
 const HOT_MANIFEST_UPDATE = RUNTIME_RELOAD && parseEnvVar('HOT_MANIFEST_UPDATE', false, Boolean);
 
-const EXCLUDED_WEBPACK_ENTRIES = ['authFallback', 'background', 'client', 'dropdown', 'notification', 'orchestrator'];
+const EXCLUDED_WEBPACK_ENTRIES = [
+    'authFallback',
+    'background',
+    'client',
+    'dropdown',
+    'elements',
+    'notification',
+    'orchestrator',
+];
 
 const sanitizeWebpackConfig = (config) => {
     /**
