@@ -515,17 +515,25 @@ const Step1 = ({
         defaultMethod: paymentMethods[0],
         amount: options.checkResult.AmountDue,
         currency: options.currency,
-        onPaypalError: (type) => {
-            measurePayError(type);
+        onPaypalError: (error, type) => {
+            observeApiError(error, (status) => {
+                measurePayError(type);
+                metrics.core_vpn_single_signup_step1_payment_total.increment({
+                    status,
+                });
+            });
         },
         onValidatePaypal: (type) => {
-            measurePaySubmit(type);
             if (!validatePayment() || !accountDetailsRef.current?.validate()) {
                 return false;
             }
+            measurePaySubmit(type);
             return true;
         },
         onPaypalPay({ Payment }: TokenPaymentMethod) {
+            metrics.core_vpn_single_signup_step1_payment_total.increment({
+                status: 'success',
+            });
             return withLoadingSignup(onPay(Payment));
         },
     });
@@ -826,6 +834,10 @@ const Step1 = ({
                                             };
 
                                             const run = async () => {
+                                                const type = amountAndCurrency.Amount <= 0 ? 'free' : 'pay_cc';
+
+                                                measurePaySubmit(type);
+
                                                 if (amountAndCurrency.Amount <= 0) {
                                                     return onPay(undefined);
                                                 }
@@ -834,23 +846,30 @@ const Step1 = ({
                                                     throw new Error('Missing payment parameters');
                                                 }
 
-                                                const data = await createPaymentToken(paymentParameters, {
-                                                    amountAndCurrency,
-                                                });
-
-                                                return onPay(data.Payment);
+                                                try {
+                                                    const data = await createPaymentToken(paymentParameters, {
+                                                        amountAndCurrency,
+                                                    });
+                                                    metrics.core_vpn_single_signup_step1_payment_total.increment({
+                                                        status: 'success',
+                                                    });
+                                                    return await onPay(data.Payment);
+                                                } catch (error) {
+                                                    observeApiError(error, (status) => {
+                                                        measurePayError(type);
+                                                        metrics.core_vpn_single_signup_step1_payment_total.increment({
+                                                            status,
+                                                        });
+                                                    });
+                                                }
                                             };
 
-                                            const type = amountAndCurrency.Amount <= 0 ? 'free' : 'pay_cc';
-                                            measurePaySubmit(type);
                                             if (
                                                 accountDetailsRef.current?.validate() &&
                                                 handleCardSubmit() &&
                                                 validatePayment()
                                             ) {
-                                                withLoadingSignup(run()).catch(() => {
-                                                    measurePayError(type);
-                                                });
+                                                withLoadingSignup(run()).catch(noop);
                                             }
                                         }}
                                         method="post"
