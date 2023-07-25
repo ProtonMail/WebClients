@@ -1,18 +1,16 @@
-import type { Feature } from '@proton/components/containers/features';
 import { api } from '@proton/pass/api/api';
 import type { RequiredNonNull } from '@proton/pass/types';
 import { PlanType } from '@proton/pass/types';
-import type { PassFeature } from '@proton/pass/types/api/features';
 import { PassFeaturesValues } from '@proton/pass/types/api/features';
 import { logger } from '@proton/pass/utils/logger';
 import { UNIX_DAY, getEpoch } from '@proton/pass/utils/time';
 import { getAllAddresses } from '@proton/shared/lib/api/addresses';
 import { getLatestID } from '@proton/shared/lib/api/events';
-import { getFeatures } from '@proton/shared/lib/api/features';
 import { getUser } from '@proton/shared/lib/api/user';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import type { User } from '@proton/shared/lib/interfaces/User';
 
+import type { FeatureFlagsResponse } from '../../../types/api/features';
 import type { AddressState, UserFeatureState, UserPlanState, UserState } from '../../reducers';
 import { selectUserState } from '../../selectors';
 import type { State } from '../../types';
@@ -25,11 +23,11 @@ export const getUserFeatures = async (
         if (!options?.force && features && getEpoch() - (features?.requestedAt ?? 0) < UNIX_DAY) return features;
 
         logger.info(`[Saga::UserFeatures] syncing user feature flags`);
-        const { Features } = await api<{ Features: Feature[] }>(getFeatures(PassFeaturesValues));
+        const { toggles } = await api<FeatureFlagsResponse>({ url: `feature/v2/frontend`, method: 'get' });
 
-        return Features.reduce<UserFeatureState>(
-            (features, feature) => {
-                features[feature.Code as PassFeature] = feature;
+        return PassFeaturesValues.reduce<UserFeatureState>(
+            (features, feat) => {
+                features[feat] = toggles.some((toggle) => toggle.name === feat);
                 return features;
             },
             { requestedAt: getEpoch() }
