@@ -12,6 +12,7 @@ export type Action = ReturnType<(typeof actions)[keyof typeof actions]>;
 
 export interface WorkerRootSagaOptions {
     getAuth: () => AuthenticationStore;
+    getEventInterval: () => number;
     onBoot?: (result: { ok: true } | { ok: false; clearCache: boolean }) => void;
     onCacheRequest: () => boolean;
     onItemsChange?: () => void;
