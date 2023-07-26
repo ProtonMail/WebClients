@@ -4,7 +4,7 @@ import { lockSessionImmediate } from '@proton/pass/auth/session-lock';
 import type { Maybe } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
 
-import { offlineLock, sessionLockImmediate, stateCache } from '../actions';
+import { offlineLock, sessionLock, stateCache } from '../actions';
 import { selectSessionLockToken } from '../selectors';
 import type { WorkerRootSagaOptions } from '../types';
 
@@ -30,5 +30,5 @@ function* lockSessionImmediateWorker({ onSessionLocked }: WorkerRootSagaOptions)
 }
 
 export default function* watcher(options: WorkerRootSagaOptions) {
-    yield takeLeading(sessionLockImmediate.match, lockSessionImmediateWorker, options);
+    yield takeLeading(sessionLock.match, lockSessionImmediateWorker, options);
 }

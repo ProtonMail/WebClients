@@ -7,12 +7,13 @@ import type { WithSenderAction } from '../actions/with-receiver';
 import type { WorkerRootSagaOptions } from '../types';
 
 function* disableSessionLockWorker(
-    _: WorkerRootSagaOptions,
+    { onSessionLockChange }: WorkerRootSagaOptions,
     { meta, payload }: WithSenderAction<ReturnType<typeof sessionLockDisableIntent>>
 ) {
     try {
         yield deleteSessionLock(payload.pin);
         yield put(sessionLockDisableSuccess(meta.sender?.endpoint));
+        onSessionLockChange?.(false);
     } catch (e) {
         yield put(sessionLockDisableFailure(e, meta.sender?.endpoint));
     }
