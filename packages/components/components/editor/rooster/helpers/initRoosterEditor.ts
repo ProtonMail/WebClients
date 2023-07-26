@@ -5,7 +5,13 @@ import { DefaultFormat, Direction, EditorPlugin, IEditor } from 'roosterjs-edito
 import { isMac } from '@proton/shared/lib/helpers/browser';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 
-import { DEFAULT_FONT_FACE, DEFAULT_FONT_SIZE, ROOSTER_SNAPSHOTS_MAX_SIZE } from '../../constants';
+import {
+    DEFAULT_BACKGROUND,
+    DEFAULT_FONT_COLOR,
+    DEFAULT_FONT_FACE,
+    DEFAULT_FONT_SIZE,
+    ROOSTER_SNAPSHOTS_MAX_SIZE,
+} from '../../constants';
 import { getFontFaceValueFromId } from '../../helpers/fontFace';
 import { ModalLinkProps } from '../../hooks/interface';
 import { EditorActions, OnEditorEventListened } from '../../interface';
@@ -68,6 +74,8 @@ export const initRoosterEditor = async (element: HTMLDivElement, options: Option
         bold: false,
         fontFamily,
         fontSize,
+        textColor: DEFAULT_FONT_COLOR,
+        backgroundColor: DEFAULT_BACKGROUND,
     };
 
     if (element === null) {
