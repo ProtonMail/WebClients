@@ -6,10 +6,11 @@ import {
     applyLabelChangesOnConversation,
     applyLabelChangesOnMessage,
     applyLabelChangesOnOneMessageOfAConversation,
+    canMoveAll,
     shouldDisplayTotal,
 } from './labels';
 
-const { INBOX, TRASH, SPAM, ARCHIVE, SENT, ALL_SENT, DRAFTS, ALL_DRAFTS, SCHEDULED } = MAILBOX_LABEL_IDS;
+const { INBOX, TRASH, SPAM, ARCHIVE, SENT, ALL_SENT, DRAFTS, ALL_DRAFTS, SCHEDULED, ALL_MAIL } = MAILBOX_LABEL_IDS;
 
 const labelID = 'LabelID';
 
@@ -136,5 +137,27 @@ describe('labels', () => {
                 expect(expectedShouldDisplayTotal).toEqual(needsToDisplayTotal);
             }
         );
+    });
+
+    describe('canMoveAll', () => {
+        it('should not be possible to move all from some locations', () => {
+            const locations = [ALL_MAIL, SCHEDULED, ALL_DRAFTS, ALL_SENT];
+
+            locations.forEach((location) => {
+                expect(canMoveAll(location, TRASH, ['elementID'], [], false));
+            });
+        });
+
+        it('should not be possible to move all when no elements in location', () => {
+            expect(canMoveAll(SENT, TRASH, [], [], false));
+        });
+
+        it('should not be possible to move all when some elements are selected', () => {
+            expect(canMoveAll(SENT, TRASH, ['elementID'], ['elementID'], false));
+        });
+
+        it('should be possible to move all', () => {
+            expect(canMoveAll(SENT, TRASH, ['elementID'], [], false));
+        });
     });
 });
