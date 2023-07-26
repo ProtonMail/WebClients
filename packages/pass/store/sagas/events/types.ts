@@ -1,38 +1,27 @@
 import type { EventChannel as ReduxSagaChannel } from 'redux-saga';
 
-import type { Api, ApiOptions, ChannelType, ServerEvent } from '@proton/pass/types';
-import type { EventManager } from '@proton/shared/lib/eventManager/eventManager';
+import type { EventManager, EventManagerConfig, EventManagerEvent } from '../../../events/manager';
+import type { WorkerRootSagaOptions } from '../../types';
 
-export type EventChannelOnEvent<T extends ChannelType, O> = (
-    event: ServerEvent<T>,
+export type EventChannelOnEvent<T extends {}> = (
+    event: EventManagerEvent<T>,
     self: EventChannel<T>,
-    options: O
+    options: WorkerRootSagaOptions
 ) => Generator;
 
-export type EventChannelOnError<T extends ChannelType, O> = (
+export type EventChannelOnError<T extends {}> = (
     error: unknown,
     self: EventChannel<T>,
-    options: O
+    options: WorkerRootSagaOptions
 ) => Generator;
 
-type BaseConfig<T extends ChannelType, O> = {
-    api: Api;
-    eventID: string;
-    interval: number;
-    query?: (eventId: string) => ApiOptions<void, any, any, any>;
-    mapEvent?: (managerEvent: any) => ServerEvent<T>;
+export type EventChannelOptions<T extends {}> = EventManagerConfig<T> & {
     onClose?: () => void;
-    onEvent: EventChannelOnEvent<T, O>;
-    onError?: EventChannelOnError<T, O>;
+    onEvent: EventChannelOnEvent<T>;
+    onError?: EventChannelOnError<T>;
 };
 
-export type EventChannelOptions<T extends ChannelType, O> = BaseConfig<T, O> &
-    Extract<
-        { type: ChannelType.USER } | { type: ChannelType.SHARES } | { type: ChannelType.SHARE; shareId: string },
-        { type: T }
-    >;
-
-export type EventChannel<T extends ChannelType = any, O = any> = EventChannelOptions<T, O> & {
-    manager: EventManager;
-    channel: ReduxSagaChannel<ServerEvent<T>>;
+export type EventChannel<T extends {}> = EventChannelOptions<T> & {
+    manager: EventManager<T>;
+    channel: ReduxSagaChannel<EventManagerEvent<T>>;
 };

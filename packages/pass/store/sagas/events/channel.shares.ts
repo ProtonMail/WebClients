@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-throw-literal, curly */
 import { all, fork, put, select, takeEvery } from 'redux-saga/effects';
 
-import type { Api, Maybe, ServerEvent, Share, SharesGetResponse } from '@proton/pass/types';
-import { ChannelType, ShareType } from '@proton/pass/types';
+import type { Api, Maybe, Share, SharesGetResponse } from '@proton/pass/types';
+import { ShareType } from '@proton/pass/types';
 import { prop, truthy } from '@proton/pass/utils/fp';
 import { diadic } from '@proton/pass/utils/fp/variadics';
 import { logger } from '@proton/pass/utils/logger';
@@ -10,6 +10,7 @@ import { merge } from '@proton/pass/utils/object/merge';
 import { INTERVAL_EVENT_TIMER } from '@proton/shared/lib/constants';
 import { toMap } from '@proton/shared/lib/helpers/object';
 
+import type { EventManagerEvent } from '../../../events/manager';
 import { sharesSync, vaultCreationSuccess, vaultSetPrimarySync } from '../../actions';
 import type { ItemsByShareId } from '../../reducers';
 import { selectAllShares } from '../../selectors';
@@ -26,11 +27,11 @@ import type { EventChannel } from './types';
  * error handling. see `channel.share.ts` code `300004`
  * FIXME: handle ItemShares */
 function* onSharesEvent(
-    event: ServerEvent<ChannelType.SHARES>,
-    { api }: EventChannel<ChannelType.SHARES>,
+    event: EventManagerEvent<SharesGetResponse>,
+    { api }: EventChannel<any>,
     options: WorkerRootSagaOptions
 ) {
-    if (event.error) throw event.error;
+    if ('error' in event) throw event.error;
 
     const localShares: Share[] = yield select(selectAllShares);
     const localPrimaryShareId = localShares.find(prop('primary'))?.shareId;
@@ -77,22 +78,14 @@ const NOOP_EVENT = '*';
  * new shares, set the query accordingly & use a
  * non-existing eventID */
 export const createSharesChannel = (api: Api) =>
-    eventChannelFactory<ChannelType.SHARES>({
+    eventChannelFactory<SharesGetResponse>({
         api,
-        type: ChannelType.SHARES,
         interval: INTERVAL_EVENT_TIMER,
         eventID: NOOP_EVENT,
+        getCursor: () => ({ EventID: NOOP_EVENT, More: false }),
         onClose: () => logger.info(`[Saga::SharesChannel] closing channel`),
         onEvent: onSharesEvent,
-        query: () => ({
-            url: 'pass/v1/share',
-            method: 'get',
-            mapResponse: (response: SharesGetResponse) => ({
-                ...response,
-                EventID: NOOP_EVENT,
-                More: false,
-            }),
-        }),
+        query: () => ({ url: 'pass/v1/share', method: 'get' }),
     });
 
 /* when a vault is created : recreate all the necessary
@@ -106,8 +99,8 @@ function* onNewShare(api: Api, options: WorkerRootSagaOptions) {
 export function* sharesChannel(api: Api, options: WorkerRootSagaOptions) {
     logger.info(`[Saga::SharesChannel] start polling for new shares`);
     const eventsChannel = createSharesChannel(api);
-    const events = fork(channelEventsWorker<ChannelType.SHARES>, eventsChannel, options);
-    const wakeup = fork(channelWakeupWorker<ChannelType.SHARES>, eventsChannel);
+    const events = fork(channelEventsWorker<SharesGetResponse>, eventsChannel, options);
+    const wakeup = fork(channelWakeupWorker<SharesGetResponse>, eventsChannel);
     const newVault = fork(onNewShare, api, options);
 
     yield all([events, wakeup, newVault]);

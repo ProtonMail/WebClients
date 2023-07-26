@@ -1,12 +1,13 @@
 import type { AnyAction } from 'redux';
-import { call, cancelled, put, take, takeLeading } from 'redux-saga/effects';
+import { call, cancelled, take, takeLeading } from 'redux-saga/effects';
 
-import type { ChannelType, ServerEvent } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import noop from '@proton/utils/noop';
 
-import { serverEvent, wakeupSuccess } from '../../actions';
+import { ACTIVE_POLLING_TIMEOUT } from '../../../events/constants';
+import type { EventManagerEvent } from '../../../events/manager';
+import { wakeupSuccess } from '../../actions';
 import type { WorkerRootSagaOptions } from '../../types';
 import type { EventChannel } from './types';
 
@@ -14,16 +15,16 @@ import type { EventChannel } from './types';
  * the underlying redux-saga event channel and triggering the
  * appropriate callback generators. Closes the channel if the
  * parent task is canceled */
-export function* channelEventsWorker<T extends ChannelType>(
+export function* channelEventsWorker<T extends {}>(
     eventChannel: EventChannel<T>,
     options: WorkerRootSagaOptions
 ): Generator {
-    const { channel, onEvent, onError } = eventChannel;
+    const { channel, onEvent, onError, manager } = eventChannel;
     try {
         while (true) {
             try {
-                const event = (yield take(channel)) as ServerEvent<T>;
-                if (!event.error) yield put(serverEvent(event));
+                manager.setInterval(options.getEventInterval());
+                const event = (yield take(channel)) as EventManagerEvent<T>;
                 yield call(onEvent, event, eventChannel, options);
             } catch (error: unknown) {
                 logger.warn(`[Saga::Events] received an event error`, error);
@@ -41,7 +42,7 @@ export function* channelEventsWorker<T extends ChannelType>(
  * on every wakeupSuccess action coming  from the pop-up in
  * in order to sync as quickly as possible. Take the leading
  * wakeup call in order to avoid unnecessary parallel calls */
-export function* channelWakeupWorker<T extends ChannelType>({ manager, interval }: EventChannel<T>): Generator {
+export function* channelWakeupWorker<T extends {}>({ manager }: EventChannel<T>): Generator {
     yield manager.call().catch(noop);
     yield takeLeading(
         (action: AnyAction) => wakeupSuccess.match(action) && action.meta.receiver.endpoint === 'popup',
@@ -50,7 +51,7 @@ export function* channelWakeupWorker<T extends ChannelType>({ manager, interval 
             /* wait the channel's interval to process
              * the next wakeupSuccess in case user is
              * repeatedly opening the pop-up */
-            yield wait(interval);
+            yield wait(ACTIVE_POLLING_TIMEOUT);
         }
     );
 }
