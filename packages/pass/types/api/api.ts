@@ -40,21 +40,11 @@ export type ApiContext = {
  *   types by only looking at the options's method and url
  * - Hard-cast the response type when dealing with API urls
  *   that have not been auto-generated (legacy support)
- * - Add a mapResponse option to an API's query parameters in order
- *   to transform the response on the fly (while maintaining
- *   type-safety) when interfacing our API results with shared
- *   code (ie: eventsManager needs the response body to respect
- *   a certain format that our events API does not)
  */
 export type Api = {
-    <
-        T extends any = void,
-        U extends string = string,
-        M extends string = string,
-        F extends ApiResponseMapper<T, U, M> = undefined
-    >(
-        config: ApiOptions<T, U, M, F>
-    ): Promise<ApiResult<T, U, M, F>>;
+    <T extends any = void, U extends string = string, M extends string = string>(config: ApiOptions<U, M>): Promise<
+        ApiResult<T, U, M>
+    >;
     configure: (auth?: ApiAuthOptions) => void;
     subscribe: (subscribe: Subscriber<ApiSubscribtionEvent>) => () => void;
     unsubscribe: () => void;
@@ -62,29 +52,20 @@ export type Api = {
     getStatus: () => ApiStatus;
 };
 
-export type ApiOptions<
-    T extends any = void,
-    U extends string = string,
-    M extends string = string,
-    F extends ApiResponseMapper<T, U, M> = undefined
-> = {
+export type ApiOptions<U extends string = string, M extends string = string> = {
     [option: string]: any;
 } & {
     output?: 'json' | 'raw' | 'stream';
     url?: U;
     method?: M;
-    mapResponse?: F;
     headers?: { [key: string]: string };
     params?: { [key: string]: any };
     silent?: boolean;
 };
 
-export type ApiResult<
-    T extends any = void,
-    U extends string = string,
-    M extends string = string,
-    F extends ApiResponseMapper<T, U, M> = undefined
-> = F extends (...args: any[]) => infer U ? U : T extends void ? ApiResponse<`${U}`, `${M}`> : T;
+export type ApiResult<T extends any = void, U extends string = string, M extends string = string> = T extends void
+    ? ApiResponse<`${U}`, `${M}`>
+    : T;
 
 export type ApiResponseMapper<T extends any = void, U extends string = string, M extends string = string> = Maybe<
     (response: T extends void ? ApiResponse<`${U}`, `${M}`> : T) => any
