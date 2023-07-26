@@ -307,7 +307,7 @@ const getBundleProUpsell = ({ plansMap, openSubscriptionModal, ...rest }: GetPla
         onUpgrade: () =>
             openSubscriptionModal({
                 cycle,
-                plan: PLANS.FAMILY,
+                plan: PLANS.BUNDLE_PRO,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
                 disablePlanSelection: true,
             }),
