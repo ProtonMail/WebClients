@@ -24,6 +24,7 @@ import {
     setUserPlan,
     stateDestroy,
     stateLock,
+    syncLock,
 } from '@proton/pass/store';
 import type { AccountForkMessage, Api, MaybeNull, WorkerMessageResponse } from '@proton/pass/types';
 import { SessionLockStatus, WorkerMessageType, WorkerStatus } from '@proton/pass/types';
@@ -247,6 +248,8 @@ export const createAuthService = ({
             try {
                 const cachedLockStatus = authCtx.lockStatus;
                 const lock = cachedLockStatus !== null ? { status: cachedLockStatus } : await checkSessionLock();
+
+                store.dispatch(syncLock(lock));
                 authService.setLockStatus(lock.status);
 
                 if (lock.status === SessionLockStatus.LOCKED) {
