@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 
-import { useDebouncedValue } from '../../hooks';
-import { SESSION_LOCK_PIN_LENGTH } from './constants';
+import { useDebouncedValue } from '.';
+import { SESSION_LOCK_PIN_LENGTH } from '../components/session-lock/constants';
 
 type UseSessionLockPinOptions = {
     onSubmit: (pin: string) => void;

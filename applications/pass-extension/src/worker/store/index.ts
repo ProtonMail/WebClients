@@ -7,7 +7,13 @@ import { browserLocalStorage } from '@proton/pass/extension/storage';
 import type { WorkerRootSagaOptions } from '@proton/pass/store';
 import reducer from '@proton/pass/store/reducers';
 import { workerRootSaga } from '@proton/pass/store/sagas';
-import { type RequiredNonNull, ShareEventType, WorkerMessageType, WorkerStatus } from '@proton/pass/types';
+import {
+    type RequiredNonNull,
+    SessionLockStatus,
+    ShareEventType,
+    WorkerMessageType,
+    WorkerStatus,
+} from '@proton/pass/types';
 import type { TelemetryEvent } from '@proton/pass/types/data/telemetry';
 import { logger } from '@proton/pass/utils/logger';
 import { workerReady } from '@proton/pass/utils/worker';
@@ -56,7 +62,7 @@ const options: RequiredNonNull<WorkerRootSagaOptions> = {
     /* only trigger cache flow if worker is ready */
     onCacheRequest: withContext((ctx) => workerReady(ctx.getState().status)),
 
-    onSignout: withContext((ctx) => ctx.service.auth.logout()),
+    onSignout: withContext(({ service: { auth } }) => auth.logout()),
 
     onSessionLocked: withContext((ctx) => ctx.service.auth.lock()),
 
@@ -64,6 +70,10 @@ const options: RequiredNonNull<WorkerRootSagaOptions> = {
         ctx.service.auth.unlock();
         await ctx.init({ force: true });
     }),
+
+    onSessionLockChange: withContext(({ service: { auth } }, registered) =>
+        auth.setLockStatus(registered ? SessionLockStatus.REGISTERED : null)
+    ),
 
     /* Update the extension's badge count on every
      * item state change */

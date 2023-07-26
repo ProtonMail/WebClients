@@ -8,7 +8,7 @@ import type { ProxiedSettings } from '../reducers/settings';
 import { selectProxiedSettings } from '../selectors/settings';
 import type { WorkerRootSagaOptions } from '../types';
 
-function* disableSessionLockWorker(
+function* settingsEditWorker(
     { onSettingUpdate }: WorkerRootSagaOptions,
     { meta, payload }: WithSenderAction<ReturnType<typeof settingEditIntent>>
 ) {
@@ -23,5 +23,5 @@ function* disableSessionLockWorker(
 }
 
 export default function* watcher(options: WorkerRootSagaOptions) {
-    yield takeLeading(settingEditIntent.match, disableSessionLockWorker, options);
+    yield takeLeading(settingEditIntent.match, settingsEditWorker, options);
 }
