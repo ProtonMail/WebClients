@@ -1,3 +1,5 @@
+import { c } from 'ttag';
+
 import type { ItemExtraField, ItemImportIntent, Maybe } from '@proton/pass/types';
 import { truthy } from '@proton/pass/utils/fp';
 import { logger } from '@proton/pass/utils/logger';
@@ -24,9 +26,12 @@ const extractExtraFields = (item: KeeperItem): ItemExtraField[] => {
         for (let i = 7; i < item.length; i += 2) {
             /* skip totp field because it was already added in extractTOTP above */
             if (item[i] == 'TFC:Keeper') continue;
+
+            const type = item[i] === 'Hidden Field' ? 'hidden' : 'text';
+
             customFields.push({
-                fieldName: item[i],
-                type: item[i] === 'Hidden Field' ? 'hidden' : 'text',
+                fieldName: item[i] || (type === 'hidden' ? c('Label').t`Hidden` : c('Label').t`Text`),
+                type,
                 data: {
                     content: item[i + 1],
                 },

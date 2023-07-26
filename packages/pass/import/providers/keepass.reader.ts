@@ -1,4 +1,5 @@
 import get from 'lodash/get';
+import { c } from 'ttag';
 import X2JS from 'x2js';
 
 import type { ItemImportIntent, MaybeNull } from '@proton/pass/types';
@@ -41,9 +42,11 @@ const entryToItem = (entry: KeePassEntry): ItemImportIntent<'login'> => {
                     acc.totp = getKeePassEntryValue(Value);
                     break;
                 default:
+                    const type = getKeePassProtectInMemoryValue(Value) ? 'hidden' : 'text';
+
                     acc.customFields.push({
-                        fieldName: Key,
-                        type: getKeePassProtectInMemoryValue(Value) ? 'hidden' : 'text',
+                        fieldName: Key || (type === 'hidden' ? c('Label').t`Hidden` : c('Label').t`Text`),
+                        type,
                         data: { content: getKeePassEntryValue(Value) ?? '' },
                     });
             }
