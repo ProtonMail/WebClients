@@ -4,8 +4,15 @@ import { useDispatch, useSelector } from 'react-redux';
 import type { MessageWithSenderFactory } from '@proton/pass/extension/message';
 import { sendMessage } from '@proton/pass/extension/message';
 import { selectDidWakeup } from '@proton/pass/store';
-import { sessionLockImmediate, signout, syncIntent } from '@proton/pass/store/actions';
-import type { ExtensionEndpoint, MaybeNull, TabId, WorkerMessageWithSender, WorkerState } from '@proton/pass/types';
+import { sessionLock, signout, syncIntent } from '@proton/pass/store/actions';
+import type {
+    ExtensionEndpoint,
+    MaybeNull,
+    TabId,
+    WorkerMessageResponse,
+    WorkerMessageWithSender,
+    WorkerState,
+} from '@proton/pass/types';
 import { WorkerMessageType, WorkerStatus } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
 import { workerReady } from '@proton/pass/utils/worker';
@@ -18,6 +25,7 @@ import noop from '@proton/utils/noop';
 import locales from '../../../app/locales';
 import { INITIAL_WORKER_STATE } from '../../constants';
 import { ExtensionContext, type ExtensionContextType } from '../../extension';
+import { useActivityProbe } from '../../hooks/useActivityProbe';
 
 export interface ExtensionAppContextValue {
     context: MaybeNull<ExtensionContextType>;
@@ -41,7 +49,7 @@ const setup = async (options: {
     tabId: TabId;
     endpoint: ExtensionEndpoint;
     messageFactory: MessageWithSenderFactory;
-}): Promise<WorkerState> => {
+}): Promise<WorkerMessageResponse<WorkerMessageType.WORKER_WAKEUP>> => {
     setTtagLocales(locales);
     await loadLocale(DEFAULT_LOCALE, locales);
 
@@ -72,6 +80,7 @@ export const ExtensionContextProvider = <T extends ExtensionEndpoint>({
 }: ExtensionContextProviderProps<T>) => {
     const dispatch = useDispatch();
     const { tabId } = ExtensionContext.get();
+    const activityProbe = useActivityProbe(messageFactory);
 
     const [state, setState] = useState<WorkerState>(INITIAL_WORKER_STATE);
     const ready = useSelector(selectDidWakeup(endpoint, tabId)) && workerReady(state.status);
@@ -83,7 +92,7 @@ export const ExtensionContextProvider = <T extends ExtensionEndpoint>({
 
     const lock = useCallback(() => {
         setState({ ...INITIAL_WORKER_STATE, status: WorkerStatus.LOCKED });
-        dispatch(sessionLockImmediate());
+        dispatch(sessionLock());
     }, []);
 
     const sync = useCallback(() => dispatch(syncIntent({})), []);
@@ -104,9 +113,9 @@ export const ExtensionContextProvider = <T extends ExtensionEndpoint>({
         ExtensionContext.get().port.onMessage.addListener(onMessage);
 
         setup({ tabId, endpoint, messageFactory })
-            .then((result) => {
-                setState({ UID: result.UID, loggedIn: result.loggedIn, status: result.status });
-                setSentryUID(result.UID);
+            .then(({ UID, loggedIn, status }) => {
+                setState({ UID, loggedIn, status });
+                setSentryUID(UID);
             })
             .catch((e) => {
                 logger.warn(`[ExtensionContext::setup] setup failed`, e);
@@ -119,6 +128,14 @@ export const ExtensionContextProvider = <T extends ExtensionEndpoint>({
             });
 
         return () => ExtensionContext.get().port.onMessage.removeListener(onMessage);
+    }, []);
+
+    useEffect(() => {
+        const onVisibilityChange = () => activityProbe[document.visibilityState === 'visible' ? 'start' : 'cancel']();
+        document.addEventListener('visibilitychange', onVisibilityChange);
+        onVisibilityChange();
+
+        return () => document.removeEventListener('visibilitychange', onVisibilityChange);
     }, []);
 
     const context = useMemo<ExtensionAppContextValue>(
