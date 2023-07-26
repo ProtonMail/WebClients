@@ -4,7 +4,13 @@ import { c } from 'ttag';
 import { unlockSession } from '@proton/pass/auth/session-lock';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
-import { acknowledgeRequest, sessionUnlockFailure, sessionUnlockIntent, sessionUnlockSuccess } from '../actions';
+import {
+    acknowledgeRequest,
+    extendLock,
+    sessionUnlockFailure,
+    sessionUnlockIntent,
+    sessionUnlockSuccess,
+} from '../actions';
 import type { WorkerRootSagaOptions } from '../types';
 
 function* unlockSessionWorker(
@@ -18,6 +24,10 @@ function* unlockSessionWorker(
         yield put(successMessage);
         onUnlockResult?.(successMessage);
         onSessionUnlocked?.(storageToken);
+
+        /* trigger a lock extension action in order to
+         * to sync the session lock state in the store */
+        yield put(extendLock());
     } catch (err: any) {
         const inactiveSession = err.name === 'InactiveSession';
         if (inactiveSession) onSignout?.();
