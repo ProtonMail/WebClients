@@ -1,5 +1,8 @@
 import { createAction } from '@reduxjs/toolkit';
 
-import type { ServerEvent } from '@proton/pass/types/api';
+import type { UserEvent } from '@proton/pass/types/api';
 
-export const serverEvent = createAction('server event', (event: ServerEvent) => ({ payload: { event } }));
+import type { ShareEventResponse } from '../../sagas/events/channel.share';
+
+export const shareEvent = createAction<ShareEventResponse & { shareId: string }>('share event');
+export const userEvent = createAction<UserEvent>('user event');
