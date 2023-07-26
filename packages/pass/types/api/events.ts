@@ -5,8 +5,6 @@
 import type { Invoice } from '@proton/components/containers/invoices/interface';
 import type { Address, Subscription, User } from '@proton/shared/lib/interfaces';
 
-import type { PassEventListResponse, SharesGetResponse } from './pass';
-
 export enum ChannelType {
     USER = 'user',
     SHARE = 'share',
@@ -25,8 +23,8 @@ export enum EventActions {
 }
 
 export type UserEvent = {
-    More?: 0 | 1;
-    EventID?: string;
+    More: 0 | 1;
+    EventID: string;
     Refresh?: number;
     User?: User;
     Addresses?: AddressEvent[];
@@ -39,13 +37,6 @@ export type AddressEvent = {
     Action: EventActions;
     Address: Address;
 };
-
-export type ServerEvent<T extends ChannelType = ChannelType> = Extract<
-    | ({ type: ChannelType.USER } & UserEvent)
-    | ({ type: ChannelType.SHARE } & { Events: PassEventListResponse; shareId: string })
-    | ({ type: ChannelType.SHARES } & SharesGetResponse),
-    { type: T }
-> & { error?: unknown };
 
 export type ShareEventPayload =
     | { type: ShareEventType.SHARE_DISABLED; shareId: string }
