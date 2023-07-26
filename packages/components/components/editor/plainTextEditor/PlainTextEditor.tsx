@@ -1,4 +1,4 @@
-import { ChangeEvent, useEffect, useRef } from 'react';
+import { ChangeEvent, ReactNode, useEffect, useRef } from 'react';
 
 import useIsMounted from '@proton/hooks/useIsMounted';
 
@@ -9,9 +9,11 @@ interface Props {
     placeholder?: string;
     onReady: (editorActions: EditorActions) => void;
     onFocus: () => void;
+    // Needed for dropzone
+    children?: ReactNode;
 }
 
-const PlainTextEditor = ({ onFocus, onReady, onChange, placeholder }: Props) => {
+const PlainTextEditor = ({ onFocus, onReady, onChange, placeholder, children, ...rest }: Props) => {
     const textareaRef = useRef<HTMLTextAreaElement>(null);
     const isMountedCallback = useIsMounted();
 
@@ -40,16 +42,19 @@ const PlainTextEditor = ({ onFocus, onReady, onChange, placeholder }: Props) => 
     }, []);
 
     return (
-        <textarea
-            className="w100 h100 pt-2 pb-4 px-2"
-            ref={textareaRef}
-            onFocus={onFocus}
-            onChange={(event: ChangeEvent<HTMLTextAreaElement>) => {
-                onChange(event.target.value);
-            }}
-            placeholder={placeholder}
-            data-testid="editor-textarea"
-        />
+        <div className="w100 h100 pt-2 pb-4 px-2" {...rest}>
+            <textarea
+                className="w100 h100"
+                ref={textareaRef}
+                onFocus={onFocus}
+                onChange={(event: ChangeEvent<HTMLTextAreaElement>) => {
+                    onChange(event.target.value);
+                }}
+                placeholder={placeholder}
+                data-testid="editor-textarea"
+            />
+            {children}
+        </div>
     );
 };
 
