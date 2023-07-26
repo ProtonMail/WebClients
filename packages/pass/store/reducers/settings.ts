@@ -9,6 +9,7 @@ import {
     sessionLockEnableSuccess,
     sessionUnlockSuccess,
     settingEditSuccess,
+    syncLock,
 } from '../actions';
 
 export type SettingsState = {
@@ -49,6 +50,10 @@ const reducer: Reducer<SettingsState> = (state = INITIAL_STATE, action) => {
 
     if (sessionLockDisableSuccess.match(action)) {
         return partialMerge(state, { sessionLockToken: undefined, sessionLockTTL: undefined });
+    }
+
+    if (syncLock.match(action)) {
+        return partialMerge(state, { sessionLockTTL: action.payload.ttl ?? undefined });
     }
 
     if (settingEditSuccess.match(action)) {
