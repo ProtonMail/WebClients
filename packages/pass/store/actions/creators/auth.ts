@@ -5,6 +5,7 @@ import type { ExtensionEndpoint } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
+import type { SessionLockCheckResult } from '../../../auth';
 import { settingsEdit, unlockSession } from '../requests';
 import withCacheBlock from '../with-cache-block';
 import withCallback, { type ActionCallback } from '../with-callback';
@@ -19,6 +20,7 @@ export const signoutSuccess = createAction('signout success', (payload: { soft: 
 export const sessionLock = createAction('session lock', () => withCacheBlock({ payload: {} }));
 export const extendLock = createAction('extend lock', () => withCacheBlock({ payload: {} }));
 export const offlineLock = createAction('offline lock');
+export const syncLock = createAction('sync lock', (payload: SessionLockCheckResult) => withCacheBlock({ payload }));
 
 export const sessionLockEnableIntent = createAction('enable session lock', (payload: { pin: string; ttl: number }) =>
     pipe(
