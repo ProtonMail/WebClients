@@ -1115,3 +1115,7 @@ export enum RELEASE_CATEGORIES {
     STABLE = 'Stable',
     EARLY_ACCESS = 'EarlyAccess',
 }
+
+export enum PROTON_WEBSITES {
+    PROTON_STATUS_PAGE = 'https://status.proton.me',
+}
