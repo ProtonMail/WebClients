@@ -16,10 +16,6 @@ export const PromptForReload: VFC<{ message: string }> = ({ message }) => (
     <FadeIn className="mt-12 w100 flex flex-column flex-align-items-center gap-2" key="prompt-for-reload">
         <span className="block text-sm text-weak">{message}</span>
 
-        <Button pill shape="solid" color="weak" className="ui-orange w100" onClick={() => window.location.reload()}>
-            {c('Action').t`Refresh extension`}
-        </Button>
-
         <Button pill shape="solid" color="weak" className="ui-red w100" onClick={() => browser.runtime.reload()}>
             {c('Action').t`Reload extension`}
         </Button>
