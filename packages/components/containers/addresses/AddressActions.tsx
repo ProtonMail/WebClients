@@ -29,25 +29,18 @@ const useAddressFlagsActionsList = (address: Address) => {
         return [];
     }
 
-    const { encryptionDisabled, expectSignatureDisabled, handleSetAddressFlags } = addressFlags;
+    const { encryptionDisabled, handleSetAddressFlags } = addressFlags;
 
     return [
-        encryptionDisabled && {
-            text: c('Address action').t`Enable encryption`,
-            onClick: () => handleSetAddressFlags(false, expectSignatureDisabled),
-        },
-        !encryptionDisabled && {
-            text: c('Address action').t`Disable encryption`,
-            onClick: () => handleSetAddressFlags(true, expectSignatureDisabled),
-        },
-        expectSignatureDisabled && {
-            text: c('Address action').t`Enable expect signed`,
-            onClick: () => handleSetAddressFlags(encryptionDisabled, false),
-        },
-        !expectSignatureDisabled && {
-            text: c('Address action').t`Disable expect signed`,
-            onClick: () => handleSetAddressFlags(encryptionDisabled, true),
-        },
+        encryptionDisabled
+            ? {
+                  text: c('Address action').t`Disable E2EE`,
+                  onClick: () => handleSetAddressFlags(true, true),
+              }
+            : {
+                  text: c('Address action').t`Enable E2EE`,
+                  onClick: () => handleSetAddressFlags(false, false),
+              },
     ];
 };
 
