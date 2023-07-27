@@ -38,6 +38,8 @@ export type KeePassItem = {
     username?: string;
     password?: string;
     note?: string;
-    totp?: string;
+    otpauth?: string;
+    totpSeed?: string;
+    totpSettings?: string;
     customFields: ItemExtraField[];
 };
