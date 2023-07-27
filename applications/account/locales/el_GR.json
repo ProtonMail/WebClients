@@ -1043,20 +1043,14 @@
       "Disable": [
         "Απενεργοποίηση"
       ],
-      "Disable encryption": [
-        "Απενεργοποίηση κρυπτογράφησης"
-      ],
-      "Disable expect signed": [
-        "Απενεργοποίηση απαίτησης υπογραφής"
+      "Disable E2EE": [
+        "Απενεργοποίηση E2EE"
       ],
       "Enable": [
         "Ενεργοποίηση"
       ],
-      "Enable encryption": [
-        "Ενεργοποίηση κρυπτογράφησης"
-      ],
-      "Enable expect signed": [
-        "Ενεργοποίηση απαίτησης υπογραφής"
+      "Enable E2EE": [
+        "Ενεργοποίηση E2EE"
       ],
       "Generate missing keys": [
         "Δημιουργία των κλειδιών που λείπουν"
@@ -3277,6 +3271,9 @@
       "Require at least one condition": [
         "Απαιτείται τουλάχιστον μία συνθήκη"
       ],
+      "Servers are unreachable. Please try again in a few minutes or check our ${ statusPageLink }": [
+        "Οι διακομιστές δεν είναι προσβάσιμοι. Δοκιμάστε ξανά σε λίγα λεπτά ή ελέγξτε την ${ statusPageLink }"
+      ],
       "Signature not verified": [
         "Υπογραφή δεν πιστοποιήθηκε"
       ],
@@ -3300,6 +3297,9 @@
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Κάτι πήγε στραβά, παρακαλούμε ${ refresh } για να προχωρήσετε. Εάν εξακολουθείτε να βλέπετε αυτό το μήνυμα σφάλματος, παρακαλούμε επικοινωνήστε με την ${ supportTeam }."
+      ],
+      "status page": [
+        "σελίδα κατάστασης"
       ],
       "Tab closed": [
         "Κλειστή καρτέλα"

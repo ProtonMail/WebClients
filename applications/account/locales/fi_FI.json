@@ -108,7 +108,7 @@
         "Lisää PayPal"
       ],
       "Add public holidays": [
-        "Lisää arkivapaat"
+        "Lisää yleiset vapaapäivät"
       ],
       "Add sieve filter": [
         "Lisää Sieve-suodatin"
@@ -472,6 +472,9 @@
       ],
       "Hide labels": [
         "Piilota tunnisteet"
+      ],
+      "Hide plan features": [
+        "Piilota tilauksen ominaisuudet"
       ],
       "I have a question": [
         "Minulla on kysyttävää"
@@ -1040,20 +1043,8 @@
       "Disable": [
         "Poista käytöstä"
       ],
-      "Disable encryption": [
-        "Ota salaus pois käytöstä"
-      ],
-      "Disable expect signed": [
-        "Poista odotettu allekirjoitus käytöstä"
-      ],
       "Enable": [
         "Ota käyttöön"
-      ],
-      "Enable encryption": [
-        "Käytä salausta"
-      ],
-      "Enable expect signed": [
-        "Ota odotettu allekirjoitus käyttöön"
       ],
       "Generate missing keys": [
         "Luo puuttuvat avaimet"
@@ -1512,8 +1503,8 @@
         "${ users } käyttäjää"
       ],
       "Total for ${ n } month": [
-        "${ n } kuukauden summa",
-        "${ n } kuukauden summa"
+        "Summa ${ n } kuukaudelle",
+        "Summa ${ n } kuukaudelle"
       ]
     },
     "Collapsible tooltip": {
@@ -3413,7 +3404,7 @@
         "Virheellinen vahvistuskoodi. Varmista, että kopioit vahvistuskoodin oikein ja yritä uudelleen. Muutosten voimaantulo saattaa kestää jopa 24 tuntia."
       ],
       "You already added this holidays calendar": [
-        "Olet jo lisännyt tämän juhlapäiväkalenterin"
+        "Olet jo lisännyt nämä yleiset vapaapäivät"
       ],
       "You have lost access to your organization keys. Without restoration you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Olet menettänyt pääsyn organisaatiosi avaimiin. Ilman palautusta et voi luoda uusia käyttäjiä, lisätä osoitteita nykyisille käyttäjille tai käyttää ei-yksityisiä käyttäjätilejä."
@@ -3888,7 +3879,7 @@
         "*Vain yksi ilmainen kokeilu asiakasta kohden."
       ],
       "Accounts with custom domains cannot join a Visionary or family plan.": [
-        "Omia verkkotunnuksia käyttävät tilit eivät voi liittyä Visionary- tai Family-tilaukseen."
+        "Omia verkkotunnuksia käyttävät tilit eivät voi liittyä Visionary- tai perhetilaukseen."
       ],
       "customer support": [
         "asiakaspalveluun"
@@ -3912,7 +3903,7 @@
         "Hallitse osoitteita."
       ],
       "Manage user accounts": [
-        "Hallinnoi käyttäjätilejä"
+        "Hallitse käyttäjätilejä"
       ],
       "Only 10 accepted invitations are allowed in a 6-month period.": [
         "Kuuden kuukauden sisällä sallitaan vain 10 kutsuhyväksyntää."
@@ -4624,7 +4615,7 @@
     },
     "Header; Table with list of calendars arranged by type": {
       "Holidays": [
-        "Arkipyhät"
+        "Vapaapäivät"
       ],
       "Other": [
         "Muu"
@@ -5315,7 +5306,7 @@
         "Haluatko varmasti poistaa kalenterin? Myös kaikki sen tapahtumat poistetaan."
       ],
       "Are you sure you want to delete this calendar? You can add the holidays calendar back later.": [
-        "Haluatko varmasti poistaa kalenterin? Voit lisätä arkipyhäkalenterin myöhemmin takaisin."
+        "Haluatko varmasti poistaa kalenterin? Voit lisätä yleiset vapaapäivät myöhemmin uudelleen."
       ],
       "Are you sure you want to delete this domain?": [
         "Haluatko varmasti poistaa verkkotunnuksen?"
@@ -5345,7 +5336,7 @@
         "Huomiota vaaditaan"
       ],
       "Auto-renewal: ": [
-        "Automaattinen uusiminen: "
+        "Automaattiuudistus: "
       ],
       "Auto-reply is active each month between the selected start and end time.": [
         "Automaattivastaus on joka kuukausi käytössä aloitusajasta lopetusaikaan."
@@ -5505,7 +5496,7 @@
         "Oma kuukausittainen"
       ],
       "Custom weekly": [
-        "Mukautettu viikottainen"
+        "Mukautettu viikoittainen"
       ],
       "Custom yearly": [
         "Oma vuosittainen"
@@ -5535,7 +5526,7 @@
         "ÄLÄ unohda tätä salasanaa. Jos unohdat sen, et voi kirjautua sisään tai purkaa viestiesi salausta."
       ],
       "Do not use the OpenVPN / IKEv2 credentials in ${ VPN_APP_NAME } applications or on the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
-        "Et voi käyttää OpenVPN-/IKEv2-kirjautumistietoja ${ VPN_APP_NAME } -sovelluksiin tai ${ VPN_APP_NAME } -hallintapaneeliin kirjautumiseen. ${ learnMore }"
+        "Älä kirjaudu ${ VPN_APP_NAME } -sovelluksiin tai ${ VPN_APP_NAME } -hallintapaneeliin OpenVPN-/IKEv2-kirjautumistiedoilla. ${ learnMore }"
       ],
       "Do you want to revoke all other sessions than the current one?": [
         "Haluatko mitätöidä kaikki istunnot nykyistä lukuun ottamatta?"
@@ -5985,7 +5976,7 @@
         "Osoitteita ei ole"
       ],
       "No credit card required": [
-        "Luottokorttia ei tarvita"
+        "Maksukorttia ei vaadita"
       ],
       "No data recovery method set; you are at risk of losing access to your data": [
         "Tietojen palautustapaa ei ole määritetty, jonka vuoksi olet altistunut niiden käyttöoikeuden menetykselle"
@@ -6183,7 +6174,7 @@
         "luet ensin oppaamme kaksivaiheiseen todennukseen"
       ],
       "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
-        "Suositeltavaa luotettavalla laitteella. ${ keepMeSignedInLearnMoreLink }"
+        "Suositeltavaa luotettavilla laitteilla. ${ keepMeSignedInLearnMoreLink }"
       ],
       "Recovery file downloaded": [
         "Palautustiedosto ladattiin"
@@ -6412,7 +6403,7 @@
         "Vahvistusprosessi avaa uuden selaimen välilehden. Poista käytöstä kaikki aktiiviset ponnahdusikkunoiden estotoiminnot."
       ],
       "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
-        "Näiden määritystiedostojen avulla voit valita, mihin ${ VPN_APP_NAME } -palvelimeen yhdistetään, kun käytät kolmannen osapuolen VPN-sovellusta tai määrität VPN-yhteyden reitittimeen."
+        "Näiden määritystiedostojen avulla voit valita mihin ${ VPN_APP_NAME } -palvelimeen yhteys muodostetaan kun käytetään ulkopuolista VPN-sovellusta tai määritetään reitittimen VPN-asetuksia."
       ],
       "These configurations are provided to work with WireGuard routers and official clients.": [
         "Nämä määritykset on tarkoitettu käytettäväksi WireGuard-reitittimissä ja virallisissa päätteissä."
@@ -6553,16 +6544,16 @@
         "Lisää tilillesi krediittejä, joilla voit maksaa tilauspäivityksen tai nykyisen tilauksen uudistuksen. Saat yhden krediitin jokaista kuluttamaasi ${ i18nCurrency } kohden."
       ],
       "Total email addresses": [
-        "Sähköpostiosoitteiden kokonaismäärä"
+        "Sähköpostiosoitteita yhteensä"
       ],
       "Total storage": [
-        "Tallennustilan kokonaismäärä"
+        "Tallennustilaa yhteensä"
       ],
       "Total supported domains": [
-        "Tuettujen verkkotunnusten kokonaismäärä"
+        "Tuettuja verkkotunnuksia yhteensä"
       ],
       "Total VPN connections": [
-        "VPN-yhteyksien kokonaismäärä"
+        "VPN-yhteyksiä yhteensä"
       ],
       "two-factor authentication (2FA)": [
         "kaksivaiheiset todennustavat (2FA)"
@@ -6821,7 +6812,7 @@
         "Voit käyttää ${ MAIL_APP_NAME }ia millä tahansa IMAP- ja SMTP-protokollaa tukevalla sähköpostisovelluksella, kuten Outlookilla, Apple Maililla ja Thunderbirdilla."
       ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
-        "Seuraavilla tunnistetiedoilla voit yhdistää ${ VPN_APP_NAME } -palvelimeen käyttäen kolmannen osapuolen avoimen lähdekoodin VPN-sovelluksia, kuten Tunnelblick macOS- tai OpenVPN GNU/Linux-alustalle."
+        "Seuraavilla tunnistetiedoilla voit muodostaa yhteyden ${ VPN_APP_NAME } -palvelimiin ulkopuolisten tahojen kehittämillä avoimen lähdekoodin VPN-sovelluksilla, kuten Tunnelblickillä macOS:lle tai OpenVPN:llä GNU/Linuxille."
       ],
       "You can't send more than ${ emailSendLimitNumber } email invite for the next 24 hours": [
         "Voit lähettää seuraavaan 24 tuntiin enintään ${ emailSendLimitNumber } sähköpostikutsun",
@@ -6834,7 +6825,7 @@
         "Et voi kumota toimintoa."
       ],
       "You cannot use the OpenVPN / IKEv2 credentials to sign in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
-        "Et voi käyttää OpenVPN-/IKEv2-kirjautumistietoja ${ VPN_APP_NAME } -sovelluksiin tai ${ VPN_APP_NAME } -hallintapaneeliin kirjautumiseen. ${ learnMore }"
+        "Et voi kirjautua ${ VPN_APP_NAME } -sovelluksiin tai ${ VPN_APP_NAME } -hallintapaneeliin OpenVPN-/IKEv2-kirjautumistiedoilla. ${ learnMore }"
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Varoitus: Et määrittänyt palautustapaa, joten tilin palautus on mahdotonta mikäli kadotat salasanasi. Jatketaanko ilman palautustapaa?"
@@ -7924,7 +7915,7 @@
         "Nimi"
       ],
       "Name on card": [
-        "Nimi kortissa"
+        "Kortissa oleva nimi"
       ],
       "NAT-PMP (Port Forwarding)": [
         "NAT-PMP (porttiohjaus)"
@@ -8483,7 +8474,7 @@
         "Maksa lasku"
       ],
       "Paypal without credit card": [
-        "PayPal ilman luottokorttia"
+        "PayPal ilman maksukorttia"
       ],
       "Privacy policy": [
         "Tietosuojakäytäntö"
@@ -8635,13 +8626,13 @@
     },
     "Modal title": {
       "Add public holidays": [
-        "Lisää juhlapäivät"
+        "Lisää yleiset vapaapäivät"
       ],
       "Edit calendar": [
         "Muokkaa kalenteria"
       ],
       "Get a country's official public holidays calendar.": [
-        "Hanki maan virallinen juhlapäiväkalenteri."
+        "Hanki tietyn maan yleiset viralliset vapaapäivät."
       ],
       "How to import calendars from another service": [
         "Miten kalenterit tuodaan muista palveluista"
@@ -8983,6 +8974,9 @@
         "${ n } VPN-yhteys/käyttäjä",
         "${ n } VPN-yhteyttä/käyttäjä"
       ],
+      "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
+        "${ PASS_APP_NAME } ilman Hide-my-email-aliasrajoitusta"
+      ],
       "${ size } attachment size": [
         "${ size } liitteen koko"
       ],
@@ -9002,7 +8996,7 @@
         "99.95 % SLA"
       ],
       "Ad-blocker & malware protection": [
-        "Mainos- ja haittaohjelmienesto"
+        "Mainos- ja haittaohjelmaesto"
       ],
       "Admin console": [
         "Hallintapaneeli"
@@ -9017,7 +9011,7 @@
         "Automaattivastaus"
       ],
       "Autofill credit cards (coming soon)": [
-        "Luottokorttien automaattitäyttö (tulossa pian)"
+        "Maksukorttien automaattitäyttö (tulossa pian)"
       ],
       "Available on all platforms": [
         "Saatavilla kaikilla alustoilla"
@@ -9272,6 +9266,9 @@
       ],
       "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
         "Jatkaaksesi ${ MAIL_APP_NAME }n käyttämistä premium-ominaisuuksilla, valitse tilaus ja maksutapa."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Kokeilujaksosi päättyy ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: info": {
@@ -9282,22 +9279,22 @@
         "${ BRAND_NAME }n avulla voit luoda sähköpostiosoitteita ja hallita alikäyttäjien tilejä. Ihanteellinen perheille ja organisaatioille."
       ],
       "* With 1-month subscription. Other subscription options available at checkout.": [
-        "* 1-kuukautisella tilauksella. Muut tilausvaihtoehdot ovat nähtävissä kassalla."
+        "* 1-kuukauden tilausjaksolla. Muut tilausvaihtoehdot ovat nähtävissä kassalla."
       ],
       "* With 12-month subscription. Other subscription options available at checkout.": [
-        "* 12-kuukautisella tilauksella. Muut tilausvaihtoehdot ovat nähtävissä kassalla."
+        "* 12-kuukauden tilausjaksolla. Muut tilausvaihtoehdot ovat nähtävissä kassalla."
       ],
       "* With 15-month subscription. Other subscription options available at checkout.": [
-        "* 15-kuukauden tilauksella. Muut tilausvaihtoehdot ovat nähtävissä kassalla."
+        "* 15-kuukauden tilausjaksolla. Muut tilausvaihtoehdot ovat nähtävissä kassalla."
       ],
       "* With 24-month subscription. Other subscription options available at checkout.": [
-        "* 24-kuukautisella tilauksella. Muut tilausvaihtoehdot ovat nähtävissä kassalla."
+        "* 24-kuukauden tilausjaksolla. Muut tilausvaihtoehdot ovat nähtävissä kassalla."
       ],
       "* With 30-month subscription. Other subscription options available at checkout.": [
-        "* 30-kuukauden tilauksella. Muut tilausvaihtoehdot ovat nähtävissä kassalla."
+        "* 30-kuukauden tilausjaksolla. Muut tilausvaihtoehdot ovat nähtävissä kassalla."
       ],
       "Applicable credits, proration, and coupons are applied in the next step": [
-        "Sovellettavia hyvityksiä, esittelyhintoja ja kuponkeja sovelletaan seuraavassa vaiheessa"
+        "Soveltuvat krediitit, suhteutukset ja etukoodit huomioidaan seuraavassa vaiheessa"
       ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Kattavaa yksityisyyttä ja turvaa kaikkien ${ BRAND_NAME }-palveluiden yhdistelmällä."
@@ -9400,6 +9397,9 @@
       ]
     },
     "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title }-kokeilu"
+      ],
       "Your account's usage": [
         "Tilisi käyttö"
       ]
@@ -9456,7 +9456,7 @@
         "Massamainontaa tai ohjelmallista sähköpostin lähetystä ei tällä hetkellä tueta. Suosittelemme käyttämään tähän tarkoitukseen erityisesti tarkoitettua sähköpostipalveluntarjoajaa."
       ],
       "Control access to your shared files by adding password protection and link expiration dates": [
-        "Hallitse jakamiesi tiedostojen käyttöä suojaamalla ne salasanoilla ja määrittämällä linkkien erääntymisajat"
+        "Hallitse jakamiesi tiedostojen käyttöä suojaamalla ne salasanoilla ja määrittämällä linkkien erääntyminen"
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Luo verkkoidentiteeteillesi useita sähköpostiosoitteita, kuten MikkoOstokset@${ domain } ostoksille ja MikkoUutiset@${ domain } uutiskirjeille."
@@ -9499,7 +9499,7 @@
         "Voit merkitä viestejä tunnisteilla helpottaaksesi niiden etsintää ja suodatusta."
       ],
       "Like a folder, a vault is a convenient way to organize your items. Sharing vaults with friends and family is in the works.": [
-        "Kansion tavoin, holvi on kätevä tapa järjestää kohteitasi. Holvien jako ystävien ja perheen kanssa on tulossa."
+        "Kansioiden tavoin, holvi on kätevä tapa kohteiden lajitteluun. Holvien jako kavereille ja perheenjäsenille on tulossa."
       ],
       "Manage your subscription, including customization of your plan. Payment methods accepted are credit card, PayPal, cryptocurrency, and wire transfer.": [
         "Hallitse tilaustasi ja mukauta tilaamaasi palvelukokonaisuutta. Hyväksytyt maksutavat ovat maksukortti, PayPal, kryptovaluutta ja pankkisiirto."
@@ -9625,11 +9625,18 @@
       "Add more personalization with 15 email addresses and support for 3 custom email domains": [
         "Yksilöi 15 sähköpostiosoiteella ja kolmella omalla sähköpostiverkkotunnuksella."
       ],
+      "Boost your storage space to ${ bundleStorage } per user": [
+        "Korota tallennustilasi ${ bundleStorage }/käyttäjä"
+      ],
       "Boost your storage space to ${ bundleStorage } total": [
         "Korota tallennustilaksi yhteensä ${ bundleStorage }"
       ],
       "Cover more ground with support for 10 custom email domains": [
         "Laajenna toimialuettasi 10 omalla sähköpostiverkkotunnuksella."
+      ],
+      "Create up to ${ n } calendar": [
+        "Luo enintään ${ n } kalenteri",
+        "Luo enintään ${ n } kalenteria"
       ]
     },
     "Notification": {
@@ -9663,7 +9670,7 @@
     },
     "Notification in holidays calendar modal": {
       "Adding holidays calendar failed": [
-        "Juhlapäiväkalenterin lisääminen epäonnistui"
+        "Yleisten vapaapäivien lisäys epäonnistui"
       ],
       "Calendar added": [
         "Kalenteri lisättiin"
@@ -9744,7 +9751,7 @@
     },
     "Oauth instructions video": {
       "For the import to work, you must select all requested items as shown in the GIF.": [
-        "Jotta tuonti toimii, sinun on valittava kaikki pyydetyt kohteet GIF-animaatiossa esitetyllä tavalla."
+        "Jotta tuonti toimii, sinun on valittava kaikki pyydetyt kohteet GIF-animaatiossa kuvatulla tavalla."
       ]
     },
     "Oauth instructions video alternative": {
@@ -9921,7 +9928,7 @@
         "Toista kuukausittain"
       ],
       "Repeat weekly": [
-        "Toista viikottain"
+        "Toista viikoittain"
       ],
       "Right to Left": [
         "Oikealta vasemmalle"
@@ -9971,7 +9978,7 @@
     },
     "Option protection mode": {
       "Load content via proxy (recommended)": [
-        "Lataa sisältö välityspalvelimen kautta (suositeltu)"
+        "Lataa sisältö välityspalvelimen kautta (suositus)"
       ],
       "Load content via proxy and store as attachments": [
         "Lataa sisältö välityspalvelimen kautta ja säilytä liitteinä"
@@ -10650,7 +10657,7 @@
     },
     "Settings update growler warning": {
       "Failed to update settings": [
-        "Asetusten päivitys epäonnistui"
+        "Asetusten tallennus epäonnistui"
       ]
     },
     "Settings/filters": {
@@ -10714,6 +10721,11 @@
     "Shared calendar label input placeholder": {
       "Add label": [
         "Lisää tunniste"
+      ]
+    },
+    "Shared calendar; Info about calendar owner": {
+      "Shared by ${ ownerName }": [
+        "Hakanut ${ ownerName }"
       ]
     },
     "Signature verification error when joining calendar": {
@@ -11182,7 +11194,7 @@
     },
     "Subscription saving": {
       "Save": [
-        "Tallenna"
+        "Säästä"
       ]
     },
     "Subscription status": {
@@ -11566,7 +11578,7 @@
         "Tila"
       ],
       "Total storage": [
-        "Tallennustilan kokonaismäärä"
+        "Tallennustilaa yhteensä"
       ],
       "Values": [
         "Arvot"
@@ -11624,13 +11636,13 @@
         "(käytössä)"
       ],
       "1. Give a name to the config to be generated": [
-        "1. Nimeä luotava määritys"
+        "1. Luotavan määrityksen nimeäminen"
       ],
       "1. Select platform": [
         "1. Alustan valinta"
       ],
       "2. Select platform": [
-        "2. Valitse alusta"
+        "2. Alustan valinta"
       ],
       "2. Select protocol": [
         "2. Protokollan valinta"
@@ -11639,10 +11651,10 @@
         "3. Määritystiedoston valinta ja lataus"
       ],
       "3. Select VPN options": [
-        "3. Valitse VPN-asetukset"
+        "3. VPN-asetusten valinta"
       ],
       "4. Select a server to connect to": [
-        "4. Valitse yhdistettävä palvelin"
+        "4. Yhdistettävän palvelimen valinta"
       ],
       "Accessibility": [
         "Esteettömyys"
@@ -11723,7 +11735,7 @@
         "Summa"
       ],
       "Amount due": [
-        "Maksettava summa"
+        "Verloitettava summa"
       ],
       "App": [
         "Sovellus"
@@ -11859,7 +11871,7 @@
         "Luo ${ BRAND_NAME }-osoitteesi"
       ],
       "Creating user accounts": [
-        "Luodaan käyttäjätilejä"
+        "Käyttäjätilien luonti"
       ],
       "Credentials": [
         "Kirjautumistiedot"
@@ -12826,6 +12838,11 @@
         "Jaa kalenterisi päivittämällä maksulliseen ${ MAIL_SHORT_APP_NAME } -tilaukseen."
       ]
     },
+    "upsell panel": {
+      "Recommended": [
+        "Suositus"
+      ]
+    },
     "User referee invited via email": {
       "Invited via email": [
         "Kutsuttu sähköpostitse"
@@ -12948,7 +12965,7 @@
     },
     "vpn_2step: tooltip": {
       "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, Double hop, and more.": [
-        "Pääsy Secure core -palvelimille, nopeat P2P/BitTorrent-lataukset, Tor + VPN, Double hop ja paljon muuta."
+        "Mm. Secure Core -palvelimien käyttöoikeus, nopeat P2P/BitTorrent-lataukset, Tor + VPN ja Double hop."
       ]
     },
     "Warning": {
@@ -13163,85 +13180,85 @@
         "${ interval } viikon välein keskiviikkoisin, ${ untilString }"
       ],
       "Weekly on ${ multipleDaysString }": [
-        "Viikottain ${ multipleDaysString }"
+        "Viikoittain ${ multipleDaysString }"
       ],
       "Weekly on ${ multipleDaysString }, ${ timesString }": [
-        "Viikottain ${ multipleDaysString }, ${ timesString }"
+        "Viikoittain ${ multipleDaysString }, ${ timesString }"
       ],
       "Weekly on ${ multipleDaysString }, ${ untilString }": [
-        "Viikottain ${ multipleDaysString }, ${ untilString }"
+        "Viikoittain ${ multipleDaysString }, ${ untilString }"
       ],
       "Weekly on all days": [
-        "Viikottain kaikkina päivinä"
+        "Viikoittain kaikkina päivinä"
       ],
       "Weekly on all days, ${ timesString }": [
-        "Viikottain kaikkina päivinä, ${ timesString }"
+        "Viikoittain kaikkina päivinä, ${ timesString }"
       ],
       "Weekly on all days, ${ untilString }": [
-        "Viikottain kaikkina päivinä, ${ untilString }"
+        "Viikoittain kaikkina päivinä, ${ untilString }"
       ],
       "Weekly on Friday": [
-        "Viikottain perjantaisin"
+        "Viikoittain perjantaisin"
       ],
       "Weekly on Friday, ${ timesString }": [
-        "Viikottain perjantaisin, ${ timesString }"
+        "Viikoittain perjantaisin, ${ timesString }"
       ],
       "Weekly on Friday, ${ untilString }": [
-        "Viikottain perjantaisin, ${ untilString }"
+        "Viikoittain perjantaisin, ${ untilString }"
       ],
       "Weekly on Monday": [
-        "Viikottain maanantaisin"
+        "Viikoittain maanantaisin"
       ],
       "Weekly on Monday, ${ timesString }": [
-        "Viikottain maanantaisin, ${ timesString }"
+        "Viikoittain maanantaisin, ${ timesString }"
       ],
       "Weekly on Monday, ${ untilString }": [
-        "Viikottain maanantaisin, ${ untilString }"
+        "Viikoittain maanantaisin, ${ untilString }"
       ],
       "Weekly on Saturday": [
-        "Viikottain lauantaisin"
+        "Viikoittain lauantaisin"
       ],
       "Weekly on Saturday, ${ timesString }": [
-        "Viikottain lauantaisin, ${ timesString }"
+        "Viikoittain lauantaisin, ${ timesString }"
       ],
       "Weekly on Saturday, ${ untilString }": [
-        "Viikottain lauantaisin, ${ untilString }"
+        "Viikoittain lauantaisin, ${ untilString }"
       ],
       "Weekly on Sunday": [
-        "Viikottain sunnuntaisin"
+        "Viikoittain sunnuntaisin"
       ],
       "Weekly on Sunday, ${ timesString }": [
-        "Viikottain sunnuntaisin, ${ timesString }"
+        "Viikoittain sunnuntaisin, ${ timesString }"
       ],
       "Weekly on Sunday, ${ untilString }": [
-        "Viikottain sunnuntaisin, ${ untilString }"
+        "Viikoittain sunnuntaisin, ${ untilString }"
       ],
       "Weekly on Thursday": [
-        "Viikottain torstaisin"
+        "Viikoittain torstaisin"
       ],
       "Weekly on Thursday, ${ timesString }": [
-        "Viikottain torstaisin, ${ timesString }"
+        "Viikoittain torstaisin, ${ timesString }"
       ],
       "Weekly on Thursday, ${ untilString }": [
-        "Viikottain torstaisin, ${ untilString }"
+        "Viikoittain torstaisin, ${ untilString }"
       ],
       "Weekly on Tuesday": [
-        "Viikottain tiistaisin"
+        "Viikoittain tiistaisin"
       ],
       "Weekly on Tuesday, ${ timesString }": [
-        "Viikottain tiistaisin, ${ timesString }"
+        "Viikoittain tiistaisin, ${ timesString }"
       ],
       "Weekly on Tuesday, ${ untilString }": [
-        "Viikottain tiistaisin, ${ untilString }"
+        "Viikoittain tiistaisin, ${ untilString }"
       ],
       "Weekly on Wednesday": [
-        "Viikottain keskiviikkoisin"
+        "Viikoittain keskiviikkoisin"
       ],
       "Weekly on Wednesday, ${ timesString }": [
-        "Viikottain keskiviikkoisin, ${ timesString }"
+        "Viikoittain keskiviikkoisin, ${ timesString }"
       ],
       "Weekly on Wednesday, ${ untilString }": [
-        "Viikottain keskiviikkoisin, ${ untilString }"
+        "Viikoittain keskiviikkoisin, ${ untilString }"
       ]
     },
     "Weekly recurring event, repeats on (multiple days), frequency": {

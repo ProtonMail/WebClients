@@ -882,7 +882,7 @@
         "Intente otro método"
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
-        "Intente guardar de nuevo. El guardado falló debido a: ${ saveError }"
+        "Error al guardar debido a: ${ saveError }. Intente guardar de nuevo."
       ],
       "Underline": [
         "Subrayado"
@@ -1043,20 +1043,14 @@
       "Disable": [
         "Deshabilitar"
       ],
-      "Disable encryption": [
-        "Deshabilitar el cifrado"
-      ],
-      "Disable expect signed": [
-        "Desactivar espera de firma"
+      "Disable E2EE": [
+        "Deshabilitar cifrado"
       ],
       "Enable": [
         "Habilitar"
       ],
-      "Enable encryption": [
-        "Habilitar el cifrado"
-      ],
-      "Enable expect signed": [
-        "Activar espera de firma"
+      "Enable E2EE": [
+        "Habilitar cifrado"
       ],
       "Generate missing keys": [
         "Generar claves faltantes"
@@ -3277,11 +3271,14 @@
       "Require at least one condition": [
         "Requiere al menos una condición"
       ],
+      "Servers are unreachable. Please try again in a few minutes or check our ${ statusPageLink }": [
+        "No hay conexión con los servidores. Intente de nuevo en unos minutos o compruebe nuestra ${ statusPageLink }."
+      ],
       "Signature not verified": [
         "Firma no verificada"
       ],
       "Signature verification failed": [
-        "Falló la verificación de la firma"
+        "Error en la verificación de la firma"
       ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Algunos de los nombres de las carpetas no están disponibles. Personalice la importación para editar estos nombres."
@@ -3300,6 +3297,9 @@
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Hubo un problema. ${ refresh } para continuar. Si aún ve este mensaje de error, contacte a nuestro ${ supportTeam }."
+      ],
+      "status page": [
+        "página de estado"
       ],
       "Tab closed": [
         "Pestaña cerrada"
@@ -3493,7 +3493,7 @@
     },
     "Error importing contact": {
       "Encryption failed": [
-        "Falló el cifrado"
+        "Error en el cifrado"
       ],
       "vCard versions < 3.0 not supported": [
         "Versiones vCard menores a 3.0 no compatibles"
@@ -3545,7 +3545,7 @@
         "Elemento"
       ],
       "Encryption failed": [
-        "Falló el cifrado"
+        "Error en el cifrado"
       ],
       "End time out of bounds": [
         "Hora final fuera de límites"
@@ -3554,7 +3554,7 @@
         "Evento"
       ],
       "Event validation failed": [
-        "Falló la validación del evento"
+        "Error en la validación del evento"
       ],
       "Floating times not supported": [
         "Tiempos flotantes no compatibles"
@@ -4951,7 +4951,7 @@
         "Retrasada"
       ],
       "Failed": [
-        "Fallida"
+        "Error"
       ],
       "In progress": [
         "En progreso"
@@ -6790,7 +6790,7 @@
         "Puede personalizar y descargar sus facturas con fines contables."
       ],
       "You can enable authentication sign in to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
-        "Puede habilitar el registro de autenticación para ver cuándo se accede a su cuenta y desde qué IP. Registraremos la dirección IP que accede a la cuenta y la hora, así como los intentos fallidos."
+        "Puede habilitar el registro de autenticación para ver cuándo se accede a su cuenta y desde qué IP. Registraremos la dirección IP que accede a la cuenta y la hora, así como los intentos que no funcionaron."
       ],
       "You can import one data type at a time.": [
         "Puede importar un tipo de datos a la vez."
@@ -12103,8 +12103,8 @@
         "Importar y exportar"
       ],
       "Import as simple event?": [
-        "¿Importar como evento simple?",
-        "¿Importar como eventos simples?"
+        "¿Importar como evento sin detalles?",
+        "¿Importar como eventos sin detalles?"
       ],
       "Import contacts": [
         "Importar contactos"

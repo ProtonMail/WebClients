@@ -473,6 +473,9 @@
       "Hide labels": [
         "Etiketleri gizle"
       ],
+      "Hide plan features": [
+        "Tarife özelliklerini gizle"
+      ],
       "I have a question": [
         "Bir sorum var"
       ],
@@ -1040,20 +1043,8 @@
       "Disable": [
         "Kullanımdan kaldır"
       ],
-      "Disable encryption": [
-        "Şifreleme kullanılmasın"
-      ],
-      "Disable expect signed": [
-        "İmzalama beklentisi kullanılmasın"
-      ],
       "Enable": [
         "Kullanıma al"
-      ],
-      "Enable encryption": [
-        "Şifreleme kullanılsın"
-      ],
-      "Enable expect signed": [
-        "İmzalama beklentisi kullanılsın"
       ],
       "Generate missing keys": [
         "Eksik anahtarları oluştur"
@@ -8983,6 +8974,9 @@
         "Her kullanıcı için ${ n } VPN bağlantısı",
         "Her kullanıcı için ${ n } VPN bağlantısı"
       ],
+      "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
+        "${ PASS_APP_NAME } sınırsız hide-my-email takma ad ile birlikte"
+      ],
       "${ size } attachment size": [
         "${ size } ek dosya boyutu"
       ],
@@ -9272,6 +9266,9 @@
       ],
       "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
         "${ MAIL_APP_NAME } uygulamasını ücretli tarife özellikleriyle kullanmayı sürdürmek istiyorsanız, abonelik ve ödeme seçeneklerinizi belirleyin."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Deneme süreniz ${ formattedPeriodEndDate } tarihinde sona eriyor"
       ]
     },
     "new_plans: info": {
@@ -9400,6 +9397,9 @@
       ]
     },
     "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } deneme"
+      ],
       "Your account's usage": [
         "Hesap kullanımınız"
       ]
@@ -9625,11 +9625,18 @@
       "Add more personalization with 15 email addresses and support for 3 custom email domains": [
         "15 e-posta adresi ve 3 özel e-posta etki alanı ile daha fazla kişiselleştime sağlayın"
       ],
+      "Boost your storage space to ${ bundleStorage } per user": [
+        "Her kullanıcı için depolama alanınızı ${ bundleStorage } boyutuna kadar artırın"
+      ],
       "Boost your storage space to ${ bundleStorage } total": [
         "Toplam depolama alanınızı ${ bundleStorage } boyutuna artırın"
       ],
       "Cover more ground with support for 10 custom email domains": [
         "10 özel e-posta etki alanı desteği ile daha geniş bir kullanım sağlayın"
+      ],
+      "Create up to ${ n } calendar": [
+        "${ n } taneye kadar takvim oluşturun",
+        "${ n } taneye kadar takvim oluşturun"
       ]
     },
     "Notification": {
@@ -10714,6 +10721,11 @@
     "Shared calendar label input placeholder": {
       "Add label": [
         "Etiket ekle"
+      ]
+    },
+    "Shared calendar; Info about calendar owner": {
+      "Shared by ${ ownerName }": [
+        "${ ownerName } tarafından paylaşılmış"
       ]
     },
     "Signature verification error when joining calendar": {
@@ -12824,6 +12836,11 @@
     "Upgrade notice": {
       "Upgrade to a ${ MAIL_SHORT_APP_NAME } paid plan to share your calendar.": [
         "Takviminizi paylaşabilmek için ücretli bir ${ MAIL_SHORT_APP_NAME } tarifesine geçin."
+      ]
+    },
+    "upsell panel": {
+      "Recommended": [
+        "Önerilen"
       ]
     },
     "User referee invited via email": {
