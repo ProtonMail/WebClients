@@ -81,7 +81,7 @@ export const createSharesChannel = (api: Api) =>
     eventChannelFactory<SharesGetResponse>({
         api,
         interval: INTERVAL_EVENT_TIMER,
-        eventID: NOOP_EVENT,
+        initialEventID: NOOP_EVENT,
         getCursor: () => ({ EventID: NOOP_EVENT, More: false }),
         onClose: () => logger.info(`[Saga::SharesChannel] closing channel`),
         onEvent: onSharesEvent,
