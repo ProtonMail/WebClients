@@ -105,7 +105,7 @@ export const ValueControl = <E extends ElementType = 'div'>({
                         : actions
                 }
                 actionsContainerClassName={actionsContainerClassName}
-                icon={icon && <Icon name={icon} size={20} style={{ color: 'var(--fieldset-cluster-icon-color)' }} />}
+                icon={icon}
             >
                 <div className="color-weak text-sm">{label}</div>
 
