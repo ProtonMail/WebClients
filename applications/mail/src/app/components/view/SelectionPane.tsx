@@ -1,21 +1,31 @@
 import { useEffect, useMemo, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 
 import { Location } from 'history';
 import { c, msgid } from 'ttag';
 
-import { Button } from '@proton/atoms';
-import { FeatureCode, Loader, useFeature, useFolders, useLabels } from '@proton/components';
+import { Button, Href } from '@proton/atoms';
+import { FeatureCode, Loader, useFeature, useFolders, useLabels, useModalState } from '@proton/components';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import { TelemetrySimpleLoginEvents } from '@proton/shared/lib/api/telemetry';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 import { LabelCount } from '@proton/shared/lib/interfaces/Label';
 import conversationSvg from '@proton/styles/assets/img/illustrations/selected-emails.svg';
 
+import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
+import { isSearch as testIsSearch } from '../../helpers/elements';
 import { getLabelName, isCustomLabel as testIsCustomLabel } from '../../helpers/labels';
 import { isConversationMode } from '../../helpers/mailSettings';
+import { extractSearchParameters } from '../../helpers/mailboxUrl';
 import { useSimpleLoginExtension } from '../../hooks/simpleLogin/useSimpleLoginExtension';
 import { useSimpleLoginTelemetry } from '../../hooks/simpleLogin/useSimpleLoginTelemetry';
+import { useDeepMemo } from '../../hooks/useDeepMemo';
+import { total as totalSelector } from '../../logic/elements/elementsSelectors';
+import { useAppSelector } from '../../logic/store';
+import { SearchParameters } from '../../models/tools';
+import EnableEncryptedSearchModal from '../header/search/AdvancedSearchFields/EnableEncryptedSearchModal';
 import SimpleLoginPlaceholder from './SimpleLoginPlaceholder';
 
 interface Props {
@@ -30,6 +40,7 @@ interface Props {
 const { SPAM } = MAILBOX_LABEL_IDS;
 
 const SelectionPane = ({ labelID, mailSettings, location, labelCount, checkedIDs = [], onCheckAll }: Props) => {
+    const appLocation = useLocation();
     const { feature: simpleLoginIntegrationFeature, loading: loadingSimpleLoadingFeature } = useFeature(
         FeatureCode.SLIntegration
     );
@@ -38,8 +49,15 @@ const SelectionPane = ({ labelID, mailSettings, location, labelCount, checkedIDs
     const [placeholderSLSeenSent, setPlaceholderSLSeenSent] = useState(false);
     const conversationMode = isConversationMode(labelID, mailSettings, location);
 
+    // We display 50 elements maximum in the list. To know how much results are matching a search, we store it in Redux, in elements.total
+    const elementsFoundCount = useAppSelector(totalSelector) || 0;
+
     const [labels] = useLabels();
     const [folders] = useFolders();
+
+    const { getESDBStatus } = useEncryptedSearchContext();
+    const { isEnablingContentSearch, isPaused, contentIndexingDone, isEnablingEncryptedSearch } = getESDBStatus();
+    const [enableESModalProps, setEnableESModalOpen, renderEnableESModal] = useModalState();
 
     const isCustomLabel = testIsCustomLabel(labelID, labels);
     const total = labelCount?.Total || 0;
@@ -48,6 +66,13 @@ const SelectionPane = ({ labelID, mailSettings, location, labelCount, checkedIDs
     const labelName = useMemo(() => getLabelName(labelID, labels, folders), [labelID, labels, folders]);
 
     const count = checkeds || total;
+
+    const searchParameters = useDeepMemo<SearchParameters>(() => extractSearchParameters(appLocation), [appLocation]);
+    const isSearch = testIsSearch(searchParameters);
+
+    // We want to hide the "enable ES" part from the point when the user enables it. We do not want to see the downloading part from here
+    const encryptedSearchEnabled =
+        isEnablingContentSearch || isPaused || contentIndexingDone || isEnablingEncryptedSearch;
 
     /*
      * With ttag we cannot have JSX in plural forms
@@ -121,7 +146,24 @@ const SelectionPane = ({ labelID, mailSettings, location, labelCount, checkedIDs
               );
     };
 
-    const text = isCustomLabel ? getLabelText() : getFolderText();
+    const getSelectionPaneText = () => {
+        if (isSearch && !checkeds) {
+            /* translator: To have plural forms AND a part in bold, we need to surround the bold part with "**" so that we can replace it by a <strong> tag in the code. Here, "{numberOfElements} result/s" will be bold. You need to put them in your translation too.
+             * ${elementsFoundCount} is the number of elements found during search
+             * ${labelName} is the name of the label/folder the in which the user is performing a search
+             * Full string for reference: 3 results found in Inbox
+             */
+            return c('Info').ngettext(
+                msgid`**${elementsFoundCount}** result found in ${labelName}`,
+                `**${elementsFoundCount}** results found in ${labelName}`,
+                elementsFoundCount
+            );
+        } else {
+            return isCustomLabel ? getLabelText() : getFolderText();
+        }
+    };
+
+    const text = getSelectionPaneText();
 
     const showText = checkeds || labelCount;
 
@@ -158,7 +200,27 @@ const SelectionPane = ({ labelID, mailSettings, location, labelCount, checkedIDs
                             {labelName}
                         </h3>
                     )}
-                    <p className="mb-8 text-keep-space">{showText ? getBoldFormattedText(text) : null}</p>
+                    <div className="mb-8">
+                        <p className="mb-2 text-keep-space">{showText ? getBoldFormattedText(text) : null}</p>
+                        {isSearch && !encryptedSearchEnabled && (
+                            <>
+                                <p>
+                                    {c('Info')
+                                        .t`For more search results, try searching for this keyword in the content of your email messages.`}
+                                    <br />
+                                    <Href href={getKnowledgeBaseUrl('/search-message-content')}>
+                                        {c('Info').t`Learn more`}
+                                    </Href>
+                                </p>
+                                <Button
+                                    onClick={() => setEnableESModalOpen(true)}
+                                    data-testid="encrypted-search:activate"
+                                >
+                                    {c('Action').t`Enable`}
+                                </Button>
+                            </>
+                        )}
+                    </div>
                     <div className="mb-8">
                         <img
                             src={conversationSvg}
@@ -169,6 +231,7 @@ const SelectionPane = ({ labelID, mailSettings, location, labelCount, checkedIDs
                     {checkeds > 0 && <Button onClick={() => onCheckAll(false)}>{c('Action').t`Deselect`}</Button>}
                 </>
             )}
+            {renderEnableESModal && <EnableEncryptedSearchModal openSearchAfterEnabling {...enableESModalProps} />}
         </div>
     );
 };
