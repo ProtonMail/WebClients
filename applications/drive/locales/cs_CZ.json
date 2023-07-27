@@ -3523,6 +3523,9 @@
       "Enter the credentials of the email account you want to import from.": [
         "Zadejte přihlašovací údaje e-mailového účtu, ze kterého chcete importovat."
       ],
+      "Enter the device name to confirm removal.": [
+        "Zadejte název zařízení a potvrďte odstranění."
+      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Zadejte ověřovací kód, který byl odeslán na ${ destinationText }."
       ],
@@ -4035,6 +4038,9 @@
         "Tím odstraníte odkazy a zrušíte přístup k vašim souborům nebo složkám pro každého, kdo má tyto odkazy.",
         "Tím odstraníte odkazy a zrušíte přístup k vašim souborům nebo složkám pro každého, kdo má tyto odkazy.",
         "Tím odstraníte odkazy a zrušíte přístup k vašim souborům nebo složkám pro každého, kdo má tyto odkazy."
+      ],
+      "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and stop syncing folders you added to My Computers.": [
+        "Tím odstraníte synchronizované zařízení ${ deviceName } z ${ DRIVE_APP_NAME } a ukončíte synchronizaci složek, které jste přidali do složky Počítače."
       ],
       "This will replace the existing file with the folder": [
         "Tímto se nahradí existující soubor složkou"

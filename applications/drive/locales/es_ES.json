@@ -2108,6 +2108,9 @@
       "Search failed": [
         "Error en la búsqueda"
       ],
+      "Servers are unreachable. Please try again in a few minutes or check our ${ statusPageLink }": [
+        "No hay conexión con los servidores. Intenta de nuevo en unos minutos o comprueba nuestra ${ statusPageLink }."
+      ],
       "Signature not verified": [
         "Firma no verificada"
       ],
@@ -2137,6 +2140,9 @@
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Se ha producido un error: ${ refresh } para continuar. Si aún ves este mensaje de error, póngate en contacto con nuestro ${ supportTeam }."
+      ],
+      "status page": [
+        "página de estado"
       ],
       "The email addresses do not match": [
         "Las direcciones de correo electrónico no coinciden"
@@ -6003,7 +6009,7 @@
         "Direcciones de correo electrónico"
       ],
       "Email settings": [
-        "Configuración del correo electrónico"
+        "Ajustes del correo"
       ],
       "Empty trash": [
         "Vaciar papelera"
@@ -6052,8 +6058,8 @@
         "Verificación humana"
       ],
       "Import as simple event?": [
-        "¿Importar como evento simple?",
-        "¿Importar como eventos simples?"
+        "¿Importar como evento sin detalles?",
+        "¿Importar como eventos sin detalles?"
       ],
       "Import contacts": [
         "Importar contactos"

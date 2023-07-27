@@ -3523,6 +3523,9 @@
       "Enter the credentials of the email account you want to import from.": [
         "Введіть облікові дані облікового запису електронної пошти, з якої ви хочете імпортувати."
       ],
+      "Enter the device name to confirm removal.": [
+        "Введіть назву пристрою, щоб підтвердити видалення."
+      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Введіть код перевірки, який був надісланий на ${ destinationText }."
       ],
@@ -4035,6 +4038,9 @@
         "Це видалить посилання та вилучить доступ до ваших тек для всіх, хто має посилання.",
         "Це видалить посилання та вилучить доступ до ваших тек для всіх, хто має посилання.",
         "Це видалить посилання та вилучить доступ до ваших тек для всіх, хто має посилання."
+      ],
+      "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and stop syncing folders you added to My Computers.": [
+        "Це призведе до видалення синхронізованого пристрою ${ deviceName } з ${ DRIVE_APP_NAME } і зупинить синхронізацію тек, які ви додали до \"Мої комп'ютери\"."
       ],
       "This will replace the existing file with the folder": [
         "Це призведе до заміни наявного файлу текою"
