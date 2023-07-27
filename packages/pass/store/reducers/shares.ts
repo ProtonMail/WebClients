@@ -7,9 +7,9 @@ import { fullMerge, objectDelete, objectMap, partialMerge } from '@proton/pass/u
 
 import {
     bootSuccess,
-    serverEvent,
     shareDeleteSync,
     shareEditSync,
+    shareEvent,
     sharesSync,
     syncSuccess,
     vaultCreationFailure,
@@ -70,9 +70,9 @@ export const withOptimisticShares = withOptimistic<SharesState>(
             return fullMerge(state, action.payload.shares);
         }
 
-        if (serverEvent.match(action) && state !== null && action.payload.event.type === 'share') {
+        if (shareEvent.match(action) && state !== null) {
             return partialMerge(state, {
-                [action.payload.event.shareId]: { eventId: action.payload.event.Events.LatestEventID },
+                [action.payload.shareId]: { eventId: action.payload.Events.LatestEventID },
             });
         }
 
