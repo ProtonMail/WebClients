@@ -12,7 +12,6 @@ import xhr from '@proton/shared/lib/fetch/fetch';
 import { withLocaleHeaders } from '@proton/shared/lib/fetch/headers';
 import { getDateHeader } from '@proton/shared/lib/fetch/helpers';
 import { localeCode } from '@proton/shared/lib/i18n';
-import identity from '@proton/utils/identity';
 
 import type {
     Api,
@@ -69,7 +68,7 @@ const createApi = ({ config, auth, onSessionRefresh }: ApiCreateOptions): Api =>
 
     const apiCall = withApiHandlers({ apiContext: ctx, refreshHandler });
 
-    const api = async ({ output = 'json', mapResponse, ...rest }: ApiOptions): Promise<ApiResult> => {
+    const api = async ({ output = 'json', ...rest }: ApiOptions): Promise<ApiResult> => {
         const config = ctx.auth ? rest : withLocaleHeaders(localeCode, rest);
 
         return apiCall(config)
@@ -97,7 +96,7 @@ const createApi = ({ config, auth, onSessionRefresh }: ApiCreateOptions): Api =>
                                 return response[output]();
                         }
                     })()
-                ).then(mapResponse ?? identity);
+                );
             })
             .catch((e: any) => {
                 const serverTime = e.response?.headers ? getDateHeader(e.response.headers) : undefined;

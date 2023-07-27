@@ -2,14 +2,16 @@
 import { all, fork, put, select } from 'redux-saga/effects';
 
 import { PassCrypto } from '@proton/pass/crypto';
-import { type Api, ChannelType, type ServerEvent } from '@proton/pass/types';
+import type { UserEvent } from '@proton/pass/types';
+import { type Api } from '@proton/pass/types';
 import { notIn, prop } from '@proton/pass/utils/fp';
 import { logId, logger } from '@proton/pass/utils/logger';
-import { getLatestID } from '@proton/shared/lib/api/events';
+import { getEvents, getLatestID } from '@proton/shared/lib/api/events';
 import { INTERVAL_EVENT_TIMER } from '@proton/shared/lib/constants';
 import type { Address } from '@proton/shared/lib/interfaces';
 
-import { setUserPlan, syncIntent } from '../../actions';
+import type { EventManagerEvent } from '../../../events/manager';
+import { setUserPlan, syncIntent, userEvent } from '../../actions';
 import type { UserPlanState } from '../../reducers';
 import { selectAllAddresses, selectLatestEventId } from '../../selectors/user';
 import type { State, WorkerRootSagaOptions } from '../../types';
@@ -19,11 +21,13 @@ import { channelEventsWorker, channelWakeupWorker } from './channel.worker';
 import type { EventChannel } from './types';
 
 function* onUserEvent(
-    event: ServerEvent<ChannelType.USER>,
-    _: EventChannel<ChannelType.USER>,
+    event: EventManagerEvent<UserEvent>,
+    _: EventChannel<UserEvent>,
     { getAuth }: WorkerRootSagaOptions
 ) {
-    if (event.error) throw event.error;
+    if ('error' in event) throw event.error;
+
+    yield put(userEvent(event));
 
     logger.info(`[ServerEvents::User] event ${logId(event.EventID!)}`);
     const { User: user } = event;
@@ -61,11 +65,12 @@ function* onUserEvent(
 }
 
 export const createUserChannel = (api: Api, eventID: string) =>
-    eventChannelFactory<ChannelType.USER>({
+    eventChannelFactory<UserEvent>({
         api,
         interval: INTERVAL_EVENT_TIMER,
-        type: ChannelType.USER,
         eventID,
+        getCursor: ({ EventID, More }) => ({ EventID, More: Boolean(More) }),
+        query: getEvents,
         onEvent: onUserEvent,
         onClose: () => logger.info(`[Saga::UserChannel] closing channel`),
     });
@@ -78,8 +83,8 @@ export function* userChannel(api: Api, options: WorkerRootSagaOptions) {
         ((yield api(getLatestID())) as { EventID: string }).EventID;
 
     const eventsChannel = createUserChannel(api, eventID);
-    const events = fork(channelEventsWorker<ChannelType.USER>, eventsChannel, options);
-    const wakeup = fork(channelWakeupWorker<ChannelType.USER>, eventsChannel);
+    const events = fork(channelEventsWorker<UserEvent>, eventsChannel, options);
+    const wakeup = fork(channelWakeupWorker<UserEvent>, eventsChannel);
 
     yield all([events, wakeup]);
 }

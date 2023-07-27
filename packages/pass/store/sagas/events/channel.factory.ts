@@ -1,16 +1,12 @@
 import { eventChannel } from 'redux-saga';
 
-import type { ServerEvent } from '@proton/pass/types';
-import type { ChannelType } from '@proton/pass/types';
 import { merge } from '@proton/pass/utils/object/merge';
-import createEventManager, { type EventManager } from '@proton/shared/lib/eventManager/eventManager';
-import identity from '@proton/utils/identity';
 
-import type { WorkerRootSagaOptions } from '../../types';
+import { type EventManagerEvent, eventManager } from '../../../events/manager';
 import type { EventChannel, EventChannelOnError, EventChannelOptions } from './types';
 
-const channelErrorHandler = <T extends ChannelType, O>(onError?: EventChannelOnError<T, O>) => {
-    const wrappedOnError: EventChannelOnError<T, O> = function* (error, eventsChannel, options) {
+const channelErrorHandler = <T extends {}>(onError?: EventChannelOnError<T>) => {
+    const wrappedOnError: EventChannelOnError<T> = function* (error, eventsChannel, options) {
         yield onError?.(error, eventsChannel, options);
 
         if (error instanceof Error && ['LockedSession', 'InactiveSession'].includes(error.name)) {
@@ -21,17 +17,15 @@ const channelErrorHandler = <T extends ChannelType, O>(onError?: EventChannelOnE
     return wrappedOnError;
 };
 
-export const eventChannelFactory = <T extends ChannelType = ChannelType, O = WorkerRootSagaOptions>(
-    config: EventChannelOptions<T, O>
-) => {
-    const { type, onClose, onError, mapEvent = identity } = config;
-    const manager: EventManager = createEventManager(config);
+export const eventChannelFactory = <T extends {}>(config: EventChannelOptions<T>) => {
+    const { onClose, onError } = config;
+    const manager = eventManager<T>(config);
 
     return merge(config, {
-        onError: channelErrorHandler<T, O>(onError),
+        onError: channelErrorHandler<T>(onError),
         manager,
-        channel: eventChannel<ServerEvent>((emitter) => {
-            const unsubscribe = manager.subscribe((event) => emitter(mapEvent({ ...event, type })));
+        channel: eventChannel<EventManagerEvent<T>>((emitter) => {
+            const unsubscribe = manager.subscribe(emitter);
 
             return () => {
                 onClose?.();
