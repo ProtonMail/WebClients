@@ -1017,6 +1017,126 @@
         <LastTopVisibleEntry>AAAAAAAAAAAAAAAAAAAAAA==</LastTopVisibleEntry>
         <PreviousParentGroup>iIeq7AEAAABARkgCAGAAAA==</PreviousParentGroup>
       </Group>
+      <Group>
+        <UUID>rbANwgLLRlSX3QoGaevZtw==</UUID>
+        <Name>TOTP definitions</Name>
+        <Notes/>
+        <IconID>48</IconID>
+        <Times>
+          <LastModificationTime>pS1T3A4AAAA=</LastModificationTime>
+          <CreationTime>iS1T3A4AAAA=</CreationTime>
+          <LastAccessTime>pS1T3A4AAAA=</LastAccessTime>
+          <ExpiryTime>iS1T3A4AAAA=</ExpiryTime>
+          <Expires>False</Expires>
+          <UsageCount>0</UsageCount>
+          <LocationChanged>ni1T3A4AAAA=</LocationChanged>
+        </Times>
+        <IsExpanded>True</IsExpanded>
+        <DefaultAutoTypeSequence/>
+        <EnableAutoType>null</EnableAutoType>
+        <EnableSearching>null</EnableSearching>
+        <LastTopVisibleEntry>AAAAAAAAAAAAAAAAAAAAAA==</LastTopVisibleEntry>
+        <Entry>
+          <UUID>JH3dwjOZRnCyGO+449ZzjA==</UUID>
+          <IconID>0</IconID>
+          <ForegroundColor/>
+          <BackgroundColor/>
+          <OverrideURL/>
+          <Tags/>
+          <Times>
+            <LastModificationTime>pS1T3A4AAAA=</LastModificationTime>
+            <CreationTime>8iVT3A4AAAA=</CreationTime>
+            <LastAccessTime>pS1T3A4AAAA=</LastAccessTime>
+            <ExpiryTime>8iVT3A4AAAA=</ExpiryTime>
+            <Expires>False</Expires>
+            <UsageCount>0</UsageCount>
+            <LocationChanged>pS1T3A4AAAA=</LocationChanged>
+          </Times>
+          <PreviousParentGroup>peyI7pxERxW3HudVhmU4xQ==</PreviousParentGroup>
+          <String>
+            <Key>Notes</Key>
+            <Value/>
+          </String>
+          <String>
+            <Key>Password</Key>
+            <Value ProtectInMemory="True"/>
+          </String>
+          <String>
+            <Key>Title</Key>
+            <Value>Modern TOTP definition</Value>
+          </String>
+          <String>
+            <Key>URL</Key>
+            <Value/>
+          </String>
+          <String>
+            <Key>UserName</Key>
+            <Value/>
+          </String>
+          <String>
+            <Key>otp</Key>
+            <Value ProtectInMemory="True">otpauth://totp/Modern%20TOTP%20definition:none?secret=5KO67YMS2FHKA627&amp;period=42&amp;digits=8</Value>
+          </String>
+          <AutoType>
+            <Enabled>True</Enabled>
+            <DataTransferObfuscation>0</DataTransferObfuscation>
+            <DefaultSequence/>
+          </AutoType>
+          <History/>
+        </Entry>
+        <Entry>
+          <UUID>L4T40aLuRPe5N/+mvrAZ/Q==</UUID>
+          <IconID>0</IconID>
+          <ForegroundColor/>
+          <BackgroundColor/>
+          <OverrideURL/>
+          <Tags/>
+          <Times>
+            <LastModificationTime>pS1T3A4AAAA=</LastModificationTime>
+            <CreationTime>TSZT3A4AAAA=</CreationTime>
+            <LastAccessTime>pS1T3A4AAAA=</LastAccessTime>
+            <ExpiryTime>TSZT3A4AAAA=</ExpiryTime>
+            <Expires>False</Expires>
+            <UsageCount>0</UsageCount>
+            <LocationChanged>pS1T3A4AAAA=</LocationChanged>
+          </Times>
+          <PreviousParentGroup>peyI7pxERxW3HudVhmU4xQ==</PreviousParentGroup>
+          <String>
+            <Key>Notes</Key>
+            <Value/>
+          </String>
+          <String>
+            <Key>Password</Key>
+            <Value ProtectInMemory="True"/>
+          </String>
+          <String>
+            <Key>TOTP Seed</Key>
+            <Value ProtectInMemory="True">AU2HMGCJYPNI2WZT</Value>
+          </String>
+          <String>
+            <Key>TOTP Settings</Key>
+            <Value>42;8</Value>
+          </String>
+          <String>
+            <Key>Title</Key>
+            <Value>Legacy TOTP definition</Value>
+          </String>
+          <String>
+            <Key>URL</Key>
+            <Value/>
+          </String>
+          <String>
+            <Key>UserName</Key>
+            <Value/>
+          </String>
+          <AutoType>
+            <Enabled>True</Enabled>
+            <DataTransferObfuscation>0</DataTransferObfuscation>
+            <DefaultSequence/>
+          </AutoType>
+          <History/>
+        </Entry>
+      </Group>
     </Group>
     <DeletedObjects>
       <DeletedObject>
