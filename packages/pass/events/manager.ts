@@ -11,16 +11,17 @@ export type EventCursor = { EventID: string; More: boolean };
 
 export type EventManagerConfig<T extends {}> = {
     api: Api /* Function to call the API */;
-    eventID: string /* Initial event ID to begin from */;
     interval?: number /* Maximum interval time to wait between each call */;
-    query: (eventID: string) => object /* Event polling endpoint override */;
+    initialEventID: string;
+    query: (eventID: string) => {} /* Event polling endpoint override */;
     getCursor: (event: T) => EventCursor;
+    getLatestEventID?: () => Promise<string> | string;
 };
 
 export type EventManager<T extends {}> = {
     state: EventManagerState;
     setEventID: (eventID: string) => void;
-    getEventID: () => string | undefined;
+    getEventID: () => Maybe<string>;
     start: () => void;
     stop: () => void;
     call: () => Promise<void>;
@@ -39,25 +40,20 @@ type EventManagerState = {
 
 export const eventManager = <T extends {}>({
     api,
-    eventID: initialEventID,
     interval = ACTIVE_POLLING_TIMEOUT,
+    initialEventID,
     query,
     getCursor,
+    getLatestEventID,
 }: EventManagerConfig<T>): EventManager<T> => {
-    if (!initialEventID) throw new Error('eventID must be provided.');
-
     const listeners = createListeners<[EventManagerEvent<T>]>();
 
-    const state: EventManagerState = {
-        interval,
-        retryIndex: 0,
-        lastEventID: initialEventID,
-    };
+    const state: EventManagerState = { interval, retryIndex: 0, lastEventID: initialEventID };
 
     const setInterval = (nextInterval: number) => (state.interval = nextInterval);
 
     const setEventID = (eventID: string) => (state.lastEventID = eventID);
-    const getEventID = () => state.lastEventID;
+    const getEventID = () => (state.lastEventID ? state.lastEventID : undefined);
 
     const setRetryIndex = (index: number) => (state.retryIndex = index);
     const getRetryIndex = () => state.retryIndex;
@@ -112,8 +108,8 @@ export const eventManager = <T extends {}>({
             state.abortController = abortController;
 
             while (true) {
-                const eventID = getEventID();
-                if (!eventID) throw new Error('EventID undefined');
+                const eventID = getEventID() ?? (await getLatestEventID?.());
+                if (!eventID) throw new Error('No valid `EventID` provided');
 
                 const result = (await api<T>({
                     ...query(eventID),
