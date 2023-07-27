@@ -31,6 +31,7 @@ import {
 import { selectAllShares, selectShare } from '../../selectors';
 import type { WorkerRootSagaOptions } from '../../types';
 import { parseItemRevision } from '../workers/items';
+import { getShareLatestEventId } from '../workers/shares';
 import { getAllShareKeys } from '../workers/vaults';
 import { eventChannelFactory } from './channel.factory';
 import { channelEventsWorker, channelWakeupWorker } from './channel.worker';
@@ -139,17 +140,17 @@ export const createShareChannel = (api: Api, { shareId, eventId }: Share) =>
     eventChannelFactory<ShareEventResponse>({
         api,
         interval: INTERVAL_EVENT_TIMER,
-        eventID: eventId,
+        initialEventID: eventId,
+        query: (eventId) => ({ url: `pass/v1/share/${shareId}/event/${eventId}`, method: 'get' }),
         getCursor: ({ Events }) => ({ EventID: Events.LatestEventID, More: Events.EventsPending }),
+        getLatestEventID: () => getShareLatestEventId(shareId),
         onClose: () => logger.info(`[Saga::ShareChannel] closing channel for ${logId(shareId)}`),
         onEvent: onShareEvent(shareId),
         onError: onShareEventError(shareId),
-        query: (eventId) => ({ url: `pass/v1/share/${shareId}/event/${eventId}`, method: 'get' }),
     });
 
 export const getShareChannelForks = (api: Api, options: WorkerRootSagaOptions) => (share: Share) => {
     logger.info(`[Saga::ShareChannel] start polling for share ${logId(share.shareId)}`);
-
     const eventsChannel = createShareChannel(api, share);
     const events = fork(channelEventsWorker<ShareEventResponse>, eventsChannel, options);
     const wakeup = fork(channelWakeupWorker<ShareEventResponse>, eventsChannel);
