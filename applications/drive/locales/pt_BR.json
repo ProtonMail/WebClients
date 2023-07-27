@@ -652,7 +652,7 @@
         "Experimente gratuitamente"
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
-        "Tente salvar novamente. Falha ao salvar devido a: ${ saveError }"
+        "Tente salvar novamente. Erro ao salvar devido a: ${ saveError }"
       ],
       "Undo": [
         "Desfazer"
@@ -762,13 +762,13 @@
         "Arquivo ICS vazio"
       ],
       "Invalid event": [
-        "Evento inválido"
+        "O evento não é válido."
       ],
       "Invalid ICS file": [
-        "Arquivo ICS inválido"
+        "O arquivo ICS não é válido."
       ],
       "Invalid method": [
-        "Método inválido"
+        "O método não é válido."
       ],
       "Unsupported calendar component": [
         "Componente de calendário não suportado"
@@ -1991,7 +1991,7 @@
         "O endereço de e-mail é obrigatório"
       ],
       "Email is not valid": [
-        "O e-mail é inválido"
+        "O e-mail não é válido."
       ],
       "Enter 6 digits": [
         "Insira 6 dígitos"
@@ -2015,31 +2015,31 @@
         "O nome da pasta não pode ser vazio."
       ],
       "Image upload failed": [
-        "Falha no carregamento da imagem"
+        "Erro no carregamento da imagem"
       ],
       "IMAP server is required": [
         "O servidor IMAP é obrigatório"
       ],
       "Incorrect login credentials. Please try again.": [
-        "Credenciais de início de sessão inválidos. Tente novamente."
+        "As credenciais de início de sessão não são válidas. Tente novamente."
       ],
       "Incorrect mailbox password. Please try again.": [
         "Senha da caixa de correio incorreta. Tente novamente."
       ],
       "Incorrect password. Please try again.": [
-        "Senha inválida. Tente novamente."
+        "A senha não é válida. Tente novamente."
       ],
       "Invalid email address": [
-        "Endereço de e-mail inválido"
+        "O endereço de e-mail não é válido."
       ],
       "Invalid name": [
-        "Nome inválido"
+        "O nome não é válido."
       ],
       "Invalid public key file": [
-        "Arquivo de chave pública inválido"
+        "O arquivo de chave pública não é válido."
       ],
       "Invalid verification code": [
-        "Código de verificação inválido"
+        "O código de verificação não é válido."
       ],
       "Label name cannot be empty.": [
         "O nome do marcador não pode ser vazio."
@@ -2100,19 +2100,19 @@
         "A chave do endereço principal não está descriptografada."
       ],
       "Report failed to be sent": [
-        "A denúncia falhou ao ser enviada"
+        "Não foi possível enviar a denúncia."
       ],
       "Request timed out": [
         "A solicitação expirou"
       ],
       "Search failed": [
-        "A pesquisa falhou"
+        "Erro de pesquisa"
       ],
       "Signature not verified": [
         "Assinatura não verificada"
       ],
       "Signature verification failed": [
-        "Falha na verificação da assinatura"
+        "Erro na verificação da assinatura"
       ],
       "Some contacts could not be deleted": [
         "Não foi possível excluir alguns contatos."
@@ -2142,13 +2142,13 @@
         "Os endereços de e-mail não correspondem."
       ],
       "The folder name is invalid. Please choose a different name.": [
-        "O nome da pasta é inválido. Escolha um nome diferente."
+        "O nome da pasta não é válido. Escolha um nome diferente."
       ],
       "The folder name is too long. Please choose a different name.": [
         "O nome da pasta é muito longo. Escolha um nome diferente."
       ],
       "The label name is invalid. Please choose a different name.": [
-        "O nome do marcador é inválido. Escolha um nome diferente."
+        "O nome do marcador não é válido. Escolha um nome diferente."
       ],
       "The label name is too long. Please choose a different name.": [
         "O nome do marcador é muito longo. Escolha um nome diferente."
@@ -2247,7 +2247,7 @@
         "O arquivo ${ formattedFilename } contém mais de ${ MAX_IMPORT_EVENTS_STRING } eventos."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
-        "Seu arquivo ${ formattedFilename } tem um método inválido e não é possível importá-lo."
+        "Seu arquivo ${ formattedFilename } tem um método incorreto e não é possível importá-lo."
       ],
       "Your file ${ formattedFilename } has no events to be imported.": [
         "O arquivo ${ formattedFilename } não tem eventos a serem importados."
@@ -2261,7 +2261,7 @@
     },
     "Error importing contact": {
       "Encryption failed": [
-        "Falha na criptografia"
+        "Erro na criptografia"
       ],
       "vCard versions < 3.0 not supported": [
         "versões vCard <3.0 não são suportadas"
@@ -2313,7 +2313,7 @@
         "Elemento"
       ],
       "Encryption failed": [
-        "Falha na criptografia"
+        "Erro na criptografia"
       ],
       "End time out of bounds": [
         "Hora de término fora dos limites"
@@ -2322,7 +2322,7 @@
         "Evento"
       ],
       "Event validation failed": [
-        "Falha na validação do evento"
+        "Erro na validação do evento"
       ],
       "Floating times not supported": [
         "Tempos flutuantes não suportados"
@@ -2331,7 +2331,7 @@
         "Informação de horário disponível/ocupado"
       ],
       "Invalid event": [
-        "Evento inválido"
+        "O evento não é válido."
       ],
       "Journal entry": [
         "Entradas periódicas"
@@ -2340,13 +2340,13 @@
         "Evento de dia inteiro mal formado"
       ],
       "Malformed end time": [
-        "Hora de término inválido"
+        "A hora de término não é válida."
       ],
       "Malformed recurring event": [
         "Evento recorrente mal formado"
       ],
       "Malformed start time": [
-        "Hora de início inválido"
+        "A hora de início não é válida."
       ],
       "Missing start time": [
         "Falta o horário de início"
@@ -2443,10 +2443,10 @@
         "Não foi possível ler o arquivo ICS anexado."
       ],
       "Invalid invitation": [
-        "Convite inválido"
+        "O convite não é válido."
       ],
       "Invalid response": [
-        "Resposta inválida"
+        "A resposta não é válida."
       ],
       "The event could not be added to your calendar. No answer was sent": [
         "Não foi possível adicionar o evento ao seu calendário. Nenhuma resposta foi enviada"
@@ -2461,7 +2461,7 @@
         "Convite não suportado"
       ],
       "Unsupported response": [
-        "Tipo de resposta não suportado"
+        "A categoria de resposta não é suportado."
       ],
       "We could not cancel the event in your calendar": [
         "Não foi possível cancelar o evento no seu calendário"
@@ -2804,7 +2804,7 @@
     },
     "Import calendar warning": {
       "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
-        "${ CALENDAR_APP_NAME } atualmente não oferece suporte para alguns tipos de eventos, detalhes e formatos."
+        "${ CALENDAR_APP_NAME } atualmente não oferece suporte para algumas categorias de eventos, detalhes e formatos."
       ],
       "vCard versions < 3.0": [
         "versões vCard < 3.0"
@@ -3184,7 +3184,7 @@
         "O acesso à conta foi restringido devido a faturas não pagas. Entre em contato com o seu administrador."
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
-        "A verificação de endereço com chaves confiáveis ​​está ativada para este endereço. Para poder enviar para este endereço, primeiro confie nas chaves públicas que podem ser usadas para envio."
+        "A verificação de endereço com chaves de confiança ​​está ativada para este endereço. Para poder enviar para este endereço, primeiro confie nas chaves públicas que podem ser usadas para envio."
       ],
       "All (${ totalFoldersCount } folder)": [
         "Tudo (${ totalFoldersCount } pasta)",
@@ -3359,10 +3359,10 @@
         "Download cancelado"
       ],
       "Download failed": [
-        "Falha no download"
+        "Erro no download"
       ],
       "Download failed due to ${ error }": [
-        "Download falhou devido a ${ error }"
+        "Erro no download devido a ${ error }"
       ],
       "Download finished": [
         "Download concluído"
@@ -3441,13 +3441,13 @@
         "Erro"
       ],
       "Failed to generate a secure link. The reason is: ${ error }": [
-        "Falha ao gerar um link seguro. O motivo é: ${ error }"
+        "Erro ao gerar um link seguro. O motivo é: ${ error }"
       ],
       "Failed to generate a secure link. Try again later": [
-        "Falha ao gerar um link seguro. Tente novamente mais tarde"
+        "Erro ao gerar um link seguro. Tente novamente mais tarde"
       ],
       "Failed to open a secure link. The reason is: ${ error }": [
-        "Falha ao abrir um link seguro. O motivo é: ${ error }"
+        "Erro ao abrir um link seguro. O motivo é: ${ error }"
       ],
       "File \"${ name }\" was deleted during download": [
         "Arquivo \"${ name }\" foi deletado durante o download"
@@ -3565,7 +3565,7 @@
         "Conexão com a internet restaurada."
       ],
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
-        "Parece que você tentou enviar ${ uploadName } recentemente. Se o envio falhou, ${ replaceFile }. Se o envio ainda estiver em andamento, substituí-lo cancelará o envio em andamento."
+        "Parece que você tentou enviar ${ uploadName } recentemente. Em caso de erros de envio, ${ replaceFile }. Se o envio ainda estiver em andamento, substituí-lo cancelará o envio em andamento."
       ],
       "Items in the trash will stay here until you delete them permanently": [
         "Os itens na lixeira permanecerão aqui até que você os exclua permanentemente"
@@ -3691,7 +3691,7 @@
         "Uma de suas unidades criptografadas está bloqueada. Isso provavelmente se deve a uma redefinição de senha recente."
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
-        "Uma ou mais de suas chaves confiáveis foram marcadas como \"comprometidas\" pelo proprietário. Recomendamos que você \"desconfie\" dessas chaves."
+        "Uma ou mais de suas chaves de confiança foram marcadas como \"comprometidas\" pelo proprietário. Recomendamos que você \"desconfie\" dessas chaves."
       ],
       "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } character is allowed": [
         "Apenas ${ MAX_CUSTOM_PASSWORD_LENGTH } caractere é permitido",
@@ -3750,7 +3750,7 @@
         "Preparando link para a pasta"
       ],
       "Preview failed to be loaded": [
-        "A pré-visualização falhou ao carregar"
+        "Não foi possível carregar a pré-visualização."
       ],
       "Preview for this file type is not supported": [
         "A pré-visualização deste arquivo não é suportada."
@@ -3840,10 +3840,10 @@
         "Problema de assinatura"
       ],
       "Some files failed to download. Try downloading the files again.": [
-        "Alguns arquivos falharam ao baixar. Tente baixar os arquivos novamente."
+        "Não foi possível baixar alguns arquivos. Tente baixar os arquivos novamente."
       ],
       "Some files failed to upload. Try uploading the files again.": [
-        "Falha no envio de alguns arquivos falhou. Tente enviá-los novamente."
+        "Não foi possível enviar alguns arquivos. Tente enviá-los novamente."
       ],
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "Alguns de seus arquivos não estão mais acessíveis. Restaure o acesso aos seus arquivos. ${ StartRecoveryButton }"
@@ -4075,7 +4075,7 @@
         "Você pode verificar o progresso ${ importProgressLink }."
       ],
       "You can import one data type at a time.": [
-        "Você pode importar um tipo de dado por vez."
+        "Você pode importar uma categoria de dado por vez."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Você pode ativar as notificações para receber alertas quando novas mensagens de e-mail chegarem nesta pasta."
@@ -4563,7 +4563,7 @@
         "Mostrar senha"
       ],
       "Select type of abuse": [
-        "Selecione o tipo de abuso"
+        "Selecione a categoria de abuso"
       ],
       "Set expiration date": [
         "Definir data de vencimento"
@@ -4895,22 +4895,22 @@
         "\"${ name }\" excluído permanentemente da lixeira"
       ],
       "\"${ name }\" failed to be created": [
-        "\"${ name }\" falhou ao ser criado"
+        "Não foi possível criar \"${ name }\"."
       ],
       "\"${ name }\" failed to be deleted permanently from trash": [
-        "\"${ name }\" falhou ao ser excluído permanentemente da lixeira"
+        "Não foi possível excluir \"${ name }\" permanentemente da lixeira."
       ],
       "\"${ name }\" failed to be moved": [
-        "\"${ name }\" falhou ao ser movido"
+        "Não foi possível mover \"${ name }\"."
       ],
       "\"${ name }\" failed to be moved to trash": [
-        "\"${ name }\" falhou ao ser movido para a lixeira"
+        "Não foi possível mover \"${ name }\" para a lixeira."
       ],
       "\"${ name }\" failed to be restored from trash": [
-        "Falha ao restaurar \"${ name }\" da lixeira"
+        "Erro ao restaurar \"${ name }\" da lixeira"
       ],
       "\"${ name }\" failed to be saved": [
-        "\"${ name }\" falhou ao ser salvado"
+        "Não foi possível salvar \"${ name }\"."
       ],
       "\"${ name }\" moved to trash": [
         "\"${ name }\" movido para a lixeira"
@@ -4925,34 +4925,34 @@
         "\"${ name }\" movido"
       ],
       "\"${ newName }\" failed to be renamed": [
-        "\"${ newName }\" falhou ao ser renomeado."
+        "Não foi possível mudar o nome de \"${ newName }\"."
       ],
       "\"${ newName }\" renamed successfully": [
         "\"${ newName }\" renomeado"
       ],
       "${ count } item failed to be decrypted": [
-        "Falha ao descriptografar ${ count } item",
-        "Falha ao descriptografar ${ count } itens"
+        "Erro ao descriptografar ${ count } item",
+        "Erro ao descriptografar ${ count } itens"
       ],
       "${ numberOfItems } item deleted permanently from trash": [
         "${ numberOfItems } item excluído permanentemente da lixeira",
         "${ numberOfItems } itens excluídos permanentemente da lixeira"
       ],
       "${ numberOfItems } item failed to be deleted permanently from trash": [
-        "Falha ao excluir permanentemente ${ numberOfItems } arquivo da lixeira",
-        "Falha ao excluir permanentemente ${ numberOfItems } arquivos da lixeira"
+        "Erro ao excluir permanentemente ${ numberOfItems } arquivo da lixeira",
+        "Erro ao excluir permanentemente ${ numberOfItems } arquivos da lixeira"
       ],
       "${ numberOfItems } item failed to be moved": [
-        "Falha ao mover ${ numberOfItems } item",
-        "Falha ao mover ${ numberOfItems } itens"
+        "Erro ao mover ${ numberOfItems } item",
+        "Erro ao mover ${ numberOfItems } itens"
       ],
       "${ numberOfItems } item failed to be moved to trash": [
-        "Falha ao mover ${ numberOfItems } item para a lixeira",
-        "Falha ao mover ${ numberOfItems } itens para a lixeira"
+        "Erro ao mover ${ numberOfItems } item para a lixeira",
+        "Erro ao mover ${ numberOfItems } itens para a lixeira"
       ],
       "${ numberOfItems } item failed to be restored from trash": [
-        "Falha ao restaurar ${ numberOfItems } arquivo da lixeira",
-        "Falha ao restaurar ${ numberOfItems } arquivos da lixeira"
+        "Erro ao restaurar ${ numberOfItems } arquivo da lixeira",
+        "Erro ao restaurar ${ numberOfItems } arquivos da lixeira"
       ],
       "${ numberOfItems } item moved to trash": [
         "${ numberOfItems } item movido para a lixeira",
@@ -4967,8 +4967,8 @@
         "${ numberOfItems } itens movidos"
       ],
       "${ numberOfItems } link to your item failed to be deleted": [
-        "Falha ao excluir ${ numberOfItems } link de seu item",
-        "Falha ao excluir ${ numberOfItems } links de seus itens"
+        "Erro ao excluir ${ numberOfItems } link de seu item",
+        "Erro ao excluir ${ numberOfItems } links de seus itens"
       ],
       "${ numberOfItems } link to your item was deleted": [
         "${ numberOfItems } link para seu arquivo foi deletado",
@@ -4990,10 +4990,10 @@
         "O grupo de contatos foi atualizado"
       ],
       "Device failed to be removed": [
-        "Falha ao remover o dispositivo"
+        "Erro ao remover o dispositivo"
       ],
       "Device failed to be renamed": [
-        "Falha ao renomear o dispositivo"
+        "Erro ao renomear o dispositivo"
       ],
       "Device removed": [
         "Dispositivo removido"
@@ -5005,13 +5005,13 @@
         "Pesquisa criptografada ativada"
       ],
       "Failed to download files: ${ err }": [
-        "Falha ao baixar arquivos: ${ err }"
+        "Erro ao baixar arquivos: ${ err }"
       ],
       "Failed to move, please try again": [
-        "Falha ao mover. Tente novamente"
+        "Erro ao mover. Tente novamente"
       ],
       "Failed to upload files: ${ err }": [
-        "Falha ao enviar arquivos: ${ err }"
+        "Erro ao enviar arquivos: ${ err }"
       ],
       "File or folder \"${ filename }\" and ${ count } other are already uploading": [
         "O arquivo ou a pasta \"${ filename }\" e ${ count } mais já estão sendo enviados.",
@@ -5051,31 +5051,31 @@
         "Não há espaço suficiente para fazer o envio de ${ formattedTotal }"
       ],
       "Root folder failed to be loaded": [
-        "Falha ao carregar a pasta raiz"
+        "Erro ao carregar a pasta raiz"
       ],
       "Subfolder failed to be loaded": [
-        "Subpasta falhou ao ser carregada"
+        "Não foi possível carregar a subpasta."
       ],
       "The link to \"${ name }\" failed to be deleted": [
-        "O link para \"${ name }\" falhou ao ser excluído"
+        "Não foi possível excluir o link para \"${ name }\"."
       ],
       "The link to \"${ name }\" was deleted": [
         "O link para \"${ name }\" foi excluído"
       ],
       "The link to your item failed to be deleted": [
-        "Falha ao excluir o link do seu item"
+        "Erro ao excluir o link do seu item"
       ],
       "The link to your item was deleted": [
         "O link para seu item foi excluído"
       ],
       "Trash failed to be emptied": [
-        "Falha ao esvaziar a lixeira"
+        "Erro ao esvaziar a lixeira"
       ],
       "Your old files will be deleted in 72 hours": [
         "Seus arquivos antigos serão excluídos em 72 horas"
       ],
       "Your settings failed to be saved": [
-        "Falha ao salvar as suas configurações"
+        "Erro ao salvar as suas configurações"
       ],
       "Your settings have been changed successfully": [
         "Suas configurações foram alteradas"
@@ -5841,16 +5841,16 @@
         "${ emailsCount } endereços de e-mail"
       ],
       "${ numberOfFailedTransfer.total } failed download": [
-        "${ numberOfFailedTransfer.total } falha em download",
-        "${ numberOfFailedTransfer.total } falhas em downloads"
+        "${ numberOfFailedTransfer.total } erro de download",
+        "${ numberOfFailedTransfer.total } erros de download"
       ],
       "${ numberOfFailedTransfer.total } failed transfer": [
-        "${ numberOfFailedTransfer.total } falha em transferência",
-        "${ numberOfFailedTransfer.total } falhas em transferências"
+        "${ numberOfFailedTransfer.total } erro de transferência",
+        "${ numberOfFailedTransfer.total } erros de transferência"
       ],
       "${ numberOfFailedTransfer.total } failed upload": [
-        "${ numberOfFailedTransfer.total } falha em upload",
-        "${ numberOfFailedTransfer.total } falhas em uploads"
+        "${ numberOfFailedTransfer.total } erro de upload",
+        "${ numberOfFailedTransfer.total } erro de upload"
       ],
       "(active)": [
         "(ativo)"
@@ -6065,10 +6065,10 @@
         "Importar eventos"
       ],
       "Import failed": [
-        "Falha na importação"
+        "Erro na importação"
       ],
       "Invalid verification code": [
-        "Código de verificação inválido"
+        "O código de verificação não é válido."
       ],
       "Item details": [
         "Detalhes dos item"
@@ -6257,10 +6257,10 @@
         "O link expirou"
       ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
-        "O arquivo tem assinatura ausente ou inválida. Vá em Menu (⋮) → Detalhes para informações."
+        "O arquivo tem uma assinatura ausente ou incorreta. Vá em Menu (⋮) → Detalhes para informações."
       ],
       "This folder has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
-        "A pasta tem assinatura ausente ou inválida. Vá em Menu (⋮) → Detalhes para informações."
+        "A pasta tem uma assinatura ausente ou incorreta. Vá em Menu (⋮) → Detalhes para informações."
       ],
       "This link is password protected": [
         "O link está protegido com senha"
@@ -6490,16 +6490,16 @@
         "Os dados do contato estão corrompidos e não podem ser exibidos."
       ],
       "The contact failed to load.": [
-        "Falha ao carregar o contato."
+        "Erro ao carregar o contato."
       ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
         "As configurações de data e hora em seu dispositivo estão dessincronizadas. ${ learnMore }"
       ],
       "The decryption of the encrypted content failed.": [
-        "A descriptografia do conteúdo criptografado falhou."
+        "Não foi possível descriptografar o conteúdo criptografado."
       ],
       "The verification of the contact details' signature failed.": [
-        "A verificação da assinatura dos detalhes de contato falhou."
+        "Não foi possível verificar a assinatura dos detalhes de contato."
       ],
       "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
         "Essa ação é irreversível. Digite a palavra ${ boldDanger } no campo para continuar."
