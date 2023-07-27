@@ -13,7 +13,7 @@ const createMockedEventManager = () => {
 
     const manager = eventManager({
         api: mockApi as any as Api,
-        eventID: getTestEventID(0),
+        initialEventID: getTestEventID(0),
         interval: TEST_INTERVAL,
         query: mockQuery,
         getCursor: mockGetCursor,

@@ -6,12 +6,12 @@ import { decodeVaultContent } from '@proton/pass/utils/protobuf';
 import { getAllShareKeys } from './vaults';
 
 export const getShareLatestEventId = async (shareId: string): Promise<string> =>
-    (
-        await api({
-            url: `pass/v1/share/${shareId}/event`,
-            method: 'get',
-        })
-    ).EventID ?? '';
+    api({
+        url: `pass/v1/share/${shareId}/event`,
+        method: 'get',
+    })
+        .then(({ EventID }) => EventID!)
+        .catch(() => '');
 
 const loadVaultShareById = async (shareId: string): Promise<Maybe<Share<ShareType.Vault>>> => {
     const [shareInfo, shareKeys, eventId] = await Promise.all([
