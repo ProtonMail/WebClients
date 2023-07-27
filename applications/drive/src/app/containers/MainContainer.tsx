@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
 
 import { LoaderPage, LocationErrorBoundary, ModalsChildren, useWelcomeFlags } from '@proton/components';
-import useTelemetryScreenSize from '@proton/components/hooks/useTelemetryScreenSize';
 import { useLoading } from '@proton/hooks';
 
 import TransferManager from '../components/TransferManager/TransferManager';
@@ -30,8 +29,6 @@ const DEFAULT_VOLUME_INITIAL_STATE: {
 };
 
 const InitContainer = () => {
-    useTelemetryScreenSize();
-
     const { getDefaultShare } = useDefaultShare();
     const [loading, withLoading] = useLoading(true);
     const [error, setError] = useState();

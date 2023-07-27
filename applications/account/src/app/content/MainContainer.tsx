@@ -28,7 +28,6 @@ import {
 } from '@proton/components';
 import ContactEmailsProvider from '@proton/components/containers/contacts/ContactEmailsProvider';
 import { getIsSectionAvailable, getSectionPath } from '@proton/components/containers/layout/helper';
-import useTelemetryScreenSize from '@proton/components/hooks/useTelemetryScreenSize';
 import { getAppFromPathnameSafe, getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
 import { getToApp } from '@proton/shared/lib/authentication/apps';
 import { stripLocalBasenameFromPathname } from '@proton/shared/lib/authentication/pathnameHelper';
@@ -96,7 +95,6 @@ const getDefaultRedirect = (accountRoutes: ReturnType<typeof getRoutes>['account
 };
 
 const MainContainer = () => {
-    useTelemetryScreenSize();
     const [user] = useUser();
     const [userSettings] = useUserSettings();
     const [addresses] = useAddresses();
