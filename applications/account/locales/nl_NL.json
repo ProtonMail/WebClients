@@ -1040,20 +1040,8 @@
       "Disable": [
         "Uitschakelen"
       ],
-      "Disable encryption": [
-        "Versleuteling uitschakelen"
-      ],
-      "Disable expect signed": [
-        "Verwacht ondertekend uitschakelen"
-      ],
       "Enable": [
         "Inschakelen"
-      ],
-      "Enable encryption": [
-        "Schakel versleuteling in"
-      ],
-      "Enable expect signed": [
-        "Verwacht ondertekend inschakelen"
       ],
       "Generate missing keys": [
         "Ontbrekende sleutels genereren"
@@ -5617,6 +5605,9 @@
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Als u denkt dat dit een fout is, neem dan contact met ons op via ${ contactLink }."
       ],
+      "If you cancel, your ${ vpnPlanName } subscription will not be renewed when it expires on ${ expiryDate }.": [
+        "Wanneer je opzegt, zal je ${ vpnPlanName } abonnement niet meer vernieuwd worden wanneer het verloopt op ${ expiryDate }."
+      ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Als u de e-mail niet in de inbox kan vinden, check dan uw map met spam."
       ],
@@ -6056,6 +6047,9 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Herstelinformatie blijft op dit toestel behalve wanneer u kiest om het te verwijderen."
+      ],
+      "Recovery kit copied to clipboard": [
+        "Herstelkit gekopieerd naar klembord"
       ],
       "Recovery phrase copied to clipboard": [
         "Herstelzin gekopieerd naar klembord"
@@ -6543,6 +6537,9 @@
       ],
       "We securely store recovery information on your trusted device to prevent you from losing your data": [
         "Wij slaan herstelinformatie veilig op uw vertrouwde apparaat op om te voorkomen dat u uw gegevens verliest"
+      ],
+      "We use 3-D Secure to protect your payments": [
+        "We gebruiken 3-D Secure om je betalingen te beschermen"
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "We verwijzen u naar PayPal in een nieuw browsertabblad om de transactie te voltooien. Als u een pop-up blocker gebruikt, schakel deze dan uit alvorens door te gaan."
@@ -9427,6 +9424,10 @@
       ],
       "Cover more ground with support for 10 custom email domains": [
         "Doe meer met ondersteuning voor 10 aangepaste e-maildomeinen"
+      ],
+      "Create up to ${ n } calendar": [
+        "Maak tot ${ n } kalender",
+        "Maak tot ${ n } kalenders"
       ]
     },
     "Notification": {
@@ -9823,16 +9824,58 @@
       ]
     },
     "pass_signup_2023: Action": {
+      "Check out ${ appName } features": [
+        "Bekijk ${ appName }-functies"
+      ],
       "Continue": [
         "Doorgaan"
       ],
+      "Continue to ${ free }": [
+        "Doorgaan naar ${ free }"
+      ],
+      "Continue with Bitcoin": [
+        "Ga verder met Bitcoin"
+      ],
+      "create a new account": [
+        "maak een nieuw account aan"
+      ],
+      "Create another account instead": [
+        "Maak in plaats daarvan een ander account aan"
+      ],
+      "Download again ${ size }": [
+        "Opnieuw downloaden ${ size }"
+      ],
+      "Download to continue ${ size }": [
+        "Downloaden om verder te gaan ${ size }"
+      ],
+      "Keep this plan and use ${ appName }": [
+        "Behoud dit abonnement en gebruik ${ appName }"
+      ],
+      "Or ${ createANewAccount }": [
+        "Of ${ createANewAccount }"
+      ],
       "Start using ${ appName }": [
         "Begin met ${ appName }"
+      ],
+      "Start using ${ appName } now": [
+        "Begin ${ appName } nu te gebruiken"
+      ],
+      "Upgrade for only ${ relativePrice } extra per month": [
+        "Upgraden voor slechts ${ relativePrice } extra per maand"
+      ],
+      "Upgrade my plan": [
+        "Mijn abonnement upgraden"
+      ],
+      "Use ${ free } instead": [
+        "Gebruik in plaats daarvan ${ free }"
       ]
     },
     "pass_signup_2023: Feature": {
+      "End-to-end encrypted": [
+        "End-to-end versleuteld"
+      ],
       "Open source": [
-        "Open-source"
+        "Open source"
       ],
       "Protected by Swiss privacy laws": [
         "Beschermd door Zwitserse privacywetten"
@@ -9842,19 +9885,52 @@
       ]
     },
     "pass_signup_2023: Header": {
+      "Checkout": [
+        "Afrekenen"
+      ],
       "Continue with your ${ BRAND_NAME } account": [
         "Ga verder met uw ${ BRAND_NAME }-account"
       ],
+      "Limited time offer": [
+        "Tijdelijke aanbieding"
+      ],
       "Recommended": [
         "Aanbevolen"
+      ],
+      "Select your plan": [
+        "Kies uw abonnement"
       ],
       "Upgrade your plan": [
         "Upgrade uw abonnement"
       ]
     },
     "pass_signup_2023: Info": {
+      "${ PASS_APP_NAME } benefits": [
+        "${ PASS_APP_NAME } voordelen"
+      ],
+      "${ PASS_APP_NAME } is available as a browser extension on Firefox Add-ons.": [
+        "${ PASS_APP_NAME } is beschikbaar als browserextensie via Firefox Add-ons."
+      ],
+      "${ PASS_APP_NAME } is available as a browser extension on the Chrome Web Store.": [
+        "${ PASS_APP_NAME } is beschikbaar als browserextensie in de Chrome Web Store."
+      ],
+      "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption.": [
+        "${ PASS_APP_NAME } houdt uw wachtwoorden en identiteit veilig met grondige end-to-end versleuteling."
+      ],
+      "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption. To add premium features of ${ PASS_APP_NAME_2 } to your current subscription, we suggest upgrading to the ${ upsellPlanName } plan.": [
+        "${ PASS_APP_NAME } houdt uw wachtwoorden en identiteit veilig met grondige end-to-end versleutelingOm premium functies van ${ PASS_APP_NAME_2 } toe te voegen aan uw huidige abonnement, raden we aan om te upgraden naar het ${ upsellPlanName }-abonnement."
+      ],
+      "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption. Your current plan already gives you access to premium ${ PASS_APP_NAME_2 } features — no need to purchase again.": [
+        "${ PASS_APP_NAME } houdt uw wachtwoorden en identiteit veilig met grondige end-to-end versleutelingUw huidige abonnement geeft u al toegang tot de premium ${ PASS_APP_NAME_2 }-functies — het is niet nodig om dit opnieuw aan te kopen."
+      ],
       "+ ${ relativePrice } per month": [
         "+ ${ relativePrice } per maand"
+      ],
+      "All premium ${ BRAND_NAME } services.": [
+        "Alle premium ${ BRAND_NAME }-diensten."
+      ],
+      "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
+        "Maar u kunt **${ unlockPlanTitle }** en alle premium ${ BRAND_NAME }-diensten ontgrendelen door te upgraden naar **${ upsellPlanTitle }** — het is slechts ${ relativePrice } extra per maand."
       ],
       "By continuing, you agree to our ${ termsAndConditions }": [
         "Door verder te gaan gaat u akkoord met onze ${ termsAndConditions }"
@@ -9862,11 +9938,41 @@
       "Creating your account": [
         "Account aan het aanmaken"
       ],
+      "Discover ${ PASS_APP_NAME },${ br }our new encrypted password manager": [
+        "Ontdek ${ PASS_APP_NAME },${ br }onze nieuwe versleutelde wachtwoordmanager"
+      ],
+      "Download and install the relevant apps and extensions to start using ${ PASS_APP_NAME }": [
+        "Download en installeer de relevante apps en extensies om ${ PASS_APP_NAME } te beginnen gebruiken"
+      ],
+      "Download the ${ PASS_APP_NAME } app from Google Play and install it to start using ${ PASS_APP_NAME2 } on your phone.": [
+        "Download de ${ PASS_APP_NAME }-app vanaf Google Play en installeer deze om ${ PASS_APP_NAME2 } te beginnen gebruiken op uw telefoon."
+      ],
+      "Download the ${ PASS_APP_NAME } app from the App Store and install it to start using ${ PASS_APP_NAME2 } on your phone.": [
+        "Download de ${ PASS_APP_NAME }-app uit de App Store en installeer deze om ${ PASS_APP_NAME2 } te beginnen gebruiken op uw telefoon."
+      ],
+      "Encrypted password manager that also protects your identity": [
+        "Versleutelde wachtwoordkluis die ook uw identiteit beschermt"
+      ],
+      "End-to-end encrypted notes": [
+        "End-to-end versleutelde notities"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
+        "Voor slechts **${ relativePrice } per maand** extra, krijgt u toegang tot alle premium ${ BRAND_NAME }-diensten!"
+      ],
       "Free forever": [
         "Voor altijd gratis"
       ],
       "Get ${ appName } for ${ browserName }": [
         "Download ${ appName } voor ${ browserName }"
+      ],
+      "Get ${ appName } for ${ browserName } soon": [
+        "Download ${ appName } voor ${ browserName } binnenkort"
+      ],
+      "If you get locked out of your ${ BRAND_NAME } Account, your **recovery kit** will allow you to sign in and recover your data.": [
+        "Als u buitengesloten raakt uit uw ${ BRAND_NAME }-account, zal uw **herstelkit** u toelaten om in te liggen en uw data te herstellen."
+      ],
+      "Includes basic ${ appName } features:": [
+        "Basis ${ appName }-functies inbegrepen:"
       ],
       "Install ${ PASS_APP_NAME }": [
         "Installeer ${ PASS_APP_NAME }"
@@ -9874,14 +9980,83 @@
       "Install app": [
         "Installeer de app"
       ],
+      "Install app and extension": [
+        "Installeer app en extensie"
+      ],
+      "It’s the only way to fully restore your account, so make sure you keep this **recovery kit** somewhere safe.": [
+        "Het is de enige manier om uw account volledig te herstellen, dus wees er zeker van dat u deze **herstelkit** ergens veilig bewaart."
+      ],
+      "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
+        "Sluit u aan bij meer dan 100 miljoen anderen die ${ BRAND_NAME } kozen om veilig online te zijn"
+      ],
+      "Launching ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } opstarten"
+      ],
+      "One easy subscription.": [
+        "Eén eenvoudig abonnement."
+      ],
+      "Open-source and audited": [
+        "Open source en gecontroleerd"
+      ],
+      "per month, billed annually": [
+        "per maand, jaarlijks gefactureerd"
+      ],
+      "per month, billed every 15 months": [
+        "per maand, gefactureerd elke 15 maanden"
+      ],
+      "per month, billed every 30 months": [
+        "per maand, gefactureerd elke 30 maanden"
+      ],
+      "per month, billed every month": [
+        "per maand, maandelijks gefactureerd"
+      ],
+      "per month, billed every two years": [
+        "per maand, tweejaarlijks gefactureerd"
+      ],
+      "Preparing your Recovery Kit": [
+        "Uw herstelkit voorbereiden"
+      ],
       "Protected by Swiss privacy laws": [
         "Beschermd door Zwitserse privacywetten"
+      ],
+      "Save your recovery kit to continue": [
+        "Sla uw herstelkit op om verder te gaan"
+      ],
+      "Signing in to ${ PASS_APP_NAME }": [
+        "Inloggen bij ${ PASS_APP_NAME }"
+      ],
+      "Special launch offer: Get ${ title } for ${ price } forever!": [
+        "Uitzonderlijke introductiepromotie: krijg levenslang ${ title } aan ${ price }!"
+      ],
+      "The offer you selected is not available for ${ currentPlanTitle } subscribers.": [
+        "De geselecteerde aanbieding is niet beschikbaar voor ${ currentPlanTitle }-abonnees."
+      ],
+      "to start using ${ PASS_APP_NAME } on your phone": [
+        "om ${ PASS_APP_NAME } te beginnen gebruiken op uw telefoon"
+      ],
+      "Unlock ${ PASS_APP_NAME } premium features by upgrading": [
+        "Ontgrendel ${ PASS_APP_NAME } premium functies door te upgraden"
+      ],
+      "Updating your account": [
+        "Uw account wordt bijgewerkt"
       ],
       "Verifying your payment": [
         "Verifiëren van uw betaling"
       ],
       "Welcome to ${ plan }": [
         "Welkom bij ${ plan }"
+      ],
+      "Works on all devices": [
+        "Werkt op alle apparaten"
+      ],
+      "You already have access to premium ${ appName } features — no need to purchase again.": [
+        "U heeft al toegang tot de premium ${ appName }-functies — niet nodig om opnieuw aan te kopen."
+      ],
+      "You currently have": [
+        "Momenteel heeft u"
+      ],
+      "Your organization has access to ${ free }. If you want to access premium ${ appName } features, please ask your organization's administrator to upgrade.": [
+        "Uw organisatie heeft toegang tot ${ free }. Neem contact op met uw organisatiebeheerder om te upgraden als u premium toegang wil tot ${ appName }-functies."
       ]
     },
     "pass_signup_2023: Onboarding": {
@@ -9890,8 +10065,20 @@
       ]
     },
     "pass_signup_2023: Title": {
+      "${ upsellPlanTitle } plan": [
+        "${ upsellPlanTitle }-abonnement"
+      ],
+      "All ${ BRAND_NAME } Plus services.${ br }One easy subscription.": [
+        "Alle ${ BRAND_NAME } Plus-diensten.${ br }Eén eenvoudig abonnement."
+      ],
       "Create your ${ BRAND_NAME } account": [
         "Maak uw ${ BRAND_NAME }-account aan"
+      ],
+      "Request your organization administrator to upgrade": [
+        "Verzoek uw organisatiebeheerder om te upgraden"
+      ],
+      "Secure your account": [
+        "Beveilig uw account"
       ]
     },
     "Payment method option": {
@@ -10322,6 +10509,11 @@
     "Shared calendar label input placeholder": {
       "Add label": [
         "Label toevoegen"
+      ]
+    },
+    "Shared calendar; Info about calendar owner": {
+      "Shared by ${ ownerName }": [
+        "Gedeeld door ${ ownerName }"
       ]
     },
     "Signature verification error when joining calendar": {
@@ -12504,6 +12696,14 @@
       ]
     },
     "vpn_2step: info": {
+      "${ n } month": [
+        "${ n } maand",
+        "${ n } maanden"
+      ],
+      "${ n } year": [
+        "${ n } jaar",
+        "${ n } jaren"
+      ],
       "Try ${ upsellPlanName } risk-free": [
         "Probeer risicoloos ${ upsellPlanName }"
       ],
@@ -12513,7 +12713,7 @@
     },
     "vpn_2step: tooltip": {
       "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, Double hop, and more.": [
-        "Toegang tot Secure Core-servers, snelle P2P/BitTorrent-downloads, Tor over VPN, Double hop en meer."
+        "Toegang tot Secure Core-servers, snelle P2P/BitTorrent-downloads, Tor over VPN, en meer."
       ]
     },
     "Warning": {

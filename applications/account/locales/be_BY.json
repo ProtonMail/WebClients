@@ -473,6 +473,9 @@
       "Hide labels": [
         "Схаваць меткі"
       ],
+      "Hide plan features": [
+        "Схаваць функцыі тарыфнага плана"
+      ],
       "I have a question": [
         "У мяне ёсць пытанне"
       ],
@@ -594,7 +597,7 @@
         "Аплаціць"
       ],
       "Pay ${ price } now": [
-        "Аплаціце ${ price } зараз"
+        "Аплаціць ${ price }"
       ],
       "Preview": [
         "Папярэдні прагляд"
@@ -1044,20 +1047,8 @@
       "Disable": [
         "Адключыць"
       ],
-      "Disable encryption": [
-        "Адключыць шыфраванне"
-      ],
-      "Disable expect signed": [
-        "Адключыць чаканне подпісу"
-      ],
       "Enable": [
         "Уключыць"
-      ],
-      "Enable encryption": [
-        "Уключыць шыфраванне"
-      ],
-      "Enable expect signed": [
-        "Уключыць чаканне подпісу"
       ],
       "Generate missing keys": [
         "Згенерыраваць ключы, якія адсутнічаюць"
@@ -6679,16 +6670,16 @@
         "Папаўняйце свой уліковы запіс крэдытамі, якія вы можаце выкарыстоўваць для падпіскі на новы тарыфны план або падаўжэння свайго бягучага тарыфнага плана. Вы атрымліваеце адзін крэдыт за кожны выдаткаваны ${ i18nCurrency }."
       ],
       "Total email addresses": [
-        "Усяго адрасоў электроннай пошты"
+        "Колькасць адрасоў электроннай пошты"
       ],
       "Total storage": [
         "Агульны аб'ём сховішча"
       ],
       "Total supported domains": [
-        "Усяго падтрымліваецца даменаў"
+        "Колькасць даменаў, якія падтрымліваюцца"
       ],
       "Total VPN connections": [
-        "Усяго падключэнняў па VPN"
+        "Колькасць падключэнняў па VPN"
       ],
       "two-factor authentication (2FA)": [
         "двухфактарнай праверкі сапраўднасці (2ФА)"
@@ -9179,6 +9170,9 @@
         "${ n } падключэнняў па VPN на карыстальніка",
         "${ n } падключэнні па VPN на карыстальніка"
       ],
+      "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
+        "${ PASS_APP_NAME } з неабмежаванай колькасцю псеўданімаў hide-my-email"
+      ],
       "${ size } attachment size": [
         "Памер далучэння: ${ size }"
       ],
@@ -9472,6 +9466,9 @@
       ],
       "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
         "Для працягу выкарыстання ${ MAIL_APP_NAME } з прэміяльнымі функцыямі, выберыце вашу падпіску і спосаб аплаты."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Ваш выпрабавальны перыяд завершыцца ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: info": {
@@ -9602,6 +9599,9 @@
       ]
     },
     "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Выпрабавальны перыяд ${ shortPlan.title }"
+      ],
       "Your account's usage": [
         "Выкарыстанне вашага ўліковага запісу"
       ]
@@ -9829,11 +9829,20 @@
       "Add more personalization with 15 email addresses and support for 3 custom email domains": [
         "Дадайце больш персаналізацыі з 15 электроннымі адрасамі і падтрымкай 3 карыстальніцкіх даменаў"
       ],
+      "Boost your storage space to ${ bundleStorage } per user": [
+        "Палепшыце прастору сховішча да ${ bundleStorage } на карыстальніка"
+      ],
       "Boost your storage space to ${ bundleStorage } total": [
         "Палепшыце агульны аб'ём свайго сховішча да ${ bundleStorage }"
       ],
       "Cover more ground with support for 10 custom email domains": [
         "Дасягніце большага з падтрымкай 10 карыстальніцкіх даменаў электроннай пошты"
+      ],
+      "Create up to ${ n } calendar": [
+        "Стварыць да ${ n } календара",
+        "Стварыць да ${ n } календароў",
+        "Стварыць да ${ n } календароў",
+        "Стварыць да ${ n } календароў"
       ]
     },
     "Notification": {
@@ -10938,6 +10947,11 @@
     "Shared calendar label input placeholder": {
       "Add label": [
         "Дадаць метку"
+      ]
+    },
+    "Shared calendar; Info about calendar owner": {
+      "Shared by ${ ownerName }": [
+        "Абагулена ${ ownerName }"
       ]
     },
     "Signature verification error when joining calendar": {
@@ -13110,6 +13124,11 @@
     "Upgrade notice": {
       "Upgrade to a ${ MAIL_SHORT_APP_NAME } paid plan to share your calendar.": [
         "Палепшыць ${ MAIL_SHORT_APP_NAME } да платнага тарыфнага плана, каб абагуляць вашы календары."
+      ]
+    },
+    "upsell panel": {
+      "Recommended": [
+        "Рэкамендавана"
       ]
     },
     "User referee invited via email": {

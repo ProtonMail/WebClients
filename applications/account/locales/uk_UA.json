@@ -473,6 +473,9 @@
       "Hide labels": [
         "Сховати мітки"
       ],
+      "Hide plan features": [
+        "Приховати особливості плану"
+      ],
       "I have a question": [
         "У мене є питання"
       ],
@@ -1044,20 +1047,8 @@
       "Disable": [
         "Вимкнути"
       ],
-      "Disable encryption": [
-        "Вимкнути шифрування"
-      ],
-      "Disable expect signed": [
-        "Вимкнути очікування підписання"
-      ],
       "Enable": [
         "Увімкнути"
-      ],
-      "Enable encryption": [
-        "Увімкнути шифрування"
-      ],
-      "Enable expect signed": [
-        "Увімкнути очікування підписання"
       ],
       "Generate missing keys": [
         "Генерувати відсутні ключі"
@@ -7169,7 +7160,7 @@
     },
     "Info subscription": {
       "You can prevent expiry by reactivating the subscription": [
-        "Ви можете запобігти закінченню терміну дії, відновивши підписку"
+        "Ви можете запобігти закінченню терміну дії, відновивши передплату"
       ]
     },
     "Info when deleting payment method": {
@@ -9179,6 +9170,9 @@
         "${ n } VPN-з'єднань на користувача",
         "${ n } VPN-з'єднань на користувача"
       ],
+      "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
+        "${ PASS_APP_NAME } з необмеженою кількістю псевдонімів hide-my-email"
+      ],
       "${ size } attachment size": [
         "Розмір вкладень ${ size }"
       ],
@@ -9472,6 +9466,9 @@
       ],
       "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
         "Щоб і надалі користуватися ${ MAIL_APP_NAME } з преміумфункціями, оберіть тарифний план та спосіб оплати."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Ваш пробний період завершується ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: info": {
@@ -9602,6 +9599,9 @@
       ]
     },
     "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Пробна версія ${ shortPlan.title }"
+      ],
       "Your account's usage": [
         "Використання вашого облікового запису"
       ]
@@ -9829,11 +9829,20 @@
       "Add more personalization with 15 email addresses and support for 3 custom email domains": [
         "Розширте свої можливості з 15 адресами електронної пошти та підтримкою 3 власних доменів"
       ],
+      "Boost your storage space to ${ bundleStorage } per user": [
+        "Збільште обсяг сховища до ${ bundleStorage } на користувача"
+      ],
       "Boost your storage space to ${ bundleStorage } total": [
         "Розширте загальний обсяг свого сховища до ${ bundleStorage }"
       ],
       "Cover more ground with support for 10 custom email domains": [
         "Охоплюйте більше з підтримкою 10 власних доменів електронної пошти"
+      ],
+      "Create up to ${ n } calendar": [
+        "Створіть до ${ n } календаря",
+        "Створіть до ${ n } календарів",
+        "Створіть до ${ n } календарів",
+        "Створіть до ${ n } календарів"
       ]
     },
     "Notification": {
@@ -10314,7 +10323,7 @@
         "Продовжити з вашим обліковим записом ${ BRAND_NAME }"
       ],
       "Limited time offer": [
-        "Пропозиція обмежена"
+        "Обмежена пропозиція"
       ],
       "Recommended": [
         "Рекомендовано"
@@ -10379,7 +10388,7 @@
         "Нотатки з наскрізним шифруванням"
       ],
       "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
-        "Лише за **${ relativePrice } на місяць** ви отримуєте доступ до всіх преміум сервісів ${ BRAND_NAME }!"
+        "Лише за **${ relativePrice } на місяць** ви отримуєте доступ до всіх преміумсервісів ${ BRAND_NAME }!"
       ],
       "Free forever": [
         "Безплатно назавжди"
@@ -10418,10 +10427,10 @@
         "Запуск ${ PASS_APP_NAME }"
       ],
       "One easy subscription.": [
-        "Одна проста підписка."
+        "Одна проста передплата."
       ],
       "Open-source and audited": [
-        "Відкритий вихідний код та аудит"
+        "З відкритим кодом та незалежним аудитом"
       ],
       "per month, billed annually": [
         "на місяць, виставляється щорічно"
@@ -10436,7 +10445,7 @@
         "на місяць, рахунок виставляється щомісяця"
       ],
       "per month, billed every two years": [
-        "на місяць, виставляється рахунок кожні два роки"
+        "на місяць, рахунок виставляється раз на два роки"
       ],
       "Preparing your Recovery Kit": [
         "Підготовка комплекту відновлення"
@@ -10500,7 +10509,7 @@
         "Створити обліковий запис ${ BRAND_NAME }"
       ],
       "Request your organization administrator to upgrade": [
-        "Попросіть адміністратора вашої організації змінити вашу підписку"
+        "Попросіть адміністратора вашої організації змінити ваш тарифний план"
       ],
       "Secure your account": [
         "Захистіть свій обліковий запис"
@@ -10938,6 +10947,11 @@
     "Shared calendar label input placeholder": {
       "Add label": [
         "Додати мітку"
+      ]
+    },
+    "Shared calendar; Info about calendar owner": {
+      "Shared by ${ ownerName }": [
+        "Спільне використання ${ ownerName }"
       ]
     },
     "Signature verification error when joining calendar": {
@@ -13110,6 +13124,11 @@
     "Upgrade notice": {
       "Upgrade to a ${ MAIL_SHORT_APP_NAME } paid plan to share your calendar.": [
         "Щоб поділитися своїм календарем, передплатіть тарифний план ${ MAIL_SHORT_APP_NAME }."
+      ]
+    },
+    "upsell panel": {
+      "Recommended": [
+        "Рекомендовано"
       ]
     },
     "User referee invited via email": {
