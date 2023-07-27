@@ -10,7 +10,6 @@ import {
     useActiveBreakpoint,
     useFeatures,
 } from '@proton/components';
-import useTelemetryScreenSize from '@proton/components/hooks/useTelemetryScreenSize';
 
 import { MAIN_ROUTE_PATH } from './constants';
 import ComposerContainer from './containers/ComposerContainer';
@@ -22,7 +21,6 @@ import { MailContentRefProvider } from './hooks/useClickMailContent';
 import { store, useSetReduxThunkExtraArgs } from './logic/store';
 
 const MainContainer = () => {
-    useTelemetryScreenSize();
     useSetReduxThunkExtraArgs();
     const breakpoints = useActiveBreakpoint();
     const mailContentRef = useRef<HTMLDivElement>(null);
